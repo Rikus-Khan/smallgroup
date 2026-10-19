@@ -1,0 +1,1342 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>John 1</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400&family=Spectral:ital,wght@0,300;0,400;0,600;1,400&family=Noto+Serif:wght@400&family=Noto+Serif+Hebrew:wght@400&display=swap" rel="stylesheet">
+<style>
+@property --dawn { syntax: '<number>'; inherits: true; initial-value: 0; }
+
+:root {
+  --night: #0d1030;
+  --dusk: #4c2747;
+  --flame: #f2b24c;
+  --flame-hot: #ffe2a3;
+  --parch: #f1e6cf;
+  --mist: #aeadcb;
+  --water: #7fb6d4;
+  --blood: #d0614f;
+  --serif: 'Spectral', 'Noto Serif', 'Noto Serif Hebrew', Georgia, serif;
+  --sans: 'Atkinson Hyperlegible', system-ui, sans-serif;
+  --dawn: 0;
+  transition: --dawn 1.6s ease;
+}
+
+* { box-sizing: border-box; }
+html, body { margin: 0; height: 100%; }
+html { font-size: clamp(16px, calc(.7vw + .6vh + 2px), 28px); }
+body {
+  background: var(--night);
+  color: var(--parch);
+  font-family: var(--sans);
+  overflow: hidden;
+  -webkit-font-smoothing: antialiased;
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* ---------- Sky: night to dawn across the whole study ---------- */
+.sky {
+  position: fixed; inset: 0;
+  background:
+    radial-gradient(130% 70% at 50% 118%, rgb(242 178 76 / calc(.05 + .38 * var(--dawn))), transparent 68%),
+    linear-gradient(180deg, var(--night) 0%, color-mix(in oklab, var(--night), var(--dusk) calc(var(--dawn) * 100%)) 100%);
+}
+.stars {
+  position: fixed; inset: 0; pointer-events: none;
+  opacity: calc(.7 - .7 * var(--dawn));
+  background-image:
+    radial-gradient(1.4px 1.4px at 12% 18%, #fff 50%, transparent 51%),
+    radial-gradient(1px 1px at 27% 8%, #fff 50%, transparent 51%),
+    radial-gradient(1.2px 1.2px at 44% 22%, #fff 50%, transparent 51%),
+    radial-gradient(1px 1px at 63% 11%, #fff 50%, transparent 51%),
+    radial-gradient(1.6px 1.6px at 81% 16%, #fff 50%, transparent 51%),
+    radial-gradient(1px 1px at 92% 34%, #fff 50%, transparent 51%),
+    radial-gradient(1px 1px at 6% 41%, #fff 50%, transparent 51%),
+    radial-gradient(1.2px 1.2px at 35% 37%, #fff 50%, transparent 51%),
+    radial-gradient(1px 1px at 72% 44%, #fff 50%, transparent 51%),
+    radial-gradient(1px 1px at 55% 4%, #fff 50%, transparent 51%);
+}
+
+/* ---------- Slides ---------- */
+.deck { position: fixed; inset: 0; }
+.slide {
+  position: absolute; inset: 0;
+  display: flex; align-items: center; justify-content: center;
+  padding: clamp(16px, 4vh, 56px) clamp(16px, 5vw, 72px) calc(72px + env(safe-area-inset-bottom));
+  opacity: 0; visibility: hidden;
+  transition: opacity .7s ease, visibility 0s linear .7s;
+}
+.slide.active { opacity: 1; visibility: visible; transition: opacity .7s ease; }
+.slide.skip { display: none; }
+.inner {
+  width: min(100%, 68rem);
+  max-height: 100%;
+  overflow-y: auto;
+  scrollbar-width: none;
+}
+.inner::-webkit-scrollbar { display: none; }
+
+/* Entrance: things rise in when a slide becomes active */
+.rise { opacity: 0; }
+.slide.active .rise { animation: rise .9s cubic-bezier(.2,.7,.2,1) both; animation-delay: calc(var(--d, 0) * 140ms + 150ms); }
+@keyframes rise { from { opacity: 0; transform: translateY(14px); } to { opacity: 1; transform: none; } }
+
+/* Click-by-click reveals */
+.step { opacity: 0; transform: translateY(10px); transition: opacity .6s ease, transform .6s ease; }
+.step.on { opacity: 1; transform: none; }
+svg .step { transform: none; }
+
+/* Lines that draw themselves */
+.draw { stroke-dasharray: 1; stroke-dashoffset: 1; transition: stroke-dashoffset 1.4s ease; }
+.on .draw, .draw.on { stroke-dashoffset: 0; }
+.slide.active .draw-auto { animation: draw 1.8s .5s ease forwards; }
+@keyframes draw { to { stroke-dashoffset: 0; } }
+
+/* ---------- Type ---------- */
+h1, h2, h3 { font-family: var(--serif); font-weight: 400; margin: 0; text-wrap: balance; }
+h2 { font-size: clamp(1.7rem, 1.1rem + 2.6vw, 3.1rem); line-height: 1.12; margin-bottom: .5em; }
+p { margin: 0; }
+.note {
+  font-size: clamp(1.08rem, .9rem + .85vw, 1.55rem);
+  line-height: 1.5;
+  max-width: 40em;
+  color: var(--parch);
+}
+.note + .note { margin-top: .8em; }
+.note em { font-style: normal; color: var(--flame-hot); }
+.soft { color: var(--mist); }
+.gk { font-family: var(--serif); color: var(--flame-hot); }
+
+/* Verse quote that heads an explanation slide */
+.quote {
+  margin: 0 0 1.1em; padding-left: 1em;
+  border-left: 2px solid rgb(242 178 76 / .55);
+  font-family: var(--serif); font-style: italic;
+  font-size: clamp(1rem, .85rem + .7vw, 1.4rem);
+  line-height: 1.5; color: var(--mist);
+  max-width: 46em;
+}
+.quote cite { display: block; margin-top: .3em; font-style: normal; font-family: var(--sans); font-size: .8em; color: var(--mist); opacity: .8; }
+mark { background: none; color: var(--flame-hot); box-shadow: inset 0 -.12em 0 rgb(242 178 76 / .45); }
+
+/* ---------- Verse slides ---------- */
+.verse .inner { width: min(100%, 50rem); }
+.vtext { font-family: var(--serif); font-size: calc(clamp(1.3rem, .95rem + 1.75vw, 2.45rem) * var(--vs, 1)); line-height: 1.55; }
+.vtext .v { margin: 0 0 .55em; }
+.vn { font-family: var(--sans); font-size: .5em; vertical-align: .75em; color: var(--flame); margin-right: .35em; font-weight: 700; }
+.vref { font-size: clamp(.95rem, .85rem + .4vw, 1.2rem); color: var(--mist); margin-top: 1.2em; }
+.vref::before { content: ""; display: inline-block; width: 2.2em; height: 1px; background: var(--flame); vertical-align: middle; margin-right: .7em; }
+
+/* ---------- Title ---------- */
+.title .inner { text-align: center; position: relative; }
+.title h1 { font-weight: 300; font-size: clamp(4.5rem, 2rem + 13vw, 12rem); line-height: .95; letter-spacing: -.02em; position: relative; }
+.title .sub { font-family: var(--serif); font-style: italic; font-size: clamp(1.4rem, 1rem + 2vw, 2.6rem); margin-top: .5em; color: var(--flame-hot); }
+.title .tag { font-size: clamp(1.05rem, .9rem + .7vw, 1.45rem); color: var(--mist); margin: 1.2em auto 0; max-width: 30em; line-height: 1.5; text-wrap: balance; }
+.spark {
+  position: absolute; left: 50%; top: 40%; width: 10px; height: 10px; border-radius: 50%;
+  background: var(--flame-hot); transform: translate(-50%, -50%);
+  box-shadow: 0 0 40px 20px rgb(242 178 76 / .5);
+  pointer-events: none;
+}
+.slide.active .spark { animation: bloom 2.6s ease-out both; }
+@keyframes bloom {
+  0% { opacity: 0; box-shadow: 0 0 0 0 rgb(242 178 76 / 0); }
+  25% { opacity: 1; box-shadow: 0 0 30px 10px rgb(242 178 76 / .8); }
+  100% { opacity: .0; box-shadow: 0 0 260px 180px rgb(242 178 76 / .0); }
+}
+
+/* ---------- Things to watch / Points to remember ---------- */
+.lede { font-size: clamp(1.05rem, .9rem + .6vw, 1.4rem); color: var(--mist); margin-bottom: 1.4em; max-width: 34em; line-height: 1.5; }
+.seeds { list-style: none; padding: 0; margin: 0; display: grid; gap: clamp(.7rem, 1.6vh, 1.2rem) 2.5rem; grid-template-columns: 1fr; counter-reset: seed; }
+@media (min-width: 900px) { .seeds { grid-template-columns: 1fr 1fr; } }
+.seeds li { counter-increment: seed; position: relative; padding-left: 2.6rem; }
+.seeds li::before {
+  content: counter(seed); position: absolute; left: 0; top: .1em;
+  width: 1.8rem; height: 1.8rem; border-radius: 50%; border: 1.5px solid var(--flame);
+  display: grid; place-items: center; font-weight: 700; color: var(--flame); font-size: .95rem;
+}
+.topic { display: block; color: var(--flame); font-size: clamp(.95rem, .85rem + .4vw, 1.2rem); font-weight: 700; margin-bottom: .15em; }
+.seed-q { display: block; font-family: var(--serif); font-size: clamp(1.2rem, .95rem + 1.1vw, 1.85rem); line-height: 1.25; }
+.remember .seed-q { font-style: italic; font-size: clamp(1.05rem, .9rem + .7vw, 1.4rem); color: var(--flame-hot); }
+.remember .seed-q cite { font-style: normal; font-family: var(--sans); font-size: .75em; color: var(--mist); margin-left: .4em; }
+.take { display: block; font-size: clamp(.98rem, .88rem + .45vw, 1.2rem); line-height: 1.45; margin-top: .25em; }
+
+/* ---------- Part dividers ---------- */
+.part .inner { text-align: left; }
+.part-n { font-size: clamp(1rem, .9rem + .5vw, 1.3rem); color: var(--flame); font-weight: 700; margin-bottom: .4em; }
+.part h2 { font-size: clamp(3rem, 1.8rem + 6vw, 7.5rem); font-weight: 300; line-height: 1; margin-bottom: .25em; }
+.part .range { font-size: clamp(1rem, .9rem + .5vw, 1.3rem); color: var(--mist); }
+.part .hook { font-family: var(--serif); font-style: italic; font-size: clamp(1.25rem, 1rem + 1.2vw, 2rem); margin-top: 1em; max-width: 26em; }
+.part .rule { height: 2px; width: 0; background: linear-gradient(90deg, var(--flame), transparent); margin: 1.2em 0; }
+.slide.active .rule { animation: grow 1.4s .3s ease forwards; }
+@keyframes grow { to { width: min(28rem, 80%); } }
+
+/* ---------- Explanation slides: shared layout ---------- */
+.stage { margin: .4em 0 1em; }
+.stage svg { display: block; width: 100%; height: auto; max-height: 44vh; margin: 0 auto; overflow: visible; }
+.split { display: grid; gap: 1.2rem 2.5rem; align-items: center; }
+@media (min-width: 900px) and (min-aspect-ratio: 4/3) {
+  .split { grid-template-columns: 1.15fr 1fr; }
+  .split .stage svg { max-height: 58vh; }
+}
+svg text { font-family: var(--sans); }
+svg text:not([fill]) { fill: var(--parch); }
+svg .serif { font-family: var(--serif); }
+
+/* Genesis / John */
+.pair { display: grid; gap: 1rem 2rem; margin-bottom: 1.2em; }
+@media (min-width: 760px) { .pair { grid-template-columns: 1fr 1fr; } }
+.scroll { padding: 1em 1.2em; border-top: 2px solid var(--flame); background: rgb(255 255 255 / .04); }
+.scroll .ref { color: var(--flame); font-weight: 700; font-size: .95rem; margin-bottom: .4em; }
+.scroll .kjv { font-family: var(--serif); font-size: clamp(1.15rem, .95rem + .9vw, 1.7rem); line-height: 1.45; }
+
+/* Logos */
+.morph { display: flex; flex-wrap: wrap; align-items: baseline; gap: .4em 1.2em; margin: .2em 0 .8em; }
+.morph .big { font-family: var(--serif); font-size: clamp(3.5rem, 2rem + 7vw, 8rem); color: var(--flame-hot); line-height: 1; text-shadow: 0 0 40px rgb(242 178 76 / .35); }
+.morph .say { font-size: clamp(1.2rem, 1rem + 1vw, 1.9rem); color: var(--mist); }
+.morph .means { font-family: var(--serif); font-size: clamp(1.3rem, 1rem + 1.4vw, 2.2rem); }
+
+/* Light vs darkness */
+.lamp {
+  position: relative; height: clamp(190px, 34vh, 340px); overflow: hidden; border-radius: 4px;
+  background: #fff4dc;
+}
+.lamp .shadow {
+  position: absolute; left: 50%; top: 50%; width: 260%; aspect-ratio: 1; translate: -50% -50%;
+  background: radial-gradient(circle, transparent 0 9%, rgb(4 5 14 / .9) 17%, #04050e 26%);
+  transform: scale(1.5);
+}
+.slide.active .lamp .shadow { animation: press 5.5s 0.6s ease-in-out forwards; }
+@keyframes press {
+  0% { transform: scale(1.5); }
+  45% { transform: scale(.62); }
+  58% { transform: scale(.62); }
+  75% { transform: scale(1.45); }
+  100% { transform: scale(1.25); }
+}
+.flame {
+  position: absolute; left: 50%; top: 50%; width: 34px; height: 58px; translate: -50% -50%;
+  border-radius: 50% 50% 46% 46% / 64% 64% 36% 36%;
+  background: radial-gradient(circle at 50% 72%, #fff 0 14%, #ffe2a3 30%, var(--flame) 58%, rgb(242 178 76 / 0) 74%);
+  animation: flicker 1.8s ease-in-out infinite alternate;
+  z-index: 2;
+}
+.slide.active .flame { animation: flicker 1.8s ease-in-out infinite alternate, flare 5.5s .6s ease forwards; }
+@keyframes flicker { from { transform: scale(1) rotate(-2deg); } to { transform: scale(1.06, 1.12) rotate(2deg); } }
+@keyframes flare { 0%, 55% { filter: none; } 68% { filter: brightness(1.4) drop-shadow(0 0 30px #ffd27a); } 100% { filter: drop-shadow(0 0 14px #ffd27a); } }
+
+/* Children of God: crossed out list */
+.nots { list-style: none; padding: 0; margin: .4em 0 1em; display: grid; gap: .55em; }
+.nots li { font-size: clamp(1.05rem, .9rem + .75vw, 1.5rem); line-height: 1.35; }
+.nots .k { font-family: var(--serif); font-style: italic; position: relative; display: inline-block; margin-right: .5em; }
+.nots .k::after {
+  content: ""; position: absolute; left: -2%; right: -2%; top: 55%; height: 2px; background: var(--blood);
+  transform: scaleX(0); transform-origin: left; transition: transform .7s .35s ease;
+}
+.nots li.on .k::after { transform: scaleX(1); }
+.nots .yes .k { color: var(--flame-hot); font-style: normal; font-weight: 600; }
+.nots .yes .k::after { display: none; }
+.nots .why { color: var(--mist); }
+
+/* Law and grace */
+.columns { display: grid; gap: 1rem 2rem; margin: .2em 0 1em; }
+@media (min-width: 760px) { .columns { grid-template-columns: 1fr 1fr; } }
+.col h3 { font-size: clamp(1.4rem, 1.1rem + 1.2vw, 2.1rem); margin-bottom: .3em; }
+.col .who { color: var(--flame); font-weight: 700; font-size: .95rem; }
+.col p { font-size: clamp(1rem, .9rem + .5vw, 1.35rem); line-height: 1.45; }
+.law { border-left: 2px solid var(--mist); padding-left: 1em; }
+.grace { border-left: 2px solid var(--flame); padding-left: 1em; }
+.waves path { fill: none; stroke: var(--flame); stroke-width: 3; opacity: .8; }
+.slide.active .waves .w { animation: roll 3.6s linear infinite; }
+.waves .w2 { animation-delay: -1.2s !important; opacity: .55; }
+.waves .w3 { animation-delay: -2.4s !important; opacity: .35; }
+@keyframes roll { from { transform: translateX(0); } to { transform: translateX(-120px); } }
+
+/* Three "no" stamps */
+.asks { display: grid; gap: clamp(.6rem, 1.5vh, 1rem); margin: .2em 0 1em; }
+.ask { display: grid; grid-template-columns: 1fr auto; gap: .2em 1.2em; align-items: center; padding-bottom: .6em; border-bottom: 1px solid rgb(174 173 203 / .2); }
+.ask .q { font-family: var(--serif); font-size: clamp(1.2rem, 1rem + 1vw, 1.8rem); }
+.ask .ctx { grid-column: 1; color: var(--mist); font-size: clamp(.92rem, .85rem + .35vw, 1.15rem); line-height: 1.4; }
+.stamp {
+  grid-row: 1 / span 2; grid-column: 2;
+  font-weight: 700; color: var(--blood); border: 3px solid var(--blood); border-radius: 6px;
+  padding: .15em .5em; font-size: clamp(1.1rem, .9rem + .8vw, 1.6rem); white-space: nowrap;
+  transform: rotate(-6deg) scale(2); opacity: 0; transition: transform .35s cubic-bezier(.3,1.6,.5,1), opacity .2s;
+}
+.ask.on .stamp { transform: rotate(-6deg) scale(1); opacity: 1; transition-delay: .35s; }
+
+/* Road */
+.hill { transform-box: fill-box; transform-origin: 50% 100%; transition: transform 1.4s ease; }
+.crooked { transition: opacity 1s ease; }
+.road:has(.road-go.on) .hill { transform: scaleY(.12); }
+.road:has(.road-go.on) .crooked { opacity: 0; }
+.road:has(.road-go.on) .draw { stroke-dashoffset: 0; transition-delay: .6s; }
+
+/* Lamb flock */
+.flock { display: grid; grid-template-columns: repeat(12, 1fr); gap: 4px 6px; margin: .2em 0 1em; color: var(--parch); }
+.flock svg { width: 100%; height: auto; }
+.flock .lamb { opacity: 0; transition: opacity .5s ease, color .8s ease, filter .8s ease; transition-delay: calc(var(--i) * 18ms); }
+.ex-lamb:has(.l2.on) .lamb { opacity: .6; }
+.ex-lamb:has(.l3.on) .lamb { opacity: .06; transition-delay: 0s; }
+.flock .lamb.chosen { opacity: 1 !important; }
+.ex-lamb:has(.l3.on) .lamb.chosen { color: var(--flame-hot); filter: drop-shadow(0 0 10px rgb(242 178 76 / .9)); transform: scale(1.35); }
+
+/* Dove */
+.dove { transform: translate(200px, 20px); }
+.slide.active .dove { animation: descend 4s .6s ease-in-out forwards; }
+@keyframes descend { to { transform: translate(200px, 228px); } }
+.wing { transform-box: fill-box; transform-origin: 50% 100%; }
+.slide.active .wing { animation: flap .5s ease-in-out 8 alternate; animation-delay: .6s; }
+@keyframes flap { to { transform: scaleY(-.4); } }
+
+/* Sun arc */
+.sun { transform-origin: 300px 250px; transform: rotate(0deg); }
+.slide.active .sun { animation: arc 3.6s .5s cubic-bezier(.4,0,.2,1) forwards; }
+@keyframes arc { to { transform: rotate(150deg); } }
+
+/* Three languages */
+.tongues { display: grid; gap: 1rem; margin: .2em 0 1em; text-align: center; grid-template-columns: repeat(3, 1fr); align-items: end; }
+.tongues .w { font-family: var(--serif); font-size: clamp(1.6rem, 1rem + 3vw, 3.6rem); color: var(--flame-hot); line-height: 1.2; }
+.tongues .t { font-size: clamp(.95rem, .85rem + .4vw, 1.2rem); }
+.tongues .l { color: var(--mist); font-size: clamp(.85rem, .8rem + .3vw, 1.05rem); }
+.oil {
+  width: 14px; height: 20px; margin: 0 auto .6em; background: var(--flame);
+  border-radius: 50% 50% 50% 50% / 62% 62% 38% 38%; opacity: 0;
+}
+.slide.active .oil { animation: drip 2.4s .4s ease-in infinite; }
+@keyframes drip { 0% { opacity: 0; transform: translateY(-30px) scale(.6); } 20% { opacity: 1; } 70% { opacity: 1; transform: translateY(10px) scale(1); } 100% { opacity: 0; transform: translateY(16px) scale(1.4, .4); } }
+
+/* New name */
+.rename { display: flex; flex-wrap: wrap; align-items: center; gap: .6em 1.2em; margin: .2em 0 1em; font-family: var(--serif); }
+.rename .old { font-size: clamp(1.5rem, 1rem + 2.4vw, 3rem); color: var(--mist); transition: opacity 1s, filter 1s; }
+.ex-name:has(.n2.on) .old { opacity: .35; filter: blur(1.5px); }
+.rename .arrow { font-size: 2rem; color: var(--flame); }
+.rename .new { font-size: clamp(2.2rem, 1.2rem + 4.5vw, 5.4rem); color: var(--flame-hot); line-height: 1; }
+.rename .gloss { font-family: var(--sans); font-size: clamp(1rem, .9rem + .5vw, 1.35rem); color: var(--parch); }
+
+/* Who brought whom */
+.chains { display: grid; gap: clamp(.6rem, 1.6vh, 1.1rem); margin: .2em 0 1em; }
+.chain { display: flex; flex-wrap: wrap; align-items: center; gap: .4em .5em; font-size: clamp(1rem, .88rem + .6vw, 1.4rem); }
+.who-chip { padding: .25em .7em; border-radius: 999px; border: 1.5px solid rgb(241 230 207 / .5); white-space: nowrap; }
+.who-chip.jesus { border-color: var(--flame); color: #1a1230; background: var(--flame-hot); font-weight: 700; box-shadow: 0 0 18px rgb(242 178 76 / .45); }
+.said { font-family: var(--serif); font-style: italic; color: var(--flame-hot); }
+.said::before { content: "\2192\00a0"; font-style: normal; color: var(--mist); }
+
+/* Ladder */
+.angel { fill: var(--flame-hot); filter: drop-shadow(0 0 6px #ffd27a); opacity: 0; }
+.slide.active .angel.up { animation: up 3.4s linear infinite; }
+.slide.active .angel.down { animation: down 3.4s linear infinite; }
+@keyframes up { 0% { opacity: 0; transform: translateY(0); } 12%, 85% { opacity: 1; } 100% { opacity: 0; transform: translateY(-330px); } }
+@keyframes down { 0% { opacity: 0; transform: translateY(0); } 12%, 85% { opacity: 1; } 100% { opacity: 0; transform: translateY(330px); } }
+
+/* ---------- Questions ---------- */
+@media (min-width: 900px) and (min-aspect-ratio: 4/3) {
+  .qa .inner { display: grid; grid-template-columns: 1fr 1.45fr; gap: 0 3rem; align-items: start; width: min(100%, 76rem); }
+  .qa-left { position: sticky; top: 0; }
+}
+.qa .counter { color: var(--mist); font-size: clamp(.9rem, .85rem + .3vw, 1.1rem); margin-bottom: .3em; }
+.qa .topic { margin-bottom: .3em; }
+.qa h2 { margin-bottom: .2em; }
+.qa .ask-line { color: var(--mist); font-size: clamp(1rem, .9rem + .5vw, 1.35rem); margin-bottom: 1em; }
+.qa .quote { margin-bottom: .8em; color: var(--parch); font-style: normal; }
+.answer { margin-top: 1em; padding: 1em 1.2em; background: rgb(242 178 76 / .1); border-left: 3px solid var(--flame); }
+.answer h3 { font-size: clamp(1.2rem, 1rem + .8vw, 1.6rem); color: var(--flame-hot); margin-bottom: .3em; }
+.answer p { font-size: clamp(1.05rem, .9rem + .7vw, 1.45rem); line-height: 1.5; }
+.reveal {
+  margin-top: 1.2em; font: 700 clamp(1rem, .9rem + .4vw, 1.2rem) var(--sans);
+  padding: .7em 1.4em; border-radius: 999px; border: 0; cursor: pointer;
+  background: var(--flame); color: #1a1230;
+}
+.reveal:hover { background: var(--flame-hot); }
+
+/* ---------- Prayer ---------- */
+.prayer .inner { text-align: center; }
+.prayer h2 { font-size: clamp(2.6rem, 1.6rem + 5vw, 6rem); font-weight: 300; }
+.prayer .ask-line { font-size: clamp(1.15rem, .95rem + 1vw, 1.8rem); margin-bottom: 2em; }
+.prayer .quote { border: 0; padding: 0; margin: 0 auto; max-width: 34em; }
+.candle-row { display: flex; justify-content: center; margin-bottom: 1.4em; }
+.candle-row .flame { position: relative; left: auto; top: auto; translate: none; box-shadow: 0 0 60px 20px rgb(242 178 76 / .25); }
+
+/* ---------- Navigation ---------- */
+.nav {
+  position: fixed; left: 0; right: 0; bottom: 0; z-index: 10;
+  display: flex; align-items: center; gap: .6rem;
+  padding: .6rem clamp(12px, 3vw, 28px) calc(.6rem + env(safe-area-inset-bottom));
+}
+.nav button, .nav a {
+  width: 44px; height: 44px; border-radius: 50%; border: 1px solid rgb(241 230 207 / .25);
+  background: rgb(13 16 48 / .5); color: var(--parch); cursor: pointer; display: grid; place-items: center;
+}
+.nav button:hover, .nav a:hover { border-color: var(--flame); }
+.nav svg { width: 20px; height: 20px; }
+.horizon { flex: 1; height: 2px; background: rgb(241 230 207 / .15); position: relative; border-radius: 2px; }
+.horizon span { position: absolute; left: 0; top: 0; bottom: 0; background: var(--flame); box-shadow: 0 0 10px var(--flame); transition: width .6s ease; border-radius: 2px; }
+.count { font-size: .9rem; color: var(--mist); min-width: 4.5em; text-align: right; font-variant-numeric: tabular-nums; }
+:focus-visible { outline: 2px solid var(--flame-hot); outline-offset: 3px; }
+
+/* ---------- Version chooser ---------- */
+.chooser { position: fixed; inset: 0; z-index: 20; display: grid; place-items: center; padding: 16px; background: var(--night); }
+.chooser[hidden] { display: none; }
+.chooser .box { width: min(100%, 34rem); text-align: center; }
+.chooser h1 { font-size: clamp(3rem, 2rem + 6vw, 6rem); font-weight: 300; }
+.chooser p { color: var(--mist); margin: .6em 0 1.6em; font-size: 1.1rem; }
+.home-link { display: inline-block; margin-top: .6rem; color: var(--mist); }
+.chooser button {
+  display: block; width: 100%; text-align: left; margin-bottom: .8rem; cursor: pointer;
+  padding: 1rem 1.2rem; border-radius: 10px; border: 1.5px solid rgb(241 230 207 / .3);
+  background: rgb(255 255 255 / .04); color: var(--parch); font: 1.05rem var(--sans);
+}
+.chooser button:hover { border-color: var(--flame); }
+.chooser button strong { display: block; font: 600 1.4rem var(--serif); color: var(--flame-hot); }
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; transition-delay: 0s !important; }
+}
+</style>
+</head>
+<body>
+<div class="sky"></div>
+<div class="stars"></div>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="lamb" viewBox="0 0 60 44">
+    <g fill="currentColor">
+      <circle cx="17" cy="19" r="9"/><circle cx="27" cy="13" r="10"/><circle cx="37" cy="17" r="9"/><circle cx="27" cy="24" r="10"/>
+      <ellipse cx="48" cy="15" rx="6.5" ry="5"/>
+    </g>
+    <g stroke="currentColor" stroke-width="3" stroke-linecap="round">
+      <line x1="19" y1="29" x2="19" y2="41"/><line x1="35" y1="29" x2="35" y2="41"/>
+    </g>
+  </symbol>
+</svg>
+
+<div class="chooser" id="chooser" hidden>
+  <div class="box">
+    <h1>John 1</h1>
+    <p>Choose how to read.</p>
+    <button type="button" data-mode="full"><strong>Full reading</strong>Every verse of the chapter is on screen.</button>
+    <button type="button" data-mode="key"><strong>Key verses</strong>Read along in your own Bible. The key verses and all the explanations are on screen.</button>
+    <a class="home-link" href="../index.html">All studies</a>
+  </div>
+</div>
+
+<main class="deck" id="deck">
+
+<!-- ======================= OPENING ======================= -->
+<section class="slide title">
+  <div class="spark"></div>
+  <div class="inner">
+    <h1 class="rise">John 1</h1>
+    <p class="sub rise" style="--d:3">The Word, the witness, and the Lamb</p>
+    <p class="tag rise" style="--d:5">John the Baptist tells the world who Jesus is, and what He came to do.</p>
+  </div>
+</section>
+
+<section class="slide watch">
+  <div class="inner">
+    <h2 class="rise">Things to watch for</h2>
+    <p class="lede rise" style="--d:1">Keep these questions in the back of your mind as we read. We'll come back to every one of them at the end.</p>
+    <ol class="seeds">
+      <li class="step"><span class="topic">Who Jesus is</span><span class="seed-q">Was Jesus created, or is He God?</span></li>
+      <li class="step"><span class="topic">Salvation (soteriology)</span><span class="seed-q">How does a person become a child of God?</span></li>
+      <li class="step"><span class="topic">Light and darkness</span><span class="seed-q">Can the darkness put out the light?</span></li>
+      <li class="step"><span class="topic">The Lamb of God</span><span class="seed-q">What did Jesus come to do?</span></li>
+      <li class="step"><span class="topic">Being a witness</span><span class="seed-q">What does a witness do?</span></li>
+      <li class="step"><span class="topic">A new name</span><span class="seed-q">What happens when Jesus meets someone?</span></li>
+    </ol>
+  </div>
+</section>
+
+<!-- ======================= PART ONE: THE WORD ======================= -->
+<section class="slide part">
+  <div class="inner">
+    <p class="part-n rise">Part one</p>
+    <h2 class="rise" style="--d:1">The Word</h2>
+    <p class="range rise" style="--d:2">Verses 1–18</p>
+    <div class="rule"></div>
+    <p class="hook rise" style="--d:4">Before anything existed, He was already there.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="1-2" data-hl="the Word was God"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise">John starts where the Bible starts</h2>
+    <div class="pair">
+      <div class="scroll rise" style="--d:2"><p class="ref">Genesis 1:1</p><p class="kjv"><mark>In the beginning</mark> God created the heaven and the earth.</p></div>
+      <div class="scroll step"><p class="ref">John 1:1</p><p class="kjv"><mark>In the beginning</mark> was the Word, and the Word was with God, and the Word was God.</p></div>
+    </div>
+    <p class="note step">Genesis tells us what God <em>made</em> in the beginning. John tells us who <em>was already there</em> when it began. The Word didn't start at the beginning. He was there when the beginning happened.</p>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="1" data-hl="the Word"></blockquote>
+    <h2 class="rise" style="--d:1">What does “the Word” mean?</h2>
+    <div class="morph">
+      <span class="big rise" style="--d:3">λόγος</span>
+      <span class="say step">said <em class="gk">logos</em></span>
+      <span class="means step">word, message, what's on someone's mind</span>
+    </div>
+    <p class="note step">Your words show people what's going on inside you. Jesus is God's Word. When we look at Jesus, we see exactly what God is like. Verse 18 says it plainly: He “hath declared him.”</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="3" data-hl="All things were made by him"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="3" data-hl="All things were made by him|without him was not any thing made that was made"></blockquote>
+    <div class="split">
+      <div class="stage">
+        <svg viewBox="0 0 640 380" role="img" aria-label="The Word stands outside the circle of everything that was made, and made all of it.">
+          <defs>
+            <radialGradient id="wordGlow"><stop offset="0" stop-color="#ffe2a3"/><stop offset=".55" stop-color="#f2b24c" stop-opacity=".5"/><stop offset="1" stop-color="#f2b24c" stop-opacity="0"/></radialGradient>
+          </defs>
+          <g class="rise" style="--d:2">
+            <circle cx="430" cy="190" r="175" fill="rgb(255 255 255 / .04)" stroke="#aeadcb" stroke-width="2" stroke-dasharray="6 8"/>
+            <text x="430" y="52" text-anchor="middle" font-size="20" fill="#aeadcb">everything that was made</text>
+            <text x="365" y="120" text-anchor="middle" font-size="26">stars</text>
+            <text x="490" y="125" text-anchor="middle" font-size="26">sun</text>
+            <text x="430" y="175" text-anchor="middle" font-size="26">angels</text>
+            <text x="340" y="228" text-anchor="middle" font-size="26">earth</text>
+            <text x="515" y="215" text-anchor="middle" font-size="26">animals</text>
+            <text x="420" y="275" text-anchor="middle" font-size="26">people</text>
+            <text x="515" y="300" text-anchor="middle" font-size="22" fill="#aeadcb">time</text>
+            <text x="350" y="310" text-anchor="middle" font-size="22" fill="#aeadcb">you</text>
+          </g>
+          <g class="step">
+            <circle cx="95" cy="190" r="90" fill="url(#wordGlow)"/>
+            <circle cx="95" cy="190" r="46" fill="#ffe2a3"/>
+            <text x="95" y="197" text-anchor="middle" font-size="20" font-weight="700" fill="#1a1230" class="serif">The Word</text>
+            <path class="draw" pathLength="1" d="M150 190 L245 190" stroke="#f2b24c" stroke-width="4" fill="none"/>
+            <path class="draw" pathLength="1" d="M232 178 L248 190 L232 202" stroke="#f2b24c" stroke-width="4" fill="none"/>
+            <text x="198" y="172" text-anchor="middle" font-size="20" fill="#ffe2a3">made</text>
+            <text x="198" y="222" text-anchor="middle" font-size="20" fill="#ffe2a3">it all</text>
+          </g>
+        </svg>
+      </div>
+      <div>
+        <h2 class="rise" style="--d:1">Was Jesus created?</h2>
+        <p class="note step">Some groups teach that Jesus was the first thing God created. Verse 3 closes that door.</p>
+        <p class="note step">If He made <em>every thing that was made</em>, He can't be one of the things that were made. The Maker isn't part of what He made. Jesus is the Creator. He is God.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="slide verse" data-v="4-5" data-hl="the darkness comprehended it not"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="5" data-hl="the darkness comprehended it not"></blockquote>
+    <div class="split">
+      <div class="stage lamp rise" style="--d:1" role="img" aria-label="Darkness closes in on a small flame, then the flame pushes it back.">
+        <div class="shadow"></div>
+        <div class="flame"></div>
+      </div>
+      <div>
+        <h2 class="rise" style="--d:2">“Comprehended it not”</h2>
+        <p class="note rise" style="--d:3">Here “comprehended” means <em>grabbed hold of, overpowered</em> (Greek <span class="gk">katalambanō</span>). The darkness has tried to seize the light and snuff it out. It never has, and it never will.</p>
+        <p class="note step">Strike a match in a dark room. The dark doesn't fight back. It just leaves. Whatever darkness you came out of, it's weaker than Jesus.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="slide verse" data-v="6-8" data-only="full"></section>
+<section class="slide verse" data-v="9-11" data-only="full"></section>
+
+<section class="slide verse" data-v="12-13" data-hl="as many as received him|power to become the sons of God"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="12" data-hl="power"></blockquote>
+    <h2 class="rise" style="--d:1">How do you become a child of God?</h2>
+    <p class="note rise" style="--d:2">“Power” here means <em>the right, the legal standing</em> (Greek <span class="gk">exousia</span>). Think adoption papers. Once they're signed, that child belongs to the family.</p>
+    <ul class="nots">
+      <li class="step"><span class="k">not of blood</span><span class="why">your family line can't do it</span></li>
+      <li class="step"><span class="k">nor of the will of the flesh</span><span class="why">your own willpower can't do it</span></li>
+      <li class="step"><span class="k">nor of the will of man</span><span class="why">nobody else can decide it for you</span></li>
+      <li class="step yes"><span class="k">but of God</span><span class="why">a new birth only He can give</span></li>
+    </ul>
+    <p class="note step">And who is it offered to? <em>“As many as received him.”</em> Anyone who believes on His name. Nobody is too far gone to be offered this.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="14" data-hl="the Word was made flesh, and dwelt among us"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="14" data-hl="dwelt among us"></blockquote>
+    <div class="split">
+      <div class="stage">
+        <svg viewBox="0 0 600 300" role="img" aria-label="The tabernacle tent in the middle of the camp, with God's glory over it.">
+          <defs>
+            <radialGradient id="glory"><stop offset="0" stop-color="#fff4d6"/><stop offset=".4" stop-color="#f2b24c" stop-opacity=".55"/><stop offset="1" stop-color="#f2b24c" stop-opacity="0"/></radialGradient>
+          </defs>
+          <line x1="0" y1="250" x2="600" y2="250" stroke="#aeadcb" stroke-width="2"/>
+          <g class="rise" style="--d:2" fill="none" stroke="#aeadcb" stroke-width="2">
+            <path d="M40 250 l22 -26 l22 26"/><path d="M95 250 l18 -22 l18 22"/><path d="M470 250 l22 -26 l22 26"/><path d="M528 250 l18 -22 l18 22"/>
+          </g>
+          <g class="rise" style="--d:3">
+            <rect x="150" y="205" width="300" height="45" fill="none" stroke="#f1e6cf" stroke-width="2" stroke-dasharray="3 5"/>
+            <path d="M330 250 L330 175 L360 150 L440 150 L440 250 Z" fill="#3a2a3a" stroke="#f1e6cf" stroke-width="2"/>
+            <path d="M330 175 L410 175 L440 150" fill="none" stroke="#f1e6cf" stroke-width="2"/>
+            <rect x="200" y="225" width="30" height="20" fill="none" stroke="#f1e6cf" stroke-width="2"/>
+          </g>
+          <circle class="step" cx="385" cy="110" r="110" fill="url(#glory)"/>
+          <text x="300" y="285" text-anchor="middle" font-size="20" fill="#aeadcb">Israel's camp in the wilderness</text>
+        </svg>
+      </div>
+      <div>
+        <h2 class="rise" style="--d:1">God pitched His tent</h2>
+        <p class="note rise" style="--d:2">“Dwelt” means <em>lived in a tent</em> (Greek <span class="gk">skēnoō</span>). It points back to the tabernacle, the tent God had Israel set up in the middle of their camp.</p>
+        <p class="note step">When it was finished, “the glory of the LORD filled the tabernacle” (Exodus 40:34).</p>
+        <p class="note step">Now God has pitched His tent among us again, this time in a human body. “The Word was made flesh.”</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="slide verse" data-v="15" data-only="full" data-hl="for he was before me"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="15" data-hl="He that cometh after me is preferred before me: for he was before me"></blockquote>
+    <h2 class="rise" style="--d:1">Born later, yet before</h2>
+    <div class="stage">
+      <svg viewBox="0 0 640 210" role="img" aria-label="Timeline: John is born first, Jesus six months later, but the Word existed forever before both.">
+        <defs>
+          <linearGradient id="eternal" x1="0" x2="1"><stop offset="0" stop-color="#f2b24c" stop-opacity="0"/><stop offset="1" stop-color="#f2b24c"/></linearGradient>
+        </defs>
+        <line class="rise" style="--d:2" x1="390" y1="110" x2="620" y2="110" stroke="#aeadcb" stroke-width="3"/>
+        <g class="rise" style="--d:3">
+          <circle cx="440" cy="110" r="9" fill="#f1e6cf"/>
+          <text x="440" y="150" text-anchor="middle" font-size="20">John born</text>
+        </g>
+        <g class="rise" style="--d:5">
+          <circle cx="540" cy="110" r="11" fill="#ffe2a3"/>
+          <text x="540" y="150" text-anchor="middle" font-size="20">Jesus born</text>
+          <text x="540" y="175" text-anchor="middle" font-size="16" fill="#aeadcb">about 6 months later</text>
+          <text x="540" y="198" text-anchor="middle" font-size="16" fill="#aeadcb">(Luke 1:36)</text>
+        </g>
+        <g class="step">
+          <rect x="10" y="106" width="380" height="8" fill="url(#eternal)"/>
+          <path class="draw" pathLength="1" d="M540 96 C 500 30, 200 30, 40 96" fill="none" stroke="#f2b24c" stroke-width="3"/>
+          <text x="20" y="150" font-size="22" fill="#ffe2a3" class="serif">“In the beginning was the Word”</text>
+          <text x="20" y="176" font-size="18" fill="#aeadcb">no starting point</text>
+        </g>
+      </svg>
+    </div>
+    <p class="note step">John was born first. But Jesus “was before” him, because the Word existed before everything. Jesus' birth in Bethlehem was when God took on flesh. It wasn't when He started existing.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="16-18" data-only="full" data-hl="grace and truth came by Jesus Christ|the only begotten Son"></section>
+<section class="slide verse" data-v="17-18" data-only="key" data-hl="grace and truth came by Jesus Christ|the only begotten Son"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="16-17" data-hl="grace for grace|the law was given by Moses|grace and truth came by Jesus Christ"></blockquote>
+    <h2 class="rise" style="--d:1">The law and grace</h2>
+    <div class="columns">
+      <div class="col law rise" style="--d:2">
+        <p class="who">Through Moses</p>
+        <h3>The law</h3>
+        <p>Shows God's standard, and shows us exactly where we fall short. “By the law is the knowledge of sin” (Romans 3:20).</p>
+      </div>
+      <div class="col grace step">
+        <p class="who">Through Jesus</p>
+        <h3>Grace and truth</h3>
+        <p>Grace: favor you didn't earn and can't pay back. Truth: the real thing, no more shadows.</p>
+      </div>
+    </div>
+    <div class="step">
+      <svg class="waves" viewBox="0 0 600 60" width="100%" height="50" preserveAspectRatio="none" aria-hidden="true">
+        <path class="w" d="M0 30 q30 -20 60 0 t60 0 t60 0 t60 0 t60 0 t60 0 t60 0 t60 0 t60 0 t60 0 t60 0 t60 0"/>
+        <path class="w w2" d="M0 40 q30 -20 60 0 t60 0 t60 0 t60 0 t60 0 t60 0 t60 0 t60 0 t60 0 t60 0 t60 0 t60 0"/>
+        <path class="w w3" d="M0 50 q30 -20 60 0 t60 0 t60 0 t60 0 t60 0 t60 0 t60 0 t60 0 t60 0 t60 0 t60 0 t60 0"/>
+      </svg>
+      <p class="note">“Grace for grace” means grace on top of grace, like waves rolling in one after another. His grace doesn't run out.</p>
+    </div>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="18" data-hl="the only begotten Son|he hath declared him"></blockquote>
+    <h2 class="rise" style="--d:1">“Only begotten” doesn't mean “made”</h2>
+    <div class="morph">
+      <span class="big rise" style="--d:3">μονογενής</span>
+      <span class="means step"><span class="gk">mono</span> = only &nbsp;+&nbsp; <span class="gk">genēs</span> = kind. <em class="gk">One of a kind.</em></span>
+    </div>
+    <p class="note step">Proof from the Bible itself: Hebrews 11:17 calls Isaac Abraham's “only begotten son.” But Abraham had another son, Ishmael. Isaac wasn't the only son. He was the unique one, the son of the promise.</p>
+    <p class="note step">Jesus isn't God's first creation. He is God's one and only Son, God Himself, from forever. And “declared” is where we get our word <em>exegesis</em>: to explain, to lay out. Jesus explains God to us.</p>
+  </div>
+</section>
+
+<!-- ======================= PART TWO: THE WITNESS ======================= -->
+<section class="slide part">
+  <div class="inner">
+    <p class="part-n rise">Part two</p>
+    <h2 class="rise" style="--d:1">The witness</h2>
+    <p class="range rise" style="--d:2">Verses 19–34</p>
+    <div class="rule"></div>
+    <p class="hook rise" style="--d:4">A voice in the wilderness points away from himself, to the Lamb.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="19-22" data-only="full"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="19" data-hl="Who art thou?"></blockquote>
+    <h2 class="rise" style="--d:1">Three questions, three no's</h2>
+    <div class="asks">
+      <div class="ask step"><span class="q">“Art thou the Christ?”</span><span class="stamp">I am not</span><span class="ctx">“Christ” is a title, not a last name. It comes from the Greek <span class="gk">Christos</span>, meaning “the Anointed One.” That's the same word as the Hebrew <span class="gk">Mashiach</span>, Messiah. They were asking: are you the King God promised to send?</span></div>
+      <div class="ask step"><span class="q">“Art thou Elias?”</span><span class="stamp">I am not</span><span class="ctx">Elijah. Malachi 4:5 promised God would send Elijah before “the great and dreadful day of the LORD.”</span></div>
+      <div class="ask step"><span class="q">“Art thou that prophet?”</span><span class="stamp">No</span><span class="ctx">Moses promised “a Prophet… like unto me” (Deuteronomy 18:15).</span></div>
+    </div>
+    <p class="note step">Notice John's answers keep getting shorter. He refuses to make it about himself. (Jesus later said John came in the spirit and power of Elijah, Matthew 11:14 and Luke 1:17. But John wasn't Elijah come back, and he wasn't going to take any credit.)</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="23" data-hl="Make straight the way of the Lord"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="23" data-hl="Make straight the way of the Lord"></blockquote>
+    <div class="split road">
+      <div class="stage">
+        <svg viewBox="0 0 600 240" role="img" aria-label="A crooked road over hills is leveled and made straight.">
+          <g>
+            <path class="hill" d="M60 200 L150 80 L240 200 Z" fill="#2a2850" stroke="#aeadcb" stroke-width="2"/>
+            <path class="hill" d="M300 200 L380 110 L460 200 Z" fill="#2a2850" stroke="#aeadcb" stroke-width="2"/>
+            <path class="crooked" d="M20 200 C70 200 90 90 150 85 C210 80 220 210 270 205 C320 200 340 120 380 115 C420 110 440 205 480 200 C520 195 540 200 580 200" fill="none" stroke="#aeadcb" stroke-width="5" stroke-dasharray="10 8"/>
+            <path class="draw" pathLength="1" d="M20 200 L580 200" fill="none" stroke="#f2b24c" stroke-width="6" stroke-linecap="round"/>
+          </g>
+          <line x1="0" y1="203" x2="600" y2="203" stroke="#aeadcb" stroke-width="1" opacity=".4"/>
+          <text x="580" y="232" text-anchor="end" font-size="18" fill="#ffe2a3">the way of the Lord</text>
+        </svg>
+      </div>
+      <div>
+        <h2 class="rise" style="--d:1">Clearing the road</h2>
+        <p class="note rise" style="--d:2">Before a king traveled, workers went ahead of him to fill in the holes, cut down the hills, and straighten the road.</p>
+        <p class="note step road-go">Isaiah 40:4: “Every valley shall be exalted, and every mountain and hill shall be made low: and the crooked shall be made straight.”</p>
+        <p class="note step">John's job was getting people ready for Jesus by calling them to <em>repent</em>: to turn around and clear out whatever stands in the way.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="slide verse" data-v="24-28" data-only="full" data-hl="whose shoe’s latchet I am not worthy to unloose"></section>
+<section class="slide verse" data-v="26-27" data-only="key" data-hl="whose shoe’s latchet I am not worthy to unloose"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="27" data-hl="whose shoe’s latchet I am not worthy to unloose"></blockquote>
+    <div class="split">
+      <div class="stage">
+        <svg viewBox="0 0 440 300" role="img" aria-label="A sandal, with the strap called the latchet highlighted.">
+          <g class="rise" style="--d:2">
+            <path d="M160 20 C225 20 245 105 236 170 C228 235 214 285 160 285 C106 285 92 235 84 170 C75 105 95 20 160 20 Z" fill="#5b3f2c" stroke="#a4764f" stroke-width="3"/>
+            <path d="M92 120 Q160 95 228 120" fill="none" stroke="#a4764f" stroke-width="13" stroke-linecap="round"/>
+            <path d="M88 175 Q160 150 232 175" fill="none" stroke="#a4764f" stroke-width="13" stroke-linecap="round"/>
+            <path d="M160 32 L160 110" stroke="#a4764f" stroke-width="9" stroke-linecap="round"/>
+          </g>
+          <g class="step">
+            <path class="draw" pathLength="1" d="M232 175 C285 185 290 230 245 245 C215 255 200 240 214 228" fill="none" stroke="#f2b24c" stroke-width="7" stroke-linecap="round"/>
+            <text x="300" y="200" font-size="24" fill="#ffe2a3" font-weight="700">the latchet</text>
+            <text x="300" y="226" font-size="20" fill="#ffe2a3">the strap</text>
+          </g>
+        </svg>
+      </div>
+      <div>
+        <h2 class="rise" style="--d:1">The lowest job in the house</h2>
+        <p class="note rise" style="--d:2">Roads were dirt and dung. When a guest came in, untying his filthy sandals was a slave's job, the lowest one there was.</p>
+        <p class="note step">John was the most famous preacher in Israel. Crowds came out to hear him. He said he wasn't worthy to do even <em>that</em> for Jesus.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="slide verse" data-v="29" data-hl="Behold the Lamb of God, which taketh away the sin of the world"></section>
+
+<section class="slide ex ex-lamb">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="29" data-hl="the Lamb of God|taketh away|the world"></blockquote>
+    <h2 class="rise" style="--d:1">Behold the Lamb</h2>
+    <div class="flock" id="flock" aria-hidden="true"></div>
+    <p class="note rise" style="--d:2">At the first Passover, a lamb died and its blood went on the doorposts. Death passed over that house (Exodus 12).</p>
+    <p class="note step l2">After that, two lambs were offered every single day, morning and evening, year after year (Exodus 29:38–39). Sin was covered, but never removed. “It is not possible that the blood of bulls and of goats should take away sins” (Hebrews 10:4).</p>
+    <p class="note step l3">Then John points at Jesus. <em>The Lamb of God</em>, God's own Lamb. He doesn't just cover sin. He <em>takes it away</em>. And not for one family or one nation, but for the world.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="30-31" data-only="full"></section>
+
+<section class="slide verse" data-v="32-34" data-hl="the Spirit descending from heaven like a dove|baptizeth with the Holy Ghost|this is the Son of God"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="33" data-hl="he that sent me|the Spirit descending|baptizeth with the Holy Ghost"></blockquote>
+    <div class="split">
+      <div class="stage">
+        <svg viewBox="0 0 400 380" role="img" aria-label="The Father above, the Spirit descending like a dove, the Son in the water.">
+          <defs>
+            <radialGradient id="heaven"><stop offset="0" stop-color="#fff4d6"/><stop offset=".5" stop-color="#f2b24c" stop-opacity=".35"/><stop offset="1" stop-color="#f2b24c" stop-opacity="0"/></radialGradient>
+          </defs>
+          <ellipse cx="200" cy="20" rx="190" ry="70" fill="url(#heaven)"/>
+          <text x="200" y="30" text-anchor="middle" font-size="22" font-weight="700" fill="#1a1230">The Father</text>
+          <text x="200" y="56" text-anchor="middle" font-size="16" fill="#1a1230">“he that sent me” (v. 33)</text>
+          <g class="dove">
+            <path class="wing" d="M-34 0 Q-16 -26 0 0 Q16 -26 34 0" fill="none" stroke="#fff" stroke-width="4" stroke-linecap="round"/>
+            <ellipse cx="0" cy="4" rx="9" ry="6" fill="#fff"/>
+          </g>
+          <text x="262" y="200" font-size="20" fill="#ffe2a3">The Spirit</text>
+          <circle cx="200" cy="292" r="14" fill="#f1e6cf"/>
+          <path d="M182 345 L186 312 Q200 304 214 312 L218 345 Z" fill="#f1e6cf"/>
+          <g fill="none" stroke="#7fb6d4" stroke-width="3">
+            <path d="M80 340 q20 -10 40 0 t40 0 t40 0 t40 0 t40 0 t40 0"/>
+            <path d="M60 356 q20 -10 40 0 t40 0 t40 0 t40 0 t40 0 t40 0 t40 0"/>
+          </g>
+          <text x="250" y="300" font-size="20" fill="#ffe2a3">The Son</text>
+          <text x="200" y="378" text-anchor="middle" font-size="15" fill="#7fb6d4">the Jordan River</text>
+        </svg>
+      </div>
+      <div>
+        <h2 class="rise" style="--d:1">Father, Son, and Holy Spirit</h2>
+        <p class="note rise" style="--d:2">The Father sent John and gave him the sign to watch for. The Spirit came down and <em>remained</em> on Jesus. One God, all three present in one scene.</p>
+        <p class="note step">John baptized with water, on the outside. Jesus baptizes with the Holy Ghost, God's own Spirit coming to live <em>inside</em> everyone who believes.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ======================= PART THREE: COME AND SEE ======================= -->
+<section class="slide part">
+  <div class="inner">
+    <p class="part-n rise">Part three</p>
+    <h2 class="rise" style="--d:1">Come and see</h2>
+    <p class="range rise" style="--d:2">Verses 35–51</p>
+    <div class="rule"></div>
+    <p class="hook rise" style="--d:4">The first followers meet Jesus, and immediately go get somebody else.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="35-39" data-only="full" data-hl="What seek ye?|Come and see|the tenth hour"></section>
+<section class="slide verse" data-v="38-39" data-only="key" data-hl="What seek ye?|Come and see|the tenth hour"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="38" data-hl="What seek ye?|Rabbi"></blockquote>
+    <h2 class="rise" style="--d:1">“What seek ye?”</h2>
+    <p class="note rise" style="--d:2">These are the very first words Jesus speaks in John's Gospel, and they're a question: <em>What are you looking for?</em></p>
+    <p class="note step">He asks it of everyone who starts following Him. Some come looking for relief, some for answers, some for a fresh start. Jesus wants you to be honest about it.</p>
+    <p class="note step">“Rabbi” means <em>teacher</em>. “Where dwellest thou?” means <em>where are you staying?</em> They didn't want a quick answer. They wanted time with Him. Jesus didn't argue. He said, “Come and see.”</p>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="39" data-hl="abode with him that day|about the tenth hour"></blockquote>
+    <div class="split">
+      <div class="stage">
+        <svg viewBox="0 0 600 300" role="img" aria-label="The sun travels across the sky from sunrise to the tenth hour, about four in the afternoon.">
+          <path d="M80 250 A220 220 0 0 1 520 250" fill="none" stroke="#aeadcb" stroke-width="2" stroke-dasharray="4 8"/>
+          <line x1="20" y1="250" x2="580" y2="250" stroke="#aeadcb" stroke-width="2"/>
+          <text x="80" y="280" text-anchor="middle" font-size="18" fill="#aeadcb">sunrise ≈ 6 a.m.</text>
+          <text x="300" y="20" text-anchor="middle" font-size="18" fill="#aeadcb">6th hour ≈ noon</text>
+          <text x="520" y="280" text-anchor="middle" font-size="18" fill="#aeadcb">sunset ≈ 6 p.m.</text>
+          <g class="step">
+            <line x1="490" y1="140" x2="510" y2="128" stroke="#f2b24c" stroke-width="3"/>
+            <text x="575" y="105" text-anchor="end" font-size="22" fill="#ffe2a3" font-weight="700">10th hour</text>
+            <text x="575" y="128" text-anchor="end" font-size="18" fill="#ffe2a3">≈ 4 p.m.</text>
+          </g>
+          <g class="sun">
+            <circle cx="80" cy="250" r="26" fill="#f2b24c" opacity=".35"/>
+            <circle cx="80" cy="250" r="16" fill="#ffe2a3"/>
+          </g>
+        </svg>
+      </div>
+      <div>
+        <h2 class="rise" style="--d:1">The tenth hour</h2>
+        <p class="note rise" style="--d:2">Hours were counted from sunrise, around 6 a.m. So the tenth hour was about 4 in the afternoon.</p>
+        <p class="note step">They didn't just stop by. They stayed with Him the rest of the day. Spending time with Jesus is how following Him starts.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="slide verse" data-v="40-42" data-only="full" data-hl="We have found the Messias|thou shalt be called Cephas"></section>
+<section class="slide verse" data-v="41-42" data-only="key" data-hl="We have found the Messias|thou shalt be called Cephas"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="41" data-hl="the Messias, which is, being interpreted, the Christ"></blockquote>
+    <h2 class="rise" style="--d:1">Messiah, Christ, Anointed</h2>
+    <div class="oil" aria-hidden="true"></div>
+    <div class="tongues">
+      <div class="rise" style="--d:2"><div class="w" lang="he">מָשִׁיחַ</div><div class="t">Mashiach</div><div class="l">Hebrew</div></div>
+      <div class="rise" style="--d:4"><div class="w" lang="el">Χριστός</div><div class="t">Christos</div><div class="l">Greek</div></div>
+      <div class="rise" style="--d:6"><div class="w">Anointed</div><div class="t">&nbsp;</div><div class="l">English</div></div>
+    </div>
+    <p class="note step">All three words mean the same thing. In the Old Testament, prophets, priests, and kings had oil poured on their heads to show God had chosen them.</p>
+    <p class="note step">“Christ” isn't Jesus' last name. It's His title. He is <em>the</em> Anointed One: Prophet, Priest, and King all in one.</p>
+  </div>
+</section>
+
+<section class="slide ex ex-name">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="42" data-hl="thou shalt be called Cephas"></blockquote>
+    <h2 class="rise" style="--d:1">A new name</h2>
+    <div class="rename">
+      <span class="old rise" style="--d:2">Simon, son of Jona</span>
+      <span class="arrow step n2">→</span>
+      <span class="new step">Cephas</span>
+      <span class="gloss step">Aramaic for <em class="gk">a stone</em>. In Greek it's <span class="gk">Petros</span>. Peter.</span>
+    </div>
+    <p class="note step">Simon was impulsive and unsteady. Later he would deny Jesus three times. Jesus named him “Rock” anyway, on the very first day they met.</p>
+    <p class="note step">Jesus calls you by who you're becoming, not by who you've been.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="43-46" data-only="full" data-hl="Follow me|Can there any good thing come out of Nazareth?|Come and see"></section>
+<section class="slide verse" data-v="45-46" data-only="key" data-hl="Can there any good thing come out of Nazareth?|Come and see"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="46" data-hl="Can there any good thing come out of Nazareth?|Come and see"></blockquote>
+    <h2 class="rise" style="--d:1">Who brought whom</h2>
+    <div class="chains">
+      <div class="chain step"><span class="who-chip">John the Baptist</span><span class="said">“Behold the Lamb of God!”</span><span class="who-chip">Andrew &amp; another disciple</span><span class="said">followed</span><span class="who-chip jesus">Jesus</span></div>
+      <div class="chain step"><span class="who-chip">Andrew</span><span class="said">“We have found the Messias”</span><span class="who-chip">his brother Simon</span><span class="said">brought him</span><span class="who-chip jesus">Jesus</span></div>
+      <div class="chain step"><span class="who-chip jesus">Jesus</span><span class="said">“Follow me”</span><span class="who-chip">Philip</span><span class="said">“Come and see”</span><span class="who-chip">Nathanael</span><span class="said">came</span><span class="who-chip jesus">Jesus</span></div>
+    </div>
+    <p class="note step">Nazareth was a small village that the Old Testament never mentions once. Nathanael's doubt made sense. Philip didn't argue. He just said, “Come and see.”</p>
+    <p class="note step">Almost everyone in this chapter met Jesus because somebody told them. You don't need all the answers. Tell what you've found, and bring someone.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="47-49" data-only="full" data-hl="in whom is no guile|under the fig tree, I saw thee"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="47-48" data-hl="in whom is no guile|under the fig tree, I saw thee"></blockquote>
+    <h2 class="rise" style="--d:1">No guile, and a fig tree</h2>
+    <p class="note rise" style="--d:2">“Guile” means <em>deceit, trickery, a hidden angle</em>.</p>
+    <p class="note step">Israel's forefather Jacob was famous for it. He tricked his father into giving him his brother's blessing: “Thy brother came with subtilty” (Genesis 27:35). God later renamed him Israel.</p>
+    <p class="note step">So Jesus says: here's a true Israelite with no Jacob in him. A straight shooter.</p>
+    <p class="note step">The shade of a fig tree was a common spot to sit, pray, and think over the Scriptures (compare Micah 4:4). Before anyone called Nathanael, Jesus saw him there. <em>Jesus knew him before they ever met.</em></p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="50-51" data-hl="thou shalt see greater things than these|ascending and descending upon the Son of man"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="51" data-hl="Verily, verily|heaven open|ascending and descending upon the Son of man"></blockquote>
+    <div class="split">
+      <div class="stage">
+        <svg viewBox="0 0 300 420" role="img" aria-label="A ladder from earth to an open heaven, with angels going up and down.">
+          <defs>
+            <radialGradient id="open"><stop offset="0" stop-color="#fff4d6"/><stop offset=".45" stop-color="#f2b24c" stop-opacity=".45"/><stop offset="1" stop-color="#f2b24c" stop-opacity="0"/></radialGradient>
+          </defs>
+          <ellipse cx="150" cy="30" rx="150" ry="70" fill="url(#open)"/>
+          <line x1="0" y1="405" x2="300" y2="405" stroke="#aeadcb" stroke-width="2"/>
+          <g stroke="#f1e6cf" stroke-width="5" stroke-linecap="round">
+            <line x1="100" y1="405" x2="128" y2="40"/>
+            <line x1="200" y1="405" x2="172" y2="40"/>
+          </g>
+          <g stroke="#f1e6cf" stroke-width="3">
+            <line x1="103" y1="370" x2="197" y2="370"/><line x1="106" y1="330" x2="194" y2="330"/>
+            <line x1="109" y1="290" x2="191" y2="290"/><line x1="112" y1="250" x2="188" y2="250"/>
+            <line x1="115" y1="210" x2="185" y2="210"/><line x1="118" y1="170" x2="182" y2="170"/>
+            <line x1="121" y1="130" x2="179" y2="130"/><line x1="124" y1="90" x2="176" y2="90"/>
+          </g>
+          <circle class="angel up" cx="80" cy="390" r="6"/>
+          <circle class="angel up" cx="80" cy="390" r="6" style="animation-delay:-1.7s"/>
+          <circle class="angel down" cx="220" cy="60" r="6" style="animation-delay:-.8s"/>
+          <circle class="angel down" cx="220" cy="60" r="6" style="animation-delay:-2.5s"/>
+          <text x="150" y="420" text-anchor="middle" font-size="16" fill="#aeadcb">earth</text>
+        </svg>
+      </div>
+      <div>
+        <h2 class="rise" style="--d:1">Jacob's ladder</h2>
+        <p class="note rise" style="--d:2">Genesis 28:12: Jacob “dreamed, and behold a ladder set up on the earth, and the top of it reached to heaven: and behold the angels of God ascending and descending on it.”</p>
+        <p class="note step">Jesus has just compared Nathanael to Jacob. Now He tells him Jacob's dream comes true in Jesus. <em>Jesus is the ladder</em>, the one connection between heaven and earth.</p>
+        <p class="note step">“Verily, verily” is <span class="gk">amēn, amēn</span>: truly, truly. When Jesus says it twice, what comes next matters.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ======================= CLOSING ======================= -->
+<section class="slide remember">
+  <div class="inner">
+    <h2 class="rise">Points to remember</h2>
+    <ol class="seeds">
+      <li class="step"><span class="topic">Who Jesus is</span><span class="seed-q">“All things were made by him” <cite>1:3</cite></span><span class="take">Jesus wasn't created. He is the Creator, God made flesh.</span></li>
+      <li class="step"><span class="topic">Salvation</span><span class="seed-q">“As many as received him…” <cite>1:12</cite></span><span class="take">Receive Him by believing on His name. The new birth is God's work, offered to anyone.</span></li>
+      <li class="step"><span class="topic">Light and darkness</span><span class="seed-q">“The darkness comprehended it not” <cite>1:5</cite></span><span class="take">Your darkness is weaker than His light. It always loses.</span></li>
+      <li class="step"><span class="topic">The Lamb of God</span><span class="seed-q">“Which taketh away the sin of the world” <cite>1:29</cite></span><span class="take">Not covered, taken away. And offered to the whole world.</span></li>
+      <li class="step"><span class="topic">Being a witness</span><span class="seed-q">“Come and see” <cite>1:46</cite></span><span class="take">Point to Jesus, not yourself. Tell what you've found.</span></li>
+      <li class="step"><span class="topic">A new name</span><span class="seed-q">“Thou shalt be called Cephas” <cite>1:42</cite></span><span class="take">Jesus sees who you're becoming, not just who you've been.</span></li>
+    </ol>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+    <p class="counter">Question 1 of 6</p>
+    <span class="topic">Who Jesus is</span>
+    <h2>Was Jesus created, or is He God?</h2>
+    <p class="ask-line">What verses tell us about this?</p>
+    <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+    <blockquote class="quote step" data-q="1"></blockquote>
+    <blockquote class="quote step" data-q="3"></blockquote>
+    <blockquote class="quote step" data-q="10"></blockquote>
+    <blockquote class="quote step" data-q="15" data-hl="for he was before me"></blockquote>
+    <div class="answer step"><h3>Answer</h3><p>Jesus was never created. The Word already <em>was</em> in the beginning, was with God, and <em>was God</em>. He made everything that was made, so He can't be one of the made things. He is God who became flesh.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+    <p class="counter">Question 2 of 6</p>
+    <span class="topic">Salvation (soteriology)</span>
+    <h2>How does a person become a child of God?</h2>
+    <p class="ask-line">What verses tell us about this?</p>
+    <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+    <blockquote class="quote step" data-q="7" data-hl="that all men through him might believe"></blockquote>
+    <blockquote class="quote step" data-q="12"></blockquote>
+    <blockquote class="quote step" data-q="13"></blockquote>
+    <div class="answer step"><h3>Answer</h3><p>By receiving Jesus, which means believing on His name. It doesn't come from your family, your willpower, or anyone else deciding for you. The new birth is God's work. And “as many as” means the door is open to anyone.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+    <p class="counter">Question 3 of 6</p>
+    <span class="topic">Light and darkness</span>
+    <h2>Can the darkness put out the light?</h2>
+    <p class="ask-line">What verses tell us about this?</p>
+    <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+    <blockquote class="quote step" data-q="4"></blockquote>
+    <blockquote class="quote step" data-q="5" data-hl="the darkness comprehended it not"></blockquote>
+    <blockquote class="quote step" data-q="9"></blockquote>
+    <div class="answer step"><h3>Answer</h3><p>No. The darkness has never overpowered the light, and it never will. Jesus is the true Light. Whatever darkness you came out of, and whatever still pulls at you, it is weaker than Him.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+    <p class="counter">Question 4 of 6</p>
+    <span class="topic">The Lamb of God</span>
+    <h2>What did Jesus come to do?</h2>
+    <p class="ask-line">What verses tell us about this?</p>
+    <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+    <blockquote class="quote step" data-q="29" data-hl="taketh away the sin of the world"></blockquote>
+    <blockquote class="quote step" data-q="33" data-hl="baptizeth with the Holy Ghost"></blockquote>
+    <blockquote class="quote step" data-q="17" data-hl="grace and truth came by Jesus Christ"></blockquote>
+    <blockquote class="quote step" data-q="18" data-hl="he hath declared him"></blockquote>
+    <div class="answer step"><h3>Answer</h3><p>To take away sin as God's own Lamb, for the whole world. To give the Holy Spirit to everyone who believes. To bring grace and truth. And to show us exactly who God is.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+    <p class="counter">Question 5 of 6</p>
+    <span class="topic">Being a witness</span>
+    <h2>What does a witness do?</h2>
+    <p class="ask-line">What verses tell us about this?</p>
+    <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+    <blockquote class="quote step" data-q="8"></blockquote>
+    <blockquote class="quote step" data-q="20" data-hl="I am not the Christ"></blockquote>
+    <blockquote class="quote step" data-q="41" data-hl="We have found the Messias"></blockquote>
+    <blockquote class="quote step" data-q="46" data-hl="Come and see"></blockquote>
+    <div class="answer step"><h3>Answer</h3><p>A witness points away from himself and toward Jesus. John said, “I am not.” Andrew said, “We have found.” Philip said, “Come and see.” You don't need all the answers. Tell what you've found, and bring someone with you.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+    <p class="counter">Question 6 of 6</p>
+    <span class="topic">A new name</span>
+    <h2>What happens when Jesus meets someone?</h2>
+    <p class="ask-line">What verses tell us about this?</p>
+    <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+    <blockquote class="quote step" data-q="38" data-hl="What seek ye?"></blockquote>
+    <blockquote class="quote step" data-q="42" data-hl="thou shalt be called Cephas"></blockquote>
+    <blockquote class="quote step" data-q="48" data-hl="I saw thee"></blockquote>
+    <blockquote class="quote step" data-q="50" data-hl="thou shalt see greater things than these"></blockquote>
+    <div class="answer step"><h3>Answer</h3><p>He asks what you're really looking for. He already knows you, even before you come to Him. He gives you a new name. And He promises “greater things.” He sees who you're becoming, not just who you've been.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide prayer">
+  <div class="inner">
+    <div class="candle-row rise"><div class="flame"></div></div>
+    <h2 class="rise" style="--d:1">Prayer requests</h2>
+    <p class="ask-line rise" style="--d:2">What can we pray about for you today?</p>
+    <blockquote class="quote rise" style="--d:4"><p>“Be careful for nothing; but in every thing by prayer and supplication with thanksgiving let your requests be made known unto God.”</p><cite>Philippians 4:6</cite></blockquote>
+  </div>
+</section>
+
+</main>
+
+<nav class="nav" aria-label="Slide controls">
+  <a href="../index.html" aria-label="All studies"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 11l8-7 8 7M6 9.5V20h12V9.5"/></svg></a>
+  <button type="button" id="prev" aria-label="Previous"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M15 5l-7 7 7 7"/></svg></button>
+  <button type="button" id="next" aria-label="Next"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M9 5l7 7-7 7"/></svg></button>
+  <div class="horizon"><span id="bar"></span></div>
+  <span class="count" id="count"></span>
+  <button type="button" id="full" aria-label="Full screen"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 9V4h5M20 9V4h-5M4 15v5h5M20 15v5h-5"/></svg></button>
+</nav>
+
+<script>
+// King James Version, John chapter 1
+const V = {
+  1: "In the beginning was the Word, and the Word was with God, and the Word was God.",
+  2: "The same was in the beginning with God.",
+  3: "All things were made by him; and without him was not any thing made that was made.",
+  4: "In him was life; and the life was the light of men.",
+  5: "And the light shineth in darkness; and the darkness comprehended it not.",
+  6: "There was a man sent from God, whose name was John.",
+  7: "The same came for a witness, to bear witness of the Light, that all men through him might believe.",
+  8: "He was not that Light, but was sent to bear witness of that Light.",
+  9: "That was the true Light, which lighteth every man that cometh into the world.",
+  10: "He was in the world, and the world was made by him, and the world knew him not.",
+  11: "He came unto his own, and his own received him not.",
+  12: "But as many as received him, to them gave he power to become the sons of God, even to them that believe on his name:",
+  13: "Which were born, not of blood, nor of the will of the flesh, nor of the will of man, but of God.",
+  14: "And the Word was made flesh, and dwelt among us, (and we beheld his glory, the glory as of the only begotten of the Father,) full of grace and truth.",
+  15: "John bare witness of him, and cried, saying, This was he of whom I spake, He that cometh after me is preferred before me: for he was before me.",
+  16: "And of his fulness have all we received, and grace for grace.",
+  17: "For the law was given by Moses, but grace and truth came by Jesus Christ.",
+  18: "No man hath seen God at any time; the only begotten Son, which is in the bosom of the Father, he hath declared him.",
+  19: "And this is the record of John, when the Jews sent priests and Levites from Jerusalem to ask him, Who art thou?",
+  20: "And he confessed, and denied not; but confessed, I am not the Christ.",
+  21: "And they asked him, What then? Art thou Elias? And he saith, I am not. Art thou that prophet? And he answered, No.",
+  22: "Then said they unto him, Who art thou? that we may give an answer to them that sent us. What sayest thou of thyself?",
+  23: "He said, I am the voice of one crying in the wilderness, Make straight the way of the Lord, as said the prophet Esaias.",
+  24: "And they which were sent were of the Pharisees.",
+  25: "And they asked him, and said unto him, Why baptizest thou then, if thou be not that Christ, nor Elias, neither that prophet?",
+  26: "John answered them, saying, I baptize with water: but there standeth one among you, whom ye know not;",
+  27: "He it is, who coming after me is preferred before me, whose shoe’s latchet I am not worthy to unloose.",
+  28: "These things were done in Bethabara beyond Jordan, where John was baptizing.",
+  29: "The next day John seeth Jesus coming unto him, and saith, Behold the Lamb of God, which taketh away the sin of the world.",
+  30: "This is he of whom I said, After me cometh a man which is preferred before me: for he was before me.",
+  31: "And I knew him not: but that he should be made manifest to Israel, therefore am I come baptizing with water.",
+  32: "And John bare record, saying, I saw the Spirit descending from heaven like a dove, and it abode upon him.",
+  33: "And I knew him not: but he that sent me to baptize with water, the same said unto me, Upon whom thou shalt see the Spirit descending, and remaining on him, the same is he which baptizeth with the Holy Ghost.",
+  34: "And I saw, and bare record that this is the Son of God.",
+  35: "Again the next day after John stood, and two of his disciples;",
+  36: "And looking upon Jesus as he walked, he saith, Behold the Lamb of God!",
+  37: "And the two disciples heard him speak, and they followed Jesus.",
+  38: "Then Jesus turned, and saw them following, and saith unto them, What seek ye? They said unto him, Rabbi, (which is to say, being interpreted, Master,) where dwellest thou?",
+  39: "He saith unto them, Come and see. They came and saw where he dwelt, and abode with him that day: for it was about the tenth hour.",
+  40: "One of the two which heard John speak, and followed him, was Andrew, Simon Peter’s brother.",
+  41: "He first findeth his own brother Simon, and saith unto him, We have found the Messias, which is, being interpreted, the Christ.",
+  42: "And he brought him to Jesus. And when Jesus beheld him, he said, Thou art Simon the son of Jona: thou shalt be called Cephas, which is by interpretation, A stone.",
+  43: "The day following Jesus would go forth into Galilee, and findeth Philip, and saith unto him, Follow me.",
+  44: "Now Philip was of Bethsaida, the city of Andrew and Peter.",
+  45: "Philip findeth Nathanael, and saith unto him, We have found him, of whom Moses in the law, and the prophets, did write, Jesus of Nazareth, the son of Joseph.",
+  46: "And Nathanael said unto him, Can there any good thing come out of Nazareth? Philip saith unto him, Come and see.",
+  47: "Jesus saw Nathanael coming to him, and saith of him, Behold an Israelite indeed, in whom is no guile!",
+  48: "Nathanael saith unto him, Whence knowest thou me? Jesus answered and said unto him, Before that Philip called thee, when thou wast under the fig tree, I saw thee.",
+  49: "Nathanael answered and saith unto him, Rabbi, thou art the Son of God; thou art the King of Israel.",
+  50: "Jesus answered and said unto him, Because I said unto thee, I saw thee under the fig tree, believest thou? thou shalt see greater things than these.",
+  51: "And he saith unto him, Verily, verily, I say unto you, Hereafter ye shall see heaven open, and the angels of God ascending and descending upon the Son of man."
+};
+const BOOK = "John 1";
+
+function range(spec) {
+  const [a, b] = spec.split("-").map(Number);
+  const out = [];
+  for (let n = a; n <= (b || a); n++) out.push(n);
+  return out;
+}
+function refText(nums) {
+  return nums.length > 1 ? `${BOOK}:${nums[0]}–${nums[nums.length - 1]}` : `${BOOK}:${nums[0]}`;
+}
+function highlight(text, hl) {
+  if (!hl) return text;
+  for (const phrase of hl.split("|")) {
+    const at = text.indexOf(phrase);
+    if (at >= 0) text = text.slice(0, at) + "<mark>" + phrase + "</mark>" + text.slice(at + phrase.length);
+  }
+  return text;
+}
+
+// Build full-verse slides
+document.querySelectorAll(".slide.verse").forEach(s => {
+  const nums = range(s.dataset.v);
+  const chars = nums.reduce((t, n) => t + V[n].length, 0);
+  const vs = chars < 260 ? 1 : chars < 420 ? .88 : chars < 600 ? .78 : .7;
+  const body = nums.map((n, k) =>
+    `<p class="v rise" style="--d:${k * 2}"><span class="vn">${n}</span>${highlight(V[n], s.dataset.hl)}</p>`).join("");
+  s.innerHTML = `<div class="inner"><div class="vtext" style="--vs:${vs}">${body}</div>` +
+    `<p class="vref rise" style="--d:${nums.length * 2}">${refText(nums)}</p></div>`;
+});
+
+// Fill verse quotes on explanation and question slides
+document.querySelectorAll("blockquote[data-q]").forEach(q => {
+  const nums = range(q.dataset.q);
+  const text = nums.map(n => (nums.length > 1 ? `<span class="vn">${n}</span>` : "") + V[n]).join(" ");
+  q.innerHTML = `<p>${highlight(text, q.dataset.hl)}</p><cite>${refText(nums)}</cite>`;
+});
+
+// Lamb flock: one Passover lamb, then the endless daily sacrifices
+const flock = document.getElementById("flock");
+for (let k = 0; k < 48; k++) {
+  const chosen = k === 18;
+  flock.insertAdjacentHTML("beforeend",
+    `<svg class="lamb${chosen ? " chosen" : ""}" style="--i:${k}" viewBox="0 0 60 44"><use href="#lamb"/></svg>`);
+}
+
+// ---------- Deck engine ----------
+const params = new URLSearchParams(location.search);
+const chooser = document.getElementById("chooser");
+let mode = params.get("v");
+let slides = [], i = 0, step = 0;
+
+const stepsOf = s => [...s.querySelectorAll(".step")];
+
+function start(m) {
+  mode = m === "key" ? "key" : "full";
+  chooser.hidden = true;
+  document.querySelectorAll(".slide").forEach(s => {
+    s.classList.toggle("skip", !!s.dataset.only && s.dataset.only !== mode);
+  });
+  slides = [...document.querySelectorAll(".slide:not(.skip)")];
+  const fromHash = parseInt(location.hash.slice(1), 10);
+  go(Number.isFinite(fromHash) ? Math.min(Math.max(fromHash - 1, 0), slides.length - 1) : 0);
+}
+
+function go(n, revealAll = false) {
+  if (n < 0 || n >= slides.length) return;
+  slides.forEach(s => { s.classList.remove("active"); s.setAttribute("aria-hidden", "true"); });
+  i = n;
+  const s = slides[i];
+  const st = stepsOf(s);
+  st.forEach(e => e.classList.toggle("on", revealAll));
+  step = revealAll ? st.length : 0;
+  s.querySelector(".inner").scrollTop = 0;
+  s.classList.add("active");
+  s.removeAttribute("aria-hidden");
+  render();
+}
+
+function next() {
+  const st = stepsOf(slides[i]);
+  if (step < st.length) {
+    st[step].classList.add("on");
+    st[step].scrollIntoView({ block: "nearest", behavior: "smooth" });
+    step++;
+    render();
+  } else go(i + 1);
+}
+
+function prev() {
+  if (step > 0) {
+    step--;
+    stepsOf(slides[i])[step].classList.remove("on");
+    render();
+  } else go(i - 1, true);
+}
+
+function render() {
+  const p = slides.length > 1 ? i / (slides.length - 1) : 0;
+  document.documentElement.style.setProperty("--dawn", p.toFixed(3));
+  document.getElementById("bar").style.width = (p * 100) + "%";
+  document.getElementById("count").textContent = `${i + 1} / ${slides.length}`;
+  history.replaceState(null, "", `?v=${mode}#${i + 1}`);
+
+  const s = slides[i];
+  const btn = s.querySelector(".reveal");
+  if (btn) {
+    const st = stepsOf(s);
+    const upcoming = st[step];
+    btn.textContent = !upcoming ? (i + 1 < slides.length && slides[i + 1].classList.contains("qa") ? "Next question" : "Continue")
+      : upcoming.classList.contains("answer") ? "Show the answer" : "Show a verse";
+  }
+}
+
+// Controls
+document.getElementById("next").addEventListener("click", next);
+document.getElementById("prev").addEventListener("click", prev);
+document.getElementById("full").addEventListener("click", () => {
+  if (document.fullscreenElement) document.exitFullscreen();
+  else document.documentElement.requestFullscreen?.();
+});
+document.querySelectorAll(".reveal").forEach(b => b.addEventListener("click", e => { e.stopPropagation(); next(); }));
+chooser.querySelectorAll("button").forEach(b => b.addEventListener("click", () => start(b.dataset.mode)));
+
+document.addEventListener("keydown", e => {
+  if (!chooser.hidden) return;
+  if (["ArrowRight", "ArrowDown", "PageDown", " ", "Enter"].includes(e.key)) {
+    if ((e.key === "Enter" || e.key === " ") && e.target.closest("button")) return;
+    e.preventDefault(); next();
+  } else if (["ArrowLeft", "ArrowUp", "PageUp", "Backspace"].includes(e.key)) {
+    e.preventDefault(); prev();
+  } else if (e.key === "Home") go(0);
+  else if (e.key === "End") go(slides.length - 1, true);
+  else if (e.key === "f") document.getElementById("full").click();
+});
+
+// Click or tap: right side goes forward, left third goes back
+document.getElementById("deck").addEventListener("click", e => {
+  if (e.target.closest("button, a")) return;
+  if (window.getSelection().toString()) return;
+  e.clientX < window.innerWidth * 0.3 ? prev() : next();
+});
+
+// Swipe on phones
+let tx = null, ty = null;
+document.addEventListener("touchstart", e => { tx = e.touches[0].clientX; ty = e.touches[0].clientY; }, { passive: true });
+document.addEventListener("touchend", e => {
+  if (tx === null) return;
+  const dx = e.changedTouches[0].clientX - tx, dy = e.changedTouches[0].clientY - ty;
+  if (Math.abs(dx) > 50 && Math.abs(dx) > Math.abs(dy) * 1.5) {
+    e.preventDefault();
+    dx < 0 ? next() : prev();
+  }
+  tx = ty = null;
+});
+
+if (mode === "full" || mode === "key") start(mode);
+else chooser.hidden = false;
+</script>
+</body>
+</html>
