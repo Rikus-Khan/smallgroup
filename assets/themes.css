@@ -1,0 +1,123 @@
+/* Every theme here works with every slide show. A theme sets the tokens listed at the top of
+   deck.css, and may add its own signature touches using the shared hooks:
+   .ambient > .sky / .stars / .liquid   background layers (hidden unless a theme shows them)
+   --p                                  how far through the deck we are, 0 to 1
+   body.past-turn                       true once the deck passes a slide marked "turn"
+   .emblem                              the small mark on the title and prayer slides
+   .carved / .vref                      two ways to label a verse slide (big numbers above, or a line below)
+   To add a theme: write its block below and add it to THEMES in deck.js. */
+
+/* ======================= Night to dawn ======================= */
+:root[data-theme="night"] {
+  --bg: #0d1030; --surface: rgb(255 255 255 / .05); --surface-2: #2a2850;
+  --ink: #f1e6cf; --ink-soft: #aeadcb; --line: rgb(241 230 207 / .16); --line-strong: #aeadcb;
+  --accent: #f2b24c; --accent-hot: #ffe2a3; --on-accent: #1a1230;
+  --cool: #7fb6d4; --warm: #f2b24c; --danger: #d0614f; --glow: #fff4d6; --on-glow: #1a1230; --wine: #b8405a;
+  --serif: 'Spectral', 'Noto Serif', 'Noto Serif Hebrew', Georgia, serif;
+  --sans: 'Atkinson Hyperlegible', system-ui, sans-serif;
+  --nav-bg: rgb(13 16 48 / .5); --nav-line: rgb(241 230 207 / .25);
+  --menu-bg: #1b1638; --menu-ink: #f1e6cf;
+}
+/* The sky slowly brightens toward dawn as the study goes on */
+[data-theme="night"] .ambient .sky {
+  display: block; inset: 0;
+  background:
+    radial-gradient(130% 70% at 50% 118%, rgb(242 178 76 / calc(.05 + .38 * var(--p))), transparent 68%),
+    linear-gradient(180deg, #0d1030 0%, color-mix(in oklab, #0d1030, #4c2747 calc(var(--p) * 100%)) 100%);
+}
+[data-theme="night"] .ambient .stars {
+  display: block; inset: 0; opacity: calc(.7 - .7 * var(--p));
+  background-image:
+    radial-gradient(1.4px 1.4px at 12% 18%, #fff 50%, transparent 51%), radial-gradient(1px 1px at 27% 8%, #fff 50%, transparent 51%),
+    radial-gradient(1.2px 1.2px at 44% 22%, #fff 50%, transparent 51%), radial-gradient(1px 1px at 63% 11%, #fff 50%, transparent 51%),
+    radial-gradient(1.6px 1.6px at 81% 16%, #fff 50%, transparent 51%), radial-gradient(1px 1px at 92% 34%, #fff 50%, transparent 51%),
+    radial-gradient(1px 1px at 6% 41%, #fff 50%, transparent 51%), radial-gradient(1.2px 1.2px at 35% 37%, #fff 50%, transparent 51%),
+    radial-gradient(1px 1px at 72% 44%, #fff 50%, transparent 51%), radial-gradient(1px 1px at 55% 4%, #fff 50%, transparent 51%);
+}
+[data-theme="night"] .horizon span { box-shadow: 0 0 10px var(--accent); }
+/* A point of light blooms on the title; a candle burns on the prayer slide */
+[data-theme="night"] .title .inner { overflow: visible; }
+[data-theme="night"] .title .emblem {
+  width: 10px; height: 10px; border-radius: 50%; background: var(--accent-hot); margin-bottom: 1.6rem;
+  box-shadow: 0 0 40px 20px rgb(242 178 76 / .5);
+}
+[data-theme="night"] .slide.active .title .emblem { animation: bloom 2.6s ease-out both; }
+@keyframes bloom {
+  0% { opacity: 0; box-shadow: 0 0 0 0 rgb(242 178 76 / 0); }
+  25% { opacity: 1; box-shadow: 0 0 30px 10px rgb(242 178 76 / .8); }
+  100% { opacity: .9; box-shadow: 0 0 260px 180px rgb(242 178 76 / 0); }
+}
+[data-theme="night"] .prayer .emblem {
+  width: 34px; height: 58px; border-radius: 50% 50% 46% 46% / 64% 64% 36% 36%;
+  background: radial-gradient(circle at 50% 72%, #fff 0 14%, #ffe2a3 30%, #f2b24c 58%, rgb(242 178 76 / 0) 74%);
+  box-shadow: 0 0 60px 20px rgb(242 178 76 / .22);
+}
+[data-theme="night"] .slide.active .prayer .emblem { animation: rise .9s both, flicker 1.8s ease-in-out .9s infinite alternate; }
+
+/* ======================= Stone and wine ======================= */
+:root[data-theme="stone"] {
+  --bg: #ece3d2; --surface: rgb(255 255 255 / .4); --surface-2: #ddd0b8;
+  --ink: #2b211c; --ink-soft: #65574b; --line: rgb(43 33 28 / .14); --line-strong: #c9b99c;
+  --accent: #7b1e30; --accent-hot: #7b1e30; --on-accent: #ece3d2;
+  --cool: #3f86a1; --warm: #9a6b1f; --danger: #a3344a; --glow: #fff8ea; --on-glow: #2b211c; --wine: #7b1e30;
+  --serif: 'Fraunces', 'Noto Serif', 'Noto Serif Hebrew', Georgia, serif;
+  --sans: 'Figtree', system-ui, sans-serif;
+  --em-weight: 700;
+  --floor: 6vh;                       /* room for the liquid */
+  --nav-ink: #fff; --nav-bg: rgb(255 255 255 / .14); --nav-line: rgb(255 255 255 / .4);
+  --menu-bg: #f7f1e6; --menu-ink: #2b211c;
+}
+[data-theme="stone"] .ambient .sky {
+  display: block; inset: 0;
+  background:
+    radial-gradient(60% 40% at 15% 10%, rgb(255 255 255 / .55), transparent 70%),
+    radial-gradient(50% 50% at 90% 30%, rgb(201 185 156 / .35), transparent 70%),
+    #ece3d2;
+}
+/* The jar fills as the study goes on: water at first, wine after the turn */
+[data-theme="stone"] .ambient .liquid {
+  display: block; left: 0; right: 0; bottom: 0;
+  height: calc(64px + env(safe-area-inset-bottom) + var(--p) * 6vh);
+  background: var(--cool); transition: background-color 2.2s ease;
+}
+[data-theme="stone"] .ambient .liquid svg {
+  position: absolute; left: 0; bottom: calc(100% - 1px); width: 200%; height: 18px;
+  fill: var(--cool); transition: fill 2.2s ease; animation: slosh 7s linear infinite;
+}
+[data-theme="stone"] body.past-turn .ambient .liquid { background: var(--wine); }
+[data-theme="stone"] body.past-turn .ambient .liquid svg { fill: var(--wine); }
+@keyframes slosh { to { transform: translateX(-50%); } }
+[data-theme="stone"] .horizon { visibility: hidden; }
+[data-theme="stone"] .nav :focus-visible { outline-color: #fff; }
+/* Verse slides: the reference is carved large above the text, numbers sit in wine-colored seals */
+[data-theme="stone"] .carved { display: block; margin-bottom: .15em; font: 300 clamp(3rem, 2rem + 4.5vw, 6.5rem)/1 var(--serif); color: var(--line-strong); letter-spacing: -.03em; }
+[data-theme="stone"] .vref { display: none; }
+[data-theme="stone"] .vn {
+  display: inline-grid; place-items: center; width: 1.7em; height: 1.7em; margin-right: .45em; vertical-align: .25em;
+  border-radius: 50%; background: var(--accent); color: var(--on-accent); font-size: .48em;
+}
+[data-theme="stone"] .quote { border-left: 3px solid var(--line-strong); }
+[data-theme="stone"] .quote .vn { width: 1.6em; height: 1.6em; font-size: .6em; vertical-align: .15em; }
+[data-theme="stone"] .quote cite { font-weight: 600; }
+[data-theme="stone"] mark { box-shadow: inset 0 -.14em 0 rgb(123 30 48 / .25); }
+[data-theme="stone"] .seeds li::before { width: 1.9rem; height: 2.3rem; border-radius: 40% 40% 45% 45% / 30% 30% 60% 60%; background: var(--surface-2); border-color: var(--line-strong); }
+[data-theme="stone"] .remember .seed-q { color: var(--ink); }
+/* A drop of water that turns to wine; on the prayer slide it's already wine */
+[data-theme="stone"] .emblem { width: 22px; height: 30px; margin-bottom: 1.2rem; border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%; background: var(--cool); }
+[data-theme="stone"] .slide.active .title .emblem { animation: rise .9s both, turn-wine 3s 1s ease forwards; }
+[data-theme="stone"] .prayer .emblem { background: var(--accent); }
+@keyframes turn-wine { to { background: #7b1e30; } }
+
+/* ======================= Slate and brass ======================= */
+:root[data-theme="slate"] {
+  --bg: #15211e; --surface: rgb(239 232 216 / .05); --surface-2: #22332e;
+  --ink: #efe8d8; --ink-soft: #a9b8ad; --line: rgb(239 232 216 / .16); --line-strong: #a9b8ad;
+  --accent: #d1a54a; --accent-hot: #f0d58c; --on-accent: #1b1608;
+  --cool: #7fb0b8; --warm: #d1a54a; --danger: #d0614f; --glow: #fbf0d0; --on-glow: #1b1608; --wine: #a8434f;
+  --serif: 'Newsreader', 'Noto Serif', 'Noto Serif Hebrew', Georgia, serif;
+  --sans: 'Atkinson Hyperlegible', system-ui, sans-serif;
+  --nav-bg: rgb(21 33 30 / .6);
+  --menu-bg: #22332e; --menu-ink: #efe8d8;
+}
+[data-theme="slate"] .ambient .sky { display: block; inset: 0; background: radial-gradient(110% 80% at 85% 0%, #22332e, #15211e 60%); }
+[data-theme="slate"] .horizon { height: 3px; }

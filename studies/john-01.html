@@ -1,409 +1,22 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" data-theme="night">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>John 1</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400&family=Spectral:ital,wght@0,300;0,400;0,600;1,400&family=Noto+Serif:wght@400&family=Noto+Serif+Hebrew:wght@400&display=swap" rel="stylesheet">
-<style>
-@property --dawn { syntax: '<number>'; inherits: true; initial-value: 0; }
-
-:root {
-  --night: #0d1030;
-  --dusk: #4c2747;
-  --flame: #f2b24c;
-  --flame-hot: #ffe2a3;
-  --parch: #f1e6cf;
-  --mist: #aeadcb;
-  --water: #7fb6d4;
-  --blood: #d0614f;
-  --serif: 'Spectral', 'Noto Serif', 'Noto Serif Hebrew', Georgia, serif;
-  --sans: 'Atkinson Hyperlegible', system-ui, sans-serif;
-  --dawn: 0;
-  transition: --dawn 1.6s ease;
-}
-
-* { box-sizing: border-box; }
-html, body { margin: 0; height: 100%; }
-html { font-size: clamp(16px, calc(.7vw + .6vh + 2px), 28px); }
-body {
-  background: var(--night);
-  color: var(--parch);
-  font-family: var(--sans);
-  overflow: hidden;
-  -webkit-font-smoothing: antialiased;
-  -webkit-tap-highlight-color: transparent;
-}
-
-/* ---------- Sky: night to dawn across the whole study ---------- */
-.sky {
-  position: fixed; inset: 0;
-  background:
-    radial-gradient(130% 70% at 50% 118%, rgb(242 178 76 / calc(.05 + .38 * var(--dawn))), transparent 68%),
-    linear-gradient(180deg, var(--night) 0%, color-mix(in oklab, var(--night), var(--dusk) calc(var(--dawn) * 100%)) 100%);
-}
-.stars {
-  position: fixed; inset: 0; pointer-events: none;
-  opacity: calc(.7 - .7 * var(--dawn));
-  background-image:
-    radial-gradient(1.4px 1.4px at 12% 18%, #fff 50%, transparent 51%),
-    radial-gradient(1px 1px at 27% 8%, #fff 50%, transparent 51%),
-    radial-gradient(1.2px 1.2px at 44% 22%, #fff 50%, transparent 51%),
-    radial-gradient(1px 1px at 63% 11%, #fff 50%, transparent 51%),
-    radial-gradient(1.6px 1.6px at 81% 16%, #fff 50%, transparent 51%),
-    radial-gradient(1px 1px at 92% 34%, #fff 50%, transparent 51%),
-    radial-gradient(1px 1px at 6% 41%, #fff 50%, transparent 51%),
-    radial-gradient(1.2px 1.2px at 35% 37%, #fff 50%, transparent 51%),
-    radial-gradient(1px 1px at 72% 44%, #fff 50%, transparent 51%),
-    radial-gradient(1px 1px at 55% 4%, #fff 50%, transparent 51%);
-}
-
-/* ---------- Slides ---------- */
-.deck { position: fixed; inset: 0; }
-.slide {
-  position: absolute; inset: 0;
-  display: flex; align-items: center; justify-content: center;
-  padding: clamp(16px, 4vh, 56px) clamp(16px, 5vw, 72px) calc(72px + env(safe-area-inset-bottom));
-  opacity: 0; visibility: hidden;
-  transition: opacity .7s ease, visibility 0s linear .7s;
-}
-.slide.active { opacity: 1; visibility: visible; transition: opacity .7s ease; }
-.inner {
-  width: min(100%, 68rem);
-  max-height: 100%;
-  overflow-y: auto;
-  scrollbar-width: none;
-}
-.inner::-webkit-scrollbar { display: none; }
-
-/* Entrance: things rise in when a slide becomes active */
-.rise { opacity: 0; }
-.slide.active .rise { animation: rise .9s cubic-bezier(.2,.7,.2,1) both; animation-delay: calc(var(--d, 0) * 140ms + 150ms); }
-@keyframes rise { from { opacity: 0; transform: translateY(14px); } to { opacity: 1; transform: none; } }
-
-/* Click-by-click reveals */
-.step { opacity: 0; transform: translateY(10px); transition: opacity .6s ease, transform .6s ease; }
-.step.on { opacity: 1; transform: none; }
-svg .step { transform: none; }
-
-/* Lines that draw themselves */
-.draw { stroke-dasharray: 1; stroke-dashoffset: 1; transition: stroke-dashoffset 1.4s ease; }
-.on .draw, .draw.on { stroke-dashoffset: 0; }
-.slide.active .draw-auto { animation: draw 1.8s .5s ease forwards; }
-@keyframes draw { to { stroke-dashoffset: 0; } }
-
-/* ---------- Type ---------- */
-h1, h2, h3 { font-family: var(--serif); font-weight: 400; margin: 0; text-wrap: balance; }
-h2 { font-size: clamp(1.7rem, 1.1rem + 2.6vw, 3.1rem); line-height: 1.12; margin-bottom: .5em; }
-p { margin: 0; }
-.note {
-  font-size: clamp(1.08rem, .9rem + .85vw, 1.55rem);
-  line-height: 1.5;
-  max-width: 40em;
-  color: var(--parch);
-}
-.note + .note { margin-top: .8em; }
-.note em { font-style: normal; color: var(--flame-hot); }
-.soft { color: var(--mist); }
-.gk { font-family: var(--serif); color: var(--flame-hot); }
-
-/* Verse quote that heads an explanation slide */
-.quote {
-  margin: 0 0 1.1em; padding-left: 1em;
-  border-left: 2px solid rgb(242 178 76 / .55);
-  font-family: var(--serif); font-style: italic;
-  font-size: clamp(1rem, .85rem + .7vw, 1.4rem);
-  line-height: 1.5; color: var(--mist);
-  max-width: 46em;
-}
-.quote cite { display: block; margin-top: .3em; font-style: normal; font-family: var(--sans); font-size: .8em; color: var(--mist); opacity: .8; }
-mark { background: none; color: var(--flame-hot); box-shadow: inset 0 -.12em 0 rgb(242 178 76 / .45); }
-
-/* ---------- Verse slides ---------- */
-.verse .inner { width: min(100%, 50rem); }
-.vtext { font-family: var(--serif); font-size: calc(clamp(1.3rem, .95rem + 1.75vw, 2.45rem) * var(--vs, 1)); line-height: 1.55; }
-.vtext .v { margin: 0 0 .55em; }
-.vn { font-family: var(--sans); font-size: .5em; vertical-align: .75em; color: var(--flame); margin-right: .35em; font-weight: 700; }
-.vref { font-size: clamp(.95rem, .85rem + .4vw, 1.2rem); color: var(--mist); margin-top: 1.2em; }
-.vref::before { content: ""; display: inline-block; width: 2.2em; height: 1px; background: var(--flame); vertical-align: middle; margin-right: .7em; }
-
-/* ---------- Title ---------- */
-.title .inner { text-align: center; position: relative; }
-.title h1 { font-weight: 300; font-size: clamp(4.5rem, 2rem + 13vw, 12rem); line-height: .95; letter-spacing: -.02em; position: relative; }
-.title .sub { font-family: var(--serif); font-style: italic; font-size: clamp(1.4rem, 1rem + 2vw, 2.6rem); margin-top: .5em; color: var(--flame-hot); }
-.title .tag { font-size: clamp(1.05rem, .9rem + .7vw, 1.45rem); color: var(--mist); margin: 1.2em auto 0; max-width: 30em; line-height: 1.5; text-wrap: balance; }
-.spark {
-  position: absolute; left: 50%; top: 40%; width: 10px; height: 10px; border-radius: 50%;
-  background: var(--flame-hot); transform: translate(-50%, -50%);
-  box-shadow: 0 0 40px 20px rgb(242 178 76 / .5);
-  pointer-events: none;
-}
-.slide.active .spark { animation: bloom 2.6s ease-out both; }
-@keyframes bloom {
-  0% { opacity: 0; box-shadow: 0 0 0 0 rgb(242 178 76 / 0); }
-  25% { opacity: 1; box-shadow: 0 0 30px 10px rgb(242 178 76 / .8); }
-  100% { opacity: .0; box-shadow: 0 0 260px 180px rgb(242 178 76 / .0); }
-}
-
-/* ---------- Things to watch / Points to remember ---------- */
-.lede { font-size: clamp(1.05rem, .9rem + .6vw, 1.4rem); color: var(--mist); margin-bottom: 1.4em; max-width: 34em; line-height: 1.5; }
-.seeds { list-style: none; padding: 0; margin: 0; display: grid; gap: clamp(.7rem, 1.6vh, 1.2rem) 2.5rem; grid-template-columns: 1fr; counter-reset: seed; }
-@media (min-width: 900px) { .seeds { grid-template-columns: 1fr 1fr; } }
-.seeds li { counter-increment: seed; position: relative; padding-left: 2.6rem; }
-.seeds li::before {
-  content: counter(seed); position: absolute; left: 0; top: .1em;
-  width: 1.8rem; height: 1.8rem; border-radius: 50%; border: 1.5px solid var(--flame);
-  display: grid; place-items: center; font-weight: 700; color: var(--flame); font-size: .95rem;
-}
-.topic { display: block; color: var(--flame); font-size: clamp(.95rem, .85rem + .4vw, 1.2rem); font-weight: 700; margin-bottom: .15em; }
-.seed-q { display: block; font-family: var(--serif); font-size: clamp(1.2rem, .95rem + 1.1vw, 1.85rem); line-height: 1.25; }
-.remember .seed-q { font-style: italic; font-size: clamp(1.05rem, .9rem + .7vw, 1.4rem); color: var(--flame-hot); }
-.remember .seed-q cite { font-style: normal; font-family: var(--sans); font-size: .75em; color: var(--mist); margin-left: .4em; }
-.take { display: block; font-size: clamp(.98rem, .88rem + .45vw, 1.2rem); line-height: 1.45; margin-top: .25em; }
-
-/* ---------- Part dividers ---------- */
-.part .inner { text-align: left; }
-.part-n { font-size: clamp(1rem, .9rem + .5vw, 1.3rem); color: var(--flame); font-weight: 700; margin-bottom: .4em; }
-.part h2 { font-size: clamp(3rem, 1.8rem + 6vw, 7.5rem); font-weight: 300; line-height: 1; margin-bottom: .25em; }
-.part .range { font-size: clamp(1rem, .9rem + .5vw, 1.3rem); color: var(--mist); }
-.part .hook { font-family: var(--serif); font-style: italic; font-size: clamp(1.25rem, 1rem + 1.2vw, 2rem); margin-top: 1em; max-width: 26em; }
-.part .rule { height: 2px; width: 0; background: linear-gradient(90deg, var(--flame), transparent); margin: 1.2em 0; }
-.slide.active .rule { animation: grow 1.4s .3s ease forwards; }
-@keyframes grow { to { width: min(28rem, 80%); } }
-
-/* ---------- Explanation slides: shared layout ---------- */
-.stage { margin: .4em 0 1em; }
-.stage svg { display: block; width: 100%; height: auto; max-height: 44vh; margin: 0 auto; overflow: visible; }
-.split { display: grid; gap: 1.2rem 2.5rem; align-items: center; }
-@media (min-width: 900px) and (min-aspect-ratio: 4/3) {
-  .split { grid-template-columns: 1.15fr 1fr; }
-  .split .stage svg { max-height: 58vh; }
-}
-svg text { font-family: var(--sans); }
-svg text:not([fill]) { fill: var(--parch); }
-svg .serif { font-family: var(--serif); }
-
-/* Genesis / John */
-.pair { display: grid; gap: 1rem 2rem; margin-bottom: 1.2em; }
-@media (min-width: 760px) { .pair { grid-template-columns: 1fr 1fr; } }
-.scroll { padding: 1em 1.2em; border-top: 2px solid var(--flame); background: rgb(255 255 255 / .04); }
-.scroll .ref { color: var(--flame); font-weight: 700; font-size: .95rem; margin-bottom: .4em; }
-.scroll .kjv { font-family: var(--serif); font-size: clamp(1.15rem, .95rem + .9vw, 1.7rem); line-height: 1.45; }
-
-/* Logos */
-.morph { display: flex; flex-wrap: wrap; align-items: baseline; gap: .4em 1.2em; margin: .2em 0 .8em; }
-.morph .big { font-family: var(--serif); font-size: clamp(3.5rem, 2rem + 7vw, 8rem); color: var(--flame-hot); line-height: 1; text-shadow: 0 0 40px rgb(242 178 76 / .35); }
-.morph .say { font-size: clamp(1.2rem, 1rem + 1vw, 1.9rem); color: var(--mist); }
-.morph .means { font-family: var(--serif); font-size: clamp(1.3rem, 1rem + 1.4vw, 2.2rem); }
-
-/* Light vs darkness */
-.lamp {
-  position: relative; height: clamp(190px, 34vh, 340px); overflow: hidden; border-radius: 4px;
-  background: #fff4dc;
-}
-.lamp .shadow {
-  position: absolute; left: 50%; top: 50%; width: 260%; aspect-ratio: 1; translate: -50% -50%;
-  background: radial-gradient(circle, transparent 0 9%, rgb(4 5 14 / .9) 17%, #04050e 26%);
-  transform: scale(1.5);
-}
-.slide.active .lamp .shadow { animation: press 5.5s 0.6s ease-in-out forwards; }
-@keyframes press {
-  0% { transform: scale(1.5); }
-  45% { transform: scale(.62); }
-  58% { transform: scale(.62); }
-  75% { transform: scale(1.45); }
-  100% { transform: scale(1.25); }
-}
-.flame {
-  position: absolute; left: 50%; top: 50%; width: 34px; height: 58px; translate: -50% -50%;
-  border-radius: 50% 50% 46% 46% / 64% 64% 36% 36%;
-  background: radial-gradient(circle at 50% 72%, #fff 0 14%, #ffe2a3 30%, var(--flame) 58%, rgb(242 178 76 / 0) 74%);
-  animation: flicker 1.8s ease-in-out infinite alternate;
-  z-index: 2;
-}
-.slide.active .flame { animation: flicker 1.8s ease-in-out infinite alternate, flare 5.5s .6s ease forwards; }
-@keyframes flicker { from { transform: scale(1) rotate(-2deg); } to { transform: scale(1.06, 1.12) rotate(2deg); } }
-@keyframes flare { 0%, 55% { filter: none; } 68% { filter: brightness(1.4) drop-shadow(0 0 30px #ffd27a); } 100% { filter: drop-shadow(0 0 14px #ffd27a); } }
-
-/* Children of God: crossed out list */
-.nots { list-style: none; padding: 0; margin: .4em 0 1em; display: grid; gap: .55em; }
-.nots li { font-size: clamp(1.05rem, .9rem + .75vw, 1.5rem); line-height: 1.35; }
-.nots .k { font-family: var(--serif); font-style: italic; position: relative; display: inline-block; margin-right: .5em; }
-.nots .k::after {
-  content: ""; position: absolute; left: -2%; right: -2%; top: 55%; height: 2px; background: var(--blood);
-  transform: scaleX(0); transform-origin: left; transition: transform .7s .35s ease;
-}
-.nots li.on .k::after { transform: scaleX(1); }
-.nots .yes .k { color: var(--flame-hot); font-style: normal; font-weight: 600; }
-.nots .yes .k::after { display: none; }
-.nots .why { color: var(--mist); }
-
-/* Law and grace */
-.columns { display: grid; gap: 1rem 2rem; margin: .2em 0 1em; }
-@media (min-width: 760px) { .columns { grid-template-columns: 1fr 1fr; } }
-.col h3 { font-size: clamp(1.4rem, 1.1rem + 1.2vw, 2.1rem); margin-bottom: .3em; }
-.col .who { color: var(--flame); font-weight: 700; font-size: .95rem; }
-.col p { font-size: clamp(1rem, .9rem + .5vw, 1.35rem); line-height: 1.45; }
-.law { border-left: 2px solid var(--mist); padding-left: 1em; }
-.grace { border-left: 2px solid var(--flame); padding-left: 1em; }
-.waves path { fill: none; stroke: var(--flame); stroke-width: 3; opacity: .8; }
-.slide.active .waves .w { animation: roll 3.6s linear infinite; }
-.waves .w2 { animation-delay: -1.2s !important; opacity: .55; }
-.waves .w3 { animation-delay: -2.4s !important; opacity: .35; }
-@keyframes roll { from { transform: translateX(0); } to { transform: translateX(-120px); } }
-
-/* Three "no" stamps */
-.asks { display: grid; gap: clamp(.6rem, 1.5vh, 1rem); margin: .2em 0 1em; }
-.ask { display: grid; grid-template-columns: 1fr auto; gap: .2em 1.2em; align-items: center; padding-bottom: .6em; border-bottom: 1px solid rgb(174 173 203 / .2); }
-.ask .q { font-family: var(--serif); font-size: clamp(1.2rem, 1rem + 1vw, 1.8rem); }
-.ask .ctx { grid-column: 1; color: var(--mist); font-size: clamp(.92rem, .85rem + .35vw, 1.15rem); line-height: 1.4; }
-.stamp {
-  grid-row: 1 / span 2; grid-column: 2;
-  font-weight: 700; color: var(--blood); border: 3px solid var(--blood); border-radius: 6px;
-  padding: .15em .5em; font-size: clamp(1.1rem, .9rem + .8vw, 1.6rem); white-space: nowrap;
-  transform: rotate(-6deg) scale(2); opacity: 0; transition: transform .35s cubic-bezier(.3,1.6,.5,1), opacity .2s;
-}
-.ask.on .stamp { transform: rotate(-6deg) scale(1); opacity: 1; transition-delay: .35s; }
-
-/* Road */
-.hill { transform-box: fill-box; transform-origin: 50% 100%; transition: transform 1.4s ease; }
-.crooked { transition: opacity 1s ease; }
-.road:has(.road-go.on) .hill { transform: scaleY(.12); }
-.road:has(.road-go.on) .crooked { opacity: 0; }
-.road:has(.road-go.on) .draw { stroke-dashoffset: 0; transition-delay: .6s; }
-
-/* Lamb flock */
-.flock { display: grid; grid-template-columns: repeat(12, 1fr); gap: 4px 6px; margin: .2em 0 1em; color: var(--parch); }
-.flock svg { width: 100%; height: auto; }
-.flock .lamb { opacity: 0; transition: opacity .5s ease, color .8s ease, filter .8s ease; transition-delay: calc(var(--i) * 18ms); }
-.ex-lamb:has(.l2.on) .lamb { opacity: .6; }
-.ex-lamb:has(.l3.on) .lamb { opacity: .06; transition-delay: 0s; }
-.flock .lamb.chosen { opacity: 1 !important; }
-.ex-lamb:has(.l3.on) .lamb.chosen { color: var(--flame-hot); filter: drop-shadow(0 0 10px rgb(242 178 76 / .9)); transform: scale(1.35); }
-
-/* Dove */
-.dove { transform: translate(200px, 20px); }
-.slide.active .dove { animation: descend 4s .6s ease-in-out forwards; }
-@keyframes descend { to { transform: translate(200px, 228px); } }
-.wing { transform-box: fill-box; transform-origin: 50% 100%; }
-.slide.active .wing { animation: flap .5s ease-in-out 8 alternate; animation-delay: .6s; }
-@keyframes flap { to { transform: scaleY(-.4); } }
-
-/* Sun arc */
-.sun { transform-origin: 300px 250px; transform: rotate(0deg); }
-.slide.active .sun { animation: arc 3.6s .5s cubic-bezier(.4,0,.2,1) forwards; }
-@keyframes arc { to { transform: rotate(150deg); } }
-
-/* Three languages */
-.tongues { display: grid; gap: 1rem; margin: .2em 0 1em; text-align: center; grid-template-columns: repeat(3, 1fr); align-items: end; }
-.tongues .w { font-family: var(--serif); font-size: clamp(1.6rem, 1rem + 3vw, 3.6rem); color: var(--flame-hot); line-height: 1.2; }
-.tongues .t { font-size: clamp(.95rem, .85rem + .4vw, 1.2rem); }
-.tongues .l { color: var(--mist); font-size: clamp(.85rem, .8rem + .3vw, 1.05rem); }
-.oil {
-  width: 14px; height: 20px; margin: 0 auto .6em; background: var(--flame);
-  border-radius: 50% 50% 50% 50% / 62% 62% 38% 38%; opacity: 0;
-}
-.slide.active .oil { animation: drip 2.4s .4s ease-in infinite; }
-@keyframes drip { 0% { opacity: 0; transform: translateY(-30px) scale(.6); } 20% { opacity: 1; } 70% { opacity: 1; transform: translateY(10px) scale(1); } 100% { opacity: 0; transform: translateY(16px) scale(1.4, .4); } }
-
-/* New name */
-.rename { display: flex; flex-wrap: wrap; align-items: center; gap: .6em 1.2em; margin: .2em 0 1em; font-family: var(--serif); }
-.rename .old { font-size: clamp(1.5rem, 1rem + 2.4vw, 3rem); color: var(--mist); transition: opacity 1s, filter 1s; }
-.ex-name:has(.n2.on) .old { opacity: .35; filter: blur(1.5px); }
-.rename .arrow { font-size: 2rem; color: var(--flame); }
-.rename .new { font-size: clamp(2.2rem, 1.2rem + 4.5vw, 5.4rem); color: var(--flame-hot); line-height: 1; }
-.rename .gloss { font-family: var(--sans); font-size: clamp(1rem, .9rem + .5vw, 1.35rem); color: var(--parch); }
-
-/* Who brought whom */
-.chains { display: grid; gap: clamp(.6rem, 1.6vh, 1.1rem); margin: .2em 0 1em; }
-.chain { display: flex; flex-wrap: wrap; align-items: center; gap: .4em .5em; font-size: clamp(1rem, .88rem + .6vw, 1.4rem); }
-.who-chip { padding: .25em .7em; border-radius: 999px; border: 1.5px solid rgb(241 230 207 / .5); white-space: nowrap; }
-.who-chip.jesus { border-color: var(--flame); color: #1a1230; background: var(--flame-hot); font-weight: 700; box-shadow: 0 0 18px rgb(242 178 76 / .45); }
-.said { font-family: var(--serif); font-style: italic; color: var(--flame-hot); }
-.said::before { content: "\2192\00a0"; font-style: normal; color: var(--mist); }
-
-/* Ladder */
-.angel { fill: var(--flame-hot); filter: drop-shadow(0 0 6px #ffd27a); opacity: 0; }
-.slide.active .angel.up { animation: up 3.4s linear infinite; }
-.slide.active .angel.down { animation: down 3.4s linear infinite; }
-@keyframes up { 0% { opacity: 0; transform: translateY(0); } 12%, 85% { opacity: 1; } 100% { opacity: 0; transform: translateY(-330px); } }
-@keyframes down { 0% { opacity: 0; transform: translateY(0); } 12%, 85% { opacity: 1; } 100% { opacity: 0; transform: translateY(330px); } }
-
-/* ---------- Questions ---------- */
-@media (min-width: 900px) and (min-aspect-ratio: 4/3) {
-  .qa .inner { display: grid; grid-template-columns: 1fr 1.45fr; gap: 0 3rem; align-items: start; width: min(100%, 76rem); }
-  .qa-left { position: sticky; top: 0; }
-}
-.qa .counter { color: var(--mist); font-size: clamp(.9rem, .85rem + .3vw, 1.1rem); margin-bottom: .3em; }
-.qa .topic { margin-bottom: .3em; }
-.qa h2 { margin-bottom: .2em; }
-.qa .ask-line { color: var(--mist); font-size: clamp(1rem, .9rem + .5vw, 1.35rem); margin-bottom: 1em; }
-.qa .quote { margin-bottom: .8em; color: var(--parch); font-style: normal; }
-.answer { margin-top: 1em; padding: 1em 1.2em; background: rgb(242 178 76 / .1); border-left: 3px solid var(--flame); }
-.answer h3 { font-size: clamp(1.2rem, 1rem + .8vw, 1.6rem); color: var(--flame-hot); margin-bottom: .3em; }
-.answer p { font-size: clamp(1.05rem, .9rem + .7vw, 1.45rem); line-height: 1.5; }
-.reveal {
-  margin-top: 1.2em; font: 700 clamp(1rem, .9rem + .4vw, 1.2rem) var(--sans);
-  padding: .7em 1.4em; border-radius: 999px; border: 0; cursor: pointer;
-  background: var(--flame); color: #1a1230;
-}
-.reveal:hover { background: var(--flame-hot); }
-
-/* ---------- Prayer ---------- */
-.prayer .inner { text-align: center; }
-.prayer h2 { font-size: clamp(2.6rem, 1.6rem + 5vw, 6rem); font-weight: 300; }
-.prayer .ask-line { font-size: clamp(1.15rem, .95rem + 1vw, 1.8rem); margin-bottom: 2em; }
-.prayer .quote { border: 0; padding: 0; margin: 0 auto; max-width: 34em; }
-.candle-row { display: flex; justify-content: center; margin-bottom: 1.4em; }
-.candle-row .flame { position: relative; left: auto; top: auto; translate: none; box-shadow: 0 0 60px 20px rgb(242 178 76 / .25); }
-
-/* ---------- Navigation ---------- */
-.nav {
-  position: fixed; left: 0; right: 0; bottom: 0; z-index: 10;
-  display: flex; align-items: center; gap: .6rem;
-  padding: .6rem clamp(12px, 3vw, 28px) calc(.6rem + env(safe-area-inset-bottom));
-}
-.nav button, .nav a {
-  width: 44px; height: 44px; border-radius: 50%; border: 1px solid rgb(241 230 207 / .25);
-  background: rgb(13 16 48 / .5); color: var(--parch); cursor: pointer; display: grid; place-items: center;
-}
-.nav button:hover, .nav a:hover { border-color: var(--flame); }
-.nav svg { width: 20px; height: 20px; }
-.horizon { flex: 1; height: 2px; background: rgb(241 230 207 / .15); position: relative; border-radius: 2px; }
-.horizon span { position: absolute; left: 0; top: 0; bottom: 0; background: var(--flame); box-shadow: 0 0 10px var(--flame); transition: width .6s ease; border-radius: 2px; }
-.count { font-size: .9rem; color: var(--mist); min-width: 4.5em; text-align: right; font-variant-numeric: tabular-nums; }
-:focus-visible { outline: 2px solid var(--flame-hot); outline-offset: 3px; }
-
-
-@media (prefers-reduced-motion: reduce) {
-  *, *::before, *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; transition-delay: 0s !important; }
-}
-</style>
+<link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400&family=Figtree:ital,wght@0,400;0,600;0,700;1,400&family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,600;1,9..144,400&family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,400;0,6..72,600;1,6..72,400&family=Noto+Serif:wght@400&family=Noto+Serif+Hebrew:wght@400&family=Spectral:ital,wght@0,300;0,400;0,600;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/deck.css">
+<link rel="stylesheet" href="../assets/themes.css">
 </head>
 <body>
-<div class="sky"></div>
-<div class="stars"></div>
-
-<svg width="0" height="0" style="position:absolute" aria-hidden="true">
-  <symbol id="lamb" viewBox="0 0 60 44">
-    <g fill="currentColor">
-      <circle cx="17" cy="19" r="9"/><circle cx="27" cy="13" r="10"/><circle cx="37" cy="17" r="9"/><circle cx="27" cy="24" r="10"/>
-      <ellipse cx="48" cy="15" rx="6.5" ry="5"/>
-    </g>
-    <g stroke="currentColor" stroke-width="3" stroke-linecap="round">
-      <line x1="19" y1="29" x2="19" y2="41"/><line x1="35" y1="29" x2="35" y2="41"/>
-    </g>
-  </symbol>
-</svg>
-
 <main class="deck" id="deck">
 
 <!-- ======================= OPENING ======================= -->
 <section class="slide title">
-  <div class="spark"></div>
   <div class="inner">
+    <div class="emblem rise"></div>
     <h1 class="rise">John 1</h1>
     <p class="sub rise" style="--d:3">The Word, the witness, and the Lamb</p>
     <p class="tag rise" style="--d:5">John the Baptist tells the world who Jesus is, and what He came to do.</p>
@@ -471,28 +84,28 @@ svg .serif { font-family: var(--serif); }
       <div class="stage">
         <svg viewBox="0 0 640 380" role="img" aria-label="The Word stands outside the circle of everything that was made, and made all of it.">
           <defs>
-            <radialGradient id="wordGlow"><stop offset="0" stop-color="#ffe2a3"/><stop offset=".55" stop-color="#f2b24c" stop-opacity=".5"/><stop offset="1" stop-color="#f2b24c" stop-opacity="0"/></radialGradient>
+            <radialGradient id="wordGlow"><stop offset="0" style="stop-color:var(--accent-hot)"/><stop offset=".55" stop-opacity=".5" style="stop-color:var(--accent)"/><stop offset="1" stop-opacity="0" style="stop-color:var(--accent)"/></radialGradient>
           </defs>
           <g class="rise" style="--d:2">
-            <circle cx="430" cy="190" r="175" fill="rgb(255 255 255 / .04)" stroke="#aeadcb" stroke-width="2" stroke-dasharray="6 8"/>
-            <text x="430" y="52" text-anchor="middle" font-size="20" fill="#aeadcb">everything that was made</text>
+            <circle cx="430" cy="190" r="175" stroke-width="2" stroke-dasharray="6 8" style="fill:var(--surface);stroke:var(--ink-soft)"/>
+            <text x="430" y="52" text-anchor="middle" font-size="20" style="fill:var(--ink-soft)">everything that was made</text>
             <text x="365" y="120" text-anchor="middle" font-size="26">stars</text>
             <text x="490" y="125" text-anchor="middle" font-size="26">sun</text>
             <text x="430" y="175" text-anchor="middle" font-size="26">angels</text>
             <text x="340" y="228" text-anchor="middle" font-size="26">earth</text>
             <text x="515" y="215" text-anchor="middle" font-size="26">animals</text>
             <text x="420" y="275" text-anchor="middle" font-size="26">people</text>
-            <text x="515" y="300" text-anchor="middle" font-size="22" fill="#aeadcb">time</text>
-            <text x="350" y="310" text-anchor="middle" font-size="22" fill="#aeadcb">you</text>
+            <text x="515" y="300" text-anchor="middle" font-size="22" style="fill:var(--ink-soft)">time</text>
+            <text x="350" y="310" text-anchor="middle" font-size="22" style="fill:var(--ink-soft)">you</text>
           </g>
           <g class="step">
             <circle cx="95" cy="190" r="90" fill="url(#wordGlow)"/>
-            <circle cx="95" cy="190" r="46" fill="#ffe2a3"/>
-            <text x="95" y="197" text-anchor="middle" font-size="20" font-weight="700" fill="#1a1230" class="serif">The Word</text>
-            <path class="draw" pathLength="1" d="M150 190 L245 190" stroke="#f2b24c" stroke-width="4" fill="none"/>
-            <path class="draw" pathLength="1" d="M232 178 L248 190 L232 202" stroke="#f2b24c" stroke-width="4" fill="none"/>
-            <text x="198" y="172" text-anchor="middle" font-size="20" fill="#ffe2a3">made</text>
-            <text x="198" y="222" text-anchor="middle" font-size="20" fill="#ffe2a3">it all</text>
+            <circle cx="95" cy="190" r="46" style="fill:var(--accent-hot)"/>
+            <text x="95" y="197" text-anchor="middle" font-size="20" font-weight="700" class="serif" style="fill:var(--on-accent)">The Word</text>
+            <path class="draw" pathLength="1" d="M150 190 L245 190" stroke-width="4" fill="none" style="stroke:var(--accent)"/>
+            <path class="draw" pathLength="1" d="M232 178 L248 190 L232 202" stroke-width="4" fill="none" style="stroke:var(--accent)"/>
+            <text x="198" y="172" text-anchor="middle" font-size="20" style="fill:var(--accent-hot)">made</text>
+            <text x="198" y="222" text-anchor="middle" font-size="20" style="fill:var(--accent-hot)">it all</text>
           </g>
         </svg>
       </div>
@@ -553,20 +166,20 @@ svg .serif { font-family: var(--serif); }
       <div class="stage">
         <svg viewBox="0 0 600 300" role="img" aria-label="The tabernacle tent in the middle of the camp, with God's glory over it.">
           <defs>
-            <radialGradient id="glory"><stop offset="0" stop-color="#fff4d6"/><stop offset=".4" stop-color="#f2b24c" stop-opacity=".55"/><stop offset="1" stop-color="#f2b24c" stop-opacity="0"/></radialGradient>
+            <radialGradient id="glory"><stop offset="0" style="stop-color:var(--glow)"/><stop offset=".4" stop-opacity=".55" style="stop-color:var(--accent)"/><stop offset="1" stop-opacity="0" style="stop-color:var(--accent)"/></radialGradient>
           </defs>
-          <line x1="0" y1="250" x2="600" y2="250" stroke="#aeadcb" stroke-width="2"/>
-          <g class="rise" style="--d:2" fill="none" stroke="#aeadcb" stroke-width="2">
+          <line x1="0" y1="250" x2="600" y2="250" stroke-width="2" style="stroke:var(--ink-soft)"/>
+          <g class="rise" style="--d:2;stroke:var(--ink-soft)" fill="none" stroke-width="2">
             <path d="M40 250 l22 -26 l22 26"/><path d="M95 250 l18 -22 l18 22"/><path d="M470 250 l22 -26 l22 26"/><path d="M528 250 l18 -22 l18 22"/>
           </g>
           <g class="rise" style="--d:3">
-            <rect x="150" y="205" width="300" height="45" fill="none" stroke="#f1e6cf" stroke-width="2" stroke-dasharray="3 5"/>
-            <path d="M330 250 L330 175 L360 150 L440 150 L440 250 Z" fill="#3a2a3a" stroke="#f1e6cf" stroke-width="2"/>
-            <path d="M330 175 L410 175 L440 150" fill="none" stroke="#f1e6cf" stroke-width="2"/>
-            <rect x="200" y="225" width="30" height="20" fill="none" stroke="#f1e6cf" stroke-width="2"/>
+            <rect x="150" y="205" width="300" height="45" fill="none" stroke-width="2" stroke-dasharray="3 5" style="stroke:var(--ink)"/>
+            <path d="M330 250 L330 175 L360 150 L440 150 L440 250 Z" stroke-width="2" style="fill:var(--surface-2);stroke:var(--ink)"/>
+            <path d="M330 175 L410 175 L440 150" fill="none" stroke-width="2" style="stroke:var(--ink)"/>
+            <rect x="200" y="225" width="30" height="20" fill="none" stroke-width="2" style="stroke:var(--ink)"/>
           </g>
           <circle class="step" cx="385" cy="110" r="110" fill="url(#glory)"/>
-          <text x="300" y="285" text-anchor="middle" font-size="20" fill="#aeadcb">Israel's camp in the wilderness</text>
+          <text x="300" y="285" text-anchor="middle" font-size="20" style="fill:var(--ink-soft)">Israel's camp in the wilderness</text>
         </svg>
       </div>
       <div>
@@ -588,24 +201,24 @@ svg .serif { font-family: var(--serif); }
     <div class="stage">
       <svg viewBox="0 0 640 210" role="img" aria-label="Timeline: John is born first, Jesus six months later, but the Word existed forever before both.">
         <defs>
-          <linearGradient id="eternal" x1="0" x2="1"><stop offset="0" stop-color="#f2b24c" stop-opacity="0"/><stop offset="1" stop-color="#f2b24c"/></linearGradient>
+          <linearGradient id="eternal" x1="0" x2="1"><stop offset="0" stop-opacity="0" style="stop-color:var(--accent)"/><stop offset="1" style="stop-color:var(--accent)"/></linearGradient>
         </defs>
-        <line class="rise" style="--d:2" x1="390" y1="110" x2="620" y2="110" stroke="#aeadcb" stroke-width="3"/>
+        <line class="rise" style="--d:2;stroke:var(--ink-soft)" x1="390" y1="110" x2="620" y2="110" stroke-width="3"/>
         <g class="rise" style="--d:3">
-          <circle cx="440" cy="110" r="9" fill="#f1e6cf"/>
+          <circle cx="440" cy="110" r="9" style="fill:var(--ink)"/>
           <text x="440" y="150" text-anchor="middle" font-size="20">John born</text>
         </g>
         <g class="rise" style="--d:5">
-          <circle cx="540" cy="110" r="11" fill="#ffe2a3"/>
+          <circle cx="540" cy="110" r="11" style="fill:var(--accent-hot)"/>
           <text x="540" y="150" text-anchor="middle" font-size="20">Jesus born</text>
-          <text x="540" y="175" text-anchor="middle" font-size="16" fill="#aeadcb">about 6 months later</text>
-          <text x="540" y="198" text-anchor="middle" font-size="16" fill="#aeadcb">(Luke 1:36)</text>
+          <text x="540" y="175" text-anchor="middle" font-size="16" style="fill:var(--ink-soft)">about 6 months later</text>
+          <text x="540" y="198" text-anchor="middle" font-size="16" style="fill:var(--ink-soft)">(Luke 1:36)</text>
         </g>
         <g class="step">
           <rect x="10" y="106" width="380" height="8" fill="url(#eternal)"/>
-          <path class="draw" pathLength="1" d="M540 96 C 500 30, 200 30, 40 96" fill="none" stroke="#f2b24c" stroke-width="3"/>
-          <text x="20" y="150" font-size="22" fill="#ffe2a3" class="serif">“In the beginning was the Word”</text>
-          <text x="20" y="176" font-size="18" fill="#aeadcb">no starting point</text>
+          <path class="draw" pathLength="1" d="M540 96 C 500 30, 200 30, 40 96" fill="none" stroke-width="3" style="stroke:var(--accent)"/>
+          <text x="20" y="150" font-size="22" class="serif" style="fill:var(--accent-hot)">“In the beginning was the Word”</text>
+          <text x="20" y="176" font-size="18" style="fill:var(--ink-soft)">no starting point</text>
         </g>
       </svg>
     </div>
@@ -690,13 +303,13 @@ svg .serif { font-family: var(--serif); }
       <div class="stage">
         <svg viewBox="0 0 600 240" role="img" aria-label="A crooked road over hills is leveled and made straight.">
           <g>
-            <path class="hill" d="M60 200 L150 80 L240 200 Z" fill="#2a2850" stroke="#aeadcb" stroke-width="2"/>
-            <path class="hill" d="M300 200 L380 110 L460 200 Z" fill="#2a2850" stroke="#aeadcb" stroke-width="2"/>
-            <path class="crooked" d="M20 200 C70 200 90 90 150 85 C210 80 220 210 270 205 C320 200 340 120 380 115 C420 110 440 205 480 200 C520 195 540 200 580 200" fill="none" stroke="#aeadcb" stroke-width="5" stroke-dasharray="10 8"/>
-            <path class="draw" pathLength="1" d="M20 200 L580 200" fill="none" stroke="#f2b24c" stroke-width="6" stroke-linecap="round"/>
+            <path class="hill" d="M60 200 L150 80 L240 200 Z" stroke-width="2" style="fill:var(--surface-2);stroke:var(--ink-soft)"/>
+            <path class="hill" d="M300 200 L380 110 L460 200 Z" stroke-width="2" style="fill:var(--surface-2);stroke:var(--ink-soft)"/>
+            <path class="crooked" d="M20 200 C70 200 90 90 150 85 C210 80 220 210 270 205 C320 200 340 120 380 115 C420 110 440 205 480 200 C520 195 540 200 580 200" fill="none" stroke-width="5" stroke-dasharray="10 8" style="stroke:var(--ink-soft)"/>
+            <path class="draw" pathLength="1" d="M20 200 L580 200" fill="none" stroke-width="6" stroke-linecap="round" style="stroke:var(--accent)"/>
           </g>
-          <line x1="0" y1="203" x2="600" y2="203" stroke="#aeadcb" stroke-width="1" opacity=".4"/>
-          <text x="580" y="232" text-anchor="end" font-size="18" fill="#ffe2a3">the way of the Lord</text>
+          <line x1="0" y1="203" x2="600" y2="203" stroke-width="1" opacity=".4" style="stroke:var(--ink-soft)"/>
+          <text x="580" y="232" text-anchor="end" font-size="18" style="fill:var(--accent-hot)">the way of the Lord</text>
         </svg>
       </div>
       <div>
@@ -724,9 +337,9 @@ svg .serif { font-family: var(--serif); }
             <path d="M160 32 L160 110" stroke="#a4764f" stroke-width="9" stroke-linecap="round"/>
           </g>
           <g class="step">
-            <path class="draw" pathLength="1" d="M232 175 C285 185 290 230 245 245 C215 255 200 240 214 228" fill="none" stroke="#f2b24c" stroke-width="7" stroke-linecap="round"/>
-            <text x="300" y="200" font-size="24" fill="#ffe2a3" font-weight="700">the latchet</text>
-            <text x="300" y="226" font-size="20" fill="#ffe2a3">the strap</text>
+            <path class="draw" pathLength="1" d="M232 175 C285 185 290 230 245 245 C215 255 200 240 214 228" fill="none" stroke-width="7" stroke-linecap="round" style="stroke:var(--accent)"/>
+            <text x="300" y="200" font-size="24" font-weight="700" style="fill:var(--accent-hot)">the latchet</text>
+            <text x="300" y="226" font-size="20" style="fill:var(--accent-hot)">the strap</text>
           </g>
         </svg>
       </div>
@@ -745,7 +358,7 @@ svg .serif { font-family: var(--serif); }
   <div class="inner">
     <blockquote class="quote rise" data-q="29" data-hl="the Lamb of God|taketh away|the world"></blockquote>
     <h2 class="rise" style="--d:1">Behold the Lamb</h2>
-    <div class="flock" id="flock" aria-hidden="true"></div>
+    <div class="flock" data-flock="48" data-chosen="18" aria-hidden="true"></div>
     <p class="note rise" style="--d:2">At the first Passover, a lamb died and its blood went on the doorposts. Death passed over that house (Exodus 12).</p>
     <p class="note step l2">After that, two lambs were offered every single day, morning and evening, year after year (Exodus 29:38–39). Sin was covered, but never removed. “It is not possible that the blood of bulls and of goats should take away sins” (Hebrews 10:4).</p>
     <p class="note step l3">Then John points at Jesus. <em>The Lamb of God</em>, God's own Lamb. He doesn't just cover sin. He <em>takes it away</em>. And not for one family or one nation, but for the world.</p>
@@ -763,24 +376,24 @@ svg .serif { font-family: var(--serif); }
       <div class="stage">
         <svg viewBox="0 0 400 380" role="img" aria-label="The Father above, the Spirit descending like a dove, the Son in the water.">
           <defs>
-            <radialGradient id="heaven"><stop offset="0" stop-color="#fff4d6"/><stop offset=".5" stop-color="#f2b24c" stop-opacity=".35"/><stop offset="1" stop-color="#f2b24c" stop-opacity="0"/></radialGradient>
+            <radialGradient id="heaven"><stop offset="0" style="stop-color:var(--glow)"/><stop offset=".5" stop-opacity=".35" style="stop-color:var(--accent)"/><stop offset="1" stop-opacity="0" style="stop-color:var(--accent)"/></radialGradient>
           </defs>
           <ellipse cx="200" cy="20" rx="190" ry="70" fill="url(#heaven)"/>
-          <text x="200" y="30" text-anchor="middle" font-size="22" font-weight="700" fill="#1a1230">The Father</text>
-          <text x="200" y="56" text-anchor="middle" font-size="16" fill="#1a1230">“he that sent me” (v. 33)</text>
+          <text x="200" y="30" text-anchor="middle" font-size="22" font-weight="700" style="fill:var(--on-glow)">The Father</text>
+          <text x="200" y="56" text-anchor="middle" font-size="16" style="fill:var(--on-glow)">“he that sent me” (v. 33)</text>
           <g class="dove">
-            <path class="wing" d="M-34 0 Q-16 -26 0 0 Q16 -26 34 0" fill="none" stroke="#fff" stroke-width="4" stroke-linecap="round"/>
-            <ellipse cx="0" cy="4" rx="9" ry="6" fill="#fff"/>
+            <path class="wing" d="M-34 0 Q-16 -26 0 0 Q16 -26 34 0" fill="none" stroke-width="4" stroke-linecap="round" style="stroke:var(--ink)"/>
+            <ellipse cx="0" cy="4" rx="9" ry="6" style="fill:var(--ink)"/>
           </g>
-          <text x="262" y="200" font-size="20" fill="#ffe2a3">The Spirit</text>
-          <circle cx="200" cy="292" r="14" fill="#f1e6cf"/>
-          <path d="M182 345 L186 312 Q200 304 214 312 L218 345 Z" fill="#f1e6cf"/>
-          <g fill="none" stroke="#7fb6d4" stroke-width="3">
+          <text x="262" y="200" font-size="20" style="fill:var(--accent-hot)">The Spirit</text>
+          <circle cx="200" cy="292" r="14" style="fill:var(--ink)"/>
+          <path d="M182 345 L186 312 Q200 304 214 312 L218 345 Z" style="fill:var(--ink)"/>
+          <g fill="none" stroke-width="3" style="stroke:var(--cool)">
             <path d="M80 340 q20 -10 40 0 t40 0 t40 0 t40 0 t40 0 t40 0"/>
             <path d="M60 356 q20 -10 40 0 t40 0 t40 0 t40 0 t40 0 t40 0 t40 0"/>
           </g>
-          <text x="250" y="300" font-size="20" fill="#ffe2a3">The Son</text>
-          <text x="200" y="378" text-anchor="middle" font-size="15" fill="#7fb6d4">the Jordan River</text>
+          <text x="250" y="300" font-size="20" style="fill:var(--accent-hot)">The Son</text>
+          <text x="200" y="378" text-anchor="middle" font-size="15" style="fill:var(--cool)">the Jordan River</text>
         </svg>
       </div>
       <div>
@@ -821,19 +434,19 @@ svg .serif { font-family: var(--serif); }
     <div class="split">
       <div class="stage">
         <svg viewBox="0 0 600 300" role="img" aria-label="The sun travels across the sky from sunrise to the tenth hour, about four in the afternoon.">
-          <path d="M80 250 A220 220 0 0 1 520 250" fill="none" stroke="#aeadcb" stroke-width="2" stroke-dasharray="4 8"/>
-          <line x1="20" y1="250" x2="580" y2="250" stroke="#aeadcb" stroke-width="2"/>
-          <text x="80" y="280" text-anchor="middle" font-size="18" fill="#aeadcb">sunrise ≈ 6 a.m.</text>
-          <text x="300" y="20" text-anchor="middle" font-size="18" fill="#aeadcb">6th hour ≈ noon</text>
-          <text x="520" y="280" text-anchor="middle" font-size="18" fill="#aeadcb">sunset ≈ 6 p.m.</text>
+          <path d="M80 250 A220 220 0 0 1 520 250" fill="none" stroke-width="2" stroke-dasharray="4 8" style="stroke:var(--ink-soft)"/>
+          <line x1="20" y1="250" x2="580" y2="250" stroke-width="2" style="stroke:var(--ink-soft)"/>
+          <text x="80" y="280" text-anchor="middle" font-size="18" style="fill:var(--ink-soft)">sunrise ≈ 6 a.m.</text>
+          <text x="300" y="20" text-anchor="middle" font-size="18" style="fill:var(--ink-soft)">6th hour ≈ noon</text>
+          <text x="520" y="280" text-anchor="middle" font-size="18" style="fill:var(--ink-soft)">sunset ≈ 6 p.m.</text>
           <g class="step">
-            <line x1="490" y1="140" x2="510" y2="128" stroke="#f2b24c" stroke-width="3"/>
-            <text x="575" y="105" text-anchor="end" font-size="22" fill="#ffe2a3" font-weight="700">10th hour</text>
-            <text x="575" y="128" text-anchor="end" font-size="18" fill="#ffe2a3">≈ 4 p.m.</text>
+            <line x1="490" y1="140" x2="510" y2="128" stroke-width="3" style="stroke:var(--accent)"/>
+            <text x="575" y="105" text-anchor="end" font-size="22" font-weight="700" style="fill:var(--accent-hot)">10th hour</text>
+            <text x="575" y="128" text-anchor="end" font-size="18" style="fill:var(--accent-hot)">≈ 4 p.m.</text>
           </g>
           <g class="sun">
-            <circle cx="80" cy="250" r="26" fill="#f2b24c" opacity=".35"/>
-            <circle cx="80" cy="250" r="16" fill="#ffe2a3"/>
+            <circle cx="80" cy="250" r="26" opacity=".35" style="fill:var(--accent)"/>
+            <circle cx="80" cy="250" r="16" style="fill:var(--accent-hot)"/>
           </g>
         </svg>
       </div>
@@ -916,15 +529,15 @@ svg .serif { font-family: var(--serif); }
       <div class="stage">
         <svg viewBox="0 0 300 420" role="img" aria-label="A ladder from earth to an open heaven, with angels going up and down.">
           <defs>
-            <radialGradient id="open"><stop offset="0" stop-color="#fff4d6"/><stop offset=".45" stop-color="#f2b24c" stop-opacity=".45"/><stop offset="1" stop-color="#f2b24c" stop-opacity="0"/></radialGradient>
+            <radialGradient id="open"><stop offset="0" style="stop-color:var(--glow)"/><stop offset=".45" stop-opacity=".45" style="stop-color:var(--accent)"/><stop offset="1" stop-opacity="0" style="stop-color:var(--accent)"/></radialGradient>
           </defs>
           <ellipse cx="150" cy="30" rx="150" ry="70" fill="url(#open)"/>
-          <line x1="0" y1="405" x2="300" y2="405" stroke="#aeadcb" stroke-width="2"/>
-          <g stroke="#f1e6cf" stroke-width="5" stroke-linecap="round">
+          <line x1="0" y1="405" x2="300" y2="405" stroke-width="2" style="stroke:var(--ink-soft)"/>
+          <g stroke-width="5" stroke-linecap="round" style="stroke:var(--ink)">
             <line x1="100" y1="405" x2="128" y2="40"/>
             <line x1="200" y1="405" x2="172" y2="40"/>
           </g>
-          <g stroke="#f1e6cf" stroke-width="3">
+          <g stroke-width="3" style="stroke:var(--ink)">
             <line x1="103" y1="370" x2="197" y2="370"/><line x1="106" y1="330" x2="194" y2="330"/>
             <line x1="109" y1="290" x2="191" y2="290"/><line x1="112" y1="250" x2="188" y2="250"/>
             <line x1="115" y1="210" x2="185" y2="210"/><line x1="118" y1="170" x2="182" y2="170"/>
@@ -934,7 +547,7 @@ svg .serif { font-family: var(--serif); }
           <circle class="angel up" cx="80" cy="390" r="6" style="animation-delay:-1.7s"/>
           <circle class="angel down" cx="220" cy="60" r="6" style="animation-delay:-.8s"/>
           <circle class="angel down" cx="220" cy="60" r="6" style="animation-delay:-2.5s"/>
-          <text x="150" y="420" text-anchor="middle" font-size="16" fill="#aeadcb">earth</text>
+          <text x="150" y="420" text-anchor="middle" font-size="16" style="fill:var(--ink-soft)">earth</text>
         </svg>
       </div>
       <div>
@@ -1076,7 +689,7 @@ svg .serif { font-family: var(--serif); }
 
 <section class="slide prayer">
   <div class="inner">
-    <div class="candle-row rise"><div class="flame"></div></div>
+    <div class="emblem rise"></div>
     <h2 class="rise" style="--d:1">Prayer requests</h2>
     <p class="ask-line rise" style="--d:2">What can we pray about for you today?</p>
     <blockquote class="quote rise" style="--d:4"><p>“Be careful for nothing; but in every thing by prayer and supplication with thanksgiving let your requests be made known unto God.”</p><cite>Philippians 4:6</cite></blockquote>
@@ -1084,15 +697,6 @@ svg .serif { font-family: var(--serif); }
 </section>
 
 </main>
-
-<nav class="nav" aria-label="Slide controls">
-  <a href="../index.html" aria-label="All studies"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 11l8-7 8 7M6 9.5V20h12V9.5"/></svg></a>
-  <button type="button" id="prev" aria-label="Previous"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M15 5l-7 7 7 7"/></svg></button>
-  <button type="button" id="next" aria-label="Next"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M9 5l7 7-7 7"/></svg></button>
-  <div class="horizon"><span id="bar"></span></div>
-  <span class="count" id="count"></span>
-  <button type="button" id="full" aria-label="Full screen"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 9V4h5M20 9V4h-5M4 15v5h5M20 15v5h-5"/></svg></button>
-</nav>
 
 <script>
 // King James Version, John chapter 1
@@ -1150,158 +754,7 @@ const V = {
   51: "And he saith unto him, Verily, verily, I say unto you, Hereafter ye shall see heaven open, and the angels of God ascending and descending upon the Son of man."
 };
 const BOOK = "John 1";
-
-function range(spec) {
-  const [a, b] = spec.split("-").map(Number);
-  const out = [];
-  for (let n = a; n <= (b || a); n++) out.push(n);
-  return out;
-}
-function refText(nums) {
-  return nums.length > 1 ? `${BOOK}:${nums[0]}–${nums[nums.length - 1]}` : `${BOOK}:${nums[0]}`;
-}
-function highlight(text, hl) {
-  if (!hl) return text;
-  for (const phrase of hl.split("|")) {
-    const at = text.indexOf(phrase);
-    if (at >= 0) text = text.slice(0, at) + "<mark>" + phrase + "</mark>" + text.slice(at + phrase.length);
-  }
-  return text;
-}
-
-// Build full-verse slides
-document.querySelectorAll(".slide.verse").forEach(s => {
-  const nums = range(s.dataset.v);
-  const chars = nums.reduce((t, n) => t + V[n].length, 0);
-  const vs = chars < 260 ? 1 : chars < 420 ? .88 : chars < 600 ? .78 : .7;
-  const body = nums.map((n, k) =>
-    `<p class="v rise" style="--d:${k * 2}"><span class="vn">${n}</span>${highlight(V[n], s.dataset.hl)}</p>`).join("");
-  s.innerHTML = `<div class="inner"><div class="vtext" style="--vs:${vs}">${body}</div>` +
-    `<p class="vref rise" style="--d:${nums.length * 2}">${refText(nums)}</p></div>`;
-});
-
-// Fill verse quotes on explanation and question slides
-document.querySelectorAll("blockquote[data-q]").forEach(q => {
-  const nums = range(q.dataset.q);
-  const text = nums.map(n => (nums.length > 1 ? `<span class="vn">${n}</span>` : "") + V[n]).join(" ");
-  q.innerHTML = `<p>${highlight(text, q.dataset.hl)}</p><cite>${refText(nums)}</cite>`;
-});
-
-// Lamb flock: one Passover lamb, then the endless daily sacrifices
-const flock = document.getElementById("flock");
-for (let k = 0; k < 48; k++) {
-  const chosen = k === 18;
-  flock.insertAdjacentHTML("beforeend",
-    `<svg class="lamb${chosen ? " chosen" : ""}" style="--i:${k}" viewBox="0 0 60 44"><use href="#lamb"/></svg>`);
-}
-
-// ---------- Deck engine ----------
-let slides = [], i = 0, step = 0;
-
-const stepsOf = s => [...s.querySelectorAll(".step")];
-
-function start() {
-  slides = [...document.querySelectorAll(".slide")];
-  // #v15 opens the slide that reads verse 15 (used by the glossary)
-  const verse = location.hash.match(/^#v(\d+)$/);
-  if (verse) {
-    const at = slides.findIndex(s => s.dataset.v && range(s.dataset.v).includes(Number(verse[1])));
-    if (at >= 0) return go(at);
-  }
-  const fromHash = parseInt(location.hash.slice(1), 10);
-  go(Number.isFinite(fromHash) ? Math.min(Math.max(fromHash - 1, 0), slides.length - 1) : 0);
-}
-
-function go(n, revealAll = false) {
-  if (n < 0 || n >= slides.length) return;
-  slides.forEach(s => { s.classList.remove("active"); s.setAttribute("aria-hidden", "true"); });
-  i = n;
-  const s = slides[i];
-  const st = stepsOf(s);
-  st.forEach(e => e.classList.toggle("on", revealAll));
-  step = revealAll ? st.length : 0;
-  s.querySelector(".inner").scrollTop = 0;
-  s.classList.add("active");
-  s.removeAttribute("aria-hidden");
-  render();
-}
-
-function next() {
-  const st = stepsOf(slides[i]);
-  if (step < st.length) {
-    st[step].classList.add("on");
-    st[step].scrollIntoView({ block: "nearest", behavior: "smooth" });
-    step++;
-    render();
-  } else go(i + 1);
-}
-
-function prev() {
-  if (step > 0) {
-    step--;
-    stepsOf(slides[i])[step].classList.remove("on");
-    render();
-  } else go(i - 1, true);
-}
-
-function render() {
-  const p = slides.length > 1 ? i / (slides.length - 1) : 0;
-  document.documentElement.style.setProperty("--dawn", p.toFixed(3));
-  document.getElementById("bar").style.width = (p * 100) + "%";
-  document.getElementById("count").textContent = `${i + 1} / ${slides.length}`;
-  history.replaceState(null, "", `#${i + 1}`);
-
-  const s = slides[i];
-  const btn = s.querySelector(".reveal");
-  if (btn) {
-    const st = stepsOf(s);
-    const upcoming = st[step];
-    btn.textContent = !upcoming ? (i + 1 < slides.length && slides[i + 1].classList.contains("qa") ? "Next question" : "Continue")
-      : upcoming.classList.contains("answer") ? "Show the answer" : "Show a verse";
-  }
-}
-
-// Controls
-document.getElementById("next").addEventListener("click", next);
-document.getElementById("prev").addEventListener("click", prev);
-document.getElementById("full").addEventListener("click", () => {
-  if (document.fullscreenElement) document.exitFullscreen();
-  else document.documentElement.requestFullscreen?.();
-});
-document.querySelectorAll(".reveal").forEach(b => b.addEventListener("click", e => { e.stopPropagation(); next(); }));
-
-document.addEventListener("keydown", e => {
-  if (["ArrowRight", "ArrowDown", "PageDown", " ", "Enter"].includes(e.key)) {
-    if ((e.key === "Enter" || e.key === " ") && e.target.closest("button")) return;
-    e.preventDefault(); next();
-  } else if (["ArrowLeft", "ArrowUp", "PageUp", "Backspace"].includes(e.key)) {
-    e.preventDefault(); prev();
-  } else if (e.key === "Home") go(0);
-  else if (e.key === "End") go(slides.length - 1, true);
-  else if (e.key === "f") document.getElementById("full").click();
-});
-
-// Click or tap: right side goes forward, left third goes back
-document.getElementById("deck").addEventListener("click", e => {
-  if (e.target.closest("button, a")) return;
-  if (window.getSelection().toString()) return;
-  e.clientX < window.innerWidth * 0.3 ? prev() : next();
-});
-
-// Swipe on phones
-let tx = null, ty = null;
-document.addEventListener("touchstart", e => { tx = e.touches[0].clientX; ty = e.touches[0].clientY; }, { passive: true });
-document.addEventListener("touchend", e => {
-  if (tx === null) return;
-  const dx = e.changedTouches[0].clientX - tx, dy = e.changedTouches[0].clientY - ty;
-  if (Math.abs(dx) > 50 && Math.abs(dx) > Math.abs(dy) * 1.5) {
-    e.preventDefault();
-    dx < 0 ? next() : prev();
-  }
-  tx = ty = null;
-});
-
-start();
 </script>
+<script src="../assets/deck.js"></script>
 </body>
 </html>
