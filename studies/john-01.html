@@ -70,7 +70,6 @@ body {
   transition: opacity .7s ease, visibility 0s linear .7s;
 }
 .slide.active { opacity: 1; visibility: visible; transition: opacity .7s ease; }
-.slide.skip { display: none; }
 .inner {
   width: min(100%, 68rem);
   max-height: 100%;
@@ -377,20 +376,6 @@ svg .serif { font-family: var(--serif); }
 .count { font-size: .9rem; color: var(--mist); min-width: 4.5em; text-align: right; font-variant-numeric: tabular-nums; }
 :focus-visible { outline: 2px solid var(--flame-hot); outline-offset: 3px; }
 
-/* ---------- Version chooser ---------- */
-.chooser { position: fixed; inset: 0; z-index: 20; display: grid; place-items: center; padding: 16px; background: var(--night); }
-.chooser[hidden] { display: none; }
-.chooser .box { width: min(100%, 34rem); text-align: center; }
-.chooser h1 { font-size: clamp(3rem, 2rem + 6vw, 6rem); font-weight: 300; }
-.chooser p { color: var(--mist); margin: .6em 0 1.6em; font-size: 1.1rem; }
-.home-link { display: inline-block; margin-top: .6rem; color: var(--mist); }
-.chooser button {
-  display: block; width: 100%; text-align: left; margin-bottom: .8rem; cursor: pointer;
-  padding: 1rem 1.2rem; border-radius: 10px; border: 1.5px solid rgb(241 230 207 / .3);
-  background: rgb(255 255 255 / .04); color: var(--parch); font: 1.05rem var(--sans);
-}
-.chooser button:hover { border-color: var(--flame); }
-.chooser button strong { display: block; font: 600 1.4rem var(--serif); color: var(--flame-hot); }
 
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; transition-delay: 0s !important; }
@@ -412,16 +397,6 @@ svg .serif { font-family: var(--serif); }
     </g>
   </symbol>
 </svg>
-
-<div class="chooser" id="chooser" hidden>
-  <div class="box">
-    <h1>John 1</h1>
-    <p>Choose how to read.</p>
-    <button type="button" data-mode="full"><strong>Full reading</strong>Every verse of the chapter is on screen.</button>
-    <button type="button" data-mode="key"><strong>Key verses</strong>Read along in your own Bible. The key verses and all the explanations are on screen.</button>
-    <a class="home-link" href="../index.html">All studies</a>
-  </div>
-</div>
 
 <main class="deck" id="deck">
 
@@ -549,8 +524,8 @@ svg .serif { font-family: var(--serif); }
   </div>
 </section>
 
-<section class="slide verse" data-v="6-8" data-only="full"></section>
-<section class="slide verse" data-v="9-11" data-only="full"></section>
+<section class="slide verse" data-v="6-8"></section>
+<section class="slide verse" data-v="9-11"></section>
 
 <section class="slide verse" data-v="12-13" data-hl="as many as received him|power to become the sons of God"></section>
 
@@ -604,7 +579,7 @@ svg .serif { font-family: var(--serif); }
   </div>
 </section>
 
-<section class="slide verse" data-v="15" data-only="full" data-hl="for he was before me"></section>
+<section class="slide verse" data-v="15" data-hl="for he was before me"></section>
 
 <section class="slide ex">
   <div class="inner">
@@ -638,8 +613,7 @@ svg .serif { font-family: var(--serif); }
   </div>
 </section>
 
-<section class="slide verse" data-v="16-18" data-only="full" data-hl="grace and truth came by Jesus Christ|the only begotten Son"></section>
-<section class="slide verse" data-v="17-18" data-only="key" data-hl="grace and truth came by Jesus Christ|the only begotten Son"></section>
+<section class="slide verse" data-v="16-18" data-hl="grace and truth came by Jesus Christ|the only begotten Son"></section>
 
 <section class="slide ex">
   <div class="inner">
@@ -692,7 +666,7 @@ svg .serif { font-family: var(--serif); }
   </div>
 </section>
 
-<section class="slide verse" data-v="19-22" data-only="full"></section>
+<section class="slide verse" data-v="19-22"></section>
 
 <section class="slide ex">
   <div class="inner">
@@ -735,8 +709,7 @@ svg .serif { font-family: var(--serif); }
   </div>
 </section>
 
-<section class="slide verse" data-v="24-28" data-only="full" data-hl="whose shoe’s latchet I am not worthy to unloose"></section>
-<section class="slide verse" data-v="26-27" data-only="key" data-hl="whose shoe’s latchet I am not worthy to unloose"></section>
+<section class="slide verse" data-v="24-28" data-hl="whose shoe’s latchet I am not worthy to unloose"></section>
 
 <section class="slide ex">
   <div class="inner">
@@ -779,7 +752,7 @@ svg .serif { font-family: var(--serif); }
   </div>
 </section>
 
-<section class="slide verse" data-v="30-31" data-only="full"></section>
+<section class="slide verse" data-v="30-31"></section>
 
 <section class="slide verse" data-v="32-34" data-hl="the Spirit descending from heaven like a dove|baptizeth with the Holy Ghost|this is the Son of God"></section>
 
@@ -830,8 +803,7 @@ svg .serif { font-family: var(--serif); }
   </div>
 </section>
 
-<section class="slide verse" data-v="35-39" data-only="full" data-hl="What seek ye?|Come and see|the tenth hour"></section>
-<section class="slide verse" data-v="38-39" data-only="key" data-hl="What seek ye?|Come and see|the tenth hour"></section>
+<section class="slide verse" data-v="35-39" data-hl="What seek ye?|Come and see|the tenth hour"></section>
 
 <section class="slide ex">
   <div class="inner">
@@ -874,8 +846,7 @@ svg .serif { font-family: var(--serif); }
   </div>
 </section>
 
-<section class="slide verse" data-v="40-42" data-only="full" data-hl="We have found the Messias|thou shalt be called Cephas"></section>
-<section class="slide verse" data-v="41-42" data-only="key" data-hl="We have found the Messias|thou shalt be called Cephas"></section>
+<section class="slide verse" data-v="40-42" data-hl="We have found the Messias|thou shalt be called Cephas"></section>
 
 <section class="slide ex">
   <div class="inner">
@@ -907,8 +878,7 @@ svg .serif { font-family: var(--serif); }
   </div>
 </section>
 
-<section class="slide verse" data-v="43-46" data-only="full" data-hl="Follow me|Can there any good thing come out of Nazareth?|Come and see"></section>
-<section class="slide verse" data-v="45-46" data-only="key" data-hl="Can there any good thing come out of Nazareth?|Come and see"></section>
+<section class="slide verse" data-v="43-46" data-hl="Follow me|Can there any good thing come out of Nazareth?|Come and see"></section>
 
 <section class="slide ex">
   <div class="inner">
@@ -924,7 +894,7 @@ svg .serif { font-family: var(--serif); }
   </div>
 </section>
 
-<section class="slide verse" data-v="47-49" data-only="full" data-hl="in whom is no guile|under the fig tree, I saw thee"></section>
+<section class="slide verse" data-v="47-49" data-hl="in whom is no guile|under the fig tree, I saw thee"></section>
 
 <section class="slide ex">
   <div class="inner">
@@ -1226,20 +1196,12 @@ for (let k = 0; k < 48; k++) {
 }
 
 // ---------- Deck engine ----------
-const params = new URLSearchParams(location.search);
-const chooser = document.getElementById("chooser");
-let mode = params.get("v");
 let slides = [], i = 0, step = 0;
 
 const stepsOf = s => [...s.querySelectorAll(".step")];
 
-function start(m) {
-  mode = m === "key" ? "key" : "full";
-  chooser.hidden = true;
-  document.querySelectorAll(".slide").forEach(s => {
-    s.classList.toggle("skip", !!s.dataset.only && s.dataset.only !== mode);
-  });
-  slides = [...document.querySelectorAll(".slide:not(.skip)")];
+function start() {
+  slides = [...document.querySelectorAll(".slide")];
   const fromHash = parseInt(location.hash.slice(1), 10);
   go(Number.isFinite(fromHash) ? Math.min(Math.max(fromHash - 1, 0), slides.length - 1) : 0);
 }
@@ -1281,7 +1243,7 @@ function render() {
   document.documentElement.style.setProperty("--dawn", p.toFixed(3));
   document.getElementById("bar").style.width = (p * 100) + "%";
   document.getElementById("count").textContent = `${i + 1} / ${slides.length}`;
-  history.replaceState(null, "", `?v=${mode}#${i + 1}`);
+  history.replaceState(null, "", `#${i + 1}`);
 
   const s = slides[i];
   const btn = s.querySelector(".reveal");
@@ -1301,10 +1263,8 @@ document.getElementById("full").addEventListener("click", () => {
   else document.documentElement.requestFullscreen?.();
 });
 document.querySelectorAll(".reveal").forEach(b => b.addEventListener("click", e => { e.stopPropagation(); next(); }));
-chooser.querySelectorAll("button").forEach(b => b.addEventListener("click", () => start(b.dataset.mode)));
 
 document.addEventListener("keydown", e => {
-  if (!chooser.hidden) return;
   if (["ArrowRight", "ArrowDown", "PageDown", " ", "Enter"].includes(e.key)) {
     if ((e.key === "Enter" || e.key === " ") && e.target.closest("button")) return;
     e.preventDefault(); next();
@@ -1335,8 +1295,7 @@ document.addEventListener("touchend", e => {
   tx = ty = null;
 });
 
-if (mode === "full" || mode === "key") start(mode);
-else chooser.hidden = false;
+start();
 </script>
 </body>
 </html>

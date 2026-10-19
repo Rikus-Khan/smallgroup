@@ -162,20 +162,10 @@ footer { margin-top: 3rem; color: var(--mist); font-size: .95rem; }
 </div>
 <div class="sheet-bg" id="sheet-bg"></div>
 
+<script src="bible.js"></script>
 <script src="studies.js"></script>
 <script>
-// Bible books in order, with chapter counts (used for spine height and progress)
-const BIBLE_BOOKS = [
-  ["Genesis",50],["Exodus",40],["Leviticus",27],["Numbers",36],["Deuteronomy",34],["Joshua",24],["Judges",21],["Ruth",4],
-  ["1 Samuel",31],["2 Samuel",24],["1 Kings",22],["2 Kings",25],["1 Chronicles",29],["2 Chronicles",36],["Ezra",10],["Nehemiah",13],
-  ["Esther",10],["Job",42],["Psalms",150],["Proverbs",31],["Ecclesiastes",12],["Song of Solomon",8],["Isaiah",66],["Jeremiah",52],
-  ["Lamentations",5],["Ezekiel",48],["Daniel",12],["Hosea",14],["Joel",3],["Amos",9],["Obadiah",1],["Jonah",4],["Micah",7],
-  ["Nahum",3],["Habakkuk",3],["Zephaniah",3],["Haggai",2],["Zechariah",14],["Malachi",4],
-  ["Matthew",28],["Mark",16],["Luke",24],["John",21],["Acts",28],["Romans",16],["1 Corinthians",16],["2 Corinthians",13],
-  ["Galatians",6],["Ephesians",6],["Philippians",4],["Colossians",4],["1 Thessalonians",5],["2 Thessalonians",3],["1 Timothy",6],
-  ["2 Timothy",4],["Titus",3],["Philemon",1],["Hebrews",13],["James",5],["1 Peter",5],["2 Peter",3],["1 John",5],["2 John",1],
-  ["3 John",1],["Jude",1],["Revelation",22]
-];
+const BIBLE_BOOKS = window.BIBLE_BOOKS;
 const BOOK_INDEX = Object.fromEntries(BIBLE_BOOKS.map(([name], k) => [name, k]));
 const CHAPTERS = Object.fromEntries(BIBLE_BOOKS);
 const FIRST_NT = BOOK_INDEX["Matthew"];
@@ -202,7 +192,8 @@ function drawNewest() {
     <div class="btns">${studyButtons(s)}</div>`;
 }
 function studyButtons(s) {
-  return `<a class="btn primary" href="${esc(s.url)}?v=full">Full reading</a><a class="btn" href="${esc(s.url)}?v=key">Key verses</a>`;
+  return `<a class="btn primary" href="${esc(s.url)}">Start the study</a>` +
+    (s.overview ? `<a class="btn" href="overview.html?id=${encodeURIComponent(s.id)}">Chapter overview</a>` : "");
 }
 
 // ---------- Shelves ----------
@@ -256,12 +247,12 @@ function drawShelves() {
 
 function drawOpenBook(book) {
   const chs = studies.filter(s => s.type === "chapter" && s.book === book).sort((a, b) => a.ch - b.ch);
-  const overview = studies.find(s => s.type === "book" && s.book === book);
+  const hasOverview = chs.some(c => c.overview);
   return `<div class="open-book" id="open-book">
     <h4>${esc(book)}</h4>
     <p class="progress">${chs.length} of ${CHAPTERS[book]} chapters studied so far</p>
     <div class="tiles">${chs.map(c => `<button class="tile" type="button" data-study="${esc(c.id)}" aria-label="${esc(c.title)}">${c.ch}</button>`).join("")}</div>
-    ${overview ? `<div class="btns"><button class="btn" type="button" data-study="${esc(overview.id)}">Book overview</button></div>` : ""}
+    ${hasOverview ? `<div class="btns"><a class="btn" href="overview.html?book=${encodeURIComponent(book)}">${esc(book)} overview</a></div>` : ""}
   </div>`;
 }
 

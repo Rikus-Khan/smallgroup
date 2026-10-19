@@ -1,0 +1,868 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>John 2</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,400;0,600;0,700;1,400&family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,600;1,9..144,400&family=Noto+Serif:wght@400&display=swap" rel="stylesheet">
+<style>
+@property --fill { syntax: '<number>'; inherits: true; initial-value: 0; }
+
+:root {
+  --stone: #ece3d2;
+  --stone-2: #ddd0b8;
+  --stone-3: #c9b99c;
+  --ink: #2b211c;
+  --muted: #65574b;
+  --wine: #7b1e30;
+  --wine-2: #a3344a;
+  --water: #3f86a1;
+  --water-2: #8cc0d2;
+  --gold: #9a6b1f;
+  --serif: 'Fraunces', 'Noto Serif', Georgia, serif;
+  --sans: 'Figtree', system-ui, sans-serif;
+  --liquid: var(--water);
+  --fill: 0;
+  transition: --fill 1.4s ease;
+}
+body.wine { --liquid: var(--wine); }
+
+* { box-sizing: border-box; }
+html, body { margin: 0; height: 100%; }
+html { font-size: clamp(16px, calc(.7vw + .6vh + 2px), 28px); }
+body {
+  color: var(--ink); font-family: var(--sans); overflow: hidden;
+  background:
+    radial-gradient(60% 40% at 15% 10%, rgb(255 255 255 / .55), transparent 70%),
+    radial-gradient(50% 50% at 90% 30%, rgb(201 185 156 / .35), transparent 70%),
+    var(--stone);
+  -webkit-font-smoothing: antialiased; -webkit-tap-highlight-color: transparent;
+}
+
+/* ---------- The jar filling: progress through the study ---------- */
+.liquid {
+  position: fixed; left: 0; right: 0; bottom: 0; z-index: 1; pointer-events: none;
+  height: calc(64px + env(safe-area-inset-bottom) + var(--fill) * 6vh);
+  background: var(--liquid); transition: background-color 2.2s ease;
+}
+.liquid svg { position: absolute; left: 0; bottom: calc(100% - 1px); width: 200%; height: 18px; fill: var(--liquid); transition: fill 2.2s ease; animation: slosh 7s linear infinite; }
+@keyframes slosh { to { transform: translateX(-50%); } }
+
+/* ---------- Slides ---------- */
+.deck { position: fixed; inset: 0; z-index: 2; }
+.slide {
+  position: absolute; inset: 0; display: flex; align-items: center; justify-content: center;
+  padding: clamp(16px, 4vh, 56px) clamp(16px, 5vw, 72px) calc(84px + env(safe-area-inset-bottom) + 6vh);
+  opacity: 0; visibility: hidden; transition: opacity .7s ease, visibility 0s linear .7s;
+}
+.slide.active { opacity: 1; visibility: visible; transition: opacity .7s ease; }
+.inner { width: min(100%, 66rem); max-height: 100%; overflow-y: auto; scrollbar-width: none; }
+.inner::-webkit-scrollbar { display: none; }
+
+.rise { opacity: 0; }
+.slide.active .rise { animation: rise .9s cubic-bezier(.2,.7,.2,1) both; animation-delay: calc(var(--d, 0) * 140ms + 150ms); }
+@keyframes rise { from { opacity: 0; transform: translateY(14px); } to { opacity: 1; transform: none; } }
+.step { opacity: 0; transform: translateY(10px); transition: opacity .6s ease, transform .6s ease; }
+.step.on { opacity: 1; transform: none; }
+svg .step { transform: none; }
+
+/* ---------- Type ---------- */
+h1, h2, h3 { font-family: var(--serif); font-weight: 400; margin: 0; text-wrap: balance; }
+h2 { font-size: clamp(1.7rem, 1.1rem + 2.6vw, 3.1rem); line-height: 1.1; margin-bottom: .45em; }
+p { margin: 0; }
+.note { font-size: clamp(1.08rem, .9rem + .85vw, 1.55rem); line-height: 1.5; max-width: 40em; }
+.note + .note { margin-top: .8em; }
+.note em { font-style: normal; font-weight: 700; color: var(--wine); }
+.gk { font-family: var(--serif); font-style: italic; color: var(--wine); }
+mark { background: none; color: var(--wine); font-weight: 600; box-shadow: inset 0 -.14em 0 rgb(123 30 48 / .25); }
+
+.quote {
+  margin: 0 0 1em; padding: .1em 0 .1em 1em; border-left: 3px solid var(--stone-3);
+  font-family: var(--serif); font-style: italic; font-size: clamp(1rem, .85rem + .7vw, 1.4rem); line-height: 1.5; color: var(--muted); max-width: 46em;
+}
+.quote cite { display: block; margin-top: .3em; font: 600 .8em var(--sans); font-style: normal; color: var(--muted); }
+
+/* ---------- Verse slides: the reference is carved large behind the text ---------- */
+.verse .inner { width: min(100%, 52rem); }
+.carved {
+  display: block; margin-bottom: .15em;
+  font: 300 clamp(3rem, 2rem + 4.5vw, 6.5rem)/1 var(--serif); color: var(--stone-3); letter-spacing: -.03em;
+}
+.vtext { font-family: var(--serif); font-size: calc(clamp(1.3rem, .95rem + 1.75vw, 2.4rem) * var(--vs, 1)); line-height: 1.55; }
+.vtext .v { margin: 0 0 .5em; }
+.vn {
+  display: inline-grid; place-items: center; width: 1.7em; height: 1.7em; margin-right: .45em; vertical-align: .25em;
+  border-radius: 50%; background: var(--wine); color: var(--stone);
+  font: 700 .48em var(--sans);
+}
+.quote .vn { width: 1.6em; height: 1.6em; font-size: .6em; vertical-align: .15em; }
+
+/* ---------- Title ---------- */
+.title .inner { text-align: center; }
+.title h1 { font-weight: 300; font-size: clamp(4.5rem, 2rem + 13vw, 12rem); line-height: .95; letter-spacing: -.03em; }
+.title .sub { font-family: var(--serif); font-style: italic; font-size: clamp(1.4rem, 1rem + 2vw, 2.6rem); color: var(--wine); margin-top: .4em; }
+.title .tag { font-size: clamp(1.05rem, .9rem + .7vw, 1.45rem); color: var(--muted); margin: 1.1em auto 0; max-width: 30em; line-height: 1.5; text-wrap: balance; }
+.title .drop { width: 22px; height: 30px; margin: 0 auto 1.2rem; border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%; background: var(--water); }
+.slide.active .drop { animation: turn 3s 1s ease forwards; }
+@keyframes turn { to { background: var(--wine); } }
+
+/* ---------- Things to watch / Points to remember ---------- */
+.lede { font-size: clamp(1.05rem, .9rem + .6vw, 1.4rem); color: var(--muted); margin-bottom: 1.4em; max-width: 34em; line-height: 1.5; }
+.seeds { list-style: none; padding: 0; margin: 0; display: grid; gap: clamp(.7rem, 1.6vh, 1.2rem) 2.5rem; counter-reset: seed; }
+@media (min-width: 900px) { .seeds { grid-template-columns: 1fr 1fr; } }
+.seeds li { counter-increment: seed; position: relative; padding-left: 2.8rem; }
+.seeds li::before {
+  content: counter(seed); position: absolute; left: 0; top: .05em; width: 1.9rem; height: 2.3rem;
+  border-radius: 40% 40% 45% 45% / 30% 30% 60% 60%; background: var(--stone-2); border: 1.5px solid var(--stone-3);
+  display: grid; place-items: center; font: 700 .95rem var(--sans); color: var(--wine);
+}
+.topic { display: block; color: var(--wine); font-weight: 700; font-size: clamp(.95rem, .85rem + .4vw, 1.2rem); margin-bottom: .1em; }
+.seed-q { display: block; font-family: var(--serif); font-size: clamp(1.2rem, .95rem + 1.1vw, 1.85rem); line-height: 1.25; }
+.remember .seed-q { font-style: italic; font-size: clamp(1.05rem, .9rem + .7vw, 1.4rem); }
+.remember .seed-q cite { font: 600 .72em var(--sans); color: var(--muted); margin-left: .4em; }
+.take { display: block; font-size: clamp(.98rem, .88rem + .45vw, 1.2rem); line-height: 1.45; margin-top: .25em; color: var(--muted); }
+
+/* ---------- Part dividers ---------- */
+.part .n { color: var(--wine); font-weight: 700; font-size: clamp(1rem, .9rem + .5vw, 1.3rem); }
+.part h2 { font-weight: 300; font-size: clamp(3rem, 1.8rem + 6vw, 7.5rem); line-height: 1; margin: .15em 0 .2em; }
+.part .range { color: var(--muted); font-size: clamp(1rem, .9rem + .5vw, 1.3rem); }
+.part .hook { font-family: var(--serif); font-style: italic; font-size: clamp(1.25rem, 1rem + 1.2vw, 2rem); margin-top: 1.1em; max-width: 26em; }
+
+/* ---------- Explanation layouts ---------- */
+.split { display: grid; gap: 1.2rem 2.5rem; align-items: center; }
+@media (min-width: 900px) and (min-aspect-ratio: 4/3) { .split { grid-template-columns: 1.1fr 1fr; } }
+.stage svg { display: block; width: 100%; height: auto; max-height: 46vh; margin: 0 auto; overflow: visible; }
+svg text { font-family: var(--sans); }
+svg text:not([fill]) { fill: var(--ink); }
+
+/* A week-long feast */
+.week { display: grid; grid-template-columns: repeat(7, 1fr); gap: 6px; margin: .4em 0 1.1em; }
+.day { text-align: center; font-size: clamp(.8rem, .75rem + .3vw, 1rem); color: var(--muted); }
+.jug { height: clamp(70px, 14vh, 130px); border: 2px solid var(--stone-3); border-radius: 8px 8px 14px 14px; background: rgb(255 255 255 / .35); position: relative; overflow: hidden; margin-bottom: .3em; }
+.jug i { position: absolute; left: 0; right: 0; bottom: 0; height: 0; background: var(--wine-2); transition: height 1.2s ease; transition-delay: calc(var(--k) * 120ms); }
+.slide.active .jug i { height: var(--h); }
+.empty-cry { font-family: var(--serif); font-style: italic; font-size: clamp(1.3rem, 1rem + 1.4vw, 2.2rem); color: var(--wine); margin: .2em 0 .6em; }
+
+/* "Mine hour" track */
+.hours { display: grid; grid-template-columns: repeat(5, 1fr); gap: .4rem; margin: .6em 0 1.2em; position: relative; }
+.hours::before { content: ""; position: absolute; left: 10%; right: 10%; top: 1.05rem; height: 2px; background: var(--stone-3); }
+.hour { text-align: center; position: relative; }
+.hour .dot { width: 2.1rem; height: 2.1rem; margin: 0 auto .4rem; border-radius: 50%; border: 2px solid var(--stone-3); background: var(--stone); }
+.hour.come .dot { background: var(--wine); border-color: var(--wine); box-shadow: 0 0 0 6px rgb(123 30 48 / .15); }
+.hour b { display: block; font-size: clamp(.85rem, .78rem + .35vw, 1.1rem); }
+.hour span { display: block; font-family: var(--serif); font-style: italic; font-size: clamp(.85rem, .78rem + .35vw, 1.1rem); color: var(--muted); }
+.hour.come span { color: var(--wine); }
+
+/* Mary's words */
+.saying { font: 300 clamp(2rem, 1.2rem + 4vw, 4.6rem)/1.1 var(--serif); margin: .1em 0 .4em; max-width: 14em; }
+.saying em { font-style: italic; color: var(--wine); }
+
+/* Waterpots */
+.jar-liquid { transform: translateY(205px); fill: var(--water); transition: transform 2.4s cubic-bezier(.4,0,.2,1), fill 2.4s ease; transition-delay: calc(var(--k) * 260ms); }
+.slide.active .jars-fill .jar-liquid, .jars-full .jar-liquid { transform: translateY(0); }
+.jars-full .jar-liquid { transition: fill 2.6s ease; transition-delay: calc(var(--k) * 200ms + 600ms); }
+.slide.active .jars-turn .jar-liquid { fill: var(--wine); }
+.math { display: flex; flex-wrap: wrap; gap: .6rem 1.4rem; margin: .4em 0 1em; }
+.math div { padding: .5em .9em; background: rgb(255 255 255 / .4); border: 1px solid var(--stone-3); border-radius: 8px; }
+.math b { display: block; font: 600 clamp(1.4rem, 1.1rem + 1.3vw, 2.2rem)/1.1 var(--serif); color: var(--water); }
+.math span { font-size: clamp(.85rem, .8rem + .3vw, 1.05rem); color: var(--muted); }
+
+/* Best saved for last */
+.feasts { display: grid; gap: 1rem 2.5rem; margin: .4em 0 1em; }
+@media (min-width: 760px) { .feasts { grid-template-columns: 1fr 1fr; } }
+.feast h3 { font: 600 clamp(1rem, .9rem + .5vw, 1.3rem) var(--sans); margin-bottom: .5em; }
+.bars { display: flex; align-items: flex-end; gap: 8px; height: clamp(90px, 16vh, 150px); border-bottom: 2px solid var(--stone-3); }
+.bars i { flex: 1; border-radius: 4px 4px 0 0; background: var(--stone-3); height: 0; transition: height 1s ease; transition-delay: calc(var(--k) * 150ms + 300ms); }
+.slide.active .bars i { height: var(--h); }
+.bars.best i:last-child { background: var(--wine); }
+.bar-labels { display: flex; justify-content: space-between; font-size: .85rem; color: var(--muted); margin-top: .3em; }
+
+/* Seven signs */
+.signs { list-style: none; padding: 0; margin: .4em 0 1em; display: grid; grid-template-columns: repeat(auto-fit, minmax(9.5rem, 1fr)); gap: 8px; }
+.signs li { padding: .6em .7em; border: 1.5px dashed var(--stone-3); border-radius: 8px; font-size: clamp(.9rem, .82rem + .35vw, 1.1rem); line-height: 1.3; color: var(--muted); }
+.signs li b { display: block; font: 600 1.15em var(--serif); color: var(--ink); }
+.signs li.now { border: 2px solid var(--wine); background: rgb(123 30 48 / .08); color: var(--ink); }
+.signs li.now b { color: var(--wine); }
+
+/* Temple courts */
+.court-out { transition: fill 1s ease, stroke 1s ease; }
+.split:has(.court-go.on) .court-out { fill: rgb(123 30 48 / .12); stroke: var(--wine); }
+
+/* Two temples */
+.temples { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem 2rem; margin: .4em 0 1em; text-align: center; }
+.temples .big { font: 300 clamp(2.8rem, 1.6rem + 6vw, 7rem)/1 var(--serif); }
+.temples .stone-t .big { color: var(--muted); }
+.temples .body-t .big { color: var(--wine); }
+.temples p { font-size: clamp(.95rem, .85rem + .45vw, 1.25rem); line-height: 1.4; margin-top: .4em; }
+.temples h3 { font: 700 clamp(.95rem, .85rem + .4vw, 1.2rem) var(--sans); color: var(--muted); margin-bottom: .2em; }
+
+/* Believed / committed */
+.mirror { display: grid; gap: .8rem; margin: .4em 0 1.1em; }
+.mirror div { display: flex; flex-wrap: wrap; align-items: center; gap: .3em .8em; padding: .8em 1em; border-radius: 10px; background: rgb(255 255 255 / .4); border: 1px solid var(--stone-3); font-size: clamp(1.05rem, .9rem + .7vw, 1.5rem); }
+.mirror .arrow { color: var(--wine); font-weight: 700; }
+.mirror .word { font-family: var(--serif); font-style: italic; color: var(--wine); }
+.mirror small { flex-basis: 100%; color: var(--muted); font-size: .75em; }
+
+/* ---------- Questions ---------- */
+@media (min-width: 900px) and (min-aspect-ratio: 4/3) {
+  .qa .inner { display: grid; grid-template-columns: 1fr 1.45fr; gap: 0 3rem; align-items: start; width: min(100%, 76rem); }
+  .qa-left { position: sticky; top: 0; }
+}
+.qa .counter { color: var(--muted); font-size: clamp(.9rem, .85rem + .3vw, 1.1rem); margin-bottom: .3em; }
+.qa h2 { margin-bottom: .2em; }
+.qa .ask-line { color: var(--muted); font-size: clamp(1rem, .9rem + .5vw, 1.35rem); margin-bottom: 1em; }
+.qa .quote { margin-bottom: .8em; color: var(--ink); font-style: normal; }
+.answer { margin-top: 1em; padding: 1em 1.2em; background: rgb(123 30 48 / .08); border-left: 3px solid var(--wine); }
+.answer h3 { font-size: clamp(1.2rem, 1rem + .8vw, 1.6rem); color: var(--wine); margin-bottom: .3em; }
+.answer p { font-size: clamp(1.05rem, .9rem + .7vw, 1.45rem); line-height: 1.5; }
+.reveal { margin-top: 1.2em; font: 700 clamp(1rem, .9rem + .4vw, 1.2rem) var(--sans); padding: .7em 1.4em; border-radius: 999px; border: 0; cursor: pointer; background: var(--wine); color: var(--stone); }
+.reveal:hover { background: var(--wine-2); }
+
+/* ---------- Prayer ---------- */
+.prayer .inner { text-align: center; }
+.prayer h2 { font-size: clamp(2.6rem, 1.6rem + 5vw, 6rem); font-weight: 300; }
+.prayer .ask-line { font-size: clamp(1.15rem, .95rem + 1vw, 1.8rem); margin-bottom: 2em; color: var(--muted); }
+.prayer .quote { border: 0; padding: 0; margin: 0 auto; max-width: 34em; }
+
+/* ---------- Navigation ---------- */
+.nav { position: fixed; left: 0; right: 0; bottom: 0; z-index: 10; display: flex; align-items: center; gap: .6rem; padding: .6rem clamp(12px, 3vw, 28px) calc(.6rem + env(safe-area-inset-bottom)); }
+.nav button, .nav a {
+  width: 44px; height: 44px; border-radius: 50%; border: 1px solid rgb(255 255 255 / .4);
+  background: rgb(255 255 255 / .14); color: #fff; cursor: pointer; display: grid; place-items: center;
+}
+.nav button:hover, .nav a:hover { background: rgb(255 255 255 / .28); }
+.nav svg { width: 20px; height: 20px; }
+.nav .spacer { flex: 1; }
+.count { font-size: .9rem; color: #fff; min-width: 4.5em; text-align: right; font-variant-numeric: tabular-nums; }
+:focus-visible { outline: 2px solid var(--wine); outline-offset: 3px; }
+.nav :focus-visible { outline-color: #fff; }
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; transition-delay: 0s !important; }
+}
+</style>
+</head>
+<body>
+<div class="liquid" aria-hidden="true">
+  <svg viewBox="0 0 1200 18" preserveAspectRatio="none"><path d="M0 9 Q75 0 150 9 T300 9 T450 9 T600 9 T750 9 T900 9 T1050 9 T1200 9 V18 H0 Z"/></svg>
+</div>
+
+<main class="deck" id="deck">
+
+<!-- ======================= OPENING ======================= -->
+<section class="slide title">
+  <div class="inner">
+    <div class="drop rise"></div>
+    <h1 class="rise" style="--d:1">John 2</h1>
+    <p class="sub rise" style="--d:3">New wine and a cleansed house</p>
+    <p class="tag rise" style="--d:5">Jesus turns water into wine at a wedding, then clears the merchants out of His Father's house.</p>
+  </div>
+</section>
+
+<section class="slide watch">
+  <div class="inner">
+    <h2 class="rise">Things to watch for</h2>
+    <p class="lede rise" style="--d:1">Keep these questions in the back of your mind as we read. We'll come back to every one of them at the end.</p>
+    <ol class="seeds">
+      <li class="step"><span class="topic">Who Jesus is</span><span class="seed-q">What do Jesus' signs tell us about Him?</span></li>
+      <li class="step"><span class="topic">Obedience</span><span class="seed-q">What happens when we do whatever He says?</span></li>
+      <li class="step"><span class="topic">New life</span><span class="seed-q">What does Jesus do with what is empty?</span></li>
+      <li class="step"><span class="topic">Worship</span><span class="seed-q">Why was Jesus angry in the temple?</span></li>
+      <li class="step"><span class="topic">The resurrection</span><span class="seed-q">What sign did Jesus give to prove His authority?</span></li>
+      <li class="step"><span class="topic">Real faith</span><span class="seed-q">What's the difference between being impressed by Jesus and trusting Him?</span></li>
+    </ol>
+  </div>
+</section>
+
+<!-- ======================= PART ONE: CANA ======================= -->
+<section class="slide part">
+  <div class="inner">
+    <p class="n rise">Part one</p>
+    <h2 class="rise" style="--d:1">The wedding at Cana</h2>
+    <p class="range rise" style="--d:2">Verses 1–12</p>
+    <p class="hook rise" style="--d:4">The party runs dry, and Jesus does His first sign.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="1-2" data-hl="the third day"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="1" data-hl="a marriage in Cana of Galilee"></blockquote>
+    <h2 class="rise" style="--d:1">A week-long party</h2>
+    <div class="week rise" style="--d:2" aria-label="Seven days of wine running lower each day until it is gone">
+      <div class="day"><div class="jug"><i style="--h:92%;--k:0"></i></div>Day 1</div>
+      <div class="day"><div class="jug"><i style="--h:74%;--k:1"></i></div>Day 2</div>
+      <div class="day"><div class="jug"><i style="--h:55%;--k:2"></i></div>Day 3</div>
+      <div class="day"><div class="jug"><i style="--h:33%;--k:3"></i></div>Day 4</div>
+      <div class="day"><div class="jug"><i style="--h:12%;--k:4"></i></div>Day 5</div>
+      <div class="day"><div class="jug"><i style="--h:0%;--k:5"></i></div>Day 6</div>
+      <div class="day"><div class="jug"><i style="--h:0%;--k:6"></i></div>Day 7</div>
+    </div>
+    <p class="note rise" style="--d:3">A wedding feast could go on for a whole week (Samson's lasted “seven days,” Judges 14:12). The groom's family supplied the food and drink for every guest.</p>
+    <p class="empty-cry step">“They have no wine.”</p>
+    <p class="note step">Running out wasn't a small slip. It was a public disgrace for the new couple and their family, the kind of thing a small town remembers for years.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="3-5" data-hl="Woman, what have I to do with thee? mine hour is not yet come|Whatsoever he saith unto you, do it"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="4" data-hl="Woman, what have I to do with thee?|mine hour is not yet come"></blockquote>
+    <h2 class="rise" style="--d:1">Was Jesus being rude to His mother?</h2>
+    <p class="note rise" style="--d:2">No. <em>“Woman”</em> was a respectful way to address a lady. Jesus uses the same word from the cross, when He makes sure she'll be cared for: “Woman, behold thy son!” (John 19:26).</p>
+    <p class="note step"><em>“What have I to do with thee?”</em> was a common saying, something like <em>“What does that have to do with you and me?”</em> Jesus is gently telling her that He now moves on His Father's timetable, not the family's.</p>
+    <p class="note step" style="margin-top:1em">And that timetable has a name: <em>“mine hour.”</em> Watch it through John's Gospel:</p>
+    <div class="hours step">
+      <div class="hour"><div class="dot"></div><b>2:4</b><span>not yet come</span></div>
+      <div class="hour"><div class="dot"></div><b>7:30</b><span>not yet come</span></div>
+      <div class="hour"><div class="dot"></div><b>8:20</b><span>not yet come</span></div>
+      <div class="hour come"><div class="dot"></div><b>12:23</b><span>is come</span></div>
+      <div class="hour come"><div class="dot"></div><b>17:1</b><span>is come</span></div>
+    </div>
+    <p class="note step">“His hour” is the cross: His death, His resurrection, and His return to the Father (John 13:1). Everything in His life was heading there on purpose.</p>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="5"></blockquote>
+    <p class="saying rise" style="--d:1"><em>Whatsoever</em> he saith unto you, do it.</p>
+    <p class="note rise" style="--d:3">These are the last words of Mary recorded anywhere in the Bible. And they point away from herself, straight to Jesus.</p>
+    <p class="note step">She didn't know what He would do. Neither did the servants. Obedience usually comes before understanding, not after.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="6-8" data-hl="six waterpots of stone|up to the brim"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="6-7" data-hl="six waterpots of stone|two or three firkins apiece|up to the brim"></blockquote>
+    <div class="split">
+      <div class="stage">
+        <svg class="jars-fill" viewBox="0 0 640 240" role="img" aria-label="Six stone jars fill with water up to the brim." data-jars></svg>
+      </div>
+      <div>
+        <h2 class="rise" style="--d:1">Six stone jars</h2>
+        <div class="math step">
+          <div><b>≈ 10 gal</b><span>one firkin</span></div>
+          <div><b>20–30 gal</b><span>each jar</span></div>
+          <div><b>120–180 gal</b><span>all six</span></div>
+        </div>
+        <p class="note step">That's about <em>600 to 900 bottles</em>. Way more than one party needed.</p>
+        <p class="note step">The jars held water for ceremonial washing before meals (Mark 7:3). They were made of stone because, under Jewish custom, stone couldn't become “unclean” the way clay pots could (Leviticus 11:33). And the servants filled them <em>up to the brim</em>. They left no room for anything but what Jesus would do.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="slide verse" data-v="9-10" data-hl="the water that was made wine|but the servants which drew the water knew|thou hast kept the good wine until now"></section>
+
+<section class="slide ex turn">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="9" data-hl="the water that was made wine|but the servants which drew the water knew"></blockquote>
+    <div class="split">
+      <div class="stage">
+        <svg class="jars-full jars-turn" viewBox="0 0 640 240" role="img" aria-label="The water in the six jars turns into wine." data-jars></svg>
+      </div>
+      <div>
+        <h2 class="rise" style="--d:1">Water made wine</h2>
+        <p class="note rise" style="--d:2">No words over the jars, no show. The water simply became wine somewhere between the jar and the cup.</p>
+        <p class="note step">Notice who knew: <em>“the servants which drew the water.”</em> The man in charge had no idea. The ones who just did what Jesus said got the inside view.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="10" data-hl="thou hast kept the good wine until now"></blockquote>
+    <h2 class="rise" style="--d:1">The best, saved for last</h2>
+    <p class="note rise" style="--d:2">The “governor of the feast” was the master of ceremonies. He knew the usual trick: serve the good stuff first, then the cheap stuff once nobody can tell.</p>
+    <div class="feasts">
+      <div class="feast rise" style="--d:3"><h3>The world's way</h3>
+        <div class="bars"><i style="--h:95%;--k:0"></i><i style="--h:70%;--k:1"></i><i style="--h:45%;--k:2"></i><i style="--h:22%;--k:3"></i></div>
+        <div class="bar-labels"><span>start</span><span>end</span></div>
+      </div>
+      <div class="feast step"><h3>Jesus' way</h3>
+        <div class="bars best"><i style="--h:30%;--k:0"></i><i style="--h:50%;--k:1"></i><i style="--h:70%;--k:2"></i><i style="--h:100%;--k:3"></i></div>
+        <div class="bar-labels"><span>start</span><span>“until now”</span></div>
+      </div>
+    </div>
+    <p class="note step">Sin works like the world's party: it starts sweet and ends bitter. Jesus works the other way around. With Him, the best is always still ahead.</p>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise">A word about the wine</h2>
+    <p class="note rise" style="--d:1">This sign is about <em>Jesus</em>, not about drinking. The same Bible says:</p>
+    <blockquote class="quote rise" style="--d:2"><p>“Wine is a mocker, strong drink is raging: and whosoever is deceived thereby is not wise.”</p><cite>Proverbs 20:1</cite></blockquote>
+    <blockquote class="quote rise" style="--d:3"><p>“And be not drunk with wine, wherein is excess; but be filled with the Spirit.”</p><cite>Ephesians 5:18</cite></blockquote>
+    <p class="note step">For a man who knows what a bottle can do, here's the point of Cana: Jesus takes what is empty and fills it to the brim. A bottle never filled anything. <em>Being filled with the Spirit</em> is what actually fills the empty place.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="11-12" data-hl="This beginning of miracles|manifested forth his glory; and his disciples believed on him"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="11" data-hl="This beginning of miracles|manifested forth his glory"></blockquote>
+    <h2 class="rise" style="--d:1">Not just a miracle: a sign</h2>
+    <p class="note rise" style="--d:2">The word John uses is <span class="gk">sēmeion</span>, a <em>sign</em>. A sign doesn't point at itself. It points to something bigger. John picks seven of them:</p>
+    <ol class="signs rise" style="--d:3">
+      <li class="now"><b>Water to wine</b>John 2</li>
+      <li><b>An official's son healed</b>John 4</li>
+      <li><b>A lame man walks</b>John 5</li>
+      <li><b>Five thousand fed</b>John 6</li>
+      <li><b>Walking on the sea</b>John 6</li>
+      <li><b>A blind man sees</b>John 9</li>
+      <li><b>Lazarus raised</b>John 11</li>
+    </ol>
+    <p class="note step">Why? “These are written, that ye might believe that Jesus is the Christ, the Son of God; and that believing ye might have life through his name” (John 20:31). Every vine turns water into wine slowly, over a season. Jesus, the Creator, did it in a moment.</p>
+  </div>
+</section>
+
+<!-- ======================= PART TWO: THE TEMPLE ======================= -->
+<section class="slide part">
+  <div class="inner">
+    <p class="n rise">Part two</p>
+    <h2 class="rise" style="--d:1">My Father's house</h2>
+    <p class="range rise" style="--d:2">Verses 13–22</p>
+    <p class="hook rise" style="--d:4">Jesus walks into the temple and turns over the tables.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="13-15" data-hl="the changers of money|a scourge of small cords"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="14" data-hl="those that sold oxen and sheep and doves, and the changers of money"></blockquote>
+    <div class="split">
+      <div class="stage">
+        <svg viewBox="0 0 600 380" role="img" aria-label="Map of the temple courts. The market filled the outer Court of the Gentiles.">
+          <rect x="10" y="10" width="580" height="360" rx="6" fill="#ddd0b8" stroke="#c9b99c" stroke-width="3"/>
+          <rect class="court-out" x="10" y="10" width="580" height="360" rx="6" fill="transparent" stroke="transparent" stroke-width="5"/>
+          <text x="30" y="44" font-size="20" font-weight="700" fill="#7b1e30">Court of the Gentiles</text>
+          <rect x="250" y="80" width="320" height="230" fill="#ece3d2" stroke="#8a7d6c" stroke-width="2" stroke-dasharray="6 5"/>
+          <text x="262" y="72" font-size="14" fill="#65574b">low wall: Gentiles stop here</text>
+          <rect x="270" y="110" width="120" height="170" fill="#e4d9c4" stroke="#8a7d6c" stroke-width="2"/>
+          <text x="330" y="200" text-anchor="middle" font-size="17">Court of</text>
+          <text x="330" y="220" text-anchor="middle" font-size="17">Women</text>
+          <rect x="400" y="110" width="150" height="170" fill="#e4d9c4" stroke="#8a7d6c" stroke-width="2"/>
+          <rect x="455" y="140" width="80" height="110" fill="#c9b99c" stroke="#65574b" stroke-width="2"/>
+          <text x="495" y="190" text-anchor="middle" font-size="15" font-weight="700">Holy</text>
+          <text x="495" y="208" text-anchor="middle" font-size="15" font-weight="700">Place</text>
+          <text x="425" y="300" text-anchor="middle" font-size="15" fill="#65574b">Court of Israel</text>
+          <g font-size="18" fill="#2b211c">
+            <text x="34" y="100">oxen pens</text>
+            <text x="34" y="150">sheep pens</text>
+            <text x="34" y="200">dove cages</text>
+            <text x="34" y="250">money tables</text>
+            <g fill="#9a6b1f"><circle cx="60" cy="290" r="9"/><circle cx="84" cy="296" r="9"/><circle cx="108" cy="288" r="9"/><circle cx="132" cy="298" r="9"/><circle cx="156" cy="290" r="9"/></g>
+            <text x="34" y="340" font-size="15" fill="#65574b">noise, haggling, animals</text>
+          </g>
+        </svg>
+      </div>
+      <div>
+        <h2 class="rise" style="--d:1">A market in the house of prayer</h2>
+        <p class="note rise" style="--d:2">At Passover, huge crowds came to offer sacrifices. Merchants sold approved animals, and money changers swapped foreign coins for the special silver coin the temple tax required, usually at a markup.</p>
+        <p class="note step court-go">They set up in the <em>Court of the Gentiles</em>, the only part of the temple where non-Jews were allowed to come and pray. The noise and haggling crowded them out.</p>
+        <p class="note step">Doves were the offering of the poor, for people who couldn't afford a lamb (Leviticus 5:7). The people with the least got squeezed the most.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="slide verse" data-v="16-17" data-hl="make not my Father’s house an house of merchandise|The zeal of thine house hath eaten me up"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="16" data-hl="my Father’s house"></blockquote>
+    <h2 class="rise" style="--d:1">Angry, without sin</h2>
+    <p class="note rise" style="--d:2">Jesus calls the temple <em>“my Father's house.”</em> No prophet ever talked that way. He's claiming to be the Son of the One who owns the place.</p>
+    <p class="note step">His disciples remembered Psalm 69:9: <em>“For the zeal of thine house hath eaten me up.”</em> Zeal is burning love for something. What made Jesus angry wasn't an insult to Him. It was people being blocked from God and worship being turned into a business.</p>
+    <blockquote class="quote step"><p>“Be ye angry, and sin not: let not the sun go down upon your wrath.”</p><cite>Ephesians 4:26</cite></blockquote>
+    <p class="note step">Anger isn't always sin. The question is what you're angry about, and what you do with it. Jesus took His time (He “made a scourge”), He wasn't defending His pride, and He hurt no one.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="18-20" data-hl="Destroy this temple, and in three days I will raise it up|Forty and six years"></section>
+<section class="slide verse" data-v="21-22" data-hl="he spake of the temple of his body|his disciples remembered"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="19" data-hl="Destroy this temple, and in three days I will raise it up"></blockquote>
+    <h2 class="rise" style="--d:1">Two temples</h2>
+    <div class="temples">
+      <div class="stone-t rise" style="--d:2"><h3>The building</h3><div class="big">46 years</div><p>Herod started rebuilding around 20 B.C. It still wasn't finished. The Romans destroyed it in A.D. 70.</p></div>
+      <div class="body-t step"><h3>His body</h3><div class="big">3 days</div><p>Crucified, buried, and raised on the third day, just as He said. It will never be destroyed again.</p></div>
+    </div>
+    <p class="note step">The temple was the place where God met with people. Jesus is saying <em>He</em> is that place now (remember John 1:14, God “pitched His tent” among us). They demanded a sign, and He gave them the greatest one of all: His own resurrection.</p>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="22" data-hl="his disciples remembered|they believed the scripture, and the word which Jesus had said"></blockquote>
+    <h2 class="rise" style="--d:1">It made sense later</h2>
+    <p class="note rise" style="--d:2">The disciples didn't understand this when Jesus said it. Years later, after the empty tomb, it all clicked.</p>
+    <p class="note step">Some of what God is doing in your life won't make sense today. Hold on to His word anyway. One day you'll <em>remember</em>, and you'll see He knew exactly what He was doing.</p>
+  </div>
+</section>
+
+<!-- ======================= PART THREE ======================= -->
+<section class="slide part">
+  <div class="inner">
+    <p class="n rise">Part three</p>
+    <h2 class="rise" style="--d:1">What was in man</h2>
+    <p class="range rise" style="--d:2">Verses 23–25</p>
+    <p class="hook rise" style="--d:4">The crowd is impressed. Jesus isn't fooled.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="23-25" data-hl="many believed in his name|did not commit himself unto them|he knew what was in man"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="23-24" data-hl="believed|did not commit himself"></blockquote>
+    <h2 class="rise" style="--d:1">Believed, but not trusted</h2>
+    <p class="note rise" style="--d:2">In Greek, “believed” and “commit” are <em>the same word</em>, <span class="gk">pisteuō</span>: to trust, to put your weight on.</p>
+    <div class="mirror">
+      <div class="step"><span>The crowd</span><span class="arrow">→</span><span class="word">believed</span><span class="arrow">→</span><span>in Jesus</span><small>Impressed by the miracles they saw.</small></div>
+      <div class="step"><span>Jesus</span><span class="arrow">→</span><span class="word">did not commit (trust) Himself</span><span class="arrow">→</span><span>to them</span><small>Because He knew what was in their hearts.</small></div>
+    </div>
+    <p class="note step">Being impressed by what Jesus can do isn't the same as trusting Him with your life. Nobody can fake it with Him. <em>He knows what is in man.</em> And knowing every bit of it, He still went to the cross for us.</p>
+  </div>
+</section>
+
+<!-- ======================= CLOSING ======================= -->
+<section class="slide remember">
+  <div class="inner">
+    <h2 class="rise">Points to remember</h2>
+    <ol class="seeds">
+      <li class="step"><span class="topic">Who Jesus is</span><span class="seed-q">“Manifested forth his glory” <cite>2:11</cite></span><span class="take">His signs point to who He is: the Creator, the Son of God.</span></li>
+      <li class="step"><span class="topic">Obedience</span><span class="seed-q">“Whatsoever he saith unto you, do it” <cite>2:5</cite></span><span class="take">Do what He says, even before it makes sense. The obedient see the miracle up close.</span></li>
+      <li class="step"><span class="topic">New life</span><span class="seed-q">“Thou hast kept the good wine until now” <cite>2:10</cite></span><span class="take">He fills what is empty, and with Him the best is still ahead.</span></li>
+      <li class="step"><span class="topic">Worship</span><span class="seed-q">“Make not my Father's house an house of merchandise” <cite>2:16</cite></span><span class="take">His anger was love for God's house and for the people shut out of it.</span></li>
+      <li class="step"><span class="topic">The resurrection</span><span class="seed-q">“In three days I will raise it up” <cite>2:19</cite></span><span class="take">His resurrection is the sign that proves everything He said.</span></li>
+      <li class="step"><span class="topic">Real faith</span><span class="seed-q">“He knew what was in man” <cite>2:25</cite></span><span class="take">Don't just be impressed by Jesus. Trust Him. He knows your heart.</span></li>
+    </ol>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 1 of 6</p>
+      <span class="topic">Who Jesus is</span>
+      <h2>What do Jesus' signs tell us about Him?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="9" data-hl="the water that was made wine"></blockquote>
+      <blockquote class="quote step" data-q="11" data-hl="manifested forth his glory"></blockquote>
+      <blockquote class="quote step"><p>“But these are written, that ye might believe that Jesus is the Christ, the Son of God; and that believing ye might have life through his name.”</p><cite>John 20:31</cite></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>A sign points past itself. Turning water into wine in a moment shows His glory: He is the Creator, doing instantly what a vine takes a whole season to do. John wrote the signs down so we would believe Jesus is the Son of God and have life through Him.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 2 of 6</p>
+      <span class="topic">Obedience</span>
+      <h2>What happens when we do whatever He says?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="5" data-hl="Whatsoever he saith unto you, do it"></blockquote>
+      <blockquote class="quote step" data-q="7" data-hl="up to the brim"></blockquote>
+      <blockquote class="quote step" data-q="9" data-hl="but the servants which drew the water knew"></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>The servants didn't understand the plan, but they obeyed all the way, “up to the brim.” They're the ones who saw the miracle up close. Obedience usually comes before understanding, and the people who obey are the ones who get to see what God does.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 3 of 6</p>
+      <span class="topic">New life</span>
+      <h2>What does Jesus do with what is empty?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="3" data-hl="They have no wine"></blockquote>
+      <blockquote class="quote step" data-q="6" data-hl="after the manner of the purifying of the Jews"></blockquote>
+      <blockquote class="quote step" data-q="10" data-hl="thou hast kept the good wine until now"></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>He fills it. He took jars meant for religious washing, filled them, and turned them into the best wine of the whole feast. Jesus doesn't just patch up an old life. He makes something new, and with Him the best is saved for last.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 4 of 6</p>
+      <span class="topic">Worship</span>
+      <h2>Why was Jesus angry in the temple?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="14"></blockquote>
+      <blockquote class="quote step" data-q="16" data-hl="make not my Father’s house an house of merchandise"></blockquote>
+      <blockquote class="quote step" data-q="17" data-hl="The zeal of thine house hath eaten me up"></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>They had turned the house of prayer into a marketplace and crowded out the people who came to find God. His anger was zeal, a burning love for His Father's house. It wasn't a bad temper or wounded pride. Anger at sin, handled God's way, isn't sin.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 5 of 6</p>
+      <span class="topic">The resurrection</span>
+      <h2>What sign did Jesus give to prove His authority?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="18" data-hl="What sign shewest thou unto us"></blockquote>
+      <blockquote class="quote step" data-q="19" data-hl="in three days I will raise it up"></blockquote>
+      <blockquote class="quote step" data-q="21"></blockquote>
+      <blockquote class="quote step" data-q="22" data-hl="When therefore he was risen from the dead"></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>His own resurrection. “Destroy this body, and in three days I will raise it up.” He did exactly that. The empty tomb is the sign that proves He had the right to clean out His Father's house, and the right to everything else He claimed.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 6 of 6</p>
+      <span class="topic">Real faith</span>
+      <h2>What's the difference between being impressed by Jesus and trusting Him?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="11" data-hl="his disciples believed on him"></blockquote>
+      <blockquote class="quote step" data-q="23" data-hl="when they saw the miracles which he did"></blockquote>
+      <blockquote class="quote step" data-q="24-25" data-hl="he knew what was in man"></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>The crowd liked the miracles, but Jesus didn't trust Himself to them, because He saw their hearts. The disciples believed and followed Him. Real faith doesn't just admire what Jesus can do. It puts its whole weight on Him. He knows exactly what is in us, and He still came to save us.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide prayer">
+  <div class="inner">
+    <h2 class="rise">Prayer requests</h2>
+    <p class="ask-line rise" style="--d:1">What can we pray about for you today?</p>
+    <blockquote class="quote rise" style="--d:3"><p>“Be careful for nothing; but in every thing by prayer and supplication with thanksgiving let your requests be made known unto God.”</p><cite>Philippians 4:6</cite></blockquote>
+  </div>
+</section>
+
+</main>
+
+<nav class="nav" aria-label="Slide controls">
+  <a href="../index.html" aria-label="All studies"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 11l8-7 8 7M6 9.5V20h12V9.5"/></svg></a>
+  <button type="button" id="prev" aria-label="Previous"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M15 5l-7 7 7 7"/></svg></button>
+  <button type="button" id="next" aria-label="Next"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M9 5l7 7-7 7"/></svg></button>
+  <span class="spacer"></span>
+  <span class="count" id="count"></span>
+  <button type="button" id="full" aria-label="Full screen"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 9V4h5M20 9V4h-5M4 15v5h5M20 15v5h-5"/></svg></button>
+</nav>
+
+<script>
+// King James Version, John chapter 2
+const V = {
+  1: "And the third day there was a marriage in Cana of Galilee; and the mother of Jesus was there:",
+  2: "And both Jesus was called, and his disciples, to the marriage.",
+  3: "And when they wanted wine, the mother of Jesus saith unto him, They have no wine.",
+  4: "Jesus saith unto her, Woman, what have I to do with thee? mine hour is not yet come.",
+  5: "His mother saith unto the servants, Whatsoever he saith unto you, do it.",
+  6: "And there were set there six waterpots of stone, after the manner of the purifying of the Jews, containing two or three firkins apiece.",
+  7: "Jesus saith unto them, Fill the waterpots with water. And they filled them up to the brim.",
+  8: "And he saith unto them, Draw out now, and bear unto the governor of the feast. And they bare it.",
+  9: "When the ruler of the feast had tasted the water that was made wine, and knew not whence it was: (but the servants which drew the water knew;) the governor of the feast called the bridegroom,",
+  10: "And saith unto him, Every man at the beginning doth set forth good wine; and when men have well drunk, then that which is worse: but thou hast kept the good wine until now.",
+  11: "This beginning of miracles did Jesus in Cana of Galilee, and manifested forth his glory; and his disciples believed on him.",
+  12: "After this he went down to Capernaum, he, and his mother, and his brethren, and his disciples: and they continued there not many days.",
+  13: "And the Jews’ passover was at hand, and Jesus went up to Jerusalem,",
+  14: "And found in the temple those that sold oxen and sheep and doves, and the changers of money sitting:",
+  15: "And when he had made a scourge of small cords, he drove them all out of the temple, and the sheep, and the oxen; and poured out the changers’ money, and overthrew the tables;",
+  16: "And said unto them that sold doves, Take these things hence; make not my Father’s house an house of merchandise.",
+  17: "And his disciples remembered that it was written, The zeal of thine house hath eaten me up.",
+  18: "Then answered the Jews and said unto him, What sign shewest thou unto us, seeing that thou doest these things?",
+  19: "Jesus answered and said unto them, Destroy this temple, and in three days I will raise it up.",
+  20: "Then said the Jews, Forty and six years was this temple in building, and wilt thou rear it up in three days?",
+  21: "But he spake of the temple of his body.",
+  22: "When therefore he was risen from the dead, his disciples remembered that he had said this unto them; and they believed the scripture, and the word which Jesus had said.",
+  23: "Now when he was in Jerusalem at the passover, in the feast day, many believed in his name, when they saw the miracles which he did.",
+  24: "But Jesus did not commit himself unto them, because he knew all men,",
+  25: "And needed not that any should testify of man: for he knew what was in man."
+};
+const BOOK = "John 2";
+
+function range(spec) {
+  const [a, b] = spec.split("-").map(Number);
+  const out = [];
+  for (let n = a; n <= (b || a); n++) out.push(n);
+  return out;
+}
+function refText(nums) {
+  return nums.length > 1 ? `${BOOK}:${nums[0]}–${nums[nums.length - 1]}` : `${BOOK}:${nums[0]}`;
+}
+function highlight(text, hl) {
+  if (!hl) return text;
+  for (const phrase of hl.split("|")) {
+    const at = text.indexOf(phrase);
+    if (at >= 0) text = text.slice(0, at) + "<mark>" + phrase + "</mark>" + text.slice(at + phrase.length);
+  }
+  return text;
+}
+
+// Full-verse slides, with the chapter:verse carved large behind the text
+document.querySelectorAll(".slide.verse").forEach(s => {
+  const nums = range(s.dataset.v);
+  const chars = nums.reduce((t, n) => t + V[n].length, 0);
+  const vs = chars < 260 ? 1 : chars < 420 ? .88 : chars < 600 ? .78 : .7;
+  const body = nums.map((n, k) =>
+    `<p class="v rise" style="--d:${k * 2 + 1}"><span class="vn">${n}</span>${highlight(V[n], s.dataset.hl)}</p>`).join("");
+  const carved = nums.length > 1 ? `2:${nums[0]}–${nums[nums.length - 1]}` : `2:${nums[0]}`;
+  s.innerHTML = `<div class="inner"><p class="carved rise" aria-label="${refText(nums)}">${carved}</p>` +
+    `<div class="vtext" style="--vs:${vs}">${body}</div></div>`;
+});
+
+// Verse quotes on explanation and question slides
+document.querySelectorAll("blockquote[data-q]").forEach(q => {
+  const nums = range(q.dataset.q);
+  const text = nums.map(n => (nums.length > 1 ? `<span class="vn">${n}</span>` : "") + V[n]).join(" ");
+  q.innerHTML = `<p>${highlight(text, q.dataset.hl)}</p><cite>${refText(nums)}</cite>`;
+});
+
+// Six stone waterpots, drawn once and reused
+const JAR = "M24 26 L22 34 Q8 40 9 70 L11 196 Q12 222 46 222 Q80 222 81 196 L83 70 Q84 40 70 34 L68 26 Z";
+document.querySelectorAll("svg[data-jars]").forEach(svg => {
+  let g = `<defs><clipPath id="jc-${Math.random().toString(36).slice(2, 7)}"><path d="${JAR}"/></clipPath></defs>`;
+  const clipId = g.match(/id="([^"]+)"/)[1];
+  for (let k = 0; k < 6; k++) {
+    g += `<g transform="translate(${8 + k * 105} 6)">
+      <path d="${JAR}" fill="#d6c9b1"/>
+      <rect class="jar-liquid" style="--k:${k}" x="0" y="22" width="92" height="205" clip-path="url(#${clipId})"/>
+      <path d="${JAR}" fill="none" stroke="#8a7d6c" stroke-width="3"/>
+      <rect x="20" y="18" width="52" height="10" rx="3" fill="#c9b99c" stroke="#8a7d6c" stroke-width="2.5"/>
+    </g>`;
+  }
+  svg.innerHTML = g;
+});
+
+// ---------- Deck engine ----------
+let slides = [], i = 0, step = 0, turnAt = Infinity;
+const stepsOf = s => [...s.querySelectorAll(".step")];
+
+function start() {
+  slides = [...document.querySelectorAll(".slide")];
+  turnAt = slides.findIndex(s => s.classList.contains("turn"));
+  const fromHash = parseInt(location.hash.slice(1), 10);
+  go(Number.isFinite(fromHash) ? Math.min(Math.max(fromHash - 1, 0), slides.length - 1) : 0);
+}
+
+function go(n, revealAll = false) {
+  if (n < 0 || n >= slides.length) return;
+  slides.forEach(s => { s.classList.remove("active"); s.setAttribute("aria-hidden", "true"); });
+  i = n;
+  const s = slides[i];
+  const st = stepsOf(s);
+  st.forEach(e => e.classList.toggle("on", revealAll));
+  step = revealAll ? st.length : 0;
+  s.querySelector(".inner").scrollTop = 0;
+  s.classList.add("active");
+  s.removeAttribute("aria-hidden");
+  render();
+}
+
+function next() {
+  const st = stepsOf(slides[i]);
+  if (step < st.length) {
+    st[step].classList.add("on");
+    st[step].scrollIntoView({ block: "nearest", behavior: "smooth" });
+    step++;
+    render();
+  } else go(i + 1);
+}
+
+function prev() {
+  if (step > 0) {
+    step--;
+    stepsOf(slides[i])[step].classList.remove("on");
+    render();
+  } else go(i - 1, true);
+}
+
+function render() {
+  const p = slides.length > 1 ? i / (slides.length - 1) : 0;
+  document.documentElement.style.setProperty("--fill", p.toFixed(3));
+  document.body.classList.toggle("wine", turnAt >= 0 && i >= turnAt);
+  document.getElementById("count").textContent = `${i + 1} / ${slides.length}`;
+  history.replaceState(null, "", `#${i + 1}`);
+
+  const s = slides[i];
+  const btn = s.querySelector(".reveal");
+  if (btn) {
+    const upcoming = stepsOf(s)[step];
+    btn.textContent = !upcoming ? (i + 1 < slides.length && slides[i + 1].classList.contains("qa") ? "Next question" : "Continue")
+      : upcoming.classList.contains("answer") ? "Show the answer" : "Show a verse";
+  }
+}
+
+// Controls
+document.getElementById("next").addEventListener("click", next);
+document.getElementById("prev").addEventListener("click", prev);
+document.getElementById("full").addEventListener("click", () => {
+  if (document.fullscreenElement) document.exitFullscreen();
+  else document.documentElement.requestFullscreen?.();
+});
+document.querySelectorAll(".reveal").forEach(b => b.addEventListener("click", e => { e.stopPropagation(); next(); }));
+
+document.addEventListener("keydown", e => {
+  if (["ArrowRight", "ArrowDown", "PageDown", " ", "Enter"].includes(e.key)) {
+    if ((e.key === "Enter" || e.key === " ") && e.target.closest("button, a")) return;
+    e.preventDefault(); next();
+  } else if (["ArrowLeft", "ArrowUp", "PageUp", "Backspace"].includes(e.key)) {
+    e.preventDefault(); prev();
+  } else if (e.key === "Home") go(0);
+  else if (e.key === "End") go(slides.length - 1, true);
+  else if (e.key === "f") document.getElementById("full").click();
+});
+
+// Click or tap: right side goes forward, left third goes back
+document.getElementById("deck").addEventListener("click", e => {
+  if (e.target.closest("button, a")) return;
+  if (window.getSelection().toString()) return;
+  e.clientX < window.innerWidth * 0.3 ? prev() : next();
+});
+
+// Swipe on phones
+let tx = null, ty = null;
+document.addEventListener("touchstart", e => { tx = e.touches[0].clientX; ty = e.touches[0].clientY; }, { passive: true });
+document.addEventListener("touchend", e => {
+  if (tx === null) return;
+  const dx = e.changedTouches[0].clientX - tx, dy = e.changedTouches[0].clientY - ty;
+  if (Math.abs(dx) > 50 && Math.abs(dx) > Math.abs(dy) * 1.5) dx < 0 ? next() : prev();
+  tx = ty = null;
+});
+
+start();
+</script>
+</body>
+</html>
