@@ -5,7 +5,8 @@
   const THEMES = [
     { id: "night", name: "Night to dawn", swatch: ["#0d1030", "#f2b24c", "#f1e6cf"] },
     { id: "stone", name: "Stone and wine", swatch: ["#ece3d2", "#7b1e30", "#3f86a1"] },
-    { id: "slate", name: "Slate and brass", swatch: ["#15211e", "#d1a54a", "#efe8d8"] }
+    { id: "slate", name: "Slate and brass", swatch: ["#15211e", "#d1a54a", "#efe8d8"] },
+    { id: "scribe", name: "Scribe’s page", swatch: ["#eef0e8", "#2f3d8f", "#a1302a"] }
   ];
   const root = document.documentElement;
   const ownTheme = root.dataset.theme || THEMES[0].id;   // the look this slide show was designed in
@@ -21,16 +22,25 @@
   applyTheme(valid(asked) ? asked : store.get() || ownTheme);
 
   // ---------- Scripture helpers ----------
+  // A chapter study sets BOOK = "John 2" and keys V by verse: { 1: "...", 2: "..." }, refs like "3-5".
+  // A topic study sets BOOK = "Proverbs" and keys V by chapter:verse: { "3:13": "..." }, refs like "3:13-18".
   const verses = typeof V !== "undefined" ? V : null;
   const bookRef = typeof BOOK !== "undefined" ? BOOK : "";
   const chapter = (bookRef.match(/(\d+)$/) || [])[1] || "";
   function range(spec) {
-    const [a, b] = spec.split("-").map(Number);
+    const m = String(spec).match(/^(?:(\d+):)?(\d+)(?:-(\d+))?$/);
+    if (!m) throw new Error(`Bad verse reference "${spec}"`);
     const out = [];
-    for (let n = a; n <= (b || a); n++) out.push(n);
+    for (let n = Number(m[2]); n <= Number(m[3] || m[2]); n++) out.push(m[1] ? `${m[1]}:${n}` : n);
     return out;
   }
-  const refText = nums => nums.length > 1 ? `${bookRef}:${nums[0]}–${nums[nums.length - 1]}` : `${bookRef}:${nums[0]}`;
+  const verseNo = key => String(key).split(":").pop();
+  // "3:13–18" in a topic study, "13–18" in a chapter study
+  const span = keys => {
+    const first = String(keys[0]), last = verseNo(keys[keys.length - 1]);
+    return keys.length > 1 ? `${first}–${last}` : first;
+  };
+  const refText = keys => String(keys[0]).includes(":") ? `${bookRef} ${span(keys)}` : `${bookRef}:${span(keys)}`;
   function highlight(text, hl) {
     if (!hl) return text;
     for (const phrase of hl.split("|")) {
@@ -47,15 +57,15 @@
       const chars = nums.reduce((t, n) => t + verses[n].length, 0);
       const vs = chars < 260 ? 1 : chars < 420 ? .88 : chars < 600 ? .78 : .7;
       const body = nums.map((n, k) =>
-        `<p class="v rise" style="--d:${k * 2 + 1}"><span class="vn">${n}</span>${highlight(verses[n], s.dataset.hl)}</p>`).join("");
-      const carved = nums.length > 1 ? `${chapter}:${nums[0]}–${nums[nums.length - 1]}` : `${chapter}:${nums[0]}`;
+        `<p class="v rise" style="--d:${k * 2 + 1}"><span class="vn">${verseNo(n)}</span>${highlight(verses[n], s.dataset.hl)}</p>`).join("");
+      const carved = String(nums[0]).includes(":") ? span(nums) : `${chapter}:${span(nums)}`;
       s.innerHTML = `<div class="inner"><p class="carved rise" aria-hidden="true">${carved}</p>` +
         `<div class="vtext" style="--vs:${vs}">${body}</div><p class="vref rise" style="--d:${nums.length * 2 + 1}">${refText(nums)}</p></div>`;
     });
     // Verse quotes on explanation and question slides
     document.querySelectorAll("blockquote[data-q]").forEach(q => {
       const nums = range(q.dataset.q);
-      const text = nums.map(n => (nums.length > 1 ? `<span class="vn">${n}</span>` : "") + verses[n]).join(" ");
+      const text = nums.map(n => (nums.length > 1 ? `<span class="vn">${verseNo(n)}</span>` : "") + verses[n]).join(" ");
       q.innerHTML = `<p>${highlight(text, q.dataset.hl)}</p><cite>${refText(nums)}</cite>`;
     });
   }

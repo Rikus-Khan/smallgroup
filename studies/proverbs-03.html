@@ -1,0 +1,631 @@
+<!doctype html>
+<html lang="en" data-theme="scribe">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Proverbs 3</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="../assets/fonts.css">
+<link rel="stylesheet" href="../assets/deck.css">
+<link rel="stylesheet" href="../assets/themes.css">
+<style>
+/* Leaning your weight: a broken reed, or a stone pillar */
+.prv03-lean .reed-top { transform-box: fill-box; transform-origin: 50% 100%; transition: transform .9s cubic-bezier(.5,0,.3,1.4); }
+.prv03-lean .load-l { transition: transform 1s cubic-bezier(.6,0,.4,1); }
+.split:has(.prv03-snap.on) .prv03-lean .reed-top { transform: rotate(38deg); }
+.split:has(.prv03-snap.on) .prv03-lean .load-l { transform: translate(34px, 120px) rotate(22deg); }
+
+/* Firstfruits: the first sheaf set apart */
+.prv03-first .sheaf { fill: var(--line-strong); }
+.prv03-first .sheaf.first { fill: var(--warm); }
+.prv03-first .ring { fill: none; stroke: var(--accent); stroke-width: 3; stroke-dasharray: 6 6; opacity: 0; transition: opacity .8s ease; }
+.prv03-first.on .ring, .on .prv03-first .ring, .prv03-first .ring.on { opacity: 1; }
+
+/* What it's worth: bars that run off the chart */
+.prv03-worth { display: grid; gap: .55rem; margin: .4em 0 1em; }
+.prv03-worth .row { display: grid; grid-template-columns: 7.5rem 1fr; gap: .8rem; align-items: center; }
+.prv03-worth .lbl { font: 600 clamp(1rem, .9rem + .5vw, 1.35rem) var(--serif); text-align: right; }
+.prv03-worth .track { height: 1.9rem; position: relative; }
+.prv03-worth .bar { position: absolute; left: 0; top: 0; bottom: 0; width: 0; border-radius: 4px; background: var(--line-strong); transition: width 1.2s ease; transition-delay: calc(var(--k) * 180ms + 200ms); }
+.slide.active .prv03-worth .bar { width: var(--w); }
+.prv03-worth .wis .lbl { color: var(--accent-hot); }
+.prv03-worth .wis .bar { background: linear-gradient(90deg, var(--accent) 80%, transparent); }
+.prv03-worth .wis .track::after { content: "not to be compared \2192"; position: absolute; right: 0; top: -1.5em; font-size: clamp(.85rem, .8rem + .3vw, 1.05rem); color: var(--accent-hot); font-weight: 700; }
+.prv03-worth .row.wis { margin-top: 1.2em; }
+
+
+/* Floating Z's over a sleeping man */
+.prv03-sleep .z { opacity: 0; }
+.slide.active .prv03-sleep .z { animation: prv03-float 3.6s ease-in-out infinite; }
+.prv03-sleep .z:nth-of-type(2) { animation-delay: 1.2s !important; }
+.prv03-sleep .z:nth-of-type(3) { animation-delay: 2.4s !important; }
+@keyframes prv03-float { 0% { opacity: 0; transform: translate(0, 0); } 30% { opacity: 1; } 100% { opacity: 0; transform: translate(26px, -60px); } }
+
+/* Five "nots" for living next to people */
+.prv03-nots { display: grid; grid-template-columns: repeat(auto-fit, minmax(11.5rem, 1fr)); gap: .6rem; margin: .4em 0 1em; }
+.prv03-nots div { padding: .65em .8em; border-radius: 10px; border: 1.5px solid var(--line-strong); background: var(--surface); }
+.prv03-nots b { display: block; font: italic 600 clamp(1.05rem, .92rem + .6vw, 1.4rem)/1.2 var(--serif); color: var(--danger); }
+.prv03-nots span { display: block; margin-top: .25em; font-size: clamp(.92rem, .84rem + .4vw, 1.15rem); line-height: 1.35; }
+.prv03-nots small { display: block; margin-top: .3em; color: var(--ink-soft); font-size: .85rem; }
+</style>
+</head>
+<body>
+<main class="deck" id="deck">
+
+<!-- ======================= OPENING ======================= -->
+<section class="slide title">
+  <div class="inner">
+    <div class="emblem rise"></div>
+    <h1 class="rise" style="--d:1">Proverbs 3</h1>
+    <p class="sub rise" style="--d:3">Lean your whole weight on Him</p>
+    <p class="tag rise" style="--d:5">A father teaches his son to trust the LORD, take His correction, prize wisdom above gold, and treat his neighbor right.</p>
+  </div>
+</section>
+
+<section class="slide watch">
+  <div class="inner">
+    <h2 class="rise">Things to watch for</h2>
+    <p class="lede rise" style="--d:1">Keep these questions in the back of your mind as we read. We'll come back to every one of them at the end.</p>
+    <ol class="seeds">
+      <li class="step"><span class="topic">Trusting God</span><span class="seed-q">What does it mean to trust the LORD with all your heart?</span></li>
+      <li class="step"><span class="topic">Honoring God</span><span class="seed-q">How does a man honor the LORD with what he has?</span></li>
+      <li class="step"><span class="topic">God as Father</span><span class="seed-q">Why does the LORD correct His children?</span></li>
+      <li class="step"><span class="topic">What lasts</span><span class="seed-q">What is wisdom worth compared to money?</span></li>
+      <li class="step"><span class="topic">Peace</span><span class="seed-q">How can a man lie down without fear?</span></li>
+      <li class="step"><span class="topic">Other people</span><span class="seed-q">How should we treat the people around us?</span></li>
+    </ol>
+  </div>
+</section>
+
+<!-- ======================= PART ONE ======================= -->
+<section class="slide part">
+  <div class="inner">
+    <p class="part-n rise">Part one</p>
+    <h2 class="rise" style="--d:1">Trust and honor</h2>
+    <p class="range rise" style="--d:2">Verses 1–12</p>
+    <div class="rule"></div>
+    <p class="hook rise" style="--d:4">Some of the most-loved verses in the whole Bible.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="1-2" data-hl="let thine heart keep my commandments"></section>
+<section class="slide verse" data-v="3-4" data-hl="write them upon the table of thine heart"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="3" data-hl="mercy and truth|bind them about thy neck|the table of thine heart"></blockquote>
+    <div class="split">
+      <div class="stage">
+        <svg viewBox="0 0 520 340" role="img" aria-label="A stone tablet beside a heart. The words mercy and truth are written on the heart.">
+          <g class="rise" style="--d:2">
+            <path d="M40 310 L40 80 Q40 30 105 30 Q170 30 170 80 L170 310 Z" stroke-width="3" style="fill:var(--surface-2);stroke:var(--line-strong)"/>
+            <g stroke-width="3" stroke-linecap="round" style="stroke:var(--ink-soft)" opacity=".55">
+              <line x1="66" y1="110" x2="144" y2="110"/><line x1="66" y1="140" x2="144" y2="140"/><line x1="66" y1="170" x2="144" y2="170"/><line x1="66" y1="200" x2="130" y2="200"/><line x1="66" y1="230" x2="144" y2="230"/><line x1="66" y1="260" x2="120" y2="260"/>
+            </g>
+            <text x="105" y="336" text-anchor="middle" font-size="17" style="fill:var(--ink-soft)">written on stone</text>
+          </g>
+          <g class="step">
+            <path d="M370 300 C300 240 230 190 230 130 C230 85 265 58 302 58 C335 58 358 78 370 102 C382 78 405 58 438 58 C475 58 510 85 510 130 C510 190 440 240 370 300 Z" stroke-width="4" style="fill:color-mix(in srgb, var(--accent) 14%, transparent);stroke:var(--accent)"/>
+            <text x="370" y="148" text-anchor="middle" font-size="30" font-weight="700" class="serif" style="fill:var(--accent-hot)">mercy</text>
+            <text x="370" y="186" text-anchor="middle" font-size="22" style="fill:var(--ink-soft)">and</text>
+            <text x="370" y="222" text-anchor="middle" font-size="30" font-weight="700" class="serif" style="fill:var(--accent-hot)">truth</text>
+            <text x="370" y="336" text-anchor="middle" font-size="17" style="fill:var(--accent-hot)">written on the heart</text>
+          </g>
+        </svg>
+      </div>
+      <div>
+        <h2 class="rise" style="--d:1">Written where it counts</h2>
+        <p class="note rise" style="--d:2">A <em>table</em> is a tablet, like the stone tablets of the law. God wants His ways carved into your heart.</p>
+        <p class="note step"><em>Mercy</em> is loyal love. <em>Truth</em> is being a man people can count on. Wear them where everyone can see.</p>
+        <p class="note step">Verse 4 sounds like Jesus as a young man: He “increased in wisdom and stature, and in favour with God and man” (Luke 2:52).</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="slide verse" data-v="5-6" data-hl="Trust in the LORD with all thine heart|lean not unto thine own understanding|he shall direct thy paths"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="5" data-hl="Trust in the LORD with all thine heart|lean not"></blockquote>
+    <div class="split">
+      <div class="stage">
+        <svg class="prv03-lean" viewBox="0 0 540 380" role="img" aria-label="Two supports. A thin reed labeled thine own understanding snaps under a man's weight. A stone pillar labeled the LORD holds firm.">
+          <line x1="10" y1="340" x2="530" y2="340" stroke-width="3" style="stroke:var(--ink-soft)"/>
+          <g>
+            <path d="M140 340 L140 230" stroke-width="7" stroke-linecap="round" style="stroke:var(--warm)"/>
+            <path class="reed-top" d="M140 232 L140 140" stroke-width="7" stroke-linecap="round" style="stroke:var(--warm)"/>
+            <g class="load-l">
+              <rect x="88" y="98" width="104" height="40" rx="6" style="fill:var(--ink-soft)"/>
+              <text x="140" y="124" text-anchor="middle" font-size="16" font-weight="700" style="fill:var(--bg)">your weight</text>
+            </g>
+            <text x="140" y="368" text-anchor="middle" font-size="18" style="fill:var(--ink-soft)">thine own understanding</text>
+          </g>
+          <g class="step">
+            <rect x="350" y="140" width="96" height="200" stroke-width="3" style="fill:var(--surface-2);stroke:var(--line-strong)"/>
+            <rect x="336" y="126" width="124" height="18" style="fill:var(--line-strong)"/>
+            <rect x="336" y="330" width="124" height="12" style="fill:var(--line-strong)"/>
+            <rect x="346" y="84" width="104" height="40" rx="6" style="fill:var(--accent)"/>
+            <text x="398" y="110" text-anchor="middle" font-size="16" font-weight="700" style="fill:var(--on-accent)">all thine heart</text>
+            <text x="398" y="368" text-anchor="middle" font-size="18" font-weight="700" style="fill:var(--accent-hot)">the LORD</text>
+          </g>
+        </svg>
+      </div>
+      <div>
+        <h2 class="rise" style="--d:1">Put your whole weight on it</h2>
+        <p class="note rise" style="--d:2">To <em>trust</em> here means to lean on, like trusting a chair when you sit down.</p>
+        <p class="note step prv03-snap">Your own understanding is a reed. Isaiah 36:6 warns that a broken reed, “if a man lean, it will go into his hand, and pierce it.” Most of us have the scars to prove it.</p>
+        <p class="note step"><em>All</em> thine heart. Not most of it, with one corner kept back for the old life.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="6" data-hl="In all thy ways acknowledge him|he shall direct thy paths"></blockquote>
+    <div class="split road">
+      <div class="stage">
+        <svg viewBox="0 0 600 240" role="img" aria-label="A crooked road over hills is leveled and made straight.">
+          <g>
+            <path class="hill" d="M60 200 L150 80 L240 200 Z" stroke-width="2" style="fill:var(--surface-2);stroke:var(--ink-soft)"/>
+            <path class="hill" d="M300 200 L380 110 L460 200 Z" stroke-width="2" style="fill:var(--surface-2);stroke:var(--ink-soft)"/>
+            <path class="crooked" d="M20 200 C70 200 90 90 150 85 C210 80 220 210 270 205 C320 200 340 120 380 115 C420 110 440 205 480 200 C520 195 540 200 580 200" fill="none" stroke-width="5" stroke-dasharray="10 8" style="stroke:var(--ink-soft)"/>
+            <path class="draw" pathLength="1" d="M20 200 L580 200" fill="none" stroke-width="6" stroke-linecap="round" style="stroke:var(--accent)"/>
+          </g>
+          <line x1="0" y1="203" x2="600" y2="203" stroke-width="1" opacity=".4" style="stroke:var(--ink-soft)"/>
+          <text x="580" y="232" text-anchor="end" font-size="18" style="fill:var(--accent-hot)">“he shall direct thy paths”</text>
+        </svg>
+      </div>
+      <div>
+        <h2 class="rise" style="--d:1">He straightens the road</h2>
+        <p class="note rise" style="--d:2">To <em>acknowledge</em> Him means to know Him and bring Him into it: your job, your money, your relationships, your recovery. <em>All</em> thy ways.</p>
+        <p class="note step road-go">“Direct” means <em>make straight</em> or <em>make smooth</em>. It doesn't promise an easy life. It promises that God will get you where He's taking you.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="slide verse" data-v="7-8" data-hl="Be not wise in thine own eyes"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="7" data-hl="Be not wise in thine own eyes"></blockquote>
+    <h2 class="rise" style="--d:1">“I got this”</h2>
+    <p class="note rise" style="--d:2">Being wise in your own eyes sounds like this:</p>
+    <ul class="nots">
+      <li class="step"><span class="k">“I can handle one”</span><span class="why">the first lie of every relapse</span></li>
+      <li class="step"><span class="k">“I don't need a meeting today”</span><span class="why">cutting off help when you need it most</span></li>
+      <li class="step"><span class="k">“Nobody can tell me nothing”</span><span class="why">the fool's motto from chapter 1</span></li>
+      <li class="step yes"><span class="k">fear the LORD, and depart from evil</span><span class="why">humble, and moving away from it</span></li>
+    </ul>
+    <p class="note step">Verse 8 says it's “health to thy navel, and marrow to thy bones.” The navel is your middle, your core; marrow is deep strength. Walking humbly with God is good for the whole man.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="9-10" data-hl="Honour the LORD with thy substance|the firstfruits of all thine increase"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="9" data-hl="the firstfruits"></blockquote>
+    <h2 class="rise" style="--d:1">First, not leftovers</h2>
+    <div class="stage">
+      <svg class="prv03-first" viewBox="0 0 640 180" style="max-height:24vh" role="img" aria-label="A row of grain sheaves. The first one is circled and set apart for God.">
+        <defs>
+          <path id="prv03-sheaf" d="M-14 70 L-4 10 L-18 -30 M-4 10 L-6 -40 M4 10 L6 -40 M4 10 L18 -30 M14 70 L4 10"/>
+        </defs>
+        <line x1="10" y1="140" x2="630" y2="140" stroke-width="2" style="stroke:var(--ink-soft)"/>
+        <g stroke-width="5" stroke-linecap="round" fill="none">
+          <use href="#prv03-sheaf" x="70" y="70" style="stroke:var(--warm)"/>
+          <use href="#prv03-sheaf" x="190" y="70" style="stroke:var(--line-strong)"/>
+          <use href="#prv03-sheaf" x="270" y="70" style="stroke:var(--line-strong)"/>
+          <use href="#prv03-sheaf" x="350" y="70" style="stroke:var(--line-strong)"/>
+          <use href="#prv03-sheaf" x="430" y="70" style="stroke:var(--line-strong)"/>
+          <use href="#prv03-sheaf" x="510" y="70" style="stroke:var(--line-strong)"/>
+          <use href="#prv03-sheaf" x="590" y="70" style="stroke:var(--line-strong)"/>
+        </g>
+        <ellipse class="ring step" cx="70" cy="86" rx="50" ry="62"/>
+        <text x="70" y="172" text-anchor="middle" font-size="17" font-weight="700" style="fill:var(--accent-hot)">the first</text>
+        <text x="390" y="172" text-anchor="middle" font-size="17" style="fill:var(--ink-soft)">the rest of the harvest</text>
+      </svg>
+    </div>
+    <p class="note rise" style="--d:2">At harvest, Israel brought the <em>first</em> part to God before they knew how big the rest would be. That's trust: God first, before I see if there's enough.</p>
+    <p class="note step">Honoring God with your “substance” means your money, time, and strength. Verse 10's full barns show God caring for those who put Him first. Not a deal to get rich: a son trusting his Father to provide.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="11-12" data-hl="despise not the chastening of the LORD|whom the LORD loveth he correcteth"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise">The New Testament quotes this</h2>
+    <div class="pair">
+      <div class="scroll rise" style="--d:1"><p class="ref">Proverbs 3:12</p><p class="kjv">For <mark>whom the LORD loveth he correcteth</mark>; even as a father the son in whom he delighteth.</p></div>
+      <div class="scroll step"><p class="ref">Hebrews 12:6</p><p class="kjv">For <mark>whom the Lord loveth he chasteneth</mark>, and scourgeth every son whom he receiveth.</p></div>
+    </div>
+    <p class="note step"><em>Chastening</em> means training: correction that teaches. Hebrews says it's proof you're a son. A man doesn't discipline a stranger's kid. He disciplines his own, because he's invested in how that boy turns out.</p>
+    <blockquote class="quote step"><p>“Now no chastening for the present seemeth to be joyous, but grievous: nevertheless afterward it yieldeth the peaceable fruit of righteousness unto them which are exercised thereby.”</p><cite>Hebrews 12:11</cite></blockquote>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="11" data-hl="neither be weary of his correction"></blockquote>
+    <h2 class="rise" style="--d:1">A judge, or a father?</h2>
+    <div class="columns">
+      <div class="col law rise" style="--d:2">
+        <p class="who">What it isn't</p>
+        <h3>Punishment</h3>
+        <p>A judge punishes to make a man pay for his crime. For a believer, Jesus already paid. “There is therefore now no condemnation to them which are in Christ Jesus” (Romans 8:1).</p>
+      </div>
+      <div class="col grace step">
+        <p class="who">What it is</p>
+        <h3>Correction</h3>
+        <p>A father corrects to make his son better. It can hurt. It's never to pay God back. It's to grow you up.</p>
+      </div>
+    </div>
+    <p class="note step">Not every hard thing is God correcting a sin. Sometimes life is just hard. But when He does correct you, don't <em>despise</em> it and don't quit. It means you're His, and He “delighteth” in you.</p>
+  </div>
+</section>
+
+<!-- ======================= PART TWO ======================= -->
+<section class="slide part">
+  <div class="inner">
+    <p class="part-n rise">Part two</p>
+    <h2 class="rise" style="--d:1">Better than gold</h2>
+    <p class="range rise" style="--d:2">Verses 13–26</p>
+    <div class="rule"></div>
+    <p class="hook rise" style="--d:4">The same wisdom God used to build the world, offered to you.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="13-15" data-hl="Happy is the man that findeth wisdom|She is more precious than rubies"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="15" data-hl="all the things thou canst desire are not to be compared unto her"></blockquote>
+    <h2 class="rise" style="--d:1">Worth more than anything you can want</h2>
+    <div class="prv03-worth" role="img" aria-label="Bars for silver, gold and rubies, and a bar for wisdom that runs off the chart.">
+      <div class="row"><span class="lbl">silver</span><span class="track"><span class="bar" style="--w:30%;--k:0"></span></span></div>
+      <div class="row"><span class="lbl">fine gold</span><span class="track"><span class="bar" style="--w:48%;--k:1"></span></span></div>
+      <div class="row"><span class="lbl">rubies</span><span class="track"><span class="bar" style="--w:64%;--k:2"></span></span></div>
+      <div class="row wis"><span class="lbl">wisdom</span><span class="track"><span class="bar" style="--w:100%;--k:4"></span></span></div>
+    </div>
+    <p class="note step">“Merchandise” is what you'd make trading. Wisdom pays better than any hustle. Money can be lost, stolen, or spent in a weekend. Wisdom stays with you, and it shapes who you become.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="16-18" data-hl="She is a tree of life to them that lay hold upon her"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="18" data-hl="a tree of life"></blockquote>
+    <h2 class="rise" style="--d:1">A tree of life</h2>
+    <div class="stage">
+      <svg class="prv03-tree" viewBox="0 0 660 200" role="img" aria-label="Three trees on a timeline: the tree of life guarded in Eden, wisdom called a tree of life in Proverbs, and the tree of life given in Revelation.">
+        <defs>
+          <g id="prv03-t"><rect x="-6" y="0" width="12" height="44" style="fill:var(--leather-light)"/><circle cx="0" cy="-14" r="32"/><circle cx="-24" cy="4" r="20"/><circle cx="24" cy="4" r="20"/></g>
+        </defs>
+        <line x1="40" y1="124" x2="620" y2="124" stroke-width="2" stroke-dasharray="4 7" style="stroke:var(--ink-soft)"/>
+        <g class="rise" style="--d:2"><use href="#prv03-t" x="100" y="80" style="fill:var(--line-strong)"/>
+          <path d="M60 50 L140 110" stroke-width="5" stroke-linecap="round" style="stroke:var(--danger)"/>
+          <text x="100" y="158" text-anchor="middle" font-size="18" font-weight="700">Eden</text>
+          <text x="100" y="182" text-anchor="middle" font-size="15" style="fill:var(--ink-soft)">the way is guarded (Gen. 3:24)</text></g>
+        <g class="now step"><use href="#prv03-t" x="330" y="80" style="fill:var(--accent)"/>
+          <text x="330" y="158" text-anchor="middle" font-size="18" font-weight="700" style="fill:var(--accent-hot)">Proverbs 3:18</text>
+          <text x="330" y="182" text-anchor="middle" font-size="15" style="fill:var(--ink-soft)">wisdom: a taste of it now</text></g>
+        <g class="now step"><use href="#prv03-t" x="560" y="80" style="fill:var(--accent)"/>
+          <text x="560" y="158" text-anchor="middle" font-size="18" font-weight="700" style="fill:var(--accent-hot)">Revelation 2:7</text>
+          <text x="560" y="182" text-anchor="middle" font-size="15" style="fill:var(--ink-soft)">given to eat, forever</text></g>
+      </svg>
+    </div>
+    <p class="note step">After the fall, the way to the tree of life was closed. Wisdom gives a taste of that life now. And Jesus promises the real thing: “To him that overcometh will I give to eat of the tree of life” (Revelation 2:7).</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="19-20" data-hl="The LORD by wisdom hath founded the earth"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="19" data-hl="by wisdom|by understanding"></blockquote>
+    <div class="split">
+      <div class="stage">
+        <svg viewBox="0 0 520 380" role="img" aria-label="The heavens above, clouds dropping dew, the earth on its foundation, and the deep waters below.">
+          <path d="M20 120 Q260 -20 500 120" fill="none" stroke-width="3" style="stroke:var(--accent)"/>
+          <g style="fill:var(--accent-hot)"><circle cx="120" cy="80" r="3"/><circle cx="200" cy="48" r="2.5"/><circle cx="320" cy="44" r="3"/><circle cx="410" cy="74" r="2.5"/><circle cx="260" cy="70" r="2"/></g>
+          <text x="260" y="100" text-anchor="middle" font-size="18" font-weight="700" style="fill:var(--accent-hot)">the heavens, established</text>
+          <g class="step">
+            <g style="fill:var(--surface-2);stroke:var(--line-strong)" stroke-width="2">
+              <ellipse cx="160" cy="160" rx="60" ry="20"/><ellipse cx="370" cy="150" rx="70" ry="22"/>
+            </g>
+            <g style="fill:var(--cool)"><circle cx="140" cy="195" r="3.5"/><circle cx="170" cy="210" r="3.5"/><circle cx="350" cy="190" r="3.5"/><circle cx="385" cy="205" r="3.5"/><circle cx="160" cy="226" r="3"/><circle cx="370" cy="222" r="3"/></g>
+            <text x="260" y="234" text-anchor="middle" font-size="16" style="fill:var(--ink-soft)">clouds drop the dew</text>
+          </g>
+          <rect x="20" y="246" width="480" height="40" style="fill:var(--leather-light)"/>
+          <text x="260" y="272" text-anchor="middle" font-size="18" font-weight="700" style="fill:var(--on-glow)">the earth, founded</text>
+          <g class="step">
+            <rect x="20" y="286" width="480" height="70" style="fill:color-mix(in srgb, var(--cool) 35%, transparent)"/>
+            <path d="M40 320 q20 -10 40 0 t40 0 t40 0 t40 0 t40 0 t40 0 t40 0 t40 0 t40 0 t40 0 t40 0" fill="none" stroke-width="3" style="stroke:var(--cool)"/>
+            <text x="260" y="346" text-anchor="middle" font-size="16" style="fill:var(--ink)">the depths, broken up</text>
+          </g>
+        </svg>
+      </div>
+      <div>
+        <h2 class="rise" style="--d:1">The wisdom that built the world</h2>
+        <p class="note rise" style="--d:2">God built the world <em>by wisdom</em>, like a master builder with a plan, from the sky down to the deep waters.</p>
+        <p class="note step">The New Testament tells us who did the building: “All things were made by him” (John 1:3). That's Jesus, the wisdom of God.</p>
+        <p class="note step">That same wisdom is offered to a man trying to hold his life together.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="slide verse" data-v="21-23" data-hl="thy foot shall not stumble"></section>
+<section class="slide verse" data-v="24-26" data-hl="thy sleep shall be sweet|the LORD shall be thy confidence"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="24" data-hl="thy sleep shall be sweet"></blockquote>
+    <div class="split">
+      <div class="stage">
+        <svg class="prv03-sleep" viewBox="0 0 520 320" role="img" aria-label="A man asleep under a crescent moon, resting in peace.">
+          <path d="M420 40 a52 52 0 1 0 50 72 a40 40 0 1 1 -50 -72 Z" style="fill:var(--warm)"/>
+          <g style="fill:var(--ink-soft)"><circle cx="80" cy="50" r="2.5"/><circle cx="170" cy="30" r="2"/><circle cx="260" cy="70" r="2.5"/><circle cx="330" cy="30" r="2"/><circle cx="60" cy="130" r="2"/></g>
+          <rect x="70" y="250" width="380" height="18" rx="6" style="fill:var(--leather-light)"/>
+          <rect x="80" y="214" width="62" height="36" rx="14" style="fill:var(--surface-2);stroke:var(--line-strong)" stroke-width="2"/>
+          <circle cx="116" cy="210" r="22" style="fill:var(--ink)"/>
+          <path d="M138 222 Q260 180 430 222 L430 250 L138 250 Z" style="fill:var(--accent)"/>
+          <g font-size="26" font-weight="700" class="serif" style="fill:var(--accent-hot)">
+            <text class="z" x="150" y="170">z</text><text class="z" x="170" y="150">z</text><text class="z" x="190" y="130">z</text>
+          </g>
+          <text x="260" y="300" text-anchor="middle" font-size="18" style="fill:var(--ink-soft)">“thy sleep shall be sweet”</text>
+        </svg>
+      </div>
+      <div>
+        <h2 class="rise" style="--d:1">Sweet sleep</h2>
+        <p class="note rise" style="--d:2">A lot of us know the other kind of night: lying awake, sick, looking over your shoulder.</p>
+        <p class="note step">God offers real rest, because “the LORD shall be thy confidence” (v. 26). He keeps your foot from being <em>taken</em> in a trap.</p>
+        <p class="note step">“I will both lay me down in peace, and sleep: for thou, LORD, only makest me dwell in safety” (Psalm 4:8).</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ======================= PART THREE ======================= -->
+<section class="slide part">
+  <div class="inner">
+    <p class="part-n rise">Part three</p>
+    <h2 class="rise" style="--d:1">Love your neighbor</h2>
+    <p class="range rise" style="--d:2">Verses 27–35</p>
+    <div class="rule"></div>
+    <p class="hook rise" style="--d:4">Wisdom shows up in how you treat the man next door.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="27-28" data-hl="Withhold not good from them to whom it is due|to morrow I will give"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="28" data-hl="Go, and come again, and to morrow I will give; when thou hast it by thee"></blockquote>
+    <h2 class="rise" style="--d:1">Don't put off doing good</h2>
+    <div class="asks">
+      <div class="ask step"><span class="q">“Go, and come again”</span><span class="stamp">Today</span><span class="ctx">When a man needs help and you have it right there, don't send him away to come back later.</span></div>
+      <div class="ask step"><span class="q">“To morrow I will give”</span><span class="stamp">Today</span><span class="ctx">Owe someone money? Promised to show up? If it's in your hand now, do it now.</span></div>
+    </div>
+    <p class="note step">A lot of us burned people with “tomorrow.” Paying back what you owe, keeping your word, helping when you can: that's how trust gets rebuilt, one day at a time.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="29-31" data-hl="Envy thou not the oppressor, and choose none of his ways"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="31" data-hl="Envy thou not the oppressor"></blockquote>
+    <h2 class="rise" style="--d:1">Five “nots” for living next to people</h2>
+    <div class="prv03-nots">
+      <div class="step"><b>Withhold not</b><span>Don't hold back good you owe.</span><small>v. 27</small></div>
+      <div class="step"><b>Say not “to morrow”</b><span>Don't stall when you can help now.</span><small>v. 28</small></div>
+      <div class="step"><b>Devise not evil</b><span>Don't scheme against the man who trusts you.</span><small>v. 29</small></div>
+      <div class="step"><b>Strive not</b><span>Don't pick fights with a man who did you no harm.</span><small>v. 30</small></div>
+      <div class="step"><b>Envy thou not</b><span>Don't wish you had the oppressor's life.</span><small>v. 31</small></div>
+    </div>
+    <p class="note step">The <em>oppressor</em> is the man who gets ahead by force: the one with the car, the cash, and people scared of him. It's easy to envy him. Proverbs says <em>choose none of his ways</em>. Look where his road ends.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="32-33" data-hl="his secret is with the righteous"></section>
+<section class="slide verse" data-v="34-35" data-hl="he giveth grace unto the lowly"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="32" data-hl="his secret is with the righteous"></blockquote>
+    <h2 class="rise" style="--d:1">Grace for the lowly</h2>
+    <div class="pair">
+      <div class="scroll rise" style="--d:2"><p class="ref">Proverbs 3:34</p><p class="kjv">Surely he scorneth the scorners: but <mark>he giveth grace unto the lowly</mark>.</p></div>
+      <div class="scroll step"><p class="ref">James 4:6</p><p class="kjv">But he giveth more grace. Wherefore he saith, God resisteth the proud, but <mark>giveth grace unto the humble</mark>.</p></div>
+    </div>
+    <p class="note step">“His secret” (v. 32) means His close friendship, the kind where you're let in on things. God doesn't keep the humble man at arm's length. He draws him close.</p>
+    <p class="note step">The proud man finds God standing against him. The lowly man, the one who knows he needs help, gets grace. That's good news for every man who came in here broken.</p>
+  </div>
+</section>
+
+<!-- ======================= CLOSING ======================= -->
+<section class="slide remember">
+  <div class="inner">
+    <h2 class="rise">Points to remember</h2>
+    <ol class="seeds">
+      <li class="step"><span class="topic">Trusting God</span><span class="seed-q">“Trust in the LORD with all thine heart” <cite>3:5</cite></span><span class="take">Lean your whole weight on Him, not on your own reed. He'll straighten the road.</span></li>
+      <li class="step"><span class="topic">Honoring God</span><span class="seed-q">“The firstfruits of all thine increase” <cite>3:9</cite></span><span class="take">Give God the first, not the leftovers, and trust Him to provide.</span></li>
+      <li class="step"><span class="topic">God as Father</span><span class="seed-q">“Whom the LORD loveth he correcteth” <cite>3:12</cite></span><span class="take">His correction proves you're His son. It trains you; it doesn't condemn you.</span></li>
+      <li class="step"><span class="topic">What lasts</span><span class="seed-q">“She is more precious than rubies” <cite>3:15</cite></span><span class="take">Nothing you can want compares with wisdom. It's a tree of life.</span></li>
+      <li class="step"><span class="topic">Peace</span><span class="seed-q">“Thy sleep shall be sweet” <cite>3:24</cite></span><span class="take">The LORD is your confidence, so you can lie down in peace.</span></li>
+      <li class="step"><span class="topic">Other people</span><span class="seed-q">“Withhold not good from them to whom it is due” <cite>3:27</cite></span><span class="take">Do good today, keep your word, and don't envy the man who gets ahead by force.</span></li>
+    </ol>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+    <p class="counter">Question 1 of 6</p>
+    <span class="topic">Trusting God</span>
+    <h2>What does it mean to trust the LORD with all your heart?</h2>
+    <p class="ask-line">What verses tell us about this?</p>
+    <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+    <blockquote class="quote step" data-q="5"></blockquote>
+    <blockquote class="quote step" data-q="6"></blockquote>
+    <blockquote class="quote step" data-q="7"></blockquote>
+    <div class="answer step"><h3>Answer</h3><p>It means putting your whole weight on Him instead of on your own thinking, and bringing Him into every part of life. Not most of your heart: all of it. And He promises to make your path straight.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+    <p class="counter">Question 2 of 6</p>
+    <span class="topic">Honoring God</span>
+    <h2>How does a man honor the LORD with what he has?</h2>
+    <p class="ask-line">What verses tell us about this?</p>
+    <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+    <blockquote class="quote step" data-q="9"></blockquote>
+    <blockquote class="quote step" data-q="10"></blockquote>
+    <blockquote class="quote step" data-q="27"></blockquote>
+    <div class="answer step"><h3>Answer</h3><p>By giving God the first part, not what's left over, with money, time, and strength. It's an act of trust, not a way to buy a blessing. And part of honoring Him is doing good with what's in your hand.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+    <p class="counter">Question 3 of 6</p>
+    <span class="topic">God as Father</span>
+    <h2>Why does the LORD correct His children?</h2>
+    <p class="ask-line">What verses tell us about this?</p>
+    <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+    <blockquote class="quote step" data-q="11"></blockquote>
+    <blockquote class="quote step" data-q="12"></blockquote>
+    <blockquote class="quote step"><p>“Now no chastening for the present seemeth to be joyous, but grievous: nevertheless afterward it yieldeth the peaceable fruit of righteousness unto them which are exercised thereby.”</p><cite>Hebrews 12:11</cite></blockquote>
+    <div class="answer step"><h3>Answer</h3><p>Because He loves them and delights in them, like a good father with his son. Correction isn't punishment; Jesus already paid for our sin. It's training, and afterward it grows peace and righteousness in us.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+    <p class="counter">Question 4 of 6</p>
+    <span class="topic">What lasts</span>
+    <h2>What is wisdom worth compared to money?</h2>
+    <p class="ask-line">What verses tell us about this?</p>
+    <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+    <blockquote class="quote step" data-q="14"></blockquote>
+    <blockquote class="quote step" data-q="15"></blockquote>
+    <blockquote class="quote step" data-q="18"></blockquote>
+    <div class="answer step"><h3>Answer</h3><p>More than silver, gold, or rubies, more than anything you could want. Money comes and goes. Wisdom is a tree of life to the man who holds on to it.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+    <p class="counter">Question 5 of 6</p>
+    <span class="topic">Peace</span>
+    <h2>How can a man lie down without fear?</h2>
+    <p class="ask-line">What verses tell us about this?</p>
+    <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+    <blockquote class="quote step" data-q="23"></blockquote>
+    <blockquote class="quote step" data-q="24"></blockquote>
+    <blockquote class="quote step" data-q="26"></blockquote>
+    <div class="answer step"><h3>Answer</h3><p>By making the LORD his confidence. When you walk in His wisdom, you don't have to look over your shoulder. He keeps your foot from the trap, and He gives sweet sleep.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+    <p class="counter">Question 6 of 6</p>
+    <span class="topic">Other people</span>
+    <h2>How should we treat the people around us?</h2>
+    <p class="ask-line">What verses tell us about this?</p>
+    <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+    <blockquote class="quote step" data-q="27"></blockquote>
+    <blockquote class="quote step" data-q="28"></blockquote>
+    <blockquote class="quote step" data-q="30"></blockquote>
+    <blockquote class="quote step" data-q="31"></blockquote>
+    <div class="answer step"><h3>Answer</h3><p>Do good when it's in your power, and do it today. Don't scheme, don't pick fights, and don't envy the man who gets ahead by force. Treat your neighbor the way God has treated you: with grace.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide prayer">
+  <div class="inner">
+    <div class="emblem rise"></div>
+    <h2 class="rise" style="--d:1">Prayer requests</h2>
+    <p class="ask-line rise" style="--d:2">What can we pray about for you today?</p>
+    <blockquote class="quote rise" style="--d:4"><p>“Casting all your care upon him; for he careth for you.”</p><cite>1 Peter 5:7</cite></blockquote>
+  </div>
+</section>
+
+</main>
+
+<script>
+// King James Version, Proverbs chapter 3
+const V = {
+  1: "My son, forget not my law; but let thine heart keep my commandments:",
+  2: "For length of days, and long life, and peace, shall they add to thee.",
+  3: "Let not mercy and truth forsake thee: bind them about thy neck; write them upon the table of thine heart:",
+  4: "So shalt thou find favour and good understanding in the sight of God and man.",
+  5: "Trust in the LORD with all thine heart; and lean not unto thine own understanding.",
+  6: "In all thy ways acknowledge him, and he shall direct thy paths.",
+  7: "Be not wise in thine own eyes: fear the LORD, and depart from evil.",
+  8: "It shall be health to thy navel, and marrow to thy bones.",
+  9: "Honour the LORD with thy substance, and with the firstfruits of all thine increase:",
+  10: "So shall thy barns be filled with plenty, and thy presses shall burst out with new wine.",
+  11: "My son, despise not the chastening of the LORD; neither be weary of his correction:",
+  12: "For whom the LORD loveth he correcteth; even as a father the son in whom he delighteth.",
+  13: "Happy is the man that findeth wisdom, and the man that getteth understanding.",
+  14: "For the merchandise of it is better than the merchandise of silver, and the gain thereof than fine gold.",
+  15: "She is more precious than rubies: and all the things thou canst desire are not to be compared unto her.",
+  16: "Length of days is in her right hand; and in her left hand riches and honour.",
+  17: "Her ways are ways of pleasantness, and all her paths are peace.",
+  18: "She is a tree of life to them that lay hold upon her: and happy is every one that retaineth her.",
+  19: "The LORD by wisdom hath founded the earth; by understanding hath he established the heavens.",
+  20: "By his knowledge the depths are broken up, and the clouds drop down the dew.",
+  21: "My son, let not them depart from thine eyes: keep sound wisdom and discretion:",
+  22: "So shall they be life unto thy soul, and grace to thy neck.",
+  23: "Then shalt thou walk in thy way safely, and thy foot shall not stumble.",
+  24: "When thou liest down, thou shalt not be afraid: yea, thou shalt lie down, and thy sleep shall be sweet.",
+  25: "Be not afraid of sudden fear, neither of the desolation of the wicked, when it cometh.",
+  26: "For the LORD shall be thy confidence, and shall keep thy foot from being taken.",
+  27: "Withhold not good from them to whom it is due, when it is in the power of thine hand to do it.",
+  28: "Say not unto thy neighbour, Go, and come again, and to morrow I will give; when thou hast it by thee.",
+  29: "Devise not evil against thy neighbour, seeing he dwelleth securely by thee.",
+  30: "Strive not with a man without cause, if he have done thee no harm.",
+  31: "Envy thou not the oppressor, and choose none of his ways.",
+  32: "For the froward is abomination to the LORD: but his secret is with the righteous.",
+  33: "The curse of the LORD is in the house of the wicked: but he blesseth the habitation of the just.",
+  34: "Surely he scorneth the scorners: but he giveth grace unto the lowly.",
+  35: "The wise shall inherit glory: but shame shall be the promotion of fools."
+};
+const BOOK = "Proverbs 3";
+</script>
+<script src="../assets/deck.js"></script>
+</body>
+</html>

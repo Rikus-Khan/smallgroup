@@ -11,9 +11,13 @@
    --cool, --warm, --danger          water/sky, gold/coins, stamps and strikes
    --wine                            wine, whatever the theme
    --glow, --on-glow                 the bright center of a glow, and text placed on it
-   --serif, --sans                   scripture and headings, explanations                          */
+   --serif, --sans                   scripture and headings, explanations
+   --leather, --leather-light        set below, the same in every theme                          */
 
 @property --p { syntax: '<number>'; inherits: true; initial-value: 0; }
+
+/* Colors of real objects that look the same in every theme */
+:root { --leather: #5b3f2c; --leather-light: #a4764f; }
 
 * { box-sizing: border-box; }
 html, body { margin: 0; height: 100%; }
@@ -211,8 +215,8 @@ svg .serif { font-family: var(--serif); }
 @keyframes flap { to { transform: scaleY(-.4); } }
 
 /* The sun crossing the sky */
-.sun { transform-origin: 300px 250px; }
-.slide.active .sun { animation: arc 3.6s .5s cubic-bezier(.4,0,.2,1) forwards; }
+.arc-sun { transform-origin: 300px 250px; }
+.slide.active .arc-sun { animation: arc 3.6s .5s cubic-bezier(.4,0,.2,1) forwards; }
 @keyframes arc { to { transform: rotate(150deg); } }
 
 /* One word in three languages */

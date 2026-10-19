@@ -1,0 +1,555 @@
+<!doctype html>
+<html lang="en" data-theme="scribe">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Proverbs 27</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="../assets/fonts.css">
+<link rel="stylesheet" href="../assets/deck.css">
+<link rel="stylesheet" href="../assets/themes.css">
+<style>
+/* Today, and the days we can't see */
+.prv27-days { display: grid; grid-template-columns: 1.4fr 1fr 1fr 1fr; gap: .6rem; margin: .4em 0 1.1em; }
+.prv27-day { border: 1.5px dashed var(--line-strong); border-radius: 10px; padding: .6em .4em; text-align: center; min-height: clamp(80px, 14vh, 140px); display: flex; flex-direction: column; justify-content: center; gap: .2em; }
+.prv27-day b { font: 400 clamp(1.05rem, .9rem + .8vw, 1.6rem) var(--serif); }
+.prv27-day span { font: 300 clamp(1.8rem, 1.3rem + 2.4vw, 3.4rem)/1 var(--serif); color: var(--ink-soft); }
+.prv27-day small { font-size: clamp(.8rem, .74rem + .3vw, 1rem); color: var(--ink-soft); }
+.prv27-day.today { border: 2px solid var(--accent); background: color-mix(in srgb, var(--accent) 12%, transparent); }
+.prv27-day.today b { color: var(--accent-hot); }
+.prv27-day:nth-child(3) { opacity: .7; }
+.prv27-day:nth-child(4) { opacity: .45; }
+
+/* A balance that tips */
+.prv27-beam { transform-box: view-box; transform-origin: 260px 80px; transition: transform 1.6s cubic-bezier(.4,0,.2,1) .6s; }
+.prv27-lp, .prv27-rp { transition: transform 1.6s cubic-bezier(.4,0,.2,1) .6s; }
+.slide.active .prv27-beam { transform: rotate(10deg); }
+.slide.active .prv27-lp { transform: translateY(-28px); }
+.slide.active .prv27-rp { transform: translateY(28px); }
+
+/* The prudent man's path and the simple man's path */
+.prv27-p1 { transition-delay: .2s; }
+.split:has(.prv27-hide.on) .prv27-p1 { stroke-dashoffset: 0; }
+.split:has(.prv27-pass.on) .prv27-p2 { stroke-dashoffset: 0; }
+
+/* A steady drip */
+.prv27-drip { position: relative; height: clamp(110px, 20vh, 190px); width: min(100%, 15rem); margin: .2em 0 1em; }
+.prv27-drip .roof { position: absolute; top: 0; left: 0; right: 0; height: 10px; background: var(--line-strong); border-radius: 3px; }
+.prv27-drip i { position: absolute; top: 10px; left: var(--x); width: 10px; height: 14px; background: var(--cool); border-radius: 50% 50% 50% 50% / 62% 62% 38% 38%; opacity: 0; }
+.slide.active .prv27-drip i { animation: prv27-fall 1.4s ease-in infinite; animation-delay: var(--t); }
+@keyframes prv27-fall { 0% { opacity: 0; top: 10px; } 10% { opacity: 1; } 85% { opacity: 1; } 100% { opacity: 0; top: calc(74% - 14px); } }
+.prv27-drip .pail { position: absolute; bottom: 0; left: 22%; width: 56%; height: 26%; border: 2px solid var(--line-strong); border-top-width: 0; border-radius: 0 0 10px 10px; background: var(--surface); }
+
+/* Iron on iron */
+.prv27-blade { transform-box: view-box; transform-origin: 70px 210px; }
+.slide.active .prv27-blade { animation: prv27-scrape 1.6s ease-in-out infinite alternate; }
+@keyframes prv27-scrape { from { transform: rotate(-3deg); } to { transform: rotate(4deg); } }
+.prv27-spark { opacity: 0; }
+.slide.active .prv27-spark { animation: prv27-flash 1.6s ease-in-out infinite; animation-delay: var(--t, 0s); }
+@keyframes prv27-flash { 0%, 40% { opacity: 0; } 50% { opacity: 1; } 70%, 100% { opacity: 0; } }
+
+/* A jar with no bottom */
+.prv27-drop { opacity: 0; }
+.slide.active .prv27-drop { animation: prv27-through 1.8s linear infinite; animation-delay: var(--t); }
+@keyframes prv27-through { 0% { opacity: 0; transform: translateY(0); } 8% { opacity: 1; } 92% { opacity: 1; } 100% { opacity: 0; transform: translateY(250px); } }
+
+/* A pestle pounding */
+.slide.active .prv27-pestle { animation: prv27-pound .9s ease-in infinite alternate; }
+@keyframes prv27-pound { from { transform: translateY(-36px); } to { transform: translateY(0); } }
+</style>
+</head>
+<body>
+<main class="deck" id="deck">
+
+<!-- ======================= OPENING ======================= -->
+<section class="slide title">
+  <div class="inner">
+    <div class="emblem rise"></div>
+    <h1 class="rise" style="--d:1">Proverbs 27</h1>
+    <p class="sub rise" style="--d:3">Iron sharpeneth iron</p>
+    <p class="tag rise" style="--d:5">Real friends, honest wounds, and the men who make us sharper, one day at a time.</p>
+  </div>
+</section>
+
+<section class="slide watch">
+  <div class="inner">
+    <h2 class="rise">Things to watch for</h2>
+    <p class="lede rise" style="--d:1">Keep these questions in the back of your mind as we read. We'll come back to every one of them at the end.</p>
+    <ol class="seeds">
+      <li class="step"><span class="topic">Tomorrow</span><span class="seed-q">Why shouldn't we boast about tomorrow?</span></li>
+      <li class="step"><span class="topic">Friendship</span><span class="seed-q">How can a wound be faithful?</span></li>
+      <li class="step"><span class="topic">Accountability</span><span class="seed-q">How does one man sharpen another?</span></li>
+      <li class="step"><span class="topic">Wanting more</span><span class="seed-q">Why are our eyes never satisfied, and what can satisfy?</span></li>
+      <li class="step"><span class="topic">Praise</span><span class="seed-q">How does praise test a man?</span></li>
+      <li class="step"><span class="topic">Faithful work</span><span class="seed-q">What does knowing your flocks teach about daily faithfulness?</span></li>
+    </ol>
+  </div>
+</section>
+
+<!-- ======================= PART ONE ======================= -->
+<section class="slide part">
+  <div class="inner">
+    <p class="part-n rise">Part one</p>
+    <h2 class="rise" style="--d:1">Today, and true friends</h2>
+    <p class="range rise" style="--d:2">Verses 1–10</p>
+    <p class="hook rise" style="--d:4">Don't count on tomorrow, and don't trust a kiss over a wound.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="1-2" data-hl="Boast not thyself of to morrow|Let another man praise thee, and not thine own mouth"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="1"></blockquote>
+    <h2 class="rise" style="--d:1">You only have today</h2>
+    <div class="prv27-days rise" style="--d:2" aria-label="Today is clear. Tomorrow and the days after are question marks.">
+      <div class="prv27-day today"><b>Today</b><small>in your hands</small></div>
+      <div class="prv27-day"><span>?</span><small>to morrow</small></div>
+      <div class="prv27-day"><span>?</span></div>
+      <div class="prv27-day"><span>?</span></div>
+    </div>
+    <p class="note step">Making plans isn't wrong. Bragging about them as if tomorrow is guaranteed is. James says the same thing:</p>
+    <blockquote class="quote step"><p>“Whereas ye know not what shall be on the morrow. For what is your life? It is even a vapour, that appeareth for a little time, and then vanisheth away.”</p><cite>James 4:14</cite></blockquote>
+    <p class="note step">Men in recovery know this one: <em>one day at a time.</em> And if you've been putting off getting right with God, “behold, now is the day of salvation” (2 Corinthians 6:2). Not tomorrow. Today.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="3-4" data-hl="a fool’s wrath is heavier than them both|who is able to stand before envy?"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="3"></blockquote>
+    <div class="split">
+      <div class="stage">
+        <svg viewBox="0 0 520 300" role="img" aria-label="A balance scale. A stone and a pile of sand on one side are outweighed by a fool's wrath on the other.">
+          <path d="M260 80 L260 270 M200 280 L320 280" stroke-width="6" stroke-linecap="round" style="stroke:var(--ink-soft)"/>
+          <circle cx="260" cy="80" r="9" style="fill:var(--ink-soft)"/>
+          <g class="prv27-beam"><line x1="100" y1="80" x2="420" y2="80" stroke-width="7" stroke-linecap="round" style="stroke:var(--ink)"/></g>
+          <g class="prv27-lp">
+            <path d="M100 80 L50 170 M100 80 L150 170" stroke-width="2" style="stroke:var(--ink-soft)"/>
+            <path d="M40 170 Q100 205 160 170 Z" style="fill:var(--surface-2);stroke:var(--line-strong)" stroke-width="2"/>
+            <rect x="62" y="140" width="40" height="32" rx="8" style="fill:var(--ink-soft)"/>
+            <path d="M104 172 Q124 140 146 172 Z" style="fill:var(--warm)"/>
+            <text x="100" y="228" text-anchor="middle" font-size="20">stone and sand</text>
+          </g>
+          <g class="prv27-rp">
+            <path d="M420 80 L370 170 M420 80 L470 170" stroke-width="2" style="stroke:var(--ink-soft)"/>
+            <path d="M360 170 Q420 205 480 170 Z" style="fill:var(--surface-2);stroke:var(--line-strong)" stroke-width="2"/>
+            <path d="M384 170 L392 136 L404 156 L414 120 L426 152 L438 128 L446 158 L456 140 L458 170 Z" style="fill:var(--danger)"/>
+            <text x="420" y="228" text-anchor="middle" font-size="20" font-weight="700" style="fill:var(--danger)">a fool's wrath</text>
+          </g>
+        </svg>
+      </div>
+      <div>
+        <h2 class="rise" style="--d:1">Heavier than stone</h2>
+        <p class="note rise" style="--d:2">Try carrying a stone, or a sack of wet sand. A fool's anger is heavier than both. Everyone around him has to carry it: his wife, his kids, his coworkers.</p>
+        <p class="note step">Verse 4 goes further. Anger is cruel and comes out like a flood, but <em>envy</em> is worse. Anger blows up and passes. Envy sits and stews, and nobody can stand against it.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="slide verse" data-v="5-6" data-hl="Open rebuke is better than secret love|Faithful are the wounds of a friend"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="6"></blockquote>
+    <h2 class="rise" style="--d:1">A wound or a kiss</h2>
+    <div class="columns">
+      <div class="col grace rise" style="--d:2">
+        <p class="who">A friend</p>
+        <h3>Wounds you, faithfully</h3>
+        <p>He tells you the truth even when it stings, because he wants you whole. It hurts like a doctor setting a bone.</p>
+      </div>
+      <div class="col law step">
+        <p class="who">An enemy</p>
+        <h3>Kisses you, falsely</h3>
+        <p>He tells you what you want to hear. He smiles, and pats your back, and lets you walk off a cliff.</p>
+      </div>
+    </div>
+    <blockquote class="quote step"><p>“And forthwith he came to Jesus, and said, Hail, master; and kissed him.”</p><cite>Matthew 26:49</cite></blockquote>
+    <p class="note step">The worst betrayal in history came with a kiss. Verse 5 says <em>open rebuke</em> beats love that never speaks up. The friend who tells you the truth “in love” (Ephesians 4:15) is worth more than ten who flatter you.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="7-9" data-hl="to the hungry soul every bitter thing is sweet|the sweetness of a man’s friend by hearty counsel"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="7"></blockquote>
+    <h2 class="rise" style="--d:1">When you're starving, bitter tastes sweet</h2>
+    <div class="mirror">
+      <div class="rise" style="--d:2"><span>A full soul</span><span class="arrow">→</span><span class="word">loatheth an honeycomb</span><small>Even the best thing gets pushed away.</small></div>
+      <div class="step"><span>A hungry soul</span><span class="arrow">→</span><span class="word">every bitter thing is sweet</span><small>Even poison looks good.</small></div>
+    </div>
+    <p class="note step">An empty man will swallow almost anything that promises to fill him: a bottle, a pill, a woman, a high. It tastes sweet because he's so hungry. That's why the answer isn't just to stop. It's to be <em>filled</em> with the right thing.</p>
+    <p class="note step">Verse 8: a man who wanders from his place is like a bird that leaves its nest. Verse 9: a friend's honest counsel is sweet like perfume. Stay close to home, and close to the brothers who tell you the truth.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="10" data-hl="better is a neighbour that is near than a brother far off"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="10" data-hl="better is a neighbour that is near than a brother far off"></blockquote>
+    <h2 class="rise" style="--d:1">The friend who's close</h2>
+    <div class="temples">
+      <div class="body-t rise" style="--d:2"><h3>A neighbour</h3><div class="big">near</div><p>He can be at your door in five minutes when the night gets bad.</p></div>
+      <div class="stone-t rise" style="--d:3"><h3>A brother</h3><div class="big">far off</div><p>He may love you, but he can't help you from three states away.</p></div>
+    </div>
+    <p class="note step">Don't drop old friends, especially the ones your father trusted. And in a crisis, the man close by is worth more than family far away. That's part of what this group is for.</p>
+    <blockquote class="quote step"><p>“A man that hath friends must shew himself friendly: and there is a friend that sticketh closer than a brother.”</p><cite>Proverbs 18:24</cite></blockquote>
+  </div>
+</section>
+
+<!-- ======================= PART TWO ======================= -->
+<section class="slide part">
+  <div class="inner">
+    <p class="part-n rise">Part two</p>
+    <h2 class="rise" style="--d:1">Iron on iron</h2>
+    <p class="range rise" style="--d:2">Verses 11–22</p>
+    <p class="hook rise" style="--d:4">Seeing trouble coming, and the men who keep us sharp.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="11-13" data-hl="A prudent man foreseeth the evil, and hideth himself|the simple pass on, and are punished"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="12"></blockquote>
+    <div class="split">
+      <div class="stage">
+        <svg viewBox="0 0 600 300" role="img" aria-label="A road leads toward a danger sign. The prudent man turns off to a shelter; the simple man walks on into trouble.">
+          <rect x="0" y="180" width="600" height="60" style="fill:var(--surface-2)"/>
+          <rect x="430" y="176" width="170" height="68" style="fill:color-mix(in srgb, var(--danger) 22%, transparent)"/>
+          <path d="M470 120 L500 70 L530 120 Z" stroke-width="3" style="fill:var(--bg);stroke:var(--danger)"/>
+          <text x="500" y="113" text-anchor="middle" font-size="30" font-weight="700" style="fill:var(--danger)">!</text>
+          <line x1="500" y1="120" x2="500" y2="176" stroke-width="4" style="stroke:var(--ink-soft)"/>
+          <path d="M250 60 L290 30 L330 60 L330 100 L250 100 Z" stroke-width="3" style="fill:var(--surface);stroke:var(--line-strong)"/>
+          <text x="240" y="84" text-anchor="end" font-size="18" style="fill:var(--accent)">hideth himself</text>
+          <path class="draw prv27-p1" pathLength="1" d="M30 210 L200 210 Q240 210 260 160 L282 102" fill="none" stroke-width="5" stroke-linecap="round" style="stroke:var(--accent)"/>
+          <path class="draw prv27-p2" pathLength="1" d="M30 222 L580 222" fill="none" stroke-width="4" stroke-dasharray="10 8" stroke-linecap="round" style="stroke:var(--ink-soft)"/>
+          <text x="596" y="270" text-anchor="end" font-size="18" style="fill:var(--danger)">pass on, and are punished</text>
+          <circle cx="30" cy="216" r="10" style="fill:var(--ink)"/>
+        </svg>
+      </div>
+      <div>
+        <h2 class="rise" style="--d:1">See it coming</h2>
+        <p class="note rise" style="--d:2">The <em>prudent</em> man looks down the road. When he sees trouble ahead, he gets off the road before he's in it.</p>
+        <p class="note step prv27-hide">For a man in recovery, that's knowing your triggers: the people, places, and moods that lead to a fall. You don't test them. You take another road.</p>
+        <p class="note step prv27-pass">The <em>simple</em> man just keeps walking, sure he'll be fine this time. Verse 13 adds a money warning: a man who cosigns for a stranger has already walked into trouble.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="slide verse" data-v="14-16" data-hl="rising early in the morning|A continual dropping in a very rainy day"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="15"></blockquote>
+    <h2 class="rise" style="--d:1">Drip, drip, drip</h2>
+    <div class="prv27-drip rise" style="--d:2" aria-hidden="true">
+      <div class="roof"></div>
+      <i style="--x:20%;--t:0s"></i><i style="--x:48%;--t:.45s"></i><i style="--x:72%;--t:.9s"></i>
+      <div class="pail"></div>
+    </div>
+    <p class="note rise" style="--d:3">A leaky roof on a rainy day: drip, drip, drip, all day, and you can't make it stop. Constant quarreling at home wears a man down the same way. And trying to hush it up is like trying to hold the wind, or grab oil in your fist (v. 16).</p>
+    <p class="note step">Verse 14: a loud “blessing” at the crack of dawn sounds nice, but it lands like a curse. Words can be right and the timing all wrong. Whether it's nagging or fake cheer, the question for us is the same: <em>what's it like to live with me?</em></p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="17-19" data-hl="Iron sharpeneth iron; so a man sharpeneth the countenance of his friend|As in water face answereth to face"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="17"></blockquote>
+    <div class="split">
+      <div class="stage">
+        <svg viewBox="0 0 400 260" role="img" aria-label="Two iron blades grind against each other, throwing sparks.">
+          <g>
+            <path d="M330 210 L70 50 L84 40 L340 200 Z" style="fill:color-mix(in srgb, var(--cool) 35%, var(--ink-soft))"/>
+            <rect x="326" y="196" width="48" height="18" rx="5" transform="rotate(32 350 205)" style="fill:var(--leather)"/>
+          </g>
+          <g class="prv27-blade">
+            <path d="M70 210 L330 50 L316 40 L60 200 Z" style="fill:color-mix(in srgb, var(--cool) 50%, var(--ink))"/>
+            <rect x="26" y="196" width="48" height="18" rx="5" transform="rotate(-32 50 205)" style="fill:var(--leather)"/>
+          </g>
+          <g stroke-width="4" stroke-linecap="round" style="stroke:var(--warm)">
+            <path class="prv27-spark" d="M200 118 L186 86" style="--t:0s"/>
+            <path class="prv27-spark" d="M206 116 L226 84" style="--t:.1s"/>
+            <path class="prv27-spark" d="M210 124 L240 112" style="--t:.2s"/>
+            <path class="prv27-spark" d="M194 124 L164 112" style="--t:.15s"/>
+            <path class="prv27-spark" d="M200 112 L200 76" style="--t:.05s"/>
+          </g>
+        </svg>
+      </div>
+      <div>
+        <h2 class="rise" style="--d:1">Iron on iron</h2>
+        <p class="note rise" style="--d:2">You can't sharpen a blade with a pillow. It takes something just as hard, rubbing against it. There will be friction. There may be sparks.</p>
+        <p class="note step">That's what real brothers do. They ask the hard questions. They notice when you've gone quiet. They don't let you get dull.</p>
+        <p class="note step">A man alone gets dull fast. Who is your iron? Who has permission to ask you anything?</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="19"></blockquote>
+    <h2 class="rise" style="--d:1">Why we need each other</h2>
+    <blockquote class="quote rise" style="--d:2"><p>“Two are better than one; because they have a good reward for their labour. For if they fall, the one will lift up his fellow: but woe to him that is alone when he falleth; for he hath not another to help him up.”</p><cite>Ecclesiastes 4:9–10</cite></blockquote>
+    <blockquote class="quote step"><p>“And let us consider one another to provoke unto love and to good works: Not forsaking the assembling of ourselves together, as the manner of some is; but exhorting one another: and so much the more, as ye see the day approaching.”</p><cite>Hebrews 10:24–25</cite></blockquote>
+    <p class="note step">Verse 19: look in still water and your face looks back. Men's hearts are a lot alike. The brother next to you has fought the same fight. That's why he can help, and why you can help him.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="20-22" data-hl="the eyes of man are never satisfied|so is a man to his praise|yet will not his foolishness depart from him"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="20"></blockquote>
+    <div class="split">
+      <div class="stage">
+        <svg viewBox="0 0 300 320" role="img" aria-label="Water pours into a jar with no bottom and runs straight out. It is never full.">
+          <path d="M90 60 C60 100 60 230 100 280 M210 60 C240 100 240 230 200 280 M80 60 L220 60" fill="none" stroke-width="5" stroke-linecap="round" style="stroke:var(--line-strong)"/>
+          <path d="M90 60 C60 100 60 230 100 280 L200 280 C240 230 240 100 210 60 Z" style="fill:var(--surface)"/>
+          <g style="fill:var(--cool)">
+            <ellipse class="prv27-drop" cx="150" cy="40" rx="7" ry="10" style="--t:0s"/>
+            <ellipse class="prv27-drop" cx="144" cy="40" rx="6" ry="9" style="--t:.45s"/>
+            <ellipse class="prv27-drop" cx="156" cy="40" rx="7" ry="10" style="--t:.9s"/>
+            <ellipse class="prv27-drop" cx="150" cy="40" rx="6" ry="9" style="--t:1.35s"/>
+          </g>
+          <text x="150" y="312" text-anchor="middle" font-size="20" style="fill:var(--danger)">never full</text>
+        </svg>
+      </div>
+      <div>
+        <h2 class="rise" style="--d:1">Never satisfied</h2>
+        <p class="note rise" style="--d:2">The grave never says “that's enough people.” And our eyes never say “that's enough”: one more drink, one more look, one more dollar, one more high.</p>
+        <p class="note step">That's the trap of every addiction. It's a jar with no bottom. You pour your life into it and it's empty again by morning.</p>
+        <blockquote class="quote step"><p>“Jesus answered and said unto her, Whosoever drinketh of this water shall thirst again: But whosoever drinketh of the water that I shall give him shall never thirst;”</p><cite>John 4:13–14</cite></blockquote>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="22"></blockquote>
+    <div class="split">
+      <div class="stage">
+        <svg viewBox="0 0 300 260" role="img" aria-label="A pestle pounds grain in a mortar.">
+          <g class="prv27-pestle"><rect x="168" y="50" width="28" height="120" rx="14" transform="rotate(18 182 110)" style="fill:var(--leather-light)"/></g>
+          <path d="M50 140 L250 140 Q240 240 150 240 Q60 240 50 140 Z" stroke-width="3" style="fill:var(--surface-2);stroke:var(--line-strong)"/>
+          <g style="fill:var(--warm)"><circle cx="110" cy="160" r="6"/><circle cx="130" cy="168" r="6"/><circle cx="150" cy="158" r="6"/><circle cx="172" cy="166" r="6"/><circle cx="190" cy="158" r="6"/></g>
+        </svg>
+      </div>
+      <div>
+        <h2 class="rise" style="--d:1">You can't pound it out</h2>
+        <p class="note rise" style="--d:2">Grind a fool in a mortar like grain, and his folly still won't come out. Nobody can beat folly out of a man. It takes a new heart, and only God gives that.</p>
+        <p class="note step">Verse 21: a refiner's pot tests silver, and <em>praise</em> tests a man. Some get humble; some get puffed up. So let somebody else do the praising (v. 2).</p>
+        <blockquote class="quote step"><p>“Create in me a clean heart, O God; and renew a right spirit within me.”</p><cite>Psalm 51:10</cite></blockquote>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ======================= PART THREE ======================= -->
+<section class="slide part">
+  <div class="inner">
+    <p class="part-n rise">Part three</p>
+    <h2 class="rise" style="--d:1">Know thy flocks</h2>
+    <p class="range rise" style="--d:2">Verses 23–27</p>
+    <p class="hook rise" style="--d:4">Steady work beats quick money.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="23-24" data-hl="Be thou diligent to know the state of thy flocks|For riches are not for ever"></section>
+<section class="slide verse" data-v="25-27" data-hl="goats’ milk enough for thy food"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="23-24"></blockquote>
+    <h2 class="rise" style="--d:1">Look after what you've been given</h2>
+    <div class="hours rise" style="--d:2">
+      <div class="hour"><div class="dot"></div><b>v. 25</b><span>the hay appears</span></div>
+      <div class="hour"><div class="dot"></div><b>v. 25</b><span>grass and herbs</span></div>
+      <div class="hour"><div class="dot"></div><b>v. 26</b><span>lambs for clothing</span></div>
+      <div class="hour come"><div class="dot"></div><b>v. 26</b><span>goats buy a field</span></div>
+      <div class="hour come"><div class="dot"></div><b>v. 27</b><span>milk for the house</span></div>
+    </div>
+    <p class="note step">Money comes and goes, and even crowns don't last (v. 24). But a man who faithfully tends his flock, season after season, will have enough for his family. It isn't flashy. It's steady.</p>
+    <p class="note step">What are your “flocks”? Your family, your job, your money, your recovery, your walk with God. Know their state. Check on them every day. Small faithfulness, day after day, is how a life gets rebuilt.</p>
+  </div>
+</section>
+
+<!-- ======================= CLOSING ======================= -->
+<section class="slide remember">
+  <div class="inner">
+    <h2 class="rise">Points to remember</h2>
+    <ol class="seeds">
+      <li class="step"><span class="topic">Tomorrow</span><span class="seed-q">“Thou knowest not what a day may bring forth” <cite>27:1</cite></span><span class="take">Tomorrow isn't promised. Live today, and get right with God today.</span></li>
+      <li class="step"><span class="topic">Friendship</span><span class="seed-q">“Faithful are the wounds of a friend” <cite>27:6</cite></span><span class="take">A friend who tells you the hard truth loves you more than a flatterer.</span></li>
+      <li class="step"><span class="topic">Accountability</span><span class="seed-q">“Iron sharpeneth iron” <cite>27:17</cite></span><span class="take">Brothers sharpen each other with honest friction. Don't go it alone.</span></li>
+      <li class="step"><span class="topic">Wanting more</span><span class="seed-q">“The eyes of man are never satisfied” <cite>27:20</cite></span><span class="take">Every craving is a jar with no bottom. Only Jesus satisfies.</span></li>
+      <li class="step"><span class="topic">Praise</span><span class="seed-q">“So is a man to his praise” <cite>27:21</cite></span><span class="take">Praise shows what you're made of. Let others give it, and stay humble.</span></li>
+      <li class="step"><span class="topic">Faithful work</span><span class="seed-q">“Know the state of thy flocks” <cite>27:23</cite></span><span class="take">Tend what God gave you, day after day. Steady beats flashy.</span></li>
+    </ol>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 1 of 6</p>
+      <span class="topic">Tomorrow</span>
+      <h2>Why shouldn't we boast about tomorrow?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="1"></blockquote>
+      <blockquote class="quote step"><p>“For that ye ought to say, If the Lord will, we shall live, and do this, or that.”</p><cite>James 4:15</cite></blockquote>
+      <blockquote class="quote step"><p>“Take therefore no thought for the morrow: for the morrow shall take thought for the things of itself. Sufficient unto the day is the evil thereof.”</p><cite>Matthew 6:34</cite></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>Because we don't know what a day will bring. Our life is a vapor, and tomorrow belongs to God. So we plan humbly, “if the Lord will,” and live faithfully today. And today is the day to get right with Him.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 2 of 6</p>
+      <span class="topic">Friendship</span>
+      <h2>How can a wound be faithful?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="5-6"></blockquote>
+      <blockquote class="quote step" data-q="9" data-hl="hearty counsel"></blockquote>
+      <blockquote class="quote step"><p>“But speaking the truth in love, may grow up into him in all things, which is the head, even Christ:”</p><cite>Ephesians 4:15</cite></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>When a true friend tells you a hard truth, it hurts, but he's doing it to help you, like a doctor setting a bone. An enemy flatters you with kisses and lets you walk into ruin. Look for friends who speak the truth in love, and be one.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 3 of 6</p>
+      <span class="topic">Accountability</span>
+      <h2>How does one man sharpen another?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="17"></blockquote>
+      <blockquote class="quote step"><p>“Two are better than one; because they have a good reward for their labour. For if they fall, the one will lift up his fellow: but woe to him that is alone when he falleth; for he hath not another to help him up.”</p><cite>Ecclesiastes 4:9–10</cite></blockquote>
+      <blockquote class="quote step"><p>“And let us consider one another to provoke unto love and to good works:”</p><cite>Hebrews 10:24</cite></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>By rubbing up against him: honest questions, encouragement, and correction, even when there's friction. A brother lifts you up when you fall. Give a few men permission to ask you anything, and do the same for them.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 4 of 6</p>
+      <span class="topic">Wanting more</span>
+      <h2>Why are our eyes never satisfied, and what can satisfy?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="20"></blockquote>
+      <blockquote class="quote step" data-q="7" data-hl="to the hungry soul every bitter thing is sweet"></blockquote>
+      <blockquote class="quote step"><p>“But whosoever drinketh of the water that I shall give him shall never thirst; but the water that I shall give him shall be in him a well of water springing up into everlasting life.”</p><cite>John 4:14</cite></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>We were made for God, and nothing else fills that space, so we keep reaching for more. A hungry soul will even call bitter things sweet. Only Jesus gives water that ends the thirst for good.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 5 of 6</p>
+      <span class="topic">Praise</span>
+      <h2>How does praise test a man?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="2"></blockquote>
+      <blockquote class="quote step" data-q="21"></blockquote>
+      <blockquote class="quote step"><p>“For whosoever exalteth himself shall be abased; and he that humbleth himself shall be exalted.”</p><cite>Luke 14:11</cite></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>Like fire tests silver, praise shows what a man is made of. If it makes him proud, it was a test he failed. So don't praise yourself. When others praise you, thank God and stay humble.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 6 of 6</p>
+      <span class="topic">Faithful work</span>
+      <h2>What does knowing your flocks teach about daily faithfulness?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="23-24"></blockquote>
+      <blockquote class="quote step" data-q="18"></blockquote>
+      <blockquote class="quote step" data-q="27"></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>Riches don't last, but steady care does. The man who pays attention to what God put in his hands, every day, ends up with enough. Faithfulness in small daily things is how God rebuilds a life.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide prayer">
+  <div class="inner">
+    <h2 class="rise">Prayer requests</h2>
+    <p class="ask-line rise" style="--d:1">What can we pray about for you today?</p>
+    <blockquote class="quote rise" style="--d:3"><p>“Confess your faults one to another, and pray one for another, that ye may be healed. The effectual fervent prayer of a righteous man availeth much.”</p><cite>James 5:16</cite></blockquote>
+  </div>
+</section>
+
+</main>
+
+<script>
+// King James Version, Proverbs chapter 27
+const V = {
+  1: "Boast not thyself of to morrow; for thou knowest not what a day may bring forth.",
+  2: "Let another man praise thee, and not thine own mouth; a stranger, and not thine own lips.",
+  3: "A stone is heavy, and the sand weighty; but a fool’s wrath is heavier than them both.",
+  4: "Wrath is cruel, and anger is outrageous; but who is able to stand before envy?",
+  5: "Open rebuke is better than secret love.",
+  6: "Faithful are the wounds of a friend; but the kisses of an enemy are deceitful.",
+  7: "The full soul loatheth an honeycomb; but to the hungry soul every bitter thing is sweet.",
+  8: "As a bird that wandereth from her nest, so is a man that wandereth from his place.",
+  9: "Ointment and perfume rejoice the heart: so doth the sweetness of a man’s friend by hearty counsel.",
+  10: "Thine own friend, and thy father’s friend, forsake not; neither go into thy brother’s house in the day of thy calamity: for better is a neighbour that is near than a brother far off.",
+  11: "My son, be wise, and make my heart glad, that I may answer him that reproacheth me.",
+  12: "A prudent man foreseeth the evil, and hideth himself; but the simple pass on, and are punished.",
+  13: "Take his garment that is surety for a stranger, and take a pledge of him for a strange woman.",
+  14: "He that blesseth his friend with a loud voice, rising early in the morning, it shall be counted a curse to him.",
+  15: "A continual dropping in a very rainy day and a contentious woman are alike.",
+  16: "Whosoever hideth her hideth the wind, and the ointment of his right hand, which bewrayeth itself.",
+  17: "Iron sharpeneth iron; so a man sharpeneth the countenance of his friend.",
+  18: "Whoso keepeth the fig tree shall eat the fruit thereof: so he that waiteth on his master shall be honoured.",
+  19: "As in water face answereth to face, so the heart of man to man.",
+  20: "Hell and destruction are never full; so the eyes of man are never satisfied.",
+  21: "As the fining pot for silver, and the furnace for gold; so is a man to his praise.",
+  22: "Though thou shouldest bray a fool in a mortar among wheat with a pestle, yet will not his foolishness depart from him.",
+  23: "Be thou diligent to know the state of thy flocks, and look well to thy herds.",
+  24: "For riches are not for ever: and doth the crown endure to every generation?",
+  25: "The hay appeareth, and the tender grass sheweth itself, and herbs of the mountains are gathered.",
+  26: "The lambs are for thy clothing, and the goats are the price of the field.",
+  27: "And thou shalt have goats’ milk enough for thy food, for the food of thy household, and for the maintenance for thy maidens."
+};
+const BOOK = "Proverbs 27";
+</script>
+<script src="../assets/deck.js"></script>
+</body>
+</html>

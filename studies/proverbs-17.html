@@ -1,0 +1,529 @@
+<!doctype html>
+<html lang="en" data-theme="scribe">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Proverbs 17</title>
+<link rel="stylesheet" href="../assets/fonts.css">
+<link rel="stylesheet" href="../assets/deck.css">
+<link rel="stylesheet" href="../assets/themes.css">
+<style>
+/* prv17-crucible: fire tests silver and gold; the LORD tests hearts */
+.prv17-fire { transform-box: fill-box; transform-origin: 50% 100%; }
+.slide.active .prv17-fire { animation: prv17-flick 1.1s ease-in-out infinite alternate; }
+.slide.active .prv17-fire.b { animation-delay: -.55s; }
+@keyframes prv17-flick { from { transform: scale(1, 1); } to { transform: scale(1.08, 1.2); } }
+.prv17-beat { transform-box: fill-box; transform-origin: center; }
+.slide.active .on .prv17-beat { animation: prv17-pulse 1.6s ease-in-out infinite; }
+@keyframes prv17-pulse { 50% { transform: scale(1.08); } }
+
+/* prv17-hundred: one word against a hundred blows */
+.prv17-hundred { display: grid; grid-template-columns: 1fr 2.4fr; gap: 1rem 2rem; align-items: end; margin: .4em 0 1em; }
+.prv17-hundred h3 { font: 700 clamp(.95rem, .85rem + .4vw, 1.2rem) var(--sans); color: var(--ink-soft); margin-bottom: .5em; }
+.prv17-hundred .lbl { font-size: clamp(.9rem, .82rem + .35vw, 1.1rem); color: var(--ink-soft); margin-top: .5em; line-height: 1.35; }
+.prv17-one { height: clamp(70px, 12vh, 120px); display: flex; align-items: flex-end; }
+.prv17-one i { width: 16px; height: 100%; border-radius: 3px; background: var(--accent); box-shadow: 0 0 16px color-mix(in srgb, var(--accent) 45%, transparent); }
+.prv17-many { display: grid; grid-template-columns: repeat(25, 1fr); gap: 3px; }
+.prv17-many i { height: clamp(14px, 2.6vh, 26px); border-radius: 2px; background: var(--line-strong); }
+.prv17-hundred .on .prv17-many i, .prv17-many.on i { animation: prv17-hit .5s ease both; }
+@keyframes prv17-hit { from { opacity: 0; transform: translateY(-6px); } to { opacity: 1; transform: none; } }
+
+/* prv17-dam: a small leak in a dam becomes a flood */
+.prv17-flood { transform-box: fill-box; transform-origin: 0 50%; transform: scaleX(0); opacity: 0; transition: transform 1.6s ease, opacity 1s ease; }
+.prv17-crack { transition: stroke-width 1s ease; }
+.prv17-dam:has(.prv17-dam-go.on) .prv17-flood { transform: scaleX(1); opacity: .75; }
+.prv17-dam:has(.prv17-dam-go.on) .prv17-crack { stroke-width: 14; }
+.slide.active .prv17-drip { animation: prv17-drip 1.4s linear infinite; }
+@keyframes prv17-drip { from { stroke-dashoffset: 24; } to { stroke-dashoffset: 0; } }
+
+/* prv17-rx: a prescription label */
+.prv17-rx { display: grid; grid-template-columns: auto 1fr; gap: .1em 1.1em; align-items: start; max-width: 34rem; padding: .9em 1.2em; margin: .4em 0 1em; border: 2px solid var(--line-strong); border-radius: 12px; background: var(--surface); }
+.prv17-rx .sym { grid-row: span 3; font: 700 clamp(2.6rem, 1.6rem + 3.4vw, 4.4rem)/1 var(--serif); color: var(--accent-hot); }
+.prv17-rx p { display: grid; grid-template-columns: 6.2em 1fr; align-items: baseline; font-size: clamp(1rem, .9rem + .55vw, 1.4rem); line-height: 1.4; padding: .2em 0; border-bottom: 1px dashed var(--line); }
+.prv17-rx p:last-child { border-bottom: 0; }
+.prv17-rx b { font-size: .75em; color: var(--ink-soft); text-transform: uppercase; letter-spacing: .06em; }
+.prv17-rx .warn b { color: var(--danger); }
+
+/* prv17-sort: the chapter's sayings gathered by theme */
+.prv17-sort { display: grid; grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr)); gap: .7rem; margin: .4em 0 1em; }
+.prv17-sort > div { padding: .6em .8em; border: 1px solid var(--line-strong); border-radius: 10px; background: var(--surface); }
+.prv17-sort h3 { font: 700 clamp(1rem, .9rem + .45vw, 1.25rem) var(--sans); color: var(--accent-hot); margin-bottom: .35em; }
+.prv17-sort .vs { display: flex; flex-wrap: wrap; gap: 4px; margin-bottom: .4em; }
+.prv17-sort .vs b { min-width: 1.9em; padding: .1em .35em; text-align: center; border-radius: 6px; font-size: .9rem; background: color-mix(in srgb, var(--accent) 16%, transparent); color: var(--ink); }
+.prv17-sort p { font-size: clamp(.9rem, .82rem + .35vw, 1.1rem); line-height: 1.35; color: var(--ink-soft); }
+@media (max-width: 600px) { .prv17-hundred { grid-template-columns: 1fr; } .prv17-one { height: 40px; } .prv17-sort { grid-template-columns: 1fr 1fr; } .prv17-sort p { display: none; } }
+</style>
+</head>
+<body>
+<main class="deck" id="deck">
+
+<!-- ======================= OPENING ======================= -->
+<section class="slide title">
+  <div class="inner">
+    <div class="emblem rise"></div>
+    <h1 class="rise" style="--d:1">Proverbs 17</h1>
+    <p class="sub rise" style="--d:3">A friend at all times</p>
+    <p class="tag rise" style="--d:5">Short sayings about peace at home, hard hearts, true friends, and knowing when to keep quiet.</p>
+  </div>
+</section>
+
+<section class="slide watch">
+  <div class="inner">
+    <h2 class="rise">Things to watch for</h2>
+    <p class="lede rise" style="--d:1">Keep these questions in the back of your mind as we read. We'll come back to every one of them at the end.</p>
+    <ol class="seeds">
+      <li class="step"><span class="topic">Who God is</span><span class="seed-q">What is the LORD looking at when He tests a man?</span></li>
+      <li class="step"><span class="topic">Strife</span><span class="seed-q">How do you stop a fight before it gets out of hand?</span></li>
+      <li class="step"><span class="topic">Correction</span><span class="seed-q">How does a wise man take correction?</span></li>
+      <li class="step"><span class="topic">Friendship</span><span class="seed-q">What does a real friend do when trouble comes?</span></li>
+      <li class="step"><span class="topic">Joy</span><span class="seed-q">What does a merry heart do for a man?</span></li>
+      <li class="step"><span class="topic">Our words</span><span class="seed-q">When is it wise to say nothing at all?</span></li>
+    </ol>
+  </div>
+</section>
+
+<!-- ======================= PART ONE ======================= -->
+<section class="slide part">
+  <div class="inner">
+    <p class="part-n rise">Part one</p>
+    <h2 class="rise" style="--d:1">Peace and the heart</h2>
+    <p class="range rise" style="--d:2">Verses 1–9</p>
+    <div class="rule"></div>
+    <p class="hook rise" style="--d:4">Quiet bread beats a fighting feast, and God sees what the fire sees.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="1-3" data-hl="Better is a dry morsel, and quietness therewith|the LORD trieth the hearts"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise">How to read this chapter</h2>
+    <p class="note rise" style="--d:1">From chapter 10 on, Proverbs is mostly two-line sayings. Each verse stands on its own, like a punch that lands and is done. The second line usually <em>repeats</em> the first in other words, or <em>flips</em> it to show the opposite.</p>
+    <p class="note step">These are wise sayings about how life usually works. They aren't promises that things will always go a certain way. They're God's wisdom for daily life.</p>
+    <p class="note step">We'll read every verse in order, then gather the sayings by theme as we go.</p>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="1" data-hl="a dry morsel|an house full of sacrifices with strife"></blockquote>
+    <h2 class="rise" style="--d:1">Bread and peace, or a feast and a fight</h2>
+    <div class="columns">
+      <div class="col grace rise" style="--d:2">
+        <p class="who">Option one</p>
+        <h3>A dry crust, and quiet</h3>
+        <p>Not much on the table. But nobody's yelling, and you can rest.</p>
+      </div>
+      <div class="col law step">
+        <p class="who">Option two</p>
+        <h3>A full house, and strife</h3>
+        <p>“Sacrifices” here means the meat left over from offerings, the makings of a big family feast. Plenty of food, and constant fighting.</p>
+      </div>
+    </div>
+    <p class="note step">Peace is worth more than plenty. A lot of men have had the money and the stuff and found it wasn't worth the fighting that came with it.</p>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="3"></blockquote>
+    <div class="split">
+      <div class="stage">
+        <svg viewBox="0 0 640 330" role="img" aria-label="A fining pot heats silver and a furnace heats gold. The LORD tests the heart.">
+          <defs>
+            <radialGradient id="prv17-hglow"><stop offset="0" style="stop-color:var(--glow)"/><stop offset=".5" stop-opacity=".45" style="stop-color:var(--accent)"/><stop offset="1" stop-opacity="0" style="stop-color:var(--accent)"/></radialGradient>
+          </defs>
+          <line x1="10" y1="270" x2="630" y2="270" stroke-width="2" style="stroke:var(--line-strong)"/>
+          <g class="rise" style="--d:2">
+            <path class="prv17-fire" d="M70 268 Q78 222 95 238 Q100 200 112 228 Q124 210 128 268 Z" style="fill:var(--warm)"/>
+            <path class="prv17-fire b" d="M84 268 Q92 240 100 248 Q108 230 116 268 Z" style="fill:var(--danger)"/>
+            <path d="M48 150 L172 150 L160 212 Q110 230 60 212 Z" stroke-width="3" style="fill:var(--surface-2);stroke:var(--ink-soft)"/>
+            <ellipse cx="110" cy="160" rx="52" ry="9" style="fill:var(--line-strong)"/>
+            <text x="110" y="300" text-anchor="middle" font-size="20">fining pot</text>
+            <text x="110" y="324" text-anchor="middle" font-size="17" style="fill:var(--ink-soft)">for silver</text>
+          </g>
+          <g class="rise" style="--d:4">
+            <path d="M250 268 L250 140 Q320 80 390 140 L390 268 Z" stroke-width="3" style="fill:var(--surface-2);stroke:var(--ink-soft)"/>
+            <path d="M286 268 L286 210 Q320 180 354 210 L354 268 Z" style="fill:var(--bg)"/>
+            <path class="prv17-fire" d="M292 268 Q300 222 314 236 Q320 204 330 232 Q342 216 348 268 Z" style="fill:var(--warm)"/>
+            <path class="prv17-fire b" d="M304 268 Q312 244 320 250 Q328 236 336 268 Z" style="fill:var(--danger)"/>
+            <text x="320" y="300" text-anchor="middle" font-size="20">furnace</text>
+            <text x="320" y="324" text-anchor="middle" font-size="17" style="fill:var(--ink-soft)">for gold</text>
+          </g>
+          <g class="step">
+            <circle cx="530" cy="180" r="100" fill="url(#prv17-hglow)"/>
+            <path class="prv17-beat" d="M530 238 C 470 196 466 150 496 138 C 516 130 528 144 530 156 C 532 144 544 130 564 138 C 594 150 590 196 530 238 Z" style="fill:var(--accent-hot)"/>
+            <text x="530" y="300" text-anchor="middle" font-size="20" font-weight="700" style="fill:var(--accent-hot)">the heart</text>
+            <text x="530" y="324" text-anchor="middle" font-size="17" style="fill:var(--ink-soft)">tried by the LORD</text>
+          </g>
+        </svg>
+      </div>
+      <div>
+        <h2 class="rise" style="--d:1">The fire shows what's real</h2>
+        <p class="note rise" style="--d:2">A metalworker heats silver and gold until the junk (the dross) floats up and can be skimmed off. Heat doesn't ruin the metal. It shows what's in it.</p>
+        <p class="note step">God does that with hearts. Hard seasons bring out what's really in us, so He can clean it out. “The trial of your faith, being much more precious than of gold” (1 Peter 1:7).</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="slide verse" data-v="4-6" data-hl="Whoso mocketh the poor reproacheth his Maker"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="4-5" data-hl="a naughty tongue|reproacheth his Maker"></blockquote>
+    <h2 class="rise" style="--d:1">What you listen to, and who you laugh at</h2>
+    <p class="note rise" style="--d:2">“Naughty” in the KJV is much stronger than today: <em>worthless, wicked</em>. Verse 4 says a crooked man <em>likes</em> to hear crooked talk. What we enjoy listening to says something about us.</p>
+    <p class="note step">Verse 5: making fun of a poor man is an insult to the God who made him. Every man you'll ever meet carries his Maker's fingerprints, the guy under the bridge included. <em>So do you.</em></p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="7-9" data-hl="He that covereth a transgression seeketh love|he that repeateth a matter separateth very friends"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="9"></blockquote>
+    <h2 class="rise" style="--d:1">Cover it, or repeat it</h2>
+    <div class="mirror">
+      <div class="step"><span>A wrong is done</span><span class="arrow">→</span><span class="word">covered</span><span class="arrow">→</span><span>love grows</span><small>Forgive it, deal with it privately, and let it go.</small></div>
+      <div class="step"><span>A wrong is done</span><span class="arrow">→</span><span class="word">repeated</span><span class="arrow">→</span><span>friends split</span><small>Bring it up again, tell it around, keep score.</small></div>
+    </div>
+    <p class="note step">“Covering” isn't hiding crime or excusing abuse. It means not dragging an old offense back out. “Charity shall cover the multitude of sins” (1 Peter 4:8). That's what God did for us in Christ.</p>
+  </div>
+</section>
+
+<!-- ======================= PART TWO ======================= -->
+<section class="slide part">
+  <div class="inner">
+    <p class="part-n rise">Part two</p>
+    <h2 class="rise" style="--d:1">Fools and friends</h2>
+    <p class="range rise" style="--d:2">Verses 10–20</p>
+    <div class="rule"></div>
+    <p class="hook rise" style="--d:4">Some men learn from one word. Some never learn. And a true friend stays.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="10-12" data-hl="A reproof entereth more into a wise man than an hundred stripes into a fool|a bear robbed of her whelps"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="10"></blockquote>
+    <h2 class="rise" style="--d:1">One word, or a hundred blows</h2>
+    <div class="prv17-hundred">
+      <div class="rise" style="--d:2"><h3>The wise man</h3><div class="prv17-one"><i></i></div><p class="lbl">One reproof. He hears it and changes.</p></div>
+      <div class="step"><h3>The fool</h3><div class="prv17-many"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div><p class="lbl">A hundred stripes. Still the same.</p></div>
+    </div>
+    <p class="note step">Some of us learned everything the hard way: jail, rehab, a wrecked marriage. The wise man learns from a word. Today you can choose to be the man who listens the first time.</p>
+    <p class="note step">And verse 12 is no joke: a mother bear who's lost her cubs is less dangerous than a fool in the middle of his foolishness. Don't get in the car with him.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="13-14" data-hl="The beginning of strife is as when one letteth out water"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="14"></blockquote>
+    <div class="split prv17-dam">
+      <div class="stage">
+        <svg viewBox="0 0 600 300" role="img" aria-label="Water leaks through a small crack in a dam, then breaks through as a flood.">
+          <rect x="0" y="60" width="240" height="200" opacity=".45" style="fill:var(--cool)"/>
+          <path d="M0 60 q30 -8 60 0 t60 0 t60 0 t60 0" fill="none" stroke-width="3" style="stroke:var(--cool)"/>
+          <path d="M240 30 L300 30 L320 260 L240 260 Z" stroke-width="3" style="fill:var(--surface-2);stroke:var(--ink-soft)"/>
+          <path class="prv17-crack" d="M300 160 L292 176 L304 188 L298 204" fill="none" stroke-width="3" stroke-linecap="round" style="stroke:var(--cool)"/>
+          <path class="prv17-drip" d="M308 190 C 340 196 352 230 360 258" fill="none" stroke-width="3" stroke-dasharray="6 6" style="stroke:var(--cool)"/>
+          <path class="prv17-flood" d="M318 150 C 420 150 480 200 600 210 L600 260 L318 260 Z" style="fill:var(--cool)"/>
+          <line x1="0" y1="260" x2="600" y2="260" stroke-width="2" style="stroke:var(--ink-soft)"/>
+          <text x="120" y="290" text-anchor="middle" font-size="18" style="fill:var(--ink-soft)">anger held back</text>
+          <text x="470" y="290" text-anchor="middle" font-size="18" style="fill:var(--ink-soft)">what one crack lets out</text>
+        </svg>
+      </div>
+      <div>
+        <h2 class="rise" style="--d:1">A crack in the dam</h2>
+        <p class="note rise" style="--d:2">A fight starts like a little leak in a dam. At first it's a trickle: one sharp word, one look.</p>
+        <p class="note step prv17-dam-go">But water widens every crack it goes through. Soon nobody can stop it.</p>
+        <p class="note step">So “leave off contention, before it be meddled with.” Walk away while it's still a trickle. That isn't weakness. It's wisdom.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="slide verse" data-v="15-16" data-hl="seeing he hath no heart to it"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="16"></blockquote>
+    <h2 class="rise" style="--d:1">You can't buy what you don't want</h2>
+    <p class="note rise" style="--d:2">Picture a fool with money in his hand to pay a teacher. He could buy lessons, books, a program. But he “hath no heart to it.” He doesn't really want to change.</p>
+    <p class="note step">Wisdom isn't bought. It starts with wanting it. And the good news is, God gives it freely to anyone who asks Him (James 1:5).</p>
+    <p class="note step">Verse 15 adds: calling a guilty man innocent, or an innocent man guilty, is “abomination,” something God hates. God cares about fair judgment.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="17" data-hl="A friend loveth at all times, and a brother is born for adversity"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="17"></blockquote>
+    <p class="saying rise" style="--d:1">A friend loveth <em>at all times</em>.</p>
+    <p class="note rise" style="--d:3">Not just when you're sober, or doing well, or fun to be around. <em>All</em> times. And a brother is “born for adversity”: hard times are what brothers are for.</p>
+    <p class="note step">Most of us have had “friends” who were only around for the party. When the money or the high ran out, so did they. Verse 17 describes a different kind of man.</p>
+    <blockquote class="quote step" style="margin-top:.9em"><p>“Greater love hath no man than this, that a man lay down his life for his friends.”</p><cite>John 15:13</cite></blockquote>
+    <p class="note step">Jesus is that Friend. And He makes us into that kind of friend for each other.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="18-20" data-hl="striketh hands, and becometh surety|he that exalteth his gate seeketh destruction"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="18" data-hl="striketh hands|surety"></blockquote>
+    <h2 class="rise" style="--d:1">Striking hands</h2>
+    <div class="chains">
+      <div class="chain step"><span class="who-chip">Your neighbor</span><span class="said">“I need a loan”</span><span class="who-chip">You shake on it</span><span class="said">“I'll stand good for it”</span><span class="who-chip">His debt is now yours</span></div>
+    </div>
+    <p class="note step">A “surety” promises to pay if the borrower doesn't. A handshake in front of witnesses sealed it. Today we'd call it <em>co-signing</em>. Proverbs warns against it again and again (6:1–5, 11:15, 22:26). Generosity is good. Promising what you can't cover is not.</p>
+    <p class="note step">Verse 19: “exalteth his gate” likely means building a big, showy entrance. A man who loves to fight and loves to show off is asking for trouble. “Froward” (v. 20) means <em>twisted, crooked</em>.</p>
+  </div>
+</section>
+
+<!-- ======================= PART THREE ======================= -->
+<section class="slide part">
+  <div class="inner">
+    <p class="part-n rise">Part three</p>
+    <h2 class="rise" style="--d:1">A merry heart, a quiet mouth</h2>
+    <p class="range rise" style="--d:2">Verses 21–28</p>
+    <div class="rule"></div>
+    <p class="hook rise" style="--d:4">Joy that heals, bribes that rot, and the wisdom of saying less.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="21-22" data-hl="A merry heart doeth good like a medicine"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="22"></blockquote>
+    <h2 class="rise" style="--d:1">Doctor's orders</h2>
+    <div class="prv17-rx rise" style="--d:2">
+      <span class="sym">℞</span>
+      <p><b>Take</b>a merry heart</p>
+      <p><b>Effect</b>does good, like medicine</p>
+      <p class="warn"><b>Warning</b>a broken spirit dries the bones</p>
+    </div>
+    <p class="note step">God made us so that joy really does help body and mind. A crushed spirit wears a man down to the bone. A lot of using started as a way to numb a broken spirit.</p>
+    <p class="note step">Real joy isn't faking a smile. It comes from the Lord: “the joy of the LORD is your strength” (Nehemiah 8:10). And He's near to the broken: “He healeth the broken in heart, and bindeth up their wounds” (Psalm 147:3).</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="23-25" data-hl="taketh a gift out of the bosom"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="23" data-hl="a gift out of the bosom"></blockquote>
+    <h2 class="rise" style="--d:1">A gift under the table</h2>
+    <p class="note rise" style="--d:2">The “bosom” was the fold of a robe at the chest, where a man carried things out of sight. A gift slipped out of there is a <em>bribe</em>.</p>
+    <div class="mirror">
+      <div class="step"><span>17:8</span><span class="arrow">→</span><span class="word">how a bribe looks to the man who has it</span><small>Like a lucky stone. It seems to open every door.</small></div>
+      <div class="step"><span>17:23</span><span class="arrow">→</span><span class="word">what a bribe really does</span><small>It twists justice. Proverbs reports what people think, then tells the truth.</small></div>
+    </div>
+    <p class="note step">Verse 24: a fool's eyes are “in the ends of the earth.” Always looking somewhere else for the answer, when wisdom is right in front of him.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="26-28" data-hl="He that hath knowledge spareth his words|Even a fool, when he holdeth his peace, is counted wise"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="27-28" data-hl="spareth his words|holdeth his peace"></blockquote>
+    <h2 class="rise" style="--d:1">The power of saying less</h2>
+    <p class="note rise" style="--d:2">A man of understanding has “an excellent spirit,” a cool, steady spirit. He doesn't have to win every argument or fill every silence.</p>
+    <p class="note step">Verse 28 has a smile in it: even a fool looks wise as long as he keeps his mouth shut. Most of our worst moments started with words we couldn't take back.</p>
+    <blockquote class="quote step" style="margin-top:.9em"><p>“Wherefore, my beloved brethren, let every man be swift to hear, slow to speak, slow to wrath:”</p><cite>James 1:19</cite></blockquote>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise">Chapter 17, sorted</h2>
+    <div class="prv17-sort">
+      <div class="rise" style="--d:1"><h3>Fools</h3><div class="vs"><b>7</b><b>10</b><b>12</b><b>16</b><b>21</b><b>24</b><b>25</b><b>28</b></div><p>Won't learn, won't listen, and hurt the people who love them.</p></div>
+      <div class="rise" style="--d:2"><h3>Strife and peace</h3><div class="vs"><b>1</b><b>9</b><b>13</b><b>14</b><b>19</b></div><p>Peace is worth more than plenty. Stop the leak early.</p></div>
+      <div class="rise" style="--d:3"><h3>Words</h3><div class="vs"><b>4</b><b>7</b><b>20</b><b>27</b><b>28</b></div><p>Crooked talk, lying lips, and the wisdom of fewer words.</p></div>
+      <div class="rise" style="--d:4"><h3>Justice and bribes</h3><div class="vs"><b>8</b><b>15</b><b>23</b><b>26</b></div><p>God hates twisted judgment.</p></div>
+      <div class="rise" style="--d:5"><h3>Family</h3><div class="vs"><b>2</b><b>6</b><b>21</b><b>25</b></div><p>Our choices bring joy or grief to the people at home.</p></div>
+      <div class="rise" style="--d:6"><h3>Friends</h3><div class="vs"><b>9</b><b>17</b><b>18</b></div><p>Love at all times, and be wise about promises.</p></div>
+      <div class="rise" style="--d:7"><h3>The LORD</h3><div class="vs"><b>3</b><b>5</b><b>15</b></div><p>He tests hearts, made every man, and loves justice.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ======================= CLOSING ======================= -->
+<section class="slide remember">
+  <div class="inner">
+    <h2 class="rise">Points to remember</h2>
+    <ol class="seeds">
+      <li class="step"><span class="topic">Who God is</span><span class="seed-q">“The LORD trieth the hearts” <cite>17:3</cite></span><span class="take">God looks at the heart. Hard times show what's there, so He can clean it out.</span></li>
+      <li class="step"><span class="topic">Strife</span><span class="seed-q">“Leave off contention, before it be meddled with” <cite>17:14</cite></span><span class="take">Walk away while it's still a trickle. Cover offenses instead of repeating them.</span></li>
+      <li class="step"><span class="topic">Correction</span><span class="seed-q">“A reproof entereth more into a wise man” <cite>17:10</cite></span><span class="take">Learn from a word, not a hundred blows.</span></li>
+      <li class="step"><span class="topic">Friendship</span><span class="seed-q">“A friend loveth at all times” <cite>17:17</cite></span><span class="take">A real friend stays when trouble comes. Jesus is that Friend.</span></li>
+      <li class="step"><span class="topic">Joy</span><span class="seed-q">“A merry heart doeth good like a medicine” <cite>17:22</cite></span><span class="take">Joy from the Lord heals. He binds up the broken spirit.</span></li>
+      <li class="step"><span class="topic">Our words</span><span class="seed-q">“He that hath knowledge spareth his words” <cite>17:27</cite></span><span class="take">Say less, listen more, and stay cool.</span></li>
+    </ol>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 1 of 6</p>
+      <span class="topic">Who God is</span>
+      <h2>What is the LORD looking at when He tests a man?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="3" data-hl="the LORD trieth the hearts"></blockquote>
+      <blockquote class="quote step" data-q="5" data-hl="reproacheth his Maker"></blockquote>
+      <blockquote class="quote step"><p>“That the trial of your faith, being much more precious than of gold that perisheth, though it be tried with fire, might be found unto praise and honour and glory at the appearing of Jesus Christ:”</p><cite>1 Peter 1:7</cite></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>The heart. People look at the outside, but God tests what's inside, like fire tests silver and gold. Hard seasons aren't God trying to destroy us. He's bringing the junk to the surface so He can clean it out, and what's left is worth more than gold.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 2 of 6</p>
+      <span class="topic">Strife</span>
+      <h2>How do you stop a fight before it gets out of hand?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="14"></blockquote>
+      <blockquote class="quote step" data-q="9" data-hl="He that covereth a transgression seeketh love"></blockquote>
+      <blockquote class="quote step" data-q="1"></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>Stop it early, while it's still a trickle. Walk away before it gets going. Don't keep bringing up old offenses; cover them with love. And remember that peace is worth more than winning, or even than a full table.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 3 of 6</p>
+      <span class="topic">Correction</span>
+      <h2>How does a wise man take correction?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="10"></blockquote>
+      <blockquote class="quote step" data-q="16"></blockquote>
+      <blockquote class="quote step" data-q="24"></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>He lets one word sink in. He doesn't need a hundred hard lessons. He wants wisdom, so he listens when it comes, instead of always looking somewhere else for the answer. The fool takes beating after beating and stays the same.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 4 of 6</p>
+      <span class="topic">Friendship</span>
+      <h2>What does a real friend do when trouble comes?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="17"></blockquote>
+      <blockquote class="quote step" data-q="9"></blockquote>
+      <blockquote class="quote step"><p>“Greater love hath no man than this, that a man lay down his life for his friends.”</p><cite>John 15:13</cite></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>He stays. He loves at all times, not just the good ones. Hard times are what brothers are for. He covers your faults instead of spreading them. Jesus is that kind of Friend: He laid down His life for us. Now we can be that kind of friend for each other.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 5 of 6</p>
+      <span class="topic">Joy</span>
+      <h2>What does a merry heart do for a man?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="22"></blockquote>
+      <blockquote class="quote step"><p>“He healeth the broken in heart, and bindeth up their wounds.”</p><cite>Psalm 147:3</cite></blockquote>
+      <blockquote class="quote step"><p>“Then he said unto them, Go your way, eat the fat, and drink the sweet, and send portions unto them for whom nothing is prepared: for this day is holy unto our Lord: neither be ye sorry; for the joy of the LORD is your strength.”</p><cite>Nehemiah 8:10</cite></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>It does him good, like medicine. A broken spirit dries a man out. We can't fake joy, but the Lord gives it: He heals the broken-hearted, and His joy becomes our strength.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 6 of 6</p>
+      <span class="topic">Our words</span>
+      <h2>When is it wise to say nothing at all?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="27"></blockquote>
+      <blockquote class="quote step" data-q="28"></blockquote>
+      <blockquote class="quote step"><p>“Wherefore, my beloved brethren, let every man be swift to hear, slow to speak, slow to wrath:”</p><cite>James 1:19</cite></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>When you're angry, when you don't know the whole story, and when your words would only add fuel. A wise man spares his words and keeps a cool spirit. Listening first is almost never a mistake.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide prayer">
+  <div class="inner">
+    <div class="emblem rise"></div>
+    <h2 class="rise" style="--d:1">Prayer requests</h2>
+    <p class="ask-line rise" style="--d:2">What can we pray about for you today?</p>
+    <blockquote class="quote rise" style="--d:4"><p>“Bear ye one another’s burdens, and so fulfil the law of Christ.”</p><cite>Galatians 6:2</cite></blockquote>
+  </div>
+</section>
+
+</main>
+
+<script>
+// King James Version, Proverbs chapter 17
+const V = {
+  1: "Better is a dry morsel, and quietness therewith, than an house full of sacrifices with strife.",
+  2: "A wise servant shall have rule over a son that causeth shame, and shall have part of the inheritance among the brethren.",
+  3: "The fining pot is for silver, and the furnace for gold: but the LORD trieth the hearts.",
+  4: "A wicked doer giveth heed to false lips; and a liar giveth ear to a naughty tongue.",
+  5: "Whoso mocketh the poor reproacheth his Maker: and he that is glad at calamities shall not be unpunished.",
+  6: "Children’s children are the crown of old men; and the glory of children are their fathers.",
+  7: "Excellent speech becometh not a fool: much less do lying lips a prince.",
+  8: "A gift is as a precious stone in the eyes of him that hath it: whithersoever it turneth, it prospereth.",
+  9: "He that covereth a transgression seeketh love; but he that repeateth a matter separateth very friends.",
+  10: "A reproof entereth more into a wise man than an hundred stripes into a fool.",
+  11: "An evil man seeketh only rebellion: therefore a cruel messenger shall be sent against him.",
+  12: "Let a bear robbed of her whelps meet a man, rather than a fool in his folly.",
+  13: "Whoso rewardeth evil for good, evil shall not depart from his house.",
+  14: "The beginning of strife is as when one letteth out water: therefore leave off contention, before it be meddled with.",
+  15: "He that justifieth the wicked, and he that condemneth the just, even they both are abomination to the LORD.",
+  16: "Wherefore is there a price in the hand of a fool to get wisdom, seeing he hath no heart to it?",
+  17: "A friend loveth at all times, and a brother is born for adversity.",
+  18: "A man void of understanding striketh hands, and becometh surety in the presence of his friend.",
+  19: "He loveth transgression that loveth strife: and he that exalteth his gate seeketh destruction.",
+  20: "He that hath a froward heart findeth no good: and he that hath a perverse tongue falleth into mischief.",
+  21: "He that begetteth a fool doeth it to his sorrow: and the father of a fool hath no joy.",
+  22: "A merry heart doeth good like a medicine: but a broken spirit drieth the bones.",
+  23: "A wicked man taketh a gift out of the bosom to pervert the ways of judgment.",
+  24: "Wisdom is before him that hath understanding; but the eyes of a fool are in the ends of the earth.",
+  25: "A foolish son is a grief to his father, and bitterness to her that bare him.",
+  26: "Also to punish the just is not good, nor to strike princes for equity.",
+  27: "He that hath knowledge spareth his words: and a man of understanding is of an excellent spirit.",
+  28: "Even a fool, when he holdeth his peace, is counted wise: and he that shutteth his lips is esteemed a man of understanding."
+};
+const BOOK = "Proverbs 17";
+</script>
+<script src="../assets/deck.js"></script>
+</body>
+</html>

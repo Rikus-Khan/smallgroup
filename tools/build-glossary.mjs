@@ -28,6 +28,7 @@ for (const t of terms) {
   if (t.match.global) throw new Error(`${t.id}: drop the /g flag from its match pattern`);
   const refs = [];
   for (const c of chapters) {
+    if (t.books && !t.books.includes(c.book)) continue;
     const hits = Object.keys(c.verses).map(Number).filter(n => t.match.test(c.verses[n])).sort((a, b) => a - b);
     if (hits.length) refs.push([c.book, c.ch, hits]);
   }

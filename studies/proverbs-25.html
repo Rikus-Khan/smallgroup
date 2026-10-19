@@ -1,0 +1,656 @@
+<!doctype html>
+<html lang="en" data-theme="stone">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Proverbs 25</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="../assets/fonts.css">
+<link rel="stylesheet" href="../assets/deck.css">
+<link rel="stylesheet" href="../assets/themes.css">
+<style>
+/* Two points in history with a long gap between them */
+.prv25-span { display: grid; grid-template-columns: 1fr 1.1fr 1fr; align-items: center; gap: .6rem; margin: .4em 0 1.1em; text-align: center; }
+.prv25-pt { padding: .7em .6em; border: 1.5px solid var(--line-strong); border-radius: 10px; background: var(--surface); }
+.prv25-pt b { display: block; font: 400 clamp(1.25rem, 1rem + 1.3vw, 2.1rem)/1.1 var(--serif); }
+.prv25-pt span { display: block; font-size: clamp(.8rem, .74rem + .35vw, 1.05rem); color: var(--ink-soft); margin-top: .25em; line-height: 1.3; }
+.prv25-pt small { display: block; font-size: clamp(.8rem, .74rem + .35vw, 1.05rem); margin-top: .35em; line-height: 1.3; }
+.prv25-pt.now { border-color: var(--accent); background: color-mix(in srgb, var(--accent) 10%, transparent); }
+.prv25-pt.now b { color: var(--accent-hot); }
+.prv25-gap i { display: block; height: 3px; width: 0; margin: 0 auto; background: repeating-linear-gradient(90deg, var(--accent) 0 10px, transparent 10px 16px); transition: width 1.6s ease .5s; }
+.slide.active .prv25-gap i { width: 100%; }
+.prv25-gap span { display: block; margin-top: .5em; font-family: var(--serif); font-style: italic; color: var(--accent-hot); font-size: clamp(.9rem, .82rem + .5vw, 1.3rem); line-height: 1.25; }
+
+/* A crucible: the dross is skimmed off and a vessel comes out */
+.prv25-fire { transform-box: fill-box; transform-origin: 50% 100%; animation: flicker 1.2s ease-in-out infinite alternate; }
+.prv25-melt { fill: color-mix(in srgb, var(--ink-soft) 55%, var(--surface-2)); transition: fill 1.4s ease; }
+.prv25-dross { transition: transform 1.4s ease, opacity 1.4s ease; }
+.split:has(.prv25-clean.on) .prv25-dross { transform: translate(150px, -60px); opacity: 0; }
+.split:has(.prv25-clean.on) .prv25-melt { fill: color-mix(in srgb, var(--cool) 40%, var(--ink-soft)); }
+.prv25-cup { opacity: 0; transition: opacity 1s ease .2s; }
+.split:has(.prv25-vessel.on) .prv25-cup { opacity: 1; }
+
+/* Gold apples in a silver setting */
+.prv25-apple { opacity: 0; }
+.slide.active .prv25-apple { animation: rise .9s cubic-bezier(.2,.7,.2,1) both; animation-delay: calc(var(--k) * 160ms + 500ms); }
+
+/* How much is enough: a row of honey drops */
+.prv25-enough { display: flex; gap: clamp(4px, 1vw, 10px); align-items: flex-end; margin: .5em 0 .3em; max-width: 30rem; }
+.prv25-enough i { flex: 1; aspect-ratio: 3 / 4; border: 2px solid var(--line-strong); border-radius: 50% 50% 50% 50% / 62% 62% 38% 38%; transition: background-color .5s ease, border-color .5s ease; transition-delay: calc(var(--k) * 120ms + 300ms); }
+.slide.active .prv25-enough i.ok { background: var(--warm); border-color: var(--warm); }
+.prv25-honey:has(.prv25-more.on) .prv25-enough i.too { background: color-mix(in srgb, var(--danger) 70%, transparent); border-color: var(--danger); }
+.prv25-lbl { display: flex; gap: clamp(4px, 1vw, 10px); max-width: 30rem; margin-bottom: 1em; font-size: clamp(.85rem, .78rem + .35vw, 1.1rem); }
+.prv25-lbl span { border-top: 2px solid var(--warm); padding-top: .3em; color: var(--ink-soft); }
+.prv25-lbl span.too { border-color: var(--danger); opacity: 0; transition: opacity .6s ease .8s; }
+.prv25-honey:has(.prv25-more.on) .prv25-lbl span.too { opacity: 1; }
+
+/* Three weapons, three ways to be hurt */
+.prv25-arms { display: grid; grid-template-columns: repeat(3, 1fr); gap: .6rem; margin: .4em 0 1em; }
+.prv25-arms > div { padding: .7em .6em; border: 1.5px solid var(--line-strong); border-radius: 10px; background: var(--surface); text-align: center; }
+.prv25-arms svg { width: clamp(44px, 8vh, 72px); height: auto; display: block; margin: 0 auto .3em; }
+.prv25-arms b { display: block; font: 400 clamp(1.15rem, 1rem + .8vw, 1.7rem) var(--serif); color: var(--accent-hot); }
+.prv25-arms span { display: block; font-size: clamp(.82rem, .76rem + .35vw, 1.1rem); color: var(--ink-soft); line-height: 1.35; }
+.prv25-ic { fill: none; stroke: var(--ink); stroke-width: 4; stroke-linecap: round; stroke-linejoin: round; }
+
+/* Vinegar poured on soda: a dish that fizzes */
+.prv25-fizz { position: relative; height: clamp(80px, 14vh, 130px); width: min(100%, 20rem); margin: .2em 0 1em; }
+.prv25-fizz .dish { position: absolute; left: 0; right: 0; bottom: 0; height: 45%; border: 2px solid var(--line-strong); border-top-width: 0; border-radius: 0 0 50% 50% / 0 0 100% 100%; background: var(--surface-2); }
+.prv25-fizz i { position: absolute; bottom: 32%; left: var(--x); width: var(--s); height: var(--s); border-radius: 50%; border: 2px solid var(--ink-soft); opacity: 0; }
+.slide.active .prv25-fizz i { animation: prv25-bubble 1.7s ease-in infinite; animation-delay: var(--t); }
+@keyframes prv25-bubble { 0% { opacity: 0; transform: translateY(0); } 20% { opacity: 1; } 100% { opacity: 0; transform: translateY(-80px) scale(1.4); } }
+
+/* Glowing coals */
+.prv25-coal { animation: prv25-glow 2.2s ease-in-out infinite alternate; animation-delay: calc(var(--k) * -.4s); }
+@keyframes prv25-glow { from { opacity: .55; } to { opacity: 1; } }
+
+/* A city whose walls fall */
+.prv25-seg { transform-box: fill-box; transform-origin: 50% 100%; transition: transform 1.2s cubic-bezier(.5,0,.7,1), opacity 1.2s ease; }
+.split:has(.prv25-breach.on) .prv25-seg.fall { transform: translateY(8px) rotate(9deg) scaleY(.3); opacity: .55; }
+.split:has(.prv25-breach.on) .prv25-seg.fall2 { transform: translateY(8px) rotate(-11deg) scaleY(.25); opacity: .55; }
+.prv25-raid { opacity: 0; transition: opacity .8s ease 1s; }
+.split:has(.prv25-breach.on) .prv25-raid { opacity: 1; }
+</style>
+</head>
+<body>
+<main class="deck" id="deck">
+
+<!-- ======================= OPENING ======================= -->
+<section class="slide title">
+  <div class="inner">
+    <div class="emblem rise"></div>
+    <h1 class="rise" style="--d:1">Proverbs 25</h1>
+    <p class="sub rise" style="--d:3">Words like apples of gold</p>
+    <p class="tag rise" style="--d:5">A king's men copy out Solomon's wisdom about humility, words, enemies, and a man who rules his own spirit.</p>
+  </div>
+</section>
+
+<section class="slide watch">
+  <div class="inner">
+    <h2 class="rise">Things to watch for</h2>
+    <p class="lede rise" style="--d:1">Keep these questions in the back of your mind as we read. We'll come back to every one of them at the end.</p>
+    <ol class="seeds">
+      <li class="step"><span class="topic">God's word</span><span class="seed-q">Why were these proverbs copied out and kept for us?</span></li>
+      <li class="step"><span class="topic">Humility</span><span class="seed-q">Why is it better to be called up than to push yourself forward?</span></li>
+      <li class="step"><span class="topic">Our words</span><span class="seed-q">What makes a word “fitly spoken”?</span></li>
+      <li class="step"><span class="topic">Knowing when to stop</span><span class="seed-q">What does honey teach us about how much is enough?</span></li>
+      <li class="step"><span class="topic">Enemies</span><span class="seed-q">How does God tell us to treat an enemy?</span></li>
+      <li class="step"><span class="topic">Self-control</span><span class="seed-q">What is a man like when he has no rule over his own spirit?</span></li>
+    </ol>
+  </div>
+</section>
+
+<!-- ======================= PART ONE ======================= -->
+<section class="slide part">
+  <div class="inner">
+    <p class="part-n rise">Part one</p>
+    <h2 class="rise" style="--d:1">Before the king</h2>
+    <p class="range rise" style="--d:2">Verses 1–10</p>
+    <p class="hook rise" style="--d:4">Kings, courts, and knowing your place.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="1-3" data-hl="the men of Hezekiah king of Judah copied out|It is the glory of God to conceal a thing"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="1" data-hl="the men of Hezekiah king of Judah copied out"></blockquote>
+    <h2 class="rise" style="--d:1">Who were “the men of Hezekiah”?</h2>
+    <div class="prv25-span rise" style="--d:2" aria-label="Solomon reigned about 970 to 930 B.C. More than two hundred years later, King Hezekiah's men copied out his proverbs.">
+      <div class="prv25-pt"><b>Solomon</b><span>reigned about 970–930 B.C.</span><small>speaks the proverbs</small></div>
+      <div class="prv25-gap"><i></i><span>more than 200 years</span></div>
+      <div class="prv25-pt now"><b>Hezekiah</b><span>reigned about 715–686 B.C.</span><small>his men copy them out</small></div>
+    </div>
+    <p class="note step">Solomon “spake three thousand proverbs” (1 Kings 4:32). Long after he died, King Hezekiah of Judah had his scribes and wise men gather more of them into a new collection. Chapters 25 through 29 are that collection.</p>
+    <blockquote class="quote step"><p>“And he did that which was right in the sight of the LORD, according to all that David his father did.”</p><cite>2 Kings 18:3</cite></blockquote>
+    <p class="note step">Hezekiah cleaned out the temple and brought his people back to God. Part of that revival was getting God's wisdom back into their hands. The book you're holding is here partly because a king cared enough to have it copied.</p>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="2" data-hl="the glory of God to conceal a thing|the honour of kings is to search out a matter"></blockquote>
+    <h2 class="rise" style="--d:1">God's secrets and a king's job</h2>
+    <div class="columns">
+      <div class="col law rise" style="--d:2">
+        <p class="who">The glory of God</p>
+        <h3>to conceal a thing</h3>
+        <p>God doesn't owe us every answer. He is bigger than our questions, and some of His ways stay hidden. That's part of what makes Him God.</p>
+      </div>
+      <div class="col grace step">
+        <p class="who">The honour of kings</p>
+        <h3>to search out a matter</h3>
+        <p>A good leader digs for the truth before he acts. He doesn't decide on rumors or first impressions.</p>
+      </div>
+    </div>
+    <p class="note step">Verse 3 adds that you can't measure the sky, the deep, or a king's heart. Only God sees all the way down. But what He wants us to know, He has made plain in His word and in His Son, “who of God is made unto us wisdom” (1 Corinthians 1:30).</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="4-5" data-hl="Take away the dross from the silver|Take away the wicked from before the king"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="4" data-hl="Take away the dross from the silver"></blockquote>
+    <div class="split">
+      <div class="stage">
+        <svg viewBox="0 0 520 300" role="img" aria-label="A crucible of melted silver over a fire. The dross floating on top is skimmed away, and a finished cup appears.">
+          <g class="prv25-fire" style="fill:var(--warm)"><path d="M150 292 C140 262 170 250 165 228 C190 248 200 270 190 292 Z"/><path d="M200 292 C188 255 225 245 220 214 C252 245 258 272 244 292 Z"/><path d="M252 292 C244 262 270 254 268 232 C292 254 296 276 286 292 Z"/></g>
+          <path d="M110 110 L310 110 L280 230 L140 230 Z" stroke-width="3" style="fill:var(--surface-2);stroke:var(--line-strong)"/>
+          <ellipse class="prv25-melt" cx="210" cy="122" rx="96" ry="14"/>
+          <g class="prv25-dross" style="fill:var(--ink-soft)">
+            <ellipse cx="170" cy="117" rx="22" ry="7"/><ellipse cx="208" cy="121" rx="16" ry="6"/><ellipse cx="246" cy="116" rx="20" ry="7"/><ellipse cx="190" cy="126" rx="12" ry="4"/><ellipse cx="232" cy="127" rx="11" ry="4"/>
+          </g>
+          <text x="210" y="80" text-anchor="middle" font-size="20" class="prv25-dross" style="fill:var(--ink-soft)">dross</text>
+          <g class="prv25-cup">
+            <path d="M390 120 L470 120 L460 190 Q430 206 400 190 Z" stroke-width="3" style="fill:color-mix(in srgb, var(--cool) 40%, var(--ink-soft));stroke:var(--ink-soft)"/>
+            <path d="M430 200 L430 240 M405 246 L455 246" stroke-width="5" stroke-linecap="round" style="stroke:var(--ink-soft)"/>
+            <text x="430" y="278" text-anchor="middle" font-size="18" style="fill:var(--accent)">a vessel</text>
+          </g>
+        </svg>
+      </div>
+      <div>
+        <h2 class="rise" style="--d:1">Skim off the dross</h2>
+        <p class="note rise" style="--d:2">When silver ore is melted, the junk in it floats to the top as <em>dross</em>. The silversmith skims it off. Until he does, he can't make anything worth using.</p>
+        <p class="note step prv25-clean">Verse 5 makes the point: a king who clears wicked men out of his court will have a throne built on <em>righteousness</em>.</p>
+        <p class="note step prv25-vessel">It works in a man's life too. God is the refiner. He's not throwing you away. He's taking out what doesn't belong so He can make something useful out of you.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="slide verse" data-v="6-7" data-hl="Put not forth thyself in the presence of the king|Come up hither"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="6" data-hl="Put not forth thyself"></blockquote>
+    <h2 class="rise" style="--d:1">Jesus told this proverb as a story</h2>
+    <div class="pair">
+      <div class="scroll rise" style="--d:2"><p class="ref">Proverbs 25:7</p><p class="kjv">For better it is that it be said unto thee, <mark>Come up hither</mark>; than that thou shouldest be put lower in the presence of the prince whom thine eyes have seen.</p></div>
+      <div class="scroll step"><p class="ref">Luke 14:10</p><p class="kjv">But when thou art bidden, go and sit down in the lowest room; that when he that bade thee cometh, he may say unto thee, <mark>Friend, go up higher</mark>: then shalt thou have worship in the presence of them that sit at meat with thee.</p></div>
+    </div>
+    <p class="note step">At a dinner, Jesus watched guests grab the best seats and taught them this very proverb. Pushing yourself forward is a gamble: somebody may tell you to move. Taking the low seat costs nothing, and lets the one in charge lift you up.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="8-10" data-hl="Go not forth hastily to strive|Debate thy cause with thy neighbour himself"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="9" data-hl="Debate thy cause with thy neighbour himself"></blockquote>
+    <h2 class="rise" style="--d:1">When you have a beef with somebody</h2>
+    <ul class="nots">
+      <li class="step"><span class="k">Rush into a fight</span><span class="why">“Go not forth hastily to strive.” You may not like how it ends.</span></li>
+      <li class="step"><span class="k">Tell everybody else</span><span class="why">“Discover not a secret to another.” That can shame you for good.</span></li>
+      <li class="step yes"><span class="k">Go to him yourself</span><span class="why">“Debate thy cause with thy neighbour himself.”</span></li>
+    </ul>
+    <p class="note step">Jesus taught the same order in Matthew 18:15: go to your brother alone first. Most fights get worse the more people you drag in, and better when two men sit down face to face.</p>
+  </div>
+</section>
+
+<!-- ======================= PART TWO ======================= -->
+<section class="slide part">
+  <div class="inner">
+    <p class="part-n rise">Part two</p>
+    <h2 class="rise" style="--d:1">Words like gold</h2>
+    <p class="range rise" style="--d:2">Verses 11–20</p>
+    <p class="hook rise" style="--d:4">What we say can be beautiful, refreshing, or deadly.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="11-12" data-hl="A word fitly spoken is like apples of gold in pictures of silver|a wise reprover upon an obedient ear"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="11"></blockquote>
+    <div class="split">
+      <div class="stage">
+        <svg viewBox="0 0 520 300" role="img" aria-label="Golden apples set in a carved silver bowl.">
+          <g fill="none" stroke-width="3" style="stroke:color-mix(in srgb, var(--cool) 55%, var(--ink-soft))">
+            <path d="M60 170 Q260 300 460 170"/>
+            <path d="M60 170 L460 170"/>
+            <path d="M90 190 Q120 175 150 205 Q180 180 210 214 Q240 186 270 216 Q300 186 330 212 Q360 180 390 204 Q420 176 440 188"/>
+            <path d="M110 214 Q140 200 170 230 M200 240 Q230 222 260 246 M290 246 Q320 222 350 240 M380 226 Q400 210 420 214"/>
+            <path d="M230 266 L230 286 M290 266 L290 286 M200 290 L320 290"/>
+          </g>
+          <g style="fill:var(--warm)">
+            <g class="prv25-apple" style="--k:0"><circle cx="150" cy="140" r="36"/><path d="M150 104 q6 -16 18 -18" stroke-width="3" fill="none" style="stroke:var(--ink-soft)"/></g>
+            <g class="prv25-apple" style="--k:1"><circle cx="230" cy="128" r="40"/><path d="M230 88 q6 -16 18 -18" stroke-width="3" fill="none" style="stroke:var(--ink-soft)"/></g>
+            <g class="prv25-apple" style="--k:2"><circle cx="312" cy="134" r="38"/><path d="M312 96 q6 -16 18 -18" stroke-width="3" fill="none" style="stroke:var(--ink-soft)"/></g>
+            <g class="prv25-apple" style="--k:3"><circle cx="384" cy="146" r="30"/><path d="M384 116 q6 -14 16 -16" stroke-width="3" fill="none" style="stroke:var(--ink-soft)"/></g>
+          </g>
+          <g style="fill:var(--bg);opacity:.45"><circle cx="138" cy="126" r="8"/><circle cx="216" cy="112" r="9"/><circle cx="298" cy="118" r="8"/><circle cx="374" cy="134" r="6"/></g>
+        </svg>
+      </div>
+      <div>
+        <h2 class="rise" style="--d:1">Apples of gold in silver</h2>
+        <p class="note rise" style="--d:2">The <em>“pictures of silver”</em> were probably carved silver settings. Picture golden fruit in a silver bowl: beautiful, and placed just right.</p>
+        <p class="note step">A word <em>“fitly spoken”</em> fits the moment: true, and said at the right time, in the right way.</p>
+        <p class="note step">Verse 12: a rebuke is like gold jewelry on <em>“an obedient ear”</em>. Wise words need a man willing to hear.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="slide verse" data-v="13-14" data-hl="a faithful messenger|clouds and wind without rain"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="13" data-hl="the cold of snow in the time of harvest"></blockquote>
+    <h2 class="rise" style="--d:1">A cold drink, or an empty cloud</h2>
+    <div class="columns">
+      <div class="col grace rise" style="--d:2">
+        <p class="who">Verse 13</p>
+        <h3>Snow at harvest</h3>
+        <p>Not a snowstorm, which would ruin the crop. This is probably snow carried down from the mountains to cool drinks for workers in the hot fields. A man who does what he's sent to do is that refreshing.</p>
+      </div>
+      <div class="col law step">
+        <p class="who">Verse 14</p>
+        <h3>Clouds without rain</h3>
+        <p>A farmer sees clouds roll in and gets his hopes up, and not a drop falls. That's the man who brags about what he's going to give or do, and never does it.</p>
+      </div>
+    </div>
+    <p class="note step">Jude says the same about false teachers: “clouds they are without water” (Jude 12). Be the man whose word holds water. Show up when you say you will.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="15-17" data-hl="a soft tongue breaketh the bone|eat so much as is sufficient for thee|Withdraw thy foot"></section>
+
+<section class="slide ex prv25-honey">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="16" data-hl="eat so much as is sufficient for thee"></blockquote>
+    <h2 class="rise" style="--d:1">Good, then too much</h2>
+    <div class="prv25-enough rise" style="--d:2" aria-label="Eight drops of honey. The first three are enough. The rest are too much.">
+      <i class="ok" style="--k:0"></i><i class="ok" style="--k:1"></i><i class="ok" style="--k:2"></i><i class="too" style="--k:3"></i><i class="too" style="--k:4"></i><i class="too" style="--k:5"></i><i class="too" style="--k:6"></i><i class="too" style="--k:7"></i>
+    </div>
+    <div class="prv25-lbl rise" style="--d:2"><span style="flex:3">sufficient</span><span class="too" style="flex:5">“filled therewith, and vomit it”</span></div>
+    <p class="note rise" style="--d:3">Honey is a gift from God. The problem isn't the honey. It's not knowing when to stop.</p>
+    <p class="note step prv25-more">Verse 17 says the same about people: even a good friend can wear out his welcome. Good things turn sour when there's no limit.</p>
+    <p class="note step">Every man in recovery knows this one. And some things, for some of us, have no safe “little bit.” For those, <em>sufficient</em> means none. Wisdom is knowing which is which, and being honest with yourself about it.</p>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="15" data-hl="a soft tongue breaketh the bone"></blockquote>
+    <p class="saying rise" style="--d:1">A <em>soft</em> tongue breaketh the bone.</p>
+    <p class="note rise" style="--d:2">Bone is the hardest thing in the body, and a gentle word breaks it. Patience and a calm voice can get through to a hard man when shouting never will.</p>
+    <p class="note step">Most of us learned to win by being louder or harder than the other guy. God's way looks weaker, and it works better.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="18-20" data-hl="a maul, and a sword, and a sharp arrow|like a broken tooth, and a foot out of joint|vinegar upon nitre"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="18" data-hl="a maul, and a sword, and a sharp arrow"></blockquote>
+    <h2 class="rise" style="--d:1">Lies are weapons</h2>
+    <div class="prv25-arms">
+      <div class="rise" style="--d:2">
+        <svg viewBox="0 0 80 80" aria-hidden="true"><path class="prv25-ic" d="M22 70 L52 30"/><rect x="40" y="10" width="30" height="24" rx="4" transform="rotate(37 55 22)" class="prv25-ic" style="fill:var(--surface-2)"/></svg>
+        <b>A maul</b><span>a heavy war club. It crushes, up close.</span>
+      </div>
+      <div class="rise" style="--d:3">
+        <svg viewBox="0 0 80 80" aria-hidden="true"><path class="prv25-ic" d="M18 62 L64 16 M14 50 L30 66 M18 62 L10 70"/></svg>
+        <b>A sword</b><span>it cuts at arm's length.</span>
+      </div>
+      <div class="rise" style="--d:4">
+        <svg viewBox="0 0 80 80" aria-hidden="true"><path class="prv25-ic" d="M12 68 L68 12 M52 12 L68 12 L68 28 M12 58 L22 58 L22 68"/></svg>
+        <b>An arrow</b><span>it hits from far off. You never see it coming.</span>
+      </div>
+    </div>
+    <p class="note step">False witness does all three: to your face, behind your back, and from across town. A lie about a man can wreck his name, his job, and his family.</p>
+    <p class="note step">Verse 19: trusting an unfaithful man is like biting down on a <em>broken tooth</em> or stepping on a <em>foot out of joint</em>. It gives way right when you put your weight on it.</p>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="20" data-hl="vinegar upon nitre|singeth songs to an heavy heart"></blockquote>
+    <h2 class="rise" style="--d:1">Vinegar on soda</h2>
+    <div class="prv25-fizz rise" style="--d:2" aria-hidden="true">
+      <div class="dish"></div>
+      <i style="--x:20%;--s:12px;--t:0s"></i><i style="--x:38%;--s:9px;--t:.5s"></i><i style="--x:52%;--s:14px;--t:.2s"></i><i style="--x:66%;--s:8px;--t:.9s"></i><i style="--x:78%;--s:11px;--t:1.2s"></i><i style="--x:30%;--s:7px;--t:1.4s"></i>
+    </div>
+    <p class="note rise" style="--d:3"><em>Nitre</em> here is a natural soda. Pour vinegar on it and it fizzes up, and both are spoiled. Taking a man's coat on a cold day is just as unhelpful.</p>
+    <p class="note step">That's what cheerful songs do to a man whose heart is heavy. Pep talks and “cheer up” don't help someone who is grieving. Sitting with him does.</p>
+    <blockquote class="quote step"><p>“Rejoice with them that do rejoice, and weep with them that weep.”</p><cite>Romans 12:15</cite></blockquote>
+  </div>
+</section>
+
+<!-- ======================= PART THREE ======================= -->
+<section class="slide part">
+  <div class="inner">
+    <p class="part-n rise">Part three</p>
+    <h2 class="rise" style="--d:1">Coals and walls</h2>
+    <p class="range rise" style="--d:2">Verses 21–28</p>
+    <p class="hook rise" style="--d:4">How to treat an enemy, and how to guard your own spirit.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="21-22" data-hl="If thine enemy be hungry, give him bread to eat|heap coals of fire upon his head|the LORD shall reward thee"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="22" data-hl="heap coals of fire upon his head"></blockquote>
+    <div class="split">
+      <div class="stage">
+        <svg viewBox="0 0 560 240" role="img" aria-label="Bread and water given to an enemy become like glowing coals on his head.">
+          <rect x="20" y="110" width="110" height="56" rx="26" style="fill:color-mix(in srgb, var(--warm) 55%, var(--surface-2))"/>
+          <path d="M44 122 q10 -10 20 0 M74 122 q10 -10 20 0" fill="none" stroke-width="3" style="stroke:var(--warm)"/>
+          <text x="75" y="196" text-anchor="middle" font-size="20">bread</text>
+          <path d="M160 100 L220 100 L212 170 L168 170 Z" stroke-width="3" style="fill:var(--surface);stroke:var(--ink-soft)"/>
+          <path d="M164 122 L216 122 L211 168 L169 168 Z" style="fill:var(--cool);opacity:.75"/>
+          <text x="190" y="196" text-anchor="middle" font-size="20">water</text>
+          <path d="M250 136 L320 136 M306 122 L320 136 L306 150" fill="none" stroke-width="4" stroke-linecap="round" style="stroke:var(--accent)"/>
+          <path d="M350 130 Q440 190 530 130 Z" stroke-width="3" style="fill:var(--surface-2);stroke:var(--ink-soft)"/>
+          <g>
+            <circle class="prv25-coal" style="--k:0;fill:var(--danger)" cx="390" cy="124" r="18"/>
+            <circle class="prv25-coal" style="--k:1;fill:var(--warm)" cx="425" cy="116" r="20"/>
+            <circle class="prv25-coal" style="--k:2;fill:color-mix(in srgb, var(--warm) 55%, var(--danger))" cx="462" cy="120" r="19"/>
+            <circle class="prv25-coal" style="--k:3;fill:var(--warm)" cx="495" cy="126" r="15"/>
+            <circle class="prv25-coal" style="--k:4;fill:var(--danger)" cx="442" cy="98" r="15"/>
+          </g>
+          <text x="440" y="196" text-anchor="middle" font-size="20">coals of fire</text>
+        </svg>
+      </div>
+      <div>
+        <h2 class="rise" style="--d:1">Coals of fire?</h2>
+        <p class="note rise" style="--d:2">This sounds like revenge, but it isn't. Kindness he doesn't deserve makes a man's face burn. It puts his wrong in front of him, and it may be the thing that softens him.</p>
+        <p class="note step">Some think it also points to an old custom of carrying hot coals in a pan on your head to show you were sorry. Either way, the goal is to <em>win</em> your enemy, not to hurt him.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="21" data-hl="If thine enemy be hungry"></blockquote>
+    <h2 class="rise" style="--d:1">What it doesn't mean, and what it does</h2>
+    <ul class="nots">
+      <li class="step"><span class="k">kindness as a sneaky weapon</span><span class="why">being nice so it hurts him more</span></li>
+      <li class="step"><span class="k">so he'll owe you</span><span class="why">keeping score is still keeping a grudge</span></li>
+      <li class="step yes"><span class="k">overcome evil with good</span><span class="why">Paul quotes this proverb in Romans 12:20</span></li>
+    </ul>
+    <blockquote class="quote step"><p>“Be not overcome of evil, but overcome evil with good.”</p><cite>Romans 12:21</cite></blockquote>
+    <p class="note step">That's exactly what God did for us. “While we were yet sinners, Christ died for us” (Romans 5:8). He fed His enemies. And <em>“the LORD shall reward thee”</em>: you leave the results with Him. Your enemy may never change. You still did right.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="23-25" data-hl="an angry countenance a backbiting tongue|the corner of the housetop|good news from a far country"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="24" data-hl="the corner of the housetop"></blockquote>
+    <div class="split">
+      <div class="stage">
+        <svg viewBox="0 0 560 320" role="img" aria-label="A wide house full of quarreling, and a man sitting alone in a corner of the flat roof.">
+          <line x1="20" y1="300" x2="540" y2="300" stroke-width="2" style="stroke:var(--line-strong)"/>
+          <rect x="90" y="140" width="380" height="160" stroke-width="3" style="fill:var(--surface-2);stroke:var(--line-strong)"/>
+          <rect x="82" y="128" width="396" height="14" style="fill:var(--line-strong)"/>
+          <path d="M82 128 L82 112 M478 128 L478 112 M82 112 L478 112" fill="none" stroke-width="3" style="stroke:var(--line-strong)"/>
+          <rect x="250" y="230" width="60" height="70" rx="28" style="fill:var(--bg)"/>
+          <path d="M140 190 l14 -14 l14 14 l14 -14 l14 14 l14 -14 M330 200 l14 -14 l14 14 l14 -14 l14 14 l14 -14" fill="none" stroke-width="4" stroke-linecap="round" style="stroke:var(--danger)"/>
+          <text x="280" y="176" text-anchor="middle" font-size="20" style="fill:var(--ink-soft)">a wide house</text>
+          <g stroke-width="4" stroke-linecap="round" fill="none" style="stroke:var(--accent)">
+            <circle cx="446" cy="72" r="11" style="fill:var(--accent)"/>
+            <path d="M446 84 L446 108 M446 92 L430 102 M446 108 L432 112"/>
+          </g>
+          <text x="420" y="40" text-anchor="middle" font-size="19" style="fill:var(--accent)">the corner of the housetop</text>
+        </svg>
+      </div>
+      <div>
+        <h2 class="rise" style="--d:1">Better alone on the roof</h2>
+        <p class="note rise" style="--d:2">Houses in Israel had flat roofs that people used like a porch. A man would rather sit out in a cramped corner of the roof than stay in a big house full of quarreling.</p>
+        <p class="note step">It's said about a <em>“brawling woman”</em>, but it cuts both ways. Ask yourself the hard question: am I the one people want to get away from? Peace at home starts with the man.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="25"></blockquote>
+    <h2 class="rise" style="--d:1">Good news from far away</h2>
+    <p class="note rise" style="--d:2">No phones, no mail trucks. News from family in another land could take weeks or months, if it came at all. When good news finally arrived, it hit like cold water on a dry throat.</p>
+    <p class="note step">The best news ever came from the farthest country there is. Heaven sent word that God has made a way back to Him through His Son.</p>
+    <blockquote class="quote step"><p>“But whosoever drinketh of the water that I shall give him shall never thirst; but the water that I shall give him shall be in him a well of water springing up into everlasting life.”</p><cite>John 4:14</cite></blockquote>
+  </div>
+</section>
+
+<section class="slide verse" data-v="26-28" data-hl="as a troubled fountain, and a corrupt spring|He that hath no rule over his own spirit is like a city that is broken down, and without walls"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="26"></blockquote>
+    <h2 class="rise" style="--d:1">A muddy spring</h2>
+    <p class="note rise" style="--d:2">A spring is where a whole village gets its water. Trample through it and the water goes muddy for everyone downstream.</p>
+    <p class="note step">When a godly man caves in to wicked men, going along to get along, it isn't only his problem. Everyone who was drinking from his example gets mud.</p>
+    <p class="note step">Verse 27 ties back to the honey: chasing your own glory is like eating too much honey. It looks sweet and ends up making you sick.</p>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="28"></blockquote>
+    <div class="split">
+      <div class="stage">
+        <svg viewBox="0 0 600 300" role="img" aria-label="A walled city. Sections of the wall fall, and enemies stream in through the gaps.">
+          <g style="fill:var(--surface)" stroke-width="2">
+            <rect x="120" y="120" width="70" height="80" style="stroke:var(--line-strong)"/><rect x="220" y="100" width="90" height="100" style="stroke:var(--line-strong)"/><rect x="340" y="125" width="80" height="75" style="stroke:var(--line-strong)"/><rect x="440" y="110" width="60" height="90" style="stroke:var(--line-strong)"/>
+          </g>
+          <g stroke-width="3" style="fill:var(--surface-2);stroke:var(--ink-soft)">
+            <path class="prv25-seg" d="M30 270 V180 h15 v-12 h15 v12 h15 v-12 h15 v12 h10 V270 Z"/>
+            <path class="prv25-seg" d="M130 270 V180 h15 v-12 h15 v12 h15 v-12 h15 v12 h15 V270 Z"/>
+            <path class="prv25-seg fall" d="M235 270 V180 h15 v-12 h15 v12 h15 v-12 h15 v12 h15 V270 Z"/>
+            <path class="prv25-seg" d="M340 270 V180 h15 v-12 h15 v12 h15 v-12 h15 v12 h15 V270 Z"/>
+            <path class="prv25-seg fall2" d="M445 270 V180 h15 v-12 h15 v12 h15 v-12 h15 v12 h10 V270 Z"/>
+            <path class="prv25-seg" d="M545 270 V170 h25 V270 Z"/>
+          </g>
+          <g class="prv25-raid" fill="none" stroke-width="4" stroke-linecap="round" stroke-dasharray="10 8" style="stroke:var(--danger)">
+            <path d="M262 298 L262 210 M250 222 L262 208 L274 222"/>
+            <path d="M472 298 L472 210 M460 222 L472 208 L484 222"/>
+          </g>
+          <line x1="10" y1="271" x2="590" y2="271" stroke-width="2" style="stroke:var(--line-strong)"/>
+        </svg>
+      </div>
+      <div>
+        <h2 class="rise" style="--d:1">A city with no walls</h2>
+        <p class="note rise" style="--d:2">In Bible times, walls were a city's only defense. Without them, any raider could walk in and take whatever he wanted.</p>
+        <p class="note step prv25-breach">That's a man who can't rule his own spirit: his temper, his appetites, his moods. Anything that comes along can walk right in.</p>
+        <p class="note step">Self-control isn't something you work up on your own. It's “temperance,” <em>fruit of the Spirit</em> (Galatians 5:22–23). God rebuilds the walls one stone at a time, as you walk with Him, day by day.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ======================= CLOSING ======================= -->
+<section class="slide remember">
+  <div class="inner">
+    <h2 class="rise">Points to remember</h2>
+    <ol class="seeds">
+      <li class="step"><span class="topic">God's word</span><span class="seed-q">“Which the men of Hezekiah king of Judah copied out” <cite>25:1</cite></span><span class="take">God kept His wisdom for us through people who cared about it. Don't leave it on the shelf.</span></li>
+      <li class="step"><span class="topic">Humility</span><span class="seed-q">“Come up hither” <cite>25:7</cite></span><span class="take">Take the low seat. Let God, not your own pushing, lift you up.</span></li>
+      <li class="step"><span class="topic">Our words</span><span class="seed-q">“A word fitly spoken” <cite>25:11</cite></span><span class="take">True words, said at the right time and the right way, are beautiful.</span></li>
+      <li class="step"><span class="topic">Knowing when to stop</span><span class="seed-q">“Eat so much as is sufficient for thee” <cite>25:16</cite></span><span class="take">Even good things turn bad without a limit. For some things, enough is none.</span></li>
+      <li class="step"><span class="topic">Enemies</span><span class="seed-q">“If thine enemy be hungry, give him bread” <cite>25:21</cite></span><span class="take">Overcome evil with good, and leave the results with the LORD.</span></li>
+      <li class="step"><span class="topic">Self-control</span><span class="seed-q">“A city that is broken down, and without walls” <cite>25:28</cite></span><span class="take">Without self-control, anything can walk in. The Spirit rebuilds the walls.</span></li>
+    </ol>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 1 of 6</p>
+      <span class="topic">God's word</span>
+      <h2>Why were these proverbs copied out and kept for us?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="1" data-hl="copied out"></blockquote>
+      <blockquote class="quote step"><p>“And he did that which was right in the sight of the LORD, according to all that David his father did.”</p><cite>2 Kings 18:3</cite></blockquote>
+      <blockquote class="quote step" data-q="2"></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>Hezekiah was a king who turned his people back to God, and part of that was gathering God's wisdom so it wouldn't be lost. God hides some things, but what we need He has given us. These words were kept for hundreds of years so men like us could read them now.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 2 of 6</p>
+      <span class="topic">Humility</span>
+      <h2>Why is it better to be called up than to push yourself forward?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="6-7" data-hl="Come up hither"></blockquote>
+      <blockquote class="quote step"><p>“For whosoever exalteth himself shall be abased; and he that humbleth himself shall be exalted.”</p><cite>Luke 14:11</cite></blockquote>
+      <blockquote class="quote step" data-q="27" data-hl="for men to search their own glory is not glory"></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>The man who pushes himself up risks being put back down in front of everybody. The man who takes the low seat can only be lifted. Jesus taught this proverb at a dinner table. Chasing your own glory isn't glory at all. Let God do the lifting.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 3 of 6</p>
+      <span class="topic">Our words</span>
+      <h2>What makes a word “fitly spoken”?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="11"></blockquote>
+      <blockquote class="quote step" data-q="12" data-hl="a wise reprover upon an obedient ear"></blockquote>
+      <blockquote class="quote step" data-q="15" data-hl="a soft tongue breaketh the bone"></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>It's true, and it fits the moment: said at the right time, in the right way, to someone ready to hear it. A gentle word can do what shouting never will. And the same chapter warns us about lies, empty boasting, and gossip.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 4 of 6</p>
+      <span class="topic">Knowing when to stop</span>
+      <h2>What does honey teach us about how much is enough?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="16"></blockquote>
+      <blockquote class="quote step" data-q="17"></blockquote>
+      <blockquote class="quote step"><p>“There hath no temptation taken you but such as is common to man: but God is faithful, who will not suffer you to be tempted above that ye are able; but will with the temptation also make a way to escape, that ye may be able to bear it.”</p><cite>1 Corinthians 10:13</cite></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>A good thing becomes a bad thing when we don't stop. Honey, a friend's hospitality, anything. Wisdom knows the limit, and for some things the honest limit is none. When the pull is strong, God is faithful: He always gives a way to escape.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 5 of 6</p>
+      <span class="topic">Enemies</span>
+      <h2>How does God tell us to treat an enemy?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="21-22"></blockquote>
+      <blockquote class="quote step"><p>“Be not overcome of evil, but overcome evil with good.”</p><cite>Romans 12:21</cite></blockquote>
+      <blockquote class="quote step"><p>“But I say unto you, Love your enemies, bless them that curse you, do good to them that hate you, and pray for them which despitefully use you, and persecute you;”</p><cite>Matthew 5:44</cite></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>Meet his need. Feed him if he's hungry, give him water if he's thirsty. Not to hurt him or make him owe you, but to overcome evil with good. That's how God treated us when we were His enemies. Leave the results to Him.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 6 of 6</p>
+      <span class="topic">Self-control</span>
+      <h2>What is a man like when he has no rule over his own spirit?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="28"></blockquote>
+      <blockquote class="quote step"><p>“But the fruit of the Spirit is love, joy, peace, longsuffering, gentleness, goodness, faith, Meekness, temperance: against such there is no law.”</p><cite>Galatians 5:22–23</cite></blockquote>
+      <blockquote class="quote step"><p>“For God hath not given us the spirit of fear; but of power, and of love, and of a sound mind.”</p><cite>2 Timothy 1:7</cite></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>He's like a city with its walls knocked down. Anger, cravings, and moods walk right in and take over. Willpower alone won't hold the wall. Self-control is fruit the Holy Spirit grows in every believer, and He rebuilds the walls as we walk with Him day by day.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide prayer">
+  <div class="inner">
+    <h2 class="rise">Prayer requests</h2>
+    <p class="ask-line rise" style="--d:1">What can we pray about for you today?</p>
+    <blockquote class="quote rise" style="--d:3"><p>“Come unto me, all ye that labour and are heavy laden, and I will give you rest.”</p><cite>Matthew 11:28</cite></blockquote>
+  </div>
+</section>
+
+</main>
+
+<script>
+// King James Version, Proverbs chapter 25
+const V = {
+  1: "These are also proverbs of Solomon, which the men of Hezekiah king of Judah copied out.",
+  2: "It is the glory of God to conceal a thing: but the honour of kings is to search out a matter.",
+  3: "The heaven for height, and the earth for depth, and the heart of kings is unsearchable.",
+  4: "Take away the dross from the silver, and there shall come forth a vessel for the finer.",
+  5: "Take away the wicked from before the king, and his throne shall be established in righteousness.",
+  6: "Put not forth thyself in the presence of the king, and stand not in the place of great men:",
+  7: "For better it is that it be said unto thee, Come up hither; than that thou shouldest be put lower in the presence of the prince whom thine eyes have seen.",
+  8: "Go not forth hastily to strive, lest thou know not what to do in the end thereof, when thy neighbour hath put thee to shame.",
+  9: "Debate thy cause with thy neighbour himself; and discover not a secret to another:",
+  10: "Lest he that heareth it put thee to shame, and thine infamy turn not away.",
+  11: "A word fitly spoken is like apples of gold in pictures of silver.",
+  12: "As an earring of gold, and an ornament of fine gold, so is a wise reprover upon an obedient ear.",
+  13: "As the cold of snow in the time of harvest, so is a faithful messenger to them that send him: for he refresheth the soul of his masters.",
+  14: "Whoso boasteth himself of a false gift is like clouds and wind without rain.",
+  15: "By long forbearing is a prince persuaded, and a soft tongue breaketh the bone.",
+  16: "Hast thou found honey? eat so much as is sufficient for thee, lest thou be filled therewith, and vomit it.",
+  17: "Withdraw thy foot from thy neighbour’s house; lest he be weary of thee, and so hate thee.",
+  18: "A man that beareth false witness against his neighbour is a maul, and a sword, and a sharp arrow.",
+  19: "Confidence in an unfaithful man in time of trouble is like a broken tooth, and a foot out of joint.",
+  20: "As he that taketh away a garment in cold weather, and as vinegar upon nitre, so is he that singeth songs to an heavy heart.",
+  21: "If thine enemy be hungry, give him bread to eat; and if he be thirsty, give him water to drink:",
+  22: "For thou shalt heap coals of fire upon his head, and the LORD shall reward thee.",
+  23: "The north wind driveth away rain: so doth an angry countenance a backbiting tongue.",
+  24: "It is better to dwell in the corner of the housetop, than with a brawling woman and in a wide house.",
+  25: "As cold waters to a thirsty soul, so is good news from a far country.",
+  26: "A righteous man falling down before the wicked is as a troubled fountain, and a corrupt spring.",
+  27: "It is not good to eat much honey: so for men to search their own glory is not glory.",
+  28: "He that hath no rule over his own spirit is like a city that is broken down, and without walls."
+};
+const BOOK = "Proverbs 25";
+</script>
+<script src="../assets/deck.js"></script>
+</body>
+</html>

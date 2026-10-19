@@ -1,0 +1,649 @@
+<!doctype html>
+<html lang="en" data-theme="stone">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Proverbs 11</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="../assets/fonts.css">
+<link rel="stylesheet" href="../assets/deck.css">
+<link rel="stylesheet" href="../assets/themes.css">
+<style>
+.ex .note + .quote { margin-top: .9em; }
+
+/* A merchant's balance that tips the wrong way */
+.prv11-beam { transform-box: view-box; transform-origin: 300px 70px; transition: transform 1.6s cubic-bezier(.4,1.4,.5,1) .6s; }
+.slide.active .prv11-beam { transform: rotate(-7deg); }
+.prv11-bag { opacity: 0; transition: opacity .8s ease; }
+.prv11-bag.on { opacity: 1; }
+
+/* Ripples: one man's choices spread out */
+.prv11-ripple circle { fill: none; stroke-width: 2.5; opacity: 0; transform-box: fill-box; transform-origin: center; transform: scale(.6); transition: opacity .8s ease, transform 1s cubic-bezier(.2,.7,.2,1); transition-delay: calc(var(--k) * 380ms + 300ms); }
+.slide.active .prv11-ripple circle { opacity: 1; transform: none; }
+.prv11-ripple text { font-size: 19px; paint-order: stroke; stroke: var(--bg); stroke-width: 7px; stroke-linejoin: round; }
+.prv11-ripple .prv11-lab { opacity: 0; transition: opacity .8s ease; transition-delay: calc(var(--k) * 380ms + 700ms); }
+.slide.active .prv11-ripple .prv11-lab { opacity: 1; }
+
+/* One man alone, then a ring of counsellors */
+.prv11-ring circle.prv11-c { stroke-width: 2.5; transition: fill .6s ease, stroke .6s ease; transition-delay: calc(var(--k) * 120ms); }
+.prv11-ring circle.prv11-c { fill: var(--bg); stroke: var(--line-strong); }
+.split:has(.prv11-go.on) .prv11-ring circle.prv11-c { fill: color-mix(in srgb, var(--accent) 30%, var(--bg)); stroke: var(--accent); }
+.prv11-ring .prv11-lines { opacity: 0; transition: opacity .8s ease .4s; }
+.split:has(.prv11-go.on) .prv11-ring .prv11-lines { opacity: 1; }
+.prv11-ring .prv11-alone { transition: opacity .6s ease; }
+.split:has(.prv11-go.on) .prv11-ring .prv11-alone { opacity: 0; }
+.prv11-ring .prv11-safe { opacity: 0; transition: opacity .6s ease .6s; }
+.split:has(.prv11-go.on) .prv11-ring .prv11-safe { opacity: 1; }
+
+/* A co-signed loan with a stamp */
+.prv11-note { position: relative; max-width: 32rem; padding: 1em 1.3em; margin: .3em 0 1.1em; padding-bottom: 3em; background: var(--surface); border: 1.5px solid var(--line-strong); border-radius: 4px; font-size: clamp(.95rem, .85rem + .5vw, 1.3rem); }
+.prv11-note h3 { font: 700 .85em var(--sans); letter-spacing: .1em; text-transform: uppercase; color: var(--ink-soft); margin-bottom: .6em; }
+.prv11-note p { display: flex; gap: 1em; justify-content: space-between; padding: .35em 0; border-bottom: 1px dashed var(--line-strong); }
+.prv11-note p span { color: var(--ink-soft); }
+.prv11-note p b { font-family: var(--serif); font-weight: 400; font-style: italic; }
+.prv11-note .prv11-you b { color: var(--accent-hot); font-style: normal; font-weight: 700; font-family: var(--sans); }
+.prv11-stamp { position: absolute; right: 1em; bottom: .6em; padding: .1em .5em; border: 3px solid var(--danger); border-radius: 6px; color: var(--danger); font-weight: 800; font-size: 1.3em; transform: rotate(-8deg) scale(2); opacity: 0; transition: transform .35s cubic-bezier(.3,1.6,.5,1), opacity .2s; background: var(--bg); }
+.prv11-stamp.on { transform: rotate(-8deg) scale(1); opacity: 1; }
+
+/* Scatter and grow, or hold on and shrink */
+.prv11-sprout { transform-box: fill-box; transform-origin: 50% 100%; transform: scaleY(0); transition: transform 1s ease; transition-delay: calc(var(--k) * 150ms + 900ms); }
+.slide.active .prv11-sprout { transform: scaleY(1); }
+.prv11-seed { opacity: 0; }
+.slide.active .prv11-seed { animation: prv11-throw 1s ease-out forwards; animation-delay: calc(var(--k) * 120ms + 200ms); }
+@keyframes prv11-throw { 0% { opacity: 1; transform: translate(0, 0); } 100% { opacity: 0; transform: translate(var(--x), 70px); } }
+.prv11-sack { transform-box: fill-box; transform-origin: 50% 100%; transition: transform 2.4s ease .8s; }
+.slide.active .prv11-sack { transform: scale(.62); }
+.prv11-give text { font-size: 19px; }
+
+/* A branch putting out leaves */
+.prv11-leaf { transform-box: fill-box; transform-origin: 0% 100%; transform: scale(0); transition: transform .7s cubic-bezier(.3,1.5,.5,1); transition-delay: calc(var(--k) * 160ms + 500ms); }
+.slide.active .prv11-leaf { transform: scale(1); }
+.prv11-coin { transform-box: fill-box; transform-origin: center; transition: transform 1.6s cubic-bezier(.5,0,.8,.4), opacity 1.6s ease; transition-delay: calc(var(--k) * 140ms + 600ms); }
+.slide.active .prv11-coin { transform: translateY(110px) rotate(calc(var(--k) * 9deg - 18deg)); opacity: .3; }
+
+/* The chapter stacked into bins (a bar chart made of verse numbers) */
+.prv11-bins { display: grid; grid-template-columns: repeat(4, 1fr); gap: .8rem; align-items: end; margin: .4em 0 1em; }
+.prv11-bin { display: flex; flex-direction: column-reverse; align-items: stretch; gap: 3px; }
+.prv11-bin i { font-style: normal; text-align: center; padding: .12em 0; border-radius: 4px; font-size: clamp(.72rem, .66rem + .3vw, .95rem); font-weight: 700; background: color-mix(in srgb, var(--accent) 16%, transparent); border: 1px solid color-mix(in srgb, var(--accent) 45%, transparent); opacity: 0; transform: translateY(-10px); transition: opacity .4s ease, transform .4s ease; transition-delay: calc(var(--k) * 60ms + 300ms); }
+.slide.active .prv11-bin i { opacity: 1; transform: none; }
+.prv11-bin h3 { font: 700 clamp(.8rem, .72rem + .4vw, 1.1rem)/1.25 var(--sans); text-align: center; color: var(--accent); padding-top: .4em; border-top: 2px solid var(--line-strong); }
+.prv11-bin.prv11-big i { background: color-mix(in srgb, var(--cool) 18%, transparent); border-color: color-mix(in srgb, var(--cool) 55%, transparent); }
+</style>
+</head>
+<body>
+<main class="deck" id="deck">
+
+<!-- ======================= OPENING ======================= -->
+<section class="slide title">
+  <div class="inner">
+    <div class="emblem rise"></div>
+    <h1 class="rise" style="--d:1">Proverbs 11</h1>
+    <p class="sub rise" style="--d:3">Honest weights and open hands</p>
+    <p class="tag rise" style="--d:5">God cares how a man does business, how he handles a secret, who he listens to, and what he does with what he has.</p>
+  </div>
+</section>
+
+<section class="slide watch">
+  <div class="inner">
+    <h2 class="rise">Things to watch for</h2>
+    <p class="lede rise" style="--d:1">Keep these questions in the back of your mind as we read. We'll come back to every one of them at the end.</p>
+    <ol class="seeds">
+      <li class="step"><span class="topic">Honesty</span><span class="seed-q">Why does God care whether my deals are fair?</span></li>
+      <li class="step"><span class="topic">Pride</span><span class="seed-q">What comes right after pride?</span></li>
+      <li class="step"><span class="topic">The tongue</span><span class="seed-q">What should I do with a secret?</span></li>
+      <li class="step"><span class="topic">Counsel</span><span class="seed-q">Why shouldn't I make big decisions alone?</span></li>
+      <li class="step"><span class="topic">Generosity</span><span class="seed-q">How can a man give and still end up with more?</span></li>
+      <li class="step"><span class="topic">Salvation</span><span class="seed-q">What will hold up in the day of wrath?</span></li>
+    </ol>
+  </div>
+</section>
+
+<!-- ======================= PART ONE ======================= -->
+<section class="slide part">
+  <div class="inner">
+    <p class="part-n rise">Part one</p>
+    <h2 class="rise" style="--d:1">Honest scales</h2>
+    <p class="range rise" style="--d:2">Verses 1–11</p>
+    <p class="hook rise" style="--d:4">God is watching the marketplace, not just the church house.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="1-3" data-hl="A false balance is abomination to the LORD: but a just weight is his delight|When pride cometh, then cometh shame"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="1"></blockquote>
+    <div class="split">
+      <div class="stage">
+        <svg viewBox="0 0 600 340" role="img" aria-label="A merchant's balance tips. Grain sits in one pan and a weight in the other. Below, a bag holds two weights, a heavy one and a light one.">
+          <rect x="292" y="70" width="16" height="200" style="fill:var(--leather-light)"/>
+          <rect x="230" y="268" width="140" height="14" rx="4" style="fill:var(--leather)"/>
+          <g class="prv11-beam">
+            <rect x="110" y="64" width="380" height="12" rx="6" style="fill:var(--leather)"/>
+            <circle cx="300" cy="70" r="11" style="fill:var(--warm)"/>
+            <path d="M120 76 L80 160 M120 76 L160 160 M480 76 L440 160 M480 76 L520 160" stroke-width="2" style="stroke:var(--ink-soft)"/>
+            <path d="M70 160 h100 q-10 30 -50 30 q-40 0 -50 -30 z" style="fill:var(--surface-2);stroke:var(--line-strong)" stroke-width="2"/>
+            <path d="M430 160 h100 q-10 30 -50 30 q-40 0 -50 -30 z" style="fill:var(--surface-2);stroke:var(--line-strong)" stroke-width="2"/>
+            <path d="M88 160 q32 -34 64 0 z" style="fill:var(--warm)"/>
+            <rect x="466" y="136" width="28" height="24" rx="4" style="fill:var(--ink-soft)"/>
+            <text x="120" y="215" text-anchor="middle" font-size="17" style="fill:var(--ink-soft)">your grain</text>
+            <text x="480" y="215" text-anchor="middle" font-size="17" style="fill:var(--ink-soft)">his weight</text>
+          </g>
+          <g class="prv11-bag step">
+            <path d="M40 290 q60 -40 120 0 v40 h-120 z" style="fill:var(--leather-light)"/>
+            <text x="100" y="320" text-anchor="middle" font-size="16" style="fill:var(--on-glow)">his bag</text>
+            <rect x="185" y="292" width="44" height="38" rx="5" style="fill:var(--ink-soft)"/>
+            <text x="207" y="317" text-anchor="middle" font-size="15" font-weight="700" style="fill:var(--bg)">big</text>
+            <rect x="245" y="308" width="30" height="22" rx="4" style="fill:var(--ink-soft)"/>
+            <text x="295" y="325" font-size="16" style="fill:var(--ink)">“divers weights, a great and a small”</text>
+          </g>
+        </svg>
+      </div>
+      <div>
+        <h2 class="rise" style="--d:1">A thumb on the scale</h2>
+        <p class="note rise" style="--d:2">Goods were weighed on a balance against stones of a set weight. A crooked merchant kept two stones in his bag: a heavy one for buying, a light one for selling (Deuteronomy 25:13 forbids it).</p>
+        <p class="note step">God calls that an <em>“abomination”</em>, something He finds disgusting. An honest weight is <em>“his delight.”</em> Shorting a customer, padding your hours, selling junk as good: God sees it. And an honest day's dealing pleases Him.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="2"></blockquote>
+    <p class="saying rise" style="--d:1">First <em>pride</em>. Then shame.</p>
+    <p class="note rise" style="--d:2">In Hebrew the two words even sound alike, <span class="gk">zadon</span> and <span class="gk">qalon</span>. Pride walks in the door, and shame is right behind it. Solomon says the same thing later:</p>
+    <blockquote class="quote step"><p>“Pride goeth before destruction, and an haughty spirit before a fall.”</p><cite>Proverbs 16:18</cite></blockquote>
+    <p class="note step">But <em>“with the lowly is wisdom.”</em> The humble man, the one who can say “I was wrong” and “I need help,” is the one who keeps learning. A lot of us had to hit bottom to get low enough to listen. Staying there on purpose is wisdom.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="4-6" data-hl="Riches profit not in the day of wrath: but righteousness delivereth from death|taken in their own naughtiness"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="4" data-hl="the day of wrath"></blockquote>
+    <h2 class="rise" style="--d:1">Money can't buy you out of this</h2>
+    <div class="pair">
+      <div class="scroll rise" style="--d:2"><p class="ref">Proverbs 10:2</p><p class="kjv">Treasures of wickedness profit nothing: but <mark>righteousness delivereth from death</mark>.</p></div>
+      <div class="scroll step"><p class="ref">Proverbs 11:4</p><p class="kjv">Riches profit not in the day of wrath: but <mark>righteousness delivereth from death</mark>.</p></div>
+    </div>
+    <p class="note step">Solomon says it twice, word for word. Money can get you out of a lot of things. It can't get you out of standing before God. Only righteousness can, and that's the righteousness God gives through faith in Jesus, “who of God is made unto us wisdom, and righteousness, and sanctification, and redemption” (1 Corinthians 1:30).</p>
+    <p class="note step">Old word in verse 6: <em>“naughtiness”</em> isn't cute mischief. In 1611 it meant real wickedness. The wicked get caught in their own trap.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="7-9" data-hl="The righteous is delivered out of trouble, and the wicked cometh in his stead|An hypocrite with his mouth destroyeth his neighbour"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="8"></blockquote>
+    <h2 class="rise" style="--d:1">The trap snaps the other way</h2>
+    <p class="note rise" style="--d:2">The book of Esther tells a story just like this. Haman built a gallows to hang Mordecai, a righteous Jew. By the end of the story, Haman was hanged on it himself (Esther 7).</p>
+    <p class="note step">That doesn't always happen on our timetable. But again and again the man digging a pit for someone else ends up falling into it.</p>
+    <p class="note step">Verse 9 shows the weapon: <em>“with his mouth.”</em> The hypocrite wrecks his neighbor with words, with flattery and lies. The righteous get out through <em>“knowledge”</em>: knowing the truth, and seeing through the talk.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="10-11" data-hl="the city rejoiceth|By the blessing of the upright the city is exalted"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="11"></blockquote>
+    <div class="split">
+      <div class="stage">
+        <svg class="prv11-ripple" viewBox="0 0 520 380" role="img" aria-label="Rings spreading out from one man: his own life, his house, his neighbor, the whole city.">
+          <circle style="--k:3;stroke:var(--line-strong)" cx="260" cy="190" r="180"/>
+          <circle style="--k:2;stroke:var(--line-strong)" cx="260" cy="190" r="130"/>
+          <circle style="--k:1;stroke:var(--line-strong)" cx="260" cy="190" r="82"/>
+          <circle style="--k:0;stroke:var(--accent);fill:color-mix(in srgb, var(--accent) 22%, transparent)" cx="260" cy="190" r="38"/>
+          <text x="260" y="197" text-anchor="middle" font-weight="700">you</text>
+          <text class="prv11-lab" style="--k:1" x="260" y="135" text-anchor="middle">your house (29)</text>
+          <text class="prv11-lab" style="--k:2" x="260" y="83" text-anchor="middle">your neighbour (9, 12)</text>
+          <text class="prv11-lab" style="--k:3" x="260" y="34" text-anchor="middle">the city (10, 11)</text>
+        </svg>
+      </div>
+      <div>
+        <h2 class="rise" style="--d:1">Nobody sins alone</h2>
+        <p class="note rise" style="--d:2">A good man is a blessing to his whole town. When the wicked go down, people cheer. Your life sends out ripples, whether you want it to or not.</p>
+        <p class="note step">That's sobering for a man who has hurt people. But it works the other way too. Every day you live upright, the ripples are blessing your house, your neighbors, your town.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ======================= PART TWO ======================= -->
+<section class="slide part">
+  <div class="inner">
+    <p class="part-n rise">Part two</p>
+    <h2 class="rise" style="--d:1">Secrets, counsel, and kindness</h2>
+    <p class="range rise" style="--d:2">Verses 12–22</p>
+    <p class="hook rise" style="--d:4">Who you talk about, who you listen to, and who you sign for.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="12-14" data-hl="a man of understanding holdeth his peace|A talebearer revealeth secrets|in the multitude of counsellors there is safety"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="13"></blockquote>
+    <h2 class="rise" style="--d:1">What happens in the group…</h2>
+    <div class="columns">
+      <div class="col law rise" style="--d:2">
+        <p class="who">The talebearer</p>
+        <h3>“revealeth secrets”</h3>
+        <p>He goes from house to house with the latest. Tell him something, and it'll be all over town by dark.</p>
+      </div>
+      <div class="col grace step">
+        <p class="who">A faithful spirit</p>
+        <h3>“concealeth the matter”</h3>
+        <p>You can trust him with your worst. It stops with him.</p>
+      </div>
+    </div>
+    <p class="note step">A group like ours only works if what's shared here stays here. Verse 12 adds: the man of understanding <em>“holdeth his peace.”</em> He doesn't run his neighbor down, even when he could.</p>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="14"></blockquote>
+    <div class="split">
+      <div class="stage">
+        <svg class="prv11-ring" viewBox="0 0 440 360" role="img" aria-label="A man alone in the middle. Then a ring of counsellors around him lights up and connects to him.">
+          <g class="prv11-lines" stroke-width="2" style="stroke:var(--accent)">
+            <line x1="220" y1="180" x2="220" y2="50"/><line x1="220" y1="180" x2="333" y2="115"/><line x1="220" y1="180" x2="333" y2="245"/>
+            <line x1="220" y1="180" x2="220" y2="310"/><line x1="220" y1="180" x2="107" y2="245"/><line x1="220" y1="180" x2="107" y2="115"/>
+          </g>
+          <circle class="prv11-c" style="--k:0" cx="220" cy="50" r="24"/>
+          <circle class="prv11-c" style="--k:1" cx="333" cy="115" r="24"/>
+          <circle class="prv11-c" style="--k:2" cx="333" cy="245" r="24"/>
+          <circle class="prv11-c" style="--k:3" cx="220" cy="310" r="24"/>
+          <circle class="prv11-c" style="--k:4" cx="107" cy="245" r="24"/>
+          <circle class="prv11-c" style="--k:5" cx="107" cy="115" r="24"/>
+          <circle cx="220" cy="180" r="36" style="fill:var(--accent)"/>
+          <text x="220" y="187" text-anchor="middle" font-weight="700" style="fill:var(--on-accent)">you</text>
+          <text class="prv11-alone" x="220" y="352" text-anchor="middle" font-size="19" style="fill:var(--danger)">alone: “the people fall”</text>
+          <text class="prv11-safe" x="220" y="352" text-anchor="middle" font-size="19" style="fill:var(--accent-hot)">“there is safety”</text>
+        </svg>
+      </div>
+      <div>
+        <h2 class="rise" style="--d:1">Don't decide alone</h2>
+        <p class="note rise" style="--d:2">The worst decisions most of us ever made, we made alone, or with only the voices that told us what we wanted to hear.</p>
+        <p class="note step prv11-go">Wisdom surrounds itself with counsel: a pastor, a sponsor, an older believer, the brothers in this room. Before the big move (the job, the money, the relationship), you run it past people who love you enough to say no.</p>
+        <p class="note step">There's safety in many counsellors because no one man sees everything, least of all the man in the middle of it.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="slide verse" data-v="15-17" data-hl="He that is surety for a stranger shall smart for it|The merciful man doeth good to his own soul"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="15" data-hl="surety for a stranger shall smart for it"></blockquote>
+    <h2 class="rise" style="--d:1">Co-signing for a stranger</h2>
+    <div class="prv11-note rise" style="--d:2" aria-label="A loan paper. Borrower: a stranger. Surety: you. Stamped: you pay.">
+      <h3>Promissory note</h3>
+      <p><span>Lender</span><b>a man in town</b></p>
+      <p><span>Borrower</span><b>“a stranger”</b></p>
+      <p class="prv11-you"><span>Surety (if he doesn't pay)</span><b>you</b></p>
+      <span class="prv11-stamp step">YOU PAY</span>
+    </div>
+    <p class="note step">To be <em>“surety”</em> was to put up a pledge, shake on it, and promise to pay another man's debt if he didn't. Today we'd call it co-signing. To <em>“smart”</em> is to get hurt.</p>
+    <p class="note step">This isn't a ban on helping people. It's a warning against promising what you can't cover, for someone you don't really know. Proverbs warns about this again and again (6:1–5, 17:18, 22:26). Give if you can. Don't sign away your family's rent.</p>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="16-17" data-hl="A gracious woman retaineth honour|The merciful man doeth good to his own soul|troubleth his own flesh"></blockquote>
+    <h2 class="rise" style="--d:1">Kindness pays its own wages</h2>
+    <p class="note rise" style="--d:2">Verse 16 sets two kinds of strength side by side. Strong, ruthless men grab and keep <em>riches</em>. A gracious woman keeps something better: <em>honour</em>. Grace wins what force can't.</p>
+    <p class="note step">Verse 17: mercy comes back around to the man who shows it. Cruelty does too. A hard, bitter man is hurting <em>“his own flesh”</em> first: his own body, his own peace, his own family.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="18-20" data-hl="to him that soweth righteousness shall be a sure reward|They that are of a froward heart are abomination to the LORD|his delight"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="20"></blockquote>
+    <h2 class="rise" style="--d:1">What God can't stand, and what He loves</h2>
+    <p class="note rise" style="--d:2">The chapter uses the same pair twice. Look at what God calls an <em>abomination</em>, and what He calls <em>His delight</em>:</p>
+    <div class="columns">
+      <div class="col law step">
+        <p class="who">“Abomination to the LORD”</p>
+        <p>a false balance (11:1)</p>
+        <p>a froward (twisted) heart (11:20)</p>
+      </div>
+      <div class="col grace step">
+        <p class="who">“His delight”</p>
+        <p>a just weight (11:1)</p>
+        <p>such as are upright in their way (11:20)</p>
+      </div>
+    </div>
+    <p class="note step">The God of the universe takes <em>delight</em> in an honest man walking straight. Your ordinary, upright Tuesday makes Him glad. And verse 18 adds: the man who <em>sows</em> righteousness has <em>“a sure reward.”</em> The wicked man's paycheck is fake.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="21-22" data-hl="Though hand join in hand, the wicked shall not be unpunished|As a jewel of gold in a swine’s snout"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="22"></blockquote>
+    <p class="saying rise" style="--d:1">A gold ring in a <em>pig's</em> nose.</p>
+    <p class="note rise" style="--d:2">Women wore gold rings in their noses as jewelry. Picture one on a hog rooting in the mud. To Israel, a pig was an unclean animal. The gold doesn't make the pig beautiful; the pig ruins the gold.</p>
+    <p class="note step"><em>“Discretion”</em> means good sense, good taste, good judgment. Good looks without it are wasted. That's true of a woman and of a man. Whatever God has given you (looks, strength, smarts, charm), without wisdom it ends up in the mud.</p>
+    <p class="note step">Verse 21's <em>“hand join in hand”</em> means even if the wicked team up and shake on it, they still won't get away with it.</p>
+  </div>
+</section>
+
+<!-- ======================= PART THREE ======================= -->
+<section class="slide part">
+  <div class="inner">
+    <p class="part-n rise">Part three</p>
+    <h2 class="rise" style="--d:1">Open hands</h2>
+    <p class="range rise" style="--d:2">Verses 23–31</p>
+    <p class="hook rise" style="--d:4">The upside-down math of generosity.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="23-25" data-hl="There is that scattereth, and yet increaseth|The liberal soul shall be made fat: and he that watereth shall be watered also himself"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="24"></blockquote>
+    <div class="split">
+      <div class="stage">
+        <svg class="prv11-give" viewBox="0 0 600 330" role="img" aria-label="On the left, a hand throws seed and a field of plants springs up. On the right, a man holds tight to a sack, and it shrinks.">
+          <line x1="20" y1="260" x2="580" y2="260" stroke-width="3" style="stroke:var(--line-strong)"/>
+          <line x1="300" y1="30" x2="300" y2="290" stroke-width="1.5" stroke-dasharray="5 6" style="stroke:var(--line-strong)"/>
+          <path d="M56 112 q-6 -34 26 -40 q32 6 26 40 q-4 18 -26 18 q-22 0 -26 -18 z" style="fill:var(--leather-light)"/>
+          <path d="M70 74 q12 8 24 0" fill="none" stroke-width="3" style="stroke:var(--leather)"/>
+          <text x="82" y="152" text-anchor="middle" font-size="15" style="fill:var(--ink-soft)">seed</text>
+          <g style="fill:var(--warm)">
+            <circle class="prv11-seed" style="--k:0;--x:30px" cx="96" cy="104" r="5"/>
+            <circle class="prv11-seed" style="--k:1;--x:75px" cx="96" cy="104" r="5"/>
+            <circle class="prv11-seed" style="--k:2;--x:120px" cx="96" cy="104" r="5"/>
+            <circle class="prv11-seed" style="--k:3;--x:165px" cx="96" cy="104" r="5"/>
+          </g>
+          <g stroke-width="4" stroke-linecap="round" style="stroke:var(--accent);fill:var(--accent)">
+            <path class="prv11-sprout" style="--k:0" d="M80 260 v-60 m0 20 q-14 -6 -18 -20 m18 30 q14 -6 18 -20"/>
+            <path class="prv11-sprout" style="--k:1" d="M130 260 v-90 m0 30 q-16 -6 -20 -22 m20 40 q16 -6 20 -22"/>
+            <path class="prv11-sprout" style="--k:2" d="M180 260 v-110 m0 30 q-16 -6 -20 -24 m20 46 q16 -6 20 -24"/>
+            <path class="prv11-sprout" style="--k:3" d="M230 260 v-130 m0 34 q-18 -6 -22 -26 m22 50 q18 -6 22 -26"/>
+          </g>
+          <text x="150" y="295" text-anchor="middle" style="fill:var(--accent-hot)">“scattereth, and yet increaseth”</text>
+          <g class="prv11-sack">
+            <path d="M400 260 q-40 0 -40 -60 q0 -50 50 -70 l-12 -18 h44 l-12 18 q50 20 50 70 q0 60 -40 60 z" style="fill:var(--leather-light)"/>
+            <path d="M398 112 h44" stroke-width="4" style="stroke:var(--leather)"/>
+          </g>
+          <text x="450" y="295" text-anchor="middle" style="fill:var(--danger)">“withholdeth… tendeth to poverty”</text>
+        </svg>
+      </div>
+      <div>
+        <h2 class="rise" style="--d:1">God's upside-down math</h2>
+        <p class="note rise" style="--d:2">The farmer who throws his seed away ends up with a field. The man who clutches every kernel ends up with less every year.</p>
+        <p class="note step"><em>“The liberal soul”</em> is the generous man. <em>“Made fat”</em> means well fed, refreshed. Water other people's dry ground, and you'll find yourself watered.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="25"></blockquote>
+    <h2 class="rise" style="--d:1">Generosity, not a gimmick</h2>
+    <p class="note rise" style="--d:2">Some preachers turn verses like this into a deal: send money, get rich. That's not what this says. God isn't a slot machine. But the pattern is real:</p>
+    <blockquote class="quote step"><p>“But this I say, He which soweth sparingly shall reap also sparingly; and he which soweth bountifully shall reap also bountifully. Every man according as he purposeth in his heart, so let him give; not grudgingly, or of necessity: for God loveth a cheerful giver.”</p><cite>2 Corinthians 9:6–7</cite></blockquote>
+    <p class="note step">Addiction makes a man a taker: everything goes toward the next fix. Generosity is one of the clearest signs God is changing him. Start small. Buy a brother lunch. Give your time. Help someone move. Watch what God does with an open hand.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="26-28" data-hl="He that withholdeth corn, the people shall curse him|He that trusteth in his riches shall fall: but the righteous shall flourish as a branch"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="28"></blockquote>
+    <div class="split">
+      <div class="stage">
+        <svg viewBox="0 0 600 300" role="img" aria-label="Coins fall away on one side. On the other, a branch puts out leaves.">
+          <g style="fill:var(--warm)">
+            <ellipse class="prv11-coin" style="--k:0" cx="90" cy="70" rx="26" ry="9"/>
+            <ellipse class="prv11-coin" style="--k:1" cx="90" cy="88" rx="26" ry="9"/>
+            <ellipse class="prv11-coin" style="--k:2" cx="90" cy="106" rx="26" ry="9"/>
+            <ellipse class="prv11-coin" style="--k:3" cx="90" cy="124" rx="26" ry="9"/>
+            <ellipse class="prv11-coin" style="--k:4" cx="90" cy="142" rx="26" ry="9"/>
+          </g>
+          <text x="90" y="285" text-anchor="middle" font-size="19" style="fill:var(--danger)">“shall fall”</text>
+          <path d="M240 250 C 320 230, 380 170, 560 90" fill="none" stroke-width="10" stroke-linecap="round" style="stroke:var(--leather-light)"/>
+          <g style="fill:var(--accent)">
+            <path class="prv11-leaf" style="--k:0" d="M300 232 q10 -40 46 -44 q-6 38 -46 44 z"/>
+            <path class="prv11-leaf" style="--k:1" d="M350 206 q-30 -24 -20 -58 q34 18 20 58 z"/>
+            <path class="prv11-leaf" style="--k:2" d="M400 180 q12 -40 50 -42 q-8 38 -50 42 z"/>
+            <path class="prv11-leaf" style="--k:3" d="M450 152 q-28 -26 -16 -60 q32 20 16 60 z"/>
+            <path class="prv11-leaf" style="--k:4" d="M500 124 q14 -38 52 -38 q-10 36 -52 38 z"/>
+          </g>
+          <text x="420" y="285" text-anchor="middle" font-size="19" style="fill:var(--accent-hot)">“flourish as a branch”</text>
+        </svg>
+      </div>
+      <div>
+        <h2 class="rise" style="--d:1">Riches fall. Branches grow.</h2>
+        <p class="note rise" style="--d:2">Money is something you hold. A branch is something alive, connected to a root. One can slip through your fingers; the other keeps growing.</p>
+        <p class="note step">Verse 26: a man hoards grain in a famine, waiting for the price to climb. People curse him for it.</p>
+      </div>
+    </div>
+    <blockquote class="quote step"><p>“I am the vine, ye are the branches: He that abideth in me, and I in him, the same bringeth forth much fruit: for without me ye can do nothing.”</p><cite>John 15:5</cite></blockquote>
+  </div>
+</section>
+
+<section class="slide verse" data-v="29-31" data-hl="shall inherit the wind|The fruit of the righteous is a tree of life; and he that winneth souls is wise"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="30"></blockquote>
+    <h2 class="rise" style="--d:1">A wise man wins people</h2>
+    <p class="note rise" style="--d:2">A good man's life is like <em>“a tree of life”</em>: people come to it and are fed. And <em>“he that winneth souls is wise.”</em> In Hebrew that's literally <em>takes</em> or <em>captures</em> souls: the wise man wins people over and draws them toward life.</p>
+    <p class="note step">For us, the greatest way to do that is to point a man to Jesus. You don't need a seminary degree. You need a changed life and the willingness to say what He's done for you.</p>
+    <p class="note step">Verse 29 is the opposite picture: a man who brings trouble on his own family <em>“shall inherit the wind.”</em> All that work, and he ends up holding air.</p>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="31"></blockquote>
+    <h2 class="rise" style="--d:1">God settles accounts</h2>
+    <p class="note rise" style="--d:2">If God disciplines His own people here on earth, how much more will the wicked face Him? Peter picks up this verse:</p>
+    <blockquote class="quote step"><p>“And if the righteous scarcely be saved, where shall the ungodly and the sinner appear?”</p><cite>1 Peter 4:18</cite></blockquote>
+    <p class="note step">“Scarcely” doesn't mean we barely squeak in. It means salvation is no small thing: it took the cross. Nobody gets in on their own. That's why the only safe place to stand on that day is in Christ.</p>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise">Chapter 11 in piles</h2>
+    <div class="prv11-bins" aria-label="The 31 verses sorted: 14 about the righteous and the wicked, 7 about money and giving, 6 about character and counsel, 4 about the tongue.">
+      <div class="prv11-bin prv11-big"><h3>Righteous and wicked</h3><i style="--k:0">3</i><i style="--k:1">5</i><i style="--k:2">6</i><i style="--k:3">7</i><i style="--k:4">8</i><i style="--k:5">10</i><i style="--k:6">18</i><i style="--k:7">19</i><i style="--k:8">20</i><i style="--k:9">21</i><i style="--k:10">23</i><i style="--k:11">27</i><i style="--k:12">30</i><i style="--k:13">31</i></div>
+      <div class="prv11-bin"><h3>Money and giving</h3><i style="--k:0">1</i><i style="--k:1">4</i><i style="--k:2">15</i><i style="--k:3">24</i><i style="--k:4">25</i><i style="--k:5">26</i><i style="--k:6">28</i></div>
+      <div class="prv11-bin"><h3>Pride, kindness, counsel</h3><i style="--k:0">2</i><i style="--k:1">14</i><i style="--k:2">16</i><i style="--k:3">17</i><i style="--k:4">22</i><i style="--k:5">29</i></div>
+      <div class="prv11-bin"><h3>The tongue</h3><i style="--k:0">9</i><i style="--k:1">11</i><i style="--k:2">12</i><i style="--k:3">13</i></div>
+    </div>
+    <p class="note step">Chapter 10 leaned on the tongue. Chapter 11 leans on <em>character</em>: honest dealing, an open hand, and a heart that's straight with God. Different piles, one big idea: the righteous and the wicked are walking two different roads, and the roads end in two different places.</p>
+  </div>
+</section>
+
+<!-- ======================= CLOSING ======================= -->
+<section class="slide remember">
+  <div class="inner">
+    <h2 class="rise">Points to remember</h2>
+    <ol class="seeds">
+      <li class="step"><span class="topic">Honesty</span><span class="seed-q">“A just weight is his delight” <cite>11:1</cite></span><span class="take">God watches how you do business, and an honest deal makes Him glad.</span></li>
+      <li class="step"><span class="topic">Pride</span><span class="seed-q">“When pride cometh, then cometh shame” <cite>11:2</cite></span><span class="take">Shame follows pride in the door. Stay low, and keep learning.</span></li>
+      <li class="step"><span class="topic">The tongue</span><span class="seed-q">“A faithful spirit concealeth the matter” <cite>11:13</cite></span><span class="take">Be the man a secret stops with.</span></li>
+      <li class="step"><span class="topic">Counsel</span><span class="seed-q">“In the multitude of counsellors there is safety” <cite>11:14</cite></span><span class="take">Run the big decisions past people who love you enough to say no.</span></li>
+      <li class="step"><span class="topic">Generosity</span><span class="seed-q">“He that watereth shall be watered also himself” <cite>11:25</cite></span><span class="take">An open hand gets refilled. A clenched fist just gets tired.</span></li>
+      <li class="step"><span class="topic">Salvation</span><span class="seed-q">“Righteousness delivereth from death” <cite>11:4</cite></span><span class="take">Money can't buy you out. The righteousness Christ gives can.</span></li>
+    </ol>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 1 of 6</p>
+      <span class="topic">Honesty</span>
+      <h2>Why does God care whether my deals are fair?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="1"></blockquote>
+      <blockquote class="quote step"><p>“Thou shalt not have in thy bag divers weights, a great and a small.”</p><cite>Deuteronomy 25:13</cite></blockquote>
+      <blockquote class="quote step" data-q="3"></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>Because cheating someone is lying with your hands, and it wrongs your neighbor. God calls a false balance an abomination and an honest one His delight. Our faith isn't just for Sunday; it shows up in how we work, buy, sell, and keep our word. Integrity guides the upright man.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 2 of 6</p>
+      <span class="topic">Pride</span>
+      <h2>What comes right after pride?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="2"></blockquote>
+      <blockquote class="quote step"><p>“Pride goeth before destruction, and an haughty spirit before a fall.”</p><cite>Proverbs 16:18</cite></blockquote>
+      <blockquote class="quote step" data-q="12" data-hl="a man of understanding holdeth his peace"></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>Shame. Pride walks in, and shame is right on its heels. But wisdom is “with the lowly”: the humble man can admit he's wrong, ask for help, and keep learning. Humility isn't thinking you're worthless. It's being honest about who you are before God.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 3 of 6</p>
+      <span class="topic">The tongue</span>
+      <h2>What should I do with a secret?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="13"></blockquote>
+      <blockquote class="quote step" data-q="9"></blockquote>
+      <blockquote class="quote step" data-q="12"></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>Keep it. A talebearer spreads what he hears; a man with “a faithful spirit” lets it stop with him. Words can destroy a neighbor, so the man of understanding holds his peace. (The exception is when someone is in danger. Then love gets help.)</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 4 of 6</p>
+      <span class="topic">Counsel</span>
+      <h2>Why shouldn't I make big decisions alone?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="14"></blockquote>
+      <blockquote class="quote step" data-q="15"></blockquote>
+      <blockquote class="quote step"><p>“If any of you lack wisdom, let him ask of God, that giveth to all men liberally, and upbraideth not; and it shall be given him.”</p><cite>James 1:5</cite></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>Because no one man sees everything, least of all the man in the middle of it. Where there's no counsel, people fall; with many counsellors there's safety. Pray first, then run it past a pastor, a sponsor, the brothers who'll tell you the truth. It could save you from a promise like co-signing for a stranger.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 5 of 6</p>
+      <span class="topic">Generosity</span>
+      <h2>How can a man give and still end up with more?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="24"></blockquote>
+      <blockquote class="quote step" data-q="25"></blockquote>
+      <blockquote class="quote step"><p>“But this I say, He which soweth sparingly shall reap also sparingly; and he which soweth bountifully shall reap also bountifully. Every man according as he purposeth in his heart, so let him give; not grudgingly, or of necessity: for God loveth a cheerful giver.”</p><cite>2 Corinthians 9:6–7</cite></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>Like a farmer scattering seed: what he lets go of comes back as a harvest. The generous man is refreshed; the man who waters others gets watered. It's not a get-rich deal with God. It's how His world works, and God loves a cheerful giver.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 6 of 6</p>
+      <span class="topic">Salvation</span>
+      <h2>What will hold up in the day of wrath?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="4"></blockquote>
+      <blockquote class="quote step" data-q="28"></blockquote>
+      <blockquote class="quote step"><p>“But of him are ye in Christ Jesus, who of God is made unto us wisdom, and righteousness, and sanctification, and redemption:”</p><cite>1 Corinthians 1:30</cite></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>Not money. Riches can't buy anyone out on the day we stand before God. Righteousness delivers from death, and Christ Himself is made our righteousness when we trust Him. The man who trusts his riches falls; the man rooted in Christ flourishes like a branch.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide prayer">
+  <div class="inner">
+    <div class="emblem rise"></div>
+    <h2 class="rise">Prayer requests</h2>
+    <p class="ask-line rise" style="--d:1">What can we pray about for you today?</p>
+    <blockquote class="quote rise" style="--d:3"><p>“Confess your faults one to another, and pray one for another, that ye may be healed. The effectual fervent prayer of a righteous man availeth much.”</p><cite>James 5:16</cite></blockquote>
+  </div>
+</section>
+
+</main>
+
+<script>
+// King James Version, Proverbs chapter 11
+const V = {
+  1: "A false balance is abomination to the LORD: but a just weight is his delight.",
+  2: "When pride cometh, then cometh shame: but with the lowly is wisdom.",
+  3: "The integrity of the upright shall guide them: but the perverseness of transgressors shall destroy them.",
+  4: "Riches profit not in the day of wrath: but righteousness delivereth from death.",
+  5: "The righteousness of the perfect shall direct his way: but the wicked shall fall by his own wickedness.",
+  6: "The righteousness of the upright shall deliver them: but transgressors shall be taken in their own naughtiness.",
+  7: "When a wicked man dieth, his expectation shall perish: and the hope of unjust men perisheth.",
+  8: "The righteous is delivered out of trouble, and the wicked cometh in his stead.",
+  9: "An hypocrite with his mouth destroyeth his neighbour: but through knowledge shall the just be delivered.",
+  10: "When it goeth well with the righteous, the city rejoiceth: and when the wicked perish, there is shouting.",
+  11: "By the blessing of the upright the city is exalted: but it is overthrown by the mouth of the wicked.",
+  12: "He that is void of wisdom despiseth his neighbour: but a man of understanding holdeth his peace.",
+  13: "A talebearer revealeth secrets: but he that is of a faithful spirit concealeth the matter.",
+  14: "Where no counsel is, the people fall: but in the multitude of counsellors there is safety.",
+  15: "He that is surety for a stranger shall smart for it: and he that hateth suretiship is sure.",
+  16: "A gracious woman retaineth honour: and strong men retain riches.",
+  17: "The merciful man doeth good to his own soul: but he that is cruel troubleth his own flesh.",
+  18: "The wicked worketh a deceitful work: but to him that soweth righteousness shall be a sure reward.",
+  19: "As righteousness tendeth to life: so he that pursueth evil pursueth it to his own death.",
+  20: "They that are of a froward heart are abomination to the LORD: but such as are upright in their way are his delight.",
+  21: "Though hand join in hand, the wicked shall not be unpunished: but the seed of the righteous shall be delivered.",
+  22: "As a jewel of gold in a swine’s snout, so is a fair woman which is without discretion.",
+  23: "The desire of the righteous is only good: but the expectation of the wicked is wrath.",
+  24: "There is that scattereth, and yet increaseth; and there is that withholdeth more than is meet, but it tendeth to poverty.",
+  25: "The liberal soul shall be made fat: and he that watereth shall be watered also himself.",
+  26: "He that withholdeth corn, the people shall curse him: but blessing shall be upon the head of him that selleth it.",
+  27: "He that diligently seeketh good procureth favour: but he that seeketh mischief, it shall come unto him.",
+  28: "He that trusteth in his riches shall fall: but the righteous shall flourish as a branch.",
+  29: "He that troubleth his own house shall inherit the wind: and the fool shall be servant to the wise of heart.",
+  30: "The fruit of the righteous is a tree of life; and he that winneth souls is wise.",
+  31: "Behold, the righteous shall be recompensed in the earth: much more the wicked and the sinner."
+};
+const BOOK = "Proverbs 11";
+</script>
+<script src="../assets/deck.js"></script>
+</body>
+</html>

@@ -1,0 +1,1021 @@
+<!doctype html>
+<html lang="en" data-theme="scribe">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Wisdom in Proverbs</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="../assets/fonts.css">
+<link rel="stylesheet" href="../assets/deck.css">
+<link rel="stylesheet" href="../assets/themes.css">
+<style>
+/* ---- Study graphics for topic-wisdom-proverbs (prefix tw-) ---- */
+
+/* Three words that travel together (knowledge, understanding, wisdom) */
+.tw-triad { display: grid; gap: .8rem; margin: .4em 0 1em; }
+@media (min-width: 760px) { .tw-triad { grid-template-columns: repeat(3, 1fr); } }
+.tw-triad .card { padding: .8em 1em; border: 1.5px solid var(--line-strong); border-radius: 10px; background: var(--surface); }
+.tw-triad .card.top { border: 2px solid var(--accent); background: color-mix(in srgb, var(--accent) 10%, transparent); }
+.tw-triad .he { text-align: left; font-family: var(--serif); font-size: clamp(1.5rem, 1rem + 2vw, 2.6rem); line-height: 1.1; color: var(--accent-hot); }
+.tw-triad .tr { margin-top: .3em; font-family: var(--serif); font-style: italic; color: var(--ink-soft); font-size: clamp(.9rem, .85rem + .3vw, 1.1rem); }
+.tw-triad h3 { font-size: clamp(1.2rem, 1rem + .9vw, 1.7rem); margin: .2em 0 .25em; }
+.tw-triad p { font-size: clamp(.95rem, .88rem + .4vw, 1.2rem); line-height: 1.4; }
+.tw-triad .eg { margin-top: .45em; color: var(--ink-soft); }
+
+/* Old words and what they meant */
+.tw-words { display: grid; grid-template-columns: auto 1fr; gap: .55em 1.4em; margin: .4em 0 1em; align-items: baseline; }
+.tw-words dt { font-family: var(--serif); font-style: italic; color: var(--accent-hot); font-size: clamp(1.2rem, 1rem + 1vw, 1.8rem); }
+.tw-words dd { margin: 0; font-size: clamp(1rem, .9rem + .5vw, 1.35rem); line-height: 1.4; padding-bottom: .5em; border-bottom: 1px solid var(--line); }
+.tw-words dd small { display: block; color: var(--ink-soft); font-size: .8em; }
+
+/* Who Wisdom calls to */
+.tw-chips { display: flex; flex-wrap: wrap; gap: .5rem .7rem; margin: .4em 0 1em; padding: 0; list-style: none; }
+.tw-chips li { padding: .35em .9em; border-radius: 999px; border: 1.5px solid var(--accent); font-size: clamp(1rem, .9rem + .55vw, 1.4rem); }
+.tw-chips li b { font-family: var(--serif); font-weight: 600; color: var(--accent-hot); }
+.tw-chips li span { color: var(--ink-soft); font-size: .85em; margin-left: .35em; }
+
+/* A list of things men chase; wisdom moves to the top */
+.tw-rank { list-style: none; margin: .4em 0 1em; padding: 0; position: relative; height: calc(5 * 2.9rem); max-width: 30rem; }
+.tw-rank li {
+  position: absolute; left: 0; right: 0; top: calc(var(--i) * 2.9rem); height: 2.5rem; display: flex; align-items: center; gap: .8em;
+  padding: 0 1em; border-radius: 8px; border: 1px solid var(--line-strong); background: var(--surface);
+  font-size: clamp(1rem, .92rem + .45vw, 1.3rem); transition: transform 1.2s cubic-bezier(.5,0,.2,1), opacity 1s ease, color 1s ease;
+}
+.tw-rank li i { font-style: normal; color: var(--ink-soft); font-size: .85em; margin-left: auto; }
+.tw-rank li.wis { border: 2px solid var(--accent); font-family: var(--serif); font-weight: 600; color: var(--accent-hot); }
+.ex:has(.tw-rank-go.on) .tw-rank li { transform: translateY(2.9rem); opacity: .5; }
+.ex:has(.tw-rank-go.on) .tw-rank li.wis { transform: translateY(-11.6rem); opacity: 1; background: color-mix(in srgb, var(--accent) 14%, var(--bg)); box-shadow: 0 0 22px color-mix(in srgb, var(--accent) 35%, transparent); }
+
+/* A balance scale that tips toward wisdom */
+.tw-beam, .tw-pan-l, .tw-pan-r { transition: transform 1.6s cubic-bezier(.5,0,.2,1); }
+.tw-beam { transform-box: view-box; transform-origin: 300px 80px; }
+.ex:has(.tw-tip.on) .tw-beam { transform: rotate(12deg); }
+.ex:has(.tw-tip.on) .tw-pan-l { transform: translate(4px, -42px); }
+.ex:has(.tw-tip.on) .tw-pan-r { transform: translate(-4px, 42px); }
+
+/* Sound rings going out from the city gate */
+.tw-ring { transform-box: fill-box; transform-origin: center; opacity: 0; fill: none; stroke: var(--accent); stroke-width: 3; }
+.slide.active .tw-ring { animation: tw-pulse 3.6s ease-out infinite; }
+.slide.active .tw-ring.r2 { animation-delay: 1.2s; }
+.slide.active .tw-ring.r3 { animation-delay: 2.4s; }
+@keyframes tw-pulse { 0% { opacity: .9; transform: scale(.25); } 100% { opacity: 0; transform: scale(1.6); } }
+
+/* A treasure chest that opens */
+.tw-lid { transform-box: view-box; transform-origin: 290px 150px; transition: transform 1.4s cubic-bezier(.4,0,.2,1); }
+.tw-shine { opacity: 0; transition: opacity 1.4s ease .3s; }
+.ex:has(.tw-open.on) .tw-lid { transform: rotate(32deg); }
+.ex:has(.tw-open.on) .tw-shine { opacity: 1; }
+
+/* Two houses: the pit under folly's house shows on a click */
+.tw-pit { opacity: 0; transition: opacity 1.4s ease; }
+.ex:has(.tw-pit-go.on) .tw-pit { opacity: 1; }
+.tw-sweet { transition: opacity 1s ease; }
+.ex:has(.tw-pit-go.on) .tw-sweet { opacity: .35; }
+
+/* Deep waters and a flowing brook */
+.tw-flow { fill: none; stroke: var(--cool); stroke-width: 4; stroke-linecap: round; }
+.slide.active .tw-flow { animation: tw-run 2.4s linear infinite; }
+.tw-flow.f2 { animation-delay: -.8s !important; opacity: .7; }
+.tw-flow.f3 { animation-delay: -1.6s !important; opacity: .45; }
+@keyframes tw-run { from { transform: translateX(0); } to { transform: translateX(-80px); } }
+
+/* Two cups: the full one can't take more */
+.tw-fill { transform-box: fill-box; transform-origin: 50% 100%; transform: scaleY(0); transition: transform 2.6s ease .8s; }
+.slide.active .tw-fill { transform: scaleY(1); }
+.tw-spill { opacity: 0; }
+.slide.active .tw-spill { animation: tw-drip 1.6s ease-in .6s infinite; }
+@keyframes tw-drip { 0% { opacity: 0; transform: translateY(0); } 20% { opacity: 1; } 100% { opacity: 0; transform: translateY(70px); } }
+.tw-stream { stroke-dasharray: 6 8; }
+.slide.active .tw-stream { animation: tw-pour .6s linear infinite; }
+@keyframes tw-pour { to { stroke-dashoffset: -14; } }
+
+/* Eyes on wisdom, or on the ends of the earth */
+.tw-roam { transform-box: view-box; transform-origin: 70px 170px; }
+.slide.active .tw-roam { animation: tw-scan 5s ease-in-out infinite alternate; }
+@keyframes tw-scan { 0% { transform: rotate(-9deg); } 50% { transform: rotate(6deg); } 100% { transform: rotate(-3deg); } }
+
+/* One man drifting away from the group */
+.tw-stray { transition: transform 3s ease; }
+.slide.active .tw-stray { animation: tw-drift 4s ease-in-out .6s forwards; }
+@keyframes tw-drift { to { transform: translate(250px, 40px); } }
+.tw-back { opacity: 0; transition: opacity 1s ease; }
+.ex:has(.tw-home.on) .tw-back { opacity: 1; }
+</style>
+</head>
+<body>
+<main class="deck" id="deck">
+
+<!-- ======================= OPENING ======================= -->
+<section class="slide title">
+  <div class="inner">
+    <div class="emblem rise"></div>
+    <h1 class="rise" style="--d:1">Wisdom</h1>
+    <p class="sub rise" style="--d:3">Skill for living, from the God who gives it</p>
+    <p class="tag rise" style="--d:5">Every verse in Proverbs that says “wisdom,” and the Person it points to.</p>
+  </div>
+</section>
+
+<section class="slide watch">
+  <div class="inner">
+    <h2 class="rise">Things to watch for</h2>
+    <p class="lede rise" style="--d:1">Keep these questions in the back of your mind as we read. We'll come back to every one of them at the end.</p>
+    <ol class="seeds">
+      <li class="step"><span class="topic">The fear of the LORD</span><span class="seed-q">Where does wisdom begin?</span></li>
+      <li class="step"><span class="topic">Wisdom's call</span><span class="seed-q">Who is Wisdom calling out to?</span></li>
+      <li class="step"><span class="topic">What it's worth</span><span class="seed-q">What is wisdom worth?</span></li>
+      <li class="step"><span class="topic">Who Jesus is</span><span class="seed-q">Was Jesus created, or is He the wisdom of God?</span></li>
+      <li class="step"><span class="topic">Two houses</span><span class="seed-q">What is the difference between Wisdom's house and folly's?</span></li>
+      <li class="step"><span class="topic">Daily life</span><span class="seed-q">What does wisdom look like on an ordinary day?</span></li>
+    </ol>
+  </div>
+</section>
+
+<!-- ======================= PART ONE: WHERE WISDOM STARTS ======================= -->
+<section class="slide part">
+  <div class="inner">
+    <p class="part-n rise">Part one</p>
+    <h2 class="rise" style="--d:1">Where wisdom starts</h2>
+    <p class="range rise" style="--d:2">Chapters 1, 2, 9, 15, 21, 30</p>
+    <div class="rule"></div>
+    <p class="hook rise" style="--d:4">Before it's anything else, wisdom is a gift from God.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="1:2-3" data-hl="To know wisdom and instruction|To receive the instruction of wisdom"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="1:2" data-hl="wisdom"></blockquote>
+    <h2 class="rise" style="--d:1">A craftsman's word</h2>
+    <div class="morph">
+      <span class="big rise" style="--d:3" lang="he" dir="rtl">חָכְמָה</span>
+      <span class="say step">said <em class="gk">chokmah</em></span>
+      <span class="means step">skill, know-how, the ability to do a thing well</span>
+    </div>
+    <p class="note step">The Bible uses the same word for the skill of a builder. When God picked a man to build the tabernacle, He said:</p>
+    <blockquote class="quote step"><p>“See, I have called by name Bezaleel the son of Uri, the son of Hur, of the tribe of Judah: And I have filled him with the spirit of God, in wisdom, and in understanding, and in knowledge, and in all manner of workmanship,”</p><cite>Exodus 31:2–3</cite></blockquote>
+    <p class="note step">So wisdom in Proverbs isn't being book-smart. It's <em>skill for living</em>: knowing how to handle your money, your mouth, your temper, and your family the way God designed them to work.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="1:7" data-hl="The fear of the LORD is the beginning of knowledge|fools despise wisdom and instruction"></section>
+<section class="slide verse" data-v="9:10" data-hl="The fear of the LORD is the beginning of wisdom"></section>
+<section class="slide verse" data-v="15:33" data-hl="The fear of the LORD is the instruction of wisdom|before honour is humility"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="9:10" data-hl="The fear of the LORD is the beginning of wisdom"></blockquote>
+    <div class="split">
+      <div class="stage">
+        <svg viewBox="0 0 600 380" role="img" aria-label="A building: the foundation stone is the fear of the LORD, with knowledge, understanding and wisdom built on top of it.">
+          <line x1="10" y1="340" x2="590" y2="340" stroke-width="2" style="stroke:var(--ink-soft)"/>
+          <g class="rise" style="--d:2">
+            <rect x="60" y="280" width="480" height="58" rx="4" style="fill:var(--accent)"/>
+            <text x="300" y="317" text-anchor="middle" font-size="24" font-weight="700" style="fill:var(--on-accent)">the fear of the LORD</text>
+          </g>
+          <g class="step">
+            <rect x="100" y="220" width="400" height="54" rx="4" stroke-width="2" style="fill:var(--surface-2);stroke:var(--line-strong)"/>
+            <text x="300" y="255" text-anchor="middle" font-size="22">knowledge</text>
+            <rect x="140" y="160" width="320" height="54" rx="4" stroke-width="2" style="fill:var(--surface-2);stroke:var(--line-strong)"/>
+            <text x="300" y="195" text-anchor="middle" font-size="22">understanding</text>
+            <path d="M120 154 L300 40 L480 154 Z" stroke-width="2" style="fill:var(--surface-2);stroke:var(--accent)"/>
+            <text x="300" y="128" text-anchor="middle" font-size="26" font-weight="700" class="serif" style="fill:var(--accent-hot)">wisdom</text>
+          </g>
+          <text x="300" y="370" text-anchor="middle" font-size="18" style="fill:var(--ink-soft)">“the beginning”: the first stone laid</text>
+        </svg>
+      </div>
+      <div>
+        <h2 class="rise" style="--d:1">The first stone</h2>
+        <p class="note rise" style="--d:2">The fear of the LORD isn't being scared of God the way you'd be scared of a violent man. It's taking Him seriously: <em>awe, respect, and trust</em> that shape how you live.</p>
+        <p class="note step">“Beginning” means the starting place and the most important part. You can't build the roof first. A smart man who doesn't fear God is building on sand.</p>
+        <p class="note step">And 15:33 adds: “before honour is humility.” The road up starts by bowing down.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="1:2" data-hl="To know wisdom and instruction; to perceive the words of understanding"></blockquote>
+    <h2 class="rise" style="--d:1">Three words that travel together</h2>
+    <div class="tw-triad">
+      <div class="card rise" style="--d:2"><div class="he" lang="he" dir="rtl">דַּעַת</div><div class="tr">da'ath</div><h3>Knowledge</h3><p>Knowing the facts. What is true.</p><p class="eg">A mechanic knows the parts.</p></div>
+      <div class="card step"><div class="he" lang="he" dir="rtl">בִּינָה</div><div class="tr">binah</div><h3>Understanding</h3><p>Seeing how the facts fit together. Telling one thing from another.</p><p class="eg">He understands how the engine runs.</p></div>
+      <div class="card top step"><div class="he" lang="he" dir="rtl">חָכְמָה</div><div class="tr">chokmah</div><h3>Wisdom</h3><p>The skill to do the right thing with what you know.</p><p class="eg">He can actually fix your truck.</p></div>
+    </div>
+    <p class="note step">A man can <em>know</em> drinking is killing him, and <em>understand</em> exactly why he reaches for it, and still not have the skill to walk away. Proverbs wants all three, but wisdom is where it all gets lived out.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="2:6-7" data-hl="For the LORD giveth wisdom|He layeth up sound wisdom for the righteous"></section>
+<section class="slide verse" data-v="2:10" data-hl="When wisdom entereth into thine heart"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="2:6" data-hl="For the LORD giveth wisdom"></blockquote>
+    <h2 class="rise" style="--d:1">Where does wisdom come from?</h2>
+    <ul class="nots">
+      <li class="step"><span class="k">being smart</span><span class="why">plenty of brilliant men wreck their lives</span></li>
+      <li class="step"><span class="k">getting older</span><span class="why">gray hair doesn't guarantee it</span></li>
+      <li class="step"><span class="k">hard knocks alone</span><span class="why">a fool can take the same hit ten times</span></li>
+      <li class="step yes"><span class="k">the LORD giveth wisdom</span><span class="why">“out of his mouth,” through His word</span></li>
+    </ul>
+    <p class="note step">Even Solomon, who wrote most of Proverbs, got his wisdom as a gift: “God gave Solomon wisdom and understanding exceeding much” (1 Kings 4:29). And 2:10 says it has to get past your head and into your <em>heart</em>.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="21:30" data-hl="There is no wisdom nor understanding nor counsel against the LORD"></section>
+<section class="slide verse" data-v="30:3-4" data-hl="I neither learned wisdom|what is his name, and what is his son’s name, if thou canst tell?"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="30:3" data-hl="I neither learned wisdom"></blockquote>
+    <h2 class="rise" style="--d:1">An honest man's question</h2>
+    <p class="note rise" style="--d:2">Chapter 30 comes from a man named Agur. He admits he can't climb up to heaven and figure God out on his own. Nobody can. 21:30 says no wisdom of man can stand against the LORD.</p>
+    <p class="saying step">What is his name, and what is <em>his son's name</em>, if thou canst tell?</p>
+    <p class="note step">Agur couldn't answer that. We can: His Son's name is Jesus. And Jesus said of Himself, “a greater than Solomon is here” (Matthew 12:42). Hold that thought. We'll come back to it in part three.</p>
+  </div>
+</section>
+
+<!-- ======================= PART TWO: WISDOM CALLS OUT ======================= -->
+<section class="slide part">
+  <div class="inner">
+    <p class="part-n rise">Part two</p>
+    <h2 class="rise" style="--d:1">Wisdom calls out</h2>
+    <p class="range rise" style="--d:2">Chapters 1–8, 16–24</p>
+    <div class="rule"></div>
+    <p class="hook rise" style="--d:4">She isn't hiding. She's out in the street, calling your name.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="1:20" data-hl="Wisdom crieth without; she uttereth her voice in the streets"></section>
+<section class="slide verse" data-v="8:1" data-hl="Doth not wisdom cry?"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="1:20" data-hl="she uttereth her voice in the streets"></blockquote>
+    <div class="split">
+      <div class="stage">
+        <svg viewBox="0 0 600 360" role="img" aria-label="A walled city with a gate and streets. Wisdom's voice goes out from the gate in rings across the whole city.">
+          <rect x="30" y="40" width="540" height="270" rx="8" stroke-width="3" style="fill:var(--surface);stroke:var(--line-strong)"/>
+          <g stroke-width="10" stroke-linecap="round" style="stroke:var(--surface-2)">
+            <line x1="300" y1="300" x2="300" y2="60"/><line x1="60" y1="170" x2="540" y2="170"/><line x1="120" y1="80" x2="480" y2="260"/>
+          </g>
+          <g style="fill:var(--surface-2);stroke:var(--line-strong)" stroke-width="1.5">
+            <rect x="70" y="70" width="60" height="40"/><rect x="160" y="200" width="70" height="44"/><rect x="380" y="70" width="80" height="48"/>
+            <rect x="420" y="200" width="70" height="40"/><rect x="90" y="220" width="44" height="50"/><rect x="190" y="90" width="50" height="40"/>
+          </g>
+          <rect x="268" y="292" width="64" height="40" rx="30" style="fill:var(--bg);stroke:var(--ink)" stroke-width="3"/>
+          <circle class="tw-ring" cx="300" cy="210" r="90"/>
+          <circle class="tw-ring r2" cx="300" cy="210" r="90"/>
+          <circle class="tw-ring r3" cx="300" cy="210" r="90"/>
+          <circle cx="300" cy="280" r="10" style="fill:var(--accent-hot)"/>
+          <text x="300" y="355" text-anchor="middle" font-size="18" style="fill:var(--ink-soft)">the gate: where the whole town passed through</text>
+          <text x="560" y="30" text-anchor="end" font-size="18" style="fill:var(--accent-hot)">“in the streets”</text>
+        </svg>
+      </div>
+      <div>
+        <h2 class="rise" style="--d:1">Why is Wisdom a woman?</h2>
+        <p class="note rise" style="--d:2"><span class="gk">Chokmah</span> is a feminine word in Hebrew, so the poet pictures wisdom as a noble woman: an idea described as a person (<em>personification</em>).</p>
+        <p class="note step">She calls in the street and at the gate, <em>where you live</em>. Her rival is the “strange woman” of chapters 5–7. Every man decides whose voice he'll follow.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="slide verse" data-v="8:5" data-hl="O ye simple, understand wisdom"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="8:5" data-hl="O ye simple|ye fools"></blockquote>
+    <h2 class="rise" style="--d:1">Who is she calling?</h2>
+    <ul class="tw-chips">
+      <li class="step"><b>the simple</b><span>1:22, 8:5, 9:4</span></li>
+      <li class="step"><b>fools</b><span>8:5</span></li>
+      <li class="step"><b>scorners</b><span>1:22</span></li>
+      <li class="step"><b>men</b><span>“Unto you, O men, I call” (8:4)</span></li>
+    </ul>
+    <p class="note step">“Simple” doesn't mean stupid. The Hebrew word (<span class="gk">pethi</span>) comes from a word for <em>open</em>: a man who is open to anything, easily talked into things, untrained.</p>
+    <p class="note step">Wisdom isn't calling the men who already have it together. She's calling the ones who don't. If you've been a fool, good news: you're on her list.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="8:12" data-hl="I wisdom dwell with prudence"></section>
+<section class="slide verse" data-v="8:14" data-hl="I have strength"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="8:12" data-hl="prudence|witty inventions"></blockquote>
+    <h2 class="rise" style="--d:1">Old words, plain meanings</h2>
+    <dl class="tw-words">
+      <dt class="step">prudence</dt><dd class="step">Thinking ahead. Seeing trouble coming and stepping around it.<small>“A prudent man foreseeth the evil, and hideth himself” (22:3).</small></dd>
+      <dt class="step">witty inventions</dt><dd class="step">In 1611 “witty” meant <em>clever, skillful</em>, not funny. Wise plans and good ideas.</dd>
+      <dt class="step">sound wisdom</dt><dd class="step">Hebrew <span class="gk">tushiyyah</span>: wisdom that actually works. Good judgment that holds up.<small>Also in 2:7, 3:21, 8:14.</small></dd>
+      <dt class="step">counsel</dt><dd class="step">Advice. A plan you can lean on.</dd>
+    </dl>
+    <p class="note step">And 8:14 ends with “I have strength.” Wisdom isn't weak or soft. It's the strength to do the right thing when everything in you wants the wrong one.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="2:2" data-hl="incline thine ear unto wisdom"></section>
+<section class="slide verse" data-v="4:5" data-hl="Get wisdom, get understanding"></section>
+<section class="slide verse" data-v="4:7" data-hl="Wisdom is the principal thing|with all thy getting get understanding"></section>
+<section class="slide verse" data-v="4:11" data-hl="I have taught thee in the way of wisdom"></section>
+<section class="slide verse" data-v="5:1" data-hl="My son, attend unto my wisdom"></section>
+<section class="slide verse" data-v="7:4" data-hl="Say unto wisdom, Thou art my sister"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="5:1" data-hl="My son"></blockquote>
+    <h2 class="rise" style="--d:1">A father talking to his son</h2>
+    <div class="math rise" style="--d:2">
+      <div><b>23</b><span>times “my son” in Proverbs</span></div>
+      <div><b>4:7</b><span>“the principal thing”</span></div>
+    </div>
+    <p class="note step">Over and over, Proverbs sounds like a dad sitting a young man down. A lot of men never had a father who did that. Some had one who taught them the opposite.</p>
+    <p class="note step">Here, God gives you that talk. <em>“My son, attend unto my wisdom.”</em> He's the Father who stays.</p>
+    <p class="note step">7:4 says to treat wisdom like family: “Thou art my sister.” Keep her close, and the very next verse says why: to “keep thee from the strange woman” (7:5).</p>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="4:7" data-hl="Wisdom is the principal thing; therefore get wisdom"></blockquote>
+    <h2 class="rise" style="--d:1">With all thy getting</h2>
+    <ol class="tw-rank rise" style="--d:2" aria-label="A list of things men chase. Wisdom moves from the bottom to the top.">
+      <li style="--i:0">Money <i>23:4</i></li>
+      <li style="--i:1">Respect <i>13:10</i></li>
+      <li style="--i:2">A woman <i>29:3</i></li>
+      <li style="--i:3">The next high <i>9:17</i></li>
+      <li class="wis" style="--i:4">Wisdom <i>4:7</i></li>
+    </ol>
+    <p class="note step tw-rank-go">“Principal” means <em>first, number one</em>. Most of us had that list upside down. Wisdom says: get this first, and whatever else you go after, go after understanding too.</p>
+    <p class="note step">“Get” is an active word. You don't drift into wisdom. You lean your ear toward it (2:2) and go after it.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="3:13" data-hl="Happy is the man that findeth wisdom"></section>
+<section class="slide verse" data-v="8:11" data-hl="wisdom is better than rubies"></section>
+<section class="slide verse" data-v="16:16" data-hl="How much better is it to get wisdom than gold!"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="16:16" data-hl="better is it to get wisdom than gold"></blockquote>
+    <div class="split">
+      <div class="stage">
+        <svg viewBox="0 0 600 340" role="img" aria-label="A balance scale with gold, silver and rubies on one side and wisdom on the other. The scale tips down toward wisdom.">
+          <path d="M300 80 L300 300 M240 310 L360 310" stroke-width="8" stroke-linecap="round" style="stroke:var(--ink-soft)"/>
+          <g class="tw-beam">
+            <line x1="100" y1="80" x2="500" y2="80" stroke-width="8" stroke-linecap="round" style="stroke:var(--ink)"/>
+          </g>
+          <circle cx="300" cy="80" r="10" style="fill:var(--accent)"/>
+          <g class="tw-pan-l">
+            <path d="M100 80 L50 180 M100 80 L150 180" stroke-width="2" style="stroke:var(--ink-soft)"/>
+            <path d="M40 180 L160 180 Q100 220 40 180 Z" style="fill:var(--surface-2);stroke:var(--ink-soft)" stroke-width="2"/>
+            <circle cx="72" cy="168" r="11" style="fill:var(--warm)"/>
+            <circle cx="98" cy="166" r="11" style="fill:var(--line-strong)"/>
+            <path d="M122 158 l10 -10 l10 10 l-10 14 Z" style="fill:var(--wine)"/>
+            <text x="100" y="246" text-anchor="middle" font-size="20" style="fill:var(--ink-soft)">gold, silver, rubies</text>
+          </g>
+          <g class="tw-pan-r">
+            <path d="M500 80 L450 180 M500 80 L550 180" stroke-width="2" style="stroke:var(--ink-soft)"/>
+            <path d="M440 180 L560 180 Q500 220 440 180 Z" style="fill:var(--surface-2);stroke:var(--accent)" stroke-width="2"/>
+            <path d="M486 172 L500 150 L514 172 Z" style="fill:var(--accent)"/>
+            <text x="500" y="246" text-anchor="middle" font-size="24" font-weight="700" class="serif" style="fill:var(--accent-hot)">wisdom</text>
+          </g>
+        </svg>
+      </div>
+      <div>
+        <h2 class="rise" style="--d:1">Put it on the scale</h2>
+        <p class="note rise" style="--d:2">Rubies, gold, silver: the most valuable things anybody in Solomon's day could hold in his hand.</p>
+        <p class="note step tw-tip">Pile them all on one side. Wisdom still outweighs them. “All the things that may be desired are not to be compared to it” (8:11).</p>
+        <p class="note step">Money can disappear in one bad weekend. Wisdom keeps you from having that weekend.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="slide verse" data-v="19:8" data-hl="He that getteth wisdom loveth his own soul"></section>
+<section class="slide verse" data-v="23:23" data-hl="Buy the truth, and sell it not"></section>
+<section class="slide verse" data-v="24:14" data-hl="thy expectation shall not be cut off"></section>
+<section class="slide verse" data-v="3:21" data-hl="keep sound wisdom and discretion"></section>
+<section class="slide verse" data-v="17:16" data-hl="seeing he hath no heart to it?"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise">You can't buy it with cash</h2>
+    <div class="columns">
+      <div class="col law rise" style="--d:2">
+        <p class="who">17:16</p>
+        <h3>Money in a fool's hand</h3>
+        <p>He can pay for the class. He can buy the books. But “he hath no heart to it.” Wisdom isn't for sale to a man who doesn't want it.</p>
+      </div>
+      <div class="col grace step">
+        <p class="who">23:23</p>
+        <h3>“Buy the truth, and sell it not”</h3>
+        <p>The price is paid in other ways: humility, listening, letting go of your old way. Once you have it, don't trade it back for anything.</p>
+      </div>
+    </div>
+    <p class="note step">19:8: the man who gets wisdom “loveth his own soul.” Going after wisdom isn't selfish. It's finally treating yourself the way God does.</p>
+    <p class="note step">And for any man who thinks his future is already ruined, 24:14: “when thou hast found it, then there shall be a reward, and <em>thy expectation shall not be cut off</em>.” With wisdom, there is still hope ahead of you.</p>
+  </div>
+</section>
+
+<!-- ======================= PART THREE: WISDOM, THE MAKER, AND TWO HOUSES ======================= -->
+<section class="slide part">
+  <div class="inner">
+    <p class="part-n rise">Part three</p>
+    <h2 class="rise" style="--d:1">Wisdom and the Maker</h2>
+    <p class="range rise" style="--d:2">Chapters 3, 8, 9, 24</p>
+    <div class="rule"></div>
+    <p class="hook rise" style="--d:4">The wisdom that built the world, and two houses with their doors open.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="3:19" data-hl="The LORD by wisdom hath founded the earth"></section>
+<section class="slide verse" data-v="24:3" data-hl="Through wisdom is an house builded"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise">The same tools, two building jobs</h2>
+    <div class="pair">
+      <div class="scroll rise" style="--d:2"><p class="ref">Proverbs 3:19</p><p class="kjv">The LORD <mark>by wisdom</mark> hath founded the earth; <mark>by understanding</mark> hath he established the heavens.</p></div>
+      <div class="scroll step"><p class="ref">Proverbs 24:3</p><p class="kjv"><mark>Through wisdom</mark> is an house builded; and <mark>by understanding</mark> it is established:</p></div>
+    </div>
+    <p class="note step">God used wisdom and understanding to build the whole universe. He offers you the same two tools to build your house: your marriage, your kids, your recovery, your life.</p>
+    <p class="note step">If it held up the heavens, it can hold up your house.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="8:22-26" data-hl="The LORD possessed me in the beginning of his way|I was set up from everlasting"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="8:22" data-hl="The LORD possessed me"></blockquote>
+    <h2 class="rise" style="--d:1">Does 8:22 say Jesus was created?</h2>
+    <div class="columns">
+      <div class="col law rise" style="--d:2">
+        <p class="who">The claim</p>
+        <h3>“Wisdom is Jesus, and God made Him”</h3>
+        <p>Jehovah's Witnesses use this verse to teach that Jesus was the first thing God created. It's an old argument, going back to a teacher named Arius in the 300s.</p>
+      </div>
+      <div class="col grace step">
+        <p class="who">The passage</p>
+        <h3>A poem about God's own wisdom</h3>
+        <p>The speaker is the same “she” who cries in the streets (8:1) and builds a house with seven pillars (9:1). It's a picture, not a birth record.</p>
+      </div>
+    </div>
+    <p class="note step">God has never been without His wisdom. If wisdom had a start date, there was a time God was foolish. Verse 23 says it plainly: “I was set up <em>from everlasting</em>.”</p>
+    <p class="note step">“Possessed” (Hebrew <span class="gk">qanah</span>) means <em>had, owned</em>. It's the same root used of God as “possessor of heaven and earth” (Genesis 14:19). God owned the heavens and earth; He didn't come from them.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="8:27-31" data-hl="I was there|I was daily his delight|my delights were with the sons of men"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise">“I was there”</h2>
+    <div class="pair">
+      <div class="scroll rise" style="--d:2"><p class="ref">Proverbs 8:27, 30</p><p class="kjv">When he prepared the heavens, <mark>I was there</mark>… Then <mark>I was by him</mark>, as one brought up with him: and I was daily his delight, rejoicing always before him;</p></div>
+      <div class="scroll step"><p class="ref">John 1:1, 3</p><p class="kjv">In the beginning was the Word, and <mark>the Word was with God</mark>, and the Word was God… <mark>All things were made by him</mark>; and without him was not any thing made that was made.</p></div>
+    </div>
+    <p class="note step">Proverbs pictures God's wisdom at His side while He made the world, rejoicing in it, with its “delights… with the sons of men.” John shows us that wisdom in a Person: the Word, who was <em>with</em> God, <em>was</em> God, and <em>made</em> all things.</p>
+    <p class="note step">“As one brought up with him” (<span class="gk">amon</span>) may also mean <em>master workman</em>. Either way, it's the craftsman's word again.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="8:35" data-hl="For whoso findeth me findeth life"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <div class="split">
+      <div class="stage">
+        <svg viewBox="0 0 340 300" role="img" aria-label="A treasure chest opens, and light pours out: all the treasures of wisdom and knowledge are hid in Christ.">
+          <defs>
+            <radialGradient id="tw-chestglow"><stop offset="0" style="stop-color:var(--glow)"/><stop offset=".5" stop-opacity=".5" style="stop-color:var(--accent)"/><stop offset="1" stop-opacity="0" style="stop-color:var(--accent)"/></radialGradient>
+          </defs>
+          <ellipse class="tw-shine" cx="170" cy="140" rx="160" ry="110" fill="url(#tw-chestglow)"/>
+          <rect x="50" y="150" width="240" height="120" rx="8" stroke-width="4" style="fill:var(--leather);stroke:var(--leather-light)"/>
+          <rect x="50" y="190" width="240" height="14" style="fill:var(--leather-light)"/>
+          <rect x="155" y="180" width="30" height="36" rx="4" style="fill:var(--warm)"/>
+          <g class="tw-lid">
+            <path d="M50 150 L50 120 Q170 70 290 120 L290 150 Z" stroke-width="4" style="fill:var(--leather);stroke:var(--leather-light)"/>
+          </g>
+          <text class="tw-shine" x="170" y="296" text-anchor="middle" font-size="20" style="fill:var(--accent-hot)">“in whom are hid”</text>
+        </svg>
+      </div>
+      <div>
+        <h2 class="rise">Christ, the wisdom of God</h2>
+        <blockquote class="quote rise" style="--d:1"><p>“But unto them which are called, both Jews and Greeks, Christ the power of God, and the wisdom of God.”</p><cite>1 Corinthians 1:24</cite></blockquote>
+        <blockquote class="quote step"><p>“But of him are ye in Christ Jesus, who of God is made unto us wisdom, and righteousness, and sanctification, and redemption:”</p><cite>1 Corinthians 1:30</cite></blockquote>
+        <blockquote class="quote step tw-open"><p>“In whom are hid all the treasures of wisdom and knowledge.”</p><cite>Colossians 2:3</cite></blockquote>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise">Creator, not creature</h2>
+    <blockquote class="quote rise" style="--d:1"><p>“All things were made by him; and without him was not any thing made that was made.”</p><cite>John 1:3</cite></blockquote>
+    <blockquote class="quote step"><p>“For by him were all things created, that are in heaven, and that are in earth, visible and invisible, whether they be thrones, or dominions, or principalities, or powers: all things were created by him, and for him: And he is before all things, and by him all things consist.”</p><cite>Colossians 1:16–17</cite></blockquote>
+    <p class="note step">If Jesus made <em>every thing that was made</em>, He can't be one of the made things. The Maker isn't part of what He made. Wisdom says, “whoso findeth me findeth life” (8:35). That life is found in Him.</p>
+    <p class="note step">So Proverbs 8 doesn't teach that Jesus had a beginning. It's poetry about God's wisdom, which God has always had. And Jesus is that wisdom in the flesh: eternal God, who “was in the beginning with God.”</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="9:1" data-hl="Wisdom hath builded her house"></section>
+<section class="slide verse" data-v="9:4-6" data-hl="Whoso is simple, let him turn in hither|Come, eat of my bread|Forsake the foolish, and live"></section>
+<section class="slide verse" data-v="9:16-18" data-hl="Whoso is simple, let him turn in hither|Stolen waters are sweet|the dead are there"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="9:16" data-hl="Whoso is simple, let him turn in hither"></blockquote>
+    <h2 class="rise" style="--d:1">Two houses, same invitation</h2>
+    <div class="stage">
+      <svg viewBox="0 0 640 420" role="img" aria-label="Two houses. Wisdom's house has seven pillars and a table set for a meal. Folly's house has an open door, and under it a pit: the dead are there.">
+        <g class="rise" style="--d:2">
+          <text x="160" y="24" text-anchor="middle" font-size="22" font-weight="700" class="serif" style="fill:var(--accent-hot)">Wisdom's house</text>
+          <text x="160" y="50" text-anchor="middle" font-size="18">“Come, eat of my bread” (9:5)</text>
+        </g>
+        <g class="rise" style="--d:4">
+          <text x="480" y="24" text-anchor="middle" font-size="22" font-weight="700" class="serif">Folly's house</text>
+          <text class="tw-sweet" x="480" y="50" text-anchor="middle" font-size="18">“Stolen waters are sweet”</text>
+        </g>
+        <g transform="translate(0 40)">
+        <line x1="0" y1="220" x2="640" y2="220" stroke-width="2" style="stroke:var(--ink-soft)"/>
+        <g class="rise" style="--d:2">
+          <path d="M30 90 L160 40 L290 90 Z" stroke-width="2" style="fill:var(--surface-2);stroke:var(--accent)"/>
+          <rect x="40" y="90" width="240" height="10" style="fill:var(--accent)"/>
+          <g style="fill:var(--surface-2);stroke:var(--accent)" stroke-width="2">
+            <rect x="48" y="100" width="12" height="120"/><rect x="85" y="100" width="12" height="120"/><rect x="122" y="100" width="12" height="120"/>
+            <rect x="159" y="100" width="12" height="120"/><rect x="196" y="100" width="12" height="120"/><rect x="233" y="100" width="12" height="120"/>
+            <rect x="268" y="100" width="12" height="120"/>
+          </g>
+          <rect x="100" y="182" width="120" height="8" style="fill:var(--warm)"/>
+          <text x="160" y="254" text-anchor="middle" font-size="18" style="fill:var(--ink-soft)">seven pillars, a table set</text>
+          <text x="160" y="280" text-anchor="middle" font-size="18" style="fill:var(--accent-hot)">life (9:6)</text>
+        </g>
+        <g class="rise" style="--d:4">
+          <path d="M360 100 L480 55 L600 100 Z" stroke-width="2" style="fill:var(--surface-2);stroke:var(--ink-soft)"/>
+          <rect x="370" y="100" width="220" height="120" stroke-width="2" style="fill:var(--surface);stroke:var(--ink-soft)"/>
+          <rect x="455" y="140" width="50" height="80" style="fill:var(--bg);stroke:var(--ink-soft)" stroke-width="2"/>
+          <rect x="400" y="190" width="40" height="10" style="fill:var(--ink-soft)"/>
+          <text x="400" y="182" font-size="14" style="fill:var(--ink-soft)">her seat</text>
+        </g>
+        <g class="tw-pit">
+          <path d="M455 220 L440 370 L520 370 L505 220" stroke-width="2" stroke-dasharray="6 6" style="fill:color-mix(in srgb, var(--danger) 18%, transparent);stroke:var(--danger)"/>
+          <text x="535" y="320" font-size="18" font-weight="700" style="fill:var(--danger)">“the dead</text>
+          <text x="535" y="342" font-size="18" font-weight="700" style="fill:var(--danger)">are there”</text>
+        </g>
+        </g>
+      </svg>
+    </div>
+    <p class="note step tw-pit-go">9:4 and 9:16 open with <em>the same words</em>. Both houses call the same man. Folly's offer is “stolen” and “in secret,” and her guests never see the pit until they're in it (9:18).</p>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="9:17-18" data-hl="Stolen waters are sweet|the dead are there"></blockquote>
+    <h2 class="rise" style="--d:1">Sweet now, or good at the end?</h2>
+    <div class="feasts">
+      <div class="feast rise" style="--d:2"><h3>Folly's table</h3>
+        <div class="bars"><i style="--h:95%;--k:0"></i><i style="--h:60%;--k:1"></i><i style="--h:28%;--k:2"></i><i style="--h:6%;--k:3"></i></div>
+        <div class="bar-labels"><span>the first taste</span><span>the end</span></div>
+      </div>
+      <div class="feast step"><h3>Wisdom's table</h3>
+        <div class="bars best"><i style="--h:35%;--k:0"></i><i style="--h:55%;--k:1"></i><i style="--h:75%;--k:2"></i><i style="--h:100%;--k:3"></i></div>
+        <div class="bar-labels"><span>the first step</span><span>“and live”</span></div>
+      </div>
+    </div>
+    <p class="note step">Every addiction makes the same pitch: it's sweet, it's secret, nobody has to know. That's folly's house. The first taste is the best it will ever be.</p>
+    <p class="note step">Wisdom's “bread” and “mingled wine” in 9:5 are a picture of a feast, not a call to drink. Her table costs you your old way, but it gets better the longer you stay. “Forsake the foolish, and live.”</p>
+  </div>
+</section>
+
+<!-- ======================= PART FOUR: WISDOM ON AN ORDINARY DAY ======================= -->
+<section class="slide part">
+  <div class="inner">
+    <p class="part-n rise">Part four</p>
+    <h2 class="rise" style="--d:1">An ordinary day</h2>
+    <p class="range rise" style="--d:2">Chapters 10–31</p>
+    <div class="rule"></div>
+    <p class="hook rise" style="--d:4">Your mouth, your pride, your eyes, your friends, your money.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="10:13" data-hl="In the lips of him that hath understanding wisdom is found"></section>
+<section class="slide verse" data-v="10:21" data-hl="The lips of the righteous feed many"></section>
+<section class="slide verse" data-v="10:31" data-hl="The mouth of the just bringeth forth wisdom"></section>
+<section class="slide verse" data-v="18:4" data-hl="the wellspring of wisdom as a flowing brook"></section>
+<section class="slide verse" data-v="31:26" data-hl="She openeth her mouth with wisdom; and in her tongue is the law of kindness"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="18:4" data-hl="deep waters|a flowing brook"></blockquote>
+    <div class="split">
+      <div class="stage">
+        <svg viewBox="0 0 600 300" role="img" aria-label="A deep well beside a flowing brook. Wise words run like fresh, moving water.">
+          <defs><clipPath id="tw-brookclip"><rect x="270" y="150" width="320" height="90"/></clipPath></defs>
+          <path d="M30 80 L30 270 L170 270 L170 80" fill="none" stroke-width="4" style="stroke:var(--line-strong)"/>
+          <rect x="34" y="150" width="132" height="116" style="fill:color-mix(in srgb, var(--cool) 45%, transparent)"/>
+          <text x="100" y="60" text-anchor="middle" font-size="20">deep waters</text>
+          <text x="100" y="292" text-anchor="middle" font-size="16" style="fill:var(--ink-soft)">what's in a man's heart</text>
+          <path d="M270 240 L590 240" stroke-width="3" style="stroke:var(--line-strong)"/>
+          <g clip-path="url(#tw-brookclip)">
+            <path class="tw-flow" d="M270 180 q20 -12 40 0 t40 0 t40 0 t40 0 t40 0 t40 0 t40 0 t40 0 t40 0 t40 0"/>
+            <path class="tw-flow f2" d="M270 200 q20 -12 40 0 t40 0 t40 0 t40 0 t40 0 t40 0 t40 0 t40 0 t40 0 t40 0"/>
+            <path class="tw-flow f3" d="M270 220 q20 -12 40 0 t40 0 t40 0 t40 0 t40 0 t40 0 t40 0 t40 0 t40 0 t40 0"/>
+          </g>
+          <text x="430" y="130" text-anchor="middle" font-size="20" font-weight="700" style="fill:var(--accent-hot)">a flowing brook</text>
+          <text x="430" y="270" text-anchor="middle" font-size="16" style="fill:var(--ink-soft)">wise words, fresh and moving</text>
+        </svg>
+      </div>
+      <div>
+        <h2 class="rise" style="--d:1">Wisdom comes out of your mouth</h2>
+        <p class="note rise" style="--d:2">What's deep in a man's heart comes up through his mouth. When wisdom is the source, his words are like a running stream: clean, fresh, and good for whoever drinks.</p>
+        <p class="note step">“The lips of the righteous feed many” (10:21). Your words can feed the man next to you. And 31:26 shows the best kind of wise words: they carry “the law of kindness.”</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="slide verse" data-v="11:12" data-hl="a man of understanding holdeth his peace"></section>
+<section class="slide verse" data-v="23:9" data-hl="he will despise the wisdom of thy words"></section>
+<section class="slide verse" data-v="24:7" data-hl="Wisdom is too high for a fool|he openeth not his mouth in the gate"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise">Knowing when to keep quiet</h2>
+    <div class="columns">
+      <div class="col law rise" style="--d:2">
+        <p class="who">11:12 · 23:9</p>
+        <h3>Hold your peace</h3>
+        <p>The man without wisdom runs his neighbor down. The wise man lets it go. And some arguments aren't worth having: a fool “will despise the wisdom of thy words.”</p>
+      </div>
+      <div class="col grace step">
+        <p class="who">24:7</p>
+        <h3>“In the gate”</h3>
+        <p>The town gate was where the elders sat to settle disputes and make decisions (see Ruth 4:1–2). When it counts, the fool has nothing to say.</p>
+      </div>
+    </div>
+    <p class="note step">Wisdom isn't always saying the smart thing. A lot of the time it's <em>not</em> saying the dumb one.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="11:2" data-hl="When pride cometh, then cometh shame: but with the lowly is wisdom"></section>
+<section class="slide verse" data-v="13:10" data-hl="Only by pride cometh contention|with the well advised is wisdom"></section>
+<section class="slide verse" data-v="14:6" data-hl="A scorner seeketh wisdom, and findeth it not"></section>
+<section class="slide verse" data-v="29:15" data-hl="The rod and reproof give wisdom"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="11:2" data-hl="with the lowly is wisdom"></blockquote>
+    <div class="split">
+      <div class="stage">
+        <svg viewBox="0 0 600 320" role="img" aria-label="Water pours into two cups. The full cup labeled 'I already know' spills over. The empty cup fills up.">
+          <defs><clipPath id="tw-cupclip"><path d="M380 150 L400 290 L500 290 L520 150 Z"/></clipPath></defs>
+          <path class="tw-stream" d="M150 20 L150 140" stroke-width="6" style="stroke:var(--cool)"/>
+          <path class="tw-stream" d="M450 20 L450 150" stroke-width="6" style="stroke:var(--cool)"/>
+          <path d="M80 150 L100 290 L200 290 L220 150 Z" stroke-width="3" style="fill:color-mix(in srgb, var(--cool) 45%, transparent);stroke:var(--ink-soft)"/>
+          <circle class="tw-spill" cx="70" cy="160" r="5" style="fill:var(--cool)"/>
+          <circle class="tw-spill" cx="230" cy="160" r="5" style="fill:var(--cool);animation-delay:1.4s"/>
+          <text x="150" y="226" text-anchor="middle" font-size="18" font-weight="700">I already</text>
+          <text x="150" y="248" text-anchor="middle" font-size="18" font-weight="700">know</text>
+          <g clip-path="url(#tw-cupclip)"><rect class="tw-fill" x="370" y="160" width="160" height="140" style="fill:color-mix(in srgb, var(--cool) 45%, transparent)"/></g>
+          <path d="M380 150 L400 290 L500 290 L520 150" fill="none" stroke-width="3" style="stroke:var(--accent)"/>
+          <text x="450" y="226" text-anchor="middle" font-size="18" font-weight="700" style="fill:var(--accent-hot)">teach me</text>
+          <text x="150" y="316" text-anchor="middle" font-size="17" style="fill:var(--ink-soft)">the scorner (14:6)</text>
+          <text x="450" y="316" text-anchor="middle" font-size="17" style="fill:var(--ink-soft)">the lowly (11:2)</text>
+        </svg>
+      </div>
+      <div>
+        <h2 class="rise" style="--d:1">A full cup can't be filled</h2>
+        <p class="note rise" style="--d:2">The scorner “seeketh wisdom, and findeth it not.” He won't be taught. Pride already filled his cup.</p>
+        <p class="note step">Wisdom is “with the well advised” (13:10): the man who asks for advice and takes it. And “reproof,” correction, gives wisdom (29:15). Can you take it from God's word, a pastor, or a brother?</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="slide verse" data-v="10:23" data-hl="It is as sport to a fool to do mischief"></section>
+<section class="slide verse" data-v="15:21" data-hl="Folly is joy to him that is destitute of wisdom"></section>
+<section class="slide verse" data-v="12:8" data-hl="A man shall be commended according to his wisdom"></section>
+<section class="slide verse" data-v="14:8" data-hl="The wisdom of the prudent is to understand his way"></section>
+<section class="slide verse" data-v="14:33" data-hl="Wisdom resteth in the heart of him that hath understanding"></section>
+<section class="slide verse" data-v="17:24" data-hl="Wisdom is before him that hath understanding|the eyes of a fool are in the ends of the earth"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="17:24" data-hl="Wisdom is before him|the eyes of a fool are in the ends of the earth"></blockquote>
+    <div class="split">
+      <div class="stage">
+        <svg viewBox="0 0 600 300" role="img" aria-label="Two men. One looks at wisdom right in front of him. The other's gaze roams back and forth across the far horizon.">
+          <g>
+            <circle cx="70" cy="80" r="16" style="fill:var(--ink)"/>
+            <path d="M54 130 L58 100 Q70 94 82 100 L86 130 Z" style="fill:var(--ink)"/>
+            <path d="M92 80 L198 80" stroke-width="3" style="stroke:var(--accent)"/>
+            <rect x="200" y="60" width="110" height="40" rx="20" style="fill:var(--accent)"/>
+            <text x="255" y="87" text-anchor="middle" font-size="18" font-weight="700" style="fill:var(--on-accent)">wisdom</text>
+            <text x="325" y="86" font-size="18" style="fill:var(--accent-hot)">right in front of him</text>
+          </g>
+          <line x1="20" y1="220" x2="590" y2="220" stroke-width="1.5" stroke-dasharray="4 6" style="stroke:var(--ink-soft)"/>
+          <g>
+            <circle cx="70" cy="170" r="16" style="fill:var(--ink-soft)"/>
+            <path d="M54 220 L58 190 Q70 184 82 190 L86 220 Z" style="fill:var(--ink-soft)"/>
+            <g class="tw-roam"><path d="M92 170 L560 170" stroke-width="2.5" stroke-dasharray="8 8" style="stroke:var(--ink-soft)"/></g>
+            <text x="590" y="262" text-anchor="end" font-size="18" style="fill:var(--ink-soft)">“the ends of the earth”</text>
+          </g>
+        </svg>
+      </div>
+      <div>
+        <h2 class="rise" style="--d:1">Where are your eyes?</h2>
+        <p class="note rise" style="--d:2">The fool's eyes are always out on the horizon: the next score, the next scheme, the next place where life will finally be different. Meanwhile wisdom is sitting right in front of him.</p>
+        <p class="note step">To a fool, mischief is “sport” and folly is “joy” (10:23, 15:21). Wisdom “understands his way” (14:8): it asks, <em>where does this road actually go?</em></p>
+        <p class="note step">And it “resteth” in the heart (14:33). A wise man doesn't have to show off. It just settles in and stays.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="slide verse" data-v="18:1" data-hl="having separated himself"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="18:1" data-hl="having separated himself"></blockquote>
+    <div class="split">
+      <div class="stage">
+        <svg viewBox="0 0 600 300" role="img" aria-label="A circle of men. One drifts away from the group on his own.">
+          <circle cx="170" cy="150" r="95" fill="none" stroke-width="2" stroke-dasharray="5 7" style="stroke:var(--line-strong)"/>
+          <g style="fill:var(--accent)">
+            <circle cx="170" cy="55" r="15"/><circle cx="252" cy="102" r="15"/><circle cx="252" cy="198" r="15"/>
+            <circle cx="170" cy="245" r="15"/><circle cx="88" cy="198" r="15"/><circle cx="88" cy="102" r="15"/>
+          </g>
+          <circle class="tw-back" cx="265" cy="150" r="15" style="fill:var(--accent-hot)"/>
+          <g class="tw-stray"><circle cx="265" cy="150" r="15" style="fill:var(--ink-soft)"/></g>
+          <text x="560" y="250" text-anchor="end" font-size="18" style="fill:var(--ink-soft)">“having separated himself”</text>
+          <text x="170" y="290" text-anchor="middle" font-size="18" style="fill:var(--accent-hot)">brothers</text>
+        </svg>
+      </div>
+      <div>
+        <h2 class="rise" style="--d:1">Alone is dangerous</h2>
+        <p class="note rise" style="--d:2">This verse is hard in the old English. “Intermeddleth” means <em>breaks out against, picks a fight with</em>. Many read it this way: the man who cuts himself off is chasing his own desire, and he fights against every bit of sound wisdom.</p>
+        <p class="note step tw-home">Isolation is where relapse starts. A man pulls away, stops answering his phone, and nobody is close enough to tell him the truth. Stay in the circle. Answer the phone. Come back if you've drifted.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="slide verse" data-v="23:4" data-hl="Labour not to be rich: cease from thine own wisdom"></section>
+<section class="slide verse" data-v="29:3" data-hl="Whoso loveth wisdom rejoiceth his father|spendeth his substance"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise">Money, and who you spend it on</h2>
+    <div class="columns">
+      <div class="col law rise" style="--d:2">
+        <p class="who">23:4</p>
+        <h3>“Cease from thine own wisdom”</h3>
+        <p>Working hard is good (Proverbs says so again and again). Wearing yourself out to get rich is not. Stop trusting your own angle on getting money fast. That “wisdom” has burned a lot of men.</p>
+      </div>
+      <div class="col grace step">
+        <p class="who">29:3</p>
+        <h3>“Spendeth his substance”</h3>
+        <p>“Substance” is everything he owns. The company you keep decides where your paycheck goes. A man who loves wisdom makes his father glad. A man who keeps company with harlots wastes it all.</p>
+      </div>
+    </div>
+    <p class="note step">Think of the prodigal son, who “wasted his substance with riotous living,” and then came home to a father who ran to meet him (Luke 15). However much you've spent, the Father's door is open.</p>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise">So how do I get it?</h2>
+    <blockquote class="quote rise" style="--d:1"><p>“If any of you lack wisdom, let him ask of God, that giveth to all men liberally, and upbraideth not; and it shall be given him.”</p><cite>James 1:5</cite></blockquote>
+    <p class="note step">“Upbraideth not” means <em>He doesn't throw your past in your face</em> when you ask. He gives freely, to anyone.</p>
+    <blockquote class="quote step"><p>“But the wisdom that is from above is first pure, then peaceable, gentle, and easy to be intreated, full of mercy and good fruits, without partiality, and without hypocrisy.”</p><cite>James 3:17</cite></blockquote>
+    <p class="note step">Start with the fear of the LORD. Come to Jesus, who is “made unto us wisdom.” Then ask, every day. That's a prayer God always answers.</p>
+  </div>
+</section>
+
+<!-- ======================= CLOSING ======================= -->
+<section class="slide remember">
+  <div class="inner">
+    <h2 class="rise">Points to remember</h2>
+    <ol class="seeds">
+      <li class="step"><span class="topic">The fear of the LORD</span><span class="seed-q">“The fear of the LORD is the beginning of wisdom” <cite>9:10</cite></span><span class="take">Wisdom starts by taking God seriously. That's the foundation stone.</span></li>
+      <li class="step"><span class="topic">Wisdom's call</span><span class="seed-q">“Wisdom crieth without” <cite>1:20</cite></span><span class="take">She calls the simple and the fools, right in the street. Nobody is too far gone to be called.</span></li>
+      <li class="step"><span class="topic">What it's worth</span><span class="seed-q">“Wisdom is better than rubies” <cite>8:11</cite></span><span class="take">More than gold, silver, or anything you could want. Make it number one.</span></li>
+      <li class="step"><span class="topic">Who Jesus is</span><span class="seed-q">“Christ the power of God, and the wisdom of God” <cite>1&nbsp;Cor.&nbsp;1:24</cite></span><span class="take">Proverbs 8 is poetry about God's eternal wisdom. Jesus is that wisdom in the flesh, the Creator, not a creature.</span></li>
+      <li class="step"><span class="topic">Two houses</span><span class="seed-q">“Forsake the foolish, and live” <cite>9:6</cite></span><span class="take">Both call the same man. Folly is sweet at first and ends in death. Wisdom ends in life.</span></li>
+      <li class="step"><span class="topic">Daily life</span><span class="seed-q">“With the lowly is wisdom” <cite>11:2</cite></span><span class="take">Watch your mouth, drop your pride, stay with your brothers, and ask God for wisdom every day.</span></li>
+    </ol>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 1 of 6</p>
+      <span class="topic">The fear of the LORD</span>
+      <h2>Where does wisdom begin?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="9:10" data-hl="The fear of the LORD is the beginning of wisdom"></blockquote>
+      <blockquote class="quote step" data-q="1:7" data-hl="The fear of the LORD is the beginning of knowledge"></blockquote>
+      <blockquote class="quote step" data-q="2:6" data-hl="For the LORD giveth wisdom"></blockquote>
+      <blockquote class="quote step" data-q="15:33" data-hl="before honour is humility"></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>With the fear of the LORD: taking God seriously, with awe and trust. That's the first stone, and everything else is built on it. Wisdom isn't something we invent. The LORD gives it, and the way in is humility.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 2 of 6</p>
+      <span class="topic">Wisdom's call</span>
+      <h2>Who is Wisdom calling out to?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="1:20"></blockquote>
+      <blockquote class="quote step" data-q="8:5" data-hl="O ye simple|ye fools"></blockquote>
+      <blockquote class="quote step" data-q="9:4" data-hl="Whoso is simple, let him turn in hither"></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>Everybody, and especially the ones who don't have it together: the simple, the fools, the men who've been easily led. She calls in the streets and at the gates, right where people live. If you've been a fool, you're exactly who she's calling.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 3 of 6</p>
+      <span class="topic">What it's worth</span>
+      <h2>What is wisdom worth?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="8:11"></blockquote>
+      <blockquote class="quote step" data-q="16:16"></blockquote>
+      <blockquote class="quote step" data-q="4:7" data-hl="Wisdom is the principal thing"></blockquote>
+      <blockquote class="quote step" data-q="19:8" data-hl="loveth his own soul"></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>More than rubies, gold, silver, or anything else a man could want. It's “the principal thing,” number one on the list. You can't buy it with cash, but getting it is the best way to love your own soul.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 4 of 6</p>
+      <span class="topic">Who Jesus is</span>
+      <h2>Was Jesus created, or is He the wisdom of God?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="8:23" data-hl="I was set up from everlasting"></blockquote>
+      <blockquote class="quote step"><p>“But unto them which are called, both Jews and Greeks, Christ the power of God, and the wisdom of God.”</p><cite>1 Corinthians 1:24</cite></blockquote>
+      <blockquote class="quote step"><p>“In whom are hid all the treasures of wisdom and knowledge.”</p><cite>Colossians 2:3</cite></blockquote>
+      <blockquote class="quote step"><p>“All things were made by him; and without him was not any thing made that was made.”</p><cite>John 1:3</cite></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>He was never created. Proverbs 8 is a poem picturing God's wisdom, which God has always had, “from everlasting.” Jesus is that wisdom in the flesh. And He made all things, so He can't be one of the things that were made. He is God.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 5 of 6</p>
+      <span class="topic">Two houses</span>
+      <h2>What is the difference between Wisdom's house and folly's?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="9:1"></blockquote>
+      <blockquote class="quote step" data-q="9:6"></blockquote>
+      <blockquote class="quote step" data-q="9:17-18" data-hl="the dead are there"></blockquote>
+      <blockquote class="quote step" data-q="8:35" data-hl="whoso findeth me findeth life"></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>Both call out to the same man with the same words. Folly offers stolen, secret pleasure that tastes sweet and ends in death. Wisdom sets a real table, costs you your old foolish way, and ends in life. And real life is found in Jesus.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 6 of 6</p>
+      <span class="topic">Daily life</span>
+      <h2>What does wisdom look like on an ordinary day?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="10:21" data-hl="The lips of the righteous feed many"></blockquote>
+      <blockquote class="quote step" data-q="11:2" data-hl="with the lowly is wisdom"></blockquote>
+      <blockquote class="quote step" data-q="11:12" data-hl="a man of understanding holdeth his peace"></blockquote>
+      <blockquote class="quote step" data-q="14:8" data-hl="to understand his way"></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>Words that build people up, and knowing when to keep quiet. Humility instead of pride. Thinking about where a road goes before you take it. Staying close to your brothers instead of pulling away. And asking God for wisdom every day.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide prayer">
+  <div class="inner">
+    <div class="emblem rise"></div>
+    <h2 class="rise" style="--d:1">Prayer requests</h2>
+    <p class="ask-line rise" style="--d:2">What can we pray about for you today?</p>
+    <blockquote class="quote rise" style="--d:4"><p>“If any of you lack wisdom, let him ask of God, that giveth to all men liberally, and upbraideth not; and it shall be given him.”</p><cite>James 1:5</cite></blockquote>
+  </div>
+</section>
+
+</main>
+
+<script>
+// King James Version, Proverbs: every verse that says "wisdom," plus 8:22–31, 8:35, 9:4–6, 9:16–18 and 30:4
+const V = {
+  "1:2": "To know wisdom and instruction; to perceive the words of understanding;",
+  "1:3": "To receive the instruction of wisdom, justice, and judgment, and equity;",
+  "1:7": "The fear of the LORD is the beginning of knowledge: but fools despise wisdom and instruction.",
+  "1:20": "Wisdom crieth without; she uttereth her voice in the streets:",
+  "2:2": "So that thou incline thine ear unto wisdom, and apply thine heart to understanding;",
+  "2:6": "For the LORD giveth wisdom: out of his mouth cometh knowledge and understanding.",
+  "2:7": "He layeth up sound wisdom for the righteous: he is a buckler to them that walk uprightly.",
+  "2:10": "When wisdom entereth into thine heart, and knowledge is pleasant unto thy soul;",
+  "3:13": "Happy is the man that findeth wisdom, and the man that getteth understanding.",
+  "3:19": "The LORD by wisdom hath founded the earth; by understanding hath he established the heavens.",
+  "3:21": "My son, let not them depart from thine eyes: keep sound wisdom and discretion:",
+  "4:5": "Get wisdom, get understanding: forget it not; neither decline from the words of my mouth.",
+  "4:7": "Wisdom is the principal thing; therefore get wisdom: and with all thy getting get understanding.",
+  "4:11": "I have taught thee in the way of wisdom; I have led thee in right paths.",
+  "5:1": "My son, attend unto my wisdom, and bow thine ear to my understanding:",
+  "7:4": "Say unto wisdom, Thou art my sister; and call understanding thy kinswoman:",
+  "8:1": "Doth not wisdom cry? and understanding put forth her voice?",
+  "8:5": "O ye simple, understand wisdom: and, ye fools, be ye of an understanding heart.",
+  "8:11": "For wisdom is better than rubies; and all the things that may be desired are not to be compared to it.",
+  "8:12": "I wisdom dwell with prudence, and find out knowledge of witty inventions.",
+  "8:14": "Counsel is mine, and sound wisdom: I am understanding; I have strength.",
+  "8:22": "The LORD possessed me in the beginning of his way, before his works of old.",
+  "8:23": "I was set up from everlasting, from the beginning, or ever the earth was.",
+  "8:24": "When there were no depths, I was brought forth; when there were no fountains abounding with water.",
+  "8:25": "Before the mountains were settled, before the hills was I brought forth:",
+  "8:26": "While as yet he had not made the earth, nor the fields, nor the highest part of the dust of the world.",
+  "8:27": "When he prepared the heavens, I was there: when he set a compass upon the face of the depth:",
+  "8:28": "When he established the clouds above: when he strengthened the fountains of the deep:",
+  "8:29": "When he gave to the sea his decree, that the waters should not pass his commandment: when he appointed the foundations of the earth:",
+  "8:30": "Then I was by him, as one brought up with him: and I was daily his delight, rejoicing always before him;",
+  "8:31": "Rejoicing in the habitable part of his earth; and my delights were with the sons of men.",
+  "8:35": "For whoso findeth me findeth life, and shall obtain favour of the LORD.",
+  "9:1": "Wisdom hath builded her house, she hath hewn out her seven pillars:",
+  "9:4": "Whoso is simple, let him turn in hither: as for him that wanteth understanding, she saith to him,",
+  "9:5": "Come, eat of my bread, and drink of the wine which I have mingled.",
+  "9:6": "Forsake the foolish, and live; and go in the way of understanding.",
+  "9:10": "The fear of the LORD is the beginning of wisdom: and the knowledge of the holy is understanding.",
+  "9:16": "Whoso is simple, let him turn in hither: and as for him that wanteth understanding, she saith to him,",
+  "9:17": "Stolen waters are sweet, and bread eaten in secret is pleasant.",
+  "9:18": "But he knoweth not that the dead are there; and that her guests are in the depths of hell.",
+  "10:13": "In the lips of him that hath understanding wisdom is found: but a rod is for the back of him that is void of understanding.",
+  "10:21": "The lips of the righteous feed many: but fools die for want of wisdom.",
+  "10:23": "It is as sport to a fool to do mischief: but a man of understanding hath wisdom.",
+  "10:31": "The mouth of the just bringeth forth wisdom: but the froward tongue shall be cut out.",
+  "11:2": "When pride cometh, then cometh shame: but with the lowly is wisdom.",
+  "11:12": "He that is void of wisdom despiseth his neighbour: but a man of understanding holdeth his peace.",
+  "12:8": "A man shall be commended according to his wisdom: but he that is of a perverse heart shall be despised.",
+  "13:10": "Only by pride cometh contention: but with the well advised is wisdom.",
+  "14:6": "A scorner seeketh wisdom, and findeth it not: but knowledge is easy unto him that understandeth.",
+  "14:8": "The wisdom of the prudent is to understand his way: but the folly of fools is deceit.",
+  "14:33": "Wisdom resteth in the heart of him that hath understanding: but that which is in the midst of fools is made known.",
+  "15:21": "Folly is joy to him that is destitute of wisdom: but a man of understanding walketh uprightly.",
+  "15:33": "The fear of the LORD is the instruction of wisdom; and before honour is humility.",
+  "16:16": "How much better is it to get wisdom than gold! and to get understanding rather to be chosen than silver!",
+  "17:16": "Wherefore is there a price in the hand of a fool to get wisdom, seeing he hath no heart to it?",
+  "17:24": "Wisdom is before him that hath understanding; but the eyes of a fool are in the ends of the earth.",
+  "18:1": "Through desire a man, having separated himself, seeketh and intermeddleth with all wisdom.",
+  "18:4": "The words of a man’s mouth are as deep waters, and the wellspring of wisdom as a flowing brook.",
+  "19:8": "He that getteth wisdom loveth his own soul: he that keepeth understanding shall find good.",
+  "21:30": "There is no wisdom nor understanding nor counsel against the LORD.",
+  "23:4": "Labour not to be rich: cease from thine own wisdom.",
+  "23:9": "Speak not in the ears of a fool: for he will despise the wisdom of thy words.",
+  "23:23": "Buy the truth, and sell it not; also wisdom, and instruction, and understanding.",
+  "24:3": "Through wisdom is an house builded; and by understanding it is established:",
+  "24:7": "Wisdom is too high for a fool: he openeth not his mouth in the gate.",
+  "24:14": "So shall the knowledge of wisdom be unto thy soul: when thou hast found it, then there shall be a reward, and thy expectation shall not be cut off.",
+  "29:3": "Whoso loveth wisdom rejoiceth his father: but he that keepeth company with harlots spendeth his substance.",
+  "29:15": "The rod and reproof give wisdom: but a child left to himself bringeth his mother to shame.",
+  "30:3": "I neither learned wisdom, nor have the knowledge of the holy.",
+  "30:4": "Who hath ascended up into heaven, or descended? who hath gathered the wind in his fists? who hath bound the waters in a garment? who hath established all the ends of the earth? what is his name, and what is his son’s name, if thou canst tell?",
+  "31:26": "She openeth her mouth with wisdom; and in her tongue is the law of kindness."
+};
+const BOOK = "Proverbs";
+</script>
+<script src="../assets/deck.js"></script>
+</body>
+</html>

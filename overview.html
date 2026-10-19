@@ -6,7 +6,7 @@
 <title>Overview</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400&family=Figtree:ital,wght@0,400;0,600;0,700;1,400&family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,600;1,9..144,400&family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,400;0,6..72,600;1,6..72,400&family=Noto+Serif:wght@400&family=Noto+Serif+Hebrew:wght@400&family=Spectral:ital,wght@0,300;0,400;0,600;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/fonts.css">
 <link rel="stylesheet" href="assets/deck.css">
 <link rel="stylesheet" href="assets/themes.css">
 </head>
@@ -37,7 +37,7 @@ function chapterSlides(s, inBook) {
   const o = s.overview;
   return `
   <section class="slide cover"><div class="inner">
-    ${inBook ? `<p class="eyebrow rise">Chapter ${s.ch}</p>` : `<p class="eyebrow rise">Chapter overview</p>`}
+    ${inBook ? `<p class="eyebrow rise">Chapter ${s.ch}</p>` : `<p class="eyebrow rise">${s.type === "chapter" ? "Chapter overview" : "Topic overview"}</p>`}
     <h1 class="rise" style="--d:1">${esc(s.title)}</h1>
     <p class="sub rise" style="--d:2">${esc(s.sub)}</p>
     <dl class="facts rise" style="--d:4">

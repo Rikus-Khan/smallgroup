@@ -1,0 +1,587 @@
+<!doctype html>
+<html lang="en" data-theme="slate">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Proverbs 26</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="../assets/fonts.css">
+<link rel="stylesheet" href="../assets/deck.css">
+<link rel="stylesheet" href="../assets/themes.css">
+<style>
+/* A bird that never lands */
+.prv26-bird { opacity: 1; }
+.slide.active .prv26-bird { animation: prv26-fly 4.2s ease-in-out infinite; }
+@keyframes prv26-fly {
+  0% { opacity: .5; transform: translate(0, 0); } 10% { opacity: 1; }
+  25% { transform: translate(120px, -40px); } 50% { transform: translate(240px, 6px); } 75% { transform: translate(360px, -34px); }
+  90% { opacity: 1; } 100% { opacity: .5; transform: translate(470px, 0); }
+}
+
+/* A loop that keeps going round, and a way out of it */
+.prv26-ring { transform-origin: 175px 190px; transition: opacity 1s ease; }
+.slide.active .prv26-ring { animation: prv26-spin 9s linear infinite; }
+@keyframes prv26-spin { to { transform: rotate(360deg); } }
+.prv26-node rect { fill: var(--surface-2); stroke: var(--line-strong); stroke-width: 2; }
+.prv26-node text { font-size: 23px; }
+.prv26-nodes { transition: opacity 1s ease; }
+.prv26-exit { opacity: 0; transition: opacity 1s ease .3s; }
+.prv26-loop:has(.prv26-out.on) .prv26-exit { opacity: 1; }
+.prv26-loop:has(.prv26-out.on) .prv26-ring { opacity: .4; }
+
+/* A door swinging on its hinges */
+.prv26-door { transform-box: fill-box; transform-origin: 0 50%; }
+.slide.active .prv26-door { animation: prv26-swing 2.6s ease-in-out infinite alternate; }
+@keyframes prv26-swing { from { transform: scaleX(1); } to { transform: scaleX(.3); } }
+
+/* A fire that goes out when the wood is taken away */
+.prv26-flamebox { transform-box: fill-box; transform-origin: 50% 100%; transition: transform 1.4s ease, opacity 1.4s ease; }
+.prv26-flame { transform-box: fill-box; transform-origin: 50% 100%; animation: flicker 1.1s ease-in-out infinite alternate; }
+.prv26-log { transition: opacity .9s ease, transform .9s ease; }
+.prv26-fire:has(.prv26-f1.on) .prv26-log.l1, .prv26-fire:has(.prv26-f1.on) .prv26-log.l2 { opacity: 0; transform: translateX(-40px); }
+.prv26-fire:has(.prv26-f1.on) .prv26-flamebox { transform: scale(.55); }
+.prv26-fire:has(.prv26-f2.on) .prv26-log { opacity: 0; transform: translateX(40px); }
+.prv26-fire:has(.prv26-f2.on) .prv26-flamebox { transform: scale(.05); opacity: 0; }
+.prv26-smoke { opacity: 0; transition: opacity 1.2s ease 1s; }
+.prv26-fire:has(.prv26-f2.on) .prv26-smoke { opacity: .7; }
+
+/* A clay pot glazed to look like silver */
+.prv26-glaze { fill: color-mix(in srgb, var(--cool) 40%, var(--ink-soft)); transition: opacity 1.2s ease; }
+.prv26-crack { opacity: 0; transition: opacity .8s ease .6s; }
+.split:has(.prv26-peel.on) .prv26-glaze { opacity: .12; }
+.split:has(.prv26-peel.on) .prv26-crack { opacity: 1; }
+
+/* A stone rolled uphill comes back down */
+.slide.active .prv26-stone { animation: prv26-roll 5s ease-in-out infinite; }
+.prv26-stone { transform-box: fill-box; }
+@keyframes prv26-roll {
+  0% { transform: translate(0, 0) rotate(0deg); }
+  45%, 55% { transform: translate(220px, -92px) rotate(260deg); }
+  100% { transform: translate(0, 0) rotate(0deg); }
+}
+</style>
+</head>
+<body>
+<main class="deck" id="deck">
+
+<!-- ======================= OPENING ======================= -->
+<section class="slide title">
+  <div class="inner">
+    <div class="emblem rise"></div>
+    <h1 class="rise" style="--d:1">Proverbs 26</h1>
+    <p class="sub rise" style="--d:3">Fools, sluggards, and talebearers</p>
+    <p class="tag rise" style="--d:5">Three kinds of men we don't want to be, painted plainly, with a way out for every one of us.</p>
+  </div>
+</section>
+
+<section class="slide watch">
+  <div class="inner">
+    <h2 class="rise">Things to watch for</h2>
+    <p class="lede rise" style="--d:1">Keep these questions in the back of your mind as we read. We'll come back to every one of them at the end.</p>
+    <ol class="seeds">
+      <li class="step"><span class="topic">The fool</span><span class="seed-q">What makes a man a fool in God's eyes?</span></li>
+      <li class="step"><span class="topic">Wise answers</span><span class="seed-q">When should you answer a fool, and when should you keep quiet?</span></li>
+      <li class="step"><span class="topic">Going back</span><span class="seed-q">What does the dog going back to his vomit teach us, and where is the hope?</span></li>
+      <li class="step"><span class="topic">Pride</span><span class="seed-q">Who is in worse shape than a fool?</span></li>
+      <li class="step"><span class="topic">The sluggard</span><span class="seed-q">What excuses does the sluggard make?</span></li>
+      <li class="step"><span class="topic">The tongue</span><span class="seed-q">How do gossip and lies set fires?</span></li>
+    </ol>
+  </div>
+</section>
+
+<!-- ======================= PART ONE ======================= -->
+<section class="slide part">
+  <div class="inner">
+    <p class="part-n rise">Part one</p>
+    <h2 class="rise" style="--d:1">The fool</h2>
+    <p class="range rise" style="--d:2">Verses 1–12</p>
+    <p class="hook rise" style="--d:4">Twelve sayings, one portrait.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="1-3" data-hl="so honour is not seemly for a fool|so the curse causeless shall not come"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="1"></blockquote>
+    <h2 class="rise" style="--d:1">Things that don't fit</h2>
+    <div class="asks">
+      <div class="ask step"><span class="q">“Snow in summer”</span><span class="stamp">Wrong time</span><span class="ctx">Israel's summers are hot and dry. Snow then would be strange, and could ruin a crop.</span></div>
+      <div class="ask step"><span class="q">“Rain in harvest”</span><span class="stamp">Ruins it</span><span class="ctx">Rain at harvest could rot the grain in the field (see 1 Samuel 12:17–18).</span></div>
+      <div class="ask step"><span class="q">“Honour for a fool”</span><span class="stamp">Doesn't fit</span><span class="ctx">Put a fool in charge, or praise him, and it only feeds his folly.</span></div>
+    </div>
+    <p class="note step">In Proverbs, a <em>fool</em> isn't a man with a low IQ. He's a man who won't listen: to God, to correction, to anybody. “The fool hath said in his heart, There is no God” (Psalm 14:1). Words don't reach him, so verse 3 says he learns the hard way, from the rod.</p>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="2" data-hl="so the curse causeless shall not come"></blockquote>
+    <div class="split">
+      <div class="stage">
+        <svg viewBox="0 0 560 220" role="img" aria-label="A swallow darts across the sky and never lands.">
+          <path d="M40 140 Q160 80 280 140 T520 130" fill="none" stroke-width="2" stroke-dasharray="6 8" style="stroke:var(--line-strong)"/>
+          <g class="prv26-bird">
+            <path transform="translate(40 140) scale(1.9) translate(-40 -140)" d="M40 140 q-24 -22 -40 -16 q18 4 24 18 q-22 4 -30 18 q22 -8 36 -6 l26 -4 q-6 -6 -16 -10 Z" style="fill:var(--accent)"/>
+          </g>
+          <line x1="20" y1="200" x2="540" y2="200" stroke-width="2" style="stroke:var(--line-strong)"/>
+          <text x="280" y="190" text-anchor="middle" font-size="18" style="fill:var(--ink-soft)">nowhere to land</text>
+        </svg>
+      </div>
+      <div>
+        <h2 class="rise" style="--d:1">A curse that won't land</h2>
+        <p class="note rise" style="--d:2">A swallow darts and wanders all day and never seems to land. A curse you didn't earn is the same. It has nowhere to come down.</p>
+        <p class="note step">Maybe you had things spoken over you for years: <em>“You'll never amount to anything.”</em> If it isn't true, it doesn't get to land.</p>
+        <p class="note step">And in Christ, the one verdict that matters has already been read: “There is therefore now no condemnation to them which are in Christ Jesus” (Romans 8:1).</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="slide verse" data-v="4-5" data-hl="Answer not a fool according to his folly|Answer a fool according to his folly"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise">Answer him, or don't?</h2>
+    <div class="pair">
+      <div class="scroll rise" style="--d:1"><p class="ref">Proverbs 26:4</p><p class="kjv"><mark>Answer not</mark> a fool according to his folly, lest thou also be like unto him.</p></div>
+      <div class="scroll rise" style="--d:2"><p class="ref">Proverbs 26:5</p><p class="kjv"><mark>Answer</mark> a fool according to his folly, lest he be wise in his own conceit.</p></div>
+    </div>
+    <p class="note step">These sit side by side <em>on purpose</em>. It's not a mistake; it's a test. Both are true. Wisdom is knowing which one fits the moment.</p>
+    <div class="columns">
+      <div class="col law step">
+        <p class="who">Verse 4: keep quiet when</p>
+        <h3>he wants a fight</h3>
+        <p>If answering means getting down in the mud with him, shouting, cussing, matching insult for insult, don't. You'll just become him.</p>
+      </div>
+      <div class="col grace step">
+        <p class="who">Verse 5: speak up when</p>
+        <h3>a lie would stand</h3>
+        <p>If staying silent lets him think he's right, or lets others be hurt by his folly, answer him. Calmly, plainly, and then be done.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="4" data-hl="lest thou also be like unto him"></blockquote>
+    <h2 class="rise" style="--d:1">Jesus did both</h2>
+    <p class="note rise" style="--d:2">When Herod mocked Him and only wanted a show, Jesus said nothing at all:</p>
+    <blockquote class="quote step"><p>“Then he questioned with him in many words; but he answered him nothing.”</p><cite>Luke 23:9</cite></blockquote>
+    <p class="note step">When the religious leaders tried to trap Him with trick questions, He answered so clearly that they had nothing left to say:</p>
+    <blockquote class="quote step"><p>“And no man was able to answer him a word, neither durst any man from that day forth ask him any more questions.”</p><cite>Matthew 22:46</cite></blockquote>
+    <p class="note step">Before you answer, ask: <em>Will this help, or am I just trying to win?</em></p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="6-9" data-hl="cutteth off the feet, and drinketh damage|As a thorn goeth up into the hand of a drunkard"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="7" data-hl="so is a parable in the mouth of fools"></blockquote>
+    <h2 class="rise" style="--d:1">Four pictures of a fool</h2>
+    <ol class="signs">
+      <li class="step"><b>Sending a fool</b>Trusting him with a message is like cutting off your own feet. The job won't get done, and you'll pay for it. (v. 6)</li>
+      <li class="step"><b>A lame man's legs</b>A wise saying in a fool's mouth limps. He can quote it, but he can't walk in it. (v. 7)</li>
+      <li class="step"><b>A stone tied in a sling</b>A tied stone can't fly; it just swings back. Honoring a fool is just as useless. (v. 8)</li>
+      <li class="step"><b>A thorn in a drunk's hand</b>He waves it around and hurts himself and everybody near him, and hardly feels it. (v. 9)</li>
+    </ol>
+    <p class="note step">Notice verses 7 and 9: a fool can quote the Bible. Knowing the words isn't the same as being changed by them. That's a warning for all of us who sit in a Bible study.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="10-12" data-hl="As a dog returneth to his vomit, so a fool returneth to his folly|there is more hope of a fool than of him"></section>
+
+<section class="slide ex prv26-loop">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="11"></blockquote>
+    <div class="split">
+      <div class="stage">
+        <svg viewBox="0 0 520 350" role="img" aria-label="A loop: the old thing, the crash, never again, the pull, and back to the old thing. Then a way out of the loop: confess, reach out, turn to Christ.">
+          <circle class="prv26-ring" cx="175" cy="190" r="118" fill="none" stroke-width="5" stroke-dasharray="16 12" style="stroke:var(--danger)"/>
+          <g class="prv26-nodes">
+            <g class="prv26-node"><rect x="80" y="50" width="190" height="46" rx="23"/><text x="175" y="81" text-anchor="middle">the old thing</text></g>
+            <g class="prv26-node"><rect x="214" y="167" width="160" height="46" rx="23"/><text x="294" y="198" text-anchor="middle">the crash</text></g>
+            <g class="prv26-node"><rect x="70" y="285" width="210" height="46" rx="23"/><text x="175" y="316" text-anchor="middle">“never again”</text></g>
+            <g class="prv26-node"><rect x="2" y="167" width="140" height="46" rx="23"/><text x="72" y="198" text-anchor="middle">the pull</text></g>
+          </g>
+          <g class="prv26-exit">
+            <path d="M376 190 Q440 190 446 140" fill="none" stroke-width="6" stroke-linecap="round" style="stroke:var(--accent)"/>
+            <path d="M432 152 L446 132 L460 152" fill="none" stroke-width="6" stroke-linecap="round" stroke-linejoin="round" style="stroke:var(--accent)"/>
+            <text x="440" y="28" text-anchor="middle" font-size="24" font-weight="700" style="fill:var(--accent-hot)">the way out</text>
+            <text x="440" y="60" text-anchor="middle" font-size="21">confess</text>
+            <text x="440" y="86" text-anchor="middle" font-size="21">reach out</text>
+            <text x="440" y="112" text-anchor="middle" font-size="21">turn to Christ</text>
+          </g>
+        </svg>
+      </div>
+      <div>
+        <h2 class="rise" style="--d:1">Back to the vomit</h2>
+        <p class="note rise" style="--d:2">It's a gross picture on purpose. The dog throws up what made him sick, then goes right back and eats it.</p>
+        <p class="note step">Most of us know this loop from the inside. The old thing, the crash, “never again,” the pull, and back around. That's what <em>relapse</em> looks like, and naming it honestly is the first step out.</p>
+        <p class="note step prv26-out">The loop has a door. You don't have to break it alone, and you don't have to hide when you've slipped.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise">If you've gone back</h2>
+    <blockquote class="quote rise" style="--d:1"><p>“But it is happened unto them according to the true proverb, The dog is turned to his own vomit again; and the sow that was washed to her wallowing in the mire.”</p><cite>2 Peter 2:22</cite></blockquote>
+    <p class="note step">Peter quotes our verse about false teachers who never really changed. But a believer who stumbles isn't a dog. In Christ, “he is a new creature” (2 Corinthians 5:17). A slip doesn't undo what Jesus did. It does mean it's time to get up, tell the truth, and let your brothers help.</p>
+    <blockquote class="quote step"><p>“For a just man falleth seven times, and riseth up again: but the wicked shall fall into mischief.”</p><cite>Proverbs 24:16</cite></blockquote>
+    <blockquote class="quote step"><p>“If we confess our sins, he is faithful and just to forgive us our sins, and to cleanse us from all unrighteousness.”</p><cite>1 John 1:9</cite></blockquote>
+    <p class="note step">No shame in this room. Just get up one more time than you fall.</p>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="12"></blockquote>
+    <p class="saying rise" style="--d:1">There is more hope of a <em>fool</em> than of him.</p>
+    <p class="note rise" style="--d:2">After eleven verses about fools, here's someone worse: the man who thinks he already knows it all. A fool might still learn the hard way. A man who's “wise in his own conceit” won't even listen.</p>
+    <blockquote class="quote step"><p>“Be not wise in your own conceits.”</p><cite>Romans 12:16</cite></blockquote>
+    <p class="note step">About verse 10: the Hebrew is hard, and translations differ a lot. The KJV reads it as God, the Maker of all things, giving fools and sinners what's coming to them.</p>
+  </div>
+</section>
+
+<!-- ======================= PART TWO ======================= -->
+<section class="slide part">
+  <div class="inner">
+    <p class="part-n rise">Part two</p>
+    <h2 class="rise" style="--d:1">The sluggard</h2>
+    <p class="range rise" style="--d:2">Verses 13–16</p>
+    <p class="hook rise" style="--d:4">Four snapshots of a man who won't get up.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="13-16" data-hl="There is a lion in the way|As the door turneth upon his hinges|it grieveth him to bring it again to his mouth"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="14"></blockquote>
+    <div class="split">
+      <div class="stage">
+        <svg viewBox="0 0 320 280" role="img" aria-label="A door swinging back and forth on its hinges, never going anywhere.">
+          <rect x="80" y="20" width="160" height="240" stroke-width="4" style="fill:var(--bg);stroke:var(--line-strong)"/>
+          <g class="prv26-door">
+            <rect x="84" y="24" width="152" height="232" style="fill:var(--surface-2)"/>
+            <rect x="102" y="44" width="116" height="80" rx="4" fill="none" stroke-width="3" style="stroke:var(--line-strong)"/>
+            <rect x="102" y="144" width="116" height="92" rx="4" fill="none" stroke-width="3" style="stroke:var(--line-strong)"/>
+            <circle cx="216" cy="146" r="7" style="fill:var(--accent)"/>
+          </g>
+          <rect x="76" y="50" width="10" height="26" rx="2" style="fill:var(--ink-soft)"/>
+          <rect x="76" y="204" width="10" height="26" rx="2" style="fill:var(--ink-soft)"/>
+          <text x="160" y="278" text-anchor="middle" font-size="18" style="fill:var(--ink-soft)">moving, but going nowhere</text>
+        </svg>
+      </div>
+      <div>
+        <h2 class="rise" style="--d:1">Turning on his hinges</h2>
+        <p class="note rise" style="--d:2">A door swings back and forth all day and never leaves the doorway. The sluggard rolls over and over in bed the same way. Lots of motion, no progress.</p>
+        <p class="note step">Verse 15 is almost funny: his hand is already in the dish, and lifting it to his mouth is too much work. He'll go hungry with food in his hand.</p>
+        <p class="note step">Sometimes what looks like laziness is really fear, or a heaviness that's hard to name. If that's you, say so. Either way, the answer starts with one small step today.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="13"></blockquote>
+    <h2 class="rise" style="--d:1">The sluggard's excuses</h2>
+    <ul class="nots">
+      <li class="step"><span class="k">“There is a lion in the way”</span><span class="why">a danger so dramatic nobody can argue with it</span></li>
+      <li class="step"><span class="k">“A lion is in the streets”</span><span class="why">just to be sure, there's one out front too</span></li>
+      <li class="step"><span class="k">“I know better than you”</span><span class="why">“wiser in his own conceit than seven men” (v. 16)</span></li>
+      <li class="step yes"><span class="k">Get up and go</span><span class="why">the lion is almost never really there</span></li>
+    </ul>
+    <p class="note step">The sluggard is never short of reasons. Seven wise men could give him good answers, and he'd still think he's smarter. Be honest about your own “lions.” What is the excuse you keep using?</p>
+  </div>
+</section>
+
+<!-- ======================= PART THREE ======================= -->
+<section class="slide part">
+  <div class="inner">
+    <p class="part-n rise">Part three</p>
+    <h2 class="rise" style="--d:1">Fires and pits</h2>
+    <p class="range rise" style="--d:2">Verses 17–28</p>
+    <p class="hook rise" style="--d:4">Meddlers, pranksters, gossips, and liars.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="17-19" data-hl="like one that taketh a dog by the ears|Am not I in sport?"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="17" data-hl="taketh a dog by the ears"></blockquote>
+    <h2 class="rise" style="--d:1">Grabbing a dog by the ears</h2>
+    <div class="asks">
+      <div class="ask step"><span class="q">Jumping into a fight that isn't yours</span><span class="stamp">Bitten</span><span class="ctx">Dogs back then were mostly wild street dogs, not pets. Grab a passing one by the ears and you can't hold on, and you can't let go without getting bit.</span></div>
+      <div class="ask step"><span class="q">“Am not I in sport?”</span><span class="stamp">Not a joke</span><span class="ctx">Verses 18–19: the man who lies to his neighbor or hurts him, then says “I was only kidding,” is like a madman throwing flaming arrows.</span></div>
+    </div>
+    <p class="note step">“Just joking” doesn't pull the arrow back out. If you hurt someone, own it.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="20-22" data-hl="Where no wood is, there the fire goeth out|the strife ceaseth|The words of a talebearer are as wounds"></section>
+
+<section class="slide ex prv26-fire">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="20"></blockquote>
+    <div class="split">
+      <div class="stage">
+        <svg viewBox="0 0 320 280" role="img" aria-label="A fire burning on logs. As the logs are taken away, the fire shrinks and goes out.">
+          <g class="prv26-smoke" fill="none" stroke-width="4" stroke-linecap="round" style="stroke:var(--ink-soft)">
+            <path d="M150 180 q-14 -24 0 -46 q14 -22 0 -46"/><path d="M174 186 q-12 -20 0 -40 q12 -20 0 -40"/>
+          </g>
+          <g class="prv26-flamebox">
+            <path class="prv26-flame" d="M160 70 C120 120 108 150 122 186 C132 212 188 212 198 186 C212 150 196 118 160 70 Z" style="fill:var(--warm)"/>
+            <path class="prv26-flame" d="M160 126 C142 152 138 170 146 188 C152 202 170 202 176 188 C184 170 178 152 160 126 Z" style="fill:var(--accent-hot)"/>
+          </g>
+          <g style="fill:var(--leather);stroke:var(--leather-light)" stroke-width="3">
+            <rect class="prv26-log l1" x="80" y="196" width="160" height="22" rx="11" transform="rotate(-12 160 207)"/>
+            <rect class="prv26-log l2" x="80" y="196" width="160" height="22" rx="11" transform="rotate(12 160 207)"/>
+            <rect class="prv26-log l3" x="70" y="222" width="180" height="22" rx="11"/>
+          </g>
+        </svg>
+      </div>
+      <div>
+        <h2 class="rise" style="--d:1">No wood, no fire</h2>
+        <p class="note rise" style="--d:2">A fire only lasts as long as somebody feeds it. Strife is the same. The <em>talebearer</em>, the man carrying stories from one person to the next, is the wood.</p>
+        <p class="note step prv26-f1">Stop passing it on, and the fire gets smaller.</p>
+        <p class="note step prv26-f2">Starve it completely, and it goes out. “Behold, how great a matter a little fire kindleth!” (James 3:5).</p>
+        <p class="note step">Verse 22: gossip tastes good going down, and it wounds deep. Be the place where a story stops.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="slide verse" data-v="23-25" data-hl="a potsherd covered with silver dross|When he speaketh fair, believe him not"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="23"></blockquote>
+    <div class="split">
+      <div class="stage">
+        <svg viewBox="0 0 320 300" role="img" aria-label="A clay pot coated in shiny silver glaze. The coating fades and shows cracked, cheap clay underneath.">
+          <path d="M120 40 L200 40 L196 70 C260 100 270 190 230 250 C210 280 110 280 90 250 C50 190 60 100 124 70 Z" style="fill:color-mix(in srgb, var(--warm) 45%, var(--surface-2))"/>
+          <g class="prv26-crack" fill="none" stroke-width="3" stroke-linecap="round" style="stroke:var(--ink)">
+            <path d="M160 90 L150 130 L170 160 L155 200"/><path d="M110 170 L130 185 L120 215"/><path d="M215 140 L198 170"/>
+          </g>
+          <path class="prv26-glaze" d="M120 40 L200 40 L196 70 C260 100 270 190 230 250 C210 280 110 280 90 250 C50 190 60 100 124 70 Z"/>
+          <path class="prv26-glaze" d="M110 110 C96 140 96 190 112 222" fill="none" stroke-width="10" stroke-linecap="round" style="stroke:var(--bg);opacity:.5"/>
+        </svg>
+      </div>
+      <div>
+        <h2 class="rise" style="--d:1">Shiny on the outside</h2>
+        <p class="note rise" style="--d:2">A <em>potsherd</em> is cheap broken pottery. Coat it with the shiny leftover scum from melting silver, and from across the room it looks like silver.</p>
+        <p class="note step prv26-peel">That's smooth talk covering a hateful heart. Up close, it's cracked clay.</p>
+        <p class="note step">Verse 25: <em>“When he speaketh fair, believe him not.”</em> Most of us have been played by a smooth talker, and some of us have been the smooth talker. Watch what a man does, not just what he says.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="slide verse" data-v="26-28" data-hl="Whoso diggeth a pit shall fall therein|he that rolleth a stone, it will return upon him"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="27"></blockquote>
+    <div class="split">
+      <div class="stage">
+        <svg viewBox="0 0 560 300" role="img" aria-label="A man rolls a stone up a slope. It rolls back down onto him.">
+          <path d="M20 280 L540 64 L540 280 Z" style="fill:var(--surface-2)"/>
+          <line x1="20" y1="280" x2="540" y2="64" stroke-width="3" style="stroke:var(--line-strong)"/>
+          <g stroke-width="5" stroke-linecap="round" fill="none" style="stroke:var(--ink)">
+            <circle cx="72" cy="196" r="12" style="fill:var(--ink)"/>
+            <path d="M74 210 L84 244 M80 222 L110 214 M84 244 L74 270 M84 244 L100 262"/>
+          </g>
+          <g class="prv26-stone">
+            <circle cx="140" cy="216" r="30" style="fill:var(--ink-soft)"/>
+            <path d="M126 204 L146 212 M138 228 L154 222" stroke-width="3" style="stroke:var(--surface-2)"/>
+          </g>
+        </svg>
+      </div>
+      <div>
+        <h2 class="rise" style="--d:1">It comes back on you</h2>
+        <p class="note rise" style="--d:2">Dig a pit to trap somebody and you'll be the one who falls in. Push a stone uphill to drop on someone, and it rolls back down on you.</p>
+        <p class="note step">Hatred hidden behind lies gets found out, often in front of everyone (v. 26). Sin has a way of coming home.</p>
+        <blockquote class="quote step"><p>“Be not deceived; God is not mocked: for whatsoever a man soweth, that shall he also reap.”</p><cite>Galatians 6:7</cite></blockquote>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ======================= CLOSING ======================= -->
+<section class="slide remember">
+  <div class="inner">
+    <h2 class="rise">Points to remember</h2>
+    <ol class="seeds">
+      <li class="step"><span class="topic">The fool</span><span class="seed-q">“A rod for the fool’s back” <cite>26:3</cite></span><span class="take">A fool won't listen, so he learns the hard way. Be a man who listens.</span></li>
+      <li class="step"><span class="topic">Wise answers</span><span class="seed-q">“Answer not… Answer” <cite>26:4–5</cite></span><span class="take">Don't stoop to his level, and don't let a lie stand. Wisdom knows which moment it is.</span></li>
+      <li class="step"><span class="topic">Going back</span><span class="seed-q">“As a dog returneth to his vomit” <cite>26:11</cite></span><span class="take">Name the loop honestly. If you fall, confess, get up, and let your brothers help.</span></li>
+      <li class="step"><span class="topic">Pride</span><span class="seed-q">“More hope of a fool than of him” <cite>26:12</cite></span><span class="take">The man who thinks he knows it all is worse off than a fool.</span></li>
+      <li class="step"><span class="topic">The sluggard</span><span class="seed-q">“There is a lion in the way” <cite>26:13</cite></span><span class="take">The lion is usually an excuse. Take one small step today.</span></li>
+      <li class="step"><span class="topic">The tongue</span><span class="seed-q">“Where no wood is, there the fire goeth out” <cite>26:20</cite></span><span class="take">Gossip and lies feed the fire. Be the place where the story stops.</span></li>
+    </ol>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 1 of 6</p>
+      <span class="topic">The fool</span>
+      <h2>What makes a man a fool in God's eyes?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step"><p>“The fool hath said in his heart, There is no God. They are corrupt, they have done abominable works, there is none that doeth good.”</p><cite>Psalm 14:1</cite></blockquote>
+      <blockquote class="quote step" data-q="3" data-hl="a rod for the fool’s back"></blockquote>
+      <blockquote class="quote step" data-q="7" data-hl="so is a parable in the mouth of fools"></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>Not a lack of brains, but a refusal to listen. The fool leaves God out and won't take correction, so he only learns from pain. He can even quote wise sayings without living them. The cure is a humble heart that listens to God.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 2 of 6</p>
+      <span class="topic">Wise answers</span>
+      <h2>When should you answer a fool, and when should you keep quiet?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="4"></blockquote>
+      <blockquote class="quote step" data-q="5"></blockquote>
+      <blockquote class="quote step"><p>“Then he questioned with him in many words; but he answered him nothing.”</p><cite>Luke 23:9</cite></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>Keep quiet when answering would drag you down to his level. Speak up when silence would let a lie stand or let him think he's wise. Jesus did both. Ask yourself: will this help, or am I just trying to win?</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 3 of 6</p>
+      <span class="topic">Going back</span>
+      <h2>What does the dog going back to his vomit teach us, and where is the hope?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="11"></blockquote>
+      <blockquote class="quote step"><p>“For a just man falleth seven times, and riseth up again: but the wicked shall fall into mischief.”</p><cite>Proverbs 24:16</cite></blockquote>
+      <blockquote class="quote step"><p>“If we confess our sins, he is faithful and just to forgive us our sins, and to cleanse us from all unrighteousness.”</p><cite>1 John 1:9</cite></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>Folly is a loop: we go back to the very thing that made us sick. Naming that honestly matters. But the hope is that in Christ we are new men, and a fall doesn't have to be the end. Confess it to God, tell a brother, and get back up. He is faithful to forgive.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 4 of 6</p>
+      <span class="topic">Pride</span>
+      <h2>Who is in worse shape than a fool?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="12"></blockquote>
+      <blockquote class="quote step" data-q="16"></blockquote>
+      <blockquote class="quote step"><p>“Be not wise in your own conceits.”</p><cite>Romans 12:16</cite></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>The man who is wise in his own eyes. A fool might still learn, but a know-it-all has shut the door on learning. The first step to wisdom is admitting you don't have it all figured out.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 5 of 6</p>
+      <span class="topic">The sluggard</span>
+      <h2>What excuses does the sluggard make?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="13"></blockquote>
+      <blockquote class="quote step" data-q="15"></blockquote>
+      <blockquote class="quote step" data-q="16"></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>Dramatic dangers that aren't really there: “a lion in the way.” And he's sure he's smarter than everyone telling him to get moving. The way out is to be honest about our own “lions” and take the next small step anyway.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 6 of 6</p>
+      <span class="topic">The tongue</span>
+      <h2>How do gossip and lies set fires?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="20-21"></blockquote>
+      <blockquote class="quote step" data-q="22"></blockquote>
+      <blockquote class="quote step"><p>“Even so the tongue is a little member, and boasteth great things. Behold, how great a matter a little fire kindleth!”</p><cite>James 3:5</cite></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>Gossip is the wood that keeps a fight burning, and lies are flaming arrows. Words go deep and wound. Take away the wood, by refusing to carry the story, and the fire goes out.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide prayer">
+  <div class="inner">
+    <h2 class="rise">Prayer requests</h2>
+    <p class="ask-line rise" style="--d:1">What can we pray about for you today?</p>
+    <blockquote class="quote rise" style="--d:3"><p>“It is of the LORD’S mercies that we are not consumed, because his compassions fail not. They are new every morning: great is thy faithfulness.”</p><cite>Lamentations 3:22–23</cite></blockquote>
+  </div>
+</section>
+
+</main>
+
+<script>
+// King James Version, Proverbs chapter 26
+const V = {
+  1: "As snow in summer, and as rain in harvest, so honour is not seemly for a fool.",
+  2: "As the bird by wandering, as the swallow by flying, so the curse causeless shall not come.",
+  3: "A whip for the horse, a bridle for the ass, and a rod for the fool’s back.",
+  4: "Answer not a fool according to his folly, lest thou also be like unto him.",
+  5: "Answer a fool according to his folly, lest he be wise in his own conceit.",
+  6: "He that sendeth a message by the hand of a fool cutteth off the feet, and drinketh damage.",
+  7: "The legs of the lame are not equal: so is a parable in the mouth of fools.",
+  8: "As he that bindeth a stone in a sling, so is he that giveth honour to a fool.",
+  9: "As a thorn goeth up into the hand of a drunkard, so is a parable in the mouth of fools.",
+  10: "The great God that formed all things both rewardeth the fool, and rewardeth transgressors.",
+  11: "As a dog returneth to his vomit, so a fool returneth to his folly.",
+  12: "Seest thou a man wise in his own conceit? there is more hope of a fool than of him.",
+  13: "The slothful man saith, There is a lion in the way; a lion is in the streets.",
+  14: "As the door turneth upon his hinges, so doth the slothful upon his bed.",
+  15: "The slothful hideth his hand in his bosom; it grieveth him to bring it again to his mouth.",
+  16: "The sluggard is wiser in his own conceit than seven men that can render a reason.",
+  17: "He that passeth by, and meddleth with strife belonging not to him, is like one that taketh a dog by the ears.",
+  18: "As a mad man who casteth firebrands, arrows, and death,",
+  19: "So is the man that deceiveth his neighbour, and saith, Am not I in sport?",
+  20: "Where no wood is, there the fire goeth out: so where there is no talebearer, the strife ceaseth.",
+  21: "As coals are to burning coals, and wood to fire; so is a contentious man to kindle strife.",
+  22: "The words of a talebearer are as wounds, and they go down into the innermost parts of the belly.",
+  23: "Burning lips and a wicked heart are like a potsherd covered with silver dross.",
+  24: "He that hateth dissembleth with his lips, and layeth up deceit within him;",
+  25: "When he speaketh fair, believe him not: for there are seven abominations in his heart.",
+  26: "Whose hatred is covered by deceit, his wickedness shall be shewed before the whole congregation.",
+  27: "Whoso diggeth a pit shall fall therein: and he that rolleth a stone, it will return upon him.",
+  28: "A lying tongue hateth those that are afflicted by it; and a flattering mouth worketh ruin."
+};
+const BOOK = "Proverbs 26";
+</script>
+<script src="../assets/deck.js"></script>
+</body>
+</html>

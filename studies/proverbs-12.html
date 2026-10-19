@@ -1,0 +1,655 @@
+<!doctype html>
+<html lang="en" data-theme="slate">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Proverbs 12</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="../assets/fonts.css">
+<link rel="stylesheet" href="../assets/deck.css">
+<link rel="stylesheet" href="../assets/themes.css">
+<style>
+.ex .note + .quote { margin-top: .9em; }
+
+/* Two lines drawn over time: the teachable man climbs, the brutish man stays flat */
+.prv12-line { fill: none; stroke-width: 5; stroke-linecap: round; stroke-dasharray: 1; stroke-dashoffset: 1; transition: stroke-dashoffset 2s ease .5s; }
+.slide.active .prv12-line { stroke-dashoffset: 0; }
+.prv12-grow text { font-size: 19px; }
+.prv12-end { opacity: 0; transition: opacity .8s ease 2.3s; }
+.slide.active .prv12-end { opacity: 1; }
+
+/* Roots under the ground */
+.prv12-roots { opacity: 0; transition: opacity 1.2s ease; }
+.split:has(.prv12-dig.on) .prv12-roots { opacity: 1; }
+
+/* A card that flips: what he shows, and what's true */
+.prv12-pair { display: grid; gap: 1rem 2rem; margin: .4em 0 1em; }
+@media (min-width: 760px) { .prv12-pair { grid-template-columns: 1fr 1fr; } }
+.prv12-flip { perspective: 1200px; }
+.prv12-flip h3 { font: 700 clamp(.9rem, .82rem + .35vw, 1.1rem) var(--sans); color: var(--ink-soft); margin-bottom: .4em; }
+.prv12-card { position: relative; height: clamp(8.5rem, 20vh, 11rem); transform-style: preserve-3d; transition: transform 1s cubic-bezier(.4,.2,.2,1); }
+.prv12-wrap:has(.prv12-go.on) .prv12-card { transform: rotateY(180deg); }
+.prv12-face { position: absolute; inset: 0; backface-visibility: hidden; -webkit-backface-visibility: hidden; display: flex; flex-direction: column; justify-content: center; gap: .3em; padding: .8em 1.1em; border-radius: 10px; border: 1.5px solid var(--line-strong); background: var(--surface-2); }
+.prv12-face b { font: 400 clamp(1.3rem, 1rem + 1.4vw, 2.1rem)/1.15 var(--serif); }
+.prv12-face span { color: var(--ink-soft); font-size: clamp(.9rem, .82rem + .4vw, 1.15rem); line-height: 1.35; }
+.prv12-back { transform: rotateY(180deg); }
+.prv12-back.prv12-bad { border-color: var(--danger); }
+.prv12-back.prv12-bad b { color: var(--danger); }
+.prv12-back.prv12-good { border-color: var(--cool); }
+.prv12-back.prv12-good b { color: var(--cool); }
+
+/* Two fuses: one burns straight to the bang, one gets put out */
+.prv12-fuses { display: grid; gap: 1.1rem; margin: .5em 0 1.1em; }
+.prv12-row { display: grid; grid-template-columns: minmax(6rem, 9rem) 1fr; gap: .3rem 1rem; align-items: center; }
+.prv12-row > span { font-weight: 700; font-size: clamp(.95rem, .85rem + .45vw, 1.25rem); }
+.prv12-track { position: relative; padding-top: 1.5rem; }
+.prv12-cord { position: absolute; left: 0; top: .75rem; height: 4px; translate: 0 -50%; width: 100%; background: repeating-linear-gradient(90deg, var(--leather-light) 0 8px, var(--leather) 8px 12px); border-radius: 2px; }
+.prv12-cord::after { content: ""; position: absolute; right: -6px; top: 50%; width: 14px; height: 14px; translate: 0 -50%; border-radius: 50%; background: var(--glow); box-shadow: 0 0 12px 4px var(--warm); }
+.prv12-out { display: block; margin-top: .25em; font-weight: 800; opacity: 0; font-size: clamp(.9rem, .8rem + .45vw, 1.2rem); }
+.prv12-fool .prv12-out { color: var(--danger); }
+.prv12-wise .prv12-out { color: var(--accent-hot); }
+.slide.active .prv12-fool .prv12-cord { animation: prv12-burn .9s .6s linear forwards; }
+.slide.active .prv12-fool .prv12-out { animation: prv12-show .3s 1.5s ease forwards; }
+.slide.active .prv12-wise .prv12-cord { animation: prv12-slow 3s .6s linear forwards; }
+.slide.active .prv12-wise .prv12-cord::after { animation: prv12-snuff .6s 3.6s ease forwards; }
+.slide.active .prv12-wise .prv12-out { animation: prv12-show .6s 3.8s ease forwards; }
+@keyframes prv12-burn { to { width: 0; } }
+@keyframes prv12-slow { to { width: 72%; } }
+@keyframes prv12-snuff { to { opacity: 0; } }
+@keyframes prv12-show { to { opacity: 1; } }
+
+/* A heart cut by words, then mended */
+.prv12-crack { fill: none; stroke: var(--danger); stroke-width: 4; stroke-linecap: round; transition: opacity 1s ease; }
+.prv12-heart { transition: fill 1.2s ease; fill: var(--surface-2); stroke: var(--line-strong); stroke-width: 3; }
+.split:has(.prv12-heal.on) .prv12-crack { opacity: 0; }
+.split:has(.prv12-heal.on) .prv12-heart { fill: color-mix(in srgb, var(--accent) 35%, var(--bg)); stroke: var(--accent); }
+.prv12-cut text { font-size: 20px; }
+.prv12-cut .prv12-h1 { transition: opacity .8s ease; }
+.prv12-cut .prv12-h2 { opacity: 0; transition: opacity .8s ease .5s; }
+.split:has(.prv12-heal.on) .prv12-h1 { opacity: 0; }
+.split:has(.prv12-heal.on) .prv12-h2 { opacity: 1; }
+
+/* For a moment, or for ever */
+.prv12-time { display: grid; gap: .9rem; margin: .5em 0 1.1em; }
+.prv12-time div { display: grid; grid-template-columns: minmax(7rem, 11rem) 1fr; align-items: center; gap: .3rem 1rem; }
+.prv12-time b { font-weight: 700; font-size: clamp(.95rem, .85rem + .45vw, 1.25rem); }
+.prv12-time i { display: block; height: 1.6rem; border-radius: 4px; width: 0; transition: width 1.6s cubic-bezier(.3,.7,.2,1) .4s; position: relative; }
+.prv12-time .prv12-lie i { background: var(--danger); }
+.prv12-time .prv12-truth i { background: linear-gradient(90deg, var(--accent), var(--accent-hot)); clip-path: polygon(0 0, calc(100% - 14px) 0, 100% 50%, calc(100% - 14px) 100%, 0 100%); }
+.slide.active .prv12-time .prv12-lie i { width: 4%; }
+.slide.active .prv12-time .prv12-truth i { width: 100%; transition-duration: 2.6s; }
+.prv12-time small { grid-column: 2; color: var(--ink-soft); font-size: clamp(.85rem, .8rem + .3vw, 1.05rem); font-style: italic; font-family: var(--serif); }
+
+/* A man bent over under a weight, lifted by a good word */
+.prv12-body { transform-box: view-box; transform-origin: 200px 230px; transform: rotate(38deg); transition: transform 1.6s cubic-bezier(.3,.7,.2,1) .4s; }
+.prv12-weight { transition: opacity .8s ease, transform 1s ease; }
+.prv12-bubble { opacity: 0; transition: opacity .8s ease; }
+.split:has(.prv12-word.on) .prv12-body { transform: rotate(0deg); }
+.split:has(.prv12-word.on) .prv12-weight { opacity: 0; transform: translateY(40px); }
+.split:has(.prv12-word.on) .prv12-bubble { opacity: 1; }
+
+/* A hunter's checklist, left unfinished */
+.prv12-check { list-style: none; padding: 0; margin: .4em 0 1em; display: flex; flex-wrap: wrap; gap: .6rem; }
+.prv12-check li { display: flex; align-items: center; gap: .5em; padding: .45em .9em; border-radius: 8px; border: 1.5px solid var(--line-strong); background: var(--surface); font-size: clamp(1rem, .9rem + .5vw, 1.35rem); }
+.prv12-check li::before { content: "\2713"; display: grid; place-items: center; width: 1.4em; height: 1.4em; border-radius: 4px; background: var(--accent); color: var(--on-accent); font-weight: 800; font-size: .85em; }
+.prv12-check li.prv12-no { border-color: var(--danger); border-style: dashed; }
+.prv12-check li.prv12-no::before { content: ""; background: transparent; border: 2px solid var(--danger); }
+.prv12-check li.prv12-no em { color: var(--danger); font-style: normal; font-weight: 700; font-size: .8em; }
+
+/* The road with no death on it */
+.prv12-road { fill: none; stroke-width: 8; stroke-linecap: round; stroke-dasharray: 1; stroke-dashoffset: 1; transition: stroke-dashoffset 2.4s ease .4s; }
+.slide.active .prv12-road { stroke-dashoffset: 0; }
+.prv12-sun { opacity: 0; transition: opacity 1.2s ease 2.4s; }
+.slide.active .prv12-sun { opacity: 1; }
+
+/* The chapter tallied, theme by theme */
+.prv12-tally { display: grid; gap: .5rem; margin: .4em 0 1em; }
+.prv12-tally > div { display: grid; grid-template-columns: minmax(7rem, 13rem) 1fr; gap: .2rem 1rem; align-items: center; }
+.prv12-tally h3 { font: 700 clamp(.85rem, .78rem + .35vw, 1.1rem)/1.2 var(--sans); color: var(--ink); }
+.prv12-tally p { display: flex; flex-wrap: wrap; gap: 4px; }
+.prv12-tally i { font-style: normal; min-width: 2.1em; text-align: center; padding: .15em .35em; border-radius: 5px; font-weight: 700; font-size: clamp(.78rem, .7rem + .35vw, 1rem); background: color-mix(in srgb, var(--accent) 18%, transparent); border: 1px solid color-mix(in srgb, var(--accent) 50%, transparent); }
+.prv12-tally .prv12-top i { background: var(--accent); color: var(--on-accent); border-color: var(--accent); }
+@media (max-width: 600px) { .prv12-tally > div, .prv12-row, .prv12-time div { grid-template-columns: 1fr; } .prv12-time small { grid-column: 1; } }
+</style>
+</head>
+<body>
+<main class="deck" id="deck">
+
+<!-- ======================= OPENING ======================= -->
+<section class="slide title">
+  <div class="inner">
+    <div class="emblem rise"></div>
+    <h1 class="rise" style="--d:1">Proverbs 12</h1>
+    <p class="sub rise" style="--d:3">Love correction, guard your mouth</p>
+    <p class="tag rise" style="--d:5">A wise man can take a rebuke, hold his temper, tell the truth, and finish the job. His words heal instead of cut.</p>
+  </div>
+</section>
+
+<section class="slide watch">
+  <div class="inner">
+    <h2 class="rise">Things to watch for</h2>
+    <p class="lede rise" style="--d:1">Keep these questions in the back of your mind as we read. We'll come back to every one of them at the end.</p>
+    <ol class="seeds">
+      <li class="step"><span class="topic">Correction</span><span class="seed-q">How do I respond when someone corrects me?</span></li>
+      <li class="step"><span class="topic">The tongue</span><span class="seed-q">Do my words cut, or do they heal?</span></li>
+      <li class="step"><span class="topic">Truth</span><span class="seed-q">Why is a lie never worth it?</span></li>
+      <li class="step"><span class="topic">Anger</span><span class="seed-q">What does a wise man do with an insult?</span></li>
+      <li class="step"><span class="topic">Work</span><span class="seed-q">What's the difference between the diligent man and the slothful man?</span></li>
+      <li class="step"><span class="topic">Life</span><span class="seed-q">Where is the road with no death on it?</span></li>
+    </ol>
+  </div>
+</section>
+
+<!-- ======================= PART ONE ======================= -->
+<section class="slide part">
+  <div class="inner">
+    <p class="part-n rise">Part one</p>
+    <h2 class="rise" style="--d:1">Rooted</h2>
+    <p class="range rise" style="--d:2">Verses 1–12</p>
+    <p class="hook rise" style="--d:4">What a man loves, who he marries, and what he's rooted in.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="1-3" data-hl="Whoso loveth instruction loveth knowledge: but he that hateth reproof is brutish|the root of the righteous shall not be moved"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="1"></blockquote>
+    <div class="split">
+      <div class="stage">
+        <svg class="prv12-grow" viewBox="0 0 600 330" role="img" aria-label="Two lines over time. The man who loves instruction keeps climbing. The man who hates reproof stays flat.">
+          <line x1="40" y1="290" x2="580" y2="290" stroke-width="2" style="stroke:var(--line-strong)"/>
+          <line x1="40" y1="290" x2="40" y2="30" stroke-width="2" style="stroke:var(--line-strong)"/>
+          <text x="310" y="322" text-anchor="middle" font-size="16" style="fill:var(--ink-soft)">every correction, year after year</text>
+          <text x="30" y="160" text-anchor="middle" font-size="16" transform="rotate(-90 30 160)" style="fill:var(--ink-soft)">knowledge</text>
+          <path class="prv12-line" pathLength="1" d="M50 250 L150 230 L230 200 L310 165 L390 130 L470 92 L560 55" style="stroke:var(--accent)"/>
+          <path class="prv12-line" pathLength="1" d="M50 255 L150 258 L230 254 L310 262 L390 258 L470 266 L560 270" style="stroke:var(--danger)"/>
+          <text class="prv12-end" x="555" y="40" text-anchor="end" font-weight="700" style="fill:var(--accent-hot)">loves instruction</text>
+          <text class="prv12-end" x="555" y="250" text-anchor="end" font-weight="700" style="fill:var(--danger)">“brutish”</text>
+        </svg>
+      </div>
+      <div>
+        <h2 class="rise" style="--d:1">Love it or hate it</h2>
+        <p class="note rise" style="--d:2">Nobody enjoys being corrected. But Solomon says the man who wants to <em>know</em> things has to <em>love</em> being taught, including the hard part.</p>
+        <p class="note step">The man who hates reproof is <em>“brutish”</em>: the Hebrew word is about cattle. He's like a dumb animal that keeps walking into the same fence. Every correction he refuses, he stays right where he is.</p>
+      </div>
+    </div>
+    <blockquote class="quote step"><p>“Now no chastening for the present seemeth to be joyous, but grievous: nevertheless afterward it yieldeth the peaceable fruit of righteousness unto them which are exercised thereby.”</p><cite>Hebrews 12:11</cite></blockquote>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="3"></blockquote>
+    <div class="split">
+      <div class="stage">
+        <svg viewBox="0 0 600 340" role="img" aria-label="A tree standing on the ground. Below the ground, its roots spread wide and deep.">
+          <rect x="0" y="170" width="600" height="170" style="fill:color-mix(in srgb, var(--leather) 22%, transparent)"/>
+          <line x1="0" y1="170" x2="600" y2="170" stroke-width="3" style="stroke:var(--line-strong)"/>
+          <path d="M290 170 L294 70 L306 70 L310 170 Z" style="fill:var(--leather-light)"/>
+          <g style="fill:var(--accent)">
+            <circle cx="300" cy="62" r="46"/><circle cx="252" cy="88" r="34"/><circle cx="348" cy="88" r="34"/>
+          </g>
+          <g class="prv12-roots" fill="none" stroke-width="5" stroke-linecap="round" style="stroke:var(--leather-light)">
+            <path d="M300 170 C 300 220, 260 250, 200 300"/>
+            <path d="M300 170 C 300 230, 330 270, 400 310"/>
+            <path d="M300 170 C 296 240, 300 280, 298 330"/>
+            <path d="M300 180 C 270 190, 200 200, 120 210"/>
+            <path d="M300 180 C 340 196, 420 200, 490 220"/>
+            <path d="M230 240 C 200 250, 170 270, 140 268" stroke-width="3"/>
+            <path d="M370 280 C 400 270, 440 280, 470 270" stroke-width="3"/>
+          </g>
+          <text x="150" y="160" text-anchor="middle" font-size="16" style="fill:var(--ink-soft)">what people see</text>
+          <text class="prv12-roots" x="590" y="334" text-anchor="end" font-size="18" style="fill:var(--accent-hot);paint-order:stroke;stroke:var(--bg);stroke-width:6px;stroke-linejoin:round">“shall not be moved”</text>
+        </svg>
+      </div>
+      <div>
+        <h2 class="rise" style="--d:1">What holds you up</h2>
+        <p class="note rise" style="--d:2">You can build something fast on wickedness: a hustle, a reputation, a bankroll. But <em>“a man shall not be established”</em> by it. There's nothing underneath.</p>
+        <p class="note step prv12-dig">The righteous man's real strength is underground, where nobody sees it: time with God, His Word, a life slowly rooted in Him. When the wind comes, roots are what count. Verse 12 says it too: <em>“the root of the righteous yieldeth fruit.”</em></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="slide verse" data-v="4-6" data-hl="A virtuous woman is a crown to her husband|The words of the wicked are to lie in wait for blood"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="4"></blockquote>
+    <h2 class="rise" style="--d:1">A crown, or rot in the bones</h2>
+    <p class="note rise" style="--d:2">A <em>virtuous</em> woman is a woman of strength and good character: the same word used of the wife in chapter 31 and of Ruth. She makes her husband look like a king.</p>
+    <blockquote class="quote step"><p>“Who can find a virtuous woman? for her price is far above rubies.”</p><cite>Proverbs 31:10</cite></blockquote>
+    <p class="note step">If God gives you a woman like that, honor her. The other side is <em>“rottenness in his bones”</em>: a marriage can rot a man from the inside. And that runs both ways. Be the kind of husband who is a crown to his wife too.</p>
+    <p class="note step">Verses 5–6 turn to words: the wicked use them like an ambush, <em>“to lie in wait for blood.”</em> The upright use theirs to rescue people.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="7-9" data-hl="the house of the righteous shall stand|He that is despised, and hath a servant, is better than he that honoureth himself, and lacketh bread"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="9"></blockquote>
+    <h2 class="rise" style="--d:1">Better a nobody with bread</h2>
+    <div class="prv12-wrap">
+      <div class="prv12-pair">
+        <div class="prv12-flip rise" style="--d:2">
+          <h3>Man one</h3>
+          <div class="prv12-card">
+            <div class="prv12-face"><b>Talks big</b><span>Nice clothes, big plans, everybody's buddy. <em class="soft">“Honoureth himself.”</em></span></div>
+            <div class="prv12-face prv12-back prv12-bad"><b>“Lacketh bread”</b><span>Behind the show, the cupboard's empty and the rent is late.</span></div>
+          </div>
+        </div>
+        <div class="prv12-flip rise" style="--d:3">
+          <h3>Man two</h3>
+          <div class="prv12-card">
+            <div class="prv12-face"><b>A nobody</b><span>Plain truck, plain job. People don't think much of him. <em class="soft">“Despised.”</em></span></div>
+            <div class="prv12-face prv12-back prv12-good"><b>“Hath a servant”</b><span>Bills paid, food on the table, enough to hire help.</span></div>
+          </div>
+        </div>
+      </div>
+      <p class="note step prv12-go" style="margin-bottom:.8em">Flip the cards. The show-off is broke; the nobody is doing fine. Solomon says the quiet man with real bread is better off than the big talker with none.</p>
+    </div>
+    <p class="note step">Pride makes a man spend money he doesn't have to impress people he doesn't like. Humility lets you live honest and small, and build something real.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="10-12" data-hl="A righteous man regardeth the life of his beast|he that followeth vain persons is void of understanding"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="10-11" data-hl="regardeth the life of his beast|he that followeth vain persons is void of understanding"></blockquote>
+    <h2 class="rise" style="--d:1">Kind to animals, careful with friends</h2>
+    <p class="note rise" style="--d:2">Verse 10: a good man is even kind to his animals. How a man treats something that can't pay him back says a lot. The wicked man's <em>“tender mercies”</em>, his best behavior, is still cruel.</p>
+    <p class="note step">Verse 11: work your own land and you'll eat. Follow <em>“vain persons”</em> (empty, worthless men with get-rich-quick schemes and nothing behind them) and you'll end up with nothing too.</p>
+    <p class="note step">You know those men. Maybe you used to be one. Part of a new life is choosing new company and putting your hands to honest work.</p>
+  </div>
+</section>
+
+<!-- ======================= PART TWO ======================= -->
+<section class="slide part">
+  <div class="inner">
+    <p class="part-n rise">Part two</p>
+    <h2 class="rise" style="--d:1">Swords and medicine</h2>
+    <p class="range rise" style="--d:2">Verses 13–22</p>
+    <p class="hook rise" style="--d:4">The same tongue can cut a man open or help him heal.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="13-15" data-hl="The wicked is snared by the transgression of his lips|The way of a fool is right in his own eyes: but he that hearkeneth unto counsel is wise"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="15"></blockquote>
+    <h2 class="rise" style="--d:1">“It seemed like a good idea at the time”</h2>
+    <p class="note rise" style="--d:2">The fool never thinks he's being a fool. His way is <em>“right in his own eyes.”</em> That's the problem: his own eyes are the only ones he checks with.</p>
+    <div class="pair">
+      <div class="scroll step"><p class="ref">Proverbs 12:15</p><p class="kjv">The way of a fool is <mark>right in his own eyes</mark>: but he that hearkeneth unto counsel is wise.</p></div>
+      <div class="scroll step"><p class="ref">Proverbs 14:12</p><p class="kjv">There is a way which <mark>seemeth right unto a man</mark>, but the end thereof are the ways of death.</p></div>
+    </div>
+    <p class="note step">If your best thinking got you where you were, it's wise to let somebody else look at the map. Verses 13–14 add: a man gets <em>“snared”</em> by his own lips, and he eats the <em>“fruit of his mouth”</em>, good or bad.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="16-18" data-hl="A fool’s wrath is presently known: but a prudent man covereth shame|There is that speaketh like the piercings of a sword: but the tongue of the wise is health"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="16"></blockquote>
+    <h2 class="rise" style="--d:1">A short fuse, a long fuse</h2>
+    <div class="prv12-fuses" aria-label="Two fuses. The fool's fuse burns straight to the end. The prudent man's fuse is put out partway.">
+      <div class="prv12-row prv12-fool"><span>The fool</span><div class="prv12-track"><div class="prv12-cord"></div><b class="prv12-out">BANG: “presently known”</b></div></div>
+      <div class="prv12-row prv12-wise"><span>The prudent man</span><div class="prv12-track"><div class="prv12-cord"></div><b class="prv12-out">put out: “covereth shame”</b></div></div>
+    </div>
+    <p class="note step"><em>“Presently”</em> in 1611 meant <em>right away</em>. The fool's anger shows the second he's insulted. Everybody in the room knows.</p>
+    <p class="note step">The prudent man <em>“covereth shame”</em>: when someone insults him, he lets it go instead of making a scene. That isn't weakness. It takes more strength to hold it than to throw it.</p>
+    <blockquote class="quote step"><p>“Wherefore, my beloved brethren, let every man be swift to hear, slow to speak, slow to wrath:”</p><cite>James 1:19</cite></blockquote>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="18"></blockquote>
+    <div class="split">
+      <div class="stage">
+        <svg class="prv12-cut" viewBox="0 0 400 330" role="img" aria-label="A heart cut by sharp words. Then the cuts fade and the heart is whole and warm.">
+          <path class="prv12-heart" d="M200 300 C 60 210, 20 140, 60 80 C 100 30, 170 40, 200 95 C 230 40, 300 30, 340 80 C 380 140, 340 210, 200 300 Z"/>
+          <path class="prv12-crack" d="M120 90 L150 130 L130 160 L165 200"/>
+          <path class="prv12-crack" d="M280 85 L255 125 L285 150 L250 195"/>
+          <path class="prv12-crack" d="M200 130 L210 170 L190 205 L205 245"/>
+          <text class="prv12-h1" x="200" y="24" text-anchor="middle" font-weight="700" style="fill:var(--danger)">“the piercings of a sword”</text>
+          <text class="prv12-h2" x="200" y="24" text-anchor="middle" font-weight="700" style="fill:var(--accent-hot)">“the tongue of the wise is health”</text>
+        </svg>
+      </div>
+      <div>
+        <h2 class="rise" style="--d:1">Words that cut, words that heal</h2>
+        <p class="note rise" style="--d:2">Some men talk like they're swinging a blade: sarcasm, put-downs, the one comment that finds the sore spot. Most of us were cut that way growing up, and a lot of us learned to cut back.</p>
+        <p class="note step prv12-heal">But the wise man's tongue is <em>“health”</em>, literally <em>healing</em>, medicine. The same mouth that wounded can learn to mend. Ask God to change the way you talk to your wife, your kids, and the men in this room.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="slide verse" data-v="19-22" data-hl="The lip of truth shall be established for ever: but a lying tongue is but for a moment|Lying lips are abomination to the LORD: but they that deal truly are his delight"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="19"></blockquote>
+    <h2 class="rise" style="--d:1">How long does a lie last?</h2>
+    <div class="prv12-time" aria-label="A lying tongue lasts a moment. The lip of truth lasts forever.">
+      <div class="prv12-lie"><b>A lying tongue</b><i></i><small>“but for a moment”</small></div>
+      <div class="prv12-truth"><b>The lip of truth</b><i></i><small>“established for ever”</small></div>
+    </div>
+    <p class="note step">A lie buys you a minute: out of trouble, past the question, through the night. Then it has to be fed with more lies. The truth is slower, and it holds.</p>
+    <p class="note step">Verse 22 says <em>“lying lips are abomination to the LORD”</em>, but <em>“they that deal truly are his delight.”</em> For a man who used to lie for a living (to cover the using, the money, the where-were-you), learning to tell the truth is one of the clearest marks of a new life.</p>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="22"></blockquote>
+    <h2 class="rise" style="--d:1">If you've been a liar</h2>
+    <p class="note rise" style="--d:2">Don't hear this and give up. God hates lying lips because He loves the truth, and He loves you. He doesn't leave a liar stuck. He offers a clean start:</p>
+    <blockquote class="quote step"><p>“If we confess our sins, he is faithful and just to forgive us our sins, and to cleanse us from all unrighteousness.”</p><cite>1 John 1:9</cite></blockquote>
+    <blockquote class="quote step"><p>“Wherefore putting away lying, speak every man truth with his neighbour: for we are members one of another.”</p><cite>Ephesians 4:25</cite></blockquote>
+    <p class="note step">Confess it to God. Then start practicing truth with each other, beginning in this room.</p>
+  </div>
+</section>
+
+<!-- ======================= PART THREE ======================= -->
+<section class="slide part">
+  <div class="inner">
+    <p class="part-n rise">Part three</p>
+    <h2 class="rise" style="--d:1">Finish the job</h2>
+    <p class="range rise" style="--d:2">Verses 23–28</p>
+    <p class="hook rise" style="--d:4">A heavy heart, a lazy hunter, and a road with no death on it.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="23-25" data-hl="The hand of the diligent shall bear rule|Heaviness in the heart of man maketh it stoop: but a good word maketh it glad"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="25"></blockquote>
+    <div class="split">
+      <div class="stage">
+        <svg viewBox="0 0 400 320" role="img" aria-label="A man bent over under a heavy weight. A good word comes, the weight falls away and he stands up straight.">
+          <line x1="40" y1="300" x2="360" y2="300" stroke-width="3" style="stroke:var(--line-strong)"/>
+          <g stroke-width="10" stroke-linecap="round" fill="none" style="stroke:var(--ink-soft)">
+            <path d="M200 230 L180 300 M200 230 L220 300"/>
+          </g>
+          <g class="prv12-body">
+            <path d="M200 230 L200 140" stroke-width="10" stroke-linecap="round" style="stroke:var(--ink-soft)"/>
+            <path d="M200 160 L170 200 M200 160 L230 200" stroke-width="8" stroke-linecap="round" style="stroke:var(--ink-soft)"/>
+            <circle cx="200" cy="115" r="22" style="fill:var(--ink-soft)"/>
+            <g class="prv12-weight">
+              <rect x="160" y="40" width="80" height="50" rx="6" style="fill:var(--danger)"/>
+              <text x="200" y="71" text-anchor="middle" font-size="15" font-weight="700" style="fill:var(--bg)">heaviness</text>
+            </g>
+          </g>
+          <g class="prv12-bubble">
+            <rect x="250" y="40" width="140" height="56" rx="14" style="fill:var(--accent)"/>
+            <path d="M268 96 L258 116 L290 96 Z" style="fill:var(--accent)"/>
+            <text x="320" y="74" text-anchor="middle" font-size="18" font-weight="700" style="fill:var(--on-accent)">a good word</text>
+          </g>
+        </svg>
+      </div>
+      <div>
+        <h2 class="rise" style="--d:1">A heavy heart</h2>
+        <p class="note rise" style="--d:2"><em>“Heaviness”</em> is worry, dread, anxiety. It bends a man over. Some of us carry it every day: the court date, the bills, the kids, the shame.</p>
+        <p class="note step prv12-word">And what lifts it? Sometimes, just <em>“a good word.”</em> A brother who says “I'm praying for you” or “you're doing better than you think.” You can be that word for someone today.</p>
+        <p class="note step">And take the weight to the One who can carry it: “Casting all your care upon him; for he careth for you” (1 Peter 5:7).</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="24"></blockquote>
+    <h2 class="rise" style="--d:1">Boss, or forced labor</h2>
+    <p class="note rise" style="--d:2">The diligent man ends up able to <em>“bear rule”</em>: trusted, in charge, running things. The slothful ends up <em>“under tribute”</em>: forced labor, working for somebody else on their terms.</p>
+    <p class="note step">Laziness promises you freedom and delivers the opposite. Steady work, done well, is what actually sets a man free.</p>
+    <p class="note step">Verse 23 adds a quiet word about wisdom: the prudent man doesn't show off everything he knows. The fool broadcasts his foolishness to anyone who'll listen.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="26-28" data-hl="the way of the wicked seduceth them|The slothful man roasteth not that which he took in hunting|In the way of righteousness is life; and in the pathway thereof there is no death"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="27"></blockquote>
+    <h2 class="rise" style="--d:1">The lazy hunter</h2>
+    <ul class="prv12-check rise" style="--d:2" aria-label="Checklist: track it, hunt it, catch it, all done. Roast it, never done.">
+      <li>track it</li>
+      <li>hunt it</li>
+      <li>catch it</li>
+      <li class="prv12-no">roast it <em>never</em></li>
+    </ul>
+    <p class="note step">Here's a man who did the hard part. He went hunting and caught something. Then he couldn't be bothered to cook it. All that work, and he goes to bed hungry.</p>
+    <p class="note step">That's the slothful man: he starts strong and doesn't finish. Ninety days clean and then coasting. Half the program. The job with no follow-through. Diligence is finishing. <em>“The substance of a diligent man is precious.”</em></p>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="26"></blockquote>
+    <h2 class="rise" style="--d:1">Your friends are a road</h2>
+    <p class="note rise" style="--d:2">The first line is hard to translate from Hebrew. The KJV reads it as the righteous man standing above his neighbor; others read it as the righteous man <em>guiding</em> his neighbor, or choosing friends with care. The second line is plain: <em>“the way of the wicked seduceth them.”</em> It leads people off the road.</p>
+    <blockquote class="quote step"><p>“He that walketh with wise men shall be wise: but a companion of fools shall be destroyed.”</p><cite>Proverbs 13:20</cite></blockquote>
+    <p class="note step">Who you walk with decides where you end up. Pick men who are headed where you want to go.</p>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="28"></blockquote>
+    <div class="split">
+      <div class="stage">
+        <svg viewBox="0 0 600 300" role="img" aria-label="A road winds across the land and ends in a rising light.">
+          <path class="prv12-road" pathLength="1" d="M20 280 C 160 270, 120 200, 260 190 S 400 120, 500 90" style="stroke:var(--accent)"/>
+          <g class="prv12-sun">
+            <circle cx="530" cy="76" r="44" style="fill:var(--glow)"/>
+            <circle cx="530" cy="76" r="60" fill="none" stroke-width="2" style="stroke:var(--accent)"/>
+            <text x="530" y="83" text-anchor="middle" font-size="20" font-weight="700" style="fill:var(--on-glow)">life</text>
+          </g>
+          <text x="330" y="262" font-size="17" text-anchor="middle" style="fill:var(--ink-soft)">“the way of righteousness”</text>
+        </svg>
+      </div>
+      <div>
+        <h2 class="rise" style="--d:1">A road with no death on it</h2>
+        <p class="note rise" style="--d:2">Every road a man can walk ends at a grave, except one. <em>“In the pathway thereof there is no death.”</em> Solomon saw it from a distance. Jesus stepped onto the road and named it:</p>
+      </div>
+    </div>
+    <blockquote class="quote step"><p>“Jesus saith unto him, I am the way, the truth, and the life: no man cometh unto the Father, but by me.”</p><cite>John 14:6</cite></blockquote>
+    <p class="note step">A believer's body may still die, but death isn't the end of his road. It's a door. In Christ, the road keeps going, and it ends in life.</p>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise">Chapter 12, tallied</h2>
+    <div class="prv12-tally" aria-label="The 28 verses of chapter 12 grouped by theme.">
+      <div class="prv12-top rise" style="--d:1"><h3>The tongue</h3><p><i>6</i><i>13</i><i>14</i><i>17</i><i>18</i><i>19</i><i>20</i><i>22</i><i>23</i><i>25</i></p></div>
+      <div class="rise" style="--d:2"><h3>Righteous and wicked</h3><p><i>2</i><i>3</i><i>5</i><i>7</i><i>12</i><i>21</i><i>26</i><i>28</i></p></div>
+      <div class="rise" style="--d:3"><h3>Correction and counsel</h3><p><i>1</i><i>8</i><i>15</i></p></div>
+      <div class="rise" style="--d:4"><h3>Work</h3><p><i>11</i><i>24</i><i>27</i></p></div>
+      <div class="rise" style="--d:5"><h3>Pride and anger</h3><p><i>9</i><i>16</i></p></div>
+      <div class="rise" style="--d:6"><h3>Home</h3><p><i>4</i><i>10</i></p></div>
+    </div>
+    <p class="note step">More than a third of this chapter is about what comes out of a man's mouth. Verse 14 ties it together: a man is filled by <em>“the fruit of his mouth”</em> and repaid by the work of <em>“his hands.”</em> Your words and your work: that's where wisdom shows.</p>
+  </div>
+</section>
+
+<!-- ======================= CLOSING ======================= -->
+<section class="slide remember">
+  <div class="inner">
+    <h2 class="rise">Points to remember</h2>
+    <ol class="seeds">
+      <li class="step"><span class="topic">Correction</span><span class="seed-q">“Whoso loveth instruction loveth knowledge” <cite>12:1</cite></span><span class="take">Learn to love correction. Hating it keeps you stuck.</span></li>
+      <li class="step"><span class="topic">The tongue</span><span class="seed-q">“The tongue of the wise is health” <cite>12:18</cite></span><span class="take">The same mouth that cut people can learn to heal them.</span></li>
+      <li class="step"><span class="topic">Truth</span><span class="seed-q">“A lying tongue is but for a moment” <cite>12:19</cite></span><span class="take">A lie buys a minute. The truth lasts forever, and God delights in it.</span></li>
+      <li class="step"><span class="topic">Anger</span><span class="seed-q">“A prudent man covereth shame” <cite>12:16</cite></span><span class="take">Let the insult go. Holding your temper takes more strength than losing it.</span></li>
+      <li class="step"><span class="topic">Work</span><span class="seed-q">“The substance of a diligent man is precious” <cite>12:27</cite></span><span class="take">Diligence is finishing. Don't leave the meal uncooked.</span></li>
+      <li class="step"><span class="topic">Life</span><span class="seed-q">“In the pathway thereof there is no death” <cite>12:28</cite></span><span class="take">Jesus is the Way. On His road, death is a door, not the end.</span></li>
+    </ol>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 1 of 6</p>
+      <span class="topic">Correction</span>
+      <h2>How do I respond when someone corrects me?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="1"></blockquote>
+      <blockquote class="quote step" data-q="15"></blockquote>
+      <blockquote class="quote step"><p>“Now no chastening for the present seemeth to be joyous, but grievous: nevertheless afterward it yieldeth the peaceable fruit of righteousness unto them which are exercised thereby.”</p><cite>Hebrews 12:11</cite></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>Listen, and learn to love it. The fool thinks his own way is right and stays stuck, like an animal walking into the same fence. The wise man hearkens to counsel. Correction hurts in the moment, but afterward it grows the fruit of righteousness in us.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 2 of 6</p>
+      <span class="topic">The tongue</span>
+      <h2>Do my words cut, or do they heal?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="18"></blockquote>
+      <blockquote class="quote step" data-q="25"></blockquote>
+      <blockquote class="quote step" data-q="14" data-hl="the fruit of his mouth"></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>That's the question to ask yourself. Careless, cutting words pierce like a sword; a wise man's words bring health. Something as small as a good word can lift a heavy heart. And what we say comes back to us: a man is filled by the fruit of his own mouth.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 3 of 6</p>
+      <span class="topic">Truth</span>
+      <h2>Why is a lie never worth it?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="19"></blockquote>
+      <blockquote class="quote step" data-q="22"></blockquote>
+      <blockquote class="quote step"><p>“If we confess our sins, he is faithful and just to forgive us our sins, and to cleanse us from all unrighteousness.”</p><cite>1 John 1:9</cite></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>Because it only lasts a moment, and then it needs more lies to keep it alive. Truth is established forever. God calls lying lips an abomination and honest dealing His delight. If lying has been your habit, confess it; He forgives and cleans us up, and then we practice the truth with each other.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 4 of 6</p>
+      <span class="topic">Anger</span>
+      <h2>What does a wise man do with an insult?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="16"></blockquote>
+      <blockquote class="quote step"><p>“Wherefore, my beloved brethren, let every man be swift to hear, slow to speak, slow to wrath:”</p><cite>James 1:19</cite></blockquote>
+      <blockquote class="quote step" data-q="23"></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>He covers it. The fool's anger shows up right away for everyone to see. The prudent man lets the insult pass without making a scene. He's quick to listen and slow to blow up, and he doesn't need to say everything he's thinking.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 5 of 6</p>
+      <span class="topic">Work</span>
+      <h2>What's the difference between the diligent man and the slothful man?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="11"></blockquote>
+      <blockquote class="quote step" data-q="24"></blockquote>
+      <blockquote class="quote step" data-q="27"></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>The diligent man works his own field and finishes the job, and he ends up trusted and in charge. The slothful man starts things and doesn't finish them (he won't even cook what he caught), and he ends up working on someone else's terms. Diligence isn't flashy. It's showing up and following through.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 6 of 6</p>
+      <span class="topic">Life</span>
+      <h2>Where is the road with no death on it?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="28"></blockquote>
+      <blockquote class="quote step" data-q="7"></blockquote>
+      <blockquote class="quote step"><p>“Jesus saith unto him, I am the way, the truth, and the life: no man cometh unto the Father, but by me.”</p><cite>John 14:6</cite></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>In the way of righteousness, and Jesus is that Way. The wicked are overthrown and gone, but the house of the righteous stands. Anyone who trusts Christ is on a road where death isn't the end. It's a door into life with Him.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide prayer">
+  <div class="inner">
+    <div class="emblem rise"></div>
+    <h2 class="rise">Prayer requests</h2>
+    <p class="ask-line rise" style="--d:1">What can we pray about for you today?</p>
+    <blockquote class="quote rise" style="--d:3"><p>“Casting all your care upon him; for he careth for you.”</p><cite>1 Peter 5:7</cite></blockquote>
+  </div>
+</section>
+
+</main>
+
+<script>
+// King James Version, Proverbs chapter 12
+const V = {
+  1: "Whoso loveth instruction loveth knowledge: but he that hateth reproof is brutish.",
+  2: "A good man obtaineth favour of the LORD: but a man of wicked devices will he condemn.",
+  3: "A man shall not be established by wickedness: but the root of the righteous shall not be moved.",
+  4: "A virtuous woman is a crown to her husband: but she that maketh ashamed is as rottenness in his bones.",
+  5: "The thoughts of the righteous are right: but the counsels of the wicked are deceit.",
+  6: "The words of the wicked are to lie in wait for blood: but the mouth of the upright shall deliver them.",
+  7: "The wicked are overthrown, and are not: but the house of the righteous shall stand.",
+  8: "A man shall be commended according to his wisdom: but he that is of a perverse heart shall be despised.",
+  9: "He that is despised, and hath a servant, is better than he that honoureth himself, and lacketh bread.",
+  10: "A righteous man regardeth the life of his beast: but the tender mercies of the wicked are cruel.",
+  11: "He that tilleth his land shall be satisfied with bread: but he that followeth vain persons is void of understanding.",
+  12: "The wicked desireth the net of evil men: but the root of the righteous yieldeth fruit.",
+  13: "The wicked is snared by the transgression of his lips: but the just shall come out of trouble.",
+  14: "A man shall be satisfied with good by the fruit of his mouth: and the recompense of a man’s hands shall be rendered unto him.",
+  15: "The way of a fool is right in his own eyes: but he that hearkeneth unto counsel is wise.",
+  16: "A fool’s wrath is presently known: but a prudent man covereth shame.",
+  17: "He that speaketh truth sheweth forth righteousness: but a false witness deceit.",
+  18: "There is that speaketh like the piercings of a sword: but the tongue of the wise is health.",
+  19: "The lip of truth shall be established for ever: but a lying tongue is but for a moment.",
+  20: "Deceit is in the heart of them that imagine evil: but to the counsellors of peace is joy.",
+  21: "There shall no evil happen to the just: but the wicked shall be filled with mischief.",
+  22: "Lying lips are abomination to the LORD: but they that deal truly are his delight.",
+  23: "A prudent man concealeth knowledge: but the heart of fools proclaimeth foolishness.",
+  24: "The hand of the diligent shall bear rule: but the slothful shall be under tribute.",
+  25: "Heaviness in the heart of man maketh it stoop: but a good word maketh it glad.",
+  26: "The righteous is more excellent than his neighbour: but the way of the wicked seduceth them.",
+  27: "The slothful man roasteth not that which he took in hunting: but the substance of a diligent man is precious.",
+  28: "In the way of righteousness is life; and in the pathway thereof there is no death."
+};
+const BOOK = "Proverbs 12";
+</script>
+<script src="../assets/deck.js"></script>
+</body>
+</html>

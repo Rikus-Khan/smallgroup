@@ -1,0 +1,630 @@
+<!doctype html>
+<html lang="en" data-theme="scribe">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Proverbs 31</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="../assets/fonts.css">
+<link rel="stylesheet" href="../assets/deck.css">
+<link rel="stylesheet" href="../assets/themes.css">
+<style>
+/* The scales of justice, tipped by a cup of wine (31:4-5) */
+.prv31-beam { transform-origin: 260px 70px; transition: transform 1.4s cubic-bezier(.5,0,.3,1) .7s; }
+.prv31-scale:has(.prv31-c1.on) .prv31-beam { transform: rotate(10deg); }
+.prv31-cup { transform: translateY(-90px); opacity: 0; transition: transform .7s cubic-bezier(.6,0,.9,.6), opacity .3s ease; }
+.prv31-scale:has(.prv31-c1.on) .prv31-cup { transform: none; opacity: 1; }
+.prv31-bent { opacity: 0; transition: opacity .8s ease 1.8s; }
+.prv31-scale:has(.prv31-c1.on) .prv31-bent { opacity: 1; }
+
+/* The Hebrew alphabet: one letter starts each verse of the poem (31:10-31) */
+.prv31-abc { list-style: none; padding: 0; margin: .3em 0 1em; display: grid; grid-template-columns: repeat(6, 1fr); gap: 6px; }
+@media (min-width: 760px) { .prv31-abc { grid-template-columns: repeat(11, 1fr); } }
+.prv31-abc li { text-align: center; padding: .35em .1em .3em; border: 1.5px solid var(--line-strong); border-radius: 8px; background: var(--surface); opacity: 0; transform: translateY(8px); transition: opacity .5s ease, transform .5s ease; transition-delay: calc(var(--k) * 90ms + 300ms); }
+.slide.active .prv31-abc li { opacity: 1; transform: none; }
+.prv31-abc b { display: block; font: 400 clamp(1.6rem, 1.1rem + 2vw, 2.6rem)/1.15 var(--serif); color: var(--ink); }
+.prv31-abc span { display: block; font-size: clamp(.68rem, .62rem + .25vw, .85rem); color: var(--ink-soft); }
+.prv31-abc i { display: block; font-style: normal; font-weight: 700; font-size: clamp(.72rem, .66rem + .25vw, .9rem); color: var(--accent); }
+.prv31-abc li.prv31-end { border-color: var(--accent); background: color-mix(in srgb, var(--accent) 12%, transparent); }
+.prv31-abc li.prv31-end b { color: var(--accent-hot); }
+
+/* Spindle and distaff: the whorl spins (31:19) */
+.prv31-whorl { transform-box: fill-box; transform-origin: center; }
+.slide.active .prv31-whorl { animation: prv31-spin 1.1s linear infinite; }
+@keyframes prv31-spin { 0%, 100% { transform: scaleX(1); } 50% { transform: scaleX(.35); } }
+.prv31-thread { stroke-dasharray: 1; stroke-dashoffset: 1; }
+.slide.active .prv31-thread { animation: prv31-draw 2.4s .6s ease forwards; }
+@keyframes prv31-draw { to { stroke-dashoffset: 0; } }
+
+/* The city gate where the elders sat (31:23) */
+.prv31-elder { fill: var(--ink-soft); }
+.prv31-him { fill: var(--accent); opacity: .35; transition: opacity .8s ease; }
+.prv31-gate:has(.prv31-g1.on) .prv31-him { opacity: 1; }
+.prv31-him-label { opacity: 0; transition: opacity .8s ease .3s; }
+.prv31-gate:has(.prv31-g1.on) .prv31-him-label { opacity: 1; }
+
+/* Proverbs on a shelf: the fear of the LORD at both ends (1:7 and 31:30) */
+.prv31-shelf rect { fill: var(--surface-2); stroke: var(--line-strong); stroke-width: 1.5; }
+.prv31-shelf rect.prv31-end { fill: var(--accent); stroke: var(--accent); }
+.prv31-arc { opacity: 0; transition: opacity 1s ease; }
+.prv31-ends:has(.prv31-b1.on) .prv31-arc { opacity: 1; }
+.prv31-ends:has(.prv31-b1.on) .prv31-arc .draw { stroke-dashoffset: 0; }
+</style>
+</head>
+<body>
+<main class="deck" id="deck">
+
+<!-- ======================= OPENING ======================= -->
+<section class="slide title">
+  <div class="inner">
+    <div class="emblem rise"></div>
+    <h1 class="rise" style="--d:1">Proverbs 31</h1>
+    <p class="sub rise" style="--d:3">A mother's counsel and a woman of strength</p>
+    <p class="tag rise" style="--d:5">A king's mother tells him how a ruler should live, then paints the picture of a woman worth more than rubies.</p>
+  </div>
+</section>
+
+<section class="slide watch">
+  <div class="inner">
+    <h2 class="rise">Things to watch for</h2>
+    <p class="lede rise" style="--d:1">Keep these questions in the back of your mind as we read. We'll come back to every one of them at the end.</p>
+    <ol class="seeds">
+      <li class="step"><span class="topic">A mother's teaching</span><span class="seed-q">What did Lemuel's mother warn her son to stay away from?</span></li>
+      <li class="step"><span class="topic">Strong drink</span><span class="seed-q">Do verses 6 and 7 tell a hurting man to drink?</span></li>
+      <li class="step"><span class="topic">Speaking up</span><span class="seed-q">Who are we supposed to open our mouths for?</span></li>
+      <li class="step"><span class="topic">True strength</span><span class="seed-q">What does “virtuous” really mean?</span></li>
+      <li class="step"><span class="topic">Honor</span><span class="seed-q">How can we honor the women God has put in our lives?</span></li>
+      <li class="step"><span class="topic">The fear of the LORD</span><span class="seed-q">What is worth more than charm and good looks?</span></li>
+    </ol>
+  </div>
+</section>
+
+<!-- ======================= PART ONE ======================= -->
+<section class="slide part">
+  <div class="inner">
+    <p class="part-n rise">Part one</p>
+    <h2 class="rise" style="--d:1">What his mother taught him</h2>
+    <p class="range rise" style="--d:2">Verses 1–9</p>
+    <div class="rule"></div>
+    <p class="hook rise" style="--d:4">Stay away from what destroys kings, keep a clear head, and speak up for people who can't.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="1-3" data-hl="the prophecy that his mother taught him|the son of my vows|Give not thy strength unto women"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="1" data-hl="king Lemuel|his mother taught him"></blockquote>
+    <h2 class="rise" style="--d:1">A king and his mother</h2>
+    <p class="note rise" style="--d:2">Nobody knows who King Lemuel was. He isn't on any list of Israel's or Judah's kings. His name means something like <em>“belonging to God.”</em> Old Jewish tradition said it was a pet name for Solomon, but nobody can prove it.</p>
+    <p class="note step">What stands out is who did the teaching: <em>his mother</em>. She calls him <em>“the son of my vows,”</em> which sounds like a mother who prayed for him and promised him to God, the way Hannah did with Samuel (1 Samuel 1:11).</p>
+    <div class="chains step">
+      <div class="chain"><span class="who-chip">Lemuel's mother</span><span class="said">taught her son</span><span class="who-chip">King Lemuel</span></div>
+      <div class="chain"><span class="who-chip">Lois</span><span class="said">grandmother</span><span class="who-chip">Eunice</span><span class="said">mother</span><span class="who-chip">Timothy</span></div>
+    </div>
+    <p class="note step">Paul said Timothy's faith “dwelt first in thy grandmother Lois, and thy mother Eunice” (2 Timothy 1:5). Some of us are here today because a mother or grandmother never stopped praying.</p>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="3" data-hl="Give not thy strength unto women|that which destroyeth kings"></blockquote>
+    <h2 class="rise" style="--d:1">What destroys kings</h2>
+    <p class="note rise" style="--d:2">She names two things that have taken down more strong men than any army: <em>women</em> (chasing one after another) and <em>wine</em> (the next verse).</p>
+    <div class="columns">
+      <div class="col law step">
+        <p class="who">Verse 3</p>
+        <h3>Your strength</h3>
+        <p>Don't pour your strength, your money, and your years into chasing women. Solomon had hundreds of wives, and they turned his heart away from God (1 Kings 11).</p>
+      </div>
+      <div class="col law step">
+        <p class="who">Verses 4–5</p>
+        <h3>Your mind</h3>
+        <p>Don't hand your clear head over to the bottle. A king who can't think straight can't rule.</p>
+      </div>
+    </div>
+    <p class="note step">A mother who loves her son tells him the truth about what will ruin him. That's love, not nagging.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="4-5" data-hl="it is not for kings to drink wine|forget the law, and pervert the judgment of any of the afflicted"></section>
+
+<section class="slide ex prv31-scale">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="5" data-hl="forget the law|pervert the judgment of any of the afflicted"></blockquote>
+    <div class="split">
+      <div class="stage">
+        <svg viewBox="0 0 520 300" role="img" aria-label="A balance scale of justice hangs level. A cup of wine drops onto one side and the scale tips, so judgment is bent.">
+          <rect x="220" y="272" width="80" height="12" rx="3" style="fill:var(--line-strong)"/>
+          <line x1="260" y1="60" x2="260" y2="274" stroke-width="6" style="stroke:var(--ink-soft)"/>
+          <circle cx="260" cy="66" r="9" style="fill:var(--ink-soft)"/>
+          <g class="prv31-beam">
+            <line x1="100" y1="70" x2="420" y2="70" stroke-width="7" stroke-linecap="round" style="stroke:var(--ink)"/>
+            <g stroke-width="2" style="stroke:var(--ink-soft)"><line x1="110" y1="70" x2="70" y2="170"/><line x1="110" y1="70" x2="150" y2="170"/><line x1="410" y1="70" x2="370" y2="170"/><line x1="410" y1="70" x2="450" y2="170"/></g>
+            <path d="M60 170 Q110 205 160 170 Z" stroke-width="2" style="fill:var(--surface-2);stroke:var(--ink)"/>
+            <path d="M360 170 Q410 205 460 170 Z" stroke-width="2" style="fill:var(--surface-2);stroke:var(--ink)"/>
+            <text x="110" y="230" text-anchor="middle" font-size="19" style="fill:var(--ink)">the afflicted</text>
+            <text x="410" y="230" text-anchor="middle" font-size="19" style="fill:var(--ink)">the powerful</text>
+            <g class="prv31-cup">
+              <path d="M392 132 L428 132 Q428 152 410 156 L410 168 L398 172 L422 172 L410 168" stroke-width="2.5" style="fill:var(--wine);stroke:var(--ink)"/>
+            </g>
+          </g>
+          <text x="260" y="30" text-anchor="middle" font-size="20" font-weight="700" style="fill:var(--accent)">judgment</text>
+          <text class="prv31-bent" x="260" y="296" text-anchor="middle" font-size="19" font-weight="700" style="fill:var(--danger)">perverted</text>
+        </svg>
+      </div>
+      <div>
+        <h2 class="rise" style="--d:1">A king needs a clear head</h2>
+        <p class="note rise" style="--d:2">A king was the judge of last resort. The poor and the hurting came to him for justice. A drunk king forgets the law and lets the powerful get away with it.</p>
+        <p class="note step prv31-c1">One cup can tip the scales. The people who pay for it are the ones with no one else to help them.</p>
+        <p class="note step">And Revelation 1:6 says Christ <em>“hath made us kings and priests unto God.”</em> People depend on you staying clear. <em>“Be sober, be vigilant”</em> (1 Peter 5:8).</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="slide verse" data-v="6-7" data-hl="him that is ready to perish"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="6-7"></blockquote>
+    <h2 class="rise" style="--d:1">Is this telling a hurting man to drink?</h2>
+    <p class="note rise" style="--d:2">These two verses get pulled out of the Bible as an excuse: <em>“See? Even the Bible says drink when you're down.”</em> Read them in their place, and here's what they do <em>not</em> say:</p>
+    <ul class="nots">
+      <li class="step"><span class="k">Drink to deal with a bad day</span><span class="why">not what it says</span></li>
+      <li class="step"><span class="k">Wine is God's answer for a heavy heart</span><span class="why">not what it says</span></li>
+      <li class="step"><span class="k">Permission for a man in recovery</span><span class="why">not even close</span></li>
+      <li class="step yes"><span class="k">Strong drink is not for the man who leads</span><span class="why">the king must stay clear (vv. 4–5)</span></li>
+    </ul>
+    <p class="note step">The mother is drawing a contrast. If strong drink belongs anywhere, it's with the man who is <em>“ready to perish”</em>, a man dying and out of time. It does not belong with the man who still has a life to lead and people counting on him. That's you.</p>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="6" data-hl="Give strong drink unto him that is ready to perish"></blockquote>
+    <h2 class="rise" style="--d:1">Mercy for the dying, and a cup Jesus refused</h2>
+    <p class="note rise" style="--d:2">In that world there were no hospitals and no pain medicine. For a man dying in agony, or about to be executed, wine was the only thing that could dull the pain. An old Jewish writing (the Talmud) quotes this very verse to explain why condemned men were given a cup of drugged wine on the way to their death.</p>
+    <p class="note step">Now watch what happened at the cross:</p>
+    <blockquote class="quote step"><p>“And they gave him to drink wine mingled with myrrh: but he received it not.”</p><cite>Mark 15:23</cite></blockquote>
+    <p class="note step">Jesus was the man <em>“ready to perish.”</em> He was offered the cup that dulls the pain, and He said no. He went through the cross with a clear mind, feeling all of it, for us. <em>“Surely he hath borne our griefs, and carried our sorrows”</em> (Isaiah 53:4).</p>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="7" data-hl="forget his poverty|remember his misery no more"></blockquote>
+    <h2 class="rise" style="--d:1">Forgetting isn't healing</h2>
+    <p class="note rise" style="--d:2">Look at what the wine does in verse 7: it helps a man <em>forget</em>. That's all it can do. The poverty and the misery are still there in the morning, and usually worse. Proverbs already told us how that story ends:</p>
+    <blockquote class="quote step"><p>“They have stricken me, shalt thou say, and I was not sick; they have beaten me, and I felt it not: when shall I awake? I will seek it yet again.”</p><cite>Proverbs 23:35</cite></blockquote>
+    <p class="note step">If your heart is heavy today, there's a better place to take it than a bottle:</p>
+    <blockquote class="quote step"><p>“Come unto me, all ye that labour and are heavy laden, and I will give you rest.”</p><cite>Matthew 11:28</cite></blockquote>
+    <p class="note step">Don't wait for the craving to win the argument. Pray, then pick up the phone and call one of the men in this room. That's not weakness. That's wisdom.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="8-9" data-hl="Open thy mouth for the dumb|plead the cause of the poor and needy"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="8" data-hl="the dumb|appointed to destruction"></blockquote>
+    <p class="saying rise" style="--d:1"><em>Open thy mouth</em> for the dumb.</p>
+    <p class="note rise" style="--d:2">“The dumb” means people who <em>can't speak for themselves</em>: no money for a lawyer, no voice in the room. “Appointed to destruction” are people left to go under, with nobody fighting for them.</p>
+    <p class="note step">A good king's mouth isn't for drinking. It's for speaking up. This is a calling for every man here: the new guy who doesn't know how the system works, the kid with no father around, the man everybody has written off. A lot of us know what it's like to have nobody speak up for us. Now we can be that voice.</p>
+  </div>
+</section>
+
+<!-- ======================= PART TWO ======================= -->
+<section class="slide part">
+  <div class="inner">
+    <p class="part-n rise">Part two</p>
+    <h2 class="rise" style="--d:1">A woman of strength</h2>
+    <p class="range rise" style="--d:2">Verses 10–20</p>
+    <div class="rule"></div>
+    <p class="hook rise" style="--d:4">A poem from A to Z about a woman who is worth more than rubies.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="10-12" data-hl="Who can find a virtuous woman? for her price is far above rubies|doth safely trust in her"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="10" data-hl="a virtuous woman"></blockquote>
+    <h2 class="rise" style="--d:1">A poem from A to Z</h2>
+    <ol class="prv31-abc" lang="he" aria-label="The 22 letters of the Hebrew alphabet, aleph through tav, starting verses 10 through 31 in order">
+      <li class="prv31-end" style="--k:0"><b>א</b><span lang="en">Aleph</span><i lang="en">10</i></li>
+      <li style="--k:1"><b>ב</b><span lang="en">Beth</span><i lang="en">11</i></li>
+      <li style="--k:2"><b>ג</b><span lang="en">Gimel</span><i lang="en">12</i></li>
+      <li style="--k:3"><b>ד</b><span lang="en">Daleth</span><i lang="en">13</i></li>
+      <li style="--k:4"><b>ה</b><span lang="en">He</span><i lang="en">14</i></li>
+      <li style="--k:5"><b>ו</b><span lang="en">Vav</span><i lang="en">15</i></li>
+      <li style="--k:6"><b>ז</b><span lang="en">Zayin</span><i lang="en">16</i></li>
+      <li style="--k:7"><b>ח</b><span lang="en">Heth</span><i lang="en">17</i></li>
+      <li style="--k:8"><b>ט</b><span lang="en">Teth</span><i lang="en">18</i></li>
+      <li style="--k:9"><b>י</b><span lang="en">Yod</span><i lang="en">19</i></li>
+      <li style="--k:10"><b>כ</b><span lang="en">Kaph</span><i lang="en">20</i></li>
+      <li style="--k:11"><b>ל</b><span lang="en">Lamed</span><i lang="en">21</i></li>
+      <li style="--k:12"><b>מ</b><span lang="en">Mem</span><i lang="en">22</i></li>
+      <li style="--k:13"><b>נ</b><span lang="en">Nun</span><i lang="en">23</i></li>
+      <li style="--k:14"><b>ס</b><span lang="en">Samekh</span><i lang="en">24</i></li>
+      <li style="--k:15"><b>ע</b><span lang="en">Ayin</span><i lang="en">25</i></li>
+      <li style="--k:16"><b>פ</b><span lang="en">Pe</span><i lang="en">26</i></li>
+      <li style="--k:17"><b>צ</b><span lang="en">Tsadhe</span><i lang="en">27</i></li>
+      <li style="--k:18"><b>ק</b><span lang="en">Qoph</span><i lang="en">28</i></li>
+      <li style="--k:19"><b>ר</b><span lang="en">Resh</span><i lang="en">29</i></li>
+      <li style="--k:20"><b>ש</b><span lang="en">Shin</span><i lang="en">30</i></li>
+      <li class="prv31-end" style="--k:21"><b>ת</b><span lang="en">Tav</span><i lang="en">31</i></li>
+    </ol>
+    <p class="note step">In Hebrew, verses 10 to 31 are an <em>acrostic</em>: each verse starts with the next letter of the 22-letter alphabet, from aleph to tav. (Psalm 119 is built the same way.) It's the whole of a godly woman's character, “A to Z,” and it was easy to memorize.</p>
+    <p class="note step">This is a portrait to admire, not a checklist to beat a woman over the head with. No real woman does all of it at once, every day.</p>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="10-11" data-hl="virtuous|safely trust in her"></blockquote>
+    <h2 class="rise" style="--d:1">“Virtuous” is a warrior's word</h2>
+    <div class="morph">
+      <span class="big rise" style="--d:3">חַיִל</span>
+      <span class="say step">said <em class="gk">chayil</em> (KHAH-yil)</span>
+      <span class="means step">strength, valor, ability, even “an army”</span>
+    </div>
+    <p class="note step">It's the same word the angel used for Gideon: “The LORD is with thee, thou mighty man of <em>valour</em>” (Judges 6:12). And Boaz said of Ruth, “thou art a <em>virtuous</em> woman” (Ruth 3:11). This isn't a soft, quiet word. It's strength of character.</p>
+    <p class="note step">Her worth is <em>“far above rubies,”</em> the same thing Proverbs says about wisdom itself (3:15, 8:11). And her husband can <em>“safely trust in her.”</em> Trust is worth more than anything she could buy.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="13-15" data-hl="worketh willingly with her hands|She riseth also while it is yet night"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="15" data-hl="She riseth also while it is yet night"></blockquote>
+    <h2 class="rise" style="--d:1">A day in her life</h2>
+    <div class="hours rise" style="--d:2">
+      <div class="hour come"><div class="dot"></div><b>Before dawn</b><span>feeds her household (v. 15)</span></div>
+      <div class="hour"><div class="dot"></div><b>Morning</b><span>wool and flax (v. 13)</span></div>
+      <div class="hour"><div class="dot"></div><b>Market</b><span>food from afar (v. 14)</span></div>
+      <div class="hour"><div class="dot"></div><b>Afternoon</b><span>buys a field (v. 16)</span></div>
+      <div class="hour come"><div class="dot"></div><b>Night</b><span>her lamp still burns (v. 18)</span></div>
+    </div>
+    <p class="note step">She <em>“worketh willingly,”</em> or as the Hebrew puts it, with delighted hands. She isn't dragging herself through it. And <em>“like the merchants' ships,”</em> she goes out and brings back the best for her family.</p>
+    <p class="note step">She works hard, and she works with joy. That's a picture for anybody, man or woman.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="16-18" data-hl="She considereth a field, and buyeth it|her candle goeth not out by night"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="16"></blockquote>
+    <h2 class="rise" style="--d:1">She thinks it through</h2>
+    <div class="chains rise" style="--d:2">
+      <div class="chain"><span class="who-chip">“considereth”</span><span class="said">thinks it over</span><span class="who-chip">“buyeth it”</span><span class="said">then acts</span><span class="who-chip jesus">“planteth a vineyard”</span></div>
+    </div>
+    <p class="note step">She doesn't buy on impulse. She looks the field over first, then pays for it out of money she earned (<em>“the fruit of her hands”</em>), and then she makes it produce.</p>
+    <p class="note step">“Her candle goeth not out by night” doesn't mean she never sleeps. A lamp burning through the night was the sign of a home that was alive and well supplied, with oil to spare.</p>
+    <p class="note step">For men rebuilding their finances: think first, pay as you go, and invest in what grows.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="19-20" data-hl="her hands hold the distaff|She stretcheth out her hand to the poor"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="19-20" data-hl="She layeth her hands to the spindle|She stretcheth out her hand to the poor"></blockquote>
+    <div class="split">
+      <div class="stage">
+        <svg viewBox="0 0 420 320" role="img" aria-label="A distaff holding raw wool, with a thread running down to a spinning spindle.">
+          <line x1="70" y1="300" x2="160" y2="40" stroke-width="7" stroke-linecap="round" style="stroke:var(--leather-light)"/>
+          <path d="M120 70 q-14 -22 6 -32 q6 -24 30 -16 q22 -12 32 10 q22 4 12 28 q8 22 -16 26 q-10 18 -32 8 q-24 8 -32 -24 Z" stroke-width="2" style="fill:var(--surface-2);stroke:var(--ink-soft)"/>
+          <path class="prv31-thread" pathLength="1" d="M190 80 C 240 120, 270 150, 290 196" fill="none" stroke-width="2.5" style="stroke:var(--ink)"/>
+          <line x1="290" y1="196" x2="290" y2="300" stroke-width="6" stroke-linecap="round" style="stroke:var(--leather-light)"/>
+          <ellipse class="prv31-whorl" cx="290" cy="276" rx="28" ry="9" style="fill:var(--leather)"/>
+          <text x="20" y="320" font-size="18" style="fill:var(--ink-soft)">distaff</text>
+          <text x="318" y="250" font-size="18" style="fill:var(--ink-soft)">spindle</text>
+          <text x="210" y="24" font-size="17" style="fill:var(--ink-soft)">raw wool</text>
+        </svg>
+      </div>
+      <div>
+        <h2 class="rise" style="--d:1">The same hands</h2>
+        <p class="note rise" style="--d:2">The <em>distaff</em> was a stick that held the raw wool. The <em>spindle</em> was a weighted stick she spun to twist the wool into thread. Hours of patient work with her hands.</p>
+        <p class="note step">Then verse 20: those same hands reach out to the poor. She works so that she has something to give.</p>
+        <blockquote class="quote step"><p>“Let him that stole steal no more: but rather let him labour, working with his hands the thing which is good, that he may have to give to him that needeth.”</p><cite>Ephesians 4:28</cite></blockquote>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ======================= PART THREE ======================= -->
+<section class="slide part">
+  <div class="inner">
+    <p class="part-n rise">Part three</p>
+    <h2 class="rise" style="--d:1">Let her works praise her</h2>
+    <p class="range rise" style="--d:2">Verses 21–31</p>
+    <div class="rule"></div>
+    <p class="hook rise" style="--d:4">Clothed in strength, known by her kindness, and praised by the people closest to her.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="21-24" data-hl="all her household are clothed with scarlet|Her husband is known in the gates"></section>
+
+<section class="slide ex prv31-gate">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="23"></blockquote>
+    <div class="split">
+      <div class="stage">
+        <svg viewBox="0 0 520 300" role="img" aria-label="A city gate with elders seated on benches on both sides. One of them, her husband, is highlighted.">
+          <rect x="20" y="40" width="480" height="210" style="fill:var(--surface-2);stroke:var(--line-strong)" stroke-width="2"/>
+          <path d="M20 40 L20 22 L52 22 L52 32 L84 32 L84 22 L116 22 L116 32 L148 32 L148 22 L180 22 L180 32 L212 32 L212 22 L244 22 L244 32 L276 32 L276 22 L308 22 L308 32 L340 32 L340 22 L372 22 L372 32 L404 32 L404 22 L436 22 L436 32 L468 32 L468 22 L500 22 L500 40 Z" style="fill:var(--surface-2);stroke:var(--line-strong)" stroke-width="2"/>
+          <path d="M200 250 L200 130 Q260 70 320 130 L320 250 Z" style="fill:var(--bg);stroke:var(--ink-soft)" stroke-width="3"/>
+          <line x1="20" y1="250" x2="500" y2="250" stroke-width="3" style="stroke:var(--ink-soft)"/>
+          <rect x="40" y="226" width="140" height="10" rx="2" style="fill:var(--leather-light)"/>
+          <rect x="340" y="226" width="140" height="10" rx="2" style="fill:var(--leather-light)"/>
+          <g>
+            <circle class="prv31-elder" cx="62" cy="190" r="11"/><path class="prv31-elder" d="M48 226 L52 204 Q62 198 72 204 L76 226 Z"/>
+            <circle class="prv31-elder" cx="110" cy="190" r="11"/><path class="prv31-elder" d="M96 226 L100 204 Q110 198 120 204 L124 226 Z"/>
+            <circle class="prv31-elder" cx="158" cy="190" r="11"/><path class="prv31-elder" d="M144 226 L148 204 Q158 198 168 204 L172 226 Z"/>
+            <circle class="prv31-elder" cx="362" cy="190" r="11"/><path class="prv31-elder" d="M348 226 L352 204 Q362 198 372 204 L376 226 Z"/>
+            <circle class="prv31-him" cx="410" cy="190" r="11"/><path class="prv31-him" d="M396 226 L400 204 Q410 198 420 204 L424 226 Z"/>
+            <circle class="prv31-elder" cx="458" cy="190" r="11"/><path class="prv31-elder" d="M444 226 L448 204 Q458 198 468 204 L472 226 Z"/>
+          </g>
+          <text class="prv31-him-label" x="410" y="160" text-anchor="middle" font-size="18" font-weight="700" style="fill:var(--accent-hot)">her husband</text>
+          <text x="260" y="284" text-anchor="middle" font-size="18" style="fill:var(--ink-soft)">the gate: city hall and courthouse</text>
+        </svg>
+      </div>
+      <div>
+        <h2 class="rise" style="--d:1">Known in the gates</h2>
+        <p class="note rise" style="--d:2">The city gate was where the town's leaders sat to settle disputes and do business. When Boaz needed a legal matter settled, “Then went Boaz up to the gate, and sat him down there” (Ruth 4:1).</p>
+        <p class="note step prv31-g1">Her husband has a good name among the elders, and part of the reason is her. A home with a trustworthy woman in it makes a man's whole life steadier.</p>
+        <p class="note step">She's also ready before trouble comes. When the snow hits, her family already has warm clothes (v. 21). She thinks ahead.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="slide verse" data-v="25-27" data-hl="Strength and honour are her clothing|in her tongue is the law of kindness|eateth not the bread of idleness"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="25" data-hl="Strength and honour are her clothing|she shall rejoice in time to come"></blockquote>
+    <h2 class="rise" style="--d:1">What she really wears</h2>
+    <div class="pair">
+      <div class="scroll rise" style="--d:2"><p class="ref">Proverbs 31:22</p><p class="kjv">her clothing is <mark>silk and purple</mark>.</p></div>
+      <div class="scroll step"><p class="ref">Proverbs 31:25</p><p class="kjv"><mark>Strength and honour</mark> are her clothing.</p></div>
+    </div>
+    <p class="note step">She dresses well, but what people really notice is her strength and dignity. And <em>“she shall rejoice in time to come”</em>: she can laugh at the future instead of dreading it, because she's ready for it and she trusts God with it.</p>
+    <p class="note step">When she talks, it's wise, and <em>“in her tongue is the law of kindness”</em>: kindness is the rule her mouth lives by. And she doesn't eat <em>“the bread of idleness”</em>. She isn't living off someone else's work.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="28-31" data-hl="her husband also, and he praiseth her|Favour is deceitful, and beauty is vain: but a woman that feareth the LORD, she shall be praised"></section>
+
+<section class="slide ex prv31-ends">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="30" data-hl="a woman that feareth the LORD"></blockquote>
+    <h2 class="rise" style="--d:1">The book ends where it began</h2>
+    <div class="stage">
+      <svg class="prv31-shelf" viewBox="0 0 640 272" role="img" aria-label="The 31 chapters of Proverbs as books on a shelf. The first and last are highlighted, both about the fear of the LORD.">
+        <g class="rise" style="--d:2">
+          <rect x="40.0" y="80" width="14" height="140" rx="2" class="prv31-end"/><rect x="58.4" y="90" width="14" height="130" rx="2"/><rect x="76.8" y="70" width="14" height="150" rx="2"/><rect x="95.2" y="95" width="14" height="125" rx="2"/><rect x="113.6" y="75" width="14" height="145" rx="2"/><rect x="132.0" y="85" width="14" height="135" rx="2"/><rect x="150.4" y="100" width="14" height="120" rx="2"/><rect x="168.8" y="80" width="14" height="140" rx="2"/><rect x="187.2" y="90" width="14" height="130" rx="2"/><rect x="205.6" y="70" width="14" height="150" rx="2"/><rect x="224.0" y="95" width="14" height="125" rx="2"/><rect x="242.4" y="75" width="14" height="145" rx="2"/><rect x="260.8" y="85" width="14" height="135" rx="2"/><rect x="279.2" y="100" width="14" height="120" rx="2"/><rect x="297.6" y="80" width="14" height="140" rx="2"/><rect x="316.0" y="90" width="14" height="130" rx="2"/><rect x="334.4" y="70" width="14" height="150" rx="2"/><rect x="352.8" y="95" width="14" height="125" rx="2"/><rect x="371.2" y="75" width="14" height="145" rx="2"/><rect x="389.6" y="85" width="14" height="135" rx="2"/><rect x="408.0" y="100" width="14" height="120" rx="2"/><rect x="426.4" y="80" width="14" height="140" rx="2"/><rect x="444.8" y="90" width="14" height="130" rx="2"/><rect x="463.2" y="70" width="14" height="150" rx="2"/><rect x="481.6" y="95" width="14" height="125" rx="2"/><rect x="500.0" y="75" width="14" height="145" rx="2"/><rect x="518.4" y="85" width="14" height="135" rx="2"/><rect x="536.8" y="100" width="14" height="120" rx="2"/><rect x="555.2" y="80" width="14" height="140" rx="2"/><rect x="573.6" y="90" width="14" height="130" rx="2"/><rect x="592.0" y="70" width="14" height="150" rx="2" class="prv31-end"/>
+          <line x1="20" y1="222" x2="626" y2="222" stroke-width="4" style="stroke:var(--leather-light)"/>
+          <text x="47" y="244" text-anchor="middle" font-size="17" font-weight="700" style="fill:var(--accent)">1</text>
+          <text x="599" y="244" text-anchor="middle" font-size="17" font-weight="700" style="fill:var(--accent)">31</text>
+        </g>
+        <g class="prv31-arc">
+          <path class="draw" pathLength="1" d="M47 66 C 150 -20, 500 -20, 599 56" fill="none" stroke-width="3" style="stroke:var(--accent)"/>
+          <text x="320" y="44" text-anchor="middle" font-size="18" class="serif" style="fill:var(--accent-hot)">the fear of the LORD</text>
+          <text x="40" y="268" font-size="16" style="fill:var(--ink-soft)">“the beginning” (1:7)</text>
+          <text x="606" y="268" text-anchor="end" font-size="16" style="fill:var(--ink-soft)">“she shall be praised” (31:30)</text>
+        </g>
+      </svg>
+    </div>
+    <p class="note step prv31-b1">Proverbs opens with <em>“The fear of the LORD is the beginning of knowledge”</em> (1:7) and closes with <em>“a woman that feareth the LORD.”</em> Charm fools and looks fade. A heart that honors God lasts.</p>
+    <p class="note step">And the wisdom this book points to has a name: Christ Jesus, who “of God is made unto us wisdom” (1 Corinthians 1:30).</p>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="28" data-hl="her husband also, and he praiseth her"></blockquote>
+    <h2 class="rise" style="--d:1">Honoring the women in your life</h2>
+    <p class="note rise" style="--d:2">Her husband <em>says it out loud</em>. He doesn't just think it. Maybe you're married, maybe not. But every man here has a mother, a grandmother, a sister, a daughter, a wife, or a woman at church who has stood by him.</p>
+    <blockquote class="quote step"><p>“Husbands, love your wives, even as Christ also loved the church, and gave himself for it;”</p><cite>Ephesians 5:25</cite></blockquote>
+    <blockquote class="quote step"><p>“The elder women as mothers; the younger as sisters, with all purity.”</p><cite>1 Timothy 5:2</cite></blockquote>
+    <p class="note step">Some of us hurt the women who loved us most. You can't undo yesterday, but you can start honoring them today: tell her thank you, keep your word, be someone she can <em>“safely trust,”</em> and treat every woman as a mother or a sister. Some trust takes years to rebuild. Keep showing up.</p>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise">Godly character for us, too</h2>
+    <p class="note rise" style="--d:1">This poem is about a woman, but almost everything in it is what God wants to grow in any man of <em>valor</em>:</p>
+    <ol class="signs rise" style="--d:2">
+      <li><b>Trustworthy</b>people can count on him (v. 11)</li>
+      <li><b>Works willingly</b>and with joy (v. 13)</li>
+      <li><b>Gets up early</b>to provide for his own (v. 15)</li>
+      <li><b>Thinks before he spends</b>(v. 16)</li>
+      <li><b>Generous</b>to the poor and needy (v. 20)</li>
+      <li><b>Ready</b>before trouble comes (v. 21)</li>
+      <li><b>Kind in his speech</b>(v. 26)</li>
+      <li class="now"><b>Fears the LORD</b>the root of it all (v. 30)</li>
+    </ol>
+    <p class="note step">Don't read this list and feel crushed. None of this comes by willpower. It's what the Holy Spirit grows in a man who walks with Christ, one day at a time.</p>
+  </div>
+</section>
+
+<!-- ======================= CLOSING ======================= -->
+<section class="slide remember">
+  <div class="inner">
+    <h2 class="rise">Points to remember</h2>
+    <ol class="seeds">
+      <li class="step"><span class="topic">A mother's teaching</span><span class="seed-q">“Give not thy strength unto women” <cite>31:3</cite></span><span class="take">She warned him about women and wine, the two things that have ruined more strong men than any army.</span></li>
+      <li class="step"><span class="topic">Strong drink</span><span class="seed-q">“It is not for kings to drink wine” <cite>31:4</cite></span><span class="take">Verses 6–7 are mercy for the dying, not permission. Jesus refused the cup and carried our sorrows.</span></li>
+      <li class="step"><span class="topic">Speaking up</span><span class="seed-q">“Open thy mouth for the dumb” <cite>31:8</cite></span><span class="take">Speak up for people who have no voice and no one to fight for them.</span></li>
+      <li class="step"><span class="topic">True strength</span><span class="seed-q">“Who can find a virtuous woman?” <cite>31:10</cite></span><span class="take">“Virtuous” means strength and valor of character, worth more than rubies.</span></li>
+      <li class="step"><span class="topic">Honor</span><span class="seed-q">“Her husband also, and he praiseth her” <cite>31:28</cite></span><span class="take">Say it out loud, keep your word, and treat every woman with honor and purity.</span></li>
+      <li class="step"><span class="topic">The fear of the LORD</span><span class="seed-q">“A woman that feareth the LORD, she shall be praised” <cite>31:30</cite></span><span class="take">Charm fades and beauty passes. A heart that fears the LORD lasts.</span></li>
+    </ol>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 1 of 6</p>
+      <span class="topic">A mother's teaching</span>
+      <h2>What did Lemuel's mother warn her son to stay away from?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="3"></blockquote>
+      <blockquote class="quote step" data-q="4-5"></blockquote>
+      <blockquote class="quote step"><p>“When I call to remembrance the unfeigned faith that is in thee, which dwelt first in thy grandmother Lois, and thy mother Eunice; and I am persuaded that in thee also.”</p><cite>2 Timothy 1:5</cite></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>Two things that destroy kings: giving his strength to women, and drinking. Sexual sin and alcohol both steal a man's strength and cloud his judgment, and the people under him pay for it. She told him the truth because she loved him.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 2 of 6</p>
+      <span class="topic">Strong drink</span>
+      <h2>Do verses 6 and 7 tell a hurting man to drink?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="6-7"></blockquote>
+      <blockquote class="quote step"><p>“And they gave him to drink wine mingled with myrrh: but he received it not.”</p><cite>Mark 15:23</cite></blockquote>
+      <blockquote class="quote step"><p>“Come unto me, all ye that labour and are heavy laden, and I will give you rest.”</p><cite>Matthew 11:28</cite></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>No. They contrast the king, who must stay clear-headed, with a man who is dying, for whom wine was the only painkiller there was. Wine can only help a man forget, and the trouble is still there in the morning. Jesus refused that cup and carried our sorrows. For a heavy heart, He offers real rest.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 3 of 6</p>
+      <span class="topic">Speaking up</span>
+      <h2>Who are we supposed to open our mouths for?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="8"></blockquote>
+      <blockquote class="quote step" data-q="9"></blockquote>
+      <blockquote class="quote step" data-q="20"></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>For people who can't speak up for themselves: the poor, the needy, and anyone left to go under with nobody fighting for them. A wise man uses his mouth to judge fairly and plead their cause, and his hands to help.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 4 of 6</p>
+      <span class="topic">True strength</span>
+      <h2>What does “virtuous” really mean?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="10"></blockquote>
+      <blockquote class="quote step" data-q="17"></blockquote>
+      <blockquote class="quote step"><p>“And the angel of the LORD appeared unto him, and said unto him, The LORD is with thee, thou mighty man of valour.”</p><cite>Judges 6:12</cite></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>The Hebrew word means strength, valor, and ability. It's the same word used for a “mighty man of valour.” A virtuous woman, or a virtuous man, is strong in character: trustworthy, hardworking, generous, and wise. That kind of strength is worth more than rubies.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 5 of 6</p>
+      <span class="topic">Honor</span>
+      <h2>How can we honor the women God has put in our lives?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="28"></blockquote>
+      <blockquote class="quote step"><p>“Likewise, ye husbands, dwell with them according to knowledge, giving honour unto the wife, as unto the weaker vessel, and as being heirs together of the grace of life; that your prayers be not hindered.”</p><cite>1 Peter 3:7</cite></blockquote>
+      <blockquote class="quote step"><p>“The elder women as mothers; the younger as sisters, with all purity.”</p><cite>1 Timothy 5:2</cite></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>Praise them out loud. Give them credit for what they do. Be a man they can safely trust. Husbands, love your wives the way Christ loves the church. And treat every woman as a mother or a sister, with purity. Start today, even where trust has to be rebuilt.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 6 of 6</p>
+      <span class="topic">The fear of the LORD</span>
+      <h2>What is worth more than charm and good looks?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="30"></blockquote>
+      <blockquote class="quote step"><p>“The fear of the LORD is the beginning of knowledge: but fools despise wisdom and instruction.”</p><cite>Proverbs 1:7</cite></blockquote>
+      <blockquote class="quote step"><p>“But the LORD said unto Samuel, Look not on his countenance, or on the height of his stature; because I have refused him: for the LORD seeth not as man seeth; for man looketh on the outward appearance, but the LORD looketh on the heart.”</p><cite>1 Samuel 16:7</cite></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>A heart that fears the LORD. Charm can lie and beauty fades, but God looks at the heart. Proverbs begins and ends with the fear of the LORD, because that's where all real wisdom starts, for women and for men.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide prayer">
+  <div class="inner">
+    <div class="emblem rise"></div>
+    <h2 class="rise">Prayer requests</h2>
+    <p class="ask-line rise" style="--d:1">What can we pray about for you today?</p>
+    <blockquote class="quote rise" style="--d:3"><p>“Casting all your care upon him; for he careth for you.”</p><cite>1 Peter 5:7</cite></blockquote>
+  </div>
+</section>
+
+</main>
+
+<script>
+// King James Version, Proverbs chapter 31
+const V = {
+  1: "The words of king Lemuel, the prophecy that his mother taught him.",
+  2: "What, my son? and what, the son of my womb? and what, the son of my vows?",
+  3: "Give not thy strength unto women, nor thy ways to that which destroyeth kings.",
+  4: "It is not for kings, O Lemuel, it is not for kings to drink wine; nor for princes strong drink:",
+  5: "Lest they drink, and forget the law, and pervert the judgment of any of the afflicted.",
+  6: "Give strong drink unto him that is ready to perish, and wine unto those that be of heavy hearts.",
+  7: "Let him drink, and forget his poverty, and remember his misery no more.",
+  8: "Open thy mouth for the dumb in the cause of all such as are appointed to destruction.",
+  9: "Open thy mouth, judge righteously, and plead the cause of the poor and needy.",
+  10: "Who can find a virtuous woman? for her price is far above rubies.",
+  11: "The heart of her husband doth safely trust in her, so that he shall have no need of spoil.",
+  12: "She will do him good and not evil all the days of her life.",
+  13: "She seeketh wool, and flax, and worketh willingly with her hands.",
+  14: "She is like the merchants’ ships; she bringeth her food from afar.",
+  15: "She riseth also while it is yet night, and giveth meat to her household, and a portion to her maidens.",
+  16: "She considereth a field, and buyeth it: with the fruit of her hands she planteth a vineyard.",
+  17: "She girdeth her loins with strength, and strengtheneth her arms.",
+  18: "She perceiveth that her merchandise is good: her candle goeth not out by night.",
+  19: "She layeth her hands to the spindle, and her hands hold the distaff.",
+  20: "She stretcheth out her hand to the poor; yea, she reacheth forth her hands to the needy.",
+  21: "She is not afraid of the snow for her household: for all her household are clothed with scarlet.",
+  22: "She maketh herself coverings of tapestry; her clothing is silk and purple.",
+  23: "Her husband is known in the gates, when he sitteth among the elders of the land.",
+  24: "She maketh fine linen, and selleth it; and delivereth girdles unto the merchant.",
+  25: "Strength and honour are her clothing; and she shall rejoice in time to come.",
+  26: "She openeth her mouth with wisdom; and in her tongue is the law of kindness.",
+  27: "She looketh well to the ways of her household, and eateth not the bread of idleness.",
+  28: "Her children arise up, and call her blessed; her husband also, and he praiseth her.",
+  29: "Many daughters have done virtuously, but thou excellest them all.",
+  30: "Favour is deceitful, and beauty is vain: but a woman that feareth the LORD, she shall be praised.",
+  31: "Give her of the fruit of her hands; and let her own works praise her in the gates."
+};
+const BOOK = "Proverbs 31";
+</script>
+<script src="../assets/deck.js"></script>
+</body>
+</html>

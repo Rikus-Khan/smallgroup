@@ -1,0 +1,595 @@
+<!doctype html>
+<html lang="en" data-theme="scribe">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Proverbs 1</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="../assets/fonts.css">
+<link rel="stylesheet" href="../assets/deck.css">
+<link rel="stylesheet" href="../assets/themes.css">
+<style>
+/* Old words and what they mean */
+.prv01-lex { display: grid; gap: .55rem 1.6rem; margin: .3em 0 1em; padding: 0; }
+@media (min-width: 760px) { .prv01-lex { grid-template-columns: 1fr 1fr; } }
+.prv01-lex div { padding: .5em .9em; border-left: 3px solid var(--accent); background: var(--surface); }
+.prv01-lex dt { font: italic 600 clamp(1.15rem, .95rem + .8vw, 1.6rem)/1.2 var(--serif); color: var(--accent-hot); }
+.prv01-lex dd { margin: .15em 0 0; font-size: clamp(.98rem, .88rem + .45vw, 1.25rem); line-height: 1.4; }
+.prv01-lex .ref { color: var(--ink-soft); font-size: .8em; margin-left: .3em; font-style: normal; font-weight: 400; font-family: var(--sans); }
+
+/* What the crowd promises, and what it pays */
+.prv01-ledger { display: grid; gap: .5rem; margin: .4em 0 1em; }
+.prv01-ledger .row { display: grid; grid-template-columns: 1fr auto 1fr; gap: .4em 1em; align-items: center; padding: .55em .8em; border-radius: 8px; background: var(--surface); border: 1px solid var(--line); }
+.prv01-ledger .head { background: none; border: 0; padding-top: 0; padding-bottom: 0; font-weight: 700; font-size: clamp(.9rem, .82rem + .35vw, 1.1rem); color: var(--ink-soft); }
+.prv01-ledger .say { font: italic clamp(1rem, .88rem + .6vw, 1.4rem)/1.3 var(--serif); }
+.prv01-ledger .arrow { color: var(--accent); font-weight: 700; }
+.prv01-ledger .pay { font-size: clamp(.98rem, .88rem + .5vw, 1.3rem); line-height: 1.3; color: var(--danger); font-weight: 600; }
+.prv01-ledger .pay small { display: block; color: var(--ink-soft); font-weight: 400; font-size: .78em; }
+@media (max-width: 620px) { .prv01-ledger .row { grid-template-columns: 1fr; } .prv01-ledger .arrow, .prv01-ledger .head { display: none; } }
+
+/* A bird, the bait, and a net that falls on the trappers */
+.prv01-net .net { transform: translateY(-150px); transition: opacity .3s ease, transform .9s cubic-bezier(.5,0,.75,0); }
+.prv01-net .net.on { transform: none; }
+.prv01-net .mesh { fill: none; stroke: var(--ink-soft); stroke-width: 2; }
+.prv01-net .bird { transition: transform 1.2s ease; }
+.split:has(.prv01-fly.on) .prv01-net .bird { transform: translate(-50px, -210px); }
+
+/* Simple, scorner, fool: a heart getting harder */
+.prv01-harden { display: grid; grid-template-columns: repeat(3, 1fr); gap: .7rem; margin: .5em 0 1em; }
+.prv01-harden div { padding: .7em .8em; border-radius: 10px; background: var(--surface); border: 2px solid var(--line-strong); }
+.prv01-harden div:nth-child(2) { border-width: 4px; }
+.prv01-harden div:nth-child(3) { border-width: 7px; border-color: var(--ink-soft); }
+.prv01-harden b { display: block; font: 600 clamp(1.15rem, .95rem + .9vw, 1.7rem)/1.15 var(--serif); color: var(--accent-hot); }
+.prv01-harden span { display: block; font-size: clamp(.9rem, .8rem + .4vw, 1.15rem); line-height: 1.35; margin-top: .3em; }
+.prv01-harden i { display: block; font-style: normal; color: var(--ink-soft); font-size: clamp(.85rem, .78rem + .3vw, 1.05rem); margin-top: .35em; }
+@media (max-width: 620px) { .prv01-harden { grid-template-columns: 1fr; } }
+
+/* A log of calls that went unanswered */
+.prv01-calls { list-style: none; padding: 0; margin: .4em 0 1em; display: grid; gap: .45rem; max-width: 40rem; }
+.prv01-calls li { display: grid; grid-template-columns: 2.4rem 1fr auto; gap: .8em; align-items: center; padding: .5em .8em; border-radius: 10px; background: var(--surface); border: 1px solid var(--line); }
+.prv01-calls .ico { width: 2.2rem; height: 2.2rem; border-radius: 50%; display: grid; place-items: center; border: 2px solid var(--danger); color: var(--danger); font-weight: 700; }
+.prv01-calls .what { font: clamp(1rem, .9rem + .55vw, 1.35rem)/1.25 var(--serif); }
+.prv01-calls .what small { display: block; font-family: var(--sans); color: var(--ink-soft); font-size: .78em; }
+.prv01-calls .how { color: var(--danger); font-weight: 700; font-size: clamp(.85rem, .8rem + .3vw, 1.05rem); text-align: right; }
+
+/* The open window: now, while she calls */
+.prv01-window { position: relative; margin: .6em 0 1.2em; }
+.prv01-window .bar { display: grid; grid-template-columns: 1.3fr 1fr; height: 3.2rem; border-radius: 10px; overflow: hidden; border: 2px solid var(--line-strong); }
+.prv01-window .open { background: color-mix(in srgb, var(--accent) 22%, transparent); display: grid; place-items: center; font: 600 clamp(1.1rem, .95rem + .7vw, 1.5rem) var(--serif); color: var(--accent-hot); }
+.prv01-window .shut { background: var(--surface-2); display: grid; place-items: center; color: var(--ink-soft); font-weight: 700; font-size: clamp(.9rem, .82rem + .4vw, 1.15rem); }
+.prv01-window .labels { display: grid; grid-template-columns: 1.3fr 1fr; margin-top: .35em; font-size: clamp(.85rem, .8rem + .3vw, 1.05rem); color: var(--ink-soft); }
+</style>
+</head>
+<body>
+<main class="deck" id="deck">
+
+<!-- ======================= OPENING ======================= -->
+<section class="slide title">
+  <div class="inner">
+    <div class="emblem rise"></div>
+    <h1 class="rise" style="--d:1">Proverbs 1</h1>
+    <p class="sub rise" style="--d:3">Where wisdom starts</p>
+    <p class="tag rise" style="--d:5">A father warns his son about the crowd, and Wisdom herself stands in the street and calls out to anyone who will listen.</p>
+  </div>
+</section>
+
+<section class="slide watch">
+  <div class="inner">
+    <h2 class="rise">Things to watch for</h2>
+    <p class="lede rise" style="--d:1">Keep these questions in the back of your mind as we read. We'll come back to every one of them at the end.</p>
+    <ol class="seeds">
+      <li class="step"><span class="topic">The fear of the LORD</span><span class="seed-q">Where does real knowledge begin?</span></li>
+      <li class="step"><span class="topic">Temptation</span><span class="seed-q">What should you do when sinners entice you?</span></li>
+      <li class="step"><span class="topic">The wrong crowd</span><span class="seed-q">What does the crowd promise, and what does it really pay?</span></li>
+      <li class="step"><span class="topic">God calls out</span><span class="seed-q">Who is Wisdom calling, and what does she offer?</span></li>
+      <li class="step"><span class="topic">Today</span><span class="seed-q">Why shouldn't a man put off listening?</span></li>
+      <li class="step"><span class="topic">God's promise</span><span class="seed-q">What does the man who listens get?</span></li>
+    </ol>
+  </div>
+</section>
+
+<!-- ======================= PART ONE ======================= -->
+<section class="slide part">
+  <div class="inner">
+    <p class="part-n rise">Part one</p>
+    <h2 class="rise" style="--d:1">Why this book</h2>
+    <p class="range rise" style="--d:2">Verses 1–9</p>
+    <div class="rule"></div>
+    <p class="hook rise" style="--d:4">A king writes down what he wants his son to know.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="1-3" data-hl="The proverbs of Solomon|To know wisdom and instruction"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="1" data-hl="The proverbs of Solomon the son of David"></blockquote>
+    <h2 class="rise" style="--d:1">What is a proverb?</h2>
+    <p class="note rise" style="--d:2">A proverb is a short, sharp saying about <em>how life usually works</em>. Solomon, David's son, was the king God gave unusual wisdom to. The Bible says he spoke three thousand proverbs (1 Kings 4:32).</p>
+    <div class="columns">
+      <div class="col law step">
+        <p class="who">A proverb</p>
+        <h3>A wise principle</h3>
+        <p>What generally happens when a man lives God's way, or doesn't. True, but not a guarantee for every case.</p>
+      </div>
+      <div class="col grace step">
+        <p class="who">A promise</p>
+        <h3>God's word to keep</h3>
+        <p>Something God says He <em>will</em> do, like saving everyone who calls on Him. Those never fail.</p>
+      </div>
+    </div>
+    <p class="note step">And here's the hard truth: Solomon knew more wisdom than any man alive, and later in life he didn't follow it. Knowing wisdom isn't the same as walking in it. We need more than good advice. We need the Lord Himself.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="4-6" data-hl="To give subtilty to the simple"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="4" data-hl="subtilty|the simple|discretion"></blockquote>
+    <h2 class="rise" style="--d:1">Old words, plain meanings</h2>
+    <dl class="prv01-lex">
+      <div class="step"><dt>subtilty <span class="ref">v. 4</span></dt><dd>Street smarts, good sense. Here it's a good thing: not getting played.</dd></div>
+      <div class="step"><dt>the simple <span class="ref">v. 4</span></dt><dd>The naive man. Not stupid, just wide open and easy to lead.</dd></div>
+      <div class="step"><dt>discretion <span class="ref">v. 4</span></dt><dd>Thinking it through before you act.</dd></div>
+      <div class="step"><dt>dark sayings <span class="ref">v. 6</span></dt><dd>Riddles. Sayings you have to chew on before they open up.</dd></div>
+    </dl>
+    <p class="note step">Notice who this book is for: the simple, the young man, <em>and</em> the wise man (v. 5). Nobody outgrows it.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="7" data-hl="The fear of the LORD is the beginning of knowledge"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="7" data-hl="The fear of the LORD is the beginning of knowledge"></blockquote>
+    <div class="split">
+      <div class="stage">
+        <svg viewBox="0 0 520 380" role="img" aria-label="A wall of stones labeled knowledge, wisdom and understanding, all resting on a foundation stone labeled the fear of the LORD.">
+          <line x1="20" y1="350" x2="500" y2="350" stroke-width="2" style="stroke:var(--ink-soft)"/>
+          <g class="step">
+            <rect x="80" y="290" width="360" height="56" rx="4" stroke-width="3" style="fill:var(--accent);stroke:var(--accent-hot)"/>
+            <text x="260" y="326" text-anchor="middle" font-size="24" font-weight="700" class="serif" style="fill:var(--on-accent)">the fear of the LORD</text>
+          </g>
+          <g class="step" stroke-width="2" style="stroke:var(--line-strong)">
+            <rect x="90" y="226" width="166" height="58" rx="4" style="fill:var(--surface-2)"/>
+            <rect x="264" y="226" width="166" height="58" rx="4" style="fill:var(--surface-2)"/>
+            <rect x="140" y="162" width="240" height="58" rx="4" style="fill:var(--surface-2)"/>
+            <rect x="190" y="98" width="140" height="58" rx="4" style="fill:var(--surface-2)"/>
+          </g>
+          <g class="step">
+            <text x="173" y="262" text-anchor="middle" font-size="20">knowledge</text>
+            <text x="347" y="262" text-anchor="middle" font-size="20">instruction</text>
+            <text x="260" y="198" text-anchor="middle" font-size="20">understanding</text>
+            <text x="260" y="134" text-anchor="middle" font-size="20">wisdom</text>
+            <text x="260" y="70" text-anchor="middle" font-size="18" style="fill:var(--ink-soft)">everything else is built on it</text>
+          </g>
+        </svg>
+      </div>
+      <div>
+        <h2 class="rise" style="--d:1">Where it all starts</h2>
+        <p class="note rise" style="--d:2">“Beginning” means the first step <em>and</em> the foundation. You can't skip it and still build anything that lasts.</p>
+        <p class="note step">The <em>fear of the LORD</em> isn't cowering from a mean boss. It's the respect, awe, and trust a man has when he finally sees how big and how good God is, and lets God be God.</p>
+        <p class="note step">The fool doesn't lack information. He <em>despises</em> it. He looks down on correction because he already knows best.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise">Wisdom has a name</h2>
+    <p class="note rise" style="--d:1">Proverbs keeps saying wisdom is worth more than anything. The New Testament tells us where to find it:</p>
+    <blockquote class="quote rise" style="--d:2"><p>“But unto them which are called, both Jews and Greeks, Christ the power of God, and the <mark>wisdom of God</mark>.”</p><cite>1 Corinthians 1:24</cite></blockquote>
+    <blockquote class="quote step"><p>“But of him are ye in Christ Jesus, who of God is made unto us <mark>wisdom</mark>, and righteousness, and sanctification, and redemption:”</p><cite>1 Corinthians 1:30</cite></blockquote>
+    <p class="note step">Proverbs gives the sayings. Jesus <em>is</em> the wisdom of God in person. Fearing the LORD starts the day you stop running your own life and trust Jesus with it.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="8-9" data-hl="hear the instruction of thy father|chains about thy neck"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="9" data-hl="an ornament of grace unto thy head|chains about thy neck"></blockquote>
+    <h2 class="rise" style="--d:1">Worn like a medal</h2>
+    <p class="note rise" style="--d:2">A wreath on the head and a gold chain around the neck were honors, the way a king rewarded a man (Pharaoh put a gold chain on Joseph, Genesis 41:42). Good teaching, taken to heart, looks good on a man.</p>
+    <p class="note step">Some of us didn't have a father or mother worth listening to. That hurts, and it's real. But God steps into that gap. Here in Proverbs He gives you a father's voice, and through Jesus He gives you <em>Himself</em> as your Father.</p>
+    <blockquote class="quote step" style="margin-top:.9em"><p>“A father of the fatherless, and a judge of the widows, is God in his holy habitation.”</p><cite>Psalm 68:5</cite></blockquote>
+  </div>
+</section>
+
+<!-- ======================= PART TWO ======================= -->
+<section class="slide part">
+  <div class="inner">
+    <p class="part-n rise">Part two</p>
+    <h2 class="rise" style="--d:1">When the crowd calls</h2>
+    <p class="range rise" style="--d:2">Verses 10–19</p>
+    <div class="rule"></div>
+    <p class="hook rise" style="--d:4">“Come with us.” Every man has heard it.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="10-12" data-hl="if sinners entice thee, consent thou not|Come with us"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="10"></blockquote>
+    <p class="saying rise" style="--d:1">If sinners entice thee, <em>consent thou not.</em></p>
+    <p class="note rise" style="--d:3">To <em>entice</em> is to lure, to sweet-talk, to make it sound easy. You can't stop people from asking. You can decide your answer before they ever do.</p>
+    <p class="note step">Three words: <em>consent thou not</em>. No speech, no debate, no “maybe later.” Just no. The longer you stand there talking, the weaker that no gets.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="13-14" data-hl="Cast in thy lot among us; let us all have one purse"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="14" data-hl="Cast in thy lot among us|one purse"></blockquote>
+    <h2 class="rise" style="--d:1">The pitch, and the price</h2>
+    <div class="prv01-ledger">
+      <div class="row head rise" style="--d:2"><span>What they say</span><span></span><span>What it really pays</span></div>
+      <div class="row step"><span class="say">“Come with us”</span><span class="arrow">→</span><span class="pay">their feet run to evil<small>v. 16</small></span></div>
+      <div class="row step"><span class="say">“We shall fill our houses with spoil”</span><span class="arrow">→</span><span class="pay">it takes the life of the owners<small>v. 19</small></span></div>
+      <div class="row step"><span class="say">“Cast in thy lot among us”</span><span class="arrow">→</span><span class="pay">they lie in wait for their own blood<small>v. 18</small></span></div>
+    </div>
+    <p class="note step">A <em>lot</em> was like a pair of dice used to decide things. “Cast in thy lot” means <em>throw in with us, share our fate</em>. “One purse” means one bank, one crew. It's the offer of belonging, money, and a family. A gang, a using crowd, a crew that “has your back” sells exactly that.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="15-16" data-hl="walk not thou in the way with them; refrain thy foot from their path"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="15" data-hl="walk not thou in the way with them"></blockquote>
+    <h2 class="rise" style="--d:1">Don't even start down the road</h2>
+    <p class="note rise" style="--d:2">The father doesn't say “go with them, but be careful.” He says don't take the first step. <em>Refrain thy foot.</em> It's easier to stay off a road than to get off it.</p>
+    <blockquote class="quote step"><p>“Be not deceived: evil communications corrupt good manners.”</p><cite>1 Corinthians 15:33</cite></blockquote>
+    <p class="note step">“Evil communications” means bad company. Who you run with will shape who you become. That goes for the old crowd, the old corner, and the old phone numbers.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="17-19" data-hl="in vain the net is spread in the sight of any bird|they lay wait for their own blood"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="17-18" data-hl="the net is spread in the sight of any bird|they lay wait for their own blood"></blockquote>
+    <div class="split">
+      <div class="stage">
+        <svg class="prv01-net" viewBox="0 0 520 330" role="img" aria-label="A net hangs over bait on the ground. A bird sees it and flies off, but the net falls on the men who set it.">
+          <line x1="10" y1="290" x2="510" y2="290" stroke-width="2" style="stroke:var(--ink-soft)"/>
+          <g style="fill:var(--warm)"><circle cx="200" cy="284" r="5"/><circle cx="216" cy="286" r="5"/><circle cx="232" cy="283" r="5"/><circle cx="248" cy="286" r="5"/></g>
+          <text x="224" y="318" text-anchor="middle" font-size="17" style="fill:var(--ink-soft)">the bait</text>
+          <g class="bird">
+            <ellipse cx="110" cy="268" rx="22" ry="14" style="fill:var(--ink)"/>
+            <circle cx="130" cy="256" r="10" style="fill:var(--ink)"/>
+            <path d="M139 255 L150 258 L139 261 Z" style="fill:var(--warm)"/>
+            <path d="M92 262 Q100 240 118 256" fill="none" stroke-width="4" style="stroke:var(--ink-soft)"/>
+          </g>
+          <g class="net step">
+            <path class="mesh" d="M160 140 L300 140 M160 170 L300 170 M160 200 L300 200 M160 230 L300 230 M170 130 L170 240 M200 130 L200 240 M230 130 L230 240 M260 130 L260 240 M290 130 L290 240"/>
+            <path d="M150 128 Q230 112 310 128" fill="none" stroke-width="4" style="stroke:var(--leather-light)"/>
+          </g>
+          <g class="step">
+            <circle cx="380" cy="230" r="13" style="fill:var(--ink-soft)"/>
+            <path d="M366 290 L368 250 Q380 242 392 250 L394 290 Z" style="fill:var(--ink-soft)"/>
+            <circle cx="440" cy="230" r="13" style="fill:var(--ink-soft)"/>
+            <path d="M426 290 L428 250 Q440 242 452 250 L454 290 Z" style="fill:var(--ink-soft)"/>
+            <path class="mesh" d="M350 220 L470 220 M350 245 L470 245 M350 270 L470 270 M362 210 L362 290 M392 210 L392 290 M422 210 L422 290 M452 210 L452 290" style="stroke:var(--danger)"/>
+            <text x="410" y="196" text-anchor="middle" font-size="18" font-weight="700" style="fill:var(--danger)">caught in their own net</text>
+          </g>
+        </svg>
+      </div>
+      <div>
+        <h2 class="rise" style="--d:1">Dumber than a bird</h2>
+        <p class="note rise" style="--d:2">Even a bird won't walk into a trap it watched you set. That's the picture in verse 17.</p>
+        <p class="note step prv01-fly">But these men can see where their road ends, and they walk it anyway. They think they're setting a trap for somebody else. Verse 18 says the trap is for <em>them</em>.</p>
+        <p class="note step">Verse 19: greed “taketh away the life of the owners thereof.” What you grab ends up owning you.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="19" data-hl="greedy of gain"></blockquote>
+    <h2 class="rise" style="--d:1">What did it cost you?</h2>
+    <blockquote class="quote rise" style="--d:2"><p>“For what shall it profit a man, if he shall gain the whole world, and lose his own soul?”</p><cite>Mark 8:36</cite></blockquote>
+    <p class="note step">Most of us don't need this explained. We've watched it happen: the money, the high, the crew, and then the funerals, the cells, the kids who don't call. The “precious substance” of verse 13 was never worth what it took.</p>
+    <p class="note step">Jesus asks the question so you'll count the cost <em>before</em> you pay it. And if you already paid it, He's the one who can give back what the years took.</p>
+  </div>
+</section>
+
+<!-- ======================= PART THREE ======================= -->
+<section class="slide part">
+  <div class="inner">
+    <p class="part-n rise">Part three</p>
+    <h2 class="rise" style="--d:1">Wisdom calls out</h2>
+    <p class="range rise" style="--d:2">Verses 20–33</p>
+    <div class="rule"></div>
+    <p class="hook rise" style="--d:4">The gang calls from the shadows. Wisdom calls from the middle of the street.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="20-21" data-hl="Wisdom crieth without; she uttereth her voice in the streets"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="21" data-hl="the chief place of concourse|the openings of the gates"></blockquote>
+    <div class="split">
+      <div class="stage">
+        <svg viewBox="0 0 560 390" role="img" aria-label="A walled city. Wisdom stands at the busiest crossroads near the gate, and her voice spreads in rings.">
+          <rect x="20" y="20" width="520" height="320" rx="10" stroke-width="6" style="fill:var(--surface);stroke:var(--line-strong)"/>
+          <rect x="250" y="326" width="60" height="28" style="fill:var(--bg);stroke:var(--line-strong)" stroke-width="3"/>
+          <text x="280" y="382" text-anchor="middle" font-size="17" style="fill:var(--ink-soft)">the gate</text>
+          <g stroke-width="18" style="stroke:color-mix(in srgb, var(--ink-soft) 14%, transparent)">
+            <line x1="280" y1="326" x2="280" y2="30"/><line x1="30" y1="170" x2="530" y2="170"/><line x1="110" y1="30" x2="110" y2="330"/><line x1="450" y1="30" x2="450" y2="330"/>
+          </g>
+          <g style="fill:color-mix(in srgb, var(--ink-soft) 38%, transparent)">
+            <rect x="140" y="60" width="110" height="80" rx="4"/><rect x="310" y="60" width="110" height="80" rx="4"/>
+            <rect x="140" y="200" width="110" height="80" rx="4"/><rect x="310" y="200" width="110" height="80" rx="4"/>
+            <rect x="40" y="60" width="50" height="80" rx="4"/><rect x="470" y="200" width="50" height="80" rx="4"/>
+          </g>
+          <g class="step" fill="none" stroke-width="3" style="stroke:var(--accent)">
+            <circle cx="280" cy="170" r="40" opacity=".9"/><circle cx="280" cy="170" r="80" opacity=".6"/><circle cx="280" cy="170" r="130" opacity=".35"/><circle cx="280" cy="170" r="190" opacity=".18"/>
+          </g>
+          <circle cx="280" cy="158" r="11" style="fill:var(--accent-hot)"/>
+          <path d="M266 190 L269 168 Q280 162 291 168 L294 190 Z" style="fill:var(--accent-hot)"/>
+          <text x="280" y="128" text-anchor="middle" font-size="20" font-weight="700" style="fill:var(--accent-hot);paint-order:stroke;stroke:var(--surface);stroke-width:7px">Wisdom</text>
+        </svg>
+      </div>
+      <div>
+        <h2 class="rise" style="--d:1">She's not hiding</h2>
+        <p class="note rise" style="--d:2">Proverbs paints wisdom as a woman calling out. That's a word-picture: it shows that God's wisdom <em>wants</em> to be found.</p>
+        <p class="note step">She stands at the <em>chief place of concourse</em> (the busiest crossroads) and at the city gates, where business and court cases happened. Out loud, for everybody. God puts His wisdom right where you live.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="slide verse" data-v="22-23" data-hl="How long, ye simple ones|Turn you at my reproof|I will pour out my spirit unto you"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="22" data-hl="ye simple ones|the scorners|fools hate knowledge"></blockquote>
+    <h2 class="rise" style="--d:1">Three men, one road downhill</h2>
+    <div class="prv01-harden">
+      <div class="step"><b>The simple</b><span>Open to anything. Easy to talk into stuff.</span><i>“loves simplicity”</i></div>
+      <div class="step"><b>The scorner</b><span>Mocks anything serious. Laughs it off.</span><i>“delights in scorning”</i></div>
+      <div class="step"><b>The fool</b><span>Has made up his mind. Hates being told.</span><i>“hates knowledge”</i></div>
+    </div>
+    <p class="note step">Each one is harder to reach than the last. But look at verse 23: she still calls all three. <em>“Turn you at my reproof.”</em> Turn around, and she promises, <em>“I will pour out my spirit unto you.”</em> The offer comes before the warning.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="24-25" data-hl="I have called, and ye refused"></section>
+<section class="slide verse" data-v="26-27" data-hl="as a whirlwind"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="24" data-hl="I have called, and ye refused"></blockquote>
+    <h2 class="rise" style="--d:1">Missed calls</h2>
+    <ol class="prv01-calls">
+      <li class="step"><span class="ico">✕</span><span class="what">“I have called”<small>verse 24</small></span><span class="how">refused</span></li>
+      <li class="step"><span class="ico">✕</span><span class="what">“I have stretched out my hand”<small>verse 24</small></span><span class="how">no man regarded</span></li>
+      <li class="step"><span class="ico">✕</span><span class="what">“all my counsel”<small>verse 25</small></span><span class="how">set at nought</span></li>
+      <li class="step"><span class="ico">✕</span><span class="what">“my reproof”<small>verse 25</small></span><span class="how">would none of it</span></li>
+    </ol>
+    <p class="note step">Then the storm hits “as a whirlwind” (v. 27). Wisdom “laughing” is a strong word-picture: the man who mocked every warning now finds the warnings were right. It doesn't mean God enjoys anyone's ruin. He is “not willing that any should perish” (2 Peter 3:9).</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="28-30" data-hl="did not choose the fear of the LORD"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="29" data-hl="did not choose the fear of the LORD"></blockquote>
+    <h2 class="rise" style="--d:1">While the door is open</h2>
+    <div class="prv01-window rise" style="--d:2" role="img" aria-label="A bar: an open window now, while Wisdom calls, then a closed stretch when the storm comes.">
+      <div class="bar"><div class="open">“To day”</div><div class="shut">the storm</div></div>
+      <div class="labels"><span>while she is calling (vv. 20–23)</span><span>when calamity comes (vv. 26–28)</span></div>
+    </div>
+    <p class="note step">Verse 29 says they <em>did not choose</em>. It was a real choice, and it was theirs. When trouble came, they cried out to get out of the pain, but they still didn't want wisdom.</p>
+    <blockquote class="quote step"><p>“While it is said, To day if ye will hear his voice, harden not your hearts, as in the provocation.”</p><cite>Hebrews 3:15</cite></blockquote>
+    <p class="note step">If you hear Him calling, that's proof the door is open. Anyone who honestly calls on the Lord will be heard. Don't wait for the whirlwind.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="31-33" data-hl="eat of the fruit of their own way|whoso hearkeneth unto me shall dwell safely"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="31" data-hl="eat of the fruit of their own way"></blockquote>
+    <h2 class="rise" style="--d:1">Two endings</h2>
+    <div class="columns">
+      <div class="col law rise" style="--d:2">
+        <p class="who">Verse 32</p>
+        <h3>The one who turns away</h3>
+        <p>“Prosperity” here means <em>careless ease</em>: getting comfortable while life is falling apart. That comfort is what destroys him.</p>
+      </div>
+      <div class="col grace step">
+        <p class="who">Verse 33</p>
+        <h3>The one who listens</h3>
+        <p>Dwells safely, and is “quiet from fear of evil.” Not a life without trouble, but a man at peace in it.</p>
+      </div>
+    </div>
+    <blockquote class="quote step"><p>“Be not deceived; God is not mocked: for whatsoever a man soweth, that shall he also reap.”</p><cite>Galatians 6:7</cite></blockquote>
+  </div>
+</section>
+
+<!-- ======================= CLOSING ======================= -->
+<section class="slide remember">
+  <div class="inner">
+    <h2 class="rise">Points to remember</h2>
+    <ol class="seeds">
+      <li class="step"><span class="topic">The fear of the LORD</span><span class="seed-q">“The fear of the LORD is the beginning of knowledge” <cite>1:7</cite></span><span class="take">Everything wise is built on respecting and trusting God. Christ is the wisdom of God.</span></li>
+      <li class="step"><span class="topic">Temptation</span><span class="seed-q">“Consent thou not” <cite>1:10</cite></span><span class="take">Decide your no before they ask. Don't take the first step.</span></li>
+      <li class="step"><span class="topic">The wrong crowd</span><span class="seed-q">“They lay wait for their own blood” <cite>1:18</cite></span><span class="take">The crowd promises money and belonging. It pays in blood and loss.</span></li>
+      <li class="step"><span class="topic">God calls out</span><span class="seed-q">“I will pour out my spirit unto you” <cite>1:23</cite></span><span class="take">Wisdom calls everyone, out in the open, and offers to change them from the inside.</span></li>
+      <li class="step"><span class="topic">Today</span><span class="seed-q">“They did not choose the fear of the LORD” <cite>1:29</cite></span><span class="take">Listening is a choice. Make it while He's calling.</span></li>
+      <li class="step"><span class="topic">God's promise</span><span class="seed-q">“Whoso hearkeneth unto me shall dwell safely” <cite>1:33</cite></span><span class="take">The man who listens gets safety and a quiet heart.</span></li>
+    </ol>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+    <p class="counter">Question 1 of 6</p>
+    <span class="topic">The fear of the LORD</span>
+    <h2>Where does real knowledge begin?</h2>
+    <p class="ask-line">What verses tell us about this?</p>
+    <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+    <blockquote class="quote step" data-q="7" data-hl="The fear of the LORD is the beginning of knowledge"></blockquote>
+    <blockquote class="quote step" data-q="29" data-hl="did not choose the fear of the LORD"></blockquote>
+    <blockquote class="quote step"><p>“But unto them which are called, both Jews and Greeks, Christ the power of God, and the wisdom of God.”</p><cite>1 Corinthians 1:24</cite></blockquote>
+    <div class="answer step"><h3>Answer</h3><p>It begins with the fear of the LORD: respecting God, trusting Him, and letting Him be God instead of us. That's the foundation everything else stands on. And the wisdom of God has a name: Jesus Christ.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+    <p class="counter">Question 2 of 6</p>
+    <span class="topic">Temptation</span>
+    <h2>What should you do when sinners entice you?</h2>
+    <p class="ask-line">What verses tell us about this?</p>
+    <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+    <blockquote class="quote step" data-q="10"></blockquote>
+    <blockquote class="quote step" data-q="15"></blockquote>
+    <blockquote class="quote step"><p>“There hath no temptation taken you but such as is common to man: but God is faithful, who will not suffer you to be tempted above that ye are able; but will with the temptation also make a way to escape, that ye may be able to bear it.”</p><cite>1 Corinthians 10:13</cite></blockquote>
+    <div class="answer step"><h3>Answer</h3><p>Say no, and don't stand around negotiating. Don't take the first step down their road. And remember you're not alone in it: God is faithful, and He always makes a way out.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+    <p class="counter">Question 3 of 6</p>
+    <span class="topic">The wrong crowd</span>
+    <h2>What does the crowd promise, and what does it really pay?</h2>
+    <p class="ask-line">What verses tell us about this?</p>
+    <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+    <blockquote class="quote step" data-q="13-14"></blockquote>
+    <blockquote class="quote step" data-q="18"></blockquote>
+    <blockquote class="quote step" data-q="19"></blockquote>
+    <div class="answer step"><h3>Answer</h3><p>It promises money, excitement, and a family to belong to. It pays in blood, prison, and death, and the men who set the trap end up caught in it. Greed takes the life of the man who chases it.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+    <p class="counter">Question 4 of 6</p>
+    <span class="topic">God calls out</span>
+    <h2>Who is Wisdom calling, and what does she offer?</h2>
+    <p class="ask-line">What verses tell us about this?</p>
+    <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+    <blockquote class="quote step" data-q="20"></blockquote>
+    <blockquote class="quote step" data-q="22" data-hl="ye simple ones|the scorners|fools"></blockquote>
+    <blockquote class="quote step" data-q="23"></blockquote>
+    <div class="answer step"><h3>Answer</h3><p>Everybody: the simple, the scorner, even the fool. She calls out in public where anyone can hear. And she offers more than advice: “I will pour out my spirit unto you.” God wants to change a man from the inside.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+    <p class="counter">Question 5 of 6</p>
+    <span class="topic">Today</span>
+    <h2>Why shouldn't a man put off listening?</h2>
+    <p class="ask-line">What verses tell us about this?</p>
+    <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+    <blockquote class="quote step" data-q="24"></blockquote>
+    <blockquote class="quote step" data-q="28-29"></blockquote>
+    <blockquote class="quote step"><p>“Seek ye the LORD while he may be found, call ye upon him while he is near:”</p><cite>Isaiah 55:6</cite></blockquote>
+    <div class="answer step"><h3>Answer</h3><p>Because every “no” makes the next one easier, and the storm comes on its own schedule, not ours. Listening is a choice, and it's ours to make. If you hear Him calling today, the door is open. Walk through it now.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+    <p class="counter">Question 6 of 6</p>
+    <span class="topic">God's promise</span>
+    <h2>What does the man who listens get?</h2>
+    <p class="ask-line">What verses tell us about this?</p>
+    <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+    <blockquote class="quote step" data-q="9"></blockquote>
+    <blockquote class="quote step" data-q="33"></blockquote>
+    <blockquote class="quote step"><p>“Come unto me, all ye that labour and are heavy laden, and I will give you rest.”</p><cite>Matthew 11:28</cite></blockquote>
+    <div class="answer step"><h3>Answer</h3><p>Honor that looks good on him, a safe place to live, and a heart that's quiet instead of always afraid. Jesus offers the same thing to every tired man who comes to Him: rest.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide prayer">
+  <div class="inner">
+    <div class="emblem rise"></div>
+    <h2 class="rise" style="--d:1">Prayer requests</h2>
+    <p class="ask-line rise" style="--d:2">What can we pray about for you today?</p>
+    <blockquote class="quote rise" style="--d:4"><p>“If any of you lack wisdom, let him ask of God, that giveth to all men liberally, and upbraideth not; and it shall be given him.”</p><cite>James 1:5</cite></blockquote>
+  </div>
+</section>
+
+</main>
+
+<script>
+// King James Version, Proverbs chapter 1
+const V = {
+  1: "The proverbs of Solomon the son of David, king of Israel;",
+  2: "To know wisdom and instruction; to perceive the words of understanding;",
+  3: "To receive the instruction of wisdom, justice, and judgment, and equity;",
+  4: "To give subtilty to the simple, to the young man knowledge and discretion.",
+  5: "A wise man will hear, and will increase learning; and a man of understanding shall attain unto wise counsels:",
+  6: "To understand a proverb, and the interpretation; the words of the wise, and their dark sayings.",
+  7: "The fear of the LORD is the beginning of knowledge: but fools despise wisdom and instruction.",
+  8: "My son, hear the instruction of thy father, and forsake not the law of thy mother:",
+  9: "For they shall be an ornament of grace unto thy head, and chains about thy neck.",
+  10: "My son, if sinners entice thee, consent thou not.",
+  11: "If they say, Come with us, let us lay wait for blood, let us lurk privily for the innocent without cause:",
+  12: "Let us swallow them up alive as the grave; and whole, as those that go down into the pit:",
+  13: "We shall find all precious substance, we shall fill our houses with spoil:",
+  14: "Cast in thy lot among us; let us all have one purse:",
+  15: "My son, walk not thou in the way with them; refrain thy foot from their path:",
+  16: "For their feet run to evil, and make haste to shed blood.",
+  17: "Surely in vain the net is spread in the sight of any bird.",
+  18: "And they lay wait for their own blood; they lurk privily for their own lives.",
+  19: "So are the ways of every one that is greedy of gain; which taketh away the life of the owners thereof.",
+  20: "Wisdom crieth without; she uttereth her voice in the streets:",
+  21: "She crieth in the chief place of concourse, in the openings of the gates: in the city she uttereth her words, saying,",
+  22: "How long, ye simple ones, will ye love simplicity? and the scorners delight in their scorning, and fools hate knowledge?",
+  23: "Turn you at my reproof: behold, I will pour out my spirit unto you, I will make known my words unto you.",
+  24: "Because I have called, and ye refused; I have stretched out my hand, and no man regarded;",
+  25: "But ye have set at nought all my counsel, and would none of my reproof:",
+  26: "I also will laugh at your calamity; I will mock when your fear cometh;",
+  27: "When your fear cometh as desolation, and your destruction cometh as a whirlwind; when distress and anguish cometh upon you.",
+  28: "Then shall they call upon me, but I will not answer; they shall seek me early, but they shall not find me:",
+  29: "For that they hated knowledge, and did not choose the fear of the LORD:",
+  30: "They would none of my counsel: they despised all my reproof.",
+  31: "Therefore shall they eat of the fruit of their own way, and be filled with their own devices.",
+  32: "For the turning away of the simple shall slay them, and the prosperity of fools shall destroy them.",
+  33: "But whoso hearkeneth unto me shall dwell safely, and shall be quiet from fear of evil."
+};
+const BOOK = "Proverbs 1";
+</script>
+<script src="../assets/deck.js"></script>
+</body>
+</html>

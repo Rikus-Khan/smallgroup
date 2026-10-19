@@ -1,0 +1,542 @@
+<!doctype html>
+<html lang="en" data-theme="slate">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Proverbs 18</title>
+<link rel="stylesheet" href="../assets/fonts.css">
+<link rel="stylesheet" href="../assets/deck.css">
+<link rel="stylesheet" href="../assets/themes.css">
+<style>
+/* prv18-sink: words that go down, layer by layer, to the innermost parts */
+.prv18-sink { position: relative; display: grid; gap: 4px; margin: .4em 0 1em; max-width: 34rem; }
+.prv18-sink span { display: block; padding: .45em 1em; border-radius: 6px; font-size: clamp(.95rem, .85rem + .45vw, 1.2rem); color: var(--ink); background: color-mix(in srgb, var(--accent) calc(var(--k) * 9% + 6%), transparent); border: 1px solid var(--line); }
+.prv18-sink span:last-child { color: var(--on-accent); background: var(--accent); font-weight: 700; }
+.prv18-sink i { position: absolute; right: 1rem; top: .3em; width: 14px; height: 14px; border-radius: 50%; background: var(--danger); box-shadow: 0 0 10px var(--danger); }
+.slide.active .prv18-sink i { animation: prv18-drop 3.2s .8s cubic-bezier(.5,0,.5,1) infinite; }
+@keyframes prv18-drop { 0% { top: .3em; opacity: 0; } 10% { opacity: 1; } 80% { top: calc(100% - 1.6em); opacity: 1; } 100% { top: calc(100% - 1.6em); opacity: 0; } }
+
+/* prv18-tower: the LORD's strong tower beside a wall that exists only in the mind */
+.prv18-runner { transition: transform 1.8s cubic-bezier(.4,0,.2,1); }
+.prv18-tower:has(.prv18-run.on) .prv18-runner { transform: translateX(118px); }
+.prv18-safe { opacity: 0; transition: opacity .8s ease 1.6s; }
+.prv18-tower:has(.prv18-run.on) .prv18-safe { opacity: 1; }
+
+/* prv18-updown: two roads, one down and one up */
+.prv18-updown { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem 2rem; margin: .4em 0 1em; }
+.prv18-updown > div { display: grid; grid-template-columns: auto 1fr; gap: .1em .9em; align-items: center; padding: .7em 1em; border-radius: 10px; border: 1px solid var(--line-strong); background: var(--surface); }
+.prv18-updown .arr { grid-row: span 2; font: 700 clamp(2.2rem, 1.4rem + 3vw, 3.6rem)/1 var(--sans); }
+.prv18-updown .down .arr { color: var(--danger); }
+.prv18-updown .up .arr { color: var(--accent-hot); }
+.prv18-updown b { font: 400 clamp(1.2rem, 1rem + .9vw, 1.7rem)/1.2 var(--serif); }
+.prv18-updown small { font-size: clamp(.9rem, .82rem + .35vw, 1.1rem); color: var(--ink-soft); }
+
+/* prv18-words: words of death and words of life */
+.prv18-words { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem 2rem; margin: .4em 0 1em; }
+.prv18-words h3 { font: 700 clamp(1rem, .9rem + .5vw, 1.3rem) var(--sans); margin-bottom: .5em; letter-spacing: .04em; text-transform: uppercase; }
+.prv18-words .death h3 { color: var(--danger); }
+.prv18-words .life h3 { color: var(--accent-hot); }
+.prv18-words ul { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: 6px; }
+.prv18-words li { padding: .3em .75em; border-radius: 999px; font: italic clamp(.95rem, .85rem + .45vw, 1.25rem) var(--serif); }
+.prv18-words .death li { border: 1.5px dashed var(--danger); color: var(--ink-soft); }
+.prv18-words .life li { border: 1.5px solid var(--accent); background: color-mix(in srgb, var(--accent) 14%, transparent); color: var(--ink); }
+
+/* prv18-rings: circles of closeness, with one Friend at the center */
+.prv18-ring { transition: opacity .8s ease; }
+.prv18-close .prv18-core { transform-box: fill-box; transform-origin: center; }
+.slide.active .prv18-close.on .prv18-core { animation: prv18-glow 2.4s ease-in-out infinite; }
+@keyframes prv18-glow { 50% { transform: scale(1.1); } }
+
+/* prv18-sort: the chapter's sayings gathered by theme */
+.prv18-sort { display: grid; grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr)); gap: .7rem; margin: .4em 0 1em; }
+.prv18-sort > div { padding: .6em .8em; border: 1px solid var(--line-strong); border-radius: 10px; background: var(--surface); }
+.prv18-sort h3 { font: 700 clamp(1rem, .9rem + .45vw, 1.25rem) var(--sans); color: var(--accent-hot); margin-bottom: .35em; }
+.prv18-sort .vs { display: flex; flex-wrap: wrap; gap: 4px; margin-bottom: .4em; }
+.prv18-sort .vs b { min-width: 1.9em; padding: .1em .35em; text-align: center; border-radius: 6px; font-size: .9rem; background: color-mix(in srgb, var(--accent) 16%, transparent); color: var(--ink); }
+.prv18-sort p { font-size: clamp(.9rem, .82rem + .35vw, 1.1rem); line-height: 1.35; color: var(--ink-soft); }
+@media (max-width: 600px) { .prv18-updown, .prv18-words { grid-template-columns: 1fr; } .prv18-sort { grid-template-columns: 1fr 1fr; } .prv18-sort p { display: none; } }
+</style>
+</head>
+<body>
+<main class="deck" id="deck">
+
+<!-- ======================= OPENING ======================= -->
+<section class="slide title">
+  <div class="inner">
+    <div class="emblem rise"></div>
+    <h1 class="rise" style="--d:1">Proverbs 18</h1>
+    <p class="sub rise" style="--d:3">A strong tower</p>
+    <p class="tag rise" style="--d:5">Where to run when trouble comes, the power of the tongue, and a Friend who sticks closer than a brother.</p>
+  </div>
+</section>
+
+<section class="slide watch">
+  <div class="inner">
+    <h2 class="rise">Things to watch for</h2>
+    <p class="lede rise" style="--d:1">Keep these questions in the back of your mind as we read. We'll come back to every one of them at the end.</p>
+    <ol class="seeds">
+      <li class="step"><span class="topic">Who God is</span><span class="seed-q">Where can a man run when trouble comes?</span></li>
+      <li class="step"><span class="topic">Pride</span><span class="seed-q">What comes before a fall, and what comes before honour?</span></li>
+      <li class="step"><span class="topic">Hurt</span><span class="seed-q">Who can carry a wounded spirit?</span></li>
+      <li class="step"><span class="topic">Listening</span><span class="seed-q">Why should we hear the whole story before we answer?</span></li>
+      <li class="step"><span class="topic">Our words</span><span class="seed-q">How much power do our words really have?</span></li>
+      <li class="step"><span class="topic">Friendship</span><span class="seed-q">What kind of friend sticks closer than a brother?</span></li>
+    </ol>
+  </div>
+</section>
+
+<!-- ======================= PART ONE ======================= -->
+<section class="slide part">
+  <div class="inner">
+    <p class="part-n rise">Part one</p>
+    <h2 class="rise" style="--d:1">Deep waters</h2>
+    <p class="range rise" style="--d:2">Verses 1–9</p>
+    <div class="rule"></div>
+    <p class="hook rise" style="--d:4">What comes out of a man's mouth shows what's down inside him.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="1-3" data-hl="having separated himself|but that his heart may discover itself"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="1-2" data-hl="having separated himself|that his heart may discover itself"></blockquote>
+    <h2 class="rise" style="--d:1">Alone, and loud</h2>
+    <p class="note rise" style="--d:2">Verse 1 is one of the hardest verses in Proverbs to translate. The KJV reads it as a man setting himself apart to dig into wisdom. Many others read it as a warning: the man who <em>cuts himself off</em> follows his own desires and fights against all good sense.</p>
+    <p class="note step">Either way, the warning fits with verse 2. A fool doesn't want to understand. He only wants to “discover” (show off) what's in his own heart. He's talking, not learning.</p>
+    <p class="note step">Isolation and a closed mind make a dangerous pair. A man on his own, listening only to himself, is easy prey. We need each other.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="4-5" data-hl="as deep waters|a flowing brook"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="4"></blockquote>
+    <div class="pair">
+      <div class="scroll rise" style="--d:2"><p class="ref">“Deep waters”</p><p class="kjv">A man's words come up from deep inside him. You can't always see the bottom, and what's down there takes time to draw out.</p></div>
+      <div class="scroll step"><p class="ref">“A flowing brook”</p><p class="kjv">Wisdom isn't a stagnant pond. It runs fresh and clear and keeps giving life to whoever drinks.</p></div>
+    </div>
+    <p class="note step">Verse 5 adds a warning for anyone who judges: don't play favorites with a guilty man (“accept the person”) so that an innocent man loses.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="6-9" data-hl="A fool’s mouth is his destruction|The words of a talebearer are as wounds"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="8" data-hl="talebearer|innermost parts of the belly"></blockquote>
+    <div class="split">
+      <div>
+        <div class="prv18-sink rise" style="--d:2" role="img" aria-label="A piece of gossip sinks down from the ears to the innermost parts.">
+          <span style="--k:0">the ears</span>
+          <span style="--k:1">the mind</span>
+          <span style="--k:2">the memory</span>
+          <span style="--k:3">the heart</span>
+          <span style="--k:4">“the innermost parts”</span>
+          <i></i>
+        </div>
+      </div>
+      <div>
+        <h2 class="rise" style="--d:1">Gossip goes down deep</h2>
+        <p class="note rise" style="--d:3">A “talebearer” is a gossip, a man who carries stories. The word for “wounds” can also mean <em>tasty bites</em>. Gossip goes down easy, like a good snack, and then it sits deep inside and does damage.</p>
+        <p class="note step">Verses 6–7: a fool's own mouth picks his fights and sets his traps. Many of us got our worst beatings, inside and out, because of our mouths.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="9"></blockquote>
+    <h2 class="rise" style="--d:1">Brothers in the same family</h2>
+    <div class="columns">
+      <div class="col law rise" style="--d:2"><p class="who">The slacker</p><h3>Lets it rot</h3><p>Never does the work. What he has slowly falls apart.</p></div>
+      <div class="col law step"><p class="who">The waster</p><h3>Burns it up</h3><p>Blows the paycheck the day it comes. What he has is gone fast.</p></div>
+    </div>
+    <p class="note step">Different style, same result: nothing left. Doing your work faithfully is part of following the Lord, not something separate from it.</p>
+  </div>
+</section>
+
+<!-- ======================= PART TWO ======================= -->
+<section class="slide part">
+  <div class="inner">
+    <p class="part-n rise">Part two</p>
+    <h2 class="rise" style="--d:1">A strong tower</h2>
+    <p class="range rise" style="--d:2">Verses 10–17</p>
+    <div class="rule"></div>
+    <p class="hook rise" style="--d:4">One safe place is real. The other only exists in a rich man's head.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="10-11" data-hl="The name of the LORD is a strong tower: the righteous runneth into it, and is safe|in his own conceit"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="10-11" data-hl="a strong tower|runneth into it|in his own conceit"></blockquote>
+    <div class="split prv18-tower">
+      <div class="stage">
+        <svg viewBox="0 0 640 340" role="img" aria-label="A man runs into a strong stone tower. Beside it, a rich man's high wall is only dotted lines, imaginary.">
+          <line x1="0" y1="300" x2="640" y2="300" stroke-width="2" style="stroke:var(--ink-soft)"/>
+          <g class="rise" style="--d:2">
+            <path d="M190 300 L190 90 L180 90 L180 60 L200 60 L200 74 L220 74 L220 60 L240 60 L240 74 L260 74 L260 60 L280 60 L280 90 L270 90 L270 300 Z" stroke-width="3" style="fill:var(--surface-2);stroke:var(--accent)"/>
+            <g stroke-width="1.5" style="stroke:var(--line-strong)" fill="none">
+              <path d="M190 130 H270 M190 170 H270 M190 210 H270 M190 250 H270"/>
+              <path d="M230 90 V130 M210 130 V170 M250 130 V170 M230 170 V210 M210 210 V250 M250 210 V250 M230 250 V300"/>
+            </g>
+            <rect x="222" y="104" width="16" height="22" rx="8" style="fill:var(--bg)"/>
+            <path d="M212 300 L212 262 Q230 244 248 262 L248 300 Z" style="fill:var(--bg);stroke:var(--accent)" stroke-width="2"/>
+            <text x="230" y="40" text-anchor="middle" font-size="19" font-weight="700" style="fill:var(--accent-hot)">the name of the LORD</text>
+          </g>
+          <g class="prv18-runner">
+            <circle cx="100" cy="246" r="10" style="fill:var(--ink)"/>
+            <path d="M100 258 L96 280 M96 280 L84 298 M96 280 L110 296 M99 264 L84 272 M99 264 L114 258" stroke-width="5" stroke-linecap="round" fill="none" style="stroke:var(--ink)"/>
+          </g>
+          <text class="prv18-safe" x="230" y="325" text-anchor="middle" font-size="20" font-weight="700" style="fill:var(--accent-hot)">safe</text>
+          <g class="step">
+            <path d="M400 300 L400 70 L600 70 L600 300" fill="none" stroke-width="3" stroke-dasharray="4 10" style="stroke:var(--ink-soft)"/>
+            <text x="500" y="160" text-anchor="middle" font-size="22" style="fill:var(--ink-soft)">his wealth</text>
+            <text x="500" y="190" text-anchor="middle" font-size="22" style="fill:var(--ink-soft)">“a high wall”</text>
+            <text x="500" y="230" text-anchor="middle" font-size="18" font-style="italic" style="fill:var(--danger)">in his own conceit</text>
+            <text x="500" y="325" text-anchor="middle" font-size="16" style="fill:var(--ink-soft)">(only in his imagination)</text>
+          </g>
+        </svg>
+      </div>
+      <div>
+        <h2 class="rise" style="--d:1">Run to the tower</h2>
+        <p class="note rise" style="--d:3">When enemies came, people ran into the city's tower. God's “name” means <em>who He really is</em>. Running to Him means calling on Him and trusting Him.</p>
+        <p class="note step prv18-run">The righteous man <em>runs</em> into it. He doesn't stand outside arguing with the enemy. He goes straight to God, and he's safe.</p>
+        <p class="note step">The rich man's wall exists only “in his own conceit,” in his head. A bottle, a stash, a bank account: all promise safety they can't deliver.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise">The name to call on</h2>
+    <blockquote class="quote rise" style="--d:1"><p>“For thou hast been a shelter for me, and a strong tower from the enemy.”</p><cite>Psalm 61:3</cite></blockquote>
+    <blockquote class="quote step"><p>“Neither is there salvation in any other: for there is none other name under heaven given among men, whereby we must be saved.”</p><cite>Acts 4:12</cite></blockquote>
+    <blockquote class="quote step"><p>“For whosoever shall call upon the name of the Lord shall be saved.”</p><cite>Romans 10:13</cite></blockquote>
+    <p class="note step">The New Testament tells us the name: Jesus. Whosoever means anyone. When the craving hits at 2 a.m., when the old life calls, you don't have to fight it out in the open. Call on His name, and call a brother. Run to the tower.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="12-14" data-hl="before honour is humility|a wounded spirit who can bear?"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="12"></blockquote>
+    <h2 class="rise" style="--d:1">What comes first</h2>
+    <div class="prv18-updown">
+      <div class="down rise" style="--d:2"><span class="arr">↓</span><b>A haughty heart</b><small>comes right before destruction</small></div>
+      <div class="up step"><span class="arr">↑</span><b>Humility</b><small>comes right before honour</small></div>
+    </div>
+    <p class="note step">Pride is often the last thing a man sees before he crashes. “Haughty” means <em>high, lifted up</em>. Humility goes low first, and God is the one who lifts.</p>
+    <blockquote class="quote step" style="margin-top:.9em"><p>“Likewise, ye younger, submit yourselves unto the elder. Yea, all of you be subject one to another, and be clothed with humility: for God resisteth the proud, and giveth grace to the humble.”</p><cite>1 Peter 5:5</cite></blockquote>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="14"></blockquote>
+    <h2 class="rise" style="--d:1">Who can bear a wounded spirit?</h2>
+    <p class="note rise" style="--d:2">A man's spirit can carry him through a lot of pain. Men have gotten through sickness, prison, and loss on grit alone. But when the spirit <em>itself</em> is wounded, what holds it up?</p>
+    <p class="note step">Shame, grief, abuse, the things we did and the things done to us: a lot of drinking and using is really an attempt to carry a wounded spirit. It never works.</p>
+    <blockquote class="quote step" style="margin-top:.9em"><p>“Come unto me, all ye that labour and are heavy laden, and I will give you rest.”</p><cite>Matthew 11:28</cite></blockquote>
+    <p class="note step">The answer to verse 14's question is the Lord. He can bear it, and He invites you to bring it to Him. Verse 13 helps too: don't answer before you hear. Listen to a hurting brother all the way through.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="15-17" data-hl="He that is first in his own cause seemeth just; but his neighbour cometh and searcheth him"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="17"></blockquote>
+    <h2 class="rise" style="--d:1">There's always another side</h2>
+    <div class="pair">
+      <div class="scroll rise" style="--d:2"><p class="ref">The first man talks</p><p class="kjv">His story sounds airtight. You're already on his side.</p></div>
+      <div class="scroll step"><p class="ref">Then his neighbour speaks</p><p class="kjv">Questions get asked. Details come out. Suddenly it looks different.</p></div>
+    </div>
+    <p class="note step">Before you take sides in a fight, hear the whole story. Verse 13 called answering too early “folly and shame.” And verse 15: a wise man's ear goes looking for knowledge.</p>
+    <p class="note step">Verse 16 is an observation, not advice: gifts open doors with powerful people. Proverbs tells it like it is, then (as in 17:23) warns where it leads.</p>
+  </div>
+</section>
+
+<!-- ======================= PART THREE ======================= -->
+<section class="slide part">
+  <div class="inner">
+    <p class="part-n rise">Part three</p>
+    <h2 class="rise" style="--d:1">Death and life</h2>
+    <p class="range rise" style="--d:2">Verses 18–24</p>
+    <div class="rule"></div>
+    <p class="hook rise" style="--d:4">The tongue can kill or give life, and one Friend never leaves.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="18-19" data-hl="A brother offended is harder to be won than a strong city"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="18-19" data-hl="The lot|like the bars of a castle"></blockquote>
+    <div class="split">
+      <div class="stage">
+        <svg viewBox="0 0 480 300" role="img" aria-label="A castle gate. Iron bars drop down and shut it.">
+          <defs><clipPath id="prv18-arch"><path d="M170 280 L170 160 Q240 100 310 160 L310 280 Z"/></clipPath></defs>
+          <path d="M60 280 L60 70 L90 70 L90 50 L120 50 L120 70 L150 70 L150 50 L180 50 L180 70 L300 70 L300 50 L330 50 L330 70 L360 70 L360 50 L390 50 L390 70 L420 70 L420 280 Z" stroke-width="3" style="fill:var(--surface-2);stroke:var(--ink-soft)"/>
+          <path d="M170 280 L170 160 Q240 100 310 160 L310 280 Z" style="fill:var(--bg)"/>
+          <g class="step" clip-path="url(#prv18-arch)">
+            <g stroke-width="7" style="stroke:var(--ink)">
+              <path class="draw" pathLength="1" d="M185 110 V280"/><path class="draw" pathLength="1" d="M212 110 V280"/><path class="draw" pathLength="1" d="M240 110 V280"/><path class="draw" pathLength="1" d="M268 110 V280"/><path class="draw" pathLength="1" d="M295 110 V280"/>
+              <path class="draw" pathLength="1" d="M170 180 H310"/><path class="draw" pathLength="1" d="M170 230 H310"/>
+            </g>
+          </g>
+          <line x1="20" y1="280" x2="460" y2="280" stroke-width="2" style="stroke:var(--ink-soft)"/>
+        </svg>
+      </div>
+      <div>
+        <h2 class="rise" style="--d:1">Bars on the gate</h2>
+        <p class="note rise" style="--d:2">A brother you've hurt can be harder to win back than a walled city. The hurt drops like iron bars across the gate.</p>
+        <p class="note step">Some of us have family behind bars like that. Make it right where you can, be patient, and keep your side open: “forgiving one another, even as God for Christ’s sake hath forgiven you” (Ephesians 4:32).</p>
+        <p class="note step">Verse 18: casting “the lot” (like drawing straws) settled disputes, leaving the decision to God (16:33).</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="slide verse" data-v="20-21" data-hl="Death and life are in the power of the tongue"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="21"></blockquote>
+    <h2 class="rise" style="--d:1">Death and life on the tongue</h2>
+    <div class="prv18-words">
+      <div class="death rise" style="--d:2"><h3>Death</h3><ul><li>“You'll never change.”</li><li>“You're worthless.”</li><li>a lie</li><li>a threat</li><li>gossip</li></ul></div>
+      <div class="life step"><h3>Life</h3><ul><li>“I'm sorry.”</li><li>“I forgive you.”</li><li>“I'm proud of you.”</li><li>“Call me, day or night.”</li><li>“Jesus loves you.”</li></ul></div>
+    </div>
+    <p class="note step">Your words can tear a man down or help save his life. Verse 20 says you'll “eat” the fruit of your own mouth: what you say comes back around to you. “Let no corrupt communication proceed out of your mouth, but that which is good to the use of edifying” (Ephesians 4:29).</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="22-24" data-hl="Whoso findeth a wife findeth a good thing|there is a friend that sticketh closer than a brother"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="22-23"></blockquote>
+    <h2 class="rise" style="--d:1">A good thing, and a rough answer</h2>
+    <p class="note rise" style="--d:2">Verse 22: a good wife is a gift, “favour of the LORD.” If you're married, she's not the enemy. Treat her like a gift from God's hand.</p>
+    <p class="note step">Verse 23: a poor man has to ask nicely; a rich man can afford to answer rudely. Proverbs isn't praising it. It's showing us how money can harden a man, and warning us not to become him.</p>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="24"></blockquote>
+    <div class="split">
+      <div class="stage">
+        <svg viewBox="0 0 400 400" role="img" aria-label="Rings of closeness: people you know, friends, a brother, and at the center a Friend closer than a brother.">
+          <circle cx="200" cy="200" r="190" stroke-width="2" stroke-dasharray="4 7" style="fill:none;stroke:var(--line-strong)"/>
+          <circle class="rise" style="--d:2;fill:var(--surface);stroke:var(--line-strong)" cx="200" cy="200" r="140" stroke-width="2"/>
+          <circle class="rise" style="--d:3;fill:var(--surface-2);stroke:var(--ink-soft)" cx="200" cy="200" r="92" stroke-width="2"/>
+          <text x="200" y="34" text-anchor="middle" font-size="17" style="fill:var(--ink-soft)">people you know</text>
+          <text x="200" y="84" text-anchor="middle" font-size="18" style="fill:var(--ink-soft)">friends</text>
+          <text x="200" y="134" text-anchor="middle" font-size="18" style="fill:var(--ink)">a brother</text>
+          <g class="step prv18-close">
+            <circle class="prv18-core" cx="200" cy="205" r="52" style="fill:var(--accent-hot)"/>
+            <text x="200" y="200" text-anchor="middle" font-size="17" font-weight="700" style="fill:var(--on-accent)">closer than</text>
+            <text x="200" y="222" text-anchor="middle" font-size="17" font-weight="700" style="fill:var(--on-accent)">a brother</text>
+          </g>
+        </svg>
+      </div>
+      <div>
+        <h2 class="rise" style="--d:1">Closer than a brother</h2>
+        <p class="note rise" style="--d:2">“Sticketh” is the word used of a husband who <em>cleaves</em> to his wife (Genesis 2:24). Glued on. Not going anywhere.</p>
+        <p class="note step">A man who wants friends has to be friendly: show up, call, be there. Some friends come and go. But there is a Friend who sticks closer than family ever could.</p>
+        <p class="note step">Jesus said, “I have called you friends” (John 15:15). And He promised, “I will never leave thee, nor forsake thee” (Hebrews 13:5).</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise">Chapter 18, sorted</h2>
+    <div class="prv18-sort">
+      <div class="rise" style="--d:1"><h3>Words and the tongue</h3><div class="vs"><b>4</b><b>6</b><b>7</b><b>8</b><b>13</b><b>20</b><b>21</b></div><p>What comes out shows what's inside, and it brings death or life.</p></div>
+      <div class="rise" style="--d:2"><h3>Fools</h3><div class="vs"><b>2</b><b>6</b><b>7</b><b>13</b></div><p>Loves to talk, hates to learn.</p></div>
+      <div class="rise" style="--d:3"><h3>Where safety is</h3><div class="vs"><b>10</b><b>11</b><b>12</b></div><p>The LORD is a real tower. Money and pride are not.</p></div>
+      <div class="rise" style="--d:4"><h3>Justice and listening</h3><div class="vs"><b>5</b><b>15</b><b>17</b><b>18</b></div><p>Hear both sides. Don't play favorites.</p></div>
+      <div class="rise" style="--d:5"><h3>Hurt and healing</h3><div class="vs"><b>14</b><b>19</b></div><p>Wounded spirits and offended brothers.</p></div>
+      <div class="rise" style="--d:6"><h3>Friends and family</h3><div class="vs"><b>1</b><b>19</b><b>22</b><b>24</b></div><p>Don't isolate. Be a friend, and treasure the Friend who stays.</p></div>
+      <div class="rise" style="--d:7"><h3>Money and work</h3><div class="vs"><b>9</b><b>11</b><b>16</b><b>23</b></div><p>Laziness wastes, and wealth can harden a man.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ======================= CLOSING ======================= -->
+<section class="slide remember">
+  <div class="inner">
+    <h2 class="rise">Points to remember</h2>
+    <ol class="seeds">
+      <li class="step"><span class="topic">Who God is</span><span class="seed-q">“The name of the LORD is a strong tower” <cite>18:10</cite></span><span class="take">Run to Him. Call on His name. That's where you're safe.</span></li>
+      <li class="step"><span class="topic">Pride</span><span class="seed-q">“Before honour is humility” <cite>18:12</cite></span><span class="take">Pride comes before the crash. Go low, and let God lift you.</span></li>
+      <li class="step"><span class="topic">Hurt</span><span class="seed-q">“A wounded spirit who can bear?” <cite>18:14</cite></span><span class="take">You can't carry it alone, and no bottle can. Bring it to the Lord.</span></li>
+      <li class="step"><span class="topic">Listening</span><span class="seed-q">“His neighbour cometh and searcheth him” <cite>18:17</cite></span><span class="take">Hear the whole story before you answer or take sides.</span></li>
+      <li class="step"><span class="topic">Our words</span><span class="seed-q">“Death and life are in the power of the tongue” <cite>18:21</cite></span><span class="take">Your words can tear down or build up. Speak life.</span></li>
+      <li class="step"><span class="topic">Friendship</span><span class="seed-q">“A friend that sticketh closer than a brother” <cite>18:24</cite></span><span class="take">Be a friend. And know the Friend who never leaves.</span></li>
+    </ol>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 1 of 6</p>
+      <span class="topic">Who God is</span>
+      <h2>Where can a man run when trouble comes?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="10"></blockquote>
+      <blockquote class="quote step" data-q="11"></blockquote>
+      <blockquote class="quote step"><p>“For whosoever shall call upon the name of the Lord shall be saved.”</p><cite>Romans 10:13</cite></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>To the Lord. His name, who He really is, is a strong tower, and whoever runs into it is safe. Money, pride, and anything else we hide behind is a wall that only exists in our heads. Call on the name of Jesus, and run to Him first.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 2 of 6</p>
+      <span class="topic">Pride</span>
+      <h2>What comes before a fall, and what comes before honour?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="12"></blockquote>
+      <blockquote class="quote step"><p>“Pride goeth before destruction, and an haughty spirit before a fall.”</p><cite>Proverbs 16:18</cite></blockquote>
+      <blockquote class="quote step"><p>“Likewise, ye younger, submit yourselves unto the elder. Yea, all of you be subject one to another, and be clothed with humility: for God resisteth the proud, and giveth grace to the humble.”</p><cite>1 Peter 5:5</cite></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>A proud, lifted-up heart comes right before destruction. Humility comes before honour. God resists the proud, but He gives grace to the humble. The way up starts by going low.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 3 of 6</p>
+      <span class="topic">Hurt</span>
+      <h2>Who can carry a wounded spirit?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="14"></blockquote>
+      <blockquote class="quote step" data-q="19"></blockquote>
+      <blockquote class="quote step"><p>“Come unto me, all ye that labour and are heavy laden, and I will give you rest.”</p><cite>Matthew 11:28</cite></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>Not us, not on our own. Grit can get a man through a lot, but not a wounded spirit. Jesus invites the heavy-laden to come to Him, and He gives rest. And He gives us brothers to help carry the load, and to win back the ones we've hurt.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 4 of 6</p>
+      <span class="topic">Listening</span>
+      <h2>Why should we hear the whole story before we answer?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="13"></blockquote>
+      <blockquote class="quote step" data-q="17"></blockquote>
+      <blockquote class="quote step" data-q="15"></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>Because the first story always sounds right until the other side is heard. Answering before you've listened is “folly and shame.” A wise man goes looking for the facts before he speaks or takes a side.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 5 of 6</p>
+      <span class="topic">Our words</span>
+      <h2>How much power do our words really have?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="21"></blockquote>
+      <blockquote class="quote step" data-q="8"></blockquote>
+      <blockquote class="quote step" data-q="20"></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>The power of death and life. Gossip and cruel words go deep and wound. Kind, true words build a man up and can help save his life. And what we say comes back around: we eat the fruit of our own mouths.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 6 of 6</p>
+      <span class="topic">Friendship</span>
+      <h2>What kind of friend sticks closer than a brother?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="24"></blockquote>
+      <blockquote class="quote step"><p>“Henceforth I call you not servants; for the servant knoweth not what his lord doeth: but I have called you friends; for all things that I have heard of my Father I have made known unto you.”</p><cite>John 15:15</cite></blockquote>
+      <blockquote class="quote step"><p>“Let your conversation be without covetousness; and be content with such things as ye have: for he hath said, I will never leave thee, nor forsake thee.”</p><cite>Hebrews 13:5</cite></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>A friend who holds on and won't let go. Jesus calls us His friends, and He promised never to leave or forsake us. Because He sticks with us, we can learn to be that kind of friend: friendly, faithful, and there when it counts.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide prayer">
+  <div class="inner">
+    <div class="emblem rise"></div>
+    <h2 class="rise" style="--d:1">Prayer requests</h2>
+    <p class="ask-line rise" style="--d:2">What can we pray about for you today?</p>
+    <blockquote class="quote rise" style="--d:4"><p>“For thou hast been a shelter for me, and a strong tower from the enemy.”</p><cite>Psalm 61:3</cite></blockquote>
+  </div>
+</section>
+
+</main>
+
+<script>
+// King James Version, Proverbs chapter 18
+const V = {
+  1: "Through desire a man, having separated himself, seeketh and intermeddleth with all wisdom.",
+  2: "A fool hath no delight in understanding, but that his heart may discover itself.",
+  3: "When the wicked cometh, then cometh also contempt, and with ignominy reproach.",
+  4: "The words of a man’s mouth are as deep waters, and the wellspring of wisdom as a flowing brook.",
+  5: "It is not good to accept the person of the wicked, to overthrow the righteous in judgment.",
+  6: "A fool’s lips enter into contention, and his mouth calleth for strokes.",
+  7: "A fool’s mouth is his destruction, and his lips are the snare of his soul.",
+  8: "The words of a talebearer are as wounds, and they go down into the innermost parts of the belly.",
+  9: "He also that is slothful in his work is brother to him that is a great waster.",
+  10: "The name of the LORD is a strong tower: the righteous runneth into it, and is safe.",
+  11: "The rich man’s wealth is his strong city, and as an high wall in his own conceit.",
+  12: "Before destruction the heart of man is haughty, and before honour is humility.",
+  13: "He that answereth a matter before he heareth it, it is folly and shame unto him.",
+  14: "The spirit of a man will sustain his infirmity; but a wounded spirit who can bear?",
+  15: "The heart of the prudent getteth knowledge; and the ear of the wise seeketh knowledge.",
+  16: "A man’s gift maketh room for him, and bringeth him before great men.",
+  17: "He that is first in his own cause seemeth just; but his neighbour cometh and searcheth him.",
+  18: "The lot causeth contentions to cease, and parteth between the mighty.",
+  19: "A brother offended is harder to be won than a strong city: and their contentions are like the bars of a castle.",
+  20: "A man’s belly shall be satisfied with the fruit of his mouth; and with the increase of his lips shall he be filled.",
+  21: "Death and life are in the power of the tongue: and they that love it shall eat the fruit thereof.",
+  22: "Whoso findeth a wife findeth a good thing, and obtaineth favour of the LORD.",
+  23: "The poor useth intreaties; but the rich answereth roughly.",
+  24: "A man that hath friends must shew himself friendly: and there is a friend that sticketh closer than a brother."
+};
+const BOOK = "Proverbs 18";
+</script>
+<script src="../assets/deck.js"></script>
+</body>
+</html>

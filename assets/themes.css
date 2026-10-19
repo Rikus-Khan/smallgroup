@@ -121,3 +121,38 @@
 }
 [data-theme="slate"] .ambient .sky { display: block; inset: 0; background: radial-gradient(110% 80% at 85% 0%, #22332e, #15211e 60%); }
 [data-theme="slate"] .horizon { height: 3px; }
+
+/* ======================= Scribe's page ======================= */
+/* A hand-copied manuscript: pale ruled paper, indigo ink, red rubrics in the margin */
+:root[data-theme="scribe"] {
+  --bg: #eef0e8; --surface: rgb(255 255 255 / .5); --surface-2: #dde2d4;
+  --ink: #1f2433; --ink-soft: #565d6d; --line: rgb(31 36 51 / .14); --line-strong: #aeb5a3;
+  --accent: #2f3d8f; --accent-hot: #2f3d8f; --on-accent: #eef0e8;
+  --cool: #4d7f99; --warm: #a0782a; --danger: #a1302a; --wine: #7b2238;
+  --glow: #ffffff; --on-glow: #1f2433;
+  --rubric: #a1302a;
+  --serif: 'Alegreya', 'Noto Serif', 'Noto Serif Hebrew', Georgia, serif;
+  --sans: 'Alegreya Sans', system-ui, sans-serif;
+  --em-weight: 700;
+  --menu-bg: #f7f8f3; --menu-ink: #1f2433;
+}
+/* Faint ruling across the page, with a red margin line */
+[data-theme="scribe"] .ambient .sky {
+  display: block; inset: 0;
+  background:
+    linear-gradient(90deg, transparent calc(clamp(10px, 3.2vw, 46px) - 1px), rgb(161 48 42 / .35) calc(clamp(10px, 3.2vw, 46px) - 1px) clamp(10px, 3.2vw, 46px), transparent clamp(10px, 3.2vw, 46px)),
+    repeating-linear-gradient(180deg, transparent 0 calc(2.1rem - 1px), rgb(47 61 143 / .07) calc(2.1rem - 1px) 2.1rem),
+    radial-gradient(80% 60% at 70% 20%, #f6f7f1, #e7eadf 75%);
+}
+/* Progress is a line of ink drawn along the bottom */
+[data-theme="scribe"] .horizon { height: 2px; background: var(--line); }
+[data-theme="scribe"] .horizon span { background: var(--ink); }
+[data-theme="scribe"] .vn { color: var(--rubric); font-family: var(--serif); font-style: italic; font-size: .62em; vertical-align: .55em; }
+[data-theme="scribe"] .vref::before { background: var(--rubric); }
+[data-theme="scribe"] .topic, [data-theme="scribe"] .part-n, [data-theme="scribe"] .eyebrow { color: var(--rubric); }
+[data-theme="scribe"] .seeds li::before { border-color: var(--rubric); color: var(--rubric); font-family: var(--serif); font-style: italic; }
+[data-theme="scribe"] .quote { border-left: 2px solid var(--rubric); }
+[data-theme="scribe"] mark { box-shadow: inset 0 -.12em 0 rgb(47 61 143 / .22); }
+/* The emblem is a red pilcrow, the scribe's paragraph mark */
+[data-theme="scribe"] .emblem { width: auto; height: auto; background: none; margin-bottom: .6rem; }
+[data-theme="scribe"] .emblem::before { content: "\00B6"; font: 400 clamp(2.4rem, 1.6rem + 3vw, 4rem)/1 var(--serif); color: var(--rubric); }

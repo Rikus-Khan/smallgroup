@@ -1,0 +1,676 @@
+<!doctype html>
+<html lang="en" data-theme="stone">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Proverbs 10</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="../assets/fonts.css">
+<link rel="stylesheet" href="../assets/deck.css">
+<link rel="stylesheet" href="../assets/themes.css">
+<style>
+.ex .note + .quote { margin-top: .9em; }
+
+/* Two lines of a proverb, word matched to word */
+.prv10-match { display: grid; grid-template-columns: 3.4em repeat(3, 1fr); gap: .5rem .6rem; margin: .4em 0 1.1em; align-items: center; text-align: center; }
+.prv10-match .prv10-w { padding: .55em .5em; border-radius: 8px; font-family: var(--serif); font-size: clamp(1rem, .85rem + .8vw, 1.6rem); line-height: 1.2; }
+.prv10-match .prv10-la .prv10-w { background: color-mix(in srgb, var(--accent) 14%, transparent); border: 1.5px solid var(--accent); }
+.prv10-match .prv10-lb .prv10-w { background: var(--surface); border: 1.5px dashed var(--line-strong); }
+.prv10-match > div { display: contents; }
+.prv10-match .prv10-tag { font-size: clamp(.75rem, .7rem + .3vw, .95rem); color: var(--ink-soft); text-align: right; font-weight: 700; }
+.prv10-match .prv10-but { justify-self: end; padding: .2em .55em; border-radius: 999px; background: var(--accent); color: var(--on-accent); font-weight: 700; font-size: clamp(.85rem, .8rem + .3vw, 1.05rem); }
+.prv10-match .prv10-link { font-size: clamp(.8rem, .75rem + .3vw, 1rem); color: var(--accent-hot); font-weight: 700; }
+.prv10-match .prv10-link::before { content: "\2195"; display: block; font-size: 1.5em; line-height: 1; color: var(--accent); }
+.prv10-match > div.step > * { opacity: 0; transform: translateY(8px); transition: opacity .6s ease, transform .6s ease; }
+.prv10-match > div.step.on > * { opacity: 1; transform: none; }
+
+/* Three ways the two lines can pair */
+.prv10-para { display: grid; gap: .7rem; margin: .3em 0 1em; }
+.prv10-row { display: grid; grid-template-columns: 4.2rem 1fr; gap: .25em 1rem; align-items: center; padding: .7em 1em; border: 1px solid var(--line-strong); border-radius: 10px; background: var(--surface); }
+.prv10-sym { grid-row: span 3; font: 300 clamp(2rem, 1.4rem + 2vw, 3.2rem)/1 var(--serif); color: var(--accent-hot); text-align: center; }
+.prv10-kind { font-weight: 700; color: var(--accent); font-size: clamp(.95rem, .85rem + .4vw, 1.2rem); }
+.prv10-lines { font-family: var(--serif); font-size: clamp(1rem, .88rem + .55vw, 1.4rem); line-height: 1.4; }
+.prv10-hinge { display: inline-block; padding: 0 .45em; margin: 0 .15em; border-radius: 6px; background: var(--accent); color: var(--on-accent); font-family: var(--sans); font-weight: 700; font-size: .85em; }
+.prv10-row small { color: var(--ink-soft); font-size: clamp(.85rem, .8rem + .3vw, 1.05rem); }
+@media (max-width: 600px) { .prv10-row { grid-template-columns: 2.6rem 1fr; padding: .6em .7em; } }
+
+/* A farmer's year: miss the window and there's nothing to eat */
+.prv10-season { display: grid; grid-template-columns: repeat(12, 1fr); gap: 3px; margin: .4em 0 .4em; }
+.prv10-season span { display: flex; flex-direction: column; justify-content: flex-end; align-items: center; height: clamp(70px, 12vh, 110px); border-radius: 6px; padding-bottom: .3em; font-size: clamp(.62rem, .55rem + .35vw, .9rem); color: var(--ink-soft); background: var(--surface); border: 1px solid var(--line); }
+.prv10-season .prv10-sow { background: color-mix(in srgb, var(--cool) 22%, transparent); border-color: var(--cool); }
+.prv10-season .prv10-reap { background: color-mix(in srgb, var(--warm) 28%, transparent); border-color: var(--warm); color: var(--ink); font-weight: 700; }
+.prv10-legend { display: flex; flex-wrap: wrap; gap: .3em 1.4em; font-size: clamp(.85rem, .8rem + .3vw, 1.05rem); color: var(--ink-soft); margin-bottom: 1em; }
+.prv10-legend i { display: inline-block; width: .9em; height: .9em; border-radius: 3px; margin-right: .35em; vertical-align: -.1em; border: 1px solid; }
+.prv10-legend .prv10-sow { background: color-mix(in srgb, var(--cool) 22%, transparent); border-color: var(--cool); }
+.prv10-legend .prv10-reap { background: color-mix(in srgb, var(--warm) 28%, transparent); border-color: var(--warm); }
+
+/* Speech bubbles: more words, more sin creeping in */
+.prv10-bub { opacity: 0; transform-box: fill-box; transform-origin: 50% 100%; transform: scale(.4); transition: opacity .5s ease, transform .6s cubic-bezier(.3,1.5,.5,1); transition-delay: calc(var(--k) * 220ms + 300ms); }
+.slide.active .prv10-bub { opacity: 1; transform: none; }
+.prv10-x { stroke: var(--danger); stroke-width: 3.5; stroke-linecap: round; }
+.prv10-hush { opacity: 0; transition: opacity .8s ease; }
+.prv10-hush.on { opacity: 1; }
+
+/* Two receipts */
+.prv10-receipts { display: grid; gap: 1rem 2rem; margin: .4em 0 1em; }
+@media (min-width: 760px) { .prv10-receipts { grid-template-columns: 1fr 1fr; } }
+.prv10-rc { padding: .9em 1.1em; background: var(--surface); border: 1.5px dashed var(--line-strong); border-radius: 4px; font-size: clamp(.95rem, .85rem + .45vw, 1.25rem); }
+.prv10-rc h3 { font: 700 1em var(--sans); letter-spacing: .06em; text-transform: uppercase; color: var(--ink-soft); text-align: center; padding-bottom: .5em; border-bottom: 1.5px dashed var(--line-strong); margin-bottom: .5em; }
+.prv10-rc p { display: flex; justify-content: space-between; gap: 1em; padding: .25em 0; }
+.prv10-rc p b { font-weight: 600; text-align: right; }
+.prv10-rc .prv10-tot { margin-top: .4em; padding-top: .5em; border-top: 2px solid var(--line-strong); font-weight: 700; }
+.prv10-rc .prv10-bad { color: var(--danger); }
+.prv10-rc.prv10-good { border-color: var(--accent); }
+.prv10-rc.prv10-good .prv10-tot b { color: var(--accent-hot); }
+
+/* A whirlwind passes; the house on the foundation stays */
+.prv10-wind { transform-box: fill-box; transform-origin: 50% 50%; }
+.slide.active .prv10-wind { animation: prv10-spin 2.4s linear infinite; }
+@keyframes prv10-spin { to { transform: rotate(360deg); } }
+.prv10-gone { transition: opacity 2s ease 1.2s, transform 2s ease 1.2s; }
+.slide.active .prv10-gone { opacity: .12; transform: translate(40px, -30px) rotate(12deg); }
+
+/* All 32 sayings sorted into piles by theme */
+.prv10-keys { display: flex; flex-wrap: wrap; gap: .4em .6em; margin: .2em 0 .8em; }
+.prv10-key { padding: .25em .8em; border-radius: 999px; border: 2px solid var(--c); font-weight: 700; font-size: clamp(.85rem, .8rem + .35vw, 1.1rem); }
+.prv10-grid { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 1em; }
+.prv10-c { padding: .3em .6em; border-radius: 6px; border: 1.5px solid var(--line); color: var(--ink-soft); font-size: clamp(.78rem, .72rem + .35vw, 1.02rem); transition: background-color .6s ease, border-color .6s ease, color .6s ease; }
+.prv10-c b { font-weight: 700; margin-right: .3em; }
+.prv10-key { --c: var(--line-strong); }
+.prv10-key.on { --c: var(--accent); }
+.prv10-key small { font-weight: 400; color: var(--ink-soft); margin-left: .4em; }
+.prv10-c { transition: opacity .6s ease, background-color .6s ease, border-color .6s ease, color .6s ease; }
+.prv10-sort:has(.prv10-key.on) .prv10-c { opacity: .4; }
+.prv10-sort:has(.prv10-key.prv10-t3.on):not(:has(.prv10-key.prv10-t2.on)) .prv10-c.prv10-t3,
+.prv10-sort:has(.prv10-key.prv10-t2.on):not(:has(.prv10-key.prv10-t4.on)) .prv10-c.prv10-t2,
+.prv10-sort:has(.prv10-key.prv10-t4.on):not(:has(.prv10-key.prv10-t1.on)) .prv10-c.prv10-t4,
+.prv10-sort:has(.prv10-key.prv10-t1.on) .prv10-c.prv10-t1 { opacity: 1; background: color-mix(in srgb, var(--accent) 20%, transparent); border-color: var(--accent); color: var(--ink); }
+</style>
+</head>
+<body>
+<main class="deck" id="deck">
+
+<!-- ======================= OPENING ======================= -->
+<section class="slide title">
+  <div class="inner">
+    <div class="emblem rise"></div>
+    <h1 class="rise" style="--d:1">Proverbs 10</h1>
+    <p class="sub rise" style="--d:3">Two ways, two lines at a time</p>
+    <p class="tag rise" style="--d:5">Solomon's short sayings begin. Line after line, the wise man and the fool, the righteous and the wicked, walk side by side, and we see where each one ends up.</p>
+  </div>
+</section>
+
+<section class="slide watch">
+  <div class="inner">
+    <h2 class="rise">Things to watch for</h2>
+    <p class="lede rise" style="--d:1">Keep these questions in the back of your mind as we read. We'll come back to every one of them at the end.</p>
+    <ol class="seeds">
+      <li class="step"><span class="topic">Reading Proverbs</span><span class="seed-q">What is a proverb, and what is it not?</span></li>
+      <li class="step"><span class="topic">The tongue</span><span class="seed-q">How can my words give life or do damage?</span></li>
+      <li class="step"><span class="topic">Money and work</span><span class="seed-q">What does God say about how I earn what I have?</span></li>
+      <li class="step"><span class="topic">The righteous</span><span class="seed-q">Who are the righteous, and how does a man become one?</span></li>
+      <li class="step"><span class="topic">Love</span><span class="seed-q">What does love do with another man's sins?</span></li>
+      <li class="step"><span class="topic">A sure foundation</span><span class="seed-q">What will still be standing when the storm passes?</span></li>
+    </ol>
+  </div>
+</section>
+
+<!-- ======================= PART ONE ======================= -->
+<section class="slide part">
+  <div class="inner">
+    <p class="part-n rise">Part one</p>
+    <h2 class="rise" style="--d:1">A new kind of book</h2>
+    <p class="range rise" style="--d:2">Verses 1–12</p>
+    <p class="hook rise" style="--d:4">The long speeches are over. Now come the sayings, two lines at a time.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="1-3" data-hl="The proverbs of Solomon|A wise son maketh a glad father: but a foolish son is the heaviness of his mother"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="1" data-hl="The proverbs of Solomon"></blockquote>
+    <h2 class="rise" style="--d:1">How to read a proverb</h2>
+    <p class="note rise" style="--d:2">Chapters 1–9 were long talks from a father to his son. From here on, each verse mostly stands alone. Hebrew poetry doesn't rhyme sounds. It rhymes <em>ideas</em>: line two answers line one, piece by piece.</p>
+    <div class="prv10-match" aria-label="Line one: a wise son, maketh a glad, father. Line two: a foolish son, is the heaviness of, his mother. Each piece answers its partner.">
+      <div class="prv10-la rise" style="--d:3"><span class="prv10-tag">line 1</span><span class="prv10-w">A wise son</span><span class="prv10-w">maketh a glad</span><span class="prv10-w">father:</span></div>
+      <div class="step"><span></span><span class="prv10-link">opposites</span><span class="prv10-link">opposites</span><span class="prv10-link">the other parent</span></div>
+      <div class="prv10-lb step"><span class="prv10-but">but</span><span class="prv10-w">a foolish son</span><span class="prv10-w">is the heaviness of</span><span class="prv10-w">his mother.</span></div>
+    </div>
+    <p class="note step">So slow down and read each line twice. Ask: <em>what matches what?</em> The meaning lives in the pairing. Here: your choices land on the people who love you, for joy or for grief.</p>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise">Three ways two lines pair up</h2>
+    <div class="prv10-para">
+      <div class="prv10-row rise" style="--d:1">
+        <span class="prv10-sym">≠</span>
+        <span class="prv10-kind">Contrast: the flip side</span>
+        <span class="prv10-lines">A wise son maketh a glad father: <span class="prv10-hinge">but</span> a foolish son is the heaviness of his mother. <span class="soft">(10:1)</span></span>
+        <small>Most of chapters 10–15 work this way. Watch for the word “but.”</small>
+      </div>
+      <div class="prv10-row step">
+        <span class="prv10-sym">=</span>
+        <span class="prv10-kind">Echo: the same thing again</span>
+        <span class="prv10-lines">The liberal soul shall be made fat: <span class="prv10-hinge">and</span> he that watereth shall be watered also himself. <span class="soft">(11:25)</span></span>
+        <small>Line two says it again in new words, to drive it home.</small>
+      </div>
+      <div class="prv10-row step">
+        <span class="prv10-sym">≈</span>
+        <span class="prv10-kind">Picture: “as … so”</span>
+        <span class="prv10-lines"><span class="prv10-hinge">As</span> vinegar to the teeth, and as smoke to the eyes, <span class="prv10-hinge">so</span> is the sluggard to them that send him. <span class="soft">(10:26)</span></span>
+        <small>Line one paints a picture; line two tells you what it means.</small>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="slide verse" data-v="4-5" data-hl="the hand of the diligent maketh rich|he that sleepeth in harvest is a son that causeth shame"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="5"></blockquote>
+    <h2 class="rise" style="--d:1">Some work can't wait</h2>
+    <div class="prv10-season rise" style="--d:2" aria-label="A farming year in Israel. Sowing in the fall and early winter, harvest from about April through September.">
+      <span>Jan</span><span>Feb</span><span>Mar</span><span class="prv10-reap">Apr</span><span class="prv10-reap">May</span><span class="prv10-reap">Jun</span><span class="prv10-reap">Jul</span><span class="prv10-reap">Aug</span><span class="prv10-reap">Sep</span><span>Oct</span><span class="prv10-sow">Nov</span><span class="prv10-sow">Dec</span>
+    </div>
+    <div class="prv10-legend rise" style="--d:3"><span><i class="prv10-sow"></i>plowing and sowing, after the first rains</span><span><i class="prv10-reap"></i>harvest: barley, then wheat, then summer fruit (roughly)</span></div>
+    <p class="note step">In Israel the harvest came in a window of a few months. Grain left in the field spoils or gets eaten. Sleep through it, and your family is hungry all winter.</p>
+    <p class="note step">Verse 4 puts it plainly: a <em>“slack hand”</em> leads to being poor, and a <em>diligent</em> one (steady, careful, sharp) builds something. Showing up to work every day isn't small. For a man rebuilding his life, it's part of the rebuilding.</p>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="3-4" data-hl="The LORD will not suffer the soul of the righteous to famish|the hand of the diligent maketh rich"></blockquote>
+    <h2 class="rise" style="--d:1">A proverb isn't a promise</h2>
+    <p class="note rise" style="--d:2">Does every hard worker get rich? Does no godly man ever go hungry? You know better. So what is a proverb?</p>
+    <ul class="nots">
+      <li class="step"><span class="k">a promise with a deadline</span><span class="why">God doesn't owe you a raise by Friday</span></li>
+      <li class="step"><span class="k">a guarantee in every case</span><span class="why">good men still get sick, laid off, and robbed</span></li>
+      <li class="step"><span class="k">a magic formula</span><span class="why">do X, and God must do Y</span></li>
+      <li class="step yes"><span class="k">wisdom about how life usually goes</span><span class="why">in God's world, under God's hand</span></li>
+    </ul>
+    <p class="note step">Bet on these patterns and you'll be right far more often than wrong. And where life doesn't add up this side of heaven, God still has the last word.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="6-8" data-hl="Blessings are upon the head of the just|The memory of the just is blessed: but the name of the wicked shall rot|a prating fool shall fall"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="7"></blockquote>
+    <h2 class="rise" style="--d:1">What will people say when you're gone?</h2>
+    <div class="columns">
+      <div class="col grace rise" style="--d:2">
+        <p class="who">The just</p>
+        <h3>“blessed”</h3>
+        <p>People bring his name up and smile. His kids tell his stories. The good he did keeps going.</p>
+      </div>
+      <div class="col law step">
+        <p class="who">The wicked</p>
+        <h3>“shall rot”</h3>
+        <p>His name goes bad, like meat left out. People change the subject, or curse him.</p>
+      </div>
+    </div>
+    <p class="note step">You can't erase what you've done. But your story isn't finished. The name people remember is the one you're building from here on.</p>
+    <p class="note step">Verse 8 adds the <em>“prating fool”</em>: literally a fool <em>of lips</em>, a man who babbles and won't listen. The wise man takes in commands. The talker never stops talking long enough to learn, and he falls.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="9-10" data-hl="He that walketh uprightly walketh surely|He that winketh with the eye causeth sorrow"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="9" data-hl="walketh surely|shall be known"></blockquote>
+    <h2 class="rise" style="--d:1">Nothing to hide</h2>
+    <p class="note rise" style="--d:2">The upright man <em>“walketh surely”</em>: safely, without looking over his shoulder. He doesn't have to remember which lie he told to whom.</p>
+    <p class="note step">The man who twists his ways <em>“shall be known.”</em> Sooner or later, it comes out. It always does.</p>
+    <p class="note step">Verse 10's <em>“winketh with the eye”</em> is the con man's signal, the sly wink that says “play along” (see 6:13). That kind of slick dealing leaves sorrow behind it.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="11-12" data-hl="The mouth of a righteous man is a well of life|love covereth all sins"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="12"></blockquote>
+    <h2 class="rise" style="--d:1">Love throws a blanket over it</h2>
+    <p class="note rise" style="--d:2">Hatred goes looking for a fight. It digs up old wrongs and keeps the score. Love does the opposite: it <em>covers</em>. It doesn't pretend sin is fine. It just refuses to broadcast it, rub it in, or keep bringing it up.</p>
+    <div class="pair">
+      <div class="scroll step"><p class="ref">Proverbs 10:12</p><p class="kjv">Hatred stirreth up strifes: but <mark>love covereth all sins</mark>.</p></div>
+      <div class="scroll step"><p class="ref">1 Peter 4:8</p><p class="kjv">And above all things have fervent charity among yourselves: for <mark>charity shall cover the multitude of sins</mark>.</p></div>
+    </div>
+    <p class="note step">Peter quotes this verse to the church. In a group like ours, we'll see each other's worst. Love covers. That's what God did for us in Christ, and it's what we do for each other.</p>
+  </div>
+</section>
+
+<!-- ======================= PART TWO ======================= -->
+<section class="slide part">
+  <div class="inner">
+    <p class="part-n rise">Part two</p>
+    <h2 class="rise" style="--d:1">Words and wealth</h2>
+    <p class="range rise" style="--d:2">Verses 13–21</p>
+    <p class="hook rise" style="--d:4">What comes out of your mouth, and what goes into your pocket.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="13-15" data-hl="a rod is for the back of him that is void of understanding|The rich man’s wealth is his strong city"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="13" data-hl="a rod is for the back"></blockquote>
+    <h2 class="rise" style="--d:1">The easy way or the hard way</h2>
+    <p class="note rise" style="--d:2">A man with understanding learns from <em>words</em>. A man who won't listen learns from the <em>rod</em>: pain, consequences, losing things. Most of us know that second school well.</p>
+    <p class="note step">The good news is you can switch schools. Every lesson you take from words is one you don't have to learn from the rod.</p>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="15"></blockquote>
+    <h2 class="rise" style="--d:1">Sometimes a proverb just tells it like it is</h2>
+    <p class="note rise" style="--d:2">This verse isn't telling you to chase money. It's an honest look at the world: money can protect you (a lawyer, a car that starts, rent paid on time), and being broke can crush you.</p>
+    <div class="columns">
+      <div class="col grace step">
+        <p class="who">Proverbs 10:15</p>
+        <p>“The rich man’s wealth is his strong city”</p>
+      </div>
+      <div class="col law step">
+        <p class="who">Proverbs 18:11</p>
+        <p>“The rich man’s wealth is his strong city, and as an high wall <em>in his own conceit</em>.”</p>
+      </div>
+    </div>
+    <p class="note step">Later Solomon finishes the thought: the wall is real, but it's not as high as the rich man thinks. Money helps in this life. It can't save you.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="16-18" data-hl="He is in the way of life that keepeth instruction|He that hideth hatred with lying lips"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="17-18" data-hl="keepeth instruction|refuseth reproof erreth|hideth hatred with lying lips"></blockquote>
+    <h2 class="rise" style="--d:1">Two kinds of fake</h2>
+    <p class="note rise" style="--d:2">Verse 17: the man who refuses correction <em>“erreth”</em>, wanders off the road. And he usually takes others with him.</p>
+    <p class="note step">Verse 18 names two ways to handle hatred, and calls both of them foolish. One man smiles to your face and hides the hate (<em>“lying lips”</em>). The other lets it out behind your back (<em>“slander”</em>). Either way, the hatred is still in charge.</p>
+    <p class="note step">The wise way is neither. Bring it into the light, deal with it honestly, and let God deal with your heart.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="19-21" data-hl="In the multitude of words there wanteth not sin|The tongue of the just is as choice silver|The lips of the righteous feed many"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="19"></blockquote>
+    <div class="split">
+      <div class="stage">
+        <svg viewBox="0 0 600 300" role="img" aria-label="Five speech bubbles, each bigger than the last. The bigger the bubble, the more marks of sin inside it.">
+          <g class="prv10-bub" style="--k:0">
+            <rect x="10" y="220" width="56" height="40" rx="12" stroke-width="2" style="fill:var(--surface);stroke:var(--line-strong)"/>
+          </g>
+          <g class="prv10-bub" style="--k:1">
+            <rect x="82" y="190" width="80" height="70" rx="14" stroke-width="2" style="fill:var(--surface);stroke:var(--line-strong)"/>
+            <path class="prv10-x" d="M114 217 l14 14 M128 217 l-14 14"/>
+          </g>
+          <g class="prv10-bub" style="--k:2">
+            <rect x="178" y="150" width="104" height="110" rx="16" stroke-width="2" style="fill:var(--surface);stroke:var(--line-strong)"/>
+            <path class="prv10-x" d="M200 180 l14 14 M214 180 l-14 14 M240 210 l14 14 M254 210 l-14 14"/>
+          </g>
+          <g class="prv10-bub" style="--k:3">
+            <rect x="298" y="100" width="128" height="160" rx="18" stroke-width="2" style="fill:var(--surface);stroke:var(--line-strong)"/>
+            <path class="prv10-x" d="M318 125 l14 14 M332 125 l-14 14 M370 140 l14 14 M384 140 l-14 14 M330 190 l14 14 M344 190 l-14 14 M386 214 l14 14 M400 214 l-14 14"/>
+          </g>
+          <g class="prv10-bub" style="--k:4">
+            <rect x="442" y="40" width="150" height="220" rx="20" stroke-width="2" style="fill:var(--surface);stroke:var(--line-strong)"/>
+            <path class="prv10-x" d="M462 64 l14 14 M476 64 l-14 14 M512 80 l14 14 M526 80 l-14 14 M556 66 l14 14 M570 66 l-14 14 M470 124 l14 14 M484 124 l-14 14 M530 140 l14 14 M544 140 l-14 14 M480 190 l14 14 M494 190 l-14 14 M546 200 l14 14 M560 200 l-14 14 M500 232 l14 14 M514 232 l-14 14"/>
+          </g>
+          <line x1="10" y1="280" x2="592" y2="280" stroke-width="2" style="stroke:var(--line-strong)"/>
+          <text x="10" y="300" font-size="16" style="fill:var(--ink-soft)">a few words</text>
+          <text x="592" y="300" font-size="16" text-anchor="end" style="fill:var(--ink-soft)">“the multitude of words”</text>
+          <g class="prv10-hush step">
+            <text x="38" y="200" text-anchor="middle" font-size="17" font-weight="700" style="fill:var(--accent-hot)">wise</text>
+            <path d="M38 206 V216" stroke-width="2.5" style="stroke:var(--accent)"/>
+          </g>
+        </svg>
+      </div>
+      <div>
+        <h2 class="rise" style="--d:1">More words, more room for sin</h2>
+        <p class="note rise" style="--d:2">The more you talk, the more chances to exaggerate, gossip, boast, lie, or cut someone down. It's simple math.</p>
+        <p class="note step">So the wise man <em>“refraineth his lips.”</em> He doesn't have to win every argument or fill every silence.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="20-21" data-hl="as choice silver|feed many"></blockquote>
+    <h2 class="rise" style="--d:1">What your words are worth</h2>
+    <p class="note rise" style="--d:2">The good man's tongue is <em>“choice silver”</em>: refined, pure, worth something. His words <em>“feed many”</em>, like a meal for people who are starving for a straight answer or an honest encouragement.</p>
+    <p class="note step">Notice the pairing in verse 20: <em>tongue</em> is matched with <em>heart</em>. What comes out of the mouth shows what's in the heart. Clean up the words and you're really asking God to clean up the heart.</p>
+  </div>
+</section>
+
+<!-- ======================= PART THREE ======================= -->
+<section class="slide part">
+  <div class="inner">
+    <p class="part-n rise">Part three</p>
+    <h2 class="rise" style="--d:1">What lasts</h2>
+    <p class="range rise" style="--d:2">Verses 22–32</p>
+    <p class="hook rise" style="--d:4">Storms come for everybody. Not everybody is still standing after.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="22-24" data-hl="The blessing of the LORD, it maketh rich, and he addeth no sorrow with it|the desire of the righteous shall be granted"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="22"></blockquote>
+    <h2 class="rise" style="--d:1">Read the receipt</h2>
+    <div class="prv10-receipts">
+      <div class="prv10-rc rise" style="--d:2">
+        <h3>Treasures of wickedness</h3>
+        <p><span>Fast money</span><b>yes</b></p>
+        <p><span>Real profit</span><b>“nothing” (10:2)</b></p>
+        <p class="prv10-bad"><span>Sorrow added</span><b>guilt, fear, wreckage</b></p>
+        <p class="prv10-tot"><span>You walk away with</span><b class="prv10-bad">less than you came with</b></p>
+      </div>
+      <div class="prv10-rc prv10-good step">
+        <h3>The blessing of the LORD</h3>
+        <p><span>Comes from</span><b>God's hand</b></p>
+        <p><span>Real profit</span><b>“it maketh rich”</b></p>
+        <p><span>Sorrow added</span><b>“no sorrow with it”</b></p>
+        <p class="prv10-tot"><span>You walk away with</span><b>more than you came with</b></p>
+      </div>
+    </div>
+    <p class="note step">This isn't “follow God and get paid.” God's riches may be money, and they may be a clear conscience, a family that trusts you again, and peace at night. The point is what <em>doesn't</em> come with it: no hangover, no looking over your shoulder.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="25-27" data-hl="the righteous is an everlasting foundation|so is the sluggard to them that send him|The fear of the LORD prolongeth days"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="25"></blockquote>
+    <div class="split">
+      <div class="stage">
+        <svg viewBox="0 0 600 320" role="img" aria-label="A whirlwind sweeps one house away. The other house, set on a deep foundation, stays standing.">
+          <line x1="0" y1="230" x2="600" y2="230" stroke-width="3" style="stroke:var(--line-strong)"/>
+          <g class="prv10-gone">
+            <rect x="60" y="160" width="120" height="70" stroke-width="2" style="fill:var(--surface-2);stroke:var(--line-strong)"/>
+            <path d="M50 160 L120 115 L190 160 Z" stroke-width="2" style="fill:var(--surface-2);stroke:var(--line-strong)"/>
+          </g>
+          <g class="prv10-wind">
+            <path d="M120 120 m-60 0 a60 22 0 1 0 120 0 a48 18 0 1 0 -96 0 a36 14 0 1 0 72 0 a24 10 0 1 0 -48 0" fill="none" stroke-width="3" stroke-linecap="round" style="stroke:var(--ink-soft)"/>
+          </g>
+          <text x="120" y="275" text-anchor="middle" font-size="18" style="fill:var(--danger)">“no more”</text>
+          <rect x="380" y="230" width="160" height="70" stroke-width="2" style="fill:var(--surface-2);stroke:var(--line-strong)"/>
+          <text x="460" y="272" text-anchor="middle" font-size="16" style="fill:var(--ink)">foundation</text>
+          <rect x="400" y="150" width="120" height="80" stroke-width="2" style="fill:var(--surface-2);stroke:var(--accent)"/>
+          <path d="M388 150 L460 102 L532 150 Z" stroke-width="2" style="fill:var(--surface-2);stroke:var(--accent)"/>
+          <rect x="446" y="190" width="28" height="40" style="fill:var(--accent)"/>
+          <text x="460" y="80" text-anchor="middle" font-size="18" style="fill:var(--accent-hot)">“everlasting”</text>
+        </svg>
+      </div>
+      <div>
+        <h2 class="rise" style="--d:1">What's under you?</h2>
+        <p class="note rise" style="--d:2">A whirlwind hits both houses. The wicked man's life gets swept off: <em>“no more.”</em> The righteous man's life sits on something deeper than the weather.</p>
+        <p class="note step">Jesus told the same story, and named the foundation:</p>
+      </div>
+    </div>
+    <blockquote class="quote step"><p>“Therefore whosoever heareth these sayings of mine, and doeth them, I will liken him unto a wise man, which built his house upon a rock: And the rain descended, and the floods came, and the winds blew, and beat upon that house; and it fell not: for it was founded upon a rock.”</p><cite>Matthew 7:24–25</cite></blockquote>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="26"></blockquote>
+    <p class="saying rise" style="--d:1">Vinegar on the teeth. <em>Smoke</em> in the eyes.</p>
+    <p class="note rise" style="--d:2">That sour, stinging feeling is what a lazy worker is to <em>“them that send him”</em>: the boss who sends him on a job and counts on him, and he doesn't come through.</p>
+    <p class="note step">Being dependable is part of a changed life. Show up when you said you would. Finish what you were sent to do. People notice, and slowly they start to trust you again.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="28-30" data-hl="The hope of the righteous shall be gladness|The way of the LORD is strength to the upright|The righteous shall never be removed"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="28" data-hl="The hope of the righteous shall be gladness"></blockquote>
+    <h2 class="rise" style="--d:1">So who are “the righteous”?</h2>
+    <p class="note rise" style="--d:2">This chapter uses <em>“righteous”</em> or <em>“just”</em> again and again. If it means “a man who never sinned,” nobody qualifies. So how does a man become righteous before God?</p>
+    <blockquote class="quote step"><p>“Even the righteousness of God which is by faith of Jesus Christ unto all and upon all them that believe: for there is no difference:”</p><cite>Romans 3:22</cite></blockquote>
+    <blockquote class="quote step"><p>“For he hath made him to be sin for us, who knew no sin; that we might be made the righteousness of God in him.”</p><cite>2 Corinthians 5:21</cite></blockquote>
+    <p class="note step">Jesus took our sin and gives us His righteousness, to anyone who believes. Then He spends the rest of our lives teaching us to <em>live</em> righteous, which is what these proverbs describe.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="31-32" data-hl="The mouth of the just bringeth forth wisdom|The lips of the righteous know what is acceptable"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise">The whole chapter, sorted</h2>
+    <p class="note rise" style="--d:1">Proverbs in this part of the book jump from topic to topic. One way to study them is to sort them into piles:</p>
+    <div class="prv10-sort">
+      <div class="prv10-keys">
+        <span class="prv10-key prv10-t3 step">The righteous and the wicked<small>10</small></span>
+        <span class="prv10-key prv10-t2 step">Money and work<small>7</small></span>
+        <span class="prv10-key prv10-t4 step">Home, love, correction<small>4</small></span>
+        <span class="prv10-key prv10-t1 step">The tongue<small>11</small></span>
+      </div>
+      <div class="prv10-grid rise" style="--d:2">
+        <span class="prv10-c prv10-t4"><b>1</b>glad father</span>
+        <span class="prv10-c prv10-t2"><b>2</b>treasures of wickedness</span>
+        <span class="prv10-c prv10-t3"><b>3</b>not famish</span>
+        <span class="prv10-c prv10-t2"><b>4</b>slack hand</span>
+        <span class="prv10-c prv10-t2"><b>5</b>sleeps in harvest</span>
+        <span class="prv10-c prv10-t3"><b>6</b>blessings on the just</span>
+        <span class="prv10-c prv10-t3"><b>7</b>a name that rots</span>
+        <span class="prv10-c prv10-t1"><b>8</b>prating fool</span>
+        <span class="prv10-c prv10-t3"><b>9</b>walks surely</span>
+        <span class="prv10-c prv10-t1"><b>10</b>the wink</span>
+        <span class="prv10-c prv10-t1"><b>11</b>a well of life</span>
+        <span class="prv10-c prv10-t4"><b>12</b>love covers</span>
+        <span class="prv10-c prv10-t1"><b>13</b>wise lips</span>
+        <span class="prv10-c prv10-t1"><b>14</b>mouth near destruction</span>
+        <span class="prv10-c prv10-t2"><b>15</b>strong city</span>
+        <span class="prv10-c prv10-t2"><b>16</b>wages</span>
+        <span class="prv10-c prv10-t4"><b>17</b>refuses reproof</span>
+        <span class="prv10-c prv10-t1"><b>18</b>lying lips</span>
+        <span class="prv10-c prv10-t1"><b>19</b>many words</span>
+        <span class="prv10-c prv10-t1"><b>20</b>choice silver</span>
+        <span class="prv10-c prv10-t1"><b>21</b>lips feed many</span>
+        <span class="prv10-c prv10-t2"><b>22</b>no sorrow added</span>
+        <span class="prv10-c prv10-t4"><b>23</b>mischief as sport</span>
+        <span class="prv10-c prv10-t3"><b>24</b>fear and desire</span>
+        <span class="prv10-c prv10-t3"><b>25</b>the whirlwind</span>
+        <span class="prv10-c prv10-t2"><b>26</b>vinegar and smoke</span>
+        <span class="prv10-c prv10-t3"><b>27</b>days prolonged</span>
+        <span class="prv10-c prv10-t3"><b>28</b>hope and gladness</span>
+        <span class="prv10-c prv10-t3"><b>29</b>strength to the upright</span>
+        <span class="prv10-c prv10-t3"><b>30</b>never removed</span>
+        <span class="prv10-c prv10-t1"><b>31</b>froward tongue</span>
+        <span class="prv10-c prv10-t1"><b>32</b>what is acceptable</span>
+      </div>
+    </div>
+    <p class="note step">Eleven of these thirty-two sayings are about the mouth. Solomon clearly thought what we say matters a great deal.</p>
+  </div>
+</section>
+
+<!-- ======================= CLOSING ======================= -->
+<section class="slide remember">
+  <div class="inner">
+    <h2 class="rise">Points to remember</h2>
+    <ol class="seeds">
+      <li class="step"><span class="topic">Reading Proverbs</span><span class="seed-q">“The proverbs of Solomon” <cite>10:1</cite></span><span class="take">Two lines that answer each other. Wise patterns for life, not guarantees.</span></li>
+      <li class="step"><span class="topic">The tongue</span><span class="seed-q">“A well of life” <cite>10:11</cite></span><span class="take">Words can feed people or wound them. Fewer words, fewer sins.</span></li>
+      <li class="step"><span class="topic">Money and work</span><span class="seed-q">“He addeth no sorrow with it” <cite>10:22</cite></span><span class="take">Work steady. Dirty money profits nothing; God's blessing comes with no hangover.</span></li>
+      <li class="step"><span class="topic">The righteous</span><span class="seed-q">“The righteous is an everlasting foundation” <cite>10:25</cite></span><span class="take">Made righteous by faith in Christ, then taught by Him to live it.</span></li>
+      <li class="step"><span class="topic">Love</span><span class="seed-q">“Love covereth all sins” <cite>10:12</cite></span><span class="take">Hatred digs things up. Love covers them, the way God covered ours.</span></li>
+      <li class="step"><span class="topic">A sure foundation</span><span class="seed-q">“The righteous shall never be removed” <cite>10:30</cite></span><span class="take">The storm comes for everyone. Build on the Rock.</span></li>
+    </ol>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 1 of 6</p>
+      <span class="topic">Reading Proverbs</span>
+      <h2>What is a proverb, and what is it not?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="1"></blockquote>
+      <blockquote class="quote step" data-q="4"></blockquote>
+      <blockquote class="quote step" data-q="27"></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>A proverb is a short, two-line saying where the lines answer each other, often with a “but” in the middle. It tells you how life usually goes in God's world: diligent hands tend to prosper, the fear of the LORD tends to lengthen life. It's wise to bet on these patterns, but they aren't guarantees for every case or promises with a deadline.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 2 of 6</p>
+      <span class="topic">The tongue</span>
+      <h2>How can my words give life or do damage?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="11"></blockquote>
+      <blockquote class="quote step" data-q="19"></blockquote>
+      <blockquote class="quote step" data-q="21"></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>A good man's mouth is “a well of life”: his words feed and refresh people. A wicked man's words cover up violence, slander, and lies. And the more we talk, the more room sin has, so the wise man knows when to keep quiet. Our words show what's in our hearts.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 3 of 6</p>
+      <span class="topic">Money and work</span>
+      <h2>What does God say about how I earn what I have?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="2"></blockquote>
+      <blockquote class="quote step" data-q="4-5"></blockquote>
+      <blockquote class="quote step" data-q="22"></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>How you get it matters. Money from wickedness profits nothing in the end. Steady, diligent work, especially when the work can't wait, tends to build something. And what God gives comes without sorrow attached. Work hard, work honest, and trust Him with the results.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 4 of 6</p>
+      <span class="topic">The righteous</span>
+      <h2>Who are the righteous, and how does a man become one?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="28-29"></blockquote>
+      <blockquote class="quote step"><p>“Even the righteousness of God which is by faith of Jesus Christ unto all and upon all them that believe: for there is no difference:”</p><cite>Romans 3:22</cite></blockquote>
+      <blockquote class="quote step"><p>“For he hath made him to be sin for us, who knew no sin; that we might be made the righteousness of God in him.”</p><cite>2 Corinthians 5:21</cite></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>The righteous are people who are right with God and live like it. Nobody gets there by being good enough. God gives His righteousness to anyone who believes in Jesus, who took our sin on Himself. From then on, He teaches us to walk uprightly, the way these proverbs describe.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 5 of 6</p>
+      <span class="topic">Love</span>
+      <h2>What does love do with another man's sins?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="12"></blockquote>
+      <blockquote class="quote step"><p>“And above all things have fervent charity among yourselves: for charity shall cover the multitude of sins.”</p><cite>1 Peter 4:8</cite></blockquote>
+      <blockquote class="quote step" data-q="18"></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>Love covers it. It doesn't call sin good, but it doesn't gossip about it, rub it in, or keep bringing it up either. Hatred stirs up fights and keeps score. Love forgives and protects, the way God covered our sins in Christ.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 6 of 6</p>
+      <span class="topic">A sure foundation</span>
+      <h2>What will still be standing when the storm passes?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="25"></blockquote>
+      <blockquote class="quote step" data-q="30"></blockquote>
+      <blockquote class="quote step"><p>“Therefore whosoever heareth these sayings of mine, and doeth them, I will liken him unto a wise man, which built his house upon a rock: And the rain descended, and the floods came, and the winds blew, and beat upon that house; and it fell not: for it was founded upon a rock.”</p><cite>Matthew 7:24–25</cite></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>The righteous man, because of what he's built on. Storms hit everyone, but the wicked man's life gets swept away, while the righteous “shall never be removed.” Jesus says the rock is hearing His words and doing them. Build your life on Him.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide prayer">
+  <div class="inner">
+    <div class="emblem rise"></div>
+    <h2 class="rise">Prayer requests</h2>
+    <p class="ask-line rise" style="--d:1">What can we pray about for you today?</p>
+    <blockquote class="quote rise" style="--d:3"><p>“Cast thy burden upon the LORD, and he shall sustain thee: he shall never suffer the righteous to be moved.”</p><cite>Psalm 55:22</cite></blockquote>
+  </div>
+</section>
+
+</main>
+
+<script>
+// King James Version, Proverbs chapter 10
+const V = {
+  1: "The proverbs of Solomon. A wise son maketh a glad father: but a foolish son is the heaviness of his mother.",
+  2: "Treasures of wickedness profit nothing: but righteousness delivereth from death.",
+  3: "The LORD will not suffer the soul of the righteous to famish: but he casteth away the substance of the wicked.",
+  4: "He becometh poor that dealeth with a slack hand: but the hand of the diligent maketh rich.",
+  5: "He that gathereth in summer is a wise son: but he that sleepeth in harvest is a son that causeth shame.",
+  6: "Blessings are upon the head of the just: but violence covereth the mouth of the wicked.",
+  7: "The memory of the just is blessed: but the name of the wicked shall rot.",
+  8: "The wise in heart will receive commandments: but a prating fool shall fall.",
+  9: "He that walketh uprightly walketh surely: but he that perverteth his ways shall be known.",
+  10: "He that winketh with the eye causeth sorrow: but a prating fool shall fall.",
+  11: "The mouth of a righteous man is a well of life: but violence covereth the mouth of the wicked.",
+  12: "Hatred stirreth up strifes: but love covereth all sins.",
+  13: "In the lips of him that hath understanding wisdom is found: but a rod is for the back of him that is void of understanding.",
+  14: "Wise men lay up knowledge: but the mouth of the foolish is near destruction.",
+  15: "The rich man’s wealth is his strong city: the destruction of the poor is their poverty.",
+  16: "The labour of the righteous tendeth to life: the fruit of the wicked to sin.",
+  17: "He is in the way of life that keepeth instruction: but he that refuseth reproof erreth.",
+  18: "He that hideth hatred with lying lips, and he that uttereth a slander, is a fool.",
+  19: "In the multitude of words there wanteth not sin: but he that refraineth his lips is wise.",
+  20: "The tongue of the just is as choice silver: the heart of the wicked is little worth.",
+  21: "The lips of the righteous feed many: but fools die for want of wisdom.",
+  22: "The blessing of the LORD, it maketh rich, and he addeth no sorrow with it.",
+  23: "It is as sport to a fool to do mischief: but a man of understanding hath wisdom.",
+  24: "The fear of the wicked, it shall come upon him: but the desire of the righteous shall be granted.",
+  25: "As the whirlwind passeth, so is the wicked no more: but the righteous is an everlasting foundation.",
+  26: "As vinegar to the teeth, and as smoke to the eyes, so is the sluggard to them that send him.",
+  27: "The fear of the LORD prolongeth days: but the years of the wicked shall be shortened.",
+  28: "The hope of the righteous shall be gladness: but the expectation of the wicked shall perish.",
+  29: "The way of the LORD is strength to the upright: but destruction shall be to the workers of iniquity.",
+  30: "The righteous shall never be removed: but the wicked shall not inhabit the earth.",
+  31: "The mouth of the just bringeth forth wisdom: but the froward tongue shall be cut out.",
+  32: "The lips of the righteous know what is acceptable: but the mouth of the wicked speaketh frowardness."
+};
+const BOOK = "Proverbs 10";
+</script>
+<script src="../assets/deck.js"></script>
+</body>
+</html>

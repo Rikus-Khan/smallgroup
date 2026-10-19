@@ -222,6 +222,159 @@ window.GLOSSARY = [
     [ 14, 15 ] ] ]
  },
  {
+  "id": "solomon",
+  "kind": "person",
+  "name": "Solomon",
+  "refs": [
+   [
+    "Proverbs", 1,
+    [ 1 ] ],
+   [
+    "Proverbs", 10,
+    [ 1 ] ],
+   [
+    "Proverbs", 25,
+    [ 1 ] ] ]
+ },
+ {
+  "id": "david",
+  "kind": "person",
+  "name": "David",
+  "refs": [
+   [
+    "Proverbs", 1,
+    [ 1 ] ] ]
+ },
+ {
+  "id": "hezekiah",
+  "kind": "person",
+  "name": "Hezekiah",
+  "refs": [
+   [
+    "Proverbs", 25,
+    [ 1 ] ] ]
+ },
+ {
+  "id": "agur",
+  "kind": "person",
+  "name": "Agur",
+  "refs": [
+   [
+    "Proverbs", 30,
+    [ 1 ] ] ]
+ },
+ {
+  "id": "lemuel",
+  "kind": "person",
+  "name": "King Lemuel",
+  "refs": [
+   [
+    "Proverbs", 31,
+    [ 1, 4 ] ] ]
+ },
+ {
+  "id": "the-lord",
+  "kind": "person",
+  "name": "The LORD",
+  "refs": [
+   [
+    "Proverbs", 1,
+    [ 7, 29 ] ],
+   [
+    "Proverbs", 2,
+    [ 5, 6 ] ],
+   [
+    "Proverbs", 3,
+    [ 5, 7, 9, 11, 12, 19, 26, 32, 33 ] ],
+   [
+    "Proverbs", 5,
+    [ 21 ] ],
+   [
+    "Proverbs", 6,
+    [ 16 ] ],
+   [
+    "Proverbs", 8,
+    [ 13, 22, 35 ] ],
+   [
+    "Proverbs", 9,
+    [ 10 ] ],
+   [
+    "Proverbs", 10,
+    [ 3, 22, 27, 29 ] ],
+   [
+    "Proverbs", 11,
+    [ 1, 20 ] ],
+   [
+    "Proverbs", 12,
+    [ 2, 22 ] ],
+   [
+    "Proverbs", 14,
+    [ 2, 26, 27 ] ],
+   [
+    "Proverbs", 15,
+    [ 3, 8, 9, 11, 16, 25, 26, 29, 33 ] ],
+   [
+    "Proverbs", 16,
+    [ 1, 2, 3, 4, 5, 6, 7, 9, 11, 20, 33 ] ],
+   [
+    "Proverbs", 17,
+    [ 3, 15 ] ],
+   [
+    "Proverbs", 18,
+    [ 10, 22 ] ],
+   [
+    "Proverbs", 19,
+    [ 3, 14, 17, 21, 23 ] ],
+   [
+    "Proverbs", 20,
+    [ 10, 12, 22, 23, 24, 27 ] ],
+   [
+    "Proverbs", 21,
+    [ 1, 2, 3, 30, 31 ] ],
+   [
+    "Proverbs", 22,
+    [ 2, 4, 12, 14, 19, 23 ] ],
+   [
+    "Proverbs", 23,
+    [ 17 ] ],
+   [
+    "Proverbs", 24,
+    [ 18, 21 ] ],
+   [
+    "Proverbs", 25,
+    [ 22 ] ],
+   [
+    "Proverbs", 28,
+    [ 5, 25 ] ],
+   [
+    "Proverbs", 29,
+    [ 13, 25, 26 ] ],
+   [
+    "Proverbs", 30,
+    [ 9 ] ],
+   [
+    "Proverbs", 31,
+    [ 30 ] ] ]
+ },
+ {
+  "id": "jakeh",
+  "kind": "person",
+  "name": "Jakeh, father of Agur",
+  "refs": [
+   [
+    "Proverbs", 30,
+    [ 1 ] ] ]
+ },
+ {
+  "id": "ithiel-and-ucal",
+  "kind": "person",
+  "name": "Ithiel and Ucal",
+  "refs": [
+   [
+    "Proverbs", 30,
+    [ 1 ] ] ]
+ },
+ {
   "id": "jerusalem",
   "kind": "place",
   "name": "Jerusalem",
@@ -256,6 +409,9 @@ window.GLOSSARY = [
   "kind": "place",
   "name": "The wilderness",
   "refs": [
+   [
+    "Proverbs", 21,
+    [ 19 ] ],
    [
     "John", 1,
     [ 23 ] ] ]
@@ -323,6 +479,9 @@ window.GLOSSARY = [
   "name": "Israel",
   "refs": [
    [
+    "Proverbs", 1,
+    [ 1 ] ],
+   [
     "John", 1,
     [ 31, 49 ] ] ]
  },
@@ -332,8 +491,74 @@ window.GLOSSARY = [
   "name": "Heaven",
   "refs": [
    [
+    "Proverbs", 23,
+    [ 5 ] ],
+   [
+    "Proverbs", 25,
+    [ 3 ] ],
+   [
+    "Proverbs", 30,
+    [ 4 ] ],
+   [
     "John", 1,
     [ 32, 51 ] ] ]
+ },
+ {
+  "id": "hell",
+  "kind": "place",
+  "name": "Hell (Sheol, the grave)",
+  "refs": [
+   [
+    "Proverbs", 5,
+    [ 5 ] ],
+   [
+    "Proverbs", 7,
+    [ 27 ] ],
+   [
+    "Proverbs", 9,
+    [ 18 ] ],
+   [
+    "Proverbs", 15,
+    [ 24 ] ],
+   [
+    "Proverbs", 23,
+    [ 14 ] ] ]
+ },
+ {
+  "id": "judah",
+  "kind": "place",
+  "name": "Judah",
+  "refs": [
+   [
+    "Proverbs", 25,
+    [ 1 ] ] ]
+ },
+ {
+  "id": "city-gate",
+  "kind": "place",
+  "name": "The city gate",
+  "refs": [
+   [
+    "Proverbs", 1,
+    [ 21 ] ],
+   [
+    "Proverbs", 8,
+    [ 3, 34 ] ],
+   [
+    "Proverbs", 14,
+    [ 19 ] ],
+   [
+    "Proverbs", 17,
+    [ 19 ] ],
+   [
+    "Proverbs", 22,
+    [ 22 ] ],
+   [
+    "Proverbs", 24,
+    [ 7 ] ],
+   [
+    "Proverbs", 31,
+    [ 23, 31 ] ] ]
  },
  {
   "id": "the-word",
@@ -350,6 +575,21 @@ window.GLOSSARY = [
   "name": "Light",
   "refs": [
    [
+    "Proverbs", 4,
+    [ 18 ] ],
+   [
+    "Proverbs", 6,
+    [ 23 ] ],
+   [
+    "Proverbs", 13,
+    [ 9 ] ],
+   [
+    "Proverbs", 15,
+    [ 30 ] ],
+   [
+    "Proverbs", 16,
+    [ 15 ] ],
+   [
     "John", 1,
     [ 4, 5, 7, 8, 9 ] ] ]
  },
@@ -358,6 +598,15 @@ window.GLOSSARY = [
   "kind": "term",
   "name": "Darkness",
   "refs": [
+   [
+    "Proverbs", 2,
+    [ 13 ] ],
+   [
+    "Proverbs", 4,
+    [ 19 ] ],
+   [
+    "Proverbs", 20,
+    [ 20 ] ],
    [
     "John", 1,
     [ 5 ] ] ]
@@ -368,6 +617,18 @@ window.GLOSSARY = [
   "name": "Grace",
   "refs": [
    [
+    "Proverbs", 1,
+    [ 9 ] ],
+   [
+    "Proverbs", 3,
+    [ 22, 34 ] ],
+   [
+    "Proverbs", 4,
+    [ 9 ] ],
+   [
+    "Proverbs", 22,
+    [ 11 ] ],
+   [
     "John", 1,
     [ 14, 16, 17 ] ] ]
  },
@@ -377,6 +638,30 @@ window.GLOSSARY = [
   "name": "Truth",
   "refs": [
    [
+    "Proverbs", 3,
+    [ 3 ] ],
+   [
+    "Proverbs", 8,
+    [ 7 ] ],
+   [
+    "Proverbs", 12,
+    [ 17, 19 ] ],
+   [
+    "Proverbs", 14,
+    [ 22 ] ],
+   [
+    "Proverbs", 16,
+    [ 6 ] ],
+   [
+    "Proverbs", 20,
+    [ 28 ] ],
+   [
+    "Proverbs", 22,
+    [ 21 ] ],
+   [
+    "Proverbs", 23,
+    [ 23 ] ],
+   [
     "John", 1,
     [ 14, 17 ] ] ]
  },
@@ -385,6 +670,30 @@ window.GLOSSARY = [
   "kind": "term",
   "name": "Glory",
   "refs": [
+   [
+    "Proverbs", 3,
+    [ 35 ] ],
+   [
+    "Proverbs", 4,
+    [ 9 ] ],
+   [
+    "Proverbs", 16,
+    [ 31 ] ],
+   [
+    "Proverbs", 17,
+    [ 6 ] ],
+   [
+    "Proverbs", 19,
+    [ 11 ] ],
+   [
+    "Proverbs", 20,
+    [ 29 ] ],
+   [
+    "Proverbs", 25,
+    [ 2, 27 ] ],
+   [
+    "Proverbs", 28,
+    [ 12 ] ],
    [
     "John", 1,
     [ 14 ] ],
@@ -397,6 +706,33 @@ window.GLOSSARY = [
   "kind": "term",
   "name": "The law",
   "refs": [
+   [
+    "Proverbs", 1,
+    [ 8 ] ],
+   [
+    "Proverbs", 3,
+    [ 1 ] ],
+   [
+    "Proverbs", 4,
+    [ 2 ] ],
+   [
+    "Proverbs", 6,
+    [ 20, 23 ] ],
+   [
+    "Proverbs", 7,
+    [ 2 ] ],
+   [
+    "Proverbs", 13,
+    [ 14 ] ],
+   [
+    "Proverbs", 28,
+    [ 4, 7, 9 ] ],
+   [
+    "Proverbs", 29,
+    [ 18 ] ],
+   [
+    "Proverbs", 31,
+    [ 5, 26 ] ],
    [
     "John", 1,
     [ 17, 45 ] ] ]
@@ -470,6 +806,12 @@ window.GLOSSARY = [
   "name": "Believe",
   "refs": [
    [
+    "Proverbs", 14,
+    [ 15 ] ],
+   [
+    "Proverbs", 26,
+    [ 25 ] ],
+   [
     "John", 1,
     [ 7, 12, 50 ] ],
    [
@@ -481,6 +823,27 @@ window.GLOSSARY = [
   "kind": "term",
   "name": "Witness (bare record)",
   "refs": [
+   [
+    "Proverbs", 6,
+    [ 19 ] ],
+   [
+    "Proverbs", 12,
+    [ 17 ] ],
+   [
+    "Proverbs", 14,
+    [ 5, 25 ] ],
+   [
+    "Proverbs", 19,
+    [ 5, 9, 28 ] ],
+   [
+    "Proverbs", 21,
+    [ 28 ] ],
+   [
+    "Proverbs", 24,
+    [ 28 ] ],
+   [
+    "Proverbs", 25,
+    [ 18 ] ],
    [
     "John", 1,
     [ 7, 8, 15, 19, 32, 34 ] ] ]
@@ -554,6 +917,24 @@ window.GLOSSARY = [
   "name": "Wine",
   "refs": [
    [
+    "Proverbs", 3,
+    [ 10 ] ],
+   [
+    "Proverbs", 4,
+    [ 17 ] ],
+   [
+    "Proverbs", 9,
+    [ 2, 5 ] ],
+   [
+    "Proverbs", 21,
+    [ 17 ] ],
+   [
+    "Proverbs", 23,
+    [ 30, 31 ] ],
+   [
+    "Proverbs", 31,
+    [ 4, 6 ] ],
+   [
     "John", 2,
     [ 3, 9, 10 ] ] ]
  },
@@ -619,5 +1000,1835 @@ window.GLOSSARY = [
    [
     "John", 2,
     [ 17 ] ] ]
+ },
+ {
+  "id": "wisdom",
+  "kind": "term",
+  "name": "Wisdom",
+  "refs": [
+   [
+    "Proverbs", 1,
+    [ 2, 3, 7, 20 ] ],
+   [
+    "Proverbs", 2,
+    [ 2, 6, 7, 10 ] ],
+   [
+    "Proverbs", 3,
+    [ 13, 19, 21 ] ],
+   [
+    "Proverbs", 4,
+    [ 5, 7, 11 ] ],
+   [
+    "Proverbs", 5,
+    [ 1 ] ],
+   [
+    "Proverbs", 7,
+    [ 4 ] ],
+   [
+    "Proverbs", 8,
+    [ 1, 5, 11, 12, 14 ] ],
+   [
+    "Proverbs", 9,
+    [ 1, 10 ] ],
+   [
+    "Proverbs", 10,
+    [ 13, 21, 23, 31 ] ],
+   [
+    "Proverbs", 11,
+    [ 2, 12 ] ],
+   [
+    "Proverbs", 12,
+    [ 8 ] ],
+   [
+    "Proverbs", 13,
+    [ 10 ] ],
+   [
+    "Proverbs", 14,
+    [ 6, 8, 33 ] ],
+   [
+    "Proverbs", 15,
+    [ 21, 33 ] ],
+   [
+    "Proverbs", 16,
+    [ 16 ] ],
+   [
+    "Proverbs", 17,
+    [ 16, 24 ] ],
+   [
+    "Proverbs", 18,
+    [ 1, 4 ] ],
+   [
+    "Proverbs", 19,
+    [ 8 ] ],
+   [
+    "Proverbs", 21,
+    [ 30 ] ],
+   [
+    "Proverbs", 23,
+    [ 4, 9, 23 ] ],
+   [
+    "Proverbs", 24,
+    [ 3, 7, 14 ] ],
+   [
+    "Proverbs", 29,
+    [ 3, 15 ] ],
+   [
+    "Proverbs", 30,
+    [ 3 ] ],
+   [
+    "Proverbs", 31,
+    [ 26 ] ] ]
+ },
+ {
+  "id": "understanding",
+  "kind": "term",
+  "name": "Understanding",
+  "refs": [
+   [
+    "Proverbs", 1,
+    [ 2, 5 ] ],
+   [
+    "Proverbs", 2,
+    [ 2, 3, 6, 11 ] ],
+   [
+    "Proverbs", 3,
+    [ 4, 5, 13, 19 ] ],
+   [
+    "Proverbs", 4,
+    [ 1, 5, 7 ] ],
+   [
+    "Proverbs", 5,
+    [ 1 ] ],
+   [
+    "Proverbs", 6,
+    [ 32 ] ],
+   [
+    "Proverbs", 7,
+    [ 4, 7 ] ],
+   [
+    "Proverbs", 8,
+    [ 1, 5, 14 ] ],
+   [
+    "Proverbs", 9,
+    [ 4, 6, 10, 16 ] ],
+   [
+    "Proverbs", 10,
+    [ 13, 23 ] ],
+   [
+    "Proverbs", 11,
+    [ 12 ] ],
+   [
+    "Proverbs", 12,
+    [ 11 ] ],
+   [
+    "Proverbs", 13,
+    [ 15 ] ],
+   [
+    "Proverbs", 14,
+    [ 29, 33 ] ],
+   [
+    "Proverbs", 15,
+    [ 14, 21, 32 ] ],
+   [
+    "Proverbs", 16,
+    [ 16 ] ],
+   [
+    "Proverbs", 17,
+    [ 18, 24, 27, 28 ] ],
+   [
+    "Proverbs", 18,
+    [ 2 ] ],
+   [
+    "Proverbs", 19,
+    [ 8, 25 ] ],
+   [
+    "Proverbs", 20,
+    [ 5 ] ],
+   [
+    "Proverbs", 21,
+    [ 16, 30 ] ],
+   [
+    "Proverbs", 23,
+    [ 23 ] ],
+   [
+    "Proverbs", 24,
+    [ 3, 30 ] ],
+   [
+    "Proverbs", 28,
+    [ 2, 11, 16 ] ],
+   [
+    "Proverbs", 30,
+    [ 2 ] ] ]
+ },
+ {
+  "id": "knowledge",
+  "kind": "term",
+  "name": "Knowledge",
+  "refs": [
+   [
+    "Proverbs", 1,
+    [ 4, 7, 22, 29 ] ],
+   [
+    "Proverbs", 2,
+    [ 3, 5, 6, 10 ] ],
+   [
+    "Proverbs", 3,
+    [ 20 ] ],
+   [
+    "Proverbs", 5,
+    [ 2 ] ],
+   [
+    "Proverbs", 8,
+    [ 9, 10, 12 ] ],
+   [
+    "Proverbs", 9,
+    [ 10 ] ],
+   [
+    "Proverbs", 10,
+    [ 14 ] ],
+   [
+    "Proverbs", 11,
+    [ 9 ] ],
+   [
+    "Proverbs", 12,
+    [ 1, 23 ] ],
+   [
+    "Proverbs", 13,
+    [ 16 ] ],
+   [
+    "Proverbs", 14,
+    [ 6, 7, 18 ] ],
+   [
+    "Proverbs", 15,
+    [ 2, 7, 14 ] ],
+   [
+    "Proverbs", 17,
+    [ 27 ] ],
+   [
+    "Proverbs", 18,
+    [ 15 ] ],
+   [
+    "Proverbs", 19,
+    [ 2, 25, 27 ] ],
+   [
+    "Proverbs", 20,
+    [ 15 ] ],
+   [
+    "Proverbs", 21,
+    [ 11 ] ],
+   [
+    "Proverbs", 22,
+    [ 12, 17, 20 ] ],
+   [
+    "Proverbs", 23,
+    [ 12 ] ],
+   [
+    "Proverbs", 24,
+    [ 4, 5, 14 ] ],
+   [
+    "Proverbs", 28,
+    [ 2 ] ],
+   [
+    "Proverbs", 30,
+    [ 3 ] ] ]
+ },
+ {
+  "id": "instruction",
+  "kind": "term",
+  "name": "Instruction",
+  "refs": [
+   [
+    "Proverbs", 1,
+    [ 2, 3, 7, 8 ] ],
+   [
+    "Proverbs", 4,
+    [ 1, 13 ] ],
+   [
+    "Proverbs", 5,
+    [ 12, 23 ] ],
+   [
+    "Proverbs", 6,
+    [ 23 ] ],
+   [
+    "Proverbs", 8,
+    [ 10, 33 ] ],
+   [
+    "Proverbs", 9,
+    [ 9 ] ],
+   [
+    "Proverbs", 10,
+    [ 17 ] ],
+   [
+    "Proverbs", 12,
+    [ 1 ] ],
+   [
+    "Proverbs", 13,
+    [ 1, 18 ] ],
+   [
+    "Proverbs", 15,
+    [ 5, 32, 33 ] ],
+   [
+    "Proverbs", 16,
+    [ 22 ] ],
+   [
+    "Proverbs", 19,
+    [ 20, 27 ] ],
+   [
+    "Proverbs", 23,
+    [ 12, 23 ] ],
+   [
+    "Proverbs", 24,
+    [ 32 ] ] ]
+ },
+ {
+  "id": "fear-of-the-lord",
+  "kind": "term",
+  "name": "The fear of the LORD",
+  "refs": [
+   [
+    "Proverbs", 1,
+    [ 7, 29 ] ],
+   [
+    "Proverbs", 2,
+    [ 5 ] ],
+   [
+    "Proverbs", 8,
+    [ 13 ] ],
+   [
+    "Proverbs", 9,
+    [ 10 ] ],
+   [
+    "Proverbs", 10,
+    [ 27 ] ],
+   [
+    "Proverbs", 14,
+    [ 26, 27 ] ],
+   [
+    "Proverbs", 15,
+    [ 16, 33 ] ],
+   [
+    "Proverbs", 16,
+    [ 6 ] ],
+   [
+    "Proverbs", 19,
+    [ 23 ] ],
+   [
+    "Proverbs", 22,
+    [ 4 ] ],
+   [
+    "Proverbs", 23,
+    [ 17 ] ] ]
+ },
+ {
+  "id": "fool",
+  "kind": "term",
+  "name": "Fool, folly",
+  "refs": [
+   [
+    "Proverbs", 1,
+    [ 7, 22, 32 ] ],
+   [
+    "Proverbs", 3,
+    [ 35 ] ],
+   [
+    "Proverbs", 5,
+    [ 23 ] ],
+   [
+    "Proverbs", 7,
+    [ 22 ] ],
+   [
+    "Proverbs", 8,
+    [ 5 ] ],
+   [
+    "Proverbs", 9,
+    [ 6, 13 ] ],
+   [
+    "Proverbs", 10,
+    [ 1, 8, 10, 14, 18, 21, 23 ] ],
+   [
+    "Proverbs", 11,
+    [ 29 ] ],
+   [
+    "Proverbs", 12,
+    [ 15, 16, 23 ] ],
+   [
+    "Proverbs", 13,
+    [ 16, 19, 20 ] ],
+   [
+    "Proverbs", 14,
+    [ 1, 3, 7, 8, 16, 18, 24, 29, 33 ] ],
+   [
+    "Proverbs", 15,
+    [ 2, 5, 7, 14, 20 ] ],
+   [
+    "Proverbs", 16,
+    [ 22 ] ],
+   [
+    "Proverbs", 17,
+    [ 7, 10, 12, 16, 21, 24, 25, 28 ] ],
+   [
+    "Proverbs", 18,
+    [ 2, 6, 7, 13 ] ],
+   [
+    "Proverbs", 19,
+    [ 1, 3, 10, 13, 29 ] ],
+   [
+    "Proverbs", 20,
+    [ 3 ] ],
+   [
+    "Proverbs", 21,
+    [ 20 ] ],
+   [
+    "Proverbs", 23,
+    [ 9 ] ],
+   [
+    "Proverbs", 24,
+    [ 7, 9 ] ],
+   [
+    "Proverbs", 26,
+    [ 1, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12 ] ],
+   [
+    "Proverbs", 27,
+    [ 3, 22 ] ],
+   [
+    "Proverbs", 28,
+    [ 26 ] ],
+   [
+    "Proverbs", 29,
+    [ 9, 11, 20 ] ],
+   [
+    "Proverbs", 30,
+    [ 22 ] ] ]
+ },
+ {
+  "id": "scorner",
+  "kind": "term",
+  "name": "Scorner",
+  "refs": [
+   [
+    "Proverbs", 1,
+    [ 22 ] ],
+   [
+    "Proverbs", 3,
+    [ 34 ] ],
+   [
+    "Proverbs", 9,
+    [ 7, 8 ] ],
+   [
+    "Proverbs", 13,
+    [ 1 ] ],
+   [
+    "Proverbs", 14,
+    [ 6 ] ],
+   [
+    "Proverbs", 15,
+    [ 12 ] ],
+   [
+    "Proverbs", 19,
+    [ 25, 28, 29 ] ],
+   [
+    "Proverbs", 21,
+    [ 11, 24 ] ],
+   [
+    "Proverbs", 22,
+    [ 10 ] ],
+   [
+    "Proverbs", 24,
+    [ 9 ] ] ]
+ },
+ {
+  "id": "sluggard",
+  "kind": "term",
+  "name": "Sluggard, slothful",
+  "refs": [
+   [
+    "Proverbs", 6,
+    [ 6, 9 ] ],
+   [
+    "Proverbs", 10,
+    [ 26 ] ],
+   [
+    "Proverbs", 12,
+    [ 24, 27 ] ],
+   [
+    "Proverbs", 13,
+    [ 4 ] ],
+   [
+    "Proverbs", 15,
+    [ 19 ] ],
+   [
+    "Proverbs", 18,
+    [ 9 ] ],
+   [
+    "Proverbs", 19,
+    [ 24 ] ],
+   [
+    "Proverbs", 20,
+    [ 4 ] ],
+   [
+    "Proverbs", 21,
+    [ 25 ] ],
+   [
+    "Proverbs", 22,
+    [ 13 ] ],
+   [
+    "Proverbs", 24,
+    [ 30 ] ],
+   [
+    "Proverbs", 26,
+    [ 13, 14, 15, 16 ] ] ]
+ },
+ {
+  "id": "simple",
+  "kind": "term",
+  "name": "The simple",
+  "refs": [
+   [
+    "Proverbs", 1,
+    [ 4, 22, 32 ] ],
+   [
+    "Proverbs", 7,
+    [ 7 ] ],
+   [
+    "Proverbs", 8,
+    [ 5 ] ],
+   [
+    "Proverbs", 9,
+    [ 4, 13, 16 ] ],
+   [
+    "Proverbs", 14,
+    [ 15, 18 ] ],
+   [
+    "Proverbs", 19,
+    [ 25 ] ],
+   [
+    "Proverbs", 21,
+    [ 11 ] ],
+   [
+    "Proverbs", 22,
+    [ 3 ] ],
+   [
+    "Proverbs", 27,
+    [ 12 ] ] ]
+ },
+ {
+  "id": "strange-woman",
+  "kind": "term",
+  "name": "The strange woman",
+  "refs": [
+   [
+    "Proverbs", 2,
+    [ 16 ] ],
+   [
+    "Proverbs", 5,
+    [ 3, 20 ] ],
+   [
+    "Proverbs", 6,
+    [ 24, 26 ] ],
+   [
+    "Proverbs", 7,
+    [ 5, 10 ] ],
+   [
+    "Proverbs", 20,
+    [ 16 ] ],
+   [
+    "Proverbs", 22,
+    [ 14 ] ],
+   [
+    "Proverbs", 23,
+    [ 27, 33 ] ],
+   [
+    "Proverbs", 27,
+    [ 13 ] ] ]
+ },
+ {
+  "id": "righteous",
+  "kind": "term",
+  "name": "Righteous, righteousness",
+  "refs": [
+   [
+    "Proverbs", 2,
+    [ 7, 9, 20 ] ],
+   [
+    "Proverbs", 3,
+    [ 32 ] ],
+   [
+    "Proverbs", 8,
+    [ 8, 18, 20 ] ],
+   [
+    "Proverbs", 10,
+    [ 2, 3, 11, 16, 21, 24, 25, 28, 30, 32 ] ],
+   [
+    "Proverbs", 11,
+    [ 4, 5, 6, 8, 10, 18, 19, 21, 23, 28, 30, 31 ] ],
+   [
+    "Proverbs", 12,
+    [ 3, 5, 7, 10, 12, 17, 26, 28 ] ],
+   [
+    "Proverbs", 13,
+    [ 5, 9, 21, 25 ] ],
+   [
+    "Proverbs", 14,
+    [ 9, 19, 32 ] ],
+   [
+    "Proverbs", 15,
+    [ 6, 9, 19, 28, 29 ] ],
+   [
+    "Proverbs", 16,
+    [ 8, 12, 31 ] ],
+   [
+    "Proverbs", 18,
+    [ 5, 10 ] ],
+   [
+    "Proverbs", 21,
+    [ 12, 18, 21, 26 ] ],
+   [
+    "Proverbs", 23,
+    [ 24 ] ],
+   [
+    "Proverbs", 24,
+    [ 15, 24 ] ],
+   [
+    "Proverbs", 25,
+    [ 5, 26 ] ],
+   [
+    "Proverbs", 28,
+    [ 1, 10, 12, 28 ] ],
+   [
+    "Proverbs", 29,
+    [ 2, 6, 7, 16 ] ] ]
+ },
+ {
+  "id": "wicked",
+  "kind": "term",
+  "name": "Wicked, wickedness",
+  "refs": [
+   [
+    "Proverbs", 2,
+    [ 14, 22 ] ],
+   [
+    "Proverbs", 3,
+    [ 25, 33 ] ],
+   [
+    "Proverbs", 4,
+    [ 14, 17, 19 ] ],
+   [
+    "Proverbs", 5,
+    [ 22 ] ],
+   [
+    "Proverbs", 6,
+    [ 12, 18 ] ],
+   [
+    "Proverbs", 8,
+    [ 7 ] ],
+   [
+    "Proverbs", 9,
+    [ 7 ] ],
+   [
+    "Proverbs", 10,
+    [ 2, 3, 6, 7, 11, 16, 20, 24, 25, 27, 28, 30, 32 ] ],
+   [
+    "Proverbs", 11,
+    [ 5, 7, 8, 10, 11, 18, 21, 23, 31 ] ],
+   [
+    "Proverbs", 12,
+    [ 2, 3, 5, 6, 7, 10, 12, 13, 21, 26 ] ],
+   [
+    "Proverbs", 13,
+    [ 5, 6, 9, 17, 25 ] ],
+   [
+    "Proverbs", 14,
+    [ 11, 17, 19, 32 ] ],
+   [
+    "Proverbs", 15,
+    [ 6, 8, 9, 26, 28, 29 ] ],
+   [
+    "Proverbs", 16,
+    [ 4, 12 ] ],
+   [
+    "Proverbs", 17,
+    [ 4, 15, 23 ] ],
+   [
+    "Proverbs", 18,
+    [ 3, 5 ] ],
+   [
+    "Proverbs", 19,
+    [ 28 ] ],
+   [
+    "Proverbs", 20,
+    [ 26 ] ],
+   [
+    "Proverbs", 21,
+    [ 4, 7, 10, 12, 18, 27, 29 ] ],
+   [
+    "Proverbs", 24,
+    [ 15, 16, 19, 20, 24 ] ],
+   [
+    "Proverbs", 25,
+    [ 5, 26 ] ],
+   [
+    "Proverbs", 26,
+    [ 23, 26 ] ],
+   [
+    "Proverbs", 28,
+    [ 1, 4, 12, 15, 28 ] ],
+   [
+    "Proverbs", 29,
+    [ 2, 7, 12, 16, 27 ] ],
+   [
+    "Proverbs", 30,
+    [ 20 ] ] ]
+ },
+ {
+  "id": "heart",
+  "kind": "term",
+  "name": "Heart",
+  "refs": [
+   [
+    "Proverbs", 2,
+    [ 2, 10 ] ],
+   [
+    "Proverbs", 3,
+    [ 1, 3, 5 ] ],
+   [
+    "Proverbs", 4,
+    [ 4, 21, 23 ] ],
+   [
+    "Proverbs", 5,
+    [ 12 ] ],
+   [
+    "Proverbs", 6,
+    [ 14, 18, 21, 25 ] ],
+   [
+    "Proverbs", 7,
+    [ 3, 10, 25 ] ],
+   [
+    "Proverbs", 8,
+    [ 5 ] ],
+   [
+    "Proverbs", 10,
+    [ 8, 20 ] ],
+   [
+    "Proverbs", 11,
+    [ 20, 29 ] ],
+   [
+    "Proverbs", 12,
+    [ 8, 20, 23, 25 ] ],
+   [
+    "Proverbs", 13,
+    [ 12 ] ],
+   [
+    "Proverbs", 14,
+    [ 10, 13, 14, 30, 33 ] ],
+   [
+    "Proverbs", 15,
+    [ 7, 13, 14, 15, 28, 30 ] ],
+   [
+    "Proverbs", 16,
+    [ 1, 5, 9, 21, 23 ] ],
+   [
+    "Proverbs", 17,
+    [ 16, 20, 22 ] ],
+   [
+    "Proverbs", 18,
+    [ 2, 12, 15 ] ],
+   [
+    "Proverbs", 19,
+    [ 3, 21 ] ],
+   [
+    "Proverbs", 20,
+    [ 5, 9 ] ],
+   [
+    "Proverbs", 21,
+    [ 1, 4 ] ],
+   [
+    "Proverbs", 22,
+    [ 11, 15, 17 ] ],
+   [
+    "Proverbs", 23,
+    [ 7, 12, 15, 17, 19, 26, 33 ] ],
+   [
+    "Proverbs", 24,
+    [ 2, 12, 17 ] ],
+   [
+    "Proverbs", 25,
+    [ 3, 20 ] ],
+   [
+    "Proverbs", 26,
+    [ 23, 25 ] ],
+   [
+    "Proverbs", 27,
+    [ 9, 11, 19 ] ],
+   [
+    "Proverbs", 28,
+    [ 14, 25, 26 ] ],
+   [
+    "Proverbs", 31,
+    [ 11 ] ] ]
+ },
+ {
+  "id": "tongue",
+  "kind": "term",
+  "name": "Tongue and lips",
+  "refs": [
+   [
+    "Proverbs", 4,
+    [ 24 ] ],
+   [
+    "Proverbs", 5,
+    [ 2, 3 ] ],
+   [
+    "Proverbs", 6,
+    [ 17, 24 ] ],
+   [
+    "Proverbs", 7,
+    [ 21 ] ],
+   [
+    "Proverbs", 8,
+    [ 6, 7 ] ],
+   [
+    "Proverbs", 10,
+    [ 13, 18, 19, 20, 21, 31, 32 ] ],
+   [
+    "Proverbs", 12,
+    [ 13, 18, 19, 22 ] ],
+   [
+    "Proverbs", 13,
+    [ 3 ] ],
+   [
+    "Proverbs", 14,
+    [ 3, 7, 23 ] ],
+   [
+    "Proverbs", 15,
+    [ 2, 4, 7 ] ],
+   [
+    "Proverbs", 16,
+    [ 1, 10, 13, 21, 23, 27, 30 ] ],
+   [
+    "Proverbs", 17,
+    [ 4, 7, 20, 28 ] ],
+   [
+    "Proverbs", 18,
+    [ 6, 7, 20, 21 ] ],
+   [
+    "Proverbs", 19,
+    [ 1 ] ],
+   [
+    "Proverbs", 20,
+    [ 15, 19 ] ],
+   [
+    "Proverbs", 21,
+    [ 6, 23 ] ],
+   [
+    "Proverbs", 22,
+    [ 11, 18 ] ],
+   [
+    "Proverbs", 23,
+    [ 16 ] ],
+   [
+    "Proverbs", 24,
+    [ 2, 26, 28 ] ],
+   [
+    "Proverbs", 25,
+    [ 15, 23 ] ],
+   [
+    "Proverbs", 26,
+    [ 23, 24, 28 ] ],
+   [
+    "Proverbs", 27,
+    [ 2 ] ],
+   [
+    "Proverbs", 28,
+    [ 23 ] ],
+   [
+    "Proverbs", 31,
+    [ 26 ] ] ]
+ },
+ {
+  "id": "anger",
+  "kind": "term",
+  "name": "Anger, wrath",
+  "refs": [
+   [
+    "Proverbs", 11,
+    [ 4, 23 ] ],
+   [
+    "Proverbs", 12,
+    [ 16 ] ],
+   [
+    "Proverbs", 14,
+    [ 17, 29, 35 ] ],
+   [
+    "Proverbs", 15,
+    [ 1, 18 ] ],
+   [
+    "Proverbs", 16,
+    [ 14, 32 ] ],
+   [
+    "Proverbs", 19,
+    [ 11, 12, 19 ] ],
+   [
+    "Proverbs", 20,
+    [ 2 ] ],
+   [
+    "Proverbs", 21,
+    [ 14, 19, 24 ] ],
+   [
+    "Proverbs", 22,
+    [ 8, 24 ] ],
+   [
+    "Proverbs", 24,
+    [ 18 ] ],
+   [
+    "Proverbs", 25,
+    [ 23 ] ],
+   [
+    "Proverbs", 27,
+    [ 3, 4 ] ],
+   [
+    "Proverbs", 29,
+    [ 8, 22 ] ],
+   [
+    "Proverbs", 30,
+    [ 33 ] ] ]
+ },
+ {
+  "id": "pride",
+  "kind": "term",
+  "name": "Pride",
+  "refs": [
+   [
+    "Proverbs", 6,
+    [ 17 ] ],
+   [
+    "Proverbs", 8,
+    [ 13 ] ],
+   [
+    "Proverbs", 11,
+    [ 2 ] ],
+   [
+    "Proverbs", 13,
+    [ 10 ] ],
+   [
+    "Proverbs", 14,
+    [ 3 ] ],
+   [
+    "Proverbs", 15,
+    [ 25 ] ],
+   [
+    "Proverbs", 16,
+    [ 5, 18, 19 ] ],
+   [
+    "Proverbs", 18,
+    [ 12 ] ],
+   [
+    "Proverbs", 21,
+    [ 4, 24 ] ],
+   [
+    "Proverbs", 28,
+    [ 25 ] ],
+   [
+    "Proverbs", 29,
+    [ 23 ] ] ]
+ },
+ {
+  "id": "humility",
+  "kind": "term",
+  "name": "Humility",
+  "refs": [
+   [
+    "Proverbs", 6,
+    [ 3 ] ],
+   [
+    "Proverbs", 15,
+    [ 33 ] ],
+   [
+    "Proverbs", 16,
+    [ 19 ] ],
+   [
+    "Proverbs", 18,
+    [ 12 ] ],
+   [
+    "Proverbs", 22,
+    [ 4 ] ],
+   [
+    "Proverbs", 29,
+    [ 23 ] ] ]
+ },
+ {
+  "id": "diligent",
+  "kind": "term",
+  "name": "Diligent",
+  "refs": [
+   [
+    "Proverbs", 10,
+    [ 4 ] ],
+   [
+    "Proverbs", 12,
+    [ 24, 27 ] ],
+   [
+    "Proverbs", 13,
+    [ 4 ] ],
+   [
+    "Proverbs", 21,
+    [ 5 ] ],
+   [
+    "Proverbs", 22,
+    [ 29 ] ],
+   [
+    "Proverbs", 27,
+    [ 23 ] ] ]
+ },
+ {
+  "id": "strong-drink",
+  "kind": "term",
+  "name": "Strong drink, drunkenness",
+  "refs": [
+   [
+    "Proverbs", 20,
+    [ 1 ] ],
+   [
+    "Proverbs", 23,
+    [ 21 ] ],
+   [
+    "Proverbs", 26,
+    [ 9 ] ],
+   [
+    "Proverbs", 31,
+    [ 4, 6 ] ] ]
+ },
+ {
+  "id": "reproof",
+  "kind": "term",
+  "name": "Reproof, correction",
+  "refs": [
+   [
+    "Proverbs", 1,
+    [ 23, 25, 30 ] ],
+   [
+    "Proverbs", 3,
+    [ 11 ] ],
+   [
+    "Proverbs", 5,
+    [ 12 ] ],
+   [
+    "Proverbs", 6,
+    [ 23 ] ],
+   [
+    "Proverbs", 7,
+    [ 22 ] ],
+   [
+    "Proverbs", 9,
+    [ 8 ] ],
+   [
+    "Proverbs", 10,
+    [ 17 ] ],
+   [
+    "Proverbs", 12,
+    [ 1 ] ],
+   [
+    "Proverbs", 13,
+    [ 1, 8, 18 ] ],
+   [
+    "Proverbs", 15,
+    [ 5, 10, 31, 32 ] ],
+   [
+    "Proverbs", 17,
+    [ 10 ] ],
+   [
+    "Proverbs", 22,
+    [ 15 ] ],
+   [
+    "Proverbs", 23,
+    [ 13 ] ],
+   [
+    "Proverbs", 24,
+    [ 25 ] ],
+   [
+    "Proverbs", 27,
+    [ 5 ] ],
+   [
+    "Proverbs", 29,
+    [ 15 ] ] ]
+ },
+ {
+  "id": "friend",
+  "kind": "term",
+  "name": "Friend",
+  "refs": [
+   [
+    "Proverbs", 6,
+    [ 1, 3 ] ],
+   [
+    "Proverbs", 14,
+    [ 20 ] ],
+   [
+    "Proverbs", 16,
+    [ 28 ] ],
+   [
+    "Proverbs", 17,
+    [ 9, 17, 18 ] ],
+   [
+    "Proverbs", 18,
+    [ 24 ] ],
+   [
+    "Proverbs", 19,
+    [ 4, 6, 7 ] ],
+   [
+    "Proverbs", 22,
+    [ 11 ] ],
+   [
+    "Proverbs", 27,
+    [ 6, 9, 10, 14, 17 ] ] ]
+ },
+ {
+  "id": "abomination",
+  "kind": "term",
+  "name": "Abomination",
+  "refs": [
+   [
+    "Proverbs", 3,
+    [ 32 ] ],
+   [
+    "Proverbs", 6,
+    [ 16 ] ],
+   [
+    "Proverbs", 8,
+    [ 7 ] ],
+   [
+    "Proverbs", 11,
+    [ 1, 20 ] ],
+   [
+    "Proverbs", 12,
+    [ 22 ] ],
+   [
+    "Proverbs", 13,
+    [ 19 ] ],
+   [
+    "Proverbs", 15,
+    [ 8, 9, 26 ] ],
+   [
+    "Proverbs", 16,
+    [ 5, 12 ] ],
+   [
+    "Proverbs", 17,
+    [ 15 ] ],
+   [
+    "Proverbs", 20,
+    [ 10, 23 ] ],
+   [
+    "Proverbs", 21,
+    [ 27 ] ],
+   [
+    "Proverbs", 24,
+    [ 9 ] ],
+   [
+    "Proverbs", 26,
+    [ 25 ] ],
+   [
+    "Proverbs", 28,
+    [ 9 ] ],
+   [
+    "Proverbs", 29,
+    [ 27 ] ] ]
+ },
+ {
+  "id": "adultery",
+  "kind": "term",
+  "name": "Adultery",
+  "refs": [
+   [
+    "Proverbs", 6,
+    [ 26, 32 ] ],
+   [
+    "Proverbs", 30,
+    [ 20 ] ] ]
+ },
+ {
+  "id": "apple-of-the-eye",
+  "kind": "term",
+  "name": "The apple of the eye",
+  "refs": [
+   [
+    "Proverbs", 7,
+    [ 2 ] ] ]
+ },
+ {
+  "id": "backslider",
+  "kind": "term",
+  "name": "Backslider",
+  "refs": [
+   [
+    "Proverbs", 14,
+    [ 14 ] ] ]
+ },
+ {
+  "id": "bewray",
+  "kind": "term",
+  "name": "Bewray (give away, betray)",
+  "refs": [
+   [
+    "Proverbs", 27,
+    [ 16 ] ],
+   [
+    "Proverbs", 29,
+    [ 24 ] ] ]
+ },
+ {
+  "id": "buckler",
+  "kind": "term",
+  "name": "Buckler (a shield)",
+  "refs": [
+   [
+    "Proverbs", 2,
+    [ 7 ] ] ]
+ },
+ {
+  "id": "chastening",
+  "kind": "term",
+  "name": "Chastening",
+  "refs": [
+   [
+    "Proverbs", 3,
+    [ 11 ] ],
+   [
+    "Proverbs", 13,
+    [ 24 ] ] ]
+ },
+ {
+  "id": "coals-of-fire",
+  "kind": "term",
+  "name": "Coals of fire",
+  "refs": [
+   [
+    "Proverbs", 25,
+    [ 22 ] ] ]
+ },
+ {
+  "id": "conies",
+  "kind": "term",
+  "name": "Conies (rock badgers)",
+  "refs": [
+   [
+    "Proverbs", 30,
+    [ 26 ] ] ]
+ },
+ {
+  "id": "counsel",
+  "kind": "term",
+  "name": "Counsel, counsellors",
+  "refs": [
+   [
+    "Proverbs", 1,
+    [ 5, 25, 30 ] ],
+   [
+    "Proverbs", 11,
+    [ 14 ] ],
+   [
+    "Proverbs", 12,
+    [ 5, 15, 20 ] ],
+   [
+    "Proverbs", 15,
+    [ 22 ] ],
+   [
+    "Proverbs", 19,
+    [ 20, 21 ] ],
+   [
+    "Proverbs", 20,
+    [ 18 ] ],
+   [
+    "Proverbs", 21,
+    [ 30 ] ],
+   [
+    "Proverbs", 22,
+    [ 20 ] ],
+   [
+    "Proverbs", 24,
+    [ 6 ] ],
+   [
+    "Proverbs", 27,
+    [ 9 ] ] ]
+ },
+ {
+  "id": "discretion",
+  "kind": "term",
+  "name": "Discretion",
+  "refs": [
+   [
+    "Proverbs", 1,
+    [ 4 ] ],
+   [
+    "Proverbs", 2,
+    [ 11 ] ],
+   [
+    "Proverbs", 3,
+    [ 21 ] ],
+   [
+    "Proverbs", 5,
+    [ 2 ] ],
+   [
+    "Proverbs", 11,
+    [ 22 ] ],
+   [
+    "Proverbs", 19,
+    [ 11 ] ] ]
+ },
+ {
+  "id": "dross",
+  "kind": "term",
+  "name": "Dross",
+  "refs": [
+   [
+    "Proverbs", 25,
+    [ 4 ] ],
+   [
+    "Proverbs", 26,
+    [ 23 ] ] ]
+ },
+ {
+  "id": "entice",
+  "kind": "term",
+  "name": "Entice",
+  "refs": [
+   [
+    "Proverbs", 1,
+    [ 10 ] ],
+   [
+    "Proverbs", 16,
+    [ 29 ] ] ]
+ },
+ {
+  "id": "firstfruits",
+  "kind": "term",
+  "name": "Firstfruits",
+  "refs": [
+   [
+    "Proverbs", 3,
+    [ 9 ] ] ]
+ },
+ {
+  "id": "flattery",
+  "kind": "term",
+  "name": "Flattery",
+  "refs": [
+   [
+    "Proverbs", 2,
+    [ 16 ] ],
+   [
+    "Proverbs", 6,
+    [ 24 ] ],
+   [
+    "Proverbs", 7,
+    [ 5, 21 ] ],
+   [
+    "Proverbs", 20,
+    [ 19 ] ],
+   [
+    "Proverbs", 26,
+    [ 28 ] ],
+   [
+    "Proverbs", 28,
+    [ 23 ] ],
+   [
+    "Proverbs", 29,
+    [ 5 ] ] ]
+ },
+ {
+  "id": "fountain-of-life",
+  "kind": "term",
+  "name": "Fountain of life",
+  "refs": [
+   [
+    "Proverbs", 13,
+    [ 14 ] ],
+   [
+    "Proverbs", 14,
+    [ 27 ] ],
+   [
+    "Proverbs", 16,
+    [ 22 ] ] ]
+ },
+ {
+  "id": "froward",
+  "kind": "term",
+  "name": "Froward (crooked, perverse)",
+  "refs": [
+   [
+    "Proverbs", 2,
+    [ 12, 14, 15 ] ],
+   [
+    "Proverbs", 3,
+    [ 32 ] ],
+   [
+    "Proverbs", 4,
+    [ 24 ] ],
+   [
+    "Proverbs", 6,
+    [ 12 ] ],
+   [
+    "Proverbs", 8,
+    [ 8, 13 ] ],
+   [
+    "Proverbs", 10,
+    [ 31, 32 ] ],
+   [
+    "Proverbs", 11,
+    [ 20 ] ],
+   [
+    "Proverbs", 16,
+    [ 28, 30 ] ],
+   [
+    "Proverbs", 17,
+    [ 20 ] ],
+   [
+    "Proverbs", 21,
+    [ 8 ] ],
+   [
+    "Proverbs", 22,
+    [ 5 ] ] ]
+ },
+ {
+  "id": "horseleach",
+  "kind": "term",
+  "name": "Horseleach",
+  "refs": [
+   [
+    "Proverbs", 30,
+    [ 15 ] ] ]
+ },
+ {
+  "id": "landmark",
+  "kind": "term",
+  "name": "Landmark (boundary stone)",
+  "refs": [
+   [
+    "Proverbs", 22,
+    [ 28 ] ],
+   [
+    "Proverbs", 23,
+    [ 10 ] ] ]
+ },
+ {
+  "id": "naughty",
+  "kind": "term",
+  "name": "Naughty (worthless)",
+  "refs": [
+   [
+    "Proverbs", 6,
+    [ 12 ] ],
+   [
+    "Proverbs", 17,
+    [ 4 ] ] ]
+ },
+ {
+  "id": "own-conceit",
+  "kind": "term",
+  "name": "Wise in his own conceit",
+  "refs": [
+   [
+    "Proverbs", 18,
+    [ 11 ] ],
+   [
+    "Proverbs", 26,
+    [ 5, 12, 16 ] ],
+   [
+    "Proverbs", 28,
+    [ 11 ] ] ]
+ },
+ {
+  "id": "ponder",
+  "kind": "term",
+  "name": "Ponder",
+  "refs": [
+   [
+    "Proverbs", 4,
+    [ 26 ] ],
+   [
+    "Proverbs", 5,
+    [ 6, 21 ] ],
+   [
+    "Proverbs", 21,
+    [ 2 ] ],
+   [
+    "Proverbs", 24,
+    [ 12 ] ] ]
+ },
+ {
+  "id": "prudence",
+  "kind": "term",
+  "name": "Prudence, prudent",
+  "refs": [
+   [
+    "Proverbs", 8,
+    [ 12 ] ],
+   [
+    "Proverbs", 12,
+    [ 16, 23 ] ],
+   [
+    "Proverbs", 13,
+    [ 16 ] ],
+   [
+    "Proverbs", 14,
+    [ 8, 15, 18 ] ],
+   [
+    "Proverbs", 15,
+    [ 5 ] ],
+   [
+    "Proverbs", 16,
+    [ 21 ] ],
+   [
+    "Proverbs", 18,
+    [ 15 ] ],
+   [
+    "Proverbs", 19,
+    [ 14 ] ],
+   [
+    "Proverbs", 22,
+    [ 3 ] ],
+   [
+    "Proverbs", 27,
+    [ 12 ] ] ]
+ },
+ {
+  "id": "redeemer",
+  "kind": "term",
+  "name": "Redeemer",
+  "refs": [
+   [
+    "Proverbs", 23,
+    [ 11 ] ] ]
+ },
+ {
+  "id": "reins",
+  "kind": "term",
+  "name": "Reins (the inner man)",
+  "refs": [
+   [
+    "Proverbs", 23,
+    [ 16 ] ] ]
+ },
+ {
+  "id": "respect-of-persons",
+  "kind": "term",
+  "name": "Respect of persons",
+  "refs": [
+   [
+    "Proverbs", 24,
+    [ 23 ] ],
+   [
+    "Proverbs", 28,
+    [ 21 ] ] ]
+ },
+ {
+  "id": "rod",
+  "kind": "term",
+  "name": "The rod",
+  "refs": [
+   [
+    "Proverbs", 10,
+    [ 13 ] ],
+   [
+    "Proverbs", 13,
+    [ 24 ] ],
+   [
+    "Proverbs", 14,
+    [ 3 ] ],
+   [
+    "Proverbs", 22,
+    [ 8, 15 ] ],
+   [
+    "Proverbs", 23,
+    [ 13, 14 ] ],
+   [
+    "Proverbs", 26,
+    [ 3 ] ],
+   [
+    "Proverbs", 29,
+    [ 15 ] ] ]
+ },
+ {
+  "id": "snare",
+  "kind": "term",
+  "name": "Snare",
+  "refs": [
+   [
+    "Proverbs", 6,
+    [ 2 ] ],
+   [
+    "Proverbs", 7,
+    [ 23 ] ],
+   [
+    "Proverbs", 12,
+    [ 13 ] ],
+   [
+    "Proverbs", 13,
+    [ 14 ] ],
+   [
+    "Proverbs", 14,
+    [ 27 ] ],
+   [
+    "Proverbs", 18,
+    [ 7 ] ],
+   [
+    "Proverbs", 20,
+    [ 25 ] ],
+   [
+    "Proverbs", 22,
+    [ 5, 25 ] ],
+   [
+    "Proverbs", 29,
+    [ 6, 8, 25 ] ] ]
+ },
+ {
+  "id": "sound-wisdom",
+  "kind": "term",
+  "name": "Sound wisdom",
+  "refs": [
+   [
+    "Proverbs", 2,
+    [ 7 ] ],
+   [
+    "Proverbs", 3,
+    [ 21 ] ],
+   [
+    "Proverbs", 8,
+    [ 14 ] ] ]
+ },
+ {
+  "id": "strife",
+  "kind": "term",
+  "name": "Strife, contention",
+  "refs": [
+   [
+    "Proverbs", 13,
+    [ 10 ] ],
+   [
+    "Proverbs", 15,
+    [ 18 ] ],
+   [
+    "Proverbs", 16,
+    [ 28 ] ],
+   [
+    "Proverbs", 17,
+    [ 1, 14, 19 ] ],
+   [
+    "Proverbs", 18,
+    [ 6, 18, 19 ] ],
+   [
+    "Proverbs", 19,
+    [ 13 ] ],
+   [
+    "Proverbs", 20,
+    [ 3 ] ],
+   [
+    "Proverbs", 21,
+    [ 19 ] ],
+   [
+    "Proverbs", 22,
+    [ 10 ] ],
+   [
+    "Proverbs", 23,
+    [ 29 ] ],
+   [
+    "Proverbs", 26,
+    [ 17, 20, 21 ] ],
+   [
+    "Proverbs", 27,
+    [ 15 ] ],
+   [
+    "Proverbs", 28,
+    [ 25 ] ],
+   [
+    "Proverbs", 29,
+    [ 22 ] ],
+   [
+    "Proverbs", 30,
+    [ 33 ] ] ]
+ },
+ {
+  "id": "subtilty",
+  "kind": "term",
+  "name": "Subtilty",
+  "refs": [
+   [
+    "Proverbs", 1,
+    [ 4 ] ] ]
+ },
+ {
+  "id": "surety",
+  "kind": "term",
+  "name": "Surety (co-signing a debt)",
+  "refs": [
+   [
+    "Proverbs", 6,
+    [ 1 ] ],
+   [
+    "Proverbs", 11,
+    [ 15 ] ],
+   [
+    "Proverbs", 17,
+    [ 18 ] ],
+   [
+    "Proverbs", 20,
+    [ 16 ] ],
+   [
+    "Proverbs", 22,
+    [ 26 ] ],
+   [
+    "Proverbs", 27,
+    [ 13 ] ] ]
+ },
+ {
+  "id": "talebearer",
+  "kind": "term",
+  "name": "Talebearer, whisperer",
+  "refs": [
+   [
+    "Proverbs", 11,
+    [ 13 ] ],
+   [
+    "Proverbs", 16,
+    [ 28 ] ],
+   [
+    "Proverbs", 18,
+    [ 8 ] ],
+   [
+    "Proverbs", 20,
+    [ 19 ] ],
+   [
+    "Proverbs", 26,
+    [ 20, 22 ] ] ]
+ },
+ {
+  "id": "the-lot",
+  "kind": "term",
+  "name": "The lot (casting lots)",
+  "refs": [
+   [
+    "Proverbs", 1,
+    [ 14 ] ],
+   [
+    "Proverbs", 16,
+    [ 33 ] ],
+   [
+    "Proverbs", 18,
+    [ 18 ] ] ]
+ },
+ {
+  "id": "tree-of-life",
+  "kind": "term",
+  "name": "Tree of life",
+  "refs": [
+   [
+    "Proverbs", 3,
+    [ 18 ] ],
+   [
+    "Proverbs", 11,
+    [ 30 ] ],
+   [
+    "Proverbs", 13,
+    [ 12 ] ],
+   [
+    "Proverbs", 15,
+    [ 4 ] ] ]
+ },
+ {
+  "id": "upright",
+  "kind": "term",
+  "name": "Upright, integrity",
+  "refs": [
+   [
+    "Proverbs", 2,
+    [ 7, 13, 21 ] ],
+   [
+    "Proverbs", 10,
+    [ 9, 29 ] ],
+   [
+    "Proverbs", 11,
+    [ 3, 6, 11, 20 ] ],
+   [
+    "Proverbs", 12,
+    [ 6 ] ],
+   [
+    "Proverbs", 13,
+    [ 6 ] ],
+   [
+    "Proverbs", 14,
+    [ 2, 11 ] ],
+   [
+    "Proverbs", 15,
+    [ 8, 21 ] ],
+   [
+    "Proverbs", 16,
+    [ 17 ] ],
+   [
+    "Proverbs", 19,
+    [ 1 ] ],
+   [
+    "Proverbs", 20,
+    [ 7 ] ],
+   [
+    "Proverbs", 21,
+    [ 18, 29 ] ],
+   [
+    "Proverbs", 28,
+    [ 6, 10, 18 ] ],
+   [
+    "Proverbs", 29,
+    [ 10, 27 ] ] ]
+ },
+ {
+  "id": "usury",
+  "kind": "term",
+  "name": "Usury",
+  "refs": [
+   [
+    "Proverbs", 28,
+    [ 8 ] ] ]
+ },
+ {
+  "id": "virtuous",
+  "kind": "term",
+  "name": "Virtuous",
+  "refs": [
+   [
+    "Proverbs", 12,
+    [ 4 ] ],
+   [
+    "Proverbs", 31,
+    [ 10, 29 ] ] ]
+ },
+ {
+  "id": "vision",
+  "kind": "term",
+  "name": "Vision (revelation)",
+  "refs": [
+   [
+    "Proverbs", 29,
+    [ 18 ] ] ]
+ },
+ {
+  "id": "weights-and-balances",
+  "kind": "term",
+  "name": "Weights and balances",
+  "refs": [
+   [
+    "Proverbs", 11,
+    [ 1 ] ],
+   [
+    "Proverbs", 16,
+    [ 11 ] ],
+   [
+    "Proverbs", 20,
+    [ 10, 23 ] ] ]
+ },
+ {
+  "id": "winebibber",
+  "kind": "term",
+  "name": "Winebibber",
+  "refs": [
+   [
+    "Proverbs", 23,
+    [ 20 ] ] ]
  }
 ];
