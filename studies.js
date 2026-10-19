@@ -9,7 +9,8 @@
 // overview: the chapter overview (chapters only). overview.html shows it on its own,
 //           and strings every chapter's overview together, in order, as the book overview.
 //   where, when: the setting in a phrase each
-//   people:      who is in the chapter
+//   people:      who is in the chapter, as glossary ids (see glossary.js); plain text also works
+//   places:      where it happens, as glossary ids
 //   story:       what happens, 3 to 6 short beats, each ending with its verse range
 //   key:         the one verse to remember, { ref, text } in KJV
 //   big:         the main idea of the chapter in one or two sentences
@@ -28,7 +29,8 @@ window.STUDIES = [
     overview: {
       where: "Before creation, then Bethabara beyond the Jordan",
       when: "In the beginning, then over a few days at the start of Jesus' ministry",
-      people: ["The Word (Jesus)", "John the Baptist", "Priests and Levites", "Andrew", "Simon Peter", "Philip", "Nathanael"],
+      people: ["jesus", "john-the-baptist", "priests-and-levites", "the-jews", "andrew", "simon-peter", "philip", "nathanael"],
+      places: ["bethabara", "jordan", "galilee", "bethsaida", "nazareth"],
       story: [
         "Before anything was made, the Word was with God and was God. He made all things, and His light shines in the darkness (1–5).",
         "The Word was made flesh and lived among us. Everyone who receives Him gets the right to become a child of God (6–18).",
@@ -54,7 +56,8 @@ window.STUDIES = [
     overview: {
       where: "Cana in Galilee, Capernaum, then the temple in Jerusalem",
       when: "Three days after Nathanael met Jesus, then at Passover",
-      people: ["Jesus", "Mary, His mother", "His disciples", "The servants", "The governor of the feast", "Merchants and money changers", "The temple leaders"],
+      people: ["jesus", "mary", "disciples", "servants", "governor-of-the-feast", "bridegroom", "money-changers", "the-jews"],
+      places: ["cana", "galilee", "capernaum", "jerusalem", "temple"],
       story: [
         "At a wedding in Cana the wine runs out. Mary tells the servants, “Whatsoever he saith unto you, do it” (1–5).",
         "Jesus turns six stone jars of water into the best wine of the feast, His first sign, and His disciples believe (6–12).",

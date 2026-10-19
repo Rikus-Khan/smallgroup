@@ -79,6 +79,11 @@ h2 { font-size: clamp(1.8rem, 1.2rem + 2.6vw, 3.2rem); line-height: 1.1; margin-
 .people li { padding: .3em .8em; border: 1px solid var(--line); border-radius: 999px; font-size: clamp(.9rem, .85rem + .3vw, 1.1rem); color: var(--sage); }
 .people-label { color: var(--brass); font-weight: 700; font-size: .95rem; margin-top: 2.2rem; }
 .people-label + .people { margin-top: .6rem; }
+.people-label { margin-top: 1.6rem; }
+.people a { display: block; margin: -.3em -.8em; padding: .3em .8em; border-radius: 999px; color: var(--paper); text-decoration: none; }
+.people a::after { content: " ›"; color: var(--brass); }
+.people li:has(a) { border-color: rgb(209 165 74 / .55); }
+.people a:hover { background: rgb(209 165 74 / .18); }
 
 /* Book overview: intro and "so far" thread */
 .book-intro h1 { font-weight: 300; font-size: clamp(3rem, 1.8rem + 7vw, 7rem); line-height: 1; }
@@ -123,6 +128,7 @@ h2 { font-size: clamp(1.8rem, 1.2rem + 2.6vw, 3.2rem); line-height: 1.1; margin-
 
 <script src="bible.js"></script>
 <script src="studies.js"></script>
+<script src="glossary.js"></script>
 <script>
 // overview.html?id=john-02  → one chapter's overview
 // overview.html?book=John   → book overview: every chapter overview in that book, in order
@@ -130,6 +136,15 @@ const CHAPTER_COUNTS = Object.fromEntries(window.BIBLE_BOOKS || []);
 const params = new URLSearchParams(location.search);
 const all = window.STUDIES || [];
 const esc = s => String(s).replace(/[&<>"]/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
+const glossary = window.GLOSSARY || [];
+
+// People and places are glossary ids: show the entry's name and link to it. Plain text still works.
+function chips(list) {
+  return (list || []).map(p => {
+    const g = glossary.find(e => e.id === p);
+    return g ? `<li><a href="glossary.html#${encodeURIComponent(g.id)}">${esc(g.name)}</a></li>` : `<li>${esc(p)}</li>`;
+  }).join("");
+}
 
 function chapterSlides(s, inBook) {
   const o = s.overview;
@@ -158,7 +173,9 @@ function chapterSlides(s, inBook) {
     <p class="eyebrow rise">The big idea of ${esc(s.title)}</p>
     <p class="big-idea rise" style="--d:1">${esc(o.big)}</p>
     <p class="people-label rise" style="--d:3">Who's in it</p>
-    <ul class="people rise" style="--d:4">${o.people.map(p => `<li>${esc(p)}</li>`).join("")}</ul>
+    <ul class="people rise" style="--d:4">${chips(o.people)}</ul>
+    ${o.places?.length ? `<p class="people-label rise" style="--d:5">Where it happens</p>
+    <ul class="people rise" style="--d:6">${chips(o.places)}</ul>` : ""}
   </div></section>`;
 }
 

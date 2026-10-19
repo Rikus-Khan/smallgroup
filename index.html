@@ -23,6 +23,7 @@
   --concept: #7a6a2e;
   --book: #4a4a6a;
   --wood: #3a2a24;
+  --leather: #24463c;
   --serif: 'Spectral', Georgia, serif;
   --sans: 'Atkinson Hyperlegible', system-ui, sans-serif;
 }
@@ -104,6 +105,8 @@ h1 { font-family: var(--serif); font-weight: 300; font-size: clamp(2.5rem, 1.6re
 .spine.doctrine { background: var(--doctrine); }
 .spine.concept { background: var(--concept); }
 .spine.book { background: var(--book); }
+.spine.ref { background: var(--leather); text-decoration: none; }
+.spine.ref::before, .spine.ref::after { height: 3px; background: rgb(226 190 110 / .8); }
 
 /* The book you pulled off the shelf: it opens into a two-page spread */
 .open-book {
@@ -237,6 +240,7 @@ footer { margin-top: 2rem; color: var(--mist); font-size: .95rem; }
 
 <script src="bible.js"></script>
 <script src="studies.js"></script>
+<script src="glossary.js"></script>
 <script>
 const BIBLE_BOOKS = window.BIBLE_BOOKS;
 const BOOK_INDEX = Object.fromEntries(BIBLE_BOOKS.map(([name], k) => [name, k]));
@@ -303,6 +307,18 @@ function drawShelves() {
       <div class="shelf-head"><h3>Topics, doctrines, and more</h3><ul class="legend">
       ${kinds.map(k => `<li><span style="background:var(--${k})"></span>${KINDS[k].many}</li>`).join("")}</ul></div>
       <div class="shelf">${others.map(s => spine(s.type, s.title, KINDS[s.type].one, "study:" + s.id, 215 + (s.title.length % 5) * 7, 58)).join("")}</div>`;
+  }
+
+  // Reference set: the glossary, one volume per kind of entry
+  const glossary = window.GLOSSARY || [];
+  const volumes = [["person", "People", "people"], ["place", "Places", "places"], ["term", "Words & ideas", "words"]]
+    .filter(([kind]) => glossary.some(e => e.kind === kind));
+  if (volumes.length) {
+    html += `<div class="shelf-gap" style="height:2.6rem"></div>
+      <div class="shelf-head"><h3>Reference</h3><ul class="legend"><li><span style="background:var(--leather)"></span>Glossary</li></ul></div>
+      <div class="shelf">${volumes.map(([kind, label, hash], k) =>
+        `<a class="spine ref${label.length > 9 ? " long" : ""}" href="glossary.html#${hash}" style="height:${236 - k * 4}px;width:64px"
+          aria-label="Glossary: ${esc(label)}, ${glossary.filter(e => e.kind === kind).length} entries">${esc(label)}<small>Glossary</small></a>`).join("")}</div>`;
   }
 
   const root = document.getElementById("shelves");

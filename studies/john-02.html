@@ -773,6 +773,12 @@ const stepsOf = s => [...s.querySelectorAll(".step")];
 function start() {
   slides = [...document.querySelectorAll(".slide")];
   turnAt = slides.findIndex(s => s.classList.contains("turn"));
+  // #v15 opens the slide that reads verse 15 (used by the glossary)
+  const verse = location.hash.match(/^#v(\d+)$/);
+  if (verse) {
+    const at = slides.findIndex(s => s.dataset.v && range(s.dataset.v).includes(Number(verse[1])));
+    if (at >= 0) return go(at);
+  }
   const fromHash = parseInt(location.hash.slice(1), 10);
   go(Number.isFinite(fromHash) ? Math.min(Math.max(fromHash - 1, 0), slides.length - 1) : 0);
 }

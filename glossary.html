@@ -1,0 +1,173 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Glossary</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:wght@400;700&family=Spectral:ital,wght@0,300;0,400;0,600;1,400&display=swap" rel="stylesheet">
+<style>
+:root {
+  --night: #0d1030;
+  --dusk: #4c2747;
+  --mist: #aeadcb;
+  --flame-hot: #ffe2a3;
+  --paper: #f3ead6;
+  --paper-2: #e6dbc2;
+  --ink: #2a2320;
+  --ink-soft: #6b5d52;
+  --ribbon: #8b1e2b;
+  --leather: #24463c;
+  --serif: 'Spectral', Georgia, serif;
+  --sans: 'Atkinson Hyperlegible', system-ui, sans-serif;
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0; min-height: 100vh; font-family: var(--sans); color: var(--ink);
+  background: linear-gradient(180deg, var(--night), var(--dusk)); background-attachment: fixed;
+  -webkit-font-smoothing: antialiased;
+}
+a { color: inherit; }
+:focus-visible { outline: 2px solid var(--ribbon); outline-offset: 2px; }
+
+.top { width: min(100% - 24px, 66rem); margin: 0 auto; padding: 18px 0 12px; }
+.top a { color: var(--mist); text-decoration: none; font-weight: 700; }
+.top a:hover { color: var(--flame-hot); }
+
+/* The dictionary: a leather cover with a paper page inside */
+.book { width: min(100% - 24px, 66rem); margin: 0 auto 48px; padding: 10px; border-radius: 8px; background: var(--leather); box-shadow: 0 24px 40px -18px rgb(0 0 0 / .7); }
+.sheet { background: var(--paper); border-radius: 4px; padding: clamp(20px, 4vw, 48px) clamp(16px, 4vw, 52px) 40px; box-shadow: 0 2px 0 #e3d7bd, 0 4px 0 #d5c7aa; }
+h1 { font-family: var(--serif); font-weight: 300; font-size: clamp(2.6rem, 1.8rem + 4vw, 4.4rem); line-height: 1; margin: 0 0 .2em; }
+.intro { color: var(--ink-soft); font-size: 1.08rem; line-height: 1.5; max-width: 36em; margin: 0 0 1.4rem; }
+
+.search {
+  width: 100%; max-width: 30rem; padding: 12px 14px 12px 42px; border-radius: 10px; border: 1.5px solid var(--paper-2);
+  background: #fff8 url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%236b5d52' stroke-width='2'%3E%3Ccircle cx='11' cy='11' r='7'/%3E%3Cpath d='M20 20l-4-4'/%3E%3C/svg%3E") 13px 50% / 18px no-repeat;
+  font: 1.05rem var(--sans); color: var(--ink);
+}
+.search:focus { border-color: var(--ribbon); outline: none; }
+
+/* Index tabs, like the cut-outs on the edge of a dictionary */
+.tabs { display: flex; flex-wrap: wrap; gap: 6px; margin: 1.4rem 0 0; border-bottom: 2px solid var(--ink); }
+.tabs button {
+  border: 1.5px solid var(--paper-2); border-bottom: 0; border-radius: 8px 8px 0 0; background: var(--paper-2);
+  padding: .55em 1em; font: 700 1rem var(--sans); color: var(--ink-soft); cursor: pointer; margin-bottom: -2px;
+}
+.tabs button[aria-selected="true"] { background: var(--ink); border-color: var(--ink); color: var(--paper); }
+.tabs .n { font-weight: 400; opacity: .75; margin-left: .3em; }
+
+.letters { display: flex; flex-wrap: wrap; gap: 4px; margin: .9rem 0 .4rem; }
+.letters a { width: 2rem; height: 2rem; display: grid; place-items: center; border-radius: 6px; text-decoration: none; font: 600 1rem var(--serif); color: var(--ribbon); }
+.letters a:hover { background: rgb(139 30 43 / .1); }
+
+.entries { columns: 1; column-gap: 3rem; margin-top: .6rem; }
+@media (min-width: 820px) { .entries { columns: 2; column-rule: 1px solid var(--paper-2); } }
+.letter-head { font: 300 2.4rem/1 var(--serif); color: var(--ribbon); margin: .6em 0 .2em; break-after: avoid; }
+.entry { break-inside: avoid; padding: .55rem .5rem .65rem; border-radius: 6px; scroll-margin-top: 20px; }
+.entry.hit { background: rgb(139 30 43 / .1); }
+.entry h2 { font: 600 1.3rem/1.25 var(--serif); margin: 0; }
+.entry .kind { font: italic 400 .95rem var(--serif); color: var(--ink-soft); margin-left: .35em; }
+.refs { margin: .25rem 0 0; padding: 0; list-style: none; font-size: 1rem; line-height: 1.7; }
+.refs b { font-weight: 700; margin-right: .3em; }
+.refs a { display: inline-block; min-width: 1.9em; padding: 0 .3em; margin: 0 1px; text-align: center; border-radius: 4px; color: var(--ribbon); font-weight: 700; text-decoration: none; }
+.refs a:hover { background: var(--ribbon); color: var(--paper); }
+.empty { color: var(--ink-soft); padding: 1.5rem 0; }
+.note { margin-top: 2rem; padding-top: 1rem; border-top: 1px solid var(--paper-2); color: var(--ink-soft); font-size: .95rem; line-height: 1.5; }
+</style>
+</head>
+<body>
+<div class="top"><a href="index.html">← All studies</a></div>
+
+<div class="book">
+  <main class="sheet">
+    <h1>Glossary</h1>
+    <p class="intro">The people, places, and words we've come across in our studies, with every verse where each one appears. The lists grow as we study more of the Bible.</p>
+    <input class="search" id="q" type="search" placeholder="Find a name, place, or word" aria-label="Search the glossary">
+    <div class="tabs" role="tablist" id="tabs"></div>
+    <nav class="letters" id="letters" aria-label="Jump to a letter"></nav>
+    <div class="entries" id="entries"></div>
+    <p class="note">Tap a verse number to jump straight to that verse in its study.</p>
+  </main>
+</div>
+
+<script src="studies.js"></script>
+<script src="glossary.js"></script>
+<script>
+const KINDS = [
+  { key: "person", label: "People", one: "person" },
+  { key: "place", label: "Places", one: "place" },
+  { key: "term", label: "Words & ideas", one: "word" }
+];
+const entries = window.GLOSSARY || [];
+const studies = window.STUDIES || [];
+const esc = s => String(s).replace(/[&<>"]/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
+// "The Jordan River" files under J, "“Mine hour”" under M
+const sortKey = name => name.replace(/^[“"']+/, "").replace(/^The\s+/i, "").toLowerCase();
+const studyUrl = (book, ch) => studies.find(s => s.type === "chapter" && s.book === book && s.ch === ch)?.url;
+
+let kind = "person", query = "", focusId = null;
+
+function draw() {
+  const q = query.trim().toLowerCase();
+  // While searching, look across every kind
+  const list = entries
+    .filter(e => q ? e.name.toLowerCase().includes(q) : e.kind === kind)
+    .sort((a, b) => sortKey(a.name).localeCompare(sortKey(b.name)));
+
+  document.getElementById("tabs").innerHTML = KINDS.map(k =>
+    `<button role="tab" type="button" data-kind="${k.key}" aria-selected="${!q && k.key === kind}">${k.label}<span class="n">${entries.filter(e => e.kind === k.key).length}</span></button>`).join("");
+
+  let html = "", letter = "";
+  const letters = [];
+  for (const e of list) {
+    const first = sortKey(e.name)[0].toUpperCase();
+    if (first !== letter) {
+      letter = first; letters.push(letter);
+      html += `<h3 class="letter-head" id="letter-${letter}">${letter}</h3>`;
+    }
+    const kindLabel = KINDS.find(k => k.key === e.kind).one;
+    html += `<article class="entry${e.id === focusId ? " hit" : ""}" id="${esc(e.id)}">
+      <h2>${esc(e.name)}<span class="kind">${q ? kindLabel : ""}</span></h2>
+      <ul class="refs">${e.refs.map(([book, ch, vs]) => {
+        const url = studyUrl(book, ch);
+        return `<li><b>${esc(book)} ${ch}</b>${vs.map(v => url
+          ? `<a href="${esc(url)}#v${v}" aria-label="${esc(book)} ${ch}:${v}">${v}</a>`
+          : `<span>${v}</span>`).join("")}</li>`;
+      }).join("")}</ul>
+    </article>`;
+  }
+  document.getElementById("entries").innerHTML = html || `<p class="empty">Nothing by that name yet. It may show up as we study more chapters.</p>`;
+  document.getElementById("letters").innerHTML = letters.map(l => `<a href="#letter-${l}" aria-label="Letter ${l}">${l}</a>`).join("");
+  document.querySelectorAll("[data-kind]").forEach(b => b.addEventListener("click", () => {
+    kind = b.dataset.kind; query = ""; focusId = null;
+    document.getElementById("q").value = "";
+    history.replaceState(null, "", "#" + ({ person: "people", place: "places", term: "words" })[kind]);
+    draw();
+  }));
+}
+
+document.getElementById("q").addEventListener("input", e => { query = e.target.value; focusId = null; draw(); });
+// Letter links scroll without changing the address bar
+document.getElementById("letters").addEventListener("click", e => {
+  const a = e.target.closest("a");
+  if (!a) return;
+  e.preventDefault();
+  document.querySelector(a.getAttribute("href"))?.scrollIntoView({ behavior: "smooth", block: "start" });
+});
+
+// #people, #places, #words open a tab; #<entry id> opens its tab and points to it
+function fromHash() {
+  const h = decodeURIComponent(location.hash.slice(1));
+  const tab = { people: "person", places: "place", words: "term" }[h];
+  const hit = entries.find(e => e.id === h);
+  if (tab) kind = tab;
+  if (hit) { kind = hit.kind; focusId = hit.id; }
+  draw();
+  if (hit) document.getElementById(hit.id)?.scrollIntoView({ block: "center" });
+}
+window.addEventListener("hashchange", fromHash);
+fromHash();
+</script>
+</body>
+</html>
