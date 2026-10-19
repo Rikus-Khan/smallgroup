@@ -203,12 +203,9 @@ h1 { font-family: var(--serif); font-weight: 300; font-size: clamp(2.5rem, 1.6re
 
 footer { margin-top: 3rem; color: var(--mist); font-size: .95rem; }
 
-/* Title row: the About button reaches out to the right edge of the screen.
+/* Title row: the About button sits at the right edge of the content.
    On a narrow phone it wraps above the title, still on the right. */
-.masthead {
-  display: flex; flex-wrap: wrap-reverse; align-items: center; gap: .6rem 1rem;
-  margin-right: calc((100% - 100vw) / 2 + clamp(16px, 3vw, 32px));
-}
+.masthead { display: flex; flex-wrap: wrap-reverse; align-items: center; gap: .6rem 1rem; }
 .masthead h1 { margin-bottom: 0; }
 .masthead + .intro { margin-top: .3em; }
 .about-btn {
@@ -324,8 +321,8 @@ function drawShelves() {
   if (volumes.length) {
     html += `<div class="shelf-gap" style="height:2.6rem"></div>
       <div class="shelf-head"><h3>Reference</h3><ul class="legend"><li><span style="background:var(--leather)"></span>Glossary</li></ul></div>
-      <div class="shelf">${volumes.map(([kind, label, hash], k) =>
-        `<a class="spine ref${label.length > 9 ? " long" : ""}" href="glossary.html#${hash}" style="height:${236 - k * 4}px;width:64px"
+      <div class="shelf">${volumes.map(([kind, label, hash]) =>
+        `<a class="spine ref${label.length > 9 ? " long" : ""}" href="glossary.html#${hash}" style="height:236px;width:64px"
           aria-label="Glossary: ${esc(label)}, ${glossary.filter(e => e.kind === kind).length} entries">${esc(label)}<small>Glossary</small></a>`).join("")}</div>`;
   }
 
