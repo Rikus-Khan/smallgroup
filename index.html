@@ -201,10 +201,21 @@ h1 { font-family: var(--serif); font-weight: 300; font-size: clamp(2.5rem, 1.6re
 .sheet .about { color: var(--mist); line-height: 1.45; margin: 0; }
 .sheet .close { position: absolute; top: .6rem; right: .8rem; width: 44px; height: 44px; background: none; border: 0; font-size: 1.7rem; color: var(--mist); }
 
-.about { margin-top: 3.5rem; padding-top: 1.8rem; border-top: 1px solid var(--line); max-width: 36rem; }
-.about h2 { font-family: var(--serif); font-weight: 400; font-size: clamp(1.6rem, 1.3rem + 1.2vw, 2.1rem); margin: 0 0 .5em; }
-.about p { font-size: 1.1rem; line-height: 1.6; margin: 0 0 .8em; }
-footer { margin-top: 2rem; color: var(--mist); font-size: .95rem; }
+footer { margin-top: 3rem; color: var(--mist); font-size: .95rem; }
+
+/* Title row: the About button reaches out to the right edge of the screen.
+   On a narrow phone it wraps above the title, still on the right. */
+.masthead {
+  display: flex; flex-wrap: wrap-reverse; align-items: center; gap: .6rem 1rem;
+  margin-right: calc((100% - 100vw) / 2 + clamp(16px, 3vw, 32px));
+}
+.masthead h1 { margin-bottom: 0; }
+.masthead + .intro { margin-top: .3em; }
+.about-btn {
+  margin-left: auto; padding: .5em 1.1em; border-radius: 999px; text-decoration: none; font-weight: 700;
+  border: 1.5px solid rgb(241 230 207 / .35); color: var(--parch);
+}
+.about-btn:hover { border-color: var(--flame); color: var(--flame-hot); }
 
 @media (prefers-reduced-motion: reduce) {
   * { transition-duration: .01ms !important; }
@@ -213,18 +224,15 @@ footer { margin-top: 2rem; color: var(--mist); font-size: .95rem; }
 </head>
 <body>
 <main>
-  <h1>Daily Bible Study</h1>
+  <header class="masthead">
+    <h1>Daily Bible Study</h1>
+    <a class="about-btn" href="about.html">About</a>
+  </header>
   <p class="intro">Pull a book off the shelf to see every chapter we've studied in it.</p>
 
   <section class="newest" id="newest" aria-label="Newest study"></section>
 
   <div id="shelves"></div>
-
-  <section class="about" aria-labelledby="about-title">
-    <h2 id="about-title">About this page</h2>
-    <p>This small page is dedicated to a group of friends who want to study the Bible and grow in God's Word together.</p>
-    <p>Most of the studies are written for a men's Bible study, but everyone is welcome here. Use anything you find, share it with your own group, and copy it freely. It's all free.</p>
-  </section>
 
   <footer>Scripture quotations are from the King James Version.</footer>
 </main>
