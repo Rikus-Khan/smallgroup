@@ -105,16 +105,80 @@ h1 { font-family: var(--serif); font-weight: 300; font-size: clamp(2.5rem, 1.6re
 .spine.concept { background: var(--concept); }
 .spine.book { background: var(--book); }
 
-/* The book you pulled off the shelf */
-.open-book { margin-top: 1.2rem; padding: 1.1rem 1.3rem 1.3rem; background: rgb(255 255 255 / .05); border-top: 3px solid var(--flame); }
-.open-book h4 { font-family: var(--serif); font-weight: 400; font-size: 1.7rem; margin: 0; }
-.open-book .progress { color: var(--mist); margin: .2rem 0 .9rem; }
-.tiles { display: flex; flex-wrap: wrap; gap: 8px; }
-.tile {
-  width: 52px; height: 52px; border-radius: 8px; border: 1.5px solid var(--flame);
-  background: rgb(242 178 76 / .1); font-weight: 700; color: var(--flame-hot); font-size: 1.15rem;
+/* The book you pulled off the shelf: it opens into a two-page spread */
+.open-book {
+  --paper: #f3ead6; --ink: #2a2320; --ink-soft: #6b5d52; --ribbon: #8b1e2b;
+  margin-top: 1.6rem; padding: 10px; border-radius: 8px;
+  background: var(--cover); perspective: 1800px;
+  display: grid; grid-template-columns: 1fr;
+  box-shadow: 0 20px 34px -14px rgb(0 0 0 / .7), inset 0 0 0 1px rgb(255 255 255 / .12);
 }
-.tile:hover { background: var(--flame); color: #1a1230; }
+.open-book.nt { --cover: var(--nt); }
+.open-book.ot { --cover: var(--ot); }
+.page {
+  position: relative; color: var(--ink); padding: 1.6rem 1.5rem 1.8rem;
+  background-color: var(--paper);
+  box-shadow: 0 2px 0 #e3d7bd, 0 4px 0 #d5c7aa;   /* the edges of the pages underneath */
+}
+.page.left {
+  text-align: center; border-radius: 4px 4px 0 0; transform-origin: center bottom;
+  background-image: linear-gradient(to top, rgb(0 0 0 / .13), transparent 10%);
+  animation: open-top .7s cubic-bezier(.2,.7,.2,1) both;
+}
+.page.right {
+  border-radius: 0 0 4px 4px; transform-origin: center top;
+  background-image: linear-gradient(to bottom, rgb(0 0 0 / .13), transparent 10%);
+  animation: open-bottom .7s cubic-bezier(.2,.7,.2,1) both;
+}
+@keyframes open-top { from { transform: rotateX(-70deg); opacity: 0; } }
+@keyframes open-bottom { from { transform: rotateX(70deg); opacity: 0; } }
+@media (min-width: 700px) {
+  .open-book { grid-template-columns: 1fr 1fr; }
+  .page.left { border-radius: 4px 0 0 4px; transform-origin: right center; background-image: linear-gradient(to left, rgb(0 0 0 / .15), transparent 10%); animation-name: open-left; }
+  .page.right { border-radius: 0 4px 4px 0; transform-origin: left center; background-image: linear-gradient(to right, rgb(0 0 0 / .15), transparent 10%); animation-name: open-right; }
+}
+@keyframes open-left { from { transform: rotateY(75deg); opacity: 0; } }
+@keyframes open-right { from { transform: rotateY(-75deg); opacity: 0; } }
+
+/* Left page: the title page */
+.ribbon {
+  position: absolute; top: -10px; right: 1.6rem; width: 22px; height: 86px; background: var(--ribbon);
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 50% 80%, 0 100%);
+}
+.title-page { display: flex; flex-direction: column; align-items: center; justify-content: center; height: 100%; }
+.title-page h4 { font-family: var(--serif); font-weight: 400; font-size: clamp(2.6rem, 2rem + 3vw, 3.8rem); line-height: 1; margin: .1em 0 .25em; }
+.flourish { width: 7rem; height: 1px; background: var(--ink-soft); position: relative; margin: .2rem auto .9rem; }
+.flourish::after { content: ""; position: absolute; left: 50%; top: 50%; width: 7px; height: 7px; background: var(--paper); border: 1px solid var(--ink-soft); transform: translate(-50%, -50%) rotate(45deg); }
+.title-page .progress { color: var(--ink-soft); margin: 0 0 .7rem; }
+.marks { display: flex; flex-wrap: wrap; justify-content: center; gap: 3px; max-width: 16rem; margin: 0 auto 1.3rem; }
+.marks i { width: 9px; height: 14px; border-radius: 1px; background: rgb(42 35 32 / .14); }
+.marks i.done { background: var(--ribbon); }
+.marks-bar { width: 14rem; max-width: 100%; height: 8px; border-radius: 4px; background: rgb(42 35 32 / .14); margin: 0 auto 1.3rem; overflow: hidden; }
+.marks-bar i { display: block; height: 100%; background: var(--ribbon); }
+.ink-btn {
+  display: inline-block; padding: .55em 1.1em; border-radius: 999px; text-decoration: none; font-weight: 700;
+  border: 1.5px solid var(--ink); color: var(--ink);
+}
+.ink-btn:hover { background: var(--ink); color: var(--paper); }
+
+/* Right page: the table of contents */
+.page h5 { font-family: var(--serif); font-style: italic; font-weight: 400; font-size: 1.6rem; text-align: center; margin: 0 0 .8rem; }
+.toc { list-style: none; margin: 0; padding: 0; }
+.toc button {
+  width: 100%; display: flex; align-items: baseline; gap: .55rem; text-align: left;
+  padding: .6rem .35rem; border: 0; border-radius: 4px; background: none; color: var(--ink);
+  font-family: var(--serif); font-size: 1.15rem; line-height: 1.3;
+}
+.toc button:hover { background: rgb(139 30 43 / .08); }
+.toc .num { flex: none; min-width: 1.4em; font-weight: 600; color: var(--ribbon); }
+.toc .t { flex: 0 1 auto; font-style: italic; }
+.toc .lead { flex: 1 1 1.5rem; border-bottom: 2px dotted rgb(42 35 32 / .35); transform: translateY(-.28em); }
+.toc .go { flex: none; font-family: var(--sans); font-size: .9rem; font-weight: 700; color: var(--ribbon); }
+.open-book :focus-visible { outline-color: var(--ribbon); }
+
+@media (prefers-reduced-motion: reduce) {
+  .page { animation: none !important; }
+}
 
 /* Study details sheet */
 .sheet-bg { position: fixed; inset: 0; background: rgb(5 6 20 / .6); z-index: 9; opacity: 0; pointer-events: none; transition: opacity .25s; }
@@ -248,11 +312,26 @@ function drawShelves() {
 function drawOpenBook(book) {
   const chs = studies.filter(s => s.type === "chapter" && s.book === book).sort((a, b) => a.ch - b.ch);
   const hasOverview = chs.some(c => c.overview);
-  return `<div class="open-book" id="open-book">
-    <h4>${esc(book)}</h4>
-    <p class="progress">${chs.length} of ${CHAPTERS[book]} chapters studied so far</p>
-    <div class="tiles">${chs.map(c => `<button class="tile" type="button" data-study="${esc(c.id)}" aria-label="${esc(c.title)}">${c.ch}</button>`).join("")}</div>
-    ${hasOverview ? `<div class="btns"><a class="btn" href="overview.html?book=${encodeURIComponent(book)}">${esc(book)} overview</a></div>` : ""}
+  const done = new Set(chs.map(c => c.ch));
+  return `<div class="open-book ${BOOK_INDEX[book] >= FIRST_NT ? "nt" : "ot"}" id="open-book">
+    <div class="page left">
+      <span class="ribbon" aria-hidden="true"></span>
+      <div class="title-page">
+        <h4>${esc(book)}</h4>
+        <div class="flourish" aria-hidden="true"></div>
+        <p class="progress">${chs.length} of ${CHAPTERS[book]} chapters studied so far</p>
+        ${CHAPTERS[book] <= 52
+          ? `<div class="marks" aria-hidden="true">${Array.from({ length: CHAPTERS[book] }, (_, k) => `<i class="${done.has(k + 1) ? "done" : ""}"></i>`).join("")}</div>`
+          : `<div class="marks-bar" aria-hidden="true"><i style="width:${Math.max(2, chs.length / CHAPTERS[book] * 100)}%"></i></div>`}
+        ${hasOverview ? `<a class="ink-btn" href="overview.html?book=${encodeURIComponent(book)}">Book overview</a>` : ""}
+      </div>
+    </div>
+    <div class="page right">
+      <h5>Contents</h5>
+      <ol class="toc">${chs.map(c => `<li><button type="button" data-study="${esc(c.id)}" aria-label="${esc(c.title)}: ${esc(c.sub)}">
+        <span class="num">${c.ch}</span><span class="t">${esc(c.sub)}</span><span class="lead" aria-hidden="true"></span><span class="go" aria-hidden="true">Open</span>
+      </button></li>`).join("")}</ol>
+    </div>
   </div>`;
 }
 
