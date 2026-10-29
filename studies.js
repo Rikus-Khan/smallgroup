@@ -2626,6 +2626,244 @@ window.STUDIES = [
     }
   },
   {
+    "id": "hosea-10",
+    "type": "chapter",
+    "book": "Hosea",
+    "ch": 10,
+    "date": "2026-10-29",
+    "title": "Hosea 10",
+    "sub": "Break up your fallow ground",
+    "about": "The richer Israel got, the more idols it built. Now its golden calf will be hauled off to Assyria. But God still says: it is time to seek the LORD.",
+    "tags": [
+      "A divided heart",
+      "False trust",
+      "Sowing and reaping",
+      "Seeking God",
+      "God's discipline"
+    ],
+    "url": "studies/hosea-10.html",
+    "overview": {
+      "where": "The northern kingdom of Israel (Ephraim): Samaria, Bethel (Beth-aven), and its farmland",
+      "when": "About 730–722 BC, in Israel's last years before Assyria took Samaria",
+      "people": [
+        "the-lord",
+        "jacob",
+        "jareb",
+        "shalman"
+      ],
+      "places": [
+        "israel",
+        "ephraim-kingdom",
+        "samaria",
+        "beth-aven",
+        "bethel",
+        "assyria",
+        "gibeah",
+        "beth-arbel",
+        "judah"
+      ],
+      "story": [
+        "Israel is an empty vine: the more God blessed it, the more altars and images it built. Their heart is divided (1–2).",
+        "Kings come and go, oaths are broken, and judgment springs up like hemlock in a plowed field (3–4).",
+        "The golden calf of Beth-aven will be carried to Assyria as a gift for king Jareb. Men will beg the hills, “Cover us” (5–8).",
+        "Israel has sinned since the days of Gibeah, and God will chastise them. Ephraim, the heifer who loved the easy work, will be put to the plow (9–11).",
+        "“Sow to yourselves in righteousness, reap in mercy; break up your fallow ground: for it is time to seek the LORD” (12).",
+        "They plowed wickedness and reaped iniquity. War is coming, and Israel's king will be cut off (13–15)."
+      ],
+      "key": {
+        "ref": "Hosea 10:12",
+        "text": "Sow to yourselves in righteousness, reap in mercy; break up your fallow ground: for it is time to seek the LORD, till he come and rain righteousness upon you."
+      },
+      "big": "What we sow comes up. A heart split between God and idols ends up empty, but even a field gone hard can be broken open. It is time to seek the LORD, and He sends mercy and righteousness like rain."
+    }
+  },
+  {
+    "id": "hosea-11",
+    "type": "chapter",
+    "book": "Hosea",
+    "ch": 11,
+    "date": "2026-10-29",
+    "title": "Hosea 11",
+    "sub": "How shall I give thee up?",
+    "about": "God remembers Israel as a little boy He taught to walk. The boy ran off. But the Father's heart will not let him go.",
+    "tags": [
+      "A Father's love",
+      "Christ in Hosea",
+      "Backsliding",
+      "Mercy",
+      "Coming home"
+    ],
+    "url": "studies/hosea-11.html",
+    "overview": {
+      "where": "The northern kingdom of Israel (Ephraim), with Egypt and Assyria on either side",
+      "when": "About 730–722 BC, before Samaria fell to Assyria; looking back to the exodus from Egypt",
+      "people": [
+        "the-lord",
+        "baal"
+      ],
+      "places": [
+        "israel",
+        "ephraim-kingdom",
+        "egypt",
+        "assyria",
+        "admah-and-zeboim",
+        "judah"
+      ],
+      "story": [
+        "“When Israel was a child, then I loved him, and called my son out of Egypt.” But the more God called, the further they went, to the Baals (1–2).",
+        "God taught Ephraim to walk, held them by the arms, healed them, and drew them with cords of love (3–4).",
+        "They refused to return, so Assyria will rule them. God's people are bent to backsliding (5–7).",
+        "“How shall I give thee up, Ephraim?” God will not destroy them like Admah and Zeboim: “for I am God, and not man” (8–9).",
+        "The LORD will roar like a lion, and His children will come trembling home from Egypt and Assyria (10–11).",
+        "Ephraim surrounds God with lies, while Judah still rules with God (12)."
+      ],
+      "key": {
+        "ref": "Hosea 11:8",
+        "text": "How shall I give thee up, Ephraim? how shall I deliver thee, Israel? how shall I make thee as Admah? how shall I set thee as Zeboim? mine heart is turned within me, my repentings are kindled together."
+      },
+      "big": "God loves like a father. Israel kept running, and judgment was real, but His mercy is greater because He is God and not man. Matthew shows that Hosea 11:1 is fulfilled in Jesus, the Son who walked Israel's road without failing."
+    }
+  },
+  {
+    "id": "hosea-12",
+    "type": "chapter",
+    "book": "Hosea",
+    "ch": 12,
+    "date": "2026-10-29",
+    "title": "Hosea 12",
+    "sub": "Turn thou to thy God",
+    "about": "Ephraim chases the wind and cheats on the scales. God points them back to their father Jacob: a schemer who wept, held on, and came out changed.",
+    "tags": [
+      "Chasing wind",
+      "Jacob's story",
+      "Turning back",
+      "Honest dealing",
+      "God speaks"
+    ],
+    "url": "studies/hosea-12.html",
+    "overview": {
+      "where": "The northern kingdom of Israel (Ephraim), with a look back at Jacob's life at Bethel, in Syria, and at Israel's exodus from Egypt",
+      "when": "About 730–722 BC, before Samaria fell to Assyria",
+      "people": [
+        "the-lord",
+        "jacob"
+      ],
+      "places": [
+        "ephraim-kingdom",
+        "judah",
+        "assyria",
+        "egypt",
+        "bethel",
+        "gilead",
+        "gilgal",
+        "syria"
+      ],
+      "story": [
+        "Ephraim feeds on wind, making a covenant with Assyria while sending oil to Egypt. The LORD has a case against Judah too (1–2).",
+        "Remember Jacob: he grabbed his brother's heel, wrestled with the angel, wept, and begged for a blessing; God met him at Bethel (3–5).",
+        "“Therefore turn thou to thy God: keep mercy and judgment, and wait on thy God continually” (6).",
+        "Ephraim cheats with false balances and says, “I am become rich.” God will put them back in tents, as in the wilderness (7–9).",
+        "God spoke by the prophets, but Gilead and Gilgal are full of idols. Jacob kept sheep for a wife; by a prophet God brought Israel out of Egypt (10–13).",
+        "Ephraim has provoked God bitterly, and its guilt will come back on it (14)."
+      ],
+      "key": {
+        "ref": "Hosea 12:6",
+        "text": "Therefore turn thou to thy God: keep mercy and judgment, and wait on thy God continually."
+      },
+      "big": "Schemes and double deals are wind: they never fill a man. Jacob was changed when he held on to God and asked for a blessing. God asks His people to turn, deal fairly, and keep waiting on Him."
+    }
+  },
+  {
+    "id": "hosea-13",
+    "type": "chapter",
+    "book": "Hosea",
+    "ch": 13,
+    "date": "2026-10-29",
+    "title": "Hosea 13",
+    "sub": "O death, I will be thy plagues",
+    "about": "Israel forgot the God who fed them in the desert. Judgment is coming like a lion. And right in the middle of it, God makes a promise bigger than death.",
+    "tags": [
+      "Forgetting God",
+      "Idols",
+      "Our help",
+      "God's patience",
+      "Victory over death"
+    ],
+    "url": "studies/hosea-13.html",
+    "overview": {
+      "where": "The northern kingdom of Israel (Ephraim) and its capital, Samaria",
+      "when": "About 725–722 BC, just before Assyria took Samaria",
+      "people": [
+        "the-lord",
+        "baal"
+      ],
+      "places": [
+        "ephraim-kingdom",
+        "israel",
+        "egypt",
+        "wilderness",
+        "samaria"
+      ],
+      "story": [
+        "Ephraim was once respected, but turned to Baal and died. Men melt down silver into idols and kiss the calves (1–2).",
+        "So they will pass away like morning cloud, early dew, chaff, and smoke (3).",
+        "God fed them in the wilderness, but when they were filled, they grew proud and forgot Him. There is no saviour beside Him (4–6).",
+        "Now He will meet them like a lion, a leopard, and a bear robbed of her cubs (7–8).",
+        "“O Israel, thou hast destroyed thyself; but in me is thine help.” Their kings could not save them, and their sin is stored up (9–13).",
+        "“I will ransom them from the power of the grave … O death, I will be thy plagues.” But Samaria will fall to the sword (14–16)."
+      ],
+      "key": {
+        "ref": "Hosea 13:9",
+        "text": "O Israel, thou hast destroyed thyself; but in me is thine help."
+      },
+      "big": "Full men forget God, and idols always fail. Israel destroyed itself, yet God was still its help. In the darkest chapter God promises to ransom His people from death, and Paul shows that Jesus kept that promise when He rose (1 Corinthians 15:55)."
+    }
+  },
+  {
+    "id": "hosea-14",
+    "type": "chapter",
+    "book": "Hosea",
+    "ch": 14,
+    "date": "2026-10-29",
+    "title": "Hosea 14",
+    "sub": "I will heal their backsliding",
+    "about": "Hosea's last chapter is an invitation: come home, bring honest words instead of offerings, and find a God who loves freely.",
+    "tags": [
+      "Returning",
+      "Confession",
+      "Free love",
+      "New growth",
+      "Wisdom"
+    ],
+    "url": "studies/hosea-14.html",
+    "overview": {
+      "where": "The northern kingdom of Israel (Ephraim), pictured as a garden growing again like Lebanon",
+      "when": "About 725–722 BC, Hosea's closing call before the fall of Samaria",
+      "people": [
+        "the-lord"
+      ],
+      "places": [
+        "israel",
+        "ephraim-kingdom",
+        "assyria",
+        "lebanon"
+      ],
+      "story": [
+        "“O Israel, return unto the LORD thy God.” God gives them the words: “Take away all iniquity, and receive us graciously” (1–2).",
+        "They will no longer trust Assyria, horses, or idols: “in thee the fatherless findeth mercy” (3).",
+        "“I will heal their backsliding, I will love them freely” (4).",
+        "God will be as the dew. Israel will grow like the lily, with roots like Lebanon, and others will rest in its shade (5–7).",
+        "Ephraim says, “What have I to do any more with idols?” God answers, “From me is thy fruit found” (8).",
+        "Who is wise? The ways of the LORD are right: the just walk in them, and transgressors fall (9)."
+      ],
+      "key": {
+        "ref": "Hosea 14:4",
+        "text": "I will heal their backsliding, I will love them freely: for mine anger is turned away from him."
+      },
+      "big": "However far a man has fallen, the way back is the same: return to the LORD with honest words. God heals backsliding and loves freely, and the life He grows lasts. The God of Hosea goes after His people and brings them home."
+    }
+  },
+  {
     "id": "joel-01",
     "type": "chapter",
     "book": "Joel",

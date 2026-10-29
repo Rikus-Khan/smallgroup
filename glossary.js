@@ -693,7 +693,82 @@ window.GLOSSARY = [
     [ 9 ] ],
    [
     "Proverbs", 31,
-    [ 30 ] ] ]
+    [ 30 ] ],
+   [
+    "Hosea", 1,
+    [ 1, 2, 4, 7 ] ],
+   [
+    "Hosea", 2,
+    [ 13, 16, 20, 21 ] ],
+   [
+    "Hosea", 3,
+    [ 1, 5 ] ],
+   [
+    "Hosea", 4,
+    [ 1, 10, 15, 16 ] ],
+   [
+    "Hosea", 5,
+    [ 4, 6, 7 ] ],
+   [
+    "Hosea", 6,
+    [ 1, 3 ] ],
+   [
+    "Hosea", 7,
+    [ 10 ] ],
+   [
+    "Hosea", 8,
+    [ 1, 13 ] ],
+   [
+    "Hosea", 9,
+    [ 3, 4, 5, 14 ] ],
+   [
+    "Hosea", 10,
+    [ 3, 12 ] ],
+   [
+    "Hosea", 11,
+    [ 10, 11 ] ],
+   [
+    "Hosea", 12,
+    [ 2, 5, 9, 13 ] ],
+   [
+    "Hosea", 13,
+    [ 4, 15 ] ],
+   [
+    "Hosea", 14,
+    [ 1, 2, 9 ] ],
+   [
+    "Joel", 1,
+    [ 1, 9, 14, 15, 19 ] ],
+   [
+    "Joel", 2,
+    [ 1, 11, 12, 13, 14, 17, 18, 19, 21, 23, 26, 27, 31, 32 ] ],
+   [
+    "Joel", 3,
+    [ 8, 11, 14, 16, 17, 18, 21 ] ],
+   [
+    "Amos", 1,
+    [ 2, 3, 5, 6, 9, 11, 13, 15 ] ],
+   [
+    "Amos", 2,
+    [ 1, 3, 4, 6, 11, 16 ] ],
+   [
+    "Amos", 3,
+    [ 1, 6, 10, 12, 15 ] ],
+   [
+    "Amos", 5,
+    [ 4, 6, 8, 14, 15, 16, 17, 18, 20, 27 ] ],
+   [
+    "Amos", 6,
+    [ 8, 10, 11, 14 ] ],
+   [
+    "Amos", 7,
+    [ 3, 6, 8, 15, 16, 17 ] ],
+   [
+    "Amos", 8,
+    [ 2, 7, 11, 12 ] ],
+   [
+    "Amos", 9,
+    [ 1, 6, 7, 8, 12, 13, 15 ] ] ]
  },
  {
   "id": "jakeh",
@@ -997,6 +1072,9 @@ window.GLOSSARY = [
    [
     "Amos", 2,
     [ 6, 11 ] ],
+   [
+    "Amos", 3,
+    [ 1, 12, 14 ] ],
    [
     "Amos", 5,
     [ 1, 2, 3, 4, 25 ] ],
@@ -3807,7 +3885,10 @@ window.GLOSSARY = [
     [ 1 ] ],
    [
     "Hosea", 9,
-    [ 8 ] ] ]
+    [ 8 ] ],
+   [
+    "Amos", 3,
+    [ 5 ] ] ]
  },
  {
   "id": "sound-wisdom",
@@ -5228,6 +5309,9 @@ window.GLOSSARY = [
     "Hosea", 12,
     [ 2, 12 ] ],
    [
+    "Amos", 3,
+    [ 13 ] ],
+   [
     "Amos", 6,
     [ 8 ] ],
    [
@@ -5278,6 +5362,9 @@ window.GLOSSARY = [
    [
     "Hosea", 13,
     [ 16 ] ],
+   [
+    "Amos", 3,
+    [ 9, 12 ] ],
    [
     "Amos", 6,
     [ 1 ] ],
@@ -6834,7 +6921,10 @@ window.GLOSSARY = [
     [ 1, 15 ] ],
    [
     "Amos", 2,
-    [ 2 ] ] ]
+    [ 2 ] ],
+   [
+    "Amos", 3,
+    [ 6 ] ] ]
  },
  {
   "id": "rend-your-heart",
@@ -7111,6 +7201,9 @@ window.GLOSSARY = [
    [
     "Amos", 2,
     [ 10 ] ],
+   [
+    "Amos", 3,
+    [ 1, 9 ] ],
    [
     "Amos", 8,
     [ 8 ] ],
@@ -7551,6 +7644,9 @@ window.GLOSSARY = [
     [ 8 ] ],
    [
     "Hosea", 10,
+    [ 5, 8 ] ],
+   [
+    "Amos", 1,
     [ 5 ] ] ]
  },
  {
@@ -7561,5 +7657,479 @@ window.GLOSSARY = [
    [
     "Hosea", 4,
     [ 12 ] ] ]
+ },
+ {
+  "id": "jareb",
+  "kind": "person",
+  "name": "King Jareb (a nickname for Assyria's king)",
+  "refs": [
+   [
+    "Hosea", 5,
+    [ 13 ] ],
+   [
+    "Hosea", 10,
+    [ 6 ] ] ]
+ },
+ {
+  "id": "shalman",
+  "kind": "person",
+  "name": "Shalman",
+  "refs": [
+   [
+    "Hosea", 10,
+    [ 14 ] ] ]
+ },
+ {
+  "id": "assyria",
+  "kind": "place",
+  "name": "Assyria (Asshur)",
+  "refs": [
+   [
+    "Hosea", 5,
+    [ 13 ] ],
+   [
+    "Hosea", 7,
+    [ 11 ] ],
+   [
+    "Hosea", 8,
+    [ 9 ] ],
+   [
+    "Hosea", 9,
+    [ 3 ] ],
+   [
+    "Hosea", 10,
+    [ 6 ] ],
+   [
+    "Hosea", 11,
+    [ 5, 11 ] ],
+   [
+    "Hosea", 12,
+    [ 1 ] ],
+   [
+    "Hosea", 14,
+    [ 3 ] ] ]
+ },
+ {
+  "id": "bethel",
+  "kind": "place",
+  "name": "Bethel (\"house of God\")",
+  "refs": [
+   [
+    "Hosea", 10,
+    [ 15 ] ],
+   [
+    "Hosea", 12,
+    [ 4 ] ],
+   [
+    "Amos", 3,
+    [ 14 ] ],
+   [
+    "Amos", 5,
+    [ 5, 6 ] ],
+   [
+    "Amos", 7,
+    [ 10, 13 ] ] ]
+ },
+ {
+  "id": "gibeah",
+  "kind": "place",
+  "name": "Gibeah",
+  "refs": [
+   [
+    "Hosea", 5,
+    [ 8 ] ],
+   [
+    "Hosea", 9,
+    [ 9 ] ],
+   [
+    "Hosea", 10,
+    [ 9 ] ] ]
+ },
+ {
+  "id": "beth-arbel",
+  "kind": "place",
+  "name": "Beth-arbel",
+  "refs": [
+   [
+    "Hosea", 10,
+    [ 14 ] ] ]
+ },
+ {
+  "id": "golden-calves",
+  "kind": "term",
+  "name": "The calves (golden calf idols)",
+  "refs": [
+   [
+    "Hosea", 10,
+    [ 5 ] ],
+   [
+    "Hosea", 13,
+    [ 2 ] ] ]
+ },
+ {
+  "id": "high-places",
+  "kind": "term",
+  "name": "High places (hilltop shrines)",
+  "refs": [
+   [
+    "Proverbs", 8,
+    [ 2 ] ],
+   [
+    "Proverbs", 9,
+    [ 14 ] ],
+   [
+    "Hosea", 10,
+    [ 8 ] ],
+   [
+    "Amos", 7,
+    [ 9 ] ] ]
+ },
+ {
+  "id": "hemlock",
+  "kind": "term",
+  "name": "Hemlock (a poison weed)",
+  "refs": [
+   [
+    "Hosea", 10,
+    [ 4 ] ],
+   [
+    "Amos", 6,
+    [ 12 ] ] ]
+ },
+ {
+  "id": "heifer",
+  "kind": "term",
+  "name": "Heifer (a young cow)",
+  "refs": [
+   [
+    "Hosea", 4,
+    [ 16 ] ],
+   [
+    "Hosea", 10,
+    [ 11 ] ] ]
+ },
+ {
+  "id": "fallow-ground",
+  "kind": "term",
+  "name": "Fallow ground (hard, unplowed land)",
+  "refs": [
+   [
+    "Hosea", 10,
+    [ 12 ] ] ]
+ },
+ {
+  "id": "sowing-and-reaping",
+  "kind": "term",
+  "name": "Sowing and reaping",
+  "refs": [
+   [
+    "Hosea", 2,
+    [ 23 ] ],
+   [
+    "Hosea", 8,
+    [ 7 ] ],
+   [
+    "Hosea", 10,
+    [ 12, 13 ] ] ]
+ },
+ {
+  "id": "chastise",
+  "kind": "term",
+  "name": "Chastise (discipline)",
+  "refs": [
+   [
+    "Hosea", 7,
+    [ 12 ] ],
+   [
+    "Hosea", 10,
+    [ 10 ] ] ]
+ },
+ {
+  "id": "admah-and-zeboim",
+  "kind": "place",
+  "name": "Admah and Zeboim (cities destroyed with Sodom)",
+  "refs": [
+   [
+    "Hosea", 11,
+    [ 8 ] ] ]
+ },
+ {
+  "id": "out-of-egypt",
+  "kind": "term",
+  "name": "“Out of Egypt have I called my son” (Matthew 2:15)",
+  "refs": [
+   [
+    "Hosea", 11,
+    [ 1 ] ] ]
+ },
+ {
+  "id": "graven-and-molten-images",
+  "kind": "term",
+  "name": "Graven and molten images (idols)",
+  "refs": [
+   [
+    "Hosea", 11,
+    [ 2 ] ],
+   [
+    "Hosea", 13,
+    [ 2 ] ] ]
+ },
+ {
+  "id": "cords-of-love",
+  "kind": "term",
+  "name": "Cords of a man, bands of love",
+  "refs": [
+   [
+    "Hosea", 11,
+    [ 4 ] ] ]
+ },
+ {
+  "id": "holy-one",
+  "kind": "term",
+  "name": "The Holy One",
+  "refs": [
+   [
+    "Hosea", 11,
+    [ 9 ] ] ]
+ },
+ {
+  "id": "east-wind",
+  "kind": "term",
+  "name": "The east wind (the scorching desert wind)",
+  "refs": [
+   [
+    "Hosea", 12,
+    [ 1 ] ],
+   [
+    "Hosea", 13,
+    [ 15 ] ] ]
+ },
+ {
+  "id": "merchant",
+  "kind": "term",
+  "name": "Merchant (Canaan, a trader)",
+  "refs": [
+   [
+    "Hosea", 12,
+    [ 7 ] ] ]
+ },
+ {
+  "id": "dwell-in-tabernacles",
+  "kind": "term",
+  "name": "Dwell in tabernacles (live in tents again)",
+  "refs": [
+   [
+    "Hosea", 12,
+    [ 9 ] ] ]
+ },
+ {
+  "id": "similitudes",
+  "kind": "term",
+  "name": "Similitudes (word pictures)",
+  "refs": [
+   [
+    "Hosea", 12,
+    [ 10 ] ] ]
+ },
+ {
+  "id": "vanity",
+  "kind": "term",
+  "name": "Vanity (emptiness)",
+  "refs": [
+   [
+    "Proverbs", 13,
+    [ 11 ] ],
+   [
+    "Proverbs", 21,
+    [ 6 ] ],
+   [
+    "Proverbs", 22,
+    [ 8 ] ],
+   [
+    "Proverbs", 30,
+    [ 8 ] ],
+   [
+    "Hosea", 12,
+    [ 11 ] ] ]
+ },
+ {
+  "id": "gilead",
+  "kind": "place",
+  "name": "Gilead (east of the Jordan)",
+  "refs": [
+   [
+    "Hosea", 6,
+    [ 8 ] ],
+   [
+    "Hosea", 12,
+    [ 11 ] ],
+   [
+    "Amos", 1,
+    [ 3, 13 ] ] ]
+ },
+ {
+  "id": "syria",
+  "kind": "place",
+  "name": "Syria (Aram)",
+  "refs": [
+   [
+    "Hosea", 12,
+    [ 12 ] ],
+   [
+    "Amos", 1,
+    [ 5 ] ] ]
+ },
+ {
+  "id": "idols",
+  "kind": "term",
+  "name": "Idols",
+  "refs": [
+   [
+    "Hosea", 4,
+    [ 17 ] ],
+   [
+    "Hosea", 8,
+    [ 4 ] ],
+   [
+    "Hosea", 13,
+    [ 2 ] ],
+   [
+    "Hosea", 14,
+    [ 8 ] ] ]
+ },
+ {
+  "id": "morning-cloud",
+  "kind": "term",
+  "name": "Morning cloud (gone by mid-morning)",
+  "refs": [
+   [
+    "Hosea", 6,
+    [ 4 ] ],
+   [
+    "Hosea", 13,
+    [ 3 ] ] ]
+ },
+ {
+  "id": "dew",
+  "kind": "term",
+  "name": "Dew",
+  "refs": [
+   [
+    "Proverbs", 3,
+    [ 20 ] ],
+   [
+    "Proverbs", 19,
+    [ 12 ] ],
+   [
+    "Hosea", 6,
+    [ 4 ] ],
+   [
+    "Hosea", 13,
+    [ 3 ] ],
+   [
+    "Hosea", 14,
+    [ 5 ] ] ]
+ },
+ {
+  "id": "chaff",
+  "kind": "term",
+  "name": "Chaff (husks blown away at threshing)",
+  "refs": [
+   [
+    "Hosea", 13,
+    [ 3 ] ] ]
+ },
+ {
+  "id": "saviour",
+  "kind": "term",
+  "name": "Saviour",
+  "refs": [
+   [
+    "Hosea", 13,
+    [ 4 ] ] ]
+ },
+ {
+  "id": "caul",
+  "kind": "term",
+  "name": "Caul (the covering of the heart, the chest)",
+  "refs": [
+   [
+    "Hosea", 13,
+    [ 8 ] ] ]
+ },
+ {
+  "id": "ransom-and-redeem",
+  "kind": "term",
+  "name": "Ransom, redeem (buy back)",
+  "refs": [
+   [
+    "Proverbs", 6,
+    [ 35 ] ],
+   [
+    "Proverbs", 13,
+    [ 8 ] ],
+   [
+    "Proverbs", 21,
+    [ 18 ] ],
+   [
+    "Hosea", 13,
+    [ 14 ] ] ]
+ },
+ {
+  "id": "o-death",
+  "kind": "term",
+  "name": "“O death … O grave” (1 Corinthians 15:55)",
+  "refs": [
+   [
+    "Hosea", 13,
+    [ 14 ] ] ]
+ },
+ {
+  "id": "calves-of-our-lips",
+  "kind": "term",
+  "name": "The calves of our lips (praise)",
+  "refs": [
+   [
+    "Hosea", 14,
+    [ 2 ] ] ]
+ },
+ {
+  "id": "fatherless",
+  "kind": "term",
+  "name": "Fatherless",
+  "refs": [
+   [
+    "Proverbs", 23,
+    [ 10 ] ],
+   [
+    "Hosea", 14,
+    [ 3 ] ] ]
+ },
+ {
+  "id": "lily",
+  "kind": "term",
+  "name": "Lily",
+  "refs": [
+   [
+    "Hosea", 14,
+    [ 5 ] ] ]
+ },
+ {
+  "id": "lebanon",
+  "kind": "place",
+  "name": "Lebanon",
+  "refs": [
+   [
+    "Hosea", 14,
+    [ 5, 6, 7 ] ] ]
+ },
+ {
+  "id": "green-fir-tree",
+  "kind": "term",
+  "name": "A green fir tree (an evergreen)",
+  "refs": [
+   [
+    "Hosea", 14,
+    [ 8 ] ] ]
  }
 ];
