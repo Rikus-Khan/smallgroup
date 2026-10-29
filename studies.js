@@ -3244,6 +3244,211 @@ window.STUDIES = [
     }
   },
   {
+    "id": "amos-01",
+    "type": "chapter",
+    "book": "Amos",
+    "ch": 1,
+    "date": "2026-10-29",
+    "title": "Amos 1",
+    "sub": "The lion roars",
+    "about": "A herdman from the hills of Judah walks north with a message from God, and starts with the neighbors everyone already hates.",
+    "tags": [
+      "God's call",
+      "God's patience",
+      "God's justice",
+      "Human worth",
+      "Resentment"
+    ],
+    "overview": {
+      "where": "Preached at Bethel in Israel, the northern kingdom, by a man from Tekoa in Judah; the oracles range over the nations around Israel",
+      "when": "About 760 BC, before the exile, in the days of Uzziah of Judah and Jeroboam II of Israel, two years before the earthquake",
+      "people": [
+        "amos",
+        "uzziah",
+        "jeroboam-ii",
+        "joash-king-of-israel",
+        "hazael",
+        "ben-hadad",
+        "philistines",
+        "the-lord"
+      ],
+      "places": [
+        "tekoa",
+        "israel",
+        "sion",
+        "carmel",
+        "damascus",
+        "gilead",
+        "kir",
+        "gaza",
+        "tyre-and-zidon",
+        "edom",
+        "ammon",
+        "rabbah"
+      ],
+      "story": [
+        "Amos, a herdman from Tekoa, sees God's word for Israel two years before the earthquake: the LORD will roar from Zion (1–2).",
+        "“For three transgressions, and for four”: Damascus, capital of Syria, will burn for threshing Gilead with iron, and its people will go captive to Kir (3–5).",
+        "Gaza and the Philistine cities sold whole towns to Edom as slaves; Tyre did the same and broke its brotherly covenant (6–10).",
+        "Edom chased his brother Israel with the sword and kept his anger for ever; fire will fall on Teman and Bozrah (11–12).",
+        "Ammon cut open pregnant women in Gilead to gain land; Rabbah will burn and its king go into captivity (13–15)."
+      ],
+      "key": {
+        "ref": "Amos 1:2",
+        "text": "And he said, The LORD will roar from Zion, and utter his voice from Jerusalem; and the habitations of the shepherds shall mourn, and the top of Carmel shall wither."
+      },
+      "big": "God is patient, but He is not silent. He sees every cruelty, even among nations that never had His law, and He calls ordinary men to speak for Him."
+    },
+    "url": "studies/amos-01.html"
+  },
+  {
+    "id": "amos-02",
+    "type": "chapter",
+    "book": "Amos",
+    "ch": 2,
+    "date": "2026-10-29",
+    "title": "Amos 2",
+    "sub": "The circle closes",
+    "about": "Moab, then Judah, and then the crowd at Bethel hears its own name. The longest charge sheet is for God's own people.",
+    "tags": [
+      "God's word",
+      "Justice",
+      "God's grace",
+      "Temptation",
+      "Self-reliance"
+    ],
+    "overview": {
+      "where": "Bethel in Israel; the oracles name Moab, Judah, and finally Israel",
+      "when": "About 760 BC, before the exile, while Israel was rich under Jeroboam II",
+      "people": [
+        "amos",
+        "nazarites",
+        "amorites",
+        "the-lord"
+      ],
+      "places": [
+        "moab",
+        "kirioth",
+        "edom",
+        "judah",
+        "jerusalem",
+        "israel",
+        "egypt",
+        "wilderness"
+      ],
+      "story": [
+        "Moab burned the bones of Edom's king to lime; fire will fall on Kirioth (1–3).",
+        "Judah despised the law of the LORD and followed the lies their fathers walked after; fire will devour Jerusalem's palaces (4–5).",
+        "Then Israel: they sold the righteous for silver and the poor for a pair of shoes, used a servant girl, and lounged at the altar on poor men's coats (6–8).",
+        "God reminds them He destroyed the Amorite, brought them out of Egypt, and raised up prophets and Nazarites; but they gave the Nazarites wine and told the prophets, “Prophesy not” (9–12).",
+        "Their sin weighs on God like an overloaded cart. In that day not even the swift, the strong, or the brave will escape (13–16)."
+      ],
+      "key": {
+        "ref": "Amos 2:6",
+        "text": "Thus saith the LORD; For three transgressions of Israel, and for four, I will not turn away the punishment thereof; because they sold the righteous for silver, and the poor for a pair of shoes;"
+      },
+      "big": "It's easy to cheer when God judges other people's sins. God's word always comes around to us, and the more of it we've been given, the more He expects."
+    },
+    "url": "studies/amos-02.html"
+  },
+  {
+    "id": "amos-03",
+    "type": "chapter",
+    "book": "Amos",
+    "ch": 3,
+    "date": "2026-10-29",
+    "title": "Amos 3",
+    "sub": "The lion hath roared",
+    "about": "Why God is speaking, why His own people are on trial, and why He always warns before He acts.",
+    "tags": [
+      "Privilege",
+      "Walking with God",
+      "God's warnings",
+      "Hidden wealth",
+      "The remnant",
+      "False refuge"
+    ],
+    "overview": {
+      "where": "Bethel and Samaria, in Israel, the northern kingdom",
+      "when": "About 760 BC, before the exile, some forty years before Assyria took Samaria",
+      "people": [
+        "amos",
+        "the-lord",
+        "jacob"
+      ],
+      "places": [
+        "israel",
+        "egypt",
+        "ashdod",
+        "samaria",
+        "damascus",
+        "bethel"
+      ],
+      "story": [
+        "God speaks to the family He brought out of Egypt: “You only have I known … therefore I will punish you” (1–2).",
+        "A string of questions: two walking together, a lion's roar, a bird in a snare, a trumpet in the city. Nothing happens without a cause (3–6).",
+        "God reveals His plans to His prophets first. The lion has roared; who can keep from prophesying? (7–8).",
+        "Ashdod and Egypt are called to the hills of Samaria to see the violence and robbery stored in its palaces (9–10).",
+        "An enemy will surround the land. Like a shepherd pulling two legs or a piece of an ear from a lion's mouth, only scraps will be rescued (11–12).",
+        "God will cut off the horns of Bethel's altar and tear down the winter houses, summer houses, and houses of ivory (13–15)."
+      ],
+      "key": {
+        "ref": "Amos 3:2",
+        "text": "You only have I known of all the families of the earth: therefore I will punish you for all your iniquities."
+      },
+      "big": "Being close to God is a privilege, not a pass. He warns long and plainly before He judges, and only He is a safe refuge."
+    },
+    "url": "studies/amos-03.html"
+  },
+  {
+    "id": "amos-04",
+    "type": "chapter",
+    "book": "Amos",
+    "ch": 4,
+    "date": "2026-10-29",
+    "title": "Amos 4",
+    "sub": "Prepare to meet thy God",
+    "about": "Five times God tried to get Israel's attention. Five times He had to say, “Yet have ye not returned unto me.”",
+    "tags": [
+      "Comfort",
+      "Empty religion",
+      "Hard times",
+      "Repentance",
+      "Rescue",
+      "Meeting God"
+    ],
+    "overview": {
+      "where": "Samaria, and the shrines at Bethel and Gilgal, in Israel",
+      "when": "About 760 BC, before the exile, in Israel's boom years under Jeroboam II",
+      "people": [
+        "amos",
+        "the-lord"
+      ],
+      "places": [
+        "bashan",
+        "samaria",
+        "bethel",
+        "gilgal",
+        "egypt",
+        "sodom-and-gomorrah",
+        "israel"
+      ],
+      "story": [
+        "Amos calls the rich women of Samaria “kine of Bashan”: they crush the poor and call for drinks. God swears they will be led away with hooks (1–3).",
+        "“Come to Bethel, and transgress”: their busy worship, tithes, and announced offerings please themselves, not God (4–5).",
+        "God sent famine and drought, rain on one city and not the next: “yet have ye not returned unto me” (6–8).",
+        "Blight, locusts, plague, war, and cities overthrown like Sodom; they were a firebrand plucked out of the burning, and still did not return (9–11).",
+        "“Prepare to meet thy God, O Israel”: the God who forms the mountains and creates the wind, the LORD, the God of hosts (12–13)."
+      ],
+      "key": {
+        "ref": "Amos 4:12",
+        "text": "Therefore thus will I do unto thee, O Israel: and because I will do this unto thee, prepare to meet thy God, O Israel."
+      },
+      "big": "God uses hard things to call us home, not to destroy us. Every man will meet God; the way to meet Him in peace is to return to Him now, through Christ."
+    },
+    "url": "studies/amos-04.html"
+  },
+  {
     "id": "amos-05",
     "type": "chapter",
     "book": "Amos",

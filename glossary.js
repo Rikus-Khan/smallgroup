@@ -591,6 +591,9 @@ window.GLOSSARY = [
     [ 1 ] ],
    [
     "Hosea", 1,
+    [ 1 ] ],
+   [
+    "Micah", 1,
     [ 1 ] ] ]
  },
  {
@@ -771,7 +774,10 @@ window.GLOSSARY = [
     [ 2, 7, 11, 12 ] ],
    [
     "Amos", 9,
-    [ 1, 6, 7, 8, 12, 13, 15 ] ] ]
+    [ 1, 6, 7, 8, 12, 13, 15 ] ],
+   [
+    "Micah", 1,
+    [ 1, 3, 12 ] ] ]
  },
  {
   "id": "jakeh",
@@ -808,6 +814,9 @@ window.GLOSSARY = [
    [
     "Amos", 2,
     [ 5 ] ],
+   [
+    "Micah", 1,
+    [ 1, 5, 9, 12 ] ],
    [
     "John", 1,
     [ 19 ] ],
@@ -995,6 +1004,9 @@ window.GLOSSARY = [
     "Amos", 8,
     [ 3 ] ],
    [
+    "Micah", 1,
+    [ 2 ] ],
+   [
     "John", 2,
     [ 14, 15, 19, 20, 21 ] ],
    [
@@ -1096,6 +1108,9 @@ window.GLOSSARY = [
    [
     "Amos", 9,
     [ 7, 9, 14 ] ],
+   [
+    "Micah", 1,
+    [ 5, 13, 14, 15 ] ],
    [
     "John", 1,
     [ 31, 49 ] ],
@@ -1215,7 +1230,10 @@ window.GLOSSARY = [
     [ 4, 5 ] ],
    [
     "Amos", 7,
-    [ 12 ] ] ]
+    [ 12 ] ],
+   [
+    "Micah", 1,
+    [ 1, 5, 9 ] ] ]
  },
  {
   "id": "city-gate",
@@ -1465,6 +1483,9 @@ window.GLOSSARY = [
    [
     "Hosea", 10,
     [ 5 ] ],
+   [
+    "Micah", 1,
+    [ 15 ] ],
    [
     "John", 1,
     [ 14 ] ],
@@ -1789,6 +1810,9 @@ window.GLOSSARY = [
    [
     "Proverbs", 25,
     [ 18 ] ],
+   [
+    "Micah", 1,
+    [ 2 ] ],
    [
     "John", 1,
     [ 7, 8, 15, 19, 32, 34 ] ],
@@ -2673,7 +2697,10 @@ window.GLOSSARY = [
     [ 3 ] ],
    [
     "Amos", 7,
-    [ 17 ] ] ]
+    [ 17 ] ],
+   [
+    "Micah", 1,
+    [ 7 ] ] ]
  },
  {
   "id": "righteous",
@@ -5333,6 +5360,9 @@ window.GLOSSARY = [
     "Amos", 9,
     [ 8 ] ],
    [
+    "Micah", 1,
+    [ 5 ] ],
+   [
     "John", 4,
     [ 5, 6, 12 ] ] ]
  },
@@ -5383,6 +5413,9 @@ window.GLOSSARY = [
    [
     "Amos", 8,
     [ 14 ] ],
+   [
+    "Micah", 1,
+    [ 1, 5, 6 ] ],
    [
     "John", 4,
     [ 4, 5, 7, 9 ] ] ]
@@ -6034,6 +6067,9 @@ window.GLOSSARY = [
    [
     "Amos", 6,
     [ 1 ] ],
+   [
+    "Micah", 1,
+    [ 13 ] ],
    [
     "John", 12,
     [ 15 ] ] ]
@@ -7308,6 +7344,9 @@ window.GLOSSARY = [
   "refs": [
    [
     "Hosea", 1,
+    [ 1 ] ],
+   [
+    "Micah", 1,
     [ 1 ] ] ]
  },
  {
@@ -7317,6 +7356,9 @@ window.GLOSSARY = [
   "refs": [
    [
     "Hosea", 1,
+    [ 1 ] ],
+   [
+    "Micah", 1,
     [ 1 ] ] ]
  },
  {
@@ -7671,10 +7713,7 @@ window.GLOSSARY = [
     [ 8 ] ],
    [
     "Hosea", 10,
-    [ 5, 8 ] ],
-   [
-    "Amos", 1,
-    [ 5 ] ] ]
+    [ 5, 8 ] ] ]
  },
  {
   "id": "stocks",
@@ -7818,7 +7857,10 @@ window.GLOSSARY = [
     [ 13 ] ],
    [
     "Amos", 7,
-    [ 9 ] ] ]
+    [ 9 ] ],
+   [
+    "Micah", 1,
+    [ 3, 5 ] ] ]
  },
  {
   "id": "hemlock",
@@ -7908,7 +7950,10 @@ window.GLOSSARY = [
     [ 2 ] ],
    [
     "Hosea", 13,
-    [ 2 ] ] ]
+    [ 2 ] ],
+   [
+    "Micah", 1,
+    [ 7 ] ] ]
  },
  {
   "id": "cords-of-love",
@@ -8031,7 +8076,10 @@ window.GLOSSARY = [
     [ 2 ] ],
    [
     "Hosea", 14,
-    [ 8 ] ] ]
+    [ 8 ] ],
+   [
+    "Micah", 1,
+    [ 7 ] ] ]
  },
  {
   "id": "morning-cloud",
@@ -8474,13 +8522,10 @@ window.GLOSSARY = [
  {
   "id": "wormwood",
   "kind": "term",
-  "name": "Wormwood, gall and hemlock (bitter plants)",
+  "name": "Wormwood and gall (bitter plants)",
   "refs": [
    [
     "Proverbs", 5,
-    [ 4 ] ],
-   [
-    "Hosea", 10,
     [ 4 ] ],
    [
     "Amos", 5,
@@ -8589,7 +8634,10 @@ window.GLOSSARY = [
   "refs": [
    [
     "Amos", 6,
-    [ 2 ] ] ]
+    [ 2 ] ],
+   [
+    "Micah", 1,
+    [ 10 ] ] ]
  },
  {
   "id": "philistines",
@@ -8818,5 +8866,365 @@ window.GLOSSARY = [
    [
     "Amos", 9,
     [ 11 ] ] ]
+ },
+ {
+  "id": "hazael",
+  "kind": "person",
+  "name": "Hazael, king of Syria",
+  "refs": [
+   [
+    "Amos", 1,
+    [ 4 ] ] ]
+ },
+ {
+  "id": "ben-hadad",
+  "kind": "person",
+  "name": "Ben-hadad, king of Syria",
+  "refs": [
+   [
+    "Amos", 1,
+    [ 4 ] ] ]
+ },
+ {
+  "id": "tekoa",
+  "kind": "place",
+  "name": "Tekoa",
+  "refs": [
+   [
+    "Amos", 1,
+    [ 1 ] ] ]
+ },
+ {
+  "id": "plain-of-aven",
+  "kind": "place",
+  "name": "The plain of Aven",
+  "refs": [
+   [
+    "Amos", 1,
+    [ 5 ] ] ]
+ },
+ {
+  "id": "house-of-eden",
+  "kind": "place",
+  "name": "The house of Eden (Beth-eden)",
+  "refs": [
+   [
+    "Amos", 1,
+    [ 5 ] ] ]
+ },
+ {
+  "id": "gaza",
+  "kind": "place",
+  "name": "Gaza",
+  "refs": [
+   [
+    "Amos", 1,
+    [ 6, 7 ] ] ]
+ },
+ {
+  "id": "ashdod",
+  "kind": "place",
+  "name": "Ashdod",
+  "refs": [
+   [
+    "Amos", 1,
+    [ 8 ] ],
+   [
+    "Amos", 3,
+    [ 9 ] ] ]
+ },
+ {
+  "id": "ashkelon",
+  "kind": "place",
+  "name": "Ashkelon",
+  "refs": [
+   [
+    "Amos", 1,
+    [ 8 ] ] ]
+ },
+ {
+  "id": "ekron",
+  "kind": "place",
+  "name": "Ekron",
+  "refs": [
+   [
+    "Amos", 1,
+    [ 8 ] ] ]
+ },
+ {
+  "id": "teman",
+  "kind": "place",
+  "name": "Teman",
+  "refs": [
+   [
+    "Amos", 1,
+    [ 12 ] ] ]
+ },
+ {
+  "id": "bozrah",
+  "kind": "place",
+  "name": "Bozrah",
+  "refs": [
+   [
+    "Amos", 1,
+    [ 12 ] ] ]
+ },
+ {
+  "id": "ammon",
+  "kind": "place",
+  "name": "Ammon (the children of Ammon)",
+  "refs": [
+   [
+    "Amos", 1,
+    [ 13 ] ] ]
+ },
+ {
+  "id": "rabbah",
+  "kind": "place",
+  "name": "Rabbah",
+  "refs": [
+   [
+    "Amos", 1,
+    [ 14 ] ] ]
+ },
+ {
+  "id": "the-earthquake",
+  "kind": "term",
+  "name": "The earthquake",
+  "refs": [
+   [
+    "Amos", 1,
+    [ 1 ] ] ]
+ },
+ {
+  "id": "roar",
+  "kind": "term",
+  "name": "The LORD will roar",
+  "refs": [
+   [
+    "Amos", 1,
+    [ 2 ] ],
+   [
+    "Amos", 3,
+    [ 4, 8 ] ] ]
+ },
+ {
+  "id": "three-transgressions",
+  "kind": "term",
+  "name": "For three transgressions, and for four",
+  "refs": [
+   [
+    "Amos", 1,
+    [ 3, 6, 9, 11, 13 ] ],
+   [
+    "Amos", 2,
+    [ 1, 4, 6 ] ] ]
+ },
+ {
+  "id": "threshing",
+  "kind": "term",
+  "name": "Threshing instruments",
+  "refs": [
+   [
+    "Amos", 1,
+    [ 3 ] ] ]
+ },
+ {
+  "id": "brotherly-covenant",
+  "kind": "term",
+  "name": "The brotherly covenant",
+  "refs": [
+   [
+    "Amos", 1,
+    [ 9 ] ] ]
+ },
+ {
+  "id": "nazarites",
+  "kind": "person",
+  "name": "Nazarites",
+  "refs": [
+   [
+    "Amos", 2,
+    [ 11, 12 ] ] ]
+ },
+ {
+  "id": "amorites",
+  "kind": "person",
+  "name": "The Amorites",
+  "refs": [
+   [
+    "Amos", 2,
+    [ 9, 10 ] ] ]
+ },
+ {
+  "id": "moab",
+  "kind": "place",
+  "name": "Moab",
+  "refs": [
+   [
+    "Amos", 2,
+    [ 1, 2 ] ] ]
+ },
+ {
+  "id": "kirioth",
+  "kind": "place",
+  "name": "Kirioth",
+  "refs": [
+   [
+    "Amos", 2,
+    [ 2 ] ] ]
+ },
+ {
+  "id": "pledge",
+  "kind": "term",
+  "name": "Pledge (security for a loan)",
+  "refs": [
+   [
+    "Proverbs", 20,
+    [ 16 ] ],
+   [
+    "Proverbs", 27,
+    [ 13 ] ],
+   [
+    "Amos", 2,
+    [ 8 ] ] ]
+ },
+ {
+  "id": "pair-of-shoes",
+  "kind": "term",
+  "name": "Sold for a pair of shoes",
+  "refs": [
+   [
+    "Amos", 2,
+    [ 6 ] ],
+   [
+    "Amos", 8,
+    [ 6 ] ] ]
+ },
+ {
+  "id": "gin",
+  "kind": "term",
+  "name": "Gin (the trigger of a trap)",
+  "refs": [
+   [
+    "Amos", 3,
+    [ 5 ] ] ]
+ },
+ {
+  "id": "horns-of-the-altar",
+  "kind": "term",
+  "name": "The horns of the altar",
+  "refs": [
+   [
+    "Amos", 3,
+    [ 14 ] ] ]
+ },
+ {
+  "id": "winter-house",
+  "kind": "term",
+  "name": "The winter house and the summer house",
+  "refs": [
+   [
+    "Amos", 3,
+    [ 15 ] ] ]
+ },
+ {
+  "id": "bashan",
+  "kind": "place",
+  "name": "Bashan",
+  "refs": [
+   [
+    "Amos", 4,
+    [ 1 ] ] ]
+ },
+ {
+  "id": "sodom-and-gomorrah",
+  "kind": "place",
+  "name": "Sodom and Gomorrah",
+  "refs": [
+   [
+    "Amos", 4,
+    [ 11 ] ] ]
+ },
+ {
+  "id": "kine",
+  "kind": "term",
+  "name": "Kine (cows)",
+  "refs": [
+   [
+    "Amos", 4,
+    [ 1 ] ] ]
+ },
+ {
+  "id": "tithes",
+  "kind": "term",
+  "name": "Tithes",
+  "refs": [
+   [
+    "Amos", 4,
+    [ 4 ] ] ]
+ },
+ {
+  "id": "leaven",
+  "kind": "term",
+  "name": "Leaven",
+  "refs": [
+   [
+    "Amos", 4,
+    [ 5 ] ] ]
+ },
+ {
+  "id": "free-offerings",
+  "kind": "term",
+  "name": "Free offerings",
+  "refs": [
+   [
+    "Amos", 4,
+    [ 5 ] ] ]
+ },
+ {
+  "id": "cleanness-of-teeth",
+  "kind": "term",
+  "name": "Cleanness of teeth (famine)",
+  "refs": [
+   [
+    "Amos", 4,
+    [ 6 ] ] ]
+ },
+ {
+  "id": "blasting-and-mildew",
+  "kind": "term",
+  "name": "Blasting and mildew",
+  "refs": [
+   [
+    "Amos", 4,
+    [ 9 ] ] ]
+ },
+ {
+  "id": "firebrand",
+  "kind": "term",
+  "name": "A firebrand plucked out of the burning",
+  "refs": [
+   [
+    "Amos", 4,
+    [ 11 ] ] ]
+ },
+ {
+  "id": "return-unto-me",
+  "kind": "term",
+  "name": "Return unto me (repent)",
+  "refs": [
+   [
+    "Amos", 4,
+    [ 6, 8, 9, 10, 11 ] ] ]
+ },
+ {
+  "id": "prepare-to-meet-thy-god",
+  "kind": "term",
+  "name": "Prepare to meet thy God",
+  "refs": [
+   [
+    "Amos", 4,
+    [ 12 ] ] ]
  }
 ];
