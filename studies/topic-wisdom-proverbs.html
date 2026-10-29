@@ -47,13 +47,6 @@
 .ex:has(.tw-rank-go.on) .tw-rank li { transform: translateY(2.9rem); opacity: .5; }
 .ex:has(.tw-rank-go.on) .tw-rank li.wis { transform: translateY(-11.6rem); opacity: 1; background: color-mix(in srgb, var(--accent) 14%, var(--bg)); box-shadow: 0 0 22px color-mix(in srgb, var(--accent) 35%, transparent); }
 
-/* A balance scale that tips toward wisdom */
-.tw-beam, .tw-pan-l, .tw-pan-r { transition: transform 1.6s cubic-bezier(.5,0,.2,1); }
-.tw-beam { transform-box: view-box; transform-origin: 300px 80px; }
-.ex:has(.tw-tip.on) .tw-beam { transform: rotate(12deg); }
-.ex:has(.tw-tip.on) .tw-pan-l { transform: translate(4px, -42px); }
-.ex:has(.tw-tip.on) .tw-pan-r { transform: translate(-4px, 42px); }
-
 /* Sound rings going out from the city gate */
 .tw-ring { transform-box: fill-box; transform-origin: center; opacity: 0; fill: none; stroke: var(--accent); stroke-width: 3; }
 .slide.active .tw-ring { animation: tw-pulse 3.6s ease-out infinite; }
@@ -364,13 +357,13 @@
     <blockquote class="quote rise" data-q="16:16" data-hl="better is it to get wisdom than gold"></blockquote>
     <div class="split">
       <div class="stage">
-        <svg viewBox="0 0 600 340" role="img" aria-label="A balance scale with gold, silver and rubies on one side and wisdom on the other. The scale tips down toward wisdom.">
+        <svg class="scale" style="--at:300px 80px; --arm:200; --tip:12deg" viewBox="0 0 600 340" role="img" aria-label="A balance scale with gold, silver and rubies on one side and wisdom on the other. The scale tips down toward wisdom.">
           <path d="M300 80 L300 300 M240 310 L360 310" stroke-width="8" stroke-linecap="round" style="stroke:var(--ink-soft)"/>
-          <g class="tw-beam">
+          <g class="scale-beam">
             <line x1="100" y1="80" x2="500" y2="80" stroke-width="8" stroke-linecap="round" style="stroke:var(--ink)"/>
           </g>
           <circle cx="300" cy="80" r="10" style="fill:var(--accent)"/>
-          <g class="tw-pan-l">
+          <g class="scale-pan l">
             <path d="M100 80 L50 180 M100 80 L150 180" stroke-width="2" style="stroke:var(--ink-soft)"/>
             <path d="M40 180 L160 180 Q100 220 40 180 Z" style="fill:var(--surface-2);stroke:var(--ink-soft)" stroke-width="2"/>
             <circle cx="72" cy="168" r="11" style="fill:var(--warm)"/>
@@ -378,7 +371,7 @@
             <path d="M122 158 l10 -10 l10 10 l-10 14 Z" style="fill:var(--wine)"/>
             <text x="100" y="246" text-anchor="middle" font-size="20" style="fill:var(--ink-soft)">gold, silver, rubies</text>
           </g>
-          <g class="tw-pan-r">
+          <g class="scale-pan r">
             <path d="M500 80 L450 180 M500 80 L550 180" stroke-width="2" style="stroke:var(--ink-soft)"/>
             <path d="M440 180 L560 180 Q500 220 440 180 Z" style="fill:var(--surface-2);stroke:var(--accent)" stroke-width="2"/>
             <path d="M486 172 L500 150 L514 172 Z" style="fill:var(--accent)"/>
@@ -389,7 +382,7 @@
       <div>
         <h2 class="rise" style="--d:1">Put it on the scale</h2>
         <p class="note rise" style="--d:2">Rubies, gold, silver: the most valuable things anybody in Solomon's day could hold in his hand.</p>
-        <p class="note step tw-tip">Pile them all on one side. Wisdom still outweighs them. “All the things that may be desired are not to be compared to it” (8:11).</p>
+        <p class="note step scale-go">Pile them all on one side. Wisdom still outweighs them. “All the things that may be desired are not to be compared to it” (8:11).</p>
         <p class="note step">Money can disappear in one bad weekend. Wisdom keeps you from having that weekend.</p>
       </div>
     </div>

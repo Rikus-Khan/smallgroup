@@ -21,13 +21,6 @@
 .prv27-day:nth-child(3) { opacity: .7; }
 .prv27-day:nth-child(4) { opacity: .45; }
 
-/* A balance that tips */
-.prv27-beam { transform-box: view-box; transform-origin: 260px 80px; transition: transform 1.6s cubic-bezier(.4,0,.2,1) .6s; }
-.prv27-lp, .prv27-rp { transition: transform 1.6s cubic-bezier(.4,0,.2,1) .6s; }
-.slide.active .prv27-beam { transform: rotate(10deg); }
-.slide.active .prv27-lp { transform: translateY(-28px); }
-.slide.active .prv27-rp { transform: translateY(28px); }
-
 /* The prudent man's path and the simple man's path */
 .prv27-p1 { transition-delay: .2s; }
 .split:has(.prv27-hide.on) .prv27-p1 { stroke-dashoffset: 0; }
@@ -122,18 +115,18 @@
     <blockquote class="quote rise" data-q="3"></blockquote>
     <div class="split">
       <div class="stage">
-        <svg viewBox="0 0 520 300" role="img" aria-label="A balance scale. A stone and a pile of sand on one side are outweighed by a fool's wrath on the other.">
+        <svg class="scale now" style="--at:260px 80px; --arm:160; --wait:.6s" viewBox="0 0 520 300" role="img" aria-label="A balance scale. A stone and a pile of sand on one side are outweighed by a fool's wrath on the other.">
           <path d="M260 80 L260 270 M200 280 L320 280" stroke-width="6" stroke-linecap="round" style="stroke:var(--ink-soft)"/>
           <circle cx="260" cy="80" r="9" style="fill:var(--ink-soft)"/>
-          <g class="prv27-beam"><line x1="100" y1="80" x2="420" y2="80" stroke-width="7" stroke-linecap="round" style="stroke:var(--ink)"/></g>
-          <g class="prv27-lp">
+          <g class="scale-beam"><line x1="100" y1="80" x2="420" y2="80" stroke-width="7" stroke-linecap="round" style="stroke:var(--ink)"/></g>
+          <g class="scale-pan l">
             <path d="M100 80 L50 170 M100 80 L150 170" stroke-width="2" style="stroke:var(--ink-soft)"/>
             <path d="M40 170 Q100 205 160 170 Z" style="fill:var(--surface-2);stroke:var(--line-strong)" stroke-width="2"/>
             <rect x="62" y="140" width="40" height="32" rx="8" style="fill:var(--ink-soft)"/>
             <path d="M104 172 Q124 140 146 172 Z" style="fill:var(--warm)"/>
             <text x="100" y="228" text-anchor="middle" font-size="20">stone and sand</text>
           </g>
-          <g class="prv27-rp">
+          <g class="scale-pan r">
             <path d="M420 80 L370 170 M420 80 L470 170" stroke-width="2" style="stroke:var(--ink-soft)"/>
             <path d="M360 170 Q420 205 480 170 Z" style="fill:var(--surface-2);stroke:var(--line-strong)" stroke-width="2"/>
             <path d="M384 170 L392 136 L404 156 L414 120 L426 152 L438 128 L446 158 L456 140 L458 170 Z" style="fill:var(--danger)"/>

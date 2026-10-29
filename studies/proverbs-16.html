@@ -18,10 +18,6 @@
 .prv16-route .prv16-plan { fill: none; stroke: var(--ink-soft); stroke-width: 3; stroke-dasharray: 10 9; }
 .prv16-route .prv16-steps { fill: none; stroke: var(--accent); stroke-width: 11; stroke-linecap: round; stroke-dasharray: .1 22; }
 
-/* A balance that settles level: a just weight (16:11) */
-.prv16-beam { transform-box: view-box; transform-origin: 300px 80px; transform: rotate(-8deg); transition: transform 2.2s cubic-bezier(.3,1.4,.5,1) .9s; }
-.slide.active .prv16-beam { transform: none; }
-
 /* Pride climbs, then falls (16:18) */
 .prv16-faller { transform-box: view-box; transform-origin: 360px 60px; transition: transform 1.4s cubic-bezier(.5,0,.9,.6); }
 .split:has(.prv16-fall-go.on) .prv16-faller { transform: translate(150px, 200px) rotate(100deg); }
@@ -206,10 +202,10 @@
     <blockquote class="quote rise" data-q="11"></blockquote>
     <div class="split">
       <div class="stage">
-        <svg viewBox="0 0 600 320" role="img" aria-label="A balance scale settles level: grain on one side, honest stone weights from a bag on the other.">
+        <svg class="scale now" style="--at:300px 80px; --from:-8deg; --tip:0deg; --wait:.9s" viewBox="0 0 600 320" role="img" aria-label="A balance scale settles level: grain on one side, honest stone weights from a bag on the other.">
           <path d="M240 300 L360 300 L330 280 L270 280 Z" style="fill:var(--surface-2);stroke:var(--ink-soft)" stroke-width="2.5"/>
           <rect x="294" y="74" width="12" height="208" style="fill:var(--ink-soft)"/>
-          <g class="prv16-beam">
+          <g class="scale-beam">
             <rect x="130" y="74" width="340" height="12" rx="6" style="fill:var(--ink)"/>
             <circle cx="300" cy="80" r="11" style="fill:var(--accent)"/>
             <g fill="none" stroke-width="2" style="stroke:var(--ink-soft)"><path d="M140 86 L100 196 M140 86 L180 196"/><path d="M460 86 L420 196 M460 86 L500 196"/></g>

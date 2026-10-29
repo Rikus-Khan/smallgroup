@@ -11,23 +11,10 @@
 <link rel="stylesheet" href="../assets/themes.css">
 <style>
 /* The scales of justice, tipped by a cup of wine (31:4-5) */
-.prv31-beam { transform-origin: 260px 70px; transition: transform 1.4s cubic-bezier(.5,0,.3,1) .7s; }
-.prv31-scale:has(.prv31-c1.on) .prv31-beam { transform: rotate(10deg); }
 .prv31-cup { transform: translateY(-90px); opacity: 0; transition: transform .7s cubic-bezier(.6,0,.9,.6), opacity .3s ease; }
-.prv31-scale:has(.prv31-c1.on) .prv31-cup { transform: none; opacity: 1; }
+.slide:has(.scale-go.on) .prv31-cup { transform: none; opacity: 1; }
 .prv31-bent { opacity: 0; transition: opacity .8s ease 1.8s; }
-.prv31-scale:has(.prv31-c1.on) .prv31-bent { opacity: 1; }
-
-/* The Hebrew alphabet: one letter starts each verse of the poem (31:10-31) */
-.prv31-abc { list-style: none; padding: 0; margin: .3em 0 1em; display: grid; grid-template-columns: repeat(6, 1fr); gap: 6px; }
-@media (min-width: 760px) { .prv31-abc { grid-template-columns: repeat(11, 1fr); } }
-.prv31-abc li { text-align: center; padding: .35em .1em .3em; border: 1.5px solid var(--line-strong); border-radius: 8px; background: var(--surface); opacity: 0; transform: translateY(8px); transition: opacity .5s ease, transform .5s ease; transition-delay: calc(var(--k) * 90ms + 300ms); }
-.slide.active .prv31-abc li { opacity: 1; transform: none; }
-.prv31-abc b { display: block; font: 400 clamp(1.6rem, 1.1rem + 2vw, 2.6rem)/1.15 var(--serif); color: var(--ink); }
-.prv31-abc span { display: block; font-size: clamp(.68rem, .62rem + .25vw, .85rem); color: var(--ink-soft); }
-.prv31-abc i { display: block; font-style: normal; font-weight: 700; font-size: clamp(.72rem, .66rem + .25vw, .9rem); color: var(--accent); }
-.prv31-abc li.prv31-end { border-color: var(--accent); background: color-mix(in srgb, var(--accent) 12%, transparent); }
-.prv31-abc li.prv31-end b { color: var(--accent-hot); }
+.slide:has(.scale-go.on) .prv31-bent { opacity: 1; }
 
 /* Spindle and distaff: the whorl spins (31:19) */
 .prv31-whorl { transform-box: fill-box; transform-origin: center; }
@@ -130,16 +117,16 @@
 
 <section class="slide verse" data-v="4-5" data-hl="it is not for kings to drink wine|forget the law, and pervert the judgment of any of the afflicted"></section>
 
-<section class="slide ex prv31-scale">
+<section class="slide ex">
   <div class="inner">
     <blockquote class="quote rise" data-q="5" data-hl="forget the law|pervert the judgment of any of the afflicted"></blockquote>
     <div class="split">
       <div class="stage">
-        <svg viewBox="0 0 520 300" role="img" aria-label="A balance scale of justice hangs level. A cup of wine drops onto one side and the scale tips, so judgment is bent.">
+        <svg class="scale" style="--at:260px 70px; --wait:.7s" viewBox="0 0 520 300" role="img" aria-label="A balance scale of justice hangs level. A cup of wine drops onto one side and the scale tips, so judgment is bent.">
           <rect x="220" y="272" width="80" height="12" rx="3" style="fill:var(--line-strong)"/>
           <line x1="260" y1="60" x2="260" y2="274" stroke-width="6" style="stroke:var(--ink-soft)"/>
           <circle cx="260" cy="66" r="9" style="fill:var(--ink-soft)"/>
-          <g class="prv31-beam">
+          <g class="scale-beam">
             <line x1="100" y1="70" x2="420" y2="70" stroke-width="7" stroke-linecap="round" style="stroke:var(--ink)"/>
             <g stroke-width="2" style="stroke:var(--ink-soft)"><line x1="110" y1="70" x2="70" y2="170"/><line x1="110" y1="70" x2="150" y2="170"/><line x1="410" y1="70" x2="370" y2="170"/><line x1="410" y1="70" x2="450" y2="170"/></g>
             <path d="M60 170 Q110 205 160 170 Z" stroke-width="2" style="fill:var(--surface-2);stroke:var(--ink)"/>
@@ -157,7 +144,7 @@
       <div>
         <h2 class="rise" style="--d:1">A king needs a clear head</h2>
         <p class="note rise" style="--d:2">A king was the judge of last resort. The poor and the hurting came to him for justice. A drunk king forgets the law and lets the powerful get away with it.</p>
-        <p class="note step prv31-c1">One cup can tip the scales. The people who pay for it are the ones with no one else to help them.</p>
+        <p class="note step scale-go">One cup can tip the scales. The people who pay for it are the ones with no one else to help them.</p>
         <p class="note step">And Revelation 1:6 says Christ <em>“hath made us kings and priests unto God.”</em> People depend on you staying clear. <em>“Be sober, be vigilant”</em> (1 Peter 5:8).</p>
       </div>
     </div>
@@ -232,8 +219,8 @@
   <div class="inner">
     <blockquote class="quote rise" data-q="10" data-hl="a virtuous woman"></blockquote>
     <h2 class="rise" style="--d:1">A poem from A to Z</h2>
-    <ol class="prv31-abc" lang="he" aria-label="The 22 letters of the Hebrew alphabet, aleph through tav, starting verses 10 through 31 in order">
-      <li class="prv31-end" style="--k:0"><b>א</b><span lang="en">Aleph</span><i lang="en">10</i></li>
+    <ol class="abc" lang="he" aria-label="The 22 letters of the Hebrew alphabet, aleph through tav, starting verses 10 through 31 in order">
+      <li class="end" style="--k:0"><b>א</b><span lang="en">Aleph</span><i lang="en">10</i></li>
       <li style="--k:1"><b>ב</b><span lang="en">Beth</span><i lang="en">11</i></li>
       <li style="--k:2"><b>ג</b><span lang="en">Gimel</span><i lang="en">12</i></li>
       <li style="--k:3"><b>ד</b><span lang="en">Daleth</span><i lang="en">13</i></li>
@@ -254,7 +241,7 @@
       <li style="--k:18"><b>ק</b><span lang="en">Qoph</span><i lang="en">28</i></li>
       <li style="--k:19"><b>ר</b><span lang="en">Resh</span><i lang="en">29</i></li>
       <li style="--k:20"><b>ש</b><span lang="en">Shin</span><i lang="en">30</i></li>
-      <li class="prv31-end" style="--k:21"><b>ת</b><span lang="en">Tav</span><i lang="en">31</i></li>
+      <li class="end" style="--k:21"><b>ת</b><span lang="en">Tav</span><i lang="en">31</i></li>
     </ol>
     <p class="note step">In Hebrew, verses 10 to 31 are an <em>acrostic</em>: each verse starts with the next letter of the 22-letter alphabet, from aleph to tav. (Psalm 119 is built the same way.) It's the whole of a godly woman's character, “A to Z,” and it was easy to memorize.</p>
     <p class="note step">This is a portrait to admire, not a checklist to beat a woman over the head with. No real woman does all of it at once, every day.</p>

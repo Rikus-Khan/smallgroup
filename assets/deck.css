@@ -324,6 +324,83 @@ svg .serif { font-family: var(--serif); }
 .mirror .word { font-family: var(--serif); font-style: italic; color: var(--accent-hot); }
 .mirror small { flex-basis: 100%; color: var(--ink-soft); font-size: .75em; }
 
+/* A loop that keeps going round, and a way out (svg.cycle; --at is its center in viewBox units).
+   .cycle-ring is the dashed track and .cycle-stop a stop on it (a circle, or a g with a pill rect and text).
+   .cycle-spin turns around the center for as long as the slide is open, one lap every --lap.
+   .cycle-way is a path out; a .cycle-out group appears, and the ring fades, when a .cycle-go step comes on. */
+.cycle-ring { fill: none; stroke: var(--line-strong); stroke-width: 3; stroke-dasharray: 8 8; transition: opacity 1s ease; }
+circle.cycle-stop { fill: var(--wine); stroke: var(--bg); stroke-width: 3; }
+.cycle-stop rect { fill: var(--surface-2); stroke: var(--line-strong); stroke-width: 2; }
+.cycle-spin { transform-box: view-box; transform-origin: var(--at, 50% 50%); }
+.slide.active .cycle-spin { animation: orbit var(--lap, 8s) linear infinite; }
+@keyframes orbit { to { transform: rotate(360deg); } }
+.cycle-way { fill: none; stroke: var(--accent); stroke-width: 6; stroke-linecap: round; stroke-linejoin: round; }
+.cycle-out { opacity: 0; transition: opacity 1s ease .3s; }
+.slide:has(.cycle-go.on) .cycle-out { opacity: 1; }
+.slide:has(.cycle-go.on) .cycle-ring { opacity: .4; }
+
+/* A balance scale (svg.scale). One angle, --tilt, turns the .scale-beam about its pivot --at (viewBox units),
+   and the .scale-pan.l / .scale-pan.r ride the beam's ends, --arm units out, hanging level.
+   Anything drawn inside the beam turns with it. The scale starts at --from (level) and tips to --tip
+   (10deg: right side down) when the slide opens (.scale.now) or when a .scale-go step comes on, after --wait.
+   .scale.rock rocks back and forth, then settles level. */
+@property --tilt { syntax: '<angle>'; inherits: true; initial-value: 0deg; }
+.scale { --tilt: var(--from, 0deg); transition: --tilt 1.6s cubic-bezier(.4,1.4,.5,1) var(--wait, 0s); }
+.slide.active .scale.now, .slide:has(.scale-go.on) .scale { --tilt: var(--tip, 10deg); }
+.slide.active .scale.rock { animation: rock 4.5s .5s ease-in-out both; }
+@keyframes rock { 0% { --tilt: -14deg; } 25% { --tilt: 10deg; } 50% { --tilt: -6deg; } 72% { --tilt: 3deg; } 100% { --tilt: 0deg; } }
+.scale-beam { transform-box: view-box; transform-origin: var(--at, 300px 70px); transform: rotate(var(--tilt)); }
+.scale-pan.l { transform: translate(calc((1 - cos(var(--tilt))) * var(--arm, 220) * 1px), calc(sin(var(--tilt)) * var(--arm, 220) * -1px)); }
+.scale-pan.r { transform: translate(calc((cos(var(--tilt)) - 1) * var(--arm, 220) * 1px), calc(sin(var(--tilt)) * var(--arm, 220) * 1px)); }
+
+/* Sayings sorted by theme: a card per theme, with its verse numbers (.vs b) and a line about it */
+.sort { display: grid; grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr)); gap: .7rem; margin: .4em 0 1em; }
+.sort > div { padding: .6em .8em; border: 1px solid var(--line-strong); border-radius: 10px; background: var(--surface); }
+.sort h3 { font: 700 clamp(1rem, .9rem + .45vw, 1.25rem) var(--sans); color: var(--accent-hot); margin-bottom: .35em; }
+.sort .vs { display: flex; flex-wrap: wrap; gap: 4px; margin-bottom: .4em; }
+.sort .vs b { min-width: 1.9em; padding: .1em .35em; text-align: center; border-radius: 6px; font-size: .9rem; background: color-mix(in srgb, var(--accent) 16%, transparent); color: var(--ink); }
+.sort p { font-size: clamp(.9rem, .82rem + .35vw, 1.1rem); line-height: 1.35; color: var(--ink-soft); }
+@media (max-width: 600px) { .sort { grid-template-columns: 1fr 1fr; } .sort p { display: none; } }
+
+/* Two lines of a proverb matched piece to piece. Rows .a and .b each hold a .tag (or a .but) and --n pieces (.w);
+   a row of .link labels between them says how each pair answers. */
+.match { display: grid; grid-template-columns: 3.4em repeat(var(--n, 3), 1fr); gap: .5rem .6rem; margin: .4em 0 1.1em; align-items: center; text-align: center; }
+.match > div { display: contents; }
+.match .w { padding: .55em .5em; border-radius: 8px; font-family: var(--serif); font-size: clamp(1rem, .85rem + .8vw, 1.6rem); line-height: 1.2; }
+.match .a .w { background: color-mix(in srgb, var(--accent) 14%, transparent); border: 1.5px solid var(--accent); }
+.match .b .w { background: var(--surface); border: 1.5px dashed var(--line-strong); }
+.match .tag { font-size: clamp(.75rem, .7rem + .3vw, .95rem); color: var(--ink-soft); text-align: right; font-weight: 700; }
+.match .but { justify-self: end; padding: .2em .55em; border-radius: 999px; background: var(--accent); color: var(--on-accent); font-weight: 700; font-size: clamp(.85rem, .8rem + .3vw, 1.05rem); }
+.match .link { font-size: clamp(.8rem, .75rem + .3vw, 1rem); color: var(--accent-hot); font-weight: 700; }
+.match .link::before { content: "\2195"; display: block; font-size: 1.5em; line-height: 1; color: var(--accent); }
+/* The rows have no box of their own, so rise and step act on their pieces */
+.slide.active .match > .rise > * { animation: rise .9s cubic-bezier(.2,.7,.2,1) both; animation-delay: calc(var(--d, 0) * 140ms + 150ms); }
+.match > .step > * { opacity: 0; transform: translateY(8px); transition: opacity .6s ease, transform .6s ease; }
+.match > .step.on > * { opacity: 1; transform: none; }
+
+/* Sin covered, then confessed and forsaken (svg.lid). A .lid-off step lifts the .lid-cover off (--off to the side)
+   and clears the .lid-cloud; a .lid-gone step carries the .lid-pile away (--away) and shows the .lid-light. */
+.lid-cover { transform-box: fill-box; transform-origin: 0% 100%; transition: transform 1.3s ease, opacity 1.3s ease; }
+.lid-cloud { transition: opacity 1.2s ease; }
+.lid-pile { transition: transform 1.4s ease, opacity 1.4s ease; }
+.lid-light { opacity: 0; transition: opacity 1.2s ease .8s; }
+.slide:has(.lid-off.on) .lid-cover { transform: translate(var(--off, -170px), 6px) rotate(-8deg); opacity: .3; }
+.slide:has(.lid-off.on) .lid-cloud { opacity: 0; }
+.slide:has(.lid-gone.on) .lid-pile { transform: translateX(var(--away, 300px)); opacity: 0; }
+.slide:has(.lid-gone.on) .lid-light { opacity: 1; }
+
+/* An acrostic: one letter of the alphabet starts each verse. Each li holds the letter (b), its name (span),
+   and its verse (i), with --k for the stagger; li.end marks the first and last. --per-row sets the wide layout. */
+.abc { list-style: none; padding: 0; margin: .3em 0 1em; display: grid; grid-template-columns: repeat(6, 1fr); gap: 6px; }
+@media (min-width: 760px) { .abc { grid-template-columns: repeat(var(--per-row, 11), 1fr); } }
+.abc li { text-align: center; padding: .35em .1em .3em; border: 1.5px solid var(--line-strong); border-radius: 8px; background: var(--surface); opacity: 0; transform: translateY(8px); transition: opacity .5s ease, transform .5s ease; transition-delay: calc(var(--k, 0) * 90ms + 300ms); }
+.slide.active .abc li { opacity: 1; transform: none; }
+.abc b { display: block; font: 400 clamp(1.6rem, 1.1rem + 2vw, 2.6rem)/1.15 var(--serif); color: var(--ink); }
+.abc span { display: block; font-size: clamp(.68rem, .62rem + .25vw, .85rem); color: var(--ink-soft); }
+.abc i { display: block; font-style: normal; font-weight: 700; font-size: clamp(.72rem, .66rem + .25vw, .9rem); color: var(--accent); }
+.abc li.end { border-color: var(--accent); background: color-mix(in srgb, var(--accent) 12%, transparent); }
+.abc li.end b { color: var(--accent-hot); }
+
 /* ---------- Questions ---------- */
 @media (min-width: 900px) and (min-aspect-ratio: 4/3) {
   .qa .inner { display: grid; grid-template-columns: 1fr 1.45fr; gap: 0 3rem; align-items: start; width: min(100%, 76rem); }

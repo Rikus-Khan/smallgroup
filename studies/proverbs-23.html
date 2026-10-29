@@ -22,14 +22,6 @@
 .prv23-woes { list-style: none; padding: 0; margin: .4em 0 1em; display: grid; grid-template-columns: repeat(auto-fit, minmax(14rem, 1fr)); gap: 8px; }
 .prv23-woes li { padding: .6em .8em; border-radius: 8px; border: 1.5px solid var(--line-strong); background: var(--surface); font-size: clamp(.92rem, .84rem + .35vw, 1.12rem); line-height: 1.35; color: var(--ink-soft); }
 .prv23-woes li b { display: block; font: italic 1.15em var(--serif); color: var(--accent-hot); }
-
-/* The cycle: a dot runs around and around */
-.prv23-ring { fill: none; stroke: var(--line-strong); stroke-width: 3; stroke-dasharray: 8 8; }
-.prv23-node { fill: var(--wine); stroke: var(--bg); stroke-width: 3; }
-.prv23-runner { transform-origin: 320px 200px; }
-.slide.active .prv23-runner { animation: prv23-round 7s linear infinite; }
-@keyframes prv23-round { to { transform: rotate(360deg); } }
-.prv23-exit { fill: none; stroke: var(--accent); stroke-width: 6; stroke-linecap: round; }
 </style>
 </head>
 <body>
@@ -328,15 +320,15 @@
     <blockquote class="quote rise" data-q="35" data-hl="I felt it not|when shall I awake? I will seek it yet again"></blockquote>
     <div class="split">
       <div class="stage">
-        <svg viewBox="0 0 640 400" role="img" aria-label="A circle with six stops: it looks good, it bites, mind bends, no footing, numb, seek it again. A dot keeps running around the circle without stopping.">
-          <circle class="prv23-ring" cx="320" cy="200" r="140"/>
-          <g class="rise" style="--d:1"><circle class="prv23-node" cx="320" cy="60" r="15"/><text x="320" y="30" text-anchor="middle" font-size="19">1. It looks good <tspan style="fill:var(--ink-soft)">(v. 31)</tspan></text></g>
-          <g class="rise" style="--d:2"><circle class="prv23-node" cx="441" cy="130" r="15"/><text x="464" y="136" font-size="19">2. It bites <tspan style="fill:var(--ink-soft)">(32)</tspan></text></g>
-          <g class="rise" style="--d:3"><circle class="prv23-node" cx="441" cy="270" r="15"/><text x="464" y="276" font-size="19">3. Mind bends <tspan style="fill:var(--ink-soft)">(33)</tspan></text></g>
-          <g class="rise" style="--d:4"><circle class="prv23-node" cx="320" cy="340" r="15"/><text x="320" y="382" text-anchor="middle" font-size="19">4. No footing <tspan style="fill:var(--ink-soft)">(34)</tspan></text></g>
-          <g class="rise" style="--d:5"><circle class="prv23-node" cx="199" cy="270" r="15"/><text x="176" y="276" text-anchor="end" font-size="19">5. Numb <tspan style="fill:var(--ink-soft)">(35)</tspan></text></g>
-          <g class="rise" style="--d:6"><circle class="prv23-node" cx="199" cy="130" r="15"/><text x="176" y="136" text-anchor="end" font-size="19" style="fill:var(--accent-hot)">6. Seek it again</text></g>
-          <g class="prv23-runner"><circle cx="320" cy="60" r="8" style="fill:var(--accent-hot);stroke:var(--bg)" stroke-width="2"/></g>
+        <svg class="cycle" style="--at:320px 200px; --lap:7s" viewBox="0 0 640 400" role="img" aria-label="A circle with six stops: it looks good, it bites, mind bends, no footing, numb, seek it again. A dot keeps running around the circle without stopping.">
+          <circle class="cycle-ring" cx="320" cy="200" r="140"/>
+          <g class="rise" style="--d:1"><circle class="cycle-stop" cx="320" cy="60" r="15"/><text x="320" y="30" text-anchor="middle" font-size="19">1. It looks good <tspan style="fill:var(--ink-soft)">(v. 31)</tspan></text></g>
+          <g class="rise" style="--d:2"><circle class="cycle-stop" cx="441" cy="130" r="15"/><text x="464" y="136" font-size="19">2. It bites <tspan style="fill:var(--ink-soft)">(32)</tspan></text></g>
+          <g class="rise" style="--d:3"><circle class="cycle-stop" cx="441" cy="270" r="15"/><text x="464" y="276" font-size="19">3. Mind bends <tspan style="fill:var(--ink-soft)">(33)</tspan></text></g>
+          <g class="rise" style="--d:4"><circle class="cycle-stop" cx="320" cy="340" r="15"/><text x="320" y="382" text-anchor="middle" font-size="19">4. No footing <tspan style="fill:var(--ink-soft)">(34)</tspan></text></g>
+          <g class="rise" style="--d:5"><circle class="cycle-stop" cx="199" cy="270" r="15"/><text x="176" y="276" text-anchor="end" font-size="19">5. Numb <tspan style="fill:var(--ink-soft)">(35)</tspan></text></g>
+          <g class="rise" style="--d:6"><circle class="cycle-stop" cx="199" cy="130" r="15"/><text x="176" y="136" text-anchor="end" font-size="19" style="fill:var(--accent-hot)">6. Seek it again</text></g>
+          <g class="cycle-spin"><circle cx="320" cy="60" r="8" style="fill:var(--accent-hot);stroke:var(--bg)" stroke-width="2"/></g>
           <text x="320" y="196" text-anchor="middle" font-size="24" class="serif" style="fill:var(--ink-soft)">around</text>
           <text x="320" y="226" text-anchor="middle" font-size="24" class="serif" style="fill:var(--ink-soft)">and around</text>
         </svg>
@@ -355,17 +347,17 @@
   <div class="inner">
     <div class="split">
       <div class="stage">
-        <svg viewBox="0 0 640 400" role="img" aria-label="The same circle, but broken open at one spot, with a bright path leading out of it.">
-          <path class="prv23-ring" d="M320 60 A140 140 0 1 1 199 130"/>
-          <circle class="prv23-node" cx="320" cy="60" r="15"/>
-          <circle class="prv23-node" cx="441" cy="130" r="15"/>
-          <circle class="prv23-node" cx="441" cy="270" r="15"/>
-          <circle class="prv23-node" cx="320" cy="340" r="15"/>
-          <circle class="prv23-node" cx="199" cy="270" r="15"/>
-          <circle class="prv23-node" cx="199" cy="130" r="15"/>
+        <svg class="cycle" viewBox="0 0 640 400" role="img" aria-label="The same circle, but broken open at one spot, with a bright path leading out of it.">
+          <path class="cycle-ring" d="M320 60 A140 140 0 1 1 199 130"/>
+          <circle class="cycle-stop" cx="320" cy="60" r="15"/>
+          <circle class="cycle-stop" cx="441" cy="130" r="15"/>
+          <circle class="cycle-stop" cx="441" cy="270" r="15"/>
+          <circle class="cycle-stop" cx="320" cy="340" r="15"/>
+          <circle class="cycle-stop" cx="199" cy="270" r="15"/>
+          <circle class="cycle-stop" cx="199" cy="130" r="15"/>
           <g class="step">
-            <path class="prv23-exit draw" pathLength="1" d="M210 120 C230 95 230 60 160 40 L60 30"/>
-            <path class="prv23-exit" d="M78 14 L58 30 L80 46"/>
+            <path class="cycle-way draw" pathLength="1" d="M210 120 C230 95 230 60 160 40 L60 30"/>
+            <path class="cycle-way" d="M78 14 L58 30 L80 46"/>
             <text x="30" y="84" font-size="20" font-weight="700" style="fill:var(--accent-hot)">a way to escape</text>
             <text x="30" y="108" font-size="16" style="fill:var(--ink-soft)">1 Corinthians 10:13</text>
           </g>

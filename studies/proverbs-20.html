@@ -23,18 +23,6 @@
 .slide.active .prv20-snow { animation: prv20-fall 3s linear infinite; }
 @keyframes prv20-fall { from { transform: translateY(-20px); opacity: 0; } 20% { opacity: 1; } to { transform: translateY(60px); opacity: 0; } }
 
-/* prv20-scale: two weights with the same label, one heavy and one light */
-.prv20-beam { transform-box: view-box; transform-origin: 300px 90px; transition: transform 1.4s cubic-bezier(.3,1.4,.5,1); }
-.slide:has(.prv20-tip.on) .prv20-beam { transform: rotate(-9deg); }
-
-/* prv20-sort: the chapter's sayings gathered by theme */
-.prv20-sort { display: grid; grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr)); gap: .7rem; margin: .4em 0 1em; }
-.prv20-sort > div { padding: .6em .8em; border: 1px solid var(--line-strong); border-radius: 10px; background: var(--surface); }
-.prv20-sort h3 { font: 700 clamp(1rem, .9rem + .45vw, 1.25rem) var(--sans); color: var(--accent-hot); margin-bottom: .35em; }
-.prv20-sort .vs { display: flex; flex-wrap: wrap; gap: 4px; margin-bottom: .4em; }
-.prv20-sort .vs b { min-width: 1.9em; padding: .1em .35em; text-align: center; border-radius: 6px; font-size: .9rem; background: color-mix(in srgb, var(--accent) 16%, transparent); color: var(--ink); }
-.prv20-sort p { font-size: clamp(.9rem, .82rem + .35vw, 1.1rem); line-height: 1.35; color: var(--ink-soft); }
-@media (max-width: 600px) { .prv20-sort { grid-template-columns: 1fr 1fr; } .prv20-sort p { display: none; } }
 </style>
 </head>
 <body>
@@ -239,9 +227,9 @@
     <blockquote class="quote rise" data-q="10"></blockquote>
     <div class="split">
       <div class="stage">
-        <svg viewBox="0 0 600 300" role="img" aria-label="A balance scale. Two weights are both stamped one shekel, but one is heavy and one is light, so the scale tips.">
+        <svg class="scale" style="--at:300px 90px; --tip:-9deg" viewBox="0 0 600 300" role="img" aria-label="A balance scale. Two weights are both stamped one shekel, but one is heavy and one is light, so the scale tips.">
           <path d="M300 90 L300 270 M240 270 L360 270" stroke-width="6" stroke-linecap="round" style="stroke:var(--ink-soft)"/>
-          <g class="prv20-beam">
+          <g class="scale-beam">
             <path d="M120 90 L480 90" stroke-width="6" stroke-linecap="round" style="stroke:var(--ink)"/>
             <path d="M120 90 L80 180 M120 90 L160 180 M480 90 L440 180 M480 90 L520 180" stroke-width="2" style="stroke:var(--ink-soft)"/>
             <path d="M70 180 Q120 205 170 180 Z" style="fill:var(--surface-2);stroke:var(--ink-soft)" stroke-width="2"/>
@@ -259,7 +247,7 @@
       <div>
         <h2 class="rise" style="--d:1">Two weights in the bag</h2>
         <p class="note rise" style="--d:2">A cheat kept two stone weights marked the same: a heavy one for buying, a light one for selling.</p>
-        <p class="note step prv20-tip">“Thou shalt not have in thy bag divers weights, a great and a small” (Deuteronomy 25:13). God calls it an <em>abomination</em>, something He hates.</p>
+        <p class="note step scale-go">“Thou shalt not have in thy bag divers weights, a great and a small” (Deuteronomy 25:13). God calls it an <em>abomination</em>, something He hates.</p>
         <p class="note step">Today it's a hustle or padded hours. The God who made the eye (v. 12) sees it.</p>
       </div>
     </div>
@@ -391,7 +379,7 @@
 <section class="slide ex">
   <div class="inner">
     <h2 class="rise">Chapter 20, sorted</h2>
-    <div class="prv20-sort">
+    <div class="sort">
       <div class="rise" style="--d:1"><h3>Drink and deceit</h3><div class="vs"><b>1</b><b>17</b></div><p>What lies to you tastes sweet, then turns to gravel.</p></div>
       <div class="rise" style="--d:2"><h3>Honesty</h3><div class="vs"><b>10</b><b>14</b><b>17</b><b>23</b></div><p>God hates the crooked scale.</p></div>
       <div class="rise" style="--d:3"><h3>Words</h3><div class="vs"><b>15</b><b>19</b><b>20</b></div><p>Wise lips are jewels. Gossips and curses do harm.</p></div>

@@ -97,6 +97,12 @@ Copy patterns from `studies/john-01.html` and `studies/john-02.html`. These are 
 | `.signs li(.now)` | a set or series, one highlighted | John 2 slide 16 |
 | `.temples` | two big numbers compared | John 2 slide 24 |
 | `.mirror` | one word, two directions | John 2 slide 28 |
+| `svg.cycle` (`.cycle-ring`, `.cycle-stop`, `.cycle-spin`, `.cycle-way`, `.cycle-out` + `.cycle-go`) | a loop that keeps going round (addiction, relapse), and the way out. Set `--at` (center) and `--lap` on the svg | Proverbs 23 slides 29–30, Proverbs 26 slide 13 |
+| `svg.scale` (`.scale-beam`, `.scale-pan.l / .r`) | things weighed against each other. On the svg: `--at` (pivot), `--arm`, `--tip`, `--from`, `--wait`. Tips with `.now` (on open) or a `.scale-go` step; `.rock` rocks and settles | Proverbs 8 slide 11 (pans), 16 slide 15 (settles level), 21 slide 6 (rocks), 29 slide 25 (seesaw) |
+| `.sort > div` (`h3`, `.vs b`, `p`) | a chapter's sayings sorted into themes | Proverbs 17 slide 30 |
+| `.match` (`.a`, `.b`, `.tag`, `.but`, `.w`, `.link`) | two parallel lines matched piece to piece. `--n` sets the number of pieces | Proverbs 10 slide 5 |
+| `svg.lid` (`.lid-cover`, `.lid-cloud`, `.lid-pile`, `.lid-light` + `.lid-off`, `.lid-gone`) | something hidden, uncovered, then taken away (covered sin, confessed and forsaken) | Proverbs 28 slide 15 |
+| `ol.abc li(.end)` (`b`, `span`, `i`, `--k`) | an acrostic: one letter of the alphabet per verse | Proverbs 31 slide 17 |
 
 ### Making a new graphic
 

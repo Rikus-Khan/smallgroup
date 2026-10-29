@@ -19,17 +19,6 @@
   90% { opacity: 1; } 100% { opacity: .5; transform: translate(470px, 0); }
 }
 
-/* A loop that keeps going round, and a way out of it */
-.prv26-ring { transform-origin: 175px 190px; transition: opacity 1s ease; }
-.slide.active .prv26-ring { animation: prv26-spin 9s linear infinite; }
-@keyframes prv26-spin { to { transform: rotate(360deg); } }
-.prv26-node rect { fill: var(--surface-2); stroke: var(--line-strong); stroke-width: 2; }
-.prv26-node text { font-size: 23px; }
-.prv26-nodes { transition: opacity 1s ease; }
-.prv26-exit { opacity: 0; transition: opacity 1s ease .3s; }
-.prv26-loop:has(.prv26-out.on) .prv26-exit { opacity: 1; }
-.prv26-loop:has(.prv26-out.on) .prv26-ring { opacity: .4; }
-
 /* A door swinging on its hinges */
 .prv26-door { transform-box: fill-box; transform-origin: 0 50%; }
 .slide.active .prv26-door { animation: prv26-swing 2.6s ease-in-out infinite alternate; }
@@ -194,22 +183,22 @@
 
 <section class="slide verse" data-v="10-12" data-hl="As a dog returneth to his vomit, so a fool returneth to his folly|there is more hope of a fool than of him"></section>
 
-<section class="slide ex prv26-loop">
+<section class="slide ex">
   <div class="inner">
     <blockquote class="quote rise" data-q="11"></blockquote>
     <div class="split">
       <div class="stage">
-        <svg viewBox="0 0 520 350" role="img" aria-label="A loop: the old thing, the crash, never again, the pull, and back to the old thing. Then a way out of the loop: confess, reach out, turn to Christ.">
-          <circle class="prv26-ring" cx="175" cy="190" r="118" fill="none" stroke-width="5" stroke-dasharray="16 12" style="stroke:var(--danger)"/>
-          <g class="prv26-nodes">
-            <g class="prv26-node"><rect x="80" y="50" width="190" height="46" rx="23"/><text x="175" y="81" text-anchor="middle">the old thing</text></g>
-            <g class="prv26-node"><rect x="214" y="167" width="160" height="46" rx="23"/><text x="294" y="198" text-anchor="middle">the crash</text></g>
-            <g class="prv26-node"><rect x="70" y="285" width="210" height="46" rx="23"/><text x="175" y="316" text-anchor="middle">“never again”</text></g>
-            <g class="prv26-node"><rect x="2" y="167" width="140" height="46" rx="23"/><text x="72" y="198" text-anchor="middle">the pull</text></g>
+        <svg class="cycle" style="--at:175px 190px; --lap:9s" viewBox="0 0 520 350" role="img" aria-label="A loop: the old thing, the crash, never again, the pull, and back to the old thing. Then a way out of the loop: confess, reach out, turn to Christ.">
+          <circle class="cycle-ring cycle-spin" cx="175" cy="190" r="118" style="stroke:var(--danger);stroke-width:5;stroke-dasharray:16 12"/>
+          <g font-size="23">
+            <g class="cycle-stop"><rect x="80" y="50" width="190" height="46" rx="23"/><text x="175" y="81" text-anchor="middle">the old thing</text></g>
+            <g class="cycle-stop"><rect x="214" y="167" width="160" height="46" rx="23"/><text x="294" y="198" text-anchor="middle">the crash</text></g>
+            <g class="cycle-stop"><rect x="70" y="285" width="210" height="46" rx="23"/><text x="175" y="316" text-anchor="middle">“never again”</text></g>
+            <g class="cycle-stop"><rect x="2" y="167" width="140" height="46" rx="23"/><text x="72" y="198" text-anchor="middle">the pull</text></g>
           </g>
-          <g class="prv26-exit">
-            <path d="M376 190 Q440 190 446 140" fill="none" stroke-width="6" stroke-linecap="round" style="stroke:var(--accent)"/>
-            <path d="M432 152 L446 132 L460 152" fill="none" stroke-width="6" stroke-linecap="round" stroke-linejoin="round" style="stroke:var(--accent)"/>
+          <g class="cycle-out">
+            <path class="cycle-way" d="M376 190 Q440 190 446 140"/>
+            <path class="cycle-way" d="M432 152 L446 132 L460 152"/>
             <text x="440" y="28" text-anchor="middle" font-size="24" font-weight="700" style="fill:var(--accent-hot)">the way out</text>
             <text x="440" y="60" text-anchor="middle" font-size="21">confess</text>
             <text x="440" y="86" text-anchor="middle" font-size="21">reach out</text>
@@ -221,7 +210,7 @@
         <h2 class="rise" style="--d:1">Back to the vomit</h2>
         <p class="note rise" style="--d:2">It's a gross picture on purpose. The dog throws up what made him sick, then goes right back and eats it.</p>
         <p class="note step">Most of us know this loop from the inside. The old thing, the crash, “never again,” the pull, and back around. That's what <em>relapse</em> looks like, and naming it honestly is the first step out.</p>
-        <p class="note step prv26-out">The loop has a door. You don't have to break it alone, and you don't have to hide when you've slipped.</p>
+        <p class="note step cycle-go">The loop has a door. You don't have to break it alone, and you don't have to hide when you've slipped.</p>
       </div>
     </div>
   </div>
