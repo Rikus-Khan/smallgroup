@@ -1,0 +1,707 @@
+<!doctype html>
+<html lang="en" data-theme="night">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>John 13</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="../assets/fonts.css">
+<link rel="stylesheet" href="../assets/deck.css">
+<link rel="stylesheet" href="../assets/themes.css">
+<style>
+/* A staircase of actions, each one a step lower (--k is the step; --n the number of steps).
+   .dark turns it into a slide downward. */
+.jn13-stairs { list-style: none; padding: 0; margin: .4em 0 1em; display: grid; grid-template-columns: repeat(var(--n, 7), 1fr); gap: 5px; align-items: start; }
+.jn13-stairs li {
+  margin-top: calc(var(--k, 0) * clamp(10px, 2.3vh, 24px)); padding: .5em .35em .55em; text-align: center;
+  border-top: 3px solid var(--accent); background: color-mix(in srgb, var(--accent) 11%, transparent); border-radius: 0 0 8px 8px;
+  font-size: clamp(.78rem, .7rem + .35vw, 1.05rem); line-height: 1.25; color: var(--ink-soft);
+  opacity: 0; transform: translateY(-12px); transition: opacity .6s ease, transform .6s ease; transition-delay: calc(var(--k, 0) * 280ms + 400ms);
+}
+.slide.active .jn13-stairs li { opacity: 1; transform: none; }
+.jn13-stairs b { display: block; font: 400 clamp(1rem, .85rem + .7vw, 1.5rem)/1.15 var(--serif); color: var(--accent-hot); margin-bottom: .15em; }
+.jn13-stairs.dark li { border-top-color: var(--danger); background: color-mix(in srgb, var(--danger) 10%, transparent); }
+.jn13-stairs.dark b { color: var(--ink); }
+.jn13-stairs.dark li:last-child { background: color-mix(in srgb, var(--on-glow) 70%, transparent); border-top-color: var(--on-glow); color: var(--glow); }
+.jn13-stairs.dark li:last-child b { color: var(--glow); }
+@media (max-width: 640px) {
+  .jn13-stairs { grid-template-columns: 1fr; gap: 4px; }
+  .jn13-stairs li { margin: 0 0 0 calc(var(--k, 0) * 6%); text-align: left; display: flex; gap: .6em; align-items: baseline; padding: .35em .6em; }
+  .jn13-stairs b { margin: 0; }
+}
+
+/* A U-shaped supper table seen from above, with men reclining around it, feet outward */
+.jn13-table .tbl { fill: none; stroke: var(--surface-2); stroke-width: 44; }
+.jn13-table .tbl-edge { fill: none; stroke: var(--line-strong); stroke-width: 2; }
+.jn13-table .man { stroke: var(--ink-soft); stroke-width: 9; stroke-linecap: round; }
+.jn13-table .head { fill: var(--ink-soft); }
+.jn13-table .foot { fill: var(--warm); transition: fill .6s ease; transition-delay: calc(var(--k, 0) * 220ms + 300ms); }
+.slide:has(.jn13-wash-go.on) .jn13-table .foot { fill: var(--cool); }
+.jn13-table .route { fill: none; stroke: var(--cool); stroke-width: 2.5; stroke-dasharray: 7 7; opacity: 0; transition: opacity .8s ease; }
+.slide:has(.jn13-wash-go.on) .jn13-table .route { opacity: .8; }
+.jn13-table .jesus { fill: var(--accent-hot); }
+.jn13-table .jesus-b { stroke: var(--accent); }
+.jn13-table .judas { fill: var(--danger); }
+.jn13-table .who { font-size: 17px; font-weight: 700; }
+.jn13-table .sop { fill: none; stroke: var(--warm); stroke-width: 4; stroke-linecap: round; }
+.jn13-table .bread { fill: var(--warm); opacity: 0; transition: opacity .6s ease 1.2s; }
+.slide:has(.jn13-sop-go.on) .jn13-table .bread { opacity: 1; }
+.slide:has(.jn13-sop-go.on) .jn13-table .draw { stroke-dashoffset: 0; }
+
+/* Bathed once, feet washed as needed */
+.jn13-bath .body { fill: var(--surface-2); stroke: var(--line-strong); stroke-width: 2; }
+.jn13-bath .leg { stroke: var(--surface-2); stroke-width: 22; stroke-linecap: round; }
+.jn13-bath .halo { fill: color-mix(in srgb, var(--cool) 10%, transparent); stroke: var(--cool); stroke-width: 2.5; stroke-dasharray: 6 6; }
+.jn13-bath .dust { fill: var(--warm); opacity: 0; transition: opacity .8s ease; }
+.slide.active .jn13-bath .dust { opacity: .95; transition-delay: calc(var(--k, 0) * 150ms + 1.4s); }
+.slide.active:has(.jn13-wash-go.on) .jn13-bath .dust { opacity: 0; transition-delay: calc(var(--k, 0) * 90ms + .6s); }
+.jn13-bath .drop { fill: var(--cool); opacity: 0; }
+.slide:has(.jn13-wash-go.on) .jn13-bath .drop { animation: jn13-fall 1.1s ease-in calc(var(--k, 0) * 160ms) 3 both; }
+@keyframes jn13-fall { 0% { opacity: 0; transform: translateY(-40px); } 30% { opacity: 1; } 100% { opacity: 0; transform: translateY(26px); } }
+.jn13-bath .basin { fill: var(--surface-2); stroke: var(--cool); stroke-width: 2.5; opacity: 0; transition: opacity .8s ease; }
+.slide:has(.jn13-wash-go.on) .jn13-bath .basin { opacity: 1; }
+
+/* The twelve: every one wonders, and Judas looks like all the rest */
+.jn13-twelve { list-style: none; padding: 0; margin: .4em 0 1em; display: grid; grid-template-columns: repeat(6, 1fr); gap: 8px; }
+@media (max-width: 640px) { .jn13-twelve { grid-template-columns: repeat(4, 1fr); } }
+.jn13-twelve li { position: relative; text-align: center; padding: .7em .2em .5em; border: 1.5px solid var(--line-strong); border-radius: 10px; background: var(--surface); font-size: clamp(.72rem, .66rem + .3vw, .95rem); line-height: 1.2; }
+.jn13-twelve li::before { content: ""; display: block; width: 1.6em; height: 1.6em; margin: 0 auto .35em; border-radius: 50%; background: var(--ink-soft); }
+.jn13-twelve li::after {
+  content: "?"; position: absolute; top: -.6em; right: -.3em; width: 1.6em; height: 1.6em; display: grid; place-items: center; border-radius: 50%;
+  background: var(--accent); color: var(--on-accent); font-weight: 700; font-size: 1.05em;
+  opacity: 0; transform: scale(.4); transition: opacity .4s ease, transform .4s cubic-bezier(.3,1.6,.5,1); transition-delay: calc(var(--k, 0) * 120ms + 900ms);
+}
+.slide.active .jn13-twelve li::after { opacity: 1; transform: none; }
+
+/* The night outside the lit room. --glow is light and --on-glow is dark in every theme. */
+.stage svg.jn13-door { max-height: 32vh; }
+.jn13-door .night { fill: var(--on-glow); }
+.jn13-door .room { fill: var(--glow); stroke: var(--accent); stroke-width: 3; }
+.jn13-door .spill { fill: var(--glow); opacity: .18; }
+.jn13-door .star { fill: var(--glow); }
+.slide.active .jn13-door .star { animation: jn13-twinkle 2.6s ease-in-out infinite alternate; animation-delay: calc(var(--k, 0) * -.7s); }
+@keyframes jn13-twinkle { from { opacity: .25; } to { opacity: .9; } }
+.jn13-door .guest { fill: var(--on-glow); }
+.jn13-door .lord { fill: var(--accent); }
+.jn13-door .tbl { fill: var(--surface-2); stroke: var(--on-glow); stroke-width: 1.5; }
+.jn13-door .judas { fill: var(--on-glow); }
+.slide.active .jn13-door .judas { animation: jn13-out 5s 1s ease-in-out forwards; }
+@keyframes jn13-out { 0% { transform: translateX(0); } 45% { transform: translateX(90px); } 100% { transform: translateX(260px); opacity: .9; } }
+.jn13-door .was { fill: var(--glow); font-family: var(--serif); font-style: italic; opacity: 0; }
+.slide.active .jn13-door .was { animation: rise 1.4s 5.4s ease both; }
+
+/* Two measuring sticks for love */
+.jn13-measure { display: grid; gap: .9rem; margin: .4em 0 1.1em; }
+.jn13-measure .row { display: grid; grid-template-columns: 8.5em 1fr; gap: .3em 1em; align-items: center; }
+.jn13-measure .lbl { font-family: var(--serif); font-style: italic; font-size: clamp(1rem, .9rem + .6vw, 1.45rem); color: var(--ink); }
+.jn13-measure .lbl small { display: block; font: 700 .65em var(--sans); font-style: normal; color: var(--ink-soft); }
+.jn13-measure .bar { position: relative; height: 1.1rem; border-radius: 999px; background: var(--surface); border: 1px solid var(--line); }
+.jn13-measure .bar i { position: absolute; left: 0; top: 0; bottom: 0; width: 0; border-radius: 999px; background: var(--line-strong); transition: width 1.6s cubic-bezier(.4,0,.2,1) .3s; }
+.slide.active .jn13-measure .rise .bar i, .jn13-measure .step.on .bar i { width: var(--w); }
+.jn13-measure .new .bar i { background: var(--accent); box-shadow: 0 0 16px color-mix(in srgb, var(--accent) 55%, transparent); }
+.jn13-measure .ticks { grid-column: 2; position: relative; height: 2.6em; }
+.jn13-measure .ticks span { position: absolute; left: var(--x); transform: translateX(-50%); top: 0; text-align: center; font-size: clamp(.72rem, .66rem + .3vw, .95rem); color: var(--accent-hot); white-space: nowrap; opacity: 0; transition: opacity .5s ease; transition-delay: calc(var(--k, 0) * 400ms + 1.4s); }
+.jn13-measure .ticks span::before { content: ""; display: block; width: 2px; height: .6em; margin: 0 auto .15em; background: var(--accent); }
+.jn13-measure .step.on .ticks span { opacity: 1; }
+.jn13-measure .ticks span:first-child { transform: none; text-align: left; }
+.jn13-measure .ticks span:first-child::before { margin-left: 0; }
+.jn13-measure .ticks span:last-child { transform: translateX(-100%); text-align: right; }
+.jn13-measure .ticks span:last-child::before { margin-right: 0; }
+@media (max-width: 640px) { .jn13-measure .row { grid-template-columns: 1fr; } .jn13-measure .ticks { grid-column: 1; } }
+
+/* Three denials, then three questions of love */
+.jn13-three { display: grid; gap: .7rem; margin: .4em 0 1.1em; }
+.jn13-three .row { display: grid; grid-template-columns: 7em repeat(4, 1fr); gap: 6px; align-items: stretch; }
+.jn13-three .when { align-self: center; font-weight: 700; font-size: clamp(.85rem, .78rem + .35vw, 1.1rem); color: var(--ink-soft); }
+.jn13-three .when small { display: block; font-weight: 400; }
+.jn13-three .mark { padding: .45em .5em; border-radius: 8px; text-align: center; font-size: clamp(.78rem, .7rem + .35vw, 1.05rem); line-height: 1.25; opacity: 0; transform: scale(.85); transition: opacity .45s ease, transform .45s cubic-bezier(.3,1.5,.5,1); transition-delay: calc(var(--k, 0) * 450ms + 300ms); }
+.jn13-three .mark b { display: block; font: italic 400 1.15em var(--serif); }
+.jn13-three .deny .mark { border: 2px solid var(--danger); color: var(--ink); }
+.jn13-three .deny .mark b { color: var(--danger); }
+.jn13-three .deny .end { background: color-mix(in srgb, var(--danger) 16%, transparent); }
+.jn13-three .restore .mark { border: 2px solid var(--accent); background: color-mix(in srgb, var(--accent) 10%, transparent); }
+.jn13-three .restore .mark b { color: var(--accent-hot); }
+.jn13-three .restore .end { background: var(--accent); color: var(--on-accent); }
+.jn13-three .restore .end b { color: var(--on-accent); }
+.slide.active .jn13-three .rise .mark, .jn13-three .step.on .mark { opacity: 1; transform: none; }
+@media (max-width: 640px) { .jn13-three .row { grid-template-columns: repeat(4, 1fr); } .jn13-three .when { grid-column: 1 / -1; } }
+</style>
+</head>
+<body>
+<main class="deck" id="deck">
+
+<!-- ======================= OPENING ======================= -->
+<section class="slide title">
+  <div class="inner">
+    <div class="emblem rise"></div>
+    <h1 class="rise" style="--d:1">John 13</h1>
+    <p class="sub rise" style="--d:3">The towel and the night</p>
+    <p class="tag rise" style="--d:5">On His last night, Jesus washes His disciples' feet, sends Judas out into the dark, and gives a new commandment: love one another as I have loved you.</p>
+  </div>
+</section>
+
+<section class="slide watch">
+  <div class="inner">
+    <h2 class="rise">Things to watch for</h2>
+    <p class="lede rise" style="--d:1">Keep these questions in the back of your mind as we read. We'll come back to every one of them at the end.</p>
+    <ol class="seeds">
+      <li class="step"><span class="topic">Humility</span><span class="seed-q">Why would the Lord of all wash His disciples' feet?</span></li>
+      <li class="step"><span class="topic">Being made clean</span><span class="seed-q">What's the difference between being washed and having your feet washed?</span></li>
+      <li class="step"><span class="topic">Serving</span><span class="seed-q">What does Jesus expect us to do for one another?</span></li>
+      <li class="step"><span class="topic">Betrayal</span><span class="seed-q">How did Jesus treat the man He knew would betray Him?</span></li>
+      <li class="step"><span class="topic">Love</span><span class="seed-q">What makes the new commandment new?</span></li>
+      <li class="step"><span class="topic">Failure</span><span class="seed-q">What did Jesus know about Peter's fall before it happened?</span></li>
+    </ol>
+  </div>
+</section>
+
+<!-- ======================= PART ONE: THE TOWEL ======================= -->
+<section class="slide part">
+  <div class="inner">
+    <p class="part-n rise">Part one</p>
+    <h2 class="rise" style="--d:1">The towel and the basin</h2>
+    <p class="range rise" style="--d:2">Verses 1–17</p>
+    <p class="hook rise" style="--d:4">On His last night, the Lord of glory gets down on His knees with a towel.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="1-3" data-hl="he loved them unto the end|the Father had given all things into his hands"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="1" data-hl="his hour was come|having loved his own which were in the world, he loved them unto the end"></blockquote>
+    <h2 class="rise" style="--d:1">Loved to the end</h2>
+    <div class="morph rise" style="--d:2"><span class="big">εἰς τέλος</span><span class="say">eis TEL-os</span><span class="means">to the end, to the uttermost</span></div>
+    <p class="note rise" style="--d:3">It means both: to the last hour, and all the way. Jesus knew the cross was hours away (<em>“his hour was come”</em>). He didn't spend His last night protecting Himself. He spent it on them.</p>
+    <p class="note step">And look who <em>“his own”</em> were: men who would argue, fall asleep, run, and deny Him before morning. He loved them anyway, all the way to the end. That's the love you're dealing with too.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="4-5" data-hl="took a towel, and girded himself|began to wash the disciples’ feet"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="3" data-hl="the Father had given all things into his hands"></blockquote>
+    <h2 class="rise" style="--d:1">All things in His hands. So He picked up a towel.</h2>
+    <ol class="jn13-stairs" style="--n:7" aria-label="Seven actions, each a step lower: rose from supper, laid aside His garments, took a towel, girded Himself, poured water into a basin, washed the disciples' feet, wiped them with the towel.">
+      <li style="--k:0"><b>riseth</b>from supper</li>
+      <li style="--k:1"><b>laid aside</b>his garments</li>
+      <li style="--k:2"><b>took</b>a towel</li>
+      <li style="--k:3"><b>girded</b>himself</li>
+      <li style="--k:4"><b>poureth</b>water into a bason</li>
+      <li style="--k:5"><b>began to wash</b>the disciples' feet</li>
+      <li style="--k:6"><b>wipe</b>with the towel</li>
+    </ol>
+    <p class="note step">Seven actions, each one a step lower. Outer robe off, towel tied on: He dressed like the lowest servant in the house. Paul describes the same descent:</p>
+    <blockquote class="quote step"><p>“But made himself of no reputation, and took upon him the form of a servant, and was made in the likeness of men:”</p><cite>Philippians 2:7</cite></blockquote>
+    <p class="note step">Knowing He held all power didn't make Jesus grab for more. It set Him free to serve. A man who is secure in God doesn't have anything to prove.</p>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <div class="split">
+      <div class="stage">
+        <svg class="jn13-table" viewBox="0 0 600 380" role="img" aria-label="A U-shaped table seen from above. Thirteen men recline around the outside with their feet pointing away from the table. The dusty feet are washed one by one, all the way around.">
+          <path class="tbl" d="M190 340 V140 H410 V340"/>
+          <path class="tbl-edge" d="M168 340 V118 H432 V340 M212 340 V162 H388 V340"/>
+          <g>
+            <!-- left side: heads at the table, feet out to the left -->
+            <line class="man" x1="150" y1="170" x2="80" y2="185"/><circle class="head" cx="150" cy="170" r="12"/><circle class="foot" style="--k:0" cx="70" cy="187" r="9"/>
+            <line class="man" x1="150" y1="225" x2="80" y2="240"/><circle class="head" cx="150" cy="225" r="12"/><circle class="foot" style="--k:1" cx="70" cy="242" r="9"/>
+            <line class="man" x1="150" y1="280" x2="80" y2="295"/><circle class="head" cx="150" cy="280" r="12"/><circle class="foot" style="--k:2" cx="70" cy="297" r="9"/>
+            <line class="man" x1="150" y1="335" x2="80" y2="350"/><circle class="head" cx="150" cy="335" r="12"/><circle class="foot" style="--k:3" cx="70" cy="352" r="9"/>
+            <!-- back side: heads at the table, feet out the top -->
+            <line class="man" x1="200" y1="100" x2="186" y2="34"/><circle class="head" cx="200" cy="100" r="12"/><circle class="foot" style="--k:4" cx="184" cy="24" r="9"/>
+            <line class="man" x1="250" y1="100" x2="236" y2="34"/><circle class="head" cx="250" cy="100" r="12"/><circle class="foot" style="--k:5" cx="234" cy="24" r="9"/>
+            <line class="man" x1="300" y1="100" x2="286" y2="34"/><circle class="head" cx="300" cy="100" r="12"/><circle class="foot" style="--k:6" cx="284" cy="24" r="9"/>
+            <line class="man" x1="350" y1="100" x2="336" y2="34"/><circle class="head" cx="350" cy="100" r="12"/><circle class="foot" style="--k:7" cx="334" cy="24" r="9"/>
+            <line class="man" x1="400" y1="100" x2="386" y2="34"/><circle class="head" cx="400" cy="100" r="12"/><circle class="foot" style="--k:8" cx="384" cy="24" r="9"/>
+            <!-- right side: feet out to the right -->
+            <line class="man" x1="450" y1="170" x2="520" y2="185"/><circle class="head" cx="450" cy="170" r="12"/><circle class="foot" style="--k:9" cx="530" cy="187" r="9"/>
+            <line class="man" x1="450" y1="225" x2="520" y2="240"/><circle class="head" cx="450" cy="225" r="12"/><circle class="foot" style="--k:10" cx="530" cy="242" r="9"/>
+            <line class="man" x1="450" y1="280" x2="520" y2="295"/><circle class="head" cx="450" cy="280" r="12"/><circle class="foot" style="--k:11" cx="530" cy="297" r="9"/>
+          </g>
+          <path class="route" d="M40 360 V200 Q40 4 200 4 H400 Q560 4 560 200 V320"/>
+          <text x="300" y="250" text-anchor="middle" font-size="18" style="fill:var(--ink-soft)">the low table</text>
+          <text x="300" y="372" text-anchor="middle" font-size="15" style="fill:var(--ink-soft)">open side, where the food was served</text>
+        </svg>
+      </div>
+      <div>
+        <h2 class="rise" style="--d:1">Dirty feet at supper</h2>
+        <p class="note rise" style="--d:2">Men walked dusty roads in sandals. Washing a guest's feet was a job for the lowest servant in the house.</p>
+        <p class="note rise" style="--d:3">At a feast, men lay on couches around a low table, leaning on the left elbow, with their feet stretched out behind them.</p>
+        <p class="note step jn13-wash-go">Supper had started, and the feet were still dirty. None of the Twelve offered. That same night they argued over <em>“which of them should be accounted the greatest”</em> (Luke 22:24). So Jesus went around the outside of the table, from one pair of dirty feet to the next.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="slide verse" data-v="6-8" data-hl="Lord, dost thou wash my feet?|Thou shalt never wash my feet|If I wash thee not, thou hast no part with me"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="8" data-hl="Thou shalt never wash my feet|If I wash thee not, thou hast no part with me"></blockquote>
+    <h2 class="rise" style="--d:1">“Never”</h2>
+    <p class="note rise" style="--d:2">Peter means well. He can't stand to see his Lord kneeling at his feet. But underneath it is pride: <em>I'll serve You, but You're not going to serve me.</em></p>
+    <p class="note step">Jesus' answer is strong. No washing, no part with Him. Nobody belongs to Jesus without first letting Him wash them. You can't clean yourself up first and then come.</p>
+    <blockquote class="quote step" data-q="7" data-hl="thou shalt know hereafter"></blockquote>
+    <p class="note step">For a lot of us, that's the hardest part of getting well: letting somebody see the dirt and help with it. Jesus starts right there.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="9-11" data-hl="He that is washed needeth not save to wash his feet, but is clean every whit|Ye are not all clean"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="10" data-hl="He that is washed needeth not save to wash his feet, but is clean every whit"></blockquote>
+    <div class="split">
+      <div class="stage">
+        <svg class="jn13-bath" viewBox="0 0 360 340" role="img" aria-label="A man, washed clean all over, stands on a dusty road. Dust gathers on his feet. Water washes the feet, and the rest of him stays clean.">
+          <ellipse class="halo" cx="180" cy="174" rx="100" ry="136"/>
+          <text x="180" y="22" text-anchor="middle" font-size="18" font-weight="700" style="fill:var(--cool)">washed: clean every whit</text>
+          <line x1="16" y1="306" x2="344" y2="306" stroke-width="3" stroke-dasharray="10 8" style="stroke:var(--line-strong)"/>
+          <path class="basin" d="M104 300 H256 L240 330 H120 Z"/>
+          <line class="leg" x1="158" y1="200" x2="152" y2="278"/>
+          <line class="leg" x1="202" y1="200" x2="208" y2="278"/>
+          <path class="body" d="M136 106 Q180 92 224 106 L236 208 Q180 220 124 208 Z"/>
+          <circle class="body" cx="180" cy="70" r="27"/>
+          <ellipse class="body" cx="148" cy="290" rx="20" ry="9"/>
+          <ellipse class="body" cx="212" cy="290" rx="20" ry="9"/>
+          <g>
+            <circle class="dust" style="--k:0" cx="136" cy="292" r="4"/><circle class="dust" style="--k:1" cx="152" cy="285" r="3.5"/><circle class="dust" style="--k:2" cx="162" cy="294" r="4.5"/>
+            <circle class="dust" style="--k:3" cx="200" cy="293" r="4"/><circle class="dust" style="--k:4" cx="216" cy="285" r="3.5"/><circle class="dust" style="--k:5" cx="226" cy="294" r="4.5"/>
+            <circle class="dust" style="--k:6" cx="146" cy="296" r="3"/><circle class="dust" style="--k:7" cx="208" cy="297" r="3"/>
+          </g>
+          <g>
+            <ellipse class="drop" style="--k:0" cx="142" cy="256" rx="4" ry="6"/><ellipse class="drop" style="--k:1" cx="156" cy="250" rx="4" ry="6"/>
+            <ellipse class="drop" style="--k:2" cx="206" cy="254" rx="4" ry="6"/><ellipse class="drop" style="--k:3" cx="220" cy="250" rx="4" ry="6"/>
+          </g>
+          <text x="300" y="268" text-anchor="middle" font-size="16" style="fill:var(--ink-soft)">only the</text>
+          <text x="300" y="286" text-anchor="middle" font-size="16" style="fill:var(--ink-soft)">feet</text>
+        </svg>
+      </div>
+      <div>
+        <h2 class="rise" style="--d:1">Bathed once, feet as needed</h2>
+        <p class="note rise" style="--d:2">Jesus uses two different words. <span class="gk">louō</span>: a bath, the whole body. <span class="gk">niptō</span>: washing one part, like the feet. A man who bathed at home and walked to supper only needed his feet washed.</p>
+        <p class="note step jn13-wash-go">When you trusted Christ, you were washed all over, once for all: <em>“clean every whit.”</em> Sin along the road doesn't undo that bath. It means the feet need washing.</p>
+      </div>
+    </div>
+    <blockquote class="quote step"><p>“If we confess our sins, he is faithful and just to forgive us our sins, and to cleanse us from all unrighteousness.”</p><cite>1 John 1:9</cite></blockquote>
+    <p class="note step">You don't get saved all over again every time you stumble. You come back, tell Him the truth, and let Him wash your feet. And <em>“not all”</em>: Judas sat at that table for three years and never had the bath. Being close to Jesus isn't the same as belonging to Him.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="12-15" data-hl="Know ye what I have done to you?|ye also ought to wash one another’s feet|I have given you an example"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="15" data-hl="I have given you an example"></blockquote>
+    <h2 class="rise" style="--d:1">I did it. Now you do it.</h2>
+    <div class="match" style="--n:3" aria-label="If I, your Lord and Master, have washed your feet; ye also ought to wash one another's feet. Each piece answers its partner.">
+      <div class="a rise" style="--d:2"><span class="tag">He</span><span class="w">I, your Lord and Master,</span><span class="w">have washed</span><span class="w">your feet;</span></div>
+      <div class="step"><span></span><span class="link">Master to servants</span><span class="link">the same towel</span><span class="link">feet to feet</span></div>
+      <div class="b step"><span class="tag">we</span><span class="w">ye also</span><span class="w">ought to wash</span><span class="w">one another's feet.</span></div>
+    </div>
+    <p class="note step">The word for <em>“example”</em> means a pattern you copy, like tracing a letter. Some churches wash feet as a service, and that's fine. But the heart of it is this: find the lowest job that would help a brother, and do it without being asked.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="16-17" data-hl="The servant is not greater than his lord|happy are ye if ye do them"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="17"></blockquote>
+    <p class="saying rise" style="--d:1">Happy are ye if ye <em>do</em> them.</p>
+    <p class="note rise" style="--d:3">If the Master didn't think a towel was beneath Him, it isn't beneath His servants (v. 16). And <em>“happy”</em> is the same word Jesus used in <em>“Blessed</em> are the poor in spirit.”</p>
+    <p class="note step">Knowing isn't the same as doing. In recovery you learn that fast: knowing the steps never kept anybody clean. Working them does. The Christian life is the same. The blessing is in the doing.</p>
+    <blockquote class="quote step"><p>“For even the Son of man came not to be ministered unto, but to minister, and to give his life a ransom for many.”</p><cite>Mark 10:45</cite></blockquote>
+  </div>
+</section>
+
+<!-- ======================= PART TWO: ONE OF YOU ======================= -->
+<section class="slide part">
+  <div class="inner">
+    <p class="part-n rise">Part two</p>
+    <h2 class="rise" style="--d:1">One of you</h2>
+    <p class="range rise" style="--d:2">Verses 18–30</p>
+    <p class="hook rise" style="--d:4">Jesus names His betrayer, and Judas walks out into the dark.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="18-20" data-hl="He that eateth bread with me hath lifted up his heel against me|ye may believe that I am he"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise">A friend at the table</h2>
+    <div class="pair">
+      <div class="scroll rise" style="--d:1"><p class="ref">Psalm 41:9 (David)</p><p class="kjv">“Yea, mine own familiar friend, in whom I trusted, which did eat of my bread, hath lifted up his heel against me.”</p></div>
+      <div class="scroll rise" style="--d:2"><p class="ref">John 13:18 (Jesus)</p><p class="kjv">“He that eateth bread with me hath lifted up his heel against me.”</p></div>
+    </div>
+    <p class="note step">David wrote this about a trusted friend who turned on him. In that world, eating bread together meant friendship and loyalty. To turn on a man whose bread you ate was the lowest kind of betrayal. <em>“Lifted up his heel”</em> is a picture of a kick.</p>
+    <p class="note step">Why tell them ahead of time? <em>“That, when it is come to pass, ye may believe that I am he”</em> (v. 19). The betrayal didn't catch Jesus off guard. It proved He knew. And remember: an hour earlier, He had washed Judas's feet too.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="21-22" data-hl="he was troubled in spirit|one of you shall betray me|the disciples looked one on another"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="22"></blockquote>
+    <h2 class="rise" style="--d:1">Nobody suspected Judas</h2>
+    <ul class="jn13-twelve rise" style="--d:2" aria-label="The twelve disciples, each one wondering who it could be. Judas Iscariot looks just like all the others.">
+      <li style="--k:0">Peter</li><li style="--k:1">Andrew</li><li style="--k:2">James</li><li style="--k:3">John</li>
+      <li style="--k:4">Philip</li><li style="--k:5">Bartholomew</li><li style="--k:6">Thomas</li><li style="--k:7">Matthew</li>
+      <li style="--k:8">James, son of Alphaeus</li><li style="--k:9">Thaddaeus</li><li style="--k:10">Simon the Zealot</li><li style="--k:11">Judas Iscariot</li>
+    </ul>
+    <p class="note step">After three years together, not one of them looked at Judas. He had kept his double life hidden from everybody but Jesus. Matthew says each man asked, <em>“Lord, is it I?”</em> (Matthew 26:22).</p>
+    <p class="note step">That's how hidden sin works. It can sit at the table, look like everybody else, even carry the money. But Jesus sees it. And He was <em>“troubled in spirit”</em>: the betrayal hurt Him. He wasn't cold about losing Judas.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="23-26" data-hl="whom Jesus loved|Lord, who is it?|he gave it to Judas Iscariot, the son of Simon"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <div class="split">
+      <div class="stage">
+        <svg class="jn13-table" viewBox="0 0 600 380" role="img" aria-label="The supper table from above. John reclines in front of Jesus, leaning back against His chest. Jesus hands a dipped piece of bread to Judas, who is close beside Him.">
+          <path class="tbl" d="M190 340 V140 H410 V340"/>
+          <path class="tbl-edge" d="M168 340 V118 H432 V340 M212 340 V162 H388 V340"/>
+          <g>
+            <line class="man" x1="150" y1="170" x2="80" y2="185"/><circle class="head" cx="150" cy="170" r="12"/>
+            <line class="man" x1="150" y1="225" x2="80" y2="240"/><circle class="head" cx="150" cy="225" r="12"/>
+            <line class="man" x1="150" y1="280" x2="80" y2="295"/><circle class="head" cx="150" cy="280" r="12"/>
+            <line class="man" x1="150" y1="335" x2="80" y2="350"/><circle class="head" cx="150" cy="335" r="12"/>
+            <line class="man" x1="210" y1="100" x2="196" y2="34"/><circle class="head" cx="210" cy="100" r="12" style="fill:var(--danger)"/>
+            <line class="man jesus-b" x1="270" y1="100" x2="256" y2="34"/><circle class="head jesus" cx="270" cy="100" r="14"/>
+            <line class="man" x1="318" y1="96" x2="304" y2="30"/><circle class="head" cx="318" cy="96" r="12" style="fill:var(--cool)"/>
+            <line class="man" x1="360" y1="100" x2="346" y2="34"/><circle class="head" cx="360" cy="100" r="12"/>
+            <line class="man" x1="400" y1="100" x2="386" y2="34"/><circle class="head" cx="400" cy="100" r="12"/>
+            <line class="man" x1="450" y1="170" x2="520" y2="185"/><circle class="head" cx="450" cy="170" r="12"/>
+            <line class="man" x1="450" y1="225" x2="520" y2="240"/><circle class="head" cx="450" cy="225" r="12"/>
+            <line class="man" x1="450" y1="280" x2="520" y2="295"/><circle class="head" cx="450" cy="280" r="12"/>
+          </g>
+          <text class="who" x="270" y="140" text-anchor="middle" style="fill:var(--accent-hot)">Jesus</text>
+          <text class="who" x="330" y="140" text-anchor="start" style="fill:var(--cool)">John</text>
+          <text class="who" x="200" y="140" text-anchor="end" style="fill:var(--danger)">Judas</text>
+          <text class="who" x="472" y="150" text-anchor="start">Peter</text>
+          <path class="sop draw" pathLength="1" d="M262 92 Q240 62 218 92"/>
+          <circle class="bread" cx="218" cy="88" r="7"/>
+          <text x="300" y="250" text-anchor="middle" font-size="16" style="fill:var(--ink-soft)">one likely seating</text>
+        </svg>
+      </div>
+      <div>
+        <h2 class="rise" style="--d:1">The sop</h2>
+        <p class="note rise" style="--d:2"><em>“The disciple whom Jesus loved”</em> is almost certainly John, who wrote this book and never uses his own name. Lying just in front of Jesus, he leaned back against His chest and could ask a quiet question.</p>
+        <p class="note step jn13-sop-go">A <em>sop</em> was a piece of bread dipped in the shared dish. A host handing one to a guest was a mark of honor and friendship. Judas had to be close by to receive it.</p>
+        <p class="note step">Jesus did it knowing everything. It was one more open hand held out to Judas. Judas took the bread, but not the friendship.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="slide verse" data-v="27-30" data-hl="Satan entered into him|because Judas had the bag|went immediately out: and it was night"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="27" data-hl="Satan entered into him"></blockquote>
+    <h2 class="rise" style="--d:1">How a man ends up in the night</h2>
+    <ol class="jn13-stairs dark" style="--n:4" aria-label="Four steps down: a thief at the money bag; the devil put betrayal into his heart; Satan entered into him; he went out, and it was night.">
+      <li style="--k:0"><b>a thief</b>at the money bag (12:6)</li>
+      <li style="--k:1"><b>the devil put it into his heart</b>(13:2)</li>
+      <li style="--k:2"><b>Satan entered into him</b>(13:27)</li>
+      <li style="--k:3"><b>went out</b>and it was night (13:30)</li>
+    </ol>
+    <blockquote class="quote step"><p>“This he said, not that he cared for the poor; but because he was a thief, and had the bag, and bare what was put therein.”</p><cite>John 12:6</cite></blockquote>
+    <p class="note step">Judas didn't fall in one night. It started small: helping himself from the bag. He kept feeding it. Then the devil planted the plan, and then Satan moved in. (<em>“That thou doest, do quickly”</em> wasn't permission. Jesus was showing He was still in charge of the night, even if nobody at the table understood.)</p>
+    <p class="note step">Every relapse has a staircase like this. It starts with a thought you keep entertaining, long before the night you walk out. Deal with it at the top of the stairs, out loud, with Jesus and with a brother.</p>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="30" data-hl="and it was night"></blockquote>
+    <div class="stage rise" style="--d:1">
+      <svg class="jn13-door" viewBox="0 0 600 260" role="img" aria-label="A lit room with Jesus and His disciples at the table. One figure gets up, walks out the door, and disappears into the dark night.">
+        <rect class="night" x="0" y="0" width="600" height="260" rx="10"/>
+        <circle class="star" style="--k:0" cx="380" cy="40" r="2.5"/><circle class="star" style="--k:1" cx="440" cy="80" r="2"/><circle class="star" style="--k:2" cx="520" cy="34" r="2.5"/>
+        <circle class="star" style="--k:3" cx="560" cy="110" r="2"/><circle class="star" style="--k:4" cx="410" cy="150" r="1.8"/><circle class="star" style="--k:5" cx="580" cy="200" r="2.2"/>
+        <circle class="star" style="--k:6" cx="30" cy="30" r="2"/><circle class="star" style="--k:7" cx="300" cy="24" r="1.8"/>
+        <circle cx="490" cy="70" r="20" style="fill:var(--glow)"/><circle cx="500" cy="63" r="18" class="night"/>
+        <rect class="room" x="40" y="50" width="250" height="180"/>
+        <path class="spill" d="M290 150 L420 120 L420 245 L290 230 Z"/>
+        <rect x="286" y="150" width="8" height="80" style="fill:var(--glow)"/>
+        <rect class="tbl" x="90" y="140" width="150" height="34" rx="4"/>
+        <g class="guest">
+          <circle cx="100" cy="122" r="9"/><circle cx="128" cy="118" r="9"/><circle cx="184" cy="118" r="9"/><circle cx="212" cy="120" r="9"/><circle cx="238" cy="124" r="9"/>
+          <circle cx="100" cy="194" r="9"/><circle cx="128" cy="198" r="9"/><circle cx="156" cy="198" r="9"/><circle cx="184" cy="198" r="9"/><circle cx="212" cy="196" r="9"/><circle cx="238" cy="192" r="9"/>
+        </g>
+        <circle class="lord" cx="156" cy="116" r="10"/>
+        <g class="judas">
+          <circle cx="266" cy="166" r="9"/>
+          <path d="M256 178 Q266 172 276 178 L280 222 H252 Z"/>
+        </g>
+        <text class="was" x="470" y="230" text-anchor="middle" font-size="30">and it was night</text>
+      </svg>
+    </div>
+    <h2 class="rise" style="--d:2">Four words</h2>
+    <p class="note rise" style="--d:3">John could have just said Judas left. He adds <em>“and it was night.”</em> It was dark outside, and darker inside Judas. He walked out on the Light of the world.</p>
+    <blockquote class="quote step"><p>“Then spake Jesus again unto them, saying, I am the light of the world: he that followeth me shall not walk in darkness, but shall have the light of life.”</p><cite>John 8:12</cite></blockquote>
+    <p class="note step">Judas and Peter both failed Jesus that night. Judas was sorry too (Matthew 27:3), but he took his sorrow everywhere except to Jesus, and it destroyed him. Peter wept, and came back (Luke 22:62). The difference wasn't the size of the sin. It was where each man took it.</p>
+  </div>
+</section>
+
+<!-- ======================= PART THREE: A NEW COMMANDMENT ======================= -->
+<section class="slide part">
+  <div class="inner">
+    <p class="part-n rise">Part three</p>
+    <h2 class="rise" style="--d:1">As I have loved you</h2>
+    <p class="range rise" style="--d:2">Verses 31–38</p>
+    <p class="hook rise" style="--d:4">Jesus gives a new commandment. Peter promises to die for Him.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="31-33" data-hl="Now is the Son of man glorified|Little children"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="31" data-hl="Now is the Son of man glorified"></blockquote>
+    <h2 class="rise" style="--d:1">Glory, the moment Judas leaves</h2>
+    <p class="note rise" style="--d:2">The door has just shut behind Judas. The arrest is a few hours away. And Jesus says, <em>“Now</em> is the Son of man glorified.” He calls the cross His glory, because that's where God's love and holiness shine brightest.</p>
+    <p class="note step">Then: <em>“Little children.”</em> It's a father's word at a goodbye, the only time in the Gospels Jesus uses it. John never forgot it. He uses it over and over in his letters: <em>“My little children, these things write I unto you, that ye sin not”</em> (1 John 2:1).</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="34-35" data-hl="A new commandment I give unto you|as I have loved you|By this shall all men know that ye are my disciples"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="34" data-hl="as I have loved you"></blockquote>
+    <h2 class="rise" style="--d:1">What makes it new</h2>
+    <p class="note rise" style="--d:2">“Love thy neighbour” wasn't new. Moses wrote it about 1,400 years earlier (Leviticus 19:18). What's new is the <em>measuring stick</em>.</p>
+    <div class="jn13-measure" aria-label="Two measures of love. The old one: as thyself, a short bar. The new one: as I have loved you, a bar that runs the whole length, marked by the towel, the sop, and His life.">
+      <div class="row rise" style="--d:3"><span class="lbl">“as thyself”<small>Leviticus 19:18</small></span><div class="bar"><i style="--w:38%"></i></div></div>
+      <div class="new step">
+        <div class="row"><span class="lbl">“as I have loved you”<small>John 13:34</small></span><div class="bar"><i style="--w:100%"></i></div></div>
+        <div class="row"><span></span><div class="ticks"><span style="--x:0%;--k:0">a towel (13:5)</span><span style="--x:50%;--k:1">the sop (13:26)</span><span style="--x:100%;--k:2">His life (15:13)</span></div></div>
+      </div>
+    </div>
+    <p class="note step">Nobody loves like that on willpower. It starts with being loved: <em>“We love him, because he first loved us”</em> (1 John 4:19).</p>
+    <p class="note step">And it's how the world can tell who belongs to Him. Not by a badge or a building, but by how brothers treat each other. A room full of men who carry each other preaches louder than any sermon.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="36-38" data-hl="thou shalt follow me afterwards|I will lay down my life for thy sake|The cock shall not crow, till thou hast denied me thrice"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="38" data-hl="The cock shall not crow, till thou hast denied me thrice"></blockquote>
+    <h2 class="rise" style="--d:1">Three times down, three times back</h2>
+    <div class="jn13-three" aria-label="That night Peter denies Jesus three times, then the rooster crows. Later, by the sea, Jesus asks him three times, Lovest thou me, and gives him work to do.">
+      <div class="row deny rise" style="--d:2">
+        <span class="when">That night<small>John 18</small></span>
+        <span class="mark" style="--k:0"><b>“I am not.”</b>18:17</span>
+        <span class="mark" style="--k:1"><b>“I am not.”</b>18:25</span>
+        <span class="mark" style="--k:2"><b>denied again</b>18:27</span>
+        <span class="mark end" style="--k:3"><b>the cock crew</b>18:27</span>
+      </div>
+      <div class="row restore step">
+        <span class="when">By the sea<small>John 21</small></span>
+        <span class="mark" style="--k:0"><b>“lovest thou me”</b>21:15</span>
+        <span class="mark" style="--k:1"><b>“lovest thou me?”</b>21:16</span>
+        <span class="mark" style="--k:2"><b>“Lovest thou me?”</b>21:17</span>
+        <span class="mark end" style="--k:3"><b>“Feed my sheep.”</b>21:17</span>
+      </div>
+    </div>
+    <p class="note step">Peter meant every word of verse 37. Within hours he was warming his hands by a fire, telling a servant girl, <em>“I am not.”</em> But look at what Jesus said to him that same night:</p>
+    <blockquote class="quote step"><p>“And the Lord said, Simon, Simon, behold, Satan hath desired to have you, that he may sift you as wheat: But I have prayed for thee, that thy faith fail not: and when thou art converted, strengthen thy brethren.”</p><cite>Luke 22:31–32</cite></blockquote>
+    <p class="note step">Jesus saw the fall coming, prayed for Peter ahead of time, and already had his way back planned. Even in verse 36: <em>“thou shalt follow me afterwards.”</em> The promise came in the same breath as the warning. If you've failed Him, that isn't the end of your story. Come back, and then strengthen your brothers.</p>
+  </div>
+</section>
+
+<!-- ======================= CLOSING ======================= -->
+<section class="slide remember">
+  <div class="inner">
+    <h2 class="rise">Points to remember</h2>
+    <ol class="seeds">
+      <li class="step"><span class="topic">Humility</span><span class="seed-q">“Took a towel, and girded himself” <cite>13:4</cite></span><span class="take">Knowing all power was His, Jesus took the lowest job in the room.</span></li>
+      <li class="step"><span class="topic">Being made clean</span><span class="seed-q">“Clean every whit” <cite>13:10</cite></span><span class="take">Saved once, for good. When you get dirty along the road, come and let Him wash your feet.</span></li>
+      <li class="step"><span class="topic">Serving</span><span class="seed-q">“Ye also ought to wash one another's feet” <cite>13:14</cite></span><span class="take">Do the low, unasked-for job that helps a brother. The blessing is in the doing.</span></li>
+      <li class="step"><span class="topic">Betrayal</span><span class="seed-q">“He gave it to Judas Iscariot” <cite>13:26</cite></span><span class="take">He knew, washed Judas's feet anyway, and held out His hand to the very end.</span></li>
+      <li class="step"><span class="topic">Love</span><span class="seed-q">“As I have loved you” <cite>13:34</cite></span><span class="take">The new measure of love is Jesus Himself. That's how the world knows we're His.</span></li>
+      <li class="step"><span class="topic">Failure</span><span class="seed-q">“Thou shalt follow me afterwards” <cite>13:36</cite></span><span class="take">He knew Peter would fall, and had already planned his way back.</span></li>
+    </ol>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 1 of 6</p>
+      <span class="topic">Humility</span>
+      <h2>Why would the Lord of all wash His disciples' feet?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="3-4" data-hl="the Father had given all things into his hands|took a towel, and girded himself"></blockquote>
+      <blockquote class="quote step" data-q="1" data-hl="he loved them unto the end"></blockquote>
+      <blockquote class="quote step"><p>“For even the Son of man came not to be ministered unto, but to minister, and to give his life a ransom for many.”</p><cite>Mark 10:45</cite></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>Because He loved them to the end, and because He was completely secure. He knew the Father had put all things in His hands, so He had nothing to prove. He came to serve, not to be served, and the towel was a small picture of the cross that was coming.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 2 of 6</p>
+      <span class="topic">Being made clean</span>
+      <h2>What's the difference between being washed and having your feet washed?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="8" data-hl="If I wash thee not, thou hast no part with me"></blockquote>
+      <blockquote class="quote step" data-q="10" data-hl="He that is washed needeth not save to wash his feet, but is clean every whit"></blockquote>
+      <blockquote class="quote step"><p>“If we confess our sins, he is faithful and just to forgive us our sins, and to cleanse us from all unrighteousness.”</p><cite>1 John 1:9</cite></blockquote>
+      <blockquote class="quote step"><p>“And I give unto them eternal life; and they shall never perish, neither shall any man pluck them out of my hand.”</p><cite>John 10:28</cite></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>Being washed is salvation: it happens once, when you trust Christ, and it makes you clean all over for good. Having your feet washed is what happens along the way: when you sin, you confess it and He cleanses you. Stumbling doesn't undo your salvation, but it does mean you need to come back and let Him wash your feet.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 3 of 6</p>
+      <span class="topic">Serving</span>
+      <h2>What does Jesus expect us to do for one another?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="14" data-hl="ye also ought to wash one another’s feet"></blockquote>
+      <blockquote class="quote step" data-q="15"></blockquote>
+      <blockquote class="quote step" data-q="17" data-hl="happy are ye if ye do them"></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>To do for each other what He did for us: take the low job, without being asked and without keeping score. If the Lord and Master did it, none of us is too big for it. And it isn't enough to know this. The blessing comes when we actually do it.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 4 of 6</p>
+      <span class="topic">Betrayal</span>
+      <h2>How did Jesus treat the man He knew would betray Him?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="11" data-hl="he knew who should betray him"></blockquote>
+      <blockquote class="quote step" data-q="21" data-hl="he was troubled in spirit"></blockquote>
+      <blockquote class="quote step" data-q="26" data-hl="he gave it to Judas Iscariot, the son of Simon"></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>With kindness, right to the end. He knew all along, yet He washed Judas's feet with the others, kept his secret from the table, was grieved over him, and handed him the sop of friendship. Judas wasn't pushed out. He chose to walk out into the night.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 5 of 6</p>
+      <span class="topic">Love</span>
+      <h2>What makes the new commandment new?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step"><p>“Thou shalt not avenge, nor bear any grudge against the children of thy people, but thou shalt love thy neighbour as thyself: I am the LORD.”</p><cite>Leviticus 19:18</cite></blockquote>
+      <blockquote class="quote step" data-q="34" data-hl="as I have loved you"></blockquote>
+      <blockquote class="quote step"><p>“Hereby perceive we the love of God, because he laid down his life for us: and we ought to lay down our lives for the brethren.”</p><cite>1 John 3:16</cite></blockquote>
+      <blockquote class="quote step" data-q="35"></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>The measure. The old command said love your neighbor “as thyself.” The new one says love each other “as I have loved you”: with a towel, with patience for a traitor, with His own life. We can only love like that because He loved us first, and that love is how the world will know we're His.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 6 of 6</p>
+      <span class="topic">Failure</span>
+      <h2>What did Jesus know about Peter's fall before it happened?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="38" data-hl="The cock shall not crow, till thou hast denied me thrice"></blockquote>
+      <blockquote class="quote step" data-q="36" data-hl="thou shalt follow me afterwards"></blockquote>
+      <blockquote class="quote step"><p>“But I have prayed for thee, that thy faith fail not: and when thou art converted, strengthen thy brethren.”</p><cite>Luke 22:32</cite></blockquote>
+      <blockquote class="quote step"><p>“He saith unto him the third time, Simon, son of Jonas, lovest thou me? Peter was grieved because he said unto him the third time, Lovest thou me? And he said unto him, Lord, thou knowest all things; thou knowest that I love thee. Jesus saith unto him, Feed my sheep.”</p><cite>John 21:17</cite></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>Everything: how many times, and how soon. And He loved Peter anyway. He prayed for him beforehand, promised “thou shalt follow me afterwards,” and later restored him with three questions to match three denials. A fall is not the end with Jesus. He plans the way back, and then He puts you to work helping others.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide prayer">
+  <div class="inner">
+    <div class="emblem rise"></div>
+    <h2 class="rise">Prayer requests</h2>
+    <p class="ask-line rise" style="--d:1">What can we pray about for you today?</p>
+    <blockquote class="quote rise" style="--d:3"><p>“Confess your faults one to another, and pray one for another, that ye may be healed. The effectual fervent prayer of a righteous man availeth much.”</p><cite>James 5:16</cite></blockquote>
+  </div>
+</section>
+
+</main>
+
+<script>
+// King James Version, John chapter 13
+const V = {
+  1: "Now before the feast of the passover, when Jesus knew that his hour was come that he should depart out of this world unto the Father, having loved his own which were in the world, he loved them unto the end.",
+  2: "And supper being ended, the devil having now put into the heart of Judas Iscariot, Simon’s son, to betray him;",
+  3: "Jesus knowing that the Father had given all things into his hands, and that he was come from God, and went to God;",
+  4: "He riseth from supper, and laid aside his garments; and took a towel, and girded himself.",
+  5: "After that he poureth water into a bason, and began to wash the disciples’ feet, and to wipe them with the towel wherewith he was girded.",
+  6: "Then cometh he to Simon Peter: and Peter saith unto him, Lord, dost thou wash my feet?",
+  7: "Jesus answered and said unto him, What I do thou knowest not now; but thou shalt know hereafter.",
+  8: "Peter saith unto him, Thou shalt never wash my feet. Jesus answered him, If I wash thee not, thou hast no part with me.",
+  9: "Simon Peter saith unto him, Lord, not my feet only, but also my hands and my head.",
+  10: "Jesus saith to him, He that is washed needeth not save to wash his feet, but is clean every whit: and ye are clean, but not all.",
+  11: "For he knew who should betray him; therefore said he, Ye are not all clean.",
+  12: "So after he had washed their feet, and had taken his garments, and was set down again, he said unto them, Know ye what I have done to you?",
+  13: "Ye call me Master and Lord: and ye say well; for so I am.",
+  14: "If I then, your Lord and Master, have washed your feet; ye also ought to wash one another’s feet.",
+  15: "For I have given you an example, that ye should do as I have done to you.",
+  16: "Verily, verily, I say unto you, The servant is not greater than his lord; neither he that is sent greater than he that sent him.",
+  17: "If ye know these things, happy are ye if ye do them.",
+  18: "I speak not of you all: I know whom I have chosen: but that the scripture may be fulfilled, He that eateth bread with me hath lifted up his heel against me.",
+  19: "Now I tell you before it come, that, when it is come to pass, ye may believe that I am he.",
+  20: "Verily, verily, I say unto you, He that receiveth whomsoever I send receiveth me; and he that receiveth me receiveth him that sent me.",
+  21: "When Jesus had thus said, he was troubled in spirit, and testified, and said, Verily, verily, I say unto you, that one of you shall betray me.",
+  22: "Then the disciples looked one on another, doubting of whom he spake.",
+  23: "Now there was leaning on Jesus’ bosom one of his disciples, whom Jesus loved.",
+  24: "Simon Peter therefore beckoned to him, that he should ask who it should be of whom he spake.",
+  25: "He then lying on Jesus’ breast saith unto him, Lord, who is it?",
+  26: "Jesus answered, He it is, to whom I shall give a sop, when I have dipped it. And when he had dipped the sop, he gave it to Judas Iscariot, the son of Simon.",
+  27: "And after the sop Satan entered into him. Then said Jesus unto him, That thou doest, do quickly.",
+  28: "Now no man at the table knew for what intent he spake this unto him.",
+  29: "For some of them thought, because Judas had the bag, that Jesus had said unto him, Buy those things that we have need of against the feast; or, that he should give something to the poor.",
+  30: "He then having received the sop went immediately out: and it was night.",
+  31: "Therefore, when he was gone out, Jesus said, Now is the Son of man glorified, and God is glorified in him.",
+  32: "If God be glorified in him, God shall also glorify him in himself, and shall straightway glorify him.",
+  33: "Little children, yet a little while I am with you. Ye shall seek me: and as I said unto the Jews, Whither I go, ye cannot come; so now I say to you.",
+  34: "A new commandment I give unto you, That ye love one another; as I have loved you, that ye also love one another.",
+  35: "By this shall all men know that ye are my disciples, if ye have love one to another.",
+  36: "Simon Peter said unto him, Lord, whither goest thou? Jesus answered him, Whither I go, thou canst not follow me now; but thou shalt follow me afterwards.",
+  37: "Peter said unto him, Lord, why cannot I follow thee now? I will lay down my life for thy sake.",
+  38: "Jesus answered him, Wilt thou lay down thy life for my sake? Verily, verily, I say unto thee, The cock shall not crow, till thou hast denied me thrice."
+};
+const BOOK = "John 13";
+</script>
+<script src="../assets/deck.js"></script>
+</body>
+</html>

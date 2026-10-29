@@ -4934,6 +4934,9 @@ window.GLOSSARY = [
   "name": "The disciple whom Jesus loved (John)",
   "refs": [
    [
+    "John", 13,
+    [ 23 ] ],
+   [
     "John", 18,
     [ 16 ] ],
    [
@@ -5500,5 +5503,257 @@ window.GLOSSARY = [
    [
     "John", 16,
     [ 11 ] ] ]
+ },
+ {
+  "id": "satan",
+  "kind": "person",
+  "name": "Satan",
+  "refs": [
+   [
+    "John", 13,
+    [ 27 ] ] ]
+ },
+ {
+  "id": "girded",
+  "kind": "term",
+  "name": "Girded (a towel tied around the waist)",
+  "refs": [
+   [
+    "John", 13,
+    [ 4, 5 ] ] ]
+ },
+ {
+  "id": "bason",
+  "kind": "term",
+  "name": "Bason (basin)",
+  "refs": [
+   [
+    "John", 13,
+    [ 5 ] ] ]
+ },
+ {
+  "id": "every-whit",
+  "kind": "term",
+  "name": "Every whit (completely)",
+  "refs": [
+   [
+    "John", 7,
+    [ 23 ] ],
+   [
+    "John", 13,
+    [ 10 ] ] ]
+ },
+ {
+  "id": "betray",
+  "kind": "term",
+  "name": "Betray",
+  "refs": [
+   [
+    "John", 6,
+    [ 64, 71 ] ],
+   [
+    "John", 12,
+    [ 4 ] ],
+   [
+    "John", 13,
+    [ 2, 11, 21 ] ],
+   [
+    "John", 18,
+    [ 2, 5 ] ],
+   [
+    "John", 21,
+    [ 20 ] ] ]
+ },
+ {
+  "id": "bosom",
+  "kind": "term",
+  "name": "Bosom (leaning on Jesus' breast)",
+  "refs": [
+   [
+    "John", 1,
+    [ 18 ] ],
+   [
+    "John", 13,
+    [ 23 ] ] ]
+ },
+ {
+  "id": "sop",
+  "kind": "term",
+  "name": "The sop (bread dipped in the dish)",
+  "refs": [
+   [
+    "John", 13,
+    [ 26, 27, 30 ] ] ]
+ },
+ {
+  "id": "the-bag",
+  "kind": "term",
+  "name": "The bag (the disciples' money box)",
+  "refs": [
+   [
+    "John", 12,
+    [ 6 ] ],
+   [
+    "John", 13,
+    [ 29 ] ] ]
+ },
+ {
+  "id": "little-children",
+  "kind": "term",
+  "name": "Little children",
+  "refs": [
+   [
+    "John", 13,
+    [ 33 ] ] ]
+ },
+ {
+  "id": "new-commandment",
+  "kind": "term",
+  "name": "The new commandment",
+  "refs": [
+   [
+    "John", 13,
+    [ 34 ] ] ]
+ },
+ {
+  "id": "cock-crow",
+  "kind": "term",
+  "name": "The cock crowing",
+  "refs": [
+   [
+    "John", 13,
+    [ 38 ] ],
+   [
+    "John", 18,
+    [ 27 ] ] ]
+ },
+ {
+  "id": "judas-not-iscariot",
+  "kind": "person",
+  "name": "Judas, not Iscariot (Thaddaeus)",
+  "refs": [
+   [
+    "John", 14,
+    [ 22 ] ] ]
+ },
+ {
+  "id": "mansions",
+  "kind": "term",
+  "name": "Mansions (dwelling places)",
+  "refs": [
+   [
+    "John", 14,
+    [ 2 ] ] ]
+ },
+ {
+  "id": "abode",
+  "kind": "term",
+  "name": "Abode (a home, a place to stay)",
+  "refs": [
+   [
+    "John", 1,
+    [ 32, 39 ] ],
+   [
+    "John", 4,
+    [ 40 ] ],
+   [
+    "John", 7,
+    [ 9 ] ],
+   [
+    "John", 8,
+    [ 44 ] ],
+   [
+    "John", 10,
+    [ 40 ] ],
+   [
+    "John", 11,
+    [ 6 ] ],
+   [
+    "John", 14,
+    [ 23 ] ] ]
+ },
+ {
+  "id": "the-way",
+  "kind": "term",
+  "name": "The way",
+  "refs": [
+   [
+    "John", 1,
+    [ 23 ] ],
+   [
+    "John", 14,
+    [ 4, 5, 6 ] ] ]
+ },
+ {
+  "id": "sufficeth",
+  "kind": "term",
+  "name": "Sufficeth (is enough)",
+  "refs": [
+   [
+    "John", 14,
+    [ 8 ] ] ]
+ },
+ {
+  "id": "in-my-name",
+  "kind": "term",
+  "name": "In My name",
+  "refs": [
+   [
+    "John", 14,
+    [ 13, 14, 26 ] ],
+   [
+    "John", 15,
+    [ 16 ] ],
+   [
+    "John", 16,
+    [ 23, 24, 26 ] ] ]
+ },
+ {
+  "id": "comforter",
+  "kind": "term",
+  "name": "The Comforter (Paraclete)",
+  "refs": [
+   [
+    "John", 14,
+    [ 16, 26 ] ],
+   [
+    "John", 15,
+    [ 26 ] ],
+   [
+    "John", 16,
+    [ 7 ] ] ]
+ },
+ {
+  "id": "comfortless",
+  "kind": "term",
+  "name": "Comfortless (orphans)",
+  "refs": [
+   [
+    "John", 14,
+    [ 18 ] ] ]
+ },
+ {
+  "id": "manifest",
+  "kind": "term",
+  "name": "Manifest (show openly)",
+  "refs": [
+   [
+    "John", 1,
+    [ 31 ] ],
+   [
+    "John", 2,
+    [ 11 ] ],
+   [
+    "John", 3,
+    [ 21 ] ],
+   [
+    "John", 9,
+    [ 3 ] ],
+   [
+    "John", 14,
+    [ 21, 22 ] ],
+   [
+    "John", 17,
+    [ 6 ] ] ]
  }
 ];

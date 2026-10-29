@@ -1,0 +1,624 @@
+<!doctype html>
+<html lang="en" data-theme="slate">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>John 14</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="../assets/fonts.css">
+<link rel="stylesheet" href="../assets/deck.css">
+<link rel="stylesheet" href="../assets/themes.css">
+<style>
+/* Many roads: the dead ends draw first, then the one true road (.jn14-way-go) */
+.jn14-roads .dead { fill: none; stroke: var(--line-strong); stroke-width: 5; stroke-linecap: round; }
+.jn14-roads .x { stroke: var(--danger); stroke-width: 5; stroke-linecap: round; opacity: 0; transition: opacity .5s ease; transition-delay: calc(var(--k, 0) * 200ms + 1.4s); }
+.slide.active .jn14-roads .x { opacity: 1; }
+.jn14-roads .end { font-size: 17px; fill: var(--ink-soft); }
+.slide.active .jn14-roads .dead.draw { stroke-dashoffset: 0; transition-delay: calc(var(--k, 0) * 200ms + .2s); }
+.jn14-roads .true { fill: none; stroke: var(--accent); stroke-width: 8; stroke-linecap: round; filter: drop-shadow(0 0 6px color-mix(in srgb, var(--accent) 60%, transparent)); }
+.slide:has(.jn14-way-go.on) .jn14-roads .true.draw { stroke-dashoffset: 0; }
+.jn14-roads .home, .jn14-roads .by { opacity: 0; transition: opacity 1s ease 1.1s; }
+.slide:has(.jn14-way-go.on) .jn14-roads .home, .slide:has(.jn14-way-go.on) .jn14-roads .by { opacity: 1; }
+.jn14-roads .you { fill: var(--ink); }
+
+/* The unseen Father and the seen Son come together (.jn14-face-go) */
+.jn14-face .unseen { fill: none; stroke: var(--ink-soft); stroke-width: 3; stroke-dasharray: 9 8; }
+.jn14-face .seen { fill: color-mix(in srgb, var(--accent) 16%, transparent); stroke: var(--accent); stroke-width: 4; }
+.jn14-face .l, .jn14-face .r { transition: transform 1.6s cubic-bezier(.4,0,.2,1); }
+.slide:has(.jn14-face-go.on) .jn14-face .l { transform: translateX(100px); }
+.slide:has(.jn14-face-go.on) .jn14-face .r { transform: translateX(-100px); }
+.jn14-face .apart { transition: opacity .6s ease; }
+.slide:has(.jn14-face-go.on) .jn14-face .apart { opacity: 0; }
+.jn14-face .one { opacity: 0; transition: opacity 1s ease 1.4s; }
+.slide:has(.jn14-face-go.on) .jn14-face .one { opacity: 1; }
+
+/* The Spirit beside a man, then within him (.jn14-in-go) */
+.jn14-within .body { fill: var(--surface-2); stroke: var(--line-strong); stroke-width: 2; }
+.jn14-within .spirit { transition: transform 1.8s cubic-bezier(.4,0,.2,1); }
+.slide:has(.jn14-in-go.on) .jn14-within .spirit { transform: translate(-120px, 30px); }
+.slide.active .jn14-within .pulse { animation: jn14-pulse 2.4s ease-in-out infinite alternate; transform-box: fill-box; transform-origin: center; }
+@keyframes jn14-pulse { from { transform: scale(.85); opacity: .75; } to { transform: scale(1.08); opacity: 1; } }
+.jn14-within .with, .jn14-within .inside { transition: opacity .8s ease; }
+.jn14-within .inside { opacity: 0; }
+.slide:has(.jn14-in-go.on) .jn14-within .with { opacity: 0; }
+.slide:has(.jn14-in-go.on) .jn14-within .inside { opacity: 1; transition-delay: 1.2s; }
+
+/* Circles within circles: the Father, the Son, you, and Christ in you */
+.jn14-nest .ring { fill: color-mix(in srgb, var(--accent) 9%, transparent); stroke: var(--accent); stroke-width: 2.5; }
+.jn14-nest .ring.you { fill: var(--surface-2); stroke: var(--ink-soft); }
+.jn14-nest .core { fill: var(--accent-hot); filter: drop-shadow(0 0 10px var(--accent)); }
+.jn14-nest g { opacity: 0; transform: scale(.7); transform-box: fill-box; transform-origin: center; transition: opacity .9s ease, transform .9s cubic-bezier(.3,1.3,.5,1); transition-delay: calc(var(--k, 0) * 800ms + 300ms); }
+.slide.active .jn14-nest g { opacity: 1; transform: none; }
+.jn14-nest text { font-size: 17px; font-weight: 700; }
+
+/* Two dwelling places: a room for us in His house, and a home for Them in us (.jn14-abode-go) */
+.jn14-rooms .wall { fill: var(--surface-2); stroke: var(--line-strong); stroke-width: 2.5; }
+.jn14-rooms .roof { fill: var(--line-strong); }
+.jn14-rooms .win { fill: var(--surface); stroke: var(--line-strong); stroke-width: 1.5; }
+.jn14-rooms .lit { fill: var(--glow); stroke: var(--accent); stroke-width: 2.5; }
+.slide.active .jn14-rooms .lit { animation: jn14-lamp 2.6s ease-in-out infinite alternate; }
+@keyframes jn14-lamp { from { filter: none; } to { filter: drop-shadow(0 0 9px var(--accent)); } }
+.jn14-rooms .here { opacity: 0; transform: translateY(14px); transition: opacity 1s ease, transform 1s ease; }
+.slide:has(.jn14-abode-go.on) .jn14-rooms .here { opacity: 1; transform: none; }
+.jn14-rooms .cap { font-size: 17px; fill: var(--ink-soft); }
+.jn14-rooms .word { font-family: var(--serif); font-style: italic; font-size: 26px; fill: var(--accent-hot); }
+
+/* Stirred-up water that goes still (.jn14-calm-go) */
+.jn14-still .chop { fill: none; stroke: var(--cool); stroke-width: 4; stroke-linecap: round; transition: opacity 1.4s ease; }
+.jn14-still .chop.b { opacity: .55; }
+.slide.active .jn14-still .roll { animation: jn14-roll 1.6s linear infinite; }
+.slide.active .jn14-still .roll.b { animation-duration: 2.3s; animation-direction: reverse; }
+@keyframes jn14-roll { to { transform: translateX(-100px); } }
+.jn14-still .calm { fill: none; stroke: var(--accent); stroke-width: 4; stroke-linecap: round; opacity: 0; transition: opacity 1.6s ease .6s; }
+.slide:has(.jn14-calm-go.on) .jn14-still .chop { opacity: 0; }
+.slide:has(.jn14-calm-go.on) .jn14-still .calm { opacity: 1; }
+.jn14-still .lbl { font-size: 18px; font-weight: 700; transition: opacity 1s ease; }
+.jn14-still .lbl.after { opacity: 0; }
+.slide:has(.jn14-calm-go.on) .jn14-still .lbl.before { opacity: 0; }
+.slide:has(.jn14-calm-go.on) .jn14-still .lbl.after { opacity: 1; transition-delay: 1s; }
+</style>
+</head>
+<body>
+<main class="deck" id="deck">
+
+<!-- ======================= OPENING ======================= -->
+<section class="slide title">
+  <div class="inner">
+    <div class="emblem rise"></div>
+    <h1 class="rise" style="--d:1">John 14</h1>
+    <p class="sub rise" style="--d:3">Let not your heart be troubled</p>
+    <p class="tag rise" style="--d:5">The night before the cross, Jesus steadies frightened men: a place in His Father's house, the only way there, and a Comforter who will live inside them.</p>
+  </div>
+</section>
+
+<section class="slide watch">
+  <div class="inner">
+    <h2 class="rise">Things to watch for</h2>
+    <p class="lede rise" style="--d:1">Keep these questions in the back of your mind as we read. We'll come back to every one of them at the end.</p>
+    <ol class="seeds">
+      <li class="step"><span class="topic">A troubled heart</span><span class="seed-q">What does Jesus give a troubled heart?</span></li>
+      <li class="step"><span class="topic">His promise</span><span class="seed-q">What is Jesus doing for us now, and what will He do?</span></li>
+      <li class="step"><span class="topic">The only way</span><span class="seed-q">How does a man get to the Father?</span></li>
+      <li class="step"><span class="topic">Seeing God</span><span class="seed-q">What did Jesus mean by “he that hath seen me hath seen the Father”?</span></li>
+      <li class="step"><span class="topic">Love</span><span class="seed-q">How do we show that we love Jesus?</span></li>
+      <li class="step"><span class="topic">The Comforter</span><span class="seed-q">Who is the Comforter, and where does He live?</span></li>
+    </ol>
+  </div>
+</section>
+
+<!-- ======================= PART ONE ======================= -->
+<section class="slide part">
+  <div class="inner">
+    <p class="part-n rise">Part one</p>
+    <h2 class="rise" style="--d:1">A place for you</h2>
+    <p class="range rise" style="--d:2">Verses 1–6</p>
+    <p class="hook rise" style="--d:4">Jesus has just told them He's leaving. Now He tells them where, and why.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="1-3" data-hl="Let not your heart be troubled|In my Father’s house are many mansions|I will come again, and receive you unto myself"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise">Why their hearts were troubled</h2>
+    <p class="note rise" style="--d:1">There are no chapter breaks in the room. Jesus is still talking at the same table, and the men have just heard three hard things:</p>
+    <div class="sort">
+      <div class="rise" style="--d:2"><h3>A traitor at the table</h3><div class="vs"><b>13:21</b></div><p>“one of you shall betray me.”</p></div>
+      <div class="rise" style="--d:3"><h3>He's leaving</h3><div class="vs"><b>13:33</b></div><p>“Whither I go, ye cannot come.”</p></div>
+      <div class="rise" style="--d:4"><h3>Peter will deny Him</h3><div class="vs"><b>13:38</b></div><p>“till thou hast denied me thrice.”</p></div>
+    </div>
+    <p class="saying step" style="margin-top:.4em"><em>Let not your heart</em> be troubled.</p>
+    <p class="note step">“Troubled” is the word for water being stirred up (John 5:7). Jesus knew the feeling: <em>“Now is my soul troubled”</em> (John 12:27). And His cure is not “calm down.” It's <em>“ye believe in God, believe also in me.”</em> He puts Himself right beside God as the One to lean on.</p>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="2" data-hl="many mansions|if it were not so, I would have told you"></blockquote>
+    <h2 class="rise" style="--d:1">Many mansions</h2>
+    <div class="morph rise" style="--d:2"><span class="big">μονή</span><span class="say">mon-AY</span><span class="means">a dwelling, a place to stay</span></div>
+    <p class="note rise" style="--d:3">Not a mansion the way we use the word. It's a room of your own, a place to live and stay. And <em>“if it were not so, I would have told you.”</em> A lot of us have been lied to by everybody. He never has.</p>
+    <ul class="thread step">
+      <li><b>“I go”</b><p>to the cross, the grave, and back to the Father.</p></li>
+      <li><b>“to prepare a place for you”</b><p>That's what He's doing right now.</p></li>
+      <li><b>“I will come again”</b><p>He's coming back in person.</p></li>
+      <li><b>“that where I am, there ye may be also”</b><p>The best part of heaven is Him.</p></li>
+    </ul>
+    <blockquote class="quote step"><p>“For the Lord himself shall descend from heaven with a shout, with the voice of the archangel, and with the trump of God: and the dead in Christ shall rise first: Then we which are alive and remain shall be caught up together with them in the clouds, to meet the Lord in the air: and so shall we ever be with the Lord.”</p><cite>1 Thessalonians 4:16–17</cite></blockquote>
+  </div>
+</section>
+
+<section class="slide verse" data-v="4-6" data-hl="how can we know the way?|I am the way, the truth, and the life|no man cometh unto the Father, but by me"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <div class="split">
+      <div class="stage">
+        <svg class="jn14-roads" viewBox="0 0 600 320" role="img" aria-label="From one starting point, four roads end at dead ends: my own goodness, religion without Christ, money and pleasure, the next high. Then one straight road, labeled by me, reaches the Father.">
+          <path class="dead draw" style="--k:0" pathLength="1" d="M40 160 C140 160 170 40 280 40 L360 40"/>
+          <path class="dead draw" style="--k:1" pathLength="1" d="M40 160 C140 160 170 86 280 86 L400 86"/>
+          <path class="dead draw" style="--k:2" pathLength="1" d="M40 160 C140 160 170 234 280 234 L400 234"/>
+          <path class="dead draw" style="--k:3" pathLength="1" d="M40 160 C140 160 170 280 280 280 L360 280"/>
+          <g class="x" style="--k:0"><line x1="352" y1="32" x2="368" y2="48"/><line x1="368" y1="32" x2="352" y2="48"/></g>
+          <g class="x" style="--k:1"><line x1="392" y1="78" x2="408" y2="94"/><line x1="408" y1="78" x2="392" y2="94"/></g>
+          <g class="x" style="--k:2"><line x1="392" y1="226" x2="408" y2="242"/><line x1="408" y1="226" x2="392" y2="242"/></g>
+          <g class="x" style="--k:3"><line x1="352" y1="272" x2="368" y2="288"/><line x1="368" y1="272" x2="352" y2="288"/></g>
+          <text class="end" x="380" y="46">my own goodness</text>
+          <text class="end" x="420" y="92">religion without Christ</text>
+          <text class="end" x="420" y="240">money and pleasure</text>
+          <text class="end" x="380" y="286">the next high</text>
+          <path class="true draw" pathLength="1" d="M40 160 H520"/>
+          <text class="by" x="280" y="150" text-anchor="middle" font-size="20" font-weight="700" style="fill:var(--accent-hot)">“by me”</text>
+          <g class="home">
+            <circle cx="550" cy="160" r="28" style="fill:var(--glow);stroke:var(--accent)" stroke-width="3"/>
+            <text x="550" y="210" text-anchor="middle" font-size="17" font-weight="700" style="fill:var(--accent-hot)">the Father</text>
+          </g>
+          <circle class="you" cx="40" cy="160" r="12"/>
+          <text x="40" y="196" text-anchor="middle" font-size="16" style="fill:var(--ink-soft)">a man</text>
+        </svg>
+      </div>
+      <div>
+        <h2 class="rise" style="--d:1">Not a map. A Man.</h2>
+        <p class="note rise" style="--d:2">Thomas asks the honest question: <em>“how can we know the way?”</em> Jesus doesn't hand him directions. He says, <em>“I am the way.”</em></p>
+        <blockquote class="quote rise" style="--d:3"><p>“There is a way which seemeth right unto a man, but the end thereof are the ways of death.”</p><cite>Proverbs 14:12</cite></blockquote>
+        <p class="note step jn14-way-go">Plenty of us tried every road on the map. They all dead-ended. There's one road to the Father, and it's a Person. That road is narrow, but the gate is open to whosoever will come.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="6" data-hl="I am the way, the truth, and the life"></blockquote>
+    <h2 class="rise" style="--d:1">The sixth “I am”</h2>
+    <ol class="signs rise" style="--d:2">
+      <li><b>The bread of life</b>John 6:35</li>
+      <li><b>The light of the world</b>John 8:12</li>
+      <li><b>The door</b>John 10:9</li>
+      <li><b>The good shepherd</b>John 10:11</li>
+      <li><b>The resurrection and the life</b>John 11:25</li>
+      <li class="now"><b>The way, the truth, and the life</b>John 14:6</li>
+      <li><b>The true vine</b>John 15:1</li>
+    </ol>
+    <p class="note step"><em>The way</em>, for the man who is lost. <em>The truth</em>, for the man who's been lied to, by other people and by his own addiction. <em>The life</em>, for the man who feels dead inside.</p>
+    <blockquote class="quote step"><p>“Neither is there salvation in any other: for there is none other name under heaven given among men, whereby we must be saved.”</p><cite>Acts 4:12</cite></blockquote>
+  </div>
+</section>
+
+<!-- ======================= PART TWO ======================= -->
+<section class="slide part">
+  <div class="inner">
+    <p class="part-n rise">Part two</p>
+    <h2 class="rise" style="--d:1">Shew us the Father</h2>
+    <p class="range rise" style="--d:2">Verses 7–14</p>
+    <p class="hook rise" style="--d:4">Philip wants to see God. He's been looking at Him for three years.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="7-9" data-hl="Lord, shew us the Father|Have I been so long time with you|he that hath seen me hath seen the Father"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="9" data-hl="he that hath seen me hath seen the Father"></blockquote>
+    <div class="split">
+      <div class="stage">
+        <svg class="jn14-face" viewBox="0 0 500 270" role="img" aria-label="A dashed circle for the unseen Father and a solid circle for Jesus, side by side. They slide together into one: he that hath seen me hath seen the Father.">
+          <g class="l">
+            <circle class="unseen" cx="150" cy="120" r="92"/>
+            <g class="apart"><text x="150" y="114" text-anchor="middle" font-size="21" font-weight="700" style="fill:var(--ink-soft)">the Father</text>
+            <text x="150" y="140" text-anchor="middle" font-size="15" style="fill:var(--ink-soft)">never seen</text></g>
+          </g>
+          <g class="r">
+            <circle class="seen" cx="350" cy="120" r="92"/>
+            <g class="apart"><text x="350" y="114" text-anchor="middle" font-size="21" font-weight="700" style="fill:var(--accent-hot)">Jesus</text>
+            <text x="350" y="140" text-anchor="middle" font-size="15" style="fill:var(--ink)">seen, heard, touched</text></g>
+          </g>
+          <g class="one">
+            <text x="250" y="114" text-anchor="middle" font-size="21" font-weight="700" style="fill:var(--accent-hot)">Jesus</text>
+            <text x="250" y="140" text-anchor="middle" font-size="15" style="fill:var(--ink)">God, made visible</text>
+            <text class="serif" x="250" y="250" text-anchor="middle" font-size="20" font-style="italic" style="fill:var(--ink)">“he that hath seen me hath seen the Father”</text>
+          </g>
+        </svg>
+      </div>
+      <div>
+        <h2 class="rise" style="--d:1">Want to see God? Look at Jesus.</h2>
+        <blockquote class="quote rise" style="--d:2"><p>“No man hath seen God at any time; the only begotten Son, which is in the bosom of the Father, he hath declared him.”</p><cite>John 1:18</cite></blockquote>
+        <p class="note step jn14-face-go">Philip has walked with Jesus for about three years and still missed it. How Jesus treated the leper, the woman at the well, the thief, Peter after the fall: <em>that</em> is what the Father is like.</p>
+        <p class="note step">Some of us had fathers who made God look harsh, or just absent. Jesus says: look at Me. That's your Father in heaven.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="slide verse" data-v="10-12" data-hl="I am in the Father, and the Father in me|believe me for the very works’ sake|greater works than these shall he do; because I go unto my Father"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="12" data-hl="greater works than these shall he do; because I go unto my Father"></blockquote>
+    <h2 class="rise" style="--d:1">Greater works?</h2>
+    <p class="note rise" style="--d:2">Nobody has outdone raising Lazarus. “Greater” here means greater in <em>reach</em>. Jesus stayed in one small land for about three years. After He went to the Father and sent the Spirit, look what happened:</p>
+    <div class="temples">
+      <div class="stone-t rise" style="--d:3"><h3>After His ministry</h3><div class="big">≈ 120</div><p>believers gathered in Jerusalem (Acts 1:15)</p></div>
+      <div class="body-t step"><h3>One day at Pentecost</h3><div class="big">≈ 3,000</div><p>saved and baptized (Acts 2:41)</p></div>
+    </div>
+    <p class="note step">From there the gospel went to the whole world, and it's still going, through ordinary believers. Every man in this room who tells another man what Jesus did for him is part of those “greater works.”</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="13-14" data-hl="whatsoever ye shall ask in my name|that the Father may be glorified in the Son"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="13" data-hl="in my name|that the Father may be glorified in the Son"></blockquote>
+    <h2 class="rise" style="--d:1">What “in my name” means</h2>
+    <ul class="nots">
+      <li class="step"><span class="k">A magic phrase</span><span class="why">tacked on the end of a prayer</span></li>
+      <li class="step"><span class="k">A blank check</span><span class="why">for whatever I happen to want</span></li>
+      <li class="step yes"><span class="k">Asking as His man</span><span class="why">for what He wants, on His authority, so the Father is glorified</span></li>
+    </ul>
+    <blockquote class="quote step"><p>“And this is the confidence that we have in him, that, if we ask any thing according to his will, he heareth us:”</p><cite>1 John 5:14</cite></blockquote>
+    <p class="note step">To ask in someone's name is to ask the way an ambassador does: for his king's business. Ask for strength today, for a brother's freedom, for a family put back together. Those are His kinds of requests, and He loves to answer them.</p>
+  </div>
+</section>
+
+<!-- ======================= PART THREE ======================= -->
+<section class="slide part">
+  <div class="inner">
+    <p class="part-n rise">Part three</p>
+    <h2 class="rise" style="--d:1">Another Comforter</h2>
+    <p class="range rise" style="--d:2">Verses 15–31</p>
+    <p class="hook rise" style="--d:4">Jesus is leaving, but He won't leave them alone.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="15-17" data-hl="If ye love me, keep my commandments|another Comforter|he dwelleth with you, and shall be in you"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="16" data-hl="another Comforter|abide with you for ever"></blockquote>
+    <h2 class="rise" style="--d:1">One called alongside</h2>
+    <div class="morph rise" style="--d:2"><span class="big">παράκλητος</span><span class="say">par-AK-lay-tos</span><span class="means">one called to your side to help</span></div>
+    <p class="note rise" style="--d:3">A helper, a counselor, someone who stands up for you. And <em>“another”</em> means another of the same kind. Jesus is saying: Someone exactly like Me is coming to take My place beside you.</p>
+    <p class="note step">He is <em>“the Spirit of truth”</em> (v. 17), a Person, not a force. He is the Holy Ghost, God Himself.</p>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="17" data-hl="he dwelleth with you, and shall be in you"></blockquote>
+    <div class="split">
+      <div class="stage">
+        <svg class="jn14-within" viewBox="0 0 360 300" role="img" aria-label="A glowing light, the Holy Spirit, stands beside a man: with you. Then it moves inside him: in you.">
+          <defs><radialGradient id="jn14-glow"><stop offset="0" style="stop-color:var(--glow)"/><stop offset=".45" style="stop-color:var(--accent-hot)"/><stop offset="1" style="stop-color:var(--accent);stop-opacity:0"/></radialGradient></defs>
+          <line x1="20" y1="286" x2="340" y2="286" stroke-width="2" style="stroke:var(--line-strong)"/>
+          <circle class="body" cx="130" cy="62" r="26"/>
+          <path class="body" d="M88 98 Q130 86 172 98 L182 196 Q130 206 78 196 Z"/>
+          <path class="body" d="M100 196 L96 280 H122 L128 200 Z M160 196 L164 280 H138 L132 200 Z"/>
+          <g class="spirit">
+            <circle class="pulse" cx="250" cy="110" r="44" style="fill:url(#jn14-glow)"/>
+          </g>
+          <text class="with" x="250" y="190" text-anchor="middle" font-size="19" font-weight="700" style="fill:var(--accent-hot)">“with you”</text>
+          <text class="inside" x="250" y="150" text-anchor="middle" font-size="19" font-weight="700" style="fill:var(--accent-hot)">“in you”</text>
+          <text class="inside" x="250" y="176" text-anchor="middle" font-size="15" style="fill:var(--ink-soft)">for ever (v. 16)</text>
+        </svg>
+      </div>
+      <div>
+        <h2 class="rise" style="--d:1">With you, then in you</h2>
+        <p class="note rise" style="--d:2">Up to then, the Spirit was <em>with</em> them. Jesus promises a change: He <em>“shall be in you.”</em></p>
+        <p class="note step jn14-in-go">Since Jesus rose and went to the Father, the Holy Spirit moves in to stay the moment a man believes:</p>
+        <blockquote class="quote step"><p>“In whom ye also trusted, after that ye heard the word of truth, the gospel of your salvation: in whom also after that ye believed, ye were sealed with that holy Spirit of promise,”</p><cite>Ephesians 1:13</cite></blockquote>
+        <p class="note step">Sealed, and <em>“for ever.”</em> He doesn't move out when you mess up. He stays to change you from the inside.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="slide verse" data-v="18-21" data-hl="I will not leave you comfortless: I will come to you|because I live, ye shall live also|I am in my Father, and ye in me, and I in you"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="18" data-hl="I will not leave you comfortless"></blockquote>
+    <h2 class="rise" style="--d:1">Not orphans</h2>
+    <div class="morph rise" style="--d:2"><span class="big">ὀρφανούς</span><span class="say">or-fah-NOOS</span><span class="means">orphans, fatherless</span></div>
+    <p class="note rise" style="--d:3">That's the word behind <em>“comfortless.”</em> Plenty of men grew up without a father around, or with one they wish hadn't been. Jesus says: <em>I will not leave you like that. I will come to you.</em></p>
+    <p class="note step">And <em>“because I live, ye shall live also”</em> (v. 19). Your life is tied to His. As long as He lives, you live, and He's never dying again.</p>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="20" data-hl="I am in my Father, and ye in me, and I in you"></blockquote>
+    <div class="split">
+      <div class="stage">
+        <svg class="jn14-nest" viewBox="0 0 400 330" role="img" aria-label="Circles within circles: the Father holds the Son, the Son holds you, and at your center is Christ in you.">
+          <g style="--k:0"><circle class="ring" cx="200" cy="170" r="152"/><text x="200" y="44" text-anchor="middle" style="fill:var(--accent-hot)">the Father</text></g>
+          <g style="--k:1"><circle class="ring" cx="200" cy="182" r="112"/><text x="200" y="96" text-anchor="middle" style="fill:var(--accent-hot)">the Son</text></g>
+          <g style="--k:2"><circle class="ring you" cx="200" cy="196" r="74"/><text x="200" y="150" text-anchor="middle">you</text></g>
+          <g style="--k:3"><circle class="core" cx="200" cy="206" r="20"/><text x="200" y="244" text-anchor="middle" font-size="13" style="fill:var(--ink-soft)">Christ in you</text></g>
+        </svg>
+      </div>
+      <div>
+        <h2 class="rise" style="--d:1">Held on every side</h2>
+        <p class="note rise" style="--d:2">Read it slowly: <em>I in the Father. You in Me. I in you.</em> You're inside Christ, and Christ is inside you.</p>
+        <blockquote class="quote step"><p>“For ye are dead, and your life is hid with Christ in God.”</p><cite>Colossians 3:3</cite></blockquote>
+        <p class="note step">That's where a believer's life is kept. To get to you, anything would have to get through the Father and the Son first. That's real security.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="slide verse" data-v="22-24" data-hl="not Iscariot|If a man love me, he will keep my words|we will come unto him, and make our abode with him"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="23" data-hl="make our abode with him"></blockquote>
+    <div class="stage rise" style="--d:1">
+      <svg class="jn14-rooms" viewBox="0 0 600 250" role="img" aria-label="Two homes. In the Father's house of many rooms, one window is lit: a place for you, there. Then a small house lights up: the Father and the Son making their home in you, here. The same Greek word, monē, is used for both.">
+        <path class="roof" d="M30 92 L150 22 L270 92 Z"/>
+        <rect class="wall" x="44" y="92" width="212" height="112"/>
+        <rect class="win" x="62" y="108" width="34" height="26"/><rect class="win" x="113" y="108" width="34" height="26"/><rect class="win" x="164" y="108" width="34" height="26"/><rect class="win" x="215" y="108" width="28" height="26"/>
+        <rect class="win" x="62" y="150" width="34" height="26"/><rect class="lit" x="113" y="150" width="34" height="26"/><rect class="win" x="164" y="150" width="34" height="26"/><rect class="win" x="215" y="150" width="28" height="26"/>
+        <text class="cap" x="150" y="230" text-anchor="middle">v. 2: a place for you, there</text>
+        <text class="word" x="300" y="130" text-anchor="middle">monē</text>
+        <g class="here">
+          <path class="roof" d="M370 112 L450 62 L530 112 Z"/>
+          <rect class="wall" x="384" y="112" width="132" height="92"/>
+          <rect class="lit" x="434" y="150" width="32" height="54"/>
+          <text class="cap" x="450" y="230" text-anchor="middle">v. 23: a home for Them, here</text>
+        </g>
+      </svg>
+    </div>
+    <h2 class="rise" style="--d:2">Two homes, one word</h2>
+    <p class="note rise" style="--d:3">The question comes from the other Judas (“not Iscariot,” also called Thaddaeus). The answer has a surprise in it: <em>“abode”</em> is the same word as <em>“mansions”</em> in verse 2.</p>
+    <p class="note step jn14-abode-go">One day you get a room in the Father's house. But right now, the Father and the Son make Their home in you. Heaven later, and God at home in you today.</p>
+    <p class="note step">Notice what comes first: <em>“If a man love me, he will keep my words.”</em> Obedience doesn't earn His love. It's how love shows.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="25-27" data-hl="he shall teach you all things, and bring all things to your remembrance|Peace I leave with you, my peace I give unto you|Let not your heart be troubled, neither let it be afraid"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="26" data-hl="bring all things to your remembrance"></blockquote>
+    <h2 class="rise" style="--d:1">Not as the world giveth</h2>
+    <p class="note rise" style="--d:2">The Holy Ghost would teach them and bring Jesus' words back to mind. That's how John could write these chapters down decades later.</p>
+    <div class="columns">
+      <div class="col law step"><p class="who">The world's peace</p><h3>A break from the storm</h3><p>A drink, a high, a numb weekend. It wears off, the bill comes due, and you're worse off than before.</p></div>
+      <div class="col grace step"><p class="who">His peace</p><h3>Calm in the storm</h3><p>It doesn't depend on how the day goes. It's His own peace, given, not borrowed, and it stays.</p></div>
+    </div>
+    <blockquote class="quote step"><p>“And the peace of God, which passeth all understanding, shall keep your hearts and minds through Christ Jesus.”</p><cite>Philippians 4:7</cite></blockquote>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="27" data-hl="Let not your heart be troubled, neither let it be afraid"></blockquote>
+    <h2 class="rise" style="--d:1">Where He started, and where He ends</h2>
+    <div class="stage rise" style="--d:2">
+      <svg class="jn14-still" viewBox="0 0 600 170" role="img" aria-label="Stirred-up, choppy water settles into a calm, still line.">
+        <defs><clipPath id="jn14-clip"><rect x="0" y="0" width="600" height="170"/></clipPath></defs>
+        <g clip-path="url(#jn14-clip)">
+          <g class="roll"><path class="chop" d="M0 95 Q25 45 50 95 T100 95 T150 95 T200 95 T250 95 T300 95 T350 95 T400 95 T450 95 T500 95 T550 95 T600 95 T650 95 T700 95"/></g>
+          <g class="roll b"><path class="chop b" d="M0 100 Q25 135 50 100 T100 100 T150 100 T200 100 T250 100 T300 100 T350 100 T400 100 T450 100 T500 100 T550 100 T600 100 T650 100 T700 100"/></g>
+          <path class="calm" d="M0 98 Q150 92 300 98 T600 98"/>
+        </g>
+        <text class="lbl before" x="300" y="28" text-anchor="middle" style="fill:var(--cool)">troubled: stirred up</text>
+        <text class="lbl after" x="300" y="28" text-anchor="middle" style="fill:var(--accent-hot)">“my peace I give unto you”</text>
+        <text x="20" y="160" font-size="15" style="fill:var(--ink-soft)">14:1</text>
+        <text x="580" y="160" text-anchor="end" font-size="15" style="fill:var(--ink-soft)">14:27</text>
+      </svg>
+    </div>
+    <p class="note rise" style="--d:3">Jesus opened with <em>“Let not your heart be troubled”</em> (v. 1), and now He says it again. In between He gave them everything they need for it: a place, a way, the Father, the Spirit, and His own peace.</p>
+    <p class="note step jn14-calm-go">He didn't promise them an easy night. They were hours away from the worst night of their lives. He gave them peace to carry <em>through</em> it.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="28-31" data-hl="my Father is greater than I|the prince of this world cometh, and hath nothing in me|Arise, let us go hence"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="30" data-hl="the prince of this world cometh, and hath nothing in me"></blockquote>
+    <h2 class="rise" style="--d:1">Nothing in Me</h2>
+    <p class="note rise" style="--d:2"><em>“My Father is greater than I”</em> (v. 28) isn't Jesus saying He's less than God. He also said, <em>“I and my Father are one”</em> (John 10:30). He's speaking as the Son who took the servant's place, the one with the towel. He's going home to glory, and if they loved Him, they'd be glad for Him.</p>
+    <p class="note step"><em>“The prince of this world”</em> is Satan. He has found a hook in every man who ever lived. In Jesus he found <em>nothing</em>: no sin, no leverage, no unpaid debt. That's why Jesus could pay ours. In Christ, the old hooks don't own you anymore.</p>
+    <p class="note step">Then: <em>“Arise, let us go hence.”</em> They get up and head out into the night, toward a garden across the brook Cedron (John 18:1). He walks to the cross on purpose, <em>“that the world may know that I love the Father.”</em></p>
+  </div>
+</section>
+
+<!-- ======================= CLOSING ======================= -->
+<section class="slide remember">
+  <div class="inner">
+    <h2 class="rise">Points to remember</h2>
+    <ol class="seeds">
+      <li class="step"><span class="topic">A troubled heart</span><span class="seed-q">“Peace I leave with you” <cite>14:27</cite></span><span class="take">He doesn't always remove the storm. He gives His own peace inside it.</span></li>
+      <li class="step"><span class="topic">His promise</span><span class="seed-q">“I will come again” <cite>14:3</cite></span><span class="take">He's preparing a place for us now, and He's coming back for us.</span></li>
+      <li class="step"><span class="topic">The only way</span><span class="seed-q">“I am the way, the truth, and the life” <cite>14:6</cite></span><span class="take">Not a map or a religion: a Person. And whosoever comes through Him is welcome.</span></li>
+      <li class="step"><span class="topic">Seeing God</span><span class="seed-q">“He that hath seen me hath seen the Father” <cite>14:9</cite></span><span class="take">Want to know what God is like? Look at Jesus.</span></li>
+      <li class="step"><span class="topic">Love</span><span class="seed-q">“If ye love me, keep my commandments” <cite>14:15</cite></span><span class="take">Obedience doesn't earn His love. It's how our love shows.</span></li>
+      <li class="step"><span class="topic">The Comforter</span><span class="seed-q">“He dwelleth with you, and shall be in you” <cite>14:17</cite></span><span class="take">The Holy Spirit lives in every believer, for ever.</span></li>
+    </ol>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 1 of 6</p>
+      <span class="topic">A troubled heart</span>
+      <h2>What does Jesus give a troubled heart?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="1"></blockquote>
+      <blockquote class="quote step" data-q="27" data-hl="my peace I give unto you: not as the world giveth"></blockquote>
+      <blockquote class="quote step"><p>“Thou wilt keep him in perfect peace, whose mind is stayed on thee: because he trusteth in thee.”</p><cite>Isaiah 26:3</cite></blockquote>
+      <blockquote class="quote step"><p>“And the peace of God, which passeth all understanding, shall keep your hearts and minds through Christ Jesus.”</p><cite>Philippians 4:7</cite></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>Himself to trust (“believe also in me”), and His own peace. Not the world's kind, which wears off and leaves you worse, but a peace that holds even when the night ahead is hard. It comes from keeping your mind on Him.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 2 of 6</p>
+      <span class="topic">His promise</span>
+      <h2>What is Jesus doing for us now, and what will He do?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="2" data-hl="I go to prepare a place for you"></blockquote>
+      <blockquote class="quote step" data-q="3" data-hl="I will come again"></blockquote>
+      <blockquote class="quote step"><p>“For the Lord himself shall descend from heaven with a shout, with the voice of the archangel, and with the trump of God: and the dead in Christ shall rise first: Then we which are alive and remain shall be caught up together with them in the clouds, to meet the Lord in the air: and so shall we ever be with the Lord.”</p><cite>1 Thessalonians 4:16–17</cite></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>Right now He's preparing a place for us in His Father's house. One day He'll come again in person and take us to be with Him. And He's told us plainly: if it weren't true, He would have said so.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 3 of 6</p>
+      <span class="topic">The only way</span>
+      <h2>How does a man get to the Father?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="5" data-hl="how can we know the way?"></blockquote>
+      <blockquote class="quote step" data-q="6"></blockquote>
+      <blockquote class="quote step"><p>“Neither is there salvation in any other: for there is none other name under heaven given among men, whereby we must be saved.”</p><cite>Acts 4:12</cite></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>Only through Jesus. Not by being good enough, not by religion, not by any other road. He doesn't just show the way; He is the way. And the way is open to anyone who will trust Him.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 4 of 6</p>
+      <span class="topic">Seeing God</span>
+      <h2>What did Jesus mean by “he that hath seen me hath seen the Father”?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="8" data-hl="shew us the Father"></blockquote>
+      <blockquote class="quote step" data-q="9" data-hl="he that hath seen me hath seen the Father"></blockquote>
+      <blockquote class="quote step"><p>“No man hath seen God at any time; the only begotten Son, which is in the bosom of the Father, he hath declared him.”</p><cite>John 1:18</cite></blockquote>
+      <blockquote class="quote step"><p>“Who is the image of the invisible God, the firstborn of every creature:”</p><cite>Colossians 1:15</cite></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>That He and the Father are one, and Jesus shows us exactly what God is like. Nobody has seen God, but the Son has made Him known. Every kindness, every hard word, every healing in the Gospels is the Father's heart on display.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 5 of 6</p>
+      <span class="topic">Love</span>
+      <h2>How do we show that we love Jesus?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="15"></blockquote>
+      <blockquote class="quote step" data-q="21" data-hl="he that loveth me shall be loved of my Father"></blockquote>
+      <blockquote class="quote step" data-q="23" data-hl="If a man love me, he will keep my words"></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>By keeping His words. Not to earn His love; we already have it. Obedience is simply what love looks like in real life. And the man who walks that way gets to know Jesus more and more: “I will love him, and will manifest myself to him.”</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 6 of 6</p>
+      <span class="topic">The Comforter</span>
+      <h2>Who is the Comforter, and where does He live?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="16-17" data-hl="another Comforter|abide with you for ever|shall be in you"></blockquote>
+      <blockquote class="quote step" data-q="26" data-hl="the Comforter, which is the Holy Ghost"></blockquote>
+      <blockquote class="quote step"><p>“What? know ye not that your body is the temple of the Holy Ghost which is in you, which ye have of God, and ye are not your own?”</p><cite>1 Corinthians 6:19</cite></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>The Comforter is the Holy Ghost, the Spirit of truth, God Himself, called to our side to help. He lives inside every believer from the moment he is saved, and He stays for ever. He teaches us, reminds us of Jesus' words, and changes us from the inside.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide prayer">
+  <div class="inner">
+    <div class="emblem rise"></div>
+    <h2 class="rise">Prayer requests</h2>
+    <p class="ask-line rise" style="--d:1">What can we pray about for you today?</p>
+    <blockquote class="quote rise" style="--d:3"><p>“Casting all your care upon him; for he careth for you.”</p><cite>1 Peter 5:7</cite></blockquote>
+  </div>
+</section>
+
+</main>
+
+<script>
+// King James Version, John chapter 14
+const V = {
+  1: "Let not your heart be troubled: ye believe in God, believe also in me.",
+  2: "In my Father’s house are many mansions: if it were not so, I would have told you. I go to prepare a place for you.",
+  3: "And if I go and prepare a place for you, I will come again, and receive you unto myself; that where I am, there ye may be also.",
+  4: "And whither I go ye know, and the way ye know.",
+  5: "Thomas saith unto him, Lord, we know not whither thou goest; and how can we know the way?",
+  6: "Jesus saith unto him, I am the way, the truth, and the life: no man cometh unto the Father, but by me.",
+  7: "If ye had known me, ye should have known my Father also: and from henceforth ye know him, and have seen him.",
+  8: "Philip saith unto him, Lord, shew us the Father, and it sufficeth us.",
+  9: "Jesus saith unto him, Have I been so long time with you, and yet hast thou not known me, Philip? he that hath seen me hath seen the Father; and how sayest thou then, Shew us the Father?",
+  10: "Believest thou not that I am in the Father, and the Father in me? the words that I speak unto you I speak not of myself: but the Father that dwelleth in me, he doeth the works.",
+  11: "Believe me that I am in the Father, and the Father in me: or else believe me for the very works’ sake.",
+  12: "Verily, verily, I say unto you, He that believeth on me, the works that I do shall he do also; and greater works than these shall he do; because I go unto my Father.",
+  13: "And whatsoever ye shall ask in my name, that will I do, that the Father may be glorified in the Son.",
+  14: "If ye shall ask any thing in my name, I will do it.",
+  15: "If ye love me, keep my commandments.",
+  16: "And I will pray the Father, and he shall give you another Comforter, that he may abide with you for ever;",
+  17: "Even the Spirit of truth; whom the world cannot receive, because it seeth him not, neither knoweth him: but ye know him; for he dwelleth with you, and shall be in you.",
+  18: "I will not leave you comfortless: I will come to you.",
+  19: "Yet a little while, and the world seeth me no more; but ye see me: because I live, ye shall live also.",
+  20: "At that day ye shall know that I am in my Father, and ye in me, and I in you.",
+  21: "He that hath my commandments, and keepeth them, he it is that loveth me: and he that loveth me shall be loved of my Father, and I will love him, and will manifest myself to him.",
+  22: "Judas saith unto him, not Iscariot, Lord, how is it that thou wilt manifest thyself unto us, and not unto the world?",
+  23: "Jesus answered and said unto him, If a man love me, he will keep my words: and my Father will love him, and we will come unto him, and make our abode with him.",
+  24: "He that loveth me not keepeth not my sayings: and the word which ye hear is not mine, but the Father’s which sent me.",
+  25: "These things have I spoken unto you, being yet present with you.",
+  26: "But the Comforter, which is the Holy Ghost, whom the Father will send in my name, he shall teach you all things, and bring all things to your remembrance, whatsoever I have said unto you.",
+  27: "Peace I leave with you, my peace I give unto you: not as the world giveth, give I unto you. Let not your heart be troubled, neither let it be afraid.",
+  28: "Ye have heard how I said unto you, I go away, and come again unto you. If ye loved me, ye would rejoice, because I said, I go unto the Father: for my Father is greater than I.",
+  29: "And now I have told you before it come to pass, that, when it is come to pass, ye might believe.",
+  30: "Hereafter I will not talk much with you: for the prince of this world cometh, and hath nothing in me.",
+  31: "But that the world may know that I love the Father; and as the Father gave me commandment, even so I do. Arise, let us go hence."
+};
+const BOOK = "John 14";
+</script>
+<script src="../assets/deck.js"></script>
+</body>
+</html>

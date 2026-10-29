@@ -585,6 +585,103 @@ window.STUDIES = [
     }
   },
   {
+    "id": "john-13",
+    "type": "chapter",
+    "book": "John",
+    "ch": 13,
+    "date": "2026-10-29",
+    "title": "John 13",
+    "sub": "The towel and the night",
+    "about": "Jesus washes His disciples' feet, sends Judas out into the night, and gives a new commandment: love one another as I have loved you.",
+    "tags": [
+      "Humility",
+      "Cleansing",
+      "Serving",
+      "Betrayal",
+      "Love",
+      "Failure"
+    ],
+    "url": "studies/john-13.html",
+    "overview": {
+      "where": "A room in Jerusalem, at supper with the Twelve",
+      "when": "The night before the cross, just before the Passover",
+      "people": [
+        "jesus",
+        "the-father",
+        "disciples",
+        "simon-peter",
+        "judas-iscariot",
+        "beloved-disciple",
+        "satan",
+        "the-jews"
+      ],
+      "places": [
+        "jerusalem"
+      ],
+      "story": [
+        "Knowing His hour has come, Jesus rises from supper, takes a towel, and washes His disciples' feet (1–5).",
+        "Peter refuses, then asks for a full bath. Jesus says a man who is washed needs only his feet washed: “ye are clean, but not all” (6–11).",
+        "Jesus tells them He has given them an example: “ye also ought to wash one another's feet” (12–17).",
+        "Troubled in spirit, He says one of them will betray Him. He hands the sop to Judas, who goes out: “and it was night” (18–30).",
+        "Jesus gives a new commandment: love one another as I have loved you. Peter vows to die for Him, and Jesus foretells his three denials (31–38)."
+      ],
+      "key": {
+        "ref": "John 13:34",
+        "text": "A new commandment I give unto you, That ye love one another; as I have loved you, that ye also love one another."
+      },
+      "big": "The Lord of all took a towel and served His friends, even the one who betrayed Him. He calls us to love each other the same way, and He knows our failures before they happen and still plans our way back."
+    }
+  },
+  {
+    "id": "john-14",
+    "type": "chapter",
+    "book": "John",
+    "ch": 14,
+    "date": "2026-10-29",
+    "title": "John 14",
+    "sub": "Let not your heart be troubled",
+    "about": "The night before the cross, Jesus steadies frightened men: a place in His Father's house, the only way there, and a Comforter who will live inside them.",
+    "tags": [
+      "Peace",
+      "Heaven",
+      "The only way",
+      "Seeing God",
+      "Love",
+      "The Holy Spirit"
+    ],
+    "url": "studies/john-14.html",
+    "overview": {
+      "where": "The same supper room in Jerusalem",
+      "when": "The night before the cross, right after Judas leaves",
+      "people": [
+        "jesus",
+        "the-father",
+        "holy-spirit",
+        "disciples",
+        "thomas",
+        "philip",
+        "judas-not-iscariot",
+        "satan"
+      ],
+      "places": [
+        "jerusalem",
+        "heaven"
+      ],
+      "story": [
+        "“Let not your heart be troubled.” Jesus is going to prepare a place in His Father's house, and He will come again for them (1–4).",
+        "Thomas asks how they can know the way. Jesus answers, “I am the way, the truth, and the life” (5–7).",
+        "Philip asks to see the Father. Jesus says, “he that hath seen me hath seen the Father,” and promises greater works and answered prayer in His name (8–14).",
+        "He promises another Comforter, the Spirit of truth, who will live in them for ever. He will not leave them orphans (15–24).",
+        "He leaves them His peace, says the prince of this world has nothing in Him, and leads them out: “Arise, let us go hence” (25–31)."
+      ],
+      "key": {
+        "ref": "John 14:6",
+        "text": "Jesus saith unto him, I am the way, the truth, and the life: no man cometh unto the Father, but by me."
+      },
+      "big": "Jesus is the only way to the Father, and He shows us exactly what God is like. He gives His own peace, a place in His Father's house, and the Holy Spirit to live in every believer for ever."
+    }
+  },
+  {
     "id": "john-20",
     "type": "chapter",
     "book": "John",
