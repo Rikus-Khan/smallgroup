@@ -2435,5 +2435,152 @@ window.STUDIES = [
       },
       "big": "Wisdom is God's skill for living, and it starts with the fear of the LORD. Its fullest form is a Person: Jesus Christ, the eternal wisdom of God, who gives it to anyone who asks."
     }
+  },
+  {
+    "id": "joel-01",
+    "type": "chapter",
+    "book": "Joel",
+    "ch": 1,
+    "date": "2026-10-29",
+    "title": "Joel 1",
+    "sub": "When the locusts came",
+    "about": "A plague strips Judah bare, and a prophet calls the whole nation to stop, weep, and cry out to the LORD.",
+    "tags": [
+      "Telling the story",
+      "Wake-up calls",
+      "Joy",
+      "Humility",
+      "The day of the LORD",
+      "Prayer"
+    ],
+    "url": "studies/joel-01.html",
+    "overview": {
+      "where": "Judah and Jerusalem, the southern kingdom, with its fields and vineyards stripped bare",
+      "when": "Uncertain: about 835 BC in one view, or after the exile, about 500–400 BC, in another",
+      "people": [
+        "joel",
+        "pethuel",
+        "the-lord",
+        "priests",
+        "elders"
+      ],
+      "places": [
+        "judah",
+        "jerusalem",
+        "wilderness"
+      ],
+      "story": [
+        "The word of the LORD comes to Joel. Nothing like this has happened before: tell your children, and theirs (1–3).",
+        "Wave after wave of locusts eats everything. The drunkards wake to find the wine cut off, and the vines and fig trees are stripped white (4–7).",
+        "The grain, wine, and oil are gone, so even the offerings at the house of the LORD stop. Joy withers away (8–12).",
+        "Joel calls the priests to put on sackcloth, set apart a fast, gather everyone, and cry to the LORD, for the day of the LORD is at hand (13–18).",
+        "With the pastures burned and the rivers dry, Joel prays: “O LORD, to thee will I cry” (19–20)."
+      ],
+      "key": {
+        "ref": "Joel 1:19",
+        "text": "O LORD, to thee will I cry: for the fire hath devoured the pastures of the wilderness, and the flame hath burned all the trees of the field."
+      },
+      "big": "God sometimes lets what we lean on be stripped away to wake us up. A disaster can be a warning, and the right answer is to get low before God, together, and cry out to Him."
+    }
+  },
+  {
+    "id": "joel-02",
+    "type": "chapter",
+    "book": "Joel",
+    "ch": 2,
+    "date": "2026-10-29",
+    "title": "Joel 2",
+    "sub": "I will restore",
+    "about": "The locusts march like an army, God calls His people to turn, and He promises to give back the years the locust ate and to pour out His Spirit.",
+    "tags": [
+      "God's warnings",
+      "Repentance",
+      "God's character",
+      "Restoration",
+      "The Holy Spirit",
+      "Salvation"
+    ],
+    "url": "studies/joel-02.html",
+    "overview": {
+      "where": "Zion, the temple hill in Jerusalem, and the land of Judah",
+      "when": "Right after the locust plague of Joel 1; the date of Joel is uncertain",
+      "people": [
+        "joel",
+        "the-lord",
+        "priests",
+        "elders",
+        "holy-spirit"
+      ],
+      "places": [
+        "sion",
+        "jerusalem",
+        "israel"
+      ],
+      "story": [
+        "Blow the trumpet in Zion: the locusts come like a disciplined army, and the LORD leads it. “Who can abide it?” (1–11).",
+        "“Therefore also now” turn to the LORD with all your heart. Rend your heart, not your garments, for He is gracious and merciful (12–14).",
+        "Gather everyone, from elders to babies to newlyweds, and let the priests weep and pray, “Spare thy people” (15–17).",
+        "The LORD pities His people, drives off the northern army, sends the rain, and promises: “I will restore to you the years that the locust hath eaten” (18–27).",
+        "Afterward He will pour out His Spirit on all flesh, and whosoever calls on the name of the LORD will be delivered. Peter quotes it at Pentecost (28–32)."
+      ],
+      "key": {
+        "ref": "Joel 2:25",
+        "text": "And I will restore to you the years that the locust hath eaten, the cankerworm, and the caterpiller, and the palmerworm, my great army which I sent among you."
+      },
+      "big": "It isn't too late to turn. God is gracious and slow to anger, He restores what was lost, and He gives His Spirit to everyone who calls on the name of the Lord."
+    }
+  },
+  {
+    "id": "joel-03",
+    "type": "chapter",
+    "book": "Joel",
+    "ch": 3,
+    "date": "2026-10-29",
+    "title": "Joel 3",
+    "sub": "The valley of decision",
+    "about": "God calls the nations to account for how they treated His people, and the book ends with a fountain, and the LORD at home in Zion.",
+    "tags": [
+      "God's justice",
+      "Payback",
+      "God's patience",
+      "The day of the LORD",
+      "Hope",
+      "God's presence"
+    ],
+    "url": "studies/joel-03.html",
+    "overview": {
+      "where": "The valley of Jehoshaphat, Tyre and Zidon, the Philistine coast, and Jerusalem",
+      "when": "The future day of the LORD; the date of Joel is uncertain",
+      "people": [
+        "the-lord",
+        "heathen",
+        "grecians",
+        "sabeans"
+      ],
+      "places": [
+        "valley-of-jehoshaphat",
+        "tyre-and-zidon",
+        "palestine",
+        "valley-of-decision",
+        "sion",
+        "jerusalem",
+        "judah",
+        "valley-of-shittim",
+        "egypt",
+        "edom"
+      ],
+      "story": [
+        "God will bring His people home and gather the nations in the valley of Jehoshaphat, for they scattered His people and sold boys and girls for a harlot and a drink (1–3).",
+        "Tyre, Zidon, and the Philistines sold Judah's children to the Greeks. God will raise His people up and turn their payback on their own heads (4–8).",
+        "The nations are dared to beat their plowshares into swords and come. The harvest is ripe, and multitudes stand in the valley of decision (9–15).",
+        "The LORD roars from Zion and heaven and earth shake, but He is the hope of His people (16–17).",
+        "The hills drip with new wine, a fountain flows from the house of the LORD, Judah dwells for ever, “for the LORD dwelleth in Zion” (18–21)."
+      ],
+      "key": {
+        "ref": "Joel 3:16",
+        "text": "The LORD also shall roar out of Zion, and utter his voice from Jerusalem; and the heavens and the earth shall shake: but the LORD will be the hope of his people, and the strength of the children of Israel."
+      },
+      "big": "God sees every wrong done to His people and will settle it Himself. His patience is long, but His verdict is coming, and those who trust Him are safe. The story ends with God living among His people."
+    }
   }
 ];

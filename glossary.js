@@ -230,6 +230,12 @@ window.GLOSSARY = [
   "name": "Joseph, husband of Mary",
   "refs": [
    [
+    "Amos", 5,
+    [ 6, 15 ] ],
+   [
+    "Amos", 6,
+    [ 6 ] ],
+   [
     "John", 1,
     [ 45 ] ],
    [
@@ -563,6 +569,15 @@ window.GLOSSARY = [
     "Proverbs", 1,
     [ 1 ] ],
    [
+    "Hosea", 3,
+    [ 5 ] ],
+   [
+    "Amos", 6,
+    [ 5 ] ],
+   [
+    "Amos", 9,
+    [ 11 ] ],
+   [
     "John", 7,
     [ 42 ] ] ]
  },
@@ -573,6 +588,9 @@ window.GLOSSARY = [
   "refs": [
    [
     "Proverbs", 25,
+    [ 1 ] ],
+   [
+    "Hosea", 1,
     [ 1 ] ] ]
  },
  {
@@ -701,6 +719,15 @@ window.GLOSSARY = [
   "name": "Jerusalem",
   "refs": [
    [
+    "Joel", 2,
+    [ 32 ] ],
+   [
+    "Joel", 3,
+    [ 1, 6, 16, 17, 20 ] ],
+   [
+    "Amos", 1,
+    [ 2 ] ],
+   [
     "John", 1,
     [ 19 ] ],
    [
@@ -757,6 +784,30 @@ window.GLOSSARY = [
    [
     "Proverbs", 21,
     [ 19 ] ],
+   [
+    "Hosea", 2,
+    [ 3, 14 ] ],
+   [
+    "Hosea", 9,
+    [ 10 ] ],
+   [
+    "Hosea", 13,
+    [ 5, 15 ] ],
+   [
+    "Joel", 1,
+    [ 19, 20 ] ],
+   [
+    "Joel", 2,
+    [ 3, 22 ] ],
+   [
+    "Joel", 3,
+    [ 19 ] ],
+   [
+    "Amos", 5,
+    [ 25 ] ],
+   [
+    "Amos", 6,
+    [ 14 ] ],
    [
     "John", 1,
     [ 23 ] ],
@@ -857,6 +908,9 @@ window.GLOSSARY = [
   "name": "The temple",
   "refs": [
    [
+    "Amos", 8,
+    [ 3 ] ],
+   [
     "John", 2,
     [ 14, 15, 19, 20, 21 ] ],
    [
@@ -887,6 +941,69 @@ window.GLOSSARY = [
     "Proverbs", 1,
     [ 1 ] ],
    [
+    "Hosea", 1,
+    [ 1, 4, 5, 6, 10, 11 ] ],
+   [
+    "Hosea", 3,
+    [ 1, 4, 5 ] ],
+   [
+    "Hosea", 4,
+    [ 1, 15, 16 ] ],
+   [
+    "Hosea", 5,
+    [ 1, 3, 5, 9 ] ],
+   [
+    "Hosea", 6,
+    [ 10 ] ],
+   [
+    "Hosea", 7,
+    [ 1, 10 ] ],
+   [
+    "Hosea", 8,
+    [ 2, 3, 6, 8, 14 ] ],
+   [
+    "Hosea", 9,
+    [ 1, 7, 10 ] ],
+   [
+    "Hosea", 10,
+    [ 1, 6, 8, 9, 15 ] ],
+   [
+    "Hosea", 11,
+    [ 1, 8, 12 ] ],
+   [
+    "Hosea", 12,
+    [ 12, 13 ] ],
+   [
+    "Hosea", 13,
+    [ 1, 9 ] ],
+   [
+    "Hosea", 14,
+    [ 1, 5 ] ],
+   [
+    "Joel", 2,
+    [ 27 ] ],
+   [
+    "Joel", 3,
+    [ 2, 16 ] ],
+   [
+    "Amos", 1,
+    [ 1 ] ],
+   [
+    "Amos", 5,
+    [ 1, 2, 3, 4, 25 ] ],
+   [
+    "Amos", 6,
+    [ 1, 14 ] ],
+   [
+    "Amos", 7,
+    [ 8, 9, 10, 11, 15, 16, 17 ] ],
+   [
+    "Amos", 8,
+    [ 2 ] ],
+   [
+    "Amos", 9,
+    [ 7, 9, 14 ] ],
+   [
     "John", 1,
     [ 31, 49 ] ],
    [
@@ -910,6 +1027,18 @@ window.GLOSSARY = [
    [
     "Proverbs", 30,
     [ 4 ] ],
+   [
+    "Hosea", 2,
+    [ 18 ] ],
+   [
+    "Hosea", 4,
+    [ 3 ] ],
+   [
+    "Hosea", 7,
+    [ 12 ] ],
+   [
+    "Amos", 9,
+    [ 2, 6 ] ],
    [
     "John", 1,
     [ 32, 51 ] ],
@@ -945,7 +1074,10 @@ window.GLOSSARY = [
     [ 24 ] ],
    [
     "Proverbs", 23,
-    [ 14 ] ] ]
+    [ 14 ] ],
+   [
+    "Amos", 9,
+    [ 2 ] ] ]
  },
  {
   "id": "judah",
@@ -954,7 +1086,40 @@ window.GLOSSARY = [
   "refs": [
    [
     "Proverbs", 25,
-    [ 1 ] ] ]
+    [ 1 ] ],
+   [
+    "Hosea", 1,
+    [ 1, 7, 11 ] ],
+   [
+    "Hosea", 4,
+    [ 15 ] ],
+   [
+    "Hosea", 5,
+    [ 5, 10, 12, 13, 14 ] ],
+   [
+    "Hosea", 6,
+    [ 4, 11 ] ],
+   [
+    "Hosea", 8,
+    [ 14 ] ],
+   [
+    "Hosea", 10,
+    [ 11 ] ],
+   [
+    "Hosea", 11,
+    [ 12 ] ],
+   [
+    "Hosea", 12,
+    [ 2 ] ],
+   [
+    "Joel", 3,
+    [ 1, 6, 8, 18, 19, 20 ] ],
+   [
+    "Amos", 1,
+    [ 1 ] ],
+   [
+    "Amos", 7,
+    [ 12 ] ] ]
  },
  {
   "id": "city-gate",
@@ -1013,6 +1178,12 @@ window.GLOSSARY = [
     "Proverbs", 16,
     [ 15 ] ],
    [
+    "Hosea", 6,
+    [ 5 ] ],
+   [
+    "Amos", 5,
+    [ 18, 20 ] ],
+   [
     "John", 1,
     [ 4, 5, 7, 8, 9 ] ],
    [
@@ -1048,6 +1219,12 @@ window.GLOSSARY = [
    [
     "Proverbs", 20,
     [ 20 ] ],
+   [
+    "Joel", 2,
+    [ 2, 31 ] ],
+   [
+    "Amos", 5,
+    [ 18, 20 ] ],
    [
     "John", 1,
     [ 5 ] ],
@@ -1111,6 +1288,9 @@ window.GLOSSARY = [
    [
     "Proverbs", 23,
     [ 23 ] ],
+   [
+    "Hosea", 4,
+    [ 1 ] ],
    [
     "John", 1,
     [ 14, 17 ] ],
@@ -1178,6 +1358,15 @@ window.GLOSSARY = [
     "Proverbs", 28,
     [ 12 ] ],
    [
+    "Hosea", 4,
+    [ 7 ] ],
+   [
+    "Hosea", 9,
+    [ 11 ] ],
+   [
+    "Hosea", 10,
+    [ 5 ] ],
+   [
     "John", 1,
     [ 14 ] ],
    [
@@ -1231,6 +1420,12 @@ window.GLOSSARY = [
    [
     "Proverbs", 31,
     [ 5, 26 ] ],
+   [
+    "Hosea", 4,
+    [ 6 ] ],
+   [
+    "Hosea", 8,
+    [ 1, 12 ] ],
    [
     "John", 1,
     [ 17, 45 ] ],
@@ -1646,6 +1841,42 @@ window.GLOSSARY = [
     "Proverbs", 31,
     [ 4, 6 ] ],
    [
+    "Hosea", 2,
+    [ 8, 9, 22 ] ],
+   [
+    "Hosea", 3,
+    [ 1 ] ],
+   [
+    "Hosea", 4,
+    [ 11 ] ],
+   [
+    "Hosea", 7,
+    [ 5, 14 ] ],
+   [
+    "Hosea", 9,
+    [ 2, 4 ] ],
+   [
+    "Hosea", 14,
+    [ 7 ] ],
+   [
+    "Joel", 1,
+    [ 5, 10 ] ],
+   [
+    "Joel", 2,
+    [ 19, 24 ] ],
+   [
+    "Joel", 3,
+    [ 3, 18 ] ],
+   [
+    "Amos", 5,
+    [ 11 ] ],
+   [
+    "Amos", 6,
+    [ 6 ] ],
+   [
+    "Amos", 9,
+    [ 13, 14 ] ],
+   [
     "John", 2,
     [ 3, 9, 10 ] ],
    [
@@ -1926,6 +2157,9 @@ window.GLOSSARY = [
     [ 2, 11, 16 ] ],
    [
     "Proverbs", 30,
+    [ 2 ] ],
+   [
+    "Hosea", 13,
     [ 2 ] ] ]
  },
  {
@@ -1998,7 +2232,13 @@ window.GLOSSARY = [
     [ 2 ] ],
    [
     "Proverbs", 30,
-    [ 3 ] ] ]
+    [ 3 ] ],
+   [
+    "Hosea", 4,
+    [ 1, 6 ] ],
+   [
+    "Hosea", 6,
+    [ 6 ] ] ]
  },
  {
   "id": "instruction",
@@ -2166,7 +2406,10 @@ window.GLOSSARY = [
     [ 9, 11, 20 ] ],
    [
     "Proverbs", 30,
-    [ 22 ] ] ]
+    [ 22 ] ],
+   [
+    "Hosea", 9,
+    [ 7 ] ] ]
  },
  {
   "id": "scorner",
@@ -2202,7 +2445,10 @@ window.GLOSSARY = [
     [ 10 ] ],
    [
     "Proverbs", 24,
-    [ 9 ] ] ]
+    [ 9 ] ],
+   [
+    "Hosea", 7,
+    [ 5 ] ] ]
  },
  {
   "id": "sluggard",
@@ -2307,7 +2553,22 @@ window.GLOSSARY = [
     [ 27, 33 ] ],
    [
     "Proverbs", 27,
-    [ 13 ] ] ]
+    [ 13 ] ],
+   [
+    "Hosea", 2,
+    [ 5 ] ],
+   [
+    "Hosea", 3,
+    [ 3 ] ],
+   [
+    "Hosea", 4,
+    [ 15 ] ],
+   [
+    "Joel", 3,
+    [ 3 ] ],
+   [
+    "Amos", 7,
+    [ 17 ] ] ]
  },
  {
   "id": "righteous",
@@ -2365,6 +2626,18 @@ window.GLOSSARY = [
    [
     "Proverbs", 29,
     [ 2, 6, 7, 16 ] ],
+   [
+    "Hosea", 2,
+    [ 19 ] ],
+   [
+    "Hosea", 10,
+    [ 12 ] ],
+   [
+    "Amos", 5,
+    [ 7, 24 ] ],
+   [
+    "Amos", 6,
+    [ 12 ] ],
    [
     "John", 7,
     [ 24 ] ],
@@ -2454,7 +2727,19 @@ window.GLOSSARY = [
     [ 2, 7, 12, 16, 27 ] ],
    [
     "Proverbs", 30,
-    [ 20 ] ] ]
+    [ 20 ] ],
+   [
+    "Hosea", 7,
+    [ 1, 2, 3 ] ],
+   [
+    "Hosea", 9,
+    [ 15 ] ],
+   [
+    "Hosea", 10,
+    [ 13, 15 ] ],
+   [
+    "Joel", 3,
+    [ 13 ] ] ]
  },
  {
   "id": "heart",
@@ -2542,6 +2827,24 @@ window.GLOSSARY = [
    [
     "Proverbs", 31,
     [ 11 ] ],
+   [
+    "Hosea", 4,
+    [ 8, 11 ] ],
+   [
+    "Hosea", 7,
+    [ 6, 11, 14 ] ],
+   [
+    "Hosea", 10,
+    [ 2 ] ],
+   [
+    "Hosea", 11,
+    [ 8 ] ],
+   [
+    "Hosea", 13,
+    [ 6, 8 ] ],
+   [
+    "Joel", 2,
+    [ 12, 13 ] ],
    [
     "John", 12,
     [ 40 ] ],
@@ -2633,6 +2936,15 @@ window.GLOSSARY = [
     "Proverbs", 31,
     [ 26 ] ],
    [
+    "Hosea", 7,
+    [ 16 ] ],
+   [
+    "Hosea", 14,
+    [ 2 ] ],
+   [
+    "Amos", 6,
+    [ 10 ] ],
+   [
     "John", 5,
     [ 2 ] ] ]
  },
@@ -2684,6 +2996,30 @@ window.GLOSSARY = [
     "Proverbs", 30,
     [ 33 ] ],
    [
+    "Hosea", 5,
+    [ 10 ] ],
+   [
+    "Hosea", 8,
+    [ 5 ] ],
+   [
+    "Hosea", 11,
+    [ 9 ] ],
+   [
+    "Hosea", 12,
+    [ 14 ] ],
+   [
+    "Hosea", 13,
+    [ 11 ] ],
+   [
+    "Hosea", 14,
+    [ 4 ] ],
+   [
+    "Joel", 2,
+    [ 13 ] ],
+   [
+    "Amos", 1,
+    [ 11 ] ],
+   [
     "John", 3,
     [ 36 ] ],
    [
@@ -2727,7 +3063,13 @@ window.GLOSSARY = [
     [ 25 ] ],
    [
     "Proverbs", 29,
-    [ 23 ] ] ]
+    [ 23 ] ],
+   [
+    "Hosea", 5,
+    [ 5 ] ],
+   [
+    "Hosea", 7,
+    [ 10 ] ] ]
  },
  {
   "id": "humility",
@@ -2793,7 +3135,10 @@ window.GLOSSARY = [
     [ 9 ] ],
    [
     "Proverbs", 31,
-    [ 4, 6 ] ] ]
+    [ 4, 6 ] ],
+   [
+    "Joel", 1,
+    [ 5 ] ] ]
  },
  {
   "id": "reproof",
@@ -2847,7 +3192,10 @@ window.GLOSSARY = [
     [ 5 ] ],
    [
     "Proverbs", 29,
-    [ 15 ] ] ]
+    [ 15 ] ],
+   [
+    "Hosea", 5,
+    [ 9 ] ] ]
  },
  {
   "id": "friend",
@@ -2878,6 +3226,9 @@ window.GLOSSARY = [
    [
     "Proverbs", 27,
     [ 6, 9, 10, 14, 17 ] ],
+   [
+    "Hosea", 3,
+    [ 1 ] ],
    [
     "John", 3,
     [ 29 ] ],
@@ -2940,7 +3291,10 @@ window.GLOSSARY = [
     [ 9 ] ],
    [
     "Proverbs", 29,
-    [ 27 ] ] ]
+    [ 27 ] ],
+   [
+    "Hosea", 9,
+    [ 10 ] ] ]
  },
  {
   "id": "adultery",
@@ -2953,6 +3307,12 @@ window.GLOSSARY = [
    [
     "Proverbs", 30,
     [ 20 ] ],
+   [
+    "Hosea", 3,
+    [ 1 ] ],
+   [
+    "Hosea", 4,
+    [ 2, 13, 14 ] ],
    [
     "John", 8,
     [ 3, 4 ] ] ]
@@ -2973,7 +3333,16 @@ window.GLOSSARY = [
   "refs": [
    [
     "Proverbs", 14,
-    [ 14 ] ] ]
+    [ 14 ] ],
+   [
+    "Hosea", 4,
+    [ 16 ] ],
+   [
+    "Hosea", 11,
+    [ 7 ] ],
+   [
+    "Hosea", 14,
+    [ 4 ] ] ]
  },
  {
   "id": "bewray",
@@ -3061,6 +3430,15 @@ window.GLOSSARY = [
    [
     "Proverbs", 27,
     [ 9 ] ],
+   [
+    "Hosea", 4,
+    [ 12 ] ],
+   [
+    "Hosea", 10,
+    [ 6 ] ],
+   [
+    "Hosea", 11,
+    [ 6 ] ],
    [
     "John", 11,
     [ 53 ] ],
@@ -3306,7 +3684,13 @@ window.GLOSSARY = [
     [ 3 ] ],
    [
     "Proverbs", 27,
-    [ 12 ] ] ]
+    [ 12 ] ],
+   [
+    "Hosea", 14,
+    [ 9 ] ],
+   [
+    "Amos", 5,
+    [ 13 ] ] ]
  },
  {
   "id": "redeemer",
@@ -3396,7 +3780,13 @@ window.GLOSSARY = [
     [ 5, 25 ] ],
    [
     "Proverbs", 29,
-    [ 6, 8, 25 ] ] ]
+    [ 6, 8, 25 ] ],
+   [
+    "Hosea", 5,
+    [ 1 ] ],
+   [
+    "Hosea", 9,
+    [ 8 ] ] ]
  },
  {
   "id": "sound-wisdom",
@@ -3594,7 +3984,10 @@ window.GLOSSARY = [
     [ 6, 10, 18 ] ],
    [
     "Proverbs", 29,
-    [ 10, 27 ] ] ]
+    [ 10, 27 ] ],
+   [
+    "Amos", 5,
+    [ 10 ] ] ]
  },
  {
   "id": "usury",
@@ -3641,6 +4034,12 @@ window.GLOSSARY = [
     "Proverbs", 20,
     [ 10, 23 ] ],
    [
+    "Hosea", 12,
+    [ 7 ] ],
+   [
+    "Amos", 8,
+    [ 5 ] ],
+   [
     "John", 19,
     [ 39 ] ] ]
  },
@@ -3685,6 +4084,9 @@ window.GLOSSARY = [
   "kind": "term",
   "name": "Sabbath",
   "refs": [
+   [
+    "Amos", 8,
+    [ 5 ] ],
    [
     "John", 5,
     [ 9, 10, 16, 18 ] ],
@@ -3952,6 +4354,12 @@ window.GLOSSARY = [
   "kind": "term",
   "name": "Barley loaves",
   "refs": [
+   [
+    "Hosea", 3,
+    [ 2 ] ],
+   [
+    "Joel", 1,
+    [ 11 ] ],
    [
     "John", 6,
     [ 9, 13 ] ] ]
@@ -4289,6 +4697,12 @@ window.GLOSSARY = [
   "name": "Sanctified (set apart)",
   "refs": [
    [
+    "Joel", 1,
+    [ 14 ] ],
+   [
+    "Joel", 2,
+    [ 15, 16 ] ],
+   [
     "John", 10,
     [ 36 ] ],
    [
@@ -4471,6 +4885,12 @@ window.GLOSSARY = [
   "kind": "term",
   "name": "Gentiles",
   "refs": [
+   [
+    "Hosea", 8,
+    [ 8 ] ],
+   [
+    "Joel", 3,
+    [ 9 ] ],
    [
     "John", 7,
     [ 35 ] ] ]
@@ -4778,6 +5198,24 @@ window.GLOSSARY = [
   "name": "Jacob",
   "refs": [
    [
+    "Hosea", 10,
+    [ 11 ] ],
+   [
+    "Hosea", 12,
+    [ 2, 12 ] ],
+   [
+    "Amos", 6,
+    [ 8 ] ],
+   [
+    "Amos", 7,
+    [ 2, 5 ] ],
+   [
+    "Amos", 8,
+    [ 7 ] ],
+   [
+    "Amos", 9,
+    [ 8 ] ],
+   [
     "John", 4,
     [ 5, 6, 12 ] ] ]
  },
@@ -4804,6 +5242,24 @@ window.GLOSSARY = [
   "kind": "place",
   "name": "Samaria",
   "refs": [
+   [
+    "Hosea", 7,
+    [ 1 ] ],
+   [
+    "Hosea", 8,
+    [ 5, 6 ] ],
+   [
+    "Hosea", 10,
+    [ 5, 7 ] ],
+   [
+    "Hosea", 13,
+    [ 16 ] ],
+   [
+    "Amos", 6,
+    [ 1 ] ],
+   [
+    "Amos", 8,
+    [ 14 ] ],
    [
     "John", 4,
     [ 4, 5, 7, 9 ] ] ]
@@ -5132,6 +5588,15 @@ window.GLOSSARY = [
     "Proverbs", 27,
     [ 25 ] ],
    [
+    "Joel", 2,
+    [ 30 ] ],
+   [
+    "Amos", 7,
+    [ 1, 4, 7 ] ],
+   [
+    "Amos", 8,
+    [ 1 ] ],
+   [
     "John", 5,
     [ 20 ] ],
    [
@@ -5221,6 +5686,9 @@ window.GLOSSARY = [
    [
     "Proverbs", 31,
     [ 17, 24 ] ],
+   [
+    "Joel", 1,
+    [ 8 ] ],
    [
     "John", 13,
     [ 4, 5 ] ],
@@ -5432,6 +5900,18 @@ window.GLOSSARY = [
   "name": "Sion (Zion, Jerusalem)",
   "refs": [
    [
+    "Joel", 2,
+    [ 1, 15, 23, 32 ] ],
+   [
+    "Joel", 3,
+    [ 16, 17, 21 ] ],
+   [
+    "Amos", 1,
+    [ 2 ] ],
+   [
+    "Amos", 6,
+    [ 1 ] ],
+   [
     "John", 12,
     [ 15 ] ] ]
  },
@@ -5479,6 +5959,9 @@ window.GLOSSARY = [
    [
     "Proverbs", 26,
     [ 3 ] ],
+   [
+    "Hosea", 8,
+    [ 9 ] ],
    [
     "John", 12,
     [ 14, 15 ] ] ]
@@ -5773,6 +6256,9 @@ window.GLOSSARY = [
   "kind": "term",
   "name": "Husbandman (the vinedresser)",
   "refs": [
+   [
+    "Amos", 5,
+    [ 16 ] ],
    [
     "John", 15,
     [ 1 ] ] ]
@@ -6077,6 +6563,9 @@ window.GLOSSARY = [
   "name": "Cast lots",
   "refs": [
    [
+    "Joel", 3,
+    [ 3 ] ],
+   [
     "John", 19,
     [ 24 ] ] ]
  },
@@ -6142,5 +6631,461 @@ window.GLOSSARY = [
    [
     "John", 19,
     [ 39 ] ] ]
+ },
+ {
+  "id": "joel",
+  "kind": "person",
+  "name": "Joel the prophet",
+  "refs": [
+   [
+    "Joel", 1,
+    [ 1 ] ] ]
+ },
+ {
+  "id": "pethuel",
+  "kind": "person",
+  "name": "Pethuel, father of Joel",
+  "refs": [
+   [
+    "Joel", 1,
+    [ 1 ] ] ]
+ },
+ {
+  "id": "priests",
+  "kind": "person",
+  "name": "The priests (the LORD's ministers)",
+  "refs": [
+   [
+    "Joel", 1,
+    [ 9, 13 ] ],
+   [
+    "Joel", 2,
+    [ 17 ] ] ]
+ },
+ {
+  "id": "elders",
+  "kind": "person",
+  "name": "The elders",
+  "refs": [
+   [
+    "Joel", 1,
+    [ 14 ] ],
+   [
+    "Joel", 2,
+    [ 16 ] ] ]
+ },
+ {
+  "id": "locusts",
+  "kind": "term",
+  "name": "Locusts (palmerworm, locust, cankerworm, caterpiller)",
+  "refs": [
+   [
+    "Joel", 1,
+    [ 4 ] ],
+   [
+    "Joel", 2,
+    [ 25 ] ] ]
+ },
+ {
+  "id": "sackcloth",
+  "kind": "term",
+  "name": "Sackcloth (rough mourning cloth)",
+  "refs": [
+   [
+    "Joel", 1,
+    [ 8, 13 ] ],
+   [
+    "Amos", 8,
+    [ 10 ] ] ]
+ },
+ {
+  "id": "meat-offering",
+  "kind": "term",
+  "name": "Meat offering and drink offering (grain and wine offerings)",
+  "refs": [
+   [
+    "Joel", 1,
+    [ 9, 13 ] ],
+   [
+    "Joel", 2,
+    [ 14 ] ] ]
+ },
+ {
+  "id": "husbandmen",
+  "kind": "term",
+  "name": "Husbandmen (farmers)",
+  "refs": [
+   [
+    "Joel", 1,
+    [ 11 ] ] ]
+ },
+ {
+  "id": "vinedressers",
+  "kind": "term",
+  "name": "Vinedressers (men who kept the vineyards)",
+  "refs": [
+   [
+    "Joel", 1,
+    [ 11 ] ] ]
+ },
+ {
+  "id": "fast",
+  "kind": "term",
+  "name": "Fast, fasting",
+  "refs": [
+   [
+    "Joel", 1,
+    [ 14 ] ],
+   [
+    "Joel", 2,
+    [ 12, 15 ] ] ]
+ },
+ {
+  "id": "solemn-assembly",
+  "kind": "term",
+  "name": "Solemn assembly (a sacred gathering)",
+  "refs": [
+   [
+    "Joel", 1,
+    [ 14 ] ],
+   [
+    "Joel", 2,
+    [ 15 ] ] ]
+ },
+ {
+  "id": "day-of-the-lord",
+  "kind": "term",
+  "name": "The day of the LORD",
+  "refs": [
+   [
+    "Joel", 1,
+    [ 15 ] ],
+   [
+    "Joel", 2,
+    [ 1, 11, 31 ] ],
+   [
+    "Joel", 3,
+    [ 14 ] ],
+   [
+    "Amos", 5,
+    [ 18, 20 ] ] ]
+ },
+ {
+  "id": "garners",
+  "kind": "term",
+  "name": "Garners (storehouses for grain)",
+  "refs": [
+   [
+    "Joel", 1,
+    [ 17 ] ] ]
+ },
+ {
+  "id": "trumpet",
+  "kind": "term",
+  "name": "Trumpet (the shofar, a ram's horn)",
+  "refs": [
+   [
+    "Hosea", 5,
+    [ 8 ] ],
+   [
+    "Hosea", 8,
+    [ 1 ] ],
+   [
+    "Joel", 2,
+    [ 1, 15 ] ] ]
+ },
+ {
+  "id": "rend-your-heart",
+  "kind": "term",
+  "name": "Rend your heart",
+  "refs": [
+   [
+    "Joel", 2,
+    [ 13 ] ] ]
+ },
+ {
+  "id": "god-repenteth",
+  "kind": "term",
+  "name": "Repenteth him of the evil (God relents from harm)",
+  "refs": [
+   [
+    "Joel", 2,
+    [ 13, 14 ] ] ]
+ },
+ {
+  "id": "heathen",
+  "kind": "person",
+  "name": "The heathen (the nations)",
+  "refs": [
+   [
+    "Joel", 2,
+    [ 17, 19 ] ],
+   [
+    "Joel", 3,
+    [ 11, 12 ] ],
+   [
+    "Amos", 9,
+    [ 12 ] ] ]
+ },
+ {
+  "id": "jealous",
+  "kind": "term",
+  "name": "Jealous (God's protective love)",
+  "refs": [
+   [
+    "Joel", 2,
+    [ 18 ] ] ]
+ },
+ {
+  "id": "northern-army",
+  "kind": "term",
+  "name": "The northern army",
+  "refs": [
+   [
+    "Joel", 2,
+    [ 20 ] ] ]
+ },
+ {
+  "id": "former-and-latter-rain",
+  "kind": "term",
+  "name": "The former and latter rain",
+  "refs": [
+   [
+    "Proverbs", 16,
+    [ 15 ] ],
+   [
+    "Hosea", 6,
+    [ 3 ] ],
+   [
+    "Joel", 2,
+    [ 23 ] ] ]
+ },
+ {
+  "id": "fats",
+  "kind": "term",
+  "name": "Fats (vats under a winepress)",
+  "refs": [
+   [
+    "Joel", 2,
+    [ 24 ] ],
+   [
+    "Joel", 3,
+    [ 13 ] ] ]
+ },
+ {
+  "id": "floors",
+  "kind": "term",
+  "name": "Floors (threshing floors)",
+  "refs": [
+   [
+    "Joel", 2,
+    [ 24 ] ] ]
+ },
+ {
+  "id": "pour-out-my-spirit",
+  "kind": "term",
+  "name": "I will pour out my spirit (Acts 2)",
+  "refs": [
+   [
+    "Proverbs", 1,
+    [ 23 ] ],
+   [
+    "Joel", 2,
+    [ 28, 29 ] ] ]
+ },
+ {
+  "id": "call-on-the-name-of-the-lord",
+  "kind": "term",
+  "name": "Call on the name of the LORD",
+  "refs": [
+   [
+    "Joel", 2,
+    [ 32 ] ] ]
+ },
+ {
+  "id": "remnant",
+  "kind": "term",
+  "name": "The remnant",
+  "refs": [
+   [
+    "Joel", 2,
+    [ 32 ] ],
+   [
+    "Amos", 1,
+    [ 8 ] ],
+   [
+    "Amos", 5,
+    [ 15 ] ],
+   [
+    "Amos", 9,
+    [ 12 ] ] ]
+ },
+ {
+  "id": "bring-again-the-captivity",
+  "kind": "term",
+  "name": "Bring again the captivity (restore)",
+  "refs": [
+   [
+    "Joel", 3,
+    [ 1 ] ],
+   [
+    "Amos", 9,
+    [ 14 ] ] ]
+ },
+ {
+  "id": "valley-of-jehoshaphat",
+  "kind": "place",
+  "name": "The valley of Jehoshaphat (\"the LORD judges\")",
+  "refs": [
+   [
+    "Joel", 3,
+    [ 2, 12 ] ] ]
+ },
+ {
+  "id": "tyre-and-zidon",
+  "kind": "place",
+  "name": "Tyre and Zidon (Sidon)",
+  "refs": [
+   [
+    "Joel", 3,
+    [ 4 ] ] ]
+ },
+ {
+  "id": "palestine",
+  "kind": "place",
+  "name": "Palestine (the Philistine coast)",
+  "refs": [
+   [
+    "Joel", 3,
+    [ 4 ] ] ]
+ },
+ {
+  "id": "grecians",
+  "kind": "person",
+  "name": "The Grecians (Greeks)",
+  "refs": [
+   [
+    "Joel", 3,
+    [ 6 ] ] ]
+ },
+ {
+  "id": "sabeans",
+  "kind": "person",
+  "name": "The Sabeans (people of Sheba)",
+  "refs": [
+   [
+    "Joel", 3,
+    [ 8 ] ] ]
+ },
+ {
+  "id": "recompence",
+  "kind": "term",
+  "name": "Recompence (payback)",
+  "refs": [
+   [
+    "Proverbs", 12,
+    [ 14 ] ],
+   [
+    "Proverbs", 20,
+    [ 22 ] ],
+   [
+    "Hosea", 9,
+    [ 7 ] ],
+   [
+    "Hosea", 12,
+    [ 2 ] ],
+   [
+    "Joel", 3,
+    [ 4, 7 ] ] ]
+ },
+ {
+  "id": "plowshares",
+  "kind": "term",
+  "name": "Plowshares and pruninghooks",
+  "refs": [
+   [
+    "Joel", 3,
+    [ 10 ] ] ]
+ },
+ {
+  "id": "sickle",
+  "kind": "term",
+  "name": "Sickle (harvest knife)",
+  "refs": [
+   [
+    "Joel", 3,
+    [ 13 ] ] ]
+ },
+ {
+  "id": "valley-of-decision",
+  "kind": "place",
+  "name": "The valley of decision",
+  "refs": [
+   [
+    "Joel", 3,
+    [ 14 ] ] ]
+ },
+ {
+  "id": "valley-of-shittim",
+  "kind": "place",
+  "name": "The valley of Shittim (acacias)",
+  "refs": [
+   [
+    "Joel", 3,
+    [ 18 ] ] ]
+ },
+ {
+  "id": "egypt",
+  "kind": "place",
+  "name": "Egypt",
+  "refs": [
+   [
+    "Proverbs", 7,
+    [ 16 ] ],
+   [
+    "Hosea", 2,
+    [ 15 ] ],
+   [
+    "Hosea", 7,
+    [ 11, 16 ] ],
+   [
+    "Hosea", 8,
+    [ 13 ] ],
+   [
+    "Hosea", 9,
+    [ 3, 6 ] ],
+   [
+    "Hosea", 11,
+    [ 1, 5, 11 ] ],
+   [
+    "Hosea", 12,
+    [ 1, 9, 13 ] ],
+   [
+    "Hosea", 13,
+    [ 4 ] ],
+   [
+    "Joel", 3,
+    [ 19 ] ],
+   [
+    "Amos", 8,
+    [ 8 ] ],
+   [
+    "Amos", 9,
+    [ 5, 7 ] ] ]
+ },
+ {
+  "id": "edom",
+  "kind": "place",
+  "name": "Edom (Esau's descendants)",
+  "refs": [
+   [
+    "Joel", 3,
+    [ 19 ] ],
+   [
+    "Amos", 1,
+    [ 6, 9, 11 ] ],
+   [
+    "Amos", 9,
+    [ 12 ] ] ]
  }
 ];
