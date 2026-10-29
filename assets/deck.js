@@ -162,20 +162,24 @@
   <div class="theme-menu" id="theme-menu" role="menu" aria-label="Look" hidden></div>`);
 
   const menu = document.getElementById("theme-menu"), themeBtn = document.getElementById("theme");
+  // A picked look is saved and used for every slide show; "Each study's own look" clears it
   function drawMenu() {
-    const current = root.dataset.theme;
-    menu.innerHTML = `<p>Look for this slide show</p>` + THEMES.map(t =>
-      `<button type="button" role="menuitemradio" aria-checked="${t.id === current}" data-theme-id="${t.id}">
+    const current = root.dataset.theme, saved = valid(store.get()) ? store.get() : null;
+    menu.innerHTML = `<p>Look for every slide show</p>
+      <button type="button" role="menuitemradio" aria-checked="${!saved}" data-theme-id="">
+        <span class="swatch" aria-hidden="true">${THEMES.find(t => t.id === ownTheme).swatch.map(c => `<i style="background:${c}"></i>`).join("")}</span>
+        Each study’s own look</button>` + THEMES.map(t =>
+      `<button type="button" role="menuitemradio" aria-checked="${t.id === saved}" data-theme-id="${t.id}">
         <span class="swatch" aria-hidden="true">${t.swatch.map(c => `<i style="background:${c}"></i>`).join("")}</span>
-        ${t.name}${t.id === ownTheme ? " (its own)" : ""}</button>`).join("");
+        ${t.name}${t.id === ownTheme ? " (this one’s own)" : ""}</button>`).join("");
     menu.querySelectorAll("[data-theme-id]").forEach(b => b.addEventListener("click", () => {
       const id = b.dataset.themeId;
-      applyTheme(id);
-      store.set(id === ownTheme ? null : id);   // picking a study's own look clears the saved choice
+      store.set(id || null);
+      applyTheme(id || ownTheme);
       drawMenu();
       closeMenu();
     }));
-    themeBtn.title = `Look: ${THEMES.find(t => t.id === current).name}`;
+    themeBtn.title = `Look: ${THEMES.find(t => t.id === current).name}${saved ? "" : " (its own)"}`;
   }
   function openMenu() { drawMenu(); menu.hidden = false; themeBtn.setAttribute("aria-expanded", "true"); menu.querySelector("[aria-checked=true]")?.focus(); }
   function closeMenu() { menu.hidden = true; themeBtn.setAttribute("aria-expanded", "false"); }
@@ -185,7 +189,7 @@
     const k = THEMES.findIndex(t => t.id === root.dataset.theme);
     const id = THEMES[(k + 1) % THEMES.length].id;
     applyTheme(id);
-    store.set(id === ownTheme ? null : id);
+    store.set(id);
     drawMenu();
   }
   drawMenu();
