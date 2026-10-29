@@ -837,7 +837,10 @@ window.GLOSSARY = [
     [ 1, 2, 3, 5, 6, 7, 8, 10, 12, 14, 17, 18 ] ],
    [
     "Zephaniah", 2,
-    [ 2, 3, 5, 7, 9, 10, 11 ] ] ]
+    [ 2, 3, 5, 7, 9, 10, 11 ] ],
+   [
+    "Zephaniah", 3,
+    [ 2, 5, 8, 9, 12, 15, 17, 20 ] ] ]
  },
  {
   "id": "jakeh",
@@ -889,6 +892,9 @@ window.GLOSSARY = [
    [
     "Zephaniah", 1,
     [ 4, 12 ] ],
+   [
+    "Zephaniah", 3,
+    [ 14, 16 ] ],
    [
     "John", 1,
     [ 19 ] ],
@@ -1214,6 +1220,9 @@ window.GLOSSARY = [
     "Zephaniah", 2,
     [ 9 ] ],
    [
+    "Zephaniah", 3,
+    [ 13, 14, 15 ] ],
+   [
     "John", 1,
     [ 31, 49 ] ],
    [
@@ -1438,6 +1447,9 @@ window.GLOSSARY = [
    [
     "Habakkuk", 3,
     [ 4, 11 ] ],
+   [
+    "Zephaniah", 3,
+    [ 4, 5 ] ],
    [
     "John", 1,
     [ 4, 5, 7, 8, 9 ] ],
@@ -1718,10 +1730,10 @@ window.GLOSSARY = [
     "Micah", 4,
     [ 2 ] ],
    [
-    "Micah", 7,
-    [ 6 ] ],
-   [
     "Habakkuk", 1,
+    [ 4 ] ],
+   [
+    "Zephaniah", 3,
     [ 4 ] ],
    [
     "John", 1,
@@ -1743,7 +1755,7 @@ window.GLOSSARY = [
     [ 25 ] ],
    [
     "John", 18,
-    [ 13, 31 ] ],
+    [ 31 ] ],
    [
     "John", 19,
     [ 7 ] ] ]
@@ -2616,7 +2628,10 @@ window.GLOSSARY = [
     [ 12, 23 ] ],
    [
     "Proverbs", 24,
-    [ 32 ] ] ]
+    [ 32 ] ],
+   [
+    "Zephaniah", 3,
+    [ 7 ] ] ]
  },
  {
   "id": "fear-of-the-lord",
@@ -3209,6 +3224,9 @@ window.GLOSSARY = [
     "Zephaniah", 2,
     [ 15 ] ],
    [
+    "Zephaniah", 3,
+    [ 14 ] ],
+   [
     "John", 12,
     [ 40 ] ],
    [
@@ -3320,6 +3338,9 @@ window.GLOSSARY = [
     "Habakkuk", 3,
     [ 16 ] ],
    [
+    "Zephaniah", 3,
+    [ 13 ] ],
+   [
     "John", 5,
     [ 2 ] ] ]
  },
@@ -3416,6 +3437,9 @@ window.GLOSSARY = [
     "Zephaniah", 2,
     [ 2, 3 ] ],
    [
+    "Zephaniah", 3,
+    [ 8 ] ],
+   [
     "John", 3,
     [ 36 ] ],
    [
@@ -3474,7 +3498,10 @@ window.GLOSSARY = [
     [ 5 ] ],
    [
     "Zephaniah", 2,
-    [ 10 ] ] ]
+    [ 10 ] ],
+   [
+    "Zephaniah", 3,
+    [ 11 ] ] ]
  },
  {
   "id": "humility",
@@ -3618,7 +3645,10 @@ window.GLOSSARY = [
     [ 3 ] ],
    [
     "Habakkuk", 1,
-    [ 12 ] ] ]
+    [ 12 ] ],
+   [
+    "Zephaniah", 3,
+    [ 2 ] ] ]
  },
  {
   "id": "friend",
@@ -5366,6 +5396,9 @@ window.GLOSSARY = [
     "Proverbs", 5,
     [ 16 ] ],
    [
+    "Zephaniah", 3,
+    [ 10 ] ],
+   [
     "John", 7,
     [ 35 ] ] ]
  },
@@ -6482,6 +6515,9 @@ window.GLOSSARY = [
     "Micah", 4,
     [ 2, 7, 8, 10, 11, 13 ] ],
    [
+    "Zephaniah", 3,
+    [ 14, 16 ] ],
+   [
     "John", 12,
     [ 15 ] ] ]
  },
@@ -7266,6 +7302,9 @@ window.GLOSSARY = [
     [ 11 ] ],
    [
     "Zephaniah", 1,
+    [ 4 ] ],
+   [
+    "Zephaniah", 3,
     [ 4 ] ] ]
  },
  {
@@ -7365,7 +7404,10 @@ window.GLOSSARY = [
     [ 14 ] ],
    [
     "Joel", 2,
-    [ 15 ] ] ]
+    [ 15 ] ],
+   [
+    "Zephaniah", 3,
+    [ 18 ] ] ]
  },
  {
   "id": "day-of-the-lord",
@@ -7599,7 +7641,10 @@ window.GLOSSARY = [
     [ 4 ] ],
    [
     "Zephaniah", 2,
-    [ 7, 9 ] ] ]
+    [ 7, 9 ] ],
+   [
+    "Zephaniah", 3,
+    [ 13 ] ] ]
  },
  {
   "id": "bring-again-the-captivity",
@@ -8091,7 +8136,13 @@ window.GLOSSARY = [
     [ 1 ] ],
    [
     "Hosea", 12,
-    [ 2 ] ] ]
+    [ 2 ] ],
+   [
+    "Micah", 6,
+    [ 2 ] ],
+   [
+    "Micah", 7,
+    [ 9 ] ] ]
  },
  {
   "id": "allure",
@@ -9243,7 +9294,10 @@ window.GLOSSARY = [
     [ 9 ] ],
    [
     "Zephaniah", 2,
-    [ 7 ] ] ]
+    [ 7 ] ],
+   [
+    "Zephaniah", 3,
+    [ 20 ] ] ]
  },
  {
   "id": "calneh",
@@ -9498,7 +9552,10 @@ window.GLOSSARY = [
     [ 9 ] ],
    [
     "Zephaniah", 2,
-    [ 12 ] ] ]
+    [ 12 ] ],
+   [
+    "Zephaniah", 3,
+    [ 10 ] ] ]
  },
  {
   "id": "syrians",
@@ -10326,7 +10383,10 @@ window.GLOSSARY = [
   "refs": [
    [
     "Micah", 4,
-    [ 6, 7 ] ] ]
+    [ 6, 7 ] ],
+   [
+    "Zephaniah", 3,
+    [ 19 ] ] ]
  },
  {
   "id": "tower-of-the-flock",
@@ -10671,6 +10731,387 @@ window.GLOSSARY = [
   "refs": [
    [
     "Nahum", 3,
+    [ 19 ] ] ]
+ },
+ {
+  "id": "ephratah",
+  "kind": "place",
+  "name": "Ephratah (Ephrath, the old name of Bethlehem's district)",
+  "refs": [
+   [
+    "Micah", 5,
+    [ 2 ] ] ]
+ },
+ {
+  "id": "daughter-of-troops",
+  "kind": "term",
+  "name": "Daughter of troops (Jerusalem, called to muster her soldiers)",
+  "refs": [
+   [
+    "Micah", 5,
+    [ 1 ] ] ]
+ },
+ {
+  "id": "judge-of-israel",
+  "kind": "person",
+  "name": "The judge of Israel (Judah's king, struck on the cheek)",
+  "refs": [
+   [
+    "Micah", 5,
+    [ 1 ] ] ]
+ },
+ {
+  "id": "ruler-in-israel",
+  "kind": "person",
+  "name": "The ruler in Israel, out of Bethlehem (Matthew 2:6)",
+  "refs": [
+   [
+    "Micah", 5,
+    [ 2 ] ] ]
+ },
+ {
+  "id": "from-everlasting",
+  "kind": "term",
+  "name": "Goings forth from everlasting (the Ruler who had no beginning)",
+  "refs": [
+   [
+    "Micah", 5,
+    [ 2 ] ] ]
+ },
+ {
+  "id": "this-man-shall-be-the-peace",
+  "kind": "term",
+  "name": "This man shall be the peace",
+  "refs": [
+   [
+    "Micah", 5,
+    [ 5 ] ] ]
+ },
+ {
+  "id": "seven-shepherds",
+  "kind": "term",
+  "name": "Seven shepherds, and eight principal men (enough, and more than enough)",
+  "refs": [
+   [
+    "Micah", 5,
+    [ 5 ] ] ]
+ },
+ {
+  "id": "nimrod",
+  "kind": "place",
+  "name": "The land of Nimrod (Assyria and the lands around it)",
+  "refs": [
+   [
+    "Micah", 5,
+    [ 6 ] ] ]
+ },
+ {
+  "id": "horses-and-chariots",
+  "kind": "term",
+  "name": "Horses and chariots (an army's strength)",
+  "refs": [
+   [
+    "Micah", 5,
+    [ 10 ] ] ]
+ },
+ {
+  "id": "witchcrafts-and-soothsayers",
+  "kind": "term",
+  "name": "Witchcrafts and soothsayers (sorcery and fortune-telling)",
+  "refs": [
+   [
+    "Micah", 5,
+    [ 12 ] ],
+   [
+    "Nahum", 3,
+    [ 4 ] ] ]
+ },
+ {
+  "id": "standing-images",
+  "kind": "term",
+  "name": "Standing images (sacred stone pillars)",
+  "refs": [
+   [
+    "Micah", 5,
+    [ 13 ] ] ]
+ },
+ {
+  "id": "work-of-thine-hands",
+  "kind": "term",
+  "name": "The work of thine hands (man-made idols)",
+  "refs": [
+   [
+    "Micah", 5,
+    [ 13 ] ] ]
+ },
+ {
+  "id": "groves",
+  "kind": "term",
+  "name": "Groves (wooden poles for the goddess Asherah)",
+  "refs": [
+   [
+    "Micah", 5,
+    [ 14 ] ] ]
+ },
+ {
+  "id": "aaron",
+  "kind": "person",
+  "name": "Aaron, brother of Moses (the first high priest)",
+  "refs": [
+   [
+    "Micah", 6,
+    [ 4 ] ] ]
+ },
+ {
+  "id": "miriam",
+  "kind": "person",
+  "name": "Miriam, sister of Moses (a prophetess)",
+  "refs": [
+   [
+    "Micah", 6,
+    [ 4 ] ] ]
+ },
+ {
+  "id": "balak",
+  "kind": "person",
+  "name": "Balak, king of Moab",
+  "refs": [
+   [
+    "Micah", 6,
+    [ 5 ] ] ]
+ },
+ {
+  "id": "balaam",
+  "kind": "person",
+  "name": "Balaam, son of Beor (the prophet hired to curse Israel)",
+  "refs": [
+   [
+    "Micah", 6,
+    [ 5 ] ] ]
+ },
+ {
+  "id": "shittim",
+  "kind": "place",
+  "name": "Shittim (Israel's last camp before crossing the Jordan)",
+  "refs": [
+   [
+    "Micah", 6,
+    [ 5 ] ] ]
+ },
+ {
+  "id": "house-of-servants",
+  "kind": "term",
+  "name": "The house of servants (slavery in Egypt)",
+  "refs": [
+   [
+    "Micah", 6,
+    [ 4 ] ] ]
+ },
+ {
+  "id": "burnt-offerings",
+  "kind": "term",
+  "name": "Burnt offerings (sacrifices burned whole on the altar)",
+  "refs": [
+   [
+    "Hosea", 6,
+    [ 6 ] ],
+   [
+    "Amos", 5,
+    [ 22 ] ],
+   [
+    "Micah", 6,
+    [ 6 ] ] ]
+ },
+ {
+  "id": "firstborn",
+  "kind": "term",
+  "name": "My firstborn for my transgression (child sacrifice)",
+  "refs": [
+   [
+    "Micah", 6,
+    [ 7 ] ] ]
+ },
+ {
+  "id": "walk-humbly",
+  "kind": "term",
+  "name": "Do justly, love mercy, walk humbly with thy God",
+  "refs": [
+   [
+    "Micah", 6,
+    [ 8 ] ] ]
+ },
+ {
+  "id": "scant-measure",
+  "kind": "term",
+  "name": "The scant measure (a basket made too small)",
+  "refs": [
+   [
+    "Micah", 6,
+    [ 10 ] ] ]
+ },
+ {
+  "id": "omri",
+  "kind": "person",
+  "name": "Omri, king of Israel (who built Samaria)",
+  "refs": [
+   [
+    "Micah", 6,
+    [ 16 ] ] ]
+ },
+ {
+  "id": "ahab",
+  "kind": "person",
+  "name": "Ahab, king of Israel (Omri's son, who brought in Baal)",
+  "refs": [
+   [
+    "Micah", 6,
+    [ 16 ] ] ]
+ },
+ {
+  "id": "hissing",
+  "kind": "term",
+  "name": "An hissing (a whistle of shock at a ruin)",
+  "refs": [
+   [
+    "Micah", 6,
+    [ 16 ] ] ]
+ },
+ {
+  "id": "grapegleanings",
+  "kind": "term",
+  "name": "Grapegleanings (the few grapes left after the harvest)",
+  "refs": [
+   [
+    "Micah", 7,
+    [ 1 ] ] ]
+ },
+ {
+  "id": "reward-bribe",
+  "kind": "term",
+  "name": "Reward (a bribe)",
+  "refs": [
+   [
+    "Micah", 3,
+    [ 11 ] ],
+   [
+    "Micah", 7,
+    [ 3 ] ] ]
+ },
+ {
+  "id": "brier-and-thorn-hedge",
+  "kind": "term",
+  "name": "A brier, a thorn hedge (thorny and hurtful)",
+  "refs": [
+   [
+    "Micah", 7,
+    [ 4 ] ] ]
+ },
+ {
+  "id": "watchmen",
+  "kind": "person",
+  "name": "Watchmen (the prophets, God's lookouts)",
+  "refs": [
+   [
+    "Micah", 7,
+    [ 4 ] ] ]
+ },
+ {
+  "id": "men-of-his-own-house",
+  "kind": "term",
+  "name": "A man's enemies are the men of his own house (Matthew 10:36)",
+  "refs": [
+   [
+    "Micah", 7,
+    [ 6 ] ] ]
+ },
+ {
+  "id": "when-i-fall",
+  "kind": "term",
+  "name": "When I fall, I shall arise",
+  "refs": [
+   [
+    "Micah", 7,
+    [ 8 ] ] ]
+ },
+ {
+  "id": "indignation",
+  "kind": "term",
+  "name": "Indignation (God's righteous anger)",
+  "refs": [
+   [
+    "Micah", 7,
+    [ 9 ] ],
+   [
+    "Nahum", 1,
+    [ 6 ] ],
+   [
+    "Habakkuk", 3,
+    [ 12 ] ],
+   [
+    "Zephaniah", 3,
+    [ 8 ] ] ]
+ },
+ {
+  "id": "the-decree",
+  "kind": "term",
+  "name": "The decree (a set limit, far removed)",
+  "refs": [
+   [
+    "Micah", 7,
+    [ 11 ] ] ]
+ },
+ {
+  "id": "the-river",
+  "kind": "place",
+  "name": "The river (the Euphrates)",
+  "refs": [
+   [
+    "Micah", 7,
+    [ 12 ] ] ]
+ },
+ {
+  "id": "lick-the-dust",
+  "kind": "term",
+  "name": "Lick the dust (utter defeat)",
+  "refs": [
+   [
+    "Micah", 7,
+    [ 17 ] ] ]
+ },
+ {
+  "id": "who-is-a-god-like-unto-thee",
+  "kind": "term",
+  "name": "Who is a God like unto thee? (what Micah's name means)",
+  "refs": [
+   [
+    "Micah", 7,
+    [ 18 ] ] ]
+ },
+ {
+  "id": "pardon",
+  "kind": "term",
+  "name": "Pardoneth (forgives and lets go)",
+  "refs": [
+   [
+    "Micah", 7,
+    [ 18 ] ] ]
+ },
+ {
+  "id": "subdue",
+  "kind": "term",
+  "name": "Subdue (tread down, break the power of)",
+  "refs": [
+   [
+    "Micah", 7,
+    [ 19 ] ] ]
+ },
+ {
+  "id": "depths-of-the-sea",
+  "kind": "term",
+  "name": "Cast into the depths of the sea (sins forgiven and gone)",
+  "refs": [
+   [
+    "Micah", 7,
     [ 19 ] ] ]
  }
 ];

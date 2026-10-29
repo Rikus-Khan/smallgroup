@@ -3871,6 +3871,160 @@ window.STUDIES = [
     }
   },
   {
+    "id": "micah-05",
+    "type": "chapter",
+    "book": "Micah",
+    "ch": 5,
+    "date": "2026-10-29",
+    "title": "Micah 5",
+    "sub": "Out of Bethlehem",
+    "about": "Jerusalem's king is struck in the face. Then God points to a little town and promises a Ruler who never had a beginning.",
+    "tags": [
+      "Christ foretold",
+      "Who Jesus is",
+      "The Shepherd",
+      "Peace",
+      "Small things",
+      "Crutches"
+    ],
+    "url": "studies/micah-05.html",
+    "overview": {
+      "where": "Judah, the southern kingdom, with Jerusalem under siege and little Bethlehem a few miles south",
+      "when": "About 710 BC, while Assyria threatened Judah, before the Babylonian exile",
+      "people": [
+        "ruler-in-israel",
+        "judge-of-israel",
+        "jacob",
+        "the-lord"
+      ],
+      "places": [
+        "bethlehem",
+        "ephratah",
+        "judah",
+        "israel",
+        "assyria",
+        "nimrod"
+      ],
+      "story": [
+        "Jerusalem, the “daughter of troops,” is besieged, and her ruler, the judge of Israel, is struck on the cheek (1).",
+        "But out of little Bethlehem Ephratah will come a Ruler in Israel “whose goings forth have been from of old, from everlasting” (2). Matthew 2:6 shows it was fulfilled in Jesus.",
+        "God gives His people up until she that travails brings forth; then the Ruler stands and feeds His flock in the LORD's strength, great to the ends of the earth (3–4).",
+        "“This man shall be the peace” when the Assyrian comes; seven shepherds and eight principal men will be raised up (5–6).",
+        "The remnant of Jacob will be like dew from the LORD and like a lion among the nations (7–9).",
+        "In that day God will cut off horses, chariots, strongholds, witchcraft, idols and groves, and bring judgment on the nations that refuse Him (10–15)."
+      ],
+      "key": {
+        "ref": "Micah 5:2",
+        "text": "But thou, Bethlehem Ephratah, though thou be little among the thousands of Judah, yet out of thee shall he come forth unto me that is to be ruler in Israel; whose goings forth have been from of old, from everlasting."
+      },
+      "big": "God picked the little town over the palace. The Ruler born in Bethlehem had no beginning, rules like a shepherd, and is Himself our peace, and He clears away everything we lean on in His place."
+    }
+  },
+  {
+    "id": "micah-06",
+    "type": "chapter",
+    "book": "Micah",
+    "ch": 6,
+    "date": "2026-10-29",
+    "title": "Micah 6",
+    "sub": "What doth the LORD require?",
+    "about": "God takes His people to court with the mountains as witnesses, and then tells them, plainly, what He has wanted all along.",
+    "tags": [
+      "God's faithfulness",
+      "Remembering",
+      "Grace",
+      "Walking with God",
+      "Honesty",
+      "Sin's emptiness"
+    ],
+    "url": "studies/micah-06.html",
+    "overview": {
+      "where": "Judah and Jerusalem, “the city,” pictured as a court with the mountains as witnesses",
+      "when": "About 710 BC, in the days of Hezekiah, while Assyria was the great power and before the Babylonian exile",
+      "people": [
+        "the-lord",
+        "moses",
+        "aaron",
+        "miriam",
+        "balak",
+        "balaam",
+        "omri",
+        "ahab"
+      ],
+      "places": [
+        "egypt",
+        "moab",
+        "shittim",
+        "gilgal",
+        "israel"
+      ],
+      "story": [
+        "The LORD brings a lawsuit against His people and calls the mountains to hear it (1–2).",
+        "“O my people, what have I done unto thee?” He reminds them how He redeemed them from Egypt, led them, and turned Balaam's curse into a blessing (3–5).",
+        "A man asks what he can bring to God: calves, rams, rivers of oil, even his firstborn (6–7).",
+        "God has already shown him: “to do justly, and to love mercy, and to walk humbly with thy God” (8).",
+        "The city is full of crooked scales, violence and lies, so God's rod will fall: they will eat and not be satisfied, sow and not reap (9–15).",
+        "They keep the ways of Omri and Ahab, and will become a desolation and an hissing (16)."
+      ],
+      "key": {
+        "ref": "Micah 6:8",
+        "text": "He hath shewed thee, O man, what is good; and what doth the LORD require of thee, but to do justly, and to love mercy, and to walk humbly with thy God?"
+      },
+      "big": "God has never done His people wrong, and His favor can't be bought. Having redeemed us, He asks us to do justly, love mercy, and walk humbly with Him, because sin's crooked gains never satisfy."
+    }
+  },
+  {
+    "id": "micah-07",
+    "type": "chapter",
+    "book": "Micah",
+    "ch": 7,
+    "date": "2026-10-29",
+    "title": "Micah 7",
+    "sub": "When I fall, I shall arise",
+    "about": "Micah looks around and finds no one to trust. So he looks up, and his book ends with the best question in the Bible: “Who is a God like unto thee?”",
+    "tags": [
+      "Disappointment",
+      "Falling",
+      "Owning it",
+      "Who God is",
+      "Forgiveness",
+      "God's promises"
+    ],
+    "url": "studies/micah-07.html",
+    "overview": {
+      "where": "Judah and Jerusalem, looking ahead to ruin and then to walls rebuilt",
+      "when": "About 700 BC, in the days of Hezekiah, looking past the Babylonian exile to the return and beyond",
+      "people": [
+        "micah",
+        "the-lord",
+        "watchmen",
+        "abraham",
+        "jacob"
+      ],
+      "places": [
+        "assyria",
+        "egypt",
+        "the-river",
+        "carmel",
+        "bashan",
+        "gilead"
+      ],
+      "story": [
+        "Micah is like a man in a picked-over vineyard: the good man has perished, and everyone hunts his brother (1–2).",
+        "Rulers and judges take bribes and wrap it up together; no friend can be trusted, and a man's enemies are in his own house (3–6).",
+        "“Therefore I will look unto the LORD … my God will hear me.” “When I fall, I shall arise; when I sit in darkness, the LORD shall be a light unto me” (7–8).",
+        "He bears God's indignation because he has sinned, until God pleads his cause and brings him to the light; the gloating enemy is shamed (9–10).",
+        "A day of building comes: people stream in from Assyria to the river, from sea to sea; Micah prays for God to shepherd His flock, and God promises wonders like the Exodus (11–17).",
+        "“Who is a God like unto thee, that pardoneth iniquity?” He delights in mercy, casts all their sins into the depths of the sea, and keeps His oath to Abraham and Jacob (18–20)."
+      ],
+      "key": {
+        "ref": "Micah 7:18",
+        "text": "Who is a God like unto thee, that pardoneth iniquity, and passeth by the transgression of the remnant of his heritage? he retaineth not his anger for ever, because he delighteth in mercy."
+      },
+      "big": "When people fail us and we fail God, we look up. A fall is not the end for God's people: the LORD is our light, He pleads our cause, and He casts forgiven sins into the depths of the sea. No one is like Him."
+    }
+  },
+  {
     "id": "nahum-01",
     "type": "chapter",
     "book": "Nahum",
