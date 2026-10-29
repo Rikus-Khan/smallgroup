@@ -171,6 +171,111 @@ window.STUDIES = [
     }
   },
   {
+    "id": "john-07",
+    "type": "chapter",
+    "book": "John",
+    "ch": 7,
+    "date": "2026-10-29",
+    "title": "John 7",
+    "sub": "Rivers of living water",
+    "about": "At the Feast of Tabernacles the crowd argues about who Jesus is, and on the last great day He calls out to anyone who is thirsty.",
+    "tags": [
+      "Who Jesus is",
+      "God's timing",
+      "Truth",
+      "Judging",
+      "Holy Spirit",
+      "Courage"
+    ],
+    "url": "studies/john-07.html",
+    "overview": {
+      "where": "Galilee, then the temple in Jerusalem",
+      "when": "The Feast of Tabernacles, in the fall, about six months before the cross",
+      "people": [
+        "jesus",
+        "brethren",
+        "disciples",
+        "the-jews",
+        "moses",
+        "pharisees",
+        "chief-priests",
+        "officers",
+        "nicodemus",
+        "holy-spirit",
+        "david"
+      ],
+      "places": [
+        "galilee",
+        "judaea",
+        "jerusalem",
+        "temple",
+        "bethlehem"
+      ],
+      "story": [
+        "Jesus' own brothers, who don't believe in Him, dare Him to show Himself at the feast. He says, “My time is not yet come,” then goes up quietly (1–13).",
+        "Halfway through the feast He teaches in the temple: “If any man will do his will, he shall know of the doctrine” (14–24).",
+        "The crowd argues about where He came from. The leaders send officers to arrest Him, but “his hour was not yet come” (25–36).",
+        "On the last great day He cries out, “If any man thirst, let him come unto me, and drink,” promising rivers of living water, the Holy Spirit (37–39).",
+        "The people split over Him. The officers come back saying, “Never man spake like this man,” and Nicodemus speaks up for a fair hearing (40–53)."
+      ],
+      "key": {
+        "ref": "John 7:37",
+        "text": "In the last day, that great day of the feast, Jesus stood and cried, saying, If any man thirst, let him come unto me, and drink."
+      },
+      "big": "Jesus divides opinion, but His invitation is open to anyone: come to Him and drink, and the Holy Spirit will flow out of you like a river."
+    }
+  },
+  {
+    "id": "john-08",
+    "type": "chapter",
+    "book": "John",
+    "ch": 8,
+    "date": "2026-10-29",
+    "title": "John 8",
+    "sub": "The light of the world",
+    "about": "Jesus refuses to condemn a woman caught in sin, offers freedom to slaves, and claims the very name of God: “Before Abraham was, I am.”",
+    "tags": [
+      "Grace",
+      "Light",
+      "Freedom",
+      "Who Jesus is",
+      "Spiritual warfare",
+      "Eternal life"
+    ],
+    "url": "studies/john-08.html",
+    "overview": {
+      "where": "The Mount of Olives, then the temple in Jerusalem, in the treasury",
+      "when": "Just after the Feast of Tabernacles, about six months before the cross",
+      "people": [
+        "jesus",
+        "scribes",
+        "pharisees",
+        "woman-taken-in-adultery",
+        "the-father",
+        "the-jews",
+        "abraham",
+        "moses"
+      ],
+      "places": [
+        "mount-of-olives",
+        "temple",
+        "treasury"
+      ],
+      "story": [
+        "The scribes and Pharisees bring Jesus a woman taken in adultery to trap Him. He answers, “He that is without sin among you, let him first cast a stone at her” (1–9).",
+        "The accusers leave one by one, and Jesus tells her, “Neither do I condemn thee: go, and sin no more” (10–11).",
+        "In the treasury He says, “I am the light of the world,” and warns that whoever won't believe He is the I AM will die in his sins (12–30).",
+        "Jesus promises, “the truth shall make you free.” Whoever sins is sin's slave, but if the Son sets you free you are free indeed. The devil is a liar and a murderer (31–47).",
+        "“Before Abraham was, I am.” They pick up stones, but Jesus walks out of the temple untouched (48–59)."
+      ],
+      "key": {
+        "ref": "John 8:12",
+        "text": "Then spake Jesus again unto them, saying, I am the light of the world: he that followeth me shall not walk in darkness, but shall have the light of life."
+      },
+      "big": "Jesus is the light of the world and the great I AM. He doesn't condemn the sinner who comes to Him: He sets slaves free and gives a life that never sees death."
+    }
+  },
+  {
     "id": "john-09",
     "type": "chapter",
     "book": "John",

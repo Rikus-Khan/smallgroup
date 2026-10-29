@@ -3760,5 +3760,281 @@ window.GLOSSARY = [
    [
     "John", 10,
     [ 31, 32, 33 ] ] ]
+ },
+ {
+  "id": "nicodemus",
+  "kind": "person",
+  "name": "Nicodemus",
+  "refs": [
+   [
+    "John", 3,
+    [ 1, 4, 9 ] ],
+   [
+    "John", 7,
+    [ 50 ] ] ]
+ },
+ {
+  "id": "chief-priests",
+  "kind": "person",
+  "name": "The chief priests",
+  "refs": [
+   [
+    "John", 7,
+    [ 32, 45 ] ] ]
+ },
+ {
+  "id": "officers",
+  "kind": "person",
+  "name": "The officers (temple police)",
+  "refs": [
+   [
+    "John", 7,
+    [ 32, 45, 46 ] ] ]
+ },
+ {
+  "id": "judaea",
+  "kind": "place",
+  "name": "Judaea (Jewry)",
+  "refs": [
+   [
+    "John", 3,
+    [ 22 ] ],
+   [
+    "John", 7,
+    [ 1, 3 ] ] ]
+ },
+ {
+  "id": "bethlehem",
+  "kind": "place",
+  "name": "Bethlehem",
+  "refs": [
+   [
+    "John", 7,
+    [ 42 ] ] ]
+ },
+ {
+  "id": "feast-of-tabernacles",
+  "kind": "term",
+  "name": "Feast of Tabernacles",
+  "refs": [
+   [
+    "John", 7,
+    [ 2 ] ] ]
+ },
+ {
+  "id": "circumcision",
+  "kind": "term",
+  "name": "Circumcision",
+  "refs": [
+   [
+    "John", 7,
+    [ 22, 23 ] ] ]
+ },
+ {
+  "id": "living-water",
+  "kind": "term",
+  "name": "Living water",
+  "refs": [
+   [
+    "John", 7,
+    [ 38 ] ] ]
+ },
+ {
+  "id": "the-prophet",
+  "kind": "term",
+  "name": "The Prophet (“that prophet”)",
+  "refs": [
+   [
+    "John", 1,
+    [ 21, 25 ] ],
+   [
+    "John", 6,
+    [ 14 ] ],
+   [
+    "John", 7,
+    [ 40 ] ] ]
+ },
+ {
+  "id": "doctrine",
+  "kind": "term",
+  "name": "Doctrine (teaching)",
+  "refs": [
+   [
+    "Proverbs", 4,
+    [ 2 ] ],
+   [
+    "John", 7,
+    [ 16, 17 ] ] ]
+ },
+ {
+  "id": "letters",
+  "kind": "term",
+  "name": "Letters (scholarship)",
+  "refs": [
+   [
+    "John", 7,
+    [ 15 ] ] ]
+ },
+ {
+  "id": "dispersed",
+  "kind": "term",
+  "name": "The dispersed (Jews scattered abroad)",
+  "refs": [
+   [
+    "Proverbs", 5,
+    [ 16 ] ],
+   [
+    "John", 7,
+    [ 35 ] ] ]
+ },
+ {
+  "id": "gentiles",
+  "kind": "term",
+  "name": "Gentiles",
+  "refs": [
+   [
+    "John", 7,
+    [ 35 ] ] ]
+ },
+ {
+  "id": "glorified",
+  "kind": "term",
+  "name": "Glorified",
+  "refs": [
+   [
+    "John", 7,
+    [ 39 ] ] ]
+ },
+ {
+  "id": "scribes",
+  "kind": "person",
+  "name": "The scribes",
+  "refs": [
+   [
+    "John", 8,
+    [ 3 ] ] ]
+ },
+ {
+  "id": "woman-taken-in-adultery",
+  "kind": "person",
+  "name": "The woman taken in adultery",
+  "refs": [
+   [
+    "John", 8,
+    [ 3, 4 ] ] ]
+ },
+ {
+  "id": "abraham",
+  "kind": "person",
+  "name": "Abraham",
+  "refs": [
+   [
+    "John", 8,
+    [ 33, 37, 39, 40, 52, 53, 56, 57, 58 ] ] ]
+ },
+ {
+  "id": "samaritans",
+  "kind": "person",
+  "name": "Samaritans",
+  "refs": [
+   [
+    "John", 8,
+    [ 48 ] ] ]
+ },
+ {
+  "id": "mount-of-olives",
+  "kind": "place",
+  "name": "The Mount of Olives",
+  "refs": [
+   [
+    "John", 8,
+    [ 1 ] ] ]
+ },
+ {
+  "id": "treasury",
+  "kind": "place",
+  "name": "The treasury",
+  "refs": [
+   [
+    "John", 8,
+    [ 20 ] ] ]
+ },
+ {
+  "id": "condemn",
+  "kind": "term",
+  "name": "Condemn",
+  "refs": [
+   [
+    "Proverbs", 12,
+    [ 2 ] ],
+   [
+    "Proverbs", 17,
+    [ 15 ] ],
+   [
+    "John", 3,
+    [ 17, 18 ] ],
+   [
+    "John", 8,
+    [ 10, 11 ] ] ]
+ },
+ {
+  "id": "conscience",
+  "kind": "term",
+  "name": "Conscience",
+  "refs": [
+   [
+    "John", 8,
+    [ 9 ] ] ]
+ },
+ {
+  "id": "i-am",
+  "kind": "term",
+  "name": "“I am” (the name of God)",
+  "refs": [
+   [
+    "John", 8,
+    [ 24, 28, 58 ] ],
+   [
+    "John", 9,
+    [ 9 ] ] ]
+ },
+ {
+  "id": "lifted-up",
+  "kind": "term",
+  "name": "Lifted up (the cross)",
+  "refs": [
+   [
+    "John", 3,
+    [ 14 ] ],
+   [
+    "John", 8,
+    [ 28 ] ] ]
+ },
+ {
+  "id": "free",
+  "kind": "term",
+  "name": "Free, made free",
+  "refs": [
+   [
+    "John", 8,
+    [ 32, 33, 36 ] ] ]
+ },
+ {
+  "id": "bondage",
+  "kind": "term",
+  "name": "Bondage",
+  "refs": [
+   [
+    "John", 8,
+    [ 33 ] ] ]
+ },
+ {
+  "id": "servant-of-sin",
+  "kind": "term",
+  "name": "Servant (slave) of sin",
+  "refs": [
+   [
+    "John", 8,
+    [ 34 ] ] ]
  }
 ];

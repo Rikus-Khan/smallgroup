@@ -1,0 +1,752 @@
+<!doctype html>
+<html lang="en" data-theme="night">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>John 8</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="../assets/fonts.css">
+<link rel="stylesheet" href="../assets/deck.css">
+<link rel="stylesheet" href="../assets/themes.css">
+<style>
+.ex .note + .quote { margin-top: .9em; }
+
+/* Sunrise over the Mount of Olives */
+.jn08-dawn .jn08-hill { fill: var(--surface-2); stroke: var(--line-strong); stroke-width: 2; }
+.jn08-dawn .jn08-sun { fill: var(--accent-hot); transform: translateY(110px); }
+.slide.active .jn08-dawn .jn08-sun { animation: jn08-rise 3.4s .4s cubic-bezier(.3,.7,.3,1) forwards; }
+@keyframes jn08-rise { to { transform: translateY(0); } }
+.jn08-dawn .jn08-rays { opacity: 0; }
+.slide.active .jn08-dawn .jn08-rays { animation: jn08-fade 2s 2.6s ease forwards; }
+@keyframes jn08-fade { to { opacity: 1; } }
+.jn08-walk { fill: none; stroke: var(--accent); stroke-width: 3; stroke-dasharray: 2 9; stroke-linecap: round; opacity: 0; transition: opacity 1s ease; }
+.split:has(.jn08-walk-go.on) .jn08-walk { opacity: 1; }
+
+/* A question with two exits, both trapped */
+.jn08-trap { display: grid; gap: .8rem; margin: .4em 0 1em; }
+.jn08-trap .jn08-q { justify-self: center; padding: .4em 1.1em; border-radius: 999px; background: var(--surface); border: 1.5px solid var(--line-strong); font-family: var(--serif); font-size: clamp(1.15rem, 1rem + .8vw, 1.7rem); }
+.jn08-paths { display: grid; gap: .8rem 1.4rem; grid-template-columns: 1fr 1fr; position: relative; }
+.jn08-path { position: relative; padding: .8em 1em .9em; border-radius: 10px; background: var(--surface); border: 1.5px dashed var(--line-strong); font-size: clamp(.95rem, .85rem + .45vw, 1.25rem); line-height: 1.4; }
+.jn08-path b { display: block; font: 600 clamp(1.15rem, 1rem + .7vw, 1.6rem) var(--serif); color: var(--accent-hot); margin-bottom: .2em; }
+.jn08-path span { color: var(--ink-soft); }
+.jn08-path em {
+  position: absolute; right: .6em; top: -.8em; font-style: normal; font-weight: 700; color: var(--danger); border: 3px solid var(--danger); border-radius: 6px;
+  background: var(--bg); padding: .05em .45em; font-size: clamp(.85rem, .78rem + .35vw, 1.1rem); transform: rotate(-6deg) scale(2); opacity: 0;
+  transition: transform .35s cubic-bezier(.3,1.6,.5,1), opacity .2s;
+}
+.jn08-path.on em { transform: rotate(-6deg) scale(1); opacity: 1; transition-delay: .5s; }
+@media (max-width: 600px) { .jn08-paths { grid-template-columns: 1fr; } }
+
+/* The accusers leave, eldest first, dropping their stones */
+.jn08-stones .jn08-man { fill: var(--ink-soft); }
+.jn08-stones .jn08-rock { fill: var(--line-strong); stroke: var(--ink); stroke-width: 1.5; }
+.jn08-stones .jn08-her { fill: var(--accent-hot); }
+.jn08-stones .jn08-him { fill: var(--ink); }
+.jn08-stones .jn08-scrawl { fill: none; stroke: var(--ink-soft); stroke-width: 2; stroke-linecap: round; }
+.jn08-acc { transition: opacity 1s ease; transition-delay: calc(var(--k) * 550ms + 600ms); }
+.jn08-acc .jn08-rock { transform-box: fill-box; transition: transform .5s ease-in; transition-delay: calc(var(--k) * 550ms + 300ms); }
+.ex:has(.jn08-go.on) .jn08-acc { opacity: .07; }
+.ex:has(.jn08-go.on) .jn08-acc .jn08-rock { transform: translateY(46px); }
+.jn08-alone { opacity: 0; transition: opacity 1s ease 4.6s; }
+.ex:has(.jn08-go.on) .jn08-alone { opacity: 1; }
+
+/* Four great lampstands, lit and then out */
+.jn08-lamps .jn08-stand { fill: var(--warm); }
+.jn08-lamps .jn08-bowl { fill: var(--warm); }
+.jn08-lamps .jn08-fire { opacity: 0; transform-box: fill-box; transform-origin: 50% 100%; transition: opacity 1s ease; }
+.slide.active .jn08-lamps .jn08-fire { opacity: 1; animation: flicker 1.6s ease-in-out infinite alternate; animation-delay: calc(var(--k) * 300ms); transition-delay: calc(var(--k) * 450ms + 300ms); }
+.split:has(.jn08-out.on) .jn08-lamps .jn08-fire { opacity: 0; transition-delay: calc(var(--k) * 250ms); }
+.jn08-lamps .jn08-halo { opacity: 0; transition: opacity 1.2s ease; transition-delay: calc(var(--k) * 450ms + 600ms); }
+.slide.active .jn08-lamps .jn08-halo { opacity: .55; }
+.split:has(.jn08-out.on) .jn08-lamps .jn08-halo { opacity: 0; transition-delay: calc(var(--k) * 250ms); }
+.jn08-lamps .jn08-true { opacity: 0; transition: opacity 1.6s ease 1.4s; }
+.split:has(.jn08-out.on) .jn08-lamps .jn08-true { opacity: 1; }
+
+/* "I am he": the added word fades away */
+.jn08-iam { font: 300 clamp(2rem, 1.2rem + 4vw, 4.6rem)/1.1 var(--serif); margin: .2em 0 .5em; }
+.jn08-iam b { font-weight: 400; color: var(--accent-hot); transition: text-shadow 1.2s ease; }
+.jn08-iam i { display: inline-block; color: var(--ink-soft); transition: opacity 1.2s ease, filter 1.2s ease; }
+.ex:has(.jn08-he-go.on) .jn08-iam i { opacity: .15; filter: blur(2px); }
+.ex:has(.jn08-he-go.on) .jn08-iam b { text-shadow: 0 0 28px color-mix(in srgb, var(--accent) 70%, transparent); }
+
+/* A chain of four links, then it breaks */
+.jn08-chain { display: grid; grid-template-columns: repeat(4, 1fr); gap: .5rem; margin: .4em 0 1em; counter-reset: link; }
+.jn08-chain > div { counter-increment: link; position: relative; padding: .7em .7em .8em; border-radius: 12px; border: 2px solid var(--line-strong); background: var(--surface); text-align: center; font-family: var(--serif); font-size: clamp(1rem, .85rem + .7vw, 1.45rem); line-height: 1.25; }
+.jn08-chain > div::before { content: counter(link); display: block; font: 700 .7em var(--sans); color: var(--accent); margin-bottom: .2em; }
+.jn08-chain > div + div::after { content: ""; position: absolute; left: calc(-.5rem - 2px); top: 50%; width: calc(.5rem + 4px); height: 2px; background: var(--line-strong); }
+.jn08-chain .jn08-free { border-color: var(--accent); background: color-mix(in srgb, var(--accent) 14%, transparent); color: var(--accent-hot); }
+@media (max-width: 700px) { .jn08-chain { grid-template-columns: 1fr 1fr; } .jn08-chain > div:nth-child(3)::after { display: none; } }
+.jn08-break .jn08-link { fill: none; stroke: var(--ink-soft); stroke-width: 7; }
+.jn08-break .jn08-l { transition: transform 1s cubic-bezier(.3,1.4,.5,1) .3s; }
+.jn08-break.on .jn08-l1 { transform: translate(-26px, 8px) rotate(-10deg); }
+.jn08-break.on .jn08-l2 { transform: translate(26px, -8px) rotate(10deg); }
+.jn08-break .jn08-snap { fill: var(--accent-hot); opacity: 0; transition: opacity .3s ease .4s; }
+.jn08-break.on .jn08-snap { opacity: 1; }
+
+/* A timeline, and a line that runs off past its start */
+.jn08-time .jn08-axis { stroke: var(--line-strong); stroke-width: 3; }
+.jn08-time .jn08-pt { fill: var(--ink-soft); }
+.jn08-time .jn08-now { fill: var(--accent-hot); }
+.jn08-forever { transform-box: view-box; transform-origin: 560px 0; transform: scaleX(0); transition: transform 2.4s cubic-bezier(.4,0,.2,1); }
+.split:has(.jn08-forever-go.on) .jn08-forever { transform: scaleX(1); }
+.jn08-time .jn08-forever-text { opacity: 0; transition: opacity 1s ease 2s; }
+.split:has(.jn08-forever-go.on) .jn08-forever-text { opacity: 1; }
+</style>
+</head>
+<body>
+<main class="deck" id="deck">
+
+<!-- ======================= OPENING ======================= -->
+<section class="slide title">
+  <div class="inner">
+    <div class="emblem rise"></div>
+    <h1 class="rise" style="--d:1">John 8</h1>
+    <p class="sub rise" style="--d:3">The light of the world</p>
+    <p class="tag rise" style="--d:5">Jesus refuses to condemn a woman caught in sin, offers freedom to slaves, and claims the very name of God: “Before Abraham was, I am.”</p>
+  </div>
+</section>
+
+<section class="slide watch">
+  <div class="inner">
+    <h2 class="rise">Things to watch for</h2>
+    <p class="lede rise" style="--d:1">Keep these questions in the back of your mind as we read. We'll come back to every one of them at the end.</p>
+    <ol class="seeds">
+      <li class="step"><span class="topic">Grace</span><span class="seed-q">What does Jesus do with a person caught in sin?</span></li>
+      <li class="step"><span class="topic">Light</span><span class="seed-q">What does Jesus promise the man who follows Him?</span></li>
+      <li class="step"><span class="topic">Freedom</span><span class="seed-q">How does a man get free from sin?</span></li>
+      <li class="step"><span class="topic">Who Jesus is</span><span class="seed-q">Who did Jesus say He was?</span></li>
+      <li class="step"><span class="topic">The enemy</span><span class="seed-q">How does the devil work?</span></li>
+      <li class="step"><span class="topic">Eternal life</span><span class="seed-q">What does Jesus promise the man who keeps His saying?</span></li>
+    </ol>
+  </div>
+</section>
+
+<!-- ======================= PART ONE ======================= -->
+<section class="slide part">
+  <div class="inner">
+    <p class="part-n rise">Part one</p>
+    <h2 class="rise" style="--d:1">Neither do I condemn thee</h2>
+    <p class="range rise" style="--d:2">Verses 1–11</p>
+    <p class="hook rise" style="--d:4">A woman is dragged in front of Jesus, and a crowd waits with stones in their hands.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="1-2" data-hl="the mount of Olives|early in the morning"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="1"></blockquote>
+    <div class="split">
+      <div class="stage">
+        <svg class="jn08-dawn" viewBox="0 0 600 300" role="img" aria-label="The sun rises behind the Mount of Olives. Across the Kidron Valley stands the temple.">
+          <defs>
+            <radialGradient id="jn08-sunglow"><stop offset="0" style="stop-color:var(--glow)"/><stop offset=".45" stop-opacity=".5" style="stop-color:var(--accent)"/><stop offset="1" stop-opacity="0" style="stop-color:var(--accent)"/></radialGradient>
+          </defs>
+          <g class="jn08-sun"><circle cx="470" cy="110" r="90" fill="url(#jn08-sunglow)"/><circle cx="470" cy="110" r="32"/></g>
+          <path class="jn08-hill" d="M330 290 Q380 150 470 140 Q560 135 600 170 V290 Z"/>
+          <path class="jn08-hill" d="M0 290 V170 Q60 150 200 155 Q250 160 270 290 Z"/>
+          <rect x="70" y="105" width="90" height="55" stroke-width="2" style="fill:var(--surface);stroke:var(--ink-soft)"/>
+          <rect x="100" y="80" width="30" height="25" stroke-width="2" style="fill:var(--surface);stroke:var(--ink-soft)"/>
+          <path class="jn08-walk" d="M470 140 Q420 200 300 260 Q240 230 160 150"/>
+          <text x="115" y="200" text-anchor="middle" font-size="18" font-weight="700">the temple</text>
+          <text x="300" y="298" text-anchor="middle" font-size="15" style="fill:var(--ink-soft)">Kidron Valley</text>
+          <text x="500" y="240" text-anchor="middle" font-size="18" font-weight="700">Mount of Olives</text>
+          <text x="560" y="30" text-anchor="end" font-size="15" style="fill:var(--ink-soft)">east</text>
+        </svg>
+      </div>
+      <div>
+        <h2 class="rise" style="--d:1">Everyone else went home</h2>
+        <p class="note rise" style="--d:2">The last chapter ended, <em>“every man went unto his own house.”</em> Jesus went out to the Mount of Olives, the hill just east of the city. During these visits He taught in the temple by day and spent the nights on that hill (Luke 21:37).</p>
+        <p class="note step jn08-walk-go">At sunrise He was back in the temple courts, sitting down to teach the crowd that came to Him. That's when the interruption came.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="slide verse" data-v="3-6" data-hl="a woman taken in adultery|tempting him, that they might have to accuse him|with his finger wrote on the ground"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="5" data-hl="but what sayest thou?"></blockquote>
+    <h2 class="rise" style="--d:1">A trap with a woman as bait</h2>
+    <p class="note rise" style="--d:2">They didn't care about her, and they didn't really care about the law. They wanted something to accuse Him with (v. 6). Either answer looked like a loss:</p>
+    <div class="jn08-trap">
+      <div class="jn08-q rise" style="--d:3">“What sayest thou?”</div>
+      <div class="jn08-paths">
+        <div class="jn08-path step"><b>“Stone her.”</b><span>Under Rome, the Jews weren't allowed to put anyone to death (John 18:31). And the friend of sinners would suddenly look heartless.</span><em>trap</em></div>
+        <div class="jn08-path step"><b>“Let her go.”</b><span>Then He's setting aside the law of Moses, and they can call Him a lawbreaker in front of everyone.</span><em>trap</em></div>
+      </div>
+    </div>
+    <p class="note step">And notice who is missing. She was caught <em>“in the very act,”</em> so where was the man? The law said both should die:</p>
+    <blockquote class="quote step"><p>“And the man that committeth adultery with another man’s wife, even he that committeth adultery with his neighbour’s wife, the adulterer and the adulteress shall surely be put to death.”</p><cite>Leviticus 20:10</cite></blockquote>
+  </div>
+</section>
+
+<section class="slide verse" data-v="7-9" data-hl="He that is without sin among you, let him first cast a stone at her|being convicted by their own conscience|beginning at the eldest"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="9" data-hl="went out one by one, beginning at the eldest, even unto the last"></blockquote>
+    <div class="stage rise" style="--d:1"><svg class="jn08-stones" style="max-height:34vh" viewBox="0 0 640 260" role="img" aria-label="Seven accusers holding stones. One by one, starting with the oldest, they drop their stones and leave, until only Jesus and the woman are left.">
+      <defs><path id="jn08-body" d="M-18 46 Q-18 18 0 18 Q18 18 18 46 Z"/></defs>
+      <g class="jn08-acc" style="--k:0"><circle class="jn08-man" cx="60" cy="40" r="14"/><use class="jn08-man" href="#jn08-body" x="60" y="40"/><ellipse class="jn08-rock" cx="84" cy="70" rx="9" ry="7"/></g>
+      <g class="jn08-acc" style="--k:1"><circle class="jn08-man" cx="145" cy="40" r="14"/><use class="jn08-man" href="#jn08-body" x="145" y="40"/><ellipse class="jn08-rock" cx="169" cy="70" rx="9" ry="7"/></g>
+      <g class="jn08-acc" style="--k:2"><circle class="jn08-man" cx="230" cy="40" r="14"/><use class="jn08-man" href="#jn08-body" x="230" y="40"/><ellipse class="jn08-rock" cx="254" cy="70" rx="9" ry="7"/></g>
+      <g class="jn08-acc" style="--k:3"><circle class="jn08-man" cx="315" cy="40" r="14"/><use class="jn08-man" href="#jn08-body" x="315" y="40"/><ellipse class="jn08-rock" cx="339" cy="70" rx="9" ry="7"/></g>
+      <g class="jn08-acc" style="--k:4"><circle class="jn08-man" cx="400" cy="40" r="14"/><use class="jn08-man" href="#jn08-body" x="400" y="40"/><ellipse class="jn08-rock" cx="424" cy="70" rx="9" ry="7"/></g>
+      <g class="jn08-acc" style="--k:5"><circle class="jn08-man" cx="485" cy="40" r="14"/><use class="jn08-man" href="#jn08-body" x="485" y="40"/><ellipse class="jn08-rock" cx="509" cy="70" rx="9" ry="7"/></g>
+      <g class="jn08-acc" style="--k:6"><circle class="jn08-man" cx="570" cy="40" r="14"/><use class="jn08-man" href="#jn08-body" x="570" y="40"/><ellipse class="jn08-rock" cx="594" cy="70" rx="9" ry="7"/></g>
+      <text x="60" y="112" text-anchor="middle" font-size="14" style="fill:var(--ink-soft)">eldest</text>
+      <text x="570" y="112" text-anchor="middle" font-size="14" style="fill:var(--ink-soft)">youngest</text>
+      <circle class="jn08-her" cx="380" cy="168" r="14"/><use class="jn08-her" href="#jn08-body" x="380" y="168"/>
+      <text x="380" y="240" text-anchor="middle" font-size="16" style="fill:var(--accent-hot)">the woman, “in the midst”</text>
+      <circle class="jn08-him" cx="250" cy="188" r="14"/><path class="jn08-him" d="M232 222 Q236 196 258 200 Q270 204 268 222 Z"/>
+      <path class="jn08-scrawl" d="M190 226 q8 -8 14 0 t14 0 M222 230 l10 -6 l4 8"/>
+      <text x="230" y="250" text-anchor="middle" font-size="16">Jesus, writing</text>
+      <text class="jn08-alone serif" x="320" y="140" text-anchor="middle" font-size="20" font-style="italic" style="fill:var(--accent-hot)">“Jesus was left alone, and the woman”</text>
+    </svg></div>
+    <h2 class="rise" style="--d:2">One by one, the stones drop</h2>
+    <p class="note rise" style="--d:3">Jesus didn't say the law was wrong. He said, <em>let the sinless man go first.</em> Then He stooped down and wrote again. (The Bible doesn't tell us what He wrote, so we won't guess.)</p>
+    <p class="note step jn08-go">The oldest left first. They had the longest record, and they knew it. Every man walked away convicted, because there wasn't one man in that crowd without sin. There never is: “For all have sinned, and come short of the glory of God” (Romans 3:23).</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="10-11" data-hl="hath no man condemned thee?|Neither do I condemn thee: go, and sin no more"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="11" data-hl="Neither do I condemn thee: go, and sin no more"></blockquote>
+    <h2 class="rise" style="--d:1">The order matters</h2>
+    <p class="note rise" style="--d:2">Religion usually says it backwards. Jesus put it in this order on purpose:</p>
+    <ul class="nots">
+      <li class="step"><span class="k">clean yourself up, then God will take you</span><span class="why">that's the world's order</span></li>
+      <li class="step"><span class="k">you're forgiven, so sin doesn't matter</span><span class="why">that's cheap grace</span></li>
+      <li class="step yes"><span class="k">“Neither do I condemn thee: go, and sin no more”</span><span class="why">grace first, then a changed life</span></li>
+    </ul>
+    <p class="note step">She was guilty, and Jesus didn't pretend she wasn't. He didn't condemn her, and He didn't leave her where she was. Some of us know what it's like to be <em>“taken in the very act,”</em> caught red-handed, with everybody looking. Jesus' first word to you isn't a stone. It's <em>no condemnation</em>.</p>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise">The one man who could have thrown it</h2>
+    <p class="note rise" style="--d:1">Only one person in that courtyard was without sin. By His own rule, He was the only one with the right to throw a stone. He didn't.</p>
+    <p class="note step">Instead, a few months later, He took the condemnation Himself:</p>
+    <blockquote class="quote step"><p>“For he hath made him to be sin for us, who knew no sin; that we might be made the righteousness of God in him.”</p><cite>2 Corinthians 5:21</cite></blockquote>
+    <blockquote class="quote step"><p>“There is therefore now no condemnation to them which are in Christ Jesus, who walk not after the flesh, but after the Spirit.”</p><cite>Romans 8:1</cite></blockquote>
+    <p class="note step">That's why He can say “neither do I condemn thee” and still be just. Your sin wasn't ignored. It was paid for.</p>
+  </div>
+</section>
+
+<!-- ======================= PART TWO ======================= -->
+<section class="slide part">
+  <div class="inner">
+    <p class="part-n rise">Part two</p>
+    <h2 class="rise" style="--d:1">The light of the world</h2>
+    <p class="range rise" style="--d:2">Verses 12–30</p>
+    <p class="hook rise" style="--d:4">Standing where the great feast lamps had burned, Jesus says, “I am the light.”</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="12" data-hl="I am the light of the world|shall not walk in darkness, but shall have the light of life"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="20" data-hl="in the treasury"></blockquote>
+    <div class="split">
+      <div class="stage">
+        <svg class="jn08-lamps" viewBox="0 0 560 360" role="img" aria-label="Four tall golden lampstands burn in the temple court, then go dark. One light remains.">
+          <defs>
+            <radialGradient id="jn08-flame"><stop offset="0" style="stop-color:var(--glow)"/><stop offset=".5" style="stop-color:var(--accent-hot)"/><stop offset="1" stop-opacity="0" style="stop-color:var(--accent)"/></radialGradient>
+            <radialGradient id="jn08-sure"><stop offset="0" style="stop-color:var(--glow)"/><stop offset=".55" style="stop-color:var(--glow)"/><stop offset=".7" stop-opacity=".6" style="stop-color:var(--accent)"/><stop offset="1" stop-opacity="0" style="stop-color:var(--accent)"/></radialGradient>
+            <radialGradient id="jn08-halo"><stop offset="0" stop-opacity=".9" style="stop-color:var(--accent)"/><stop offset="1" stop-opacity="0" style="stop-color:var(--accent)"/></radialGradient>
+          </defs>
+          <g>
+            <circle class="jn08-halo" style="--k:0" cx="60" cy="70" r="70" fill="url(#jn08-halo)"/>
+            <circle class="jn08-halo" style="--k:1" cx="170" cy="70" r="70" fill="url(#jn08-halo)"/>
+            <circle class="jn08-halo" style="--k:2" cx="390" cy="70" r="70" fill="url(#jn08-halo)"/>
+            <circle class="jn08-halo" style="--k:3" cx="500" cy="70" r="70" fill="url(#jn08-halo)"/>
+          </g>
+          <g>
+            <rect class="jn08-stand" x="55" y="90" width="10" height="230"/><path class="jn08-bowl" d="M35 86 H85 Q80 104 60 104 Q40 104 35 86 Z"/>
+            <rect class="jn08-stand" x="165" y="90" width="10" height="230"/><path class="jn08-bowl" d="M145 86 H195 Q190 104 170 104 Q150 104 145 86 Z"/>
+            <rect class="jn08-stand" x="385" y="90" width="10" height="230"/><path class="jn08-bowl" d="M365 86 H415 Q410 104 390 104 Q370 104 365 86 Z"/>
+            <rect class="jn08-stand" x="495" y="90" width="10" height="230"/><path class="jn08-bowl" d="M475 86 H525 Q520 104 500 104 Q480 104 475 86 Z"/>
+          </g>
+          <ellipse class="jn08-fire" style="--k:0" cx="60" cy="68" rx="16" ry="24" fill="url(#jn08-flame)"/>
+          <ellipse class="jn08-fire" style="--k:1" cx="170" cy="68" rx="16" ry="24" fill="url(#jn08-flame)"/>
+          <ellipse class="jn08-fire" style="--k:2" cx="390" cy="68" rx="16" ry="24" fill="url(#jn08-flame)"/>
+          <ellipse class="jn08-fire" style="--k:3" cx="500" cy="68" rx="16" ry="24" fill="url(#jn08-flame)"/>
+          <line x1="20" y1="322" x2="540" y2="322" stroke-width="3" style="stroke:var(--line-strong)"/>
+          <text x="280" y="348" text-anchor="middle" font-size="16" style="fill:var(--ink-soft)">Court of the Women, beside the treasury</text>
+          <g class="jn08-true">
+            <circle cx="280" cy="215" r="100" fill="url(#jn08-sure)"/>
+            <text x="280" y="210" text-anchor="middle" font-size="19" font-weight="700" class="serif" style="fill:var(--on-glow)">the light</text>
+            <text x="280" y="232" text-anchor="middle" font-size="19" font-weight="700" class="serif" style="fill:var(--on-glow)">of the world</text>
+          </g>
+        </svg>
+      </div>
+      <div>
+        <h2 class="rise" style="--d:1">Where He said it</h2>
+        <p class="note rise" style="--d:2">The treasury stood in the Court of the Women. Old Jewish writings say that during the Feast of Tabernacles, towering golden lampstands burned there at night, so bright that all Jerusalem was lit up.</p>
+        <p class="note step jn08-out">But the feast was over. The great lamps were dark. And right there Jesus said, <em>“I am the light of the world.”</em> Not a light for one week a year, for one city. A light that never goes out, for everybody.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="12" data-hl="he that followeth me shall not walk in darkness"></blockquote>
+    <h2 class="rise" style="--d:1">Seven times, “I am”</h2>
+    <p class="note rise" style="--d:2">This is the second of seven “I am” sayings in John's Gospel. Each one tells us who Jesus is and what He gives:</p>
+    <ol class="signs rise" style="--d:3">
+      <li><b>the bread of life</b>John 6:35</li>
+      <li class="now"><b>the light of the world</b>John 8:12</li>
+      <li><b>the door</b>John 10:9</li>
+      <li><b>the good shepherd</b>John 10:11</li>
+      <li><b>the resurrection, and the life</b>John 11:25</li>
+      <li><b>the way, the truth, and the life</b>John 14:6</li>
+      <li><b>the true vine</b>John 15:1</li>
+    </ol>
+    <p class="note step">A man who has lived in darkness knows what it's like: hiding, lying, stumbling over the same things again and again. Jesus doesn't just point you to the light. He <em>is</em> the light, and if you follow Him, you <em>shall not</em> walk in darkness.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="13-16" data-hl="I know whence I came, and whither I go|I am not alone, but I and the Father that sent me"></section>
+<section class="slide verse" data-v="17-20" data-hl="the testimony of two men is true|his hour was not yet come"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="18"></blockquote>
+    <h2 class="rise" style="--d:1">Two witnesses</h2>
+    <p class="note rise" style="--d:2">The Pharisees said, <em>you can't be your own witness.</em> Jesus answered with their own law:</p>
+    <blockquote class="quote rise" style="--d:3"><p>“One witness shall not rise up against a man for any iniquity, or for any sin, in any sin that he sinneth: at the mouth of two witnesses, or at the mouth of three witnesses, shall the matter be established.”</p><cite>Deuteronomy 19:15</cite></blockquote>
+    <div class="columns">
+      <div class="col law step">
+        <p class="who">Witness one</p>
+        <h3>Jesus</h3>
+        <p>He knows where He came from and where He's going. They don't.</p>
+      </div>
+      <div class="col grace step">
+        <p class="who">Witness two</p>
+        <h3>The Father</h3>
+        <p>He spoke from heaven, and He backs His Son with the works He gave Him to do (John 5:36).</p>
+      </div>
+    </div>
+    <p class="note step">And once again, <em>“no man laid hands on him; for his hour was not yet come.”</em></p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="21-24" data-hl="ye shall die in your sins|Ye are from beneath; I am from above|if ye believe not that I am he"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="24" data-hl="if ye believe not that I am he, ye shall die in your sins"></blockquote>
+    <h2 class="rise" style="--d:1">“That I am”</h2>
+    <p class="jn08-iam rise" style="--d:2">that <b>I am</b> <i>he</i></p>
+    <p class="note rise" style="--d:3">In a printed King James Bible, the word <em>“he”</em> in verse 24 is in italics. The translators added it to make the English read smoothly. Jesus' actual words are just <span class="gk">egō eimi</span>: <em>“I am.”</em></p>
+    <p class="note step jn08-he-go">Every Jew knew that name. It's what God called Himself at the burning bush:</p>
+    <blockquote class="quote step"><p>“And God said unto Moses, I AM THAT I AM: and he said, Thus shalt thou say unto the children of Israel, I AM hath sent me unto you.”</p><cite>Exodus 3:14</cite></blockquote>
+    <p class="note step">So this is no small thing. Believe that Jesus is who He says He is, the great I AM come down from above, or die in your sins. There is no third option, and no other way out.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="25-27" data-hl="Who art thou?"></section>
+<section class="slide verse" data-v="28-30" data-hl="When ye have lifted up the Son of man|the Father hath not left me alone|many believed on him"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="28" data-hl="When ye have lifted up the Son of man, then shall ye know that I am he"></blockquote>
+    <h2 class="rise" style="--d:1">Lifted up</h2>
+    <p class="note rise" style="--d:2">“Lifted up” is how Jesus talks about the cross. John explains it plainly:</p>
+    <blockquote class="quote step"><p>“And I, if I be lifted up from the earth, will draw all men unto me. This he said, signifying what death he should die.”</p><cite>John 12:32–33</cite></blockquote>
+    <p class="note step">The men arguing with Him would be the ones who nailed Him up there. And the cross, the thing meant to finish Him, is exactly what would prove who He is. Even while He said this, <em>“many believed on him.”</em></p>
+  </div>
+</section>
+
+<!-- ======================= PART THREE ======================= -->
+<section class="slide part">
+  <div class="inner">
+    <p class="part-n rise">Part three</p>
+    <h2 class="rise" style="--d:1">Free indeed</h2>
+    <p class="range rise" style="--d:2">Verses 31–47</p>
+    <p class="hook rise" style="--d:4">Jesus offers freedom, and the crowd insists they've never been slaves.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="31-33" data-hl="If ye continue in my word, then are ye my disciples indeed|the truth shall make you free|were never in bondage to any man"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="31-32" data-hl="the truth shall make you free"></blockquote>
+    <h2 class="rise" style="--d:1">How freedom comes</h2>
+    <p class="note rise" style="--d:2">People quote “the truth shall make you free” all the time. But read the whole sentence. It's a chain, and every link holds the next:</p>
+    <div class="jn08-chain">
+      <div class="step">continue in my word</div>
+      <div class="step">my disciples indeed</div>
+      <div class="step">know the truth</div>
+      <div class="step jn08-free">make you free</div>
+    </div>
+    <svg class="jn08-break step" viewBox="0 0 200 60" width="200" height="60" aria-hidden="true" style="display:block;margin:0 auto .6em;overflow:visible">
+      <g class="jn08-l jn08-l1"><rect class="jn08-link" x="38" y="16" width="70" height="28" rx="14"/></g>
+      <g class="jn08-l jn08-l2"><rect class="jn08-link" x="92" y="16" width="70" height="28" rx="14"/></g>
+      <path class="jn08-snap" d="M100 4 L104 18 L96 20 L102 34 L92 18 L100 16 Z"/>
+    </svg>
+    <p class="note step">Freedom isn't a one-time feeling at the altar. It comes as you <em>keep on</em> living in His word: reading it, believing it, doing it. That's how a man learns the truth, and the truth breaks the chain.</p>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="33" data-hl="were never in bondage to any man"></blockquote>
+    <h2 class="rise" style="--d:1">“Never in bondage”?</h2>
+    <p class="note rise" style="--d:2">Their own history says otherwise. Count the masters:</p>
+    <ol class="signs rise" style="--d:3">
+      <li><b>Egypt</b>400 years of slavery</li>
+      <li><b>Assyria</b>the north carried off</li>
+      <li><b>Babylon</b>70 years of exile</li>
+      <li><b>Persia</b>ruled by its kings</li>
+      <li><b>Greece</b>Alexander and after</li>
+      <li class="now"><b>Rome</b>soldiers in the street, right then</li>
+    </ol>
+    <p class="note step">A Roman fort stood next to the temple while they said it. Denial is the first sign of bondage. The man who says “I don't have a problem” is the hardest man to set free.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="34-36" data-hl="Whosoever committeth sin is the servant of sin|If the Son therefore shall make you free, ye shall be free indeed"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="34" data-hl="Whosoever committeth sin is the servant of sin"></blockquote>
+    <h2 class="rise" style="--d:1">Slave or son</h2>
+    <p class="note rise" style="--d:2">“Servant” here means a slave (Greek <span class="gk">doulos</span>). Anybody who has fought an addiction knows this verse is true. You do what it tells you, even when you hate it.</p>
+    <div class="columns">
+      <div class="col law step">
+        <p class="who">The slave of sin</p>
+        <h3>“Abideth not in the house for ever”</h3>
+        <p>He has no place of his own. He can be sold or put out any day. He can't buy his own way free.</p>
+      </div>
+      <div class="col grace step">
+        <p class="who">The Son, and those He frees</p>
+        <h3>“The Son abideth ever”</h3>
+        <p>The Son belongs in the Father's house for good. Whoever He sets free is <em>free indeed</em>, and is made a son who stays.</p>
+      </div>
+    </div>
+    <blockquote class="quote step"><p>“Stand fast therefore in the liberty wherewith Christ hath made us free, and be not entangled again with the yoke of bondage.”</p><cite>Galatians 5:1</cite></blockquote>
+  </div>
+</section>
+
+<section class="slide verse" data-v="37-41" data-hl="If ye were Abraham’s children, ye would do the works of Abraham|this did not Abraham"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="39" data-hl="If ye were Abraham’s children, ye would do the works of Abraham"></blockquote>
+    <h2 class="rise" style="--d:1">Like father, like son</h2>
+    <p class="note rise" style="--d:2">They were proud of their family tree. Jesus says a man shows who his father is by how he lives.</p>
+    <div class="mirror">
+      <div class="step"><span>Abraham</span><span class="arrow">→</span><span class="word">believed God</span><span class="arrow">→</span><span>welcomed God's messengers</span><small>Genesis 15:6 and 18:1–8</small></div>
+      <div class="step"><span>These men</span><span class="arrow">→</span><span class="word">refused God's word</span><span class="arrow">→</span><span>tried to kill God's Son</span><small>“this did not Abraham” (v. 40)</small></div>
+    </div>
+    <blockquote class="quote step"><p>“Know ye therefore that they which are of faith, the same are the children of Abraham.”</p><cite>Galatians 3:7</cite></blockquote>
+    <p class="note step">Your family line doesn't save you, and it doesn't doom you either. Whatever your father was, by faith you can belong to a new family.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="42-44" data-hl="Ye are of your father the devil|he is a liar, and the father of it"></section>
+<section class="slide verse" data-v="45-47" data-hl="Which of you convinceth me of sin?|He that is of God heareth God’s words"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="44" data-hl="He was a murderer from the beginning|he is a liar, and the father of it"></blockquote>
+    <h2 class="rise" style="--d:1">The father of lies</h2>
+    <p class="note rise" style="--d:2">Jesus names the devil's two tools: <em>lies</em> and <em>death</em>. He lies to you so he can kill you. You've probably heard his voice:</p>
+    <ul class="nots">
+      <li class="step"><span class="k">“One more won't hurt.”</span><span class="why">he's a murderer from the beginning</span></li>
+      <li class="step"><span class="k">“Nobody will ever know.”</span><span class="why">God knows, and secrets keep you sick</span></li>
+      <li class="step"><span class="k">“You're too far gone.”</span><span class="why">Jesus just forgave a woman caught in the act</span></li>
+      <li class="step yes"><span class="k">“The truth shall make you free.”</span><span class="why">Jesus tells you the truth, because He loves you</span></li>
+    </ul>
+    <blockquote class="quote step"><p>“The thief cometh not, but for to steal, and to kill, and to destroy: I am come that they might have life, and that they might have it more abundantly.”</p><cite>John 10:10</cite></blockquote>
+  </div>
+</section>
+
+<!-- ======================= PART FOUR ======================= -->
+<section class="slide part">
+  <div class="inner">
+    <p class="part-n rise">Part four</p>
+    <h2 class="rise" style="--d:1">Before Abraham was</h2>
+    <p class="range rise" style="--d:2">Verses 48–59</p>
+    <p class="hook rise" style="--d:4">Jesus says the most shocking thing He has said yet, and they pick up stones.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="48-50" data-hl="thou art a Samaritan, and hast a devil|I seek not mine own glory"></section>
+
+<section class="slide verse" data-v="51-55" data-hl="If a man keep my saying, he shall never see death|Art thou greater than our father Abraham"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="51"></blockquote>
+    <p class="saying rise" style="--d:1">He shall <em>never</em> see death.</p>
+    <p class="note rise" style="--d:3">They heard it as crazy talk: Abraham died, the prophets died, who do you think you are? But Jesus means the death that really matters. His people's bodies may die, but they never face death as judgment and separation from God.</p>
+    <blockquote class="quote step"><p>“Verily, verily, I say unto you, He that heareth my word, and believeth on him that sent me, hath everlasting life, and shall not come into condemnation; but is passed from death unto life.”</p><cite>John 5:24</cite></blockquote>
+    <blockquote class="quote step"><p>“And I give unto them eternal life; and they shall never perish, neither shall any man pluck them out of my hand.”</p><cite>John 10:28</cite></blockquote>
+    <p class="note step">“Hath” is present tense. A believer already has eternal life, today. And “never” means never. Nobody can take you out of His hand, not even you on your worst day.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="56-59" data-hl="Abraham rejoiced to see my day|Thou art not yet fifty years old|Before Abraham was, I am|Then took they up stones to cast at him"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="58"></blockquote>
+    <div class="split">
+      <div class="stage">
+        <svg class="jn08-time" viewBox="0 0 640 260" role="img" aria-label="A timeline: Abraham about 2000 B.C., Moses about 1450 B.C., Jesus speaking about A.D. 30. A bright line labeled I am runs back past Abraham and off the edge.">
+          <defs>
+            <linearGradient id="jn08-ever" x1="0" x2="1"><stop offset="0" stop-opacity="0" style="stop-color:var(--accent)"/><stop offset=".25" style="stop-color:var(--accent)"/><stop offset="1" style="stop-color:var(--accent-hot)"/></linearGradient>
+          </defs>
+          <line class="jn08-axis" x1="60" y1="170" x2="600" y2="170"/>
+          <circle class="jn08-pt" cx="120" cy="170" r="9"/><text x="120" y="205" text-anchor="middle" font-size="18" font-weight="700">Abraham</text><text x="120" y="228" text-anchor="middle" font-size="14" style="fill:var(--ink-soft)">about 2000 B.C.</text>
+          <circle class="jn08-pt" cx="239" cy="170" r="9"/><text x="239" y="205" text-anchor="middle" font-size="18" font-weight="700">Moses</text><text x="239" y="228" text-anchor="middle" font-size="14" style="fill:var(--ink-soft)">about 1450 B.C.</text><text x="239" y="148" text-anchor="middle" font-size="14" font-style="italic" style="fill:var(--ink-soft)">“I AM THAT I AM”</text>
+                    <circle class="jn08-now" cx="560" cy="170" r="11"/><text x="560" y="205" text-anchor="middle" font-size="18" font-weight="700" style="fill:var(--accent-hot)">Jesus speaks</text><text x="560" y="228" text-anchor="middle" font-size="14" style="fill:var(--ink-soft)">about A.D. 30, “not yet fifty”</text>
+          <rect class="jn08-forever" x="0" y="96" width="560" height="14" rx="7" fill="url(#jn08-ever)"/>
+          <circle class="jn08-forever-text" cx="560" cy="103" r="10" style="fill:var(--accent-hot)"/>
+          <text class="jn08-forever-text serif" x="330" y="80" text-anchor="middle" font-size="24" font-style="italic" style="fill:var(--accent-hot)">“I am”: no beginning</text>
+        </svg>
+      </div>
+      <div>
+        <h2 class="rise" style="--d:1">Before Abraham was, I am</h2>
+        <p class="note rise" style="--d:2">Listen to the grammar. Jesus didn't say “before Abraham was, <em>I was</em>.” Abraham came into being. Jesus simply <em>is</em>.</p>
+        <p class="note step jn08-forever-go">He isn't claiming to be very old. He's claiming to have no beginning at all. He's using God's own name from the burning bush, <em>I AM</em>, about Himself.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="59" data-hl="Then took they up stones to cast at him"></blockquote>
+    <h2 class="rise" style="--d:1">They knew what He meant</h2>
+    <p class="note rise" style="--d:2">Nobody stones a man for saying he's old. They picked up stones because they understood: He had just claimed to be God. Under the law, that was the penalty for blasphemy:</p>
+    <blockquote class="quote step"><p>“And he that blasphemeth the name of the LORD, he shall surely be put to death, and all the congregation shall certainly stone him: as well the stranger, as he that is born in the land, when he blasphemeth the name of the LORD, shall be put to death.”</p><cite>Leviticus 24:16</cite></blockquote>
+    <div class="columns">
+      <div class="col law step">
+        <p class="who">The start of the chapter</p>
+        <h3>Stones for a sinner</h3>
+        <p>Dropped, because not one man there was without sin.</p>
+      </div>
+      <div class="col grace step">
+        <p class="who">The end of the chapter</p>
+        <h3>Stones for the Sinless One</h3>
+        <p>He walked away untouched. His hour hadn't come. When it did, He laid down His life on His own terms, for the very people holding the stones.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ======================= CLOSING ======================= -->
+<section class="slide remember">
+  <div class="inner">
+    <h2 class="rise">Points to remember</h2>
+    <ol class="seeds">
+      <li class="step"><span class="topic">Grace</span><span class="seed-q">“Neither do I condemn thee: go, and sin no more” <cite>8:11</cite></span><span class="take">Grace comes first, then a changed life. His first word to a guilty man isn't a stone.</span></li>
+      <li class="step"><span class="topic">Light</span><span class="seed-q">“He that followeth me shall not walk in darkness” <cite>8:12</cite></span><span class="take">Jesus is the light that never goes out. Follow Him and you won't be stumbling in the dark.</span></li>
+      <li class="step"><span class="topic">Freedom</span><span class="seed-q">“Ye shall be free indeed” <cite>8:36</cite></span><span class="take">Sin makes slaves. The Son makes free men, and freedom grows as you keep living in His word.</span></li>
+      <li class="step"><span class="topic">Who Jesus is</span><span class="seed-q">“Before Abraham was, I am” <cite>8:58</cite></span><span class="take">Jesus is the great I AM, God Himself, with no beginning.</span></li>
+      <li class="step"><span class="topic">The enemy</span><span class="seed-q">“He is a liar, and the father of it” <cite>8:44</cite></span><span class="take">The devil lies to destroy you. Answer his lies with the truth Jesus speaks.</span></li>
+      <li class="step"><span class="topic">Eternal life</span><span class="seed-q">“He shall never see death” <cite>8:51</cite></span><span class="take">The believer already has eternal life, and nobody can take him out of Jesus' hand.</span></li>
+    </ol>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 1 of 6</p>
+      <span class="topic">Grace</span>
+      <h2>What does Jesus do with a person caught in sin?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="7" data-hl="He that is without sin among you, let him first cast a stone at her"></blockquote>
+      <blockquote class="quote step" data-q="10-11" data-hl="Neither do I condemn thee: go, and sin no more"></blockquote>
+      <blockquote class="quote step"><p>“There is therefore now no condemnation to them which are in Christ Jesus, who walk not after the flesh, but after the Spirit.”</p><cite>Romans 8:1</cite></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>He doesn't pretend the sin isn't real, and He doesn't throw the stone. He sends the accusers away, refuses to condemn, and then calls the person to a new life: “go, and sin no more.” He could do that because He would take the condemnation Himself on the cross.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 2 of 6</p>
+      <span class="topic">Light</span>
+      <h2>What does Jesus promise the man who follows Him?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="12" data-hl="shall not walk in darkness, but shall have the light of life"></blockquote>
+      <blockquote class="quote step"><p>“And the light shineth in darkness; and the darkness comprehended it not.”</p><cite>John 1:5</cite></blockquote>
+      <blockquote class="quote step"><p>“The people that walked in darkness have seen a great light: they that dwell in the land of the shadow of death, upon them hath the light shined.”</p><cite>Isaiah 9:2</cite></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>He “shall not walk in darkness, but shall have the light of life.” The feast lamps went out after a week; Jesus' light never does. Follow Him, and you're not stumbling around in the dark anymore. You have His life in you, and He shows you the way.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 3 of 6</p>
+      <span class="topic">Freedom</span>
+      <h2>How does a man get free from sin?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="31-32" data-hl="If ye continue in my word|the truth shall make you free"></blockquote>
+      <blockquote class="quote step" data-q="34" data-hl="Whosoever committeth sin is the servant of sin"></blockquote>
+      <blockquote class="quote step" data-q="36"></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>Not by willpower. Sin makes a man a slave, and a slave can't buy his own freedom. The Son sets him free, and then he grows in that freedom by continuing in Jesus' word, learning the truth that breaks the lies he used to live by. “If the Son therefore shall make you free, ye shall be free indeed.”</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 4 of 6</p>
+      <span class="topic">Who Jesus is</span>
+      <h2>Who did Jesus say He was?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="12" data-hl="I am the light of the world"></blockquote>
+      <blockquote class="quote step" data-q="24" data-hl="if ye believe not that I am he"></blockquote>
+      <blockquote class="quote step" data-q="58"></blockquote>
+      <blockquote class="quote step"><p>“And God said unto Moses, I AM THAT I AM: and he said, Thus shalt thou say unto the children of Israel, I AM hath sent me unto you.”</p><cite>Exodus 3:14</cite></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>The light of the world, sent from above by the Father, and the great “I AM,” the name God gave Moses at the burning bush. He existed before Abraham was born. The crowd understood the claim exactly, which is why they picked up stones. Jesus is God.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 5 of 6</p>
+      <span class="topic">The enemy</span>
+      <h2>How does the devil work?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="44" data-hl="He was a murderer from the beginning|he is a liar, and the father of it"></blockquote>
+      <blockquote class="quote step"><p>“The thief cometh not, but for to steal, and to kill, and to destroy: I am come that they might have life, and that they might have it more abundantly.”</p><cite>John 10:10</cite></blockquote>
+      <blockquote class="quote step"><p>“He that committeth sin is of the devil; for the devil sinneth from the beginning. For this purpose the Son of God was manifested, that he might destroy the works of the devil.”</p><cite>1 John 3:8</cite></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>He lies, and he kills. There's no truth in him. His lies sound like freedom (“one more won't hurt”) but they lead to death. Jesus came to destroy his works and give abundant life. When you hear a lie, answer it with what Jesus says.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 6 of 6</p>
+      <span class="topic">Eternal life</span>
+      <h2>What does Jesus promise the man who keeps His saying?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="51" data-hl="he shall never see death"></blockquote>
+      <blockquote class="quote step"><p>“Verily, verily, I say unto you, He that heareth my word, and believeth on him that sent me, hath everlasting life, and shall not come into condemnation; but is passed from death unto life.”</p><cite>John 5:24</cite></blockquote>
+      <blockquote class="quote step"><p>“And I give unto them eternal life; and they shall never perish, neither shall any man pluck them out of my hand.”</p><cite>John 10:28</cite></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>He shall never see death. The man who hears and believes Jesus already has everlasting life, has passed from death to life, and will never come into condemnation. His body may die one day, but he will never perish, and no one can pluck him out of Jesus' hand.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide prayer">
+  <div class="inner">
+    <div class="emblem rise"></div>
+    <h2 class="rise">Prayer requests</h2>
+    <p class="ask-line rise" style="--d:1">What can we pray about for you today?</p>
+    <blockquote class="quote rise" style="--d:3"><p>“If we confess our sins, he is faithful and just to forgive us our sins, and to cleanse us from all unrighteousness.”</p><cite>1 John 1:9</cite></blockquote>
+  </div>
+</section>
+
+</main>
+
+<script>
+// King James Version, John chapter 8
+const V = {
+  1: "Jesus went unto the mount of Olives.",
+  2: "And early in the morning he came again into the temple, and all the people came unto him; and he sat down, and taught them.",
+  3: "And the scribes and Pharisees brought unto him a woman taken in adultery; and when they had set her in the midst,",
+  4: "They say unto him, Master, this woman was taken in adultery, in the very act.",
+  5: "Now Moses in the law commanded us, that such should be stoned: but what sayest thou?",
+  6: "This they said, tempting him, that they might have to accuse him. But Jesus stooped down, and with his finger wrote on the ground, as though he heard them not.",
+  7: "So when they continued asking him, he lifted up himself, and said unto them, He that is without sin among you, let him first cast a stone at her.",
+  8: "And again he stooped down, and wrote on the ground.",
+  9: "And they which heard it, being convicted by their own conscience, went out one by one, beginning at the eldest, even unto the last: and Jesus was left alone, and the woman standing in the midst.",
+  10: "When Jesus had lifted up himself, and saw none but the woman, he said unto her, Woman, where are those thine accusers? hath no man condemned thee?",
+  11: "She said, No man, Lord. And Jesus said unto her, Neither do I condemn thee: go, and sin no more.",
+  12: "Then spake Jesus again unto them, saying, I am the light of the world: he that followeth me shall not walk in darkness, but shall have the light of life.",
+  13: "The Pharisees therefore said unto him, Thou bearest record of thyself; thy record is not true.",
+  14: "Jesus answered and said unto them, Though I bear record of myself, yet my record is true: for I know whence I came, and whither I go; but ye cannot tell whence I come, and whither I go.",
+  15: "Ye judge after the flesh; I judge no man.",
+  16: "And yet if I judge, my judgment is true: for I am not alone, but I and the Father that sent me.",
+  17: "It is also written in your law, that the testimony of two men is true.",
+  18: "I am one that bear witness of myself, and the Father that sent me beareth witness of me.",
+  19: "Then said they unto him, Where is thy Father? Jesus answered, Ye neither know me, nor my Father: if ye had known me, ye should have known my Father also.",
+  20: "These words spake Jesus in the treasury, as he taught in the temple: and no man laid hands on him; for his hour was not yet come.",
+  21: "Then said Jesus again unto them, I go my way, and ye shall seek me, and shall die in your sins: whither I go, ye cannot come.",
+  22: "Then said the Jews, Will he kill himself? because he saith, Whither I go, ye cannot come.",
+  23: "And he said unto them, Ye are from beneath; I am from above: ye are of this world; I am not of this world.",
+  24: "I said therefore unto you, that ye shall die in your sins: for if ye believe not that I am he, ye shall die in your sins.",
+  25: "Then said they unto him, Who art thou? And Jesus saith unto them, Even the same that I said unto you from the beginning.",
+  26: "I have many things to say and to judge of you: but he that sent me is true; and I speak to the world those things which I have heard of him.",
+  27: "They understood not that he spake to them of the Father.",
+  28: "Then said Jesus unto them, When ye have lifted up the Son of man, then shall ye know that I am he, and that I do nothing of myself; but as my Father hath taught me, I speak these things.",
+  29: "And he that sent me is with me: the Father hath not left me alone; for I do always those things that please him.",
+  30: "As he spake these words, many believed on him.",
+  31: "Then said Jesus to those Jews which believed on him, If ye continue in my word, then are ye my disciples indeed;",
+  32: "And ye shall know the truth, and the truth shall make you free.",
+  33: "They answered him, We be Abraham’s seed, and were never in bondage to any man: how sayest thou, Ye shall be made free?",
+  34: "Jesus answered them, Verily, verily, I say unto you, Whosoever committeth sin is the servant of sin.",
+  35: "And the servant abideth not in the house for ever: but the Son abideth ever.",
+  36: "If the Son therefore shall make you free, ye shall be free indeed.",
+  37: "I know that ye are Abraham’s seed; but ye seek to kill me, because my word hath no place in you.",
+  38: "I speak that which I have seen with my Father: and ye do that which ye have seen with your father.",
+  39: "They answered and said unto him, Abraham is our father. Jesus saith unto them, If ye were Abraham’s children, ye would do the works of Abraham.",
+  40: "But now ye seek to kill me, a man that hath told you the truth, which I have heard of God: this did not Abraham.",
+  41: "Ye do the deeds of your father. Then said they to him, We be not born of fornication; we have one Father, even God.",
+  42: "Jesus said unto them, If God were your Father, ye would love me: for I proceeded forth and came from God; neither came I of myself, but he sent me.",
+  43: "Why do ye not understand my speech? even because ye cannot hear my word.",
+  44: "Ye are of your father the devil, and the lusts of your father ye will do. He was a murderer from the beginning, and abode not in the truth, because there is no truth in him. When he speaketh a lie, he speaketh of his own: for he is a liar, and the father of it.",
+  45: "And because I tell you the truth, ye believe me not.",
+  46: "Which of you convinceth me of sin? And if I say the truth, why do ye not believe me?",
+  47: "He that is of God heareth God’s words: ye therefore hear them not, because ye are not of God.",
+  48: "Then answered the Jews, and said unto him, Say we not well that thou art a Samaritan, and hast a devil?",
+  49: "Jesus answered, I have not a devil; but I honour my Father, and ye do dishonour me.",
+  50: "And I seek not mine own glory: there is one that seeketh and judgeth.",
+  51: "Verily, verily, I say unto you, If a man keep my saying, he shall never see death.",
+  52: "Then said the Jews unto him, Now we know that thou hast a devil. Abraham is dead, and the prophets; and thou sayest, If a man keep my saying, he shall never taste of death.",
+  53: "Art thou greater than our father Abraham, which is dead? and the prophets are dead: whom makest thou thyself?",
+  54: "Jesus answered, If I honour myself, my honour is nothing: it is my Father that honoureth me; of whom ye say, that he is your God:",
+  55: "Yet ye have not known him; but I know him: and if I should say, I know him not, I shall be a liar like unto you: but I know him, and keep his saying.",
+  56: "Your father Abraham rejoiced to see my day: and he saw it, and was glad.",
+  57: "Then said the Jews unto him, Thou art not yet fifty years old, and hast thou seen Abraham?",
+  58: "Jesus said unto them, Verily, verily, I say unto you, Before Abraham was, I am.",
+  59: "Then took they up stones to cast at him: but Jesus hid himself, and went out of the temple, going through the midst of them, and so passed by."
+};
+const BOOK = "John 8";
+</script>
+<script src="../assets/deck.js"></script>
+</body>
+</html>
