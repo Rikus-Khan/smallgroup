@@ -474,6 +474,107 @@ window.STUDIES = [
     }
   },
   {
+    "id": "john-20",
+    "type": "chapter",
+    "book": "John",
+    "ch": 20,
+    "date": "2026-10-29",
+    "title": "John 20",
+    "sub": "The empty tomb",
+    "about": "Mary finds the stone rolled away, meets the risen Lord in the garden, and a week later Thomas falls at His feet: “My Lord and my God.”",
+    "tags": [
+      "Resurrection",
+      "Your past",
+      "Peace",
+      "The Holy Spirit",
+      "Doubt",
+      "Believe"
+    ],
+    "url": "studies/john-20.html",
+    "overview": {
+      "where": "The tomb outside Jerusalem, then a locked room in the city",
+      "when": "Sunday, the first day of the week, from before dawn until evening, and again eight days later",
+      "people": [
+        "jesus",
+        "mary-magdalene",
+        "simon-peter",
+        "beloved-disciple",
+        "angels",
+        "disciples",
+        "thomas",
+        "the-father",
+        "holy-spirit",
+        "the-jews"
+      ],
+      "places": [
+        "jerusalem",
+        "sepulchre"
+      ],
+      "story": [
+        "Before dawn Mary Magdalene finds the stone taken away. Peter and John run to the tomb, see the linen clothes lying and the napkin by itself, and John believes (1–10).",
+        "Mary stays, weeping. Two angels speak to her, then Jesus calls her by name, “Mary,” and sends her to tell His brethren (11–18).",
+        "That evening He stands in the midst of the frightened disciples behind shut doors: “Peace be unto you.” He shows His hands and side, sends them out, and breathes on them (19–23).",
+        "Thomas wasn't there and won't believe without touching the nail prints. Eight days later Jesus invites him to, and Thomas says, “My Lord and my God” (24–29).",
+        "John says why he wrote: that we might believe that Jesus is the Christ, the Son of God, and have life through His name (30–31)."
+      ],
+      "key": {
+        "ref": "John 20:31",
+        "text": "But these are written, that ye might believe that Jesus is the Christ, the Son of God; and that believing ye might have life through his name."
+      },
+      "big": "Jesus is risen. He meets a grieving woman with a past, frightened men behind a locked door, and an honest doubter, and gives each one what they need: His voice, His peace, and Himself. This book was written so that we would believe and have life."
+    }
+  },
+  {
+    "id": "john-21",
+    "type": "chapter",
+    "book": "John",
+    "ch": 21,
+    "date": "2026-10-29",
+    "title": "John 21",
+    "sub": "Follow thou me",
+    "about": "Breakfast on the shore. After a miraculous catch, Jesus asks Peter three times, “Lovest thou me?” and restores the man who denied Him three times.",
+    "tags": [
+      "Going back",
+      "Grace",
+      "Restoration",
+      "Love",
+      "Comparison",
+      "The Word"
+    ],
+    "url": "studies/john-21.html",
+    "overview": {
+      "where": "The shore of the Sea of Tiberias (the Sea of Galilee)",
+      "when": "Some days after the resurrection, the third time Jesus showed Himself to His disciples",
+      "people": [
+        "jesus",
+        "simon-peter",
+        "thomas",
+        "nathanael",
+        "sons-of-zebedee",
+        "beloved-disciple",
+        "disciples",
+        "jona"
+      ],
+      "places": [
+        "sea-of-galilee",
+        "galilee",
+        "cana"
+      ],
+      "story": [
+        "Peter and six others go fishing and catch nothing all night. At dawn a man on the shore tells them to cast on the right side, and the net fills (1–6).",
+        "John says, “It is the Lord.” Peter throws himself into the sea, and the others drag in the net: 153 great fish, and the net isn't broken (7–11).",
+        "Jesus has a fire of coals with fish and bread ready. “Come and dine.” He serves them Himself (12–14).",
+        "Three times He asks Peter, “Lovest thou me?” and three times gives him a charge: “Feed my sheep.” He tells Peter how he will die, and says, “Follow me” (15–19).",
+        "Peter asks about John. “What is that to thee? follow thou me.” John closes: his testimony is true, and the world couldn't hold all the books (20–25)."
+      ],
+      "key": {
+        "ref": "John 21:17",
+        "text": "He saith unto him the third time, Simon, son of Jonas, lovest thou me? Peter was grieved because he said unto him the third time, Lovest thou me? And he said unto him, Lord, thou knowest all things; thou knowest that I love thee. Jesus saith unto him, Feed my sheep."
+      },
+      "big": "Failure isn't the end. Jesus meets the men who ran with breakfast, answers Peter's three denials with three questions, and hands him work to do. Then He says to every one of us, “Follow thou me.”"
+    }
+  },
+  {
     "id": "proverbs-01",
     "type": "chapter",
     "book": "Proverbs",

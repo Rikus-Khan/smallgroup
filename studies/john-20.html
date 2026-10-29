@@ -1,0 +1,650 @@
+<!doctype html>
+<html lang="en" data-theme="night">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>John 20</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="../assets/fonts.css">
+<link rel="stylesheet" href="../assets/deck.css">
+<link rel="stylesheet" href="../assets/themes.css">
+<style>
+/* The tomb at dawn: the stone rolls away, the sun comes up, and light spills out of the empty tomb */
+.jn20-tomb .jn20-sun { transform: translateY(170px); }
+.slide.active .jn20-tomb .jn20-sun { animation: jn20-up 4.5s .4s cubic-bezier(.3,.1,.2,1) forwards; }
+@keyframes jn20-up { to { transform: translateY(0); } }
+.jn20-tomb .jn20-stone { transform-box: fill-box; transform-origin: 50% 50%; }
+.slide.active .jn20-tomb .jn20-stone { animation: jn20-roll 2.6s 1s cubic-bezier(.5,0,.3,1) forwards; }
+@keyframes jn20-roll { to { transform: translateX(150px) rotate(190deg); } }
+.jn20-tomb .jn20-inside { opacity: 0; }
+.slide.active .jn20-tomb .jn20-inside { animation: jn20-fade 2s 2.4s ease forwards; }
+@keyframes jn20-fade { to { opacity: 1; } }
+.jn20-tomb .jn20-label { opacity: 0; }
+.slide.active .jn20-tomb .jn20-label { animation: jn20-fade 1s 3.6s ease forwards; }
+
+/* The grave clothes on the burial shelf; .jn20-angels shows the two angels instead */
+.jn20-shelf .jn20-wrap { fill: var(--glow); stroke: var(--ink-soft); stroke-width: 2; }
+.jn20-shelf .jn20-napkin { fill: var(--glow); stroke: var(--accent); stroke-width: 2.5; }
+.jn20-shelf .jn20-tick { stroke: var(--ink-soft); stroke-width: 1.5; stroke-dasharray: 4 4; fill: none; }
+.jn20-shelf .jn20-angel { fill: var(--glow); stroke: var(--accent); stroke-width: 2; filter: drop-shadow(0 0 12px var(--accent)); opacity: 0; }
+.slide.active .jn20-shelf .jn20-angel { animation: jn20-fade 1.6s ease forwards; }
+.slide.active .jn20-shelf .jn20-angel.two { animation-delay: .7s; }
+
+/* Three looks into the tomb, each one deeper */
+.jn20-look { list-style: none; padding: 0; margin: .4em 0 1em; display: grid; gap: .7rem; }
+@media (min-width: 760px) { .jn20-look { grid-template-columns: repeat(3, 1fr); } }
+.jn20-look li { padding: .7em .9em; border: 1px solid var(--line-strong); border-radius: 10px; background: var(--surface); }
+.jn20-look .who { font-size: clamp(.85rem, .8rem + .3vw, 1.05rem); color: var(--ink-soft); }
+.jn20-look .gk { display: block; font-size: clamp(1.5rem, 1.1rem + 1.6vw, 2.4rem); line-height: 1.2; }
+.jn20-look p { font-size: clamp(.95rem, .85rem + .45vw, 1.2rem); line-height: 1.4; margin-top: .2em; }
+.jn20-look .depth { height: 8px; margin-top: .6em; border-radius: 4px; background: var(--line); overflow: hidden; }
+.jn20-look .depth i { display: block; height: 100%; width: 0; background: var(--accent); border-radius: 4px; transition: width 1.2s ease .3s; }
+.jn20-look li.on .depth i { width: var(--w); }
+
+/* A locked room: ten frightened men in a corner, then Jesus stands in the midst */
+.jn20-room .jn20-men { transition: transform 1.6s ease .6s; }
+.jn20-room .jn20-man { fill: var(--ink-soft); }
+.jn20-room .jn20-him { opacity: 0; transition: opacity 1.4s ease; }
+.jn20-room .jn20-him circle.halo { fill: color-mix(in srgb, var(--accent) 22%, transparent); }
+.jn20-room .jn20-him .body { fill: var(--accent-hot); }
+.slide:has(.jn20-come.on) .jn20-him { opacity: 1; }
+.slide:has(.jn20-come.on) .jn20-men { transform: translateX(-90px); }
+.slide:has(.jn20-come.on) .jn20-man { fill: var(--ink); }
+
+/* Written, believe, life: the purpose of the book */
+.jn20-flow { display: flex; flex-wrap: wrap; align-items: center; gap: .5rem .8rem; margin: .4em 0 1.1em; }
+.jn20-flow div { flex: 1 1 10rem; padding: .7em .9em; border-radius: 10px; border: 1.5px solid var(--line-strong); background: var(--surface); text-align: center; }
+.jn20-flow div:last-child { border-color: var(--accent); background: color-mix(in srgb, var(--accent) 14%, transparent); }
+.jn20-flow b { display: block; font: 400 clamp(1.3rem, 1rem + 1.3vw, 2.1rem)/1.15 var(--serif); color: var(--accent-hot); }
+.jn20-flow span { font-size: clamp(.85rem, .8rem + .3vw, 1.05rem); color: var(--ink-soft); }
+.jn20-flow .arrow { flex: 0 0 auto; color: var(--accent); font-size: 1.6rem; }
+@media (max-width: 600px) { .jn20-flow { flex-direction: column; align-items: stretch; } .jn20-flow .arrow { text-align: center; transform: rotate(90deg); } }
+</style>
+</head>
+<body>
+<main class="deck" id="deck">
+
+<!-- ======================= OPENING ======================= -->
+<section class="slide title">
+  <div class="inner">
+    <div class="emblem rise"></div>
+    <h1 class="rise" style="--d:1">John 20</h1>
+    <p class="sub rise" style="--d:3">The empty tomb</p>
+    <p class="tag rise" style="--d:5">Before sunrise the stone is gone. By evening the risen Lord stands among His frightened friends, and a week later Thomas falls at His feet: “My Lord and my God.”</p>
+  </div>
+</section>
+
+<section class="slide watch">
+  <div class="inner">
+    <h2 class="rise">Things to watch for</h2>
+    <p class="lede rise" style="--d:1">Keep these questions in the back of your mind as we read. We'll come back to every one of them at the end.</p>
+    <ol class="seeds">
+      <li class="step"><span class="topic">The resurrection</span><span class="seed-q">What did the disciples find that showed Jesus had risen?</span></li>
+      <li class="step"><span class="topic">Your past</span><span class="seed-q">Who saw the risen Jesus first, and what does that tell us?</span></li>
+      <li class="step"><span class="topic">Fear</span><span class="seed-q">What did Jesus bring into the locked room?</span></li>
+      <li class="step"><span class="topic">Sent out</span><span class="seed-q">What did Jesus give the men He was sending out?</span></li>
+      <li class="step"><span class="topic">Doubt</span><span class="seed-q">How did Jesus treat Thomas and his doubts?</span></li>
+      <li class="step"><span class="topic">Why John wrote</span><span class="seed-q">Why was this Gospel written?</span></li>
+    </ol>
+  </div>
+</section>
+
+<!-- ======================= PART ONE: THE EMPTY TOMB ======================= -->
+<section class="slide part">
+  <div class="inner">
+    <p class="part-n rise">Part one</p>
+    <h2 class="rise" style="--d:1">The empty tomb</h2>
+    <p class="range rise" style="--d:2">Verses 1–10</p>
+    <p class="hook rise" style="--d:4">Before the sun is up, the stone is already gone.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="1-2" data-hl="when it was yet dark|the stone taken away from the sepulchre|we know not where they have laid him"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="1" data-hl="when it was yet dark|the stone taken away"></blockquote>
+    <div class="split">
+      <div class="stage">
+        <svg class="jn20-tomb" viewBox="0 0 600 330" role="img" aria-label="A tomb cut into a hillside before dawn. The round stone rolls away from the door, the sun rises, and light shines out of the empty tomb.">
+          <g class="jn20-sun">
+            <defs><radialGradient id="jn20-halo"><stop offset="0" style="stop-color:var(--accent);stop-opacity:.6"/><stop offset="1" style="stop-color:var(--accent);stop-opacity:0"/></radialGradient></defs>
+            <circle cx="470" cy="80" r="115" fill="url(#jn20-halo)"/>
+            <circle cx="470" cy="80" r="38" style="fill:var(--glow)"/>
+          </g>
+          <path d="M0 330 L0 150 Q110 70 250 105 Q400 140 600 120 L600 330 Z" stroke-width="3" style="fill:var(--surface-2);stroke:var(--line-strong)"/>
+          <rect x="0" y="292" width="600" height="38" style="fill:var(--surface-2)"/>
+          <line x1="0" y1="292" x2="600" y2="292" stroke-width="2" style="stroke:var(--line-strong)"/>
+          <path d="M150 292 L150 215 Q200 160 250 215 L250 292 Z" stroke-width="3" style="fill:var(--bg);stroke:var(--ink-soft)"/>
+          <g class="jn20-inside">
+            <path d="M150 292 L150 215 Q200 160 250 215 L250 292 Z" style="fill:var(--glow)"/>
+            <path d="M250 292 L360 330 L40 330 L150 292 Z" style="fill:color-mix(in srgb, var(--glow) 35%, transparent)"/>
+          </g>
+          <g class="jn20-stone">
+            <circle cx="200" cy="240" r="62" stroke-width="3" style="fill:var(--line-strong);stroke:var(--ink-soft)"/>
+            <circle cx="200" cy="240" r="44" fill="none" stroke-width="2.5" stroke-dasharray="10 8" style="stroke:var(--bg)"/>
+            <circle cx="200" cy="240" r="6" style="fill:var(--bg)"/>
+          </g>
+          <text class="jn20-label" x="200" y="140" text-anchor="middle" font-size="20" font-weight="700" style="fill:var(--accent-hot)">empty</text>
+        </svg>
+      </div>
+      <div>
+        <h2 class="rise" style="--d:1">While it was still dark</h2>
+        <p class="note rise" style="--d:2">A rich man's tomb was a room cut into the rock. A heavy round stone sat in a groove across the door, and it took several men to roll it.</p>
+        <p class="note step">Mary came to finish mourning a dead man. She found the stone already moved. The stone wasn't rolled away to let Jesus out. It was rolled away to let the witnesses in.</p>
+        <p class="note step">Her first thought was grave robbers: <em>“They have taken away the Lord.”</em> Nobody that morning was expecting a resurrection.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="1" data-hl="The first day of the week"></blockquote>
+    <h2 class="rise" style="--d:1">The first day of the week</h2>
+    <p class="note rise" style="--d:2">Jesus died on Friday and lay in the tomb through the Sabbath. On Sunday morning He rose. John marks the times as the risen Lord shows Himself:</p>
+    <div class="hours rise" style="--d:3">
+      <div class="hour come"><div class="dot"></div><b>20:1</b><span>early, yet dark</span></div>
+      <div class="hour come"><div class="dot"></div><b>20:14</b><span>in the garden</span></div>
+      <div class="hour come"><div class="dot"></div><b>20:19</b><span>that evening</span></div>
+      <div class="hour"><div class="dot"></div><b>20:26</b><span>eight days later</span></div>
+      <div class="hour"><div class="dot"></div><b>21:1</b><span>by the sea</span></div>
+    </div>
+    <p class="note step">“After eight days” was the next Sunday (they counted both ends of the week). Jesus kept meeting His people on the first day of the week, and the early church went on gathering on that day.</p>
+    <p class="note step">Every Sunday is a small Easter. The worst day in history was Friday. Sunday came anyway.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="3-5" data-hl="So they ran both together|saw the linen clothes lying"></section>
+<section class="slide verse" data-v="6-8" data-hl="the napkin, that was about his head|wrapped together in a place by itself|he saw, and believed"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="7" data-hl="not lying with the linen clothes, but wrapped together in a place by itself"></blockquote>
+    <div class="split">
+      <div class="stage">
+        <svg class="jn20-shelf" viewBox="0 0 600 260" role="img" aria-label="The burial shelf in the tomb. The linen wrappings lie where the body was, and the head cloth is rolled up in a place by itself.">
+          <rect x="20" y="150" width="440" height="70" rx="4" stroke-width="3" style="fill:var(--surface-2);stroke:var(--line-strong)"/>
+          <rect x="480" y="150" width="100" height="70" rx="4" stroke-width="3" style="fill:var(--surface-2);stroke:var(--line-strong)"/>
+          <g class="rise" style="--d:2">
+            <path class="jn20-wrap" d="M70 150 Q66 116 112 118 L388 126 Q424 130 422 150 Z"/>
+            <path d="M120 119 L120 150 M170 120 L170 150 M220 122 L220 150 M270 123 L270 150 M320 124 L320 150 M370 126 L370 150" stroke-width="2" style="stroke:var(--ink-soft)"/>
+            <path class="jn20-tick" d="M245 114 L245 82"/>
+            <text x="245" y="72" text-anchor="middle" font-size="19">the linen clothes, lying</text>
+          </g>
+          <g class="step">
+            <ellipse class="jn20-napkin" cx="530" cy="138" rx="34" ry="13"/>
+            <path d="M505 138 Q530 128 555 138" fill="none" stroke-width="2" style="stroke:var(--accent)"/>
+            <path class="jn20-tick" d="M530 122 L530 102"/>
+            <text x="530" y="74" text-anchor="middle" font-size="19" style="fill:var(--accent-hot)">the napkin,</text>
+            <text x="530" y="95" text-anchor="middle" font-size="19" style="fill:var(--accent-hot)">by itself</text>
+          </g>
+        </svg>
+      </div>
+      <div>
+        <h2 class="rise" style="--d:1">What the grave clothes said</h2>
+        <p class="note rise" style="--d:2">Jesus had been wrapped in strips of linen with about a hundred pounds of spices (19:39–40). Now the wrappings were <em>lying</em> there, with no body in them.</p>
+        <p class="note step">The cloth that had been around His head was rolled up and set apart by itself.</p>
+        <p class="note step">Grave robbers don't stop to unwrap a body and tidy up. Thieves would have taken the body, wrappings and all. Whatever happened in this tomb, nobody stole Him.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="8" data-hl="he saw, and believed"></blockquote>
+    <h2 class="rise" style="--d:1">Three looks into the tomb</h2>
+    <p class="note rise" style="--d:2">English says “saw” every time, but John uses three different Greek words, and each look goes deeper:</p>
+    <ol class="jn20-look">
+      <li class="step" style="--w:33%"><span class="who">John, at the door · v.5</span><span class="gk">blepō</span><p>He glanced in from outside.</p><div class="depth"><i></i></div></li>
+      <li class="step" style="--w:66%"><span class="who">Peter, inside · v.6</span><span class="gk">theōreō</span><p>He studied it, taking it all in.</p><div class="depth"><i></i></div></li>
+      <li class="step" style="--w:100%"><span class="who">John, inside · v.8</span><span class="gk">eidon</span><p>He saw what it meant, <em>and believed</em>.</p><div class="depth"><i></i></div></li>
+    </ol>
+    <p class="note step">“The other disciple, whom Jesus loved” is John himself, the man who wrote this book. He never names himself. He just tells you that he saw, and believed.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="9-10" data-hl="as yet they knew not the scripture, that he must rise again from the dead"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="9" data-hl="he must rise again from the dead"></blockquote>
+    <h2 class="rise" style="--d:1">It was in the Book all along</h2>
+    <p class="note rise" style="--d:2">The Scriptures had said it a thousand years before:</p>
+    <blockquote class="quote rise" style="--d:3"><p>“For thou wilt not leave my soul in hell; neither wilt thou suffer thine Holy One to see corruption.”</p><cite>Psalm 16:10</cite></blockquote>
+    <p class="note step">And Jesus had told them Himself, from the start:</p>
+    <blockquote class="quote step"><p>“Jesus answered and said unto them, Destroy this temple, and in three days I will raise it up.”</p><cite>John 2:19</cite></blockquote>
+    <p class="note step">They still didn't get it until they stood in the empty tomb. Faith often grows slowly. God is patient with slow learners, and these men are proof.</p>
+  </div>
+</section>
+
+<!-- ======================= PART TWO: MARY ======================= -->
+<section class="slide part">
+  <div class="inner">
+    <p class="part-n rise">Part two</p>
+    <h2 class="rise" style="--d:1">“Mary”</h2>
+    <p class="range rise" style="--d:2">Verses 11–18</p>
+    <p class="hook rise" style="--d:4">She came looking for a body. She found her Lord.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="11-13" data-hl="Mary stood without at the sepulchre weeping|two angels in white|Woman, why weepest thou?"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="12" data-hl="the one at the head, and the other at the feet"></blockquote>
+    <div class="split">
+      <div class="stage">
+        <svg class="jn20-shelf jn20-angels" viewBox="0 0 600 260" role="img" aria-label="The same burial shelf, now empty, with an angel in white sitting at the head and another at the feet.">
+          <rect x="20" y="150" width="440" height="70" rx="4" stroke-width="3" style="fill:var(--surface-2);stroke:var(--line-strong)"/>
+          <rect x="480" y="150" width="100" height="70" rx="4" stroke-width="3" style="fill:var(--surface-2);stroke:var(--line-strong)"/>
+          <path class="jn20-wrap" d="M70 150 Q66 116 112 118 L388 126 Q424 130 422 150 Z" style="opacity:.55"/>
+          <g class="jn20-angel">
+            <circle cx="60" cy="72" r="14"/>
+            <path d="M60 90 Q30 110 34 148 L86 148 Q90 110 60 90 Z"/>
+          </g>
+          <g class="jn20-angel two">
+            <circle cx="430" cy="72" r="14"/>
+            <path d="M430 90 Q400 110 404 148 L456 148 Q460 110 430 90 Z"/>
+          </g>
+          <text x="60" y="44" text-anchor="middle" font-size="17" style="fill:var(--ink-soft)">at the head</text>
+          <text x="430" y="44" text-anchor="middle" font-size="17" style="fill:var(--ink-soft)">at the feet</text>
+          <text x="245" y="250" text-anchor="middle" font-size="17" style="fill:var(--ink-soft)">where the body of Jesus had lain</text>
+        </svg>
+      </div>
+      <div>
+        <h2 class="rise" style="--d:1">She stayed</h2>
+        <p class="note rise" style="--d:2">Peter and John went home. Mary stayed outside the tomb and cried. She had nowhere else she wanted to be.</p>
+        <p class="note step">She was so taken up with her grief that two angels didn't even slow her down. She answered them like they were anybody.</p>
+        <p class="note step">Jesus had told His friends this day was coming:</p>
+        <blockquote class="quote step"><p>“Verily, verily, I say unto you, That ye shall weep and lament, but the world shall rejoice: and ye shall be sorrowful, but your sorrow shall be turned into joy.”</p><cite>John 16:20</cite></blockquote>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="slide verse" data-v="14-16" data-hl="knew not that it was Jesus|supposing him to be the gardener|Jesus saith unto her, Mary|Rabboni"></section>
+
+<section class="slide ex ex-name">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="16" data-hl="Jesus saith unto her, Mary|Rabboni"></blockquote>
+    <h2 class="rise" style="--d:1">One word</h2>
+    <div class="rename">
+      <span class="old rise" style="--d:2">“Woman, why weepest thou?”</span>
+      <span class="arrow step n2">→</span>
+      <span class="new step">“Mary.”</span>
+      <span class="gloss step">She heard her own name in His voice, and she knew Him. <span class="gk">Rabboni</span> is Aramaic for <em>my Master, my Teacher</em>.</span>
+    </div>
+    <blockquote class="quote step"><p>“To him the porter openeth; and the sheep hear his voice: and he calleth his own sheep by name, and leadeth them out.”</p><cite>John 10:3</cite></blockquote>
+    <p class="note step">Through tears and in the half-light she took Him for the gardener. She didn't recognize Him by looking. She recognized Him when He called her by name.</p>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise">Who got to see Him first</h2>
+    <p class="note rise" style="--d:1">Not Peter. Not John. Not the high priest or Pilate. The first person to see the risen Lord was Mary Magdalene. Here is what we know about her past:</p>
+    <blockquote class="quote rise" style="--d:2"><p>“And certain women, which had been healed of evil spirits and infirmities, Mary called Magdalene, out of whom went seven devils,”</p><cite>Luke 8:2</cite></blockquote>
+    <p class="note step">Seven devils. Whatever her life had been, it was dark, and Jesus set her free. (Nothing in the Bible says she was a prostitute. That idea came along centuries later.)</p>
+    <p class="note step">Jesus didn't give the first look at the empty tomb to the most respectable person in Jerusalem. He gave it to a woman with a past who loved Him and stayed. <em>Your past doesn't disqualify you.</em> It might be the very thing that makes you stay close.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="17-18" data-hl="Touch me not|go to my brethren|my Father, and your Father|she had seen the Lord"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="17" data-hl="Touch me not|go to my brethren|my Father, and your Father; and to my God, and your God"></blockquote>
+    <h2 class="rise" style="--d:1">“Touch me not”</h2>
+    <p class="note rise" style="--d:2">The Greek means <em>“Stop holding on to me.”</em> Mary had grabbed hold of Him, as if she would never let Him go again. Jesus wasn't pushing her away. He was saying: <em>I'm not leaving yet. Don't cling. Go and tell.</em></p>
+    <p class="note step">And look what He calls the men who had run away three days earlier:</p>
+    <ol class="signs step">
+      <li><b>Servants</b>what they had been</li>
+      <li><b>Friends</b>John 15:15</li>
+      <li class="now"><b>My brethren</b>John 20:17</li>
+    </ol>
+    <p class="note step">“My Father, and your Father.” Because of the cross, His Father is now our Father. You don't just get forgiven. You get brought into the family.</p>
+  </div>
+</section>
+
+<!-- ======================= PART THREE: PEACE ======================= -->
+<section class="slide part">
+  <div class="inner">
+    <p class="part-n rise">Part three</p>
+    <h2 class="rise" style="--d:1">Peace be unto you</h2>
+    <p class="range rise" style="--d:2">Verses 19–23</p>
+    <p class="hook rise" style="--d:4">A locked door doesn't keep Him out.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="19-20" data-hl="the doors were shut|for fear of the Jews|Peace be unto you|Then were the disciples glad"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="19" data-hl="the doors were shut|for fear of the Jews|stood in the midst"></blockquote>
+    <div class="split">
+      <div class="stage">
+        <svg class="jn20-room" viewBox="0 0 600 330" role="img" aria-label="A room with a barred door. Ten men huddle in a far corner. Then Jesus stands in the middle of the room and they come toward Him.">
+          <rect x="20" y="20" width="560" height="290" rx="6" stroke-width="4" style="fill:var(--surface);stroke:var(--line-strong)"/>
+          <rect x="12" y="120" width="16" height="100" style="fill:var(--surface-2)"/>
+          <line x1="20" y1="120" x2="20" y2="220" stroke-width="7" style="stroke:var(--leather-light)"/>
+          <rect x="6" y="160" width="44" height="10" rx="3" style="fill:var(--leather)"/>
+          <text x="50" y="248" font-size="16" style="fill:var(--ink-soft)">barred door</text>
+          <g class="jn20-him">
+            <circle class="halo" cx="300" cy="165" r="95"/>
+            <circle class="body" cx="300" cy="128" r="15"/>
+            <path class="body" d="M300 146 Q272 160 274 214 L326 214 Q328 160 300 146 Z"/>
+            <text x="300" y="250" text-anchor="middle" font-size="17" font-weight="700" style="fill:var(--accent-hot)">in the midst</text>
+          </g>
+          <g class="jn20-men">
+            <circle class="jn20-man" cx="470" cy="70" r="11"/><circle class="jn20-man" cx="500" cy="62" r="11"/><circle class="jn20-man" cx="530" cy="72" r="11"/><circle class="jn20-man" cx="555" cy="95" r="11"/>
+            <circle class="jn20-man" cx="485" cy="100" r="11"/><circle class="jn20-man" cx="515" cy="98" r="11"/><circle class="jn20-man" cx="545" cy="125" r="11"/>
+            <circle class="jn20-man" cx="500" cy="130" r="11"/><circle class="jn20-man" cx="530" cy="152" r="11"/><circle class="jn20-man" cx="555" cy="180" r="11"/>
+          </g>
+          <text x="520" y="300" text-anchor="middle" font-size="16" style="fill:var(--ink-soft)">ten men</text>
+        </svg>
+      </div>
+      <div>
+        <h2 class="rise" style="--d:1">Into the locked room</h2>
+        <p class="note rise" style="--d:2">Ten men behind a barred door. Judas was dead, and Thomas wasn't there. Three days earlier every one of them had run away and left Jesus alone.</p>
+        <p class="note step jn20-come">Then He was just there, <em>in the midst</em>, without the door being opened. His first words weren't “Where were you?” They were <em>“Peace be unto you.”</em></p>
+        <p class="note step">Then He showed them His hands and His side. The same body, with the scars. A man hiding in fear and shame is exactly the man Jesus comes looking for.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="slide verse" data-v="21-23" data-hl="as my Father hath sent me, even so send I you|he breathed on them|Receive ye the Holy Ghost"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="22" data-hl="he breathed on them"></blockquote>
+    <h2 class="rise" style="--d:1">The breath of life</h2>
+    <div class="pair">
+      <div class="scroll rise" style="--d:2"><p class="ref">Genesis 2:7</p><p class="kjv">And the LORD God formed man of the dust of the ground, and <mark>breathed into his nostrils the breath of life</mark>; and man became a living soul.</p></div>
+      <div class="scroll step"><p class="ref">John 20:22</p><p class="kjv">And when he had said this, <mark>he breathed on them</mark>, and saith unto them, Receive ye the Holy Ghost:</p></div>
+    </div>
+    <p class="note step">At creation God breathed life into the first man. Here the risen Lord breathes on His men: a new creation is starting. He gave them the Spirit's power in full at Pentecost, just as He promised (Acts 1:8).</p>
+    <blockquote class="quote step"><p>“In whom ye also trusted, after that ye heard the word of truth, the gospel of your salvation: in whom also after that ye believed, ye were sealed with that holy Spirit of promise,”</p><cite>Ephesians 1:13</cite></blockquote>
+    <p class="note step">Today, the moment a man believes, the Holy Spirit comes to live in him for good. You don't have to wait for Him or earn Him.</p>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="23" data-hl="remit|retain"></blockquote>
+    <h2 class="rise" style="--d:1">Sent with a message</h2>
+    <p class="note rise" style="--d:2">“Remit” means <em>to let go, to forgive</em>. This doesn't make the disciples into judges who decide who gets forgiven. Only God forgives sins. It means they carry the message that tells men where forgiveness is found.</p>
+    <div class="columns">
+      <div class="col grace step"><h3>Remitted</h3><p class="who">whoever believes</p><p>When a man believes the gospel, they can tell him straight: your sins are forgiven.</p></div>
+      <div class="col law step"><h3>Retained</h3><p class="who">whoever refuses</p><p>When a man turns it down, they can tell him just as plainly: you're still carrying them.</p></div>
+    </div>
+    <blockquote class="quote step"><p>“To him give all the prophets witness, that through his name whosoever believeth in him shall receive remission of sins.”</p><cite>Acts 10:43</cite></blockquote>
+  </div>
+</section>
+
+<!-- ======================= PART FOUR: THOMAS ======================= -->
+<section class="slide part">
+  <div class="inner">
+    <p class="part-n rise">Part four</p>
+    <h2 class="rise" style="--d:1">My Lord and my God</h2>
+    <p class="range rise" style="--d:2">Verses 24–31</p>
+    <p class="hook rise" style="--d:4">The doubter gets exactly what he asked for, and more.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="24-25" data-hl="was not with them when Jesus came|We have seen the Lord|I will not believe"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="24" data-hl="was not with them when Jesus came"></blockquote>
+    <h2 class="rise" style="--d:1">The man who missed the meeting</h2>
+    <p class="note rise" style="--d:2"><span class="gk">Didymus</span> is Greek for <em>twin</em>. Thomas wasn't a coward. When Jesus headed back toward danger, he was the one who said:</p>
+    <blockquote class="quote rise" style="--d:3"><p>“Then said Thomas, which is called Didymus, unto his fellowdisciples, Let us also go, that we may die with him.”</p><cite>John 11:16</cite></blockquote>
+    <p class="note step">He was a loyal, blunt man who said what he thought. When his hopes died on the cross, he went off alone with his grief. So he wasn't there the night Jesus came.</p>
+    <blockquote class="quote step"><p>“Not forsaking the assembling of ourselves together, as the manner of some is; but exhorting one another: and so much the more, as ye see the day approaching.”</p><cite>Hebrews 10:25</cite></blockquote>
+    <p class="note step">When you're hurting, the pull is to isolate. That's usually the worst thing to do. Show up. You never know which day He'll meet you with your brothers.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="26-28" data-hl="Thomas with them|reach hither thy finger|be not faithless, but believing|My Lord and my God"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="27" data-hl="be not faithless, but believing"></blockquote>
+    <h2 class="rise" style="--d:1">He heard every word</h2>
+    <p class="note rise" style="--d:2">Jesus wasn't in the room when Thomas laid down his terms. But when He came back, He answered them one by one:</p>
+    <div class="match" style="--n:3" aria-label="Thomas said: see the print of the nails in his hands, put my finger into the print of the nails, thrust my hand into his side. Jesus answered: behold my hands, reach hither thy finger, reach hither thy hand and thrust it into my side.">
+      <div class="a rise" style="--d:3"><span class="tag">Thomas v.25</span><span class="w">see in his hands the print of the nails</span><span class="w">put my finger into the print of the nails</span><span class="w">thrust my hand into his side</span></div>
+      <div class="step"><span></span><span class="link">granted</span><span class="link">granted</span><span class="link">granted</span></div>
+      <div class="b step"><span class="tag">Jesus v.27</span><span class="w">behold my hands</span><span class="w">reach hither thy finger</span><span class="w">reach hither thy hand, and thrust it into my side</span></div>
+    </div>
+    <p class="note step">No scolding, no lecture. He met the man right where his doubt was. Honest doubt that keeps looking for the truth ends at Jesus' feet.</p>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="28"></blockquote>
+    <h2 class="rise" style="--d:1">The book starts and ends here</h2>
+    <div class="pair">
+      <div class="scroll rise" style="--d:2"><p class="ref">John 1:1, the first verse</p><p class="kjv">In the beginning was the Word, and the Word was with God, and <mark>the Word was God</mark>.</p></div>
+      <div class="scroll step"><p class="ref">John 20:28, the last confession</p><p class="kjv">And Thomas answered and said unto him, <mark>My Lord and my God</mark>.</p></div>
+    </div>
+    <p class="note step">John opened his Gospel by telling us Jesus is God. He closes it with a doubter on his knees saying the same thing to Jesus' face. And Jesus doesn't correct him. He accepts it.</p>
+    <p class="note step">The man who doubted the most made the greatest confession in the whole book.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="29" data-hl="blessed are they that have not seen, and yet have believed"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="29" data-hl="blessed are they that have not seen, and yet have believed"></blockquote>
+    <h2 class="rise" style="--d:1">That's us</h2>
+    <p class="note rise" style="--d:2">Thomas had to see. Jesus pronounced a blessing on everybody who would come after him and believe without seeing. The word was passed down hand to hand:</p>
+    <div class="chains">
+      <div class="chain step"><span class="who-chip jesus">Jesus</span><span class="said">“Peace be unto you”</span><span class="who-chip">the disciples</span><span class="said">saw</span><span class="who-chip">Thomas</span><span class="said">saw</span></div>
+      <div class="chain step"><span class="who-chip">John</span><span class="said">“these are written”</span><span class="who-chip">the churches</span><span class="said">read it</span><span class="who-chip">nineteen centuries</span></div>
+      <div class="chain step"><span class="who-chip">this group</span><span class="said">believed without seeing</span><span class="who-chip jesus">Jesus</span></div>
+    </div>
+    <blockquote class="quote step"><p>“Whom having not seen, ye love; in whom, though now ye see him not, yet believing, ye rejoice with joy unspeakable and full of glory:”</p><cite>1 Peter 1:8</cite></blockquote>
+  </div>
+</section>
+
+<section class="slide verse" data-v="30-31" data-hl="these are written, that ye might believe that Jesus is the Christ, the Son of God|life through his name"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="31"></blockquote>
+    <h2 class="rise" style="--d:1">Why this book was written</h2>
+    <div class="jn20-flow">
+      <div class="step"><b>Written</b><span>John chose these signs on purpose</span></div>
+      <span class="arrow step">→</span>
+      <div class="step"><b>Believe</b><span>that Jesus is the Christ, the Son of God</span></div>
+      <span class="arrow step">→</span>
+      <div class="step"><b>Life</b><span>through His name</span></div>
+    </div>
+    <p class="note step">Jesus did far more than John wrote down. John picked seven signs, from water made wine to Lazarus raised, and then the greatest sign of all, the empty tomb. Every one of them was chosen for you.</p>
+    <p class="note step">This isn't a book to admire. It's a book to answer. The whole Gospel comes down to one question: <em>will you believe?</em> Whoever believes has life.</p>
+  </div>
+</section>
+
+<!-- ======================= CLOSING ======================= -->
+<section class="slide remember">
+  <div class="inner">
+    <h2 class="rise">Points to remember</h2>
+    <ol class="seeds">
+      <li class="step"><span class="topic">The resurrection</span><span class="seed-q">“He saw, and believed” <cite>20:8</cite></span><span class="take">An open tomb, empty grave clothes, and a risen Lord with scars in His hands.</span></li>
+      <li class="step"><span class="topic">Your past</span><span class="seed-q">“Jesus saith unto her, Mary” <cite>20:16</cite></span><span class="take">He showed Himself first to a woman He'd set free from seven devils. Your past doesn't disqualify you.</span></li>
+      <li class="step"><span class="topic">Fear</span><span class="seed-q">“Peace be unto you” <cite>20:19</cite></span><span class="take">He walks into the locked room with peace, not blame.</span></li>
+      <li class="step"><span class="topic">Sent out</span><span class="seed-q">“Receive ye the Holy Ghost” <cite>20:22</cite></span><span class="take">He sends His people with His peace, His Spirit, and a message of forgiveness.</span></li>
+      <li class="step"><span class="topic">Doubt</span><span class="seed-q">“Be not faithless, but believing” <cite>20:27</cite></span><span class="take">He met Thomas's doubt head on, and Thomas said, “My Lord and my God.”</span></li>
+      <li class="step"><span class="topic">Why John wrote</span><span class="seed-q">“That ye might believe” <cite>20:31</cite></span><span class="take">So that we would believe Jesus is the Christ, the Son of God, and have life through His name.</span></li>
+    </ol>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 1 of 6</p>
+      <span class="topic">The resurrection</span>
+      <h2>What did the disciples find that showed Jesus had risen?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="1" data-hl="the stone taken away from the sepulchre"></blockquote>
+      <blockquote class="quote step" data-q="6-7" data-hl="seeth the linen clothes lie|wrapped together in a place by itself"></blockquote>
+      <blockquote class="quote step" data-q="20" data-hl="he shewed unto them his hands and his side"></blockquote>
+      <blockquote class="quote step"><p>“For I delivered unto you first of all that which I also received, how that Christ died for our sins according to the scriptures; And that he was buried, and that he rose again the third day according to the scriptures:”</p><cite>1 Corinthians 15:3–4</cite></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>The stone was rolled away, and the grave clothes were lying there with no body in them, the head cloth rolled up by itself. No thief leaves a tomb like that. Then Jesus Himself showed them His hands and His side. He was buried, and He rose again the third day.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 2 of 6</p>
+      <span class="topic">Your past</span>
+      <h2>Who saw the risen Jesus first, and what does that tell us?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step"><p>“And certain women, which had been healed of evil spirits and infirmities, Mary called Magdalene, out of whom went seven devils,”</p><cite>Luke 8:2</cite></blockquote>
+      <blockquote class="quote step" data-q="16" data-hl="Jesus saith unto her, Mary"></blockquote>
+      <blockquote class="quote step" data-q="18" data-hl="she had seen the Lord"></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>Mary Magdalene, a woman Jesus had set free from seven devils. He called her by name, and she became the first one to tell the news. Jesus doesn't save His best for the respectable. A dark past doesn't keep you from Him, and the people He's set free often love Him the most.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 3 of 6</p>
+      <span class="topic">Fear</span>
+      <h2>What did Jesus bring into the locked room?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="19" data-hl="for fear of the Jews|Peace be unto you"></blockquote>
+      <blockquote class="quote step" data-q="20" data-hl="Then were the disciples glad, when they saw the Lord"></blockquote>
+      <blockquote class="quote step"><p>“Peace I leave with you, my peace I give unto you: not as the world giveth, give I unto you. Let not your heart be troubled, neither let it be afraid.”</p><cite>John 14:27</cite></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>Peace. The men who had deserted Him were hiding behind a barred door, and He came in anyway. He didn't come with blame. He came with “Peace be unto you,” and their fear turned to gladness. No door you hide behind can keep Him out.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 4 of 6</p>
+      <span class="topic">Sent out</span>
+      <h2>What did Jesus give the men He was sending out?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="21" data-hl="as my Father hath sent me, even so send I you"></blockquote>
+      <blockquote class="quote step" data-q="22" data-hl="Receive ye the Holy Ghost"></blockquote>
+      <blockquote class="quote step"><p>“But ye shall receive power, after that the Holy Ghost is come upon you: and ye shall be witnesses unto me both in Jerusalem, and in all Judaea, and in Samaria, and unto the uttermost part of the earth.”</p><cite>Acts 1:8</cite></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>His peace, His own mission (“as my Father hath sent me”), His Holy Spirit, and a message: whoever believes is forgiven. He doesn't send anybody out empty-handed. Every believer has the Spirit living in him and a story of forgiveness to tell.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 5 of 6</p>
+      <span class="topic">Doubt</span>
+      <h2>How did Jesus treat Thomas and his doubts?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="25" data-hl="I will not believe"></blockquote>
+      <blockquote class="quote step" data-q="27" data-hl="be not faithless, but believing"></blockquote>
+      <blockquote class="quote step" data-q="28"></blockquote>
+      <blockquote class="quote step" data-q="29" data-hl="blessed are they that have not seen, and yet have believed"></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>He came back for him. He answered every one of Thomas's conditions, invited him to touch the scars, and told him to stop doubting and believe. Thomas answered, “My Lord and my God.” Bring your honest questions to Jesus. He's not afraid of them.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 6 of 6</p>
+      <span class="topic">Why John wrote</span>
+      <h2>Why was this Gospel written?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="30"></blockquote>
+      <blockquote class="quote step" data-q="31" data-hl="that ye might believe that Jesus is the Christ, the Son of God|life through his name"></blockquote>
+      <blockquote class="quote step"><p>“In the beginning was the Word, and the Word was with God, and the Word was God.”</p><cite>John 1:1</cite></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>So that we would believe Jesus is the Christ, the Son of God, and by believing have life through His name. John chose every sign and every story for that. The Gospel isn't just information. It's an invitation, and anyone who believes receives life.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide prayer">
+  <div class="inner">
+    <div class="emblem rise"></div>
+    <h2 class="rise">Prayer requests</h2>
+    <p class="ask-line rise" style="--d:1">What can we pray about for you today?</p>
+    <blockquote class="quote rise" style="--d:3"><p>“Peace I leave with you, my peace I give unto you: not as the world giveth, give I unto you. Let not your heart be troubled, neither let it be afraid.”</p><cite>John 14:27</cite></blockquote>
+  </div>
+</section>
+
+</main>
+
+<script>
+// King James Version, John chapter 20
+const V = {
+  1: "The first day of the week cometh Mary Magdalene early, when it was yet dark, unto the sepulchre, and seeth the stone taken away from the sepulchre.",
+  2: "Then she runneth, and cometh to Simon Peter, and to the other disciple, whom Jesus loved, and saith unto them, They have taken away the Lord out of the sepulchre, and we know not where they have laid him.",
+  3: "Peter therefore went forth, and that other disciple, and came to the sepulchre.",
+  4: "So they ran both together: and the other disciple did outrun Peter, and came first to the sepulchre.",
+  5: "And he stooping down, and looking in, saw the linen clothes lying; yet went he not in.",
+  6: "Then cometh Simon Peter following him, and went into the sepulchre, and seeth the linen clothes lie,",
+  7: "And the napkin, that was about his head, not lying with the linen clothes, but wrapped together in a place by itself.",
+  8: "Then went in also that other disciple, which came first to the sepulchre, and he saw, and believed.",
+  9: "For as yet they knew not the scripture, that he must rise again from the dead.",
+  10: "Then the disciples went away again unto their own home.",
+  11: "But Mary stood without at the sepulchre weeping: and as she wept, she stooped down, and looked into the sepulchre,",
+  12: "And seeth two angels in white sitting, the one at the head, and the other at the feet, where the body of Jesus had lain.",
+  13: "And they say unto her, Woman, why weepest thou? She saith unto them, Because they have taken away my Lord, and I know not where they have laid him.",
+  14: "And when she had thus said, she turned herself back, and saw Jesus standing, and knew not that it was Jesus.",
+  15: "Jesus saith unto her, Woman, why weepest thou? whom seekest thou? She, supposing him to be the gardener, saith unto him, Sir, if thou have borne him hence, tell me where thou hast laid him, and I will take him away.",
+  16: "Jesus saith unto her, Mary. She turned herself, and saith unto him, Rabboni; which is to say, Master.",
+  17: "Jesus saith unto her, Touch me not; for I am not yet ascended to my Father: but go to my brethren, and say unto them, I ascend unto my Father, and your Father; and to my God, and your God.",
+  18: "Mary Magdalene came and told the disciples that she had seen the Lord, and that he had spoken these things unto her.",
+  19: "Then the same day at evening, being the first day of the week, when the doors were shut where the disciples were assembled for fear of the Jews, came Jesus and stood in the midst, and saith unto them, Peace be unto you.",
+  20: "And when he had so said, he shewed unto them his hands and his side. Then were the disciples glad, when they saw the Lord.",
+  21: "Then said Jesus to them again, Peace be unto you: as my Father hath sent me, even so send I you.",
+  22: "And when he had said this, he breathed on them, and saith unto them, Receive ye the Holy Ghost:",
+  23: "Whose soever sins ye remit, they are remitted unto them; and whose soever sins ye retain, they are retained.",
+  24: "But Thomas, one of the twelve, called Didymus, was not with them when Jesus came.",
+  25: "The other disciples therefore said unto him, We have seen the Lord. But he said unto them, Except I shall see in his hands the print of the nails, and put my finger into the print of the nails, and thrust my hand into his side, I will not believe.",
+  26: "And after eight days again his disciples were within, and Thomas with them: then came Jesus, the doors being shut, and stood in the midst, and said, Peace be unto you.",
+  27: "Then saith he to Thomas, reach hither thy finger, and behold my hands; and reach hither thy hand, and thrust it into my side: and be not faithless, but believing.",
+  28: "And Thomas answered and said unto him, My Lord and my God.",
+  29: "Jesus saith unto him, Thomas, because thou hast seen me, thou hast believed: blessed are they that have not seen, and yet have believed.",
+  30: "And many other signs truly did Jesus in the presence of his disciples, which are not written in this book:",
+  31: "But these are written, that ye might believe that Jesus is the Christ, the Son of God; and that believing ye might have life through his name."
+};
+const BOOK = "John 20";
+</script>
+<script src="../assets/deck.js"></script>
+</body>
+</html>

@@ -1,0 +1,640 @@
+<!doctype html>
+<html lang="en" data-theme="scribe">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>John 21</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="../assets/fonts.css">
+<link rel="stylesheet" href="../assets/deck.css">
+<link rel="stylesheet" href="../assets/themes.css">
+<style>
+/* A small map of the lake */
+.jn21-map .lake { fill: color-mix(in srgb, var(--cool) 30%, transparent); stroke: var(--cool); stroke-width: 3; }
+.jn21-map .river { fill: none; stroke: var(--cool); stroke-width: 3; }
+.jn21-map .town { fill: var(--accent); }
+.jn21-map .here { fill: var(--accent-hot); }
+
+/* A long night of empty nets, then morning */
+.jn21-night { display: grid; grid-template-columns: repeat(9, 1fr); gap: 5px; margin: .4em 0 1.1em; }
+.jn21-night div { text-align: center; padding: .5em .1em; border-radius: 8px; border: 1.5px dashed var(--line-strong); background: var(--surface); opacity: 0; transform: translateY(8px); transition: opacity .5s ease, transform .5s ease; transition-delay: calc(var(--k) * 160ms + 300ms); }
+.slide.active .jn21-night div { opacity: 1; transform: none; }
+.jn21-night b { display: block; font: 400 clamp(1.3rem, 1rem + 1.4vw, 2.2rem)/1.1 var(--serif); color: var(--ink-soft); }
+.jn21-night span { font-size: clamp(.65rem, .6rem + .25vw, .85rem); color: var(--ink-soft); }
+.jn21-night .dawn { border: 2px solid var(--accent); background: color-mix(in srgb, var(--accent) 14%, transparent); }
+.jn21-night .dawn b { color: var(--accent-hot); }
+
+/* The boat: an empty net on the left, then a full one on the right */
+.jn21-catch .water { fill: color-mix(in srgb, var(--cool) 22%, transparent); }
+.jn21-catch .wave { fill: none; stroke: var(--cool); stroke-width: 3; }
+.jn21-catch .hull { fill: var(--leather); stroke: var(--leather-light); stroke-width: 3; }
+.jn21-catch .mast { stroke: var(--leather-light); stroke-width: 5; }
+.jn21-catch .net { fill: none; stroke: var(--ink-soft); stroke-width: 2; stroke-dasharray: 5 5; }
+.jn21-catch .left { transition: opacity 1s ease; }
+.jn21-catch .right { opacity: 0; transition: opacity 1s ease; }
+.jn21-catch .fish { fill: var(--warm); opacity: 0; transition: opacity .4s ease; transition-delay: calc(var(--k) * 45ms + .8s); }
+.slide:has(.jn21-cast.on) .jn21-catch .left { opacity: .25; }
+.slide:has(.jn21-cast.on) .jn21-catch .right { opacity: 1; }
+.slide:has(.jn21-cast.on) .jn21-catch .fish { opacity: 1; }
+
+/* 153 fish, counted (17 x 9) */
+@property --jn21-n { syntax: '<integer>'; inherits: false; initial-value: 0; }
+.jn21-haul { display: grid; grid-template-columns: repeat(17, 1fr); gap: 4px 5px; margin: .3em 0 .9em; max-width: 44rem; }
+.jn21-haul i { aspect-ratio: 2 / 1; background: var(--cool); clip-path: polygon(0 50%, 18% 12%, 55% 0, 74% 28%, 100% 0, 92% 50%, 100% 100%, 74% 72%, 55% 100%, 18% 88%); opacity: 0; transition: opacity .3s ease; transition-delay: calc(var(--k) * 16ms + 300ms); }
+.slide.active .jn21-haul i { opacity: 1; }
+.jn21-count { font: 300 clamp(2.6rem, 1.6rem + 5vw, 6rem)/1 var(--serif); color: var(--accent-hot); counter-reset: jn21 var(--jn21-n); }
+.jn21-count::before { content: counter(jn21); }
+.slide.active .jn21-count { animation: rise .9s cubic-bezier(.2,.7,.2,1) .29s both, jn21-tally 2.6s .3s linear forwards; }
+@keyframes jn21-tally { to { --jn21-n: 153; } }
+.jn21-count small { font: 400 clamp(1rem, .9rem + .5vw, 1.35rem) var(--sans); color: var(--ink-soft); margin-left: .4em; }
+
+/* Three questions: which Greek word for love each man used */
+.jn21-loves { display: grid; grid-template-columns: auto repeat(3, 1fr); gap: 6px; margin: .4em 0 1em; text-align: center; align-items: stretch; }
+.jn21-loves > span { padding: .45em .4em; border-radius: 8px; font-size: clamp(.85rem, .78rem + .4vw, 1.15rem); }
+.jn21-loves .h { font-weight: 700; color: var(--ink-soft); }
+.jn21-loves .row { text-align: right; font-weight: 700; color: var(--ink-soft); align-self: center; }
+.jn21-loves .gk { font-size: clamp(1.1rem, .9rem + .9vw, 1.6rem); border: 1.5px solid var(--line-strong); background: var(--surface); }
+.jn21-loves .feed { font-family: var(--serif); background: var(--surface); border: 1.5px dashed var(--line-strong); }
+.jn21-loves .shift { transition: border-color .8s ease, background-color .8s ease, box-shadow .8s ease; }
+.slide:has(.jn21-third.on) .jn21-loves .shift { border-color: var(--accent); background: color-mix(in srgb, var(--accent) 16%, transparent); box-shadow: 0 0 0 3px color-mix(in srgb, var(--accent) 18%, transparent); }
+
+/* Peter's road: down into failure, and back up */
+.jn21-valley .base { stroke: var(--line); stroke-width: 2; }
+.jn21-valley .path { fill: none; stroke: var(--accent); stroke-width: 5; stroke-linecap: round; stroke-linejoin: round; stroke-dasharray: 1; stroke-dashoffset: 1; transition: stroke-dashoffset 3.2s ease .4s; }
+.slide.active .jn21-valley .path { stroke-dashoffset: 0; }
+.jn21-valley .pt { opacity: 0; transition: opacity .6s ease; transition-delay: calc(var(--k) * 450ms + .5s); }
+.slide.active .jn21-valley .pt { opacity: 1; }
+.jn21-valley .pt circle { fill: var(--bg); stroke: var(--accent); stroke-width: 3; }
+.jn21-valley .pt.low circle { stroke: var(--danger); }
+.jn21-valley .pt.now circle { fill: var(--accent); }
+.jn21-valley text { font-size: 15px; }
+.jn21-valley .ref { fill: var(--ink-soft); font-size: 13px; }
+@media (max-width: 600px) { .jn21-valley text { font-size: 22px; } .jn21-valley .ref { display: none; } }
+
+/* So many books the world couldn't hold them */
+.jn21-shelf { display: flex; flex-wrap: nowrap; align-items: flex-end; gap: 3px; height: clamp(100px, 18vh, 180px); overflow: hidden; margin: .4em 0 1em; padding-bottom: 2px; border-bottom: 3px solid var(--line-strong); -webkit-mask-image: linear-gradient(90deg, var(--ink) 55%, transparent); mask-image: linear-gradient(90deg, var(--ink) 55%, transparent); }
+.jn21-shelf i { flex: none; width: clamp(10px, 1.6vw, 20px); height: var(--h, 60%); border-radius: 2px 2px 0 0; background: var(--surface-2); border: 1px solid var(--line-strong); opacity: 0; transform: translateY(10px); transition: opacity .4s ease, transform .4s ease; transition-delay: calc(var(--k) * 40ms + 900ms); }
+.slide.active .jn21-shelf i { opacity: 1; transform: none; }
+.jn21-shelf .john { width: clamp(26px, 3.2vw, 44px); height: 92%; background: var(--accent); border-color: var(--accent); color: var(--on-accent); writing-mode: vertical-rl; font: 700 clamp(.8rem, .7rem + .4vw, 1.05rem) var(--sans); display: grid; place-items: center; font-style: normal; transition-delay: .2s; }
+
+/* Twenty-one chapters, lit one by one */
+.jn21-track span { opacity: 0; transition: opacity .4s ease; transition-delay: calc(var(--k) * 90ms + 300ms); }
+.slide.active .jn21-track span { opacity: 1; }
+.jn21-track span:last-child { box-shadow: 0 0 0 4px color-mix(in srgb, var(--accent) 25%, transparent); }
+</style>
+</head>
+<body>
+<main class="deck" id="deck">
+
+<!-- ======================= OPENING ======================= -->
+<section class="slide title">
+  <div class="inner">
+    <div class="emblem rise"></div>
+    <h1 class="rise" style="--d:1">John 21</h1>
+    <p class="sub rise" style="--d:3">Follow thou me</p>
+    <p class="tag rise" style="--d:5">Breakfast on the shore. A net full of fish, a fire of coals, and a fisherman who denied his Lord three times is asked three times, “Lovest thou me?”</p>
+  </div>
+</section>
+
+<section class="slide watch">
+  <div class="inner">
+    <h2 class="rise">Things to watch for</h2>
+    <p class="lede rise" style="--d:1">Keep these questions in the back of your mind as we read. We'll come back to every one of them at the end.</p>
+    <ol class="seeds">
+      <li class="step"><span class="topic">Going back</span><span class="seed-q">What happened when the disciples went back to their old work?</span></li>
+      <li class="step"><span class="topic">Grace</span><span class="seed-q">How did Jesus treat the men who had let Him down?</span></li>
+      <li class="step"><span class="topic">Restoration</span><span class="seed-q">How did Jesus restore Peter after his three denials?</span></li>
+      <li class="step"><span class="topic">Love</span><span class="seed-q">What does Jesus ask of a man who loves Him?</span></li>
+      <li class="step"><span class="topic">Comparison</span><span class="seed-q">What should we do when we start comparing ourselves to others?</span></li>
+      <li class="step"><span class="topic">The Word</span><span class="seed-q">Why can we trust what John wrote?</span></li>
+    </ol>
+  </div>
+</section>
+
+<!-- ======================= PART ONE: NOTHING ALL NIGHT ======================= -->
+<section class="slide part">
+  <div class="inner">
+    <p class="part-n rise">Part one</p>
+    <h2 class="rise" style="--d:1">Nothing all night</h2>
+    <p class="range rise" style="--d:2">Verses 1–8</p>
+    <p class="hook rise" style="--d:4">Back on the boat, back in the dark, and the net comes up empty.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="1-3" data-hl="the sea of Tiberias|I go a fishing|that night they caught nothing"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="1" data-hl="the sea of Tiberias"></blockquote>
+    <div class="split">
+      <div class="stage">
+        <svg class="jn21-map" viewBox="0 0 420 430" role="img" aria-label="Map of the Sea of Galilee. The Jordan River flows in at the north and out at the south. Bethsaida and Capernaum are on the north shore, Magdala and the city of Tiberias on the west shore. Jerusalem is about seventy miles to the south.">
+          <path class="river" d="M232 10 Q226 40 236 62"/>
+          <path class="river" d="M226 352 Q236 385 222 420"/>
+          <path class="lake" d="M220 60 Q285 58 300 120 Q318 200 290 270 Q265 345 222 352 Q178 345 168 280 Q150 205 160 140 Q172 66 220 60 Z"/>
+          <text x="232" y="190" text-anchor="middle" font-size="17" class="serif" style="fill:var(--cool)">Sea of Galilee</text>
+          <text x="232" y="212" text-anchor="middle" font-size="15" class="serif" style="fill:var(--cool)">(Sea of Tiberias)</text>
+          <circle class="town" cx="248" cy="58" r="6"/><text x="258" y="50" font-size="16">Bethsaida</text>
+          <circle class="town" cx="180" cy="86" r="6"/><text x="170" y="80" text-anchor="end" font-size="16">Capernaum</text>
+          <circle class="town" cx="160" cy="160" r="6"/><text x="150" y="165" text-anchor="end" font-size="16">Magdala</text>
+          <circle class="here" cx="164" cy="236" r="8"/><text x="152" y="242" text-anchor="end" font-size="16" font-weight="700" style="fill:var(--accent-hot)">Tiberias</text>
+          <text x="244" y="30" font-size="14" style="fill:var(--ink-soft)">Jordan River</text>
+          <text x="240" y="410" font-size="14" style="fill:var(--ink-soft)">Jerusalem, about 70 miles south ↓</text>
+          <line x1="330" y1="80" x2="330" y2="330" stroke-width="2" style="stroke:var(--line-strong)"/>
+          <text x="340" y="210" font-size="14" style="fill:var(--ink-soft)">about</text>
+          <text x="340" y="228" font-size="14" style="fill:var(--ink-soft)">13 miles</text>
+        </svg>
+      </div>
+      <div>
+        <h2 class="rise" style="--d:1">Back home in Galilee</h2>
+        <p class="note rise" style="--d:2">The Sea of Tiberias is the Sea of Galilee. It took that name from the city Herod built on its shore in honor of the Roman emperor Tiberius.</p>
+        <p class="note step">The disciples went north because they'd been told to. The angel's message on Easter morning even named Peter:</p>
+        <blockquote class="quote step"><p>“But go your way, tell his disciples and Peter that he goeth before you into Galilee: there shall ye see him, as he said unto you.”</p><cite>Mark 16:7</cite></blockquote>
+        <p class="note step">Seven men are here: Peter, Thomas, Nathanael, James and John, and two more. Most of them had grown up on this water.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="3" data-hl="I go a fishing|that night they caught nothing"></blockquote>
+    <h2 class="rise" style="--d:1">“I go a fishing”</h2>
+    <div class="jn21-night" aria-label="Eight night hours with no fish, then morning.">
+      <div style="--k:0"><b>0</b><span>dusk</span></div>
+      <div style="--k:1"><b>0</b><span>&nbsp;</span></div>
+      <div style="--k:2"><b>0</b><span>&nbsp;</span></div>
+      <div style="--k:3"><b>0</b><span>midnight</span></div>
+      <div style="--k:4"><b>0</b><span>&nbsp;</span></div>
+      <div style="--k:5"><b>0</b><span>&nbsp;</span></div>
+      <div style="--k:6"><b>0</b><span>&nbsp;</span></div>
+      <div style="--k:7"><b>0</b><span>before dawn</span></div>
+      <div class="dawn" style="--k:9"><b>☀</b><span>morning</span></div>
+    </div>
+    <p class="note rise" style="--d:2">Fishermen on this lake worked at night. Fishing wasn't a sin, and they had to eat. But notice who goes back first: Peter, the man who had failed the worst. When a man is carrying shame, he drifts back to the old life he knows.</p>
+    <p class="note step">They did everything they knew how to do, all night long, and caught nothing.</p>
+    <blockquote class="quote step"><p>“I am the vine, ye are the branches: He that abideth in me, and I in him, the same bringeth forth much fruit: for without me ye can do nothing.”</p><cite>John 15:5</cite></blockquote>
+  </div>
+</section>
+
+<section class="slide verse" data-v="4-6" data-hl="Jesus stood on the shore|Children, have ye any meat?|They answered him, No.|Cast the net on the right side of the ship"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="5" data-hl="Children, have ye any meat?|They answered him, No."></blockquote>
+    <div class="split">
+      <div class="stage">
+        <svg class="jn21-catch" viewBox="0 0 600 300" role="img" aria-label="A fishing boat. The net on the left side hangs empty. Then the net goes over the right side and fills with fish.">
+          <rect class="water" x="0" y="118" width="600" height="182"/>
+          <path class="wave" d="M0 118 Q25 110 50 118 T100 118 T150 118 T200 118 T250 118 T300 118 T350 118 T400 118 T450 118 T500 118 T550 118 T600 118"/>
+          <line class="mast" x1="300" y1="10" x2="300" y2="100"/>
+          <path class="hull" d="M190 96 L410 96 Q400 140 360 140 L240 140 Q200 140 190 96 Z"/>
+          <g class="left">
+            <path class="net" d="M200 110 Q150 140 130 200 Q160 250 190 210 Q200 170 214 128"/>
+            <text x="110" y="270" text-anchor="middle" font-size="16" style="fill:var(--ink-soft)">left side: all night, nothing</text>
+          </g>
+          <g class="right">
+            <path class="net" d="M396 110 Q470 130 500 200 Q470 268 410 240 Q396 190 386 130" style="stroke:var(--accent)"/>
+            <text x="470" y="290" text-anchor="middle" font-size="16" font-weight="700" style="fill:var(--accent-hot)">right side: too many to pull in</text>
+          </g>
+          <g>
+            <ellipse class="fish" style="--k:0" cx="420" cy="150" rx="11" ry="5"/><ellipse class="fish" style="--k:1" cx="445" cy="160" rx="11" ry="5"/><ellipse class="fish" style="--k:2" cx="468" cy="175" rx="11" ry="5"/>
+            <ellipse class="fish" style="--k:3" cx="415" cy="172" rx="11" ry="5"/><ellipse class="fish" style="--k:4" cx="440" cy="183" rx="11" ry="5"/><ellipse class="fish" style="--k:5" cx="480" cy="198" rx="11" ry="5"/>
+            <ellipse class="fish" style="--k:6" cx="420" cy="196" rx="11" ry="5"/><ellipse class="fish" style="--k:7" cx="452" cy="205" rx="11" ry="5"/><ellipse class="fish" style="--k:8" cx="478" cy="220" rx="11" ry="5"/>
+            <ellipse class="fish" style="--k:9" cx="425" cy="218" rx="11" ry="5"/><ellipse class="fish" style="--k:10" cx="455" cy="228" rx="11" ry="5"/><ellipse class="fish" style="--k:11" cx="430" cy="238" rx="11" ry="5"/>
+            <ellipse class="fish" style="--k:12" cx="462" cy="244" rx="11" ry="5"/><ellipse class="fish" style="--k:13" cx="410" cy="150" rx="9" ry="4"/><ellipse class="fish" style="--k:14" cx="460" cy="190" rx="9" ry="4"/>
+            <ellipse class="fish" style="--k:15" cx="436" cy="205" rx="9" ry="4"/><ellipse class="fish" style="--k:16" cx="485" cy="236" rx="9" ry="4"/><ellipse class="fish" style="--k:17" cx="444" cy="252" rx="9" ry="4"/>
+          </g>
+        </svg>
+      </div>
+      <div>
+        <h2 class="rise" style="--d:1">“Have ye any meat?”</h2>
+        <p class="note rise" style="--d:2">“Children” here is friendly, like calling out <em>“Lads!”</em> And “meat” just means food. He's asking a question He already knows the answer to.</p>
+        <p class="note step">He wanted them to say it out loud: <em>“No.”</em> Empty hands, honestly admitted. That's where help starts.</p>
+        <p class="note step jn21-cast">Then one command, the same lake and the same net, a few feet over: <em>“Cast the net on the right side.”</em> And the net is suddenly too full to pull in.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="6" data-hl="they were not able to draw it for the multitude of fishes"></blockquote>
+    <h2 class="rise" style="--d:1">This had happened before</h2>
+    <div class="pair">
+      <div class="scroll rise" style="--d:2"><p class="ref">Luke 5:5, the day Jesus called Peter</p><p class="kjv">And Simon answering said unto him, Master, <mark>we have toiled all the night, and have taken nothing</mark>: nevertheless at thy word I will let down the net.</p></div>
+      <div class="scroll step"><p class="ref">John 21:3, 6, three years later</p><p class="kjv"><mark>that night they caught nothing</mark> … Cast the net on the right side of the ship, and ye shall find.</p></div>
+    </div>
+    <p class="note step">At the start, a night of nothing, then a word from Jesus, then more fish than the nets could hold. That was the day He said, “Follow me.” Now it happens again, on purpose.</p>
+    <p class="note step">Jesus is taking Peter back to the beginning. It's as if He's saying, <em>“Remember when I first called you? I still mean it.”</em></p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="7-8" data-hl="It is the Lord|did cast himself into the sea|two hundred cubits"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="7" data-hl="It is the Lord|did cast himself into the sea"></blockquote>
+    <h2 class="rise" style="--d:1">John sees, Peter jumps</h2>
+    <p class="note rise" style="--d:2">John is the first to recognize Him. Peter is the first to get to Him. He'd been stripped down for work, so he threw on his outer coat and went over the side.</p>
+    <div class="math step">
+      <div><b>200 cubits</b><span>from the boat to shore</span></div>
+      <div><b>≈ 300 feet</b><span>a cubit is about 18 inches</span></div>
+      <div><b>≈ 100 yards</b><span>the length of a football field</span></div>
+    </div>
+    <p class="note step">This is the same man who had denied Him three times. He didn't hang back and wait to be sure he was welcome. Guilt says, <em>stay away from Him</em>. Peter swam straight toward Him. That's the right instinct.</p>
+  </div>
+</section>
+
+<!-- ======================= PART TWO: COME AND DINE ======================= -->
+<section class="slide part">
+  <div class="inner">
+    <p class="part-n rise">Part two</p>
+    <h2 class="rise" style="--d:1">Come and dine</h2>
+    <p class="range rise" style="--d:2">Verses 9–14</p>
+    <p class="hook rise" style="--d:4">The risen Lord cooks breakfast for the men who ran.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="9-11" data-hl="a fire of coals there|hundred and fifty and three|yet was not the net broken"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="9" data-hl="a fire of coals"></blockquote>
+    <h2 class="rise" style="--d:1">The second fire of coals</h2>
+    <p class="note rise" style="--d:2">The Greek word for “a fire of coals,” <span class="gk">anthrakia</span>, shows up only twice in the whole New Testament:</p>
+    <div class="pair">
+      <div class="scroll rise" style="--d:3"><p class="ref">John 18:18, the night of the denials</p><p class="kjv">And the servants and officers stood there, who had made <mark>a fire of coals</mark>; for it was cold: and they warmed themselves: and Peter stood with them, and warmed himself.</p></div>
+      <div class="scroll step"><p class="ref">John 21:9, this morning</p><p class="kjv">As soon then as they were come to land, they saw <mark>a fire of coals</mark> there, and fish laid thereon, and bread.</p></div>
+    </div>
+    <p class="note step">The last time Peter stood by a charcoal fire, he swore he didn't know Jesus. Now Jesus has built one Himself. He brings Peter back to the place of his worst failure, not to shame him, but to heal him there.</p>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="11" data-hl="hundred and fifty and three|yet was not the net broken"></blockquote>
+    <p class="jn21-count rise" style="--d:1"><small>great fishes</small></p>
+    <div class="jn21-haul" aria-label="One hundred fifty-three fish in seventeen rows of nine.">
+      <i style="--k:0"></i><i style="--k:1"></i><i style="--k:2"></i><i style="--k:3"></i><i style="--k:4"></i><i style="--k:5"></i><i style="--k:6"></i><i style="--k:7"></i><i style="--k:8"></i><i style="--k:9"></i><i style="--k:10"></i><i style="--k:11"></i><i style="--k:12"></i><i style="--k:13"></i><i style="--k:14"></i><i style="--k:15"></i><i style="--k:16"></i>
+      <i style="--k:17"></i><i style="--k:18"></i><i style="--k:19"></i><i style="--k:20"></i><i style="--k:21"></i><i style="--k:22"></i><i style="--k:23"></i><i style="--k:24"></i><i style="--k:25"></i><i style="--k:26"></i><i style="--k:27"></i><i style="--k:28"></i><i style="--k:29"></i><i style="--k:30"></i><i style="--k:31"></i><i style="--k:32"></i><i style="--k:33"></i>
+      <i style="--k:34"></i><i style="--k:35"></i><i style="--k:36"></i><i style="--k:37"></i><i style="--k:38"></i><i style="--k:39"></i><i style="--k:40"></i><i style="--k:41"></i><i style="--k:42"></i><i style="--k:43"></i><i style="--k:44"></i><i style="--k:45"></i><i style="--k:46"></i><i style="--k:47"></i><i style="--k:48"></i><i style="--k:49"></i><i style="--k:50"></i>
+      <i style="--k:51"></i><i style="--k:52"></i><i style="--k:53"></i><i style="--k:54"></i><i style="--k:55"></i><i style="--k:56"></i><i style="--k:57"></i><i style="--k:58"></i><i style="--k:59"></i><i style="--k:60"></i><i style="--k:61"></i><i style="--k:62"></i><i style="--k:63"></i><i style="--k:64"></i><i style="--k:65"></i><i style="--k:66"></i><i style="--k:67"></i>
+      <i style="--k:68"></i><i style="--k:69"></i><i style="--k:70"></i><i style="--k:71"></i><i style="--k:72"></i><i style="--k:73"></i><i style="--k:74"></i><i style="--k:75"></i><i style="--k:76"></i><i style="--k:77"></i><i style="--k:78"></i><i style="--k:79"></i><i style="--k:80"></i><i style="--k:81"></i><i style="--k:82"></i><i style="--k:83"></i><i style="--k:84"></i>
+      <i style="--k:85"></i><i style="--k:86"></i><i style="--k:87"></i><i style="--k:88"></i><i style="--k:89"></i><i style="--k:90"></i><i style="--k:91"></i><i style="--k:92"></i><i style="--k:93"></i><i style="--k:94"></i><i style="--k:95"></i><i style="--k:96"></i><i style="--k:97"></i><i style="--k:98"></i><i style="--k:99"></i><i style="--k:100"></i><i style="--k:101"></i>
+      <i style="--k:102"></i><i style="--k:103"></i><i style="--k:104"></i><i style="--k:105"></i><i style="--k:106"></i><i style="--k:107"></i><i style="--k:108"></i><i style="--k:109"></i><i style="--k:110"></i><i style="--k:111"></i><i style="--k:112"></i><i style="--k:113"></i><i style="--k:114"></i><i style="--k:115"></i><i style="--k:116"></i><i style="--k:117"></i><i style="--k:118"></i>
+      <i style="--k:119"></i><i style="--k:120"></i><i style="--k:121"></i><i style="--k:122"></i><i style="--k:123"></i><i style="--k:124"></i><i style="--k:125"></i><i style="--k:126"></i><i style="--k:127"></i><i style="--k:128"></i><i style="--k:129"></i><i style="--k:130"></i><i style="--k:131"></i><i style="--k:132"></i><i style="--k:133"></i><i style="--k:134"></i><i style="--k:135"></i>
+      <i style="--k:136"></i><i style="--k:137"></i><i style="--k:138"></i><i style="--k:139"></i><i style="--k:140"></i><i style="--k:141"></i><i style="--k:142"></i><i style="--k:143"></i><i style="--k:144"></i><i style="--k:145"></i><i style="--k:146"></i><i style="--k:147"></i><i style="--k:148"></i><i style="--k:149"></i><i style="--k:150"></i><i style="--k:151"></i><i style="--k:152"></i>
+    </div>
+    <p class="note step">Somebody counted. That's what fishermen do, and it's what an eyewitness remembers. People have guessed at hidden meanings in 153 for centuries. John doesn't give one, so we won't either.</p>
+    <p class="note step">What John does point out: <em>the net didn't break</em>. The first time, “their net brake” (Luke 5:6). This time it held every one. What Jesus gathers, He keeps.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="12-14" data-hl="Come and dine|knowing that it was the Lord|taketh bread, and giveth them|the third time"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="12" data-hl="Come and dine"></blockquote>
+    <h2 class="rise" style="--d:1">Breakfast is ready</h2>
+    <p class="note rise" style="--d:2">Before they ever landed, He already had fish on the fire and bread ready. He didn't need their catch. He asked them to bring some anyway, and then He served them with His own hands.</p>
+    <p class="note step">This is the risen Son of God, cooking for men who had run out on Him. No speech about where they were that night. Just <em>“Come and dine.”</em></p>
+    <blockquote class="quote step"><p>“It is of the LORD’S mercies that we are not consumed, because his compassions fail not. They are new every morning: great is thy faithfulness.”</p><cite>Lamentations 3:22–23</cite></blockquote>
+    <ol class="signs step">
+      <li><b>The locked room</b>John 20:19</li>
+      <li><b>Thomas there too</b>John 20:26</li>
+      <li class="now"><b>Breakfast on the shore</b>John 21:14, “the third time”</li>
+    </ol>
+  </div>
+</section>
+
+<!-- ======================= PART THREE: LOVEST THOU ME? ======================= -->
+<section class="slide part">
+  <div class="inner">
+    <p class="part-n rise">Part three</p>
+    <h2 class="rise" style="--d:1">Lovest thou me?</h2>
+    <p class="range rise" style="--d:2">Verses 15–19</p>
+    <p class="hook rise" style="--d:4">Three denials by a fire. Three questions by a fire.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="15" data-hl="lovest thou me more than these?|Feed my lambs"></section>
+<section class="slide verse" data-v="16-17" data-hl="the second time|Peter was grieved because he said unto him the third time|Lord, thou knowest all things|Feed my sheep"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="17" data-hl="Peter was grieved because he said unto him the third time"></blockquote>
+    <h2 class="rise" style="--d:1">One question for every denial</h2>
+    <div class="match" style="--n:3" aria-label="Three denials by a fire in John 18, matched by three questions by a fire in John 21.">
+      <div class="a rise" style="--d:2"><span class="tag">by a fire, John 18</span><span class="w">“I am not.” <small>18:17</small></span><span class="w">“I am not.” <small>18:25</small></span><span class="w">“Peter then denied again” <small>18:27</small></span></div>
+      <div class="step"><span></span><span class="link">answered</span><span class="link">answered</span><span class="link">answered</span></div>
+      <div class="b step"><span class="tag">by a fire, John 21</span><span class="w">“Lovest thou me?” <small>21:15</small></span><span class="w">“Lovest thou me?” <small>21:16</small></span><span class="w">“Lovest thou me?” <small>21:17</small></span></div>
+    </div>
+    <p class="note step">Jesus didn't pretend the denials never happened. He didn't make Peter grovel either. He gave him three chances to say out loud what he'd once denied out loud. Peter was hurt by the third question, because he knew exactly what it matched.</p>
+    <blockquote class="quote step"><p>“And Peter remembered the word of Jesus, which said unto him, Before the cock crow, thou shalt deny me thrice. And he went out, and wept bitterly.”</p><cite>Matthew 26:75</cite></blockquote>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="15" data-hl="lovest thou me more than these?"></blockquote>
+    <h2 class="rise" style="--d:1">Two words for love</h2>
+    <p class="note rise" style="--d:2">English has one word here. The Greek has two, <span class="gk">agapaō</span> and <span class="gk">phileō</span>, and John uses both:</p>
+    <div class="jn21-loves rise" style="--d:3" aria-label="First and second time, Jesus asks with agapao and Peter answers with phileo. The third time Jesus asks with phileo, and Peter answers with phileo.">
+      <span></span><span class="h">1st · v.15</span><span class="h">2nd · v.16</span><span class="h">3rd · v.17</span>
+      <span class="row">Jesus asks</span><span class="gk">agapaō</span><span class="gk">agapaō</span><span class="gk shift">phileō</span>
+      <span class="row">Peter says</span><span class="gk">phileō</span><span class="gk">phileō</span><span class="gk">phileō</span>
+      <span class="row">Jesus says</span><span class="feed">Feed my lambs</span><span class="feed">Feed my sheep</span><span class="feed">Feed my sheep</span>
+    </div>
+    <p class="note step jn21-third">Many teachers see something here: Jesus asks for the highest love, and the humbled Peter only claims to love Him as a dear friend, until Jesus comes down to Peter's word. Others point out that John uses the two words interchangeably elsewhere (both are used of the Father loving the Son, 3:35 and 5:20). Be careful not to build too much on it.</p>
+    <p class="note step">What's certain is in the text: three questions, three answers, three charges. And “more than these” recalls Peter's old boast: <em>“Though all men shall be offended because of thee, yet will I never be offended”</em> (Matthew 26:33). No more boasting now. Just, <em>“Lord, thou knowest all things.”</em></p>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="17" data-hl="Feed my sheep"></blockquote>
+    <h2 class="rise" style="--d:1">Peter's road down and back up</h2>
+    <div class="stage">
+      <svg class="jn21-valley" viewBox="0 0 680 310" role="img" aria-label="A line that runs from Peter's boast down through his denials and tears, then climbs back up through the angel naming him, Jesus restoring him, Peter preaching at Pentecost, and Peter writing to feed the flock.">
+        <line class="base" x1="20" y1="150" x2="660" y2="150"/>
+        <path class="path" pathLength="1" d="M40 60 L140 170 L230 250 L330 200 L430 120 L530 80 L630 40"/>
+        <g class="pt" style="--k:0"><circle cx="40" cy="60" r="9"/><text x="26" y="40">“I will never”</text><text class="ref" x="26" y="20">Matt. 26:33</text></g>
+        <g class="pt low" style="--k:1"><circle cx="140" cy="170" r="9"/><text x="126" y="180" text-anchor="end">denied 3×</text><text class="ref" x="126" y="198" text-anchor="end">John 18</text></g>
+        <g class="pt low" style="--k:2"><circle cx="230" cy="250" r="9"/><text x="230" y="280" text-anchor="middle">wept bitterly</text><text class="ref" x="230" y="298" text-anchor="middle">Matt. 26:75</text></g>
+        <g class="pt" style="--k:3"><circle cx="330" cy="200" r="9"/><text x="342" y="226">“and Peter”</text><text class="ref" x="342" y="244">Mark 16:7</text></g>
+        <g class="pt now" style="--k:4"><circle cx="430" cy="120" r="10"/><text x="430" y="94" text-anchor="middle" font-weight="700" style="fill:var(--accent-hot)">“Feed my sheep”</text><text class="ref" x="442" y="140">John 21</text></g>
+        <g class="pt" style="--k:5"><circle cx="530" cy="80" r="9"/><text x="544" y="108">Pentecost</text><text class="ref" x="540" y="124">Acts 2</text></g>
+        <g class="pt" style="--k:6"><circle cx="630" cy="40" r="9"/><text x="650" y="20" text-anchor="end">“Feed the flock”</text><text class="ref" x="650" y="64" text-anchor="end">1 Pet. 5:2</text></g>
+      </svg>
+    </div>
+    <p class="note step">Jesus didn't just forgive Peter and leave him on the bench. He handed him a job: <em>take care of My people.</em> Years later Peter passed the same charge on:</p>
+    <blockquote class="quote step"><p>“Feed the flock of God which is among you, taking the oversight thereof, not by constraint, but willingly; not for filthy lucre, but of a ready mind;”</p><cite>1 Peter 5:2</cite></blockquote>
+    <p class="note step">Your worst failure doesn't have to be the end of your story. A man who's been restored is often the one best fit to help the next man up.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="18-19" data-hl="another shall gird thee|signifying by what death he should glorify God|Follow me"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="19" data-hl="signifying by what death he should glorify God|Follow me"></blockquote>
+    <h2 class="rise" style="--d:1">“Follow me,” again</h2>
+    <p class="note rise" style="--d:2">“Stretch forth thy hands … another shall gird thee” points to Peter's own death. Early church writers say he was crucified in Rome, about thirty years later. Peter knew it was coming:</p>
+    <blockquote class="quote rise" style="--d:3"><p>“Knowing that shortly I must put off this my tabernacle, even as our Lord Jesus Christ hath shewed me.”</p><cite>2 Peter 1:14</cite></blockquote>
+    <div class="pair">
+      <div class="scroll step"><p class="ref">Matthew 4:19, by this same sea, at the start</p><p class="kjv">And he saith unto them, <mark>Follow me</mark>, and I will make you fishers of men.</p></div>
+      <div class="scroll step"><p class="ref">John 21:19, by this same sea, at the end</p><p class="kjv">This spake he, signifying by what death he should glorify God. And when he had spoken this, he saith unto him, <mark>Follow me</mark>.</p></div>
+    </div>
+    <p class="note step">The first “Follow me” was an invitation. This one comes after Peter knows his own weakness and knows where the road leads. Same two words. A man who has failed and been forgiven hears them differently.</p>
+  </div>
+</section>
+
+<!-- ======================= PART FOUR: FOLLOW THOU ME ======================= -->
+<section class="slide part">
+  <div class="inner">
+    <p class="part-n rise">Part four</p>
+    <h2 class="rise" style="--d:1">What is that to thee?</h2>
+    <p class="range rise" style="--d:2">Verses 20–25</p>
+    <p class="hook rise" style="--d:4">Keep your eyes on your own road.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="20-23" data-hl="Lord, and what shall this man do?|what is that to thee? follow thou me|yet Jesus said not unto him, He shall not die"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="22" data-hl="what is that to thee? follow thou me"></blockquote>
+    <h2 class="rise" style="--d:1">“And what shall this man do?”</h2>
+    <p class="note rise" style="--d:2">Peter has just heard hard news about his own future, and the first thing he does is look over at John. <em>What about him?</em></p>
+    <div class="columns">
+      <div class="col grace step"><h3>Peter</h3><p class="who">a hard road, ending at a cross</p><p>By early church tradition, he died for Christ in Rome, about A.D. 64–68.</p></div>
+      <div class="col grace step"><h3>John</h3><p class="who">a long road, into old age</p><p>By tradition, he outlived the other apostles and died an old man, around A.D. 100.</p></div>
+    </div>
+    <p class="note step">Two different roads, and both men were faithful. Jesus' answer is short: <em>“What is that to thee? follow thou me.”</em></p>
+    <blockquote class="quote step"><p>“But let every man prove his own work, and then shall he have rejoicing in himself alone, and not in another.”</p><cite>Galatians 6:4</cite></blockquote>
+    <p class="note step">In recovery it's easy to look around the room: <em>his life came together faster, his family took him back, he got the job.</em> Jesus didn't call you to his road. He called you to follow Him on yours.</p>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="23" data-hl="yet Jesus said not unto him, He shall not die"></blockquote>
+    <h2 class="rise" style="--d:1">Read what He actually said</h2>
+    <p class="note rise" style="--d:2">A rumor spread among the believers that John would never die. John sets the record straight:</p>
+    <ul class="nots">
+      <li class="step"><span class="k">“that disciple should not die”</span><span class="why">what people said He said</span></li>
+      <li class="step yes"><span class="k">“If I will that he tarry till I come, what is that to thee?”</span><span class="why">what He actually said</span></li>
+    </ul>
+    <p class="note step">One small word, “if,” changed everything. A lot of confusion about God comes from repeating what somebody said the Bible says. Go read it for yourself.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="24-25" data-hl="we know that his testimony is true|the world itself could not contain the books that should be written"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="24" data-hl="This is the disciple which testifieth of these things, and wrote these things"></blockquote>
+    <h2 class="rise" style="--d:1">An eyewitness wrote this</h2>
+    <p class="note rise" style="--d:2">The man who leaned on Jesus' chest at the Last Supper, who stood at the cross, who ran to the tomb and saw the grave clothes, wrote this book. He wasn't passing on rumors. He was there. He says so again in one of his letters:</p>
+    <blockquote class="quote rise" style="--d:3"><p>“That which was from the beginning, which we have heard, which we have seen with our eyes, which we have looked upon, and our hands have handled, of the Word of life;”</p><cite>1 John 1:1</cite></blockquote>
+    <div class="jn21-shelf" aria-label="One book labeled John, followed by rows of books that run off the edge of the screen.">
+      <i class="john" style="--k:0">John</i>
+      <i style="--k:1;--h:62%"></i><i style="--k:2;--h:78%"></i><i style="--k:3;--h:55%"></i><i style="--k:4;--h:84%"></i><i style="--k:5;--h:70%"></i><i style="--k:6;--h:48%"></i><i style="--k:7;--h:90%"></i><i style="--k:8;--h:66%"></i><i style="--k:9;--h:74%"></i><i style="--k:10;--h:58%"></i>
+      <i style="--k:11;--h:82%"></i><i style="--k:12;--h:69%"></i><i style="--k:13;--h:52%"></i><i style="--k:14;--h:88%"></i><i style="--k:15;--h:61%"></i><i style="--k:16;--h:76%"></i><i style="--k:17;--h:62%"></i><i style="--k:18;--h:78%"></i><i style="--k:19;--h:55%"></i><i style="--k:20;--h:84%"></i>
+      <i style="--k:21;--h:70%"></i><i style="--k:22;--h:48%"></i><i style="--k:23;--h:90%"></i><i style="--k:24;--h:66%"></i><i style="--k:25;--h:74%"></i><i style="--k:26;--h:58%"></i><i style="--k:27;--h:82%"></i><i style="--k:28;--h:69%"></i><i style="--k:29;--h:52%"></i><i style="--k:30;--h:88%"></i>
+      <i style="--k:31;--h:61%"></i><i style="--k:32;--h:76%"></i><i style="--k:33;--h:62%"></i><i style="--k:34;--h:78%"></i><i style="--k:35;--h:55%"></i><i style="--k:36;--h:84%"></i><i style="--k:37;--h:70%"></i><i style="--k:38;--h:48%"></i><i style="--k:39;--h:90%"></i><i style="--k:40;--h:66%"></i>
+      <i style="--k:41;--h:74%"></i><i style="--k:42;--h:58%"></i><i style="--k:43;--h:82%"></i><i style="--k:44;--h:69%"></i><i style="--k:45;--h:52%"></i><i style="--k:46;--h:88%"></i><i style="--k:47;--h:61%"></i><i style="--k:48;--h:76%"></i><i style="--k:49;--h:62%"></i><i style="--k:50;--h:78%"></i>
+      <i style="--k:51;--h:55%"></i><i style="--k:52;--h:84%"></i><i style="--k:53;--h:70%"></i><i style="--k:54;--h:48%"></i><i style="--k:55;--h:90%"></i><i style="--k:56;--h:66%"></i><i style="--k:57;--h:74%"></i><i style="--k:58;--h:58%"></i><i style="--k:59;--h:82%"></i><i style="--k:60;--h:69%"></i>
+      <i style="--k:61;--h:52%"></i><i style="--k:62;--h:88%"></i><i style="--k:63;--h:61%"></i><i style="--k:64;--h:76%"></i><i style="--k:65;--h:62%"></i><i style="--k:66;--h:78%"></i><i style="--k:67;--h:55%"></i><i style="--k:68;--h:84%"></i><i style="--k:69;--h:70%"></i><i style="--k:70;--h:48%"></i>
+      <i style="--k:71;--h:90%"></i><i style="--k:72;--h:66%"></i><i style="--k:73;--h:74%"></i><i style="--k:74;--h:58%"></i><i style="--k:75;--h:82%"></i><i style="--k:76;--h:69%"></i><i style="--k:77;--h:52%"></i><i style="--k:78;--h:88%"></i><i style="--k:79;--h:61%"></i><i style="--k:80;--h:76%"></i>
+    </div>
+    <p class="note step">And this is only a small part. If everything Jesus did were written down, John says, the world couldn't hold the books. We have what we need. There's always more of Him to know.</p>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise">The end of John's Gospel</h2>
+    <div class="ch-track jn21-track" aria-label="All twenty-one chapters of John, finished.">
+      <span class="done" style="--k:0">1</span><span class="done" style="--k:1">2</span><span class="done" style="--k:2">3</span><span class="done" style="--k:3">4</span><span class="done" style="--k:4">5</span><span class="done" style="--k:5">6</span><span class="done" style="--k:6">7</span>
+      <span class="done" style="--k:7">8</span><span class="done" style="--k:8">9</span><span class="done" style="--k:9">10</span><span class="done" style="--k:10">11</span><span class="done" style="--k:11">12</span><span class="done" style="--k:12">13</span><span class="done" style="--k:13">14</span>
+      <span class="done" style="--k:14">15</span><span class="done" style="--k:15">16</span><span class="done" style="--k:16">17</span><span class="done" style="--k:17">18</span><span class="done" style="--k:18">19</span><span class="done" style="--k:19">20</span><span class="done" style="--k:20">21</span>
+    </div>
+    <p class="note rise" style="--d:3;margin-top:1em">Twenty-one chapters. It opened with “In the beginning was the Word.” It ends with a fisherman on a beach being told, “Follow thou me.” In between: seven signs, seven “I am” sayings, a cross, and an empty tomb.</p>
+    <blockquote class="quote step"><p>“But these are written, that ye might believe that Jesus is the Christ, the Son of God; and that believing ye might have life through his name.”</p><cite>John 20:31</cite></blockquote>
+    <p class="note step">If you've believed, you have life in His name, and nothing can take it from you. All that's left is what He told Peter. <em>Follow thou me.</em> Today, and tomorrow, and the day after that.</p>
+  </div>
+</section>
+
+<!-- ======================= CLOSING ======================= -->
+<section class="slide remember">
+  <div class="inner">
+    <h2 class="rise">Points to remember</h2>
+    <ol class="seeds">
+      <li class="step"><span class="topic">Going back</span><span class="seed-q">“That night they caught nothing” <cite>21:3</cite></span><span class="take">The old life came up empty. One word from Jesus filled the net.</span></li>
+      <li class="step"><span class="topic">Grace</span><span class="seed-q">“Come and dine” <cite>21:12</cite></span><span class="take">He met the men who ran out on Him with a fire, breakfast, and an invitation.</span></li>
+      <li class="step"><span class="topic">Restoration</span><span class="seed-q">“He said unto him the third time” <cite>21:17</cite></span><span class="take">Three questions for three denials. He faced the failure and healed it.</span></li>
+      <li class="step"><span class="topic">Love</span><span class="seed-q">“Feed my sheep” <cite>21:17</cite></span><span class="take">Love for Jesus shows up as care for His people.</span></li>
+      <li class="step"><span class="topic">Comparison</span><span class="seed-q">“What is that to thee? follow thou me” <cite>21:22</cite></span><span class="take">Keep your eyes on Jesus, not on another man's road.</span></li>
+      <li class="step"><span class="topic">The Word</span><span class="seed-q">“We know that his testimony is true” <cite>21:24</cite></span><span class="take">An eyewitness wrote it down so we could believe.</span></li>
+    </ol>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 1 of 6</p>
+      <span class="topic">Going back</span>
+      <h2>What happened when the disciples went back to their old work?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="3" data-hl="that night they caught nothing"></blockquote>
+      <blockquote class="quote step" data-q="5" data-hl="They answered him, No."></blockquote>
+      <blockquote class="quote step" data-q="6" data-hl="Cast the net on the right side of the ship, and ye shall find"></blockquote>
+      <blockquote class="quote step"><p>“I am the vine, ye are the branches: He that abideth in me, and I in him, the same bringeth forth much fruit: for without me ye can do nothing.”</p><cite>John 15:5</cite></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>They worked all night and caught nothing. When Jesus asked, they had to admit it: “No.” Then one word from Him filled the net to bursting. The old life always comes up empty in the end. What we can't do on our own, He can do in a moment.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 2 of 6</p>
+      <span class="topic">Grace</span>
+      <h2>How did Jesus treat the men who had let Him down?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="9" data-hl="a fire of coals there, and fish laid thereon, and bread"></blockquote>
+      <blockquote class="quote step" data-q="12" data-hl="Come and dine"></blockquote>
+      <blockquote class="quote step" data-q="13"></blockquote>
+      <blockquote class="quote step"><p>“It is of the LORD’S mercies that we are not consumed, because his compassions fail not. They are new every morning: great is thy faithfulness.”</p><cite>Lamentations 3:22–23</cite></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>He fed them. He had a fire going and breakfast cooking before they reached shore, and He served them with His own hands. No lecture about the night they ran. His mercies are new every morning, and He still says to failures, “Come and dine.”</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 3 of 6</p>
+      <span class="topic">Restoration</span>
+      <h2>How did Jesus restore Peter after his three denials?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="15" data-hl="Simon, son of Jonas, lovest thou me more than these?"></blockquote>
+      <blockquote class="quote step" data-q="17" data-hl="Peter was grieved because he said unto him the third time|Lord, thou knowest all things; thou knowest that I love thee"></blockquote>
+      <blockquote class="quote step"><p>“If we confess our sins, he is faithful and just to forgive us our sins, and to cleanse us from all unrighteousness.”</p><cite>1 John 1:9</cite></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>By a fire, just like the one where Peter denied Him, Jesus asked him three times, “Lovest thou me?” One question for each denial. It hurt, but it healed. Then He gave Peter work to do. Jesus doesn't sweep failure under the rug. He brings it into the open and forgives it completely.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 4 of 6</p>
+      <span class="topic">Love</span>
+      <h2>What does Jesus ask of a man who loves Him?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="15" data-hl="Feed my lambs"></blockquote>
+      <blockquote class="quote step" data-q="16" data-hl="Feed my sheep"></blockquote>
+      <blockquote class="quote step"><p>“Feed the flock of God which is among you, taking the oversight thereof, not by constraint, but willingly; not for filthy lucre, but of a ready mind;”</p><cite>1 Peter 5:2</cite></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>Every time Peter said, “I love thee,” Jesus answered with a job: feed My lambs, feed My sheep. Love for Jesus isn't just a feeling. It shows up as taking care of His people. Peter did it for the rest of his life.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 5 of 6</p>
+      <span class="topic">Comparison</span>
+      <h2>What should we do when we start comparing ourselves to others?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="21"></blockquote>
+      <blockquote class="quote step" data-q="22" data-hl="what is that to thee? follow thou me"></blockquote>
+      <blockquote class="quote step"><p>“But let every man prove his own work, and then shall he have rejoicing in himself alone, and not in another.”</p><cite>Galatians 6:4</cite></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>Stop looking sideways and look at Jesus. Peter wanted to know about John's future, and Jesus told him it wasn't his business: “Follow thou me.” God writes a different story for every man. Your job is to follow Him on the road He's given you.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 6 of 6</p>
+      <span class="topic">The Word</span>
+      <h2>Why can we trust what John wrote?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="24"></blockquote>
+      <blockquote class="quote step"><p>“That which was from the beginning, which we have heard, which we have seen with our eyes, which we have looked upon, and our hands have handled, of the Word of life;”</p><cite>1 John 1:1</cite></blockquote>
+      <blockquote class="quote step"><p>“But these are written, that ye might believe that Jesus is the Christ, the Son of God; and that believing ye might have life through his name.”</p><cite>John 20:31</cite></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>Because the man who wrote it was there. John saw the signs, stood at the cross, ran to the empty tomb, and ate breakfast with the risen Lord on this beach. He wrote down what he saw so that we would believe and have life.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide prayer">
+  <div class="inner">
+    <div class="emblem rise"></div>
+    <h2 class="rise">Prayer requests</h2>
+    <p class="ask-line rise" style="--d:1">What can we pray about for you today?</p>
+    <blockquote class="quote rise" style="--d:3"><p>“Casting all your care upon him; for he careth for you.”</p><cite>1 Peter 5:7</cite></blockquote>
+  </div>
+</section>
+
+</main>
+
+<script>
+// King James Version, John chapter 21
+const V = {
+  1: "After these things Jesus shewed himself again to the disciples at the sea of Tiberias; and on this wise shewed he himself.",
+  2: "There were together Simon Peter, and Thomas called Didymus, and Nathanael of Cana in Galilee, and the sons of Zebedee, and two other of his disciples.",
+  3: "Simon Peter saith unto them, I go a fishing. They say unto him, We also go with thee. They went forth, and entered into a ship immediately; and that night they caught nothing.",
+  4: "But when the morning was now come, Jesus stood on the shore: but the disciples knew not that it was Jesus.",
+  5: "Then Jesus saith unto them, Children, have ye any meat? They answered him, No.",
+  6: "And he said unto them, Cast the net on the right side of the ship, and ye shall find. They cast therefore, and now they were not able to draw it for the multitude of fishes.",
+  7: "Therefore that disciple whom Jesus loved saith unto Peter, It is the Lord. Now when Simon Peter heard that it was the Lord, he girt his fisher’s coat unto him, (for he was naked,) and did cast himself into the sea.",
+  8: "And the other disciples came in a little ship; (for they were not far from land, but as it were two hundred cubits,) dragging the net with fishes.",
+  9: "As soon then as they were come to land, they saw a fire of coals there, and fish laid thereon, and bread.",
+  10: "Jesus saith unto them, Bring of the fish which ye have now caught.",
+  11: "Simon Peter went up, and drew the net to land full of great fishes, and hundred and fifty and three: and for all there were so many, yet was not the net broken.",
+  12: "Jesus saith unto them, Come and dine. And none of the disciples durst ask him, Who art thou? knowing that it was the Lord.",
+  13: "Jesus then cometh, and taketh bread, and giveth them, and fish likewise.",
+  14: "This is now the third time that Jesus shewed himself to his disciples, after that he was risen from the dead.",
+  15: "So when they had dined, Jesus saith to Simon Peter, Simon, son of Jonas, lovest thou me more than these? He saith unto him, Yea, Lord; thou knowest that I love thee. He saith unto him, Feed my lambs.",
+  16: "He saith to him again the second time, Simon, son of Jonas, lovest thou me? He saith unto him, Yea, Lord; thou knowest that I love thee. He saith unto him, Feed my sheep.",
+  17: "He saith unto him the third time, Simon, son of Jonas, lovest thou me? Peter was grieved because he said unto him the third time, Lovest thou me? And he said unto him, Lord, thou knowest all things; thou knowest that I love thee. Jesus saith unto him, Feed my sheep.",
+  18: "Verily, verily, I say unto thee, When thou wast young, thou girdedst thyself, and walkedst whither thou wouldest: but when thou shalt be old, thou shalt stretch forth thy hands, and another shall gird thee, and carry thee whither thou wouldest not.",
+  19: "This spake he, signifying by what death he should glorify God. And when he had spoken this, he saith unto him, Follow me.",
+  20: "Then Peter, turning about, seeth the disciple whom Jesus loved following; which also leaned on his breast at supper, and said, Lord, which is he that betrayeth thee?",
+  21: "Peter seeing him saith to Jesus, Lord, and what shall this man do?",
+  22: "Jesus saith unto him, If I will that he tarry till I come, what is that to thee? follow thou me.",
+  23: "Then went this saying abroad among the brethren, that that disciple should not die: yet Jesus said not unto him, He shall not die; but, If I will that he tarry till I come, what is that to thee?",
+  24: "This is the disciple which testifieth of these things, and wrote these things: and we know that his testimony is true.",
+  25: "And there are also many other things which Jesus did, the which, if they should be written every one, I suppose that even the world itself could not contain the books that should be written. Amen."
+};
+const BOOK = "John 21";
+</script>
+<script src="../assets/deck.js"></script>
+</body>
+</html>
