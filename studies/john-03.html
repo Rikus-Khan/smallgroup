@@ -1,0 +1,604 @@
+<!doctype html>
+<html lang="en" data-theme="night">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>John 3</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="../assets/fonts.css">
+<link rel="stylesheet" href="../assets/deck.css">
+<link rel="stylesheet" href="../assets/themes.css">
+<style>
+/* Nicodemus's three scenes, from night to day. Darkness is --on-glow and light is --glow,
+   because those two stay dark and light in every theme. */
+.jn03-arc { display: grid; gap: 10px; margin: .4em 0 1em; }
+@media (min-width: 760px) { .jn03-arc { grid-template-columns: repeat(3, 1fr); } }
+.jn03-sky { position: relative; overflow: hidden; padding: .9em 1.1em 1.1em; border-radius: 10px; min-height: 8.5em; }
+.jn03-sky b { display: block; font: 700 clamp(.85rem, .8rem + .3vw, 1.05rem) var(--sans); opacity: .8; }
+.jn03-sky .when { display: block; padding-right: 2em; margin: .1em 0 .3em; font: 400 clamp(1.35rem, 1.05rem + 1.2vw, 2rem)/1.1 var(--serif); }
+.jn03-sky p { font-size: clamp(.95rem, .86rem + .4vw, 1.2rem); line-height: 1.4; }
+.jn03-sky::after { content: ""; position: absolute; right: 1em; top: 1em; width: 1.7em; height: 1.7em; border-radius: 50%; }
+.jn03-sky.n1 { background: var(--on-glow); color: var(--glow); }
+.jn03-sky.n1::after { box-shadow: inset -.5em -.15em 0 0 var(--glow); }
+.jn03-sky.n2 { background: linear-gradient(180deg, color-mix(in srgb, var(--on-glow) 88%, var(--glow)), color-mix(in srgb, var(--on-glow) 62%, var(--warm))); color: var(--glow); }
+.jn03-sky.n2::after { top: auto; bottom: -.85em; background: var(--warm); box-shadow: 0 0 26px 8px color-mix(in srgb, var(--warm) 60%, transparent); }
+.jn03-sky.n3 { background: var(--glow); color: var(--on-glow); border: 1px solid var(--line-strong); }
+.jn03-sky.n3::after { background: var(--warm); box-shadow: 0 0 30px 10px color-mix(in srgb, var(--warm) 55%, transparent); }
+
+/* Wind in the grass: you can't see it, but you can see what it does */
+.jn03-wind .gust { fill: none; stroke: var(--cool); stroke-width: 3; stroke-linecap: round; stroke-dasharray: 80 520; stroke-dashoffset: 600; opacity: .85; }
+.slide.active .jn03-wind .gust { animation: jn03-gust 2.8s linear infinite; animation-delay: calc(var(--k) * -.9s); }
+@keyframes jn03-gust { to { stroke-dashoffset: 0; } }
+.jn03-wind .blade { fill: none; stroke: var(--accent); stroke-width: 4; stroke-linecap: round; transform-box: fill-box; transform-origin: 50% 100%; }
+.slide.active .jn03-wind .blade { animation: jn03-sway 2.8s ease-in-out infinite; animation-delay: calc(var(--k) * -.22s); }
+@keyframes jn03-sway { 0%, 100% { transform: skewX(-4deg); } 50% { transform: skewX(-24deg); } }
+.jn03-wind .leaf { fill: var(--warm); opacity: 0; transform-box: fill-box; transform-origin: center; }
+.slide.active .jn03-wind .leaf { animation: jn03-fly 4.2s linear infinite; animation-delay: calc(var(--k) * -1.4s); }
+@keyframes jn03-fly { 0% { opacity: 0; transform: translate(0, 0) rotate(0); } 10%, 85% { opacity: 1; } 100% { opacity: 0; transform: translate(640px, -60px) rotate(760deg); } }
+
+/* The serpent on the pole, and the people who looked */
+.jn03-lift .look { fill: none; stroke: var(--accent); stroke-width: 2; stroke-dasharray: 1; stroke-dashoffset: 1; transition: stroke-dashoffset 1.2s ease; }
+.jn03-lift:has(.jn03-look-go.on) .look { stroke-dashoffset: 0; }
+.jn03-lift .man { fill: var(--ink-soft); opacity: .4; transition: fill 1s ease 1s, opacity 1s ease 1s; }
+.jn03-lift:has(.jn03-look-go.on) .man { fill: var(--accent-hot); opacity: 1; }
+.jn03-lift .serpent { transition: opacity 1.2s ease; }
+.jn03-lift:has(.jn03-cross-go.on) .serpent { opacity: .15; }
+.jn03-lift .crossbar { fill: none; stroke: var(--accent-hot); stroke-width: 12; stroke-linecap: round; stroke-dasharray: 1; stroke-dashoffset: 1; transition: stroke-dashoffset 1.2s ease .4s; }
+.jn03-lift:has(.jn03-cross-go.on) .crossbar { stroke-dashoffset: 0; }
+.jn03-lift .cross-label { opacity: 0; transition: opacity 1s ease 1.4s; }
+.jn03-lift:has(.jn03-cross-go.on) .cross-label { opacity: 1; }
+
+/* John 3:16, phrase by phrase */
+.jn03-gift { list-style: none; margin: .3em 0 1em; padding: 0; display: grid; gap: .1em 2rem; }
+@media (min-width: 900px) { .jn03-gift { grid-template-columns: 1fr 1fr; grid-template-rows: repeat(5, auto); grid-auto-flow: column; } }
+.jn03-gift li { display: flex; flex-wrap: wrap; align-items: baseline; gap: .1em .8em; padding: .35em 0; border-bottom: 1px solid var(--line); }
+.jn03-gift .w { font: italic 400 clamp(1.15rem, .95rem + 1vw, 1.75rem)/1.2 var(--serif); color: var(--accent-hot); }
+.jn03-gift .k { font-size: clamp(.8rem, .76rem + .3vw, 1rem); color: var(--ink-soft); text-transform: uppercase; letter-spacing: .06em; }
+
+/* A verdict stamp in the theme's color instead of red */
+.jn03-free .stamp { color: var(--accent-hot); border-color: var(--accent-hot); }
+
+/* A dark room with an open door, and a man walking into the light */
+.jn03-room .walker { transform: translateX(80px); transition: transform 3.2s ease-in-out; }
+.jn03-room:has(.jn03-walk.on) .walker { transform: translateX(450px); }
+.jn03-room .beam { opacity: .35; transition: opacity 2s ease; }
+.jn03-room:has(.jn03-walk.on) .beam { opacity: .9; transition-delay: 1.6s; }
+
+/* A wax seal pressed onto a statement */
+.jn03-seal { display: flex; flex-wrap: wrap; align-items: center; gap: 1rem 1.6rem; margin: .4em 0 1.1em; }
+.jn03-seal .doc { flex: 0 1 19rem; padding: 1em 1.2em; background: var(--surface-2); border: 1px solid var(--line-strong); border-radius: 4px; }
+.jn03-seal .doc i { display: block; height: .4em; margin: .45em 0; border-radius: 2px; background: var(--line-strong); opacity: .55; }
+.jn03-seal .doc i:nth-child(2) { width: 80%; }
+.jn03-seal .doc p { margin-top: .5em; font: italic 400 clamp(1.3rem, 1rem + 1.3vw, 2.1rem) var(--serif); color: var(--ink); }
+.jn03-seal .wax {
+  flex: none; width: 5.4rem; height: 5.4rem; border-radius: 50%; display: grid; place-items: center; text-align: center;
+  background: var(--wine); color: var(--glow); font: 700 .8rem/1.15 var(--sans); letter-spacing: .08em; text-transform: uppercase;
+  box-shadow: 0 0 0 6px color-mix(in srgb, var(--wine) 40%, transparent);
+  transform: scale(2.3) rotate(-25deg); opacity: 0; transition: transform .45s cubic-bezier(.3,1.6,.5,1) .3s, opacity .2s ease .3s;
+}
+.jn03-seal.on .wax { transform: rotate(-8deg); opacity: 1; }
+</style>
+</head>
+<body>
+<main class="deck" id="deck">
+
+<!-- ======================= OPENING ======================= -->
+<section class="slide title">
+  <div class="inner">
+    <div class="emblem rise"></div>
+    <h1 class="rise" style="--d:1">John 3</h1>
+    <p class="sub rise" style="--d:3">Born again</p>
+    <p class="tag rise" style="--d:5">A respected teacher comes to Jesus by night and hears the best news in the world: God so loved the world.</p>
+  </div>
+</section>
+
+<section class="slide watch">
+  <div class="inner">
+    <h2 class="rise">Things to watch for</h2>
+    <p class="lede rise" style="--d:1">Keep these questions in the back of your mind as we read. We'll come back to every one of them at the end.</p>
+    <ol class="seeds">
+      <li class="step"><span class="topic">The new birth</span><span class="seed-q">What does it mean to be born again?</span></li>
+      <li class="step"><span class="topic">Salvation (soteriology)</span><span class="seed-q">Who can be saved, and how?</span></li>
+      <li class="step"><span class="topic">God's love</span><span class="seed-q">Why did God send His Son?</span></li>
+      <li class="step"><span class="topic">Light and darkness</span><span class="seed-q">Why do people hide from the light?</span></li>
+      <li class="step"><span class="topic">Assurance</span><span class="seed-q">Can a believer be sure he has eternal life?</span></li>
+      <li class="step"><span class="topic">Humility</span><span class="seed-q">What does it look like to make much of Jesus?</span></li>
+    </ol>
+  </div>
+</section>
+
+<!-- ======================= PART ONE: BORN AGAIN ======================= -->
+<section class="slide part">
+  <div class="inner">
+    <p class="part-n rise">Part one</p>
+    <h2 class="rise" style="--d:1">Born again</h2>
+    <p class="range rise" style="--d:2">Verses 1–13</p>
+    <div class="rule"></div>
+    <p class="hook rise" style="--d:4">A respected religious man comes to Jesus in the dark, with questions.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="1-2" data-hl="a ruler of the Jews|came to Jesus by night"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="2" data-hl="came to Jesus by night"></blockquote>
+    <h2 class="rise" style="--d:1">From night to day</h2>
+    <p class="note rise" style="--d:2">Nicodemus was a Pharisee, a strict keeper of the law, and a “ruler of the Jews,” a member of the Sanhedrin, the 71-man council that ran Jewish religious life. A top man. John shows him to us three times:</p>
+    <div class="jn03-arc">
+      <div class="jn03-sky n1 rise" style="--d:3"><b>John 3:2</b><span class="when">By night</span><p>Comes privately, with questions. Calls Jesus “a teacher come from God.”</p></div>
+      <div class="jn03-sky n2 step"><b>John 7:50–51</b><span class="when">Speaking up</span><p>When the council wants Jesus arrested, he asks for a fair hearing. They mock him for it.</p></div>
+      <div class="jn03-sky n3 step"><b>John 19:39</b><span class="when">In the open</span><p>After the cross, he helps bury Jesus, bringing “about an hundred pound weight” of spices.</p></div>
+    </div>
+    <p class="note step">Lots of men first come to Jesus in the dark: alone, ashamed, at the end of the rope at two in the morning. Jesus never scolds Nicodemus for coming at night. He meets him there. And look where Nicodemus ends up: in broad daylight, standing with Jesus when it cost him something.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="3-4" data-hl="Except a man be born again|How can a man be born when he is old?"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="3" data-hl="born again|see the kingdom of God"></blockquote>
+    <h2 class="rise" style="--d:1">“Born again”</h2>
+    <div class="morph">
+      <span class="big rise" style="--d:3">ἄνωθεν</span>
+      <span class="say step">said <em class="gk">anōthen</em></span>
+      <span class="means step">again, anew, <em class="gk">and</em> from above</span>
+    </div>
+    <p class="note step">Nicodemus opened with a compliment. Jesus skipped right past it to the one thing he needed. He didn't need a better teacher. He needed a new birth, one that comes <em>from above</em>.</p>
+    <p class="note step">Nicodemus asks, “How can a man be born when he is old?” Plenty of men ask that today: <em>I'm too old, too far gone, too set in my ways to start over.</em> Jesus' answer is that you don't start yourself over. God does it.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="5-6" data-hl="born of water and of the Spirit|That which is born of the flesh is flesh"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="6"></blockquote>
+    <h2 class="rise" style="--d:1">Two births</h2>
+    <div class="columns">
+      <div class="col law rise" style="--d:2">
+        <p class="who">Your first birth</p>
+        <h3>Born of the flesh</h3>
+        <p>Gives you physical life, from your parents. Flesh can only produce more flesh. You can improve it, but you can't make it into something it isn't.</p>
+      </div>
+      <div class="col grace step">
+        <p class="who">Your second birth</p>
+        <h3>Born of the Spirit</h3>
+        <p>Gives you spiritual life, from God. The Holy Spirit makes you alive toward God and comes to live in you for good.</p>
+      </div>
+    </div>
+    <p class="note step">What about “water”? Many Bible teachers take it as the first, natural birth, which the next verse calls “born of the flesh.” Others hear God's promise in Ezekiel to wash His people and give them a new heart. Either way, verse 16 makes clear what brings the new birth: believing on Jesus.</p>
+    <blockquote class="quote step"><p>“A new heart also will I give you, and a new spirit will I put within you: and I will take away the stony heart out of your flesh, and I will give you an heart of flesh.”</p><cite>Ezekiel 36:26</cite></blockquote>
+  </div>
+</section>
+
+<section class="slide verse" data-v="7-8" data-hl="Ye must be born again|The wind bloweth where it listeth"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="8" data-hl="The wind bloweth where it listeth|so is every one that is born of the Spirit"></blockquote>
+    <div class="split">
+      <div class="stage">
+        <svg class="jn03-wind" viewBox="0 0 600 260" role="img" aria-label="Wind, drawn as moving streaks, bends the grass and carries leaves across.">
+          <path class="gust" style="--k:0" d="M-20 60 C 120 30, 240 90, 380 55 S 560 40, 640 70"/>
+          <path class="gust" style="--k:1" d="M-20 120 C 140 95, 260 150, 400 115 S 560 100, 640 130"/>
+          <path class="gust" style="--k:2" d="M-20 175 C 110 150, 250 200, 390 170 S 560 155, 640 185"/>
+          <g>
+            <path class="blade" style="--k:0" d="M40 250 Q44 215 40 180"/><path class="blade" style="--k:1" d="M62 250 Q66 220 64 195"/>
+            <path class="blade" style="--k:2" d="M90 250 Q95 210 92 170"/><path class="blade" style="--k:3" d="M118 250 Q121 220 119 200"/>
+            <path class="blade" style="--k:4" d="M146 250 Q150 212 147 176"/><path class="blade" style="--k:5" d="M174 250 Q178 218 176 192"/>
+            <path class="blade" style="--k:6" d="M202 250 Q206 208 203 168"/><path class="blade" style="--k:7" d="M230 250 Q234 222 232 198"/>
+            <path class="blade" style="--k:8" d="M258 250 Q262 214 259 178"/><path class="blade" style="--k:9" d="M286 250 Q290 220 288 194"/>
+            <path class="blade" style="--k:10" d="M314 250 Q318 206 315 166"/><path class="blade" style="--k:11" d="M342 250 Q346 218 344 190"/>
+            <path class="blade" style="--k:12" d="M370 250 Q374 212 371 174"/><path class="blade" style="--k:13" d="M398 250 Q402 222 400 198"/>
+            <path class="blade" style="--k:14" d="M426 250 Q430 210 427 172"/><path class="blade" style="--k:15" d="M454 250 Q458 218 456 192"/>
+            <path class="blade" style="--k:16" d="M482 250 Q486 206 483 168"/><path class="blade" style="--k:17" d="M510 250 Q514 220 512 196"/>
+            <path class="blade" style="--k:18" d="M538 250 Q542 212 539 176"/><path class="blade" style="--k:19" d="M566 250 Q570 222 568 198"/>
+          </g>
+          <ellipse class="leaf" style="--k:0" cx="0" cy="150" rx="9" ry="4"/>
+          <ellipse class="leaf" style="--k:1" cx="0" cy="95" rx="8" ry="4"/>
+          <ellipse class="leaf" style="--k:2" cx="0" cy="200" rx="9" ry="4"/>
+          <line x1="0" y1="250" x2="600" y2="250" stroke-width="2" style="stroke:var(--ink-soft)"/>
+        </svg>
+      </div>
+      <div>
+        <h2 class="rise" style="--d:1">Wind and Spirit</h2>
+        <p class="note rise" style="--d:2">In Greek, one word means both <em>wind</em> and <em>spirit</em>: <span class="gk">pneuma</span>. “Listeth” means <em>wants, pleases</em>. Nobody tells the wind where to go.</p>
+        <p class="note step">You can't see the wind. You can't bottle it or steer it. But you can see what it does: the grass bends, the leaves fly.</p>
+        <p class="note step">The new birth is like that. Nobody watches it happen. But people notice the change: the man who used to lie now tells the truth, the man who used to run now shows up. That's the Spirit at work.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="slide verse" data-v="9-13" data-hl="How can these things be?|Art thou a master of Israel|he that came down from heaven"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="10" data-hl="a master of Israel"></blockquote>
+    <p class="saying rise" style="--d:1">How can these things be?</p>
+    <p class="note rise" style="--d:3">“Master” here means <em>teacher</em>. In Greek Jesus calls him <em>the</em> teacher of Israel, as if he were the best-known Bible teacher in the land. He knew the Scriptures backward and forward, and he still didn't know this.</p>
+    <p class="note step">Knowing a lot about God isn't the same as being born of God. A man can know the Bible well and still need to be made new.</p>
+    <p class="note step">And who can tell us about heaven? Only the One who came from there (verse 13). Jesus isn't passing on a rumor. He's telling what He has seen.</p>
+  </div>
+</section>
+
+<!-- ======================= PART TWO: LIFTED UP ======================= -->
+<section class="slide part">
+  <div class="inner">
+    <p class="part-n rise">Part two</p>
+    <h2 class="rise" style="--d:1">Lifted up</h2>
+    <p class="range rise" style="--d:2">Verses 14–21</p>
+    <div class="rule"></div>
+    <p class="hook rise" style="--d:4">The best-known verse in the Bible, and the reason Jesus came.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="14-15" data-hl="as Moses lifted up the serpent in the wilderness|whosoever believeth in him"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <div class="split jn03-lift">
+      <div class="stage">
+        <svg viewBox="0 0 520 380" role="img" aria-label="A bronze serpent on a pole. Dying people look up at it and live. Then a crossbar turns the pole into a cross.">
+          <line x1="0" y1="345" x2="520" y2="345" stroke-width="2" style="stroke:var(--ink-soft)"/>
+          <line x1="260" y1="345" x2="260" y2="50" stroke-width="10" stroke-linecap="round" style="stroke:var(--leather-light)"/>
+          <path class="crossbar" pathLength="1" d="M180 110 L340 110"/>
+          <g class="serpent">
+            <path d="M246 80 C 290 92, 292 122, 260 134 C 228 146, 228 172, 260 184 C 292 196, 292 222, 262 236" fill="none" stroke-width="10" stroke-linecap="round" style="stroke:var(--warm)"/>
+            <circle cx="240" cy="78" r="10" style="fill:var(--warm)"/>
+          </g>
+          <text class="cross-label" x="260" y="30" text-anchor="middle" font-size="20" font-weight="700" style="fill:var(--accent-hot)">the Son of man lifted up</text>
+          <path class="look" pathLength="1" d="M62 318 L248 150"/>
+          <path class="look" pathLength="1" d="M142 322 L250 160"/>
+          <path class="look" pathLength="1" d="M378 322 L270 160"/>
+          <path class="look" pathLength="1" d="M458 318 L272 150"/>
+          <g class="man"><circle cx="62" cy="318" r="11"/><ellipse cx="34" cy="334" rx="26" ry="9"/></g>
+          <g class="man"><circle cx="142" cy="322" r="11"/><path d="M128 344 L131 334 Q142 328 153 334 L156 344 Z"/></g>
+          <g class="man"><circle cx="378" cy="322" r="11"/><path d="M364 344 L367 334 Q378 328 389 334 L392 344 Z"/></g>
+          <g class="man"><circle cx="458" cy="318" r="11"/><ellipse cx="486" cy="334" rx="26" ry="9"/></g>
+          <text x="260" y="372" text-anchor="middle" font-size="16" style="fill:var(--ink-soft)">Israel's camp, Numbers 21</text>
+        </svg>
+      </div>
+      <div>
+        <h2 class="rise" style="--d:1">Look and live</h2>
+        <p class="note rise" style="--d:2">In the wilderness, Israel grumbled against God, and poisonous snakes came into the camp. People were dying. God told Moses to put a brass serpent on a pole.</p>
+        <blockquote class="quote rise" style="--d:3"><p>“…every one that is bitten, when he looketh upon it, shall live.”</p><cite>Numbers 21:8</cite></blockquote>
+        <p class="note step jn03-look-go">No medicine. No ritual. No earning it. A bitten man just had to look, and he lived.</p>
+        <p class="note step jn03-cross-go"><em>“Even so must the Son of man be lifted up.”</em> Jesus would be lifted up on a cross. Sin is the snakebite, and nobody can treat his own. The cure is to look to Him in faith.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="slide verse" data-v="16" data-hl="For God so loved the world|whosoever believeth in him should not perish"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="16"></blockquote>
+    <h2 class="rise" style="--d:1">The whole gospel in one verse</h2>
+    <ol class="jn03-gift">
+      <li class="rise" style="--d:2"><span class="w">For God</span><span class="k">the greatest Lover</span></li>
+      <li class="rise" style="--d:3"><span class="w">so loved</span><span class="k">the greatest degree</span></li>
+      <li class="rise" style="--d:4"><span class="w">the world,</span><span class="k">the greatest number</span></li>
+      <li class="rise" style="--d:5"><span class="w">that he gave</span><span class="k">the greatest act</span></li>
+      <li class="rise" style="--d:6"><span class="w">his only begotten Son,</span><span class="k">the greatest gift</span></li>
+      <li class="rise" style="--d:7"><span class="w">that whosoever</span><span class="k">the greatest invitation</span></li>
+      <li class="rise" style="--d:8"><span class="w">believeth in him</span><span class="k">the simplest condition</span></li>
+      <li class="rise" style="--d:9"><span class="w">should not perish,</span><span class="k">the greatest rescue</span></li>
+      <li class="rise" style="--d:10"><span class="w">but have</span><span class="k">the greatest certainty</span></li>
+      <li class="rise" style="--d:11"><span class="w">everlasting life.</span><span class="k">the greatest possession</span></li>
+    </ol>
+    <p class="note step">“Whosoever” has no fine print. No man is too far gone, and no record is too long. If you're part of “the world,” you're included in this offer.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="17-18" data-hl="not his Son into the world to condemn the world|He that believeth on him is not condemned|condemned already"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="17" data-hl="that the world through him might be saved"></blockquote>
+    <h2 class="rise" style="--d:1">Two verdicts</h2>
+    <div class="asks">
+      <div class="ask step jn03-free"><span class="q">“He that believeth on him”</span><span class="stamp">Not condemned</span><span class="ctx">The case is closed. Jesus took the sentence.</span></div>
+      <div class="ask step"><span class="q">“He that believeth not”</span><span class="stamp">Condemned already</span><span class="ctx">Not condemned <em>later</em>. Already, because he has turned down the only One who can clear him.</span></div>
+    </div>
+    <p class="note step">Jesus didn't come to put the world on trial. The world was already under sentence. He came to get men out from under it.</p>
+    <blockquote class="quote step"><p>“There is therefore now no condemnation to them which are in Christ Jesus, who walk not after the flesh, but after the Spirit.”</p><cite>Romans 8:1</cite></blockquote>
+  </div>
+</section>
+
+<section class="slide verse" data-v="19-21" data-hl="men loved darkness rather than light|lest his deeds should be reproved|cometh to the light"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <div class="split jn03-room">
+      <div class="stage">
+        <svg viewBox="0 0 600 300" role="img" aria-label="A dark room with an open door full of light. A man walks out of the dark toward the door.">
+          <defs>
+            <linearGradient id="jn03-beam" x1="1" x2="0" y1="0" y2="0"><stop offset="0" style="stop-color:var(--glow)"/><stop offset="1" stop-opacity="0" style="stop-color:var(--glow)"/></linearGradient>
+          </defs>
+          <rect x="0" y="0" width="600" height="300" rx="8" style="fill:var(--on-glow)"/>
+          <polygon class="beam" points="505,60 505,272 200,300 600,300 600,272 565,272 565,60" fill="url(#jn03-beam)"/>
+          <rect x="505" y="60" width="60" height="212" style="fill:var(--glow)"/>
+          <text x="535" y="48" text-anchor="middle" font-size="18" font-weight="700" style="fill:var(--glow)">the light</text>
+          <text x="24" y="40" font-size="18" style="fill:var(--glow);opacity:.6">loved darkness</text>
+          <g class="walker">
+            <circle cx="0" cy="206" r="13" style="fill:var(--warm)"/>
+            <path d="M-15 272 L-11 228 Q0 219 11 228 L15 272 Z" style="fill:var(--warm)"/>
+          </g>
+          <line x1="0" y1="272" x2="600" y2="272" stroke-width="2" style="stroke:var(--glow);opacity:.25"/>
+        </svg>
+      </div>
+      <div>
+        <h2 class="rise" style="--d:1">Coming out of the dark</h2>
+        <p class="note rise" style="--d:2">Why do men stay away from the light? Not because they can't find it. Verse 20 says it straight: <em>“lest his deeds should be reproved,”</em> so nothing gets exposed.</p>
+        <p class="note step jn03-walk">Nicodemus came by night, but he came to the Light. That's the move. Come in the dark if you have to, but come.</p>
+        <p class="note step">Addiction grows in the dark: secrets, lies, covering tracks. Healing grows in the light. The things you're most afraid to bring out are the things God wants to deal with.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ======================= PART THREE: HE MUST INCREASE ======================= -->
+<section class="slide part">
+  <div class="inner">
+    <p class="part-n rise">Part three</p>
+    <h2 class="rise" style="--d:1">He must increase</h2>
+    <p class="range rise" style="--d:2">Verses 22–36</p>
+    <div class="rule"></div>
+    <p class="hook rise" style="--d:4">John's followers are worried about losing the crowd. John isn't.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="22-24" data-hl="much water there"></section>
+<section class="slide verse" data-v="25-26" data-hl="all men come to him"></section>
+<section class="slide verse" data-v="27-30" data-hl="A man can receive nothing, except it be given him from heaven|the friend of the bridegroom|He must increase, but I must decrease"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="29" data-hl="the friend of the bridegroom|rejoiceth greatly"></blockquote>
+    <h2 class="rise" style="--d:1">The best man's joy</h2>
+    <p class="note rise" style="--d:2">At a Jewish wedding, the “friend of the bridegroom” was something like the best man. He helped arrange things and stood beside the groom. His joy wasn't the bride. It was seeing the groom get his bride. Jesus is the Bridegroom. John was glad to be His best man.</p>
+    <div class="stage">
+      <svg viewBox="0 0 640 230" role="img" aria-label="Two lines cross: one rising, labeled He must increase, and one falling, labeled I must decrease.">
+        <line x1="30" y1="200" x2="620" y2="200" stroke-width="2" style="stroke:var(--line-strong)"/>
+        <g class="step">
+          <path class="draw" pathLength="1" d="M40 40 C 220 50, 380 170, 600 188" fill="none" stroke-width="4" stroke-dasharray="1" style="stroke:var(--ink-soft)"/>
+          <path class="draw" pathLength="1" d="M40 188 C 220 178, 380 60, 600 26" fill="none" stroke-width="7" stroke-linecap="round" style="stroke:var(--accent-hot)"/>
+          <text x="600" y="18" text-anchor="end" font-size="22" font-weight="700" class="serif" style="fill:var(--accent-hot)">He must increase</text>
+          <text x="600" y="224" text-anchor="end" font-size="20" class="serif" style="fill:var(--ink-soft)">I must decrease</text>
+          <text x="40" y="28" font-size="16" style="fill:var(--ink-soft)">John</text>
+          <text x="40" y="222" font-size="16" style="fill:var(--accent-hot)">Jesus</text>
+        </g>
+      </svg>
+    </div>
+    <p class="note step">Pride says, <em>“Look at me.”</em> John says, “A man can receive nothing, except it be given him from heaven.” Everything you have is a gift. That's the cure for envy and ego, and it's a daily direction, not a one-time decision: more of Him, less of me.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="31-33" data-hl="he that cometh from heaven is above all|hath set to his seal that God is true"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="33" data-hl="hath set to his seal that God is true"></blockquote>
+    <h2 class="rise" style="--d:1">“Set to his seal”</h2>
+    <p class="note rise" style="--d:2">In those days a man signed an important paper by pressing his own seal into hot wax. It meant: <em>I stand behind this. It's true.</em></p>
+    <div class="jn03-seal step">
+      <div class="doc"><i></i><i></i><p>God is true.</p></div>
+      <div class="wax">Sealed</div>
+    </div>
+    <p class="note step">When you believe what Jesus says, you're putting your seal on God's word: <em>God tells the truth.</em> Faith isn't a feeling you work up. It's taking God at His word and signing your name to it.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="34-36" data-hl="God giveth not the Spirit by measure unto him|He that believeth on the Son hath everlasting life"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="36" data-hl="hath everlasting life|abideth on him"></blockquote>
+    <h2 class="rise" style="--d:1">“Hath,” not “someday”</h2>
+    <p class="note rise" style="--d:2">He that believeth <em>hath</em> everlasting life. Not “might get it,” not “will find out at the end.” He has it now, from the moment he believes.</p>
+    <div class="stage">
+      <svg viewBox="0 0 640 178" role="img" aria-label="A timeline. Before believing: condemned already. At the moment of faith, everlasting life begins and never ends.">
+        <line x1="20" y1="90" x2="300" y2="90" stroke-width="3" stroke-dasharray="6 7" style="stroke:var(--ink-soft)"/>
+        <text x="30" y="70" font-size="18" style="fill:var(--ink-soft)">condemned already (3:18)</text>
+        <g class="step">
+          <path class="draw" pathLength="1" d="M300 90 L612 90" fill="none" stroke-width="7" stroke-linecap="round" style="stroke:var(--accent)"/>
+          <path d="M600 76 L626 90 L600 104" fill="none" stroke-width="6" stroke-linecap="round" stroke-linejoin="round" style="stroke:var(--accent)"/>
+          <text x="610" y="70" text-anchor="end" font-size="22" font-weight="700" class="serif" style="fill:var(--accent-hot)">hath everlasting life</text>
+          <text x="610" y="168" text-anchor="end" font-size="17" style="fill:var(--ink-soft)">never ends, never taken back</text>
+        </g>
+        <circle cx="300" cy="90" r="13" style="fill:var(--accent-hot)"/>
+        <text x="300" y="132" text-anchor="middle" font-size="18" font-weight="700">the moment you believe</text>
+      </svg>
+    </div>
+    <p class="note step">If it could run out, it wouldn't be <em>everlasting</em>. And for the man who refuses the Son, God's wrath <em>abideth</em>: it stays. The offer is still open today.</p>
+  </div>
+</section>
+
+<!-- ======================= CLOSING ======================= -->
+<section class="slide remember">
+  <div class="inner">
+    <h2 class="rise">Points to remember</h2>
+    <ol class="seeds">
+      <li class="step"><span class="topic">The new birth</span><span class="seed-q">“Ye must be born again” <cite>3:7</cite></span><span class="take">Not a fresh start you make, but a new life God gives by His Spirit.</span></li>
+      <li class="step"><span class="topic">Salvation</span><span class="seed-q">“That whosoever believeth in him” <cite>3:15</cite></span><span class="take">Anyone. Look to Jesus, lifted up on the cross, and live.</span></li>
+      <li class="step"><span class="topic">God's love</span><span class="seed-q">“For God so loved the world” <cite>3:16</cite></span><span class="take">He sent His Son to save the world, not to condemn it.</span></li>
+      <li class="step"><span class="topic">Light and darkness</span><span class="seed-q">“He that doeth truth cometh to the light” <cite>3:21</cite></span><span class="take">Come out of hiding. Even if you come by night, come.</span></li>
+      <li class="step"><span class="topic">Assurance</span><span class="seed-q">“Hath everlasting life” <cite>3:36</cite></span><span class="take">Believers have eternal life now, and it never runs out.</span></li>
+      <li class="step"><span class="topic">Humility</span><span class="seed-q">“He must increase, but I must decrease” <cite>3:30</cite></span><span class="take">Everything is a gift. Find your joy in making much of Jesus.</span></li>
+    </ol>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 1 of 6</p>
+      <span class="topic">The new birth</span>
+      <h2>What does it mean to be born again?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="3" data-hl="Except a man be born again"></blockquote>
+      <blockquote class="quote step" data-q="6"></blockquote>
+      <blockquote class="quote step" data-q="8" data-hl="so is every one that is born of the Spirit"></blockquote>
+      <blockquote class="quote step"><p>“Therefore if any man be in Christ, he is a new creature: old things are passed away; behold, all things are become new.”</p><cite>2 Corinthians 5:17</cite></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>It's a second birth, from above. Your first birth gave you physical life. The new birth, by God's Spirit, gives you spiritual life. It happens the moment you believe on Jesus. You don't clean yourself up first. God makes you new, and like wind in the grass, people start to see the difference.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 2 of 6</p>
+      <span class="topic">Salvation (soteriology)</span>
+      <h2>Who can be saved, and how?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="14-15" data-hl="whosoever believeth in him"></blockquote>
+      <blockquote class="quote step" data-q="18" data-hl="He that believeth on him is not condemned"></blockquote>
+      <blockquote class="quote step"><p>“For by grace are ye saved through faith; and that not of yourselves: it is the gift of God: Not of works, lest any man should boast.”</p><cite>Ephesians 2:8–9</cite></blockquote>
+      <blockquote class="quote step"><p>“For whosoever shall call upon the name of the Lord shall be saved.”</p><cite>Romans 10:13</cite></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>Whosoever. Anyone at all. And the way is the same for everyone: believe in Jesus. Like the bitten Israelites who looked at the serpent and lived, you look to Jesus, lifted up on the cross for you. It's a gift received by faith, not a wage earned by works.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 3 of 6</p>
+      <span class="topic">God's love</span>
+      <h2>Why did God send His Son?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="16" data-hl="For God so loved the world, that he gave"></blockquote>
+      <blockquote class="quote step" data-q="17"></blockquote>
+      <blockquote class="quote step"><p>“But God commendeth his love toward us, in that, while we were yet sinners, Christ died for us.”</p><cite>Romans 5:8</cite></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>Because He loved the world. He didn't send Jesus to condemn anyone. The world was already condemned. He sent Him to save it. And He loved us while we were still sinners, not after we got our act together.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 4 of 6</p>
+      <span class="topic">Light and darkness</span>
+      <h2>Why do people hide from the light?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="19" data-hl="men loved darkness rather than light"></blockquote>
+      <blockquote class="quote step" data-q="20" data-hl="lest his deeds should be reproved"></blockquote>
+      <blockquote class="quote step" data-q="21"></blockquote>
+      <blockquote class="quote step"><p>“But if we walk in the light, as he is in the light, we have fellowship one with another, and the blood of Jesus Christ his Son cleanseth us from all sin.”</p><cite>1 John 1:7</cite></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>Because the light shows what we've done, and we'd rather it stay hidden. But hiding keeps us sick. The man who comes to the light finds that Jesus' blood cleanses all sin. Nicodemus came by night, but he came. Come as you are, and come into the light.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 5 of 6</p>
+      <span class="topic">Assurance</span>
+      <h2>Can a believer be sure he has eternal life?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="36" data-hl="He that believeth on the Son hath everlasting life"></blockquote>
+      <blockquote class="quote step"><p>“Verily, verily, I say unto you, He that heareth my word, and believeth on him that sent me, hath everlasting life, and shall not come into condemnation; but is passed from death unto life.”</p><cite>John 5:24</cite></blockquote>
+      <blockquote class="quote step"><p>“And I give unto them eternal life; and they shall never perish, neither shall any man pluck them out of my hand.”</p><cite>John 10:28</cite></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>Yes. Jesus says the believer <em>hath</em> everlasting life, right now, and has already passed from death to life. It's everlasting, so it can't run out. He promises His people shall never perish and no one can take them out of His hand. You can know.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 6 of 6</p>
+      <span class="topic">Humility</span>
+      <h2>What does it look like to make much of Jesus?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="26" data-hl="all men come to him"></blockquote>
+      <blockquote class="quote step" data-q="27"></blockquote>
+      <blockquote class="quote step" data-q="29" data-hl="rejoiceth greatly because of the bridegroom’s voice"></blockquote>
+      <blockquote class="quote step" data-q="30"></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>It looks like John. When his crowd started leaving for Jesus, he didn't get jealous. He got glad. He knew everything he had was a gift from heaven, so he didn't need the spotlight. Like a best man at a wedding, his joy was seeing the Groom honored. More of Him, less of me.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide prayer">
+  <div class="inner">
+    <div class="emblem rise"></div>
+    <h2 class="rise" style="--d:1">Prayer requests</h2>
+    <p class="ask-line rise" style="--d:2">What can we pray about for you today?</p>
+    <blockquote class="quote rise" style="--d:4"><p>“Casting all your care upon him; for he careth for you.”</p><cite>1 Peter 5:7</cite></blockquote>
+  </div>
+</section>
+
+</main>
+
+<script>
+// King James Version, John chapter 3
+const V = {
+  1: "There was a man of the Pharisees, named Nicodemus, a ruler of the Jews:",
+  2: "The same came to Jesus by night, and said unto him, Rabbi, we know that thou art a teacher come from God: for no man can do these miracles that thou doest, except God be with him.",
+  3: "Jesus answered and said unto him, Verily, verily, I say unto thee, Except a man be born again, he cannot see the kingdom of God.",
+  4: "Nicodemus saith unto him, How can a man be born when he is old? can he enter the second time into his mother’s womb, and be born?",
+  5: "Jesus answered, Verily, verily, I say unto thee, Except a man be born of water and of the Spirit, he cannot enter into the kingdom of God.",
+  6: "That which is born of the flesh is flesh; and that which is born of the Spirit is spirit.",
+  7: "Marvel not that I said unto thee, Ye must be born again.",
+  8: "The wind bloweth where it listeth, and thou hearest the sound thereof, but canst not tell whence it cometh, and whither it goeth: so is every one that is born of the Spirit.",
+  9: "Nicodemus answered and said unto him, How can these things be?",
+  10: "Jesus answered and said unto him, Art thou a master of Israel, and knowest not these things?",
+  11: "Verily, verily, I say unto thee, We speak that we do know, and testify that we have seen; and ye receive not our witness.",
+  12: "If I have told you earthly things, and ye believe not, how shall ye believe, if I tell you of heavenly things?",
+  13: "And no man hath ascended up to heaven, but he that came down from heaven, even the Son of man which is in heaven.",
+  14: "And as Moses lifted up the serpent in the wilderness, even so must the Son of man be lifted up:",
+  15: "That whosoever believeth in him should not perish, but have eternal life.",
+  16: "For God so loved the world, that he gave his only begotten Son, that whosoever believeth in him should not perish, but have everlasting life.",
+  17: "For God sent not his Son into the world to condemn the world; but that the world through him might be saved.",
+  18: "He that believeth on him is not condemned: but he that believeth not is condemned already, because he hath not believed in the name of the only begotten Son of God.",
+  19: "And this is the condemnation, that light is come into the world, and men loved darkness rather than light, because their deeds were evil.",
+  20: "For every one that doeth evil hateth the light, neither cometh to the light, lest his deeds should be reproved.",
+  21: "But he that doeth truth cometh to the light, that his deeds may be made manifest, that they are wrought in God.",
+  22: "After these things came Jesus and his disciples into the land of Judaea; and there he tarried with them, and baptized.",
+  23: "And John also was baptizing in Aenon near to Salim, because there was much water there: and they came, and were baptized.",
+  24: "For John was not yet cast into prison.",
+  25: "Then there arose a question between some of John’s disciples and the Jews about purifying.",
+  26: "And they came unto John, and said unto him, Rabbi, he that was with thee beyond Jordan, to whom thou barest witness, behold, the same baptizeth, and all men come to him.",
+  27: "John answered and said, A man can receive nothing, except it be given him from heaven.",
+  28: "Ye yourselves bear me witness, that I said, I am not the Christ, but that I am sent before him.",
+  29: "He that hath the bride is the bridegroom: but the friend of the bridegroom, which standeth and heareth him, rejoiceth greatly because of the bridegroom’s voice: this my joy therefore is fulfilled.",
+  30: "He must increase, but I must decrease.",
+  31: "He that cometh from above is above all: he that is of the earth is earthly, and speaketh of the earth: he that cometh from heaven is above all.",
+  32: "And what he hath seen and heard, that he testifieth; and no man receiveth his testimony.",
+  33: "He that hath received his testimony hath set to his seal that God is true.",
+  34: "For he whom God hath sent speaketh the words of God: for God giveth not the Spirit by measure unto him.",
+  35: "The Father loveth the Son, and hath given all things into his hand.",
+  36: "He that believeth on the Son hath everlasting life: and he that believeth not the Son shall not see life; but the wrath of God abideth on him."
+};
+const BOOK = "John 3";
+</script>
+<script src="../assets/deck.js"></script>
+</body>
+</html>

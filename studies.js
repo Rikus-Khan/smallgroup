@@ -70,6 +70,107 @@ window.STUDIES = [
     }
   },
   {
+    "id": "john-03",
+    "type": "chapter",
+    "book": "John",
+    "ch": 3,
+    "date": "2026-10-29",
+    "title": "John 3",
+    "sub": "Born again",
+    "about": "A respected teacher comes to Jesus by night and hears the best news in the world: God so loved the world.",
+    "tags": [
+      "New birth",
+      "Salvation",
+      "God's love",
+      "Light and darkness",
+      "Assurance",
+      "Humility"
+    ],
+    "url": "studies/john-03.html",
+    "overview": {
+      "where": "Jerusalem by night, then the Judaean countryside and Aenon near Salim",
+      "when": "Soon after the Passover of John 2",
+      "people": [
+        "jesus",
+        "nicodemus",
+        "pharisees",
+        "disciples",
+        "john-the-baptist",
+        "the-jews"
+      ],
+      "places": [
+        "judaea",
+        "aenon",
+        "jordan"
+      ],
+      "story": [
+        "Nicodemus, a Pharisee and a ruler of the Jews, comes to Jesus by night. Jesus tells him, “Ye must be born again” (1–8).",
+        "The teacher of Israel can't understand it. Jesus says the Son of man must be lifted up, like the serpent in the wilderness (9–15).",
+        "“For God so loved the world.” Whoever believes is not condemned, but men who love darkness stay away from the light (16–21).",
+        "Jesus' disciples baptize in Judaea while John baptizes at Aenon. John's disciples complain that everyone is going to Jesus (22–26).",
+        "John rejoices like the best man at a wedding: “He must increase, but I must decrease.” Whoever believes on the Son has everlasting life (27–36)."
+      ],
+      "key": {
+        "ref": "John 3:16",
+        "text": "For God so loved the world, that he gave his only begotten Son, that whosoever believeth in him should not perish, but have everlasting life."
+      },
+      "big": "No one can fix himself. Every man needs a new birth from above, and God offers it to whosoever believes in His Son. Believers have everlasting life now."
+    }
+  },
+  {
+    "id": "john-04",
+    "type": "chapter",
+    "book": "John",
+    "ch": 4,
+    "date": "2026-10-29",
+    "title": "John 4",
+    "sub": "Living water",
+    "about": "A tired Jesus sits at a well, meets a thirsty woman with a past, and a whole town finds the Saviour of the world.",
+    "tags": [
+      "Salvation",
+      "Grace",
+      "Shame",
+      "Worship",
+      "Witnessing",
+      "Faith"
+    ],
+    "url": "studies/john-04.html",
+    "overview": {
+      "where": "Jacob's well at Sychar in Samaria, then Cana of Galilee",
+      "when": "On the way from Judaea back to Galilee, then two days later",
+      "people": [
+        "jesus",
+        "woman-of-samaria",
+        "disciples",
+        "samaritans",
+        "galilaeans",
+        "nobleman"
+      ],
+      "places": [
+        "judaea",
+        "samaria",
+        "sychar",
+        "jacobs-well",
+        "mount-gerizim",
+        "galilee",
+        "cana",
+        "capernaum"
+      ],
+      "story": [
+        "Jesus leaves Judaea and must go through Samaria. Tired from the road, He sits on Jacob's well at noon (1–6).",
+        "He asks a Samaritan woman for a drink and offers her living water: whoever drinks it will never thirst again (7–15).",
+        "He tells her about her five husbands, teaches that the Father seeks worship in spirit and in truth, and says, “I that speak unto thee am he” (16–26).",
+        "She leaves her waterpot and brings the town: “Come, see a man.” Many Samaritans believe He is the Saviour of the world (27–42).",
+        "Back in Cana, a nobleman begs Jesus to heal his dying son. “Go thy way; thy son liveth.” He believes, and the boy is healed that same hour (43–54)."
+      ],
+      "key": {
+        "ref": "John 4:14",
+        "text": "But whosoever drinketh of the water that I shall give him shall never thirst; but the water that I shall give him shall be in him a well of water springing up into everlasting life."
+      },
+      "big": "Jesus crosses every wall to reach thirsty, ashamed people, and gives them living water that never runs dry. Faith takes Him at His word."
+    }
+  },
+  {
     "id": "john-05",
     "type": "chapter",
     "book": "John",

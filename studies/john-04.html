@@ -1,0 +1,811 @@
+<!doctype html>
+<html lang="en" data-theme="stone">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>John 4</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="../assets/fonts.css">
+<link rel="stylesheet" href="../assets/deck.css">
+<link rel="stylesheet" href="../assets/themes.css">
+<style>
+/* Map: the road through Samaria drawn over the long way around */
+.jn04-map .sea { fill: color-mix(in srgb, var(--cool) 28%, transparent); }
+.jn04-map .lake { fill: var(--cool); }
+.jn04-map .river { fill: none; stroke: var(--cool); stroke-width: 3; }
+.jn04-map .border { fill: none; stroke: var(--line-strong); stroke-width: 2; stroke-dasharray: 5 6; }
+.jn04-map .region { font-size: 17px; font-weight: 700; letter-spacing: .14em; fill: var(--ink-soft); }
+.jn04-map .town { fill: var(--ink); }
+.jn04-map .around { fill: none; stroke: var(--ink-soft); stroke-width: 3; stroke-dasharray: 3 7; stroke-linecap: round; }
+.jn04-map .through { fill: none; stroke: var(--accent); stroke-width: 6; stroke-linecap: round; stroke-dasharray: 1; stroke-dashoffset: 1; transition: stroke-dashoffset 1.6s ease; }
+.split:has(.jn04-road-go.on) .jn04-map .through { stroke-dashoffset: 0; }
+
+/* Jacob's well in cross-section, with a bucket going down */
+.jn04-well .earth { fill: var(--surface-2); }
+.jn04-well .shaft { fill: color-mix(in srgb, var(--ink) 22%, var(--bg)); }
+.jn04-well .water { fill: var(--cool); }
+.jn04-well .rope { stroke: var(--leather-light); stroke-width: 3; }
+.jn04-well .bucket { transform: translateY(0); }
+.slide.active .jn04-well .bucket { animation: jn04-lower 6s ease-in-out .6s infinite; }
+@keyframes jn04-lower { 0% { transform: translateY(0); } 45%, 55% { transform: translateY(268px); } 100% { transform: translateY(0); } }
+
+/* Walls that come down, one at a time */
+.jn04-walls { display: grid; gap: clamp(.5rem, 1.4vh, .9rem); margin: .4em 0 1em; }
+.jn04-wall { display: grid; grid-template-columns: 1fr auto 1fr; align-items: center; gap: .3rem 1rem; }
+.jn04-wall b { font: 400 clamp(1.15rem, .95rem + 1vw, 1.75rem) var(--serif); }
+.jn04-wall b:first-child { text-align: right; }
+.jn04-wall .bricks {
+  width: 2.4rem; height: 3.4rem; border: 2px solid var(--ink-soft); border-radius: 2px; background-color: var(--surface-2);
+  background-image: linear-gradient(var(--ink-soft) 2px, transparent 2px), linear-gradient(90deg, var(--ink-soft) 2px, transparent 2px);
+  background-size: 100% 13px, 19px 26px; transform-origin: 50% 100%;
+  transition: transform .9s cubic-bezier(.5,0,.75,0) 1s, opacity .9s ease 1s;
+}
+.jn04-wall.on .bricks { transform: scaleY(.1); opacity: .35; }
+.jn04-wall small { grid-column: 1 / -1; text-align: center; color: var(--ink-soft); font-size: clamp(.88rem, .8rem + .35vw, 1.1rem); }
+
+/* A broken cistern that drains, and a spring that keeps flowing */
+.jn04-cistern .pit { fill: var(--surface-2); stroke: var(--ink-soft); stroke-width: 4; }
+.jn04-cistern .crack { fill: none; stroke: var(--danger); stroke-width: 3; stroke-linejoin: round; }
+.jn04-cistern .water { fill: var(--cool); }
+.slide.active .jn04-cistern .drain { animation: jn04-drain 5s ease-in infinite; }
+@keyframes jn04-drain { 0% { transform: translateY(0); } 85%, 100% { transform: translateY(150px); } }
+.jn04-cistern .drip { fill: var(--cool); opacity: 0; }
+.slide.active .jn04-cistern .drip { animation: jn04-drip 1.6s ease-in infinite; animation-delay: calc(var(--k) * .55s); }
+@keyframes jn04-drip { 0% { opacity: 0; transform: translateY(0); } 20% { opacity: 1; } 100% { opacity: 0; transform: translateY(38px); } }
+.jn04-cistern .rock { fill: var(--surface-2); stroke: var(--ink-soft); stroke-width: 3; }
+.jn04-cistern .stream { fill: none; stroke: var(--cool); stroke-width: 6; stroke-linecap: round; stroke-dasharray: 14 10; }
+.slide.active .jn04-cistern .stream { animation: jn04-flow .9s linear infinite; }
+@keyframes jn04-flow { to { stroke-dashoffset: -24; } }
+.jn04-cistern .bubble { fill: var(--cool); opacity: 0; }
+.slide.active .jn04-cistern .bubble { animation: jn04-up 2s ease-out infinite; animation-delay: calc(var(--k) * .5s); }
+@keyframes jn04-up { 0% { opacity: 0; transform: translateY(0); } 25% { opacity: .9; } 100% { opacity: 0; transform: translateY(-70px); } }
+
+/* Mount Gerizim and Mount Ebal, with the well in the valley */
+.jn04-mount .peak { fill: var(--surface-2); stroke: var(--ink-soft); stroke-width: 2; }
+.jn04-mount .gerizim { transition: fill 1s ease, stroke 1s ease; }
+.slide.active .jn04-mount .gerizim { transition-delay: 1.2s; fill: color-mix(in srgb, var(--accent) 16%, var(--surface-2)); stroke: var(--accent); }
+
+/* A field ripe for harvest, and the town coming out to Jesus */
+.jn04-harvest .stalk { fill: none; stroke: var(--warm); stroke-width: 3; stroke-linecap: round; transform-box: fill-box; transform-origin: 50% 100%; }
+.jn04-harvest .head { fill: color-mix(in srgb, var(--warm) 45%, var(--glow)); stroke: var(--warm); stroke-width: 1.5; }
+.slide.active .jn04-harvest .ear { animation: jn04-sway 3.4s ease-in-out infinite; animation-delay: calc(var(--k) * -.3s); transform-box: fill-box; transform-origin: 50% 100%; }
+@keyframes jn04-sway { 0%, 100% { transform: rotate(-3deg); } 50% { transform: rotate(4deg); } }
+.jn04-harvest .person { fill: var(--glow); stroke: var(--ink); stroke-width: 1.5; }
+.jn04-harvest .crowd { transform: translateX(0); transition: transform 3.5s ease-in-out; }
+.split:has(.jn04-come.on) .jn04-harvest .crowd { transform: translateX(300px); }
+
+/* One, then many, then many more */
+.jn04-grow { display: grid; gap: .7rem; margin: .4em 0 1em; }
+.jn04-grow .row { display: grid; grid-template-columns: minmax(8rem, 13rem) 1fr; gap: .3rem 1rem; align-items: center; }
+.jn04-grow .lbl { font-size: clamp(.92rem, .84rem + .4vw, 1.2rem); line-height: 1.3; }
+.jn04-grow .lbl b { display: block; font-family: var(--serif); font-weight: 400; color: var(--accent-hot); font-size: 1.15em; }
+.jn04-grow .dots { display: flex; flex-wrap: wrap; gap: 5px; }
+.jn04-grow .dots i { width: clamp(9px, 1.1vw, 14px); aspect-ratio: 1; border-radius: 50%; background: var(--accent); opacity: 0; transform: scale(.3); transition: opacity .4s ease, transform .4s ease; }
+.jn04-grow .row.on .dots i, .slide.active .jn04-grow .row.rise .dots i { opacity: 1; transform: none; }
+@media (max-width: 600px) { .jn04-grow .row { grid-template-columns: 1fr; } }
+
+/* The road from Cana down to Capernaum */
+.jn04-down .land { fill: var(--surface-2); stroke: var(--ink-soft); stroke-width: 2; }
+.jn04-down .lake { fill: var(--cool); }
+.jn04-down .sealevel { stroke: var(--ink-soft); stroke-width: 1.5; stroke-dasharray: 6 6; }
+
+/* Two places, one hour */
+.jn04-same .track { stroke: var(--line-strong); stroke-width: 3; }
+.jn04-same .link { fill: none; stroke: var(--accent); stroke-width: 4; }
+.jn04-same .glow { fill: var(--accent); opacity: .18; }
+</style>
+</head>
+<body>
+<main class="deck" id="deck">
+
+<!-- ======================= OPENING ======================= -->
+<section class="slide title">
+  <div class="inner">
+    <div class="emblem rise"></div>
+    <h1 class="rise" style="--d:1">John 4</h1>
+    <p class="sub rise" style="--d:3">Living water</p>
+    <p class="tag rise" style="--d:5">A tired Jesus sits at a well, meets a thirsty woman with a past, and a whole town finds the Saviour of the world.</p>
+  </div>
+</section>
+
+<section class="slide watch">
+  <div class="inner">
+    <h2 class="rise">Things to watch for</h2>
+    <p class="lede rise" style="--d:1">Keep these questions in the back of your mind as we read. We'll come back to every one of them at the end.</p>
+    <ol class="seeds">
+      <li class="step"><span class="topic">Grace for outsiders</span><span class="seed-q">Who will Jesus go out of His way to reach?</span></li>
+      <li class="step"><span class="topic">Living water</span><span class="seed-q">What does Jesus offer a thirsty soul?</span></li>
+      <li class="step"><span class="topic">Our past</span><span class="seed-q">What does Jesus do with the past we try to hide?</span></li>
+      <li class="step"><span class="topic">Worship</span><span class="seed-q">What kind of worship does the Father seek?</span></li>
+      <li class="step"><span class="topic">Being a witness</span><span class="seed-q">What can one changed life do?</span></li>
+      <li class="step"><span class="topic">Faith</span><span class="seed-q">What does it mean to take Jesus at His word?</span></li>
+    </ol>
+  </div>
+</section>
+
+<!-- ======================= PART ONE: THE WELL ======================= -->
+<section class="slide part">
+  <div class="inner">
+    <p class="part-n rise">Part one</p>
+    <h2 class="rise" style="--d:1">A tired man at a well</h2>
+    <p class="range rise" style="--d:2">Verses 1–15</p>
+    <div class="rule"></div>
+    <p class="hook rise" style="--d:4">Jesus goes where good Jews didn't go, to meet a woman who came alone.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="1-4" data-hl="he must needs go through Samaria"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="4" data-hl="must needs go"></blockquote>
+    <div class="split">
+      <div class="stage">
+        <svg class="jn04-map" viewBox="0 0 420 560" role="img" aria-label="Map: from Jerusalem in Judaea, the direct road runs north through Samaria to Sychar and on to Galilee. A longer road goes around Samaria, east of the Jordan.">
+          <path class="sea" d="M0 0 L150 0 C 130 120, 95 260, 72 380 S 42 520, 36 560 L0 560 Z"/>
+          <text x="40" y="300" font-size="15" transform="rotate(-78 40 300)" style="fill:var(--cool)">the Great Sea</text>
+          <path class="border" d="M100 190 L300 190"/>
+          <path class="border" d="M80 335 L308 335"/>
+          <ellipse class="lake" cx="305" cy="118" rx="15" ry="26"/>
+          <path class="river" d="M305 144 C 298 200, 316 250, 304 300 S 318 380, 310 418"/>
+          <ellipse class="lake" cx="313" cy="470" rx="15" ry="54"/>
+          <text class="region" x="140" y="40">GALILEE</text>
+          <text class="region" x="100" y="228">SAMARIA</text>
+          <text class="region" x="120" y="520">JUDAEA</text>
+          <text x="352" y="270" font-size="14" style="fill:var(--ink-soft)">Perea</text>
+          <path class="around" d="M245 430 L288 408 C 334 386, 340 300, 334 230 S 326 160, 300 152 C 280 146, 256 122, 235 110"/>
+          <path class="through" pathLength="1" d="M245 430 C 238 380, 246 320, 240 270 S 228 160, 235 110"/>
+          <g class="town">
+            <circle cx="245" cy="430" r="7"/><text x="232" y="436" text-anchor="end" font-size="17" font-weight="700">Jerusalem</text>
+            <circle cx="240" cy="270" r="7"/><text x="226" y="276" text-anchor="end" font-size="17" font-weight="700">Sychar</text>
+            <circle cx="235" cy="110" r="6"/><text x="222" y="115" text-anchor="end" font-size="16">Cana</text>
+            <circle cx="290" cy="98" r="5"/><text x="282" y="86" text-anchor="end" font-size="15">Capernaum</text>
+          </g>
+          <text x="340" y="190" font-size="13" style="fill:var(--ink-soft)">the long</text>
+          <text x="340" y="206" font-size="13" style="fill:var(--ink-soft)">way around</text>
+        </svg>
+      </div>
+      <div>
+        <h2 class="rise" style="--d:1">“He must needs go”</h2>
+        <p class="note rise" style="--d:2">Samaria sat right between Judaea and Galilee. Some strict Jews would rather cross the Jordan and take the long way around than set foot in it.</p>
+        <p class="note step jn04-road-go">The direct road went straight through, about three days' walk. But this “must” is about more than a map. It's the same word as “Ye <em>must</em> be born again” and “the Son of man <em>must</em> be lifted up” (3:7, 14). Jesus had an appointment at a well.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise">Seven hundred years of bad blood</h2>
+    <blockquote class="quote rise" style="--d:1"><p>“And the king of Assyria brought men from Babylon, and from Cuthah, and from Ava, and from Hamath, and from Sepharvaim, and placed them in the cities of Samaria instead of the children of Israel…”</p><cite>2 Kings 17:24</cite></blockquote>
+    <div class="hours rise" style="--d:2">
+      <div class="hour"><div class="dot"></div><b>722 B.C.</b><span>Assyria resettles Samaria</span></div>
+      <div class="hour"><div class="dot"></div><b>400s B.C.</b><span>a rival temple on Mount Gerizim</span></div>
+      <div class="hour"><div class="dot"></div><b>about 110 B.C.</b><span>Jews destroy that temple</span></div>
+      <div class="hour come"><div class="dot"></div><b>John 4</b><span>“no dealings”</span></div>
+      <div class="hour come"><div class="dot"></div><b>Acts 8</b><span>Samaria receives the word</span></div>
+    </div>
+    <p class="note step">When Assyria conquered the northern kingdom of Israel, it moved foreigners in. They mixed with the Israelites who were left. Their descendants were the Samaritans: they kept the five books of Moses and worshipped on their own mountain.</p>
+    <p class="note step">The Jews called them half-breeds and heretics. The Samaritans returned the favor. Jesus walked right into the middle of it.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="5-6" data-hl="Jacob’s well was there|being wearied with his journey|about the sixth hour"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="6" data-hl="being wearied with his journey|about the sixth hour"></blockquote>
+    <div class="split">
+      <div class="stage">
+        <svg class="jn04-well" viewBox="0 0 360 420" role="img" aria-label="Cross-section of Jacob's well: a narrow shaft roughly 100 feet deep, with water at the bottom and a bucket lowered on a rope.">
+          <defs><clipPath id="jn04-shaftclip"><rect x="0" y="0" width="360" height="400"/></clipPath></defs>
+          <circle cx="26" cy="34" r="20" style="fill:var(--warm)"/>
+          <text x="54" y="30" font-size="16" style="fill:var(--ink-soft)">the sixth hour,</text>
+          <text x="54" y="50" font-size="16" style="fill:var(--ink-soft)">about noon</text>
+          <rect class="earth" x="0" y="80" width="360" height="330"/>
+          <rect class="shaft" x="150" y="80" width="60" height="320"/>
+          <rect class="water" x="150" y="372" width="60" height="28"/>
+          <rect x="132" y="64" width="96" height="18" rx="3" style="fill:var(--line-strong)"/>
+          <g clip-path="url(#jn04-shaftclip)">
+            <g class="bucket">
+              <line class="rope" x1="180" y1="-300" x2="180" y2="84"/>
+              <path d="M168 84 L192 84 L189 104 L171 104 Z" style="fill:var(--leather)"/>
+            </g>
+          </g>
+          <line x1="250" y1="82" x2="250" y2="398" stroke-width="2" style="stroke:var(--ink-soft)"/>
+          <path d="M243 92 L250 82 L257 92 M243 388 L250 398 L257 388" fill="none" stroke-width="2" style="stroke:var(--ink-soft)"/>
+          <text x="262" y="236" font-size="18" font-weight="700">about</text>
+          <text x="262" y="258" font-size="18" font-weight="700">100 ft</text>
+          <text x="180" y="418" text-anchor="middle" font-size="15" style="fill:var(--ink-soft)">still there today, near Nablus</text>
+        </svg>
+      </div>
+      <div>
+        <h2 class="rise" style="--d:1">Noon at Jacob's well</h2>
+        <p class="note rise" style="--d:2">Hours were counted from sunrise, so <em>the sixth hour</em> was about noon, the hottest part of the day.</p>
+        <p class="note step">Women usually drew water together in the cool of the morning or evening. This woman came alone, at noon, when no one else would be there. People who carry shame often plan their lives around avoiding other people.</p>
+        <p class="note step">And notice Jesus: <em>“wearied with his journey.”</em> Fully God, and fully a man who got tired, hungry, and thirsty. He knows what a long day feels like.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="slide verse" data-v="7-9" data-hl="Give me to drink|for the Jews have no dealings with the Samaritans"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="9" data-hl="How is it that thou, being a Jew, askest drink of me"></blockquote>
+    <h2 class="rise" style="--d:1">Three walls, one cup</h2>
+    <p class="note rise" style="--d:2">Asking her for a drink meant sharing her water jar. To a strict Jew, a Samaritan's cup was unclean. With four words, “Give me to drink,” Jesus walked through three walls:</p>
+    <div class="jn04-walls">
+      <div class="jn04-wall step"><b>a Jew</b><span class="bricks" aria-hidden="true"></span><b>a Samaritan</b><small>“The Jews have no dealings with the Samaritans.”</small></div>
+      <div class="jn04-wall step"><b>a man</b><span class="bricks" aria-hidden="true"></span><b>a woman</b><small>Teachers didn't talk with women in public. Even the disciples “marvelled” (verse 27).</small></div>
+      <div class="jn04-wall step"><b>a holy Teacher</b><span class="bricks" aria-hidden="true"></span><b>a woman with a past</b><small>He knew exactly who she was, and He started the conversation anyway.</small></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide verse" data-v="10-12" data-hl="If thou knewest the gift of God|living water|the well is deep"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="10" data-hl="the gift of God|living water"></blockquote>
+    <h2 class="rise" style="--d:1">Living water</h2>
+    <div class="stage">
+      <svg class="jn04-cistern" viewBox="0 0 640 300" role="img" aria-label="On the left, a cracked cistern keeps draining dry. On the right, a spring keeps bubbling up and overflowing.">
+        <defs><clipPath id="jn04-pitclip"><path d="M44 80 L44 258 Q44 276 62 276 L238 276 Q256 276 256 258 L256 80 Z"/></clipPath></defs>
+        <path class="pit" d="M40 70 L40 260 Q40 280 60 280 L240 280 Q260 280 260 260 L260 70"/>
+        <g clip-path="url(#jn04-pitclip)"><rect class="water drain" x="40" y="128" width="222" height="160"/></g>
+        <path class="crack" d="M90 280 L98 262 L90 250 L102 236"/>
+        <path class="crack" d="M200 280 L192 266 L204 254 L196 240"/>
+        <path class="crack" d="M260 200 L246 208 L252 222"/>
+        <circle class="drip" style="--k:0" cx="90" cy="286" r="5"/>
+        <circle class="drip" style="--k:1" cx="200" cy="286" r="5"/>
+        <circle class="drip" style="--k:2" cx="264" cy="214" r="4"/>
+        <text x="150" y="40" text-anchor="middle" font-size="20" font-weight="700">broken cisterns</text>
+        <text x="150" y="60" text-anchor="middle" font-size="15" style="fill:var(--ink-soft)">dug by hand, holding still water</text>
+        <path class="rock" d="M380 280 Q390 200 440 190 L540 190 Q590 200 600 280 Z"/>
+        <path class="stream" d="M490 192 C 470 170, 430 175, 410 210 S 380 270, 360 284"/>
+        <path class="stream" d="M490 192 C 510 170, 560 175, 575 210 S 600 270, 630 284"/>
+        <circle class="bubble" style="--k:0" cx="478" cy="190" r="7"/>
+        <circle class="bubble" style="--k:1" cx="492" cy="190" r="9"/>
+        <circle class="bubble" style="--k:2" cx="504" cy="190" r="6"/>
+        <circle class="bubble" style="--k:3" cx="488" cy="190" r="5"/>
+        <text x="490" y="60" text-anchor="middle" font-size="20" font-weight="700" style="fill:var(--accent-hot)">the fountain of living waters</text>
+        <text x="490" y="80" text-anchor="middle" font-size="15" style="fill:var(--ink-soft)">a spring that never stops</text>
+      </svg>
+    </div>
+    <p class="note step">“Living water” meant <em>running</em> water, from a spring or a stream, as opposed to water sitting in a pit. She heard plumbing. Jesus meant life from God.</p>
+    <blockquote class="quote step"><p>“For my people have committed two evils; they have forsaken me the fountain of living waters, and hewed them out cisterns, broken cisterns, that can hold no water.”</p><cite>Jeremiah 2:13</cite></blockquote>
+  </div>
+</section>
+
+<section class="slide verse" data-v="13-15" data-hl="Whosoever drinketh of this water shall thirst again|shall never thirst|a well of water springing up into everlasting life"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="13-14" data-hl="shall thirst again|shall never thirst"></blockquote>
+    <h2 class="rise" style="--d:1">Thirst again, or never thirst</h2>
+    <div class="stage">
+      <svg viewBox="0 0 640 220" role="img" aria-label="Chart over time. This water: satisfied, then thirsty again, over and over. The water Jesus gives: satisfied and stays that way.">
+        <text x="98" y="34" text-anchor="end" font-size="16" style="fill:var(--ink-soft)">satisfied</text>
+        <text x="98" y="176" text-anchor="end" font-size="16" style="fill:var(--ink-soft)">thirsty</text>
+        <line x1="108" y1="190" x2="625" y2="190" stroke-width="2" style="stroke:var(--line-strong)"/>
+        <text x="625" y="212" text-anchor="end" font-size="15" style="fill:var(--ink-soft)">time →</text>
+        <g class="step">
+          <path class="draw" pathLength="1" d="M110 170 L122 40 L190 170 L202 40 L270 170 L282 40 L350 170 L362 40 L430 170 L442 40 L510 170 L522 40 L590 170 L602 40 L620 70" fill="none" stroke-width="3" stroke-linejoin="round" style="stroke:var(--ink-soft)"/>
+          <text x="110" y="212" font-size="16" font-weight="700" style="fill:var(--ink-soft)">“this water”: thirst again</text>
+        </g>
+        <g class="step">
+          <path class="draw" pathLength="1" d="M110 170 L124 22 L622 22" fill="none" stroke-width="6" stroke-linecap="round" stroke-linejoin="round" style="stroke:var(--accent-hot)"/>
+          <text x="620" y="14" text-anchor="end" font-size="18" font-weight="700" class="serif" style="fill:var(--accent-hot)">the water I give: never thirst</text>
+        </g>
+      </svg>
+    </div>
+    <p class="note step">Every man in recovery knows that first line. The drink, the high, the woman, the money: it hits, it fades, and you need more just to get back to even. It never fills the hole for long.</p>
+    <p class="note step">What Jesus gives isn't another hit. It's <em>a well inside you</em>, His own Spirit, springing up for good (John 7:37–39).</p>
+  </div>
+</section>
+
+<!-- ======================= PART TWO: THE WHOLE TRUTH ======================= -->
+<section class="slide part">
+  <div class="inner">
+    <p class="part-n rise">Part two</p>
+    <h2 class="rise" style="--d:1">The whole truth</h2>
+    <p class="range rise" style="--d:2">Verses 16–26</p>
+    <div class="rule"></div>
+    <p class="hook rise" style="--d:4">Jesus brings up her past, and then tells her who He is.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="16-18" data-hl="Go, call thy husband|I have no husband|thou hast had five husbands"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="18" data-hl="thou hast had five husbands"></blockquote>
+    <h2 class="rise" style="--d:1">Known all the way down</h2>
+    <div class="mirror">
+      <div class="step"><span>She said</span><span class="arrow">→</span><span class="word">“I have no husband.”</span><small>True, as far as it went. The kind of answer that keeps the door half shut.</small></div>
+      <div class="step"><span>Jesus said</span><span class="arrow">→</span><span class="word">“Thou hast well said.”</span><small>He named the whole story, five husbands and the man she lived with now, and credited her for the true part.</small></div>
+    </div>
+    <p class="note step">He didn't bring it up to shame her. He brought it up so she would know that He knew <em>all of it</em>, and the offer of living water was still on the table.</p>
+    <p class="note step">Some of us have a past we'd rather nobody mentioned. Jesus already knows every bit of it. And He's still at the well.</p>
+    <blockquote class="quote step"><p>“They looked unto him, and were lightened: and their faces were not ashamed.”</p><cite>Psalm 34:5</cite></blockquote>
+  </div>
+</section>
+
+<section class="slide verse" data-v="19-22" data-hl="Our fathers worshipped in this mountain|salvation is of the Jews"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="20" data-hl="in this mountain"></blockquote>
+    <div class="split">
+      <div class="stage">
+        <svg class="jn04-mount" viewBox="0 0 640 310" role="img" aria-label="Mount Ebal and Mount Gerizim face each other across a narrow valley. Jacob's well sits at the foot of Gerizim, with the town of Sychar nearby.">
+          <path class="peak" d="M10 260 L150 80 L300 260 Z"/>
+          <path class="peak gerizim" d="M330 260 L470 82 L630 260 Z"/>
+          <text x="150" y="40" text-anchor="middle" font-size="19" font-weight="700">Mount Ebal</text>
+          <text x="150" y="62" text-anchor="middle" font-size="15" style="fill:var(--ink-soft)">about 3,080 ft</text>
+          <text x="470" y="40" text-anchor="middle" font-size="19" font-weight="700" style="fill:var(--accent-hot)">Mount Gerizim</text>
+          <text x="470" y="62" text-anchor="middle" font-size="15" style="fill:var(--ink-soft)">“this mountain,” about 2,890 ft</text>
+          <rect x="452" y="96" width="36" height="14" style="fill:var(--line-strong)"/>
+          <path d="M456 96 L456 86 M466 96 L466 82 M476 96 L476 88 M484 96 L484 84" stroke-width="3" style="stroke:var(--ink-soft)"/>
+          <text x="470" y="190" text-anchor="middle" font-size="15" style="fill:var(--ink-soft)">temple ruins</text>
+          <g style="fill:var(--ink-soft)"><rect x="208" y="236" width="14" height="12"/><rect x="226" y="232" width="12" height="16"/><rect x="242" y="238" width="12" height="10"/></g>
+          <text x="231" y="224" text-anchor="middle" font-size="15" font-weight="700">Sychar</text>
+          <circle cx="318" cy="256" r="9" stroke-width="3" style="fill:var(--cool);stroke:var(--ink)"/>
+          <line x1="0" y1="262" x2="640" y2="262" stroke-width="2" style="stroke:var(--ink-soft)"/>
+          <text x="318" y="290" text-anchor="middle" font-size="16" font-weight="700">Jacob's well</text>
+          <text x="630" y="300" text-anchor="end" font-size="14" style="fill:var(--ink-soft)">Jerusalem: about 30 miles south</text>
+        </svg>
+      </div>
+      <div>
+        <h2 class="rise" style="--d:1">“This mountain”</h2>
+        <p class="note rise" style="--d:2">She could look up from the well and see it: Mount Gerizim, where the Samaritans had built their own temple. It had been in ruins for over a hundred years, but they still worshipped there.</p>
+        <p class="note step">Maybe it was an honest question. Maybe she was changing the subject. Either way, Jesus answered it honestly: the Samaritans had only part of God's word. The Messiah would come from the Jews, <em>“salvation is of the Jews.”</em></p>
+        <p class="note step">But a new day was coming, when the place wouldn't matter at all.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="slide verse" data-v="23-24" data-hl="in spirit and in truth|the Father seeketh such to worship him|God is a Spirit"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="23" data-hl="the Father seeketh such to worship him"></blockquote>
+    <h2 class="rise" style="--d:1">Where do you worship?</h2>
+    <ul class="nots">
+      <li class="step"><span class="k">neither in this mountain</span><span class="why">not the Samaritans' holy place</span></li>
+      <li class="step"><span class="k">nor yet at Jerusalem</span><span class="why">not even the temple</span></li>
+      <li class="step yes"><span class="k">but in spirit and in truth</span><span class="why">from the heart, and by the truth God has shown, in Jesus</span></li>
+    </ul>
+    <p class="note step">God is a Spirit, so He isn't stuck in a building. You can worship Him at a well, in a cell, in a truck, or in this room.</p>
+    <p class="note step">And look who's doing the seeking: <em>“the Father seeketh such.”</em> She came looking for water. God came looking for her.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="25-26" data-hl="I know that Messias cometh|I that speak unto thee am he"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="26"></blockquote>
+
+    <div class="morph">
+      <span class="big rise" style="--d:3">ἐγώ εἰμι</span>
+      <span class="say step">said <em class="gk">egō eimi</em>, “I am”</span>
+    </div>
+    <p class="note step">The KJV adds “he” to make good English. Jesus literally says, <em>“I am, the one speaking to you.”</em> It echoes God's own name: “I AM THAT I AM” (Exodus 3:14). This is the first time in John that Jesus plainly says He's the Messiah, and He says it to a Samaritan woman with a past.</p>
+    <p class="note step">Watch for “I am” all through John. Seven times He finishes the sentence:</p>
+    <ol class="signs step">
+      <li><b>the bread of life</b>6:35</li>
+      <li><b>the light of the world</b>8:12</li>
+      <li><b>the door</b>10:9</li>
+      <li><b>the good shepherd</b>10:11</li>
+      <li><b>the resurrection, and the life</b>11:25</li>
+      <li><b>the way, the truth, and the life</b>14:6</li>
+      <li><b>the true vine</b>15:1</li>
+    </ol>
+  </div>
+</section>
+
+<!-- ======================= PART THREE: THE HARVEST ======================= -->
+<section class="slide part">
+  <div class="inner">
+    <p class="part-n rise">Part three</p>
+    <h2 class="rise" style="--d:1">White to harvest</h2>
+    <p class="range rise" style="--d:2">Verses 27–42</p>
+    <div class="rule"></div>
+    <p class="hook rise" style="--d:4">She leaves her waterpot and brings back a town.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="27-30" data-hl="left her waterpot|Come, see a man, which told me all things that ever I did"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="28-29" data-hl="left her waterpot|Come, see a man"></blockquote>
+    <h2 class="rise" style="--d:1">She left her waterpot</h2>
+    <p class="note rise" style="--d:2">She came for water and forgot all about it. She'd found something better.</p>
+    <div class="chains">
+      <div class="chain step"><span class="who-chip jesus">Jesus</span><span class="said">“Give me to drink”</span><span class="who-chip">a Samaritan woman</span></div>
+      <div class="chain step"><span class="who-chip">the woman</span><span class="said">“Come, see a man”</span><span class="who-chip">the men of the city</span><span class="said">came</span><span class="who-chip jesus">Jesus</span></div>
+    </div>
+    <p class="note step">Notice who she ran to: the very people she'd been avoiding at noon. And notice what she told them: <em>“a man, which told me all things that ever I did.”</em> The thing she was most ashamed of became the heart of her story. Your past, handed to Jesus, can become the thing that points someone else to Him.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="31-34" data-hl="I have meat to eat that ye know not of|My meat is to do the will of him that sent me"></section>
+<section class="slide verse" data-v="35-38" data-hl="Lift up your eyes, and look on the fields|white already to harvest|One soweth, and another reapeth"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="35" data-hl="Lift up your eyes, and look on the fields; for they are white already to harvest"></blockquote>
+    <div class="split">
+      <div class="stage">
+        <svg class="jn04-harvest" viewBox="0 0 640 280" role="img" aria-label="A ripe field. People from the town come walking across it toward Jesus.">
+          <path d="M0 150 Q60 110 140 130 L140 280 L0 280 Z" style="fill:var(--surface-2)"/>
+          <g style="fill:var(--ink-soft)"><rect x="20" y="118" width="22" height="20"/><rect x="48" y="110" width="18" height="28"/><rect x="72" y="116" width="24" height="22"/><rect x="100" y="122" width="16" height="16"/></g>
+          <text x="70" y="100" text-anchor="middle" font-size="16" font-weight="700">the city</text>
+          <line x1="0" y1="250" x2="640" y2="250" stroke-width="2" style="stroke:var(--ink-soft)"/>
+          <g>
+            <g class="ear" style="--k:0"><path class="stalk" d="M160 250 L160 196"/><ellipse class="head" cx="160" cy="186" rx="5" ry="12"/></g>
+            <g class="ear" style="--k:1"><path class="stalk" d="M185 250 L185 204"/><ellipse class="head" cx="185" cy="194" rx="5" ry="12"/></g>
+            <g class="ear" style="--k:2"><path class="stalk" d="M210 250 L210 192"/><ellipse class="head" cx="210" cy="182" rx="5" ry="12"/></g>
+            <g class="ear" style="--k:3"><path class="stalk" d="M235 250 L235 200"/><ellipse class="head" cx="235" cy="190" rx="5" ry="12"/></g>
+            <g class="ear" style="--k:4"><path class="stalk" d="M260 250 L260 194"/><ellipse class="head" cx="260" cy="184" rx="5" ry="12"/></g>
+            <g class="ear" style="--k:5"><path class="stalk" d="M285 250 L285 202"/><ellipse class="head" cx="285" cy="192" rx="5" ry="12"/></g>
+            <g class="ear" style="--k:6"><path class="stalk" d="M310 250 L310 190"/><ellipse class="head" cx="310" cy="180" rx="5" ry="12"/></g>
+            <g class="ear" style="--k:7"><path class="stalk" d="M335 250 L335 198"/><ellipse class="head" cx="335" cy="188" rx="5" ry="12"/></g>
+            <g class="ear" style="--k:8"><path class="stalk" d="M360 250 L360 192"/><ellipse class="head" cx="360" cy="182" rx="5" ry="12"/></g>
+            <g class="ear" style="--k:9"><path class="stalk" d="M385 250 L385 202"/><ellipse class="head" cx="385" cy="192" rx="5" ry="12"/></g>
+            <g class="ear" style="--k:10"><path class="stalk" d="M410 250 L410 194"/><ellipse class="head" cx="410" cy="184" rx="5" ry="12"/></g>
+            <g class="ear" style="--k:11"><path class="stalk" d="M435 250 L435 200"/><ellipse class="head" cx="435" cy="190" rx="5" ry="12"/></g>
+            <g class="ear" style="--k:12"><path class="stalk" d="M460 250 L460 192"/><ellipse class="head" cx="460" cy="182" rx="5" ry="12"/></g>
+            <g class="ear" style="--k:13"><path class="stalk" d="M485 250 L485 204"/><ellipse class="head" cx="485" cy="194" rx="5" ry="12"/></g>
+          </g>
+          <g class="crowd">
+            <g class="person"><circle cx="120" cy="214" r="8"/><path d="M110 250 L113 224 Q120 219 127 224 L130 250 Z"/></g>
+            <g class="person"><circle cx="146" cy="218" r="8"/><path d="M136 250 L139 228 Q146 223 153 228 L156 250 Z"/></g>
+            <g class="person"><circle cx="96" cy="220" r="8"/><path d="M86 250 L89 230 Q96 225 103 230 L106 250 Z"/></g>
+            <g class="person"><circle cx="172" cy="214" r="8"/><path d="M162 250 L165 224 Q172 219 179 224 L182 250 Z"/></g>
+            <g class="person"><circle cx="72" cy="216" r="8"/><path d="M62 250 L65 226 Q72 221 79 226 L82 250 Z"/></g>
+          </g>
+          <g>
+            <circle cx="590" cy="206" r="11" style="fill:var(--accent)"/>
+            <path d="M576 250 L580 222 Q590 214 600 222 L604 250 Z" style="fill:var(--accent)"/>
+            <text x="590" y="182" text-anchor="middle" font-size="16" font-weight="700" style="fill:var(--accent-hot)">Jesus</text>
+          </g>
+        </svg>
+      </div>
+      <div>
+        <h2 class="rise" style="--d:1">Look on the fields</h2>
+        <p class="note rise" style="--d:2">“Meat” in the KJV just means <em>food</em>. The disciples went to town for lunch. Jesus was fed by something else: doing His Father's will.</p>
+        <p class="note step jn04-come">Grain turns pale when it's ripe. The disciples thought harvest was months off. Jesus said, <em>Look up.</em> Right then the Samaritans were walking out across the fields toward Him. Some think the townspeople in their light-colored clothes were the “white” fields He pointed to.</p>
+        <p class="note step">Someone sowed before you, and you get to reap. Somebody prayed for you, planted a seed, and never saw it come up. Now it's your turn to tell someone.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="slide verse" data-v="39-42" data-hl="He told me all that ever I did|because of his own word|the Saviour of the world"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="42" data-hl="we have heard him ourselves|the Saviour of the world"></blockquote>
+    <h2 class="rise" style="--d:1">One, then many, then many more</h2>
+    <div class="jn04-grow" aria-label="An illustration, not a head count: one woman, then many Samaritans, then many more.">
+      <div class="row rise" style="--d:2"><span class="lbl"><b>one woman</b>met Jesus (v. 29)</span><span class="dots"><i></i></span></div>
+      <div class="row step"><span class="lbl"><b>many believed</b>for her saying (v. 39)</span><span class="dots"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></span></div>
+      <div class="row step"><span class="lbl"><b>many more believed</b>because of His word (v. 41)</span><span class="dots"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></span></div>
+    </div>
+    <p class="note step">Her word got them to Jesus. His word made them sure: <em>“we have heard him ourselves.”</em> That's how faith grows. Somebody brings you, and then you meet Him for yourself.</p>
+    <p class="note step">“The Saviour of the world” appears only here in the Gospels, and it came from Samaritans. Outsiders saw it first: He didn't come for one nation. He came for the world.</p>
+  </div>
+</section>
+
+<!-- ======================= PART FOUR: THY SON LIVETH ======================= -->
+<section class="slide part">
+  <div class="inner">
+    <p class="part-n rise">Part four</p>
+    <h2 class="rise" style="--d:1">Thy son liveth</h2>
+    <p class="range rise" style="--d:2">Verses 43–54</p>
+    <div class="rule"></div>
+    <p class="hook rise" style="--d:4">A desperate father, a long walk home, and a word he chose to believe.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="43-45" data-hl="a prophet hath no honour in his own country"></section>
+<section class="slide verse" data-v="46-47" data-hl="whose son was sick at Capernaum|for he was at the point of death"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="47" data-hl="besought him that he would come down"></blockquote>
+    <h2 class="rise" style="--d:1">A long way down</h2>
+    <div class="stage">
+      <svg class="jn04-down" viewBox="0 0 640 230" role="img" aria-label="The road from Cana in the hills drops down to Capernaum on the Sea of Galilee, below sea level, a distance of roughly 16 to 20 miles.">
+        <path class="land" d="M0 70 C 60 60, 110 56, 160 72 C 240 96, 300 100, 360 140 C 420 176, 480 190, 560 196 L640 196 L640 230 L0 230 Z"/>
+        <rect class="lake" x="560" y="196" width="80" height="20"/>
+        <line class="sealevel" x1="0" y1="160" x2="640" y2="160"/>
+        <text x="10" y="152" font-size="14" style="fill:var(--ink-soft)">sea level</text>
+        <path d="M90 58 C 150 60, 200 78, 260 92 C 330 110, 400 150, 470 176 C 510 188, 540 190, 560 190" fill="none" stroke-width="4" stroke-dasharray="10 7" style="stroke:var(--accent)"/>
+        <circle cx="90" cy="58" r="8" style="fill:var(--ink)"/>
+        <text x="90" y="38" text-anchor="middle" font-size="18" font-weight="700">Cana</text>
+        <text x="90" y="100" text-anchor="middle" font-size="14" style="fill:var(--ink-soft)">in the hills</text>
+        <circle cx="560" cy="190" r="8" style="fill:var(--ink)"/>
+        <text x="600" y="140" text-anchor="end" font-size="18" font-weight="700">Capernaum</text>
+        <text x="600" y="226" text-anchor="end" font-size="14" style="fill:var(--ink-soft)">Sea of Galilee, about 700 ft below sea level</text>
+        <text x="630" y="60" text-anchor="end" font-size="16" style="fill:var(--accent-hot)">about 16–20 miles, all downhill</text>
+      </svg>
+    </div>
+    <p class="note rise" style="--d:3">A “nobleman” was a royal official, probably in the service of Herod Antipas, the ruler of Galilee. Money, rank, servants, and none of it could help his dying boy.</p>
+    <p class="note step">So he walked a long day uphill to beg Jesus to <em>“come down.”</em> Trouble has a way of bringing important men to the end of themselves. That's often where faith starts.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="48-50" data-hl="Except ye see signs and wonders, ye will not believe|Go thy way; thy son liveth|the man believed the word that Jesus had spoken unto him"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="50" data-hl="the man believed the word that Jesus had spoken unto him, and he went his way"></blockquote>
+    <p class="saying rise" style="--d:1">Go thy way; thy son <em>liveth</em>.</p>
+    <p class="note rise" style="--d:3">Jesus' “ye” in verse 48 is plural. He's talking to the whole crowd that wanted a show. The father didn't argue about it. He just kept begging: “Sir, come down ere my child die.”</p>
+    <p class="note step">Then Jesus wouldn't go. He only gave His word. No sign, no proof, no trip to Capernaum. And the man <em>believed the word</em> and started walking home.</p>
+    <p class="note step">That's faith: taking Jesus at His word before you can see how it turns out.</p>
+    <blockquote class="quote step"><p>“So then faith cometh by hearing, and hearing by the word of God.”</p><cite>Romans 10:17</cite></blockquote>
+  </div>
+</section>
+
+<section class="slide verse" data-v="51-54" data-hl="Thy son liveth|Yesterday at the seventh hour the fever left him|himself believed, and his whole house"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="53" data-hl="at the same hour|himself believed, and his whole house"></blockquote>
+    <h2 class="rise" style="--d:1">The same hour</h2>
+    <div class="stage">
+      <svg class="jn04-same" viewBox="0 0 640 220" role="img" aria-label="Two timelines, Cana and Capernaum. At the seventh hour Jesus speaks in Cana, and at that same hour the fever leaves the boy in Capernaum. The next day the servants meet the father on the road.">
+        <text x="20" y="66" font-size="18" font-weight="700">Cana</text>
+        <text x="20" y="166" font-size="18" font-weight="700">Capernaum</text>
+        <line class="track" x1="130" y1="60" x2="620" y2="60"/>
+        <line class="track" x1="130" y1="160" x2="620" y2="160"/>
+        <text x="250" y="22" text-anchor="middle" font-size="16" font-weight="700">7th hour, about 1 p.m.</text>
+        <text x="540" y="22" text-anchor="middle" font-size="16" style="fill:var(--ink-soft)">the next day</text>
+        <circle cx="250" cy="60" r="10" style="fill:var(--accent)"/>
+        <text x="270" y="48" font-size="16" class="serif" style="fill:var(--accent-hot)">“Thy son liveth”</text>
+        <circle cx="250" cy="160" r="10" style="fill:var(--accent)"/>
+        <text x="270" y="190" font-size="16" class="serif" style="fill:var(--accent-hot)">“the fever left him”</text>
+        <g class="step">
+          <rect class="glow" x="236" y="46" width="28" height="128" rx="14"/>
+          <path class="link draw" pathLength="1" d="M250 72 L250 148"/>
+        </g>
+        <g class="step">
+          <path d="M290 64 C 390 80, 450 100, 516 110" fill="none" stroke-width="3" stroke-dasharray="4 6" style="stroke:var(--ink-soft)"/>
+          <path d="M290 156 C 390 140, 450 120, 516 110" fill="none" stroke-width="3" stroke-dasharray="4 6" style="stroke:var(--ink-soft)"/>
+          <circle cx="520" cy="110" r="9" style="fill:var(--ink)"/>
+          <text x="536" y="98" font-size="15">father meets</text><text x="536" y="116" font-size="15">his servants:</text>
+          <text x="536" y="136" font-size="15" class="serif" style="fill:var(--accent-hot)">“Thy son liveth”</text>
+        </g>
+      </svg>
+    </div>
+    <p class="note step">Miles apart, the same hour. Jesus didn't need to be in the room. His word is enough, wherever you are and wherever the people you love are.</p>
+    <p class="note step">Watch the man's faith grow: he believed enough to ask, then believed the word and went, then believed fully, <em>“and his whole house.”</em> One man's faith reached his whole family.</p>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="54"></blockquote>
+    <h2 class="rise" style="--d:1">The second sign</h2>
+    <ol class="signs rise" style="--d:2">
+      <li><b>Water to wine</b>John 2</li>
+      <li class="now"><b>An official's son healed</b>John 4</li>
+      <li><b>A lame man walks</b>John 5</li>
+      <li><b>Five thousand fed</b>John 6</li>
+      <li><b>Walking on the sea</b>John 6</li>
+      <li><b>A blind man sees</b>John 9</li>
+      <li><b>Lazarus raised</b>John 11</li>
+    </ol>
+    <p class="note step">Both signs happened in Cana. The first showed His glory over nature. This one shows His power over sickness and distance, with nothing but a word. And both ended the same way: people believed.</p>
+  </div>
+</section>
+
+<!-- ======================= CLOSING ======================= -->
+<section class="slide remember">
+  <div class="inner">
+    <h2 class="rise">Points to remember</h2>
+    <ol class="seeds">
+      <li class="step"><span class="topic">Grace for outsiders</span><span class="seed-q">“He must needs go through Samaria” <cite>4:4</cite></span><span class="take">Jesus crosses every wall to reach the people others avoid.</span></li>
+      <li class="step"><span class="topic">Living water</span><span class="seed-q">“Shall never thirst” <cite>4:14</cite></span><span class="take">Everything else leaves you thirsty again. He puts a spring inside you.</span></li>
+      <li class="step"><span class="topic">Our past</span><span class="seed-q">“Told me all things that ever I did” <cite>4:29</cite></span><span class="take">He knows all of it, and still offers living water. Your past can become your testimony.</span></li>
+      <li class="step"><span class="topic">Worship</span><span class="seed-q">“In spirit and in truth” <cite>4:24</cite></span><span class="take">Not a place, but a heart. And the Father is seeking worshippers.</span></li>
+      <li class="step"><span class="topic">Being a witness</span><span class="seed-q">“Come, see a man” <cite>4:29</cite></span><span class="take">One changed life brought a whole town to Jesus.</span></li>
+      <li class="step"><span class="topic">Faith</span><span class="seed-q">“The man believed the word” <cite>4:50</cite></span><span class="take">Take Him at His word, then walk, before you see how it turns out.</span></li>
+    </ol>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 1 of 6</p>
+      <span class="topic">Grace for outsiders</span>
+      <h2>Who will Jesus go out of His way to reach?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="4"></blockquote>
+      <blockquote class="quote step" data-q="9" data-hl="for the Jews have no dealings with the Samaritans"></blockquote>
+      <blockquote class="quote step"><p>“For the Son of man is come to seek and to save that which was lost.”</p><cite>Luke 19:10</cite></blockquote>
+      <blockquote class="quote step" data-q="42" data-hl="the Saviour of the world"></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>Anyone, and especially the people everyone else avoids. Jesus took the road others went around, to sit with a Samaritan woman nobody wanted to be seen with. He came to seek the lost. He's the Saviour of the world, and that includes you.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 2 of 6</p>
+      <span class="topic">Living water</span>
+      <h2>What does Jesus offer a thirsty soul?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="10" data-hl="living water"></blockquote>
+      <blockquote class="quote step" data-q="13-14" data-hl="shall never thirst"></blockquote>
+      <blockquote class="quote step"><p>“In the last day, that great day of the feast, Jesus stood and cried, saying, If any man thirst, let him come unto me, and drink. He that believeth on me, as the scripture hath said, out of his belly shall flow rivers of living water.”</p><cite>John 7:37–38</cite></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>Living water: eternal life and His own Spirit, springing up inside the one who believes. It's a gift, free for the asking. Everything else we drink from leaves us thirsty again. What He gives never runs dry.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 3 of 6</p>
+      <span class="topic">Our past</span>
+      <h2>What does Jesus do with the past we try to hide?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="17-18" data-hl="thou hast had five husbands"></blockquote>
+      <blockquote class="quote step" data-q="29" data-hl="which told me all things that ever I did"></blockquote>
+      <blockquote class="quote step" data-q="39" data-hl="He told me all that ever I did"></blockquote>
+      <blockquote class="quote step"><p>“They looked unto him, and were lightened: and their faces were not ashamed.”</p><cite>Psalm 34:5</cite></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>He brings it into the open, not to shame us, but so we know He knows all of it and still offers us living water. The woman who hid at noon ran into town telling everyone, “He told me all that ever I did.” Handed to Jesus, our past can become the story that brings others to Him.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 4 of 6</p>
+      <span class="topic">Worship</span>
+      <h2>What kind of worship does the Father seek?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="21" data-hl="neither in this mountain, nor yet at Jerusalem"></blockquote>
+      <blockquote class="quote step" data-q="23" data-hl="the Father seeketh such to worship him"></blockquote>
+      <blockquote class="quote step" data-q="24"></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>Worship in spirit and in truth: from the heart, honest, and according to the truth God has shown us in Jesus. It isn't tied to a mountain or a building. And God isn't waiting to be found. The Father is out looking for worshippers like that.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 5 of 6</p>
+      <span class="topic">Being a witness</span>
+      <h2>What can one changed life do?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="28-29" data-hl="Come, see a man"></blockquote>
+      <blockquote class="quote step" data-q="39" data-hl="many of the Samaritans of that city believed on him for the saying of the woman"></blockquote>
+      <blockquote class="quote step" data-q="41-42" data-hl="we have heard him ourselves"></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>Bring a whole town to Jesus. She had no training, no title, and a bad reputation. She just told what He'd done and said, “Come, see.” Her word got them to Jesus, and His word made them sure. You don't need to have it all figured out. Tell your story and point to Him.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 6 of 6</p>
+      <span class="topic">Faith</span>
+      <h2>What does it mean to take Jesus at His word?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="48"></blockquote>
+      <blockquote class="quote step" data-q="50" data-hl="the man believed the word that Jesus had spoken unto him, and he went his way"></blockquote>
+      <blockquote class="quote step" data-q="53" data-hl="himself believed, and his whole house"></blockquote>
+      <blockquote class="quote step"><p>“So then faith cometh by hearing, and hearing by the word of God.”</p><cite>Romans 10:17</cite></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>It means believing what He says and acting on it before you see the result. The nobleman got no sign, only a promise, and he turned around and walked home on it. God's word is enough. Faith comes by hearing it, and grows as we watch Him keep it.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide prayer">
+  <div class="inner">
+    <div class="emblem rise"></div>
+    <h2 class="rise" style="--d:1">Prayer requests</h2>
+    <p class="ask-line rise" style="--d:2">What can we pray about for you today?</p>
+    <blockquote class="quote rise" style="--d:4"><p>“Let us therefore come boldly unto the throne of grace, that we may obtain mercy, and find grace to help in time of need.”</p><cite>Hebrews 4:16</cite></blockquote>
+  </div>
+</section>
+
+</main>
+
+<script>
+// King James Version, John chapter 4
+const V = {
+  1: "When therefore the Lord knew how the Pharisees had heard that Jesus made and baptized more disciples than John,",
+  2: "(Though Jesus himself baptized not, but his disciples,)",
+  3: "He left Judaea, and departed again into Galilee.",
+  4: "And he must needs go through Samaria.",
+  5: "Then cometh he to a city of Samaria, which is called Sychar, near to the parcel of ground that Jacob gave to his son Joseph.",
+  6: "Now Jacob’s well was there. Jesus therefore, being wearied with his journey, sat thus on the well: and it was about the sixth hour.",
+  7: "There cometh a woman of Samaria to draw water: Jesus saith unto her, Give me to drink.",
+  8: "(For his disciples were gone away unto the city to buy meat.)",
+  9: "Then saith the woman of Samaria unto him, How is it that thou, being a Jew, askest drink of me, which am a woman of Samaria? for the Jews have no dealings with the Samaritans.",
+  10: "Jesus answered and said unto her, If thou knewest the gift of God, and who it is that saith to thee, Give me to drink; thou wouldest have asked of him, and he would have given thee living water.",
+  11: "The woman saith unto him, Sir, thou hast nothing to draw with, and the well is deep: from whence then hast thou that living water?",
+  12: "Art thou greater than our father Jacob, which gave us the well, and drank thereof himself, and his children, and his cattle?",
+  13: "Jesus answered and said unto her, Whosoever drinketh of this water shall thirst again:",
+  14: "But whosoever drinketh of the water that I shall give him shall never thirst; but the water that I shall give him shall be in him a well of water springing up into everlasting life.",
+  15: "The woman saith unto him, Sir, give me this water, that I thirst not, neither come hither to draw.",
+  16: "Jesus saith unto her, Go, call thy husband, and come hither.",
+  17: "The woman answered and said, I have no husband. Jesus said unto her, Thou hast well said, I have no husband:",
+  18: "For thou hast had five husbands; and he whom thou now hast is not thy husband: in that saidst thou truly.",
+  19: "The woman saith unto him, Sir, I perceive that thou art a prophet.",
+  20: "Our fathers worshipped in this mountain; and ye say, that in Jerusalem is the place where men ought to worship.",
+  21: "Jesus saith unto her, Woman, believe me, the hour cometh, when ye shall neither in this mountain, nor yet at Jerusalem, worship the Father.",
+  22: "Ye worship ye know not what: we know what we worship: for salvation is of the Jews.",
+  23: "But the hour cometh, and now is, when the true worshippers shall worship the Father in spirit and in truth: for the Father seeketh such to worship him.",
+  24: "God is a Spirit: and they that worship him must worship him in spirit and in truth.",
+  25: "The woman saith unto him, I know that Messias cometh, which is called Christ: when he is come, he will tell us all things.",
+  26: "Jesus saith unto her, I that speak unto thee am he.",
+  27: "And upon this came his disciples, and marvelled that he talked with the woman: yet no man said, What seekest thou? or, Why talkest thou with her?",
+  28: "The woman then left her waterpot, and went her way into the city, and saith to the men,",
+  29: "Come, see a man, which told me all things that ever I did: is not this the Christ?",
+  30: "Then they went out of the city, and came unto him.",
+  31: "In the mean while his disciples prayed him, saying, Master, eat.",
+  32: "But he said unto them, I have meat to eat that ye know not of.",
+  33: "Therefore said the disciples one to another, Hath any man brought him ought to eat?",
+  34: "Jesus saith unto them, My meat is to do the will of him that sent me, and to finish his work.",
+  35: "Say not ye, There are yet four months, and then cometh harvest? behold, I say unto you, Lift up your eyes, and look on the fields; for they are white already to harvest.",
+  36: "And he that reapeth receiveth wages, and gathereth fruit unto life eternal: that both he that soweth and he that reapeth may rejoice together.",
+  37: "And herein is that saying true, One soweth, and another reapeth.",
+  38: "I sent you to reap that whereon ye bestowed no labour: other men laboured, and ye are entered into their labours.",
+  39: "And many of the Samaritans of that city believed on him for the saying of the woman, which testified, He told me all that ever I did.",
+  40: "So when the Samaritans were come unto him, they besought him that he would tarry with them: and he abode there two days.",
+  41: "And many more believed because of his own word;",
+  42: "And said unto the woman, Now we believe, not because of thy saying: for we have heard him ourselves, and know that this is indeed the Christ, the Saviour of the world.",
+  43: "Now after two days he departed thence, and went into Galilee.",
+  44: "For Jesus himself testified, that a prophet hath no honour in his own country.",
+  45: "Then when he was come into Galilee, the Galilaeans received him, having seen all the things that he did at Jerusalem at the feast: for they also went unto the feast.",
+  46: "So Jesus came again into Cana of Galilee, where he made the water wine. And there was a certain nobleman, whose son was sick at Capernaum.",
+  47: "When he heard that Jesus was come out of Judaea into Galilee, he went unto him, and besought him that he would come down, and heal his son: for he was at the point of death.",
+  48: "Then said Jesus unto him, Except ye see signs and wonders, ye will not believe.",
+  49: "The nobleman saith unto him, Sir, come down ere my child die.",
+  50: "Jesus saith unto him, Go thy way; thy son liveth. And the man believed the word that Jesus had spoken unto him, and he went his way.",
+  51: "And as he was now going down, his servants met him, and told him, saying, Thy son liveth.",
+  52: "Then enquired he of them the hour when he began to amend. And they said unto him, Yesterday at the seventh hour the fever left him.",
+  53: "So the father knew that it was at the same hour, in the which Jesus said unto him, Thy son liveth: and himself believed, and his whole house.",
+  54: "This is again the second miracle that Jesus did, when he was come out of Judaea into Galilee."
+};
+const BOOK = "John 4";
+</script>
+<script src="../assets/deck.js"></script>
+</body>
+</html>
