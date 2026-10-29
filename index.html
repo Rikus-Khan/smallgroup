@@ -148,7 +148,7 @@ h1 { font-family: var(--serif); font-weight: 300; font-size: clamp(2.5rem, 1.6re
   position: absolute; top: -10px; right: 1.6rem; width: 22px; height: 86px; background: var(--ribbon);
   clip-path: polygon(0 0, 100% 0, 100% 100%, 50% 80%, 0 100%);
 }
-.title-page { display: flex; flex-direction: column; align-items: center; padding-top: 1.2rem; position: sticky; top: 1.5rem; }
+.title-page { display: flex; flex-direction: column; align-items: center; padding-top: 1.2rem; margin-bottom: 1.8rem; }
 .title-page h4 { font-family: var(--serif); font-weight: 400; font-size: clamp(2.6rem, 2rem + 3vw, 3.8rem); line-height: 1; margin: .1em 0 .25em; }
 .flourish { width: 7rem; height: 1px; background: var(--ink-soft); position: relative; margin: .2rem auto .9rem; }
 .flourish::after { content: ""; position: absolute; left: 50%; top: 50%; width: 7px; height: 7px; background: var(--paper); border: 1px solid var(--ink-soft); transform: translate(-50%, -50%) rotate(45deg); }
@@ -164,7 +164,14 @@ h1 { font-family: var(--serif); font-weight: 300; font-size: clamp(2.5rem, 1.6re
 }
 .ink-btn:hover { background: var(--ink); color: var(--paper); }
 
-/* Right page: the table of contents */
+/* The table of contents: starts under the title on the left page, continues on the right */
+.page.left .toc { text-align: left; }
+.end-mark { height: 100%; min-height: 8rem; display: grid; place-items: center; }
+.end-mark .flourish { width: 5rem; }
+@media (max-width: 699px) {
+  .open-book.short .page.right { display: none; }   /* nothing to turn to on a phone */
+  .open-book.short .page.left { border-radius: 4px; background-image: none; }
+}
 .page h5 { font-family: var(--serif); font-style: italic; font-weight: 400; font-size: 1.6rem; text-align: center; margin: 0 0 .8rem; }
 .toc { list-style: none; margin: 0; padding: 0; }
 .toc button {
@@ -337,13 +344,16 @@ function drawShelves() {
     if (panel) panel.scrollIntoView({ block: "nearest", behavior: "smooth" });
   }));
   root.querySelectorAll("[data-study]").forEach(b => b.addEventListener("click", () => openStudy(b.dataset.study, b)));
+  balanceToc();
 }
 
+const FEW_CHAPTERS = 5;   // a book with this many studied chapters or fewer keeps its whole contents on the left page
 function drawOpenBook(book) {
   const chs = studies.filter(s => s.type === "chapter" && s.book === book).sort((a, b) => a.ch - b.ch);
   const hasOverview = chs.some(c => c.overview);
   const done = new Set(chs.map(c => c.ch));
-  return `<div class="open-book ${BOOK_INDEX[book] >= FIRST_NT ? "nt" : "ot"}" id="open-book">
+  const short = chs.length <= FEW_CHAPTERS;
+  return `<div class="open-book ${BOOK_INDEX[book] >= FIRST_NT ? "nt" : "ot"}${short ? " short" : ""}" id="open-book">
     <div class="page left">
       <span class="ribbon" aria-hidden="true"></span>
       <div class="title-page">
@@ -355,14 +365,44 @@ function drawOpenBook(book) {
           : `<div class="marks-bar" aria-hidden="true"><i style="width:${Math.max(2, chs.length / CHAPTERS[book] * 100)}%"></i></div>`}
         ${hasOverview ? `<a class="ink-btn" href="overview.html?book=${encodeURIComponent(book)}">Book overview</a>` : ""}
       </div>
+      <h5>Contents</h5>
+      <ol class="toc" id="toc-left">${chs.map(tocItem).join("")}</ol>
     </div>
     <div class="page right">
-      <h5>Contents</h5>
-      <ol class="toc">${chs.map(c => `<li><button type="button" data-study="${esc(c.id)}" aria-label="${esc(c.title)}: ${esc(c.sub)}">
-        <span class="num">${c.ch}</span><span class="t">${esc(c.sub)}</span><span class="lead" aria-hidden="true"></span><span class="go" aria-hidden="true">Open</span>
-      </button></li>`).join("")}</ol>
+      ${short ? `<div class="end-mark" aria-hidden="true"><div class="flourish"></div></div>` : `<ol class="toc" id="toc-right"></ol>`}
     </div>
   </div>`;
+}
+
+// The contents start under the title on the left page and flow onto the right page,
+// split so both pages end about level, but with at least a third of the chapters on the left
+function balanceToc() {
+  const left = document.getElementById("toc-left"), right = document.getElementById("toc-right");
+  if (!left || !right) return;
+  left.append(...right.children);
+  const items = [...left.children], heights = items.map(li => li.offsetHeight);
+  const total = heights.reduce((a, b) => a + b, 0);
+  // offsetTop ignores the page-turn transform, so this measures correctly mid-animation
+  let k = Math.ceil(items.length / 3), best = Infinity, above = 0;
+  for (let n = 1; n < items.length; n++) {
+    above += heights[n - 1];
+    if (n < Math.ceil(items.length / 3)) continue;
+    const tallest = Math.max(left.offsetTop + above, right.offsetTop + total - above);
+    if (tallest < best) { best = tallest; k = n; }
+  }
+  right.append(...items.slice(k));
+}
+let balanceQueued = false;
+addEventListener("resize", () => {
+  if (balanceQueued) return;
+  balanceQueued = true;
+  requestAnimationFrame(() => { balanceQueued = false; balanceToc(); });
+});
+document.fonts?.ready.then(balanceToc);
+function tocItem(c) {
+  return `<li><button type="button" data-study="${esc(c.id)}" aria-label="${esc(c.title)}: ${esc(c.sub)}">
+    <span class="num">${c.ch}</span><span class="t">${esc(c.sub)}</span><span class="lead" aria-hidden="true"></span><span class="go" aria-hidden="true">Open</span>
+  </button></li>`;
 }
 
 // ---------- Study sheet ----------
