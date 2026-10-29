@@ -474,6 +474,117 @@ window.STUDIES = [
     }
   },
   {
+    "id": "john-11",
+    "type": "chapter",
+    "book": "John",
+    "ch": 11,
+    "date": "2026-10-29",
+    "title": "John 11",
+    "sub": "I am the resurrection",
+    "about": "Jesus waits, weeps at His friend's grave, and calls Lazarus out four days dead. The miracle sets the plot to kill Him in motion.",
+    "tags": [
+      "Resurrection",
+      "God's timing",
+      "Grief",
+      "Hope",
+      "Freedom",
+      "The cross"
+    ],
+    "url": "studies/john-11.html",
+    "overview": {
+      "where": "Beyond the Jordan, then Bethany near Jerusalem, then Ephraim near the wilderness",
+      "when": "Shortly before Jesus' last Passover",
+      "people": [
+        "jesus",
+        "lazarus",
+        "martha",
+        "mary-of-bethany",
+        "disciples",
+        "thomas",
+        "the-jews",
+        "pharisees",
+        "chief-priests",
+        "caiaphas"
+      ],
+      "places": [
+        "bethany",
+        "judaea",
+        "jerusalem",
+        "ephraim",
+        "wilderness",
+        "temple"
+      ],
+      "story": [
+        "Word comes that Lazarus is sick. Jesus loves the family, and so He waits two more days before going (1–16).",
+        "Lazarus has been in the grave four days. Jesus tells Martha, “I am the resurrection, and the life… Believest thou this?” (17–27).",
+        "Mary falls at His feet in tears, and “Jesus wept” (28–37).",
+        "At the tomb He says, “Lazarus, come forth.” The dead man walks out, and Jesus says, “Loose him, and let him go” (38–44).",
+        "Many believe, but the council plots His death. Caiaphas says one man should die for the people, more true than he knows (45–57)."
+      ],
+      "key": {
+        "ref": "John 11:25",
+        "text": "Jesus said unto her, I am the resurrection, and the life: he that believeth in me, though he were dead, yet shall he live:"
+      },
+      "big": "Jesus doesn't just promise resurrection someday. He is the resurrection and the life, and no one is too far gone for His voice."
+    }
+  },
+  {
+    "id": "john-12",
+    "type": "chapter",
+    "book": "John",
+    "ch": 12,
+    "date": "2026-10-29",
+    "title": "John 12",
+    "sub": "The hour is come",
+    "about": "Mary pours costly perfume on Jesus' feet, the crowds hail Him as King, and He explains why a seed has to die to bear fruit.",
+    "tags": [
+      "Worship",
+      "The heart",
+      "King",
+      "Dying to live",
+      "The cross",
+      "Courage"
+    ],
+    "url": "studies/john-12.html",
+    "overview": {
+      "where": "Bethany, the road into Jerusalem, and the temple courts",
+      "when": "Six days before Passover, the last week before the cross",
+      "people": [
+        "jesus",
+        "mary-of-bethany",
+        "martha",
+        "lazarus",
+        "judas-iscariot",
+        "disciples",
+        "chief-priests",
+        "pharisees",
+        "greeks",
+        "philip",
+        "andrew",
+        "isaiah"
+      ],
+      "places": [
+        "bethany",
+        "jerusalem",
+        "sion",
+        "bethsaida",
+        "galilee"
+      ],
+      "story": [
+        "At a supper in Bethany, Mary anoints Jesus' feet with a pound of costly spikenard. Judas complains, but he is a thief (1–11).",
+        "Crowds wave palm branches and cry “Hosanna” as Jesus rides into Jerusalem on a young ass, as Zechariah foretold (12–19).",
+        "Greeks ask to see Jesus. He says His hour has come: “Except a corn of wheat fall into the ground and die, it abideth alone” (20–26).",
+        "A voice from heaven answers His prayer, and He says that, lifted up, He will draw all men to Himself (27–36).",
+        "Many still won't believe, and some rulers believe but keep quiet. Jesus makes His last public call to believe and live (37–50)."
+      ],
+      "key": {
+        "ref": "John 12:32",
+        "text": "And I, if I be lifted up from the earth, will draw all men unto me."
+      },
+      "big": "Jesus' death is the seed that brings a harvest of life. Lifted up on the cross, He calls everyone to come to Him and walk in the light."
+    }
+  },
+  {
     "id": "john-20",
     "type": "chapter",
     "book": "John",

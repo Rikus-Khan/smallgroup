@@ -1,0 +1,740 @@
+<!doctype html>
+<html lang="en" data-theme="scribe">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>John 12</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="../assets/fonts.css">
+<link rel="stylesheet" href="../assets/deck.css">
+<link rel="stylesheet" href="../assets/themes.css">
+<style>
+/* A year of wages, month by month (John 12) */
+.jn12-year { display: grid; grid-template-columns: repeat(12, 1fr); gap: 4px; margin: .4em 0 .3em; }
+.jn12-year div { height: clamp(46px, 9vh, 90px); border: 1.5px solid var(--line-strong); border-radius: 6px; background: var(--surface); position: relative; overflow: hidden; }
+.jn12-year i { position: absolute; left: 0; right: 0; bottom: 0; height: 0; background: var(--warm); transition: height .5s ease; transition-delay: calc(var(--k) * 170ms + 400ms); }
+.slide.active .jn12-year i { height: 100%; }
+.jn12-months { display: grid; grid-template-columns: repeat(12, 1fr); gap: 4px; margin-bottom: 1em; text-align: center; font-size: clamp(.7rem, .65rem + .3vw, .9rem); color: var(--ink-soft); }
+
+/* What a man says, and what is under it */
+.jn12-mask { display: grid; margin: .4em 0 1em; max-width: 34rem; }
+.jn12-mask > div { grid-area: 1 / 1; padding: .9em 1.1em; border-radius: 10px; transition: opacity 1s ease, transform 1s ease; }
+.jn12-mask small { display: block; font-weight: 700; font-size: clamp(.85rem, .8rem + .3vw, 1.05rem); margin-bottom: .3em; }
+.jn12-mask b { display: block; font: 400 clamp(1.3rem, 1rem + 1.4vw, 2.2rem)/1.25 var(--serif); font-style: italic; }
+.jn12-mask .front { background: var(--surface-2); border: 1.5px solid var(--line-strong); }
+.jn12-mask .front small { color: var(--ink-soft); }
+.jn12-mask .back { border: 2px solid var(--danger); background: color-mix(in srgb, var(--danger) 10%, transparent); opacity: 0; }
+.jn12-mask .back small, .jn12-mask .back b { color: var(--danger); }
+.slide:has(.jn12-peel.on) .jn12-mask .front { opacity: 0; transform: translate(12px, -18px) rotate(3deg); }
+.slide:has(.jn12-peel.on) .jn12-mask .back { opacity: 1; }
+
+/* The road from Bethany into Jerusalem, with palm branches laid along it */
+.jn12-road { stroke-dasharray: 1; stroke-dashoffset: 1; transition: stroke-dashoffset 2.6s ease .5s; }
+.slide.active .jn12-road { stroke-dashoffset: 0; }
+.jn12-palm { opacity: 0; transition: opacity .5s ease; transition-delay: calc(var(--k) * 300ms + 900ms); }
+.slide.active .jn12-palm { opacity: 1; }
+
+/* A seed falls, dies, and comes up as a full head of grain */
+.jn12-grain { transform: translateY(-150px); }
+.slide.active .jn12-grain { animation: jn12-fall 1.6s .4s cubic-bezier(.5,0,.8,.6) forwards; }
+@keyframes jn12-fall { to { transform: none; } }
+.jn12-husk, .jn12-alone { transition: opacity 1.2s ease; }
+.slide:has(.jn12-die.on) .jn12-husk { opacity: .25; }
+.slide:has(.jn12-die.on) .jn12-alone { opacity: 0; }
+.jn12-roots { stroke-dasharray: 1; stroke-dashoffset: 1; transition: stroke-dashoffset 1.6s ease .4s; }
+.slide:has(.jn12-die.on) .jn12-roots { stroke-dashoffset: 0; }
+.jn12-stalk { transform: scaleY(0); transform-box: fill-box; transform-origin: 50% 100%; transition: transform 1.8s cubic-bezier(.3,.7,.3,1); transition-delay: var(--w, 0s); }
+.slide:has(.jn12-grow.on) .jn12-stalk { transform: none; }
+.jn12-head { opacity: 0; transition: opacity 1s ease; transition-delay: calc(var(--w, 0s) + 1.4s); }
+.slide:has(.jn12-grow.on) .jn12-head { opacity: 1; }
+
+/* Lifted up, and drawing people in from every side */
+.jn12-cross { transform: translateY(110px); transition: transform 2s cubic-bezier(.3,.7,.3,1) .3s; }
+.slide.active .jn12-cross { transform: none; }
+.jn12-folk circle { transform: translate(var(--x), var(--y)); fill: var(--ink-soft); transition: transform 2s cubic-bezier(.4,0,.2,1), fill 1.4s ease; transition-delay: calc(var(--k) * 70ms); }
+.slide:has(.jn12-come.on) .jn12-folk circle { transform: none; fill: var(--accent); }
+
+/* The sun going down: "yet a little while" */
+.jn12-sun { transition: transform 7s cubic-bezier(.4,0,.6,1) .4s; }
+.slide.active .jn12-sun { transform: translateY(62px); }
+.jn12-sky { opacity: .4; transition: opacity 7s ease .4s; }
+.slide.active .jn12-sky { opacity: .12; }
+.jn12-small svg { max-width: 34rem; }
+
+/* A heart hardening, one refusal at a time */
+.jn12-h { opacity: 0; transition: opacity .7s ease; transition-delay: calc(var(--k) * 450ms + 300ms); }
+.slide.active .jn12-h { opacity: 1; }
+</style>
+</head>
+<body>
+<main class="deck" id="deck">
+
+<!-- ======================= OPENING ======================= -->
+<section class="slide title">
+  <div class="inner">
+    <div class="emblem rise"></div>
+    <h1 class="rise" style="--d:1">John 12</h1>
+    <p class="sub rise" style="--d:3">The hour is come</p>
+    <p class="tag rise" style="--d:5">Mary pours out her best, the crowds wave palm branches, and Jesus explains why a seed has to die.</p>
+  </div>
+</section>
+
+<section class="slide watch">
+  <div class="inner">
+    <h2 class="rise">Things to watch for</h2>
+    <p class="lede rise" style="--d:1">Keep these questions in the back of your mind as we read. We'll come back to every one of them at the end.</p>
+    <ol class="seeds">
+      <li class="step"><span class="topic">Worship</span><span class="seed-q">What did Mary's gift cost, and why did she give it?</span></li>
+      <li class="step"><span class="topic">The heart</span><span class="seed-q">What was really going on inside Judas?</span></li>
+      <li class="step"><span class="topic">Who Jesus is</span><span class="seed-q">What kind of King rode into Jerusalem?</span></li>
+      <li class="step"><span class="topic">Dying to live</span><span class="seed-q">Why must a corn of wheat fall into the ground and die?</span></li>
+      <li class="step"><span class="topic">The cross</span><span class="seed-q">What did Jesus mean by “lifted up”?</span></li>
+      <li class="step"><span class="topic">Confessing Him</span><span class="seed-q">Why did some believe but stay quiet?</span></li>
+    </ol>
+  </div>
+</section>
+
+<!-- ======================= PART ONE ======================= -->
+<section class="slide part">
+  <div class="inner">
+    <p class="part-n rise">Part one</p>
+    <h2 class="rise" style="--d:1">Supper at Bethany</h2>
+    <p class="range rise" style="--d:2">Verses 1–11</p>
+    <p class="hook rise" style="--d:4">A jar of perfume, and two very different hearts.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="1-3" data-hl="six days before the passover|a pound of ointment of spikenard, very costly|the house was filled with the odour of the ointment"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="3" data-hl="a pound of ointment of spikenard, very costly"></blockquote>
+    <h2 class="rise" style="--d:1">A year's pay, poured out</h2>
+    <div class="jn12-year rise" style="--d:2" aria-label="Twelve months fill up one after another: about a year of a working man's wages.">
+      <div><i style="--k:0"></i></div><div><i style="--k:1"></i></div><div><i style="--k:2"></i></div><div><i style="--k:3"></i></div>
+      <div><i style="--k:4"></i></div><div><i style="--k:5"></i></div><div><i style="--k:6"></i></div><div><i style="--k:7"></i></div>
+      <div><i style="--k:8"></i></div><div><i style="--k:9"></i></div><div><i style="--k:10"></i></div><div><i style="--k:11"></i></div>
+    </div>
+    <div class="jn12-months rise" style="--d:2" aria-hidden="true"><span>J</span><span>F</span><span>M</span><span>A</span><span>M</span><span>J</span><span>J</span><span>A</span><span>S</span><span>O</span><span>N</span><span>D</span></div>
+    <div class="math rise" style="--d:3">
+      <div><b>300 pence</b><span>its price (v. 5)</span></div>
+      <div><b>1 penny</b><span>a day's wage</span></div>
+      <div><b>≈ 1 year</b><span>of a working man's pay</span></div>
+    </div>
+    <blockquote class="quote step"><p>“And when he had agreed with the labourers for a penny a day, he sent them into his vineyard.”</p><cite>Matthew 20:2</cite></blockquote>
+    <p class="note step">Spikenard was a perfume made from a plant that grows far off in the mountains of India. A “pound” was about twelve ounces. This may have been the most valuable thing the family owned, and Mary poured all of it out on Jesus.</p>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="3" data-hl="anointed the feet of Jesus, and wiped his feet with her hair"></blockquote>
+    <h2 class="rise" style="--d:1">Always at His feet</h2>
+    <p class="note rise" style="--d:2">Every time the Bible shows us Mary of Bethany, she's in the same place:</p>
+    <ol class="signs rise" style="--d:3">
+      <li><b>Listening</b>Luke 10:39</li>
+      <li><b>Grieving</b>John 11:32</li>
+      <li class="now"><b>Worshiping</b>John 12:3</li>
+    </ol>
+    <blockquote class="quote step"><p>“And she had a sister called Mary, which also sat at Jesus’ feet, and heard his word.”</p><cite>Luke 10:39</cite></blockquote>
+    <p class="note step">Feet were the dirtiest part of a person, and washing them was a servant's job. A woman letting down her hair in public was something you just didn't do. Mary didn't care how it looked. She held nothing back.</p>
+    <p class="note step">And <em>“the house was filled with the odour.”</em> Real worship doesn't stay private. Everyone in the room could smell it.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="4-6" data-hl="Why was not this ointment sold for three hundred pence, and given to the poor?|because he was a thief, and had the bag"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="6" data-hl="not that he cared for the poor|he was a thief, and had the bag"></blockquote>
+    <h2 class="rise" style="--d:1">Good words, crooked heart</h2>
+    <div class="jn12-mask rise" style="--d:2">
+      <div class="back"><small>What was really going on</small><b>“he was a thief, and had the bag”</b></div>
+      <div class="front"><small>What Judas said</small><b>“given to the poor”</b></div>
+    </div>
+    <p class="note rise" style="--d:3">Judas sounded like the most caring man in the room. He was the treasurer, “the bag” was the money box, and he'd been helping himself.</p>
+    <p class="note step jn12-peel">John pulls the cover off. Judas wasn't thinking about the poor. He was thinking about what he could have skimmed.</p>
+    <p class="note step">Most of us know this one. An addiction can always find a good-sounding reason. A man can say all the right words while the bag gets emptier. Jesus sees under the cover, and He'd rather we bring it out to Him than keep hiding it.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="7-8" data-hl="Let her alone|against the day of my burying hath she kept this|but me ye have not always"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="7" data-hl="Let her alone"></blockquote>
+    <h2 class="rise" style="--d:1">“Let her alone”</h2>
+    <p class="note rise" style="--d:2">Jesus stands up for her. What looked like waste to Judas was beautiful to Him.</p>
+    <p class="note step">Perfume was used to prepare a body for burial. Jesus says she has done that ahead of time. Within a week He'll be in a tomb. She may have understood that better than any of the twelve.</p>
+    <p class="note step"><em>“The poor always ye have with you”</em> isn't Jesus shrugging off the poor. The law told Israel to keep giving to them (Deuteronomy 15:11). He's saying this moment, with Him there in the room, won't come again. Some chances to love Him only come once.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="9-11" data-hl="that they might see Lazarus also|the chief priests consulted that they might put Lazarus also to death"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="10-11" data-hl="put Lazarus also to death|many of the Jews went away, and believed on Jesus"></blockquote>
+    <h2 class="rise" style="--d:1">Kill the evidence</h2>
+    <p class="note rise" style="--d:2">Lazarus didn't preach a sermon. He just sat at supper, alive. That was enough to bring crowds, and enough to get him on a hit list.</p>
+    <p class="note step">Your changed life works the same way. People who knew the old you notice when you're sober, honest, and at peace. You don't need to be a speaker. A man who was dead and is now alive is the evidence.</p>
+  </div>
+</section>
+
+<!-- ======================= PART TWO ======================= -->
+<section class="slide part">
+  <div class="inner">
+    <p class="part-n rise">Part two</p>
+    <h2 class="rise" style="--d:1">Thy King cometh</h2>
+    <p class="range rise" style="--d:2">Verses 12–19</p>
+    <p class="hook rise" style="--d:4">Palm branches, shouting crowds, and a young donkey.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="12-15" data-hl="branches of palm trees|Hosanna: Blessed is the King of Israel that cometh in the name of the Lord|thy King cometh, sitting on an ass’s colt"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="13" data-hl="Hosanna"></blockquote>
+    <div class="morph rise" style="--d:1">
+      <span class="big">Hosanna</span><span class="say">hoh-ZAN-uh</span><span class="means">“Save now!”</span>
+    </div>
+    <p class="note rise" style="--d:2">It's a Hebrew cry for help that became a shout of praise. The crowd is quoting a Passover psalm:</p>
+    <blockquote class="quote step"><p>“Save now, I beseech thee, O LORD: O LORD, I beseech thee, send now prosperity. Blessed be he that cometh in the name of the LORD: we have blessed you out of the house of the LORD.”</p><cite>Psalm 118:25–26</cite></blockquote>
+    <p class="note step">Palm branches were waved for victory and for the nation. The crowd wanted a King who would save them from Rome. He came to save them from something far worse.</p>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="15" data-hl="thy King cometh, sitting on an ass’s colt"></blockquote>
+    <div class="split">
+      <div class="stage">
+        <svg viewBox="0 0 600 300" role="img" aria-label="Map: the road from Bethany climbs over the Mount of Olives and down into Jerusalem, lined with palm branches.">
+          <path d="M0 270 L0 220 Q120 210 230 236 Q300 120 380 92 Q450 120 520 190 L600 200 L600 270 Z" style="fill:var(--surface-2)"/>
+          <text x="380" y="74" text-anchor="middle" font-size="16" style="fill:var(--ink-soft)">Mount of Olives</text>
+          <text x="250" y="262" text-anchor="middle" font-size="15" style="fill:var(--ink-soft)">Kidron valley</text>
+          <rect x="40" y="150" width="150" height="80" stroke-width="3" style="fill:var(--surface);stroke:var(--ink-soft)"/>
+          <path d="M40 150 v-12 h15 v12 M80 150 v-12 h15 v12 M120 150 v-12 h15 v12 M160 150 v-12 h15 v12" fill="none" stroke-width="3" style="stroke:var(--ink-soft)"/>
+          <text x="115" y="198" text-anchor="middle" font-size="19" font-weight="700">Jerusalem</text>
+          <circle cx="545" cy="190" r="9" style="fill:var(--accent)"/>
+          <text x="545" y="170" text-anchor="middle" font-size="18" font-weight="700" style="fill:var(--accent-hot)">Bethany</text>
+          <path class="jn12-road" pathLength="1" d="M545 190 Q480 170 440 136 Q400 100 370 104 Q320 116 290 170 Q262 222 226 214 Q206 206 190 196" fill="none" stroke-width="4" stroke-linecap="round" style="stroke:var(--accent)"/>
+          <g stroke-width="3" stroke-linecap="round" fill="none" style="stroke:var(--warm)">
+            <path class="jn12-palm" style="--k:0" d="M500 172 l-8 -16 M500 172 l8 -16 M500 172 l0 -20"/>
+            <path class="jn12-palm" style="--k:1" d="M450 140 l-8 -16 M450 140 l8 -16 M450 140 l0 -20"/>
+            <path class="jn12-palm" style="--k:2" d="M398 104 l-8 -16 M398 104 l8 -16 M398 104 l0 -20"/>
+            <path class="jn12-palm" style="--k:3" d="M340 128 l-8 -16 M340 128 l8 -16 M340 128 l0 -20"/>
+            <path class="jn12-palm" style="--k:4" d="M298 160 l-8 -16 M298 160 l8 -16 M298 160 l0 -20"/>
+            <path class="jn12-palm" style="--k:5" d="M262 210 l-8 -16 M262 210 l8 -16 M262 210 l0 -20"/>
+            <path class="jn12-palm" style="--k:6" d="M214 210 l-8 -16 M214 210 l8 -16 M214 210 l0 -20"/>
+          </g>
+          <text x="300" y="296" text-anchor="middle" font-size="15" style="fill:var(--ink-soft)">about 2 miles</text>
+        </svg>
+      </div>
+      <div>
+        <h2 class="rise" style="--d:1">A King on a donkey</h2>
+        <p class="note rise" style="--d:2">Kings rode warhorses when they came to fight. A donkey said, <em>I come in peace.</em> Five hundred years earlier, Zechariah had said exactly how Israel's King would arrive:</p>
+        <blockquote class="quote step"><p>“Rejoice greatly, O daughter of Zion; shout, O daughter of Jerusalem: behold, thy King cometh unto thee: he is just, and having salvation; lowly, and riding upon an ass, and upon a colt the foal of an ass.”</p><cite>Zechariah 9:9</cite></blockquote>
+        <p class="note step">“Sion” is Zion, another name for Jerusalem. He came <em>lowly</em>, to the people who would kill Him within the week, offering peace.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="slide verse" data-v="16-19" data-hl="These things understood not his disciples at the first|then remembered they|behold, the world is gone after him"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="19" data-hl="behold, the world is gone after him"></blockquote>
+    <h2 class="rise" style="--d:1">“The world is gone after him”</h2>
+    <p class="note rise" style="--d:2">The Pharisees meant it as an exaggeration: <em>everybody's following Him!</em> John lets it stand, because it's truer than they knew.</p>
+    <p class="note step">Look at the very next verse. Greeks show up, people from outside Israel, asking for Jesus. The world really is coming after Him.</p>
+    <p class="note step">And the disciples? They didn't get it “at the first” (v. 16). Only after the resurrection did it click, just like in John 2:22. It's fine not to understand everything yet. Keep following.</p>
+  </div>
+</section>
+
+<!-- ======================= PART THREE ======================= -->
+<section class="slide part">
+  <div class="inner">
+    <p class="part-n rise">Part three</p>
+    <h2 class="rise" style="--d:1">The hour is come</h2>
+    <p class="range rise" style="--d:2">Verses 20–36</p>
+    <p class="hook rise" style="--d:4">“Sir, we would see Jesus.” And He talks about dying.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="20-22" data-hl="certain Greeks|Sir, we would see Jesus"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="21" data-hl="Sir, we would see Jesus"></blockquote>
+    <h2 class="rise" style="--d:1">We would see Jesus</h2>
+    <div class="chains">
+      <div class="chain rise" style="--d:2"><span class="who-chip">Greeks</span><span class="said">“Sir, we would see Jesus”</span><span class="who-chip">Philip</span><span class="said">told</span><span class="who-chip">Andrew</span><span class="said">together they told</span><span class="who-chip jesus">Jesus</span></div>
+    </div>
+    <p class="note rise" style="--d:3">These Greeks were Gentiles who worshiped Israel's God and came up for the feast. They went to Philip, who had a Greek name and came from Bethsaida, near Gentile country.</p>
+    <p class="note step">And Andrew is bringing people to Jesus again. He brought his brother Simon (1:41–42), and the boy with the loaves (6:8–9). Now he brings the world.</p>
+    <p class="note step">“Sir, we would see Jesus” is the cry of every lost man, whether he knows it or not. Some old pulpits have it carved where the preacher can see it, to remind him what people came for.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="23-24" data-hl="The hour is come, that the Son of man should be glorified|Except a corn of wheat fall into the ground and die, it abideth alone: but if it die, it bringeth forth much fruit"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="23" data-hl="The hour is come"></blockquote>
+    <h2 class="rise" style="--d:1">At last: “The hour is come”</h2>
+    <p class="note rise" style="--d:2">Remember the clock that started ticking in John 2?</p>
+    <div class="hours rise" style="--d:3">
+      <div class="hour"><div class="dot"></div><b>2:4</b><span>not yet come</span></div>
+      <div class="hour"><div class="dot"></div><b>7:30</b><span>not yet come</span></div>
+      <div class="hour"><div class="dot"></div><b>8:20</b><span>not yet come</span></div>
+      <div class="hour come"><div class="dot"></div><b>12:23</b><span>is come</span></div>
+      <div class="hour"><div class="dot"></div><b>17:1</b><span>is come</span></div>
+    </div>
+    <p class="note step">When the Greeks arrive, the countdown ends. The cross is days away. And Jesus calls His death being <em>“glorified.”</em> Not defeated. Glorified.</p>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="24" data-hl="it abideth alone|it bringeth forth much fruit"></blockquote>
+    <div class="split">
+      <div class="stage">
+        <svg viewBox="0 0 600 330" role="img" aria-label="A grain of wheat falls into the ground. It dies and puts down roots, then comes up as stalks full of grain.">
+          <rect x="0" y="190" width="600" height="140" style="fill:color-mix(in srgb, var(--leather) 70%, var(--bg))"/>
+          <line x1="0" y1="190" x2="600" y2="190" stroke-width="3" style="stroke:var(--leather)"/>
+          <g class="jn12-grain">
+            <ellipse class="jn12-husk" cx="300" cy="250" rx="13" ry="19" style="fill:var(--warm)"/>
+          </g>
+          <text class="jn12-alone" x="330" y="256" font-size="18" font-style="italic" style="fill:var(--bg)">abideth alone</text>
+          <path class="jn12-roots" pathLength="1" d="M300 268 Q292 290 280 312 M300 268 Q306 292 322 314 M300 268 Q300 296 300 322" fill="none" stroke-width="3" stroke-linecap="round" style="stroke:var(--warm)"/>
+          <g class="jn12-stalk" style="--w:0s">
+            <path d="M300 240 Q302 150 300 60" fill="none" stroke-width="5" stroke-linecap="round" style="stroke:var(--accent)"/>
+          </g>
+          <g class="jn12-stalk" style="--w:.3s">
+            <path d="M296 240 Q240 160 214 92" fill="none" stroke-width="4" stroke-linecap="round" style="stroke:var(--accent)"/>
+          </g>
+          <g class="jn12-stalk" style="--w:.5s">
+            <path d="M304 240 Q360 160 388 92" fill="none" stroke-width="4" stroke-linecap="round" style="stroke:var(--accent)"/>
+          </g>
+          <g style="fill:var(--warm)">
+            <g class="jn12-head" style="--w:0s"><ellipse cx="292" cy="40" rx="7" ry="11"/><ellipse cx="308" cy="40" rx="7" ry="11"/><ellipse cx="292" cy="62" rx="7" ry="11"/><ellipse cx="308" cy="62" rx="7" ry="11"/><ellipse cx="292" cy="84" rx="7" ry="11"/><ellipse cx="308" cy="84" rx="7" ry="11"/><ellipse cx="300" cy="22" rx="6" ry="10"/></g>
+            <g class="jn12-head" style="--w:.3s"><ellipse cx="206" cy="72" rx="7" ry="11"/><ellipse cx="222" cy="72" rx="7" ry="11"/><ellipse cx="206" cy="94" rx="7" ry="11"/><ellipse cx="222" cy="94" rx="7" ry="11"/><ellipse cx="214" cy="54" rx="6" ry="10"/></g>
+            <g class="jn12-head" style="--w:.5s"><ellipse cx="380" cy="72" rx="7" ry="11"/><ellipse cx="396" cy="72" rx="7" ry="11"/><ellipse cx="380" cy="94" rx="7" ry="11"/><ellipse cx="396" cy="94" rx="7" ry="11"/><ellipse cx="388" cy="54" rx="6" ry="10"/></g>
+          </g>
+          <text class="jn12-head" style="--w:.6s" x="470" y="80" text-anchor="middle" font-size="22" font-weight="700" fill="currentColor">much fruit</text>
+        </svg>
+      </div>
+      <div>
+        <h2 class="rise" style="--d:1">A corn of wheat</h2>
+        <p class="note rise" style="--d:2">In the KJV, “corn” means any grain, here a single kernel of wheat. Keep it in the barn and it stays one kernel forever.</p>
+        <p class="note step jn12-die">Put it in the ground, and it “dies.” The kernel as it was is gone.</p>
+        <p class="note step jn12-grow">But up comes a stalk, then many, each with a full head of grain. Jesus is talking about Himself: one death, and a harvest of millions who will live because of it.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="slide verse" data-v="25-26" data-hl="He that loveth his life shall lose it|If any man serve me, let him follow me|him will my Father honour"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="25"></blockquote>
+    <h2 class="rise" style="--d:1">Lose it to keep it</h2>
+    <div class="match" style="--n:3" aria-label="He that loveth, his life, shall lose it. He that hateth, his life in this world, shall keep it unto life eternal.">
+      <div class="a rise" style="--d:2"><span class="tag">line 1</span><span class="w">He that loveth</span><span class="w">his life</span><span class="w">shall lose it;</span></div>
+      <div class="step"><span></span><span class="link">opposites</span><span class="link">this world only</span><span class="link">opposites</span></div>
+      <div class="b step"><span class="but">and</span><span class="w">he that hateth</span><span class="w">his life in this world</span><span class="w">shall keep it unto life eternal.</span></div>
+    </div>
+    <p class="note step">“Hate” here means <em>love less by comparison</em>. Jesus isn't telling you to despise yourself. He's saying: don't cling to the old life so hard that you lose the real one.</p>
+    <p class="note step">Every man in recovery knows this. Holding on to the old life is what was killing you. Letting it go, like the seed, is how new life starts. And the promise for the man who follows: <em>“him will my Father honour.”</em></p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="27-30" data-hl="Now is my soul troubled|Father, glorify thy name|I have both glorified it, and will glorify it again"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="27-28" data-hl="Now is my soul troubled|Father, glorify thy name"></blockquote>
+    <h2 class="rise" style="--d:1">Troubled, and still willing</h2>
+    <p class="note rise" style="--d:2">Jesus doesn't pretend the cross is easy. <em>“Now is my soul troubled.”</em> He even says the words out loud, <em>“Father, save me from this hour,”</em> and then turns them down. This is what He came for.</p>
+    <p class="note step">Three times in the Gospels the Father speaks out loud from heaven about His Son:</p>
+    <ol class="signs step">
+      <li><b>At His baptism</b>Matthew 3:17</li>
+      <li><b>On the mountain</b>Matthew 17:5</li>
+      <li class="now"><b>On the way to the cross</b>John 12:28</li>
+    </ol>
+    <p class="note step">Some heard only thunder. People often hear what they're ready to hear. Jesus said the voice came “for your sakes” (v. 30).</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="31-33" data-hl="now shall the prince of this world be cast out|And I, if I be lifted up from the earth, will draw all men unto me|signifying what death he should die"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="32" data-hl="if I be lifted up from the earth, will draw all men unto me"></blockquote>
+    <div class="split">
+      <div class="stage">
+        <svg viewBox="0 0 600 340" role="img" aria-label="A cross is lifted up on a hill. People from every side are drawn toward it.">
+          <path d="M140 320 Q300 220 460 320 Z" style="fill:var(--surface-2)"/>
+          <line x1="0" y1="320" x2="600" y2="320" stroke-width="2" style="stroke:var(--line-strong)"/>
+          <g class="jn12-cross">
+            <rect x="290" y="60" width="20" height="210" rx="2" style="fill:var(--leather)"/>
+            <rect x="236" y="100" width="128" height="18" rx="2" style="fill:var(--leather)"/>
+          </g>
+          <g class="jn12-folk">
+            <circle cx="250" cy="282" r="8" style="--k:0;--x:-230px;--y:-180px"/>
+            <circle cx="232" cy="296" r="8" style="--k:1;--x:-210px;--y:-40px"/>
+            <circle cx="214" cy="306" r="8" style="--k:2;--x:-190px;--y:10px"/>
+            <circle cx="268" cy="296" r="8" style="--k:3;--x:-150px;--y:-250px"/>
+            <circle cx="350" cy="282" r="8" style="--k:4;--x:230px;--y:-190px"/>
+            <circle cx="368" cy="296" r="8" style="--k:5;--x:210px;--y:-50px"/>
+            <circle cx="386" cy="306" r="8" style="--k:6;--x:190px;--y:10px"/>
+            <circle cx="332" cy="296" r="8" style="--k:7;--x:160px;--y:-250px"/>
+            <circle cx="286" cy="304" r="8" style="--k:8;--x:-270px;--y:-110px"/>
+            <circle cx="314" cy="304" r="8" style="--k:9;--x:260px;--y:-110px"/>
+            <circle cx="196" cy="314" r="8" style="--k:10;--x:-170px;--y:-260px"/>
+            <circle cx="404" cy="314" r="8" style="--k:11;--x:180px;--y:-270px"/>
+          </g>
+          <text class="step jn12-come" x="300" y="34" text-anchor="middle" font-size="24" font-weight="700" style="fill:var(--accent-hot)">“all men unto me”</text>
+        </svg>
+      </div>
+      <div>
+        <h2 class="rise" style="--d:1">Lifted up</h2>
+        <p class="note rise" style="--d:2">John tells us plainly what it means: <em>“signifying what death he should die.”</em> Lifted up from the earth, on a cross.</p>
+        <p class="note step">He'd said it before, to Nicodemus: “as Moses lifted up the serpent in the wilderness, even so must the Son of man be lifted up” (3:14). Look and live.</p>
+        <p class="note step">And He draws <em>all men</em>: Jews and Greeks, religious men and criminals, all kinds of people from every side. The cross pulls on every heart. Whosoever will may come.</p>
+        <p class="note step">At the same time, <em>“the prince of this world,”</em> Satan, is thrown out. What looked like his victory was his defeat.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="slide verse" data-v="34-36" data-hl="who is this Son of man?|Walk while ye have the light, lest darkness come upon you|that ye may be the children of light"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="35" data-hl="Yet a little while is the light with you|Walk while ye have the light"></blockquote>
+    <div class="stage jn12-small">
+      <svg viewBox="0 0 600 180" role="img" aria-label="The sun sinks toward the horizon as the light fades.">
+        <defs><clipPath id="jn12-above"><rect x="0" y="0" width="600" height="140"/></clipPath></defs>
+        <rect class="jn12-sky" x="0" y="0" width="600" height="140" style="fill:var(--accent)"/>
+        <g clip-path="url(#jn12-above)">
+          <g class="jn12-sun">
+            <circle cx="300" cy="80" r="44" opacity=".3" style="fill:var(--warm)"/>
+            <circle cx="300" cy="80" r="30" style="fill:var(--warm)"/>
+          </g>
+        </g>
+        <line x1="0" y1="140" x2="600" y2="140" stroke-width="3" style="stroke:var(--ink-soft)"/>
+        <text x="300" y="172" text-anchor="middle" font-size="22" font-style="italic" class="serif" style="fill:var(--accent-hot)">“Yet a little while”</text>
+      </svg>
+    </div>
+    <h2 class="rise" style="--d:1">While you have the light</h2>
+    <p class="note rise" style="--d:2">The crowd wants to argue about titles: <em>who is this Son of man?</em> Jesus doesn't debate. He warns them. The light is here now, and it won't stay forever.</p>
+    <blockquote class="quote step"><p>“(For he saith, I have heard thee in a time accepted, and in the day of salvation have I succoured thee: behold, now is the accepted time; behold, now is the day of salvation.)”</p><cite>2 Corinthians 6:2</cite></blockquote>
+    <p class="note step">Don't wait until you have it all figured out. If you can see the light today, walk toward it today.</p>
+  </div>
+</section>
+
+<!-- ======================= PART FOUR ======================= -->
+<section class="slide part">
+  <div class="inner">
+    <p class="part-n rise">Part four</p>
+    <h2 class="rise" style="--d:1">Light or darkness</h2>
+    <p class="range rise" style="--d:2">Verses 37–50</p>
+    <p class="hook rise" style="--d:4">So many signs, so few who believed, and Jesus' last public call.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="37-38" data-hl="though he had done so many miracles before them, yet they believed not on him|Lord, who hath believed our report?"></section>
+<section class="slide verse" data-v="39-41" data-hl="He hath blinded their eyes, and hardened their heart|when he saw his glory, and spake of him"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="37" data-hl="yet they believed not on him"></blockquote>
+    <h2 class="rise" style="--d:1">From “would not” to “could not”</h2>
+    <div class="stage jn12-small">
+      <svg viewBox="0 0 600 170" role="img" aria-label="Five hearts in a row, each one harder and colder than the last: saw the signs, would not, would not, would not, could not.">
+        <path d="M60 30 L540 30" stroke-width="2" stroke-dasharray="6 6" style="stroke:var(--line-strong)"/>
+        <path d="M530 22 L546 30 L530 38" fill="none" stroke-width="2" style="stroke:var(--line-strong)"/>
+        <g class="jn12-h" style="--k:0" transform="translate(70 50)"><path d="M0 14 C0 -4 -34 -8 -34 16 C-34 36 -10 50 0 62 C10 50 34 36 34 16 C34 -8 0 -4 0 14 Z" stroke-width="1.5" style="fill:var(--wine);stroke:var(--ink)"/><text y="96" text-anchor="middle" font-size="16">saw signs</text></g>
+        <g class="jn12-h" style="--k:1" transform="translate(185 50)"><path d="M0 14 C0 -4 -34 -8 -34 16 C-34 36 -10 50 0 62 C10 50 34 36 34 16 C34 -8 0 -4 0 14 Z" stroke-width="3" style="fill:color-mix(in srgb, var(--wine) 75%, var(--ink-soft));stroke:var(--ink)"/><text y="96" text-anchor="middle" font-size="16">would not</text></g>
+        <g class="jn12-h" style="--k:2" transform="translate(300 50)"><path d="M0 14 C0 -4 -34 -8 -34 16 C-34 36 -10 50 0 62 C10 50 34 36 34 16 C34 -8 0 -4 0 14 Z" stroke-width="4.5" style="fill:color-mix(in srgb, var(--wine) 50%, var(--ink-soft));stroke:var(--ink)"/><text y="96" text-anchor="middle" font-size="16">would not</text></g>
+        <g class="jn12-h" style="--k:3" transform="translate(415 50)"><path d="M0 14 C0 -4 -34 -8 -34 16 C-34 36 -10 50 0 62 C10 50 34 36 34 16 C34 -8 0 -4 0 14 Z" stroke-width="6" style="fill:color-mix(in srgb, var(--wine) 25%, var(--ink-soft));stroke:var(--ink)"/><text y="96" text-anchor="middle" font-size="16">would not</text></g>
+        <g class="jn12-h" style="--k:4" transform="translate(530 50)"><path d="M0 14 C0 -4 -34 -8 -34 16 C-34 36 -10 50 0 62 C10 50 34 36 34 16 C34 -8 0 -4 0 14 Z" stroke-width="8" style="fill:var(--ink-soft);stroke:var(--ink)"/><text y="96" text-anchor="middle" font-size="16" font-weight="700" style="fill:var(--danger)">could not</text></g>
+      </svg>
+    </div>
+    <p class="note rise" style="--d:2">Verse 39 says “they <em>could</em> not believe.” But verse 37 comes first: they had seen sign after sign, and they <em>would</em> not. God didn't stop anyone from believing who wanted to. He gave them over to what they kept choosing.</p>
+    <p class="note step">It's the same pattern as Pharaoh. First “he hardened his heart” (Exodus 8:15), again and again. Only after that did God harden it further. God wants every man saved:</p>
+    <blockquote class="quote step"><p>“The Lord is not slack concerning his promise, as some men count slackness; but is longsuffering to us-ward, not willing that any should perish, but that all should come to repentance.”</p><cite>2 Peter 3:9</cite></blockquote>
+    <blockquote class="quote step"><p>“While it is said, To day if ye will hear his voice, harden not your hearts, as in the provocation.”</p><cite>Hebrews 3:15</cite></blockquote>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="41" data-hl="when he saw his glory, and spake of him"></blockquote>
+    <h2 class="rise" style="--d:1">Isaiah saw Jesus</h2>
+    <div class="pair">
+      <div class="scroll rise" style="--d:2"><p class="ref">Isaiah 6:1</p><p class="kjv">“In the year that king Uzziah died I saw also the Lord sitting upon a throne, high and lifted up, and his train filled the temple.”</p></div>
+      <div class="scroll step"><p class="ref">John 12:41</p><p class="kjv">“These things said Esaias, when he saw his glory, and spake of him.”</p></div>
+    </div>
+    <p class="note step">“Esaias” is Isaiah. Seven hundred years before Bethlehem, he saw the LORD on His throne, and John says the One he saw was <em>Jesus</em>.</p>
+    <p class="note step">Notice the words: <em>“high and lifted up.”</em> The King Isaiah saw on the throne is the same One who would be lifted up on a cross.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="42-43" data-hl="many believed on him; but because of the Pharisees they did not confess him|For they loved the praise of men more than the praise of God"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="43" data-hl="the praise of men more than the praise of God"></blockquote>
+    <div class="split">
+      <div class="stage">
+        <svg class="scale" style="--at:300px 70px; --arm:200; --tip:-12deg; --wait:.3s" viewBox="0 0 600 330" role="img" aria-label="A balance scale. The praise of men outweighs the praise of God.">
+          <path d="M240 322 L360 322 L330 302 L270 302 Z" stroke-width="2.5" style="fill:var(--surface-2);stroke:var(--ink-soft)"/>
+          <rect x="294" y="64" width="12" height="242" style="fill:var(--ink-soft)"/>
+          <g class="scale-beam">
+            <rect x="96" y="64" width="408" height="12" rx="6" style="fill:var(--ink)"/>
+            <circle cx="300" cy="70" r="11" style="fill:var(--accent)"/>
+          </g>
+          <g class="scale-pan l">
+            <g fill="none" stroke-width="2" style="stroke:var(--ink-soft)"><path d="M100 70 L50 190 M100 70 L150 190"/></g>
+            <path d="M36 190 L164 190 Q100 232 36 190 Z" stroke-width="2.5" style="fill:var(--surface-2);stroke:var(--ink-soft)"/>
+            <text x="100" y="160" text-anchor="middle" font-size="18" font-weight="700">praise</text>
+            <text x="100" y="180" text-anchor="middle" font-size="18" font-weight="700">of men</text>
+          </g>
+          <g class="scale-pan r">
+            <g fill="none" stroke-width="2" style="stroke:var(--ink-soft)"><path d="M500 70 L450 190 M500 70 L550 190"/></g>
+            <path d="M436 190 L564 190 Q500 232 436 190 Z" stroke-width="2.5" style="fill:var(--surface-2);stroke:var(--ink-soft)"/>
+            <text x="500" y="160" text-anchor="middle" font-size="18" font-weight="700" style="fill:var(--accent-hot)">praise</text>
+            <text x="500" y="180" text-anchor="middle" font-size="18" font-weight="700" style="fill:var(--accent-hot)">of God</text>
+          </g>
+        </svg>
+      </div>
+      <div>
+        <h2 class="rise" style="--d:1">Believed, but kept quiet</h2>
+        <p class="note rise" style="--d:2">Some of the rulers believed. But being “put out of the synagogue” meant losing your standing, your friends, maybe your family. So they kept quiet.</p>
+        <p class="note step scale-go">John puts it bluntly: they <em>loved the praise of men</em> more than the praise of God.</p>
+        <p class="note step">We know that pull. What will the old crowd say? What will my family think? But there's hope here. One of those rulers, Joseph of Arimathaea, a secret disciple “for fear of the Jews” (19:38), finally stepped out and asked for Jesus' body.</p>
+        <blockquote class="quote step"><p>“Whosoever therefore shall confess me before men, him will I confess also before my Father which is in heaven.”</p><cite>Matthew 10:32</cite></blockquote>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="slide verse" data-v="44-46" data-hl="he that seeth me seeth him that sent me|I am come a light into the world, that whosoever believeth on me should not abide in darkness"></section>
+<section class="slide verse" data-v="47-50" data-hl="I came not to judge the world, but to save the world|his commandment is life everlasting"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="47" data-hl="I came not to judge the world, but to save the world"></blockquote>
+    <h2 class="rise" style="--d:1">His last public words</h2>
+    <p class="note rise" style="--d:2">After this, Jesus teaches only His disciples. John sums up His whole public message in these few verses:</p>
+    <div class="sort">
+      <div class="rise" style="--d:3"><h3>See Him, see God</h3><div class="vs"><b>44</b><b>45</b></div><p>To trust Jesus is to trust the Father. To see Him is to see the Father.</p></div>
+      <div class="rise" style="--d:4"><h3>Light</h3><div class="vs"><b>46</b></div><p>Whosoever believes doesn't have to stay in the dark.</p></div>
+      <div class="rise" style="--d:5"><h3>To save</h3><div class="vs"><b>47</b></div><p>He came to save the world, not to condemn it.</p></div>
+      <div class="rise" style="--d:6"><h3>The word judges</h3><div class="vs"><b>48</b></div><p>Turn Him down, and His own words will be the evidence at the last day.</p></div>
+      <div class="rise" style="--d:7"><h3>Life</h3><div class="vs"><b>49</b><b>50</b></div><p>Everything He said came from the Father, and it is life everlasting.</p></div>
+    </div>
+    <p class="note step">The door is wide open, <em>“whosoever believeth.”</em> But it won't stay open forever. The same words that offer life today will judge the man who refuses them.</p>
+  </div>
+</section>
+
+<!-- ======================= CLOSING ======================= -->
+<section class="slide remember">
+  <div class="inner">
+    <h2 class="rise">Points to remember</h2>
+    <ol class="seeds">
+      <li class="step"><span class="topic">Worship</span><span class="seed-q">“The house was filled with the odour of the ointment” <cite>12:3</cite></span><span class="take">Mary gave Jesus her very best, without worrying how it looked. He's worth it.</span></li>
+      <li class="step"><span class="topic">The heart</span><span class="seed-q">“He was a thief, and had the bag” <cite>12:6</cite></span><span class="take">Good words can cover a crooked heart. Jesus sees under the cover.</span></li>
+      <li class="step"><span class="topic">Who Jesus is</span><span class="seed-q">“Thy King cometh, sitting on an ass's colt” <cite>12:15</cite></span><span class="take">The true King came lowly, bringing peace and salvation.</span></li>
+      <li class="step"><span class="topic">Dying to live</span><span class="seed-q">“If it die, it bringeth forth much fruit” <cite>12:24</cite></span><span class="take">His death brings life to many. Letting go of the old life is how ours begins.</span></li>
+      <li class="step"><span class="topic">The cross</span><span class="seed-q">“I, if I be lifted up from the earth, will draw all men unto me” <cite>12:32</cite></span><span class="take">On the cross, Jesus calls every kind of person to come to Him.</span></li>
+      <li class="step"><span class="topic">Confessing Him</span><span class="seed-q">“They loved the praise of men more than the praise of God” <cite>12:43</cite></span><span class="take">Don't trade God's approval for the crowd's. Stand up for Him.</span></li>
+    </ol>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 1 of 6</p>
+      <span class="topic">Worship</span>
+      <h2>What did Mary's gift cost, and why did she give it?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="3" data-hl="very costly"></blockquote>
+      <blockquote class="quote step" data-q="5" data-hl="three hundred pence"></blockquote>
+      <blockquote class="quote step" data-q="7" data-hl="against the day of my burying hath she kept this"></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>About a year's wages, maybe the family's most valuable possession. She gave it because she loved Him and seemed to understand He was going to die. She wasn't worried about the cost or what people thought. Jesus called it a beautiful thing, not a waste.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 2 of 6</p>
+      <span class="topic">The heart</span>
+      <h2>What was really going on inside Judas?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="4-5" data-hl="given to the poor"></blockquote>
+      <blockquote class="quote step" data-q="6" data-hl="he was a thief, and had the bag"></blockquote>
+      <blockquote class="quote step"><p>“But the LORD said unto Samuel, Look not on his countenance, or on the height of his stature; because I have refused him: for the LORD seeth not as man seeth; for man looketh on the outward appearance, but the LORD looketh on the heart.”</p><cite>1 Samuel 16:7</cite></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>Greed. He talked about the poor, but he was stealing from the money bag. His words sounded caring; his heart was set on money. People may be fooled by the right words, but God looks at the heart. Better to bring what's hidden into the light than to keep covering it.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 3 of 6</p>
+      <span class="topic">Who Jesus is</span>
+      <h2>What kind of King rode into Jerusalem?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="13" data-hl="Blessed is the King of Israel that cometh in the name of the Lord"></blockquote>
+      <blockquote class="quote step" data-q="14-15" data-hl="sitting on an ass’s colt"></blockquote>
+      <blockquote class="quote step"><p>“Rejoice greatly, O daughter of Zion; shout, O daughter of Jerusalem: behold, thy King cometh unto thee: he is just, and having salvation; lowly, and riding upon an ass, and upon a colt the foal of an ass.”</p><cite>Zechariah 9:9</cite></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>A lowly King who came in peace, on a donkey, not a warhorse, just as Zechariah said. The crowd wanted a fighter to throw out Rome. Jesus came to save them, and us, from sin and death, and He was willing to die to do it.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 4 of 6</p>
+      <span class="topic">Dying to live</span>
+      <h2>Why must a corn of wheat fall into the ground and die?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="24" data-hl="it abideth alone|it bringeth forth much fruit"></blockquote>
+      <blockquote class="quote step" data-q="25" data-hl="shall keep it unto life eternal"></blockquote>
+      <blockquote class="quote step" data-q="26" data-hl="If any man serve me, let him follow me"></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>Because a seed that's kept stays alone, but a seed that dies becomes a harvest. Jesus was talking about His own death, which brings life to many. And the same pattern holds for us: letting go of the old life is how we find the real one.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 5 of 6</p>
+      <span class="topic">The cross</span>
+      <h2>What did Jesus mean by “lifted up”?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="32" data-hl="if I be lifted up from the earth"></blockquote>
+      <blockquote class="quote step" data-q="33"></blockquote>
+      <blockquote class="quote step"><p>“And as Moses lifted up the serpent in the wilderness, even so must the Son of man be lifted up: That whosoever believeth in him should not perish, but have eternal life.”</p><cite>John 3:14–15</cite></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>His death on the cross. John says so: “signifying what death he should die.” Lifted up on the cross, Jesus draws all kinds of people to Himself, and whosoever believes in Him will not perish but have eternal life.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 6 of 6</p>
+      <span class="topic">Confessing Him</span>
+      <h2>Why did some believe but stay quiet?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="42" data-hl="lest they should be put out of the synagogue"></blockquote>
+      <blockquote class="quote step" data-q="43"></blockquote>
+      <blockquote class="quote step"><p>“Whosoever therefore shall confess me before men, him will I confess also before my Father which is in heaven.”</p><cite>Matthew 10:32</cite></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>Fear of what it would cost them, and because they loved the approval of people more than the approval of God. We feel the same pull with family and old friends. But Jesus promises to stand up for the man who stands up for Him.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide prayer">
+  <div class="inner">
+    <div class="emblem rise"></div>
+    <h2 class="rise">Prayer requests</h2>
+    <p class="ask-line rise" style="--d:1">What can we pray about for you today?</p>
+    <blockquote class="quote rise" style="--d:3"><p>“Let us therefore come boldly unto the throne of grace, that we may obtain mercy, and find grace to help in time of need.”</p><cite>Hebrews 4:16</cite></blockquote>
+  </div>
+</section>
+
+</main>
+
+<script>
+// King James Version, John chapter 12
+const V = {
+  1: "Then Jesus six days before the passover came to Bethany, where Lazarus was which had been dead, whom he raised from the dead.",
+  2: "There they made him a supper; and Martha served: but Lazarus was one of them that sat at the table with him.",
+  3: "Then took Mary a pound of ointment of spikenard, very costly, and anointed the feet of Jesus, and wiped his feet with her hair: and the house was filled with the odour of the ointment.",
+  4: "Then saith one of his disciples, Judas Iscariot, Simon’s son, which should betray him,",
+  5: "Why was not this ointment sold for three hundred pence, and given to the poor?",
+  6: "This he said, not that he cared for the poor; but because he was a thief, and had the bag, and bare what was put therein.",
+  7: "Then said Jesus, Let her alone: against the day of my burying hath she kept this.",
+  8: "For the poor always ye have with you; but me ye have not always.",
+  9: "Much people of the Jews therefore knew that he was there: and they came not for Jesus’ sake only, but that they might see Lazarus also, whom he had raised from the dead.",
+  10: "But the chief priests consulted that they might put Lazarus also to death;",
+  11: "Because that by reason of him many of the Jews went away, and believed on Jesus.",
+  12: "On the next day much people that were come to the feast, when they heard that Jesus was coming to Jerusalem,",
+  13: "Took branches of palm trees, and went forth to meet him, and cried, Hosanna: Blessed is the King of Israel that cometh in the name of the Lord.",
+  14: "And Jesus, when he had found a young ass, sat thereon; as it is written,",
+  15: "Fear not, daughter of Sion: behold, thy King cometh, sitting on an ass’s colt.",
+  16: "These things understood not his disciples at the first: but when Jesus was glorified, then remembered they that these things were written of him, and that they had done these things unto him.",
+  17: "The people therefore that was with him when he called Lazarus out of his grave, and raised him from the dead, bare record.",
+  18: "For this cause the people also met him, for that they heard that he had done this miracle.",
+  19: "The Pharisees therefore said among themselves, Perceive ye how ye prevail nothing? behold, the world is gone after him.",
+  20: "And there were certain Greeks among them that came up to worship at the feast:",
+  21: "The same came therefore to Philip, which was of Bethsaida of Galilee, and desired him, saying, Sir, we would see Jesus.",
+  22: "Philip cometh and telleth Andrew: and again Andrew and Philip tell Jesus.",
+  23: "And Jesus answered them, saying, The hour is come, that the Son of man should be glorified.",
+  24: "Verily, verily, I say unto you, Except a corn of wheat fall into the ground and die, it abideth alone: but if it die, it bringeth forth much fruit.",
+  25: "He that loveth his life shall lose it; and he that hateth his life in this world shall keep it unto life eternal.",
+  26: "If any man serve me, let him follow me; and where I am, there shall also my servant be: if any man serve me, him will my Father honour.",
+  27: "Now is my soul troubled; and what shall I say? Father, save me from this hour: but for this cause came I unto this hour.",
+  28: "Father, glorify thy name. Then came there a voice from heaven, saying, I have both glorified it, and will glorify it again.",
+  29: "The people therefore, that stood by, and heard it, said that it thundered: others said, An angel spake to him.",
+  30: "Jesus answered and said, This voice came not because of me, but for your sakes.",
+  31: "Now is the judgment of this world: now shall the prince of this world be cast out.",
+  32: "And I, if I be lifted up from the earth, will draw all men unto me.",
+  33: "This he said, signifying what death he should die.",
+  34: "The people answered him, We have heard out of the law that Christ abideth for ever: and how sayest thou, The Son of man must be lifted up? who is this Son of man?",
+  35: "Then Jesus said unto them, Yet a little while is the light with you. Walk while ye have the light, lest darkness come upon you: for he that walketh in darkness knoweth not whither he goeth.",
+  36: "While ye have light, believe in the light, that ye may be the children of light. These things spake Jesus, and departed, and did hide himself from them.",
+  37: "But though he had done so many miracles before them, yet they believed not on him:",
+  38: "That the saying of Esaias the prophet might be fulfilled, which he spake, Lord, who hath believed our report? and to whom hath the arm of the Lord been revealed?",
+  39: "Therefore they could not believe, because that Esaias said again,",
+  40: "He hath blinded their eyes, and hardened their heart; that they should not see with their eyes, nor understand with their heart, and be converted, and I should heal them.",
+  41: "These things said Esaias, when he saw his glory, and spake of him.",
+  42: "Nevertheless among the chief rulers also many believed on him; but because of the Pharisees they did not confess him, lest they should be put out of the synagogue:",
+  43: "For they loved the praise of men more than the praise of God.",
+  44: "Jesus cried and said, He that believeth on me, believeth not on me, but on him that sent me.",
+  45: "And he that seeth me seeth him that sent me.",
+  46: "I am come a light into the world, that whosoever believeth on me should not abide in darkness.",
+  47: "And if any man hear my words, and believe not, I judge him not: for I came not to judge the world, but to save the world.",
+  48: "He that rejecteth me, and receiveth not my words, hath one that judgeth him: the word that I have spoken, the same shall judge him in the last day.",
+  49: "For I have not spoken of myself; but the Father which sent me, he gave me a commandment, what I should say, and what I should speak.",
+  50: "And I know that his commandment is life everlasting: whatsoever I speak therefore, even as the Father said unto me, so I speak."
+};
+const BOOK = "John 12";
+</script>
+<script src="../assets/deck.js"></script>
+</body>
+</html>

@@ -4908,7 +4908,7 @@ window.GLOSSARY = [
     [ 25 ] ],
    [
     "John", 20,
-    [ 1, 18 ] ] ]
+    [ 1, 11, 16, 18 ] ] ]
  },
  {
   "id": "thomas",
@@ -5269,5 +5269,236 @@ window.GLOSSARY = [
    [
     "John", 21,
     [ 24 ] ] ]
+ },
+ {
+  "id": "lazarus",
+  "kind": "person",
+  "name": "Lazarus of Bethany",
+  "refs": [
+   [
+    "John", 11,
+    [ 1, 2, 5, 11, 14, 43 ] ],
+   [
+    "John", 12,
+    [ 1, 2, 9, 10, 17 ] ] ]
+ },
+ {
+  "id": "martha",
+  "kind": "person",
+  "name": "Martha of Bethany",
+  "refs": [
+   [
+    "John", 11,
+    [ 1, 5, 19, 20, 21, 24, 30, 39 ] ],
+   [
+    "John", 12,
+    [ 2 ] ] ]
+ },
+ {
+  "id": "mary-of-bethany",
+  "kind": "person",
+  "name": "Mary of Bethany",
+  "refs": [
+   [
+    "John", 11,
+    [ 1, 2, 19, 20, 28, 31, 32, 45 ] ],
+   [
+    "John", 12,
+    [ 3 ] ] ]
+ },
+ {
+  "id": "caiaphas",
+  "kind": "person",
+  "name": "Caiaphas the high priest",
+  "refs": [
+   [
+    "John", 11,
+    [ 49 ] ],
+   [
+    "John", 18,
+    [ 13, 14, 24, 28 ] ] ]
+ },
+ {
+  "id": "bethany",
+  "kind": "place",
+  "name": "Bethany",
+  "refs": [
+   [
+    "John", 11,
+    [ 1, 18 ] ],
+   [
+    "John", 12,
+    [ 1 ] ] ]
+ },
+ {
+  "id": "ephraim",
+  "kind": "place",
+  "name": "Ephraim (the town)",
+  "refs": [
+   [
+    "John", 11,
+    [ 54 ] ] ]
+ },
+ {
+  "id": "resurrection",
+  "kind": "term",
+  "name": "Resurrection",
+  "refs": [
+   [
+    "John", 5,
+    [ 29 ] ],
+   [
+    "John", 11,
+    [ 24, 25 ] ] ]
+ },
+ {
+  "id": "graveclothes",
+  "kind": "term",
+  "name": "Graveclothes",
+  "refs": [
+   [
+    "John", 11,
+    [ 44 ] ] ]
+ },
+ {
+  "id": "council",
+  "kind": "term",
+  "name": "The council (Sanhedrin)",
+  "refs": [
+   [
+    "John", 11,
+    [ 47 ] ] ]
+ },
+ {
+  "id": "high-priest",
+  "kind": "term",
+  "name": "High priest",
+  "refs": [
+   [
+    "John", 11,
+    [ 49, 51 ] ],
+   [
+    "John", 18,
+    [ 10, 13, 15, 16, 19, 22, 24, 26 ] ] ]
+ },
+ {
+  "id": "expedient",
+  "kind": "term",
+  "name": "Expedient",
+  "refs": [
+   [
+    "John", 11,
+    [ 50 ] ],
+   [
+    "John", 16,
+    [ 7 ] ],
+   [
+    "John", 18,
+    [ 14 ] ] ]
+ },
+ {
+  "id": "ointment",
+  "kind": "term",
+  "name": "Ointment (perfume)",
+  "refs": [
+   [
+    "Proverbs", 27,
+    [ 16 ] ],
+   [
+    "John", 11,
+    [ 2 ] ],
+   [
+    "John", 12,
+    [ 3, 5 ] ] ]
+ },
+ {
+  "id": "greeks",
+  "kind": "person",
+  "name": "The Greeks (Gentiles)",
+  "refs": [
+   [
+    "John", 12,
+    [ 20 ] ] ]
+ },
+ {
+  "id": "sion",
+  "kind": "place",
+  "name": "Sion (Zion, Jerusalem)",
+  "refs": [
+   [
+    "John", 12,
+    [ 15 ] ] ]
+ },
+ {
+  "id": "spikenard",
+  "kind": "term",
+  "name": "Spikenard",
+  "refs": [
+   [
+    "John", 12,
+    [ 3 ] ] ]
+ },
+ {
+  "id": "pence",
+  "kind": "term",
+  "name": "Pence (denarii)",
+  "refs": [
+   [
+    "John", 12,
+    [ 5 ] ] ]
+ },
+ {
+  "id": "hosanna",
+  "kind": "term",
+  "name": "Hosanna",
+  "refs": [
+   [
+    "John", 12,
+    [ 13 ] ] ]
+ },
+ {
+  "id": "palm-branches",
+  "kind": "term",
+  "name": "Palm branches",
+  "refs": [
+   [
+    "John", 12,
+    [ 13 ] ] ]
+ },
+ {
+  "id": "ass",
+  "kind": "term",
+  "name": "Ass (donkey)",
+  "refs": [
+   [
+    "Proverbs", 26,
+    [ 3 ] ],
+   [
+    "John", 12,
+    [ 14, 15 ] ] ]
+ },
+ {
+  "id": "corn-of-wheat",
+  "kind": "term",
+  "name": "A corn of wheat",
+  "refs": [
+   [
+    "John", 12,
+    [ 24 ] ] ]
+ },
+ {
+  "id": "prince-of-this-world",
+  "kind": "term",
+  "name": "The prince of this world",
+  "refs": [
+   [
+    "John", 12,
+    [ 31 ] ],
+   [
+    "John", 14,
+    [ 30 ] ],
+   [
+    "John", 16,
+    [ 11 ] ] ]
  }
 ];
