@@ -182,6 +182,9 @@ window.GLOSSARY = [
   "name": "Moses",
   "refs": [
    [
+    "Micah", 6,
+    [ 4 ] ],
+   [
     "John", 1,
     [ 17, 45 ] ],
    [
@@ -235,6 +238,9 @@ window.GLOSSARY = [
    [
     "Amos", 6,
     [ 6 ] ],
+   [
+    "Obadiah", 1,
+    [ 18 ] ],
    [
     "John", 1,
     [ 45 ] ],
@@ -776,8 +782,56 @@ window.GLOSSARY = [
     "Amos", 9,
     [ 1, 6, 7, 8, 12, 13, 15 ] ],
    [
+    "Obadiah", 1,
+    [ 1, 4, 8, 15, 18, 21 ] ],
+   [
+    "Jonah", 1,
+    [ 1, 3, 4, 9, 10, 14, 16, 17 ] ],
+   [
+    "Jonah", 2,
+    [ 1, 2, 6, 7, 9, 10 ] ],
+   [
     "Micah", 1,
-    [ 1, 3, 12 ] ] ]
+    [ 1, 3, 12 ] ],
+   [
+    "Micah", 2,
+    [ 3, 5, 7, 13 ] ],
+   [
+    "Micah", 3,
+    [ 4, 5, 8, 11 ] ],
+   [
+    "Micah", 4,
+    [ 1, 2, 4, 5, 6, 7, 10, 12, 13 ] ],
+   [
+    "Micah", 5,
+    [ 4, 7, 10 ] ],
+   [
+    "Micah", 6,
+    [ 1, 2, 5, 6, 7, 8, 9 ] ],
+   [
+    "Micah", 7,
+    [ 7, 8, 9, 10, 17 ] ],
+   [
+    "Nahum", 1,
+    [ 2, 3, 7, 9, 11, 12, 14 ] ],
+   [
+    "Nahum", 2,
+    [ 2, 13 ] ],
+   [
+    "Nahum", 3,
+    [ 5 ] ],
+   [
+    "Habakkuk", 1,
+    [ 2, 12 ] ],
+   [
+    "Habakkuk", 2,
+    [ 2, 13, 14, 16, 20 ] ],
+   [
+    "Habakkuk", 3,
+    [ 2, 8, 18, 19 ] ],
+   [
+    "Zephaniah", 1,
+    [ 1, 2, 3, 5, 6, 7, 8, 10, 12, 14, 17, 18 ] ] ]
  },
  {
   "id": "jakeh",
@@ -815,8 +869,20 @@ window.GLOSSARY = [
     "Amos", 2,
     [ 5 ] ],
    [
+    "Obadiah", 1,
+    [ 11, 20 ] ],
+   [
     "Micah", 1,
     [ 1, 5, 9, 12 ] ],
+   [
+    "Micah", 3,
+    [ 10, 12 ] ],
+   [
+    "Micah", 4,
+    [ 2, 8 ] ],
+   [
+    "Zephaniah", 1,
+    [ 4, 12 ] ],
    [
     "John", 1,
     [ 19 ] ],
@@ -1004,8 +1070,14 @@ window.GLOSSARY = [
     "Amos", 8,
     [ 3 ] ],
    [
+    "Jonah", 2,
+    [ 4, 7 ] ],
+   [
     "Micah", 1,
     [ 2 ] ],
+   [
+    "Habakkuk", 2,
+    [ 20 ] ],
    [
     "John", 2,
     [ 14, 15, 19, 20, 21 ] ],
@@ -1109,8 +1181,26 @@ window.GLOSSARY = [
     "Amos", 9,
     [ 7, 9, 14 ] ],
    [
+    "Obadiah", 1,
+    [ 20 ] ],
+   [
     "Micah", 1,
     [ 5, 13, 14, 15 ] ],
+   [
+    "Micah", 2,
+    [ 12 ] ],
+   [
+    "Micah", 3,
+    [ 1, 8, 9 ] ],
+   [
+    "Micah", 5,
+    [ 1, 2, 3 ] ],
+   [
+    "Micah", 6,
+    [ 2 ] ],
+   [
+    "Nahum", 2,
+    [ 2 ] ],
    [
     "John", 1,
     [ 31, 49 ] ],
@@ -1147,6 +1237,15 @@ window.GLOSSARY = [
    [
     "Amos", 9,
     [ 2, 6 ] ],
+   [
+    "Jonah", 1,
+    [ 9 ] ],
+   [
+    "Nahum", 3,
+    [ 16 ] ],
+   [
+    "Zephaniah", 1,
+    [ 3, 5 ] ],
    [
     "John", 1,
     [ 32, 51 ] ],
@@ -1185,7 +1284,13 @@ window.GLOSSARY = [
     [ 14 ] ],
    [
     "Amos", 9,
-    [ 2 ] ] ]
+    [ 2 ] ],
+   [
+    "Jonah", 2,
+    [ 2 ] ],
+   [
+    "Habakkuk", 2,
+    [ 5 ] ] ]
  },
  {
   "id": "judah",
@@ -1232,8 +1337,20 @@ window.GLOSSARY = [
     "Amos", 7,
     [ 12 ] ],
    [
+    "Obadiah", 1,
+    [ 12 ] ],
+   [
     "Micah", 1,
-    [ 1, 5, 9 ] ] ]
+    [ 1, 5, 9 ] ],
+   [
+    "Micah", 5,
+    [ 2 ] ],
+   [
+    "Nahum", 1,
+    [ 15 ] ],
+   [
+    "Zephaniah", 1,
+    [ 1, 4 ] ] ]
  },
  {
   "id": "city-gate",
@@ -1298,6 +1415,15 @@ window.GLOSSARY = [
     "Amos", 5,
     [ 18, 20 ] ],
    [
+    "Micah", 2,
+    [ 1 ] ],
+   [
+    "Micah", 7,
+    [ 8, 9 ] ],
+   [
+    "Habakkuk", 3,
+    [ 4, 11 ] ],
+   [
     "John", 1,
     [ 4, 5, 7, 8, 9 ] ],
    [
@@ -1342,6 +1468,15 @@ window.GLOSSARY = [
    [
     "Amos", 5,
     [ 18, 20 ] ],
+   [
+    "Micah", 7,
+    [ 8 ] ],
+   [
+    "Nahum", 1,
+    [ 8 ] ],
+   [
+    "Zephaniah", 1,
+    [ 15 ] ],
    [
     "John", 1,
     [ 5 ] ],
@@ -1408,6 +1543,9 @@ window.GLOSSARY = [
    [
     "Hosea", 4,
     [ 1 ] ],
+   [
+    "Micah", 7,
+    [ 20 ] ],
    [
     "John", 1,
     [ 14, 17 ] ],
@@ -1487,6 +1625,18 @@ window.GLOSSARY = [
     "Micah", 1,
     [ 15 ] ],
    [
+    "Micah", 2,
+    [ 9 ] ],
+   [
+    "Nahum", 2,
+    [ 9 ] ],
+   [
+    "Habakkuk", 2,
+    [ 14, 16 ] ],
+   [
+    "Habakkuk", 3,
+    [ 3 ] ],
+   [
     "John", 1,
     [ 14 ] ],
    [
@@ -1548,6 +1698,15 @@ window.GLOSSARY = [
     [ 1, 12 ] ],
    [
     "Amos", 2,
+    [ 4 ] ],
+   [
+    "Micah", 4,
+    [ 2 ] ],
+   [
+    "Micah", 7,
+    [ 6 ] ],
+   [
+    "Habakkuk", 1,
     [ 4 ] ],
    [
     "John", 1,
@@ -1729,6 +1888,9 @@ window.GLOSSARY = [
    [
     "Proverbs", 26,
     [ 25 ] ],
+   [
+    "Habakkuk", 1,
+    [ 5 ] ],
    [
     "John", 1,
     [ 7, 12, 50 ] ],
@@ -2006,6 +2168,18 @@ window.GLOSSARY = [
     "Amos", 9,
     [ 13, 14 ] ],
    [
+    "Micah", 2,
+    [ 11 ] ],
+   [
+    "Micah", 6,
+    [ 15 ] ],
+   [
+    "Habakkuk", 2,
+    [ 5 ] ],
+   [
+    "Zephaniah", 1,
+    [ 13 ] ],
+   [
     "John", 2,
     [ 3, 9, 10 ] ],
    [
@@ -2205,7 +2379,10 @@ window.GLOSSARY = [
     [ 3 ] ],
    [
     "Proverbs", 31,
-    [ 26 ] ] ]
+    [ 26 ] ],
+   [
+    "Micah", 6,
+    [ 9 ] ] ]
  },
  {
   "id": "understanding",
@@ -2289,7 +2466,10 @@ window.GLOSSARY = [
     [ 2 ] ],
    [
     "Hosea", 13,
-    [ 2 ] ] ]
+    [ 2 ] ],
+   [
+    "Obadiah", 1,
+    [ 7, 8 ] ] ]
  },
  {
   "id": "knowledge",
@@ -2367,7 +2547,10 @@ window.GLOSSARY = [
     [ 1, 6 ] ],
    [
     "Hosea", 6,
-    [ 6 ] ] ]
+    [ 6 ] ],
+   [
+    "Habakkuk", 2,
+    [ 14 ] ] ]
  },
  {
   "id": "instruction",
@@ -2700,7 +2883,10 @@ window.GLOSSARY = [
     [ 17 ] ],
    [
     "Micah", 1,
-    [ 7 ] ] ]
+    [ 7 ] ],
+   [
+    "Nahum", 3,
+    [ 4 ] ] ]
  },
  {
   "id": "righteous",
@@ -2773,6 +2959,15 @@ window.GLOSSARY = [
    [
     "Amos", 6,
     [ 12 ] ],
+   [
+    "Micah", 6,
+    [ 5 ] ],
+   [
+    "Micah", 7,
+    [ 9 ] ],
+   [
+    "Habakkuk", 1,
+    [ 4, 13 ] ],
    [
     "John", 7,
     [ 24 ] ],
@@ -2874,7 +3069,28 @@ window.GLOSSARY = [
     [ 13, 15 ] ],
    [
     "Joel", 3,
-    [ 13 ] ] ]
+    [ 13 ] ],
+   [
+    "Jonah", 1,
+    [ 2 ] ],
+   [
+    "Micah", 6,
+    [ 10, 11 ] ],
+   [
+    "Nahum", 1,
+    [ 3, 11, 15 ] ],
+   [
+    "Nahum", 3,
+    [ 19 ] ],
+   [
+    "Habakkuk", 1,
+    [ 4, 13 ] ],
+   [
+    "Habakkuk", 3,
+    [ 13 ] ],
+   [
+    "Zephaniah", 1,
+    [ 3 ] ] ]
  },
  {
   "id": "heart",
@@ -2981,6 +3197,15 @@ window.GLOSSARY = [
     "Joel", 2,
     [ 12, 13 ] ],
    [
+    "Obadiah", 1,
+    [ 3 ] ],
+   [
+    "Nahum", 2,
+    [ 10 ] ],
+   [
+    "Zephaniah", 1,
+    [ 12 ] ],
+   [
     "John", 12,
     [ 40 ] ],
    [
@@ -3080,6 +3305,18 @@ window.GLOSSARY = [
     "Amos", 6,
     [ 10 ] ],
    [
+    "Micah", 3,
+    [ 7 ] ],
+   [
+    "Micah", 6,
+    [ 12 ] ],
+   [
+    "Habakkuk", 1,
+    [ 13 ] ],
+   [
+    "Habakkuk", 3,
+    [ 16 ] ],
+   [
     "John", 5,
     [ 2 ] ] ]
  },
@@ -3155,6 +3392,21 @@ window.GLOSSARY = [
     "Amos", 1,
     [ 11 ] ],
    [
+    "Micah", 5,
+    [ 15 ] ],
+   [
+    "Micah", 7,
+    [ 18 ] ],
+   [
+    "Nahum", 1,
+    [ 2, 3, 6 ] ],
+   [
+    "Habakkuk", 3,
+    [ 2, 8, 12 ] ],
+   [
+    "Zephaniah", 1,
+    [ 15, 18 ] ],
+   [
     "John", 3,
     [ 36 ] ],
    [
@@ -3204,7 +3456,13 @@ window.GLOSSARY = [
     [ 5 ] ],
    [
     "Hosea", 7,
-    [ 10 ] ] ]
+    [ 10 ] ],
+   [
+    "Obadiah", 1,
+    [ 3 ] ],
+   [
+    "Habakkuk", 2,
+    [ 5 ] ] ]
  },
  {
   "id": "humility",
@@ -3273,7 +3531,19 @@ window.GLOSSARY = [
     [ 4, 6 ] ],
    [
     "Joel", 1,
-    [ 5 ] ] ]
+    [ 5 ] ],
+   [
+    "Micah", 2,
+    [ 11 ] ],
+   [
+    "Nahum", 1,
+    [ 10 ] ],
+   [
+    "Nahum", 3,
+    [ 11 ] ],
+   [
+    "Habakkuk", 2,
+    [ 15 ] ] ]
  },
  {
   "id": "reproof",
@@ -3330,7 +3600,13 @@ window.GLOSSARY = [
     [ 15 ] ],
    [
     "Hosea", 5,
-    [ 9 ] ] ]
+    [ 9 ] ],
+   [
+    "Micah", 4,
+    [ 3 ] ],
+   [
+    "Habakkuk", 1,
+    [ 12 ] ] ]
  },
  {
   "id": "friend",
@@ -3364,6 +3640,9 @@ window.GLOSSARY = [
    [
     "Hosea", 3,
     [ 1 ] ],
+   [
+    "Micah", 7,
+    [ 5 ] ],
    [
     "John", 3,
     [ 29 ] ],
@@ -3574,6 +3853,15 @@ window.GLOSSARY = [
    [
     "Hosea", 11,
     [ 6 ] ],
+   [
+    "Micah", 4,
+    [ 9, 12 ] ],
+   [
+    "Micah", 6,
+    [ 16 ] ],
+   [
+    "Nahum", 1,
+    [ 11 ] ],
    [
     "John", 11,
     [ 53 ] ],
@@ -3882,7 +4170,16 @@ window.GLOSSARY = [
     [ 3 ] ],
    [
     "Proverbs", 29,
-    [ 15 ] ] ]
+    [ 15 ] ],
+   [
+    "Micah", 5,
+    [ 1 ] ],
+   [
+    "Micah", 6,
+    [ 9 ] ],
+   [
+    "Micah", 7,
+    [ 14 ] ] ]
  },
  {
   "id": "snare",
@@ -3990,7 +4287,10 @@ window.GLOSSARY = [
     [ 22 ] ],
    [
     "Proverbs", 30,
-    [ 33 ] ] ]
+    [ 33 ] ],
+   [
+    "Habakkuk", 1,
+    [ 3 ] ] ]
  },
  {
   "id": "subtilty",
@@ -4059,7 +4359,10 @@ window.GLOSSARY = [
     [ 33 ] ],
    [
     "Proverbs", 18,
-    [ 18 ] ] ]
+    [ 18 ] ],
+   [
+    "Jonah", 1,
+    [ 7 ] ] ]
  },
  {
   "id": "tree-of-life",
@@ -4125,7 +4428,16 @@ window.GLOSSARY = [
     [ 10, 27 ] ],
    [
     "Amos", 5,
-    [ 10 ] ] ]
+    [ 10 ] ],
+   [
+    "Micah", 2,
+    [ 7 ] ],
+   [
+    "Micah", 7,
+    [ 2, 4 ] ],
+   [
+    "Habakkuk", 2,
+    [ 4 ] ] ]
  },
  {
   "id": "usury",
@@ -4155,7 +4467,19 @@ window.GLOSSARY = [
   "refs": [
    [
     "Proverbs", 29,
-    [ 18 ] ] ]
+    [ 18 ] ],
+   [
+    "Obadiah", 1,
+    [ 1 ] ],
+   [
+    "Micah", 3,
+    [ 6 ] ],
+   [
+    "Nahum", 1,
+    [ 1 ] ],
+   [
+    "Habakkuk", 2,
+    [ 2, 3 ] ] ]
  },
  {
   "id": "weights-and-balances",
@@ -4177,6 +4501,9 @@ window.GLOSSARY = [
    [
     "Amos", 8,
     [ 5 ] ],
+   [
+    "Micah", 6,
+    [ 11 ] ],
    [
     "John", 19,
     [ 39 ] ] ]
@@ -4697,6 +5024,12 @@ window.GLOSSARY = [
   "name": "Worship",
   "refs": [
    [
+    "Micah", 5,
+    [ 13 ] ],
+   [
+    "Zephaniah", 1,
+    [ 5 ] ],
+   [
     "John", 4,
     [ 20, 21, 22, 23, 24 ] ],
    [
@@ -4934,6 +5267,9 @@ window.GLOSSARY = [
   "name": "Bethlehem",
   "refs": [
    [
+    "Micah", 5,
+    [ 2 ] ],
+   [
     "John", 7,
     [ 42 ] ] ]
  },
@@ -5030,6 +5366,9 @@ window.GLOSSARY = [
     "Joel", 3,
     [ 9 ] ],
    [
+    "Micah", 5,
+    [ 8 ] ],
+   [
     "John", 7,
     [ 35 ] ] ]
  },
@@ -5089,6 +5428,9 @@ window.GLOSSARY = [
   "kind": "person",
   "name": "Abraham",
   "refs": [
+   [
+    "Micah", 7,
+    [ 20 ] ],
    [
     "John", 8,
     [ 33, 37, 39, 40, 52, 53, 56, 57, 58 ] ] ]
@@ -5360,8 +5702,29 @@ window.GLOSSARY = [
     "Amos", 9,
     [ 8 ] ],
    [
+    "Obadiah", 1,
+    [ 10, 17, 18 ] ],
+   [
     "Micah", 1,
     [ 5 ] ],
+   [
+    "Micah", 2,
+    [ 7, 12 ] ],
+   [
+    "Micah", 3,
+    [ 1, 8, 9 ] ],
+   [
+    "Micah", 4,
+    [ 2 ] ],
+   [
+    "Micah", 5,
+    [ 7, 8 ] ],
+   [
+    "Micah", 7,
+    [ 20 ] ],
+   [
+    "Nahum", 2,
+    [ 2 ] ],
    [
     "John", 4,
     [ 5, 6, 12 ] ] ]
@@ -5414,6 +5777,9 @@ window.GLOSSARY = [
     "Amos", 8,
     [ 14 ] ],
    [
+    "Obadiah", 1,
+    [ 19 ] ],
+   [
     "Micah", 1,
     [ 1, 5, 6 ] ],
    [
@@ -5461,6 +5827,12 @@ window.GLOSSARY = [
   "kind": "term",
   "name": "Salvation",
   "refs": [
+   [
+    "Micah", 7,
+    [ 7 ] ],
+   [
+    "Habakkuk", 3,
+    [ 8, 13, 18 ] ],
    [
     "John", 4,
     [ 22 ] ] ]
@@ -5753,6 +6125,18 @@ window.GLOSSARY = [
     "Amos", 8,
     [ 1 ] ],
    [
+    "Micah", 6,
+    [ 8 ] ],
+   [
+    "Micah", 7,
+    [ 15 ] ],
+   [
+    "Nahum", 3,
+    [ 5 ] ],
+   [
+    "Habakkuk", 1,
+    [ 3 ] ],
+   [
     "John", 5,
     [ 20 ] ],
    [
@@ -5860,6 +6244,9 @@ window.GLOSSARY = [
    [
     "Proverbs", 23,
     [ 30 ] ],
+   [
+    "Habakkuk", 2,
+    [ 3 ] ],
    [
     "John", 4,
     [ 40 ] ],
@@ -6068,8 +6455,17 @@ window.GLOSSARY = [
     "Amos", 6,
     [ 1 ] ],
    [
+    "Obadiah", 1,
+    [ 17, 21 ] ],
+   [
     "Micah", 1,
     [ 13 ] ],
+   [
+    "Micah", 3,
+    [ 10, 12 ] ],
+   [
+    "Micah", 4,
+    [ 2, 7, 8, 10, 11, 13 ] ],
    [
     "John", 12,
     [ 15 ] ] ]
@@ -6485,6 +6881,9 @@ window.GLOSSARY = [
   "name": "Travail (labor in childbirth)",
   "refs": [
    [
+    "Micah", 4,
+    [ 9, 10 ] ],
+   [
     "John", 16,
     [ 21 ] ] ]
  },
@@ -6725,6 +7124,15 @@ window.GLOSSARY = [
     "Joel", 3,
     [ 3 ] ],
    [
+    "Obadiah", 1,
+    [ 11 ] ],
+   [
+    "Jonah", 1,
+    [ 7 ] ],
+   [
+    "Nahum", 3,
+    [ 10 ] ],
+   [
     "John", 19,
     [ 24 ] ] ]
  },
@@ -6775,6 +7183,9 @@ window.GLOSSARY = [
   "kind": "term",
   "name": "The preparation (day)",
   "refs": [
+   [
+    "Nahum", 2,
+    [ 3 ] ],
    [
     "John", 19,
     [ 14, 31, 42 ] ] ]
@@ -6834,7 +7245,13 @@ window.GLOSSARY = [
     [ 17 ] ],
    [
     "Amos", 7,
-    [ 10 ] ] ]
+    [ 10 ] ],
+   [
+    "Micah", 3,
+    [ 11 ] ],
+   [
+    "Zephaniah", 1,
+    [ 4 ] ] ]
  },
  {
   "id": "elders",
@@ -6861,7 +7278,10 @@ window.GLOSSARY = [
     [ 25 ] ],
    [
     "Amos", 4,
-    [ 9 ] ] ]
+    [ 9 ] ],
+   [
+    "Nahum", 3,
+    [ 15, 16 ] ] ]
  },
  {
   "id": "sackcloth",
@@ -6945,7 +7365,13 @@ window.GLOSSARY = [
     [ 14 ] ],
    [
     "Amos", 5,
-    [ 18, 20 ] ] ]
+    [ 18, 20 ] ],
+   [
+    "Obadiah", 1,
+    [ 15 ] ],
+   [
+    "Zephaniah", 1,
+    [ 7, 8, 14, 18 ] ] ]
  },
  {
   "id": "garners",
@@ -6975,7 +7401,10 @@ window.GLOSSARY = [
     [ 2 ] ],
    [
     "Amos", 3,
-    [ 6 ] ] ]
+    [ 6 ] ],
+   [
+    "Zephaniah", 1,
+    [ 16 ] ] ]
  },
  {
   "id": "rend-your-heart",
@@ -7008,6 +7437,18 @@ window.GLOSSARY = [
     [ 11, 12 ] ],
    [
     "Amos", 9,
+    [ 12 ] ],
+   [
+    "Obadiah", 1,
+    [ 1, 2, 15, 16 ] ],
+   [
+    "Micah", 5,
+    [ 15 ] ],
+   [
+    "Habakkuk", 1,
+    [ 5 ] ],
+   [
+    "Habakkuk", 3,
     [ 12 ] ] ]
  },
  {
@@ -7017,7 +7458,10 @@ window.GLOSSARY = [
   "refs": [
    [
     "Joel", 2,
-    [ 18 ] ] ]
+    [ 18 ] ],
+   [
+    "Nahum", 1,
+    [ 2 ] ] ]
  },
  {
   "id": "northern-army",
@@ -7101,7 +7545,25 @@ window.GLOSSARY = [
     [ 15 ] ],
    [
     "Amos", 9,
-    [ 12 ] ] ]
+    [ 12 ] ],
+   [
+    "Micah", 2,
+    [ 12 ] ],
+   [
+    "Micah", 4,
+    [ 7 ] ],
+   [
+    "Micah", 5,
+    [ 3, 7, 8 ] ],
+   [
+    "Micah", 7,
+    [ 18 ] ],
+   [
+    "Habakkuk", 2,
+    [ 8 ] ],
+   [
+    "Zephaniah", 1,
+    [ 4 ] ] ]
  },
  {
   "id": "bring-again-the-captivity",
@@ -7194,7 +7656,10 @@ window.GLOSSARY = [
   "refs": [
    [
     "Joel", 3,
-    [ 10 ] ] ]
+    [ 10 ] ],
+   [
+    "Micah", 4,
+    [ 3 ] ] ]
  },
  {
   "id": "sickle",
@@ -7269,7 +7734,16 @@ window.GLOSSARY = [
     [ 8 ] ],
    [
     "Amos", 9,
-    [ 5, 7 ] ] ]
+    [ 5, 7 ] ],
+   [
+    "Micah", 6,
+    [ 4 ] ],
+   [
+    "Micah", 7,
+    [ 15 ] ],
+   [
+    "Nahum", 3,
+    [ 9 ] ] ]
  },
  {
   "id": "edom",
@@ -7287,7 +7761,10 @@ window.GLOSSARY = [
     [ 1 ] ],
    [
     "Amos", 9,
-    [ 12 ] ] ]
+    [ 12 ] ],
+   [
+    "Obadiah", 1,
+    [ 1, 8 ] ] ]
  },
  {
   "id": "hosea",
@@ -7515,7 +7992,19 @@ window.GLOSSARY = [
     [ 6 ] ],
    [
     "Hosea", 14,
-    [ 3 ] ] ]
+    [ 3 ] ],
+   [
+    "Jonah", 2,
+    [ 8 ] ],
+   [
+    "Micah", 6,
+    [ 8 ] ],
+   [
+    "Micah", 7,
+    [ 18, 20 ] ],
+   [
+    "Habakkuk", 3,
+    [ 2 ] ] ]
  },
  {
   "id": "baal",
@@ -7533,7 +8022,10 @@ window.GLOSSARY = [
     [ 2 ] ],
    [
     "Hosea", 13,
-    [ 1 ] ] ]
+    [ 1 ] ],
+   [
+    "Zephaniah", 1,
+    [ 4 ] ] ]
  },
  {
   "id": "valley-of-achor",
@@ -7698,6 +8190,9 @@ window.GLOSSARY = [
     [ 4 ] ],
    [
     "Amos", 5,
+    [ 5 ] ],
+   [
+    "Micah", 6,
     [ 5 ] ] ]
  },
  {
@@ -7773,7 +8268,16 @@ window.GLOSSARY = [
     [ 1 ] ],
    [
     "Hosea", 14,
-    [ 3 ] ] ]
+    [ 3 ] ],
+   [
+    "Micah", 5,
+    [ 5, 6 ] ],
+   [
+    "Micah", 7,
+    [ 12 ] ],
+   [
+    "Nahum", 3,
+    [ 18 ] ] ]
  },
  {
   "id": "bethel",
@@ -7853,14 +8357,14 @@ window.GLOSSARY = [
     "Hosea", 10,
     [ 8 ] ],
    [
-    "Amos", 4,
-    [ 13 ] ],
-   [
     "Amos", 7,
     [ 9 ] ],
    [
     "Micah", 1,
-    [ 3, 5 ] ] ]
+    [ 5 ] ],
+   [
+    "Micah", 3,
+    [ 12 ] ] ]
  },
  {
   "id": "hemlock",
@@ -7953,7 +8457,16 @@ window.GLOSSARY = [
     [ 2 ] ],
    [
     "Micah", 1,
-    [ 7 ] ] ]
+    [ 7 ] ],
+   [
+    "Micah", 5,
+    [ 13 ] ],
+   [
+    "Nahum", 1,
+    [ 14 ] ],
+   [
+    "Habakkuk", 2,
+    [ 18 ] ] ]
  },
  {
   "id": "cords-of-love",
@@ -7971,7 +8484,13 @@ window.GLOSSARY = [
   "refs": [
    [
     "Hosea", 11,
-    [ 9 ] ] ]
+    [ 9 ] ],
+   [
+    "Habakkuk", 1,
+    [ 12 ] ],
+   [
+    "Habakkuk", 3,
+    [ 3 ] ] ]
  },
  {
   "id": "east-wind",
@@ -7983,7 +8502,10 @@ window.GLOSSARY = [
     [ 1 ] ],
    [
     "Hosea", 13,
-    [ 15 ] ] ]
+    [ 15 ] ],
+   [
+    "Habakkuk", 1,
+    [ 9 ] ] ]
  },
  {
   "id": "merchant",
@@ -8031,7 +8553,10 @@ window.GLOSSARY = [
     [ 8 ] ],
    [
     "Hosea", 12,
-    [ 11 ] ] ]
+    [ 11 ] ],
+   [
+    "Habakkuk", 2,
+    [ 13 ] ] ]
  },
  {
   "id": "gilead",
@@ -8046,7 +8571,13 @@ window.GLOSSARY = [
     [ 11 ] ],
    [
     "Amos", 1,
-    [ 3, 13 ] ] ]
+    [ 3, 13 ] ],
+   [
+    "Obadiah", 1,
+    [ 19 ] ],
+   [
+    "Micah", 7,
+    [ 14 ] ] ]
  },
  {
   "id": "syria",
@@ -8079,7 +8610,10 @@ window.GLOSSARY = [
     [ 8 ] ],
    [
     "Micah", 1,
-    [ 7 ] ] ]
+    [ 7 ] ],
+   [
+    "Habakkuk", 2,
+    [ 18 ] ] ]
  },
  {
   "id": "morning-cloud",
@@ -8112,7 +8646,10 @@ window.GLOSSARY = [
     [ 3 ] ],
    [
     "Hosea", 14,
-    [ 5 ] ] ]
+    [ 5 ] ],
+   [
+    "Micah", 5,
+    [ 7 ] ] ]
  },
  {
   "id": "chaff",
@@ -8157,7 +8694,10 @@ window.GLOSSARY = [
     [ 18 ] ],
    [
     "Hosea", 13,
-    [ 14 ] ] ]
+    [ 14 ] ],
+   [
+    "Micah", 4,
+    [ 10 ] ] ]
  },
  {
   "id": "o-death",
@@ -8205,7 +8745,13 @@ window.GLOSSARY = [
   "refs": [
    [
     "Hosea", 14,
-    [ 5, 6, 7 ] ] ]
+    [ 5, 6, 7 ] ],
+   [
+    "Nahum", 1,
+    [ 4 ] ],
+   [
+    "Habakkuk", 2,
+    [ 17 ] ] ]
  },
  {
   "id": "green-fir-tree",
@@ -8223,7 +8769,10 @@ window.GLOSSARY = [
   "refs": [
    [
     "Hosea", 5,
-    [ 8 ] ] ]
+    [ 8 ] ],
+   [
+    "Obadiah", 1,
+    [ 19 ] ] ]
  },
  {
   "id": "mizpah",
@@ -8400,7 +8949,10 @@ window.GLOSSARY = [
   "refs": [
    [
     "Hosea", 8,
-    [ 14 ] ] ]
+    [ 14 ] ],
+   [
+    "Zephaniah", 1,
+    [ 16 ] ] ]
  },
  {
   "id": "memphis",
@@ -8586,13 +9138,28 @@ window.GLOSSARY = [
     [ 8, 14 ] ],
    [
     "Amos", 9,
-    [ 5 ] ] ]
+    [ 5 ] ],
+   [
+    "Micah", 4,
+    [ 4 ] ],
+   [
+    "Nahum", 2,
+    [ 13 ] ],
+   [
+    "Nahum", 3,
+    [ 5 ] ],
+   [
+    "Habakkuk", 2,
+    [ 13 ] ] ]
  },
  {
   "id": "captivity",
   "kind": "term",
   "name": "Captivity (exile)",
   "refs": [
+   [
+    "Hosea", 6,
+    [ 11 ] ],
    [
     "Amos", 1,
     [ 5, 6, 9, 15 ] ],
@@ -8607,7 +9174,22 @@ window.GLOSSARY = [
     [ 11, 17 ] ],
    [
     "Amos", 9,
-    [ 4 ] ] ]
+    [ 4 ] ],
+   [
+    "Obadiah", 1,
+    [ 11, 20 ] ],
+   [
+    "Micah", 1,
+    [ 16 ] ],
+   [
+    "Nahum", 2,
+    [ 7 ] ],
+   [
+    "Nahum", 3,
+    [ 10 ] ],
+   [
+    "Habakkuk", 1,
+    [ 9 ] ] ]
  },
  {
   "id": "calneh",
@@ -8652,7 +9234,10 @@ window.GLOSSARY = [
     [ 2 ] ],
    [
     "Amos", 9,
-    [ 7 ] ] ]
+    [ 7 ] ],
+   [
+    "Obadiah", 1,
+    [ 19 ] ] ]
  },
  {
   "id": "at-ease",
@@ -8685,7 +9270,10 @@ window.GLOSSARY = [
     [ 8 ] ],
    [
     "Amos", 8,
-    [ 7 ] ] ]
+    [ 7 ] ],
+   [
+    "Nahum", 2,
+    [ 2 ] ] ]
  },
  {
   "id": "amaziah",
@@ -8808,7 +9396,13 @@ window.GLOSSARY = [
     [ 2 ] ],
    [
     "Amos", 9,
-    [ 3 ] ] ]
+    [ 3 ] ],
+   [
+    "Micah", 7,
+    [ 14 ] ],
+   [
+    "Nahum", 1,
+    [ 4 ] ] ]
  },
  {
   "id": "caphtor",
@@ -8958,7 +9552,13 @@ window.GLOSSARY = [
   "refs": [
    [
     "Amos", 1,
-    [ 12 ] ] ]
+    [ 12 ] ],
+   [
+    "Obadiah", 1,
+    [ 9 ] ],
+   [
+    "Habakkuk", 3,
+    [ 3 ] ] ]
  },
  {
   "id": "bozrah",
@@ -8967,6 +9567,9 @@ window.GLOSSARY = [
   "refs": [
    [
     "Amos", 1,
+    [ 12 ] ],
+   [
+    "Micah", 2,
     [ 12 ] ] ]
  },
  {
@@ -9063,7 +9666,10 @@ window.GLOSSARY = [
   "refs": [
    [
     "Amos", 2,
-    [ 1, 2 ] ] ]
+    [ 1, 2 ] ],
+   [
+    "Micah", 6,
+    [ 5 ] ] ]
  },
  {
   "id": "kirioth",
@@ -9135,7 +9741,13 @@ window.GLOSSARY = [
   "refs": [
    [
     "Amos", 4,
-    [ 1 ] ] ]
+    [ 1 ] ],
+   [
+    "Micah", 7,
+    [ 14 ] ],
+   [
+    "Nahum", 1,
+    [ 4 ] ] ]
  },
  {
   "id": "sodom-and-gomorrah",
@@ -9226,5 +9838,179 @@ window.GLOSSARY = [
    [
     "Amos", 4,
     [ 12 ] ] ]
+ },
+ {
+  "id": "habakkuk",
+  "kind": "person",
+  "name": "Habakkuk the prophet",
+  "refs": [
+   [
+    "Habakkuk", 1,
+    [ 1 ] ],
+   [
+    "Habakkuk", 3,
+    [ 1 ] ] ]
+ },
+ {
+  "id": "chaldeans",
+  "kind": "person",
+  "name": "The Chaldeans (the Babylonians)",
+  "refs": [
+   [
+    "Habakkuk", 1,
+    [ 6 ] ] ]
+ },
+ {
+  "id": "babylon",
+  "kind": "place",
+  "name": "Babylon",
+  "refs": [
+   [
+    "Micah", 4,
+    [ 10 ] ] ]
+ },
+ {
+  "id": "burden",
+  "kind": "term",
+  "name": "Burden (a prophet's heavy message)",
+  "refs": [
+   [
+    "Habakkuk", 1,
+    [ 1 ] ] ]
+ },
+ {
+  "id": "angle-and-drag",
+  "kind": "term",
+  "name": "Angle and drag (fishhook and dragnet)",
+  "refs": [
+   [
+    "Habakkuk", 1,
+    [ 15, 16 ] ] ]
+ },
+ {
+  "id": "tables",
+  "kind": "term",
+  "name": "Tables (writing tablets)",
+  "refs": [
+   [
+    "Habakkuk", 2,
+    [ 2 ] ] ]
+ },
+ {
+  "id": "the-just-shall-live-by-faith",
+  "kind": "term",
+  "name": "“The just shall live by his faith” (Romans 1:17)",
+  "refs": [
+   [
+    "Habakkuk", 2,
+    [ 4 ] ] ]
+ },
+ {
+  "id": "woe",
+  "kind": "term",
+  "name": "Woe (a cry of grief over coming disaster)",
+  "refs": [
+   [
+    "Habakkuk", 2,
+    [ 6, 9, 12, 15, 19 ] ] ]
+ },
+ {
+  "id": "thick-clay",
+  "kind": "term",
+  "name": "Thick clay (a heavy load of pledges)",
+  "refs": [
+   [
+    "Habakkuk", 2,
+    [ 6 ] ] ]
+ },
+ {
+  "id": "booties",
+  "kind": "term",
+  "name": "Booties (plunder)",
+  "refs": [
+   [
+    "Habakkuk", 2,
+    [ 7 ] ] ]
+ },
+ {
+  "id": "cup-of-the-lords-right-hand",
+  "kind": "term",
+  "name": "The cup of the LORD's right hand (His judgment)",
+  "refs": [
+   [
+    "Habakkuk", 2,
+    [ 16 ] ] ]
+ },
+ {
+  "id": "shigionoth",
+  "kind": "term",
+  "name": "Shigionoth (a kind of song)",
+  "refs": [
+   [
+    "Habakkuk", 3,
+    [ 1 ] ] ]
+ },
+ {
+  "id": "selah",
+  "kind": "term",
+  "name": "Selah (probably a pause)",
+  "refs": [
+   [
+    "Habakkuk", 3,
+    [ 3, 9, 13 ] ] ]
+ },
+ {
+  "id": "paran",
+  "kind": "place",
+  "name": "Mount Paran (the wilderness of Paran)",
+  "refs": [
+   [
+    "Habakkuk", 3,
+    [ 3 ] ] ]
+ },
+ {
+  "id": "cushan",
+  "kind": "place",
+  "name": "Cushan (a desert people, near Midian)",
+  "refs": [
+   [
+    "Habakkuk", 3,
+    [ 7 ] ] ]
+ },
+ {
+  "id": "midian",
+  "kind": "place",
+  "name": "Midian",
+  "refs": [
+   [
+    "Habakkuk", 3,
+    [ 7 ] ] ]
+ },
+ {
+  "id": "anointed",
+  "kind": "term",
+  "name": "Thine anointed (God's chosen one; Hebrew mashiach)",
+  "refs": [
+   [
+    "Habakkuk", 3,
+    [ 13 ] ] ]
+ },
+ {
+  "id": "hinds-feet",
+  "kind": "term",
+  "name": "Hinds' feet (a deer's sure feet)",
+  "refs": [
+   [
+    "Habakkuk", 3,
+    [ 19 ] ] ]
+ },
+ {
+  "id": "chief-singer",
+  "kind": "term",
+  "name": "The chief singer (the choir leader)",
+  "refs": [
+   [
+    "Habakkuk", 3,
+    [ 19 ] ] ]
  }
 ];

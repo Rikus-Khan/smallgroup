@@ -3682,5 +3682,141 @@ window.STUDIES = [
       },
       "big": "God's judgment is real, but His mercy has the last word. He raised up David's fallen house in Jesus, called the nations by His name, and keeps every promise He makes."
     }
+  },
+  {
+    "id": "habakkuk-01",
+    "type": "chapter",
+    "book": "Habakkuk",
+    "ch": 1,
+    "date": "2026-10-29",
+    "title": "Habakkuk 1",
+    "sub": "How long, LORD?",
+    "about": "A prophet looks at the wrong all around him and asks God why He does nothing. God's answer is harder than the question.",
+    "tags": [
+      "Honest prayer",
+      "God's silence",
+      "God's ways",
+      "Who God is",
+      "Correction",
+      "False gods"
+    ],
+    "url": "studies/habakkuk-01.html",
+    "overview": {
+      "where": "Judah and Jerusalem, the southern kingdom, with Babylon rising far to the east",
+      "when": "About 610–600 BC, before the exile, as Babylon (the Chaldeans) rose to power after Assyria fell",
+      "people": [
+        "habakkuk",
+        "the-lord",
+        "chaldeans",
+        "heathen"
+      ],
+      "places": [
+        "judah",
+        "jerusalem",
+        "babylon"
+      ],
+      "story": [
+        "Habakkuk cries out: how long will God let violence, strife, and crooked justice go on in Judah (1–4)?",
+        "God answers: He is already at work. He is raising up the Chaldeans of Babylon, a fierce and fast nation, to judge Judah (5–11).",
+        "Habakkuk holds on to who God is: everlasting, holy, “my God.” Judah will not die; Babylon is sent for correction (12).",
+        "But he asks again: how can a holy God use men worse than the ones He judges, who catch nations like fish and worship their own net (13–17)?"
+      ],
+      "key": {
+        "ref": "Habakkuk 1:2",
+        "text": "O LORD, how long shall I cry, and thou wilt not hear! even cry out unto thee of violence, and thou wilt not save!"
+      },
+      "big": "God welcomes honest questions. He may answer in ways we don't expect, but when we can't see what He is doing, we can stand on who He is."
+    }
+  },
+  {
+    "id": "habakkuk-02",
+    "type": "chapter",
+    "book": "Habakkuk",
+    "ch": 2,
+    "date": "2026-10-29",
+    "title": "Habakkuk 2",
+    "sub": "The just shall live by his faith",
+    "about": "Habakkuk climbs his watchtower and waits. God tells him to write the answer down plainly: the proud will fall, and the just will live by faith.",
+    "tags": [
+      "Waiting",
+      "God's timing",
+      "Faith",
+      "Never enough",
+      "Reaping",
+      "God's glory"
+    ],
+    "url": "studies/habakkuk-02.html",
+    "overview": {
+      "where": "Judah, with Habakkuk on his watchtower; the woes are aimed at Babylon",
+      "when": "About 610–600 BC, before the exile, with Babylon on the rise",
+      "people": [
+        "habakkuk",
+        "the-lord",
+        "chaldeans"
+      ],
+      "places": [
+        "babylon",
+        "lebanon",
+        "temple"
+      ],
+      "story": [
+        "Habakkuk stands on his watch to see how God will answer (1).",
+        "God says to write the vision plainly. It has an appointed time: though it tarry, wait for it (2–3).",
+        "The proud man is not upright, but the just shall live by his faith. The proud man's appetite, like the grave, is never satisfied (4–5).",
+        "The nations Babylon crushed sing five woes over it: for plunder, greed, a city built with blood, getting a neighbour drunk to shame him, and dumb idols (6–19).",
+        "The earth will be filled with the knowledge of the glory of the LORD. The LORD is in His holy temple; let all the earth keep silence (14, 20)."
+      ],
+      "key": {
+        "ref": "Habakkuk 2:4",
+        "text": "Behold, his soul which is lifted up is not upright in him: but the just shall live by his faith."
+      },
+      "big": "A man is made right with God by faith, not by works, and he keeps living that way while he waits. God's word comes on time, the proud reap what they sow, and the LORD reigns."
+    }
+  },
+  {
+    "id": "habakkuk-03",
+    "type": "chapter",
+    "book": "Habakkuk",
+    "ch": 3,
+    "date": "2026-10-29",
+    "title": "Habakkuk 3",
+    "sub": "Yet I will rejoice",
+    "about": "Habakkuk ends with a song. He remembers what God has done, trembles at what's coming, and decides to rejoice in the LORD even if everything is lost.",
+    "tags": [
+      "Mercy",
+      "Remembering",
+      "Salvation",
+      "Fear",
+      "Joy",
+      "Strength"
+    ],
+    "url": "studies/habakkuk-03.html",
+    "overview": {
+      "where": "Judah, looking back to God's march from Sinai, Teman, and Paran, and the Red Sea and the Jordan",
+      "when": "About 610–600 BC, before the exile, as Babylon's invasion drew near",
+      "people": [
+        "habakkuk",
+        "the-lord",
+        "heathen"
+      ],
+      "places": [
+        "teman",
+        "paran",
+        "cushan",
+        "midian"
+      ],
+      "story": [
+        "Habakkuk has heard God's answer and is afraid. He prays: revive Your work, and in wrath remember mercy (1–2).",
+        "He remembers God coming from Teman and Paran in blazing glory, shaking the mountains and the nations (3–7).",
+        "He retells the sea, the rivers, the trembling mountains, and the sun and moon standing still: God went out for the salvation of His people (8–15).",
+        "He trembles at the coming invasion, but chooses to rest in the day of trouble (16).",
+        "Even if the fig tree, vine, olive, fields, flock, and herd all fail, “yet I will rejoice in the LORD.” The LORD is his strength (17–19)."
+      ],
+      "key": {
+        "ref": "Habakkuk 3:18",
+        "text": "Yet I will rejoice in the LORD, I will joy in the God of my salvation."
+      },
+      "big": "Joy in the Lord doesn't depend on circumstances. Remember what God has done, ask for mercy, rest in Him when afraid, and choose to rejoice in the God of your salvation."
+    }
   }
 ];
