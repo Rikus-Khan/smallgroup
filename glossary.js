@@ -831,7 +831,10 @@ window.GLOSSARY = [
     [ 2, 8, 18, 19 ] ],
    [
     "Zephaniah", 1,
-    [ 1, 2, 3, 5, 6, 7, 8, 10, 12, 14, 17, 18 ] ] ]
+    [ 1, 2, 3, 5, 6, 7, 8, 10, 12, 14, 17, 18 ] ],
+   [
+    "Zephaniah", 2,
+    [ 2, 3, 5, 7, 9, 10, 11 ] ] ]
  },
  {
   "id": "jakeh",
@@ -967,6 +970,9 @@ window.GLOSSARY = [
    [
     "Amos", 6,
     [ 14 ] ],
+   [
+    "Zephaniah", 2,
+    [ 13 ] ],
    [
     "John", 1,
     [ 23 ] ],
@@ -1202,6 +1208,9 @@ window.GLOSSARY = [
     "Nahum", 2,
     [ 2 ] ],
    [
+    "Zephaniah", 2,
+    [ 9 ] ],
+   [
     "John", 1,
     [ 31, 49 ] ],
    [
@@ -1350,7 +1359,10 @@ window.GLOSSARY = [
     [ 15 ] ],
    [
     "Zephaniah", 1,
-    [ 1, 4 ] ] ]
+    [ 1, 4 ] ],
+   [
+    "Zephaniah", 2,
+    [ 7 ] ] ]
  },
  {
   "id": "city-gate",
@@ -2969,6 +2981,9 @@ window.GLOSSARY = [
     "Habakkuk", 1,
     [ 4, 13 ] ],
    [
+    "Zephaniah", 2,
+    [ 3 ] ],
+   [
     "John", 7,
     [ 24 ] ],
    [
@@ -3206,6 +3221,9 @@ window.GLOSSARY = [
     "Zephaniah", 1,
     [ 12 ] ],
    [
+    "Zephaniah", 2,
+    [ 15 ] ],
+   [
     "John", 12,
     [ 40 ] ],
    [
@@ -3407,6 +3425,9 @@ window.GLOSSARY = [
     "Zephaniah", 1,
     [ 15, 18 ] ],
    [
+    "Zephaniah", 2,
+    [ 2, 3 ] ],
+   [
     "John", 3,
     [ 36 ] ],
    [
@@ -3462,7 +3483,10 @@ window.GLOSSARY = [
     [ 3 ] ],
    [
     "Habakkuk", 2,
-    [ 5 ] ] ]
+    [ 5 ] ],
+   [
+    "Zephaniah", 2,
+    [ 10 ] ] ]
  },
  {
   "id": "humility",
@@ -5029,6 +5053,9 @@ window.GLOSSARY = [
    [
     "Zephaniah", 1,
     [ 5 ] ],
+   [
+    "Zephaniah", 2,
+    [ 11 ] ],
    [
     "John", 4,
     [ 20, 21, 22, 23, 24 ] ],
@@ -7371,7 +7398,10 @@ window.GLOSSARY = [
     [ 15 ] ],
    [
     "Zephaniah", 1,
-    [ 7, 8, 14, 18 ] ] ]
+    [ 7, 8, 14, 18 ] ],
+   [
+    "Zephaniah", 2,
+    [ 2, 3 ] ] ]
  },
  {
   "id": "garners",
@@ -7449,7 +7479,10 @@ window.GLOSSARY = [
     [ 5 ] ],
    [
     "Habakkuk", 3,
-    [ 12 ] ] ]
+    [ 12 ] ],
+   [
+    "Zephaniah", 2,
+    [ 11 ] ] ]
  },
  {
   "id": "jealous",
@@ -7505,8 +7538,17 @@ window.GLOSSARY = [
   "name": "Floors (threshing floors)",
   "refs": [
    [
+    "Hosea", 9,
+    [ 2 ] ],
+   [
+    "Hosea", 13,
+    [ 3 ] ],
+   [
     "Joel", 2,
-    [ 24 ] ] ]
+    [ 24 ] ],
+   [
+    "Micah", 4,
+    [ 12 ] ] ]
  },
  {
   "id": "pour-out-my-spirit",
@@ -7563,7 +7605,10 @@ window.GLOSSARY = [
     [ 8 ] ],
    [
     "Zephaniah", 1,
-    [ 4 ] ] ]
+    [ 4 ] ],
+   [
+    "Zephaniah", 2,
+    [ 7, 9 ] ] ]
  },
  {
   "id": "bring-again-the-captivity",
@@ -8277,7 +8322,10 @@ window.GLOSSARY = [
     [ 12 ] ],
    [
     "Nahum", 3,
-    [ 18 ] ] ]
+    [ 18 ] ],
+   [
+    "Zephaniah", 2,
+    [ 13 ] ] ]
  },
  {
   "id": "bethel",
@@ -8658,7 +8706,10 @@ window.GLOSSARY = [
   "refs": [
    [
     "Hosea", 13,
-    [ 3 ] ] ]
+    [ 3 ] ],
+   [
+    "Zephaniah", 2,
+    [ 2 ] ] ]
  },
  {
   "id": "saviour",
@@ -9150,7 +9201,10 @@ window.GLOSSARY = [
     [ 5 ] ],
    [
     "Habakkuk", 2,
-    [ 13 ] ] ]
+    [ 13 ] ],
+   [
+    "Zephaniah", 2,
+    [ 9, 10 ] ] ]
  },
  {
   "id": "captivity",
@@ -9189,7 +9243,10 @@ window.GLOSSARY = [
     [ 10 ] ],
    [
     "Habakkuk", 1,
-    [ 9 ] ] ]
+    [ 9 ] ],
+   [
+    "Zephaniah", 2,
+    [ 7 ] ] ]
  },
  {
   "id": "calneh",
@@ -9237,7 +9294,10 @@ window.GLOSSARY = [
     [ 7 ] ],
    [
     "Obadiah", 1,
-    [ 19 ] ] ]
+    [ 19 ] ],
+   [
+    "Zephaniah", 2,
+    [ 5 ] ] ]
  },
  {
   "id": "at-ease",
@@ -9318,7 +9378,10 @@ window.GLOSSARY = [
   "refs": [
    [
     "Amos", 7,
-    [ 12 ] ] ]
+    [ 12 ] ],
+   [
+    "Micah", 3,
+    [ 7 ] ] ]
  },
  {
   "id": "herdman",
@@ -9432,7 +9495,10 @@ window.GLOSSARY = [
   "refs": [
    [
     "Amos", 9,
-    [ 7 ] ] ]
+    [ 7 ] ],
+   [
+    "Zephaniah", 2,
+    [ 12 ] ] ]
  },
  {
   "id": "syrians",
@@ -9513,7 +9579,10 @@ window.GLOSSARY = [
   "refs": [
    [
     "Amos", 1,
-    [ 6, 7 ] ] ]
+    [ 6, 7 ] ],
+   [
+    "Zephaniah", 2,
+    [ 4 ] ] ]
  },
  {
   "id": "ashdod",
@@ -9525,7 +9594,10 @@ window.GLOSSARY = [
     [ 8 ] ],
    [
     "Amos", 3,
-    [ 9 ] ] ]
+    [ 9 ] ],
+   [
+    "Zephaniah", 2,
+    [ 4 ] ] ]
  },
  {
   "id": "ashkelon",
@@ -9534,7 +9606,10 @@ window.GLOSSARY = [
   "refs": [
    [
     "Amos", 1,
-    [ 8 ] ] ]
+    [ 8 ] ],
+   [
+    "Zephaniah", 2,
+    [ 4, 7 ] ] ]
  },
  {
   "id": "ekron",
@@ -9543,7 +9618,10 @@ window.GLOSSARY = [
   "refs": [
    [
     "Amos", 1,
-    [ 8 ] ] ]
+    [ 8 ] ],
+   [
+    "Zephaniah", 2,
+    [ 4 ] ] ]
  },
  {
   "id": "teman",
@@ -9579,7 +9657,10 @@ window.GLOSSARY = [
   "refs": [
    [
     "Amos", 1,
-    [ 13 ] ] ]
+    [ 13 ] ],
+   [
+    "Zephaniah", 2,
+    [ 8, 9 ] ] ]
  },
  {
   "id": "rabbah",
@@ -9669,7 +9750,10 @@ window.GLOSSARY = [
     [ 1, 2 ] ],
    [
     "Micah", 6,
-    [ 5 ] ] ]
+    [ 5 ] ],
+   [
+    "Zephaniah", 2,
+    [ 8, 9 ] ] ]
  },
  {
   "id": "kirioth",
@@ -9756,7 +9840,10 @@ window.GLOSSARY = [
   "refs": [
    [
     "Amos", 4,
-    [ 11 ] ] ]
+    [ 11 ] ],
+   [
+    "Zephaniah", 2,
+    [ 9 ] ] ]
  },
  {
   "id": "kine",
@@ -10012,5 +10099,251 @@ window.GLOSSARY = [
    [
     "Habakkuk", 3,
     [ 19 ] ] ]
+ },
+ {
+  "id": "micah",
+  "kind": "person",
+  "name": "Micah the prophet (the Morasthite)",
+  "refs": [
+   [
+    "Micah", 1,
+    [ 1 ] ] ]
+ },
+ {
+  "id": "moresheth-gath",
+  "kind": "place",
+  "name": "Moresheth-gath (Micah's home town)",
+  "refs": [
+   [
+    "Micah", 1,
+    [ 1, 14 ] ] ]
+ },
+ {
+  "id": "aphrah",
+  "kind": "place",
+  "name": "Aphrah (Beth-le-aphrah, \"house of dust\")",
+  "refs": [
+   [
+    "Micah", 1,
+    [ 10 ] ] ]
+ },
+ {
+  "id": "saphir",
+  "kind": "place",
+  "name": "Saphir (\"pretty town\")",
+  "refs": [
+   [
+    "Micah", 1,
+    [ 11 ] ] ]
+ },
+ {
+  "id": "zaanan",
+  "kind": "place",
+  "name": "Zaanan (sounds like \"come out\")",
+  "refs": [
+   [
+    "Micah", 1,
+    [ 11 ] ] ]
+ },
+ {
+  "id": "beth-ezel",
+  "kind": "place",
+  "name": "Beth-ezel (\"the house next door\")",
+  "refs": [
+   [
+    "Micah", 1,
+    [ 11 ] ] ]
+ },
+ {
+  "id": "maroth",
+  "kind": "place",
+  "name": "Maroth (\"bitterness\")",
+  "refs": [
+   [
+    "Micah", 1,
+    [ 12 ] ] ]
+ },
+ {
+  "id": "lachish",
+  "kind": "place",
+  "name": "Lachish (Judah's chariot fortress)",
+  "refs": [
+   [
+    "Micah", 1,
+    [ 13 ] ] ]
+ },
+ {
+  "id": "achzib",
+  "kind": "place",
+  "name": "Achzib (\"a lie,\" a creek that runs dry)",
+  "refs": [
+   [
+    "Micah", 1,
+    [ 14 ] ] ]
+ },
+ {
+  "id": "mareshah",
+  "kind": "place",
+  "name": "Mareshah (\"the heir\")",
+  "refs": [
+   [
+    "Micah", 1,
+    [ 15 ] ] ]
+ },
+ {
+  "id": "adullam",
+  "kind": "place",
+  "name": "Adullam (David's cave)",
+  "refs": [
+   [
+    "Micah", 1,
+    [ 15 ] ] ]
+ },
+ {
+  "id": "dragons-and-owls",
+  "kind": "term",
+  "name": "Dragons and owls (jackals and desert birds)",
+  "refs": [
+   [
+    "Micah", 1,
+    [ 8 ] ] ]
+ },
+ {
+  "id": "poll-and-baldness",
+  "kind": "term",
+  "name": "Make thee bald, poll thee (shave the head in mourning)",
+  "refs": [
+   [
+    "Micah", 1,
+    [ 16 ] ] ]
+ },
+ {
+  "id": "covet",
+  "kind": "term",
+  "name": "Covet (want what belongs to another)",
+  "refs": [
+   [
+    "Micah", 2,
+    [ 2 ] ] ]
+ },
+ {
+  "id": "heritage",
+  "kind": "term",
+  "name": "Heritage (a family's God-given land)",
+  "refs": [
+   [
+    "Micah", 2,
+    [ 2 ] ],
+   [
+    "Micah", 7,
+    [ 14, 18 ] ] ]
+ },
+ {
+  "id": "cord-by-lot",
+  "kind": "term",
+  "name": "Cast a cord by lot (measure out a share of land)",
+  "refs": [
+   [
+    "Micah", 2,
+    [ 5 ] ] ]
+ },
+ {
+  "id": "straitened",
+  "kind": "term",
+  "name": "Straitened (cut short, held back)",
+  "refs": [
+   [
+    "Proverbs", 4,
+    [ 12 ] ],
+   [
+    "Micah", 2,
+    [ 7 ] ] ]
+ },
+ {
+  "id": "the-breaker",
+  "kind": "term",
+  "name": "The breaker (the one who breaks open the way)",
+  "refs": [
+   [
+    "Micah", 2,
+    [ 13 ] ] ]
+ },
+ {
+  "id": "heads-of-jacob",
+  "kind": "person",
+  "name": "The heads of Jacob (Judah's rulers and judges)",
+  "refs": [
+   [
+    "Micah", 3,
+    [ 1, 9 ] ] ]
+ },
+ {
+  "id": "judgment-justice",
+  "kind": "term",
+  "name": "Judgment (justice, doing right)",
+  "refs": [
+   [
+    "Micah", 3,
+    [ 1, 8, 9 ] ],
+   [
+    "Micah", 7,
+    [ 9 ] ] ]
+ },
+ {
+  "id": "divine-and-diviners",
+  "kind": "term",
+  "name": "Divine, diviners (fortune-telling)",
+  "refs": [
+   [
+    "Micah", 3,
+    [ 6, 7, 11 ] ] ]
+ },
+ {
+  "id": "last-days",
+  "kind": "term",
+  "name": "The last days",
+  "refs": [
+   [
+    "Micah", 4,
+    [ 1 ] ] ]
+ },
+ {
+  "id": "vine-and-fig-tree",
+  "kind": "term",
+  "name": "Every man under his vine and under his fig tree",
+  "refs": [
+   [
+    "Micah", 4,
+    [ 4 ] ] ]
+ },
+ {
+  "id": "halteth",
+  "kind": "term",
+  "name": "Her that halteth (the lame)",
+  "refs": [
+   [
+    "Micah", 4,
+    [ 6, 7 ] ] ]
+ },
+ {
+  "id": "tower-of-the-flock",
+  "kind": "place",
+  "name": "The tower of the flock (Migdal Eder, near Bethlehem)",
+  "refs": [
+   [
+    "Micah", 4,
+    [ 8 ] ] ]
+ },
+ {
+  "id": "thresh",
+  "kind": "term",
+  "name": "Thresh (beat out the grain)",
+  "refs": [
+   [
+    "Micah", 4,
+    [ 13 ] ],
+   [
+    "Habakkuk", 3,
+    [ 12 ] ] ]
  }
 ];

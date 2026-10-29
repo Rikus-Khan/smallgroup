@@ -3684,6 +3684,193 @@ window.STUDIES = [
     }
   },
   {
+    "id": "micah-01",
+    "type": "chapter",
+    "book": "Micah",
+    "ch": 1,
+    "date": "2026-10-29",
+    "title": "Micah 1",
+    "sub": "The LORD comes down",
+    "about": "A country preacher sees the LORD step out of heaven to judge His own people, and he weeps over every town on the road.",
+    "tags": [
+      "God's holiness",
+      "Sin",
+      "Sin's wages",
+      "God's heart",
+      "Hope"
+    ],
+    "url": "studies/micah-01.html",
+    "overview": {
+      "where": "Judah and Israel: Samaria, Jerusalem, and the towns of Judah's low hills around Micah's home, Moresheth-gath",
+      "when": "About 740–700 BC, before the exile, under Jotham, Ahaz and Hezekiah of Judah, as Assyria rose to power",
+      "people": [
+        "micah",
+        "jotham",
+        "ahaz",
+        "hezekiah",
+        "jacob"
+      ],
+      "places": [
+        "samaria",
+        "jerusalem",
+        "judah",
+        "israel",
+        "moresheth-gath",
+        "gath",
+        "lachish",
+        "adullam",
+        "mareshah"
+      ],
+      "story": [
+        "The word of the LORD comes to Micah of Moresheth about Samaria and Jerusalem, in the days of Jotham, Ahaz and Hezekiah (1).",
+        "The LORD comes out of His holy temple as a witness against His people. The mountains melt under Him like wax (2–4).",
+        "Samaria, Israel's capital, is the root of its sin, and it will become a heap of stones. Its idols, bought with a harlot's hire, will go back to the same use (5–7).",
+        "Micah wails and goes stripped like a captive, because the wound has reached Judah, even the gate of Jerusalem (8–9).",
+        "Town by town, with a play on each name, Micah mourns the cities of the low hills as the enemy comes, and their children go into captivity (10–16)."
+      ],
+      "key": {
+        "ref": "Micah 1:3",
+        "text": "For, behold, the LORD cometh forth out of his place, and will come down, and tread upon the high places of the earth."
+      },
+      "big": "God is holy, and He judges sin even among His own people, but only after long patience. His prophets grieve over judgment, and even rock bottom can be the place a man meets the King."
+    }
+  },
+  {
+    "id": "micah-02",
+    "type": "chapter",
+    "book": "Micah",
+    "ch": 2,
+    "date": "2026-10-29",
+    "title": "Micah 2",
+    "sub": "Plotting in the dark",
+    "about": "Powerful men lie awake planning how to take their neighbors' land, and they want a preacher who will tell them it's fine. God has a word for them, and a promise for His flock.",
+    "tags": [
+      "Temptation",
+      "Greed",
+      "God's justice",
+      "Truth",
+      "Hope"
+    ],
+    "url": "studies/micah-02.html",
+    "overview": {
+      "where": "Judah, among the farms and homes of ordinary families",
+      "when": "About 735–700 BC, before the exile, while Assyria threatened the land",
+      "people": [
+        "micah",
+        "jacob"
+      ],
+      "places": [
+        "israel",
+        "bozrah"
+      ],
+      "story": [
+        "Woe to the men who plan evil on their beds and do it at dawn, taking fields and houses by force (1–2).",
+        "So the LORD plans a disaster against them: their own fields will be divided up, and they will have no share among His people (3–5).",
+        "The people tell the prophets to stop preaching. God answers that His words do good to the man who walks uprightly (6–7).",
+        "His people rob peaceful travelers and throw widows out of their homes. This land is not their rest (8–10).",
+        "They would gladly follow a lying prophet who promised wine and strong drink (11).",
+        "Yet God promises to gather the remnant of Israel like a flock. The breaker goes before them, their king passes before them, and the LORD is at their head (12–13)."
+      ],
+      "key": {
+        "ref": "Micah 2:13",
+        "text": "The breaker is come up before them: they have broken up, and have passed through the gate, and are gone out by it: and their king shall pass before them, and the LORD on the head of them."
+      },
+      "big": "Sin is planned in the dark before the hands move, and a man reaps what he sows. God's word does good to the upright, and the Shepherd goes ahead of His scattered flock to open the way home."
+    }
+  },
+  {
+    "id": "micah-03",
+    "type": "chapter",
+    "book": "Micah",
+    "ch": 3,
+    "date": "2026-10-29",
+    "title": "Micah 3",
+    "sub": "Shepherds who ate the sheep",
+    "about": "Judges, priests and prophets who sell out God's people for money, and one man full of the Spirit who tells them the truth.",
+    "tags": [
+      "Leadership",
+      "Prayer",
+      "Truth",
+      "The Holy Spirit",
+      "Mercy"
+    ],
+    "url": "studies/micah-03.html",
+    "overview": {
+      "where": "Jerusalem (Zion), before the rulers, priests and prophets of Judah",
+      "when": "About 700 BC, in the days of King Hezekiah (Jeremiah 26:18), before the exile",
+      "people": [
+        "micah",
+        "heads-of-jacob",
+        "priests",
+        "jacob",
+        "hezekiah"
+      ],
+      "places": [
+        "sion",
+        "jerusalem",
+        "israel"
+      ],
+      "story": [
+        "Micah calls out the heads of Jacob. They should know justice, but they hate good and treat the people like meat for the pot (1–3).",
+        "When trouble comes they will cry to the LORD, but He will hide His face, because of what they have done (4).",
+        "The prophets cry “Peace” to whoever feeds them and declare war on whoever doesn't. Night will fall on them, with no answer from God (5–7).",
+        "But Micah is full of power by the Spirit of the LORD, to tell Israel its sin (8).",
+        "Rulers judge for bribes, priests teach for hire, prophets divine for money, and still they say the LORD is among them (9–11).",
+        "So Zion will be plowed like a field and Jerusalem become heaps (12). A century later, Jeremiah 26 recalls that Hezekiah heard this warning and turned to the LORD."
+      ],
+      "key": {
+        "ref": "Micah 3:8",
+        "text": "But truly I am full of power by the spirit of the LORD, and of judgment, and of might, to declare unto Jacob his transgression, and to Israel his sin."
+      },
+      "big": "God holds leaders to account and won't be used by men who want rescue without repentance. Real courage comes from His Spirit, and His warnings are an open door to turn."
+    }
+  },
+  {
+    "id": "micah-04",
+    "type": "chapter",
+    "book": "Micah",
+    "ch": 4,
+    "date": "2026-10-29",
+    "title": "Micah 4",
+    "sub": "Swords into plowshares",
+    "about": "Right after the ruins of chapter 3, God shows Micah where history is headed: a mountain the nations climb to learn His ways, and a limping people made strong.",
+    "tags": [
+      "God's plan",
+      "God's word",
+      "Peace",
+      "The broken",
+      "Suffering"
+    ],
+    "url": "studies/micah-04.html",
+    "overview": {
+      "where": "Zion and Jerusalem, looking ahead to the exile in Babylon and to the last days",
+      "when": "Spoken about 700 BC, before the exile. It looks ahead to Babylon (586 BC), the return (539 BC), and the last days",
+      "people": [
+        "micah",
+        "jacob"
+      ],
+      "places": [
+        "sion",
+        "jerusalem",
+        "tower-of-the-flock",
+        "babylon"
+      ],
+      "story": [
+        "In the last days the mountain of the LORD's house will stand above all, and many nations will come up to learn His ways (1–2).",
+        "He will judge among the nations. They will beat their swords into plowshares, and every man will sit under his vine and fig tree, unafraid (3–4).",
+        "Others walk in the names of their gods, but “we will walk in the name of the LORD our God for ever and ever” (5).",
+        "The LORD will gather the lame and the outcast, make them a strong nation, and reign over them in mount Zion for ever. The kingdom will come back to the tower of the flock (6–8).",
+        "Like a woman in labor, Zion will go out to Babylon, and there the LORD will redeem her (9–10).",
+        "The nations gather to gloat over Zion, not knowing God is gathering them like sheaves to the threshing floor (11–13)."
+      ],
+      "key": {
+        "ref": "Micah 4:3",
+        "text": "And he shall judge among many people, and rebuke strong nations afar off; and they shall beat their swords into plowshares, and their spears into pruninghooks: nation shall not lift up a sword against nation, neither shall they learn war any more."
+      },
+      "big": "History is headed for the LORD's reign. He teaches the nations His ways, turns weapons into tools, gathers the limping, and redeems His people even in the place of their captivity."
+    }
+  },
+  {
     "id": "habakkuk-01",
     "type": "chapter",
     "book": "Habakkuk",
