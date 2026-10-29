@@ -5055,5 +5055,207 @@ window.STUDIES = [
       },
       "big": "God rules all the earth and deals fully with evil. The BRANCH, Jesus, is both Priest and King: He offered Himself for us and now reigns, and He brings the far-off near."
     }
+  },
+  {
+    "id": "zechariah-07",
+    "type": "chapter",
+    "book": "Zechariah",
+    "ch": 7,
+    "date": "2026-10-29",
+    "title": "Zechariah 7",
+    "sub": "Did ye at all fast unto me?",
+    "about": "Men come asking whether to keep an old fast. God answers with a better question: who was it all for? And He reminds them what He wanted all along.",
+    "tags": [
+      "The heart",
+      "For whom?",
+      "Mercy",
+      "A hard heart",
+      "Not hearing",
+      "Hope"
+    ],
+    "url": "studies/zechariah-07.html",
+    "overview": {
+      "where": "Jerusalem, where the temple is being rebuilt; men are sent to ask the priests and prophets",
+      "when": "About 518 BC, the fourth year of King Darius of Persia, after the exile",
+      "people": [
+        "zechariah",
+        "darius",
+        "sherezer-and-regem-melech",
+        "priests",
+        "the-lord"
+      ],
+      "places": [
+        "jerusalem",
+        "temple"
+      ],
+      "story": [
+        "In the ninth month, Chisleu, men are sent to the house of God to ask: should we keep weeping and fasting in the fifth month, as we have for so many years? (1–3)",
+        "God asks the people: when you fasted for seventy years, was it for Me? When you ate and drank, wasn't it for yourselves? (4–6)",
+        "The former prophets had already said it, back when Jerusalem was full and prosperous (7).",
+        "God's word was always: judge truly, show mercy, don't oppress the widow, the fatherless, the stranger or the poor, and don't plot evil in your heart (8–10).",
+        "Their fathers refused, shrugged, stopped their ears, and made their hearts as an adamant stone, so great wrath came (11–12).",
+        "As they would not hear God, He would not hear them. He scattered them with a whirlwind, and the pleasant land was left desolate (13–14)."
+      ],
+      "key": {
+        "ref": "Zechariah 7:5",
+        "text": "Speak unto all the people of the land, and to the priests, saying, When ye fasted and mourned in the fifth and seventh month, even those seventy years, did ye at all fast unto me, even to me?"
+      },
+      "big": "God wants our hearts, not empty rituals: mercy and justice toward people, and ears that listen to Him. A heart hardens one \"no\" at a time, but God still calls, and He can give a new heart."
+    }
+  },
+  {
+    "id": "zechariah-08",
+    "type": "chapter",
+    "book": "Zechariah",
+    "ch": 8,
+    "date": "2026-10-29",
+    "title": "Zechariah 8",
+    "sub": "I am returned unto Zion",
+    "about": "Ten promises from the LORD of hosts: a city full of old men and playing children, a curse turned into a blessing, and sad fasts turned into feasts.",
+    "tags": [
+      "God's love",
+      "Too hard?",
+      "Courage",
+      "A fresh start",
+      "Truth",
+      "Joy"
+    ],
+    "url": "studies/zechariah-08.html",
+    "overview": {
+      "where": "Jerusalem and Zion, half rebuilt, with God's people still scattered east and west",
+      "when": "About 518 BC, under Persia, after the exile, while the temple was being rebuilt",
+      "people": [
+        "zechariah",
+        "the-lord",
+        "remnant",
+        "heathen"
+      ],
+      "places": [
+        "sion",
+        "jerusalem",
+        "judah",
+        "temple"
+      ],
+      "story": [
+        "God is jealous for Zion with great jealousy. He returns to dwell in Jerusalem, the city of truth (1–3).",
+        "Old men and women will sit in the streets, and boys and girls will play there. What seems marvellous to the remnant is not too hard for God (4–6).",
+        "He will gather His people from east and west: they shall be His people, and He their God (7–8).",
+        "Let your hands be strong. Before the foundation was laid there was no wage and no peace, but now the seed will prosper (9–12).",
+        "As they were a curse among the nations, they will be a blessing. As God kept His word to punish, He will keep it to do good: fear not (13–15).",
+        "Speak the truth, judge with truth and peace, plot no evil, love no false oath (16–17).",
+        "The four fasts will become joy, gladness and cheerful feasts (18–19).",
+        "Many nations will come to seek the LORD in Jerusalem. Ten men will take hold of a Jew's robe: “We will go with you: for we have heard that God is with you” (20–23)."
+      ],
+      "key": {
+        "ref": "Zechariah 8:3",
+        "text": "Thus saith the LORD; I am returned unto Zion, and will dwell in the midst of Jerusalem: and Jerusalem shall be called a city of truth; and the mountain of the LORD of hosts the holy mountain."
+      },
+      "big": "God loves His people with a fierce, faithful love. Nothing is too hard for Him: He turns a curse into a blessing and mourning into joy, and He calls us to build on truth."
+    }
+  },
+  {
+    "id": "zechariah-09",
+    "type": "chapter",
+    "book": "Zechariah",
+    "ch": 9,
+    "date": "2026-10-29",
+    "title": "Zechariah 9",
+    "sub": "Behold, thy King cometh",
+    "about": "Proud cities fall, but Jerusalem's King comes riding on a donkey, bringing peace. And God calls to men stuck in a dry pit: “ye prisoners of hope.”",
+    "tags": [
+      "Riches",
+      "Mercy",
+      "The King",
+      "Peace",
+      "Hope",
+      "Worth"
+    ],
+    "url": "studies/zechariah-09.html",
+    "overview": {
+      "where": "The lands around Israel, from Hadrach, Hamath and Damascus in Syria to Tyre, Zidon and the Philistine cities, with Jerusalem at the center",
+      "when": "Undated, after the exile (Zechariah preached about 520–518 BC), looking ahead to Alexander the Great (about 332 BC), the wars with the Greeks, and the coming King",
+      "people": [
+        "the-lord",
+        "philistines",
+        "jebusite"
+      ],
+      "places": [
+        "hadrach",
+        "damascus",
+        "hamath",
+        "tyre-and-zidon",
+        "ashkelon",
+        "gaza",
+        "ekron",
+        "ashdod",
+        "sion",
+        "jerusalem",
+        "greece"
+      ],
+      "story": [
+        "The burden of the LORD falls on Hadrach, Damascus and Hamath, and on rich Tyre and Zidon. Tyre's strong hold and silver cannot save her (1–4).",
+        "The Philistine cities will fear and fall, yet a remnant of them will belong to God, like the Jebusites (5–7).",
+        "God will encamp about His house, so that no oppressor passes through (8).",
+        "Rejoice, daughter of Zion: your King comes, just and having salvation, lowly and riding upon an ass (9; Matthew 21:5, John 12:15).",
+        "He will cut off the chariot and the war horse and speak peace to the nations; His rule will reach to the ends of the earth (10).",
+        "By the blood of the covenant God frees prisoners from the waterless pit: “Turn you to the strong hold, ye prisoners of hope” (11–12).",
+        "God will use Judah and Ephraim like a bow against the sons of Greece, and He will defend and save His people (13–15).",
+        "They will be like the stones of a crown on His land. How great is His goodness, and how great is His beauty (16–17)."
+      ],
+      "key": {
+        "ref": "Zechariah 9:9",
+        "text": "Rejoice greatly, O daughter of Zion; shout, O daughter of Jerusalem: behold, thy King cometh unto thee: he is just, and having salvation; lowly, and riding upon an ass, and upon a colt the foal of an ass."
+      },
+      "big": "Walls and riches can't save, but God guards His own. Jesus is the just, saving, lowly King who rode into Jerusalem as Zechariah foretold, and He calls men in the pit “prisoners of hope.”"
+    }
+  },
+  {
+    "id": "zechariah-10",
+    "type": "chapter",
+    "book": "Zechariah",
+    "ch": 10,
+    "date": "2026-10-29",
+    "title": "Zechariah 10",
+    "sub": "I will bring them again",
+    "about": "Sheep without a shepherd, scattered to far countries. God whistles for them, gathers them, and brings them home as though He had never cast them off.",
+    "tags": [
+      "Prayer",
+      "False comfort",
+      "The Shepherd",
+      "Taken back",
+      "Far country",
+      "Strength"
+    ],
+    "url": "studies/zechariah-10.html",
+    "overview": {
+      "where": "Judah and the scattered northern tribes (the house of Joseph, Ephraim), called home from Egypt and Assyria to Gilead and Lebanon",
+      "when": "Undated, after the exile (Zechariah preached about 520–518 BC), looking ahead to a full gathering of God's people",
+      "people": [
+        "the-lord",
+        "house-of-joseph",
+        "ephraim-kingdom"
+      ],
+      "places": [
+        "judah",
+        "egypt",
+        "assyria",
+        "gilead",
+        "lebanon"
+      ],
+      "story": [
+        "Ask the LORD for rain in the time of the latter rain; He sends the showers (1).",
+        "Idols and diviners comfort in vain, so the people wandered like sheep with no shepherd (2).",
+        "God is angry with the bad shepherds. He visits His flock and makes Judah His goodly horse. From Judah come the corner, the nail, the battle bow and every ruler (3–5).",
+        "God will strengthen Judah and save Joseph. They will be as though He had not cast them off, for He has mercy on them, and Ephraim's heart will rejoice in the LORD (6–7).",
+        "He will hiss for them and gather them, for He has redeemed them. Scattered far, they will remember Him and turn again (8–9).",
+        "He will bring them out of Egypt and Assyria into Gilead and Lebanon, through the sea of affliction, and bring down the pride of their oppressors (10–11).",
+        "He will strengthen them in the LORD, and they will walk up and down in His name (12)."
+      ],
+      "key": {
+        "ref": "Zechariah 10:6",
+        "text": "And I will strengthen the house of Judah, and I will save the house of Joseph, and I will bring them again to place them; for I have mercy upon them: and they shall be as though I had not cast them off: for I am the LORD their God, and will hear them."
+      },
+      "big": "False comfort leaves men scattered like sheep, but God is the Shepherd who calls, gathers and restores, as though He had never cast them off. However far a man has gone, he can remember God and turn again."
+    }
   }
 ];

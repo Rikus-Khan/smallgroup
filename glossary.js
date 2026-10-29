@@ -8799,7 +8799,13 @@ window.GLOSSARY = [
     [ 1, 12 ] ],
    [
     "Hosea", 14,
-    [ 8 ] ] ]
+    [ 8 ] ],
+   [
+    "Zechariah", 9,
+    [ 10, 13 ] ],
+   [
+    "Zechariah", 10,
+    [ 7 ] ] ]
  },
  {
   "id": "gilgal",
@@ -11058,7 +11064,10 @@ window.GLOSSARY = [
   "refs": [
    [
     "Micah", 3,
-    [ 6, 7, 11 ] ] ]
+    [ 6, 7, 11 ] ],
+   [
+    "Zechariah", 10,
+    [ 2 ] ] ]
  },
  {
   "id": "last-days",
@@ -13126,5 +13135,113 @@ window.GLOSSARY = [
    [
     "Zechariah", 6,
     [ 15 ] ] ]
+ },
+ {
+  "id": "chisleu",
+  "kind": "term",
+  "name": "Chisleu (the ninth month, about November–December)",
+  "refs": [
+   [
+    "Zechariah", 7,
+    [ 1 ] ] ]
+ },
+ {
+  "id": "sherezer-and-regem-melech",
+  "kind": "person",
+  "name": "Sherezer and Regem-melech (men sent to ask about fasting)",
+  "refs": [
+   [
+    "Zechariah", 7,
+    [ 2 ] ] ]
+ },
+ {
+  "id": "adamant",
+  "kind": "term",
+  "name": "Adamant stone (the hardest stone: flint, or diamond)",
+  "refs": [
+   [
+    "Zechariah", 7,
+    [ 12 ] ] ]
+ },
+ {
+  "id": "skirt",
+  "kind": "term",
+  "name": "Skirt (the hem of a robe)",
+  "refs": [
+   [
+    "Zechariah", 8,
+    [ 23 ] ] ]
+ },
+ {
+  "id": "hadrach",
+  "kind": "place",
+  "name": "Hadrach (a land in the far north of Syria)",
+  "refs": [
+   [
+    "Zechariah", 9,
+    [ 1 ] ] ]
+ },
+ {
+  "id": "jebusite",
+  "kind": "person",
+  "name": "The Jebusites (Jerusalem's people before David)",
+  "refs": [
+   [
+    "Zechariah", 9,
+    [ 7 ] ] ]
+ },
+ {
+  "id": "greece",
+  "kind": "place",
+  "name": "Greece",
+  "refs": [
+   [
+    "Zechariah", 9,
+    [ 13 ] ] ]
+ },
+ {
+  "id": "thy-king-cometh",
+  "kind": "term",
+  "name": "“Thy King cometh … riding upon an ass” (Matthew 21:5, John 12:15)",
+  "refs": [
+   [
+    "Zechariah", 9,
+    [ 9 ] ],
+   [
+    "John", 12,
+    [ 15 ] ] ]
+ },
+ {
+  "id": "prisoners-of-hope",
+  "kind": "term",
+  "name": "Prisoners of hope",
+  "refs": [
+   [
+    "Zechariah", 9,
+    [ 12 ] ] ]
+ },
+ {
+  "id": "house-of-joseph",
+  "kind": "person",
+  "name": "The house of Joseph (the northern tribes)",
+  "refs": [
+   [
+    "Amos", 5,
+    [ 6 ] ],
+   [
+    "Obadiah", 1,
+    [ 18 ] ],
+   [
+    "Zechariah", 10,
+    [ 6 ] ] ]
+ },
+ {
+  "id": "hiss",
+  "kind": "term",
+  "name": "Hiss (whistle, the way a shepherd calls his flock)",
+  "refs": [
+   [
+    "Zechariah", 10,
+    [ 8 ] ] ]
  }
 ];
