@@ -1,0 +1,668 @@
+<!doctype html>
+<html lang="en" data-theme="slate">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>John 10</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="../assets/fonts.css">
+<link rel="stylesheet" href="../assets/deck.css">
+<link rel="stylesheet" href="../assets/themes.css">
+<style>
+/* A sheep, used in every graphic below */
+.jn10-sheep .body { fill: var(--ink-soft); transition: fill .8s ease; }
+.jn10-sheep .head { fill: var(--ink); }
+
+/* One fold, several flocks: the shepherd calls, and only his own sheep come out after him */
+.jn10-call .yard { fill: var(--surface); stroke: var(--line-strong); stroke-width: 10; stroke-dasharray: 18 5; stroke-linejoin: round; }
+.jn10-call .keeper { fill: var(--accent); }
+.jn10-call .staff { fill: none; stroke: var(--accent); stroke-width: 5; stroke-linecap: round; }
+.jn10-call .move { transition: transform 1.8s cubic-bezier(.4,0,.2,1), opacity .8s ease; transition-delay: calc(var(--k, 0) * 220ms); }
+.jn10-call .voice { fill: var(--accent-hot); opacity: 0; transition: opacity .6s ease; }
+.split:has(.jn10-call-go.on) .jn10-call .mine .move { transform: translate(var(--x), var(--y)); }
+.split:has(.jn10-call-go.on) .jn10-call .mine .body { fill: var(--accent-hot); }
+.split:has(.jn10-call-go.on) .jn10-call .other .move { opacity: .4; }
+.split:has(.jn10-call-go.on) .jn10-call .voice { opacity: 1; }
+
+/* The fold with one way in: the shepherd lies across the opening; a thief goes over the wall */
+.jn10-fold .yard { fill: var(--surface); }
+.jn10-fold .wall { fill: none; stroke: var(--line-strong); stroke-width: 14; stroke-dasharray: 20 5; stroke-linejoin: round; }
+.jn10-fold .grass { fill: none; stroke: var(--cool); stroke-width: 3; stroke-linecap: round; opacity: .7; }
+.jn10-fold .keeper { opacity: 0; transition: opacity .9s ease; }
+.jn10-fold .keeper rect, .jn10-fold .keeper circle { fill: var(--accent); }
+.jn10-fold .keeper text { fill: var(--accent-hot); }
+.jn10-fold .thief { fill: none; stroke: var(--danger); stroke-width: 4; stroke-linecap: round; stroke-dasharray: 1; stroke-dashoffset: 1; transition: stroke-dashoffset 1.8s ease; }
+.jn10-fold .thief-lbl { fill: var(--danger); opacity: 0; transition: opacity .8s ease .9s; }
+.split:has(.jn10-door-go.on) .jn10-fold .keeper { opacity: 1; }
+.split:has(.jn10-thief-go.on) .jn10-fold .thief { stroke-dashoffset: 0; }
+.split:has(.jn10-thief-go.on) .jn10-fold .thief-lbl { opacity: 1; }
+.slide.active .jn10-fold .roam { animation: jn10-roam 8s ease-in-out infinite; animation-delay: var(--dl, 0s); }
+@keyframes jn10-roam { 0%, 12% { transform: translate(0, 0); } 42%, 70% { transform: translate(var(--rx), 112px); } 100% { transform: translate(0, 0); } }
+
+/* What the thief leaves you, and what Jesus gives: one bar drains, the other overflows */
+.jn10-meter { display: grid; gap: 1.1rem; margin: .5em 0 1em; padding-right: 12%; }
+.jn10-meter .row { display: grid; grid-template-columns: 5.5rem 1fr; gap: .3rem 1rem; align-items: center; }
+.jn10-meter .lbl { font: 600 clamp(1rem, .9rem + .5vw, 1.35rem) var(--serif); }
+.jn10-meter .track { height: 1.8rem; border: 1.5px solid var(--line-strong); border-radius: 6px; position: relative; }
+.jn10-meter .track i { position: absolute; left: 0; top: 0; bottom: 0; border-radius: 5px; }
+.jn10-meter .thief i { width: 100%; background: var(--danger); }
+.slide.active .jn10-meter .thief i { animation: jn10-drain 3.6s .8s ease forwards; }
+@keyframes jn10-drain { 0%, 15% { width: 100%; } 30%, 45% { width: 66%; } 60%, 75% { width: 33%; } 90%, 100% { width: 0; } }
+.jn10-meter .life i { width: 0; background: var(--accent); transition: width 2.4s cubic-bezier(.3,.7,.3,1); }
+.jn10-meter .life.on i { width: 114%; box-shadow: 0 0 18px color-mix(in srgb, var(--accent) 60%, transparent); }
+.jn10-meter .end { grid-column: 2; font-size: clamp(.88rem, .8rem + .35vw, 1.1rem); color: var(--ink-soft); }
+.jn10-meter .life .end { color: var(--accent-hot); font-family: var(--serif); font-style: italic; }
+
+/* A short timeline of the temple's rededication, and eight lights */
+.jn10-years { display: grid; grid-template-columns: repeat(3, 1fr); gap: .5rem; position: relative; margin: .6em 0 1em; text-align: center; }
+.jn10-years::before { content: ""; position: absolute; left: 16%; right: 16%; top: .55rem; height: 2px; background: var(--line-strong); }
+.jn10-years > div { position: relative; }
+.jn10-years i { display: block; width: 1.15rem; height: 1.15rem; margin: 0 auto .4rem; border-radius: 50%; background: var(--bg); border: 2px solid var(--line-strong); }
+.jn10-years .lit i { background: var(--accent); border-color: var(--accent); box-shadow: 0 0 0 6px color-mix(in srgb, var(--accent) 18%, transparent); }
+.jn10-years b { display: block; font: 600 clamp(1rem, .9rem + .5vw, 1.3rem) var(--serif); }
+.jn10-years span { display: block; font-size: clamp(.85rem, .8rem + .3vw, 1.05rem); color: var(--ink-soft); line-height: 1.35; }
+.jn10-lights { display: flex; justify-content: center; align-items: flex-end; gap: clamp(10px, 2.4vw, 26px); margin: .2em 0 1em; }
+.jn10-lights span { display: grid; justify-items: center; gap: 3px; }
+.jn10-lights .fl { width: 16px; height: 26px; border-radius: 50% 50% 46% 46% / 64% 64% 36% 36%; background: radial-gradient(circle at 50% 70%, var(--glow) 0 18%, var(--warm) 60%, transparent 76%); opacity: 0; transform: scale(.3); transform-origin: 50% 100%; transition: opacity .6s ease, transform .6s ease; transition-delay: calc(var(--k) * 260ms + 200ms); }
+.jn10-lights .base { width: 26px; height: 10px; border-radius: 0 0 12px 12px; background: var(--leather-light); }
+.jn10-lights.on .fl { opacity: 1; transform: none; filter: drop-shadow(0 0 8px var(--warm)); }
+
+/* Held in two hands: attackers keep pushing in and can't get through */
+.jn10-hands .outer { fill: color-mix(in srgb, var(--accent) 10%, transparent); stroke: var(--accent); stroke-width: 4; }
+.jn10-hands .inner-h { fill: color-mix(in srgb, var(--accent) 24%, transparent); stroke: var(--accent-hot); stroke-width: 4; }
+.jn10-hands .tag { fill: var(--accent-hot); }
+.jn10-hands .foe text { fill: var(--danger); }
+.jn10-hands .foe line { stroke: var(--danger); stroke-width: 4; stroke-linecap: round; }
+.jn10-hands .foe path { fill: var(--danger); }
+.slide.active .jn10-hands .foe { animation: jn10-push 2.6s ease-in-out infinite; animation-delay: var(--dl, 0s); }
+@keyframes jn10-push { 0%, 100% { transform: translate(0, 0); } 40% { transform: translate(var(--dx), var(--dy)); } 52% { transform: translate(calc(var(--dx) * .4), calc(var(--dy) * .4)); } }
+
+/* The road back to where it began */
+.jn10-map .land { fill: var(--surface); }
+.jn10-map .river { fill: none; stroke: var(--cool); stroke-width: 6; stroke-linecap: round; }
+.jn10-map .sea { fill: var(--cool); opacity: .8; }
+.jn10-map .route { fill: none; stroke: var(--accent); stroke-width: 5; stroke-linecap: round; stroke-dasharray: 1; stroke-dashoffset: 1; transition: stroke-dashoffset 2.4s ease; }
+.jn10-map .city { fill: var(--ink); }
+.jn10-map .goal { fill: var(--accent); }
+.jn10-map .soft { fill: var(--ink-soft); }
+.slide.active .jn10-map .route { stroke-dashoffset: 0; transition-delay: .8s; }
+</style>
+</head>
+<body>
+<main class="deck" id="deck">
+
+<!-- ======================= OPENING ======================= -->
+<section class="slide title">
+  <div class="inner">
+    <div class="emblem rise"></div>
+    <h1 class="rise" style="--d:1">John 10</h1>
+    <p class="sub rise" style="--d:3">The Good Shepherd</p>
+    <p class="tag rise" style="--d:5">Jesus is the door to the fold and the Shepherd who lays down His life for the sheep. No one can pluck them out of His hand.</p>
+  </div>
+</section>
+
+<section class="slide watch">
+  <div class="inner">
+    <h2 class="rise">Things to watch for</h2>
+    <p class="lede rise" style="--d:1">Keep these questions in the back of your mind as we read. We'll come back to every one of them at the end.</p>
+    <ol class="seeds">
+      <li class="step"><span class="topic">The door</span><span class="seed-q">What does it mean that Jesus is the door?</span></li>
+      <li class="step"><span class="topic">His voice</span><span class="seed-q">How do His sheep tell His voice from a stranger's?</span></li>
+      <li class="step"><span class="topic">Abundant life</span><span class="seed-q">What does the thief want, and what does Jesus want for you?</span></li>
+      <li class="step"><span class="topic">The Good Shepherd</span><span class="seed-q">What makes Jesus different from a hired hand?</span></li>
+      <li class="step"><span class="topic">Eternal security</span><span class="seed-q">Can one of Jesus' sheep ever be lost?</span></li>
+      <li class="step"><span class="topic">Who Jesus is</span><span class="seed-q">Who did Jesus claim to be?</span></li>
+    </ol>
+  </div>
+</section>
+
+<!-- ======================= PART ONE: THE DOOR ======================= -->
+<section class="slide part">
+  <div class="inner">
+    <p class="part-n rise">Part one</p>
+    <h2 class="rise" style="--d:1">The door</h2>
+    <p class="range rise" style="--d:2">Verses 1–10</p>
+    <div class="rule"></div>
+    <p class="hook rise" style="--d:4">There is one way into the fold, and a thief who wants in some other way.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="1-3" data-hl="climbeth up some other way|the sheep hear his voice: and he calleth his own sheep by name"></section>
+<section class="slide verse" data-v="4-6" data-hl="he goeth before them|for they know his voice|they know not the voice of strangers"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="3" data-hl="he calleth his own sheep by name, and leadeth them out"></blockquote>
+    <div class="split">
+      <div class="stage">
+        <svg class="jn10-call" viewBox="0 0 640 300" role="img" aria-label="A stone fold full of sheep from several flocks. The shepherd calls, and only his own sheep leave the fold and line up behind him.">
+          <path class="yard" d="M310 118 V50 Q310 30 290 30 H40 Q20 30 20 50 V250 Q20 270 40 270 H290 Q310 270 310 250 V182"/>
+          <g transform="translate(70 70)"><g class="jn10-sheep other"><g class="move"><ellipse class="body" rx="17" ry="11"/><circle class="head" cx="16" cy="-6" r="6"/></g></g></g>
+          <g transform="translate(140 80)"><g class="jn10-sheep mine"><g class="move" style="--k:0;--x:400px;--y:75px"><ellipse class="body" rx="17" ry="11"/><circle class="head" cx="16" cy="-6" r="6"/></g></g></g>
+          <g transform="translate(220 70)"><g class="jn10-sheep other"><g class="move"><ellipse class="body" rx="17" ry="11"/><circle class="head" cx="16" cy="-6" r="6"/></g></g></g>
+          <g transform="translate(272 98)"><g class="jn10-sheep other"><g class="move"><ellipse class="body" rx="17" ry="11"/><circle class="head" cx="16" cy="-6" r="6"/></g></g></g>
+          <g transform="translate(62 142)"><g class="jn10-sheep mine"><g class="move" style="--k:1;--x:438px;--y:13px"><ellipse class="body" rx="17" ry="11"/><circle class="head" cx="16" cy="-6" r="6"/></g></g></g>
+          <g transform="translate(132 152)"><g class="jn10-sheep other"><g class="move"><ellipse class="body" rx="17" ry="11"/><circle class="head" cx="16" cy="-6" r="6"/></g></g></g>
+          <g transform="translate(202 140)"><g class="jn10-sheep mine"><g class="move" style="--k:2;--x:258px;--y:15px"><ellipse class="body" rx="17" ry="11"/><circle class="head" cx="16" cy="-6" r="6"/></g></g></g>
+          <g transform="translate(262 165)"><g class="jn10-sheep other"><g class="move"><ellipse class="body" rx="17" ry="11"/><circle class="head" cx="16" cy="-6" r="6"/></g></g></g>
+          <g transform="translate(80 218)"><g class="jn10-sheep other"><g class="move"><ellipse class="body" rx="17" ry="11"/><circle class="head" cx="16" cy="-6" r="6"/></g></g></g>
+          <g transform="translate(150 226)"><g class="jn10-sheep mine"><g class="move" style="--k:3;--x:270px;--y:-71px"><ellipse class="body" rx="17" ry="11"/><circle class="head" cx="16" cy="-6" r="6"/></g></g></g>
+          <g transform="translate(222 214)"><g class="jn10-sheep other"><g class="move"><ellipse class="body" rx="17" ry="11"/><circle class="head" cx="16" cy="-6" r="6"/></g></g></g>
+          <g transform="translate(270 238)"><g class="jn10-sheep mine"><g class="move" style="--k:4;--x:110px;--y:-83px"><ellipse class="body" rx="17" ry="11"/><circle class="head" cx="16" cy="-6" r="6"/></g></g></g>
+          <g class="keeper-fig">
+            <circle class="keeper" cx="596" cy="112" r="12"/>
+            <path class="keeper" d="M582 128 H610 L616 186 H576 Z"/>
+            <path class="staff" d="M622 196 V104 Q622 88 634 88"/>
+          </g>
+          <text class="voice" x="596" y="70" text-anchor="middle" font-size="20" font-style="italic">“Come.”</text>
+          <text x="165" y="296" text-anchor="middle" font-size="16" style="fill:var(--ink-soft)">one fold, several flocks</text>
+        </svg>
+      </div>
+      <div>
+        <h2 class="rise" style="--d:1">He calls them by name</h2>
+        <p class="note rise" style="--d:2">At night, several shepherds often kept their flocks in one shared stone fold. The <em>porter</em> (the gatekeeper) watched the door till morning.</p>
+        <p class="note step jn10-call-go">At sunrise each shepherd stood at the door and called. His own sheep knew his voice, came out, and followed him. The rest didn't move. He <em>went before them</em>. A shepherd leads; he doesn't drive.</p>
+        <p class="note step">Jesus knows you by name. Not as a case number, not as your worst day. By name.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="5" data-hl="for they know not the voice of strangers"></blockquote>
+    <h2 class="rise" style="--d:1">The voice of strangers</h2>
+    <p class="note rise" style="--d:2">Every man hears more than one voice. Some are loud: the old crowd, the dealer's text, the lie in your own head that says <em>“just this once”</em> or <em>“you'll never change.”</em></p>
+    <div class="mirror">
+      <div class="step"><span>A stranger's voice</span><span class="arrow">→</span><span class="word">drives, shames, lies</span><small>It wants something from you, and it scatters you once it has it.</small></div>
+      <div class="step"><span>The Shepherd's voice</span><span class="arrow">→</span><span class="word">calls, leads, goes first</span><small>It knows your name, and it never asks you to go anywhere He hasn't gone ahead of you.</small></div>
+    </div>
+    <p class="note step">How do sheep learn their shepherd's voice? By spending time near him. His voice is in His word. The more you hear it, the faster you'll know when a voice isn't His, and the less it will pull on you.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="7-9" data-hl="I am the door of the sheep|by me if any man enter in, he shall be saved"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="9" data-hl="I am the door|by me if any man enter in, he shall be saved"></blockquote>
+    <div class="split">
+      <div class="stage">
+        <svg class="jn10-fold" viewBox="0 0 600 400" role="img" aria-label="A walled sheepfold with one opening. The shepherd lies across the opening as the door. Sheep go in and out to pasture through him. A thief climbs over the wall another way.">
+          <rect class="yard" x="120" y="40" width="360" height="240" rx="30"/>
+          <path class="wall" d="M268 280 H150 Q120 280 120 250 V70 Q120 40 150 40 H450 Q480 40 480 70 V250 Q480 280 450 280 H332"/>
+          <path class="grass" d="M150 340 l6 -14 l6 14 M210 372 l6 -14 l6 14 M380 350 l6 -14 l6 14 M440 376 l6 -14 l6 14 M110 380 l6 -14 l6 14 M500 340 l6 -14 l6 14"/>
+          <text x="300" y="392" text-anchor="middle" font-size="17" style="fill:var(--ink-soft)">pasture</text>
+          <g transform="translate(190 100)" class="jn10-sheep"><ellipse class="body" rx="17" ry="11"/><circle class="head" cx="16" cy="-6" r="6"/></g>
+          <g transform="translate(250 130)" class="jn10-sheep"><ellipse class="body" rx="17" ry="11"/><circle class="head" cx="16" cy="-6" r="6"/></g>
+          <g transform="translate(380 100)" class="jn10-sheep"><ellipse class="body" rx="17" ry="11"/><circle class="head" cx="16" cy="-6" r="6"/></g>
+          <g transform="translate(420 170)" class="jn10-sheep"><ellipse class="body" rx="17" ry="11"/><circle class="head" cx="16" cy="-6" r="6"/></g>
+          <g transform="translate(180 200)" class="jn10-sheep"><ellipse class="body" rx="17" ry="11"/><circle class="head" cx="16" cy="-6" r="6"/></g>
+          <g class="keeper">
+            <rect x="262" y="268" width="76" height="24" rx="12"/>
+            <circle cx="350" cy="280" r="12"/>
+            <text x="300" y="320" text-anchor="middle" font-size="18" font-weight="700">the door</text>
+          </g>
+          <g transform="translate(286 236)"><g class="jn10-sheep roam" style="--rx:-30px"><ellipse class="body" rx="17" ry="11"/><circle class="head" cx="16" cy="-6" r="6"/></g></g>
+          <g transform="translate(316 210)"><g class="jn10-sheep roam" style="--rx:46px;--dl:1.2s"><ellipse class="body" rx="17" ry="11"/><circle class="head" cx="16" cy="-6" r="6"/></g></g>
+          <path class="thief" pathLength="1" d="M30 300 C 50 220, 90 120, 120 70 S 170 120, 200 150"/>
+          <text class="thief-lbl" x="20" y="330" font-size="16">over the wall:</text>
+          <text class="thief-lbl" x="20" y="350" font-size="16">“some other way”</text>
+        </svg>
+      </div>
+      <div>
+        <h2 class="rise" style="--d:1">One way in</h2>
+        <p class="note rise" style="--d:2">Out in the hills, a fold was often just a ring of stacked stones with one gap. There was no gate.</p>
+        <p class="note step jn10-door-go">At night the shepherd lay down across the opening. Nothing got in or out without going through him. He <em>was</em> the door.</p>
+        <p class="note step">Notice who can come in: <em>“if any man.”</em> No one is left off the list. And notice what he gets: saved, free to <em>“go in and out,”</em> and fed.</p>
+        <p class="note step jn10-thief-go">The thief doesn't use the door. Anyone who offers a way to God that goes around Jesus is climbing the wall.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="7" data-hl="I am the door of the sheep"></blockquote>
+    <h2 class="rise" style="--d:1">The seven “I am” sayings</h2>
+    <p class="note rise" style="--d:2">When God sent Moses, He gave His name as <em>I AM</em> (Exodus 3:14). In John, Jesus takes those words and fills them in seven times. Two of them are in this chapter:</p>
+    <ol class="signs rise" style="--d:3">
+      <li><b>The bread of life</b>John 6:35</li>
+      <li><b>The light of the world</b>John 8:12; 9:5</li>
+      <li class="now"><b>The door</b>John 10:7, 9</li>
+      <li class="now"><b>The good shepherd</b>John 10:11, 14</li>
+      <li><b>The resurrection, and the life</b>John 11:25</li>
+      <li><b>The way, the truth, and the life</b>John 14:6</li>
+      <li><b>The true vine</b>John 15:1</li>
+    </ol>
+    <p class="note step">Each one names something a man can't live without, and says, <em>“That's Me.”</em></p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="10" data-hl="for to steal, and to kill, and to destroy|I am come that they might have life, and that they might have it more abundantly"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="10"></blockquote>
+    <h2 class="rise" style="--d:1">The thief, and the Shepherd</h2>
+    <div class="jn10-meter">
+      <div class="row thief rise" style="--d:2"><span class="lbl">The thief</span><div class="track"><i></i></div><span class="end">to steal · to kill · to destroy</span></div>
+      <div class="row life step"><span class="lbl">Jesus</span><div class="track"><i></i></div><span class="end">life, and more abundantly</span></div>
+    </div>
+    <p class="note step">Any man who's been through addiction knows that thief by name. It stole money, time, trust, and family. It tried to kill. It destroyed what it touched, and it always promised more than it gave.</p>
+    <blockquote class="quote step"><p>“Be sober, be vigilant; because your adversary the devil, as a roaring lion, walketh about, seeking whom he may devour:”</p><cite>1 Peter 5:8</cite></blockquote>
+    <p class="note step">Jesus came for the opposite reason. Not just to keep you alive, but to give you life that overflows. <em>“More abundantly”</em> means more than enough.</p>
+  </div>
+</section>
+
+<!-- ======================= PART TWO: THE GOOD SHEPHERD ======================= -->
+<section class="slide part">
+  <div class="inner">
+    <p class="part-n rise">Part two</p>
+    <h2 class="rise" style="--d:1">The Good Shepherd</h2>
+    <p class="range rise" style="--d:2">Verses 11–21</p>
+    <div class="rule"></div>
+    <p class="hook rise" style="--d:4">The hired man runs when the wolf comes. The Shepherd stays, and dies for the sheep.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="11-13" data-hl="the good shepherd giveth his life for the sheep|seeth the wolf coming, and leaveth the sheep, and fleeth"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="11"></blockquote>
+    <h2 class="rise" style="--d:1">The hireling and the Shepherd</h2>
+    <div class="columns">
+      <div class="col law rise" style="--d:2"><p class="who">The hireling</p><h3>Works for pay</h3><p>The sheep aren't his. When the wolf comes, he does the math, and he runs. <em class="soft">“He careth not for the sheep.”</em></p></div>
+      <div class="col grace step"><p class="who">The Good Shepherd</p><h3>Owns the sheep</h3><p>They belong to Him. When the wolf comes, He steps between it and them, and pays with His own life.</p></div>
+    </div>
+    <p class="note step">God had promised long before that He would shepherd His people Himself:</p>
+    <blockquote class="quote step"><p>“For thus saith the Lord GOD; Behold, I, even I, will both search my sheep, and seek them out.”</p><cite>Ezekiel 34:11</cite></blockquote>
+    <p class="note step">Most of us have known hirelings: people who were around while it paid, and gone when it got hard. Jesus isn't one of them. He doesn't run.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="14-16" data-hl="know my sheep, and am known of mine|I lay down my life for the sheep|there shall be one fold, and one shepherd"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="16" data-hl="other sheep I have, which are not of this fold|one fold, and one shepherd"></blockquote>
+    <h2 class="rise" style="--d:1">Other sheep</h2>
+    <p class="note rise" style="--d:2">“This fold” was Israel. The <em>other sheep</em> are the Gentiles, people from every other nation. That's most of us in this room.</p>
+    <p class="note step">Remember the low wall in the temple that kept Gentiles out (John 2)? Paul wrote that Jesus tore that kind of wall down:</p>
+    <blockquote class="quote step"><p>“For he is our peace, who hath made both one, and hath broken down the middle wall of partition between us;”</p><cite>Ephesians 2:14</cite></blockquote>
+    <p class="note step">One flock, one Shepherd. No second-class sheep.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="17-18" data-hl="No man taketh it from me, but I lay it down of myself|I have power to take it again"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="18" data-hl="No man taketh it from me, but I lay it down of myself"></blockquote>
+    <h2 class="rise" style="--d:1">Nobody took His life</h2>
+    <div class="temples">
+      <div class="stone-t rise" style="--d:2"><h3>He laid it down</h3><div class="big">the cross</div><p>The soldiers, the priests, and Pilate all thought they were in control. They weren't. He gave His life on purpose.</p></div>
+      <div class="body-t step"><h3>He took it again</h3><div class="big">the tomb</div><p>Three days later He took His life back up, just as He said. Only God can say “I have power” over His own death.</p></div>
+    </div>
+    <p class="note step">Jesus wasn't a victim who got caught. He was a Shepherd who chose to die for His sheep, for <em>you</em>, and then rose to lead them.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="19-21" data-hl="He hath a devil, and is mad|Can a devil open the eyes of the blind?"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="21" data-hl="Can a devil open the eyes of the blind?"></blockquote>
+    <h2 class="rise" style="--d:1">What do you do with a man like this?</h2>
+    <p class="note rise" style="--d:2">A man who says “I lay down my life, and I'll take it again” is either out of his mind, or something worse, or exactly who He says He is. The crowd split three ways:</p>
+    <ul class="nots">
+      <li class="step"><span class="k">“He hath a devil”</span><span class="why">(then why does He do only good?)</span></li>
+      <li class="step"><span class="k">“And is mad”</span><span class="why">(madmen don't talk like this)</span></li>
+      <li class="step yes"><span class="k">“Can a devil open the eyes of the blind?”</span></li>
+    </ul>
+    <p class="note step">The blind man from chapter 9 was still walking around Jerusalem, seeing. That's hard evidence to argue with.</p>
+  </div>
+</section>
+
+<!-- ======================= PART THREE: IN HIS HAND ======================= -->
+<section class="slide part">
+  <div class="inner">
+    <p class="part-n rise">Part three</p>
+    <h2 class="rise" style="--d:1">In His hand</h2>
+    <p class="range rise" style="--d:2">Verses 22–42</p>
+    <div class="rule"></div>
+    <p class="hook rise" style="--d:4">Winter in the temple. They ask Him to speak plainly, and He does.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="22-23" data-hl="the feast of the dedication, and it was winter|Solomon’s porch"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="22" data-hl="the feast of the dedication"></blockquote>
+    <h2 class="rise" style="--d:1">The feast of the dedication</h2>
+    <div class="jn10-years rise" style="--d:2">
+      <div><i></i><b>167 B.C.</b><span>A Greek king, Antiochus IV, sets up a pagan altar in the temple</span></div>
+      <div class="lit"><i></i><b>164 B.C.</b><span>Judas Maccabeus retakes it, cleans it, and dedicates it again</span></div>
+      <div class="lit"><i></i><b>Jesus' day</b><span>Nearly 200 years later, Jesus walks in the temple at the feast</span></div>
+    </div>
+    <p class="note step">The rededication was celebrated for eight days every winter, about December. The historian Josephus called it the feast of <em>Lights</em>. Jewish families still keep it today as Hanukkah.</p>
+    <div class="jn10-lights step" aria-label="Eight lamps lighting one by one">
+      <span><i class="fl" style="--k:0"></i><i class="base"></i></span><span><i class="fl" style="--k:1"></i><i class="base"></i></span><span><i class="fl" style="--k:2"></i><i class="base"></i></span><span><i class="fl" style="--k:3"></i><i class="base"></i></span>
+      <span><i class="fl" style="--k:4"></i><i class="base"></i></span><span><i class="fl" style="--k:5"></i><i class="base"></i></span><span><i class="fl" style="--k:6"></i><i class="base"></i></span><span><i class="fl" style="--k:7"></i><i class="base"></i></span>
+    </div>
+    <p class="note step"><em>Solomon's porch</em> was a long covered walkway of columns along the east side of the temple courts, a place out of the winter wind. A feast about a temple set apart for God, and the Son that the Father <em>“sanctified,”</em> set apart (10:36), is walking right through it.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="24-26" data-hl="If thou be the Christ, tell us plainly|I told you, and ye believed not|ye believe not, because ye are not of my sheep"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="26" data-hl="ye believe not, because ye are not of my sheep"></blockquote>
+    <h2 class="rise" style="--d:1">Not His sheep?</h2>
+    <p class="note rise" style="--d:2">Is Jesus saying these men <em>couldn't</em> believe, that the door was shut on them? No. Look at what He said in this same chapter:</p>
+    <blockquote class="quote step" data-q="9" data-hl="by me if any man enter in"></blockquote>
+    <blockquote class="quote step" data-q="38" data-hl="believe the works: that ye may know, and believe"></blockquote>
+    <p class="note step">He was still pleading with them to believe. They had seen the works and heard the words, and they refused. They weren't His sheep because they wouldn't come through the door. The door was open to them, and it's open to any man today.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="27-30" data-hl="My sheep hear my voice|they shall never perish, neither shall any man pluck them out of my hand|no man is able to pluck them out of my Father’s hand|I and my Father are one"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="28-29" data-hl="they shall never perish|neither shall any man pluck them out of my hand|no man is able to pluck them out of my Father’s hand"></blockquote>
+    <div class="split">
+      <div class="stage">
+        <svg class="jn10-hands" viewBox="0 0 600 420" role="img" aria-label="A sheep held inside Jesus' hand, which is held inside the Father's hand. The thief, the wolf, and any man keep pushing in, and none can get through.">
+          <circle class="outer" cx="300" cy="215" r="150"/>
+          <circle class="inner-h" cx="300" cy="230" r="88"/>
+          <text class="tag" x="300" y="104" text-anchor="middle" font-size="19" font-weight="700">My Father's hand</text>
+          <text class="tag" x="300" y="190" text-anchor="middle" font-size="18" font-weight="700">My hand</text>
+          <g transform="translate(296 238) scale(1.7)" class="jn10-sheep"><ellipse class="body" rx="17" ry="11" style="fill:var(--ink)"/><circle class="head" cx="16" cy="-6" r="6" style="fill:var(--ink)"/></g>
+          <text x="300" y="286" text-anchor="middle" font-size="16" style="fill:var(--ink)">one of His sheep</text>
+          <g class="foe" style="--dx:16px;--dy:0px">
+            <text x="10" y="196" font-size="18" font-weight="700">the thief</text>
+            <line x1="20" y1="215" x2="128" y2="215"/><path d="M140 215 L124 206 L124 224 Z"/>
+          </g>
+          <g class="foe" style="--dx:-16px;--dy:0px;--dl:.9s">
+            <text x="590" y="196" text-anchor="end" font-size="18" font-weight="700">the wolf</text>
+            <line x1="580" y1="215" x2="472" y2="215"/><path d="M460 215 L476 206 L476 224 Z"/>
+          </g>
+          <g class="foe" style="--dx:11px;--dy:-11px;--dl:1.7s">
+            <text x="20" y="404" font-size="18" font-weight="700">any man</text>
+            <line x1="70" y1="380" x2="178" y2="330"/><path d="M188 324 L170 324 L178 340 Z"/>
+          </g>
+        </svg>
+      </div>
+      <div>
+        <h2 class="rise" style="--d:1">Held twice</h2>
+        <p class="note rise" style="--d:2">Count the promises: they <em>shall never perish</em>. No man can pluck them out of <em>My</em> hand. No man can pluck them out of <em>My Father's</em> hand.</p>
+        <p class="note step">Who's holding whom? Your grip on Jesus will slip some days. His grip on you won't. That's what eternal security means: once a man is saved, he's held by God, not by his own strength.</p>
+        <p class="note step">That's not permission to sin. It's the reason a man who stumbles can get back up. A bad day doesn't pluck you out of His hand. Get up, and keep following.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise">Sealed and secure</h2>
+    <p class="note rise" style="--d:1">The rest of the New Testament says the same thing. The moment a man believes, the Holy Spirit moves in and seals him as God's own:</p>
+    <blockquote class="quote rise" style="--d:2"><p>“In whom ye also trusted, after that ye heard the word of truth, the gospel of your salvation: in whom also after that ye believed, ye were sealed with that holy Spirit of promise,”</p><cite>Ephesians 1:13</cite></blockquote>
+    <blockquote class="quote step"><p>“For I am persuaded, that neither death, nor life, nor angels, nor principalities, nor powers, nor things present, nor things to come, Nor height, nor depth, nor any other creature, shall be able to separate us from the love of God, which is in Christ Jesus our Lord.”</p><cite>Romans 8:38–39</cite></blockquote>
+    <p class="note step">Notice <em>“any other creature.”</em> That includes you. You can't pluck yourself out either.</p>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="30"></blockquote>
+    <h2 class="rise" style="--d:1">“One”</h2>
+    <div class="morph rise" style="--d:2">
+      <span class="big">ἕν</span>
+      <span class="say">hen</span>
+      <span class="means">one thing, one nature</span>
+    </div>
+    <p class="note step">The Greek word is <span class="gk">hen</span>, “one” in the sense of one thing, not one person. Jesus and the Father are two persons, yet one God: the same power, the same nature, the same hand holding the sheep.</p>
+    <p class="note step">His enemies understood Him perfectly. Look what they did next.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="31-33" data-hl="took up stones again to stone him|because that thou, being a man, makest thyself God"></section>
+<section class="slide verse" data-v="34-36" data-hl="I said, Ye are gods|the scripture cannot be broken|I am the Son of God"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="33" data-hl="thou, being a man, makest thyself God"></blockquote>
+    <h2 class="rise" style="--d:1">“Ye are gods”?</h2>
+    <div class="pair">
+      <div class="scroll rise" style="--d:2"><p class="ref">Psalm 82:6</p><p class="kjv">“I have said, <mark>Ye are gods</mark>; and all of you are children of the most High.”</p></div>
+      <div class="scroll step"><p class="ref">John 10:36</p><p class="kjv">“Say ye of him, <mark>whom the Father hath sanctified, and sent into the world</mark>, Thou blasphemest; because I said, I am the Son of God?”</p></div>
+    </div>
+    <p class="note step">Psalm 82 speaks to Israel's judges. They were called “gods” only because they judged in God's place, and the psalm goes on to say they will die like men.</p>
+    <p class="note step">Jesus argues from the lesser to the greater: if Scripture can use that word for ordinary men who merely received God's word, how much more can the One the Father set apart and sent call Himself the Son of God? He isn't backing down from His claim. He's showing they have no case.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="37-39" data-hl="believe the works|the Father is in me, and I in him|he escaped out of their hand"></section>
+<section class="slide verse" data-v="40-42" data-hl="John did no miracle: but all things that John spake of this man were true|And many believed on him there"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="40" data-hl="the place where John at first baptized"></blockquote>
+    <div class="split">
+      <div class="stage">
+        <svg class="jn10-map" viewBox="0 0 520 380" role="img" aria-label="A map from Jerusalem east across the hills to the Jordan River, to the place beyond Jordan where John had baptized.">
+          <rect class="land" x="0" y="0" width="520" height="380" rx="8"/>
+          <path class="river" d="M360 10 C 340 60, 380 100, 355 150 S 370 230, 355 270"/>
+          <path class="sea" d="M340 268 C 320 290, 325 360, 350 378 L 390 378 C 410 340, 400 290, 378 268 Z"/>
+          <text x="365" y="350" text-anchor="middle" font-size="13" style="fill:var(--bg)">Dead Sea</text>
+          <text x="380" y="60" font-size="16" class="soft">Jordan</text>
+          <text x="380" y="79" font-size="16" class="soft">River</text>
+          <path class="route" pathLength="1" d="M120 250 C 200 230, 300 214, 416 200"/>
+          <circle class="city" cx="120" cy="250" r="10"/>
+          <text x="120" y="282" text-anchor="middle" font-size="18" font-weight="700">Jerusalem</text>
+          <circle class="goal" cx="420" cy="200" r="11"/>
+          <text x="420" y="174" text-anchor="middle" font-size="17" font-weight="700">Bethabara</text>
+          <text x="420" y="234" text-anchor="middle" font-size="14" class="soft">beyond Jordan</text>
+        </svg>
+      </div>
+      <div>
+        <h2 class="rise" style="--d:1">Back where it began</h2>
+        <p class="note rise" style="--d:2">Jesus goes back across the Jordan, to the spot where John had baptized and first pointed to Him: <em>“Behold the Lamb of God”</em> (John 1:28–29).</p>
+        <p class="note step">Look at what the people there said about John: <em>“John did no miracle: but all things that John spake of this man were true.”</em> No signs, no wonders. He just told the truth about Jesus, and years later people were still believing because of it.</p>
+        <p class="note step">You may never do anything flashy. Tell the truth about Jesus anyway. It's still bearing fruit long after you've said it.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ======================= CLOSING ======================= -->
+<section class="slide remember">
+  <div class="inner">
+    <h2 class="rise">Points to remember</h2>
+    <ol class="seeds">
+      <li class="step"><span class="topic">The door</span><span class="seed-q">“By me if any man enter in, he shall be saved” <cite>10:9</cite></span><span class="take">Jesus is the only way in, and the way is open to any man.</span></li>
+      <li class="step"><span class="topic">His voice</span><span class="seed-q">“The sheep follow him: for they know his voice” <cite>10:4</cite></span><span class="take">Stay close to Him and His word, and the strangers' voices lose their pull.</span></li>
+      <li class="step"><span class="topic">Abundant life</span><span class="seed-q">“That they might have it more abundantly” <cite>10:10</cite></span><span class="take">The thief steals, kills, and destroys. Jesus gives life that overflows.</span></li>
+      <li class="step"><span class="topic">The Good Shepherd</span><span class="seed-q">“The good shepherd giveth his life for the sheep” <cite>10:11</cite></span><span class="take">The hireling runs. Jesus stayed, and laid down His life on purpose.</span></li>
+      <li class="step"><span class="topic">Eternal security</span><span class="seed-q">“They shall never perish” <cite>10:28</cite></span><span class="take">You're held in His hand and the Father's. No one can pluck you out.</span></li>
+      <li class="step"><span class="topic">Who Jesus is</span><span class="seed-q">“I and my Father are one” <cite>10:30</cite></span><span class="take">Jesus claimed to be God, and His enemies understood Him exactly.</span></li>
+    </ol>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 1 of 6</p>
+      <span class="topic">The door</span>
+      <h2>What does it mean that Jesus is the door?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="1" data-hl="climbeth up some other way"></blockquote>
+      <blockquote class="quote step" data-q="7" data-hl="I am the door of the sheep"></blockquote>
+      <blockquote class="quote step" data-q="9"></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>There's one way into God's fold, and it's Jesus. Anyone who tries another way is a thief climbing the wall. But the door is open to “any man” who comes through it, and those who do are saved, free, and fed: they “go in and out, and find pasture.”</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 2 of 6</p>
+      <span class="topic">His voice</span>
+      <h2>How do His sheep tell His voice from a stranger's?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="3" data-hl="he calleth his own sheep by name, and leadeth them out"></blockquote>
+      <blockquote class="quote step" data-q="4-5" data-hl="for they know his voice|they know not the voice of strangers"></blockquote>
+      <blockquote class="quote step" data-q="27"></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>By knowing Him. Sheep learn their shepherd's voice by being near him every day. His voice calls you by name, leads instead of drives, and always goes ahead of you. A stranger's voice shames, lies, and scatters. The more time you spend in His word, the quicker you'll know which is which.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 3 of 6</p>
+      <span class="topic">Abundant life</span>
+      <h2>What does the thief want, and what does Jesus want for you?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="10" data-hl="for to steal, and to kill, and to destroy"></blockquote>
+      <blockquote class="quote step"><p>“Be sober, be vigilant; because your adversary the devil, as a roaring lion, walketh about, seeking whom he may devour:”</p><cite>1 Peter 5:8</cite></blockquote>
+      <blockquote class="quote step" data-q="10" data-hl="I am come that they might have life, and that they might have it more abundantly"></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>The thief wants to steal from you, kill you, and destroy everything you love, and he always dresses it up as a good time. Jesus wants you to have life, and more than enough of it. One takes everything; the other gives everything, even His own life.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 4 of 6</p>
+      <span class="topic">The Good Shepherd</span>
+      <h2>What makes Jesus different from a hired hand?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="11"></blockquote>
+      <blockquote class="quote step" data-q="13"></blockquote>
+      <blockquote class="quote step" data-q="18" data-hl="No man taketh it from me, but I lay it down of myself"></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>The hireling works for pay and runs when the wolf shows up, because the sheep aren't his. The sheep belong to Jesus. He knows each one, and He didn't run: He laid down His life for them on purpose, and took it up again.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 5 of 6</p>
+      <span class="topic">Eternal security</span>
+      <h2>Can one of Jesus' sheep ever be lost?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="28" data-hl="they shall never perish"></blockquote>
+      <blockquote class="quote step" data-q="29" data-hl="no man is able to pluck them out of my Father’s hand"></blockquote>
+      <blockquote class="quote step"><p>“All that the Father giveth me shall come to me; and him that cometh to me I will in no wise cast out.”</p><cite>John 6:37</cite></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>No. Jesus said His sheep “shall never perish.” They're held in His hand and in the Father's hand, and no one can pluck them out. A believer is sealed by the Holy Spirit the moment he believes. Your grip may slip, but His never does. That's not a license to sin; it's the reason you can get back up.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 6 of 6</p>
+      <span class="topic">Who Jesus is</span>
+      <h2>Who did Jesus claim to be?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="30"></blockquote>
+      <blockquote class="quote step" data-q="33" data-hl="thou, being a man, makest thyself God"></blockquote>
+      <blockquote class="quote step" data-q="38" data-hl="the Father is in me, and I in him"></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>God the Son. “I and my Father are one” means one in nature and power. His enemies knew exactly what He meant: “thou, being a man, makest thyself God.” He didn't correct them. He pointed to His works as proof, and those works are still calling men to believe.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide prayer">
+  <div class="inner">
+    <div class="emblem rise"></div>
+    <h2 class="rise">Prayer requests</h2>
+    <p class="ask-line rise" style="--d:1">What can we pray about for you today?</p>
+    <blockquote class="quote rise" style="--d:3"><p>“The LORD is my shepherd; I shall not want.”</p><cite>Psalm 23:1</cite></blockquote>
+  </div>
+</section>
+
+</main>
+
+<script>
+// King James Version, John chapter 10
+const V = {
+  1: "Verily, verily, I say unto you, He that entereth not by the door into the sheepfold, but climbeth up some other way, the same is a thief and a robber.",
+  2: "But he that entereth in by the door is the shepherd of the sheep.",
+  3: "To him the porter openeth; and the sheep hear his voice: and he calleth his own sheep by name, and leadeth them out.",
+  4: "And when he putteth forth his own sheep, he goeth before them, and the sheep follow him: for they know his voice.",
+  5: "And a stranger will they not follow, but will flee from him: for they know not the voice of strangers.",
+  6: "This parable spake Jesus unto them: but they understood not what things they were which he spake unto them.",
+  7: "Then said Jesus unto them again, Verily, verily, I say unto you, I am the door of the sheep.",
+  8: "All that ever came before me are thieves and robbers: but the sheep did not hear them.",
+  9: "I am the door: by me if any man enter in, he shall be saved, and shall go in and out, and find pasture.",
+  10: "The thief cometh not, but for to steal, and to kill, and to destroy: I am come that they might have life, and that they might have it more abundantly.",
+  11: "I am the good shepherd: the good shepherd giveth his life for the sheep.",
+  12: "But he that is an hireling, and not the shepherd, whose own the sheep are not, seeth the wolf coming, and leaveth the sheep, and fleeth: and the wolf catcheth them, and scattereth the sheep.",
+  13: "The hireling fleeth, because he is an hireling, and careth not for the sheep.",
+  14: "I am the good shepherd, and know my sheep, and am known of mine.",
+  15: "As the Father knoweth me, even so know I the Father: and I lay down my life for the sheep.",
+  16: "And other sheep I have, which are not of this fold: them also I must bring, and they shall hear my voice; and there shall be one fold, and one shepherd.",
+  17: "Therefore doth my Father love me, because I lay down my life, that I might take it again.",
+  18: "No man taketh it from me, but I lay it down of myself. I have power to lay it down, and I have power to take it again. This commandment have I received of my Father.",
+  19: "There was a division therefore again among the Jews for these sayings.",
+  20: "And many of them said, He hath a devil, and is mad; why hear ye him?",
+  21: "Others said, These are not the words of him that hath a devil. Can a devil open the eyes of the blind?",
+  22: "And it was at Jerusalem the feast of the dedication, and it was winter.",
+  23: "And Jesus walked in the temple in Solomon’s porch.",
+  24: "Then came the Jews round about him, and said unto him, How long dost thou make us to doubt? If thou be the Christ, tell us plainly.",
+  25: "Jesus answered them, I told you, and ye believed not: the works that I do in my Father’s name, they bear witness of me.",
+  26: "But ye believe not, because ye are not of my sheep, as I said unto you.",
+  27: "My sheep hear my voice, and I know them, and they follow me:",
+  28: "And I give unto them eternal life; and they shall never perish, neither shall any man pluck them out of my hand.",
+  29: "My Father, which gave them me, is greater than all; and no man is able to pluck them out of my Father’s hand.",
+  30: "I and my Father are one.",
+  31: "Then the Jews took up stones again to stone him.",
+  32: "Jesus answered them, Many good works have I shewed you from my Father; for which of those works do ye stone me?",
+  33: "The Jews answered him, saying, For a good work we stone thee not; but for blasphemy; and because that thou, being a man, makest thyself God.",
+  34: "Jesus answered them, Is it not written in your law, I said, Ye are gods?",
+  35: "If he called them gods, unto whom the word of God came, and the scripture cannot be broken;",
+  36: "Say ye of him, whom the Father hath sanctified, and sent into the world, Thou blasphemest; because I said, I am the Son of God?",
+  37: "If I do not the works of my Father, believe me not.",
+  38: "But if I do, though ye believe not me, believe the works: that ye may know, and believe, that the Father is in me, and I in him.",
+  39: "Therefore they sought again to take him: but he escaped out of their hand,",
+  40: "And went away again beyond Jordan into the place where John at first baptized; and there he abode.",
+  41: "And many resorted unto him, and said, John did no miracle: but all things that John spake of this man were true.",
+  42: "And many believed on him there."
+};
+const BOOK = "John 10";
+</script>
+<script src="../assets/deck.js"></script>
+</body>
+</html>

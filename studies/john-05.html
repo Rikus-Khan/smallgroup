@@ -1,0 +1,711 @@
+<!doctype html>
+<html lang="en" data-theme="scribe">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>John 5</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="../assets/fonts.css">
+<link rel="stylesheet" href="../assets/deck.css">
+<link rel="stylesheet" href="../assets/themes.css">
+<style>
+/* jn05-pool: the pool of Bethesda from above, with water that gets "troubled" */
+.jn05-water { fill: color-mix(in srgb, var(--cool) 28%, var(--bg)); stroke: var(--cool); stroke-width: 2; }
+.jn05-cols { fill: none; stroke: var(--ink-soft); stroke-width: 9; stroke-linecap: round; stroke-dasharray: 0 24; }
+.jn05-badge circle { fill: var(--accent); }
+.jn05-badge text { fill: var(--on-accent); font-weight: 700; font-size: 15px; }
+.jn05-sick { fill: var(--warm); }
+.jn05-ripple { fill: none; stroke: var(--cool); stroke-width: 2.5; opacity: 0; transform-box: fill-box; transform-origin: center; }
+.split:has(.jn05-stir.on) .jn05-ripple { animation: jn05-ripple 2.6s ease-out infinite; animation-delay: calc(var(--k, 0) * .85s); }
+@keyframes jn05-ripple { 0% { opacity: .95; transform: scale(.15); } 100% { opacity: 0; transform: scale(1.6); } }
+
+/* jn05-words: old words, each with its plain meaning */
+.jn05-words { display: grid; grid-template-columns: repeat(auto-fit, minmax(10.5rem, 1fr)); gap: .6rem; margin: .4em 0 1em; }
+.jn05-words div { padding: .6em .85em; border-radius: 8px; background: var(--surface); border: 1px solid var(--line-strong); }
+.jn05-words b { display: block; font: italic 600 clamp(1.2rem, 1rem + .9vw, 1.7rem)/1.2 var(--serif); color: var(--accent-hot); }
+.jn05-words span { font-size: clamp(.92rem, .85rem + .35vw, 1.15rem); color: var(--ink-soft); line-height: 1.35; }
+
+/* jn05-years: thirty-eight years, one dot at a time */
+.jn05-years { display: grid; grid-template-columns: repeat(19, 1fr); gap: clamp(3px, .5vw, 7px); margin: .5em 0 .3em; max-width: 42rem; }
+.jn05-years i { aspect-ratio: 1; border-radius: 50%; border: 1.5px solid var(--line-strong); transition: background-color .25s ease, border-color .25s ease; transition-delay: calc(var(--k) * 75ms + 500ms); }
+.slide.active .jn05-years i { background: var(--ink-soft); border-color: var(--ink-soft); }
+.jn05-years-cap { display: flex; justify-content: space-between; max-width: 42rem; color: var(--ink-soft); font-size: clamp(.85rem, .8rem + .3vw, 1.05rem); margin-bottom: 1em; }
+.jn05-years-cap b { font: 300 clamp(1.8rem, 1.2rem + 2.4vw, 3.2rem)/1 var(--serif); color: var(--accent-hot); }
+
+/* jn05-talk: a question and the answer that dodged it */
+.jn05-talk { display: grid; gap: .8rem; margin: .3em 0 1em; }
+.jn05-bubble { max-width: 32em; padding: .7em 1em; border-radius: 16px; font-family: var(--serif); font-size: clamp(1.1rem, .95rem + .8vw, 1.6rem); line-height: 1.4; }
+.jn05-bubble small { display: block; font: 700 .62em var(--sans); color: var(--ink-soft); margin-bottom: .2em; }
+.jn05-bubble.jn05-jesus { background: color-mix(in srgb, var(--accent) 13%, transparent); border: 1.5px solid var(--accent); border-bottom-left-radius: 4px; }
+.jn05-bubble.jn05-man { justify-self: end; background: var(--surface); border: 1.5px solid var(--line-strong); border-bottom-right-radius: 4px; font-style: italic; }
+.jn05-flag { display: inline-block; margin-top: .4em; padding: .1em .55em; border: 2px solid var(--danger); border-radius: 6px; color: var(--danger); font: 700 .7em var(--sans); font-style: normal; transform: rotate(-3deg); }
+
+/* jn05-cmds: three commands lighting up one after another */
+.jn05-cmds { display: flex; flex-wrap: wrap; align-items: baseline; gap: .2em .6em; margin: .2em 0 .7em; font: 300 clamp(2rem, 1.2rem + 3.6vw, 4.4rem)/1.1 var(--serif); }
+.jn05-cmds span { color: var(--ink-soft); opacity: .3; }
+.slide.active .jn05-cmds span { animation: jn05-lit .7s ease forwards; animation-delay: calc(var(--k) * 750ms + 500ms); }
+@keyframes jn05-lit { to { opacity: 1; color: var(--accent-hot); } }
+.jn05-cmds i { font-style: normal; color: var(--line-strong); font-size: .55em; }
+
+/* jn05-order: grace first, then the call */
+.jn05-order { display: grid; grid-template-columns: 1fr auto 1fr; align-items: center; gap: .6rem 1rem; margin: .4em 0 1em; }
+.jn05-box { padding: .8em 1em; border-radius: 10px; border: 1.5px solid var(--line-strong); background: var(--surface); }
+.jn05-box b { display: block; font: 700 clamp(.8rem, .75rem + .25vw, 1rem) var(--sans); color: var(--accent); letter-spacing: .06em; text-transform: uppercase; margin-bottom: .2em; }
+.jn05-box span { font-family: var(--serif); font-style: italic; font-size: clamp(1.15rem, 1rem + .8vw, 1.6rem); }
+.jn05-box.jn05-first { border-color: var(--accent); background: color-mix(in srgb, var(--accent) 10%, transparent); }
+.jn05-arr { font-size: 2rem; color: var(--accent); text-align: center; }
+@media (max-width: 640px) { .jn05-order { grid-template-columns: 1fr; } .jn05-arr { transform: rotate(90deg); } }
+
+/* jn05-eq: what they heard Him claim */
+.jn05-eq { display: grid; grid-template-columns: 1fr auto 1fr; align-items: center; gap: .8rem; margin: .4em 0 1em; text-align: center; }
+.jn05-claim { padding: .9em 1em; border-radius: 10px; background: var(--surface); border: 1.5px solid var(--line-strong); font-family: var(--serif); font-size: clamp(1.1rem, .95rem + .9vw, 1.7rem); line-height: 1.3; }
+.jn05-claim small { display: block; font: 700 .55em var(--sans); color: var(--ink-soft); margin-bottom: .3em; }
+.jn05-sign { font: 300 clamp(3rem, 2rem + 4vw, 5.5rem)/1 var(--serif); color: var(--accent-hot); }
+.jn05-sign.step { transform: scale(0); transition: opacity .3s ease, transform .6s cubic-bezier(.3,1.6,.5,1); }
+.jn05-sign.step.on { transform: scale(1); }
+
+/* jn05-same: what the Father does, the Son does */
+.jn05-same { display: grid; gap: .4rem; margin: .4em 0 1em; }
+.jn05-row { display: grid; grid-template-columns: 1fr 2rem 1fr; align-items: center; gap: .3rem .7rem; padding: .45em .8em; border-radius: 8px; background: var(--surface); font-size: clamp(.92rem, .82rem + .5vw, 1.3rem); line-height: 1.35; }
+.jn05-row.jn05-head { background: none; padding-top: 0; padding-bottom: 0; font-weight: 700; color: var(--accent); }
+.jn05-row > span:first-child { font-family: var(--serif); font-style: italic; }
+.jn05-row > span:last-child { font-family: var(--serif); font-style: italic; color: var(--accent-hot); }
+.jn05-row.jn05-head > span { font-family: var(--sans); font-style: normal; color: var(--accent); }
+.jn05-link { text-align: center; color: var(--accent); font-weight: 700; }
+.jn05-row cite { font-family: var(--sans); font-style: normal; color: var(--ink-soft); font-size: .78em; margin-left: .3em; }
+
+/* jn05-tense: one verse, three tenses */
+.jn05-tense { position: relative; display: grid; grid-template-columns: repeat(3, 1fr); gap: .6rem; margin: 1em 0 1em; text-align: center; }
+.jn05-tense::before { content: ""; position: absolute; left: 16%; right: 16%; top: 1.05rem; height: 3px; background: var(--line-strong); }
+.jn05-t { position: relative; }
+.jn05-dot { width: 2.2rem; height: 2.2rem; margin: 0 auto .5rem; border-radius: 50%; background: var(--bg); border: 3px solid var(--accent); transition: background-color .5s ease, box-shadow .5s ease; }
+.jn05-t.on .jn05-dot { background: var(--accent); box-shadow: 0 0 0 7px color-mix(in srgb, var(--accent) 20%, transparent); }
+.jn05-t b { display: block; font: 700 clamp(.8rem, .75rem + .3vw, 1.05rem) var(--sans); color: var(--ink-soft); letter-spacing: .06em; text-transform: uppercase; }
+.jn05-t span { display: block; font-family: var(--serif); font-style: italic; font-size: clamp(1.02rem, .88rem + .7vw, 1.5rem); color: var(--accent-hot); line-height: 1.3; margin-top: .2em; }
+
+/* jn05-court: witnesses step up until the law's minimum is passed */
+.jn05-court { display: grid; grid-template-columns: repeat(auto-fit, minmax(9.5rem, 1fr)); gap: .55rem; margin: .3em 0 1em; }
+.jn05-wit { padding: .55em .8em; border-radius: 8px; border: 1.5px solid var(--line-strong); background: var(--surface); }
+.jn05-wit b { display: block; font: 600 clamp(1.08rem, .95rem + .6vw, 1.45rem)/1.2 var(--serif); }
+.jn05-wit span { font-size: clamp(.85rem, .8rem + .3vw, 1.05rem); color: var(--ink-soft); line-height: 1.3; }
+.jn05-wit cite { display: block; font-style: normal; color: var(--accent); font-weight: 700; font-size: .85rem; margin-top: .15em; }
+.jn05-meter { position: relative; height: 14px; border-radius: 999px; background: var(--surface-2); margin: 2.2em 0 .9em; }
+.jn05-meter i { position: absolute; left: 0; top: 0; bottom: 0; width: 0; border-radius: 999px; background: var(--accent); transition: width .9s ease; }
+.jn05-need { position: absolute; left: 40%; width: 20%; top: -7px; bottom: -7px; border-left: 2px dashed var(--danger); border-right: 2px dashed var(--danger); }
+.jn05-need small { position: absolute; bottom: calc(100% + 4px); left: 50%; transform: translateX(-50%); white-space: nowrap; font-size: .82rem; font-weight: 700; color: var(--danger); }
+.jn05-trial:has(.jn05-w1.on) .jn05-meter i { width: 20%; }
+.jn05-trial:has(.jn05-w2.on) .jn05-meter i { width: 40%; }
+.jn05-trial:has(.jn05-w3.on) .jn05-meter i { width: 60%; }
+.jn05-trial:has(.jn05-w4.on) .jn05-meter i { width: 80%; }
+.jn05-trial:has(.jn05-w5.on) .jn05-meter i { width: 100%; }
+
+/* jn05-point: every part of the Scriptures points to Him */
+.jn05-node text.jn05-ref { font-weight: 700; font-size: 22px; fill: var(--accent-hot); }
+.jn05-node text.jn05-what { font-size: 17px; fill: var(--ink-soft); }
+.jn05-arrow { fill: none; stroke: var(--accent); stroke-width: 3; stroke-linecap: round; }
+
+/* jn05-scale: whose approval weighs more */
+.jn05-beam, .jn05-panL, .jn05-panR { transition: transform 1.4s cubic-bezier(.4,1.5,.5,1); }
+.jn05-beam { transform-box: view-box; transform-origin: 300px 80px; transform: rotate(-8deg); }
+.jn05-panL { transform: translateY(27px); }
+.jn05-panR { transform: translateY(-27px); }
+.split:has(.jn05-tip.on) .jn05-beam { transform: rotate(8deg); }
+.split:has(.jn05-tip.on) .jn05-panL { transform: translateY(-27px); }
+.split:has(.jn05-tip.on) .jn05-panR { transform: translateY(27px); }
+.jn05-pan { fill: var(--surface-2); stroke: var(--ink-soft); stroke-width: 2; }
+</style>
+</head>
+<body>
+<main class="deck" id="deck">
+
+<!-- ======================= OPENING ======================= -->
+<section class="slide title">
+  <div class="inner">
+    <div class="emblem rise"></div>
+    <h1 class="rise" style="--d:1">John 5</h1>
+    <p class="sub rise" style="--d:3">Wilt thou be made whole?</p>
+    <p class="tag rise" style="--d:5">Jesus heals a man who had been sick for thirty-eight years, then tells the leaders exactly who He is.</p>
+  </div>
+</section>
+
+<section class="slide watch">
+  <div class="inner">
+    <h2 class="rise">Things to watch for</h2>
+    <p class="lede rise" style="--d:1">Keep these questions in the back of your mind as we read. We'll come back to every one of them at the end.</p>
+    <ol class="seeds">
+      <li class="step"><span class="topic">Wanting to be whole</span><span class="seed-q">Why would Jesus ask a sick man if he wants to get well?</span></li>
+      <li class="step"><span class="topic">Grace</span><span class="seed-q">What did the man do to earn his healing?</span></li>
+      <li class="step"><span class="topic">Staying free</span><span class="seed-q">Why did Jesus tell the healed man to sin no more?</span></li>
+      <li class="step"><span class="topic">Who Jesus is</span><span class="seed-q">Did Jesus claim to be equal with God?</span></li>
+      <li class="step"><span class="topic">Assurance</span><span class="seed-q">Can a believer know for sure that he has everlasting life?</span></li>
+      <li class="step"><span class="topic">The Scriptures</span><span class="seed-q">Who is the Bible really about?</span></li>
+    </ol>
+  </div>
+</section>
+
+<!-- ======================= PART ONE: THE POOL ======================= -->
+<section class="slide part">
+  <div class="inner">
+    <p class="part-n rise">Part one</p>
+    <h2 class="rise" style="--d:1">The pool of Bethesda</h2>
+    <p class="range rise" style="--d:2">Verses 1–16</p>
+    <div class="rule"></div>
+    <p class="hook rise" style="--d:4">A crowd of sick people wait by the water. Jesus walks up to one of them.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="1-4" data-hl="Bethesda, having five porches|a great multitude of impotent folk|troubled the water"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="2" data-hl="Bethesda, having five porches"></blockquote>
+    <div class="split">
+      <div class="stage">
+        <svg viewBox="0 0 600 370" role="img" aria-label="The pool of Bethesda from above: two pools with covered porches on all four sides and one across the middle, sick people lying under them, and the water rippling.">
+          <rect class="rise" style="--d:2;fill:var(--surface);stroke:var(--line-strong)" x="30" y="30" width="540" height="305" rx="4" stroke-width="2"/>
+          <g class="rise" style="--d:2">
+            <rect class="jn05-water" x="75" y="62" width="450" height="96" rx="3"/>
+            <rect class="jn05-water" x="75" y="202" width="450" height="104" rx="3"/>
+            <circle class="jn05-ripple" style="--k:0" cx="190" cy="110" r="40"/>
+            <circle class="jn05-ripple" style="--k:1" cx="420" cy="254" r="44"/>
+            <circle class="jn05-ripple" style="--k:2" cx="330" cy="110" r="34"/>
+            <text x="300" y="116" text-anchor="middle" font-size="17" class="serif" style="fill:var(--cool);font-style:italic">water</text>
+            <text x="300" y="260" text-anchor="middle" font-size="17" class="serif" style="fill:var(--cool);font-style:italic">water</text>
+          </g>
+          <g class="rise" style="--d:3">
+            <path class="jn05-cols" d="M50 46 H552"/>
+            <path class="jn05-cols" d="M50 320 H552"/>
+            <path class="jn05-cols" d="M50 46 V320"/>
+            <path class="jn05-cols" d="M550 46 V320"/>
+            <path class="jn05-cols" d="M50 180 H552"/>
+          </g>
+          <g class="step">
+            <g class="jn05-sick">
+              <circle cx="110" cy="171" r="5"/><circle cx="135" cy="189" r="5"/><circle cx="180" cy="172" r="5"/><circle cx="240" cy="190" r="5"/><circle cx="285" cy="171" r="5"/><circle cx="350" cy="189" r="5"/><circle cx="400" cy="172" r="5"/><circle cx="470" cy="190" r="5"/><circle cx="505" cy="171" r="5"/>
+              <circle cx="40" cy="95" r="5"/><circle cx="40" cy="140" r="5"/><circle cx="40" cy="240" r="5"/><circle cx="40" cy="290" r="5"/><circle cx="560" cy="120" r="5"/><circle cx="560" cy="230" r="5"/><circle cx="560" cy="280" r="5"/>
+              <circle cx="150" cy="37" r="5"/><circle cx="260" cy="37" r="5"/><circle cx="420" cy="37" r="5"/><circle cx="200" cy="329" r="5"/><circle cx="330" cy="329" r="5"/><circle cx="480" cy="329" r="5"/>
+            </g>
+            <g class="jn05-badge"><circle cx="300" cy="46" r="13"/><text x="300" y="51" text-anchor="middle">1</text></g>
+            <g class="jn05-badge"><circle cx="550" cy="112" r="13"/><text x="550" y="117" text-anchor="middle">2</text></g>
+            <g class="jn05-badge"><circle cx="300" cy="320" r="13"/><text x="300" y="325" text-anchor="middle">3</text></g>
+            <g class="jn05-badge"><circle cx="50" cy="250" r="13"/><text x="50" y="255" text-anchor="middle">4</text></g>
+            <g class="jn05-badge"><circle cx="230" cy="180" r="13"/><text x="230" y="185" text-anchor="middle">5</text></g>
+          </g>
+          <text x="300" y="362" text-anchor="middle" font-size="16" style="fill:var(--ink-soft)">five porches: four sides, and one across the middle</text>
+        </svg>
+      </div>
+      <div>
+        <h2 class="rise" style="--d:1">A hospital with no doctor</h2>
+        <p class="note rise" style="--d:2"><span class="gk">Bethesda</span> means <em>house of mercy</em>. It sat by the sheep gate of Jerusalem. Archaeologists have dug up a twin pool there, with room for porches on all four sides and one across the middle.</p>
+        <p class="note step">A <em>porch</em> was a covered walkway with a roof held up by columns: shade from the sun, and a place to lie down. Every one of them was full of sick people.</p>
+        <p class="note step jn05-stir">They were all watching the water. When it stirred, the first one in was healed. Think what that meant: the cure went to the quickest. The man who needed it most could never win that race.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="3" data-hl="impotent folk|halt|withered"></blockquote>
+    <h2 class="rise" style="--d:1">Old words, plainly</h2>
+    <div class="jn05-words">
+      <div class="rise" style="--d:2"><b>impotent folk</b><span>people with no strength, who couldn't help themselves</span></div>
+      <div class="rise" style="--d:3"><b>halt</b><span>lame, crippled; they couldn't walk right</span></div>
+      <div class="rise" style="--d:4"><b>withered</b><span>shriveled, with arms or legs wasted away</span></div>
+      <div class="rise" style="--d:5"><b>troubled</b><span>stirred up, moving</span></div>
+      <div class="rise" style="--d:6"><b>made whole</b><span>healed all the way, made sound again</span></div>
+    </div>
+    <p class="note step">Every man under those porches was stuck. Most of them had been there a long time. They had all heard the promise, and they were all waiting for their turn.</p>
+    <p class="note step">Some of us know that place. We waited for something to stir, for the right moment, the right program, the right break, while somebody else always seemed to get there first.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="5-7" data-hl="thirty and eight years|Wilt thou be made whole?|Sir, I have no man"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="5" data-hl="thirty and eight years"></blockquote>
+    <h2 class="rise" style="--d:1">Thirty-eight years</h2>
+    <div class="jn05-years rise" style="--d:2" aria-label="Thirty-eight dots, one for each year he had been sick, filling in one by one."><i style="--k:0"></i><i style="--k:1"></i><i style="--k:2"></i><i style="--k:3"></i><i style="--k:4"></i><i style="--k:5"></i><i style="--k:6"></i><i style="--k:7"></i><i style="--k:8"></i><i style="--k:9"></i><i style="--k:10"></i><i style="--k:11"></i><i style="--k:12"></i><i style="--k:13"></i><i style="--k:14"></i><i style="--k:15"></i><i style="--k:16"></i><i style="--k:17"></i><i style="--k:18"></i><i style="--k:19"></i><i style="--k:20"></i><i style="--k:21"></i><i style="--k:22"></i><i style="--k:23"></i><i style="--k:24"></i><i style="--k:25"></i><i style="--k:26"></i><i style="--k:27"></i><i style="--k:28"></i><i style="--k:29"></i><i style="--k:30"></i><i style="--k:31"></i><i style="--k:32"></i><i style="--k:33"></i><i style="--k:34"></i><i style="--k:35"></i><i style="--k:36"></i><i style="--k:37"></i></div>
+    <p class="jn05-years-cap rise" style="--d:3"><span>one dot for every year</span><b>38</b></p>
+    <p class="note step">That's longer than Jesus had been alive. He was about thirty when He started His ministry (Luke 3:23). This man had been sick since before Jesus was born.</p>
+    <p class="note step">It's also exactly how long Israel wandered in the wilderness after they refused to trust God:</p>
+    <blockquote class="quote step"><p>“And the space in which we came from Kadesh-barnea, until we were come over the brook Zered, was thirty and eight years; until all the generation of the men of war were wasted out from among the host, as the LORD sware unto them.”</p><cite>Deuteronomy 2:14</cite></blockquote>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="6" data-hl="knew that he had been now a long time in that case"></blockquote>
+    <div class="jn05-talk">
+      <p class="jn05-bubble jn05-jesus rise" style="--d:1"><small>Jesus</small>Wilt thou be made whole?</p>
+      <p class="jn05-bubble jn05-man step"><small>The man</small>Sir, I have no man, when the water is troubled, to put me into the pool: but while I am coming, another steppeth down before me.<br><span class="jn05-flag">not a yes</span></p>
+    </div>
+    <p class="note step">Jesus asked a yes-or-no question. The man answered with the reasons it couldn't happen: nobody to help, always too slow, always beaten to it.</p>
+    <p class="note step">After thirty-eight years, a man can get used to the mat, and the excuses come out before the hope does. Jesus asks anyway, and He asks you too: <em>Do you really want to be made whole?</em></p>
+    <p class="note step">And notice: <em>“I have no man.”</em> He was alone. But the Man he needed was standing right in front of him.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="8-9" data-hl="Rise, take up thy bed, and walk|immediately the man was made whole"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="8"></blockquote>
+    <p class="jn05-cmds" aria-label="Rise. Take up thy bed. Walk."><span style="--k:0">Rise,</span><i>·</i><span style="--k:1">take up thy bed,</span><i>·</i><span style="--k:2">and walk.</span></p>
+    <p class="note rise" style="--d:2">No pool. No angel. No race to the water. Jesus just spoke, and <em>“immediately”</em> the man was made whole.</p>
+    <p class="note step">His “bed” was a thin mat or pallet, light enough to roll up and carry. For thirty-eight years that mat had carried him. Now he carries it.</p>
+    <p class="note step">Jesus didn't ask him to try harder, or to get to the water on his own. He told him to do the one thing he couldn't do, and with the command came the power to do it.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="10-13" data-hl="it is not lawful for thee to carry thy bed|He that made me whole|wist not who it was"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="10" data-hl="It is the sabbath day: it is not lawful for thee to carry thy bed"></blockquote>
+    <h2 class="rise" style="--d:1">They saw the mat, not the man</h2>
+    <div class="columns">
+      <div class="col law rise" style="--d:2">
+        <p class="who">What God said</p>
+        <h3>Rest on the seventh day</h3>
+        <p>“In it thou shalt not do any work” (Exodus 20:10). A gift: one day in seven to rest and remember the Lord.</p>
+      </div>
+      <div class="col grace step">
+        <p class="who">What they added</p>
+        <h3>A rule for everything</h3>
+        <p>Their teachers listed 39 kinds of forbidden work. One was carrying a thing from one place to another. So carrying a rolled-up mat broke the rules.</p>
+      </div>
+    </div>
+    <p class="note step">A man who couldn't walk for thirty-eight years is walking, and the first thing they say is “put that down.” Nobody asks what happened to him. Religion without love can always find something wrong.</p>
+    <p class="note step">“Wist not” means <em>didn't know</em>. Jesus had <em>“conveyed himself away”</em>, slipped off into the crowd. The man didn't even know His name yet.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="14-16" data-hl="Behold, thou art made whole: sin no more, lest a worse thing come unto thee"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="14" data-hl="Jesus findeth him|thou art made whole: sin no more"></blockquote>
+    <h2 class="rise" style="--d:1">Whole first, then “sin no more”</h2>
+    <div class="jn05-order">
+      <div class="jn05-box jn05-first rise" style="--d:2"><b>First</b><span>“Behold, thou art made whole”</span></div>
+      <div class="jn05-arr step">→</div>
+      <div class="jn05-box step"><b>Then</b><span>“Sin no more”</span></div>
+    </div>
+    <p class="note step">Jesus <em>went looking</em> for him: <em>“Jesus findeth him.”</em> And look at the order. He didn't say, “Clean up, then I'll heal you.” He healed him, then told him how to live. Grace comes first. Obedience is the answer to grace, not the price of it.</p>
+    <p class="note step">Not every sickness comes from a man's own sin (John 9:3). But Jesus is warning him: the old way leads somewhere worse than a mat by a pool. Every man who has been set free and gone back knows that's true.</p>
+    <blockquote class="quote step"><p>“Stand fast therefore in the liberty wherewith Christ hath made us free, and be not entangled again with the yoke of bondage.”</p><cite>Galatians 5:1</cite></blockquote>
+  </div>
+</section>
+
+<!-- ======================= PART TWO: THE SON ======================= -->
+<section class="slide part">
+  <div class="inner">
+    <p class="part-n rise">Part two</p>
+    <h2 class="rise" style="--d:1">Equal with God</h2>
+    <p class="range rise" style="--d:2">Verses 17–30</p>
+    <div class="rule"></div>
+    <p class="hook rise" style="--d:4">They want to kill Him for healing on the sabbath. He answers by telling them who He is.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="17-18" data-hl="My Father worketh hitherto, and I work|making himself equal with God"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="17" data-hl="My Father worketh hitherto, and I work"></blockquote>
+    <h2 class="rise" style="--d:1">They understood exactly</h2>
+    <div class="jn05-eq">
+      <div class="jn05-claim rise" style="--d:2"><small>He said</small>God was His own Father</div>
+      <div class="jn05-sign step" aria-label="equals">=</div>
+      <div class="jn05-claim step"><small>They heard</small>“making himself equal with God”</div>
+    </div>
+    <p class="note step">“Hitherto” means <em>up to now</em>. God rested from creating on the seventh day, but He never stopped holding the world together or showing mercy, sabbath or not. Jesus says, <em>“and I work”</em>: what My Father does, I do.</p>
+    <p class="note step">Some people say Jesus never claimed to be God. His enemies knew better. They wanted to kill Him for it, and He didn't correct them. He went on to say even more.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="19-20" data-hl="what things soever he doeth, these also doeth the Son likewise"></section>
+<section class="slide verse" data-v="21-23" data-hl="the Son quickeneth whom he will|That all men should honour the Son, even as they honour the Father"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="23" data-hl="even as they honour the Father"></blockquote>
+    <h2 class="rise" style="--d:1">The Father and the Son</h2>
+    <div class="jn05-same">
+      <div class="jn05-row jn05-head rise" style="--d:2"><span>The Father</span><span></span><span>The Son</span></div>
+      <div class="jn05-row step"><span>“raiseth up the dead, and quickeneth them”</span><span class="jn05-link">=</span><span>“quickeneth whom he will” <cite>v. 21</cite></span></div>
+      <div class="jn05-row step"><span>“judgeth no man”</span><span class="jn05-link">→</span><span>“all judgment unto the Son” <cite>v. 22</cite></span></div>
+      <div class="jn05-row step"><span>is honoured</span><span class="jn05-link">=</span><span>“honour the Son, even as” <cite>v. 23</cite></span></div>
+      <div class="jn05-row step"><span>“hath life in himself”</span><span class="jn05-link">=</span><span>“to have life in himself” <cite>v. 26</cite></span></div>
+    </div>
+    <p class="note step">To <em>quicken</em> means <em>to make alive</em>. Only God gives life, only God judges every man, and only God is to be worshiped. Jesus claims all three. You can't call Him just a good teacher after this. Either He is God, or He is not good.</p>
+    <p class="note step">“The Son can do nothing of himself” (v. 19) doesn't mean He is weaker. It means He never acts apart from the Father. They are perfectly one.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="24" data-hl="He that heareth my word, and believeth on him that sent me, hath everlasting life"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="24" data-hl="hath everlasting life|shall not come into condemnation|is passed from death unto life"></blockquote>
+    <h2 class="rise" style="--d:1">One verse, three tenses</h2>
+    <div class="jn05-tense">
+      <div class="jn05-t step"><div class="jn05-dot"></div><b>Already done</b><span>“is passed from death unto life”</span></div>
+      <div class="jn05-t step"><div class="jn05-dot"></div><b>Right now</b><span>“hath everlasting life”</span></div>
+      <div class="jn05-t step"><div class="jn05-dot"></div><b>Never</b><span>“shall not come into condemnation”</span></div>
+    </div>
+    <p class="note step">Who is it for? <em>“He that heareth… and believeth.”</em> That's all. And it isn't “will get life someday if he holds out.” He <em>hath</em> it, today. A life that can be lost wouldn't be everlasting.</p>
+    <blockquote class="quote step"><p>“There is therefore now no condemnation to them which are in Christ Jesus, who walk not after the flesh, but after the Spirit.”</p><cite>Romans 8:1</cite></blockquote>
+  </div>
+</section>
+
+<section class="slide verse" data-v="25-27" data-hl="the dead shall hear the voice of the Son of God: and they that hear shall live"></section>
+<section class="slide verse" data-v="28-30" data-hl="all that are in the graves shall hear his voice"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="25" data-hl="The hour is coming, and now is"></blockquote>
+    <h2 class="rise" style="--d:1">Two times the dead hear His voice</h2>
+    <div class="pair">
+      <div class="scroll rise" style="--d:2"><p class="ref">“And now is” · verse 25</p><p class="kjv">Men who are <mark>dead in sin</mark> hear the Son of God, believe, and come alive. It's happening today, every time someone is saved.</p></div>
+      <div class="scroll step"><p class="ref">“The hour is coming” · verses 28–29</p><p class="kjv">Every body in <mark>every grave</mark> will hear His voice and come out, some to life, some to judgment.</p></div>
+    </div>
+    <p class="note step">Does verse 29 mean we are saved by doing good? No. Verse 24 already told us how a man passes from death to life: by hearing and believing. The good is what that new life produces. It's the fruit, not the root.</p>
+    <blockquote class="quote step"><p>“For by grace are ye saved through faith; and that not of yourselves: it is the gift of God: Not of works, lest any man should boast.”</p><cite>Ephesians 2:8–9</cite></blockquote>
+  </div>
+</section>
+
+<!-- ======================= PART THREE: THE WITNESSES ======================= -->
+<section class="slide part">
+  <div class="inner">
+    <p class="part-n rise">Part three</p>
+    <h2 class="rise" style="--d:1">Witnesses</h2>
+    <p class="range rise" style="--d:2">Verses 31–47</p>
+    <div class="rule"></div>
+    <p class="hook rise" style="--d:4">Jesus calls His witnesses to the stand, and the case against unbelief is closed.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="31-35" data-hl="he bare witness unto the truth|a burning and a shining light"></section>
+<section class="slide verse" data-v="36-38" data-hl="the same works that I do, bear witness of me|the Father himself, which hath sent me, hath borne witness of me"></section>
+
+<section class="slide ex">
+  <div class="inner jn05-trial">
+    <blockquote class="quote rise" data-q="36" data-hl="I have greater witness than that of John"></blockquote>
+    <h2 class="rise" style="--d:1">Called to the stand</h2>
+    <p class="note rise" style="--d:2">Under the law, a case was settled “at the mouth of two witnesses, or at the mouth of three witnesses” (Deuteronomy 19:15). Jesus calls more than enough.</p>
+    <div class="jn05-meter rise" style="--d:3"><span class="jn05-need"><small>the law needs 2 or 3</small></span><i></i></div>
+    <div class="jn05-court">
+      <div class="jn05-wit step jn05-w1"><b>John the Baptist</b><span>“a burning and a shining light”</span><cite>vv. 33–35</cite></div>
+      <div class="jn05-wit step jn05-w2"><b>His works</b><span>the miracles the Father gave Him to do</span><cite>v. 36</cite></div>
+      <div class="jn05-wit step jn05-w3"><b>The Father</b><span>“hath borne witness of me”</span><cite>v. 37</cite></div>
+      <div class="jn05-wit step jn05-w4"><b>The Scriptures</b><span>“they… testify of me”</span><cite>v. 39</cite></div>
+      <div class="jn05-wit step jn05-w5"><b>Moses</b><span>“he wrote of me”</span><cite>v. 46</cite></div>
+    </div>
+    <p class="note step">John was a lamp, lit by Another, and the people enjoyed his light “for a season.” But the evidence never ran short. The problem was never a lack of proof. Verse 40 says what it was.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="39-40" data-hl="Search the scriptures|they are they which testify of me|ye will not come to me, that ye might have life"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="39" data-hl="they are they which testify of me"></blockquote>
+    <div class="split">
+      <div class="stage">
+        <svg viewBox="0 0 640 400" role="img" aria-label="Six Old Testament passages around the outside, each with an arrow pointing to Jesus in the center.">
+          <defs>
+            <radialGradient id="jn05-core"><stop offset="0" style="stop-color:var(--glow)"/><stop offset=".55" stop-opacity=".5" style="stop-color:var(--accent)"/><stop offset="1" stop-opacity="0" style="stop-color:var(--accent)"/></radialGradient>
+          </defs>
+          <g class="rise" style="--d:2">
+            <circle cx="320" cy="200" r="92" fill="url(#jn05-core)"/>
+            <circle cx="320" cy="200" r="54" style="fill:var(--accent)"/>
+            <text x="320" y="196" text-anchor="middle" font-size="21" font-weight="700" class="serif" style="fill:var(--on-accent)">Jesus</text>
+            <text x="320" y="218" text-anchor="middle" font-size="14" style="fill:var(--on-accent)">“of me”</text>
+          </g>
+          <g class="jn05-node step">
+            <text class="jn05-ref" x="130" y="58" text-anchor="middle">Genesis 3:15</text>
+            <text class="jn05-what" x="130" y="80" text-anchor="middle">the seed who crushes</text>
+            <text class="jn05-what" x="130" y="98" text-anchor="middle">the serpent's head</text>
+            <path class="jn05-arrow draw" pathLength="1" d="M190 112 L268 164"/>
+          </g>
+          <g class="jn05-node step">
+            <text class="jn05-ref" x="510" y="58" text-anchor="middle">Genesis 22</text>
+            <text class="jn05-what" x="510" y="80" text-anchor="middle">“God will provide</text>
+            <text class="jn05-what" x="510" y="98" text-anchor="middle">himself a lamb”</text>
+            <path class="jn05-arrow draw" pathLength="1" d="M450 112 L372 164"/>
+          </g>
+          <g class="jn05-node step">
+            <text class="jn05-ref" x="90" y="194" text-anchor="middle">Exodus 12</text>
+            <text class="jn05-what" x="90" y="216" text-anchor="middle">the Passover lamb</text>
+            <path class="jn05-arrow draw" pathLength="1" d="M172 202 L258 202"/>
+          </g>
+          <g class="jn05-node step">
+            <text class="jn05-ref" x="553" y="194" text-anchor="middle">Numbers 21</text>
+            <text class="jn05-what" x="556" y="216" text-anchor="middle">the serpent lifted up</text>
+            <path class="jn05-arrow draw" pathLength="1" d="M466 202 L382 202"/>
+          </g>
+          <g class="jn05-node step">
+            <text class="jn05-ref" x="130" y="318" text-anchor="middle">Psalm 22</text>
+            <text class="jn05-what" x="130" y="340" text-anchor="middle">“they pierced my</text>
+            <text class="jn05-what" x="130" y="358" text-anchor="middle">hands and my feet”</text>
+            <path class="jn05-arrow draw" pathLength="1" d="M190 300 L268 240"/>
+          </g>
+          <g class="jn05-node step">
+            <text class="jn05-ref" x="510" y="318" text-anchor="middle">Isaiah 53</text>
+            <text class="jn05-what" x="510" y="340" text-anchor="middle">“wounded for</text>
+            <text class="jn05-what" x="510" y="358" text-anchor="middle">our transgressions”</text>
+            <path class="jn05-arrow draw" pathLength="1" d="M450 300 L372 240"/>
+          </g>
+        </svg>
+      </div>
+      <div>
+        <h2 class="rise" style="--d:1">The whole Book points to Him</h2>
+        <p class="note rise" style="--d:2">These men knew the Scriptures better than anyone. They memorized them. And they missed the Person the Scriptures were about.</p>
+        <p class="note step">After His resurrection, Jesus did this very thing with two of His followers: “beginning at Moses and all the prophets, he expounded unto them in all the scriptures the things concerning himself” (Luke 24:27).</p>
+        <p class="note step">Reading the Bible isn't a box to check. <em>“Ye will not come to me.”</em> The point of the Book is to bring you to Him.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="slide verse" data-v="41-44" data-hl="How can ye believe, which receive honour one of another"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="44" data-hl="receive honour one of another|seek not the honour that cometh from God only"></blockquote>
+    <div class="split">
+      <div class="stage">
+        <svg viewBox="0 0 600 300" role="img" aria-label="A balance scale. At first the side marked honour from men hangs low; then it tips, and honour from God weighs more.">
+          <path d="M300 80 L300 262 M240 270 L360 270" stroke-width="6" stroke-linecap="round" fill="none" style="stroke:var(--ink-soft)"/>
+          <g class="jn05-beam">
+            <line x1="100" y1="80" x2="500" y2="80" stroke-width="7" stroke-linecap="round" style="stroke:var(--ink)"/>
+          </g>
+          <circle cx="300" cy="80" r="10" style="fill:var(--accent)"/>
+          <g class="jn05-panL">
+            <path d="M100 80 L50 170 M100 80 L150 170" stroke-width="2" fill="none" style="stroke:var(--ink-soft)"/>
+            <path class="jn05-pan" d="M40 170 L160 170 Q150 205 100 205 Q50 205 40 170 Z"/>
+            <text x="100" y="236" text-anchor="middle" font-size="19" font-weight="700">honour</text>
+            <text x="100" y="258" text-anchor="middle" font-size="19" font-weight="700">from men</text>
+          </g>
+          <g class="jn05-panR">
+            <path d="M500 80 L450 170 M500 80 L550 170" stroke-width="2" fill="none" style="stroke:var(--ink-soft)"/>
+            <path class="jn05-pan" d="M440 170 L560 170 Q550 205 500 205 Q450 205 440 170 Z" style="stroke:var(--accent)"/>
+            <text x="500" y="236" text-anchor="middle" font-size="19" font-weight="700" style="fill:var(--accent-hot)">honour</text>
+            <text x="500" y="258" text-anchor="middle" font-size="19" font-weight="700" style="fill:var(--accent-hot)">from God</text>
+          </g>
+        </svg>
+      </div>
+      <div>
+        <h2 class="rise" style="--d:1">Whose approval do you need?</h2>
+        <p class="note rise" style="--d:2">Jesus puts His finger on what kept them from believing. It wasn't their heads. It was that they lived for each other's approval.</p>
+        <p class="note step jn05-tip">A man who needs the crowd's approval can't follow Jesus, because sooner or later the crowd will go one way and Jesus another. Lots of us drank, used, or ran with the wrong crowd partly to be accepted. Faith starts when God's opinion of you outweighs everyone else's.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="slide verse" data-v="45-47" data-hl="even Moses, in whom ye trust|for he wrote of me"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="46" data-hl="for he wrote of me"></blockquote>
+    <h2 class="rise" style="--d:1">The witness they trusted</h2>
+    <p class="note rise" style="--d:2">These men were proud to be followers of Moses. Jesus says Moses is the one who will stand up in court against them, because Moses wrote about Him:</p>
+    <blockquote class="quote rise" style="--d:3"><p>“The LORD thy God will raise up unto thee a Prophet from the midst of thee, of thy brethren, like unto me; unto him ye shall hearken;”</p><cite>Deuteronomy 18:15</cite></blockquote>
+    <p class="note step">You can't believe Moses and reject Jesus. Moses' law showed them their sin. Moses' lambs and sacrifices showed them that blood had to be shed. Moses' promise of a Prophet pointed straight at Jesus. The whole law was a signpost, and they were standing at the sign, refusing to go where it pointed.</p>
+  </div>
+</section>
+
+<!-- ======================= CLOSING ======================= -->
+<section class="slide remember">
+  <div class="inner">
+    <h2 class="rise">Points to remember</h2>
+    <ol class="seeds">
+      <li class="step"><span class="topic">Wanting to be whole</span><span class="seed-q">“Wilt thou be made whole?” <cite>5:6</cite></span><span class="take">Jesus asks because it's possible to get used to the mat. Be honest: do you want it?</span></li>
+      <li class="step"><span class="topic">Grace</span><span class="seed-q">“Rise, take up thy bed, and walk” <cite>5:8</cite></span><span class="take">He did nothing to earn it. Jesus came to him and healed him by His word.</span></li>
+      <li class="step"><span class="topic">Staying free</span><span class="seed-q">“Sin no more, lest a worse thing come unto thee” <cite>5:14</cite></span><span class="take">Grace first, then the call. Don't go back to what had you bound.</span></li>
+      <li class="step"><span class="topic">Who Jesus is</span><span class="seed-q">“Making himself equal with God” <cite>5:18</cite></span><span class="take">He gives life, judges all, and is honored as the Father is. He is God.</span></li>
+      <li class="step"><span class="topic">Assurance</span><span class="seed-q">“Hath everlasting life” <cite>5:24</cite></span><span class="take">Whoever hears and believes has it now, and will never come into condemnation.</span></li>
+      <li class="step"><span class="topic">The Scriptures</span><span class="seed-q">“They are they which testify of me” <cite>5:39</cite></span><span class="take">The whole Bible points to Jesus. Read it to come to Him.</span></li>
+    </ol>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 1 of 6</p>
+      <span class="topic">Wanting to be whole</span>
+      <h2>Why would Jesus ask a sick man if he wants to get well?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="5"></blockquote>
+      <blockquote class="quote step" data-q="6" data-hl="Wilt thou be made whole?"></blockquote>
+      <blockquote class="quote step" data-q="7" data-hl="Sir, I have no man"></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>Because after thirty-eight years, a man can get used to being sick. The man answered with excuses, not a yes. Jesus wants us honest about whether we really want to be made whole, and then He does what we never could.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 2 of 6</p>
+      <span class="topic">Grace</span>
+      <h2>What did the man do to earn his healing?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="7" data-hl="I have no man"></blockquote>
+      <blockquote class="quote step" data-q="8"></blockquote>
+      <blockquote class="quote step" data-q="13" data-hl="he that was healed wist not who it was"></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>Nothing. He couldn't get to the water, he didn't ask Jesus for help, and he didn't even know His name. Jesus picked him out of the crowd and healed him with a word. That's grace: God's gift to people who can't earn it.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 3 of 6</p>
+      <span class="topic">Staying free</span>
+      <h2>Why did Jesus tell the healed man to sin no more?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="14" data-hl="sin no more, lest a worse thing come unto thee"></blockquote>
+      <blockquote class="quote step"><p>“Stand fast therefore in the liberty wherewith Christ hath made us free, and be not entangled again with the yoke of bondage.”</p><cite>Galatians 5:1</cite></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>Because He loved him. Jesus healed him first, then warned him that going back to sin would lead somewhere worse. Grace sets us free. The call to “sin no more” is how we stay out of the chains we were set free from.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 4 of 6</p>
+      <span class="topic">Who Jesus is</span>
+      <h2>Did Jesus claim to be equal with God?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="18" data-hl="making himself equal with God"></blockquote>
+      <blockquote class="quote step" data-q="21" data-hl="the Son quickeneth whom he will"></blockquote>
+      <blockquote class="quote step" data-q="23" data-hl="honour the Son, even as they honour the Father"></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>Yes. He called God His own Father, and His enemies understood that as claiming to be equal with God. He didn't take it back. He said He gives life, judges every man, and must be honored just as the Father is. Only God can say that.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 5 of 6</p>
+      <span class="topic">Assurance</span>
+      <h2>Can a believer know for sure that he has everlasting life?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="24"></blockquote>
+      <blockquote class="quote step" data-q="25" data-hl="they that hear shall live"></blockquote>
+      <blockquote class="quote step"><p>“There is therefore now no condemnation to them which are in Christ Jesus, who walk not after the flesh, but after the Spirit.”</p><cite>Romans 8:1</cite></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>Yes. Jesus said whoever hears His word and believes <em>hath</em> everlasting life right now, <em>shall not</em> come into condemnation, and <em>is passed</em> from death to life. That's a done deal, resting on His promise, not on how well we hold on.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 6 of 6</p>
+      <span class="topic">The Scriptures</span>
+      <h2>Who is the Bible really about?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="39"></blockquote>
+      <blockquote class="quote step" data-q="40"></blockquote>
+      <blockquote class="quote step" data-q="46"></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>Jesus. The Scriptures “testify of me,” and Moses “wrote of me.” You can know the Bible and still miss Him, like these men did. The point of reading it is to come to Jesus and have life.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide prayer">
+  <div class="inner">
+    <div class="emblem rise"></div>
+    <h2 class="rise" style="--d:1">Prayer requests</h2>
+    <p class="ask-line rise" style="--d:2">What can we pray about for you today?</p>
+    <blockquote class="quote rise" style="--d:4"><p>“He healeth the broken in heart, and bindeth up their wounds.”</p><cite>Psalm 147:3</cite></blockquote>
+  </div>
+</section>
+
+</main>
+
+<script>
+// King James Version, John chapter 5
+const V = {
+  1: "After this there was a feast of the Jews; and Jesus went up to Jerusalem.",
+  2: "Now there is at Jerusalem by the sheep market a pool, which is called in the Hebrew tongue Bethesda, having five porches.",
+  3: "In these lay a great multitude of impotent folk, of blind, halt, withered, waiting for the moving of the water.",
+  4: "For an angel went down at a certain season into the pool, and troubled the water: whosoever then first after the troubling of the water stepped in was made whole of whatsoever disease he had.",
+  5: "And a certain man was there, which had an infirmity thirty and eight years.",
+  6: "When Jesus saw him lie, and knew that he had been now a long time in that case, he saith unto him, Wilt thou be made whole?",
+  7: "The impotent man answered him, Sir, I have no man, when the water is troubled, to put me into the pool: but while I am coming, another steppeth down before me.",
+  8: "Jesus saith unto him, Rise, take up thy bed, and walk.",
+  9: "And immediately the man was made whole, and took up his bed, and walked: and on the same day was the sabbath.",
+  10: "The Jews therefore said unto him that was cured, It is the sabbath day: it is not lawful for thee to carry thy bed.",
+  11: "He answered them, He that made me whole, the same said unto me, Take up thy bed, and walk.",
+  12: "Then asked they him, What man is that which said unto thee, Take up thy bed, and walk?",
+  13: "And he that was healed wist not who it was: for Jesus had conveyed himself away, a multitude being in that place.",
+  14: "Afterward Jesus findeth him in the temple, and said unto him, Behold, thou art made whole: sin no more, lest a worse thing come unto thee.",
+  15: "The man departed, and told the Jews that it was Jesus, which had made him whole.",
+  16: "And therefore did the Jews persecute Jesus, and sought to slay him, because he had done these things on the sabbath day.",
+  17: "But Jesus answered them, My Father worketh hitherto, and I work.",
+  18: "Therefore the Jews sought the more to kill him, because he not only had broken the sabbath, but said also that God was his Father, making himself equal with God.",
+  19: "Then answered Jesus and said unto them, Verily, verily, I say unto you, The Son can do nothing of himself, but what he seeth the Father do: for what things soever he doeth, these also doeth the Son likewise.",
+  20: "For the Father loveth the Son, and sheweth him all things that himself doeth: and he will shew him greater works than these, that ye may marvel.",
+  21: "For as the Father raiseth up the dead, and quickeneth them; even so the Son quickeneth whom he will.",
+  22: "For the Father judgeth no man, but hath committed all judgment unto the Son:",
+  23: "That all men should honour the Son, even as they honour the Father. He that honoureth not the Son honoureth not the Father which hath sent him.",
+  24: "Verily, verily, I say unto you, He that heareth my word, and believeth on him that sent me, hath everlasting life, and shall not come into condemnation; but is passed from death unto life.",
+  25: "Verily, verily, I say unto you, The hour is coming, and now is, when the dead shall hear the voice of the Son of God: and they that hear shall live.",
+  26: "For as the Father hath life in himself; so hath he given to the Son to have life in himself;",
+  27: "And hath given him authority to execute judgment also, because he is the Son of man.",
+  28: "Marvel not at this: for the hour is coming, in the which all that are in the graves shall hear his voice,",
+  29: "And shall come forth; they that have done good, unto the resurrection of life; and they that have done evil, unto the resurrection of damnation.",
+  30: "I can of mine own self do nothing: as I hear, I judge: and my judgment is just; because I seek not mine own will, but the will of the Father which hath sent me.",
+  31: "If I bear witness of myself, my witness is not true.",
+  32: "There is another that beareth witness of me; and I know that the witness which he witnesseth of me is true.",
+  33: "Ye sent unto John, and he bare witness unto the truth.",
+  34: "But I receive not testimony from man: but these things I say, that ye might be saved.",
+  35: "He was a burning and a shining light: and ye were willing for a season to rejoice in his light.",
+  36: "But I have greater witness than that of John: for the works which the Father hath given me to finish, the same works that I do, bear witness of me, that the Father hath sent me.",
+  37: "And the Father himself, which hath sent me, hath borne witness of me. Ye have neither heard his voice at any time, nor seen his shape.",
+  38: "And ye have not his word abiding in you: for whom he hath sent, him ye believe not.",
+  39: "Search the scriptures; for in them ye think ye have eternal life: and they are they which testify of me.",
+  40: "And ye will not come to me, that ye might have life.",
+  41: "I receive not honour from men.",
+  42: "But I know you, that ye have not the love of God in you.",
+  43: "I am come in my Father’s name, and ye receive me not: if another shall come in his own name, him ye will receive.",
+  44: "How can ye believe, which receive honour one of another, and seek not the honour that cometh from God only?",
+  45: "Do not think that I will accuse you to the Father: there is one that accuseth you, even Moses, in whom ye trust.",
+  46: "For had ye believed Moses, ye would have believed me: for he wrote of me.",
+  47: "But if ye believe not his writings, how shall ye believe my words?"
+};
+const BOOK = "John 5";
+</script>
+<script src="../assets/deck.js"></script>
+</body>
+</html>

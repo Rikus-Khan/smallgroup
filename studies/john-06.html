@@ -1,0 +1,827 @@
+<!doctype html>
+<html lang="en" data-theme="slate">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>John 6</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="../assets/fonts.css">
+<link rel="stylesheet" href="../assets/deck.css">
+<link rel="stylesheet" href="../assets/themes.css">
+<style>
+/* jn06-map: the Sea of Galilee, with the boat's crossing drawn in */
+.jn06-lake { fill: color-mix(in srgb, var(--cool) 26%, var(--bg)); stroke: var(--cool); stroke-width: 2.5; }
+.jn06-river { fill: none; stroke: var(--cool); stroke-width: 3; }
+.jn06-town { fill: var(--ink); }
+.jn06-here { fill: var(--accent-hot); }
+.jn06-route { fill: none; stroke: var(--accent); stroke-width: 4; stroke-linecap: round; }
+.jn06-pulse { fill: none; stroke: var(--accent); stroke-width: 2.5; transform-box: fill-box; transform-origin: center; }
+.slide.active .jn06-pulse { animation: jn06-pulse 2.2s ease-out infinite; }
+@keyframes jn06-pulse { from { opacity: .9; transform: scale(.4); } to { opacity: 0; transform: scale(2.2); } }
+
+/* jn06-count: a boy's lunch against a crowd of thousands */
+.jn06-lunch { display: flex; flex-wrap: wrap; align-items: center; gap: .5rem; margin: .3em 0 .2em; }
+.jn06-lunch svg { width: clamp(34px, 4.5vw, 54px); height: auto; }
+.jn06-loafshape { fill: var(--warm); }
+.jn06-fishshape { fill: var(--cool); }
+.jn06-lunch small, .jn06-crowd-cap { color: var(--ink-soft); font-size: clamp(.85rem, .8rem + .3vw, 1.05rem); }
+.jn06-crowd-cap { margin-bottom: 1em; }
+.jn06-crowd { display: grid; grid-template-columns: repeat(25, 1fr); gap: clamp(3px, .45vw, 6px); margin: .8em 0 .3em; max-width: 46rem; }
+.jn06-crowd i { aspect-ratio: 1; border-radius: 50%; background: var(--ink-soft); opacity: 0; transform: scale(.3); transition: opacity .4s ease, transform .4s ease; transition-delay: calc(var(--k) * 35ms); }
+.jn06-crowd.on i { opacity: .85; transform: none; }
+
+/* jn06-baskets: twelve baskets filling with leftovers */
+.jn06-baskets { display: grid; grid-template-columns: repeat(12, 1fr); gap: clamp(4px, .8vw, 10px); margin: .5em 0 1em; }
+@media (max-width: 640px) { .jn06-baskets { grid-template-columns: repeat(6, 1fr); } }
+.jn06-basket { position: relative; height: clamp(48px, 9vh, 88px); border: 2px solid var(--leather-light); border-top-width: 4px; border-radius: 3px 3px 16px 16px; overflow: hidden;
+  background: repeating-linear-gradient(45deg, transparent 0 6px, color-mix(in srgb, var(--leather-light) 22%, transparent) 6px 8px); }
+.jn06-basket i { position: absolute; left: 0; right: 0; bottom: 0; height: 0; background: var(--warm); transition: height .9s ease; transition-delay: calc(var(--k) * 160ms + 200ms); }
+.jn06-baskets.on .jn06-basket i { height: 82%; }
+.jn06-baskets-cap { display: flex; justify-content: space-between; color: var(--ink-soft); font-size: clamp(.85rem, .8rem + .3vw, 1.05rem); margin-top: -.6em; margin-bottom: 1em; }
+
+/* jn06-storm: a boat rocking at night, and Someone walking toward it on the water */
+.jn06-night { fill: color-mix(in srgb, var(--ink) 10%, var(--bg)); }
+.jn06-wave { fill: color-mix(in srgb, var(--cool) 40%, var(--bg)); }
+.jn06-wave2 { fill: color-mix(in srgb, var(--cool) 65%, var(--bg)); }
+.slide.active .jn06-wave { animation: jn06-roll 3.2s linear infinite; }
+.slide.active .jn06-wave2 { animation: jn06-roll 2.2s linear infinite reverse; }
+@keyframes jn06-roll { to { transform: translateX(-150px); } }
+.jn06-boat { transform-box: fill-box; transform-origin: 50% 90%; }
+.slide.active .jn06-boat { animation: jn06-rock 2.4s ease-in-out infinite alternate; }
+@keyframes jn06-rock { from { transform: rotate(-7deg) translateY(-4px); } to { transform: rotate(6deg) translateY(5px); } }
+.jn06-wind { stroke: var(--ink-soft); stroke-width: 2.5; stroke-linecap: round; opacity: 0; }
+.slide.active .jn06-wind { animation: jn06-gust 1.8s linear infinite; animation-delay: calc(var(--k) * .45s); }
+@keyframes jn06-gust { 0% { opacity: 0; transform: translateX(80px); } 30% { opacity: .8; } 100% { opacity: 0; transform: translateX(-160px); } }
+.jn06-walker { transform: translateX(110px); opacity: 0; transition: transform 3.6s cubic-bezier(.2,.6,.3,1), opacity 1.4s ease; }
+.on .jn06-walker { transform: none; opacity: 1; }
+.jn06-figure { fill: var(--accent-hot); }
+
+/* jn06-perish: food that spoils, and food that lasts */
+.jn06-two { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem 2rem; margin: .4em 0 1em; text-align: center; }
+.jn06-two svg { width: min(100%, 11rem); height: auto; display: block; margin: 0 auto .4em; overflow: visible; }
+.jn06-two h3 { font: 700 clamp(1rem, .9rem + .5vw, 1.3rem) var(--sans); }
+.jn06-two p { font-size: clamp(.92rem, .85rem + .4vw, 1.2rem); color: var(--ink-soft); line-height: 1.35; margin-top: .3em; }
+.jn06-spoil .jn06-loafshape { transition: fill 2.4s ease .3s, opacity 2.4s ease .3s; }
+.jn06-spoil.on .jn06-loafshape { fill: var(--line-strong); opacity: .45; }
+.jn06-mold { fill: var(--ink-soft); opacity: 0; transition: opacity 1.6s ease 1.4s; }
+.jn06-spoil.on .jn06-mold { opacity: .7; }
+.jn06-last .jn06-loafshape { fill: var(--accent); }
+.jn06-last.on svg { animation: jn06-shine 2.4s ease-in-out infinite alternate; }
+@keyframes jn06-shine { from { filter: drop-shadow(0 0 2px var(--accent)); } to { filter: drop-shadow(0 0 16px var(--accent)); } }
+
+/* jn06-vs: manna and the true bread, row by row (with manna falling over the top) */
+.jn06-sky { position: relative; height: 54px; overflow: hidden; margin-bottom: .3em; }
+.jn06-sky i { position: absolute; top: -10px; left: var(--x); width: 7px; height: 7px; border-radius: 50%; background: var(--accent-hot); opacity: 0; }
+.slide.active .jn06-sky i { animation: jn06-fall 2.8s linear infinite; animation-delay: calc(var(--k) * -.37s); }
+@keyframes jn06-fall { 0% { opacity: 0; transform: translateY(0); } 15% { opacity: .9; } 85% { opacity: .9; } 100% { opacity: 0; transform: translateY(62px); } }
+.jn06-vs { display: grid; gap: .35rem; margin: 0 0 1em; }
+.jn06-vs > div { display: grid; grid-template-columns: 1fr 1fr; gap: .2rem 1.2rem; padding: .45em .8em; border-radius: 8px; background: var(--surface); font-size: clamp(.92rem, .82rem + .5vw, 1.3rem); line-height: 1.35; }
+.jn06-vs > div > span:last-child { color: var(--accent-hot); }
+.jn06-vs .jn06-vs-head { background: none; padding-top: 0; padding-bottom: 0; font-weight: 700; }
+.jn06-vs .jn06-vs-head span:first-child { color: var(--ink-soft); }
+.jn06-vs cite { font-style: normal; color: var(--ink-soft); font-size: .78em; }
+
+/* jn06-iam: the seven "I am" sayings, this one lit */
+.jn06-iam { display: grid; grid-template-columns: auto 1fr; gap: .25rem 1.2rem; align-items: center; margin: .3em 0 1em; }
+.jn06-iam .jn06-big { grid-row: 1 / span 7; font: 300 clamp(2.6rem, 1.6rem + 4.5vw, 5.6rem)/1 var(--serif); color: var(--accent-hot); border-right: 2px solid var(--accent); padding-right: .35em; }
+.jn06-iam div { font-family: var(--serif); font-size: clamp(1.05rem, .9rem + .7vw, 1.55rem); color: var(--ink-soft); opacity: .55; }
+.jn06-iam div cite { font: .7em var(--sans); margin-left: .5em; }
+.jn06-iam div.jn06-now { color: var(--accent-hot); opacity: 1; font-weight: 600; }
+.slide.active .jn06-iam div.jn06-now { animation: jn06-glowtext 2.2s ease-in-out infinite alternate; }
+@keyframes jn06-glowtext { to { text-shadow: 0 0 18px var(--accent); } }
+
+/* jn06-stamps: one promise, stamped four times */
+.jn06-stamps { display: flex; flex-wrap: wrap; gap: .6rem 1rem; margin: .5em 0 1em; }
+.jn06-stamp { padding: .3em .7em; border: 3px solid var(--accent); border-radius: 8px; color: var(--accent-hot); font: 700 clamp(.95rem, .85rem + .45vw, 1.25rem) var(--sans); transform: rotate(-4deg) scale(2.2); opacity: 0; }
+.jn06-stamp:nth-child(even) { transform: rotate(3deg) scale(2.2); }
+.jn06-stamps.on .jn06-stamp { animation: jn06-thump .45s cubic-bezier(.3,1.6,.5,1) forwards; animation-delay: calc(var(--k) * 420ms + 150ms); }
+@keyframes jn06-thump { to { opacity: 1; transform: rotate(var(--r, -4deg)) scale(1); } }
+.jn06-stamp:nth-child(even) { --r: 3deg; }
+
+/* jn06-pull: drawn from every side toward the cross */
+.jn06-person { fill: var(--ink-soft); transition: transform 1.6s cubic-bezier(.3,.7,.3,1) 1s, fill 1s ease 1s; }
+.split:has(.jn06-pullgo.on) .jn06-person { transform: translate(var(--dx), var(--dy)); fill: var(--accent-hot); }
+.jn06-cords { fill: none; stroke: var(--accent); stroke-width: 2.5; stroke-dasharray: 1; stroke-dashoffset: 1; transition: stroke-dashoffset 1.2s ease; }
+.split:has(.jn06-pullgo.on) .jn06-cords { stroke-dashoffset: 0; }
+
+/* jn06-match: plain words and picture words lined up */
+.jn06-match { display: grid; grid-template-columns: 1fr auto 1fr; gap: .45rem .7rem; align-items: stretch; margin: .4em 0 1em; }
+.jn06-match > span { padding: .5em .8em; border-radius: 8px; background: var(--surface); font-family: var(--serif); font-size: clamp(.98rem, .86rem + .55vw, 1.35rem); line-height: 1.3; }
+.jn06-match > b { align-self: center; color: var(--accent); font-size: 1.3rem; }
+.jn06-match .jn06-mh { background: none; padding-top: 0; padding-bottom: 0; font: 700 clamp(.85rem, .8rem + .3vw, 1.05rem) var(--sans); color: var(--accent); }
+.jn06-match .jn06-pic { font-style: italic; color: var(--accent-hot); }
+
+/* jn06-few: a crowd thins out until twelve are left */
+.jn06-few { display: grid; grid-template-columns: repeat(20, 1fr); gap: clamp(3px, .5vw, 7px); margin: .5em 0 1em; max-width: 44rem; }
+.jn06-few i { aspect-ratio: 1; border-radius: 50%; background: var(--ink-soft); transition: opacity 1.2s ease, background-color 1.2s ease; transition-delay: calc(var(--k, 0) * 1ms); }
+.jn06-left:has(.jn06-leave.on) .jn06-few i:not(.jn06-keep) { opacity: .1; }
+.jn06-left:has(.jn06-leave.on) .jn06-few i.jn06-keep { background: var(--accent-hot); box-shadow: 0 0 10px var(--accent); }
+.jn06-tally { display: flex; flex-wrap: wrap; gap: .4rem 1.6rem; margin: .4em 0 1em; }
+.jn06-tally div b { display: block; font: 300 clamp(1.8rem, 1.2rem + 2.6vw, 3.4rem)/1 var(--serif); color: var(--accent-hot); }
+.jn06-tally div span { color: var(--ink-soft); font-size: clamp(.85rem, .8rem + .3vw, 1.05rem); }
+</style>
+</head>
+<body>
+<main class="deck" id="deck">
+
+<!-- ======================= OPENING ======================= -->
+<section class="slide title">
+  <div class="inner">
+    <div class="emblem rise"></div>
+    <h1 class="rise" style="--d:1">John 6</h1>
+    <p class="sub rise" style="--d:3">The bread of life</p>
+    <p class="tag rise" style="--d:5">Jesus feeds five thousand, walks on a stormy sea, and tells the crowd He is the bread they've really been hungry for.</p>
+  </div>
+</section>
+
+<section class="slide watch">
+  <div class="inner">
+    <h2 class="rise">Things to watch for</h2>
+    <p class="lede rise" style="--d:1">Keep these questions in the back of your mind as we read. We'll come back to every one of them at the end.</p>
+    <ol class="seeds">
+      <li class="step"><span class="topic">Who Jesus is</span><span class="seed-q">What does Jesus mean when He says, “I am the bread of life”?</span></li>
+      <li class="step"><span class="topic">A little in His hands</span><span class="seed-q">What can Jesus do with the little we bring Him?</span></li>
+      <li class="step"><span class="topic">Fear</span><span class="seed-q">What does Jesus say to us in the storm?</span></li>
+      <li class="step"><span class="topic">Salvation</span><span class="seed-q">What work does God want from us?</span></li>
+      <li class="step"><span class="topic">Security</span><span class="seed-q">Will Jesus ever cast out someone who comes to Him?</span></li>
+      <li class="step"><span class="topic">Following</span><span class="seed-q">Why did Peter stay when so many walked away?</span></li>
+    </ol>
+  </div>
+</section>
+
+<!-- ======================= PART ONE: FIVE THOUSAND FED ======================= -->
+<section class="slide part">
+  <div class="inner">
+    <p class="part-n rise">Part one</p>
+    <h2 class="rise" style="--d:1">Bread for five thousand</h2>
+    <p class="range rise" style="--d:2">Verses 1–15</p>
+    <div class="rule"></div>
+    <p class="hook rise" style="--d:4">A hungry crowd, a hillside, and one boy's lunch.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="1-4" data-hl="the sea of Galilee, which is the sea of Tiberias|the passover, a feast of the Jews, was nigh"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="1" data-hl="the sea of Galilee, which is the sea of Tiberias"></blockquote>
+    <div class="split">
+      <div class="stage">
+        <svg viewBox="0 0 420 470" role="img" aria-label="Map of the Sea of Galilee. The Jordan River flows in at the north and out at the south. Capernaum and Bethsaida are on the north shore, Tiberias on the west. The crowd was fed on the hills near Bethsaida, and the boat crossed back toward Capernaum.">
+          <path class="jn06-river rise" style="--d:2" d="M238 0 C228 20 248 34 236 62"/>
+          <path class="jn06-river rise" style="--d:2" d="M206 420 C214 436 198 450 210 470"/>
+          <path class="jn06-lake rise" style="--d:2" d="M195 58 C250 52 292 82 306 132 C320 188 314 262 294 322 C274 382 240 420 205 424 C168 420 142 382 122 332 C102 278 96 202 110 142 C124 92 150 62 195 58 Z"/>
+          <text x="210" y="250" text-anchor="middle" font-size="18" class="serif" style="fill:var(--cool);font-style:italic">Sea of Galilee</text>
+          <text x="210" y="272" text-anchor="middle" font-size="14" style="fill:var(--cool)">about 13 miles long</text>
+          <text x="252" y="18" font-size="14" style="fill:var(--cool)">Jordan River</text>
+          <g class="rise" style="--d:3">
+            <circle class="jn06-town" cx="146" cy="78" r="7"/>
+            <text x="134" y="70" text-anchor="end" font-size="17" font-weight="700">Capernaum</text>
+            <circle class="jn06-town" cx="256" cy="58" r="7"/>
+            <text x="268" y="52" font-size="17" font-weight="700">Bethsaida</text>
+            <circle class="jn06-town" cx="104" cy="250" r="7"/>
+            <text x="92" y="256" text-anchor="end" font-size="17" font-weight="700">Tiberias</text>
+          </g>
+          <g class="rise" style="--d:5">
+            <circle class="jn06-pulse" cx="306" cy="104" r="14"/>
+            <circle class="jn06-here" cx="306" cy="104" r="8"/>
+            <text x="320" y="100" font-size="16" font-weight="700" style="fill:var(--accent-hot)">the hills where</text>
+            <text x="320" y="120" font-size="16" font-weight="700" style="fill:var(--accent-hot)">5,000 ate</text>
+          </g>
+          <g class="step">
+            <path class="jn06-route draw" pathLength="1" d="M296 112 C262 150 196 150 156 90"/>
+            <text x="226" y="170" text-anchor="middle" font-size="15" style="fill:var(--accent-hot)">the night crossing</text>
+          </g>
+        </svg>
+      </div>
+      <div>
+        <h2 class="rise" style="--d:1">One lake, two names</h2>
+        <p class="note rise" style="--d:2">The Sea of Galilee is really a freshwater lake, about 13 miles long and 8 across. Herod Antipas built a city on its west shore and named it Tiberias, after the Roman emperor. So the lake picked up that name too.</p>
+        <p class="note step">The feeding happened on the hills near Bethsaida (Luke 9:10). That night the disciples rowed back across toward Capernaum, Jesus' home base.</p>
+        <p class="note step">“The passover… was nigh.” This is the second Passover John mentions (2:13, 6:4, 11:55). Counting them is how we know Jesus' ministry lasted about three years.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="slide verse" data-v="5-7" data-hl="Whence shall we buy bread, that these may eat?|this he said to prove him|Two hundred pennyworth"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="6" data-hl="this he said to prove him: for he himself knew what he would do"></blockquote>
+    <h2 class="rise" style="--d:1">A test Philip did the math on</h2>
+    <p class="note rise" style="--d:2">A “penny” here is a Roman silver coin, a day's pay for a working man: “he had agreed with the labourers for a penny a day” (Matthew 20:2).</p>
+    <div class="math">
+      <div class="step"><b>1 penny</b><span>one day's wages</span></div>
+      <div class="step"><b>200 pence</b><span>200 days of work</span></div>
+      <div class="step"><b>≈ 8 months</b><span>of a man's pay</span></div>
+    </div>
+    <p class="note step">And Philip says even that wouldn't give everyone <em>“a little.”</em> He counted what they had, and he was right. It wasn't enough.</p>
+    <p class="note step">Jesus <em>“knew what he would do.”</em> He wasn't asking for a plan. He was asking whether Philip would look past the numbers to Him. When the math says it can't be done, that's usually where Jesus starts.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="8-9" data-hl="five barley loaves, and two small fishes|but what are they among so many?"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="9" data-hl="what are they among so many?"></blockquote>
+    <h2 class="rise" style="--d:1">What are they among so many?</h2>
+    <div class="jn06-lunch rise" style="--d:2" aria-label="Five barley loaves and two small fish">
+      <svg viewBox="0 0 40 26" aria-hidden="true"><ellipse class="jn06-loafshape" cx="20" cy="15" rx="18" ry="10"/></svg>
+      <svg viewBox="0 0 40 26" aria-hidden="true"><ellipse class="jn06-loafshape" cx="20" cy="15" rx="18" ry="10"/></svg>
+      <svg viewBox="0 0 40 26" aria-hidden="true"><ellipse class="jn06-loafshape" cx="20" cy="15" rx="18" ry="10"/></svg>
+      <svg viewBox="0 0 40 26" aria-hidden="true"><ellipse class="jn06-loafshape" cx="20" cy="15" rx="18" ry="10"/></svg>
+      <svg viewBox="0 0 40 26" aria-hidden="true"><ellipse class="jn06-loafshape" cx="20" cy="15" rx="18" ry="10"/></svg>
+      <svg viewBox="0 0 46 26" aria-hidden="true"><path class="jn06-fishshape" d="M3 13 C9 4 23 3 31 13 C23 23 9 22 3 13 Z M30 13 L44 4 L41 13 L44 22 Z"/></svg>
+      <svg viewBox="0 0 46 26" aria-hidden="true"><path class="jn06-fishshape" d="M3 13 C9 4 23 3 31 13 C23 23 9 22 3 13 Z M30 13 L44 4 L41 13 L44 22 Z"/></svg>
+      <small>one boy's lunch</small>
+    </div>
+    <div class="jn06-crowd step" aria-label="Fifty dots, each standing for a hundred men"><i style="--k:0"></i><i style="--k:1"></i><i style="--k:2"></i><i style="--k:3"></i><i style="--k:4"></i><i style="--k:5"></i><i style="--k:6"></i><i style="--k:7"></i><i style="--k:8"></i><i style="--k:9"></i><i style="--k:10"></i><i style="--k:11"></i><i style="--k:12"></i><i style="--k:13"></i><i style="--k:14"></i><i style="--k:15"></i><i style="--k:16"></i><i style="--k:17"></i><i style="--k:18"></i><i style="--k:19"></i><i style="--k:20"></i><i style="--k:21"></i><i style="--k:22"></i><i style="--k:23"></i><i style="--k:24"></i><i style="--k:25"></i><i style="--k:26"></i><i style="--k:27"></i><i style="--k:28"></i><i style="--k:29"></i><i style="--k:30"></i><i style="--k:31"></i><i style="--k:32"></i><i style="--k:33"></i><i style="--k:34"></i><i style="--k:35"></i><i style="--k:36"></i><i style="--k:37"></i><i style="--k:38"></i><i style="--k:39"></i><i style="--k:40"></i><i style="--k:41"></i><i style="--k:42"></i><i style="--k:43"></i><i style="--k:44"></i><i style="--k:45"></i><i style="--k:46"></i><i style="--k:47"></i><i style="--k:48"></i><i style="--k:49"></i></div>
+    <p class="jn06-crowd-cap step">each dot is 100 men, about 5,000 in all, “beside women and children” (Matthew 14:21)</p>
+    <p class="note step">Barley bread was the cheap bread, what poor families ate. The fish were small, likely dried or pickled to go with the bread. A boy's lunch.</p>
+    <p class="note step">Andrew was right: it was nothing next to the need. But he brought it to Jesus anyway. That's all Jesus asks. Not that what you bring is enough, just that you bring it to Him.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="10-11" data-hl="Make the men sit down|when he had given thanks|as much as they would"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="11" data-hl="when he had given thanks|as much as they would"></blockquote>
+    <h2 class="rise" style="--d:1">Through His disciples' hands</h2>
+    <div class="chains">
+      <div class="chain step"><span class="who-chip">a boy</span><span class="said">gave his lunch</span><span class="who-chip jesus">Jesus</span><span class="said">gave thanks</span><span class="who-chip">the disciples</span><span class="said">passed it out</span><span class="who-chip">5,000 men and their families</span></div>
+    </div>
+    <p class="note step">Jesus <em>gave thanks</em> for five loaves before there was enough. He thanked the Father for what He had, not for what He was about to have.</p>
+    <p class="note step">The miracle happened in the disciples' hands as they kept handing it out. They never saw a pile of bread appear. They just kept giving, and it kept being there. And everyone ate <em>“as much as they would,”</em> as much as they wanted.</p>
+    <p class="note step">Mark 6:39–40 adds that they sat in groups of fifties and hundreds on the green grass. Even at a picnic for thousands, God is a God of order.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="12-13" data-hl="Gather up the fragments that remain, that nothing be lost|filled twelve baskets"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="12" data-hl="that nothing be lost"></blockquote>
+    <h2 class="rise" style="--d:1">More left over than they started with</h2>
+    <div class="jn06-baskets step" aria-label="Twelve baskets, filling one after another with leftover bread">
+      <div class="jn06-basket"><i style="--k:0"></i></div><div class="jn06-basket"><i style="--k:1"></i></div><div class="jn06-basket"><i style="--k:2"></i></div><div class="jn06-basket"><i style="--k:3"></i></div>
+      <div class="jn06-basket"><i style="--k:4"></i></div><div class="jn06-basket"><i style="--k:5"></i></div><div class="jn06-basket"><i style="--k:6"></i></div><div class="jn06-basket"><i style="--k:7"></i></div>
+      <div class="jn06-basket"><i style="--k:8"></i></div><div class="jn06-basket"><i style="--k:9"></i></div><div class="jn06-basket"><i style="--k:10"></i></div><div class="jn06-basket"><i style="--k:11"></i></div>
+    </div>
+    <p class="jn06-baskets-cap step"><span>started with: 5 small loaves</span><span>left over: 12 baskets</span></p>
+    <p class="note step">Twelve baskets, one for each disciple who had wondered how they'd ever feed this crowd.</p>
+    <p class="note step">Jesus cared about the <em>fragments</em>, the broken pieces. He wastes nothing. Not leftover bread, and not the broken pieces of your life either. The years you think were wasted, He can gather up and use.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="14-15" data-hl="This is of a truth that prophet|take him by force, to make him a king|he departed again into a mountain himself alone"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="15" data-hl="to make him a king"></blockquote>
+    <h2 class="rise" style="--d:1">The wrong kind of king</h2>
+    <p class="note rise" style="--d:2">“That prophet” is the one Moses promised (Deuteronomy 18:15). Moses gave Israel bread in the wilderness. Here was a man who could do the same. Make Him king, and nobody goes hungry again. Kick out the Romans while He's at it.</p>
+    <div class="mirror">
+      <div class="step"><span>The crowd</span><span class="arrow">→</span><span class="word">wanted a king who fills stomachs</span><small>Free bread, and a fighter against Rome.</small></div>
+      <div class="step"><span>Jesus</span><span class="arrow">→</span><span class="word">came to give His life</span><small>“The bread that I will give is my flesh, which I will give for the life of the world” (v. 51).</small></div>
+    </div>
+    <p class="note step">So He walked away from the crowd, alone, up the mountain. The other Gospels tell us He went there to pray (Matthew 14:23). He wouldn't be the kind of savior they wanted. He came to be the kind they needed.</p>
+  </div>
+</section>
+
+<!-- ======================= PART TWO: THE STORM ======================= -->
+<section class="slide part">
+  <div class="inner">
+    <p class="part-n rise">Part two</p>
+    <h2 class="rise" style="--d:1">It is I</h2>
+    <p class="range rise" style="--d:2">Verses 16–21</p>
+    <div class="rule"></div>
+    <p class="hook rise" style="--d:4">Dark water, a hard wind, and Jesus walking toward them on the waves.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="16-18" data-hl="it was now dark, and Jesus was not come to them|the sea arose by reason of a great wind"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="17" data-hl="it was now dark, and Jesus was not come to them"></blockquote>
+    <div class="split">
+      <div class="stage">
+        <svg viewBox="0 0 600 320" role="img" aria-label="A small boat rocks on rough waves at night in a strong wind. Then a figure comes walking toward it across the water.">
+          <defs>
+            <radialGradient id="jn06-halo"><stop offset="0" style="stop-color:var(--glow)"/><stop offset=".45" stop-opacity=".45" style="stop-color:var(--accent)"/><stop offset="1" stop-opacity="0" style="stop-color:var(--accent)"/></radialGradient>
+            <clipPath id="jn06-frame"><rect x="0" y="0" width="600" height="320" rx="6"/></clipPath>
+          </defs>
+          <g clip-path="url(#jn06-frame)">
+            <rect class="jn06-night" x="0" y="0" width="600" height="320"/>
+            <g>
+              <line class="jn06-wind" style="--k:0" x1="420" y1="60" x2="520" y2="60"/>
+              <line class="jn06-wind" style="--k:1" x1="380" y1="100" x2="500" y2="100"/>
+              <line class="jn06-wind" style="--k:2" x1="440" y1="140" x2="540" y2="140"/>
+              <line class="jn06-wind" style="--k:3" x1="360" y1="40" x2="440" y2="40"/>
+            </g>
+            <g class="step">
+              <g class="jn06-walker">
+                <circle cx="470" cy="190" r="70" fill="url(#jn06-halo)"/>
+                <circle class="jn06-figure" cx="470" cy="160" r="11"/>
+                <path class="jn06-figure" d="M456 176 Q470 168 484 176 L490 226 L450 226 Z"/>
+              </g>
+            </g>
+            <path class="jn06-wave" d="M0 222 q37.5 -18 75 0 t75 0 t75 0 t75 0 t75 0 t75 0 t75 0 t75 0 t75 0 t75 0 t75 0 t75 0 t75 0 t75 0 t75 0 t75 0 V320 H0 Z"/>
+            <g class="jn06-boat">
+              <path d="M170 205 L330 205 L305 240 L195 240 Z" style="fill:var(--leather);stroke:var(--leather-light)" stroke-width="3"/>
+              <line x1="250" y1="205" x2="250" y2="110" stroke-width="4" style="stroke:var(--leather-light)"/>
+              <path d="M254 118 L254 196 L310 196 Z" style="fill:var(--surface-2);stroke:var(--ink-soft)" stroke-width="2"/>
+              <g style="fill:var(--ink)"><circle cx="200" cy="196" r="7"/><circle cx="222" cy="194" r="7"/></g>
+            </g>
+            <path class="jn06-wave2" d="M0 246 q37.5 -16 75 0 t75 0 t75 0 t75 0 t75 0 t75 0 t75 0 t75 0 t75 0 t75 0 t75 0 t75 0 t75 0 t75 0 t75 0 t75 0 V320 H0 Z"/>
+          </g>
+        </svg>
+      </div>
+      <div>
+        <h2 class="rise" style="--d:1">Rowing in the dark</h2>
+        <p class="note rise" style="--d:2">The lake sits about 700 feet below sea level, ringed by hills. Cool air pours down through the valleys and can whip the water into a storm in minutes.</p>
+        <p class="note step">These men had obeyed. Jesus sent them across (Mark 6:45). Obeying didn't keep them out of the storm.</p>
+        <p class="note step"><em>“It was now dark, and Jesus was not come to them.”</em> Every man knows that hour: 2 a.m., the wind howling, the old craving pulling, and it feels like He isn't coming. He saw them the whole time (Mark 6:48). And He was already on His way.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="slide verse" data-v="19-21" data-hl="they see Jesus walking on the sea|It is I; be not afraid|immediately the ship was at the land"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="20"></blockquote>
+    <h2 class="rise" style="--d:1">“It is I”</h2>
+    <div class="morph">
+      <span class="big rise" style="--d:3">ἐγώ εἰμι</span>
+      <span class="say step">said <em class="gk">egō eimi</em></span>
+      <span class="means step">“I am”</span>
+    </div>
+    <p class="note step">It's the same pair of words Jesus will use in verse 35, “I am the bread of life.” And it echoes the name God gave Moses at the burning bush: <em>“I AM THAT I AM”</em> (Exodus 3:14). The One walking on the water is the One who made the water.</p>
+    <p class="note step">Twenty-five or thirty <em>furlongs</em> is about three or three and a half miles, the middle of the lake. Then the moment they took Him in, <em>“immediately the ship was at the land.”</em> The storm that had beaten them all night was over the moment He was in the boat.</p>
+  </div>
+</section>
+
+<!-- ======================= PART THREE: THE BREAD OF LIFE ======================= -->
+<section class="slide part">
+  <div class="inner">
+    <p class="part-n rise">Part three</p>
+    <h2 class="rise" style="--d:1">I am the bread of life</h2>
+    <p class="range rise" style="--d:2">Verses 22–59</p>
+    <div class="rule"></div>
+    <p class="hook rise" style="--d:4">The crowd tracks Jesus down for more bread. He offers them Himself.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="22-23"></section>
+<section class="slide verse" data-v="24-25" data-hl="seeking for Jesus"></section>
+<section class="slide verse" data-v="26-27" data-hl="because ye did eat of the loaves, and were filled|Labour not for the meat which perisheth"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="27" data-hl="the meat which perisheth|that meat which endureth unto everlasting life"></blockquote>
+    <h2 class="rise" style="--d:1">Food that spoils, food that lasts</h2>
+    <div class="jn06-two">
+      <div class="jn06-spoil step">
+        <svg viewBox="0 0 120 70" aria-hidden="true"><ellipse class="jn06-loafshape" cx="60" cy="40" rx="54" ry="26"/><circle class="jn06-mold" cx="40" cy="34" r="6"/><circle class="jn06-mold" cx="70" cy="46" r="8"/><circle class="jn06-mold" cx="86" cy="30" r="4"/></svg>
+        <h3>“the meat which perisheth”</h3>
+        <p>fills you for an afternoon, and you're hungry again by night</p>
+      </div>
+      <div class="jn06-last step">
+        <svg viewBox="0 0 120 70" aria-hidden="true"><ellipse class="jn06-loafshape" cx="60" cy="40" rx="54" ry="26"/></svg>
+        <h3>“meat which endureth”</h3>
+        <p>everlasting life, given by the Son of man</p>
+      </div>
+    </div>
+    <p class="note step">In the King James, <em>“meat”</em> means food of any kind. Jesus tells them plainly why they came back: <em>“ye did eat of the loaves, and were filled.”</em> They wanted another free meal, not Him.</p>
+    <p class="note step">We all chase things that fill us for a while: a high, a drink, money, a woman, a win. Every one of them perishes, and the hunger always comes back. <em>“Sealed”</em> means the Father has put His stamp of approval on Jesus. He is the real thing.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="28-29" data-hl="What shall we do, that we might work the works of God?|This is the work of God, that ye believe on him whom he hath sent"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="28" data-hl="What shall we do"></blockquote>
+    <h2 class="rise" style="--d:1">“What shall we do?”</h2>
+    <p class="note rise" style="--d:2">They asked for a list of works. Jesus gave them one item.</p>
+    <ul class="nots">
+      <li class="step"><span class="k">keep the rules better</span><span class="why">they'd been trying that for centuries</span></li>
+      <li class="step"><span class="k">clean up your life first</span><span class="why">you can't, not on your own</span></li>
+      <li class="step"><span class="k">earn enough good to outweigh the bad</span><span class="why">there's no such scale</span></li>
+      <li class="step yes"><span class="k">“that ye believe on him whom he hath sent”</span><span class="why">the work God asks is to trust His Son</span></li>
+    </ul>
+    <blockquote class="quote step"><p>“For by grace are ye saved through faith; and that not of yourselves: it is the gift of God: Not of works, lest any man should boast.”</p><cite>Ephesians 2:8–9</cite></blockquote>
+  </div>
+</section>
+
+<section class="slide verse" data-v="30-33" data-hl="Our fathers did eat manna in the desert|my Father giveth you the true bread from heaven"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="32" data-hl="the true bread from heaven"></blockquote>
+    <h2 class="rise" style="--d:1">Manna and the true bread</h2>
+    <div class="jn06-sky" aria-hidden="true">
+      <i style="--x:4%;--k:0"></i><i style="--x:12%;--k:3"></i><i style="--x:19%;--k:6"></i><i style="--x:27%;--k:1"></i><i style="--x:35%;--k:4"></i><i style="--x:42%;--k:7"></i><i style="--x:50%;--k:2"></i>
+      <i style="--x:58%;--k:5"></i><i style="--x:65%;--k:8"></i><i style="--x:72%;--k:0"></i><i style="--x:80%;--k:3"></i><i style="--x:87%;--k:6"></i><i style="--x:94%;--k:2"></i>
+    </div>
+    <div class="jn06-vs">
+      <div class="jn06-vs-head rise" style="--d:2"><span>Manna</span><span>Jesus, the bread of God</span></div>
+      <div class="step"><span>fed the body</span><span>gives life to the world <cite>v. 33</cite></span></div>
+      <div class="step"><span>fell new every morning</span><span>came down from heaven once, for all <cite>v. 38</cite></span></div>
+      <div class="step"><span>kept overnight, it “bred worms, and stank” <cite>Ex. 16:20</cite></span><span>endures unto everlasting life <cite>v. 27</cite></span></div>
+      <div class="step"><span>“your fathers did eat manna… and are dead” <cite>v. 49</cite></span><span>“shall live for ever” <cite>v. 58</cite></span></div>
+    </div>
+    <p class="note step">For forty years God fed Israel with manna, bread that showed up on the ground every morning. The crowd wanted Jesus to top that. He tells them manna was only a picture. He is what it pictured.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="34-36" data-hl="I am the bread of life|shall never hunger|shall never thirst"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="35" data-hl="I am the bread of life"></blockquote>
+    <div class="jn06-iam rise" style="--d:1">
+      <span class="jn06-big">I am</span>
+      <div class="jn06-now">the bread of life <cite>6:35</cite></div>
+      <div>the light of the world <cite>8:12</cite></div>
+      <div>the door <cite>10:9</cite></div>
+      <div>the good shepherd <cite>10:11</cite></div>
+      <div>the resurrection, and the life <cite>11:25</cite></div>
+      <div>the way, the truth, and the life <cite>14:6</cite></div>
+      <div>the true vine <cite>15:1</cite></div>
+    </div>
+    <p class="note step">This is the first of seven “I am” sayings in John. Bread was the most basic food there was. Jesus is saying: I'm not a side dish or a treat. I am what you need to live.</p>
+    <p class="note step"><em>“Never hunger… never thirst.”</em> Most of us know a hunger that nothing would fill. We kept feeding it, and it kept wanting more. That hunger was made for God. Come to Him, and that empty place finally gets filled.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="37-40" data-hl="him that cometh to me I will in no wise cast out|I should lose nothing|every one which seeth the Son, and believeth on him, may have everlasting life"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="37" data-hl="him that cometh to me I will in no wise cast out"></blockquote>
+    <h2 class="rise" style="--d:1">Held by His promise</h2>
+    <p class="note rise" style="--d:2"><em>“In no wise”</em> means <em>never, for any reason</em>. There is no sin, no relapse, no past bad enough that Jesus will turn away a man who comes to Him.</p>
+    <p class="note step">And once you come, He keeps you. It's the Father's will that He <em>“should lose nothing.”</em> Watch how many times He promises to raise them up “at the last day”:</p>
+    <div class="jn06-stamps step">
+      <span class="jn06-stamp" style="--k:0">raise it up again · v. 39</span>
+      <span class="jn06-stamp" style="--k:1">I will raise him up · v. 40</span>
+      <span class="jn06-stamp" style="--k:2">I will raise him up · v. 44</span>
+      <span class="jn06-stamp" style="--k:3">I will raise him up · v. 54</span>
+    </div>
+    <blockquote class="quote step"><p>“And I give unto them eternal life; and they shall never perish, neither shall any man pluck them out of my hand.”</p><cite>John 10:28</cite></blockquote>
+    <p class="note step">Your security doesn't rest on how tightly you hold Him. It rests on how tightly He holds you. Who is it for? <em>“Every one which seeth the Son, and believeth on him”</em> (v. 40).</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="41-43" data-hl="The Jews then murmured at him|Is not this Jesus, the son of Joseph"></section>
+<section class="slide verse" data-v="44-46" data-hl="except the Father which hath sent me draw him|Every man therefore that hath heard, and hath learned of the Father, cometh unto me"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="44" data-hl="except the Father which hath sent me draw him"></blockquote>
+    <div class="split">
+      <div class="stage">
+        <svg viewBox="0 0 400 400" role="img" aria-label="People all around the edge are drawn inward toward the cross in the center.">
+          <path class="jn06-cords" pathLength="1" d="M350 200 L280 200 M339 257 L274 231 M306 306 L257 257 M257 339 L231 274 M200 350 L200 280 M143 339 L169 274 M94 306 L143 257 M61 257 L126 231 M50 200 L120 200 M61 143 L126 169 M94 94 L143 143 M143 61 L169 126 M200 50 L200 120 M257 61 L231 126 M306 94 L257 143 M339 143 L274 169"/>
+          <g class="rise" style="--d:2">
+            <circle cx="200" cy="200" r="62" style="fill:color-mix(in srgb, var(--accent) 16%, transparent)"/>
+            <rect x="192" y="152" width="16" height="100" rx="2" style="fill:var(--accent)"/>
+            <rect x="166" y="176" width="68" height="15" rx="2" style="fill:var(--accent)"/>
+          </g>
+          <g class="rise" style="--d:3">
+            <circle class="jn06-person" cx="370" cy="200" r="9" style="--dx:-45px;--dy:0px"/>
+            <circle class="jn06-person" cx="357" cy="265" r="9" style="--dx:-42px;--dy:-17px"/>
+            <circle class="jn06-person" cx="320" cy="320" r="9" style="--dx:-32px;--dy:-32px"/>
+            <circle class="jn06-person" cx="265" cy="357" r="9" style="--dx:-17px;--dy:-42px"/>
+            <circle class="jn06-person" cx="200" cy="370" r="9" style="--dx:0px;--dy:-45px"/>
+            <circle class="jn06-person" cx="135" cy="357" r="9" style="--dx:17px;--dy:-42px"/>
+            <circle class="jn06-person" cx="80" cy="320" r="9" style="--dx:32px;--dy:-32px"/>
+            <circle class="jn06-person" cx="43" cy="265" r="9" style="--dx:42px;--dy:-17px"/>
+            <circle class="jn06-person" cx="30" cy="200" r="9" style="--dx:45px;--dy:0px"/>
+            <circle class="jn06-person" cx="43" cy="135" r="9" style="--dx:42px;--dy:17px"/>
+            <circle class="jn06-person" cx="80" cy="80" r="9" style="--dx:32px;--dy:32px"/>
+            <circle class="jn06-person" cx="135" cy="43" r="9" style="--dx:17px;--dy:42px"/>
+            <circle class="jn06-person" cx="200" cy="30" r="9" style="--dx:0px;--dy:45px"/>
+            <circle class="jn06-person" cx="265" cy="43" r="9" style="--dx:-17px;--dy:42px"/>
+            <circle class="jn06-person" cx="320" cy="80" r="9" style="--dx:-32px;--dy:32px"/>
+            <circle class="jn06-person" cx="357" cy="135" r="9" style="--dx:-42px;--dy:17px"/>
+          </g>
+        </svg>
+      </div>
+      <div>
+        <h2 class="rise" style="--d:1">Who does the Father draw?</h2>
+        <p class="note rise" style="--d:2">Nobody comes to Christ on his own steam. God always makes the first move: He calls, convicts, and pulls a man toward His Son.</p>
+        <p class="note step jn06-pullgo">And who does He draw? Jesus answers that Himself: <em>“And I, if I be lifted up from the earth, will draw all men unto me”</em> (John 12:32). Verse 45 says <em>“every man”</em> who hears and learns from the Father comes.</p>
+        <p class="note step">If you feel a pull toward Jesus right now, that is God drawing you. Don't fight it. Come.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="slide verse" data-v="47-51" data-hl="He that believeth on me hath everlasting life|I am the living bread which came down from heaven|my flesh, which I will give for the life of the world"></section>
+<section class="slide verse" data-v="52-55" data-hl="How can this man give us his flesh to eat?|Except ye eat the flesh of the Son of man, and drink his blood"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="52" data-hl="How can this man give us his flesh to eat?"></blockquote>
+    <h2 class="rise" style="--d:1">What does “eat my flesh” mean?</h2>
+    <p class="note rise" style="--d:2">Put two of His sentences side by side. Same promise, same result. One says it plainly, the other paints a picture:</p>
+    <div class="jn06-match">
+      <span class="jn06-mh rise" style="--d:3">Plain words · verse 40</span><b class="rise" style="--d:3"></b><span class="jn06-mh rise" style="--d:3">Picture words · verse 54</span>
+      <span class="step">“every one which seeth the Son, and believeth on him”</span><b class="step">=</b><span class="jn06-pic step">“Whoso eateth my flesh, and drinketh my blood”</span>
+      <span class="step">“may have everlasting life”</span><b class="step">=</b><span class="jn06-pic step">“hath eternal life”</span>
+      <span class="step">“I will raise him up at the last day”</span><b class="step">=</b><span class="jn06-pic step">“I will raise him up at the last day”</span>
+    </div>
+    <p class="note step">To eat His flesh and drink His blood is to <em>believe on Him</em>: to take His death on the cross for you and make it your own, the way food becomes part of you. He isn't talking about anything you chew, and it isn't a ceremony that saves you. He says it Himself in verse 63: <em>“the words that I speak unto you, they are spirit.”</em></p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="56-59" data-hl="dwelleth in me, and I in him|he that eateth of this bread shall live for ever"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="56" data-hl="dwelleth in me, and I in him"></blockquote>
+    <h2 class="rise" style="--d:1">He in me, and I in Him</h2>
+    <p class="saying rise" style="--d:2">Not visiting. <em>Dwelling.</em></p>
+    <p class="note rise" style="--d:3">Food doesn't stay on the plate. Once you eat it, it lives in you and gives you strength. Jesus says it's like that with Him. The man who believes lives <em>in</em> Christ, and Christ lives <em>in</em> him, by His Holy Spirit, from the moment he believes.</p>
+    <p class="note step">And you don't eat once a year. You eat every day. Feeding on Jesus is daily: in His Word, in prayer, in remembering what He did for you.</p>
+    <p class="note step">He said all this in the synagogue at Capernaum, His home base. These were the neighbors who had watched Him heal their sick.</p>
+  </div>
+</section>
+
+<!-- ======================= PART FOUR: TO WHOM SHALL WE GO? ======================= -->
+<section class="slide part">
+  <div class="inner">
+    <p class="part-n rise">Part four</p>
+    <h2 class="rise" style="--d:1">To whom shall we go?</h2>
+    <p class="range rise" style="--d:2">Verses 60–71</p>
+    <div class="rule"></div>
+    <p class="hook rise" style="--d:4">The crowd thins out. Jesus turns to the twelve.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="60-62" data-hl="This is an hard saying; who can hear it?"></section>
+<section class="slide verse" data-v="63-65" data-hl="It is the spirit that quickeneth; the flesh profiteth nothing|they are spirit, and they are life"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="63" data-hl="the flesh profiteth nothing"></blockquote>
+    <h2 class="rise" style="--d:1">A hard saying</h2>
+    <p class="note rise" style="--d:2">“Hard” here doesn't mean hard to understand. It means <em>harsh, hard to swallow</em>. They understood enough to be offended.</p>
+    <p class="note step"><em>“Quickeneth”</em> means <em>makes alive</em>. <em>“Profiteth nothing”</em> means <em>is no help at all</em>. Your own strength, your willpower, your best effort can't make a dead man alive. Only the Spirit of God can.</p>
+    <p class="note step">Some of us tried to quit on willpower a dozen times. Jesus isn't asking you to try harder. He's offering you life you can't make yourself, through His words, which <em>“are spirit, and they are life.”</em></p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="66-69" data-hl="many of his disciples went back, and walked no more with him|Will ye also go away?|Lord, to whom shall we go? thou hast the words of eternal life"></section>
+
+<section class="slide ex">
+  <div class="inner jn06-left">
+    <blockquote class="quote rise" data-q="68" data-hl="Lord, to whom shall we go?"></blockquote>
+    <h2 class="rise" style="--d:1">From thousands to twelve</h2>
+    <div class="jn06-tally">
+      <div class="rise" style="--d:2"><b>≈ 5,000</b><span>ate the bread · v. 10</span></div>
+      <div class="step jn06-leave"><b>“many”</b><span>went back · v. 66</span></div>
+      <div class="step"><b>12</b><span>stayed · v. 67</span></div>
+    </div>
+    <div class="jn06-few rise" style="--d:3" aria-label="Sixty dots fade out until twelve are left"><i></i><i></i><i></i><i class="jn06-keep"></i><i></i><i></i><i></i><i></i><i></i><i class="jn06-keep"></i><i></i><i></i><i></i><i class="jn06-keep"></i><i></i><i></i><i class="jn06-keep"></i><i></i><i></i><i></i><i></i><i></i><i class="jn06-keep"></i><i></i><i></i><i></i><i></i><i class="jn06-keep"></i><i></i><i></i><i></i><i></i><i></i><i></i><i class="jn06-keep"></i><i></i><i></i><i></i><i class="jn06-keep"></i><i></i><i></i><i></i><i></i><i></i><i></i><i class="jn06-keep"></i><i></i><i class="jn06-keep"></i><i></i><i></i><i></i><i></i><i class="jn06-keep"></i><i></i><i></i><i></i><i class="jn06-keep"></i><i></i><i></i><i></i></div>
+    <p class="note step">When following Jesus got hard, the crowd went home. Jesus didn't chase them or soften what He said. He turned to the twelve: <em>“Will ye also go away?”</em></p>
+    <p class="note step">Peter didn't have it all figured out. But he knew this: there's nowhere else to go. Back to the old life? We've been there. We know how it ends. <em>“Thou hast the words of eternal life.”</em></p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="70-71" data-hl="one of you is a devil|Judas Iscariot"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="70" data-hl="one of you is a devil"></blockquote>
+    <h2 class="rise" style="--d:1">Close, but not in</h2>
+    <p class="note rise" style="--d:2">“Devil” here is <span class="gk">diabolos</span>: <em>slanderer, accuser, adversary</em>. Jesus is saying one of His own twelve was working for the other side.</p>
+    <p class="note step">Judas was chosen to be one of the twelve. He heard every sermon, saw the bread multiply, and carried the money bag. But verse 64 says he never believed. Being around Jesus isn't the same as trusting Him.</p>
+    <p class="note step">And notice: Jesus knew all along, and He still washed Judas' feet and offered him bread at the last supper. The door stayed open to the very end.</p>
+  </div>
+</section>
+
+<!-- ======================= CLOSING ======================= -->
+<section class="slide remember">
+  <div class="inner">
+    <h2 class="rise">Points to remember</h2>
+    <ol class="seeds">
+      <li class="step"><span class="topic">Who Jesus is</span><span class="seed-q">“I am the bread of life” <cite>6:35</cite></span><span class="take">Jesus is what we need to live. Only He fills the hunger nothing else can.</span></li>
+      <li class="step"><span class="topic">A little in His hands</span><span class="seed-q">“But what are they among so many?” <cite>6:9</cite></span><span class="take">Bring Him what little you have. He feeds thousands with it, and wastes nothing.</span></li>
+      <li class="step"><span class="topic">Fear</span><span class="seed-q">“It is I; be not afraid” <cite>6:20</cite></span><span class="take">He sees you in the dark, and He is already on His way.</span></li>
+      <li class="step"><span class="topic">Salvation</span><span class="seed-q">“That ye believe on him whom he hath sent” <cite>6:29</cite></span><span class="take">The work God asks is to believe on His Son. Not works, but faith.</span></li>
+      <li class="step"><span class="topic">Security</span><span class="seed-q">“I will in no wise cast out” <cite>6:37</cite></span><span class="take">He turns away no one who comes, and loses no one He receives.</span></li>
+      <li class="step"><span class="topic">Following</span><span class="seed-q">“Lord, to whom shall we go?” <cite>6:68</cite></span><span class="take">When it gets hard, there's nowhere else to go. He has the words of eternal life.</span></li>
+    </ol>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 1 of 6</p>
+      <span class="topic">Who Jesus is</span>
+      <h2>What does Jesus mean when He says, “I am the bread of life”?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="33"></blockquote>
+      <blockquote class="quote step" data-q="35"></blockquote>
+      <blockquote class="quote step" data-q="51" data-hl="I am the living bread which came down from heaven"></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>Bread is what you need to stay alive. Jesus came down from heaven to give real, everlasting life, and He gave His own flesh on the cross to do it. Whoever comes to Him and believes on Him finds the hunger of the soul finally satisfied.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 2 of 6</p>
+      <span class="topic">A little in His hands</span>
+      <h2>What can Jesus do with the little we bring Him?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="9"></blockquote>
+      <blockquote class="quote step" data-q="11" data-hl="as much as they would"></blockquote>
+      <blockquote class="quote step" data-q="13" data-hl="filled twelve baskets"></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>Far more than we can imagine. Five small loaves and two fish fed about five thousand men, and there were twelve baskets left over. What we bring is never enough on its own. It doesn't have to be. In His hands it becomes more than enough, and He wastes none of it.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 3 of 6</p>
+      <span class="topic">Fear</span>
+      <h2>What does Jesus say to us in the storm?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="17" data-hl="it was now dark, and Jesus was not come to them"></blockquote>
+      <blockquote class="quote step" data-q="19" data-hl="they see Jesus walking on the sea"></blockquote>
+      <blockquote class="quote step" data-q="20"></blockquote>
+      <blockquote class="quote step" data-q="21" data-hl="immediately the ship was at the land"></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>“It is I; be not afraid.” The storm came even though they were obeying Him, and for a while it felt like He wasn't coming. But He came walking over the very waves that scared them. When they took Him into the boat, they were safe on shore.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 4 of 6</p>
+      <span class="topic">Salvation</span>
+      <h2>What work does God want from us?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="28"></blockquote>
+      <blockquote class="quote step" data-q="29"></blockquote>
+      <blockquote class="quote step" data-q="47"></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>To believe on Jesus, the One the Father sent. The crowd wanted a list of things to do. Jesus gave them one: trust Him. Whoever believes on Him has everlasting life right now. It's a gift, received by faith, not wages earned by works.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 5 of 6</p>
+      <span class="topic">Security</span>
+      <h2>Will Jesus ever cast out someone who comes to Him?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="37" data-hl="him that cometh to me I will in no wise cast out"></blockquote>
+      <blockquote class="quote step" data-q="39" data-hl="I should lose nothing"></blockquote>
+      <blockquote class="quote step" data-q="40"></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>Never. “In no wise” means not for any reason. Anyone who comes to Him is received, and once received, He loses none of them. He promises again and again to raise each one up at the last day. Our security rests on His grip, not ours.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 6 of 6</p>
+      <span class="topic">Following</span>
+      <h2>Why did Peter stay when so many walked away?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="66"></blockquote>
+      <blockquote class="quote step" data-q="67"></blockquote>
+      <blockquote class="quote step" data-q="68"></blockquote>
+      <blockquote class="quote step" data-q="69"></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>Because he knew who Jesus was: the Christ, the Son of the living God, the only One with the words of eternal life. Peter didn't understand everything. But he knew there was nowhere else to go. When following Jesus gets hard, going back to the old life is no answer at all.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide prayer">
+  <div class="inner">
+    <div class="emblem rise"></div>
+    <h2 class="rise" style="--d:1">Prayer requests</h2>
+    <p class="ask-line rise" style="--d:2">What can we pray about for you today?</p>
+    <blockquote class="quote rise" style="--d:4"><p>“Casting all your care upon him; for he careth for you.”</p><cite>1 Peter 5:7</cite></blockquote>
+  </div>
+</section>
+
+</main>
+
+<script>
+// King James Version, John chapter 6
+const V = {
+  1: "After these things Jesus went over the sea of Galilee, which is the sea of Tiberias.",
+  2: "And a great multitude followed him, because they saw his miracles which he did on them that were diseased.",
+  3: "And Jesus went up into a mountain, and there he sat with his disciples.",
+  4: "And the passover, a feast of the Jews, was nigh.",
+  5: "When Jesus then lifted up his eyes, and saw a great company come unto him, he saith unto Philip, Whence shall we buy bread, that these may eat?",
+  6: "And this he said to prove him: for he himself knew what he would do.",
+  7: "Philip answered him, Two hundred pennyworth of bread is not sufficient for them, that every one of them may take a little.",
+  8: "One of his disciples, Andrew, Simon Peter’s brother, saith unto him,",
+  9: "There is a lad here, which hath five barley loaves, and two small fishes: but what are they among so many?",
+  10: "And Jesus said, Make the men sit down. Now there was much grass in the place. So the men sat down, in number about five thousand.",
+  11: "And Jesus took the loaves; and when he had given thanks, he distributed to the disciples, and the disciples to them that were set down; and likewise of the fishes as much as they would.",
+  12: "When they were filled, he said unto his disciples, Gather up the fragments that remain, that nothing be lost.",
+  13: "Therefore they gathered them together, and filled twelve baskets with the fragments of the five barley loaves, which remained over and above unto them that had eaten.",
+  14: "Then those men, when they had seen the miracle that Jesus did, said, This is of a truth that prophet that should come into the world.",
+  15: "When Jesus therefore perceived that they would come and take him by force, to make him a king, he departed again into a mountain himself alone.",
+  16: "And when even was now come, his disciples went down unto the sea,",
+  17: "And entered into a ship, and went over the sea toward Capernaum. And it was now dark, and Jesus was not come to them.",
+  18: "And the sea arose by reason of a great wind that blew.",
+  19: "So when they had rowed about five and twenty or thirty furlongs, they see Jesus walking on the sea, and drawing nigh unto the ship: and they were afraid.",
+  20: "But he saith unto them, It is I; be not afraid.",
+  21: "Then they willingly received him into the ship: and immediately the ship was at the land whither they went.",
+  22: "The day following, when the people which stood on the other side of the sea saw that there was none other boat there, save that one whereinto his disciples were entered, and that Jesus went not with his disciples into the boat, but that his disciples were gone away alone;",
+  23: "(Howbeit there came other boats from Tiberias nigh unto the place where they did eat bread, after that the Lord had given thanks:)",
+  24: "When the people therefore saw that Jesus was not there, neither his disciples, they also took shipping, and came to Capernaum, seeking for Jesus.",
+  25: "And when they had found him on the other side of the sea, they said unto him, Rabbi, when camest thou hither?",
+  26: "Jesus answered them and said, Verily, verily, I say unto you, Ye seek me, not because ye saw the miracles, but because ye did eat of the loaves, and were filled.",
+  27: "Labour not for the meat which perisheth, but for that meat which endureth unto everlasting life, which the Son of man shall give unto you: for him hath God the Father sealed.",
+  28: "Then said they unto him, What shall we do, that we might work the works of God?",
+  29: "Jesus answered and said unto them, This is the work of God, that ye believe on him whom he hath sent.",
+  30: "They said therefore unto him, What sign shewest thou then, that we may see, and believe thee? what dost thou work?",
+  31: "Our fathers did eat manna in the desert; as it is written, He gave them bread from heaven to eat.",
+  32: "Then Jesus said unto them, Verily, verily, I say unto you, Moses gave you not that bread from heaven; but my Father giveth you the true bread from heaven.",
+  33: "For the bread of God is he which cometh down from heaven, and giveth life unto the world.",
+  34: "Then said they unto him, Lord, evermore give us this bread.",
+  35: "And Jesus said unto them, I am the bread of life: he that cometh to me shall never hunger; and he that believeth on me shall never thirst.",
+  36: "But I said unto you, That ye also have seen me, and believe not.",
+  37: "All that the Father giveth me shall come to me; and him that cometh to me I will in no wise cast out.",
+  38: "For I came down from heaven, not to do mine own will, but the will of him that sent me.",
+  39: "And this is the Father’s will which hath sent me, that of all which he hath given me I should lose nothing, but should raise it up again at the last day.",
+  40: "And this is the will of him that sent me, that every one which seeth the Son, and believeth on him, may have everlasting life: and I will raise him up at the last day.",
+  41: "The Jews then murmured at him, because he said, I am the bread which came down from heaven.",
+  42: "And they said, Is not this Jesus, the son of Joseph, whose father and mother we know? how is it then that he saith, I came down from heaven?",
+  43: "Jesus therefore answered and said unto them, Murmur not among yourselves.",
+  44: "No man can come to me, except the Father which hath sent me draw him: and I will raise him up at the last day.",
+  45: "It is written in the prophets, And they shall be all taught of God. Every man therefore that hath heard, and hath learned of the Father, cometh unto me.",
+  46: "Not that any man hath seen the Father, save he which is of God, he hath seen the Father.",
+  47: "Verily, verily, I say unto you, He that believeth on me hath everlasting life.",
+  48: "I am that bread of life.",
+  49: "Your fathers did eat manna in the wilderness, and are dead.",
+  50: "This is the bread which cometh down from heaven, that a man may eat thereof, and not die.",
+  51: "I am the living bread which came down from heaven: if any man eat of this bread, he shall live for ever: and the bread that I will give is my flesh, which I will give for the life of the world.",
+  52: "The Jews therefore strove among themselves, saying, How can this man give us his flesh to eat?",
+  53: "Then Jesus said unto them, Verily, verily, I say unto you, Except ye eat the flesh of the Son of man, and drink his blood, ye have no life in you.",
+  54: "Whoso eateth my flesh, and drinketh my blood, hath eternal life; and I will raise him up at the last day.",
+  55: "For my flesh is meat indeed, and my blood is drink indeed.",
+  56: "He that eateth my flesh, and drinketh my blood, dwelleth in me, and I in him.",
+  57: "As the living Father hath sent me, and I live by the Father: so he that eateth me, even he shall live by me.",
+  58: "This is that bread which came down from heaven: not as your fathers did eat manna, and are dead: he that eateth of this bread shall live for ever.",
+  59: "These things said he in the synagogue, as he taught in Capernaum.",
+  60: "Many therefore of his disciples, when they had heard this, said, This is an hard saying; who can hear it?",
+  61: "When Jesus knew in himself that his disciples murmured at it, he said unto them, Doth this offend you?",
+  62: "What and if ye shall see the Son of man ascend up where he was before?",
+  63: "It is the spirit that quickeneth; the flesh profiteth nothing: the words that I speak unto you, they are spirit, and they are life.",
+  64: "But there are some of you that believe not. For Jesus knew from the beginning who they were that believed not, and who should betray him.",
+  65: "And he said, Therefore said I unto you, that no man can come unto me, except it were given unto him of my Father.",
+  66: "From that time many of his disciples went back, and walked no more with him.",
+  67: "Then said Jesus unto the twelve, Will ye also go away?",
+  68: "Then Simon Peter answered him, Lord, to whom shall we go? thou hast the words of eternal life.",
+  69: "And we believe and are sure that thou art that Christ, the Son of the living God.",
+  70: "Jesus answered them, Have not I chosen you twelve, and one of you is a devil?",
+  71: "He spake of Judas Iscariot the son of Simon: for he it was that should betray him, being one of the twelve."
+};
+const BOOK = "John 6";
+</script>
+<script src="../assets/deck.js"></script>
+</body>
+</html>

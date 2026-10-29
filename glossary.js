@@ -12,7 +12,28 @@ window.GLOSSARY = [
     [ 17, 29, 36, 37, 38, 42, 43, 45, 47, 48, 50 ] ],
    [
     "John", 2,
-    [ 1, 2, 3, 4, 7, 11, 13, 19, 22, 24 ] ] ]
+    [ 1, 2, 3, 4, 7, 11, 13, 19, 22, 24 ] ],
+   [
+    "John", 3,
+    [ 2, 3, 5, 10, 22 ] ],
+   [
+    "John", 5,
+    [ 1, 6, 8, 13, 14, 15, 16, 17, 19 ] ],
+   [
+    "John", 6,
+    [ 1, 3, 5, 10, 11, 14, 15, 17, 19, 22, 24, 26, 29, 32, 35, 42, 43, 53, 61, 64, 67, 70 ] ],
+   [
+    "John", 7,
+    [ 1, 6, 14, 16, 21, 28, 33, 37, 39, 50 ] ],
+   [
+    "John", 8,
+    [ 1, 6, 9, 10, 11, 12, 14, 19, 20, 21, 25, 28, 31, 34, 39, 42, 49, 54, 58, 59 ] ],
+   [
+    "John", 9,
+    [ 1, 3, 11, 14, 35, 37, 39, 41 ] ],
+   [
+    "John", 10,
+    [ 6, 7, 23, 25, 32, 34 ] ] ]
  },
  {
   "id": "john-the-baptist",
@@ -21,7 +42,16 @@ window.GLOSSARY = [
   "refs": [
    [
     "John", 1,
-    [ 6, 15, 19, 26, 28, 29, 32, 35, 40 ] ] ]
+    [ 6, 15, 19, 26, 28, 29, 32, 35, 40 ] ],
+   [
+    "John", 3,
+    [ 23, 24, 25, 26, 27 ] ],
+   [
+    "John", 5,
+    [ 33, 36 ] ],
+   [
+    "John", 10,
+    [ 40, 41 ] ] ]
  },
  {
   "id": "mary",
@@ -30,7 +60,13 @@ window.GLOSSARY = [
   "refs": [
    [
     "John", 2,
-    [ 1, 3, 5, 12 ] ] ]
+    [ 1, 3, 5, 12 ] ],
+   [
+    "John", 3,
+    [ 4 ] ],
+   [
+    "John", 6,
+    [ 42 ] ] ]
  },
  {
   "id": "andrew",
@@ -39,7 +75,10 @@ window.GLOSSARY = [
   "refs": [
    [
     "John", 1,
-    [ 40, 44 ] ] ]
+    [ 40, 44 ] ],
+   [
+    "John", 6,
+    [ 8 ] ] ]
  },
  {
   "id": "simon-peter",
@@ -48,7 +87,10 @@ window.GLOSSARY = [
   "refs": [
    [
     "John", 1,
-    [ 40, 41, 42, 44 ] ] ]
+    [ 40, 41, 42, 44 ] ],
+   [
+    "John", 6,
+    [ 8, 68, 71 ] ] ]
  },
  {
   "id": "philip",
@@ -57,7 +99,10 @@ window.GLOSSARY = [
   "refs": [
    [
     "John", 1,
-    [ 43, 44, 45, 46, 48 ] ] ]
+    [ 43, 44, 45, 46, 48 ] ],
+   [
+    "John", 6,
+    [ 5, 7 ] ] ]
  },
  {
   "id": "nathanael",
@@ -75,7 +120,25 @@ window.GLOSSARY = [
   "refs": [
    [
     "John", 1,
-    [ 17, 45 ] ] ]
+    [ 17, 45 ] ],
+   [
+    "John", 3,
+    [ 14 ] ],
+   [
+    "John", 5,
+    [ 45, 46 ] ],
+   [
+    "John", 6,
+    [ 32 ] ],
+   [
+    "John", 7,
+    [ 19, 22, 23 ] ],
+   [
+    "John", 8,
+    [ 5 ] ],
+   [
+    "John", 9,
+    [ 28, 29 ] ] ]
  },
  {
   "id": "elijah",
@@ -102,7 +165,10 @@ window.GLOSSARY = [
   "refs": [
    [
     "John", 1,
-    [ 45 ] ] ]
+    [ 45 ] ],
+   [
+    "John", 6,
+    [ 42 ] ] ]
  },
  {
   "id": "jona",
@@ -123,7 +189,22 @@ window.GLOSSARY = [
     [ 14, 18 ] ],
    [
     "John", 2,
-    [ 16 ] ] ]
+    [ 16 ] ],
+   [
+    "John", 3,
+    [ 35 ] ],
+   [
+    "John", 5,
+    [ 17, 18, 19, 20, 21, 22, 23, 26, 30, 36, 37, 43, 45 ] ],
+   [
+    "John", 6,
+    [ 27, 32, 37, 39, 44, 45, 46, 57, 65 ] ],
+   [
+    "John", 8,
+    [ 16, 18, 19, 27, 28, 29, 38, 41, 42, 49, 54 ] ],
+   [
+    "John", 10,
+    [ 15, 17, 18, 25, 29, 30, 32, 36, 37, 38 ] ] ]
  },
  {
   "id": "holy-spirit",
@@ -132,7 +213,13 @@ window.GLOSSARY = [
   "refs": [
    [
     "John", 1,
-    [ 32, 33 ] ] ]
+    [ 32, 33 ] ],
+   [
+    "John", 3,
+    [ 5, 6, 8, 34 ] ],
+   [
+    "John", 7,
+    [ 39 ] ] ]
  },
  {
   "id": "disciples",
@@ -144,7 +231,22 @@ window.GLOSSARY = [
     [ 35, 37 ] ],
    [
     "John", 2,
-    [ 2, 11, 12, 17, 22 ] ] ]
+    [ 2, 11, 12, 17, 22 ] ],
+   [
+    "John", 3,
+    [ 22, 25 ] ],
+   [
+    "John", 6,
+    [ 3, 8, 11, 12, 16, 22, 24, 60, 61, 66 ] ],
+   [
+    "John", 7,
+    [ 3 ] ],
+   [
+    "John", 8,
+    [ 31 ] ],
+   [
+    "John", 9,
+    [ 2, 27, 28 ] ] ]
  },
  {
   "id": "brethren",
@@ -153,7 +255,10 @@ window.GLOSSARY = [
   "refs": [
    [
     "John", 2,
-    [ 12 ] ] ]
+    [ 12 ] ],
+   [
+    "John", 7,
+    [ 3, 5, 10 ] ] ]
  },
  {
   "id": "pharisees",
@@ -162,7 +267,19 @@ window.GLOSSARY = [
   "refs": [
    [
     "John", 1,
-    [ 24 ] ] ]
+    [ 24 ] ],
+   [
+    "John", 3,
+    [ 1 ] ],
+   [
+    "John", 7,
+    [ 32, 45, 47, 48 ] ],
+   [
+    "John", 8,
+    [ 3, 13 ] ],
+   [
+    "John", 9,
+    [ 13, 15, 16, 40 ] ] ]
  },
  {
   "id": "priests-and-levites",
@@ -183,7 +300,28 @@ window.GLOSSARY = [
     [ 19 ] ],
    [
     "John", 2,
-    [ 6, 13, 18, 20 ] ] ]
+    [ 6, 13, 18, 20 ] ],
+   [
+    "John", 3,
+    [ 1, 25 ] ],
+   [
+    "John", 5,
+    [ 1, 10, 15, 16, 18 ] ],
+   [
+    "John", 6,
+    [ 4, 41, 52 ] ],
+   [
+    "John", 7,
+    [ 1, 2, 11, 13, 15, 35 ] ],
+   [
+    "John", 8,
+    [ 22, 31, 48, 52, 57 ] ],
+   [
+    "John", 9,
+    [ 18, 22 ] ],
+   [
+    "John", 10,
+    [ 19, 24, 31, 33 ] ] ]
  },
  {
   "id": "servants",
@@ -210,7 +348,10 @@ window.GLOSSARY = [
   "refs": [
    [
     "John", 2,
-    [ 9 ] ] ]
+    [ 9 ] ],
+   [
+    "John", 3,
+    [ 29 ] ] ]
  },
  {
   "id": "money-changers",
@@ -234,7 +375,10 @@ window.GLOSSARY = [
     [ 1 ] ],
    [
     "Proverbs", 25,
-    [ 1 ] ] ]
+    [ 1 ] ],
+   [
+    "John", 10,
+    [ 23 ] ] ]
  },
  {
   "id": "david",
@@ -243,7 +387,10 @@ window.GLOSSARY = [
   "refs": [
    [
     "Proverbs", 1,
-    [ 1 ] ] ]
+    [ 1 ] ],
+   [
+    "John", 7,
+    [ 42 ] ] ]
  },
  {
   "id": "hezekiah",
@@ -384,7 +531,16 @@ window.GLOSSARY = [
     [ 19 ] ],
    [
     "John", 2,
-    [ 13, 23 ] ] ]
+    [ 13, 23 ] ],
+   [
+    "John", 5,
+    [ 1, 2 ] ],
+   [
+    "John", 7,
+    [ 25 ] ],
+   [
+    "John", 10,
+    [ 22 ] ] ]
  },
  {
   "id": "bethabara",
@@ -402,7 +558,13 @@ window.GLOSSARY = [
   "refs": [
    [
     "John", 1,
-    [ 28 ] ] ]
+    [ 28 ] ],
+   [
+    "John", 3,
+    [ 26 ] ],
+   [
+    "John", 10,
+    [ 40 ] ] ]
  },
  {
   "id": "wilderness",
@@ -414,7 +576,13 @@ window.GLOSSARY = [
     [ 19 ] ],
    [
     "John", 1,
-    [ 23 ] ] ]
+    [ 23 ] ],
+   [
+    "John", 3,
+    [ 14 ] ],
+   [
+    "John", 6,
+    [ 49 ] ] ]
  },
  {
   "id": "galilee",
@@ -426,7 +594,13 @@ window.GLOSSARY = [
     [ 43 ] ],
    [
     "John", 2,
-    [ 1, 11 ] ] ]
+    [ 1, 11 ] ],
+   [
+    "John", 6,
+    [ 1 ] ],
+   [
+    "John", 7,
+    [ 1, 9, 41, 52 ] ] ]
  },
  {
   "id": "bethsaida",
@@ -462,7 +636,10 @@ window.GLOSSARY = [
   "refs": [
    [
     "John", 2,
-    [ 12 ] ] ]
+    [ 12 ] ],
+   [
+    "John", 6,
+    [ 17, 24, 59 ] ] ]
  },
  {
   "id": "temple",
@@ -471,7 +648,19 @@ window.GLOSSARY = [
   "refs": [
    [
     "John", 2,
-    [ 14, 15, 19, 20, 21 ] ] ]
+    [ 14, 15, 19, 20, 21 ] ],
+   [
+    "John", 5,
+    [ 14 ] ],
+   [
+    "John", 7,
+    [ 14, 28 ] ],
+   [
+    "John", 8,
+    [ 2, 20, 59 ] ],
+   [
+    "John", 10,
+    [ 23 ] ] ]
  },
  {
   "id": "israel",
@@ -483,7 +672,10 @@ window.GLOSSARY = [
     [ 1 ] ],
    [
     "John", 1,
-    [ 31, 49 ] ] ]
+    [ 31, 49 ] ],
+   [
+    "John", 3,
+    [ 10 ] ] ]
  },
  {
   "id": "heaven",
@@ -501,7 +693,13 @@ window.GLOSSARY = [
     [ 4 ] ],
    [
     "John", 1,
-    [ 32, 51 ] ] ]
+    [ 32, 51 ] ],
+   [
+    "John", 3,
+    [ 13, 27, 31 ] ],
+   [
+    "John", 6,
+    [ 31, 32, 33, 38, 41, 42, 50, 51, 58 ] ] ]
  },
  {
   "id": "hell",
@@ -591,7 +789,19 @@ window.GLOSSARY = [
     [ 15 ] ],
    [
     "John", 1,
-    [ 4, 5, 7, 8, 9 ] ] ]
+    [ 4, 5, 7, 8, 9 ] ],
+   [
+    "John", 3,
+    [ 19, 20, 21 ] ],
+   [
+    "John", 5,
+    [ 35 ] ],
+   [
+    "John", 8,
+    [ 12 ] ],
+   [
+    "John", 9,
+    [ 5 ] ] ]
  },
  {
   "id": "darkness",
@@ -609,7 +819,13 @@ window.GLOSSARY = [
     [ 20 ] ],
    [
     "John", 1,
-    [ 5 ] ] ]
+    [ 5 ] ],
+   [
+    "John", 3,
+    [ 19 ] ],
+   [
+    "John", 8,
+    [ 12 ] ] ]
  },
  {
   "id": "grace",
@@ -663,7 +879,22 @@ window.GLOSSARY = [
     [ 23 ] ],
    [
     "John", 1,
-    [ 14, 17 ] ] ]
+    [ 14, 17 ] ],
+   [
+    "John", 3,
+    [ 21 ] ],
+   [
+    "John", 5,
+    [ 33 ] ],
+   [
+    "John", 6,
+    [ 14 ] ],
+   [
+    "John", 7,
+    [ 40 ] ],
+   [
+    "John", 8,
+    [ 32, 40, 44, 45, 46 ] ] ]
  },
  {
   "id": "glory",
@@ -699,7 +930,13 @@ window.GLOSSARY = [
     [ 14 ] ],
    [
     "John", 2,
-    [ 11 ] ] ]
+    [ 11 ] ],
+   [
+    "John", 7,
+    [ 18 ] ],
+   [
+    "John", 8,
+    [ 50 ] ] ]
  },
  {
   "id": "the-law",
@@ -735,7 +972,16 @@ window.GLOSSARY = [
     [ 5, 26 ] ],
    [
     "John", 1,
-    [ 17, 45 ] ] ]
+    [ 17, 45 ] ],
+   [
+    "John", 7,
+    [ 19, 23, 49, 51 ] ],
+   [
+    "John", 8,
+    [ 5, 17 ] ],
+   [
+    "John", 10,
+    [ 34 ] ] ]
  },
  {
   "id": "only-begotten",
@@ -744,7 +990,10 @@ window.GLOSSARY = [
   "refs": [
    [
     "John", 1,
-    [ 14, 18 ] ] ]
+    [ 14, 18 ] ],
+   [
+    "John", 3,
+    [ 16, 18 ] ] ]
  },
  {
   "id": "lamb-of-god",
@@ -762,7 +1011,22 @@ window.GLOSSARY = [
   "refs": [
    [
     "John", 1,
-    [ 17, 20, 25, 41 ] ] ]
+    [ 17, 20, 25, 41 ] ],
+   [
+    "John", 3,
+    [ 28 ] ],
+   [
+    "John", 6,
+    [ 69 ] ],
+   [
+    "John", 7,
+    [ 26, 27, 31, 41, 42 ] ],
+   [
+    "John", 9,
+    [ 22 ] ],
+   [
+    "John", 10,
+    [ 24 ] ] ]
  },
  {
   "id": "son-of-god",
@@ -771,7 +1035,19 @@ window.GLOSSARY = [
   "refs": [
    [
     "John", 1,
-    [ 34, 49 ] ] ]
+    [ 34, 49 ] ],
+   [
+    "John", 3,
+    [ 18 ] ],
+   [
+    "John", 5,
+    [ 25 ] ],
+   [
+    "John", 9,
+    [ 35 ] ],
+   [
+    "John", 10,
+    [ 36 ] ] ]
  },
  {
   "id": "son-of-man",
@@ -780,7 +1056,19 @@ window.GLOSSARY = [
   "refs": [
    [
     "John", 1,
-    [ 51 ] ] ]
+    [ 51 ] ],
+   [
+    "John", 3,
+    [ 13, 14 ] ],
+   [
+    "John", 5,
+    [ 27 ] ],
+   [
+    "John", 6,
+    [ 27, 53, 62 ] ],
+   [
+    "John", 8,
+    [ 28 ] ] ]
  },
  {
   "id": "king-of-israel",
@@ -798,7 +1086,13 @@ window.GLOSSARY = [
   "refs": [
    [
     "John", 1,
-    [ 38, 49 ] ] ]
+    [ 38, 49 ] ],
+   [
+    "John", 3,
+    [ 2, 26 ] ],
+   [
+    "John", 6,
+    [ 25 ] ] ]
  },
  {
   "id": "believe",
@@ -816,7 +1110,28 @@ window.GLOSSARY = [
     [ 7, 12, 50 ] ],
    [
     "John", 2,
-    [ 11, 22, 23 ] ] ]
+    [ 11, 22, 23 ] ],
+   [
+    "John", 3,
+    [ 12, 15, 16, 18, 36 ] ],
+   [
+    "John", 5,
+    [ 24, 38, 44, 46, 47 ] ],
+   [
+    "John", 6,
+    [ 29, 30, 35, 36, 40, 47, 64, 69 ] ],
+   [
+    "John", 7,
+    [ 5, 31, 38, 39, 48 ] ],
+   [
+    "John", 8,
+    [ 24, 30, 31, 45, 46 ] ],
+   [
+    "John", 9,
+    [ 18, 35, 36, 38 ] ],
+   [
+    "John", 10,
+    [ 25, 26, 37, 38, 42 ] ] ]
  },
  {
   "id": "witness",
@@ -846,7 +1161,19 @@ window.GLOSSARY = [
     [ 18 ] ],
    [
     "John", 1,
-    [ 7, 8, 15, 19, 32, 34 ] ] ]
+    [ 7, 8, 15, 19, 32, 34 ] ],
+   [
+    "John", 3,
+    [ 11, 26, 28 ] ],
+   [
+    "John", 5,
+    [ 31, 32, 33, 36, 37 ] ],
+   [
+    "John", 8,
+    [ 13, 14, 18 ] ],
+   [
+    "John", 10,
+    [ 25 ] ] ]
  },
  {
   "id": "baptize",
@@ -855,7 +1182,13 @@ window.GLOSSARY = [
   "refs": [
    [
     "John", 1,
-    [ 25, 26, 28, 31, 33 ] ] ]
+    [ 25, 26, 28, 31, 33 ] ],
+   [
+    "John", 3,
+    [ 22, 23, 26 ] ],
+   [
+    "John", 10,
+    [ 40 ] ] ]
  },
  {
   "id": "sons-of-god",
@@ -873,7 +1206,22 @@ window.GLOSSARY = [
   "refs": [
    [
     "John", 1,
-    [ 51 ] ] ]
+    [ 51 ] ],
+   [
+    "John", 3,
+    [ 3, 5, 11 ] ],
+   [
+    "John", 5,
+    [ 19, 24, 25 ] ],
+   [
+    "John", 6,
+    [ 26, 32, 47, 53 ] ],
+   [
+    "John", 8,
+    [ 34, 51, 58 ] ],
+   [
+    "John", 10,
+    [ 1, 7 ] ] ]
  },
  {
   "id": "latchet",
@@ -963,7 +1311,10 @@ window.GLOSSARY = [
   "refs": [
    [
     "John", 2,
-    [ 6 ] ] ]
+    [ 6 ] ],
+   [
+    "John", 3,
+    [ 25 ] ] ]
  },
  {
   "id": "sign",
@@ -972,7 +1323,19 @@ window.GLOSSARY = [
   "refs": [
    [
     "John", 2,
-    [ 11, 18, 23 ] ] ]
+    [ 11, 18, 23 ] ],
+   [
+    "John", 3,
+    [ 2 ] ],
+   [
+    "John", 6,
+    [ 2, 26, 30 ] ],
+   [
+    "John", 7,
+    [ 31 ] ],
+   [
+    "John", 9,
+    [ 16 ] ] ]
  },
  {
   "id": "passover",
@@ -981,7 +1344,10 @@ window.GLOSSARY = [
   "refs": [
    [
     "John", 2,
-    [ 13, 23 ] ] ]
+    [ 13, 23 ] ],
+   [
+    "John", 6,
+    [ 4 ] ] ]
  },
  {
   "id": "scourge",
@@ -1596,7 +1962,10 @@ window.GLOSSARY = [
     [ 1, 10, 12, 28 ] ],
    [
     "Proverbs", 29,
-    [ 2, 6, 7, 16 ] ] ]
+    [ 2, 6, 7, 16 ] ],
+   [
+    "John", 7,
+    [ 24 ] ] ]
  },
  {
   "id": "wicked",
@@ -1842,7 +2211,10 @@ window.GLOSSARY = [
     [ 23 ] ],
    [
     "Proverbs", 31,
-    [ 26 ] ] ]
+    [ 26 ] ],
+   [
+    "John", 5,
+    [ 2 ] ] ]
  },
  {
   "id": "anger",
@@ -1890,7 +2262,13 @@ window.GLOSSARY = [
     [ 8, 22 ] ],
    [
     "Proverbs", 30,
-    [ 33 ] ] ]
+    [ 33 ] ],
+   [
+    "John", 3,
+    [ 36 ] ],
+   [
+    "John", 7,
+    [ 23 ] ] ]
  },
  {
   "id": "pride",
@@ -2079,7 +2457,10 @@ window.GLOSSARY = [
     [ 11 ] ],
    [
     "Proverbs", 27,
-    [ 6, 9, 10, 14, 17 ] ] ]
+    [ 6, 9, 10, 14, 17 ] ],
+   [
+    "John", 3,
+    [ 29 ] ] ]
  },
  {
   "id": "abomination",
@@ -2142,7 +2523,10 @@ window.GLOSSARY = [
     [ 26, 32 ] ],
    [
     "Proverbs", 30,
-    [ 20 ] ] ]
+    [ 20 ] ],
+   [
+    "John", 8,
+    [ 3, 4 ] ] ]
  },
  {
   "id": "apple-of-the-eye",
@@ -2830,5 +3214,551 @@ window.GLOSSARY = [
    [
     "Proverbs", 23,
     [ 20 ] ] ]
+ },
+ {
+  "id": "impotent-man",
+  "kind": "person",
+  "name": "The man at the pool (sick 38 years)",
+  "refs": [
+   [
+    "John", 5,
+    [ 7 ] ] ]
+ },
+ {
+  "id": "bethesda",
+  "kind": "place",
+  "name": "Bethesda (the pool)",
+  "refs": [
+   [
+    "John", 5,
+    [ 2 ] ] ]
+ },
+ {
+  "id": "sheep-market",
+  "kind": "place",
+  "name": "The sheep market (by the sheep gate)",
+  "refs": [
+   [
+    "John", 5,
+    [ 2 ] ] ]
+ },
+ {
+  "id": "sabbath",
+  "kind": "term",
+  "name": "Sabbath",
+  "refs": [
+   [
+    "John", 5,
+    [ 9, 10, 16, 18 ] ],
+   [
+    "John", 7,
+    [ 22, 23 ] ],
+   [
+    "John", 9,
+    [ 14, 16 ] ] ]
+ },
+ {
+  "id": "made-whole",
+  "kind": "term",
+  "name": "Made whole",
+  "refs": [
+   [
+    "John", 5,
+    [ 4, 6, 9, 14 ] ] ]
+ },
+ {
+  "id": "impotent",
+  "kind": "term",
+  "name": "Impotent (powerless, without strength)",
+  "refs": [
+   [
+    "John", 5,
+    [ 3, 7 ] ] ]
+ },
+ {
+  "id": "halt",
+  "kind": "term",
+  "name": "Halt (lame)",
+  "refs": [
+   [
+    "John", 5,
+    [ 3 ] ] ]
+ },
+ {
+  "id": "wist",
+  "kind": "term",
+  "name": "Wist (knew)",
+  "refs": [
+   [
+    "John", 5,
+    [ 13 ] ] ]
+ },
+ {
+  "id": "quicken",
+  "kind": "term",
+  "name": "Quicken (make alive)",
+  "refs": [
+   [
+    "John", 5,
+    [ 21 ] ],
+   [
+    "John", 6,
+    [ 63 ] ] ]
+ },
+ {
+  "id": "everlasting-life",
+  "kind": "term",
+  "name": "Everlasting life (eternal life)",
+  "refs": [
+   [
+    "John", 3,
+    [ 15, 16, 36 ] ],
+   [
+    "John", 5,
+    [ 24, 39 ] ],
+   [
+    "John", 6,
+    [ 27, 40, 47, 54, 68 ] ],
+   [
+    "John", 10,
+    [ 28 ] ] ]
+ },
+ {
+  "id": "condemnation",
+  "kind": "term",
+  "name": "Condemnation, damnation",
+  "refs": [
+   [
+    "John", 3,
+    [ 19 ] ],
+   [
+    "John", 5,
+    [ 24, 29 ] ] ]
+ },
+ {
+  "id": "judgment",
+  "kind": "term",
+  "name": "Judgment",
+  "refs": [
+   [
+    "John", 5,
+    [ 22, 27, 30 ] ],
+   [
+    "John", 7,
+    [ 24 ] ],
+   [
+    "John", 8,
+    [ 16 ] ],
+   [
+    "John", 9,
+    [ 39 ] ] ]
+ },
+ {
+  "id": "scriptures",
+  "kind": "term",
+  "name": "The Scriptures",
+  "refs": [
+   [
+    "John", 2,
+    [ 22 ] ],
+   [
+    "John", 5,
+    [ 39 ] ],
+   [
+    "John", 7,
+    [ 38, 42 ] ],
+   [
+    "John", 10,
+    [ 35 ] ] ]
+ },
+ {
+  "id": "the-lad",
+  "kind": "person",
+  "name": "The boy with the loaves and fishes",
+  "refs": [
+   [
+    "John", 6,
+    [ 9 ] ] ]
+ },
+ {
+  "id": "the-twelve",
+  "kind": "person",
+  "name": "The twelve (apostles)",
+  "refs": [
+   [
+    "John", 6,
+    [ 67, 71 ] ] ]
+ },
+ {
+  "id": "judas-iscariot",
+  "kind": "person",
+  "name": "Judas Iscariot",
+  "refs": [
+   [
+    "John", 6,
+    [ 71 ] ] ]
+ },
+ {
+  "id": "sea-of-galilee",
+  "kind": "place",
+  "name": "The Sea of Galilee (Sea of Tiberias)",
+  "refs": [
+   [
+    "John", 6,
+    [ 1 ] ] ]
+ },
+ {
+  "id": "tiberias",
+  "kind": "place",
+  "name": "Tiberias",
+  "refs": [
+   [
+    "John", 6,
+    [ 1, 23 ] ] ]
+ },
+ {
+  "id": "synagogue",
+  "kind": "place",
+  "name": "The synagogue",
+  "refs": [
+   [
+    "John", 6,
+    [ 59 ] ],
+   [
+    "John", 9,
+    [ 22 ] ] ]
+ },
+ {
+  "id": "bread-of-life",
+  "kind": "term",
+  "name": "The bread of life",
+  "refs": [
+   [
+    "John", 6,
+    [ 32, 33, 35, 48, 51 ] ] ]
+ },
+ {
+  "id": "manna",
+  "kind": "term",
+  "name": "Manna",
+  "refs": [
+   [
+    "John", 6,
+    [ 31, 49, 58 ] ] ]
+ },
+ {
+  "id": "barley",
+  "kind": "term",
+  "name": "Barley loaves",
+  "refs": [
+   [
+    "John", 6,
+    [ 9, 13 ] ] ]
+ },
+ {
+  "id": "pennyworth",
+  "kind": "term",
+  "name": "Pennyworth (a day's wage per penny)",
+  "refs": [
+   [
+    "John", 6,
+    [ 7 ] ] ]
+ },
+ {
+  "id": "fragments",
+  "kind": "term",
+  "name": "Fragments",
+  "refs": [
+   [
+    "John", 6,
+    [ 12, 13 ] ] ]
+ },
+ {
+  "id": "furlong",
+  "kind": "term",
+  "name": "Furlong (about 600 feet)",
+  "refs": [
+   [
+    "John", 6,
+    [ 19 ] ] ]
+ },
+ {
+  "id": "meat",
+  "kind": "term",
+  "name": "Meat (food)",
+  "refs": [
+   [
+    "John", 6,
+    [ 27, 55 ] ] ]
+ },
+ {
+  "id": "sealed",
+  "kind": "term",
+  "name": "Sealed (stamped with approval)",
+  "refs": [
+   [
+    "John", 6,
+    [ 27 ] ] ]
+ },
+ {
+  "id": "murmur",
+  "kind": "term",
+  "name": "Murmur (grumble)",
+  "refs": [
+   [
+    "John", 6,
+    [ 41, 61 ] ],
+   [
+    "John", 7,
+    [ 12, 32 ] ] ]
+ },
+ {
+  "id": "last-day",
+  "kind": "term",
+  "name": "The last day",
+  "refs": [
+   [
+    "John", 6,
+    [ 39, 40, 44, 54 ] ],
+   [
+    "John", 7,
+    [ 37 ] ] ]
+ },
+ {
+  "id": "devil",
+  "kind": "term",
+  "name": "Devil",
+  "refs": [
+   [
+    "John", 6,
+    [ 70 ] ],
+   [
+    "John", 7,
+    [ 20 ] ],
+   [
+    "John", 8,
+    [ 44, 48, 49, 52 ] ],
+   [
+    "John", 10,
+    [ 20, 21 ] ] ]
+ },
+ {
+  "id": "man-born-blind",
+  "kind": "person",
+  "name": "The man born blind",
+  "refs": [
+   [
+    "John", 9,
+    [ 1, 2, 6, 8, 13, 17, 18, 19, 20, 24, 25, 32, 39, 40, 41 ] ],
+   [
+    "John", 10,
+    [ 21 ] ] ]
+ },
+ {
+  "id": "his-parents",
+  "kind": "person",
+  "name": "The blind man's parents",
+  "refs": [
+   [
+    "John", 9,
+    [ 2, 3, 18, 20, 22, 23 ] ] ]
+ },
+ {
+  "id": "siloam",
+  "kind": "place",
+  "name": "The pool of Siloam",
+  "refs": [
+   [
+    "John", 9,
+    [ 7, 11 ] ] ]
+ },
+ {
+  "id": "clay",
+  "kind": "term",
+  "name": "Clay (made of spittle)",
+  "refs": [
+   [
+    "John", 9,
+    [ 6, 11, 14, 15 ] ] ]
+ },
+ {
+  "id": "prophet",
+  "kind": "term",
+  "name": "Prophet",
+  "refs": [
+   [
+    "John", 1,
+    [ 21, 23, 25 ] ],
+   [
+    "John", 6,
+    [ 14 ] ],
+   [
+    "John", 7,
+    [ 52 ] ],
+   [
+    "John", 9,
+    [ 17 ] ] ]
+ },
+ {
+  "id": "of-age",
+  "kind": "term",
+  "name": "Of age (a grown man)",
+  "refs": [
+   [
+    "John", 9,
+    [ 21, 23 ] ] ]
+ },
+ {
+  "id": "revile",
+  "kind": "term",
+  "name": "Revile (insult, abuse)",
+  "refs": [
+   [
+    "John", 9,
+    [ 28 ] ] ]
+ },
+ {
+  "id": "worship",
+  "kind": "term",
+  "name": "Worship",
+  "refs": [
+   [
+    "John", 9,
+    [ 31, 38 ] ] ]
+ },
+ {
+  "id": "good-shepherd",
+  "kind": "term",
+  "name": "The good shepherd",
+  "refs": [
+   [
+    "John", 10,
+    [ 2, 11, 12, 14, 16 ] ] ]
+ },
+ {
+  "id": "the-door",
+  "kind": "term",
+  "name": "The door (of the sheep)",
+  "refs": [
+   [
+    "John", 10,
+    [ 1, 2, 7, 9 ] ] ]
+ },
+ {
+  "id": "sheepfold",
+  "kind": "term",
+  "name": "The sheepfold",
+  "refs": [
+   [
+    "John", 10,
+    [ 1, 16 ] ] ]
+ },
+ {
+  "id": "porter",
+  "kind": "person",
+  "name": "The porter (gatekeeper)",
+  "refs": [
+   [
+    "John", 10,
+    [ 3 ] ] ]
+ },
+ {
+  "id": "thief-and-robber",
+  "kind": "term",
+  "name": "Thief and robber",
+  "refs": [
+   [
+    "John", 10,
+    [ 1, 8, 10 ] ] ]
+ },
+ {
+  "id": "hireling",
+  "kind": "person",
+  "name": "The hireling (hired hand)",
+  "refs": [
+   [
+    "John", 10,
+    [ 12, 13 ] ] ]
+ },
+ {
+  "id": "wolf",
+  "kind": "term",
+  "name": "The wolf",
+  "refs": [
+   [
+    "John", 10,
+    [ 12 ] ] ]
+ },
+ {
+  "id": "abundantly",
+  "kind": "term",
+  "name": "Life more abundantly",
+  "refs": [
+   [
+    "John", 10,
+    [ 10 ] ] ]
+ },
+ {
+  "id": "parable",
+  "kind": "term",
+  "name": "Parable",
+  "refs": [
+   [
+    "John", 10,
+    [ 6 ] ] ]
+ },
+ {
+  "id": "feast-of-dedication",
+  "kind": "term",
+  "name": "The feast of the dedication (Hanukkah)",
+  "refs": [
+   [
+    "John", 10,
+    [ 22 ] ] ]
+ },
+ {
+  "id": "solomons-porch",
+  "kind": "place",
+  "name": "Solomon's porch",
+  "refs": [
+   [
+    "John", 10,
+    [ 23 ] ] ]
+ },
+ {
+  "id": "blasphemy",
+  "kind": "term",
+  "name": "Blasphemy",
+  "refs": [
+   [
+    "John", 10,
+    [ 33, 36 ] ] ]
+ },
+ {
+  "id": "ye-are-gods",
+  "kind": "term",
+  "name": "“Ye are gods” (Psalm 82:6)",
+  "refs": [
+   [
+    "John", 10,
+    [ 34 ] ] ]
+ },
+ {
+  "id": "sanctified",
+  "kind": "term",
+  "name": "Sanctified (set apart)",
+  "refs": [
+   [
+    "John", 10,
+    [ 36 ] ] ]
+ },
+ {
+  "id": "stoning",
+  "kind": "term",
+  "name": "Stoning",
+  "refs": [
+   [
+    "John", 10,
+    [ 31, 32, 33 ] ] ]
  }
 ];

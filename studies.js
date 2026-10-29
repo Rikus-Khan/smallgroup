@@ -70,6 +70,204 @@ window.STUDIES = [
     }
   },
   {
+    "id": "john-05",
+    "type": "chapter",
+    "book": "John",
+    "ch": 5,
+    "date": "2026-10-29",
+    "title": "John 5",
+    "sub": "Wilt thou be made whole?",
+    "about": "Jesus heals a man who had been sick for thirty-eight years, then tells the leaders exactly who He is.",
+    "tags": [
+      "Healing",
+      "Grace",
+      "Deity of Christ",
+      "Assurance",
+      "Scripture",
+      "Recovery"
+    ],
+    "url": "studies/john-05.html",
+    "overview": {
+      "where": "The pool of Bethesda and the temple in Jerusalem",
+      "when": "At a feast of the Jews, on a sabbath day",
+      "people": [
+        "jesus",
+        "impotent-man",
+        "the-jews",
+        "the-father",
+        "john-the-baptist",
+        "moses"
+      ],
+      "places": [
+        "jerusalem",
+        "sheep-market",
+        "bethesda",
+        "temple"
+      ],
+      "story": [
+        "At the pool of Bethesda, Jesus finds a man who has been sick thirty-eight years and asks, “Wilt thou be made whole?” (1–7).",
+        "Jesus says, “Rise, take up thy bed, and walk,” and the man is healed at once. But it is the sabbath, and the leaders object (8–13).",
+        "Jesus finds the man in the temple: “Sin no more, lest a worse thing come unto thee.” The leaders begin to persecute Jesus (14–16).",
+        "Jesus calls God His Father, making Himself equal with God. The Son gives life and judges, and whoever believes has everlasting life (17–30).",
+        "Jesus names His witnesses: John, His works, the Father, the Scriptures, and Moses. Yet they will not come to Him for life (31–47)."
+      ],
+      "key": {
+        "ref": "John 5:24",
+        "text": "Verily, verily, I say unto you, He that heareth my word, and believeth on him that sent me, hath everlasting life, and shall not come into condemnation; but is passed from death unto life."
+      },
+      "big": "Jesus makes whole the man who could not help himself, and He claims to be equal with God. Whoever hears His word and believes has everlasting life now, and will never come into condemnation."
+    }
+  },
+  {
+    "id": "john-06",
+    "type": "chapter",
+    "book": "John",
+    "ch": 6,
+    "date": "2026-10-29",
+    "title": "John 6",
+    "sub": "The bread of life",
+    "about": "Jesus feeds five thousand, walks on a stormy sea, and tells the crowd He is the bread they've really been hungry for.",
+    "tags": [
+      "Signs",
+      "Provision",
+      "Fear",
+      "Salvation",
+      "Security",
+      "Following Jesus"
+    ],
+    "url": "studies/john-06.html",
+    "overview": {
+      "where": "The hills by the Sea of Galilee, the sea itself, then the synagogue in Capernaum",
+      "when": "Near the Passover, over an evening, a night, and the next day",
+      "people": [
+        "jesus",
+        "philip",
+        "andrew",
+        "the-lad",
+        "disciples",
+        "the-jews",
+        "simon-peter",
+        "the-twelve",
+        "judas-iscariot"
+      ],
+      "places": [
+        "sea-of-galilee",
+        "tiberias",
+        "capernaum",
+        "synagogue"
+      ],
+      "story": [
+        "With five barley loaves and two small fishes from a boy, Jesus feeds about five thousand men, and twelve baskets are left over (1–13).",
+        "The crowd wants to make Him king by force, so He goes up a mountain alone (14–15).",
+        "In the dark, on a stormy sea, Jesus comes walking on the water: “It is I; be not afraid” (16–21).",
+        "The crowd follows for more bread. Jesus says, “I am the bread of life”: whoever comes to Him and believes on Him has everlasting life (22–59).",
+        "Many disciples walk away. Peter answers, “Lord, to whom shall we go? thou hast the words of eternal life” (60–71)."
+      ],
+      "key": {
+        "ref": "John 6:35",
+        "text": "And Jesus said unto them, I am the bread of life: he that cometh to me shall never hunger; and he that believeth on me shall never thirst."
+      },
+      "big": "Jesus is the bread that gives everlasting life. The work God asks is to believe on Him, and He will never cast out anyone who comes."
+    }
+  },
+  {
+    "id": "john-09",
+    "type": "chapter",
+    "book": "John",
+    "ch": 9,
+    "date": "2026-10-29",
+    "title": "John 9",
+    "sub": "Once blind, now I see",
+    "about": "Jesus gives sight to a man born blind. The man sees more clearly every hour, while the religious experts go blind.",
+    "tags": [
+      "Suffering",
+      "Light",
+      "Obedience",
+      "Testimony",
+      "Rejection",
+      "Spiritual blindness"
+    ],
+    "url": "studies/john-09.html",
+    "overview": {
+      "where": "Jerusalem: a street near the temple, the pool of Siloam, and before the Pharisees",
+      "when": "A sabbath day, probably in the autumn, not long after the Feast of Tabernacles (John 7–8)",
+      "people": [
+        "jesus",
+        "disciples",
+        "man-born-blind",
+        "his-parents",
+        "pharisees",
+        "the-jews",
+        "moses"
+      ],
+      "places": [
+        "jerusalem",
+        "siloam"
+      ],
+      "story": [
+        "Jesus sees a man blind from birth. The disciples ask whose sin caused it; Jesus says it's so the works of God can be shown (1–5).",
+        "He puts clay on the man's eyes and sends him to wash in the pool of Siloam. The man comes back seeing (6–12).",
+        "It was the sabbath. The Pharisees question the man, then his frightened parents, and argue over who Jesus is (13–23).",
+        "Pressed again, the man says, “One thing I know, that, whereas I was blind, now I see,” and they throw him out (24–34).",
+        "Jesus finds him. The man believes and worships Him, while the Pharisees who say “We see” stay blind (35–41)."
+      ],
+      "key": {
+        "ref": "John 9:25",
+        "text": "He answered and said, Whether he be a sinner or no, I know not: one thing I know, that, whereas I was blind, now I see."
+      },
+      "big": "Jesus is the light of the world. He opens the eyes of anyone who admits he can't see, and when people throw you out for following Him, He comes looking for you."
+    }
+  },
+  {
+    "id": "john-10",
+    "type": "chapter",
+    "book": "John",
+    "ch": 10,
+    "date": "2026-10-29",
+    "title": "John 10",
+    "sub": "The Good Shepherd",
+    "about": "Jesus is the door to the fold and the Shepherd who lays down His life for the sheep. No one can pluck them out of His hand.",
+    "tags": [
+      "The door",
+      "His voice",
+      "Abundant life",
+      "The Good Shepherd",
+      "Eternal security",
+      "Deity of Christ"
+    ],
+    "url": "studies/john-10.html",
+    "overview": {
+      "where": "Jerusalem, then the temple in Solomon's porch, then beyond the Jordan",
+      "when": "Soon after the blind man was healed, then at the feast of the dedication in winter (about December)",
+      "people": [
+        "jesus",
+        "the-father",
+        "the-jews",
+        "pharisees",
+        "john-the-baptist"
+      ],
+      "places": [
+        "jerusalem",
+        "temple",
+        "solomons-porch",
+        "jordan",
+        "bethabara"
+      ],
+      "story": [
+        "The true shepherd comes in by the door, calls his own sheep by name, and they follow because they know his voice (1–6).",
+        "Jesus says, “I am the door”: whoever enters by Him is saved. The thief comes to steal, kill, and destroy; He came to give abundant life (7–10).",
+        "“I am the good shepherd.” Unlike the hireling, He lays down His life for the sheep, and takes it again by His own power (11–21).",
+        "At the feast of the dedication He promises His sheep eternal life: no man can pluck them out of His hand or the Father's. “I and my Father are one” (22–30).",
+        "They take up stones for blasphemy. He points to His works, escapes, and goes beyond Jordan, where many believe on Him (31–42)."
+      ],
+      "key": {
+        "ref": "John 10:28",
+        "text": "And I give unto them eternal life; and they shall never perish, neither shall any man pluck them out of my hand."
+      },
+      "big": "Jesus is the only door and the Good Shepherd who gave His life for His sheep. Whoever comes through Him is saved, and held so securely that no one can pluck him out of His hand."
+    }
+  },
+  {
     "id": "proverbs-01",
     "type": "chapter",
     "book": "Proverbs",

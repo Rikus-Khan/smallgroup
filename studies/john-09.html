@@ -1,0 +1,579 @@
+<!doctype html>
+<html lang="en" data-theme="scribe">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>John 9</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="../assets/fonts.css">
+<link rel="stylesheet" href="../assets/deck.css">
+<link rel="stylesheet" href="../assets/themes.css">
+<style>
+/* An eye that opens: the clay washes off, the lids part, light breaks in */
+.jn09-eye { max-width: 30rem; }
+.jn09-eye .lid { transform-box: fill-box; transform-origin: center; transform: scaleY(.05); }
+.slide.active .jn09-eye .lid { animation: jn09-open 1.6s 2.3s cubic-bezier(.3,.8,.3,1) forwards; }
+@keyframes jn09-open { to { transform: scaleY(1); } }
+.jn09-eye .white { fill: var(--glow); stroke: var(--ink); stroke-width: 4; }
+.jn09-eye .iris { fill: var(--accent); }
+.jn09-eye .pupil { fill: var(--on-glow); }
+.jn09-eye .shine { fill: var(--glow); }
+.jn09-eye .clay { fill: var(--leather-light); stroke: var(--leather); stroke-width: 2; }
+.slide.active .jn09-eye .clay { animation: jn09-wash 1.3s 1.1s ease-in forwards; }
+@keyframes jn09-wash { to { opacity: 0; transform: translateY(26px); } }
+.jn09-eye .drop { fill: var(--cool); opacity: 0; }
+.slide.active .jn09-eye .drop { animation: jn09-drip 1.1s ease-in forwards; animation-delay: calc(var(--k) * 170ms + .3s); }
+@keyframes jn09-drip { 0% { opacity: 0; transform: translateY(-50px); } 30% { opacity: 1; } 100% { opacity: 0; transform: translateY(40px); } }
+.jn09-eye .ray { stroke: var(--warm); stroke-width: 5; stroke-linecap: round; opacity: 0; }
+.slide.active .jn09-eye .ray { animation: jn09-ray 1s 3.7s ease forwards; }
+@keyframes jn09-ray { to { opacity: 1; } }
+
+/* A small map: from the temple down to the pool of Siloam, with Hezekiah's tunnel */
+.jn09-map .land { fill: var(--surface-2); stroke: var(--line-strong); stroke-width: 2; }
+.jn09-map .mount { fill: var(--surface); stroke: var(--ink-soft); stroke-width: 2; }
+.jn09-map .valley { fill: none; stroke: var(--line-strong); stroke-width: 2; stroke-dasharray: 4 7; }
+.jn09-map .water { fill: var(--cool); }
+.jn09-map .tunnel, .jn09-map .walk { fill: none; stroke-linecap: round; stroke-dasharray: 1; stroke-dashoffset: 1; transition: stroke-dashoffset 2.2s ease; }
+.jn09-map .tunnel { stroke: var(--cool); stroke-width: 5; }
+.jn09-map .walk { stroke: var(--accent); stroke-width: 5; }
+.jn09-map .soft { fill: var(--ink-soft); }
+.split:has(.jn09-walk-go.on) .jn09-map .walk, .split:has(.jn09-tunnel-go.on) .jn09-map .tunnel { stroke-dashoffset: 0; }
+
+/* Thirty-nine kinds of forbidden sabbath work, one of them kneading */
+.jn09-works { display: grid; grid-template-columns: repeat(13, 1fr); gap: 5px; margin: .5em 0 .4em; max-width: 34rem; }
+.jn09-works i { aspect-ratio: 1; border-radius: 4px; border: 1.5px solid var(--line-strong); background: var(--surface); opacity: 0; }
+.slide.active .jn09-works i { animation: rise .5s both; animation-delay: calc(var(--k) * 35ms + 400ms); }
+.jn09-works i.knead { transition: background-color .8s ease, border-color .8s ease, box-shadow .8s ease; }
+.jn09-sab:has(.jn09-knead-go.on) .jn09-works i.knead { background: var(--accent); border-color: var(--accent); box-shadow: 0 0 0 5px color-mix(in srgb, var(--accent) 25%, transparent); }
+.jn09-works-key { font-size: clamp(.85rem, .8rem + .3vw, 1.05rem); color: var(--ink-soft); margin-bottom: 1em; }
+
+/* Two staircases: one man sees more and more, the others see less and less */
+.jn09-sight { display: grid; gap: .4rem; margin: .3em 0 1em; }
+.jn09-sight h3 { font: 700 clamp(.95rem, .85rem + .4vw, 1.2rem) var(--sans); color: var(--ink-soft); }
+.jn09-sight ol { list-style: none; padding: 0; margin: .3em 0 .7em; display: grid; grid-template-columns: repeat(4, 1fr); gap: 6px; align-items: end; }
+.jn09-sight li { padding: .45em .55em; border-radius: 6px 6px 0 0; font: italic clamp(.82rem, .74rem + .45vw, 1.15rem)/1.25 var(--serif); }
+.jn09-sight li b { display: block; font: 700 .8em var(--sans); color: var(--ink-soft); margin-bottom: .2em; }
+.jn09-sight .up li { min-height: calc(3.4rem + var(--k) * 1.6rem); background: color-mix(in srgb, var(--accent) var(--a), transparent); border-top: 3px solid var(--accent); }
+.jn09-sight .up li.top { background: var(--accent); color: var(--on-accent); }
+.jn09-sight .up li.top b { color: var(--on-accent); }
+.slide.active .jn09-sight .up li { animation: rise .8s both; animation-delay: calc(var(--k) * 260ms + 500ms); }
+.jn09-sight .down li { min-height: calc(3.4rem + (3 - var(--k)) * 1.6rem); background: var(--surface); border: 1.5px dashed var(--line-strong); color: var(--ink-soft); }
+.jn09-sight .down li.last { border: 2px solid var(--danger); color: var(--ink); }
+</style>
+</head>
+<body>
+<main class="deck" id="deck">
+
+<!-- ======================= OPENING ======================= -->
+<section class="slide title">
+  <div class="inner">
+    <div class="emblem rise"></div>
+    <h1 class="rise" style="--d:1">John 9</h1>
+    <p class="sub rise" style="--d:3">Once blind, now I see</p>
+    <p class="tag rise" style="--d:5">Jesus gives sight to a man born blind. The man sees more clearly every hour, while the religious experts go blind.</p>
+  </div>
+</section>
+
+<section class="slide watch">
+  <div class="inner">
+    <h2 class="rise">Things to watch for</h2>
+    <p class="lede rise" style="--d:1">Keep these questions in the back of your mind as we read. We'll come back to every one of them at the end.</p>
+    <ol class="seeds">
+      <li class="step"><span class="topic">Suffering</span><span class="seed-q">Is every hardship a punishment for sin?</span></li>
+      <li class="step"><span class="topic">Who Jesus is</span><span class="seed-q">What does it mean that Jesus is the light of the world?</span></li>
+      <li class="step"><span class="topic">Obedience</span><span class="seed-q">What did the blind man have to do to be healed?</span></li>
+      <li class="step"><span class="topic">Your story</span><span class="seed-q">What can you say about Jesus when you don't have all the answers?</span></li>
+      <li class="step"><span class="topic">The cost</span><span class="seed-q">What happens when following Jesus costs you?</span></li>
+      <li class="step"><span class="topic">Seeing clearly</span><span class="seed-q">Who are the truly blind in this chapter?</span></li>
+    </ol>
+  </div>
+</section>
+
+<!-- ======================= PART ONE: THE MIRACLE ======================= -->
+<section class="slide part">
+  <div class="inner">
+    <p class="part-n rise">Part one</p>
+    <h2 class="rise" style="--d:1">Go, wash</h2>
+    <p class="range rise" style="--d:2">Verses 1–12</p>
+    <div class="rule"></div>
+    <p class="hook rise" style="--d:4">A man who has never seen a thing walks home seeing.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="1-3" data-hl="blind from his birth|who did sin, this man, or his parents|that the works of God should be made manifest in him"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="2" data-hl="who did sin, this man, or his parents"></blockquote>
+    <h2 class="rise" style="--d:1">Whose fault is it?</h2>
+    <p class="note rise" style="--d:2">The disciples assumed somebody must be to blame. Most people did back then, and plenty still do. They only argued over <em>who</em>.</p>
+    <ul class="nots">
+      <li class="step"><span class="k">“This man sinned”</span><span class="why">(before he was even born?)</span></li>
+      <li class="step"><span class="k">“His parents sinned”</span><span class="why">(so he pays for their failure?)</span></li>
+      <li class="step yes"><span class="k">“That the works of God should be made manifest in him”</span></li>
+    </ul>
+    <p class="note step">Jesus isn't saying the man or his parents never sinned. He's saying this blindness wasn't a payback for some sin. Some of what we carry comes from our own choices, and we know it. But not all of it. And either way, Jesus doesn't stand around assigning blame. He gets to work.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="4-5" data-hl="while it is day: the night cometh|I am the light of the world"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="5"></blockquote>
+    <h2 class="rise" style="--d:1">He said it, then He showed it</h2>
+    <div class="pair">
+      <div class="scroll rise" style="--d:2"><p class="ref">John 8:12, the claim</p><p class="kjv">“<mark>I am the light of the world</mark>: he that followeth me shall not walk in darkness, but shall have the light of life.”</p></div>
+      <div class="scroll step"><p class="ref">John 9:7, the proof</p><p class="kjv">“He went his way therefore, and washed, and <mark>came seeing</mark>.”</p></div>
+    </div>
+    <p class="note step">In chapter 8 Jesus <em>said</em> He is the light of the world, and they picked up stones. In chapter 9 He <em>shows</em> it, on a man who had lived his whole life in the dark.</p>
+    <p class="note step"><em>“While it is day: the night cometh”</em>: Jesus knew His time on earth was short, and He didn't waste it. Neither should we. Today is the day to do the good in front of you.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="6-7" data-hl="made clay of the spittle|Go, wash in the pool of Siloam|and came seeing"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="7" data-hl="Go, wash in the pool of Siloam|which is by interpretation, Sent."></blockquote>
+    <div class="split">
+      <div class="stage">
+        <svg class="jn09-map" viewBox="0 0 520 450" role="img" aria-label="Map of Jerusalem in Jesus' day. The temple sits at the top. The old City of David runs south down a ridge to the pool of Siloam, which is fed by Hezekiah's tunnel from the Gihon spring.">
+          <path class="land" d="M140 30 H340 V165 L305 205 L290 330 L258 412 H212 L196 330 L182 205 L140 165 Z"/>
+          <rect class="mount" x="165" y="48" width="150" height="100" rx="4"/>
+          <text x="240" y="96" text-anchor="middle" font-size="20" font-weight="700">Temple</text>
+          <text x="240" y="120" text-anchor="middle" font-size="15" class="soft">where Jesus had been</text>
+          <path class="valley" d="M372 30 C 362 200, 342 330, 298 440"/>
+          <text x="380" y="330" font-size="15" class="soft">Kidron</text>
+          <text x="380" y="349" font-size="15" class="soft">Valley</text>
+          <text x="174" y="282" text-anchor="end" font-size="16" class="soft">City of</text>
+          <text x="174" y="301" text-anchor="end" font-size="16" class="soft">David</text>
+          <circle class="water" cx="318" cy="238" r="11"/>
+          <text x="336" y="236" font-size="16">Gihon</text>
+          <text x="336" y="255" font-size="16">spring</text>
+          <path class="tunnel" pathLength="1" d="M310 242 C 268 262, 300 300, 262 322 S 250 378, 236 394"/>
+          <path class="walk" pathLength="1" d="M240 150 C 236 220, 226 300, 226 388"/>
+          <rect class="water" x="206" y="390" width="56" height="22" rx="4"/>
+          <text x="234" y="438" text-anchor="middle" font-size="18" font-weight="700">Pool of Siloam</text>
+          <text x="40" y="52" font-size="16" class="soft">N ↑</text>
+        </svg>
+      </div>
+      <div>
+        <h2 class="rise" style="--d:1">The pool called “Sent”</h2>
+        <p class="note rise" style="--d:2">Siloam sat at the far south end of the old city, downhill from the temple. John tells us the name means <em>Sent</em>.</p>
+        <p class="note step jn09-walk-go">Picture the walk: a blind man, clay on his eyes, feeling his way down through the streets with nothing to go on but a word from Jesus.</p>
+        <p class="note step jn09-tunnel-go">Its water came through a tunnel King Hezekiah cut through solid rock about seven hundred years earlier (2 Kings 20:20).</p>
+        <p class="note step">And who is the Sent One? Jesus calls the Father <em>“him that sent me”</em> (9:4). The man washed in Sent, at the word of the One who was sent.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="7" data-hl="He went his way therefore, and washed, and came seeing"></blockquote>
+    <div class="split">
+      <div class="stage">
+        <svg class="jn09-eye" viewBox="0 0 400 240" role="img" aria-label="An eye covered with clay. Water washes the clay away, and the eye opens to the light.">
+          <defs><clipPath id="jn09-almond"><path d="M40 120 Q200 0 360 120 Q200 240 40 120 Z"/></clipPath></defs>
+          <g class="rays">
+            <line class="ray" x1="200" y1="8" x2="200" y2="-22"/>
+            <line class="ray" x1="110" y1="30" x2="92" y2="6"/>
+            <line class="ray" x1="290" y1="30" x2="308" y2="6"/>
+            <line class="ray" x1="38" y1="74" x2="12" y2="58"/>
+            <line class="ray" x1="362" y1="74" x2="388" y2="58"/>
+          </g>
+          <g class="lid">
+            <path class="white" d="M40 120 Q200 0 360 120 Q200 240 40 120 Z"/>
+            <g clip-path="url(#jn09-almond)">
+              <circle class="iris" cx="200" cy="120" r="56"/>
+              <circle class="pupil" cx="200" cy="120" r="24"/>
+              <circle class="shine" cx="218" cy="104" r="9"/>
+            </g>
+          </g>
+          <path class="clay" d="M92 116 Q120 92 170 102 Q210 86 250 100 Q298 92 312 116 Q300 142 252 136 Q206 150 160 138 Q110 144 92 116 Z"/>
+          <circle class="drop" style="--k:0" cx="150" cy="70" r="7"/>
+          <circle class="drop" style="--k:1" cx="215" cy="60" r="8"/>
+          <circle class="drop" style="--k:2" cx="270" cy="72" r="7"/>
+          <circle class="drop" style="--k:3" cx="185" cy="80" r="6"/>
+        </svg>
+      </div>
+      <div>
+        <h2 class="rise" style="--d:1">He came seeing</h2>
+        <p class="note rise" style="--d:2">Jesus could have healed him with a word. Instead He gave him something to <em>do</em>: go, and wash.</p>
+        <p class="note step">The man didn't ask why, and he didn't wait until he could see before he obeyed. He went with the clay still on his eyes. The sight came on the far side of obedience.</p>
+        <p class="note step">That's how it usually goes. You take the step Jesus gives you while you still can't see how it will turn out. Then you <em>come seeing</em>.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="slide verse" data-v="8-12" data-hl="Is not this he that sat and begged?|but he said, I am he|A man that is called Jesus"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="9" data-hl="He is like him: but he said, I am he"></blockquote>
+    <h2 class="rise" style="--d:1">“I am he”</h2>
+    <p class="note rise" style="--d:2">The neighbors had walked past this man for years. To them he was <em>“he that sat and begged.”</em> Now some of them can't even recognize him.</p>
+    <div class="rename">
+      <span class="old step">the blind beggar</span>
+      <span class="arrow step">→</span>
+      <span class="new step">I am he</span>
+    </div>
+    <p class="note step">He doesn't hide from his past, and he doesn't stay stuck in it. Yes, he's the same man. No, he's not the same at all. When Jesus changes a man, the people who knew him before will notice, and some won't know what to make of it.</p>
+    <blockquote class="quote step"><p>“Therefore if any man be in Christ, he is a new creature: old things are passed away; behold, all things are become new.”</p><cite>2 Corinthians 5:17</cite></blockquote>
+  </div>
+</section>
+
+<!-- ======================= PART TWO: THE HEARING ======================= -->
+<section class="slide part">
+  <div class="inner">
+    <p class="part-n rise">Part two</p>
+    <h2 class="rise" style="--d:1">On trial</h2>
+    <p class="range rise" style="--d:2">Verses 13–34</p>
+    <div class="rule"></div>
+    <p class="hook rise" style="--d:4">A healed man gets questioned, pressured, insulted, and thrown out.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="13-16" data-hl="it was the sabbath day|This man is not of God, because he keepeth not the sabbath day|And there was a division among them"></section>
+
+<section class="slide ex jn09-sab">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="14" data-hl="it was the sabbath day when Jesus made the clay"></blockquote>
+    <h2 class="rise" style="--d:1">The sabbath problem</h2>
+    <p class="note rise" style="--d:2">God's law said to rest on the seventh day. Over time the teachers piled their own rules on top, and later wrote down <em>39 kinds of work</em> that were banned on the sabbath.</p>
+    <div class="jn09-works" aria-label="Thirty-nine squares, one for each kind of banned work. One is kneading.">
+      <i style="--k:0"></i><i style="--k:1"></i><i style="--k:2"></i><i style="--k:3"></i><i style="--k:4"></i><i style="--k:5"></i><i style="--k:6"></i><i style="--k:7"></i><i style="--k:8"></i><i class="knead" style="--k:9"></i><i style="--k:10"></i><i style="--k:11"></i><i style="--k:12"></i>
+      <i style="--k:13"></i><i style="--k:14"></i><i style="--k:15"></i><i style="--k:16"></i><i style="--k:17"></i><i style="--k:18"></i><i style="--k:19"></i><i style="--k:20"></i><i style="--k:21"></i><i style="--k:22"></i><i style="--k:23"></i><i style="--k:24"></i><i style="--k:25"></i>
+      <i style="--k:26"></i><i style="--k:27"></i><i style="--k:28"></i><i style="--k:29"></i><i style="--k:30"></i><i style="--k:31"></i><i style="--k:32"></i><i style="--k:33"></i><i style="--k:34"></i><i style="--k:35"></i><i style="--k:36"></i><i style="--k:37"></i><i style="--k:38"></i>
+    </div>
+    <p class="jn09-works-key rise" style="--d:3">Sowing, plowing, reaping, grinding, baking, writing, building, lighting a fire …</p>
+    <p class="note step jn09-knead-go">One of them was <em>kneading</em>. By their rules, mixing spit and dirt into clay was kneading, and healing a man whose life wasn't in danger had to wait for another day.</p>
+    <p class="note step">He'd been blind since birth. Jesus could have waited one more day. He didn't. He chose the sabbath on purpose, to show that the Lord of the sabbath cares more about a man than about a rulebook men had added to God's word.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="17-19" data-hl="He is a prophet|until they called the parents of him that had received his sight"></section>
+<section class="slide verse" data-v="20-23" data-hl="because they feared the Jews|he should be put out of the synagogue|He is of age; ask him"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="22" data-hl="because they feared the Jews|he should be put out of the synagogue"></blockquote>
+    <h2 class="rise" style="--d:1">Put out</h2>
+    <p class="note rise" style="--d:2">Being <em>“put out of the synagogue”</em> meant being cut off from worship, from your neighbors, and often from your work and family. You became an outsider in your own town.</p>
+    <div class="mirror">
+      <div class="step"><span>His parents</span><span class="arrow">→</span><span class="word">“we know not … ask him”</span><small>They told the truth about what they knew, and went quiet about Jesus. They were afraid.</small></div>
+      <div class="step"><span>Their son</span><span class="arrow">→</span><span class="word">“one thing I know”</span><small>He spoke up anyway, and it cost him.</small></div>
+    </div>
+    <p class="note step">Fear of what people will think keeps a lot of men quiet, and stuck. Following Jesus may cost you some friends, maybe some old crowds. Hold on: watch what Jesus does for this man at the end of the chapter.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="24-25" data-hl="Give God the praise|one thing I know, that, whereas I was blind, now I see"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="24" data-hl="we know that this man is a sinner"></blockquote>
+    <p class="saying rise" style="--d:1"><em>One thing I know</em>: whereas I was blind, now I see.</p>
+    <p class="note rise" style="--d:3">They wanted to drag him into a theology debate. He wouldn't take the bait. He couldn't answer all their questions, but he could tell them what had happened to him, and nobody could argue with that.</p>
+    <p class="note step">You don't need a Bible degree to be a witness. You need a <em>before</em> and an <em>after</em>. A man who was a slave-ship captain, John Newton, met this same Jesus and wrote it into a song: <em>“I once was lost, but now am found, was blind, but now I see.”</em></p>
+    <blockquote class="quote step"><p>“Go home to thy friends, and tell them how great things the Lord hath done for thee, and hath had compassion on thee.”</p><cite>Mark 5:19</cite></blockquote>
+  </div>
+</section>
+
+<section class="slide verse" data-v="26-29" data-hl="I have told you already, and ye did not hear|will ye also be his disciples?|we are Moses’ disciples"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="26" data-hl="how opened he thine eyes?"></blockquote>
+    <h2 class="rise" style="--d:1">Asked again, and again</h2>
+    <p class="note rise" style="--d:2">Count how many times somebody asks <em>how</em> it happened:</p>
+    <div class="asks">
+      <div class="ask step"><span class="q">“How were thine eyes opened?”</span><span class="ctx">The neighbors, 9:10</span><span class="stamp">Clay. Wash. See.</span></div>
+      <div class="ask step"><span class="q">“How he had received his sight”</span><span class="ctx">The Pharisees, 9:15</span><span class="stamp">Same story</span></div>
+      <div class="ask step"><span class="q">“How then doth he now see?”</span><span class="ctx">The Pharisees to his parents, 9:19</span><span class="stamp">Ask him</span></div>
+      <div class="ask step"><span class="q">“How opened he thine eyes?”</span><span class="ctx">The Pharisees again, 9:26</span><span class="stamp">Told you already</span></div>
+    </div>
+    <p class="note step">The facts never changed. What changed was the man. Every time he's pushed, he gets bolder, until he asks them, <em>“Will ye also be his disciples?”</em> They answer with insults.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="30-34" data-hl="Why herein is a marvellous thing|If this man were not of God, he could do nothing|And they cast him out"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="32" data-hl="Since the world began was it not heard"></blockquote>
+    <h2 class="rise" style="--d:1">Never been done</h2>
+    <p class="note rise" style="--d:2">In all of the Old Testament, nobody born blind is ever given sight. The man is right: this had never happened. But the prophets said it would, when God Himself came:</p>
+    <blockquote class="quote step"><p>“Then the eyes of the blind shall be opened, and the ears of the deaf shall be unstopped.”</p><cite>Isaiah 35:5</cite></blockquote>
+    <p class="note step">A beggar with no schooling reads the evidence better than the experts: <em>“If this man were not of God, he could do nothing.”</em></p>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="31" data-hl="God heareth not sinners"></blockquote>
+    <h2 class="rise" style="--d:1">Does God hear sinners?</h2>
+    <p class="note rise" style="--d:2">The man is using plain Old Testament sense: God doesn't back a man who holds on to his sin and claims God's power.</p>
+    <blockquote class="quote step"><p>“If I regard iniquity in my heart, the Lord will not hear me:”</p><cite>Psalm 66:18</cite></blockquote>
+    <p class="note step">But don't hear it as <em>“God won't listen to a man like me.”</em> There's one prayer from a sinner God always hears: the one where he stops hiding and comes home.</p>
+    <blockquote class="quote step"><p>“And the publican, standing afar off, would not lift up so much as his eyes unto heaven, but smote upon his breast, saying, God be merciful to me a sinner.”</p><cite>Luke 18:13</cite></blockquote>
+    <p class="note step">Jesus said that man went home made right with God.</p>
+  </div>
+</section>
+
+<!-- ======================= PART THREE: SEEING ======================= -->
+<section class="slide part">
+  <div class="inner">
+    <p class="part-n rise">Part three</p>
+    <h2 class="rise" style="--d:1">Found</h2>
+    <p class="range rise" style="--d:2">Verses 35–41</p>
+    <div class="rule"></div>
+    <p class="hook rise" style="--d:4">They threw him out. Jesus went looking for him.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="35-38" data-hl="when he had found him|Dost thou believe on the Son of God?|Lord, I believe. And he worshipped him"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="35" data-hl="they had cast him out; and when he had found him"></blockquote>
+    <h2 class="rise" style="--d:1">Thrown out, then found</h2>
+    <div class="mirror">
+      <div class="step"><span>The Pharisees</span><span class="arrow">→</span><span class="word">cast him out</span><span class="arrow">→</span><span>the healed man</span><small>The religious world shut the door on him.</small></div>
+      <div class="step"><span>Jesus</span><span class="arrow">→</span><span class="word">found</span><span class="arrow">→</span><span>him</span><small>Jesus heard about it and went looking for him.</small></div>
+    </div>
+    <p class="note step">Notice: until now, the man had never actually <em>seen</em> Jesus. He was blind when Jesus sent him to the pool. This is the first time he looks at the face of the One who healed him.</p>
+    <blockquote class="quote step"><p>“For the Son of man is come to seek and to save that which was lost.”</p><cite>Luke 19:10</cite></blockquote>
+    <p class="note step">If following Jesus has cost you people, you haven't been left alone. He comes looking for His own.</p>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="38"></blockquote>
+    <h2 class="rise" style="--d:1">His eyes kept opening</h2>
+    <div class="jn09-sight">
+      <div class="up">
+        <h3>The man sees more and more</h3>
+        <ol>
+          <li style="--k:0;--a:12%"><b>9:11</b>“A man that is called Jesus”</li>
+          <li style="--k:1;--a:22%"><b>9:17</b>“He is a prophet”</li>
+          <li style="--k:2;--a:36%"><b>9:33</b>“Of God”</li>
+          <li class="top" style="--k:3;--a:100%"><b>9:38</b>“Lord, I believe”</li>
+        </ol>
+      </div>
+      <div class="down step">
+        <h3>The Pharisees see less and less</h3>
+        <ol>
+          <li style="--k:0"><b>9:16</b>“Not of God”</li>
+          <li style="--k:1"><b>9:24</b>“A sinner”</li>
+          <li style="--k:2"><b>9:29</b>“We know not from whence he is”</li>
+          <li class="last" style="--k:3"><b>9:41</b>“Your sin remaineth”</li>
+        </ol>
+      </div>
+    </div>
+    <p class="note step">His eyes opened in a moment. His understanding opened a step at a time, and it ended on his knees. <em>“He worshipped him.”</em> Jesus accepted it, because He is God.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="39-41" data-hl="that they which see not might see|Are we blind also?|therefore your sin remaineth"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="41" data-hl="but now ye say, We see; therefore your sin remaineth"></blockquote>
+    <h2 class="rise" style="--d:1">Who's really blind?</h2>
+    <div class="columns">
+      <div class="col grace rise" style="--d:2"><p class="who">The man born blind</p><h3>“I know not”</h3><p>He admitted what he couldn't see. Jesus gave him sight, then faith.</p></div>
+      <div class="col law step"><p class="who">The Pharisees</p><h3>“We see”</h3><p>They were sure they saw everything. So they missed the Son of God standing in front of them.</p></div>
+    </div>
+    <p class="note step">The most dangerous blindness is the kind that says, <em>“I'm fine. I see just fine.”</em> Admitting you can't see is where seeing starts. The man who says, “I need help,” is the one Jesus can heal.</p>
+  </div>
+</section>
+
+<!-- ======================= CLOSING ======================= -->
+<section class="slide remember">
+  <div class="inner">
+    <h2 class="rise">Points to remember</h2>
+    <ol class="seeds">
+      <li class="step"><span class="topic">Suffering</span><span class="seed-q">“That the works of God should be made manifest in him” <cite>9:3</cite></span><span class="take">Not every hardship is a punishment. Jesus doesn't assign blame. He goes to work.</span></li>
+      <li class="step"><span class="topic">Who Jesus is</span><span class="seed-q">“I am the light of the world” <cite>9:5</cite></span><span class="take">He said it, then proved it on a man who had never seen light.</span></li>
+      <li class="step"><span class="topic">Obedience</span><span class="seed-q">“He went his way therefore, and washed, and came seeing” <cite>9:7</cite></span><span class="take">He obeyed before he could see. The sight came on the far side of obedience.</span></li>
+      <li class="step"><span class="topic">Your story</span><span class="seed-q">“One thing I know, that, whereas I was blind, now I see” <cite>9:25</cite></span><span class="take">You don't need every answer. Tell what He's done for you.</span></li>
+      <li class="step"><span class="topic">The cost</span><span class="seed-q">“They had cast him out; and when he had found him” <cite>9:35</cite></span><span class="take">When following Jesus costs you, He comes looking for you.</span></li>
+      <li class="step"><span class="topic">Seeing clearly</span><span class="seed-q">“Now ye say, We see; therefore your sin remaineth” <cite>9:41</cite></span><span class="take">The truly blind are the ones who say they see just fine.</span></li>
+    </ol>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 1 of 6</p>
+      <span class="topic">Suffering</span>
+      <h2>Is every hardship a punishment for sin?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="2" data-hl="who did sin, this man, or his parents"></blockquote>
+      <blockquote class="quote step" data-q="3" data-hl="Neither hath this man sinned, nor his parents"></blockquote>
+      <blockquote class="quote step"><p>“And we know that all things work together for good to them that love God, to them who are the called according to his purpose.”</p><cite>Romans 8:28</cite></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>No. The disciples assumed somebody was to blame, but Jesus said this man's blindness wasn't a payback for anyone's sin. Some of our trouble does come from our own choices. But Jesus doesn't stand over a hurting man assigning blame. He goes to work, and He can turn even a lifetime of darkness into a showcase of what God can do.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 2 of 6</p>
+      <span class="topic">Who Jesus is</span>
+      <h2>What does it mean that Jesus is the light of the world?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="5" data-hl="I am the light of the world"></blockquote>
+      <blockquote class="quote step"><p>“Then spake Jesus again unto them, saying, I am the light of the world: he that followeth me shall not walk in darkness, but shall have the light of life.”</p><cite>John 8:12</cite></blockquote>
+      <blockquote class="quote step" data-q="39" data-hl="that they which see not might see"></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>Without Him, every one of us is in the dark: about God, about ourselves, about where we're headed. Jesus doesn't just point toward the light. He <em>is</em> the light. He proved it by opening eyes that had never seen, and He still opens the eyes of anyone who follows Him.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 3 of 6</p>
+      <span class="topic">Obedience</span>
+      <h2>What did the blind man have to do to be healed?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="7" data-hl="Go, wash in the pool of Siloam"></blockquote>
+      <blockquote class="quote step" data-q="11" data-hl="and I went and washed, and I received sight"></blockquote>
+      <blockquote class="quote step" data-q="15" data-hl="He put clay upon mine eyes, and I washed, and do see"></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>Just what Jesus told him: go, and wash. The power was all Jesus', but the man had to take Him at His word and walk to the pool while he still couldn't see. He obeyed first and saw second. Faith usually works that way.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 4 of 6</p>
+      <span class="topic">Your story</span>
+      <h2>What can you say about Jesus when you don't have all the answers?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="25" data-hl="one thing I know, that, whereas I was blind, now I see"></blockquote>
+      <blockquote class="quote step" data-q="30" data-hl="and yet he hath opened mine eyes"></blockquote>
+      <blockquote class="quote step"><p>“Go home to thy friends, and tell them how great things the Lord hath done for thee, and hath had compassion on thee.”</p><cite>Mark 5:19</cite></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>You can say what He's done for you. The man couldn't win a debate, but he could say, “I was blind, now I see,” and nobody could argue with it. Your before and after is your testimony. Tell it plainly.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 5 of 6</p>
+      <span class="topic">The cost</span>
+      <h2>What happens when following Jesus costs you?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="22" data-hl="he should be put out of the synagogue"></blockquote>
+      <blockquote class="quote step" data-q="35" data-hl="when he had found him"></blockquote>
+      <blockquote class="quote step"><p>“Let your conversation be without covetousness; and be content with such things as ye have: for he hath said, I will never leave thee, nor forsake thee.”</p><cite>Hebrews 13:5</cite></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>The man lost his place in the synagogue, and maybe his friends and family's support. But the moment he was thrown out, Jesus came and found him. People may walk away when you follow Jesus. He never will.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 6 of 6</p>
+      <span class="topic">Seeing clearly</span>
+      <h2>Who are the truly blind in this chapter?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="29" data-hl="as for this fellow, we know not from whence he is"></blockquote>
+      <blockquote class="quote step" data-q="39"></blockquote>
+      <blockquote class="quote step" data-q="41" data-hl="but now ye say, We see; therefore your sin remaineth"></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>The Pharisees. They had perfect eyesight and all the Bible learning, and they still couldn't see the Son of God in front of them, because they were sure they already saw. The blind beggar admitted what he didn't know, and he ended up seeing best of all. Saying “I need help” is where sight begins.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide prayer">
+  <div class="inner">
+    <div class="emblem rise"></div>
+    <h2 class="rise">Prayer requests</h2>
+    <p class="ask-line rise" style="--d:1">What can we pray about for you today?</p>
+    <blockquote class="quote rise" style="--d:3"><p>“Call unto me, and I will answer thee, and shew thee great and mighty things, which thou knowest not.”</p><cite>Jeremiah 33:3</cite></blockquote>
+  </div>
+</section>
+
+</main>
+
+<script>
+// King James Version, John chapter 9
+const V = {
+  1: "And as Jesus passed by, he saw a man which was blind from his birth.",
+  2: "And his disciples asked him, saying, Master, who did sin, this man, or his parents, that he was born blind?",
+  3: "Jesus answered, Neither hath this man sinned, nor his parents: but that the works of God should be made manifest in him.",
+  4: "I must work the works of him that sent me, while it is day: the night cometh, when no man can work.",
+  5: "As long as I am in the world, I am the light of the world.",
+  6: "When he had thus spoken, he spat on the ground, and made clay of the spittle, and he anointed the eyes of the blind man with the clay,",
+  7: "And said unto him, Go, wash in the pool of Siloam, (which is by interpretation, Sent.) He went his way therefore, and washed, and came seeing.",
+  8: "The neighbours therefore, and they which before had seen him that he was blind, said, Is not this he that sat and begged?",
+  9: "Some said, This is he: others said, He is like him: but he said, I am he.",
+  10: "Therefore said they unto him, How were thine eyes opened?",
+  11: "He answered and said, A man that is called Jesus made clay, and anointed mine eyes, and said unto me, Go to the pool of Siloam, and wash: and I went and washed, and I received sight.",
+  12: "Then said they unto him, Where is he? He said, I know not.",
+  13: "They brought to the Pharisees him that aforetime was blind.",
+  14: "And it was the sabbath day when Jesus made the clay, and opened his eyes.",
+  15: "Then again the Pharisees also asked him how he had received his sight. He said unto them, He put clay upon mine eyes, and I washed, and do see.",
+  16: "Therefore said some of the Pharisees, This man is not of God, because he keepeth not the sabbath day. Others said, How can a man that is a sinner do such miracles? And there was a division among them.",
+  17: "They say unto the blind man again, What sayest thou of him, that he hath opened thine eyes? He said, He is a prophet.",
+  18: "But the Jews did not believe concerning him, that he had been blind, and received his sight, until they called the parents of him that had received his sight.",
+  19: "And they asked them, saying, Is this your son, who ye say was born blind? how then doth he now see?",
+  20: "His parents answered them and said, We know that this is our son, and that he was born blind:",
+  21: "But by what means he now seeth, we know not; or who hath opened his eyes, we know not: he is of age; ask him: he shall speak for himself.",
+  22: "These words spake his parents, because they feared the Jews: for the Jews had agreed already, that if any man did confess that he was Christ, he should be put out of the synagogue.",
+  23: "Therefore said his parents, He is of age; ask him.",
+  24: "Then again called they the man that was blind, and said unto him, Give God the praise: we know that this man is a sinner.",
+  25: "He answered and said, Whether he be a sinner or no, I know not: one thing I know, that, whereas I was blind, now I see.",
+  26: "Then said they to him again, What did he to thee? how opened he thine eyes?",
+  27: "He answered them, I have told you already, and ye did not hear: wherefore would ye hear it again? will ye also be his disciples?",
+  28: "Then they reviled him, and said, Thou art his disciple; but we are Moses’ disciples.",
+  29: "We know that God spake unto Moses: as for this fellow, we know not from whence he is.",
+  30: "The man answered and said unto them, Why herein is a marvellous thing, that ye know not from whence he is, and yet he hath opened mine eyes.",
+  31: "Now we know that God heareth not sinners: but if any man be a worshipper of God, and doeth his will, him he heareth.",
+  32: "Since the world began was it not heard that any man opened the eyes of one that was born blind.",
+  33: "If this man were not of God, he could do nothing.",
+  34: "They answered and said unto him, Thou wast altogether born in sins, and dost thou teach us? And they cast him out.",
+  35: "Jesus heard that they had cast him out; and when he had found him, he said unto him, Dost thou believe on the Son of God?",
+  36: "He answered and said, Who is he, Lord, that I might believe on him?",
+  37: "And Jesus said unto him, Thou hast both seen him, and it is he that talketh with thee.",
+  38: "And he said, Lord, I believe. And he worshipped him.",
+  39: "And Jesus said, For judgment I am come into this world, that they which see not might see; and that they which see might be made blind.",
+  40: "And some of the Pharisees which were with him heard these words, and said unto him, Are we blind also?",
+  41: "Jesus said unto them, If ye were blind, ye should have no sin: but now ye say, We see; therefore your sin remaineth."
+};
+const BOOK = "John 9";
+</script>
+<script src="../assets/deck.js"></script>
+</body>
+</html>
