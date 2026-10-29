@@ -11494,5 +11494,239 @@ window.GLOSSARY = [
    [
     "Obadiah", 1,
     [ 21 ] ] ]
+ },
+ {
+  "id": "zephaniah",
+  "kind": "person",
+  "name": "Zephaniah the prophet (\"the LORD hides\")",
+  "refs": [
+   [
+    "Zephaniah", 1,
+    [ 1 ] ] ]
+ },
+ {
+  "id": "cushi",
+  "kind": "person",
+  "name": "Cushi, father of Zephaniah",
+  "refs": [
+   [
+    "Zephaniah", 1,
+    [ 1 ] ] ]
+ },
+ {
+  "id": "hizkiah",
+  "kind": "person",
+  "name": "Hizkiah (most likely King Hezekiah), Zephaniah's forefather",
+  "refs": [
+   [
+    "Zephaniah", 1,
+    [ 1 ] ] ]
+ },
+ {
+  "id": "josiah",
+  "kind": "person",
+  "name": "Josiah, king of Judah",
+  "refs": [
+   [
+    "Zephaniah", 1,
+    [ 1 ] ] ]
+ },
+ {
+  "id": "amon",
+  "kind": "person",
+  "name": "Amon, king of Judah (father of Josiah)",
+  "refs": [
+   [
+    "Zephaniah", 1,
+    [ 1 ] ] ]
+ },
+ {
+  "id": "stumblingblocks",
+  "kind": "term",
+  "name": "Stumblingblocks (idols that trip men up)",
+  "refs": [
+   [
+    "Zephaniah", 1,
+    [ 3 ] ] ]
+ },
+ {
+  "id": "chemarims",
+  "kind": "person",
+  "name": "The Chemarims (idol priests)",
+  "refs": [
+   [
+    "Zephaniah", 1,
+    [ 4 ] ] ]
+ },
+ {
+  "id": "host-of-heaven",
+  "kind": "term",
+  "name": "The host of heaven (sun, moon and stars worshipped as gods)",
+  "refs": [
+   [
+    "Zephaniah", 1,
+    [ 5 ] ] ]
+ },
+ {
+  "id": "malcham",
+  "kind": "person",
+  "name": "Malcham (\"their king\", most likely Milcom or Molech, the Ammonite god)",
+  "refs": [
+   [
+    "Zephaniah", 1,
+    [ 5 ] ] ]
+ },
+ {
+  "id": "strange-apparel",
+  "kind": "term",
+  "name": "Strange apparel (foreign clothes and ways)",
+  "refs": [
+   [
+    "Zephaniah", 1,
+    [ 8 ] ] ]
+ },
+ {
+  "id": "leap-on-the-threshold",
+  "kind": "term",
+  "name": "Leap on the threshold (a pagan doorstep custom)",
+  "refs": [
+   [
+    "Zephaniah", 1,
+    [ 9 ] ] ]
+ },
+ {
+  "id": "fish-gate",
+  "kind": "place",
+  "name": "The fish gate (in Jerusalem's north wall)",
+  "refs": [
+   [
+    "Zephaniah", 1,
+    [ 10 ] ] ]
+ },
+ {
+  "id": "the-second-quarter",
+  "kind": "place",
+  "name": "The second (Jerusalem's new quarter)",
+  "refs": [
+   [
+    "Zephaniah", 1,
+    [ 10 ] ] ]
+ },
+ {
+  "id": "maktesh",
+  "kind": "place",
+  "name": "Maktesh (\"the mortar\", Jerusalem's market hollow)",
+  "refs": [
+   [
+    "Zephaniah", 1,
+    [ 11 ] ] ]
+ },
+ {
+  "id": "lees",
+  "kind": "term",
+  "name": "Settled on their lees (gone thick and stale, complacent)",
+  "refs": [
+   [
+    "Zephaniah", 1,
+    [ 12 ] ] ]
+ },
+ {
+  "id": "fire-of-his-jealousy",
+  "kind": "term",
+  "name": "The fire of His jealousy",
+  "refs": [
+   [
+    "Zephaniah", 1,
+    [ 18 ] ],
+   [
+    "Zephaniah", 3,
+    [ 8 ] ] ]
+ },
+ {
+  "id": "meekness",
+  "kind": "term",
+  "name": "Meek, meekness (strength bowed to God)",
+  "refs": [
+   [
+    "Amos", 2,
+    [ 7 ] ],
+   [
+    "Zephaniah", 2,
+    [ 3 ] ] ]
+ },
+ {
+  "id": "cherethites",
+  "kind": "person",
+  "name": "The Cherethites (a Philistine clan, probably from Crete)",
+  "refs": [
+   [
+    "Zephaniah", 2,
+    [ 5 ] ] ]
+ },
+ {
+  "id": "canaan",
+  "kind": "place",
+  "name": "Canaan",
+  "refs": [
+   [
+    "Zephaniah", 2,
+    [ 5 ] ] ]
+ },
+ {
+  "id": "cormorant-and-bittern",
+  "kind": "term",
+  "name": "The cormorant and the bittern (wild birds of the ruins)",
+  "refs": [
+   [
+    "Zephaniah", 2,
+    [ 14 ] ] ]
+ },
+ {
+  "id": "evening-wolves",
+  "kind": "term",
+  "name": "Evening wolves",
+  "refs": [
+   [
+    "Habakkuk", 1,
+    [ 8 ] ],
+   [
+    "Zephaniah", 3,
+    [ 3 ] ] ]
+ },
+ {
+  "id": "pure-language",
+  "kind": "term",
+  "name": "A pure language",
+  "refs": [
+   [
+    "Zephaniah", 3,
+    [ 9 ] ] ]
+ },
+ {
+  "id": "suppliants",
+  "kind": "person",
+  "name": "Suppliants (worshippers who pray)",
+  "refs": [
+   [
+    "Zephaniah", 3,
+    [ 10 ] ] ]
+ },
+ {
+  "id": "the-lord-king-of-israel",
+  "kind": "term",
+  "name": "The king of Israel, even the LORD",
+  "refs": [
+   [
+    "Zephaniah", 3,
+    [ 15 ] ] ]
+ },
+ {
+  "id": "joy-over-thee-with-singing",
+  "kind": "term",
+  "name": "He will joy over thee with singing",
+  "refs": [
+   [
+    "Zephaniah", 3,
+    [ 17 ] ] ]
  }
 ];

@@ -4526,5 +4526,159 @@ window.STUDIES = [
       },
       "big": "Joy in the Lord doesn't depend on circumstances. Remember what God has done, ask for mercy, rest in Him when afraid, and choose to rejoice in the God of your salvation."
     }
+  },
+  {
+    "id": "zephaniah-01",
+    "type": "chapter",
+    "book": "Zephaniah",
+    "ch": 1,
+    "date": "2026-10-29",
+    "title": "Zephaniah 1",
+    "sub": "The great day of the LORD",
+    "about": "A prophet with a king's blood tells Jerusalem the truth: the day of the LORD is near, and nobody can buy his way out of it.",
+    "tags": [
+      "The day of the LORD",
+      "A divided heart",
+      "Drifting",
+      "Complacency",
+      "Money",
+      "Refuge"
+    ],
+    "url": "studies/zephaniah-01.html",
+    "overview": {
+      "where": "Judah and Jerusalem, the southern kingdom",
+      "when": "In the days of King Josiah, about 630 BC, before the exile",
+      "people": [
+        "zephaniah",
+        "hizkiah",
+        "josiah",
+        "amon",
+        "the-lord",
+        "chemarims",
+        "malcham",
+        "priests"
+      ],
+      "places": [
+        "judah",
+        "jerusalem",
+        "fish-gate",
+        "the-second-quarter",
+        "maktesh"
+      ],
+      "story": [
+        "The word of the LORD comes to Zephaniah, four generations down from Hizkiah, in the days of King Josiah (1).",
+        "God will sweep the land like the flood, then names what's in Jerusalem: Baal, the idol priests, rooftop star worship, men who swear by the LORD and by Malcham, and men who turned back (2–6).",
+        "Hush: the day of the LORD is at hand. God has prepared a sacrifice, and Judah is it. He will punish the princes, the foreign fashions, and the violent (7–9).",
+        "A cry rises from the fish gate to the market. God will search Jerusalem with candles for the men settled on their lees who say He won't do anything (10–13).",
+        "The great day is near: a day of wrath, darkness, and the trumpet. Neither silver nor gold will deliver them (14–18)."
+      ],
+      "key": {
+        "ref": "Zephaniah 1:14",
+        "text": "The great day of the LORD is near, it is near, and hasteth greatly, even the voice of the day of the LORD: the mighty man shall cry there bitterly."
+      },
+      "big": "The day of the LORD is real, and nothing a man owns can buy him out of it. God won't share a divided heart, and He isn't asleep. The only safe place is in Him, through the blood of Christ."
+    }
+  },
+  {
+    "id": "zephaniah-02",
+    "type": "chapter",
+    "book": "Zephaniah",
+    "ch": 2,
+    "date": "2026-10-29",
+    "title": "Zephaniah 2",
+    "sub": "Seek ye the LORD",
+    "about": "Before the day comes, God calls the humble to come and hide in Him. Then He turns to the nations on every side of Judah.",
+    "tags": [
+      "Seeking God",
+      "Meekness",
+      "Being mocked",
+      "Idols",
+      "Pride",
+      "God's word kept"
+    ],
+    "url": "studies/zephaniah-02.html",
+    "overview": {
+      "where": "Judah, and the nations around it: Philistia, Moab, Ammon, Ethiopia, and Assyria",
+      "when": "Under King Josiah, about 630 BC, about twenty years before Nineveh fell",
+      "people": [
+        "zephaniah",
+        "the-lord",
+        "philistines",
+        "cherethites",
+        "ethiopians"
+      ],
+      "places": [
+        "judah",
+        "gaza",
+        "ashkelon",
+        "ashdod",
+        "ekron",
+        "canaan",
+        "moab",
+        "ammon",
+        "sodom-and-gomorrah",
+        "assyria",
+        "nineveh"
+      ],
+      "story": [
+        "Gather together before the day passes like chaff. Seek the LORD, seek righteousness, seek meekness: it may be ye shall be hid (1–3).",
+        "West: the Philistine cities will be emptied, and the coast will become pasture for the remnant of Judah, whose captivity God will turn (4–7).",
+        "East: God has heard Moab and Ammon mock His people. They will become like Sodom and Gomorrah (8–10).",
+        "God will starve every idol, and men will worship Him from every place. South: the Ethiopians fall by His sword (11–12).",
+        "North: Assyria will be destroyed and proud Nineveh, which said “I am, and there is none beside me,” left to the birds and beasts (13–15)."
+      ],
+      "key": {
+        "ref": "Zephaniah 2:3",
+        "text": "Seek ye the LORD, all ye meek of the earth, which have wrought his judgment; seek righteousness, seek meekness: it may be ye shall be hid in the day of the LORD’S anger."
+      },
+      "big": "While the day is still coming, the door is open: seek the LORD now, humbly. Every nation answers to God, every idol will starve, and pride that plays God is headed for a fall."
+    }
+  },
+  {
+    "id": "zephaniah-03",
+    "type": "chapter",
+    "book": "Zephaniah",
+    "ch": 3,
+    "date": "2026-10-29",
+    "title": "Zephaniah 3",
+    "sub": "He will joy over thee with singing",
+    "about": "The city that wouldn't listen hears one more hard word. Then comes one of the most tender promises in the Bible: God Himself, singing over His people.",
+    "tags": [
+      "Correction",
+      "God's faithfulness",
+      "Shame",
+      "Humility",
+      "God's joy",
+      "Restoration"
+    ],
+    "url": "studies/zephaniah-03.html",
+    "overview": {
+      "where": "Jerusalem",
+      "when": "Under King Josiah, about 630 BC, looking ahead past the exile",
+      "people": [
+        "zephaniah",
+        "the-lord",
+        "priests",
+        "suppliants"
+      ],
+      "places": [
+        "jerusalem",
+        "sion",
+        "israel",
+        "ethiopians"
+      ],
+      "story": [
+        "Woe to the oppressing city: she wouldn't obey, take correction, trust, or draw near. Her leaders are lions and wolves (1–4).",
+        "The just LORD is in her midst and never fails, every morning. He warned her by the fall of nations, but she rose early to sin (5–7).",
+        "After the fire on the nations, God gives the peoples a pure language to call on His name, even from beyond the rivers of Ethiopia (8–10).",
+        "He takes away shame and pride, and leaves an afflicted and poor people who trust in His name, with none to make them afraid (11–13).",
+        "Sing, O daughter of Zion! The LORD has taken away her judgments. He will rejoice over her with singing, save the lame, and bring His people home (14–20)."
+      ],
+      "key": {
+        "ref": "Zephaniah 3:17",
+        "text": "The LORD thy God in the midst of thee is mighty; he will save, he will rejoice over thee with joy; he will rest in his love, he will joy over thee with singing."
+      },
+      "big": "God's judgment is real, but it isn't His last word. He takes away shame, keeps the humble, gathers the limping, and rejoices over His people with singing."
+    }
   }
 ];
