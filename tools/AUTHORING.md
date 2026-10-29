@@ -103,6 +103,28 @@ Copy patterns from `studies/john-01.html` and `studies/john-02.html`. These are 
 | `.match` (`.a`, `.b`, `.tag`, `.but`, `.w`, `.link`) | two parallel lines matched piece to piece. `--n` sets the number of pieces | Proverbs 10 slide 5 |
 | `svg.lid` (`.lid-cover`, `.lid-cloud`, `.lid-pile`, `.lid-light` + `.lid-off`, `.lid-gone`) | something hidden, uncovered, then taken away (covered sin, confessed and forsaken) | Proverbs 28 slide 15 |
 | `ol.abc li(.end)` (`b`, `span`, `i`, `--k`) | an acrostic: one letter of the alphabet per verse | Proverbs 31 slide 17 |
+| `.daybreak > div` ×3 (`i`, `b`, `p`, `p.kjv`; `.climb`) | three stages from dark to light: night, dawn, day (Nicodemus coming out of the dark). `.climb` raises them like steps | John 3 slide 5, John 7 slide 34, John 19 slide 33 (climb) |
+| `svg.map` (`.map-land`, `.map-sea`, `.map-lake`, `.map-river`, `.map-border`, `.map-region`, `.map-water`, `.map-soft`, `.map-town(.here)`, `.map-ping`, `.map-way`, `.map-route`) | any hand-drawn map. A `.map-route` (with `pathLength="1"`) draws itself when the slide opens; `.map-route.r1`–`.r4` wait for a `.map-go1`–`.map-go4` step | John 6 slide 5 (on a step), John 10 slide 36 (on open), John 18 slide 5 (three legs) |
+| `svg.map[data-land]` + `data-towns="Jerusalem, Sychar*, Bethlehem!:b"` | the whole land (Galilee, Samaria, Judaea, Perea, the lake, the Jordan, the Dead Sea), drawn by deck.js in a 400 × 560 box. Towns come from the list in deck.js: `*` lights one, `!` adds a pulse, `:l :r :t :b` places its name. Draw your routes inside the svg using those town positions. Give the svg its own `viewBox` to show part of the land, larger | John 4 slide 5 (whole land, a route on a step), John 7 slide 33 (cropped) |
+| `svg.wells` (`.wells-pit`, `.wells-water.wells-drain`, `.wells-crack`, `.wells-drip`, `.wells-rock`, `.wells-spring`, `.wells-bubble`) | a broken cistern that leaks dry beside a spring that never stops (Jeremiah 2:13). Clip the drain to the pit with a study-prefixed clip id | John 4 slide 12, John 7 slide 26 |
+| `.walls > div` (`b`, `i`, `b`, `small`) | walls coming down between two kinds of people, one row per step | John 4 slide 10 |
+| `[data-dots="38"].dots` (`.rows` + `--cols`, `.fill`, `.fish`, `--dot`, `--pace`, `--wait`; `data-keep` + `.dots-go`) and `.dots-num` (`--to`), `.dots-cap` | a dot counter: dots that pop in, fill, or fade until a few are left, and a number that counts up | John 5 slide 8 (fill, count up), John 6 slide 9 (on a step), John 6 slide 47 (kept few), John 21 slide 15 (fish), John 4 slide 31 (rows) |
+| `.talk > p` (`small`, `p.reply`, `.flag`) | a conversation in speech bubbles | John 5 slide 9 |
+| `.ifthen` (`div.if`, `.arrow`, `div.then`, `small`) | if … then: a condition and what follows | John 7 slide 14 |
+| `svg.clock` (`.clock-face`, `.clock-tick`, `.clock-hour`, `.clock-hand`; `--stop`, `--from`, `--at`) | a clock hand sweeping toward "the hour" and stopping short ("not yet"); `--stop: 0deg` for "the hour is come" | John 7 slide 9 |
+| `ol.timeline > li` (`b`, `span`, `small`; `.lit`, `.wait`, `data-n`, `--k`) | a timeline with any number of evenly spaced points (`.hours` is fixed at five) | John 10 slide 24, John 11 slide 7 (numbered) |
+| `.iam` (`.big`, `div` + `cite`, `div.now`) | the seven "I am" sayings, the current one lit. (`.signs li.now` also works for them as a grid of cards: John 8, 10, 11, 14, 15) | John 6 slide 31 |
+| `svg.tomb` (`.tomb-door`, `.tomb-light`, `.tomb-stone`, `.tomb-word`, `.tomb-sun`, `.tomb-man`; `.now`, `.open`, `.tomb-roll`, `.tomb-forth`; `--roll`, `--turn`) | a tomb whose stone rolls away: on a step, when the slide opens, or already open; the dead walk out | John 11 slides 28, 31; John 20 slide 5 (at dawn) |
+| `svg.seed` (`.seed-fall`, `.seed-husk`, `.seed-alone`, `.seed-roots`, `.seed-stalk`, `.seed-head`; `.seed-die`, `.seed-grow`) | a seed that falls, dies, and comes up as a harvest | John 12 slide 24 |
+| `ol.stairs > li` (`b`; `--n`, `--k`; `.down`) | steps going down: a humbling, or (`.down`) a slide into the night | John 13 slides 7, 25 (down) |
+| `svg.spirit` (`.spirit-body`, `.spirit-move` + `--to`, `.spirit-pulse`, `.spirit-one`, `.spirit-halo`, `.spirit-few`, `.spirit-many`, `.spirit-cap`, `.before`/`.after`; `.spirit-go`) | the Spirit with a man, then in him; one presence, then in believers everywhere | John 14 slide 20, John 16 slide 7 |
+| `svg.still` (`.still-roll`, `.still-chop`, `.still-calm`, `.before`/`.after`; `.still-go`) | troubled water growing calm | John 14 slide 28 |
+| `svg.curve` (`.curve-base`, `.curve-line`, `.curve-pt(.low/.high)`, `text.q`, `text.ref`; `--at` or `--k`) | a line that falls and rises again: sorrow to joy, a fall and a restoring | John 16 slide 16, John 21 slide 23 |
+| `svg.kept` (`.kept-wall(.inner)`, `.kept-in`, `.kept-tag`, `.kept-foe`, `.kept-dart`; `--dx`, `--dy`, `--w`) | kept safe, with attacks bouncing off (eternal security) | John 10 slide 28 (two hands), John 17 slide 14 (darts) |
+| `.swap` (`h3` + `span`, `div.a`, `div.b`; `.swap-go`) | two people trading places (substitution) | John 18 slide 37 |
+| `.ledger` (`h3`, `ul li` + `--k`, `.total`, `.ledger-stamp`; `.ledger-paid`) | a bill of debts struck through and stamped paid | John 19 slide 27 |
+| `ol.checks > li.step` (`.tick`, `q`, `small`, `b`) | a checklist ticked off one by one (prophecies fulfilled) | John 19 slide 31 |
+| `.tally span(.hit)` (`i`, `--k`) | how often a key word appears, verse by verse | John 15 slide 10 |
 
 ### Making a new graphic
 
@@ -111,6 +133,7 @@ You're encouraged to invent new ways to show an idea. A new graphic is another s
 - Put its CSS in a `<style>` in your study's `<head>`, after the stylesheet links. Prefix every class with the study id, like `.prv03-scale`.
 - **No fixed colors anywhere**: no `#hex`, `rgb()`, or color names. Use the theme tokens: `--bg --surface --surface-2 --ink --ink-soft --line --line-strong --accent --accent-hot --on-accent --cool --warm --danger --wine --glow --on-glow --leather --leather-light`. You may use `color-mix(in srgb, var(--accent) 20%, transparent)` for tints.
 - In SVG, color with `style="fill:var(--accent)"` or with classes, never `fill="#..."`. Text on `--accent` uses `--on-accent`. Text on a glow uses `--on-glow`.
+- **Need real night and real light?** `--glow` stays light and `--on-glow` stays dark in every theme, even the pale ones. So a panel filled with `--on-glow`, with `--glow` text, is a night sky in every theme, and the reverse is daylight. `.daybreak` and `.stairs.down` use this.
 - Give SVG gradient and clip ids a study prefix (`prv03-glow`), so they're unique.
 - Check it in all four themes.
 - List it in your report so it can be moved into `deck.css` for everyone.

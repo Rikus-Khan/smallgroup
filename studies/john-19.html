@@ -34,45 +34,6 @@
 .jn19-map .soft { fill: var(--ink-soft); }
 .jn19-map .walk { fill: none; stroke: var(--accent-hot); stroke-width: 5; stroke-linecap: round; stroke-dasharray: 1; stroke-dashoffset: 1; transition: stroke-dashoffset 2.4s ease; }
 .split:has(.jn19-walk-go.on) .jn19-map .walk { stroke-dashoffset: 0; }
-
-/* A bill of debt, struck through line by line, then stamped paid */
-.jn19-ledger { position: relative; max-width: 30rem; margin: .4em 0 1.1em; padding: .9em 1.2em 1em; border: 1.5px solid var(--line-strong); border-radius: 6px; background: var(--surface); box-shadow: 0 10px 24px -16px var(--ink); }
-.jn19-ledger h3 { font: 700 clamp(.85rem, .8rem + .3vw, 1.05rem) var(--sans); color: var(--ink-soft); border-bottom: 1px solid var(--line-strong); padding-bottom: .35em; margin-bottom: .4em; }
-.jn19-ledger ul { list-style: none; margin: 0; padding: 0; display: grid; gap: .2em; }
-.jn19-ledger li { position: relative; display: flex; justify-content: space-between; gap: 1em; font: italic clamp(1rem, .88rem + .6vw, 1.4rem)/1.35 var(--serif); }
-.jn19-ledger li span:last-child { font-style: normal; font-family: var(--sans); color: var(--ink-soft); }
-.jn19-ledger li::after { content: ""; position: absolute; left: -2%; right: -2%; top: 55%; height: 2px; background: var(--danger); transform: scaleX(0); transform-origin: left; transition: transform .6s ease; transition-delay: calc(var(--k) * 260ms); }
-.jn19-ledger .total { margin-top: .4em; padding-top: .35em; border-top: 2px solid var(--ink-soft); font: 700 clamp(1rem, .9rem + .5vw, 1.3rem) var(--sans); display: flex; justify-content: space-between; }
-.jn19-ledger .total b { color: var(--danger); transition: color .6s ease 1.8s; }
-.slide:has(.jn19-paid.on) .jn19-ledger li::after { transform: scaleX(1); }
-.slide:has(.jn19-paid.on) .jn19-ledger .total b { color: var(--ink-soft); }
-.jn19-stamp { position: absolute; right: 4%; top: 30%; padding: .2em .5em; border: 4px solid var(--accent); border-radius: 8px; color: var(--accent); text-align: center; background: color-mix(in srgb, var(--bg) 70%, transparent);
-  font: 700 clamp(1.2rem, .9rem + 1.4vw, 2.1rem)/1.1 var(--sans); transform: rotate(-9deg) scale(2.2); opacity: 0; transition: transform .4s cubic-bezier(.3,1.6,.5,1) 2.1s, opacity .25s ease 2.1s; }
-.jn19-stamp small { display: block; font: italic 400 .6em var(--serif); }
-.slide:has(.jn19-paid.on) .jn19-stamp { transform: rotate(-9deg) scale(1); opacity: 1; }
-
-/* Scriptures written centuries earlier, checked off one by one */
-.jn19-done { list-style: none; padding: 0; margin: .4em 0 1em; display: grid; gap: .5rem; }
-.jn19-done li { display: grid; grid-template-columns: 2.2rem 1fr auto; gap: .2rem .8rem; align-items: center; padding: .45em .7em; border-radius: 8px; border: 1px solid var(--line-strong); background: var(--surface); }
-.jn19-done .tick { grid-row: 1 / span 2; width: 2rem; height: 2rem; border-radius: 50%; display: grid; place-items: center; border: 2px solid var(--line-strong); color: transparent; font-weight: 700; transition: background-color .5s ease .3s, border-color .5s ease .3s, color .5s ease .3s; }
-.jn19-done li.on .tick { background: var(--accent); border-color: var(--accent); color: var(--on-accent); }
-.jn19-done q { font: italic clamp(.95rem, .85rem + .5vw, 1.3rem)/1.3 var(--serif); quotes: "\201C" "\201D"; }
-.jn19-done .old { grid-column: 2; font-size: clamp(.8rem, .75rem + .3vw, 1rem); color: var(--ink-soft); }
-.jn19-done .jn { grid-column: 3; grid-row: 1 / span 2; font-weight: 700; color: var(--accent-hot); font-size: clamp(.85rem, .8rem + .3vw, 1.05rem); white-space: nowrap; }
-
-/* Nicodemus steps out of the dark: night, a careful word, then out in the open */
-.jn19-steps { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; align-items: end; margin: .4em 0 1em; }
-.jn19-steps div { padding: .6em .7em; border-radius: 8px 8px 0 0; font-size: clamp(.85rem, .78rem + .4vw, 1.15rem); line-height: 1.35; min-height: calc(5.5rem + var(--k) * 2.6rem); }
-.jn19-steps b { display: block; font: 600 1.15em var(--serif); margin-bottom: .2em; }
-.jn19-steps i { display: block; font-style: normal; font-size: .85em; font-weight: 700; color: var(--ink-soft); margin-bottom: .2em; }
-.jn19-steps .s0 { background: var(--leather); color: var(--glow); }
-.jn19-steps .s0 i { color: var(--leather-light); }
-.jn19-steps .s1 { background: color-mix(in srgb, var(--leather) 30%, var(--surface-2)); border-top: 3px solid var(--line-strong); }
-.jn19-steps .s2 { background: var(--accent); color: var(--on-accent); }
-.jn19-steps .s2 i { color: var(--on-accent); opacity: .8; }
-
-/* The title over the cross: three languages, sized to fit one line each on wide screens */
-.jn19-title .w { font-size: clamp(1.3rem, .9rem + 1.9vw, 2.6rem); }
 </style>
 </head>
 <body>
@@ -370,7 +331,7 @@
   <div class="inner">
     <h2 class="rise">Paid in full</h2>
     <p class="note rise" style="--d:1">Picture the bill with your name on it.</p>
-    <div class="jn19-ledger rise" style="--d:2">
+    <div class="ledger rise" style="--d:2">
       <h3>Against us (Colossians 2:14)</h3>
       <ul>
         <li style="--k:0"><span>Every lie I told</span><span>owed</span></li>
@@ -380,9 +341,9 @@
         <li style="--k:4"><span>Every secret I kept</span><span>owed</span></li>
       </ul>
       <div class="total"><span>Balance due</span><b>more than I can pay</b></div>
-      <div class="jn19-stamp">TETELESTAI<small>paid in full</small></div>
+      <div class="ledger-stamp">TETELESTAI<small>paid in full</small></div>
     </div>
-    <blockquote class="quote step jn19-paid"><p>“Blotting out the handwriting of ordinances that was against us, which was contrary to us, and took it out of the way, nailing it to his cross;”</p><cite>Colossians 2:14</cite></blockquote>
+    <blockquote class="quote step ledger-paid"><p>“Blotting out the handwriting of ordinances that was against us, which was contrary to us, and took it out of the way, nailing it to his cross;”</p><cite>Colossians 2:14</cite></blockquote>
     <blockquote class="quote step"><p>“For he hath made him to be sin for us, who knew no sin; that we might be made the righteousness of God in him.”</p><cite>2 Corinthians 5:21</cite></blockquote>
     <p class="note step">On the cross, Jesus took our sin as if it were His own and paid for it in full. That's why a believer is secure: there's nothing left on the bill for anyone to collect. <em>“By one offering he hath perfected for ever them that are sanctified”</em> (Hebrews 10:14).</p>
   </div>
@@ -408,11 +369,11 @@
     <h2 class="rise" style="--d:1">Every word kept</h2>
     <p class="note rise" style="--d:2">The sabbath began at sundown, so the leaders wanted the bodies down. Breaking the legs made death come quickly. But Jesus was already dead. A spear to the side proved it, and John stood there and saw it (v. 35).</p>
     <p class="note step">Count what John has shown us came true at the cross, written hundreds of years before:</p>
-    <ol class="jn19-done">
-      <li class="step"><span class="tick">✓</span><q>They part my garments among them, and cast lots upon my vesture.</q><span class="old">Psalm 22:18</span><span class="jn">19:23–24</span></li>
-      <li class="step"><span class="tick">✓</span><q>in my thirst they gave me vinegar to drink</q><span class="old">Psalm 69:21</span><span class="jn">19:28–29</span></li>
-      <li class="step"><span class="tick">✓</span><q>neither shall ye break a bone thereof</q><span class="old">Exodus 12:46, the Passover lamb; also Psalm 34:20</span><span class="jn">19:33, 36</span></li>
-      <li class="step"><span class="tick">✓</span><q>they shall look upon me whom they have pierced</q><span class="old">Zechariah 12:10</span><span class="jn">19:34, 37</span></li>
+    <ol class="checks">
+      <li class="step"><span class="tick">✓</span><q>They part my garments among them, and cast lots upon my vesture.</q><small>Psalm 22:18</small><b>19:23–24</b></li>
+      <li class="step"><span class="tick">✓</span><q>in my thirst they gave me vinegar to drink</q><small>Psalm 69:21</small><b>19:28–29</b></li>
+      <li class="step"><span class="tick">✓</span><q>neither shall ye break a bone thereof</q><small>Exodus 12:46, the Passover lamb; also Psalm 34:20</small><b>19:33, 36</b></li>
+      <li class="step"><span class="tick">✓</span><q>they shall look upon me whom they have pierced</q><small>Zechariah 12:10</small><b>19:34, 37</b></li>
     </ol>
     <p class="note step">Soldiers gambling, a sponge of vinegar, legs not broken, a spear thrust: none of these men were trying to fulfill anything. The cross wasn't an accident or a tragedy that got out of hand. It was God's plan, kept to the letter.</p>
   </div>
@@ -425,10 +386,10 @@
     <blockquote class="quote rise" data-q="39" data-hl="which at the first came to Jesus by night"></blockquote>
     <h2 class="rise" style="--d:1">Out of the shadows</h2>
     <p class="note rise" style="--d:2">Two respected members of the ruling council. Both believed in Jesus. Both had kept it quiet. Watch Nicodemus across John's Gospel:</p>
-    <div class="jn19-steps">
-      <div class="s0 step" style="--k:0"><i>John 3:2</i><b>By night</b>Comes to Jesus in the dark, where no one can see.</div>
-      <div class="s1 step" style="--k:1"><i>John 7:50–51</i><b>A careful word</b>“Doth our law judge any man, before it hear him?”</div>
-      <div class="s2 step" style="--k:2"><i>John 19:39</i><b>In the open</b>Carries a king's burial in spices to the cross, in daylight, for everyone to see.</div>
+    <div class="daybreak climb">
+      <div class="step"><i>John 3:2</i><b>By night</b><p>Comes to Jesus in the dark, where no one can see.</p></div>
+      <div class="step"><i>John 7:50–51</i><b>A careful word</b><p class="kjv">“Doth our law judge any man, before it hear him?”</p></div>
+      <div class="step"><i>John 19:39</i><b>In the open</b><p>Carries a king's burial in spices to the cross, in daylight, for everyone to see.</p></div>
     </div>
     <div class="math step">
       <div><b>100 pounds</b><span>Roman pounds of myrrh and aloes</span></div>

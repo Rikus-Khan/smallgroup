@@ -38,17 +38,6 @@
 .slide:has(.jn21-cast.on) .jn21-catch .right { opacity: 1; }
 .slide:has(.jn21-cast.on) .jn21-catch .fish { opacity: 1; }
 
-/* 153 fish, counted (17 x 9) */
-@property --jn21-n { syntax: '<integer>'; inherits: false; initial-value: 0; }
-.jn21-haul { display: grid; grid-template-columns: repeat(17, 1fr); gap: 4px 5px; margin: .3em 0 .9em; max-width: 44rem; }
-.jn21-haul i { aspect-ratio: 2 / 1; background: var(--cool); clip-path: polygon(0 50%, 18% 12%, 55% 0, 74% 28%, 100% 0, 92% 50%, 100% 100%, 74% 72%, 55% 100%, 18% 88%); opacity: 0; transition: opacity .3s ease; transition-delay: calc(var(--k) * 16ms + 300ms); }
-.slide.active .jn21-haul i { opacity: 1; }
-.jn21-count { font: 300 clamp(2.6rem, 1.6rem + 5vw, 6rem)/1 var(--serif); color: var(--accent-hot); counter-reset: jn21 var(--jn21-n); }
-.jn21-count::before { content: counter(jn21); }
-.slide.active .jn21-count { animation: rise .9s cubic-bezier(.2,.7,.2,1) .29s both, jn21-tally 2.6s .3s linear forwards; }
-@keyframes jn21-tally { to { --jn21-n: 153; } }
-.jn21-count small { font: 400 clamp(1rem, .9rem + .5vw, 1.35rem) var(--sans); color: var(--ink-soft); margin-left: .4em; }
-
 /* Three questions: which Greek word for love each man used */
 .jn21-loves { display: grid; grid-template-columns: auto repeat(3, 1fr); gap: 6px; margin: .4em 0 1em; text-align: center; align-items: stretch; }
 .jn21-loves > span { padding: .45em .4em; border-radius: 8px; font-size: clamp(.85rem, .78rem + .4vw, 1.15rem); }
@@ -58,19 +47,6 @@
 .jn21-loves .feed { font-family: var(--serif); background: var(--surface); border: 1.5px dashed var(--line-strong); }
 .jn21-loves .shift { transition: border-color .8s ease, background-color .8s ease, box-shadow .8s ease; }
 .slide:has(.jn21-third.on) .jn21-loves .shift { border-color: var(--accent); background: color-mix(in srgb, var(--accent) 16%, transparent); box-shadow: 0 0 0 3px color-mix(in srgb, var(--accent) 18%, transparent); }
-
-/* Peter's road: down into failure, and back up */
-.jn21-valley .base { stroke: var(--line); stroke-width: 2; }
-.jn21-valley .path { fill: none; stroke: var(--accent); stroke-width: 5; stroke-linecap: round; stroke-linejoin: round; stroke-dasharray: 1; stroke-dashoffset: 1; transition: stroke-dashoffset 3.2s ease .4s; }
-.slide.active .jn21-valley .path { stroke-dashoffset: 0; }
-.jn21-valley .pt { opacity: 0; transition: opacity .6s ease; transition-delay: calc(var(--k) * 450ms + .5s); }
-.slide.active .jn21-valley .pt { opacity: 1; }
-.jn21-valley .pt circle { fill: var(--bg); stroke: var(--accent); stroke-width: 3; }
-.jn21-valley .pt.low circle { stroke: var(--danger); }
-.jn21-valley .pt.now circle { fill: var(--accent); }
-.jn21-valley text { font-size: 15px; }
-.jn21-valley .ref { fill: var(--ink-soft); font-size: 13px; }
-@media (max-width: 600px) { .jn21-valley text { font-size: 22px; } .jn21-valley .ref { display: none; } }
 
 /* So many books the world couldn't hold them */
 .jn21-shelf { display: flex; flex-wrap: nowrap; align-items: flex-end; gap: 3px; height: clamp(100px, 18vh, 180px); overflow: hidden; margin: .4em 0 1em; padding-bottom: 2px; border-bottom: 3px solid var(--line-strong); -webkit-mask-image: linear-gradient(90deg, var(--ink) 55%, transparent); mask-image: linear-gradient(90deg, var(--ink) 55%, transparent); }
@@ -275,18 +251,8 @@
 <section class="slide ex">
   <div class="inner">
     <blockquote class="quote rise" data-q="11" data-hl="hundred and fifty and three|yet was not the net broken"></blockquote>
-    <p class="jn21-count rise" style="--d:1"><small>great fishes</small></p>
-    <div class="jn21-haul" aria-label="One hundred fifty-three fish in seventeen rows of nine.">
-      <i style="--k:0"></i><i style="--k:1"></i><i style="--k:2"></i><i style="--k:3"></i><i style="--k:4"></i><i style="--k:5"></i><i style="--k:6"></i><i style="--k:7"></i><i style="--k:8"></i><i style="--k:9"></i><i style="--k:10"></i><i style="--k:11"></i><i style="--k:12"></i><i style="--k:13"></i><i style="--k:14"></i><i style="--k:15"></i><i style="--k:16"></i>
-      <i style="--k:17"></i><i style="--k:18"></i><i style="--k:19"></i><i style="--k:20"></i><i style="--k:21"></i><i style="--k:22"></i><i style="--k:23"></i><i style="--k:24"></i><i style="--k:25"></i><i style="--k:26"></i><i style="--k:27"></i><i style="--k:28"></i><i style="--k:29"></i><i style="--k:30"></i><i style="--k:31"></i><i style="--k:32"></i><i style="--k:33"></i>
-      <i style="--k:34"></i><i style="--k:35"></i><i style="--k:36"></i><i style="--k:37"></i><i style="--k:38"></i><i style="--k:39"></i><i style="--k:40"></i><i style="--k:41"></i><i style="--k:42"></i><i style="--k:43"></i><i style="--k:44"></i><i style="--k:45"></i><i style="--k:46"></i><i style="--k:47"></i><i style="--k:48"></i><i style="--k:49"></i><i style="--k:50"></i>
-      <i style="--k:51"></i><i style="--k:52"></i><i style="--k:53"></i><i style="--k:54"></i><i style="--k:55"></i><i style="--k:56"></i><i style="--k:57"></i><i style="--k:58"></i><i style="--k:59"></i><i style="--k:60"></i><i style="--k:61"></i><i style="--k:62"></i><i style="--k:63"></i><i style="--k:64"></i><i style="--k:65"></i><i style="--k:66"></i><i style="--k:67"></i>
-      <i style="--k:68"></i><i style="--k:69"></i><i style="--k:70"></i><i style="--k:71"></i><i style="--k:72"></i><i style="--k:73"></i><i style="--k:74"></i><i style="--k:75"></i><i style="--k:76"></i><i style="--k:77"></i><i style="--k:78"></i><i style="--k:79"></i><i style="--k:80"></i><i style="--k:81"></i><i style="--k:82"></i><i style="--k:83"></i><i style="--k:84"></i>
-      <i style="--k:85"></i><i style="--k:86"></i><i style="--k:87"></i><i style="--k:88"></i><i style="--k:89"></i><i style="--k:90"></i><i style="--k:91"></i><i style="--k:92"></i><i style="--k:93"></i><i style="--k:94"></i><i style="--k:95"></i><i style="--k:96"></i><i style="--k:97"></i><i style="--k:98"></i><i style="--k:99"></i><i style="--k:100"></i><i style="--k:101"></i>
-      <i style="--k:102"></i><i style="--k:103"></i><i style="--k:104"></i><i style="--k:105"></i><i style="--k:106"></i><i style="--k:107"></i><i style="--k:108"></i><i style="--k:109"></i><i style="--k:110"></i><i style="--k:111"></i><i style="--k:112"></i><i style="--k:113"></i><i style="--k:114"></i><i style="--k:115"></i><i style="--k:116"></i><i style="--k:117"></i><i style="--k:118"></i>
-      <i style="--k:119"></i><i style="--k:120"></i><i style="--k:121"></i><i style="--k:122"></i><i style="--k:123"></i><i style="--k:124"></i><i style="--k:125"></i><i style="--k:126"></i><i style="--k:127"></i><i style="--k:128"></i><i style="--k:129"></i><i style="--k:130"></i><i style="--k:131"></i><i style="--k:132"></i><i style="--k:133"></i><i style="--k:134"></i><i style="--k:135"></i>
-      <i style="--k:136"></i><i style="--k:137"></i><i style="--k:138"></i><i style="--k:139"></i><i style="--k:140"></i><i style="--k:141"></i><i style="--k:142"></i><i style="--k:143"></i><i style="--k:144"></i><i style="--k:145"></i><i style="--k:146"></i><i style="--k:147"></i><i style="--k:148"></i><i style="--k:149"></i><i style="--k:150"></i><i style="--k:151"></i><i style="--k:152"></i>
-    </div>
+    <p class="dots-num rise" style="--d:1;--to:153"><small>great fishes</small></p>
+    <div class="dots rows fish" data-dots="153" style="--cols:17;--pace:16ms;gap:4px 5px;max-width:44rem" aria-label="One hundred fifty-three fish in seventeen rows of nine."></div>
     <p class="note step">Somebody counted. That's what fishermen do, and it's what an eyewitness remembers. People have guessed at hidden meanings in 153 for centuries. John doesn't give one, so we won't either.</p>
     <p class="note step">What John does point out: <em>the net didn't break</em>. The first time, “their net brake” (Luke 5:6). This time it held every one. What Jesus gathers, He keeps.</p>
   </div>
@@ -357,16 +323,16 @@
     <blockquote class="quote rise" data-q="17" data-hl="Feed my sheep"></blockquote>
     <h2 class="rise" style="--d:1">Peter's road down and back up</h2>
     <div class="stage">
-      <svg class="jn21-valley" viewBox="0 0 680 310" role="img" aria-label="A line that runs from Peter's boast down through his denials and tears, then climbs back up through the angel naming him, Jesus restoring him, Peter preaching at Pentecost, and Peter writing to feed the flock.">
-        <line class="base" x1="20" y1="150" x2="660" y2="150"/>
-        <path class="path" pathLength="1" d="M40 60 L140 170 L230 250 L330 200 L430 120 L530 80 L630 40"/>
-        <g class="pt" style="--k:0"><circle cx="40" cy="60" r="9"/><text x="26" y="40">“I will never”</text><text class="ref" x="26" y="20">Matt. 26:33</text></g>
-        <g class="pt low" style="--k:1"><circle cx="140" cy="170" r="9"/><text x="126" y="180" text-anchor="end">denied 3×</text><text class="ref" x="126" y="198" text-anchor="end">John 18</text></g>
-        <g class="pt low" style="--k:2"><circle cx="230" cy="250" r="9"/><text x="230" y="280" text-anchor="middle">wept bitterly</text><text class="ref" x="230" y="298" text-anchor="middle">Matt. 26:75</text></g>
-        <g class="pt" style="--k:3"><circle cx="330" cy="200" r="9"/><text x="342" y="226">“and Peter”</text><text class="ref" x="342" y="244">Mark 16:7</text></g>
-        <g class="pt now" style="--k:4"><circle cx="430" cy="120" r="10"/><text x="430" y="94" text-anchor="middle" font-weight="700" style="fill:var(--accent-hot)">“Feed my sheep”</text><text class="ref" x="442" y="140">John 21</text></g>
-        <g class="pt" style="--k:5"><circle cx="530" cy="80" r="9"/><text x="544" y="108">Pentecost</text><text class="ref" x="540" y="124">Acts 2</text></g>
-        <g class="pt" style="--k:6"><circle cx="630" cy="40" r="9"/><text x="650" y="20" text-anchor="end">“Feed the flock”</text><text class="ref" x="650" y="64" text-anchor="end">1 Pet. 5:2</text></g>
+      <svg class="curve" viewBox="0 0 680 310" role="img" aria-label="A line that runs from Peter's boast down through his denials and tears, then climbs back up through the angel naming him, Jesus restoring him, Peter preaching at Pentecost, and Peter writing to feed the flock.">
+        <line class="curve-base" x1="20" y1="150" x2="660" y2="150"/>
+        <path class="curve-line" pathLength="1" d="M40 60 L140 170 L230 250 L330 200 L430 120 L530 80 L630 40"/>
+        <g class="curve-pt" style="--k:0"><circle cx="40" cy="60" r="9"/><text x="26" y="40">“I will never”</text><text class="ref" x="26" y="20">Matt. 26:33</text></g>
+        <g class="curve-pt low" style="--k:1"><circle cx="140" cy="170" r="9"/><text x="126" y="180" text-anchor="end">denied 3×</text><text class="ref" x="126" y="198" text-anchor="end">John 18</text></g>
+        <g class="curve-pt low" style="--k:2"><circle cx="230" cy="250" r="9"/><text x="230" y="280" text-anchor="middle">wept bitterly</text><text class="ref" x="230" y="298" text-anchor="middle">Matt. 26:75</text></g>
+        <g class="curve-pt" style="--k:3"><circle cx="330" cy="200" r="9"/><text x="342" y="226">“and Peter”</text><text class="ref" x="342" y="244">Mark 16:7</text></g>
+        <g class="curve-pt high" style="--k:4"><circle cx="430" cy="120" r="10"/><text x="430" y="94" text-anchor="middle" font-weight="700" style="fill:var(--accent-hot)">“Feed my sheep”</text><text class="ref" x="442" y="140">John 21</text></g>
+        <g class="curve-pt" style="--k:5"><circle cx="530" cy="80" r="9"/><text x="544" y="108">Pentecost</text><text class="ref" x="540" y="124">Acts 2</text></g>
+        <g class="curve-pt" style="--k:6"><circle cx="630" cy="40" r="9"/><text x="650" y="20" text-anchor="end">“Feed the flock”</text><text class="ref" x="650" y="64" text-anchor="end">1 Pet. 5:2</text></g>
       </svg>
     </div>
     <p class="note step">Jesus didn't just forgive Peter and leave him on the bench. He handed him a job: <em>take care of My people.</em> Years later Peter passed the same charge on:</p>

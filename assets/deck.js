@@ -99,6 +99,50 @@
     });
   }
 
+  // [data-dots="38"]: a dot counter with 38 dots; data-keep="4 10 17" marks those dots (counting from 1) as kept
+  document.querySelectorAll("[data-dots]").forEach(box => {
+    const keep = new Set(String(box.dataset.keep || "").split(/[\s,]+/).filter(Boolean).map(Number));
+    box.innerHTML = Array.from({ length: Number(box.dataset.dots) }, (_, k) =>
+      `<i${keep.has(k + 1) ? ' class="keep"' : ""} style="--k:${k}"></i>`).join("");
+  });
+
+  // svg.map[data-land]: the land in Jesus' day in a 400 × 560 box, north at the top (about 230 units to a degree of latitude).
+  // data-towns="Jerusalem, Sychar*, Bethlehem!:r" adds towns from TOWNS: * lights one, ! lights it and adds a pulse,
+  // :l :r :t or :b puts its name on the left, right, top or bottom. Draw your own .map-way and .map-route paths inside the svg, using
+  // the town positions below; they sit above the land and below the towns. To show only part of the land, larger,
+  // give the svg its own viewBox inside the box (like "96 70 220 410" for the land west of the Jordan).
+  const TOWNS = {
+    "Caesarea": [136, 218, "r"], "Joppa": [108, 321, "r"], "Hebron": [175, 442, "l"],
+    "Capernaum": [268, 131, "l"], "Bethsaida": [280, 124, "r"], "Magdala": [257, 144, "l"], "Tiberias": [258, 153, "l"],
+    "Cana": [212, 152, "l"], "Gath-hepher": [219, 164, "r"], "Nazareth": [214, 172, "l"],
+    "Samaria": [193, 270, "l"], "Sychar": [211, 285, "r"], "Ephraim": [214, 344, "l"],
+    "Jericho": [243, 363, "l"], "Bethabara": [271, 368, "r"], "Jerusalem": [202, 385, "l"], "Bethany": [207, 386, "r"], "Bethlehem": [195, 401, "l"]
+  };
+  const LAND = `<rect class="map-land" x="0" y="0" width="400" height="560" rx="6"/>
+    <path class="map-sea" d="M0 0 H209 L195 41 L176 83 L170 122 L168 145 L148 143 L144 175 L140 193 L135 218 L127 258 L107 322 L86 380 L72 409 L49 444 L10 494 L0 513 Z"/>
+    <text class="map-water" x="66" y="262" text-anchor="middle" transform="rotate(-72 66 262)">the Great Sea</text>
+    <path class="map-border" d="M136 219 C 180 212, 230 222, 266 214"/><path class="map-border" d="M110 316 C 160 310, 220 322, 266 312"/>
+    <path class="map-river" d="M279 40 C 274 70, 282 100, 273 128"/><path class="map-river" d="M266 171 C 260 210, 274 245, 264 285 S 272 350, 258 387"/>
+    <ellipse class="map-lake" cx="270" cy="150" rx="13" ry="22"/>
+    <path class="map-lake" d="M250 386 C 262 384, 270 392, 268 420 C 266 460, 268 500, 266 560 L 244 560 C 240 520, 232 470, 234 430 C 234 400, 240 388, 250 386 Z"/>
+    <text class="map-region" x="178" y="100">GALILEE</text><text class="map-region" x="126" y="246">SAMARIA</text>
+    <text class="map-region" x="100" y="470">JUDAEA</text><text class="map-region" x="282" y="420">PEREA</text>`;
+  document.querySelectorAll("svg[data-land]").forEach(svg => {
+    if (!svg.hasAttribute("viewBox")) svg.setAttribute("viewBox", "0 0 400 560");
+    svg.classList.add("map");
+    svg.insertAdjacentHTML("afterbegin", LAND);
+    const towns = String(svg.dataset.towns || "").split(",").map(s => s.trim()).filter(Boolean).map(spec => {
+      const [, name, mark, side] = spec.match(/^(.+?)([*!]?)(?::([lrtb]))?$/);
+      if (!TOWNS[name]) { console.warn(`No town "${name}" on the map`); return ""; }
+      const [x, y, own] = TOWNS[name];
+      const [tx, ty, anchor] = { l: [x - 11, y + 5, "end"], r: [x + 11, y + 5, "start"], t: [x, y - 12, "middle"], b: [x, y + 24, "middle"] }[side || own];
+      return `<g class="map-town${mark ? " here" : ""}"><circle cx="${x}" cy="${y}" r="6"/>` +
+        (mark === "!" ? `<circle class="map-ping" cx="${x}" cy="${y}" r="8"/>` : "") +
+        `<text x="${tx}" y="${ty}" text-anchor="${anchor}">${name}</text></g>`;
+    });
+    svg.insertAdjacentHTML("beforeend", towns.join(""));
+  });
+
   // ---------- Page chrome: background layers, controls, theme menu ----------
   const home = document.body.dataset.home || "../index.html";
   document.body.insertAdjacentHTML("afterbegin", `<div class="ambient" aria-hidden="true">

@@ -25,22 +25,6 @@
 .slide.active .jn07-booth .jn07-star { animation: jn07-twinkle 2.6s ease-in-out infinite alternate; animation-delay: calc(var(--k) * 400ms + 1.6s); }
 @keyframes jn07-twinkle { from { opacity: .25; } to { opacity: 1; } }
 
-/* A clock whose hand sweeps toward the hour but stops short */
-.jn07-clock .jn07-face { fill: var(--surface); stroke: var(--line-strong); stroke-width: 5; }
-.jn07-clock .jn07-tick { stroke: var(--ink-soft); stroke-width: 4; stroke-linecap: round; }
-.jn07-clock .jn07-noon { fill: var(--accent); }
-.jn07-clock .jn07-hand { stroke: var(--accent); stroke-width: 8; stroke-linecap: round; transform-box: view-box; transform-origin: 160px 160px; transform: rotate(-210deg); }
-.slide.active .jn07-clock .jn07-hand { animation: jn07-sweep 3.4s .5s cubic-bezier(.25,.8,.3,1) forwards; }
-@keyframes jn07-sweep { 80% { transform: rotate(-10deg); } to { transform: rotate(-16deg); } }
-
-/* If you will ... you shall know */
-.jn07-ifthen { display: flex; flex-wrap: wrap; align-items: center; gap: .6rem 1rem; margin: .4em 0 1.1em; }
-.jn07-ifthen > div { padding: .7em 1em; border-radius: 10px; font-family: var(--serif); font-size: clamp(1.1rem, .9rem + 1vw, 1.8rem); line-height: 1.25; }
-.jn07-ifthen .jn07-if { border: 1.5px dashed var(--line-strong); background: var(--surface); }
-.jn07-ifthen .jn07-then { border: 2px solid var(--accent); background: color-mix(in srgb, var(--accent) 12%, transparent); color: var(--accent-hot); }
-.jn07-ifthen small { display: block; font-family: var(--sans); font-size: .55em; color: var(--ink-soft); margin-bottom: .2em; font-weight: 700; }
-.jn07-ifthen .jn07-arrow { font-size: 2rem; color: var(--accent); }
-
 /* A balance that tips toward the whole man */
 .jn07-scale .jn07-post { stroke: var(--ink-soft); stroke-width: 6; stroke-linecap: round; }
 .jn07-scale .jn07-beam { stroke: var(--ink); stroke-width: 7; stroke-linecap: round; }
@@ -70,19 +54,6 @@
 .split:has(.jn07-rivers-go.on) .jn07-river { stroke-dashoffset: 0; }
 @keyframes jn07-flow { to { stroke-dashoffset: -22; } }
 
-/* A broken cistern and a spring */
-.jn07-wells .jn07-rock { fill: var(--surface-2); stroke: var(--ink-soft); stroke-width: 3; }
-.jn07-wells .jn07-water { fill: var(--cool); }
-.jn07-wells .jn07-crack { fill: none; stroke: var(--ink); stroke-width: 3; stroke-linejoin: round; }
-.jn07-drain { transform-box: fill-box; transform-origin: 50% 100%; }
-.slide.active .jn07-drain { animation: jn07-drain 6s 1s ease-in forwards; }
-@keyframes jn07-drain { to { transform: scaleY(.08); } }
-.jn07-drip { fill: var(--cool); opacity: 0; }
-.slide.active .jn07-drip { animation: jn07-drip 1.2s ease-in infinite; animation-delay: calc(var(--k) * 400ms + 1s); }
-@keyframes jn07-drip { 0% { opacity: 0; transform: translateY(0); } 15% { opacity: 1; } 100% { opacity: 0; transform: translateY(70px); } }
-.jn07-spill { fill: none; stroke: var(--cool); stroke-width: 6; stroke-linecap: round; stroke-dasharray: 12 10; }
-.slide.active .jn07-spill { animation: jn07-flow .8s linear infinite; }
-
 /* What people said about Jesus */
 .jn07-verdicts { display: flex; flex-wrap: wrap; gap: .55rem .6rem; margin: .4em 0 .8em; }
 .jn07-verdicts span {
@@ -98,27 +69,6 @@
 .jn07-key i { display: inline-block; width: 1.4em; height: .9em; border-radius: 999px; margin-right: .4em; vertical-align: -.1em; border: 1.5px solid var(--line-strong); }
 .jn07-key .jn07-against { border-color: var(--danger); border-style: dashed; }
 .jn07-key .jn07-for { border-color: var(--accent); background: color-mix(in srgb, var(--accent) 12%, transparent); }
-
-/* A small map of Galilee and Judaea */
-.jn07-map .jn07-land { fill: var(--surface); stroke: var(--line-strong); stroke-width: 2; }
-.jn07-map .jn07-water { fill: color-mix(in srgb, var(--cool) 30%, transparent); stroke: var(--cool); stroke-width: 2; }
-.jn07-map .jn07-jordan { fill: none; stroke: var(--cool); stroke-width: 3; }
-.jn07-map .jn07-region { font-size: 15px; letter-spacing: .2em; fill: var(--ink-soft); font-weight: 700; }
-.jn07-map .jn07-town { fill: var(--ink); }
-.jn07-map .jn07-hot { fill: var(--accent); }
-.jn07-map .jn07-ring { fill: none; stroke: var(--accent); stroke-width: 3; transform-box: fill-box; transform-origin: center; opacity: 0; }
-.slide.active .jn07-map .jn07-ring { animation: jn07-ping 2.2s 1s ease-out infinite; }
-@keyframes jn07-ping { 0% { opacity: .9; transform: scale(.5); } 100% { opacity: 0; transform: scale(2.4); } }
-
-/* Nicodemus, from night to day */
-.jn07-nico { display: grid; grid-template-columns: repeat(auto-fit, minmax(11rem, 1fr)); gap: .8rem; margin: .4em 0 1em; }
-.jn07-nico > div { padding: .8em 1em; border-radius: 10px; border: 1px solid var(--line-strong); background: var(--surface); }
-.jn07-nico svg { width: 2.6rem; height: 2.6rem; display: block; margin-bottom: .3em; }
-.jn07-nico b { display: block; color: var(--accent); font-size: clamp(.9rem, .82rem + .35vw, 1.1rem); }
-.jn07-nico p { font-family: var(--serif); font-style: italic; font-size: clamp(1rem, .9rem + .5vw, 1.35rem); line-height: 1.35; margin: .2em 0 .3em; }
-.jn07-nico span { font-size: clamp(.88rem, .8rem + .35vw, 1.08rem); color: var(--ink-soft); line-height: 1.4; display: block; }
-.jn07-nico .jn07-ico { fill: var(--accent); }
-.jn07-nico .jn07-ico-line { fill: none; stroke: var(--accent); stroke-width: 3; stroke-linecap: round; }
 </style>
 </head>
 <body>
@@ -234,24 +184,24 @@
     <blockquote class="quote rise" data-q="6" data-hl="My time is not yet come"></blockquote>
     <div class="split">
       <div class="stage">
-        <svg class="jn07-clock" viewBox="0 -44 320 364" role="img" aria-label="A clock hand sweeps toward twelve but stops just short of the hour.">
-          <circle class="jn07-face" cx="160" cy="160" r="140"/>
+        <svg class="clock" viewBox="0 -44 320 364" role="img" aria-label="A clock hand sweeps toward twelve but stops just short of the hour.">
+          <circle class="clock-face" cx="160" cy="160" r="140"/>
           <g>
-            <line class="jn07-tick" x1="160" y1="38" x2="160" y2="58" transform="rotate(30 160 160)"/>
-            <line class="jn07-tick" x1="160" y1="38" x2="160" y2="58" transform="rotate(60 160 160)"/>
-            <line class="jn07-tick" x1="160" y1="38" x2="160" y2="58" transform="rotate(90 160 160)"/>
-            <line class="jn07-tick" x1="160" y1="38" x2="160" y2="58" transform="rotate(120 160 160)"/>
-            <line class="jn07-tick" x1="160" y1="38" x2="160" y2="58" transform="rotate(150 160 160)"/>
-            <line class="jn07-tick" x1="160" y1="38" x2="160" y2="58" transform="rotate(180 160 160)"/>
-            <line class="jn07-tick" x1="160" y1="38" x2="160" y2="58" transform="rotate(210 160 160)"/>
-            <line class="jn07-tick" x1="160" y1="38" x2="160" y2="58" transform="rotate(240 160 160)"/>
-            <line class="jn07-tick" x1="160" y1="38" x2="160" y2="58" transform="rotate(270 160 160)"/>
-            <line class="jn07-tick" x1="160" y1="38" x2="160" y2="58" transform="rotate(300 160 160)"/>
-            <line class="jn07-tick" x1="160" y1="38" x2="160" y2="58" transform="rotate(330 160 160)"/>
+            <line class="clock-tick" x1="160" y1="38" x2="160" y2="58" transform="rotate(30 160 160)"/>
+            <line class="clock-tick" x1="160" y1="38" x2="160" y2="58" transform="rotate(60 160 160)"/>
+            <line class="clock-tick" x1="160" y1="38" x2="160" y2="58" transform="rotate(90 160 160)"/>
+            <line class="clock-tick" x1="160" y1="38" x2="160" y2="58" transform="rotate(120 160 160)"/>
+            <line class="clock-tick" x1="160" y1="38" x2="160" y2="58" transform="rotate(150 160 160)"/>
+            <line class="clock-tick" x1="160" y1="38" x2="160" y2="58" transform="rotate(180 160 160)"/>
+            <line class="clock-tick" x1="160" y1="38" x2="160" y2="58" transform="rotate(210 160 160)"/>
+            <line class="clock-tick" x1="160" y1="38" x2="160" y2="58" transform="rotate(240 160 160)"/>
+            <line class="clock-tick" x1="160" y1="38" x2="160" y2="58" transform="rotate(270 160 160)"/>
+            <line class="clock-tick" x1="160" y1="38" x2="160" y2="58" transform="rotate(300 160 160)"/>
+            <line class="clock-tick" x1="160" y1="38" x2="160" y2="58" transform="rotate(330 160 160)"/>
           </g>
-          <circle class="jn07-noon" cx="160" cy="44" r="12"/>
+          <circle class="clock-hour" cx="160" cy="44" r="12"/>
           <text x="160" y="-14" text-anchor="middle" font-size="20" font-weight="700" style="fill:var(--accent-hot)">His hour</text>
-          <line class="jn07-hand" x1="160" y1="160" x2="160" y2="68"/>
+          <line class="clock-hand" x1="160" y1="160" x2="160" y2="68"/>
           <circle cx="160" cy="160" r="10" style="fill:var(--ink)"/>
           <text x="160" y="232" text-anchor="middle" font-size="22" class="serif" font-style="italic" style="fill:var(--ink-soft)">not yet</text>
         </svg>
@@ -306,10 +256,10 @@
     <h2 class="rise" style="--d:1">No diploma, all authority</h2>
     <p class="note rise" style="--d:2">“Letters” means scholarship. Teachers of the law trained for years under famous rabbis. Jesus never sat under any of them, and He out-taught them all. His answer: <em>My doctrine (teaching) is not mine, but His that sent Me.</em></p>
     <p class="note step">Then He tells them how anyone can find out if it's true:</p>
-    <div class="jn07-ifthen step">
-      <div class="jn07-if"><small>If</small>any man <em>will</em> do His will,</div>
-      <span class="jn07-arrow" aria-hidden="true">→</span>
-      <div class="jn07-then"><small>then</small>he shall know.</div>
+    <div class="ifthen step">
+      <div class="if"><small>If</small>any man <em>will</em> do His will,</div>
+      <span class="arrow" aria-hidden="true">→</span>
+      <div class="then"><small>then</small>he shall know.</div>
     </div>
     <p class="note step">You don't have to have every question answered first. Willingness comes first, then understanding. A man who says, “God, I'm willing to do whatever You show me,” will find out that Jesus is the real thing.</p>
   </div>
@@ -465,22 +415,25 @@
     <h2 class="rise">“If any man thirst”</h2>
     <div class="split">
       <div class="stage">
-        <svg class="jn07-wells" viewBox="0 0 600 300" role="img" aria-label="A cracked cistern slowly leaks dry. Beside it, a spring keeps overflowing.">
-          <path class="jn07-rock" d="M30 60 H260 L245 250 Q145 268 45 250 Z"/>
-          <clipPath id="jn07-cistern"><path d="M42 70 H248 L235 242 Q145 258 55 242 Z"/></clipPath>
-          <g clip-path="url(#jn07-cistern)"><rect class="jn07-water jn07-drain" x="30" y="90" width="230" height="170"/></g>
-          <path class="jn07-crack" d="M180 120 L195 150 L185 175 L205 210 L198 250"/>
-          <circle class="jn07-drip" style="--k:0" cx="200" cy="255" r="5"/>
-          <circle class="jn07-drip" style="--k:1" cx="196" cy="255" r="4"/>
-          <circle class="jn07-drip" style="--k:2" cx="202" cy="255" r="4.5"/>
-          <text x="145" y="40" text-anchor="middle" font-size="19" font-weight="700">a broken cistern</text>
-          <path class="jn07-rock" d="M340 60 H570 L555 250 Q455 268 355 250 Z"/>
-          <path class="jn07-water" d="M352 70 H558 L545 242 Q455 258 365 242 Z"/>
-          <path class="jn07-spill" d="M350 66 C330 80 320 140 318 290"/>
-          <path class="jn07-spill" d="M560 66 C585 80 590 140 592 290"/>
-          <path class="jn07-spill" d="M455 72 C455 50 420 30 400 20" style="stroke-width:4"/>
-          <path class="jn07-spill" d="M455 72 C455 50 490 30 510 20" style="stroke-width:4"/>
-          <text x="455" y="160" text-anchor="middle" font-size="19" font-weight="700" style="fill:var(--on-glow)">a spring</text>
+        <svg class="wells" viewBox="0 0 640 300" role="img" aria-label="A cracked cistern slowly leaks dry. Beside it, a spring keeps overflowing.">
+          <defs><clipPath id="jn07-pitclip"><path d="M44 80 L44 258 Q44 276 62 276 L238 276 Q256 276 256 258 L256 80 Z"/></clipPath></defs>
+          <path class="wells-pit" d="M40 70 L40 260 Q40 280 60 280 L240 280 Q260 280 260 260 L260 70"/>
+          <g clip-path="url(#jn07-pitclip)"><rect class="wells-water wells-drain" x="40" y="128" width="222" height="150"/></g>
+          <path class="wells-crack" d="M90 280 L98 262 L90 250 L102 236"/>
+          <path class="wells-crack" d="M200 280 L192 266 L204 254 L196 240"/>
+          <path class="wells-crack" d="M260 200 L246 208 L252 222"/>
+          <circle class="wells-drip" style="--k:0" cx="90" cy="286" r="5"/>
+          <circle class="wells-drip" style="--k:1" cx="200" cy="286" r="5"/>
+          <circle class="wells-drip" style="--k:2" cx="264" cy="214" r="4"/>
+          <text x="150" y="40" text-anchor="middle" font-size="20" font-weight="700">a broken cistern</text>
+          <path class="wells-rock" d="M380 280 Q390 200 440 190 L540 190 Q590 200 600 280 Z"/>
+          <path class="wells-spring" d="M490 192 C 470 170, 430 175, 410 210 S 380 270, 360 284"/>
+          <path class="wells-spring" d="M490 192 C 510 170, 560 175, 575 210 S 600 270, 630 284"/>
+          <circle class="wells-bubble" style="--k:0" cx="478" cy="190" r="7"/>
+          <circle class="wells-bubble" style="--k:1" cx="492" cy="190" r="9"/>
+          <circle class="wells-bubble" style="--k:2" cx="504" cy="190" r="6"/>
+          <circle class="wells-bubble" style="--k:3" cx="488" cy="190" r="5"/>
+          <text x="490" y="60" text-anchor="middle" font-size="20" font-weight="700" style="fill:var(--accent-hot)">a spring</text>
         </svg>
       </div>
       <div>
@@ -549,21 +502,7 @@
     <blockquote class="quote rise" data-q="52" data-hl="Search, and look: for out of Galilee ariseth no prophet"></blockquote>
     <div class="split">
       <div class="stage">
-        <svg class="jn07-map" viewBox="0 0 380 460" role="img" aria-label="Map: Nazareth and Gath-hepher in Galilee to the north, Jerusalem and Bethlehem in Judaea to the south.">
-          <path class="jn07-land" d="M60 10 H360 V450 H130 Q110 380 95 300 Q80 200 70 120 Q65 60 60 10 Z"/>
-          <path class="jn07-water" d="M10 10 H60 Q65 60 70 120 Q80 200 95 300 Q110 380 130 450 H10 Z"/>
-          <text x="35" y="250" font-size="14" font-style="italic" transform="rotate(-80 35 250)" text-anchor="middle" style="fill:var(--cool)">Great Sea</text>
-          <ellipse class="jn07-water" cx="275" cy="120" rx="18" ry="28"/>
-          <path class="jn07-jordan" d="M275 148 Q285 190 270 230 Q260 270 280 310 Q285 330 278 352"/>
-          <ellipse class="jn07-water" cx="282" cy="390" rx="16" ry="38"/>
-          <text class="jn07-region" x="150" y="60">GALILEE</text>
-          <text class="jn07-region" x="140" y="250">SAMARIA</text>
-          <text class="jn07-region" x="150" y="440">JUDAEA</text>
-          <circle class="jn07-town" cx="205" cy="128" r="6"/><text x="195" y="150" text-anchor="end" font-size="16">Nazareth</text>
-          <circle class="jn07-hot" cx="218" cy="108" r="6"/><text x="208" y="100" text-anchor="end" font-size="16" style="fill:var(--accent-hot)">Gath-hepher</text>
-          <circle class="jn07-town" cx="215" cy="360" r="6"/><text x="205" y="356" text-anchor="end" font-size="16">Jerusalem</text>
-          <circle class="jn07-hot" cx="210" cy="386" r="6"/><circle class="jn07-ring" cx="210" cy="386" r="8"/><text x="200" y="402" text-anchor="end" font-size="16" style="fill:var(--accent-hot)">Bethlehem</text>
-        </svg>
+        <svg class="map" data-land viewBox="96 70 220 410" data-towns="Nazareth:b, Gath-hepher*:t, Jerusalem, Bethlehem!:b" role="img" aria-label="Map: Nazareth and Gath-hepher in Galilee to the north, Jerusalem and Bethlehem in Judaea to the south."></svg>
       </div>
       <div>
         <h2 class="rise" style="--d:1">“Search, and look”</h2>
@@ -581,19 +520,10 @@
   <div class="inner">
     <blockquote class="quote rise" data-q="50-51" data-hl="he that came to Jesus by night"></blockquote>
     <h2 class="rise" style="--d:1">Nicodemus steps out of the dark</h2>
-    <div class="jn07-nico">
-      <div class="step">
-        <svg viewBox="0 0 40 40" aria-hidden="true"><path class="jn07-ico" d="M26 6 A15 15 0 1 0 34 30 A12 12 0 1 1 26 6 Z"/></svg>
-        <b>John 3:2</b><p>“The same came to Jesus by night”</p><span>Curious, but careful. Nobody could see him.</span>
-      </div>
-      <div class="step">
-        <svg viewBox="0 0 40 40" aria-hidden="true"><path class="jn07-ico" d="M8 28 A12 12 0 0 1 32 28 Z"/><path class="jn07-ico-line" d="M3 32 H37 M20 6 V10 M8 12 L11 15 M32 12 L29 15"/></svg>
-        <b>John 7:50–51</b><p>“Doth our law judge any man, before it hear him”</p><span>One sentence, in front of the men who hated Jesus. It cost him their scorn.</span>
-      </div>
-      <div class="step">
-        <svg viewBox="0 0 40 40" aria-hidden="true"><circle class="jn07-ico" cx="20" cy="20" r="8"/><path class="jn07-ico-line" d="M20 2 V7 M20 33 V38 M2 20 H7 M33 20 H38 M7 7 L10.5 10.5 M29.5 29.5 L33 33 M33 7 L29.5 10.5 M10.5 29.5 L7 33"/></svg>
-        <b>John 19:39</b><p>“brought a mixture of myrrh and aloes, about an hundred pound weight”</p><span>In broad daylight, he helps bury Jesus. No more hiding.</span>
-      </div>
+    <div class="daybreak">
+      <div class="step"><i>John 3:2</i><b>By night</b><p class="kjv">“The same came to Jesus by night”</p><p>Curious, but careful. Nobody could see him.</p></div>
+      <div class="step"><i>John 7:50–51</i><b>A careful word</b><p class="kjv">“Doth our law judge any man, before it hear him”</p><p>One sentence, in front of the men who hated Jesus. It cost him their scorn.</p></div>
+      <div class="step"><i>John 19:39</i><b>In the open</b><p class="kjv">“brought a mixture of myrrh and aloes, about an hundred pound weight”</p><p>In broad daylight, he helps bury Jesus. No more hiding.</p></div>
     </div>
     <p class="note step">Courage usually grows one step at a time. Maybe you're still at the “by night” stage, and you only talk about Jesus where it's safe. That's where Nicodemus started too. Take the next step. The chapter ends with <em>“every man went unto his own house”</em>, but the next chapter shows us where Jesus went.</p>
   </div>

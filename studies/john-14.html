@@ -33,17 +33,6 @@
 .jn14-face .one { opacity: 0; transition: opacity 1s ease 1.4s; }
 .slide:has(.jn14-face-go.on) .jn14-face .one { opacity: 1; }
 
-/* The Spirit beside a man, then within him (.jn14-in-go) */
-.jn14-within .body { fill: var(--surface-2); stroke: var(--line-strong); stroke-width: 2; }
-.jn14-within .spirit { transition: transform 1.8s cubic-bezier(.4,0,.2,1); }
-.slide:has(.jn14-in-go.on) .jn14-within .spirit { transform: translate(-120px, 30px); }
-.slide.active .jn14-within .pulse { animation: jn14-pulse 2.4s ease-in-out infinite alternate; transform-box: fill-box; transform-origin: center; }
-@keyframes jn14-pulse { from { transform: scale(.85); opacity: .75; } to { transform: scale(1.08); opacity: 1; } }
-.jn14-within .with, .jn14-within .inside { transition: opacity .8s ease; }
-.jn14-within .inside { opacity: 0; }
-.slide:has(.jn14-in-go.on) .jn14-within .with { opacity: 0; }
-.slide:has(.jn14-in-go.on) .jn14-within .inside { opacity: 1; transition-delay: 1.2s; }
-
 /* Circles within circles: the Father, the Son, you, and Christ in you */
 .jn14-nest .ring { fill: color-mix(in srgb, var(--accent) 9%, transparent); stroke: var(--accent); stroke-width: 2.5; }
 .jn14-nest .ring.you { fill: var(--surface-2); stroke: var(--ink-soft); }
@@ -63,20 +52,6 @@
 .slide:has(.jn14-abode-go.on) .jn14-rooms .here { opacity: 1; transform: none; }
 .jn14-rooms .cap { font-size: 17px; fill: var(--ink-soft); }
 .jn14-rooms .word { font-family: var(--serif); font-style: italic; font-size: 26px; fill: var(--accent-hot); }
-
-/* Stirred-up water that goes still (.jn14-calm-go) */
-.jn14-still .chop { fill: none; stroke: var(--cool); stroke-width: 4; stroke-linecap: round; transition: opacity 1.4s ease; }
-.jn14-still .chop.b { opacity: .55; }
-.slide.active .jn14-still .roll { animation: jn14-roll 1.6s linear infinite; }
-.slide.active .jn14-still .roll.b { animation-duration: 2.3s; animation-direction: reverse; }
-@keyframes jn14-roll { to { transform: translateX(-100px); } }
-.jn14-still .calm { fill: none; stroke: var(--accent); stroke-width: 4; stroke-linecap: round; opacity: 0; transition: opacity 1.6s ease .6s; }
-.slide:has(.jn14-calm-go.on) .jn14-still .chop { opacity: 0; }
-.slide:has(.jn14-calm-go.on) .jn14-still .calm { opacity: 1; }
-.jn14-still .lbl { font-size: 18px; font-weight: 700; transition: opacity 1s ease; }
-.jn14-still .lbl.after { opacity: 0; }
-.slide:has(.jn14-calm-go.on) .jn14-still .lbl.before { opacity: 0; }
-.slide:has(.jn14-calm-go.on) .jn14-still .lbl.after { opacity: 1; transition-delay: 1s; }
 </style>
 </head>
 <body>
@@ -309,24 +284,24 @@
     <blockquote class="quote rise" data-q="17" data-hl="he dwelleth with you, and shall be in you"></blockquote>
     <div class="split">
       <div class="stage">
-        <svg class="jn14-within" viewBox="0 0 360 300" role="img" aria-label="A glowing light, the Holy Spirit, stands beside a man: with you. Then it moves inside him: in you.">
+        <svg class="spirit" viewBox="0 0 360 300" role="img" aria-label="A glowing light, the Holy Spirit, stands beside a man: with you. Then it moves inside him: in you.">
           <defs><radialGradient id="jn14-glow"><stop offset="0" style="stop-color:var(--glow)"/><stop offset=".45" style="stop-color:var(--accent-hot)"/><stop offset="1" style="stop-color:var(--accent);stop-opacity:0"/></radialGradient></defs>
           <line x1="20" y1="286" x2="340" y2="286" stroke-width="2" style="stroke:var(--line-strong)"/>
-          <circle class="body" cx="130" cy="62" r="26"/>
-          <path class="body" d="M88 98 Q130 86 172 98 L182 196 Q130 206 78 196 Z"/>
-          <path class="body" d="M100 196 L96 280 H122 L128 200 Z M160 196 L164 280 H138 L132 200 Z"/>
-          <g class="spirit">
-            <circle class="pulse" cx="250" cy="110" r="44" style="fill:url(#jn14-glow)"/>
+          <circle class="spirit-body" cx="130" cy="62" r="26"/>
+          <path class="spirit-body" d="M88 98 Q130 86 172 98 L182 196 Q130 206 78 196 Z"/>
+          <path class="spirit-body" d="M100 196 L96 280 H122 L128 200 Z M160 196 L164 280 H138 L132 200 Z"/>
+          <g class="spirit-move" style="--to:-120px 30px">
+            <circle class="spirit-pulse" cx="250" cy="110" r="44" style="fill:url(#jn14-glow)"/>
           </g>
-          <text class="with" x="250" y="190" text-anchor="middle" font-size="19" font-weight="700" style="fill:var(--accent-hot)">“with you”</text>
-          <text class="inside" x="250" y="150" text-anchor="middle" font-size="19" font-weight="700" style="fill:var(--accent-hot)">“in you”</text>
-          <text class="inside" x="250" y="176" text-anchor="middle" font-size="15" style="fill:var(--ink-soft)">for ever (v. 16)</text>
+          <text class="before" x="250" y="190" text-anchor="middle" font-size="19" font-weight="700" style="fill:var(--accent-hot)">“with you”</text>
+          <text class="after" x="250" y="150" text-anchor="middle" font-size="19" font-weight="700" style="fill:var(--accent-hot)">“in you”</text>
+          <text class="after" x="250" y="176" text-anchor="middle" font-size="15" style="fill:var(--ink-soft)">for ever (v. 16)</text>
         </svg>
       </div>
       <div>
         <h2 class="rise" style="--d:1">With you, then in you</h2>
         <p class="note rise" style="--d:2">Up to then, the Spirit was <em>with</em> them. Jesus promises a change: He <em>“shall be in you.”</em></p>
-        <p class="note step jn14-in-go">Since Jesus rose and went to the Father, the Holy Spirit moves in to stay the moment a man believes:</p>
+        <p class="note step spirit-go">Since Jesus rose and went to the Father, the Holy Spirit moves in to stay the moment a man believes:</p>
         <blockquote class="quote step"><p>“In whom ye also trusted, after that ye heard the word of truth, the gospel of your salvation: in whom also after that ye believed, ye were sealed with that holy Spirit of promise,”</p><cite>Ephesians 1:13</cite></blockquote>
         <p class="note step">Sealed, and <em>“for ever.”</em> He doesn't move out when you mess up. He stays to change you from the inside.</p>
       </div>
@@ -416,21 +391,21 @@
     <blockquote class="quote rise" data-q="27" data-hl="Let not your heart be troubled, neither let it be afraid"></blockquote>
     <h2 class="rise" style="--d:1">Where He started, and where He ends</h2>
     <div class="stage rise" style="--d:2">
-      <svg class="jn14-still" viewBox="0 0 600 170" role="img" aria-label="Stirred-up, choppy water settles into a calm, still line.">
+      <svg class="still" viewBox="0 0 600 170" role="img" aria-label="Stirred-up, choppy water settles into a calm, still line.">
         <defs><clipPath id="jn14-clip"><rect x="0" y="0" width="600" height="170"/></clipPath></defs>
         <g clip-path="url(#jn14-clip)">
-          <g class="roll"><path class="chop" d="M0 95 Q25 45 50 95 T100 95 T150 95 T200 95 T250 95 T300 95 T350 95 T400 95 T450 95 T500 95 T550 95 T600 95 T650 95 T700 95"/></g>
-          <g class="roll b"><path class="chop b" d="M0 100 Q25 135 50 100 T100 100 T150 100 T200 100 T250 100 T300 100 T350 100 T400 100 T450 100 T500 100 T550 100 T600 100 T650 100 T700 100"/></g>
-          <path class="calm" d="M0 98 Q150 92 300 98 T600 98"/>
+          <g class="still-roll"><path class="still-chop" d="M0 95 Q25 45 50 95 T100 95 T150 95 T200 95 T250 95 T300 95 T350 95 T400 95 T450 95 T500 95 T550 95 T600 95 T650 95 T700 95"/></g>
+          <g class="still-roll b"><path class="still-chop b" d="M0 100 Q25 135 50 100 T100 100 T150 100 T200 100 T250 100 T300 100 T350 100 T400 100 T450 100 T500 100 T550 100 T600 100 T650 100 T700 100"/></g>
+          <path class="still-calm" d="M0 98 Q150 92 300 98 T600 98"/>
         </g>
-        <text class="lbl before" x="300" y="28" text-anchor="middle" style="fill:var(--cool)">troubled: stirred up</text>
-        <text class="lbl after" x="300" y="28" text-anchor="middle" style="fill:var(--accent-hot)">“my peace I give unto you”</text>
+        <text class="before" x="300" y="28" text-anchor="middle" style="fill:var(--cool)">troubled: stirred up</text>
+        <text class="after" x="300" y="28" text-anchor="middle" style="fill:var(--accent-hot)">“my peace I give unto you”</text>
         <text x="20" y="160" font-size="15" style="fill:var(--ink-soft)">14:1</text>
         <text x="580" y="160" text-anchor="end" font-size="15" style="fill:var(--ink-soft)">14:27</text>
       </svg>
     </div>
     <p class="note rise" style="--d:3">Jesus opened with <em>“Let not your heart be troubled”</em> (v. 1), and now He says it again. In between He gave them everything they need for it: a place, a way, the Father, the Spirit, and His own peace.</p>
-    <p class="note step jn14-calm-go">He didn't promise them an easy night. They were hours away from the worst night of their lives. He gave them peace to carry <em>through</em> it.</p>
+    <p class="note step still-go">He didn't promise them an easy night. They were hours away from the worst night of their lives. He gave them peace to carry <em>through</em> it.</p>
   </div>
 </section>
 

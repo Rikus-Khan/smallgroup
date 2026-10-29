@@ -10,18 +10,7 @@
 <link rel="stylesheet" href="../assets/deck.css">
 <link rel="stylesheet" href="../assets/themes.css">
 <style>
-/* The tomb at dawn: the stone rolls away, the sun comes up, and light spills out of the empty tomb */
-.jn20-tomb .jn20-sun { transform: translateY(170px); }
-.slide.active .jn20-tomb .jn20-sun { animation: jn20-up 4.5s .4s cubic-bezier(.3,.1,.2,1) forwards; }
-@keyframes jn20-up { to { transform: translateY(0); } }
-.jn20-tomb .jn20-stone { transform-box: fill-box; transform-origin: 50% 50%; }
-.slide.active .jn20-tomb .jn20-stone { animation: jn20-roll 2.6s 1s cubic-bezier(.5,0,.3,1) forwards; }
-@keyframes jn20-roll { to { transform: translateX(150px) rotate(190deg); } }
-.jn20-tomb .jn20-inside { opacity: 0; }
-.slide.active .jn20-tomb .jn20-inside { animation: jn20-fade 2s 2.4s ease forwards; }
 @keyframes jn20-fade { to { opacity: 1; } }
-.jn20-tomb .jn20-label { opacity: 0; }
-.slide.active .jn20-tomb .jn20-label { animation: jn20-fade 1s 3.6s ease forwards; }
 
 /* The grave clothes on the burial shelf; .jn20-angels shows the two angels instead */
 .jn20-shelf .jn20-wrap { fill: var(--glow); stroke: var(--ink-soft); stroke-width: 2; }
@@ -107,8 +96,8 @@
     <blockquote class="quote rise" data-q="1" data-hl="when it was yet dark|the stone taken away"></blockquote>
     <div class="split">
       <div class="stage">
-        <svg class="jn20-tomb" viewBox="0 0 600 330" role="img" aria-label="A tomb cut into a hillside before dawn. The round stone rolls away from the door, the sun rises, and light shines out of the empty tomb.">
-          <g class="jn20-sun">
+        <svg class="tomb now" style="--roll:150px;--turn:190deg" viewBox="0 0 600 330" role="img" aria-label="A tomb cut into a hillside before dawn. The round stone rolls away from the door, the sun rises, and light shines out of the empty tomb.">
+          <g class="tomb-sun">
             <defs><radialGradient id="jn20-halo"><stop offset="0" style="stop-color:var(--accent);stop-opacity:.6"/><stop offset="1" style="stop-color:var(--accent);stop-opacity:0"/></radialGradient></defs>
             <circle cx="470" cy="80" r="115" fill="url(#jn20-halo)"/>
             <circle cx="470" cy="80" r="38" style="fill:var(--glow)"/>
@@ -117,16 +106,16 @@
           <rect x="0" y="292" width="600" height="38" style="fill:var(--surface-2)"/>
           <line x1="0" y1="292" x2="600" y2="292" stroke-width="2" style="stroke:var(--line-strong)"/>
           <path d="M150 292 L150 215 Q200 160 250 215 L250 292 Z" stroke-width="3" style="fill:var(--bg);stroke:var(--ink-soft)"/>
-          <g class="jn20-inside">
+          <g class="tomb-light">
             <path d="M150 292 L150 215 Q200 160 250 215 L250 292 Z" style="fill:var(--glow)"/>
             <path d="M250 292 L360 330 L40 330 L150 292 Z" style="fill:color-mix(in srgb, var(--glow) 35%, transparent)"/>
           </g>
-          <g class="jn20-stone">
+          <g class="tomb-stone">
             <circle cx="200" cy="240" r="62" stroke-width="3" style="fill:var(--line-strong);stroke:var(--ink-soft)"/>
             <circle cx="200" cy="240" r="44" fill="none" stroke-width="2.5" stroke-dasharray="10 8" style="stroke:var(--bg)"/>
             <circle cx="200" cy="240" r="6" style="fill:var(--bg)"/>
           </g>
-          <text class="jn20-label" x="200" y="140" text-anchor="middle" font-size="20" font-weight="700" style="fill:var(--accent-hot)">empty</text>
+          <text class="tomb-word" x="200" y="140" text-anchor="middle" font-size="20" font-weight="700" style="fill:var(--accent-hot)">empty</text>
         </svg>
       </div>
       <div>

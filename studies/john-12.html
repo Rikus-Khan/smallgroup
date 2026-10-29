@@ -35,20 +35,6 @@
 .jn12-palm { opacity: 0; transition: opacity .5s ease; transition-delay: calc(var(--k) * 300ms + 900ms); }
 .slide.active .jn12-palm { opacity: 1; }
 
-/* A seed falls, dies, and comes up as a full head of grain */
-.jn12-grain { transform: translateY(-150px); }
-.slide.active .jn12-grain { animation: jn12-fall 1.6s .4s cubic-bezier(.5,0,.8,.6) forwards; }
-@keyframes jn12-fall { to { transform: none; } }
-.jn12-husk, .jn12-alone { transition: opacity 1.2s ease; }
-.slide:has(.jn12-die.on) .jn12-husk { opacity: .25; }
-.slide:has(.jn12-die.on) .jn12-alone { opacity: 0; }
-.jn12-roots { stroke-dasharray: 1; stroke-dashoffset: 1; transition: stroke-dashoffset 1.6s ease .4s; }
-.slide:has(.jn12-die.on) .jn12-roots { stroke-dashoffset: 0; }
-.jn12-stalk { transform: scaleY(0); transform-box: fill-box; transform-origin: 50% 100%; transition: transform 1.8s cubic-bezier(.3,.7,.3,1); transition-delay: var(--w, 0s); }
-.slide:has(.jn12-grow.on) .jn12-stalk { transform: none; }
-.jn12-head { opacity: 0; transition: opacity 1s ease; transition-delay: calc(var(--w, 0s) + 1.4s); }
-.slide:has(.jn12-grow.on) .jn12-head { opacity: 1; }
-
 /* Lifted up, and drawing people in from every side */
 .jn12-cross { transform: translateY(110px); transition: transform 2s cubic-bezier(.3,.7,.3,1) .3s; }
 .slide.active .jn12-cross { transform: none; }
@@ -303,36 +289,36 @@
     <blockquote class="quote rise" data-q="24" data-hl="it abideth alone|it bringeth forth much fruit"></blockquote>
     <div class="split">
       <div class="stage">
-        <svg viewBox="0 0 600 330" role="img" aria-label="A grain of wheat falls into the ground. It dies and puts down roots, then comes up as stalks full of grain.">
+        <svg class="seed" viewBox="0 0 600 330" role="img" aria-label="A grain of wheat falls into the ground. It dies and puts down roots, then comes up as stalks full of grain.">
           <rect x="0" y="190" width="600" height="140" style="fill:color-mix(in srgb, var(--leather) 70%, var(--bg))"/>
           <line x1="0" y1="190" x2="600" y2="190" stroke-width="3" style="stroke:var(--leather)"/>
-          <g class="jn12-grain">
-            <ellipse class="jn12-husk" cx="300" cy="250" rx="13" ry="19" style="fill:var(--warm)"/>
+          <g class="seed-fall">
+            <ellipse class="seed-husk" cx="300" cy="250" rx="13" ry="19" style="fill:var(--warm)"/>
           </g>
-          <text class="jn12-alone" x="330" y="256" font-size="18" font-style="italic" style="fill:var(--bg)">abideth alone</text>
-          <path class="jn12-roots" pathLength="1" d="M300 268 Q292 290 280 312 M300 268 Q306 292 322 314 M300 268 Q300 296 300 322" fill="none" stroke-width="3" stroke-linecap="round" style="stroke:var(--warm)"/>
-          <g class="jn12-stalk" style="--w:0s">
+          <text class="seed-alone" x="330" y="256" font-size="18" font-style="italic" style="fill:var(--bg)">abideth alone</text>
+          <path class="seed-roots" pathLength="1" d="M300 268 Q292 290 280 312 M300 268 Q306 292 322 314 M300 268 Q300 296 300 322" fill="none" stroke-width="3" stroke-linecap="round" style="stroke:var(--warm)"/>
+          <g class="seed-stalk" style="--w:0s">
             <path d="M300 240 Q302 150 300 60" fill="none" stroke-width="5" stroke-linecap="round" style="stroke:var(--accent)"/>
           </g>
-          <g class="jn12-stalk" style="--w:.3s">
+          <g class="seed-stalk" style="--w:.3s">
             <path d="M296 240 Q240 160 214 92" fill="none" stroke-width="4" stroke-linecap="round" style="stroke:var(--accent)"/>
           </g>
-          <g class="jn12-stalk" style="--w:.5s">
+          <g class="seed-stalk" style="--w:.5s">
             <path d="M304 240 Q360 160 388 92" fill="none" stroke-width="4" stroke-linecap="round" style="stroke:var(--accent)"/>
           </g>
           <g style="fill:var(--warm)">
-            <g class="jn12-head" style="--w:0s"><ellipse cx="292" cy="40" rx="7" ry="11"/><ellipse cx="308" cy="40" rx="7" ry="11"/><ellipse cx="292" cy="62" rx="7" ry="11"/><ellipse cx="308" cy="62" rx="7" ry="11"/><ellipse cx="292" cy="84" rx="7" ry="11"/><ellipse cx="308" cy="84" rx="7" ry="11"/><ellipse cx="300" cy="22" rx="6" ry="10"/></g>
-            <g class="jn12-head" style="--w:.3s"><ellipse cx="206" cy="72" rx="7" ry="11"/><ellipse cx="222" cy="72" rx="7" ry="11"/><ellipse cx="206" cy="94" rx="7" ry="11"/><ellipse cx="222" cy="94" rx="7" ry="11"/><ellipse cx="214" cy="54" rx="6" ry="10"/></g>
-            <g class="jn12-head" style="--w:.5s"><ellipse cx="380" cy="72" rx="7" ry="11"/><ellipse cx="396" cy="72" rx="7" ry="11"/><ellipse cx="380" cy="94" rx="7" ry="11"/><ellipse cx="396" cy="94" rx="7" ry="11"/><ellipse cx="388" cy="54" rx="6" ry="10"/></g>
+            <g class="seed-head" style="--w:0s"><ellipse cx="292" cy="40" rx="7" ry="11"/><ellipse cx="308" cy="40" rx="7" ry="11"/><ellipse cx="292" cy="62" rx="7" ry="11"/><ellipse cx="308" cy="62" rx="7" ry="11"/><ellipse cx="292" cy="84" rx="7" ry="11"/><ellipse cx="308" cy="84" rx="7" ry="11"/><ellipse cx="300" cy="22" rx="6" ry="10"/></g>
+            <g class="seed-head" style="--w:.3s"><ellipse cx="206" cy="72" rx="7" ry="11"/><ellipse cx="222" cy="72" rx="7" ry="11"/><ellipse cx="206" cy="94" rx="7" ry="11"/><ellipse cx="222" cy="94" rx="7" ry="11"/><ellipse cx="214" cy="54" rx="6" ry="10"/></g>
+            <g class="seed-head" style="--w:.5s"><ellipse cx="380" cy="72" rx="7" ry="11"/><ellipse cx="396" cy="72" rx="7" ry="11"/><ellipse cx="380" cy="94" rx="7" ry="11"/><ellipse cx="396" cy="94" rx="7" ry="11"/><ellipse cx="388" cy="54" rx="6" ry="10"/></g>
           </g>
-          <text class="jn12-head" style="--w:.6s" x="470" y="80" text-anchor="middle" font-size="22" font-weight="700" fill="currentColor">much fruit</text>
+          <text class="seed-head" style="--w:.6s" x="470" y="80" text-anchor="middle" font-size="22" font-weight="700" fill="currentColor">much fruit</text>
         </svg>
       </div>
       <div>
         <h2 class="rise" style="--d:1">A corn of wheat</h2>
         <p class="note rise" style="--d:2">In the KJV, “corn” means any grain, here a single kernel of wheat. Keep it in the barn and it stays one kernel forever.</p>
-        <p class="note step jn12-die">Put it in the ground, and it “dies.” The kernel as it was is gone.</p>
-        <p class="note step jn12-grow">But up comes a stalk, then many, each with a full head of grain. Jesus is talking about Himself: one death, and a harvest of millions who will live because of it.</p>
+        <p class="note step seed-die">Put it in the ground, and it “dies.” The kernel as it was is gone.</p>
+        <p class="note step seed-grow">But up comes a stalk, then many, each with a full head of grain. Jesus is talking about Himself: one death, and a harvest of millions who will live because of it.</p>
       </div>
     </div>
   </div>

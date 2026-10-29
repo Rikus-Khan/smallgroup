@@ -10,23 +10,6 @@
 <link rel="stylesheet" href="../assets/deck.css">
 <link rel="stylesheet" href="../assets/themes.css">
 <style>
-/* Four days: the message, the wait, the walk (John 11) */
-.jn11-days { list-style: none; padding: 0; margin: .4em 0 1em; display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; position: relative; }
-.jn11-days::before { content: ""; position: absolute; left: 12%; right: 12%; top: 1.05rem; height: 2px; background: var(--line-strong); }
-.jn11-days li { text-align: center; position: relative; opacity: 0; transform: translateY(8px); transition: opacity .6s ease, transform .6s ease; transition-delay: calc(var(--k) * 450ms + 300ms); }
-.slide.active .jn11-days li { opacity: 1; transform: none; }
-.jn11-days .dot { width: 2.1rem; height: 2.1rem; margin: 0 auto .4rem; border-radius: 50%; border: 2px solid var(--line-strong); background: var(--bg); display: grid; place-items: center; font-weight: 700; font-size: .9rem; color: var(--ink-soft); }
-.jn11-days .wait .dot { border-style: dashed; }
-.jn11-days .go .dot { background: var(--accent); border-color: var(--accent); color: var(--on-accent); box-shadow: 0 0 0 6px color-mix(in srgb, var(--accent) 18%, transparent); }
-.jn11-days b { display: block; font-size: clamp(.85rem, .78rem + .35vw, 1.1rem); }
-.jn11-days span { display: block; font-family: var(--serif); font-style: italic; font-size: clamp(.82rem, .75rem + .35vw, 1.05rem); line-height: 1.3; color: var(--ink-soft); }
-.jn11-days .go span { color: var(--accent-hot); }
-.jn11-days i { display: block; margin-top: .45em; font-style: normal; font-size: clamp(.75rem, .7rem + .3vw, .95rem); color: var(--wine); font-weight: 700; }
-
-/* A route drawn on a map when the slide opens */
-.jn11-route { stroke-dasharray: 1; stroke-dashoffset: 1; transition: stroke-dashoffset 2.2s ease .6s; }
-.slide.active .jn11-route { stroke-dashoffset: 0; }
-
 /* The same words from two sisters, and two different answers */
 .jn11-echo { display: grid; grid-template-columns: 1fr 1fr; gap: .6rem 1.2rem; margin: .4em 0 1em; text-align: center; }
 .jn11-echo .who { padding: .5em .6em; border-radius: 10px; background: var(--surface); border: 1px solid var(--line-strong); }
@@ -38,15 +21,9 @@
 .jn11-echo .back { padding: .5em .6em; border-radius: 10px; border: 2px solid var(--accent); background: color-mix(in srgb, var(--accent) 10%, transparent); }
 .jn11-echo .back b { display: block; font-family: var(--serif); font-size: clamp(1.05rem, .9rem + .8vw, 1.6rem); color: var(--accent-hot); font-weight: 400; }
 
-/* The tomb: the stone rolls away, then the dead man walks out */
-.jn11-stone { transform-box: fill-box; transform-origin: 50% 50%; transition: transform 2s cubic-bezier(.4,0,.2,1); }
-.slide:has(.jn11-roll.on) .jn11-stone, .jn11-open .jn11-stone { transform: translateX(170px) rotate(220deg); }
-.jn11-light { opacity: 0; transition: opacity 1.4s ease .8s; }
-.slide:has(.jn11-roll.on) .jn11-light, .jn11-open .jn11-light { opacity: 1; }
-.jn11-man { opacity: 0; transform: translateY(-14px) scale(.6); transform-box: fill-box; transform-origin: 50% 100%; transition: opacity 1.6s ease, transform 2.4s cubic-bezier(.3,.7,.3,1); }
-.slide:has(.jn11-forth.on) .jn11-man { opacity: 1; transform: translateY(14px) scale(1.15); }
+/* "Lazarus, come forth": the call appears with the shared svg.tomb's .tomb-forth step */
 .jn11-call { opacity: 0; transition: opacity .8s ease; }
-.slide:has(.jn11-forth.on) .jn11-call { opacity: 1; }
+.slide:has(.tomb-forth.on) .jn11-call { opacity: 1; }
 
 /* Grave clothes coming off, strip by strip */
 .jn11-loose { position: relative; display: grid; gap: 6px; max-width: 24rem; margin: .4em auto 1em; }
@@ -115,11 +92,11 @@
   <div class="inner">
     <blockquote class="quote rise" data-q="5-6" data-hl="Jesus loved|therefore|he abode two days still"></blockquote>
     <h2 class="rise" style="--d:1">He loved them, so He waited</h2>
-    <ol class="jn11-days" aria-label="Day one, the message is sent. Days two and three, Jesus stays. Day four, Jesus walks to Bethany, and Lazarus has been in the grave four days.">
-      <li style="--k:0"><div class="dot">1</div><b>Day 1</b><span>The sisters send word</span><i>Lazarus dies, probably</i></li>
-      <li class="wait" style="--k:1"><div class="dot">2</div><b>Day 2</b><span>Word reaches Jesus. He stays.</span></li>
-      <li class="wait" style="--k:2"><div class="dot">3</div><b>Day 3</b><span>He stays.</span></li>
-      <li class="go" style="--k:3"><div class="dot">4</div><b>Day 4</b><span>He walks to Bethany</span><i>“four days already” (v. 17)</i></li>
+    <ol class="timeline" aria-label="Day one, the message is sent. Days two and three, Jesus stays. Day four, Jesus walks to Bethany, and Lazarus has been in the grave four days.">
+      <li style="--k:0" data-n="1"><b>Day 1</b><span>The sisters send word</span><small>Lazarus dies, probably</small></li>
+      <li class="wait" style="--k:1" data-n="2"><b>Day 2</b><span>Word reaches Jesus. He stays.</span></li>
+      <li class="wait" style="--k:2" data-n="3"><b>Day 3</b><span>He stays.</span></li>
+      <li class="lit" style="--k:3" data-n="4"><b>Day 4</b><span>He walks to Bethany</span><small>“four days already” (v. 17)</small></li>
     </ol>
     <p class="note rise" style="--d:3">Read verses 5 and 6 together: Jesus <em>loved</em> them, <em>therefore</em> He stayed put. His delay wasn't neglect. It was love with a bigger plan.</p>
     <p class="note step">Work out the days, and Lazarus probably died about the time the message reached Jesus. Leaving right away wouldn't have saved him. Jesus wasn't too late. He was planning something far better than a healing.</p>
@@ -207,13 +184,13 @@
     <blockquote class="quote rise" data-q="18" data-hl="about fifteen furlongs off"></blockquote>
     <div class="split">
       <div class="stage">
-        <svg viewBox="0 0 600 360" role="img" aria-label="Map: Jesus walks from beyond the Jordan, up past Jericho, to Bethany, about two miles east of Jerusalem.">
+        <svg class="map" viewBox="0 0 600 360" role="img" aria-label="Map: Jesus walks from beyond the Jordan, up past Jericho, to Bethany, about two miles east of Jerusalem.">
           <rect x="10" y="10" width="580" height="340" rx="6" stroke-width="2" style="fill:var(--surface);stroke:var(--line-strong)"/>
           <path d="M432 10 Q420 70 440 120 Q455 170 430 220 Q418 260 440 300" fill="none" stroke-width="7" stroke-linecap="round" style="stroke:var(--cool)"/>
           <text x="452" y="60" font-size="16" style="fill:var(--cool)">Jordan River</text>
           <path d="M392 300 Q430 286 470 300 L480 350 L380 350 Z" style="fill:var(--cool)" opacity=".7"/>
           <text x="430" y="336" text-anchor="middle" font-size="15" style="fill:var(--bg)">Dead Sea</text>
-          <path class="jn11-route" pathLength="1" d="M500 200 Q470 196 452 190 Q420 186 380 200 Q300 230 205 216" fill="none" stroke-width="4" stroke-dasharray="1" stroke-linecap="round" style="stroke:var(--accent)"/>
+          <path class="map-route" pathLength="1" d="M500 200 Q470 196 452 190 Q420 186 380 200 Q300 230 205 216" style="stroke-width:4"/>
           <circle cx="500" cy="200" r="8" style="fill:var(--ink-soft)"/>
           <text x="472" y="176" font-size="16" style="fill:var(--ink-soft)">beyond Jordan</text>
           <text x="480" y="228" font-size="14" style="fill:var(--ink-soft)">(John 10:40)</text>
@@ -339,16 +316,16 @@
     <blockquote class="quote rise" data-q="39" data-hl="Take ye away the stone|by this time he stinketh"></blockquote>
     <div class="split">
       <div class="stage">
-        <svg class="jn11-tomb" viewBox="0 0 600 330" role="img" aria-label="A tomb cut into a hillside, closed with a large stone. The stone is moved away and light falls into the opening.">
+        <svg class="tomb" style="--roll:170px;--turn:220deg" viewBox="0 0 600 330" role="img" aria-label="A tomb cut into a hillside, closed with a large stone. The stone is moved away and light falls into the opening.">
           <path d="M0 300 L0 140 Q140 50 320 76 Q480 98 600 160 L600 300 Z" stroke-width="2" style="fill:var(--surface-2);stroke:var(--line-strong)"/>
           <line x1="0" y1="300" x2="600" y2="300" stroke-width="3" style="stroke:var(--line-strong)"/>
-          <path d="M228 300 L228 214 Q300 140 372 214 L372 300 Z" style="fill:var(--on-glow)"/>
-          <path class="jn11-light" d="M236 300 L236 218 Q300 156 364 218 L364 300 Z" style="fill:color-mix(in srgb, var(--glow) 35%, transparent)"/>
-          <g class="jn11-stone">
+          <path class="tomb-door" d="M228 300 L228 214 Q300 140 372 214 L372 300 Z"/>
+          <path class="tomb-light" d="M236 300 L236 218 Q300 156 364 218 L364 300 Z" style="fill:color-mix(in srgb, var(--glow) 35%, transparent)"/>
+          <g class="tomb-stone">
             <circle cx="300" cy="234" r="72" stroke-width="3" style="fill:var(--line-strong);stroke:var(--ink-soft)"/>
             <path d="M260 200 Q290 214 280 250 M320 196 Q340 230 330 272 M250 262 Q280 270 300 296" fill="none" stroke-width="3" stroke-linecap="round" style="stroke:var(--ink)" opacity=".3"/>
           </g>
-          <text class="step jn11-roll" x="300" y="34" text-anchor="middle" font-size="24" font-weight="700" style="fill:var(--accent-hot)">“Take ye away the stone”</text>
+          <text class="step tomb-roll" x="300" y="34" text-anchor="middle" font-size="24" font-weight="700" style="fill:var(--accent-hot)">“Take ye away the stone”</text>
         </svg>
       </div>
       <div>
@@ -369,16 +346,16 @@
     <blockquote class="quote rise" data-q="43-44" data-hl="Lazarus, come forth|he that was dead came forth"></blockquote>
     <div class="split">
       <div class="stage">
-        <svg class="jn11-tomb jn11-open" viewBox="0 0 600 330" role="img" aria-label="The stone is rolled away from the tomb. A man wrapped in grave clothes walks out into the light.">
+        <svg class="tomb open" style="--roll:170px;--turn:220deg" viewBox="0 0 600 330" role="img" aria-label="The stone is rolled away from the tomb. A man wrapped in grave clothes walks out into the light.">
           <path d="M0 300 L0 140 Q140 50 320 76 Q480 98 600 160 L600 300 Z" stroke-width="2" style="fill:var(--surface-2);stroke:var(--line-strong)"/>
           <line x1="0" y1="300" x2="600" y2="300" stroke-width="3" style="stroke:var(--line-strong)"/>
-          <path d="M228 300 L228 214 Q300 140 372 214 L372 300 Z" style="fill:var(--on-glow)"/>
-          <path class="jn11-light" d="M236 300 L236 218 Q300 156 364 218 L364 300 Z" style="fill:color-mix(in srgb, var(--glow) 35%, transparent)"/>
-          <g class="jn11-stone">
+          <path class="tomb-door" d="M228 300 L228 214 Q300 140 372 214 L372 300 Z"/>
+          <path class="tomb-light" d="M236 300 L236 218 Q300 156 364 218 L364 300 Z" style="fill:color-mix(in srgb, var(--glow) 35%, transparent)"/>
+          <g class="tomb-stone">
             <circle cx="300" cy="234" r="72" stroke-width="3" style="fill:var(--line-strong);stroke:var(--ink-soft)"/>
             <path d="M260 200 Q290 214 280 250 M320 196 Q340 230 330 272 M250 262 Q280 270 300 296" fill="none" stroke-width="3" stroke-linecap="round" style="stroke:var(--ink)" opacity=".3"/>
           </g>
-          <g class="jn11-man">
+          <g class="tomb-man">
             <circle cx="300" cy="196" r="16" stroke-width="2" style="fill:var(--glow);stroke:var(--line-strong)"/>
             <path d="M282 216 Q300 206 318 216 L322 282 Q300 290 278 282 Z" stroke-width="2" style="fill:var(--glow);stroke:var(--line-strong)"/>
             <path d="M284 226 L316 232 M281 242 L319 248 M280 258 L320 264 M279 274 L321 278 M288 190 L312 196" fill="none" stroke-width="2" style="stroke:var(--line-strong)"/>
@@ -389,7 +366,7 @@
       <div>
         <h2 class="rise" style="--d:1">A dead man hears</h2>
         <p class="note rise" style="--d:2">Jesus prays out loud, so the crowd will know who sent Him. Then He shouts three words into a grave.</p>
-        <p class="note step jn11-forth">And a man four days dead walks out, still wrapped up hand and foot. Dead men can't hear, but they hear <em>Him</em>.</p>
+        <p class="note step tomb-forth">And a man four days dead walks out, still wrapped up hand and foot. Dead men can't hear, but they hear <em>Him</em>.</p>
         <p class="note step">This is the seventh sign in John, the biggest one. It's also a preview. One day every grave will hear His voice (John 5:28). And right now, He still speaks life into people the world has written off.</p>
       </div>
     </div>

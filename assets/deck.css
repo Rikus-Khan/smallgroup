@@ -401,6 +401,363 @@ circle.cycle-stop { fill: var(--wine); stroke: var(--bg); stroke-width: 3; }
 .abc li.end { border-color: var(--accent); background: color-mix(in srgb, var(--accent) 12%, transparent); }
 .abc li.end b { color: var(--accent-hot); }
 
+/* Three stages from dark to light (.daybreak > div, three of them): night, dawn, then full day, with a moon, a rising sun
+   and a sun in the corner. Each stage holds a reference (i), a title (b) and a line or two (p; p.kjv for a quoted line).
+   The dark is --on-glow and the light is --glow, because that pair stays dark and light in every theme.
+   .daybreak.climb raises the stages like steps on wide screens. */
+.daybreak { display: grid; gap: 10px; margin: .4em 0 1em; }
+@media (min-width: 760px) {
+  .daybreak { grid-template-columns: repeat(3, 1fr); }
+  .daybreak.climb { align-items: end; }
+  .daybreak.climb > div:nth-child(2) { min-height: 10.5em; }
+  .daybreak.climb > div:nth-child(3) { min-height: 12.5em; }
+}
+.daybreak > div { position: relative; overflow: hidden; padding: .9em 1.1em 1.1em; border-radius: 10px; min-height: 8.5em; }
+.daybreak i { display: block; font: 700 clamp(.85rem, .8rem + .3vw, 1.05rem) var(--sans); opacity: .8; }
+.daybreak b { display: block; padding-right: 2em; margin: .1em 0 .3em; font: 400 clamp(1.35rem, 1.05rem + 1.2vw, 2rem)/1.1 var(--serif); }
+.daybreak p { font-size: clamp(.95rem, .86rem + .4vw, 1.2rem); line-height: 1.4; }
+.daybreak p + p { margin-top: .3em; }
+.daybreak .kjv { font: italic clamp(1rem, .9rem + .5vw, 1.3rem)/1.35 var(--serif); }
+.daybreak > div::after { content: ""; position: absolute; right: 1em; top: 1em; width: 1.7em; height: 1.7em; border-radius: 50%; }
+.daybreak > div:nth-child(1) { background: var(--on-glow); color: var(--glow); }
+.daybreak > div:nth-child(1)::after { box-shadow: inset -.5em -.15em 0 0 var(--glow); }
+.daybreak > div:nth-child(2) { background: linear-gradient(180deg, color-mix(in srgb, var(--on-glow) 88%, var(--glow)), color-mix(in srgb, var(--on-glow) 62%, var(--warm))); color: var(--glow); }
+.daybreak > div:nth-child(2)::after { top: auto; bottom: -.85em; background: var(--warm); box-shadow: 0 0 26px 8px color-mix(in srgb, var(--warm) 60%, transparent); }
+.daybreak > div:nth-child(3) { background: var(--glow); color: var(--on-glow); border: 1px solid var(--line-strong); }
+.daybreak > div:nth-child(3)::after { background: var(--warm); box-shadow: 0 0 30px 10px color-mix(in srgb, var(--warm) 55%, transparent); }
+
+/* Maps (svg.map). The pieces: .map-land, .map-sea (open sea), .map-lake, .map-river, .map-border (dashed), .map-region (a region's name),
+   .map-water (a name on water), .map-soft (quiet text), .map-town (a g with a circle and its name; .here lights it), .map-ping (a ring that pulses),
+   .map-way (a faint dotted road) and .map-route (the road taken; give the path pathLength="1").
+   A plain .map-route draws itself when the slide opens, after --wait; .map-route.r1 … .r4 wait for a .map-go1 … .map-go4 step.
+   svg.map[data-land] gets the whole land drawn for you, with its towns, by deck.js. */
+.map .map-land { fill: var(--surface); stroke: var(--line-strong); stroke-width: 2; }
+.map .map-sea { fill: color-mix(in srgb, var(--cool) 28%, transparent); }
+.map .map-lake { fill: color-mix(in srgb, var(--cool) 30%, var(--bg)); stroke: var(--cool); stroke-width: 2.5; }
+.map .map-river { fill: none; stroke: var(--cool); stroke-width: 3; stroke-linecap: round; }
+.map .map-border { fill: none; stroke: var(--line-strong); stroke-width: 2; stroke-dasharray: 5 6; }
+.map .map-region { font-size: 15px; font-weight: 700; letter-spacing: .14em; fill: var(--ink-soft); }
+.map .map-water { font-size: 14px; font-style: italic; fill: var(--cool); }
+.map .map-soft { fill: var(--ink-soft); }
+.map .map-town > circle:not(.map-ping) { fill: var(--ink); }
+.map .map-town text { font-size: 17px; }
+svg.map[data-land] { overflow: hidden; border-radius: 6px; }
+.map .map-town.here > circle:not(.map-ping) { fill: var(--accent); }
+.map .map-town.here text { fill: var(--accent-hot); font-weight: 700; }
+.map .map-ping { fill: none; stroke: var(--accent); stroke-width: 3; transform-box: fill-box; transform-origin: center; opacity: 0; }
+.slide.active .map .map-ping { animation: ping 2.2s 1s ease-out infinite; }
+@keyframes ping { 0% { opacity: .9; transform: scale(.5); } 100% { opacity: 0; transform: scale(2.4); } }
+.map .map-way { fill: none; stroke: var(--ink-soft); stroke-width: 3; stroke-dasharray: 3 7; stroke-linecap: round; }
+.map .map-route { fill: none; stroke: var(--accent); stroke-width: 5; stroke-linecap: round; stroke-linejoin: round; stroke-dasharray: 1; stroke-dashoffset: 1; transition: stroke-dashoffset var(--draw, 2.2s) ease; }
+.slide.active .map .map-route:not(.r1, .r2, .r3, .r4) { stroke-dashoffset: 0; transition-delay: var(--wait, .6s); }
+.slide:has(.map-go1.on) .map .map-route.r1, .slide:has(.map-go2.on) .map .map-route.r2,
+.slide:has(.map-go3.on) .map .map-route.r3, .slide:has(.map-go4.on) .map .map-route.r4 { stroke-dashoffset: 0; }
+
+/* A broken cistern that leaks dry, beside a spring that never stops (svg.wells; Jeremiah 2:13).
+   The cistern: a .wells-pit, its .wells-water (put the .wells-drain inside a clip of the pit; it drains once, slowly),
+   .wells-crack lines and .wells-drip drops (--k). The spring: a .wells-rock, .wells-spring paths running over it, .wells-bubble (--k). */
+.wells-pit, .wells-rock { fill: var(--surface-2); stroke: var(--ink-soft); stroke-width: 4; }
+.wells-water { fill: var(--cool); }
+.wells-drain { transform-box: fill-box; transform-origin: 50% 100%; }
+.slide.active .wells-drain { animation: wells-drain 6s 1s ease-in forwards; }
+@keyframes wells-drain { to { transform: scaleY(.08); } }
+.wells-crack { fill: none; stroke: var(--danger); stroke-width: 3; stroke-linejoin: round; }
+.wells-drip { fill: var(--cool); opacity: 0; }
+.slide.active .wells-drip { animation: wells-drip 1.4s ease-in infinite; animation-delay: calc(var(--k, 0) * .45s + 1s); }
+@keyframes wells-drip { 0% { opacity: 0; transform: translateY(0); } 20% { opacity: 1; } 100% { opacity: 0; transform: translateY(40px); } }
+.wells-spring { fill: none; stroke: var(--cool); stroke-width: 6; stroke-linecap: round; stroke-dasharray: 14 10; }
+.slide.active .wells-spring { animation: wells-flow .9s linear infinite; }
+@keyframes wells-flow { to { stroke-dashoffset: -24; } }
+.wells-bubble { fill: var(--cool); opacity: 0; }
+.slide.active .wells-bubble { animation: wells-up 2s ease-out infinite; animation-delay: calc(var(--k, 0) * .5s); }
+@keyframes wells-up { 0% { opacity: 0; transform: translateY(0); } 25% { opacity: .9; } 100% { opacity: 0; transform: translateY(-70px); } }
+
+/* Walls coming down between people (.walls > div): one side (b), the wall (i), the other side (b), and a line under it (small).
+   A wall falls when its row comes on as a step, or when the slide opens if the row isn't a step. */
+.walls { display: grid; gap: clamp(.5rem, 1.4vh, .9rem); margin: .4em 0 1em; }
+.walls > div { display: grid; grid-template-columns: 1fr auto 1fr; align-items: center; gap: .3rem 1rem; }
+.walls b { font: 400 clamp(1.15rem, .95rem + 1vw, 1.75rem) var(--serif); }
+.walls b:first-child { text-align: right; }
+.walls i {
+  width: 2.4rem; height: 3.4rem; border: 2px solid var(--ink-soft); border-radius: 2px; background-color: var(--surface-2);
+  background-image: linear-gradient(var(--ink-soft) 2px, transparent 2px), linear-gradient(90deg, var(--ink-soft) 2px, transparent 2px);
+  background-size: 100% 13px, 19px 26px; transform-origin: 50% 100%;
+  transition: transform .9s cubic-bezier(.5,0,.75,0) 1s, opacity .9s ease 1s;
+}
+.walls > .on i, .slide.active .walls > div:not(.step) i { transform: scaleY(.1); opacity: .35; }
+.walls small { grid-column: 1 / -1; text-align: center; color: var(--ink-soft); font-size: clamp(.88rem, .8rem + .35vw, 1.1rem); }
+
+/* A dot counter. Put data-dots="38" on a .dots box and deck.js adds 38 dots, each with its --k.
+   The dots pop in one by one (--pace apart, after --wait) when the slide opens, or when the .dots box, or the step it sits in, comes on.
+   Dots wrap at --size each; .dots.rows lays them out --cols to a row instead. --dot sets their color.
+   .dots.fill starts them as empty rings that fill in. .dots.fish draws fish.
+   data-keep="4 10 17" marks those dots .keep: a .dots-go step fades all the rest and lights the kept ones.
+   .dots-num is a number that counts up to --to (over --count) when the slide opens; .dots-cap is a caption line beside it. */
+.dots { display: flex; flex-wrap: wrap; gap: 5px; margin: .5em 0 1em; max-width: 46rem; }
+.dots.rows { display: grid; grid-template-columns: repeat(var(--cols, 20), 1fr); gap: clamp(3px, .5vw, 7px); }
+.dots i {
+  flex: none; width: var(--size, clamp(9px, 1.1vw, 14px)); aspect-ratio: 1; border-radius: 50%; background: var(--dot, var(--accent));
+  opacity: 0; transform: scale(.3);
+  transition: opacity .4s ease, transform .4s ease, background-color .3s ease, border-color .3s ease, box-shadow 1.2s ease;
+  transition-delay: calc(var(--k, 0) * var(--pace, 35ms) + var(--wait, 300ms));
+}
+.dots.rows i { width: auto; }
+.slide.active .dots i { opacity: 1; transform: none; }
+.slide .step:not(.on) .dots i, .slide .dots.step:not(.on) i { opacity: 0; transform: scale(.3); }
+.dots.fill i { opacity: 1; transform: none; background: transparent; border: 1.5px solid var(--line-strong); }
+.slide.active .dots.fill i { background: var(--dot, var(--ink-soft)); border-color: var(--dot, var(--ink-soft)); }
+.dots.fish i { aspect-ratio: 2 / 1; border-radius: 0; background: var(--dot, var(--cool)); clip-path: polygon(0 50%, 18% 12%, 55% 0, 74% 28%, 100% 0, 92% 50%, 100% 100%, 74% 72%, 55% 100%, 18% 88%); }
+.slide:has(.dots-go.on) .dots i { transition-duration: 1.2s; transition-delay: calc(var(--k, 0) * 12ms); }
+.slide:has(.dots-go.on) .dots i:not(.keep) { opacity: .1; }
+.slide:has(.dots-go.on) .dots i.keep { background: var(--accent-hot); box-shadow: 0 0 10px var(--accent); }
+@property --dots-n { syntax: '<integer>'; inherits: false; initial-value: 0; }
+.dots-num { font: 300 clamp(2.6rem, 1.6rem + 5vw, 6rem)/1 var(--serif); color: var(--accent-hot); counter-reset: dots-n var(--dots-n); }
+.dots-num::before { content: counter(dots-n); }
+.dots-num small { font: 400 clamp(1rem, .9rem + .5vw, 1.35rem) var(--sans); color: var(--ink-soft); margin-left: .4em; }
+.slide.active .dots-num { animation: count-up var(--count, 2.6s) .3s linear forwards; }
+.slide.active .dots-num.rise { animation: rise .9s cubic-bezier(.2,.7,.2,1) calc(var(--d, 0) * 140ms + 150ms) both, count-up var(--count, 2.6s) .3s linear forwards; }
+@keyframes count-up { to { --dots-n: var(--to); } }
+.dots-cap { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: baseline; gap: 0 1em; max-width: 46rem; margin: -.6em 0 1em; color: var(--ink-soft); font-size: clamp(.85rem, .8rem + .3vw, 1.05rem); }
+.dots-cap .dots-num { font-size: clamp(1.8rem, 1.2rem + 2.4vw, 3.2rem); }
+
+/* A conversation in speech bubbles (.talk > p). Each bubble opens with its speaker (small). The first speaker sits on the left
+   in the theme's color; a p.reply answers from the right. A .flag is a small stamp on a bubble ("not a yes"). */
+.talk { display: grid; gap: .8rem; margin: .3em 0 1em; }
+.talk > p {
+  justify-self: start; max-width: 32em; padding: .7em 1em; border-radius: 16px 16px 16px 4px; font-family: var(--serif); font-size: clamp(1.1rem, .95rem + .8vw, 1.6rem); line-height: 1.4;
+  background: color-mix(in srgb, var(--accent) 13%, transparent); border: 1.5px solid var(--accent);
+}
+.talk > p.reply { justify-self: end; border-radius: 16px 16px 4px 16px; background: var(--surface); border-color: var(--line-strong); font-style: italic; }
+.talk small { display: block; font: 700 .62em var(--sans); color: var(--ink-soft); margin-bottom: .2em; }
+.talk .flag { display: inline-block; margin-top: .4em; padding: .1em .55em; border: 2px solid var(--danger); border-radius: 6px; color: var(--danger); font: 700 .7em var(--sans); transform: rotate(-3deg); }
+
+/* If … then (.ifthen): the condition (div.if), an arrow (.arrow), and what follows (div.then). Each box can open with a label (small). */
+.ifthen { display: flex; flex-wrap: wrap; align-items: center; gap: .6rem 1rem; margin: .4em 0 1.1em; }
+.ifthen > div { padding: .7em 1em; border-radius: 10px; font-family: var(--serif); font-size: clamp(1.1rem, .9rem + 1vw, 1.8rem); line-height: 1.25; }
+.ifthen .if { border: 1.5px dashed var(--line-strong); background: var(--surface); }
+.ifthen .then { border: 2px solid var(--accent); background: color-mix(in srgb, var(--accent) 12%, transparent); color: var(--accent-hot); }
+.ifthen small { display: block; font: 700 .55em var(--sans); color: var(--ink-soft); margin-bottom: .2em; }
+.ifthen .arrow { font-size: 2rem; color: var(--accent); }
+
+/* A clock (svg.clock) whose hand sweeps toward "the hour" (.clock-hour, at the top) when the slide opens, and stops at --stop.
+   The default stops just short (-16deg: "not yet"); set --stop: 0deg for "the hour is come". It starts at --from.
+   Draw it around --at (default 160px 160px): a .clock-face, .clock-tick lines, the .clock-hour mark, and a .clock-hand pointing up. */
+.clock-face { fill: var(--surface); stroke: var(--line-strong); stroke-width: 5; }
+.clock-tick { stroke: var(--ink-soft); stroke-width: 4; stroke-linecap: round; }
+.clock-hour { fill: var(--accent); }
+.clock-hand { stroke: var(--accent); stroke-width: 8; stroke-linecap: round; transform-box: view-box; transform-origin: var(--at, 160px 160px); transform: rotate(var(--from, -210deg)); }
+.slide.active .clock-hand { animation: clock-sweep 3.4s .5s cubic-bezier(.25,.8,.3,1) forwards; }
+@keyframes clock-sweep { 80% { transform: rotate(calc(var(--stop, -16deg) + 6deg)); } to { transform: rotate(var(--stop, -16deg)); } }
+
+/* A timeline with any number of points (ol.timeline > li), evenly spaced along a line. Each point has a heading (b),
+   a line (span) and an extra note (small). data-n="4" puts a number in its dot. li.lit marks a point in the theme's color,
+   li.wait a dashed one. The points come in one by one (--k) when the slide opens; a point can also be a step. */
+.timeline { list-style: none; padding: 0; margin: .6em 0 1em; display: grid; grid-auto-flow: column; grid-auto-columns: 1fr; gap: 8px; text-align: center; }
+.timeline li { position: relative; opacity: 0; transform: translateY(8px); transition: opacity .6s ease, transform .6s ease; transition-delay: calc(var(--k, 0) * 450ms + 300ms); }
+.slide.active .timeline li:not(.step), .timeline li.step.on { opacity: 1; transform: none; }
+.timeline li::before { content: attr(data-n); position: relative; z-index: 1; display: grid; place-items: center; width: var(--pin, 1.3rem); height: var(--pin, 1.3rem); margin: 0 auto .45rem; border-radius: 50%; border: 2px solid var(--line-strong); background: var(--bg); font-weight: 700; font-size: .9rem; color: var(--ink-soft); }
+.timeline li[data-n] { --pin: 2.1rem; }
+.timeline li + li::after { content: ""; position: absolute; top: calc(var(--pin, 1.3rem) / 2 - 1px); right: 50%; width: calc(100% + 8px); height: 2px; background: var(--line-strong); }
+.timeline li.wait::before { border-style: dashed; }
+.timeline li.lit::before { background: var(--accent); border-color: var(--accent); color: var(--on-accent); box-shadow: 0 0 0 6px color-mix(in srgb, var(--accent) 18%, transparent); }
+.timeline b { display: block; font: 600 clamp(.9rem, .82rem + .4vw, 1.25rem) var(--serif); }
+.timeline span { display: block; font-size: clamp(.82rem, .76rem + .32vw, 1.05rem); line-height: 1.35; color: var(--ink-soft); }
+.timeline li.lit span { color: var(--accent-hot); }
+.timeline small { display: block; margin-top: .45em; font-size: clamp(.75rem, .7rem + .3vw, .95rem); font-weight: 700; color: var(--wine); }
+
+/* The seven "I am" sayings of John (.iam): the words "I am" (.big) beside the seven (div, each with its cite), the current one .now. */
+.iam { display: grid; grid-template-columns: auto 1fr; gap: .25rem 1.2rem; align-items: center; margin: .3em 0 1em; }
+.iam .big { grid-row: 1 / span 7; font: 300 clamp(2.6rem, 1.6rem + 4.5vw, 5.6rem)/1 var(--serif); color: var(--accent-hot); border-right: 2px solid var(--accent); padding-right: .35em; }
+.iam div { font-family: var(--serif); font-size: clamp(1.05rem, .9rem + .7vw, 1.55rem); color: var(--ink-soft); opacity: .55; }
+.iam cite { font: .7em var(--sans); margin-left: .5em; }
+.iam div.now { color: var(--accent-hot); opacity: 1; font-weight: 600; }
+.slide.active .iam div.now { animation: glow-text 2.2s ease-in-out infinite alternate; }
+@keyframes glow-text { to { text-shadow: 0 0 18px var(--accent); } }
+
+/* A tomb whose stone rolls away (svg.tomb). .tomb-door is the dark doorway, .tomb-light the light inside it, .tomb-stone the round stone
+   (a g). The stone rolls aside by --roll, turning --turn: on a .tomb-roll step, when the slide opens (svg.tomb.now, after --wait),
+   or it's gone already (svg.tomb.open). Then the .tomb-light and any .tomb-word appear. .tomb-sun rises when the slide opens,
+   and a .tomb-man walks out on a .tomb-forth step. */
+.tomb-door { fill: var(--on-glow); }
+.tomb-stone { transform-box: fill-box; transform-origin: 50% 50%; transition: transform 2.2s cubic-bezier(.5,0,.3,1); }
+.tomb-light, .tomb-word { opacity: 0; transition: opacity 1.4s ease .8s; }
+.slide:has(.tomb-roll.on) .tomb-stone, .slide.active .tomb.now .tomb-stone, .tomb.open .tomb-stone { transform: translateX(var(--roll, 160px)) rotate(var(--turn, 200deg)); }
+.slide:has(.tomb-roll.on) :is(.tomb-light, .tomb-word), .slide.active .tomb.now :is(.tomb-light, .tomb-word), .tomb.open :is(.tomb-light, .tomb-word) { opacity: 1; }
+.slide.active .tomb.now .tomb-stone { transition-delay: var(--wait, 1s); }
+.slide.active .tomb.now .tomb-light { transition-delay: calc(var(--wait, 1s) + 1.4s); }
+.slide.active .tomb.now .tomb-word { transition-delay: calc(var(--wait, 1s) + 2.6s); }
+.tomb-sun { transform: translateY(var(--sun, 170px)); transition: transform 4.5s cubic-bezier(.3,.1,.2,1) .4s; }
+.slide.active .tomb-sun { transform: none; }
+.tomb-man { opacity: 0; transform: translateY(-14px) scale(.6); transform-box: fill-box; transform-origin: 50% 100%; transition: opacity 1.6s ease, transform 2.4s cubic-bezier(.3,.7,.3,1); }
+.slide:has(.tomb-forth.on) .tomb-man { opacity: 1; transform: translateY(14px) scale(1.15); }
+
+/* A seed that falls, dies, and comes up as a harvest (svg.seed; John 12:24). The .seed-fall group drops in when the slide opens.
+   A .seed-die step dims the .seed-husk, hides the .seed-alone label and draws the .seed-roots (pathLength="1");
+   a .seed-grow step raises each .seed-stalk (after its --w) and then its .seed-head. */
+.seed-fall { transform: translateY(-150px); }
+.slide.active .seed-fall { animation: seed-drop 1.6s .4s cubic-bezier(.5,0,.8,.6) forwards; }
+@keyframes seed-drop { to { transform: none; } }
+.seed-husk, .seed-alone { transition: opacity 1.2s ease; }
+.slide:has(.seed-die.on) .seed-husk { opacity: .25; }
+.slide:has(.seed-die.on) .seed-alone { opacity: 0; }
+.seed-roots { stroke-dasharray: 1; stroke-dashoffset: 1; transition: stroke-dashoffset 1.6s ease .4s; }
+.slide:has(.seed-die.on) .seed-roots { stroke-dashoffset: 0; }
+.seed-stalk { transform: scaleY(0); transform-box: fill-box; transform-origin: 50% 100%; transition: transform 1.8s cubic-bezier(.3,.7,.3,1); transition-delay: var(--w, 0s); }
+.slide:has(.seed-grow.on) .seed-stalk { transform: none; }
+.seed-head { opacity: 0; transition: opacity 1s ease; transition-delay: calc(var(--w, 0s) + 1.4s); }
+.slide:has(.seed-grow.on) .seed-head { opacity: 1; }
+
+/* Steps going down (ol.stairs, --n steps): each li (b, then a line) sits one step lower than the last (--k) and comes in
+   one after another. .stairs.down is a slide into the dark, ending in the night. On phones it becomes an indented list. */
+.stairs { list-style: none; padding: 0; margin: .4em 0 1em; display: grid; grid-template-columns: repeat(var(--n, 7), 1fr); gap: 5px; align-items: start; }
+.stairs li {
+  margin-top: calc(var(--k, 0) * clamp(10px, 2.3vh, 24px)); padding: .5em .35em .55em; text-align: center;
+  border-top: 3px solid var(--accent); background: color-mix(in srgb, var(--accent) 11%, transparent); border-radius: 0 0 8px 8px;
+  font-size: clamp(.78rem, .7rem + .35vw, 1.05rem); line-height: 1.25; color: var(--ink-soft);
+  opacity: 0; transform: translateY(-12px); transition: opacity .6s ease, transform .6s ease; transition-delay: calc(var(--k, 0) * 280ms + 400ms);
+}
+.slide.active .stairs li { opacity: 1; transform: none; }
+.stairs b { display: block; font: 400 clamp(1rem, .85rem + .7vw, 1.5rem)/1.15 var(--serif); color: var(--accent-hot); margin-bottom: .15em; }
+.stairs.down li { border-top-color: var(--danger); background: color-mix(in srgb, var(--danger) 10%, transparent); }
+.stairs.down b { color: var(--ink); }
+.stairs.down li:last-child { background: color-mix(in srgb, var(--on-glow) 70%, transparent); border-top-color: var(--on-glow); color: var(--glow); }
+.stairs.down li:last-child b { color: var(--glow); }
+@media (max-width: 640px) {
+  .stairs { grid-template-columns: 1fr; gap: 4px; }
+  .stairs li { margin: 0 0 0 calc(var(--k, 0) * 6%); text-align: left; display: flex; gap: .6em; align-items: baseline; padding: .35em .6em; }
+  .stairs b { margin: 0; }
+}
+
+/* The Spirit coming within, and spreading to many (svg.spirit). One .spirit-go step does it all: a .spirit-move group travels
+   by --to (an x y offset, like -120px 30px), the .spirit-one light and its .spirit-halo dim, the .spirit-few circles light,
+   the .spirit-many circles appear one by one (--k), and the .before labels give way to the .after ones.
+   .spirit-pulse breathes while the slide is open; .spirit-body is a man's outline; .spirit-cap is a caption. */
+.spirit-body { fill: var(--surface-2); stroke: var(--line-strong); stroke-width: 2; }
+.spirit-move { transition: translate 1.8s cubic-bezier(.4,0,.2,1); }
+.slide:has(.spirit-go.on) .spirit-move { translate: var(--to, 0 0); }
+.spirit-pulse { transform-box: fill-box; transform-origin: center; }
+.slide.active .spirit-pulse { animation: spirit-pulse 2.4s ease-in-out infinite alternate; }
+@keyframes spirit-pulse { from { transform: scale(.85); opacity: .75; } to { transform: scale(1.08); opacity: 1; } }
+.spirit-one circle { fill: var(--glow); stroke: var(--accent); stroke-width: 3; }
+.spirit-one text { fill: var(--on-glow); font-weight: 700; font-size: 15px; }
+.spirit-halo { fill: color-mix(in srgb, var(--accent) 22%, transparent); }
+.spirit-one, .spirit-halo { transition: opacity 1s ease; }
+.spirit-few circle { fill: var(--ink-soft); transition: fill .8s ease; }
+.spirit-many circle { fill: var(--accent-hot); opacity: 0; transition: opacity .6s ease; transition-delay: calc(var(--k, 0) * 45ms + .6s); }
+.spirit-cap { font-size: 18px; fill: var(--ink-soft); }
+.spirit-cap.after { fill: var(--accent-hot); font-weight: 700; }
+.spirit .before, .spirit .after { transition: opacity .8s ease; }
+.spirit .after { opacity: 0; }
+.slide:has(.spirit-go.on) .spirit-one { opacity: .3; }
+.slide:has(.spirit-go.on) .spirit-halo, .slide:has(.spirit-go.on) .spirit .before { opacity: 0; }
+.slide:has(.spirit-go.on) .spirit-few circle { fill: var(--accent-hot); }
+.slide:has(.spirit-go.on) .spirit-many circle { opacity: 1; }
+.slide:has(.spirit-go.on) .spirit .after { opacity: 1; transition-delay: 1.2s; }
+
+/* Troubled water growing calm (svg.still). Choppy .still-chop waves roll (put each in a .still-roll g, wider than the box, and clip it;
+   .b marks the second, slower one) until a .still-go step settles them into the .still-calm line. The .before label gives way to the .after one. */
+.still-chop { fill: none; stroke: var(--cool); stroke-width: 4; stroke-linecap: round; transition: opacity 1.4s ease; }
+.still-chop.b { opacity: .55; }
+.slide.active .still-roll { animation: still-roll 1.6s linear infinite; }
+.slide.active .still-roll.b { animation-duration: 2.3s; animation-direction: reverse; }
+@keyframes still-roll { to { transform: translateX(-100px); } }
+.still-calm { fill: none; stroke: var(--accent); stroke-width: 4; stroke-linecap: round; opacity: 0; transition: opacity 1.6s ease .6s; }
+.still .before, .still .after { font-size: 18px; font-weight: 700; transition: opacity 1s ease; }
+.still .after { opacity: 0; }
+.slide:has(.still-go.on) .still-chop, .slide:has(.still-go.on) .still .before { opacity: 0; }
+.slide:has(.still-go.on) .still-calm { opacity: 1; }
+.slide:has(.still-go.on) .still .after { opacity: 1; transition-delay: 1s; }
+
+/* A line that falls and rises again (svg.curve): sorrow to joy, a fall and a restoring. A dashed .curve-base marks level ground;
+   the .curve-line (pathLength="1") draws itself when the slide opens, and its .curve-pt marks (a g: circle and text) appear along the way,
+   at --at, or --k × .45s. .low marks the bottom, .high the end; text.q is a quoted line, text.ref a reference (hidden on phones). */
+.curve-base { stroke: var(--line-strong); stroke-width: 2; stroke-dasharray: 6 6; }
+.curve-line { fill: none; stroke: var(--accent); stroke-width: 5; stroke-linecap: round; stroke-linejoin: round; stroke-dasharray: 1; stroke-dashoffset: 1; transition: stroke-dashoffset 3.2s ease-in-out .4s; }
+.slide.active .curve-line { stroke-dashoffset: 0; }
+.curve-pt { opacity: 0; transition: opacity .7s ease; transition-delay: var(--at, calc(var(--k, 0) * 450ms + .5s)); }
+.slide.active .curve-pt { opacity: 1; }
+.curve-pt circle { fill: var(--bg); stroke: var(--accent); stroke-width: 3.5; }
+.curve-pt.low circle { stroke: var(--danger); }
+.curve-pt.high circle { fill: var(--accent); }
+.curve text { font-size: 16px; }
+.curve .q { font-family: var(--serif); font-style: italic; fill: var(--accent-hot); font-size: 19px; }
+.curve .ref { fill: var(--ink-soft); font-size: 13px; }
+@media (max-width: 600px) { .curve text { font-size: 22px; } .curve .ref { display: none; } }
+
+/* Kept safe, with attacks bouncing off (svg.kept). .kept-wall is a guarding circle (.inner for a second one inside it),
+   .kept-in what's kept inside, .kept-tag a label on a wall. A .kept-foe (a g: text, line, arrowhead path) keeps pushing in by --dx/--dy
+   and is pushed back; a .kept-dart (a path) flies in and falls away. Both repeat, each after its own --w. */
+.kept-wall { fill: color-mix(in srgb, var(--accent) 10%, transparent); stroke: var(--accent); stroke-width: 4; }
+.kept-wall.inner { fill: color-mix(in srgb, var(--accent) 24%, transparent); stroke: var(--accent-hot); }
+.kept-in { fill: var(--accent-hot); }
+.kept-tag { fill: var(--accent-hot); font-weight: 700; }
+.kept-foe text { fill: var(--danger); font-weight: 700; }
+.kept-foe line { stroke: var(--danger); stroke-width: 4; stroke-linecap: round; }
+.kept-foe path { fill: var(--danger); }
+.slide.active .kept-foe { animation: kept-push 2.6s ease-in-out infinite; animation-delay: var(--w, 0s); }
+@keyframes kept-push { 0%, 100% { transform: translate(0, 0); } 40% { transform: translate(var(--dx), var(--dy)); } 52% { transform: translate(calc(var(--dx) * .4), calc(var(--dy) * .4)); } }
+.kept-dart { stroke: var(--danger); stroke-width: 4; stroke-linecap: round; fill: none; opacity: 0; }
+.slide.active .kept-dart { animation: kept-dart 2.8s ease-in infinite; animation-delay: var(--w, 0s); }
+@keyframes kept-dart {
+  0% { opacity: 0; transform: translate(0, 0); }
+  15% { opacity: 1; }
+  45% { opacity: 1; transform: translate(var(--dx), var(--dy)); }
+  70% { opacity: .5; transform: translate(calc(var(--dx) * .55), calc(var(--dy) * .55)) rotate(25deg); }
+  100% { opacity: 0; transform: translate(calc(var(--dx) * .4), calc(var(--dy) * .4)) rotate(40deg); }
+}
+
+/* Two people trading places (.swap): two headings (h3, its big word in a span), then two cards under them:
+   div.a (the guilty one) and div.b (the innocent One), each with a name (b) and a line (small). A .swap-go step swaps the cards. */
+.swap { display: grid; grid-template-columns: 1fr 1fr; gap: .5rem 1rem; margin: .4em 0 1em; }
+.swap h3 { font: 700 clamp(.9rem, .82rem + .4vw, 1.15rem) var(--sans); text-align: center; color: var(--ink-soft); }
+.swap h3 span { display: block; font: 300 clamp(1.6rem, 1rem + 2.4vw, 2.8rem)/1.1 var(--serif); color: var(--ink); }
+.swap > div { grid-row: 2; padding: .7em .8em; border-radius: 10px; text-align: center; transition: transform 1.6s cubic-bezier(.5,0,.3,1); }
+.swap > div b { display: block; font: 400 clamp(1.4rem, 1rem + 1.6vw, 2.3rem)/1.1 var(--serif); }
+.swap > div small { display: block; font-size: clamp(.85rem, .78rem + .35vw, 1.1rem); color: var(--ink-soft); margin-top: .2em; }
+.swap .a { grid-column: 1; border: 2px solid var(--danger); background: color-mix(in srgb, var(--danger) 10%, transparent); }
+.swap .b { grid-column: 2; border: 2px solid var(--accent); background: color-mix(in srgb, var(--accent) 14%, transparent); }
+.swap .b b { color: var(--accent-hot); }
+.slide:has(.swap-go.on) .swap .a { transform: translateX(calc(100% + 1rem)); }
+.slide:has(.swap-go.on) .swap .b { transform: translateX(calc(-100% - 1rem)); }
+
+/* A bill of debts (.ledger): a heading (h3), the debts (ul li, two spans each, --k), a .total line (span, b), and a .ledger-stamp
+   (with a small line). A .ledger-paid step strikes out every debt one by one, then stamps it paid. */
+.ledger { position: relative; max-width: 30rem; margin: .4em 0 1.1em; padding: .9em 1.2em 1em; border: 1.5px solid var(--line-strong); border-radius: 6px; background: var(--surface); box-shadow: 0 10px 24px -16px var(--ink); }
+.ledger h3 { font: 700 clamp(.85rem, .8rem + .3vw, 1.05rem) var(--sans); color: var(--ink-soft); border-bottom: 1px solid var(--line-strong); padding-bottom: .35em; margin-bottom: .4em; }
+.ledger ul { list-style: none; margin: 0; padding: 0; display: grid; gap: .2em; }
+.ledger li { position: relative; display: flex; justify-content: space-between; gap: 1em; font: italic clamp(1rem, .88rem + .6vw, 1.4rem)/1.35 var(--serif); }
+.ledger li span:last-child { font-style: normal; font-family: var(--sans); color: var(--ink-soft); }
+.ledger li::after { content: ""; position: absolute; left: -2%; right: -2%; top: 55%; height: 2px; background: var(--danger); transform: scaleX(0); transform-origin: left; transition: transform .6s ease; transition-delay: calc(var(--k, 0) * 260ms); }
+.ledger .total { margin-top: .4em; padding-top: .35em; border-top: 2px solid var(--ink-soft); font: 700 clamp(1rem, .9rem + .5vw, 1.3rem) var(--sans); display: flex; justify-content: space-between; gap: 1em; }
+.ledger .total b { color: var(--danger); transition: color .6s ease 1.8s; }
+.slide:has(.ledger-paid.on) .ledger li::after { transform: scaleX(1); }
+.slide:has(.ledger-paid.on) .ledger .total b { color: var(--ink-soft); }
+.ledger-stamp {
+  position: absolute; right: 4%; top: 30%; padding: .2em .5em; border: 4px solid var(--accent); border-radius: 8px; color: var(--accent); text-align: center; background: color-mix(in srgb, var(--bg) 70%, transparent);
+  font: 700 clamp(1.2rem, .9rem + 1.4vw, 2.1rem)/1.1 var(--sans); transform: rotate(-9deg) scale(2.2); opacity: 0; transition: transform .4s cubic-bezier(.3,1.6,.5,1) 2.1s, opacity .25s ease 2.1s;
+}
+.ledger-stamp small { display: block; font: italic 400 .6em var(--serif); }
+.slide:has(.ledger-paid.on) .ledger-stamp { transform: rotate(-9deg) scale(1); opacity: 1; }
+
+/* A checklist ticked off one by one (ol.checks > li.step): a .tick, the words (q), where they were written (small),
+   and where they came true (b). Each tick fills when its row comes on. */
+.checks { list-style: none; padding: 0; margin: .4em 0 1em; display: grid; gap: .5rem; }
+.checks li { display: grid; grid-template-columns: 2.2rem 1fr auto; gap: .2rem .8rem; align-items: center; padding: .45em .7em; border-radius: 8px; border: 1px solid var(--line-strong); background: var(--surface); }
+.checks .tick { grid-row: 1 / span 2; width: 2rem; height: 2rem; border-radius: 50%; display: grid; place-items: center; border: 2px solid var(--line-strong); color: transparent; font-weight: 700; transition: background-color .5s ease .3s, border-color .5s ease .3s, color .5s ease .3s; }
+.checks li.on .tick, .slide.active .checks li:not(.step) .tick { background: var(--accent); border-color: var(--accent); color: var(--on-accent); }
+.checks q { font: italic clamp(.95rem, .85rem + .5vw, 1.3rem)/1.3 var(--serif); quotes: "\201C" "\201D"; }
+.checks small { grid-column: 2; font-size: clamp(.8rem, .75rem + .3vw, 1rem); color: var(--ink-soft); }
+.checks b { grid-column: 3; grid-row: 1 / span 2; color: var(--accent-hot); font-size: clamp(.85rem, .8rem + .3vw, 1.05rem); white-space: nowrap; }
+
+/* How often a key word appears (.tally): a chip per verse (span: its verse number in an i, then the count), the verses
+   that have the word marked .hit. The hits light up one after another (--k) when the slide opens. */
+.tally { display: grid; grid-template-columns: repeat(auto-fit, minmax(2.6rem, 1fr)); gap: 5px; margin: .4em 0 1em; }
+.tally span { text-align: center; padding: .35em 0 .3em; border-radius: 6px; border: 1.5px solid var(--line); color: var(--ink-soft); font-size: clamp(.75rem, .7rem + .3vw, 1rem); }
+.tally i { display: block; font: normal 700 clamp(1rem, .85rem + .7vw, 1.6rem)/1.1 var(--serif); color: var(--line-strong); }
+.tally .hit { border-color: var(--accent); background: color-mix(in srgb, var(--accent) 12%, transparent); color: var(--ink); opacity: 0; transition: opacity .5s ease; transition-delay: calc(var(--k, 0) * 160ms + 400ms); }
+.tally .hit i { color: var(--accent-hot); }
+.slide.active .tally .hit { opacity: 1; }
+
 /* ---------- Questions ---------- */
 @media (min-width: 900px) and (min-aspect-ratio: 4/3) {
   .qa .inner { display: grid; grid-template-columns: 1fr 1.45fr; gap: 0 3rem; align-items: start; width: min(100%, 76rem); }

@@ -54,39 +54,12 @@
 .jn10-meter .end { grid-column: 2; font-size: clamp(.88rem, .8rem + .35vw, 1.1rem); color: var(--ink-soft); }
 .jn10-meter .life .end { color: var(--accent-hot); font-family: var(--serif); font-style: italic; }
 
-/* A short timeline of the temple's rededication, and eight lights */
-.jn10-years { display: grid; grid-template-columns: repeat(3, 1fr); gap: .5rem; position: relative; margin: .6em 0 1em; text-align: center; }
-.jn10-years::before { content: ""; position: absolute; left: 16%; right: 16%; top: .55rem; height: 2px; background: var(--line-strong); }
-.jn10-years > div { position: relative; }
-.jn10-years i { display: block; width: 1.15rem; height: 1.15rem; margin: 0 auto .4rem; border-radius: 50%; background: var(--bg); border: 2px solid var(--line-strong); }
-.jn10-years .lit i { background: var(--accent); border-color: var(--accent); box-shadow: 0 0 0 6px color-mix(in srgb, var(--accent) 18%, transparent); }
-.jn10-years b { display: block; font: 600 clamp(1rem, .9rem + .5vw, 1.3rem) var(--serif); }
-.jn10-years span { display: block; font-size: clamp(.85rem, .8rem + .3vw, 1.05rem); color: var(--ink-soft); line-height: 1.35; }
+/* Eight lights, one by one (the timeline above them is a shared .timeline) */
 .jn10-lights { display: flex; justify-content: center; align-items: flex-end; gap: clamp(10px, 2.4vw, 26px); margin: .2em 0 1em; }
 .jn10-lights span { display: grid; justify-items: center; gap: 3px; }
 .jn10-lights .fl { width: 16px; height: 26px; border-radius: 50% 50% 46% 46% / 64% 64% 36% 36%; background: radial-gradient(circle at 50% 70%, var(--glow) 0 18%, var(--warm) 60%, transparent 76%); opacity: 0; transform: scale(.3); transform-origin: 50% 100%; transition: opacity .6s ease, transform .6s ease; transition-delay: calc(var(--k) * 260ms + 200ms); }
 .jn10-lights .base { width: 26px; height: 10px; border-radius: 0 0 12px 12px; background: var(--leather-light); }
 .jn10-lights.on .fl { opacity: 1; transform: none; filter: drop-shadow(0 0 8px var(--warm)); }
-
-/* Held in two hands: attackers keep pushing in and can't get through */
-.jn10-hands .outer { fill: color-mix(in srgb, var(--accent) 10%, transparent); stroke: var(--accent); stroke-width: 4; }
-.jn10-hands .inner-h { fill: color-mix(in srgb, var(--accent) 24%, transparent); stroke: var(--accent-hot); stroke-width: 4; }
-.jn10-hands .tag { fill: var(--accent-hot); }
-.jn10-hands .foe text { fill: var(--danger); }
-.jn10-hands .foe line { stroke: var(--danger); stroke-width: 4; stroke-linecap: round; }
-.jn10-hands .foe path { fill: var(--danger); }
-.slide.active .jn10-hands .foe { animation: jn10-push 2.6s ease-in-out infinite; animation-delay: var(--dl, 0s); }
-@keyframes jn10-push { 0%, 100% { transform: translate(0, 0); } 40% { transform: translate(var(--dx), var(--dy)); } 52% { transform: translate(calc(var(--dx) * .4), calc(var(--dy) * .4)); } }
-
-/* The road back to where it began */
-.jn10-map .land { fill: var(--surface); }
-.jn10-map .river { fill: none; stroke: var(--cool); stroke-width: 6; stroke-linecap: round; }
-.jn10-map .sea { fill: var(--cool); opacity: .8; }
-.jn10-map .route { fill: none; stroke: var(--accent); stroke-width: 5; stroke-linecap: round; stroke-dasharray: 1; stroke-dashoffset: 1; transition: stroke-dashoffset 2.4s ease; }
-.jn10-map .city { fill: var(--ink); }
-.jn10-map .goal { fill: var(--accent); }
-.jn10-map .soft { fill: var(--ink-soft); }
-.slide.active .jn10-map .route { stroke-dashoffset: 0; transition-delay: .8s; }
 </style>
 </head>
 <body>
@@ -343,11 +316,11 @@
   <div class="inner">
     <blockquote class="quote rise" data-q="22" data-hl="the feast of the dedication"></blockquote>
     <h2 class="rise" style="--d:1">The feast of the dedication</h2>
-    <div class="jn10-years rise" style="--d:2">
-      <div><i></i><b>167 B.C.</b><span>A Greek king, Antiochus IV, sets up a pagan altar in the temple</span></div>
-      <div class="lit"><i></i><b>164 B.C.</b><span>Judas Maccabeus retakes it, cleans it, and dedicates it again</span></div>
-      <div class="lit"><i></i><b>Jesus' day</b><span>Nearly 200 years later, Jesus walks in the temple at the feast</span></div>
-    </div>
+    <ol class="timeline rise" style="--d:2">
+      <li><b>167 B.C.</b><span>A Greek king, Antiochus IV, sets up a pagan altar in the temple</span></li>
+      <li class="lit"><b>164 B.C.</b><span>Judas Maccabeus retakes it, cleans it, and dedicates it again</span></li>
+      <li class="lit"><b>Jesus' day</b><span>Nearly 200 years later, Jesus walks in the temple at the feast</span></li>
+    </ol>
     <p class="note step">The rededication was celebrated for eight days every winter, about December. The historian Josephus called it the feast of <em>Lights</em>. Jewish families still keep it today as Hanukkah.</p>
     <div class="jn10-lights step" aria-label="Eight lamps lighting one by one">
       <span><i class="fl" style="--k:0"></i><i class="base"></i></span><span><i class="fl" style="--k:1"></i><i class="base"></i></span><span><i class="fl" style="--k:2"></i><i class="base"></i></span><span><i class="fl" style="--k:3"></i><i class="base"></i></span>
@@ -377,22 +350,22 @@
     <blockquote class="quote rise" data-q="28-29" data-hl="they shall never perish|neither shall any man pluck them out of my hand|no man is able to pluck them out of my Father’s hand"></blockquote>
     <div class="split">
       <div class="stage">
-        <svg class="jn10-hands" viewBox="0 0 600 420" role="img" aria-label="A sheep held inside Jesus' hand, which is held inside the Father's hand. The thief, the wolf, and any man keep pushing in, and none can get through.">
-          <circle class="outer" cx="300" cy="215" r="150"/>
-          <circle class="inner-h" cx="300" cy="230" r="88"/>
-          <text class="tag" x="300" y="104" text-anchor="middle" font-size="19" font-weight="700">My Father's hand</text>
-          <text class="tag" x="300" y="190" text-anchor="middle" font-size="18" font-weight="700">My hand</text>
+        <svg class="kept" viewBox="0 0 600 420" role="img" aria-label="A sheep held inside Jesus' hand, which is held inside the Father's hand. The thief, the wolf, and any man keep pushing in, and none can get through.">
+          <circle class="kept-wall" cx="300" cy="215" r="150"/>
+          <circle class="kept-wall inner" cx="300" cy="230" r="88"/>
+          <text class="kept-tag" x="300" y="104" text-anchor="middle" font-size="19" font-weight="700">My Father's hand</text>
+          <text class="kept-tag" x="300" y="190" text-anchor="middle" font-size="18" font-weight="700">My hand</text>
           <g transform="translate(296 238) scale(1.7)" class="jn10-sheep"><ellipse class="body" rx="17" ry="11" style="fill:var(--ink)"/><circle class="head" cx="16" cy="-6" r="6" style="fill:var(--ink)"/></g>
           <text x="300" y="286" text-anchor="middle" font-size="16" style="fill:var(--ink)">one of His sheep</text>
-          <g class="foe" style="--dx:16px;--dy:0px">
+          <g class="kept-foe" style="--dx:16px;--dy:0px">
             <text x="10" y="196" font-size="18" font-weight="700">the thief</text>
             <line x1="20" y1="215" x2="128" y2="215"/><path d="M140 215 L124 206 L124 224 Z"/>
           </g>
-          <g class="foe" style="--dx:-16px;--dy:0px;--dl:.9s">
+          <g class="kept-foe" style="--dx:-16px;--dy:0px;--w:.9s">
             <text x="590" y="196" text-anchor="end" font-size="18" font-weight="700">the wolf</text>
             <line x1="580" y1="215" x2="472" y2="215"/><path d="M460 215 L476 206 L476 224 Z"/>
           </g>
-          <g class="foe" style="--dx:11px;--dy:-11px;--dl:1.7s">
+          <g class="kept-foe" style="--dx:11px;--dy:-11px;--w:1.7s">
             <text x="20" y="404" font-size="18" font-weight="700">any man</text>
             <line x1="70" y1="380" x2="178" y2="330"/><path d="M188 324 L170 324 L178 340 Z"/>
           </g>
@@ -456,19 +429,17 @@
     <blockquote class="quote rise" data-q="40" data-hl="the place where John at first baptized"></blockquote>
     <div class="split">
       <div class="stage">
-        <svg class="jn10-map" viewBox="0 0 520 380" role="img" aria-label="A map from Jerusalem east across the hills to the Jordan River, to the place beyond Jordan where John had baptized.">
-          <rect class="land" x="0" y="0" width="520" height="380" rx="8"/>
-          <path class="river" d="M360 10 C 340 60, 380 100, 355 150 S 370 230, 355 270"/>
-          <path class="sea" d="M340 268 C 320 290, 325 360, 350 378 L 390 378 C 410 340, 400 290, 378 268 Z"/>
-          <text x="365" y="350" text-anchor="middle" font-size="13" style="fill:var(--bg)">Dead Sea</text>
-          <text x="380" y="60" font-size="16" class="soft">Jordan</text>
-          <text x="380" y="79" font-size="16" class="soft">River</text>
-          <path class="route" pathLength="1" d="M120 250 C 200 230, 300 214, 416 200"/>
-          <circle class="city" cx="120" cy="250" r="10"/>
-          <text x="120" y="282" text-anchor="middle" font-size="18" font-weight="700">Jerusalem</text>
-          <circle class="goal" cx="420" cy="200" r="11"/>
-          <text x="420" y="174" text-anchor="middle" font-size="17" font-weight="700">Bethabara</text>
-          <text x="420" y="234" text-anchor="middle" font-size="14" class="soft">beyond Jordan</text>
+        <svg class="map" viewBox="0 0 520 380" role="img" aria-label="A map from Jerusalem east across the hills to the Jordan River, to the place beyond Jordan where John had baptized.">
+          <rect class="map-land" x="0" y="0" width="520" height="380" rx="8"/>
+          <path class="map-river" style="stroke-width:6" d="M360 10 C 340 60, 380 100, 355 150 S 370 230, 355 270"/>
+          <path class="map-lake" d="M340 268 C 320 290, 325 360, 350 378 L 390 378 C 410 340, 400 290, 378 268 Z"/>
+          <text class="map-water" x="365" y="330" text-anchor="middle">Dead Sea</text>
+          <text x="380" y="60" font-size="16" class="map-soft">Jordan</text>
+          <text x="380" y="79" font-size="16" class="map-soft">River</text>
+          <path class="map-route" style="--wait:.8s;--draw:2.4s" pathLength="1" d="M120 250 C 200 230, 300 214, 416 200"/>
+          <g class="map-town"><circle cx="120" cy="250" r="10"/><text x="120" y="282" text-anchor="middle" font-size="18" font-weight="700">Jerusalem</text></g>
+          <g class="map-town here"><circle cx="420" cy="200" r="11"/><text x="420" y="174" text-anchor="middle">Bethabara</text></g>
+          <text x="420" y="234" text-anchor="middle" font-size="14" class="map-soft">beyond Jordan</text>
         </svg>
       </div>
       <div>

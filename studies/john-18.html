@@ -18,9 +18,8 @@
 .jn18-map .tree { fill: var(--accent); opacity: .75; }
 .jn18-map .spot { fill: var(--bg); stroke: var(--ink); stroke-width: 3; }
 .jn18-map .soft { fill: var(--ink-soft); }
-.jn18-map .leg { fill: none; stroke: var(--accent-hot); stroke-width: 5; stroke-linecap: round; stroke-dasharray: 1; stroke-dashoffset: 1; transition: stroke-dashoffset 2.2s ease; }
-.jn18-map .leg.l3 { stroke: var(--danger); }
-.split:has(.jn18-go1.on) .jn18-map .l1, .split:has(.jn18-go2.on) .jn18-map .l2, .split:has(.jn18-go3.on) .jn18-map .l3 { stroke-dashoffset: 0; }
+.jn18-map .map-route { stroke: var(--accent-hot); }
+.jn18-map .map-route.r3 { stroke: var(--danger); }
 
 /* "I am he": the armed men go backward and fall to the ground */
 .jn18-fall .ground { stroke: var(--line-strong); stroke-width: 3; }
@@ -72,19 +71,6 @@
 .jn18-trial li i { display: block; font-style: normal; font-size: .85em; margin-top: .2em; }
 .jn18-trial li.jn { border: 2px solid var(--accent); background: color-mix(in srgb, var(--accent) 10%, transparent); color: var(--ink); }
 .jn18-trial li.jn i { color: var(--accent-hot); font-weight: 700; }
-
-/* Barabbas and Jesus trade places */
-.jn18-swap { display: grid; grid-template-columns: 1fr 1fr; column-gap: 1rem; row-gap: .5rem; margin: .4em 0 1em; }
-.jn18-swap h3 { font: 700 clamp(.9rem, .82rem + .4vw, 1.15rem) var(--sans); text-align: center; color: var(--ink-soft); }
-.jn18-swap h3 span { display: block; font: 300 clamp(1.6rem, 1rem + 2.4vw, 2.8rem)/1.1 var(--serif); color: var(--ink); }
-.jn18-swap .card { grid-row: 2; padding: .7em .8em; border-radius: 10px; text-align: center; transition: transform 1.6s cubic-bezier(.5,0,.3,1); }
-.jn18-swap .card b { display: block; font: 400 clamp(1.4rem, 1rem + 1.6vw, 2.3rem)/1.1 var(--serif); }
-.jn18-swap .card small { display: block; font-size: clamp(.85rem, .78rem + .35vw, 1.1rem); color: var(--ink-soft); margin-top: .2em; }
-.jn18-swap .bar { grid-column: 1; border: 2px solid var(--danger); background: color-mix(in srgb, var(--danger) 10%, transparent); }
-.jn18-swap .jes { grid-column: 2; border: 2px solid var(--accent); background: color-mix(in srgb, var(--accent) 14%, transparent); }
-.jn18-swap .jes b { color: var(--accent-hot); }
-.slide:has(.jn18-swap-go.on) .jn18-swap .bar { transform: translateX(calc(100% + 1rem)); }
-.slide:has(.jn18-swap-go.on) .jn18-swap .jes { transform: translateX(calc(-100% - 1rem)); }
 </style>
 </head>
 <body>
@@ -133,7 +119,7 @@
     <blockquote class="quote rise" data-q="1" data-hl="over the brook Cedron, where was a garden"></blockquote>
     <div class="split">
       <div class="stage">
-        <svg class="jn18-map" viewBox="0 0 600 400" role="img" aria-label="Sketch map of Jerusalem. A path runs from the upper room out of the city, across the brook Kidron to a garden on the Mount of Olives, back into the city to the high priest's house, and then to Pilate's hall.">
+        <svg class="jn18-map map" viewBox="0 0 600 400" role="img" aria-label="Sketch map of Jerusalem. A path runs from the upper room out of the city, across the brook Kidron to a garden on the Mount of Olives, back into the city to the high priest's house, and then to Pilate's hall.">
           <path class="land" d="M40 50 H330 V360 H90 L40 300 Z"/>
           <rect class="mount" x="210" y="80" width="105" height="110" rx="4"/>
           <text x="262" y="132" text-anchor="middle" font-size="18" font-weight="700">Temple</text>
@@ -151,18 +137,18 @@
           <text x="156" y="221" font-size="16">High priest's house</text>
           <circle class="spot" cx="230" cy="62" r="8"/>
           <text x="216" y="68" text-anchor="end" font-size="16">Pilate's hall</text>
-          <path class="leg l1" pathLength="1" d="M110 300 C 170 340, 300 380, 360 330 S 440 240, 474 216"/>
-          <path class="leg l2" pathLength="1" d="M474 216 C 430 262, 360 300, 290 280 S 180 240, 140 215"/>
-          <path class="leg l3" pathLength="1" d="M140 215 C 150 150, 190 90, 230 62"/>
+          <path class="map-route r1" pathLength="1" d="M110 300 C 170 340, 300 380, 360 330 S 440 240, 474 216"/>
+          <path class="map-route r2" pathLength="1" d="M474 216 C 430 262, 360 300, 290 280 S 180 240, 140 215"/>
+          <path class="map-route r3" pathLength="1" d="M140 215 C 150 150, 190 90, 230 62"/>
           <text x="20" y="390" font-size="13" class="soft">A sketch: spots in the city are approximate.</text>
         </svg>
       </div>
       <div>
         <h2 class="rise" style="--d:1">One long night</h2>
         <p class="note rise" style="--d:2">After the supper and the prayer of chapter 17, Jesus leads His men out of the city, down across the brook Kidron, to an olive garden He used often (v. 2).</p>
-        <p class="note step jn18-go1">Judas knew the place. Jesus knew he knew. He went there anyway.</p>
-        <p class="note step jn18-go2">Arrested and bound, He is marched back across the valley to the high priest's house.</p>
-        <p class="note step jn18-go3">By early morning He stands before Pilate, the Roman governor (v. 28).</p>
+        <p class="note step map-go1">Judas knew the place. Jesus knew he knew. He went there anyway.</p>
+        <p class="note step map-go2">Arrested and bound, He is marched back across the valley to the high priest's house.</p>
+        <p class="note step map-go3">By early morning He stands before Pilate, the Roman governor (v. 28).</p>
       </div>
     </div>
   </div>
@@ -460,13 +446,13 @@
     <blockquote class="quote rise" data-q="40"></blockquote>
     <h2 class="rise" style="--d:1">Barabbas walks free</h2>
     <p class="note rise" style="--d:2">Pilate's way out was a Passover custom: free one prisoner. He offered them Jesus. They chose Barabbas, a robber who, Mark tells us, had committed murder in an uprising (Mark 15:7).</p>
-    <div class="jn18-swap rise" style="--d:3">
+    <div class="swap rise" style="--d:3">
       <h3><span>The cross</span>condemned</h3>
       <h3><span>The door out</span>released</h3>
-      <div class="card bar"><b>Barabbas</b><small>guilty: robber, rebel, killer</small></div>
-      <div class="card jes"><b>Jesus</b><small>“I find in him no fault at all”</small></div>
+      <div class="a"><b>Barabbas</b><small>guilty: robber, rebel, killer</small></div>
+      <div class="b"><b>Jesus</b><small>“I find in him no fault at all”</small></div>
     </div>
-    <p class="note step jn18-swap-go">Then they trade places. The guilty man walks out. The innocent One goes to the cross.</p>
+    <p class="note step swap-go">Then they trade places. The guilty man walks out. The innocent One goes to the cross.</p>
     <p class="note step">Here's the strange part: <em>Bar-abbas</em> means “son of the father.” Every one of us is Barabbas. Guilty, set free, because the true Son of the Father took our place.</p>
     <blockquote class="quote step"><p>“For Christ also hath once suffered for sins, the just for the unjust, that he might bring us to God, being put to death in the flesh, but quickened by the Spirit:”</p><cite>1 Peter 3:18</cite></blockquote>
   </div>

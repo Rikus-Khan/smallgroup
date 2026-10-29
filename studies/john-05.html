@@ -26,21 +26,6 @@
 .jn05-words b { display: block; font: italic 600 clamp(1.2rem, 1rem + .9vw, 1.7rem)/1.2 var(--serif); color: var(--accent-hot); }
 .jn05-words span { font-size: clamp(.92rem, .85rem + .35vw, 1.15rem); color: var(--ink-soft); line-height: 1.35; }
 
-/* jn05-years: thirty-eight years, one dot at a time */
-.jn05-years { display: grid; grid-template-columns: repeat(19, 1fr); gap: clamp(3px, .5vw, 7px); margin: .5em 0 .3em; max-width: 42rem; }
-.jn05-years i { aspect-ratio: 1; border-radius: 50%; border: 1.5px solid var(--line-strong); transition: background-color .25s ease, border-color .25s ease; transition-delay: calc(var(--k) * 75ms + 500ms); }
-.slide.active .jn05-years i { background: var(--ink-soft); border-color: var(--ink-soft); }
-.jn05-years-cap { display: flex; justify-content: space-between; max-width: 42rem; color: var(--ink-soft); font-size: clamp(.85rem, .8rem + .3vw, 1.05rem); margin-bottom: 1em; }
-.jn05-years-cap b { font: 300 clamp(1.8rem, 1.2rem + 2.4vw, 3.2rem)/1 var(--serif); color: var(--accent-hot); }
-
-/* jn05-talk: a question and the answer that dodged it */
-.jn05-talk { display: grid; gap: .8rem; margin: .3em 0 1em; }
-.jn05-bubble { max-width: 32em; padding: .7em 1em; border-radius: 16px; font-family: var(--serif); font-size: clamp(1.1rem, .95rem + .8vw, 1.6rem); line-height: 1.4; }
-.jn05-bubble small { display: block; font: 700 .62em var(--sans); color: var(--ink-soft); margin-bottom: .2em; }
-.jn05-bubble.jn05-jesus { background: color-mix(in srgb, var(--accent) 13%, transparent); border: 1.5px solid var(--accent); border-bottom-left-radius: 4px; }
-.jn05-bubble.jn05-man { justify-self: end; background: var(--surface); border: 1.5px solid var(--line-strong); border-bottom-right-radius: 4px; font-style: italic; }
-.jn05-flag { display: inline-block; margin-top: .4em; padding: .1em .55em; border: 2px solid var(--danger); border-radius: 6px; color: var(--danger); font: 700 .7em var(--sans); font-style: normal; transform: rotate(-3deg); }
-
 /* jn05-cmds: three commands lighting up one after another */
 .jn05-cmds { display: flex; flex-wrap: wrap; align-items: baseline; gap: .2em .6em; margin: .2em 0 .7em; font: 300 clamp(2rem, 1.2rem + 3.6vw, 4.4rem)/1.1 var(--serif); }
 .jn05-cmds span { color: var(--ink-soft); opacity: .3; }
@@ -227,8 +212,8 @@
   <div class="inner">
     <blockquote class="quote rise" data-q="5" data-hl="thirty and eight years"></blockquote>
     <h2 class="rise" style="--d:1">Thirty-eight years</h2>
-    <div class="jn05-years rise" style="--d:2" aria-label="Thirty-eight dots, one for each year he had been sick, filling in one by one."><i style="--k:0"></i><i style="--k:1"></i><i style="--k:2"></i><i style="--k:3"></i><i style="--k:4"></i><i style="--k:5"></i><i style="--k:6"></i><i style="--k:7"></i><i style="--k:8"></i><i style="--k:9"></i><i style="--k:10"></i><i style="--k:11"></i><i style="--k:12"></i><i style="--k:13"></i><i style="--k:14"></i><i style="--k:15"></i><i style="--k:16"></i><i style="--k:17"></i><i style="--k:18"></i><i style="--k:19"></i><i style="--k:20"></i><i style="--k:21"></i><i style="--k:22"></i><i style="--k:23"></i><i style="--k:24"></i><i style="--k:25"></i><i style="--k:26"></i><i style="--k:27"></i><i style="--k:28"></i><i style="--k:29"></i><i style="--k:30"></i><i style="--k:31"></i><i style="--k:32"></i><i style="--k:33"></i><i style="--k:34"></i><i style="--k:35"></i><i style="--k:36"></i><i style="--k:37"></i></div>
-    <p class="jn05-years-cap rise" style="--d:3"><span>one dot for every year</span><b>38</b></p>
+    <div class="dots rows fill rise" data-dots="38" style="--d:2;--cols:19;--pace:75ms;--wait:500ms;max-width:42rem" aria-label="Thirty-eight dots, one for each year he had been sick, filling in one by one."></div>
+    <p class="dots-cap rise" style="--d:3;max-width:42rem"><span>one dot for every year</span><b class="dots-num" style="--to:38;--count:2.9s"></b></p>
     <p class="note step">That's longer than Jesus had been alive. He was about thirty when He started His ministry (Luke 3:23). This man had been sick since before Jesus was born.</p>
     <p class="note step">It's also exactly how long Israel wandered in the wilderness after they refused to trust God:</p>
     <blockquote class="quote step"><p>“And the space in which we came from Kadesh-barnea, until we were come over the brook Zered, was thirty and eight years; until all the generation of the men of war were wasted out from among the host, as the LORD sware unto them.”</p><cite>Deuteronomy 2:14</cite></blockquote>
@@ -238,9 +223,9 @@
 <section class="slide ex">
   <div class="inner">
     <blockquote class="quote rise" data-q="6" data-hl="knew that he had been now a long time in that case"></blockquote>
-    <div class="jn05-talk">
-      <p class="jn05-bubble jn05-jesus rise" style="--d:1"><small>Jesus</small>Wilt thou be made whole?</p>
-      <p class="jn05-bubble jn05-man step"><small>The man</small>Sir, I have no man, when the water is troubled, to put me into the pool: but while I am coming, another steppeth down before me.<br><span class="jn05-flag">not a yes</span></p>
+    <div class="talk">
+      <p class="rise" style="--d:1"><small>Jesus</small>Wilt thou be made whole?</p>
+      <p class="reply step"><small>The man</small>Sir, I have no man, when the water is troubled, to put me into the pool: but while I am coming, another steppeth down before me.<br><span class="flag">not a yes</span></p>
     </div>
     <p class="note step">Jesus asked a yes-or-no question. The man answered with the reasons it couldn't happen: nobody to help, always too slow, always beaten to it.</p>
     <p class="note step">After thirty-eight years, a man can get used to the mat, and the excuses come out before the hope does. Jesus asks anyway, and He asks you too: <em>Do you really want to be made whole?</em></p>

@@ -27,23 +27,11 @@
 .slide.active:has(.jn17-you-go.on) .jn17-you circle { animation: jn17-pulse 1.8s ease-in-out infinite; transform-box: fill-box; transform-origin: center; }
 @keyframes jn17-pulse { 50% { transform: scale(1.35); } }
 
-/* Kept (svg.jn17-keep): believers inside a guarded circle; .jn17-dart arrows fly in (--dx, --dy) and fall back, over and over */
-.jn17-wall { fill: color-mix(in srgb, var(--accent) 10%, transparent); stroke: var(--accent); stroke-width: 5; }
-.jn17-kept circle { fill: var(--accent-hot); }
-.jn17-dart { stroke: var(--danger); stroke-width: 4; stroke-linecap: round; fill: none; opacity: 0; }
-.slide.active .jn17-dart { animation: jn17-dart 2.8s ease-in infinite; animation-delay: var(--w, 0s); }
-@keyframes jn17-dart {
-  0% { opacity: 0; transform: translate(0, 0); }
-  15% { opacity: 1; }
-  45% { opacity: 1; transform: translate(var(--dx), var(--dy)); }
-  70% { opacity: .5; transform: translate(calc(var(--dx) * .55), calc(var(--dy) * .55)) rotate(25deg); }
-  100% { opacity: 0; transform: translate(calc(var(--dx) * .4), calc(var(--dy) * .4)) rotate(40deg); }
-}
+/* The son of perdition, outside the shared svg.kept circle: a .jn17-judas-go step shows him */
 .jn17-judas { opacity: 0; transition: opacity 1s ease; }
 .jn17-judas circle { fill: none; stroke: var(--line-strong); stroke-width: 3; stroke-dasharray: 4 4; }
 .jn17-judas text { font-size: 16px; fill: var(--ink-soft); }
 .slide:has(.jn17-judas-go.on) .jn17-judas { opacity: 1; }
-.jn17-cap { font-size: 18px; font-weight: 700; fill: var(--accent-hot); }
 
 /* In the world, not of it (svg.jn17-boat): two boats on the water; a .jn17-sink-go step floods the right one and it goes down */
 .jn17-sea { fill: color-mix(in srgb, var(--cool) 40%, transparent); }
@@ -205,14 +193,14 @@
     <blockquote class="quote rise" data-q="12" data-hl="those that thou gavest me I have kept, and none of them is lost"></blockquote>
     <div class="split">
       <div class="stage">
-        <svg class="jn17-keep" viewBox="0 0 600 360" role="img" aria-label="Believers inside a guarded circle. Arrows fly at it and fall away. One man stands outside it: the son of perdition.">
-          <circle class="jn17-wall" cx="280" cy="180" r="130"/>
-          <text class="jn17-cap" x="280" y="88" text-anchor="middle">kept in thy name</text>
-          <g class="jn17-kept"><circle cx="280" cy="130" r="9"/><circle cx="315" cy="140" r="9"/><circle cx="337" cy="168" r="9"/><circle cx="337" cy="202" r="9"/><circle cx="315" cy="230" r="9"/><circle cx="280" cy="240" r="9"/><circle cx="245" cy="230" r="9"/><circle cx="223" cy="202" r="9"/><circle cx="223" cy="168" r="9"/><circle cx="245" cy="140" r="9"/><circle cx="280" cy="185" r="9"/></g>
-          <path class="jn17-dart" style="--dx:60px;--dy:30px;--w:0s" d="M60 60 l40 20 m-12 -14 l12 14 l-18 2"/>
-          <path class="jn17-dart" style="--dx:-60px;--dy:20px;--w:.9s" d="M560 110 l-40 14 m10 -14 l-10 14 l16 6"/>
-          <path class="jn17-dart" style="--dx:50px;--dy:-30px;--w:1.7s" d="M70 320 l40 -22 m-18 -2 l18 2 l-8 16"/>
-          <path class="jn17-dart" style="--dx:-50px;--dy:-40px;--w:2.3s" d="M500 330 l-36 -26 m4 16 l-4 -16 l16 2"/>
+        <svg class="kept" viewBox="0 0 600 360" role="img" aria-label="Believers inside a guarded circle. Arrows fly at it and fall away. One man stands outside it: the son of perdition.">
+          <circle class="kept-wall" cx="280" cy="180" r="130"/>
+          <text class="kept-tag" font-size="18" x="280" y="88" text-anchor="middle">kept in thy name</text>
+          <g class="kept-in"><circle cx="280" cy="130" r="9"/><circle cx="315" cy="140" r="9"/><circle cx="337" cy="168" r="9"/><circle cx="337" cy="202" r="9"/><circle cx="315" cy="230" r="9"/><circle cx="280" cy="240" r="9"/><circle cx="245" cy="230" r="9"/><circle cx="223" cy="202" r="9"/><circle cx="223" cy="168" r="9"/><circle cx="245" cy="140" r="9"/><circle cx="280" cy="185" r="9"/></g>
+          <path class="kept-dart" style="--dx:60px;--dy:30px;--w:0s" d="M60 60 l40 20 m-12 -14 l12 14 l-18 2"/>
+          <path class="kept-dart" style="--dx:-60px;--dy:20px;--w:.9s" d="M560 110 l-40 14 m10 -14 l-10 14 l16 6"/>
+          <path class="kept-dart" style="--dx:50px;--dy:-30px;--w:1.7s" d="M70 320 l40 -22 m-18 -2 l18 2 l-8 16"/>
+          <path class="kept-dart" style="--dx:-50px;--dy:-40px;--w:2.3s" d="M500 330 l-36 -26 m4 16 l-4 -16 l16 2"/>
           <g class="jn17-judas"><circle cx="530" cy="262" r="10"/><text x="530" y="296" text-anchor="middle">“the son of</text><text x="530" y="316" text-anchor="middle">perdition”</text></g>
         </svg>
       </div>

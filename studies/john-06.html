@@ -10,26 +10,12 @@
 <link rel="stylesheet" href="../assets/deck.css">
 <link rel="stylesheet" href="../assets/themes.css">
 <style>
-/* jn06-map: the Sea of Galilee, with the boat's crossing drawn in */
-.jn06-lake { fill: color-mix(in srgb, var(--cool) 26%, var(--bg)); stroke: var(--cool); stroke-width: 2.5; }
-.jn06-river { fill: none; stroke: var(--cool); stroke-width: 3; }
-.jn06-town { fill: var(--ink); }
-.jn06-here { fill: var(--accent-hot); }
-.jn06-route { fill: none; stroke: var(--accent); stroke-width: 4; stroke-linecap: round; }
-.jn06-pulse { fill: none; stroke: var(--accent); stroke-width: 2.5; transform-box: fill-box; transform-origin: center; }
-.slide.active .jn06-pulse { animation: jn06-pulse 2.2s ease-out infinite; }
-@keyframes jn06-pulse { from { opacity: .9; transform: scale(.4); } to { opacity: 0; transform: scale(2.2); } }
-
-/* jn06-count: a boy's lunch against a crowd of thousands */
+/* jn06-count: a boy's lunch against a crowd of thousands (the crowd is a shared .dots counter) */
 .jn06-lunch { display: flex; flex-wrap: wrap; align-items: center; gap: .5rem; margin: .3em 0 .2em; }
 .jn06-lunch svg { width: clamp(34px, 4.5vw, 54px); height: auto; }
 .jn06-loafshape { fill: var(--warm); }
 .jn06-fishshape { fill: var(--cool); }
-.jn06-lunch small, .jn06-crowd-cap { color: var(--ink-soft); font-size: clamp(.85rem, .8rem + .3vw, 1.05rem); }
-.jn06-crowd-cap { margin-bottom: 1em; }
-.jn06-crowd { display: grid; grid-template-columns: repeat(25, 1fr); gap: clamp(3px, .45vw, 6px); margin: .8em 0 .3em; max-width: 46rem; }
-.jn06-crowd i { aspect-ratio: 1; border-radius: 50%; background: var(--ink-soft); opacity: 0; transform: scale(.3); transition: opacity .4s ease, transform .4s ease; transition-delay: calc(var(--k) * 35ms); }
-.jn06-crowd.on i { opacity: .85; transform: none; }
+.jn06-lunch small { color: var(--ink-soft); font-size: clamp(.85rem, .8rem + .3vw, 1.05rem); }
 
 /* jn06-baskets: twelve baskets filling with leftovers */
 .jn06-baskets { display: grid; grid-template-columns: repeat(12, 1fr); gap: clamp(4px, .8vw, 10px); margin: .5em 0 1em; }
@@ -82,15 +68,6 @@
 .jn06-vs .jn06-vs-head span:first-child { color: var(--ink-soft); }
 .jn06-vs cite { font-style: normal; color: var(--ink-soft); font-size: .78em; }
 
-/* jn06-iam: the seven "I am" sayings, this one lit */
-.jn06-iam { display: grid; grid-template-columns: auto 1fr; gap: .25rem 1.2rem; align-items: center; margin: .3em 0 1em; }
-.jn06-iam .jn06-big { grid-row: 1 / span 7; font: 300 clamp(2.6rem, 1.6rem + 4.5vw, 5.6rem)/1 var(--serif); color: var(--accent-hot); border-right: 2px solid var(--accent); padding-right: .35em; }
-.jn06-iam div { font-family: var(--serif); font-size: clamp(1.05rem, .9rem + .7vw, 1.55rem); color: var(--ink-soft); opacity: .55; }
-.jn06-iam div cite { font: .7em var(--sans); margin-left: .5em; }
-.jn06-iam div.jn06-now { color: var(--accent-hot); opacity: 1; font-weight: 600; }
-.slide.active .jn06-iam div.jn06-now { animation: jn06-glowtext 2.2s ease-in-out infinite alternate; }
-@keyframes jn06-glowtext { to { text-shadow: 0 0 18px var(--accent); } }
-
 /* jn06-stamps: one promise, stamped four times */
 .jn06-stamps { display: flex; flex-wrap: wrap; gap: .6rem 1rem; margin: .5em 0 1em; }
 .jn06-stamp { padding: .3em .7em; border: 3px solid var(--accent); border-radius: 8px; color: var(--accent-hot); font: 700 clamp(.95rem, .85rem + .45vw, 1.25rem) var(--sans); transform: rotate(-4deg) scale(2.2); opacity: 0; }
@@ -112,11 +89,7 @@
 .jn06-match .jn06-mh { background: none; padding-top: 0; padding-bottom: 0; font: 700 clamp(.85rem, .8rem + .3vw, 1.05rem) var(--sans); color: var(--accent); }
 .jn06-match .jn06-pic { font-style: italic; color: var(--accent-hot); }
 
-/* jn06-few: a crowd thins out until twelve are left */
-.jn06-few { display: grid; grid-template-columns: repeat(20, 1fr); gap: clamp(3px, .5vw, 7px); margin: .5em 0 1em; max-width: 44rem; }
-.jn06-few i { aspect-ratio: 1; border-radius: 50%; background: var(--ink-soft); transition: opacity 1.2s ease, background-color 1.2s ease; transition-delay: calc(var(--k, 0) * 1ms); }
-.jn06-left:has(.jn06-leave.on) .jn06-few i:not(.jn06-keep) { opacity: .1; }
-.jn06-left:has(.jn06-leave.on) .jn06-few i.jn06-keep { background: var(--accent-hot); box-shadow: 0 0 10px var(--accent); }
+/* jn06-tally: from thousands down to twelve (the dots beside it are a shared .dots counter) */
 .jn06-tally { display: flex; flex-wrap: wrap; gap: .4rem 1.6rem; margin: .4em 0 1em; }
 .jn06-tally div b { display: block; font: 300 clamp(1.8rem, 1.2rem + 2.6vw, 3.4rem)/1 var(--serif); color: var(--accent-hot); }
 .jn06-tally div span { color: var(--ink-soft); font-size: clamp(.85rem, .8rem + .3vw, 1.05rem); }
@@ -168,29 +141,29 @@
     <blockquote class="quote rise" data-q="1" data-hl="the sea of Galilee, which is the sea of Tiberias"></blockquote>
     <div class="split">
       <div class="stage">
-        <svg viewBox="0 0 420 470" role="img" aria-label="Map of the Sea of Galilee. The Jordan River flows in at the north and out at the south. Capernaum and Bethsaida are on the north shore, Tiberias on the west. The crowd was fed on the hills near Bethsaida, and the boat crossed back toward Capernaum.">
-          <path class="jn06-river rise" style="--d:2" d="M238 0 C228 20 248 34 236 62"/>
-          <path class="jn06-river rise" style="--d:2" d="M206 420 C214 436 198 450 210 470"/>
-          <path class="jn06-lake rise" style="--d:2" d="M195 58 C250 52 292 82 306 132 C320 188 314 262 294 322 C274 382 240 420 205 424 C168 420 142 382 122 332 C102 278 96 202 110 142 C124 92 150 62 195 58 Z"/>
+        <svg class="map" viewBox="0 0 420 470" role="img" aria-label="Map of the Sea of Galilee. The Jordan River flows in at the north and out at the south. Capernaum and Bethsaida are on the north shore, Tiberias on the west. The crowd was fed on the hills near Bethsaida, and the boat crossed back toward Capernaum.">
+          <path class="map-river rise" style="--d:2" d="M238 0 C228 20 248 34 236 62"/>
+          <path class="map-river rise" style="--d:2" d="M206 420 C214 436 198 450 210 470"/>
+          <path class="map-lake rise" style="--d:2" d="M195 58 C250 52 292 82 306 132 C320 188 314 262 294 322 C274 382 240 420 205 424 C168 420 142 382 122 332 C102 278 96 202 110 142 C124 92 150 62 195 58 Z"/>
           <text x="210" y="250" text-anchor="middle" font-size="18" class="serif" style="fill:var(--cool);font-style:italic">Sea of Galilee</text>
           <text x="210" y="272" text-anchor="middle" font-size="14" style="fill:var(--cool)">about 13 miles long</text>
           <text x="252" y="18" font-size="14" style="fill:var(--cool)">Jordan River</text>
-          <g class="rise" style="--d:3">
-            <circle class="jn06-town" cx="146" cy="78" r="7"/>
+          <g class="map-town rise" style="--d:3">
+            <circle cx="146" cy="78" r="7"/>
             <text x="134" y="70" text-anchor="end" font-size="17" font-weight="700">Capernaum</text>
-            <circle class="jn06-town" cx="256" cy="58" r="7"/>
+            <circle cx="256" cy="58" r="7"/>
             <text x="268" y="52" font-size="17" font-weight="700">Bethsaida</text>
-            <circle class="jn06-town" cx="104" cy="250" r="7"/>
+            <circle cx="104" cy="250" r="7"/>
             <text x="92" y="256" text-anchor="end" font-size="17" font-weight="700">Tiberias</text>
           </g>
-          <g class="rise" style="--d:5">
-            <circle class="jn06-pulse" cx="306" cy="104" r="14"/>
-            <circle class="jn06-here" cx="306" cy="104" r="8"/>
+          <g class="map-town here rise" style="--d:5">
+            <circle class="map-ping" cx="306" cy="104" r="10"/>
+            <circle cx="306" cy="104" r="8"/>
             <text x="320" y="100" font-size="16" font-weight="700" style="fill:var(--accent-hot)">the hills where</text>
             <text x="320" y="120" font-size="16" font-weight="700" style="fill:var(--accent-hot)">5,000 ate</text>
           </g>
-          <g class="step">
-            <path class="jn06-route draw" pathLength="1" d="M296 112 C262 150 196 150 156 90"/>
+          <g class="step map-go1">
+            <path class="map-route r1" pathLength="1" d="M296 112 C262 150 196 150 156 90"/>
             <text x="226" y="170" text-anchor="middle" font-size="15" style="fill:var(--accent-hot)">the night crossing</text>
           </g>
         </svg>
@@ -238,8 +211,8 @@
       <svg viewBox="0 0 46 26" aria-hidden="true"><path class="jn06-fishshape" d="M3 13 C9 4 23 3 31 13 C23 23 9 22 3 13 Z M30 13 L44 4 L41 13 L44 22 Z"/></svg>
       <small>one boy's lunch</small>
     </div>
-    <div class="jn06-crowd step" aria-label="Fifty dots, each standing for a hundred men"><i style="--k:0"></i><i style="--k:1"></i><i style="--k:2"></i><i style="--k:3"></i><i style="--k:4"></i><i style="--k:5"></i><i style="--k:6"></i><i style="--k:7"></i><i style="--k:8"></i><i style="--k:9"></i><i style="--k:10"></i><i style="--k:11"></i><i style="--k:12"></i><i style="--k:13"></i><i style="--k:14"></i><i style="--k:15"></i><i style="--k:16"></i><i style="--k:17"></i><i style="--k:18"></i><i style="--k:19"></i><i style="--k:20"></i><i style="--k:21"></i><i style="--k:22"></i><i style="--k:23"></i><i style="--k:24"></i><i style="--k:25"></i><i style="--k:26"></i><i style="--k:27"></i><i style="--k:28"></i><i style="--k:29"></i><i style="--k:30"></i><i style="--k:31"></i><i style="--k:32"></i><i style="--k:33"></i><i style="--k:34"></i><i style="--k:35"></i><i style="--k:36"></i><i style="--k:37"></i><i style="--k:38"></i><i style="--k:39"></i><i style="--k:40"></i><i style="--k:41"></i><i style="--k:42"></i><i style="--k:43"></i><i style="--k:44"></i><i style="--k:45"></i><i style="--k:46"></i><i style="--k:47"></i><i style="--k:48"></i><i style="--k:49"></i></div>
-    <p class="jn06-crowd-cap step">each dot is 100 men, about 5,000 in all, “beside women and children” (Matthew 14:21)</p>
+    <div class="dots rows step" data-dots="50" style="--cols:25;--dot:var(--ink-soft);--wait:0ms" aria-label="Fifty dots, each standing for a hundred men"></div>
+    <p class="dots-cap step">each dot is 100 men, about 5,000 in all, “beside women and children” (Matthew 14:21)</p>
     <p class="note step">Barley bread was the cheap bread, what poor families ate. The fish were small, likely dried or pickled to go with the bread. A boy's lunch.</p>
     <p class="note step">Andrew was right: it was nothing next to the need. But he brought it to Jesus anyway. That's all Jesus asks. Not that what you bring is enough, just that you bring it to Him.</p>
   </div>
@@ -446,9 +419,9 @@
 <section class="slide ex">
   <div class="inner">
     <blockquote class="quote rise" data-q="35" data-hl="I am the bread of life"></blockquote>
-    <div class="jn06-iam rise" style="--d:1">
-      <span class="jn06-big">I am</span>
-      <div class="jn06-now">the bread of life <cite>6:35</cite></div>
+    <div class="iam rise" style="--d:1">
+      <span class="big">I am</span>
+      <div class="now">the bread of life <cite>6:35</cite></div>
       <div>the light of the world <cite>8:12</cite></div>
       <div>the door <cite>10:9</cite></div>
       <div>the good shepherd <cite>10:11</cite></div>
@@ -583,15 +556,15 @@
 <section class="slide verse" data-v="66-69" data-hl="many of his disciples went back, and walked no more with him|Will ye also go away?|Lord, to whom shall we go? thou hast the words of eternal life"></section>
 
 <section class="slide ex">
-  <div class="inner jn06-left">
+  <div class="inner">
     <blockquote class="quote rise" data-q="68" data-hl="Lord, to whom shall we go?"></blockquote>
     <h2 class="rise" style="--d:1">From thousands to twelve</h2>
     <div class="jn06-tally">
       <div class="rise" style="--d:2"><b>≈ 5,000</b><span>ate the bread · v. 10</span></div>
-      <div class="step jn06-leave"><b>“many”</b><span>went back · v. 66</span></div>
+      <div class="step dots-go"><b>“many”</b><span>went back · v. 66</span></div>
       <div class="step"><b>12</b><span>stayed · v. 67</span></div>
     </div>
-    <div class="jn06-few rise" style="--d:3" aria-label="Sixty dots fade out until twelve are left"><i></i><i></i><i></i><i class="jn06-keep"></i><i></i><i></i><i></i><i></i><i></i><i class="jn06-keep"></i><i></i><i></i><i></i><i class="jn06-keep"></i><i></i><i></i><i class="jn06-keep"></i><i></i><i></i><i></i><i></i><i></i><i class="jn06-keep"></i><i></i><i></i><i></i><i></i><i class="jn06-keep"></i><i></i><i></i><i></i><i></i><i></i><i></i><i class="jn06-keep"></i><i></i><i></i><i></i><i class="jn06-keep"></i><i></i><i></i><i></i><i></i><i></i><i></i><i class="jn06-keep"></i><i></i><i class="jn06-keep"></i><i></i><i></i><i></i><i></i><i class="jn06-keep"></i><i></i><i></i><i></i><i class="jn06-keep"></i><i></i><i></i><i></i></div>
+    <div class="dots rows rise" data-dots="60" data-keep="4 10 14 17 23 28 35 39 46 48 53 57" style="--d:3;--cols:20;--dot:var(--ink-soft);--pace:20ms;max-width:44rem" aria-label="Sixty dots fade out until twelve are left"></div>
     <p class="note step">When following Jesus got hard, the crowd went home. Jesus didn't chase them or soften what He said. He turned to the twelve: <em>“Will ye also go away?”</em></p>
     <p class="note step">Peter didn't have it all figured out. But he knew this: there's nowhere else to go. Back to the old life? We've been there. We know how it ends. <em>“Thou hast the words of eternal life.”</em></p>
   </div>

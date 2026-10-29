@@ -10,17 +10,6 @@
 <link rel="stylesheet" href="../assets/deck.css">
 <link rel="stylesheet" href="../assets/themes.css">
 <style>
-/* Map: the road through Samaria drawn over the long way around */
-.jn04-map .sea { fill: color-mix(in srgb, var(--cool) 28%, transparent); }
-.jn04-map .lake { fill: var(--cool); }
-.jn04-map .river { fill: none; stroke: var(--cool); stroke-width: 3; }
-.jn04-map .border { fill: none; stroke: var(--line-strong); stroke-width: 2; stroke-dasharray: 5 6; }
-.jn04-map .region { font-size: 17px; font-weight: 700; letter-spacing: .14em; fill: var(--ink-soft); }
-.jn04-map .town { fill: var(--ink); }
-.jn04-map .around { fill: none; stroke: var(--ink-soft); stroke-width: 3; stroke-dasharray: 3 7; stroke-linecap: round; }
-.jn04-map .through { fill: none; stroke: var(--accent); stroke-width: 6; stroke-linecap: round; stroke-dasharray: 1; stroke-dashoffset: 1; transition: stroke-dashoffset 1.6s ease; }
-.split:has(.jn04-road-go.on) .jn04-map .through { stroke-dashoffset: 0; }
-
 /* Jacob's well in cross-section, with a bucket going down */
 .jn04-well .earth { fill: var(--surface-2); }
 .jn04-well .shaft { fill: color-mix(in srgb, var(--ink) 22%, var(--bg)); }
@@ -29,37 +18,6 @@
 .jn04-well .bucket { transform: translateY(0); }
 .slide.active .jn04-well .bucket { animation: jn04-lower 6s ease-in-out .6s infinite; }
 @keyframes jn04-lower { 0% { transform: translateY(0); } 45%, 55% { transform: translateY(268px); } 100% { transform: translateY(0); } }
-
-/* Walls that come down, one at a time */
-.jn04-walls { display: grid; gap: clamp(.5rem, 1.4vh, .9rem); margin: .4em 0 1em; }
-.jn04-wall { display: grid; grid-template-columns: 1fr auto 1fr; align-items: center; gap: .3rem 1rem; }
-.jn04-wall b { font: 400 clamp(1.15rem, .95rem + 1vw, 1.75rem) var(--serif); }
-.jn04-wall b:first-child { text-align: right; }
-.jn04-wall .bricks {
-  width: 2.4rem; height: 3.4rem; border: 2px solid var(--ink-soft); border-radius: 2px; background-color: var(--surface-2);
-  background-image: linear-gradient(var(--ink-soft) 2px, transparent 2px), linear-gradient(90deg, var(--ink-soft) 2px, transparent 2px);
-  background-size: 100% 13px, 19px 26px; transform-origin: 50% 100%;
-  transition: transform .9s cubic-bezier(.5,0,.75,0) 1s, opacity .9s ease 1s;
-}
-.jn04-wall.on .bricks { transform: scaleY(.1); opacity: .35; }
-.jn04-wall small { grid-column: 1 / -1; text-align: center; color: var(--ink-soft); font-size: clamp(.88rem, .8rem + .35vw, 1.1rem); }
-
-/* A broken cistern that drains, and a spring that keeps flowing */
-.jn04-cistern .pit { fill: var(--surface-2); stroke: var(--ink-soft); stroke-width: 4; }
-.jn04-cistern .crack { fill: none; stroke: var(--danger); stroke-width: 3; stroke-linejoin: round; }
-.jn04-cistern .water { fill: var(--cool); }
-.slide.active .jn04-cistern .drain { animation: jn04-drain 5s ease-in infinite; }
-@keyframes jn04-drain { 0% { transform: translateY(0); } 85%, 100% { transform: translateY(150px); } }
-.jn04-cistern .drip { fill: var(--cool); opacity: 0; }
-.slide.active .jn04-cistern .drip { animation: jn04-drip 1.6s ease-in infinite; animation-delay: calc(var(--k) * .55s); }
-@keyframes jn04-drip { 0% { opacity: 0; transform: translateY(0); } 20% { opacity: 1; } 100% { opacity: 0; transform: translateY(38px); } }
-.jn04-cistern .rock { fill: var(--surface-2); stroke: var(--ink-soft); stroke-width: 3; }
-.jn04-cistern .stream { fill: none; stroke: var(--cool); stroke-width: 6; stroke-linecap: round; stroke-dasharray: 14 10; }
-.slide.active .jn04-cistern .stream { animation: jn04-flow .9s linear infinite; }
-@keyframes jn04-flow { to { stroke-dashoffset: -24; } }
-.jn04-cistern .bubble { fill: var(--cool); opacity: 0; }
-.slide.active .jn04-cistern .bubble { animation: jn04-up 2s ease-out infinite; animation-delay: calc(var(--k) * .5s); }
-@keyframes jn04-up { 0% { opacity: 0; transform: translateY(0); } 25% { opacity: .9; } 100% { opacity: 0; transform: translateY(-70px); } }
 
 /* Mount Gerizim and Mount Ebal, with the well in the valley */
 .jn04-mount .peak { fill: var(--surface-2); stroke: var(--ink-soft); stroke-width: 2; }
@@ -80,9 +38,7 @@
 .jn04-grow .row { display: grid; grid-template-columns: minmax(8rem, 13rem) 1fr; gap: .3rem 1rem; align-items: center; }
 .jn04-grow .lbl { font-size: clamp(.92rem, .84rem + .4vw, 1.2rem); line-height: 1.3; }
 .jn04-grow .lbl b { display: block; font-family: var(--serif); font-weight: 400; color: var(--accent-hot); font-size: 1.15em; }
-.jn04-grow .dots { display: flex; flex-wrap: wrap; gap: 5px; }
-.jn04-grow .dots i { width: clamp(9px, 1.1vw, 14px); aspect-ratio: 1; border-radius: 50%; background: var(--accent); opacity: 0; transform: scale(.3); transition: opacity .4s ease, transform .4s ease; }
-.jn04-grow .row.on .dots i, .slide.active .jn04-grow .row.rise .dots i { opacity: 1; transform: none; }
+.jn04-grow .dots { margin: 0; }
 @media (max-width: 600px) { .jn04-grow .row { grid-template-columns: 1fr; } }
 
 /* The road from Cana down to Capernaum */
@@ -142,34 +98,17 @@
     <blockquote class="quote rise" data-q="4" data-hl="must needs go"></blockquote>
     <div class="split">
       <div class="stage">
-        <svg class="jn04-map" viewBox="0 0 420 560" role="img" aria-label="Map: from Jerusalem in Judaea, the direct road runs north through Samaria to Sychar and on to Galilee. A longer road goes around Samaria, east of the Jordan.">
-          <path class="sea" d="M0 0 L150 0 C 130 120, 95 260, 72 380 S 42 520, 36 560 L0 560 Z"/>
-          <text x="40" y="300" font-size="15" transform="rotate(-78 40 300)" style="fill:var(--cool)">the Great Sea</text>
-          <path class="border" d="M100 190 L300 190"/>
-          <path class="border" d="M80 335 L308 335"/>
-          <ellipse class="lake" cx="305" cy="118" rx="15" ry="26"/>
-          <path class="river" d="M305 144 C 298 200, 316 250, 304 300 S 318 380, 310 418"/>
-          <ellipse class="lake" cx="313" cy="470" rx="15" ry="54"/>
-          <text class="region" x="140" y="40">GALILEE</text>
-          <text class="region" x="100" y="228">SAMARIA</text>
-          <text class="region" x="120" y="520">JUDAEA</text>
-          <text x="352" y="270" font-size="14" style="fill:var(--ink-soft)">Perea</text>
-          <path class="around" d="M245 430 L288 408 C 334 386, 340 300, 334 230 S 326 160, 300 152 C 280 146, 256 122, 235 110"/>
-          <path class="through" pathLength="1" d="M245 430 C 238 380, 246 320, 240 270 S 228 160, 235 110"/>
-          <g class="town">
-            <circle cx="245" cy="430" r="7"/><text x="232" y="436" text-anchor="end" font-size="17" font-weight="700">Jerusalem</text>
-            <circle cx="240" cy="270" r="7"/><text x="226" y="276" text-anchor="end" font-size="17" font-weight="700">Sychar</text>
-            <circle cx="235" cy="110" r="6"/><text x="222" y="115" text-anchor="end" font-size="16">Cana</text>
-            <circle cx="290" cy="98" r="5"/><text x="282" y="86" text-anchor="end" font-size="15">Capernaum</text>
-          </g>
-          <text x="340" y="190" font-size="13" style="fill:var(--ink-soft)">the long</text>
-          <text x="340" y="206" font-size="13" style="fill:var(--ink-soft)">way around</text>
+        <svg class="map" data-land data-towns="Jerusalem, Sychar*, Cana, Capernaum" role="img" aria-label="Map: from Jerusalem in Judaea, the direct road runs north through Samaria to Sychar and on to Galilee. A longer road goes around Samaria, east of the Jordan.">
+          <path class="map-way" d="M202 385 L243 363 C 262 356, 284 350, 288 320 S 292 230, 284 190 C 278 172, 250 160, 212 152"/>
+          <path class="map-route r1" pathLength="1" d="M202 385 C 206 350, 214 320, 211 285 S 205 200, 212 152"/>
+          <text class="map-soft" x="298" y="250" font-size="13">the long</text>
+          <text class="map-soft" x="298" y="266" font-size="13">way around</text>
         </svg>
       </div>
       <div>
         <h2 class="rise" style="--d:1">“He must needs go”</h2>
         <p class="note rise" style="--d:2">Samaria sat right between Judaea and Galilee. Some strict Jews would rather cross the Jordan and take the long way around than set foot in it.</p>
-        <p class="note step jn04-road-go">The direct road went straight through, about three days' walk. But this “must” is about more than a map. It's the same word as “Ye <em>must</em> be born again” and “the Son of man <em>must</em> be lifted up” (3:7, 14). Jesus had an appointment at a well.</p>
+        <p class="note step map-go1">The direct road went straight through, about three days' walk. But this “must” is about more than a map. It's the same word as “Ye <em>must</em> be born again” and “the Son of man <em>must</em> be lifted up” (3:7, 14). Jesus had an appointment at a well.</p>
       </div>
     </div>
   </div>
@@ -237,10 +176,10 @@
     <blockquote class="quote rise" data-q="9" data-hl="How is it that thou, being a Jew, askest drink of me"></blockquote>
     <h2 class="rise" style="--d:1">Three walls, one cup</h2>
     <p class="note rise" style="--d:2">Asking her for a drink meant sharing her water jar. To a strict Jew, a Samaritan's cup was unclean. With four words, “Give me to drink,” Jesus walked through three walls:</p>
-    <div class="jn04-walls">
-      <div class="jn04-wall step"><b>a Jew</b><span class="bricks" aria-hidden="true"></span><b>a Samaritan</b><small>“The Jews have no dealings with the Samaritans.”</small></div>
-      <div class="jn04-wall step"><b>a man</b><span class="bricks" aria-hidden="true"></span><b>a woman</b><small>Teachers didn't talk with women in public. Even the disciples “marvelled” (verse 27).</small></div>
-      <div class="jn04-wall step"><b>a holy Teacher</b><span class="bricks" aria-hidden="true"></span><b>a woman with a past</b><small>He knew exactly who she was, and He started the conversation anyway.</small></div>
+    <div class="walls">
+      <div class="step"><b>a Jew</b><i aria-hidden="true"></i><b>a Samaritan</b><small>“The Jews have no dealings with the Samaritans.”</small></div>
+      <div class="step"><b>a man</b><i aria-hidden="true"></i><b>a woman</b><small>Teachers didn't talk with women in public. Even the disciples “marvelled” (verse 27).</small></div>
+      <div class="step"><b>a holy Teacher</b><i aria-hidden="true"></i><b>a woman with a past</b><small>He knew exactly who she was, and He started the conversation anyway.</small></div>
     </div>
   </div>
 </section>
@@ -252,25 +191,25 @@
     <blockquote class="quote rise" data-q="10" data-hl="the gift of God|living water"></blockquote>
     <h2 class="rise" style="--d:1">Living water</h2>
     <div class="stage">
-      <svg class="jn04-cistern" viewBox="0 0 640 300" role="img" aria-label="On the left, a cracked cistern keeps draining dry. On the right, a spring keeps bubbling up and overflowing.">
+      <svg class="wells" viewBox="0 0 640 300" role="img" aria-label="On the left, a cracked cistern leaks dry. On the right, a spring keeps bubbling up and overflowing.">
         <defs><clipPath id="jn04-pitclip"><path d="M44 80 L44 258 Q44 276 62 276 L238 276 Q256 276 256 258 L256 80 Z"/></clipPath></defs>
-        <path class="pit" d="M40 70 L40 260 Q40 280 60 280 L240 280 Q260 280 260 260 L260 70"/>
-        <g clip-path="url(#jn04-pitclip)"><rect class="water drain" x="40" y="128" width="222" height="160"/></g>
-        <path class="crack" d="M90 280 L98 262 L90 250 L102 236"/>
-        <path class="crack" d="M200 280 L192 266 L204 254 L196 240"/>
-        <path class="crack" d="M260 200 L246 208 L252 222"/>
-        <circle class="drip" style="--k:0" cx="90" cy="286" r="5"/>
-        <circle class="drip" style="--k:1" cx="200" cy="286" r="5"/>
-        <circle class="drip" style="--k:2" cx="264" cy="214" r="4"/>
+        <path class="wells-pit" d="M40 70 L40 260 Q40 280 60 280 L240 280 Q260 280 260 260 L260 70"/>
+        <g clip-path="url(#jn04-pitclip)"><rect class="wells-water wells-drain" x="40" y="128" width="222" height="150"/></g>
+        <path class="wells-crack" d="M90 280 L98 262 L90 250 L102 236"/>
+        <path class="wells-crack" d="M200 280 L192 266 L204 254 L196 240"/>
+        <path class="wells-crack" d="M260 200 L246 208 L252 222"/>
+        <circle class="wells-drip" style="--k:0" cx="90" cy="286" r="5"/>
+        <circle class="wells-drip" style="--k:1" cx="200" cy="286" r="5"/>
+        <circle class="wells-drip" style="--k:2" cx="264" cy="214" r="4"/>
         <text x="150" y="40" text-anchor="middle" font-size="20" font-weight="700">broken cisterns</text>
         <text x="150" y="60" text-anchor="middle" font-size="15" style="fill:var(--ink-soft)">dug by hand, holding still water</text>
-        <path class="rock" d="M380 280 Q390 200 440 190 L540 190 Q590 200 600 280 Z"/>
-        <path class="stream" d="M490 192 C 470 170, 430 175, 410 210 S 380 270, 360 284"/>
-        <path class="stream" d="M490 192 C 510 170, 560 175, 575 210 S 600 270, 630 284"/>
-        <circle class="bubble" style="--k:0" cx="478" cy="190" r="7"/>
-        <circle class="bubble" style="--k:1" cx="492" cy="190" r="9"/>
-        <circle class="bubble" style="--k:2" cx="504" cy="190" r="6"/>
-        <circle class="bubble" style="--k:3" cx="488" cy="190" r="5"/>
+        <path class="wells-rock" d="M380 280 Q390 200 440 190 L540 190 Q590 200 600 280 Z"/>
+        <path class="wells-spring" d="M490 192 C 470 170, 430 175, 410 210 S 380 270, 360 284"/>
+        <path class="wells-spring" d="M490 192 C 510 170, 560 175, 575 210 S 600 270, 630 284"/>
+        <circle class="wells-bubble" style="--k:0" cx="478" cy="190" r="7"/>
+        <circle class="wells-bubble" style="--k:1" cx="492" cy="190" r="9"/>
+        <circle class="wells-bubble" style="--k:2" cx="504" cy="190" r="6"/>
+        <circle class="wells-bubble" style="--k:3" cx="488" cy="190" r="5"/>
         <text x="490" y="60" text-anchor="middle" font-size="20" font-weight="700" style="fill:var(--accent-hot)">the fountain of living waters</text>
         <text x="490" y="80" text-anchor="middle" font-size="15" style="fill:var(--ink-soft)">a spring that never stops</text>
       </svg>
@@ -495,9 +434,9 @@
     <blockquote class="quote rise" data-q="42" data-hl="we have heard him ourselves|the Saviour of the world"></blockquote>
     <h2 class="rise" style="--d:1">One, then many, then many more</h2>
     <div class="jn04-grow" aria-label="An illustration, not a head count: one woman, then many Samaritans, then many more.">
-      <div class="row rise" style="--d:2"><span class="lbl"><b>one woman</b>met Jesus (v. 29)</span><span class="dots"><i></i></span></div>
-      <div class="row step"><span class="lbl"><b>many believed</b>for her saying (v. 39)</span><span class="dots"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></span></div>
-      <div class="row step"><span class="lbl"><b>many more believed</b>because of His word (v. 41)</span><span class="dots"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></span></div>
+      <div class="row rise" style="--d:2"><span class="lbl"><b>one woman</b>met Jesus (v. 29)</span><span class="dots" data-dots="1"></span></div>
+      <div class="row step"><span class="lbl"><b>many believed</b>for her saying (v. 39)</span><span class="dots" data-dots="16"></span></div>
+      <div class="row step"><span class="lbl"><b>many more believed</b>because of His word (v. 41)</span><span class="dots" data-dots="40"></span></div>
     </div>
     <p class="note step">Her word got them to Jesus. His word made them sure: <em>“we have heard him ourselves.”</em> That's how faith grows. Somebody brings you, and then you meet Him for yourself.</p>
     <p class="note step">“The Saviour of the world” appears only here in the Gospels, and it came from Samaritans. Outsiders saw it first: He didn't come for one nation. He came for the world.</p>
