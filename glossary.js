@@ -233,15 +233,6 @@ window.GLOSSARY = [
   "name": "Joseph, husband of Mary",
   "refs": [
    [
-    "Amos", 5,
-    [ 6, 15 ] ],
-   [
-    "Amos", 6,
-    [ 6 ] ],
-   [
-    "Obadiah", 1,
-    [ 18 ] ],
-   [
     "John", 1,
     [ 45 ] ],
    [
@@ -794,6 +785,9 @@ window.GLOSSARY = [
     "Jonah", 3,
     [ 1, 3 ] ],
    [
+    "Jonah", 4,
+    [ 2, 3, 4, 6, 10 ] ],
+   [
     "Micah", 1,
     [ 1, 3, 12 ] ],
    [
@@ -840,7 +834,13 @@ window.GLOSSARY = [
     [ 2, 3, 5, 7, 9, 10, 11 ] ],
    [
     "Zephaniah", 3,
-    [ 2, 5, 8, 9, 12, 15, 17, 20 ] ] ]
+    [ 2, 5, 8, 9, 12, 15, 17, 20 ] ],
+   [
+    "Haggai", 1,
+    [ 1, 2, 3, 5, 7, 8, 9, 12, 13, 14 ] ],
+   [
+    "Haggai", 2,
+    [ 1, 4, 6, 7, 8, 9, 10, 11, 14, 15, 17, 18, 20, 23 ] ] ]
  },
  {
   "id": "jakeh",
@@ -1094,6 +1094,9 @@ window.GLOSSARY = [
     "Habakkuk", 2,
     [ 20 ] ],
    [
+    "Haggai", 2,
+    [ 15, 18 ] ],
+   [
     "John", 2,
     [ 14, 15, 19, 20, 21 ] ],
    [
@@ -1268,6 +1271,9 @@ window.GLOSSARY = [
     "Zephaniah", 1,
     [ 3, 5 ] ],
    [
+    "Haggai", 1,
+    [ 10 ] ],
+   [
     "John", 1,
     [ 32, 51 ] ],
    [
@@ -1374,7 +1380,13 @@ window.GLOSSARY = [
     [ 1, 4 ] ],
    [
     "Zephaniah", 2,
-    [ 7 ] ] ]
+    [ 7 ] ],
+   [
+    "Haggai", 1,
+    [ 1, 14 ] ],
+   [
+    "Haggai", 2,
+    [ 2, 21 ] ] ]
  },
  {
   "id": "city-gate",
@@ -1664,6 +1676,9 @@ window.GLOSSARY = [
     "Habakkuk", 3,
     [ 3 ] ],
    [
+    "Haggai", 2,
+    [ 3, 7, 9 ] ],
+   [
     "John", 1,
     [ 14 ] ],
    [
@@ -1735,6 +1750,9 @@ window.GLOSSARY = [
    [
     "Zephaniah", 3,
     [ 4 ] ],
+   [
+    "Haggai", 2,
+    [ 11 ] ],
    [
     "John", 1,
     [ 17, 45 ] ],
@@ -2209,6 +2227,12 @@ window.GLOSSARY = [
    [
     "Zephaniah", 1,
     [ 13 ] ],
+   [
+    "Haggai", 1,
+    [ 11 ] ],
+   [
+    "Haggai", 2,
+    [ 12 ] ],
    [
     "John", 2,
     [ 3, 9, 10 ] ],
@@ -3418,6 +3442,9 @@ window.GLOSSARY = [
    [
     "Jonah", 3,
     [ 9 ] ],
+   [
+    "Jonah", 4,
+    [ 1, 2, 4, 9 ] ],
    [
     "Micah", 5,
     [ 15 ] ],
@@ -6440,6 +6467,12 @@ window.GLOSSARY = [
   "name": "High priest",
   "refs": [
    [
+    "Haggai", 1,
+    [ 1, 12, 14 ] ],
+   [
+    "Haggai", 2,
+    [ 2, 4 ] ],
+   [
     "John", 11,
     [ 49, 51 ] ],
    [
@@ -7305,7 +7338,13 @@ window.GLOSSARY = [
     [ 4 ] ],
    [
     "Zephaniah", 3,
-    [ 4 ] ] ]
+    [ 4 ] ],
+   [
+    "Haggai", 1,
+    [ 1, 12, 14 ] ],
+   [
+    "Haggai", 2,
+    [ 2, 4, 11, 12, 13 ] ] ]
  },
  {
   "id": "elders",
@@ -7392,7 +7431,10 @@ window.GLOSSARY = [
     [ 14 ] ],
    [
     "Joel", 2,
-    [ 12, 15 ] ] ]
+    [ 12, 15 ] ],
+   [
+    "Jonah", 3,
+    [ 5 ] ] ]
  },
  {
   "id": "solemn-assembly",
@@ -7485,7 +7527,13 @@ window.GLOSSARY = [
   "refs": [
    [
     "Joel", 2,
-    [ 13, 14 ] ] ]
+    [ 13, 14 ] ],
+   [
+    "Jonah", 3,
+    [ 9, 10 ] ],
+   [
+    "Jonah", 4,
+    [ 2 ] ] ]
  },
  {
   "id": "heathen",
@@ -7515,7 +7563,10 @@ window.GLOSSARY = [
     [ 12 ] ],
    [
     "Zephaniah", 2,
-    [ 11 ] ] ]
+    [ 11 ] ],
+   [
+    "Haggai", 2,
+    [ 22 ] ] ]
  },
  {
   "id": "jealous",
@@ -7644,7 +7695,10 @@ window.GLOSSARY = [
     [ 7, 9 ] ],
    [
     "Zephaniah", 3,
-    [ 13 ] ] ]
+    [ 13 ] ],
+   [
+    "Haggai", 1,
+    [ 12, 14 ] ] ]
  },
  {
   "id": "bring-again-the-captivity",
@@ -7824,7 +7878,10 @@ window.GLOSSARY = [
     [ 15 ] ],
    [
     "Nahum", 3,
-    [ 9 ] ] ]
+    [ 9 ] ],
+   [
+    "Haggai", 2,
+    [ 5 ] ] ]
  },
  {
   "id": "edom",
@@ -8600,6 +8657,9 @@ window.GLOSSARY = [
     "Hosea", 13,
     [ 15 ] ],
    [
+    "Jonah", 4,
+    [ 8 ] ],
+   [
     "Habakkuk", 1,
     [ 9 ] ] ]
  },
@@ -8745,7 +8805,10 @@ window.GLOSSARY = [
     [ 5 ] ],
    [
     "Micah", 5,
-    [ 7 ] ] ]
+    [ 7 ] ],
+   [
+    "Haggai", 1,
+    [ 10 ] ] ]
  },
  {
   "id": "chaff",
@@ -9252,7 +9315,13 @@ window.GLOSSARY = [
     [ 13 ] ],
    [
     "Zephaniah", 2,
-    [ 9, 10 ] ] ]
+    [ 9, 10 ] ],
+   [
+    "Haggai", 1,
+    [ 2, 5, 7, 9, 14 ] ],
+   [
+    "Haggai", 2,
+    [ 4, 6, 7, 8, 9, 11, 23 ] ] ]
  },
  {
   "id": "captivity",
@@ -9954,7 +10023,10 @@ window.GLOSSARY = [
   "refs": [
    [
     "Amos", 4,
-    [ 9 ] ] ]
+    [ 9 ] ],
+   [
+    "Haggai", 2,
+    [ 17 ] ] ]
  },
  {
   "id": "firebrand",
@@ -10439,6 +10511,9 @@ window.GLOSSARY = [
     "Jonah", 3,
     [ 2, 3, 4, 5, 6, 7 ] ],
    [
+    "Jonah", 4,
+    [ 11 ] ],
+   [
     "Nahum", 1,
     [ 1 ] ],
    [
@@ -10480,6 +10555,9 @@ window.GLOSSARY = [
    [
     "Joel", 2,
     [ 13 ] ],
+   [
+    "Jonah", 4,
+    [ 2 ] ],
    [
     "Nahum", 1,
     [ 3 ] ] ]
@@ -11113,5 +11191,308 @@ window.GLOSSARY = [
    [
     "Micah", 7,
     [ 19 ] ] ]
+ },
+ {
+  "id": "jonah",
+  "kind": "person",
+  "name": "Jonah the prophet",
+  "refs": [
+   [
+    "Jonah", 1,
+    [ 1, 3, 5, 7, 15, 17 ] ],
+   [
+    "Jonah", 2,
+    [ 1, 10 ] ],
+   [
+    "Jonah", 3,
+    [ 1, 3, 4 ] ],
+   [
+    "Jonah", 4,
+    [ 1, 5, 6, 8, 9 ] ] ]
+ },
+ {
+  "id": "amittai",
+  "kind": "person",
+  "name": "Amittai, father of Jonah",
+  "refs": [
+   [
+    "Jonah", 1,
+    [ 1 ] ] ]
+ },
+ {
+  "id": "mariners",
+  "kind": "person",
+  "name": "The mariners (the ship's crew)",
+  "refs": [
+   [
+    "Jonah", 1,
+    [ 5 ] ] ]
+ },
+ {
+  "id": "shipmaster",
+  "kind": "person",
+  "name": "The shipmaster (the ship's captain)",
+  "refs": [
+   [
+    "Jonah", 1,
+    [ 6 ] ] ]
+ },
+ {
+  "id": "hebrew",
+  "kind": "person",
+  "name": "Hebrew (an Israelite)",
+  "refs": [
+   [
+    "Jonah", 1,
+    [ 9 ] ],
+   [
+    "John", 5,
+    [ 2 ] ],
+   [
+    "John", 19,
+    [ 13, 17, 20 ] ] ]
+ },
+ {
+  "id": "tarshish",
+  "kind": "place",
+  "name": "Tarshish (far to the west, probably in Spain)",
+  "refs": [
+   [
+    "Jonah", 1,
+    [ 3 ] ],
+   [
+    "Jonah", 4,
+    [ 2 ] ] ]
+ },
+ {
+  "id": "joppa",
+  "kind": "place",
+  "name": "Joppa (Israel's seaport)",
+  "refs": [
+   [
+    "Jonah", 1,
+    [ 3 ] ] ]
+ },
+ {
+  "id": "presence-of-the-lord",
+  "kind": "term",
+  "name": "From the presence of the LORD (running from God)",
+  "refs": [
+   [
+    "Jonah", 1,
+    [ 3, 10 ] ] ]
+ },
+ {
+  "id": "great-fish",
+  "kind": "term",
+  "name": "The great fish",
+  "refs": [
+   [
+    "Jonah", 1,
+    [ 17 ] ],
+   [
+    "Jonah", 2,
+    [ 1, 10 ] ] ]
+ },
+ {
+  "id": "prepared",
+  "kind": "term",
+  "name": "God prepared (fish, gourd, worm, east wind)",
+  "refs": [
+   [
+    "Jonah", 1,
+    [ 17 ] ],
+   [
+    "Jonah", 4,
+    [ 6, 7, 8 ] ] ]
+ },
+ {
+  "id": "three-days-and-three-nights",
+  "kind": "term",
+  "name": "Three days and three nights (the sign of Jonas)",
+  "refs": [
+   [
+    "Jonah", 1,
+    [ 17 ] ] ]
+ },
+ {
+  "id": "billows",
+  "kind": "term",
+  "name": "Billows (great rolling waves)",
+  "refs": [
+   [
+    "Jonah", 2,
+    [ 3 ] ] ]
+ },
+ {
+  "id": "corruption",
+  "kind": "term",
+  "name": "Corruption (the pit, the grave)",
+  "refs": [
+   [
+    "Jonah", 2,
+    [ 6 ] ] ]
+ },
+ {
+  "id": "lying-vanities",
+  "kind": "term",
+  "name": "Lying vanities (idols)",
+  "refs": [
+   [
+    "Jonah", 2,
+    [ 8 ] ] ]
+ },
+ {
+  "id": "king-of-nineveh",
+  "kind": "person",
+  "name": "The king of Nineveh",
+  "refs": [
+   [
+    "Jonah", 3,
+    [ 6, 7 ] ] ]
+ },
+ {
+  "id": "ashes",
+  "kind": "term",
+  "name": "Sat in ashes (deep grief and humbling)",
+  "refs": [
+   [
+    "Jonah", 3,
+    [ 6 ] ] ]
+ },
+ {
+  "id": "who-can-tell",
+  "kind": "term",
+  "name": "Who can tell? (hoping in God's mercy)",
+  "refs": [
+   [
+    "Jonah", 3,
+    [ 9 ] ] ]
+ },
+ {
+  "id": "gourd",
+  "kind": "term",
+  "name": "The gourd (a fast-growing shade plant)",
+  "refs": [
+   [
+    "Jonah", 4,
+    [ 6, 7, 9, 10 ] ] ]
+ },
+ {
+  "id": "booth",
+  "kind": "term",
+  "name": "Booth (a rough shelter)",
+  "refs": [
+   [
+    "Jonah", 4,
+    [ 5 ] ] ]
+ },
+ {
+  "id": "sixscore",
+  "kind": "term",
+  "name": "Sixscore thousand (120,000)",
+  "refs": [
+   [
+    "Jonah", 4,
+    [ 11 ] ] ]
+ },
+ {
+  "id": "doest-thou-well-to-be-angry",
+  "kind": "term",
+  "name": "Doest thou well to be angry?",
+  "refs": [
+   [
+    "Jonah", 4,
+    [ 4, 9 ] ] ]
+ },
+ {
+  "id": "obadiah",
+  "kind": "person",
+  "name": "Obadiah the prophet",
+  "refs": [
+   [
+    "Obadiah", 1,
+    [ 1 ] ] ]
+ },
+ {
+  "id": "esau",
+  "kind": "person",
+  "name": "Esau (Jacob's twin, father of Edom)",
+  "refs": [
+   [
+    "Obadiah", 1,
+    [ 6, 8, 9, 18, 19, 21 ] ] ]
+ },
+ {
+  "id": "mount-esau",
+  "kind": "place",
+  "name": "The mount of Esau (Edom's mountains)",
+  "refs": [
+   [
+    "Obadiah", 1,
+    [ 8, 9, 19, 21 ] ] ]
+ },
+ {
+  "id": "canaanites",
+  "kind": "person",
+  "name": "The Canaanites",
+  "refs": [
+   [
+    "Obadiah", 1,
+    [ 20 ] ] ]
+ },
+ {
+  "id": "zarephath",
+  "kind": "place",
+  "name": "Zarephath (a town on the coast near Sidon)",
+  "refs": [
+   [
+    "Obadiah", 1,
+    [ 20 ] ] ]
+ },
+ {
+  "id": "sepharad",
+  "kind": "place",
+  "name": "Sepharad (a far-off place of exile)",
+  "refs": [
+   [
+    "Obadiah", 1,
+    [ 20 ] ] ]
+ },
+ {
+  "id": "confederacy",
+  "kind": "term",
+  "name": "Confederacy (an alliance)",
+  "refs": [
+   [
+    "Obadiah", 1,
+    [ 7 ] ] ]
+ },
+ {
+  "id": "crossway",
+  "kind": "term",
+  "name": "The crossway (a crossroads)",
+  "refs": [
+   [
+    "Obadiah", 1,
+    [ 14 ] ] ]
+ },
+ {
+  "id": "substance",
+  "kind": "term",
+  "name": "Substance (goods, wealth)",
+  "refs": [
+   [
+    "Obadiah", 1,
+    [ 13 ] ] ]
+ },
+ {
+  "id": "saviours",
+  "kind": "term",
+  "name": "Saviours (deliverers, like the judges)",
+  "refs": [
+   [
+    "Obadiah", 1,
+    [ 21 ] ] ]
  }
 ];

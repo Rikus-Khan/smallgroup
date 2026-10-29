@@ -3684,6 +3684,230 @@ window.STUDIES = [
     }
   },
   {
+    "id": "obadiah-01",
+    "type": "chapter",
+    "book": "Obadiah",
+    "ch": 1,
+    "date": "2026-10-29",
+    "title": "Obadiah 1",
+    "sub": "The pride of thine heart",
+    "about": "The shortest book in the Old Testament: a proud nation cheers while its brother falls, and God says the high will come down and deliverance will come on mount Zion.",
+    "tags": [
+      "Pride",
+      "Brothers",
+      "Reaping",
+      "Deliverance",
+      "The kingdom"
+    ],
+    "url": "studies/obadiah-01.html",
+    "overview": {
+      "where": "Edom, the mountain country south and east of the Dead Sea, and Jerusalem in Judah",
+      "when": "Most likely soon after Babylon took Jerusalem, about 586 BC",
+      "people": [
+        "obadiah",
+        "esau",
+        "jacob",
+        "heathen",
+        "philistines"
+      ],
+      "places": [
+        "edom",
+        "mount-esau",
+        "teman",
+        "jerusalem",
+        "judah",
+        "sion",
+        "gilead",
+        "zarephath",
+        "sepharad"
+      ],
+      "story": [
+        "The LORD sends word among the nations to rise up against Edom. Edom lives high in the rocks and says, “Who shall bring me down?” God answers: “thence will I bring thee down” (1–4).",
+        "Edom will be stripped bare, its hidden treasures found, its allies turned against it, and its wise men left without understanding (5–9).",
+        "Edom's sin: when strangers broke into Jerusalem, Edom stood by, cheered, looted, and handed over the survivors (10–14).",
+        "The day of the LORD is near: “as thou hast done, it shall be done unto thee” (15–16).",
+        "On mount Zion there will be deliverance. Jacob's house will take back its land on every side, and “the kingdom shall be the LORD’S” (17–21)."
+      ],
+      "key": {
+        "ref": "Obadiah 1:3",
+        "text": "The pride of thine heart hath deceived thee, thou that dwellest in the clefts of the rock, whose habitation is high; that saith in his heart, Who shall bring me down to the ground?"
+      },
+      "big": "Pride lies to the man who has it, and God brings the high down. He sees how we treat a brother who is falling, and He keeps His word: deliverance is found with Him, and the last word is His."
+    }
+  },
+  {
+    "id": "jonah-01",
+    "type": "chapter",
+    "book": "Jonah",
+    "ch": 1,
+    "date": "2026-10-29",
+    "title": "Jonah 1",
+    "sub": "Running from God",
+    "about": "God tells Jonah to go east to Nineveh. Jonah buys a ticket west, and finds out there's nowhere a man can run where God can't reach him.",
+    "tags": [
+      "Running from God",
+      "The way down",
+      "Storms",
+      "Owning it",
+      "God's reach",
+      "The sign of Jonas"
+    ],
+    "url": "studies/jonah-01.html",
+    "overview": {
+      "where": "Joppa on the coast of Israel, then a ship on the Great Sea bound for Tarshish",
+      "when": "About 785 BC, in the days of Jeroboam II of Israel, when Assyria was the great power",
+      "people": [
+        "jonah",
+        "amittai",
+        "mariners",
+        "shipmaster"
+      ],
+      "places": [
+        "nineveh",
+        "tarshish",
+        "joppa"
+      ],
+      "story": [
+        "The word of the LORD tells Jonah to go and cry against Nineveh, that great city. Jonah flees the other way, down to Joppa and onto a ship for Tarshish (1–3).",
+        "The LORD sends a great storm. The sailors pray to their gods and throw cargo overboard, while Jonah sleeps below until the shipmaster wakes him (4–6).",
+        "The lot falls on Jonah. He tells them he is a Hebrew who fears the LORD, the God who made the sea, and that he is running from Him (7–10).",
+        "Jonah tells them to throw him overboard. They row hard but can't reach land, so they pray to the LORD and cast him in, and the sea goes calm (11–15).",
+        "The sailors fear the LORD and offer sacrifice. The LORD has prepared a great fish, and Jonah is in its belly three days and three nights (16–17)."
+      ],
+      "key": {
+        "ref": "Jonah 1:3",
+        "text": "But Jonah rose up to flee unto Tarshish from the presence of the LORD, and went down to Joppa; and he found a ship going to Tarshish: so he paid the fare thereof, and went down into it, to go with them unto Tarshish from the presence of the LORD."
+      },
+      "big": "No man can outrun God. Running only takes a man lower, but God's storms are His love coming after a runaway, and His mercy reaches even the people we ran from. Jesus called Jonah's three days in the fish the sign of His own death and resurrection."
+    }
+  },
+  {
+    "id": "jonah-02",
+    "type": "chapter",
+    "book": "Jonah",
+    "ch": 2,
+    "date": "2026-10-29",
+    "title": "Jonah 2",
+    "sub": "Salvation is of the LORD",
+    "about": "From inside a fish, at the bottom of the sea, a runaway prophet prays. And God hears him.",
+    "tags": [
+      "Prayer",
+      "Rock bottom",
+      "Remembering",
+      "Idols",
+      "Salvation",
+      "A fresh start"
+    ],
+    "url": "studies/jonah-02.html",
+    "overview": {
+      "where": "In the belly of a great fish, in the depths of the sea",
+      "when": "About 785 BC, during Jonah's three days and three nights in the fish",
+      "people": [
+        "jonah"
+      ],
+      "places": [
+        "hell",
+        "temple"
+      ],
+      "story": [
+        "Jonah prays to the LORD from the fish's belly: “out of the belly of hell cried I, and thou heardest my voice” (1–2).",
+        "He describes being cast into the deep, waves over him, feeling cast out of God's sight, yet looking again toward God's holy temple (3–4).",
+        "Down to the bottoms of the mountains, weeds around his head, locked in, yet God brought his life up from the pit (5–6).",
+        "When his soul fainted he remembered the LORD. Those who cling to lying vanities forsake their own mercy. “Salvation is of the LORD” (7–9).",
+        "The LORD speaks to the fish, and it puts Jonah out on dry land (10)."
+      ],
+      "key": {
+        "ref": "Jonah 2:9",
+        "text": "But I will sacrifice unto thee with the voice of thanksgiving; I will pay that that I have vowed. Salvation is of the LORD."
+      },
+      "big": "No place is too low to pray from. Idols promise and leak dry, but God hears a man at the bottom and brings him up. Salvation is God's gift, not something we earn, and He rescues a man to give him a new start."
+    }
+  },
+  {
+    "id": "jonah-03",
+    "type": "chapter",
+    "book": "Jonah",
+    "ch": 3,
+    "date": "2026-10-29",
+    "title": "Jonah 3",
+    "sub": "The second time",
+    "about": "God gives Jonah another chance. Jonah preaches one short warning, and a violent city falls on its face before God.",
+    "tags": [
+      "Second chances",
+      "God's word",
+      "Repentance",
+      "Humility",
+      "God's mercy",
+      "Jesus"
+    ],
+    "url": "studies/jonah-03.html",
+    "overview": {
+      "where": "Nineveh, the great city of Assyria, on the Tigris River",
+      "when": "About 785 BC, after Jonah's rescue from the fish",
+      "people": [
+        "jonah",
+        "king-of-nineveh"
+      ],
+      "places": [
+        "nineveh"
+      ],
+      "story": [
+        "The word of the LORD comes to Jonah a second time: go to Nineveh. This time Jonah goes (1–3).",
+        "A day's walk into that great city he cries, “Yet forty days, and Nineveh shall be overthrown” (4).",
+        "The people believe God, fast, and put on sackcloth, from the greatest to the least. The king leaves his throne and sits in ashes (5–6).",
+        "The king orders man and beast to fast, cry to God, and turn from evil and violence: “Who can tell if God will turn?” (7–9).",
+        "God sees that they turn from their evil way, and He relents from the disaster He had warned of (10)."
+      ],
+      "key": {
+        "ref": "Jonah 3:10",
+        "text": "And God saw their works, that they turned from their evil way; and God repented of the evil, that he had said that he would do unto them; and he did it not."
+      },
+      "big": "God gives a failed man the same call again. When His word is believed, even a violent city turns, and God spares those who turn. Jesus said the men of Nineveh repented at Jonah's preaching, and a greater than Jonah has come."
+    }
+  },
+  {
+    "id": "jonah-04",
+    "type": "chapter",
+    "book": "Jonah",
+    "ch": 4,
+    "date": "2026-10-29",
+    "title": "Jonah 4",
+    "sub": "Angry at mercy",
+    "about": "Nineveh is spared, and Jonah is furious. God answers His angry prophet with a plant, a worm, a hot wind, and a question.",
+    "tags": [
+      "Anger",
+      "God's character",
+      "Despair",
+      "Grace",
+      "What we care about",
+      "God's heart"
+    ],
+    "url": "studies/jonah-04.html",
+    "overview": {
+      "where": "Outside Nineveh, on the east side of the city",
+      "when": "About 785 BC, after God spared Nineveh",
+      "people": [
+        "jonah"
+      ],
+      "places": [
+        "nineveh",
+        "tarshish"
+      ],
+      "story": [
+        "God's mercy to Nineveh makes Jonah very angry. He says this is why he fled to Tarshish: he knew God was gracious, merciful, slow to anger, and of great kindness (1–2).",
+        "Jonah asks God to take his life. The LORD answers, “Doest thou well to be angry?” (3–4).",
+        "Jonah sits east of the city in a booth to see what will happen. God prepares a gourd to shade him, and Jonah is exceeding glad (5–6).",
+        "God prepares a worm that withers the gourd, then a scorching east wind. Jonah faints and wishes to die (7–9).",
+        "God asks: you pitied a plant you didn't grow; should not I spare Nineveh, with more than 120,000 people and much cattle? (10–11)."
+      ],
+      "key": {
+        "ref": "Jonah 4:2",
+        "text": "And he prayed unto the LORD, and said, I pray thee, O LORD, was not this my saying, when I was yet in my country? Therefore I fled before unto Tarshish: for I knew that thou art a gracious God, and merciful, slow to anger, and of great kindness, and repentest thee of the evil."
+      },
+      "big": "God is gracious and merciful to anyone who turns, even our enemies. He meets an angry, despairing man with patience and a question. Self-pity shrinks the world to our comfort, but God's heart is for lost people, and He wants all men to be saved."
+    }
+  },
+  {
     "id": "micah-01",
     "type": "chapter",
     "book": "Micah",
