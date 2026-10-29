@@ -98,9 +98,6 @@ window.GLOSSARY = [
     "John", 2,
     [ 1, 3, 5, 12 ] ],
    [
-    "John", 3,
-    [ 4 ] ],
-   [
     "John", 6,
     [ 42 ] ],
    [
@@ -236,14 +233,8 @@ window.GLOSSARY = [
     "John", 1,
     [ 45 ] ],
    [
-    "John", 4,
-    [ 5 ] ],
-   [
     "John", 6,
-    [ 42 ] ],
-   [
-    "John", 19,
-    [ 38 ] ] ]
+    [ 42 ] ] ]
  },
  {
   "id": "jona",
@@ -325,9 +316,6 @@ window.GLOSSARY = [
    [
     "John", 3,
     [ 5, 6, 8, 34 ] ],
-   [
-    "John", 4,
-    [ 24 ] ],
    [
     "John", 7,
     [ 39 ] ],
@@ -519,16 +507,7 @@ window.GLOSSARY = [
   "refs": [
    [
     "John", 2,
-    [ 5, 9 ] ],
-   [
-    "John", 4,
-    [ 51 ] ],
-   [
-    "John", 15,
-    [ 15 ] ],
-   [
-    "John", 18,
-    [ 18, 26, 36 ] ] ]
+    [ 5, 9 ] ] ]
  },
  {
   "id": "governor-of-the-feast",
@@ -546,10 +525,7 @@ window.GLOSSARY = [
   "refs": [
    [
     "John", 2,
-    [ 9 ] ],
-   [
-    "John", 3,
-    [ 29 ] ] ]
+    [ 9 ] ] ]
  },
  {
   "id": "money-changers",
@@ -1683,7 +1659,10 @@ window.GLOSSARY = [
   "refs": [
    [
     "John", 2,
-    [ 6, 7 ] ] ]
+    [ 6, 7 ] ],
+   [
+    "John", 4,
+    [ 28 ] ] ]
  },
  {
   "id": "firkin",
@@ -1718,8 +1697,11 @@ window.GLOSSARY = [
     "John", 3,
     [ 2 ] ],
    [
+    "John", 4,
+    [ 48, 54 ] ],
+   [
     "John", 6,
-    [ 2, 26, 30 ] ],
+    [ 2, 14, 26, 30 ] ],
    [
     "John", 7,
     [ 31 ] ],
@@ -1727,11 +1709,17 @@ window.GLOSSARY = [
     "John", 9,
     [ 16 ] ],
    [
+    "John", 10,
+    [ 41 ] ],
+   [
     "John", 11,
     [ 47 ] ],
    [
     "John", 12,
-    [ 37 ] ] ]
+    [ 18, 37 ] ],
+   [
+    "John", 20,
+    [ 30 ] ] ]
  },
  {
   "id": "passover",
@@ -1767,7 +1755,10 @@ window.GLOSSARY = [
   "refs": [
    [
     "John", 2,
-    [ 15 ] ] ]
+    [ 15 ] ],
+   [
+    "John", 19,
+    [ 1 ] ] ]
  },
  {
   "id": "zeal",
@@ -3765,7 +3756,7 @@ window.GLOSSARY = [
     [ 15, 16, 36 ] ],
    [
     "John", 4,
-    [ 14 ] ],
+    [ 14, 36 ] ],
    [
     "John", 5,
     [ 24, 39 ] ],
@@ -3776,8 +3767,11 @@ window.GLOSSARY = [
     "John", 10,
     [ 28 ] ],
    [
+    "John", 12,
+    [ 25 ] ],
+   [
     "John", 17,
-    [ 2 ] ] ]
+    [ 2, 3 ] ] ]
  },
  {
   "id": "condemnation",
@@ -3928,6 +3922,9 @@ window.GLOSSARY = [
    [
     "John", 12,
     [ 42 ] ],
+   [
+    "John", 16,
+    [ 2 ] ],
    [
     "John", 18,
     [ 20 ] ] ]
@@ -4296,7 +4293,7 @@ window.GLOSSARY = [
     [ 36 ] ],
    [
     "John", 17,
-    [ 19 ] ] ]
+    [ 17, 19 ] ] ]
  },
  {
   "id": "stoning",
@@ -4502,8 +4499,14 @@ window.GLOSSARY = [
     "John", 15,
     [ 8 ] ],
    [
+    "John", 16,
+    [ 14 ] ],
+   [
     "John", 17,
-    [ 4, 10 ] ] ]
+    [ 1, 4, 5, 10 ] ],
+   [
+    "John", 21,
+    [ 19 ] ] ]
  },
  {
   "id": "scribes",
@@ -4605,7 +4608,7 @@ window.GLOSSARY = [
     [ 19 ] ],
    [
     "John", 18,
-    [ 6, 8 ] ] ]
+    [ 5, 6, 8 ] ] ]
  },
  {
   "id": "lifted-up",
@@ -5755,5 +5758,389 @@ window.GLOSSARY = [
    [
     "John", 17,
     [ 6 ] ] ]
+ },
+ {
+  "id": "vine",
+  "kind": "term",
+  "name": "The true vine",
+  "refs": [
+   [
+    "John", 15,
+    [ 1, 4, 5 ] ] ]
+ },
+ {
+  "id": "husbandman",
+  "kind": "term",
+  "name": "Husbandman (the vinedresser)",
+  "refs": [
+   [
+    "John", 15,
+    [ 1 ] ] ]
+ },
+ {
+  "id": "abide",
+  "kind": "term",
+  "name": "Abide (stay, remain)",
+  "refs": [
+   [
+    "John", 3,
+    [ 36 ] ],
+   [
+    "John", 8,
+    [ 35 ] ],
+   [
+    "John", 12,
+    [ 24, 34, 46 ] ],
+   [
+    "John", 14,
+    [ 16 ] ],
+   [
+    "John", 15,
+    [ 4, 5, 6, 7, 10 ] ] ]
+ },
+ {
+  "id": "purge",
+  "kind": "term",
+  "name": "Purge (prune, make clean)",
+  "refs": [
+   [
+    "John", 15,
+    [ 2 ] ] ]
+ },
+ {
+  "id": "cloke",
+  "kind": "term",
+  "name": "Cloke (a cover, an excuse)",
+  "refs": [
+   [
+    "John", 15,
+    [ 22 ] ] ]
+ },
+ {
+  "id": "reprove",
+  "kind": "term",
+  "name": "Reprove (convict)",
+  "refs": [
+   [
+    "John", 16,
+    [ 8 ] ] ]
+ },
+ {
+  "id": "offended",
+  "kind": "term",
+  "name": "Offended (tripped up, made to stumble)",
+  "refs": [
+   [
+    "John", 16,
+    [ 1 ] ] ]
+ },
+ {
+  "id": "travail",
+  "kind": "term",
+  "name": "Travail (labor in childbirth)",
+  "refs": [
+   [
+    "John", 16,
+    [ 21 ] ] ]
+ },
+ {
+  "id": "tribulation",
+  "kind": "term",
+  "name": "Tribulation (pressure, trouble)",
+  "refs": [
+   [
+    "John", 16,
+    [ 33 ] ] ]
+ },
+ {
+  "id": "son-of-perdition",
+  "kind": "term",
+  "name": "The son of perdition",
+  "refs": [
+   [
+    "John", 17,
+    [ 12 ] ] ]
+ },
+ {
+  "id": "annas",
+  "kind": "person",
+  "name": "Annas, former high priest",
+  "refs": [
+   [
+    "John", 18,
+    [ 13, 24 ] ] ]
+ },
+ {
+  "id": "malchus",
+  "kind": "person",
+  "name": "Malchus, the high priest's servant",
+  "refs": [
+   [
+    "John", 18,
+    [ 10 ] ] ]
+ },
+ {
+  "id": "pilate",
+  "kind": "person",
+  "name": "Pontius Pilate",
+  "refs": [
+   [
+    "John", 18,
+    [ 29, 31, 33, 35, 37, 38 ] ],
+   [
+    "John", 19,
+    [ 1, 4, 5, 6, 8, 10, 12, 13, 15, 19, 21, 22, 31, 38 ] ] ]
+ },
+ {
+  "id": "barabbas",
+  "kind": "person",
+  "name": "Barabbas",
+  "refs": [
+   [
+    "John", 18,
+    [ 40 ] ] ]
+ },
+ {
+  "id": "cedron",
+  "kind": "place",
+  "name": "The brook Cedron (Kidron)",
+  "refs": [
+   [
+    "John", 18,
+    [ 1 ] ] ]
+ },
+ {
+  "id": "garden",
+  "kind": "place",
+  "name": "The garden (Gethsemane; the garden tomb)",
+  "refs": [
+   [
+    "John", 18,
+    [ 1, 26 ] ],
+   [
+    "John", 19,
+    [ 41 ] ] ]
+ },
+ {
+  "id": "hall-of-judgment",
+  "kind": "place",
+  "name": "The hall of judgment (Praetorium)",
+  "refs": [
+   [
+    "John", 18,
+    [ 28, 33 ] ],
+   [
+    "John", 19,
+    [ 9 ] ] ]
+ },
+ {
+  "id": "band",
+  "kind": "term",
+  "name": "Band (a Roman cohort)",
+  "refs": [
+   [
+    "John", 18,
+    [ 3, 12 ] ] ]
+ },
+ {
+  "id": "the-cup",
+  "kind": "term",
+  "name": "The cup (His suffering)",
+  "refs": [
+   [
+    "John", 18,
+    [ 11 ] ] ]
+ },
+ {
+  "id": "malefactor",
+  "kind": "term",
+  "name": "Malefactor",
+  "refs": [
+   [
+    "John", 18,
+    [ 30 ] ] ]
+ },
+ {
+  "id": "king-of-the-jews",
+  "kind": "term",
+  "name": "King of the Jews",
+  "refs": [
+   [
+    "John", 18,
+    [ 33, 39 ] ],
+   [
+    "John", 19,
+    [ 3, 19, 21 ] ] ]
+ },
+ {
+  "id": "my-kingdom",
+  "kind": "term",
+  "name": "My kingdom is not of this world",
+  "refs": [
+   [
+    "John", 18,
+    [ 36 ] ] ]
+ },
+ {
+  "id": "caesar",
+  "kind": "person",
+  "name": "Caesar (the Roman emperor)",
+  "refs": [
+   [
+    "John", 19,
+    [ 12, 15 ] ] ]
+ },
+ {
+  "id": "soldiers",
+  "kind": "person",
+  "name": "The Roman soldiers",
+  "refs": [
+   [
+    "John", 19,
+    [ 2, 23, 24, 32, 34 ] ] ]
+ },
+ {
+  "id": "mary-of-cleophas",
+  "kind": "person",
+  "name": "Mary the wife of Cleophas",
+  "refs": [
+   [
+    "John", 19,
+    [ 25 ] ] ]
+ },
+ {
+  "id": "joseph-of-arimathaea",
+  "kind": "person",
+  "name": "Joseph of Arimathaea",
+  "refs": [
+   [
+    "John", 19,
+    [ 38 ] ] ]
+ },
+ {
+  "id": "gabbatha",
+  "kind": "place",
+  "name": "Gabbatha (the Pavement)",
+  "refs": [
+   [
+    "John", 19,
+    [ 13 ] ] ]
+ },
+ {
+  "id": "golgotha",
+  "kind": "place",
+  "name": "Golgotha (the place of a skull)",
+  "refs": [
+   [
+    "John", 19,
+    [ 17 ] ] ]
+ },
+ {
+  "id": "crown-of-thorns",
+  "kind": "term",
+  "name": "Crown of thorns",
+  "refs": [
+   [
+    "John", 19,
+    [ 2, 5 ] ] ]
+ },
+ {
+  "id": "purple-robe",
+  "kind": "term",
+  "name": "Purple robe",
+  "refs": [
+   [
+    "John", 19,
+    [ 2, 5 ] ] ]
+ },
+ {
+  "id": "crucify",
+  "kind": "term",
+  "name": "Crucify (the cross)",
+  "refs": [
+   [
+    "John", 19,
+    [ 6, 10, 15, 16, 17, 18, 19, 20, 23, 25, 31, 32, 41 ] ] ]
+ },
+ {
+  "id": "title-on-the-cross",
+  "kind": "term",
+  "name": "The title on the cross",
+  "refs": [
+   [
+    "John", 19,
+    [ 19, 20 ] ] ]
+ },
+ {
+  "id": "cast-lots",
+  "kind": "term",
+  "name": "Cast lots",
+  "refs": [
+   [
+    "John", 19,
+    [ 24 ] ] ]
+ },
+ {
+  "id": "vinegar",
+  "kind": "term",
+  "name": "Vinegar (sour wine)",
+  "refs": [
+   [
+    "Proverbs", 10,
+    [ 26 ] ],
+   [
+    "Proverbs", 25,
+    [ 20 ] ],
+   [
+    "John", 19,
+    [ 29, 30 ] ] ]
+ },
+ {
+  "id": "hyssop",
+  "kind": "term",
+  "name": "Hyssop",
+  "refs": [
+   [
+    "John", 19,
+    [ 29 ] ] ]
+ },
+ {
+  "id": "it-is-finished",
+  "kind": "term",
+  "name": "It is finished (tetelestai)",
+  "refs": [
+   [
+    "John", 19,
+    [ 30 ] ] ]
+ },
+ {
+  "id": "gave-up-the-ghost",
+  "kind": "term",
+  "name": "Gave up the ghost",
+  "refs": [
+   [
+    "John", 19,
+    [ 30 ] ] ]
+ },
+ {
+  "id": "preparation",
+  "kind": "term",
+  "name": "The preparation (day)",
+  "refs": [
+   [
+    "John", 19,
+    [ 14, 31, 42 ] ] ]
+ },
+ {
+  "id": "myrrh-and-aloes",
+  "kind": "term",
+  "name": "Myrrh and aloes",
+  "refs": [
+   [
+    "Proverbs", 7,
+    [ 17 ] ],
+   [
+    "John", 19,
+    [ 39 ] ] ]
  }
 ];

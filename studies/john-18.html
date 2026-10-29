@@ -1,0 +1,658 @@
+<!doctype html>
+<html lang="en" data-theme="slate">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>John 18</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="../assets/fonts.css">
+<link rel="stylesheet" href="../assets/deck.css">
+<link rel="stylesheet" href="../assets/themes.css">
+<style>
+/* The night's route: upper room, over the Kidron to the garden, back to the high priest, then to Pilate */
+.jn18-map .land { fill: var(--surface-2); stroke: var(--line-strong); stroke-width: 2; }
+.jn18-map .mount { fill: var(--surface); stroke: var(--ink-soft); stroke-width: 2; }
+.jn18-map .hill { fill: color-mix(in srgb, var(--accent) 10%, transparent); stroke: var(--line-strong); stroke-width: 2; stroke-dasharray: 3 6; }
+.jn18-map .brook { fill: none; stroke: var(--cool); stroke-width: 4; stroke-linecap: round; stroke-dasharray: 10 8; }
+.jn18-map .tree { fill: var(--accent); opacity: .75; }
+.jn18-map .spot { fill: var(--bg); stroke: var(--ink); stroke-width: 3; }
+.jn18-map .soft { fill: var(--ink-soft); }
+.jn18-map .leg { fill: none; stroke: var(--accent-hot); stroke-width: 5; stroke-linecap: round; stroke-dasharray: 1; stroke-dashoffset: 1; transition: stroke-dashoffset 2.2s ease; }
+.jn18-map .leg.l3 { stroke: var(--danger); }
+.split:has(.jn18-go1.on) .jn18-map .l1, .split:has(.jn18-go2.on) .jn18-map .l2, .split:has(.jn18-go3.on) .jn18-map .l3 { stroke-dashoffset: 0; }
+
+/* "I am he": the armed men go backward and fall to the ground */
+.jn18-fall .ground { stroke: var(--line-strong); stroke-width: 3; }
+.jn18-fall .halo { fill: color-mix(in srgb, var(--accent) 22%, transparent); }
+.jn18-fall .him { fill: var(--accent-hot); }
+.jn18-fall .man { fill: var(--ink-soft); transform-box: fill-box; transform-origin: 100% 100%; transition: transform 1.1s cubic-bezier(.5,0,.7,1); transition-delay: calc(var(--k) * 90ms); }
+.jn18-fall .torch { stroke: var(--leather-light); stroke-width: 5; stroke-linecap: round; }
+.jn18-fall .flame { fill: var(--warm); transform-box: fill-box; transform-origin: 50% 100%; }
+.slide.active .jn18-fall .flame { animation: flicker 1.4s ease-in-out infinite alternate; }
+.jn18-fall .word { font: italic 600 30px var(--serif); fill: var(--accent-hot); opacity: 0; transition: opacity .6s ease; }
+.split:has(.jn18-fall-go.on) .jn18-fall .man { transform: rotate(78deg); }
+.split:has(.jn18-fall-go.on) .jn18-fall .word { opacity: 1; }
+
+/* Two scenes cut back and forth: Peter outside, Jesus inside */
+.jn18-cut { display: grid; grid-template-columns: 1fr 1fr; gap: 6px 14px; margin: .3em 0 1em; position: relative; }
+.jn18-cut::before { content: ""; position: absolute; left: 50%; top: 2.2em; bottom: 0; width: 2px; background: var(--line); }
+.jn18-cut h3 { font: 700 clamp(.9rem, .82rem + .4vw, 1.15rem) var(--sans); text-align: center; padding-bottom: .3em; }
+.jn18-cut h3.out { color: var(--danger); }
+.jn18-cut h3.in { color: var(--accent-hot); }
+.jn18-cut .c { padding: .45em .7em; border-radius: 8px; font-size: clamp(.88rem, .8rem + .4vw, 1.15rem); line-height: 1.35; }
+.jn18-cut .c b { display: block; font-size: .8em; color: var(--ink-soft); }
+.jn18-cut .c.out { grid-column: 1; border: 1.5px dashed var(--danger); background: color-mix(in srgb, var(--danger) 8%, transparent); }
+.jn18-cut .c.in { grid-column: 2; border: 2px solid var(--accent); background: color-mix(in srgb, var(--accent) 10%, transparent); }
+.jn18-cut .c i { font-family: var(--serif); color: var(--accent-hot); }
+.jn18-cut .c.out i { color: var(--danger); }
+
+/* Two charcoal fires: one where Peter denied Him, one where Jesus restored him */
+.jn18-fires { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem 2rem; margin: .3em 0 1em; text-align: center; }
+.jn18-fires svg { width: min(100%, 11rem); height: auto; display: block; margin: 0 auto .4em; overflow: visible; }
+.jn18-fires .log { fill: var(--leather); }
+.jn18-fires .coal { fill: var(--danger); }
+.jn18-fires .f1 { fill: var(--warm); }
+.jn18-fires .f2 { fill: var(--glow); opacity: .85; }
+.jn18-fires .fl { transform-box: fill-box; transform-origin: 50% 100%; }
+.slide.active .jn18-fires .fl { animation: flicker 1.3s ease-in-out infinite alternate; }
+.jn18-fires .fl.b { animation-delay: -.6s !important; }
+.jn18-fires b { display: block; color: var(--accent); font-size: clamp(.95rem, .85rem + .4vw, 1.2rem); }
+.jn18-fires p { font-size: clamp(.95rem, .85rem + .45vw, 1.25rem); line-height: 1.4; }
+.jn18-fires .n { font: 300 clamp(2.2rem, 1.4rem + 3vw, 3.8rem)/1 var(--serif); color: var(--accent-hot); }
+
+/* The night and morning of hearings: three before the Jewish leaders, three before Rome */
+.jn18-trial { display: grid; gap: .8rem 1.4rem; margin: .4em 0 1em; }
+@media (min-width: 760px) { .jn18-trial { grid-template-columns: 1fr 1fr; } }
+.jn18-trial h3 { font: 700 clamp(.9rem, .82rem + .4vw, 1.15rem) var(--sans); color: var(--ink-soft); margin-bottom: .4em; padding-bottom: .3em; border-bottom: 2px solid var(--line-strong); }
+.jn18-trial ol { list-style: none; padding: 0; margin: 0; display: grid; grid-template-columns: repeat(3, 1fr); gap: 6px; }
+.jn18-trial li { padding: .5em .5em .45em; border-radius: 8px; border: 1.5px dashed var(--line-strong); font-size: clamp(.82rem, .76rem + .35vw, 1.05rem); line-height: 1.3; color: var(--ink-soft); opacity: 0; transform: translateY(8px); transition: opacity .5s ease, transform .5s ease; transition-delay: calc(var(--k) * 220ms + 300ms); }
+.slide.active .jn18-trial li { opacity: 1; transform: none; }
+.jn18-trial li b { display: block; font: 600 1.15em var(--serif); color: var(--ink); }
+.jn18-trial li i { display: block; font-style: normal; font-size: .85em; margin-top: .2em; }
+.jn18-trial li.jn { border: 2px solid var(--accent); background: color-mix(in srgb, var(--accent) 10%, transparent); color: var(--ink); }
+.jn18-trial li.jn i { color: var(--accent-hot); font-weight: 700; }
+
+/* Barabbas and Jesus trade places */
+.jn18-swap { display: grid; grid-template-columns: 1fr 1fr; column-gap: 1rem; row-gap: .5rem; margin: .4em 0 1em; }
+.jn18-swap h3 { font: 700 clamp(.9rem, .82rem + .4vw, 1.15rem) var(--sans); text-align: center; color: var(--ink-soft); }
+.jn18-swap h3 span { display: block; font: 300 clamp(1.6rem, 1rem + 2.4vw, 2.8rem)/1.1 var(--serif); color: var(--ink); }
+.jn18-swap .card { grid-row: 2; padding: .7em .8em; border-radius: 10px; text-align: center; transition: transform 1.6s cubic-bezier(.5,0,.3,1); }
+.jn18-swap .card b { display: block; font: 400 clamp(1.4rem, 1rem + 1.6vw, 2.3rem)/1.1 var(--serif); }
+.jn18-swap .card small { display: block; font-size: clamp(.85rem, .78rem + .35vw, 1.1rem); color: var(--ink-soft); margin-top: .2em; }
+.jn18-swap .bar { grid-column: 1; border: 2px solid var(--danger); background: color-mix(in srgb, var(--danger) 10%, transparent); }
+.jn18-swap .jes { grid-column: 2; border: 2px solid var(--accent); background: color-mix(in srgb, var(--accent) 14%, transparent); }
+.jn18-swap .jes b { color: var(--accent-hot); }
+.slide:has(.jn18-swap-go.on) .jn18-swap .bar { transform: translateX(calc(100% + 1rem)); }
+.slide:has(.jn18-swap-go.on) .jn18-swap .jes { transform: translateX(calc(-100% - 1rem)); }
+</style>
+</head>
+<body>
+<main class="deck" id="deck">
+
+<!-- ======================= OPENING ======================= -->
+<section class="slide title">
+  <div class="inner">
+    <div class="emblem rise"></div>
+    <h1 class="rise" style="--d:1">John 18</h1>
+    <p class="sub rise" style="--d:3">The King on trial</p>
+    <p class="tag rise" style="--d:5">Jesus steps forward to meet the men who came to arrest Him. Peter warms himself at the wrong fire. And Pilate asks “What is truth?” with the Truth standing right in front of him.</p>
+  </div>
+</section>
+
+<section class="slide watch">
+  <div class="inner">
+    <h2 class="rise">Things to watch for</h2>
+    <p class="lede rise" style="--d:1">Keep these questions in the back of your mind as we read. We'll come back to every one of them at the end.</p>
+    <ol class="seeds">
+      <li class="step"><span class="topic">Who Jesus is</span><span class="seed-q">What happened when Jesus said, “I am he”?</span></li>
+      <li class="step"><span class="topic">His choice</span><span class="seed-q">Was Jesus a victim, or did He go willingly?</span></li>
+      <li class="step"><span class="topic">Failure</span><span class="seed-q">How did Peter fall, and was that the end of his story?</span></li>
+      <li class="step"><span class="topic">His kingdom</span><span class="seed-q">What kind of king is Jesus?</span></li>
+      <li class="step"><span class="topic">Truth</span><span class="seed-q">What is truth, and where do we find it?</span></li>
+      <li class="step"><span class="topic">In our place</span><span class="seed-q">What does Barabbas show us about what Jesus did for us?</span></li>
+    </ol>
+  </div>
+</section>
+
+<!-- ======================= PART ONE: THE GARDEN ======================= -->
+<section class="slide part">
+  <div class="inner">
+    <p class="part-n rise">Part one</p>
+    <h2 class="rise" style="--d:1">In the garden</h2>
+    <p class="range rise" style="--d:2">Verses 1–11</p>
+    <div class="rule"></div>
+    <p class="hook rise" style="--d:4">They came to take Him by force. He walked out to meet them.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="1-3" data-hl="over the brook Cedron, where was a garden|lanterns and torches and weapons"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="1" data-hl="over the brook Cedron, where was a garden"></blockquote>
+    <div class="split">
+      <div class="stage">
+        <svg class="jn18-map" viewBox="0 0 600 400" role="img" aria-label="Sketch map of Jerusalem. A path runs from the upper room out of the city, across the brook Kidron to a garden on the Mount of Olives, back into the city to the high priest's house, and then to Pilate's hall.">
+          <path class="land" d="M40 50 H330 V360 H90 L40 300 Z"/>
+          <rect class="mount" x="210" y="80" width="105" height="110" rx="4"/>
+          <text x="262" y="132" text-anchor="middle" font-size="18" font-weight="700">Temple</text>
+          <path class="hill" d="M440 20 C 540 40, 590 140, 580 250 C 570 330, 520 380, 470 390 C 440 330, 430 200, 440 20 Z"/>
+          <text x="530" y="80" text-anchor="middle" font-size="16" class="soft">Mount of</text>
+          <text x="530" y="99" text-anchor="middle" font-size="16" class="soft">Olives</text>
+          <path class="brook" d="M392 20 C 380 120, 400 240, 384 390"/>
+          <text x="408" y="196" font-size="15" class="soft" transform="rotate(-87 408 196)">brook Cedron (Kidron)</text>
+          <g class="tree"><circle cx="472" cy="214" r="11"/><circle cx="492" cy="202" r="11"/><circle cx="488" cy="226" r="11"/><circle cx="510" cy="216" r="11"/></g>
+          <text x="500" y="258" text-anchor="middle" font-size="17" font-weight="700">The garden</text>
+          <text x="500" y="278" text-anchor="middle" font-size="14" class="soft">(Gethsemane)</text>
+          <circle class="spot" cx="110" cy="300" r="8"/>
+          <text x="126" y="306" font-size="16">Upper room</text>
+          <circle class="spot" cx="140" cy="215" r="8"/>
+          <text x="156" y="221" font-size="16">High priest's house</text>
+          <circle class="spot" cx="230" cy="62" r="8"/>
+          <text x="216" y="68" text-anchor="end" font-size="16">Pilate's hall</text>
+          <path class="leg l1" pathLength="1" d="M110 300 C 170 340, 300 380, 360 330 S 440 240, 474 216"/>
+          <path class="leg l2" pathLength="1" d="M474 216 C 430 262, 360 300, 290 280 S 180 240, 140 215"/>
+          <path class="leg l3" pathLength="1" d="M140 215 C 150 150, 190 90, 230 62"/>
+          <text x="20" y="390" font-size="13" class="soft">A sketch: spots in the city are approximate.</text>
+        </svg>
+      </div>
+      <div>
+        <h2 class="rise" style="--d:1">One long night</h2>
+        <p class="note rise" style="--d:2">After the supper and the prayer of chapter 17, Jesus leads His men out of the city, down across the brook Kidron, to an olive garden He used often (v. 2).</p>
+        <p class="note step jn18-go1">Judas knew the place. Jesus knew he knew. He went there anyway.</p>
+        <p class="note step jn18-go2">Arrested and bound, He is marched back across the valley to the high priest's house.</p>
+        <p class="note step jn18-go3">By early morning He stands before Pilate, the Roman governor (v. 28).</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="3" data-hl="a band of men and officers|lanterns and torches and weapons"></blockquote>
+    <h2 class="rise" style="--d:1">Torches to find the Light</h2>
+    <p class="note rise" style="--d:2">“A band of men” is <span class="gk">speira</span>, the word for a cohort of Roman soldiers, several hundred men at full strength. With them came the temple police sent by the chief priests. That's a small army for one unarmed teacher and eleven tired men.</p>
+    <p class="note step">Passover always fell at the full moon. They still brought lanterns and torches, as if He might hide in the dark.</p>
+    <p class="note step">He didn't hide. The One who said <em>“I am the light of the world”</em> (John 8:12) was about to walk straight out to them.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="4-6" data-hl="knowing all things that should come upon him|Whom seek ye?|they went backward, and fell to the ground"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="6"></blockquote>
+    <div class="split">
+      <div class="stage">
+        <svg class="jn18-fall" viewBox="0 0 640 280" role="img" aria-label="Jesus stands alone. A line of armed men with torches faces Him. When He says 'I am he,' they fall backward to the ground.">
+          <line class="ground" x1="10" y1="250" x2="630" y2="250"/>
+          <circle class="halo" cx="100" cy="160" r="86"/>
+          <circle class="him" cx="100" cy="112" r="17"/>
+          <path class="him" d="M80 134 H120 L134 250 H66 Z"/>
+          <text class="word" x="100" y="58" text-anchor="middle">“I am he”</text>
+          <g transform="translate(-40 0)"><g class="man" style="--k:0"><line class="torch" x1="262" y1="170" x2="250" y2="104"/><ellipse class="flame" cx="249" cy="94" rx="8" ry="14"/><circle cx="284" cy="122" r="14"/><path d="M268 140 H300 L306 250 H262 Z"/></g></g>
+          <g transform="translate(-60 0)"><g class="man" style="--k:1"><circle cx="350" cy="122" r="14"/><path d="M334 140 H366 L372 250 H328 Z"/><line class="torch" x1="334" y1="176" x2="316" y2="150"/></g></g>
+          <g transform="translate(-80 0)"><g class="man" style="--k:2"><line class="torch" x1="400" y1="170" x2="388" y2="104"/><ellipse class="flame" cx="387" cy="94" rx="8" ry="14"/><circle cx="420" cy="122" r="14"/><path d="M404 140 H436 L442 250 H398 Z"/></g></g>
+          <g transform="translate(-100 0)"><g class="man" style="--k:3"><circle cx="488" cy="122" r="14"/><path d="M472 140 H504 L510 250 H466 Z"/><line class="torch" x1="472" y1="176" x2="450" y2="140"/></g></g>
+          <g transform="translate(-120 0)"><g class="man" style="--k:4"><line class="torch" x1="540" y1="170" x2="528" y2="104"/><ellipse class="flame" cx="527" cy="94" rx="8" ry="14"/><circle cx="558" cy="122" r="14"/><path d="M542 140 H574 L580 250 H536 Z"/></g></g>
+        </svg>
+      </div>
+      <div>
+        <h2 class="rise" style="--d:1">They went backward</h2>
+        <p class="note rise" style="--d:2">Jesus doesn't wait to be found. <em>“Knowing all things that should come upon him,”</em> He steps out and asks, “Whom seek ye?”</p>
+        <p class="note step jn18-fall-go">One short sentence, and the whole armed crowd stumbles backward and hits the ground.</p>
+        <p class="note step">No one in that garden captured Jesus. He let them take Him. That's the first thing John wants you to see about the cross.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="5" data-hl="Jesus saith unto them"></blockquote>
+    <h2 class="rise" style="--d:1">“I am”</h2>
+    <div class="morph rise" style="--d:2">
+      <span class="big">ἐγώ εἰμι</span>
+      <span class="say">eh-GO ay-MEE</span>
+      <span class="means">“I am”</span>
+    </div>
+    <p class="note step">In Greek, Jesus says just two words: <span class="gk">egō eimi</span>, “I am.” The King James translators added “he” to make the English read smoothly, and printed it in italics to show it was added.</p>
+    <blockquote class="quote step"><p>“And God said unto Moses, I AM THAT I AM: and he said, Thus shalt thou say unto the children of Israel, I AM hath sent me unto you.”</p><cite>Exodus 3:14</cite></blockquote>
+    <p class="note step">He had said it before: <em>“Before Abraham was, I am”</em> (John 8:58). In the garden, the name of God came out of His mouth, and grown soldiers couldn't stay on their feet.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="7-9" data-hl="if therefore ye seek me, let these go their way|Of them which thou gavest me have I lost none"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="8" data-hl="if therefore ye seek me, let these go their way"></blockquote>
+    <h2 class="rise" style="--d:1">Take me. Let them go.</h2>
+    <p class="note rise" style="--d:2">Even while He's being arrested, Jesus is protecting His men. He steps between them and the soldiers and makes the trade: <em>me for them</em>.</p>
+    <p class="note step">That's the whole night in one sentence. Before the cross ever happens, Jesus is already standing in someone else's place.</p>
+    <p class="note step">And He keeps every one the Father gives Him: <em>“Of them which thou gavest me have I lost none.”</em> He said the same about everyone who believes:</p>
+    <blockquote class="quote step"><p>“And I give unto them eternal life; and they shall never perish, neither shall any man pluck them out of my hand.”</p><cite>John 10:28</cite></blockquote>
+  </div>
+</section>
+
+<section class="slide verse" data-v="10-11" data-hl="The servant’s name was Malchus|the cup which my Father hath given me, shall I not drink it?"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="11" data-hl="Put up thy sword into the sheath|the cup which my Father hath given me, shall I not drink it?"></blockquote>
+    <h2 class="rise" style="--d:1">Peter's sword, Jesus' cup</h2>
+    <p class="note rise" style="--d:2">Peter swings for a head and gets an ear. Brave, and completely wrong. Luke, the doctor, tells us what Jesus did next:</p>
+    <blockquote class="quote step"><p>“And Jesus answered and said, Suffer ye thus far. And he touched his ear, and healed him.”</p><cite>Luke 22:51</cite></blockquote>
+    <p class="note step">Jesus didn't need a sword. He told Peter He could ask the Father for <em>“more than twelve legions of angels”</em> (Matthew 26:53). A Roman legion was about 6,000 soldiers.</p>
+    <p class="note step">The <em>“cup”</em> is the suffering, and the judgment for our sin, that the Father had put in His hands. An hour earlier He had prayed about it in this very garden. Now He picks it up and drinks it, on purpose, for us.</p>
+  </div>
+</section>
+
+<!-- ======================= PART TWO: THE FIRE ======================= -->
+<section class="slide part">
+  <div class="inner">
+    <p class="part-n rise">Part two</p>
+    <h2 class="rise" style="--d:1">Two men on trial</h2>
+    <p class="range rise" style="--d:2">Verses 12–27</p>
+    <div class="rule"></div>
+    <p class="hook rise" style="--d:4">Inside, Jesus stands firm. Outside, by a fire, Peter caves.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="12-14" data-hl="and bound him|Annas first|that one man should die for the people"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="13-14" data-hl="Annas first|father in law to Caiaphas|that one man should die for the people"></blockquote>
+    <h2 class="rise" style="--d:1">The family business</h2>
+    <div class="chains rise" style="--d:2">
+      <div class="chain"><span class="who-chip">Annas</span><span class="said">high priest about A.D. 6–15, removed by Rome, but still the power behind the office</span></div>
+      <div class="chain"><span class="who-chip">Five of his sons</span><span class="said">each served as high priest later on</span></div>
+      <div class="chain"><span class="who-chip">Caiaphas</span><span class="said">his son-in-law, high priest that year (about A.D. 18–36)</span></div>
+    </div>
+    <p class="note step">So they take Jesus to the old man first. The real decisions ran through Annas.</p>
+    <p class="note step">John reminds us what Caiaphas had already said: <em>“it was expedient that one man should die for the people”</em> (see 11:50). He meant, “Better one man dies than Rome comes down on all of us.” God meant something far bigger: one Man would die <em>in the place of</em> the people. Caiaphas preached the gospel without knowing it.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="15-18" data-hl="Art not thou also one of this man’s disciples? He saith, I am not|a fire of coals|Peter stood with them, and warmed himself"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="17" data-hl="I am not"></blockquote>
+    <h2 class="rise" style="--d:1">John cuts between two scenes</h2>
+    <p class="note rise" style="--d:2">Watch how John tells it, like a film cutting back and forth between a courtyard and a room.</p>
+    <div class="jn18-cut">
+      <h3 class="out rise" style="--d:3">Outside, by the fire</h3>
+      <h3 class="in rise" style="--d:3">Inside, before the high priest</h3>
+      <div class="c out step"><b>vv. 16–17</b>A servant girl at the door: “Art not thou also one of this man's disciples?” <i>“I am not.”</i></div>
+      <div class="c out step"><b>v. 18</b>He stands with the officers and warms himself at their fire.</div>
+      <div class="c in step"><b>vv. 19–21</b>Jesus is questioned. <i>“In secret have I said nothing.”</i></div>
+      <div class="c in step"><b>vv. 22–24</b>Struck in the face, He answers with the truth. Sent on, bound, to Caiaphas.</div>
+      <div class="c out step"><b>v. 25</b>“Art not thou also one of his disciples?” <i>“I am not.”</i></div>
+      <div class="c out step"><b>vv. 26–27</b>A relative of Malchus: “Did not I see thee in the garden?” He denies again, and the rooster crows.</div>
+    </div>
+    <p class="note step">Inside, Jesus tells the truth and gets hit for it. Outside, Peter lies to stay comfortable. Same hour, two men, two very different nights.</p>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="18" data-hl="a fire of coals|Peter stood with them, and warmed himself"></blockquote>
+    <h2 class="rise" style="--d:1">The wrong fire</h2>
+    <p class="note rise" style="--d:2">Peter didn't plan to deny Jesus. He just got cold, and drifted over to the fire where the men who arrested his Lord were standing. A few minutes later, he was one of them.</p>
+    <div class="jn18-fires">
+      <div class="step">
+        <svg viewBox="0 0 160 130" aria-hidden="true"><path class="fl f1" d="M80 20 C 98 50, 116 64, 112 92 C 108 112, 52 112, 48 92 C 44 70, 66 54, 80 20 Z"/><path class="fl b f2" d="M80 58 C 90 74, 98 82, 96 96 C 94 108, 66 108, 64 96 C 62 84, 72 76, 80 58 Z"/><rect class="log" x="28" y="104" width="104" height="12" rx="6" transform="rotate(-8 80 110)"/><rect class="log" x="28" y="104" width="104" height="12" rx="6" transform="rotate(8 80 110)"/><circle class="coal" cx="58" cy="118" r="5"/><circle class="coal" cx="80" cy="121" r="5"/><circle class="coal" cx="102" cy="118" r="5"/></svg>
+        <b>John 18:18</b><p class="n">3</p><p>times Peter says he doesn't know Him</p>
+      </div>
+      <div class="step">
+        <svg viewBox="0 0 160 130" aria-hidden="true"><path class="fl f1" d="M80 20 C 98 50, 116 64, 112 92 C 108 112, 52 112, 48 92 C 44 70, 66 54, 80 20 Z"/><path class="fl b f2" d="M80 58 C 90 74, 98 82, 96 96 C 94 108, 66 108, 64 96 C 62 84, 72 76, 80 58 Z"/><rect class="log" x="28" y="104" width="104" height="12" rx="6" transform="rotate(-8 80 110)"/><rect class="log" x="28" y="104" width="104" height="12" rx="6" transform="rotate(8 80 110)"/><circle class="coal" cx="58" cy="118" r="5"/><circle class="coal" cx="80" cy="121" r="5"/><circle class="coal" cx="102" cy="118" r="5"/></svg>
+        <b>John 21:9</b><p class="n">3</p><p>times Jesus asks him, “Lovest thou me?”</p>
+      </div>
+    </div>
+    <p class="note step">John uses the word for a <em>charcoal fire</em> only twice in his whole book: here, and on the beach after the resurrection, where Jesus cooks Peter breakfast and gives him three chances to undo three denials. Watch for that fire. Jesus was planning Peter's comeback before Peter ever fell.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="19-21" data-hl="I spake openly to the world|in secret have I said nothing"></section>
+<section class="slide verse" data-v="22-24" data-hl="struck Jesus with the palm of his hand|If I have spoken evil, bear witness of the evil: but if well, why smitest thou me?"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="23"></blockquote>
+    <h2 class="rise" style="--d:1">Hit, and still in control</h2>
+    <p class="note rise" style="--d:2">The high priest is fishing for something to charge Him with. Jesus says, “I've taught in public all along. Ask the people who heard me.” A guard slaps Him across the face for it.</p>
+    <p class="note step">Notice what Jesus does. He doesn't hit back. He doesn't curse. He doesn't go quiet and swallow it, either. He calmly names the wrong: <em>“If I said something evil, prove it. If not, why hit me?”</em></p>
+    <blockquote class="quote step"><p>“Who, when he was reviled, reviled not again; when he suffered, he threatened not; but committed himself to him that judgeth righteously:”</p><cite>1 Peter 2:23</cite></blockquote>
+    <p class="note step">If your temper has run your life, here's a different way to be a man: steady, truthful, and leaving the payback to God. The Spirit who lives in you can grow that in you.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="25-27" data-hl="He denied it, and said, I am not|Did not I see thee in the garden with him?|and immediately the cock crew"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="25" data-hl="I am not"></blockquote>
+    <h2 class="rise" style="--d:1">“I am” and “I am not”</h2>
+    <div class="mirror">
+      <div class="step"><span>Jesus, facing an army</span><span class="arrow">→</span><span class="word">“I am”</span><small>In the garden (vv. 5, 8). Owning who He is will cost Him everything.</small></div>
+      <div class="step"><span>Peter, facing a servant girl</span><span class="arrow">→</span><span class="word">“I am not”</span><small>By the fire (vv. 17, 25), and a third denial in v. 27. Disowning who he is costs him nothing, for a few minutes.</small></div>
+    </div>
+    <div class="asks">
+      <div class="ask step"><span class="q">The girl at the door</span><span class="ctx">verse 17</span><span class="stamp">denied</span></div>
+      <div class="ask step"><span class="q">The men at the fire</span><span class="ctx">verse 25</span><span class="stamp">denied</span></div>
+      <div class="ask step"><span class="q">Malchus's relative</span><span class="ctx">verses 26–27, and the rooster crows</span><span class="stamp">denied</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="27"></blockquote>
+    <h2 class="rise" style="--d:1">The fall wasn't the end</h2>
+    <p class="note rise" style="--d:2">Jesus had told him exactly this would happen: <em>“The cock shall not crow, till thou hast denied me thrice”</em> (John 13:38). Luke tells us what came next:</p>
+    <blockquote class="quote step"><p>“And the Lord turned, and looked upon Peter. And Peter remembered the word of the Lord, how he had said unto him, Before the cock crow, thou shalt deny me thrice. And Peter went out, and wept bitterly.”</p><cite>Luke 22:61–62</cite></blockquote>
+    <blockquote class="quote step"><p>“But I have prayed for thee, that thy faith fail not: and when thou art converted, strengthen thy brethren.”</p><cite>Luke 22:32</cite></blockquote>
+    <p class="note step">If you've relapsed, or gone back on something you swore you'd never do again, this is your story too. Jesus knew about Peter's fall before it happened, prayed for him ahead of time, and already had a job waiting for him on the other side of it. Peter's worst night was not his last word.</p>
+  </div>
+</section>
+
+<!-- ======================= PART THREE: PILATE ======================= -->
+<section class="slide part">
+  <div class="inner">
+    <p class="part-n rise">Part three</p>
+    <h2 class="rise" style="--d:1">Before Pilate</h2>
+    <p class="range rise" style="--d:2">Verses 28–40</p>
+    <div class="rule"></div>
+    <p class="hook rise" style="--d:4">The judge asks the questions. The prisoner is the one in charge.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="28-30" data-hl="lest they should be defiled; but that they might eat the passover|If he were not a malefactor"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="28" data-hl="from Caiaphas unto the hall of judgment"></blockquote>
+    <h2 class="rise" style="--d:1">Six hearings in a few hours</h2>
+    <p class="note rise" style="--d:2">Put the four Gospels side by side and Jesus stands before six hearings between the arrest and the cross. John tells us about the ones marked.</p>
+    <div class="jn18-trial">
+      <div>
+        <h3>Before the Jewish leaders, at night</h3>
+        <ol>
+          <li class="jn" style="--k:0"><b>Annas</b>18:13, 19–24<i>John</i></li>
+          <li class="jn" style="--k:1"><b>Caiaphas</b>18:24; Matthew 26:57<i>John</i></li>
+          <li style="--k:2"><b>The council</b>at daybreak, Luke 22:66</li>
+        </ol>
+      </div>
+      <div>
+        <h3>Before Rome, in the morning</h3>
+        <ol>
+          <li class="jn" style="--k:3"><b>Pilate</b>18:28–38<i>John</i></li>
+          <li style="--k:4"><b>Herod</b>Luke 23:7–11</li>
+          <li class="jn" style="--k:5"><b>Pilate again</b>18:39–19:16<i>John</i></li>
+        </ol>
+      </div>
+    </div>
+    <p class="note step">Six hearings, and not one honest charge stuck. The Jewish leaders could condemn, but under Rome they couldn't execute (v. 31). So they had to bring Him to the governor.</p>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="28" data-hl="lest they should be defiled; but that they might eat the passover"></blockquote>
+    <h2 class="rise" style="--d:1">Careful about the wrong things</h2>
+    <div class="columns">
+      <div class="col law rise" style="--d:2"><p class="who">What they were careful about</p><h3>A Gentile's doorway</h3><p>Stepping into a Roman's house would make them ceremonially “unclean” and keep them from the Passover meal. So they stood outside.</p></div>
+      <div class="col grace step"><p class="who">What they weren't careful about</p><h3>An innocent man's life</h3><p>They had just arranged, by night, to have Him killed.</p></div>
+    </div>
+    <p class="note step">And here's the part they missed: they were so busy protecting their Passover that they handed over the real Passover Lamb. <em>“Behold the Lamb of God, which taketh away the sin of the world”</em> (John 1:29).</p>
+    <p class="note step">Religion can keep every rule and still miss God standing in front of it. Watch for that in yourself.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="31-32" data-hl="It is not lawful for us to put any man to death|signifying what death he should die"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="32" data-hl="signifying what death he should die"></blockquote>
+    <h2 class="rise" style="--d:1">He said how He would die</h2>
+    <div class="temples">
+      <div class="stone-t rise" style="--d:2"><h3>The Jewish way</h3><div class="big">stoned</div><p>The penalty for blasphemy (Leviticus 24:16). They had tried to stone Him twice already (8:59, 10:31).</p></div>
+      <div class="body-t step"><h3>The Roman way</h3><div class="big">lifted up</div><p>Crucifixion. Only Rome could order it, and only Rome did it.</p></div>
+    </div>
+    <blockquote class="quote step"><p>“And I, if I be lifted up from the earth, will draw all men unto me. This he said, signifying what death he should die.”</p><cite>John 12:32–33</cite></blockquote>
+    <p class="note step">By handing Him to Pilate, His enemies made sure the very death Jesus had predicted came true. Nobody in this story is running it but God.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="33-35" data-hl="Art thou the King of the Jews?|what hast thou done?"></section>
+<section class="slide verse" data-v="36-37" data-hl="My kingdom is not of this world|To this end was I born|Every one that is of the truth heareth my voice"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="36" data-hl="My kingdom is not of this world"></blockquote>
+    <h2 class="rise" style="--d:1">A different kind of King</h2>
+    <p class="note rise" style="--d:2">Pilate's question is political: “Are you a rebel king? Should Rome worry about you?” Jesus' answer: yes, I'm a King, but not the kind you're thinking of.</p>
+    <div class="columns">
+      <div class="col law step"><p class="who">The kingdoms of this world</p><h3>Won by force</h3><p>Soldiers fight to keep their king out of enemy hands. Power comes from swords, money, and Caesar.</p></div>
+      <div class="col grace step"><p class="who">The kingdom of Jesus</p><h3>Won by truth</h3><p>His servants didn't fight for Him. He rules hearts, not borders. His subjects are the ones who <em>hear His voice</em>.</p></div>
+    </div>
+    <p class="note step">“Not of this world” doesn't mean He's not King here. It means His authority doesn't come <em>from</em> here. Pilate thinks he's judging a would-be king. He's standing in front of the real one.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="38-40" data-hl="What is truth?|I find in him no fault at all|Not this man, but Barabbas. Now Barabbas was a robber."></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="37" data-hl="that I should bear witness unto the truth"></blockquote>
+    <p class="saying rise" style="--d:1">What is <em>truth?</em></p>
+    <p class="note rise" style="--d:3">Pilate asks it and walks out of the room without waiting for an answer. Maybe he was sneering. Maybe he really didn't know. Either way, he turned his back on the one Man who could tell him.</p>
+    <blockquote class="quote step"><p>“Jesus saith unto him, I am the way, the truth, and the life: no man cometh unto the Father, but by me.”</p><cite>John 14:6</cite></blockquote>
+    <p class="note step">Truth isn't just an idea to argue about. It's a Person. Addiction runs on lies: “just this once,” “I can handle it,” “nobody gets hurt.” The way out starts by listening to His voice instead.</p>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="40"></blockquote>
+    <h2 class="rise" style="--d:1">Barabbas walks free</h2>
+    <p class="note rise" style="--d:2">Pilate's way out was a Passover custom: free one prisoner. He offered them Jesus. They chose Barabbas, a robber who, Mark tells us, had committed murder in an uprising (Mark 15:7).</p>
+    <div class="jn18-swap rise" style="--d:3">
+      <h3><span>The cross</span>condemned</h3>
+      <h3><span>The door out</span>released</h3>
+      <div class="card bar"><b>Barabbas</b><small>guilty: robber, rebel, killer</small></div>
+      <div class="card jes"><b>Jesus</b><small>“I find in him no fault at all”</small></div>
+    </div>
+    <p class="note step jn18-swap-go">Then they trade places. The guilty man walks out. The innocent One goes to the cross.</p>
+    <p class="note step">Here's the strange part: <em>Bar-abbas</em> means “son of the father.” Every one of us is Barabbas. Guilty, set free, because the true Son of the Father took our place.</p>
+    <blockquote class="quote step"><p>“For Christ also hath once suffered for sins, the just for the unjust, that he might bring us to God, being put to death in the flesh, but quickened by the Spirit:”</p><cite>1 Peter 3:18</cite></blockquote>
+  </div>
+</section>
+
+<!-- ======================= CLOSING ======================= -->
+<section class="slide remember">
+  <div class="inner">
+    <h2 class="rise">Points to remember</h2>
+    <ol class="seeds">
+      <li class="step"><span class="topic">Who Jesus is</span><span class="seed-q">“They went backward, and fell to the ground” <cite>18:6</cite></span><span class="take">He spoke God's own name, “I am,” and an armed crowd went down.</span></li>
+      <li class="step"><span class="topic">His choice</span><span class="seed-q">“The cup which my Father hath given me, shall I not drink it?” <cite>18:11</cite></span><span class="take">Nobody caught Jesus. He gave Himself up, on purpose, for us.</span></li>
+      <li class="step"><span class="topic">Failure</span><span class="seed-q">“Peter stood with them, and warmed himself” <cite>18:18</cite></span><span class="take">Peter fell by drifting to the wrong fire. Jesus already had his comeback planned.</span></li>
+      <li class="step"><span class="topic">His kingdom</span><span class="seed-q">“My kingdom is not of this world” <cite>18:36</cite></span><span class="take">He is a real King, ruling by truth, not swords.</span></li>
+      <li class="step"><span class="topic">Truth</span><span class="seed-q">“Every one that is of the truth heareth my voice” <cite>18:37</cite></span><span class="take">Truth is a Person. Don't walk out on Him the way Pilate did.</span></li>
+      <li class="step"><span class="topic">In our place</span><span class="seed-q">“Not this man, but Barabbas” <cite>18:40</cite></span><span class="take">The guilty went free and the innocent One died. That's what He did for you.</span></li>
+    </ol>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 1 of 6</p>
+      <span class="topic">Who Jesus is</span>
+      <h2>What happened when Jesus said, “I am he”?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="6" data-hl="they went backward, and fell to the ground"></blockquote>
+      <blockquote class="quote step"><p>“Jesus said unto them, Verily, verily, I say unto you, Before Abraham was, I am.”</p><cite>John 8:58</cite></blockquote>
+      <blockquote class="quote step"><p>“And God said unto Moses, I AM THAT I AM: and he said, Thus shalt thou say unto the children of Israel, I AM hath sent me unto you.”</p><cite>Exodus 3:14</cite></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>The soldiers and officers went backward and fell to the ground. In Greek, Jesus simply said “I am,” the name God gave Moses at the burning bush. For one moment the men who came to arrest Him felt who they were dealing with: God in the flesh.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 2 of 6</p>
+      <span class="topic">His choice</span>
+      <h2>Was Jesus a victim, or did He go willingly?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="4" data-hl="knowing all things that should come upon him, went forth"></blockquote>
+      <blockquote class="quote step" data-q="11" data-hl="the cup which my Father hath given me, shall I not drink it?"></blockquote>
+      <blockquote class="quote step"><p>“Thinkest thou that I cannot now pray to my Father, and he shall presently give me more than twelve legions of angels?”</p><cite>Matthew 26:53</cite></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>He went willingly. He knew everything that was coming, and He walked out to meet it. He could have called down thousands of angels. Instead He told Peter to put the sword away and drank the cup the Father gave Him. The cross wasn't something that happened to Jesus. It was something He chose, for us.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 3 of 6</p>
+      <span class="topic">Failure</span>
+      <h2>How did Peter fall, and was that the end of his story?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="18" data-hl="Peter stood with them, and warmed himself"></blockquote>
+      <blockquote class="quote step" data-q="27"></blockquote>
+      <blockquote class="quote step"><p>“But I have prayed for thee, that thy faith fail not: and when thou art converted, strengthen thy brethren.”</p><cite>Luke 22:32</cite></blockquote>
+      <blockquote class="quote step"><p>“He saith unto him the third time, Simon, son of Jonas, lovest thou me? Peter was grieved because he said unto him the third time, Lovest thou me? And he said unto him, Lord, thou knowest all things; thou knowest that I love thee. Jesus saith unto him, Feed my sheep.”</p><cite>John 21:17</cite></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>He drifted. He followed at a distance, got cold, and stood at the enemy's fire, and then the lies came easy. But it wasn't the end. Jesus had prayed for him beforehand, and after the resurrection He met Peter at another charcoal fire, gave him three “I love thee”s for three denials, and put him back to work.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 4 of 6</p>
+      <span class="topic">His kingdom</span>
+      <h2>What kind of king is Jesus?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="33" data-hl="Art thou the King of the Jews?"></blockquote>
+      <blockquote class="quote step" data-q="36" data-hl="My kingdom is not of this world"></blockquote>
+      <blockquote class="quote step" data-q="37" data-hl="Thou sayest that I am a king. To this end was I born"></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>A real King, born for it, but His kingdom doesn't come from this world or run on its methods. He doesn't rule by swords or votes. He rules the hearts of the people who hear His voice and follow Him.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 5 of 6</p>
+      <span class="topic">Truth</span>
+      <h2>What is truth, and where do we find it?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="37" data-hl="that I should bear witness unto the truth. Every one that is of the truth heareth my voice"></blockquote>
+      <blockquote class="quote step" data-q="38" data-hl="What is truth?"></blockquote>
+      <blockquote class="quote step"><p>“Jesus saith unto him, I am the way, the truth, and the life: no man cometh unto the Father, but by me.”</p><cite>John 14:6</cite></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>Truth is a Person: Jesus Himself. He came to bear witness to the truth, and the people who belong to the truth listen to His voice. Pilate asked the right question and then walked away from the answer. Don't do that. Keep listening to Him in His word.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 6 of 6</p>
+      <span class="topic">In our place</span>
+      <h2>What does Barabbas show us about what Jesus did for us?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="38" data-hl="I find in him no fault at all"></blockquote>
+      <blockquote class="quote step" data-q="40" data-hl="Not this man, but Barabbas. Now Barabbas was a robber."></blockquote>
+      <blockquote class="quote step"><p>“For Christ also hath once suffered for sins, the just for the unjust, that he might bring us to God, being put to death in the flesh, but quickened by the Spirit:”</p><cite>1 Peter 3:18</cite></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>Barabbas was guilty and deserved the cross. Jesus was innocent, and Pilate said so. Yet the guilty man walked free and the innocent One died in his place. That's the gospel: “the just for the unjust.” We are all Barabbas, and Jesus took our place.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide prayer">
+  <div class="inner">
+    <div class="emblem rise"></div>
+    <h2 class="rise">Prayer requests</h2>
+    <p class="ask-line rise" style="--d:1">What can we pray about for you today?</p>
+    <blockquote class="quote rise" style="--d:3"><p>“The LORD is nigh unto them that are of a broken heart; and saveth such as be of a contrite spirit.”</p><cite>Psalm 34:18</cite></blockquote>
+  </div>
+</section>
+
+</main>
+
+<script>
+// King James Version, John chapter 18
+const V = {
+  1: "When Jesus had spoken these words, he went forth with his disciples over the brook Cedron, where was a garden, into the which he entered, and his disciples.",
+  2: "And Judas also, which betrayed him, knew the place: for Jesus ofttimes resorted thither with his disciples.",
+  3: "Judas then, having received a band of men and officers from the chief priests and Pharisees, cometh thither with lanterns and torches and weapons.",
+  4: "Jesus therefore, knowing all things that should come upon him, went forth, and said unto them, Whom seek ye?",
+  5: "They answered him, Jesus of Nazareth. Jesus saith unto them, I am he. And Judas also, which betrayed him, stood with them.",
+  6: "As soon then as he had said unto them, I am he, they went backward, and fell to the ground.",
+  7: "Then asked he them again, Whom seek ye? And they said, Jesus of Nazareth.",
+  8: "Jesus answered, I have told you that I am he: if therefore ye seek me, let these go their way:",
+  9: "That the saying might be fulfilled, which he spake, Of them which thou gavest me have I lost none.",
+  10: "Then Simon Peter having a sword drew it, and smote the high priest’s servant, and cut off his right ear. The servant’s name was Malchus.",
+  11: "Then said Jesus unto Peter, Put up thy sword into the sheath: the cup which my Father hath given me, shall I not drink it?",
+  12: "Then the band and the captain and officers of the Jews took Jesus, and bound him,",
+  13: "And led him away to Annas first; for he was father in law to Caiaphas, which was the high priest that same year.",
+  14: "Now Caiaphas was he, which gave counsel to the Jews, that it was expedient that one man should die for the people.",
+  15: "And Simon Peter followed Jesus, and so did another disciple: that disciple was known unto the high priest, and went in with Jesus into the palace of the high priest.",
+  16: "But Peter stood at the door without. Then went out that other disciple, which was known unto the high priest, and spake unto her that kept the door, and brought in Peter.",
+  17: "Then saith the damsel that kept the door unto Peter, Art not thou also one of this man’s disciples? He saith, I am not.",
+  18: "And the servants and officers stood there, who had made a fire of coals; for it was cold: and they warmed themselves: and Peter stood with them, and warmed himself.",
+  19: "The high priest then asked Jesus of his disciples, and of his doctrine.",
+  20: "Jesus answered him, I spake openly to the world; I ever taught in the synagogue, and in the temple, whither the Jews always resort; and in secret have I said nothing.",
+  21: "Why askest thou me? ask them which heard me, what I have said unto them: behold, they know what I said.",
+  22: "And when he had thus spoken, one of the officers which stood by struck Jesus with the palm of his hand, saying, Answerest thou the high priest so?",
+  23: "Jesus answered him, If I have spoken evil, bear witness of the evil: but if well, why smitest thou me?",
+  24: "Now Annas had sent him bound unto Caiaphas the high priest.",
+  25: "And Simon Peter stood and warmed himself. They said therefore unto him, Art not thou also one of his disciples? He denied it, and said, I am not.",
+  26: "One of the servants of the high priest, being his kinsman whose ear Peter cut off, saith, Did not I see thee in the garden with him?",
+  27: "Peter then denied again: and immediately the cock crew.",
+  28: "Then led they Jesus from Caiaphas unto the hall of judgment: and it was early; and they themselves went not into the judgment hall, lest they should be defiled; but that they might eat the passover.",
+  29: "Pilate then went out unto them, and said, What accusation bring ye against this man?",
+  30: "They answered and said unto him, If he were not a malefactor, we would not have delivered him up unto thee.",
+  31: "Then said Pilate unto them, Take ye him, and judge him according to your law. The Jews therefore said unto him, It is not lawful for us to put any man to death:",
+  32: "That the saying of Jesus might be fulfilled, which he spake, signifying what death he should die.",
+  33: "Then Pilate entered into the judgment hall again, and called Jesus, and said unto him, Art thou the King of the Jews?",
+  34: "Jesus answered him, Sayest thou this thing of thyself, or did others tell it thee of me?",
+  35: "Pilate answered, Am I a Jew? Thine own nation and the chief priests have delivered thee unto me: what hast thou done?",
+  36: "Jesus answered, My kingdom is not of this world: if my kingdom were of this world, then would my servants fight, that I should not be delivered to the Jews: but now is my kingdom not from hence.",
+  37: "Pilate therefore said unto him, Art thou a king then? Jesus answered, Thou sayest that I am a king. To this end was I born, and for this cause came I into the world, that I should bear witness unto the truth. Every one that is of the truth heareth my voice.",
+  38: "Pilate saith unto him, What is truth? And when he had said this, he went out again unto the Jews, and saith unto them, I find in him no fault at all.",
+  39: "But ye have a custom, that I should release unto you one at the passover: will ye therefore that I release unto you the King of the Jews?",
+  40: "Then cried they all again, saying, Not this man, but Barabbas. Now Barabbas was a robber."
+};
+const BOOK = "John 18";
+</script>
+<script src="../assets/deck.js"></script>
+</body>
+</html>

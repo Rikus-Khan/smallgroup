@@ -1,0 +1,501 @@
+<!doctype html>
+<html lang="en" data-theme="night">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>John 17</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="../assets/fonts.css">
+<link rel="stylesheet" href="../assets/deck.css">
+<link rel="stylesheet" href="../assets/themes.css">
+<style>
+/* Circles widening out (svg.jn17-rings): each .jn17-ring grows in after the one inside it (--k);
+   a .jn17-you-go step lights the .jn17-you mark in the outer ring */
+.jn17-ring circle { stroke-width: 3; }
+.jn17-ring { transform-box: view-box; transform-origin: 300px 175px; transform: scale(0); opacity: 0; transition: transform 1.1s cubic-bezier(.3,1.3,.5,1), opacity .6s ease; transition-delay: calc(var(--k) * 700ms + 300ms); }
+.slide.active .jn17-ring { transform: scale(1); opacity: 1; }
+.jn17-ring.r1 circle { fill: color-mix(in srgb, var(--accent) 30%, var(--bg)); stroke: var(--accent-hot); }
+.jn17-ring.r2 circle { fill: color-mix(in srgb, var(--accent) 14%, var(--bg)); stroke: var(--accent); }
+.jn17-ring.r3 circle { fill: color-mix(in srgb, var(--accent) 6%, var(--bg)); stroke: color-mix(in srgb, var(--accent) 60%, transparent); }
+.jn17-ring text { font-size: 17px; font-weight: 700; }
+.jn17-ring .vs { font-weight: 400; fill: var(--ink-soft); font-size: 15px; }
+.jn17-you { opacity: 0; transition: opacity .8s ease; }
+.jn17-you circle { fill: var(--glow); stroke: var(--accent-hot); stroke-width: 3; }
+.jn17-you text { font-size: 18px; font-weight: 700; fill: var(--accent-hot); }
+.slide:has(.jn17-you-go.on) .jn17-you { opacity: 1; }
+.slide.active:has(.jn17-you-go.on) .jn17-you circle { animation: jn17-pulse 1.8s ease-in-out infinite; transform-box: fill-box; transform-origin: center; }
+@keyframes jn17-pulse { 50% { transform: scale(1.35); } }
+
+/* Kept (svg.jn17-keep): believers inside a guarded circle; .jn17-dart arrows fly in (--dx, --dy) and fall back, over and over */
+.jn17-wall { fill: color-mix(in srgb, var(--accent) 10%, transparent); stroke: var(--accent); stroke-width: 5; }
+.jn17-kept circle { fill: var(--accent-hot); }
+.jn17-dart { stroke: var(--danger); stroke-width: 4; stroke-linecap: round; fill: none; opacity: 0; }
+.slide.active .jn17-dart { animation: jn17-dart 2.8s ease-in infinite; animation-delay: var(--w, 0s); }
+@keyframes jn17-dart {
+  0% { opacity: 0; transform: translate(0, 0); }
+  15% { opacity: 1; }
+  45% { opacity: 1; transform: translate(var(--dx), var(--dy)); }
+  70% { opacity: .5; transform: translate(calc(var(--dx) * .55), calc(var(--dy) * .55)) rotate(25deg); }
+  100% { opacity: 0; transform: translate(calc(var(--dx) * .4), calc(var(--dy) * .4)) rotate(40deg); }
+}
+.jn17-judas { opacity: 0; transition: opacity 1s ease; }
+.jn17-judas circle { fill: none; stroke: var(--line-strong); stroke-width: 3; stroke-dasharray: 4 4; }
+.jn17-judas text { font-size: 16px; fill: var(--ink-soft); }
+.slide:has(.jn17-judas-go.on) .jn17-judas { opacity: 1; }
+.jn17-cap { font-size: 18px; font-weight: 700; fill: var(--accent-hot); }
+
+/* In the world, not of it (svg.jn17-boat): two boats on the water; a .jn17-sink-go step floods the right one and it goes down */
+.jn17-sea { fill: color-mix(in srgb, var(--cool) 40%, transparent); }
+.jn17-hull { fill: var(--leather-light); stroke: var(--leather); stroke-width: 3; }
+.jn17-mast { stroke: var(--leather); stroke-width: 5; }
+.jn17-sail { fill: var(--surface-2); stroke: var(--line-strong); stroke-width: 2; }
+.jn17-flood { fill: var(--cool); transform-box: fill-box; transform-origin: 50% 100%; transform: scaleY(0); transition: transform 1.6s ease; }
+.jn17-sinker { transform-box: view-box; transform-origin: 440px 200px; transition: transform 2s ease 1.2s; }
+.slide:has(.jn17-sink-go.on) .jn17-flood { transform: scaleY(1); }
+.slide:has(.jn17-sink-go.on) .jn17-sinker { transform: translateY(46px) rotate(9deg); }
+.jn17-lbl { font-size: 18px; font-weight: 700; }
+.jn17-lbl.soft { font-weight: 400; fill: var(--ink-soft); font-family: var(--serif); font-style: italic; }
+</style>
+</head>
+<body>
+<main class="deck" id="deck">
+
+<!-- ======================= OPENING ======================= -->
+<section class="slide title">
+  <div class="inner">
+    <div class="emblem rise"></div>
+    <h1 class="rise" style="--d:1">John 17</h1>
+    <p class="sub rise" style="--d:3">Jesus prays for His own</p>
+    <p class="tag rise" style="--d:5">On the night before the cross, Jesus lifts His eyes to heaven and prays: for Himself, for His disciples, and for everyone who would ever believe.</p>
+  </div>
+</section>
+
+<section class="slide watch">
+  <div class="inner">
+    <h2 class="rise">Things to watch for</h2>
+    <p class="lede rise" style="--d:1">Keep these questions in the back of your mind as we read. We'll come back to every one of them at the end.</p>
+    <ol class="seeds">
+      <li class="step"><span class="topic">Eternal life</span><span class="seed-q">What is eternal life?</span></li>
+      <li class="step"><span class="topic">The finished work</span><span class="seed-q">What work did Jesus finish?</span></li>
+      <li class="step"><span class="topic">Kept</span><span class="seed-q">Can anyone the Father gave to Jesus be lost?</span></li>
+      <li class="step"><span class="topic">In the world</span><span class="seed-q">Why doesn't Jesus ask the Father to take us out of the world?</span></li>
+      <li class="step"><span class="topic">Unity</span><span class="seed-q">Why does Jesus pray that believers would be one?</span></li>
+      <li class="step"><span class="topic">Prayed for</span><span class="seed-q">Did Jesus pray for you?</span></li>
+    </ol>
+  </div>
+</section>
+
+<!-- ======================= PART ONE ======================= -->
+<section class="slide part">
+  <div class="inner">
+    <p class="part-n rise">Part one</p>
+    <h2 class="rise" style="--d:1">The hour is come</h2>
+    <p class="range rise" style="--d:2">Verses 1–5</p>
+    <p class="hook rise" style="--d:4">Jesus prays for Himself.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="1-3" data-hl="Father, the hour is come|And this is life eternal, that they might know thee the only true God, and Jesus Christ, whom thou hast sent"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="1" data-hl="lifted up his eyes to heaven"></blockquote>
+    <div class="split">
+      <div class="stage">
+        <svg class="jn17-rings" viewBox="0 0 600 350" role="img" aria-label="Three circles, one inside the other: Jesus prays for Himself, then for His disciples, then for all who will believe. You are in the outer circle.">
+          <g class="jn17-ring r3" style="--k:2"><circle cx="300" cy="175" r="170"/><text x="300" y="34" text-anchor="middle">All who will believe</text><text class="vs" x="300" y="53" text-anchor="middle">verses 20–26</text></g>
+          <g class="jn17-ring r2" style="--k:1"><circle cx="300" cy="175" r="112"/><text x="300" y="96" text-anchor="middle">His disciples</text><text class="vs" x="300" y="115" text-anchor="middle">verses 6–19</text></g>
+          <g class="jn17-ring r1" style="--k:0"><circle cx="300" cy="175" r="52"/><text x="300" y="176" text-anchor="middle">Himself</text><text class="vs" x="300" y="195" text-anchor="middle">verses 1–5</text></g>
+          <g class="jn17-you"><circle cx="365" cy="298" r="11"/><text x="383" y="304">you</text></g>
+        </svg>
+      </div>
+      <div>
+        <h2 class="rise" style="--d:1">The prayer of the High Priest</h2>
+        <p class="note rise" style="--d:2">This is the longest prayer of Jesus we have. He's in the upper room or on the way to the garden, hours from His arrest. He prays out loud so His men can hear it.</p>
+        <p class="note step">The prayer widens like ripples in a pond: first Himself, then the eleven, then everyone who would ever believe.</p>
+        <p class="note step jn17-you-go">That outer circle includes <em>you</em>. Hold that thought until verse 20.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="1" data-hl="Father, the hour is come"></blockquote>
+    <h2 class="rise" style="--d:1">“The hour is come”</h2>
+    <p class="note rise" style="--d:2">Remember how John kept saying His hour hadn't come yet? Here's the whole track:</p>
+    <div class="hours rise" style="--d:3">
+      <div class="hour"><div class="dot"></div><b>2:4</b><span>not yet come</span></div>
+      <div class="hour"><div class="dot"></div><b>7:30</b><span>not yet come</span></div>
+      <div class="hour"><div class="dot"></div><b>8:20</b><span>not yet come</span></div>
+      <div class="hour come"><div class="dot"></div><b>12:23</b><span>is come</span></div>
+      <div class="hour come"><div class="dot"></div><b>17:1</b><span>is come</span></div>
+    </div>
+    <p class="note step">The cross is now hours away, and the first thing Jesus asks for is <em>“glorify thy Son.”</em> Not escape. Glory. He knew the cross would be the place where God's love and power would shine brightest.</p>
+    <p class="note step">And the goal of that glory is <em>“that thy Son also may glorify thee.”</em> Everything Jesus did pointed back to His Father.</p>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="3"></blockquote>
+    <h2 class="rise" style="--d:1">What eternal life is</h2>
+    <p class="note rise" style="--d:2">Ask most people what eternal life means and you'll hear things like these:</p>
+    <ul class="nots">
+      <li class="step"><span class="k">Living forever</span><span class="why">Even the lost will exist forever. That's not the gift.</span></li>
+      <li class="step"><span class="k">Getting into heaven someday</span><span class="why">It starts long before that.</span></li>
+      <li class="step"><span class="k">A reward for being good enough</span><span class="why">It's given (v. 2), not earned.</span></li>
+      <li class="step yes"><span class="k">Knowing God, and Jesus Christ</span><span class="why">A real relationship with God, starting the day you believe and never ending.</span></li>
+    </ul>
+    <p class="note step">“Know” here isn't knowing <em>about</em> Him, the way you know facts about a president. It's knowing Him the way you know your closest friend. And it begins now.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="4-5" data-hl="I have finished the work which thou gavest me to do|the glory which I had with thee before the world was"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="4" data-hl="I have finished the work"></blockquote>
+    <h2 class="rise" style="--d:1">Finished</h2>
+    <div class="pair">
+      <div class="scroll rise" style="--d:2"><p class="ref">John 17:4, the night before</p><p class="kjv">“I have finished the work which thou gavest me to do.”</p></div>
+      <div class="scroll step"><p class="ref">John 19:30, on the cross</p><p class="kjv">“When Jesus therefore had received the vinegar, he said, It is finished: and he bowed his head, and gave up the ghost.”</p></div>
+    </div>
+    <p class="note step">Jesus speaks of the cross as already done. The word He'll cry out there, <span class="gk">tetelestai</span>, means <em>it is done, completed, paid</em>. Nothing is left to add, by Him or by you.</p>
+    <p class="note step">And verse 5 tells us who He really is. He's asking for the glory He had with the Father <em>“before the world was”</em>. Nobody but God could pray that. <em>“In the beginning was the Word, and the Word was with God, and the Word was God”</em> (John 1:1).</p>
+  </div>
+</section>
+
+<!-- ======================= PART TWO ======================= -->
+<section class="slide part">
+  <div class="inner">
+    <p class="part-n rise">Part two</p>
+    <h2 class="rise" style="--d:1">Keep them</h2>
+    <p class="range rise" style="--d:2">Verses 6–19</p>
+    <p class="hook rise" style="--d:4">Jesus prays for the men in the room.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="6-8" data-hl="the men which thou gavest me out of the world|they have believed that thou didst send me"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="8" data-hl="I have given unto them the words which thou gavest me"></blockquote>
+    <h2 class="rise" style="--d:1">Handed down</h2>
+    <p class="note rise" style="--d:2">This prayer is full of giving. Count them:</p>
+    <div class="math rise" style="--d:3">
+      <div><b>17×</b><span>give, gavest, given</span></div>
+      <div><b>19×</b><span>the world</span></div>
+    </div>
+    <div class="chains">
+      <div class="chain step"><span class="who-chip">The Father</span><span class="said">gave the words</span><span class="who-chip jesus">Jesus</span><span class="said">“I have given unto them” (v. 8)</span><span class="who-chip">His disciples</span></div>
+      <div class="chain step"><span class="who-chip">The Father</span><span class="said">gave the glory</span><span class="who-chip jesus">Jesus</span><span class="said">“I have given them” (v. 22)</span><span class="who-chip">believers</span></div>
+    </div>
+    <p class="note step">So who are the ones the Father <em>“gave”</em> Him? Not a secret list. Jesus Himself explained it:</p>
+    <blockquote class="quote step"><p>“And this is the will of him that sent me, that every one which seeth the Son, and believeth on him, may have everlasting life: and I will raise him up at the last day.”</p><cite>John 6:40</cite></blockquote>
+    <p class="note step">The given ones are the believing ones (v. 8: <em>“they have believed”</em>). Whosoever comes, He receives.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="9-12" data-hl="Holy Father, keep through thine own name those whom thou hast given me|none of them is lost, but the son of perdition"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="12" data-hl="those that thou gavest me I have kept, and none of them is lost"></blockquote>
+    <div class="split">
+      <div class="stage">
+        <svg class="jn17-keep" viewBox="0 0 600 360" role="img" aria-label="Believers inside a guarded circle. Arrows fly at it and fall away. One man stands outside it: the son of perdition.">
+          <circle class="jn17-wall" cx="280" cy="180" r="130"/>
+          <text class="jn17-cap" x="280" y="88" text-anchor="middle">kept in thy name</text>
+          <g class="jn17-kept"><circle cx="280" cy="130" r="9"/><circle cx="315" cy="140" r="9"/><circle cx="337" cy="168" r="9"/><circle cx="337" cy="202" r="9"/><circle cx="315" cy="230" r="9"/><circle cx="280" cy="240" r="9"/><circle cx="245" cy="230" r="9"/><circle cx="223" cy="202" r="9"/><circle cx="223" cy="168" r="9"/><circle cx="245" cy="140" r="9"/><circle cx="280" cy="185" r="9"/></g>
+          <path class="jn17-dart" style="--dx:60px;--dy:30px;--w:0s" d="M60 60 l40 20 m-12 -14 l12 14 l-18 2"/>
+          <path class="jn17-dart" style="--dx:-60px;--dy:20px;--w:.9s" d="M560 110 l-40 14 m10 -14 l-10 14 l16 6"/>
+          <path class="jn17-dart" style="--dx:50px;--dy:-30px;--w:1.7s" d="M70 320 l40 -22 m-18 -2 l18 2 l-8 16"/>
+          <path class="jn17-dart" style="--dx:-50px;--dy:-40px;--w:2.3s" d="M500 330 l-36 -26 m4 16 l-4 -16 l16 2"/>
+          <g class="jn17-judas"><circle cx="530" cy="262" r="10"/><text x="530" y="296" text-anchor="middle">“the son of</text><text x="530" y="316" text-anchor="middle">perdition”</text></g>
+        </svg>
+      </div>
+      <div>
+        <h2 class="rise" style="--d:1">None of them is lost</h2>
+        <p class="note rise" style="--d:2">Now Jesus asks the Father to go on keeping them <em>“through thine own name”</em>: by His power, not theirs.</p>
+        <blockquote class="quote step"><p>“My Father, which gave them me, is greater than all; and no man is able to pluck them out of my Father’s hand.”</p><cite>John 10:29</cite></blockquote>
+        <p class="note step jn17-judas-go">And Judas, <em>“the son of perdition”</em>? One of the twelve, but never a believer (6:64). He wasn't a saved man who got lost. He was a lost man who never came in.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="slide verse" data-v="13-16" data-hl="I pray not that thou shouldest take them out of the world, but that thou shouldest keep them from the evil|They are not of the world, even as I am not of the world"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="15"></blockquote>
+    <div class="split">
+      <div class="stage">
+        <svg class="jn17-boat" viewBox="0 0 600 330" role="img" aria-label="Two boats on the sea. The left one floats. Water pours into the right one and it sinks.">
+          <g>
+            <path class="jn17-mast" d="M160 40 v120"/>
+            <path class="jn17-sail" d="M166 46 L236 150 L166 150 Z"/>
+            <path class="jn17-hull" d="M70 160 L250 160 L225 205 L95 205 Z"/>
+          </g>
+          <g class="jn17-sinker">
+            <path class="jn17-mast" d="M440 40 v120"/>
+            <path class="jn17-sail" d="M446 46 L516 150 L446 150 Z"/>
+            <path class="jn17-hull" d="M350 160 L530 160 L505 205 L375 205 Z"/>
+            <path class="jn17-flood" d="M358 168 L522 168 L503 201 L377 201 Z"/>
+          </g>
+          <path class="jn17-sea" d="M0 192 Q 37 180, 75 192 T 150 192 T 225 192 T 300 192 T 375 192 T 450 192 T 525 192 T 600 192 V 330 H 0 Z"/>
+          <text class="jn17-lbl" x="160" y="290" text-anchor="middle">The ship in the sea</text>
+          <text class="jn17-lbl soft" x="160" y="315" text-anchor="middle">“in the world”</text>
+          <text class="jn17-lbl" x="440" y="290" text-anchor="middle">The sea in the ship</text>
+          <text class="jn17-lbl soft" x="440" y="315" text-anchor="middle">“of the world”</text>
+        </svg>
+      </div>
+      <div>
+        <h2 class="rise" style="--d:1">In it, not of it</h2>
+        <p class="note rise" style="--d:2">Jesus doesn't ask for a way out of the world. He sends us into it (v. 18). He asks the Father to keep us <em>“from the evil,”</em> from the evil one.</p>
+        <p class="note step jn17-sink-go">A ship belongs in the sea. The trouble starts when the sea gets into the ship.</p>
+        <p class="note step">You don't have to move to the moon to stay clean. You'll still work, live, and walk past the old places. What you need is to be kept, and Jesus asked the Father to do exactly that.</p>
+        <blockquote class="quote step"><p>“And be not conformed to this world: but be ye transformed by the renewing of your mind, that ye may prove what is that good, and acceptable, and perfect, will of God.”</p><cite>Romans 12:2</cite></blockquote>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="slide verse" data-v="17-19" data-hl="Sanctify them through thy truth: thy word is truth|even so have I also sent them into the world"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="17"></blockquote>
+    <div class="morph rise" style="--d:1"><span class="big">hagiazo</span><span class="say">hah-gee-AD-zoh</span><span class="means">to set apart for God, to make holy</span></div>
+    <p class="note rise" style="--d:2">To <em>sanctify</em> is to set something apart for God's use, like a cup taken off the common shelf and kept for the King's table. And the tool God uses is His word.</p>
+    <p class="note step">That's why we open the Bible every day. It isn't homework. It's how God reshapes a man from the inside.</p>
+    <div class="mirror">
+      <div class="step"><span>The Father</span><span class="arrow">→</span><span class="word">sent</span><span class="arrow">→</span><span>Jesus into the world</span><small>On a mission to save it.</small></div>
+      <div class="step"><span>Jesus</span><span class="arrow">→</span><span class="word">sent</span><span class="arrow">→</span><span>His disciples into the world</span><small>On the same mission (v. 18).</small></div>
+    </div>
+    <p class="note step">Set apart from the world, and sent back into it. That's every believer's calling.</p>
+  </div>
+</section>
+
+<!-- ======================= PART THREE ======================= -->
+<section class="slide part">
+  <div class="inner">
+    <p class="part-n rise">Part three</p>
+    <h2 class="rise" style="--d:1">That they all may be one</h2>
+    <p class="range rise" style="--d:2">Verses 20–26</p>
+    <p class="hook rise" style="--d:4">Jesus prays for everyone who would ever believe.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="20-23" data-hl="Neither pray I for these alone, but for them also which shall believe on me through their word|That they all may be one"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="20" data-hl="for them also which shall believe on me through their word"></blockquote>
+    <h2 class="rise" style="--d:1">He prayed for you</h2>
+    <p class="note rise" style="--d:2">Not by name, but by description: <em>“them also which shall believe on me through their word.”</em> Follow the word down through time:</p>
+    <div class="chains">
+      <div class="chain step"><span class="who-chip jesus">Jesus</span><span class="said">taught</span><span class="who-chip">the eleven</span></div>
+      <div class="chain step"><span class="who-chip">the eleven</span><span class="said">preached and wrote it down</span><span class="who-chip">the first churches</span></div>
+      <div class="chain step"><span class="who-chip">twenty centuries of believers</span><span class="said">passed it on</span><span class="who-chip">the man who told you</span></div>
+      <div class="chain step"><span class="who-chip">the man who told you</span><span class="said">“through their word”</span><span class="who-chip jesus">you</span></div>
+    </div>
+    <p class="note step">On the night before He died, with all that was coming, Jesus took time to pray for a man who wouldn't be born for two thousand years. If you believe on Him, He prayed for you.</p>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="21" data-hl="That they all may be one|that the world may believe that thou hast sent me"></blockquote>
+    <h2 class="rise" style="--d:1">One, so the world will believe</h2>
+    <p class="note rise" style="--d:2">The model for this oneness is the Father and the Son: <em>“as thou, Father, art in me, and I in thee.”</em> It's not everyone dressing alike or agreeing on every small thing. It's a shared life in God.</p>
+    <p class="note step">And it has a purpose. Twice Jesus says why: <em>“that the world may believe”</em> (v. 21) and <em>“that the world may know”</em> (v. 23).</p>
+    <p class="saying step">The world watches <em>how believers treat each other.</em></p>
+    <p class="note step">A room full of men from every kind of background, carrying each other's burdens, praying for each other every day: that's an answer to this prayer.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="24-26" data-hl="Father, I will that they also, whom thou hast given me, be with me where I am|that the love wherewith thou hast loved me may be in them, and I in them"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="24" data-hl="be with me where I am"></blockquote>
+    <h2 class="rise" style="--d:1">Where He wants you</h2>
+    <p class="note rise" style="--d:2">Of all the things Jesus could ask for His people, here's His last request: that we'd be <em>with Him</em>. He wants your company. He said the same thing hours earlier:</p>
+    <blockquote class="quote step"><p>“And if I go and prepare a place for you, I will come again, and receive you unto myself; that where I am, there ye may be also.”</p><cite>John 14:3</cite></blockquote>
+    <p class="note step">And look how the prayer ends (v. 26): that the same love the Father has for the Son would be <em>in them</em>, and Jesus Himself in them. That's where this whole prayer has been going.</p>
+    <p class="note step">He hasn't stopped praying, either. Right now, He <em>“ever liveth to make intercession”</em> for those who come to God by Him (Hebrews 7:25).</p>
+  </div>
+</section>
+
+<!-- ======================= CLOSING ======================= -->
+<section class="slide remember">
+  <div class="inner">
+    <h2 class="rise">Points to remember</h2>
+    <ol class="seeds">
+      <li class="step"><span class="topic">Eternal life</span><span class="seed-q">“That they might know thee the only true God” <cite>17:3</cite></span><span class="take">Eternal life is knowing God through Jesus, and it starts now.</span></li>
+      <li class="step"><span class="topic">The finished work</span><span class="seed-q">“I have finished the work” <cite>17:4</cite></span><span class="take">He did everything needed to save us. Nothing is left to add.</span></li>
+      <li class="step"><span class="topic">Kept</span><span class="seed-q">“None of them is lost” <cite>17:12</cite></span><span class="take">Those who believe are kept by the Father's own power.</span></li>
+      <li class="step"><span class="topic">In the world</span><span class="seed-q">“Keep them from the evil” <cite>17:15</cite></span><span class="take">He leaves us in the world on a mission, and He keeps us there.</span></li>
+      <li class="step"><span class="topic">Unity</span><span class="seed-q">“That the world may believe” <cite>17:21</cite></span><span class="take">Believers' love for each other shows the world Jesus is real.</span></li>
+      <li class="step"><span class="topic">Prayed for</span><span class="seed-q">“For them also which shall believe on me” <cite>17:20</cite></span><span class="take">If you believe on Him, Jesus prayed for you, and He still does.</span></li>
+    </ol>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 1 of 6</p>
+      <span class="topic">Eternal life</span>
+      <h2>What is eternal life?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="2" data-hl="he should give eternal life"></blockquote>
+      <blockquote class="quote step" data-q="3"></blockquote>
+      <blockquote class="quote step"><p>“And this is the will of him that sent me, that every one which seeth the Son, and believeth on him, may have everlasting life: and I will raise him up at the last day.”</p><cite>John 6:40</cite></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>Eternal life is knowing the only true God, and Jesus Christ whom He sent. It's not just living forever or a reward for being good. It's a gift Jesus gives to every one who believes on Him: a real relationship with God that starts the day you believe and never ends.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 2 of 6</p>
+      <span class="topic">The finished work</span>
+      <h2>What work did Jesus finish?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="4"></blockquote>
+      <blockquote class="quote step" data-q="6" data-hl="I have manifested thy name"></blockquote>
+      <blockquote class="quote step"><p>“When Jesus therefore had received the vinegar, he said, It is finished: and he bowed his head, and gave up the ghost.”</p><cite>John 19:30</cite></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>The work the Father gave Him: to show us who God is and to save us by His death on the cross. He spoke of it as done the night before, and He cried “It is finished” from the cross. The debt is paid in full. We can't add to it; we receive it by faith.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 3 of 6</p>
+      <span class="topic">Kept</span>
+      <h2>Can anyone the Father gave to Jesus be lost?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="11" data-hl="Holy Father, keep through thine own name those whom thou hast given me"></blockquote>
+      <blockquote class="quote step" data-q="12" data-hl="none of them is lost"></blockquote>
+      <blockquote class="quote step"><p>“My Father, which gave them me, is greater than all; and no man is able to pluck them out of my Father’s hand.”</p><cite>John 10:29</cite></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>No. Jesus kept every one of them, and He asked the Father to keep them by His own power. Judas, the son of perdition, was never a believer to begin with. A man who has truly believed on Jesus is held in the Father's hand, and no one can pluck him out.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 4 of 6</p>
+      <span class="topic">In the world</span>
+      <h2>Why doesn't Jesus ask the Father to take us out of the world?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="15"></blockquote>
+      <blockquote class="quote step" data-q="17"></blockquote>
+      <blockquote class="quote step" data-q="18"></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>Because He has a job for us here. He sends us into the world the way the Father sent Him. Instead of taking us out, He asks the Father to keep us from the evil one and to set us apart through His word. In the world, but not of it.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 5 of 6</p>
+      <span class="topic">Unity</span>
+      <h2>Why does Jesus pray that believers would be one?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="21" data-hl="that the world may believe that thou hast sent me"></blockquote>
+      <blockquote class="quote step" data-q="22"></blockquote>
+      <blockquote class="quote step" data-q="23" data-hl="that the world may know that thou hast sent me"></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>So the world will believe the Father sent Jesus. Our oneness is modeled on the Father and the Son. When believers love each other and live as one, the world sees proof that Jesus is real and that God loves them.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 6 of 6</p>
+      <span class="topic">Prayed for</span>
+      <h2>Did Jesus pray for you?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="20"></blockquote>
+      <blockquote class="quote step" data-q="24" data-hl="be with me where I am"></blockquote>
+      <blockquote class="quote step"><p>“Wherefore he is able also to save them to the uttermost that come unto God by him, seeing he ever liveth to make intercession for them.”</p><cite>Hebrews 7:25</cite></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>Yes. If you believe on Him, you're one of “them also which shall believe on me through their word.” He prayed that you'd be kept, set apart, one with other believers, and with Him where He is. And He hasn't stopped: He ever lives to pray for those who come to God by Him.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide prayer">
+  <div class="inner">
+    <div class="emblem rise"></div>
+    <h2 class="rise">Prayer requests</h2>
+    <p class="ask-line rise" style="--d:1">What can we pray about for you today?</p>
+    <blockquote class="quote rise" style="--d:3"><p>“Wherefore he is able also to save them to the uttermost that come unto God by him, seeing he ever liveth to make intercession for them.”</p><cite>Hebrews 7:25</cite></blockquote>
+  </div>
+</section>
+
+</main>
+
+<script>
+// King James Version, John chapter 17
+const V = {
+  1: "These words spake Jesus, and lifted up his eyes to heaven, and said, Father, the hour is come; glorify thy Son, that thy Son also may glorify thee:",
+  2: "As thou hast given him power over all flesh, that he should give eternal life to as many as thou hast given him.",
+  3: "And this is life eternal, that they might know thee the only true God, and Jesus Christ, whom thou hast sent.",
+  4: "I have glorified thee on the earth: I have finished the work which thou gavest me to do.",
+  5: "And now, O Father, glorify thou me with thine own self with the glory which I had with thee before the world was.",
+  6: "I have manifested thy name unto the men which thou gavest me out of the world: thine they were, and thou gavest them me; and they have kept thy word.",
+  7: "Now they have known that all things whatsoever thou hast given me are of thee.",
+  8: "For I have given unto them the words which thou gavest me; and they have received them, and have known surely that I came out from thee, and they have believed that thou didst send me.",
+  9: "I pray for them: I pray not for the world, but for them which thou hast given me; for they are thine.",
+  10: "And all mine are thine, and thine are mine; and I am glorified in them.",
+  11: "And now I am no more in the world, but these are in the world, and I come to thee. Holy Father, keep through thine own name those whom thou hast given me, that they may be one, as we are.",
+  12: "While I was with them in the world, I kept them in thy name: those that thou gavest me I have kept, and none of them is lost, but the son of perdition; that the scripture might be fulfilled.",
+  13: "And now come I to thee; and these things I speak in the world, that they might have my joy fulfilled in themselves.",
+  14: "I have given them thy word; and the world hath hated them, because they are not of the world, even as I am not of the world.",
+  15: "I pray not that thou shouldest take them out of the world, but that thou shouldest keep them from the evil.",
+  16: "They are not of the world, even as I am not of the world.",
+  17: "Sanctify them through thy truth: thy word is truth.",
+  18: "As thou hast sent me into the world, even so have I also sent them into the world.",
+  19: "And for their sakes I sanctify myself, that they also might be sanctified through the truth.",
+  20: "Neither pray I for these alone, but for them also which shall believe on me through their word;",
+  21: "That they all may be one; as thou, Father, art in me, and I in thee, that they also may be one in us: that the world may believe that thou hast sent me.",
+  22: "And the glory which thou gavest me I have given them; that they may be one, even as we are one:",
+  23: "I in them, and thou in me, that they may be made perfect in one; and that the world may know that thou hast sent me, and hast loved them, as thou hast loved me.",
+  24: "Father, I will that they also, whom thou hast given me, be with me where I am; that they may behold my glory, which thou hast given me: for thou lovedst me before the foundation of the world.",
+  25: "O righteous Father, the world hath not known thee: but I have known thee, and these have known that thou hast sent me.",
+  26: "And I have declared unto them thy name, and will declare it: that the love wherewith thou hast loved me may be in them, and I in them."
+};
+const BOOK = "John 17";
+</script>
+<script src="../assets/deck.js"></script>
+</body>
+</html>

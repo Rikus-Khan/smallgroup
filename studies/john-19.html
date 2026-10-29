@@ -1,0 +1,642 @@
+<!doctype html>
+<html lang="en" data-theme="stone">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>John 19</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="../assets/fonts.css">
+<link rel="stylesheet" href="../assets/deck.css">
+<link rel="stylesheet" href="../assets/themes.css">
+<style>
+/* A crown of thorns that weaves itself, thorn by thorn */
+.jn19-crown .vine { fill: none; stroke: var(--leather-light); stroke-width: 7; stroke-linecap: round; stroke-dasharray: 1; stroke-dashoffset: 1; }
+.jn19-crown .vine.b { stroke: var(--leather); stroke-width: 5; }
+.slide.active .jn19-crown .vine { animation: jn19-weave 2.6s .3s ease forwards; }
+.slide.active .jn19-crown .vine.b { animation-delay: .9s; }
+@keyframes jn19-weave { to { stroke-dashoffset: 0; } }
+.jn19-crown .thorns line { stroke: var(--leather); stroke-width: 4; stroke-linecap: round; opacity: 0; }
+.slide.active .jn19-crown .thorns line { animation: rise .4s both; animation-delay: calc(var(--k) * 70ms + 2.2s); }
+.jn19-crown .curse { font: italic 22px var(--serif); fill: var(--ink-soft); }
+
+/* Outside the gate: from Pilate's hall to Golgotha, with the garden tomb close by */
+.jn19-map .land { fill: var(--surface-2); stroke: var(--line-strong); stroke-width: 2; }
+.jn19-map .wall { fill: none; stroke: var(--ink-soft); stroke-width: 6; stroke-linecap: round; }
+.jn19-map .gate { fill: var(--bg); stroke: var(--ink-soft); stroke-width: 3; }
+.jn19-map .road { fill: none; stroke: var(--line-strong); stroke-width: 10; stroke-linecap: round; opacity: .6; }
+.jn19-map .hill { fill: color-mix(in srgb, var(--wine) 18%, transparent); stroke: var(--wine); stroke-width: 2.5; }
+.jn19-map .cross { stroke: var(--ink); stroke-width: 5; stroke-linecap: round; }
+.jn19-map .tree { fill: var(--accent); opacity: .55; }
+.jn19-map .rock { fill: var(--surface); stroke: var(--ink-soft); stroke-width: 2.5; }
+.jn19-map .door { fill: var(--ink-soft); }
+.jn19-map .spot { fill: var(--bg); stroke: var(--ink); stroke-width: 3; }
+.jn19-map .soft { fill: var(--ink-soft); }
+.jn19-map .walk { fill: none; stroke: var(--accent-hot); stroke-width: 5; stroke-linecap: round; stroke-dasharray: 1; stroke-dashoffset: 1; transition: stroke-dashoffset 2.4s ease; }
+.split:has(.jn19-walk-go.on) .jn19-map .walk { stroke-dashoffset: 0; }
+
+/* A bill of debt, struck through line by line, then stamped paid */
+.jn19-ledger { position: relative; max-width: 30rem; margin: .4em 0 1.1em; padding: .9em 1.2em 1em; border: 1.5px solid var(--line-strong); border-radius: 6px; background: var(--surface); box-shadow: 0 10px 24px -16px var(--ink); }
+.jn19-ledger h3 { font: 700 clamp(.85rem, .8rem + .3vw, 1.05rem) var(--sans); color: var(--ink-soft); border-bottom: 1px solid var(--line-strong); padding-bottom: .35em; margin-bottom: .4em; }
+.jn19-ledger ul { list-style: none; margin: 0; padding: 0; display: grid; gap: .2em; }
+.jn19-ledger li { position: relative; display: flex; justify-content: space-between; gap: 1em; font: italic clamp(1rem, .88rem + .6vw, 1.4rem)/1.35 var(--serif); }
+.jn19-ledger li span:last-child { font-style: normal; font-family: var(--sans); color: var(--ink-soft); }
+.jn19-ledger li::after { content: ""; position: absolute; left: -2%; right: -2%; top: 55%; height: 2px; background: var(--danger); transform: scaleX(0); transform-origin: left; transition: transform .6s ease; transition-delay: calc(var(--k) * 260ms); }
+.jn19-ledger .total { margin-top: .4em; padding-top: .35em; border-top: 2px solid var(--ink-soft); font: 700 clamp(1rem, .9rem + .5vw, 1.3rem) var(--sans); display: flex; justify-content: space-between; }
+.jn19-ledger .total b { color: var(--danger); transition: color .6s ease 1.8s; }
+.slide:has(.jn19-paid.on) .jn19-ledger li::after { transform: scaleX(1); }
+.slide:has(.jn19-paid.on) .jn19-ledger .total b { color: var(--ink-soft); }
+.jn19-stamp { position: absolute; right: 4%; top: 30%; padding: .2em .5em; border: 4px solid var(--accent); border-radius: 8px; color: var(--accent); text-align: center; background: color-mix(in srgb, var(--bg) 70%, transparent);
+  font: 700 clamp(1.2rem, .9rem + 1.4vw, 2.1rem)/1.1 var(--sans); transform: rotate(-9deg) scale(2.2); opacity: 0; transition: transform .4s cubic-bezier(.3,1.6,.5,1) 2.1s, opacity .25s ease 2.1s; }
+.jn19-stamp small { display: block; font: italic 400 .6em var(--serif); }
+.slide:has(.jn19-paid.on) .jn19-stamp { transform: rotate(-9deg) scale(1); opacity: 1; }
+
+/* Scriptures written centuries earlier, checked off one by one */
+.jn19-done { list-style: none; padding: 0; margin: .4em 0 1em; display: grid; gap: .5rem; }
+.jn19-done li { display: grid; grid-template-columns: 2.2rem 1fr auto; gap: .2rem .8rem; align-items: center; padding: .45em .7em; border-radius: 8px; border: 1px solid var(--line-strong); background: var(--surface); }
+.jn19-done .tick { grid-row: 1 / span 2; width: 2rem; height: 2rem; border-radius: 50%; display: grid; place-items: center; border: 2px solid var(--line-strong); color: transparent; font-weight: 700; transition: background-color .5s ease .3s, border-color .5s ease .3s, color .5s ease .3s; }
+.jn19-done li.on .tick { background: var(--accent); border-color: var(--accent); color: var(--on-accent); }
+.jn19-done q { font: italic clamp(.95rem, .85rem + .5vw, 1.3rem)/1.3 var(--serif); quotes: "\201C" "\201D"; }
+.jn19-done .old { grid-column: 2; font-size: clamp(.8rem, .75rem + .3vw, 1rem); color: var(--ink-soft); }
+.jn19-done .jn { grid-column: 3; grid-row: 1 / span 2; font-weight: 700; color: var(--accent-hot); font-size: clamp(.85rem, .8rem + .3vw, 1.05rem); white-space: nowrap; }
+
+/* Nicodemus steps out of the dark: night, a careful word, then out in the open */
+.jn19-steps { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; align-items: end; margin: .4em 0 1em; }
+.jn19-steps div { padding: .6em .7em; border-radius: 8px 8px 0 0; font-size: clamp(.85rem, .78rem + .4vw, 1.15rem); line-height: 1.35; min-height: calc(5.5rem + var(--k) * 2.6rem); }
+.jn19-steps b { display: block; font: 600 1.15em var(--serif); margin-bottom: .2em; }
+.jn19-steps i { display: block; font-style: normal; font-size: .85em; font-weight: 700; color: var(--ink-soft); margin-bottom: .2em; }
+.jn19-steps .s0 { background: var(--leather); color: var(--glow); }
+.jn19-steps .s0 i { color: var(--leather-light); }
+.jn19-steps .s1 { background: color-mix(in srgb, var(--leather) 30%, var(--surface-2)); border-top: 3px solid var(--line-strong); }
+.jn19-steps .s2 { background: var(--accent); color: var(--on-accent); }
+.jn19-steps .s2 i { color: var(--on-accent); opacity: .8; }
+
+/* The title over the cross: three languages, sized to fit one line each on wide screens */
+.jn19-title .w { font-size: clamp(1.3rem, .9rem + 1.9vw, 2.6rem); }
+</style>
+</head>
+<body>
+<main class="deck" id="deck">
+
+<!-- ======================= OPENING ======================= -->
+<section class="slide title">
+  <div class="inner">
+    <div class="emblem rise"></div>
+    <h1 class="rise" style="--d:1">John 19</h1>
+    <p class="sub rise" style="--d:3">It is finished</p>
+    <p class="tag rise" style="--d:5">Pilate finds no fault in Him and hands Him over anyway. Jesus carries His cross to Golgotha, dies in our place, and is laid in a garden tomb.</p>
+  </div>
+</section>
+
+<section class="slide watch">
+  <div class="inner">
+    <h2 class="rise">Things to watch for</h2>
+    <p class="lede rise" style="--d:1">Keep these questions in the back of your mind as we read. We'll come back to every one of them at the end.</p>
+    <ol class="seeds">
+      <li class="step"><span class="topic">In our place</span><span class="seed-q">Why did a man with no fault die on a cross?</span></li>
+      <li class="step"><span class="topic">Who's in charge</span><span class="seed-q">Who really had the power in Pilate's hall?</span></li>
+      <li class="step"><span class="topic">God's word</span><span class="seed-q">How do we know the cross was God's plan and not an accident?</span></li>
+      <li class="step"><span class="topic">Family</span><span class="seed-q">Who did Jesus take care of while He was dying?</span></li>
+      <li class="step"><span class="topic">Finished</span><span class="seed-q">What exactly did Jesus finish on the cross?</span></li>
+      <li class="step"><span class="topic">Courage</span><span class="seed-q">What brought two secret disciples out into the open?</span></li>
+    </ol>
+  </div>
+</section>
+
+<!-- ======================= PART ONE: BEHOLD THE MAN ======================= -->
+<section class="slide part">
+  <div class="inner">
+    <p class="part-n rise">Part one</p>
+    <h2 class="rise" style="--d:1">Behold the man</h2>
+    <p class="range rise" style="--d:2">Verses 1–16</p>
+    <div class="rule"></div>
+    <p class="hook rise" style="--d:4">The judge says “not guilty” three times, then sends Him to the cross.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="1-3" data-hl="scourged him|a crown of thorns|Hail, King of the Jews!"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="1-2" data-hl="scourged him|a crown of thorns"></blockquote>
+    <div class="split">
+      <div class="stage">
+        <svg class="jn19-crown" viewBox="0 0 400 250" role="img" aria-label="A ring of twisted branches weaves itself into a crown, and long thorns appear all around it.">
+          <path class="vine" pathLength="1" d="M50 135 C 50 100, 120 82, 200 83 C 290 84, 350 105, 350 135 C 350 168, 280 188, 200 187 C 110 186, 50 166, 50 135 Z"/>
+          <path class="vine b" pathLength="1" d="M58 128 C 80 98, 150 92, 205 92 C 280 94, 340 110, 344 142 C 336 170, 270 182, 196 180 C 120 178, 60 160, 58 128 Z"/>
+          <g class="thorns"><line x1="349" y1="142" x2="373" y2="142" style="--k:0"/><line x1="337" y1="156" x2="348" y2="170" style="--k:1"/><line x1="315" y1="169" x2="316" y2="193" style="--k:2"/><line x1="283" y1="178" x2="292" y2="193" style="--k:3"/><line x1="244" y1="185" x2="247" y2="209" style="--k:4"/><line x1="202" y1="187" x2="196" y2="204" style="--k:5"/><line x1="160" y1="185" x2="166" y2="208" style="--k:6"/><line x1="121" y1="179" x2="117" y2="197" style="--k:7"/><line x1="88" y1="170" x2="72" y2="188" style="--k:8"/><line x1="64" y1="157" x2="59" y2="174" style="--k:9"/><line x1="52" y1="143" x2="30" y2="153" style="--k:10"/><line x1="51" y1="128" x2="38" y2="117" style="--k:11"/><line x1="63" y1="114" x2="42" y2="101" style="--k:12"/><line x1="85" y1="101" x2="79" y2="85" style="--k:13"/><line x1="117" y1="92" x2="120" y2="68" style="--k:14"/><line x1="156" y1="85" x2="148" y2="69" style="--k:15"/><line x1="198" y1="83" x2="198" y2="59" style="--k:16"/><line x1="240" y1="85" x2="248" y2="69" style="--k:17"/><line x1="279" y1="91" x2="276" y2="67" style="--k:18"/><line x1="312" y1="100" x2="319" y2="84" style="--k:19"/><line x1="336" y1="113" x2="356" y2="99" style="--k:20"/><line x1="348" y1="127" x2="361" y2="114" style="--k:21"/></g>
+          <text class="curse" x="200" y="240" text-anchor="middle">“Thorns also and thistles”</text>
+        </svg>
+      </div>
+      <div>
+        <h2 class="rise" style="--d:1">A crown made of the curse</h2>
+        <p class="note rise" style="--d:2">John says it in a few plain words: Pilate <em>“scourged him.”</em> A Roman scourging was a brutal beating with a whip of leather straps. Some men didn't survive it.</p>
+        <blockquote class="quote step"><p>“But he was wounded for our transgressions, he was bruised for our iniquities: the chastisement of our peace was upon him; and with his stripes we are healed.”</p><cite>Isaiah 53:5</cite></blockquote>
+        <p class="note step">Then the soldiers mock Him as a king. But look at the crown. When sin came into the world, God said the ground would bring forth <em>“thorns also and thistles”</em> (Genesis 3:18). Thorns are the sign of the curse, and Jesus wears them on His head. <em>“Christ hath redeemed us from the curse of the law, being made a curse for us”</em> (Galatians 3:13).</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="slide verse" data-v="4-6" data-hl="I find no fault in him|Behold the man!|Crucify him, crucify him"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="5" data-hl="Behold the man!"></blockquote>
+    <h2 class="rise" style="--d:1">Not guilty, three times</h2>
+    <p class="note rise" style="--d:2">Pilate was the judge. Three times he gave his official verdict on Jesus:</p>
+    <div class="asks">
+      <div class="ask step"><span class="q">“I find in him no fault at all.”</span><span class="ctx">John 18:38</span><span class="stamp">No fault</span></div>
+      <div class="ask step"><span class="q">“I find no fault in him.”</span><span class="ctx">John 19:4</span><span class="stamp">No fault</span></div>
+      <div class="ask step"><span class="q">“…for I find no fault in him.”</span><span class="ctx">John 19:6</span><span class="stamp">No fault</span></div>
+    </div>
+    <p class="note step">That matters. The Passover lamb had to be <em>“without blemish”</em> (Exodus 12:5). A sacrifice with something wrong with it couldn't stand in for anyone. Jesus <em>“did no sin, neither was guile found in his mouth”</em> (1 Peter 2:22). He had no debt of His own to pay, so He could pay ours.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="7-9" data-hl="because he made himself the Son of God|he was the more afraid|Whence art thou?"></section>
+<section class="slide verse" data-v="10-12" data-hl="I have power to crucify thee, and have power to release thee|Thou couldest have no power at all against me, except it were given thee from above|thou art not Caesar’s friend"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="11" data-hl="Thou couldest have no power at all against me, except it were given thee from above"></blockquote>
+    <div class="split">
+      <div class="stage">
+        <svg class="scale" style="--tip:12deg; --wait:.2s" viewBox="0 0 600 330" role="img" aria-label="A balance scale. On one side, Pilate's power. On the other, power from above. The side from above goes down.">
+          <path d="M270 320 L330 320 L312 300 L288 300 Z" style="fill:var(--line-strong)"/>
+          <line x1="300" y1="300" x2="300" y2="70" stroke-width="8" style="stroke:var(--line-strong)"/>
+          <g class="scale-beam">
+            <line x1="80" y1="70" x2="520" y2="70" stroke-width="8" stroke-linecap="round" style="stroke:var(--ink-soft)"/>
+            <circle cx="300" cy="70" r="11" style="fill:var(--accent)"/>
+          </g>
+          <g class="scale-pan l">
+            <g stroke-width="2" style="stroke:var(--ink-soft)"><line x1="80" y1="70" x2="30" y2="190"/><line x1="80" y1="70" x2="130" y2="190"/></g>
+            <path d="M20 190 L140 190 Q130 220 80 220 Q30 220 20 190 Z" style="fill:var(--surface-2);stroke:var(--ink-soft)" stroke-width="2"/>
+            <rect x="62" y="150" width="36" height="40" rx="3" style="fill:var(--ink-soft)"/>
+            <path d="M58 150 L80 136 L102 150 Z" style="fill:var(--ink-soft)"/>
+            <text x="80" y="250" text-anchor="middle" font-size="18" style="fill:var(--ink-soft)">“I have power”</text>
+            <text x="80" y="272" text-anchor="middle" font-size="16" style="fill:var(--ink-soft)">Pilate, v. 10</text>
+          </g>
+          <g class="scale-pan r">
+            <g stroke-width="2" style="stroke:var(--ink-soft)"><line x1="520" y1="70" x2="470" y2="190"/><line x1="520" y1="70" x2="570" y2="190"/></g>
+            <path d="M460 190 L580 190 Q570 220 520 220 Q470 220 460 190 Z" style="fill:var(--surface-2);stroke:var(--accent)" stroke-width="2"/>
+            <circle cx="520" cy="166" r="28" style="fill:var(--accent)" opacity=".25"/>
+            <circle cx="520" cy="166" r="16" style="fill:var(--accent-hot)"/>
+            <text x="520" y="250" text-anchor="middle" font-size="20" font-weight="700" style="fill:var(--accent-hot)">“from above”</text>
+            <text x="520" y="272" text-anchor="middle" font-size="16" style="fill:var(--ink-soft)">Jesus, v. 11</text>
+          </g>
+        </svg>
+      </div>
+      <div>
+        <h2 class="rise" style="--d:1">Who has the power?</h2>
+        <p class="note rise" style="--d:2">Pilate tries to scare an answer out of Him: “Don't you know I have power to crucify you or let you go?”</p>
+        <p class="note step scale-go">Jesus, beaten and bleeding, calmly corrects the most powerful man in the province. Pilate's power was on loan from God, and only for as long as God allowed.</p>
+        <blockquote class="quote step"><p>“No man taketh it from me, but I lay it down of myself. I have power to lay it down, and I have power to take it again. This commandment have I received of my Father.”</p><cite>John 10:18</cite></blockquote>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="12" data-hl="If thou let this man go, thou art not Caesar’s friend"></blockquote>
+    <h2 class="rise" style="--d:1">Afraid of the wrong one</h2>
+    <p class="note rise" style="--d:2">Pilate knew Jesus was innocent. When he heard Jesus claimed to be the Son of God, <em>“he was the more afraid”</em> (v. 8). He tried to let Him go (v. 12).</p>
+    <p class="note step">Then the crowd found his pressure point: his job. One report to Rome that he'd let a “king” go free, and Pilate was finished. So he did what he knew was wrong to keep the people around him happy.</p>
+    <blockquote class="quote step"><p>“The fear of man bringeth a snare: but whoso putteth his trust in the LORD shall be safe.”</p><cite>Proverbs 29:25</cite></blockquote>
+    <p class="note step">Most of us know that trap: going along with the crowd, the old friends, the people we don't want to disappoint, when we know better. Pilate's name has been tied to that choice for two thousand years.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="13-16" data-hl="Gabbatha|Behold your King!|We have no king but Caesar"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="14" data-hl="the preparation of the passover|Behold your King!"></blockquote>
+    <h2 class="rise" style="--d:1">Behold Him</h2>
+    <p class="note rise" style="--d:2">John's Gospel keeps telling us to <em>look</em> at Jesus. Put these three side by side:</p>
+    <ol class="signs rise" style="--d:3">
+      <li><b>“Behold the Lamb of God”</b>John the Baptist, 1:29</li>
+      <li><b>“Behold the man!”</b>Pilate, 19:5</li>
+      <li class="now"><b>“Behold your King!”</b>Pilate, 19:14</li>
+    </ol>
+    <p class="note step">The Lamb, the Man, the King: Pilate spoke more truth than he knew.</p>
+    <p class="note step">And the chief priests answer, <em>“We have no king but Caesar.”</em> Israel's whole story was that the LORD was their King. To get rid of Jesus, their religious leaders said out loud that they had no king but a pagan emperor. And John tells us the day: the preparation of the Passover, when the lambs for the feast were being made ready.</p>
+  </div>
+</section>
+
+<!-- ======================= PART TWO: GOLGOTHA ======================= -->
+<section class="slide part">
+  <div class="inner">
+    <p class="part-n rise">Part two</p>
+    <h2 class="rise" style="--d:1">The place of a skull</h2>
+    <p class="range rise" style="--d:2">Verses 17–30</p>
+    <div class="rule"></div>
+    <p class="hook rise" style="--d:4">A crown of thorns, a cry of thirst, and one word that changed everything.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="17-18" data-hl="he bearing his cross|Golgotha|Jesus in the midst"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="17" data-hl="he bearing his cross went forth"></blockquote>
+    <div class="split">
+      <div class="stage">
+        <svg class="jn19-map" viewBox="0 0 600 380" role="img" aria-label="Sketch map. Jesus is led from Pilate's hall inside Jerusalem out through a gate to Golgotha, a hill beside a road just outside the city wall. A garden with a new tomb is close by.">
+          <path class="land" d="M20 20 H300 V360 H20 Z"/>
+          <path class="wall" d="M300 20 V170 M300 216 V360"/>
+          <rect class="gate" x="290" y="170" width="20" height="46" rx="3"/>
+          <text x="160" y="40" text-anchor="middle" font-size="18" font-weight="700" class="soft">Jerusalem</text>
+          <circle class="spot" cx="120" cy="250" r="9"/>
+          <text x="120" y="282" text-anchor="middle" font-size="17">Pilate's hall</text>
+          <text x="120" y="302" text-anchor="middle" font-size="14" class="soft">Gabbatha, “the Pavement”</text>
+          <path class="road" d="M310 193 C 400 190, 470 220, 590 330"/>
+          <text x="596" y="362" font-size="14" class="soft" text-anchor="end">the road</text>
+          <path class="hill" d="M370 140 C 380 90, 470 80, 490 140 Z"/>
+          <line class="cross" x1="430" y1="60" x2="430" y2="132"/><line class="cross" x1="414" y1="78" x2="446" y2="78"/>
+          <line class="cross" x1="398" y1="86" x2="398" y2="134" style="opacity:.55"/><line class="cross" x1="388" y1="98" x2="408" y2="98" style="opacity:.55"/>
+          <line class="cross" x1="462" y1="86" x2="462" y2="134" style="opacity:.55"/><line class="cross" x1="452" y1="98" x2="472" y2="98" style="opacity:.55"/>
+          <text x="500" y="128" font-size="18" font-weight="700">Golgotha</text>
+          <g class="tree"><circle cx="372" cy="262" r="12"/><circle cx="350" cy="276" r="12"/><circle cx="374" cy="288" r="12"/></g>
+          <path class="rock" d="M396 290 C 396 260, 466 258, 474 290 L474 310 H396 Z"/>
+          <circle class="door" cx="426" cy="296" r="12"/>
+          <text x="412" y="334" text-anchor="middle" font-size="15" class="soft">garden, new tomb</text>
+          <path class="walk" pathLength="1" d="M120 250 C 180 230, 250 200, 300 193 S 400 160, 425 135"/>
+          <text x="28" y="372" font-size="13" class="soft">A sketch: the exact spot is debated.</text>
+        </svg>
+      </div>
+      <div>
+        <h2 class="rise" style="--d:1">Outside the gate</h2>
+        <p class="note rise" style="--d:2">Condemned men carried their own cross beam to the place of execution. Jesus starts out <em>“bearing his cross”</em> (the other Gospels tell how Simon of Cyrene was made to carry it the rest of the way).</p>
+        <p class="note step jn19-walk-go">Golgotha was just outside the city wall, <em>“nigh to the city”</em> (v. 20), by a road where people passed by, with a garden close at hand (v. 41).</p>
+        <blockquote class="quote step"><p>“Wherefore Jesus also, that he might sanctify the people with his own blood, suffered without the gate.”</p><cite>Hebrews 13:12</cite></blockquote>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="18" data-hl="and two other with him, on either side one, and Jesus in the midst"></blockquote>
+    <h2 class="rise" style="--d:1">In the middle of sinners</h2>
+    <p class="note rise" style="--d:2">Jesus dies between two criminals, right where Isaiah said He would be: <em>“he was numbered with the transgressors; and he bare the sin of many”</em> (Isaiah 53:12).</p>
+    <p class="note step">Luke tells us one of those men, with nothing to offer, no time to clean up, and no way to make anything right, turned to Jesus:</p>
+    <blockquote class="quote step"><p>“And he said unto Jesus, Lord, remember me when thou comest into thy kingdom. And Jesus said unto him, Verily I say unto thee, To day shalt thou be with me in paradise.”</p><cite>Luke 23:42–43</cite></blockquote>
+    <p class="note step">No one is too far gone. That man's whole record was crime, and he was in paradise that same day, because he trusted the One dying next to him. Whosoever believes.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="19-22" data-hl="JESUS OF NAZARETH THE KING OF THE JEWS|Hebrew, and Greek, and Latin|What I have written I have written"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="20" data-hl="it was written in Hebrew, and Greek, and Latin"></blockquote>
+    <h2 class="rise" style="--d:1">A sign for the whole world</h2>
+    <p class="note rise" style="--d:2">Rome posted the crime above a crucified man. Pilate wrote Jesus' “crime” in three languages:</p>
+    <div class="tongues jn19-title">
+      <div class="rise" style="--d:3"><div class="w" lang="he">מֶלֶךְ הַיְּהוּדִים</div><div class="t">melekh ha-Yehudim</div><div class="l">Hebrew: the people of God</div></div>
+      <div class="rise" style="--d:5"><div class="w" lang="el">βασιλεὺς τῶν Ἰουδαίων</div><div class="t">basileus tōn Ioudaiōn</div><div class="l">Greek: the language of trade</div></div>
+      <div class="rise" style="--d:7"><div class="w" lang="la">REX IUDAEORUM</div><div class="t">rex Iudaeorum</div><div class="l">Latin: the language of Rome</div></div>
+    </div>
+    <p class="note step">Pilate meant it as an insult to the Jewish leaders. When they asked him to change it, he dug in: <em>“What I have written I have written.”</em></p>
+    <p class="note step">But God was using Pilate's pen. Over the cross, in the languages of religion, business, and government, it said the plain truth: this is the King.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="23-24" data-hl="the coat was without seam|They parted my raiment among them, and for my vesture they did cast lots"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="23" data-hl="made four parts, to every soldier a part|the coat was without seam"></blockquote>
+    <h2 class="rise" style="--d:1">Written a thousand years earlier</h2>
+    <div class="pair">
+      <div class="scroll rise" style="--d:2"><p class="ref">Psalm 22:18, David, about 1000 B.C.</p><p class="kjv">“They <mark>part my garments</mark> among them, and <mark>cast lots</mark> upon my vesture.”</p></div>
+      <div class="scroll step"><p class="ref">John 19:24, at the cross</p><p class="kjv">“Let us not rend it, but <mark>cast lots</mark> for it, whose it shall be.”</p></div>
+    </div>
+    <p class="note step">Four soldiers split His clothes four ways. The one good piece, a seamless coat, they gambled for. They had no idea they were acting out a psalm written centuries before crucifixion was even invented.</p>
+    <p class="note step">Psalm 22 opens with the words Jesus cried from the cross: “My God, my God, why hast thou forsaken me?” (Matthew 27:46). It reads like it was written standing at Golgotha.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="25-27" data-hl="there stood by the cross of Jesus his mother|Woman, behold thy son!|Behold thy mother!"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="26-27" data-hl="Woman, behold thy son!|Behold thy mother!"></blockquote>
+    <h2 class="rise" style="--d:1">Taking care of His mother</h2>
+    <p class="note rise" style="--d:2">Most of the men had run. A few women, and John, stayed close enough to hear Him.</p>
+    <div class="chains">
+      <div class="chain step"><span class="who-chip jesus">Jesus</span><span class="said">“Woman, behold thy son!”</span><span class="who-chip">Mary, His mother</span></div>
+      <div class="chain step"><span class="who-chip jesus">Jesus</span><span class="said">“Behold thy mother!”</span><span class="who-chip">John, the disciple He loved</span></div>
+      <div class="chain step"><span class="who-chip">John</span><span class="said">took her unto his own home, “from that hour”</span></div>
+    </div>
+    <p class="note step">Remember Cana? He called her <em>“Woman”</em> there too, and said His hour had not yet come (2:4). Now the hour has come, and with nails in His hands, His thoughts are on His mother's future.</p>
+    <p class="note step">Some of us left our families to fend for themselves. Jesus, in the worst pain a man can know, made sure His mother would be looked after. It's never too late to start owning your responsibilities. He'll help you do it.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="28-30" data-hl="I thirst|It is finished|gave up the ghost"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="28-29" data-hl="that the scripture might be fulfilled, saith, I thirst|put it upon hyssop"></blockquote>
+    <h2 class="rise" style="--d:1">“I thirst”</h2>
+    <p class="note rise" style="--d:2">The One who told a woman at a well that He could give <em>living water</em> (4:10), and who cried <em>“If any man thirst, let him come unto me, and drink”</em> (7:37), is thirsty Himself.</p>
+    <p class="note step">Even this was written: <em>“in my thirst they gave me vinegar to drink”</em> (Psalm 69:21). And the sponge was lifted on <em>hyssop</em>, the same plant Israel used to put the Passover lamb's blood on their doorposts (Exodus 12:22).</p>
+    <p class="note step">He went thirsty so that we never have to. Whatever you've been drinking to fill the dry place, He is the water that actually satisfies.</p>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="30" data-hl="It is finished|he bowed his head, and gave up the ghost"></blockquote>
+    <div class="morph rise" style="--d:1">
+      <span class="big">τετέλεσται</span>
+      <span class="say">teh-TEL-es-tie</span>
+      <span class="means">“It is finished”</span>
+    </div>
+    <p class="note rise" style="--d:2">In Greek, “It is finished” is one word, <span class="gk">tetelestai</span>. It means something is done, completed, carried all the way to its end. The same word turns up in old business papers for a bill that has been <em>paid</em>.</p>
+    <ul class="nots">
+      <li class="step"><span class="k">“I'm finished”</span><span class="why">(a man beaten and giving up)</span></li>
+      <li class="step"><span class="k">“I've started it; now you finish it”</span><span class="why">(a down payment you have to keep up)</span></li>
+      <li class="step yes"><span class="k">“It is finished: the debt is paid in full”</span></li>
+    </ul>
+    <p class="note step">Then He <em>“bowed his head, and gave up the ghost.”</em> No one took His life. He handed it over, when the work was done.</p>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise">Paid in full</h2>
+    <p class="note rise" style="--d:1">Picture the bill with your name on it.</p>
+    <div class="jn19-ledger rise" style="--d:2">
+      <h3>Against us (Colossians 2:14)</h3>
+      <ul>
+        <li style="--k:0"><span>Every lie I told</span><span>owed</span></li>
+        <li style="--k:1"><span>Every drunk and every high</span><span>owed</span></li>
+        <li style="--k:2"><span>Every person I hurt</span><span>owed</span></li>
+        <li style="--k:3"><span>Every promise I broke</span><span>owed</span></li>
+        <li style="--k:4"><span>Every secret I kept</span><span>owed</span></li>
+      </ul>
+      <div class="total"><span>Balance due</span><b>more than I can pay</b></div>
+      <div class="jn19-stamp">TETELESTAI<small>paid in full</small></div>
+    </div>
+    <blockquote class="quote step jn19-paid"><p>“Blotting out the handwriting of ordinances that was against us, which was contrary to us, and took it out of the way, nailing it to his cross;”</p><cite>Colossians 2:14</cite></blockquote>
+    <blockquote class="quote step"><p>“For he hath made him to be sin for us, who knew no sin; that we might be made the righteousness of God in him.”</p><cite>2 Corinthians 5:21</cite></blockquote>
+    <p class="note step">On the cross, Jesus took our sin as if it were His own and paid for it in full. That's why a believer is secure: there's nothing left on the bill for anyone to collect. <em>“By one offering he hath perfected for ever them that are sanctified”</em> (Hebrews 10:14).</p>
+  </div>
+</section>
+
+<!-- ======================= PART THREE: THE BURIAL ======================= -->
+<section class="slide part">
+  <div class="inner">
+    <p class="part-n rise">Part three</p>
+    <h2 class="rise" style="--d:1">Laid in a garden</h2>
+    <p class="range rise" style="--d:2">Verses 31–42</p>
+    <div class="rule"></div>
+    <p class="hook rise" style="--d:4">Not one bone broken, and two secret disciples finally step into the light.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="31-33" data-hl="that their legs might be broken|they brake not his legs"></section>
+<section class="slide verse" data-v="34-37" data-hl="forthwith came there out blood and water|that ye might believe|A bone of him shall not be broken|They shall look on him whom they pierced"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="36-37"></blockquote>
+    <h2 class="rise" style="--d:1">Every word kept</h2>
+    <p class="note rise" style="--d:2">The sabbath began at sundown, so the leaders wanted the bodies down. Breaking the legs made death come quickly. But Jesus was already dead. A spear to the side proved it, and John stood there and saw it (v. 35).</p>
+    <p class="note step">Count what John has shown us came true at the cross, written hundreds of years before:</p>
+    <ol class="jn19-done">
+      <li class="step"><span class="tick">✓</span><q>They part my garments among them, and cast lots upon my vesture.</q><span class="old">Psalm 22:18</span><span class="jn">19:23–24</span></li>
+      <li class="step"><span class="tick">✓</span><q>in my thirst they gave me vinegar to drink</q><span class="old">Psalm 69:21</span><span class="jn">19:28–29</span></li>
+      <li class="step"><span class="tick">✓</span><q>neither shall ye break a bone thereof</q><span class="old">Exodus 12:46, the Passover lamb; also Psalm 34:20</span><span class="jn">19:33, 36</span></li>
+      <li class="step"><span class="tick">✓</span><q>they shall look upon me whom they have pierced</q><span class="old">Zechariah 12:10</span><span class="jn">19:34, 37</span></li>
+    </ol>
+    <p class="note step">Soldiers gambling, a sponge of vinegar, legs not broken, a spear thrust: none of these men were trying to fulfill anything. The cross wasn't an accident or a tragedy that got out of hand. It was God's plan, kept to the letter.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="38-40" data-hl="but secretly for fear of the Jews|which at the first came to Jesus by night|about an hundred pound weight"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="39" data-hl="which at the first came to Jesus by night"></blockquote>
+    <h2 class="rise" style="--d:1">Out of the shadows</h2>
+    <p class="note rise" style="--d:2">Two respected members of the ruling council. Both believed in Jesus. Both had kept it quiet. Watch Nicodemus across John's Gospel:</p>
+    <div class="jn19-steps">
+      <div class="s0 step" style="--k:0"><i>John 3:2</i><b>By night</b>Comes to Jesus in the dark, where no one can see.</div>
+      <div class="s1 step" style="--k:1"><i>John 7:50–51</i><b>A careful word</b>“Doth our law judge any man, before it hear him?”</div>
+      <div class="s2 step" style="--k:2"><i>John 19:39</i><b>In the open</b>Carries a king's burial in spices to the cross, in daylight, for everyone to see.</div>
+    </div>
+    <div class="math step">
+      <div><b>100 pounds</b><span>Roman pounds of myrrh and aloes</span></div>
+      <div><b>≈ 70 lb</b><span>in today's weight</span></div>
+    </div>
+    <p class="note step">Joseph too: Mark says he <em>“went in boldly unto Pilate”</em> (Mark 15:43). The cross did what three years of miracles hadn't: it brought them out. Coming into the light can take time. It's still worth doing.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="41-42" data-hl="in the garden a new sepulchre, wherein was never man yet laid"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="41" data-hl="in the garden a new sepulchre, wherein was never man yet laid"></blockquote>
+    <h2 class="rise" style="--d:1">From garden to garden</h2>
+    <ol class="signs rise" style="--d:2">
+      <li><b>Eden</b>Genesis 3: where sin came in</li>
+      <li><b>A garden over the Kidron</b>John 18:1: where He gave Himself up</li>
+      <li class="now"><b>A garden with a new tomb</b>John 19:41: where He was laid</li>
+      <li><b>The same garden, three days later</b>John 20:15: keep reading</li>
+    </ol>
+    <p class="note step">Sin started in a garden. The cure was finished on a cross and laid in a garden. Isaiah even said He would be <em>“with the rich in his death”</em> (Isaiah 53:9), and here He is, in a rich man's brand-new tomb.</p>
+    <p class="note step">The chapter ends with a stone and a body and a lot of grieving people. If that's where you are right now, hold on. Friday is not the end of this story.</p>
+  </div>
+</section>
+
+<!-- ======================= CLOSING ======================= -->
+<section class="slide remember">
+  <div class="inner">
+    <h2 class="rise">Points to remember</h2>
+    <ol class="seeds">
+      <li class="step"><span class="topic">In our place</span><span class="seed-q">“I find no fault in him” <cite>19:4</cite></span><span class="take">He had no sin of His own, so He could die for ours.</span></li>
+      <li class="step"><span class="topic">Who's in charge</span><span class="seed-q">“Except it were given thee from above” <cite>19:11</cite></span><span class="take">Pilate's power was borrowed. Jesus laid down His life Himself.</span></li>
+      <li class="step"><span class="topic">God's word</span><span class="seed-q">“That the scripture might be fulfilled” <cite>19:24</cite></span><span class="take">Scripture written centuries earlier came true to the letter. The cross was the plan.</span></li>
+      <li class="step"><span class="topic">Family</span><span class="seed-q">“Woman, behold thy son!” <cite>19:26</cite></span><span class="take">Even dying, Jesus took care of His mother.</span></li>
+      <li class="step"><span class="topic">Finished</span><span class="seed-q">“It is finished” <cite>19:30</cite></span><span class="take">Our debt is paid in full. Nothing is left to add.</span></li>
+      <li class="step"><span class="topic">Courage</span><span class="seed-q">“Which at the first came to Jesus by night” <cite>19:39</cite></span><span class="take">The cross brought two secret believers into the open. It can do that for us.</span></li>
+    </ol>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 1 of 6</p>
+      <span class="topic">In our place</span>
+      <h2>Why did a man with no fault die on a cross?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="4" data-hl="I find no fault in him"></blockquote>
+      <blockquote class="quote step"><p>“But he was wounded for our transgressions, he was bruised for our iniquities: the chastisement of our peace was upon him; and with his stripes we are healed.”</p><cite>Isaiah 53:5</cite></blockquote>
+      <blockquote class="quote step"><p>“But God commendeth his love toward us, in that, while we were yet sinners, Christ died for us.”</p><cite>Romans 5:8</cite></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>He didn't die for anything He had done. He died for what we had done. Pilate found no fault in Him, and that's exactly why He could stand in our place, like a lamb without blemish. He was wounded for our sins, and by His stripes we are healed. That's how much God loves sinners.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 2 of 6</p>
+      <span class="topic">Who's in charge</span>
+      <h2>Who really had the power in Pilate's hall?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="10" data-hl="knowest thou not that I have power to crucify thee"></blockquote>
+      <blockquote class="quote step" data-q="11" data-hl="Thou couldest have no power at all against me, except it were given thee from above"></blockquote>
+      <blockquote class="quote step"><p>“No man taketh it from me, but I lay it down of myself. I have power to lay it down, and I have power to take it again. This commandment have I received of my Father.”</p><cite>John 10:18</cite></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>Not Pilate. His power was only what God allowed him. And the crowd only had the power to scare Pilate. Jesus was the one in charge: He laid His life down of Himself, and He had power to take it again.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 3 of 6</p>
+      <span class="topic">God's word</span>
+      <h2>How do we know the cross was God's plan and not an accident?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="24" data-hl="that the scripture might be fulfilled"></blockquote>
+      <blockquote class="quote step" data-q="28" data-hl="knowing that all things were now accomplished"></blockquote>
+      <blockquote class="quote step" data-q="36-37" data-hl="that the scripture should be fulfilled"></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>God wrote it down ahead of time. The garments and the lots, the vinegar, the bones left unbroken, the pierced side: all of it was in the Scriptures hundreds of years before, and men who had never read them carried it out. Jesus knew everything was being accomplished. Nothing about the cross got away from God.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 4 of 6</p>
+      <span class="topic">Family</span>
+      <h2>Who did Jesus take care of while He was dying?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="25" data-hl="there stood by the cross of Jesus his mother"></blockquote>
+      <blockquote class="quote step" data-q="26" data-hl="Woman, behold thy son!"></blockquote>
+      <blockquote class="quote step" data-q="27" data-hl="that disciple took her unto his own home"></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>His mother. He gave her to John to be her son, and John to her, and John took her home that very hour. And while He was at it, Luke tells us He promised paradise to a dying thief. On the cross Jesus was carrying the sin of the world, and He still took care of the people right in front of Him.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 5 of 6</p>
+      <span class="topic">Finished</span>
+      <h2>What exactly did Jesus finish on the cross?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="30" data-hl="It is finished"></blockquote>
+      <blockquote class="quote step"><p>“Blotting out the handwriting of ordinances that was against us, which was contrary to us, and took it out of the way, nailing it to his cross;”</p><cite>Colossians 2:14</cite></blockquote>
+      <blockquote class="quote step"><p>“But this man, after he had offered one sacrifice for sins for ever, sat down on the right hand of God;”</p><cite>Hebrews 10:12</cite></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>The payment for sin. Everything that stood against us was nailed to His cross and paid in full. It's one sacrifice, for ever, and He sat down because the work was done. We don't add to it. We receive it by faith, and nobody can send us a bill again.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 6 of 6</p>
+      <span class="topic">Courage</span>
+      <h2>What brought two secret disciples out into the open?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="38" data-hl="but secretly for fear of the Jews"></blockquote>
+      <blockquote class="quote step" data-q="39" data-hl="which at the first came to Jesus by night"></blockquote>
+      <blockquote class="quote step"><p>“Joseph of Arimathaea, an honourable counsellor, which also waited for the kingdom of God, came, and went in boldly unto Pilate, and craved the body of Jesus.”</p><cite>Mark 15:43</cite></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>The cross. Joseph and Nicodemus had believed quietly for fear of what it would cost them. But after they watched Jesus die, they went boldly to Pilate and buried Him in the open, where everyone could see whose side they were on. Seeing what He did for us is what gives us the courage to stand up for Him.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide prayer">
+  <div class="inner">
+    <div class="emblem rise"></div>
+    <h2 class="rise">Prayer requests</h2>
+    <p class="ask-line rise" style="--d:1">What can we pray about for you today?</p>
+    <blockquote class="quote rise" style="--d:3"><p>“Let us therefore come boldly unto the throne of grace, that we may obtain mercy, and find grace to help in time of need.”</p><cite>Hebrews 4:16</cite></blockquote>
+  </div>
+</section>
+
+</main>
+
+<script>
+// King James Version, John chapter 19
+const V = {
+  1: "Then Pilate therefore took Jesus, and scourged him.",
+  2: "And the soldiers platted a crown of thorns, and put it on his head, and they put on him a purple robe,",
+  3: "And said, Hail, King of the Jews! and they smote him with their hands.",
+  4: "Pilate therefore went forth again, and saith unto them, Behold, I bring him forth to you, that ye may know that I find no fault in him.",
+  5: "Then came Jesus forth, wearing the crown of thorns, and the purple robe. And Pilate saith unto them, Behold the man!",
+  6: "When the chief priests therefore and officers saw him, they cried out, saying, Crucify him, crucify him. Pilate saith unto them, Take ye him, and crucify him: for I find no fault in him.",
+  7: "The Jews answered him, We have a law, and by our law he ought to die, because he made himself the Son of God.",
+  8: "When Pilate therefore heard that saying, he was the more afraid;",
+  9: "And went again into the judgment hall, and saith unto Jesus, Whence art thou? But Jesus gave him no answer.",
+  10: "Then saith Pilate unto him, Speakest thou not unto me? knowest thou not that I have power to crucify thee, and have power to release thee?",
+  11: "Jesus answered, Thou couldest have no power at all against me, except it were given thee from above: therefore he that delivered me unto thee hath the greater sin.",
+  12: "And from thenceforth Pilate sought to release him: but the Jews cried out, saying, If thou let this man go, thou art not Caesar’s friend: whosoever maketh himself a king speaketh against Caesar.",
+  13: "When Pilate therefore heard that saying, he brought Jesus forth, and sat down in the judgment seat in a place that is called the Pavement, but in the Hebrew, Gabbatha.",
+  14: "And it was the preparation of the passover, and about the sixth hour: and he saith unto the Jews, Behold your King!",
+  15: "But they cried out, Away with him, away with him, crucify him. Pilate saith unto them, Shall I crucify your King? The chief priests answered, We have no king but Caesar.",
+  16: "Then delivered he him therefore unto them to be crucified. And they took Jesus, and led him away.",
+  17: "And he bearing his cross went forth into a place called the place of a skull, which is called in the Hebrew Golgotha:",
+  18: "Where they crucified him, and two other with him, on either side one, and Jesus in the midst.",
+  19: "And Pilate wrote a title, and put it on the cross. And the writing was, JESUS OF NAZARETH THE KING OF THE JEWS.",
+  20: "This title then read many of the Jews: for the place where Jesus was crucified was nigh to the city: and it was written in Hebrew, and Greek, and Latin.",
+  21: "Then said the chief priests of the Jews to Pilate, Write not, The King of the Jews; but that he said, I am King of the Jews.",
+  22: "Pilate answered, What I have written I have written.",
+  23: "Then the soldiers, when they had crucified Jesus, took his garments, and made four parts, to every soldier a part; and also his coat: now the coat was without seam, woven from the top throughout.",
+  24: "They said therefore among themselves, Let us not rend it, but cast lots for it, whose it shall be: that the scripture might be fulfilled, which saith, They parted my raiment among them, and for my vesture they did cast lots. These things therefore the soldiers did.",
+  25: "Now there stood by the cross of Jesus his mother, and his mother’s sister, Mary the wife of Cleophas, and Mary Magdalene.",
+  26: "When Jesus therefore saw his mother, and the disciple standing by, whom he loved, he saith unto his mother, Woman, behold thy son!",
+  27: "Then saith he to the disciple, Behold thy mother! And from that hour that disciple took her unto his own home.",
+  28: "After this, Jesus knowing that all things were now accomplished, that the scripture might be fulfilled, saith, I thirst.",
+  29: "Now there was set a vessel full of vinegar: and they filled a spunge with vinegar, and put it upon hyssop, and put it to his mouth.",
+  30: "When Jesus therefore had received the vinegar, he said, It is finished: and he bowed his head, and gave up the ghost.",
+  31: "The Jews therefore, because it was the preparation, that the bodies should not remain upon the cross on the sabbath day, (for that sabbath day was an high day,) besought Pilate that their legs might be broken, and that they might be taken away.",
+  32: "Then came the soldiers, and brake the legs of the first, and of the other which was crucified with him.",
+  33: "But when they came to Jesus, and saw that he was dead already, they brake not his legs:",
+  34: "But one of the soldiers with a spear pierced his side, and forthwith came there out blood and water.",
+  35: "And he that saw it bare record, and his record is true: and he knoweth that he saith true, that ye might believe.",
+  36: "For these things were done, that the scripture should be fulfilled, A bone of him shall not be broken.",
+  37: "And again another scripture saith, They shall look on him whom they pierced.",
+  38: "And after this Joseph of Arimathaea, being a disciple of Jesus, but secretly for fear of the Jews, besought Pilate that he might take away the body of Jesus: and Pilate gave him leave. He came therefore, and took the body of Jesus.",
+  39: "And there came also Nicodemus, which at the first came to Jesus by night, and brought a mixture of myrrh and aloes, about an hundred pound weight.",
+  40: "Then took they the body of Jesus, and wound it in linen clothes with the spices, as the manner of the Jews is to bury.",
+  41: "Now in the place where he was crucified there was a garden; and in the garden a new sepulchre, wherein was never man yet laid.",
+  42: "There laid they Jesus therefore because of the Jews’ preparation day; for the sepulchre was nigh at hand."
+};
+const BOOK = "John 19";
+</script>
+<script src="../assets/deck.js"></script>
+</body>
+</html>

@@ -1,0 +1,548 @@
+<!doctype html>
+<html lang="en" data-theme="scribe">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>John 15</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="../assets/fonts.css">
+<link rel="stylesheet" href="../assets/deck.css">
+<link rel="stylesheet" href="../assets/themes.css">
+<style>
+/* A vine with sap running out to every branch, and fruit on each one (svg.jn15-vine).
+   .jn15-sap flows while the slide is open; .jn15-grapes swell in; a .jn15-cut-go step shows the .jn15-off branch, cut off and bare. */
+.jn15-trunk { fill: none; stroke: var(--leather); stroke-width: 24; stroke-linecap: round; }
+.jn15-branch { fill: none; stroke: var(--leather-light); stroke-width: 10; stroke-linecap: round; }
+.jn15-sap { fill: none; stroke: var(--glow); stroke-width: 3.5; stroke-linecap: round; stroke-dasharray: 5 15; opacity: 0; transition: opacity .8s ease .4s; }
+.slide.active .jn15-sap { opacity: .95; animation: jn15-flow 1.4s linear infinite; }
+@keyframes jn15-flow { to { stroke-dashoffset: -40; } }
+.jn15-leaf { fill: color-mix(in srgb, var(--cool) 55%, var(--warm)); stroke: var(--bg); stroke-width: 1.5; }
+.jn15-grapes circle { fill: var(--wine); stroke: var(--bg); stroke-width: 1.5; }
+.jn15-grapes { transform-box: fill-box; transform-origin: 50% 0%; transform: scale(0); transition: transform 1s cubic-bezier(.3,1.5,.5,1); transition-delay: calc(var(--k, 0) * 260ms + 900ms); }
+.slide.active .jn15-grapes { transform: scale(1); }
+.jn15-off { opacity: 0; transition: opacity 1s ease; }
+.jn15-off path { fill: none; stroke: var(--line-strong); stroke-width: 10; stroke-linecap: round; }
+.slide:has(.jn15-cut-go.on) .jn15-off { opacity: 1; }
+.jn15-label { font-size: 17px; fill: var(--ink-soft); }
+.jn15-label.big { font-size: 20px; font-weight: 700; fill: var(--accent-hot); }
+
+/* A branch pruned (svg.jn15-prune): a .jn15-prune-go step drops the .jn15-shoot suckers and swells the .jn15-crop */
+.jn15-shoot { fill: none; stroke: var(--leather-light); stroke-width: 5; stroke-linecap: round; transition: transform 1.2s ease, opacity 1.2s ease; transform-box: fill-box; transform-origin: 50% 100%; }
+.jn15-snip { stroke: var(--danger); stroke-width: 3; opacity: 0; transition: opacity .4s ease; }
+.slide:has(.jn15-prune-go.on) .jn15-snip { opacity: 1; }
+.slide:has(.jn15-prune-go.on) .jn15-shoot { transform: translateY(60px) rotate(25deg); opacity: 0; transition-delay: .5s; }
+.jn15-crop { transform-box: fill-box; transform-origin: 50% 0%; transition: transform 1.4s cubic-bezier(.3,1.4,.5,1) 1.4s; }
+.slide:has(.jn15-prune-go.on) .jn15-crop { transform: scale(1.9); }
+
+/* A word counted through a passage: a chip per verse, lit where the word appears (div.jn15-count) */
+.jn15-count { display: grid; grid-template-columns: repeat(13, 1fr); gap: 5px; margin: .4em 0 1em; }
+.jn15-count span { text-align: center; padding: .35em 0 .3em; border-radius: 6px; border: 1.5px solid var(--line); color: var(--ink-soft); font-size: clamp(.75rem, .7rem + .3vw, 1rem); }
+.jn15-count span i { display: block; font-style: normal; font: 700 clamp(1rem, .85rem + .7vw, 1.6rem)/1.1 var(--serif); color: var(--line-strong); }
+.jn15-count span.hit { border-color: var(--accent); background: color-mix(in srgb, var(--accent) 12%, transparent); color: var(--ink); opacity: 0; transition: opacity .5s ease; transition-delay: calc(var(--k) * 160ms + 400ms); }
+.jn15-count span.hit i { color: var(--accent-hot); }
+.slide.active .jn15-count span.hit { opacity: 1; }
+@media (max-width: 600px) { .jn15-count { grid-template-columns: repeat(7, 1fr); } }
+</style>
+</head>
+<body>
+<main class="deck" id="deck">
+
+<!-- ======================= OPENING ======================= -->
+<section class="slide title">
+  <div class="inner">
+    <div class="emblem rise"></div>
+    <h1 class="rise" style="--d:1">John 15</h1>
+    <p class="sub rise" style="--d:3">The vine and the branches</p>
+    <p class="tag rise" style="--d:5">On the way to the garden, Jesus tells His men how to stay connected to Him, how much He loves them, and what the world will think of them.</p>
+  </div>
+</section>
+
+<section class="slide watch">
+  <div class="inner">
+    <h2 class="rise">Things to watch for</h2>
+    <p class="lede rise" style="--d:1">Keep these questions in the back of your mind as we read. We'll come back to every one of them at the end.</p>
+    <ol class="seeds">
+      <li class="step"><span class="topic">Who Jesus is</span><span class="seed-q">What does it mean that Jesus is the true vine?</span></li>
+      <li class="step"><span class="topic">Abiding</span><span class="seed-q">Where does a branch get the power to bear fruit?</span></li>
+      <li class="step"><span class="topic">Pruning</span><span class="seed-q">Why does the Father prune a branch that already bears fruit?</span></li>
+      <li class="step"><span class="topic">His love</span><span class="seed-q">How great is Jesus' love for us?</span></li>
+      <li class="step"><span class="topic">Friendship</span><span class="seed-q">What's the difference between a servant and a friend of Jesus?</span></li>
+      <li class="step"><span class="topic">The world</span><span class="seed-q">Why does the world hate those who follow Jesus?</span></li>
+    </ol>
+  </div>
+</section>
+
+<!-- ======================= PART ONE ======================= -->
+<section class="slide part">
+  <div class="inner">
+    <p class="part-n rise">Part one</p>
+    <h2 class="rise" style="--d:1">The true vine</h2>
+    <p class="range rise" style="--d:2">Verses 1–8</p>
+    <p class="hook rise" style="--d:4">A branch has one job: stay on the vine.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="1-3" data-hl="I am the true vine, and my Father is the husbandman|Now ye are clean through the word"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="1" data-hl="I am the true vine"></blockquote>
+    <h2 class="rise" style="--d:1">The last of seven “I am”s</h2>
+    <p class="note rise" style="--d:2">Seven times in John, Jesus takes God's own name, “I AM” (Exodus 3:14), and finishes the sentence with a picture of what He is to us. This is the seventh:</p>
+    <ol class="signs rise" style="--d:3">
+      <li><b>The bread of life</b>John 6:35</li>
+      <li><b>The light of the world</b>John 8:12</li>
+      <li><b>The door</b>John 10:9</li>
+      <li><b>The good shepherd</b>John 10:11</li>
+      <li><b>The resurrection and the life</b>John 11:25</li>
+      <li><b>The way, the truth, and the life</b>John 14:6</li>
+      <li class="now"><b>The true vine</b>John 15:1</li>
+    </ol>
+    <p class="note step">Why <em>“true”</em>? In the Old Testament, Israel was God's vine, and it kept letting Him down:</p>
+    <blockquote class="quote step"><p>“For the vineyard of the LORD of hosts is the house of Israel, and the men of Judah his pleasant plant: and he looked for judgment, but behold oppression; for righteousness, but behold a cry.”</p><cite>Isaiah 5:7</cite></blockquote>
+    <p class="note step">Jesus is the vine that never fails. The <em>husbandman</em> is the farmer, the vinedresser. That's the Father, and He tends every branch Himself.</p>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="2" data-hl="he taketh away|he purgeth it"></blockquote>
+    <h2 class="rise" style="--d:1">What the farmer does with a branch</h2>
+    <div class="morph rise" style="--d:2"><span class="big">airo</span><span class="say">EYE-roh</span><span class="means">to lift up, or to take away</span></div>
+    <p class="note rise" style="--d:3">The word behind <em>“taketh away”</em> usually means <em>to lift up</em>. John uses it twice in one verse at Lazarus' tomb: “they took away the stone,” and Jesus “lifted up his eyes” (11:41).</p>
+    <p class="note step">That fits a vineyard. A vine branch that trails in the dirt gets moldy and won't bear grapes, so many Bible teachers point out that a vinedresser lifts it up off the ground and props it in the sun where it can bear fruit. Either way, the Father doesn't ignore a fruitless branch. He deals with it.</p>
+    <p class="note step">Notice who is talking: Jesus is speaking to eleven men who already belong to Him. Judas has already walked out into the night (13:30). This is a lesson about <em>fruit</em>, not about how a man gets saved.</p>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="2-3" data-hl="he purgeth it, that it may bring forth more fruit|Now ye are clean"></blockquote>
+    <div class="split">
+      <div class="stage">
+        <svg class="jn15-prune" viewBox="0 0 600 230" role="img" aria-label="A branch with many wild shoots. The shoots are cut away, and the grape cluster grows much bigger.">
+          <path d="M20 90 C 160 80, 300 100, 560 80" class="jn15-branch"/>
+          <path class="jn15-shoot" d="M140 86 C 130 50, 150 30, 135 8"/>
+          <path class="jn15-shoot" d="M250 90 C 265 55, 245 35, 262 10"/>
+          <path class="jn15-shoot" d="M360 90 C 350 60, 375 40, 360 15"/>
+          <path class="jn15-shoot" d="M470 86 C 485 55, 465 35, 480 12"/>
+          <g class="jn15-snip"><path d="M126 70 l22 -8 M240 74 l24 -6 M350 74 l22 -6 M462 70 l24 -8"/></g>
+          <ellipse class="jn15-leaf" cx="200" cy="74" rx="26" ry="14" transform="rotate(-20 200 74)"/>
+          <ellipse class="jn15-leaf" cx="420" cy="74" rx="26" ry="14" transform="rotate(18 420 74)"/>
+          <g transform="translate(300 90)"><g class="jn15-crop">
+            <path d="M0 0 v12" style="stroke:var(--leather-light);stroke-width:4"/>
+            <g class="jn15-grapes" style="--k:0">
+              <circle cx="-14" cy="20" r="8"/><circle cx="0" cy="20" r="8"/><circle cx="14" cy="20" r="8"/>
+              <circle cx="-7" cy="33" r="8"/><circle cx="7" cy="33" r="8"/><circle cx="0" cy="46" r="8"/>
+            </g>
+          </g></g>
+          <text class="jn15-label" x="20" y="225">less branch, more fruit</text>
+        </svg>
+      </div>
+      <div>
+        <h2 class="rise" style="--d:1">Pruned to bear more</h2>
+        <p class="note rise" style="--d:2">A healthy vine throws out shoots everywhere, and they soak up the strength the grapes need.</p>
+        <p class="note step jn15-prune-go">So the vinedresser cuts them back. It looks like loss, but it's how a good branch becomes a great one.</p>
+        <p class="note step"><em>“Purgeth”</em> and <em>“clean”</em> (v. 3) come from the same Greek word. Hard seasons aren't the Father throwing a believer away. They're His hands on the branch.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="slide verse" data-v="4-6" data-hl="Abide in me, and I in you|for without me ye can do nothing"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="5" data-hl="I am the vine, ye are the branches|for without me ye can do nothing"></blockquote>
+    <div class="split">
+      <div class="stage">
+        <svg class="jn15-vine" viewBox="0 0 600 420" role="img" aria-label="A vine with life flowing from the trunk out to four branches, each heavy with grapes. A branch lying cut off has nothing.">
+          <path class="jn15-trunk" d="M300 410 C 300 340, 288 290, 298 220 C 306 160, 296 120, 300 70"/>
+          <path class="jn15-branch" d="M298 320 C 250 310, 190 318, 110 290"/>
+          <path class="jn15-branch" d="M300 250 C 360 240, 430 250, 500 220"/>
+          <path class="jn15-branch" d="M298 175 C 250 165, 190 162, 120 130"/>
+          <path class="jn15-branch" d="M300 110 C 345 95, 400 90, 470 66"/>
+          <path class="jn15-sap" d="M300 410 C 300 340, 288 290, 298 220 C 306 160, 296 120, 300 70"/>
+          <path class="jn15-sap" d="M298 320 C 250 310, 190 318, 110 290"/>
+          <path class="jn15-sap" d="M300 250 C 360 240, 430 250, 500 220"/>
+          <path class="jn15-sap" d="M298 175 C 250 165, 190 162, 120 130"/>
+          <path class="jn15-sap" d="M300 110 C 345 95, 400 90, 470 66"/>
+          <ellipse class="jn15-leaf" cx="190" cy="300" rx="24" ry="13" transform="rotate(-15 190 300)"/>
+          <ellipse class="jn15-leaf" cx="420" cy="232" rx="24" ry="13" transform="rotate(12 420 232)"/>
+          <ellipse class="jn15-leaf" cx="200" cy="152" rx="24" ry="13" transform="rotate(-20 200 152)"/>
+          <ellipse class="jn15-leaf" cx="400" cy="78" rx="24" ry="13" transform="rotate(15 400 78)"/>
+          <g transform="translate(112 296)"><g class="jn15-grapes" style="--k:0"><circle cx="-14" cy="8" r="9"/><circle cx="2" cy="8" r="9"/><circle cx="18" cy="8" r="9"/><circle cx="-6" cy="23" r="9"/><circle cx="10" cy="23" r="9"/><circle cx="2" cy="38" r="9"/></g></g>
+          <g transform="translate(498 226)"><g class="jn15-grapes" style="--k:1"><circle cx="-14" cy="8" r="9"/><circle cx="2" cy="8" r="9"/><circle cx="18" cy="8" r="9"/><circle cx="-6" cy="23" r="9"/><circle cx="10" cy="23" r="9"/><circle cx="2" cy="38" r="9"/></g></g>
+          <g transform="translate(122 136)"><g class="jn15-grapes" style="--k:2"><circle cx="-14" cy="8" r="9"/><circle cx="2" cy="8" r="9"/><circle cx="18" cy="8" r="9"/><circle cx="-6" cy="23" r="9"/><circle cx="10" cy="23" r="9"/><circle cx="2" cy="38" r="9"/></g></g>
+          <g transform="translate(468 72)"><g class="jn15-grapes" style="--k:3"><circle cx="-14" cy="8" r="9"/><circle cx="2" cy="8" r="9"/><circle cx="18" cy="8" r="9"/><circle cx="-6" cy="23" r="9"/><circle cx="10" cy="23" r="9"/><circle cx="2" cy="38" r="9"/></g></g>
+          <text class="jn15-label big" x="318" y="400">the vine</text>
+          <text class="jn15-label" x="30" y="250">the branches</text>
+          <g class="jn15-off">
+            <path d="M420 392 C 455 380, 500 388, 570 372"/>
+            <text class="jn15-label" x="430" y="360">“of itself”</text>
+          </g>
+        </svg>
+      </div>
+      <div>
+        <h2 class="rise" style="--d:1">The life is in the vine</h2>
+        <p class="note rise" style="--d:2">A branch doesn't strain to make grapes. It can't. The sap, the life, comes up from the vine, and the fruit just shows up on the branch.</p>
+        <p class="note step jn15-cut-go">Cut a branch off and set it on the ground. Same wood, same shape, and it will never grow a single grape. <em>“Without me ye can do nothing.”</em></p>
+        <p class="note step">A lot of us tried to fix our lives by willpower. It didn't work. That's not the plan. The plan is to stay connected to Jesus and let His life do in you what you never could do <em>of yourself</em>.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="4" data-hl="Abide in me|except it abide in the vine"></blockquote>
+    <h2 class="rise" style="--d:1">Abide: the word of the chapter</h2>
+    <p class="note rise" style="--d:2">Watch for it. <em>“Abide”</em> means to stay, to remain, to live somewhere. Here's where it shows up in verses 4 to 16:</p>
+    <div class="jn15-count rise" style="--d:3" aria-label="Verses 4 through 16, with abide, continue, or remain in verses 4, 5, 6, 7, 9, 10, 11, and 16">
+      <span class="hit" style="--k:0"><i>4</i>×3</span>
+      <span class="hit" style="--k:1"><i>5</i>×1</span>
+      <span class="hit" style="--k:2"><i>6</i>×1</span>
+      <span class="hit" style="--k:3"><i>7</i>×2</span>
+      <span><i>8</i>&nbsp;</span>
+      <span class="hit" style="--k:4"><i>9</i>×1</span>
+      <span class="hit" style="--k:5"><i>10</i>×2</span>
+      <span class="hit" style="--k:6"><i>11</i>×1</span>
+      <span><i>12</i>&nbsp;</span>
+      <span><i>13</i>&nbsp;</span>
+      <span><i>14</i>&nbsp;</span>
+      <span><i>15</i>&nbsp;</span>
+      <span class="hit" style="--k:7"><i>16</i>×1</span>
+    </div>
+    <p class="note step"><em>“Abide”</em> nine times, plus <em>“continue”</em> (v. 9) and <em>“remain”</em> (v. 11, 16), which are the same Greek word. Twelve times in thirteen verses.</p>
+    <p class="note step">Abiding isn't a feeling or a religious high. It's staying close day after day: in His word (v. 7), in prayer (v. 7), and in obedience (v. 10). The Spirit already lives in you. Abiding is living like it.</p>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="6" data-hl="If a man abide not in me|men gather them"></blockquote>
+    <h2 class="rise" style="--d:1">Can a believer be cut off and lost?</h2>
+    <p class="note rise" style="--d:2">No. Jesus has already settled that:</p>
+    <blockquote class="quote rise" style="--d:3"><p>“And I give unto them eternal life; and they shall never perish, neither shall any man pluck them out of my hand.”</p><cite>John 10:28</cite></blockquote>
+    <p class="note step">Bible teachers read verse 6 two ways. Neither says a saved man gets unsaved:</p>
+    <div class="columns">
+      <div class="col law step">
+        <h3>Only looked attached</h3>
+        <p>Judas walked with Jesus three years and never believed (6:64). No life ever flowed into him. That night he “went immediately out” (13:30).</p>
+      </div>
+      <div class="col grace step">
+        <h3>A wasted life</h3>
+        <p>It's <em>men</em> who gather and burn, not the Father. A believer who drifts loses his fruit and his testimony. His works can burn, “but he himself shall be saved; yet so as by fire” (1 Corinthians 3:15).</p>
+      </div>
+    </div>
+    <p class="note step">Either way: stay close to Jesus. You're held by His hand, not by your grip.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="7-8" data-hl="ye shall ask what ye will, and it shall be done unto you|that ye bear much fruit"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="7" data-hl="If ye abide in me, and my words abide in you"></blockquote>
+    <h2 class="rise" style="--d:1">Ask what ye will?</h2>
+    <p class="note rise" style="--d:2">This isn't a blank check for a new truck. Look at the “if”: <em>if</em> you abide in Him and <em>His words</em> abide in you. A man soaked in Jesus' words starts wanting what Jesus wants, and those are the prayers God loves to answer.</p>
+    <blockquote class="quote step"><p>“And this is the confidence that we have in him, that, if we ask any thing according to his will, he heareth us:”</p><cite>1 John 5:14</cite></blockquote>
+    <p class="note step">And what's the fruit (v. 8)? It's Christ's character growing in you, and other people coming to know Him through you:</p>
+    <blockquote class="quote step"><p>“But the fruit of the Spirit is love, joy, peace, longsuffering, gentleness, goodness, faith, Meekness, temperance: against such there is no law.”</p><cite>Galatians 5:22–23</cite></blockquote>
+  </div>
+</section>
+
+<!-- ======================= PART TWO ======================= -->
+<section class="slide part">
+  <div class="inner">
+    <p class="part-n rise">Part two</p>
+    <h2 class="rise" style="--d:1">Friends</h2>
+    <p class="range rise" style="--d:2">Verses 9–17</p>
+    <p class="hook rise" style="--d:4">The love that came down from the Father, and where it goes next.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="9-11" data-hl="As the Father hath loved me, so have I loved you|that your joy might be full"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="9" data-hl="As the Father hath loved me, so have I loved you"></blockquote>
+    <h2 class="rise" style="--d:1">Love that flows downhill</h2>
+    <div class="chains">
+      <div class="chain rise" style="--d:2"><span class="who-chip">The Father</span><span class="said">loved</span><span class="who-chip jesus">Jesus</span></div>
+      <div class="chain step"><span class="who-chip jesus">Jesus</span><span class="said">“so have I loved you”</span><span class="who-chip">His disciples</span></div>
+      <div class="chain step"><span class="who-chip">His disciples</span><span class="said">“love one another” (v. 12)</span><span class="who-chip">each other</span></div>
+    </div>
+    <p class="note step">Jesus loves you <em>the same way</em> the Father loves Him. Not a smaller, leftover love. You can't earn it, but you can <em>“continue”</em> in it: live inside it, by keeping His commandments the way He kept His Father's (v. 10).</p>
+    <p class="note step">And the point of it all (v. 11)? <em>“That your joy might be full.”</em> Jesus isn't trying to take your joy. He's trying to fill it.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="12-14" data-hl="Greater love hath no man than this, that a man lay down his life for his friends"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="13"></blockquote>
+    <p class="saying rise" style="--d:1"><em>Greater love</em> hath no man than this.</p>
+    <p class="note rise" style="--d:3">Jesus said this a few hours before He did it. By the next afternoon, He would lay His life down on a cross.</p>
+    <p class="note step">Most men would die for a friend, if it came to that. Jesus went further. He died for us while we were still against Him:</p>
+    <blockquote class="quote step"><p>“But God commendeth his love toward us, in that, while we were yet sinners, Christ died for us.”</p><cite>Romans 5:8</cite></blockquote>
+    <p class="note step">Whatever you've done, whatever you've been, that's the measure of how much He loves you.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="15-17" data-hl="but I have called you friends|Ye have not chosen me, but I have chosen you"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="15" data-hl="Henceforth I call you not servants|but I have called you friends"></blockquote>
+    <h2 class="rise" style="--d:1">Servant or friend?</h2>
+    <div class="columns">
+      <div class="col law rise" style="--d:2">
+        <p class="who">A servant</p>
+        <h3>Does what he's told</h3>
+        <p>He takes orders, but he “knoweth not what his lord doeth.” Nobody explains the plan to him.</p>
+      </div>
+      <div class="col grace step">
+        <p class="who">A friend</p>
+        <h3>Is let in on the plan</h3>
+        <p>He still obeys (v. 14), but he knows why. Jesus told these men everything the Father told Him.</p>
+      </div>
+    </div>
+    <p class="note step">Only one man in the Old Testament got that title:</p>
+    <blockquote class="quote step"><p>“And the scripture was fulfilled which saith, Abraham believed God, and it was imputed unto him for righteousness: and he was called the Friend of God.”</p><cite>James 2:23</cite></blockquote>
+    <p class="note step">In verse 16, <em>“I have chosen you, and ordained you”</em> is Jesus reminding the Eleven that He picked them for a job: to go and bear fruit that lasts (6:70). He calls; whosoever believes may come (3:16). And men who once were nobody's friend are now <em>His</em>.</p>
+  </div>
+</section>
+
+<!-- ======================= PART THREE ======================= -->
+<section class="slide part">
+  <div class="inner">
+    <p class="part-n rise">Part three</p>
+    <h2 class="rise" style="--d:1">When the world hates you</h2>
+    <p class="range rise" style="--d:2">Verses 18–27</p>
+    <p class="hook rise" style="--d:4">It hated Him first.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="18-21" data-hl="it hated me before it hated you|The servant is not greater than his lord"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="20" data-hl="If they have persecuted me, they will also persecute you|if they have kept my saying, they will keep yours also"></blockquote>
+    <h2 class="rise" style="--d:1">What happened to Him will happen to you</h2>
+    <div class="match" style="--n:3">
+      <div class="a rise" style="--d:2"><span class="tag">Him</span><span class="w">hated</span><span class="w">persecuted</span><span class="w">His saying kept</span></div>
+      <div class="step"><span></span><span class="link">first</span><span class="link">the same</span><span class="link">the same</span></div>
+      <div class="b step"><span class="tag">You</span><span class="w">hated</span><span class="w">persecuted</span><span class="w">your saying kept</span></div>
+    </div>
+    <p class="note step">If you've lost old friends since you started following Jesus, or the old crowd mocks you now, that isn't a sign you're doing it wrong. It's a sign you're <em>“not of the world”</em> anymore (v. 19).</p>
+    <p class="note step">But look at the last pair too. Some <em>will</em> keep your word, the same way some kept His. Keep telling it.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="22-25" data-hl="but now they have no cloke for their sin|They hated me without a cause"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="22" data-hl="no cloke for their sin"></blockquote>
+    <h2 class="rise" style="--d:1">No cloke</h2>
+    <p class="note rise" style="--d:2">A <em>cloke</em> is a cloak, a cover to hide under. Jesus means an excuse. These men had run out of them:</p>
+    <ul class="nots">
+      <li class="step"><span class="k">“Nobody ever told us.”</span><span class="why">He came and spoke to them (v. 22).</span></li>
+      <li class="step"><span class="k">“We never saw any proof.”</span><span class="why">He did works no other man ever did (v. 24).</span></li>
+      <li class="step"><span class="k">“He gave us a reason.”</span><span class="why">They hated Him without a cause (v. 25).</span></li>
+      <li class="step yes"><span class="k">No excuse left.</span><span class="why">Only the choice to hate Him, and the Father with Him (v. 23).</span></li>
+    </ul>
+    <blockquote class="quote step"><p>“They that hate me without a cause are more than the hairs of mine head: they that would destroy me, being mine enemies wrongfully, are mighty: then I restored that which I took not away.”</p><cite>Psalm 69:4</cite></blockquote>
+    <p class="note step">“Their law” here means their own Scriptures. David's psalm said the Messiah would be hated for nothing, and He was.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="26-27" data-hl="the Comforter|he shall testify of me|ye also shall bear witness"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="26" data-hl="the Comforter|the Spirit of truth|he shall testify of me"></blockquote>
+    <h2 class="rise" style="--d:1">You don't testify alone</h2>
+    <div class="morph rise" style="--d:2"><span class="big">parakletos</span><span class="say">pa-RAH-klay-toss</span><span class="means">one called to stand beside you</span></div>
+    <div class="chains">
+      <div class="chain step"><span class="who-chip">The Father</span><span class="said">sends, through Jesus</span><span class="who-chip">the Comforter</span></div>
+      <div class="chain step"><span class="who-chip">the Comforter</span><span class="said">testifies of</span><span class="who-chip jesus">Jesus</span></div>
+      <div class="chain step"><span class="who-chip">You</span><span class="said">“also shall bear witness”</span><span class="who-chip jesus">Jesus</span></div>
+    </div>
+    <p class="note step">When the world pushes back, you're not on your own. The Holy Spirit lives in every believer, and He's telling the same story you are. You just tell what you've seen Jesus do in your life. He does the convincing.</p>
+  </div>
+</section>
+
+<!-- ======================= CLOSING ======================= -->
+<section class="slide remember">
+  <div class="inner">
+    <h2 class="rise">Points to remember</h2>
+    <ol class="seeds">
+      <li class="step"><span class="topic">Who Jesus is</span><span class="seed-q">“I am the true vine” <cite>15:1</cite></span><span class="take">He's the vine that never fails. Every bit of real life in us comes from Him.</span></li>
+      <li class="step"><span class="topic">Abiding</span><span class="seed-q">“Without me ye can do nothing” <cite>15:5</cite></span><span class="take">Fruit comes from staying connected, not from trying harder.</span></li>
+      <li class="step"><span class="topic">Pruning</span><span class="seed-q">“He purgeth it, that it may bring forth more fruit” <cite>15:2</cite></span><span class="take">Hard seasons are the Father's hands on the branch, not His rejection.</span></li>
+      <li class="step"><span class="topic">His love</span><span class="seed-q">“Greater love hath no man than this” <cite>15:13</cite></span><span class="take">He laid down His life for us, and He loves us as the Father loves Him.</span></li>
+      <li class="step"><span class="topic">Friendship</span><span class="seed-q">“I have called you friends” <cite>15:15</cite></span><span class="take">He lets His friends in on what He's doing.</span></li>
+      <li class="step"><span class="topic">The world</span><span class="seed-q">“It hated me before it hated you” <cite>15:18</cite></span><span class="take">The world's hatred means you belong to Him now. Keep bearing witness.</span></li>
+    </ol>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 1 of 6</p>
+      <span class="topic">Who Jesus is</span>
+      <h2>What does it mean that Jesus is the true vine?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="1"></blockquote>
+      <blockquote class="quote step"><p>“For the vineyard of the LORD of hosts is the house of Israel, and the men of Judah his pleasant plant: and he looked for judgment, but behold oppression; for righteousness, but behold a cry.”</p><cite>Isaiah 5:7</cite></blockquote>
+      <blockquote class="quote step" data-q="5" data-hl="I am the vine, ye are the branches"></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>Israel was God's vine, and it failed to bear the fruit He looked for. Jesus is the real thing, the vine that never fails. All the life a believer has flows from Him, the way sap flows from the vine into every branch. And the Father Himself is the farmer who tends us.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 2 of 6</p>
+      <span class="topic">Abiding</span>
+      <h2>Where does a branch get the power to bear fruit?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="4" data-hl="As the branch cannot bear fruit of itself"></blockquote>
+      <blockquote class="quote step" data-q="5" data-hl="for without me ye can do nothing"></blockquote>
+      <blockquote class="quote step" data-q="7" data-hl="my words abide in you"></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>Not from itself. A branch can't make one grape on its own; the life comes from the vine. We bear fruit by abiding: staying close to Jesus in His word, in prayer, and in obedience. Willpower alone never changed a heart. His life in us does.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 3 of 6</p>
+      <span class="topic">Pruning</span>
+      <h2>Why does the Father prune a branch that already bears fruit?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="2" data-hl="he purgeth it, that it may bring forth more fruit"></blockquote>
+      <blockquote class="quote step" data-q="8" data-hl="that ye bear much fruit"></blockquote>
+      <blockquote class="quote step"><p>“Now no chastening for the present seemeth to be joyous, but grievous: nevertheless afterward it yieldeth the peaceable fruit of righteousness unto them which are exercised thereby.”</p><cite>Hebrews 12:11</cite></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>So it can bear more. Pruning cuts away the growth that soaks up strength without making fruit. It hurts at the time, but it's a sign the Father is working on a branch He cares about. Discipline isn't Him throwing us away. It's Him making us fruitful.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 4 of 6</p>
+      <span class="topic">His love</span>
+      <h2>How great is Jesus' love for us?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="9" data-hl="As the Father hath loved me, so have I loved you"></blockquote>
+      <blockquote class="quote step" data-q="13"></blockquote>
+      <blockquote class="quote step"><p>“But God commendeth his love toward us, in that, while we were yet sinners, Christ died for us.”</p><cite>Romans 5:8</cite></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>He loves us the way the Father loves Him, and He proved it by laying down His life. He didn't wait for us to clean up first. He died for us while we were still sinners. There is no greater love than that.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 5 of 6</p>
+      <span class="topic">Friendship</span>
+      <h2>What's the difference between a servant and a friend of Jesus?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="14"></blockquote>
+      <blockquote class="quote step" data-q="15" data-hl="the servant knoweth not what his lord doeth|all things that I have heard of my Father I have made known unto you"></blockquote>
+      <blockquote class="quote step"><p>“And the scripture was fulfilled which saith, Abraham believed God, and it was imputed unto him for righteousness: and he was called the Friend of God.”</p><cite>James 2:23</cite></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>A servant just takes orders and isn't told the plan. A friend still obeys, but he's let in on what his master is doing and why. Jesus calls believers His friends and tells us what the Father told Him. That's an honor no man earns.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 6 of 6</p>
+      <span class="topic">The world</span>
+      <h2>Why does the world hate those who follow Jesus?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="18"></blockquote>
+      <blockquote class="quote step" data-q="19" data-hl="because ye are not of the world"></blockquote>
+      <blockquote class="quote step" data-q="21" data-hl="because they know not him that sent me"></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>Because it hated Jesus first, and believers now belong to Him instead of the world. The world doesn't know the Father, so it can't stand the people who carry His Son's name. But we're not on our own: the Comforter testifies with us, and some will still believe.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide prayer">
+  <div class="inner">
+    <div class="emblem rise"></div>
+    <h2 class="rise">Prayer requests</h2>
+    <p class="ask-line rise" style="--d:1">What can we pray about for you today?</p>
+    <blockquote class="quote rise" style="--d:3"><p>“And this is the confidence that we have in him, that, if we ask any thing according to his will, he heareth us:”</p><cite>1 John 5:14</cite></blockquote>
+  </div>
+</section>
+
+</main>
+
+<script>
+// King James Version, John chapter 15
+const V = {
+  1: "I am the true vine, and my Father is the husbandman.",
+  2: "Every branch in me that beareth not fruit he taketh away: and every branch that beareth fruit, he purgeth it, that it may bring forth more fruit.",
+  3: "Now ye are clean through the word which I have spoken unto you.",
+  4: "Abide in me, and I in you. As the branch cannot bear fruit of itself, except it abide in the vine; no more can ye, except ye abide in me.",
+  5: "I am the vine, ye are the branches: He that abideth in me, and I in him, the same bringeth forth much fruit: for without me ye can do nothing.",
+  6: "If a man abide not in me, he is cast forth as a branch, and is withered; and men gather them, and cast them into the fire, and they are burned.",
+  7: "If ye abide in me, and my words abide in you, ye shall ask what ye will, and it shall be done unto you.",
+  8: "Herein is my Father glorified, that ye bear much fruit; so shall ye be my disciples.",
+  9: "As the Father hath loved me, so have I loved you: continue ye in my love.",
+  10: "If ye keep my commandments, ye shall abide in my love; even as I have kept my Father’s commandments, and abide in his love.",
+  11: "These things have I spoken unto you, that my joy might remain in you, and that your joy might be full.",
+  12: "This is my commandment, That ye love one another, as I have loved you.",
+  13: "Greater love hath no man than this, that a man lay down his life for his friends.",
+  14: "Ye are my friends, if ye do whatsoever I command you.",
+  15: "Henceforth I call you not servants; for the servant knoweth not what his lord doeth: but I have called you friends; for all things that I have heard of my Father I have made known unto you.",
+  16: "Ye have not chosen me, but I have chosen you, and ordained you, that ye should go and bring forth fruit, and that your fruit should remain: that whatsoever ye shall ask of the Father in my name, he may give it you.",
+  17: "These things I command you, that ye love one another.",
+  18: "If the world hate you, ye know that it hated me before it hated you.",
+  19: "If ye were of the world, the world would love his own: but because ye are not of the world, but I have chosen you out of the world, therefore the world hateth you.",
+  20: "Remember the word that I said unto you, The servant is not greater than his lord. If they have persecuted me, they will also persecute you; if they have kept my saying, they will keep yours also.",
+  21: "But all these things will they do unto you for my name’s sake, because they know not him that sent me.",
+  22: "If I had not come and spoken unto them, they had not had sin: but now they have no cloke for their sin.",
+  23: "He that hateth me hateth my Father also.",
+  24: "If I had not done among them the works which none other man did, they had not had sin: but now have they both seen and hated both me and my Father.",
+  25: "But this cometh to pass, that the word might be fulfilled that is written in their law, They hated me without a cause.",
+  26: "But when the Comforter is come, whom I will send unto you from the Father, even the Spirit of truth, which proceedeth from the Father, he shall testify of me:",
+  27: "And ye also shall bear witness, because ye have been with me from the beginning."
+};
+const BOOK = "John 15";
+</script>
+<script src="../assets/deck.js"></script>
+</body>
+</html>

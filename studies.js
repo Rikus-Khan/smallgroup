@@ -682,6 +682,257 @@ window.STUDIES = [
     }
   },
   {
+    "id": "john-15",
+    "type": "chapter",
+    "book": "John",
+    "ch": 15,
+    "date": "2026-10-29",
+    "title": "John 15",
+    "sub": "The vine and the branches",
+    "about": "Jesus is the true vine. He tells His men to abide in Him, calls them friends, and warns them the world will hate them.",
+    "tags": [
+      "Abiding",
+      "Fruit",
+      "Pruning",
+      "Love",
+      "Friendship",
+      "The world"
+    ],
+    "url": "studies/john-15.html",
+    "overview": {
+      "where": "Jerusalem, as Jesus and the eleven leave the supper for the garden",
+      "when": "The night before the cross, after the Last Supper",
+      "people": [
+        "jesus",
+        "the-father",
+        "disciples",
+        "holy-spirit"
+      ],
+      "places": [
+        "jerusalem"
+      ],
+      "story": [
+        "Jesus says, “I am the true vine,” and the Father is the husbandman who prunes every branch so it bears more fruit (1–3).",
+        "A branch can only bear fruit by staying on the vine: “Without me ye can do nothing” (4–8).",
+        "He loves them as the Father loves Him, and commands them to love one another (9–12).",
+        "“Greater love hath no man than this.” He calls them friends, not servants, and chose them to bear lasting fruit (13–17).",
+        "The world will hate them because it hated Him first, but the Comforter will testify of Him, and so will they (18–27)."
+      ],
+      "key": {
+        "ref": "John 15:5",
+        "text": "I am the vine, ye are the branches: He that abideth in me, and I in him, the same bringeth forth much fruit: for without me ye can do nothing."
+      },
+      "big": "All the life a believer has comes from Jesus. We don't bear fruit by trying harder; we bear it by staying close to Him, held secure in His love."
+    }
+  },
+  {
+    "id": "john-16",
+    "type": "chapter",
+    "book": "John",
+    "ch": 16,
+    "date": "2026-10-29",
+    "title": "John 16",
+    "sub": "Sorrow turned to joy",
+    "about": "Jesus promises the Comforter, tells His men their sorrow will turn to joy, and says, “Be of good cheer; I have overcome the world.”",
+    "tags": [
+      "Holy Spirit",
+      "Conviction",
+      "Truth",
+      "Joy",
+      "Prayer",
+      "Peace"
+    ],
+    "url": "studies/john-16.html",
+    "overview": {
+      "where": "Jerusalem, on the way from the supper to the garden",
+      "when": "The night before the cross, after the Last Supper",
+      "people": [
+        "jesus",
+        "the-father",
+        "disciples",
+        "holy-spirit",
+        "prince-of-this-world"
+      ],
+      "places": [
+        "jerusalem",
+        "synagogue"
+      ],
+      "story": [
+        "Jesus warns that His followers will be put out of the synagogues and even killed, so they won't be caught off guard (1–4).",
+        "It's better that He goes away, because then He will send the Comforter, who will reprove the world of sin, righteousness, and judgment (5–11).",
+        "The Spirit of truth will guide them into all truth and glorify Jesus (12–15).",
+        "“A little while”: they will weep while the world rejoices, but their sorrow will be turned into joy no man can take (16–24).",
+        "They will scatter and leave Him alone, but He is not alone: “Be of good cheer; I have overcome the world” (25–33)."
+      ],
+      "key": {
+        "ref": "John 16:33",
+        "text": "These things I have spoken unto you, that in me ye might have peace. In the world ye shall have tribulation: but be of good cheer; I have overcome the world."
+      },
+      "big": "Jesus didn't promise His people an easy road. He promised the Comforter living in them, sorrow turned into joy, and peace in Him, because He has already overcome the world."
+    }
+  },
+  {
+    "id": "john-17",
+    "type": "chapter",
+    "book": "John",
+    "ch": 17,
+    "date": "2026-10-29",
+    "title": "John 17",
+    "sub": "Jesus prays for His own",
+    "about": "On the night before the cross, Jesus prays for Himself, for His disciples, and for everyone who would ever believe.",
+    "tags": [
+      "Prayer",
+      "Eternal life",
+      "Security",
+      "In the world",
+      "Unity",
+      "Glory"
+    ],
+    "url": "studies/john-17.html",
+    "overview": {
+      "where": "Jerusalem, before Jesus crosses the brook Cedron to the garden",
+      "when": "The night before the cross, after the Last Supper",
+      "people": [
+        "jesus",
+        "the-father",
+        "disciples",
+        "judas-iscariot"
+      ],
+      "places": [
+        "heaven",
+        "jerusalem"
+      ],
+      "story": [
+        "Jesus lifts His eyes to heaven: “Father, the hour is come; glorify thy Son.” Eternal life is to know the only true God and Jesus Christ (1–3).",
+        "He has finished the work the Father gave Him, and asks for the glory He had before the world was (4–5).",
+        "He prays for His disciples: He kept them, none is lost but the son of perdition, and He asks the Father to keep them still (6–12).",
+        "He doesn't ask that they be taken out of the world, but kept from the evil and sanctified by the word, then sent into the world (13–19).",
+        "He prays for all who will believe through their word: that they may be one, so the world may believe, and be with Him where He is (20–26)."
+      ],
+      "key": {
+        "ref": "John 17:3",
+        "text": "And this is life eternal, that they might know thee the only true God, and Jesus Christ, whom thou hast sent."
+      },
+      "big": "Hours before the cross, Jesus prayed for every believer who would ever live: that we'd know God, be kept safe, be set apart, be one, and be with Him forever. He still prays for us today."
+    }
+  },
+  {
+    "id": "john-18",
+    "type": "chapter",
+    "book": "John",
+    "ch": 18,
+    "date": "2026-10-29",
+    "title": "John 18",
+    "sub": "The King on trial",
+    "about": "Jesus walks out to meet the men who came to arrest Him, Peter denies Him three times at the wrong fire, and Pilate asks, “What is truth?”",
+    "tags": [
+      "Who Jesus is",
+      "His choice",
+      "Failure",
+      "His kingdom",
+      "Truth",
+      "In our place"
+    ],
+    "url": "studies/john-18.html",
+    "overview": {
+      "where": "A garden over the brook Cedron, the high priest's palace, then Pilate's hall of judgment in Jerusalem",
+      "when": "The night after the last supper, through early the next morning, at Passover",
+      "people": [
+        "jesus",
+        "disciples",
+        "judas-iscariot",
+        "simon-peter",
+        "malchus",
+        "annas",
+        "caiaphas",
+        "high-priest",
+        "officers",
+        "chief-priests",
+        "pilate",
+        "barabbas",
+        "the-jews"
+      ],
+      "places": [
+        "cedron",
+        "garden",
+        "jerusalem",
+        "hall-of-judgment"
+      ],
+      "story": [
+        "Judas brings soldiers and officers to the garden. Jesus steps out and says, “I am he,” and they fall to the ground (1–9).",
+        "Peter cuts off Malchus's ear. Jesus tells him to put up his sword and drinks the cup His Father gave Him (10–11).",
+        "Jesus is taken bound to Annas, then Caiaphas, and is struck for telling the truth (12–14, 19–24).",
+        "Out by a fire of coals, Peter denies Him three times, and the cock crows (15–18, 25–27).",
+        "Before Pilate, Jesus says, “My kingdom is not of this world.” Pilate asks, “What is truth?” and finds no fault in Him (28–38).",
+        "Offered Jesus, the crowd chooses Barabbas, a robber, instead (39–40)."
+      ],
+      "key": {
+        "ref": "John 18:37",
+        "text": "Pilate therefore said unto him, Art thou a king then? Jesus answered, Thou sayest that I am a king. To this end was I born, and for this cause came I into the world, that I should bear witness unto the truth. Every one that is of the truth heareth my voice."
+      },
+      "big": "Jesus wasn't caught. He gave Himself up, a King whose kingdom runs on truth, and He took the place of the guilty. Even Peter's worst failure wasn't the end of his story."
+    }
+  },
+  {
+    "id": "john-19",
+    "type": "chapter",
+    "book": "John",
+    "ch": 19,
+    "date": "2026-10-29",
+    "title": "John 19",
+    "sub": "It is finished",
+    "about": "Pilate finds no fault in Jesus and hands Him over anyway. Jesus is crucified at Golgotha, cries “It is finished,” and is laid in a garden tomb.",
+    "tags": [
+      "In our place",
+      "Who's in charge",
+      "God's word",
+      "Family",
+      "Finished",
+      "Courage"
+    ],
+    "url": "studies/john-19.html",
+    "overview": {
+      "where": "Pilate's hall and Gabbatha in Jerusalem, then Golgotha and a garden tomb just outside the city",
+      "when": "The preparation of the Passover, the day before a high sabbath",
+      "people": [
+        "jesus",
+        "pilate",
+        "soldiers",
+        "chief-priests",
+        "officers",
+        "the-jews",
+        "caesar",
+        "mary",
+        "mary-of-cleophas",
+        "mary-magdalene",
+        "beloved-disciple",
+        "joseph-of-arimathaea",
+        "nicodemus"
+      ],
+      "places": [
+        "hall-of-judgment",
+        "gabbatha",
+        "golgotha",
+        "jerusalem",
+        "garden",
+        "sepulchre"
+      ],
+      "story": [
+        "Pilate has Jesus scourged. The soldiers crown Him with thorns, and Pilate brings Him out: “Behold the man!” (1–6).",
+        "Pilate finds no fault in Him, but the crowd threatens, “Thou art not Caesar's friend,” and he hands Jesus over to be crucified (7–16).",
+        "Jesus carries His cross to Golgotha and is crucified between two others under the title “The King of the Jews” (17–22).",
+        "The soldiers cast lots for His coat, and from the cross Jesus gives His mother into the care of the disciple He loved (23–27).",
+        "He says, “I thirst,” then “It is finished,” and gives up the ghost (28–30).",
+        "His legs are not broken, His side is pierced, and Joseph and Nicodemus bury Him in a new tomb in a garden (31–42)."
+      ],
+      "key": {
+        "ref": "John 19:30",
+        "text": "When Jesus therefore had received the vinegar, he said, It is finished: and he bowed his head, and gave up the ghost."
+      },
+      "big": "The innocent Lamb of God died in our place, just as the Scriptures said. When He cried “It is finished,” the debt for our sin was paid in full."
+    }
+  },
+  {
     "id": "john-20",
     "type": "chapter",
     "book": "John",
