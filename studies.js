@@ -5257,5 +5257,400 @@ window.STUDIES = [
       },
       "big": "False comfort leaves men scattered like sheep, but God is the Shepherd who calls, gathers and restores, as though He had never cast them off. However far a man has gone, he can remember God and turn again."
     }
+  },
+  {
+    "id": "zechariah-11",
+    "type": "chapter",
+    "book": "Zechariah",
+    "ch": 11,
+    "date": "2026-10-29",
+    "title": "Zechariah 11",
+    "sub": "Thirty pieces of silver",
+    "about": "God sends a true shepherd to a flock that is being sold for slaughter. They pay Him off with the price of a slave.",
+    "tags": [
+      "Shepherds",
+      "God's name",
+      "Rejected",
+      "Christ",
+      "Broken",
+      "The Good Shepherd"
+    ],
+    "url": "studies/zechariah-11.html",
+    "overview": {
+      "where": "Judah and Jerusalem after the exile; the picture sweeps from Lebanon and Bashan down to the Jordan",
+      "when": "Undated; probably later in Zechariah's ministry, some time after 520 BC, when the Jews were back from Babylon under Persian rule. It looks far ahead.",
+      "people": [
+        "zechariah",
+        "the-lord",
+        "shepherds",
+        "idol-shepherd",
+        "potter"
+      ],
+      "places": [
+        "lebanon",
+        "bashan",
+        "jordan",
+        "judah",
+        "israel"
+      ],
+      "story": [
+        "Fire sweeps down from the cedars of Lebanon to the oaks of Bashan and the thickets of the Jordan, and the shepherds howl (1–3).",
+        "God tells Zechariah to feed the flock of the slaughter, sheep that buyers kill, sellers profit from, and their own shepherds don't pity (4–6).",
+        "He takes two staffs, Beauty and Bands, cuts off three shepherds, and gives up on a flock that hates him (7–9).",
+        "He breaks Beauty, and the poor of the flock who were watching know it is the word of the LORD (10–11).",
+        "They weigh out his wages, thirty pieces of silver, and the LORD has him cast them to the potter in the house of the LORD (12–13).",
+        "He breaks Bands, the brotherhood between Judah and Israel (14).",
+        "Zechariah plays a foolish shepherd, and God pronounces woe on the idol shepherd who leaves the flock (15–17)."
+      ],
+      "key": {
+        "ref": "Zechariah 11:12",
+        "text": "And I said unto them, If ye think good, give me my price; and if not, forbear. So they weighed for my price thirty pieces of silver."
+      },
+      "big": "God sent His people a true Shepherd, and they valued Him at the price of a dead slave. Jesus was sold for those very thirty pieces. The world's shepherds use the sheep and leave; the Good Shepherd seeks the lost, heals the broken, and gives His life for the sheep."
+    }
+  },
+  {
+    "id": "zechariah-12",
+    "type": "chapter",
+    "book": "Zechariah",
+    "ch": 12,
+    "date": "2026-10-29",
+    "title": "Zechariah 12",
+    "sub": "They shall look upon me",
+    "about": "The nations gather against Jerusalem, and God defends her. Then He pours out grace, and His people look on the One they pierced and weep.",
+    "tags": [
+      "Who God is",
+      "Protection",
+      "Weakness",
+      "Grace",
+      "Christ",
+      "Repentance"
+    ],
+    "url": "studies/zechariah-12.html",
+    "overview": {
+      "where": "Jerusalem and Judah, with the nations gathered around; a look back at Megiddo",
+      "when": "Undated; probably later in Zechariah's ministry, some time after 520 BC, when the Jews were back from Babylon under Persian rule. It looks far ahead.",
+      "people": [
+        "zechariah",
+        "the-lord",
+        "david",
+        "nathan-son-of-david",
+        "levi",
+        "shimei"
+      ],
+      "places": [
+        "jerusalem",
+        "judah",
+        "israel",
+        "megiddo",
+        "hadadrimmon"
+      ],
+      "story": [
+        "The LORD who made the heavens, the earth and the spirit of man speaks a burden for Israel (1).",
+        "Jerusalem will be a cup of trembling and a burdensome stone to the nations that come against her (2–3).",
+        "In that day God strikes their horses and riders, and Judah's leaders find their strength in the LORD of hosts and burn through their enemies (4–6).",
+        "The LORD saves the tents of Judah first, makes the feeble like David, and destroys the nations that come against Jerusalem (7–9).",
+        "He pours out the spirit of grace and supplications, and they look on the One they pierced and mourn as for an only son (10).",
+        "The mourning is like the mourning at Megiddo, and every family mourns apart, husbands and wives each by themselves (11–14)."
+      ],
+      "key": {
+        "ref": "Zechariah 12:10",
+        "text": "And I will pour upon the house of David, and upon the inhabitants of Jerusalem, the spirit of grace and of supplications: and they shall look upon me whom they have pierced, and they shall mourn for him, as one mourneth for his only son, and shall be in bitterness for him, as one that is in bitterness for his firstborn."
+      },
+      "big": "God defends His people and makes the feeble strong. Then He pours out grace first, and they look on the One they pierced: Jesus, the LORD Himself. True sorrow for sin flows from grace, and every man must look to the cross for himself."
+    }
+  },
+  {
+    "id": "zechariah-13",
+    "type": "chapter",
+    "book": "Zechariah",
+    "ch": 13,
+    "date": "2026-10-29",
+    "title": "Zechariah 13",
+    "sub": "A fountain opened",
+    "about": "God opens a fountain to wash away sin and uncleanness, clears out the idols and the liars, and strikes His own Shepherd so that His people can be refined and brought home.",
+    "tags": [
+      "Cleansing",
+      "Idols",
+      "Honesty",
+      "Christ",
+      "Trials",
+      "Belonging"
+    ],
+    "url": "studies/zechariah-13.html",
+    "overview": {
+      "where": "Jerusalem and the land of Judah",
+      "when": "Undated; probably later in Zechariah's ministry, some time after 520 BC, when the Jews were back from Babylon under Persian rule. It looks far ahead.",
+      "people": [
+        "zechariah",
+        "the-lord",
+        "david",
+        "false-prophets"
+      ],
+      "places": [
+        "jerusalem"
+      ],
+      "story": [
+        "In that day a fountain is opened to the house of David and Jerusalem for sin and for uncleanness (1).",
+        "The LORD cuts off the names of the idols and drives out the false prophets and the unclean spirit (2).",
+        "Even a false prophet's own parents will not cover for his lies (3).",
+        "False prophets are ashamed, drop their rough garments, claim to be farmers, and explain away the wounds in their hands (4–6).",
+        "The LORD calls the sword against His Shepherd, the man who is His fellow: smite the shepherd, and the sheep shall be scattered (7).",
+        "Two parts are cut off, and the third is brought through the fire and refined: “It is my people … The LORD is my God” (8–9)."
+      ],
+      "key": {
+        "ref": "Zechariah 13:1",
+        "text": "In that day there shall be a fountain opened to the house of David and to the inhabitants of Jerusalem for sin and for uncleanness."
+      },
+      "big": "God opens a fountain that never runs dry for sin and for uncleanness. He clears out the idols and the lies, and He struck His own Shepherd, Jesus, so that His people could be refined, not destroyed, and hear Him say, “It is my people.”"
+    }
+  },
+  {
+    "id": "zechariah-14",
+    "type": "chapter",
+    "book": "Zechariah",
+    "ch": 14,
+    "date": "2026-10-29",
+    "title": "Zechariah 14",
+    "sub": "King over all the earth",
+    "about": "The day of the LORD comes. In Jerusalem's darkest hour the LORD Himself stands on the Mount of Olives, living water flows, and He reigns as King over all the earth.",
+    "tags": [
+      "The day of the LORD",
+      "His coming",
+      "Hope",
+      "The King",
+      "Worship",
+      "Holiness"
+    ],
+    "url": "studies/zechariah-14.html",
+    "overview": {
+      "where": "Jerusalem, the Mount of Olives, and all the nations of the earth",
+      "when": "Undated; probably later in Zechariah's ministry, some time after 520 BC, when the Jews were back from Babylon under Persian rule. It looks far ahead.",
+      "people": [
+        "zechariah",
+        "the-lord",
+        "saints",
+        "uzziah",
+        "heathen",
+        "canaanite"
+      ],
+      "places": [
+        "jerusalem",
+        "mount-of-olives",
+        "judah",
+        "azal",
+        "geba",
+        "rimmon",
+        "benjamin",
+        "tower-of-hananeel",
+        "former-and-hinder-sea",
+        "egypt"
+      ],
+      "story": [
+        "The day of the LORD comes: all nations gather against Jerusalem, and the city is taken (1–2).",
+        "Then the LORD goes out to fight; His feet stand on the Mount of Olives, and it splits to open a great valley of escape (3–5).",
+        "A day like no other: not day, nor night, but at evening time it shall be light (6–7).",
+        "Living waters flow from Jerusalem east and west, summer and winter, and the LORD is King over all the earth (8–9).",
+        "The land is leveled, Jerusalem is lifted up, and it will be safely inhabited with no more utter destruction (10–11).",
+        "A plague and panic strike the armies that fought against Jerusalem (12–15).",
+        "The nations that are left come up every year to worship the King and keep the Feast of Tabernacles, or have no rain (16–19).",
+        "HOLINESS UNTO THE LORD is on the horse bells and every pot, and no trader is left in the house of the LORD (20–21)."
+      ],
+      "key": {
+        "ref": "Zechariah 14:9",
+        "text": "And the LORD shall be king over all the earth: in that day shall there be one LORD, and his name one."
+      },
+      "big": "The darkest hour ends when the LORD Himself steps in. Jesus will come back in person to the Mount of Olives and reign as King over all the earth. At evening time there will be light, enemies will become worshippers, and everything, even the ordinary, will belong to God."
+    }
+  },
+  {
+    "id": "malachi-01",
+    "type": "chapter",
+    "book": "Malachi",
+    "ch": 1,
+    "date": "2026-10-29",
+    "title": "Malachi 1",
+    "sub": "I have loved you",
+    "about": "God tells His people He loves them. They answer “Wherein?”, then bring Him blind, lame, and sick sacrifices.",
+    "tags": [
+      "God's love",
+      "Jacob and Esau",
+      "Honour",
+      "Our best",
+      "Going through the motions",
+      "His name"
+    ],
+    "url": "studies/malachi-01.html",
+    "overview": {
+      "where": "Jerusalem and the temple, in the Persian province of Judah; Edom to the south-east",
+      "when": "About 430 BC, after the exile, around the time of Nehemiah",
+      "people": [
+        "the-lord",
+        "malachi",
+        "jacob",
+        "esau",
+        "priests",
+        "governor",
+        "heathen"
+      ],
+      "places": [
+        "israel",
+        "edom",
+        "temple"
+      ],
+      "story": [
+        "The burden of the LORD by Malachi: “I have loved you.” The people answer, “Wherein hast thou loved us?” (1–2).",
+        "God points to Jacob and Esau: Edom's land lies waste and will not be rebuilt, but the LORD will be magnified from the border of Israel (2–5).",
+        "A son honours his father. Where is God's honour? The priests despise His name and offer polluted bread on His altar (6–7).",
+        "They bring the blind, the lame, and the sick. They would never offer that to the governor. Better to shut the temple doors (8–10).",
+        "God's name will be great among the Gentiles, from the rising of the sun to its going down. But the priests sniff, “What a weariness,” and the deceiver keeps his best for himself (11–14)."
+      ],
+      "key": {
+        "ref": "Malachi 1:2",
+        "text": "I have loved you, saith the LORD. Yet ye say, Wherein hast thou loved us? Was not Esau Jacob’s brother? saith the LORD: yet I loved Jacob,"
+      },
+      "big": "God loves His people, and the cross proves it. A man who knows he is loved gives God his first and best, not his leftovers."
+    }
+  },
+  {
+    "id": "malachi-02",
+    "type": "chapter",
+    "book": "Malachi",
+    "ch": 2,
+    "date": "2026-10-29",
+    "title": "Malachi 2",
+    "sub": "Keep faith",
+    "about": "God rebukes priests who caused many to stumble, and husbands who dealt treacherously with the wife of their youth.",
+    "tags": [
+      "Leaders",
+      "A faithful man",
+      "Broken faith",
+      "Marriage",
+      "After divorce",
+      "God's justice"
+    ],
+    "url": "studies/malachi-02.html",
+    "overview": {
+      "where": "Jerusalem and the temple, in the Persian province of Judah",
+      "when": "About 430 BC, after the exile, around the time of Nehemiah",
+      "people": [
+        "priests",
+        "levi",
+        "the-lord",
+        "jacob"
+      ],
+      "places": [
+        "judah",
+        "israel",
+        "jerusalem"
+      ],
+      "story": [
+        "A commandment for the priests: if they won't lay it to heart, God will curse their blessings and spread on their faces the dung of their feasts (1–4).",
+        "God's covenant with Levi was life and peace. The law of truth was in his mouth, and he turned many from iniquity (5–7).",
+        "These priests have left the way, caused many to stumble, and been partial in the law (8–9).",
+        "One Father, one God, yet Judah deals treacherously and marries the daughter of a strange god (10–12).",
+        "They weep at the altar, but God won't accept their offerings, because He witnessed their covenant with the wife of their youth. He hates putting away (13–16).",
+        "They weary the LORD by saying evil is good, and asking, “Where is the God of judgment?” (17)."
+      ],
+      "key": {
+        "ref": "Malachi 2:10",
+        "text": "Have we not all one father? hath not one God created us? why do we deal treacherously every man against his brother, by profaning the covenant of our fathers?"
+      },
+      "big": "God keeps His covenants and expects His people to keep theirs, with Him, with each other, and in marriage. Where faith has been broken, He forgives those who confess and helps them keep faith from here."
+    }
+  },
+  {
+    "id": "malachi-03",
+    "type": "chapter",
+    "book": "Malachi",
+    "ch": 3,
+    "date": "2026-10-29",
+    "title": "Malachi 3",
+    "sub": "I change not",
+    "about": "God promises a messenger and then the Lord Himself, coming like a refiner's fire, and calls His people to return.",
+    "tags": [
+      "The messenger",
+      "The refiner",
+      "God never changes",
+      "Coming back",
+      "Giving",
+      "Remembered"
+    ],
+    "url": "studies/malachi-03.html",
+    "overview": {
+      "where": "Jerusalem and the temple, in the Persian province of Judah",
+      "when": "About 430 BC, after the exile, around the time of Nehemiah",
+      "people": [
+        "the-lord",
+        "my-messenger",
+        "messenger-of-the-covenant",
+        "john-the-baptist",
+        "levi",
+        "jacob"
+      ],
+      "places": [
+        "temple",
+        "judah",
+        "jerusalem"
+      ],
+      "story": [
+        "“Behold, I will send my messenger.” Then the Lord will suddenly come to His temple, the messenger of the covenant (1). Jesus said the messenger was John the Baptist.",
+        "Who can stand when He appears? He is like a refiner's fire and fullers' sope. He will purify the sons of Levi (2–4).",
+        "He will be a swift witness against sorcerers, adulterers, liars, and those who cheat workers and crush the widow, the fatherless, and the stranger (5).",
+        "“I am the LORD, I change not.” Return unto Me, and I will return unto you. But they have robbed God in tithes and offerings (6–9).",
+        "Bring the tithes into the storehouse, and God will open the windows of heaven and rebuke the devourer (10–12).",
+        "Some say, “It is vain to serve God.” Those who fear the LORD speak often to one another, and God writes a book of remembrance: they shall be His jewels (13–18)."
+      ],
+      "key": {
+        "ref": "Malachi 3:6",
+        "text": "For I am the LORD, I change not; therefore ye sons of Jacob are not consumed."
+      },
+      "big": "God never changes. That is why His people are not consumed. He purifies those He loves, calls them back, and remembers every man who fears Him."
+    }
+  },
+  {
+    "id": "malachi-04",
+    "type": "chapter",
+    "book": "Malachi",
+    "ch": 4,
+    "date": "2026-10-29",
+    "title": "Malachi 4",
+    "sub": "The Sun of righteousness",
+    "about": "The last chapter of the Old Testament: the day of the LORD, the Sun of righteousness with healing in His wings, and Elijah sent first.",
+    "tags": [
+      "The day",
+      "Healing",
+      "Remember",
+      "Elijah",
+      "Fathers and children",
+      "The curse"
+    ],
+    "url": "studies/malachi-04.html",
+    "overview": {
+      "where": "Spoken to Judah and Jerusalem; looking back to Horeb and ahead to the coming day",
+      "when": "About 430 BC, after the exile. About four hundred years of silence follow, until John the Baptist",
+      "people": [
+        "the-lord",
+        "moses",
+        "elijah",
+        "john-the-baptist"
+      ],
+      "places": [
+        "horeb",
+        "israel"
+      ],
+      "story": [
+        "The day is coming that will burn like an oven. The proud and the wicked will be stubble, with neither root nor branch (1).",
+        "But to those who fear His name, the Sun of righteousness will rise with healing in His wings, and they will go out like calves from the stall (2–3).",
+        "Remember the law of Moses, given at Horeb (4).",
+        "God will send Elijah the prophet before the great and dreadful day of the LORD, to turn the hearts of fathers and children to each other (5–6). Jesus said John the Baptist was that Elias (Matthew 11:14).",
+        "The Old Testament ends with the word “curse.” After about four hundred quiet years, John the Baptist comes preaching, and points to the Lamb of God (Matthew 3, John 1)."
+      ],
+      "key": {
+        "ref": "Malachi 4:2",
+        "text": "But unto you that fear my name shall the Sun of righteousness arise with healing in his wings; and ye shall go forth, and grow up as calves of the stall."
+      },
+      "big": "God will set all things right. For those who fear Him, that day is a sunrise. The Old Testament ends with a curse and a promise, and Jesus, who took the curse on Himself, keeps the promise."
+    }
   }
 ];

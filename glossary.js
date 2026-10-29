@@ -5705,6 +5705,9 @@ window.GLOSSARY = [
   "name": "Living water",
   "refs": [
    [
+    "Zechariah", 14,
+    [ 8 ] ],
+   [
     "John", 4,
     [ 10, 11 ] ],
    [
@@ -7291,12 +7294,6 @@ window.GLOSSARY = [
   "kind": "term",
   "name": "Husbandman (the vinedresser)",
   "refs": [
-   [
-    "Amos", 5,
-    [ 16 ] ],
-   [
-    "Zechariah", 13,
-    [ 5 ] ],
    [
     "John", 15,
     [ 1 ] ] ]
@@ -9576,7 +9573,10 @@ window.GLOSSARY = [
   "refs": [
    [
     "Hosea", 7,
-    [ 4, 6, 7 ] ] ]
+    [ 4, 6, 7 ] ],
+   [
+    "Malachi", 4,
+    [ 1 ] ] ]
  },
  {
   "id": "cake-not-turned",
@@ -10419,7 +10419,10 @@ window.GLOSSARY = [
   "refs": [
    [
     "Amos", 1,
-    [ 1 ] ] ]
+    [ 1 ] ],
+   [
+    "Zechariah", 14,
+    [ 5 ] ] ]
  },
  {
   "id": "roar",
@@ -13243,5 +13246,707 @@ window.GLOSSARY = [
    [
     "Zechariah", 10,
     [ 8 ] ] ]
+ },
+ {
+  "id": "shepherds",
+  "kind": "person",
+  "name": "Shepherds (Israel's rulers and leaders)",
+  "refs": [
+   [
+    "Zechariah", 10,
+    [ 2, 3 ] ],
+   [
+    "Zechariah", 11,
+    [ 3, 5, 8, 15, 16, 17 ] ] ]
+ },
+ {
+  "id": "flock-of-slaughter",
+  "kind": "term",
+  "name": "The flock of the slaughter (sheep raised to be sold and killed)",
+  "refs": [
+   [
+    "Zechariah", 11,
+    [ 4, 7 ] ] ]
+ },
+ {
+  "id": "beauty-and-bands",
+  "kind": "term",
+  "name": "Beauty and Bands (the two staffs: favour and brotherhood)",
+  "refs": [
+   [
+    "Zechariah", 11,
+    [ 7, 10, 14 ] ] ]
+ },
+ {
+  "id": "thirty-pieces-of-silver",
+  "kind": "term",
+  "name": "Thirty pieces of silver (the price of a slave)",
+  "refs": [
+   [
+    "Zechariah", 11,
+    [ 12, 13 ] ] ]
+ },
+ {
+  "id": "potter",
+  "kind": "person",
+  "name": "The potter (the potter's field, Matthew 27:7)",
+  "refs": [
+   [
+    "Zechariah", 11,
+    [ 13 ] ] ]
+ },
+ {
+  "id": "prised",
+  "kind": "term",
+  "name": "Prised (valued, priced)",
+  "refs": [
+   [
+    "Zechariah", 11,
+    [ 13 ] ] ]
+ },
+ {
+  "id": "idol-shepherd",
+  "kind": "person",
+  "name": "The idol shepherd (a foolish, worthless leader)",
+  "refs": [
+   [
+    "Zechariah", 11,
+    [ 15, 17 ] ] ]
+ },
+ {
+  "id": "in-that-day",
+  "kind": "term",
+  "name": "In that day (the day the LORD steps in)",
+  "refs": [
+   [
+    "Zechariah", 2,
+    [ 11 ] ],
+   [
+    "Zechariah", 3,
+    [ 10 ] ],
+   [
+    "Zechariah", 9,
+    [ 16 ] ],
+   [
+    "Zechariah", 12,
+    [ 3, 4, 6, 8, 9, 11 ] ],
+   [
+    "Zechariah", 13,
+    [ 1, 2, 4 ] ],
+   [
+    "Zechariah", 14,
+    [ 4, 6, 8, 9, 13, 20, 21 ] ] ]
+ },
+ {
+  "id": "cup-of-trembling",
+  "kind": "term",
+  "name": "A cup of trembling (a drink that makes men stagger)",
+  "refs": [
+   [
+    "Zechariah", 12,
+    [ 2 ] ] ]
+ },
+ {
+  "id": "burdensome-stone",
+  "kind": "term",
+  "name": "A burdensome stone (too heavy to lift)",
+  "refs": [
+   [
+    "Zechariah", 12,
+    [ 3 ] ] ]
+ },
+ {
+  "id": "spirit-of-grace",
+  "kind": "term",
+  "name": "The spirit of grace and of supplications",
+  "refs": [
+   [
+    "Zechariah", 12,
+    [ 10 ] ] ]
+ },
+ {
+  "id": "pierced",
+  "kind": "term",
+  "name": "Whom they have pierced (Zechariah 12:10, John 19:37)",
+  "refs": [
+   [
+    "Zechariah", 12,
+    [ 10 ] ],
+   [
+    "John", 19,
+    [ 37 ] ] ]
+ },
+ {
+  "id": "hadadrimmon",
+  "kind": "place",
+  "name": "Hadadrimmon (a place near Megiddo)",
+  "refs": [
+   [
+    "Zechariah", 12,
+    [ 11 ] ] ]
+ },
+ {
+  "id": "megiddo",
+  "kind": "place",
+  "name": "Megiddo (Megiddon), where King Josiah fell",
+  "refs": [
+   [
+    "Zechariah", 12,
+    [ 11 ] ] ]
+ },
+ {
+  "id": "nathan-son-of-david",
+  "kind": "person",
+  "name": "Nathan, David's son (the house of Nathan)",
+  "refs": [
+   [
+    "Zechariah", 12,
+    [ 12 ] ] ]
+ },
+ {
+  "id": "levi",
+  "kind": "person",
+  "name": "Levi (the priestly tribe)",
+  "refs": [
+   [
+    "Zechariah", 12,
+    [ 13 ] ],
+   [
+    "Malachi", 2,
+    [ 4, 8 ] ],
+   [
+    "Malachi", 3,
+    [ 3 ] ] ]
+ },
+ {
+  "id": "shimei",
+  "kind": "person",
+  "name": "Shimei (a family descended from Levi's grandson)",
+  "refs": [
+   [
+    "Zechariah", 12,
+    [ 13 ] ] ]
+ },
+ {
+  "id": "fountain-opened",
+  "kind": "term",
+  "name": "A fountain opened for sin and for uncleanness",
+  "refs": [
+   [
+    "Zechariah", 13,
+    [ 1 ] ] ]
+ },
+ {
+  "id": "unclean-spirit",
+  "kind": "term",
+  "name": "The unclean spirit",
+  "refs": [
+   [
+    "Zechariah", 13,
+    [ 2 ] ] ]
+ },
+ {
+  "id": "false-prophets",
+  "kind": "person",
+  "name": "False prophets (who spoke lies in the LORD's name)",
+  "refs": [
+   [
+    "Zechariah", 13,
+    [ 2, 3, 4, 5 ] ] ]
+ },
+ {
+  "id": "rough-garment",
+  "kind": "term",
+  "name": "A rough garment (a prophet's hairy cloak)",
+  "refs": [
+   [
+    "Zechariah", 13,
+    [ 4 ] ] ]
+ },
+ {
+  "id": "wounds-in-thine-hands",
+  "kind": "term",
+  "name": "Wounds in thine hands (a false prophet's cuttings)",
+  "refs": [
+   [
+    "Zechariah", 13,
+    [ 6 ] ] ]
+ },
+ {
+  "id": "smite-the-shepherd",
+  "kind": "term",
+  "name": "Smite the shepherd (Matthew 26:31)",
+  "refs": [
+   [
+    "Zechariah", 13,
+    [ 7 ] ] ]
+ },
+ {
+  "id": "my-fellow",
+  "kind": "term",
+  "name": "The man that is my fellow (the LORD's equal)",
+  "refs": [
+   [
+    "Zechariah", 13,
+    [ 7 ] ] ]
+ },
+ {
+  "id": "refine",
+  "kind": "term",
+  "name": "Refine, try (purify silver and gold in the fire)",
+  "refs": [
+   [
+    "Zechariah", 13,
+    [ 9 ] ] ]
+ },
+ {
+  "id": "azal",
+  "kind": "place",
+  "name": "Azal (a place east of Jerusalem, unknown today)",
+  "refs": [
+   [
+    "Zechariah", 14,
+    [ 5 ] ] ]
+ },
+ {
+  "id": "geba",
+  "kind": "place",
+  "name": "Geba (a town at Judah's north end)",
+  "refs": [
+   [
+    "Zechariah", 14,
+    [ 10 ] ] ]
+ },
+ {
+  "id": "rimmon",
+  "kind": "place",
+  "name": "Rimmon (a town far south of Jerusalem)",
+  "refs": [
+   [
+    "Zechariah", 14,
+    [ 10 ] ] ]
+ },
+ {
+  "id": "former-and-hinder-sea",
+  "kind": "place",
+  "name": "The former sea and the hinder sea (the Salt Sea east, the Great Sea west)",
+  "refs": [
+   [
+    "Zechariah", 14,
+    [ 8 ] ] ]
+ },
+ {
+  "id": "tower-of-hananeel",
+  "kind": "place",
+  "name": "The tower of Hananeel (on Jerusalem's north wall)",
+  "refs": [
+   [
+    "Zechariah", 14,
+    [ 10 ] ] ]
+ },
+ {
+  "id": "saints",
+  "kind": "person",
+  "name": "The saints (the holy ones who come with the LORD)",
+  "refs": [
+   [
+    "Zechariah", 14,
+    [ 5 ] ] ]
+ },
+ {
+  "id": "king-over-all-the-earth",
+  "kind": "term",
+  "name": "The King over all the earth",
+  "refs": [
+   [
+    "Zechariah", 14,
+    [ 9, 16, 17 ] ] ]
+ },
+ {
+  "id": "holiness-unto-the-lord",
+  "kind": "term",
+  "name": "Holiness unto the LORD",
+  "refs": [
+   [
+    "Zechariah", 14,
+    [ 20, 21 ] ] ]
+ },
+ {
+  "id": "canaanite",
+  "kind": "person",
+  "name": "The Canaanite (also a word for a trader)",
+  "refs": [
+   [
+    "Zechariah", 14,
+    [ 21 ] ] ]
+ },
+ {
+  "id": "seethe",
+  "kind": "term",
+  "name": "Seethe (boil, cook)",
+  "refs": [
+   [
+    "Zechariah", 14,
+    [ 21 ] ] ]
+ },
+ {
+  "id": "rifled",
+  "kind": "term",
+  "name": "Rifled (plundered)",
+  "refs": [
+   [
+    "Zechariah", 14,
+    [ 2 ] ] ]
+ },
+ {
+  "id": "malachi",
+  "kind": "person",
+  "name": "Malachi the prophet (his name means “my messenger”)",
+  "refs": [
+   [
+    "Malachi", 1,
+    [ 1 ] ] ]
+ },
+ {
+  "id": "governor",
+  "kind": "person",
+  "name": "The governor (Persia's governor over Judah)",
+  "refs": [
+   [
+    "Malachi", 1,
+    [ 8 ] ] ]
+ },
+ {
+  "id": "yet-ye-say",
+  "kind": "term",
+  "name": "“Wherein?” (the people answering God back)",
+  "refs": [
+   [
+    "Malachi", 1,
+    [ 2, 6, 7 ] ],
+   [
+    "Malachi", 2,
+    [ 14, 17 ] ],
+   [
+    "Malachi", 3,
+    [ 7, 8, 13 ] ] ]
+ },
+ {
+  "id": "dragons-of-the-wilderness",
+  "kind": "term",
+  "name": "Dragons of the wilderness (jackals)",
+  "refs": [
+   [
+    "Malachi", 1,
+    [ 3 ] ] ]
+ },
+ {
+  "id": "polluted-bread",
+  "kind": "term",
+  "name": "Polluted bread (defiled offerings)",
+  "refs": [
+   [
+    "Malachi", 1,
+    [ 7, 12 ] ] ]
+ },
+ {
+  "id": "table-of-the-lord",
+  "kind": "term",
+  "name": "The table of the LORD (the altar)",
+  "refs": [
+   [
+    "Malachi", 1,
+    [ 7, 12 ] ] ]
+ },
+ {
+  "id": "blemished-offerings",
+  "kind": "term",
+  "name": "The blind, the lame, and the sick (blemished sacrifices)",
+  "refs": [
+   [
+    "Malachi", 1,
+    [ 8, 13 ] ] ]
+ },
+ {
+  "id": "snuffed",
+  "kind": "term",
+  "name": "Snuffed at it (sniffed in contempt)",
+  "refs": [
+   [
+    "Malachi", 1,
+    [ 13 ] ] ]
+ },
+ {
+  "id": "vow",
+  "kind": "term",
+  "name": "Vow (a promise made to God)",
+  "refs": [
+   [
+    "Malachi", 1,
+    [ 14 ] ] ]
+ },
+ {
+  "id": "covenant-curse",
+  "kind": "term",
+  "name": "The curse (what breaking faith with God brings)",
+  "refs": [
+   [
+    "Malachi", 1,
+    [ 14 ] ],
+   [
+    "Malachi", 2,
+    [ 2 ] ],
+   [
+    "Malachi", 3,
+    [ 9 ] ],
+   [
+    "Malachi", 4,
+    [ 6 ] ] ]
+ },
+ {
+  "id": "dung",
+  "kind": "term",
+  "name": "Dung of your solemn feasts (the refuse of the sacrifices)",
+  "refs": [
+   [
+    "Malachi", 2,
+    [ 3 ] ] ]
+ },
+ {
+  "id": "treacherously",
+  "kind": "term",
+  "name": "Deal treacherously (break faith)",
+  "refs": [
+   [
+    "Malachi", 2,
+    [ 10, 11, 14, 15, 16 ] ] ]
+ },
+ {
+  "id": "strange-god",
+  "kind": "term",
+  "name": "The daughter of a strange god (a wife who serves idols)",
+  "refs": [
+   [
+    "Malachi", 2,
+    [ 11 ] ] ]
+ },
+ {
+  "id": "wife-of-thy-youth",
+  "kind": "term",
+  "name": "The wife of thy youth",
+  "refs": [
+   [
+    "Proverbs", 5,
+    [ 18 ] ],
+   [
+    "Malachi", 2,
+    [ 14, 15 ] ] ]
+ },
+ {
+  "id": "godly-seed",
+  "kind": "term",
+  "name": "A godly seed (children raised to know God)",
+  "refs": [
+   [
+    "Malachi", 2,
+    [ 15 ] ] ]
+ },
+ {
+  "id": "putting-away",
+  "kind": "term",
+  "name": "Putting away (divorce)",
+  "refs": [
+   [
+    "Malachi", 2,
+    [ 16 ] ] ]
+ },
+ {
+  "id": "god-of-judgment",
+  "kind": "term",
+  "name": "The God of judgment",
+  "refs": [
+   [
+    "Malachi", 2,
+    [ 17 ] ] ]
+ },
+ {
+  "id": "my-messenger",
+  "kind": "person",
+  "name": "My messenger (John the Baptist)",
+  "refs": [
+   [
+    "Malachi", 3,
+    [ 1 ] ] ]
+ },
+ {
+  "id": "messenger-of-the-covenant",
+  "kind": "person",
+  "name": "The messenger of the covenant (the Lord Himself)",
+  "refs": [
+   [
+    "Malachi", 3,
+    [ 1 ] ] ]
+ },
+ {
+  "id": "refiner",
+  "kind": "term",
+  "name": "A refiner's fire (purifying silver and gold)",
+  "refs": [
+   [
+    "Malachi", 3,
+    [ 2, 3 ] ] ]
+ },
+ {
+  "id": "fullers-sope",
+  "kind": "term",
+  "name": "Fullers' sope (strong soap for whitening cloth)",
+  "refs": [
+   [
+    "Malachi", 3,
+    [ 2 ] ] ]
+ },
+ {
+  "id": "sorcerers",
+  "kind": "term",
+  "name": "Sorcerers (those who deal in spells and spirits)",
+  "refs": [
+   [
+    "Malachi", 3,
+    [ 5 ] ] ]
+ },
+ {
+  "id": "false-swearers",
+  "kind": "term",
+  "name": "False swearers (liars under oath)",
+  "refs": [
+   [
+    "Malachi", 3,
+    [ 5 ] ] ]
+ },
+ {
+  "id": "i-change-not",
+  "kind": "term",
+  "name": "I change not (God never changes)",
+  "refs": [
+   [
+    "Malachi", 3,
+    [ 6 ] ] ]
+ },
+ {
+  "id": "ordinances",
+  "kind": "term",
+  "name": "Ordinances (God's commands)",
+  "refs": [
+   [
+    "Malachi", 3,
+    [ 7, 14 ] ] ]
+ },
+ {
+  "id": "return-and-i-will-return",
+  "kind": "term",
+  "name": "Return unto me, and I will return unto you",
+  "refs": [
+   [
+    "Malachi", 3,
+    [ 7 ] ] ]
+ },
+ {
+  "id": "rob-god",
+  "kind": "term",
+  "name": "Robbing God",
+  "refs": [
+   [
+    "Malachi", 3,
+    [ 8, 9 ] ] ]
+ },
+ {
+  "id": "storehouse",
+  "kind": "term",
+  "name": "The storehouse (the temple storerooms)",
+  "refs": [
+   [
+    "Malachi", 3,
+    [ 10 ] ] ]
+ },
+ {
+  "id": "windows-of-heaven",
+  "kind": "term",
+  "name": "The windows of heaven (rain from God)",
+  "refs": [
+   [
+    "Malachi", 3,
+    [ 10 ] ] ]
+ },
+ {
+  "id": "devourer",
+  "kind": "term",
+  "name": "The devourer (locusts and pests)",
+  "refs": [
+   [
+    "Malachi", 3,
+    [ 11 ] ] ]
+ },
+ {
+  "id": "book-of-remembrance",
+  "kind": "term",
+  "name": "A book of remembrance",
+  "refs": [
+   [
+    "Malachi", 3,
+    [ 16 ] ] ]
+ },
+ {
+  "id": "jewels",
+  "kind": "term",
+  "name": "My jewels (God's own treasure)",
+  "refs": [
+   [
+    "Malachi", 3,
+    [ 17 ] ] ]
+ },
+ {
+  "id": "horeb",
+  "kind": "place",
+  "name": "Horeb (Mount Sinai)",
+  "refs": [
+   [
+    "Malachi", 4,
+    [ 4 ] ] ]
+ },
+ {
+  "id": "stubble",
+  "kind": "term",
+  "name": "Stubble (dry stalks left after harvest)",
+  "refs": [
+   [
+    "Malachi", 4,
+    [ 1 ] ] ]
+ },
+ {
+  "id": "sun-of-righteousness",
+  "kind": "term",
+  "name": "The Sun of righteousness (healing in his wings)",
+  "refs": [
+   [
+    "Malachi", 4,
+    [ 2 ] ] ]
+ },
+ {
+  "id": "calves-of-the-stall",
+  "kind": "term",
+  "name": "Calves of the stall (calves let out to run)",
+  "refs": [
+   [
+    "Malachi", 4,
+    [ 2 ] ] ]
+ },
+ {
+  "id": "statutes-and-judgments",
+  "kind": "term",
+  "name": "Statutes and judgments (the commands of the law)",
+  "refs": [
+   [
+    "Malachi", 4,
+    [ 4 ] ] ]
  }
 ];
