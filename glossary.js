@@ -755,6 +755,9 @@ window.GLOSSARY = [
     "Amos", 3,
     [ 1, 6, 10, 12, 15 ] ],
    [
+    "Amos", 4,
+    [ 3, 6, 8, 9, 10, 11, 13 ] ],
+   [
     "Amos", 5,
     [ 4, 6, 8, 14, 15, 16, 17, 18, 20, 27 ] ],
    [
@@ -1076,6 +1079,9 @@ window.GLOSSARY = [
     "Amos", 3,
     [ 1, 12, 14 ] ],
    [
+    "Amos", 4,
+    [ 5, 12 ] ],
+   [
     "Amos", 5,
     [ 1, 2, 3, 4, 25 ] ],
    [
@@ -1312,6 +1318,9 @@ window.GLOSSARY = [
    [
     "Joel", 2,
     [ 2, 31 ] ],
+   [
+    "Amos", 4,
+    [ 13 ] ],
    [
     "Amos", 5,
     [ 18, 20 ] ],
@@ -5366,6 +5375,9 @@ window.GLOSSARY = [
     "Amos", 3,
     [ 9, 12 ] ],
    [
+    "Amos", 4,
+    [ 1 ] ],
+   [
     "Amos", 6,
     [ 1 ] ],
    [
@@ -6810,7 +6822,10 @@ window.GLOSSARY = [
     [ 4 ] ],
    [
     "Joel", 2,
-    [ 25 ] ] ]
+    [ 25 ] ],
+   [
+    "Amos", 4,
+    [ 9 ] ] ]
  },
  {
   "id": "sackcloth",
@@ -7076,11 +7091,17 @@ window.GLOSSARY = [
  {
   "id": "tyre-and-zidon",
   "kind": "place",
-  "name": "Tyre and Zidon (Sidon)",
+  "name": "Tyre (Tyrus) and Zidon (Sidon)",
   "refs": [
    [
+    "Hosea", 9,
+    [ 13 ] ],
+   [
     "Joel", 3,
-    [ 4 ] ] ]
+    [ 4 ] ],
+   [
+    "Amos", 1,
+    [ 9, 10 ] ] ]
  },
  {
   "id": "palestine",
@@ -7204,6 +7225,9 @@ window.GLOSSARY = [
    [
     "Amos", 3,
     [ 1, 9 ] ],
+   [
+    "Amos", 4,
+    [ 10 ] ],
    [
     "Amos", 8,
     [ 8 ] ],
@@ -7628,6 +7652,9 @@ window.GLOSSARY = [
     "Hosea", 12,
     [ 11 ] ],
    [
+    "Amos", 4,
+    [ 4 ] ],
+   [
     "Amos", 5,
     [ 5 ] ] ]
  },
@@ -7724,6 +7751,9 @@ window.GLOSSARY = [
     "Amos", 3,
     [ 14 ] ],
    [
+    "Amos", 4,
+    [ 4 ] ],
+   [
     "Amos", 5,
     [ 5, 6 ] ],
    [
@@ -7760,6 +7790,9 @@ window.GLOSSARY = [
   "name": "The calves (golden calf idols)",
   "refs": [
    [
+    "Hosea", 8,
+    [ 5, 6 ] ],
+   [
     "Hosea", 10,
     [ 5 ] ],
    [
@@ -7780,6 +7813,9 @@ window.GLOSSARY = [
    [
     "Hosea", 10,
     [ 8 ] ],
+   [
+    "Amos", 4,
+    [ 13 ] ],
    [
     "Amos", 7,
     [ 9 ] ] ]
@@ -8130,6 +8166,255 @@ window.GLOSSARY = [
   "refs": [
    [
     "Hosea", 14,
+    [ 8 ] ] ]
+ },
+ {
+  "id": "benjamin",
+  "kind": "place",
+  "name": "Benjamin (the tribe and its land)",
+  "refs": [
+   [
+    "Hosea", 5,
+    [ 8 ] ] ]
+ },
+ {
+  "id": "mizpah",
+  "kind": "place",
+  "name": "Mizpah",
+  "refs": [
+   [
+    "Hosea", 5,
+    [ 1 ] ] ]
+ },
+ {
+  "id": "tabor",
+  "kind": "place",
+  "name": "Mount Tabor",
+  "refs": [
+   [
+    "Hosea", 5,
+    [ 1 ] ] ]
+ },
+ {
+  "id": "ramah",
+  "kind": "place",
+  "name": "Ramah",
+  "refs": [
+   [
+    "Hosea", 5,
+    [ 8 ] ] ]
+ },
+ {
+  "id": "revolters",
+  "kind": "term",
+  "name": "Revolters",
+  "refs": [
+   [
+    "Hosea", 5,
+    [ 2 ] ],
+   [
+    "Hosea", 9,
+    [ 15 ] ] ]
+ },
+ {
+  "id": "cornet",
+  "kind": "term",
+  "name": "Cornet (a ram's horn trumpet)",
+  "refs": [
+   [
+    "Hosea", 5,
+    [ 8 ] ] ]
+ },
+ {
+  "id": "the-bound",
+  "kind": "term",
+  "name": "The bound (a boundary stone)",
+  "refs": [
+   [
+    "Hosea", 5,
+    [ 10 ] ] ]
+ },
+ {
+  "id": "hewed",
+  "kind": "term",
+  "name": "Hewed (cut down)",
+  "refs": [
+   [
+    "Hosea", 6,
+    [ 5 ] ] ]
+ },
+ {
+  "id": "mercy-not-sacrifice",
+  "kind": "term",
+  "name": "Mercy, and not sacrifice",
+  "refs": [
+   [
+    "Hosea", 6,
+    [ 6 ] ] ]
+ },
+ {
+  "id": "covenant",
+  "kind": "term",
+  "name": "Covenant",
+  "refs": [
+   [
+    "Proverbs", 2,
+    [ 17 ] ],
+   [
+    "Hosea", 2,
+    [ 18 ] ],
+   [
+    "Hosea", 6,
+    [ 7 ] ],
+   [
+    "Hosea", 8,
+    [ 1 ] ],
+   [
+    "Hosea", 10,
+    [ 4 ] ],
+   [
+    "Hosea", 12,
+    [ 1 ] ],
+   [
+    "Amos", 1,
+    [ 9 ] ] ]
+ },
+ {
+  "id": "oven",
+  "kind": "term",
+  "name": "Oven",
+  "refs": [
+   [
+    "Hosea", 7,
+    [ 4, 6, 7 ] ] ]
+ },
+ {
+  "id": "cake-not-turned",
+  "kind": "term",
+  "name": "A cake not turned",
+  "refs": [
+   [
+    "Hosea", 7,
+    [ 8 ] ] ]
+ },
+ {
+  "id": "silly",
+  "kind": "term",
+  "name": "Silly (simple, easily fooled)",
+  "refs": [
+   [
+    "Hosea", 7,
+    [ 11 ] ] ]
+ },
+ {
+  "id": "most-high",
+  "kind": "term",
+  "name": "The most High",
+  "refs": [
+   [
+    "Hosea", 7,
+    [ 16 ] ],
+   [
+    "Hosea", 11,
+    [ 7 ] ] ]
+ },
+ {
+  "id": "deceitful-bow",
+  "kind": "term",
+  "name": "A deceitful bow",
+  "refs": [
+   [
+    "Hosea", 7,
+    [ 16 ] ] ]
+ },
+ {
+  "id": "sow-the-wind",
+  "kind": "term",
+  "name": "Sown the wind, reap the whirlwind",
+  "refs": [
+   [
+    "Hosea", 8,
+    [ 7 ] ] ]
+ },
+ {
+  "id": "hired-lovers",
+  "kind": "term",
+  "name": "Hired lovers",
+  "refs": [
+   [
+    "Hosea", 8,
+    [ 9, 10 ] ] ]
+ },
+ {
+  "id": "fenced-cities",
+  "kind": "term",
+  "name": "Fenced cities",
+  "refs": [
+   [
+    "Hosea", 8,
+    [ 14 ] ] ]
+ },
+ {
+  "id": "memphis",
+  "kind": "place",
+  "name": "Memphis (in Egypt)",
+  "refs": [
+   [
+    "Hosea", 9,
+    [ 6 ] ] ]
+ },
+ {
+  "id": "baal-peor",
+  "kind": "place",
+  "name": "Baal-peor",
+  "refs": [
+   [
+    "Hosea", 9,
+    [ 10 ] ] ]
+ },
+ {
+  "id": "cornfloor",
+  "kind": "term",
+  "name": "Cornfloor (threshing floor)",
+  "refs": [
+   [
+    "Hosea", 9,
+    [ 1 ] ] ]
+ },
+ {
+  "id": "bread-of-mourners",
+  "kind": "term",
+  "name": "The bread of mourners",
+  "refs": [
+   [
+    "Hosea", 9,
+    [ 4 ] ] ]
+ },
+ {
+  "id": "solemn-day",
+  "kind": "term",
+  "name": "The solemn day (a feast day)",
+  "refs": [
+   [
+    "Hosea", 9,
+    [ 5 ] ] ]
+ },
+ {
+  "id": "days-of-visitation",
+  "kind": "term",
+  "name": "The days of visitation",
+  "refs": [
+   [
+    "Hosea", 9,
+    [ 7 ] ] ]
+ },
+ {
+  "id": "watchman",
+  "kind": "term",
+  "name": "Watchman",
+  "refs": [
+   [
+    "Hosea", 9,
     [ 8 ] ] ]
  }
 ];

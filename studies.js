@@ -2626,6 +2626,239 @@ window.STUDIES = [
     }
   },
   {
+    "id": "hosea-05",
+    "type": "chapter",
+    "book": "Hosea",
+    "ch": 5,
+    "date": "2026-10-29",
+    "title": "Hosea 5",
+    "sub": "Till they seek my face",
+    "about": "God calls out Israel's priests and kings, sounds the alarm of war, and then steps back and waits for His people to come home.",
+    "tags": [
+      "God sees",
+      "Bondage",
+      "Empty religion",
+      "The wrong cure",
+      "Judgment",
+      "Hope"
+    ],
+    "url": "studies/hosea-05.html",
+    "overview": {
+      "where": "Israel (Ephraim) and Judah, from Mizpah and Tabor to the border towns of Benjamin: Gibeah, Ramah and Beth-aven",
+      "when": "About 734 BC, as Israel and Judah fought each other and Assyria moved in",
+      "people": [
+        "priests",
+        "ephraim-kingdom",
+        "jareb"
+      ],
+      "places": [
+        "israel",
+        "judah",
+        "mizpah",
+        "tabor",
+        "benjamin",
+        "gibeah",
+        "ramah",
+        "beth-aven",
+        "assyria"
+      ],
+      "story": [
+        "God calls out the priests, the people and the king's house: they have been a snare on Mizpah and a net on Tabor (1–2).",
+        "“I know Ephraim.” The spirit of whoredoms has them, and they will not frame their doings to turn to God (3–5).",
+        "They come with flocks and herds to seek the LORD, but He has withdrawn Himself from them (6–7).",
+        "Sound the alarm in Gibeah, Ramah and Beth-aven. God will be to Ephraim as a moth and to Judah as rottenness (8–12).",
+        "Sick and wounded, Ephraim goes to Assyria, who cannot heal. God will tear like a lion, then wait “till they acknowledge their offence, and seek my face” (13–15)."
+      ],
+      "key": {
+        "ref": "Hosea 5:15",
+        "text": "I will go and return to my place, till they acknowledge their offence, and seek my face: in their affliction they will seek me early."
+      },
+      "big": "Sin becomes a master, and no false cure can heal its wound. God's discipline is real and comes after many warnings, but its purpose is to bring His people home. He is waiting for us to own what we did and seek His face."
+    }
+  },
+  {
+    "id": "hosea-06",
+    "type": "chapter",
+    "book": "Hosea",
+    "ch": 6,
+    "date": "2026-10-29",
+    "title": "Hosea 6",
+    "sub": "Come, and let us return",
+    "about": "A beautiful call to come back to the LORD, a goodness that burns off like morning fog, and the words Jesus would quote twice: “I desired mercy, and not sacrifice.”",
+    "tags": [
+      "Returning",
+      "God's faithfulness",
+      "Shallow repentance",
+      "What God wants",
+      "Broken trust",
+      "Hope"
+    ],
+    "url": "studies/hosea-06.html",
+    "overview": {
+      "where": "Israel (Ephraim) and Judah, with Gilead east of the Jordan",
+      "when": "About 735–730 BC, in the troubled last years before Samaria fell",
+      "people": [
+        "ephraim-kingdom",
+        "priests"
+      ],
+      "places": [
+        "israel",
+        "judah",
+        "gilead"
+      ],
+      "story": [
+        "“Come, and let us return unto the LORD: for he hath torn, and he will heal us” (1–2).",
+        "If we follow on to know the LORD, He will come as surely as the morning and the rain (3).",
+        "But Israel's goodness is like a morning cloud and the early dew. It goes away (4–5).",
+        "“For I desired mercy, and not sacrifice; and the knowledge of God more than burnt offerings” (6).",
+        "They broke the covenant. Gilead is stained with blood, and the priests murder on the road like robbers. Yet God will one day return the captivity of His people (7–11)."
+      ],
+      "key": {
+        "ref": "Hosea 6:6",
+        "text": "For I desired mercy, and not sacrifice; and the knowledge of God more than burnt offerings."
+      },
+      "big": "God wants a real turning and a loyal heart, not ritual and feelings that burn off by noon. The hand that wounds is the hand that heals, and He comes as surely as sunrise to those who keep seeking Him."
+    }
+  },
+  {
+    "id": "hosea-07",
+    "type": "chapter",
+    "book": "Hosea",
+    "ch": 7,
+    "date": "2026-10-29",
+    "title": "Hosea 7",
+    "sub": "A cake not turned",
+    "about": "Kings murdered one after another, a nation half-baked, a man going gray without noticing, and a God who says, “I have redeemed them.”",
+    "tags": [
+      "God sees",
+      "Desire",
+      "Half-hearted",
+      "Unnoticed loss",
+      "Real prayer",
+      "Turning"
+    ],
+    "url": "studies/hosea-07.html",
+    "overview": {
+      "where": "Samaria and the royal court of Israel, caught between Egypt and Assyria",
+      "when": "About 735–725 BC, when four of Israel's kings were murdered in about twenty years",
+      "people": [
+        "ephraim-kingdom"
+      ],
+      "places": [
+        "israel",
+        "samaria",
+        "egypt",
+        "assyria"
+      ],
+      "story": [
+        "When God would have healed Israel, their sin came to light. They forget that He remembers it all (1–2).",
+        "The princes are hot as a baker's oven, plotting all night. They make the king sick with wine, and their kings fall one by one. None calls on God (3–7).",
+        "Ephraim is a cake not turned. Strangers devour his strength, and gray hairs come, yet he knows it not (8–10).",
+        "Like a silly dove, Ephraim calls to Egypt and runs to Assyria, and God spreads His net (11–12).",
+        "God redeemed them, but they howl on their beds instead of crying to Him with their heart. They return, but not to the most High, like a deceitful bow (13–16)."
+      ],
+      "key": {
+        "ref": "Hosea 7:9",
+        "text": "Strangers have devoured his strength, and he knoweth it not: yea, gray hairs are here and there upon him, yet he knoweth not."
+      },
+      "big": "Sin drains a man quietly while he tells himself he's fine, and half-hearted faith ruins him. Swapping one master for another isn't turning. Real turning means coming with the whole heart to the God who redeemed us."
+    }
+  },
+  {
+    "id": "hosea-08",
+    "type": "chapter",
+    "book": "Hosea",
+    "ch": 8,
+    "date": "2026-10-29",
+    "title": "Hosea 8",
+    "sub": "Sown the wind",
+    "about": "Kings God never chose, a golden calf a craftsman made, love bought with silver, and a harvest far bigger than the seed.",
+    "tags": [
+      "Knowing God",
+      "Idols",
+      "Sowing and reaping",
+      "Bought love",
+      "God's word",
+      "Forgetting God"
+    ],
+    "url": "studies/hosea-08.html",
+    "overview": {
+      "where": "Samaria and the northern kingdom of Israel, with Assyria and Egypt looming, and a word to Judah",
+      "when": "About 735–725 BC, as Assyria closed in on Samaria",
+      "people": [
+        "ephraim-kingdom"
+      ],
+      "places": [
+        "israel",
+        "samaria",
+        "assyria",
+        "egypt",
+        "judah"
+      ],
+      "story": [
+        "Blow the trumpet: an eagle is coming. Israel cries, “My God, we know thee,” but has cast off the good (1–3).",
+        "They made kings without God and a calf of silver and gold. “The workman made it; therefore it is not God” (4–6).",
+        "“They have sown the wind, and they shall reap the whirlwind.” Ephraim went to Assyria and hired lovers (7–10).",
+        "Many altars became altars to sin, and God's great law was counted a strange thing (11–12).",
+        "Israel forgot his Maker and built palaces, and Judah built fenced cities, but fire will come (13–14)."
+      ],
+      "key": {
+        "ref": "Hosea 8:7",
+        "text": "For they have sown the wind, and they shall reap the whirlwind: it hath no stalk: the bud shall yield no meal: if so be it yield, the strangers shall swallow it up."
+      },
+      "big": "A god a man makes can't save him, and love bought from the world never lasts. We reap what we sow, and more. So remember your Maker and start sowing to the Spirit today."
+    }
+  },
+  {
+    "id": "hosea-09",
+    "type": "chapter",
+    "book": "Hosea",
+    "ch": 9,
+    "date": "2026-10-29",
+    "title": "Hosea 9",
+    "sub": "Rejoice not",
+    "about": "The party is over. Israel will be carried off, the feasts will stop, and the people named “fruitful” will bear no fruit. Yet God remembers when He first found them, like grapes in the wilderness.",
+    "tags": [
+      "False joy",
+      "Exile",
+      "God's messengers",
+      "First love",
+      "Fruit",
+      "Hope"
+    ],
+    "url": "studies/hosea-09.html",
+    "overview": {
+      "where": "Israel at harvest time, with exile ahead in Assyria and Egypt; memories of Gibeah, Baal-peor and Gilgal",
+      "when": "About 730–725 BC, shortly before Samaria fell to Assyria (about 722 BC)",
+      "people": [
+        "ephraim-kingdom",
+        "baal"
+      ],
+      "places": [
+        "israel",
+        "egypt",
+        "assyria",
+        "memphis",
+        "gibeah",
+        "baal-peor",
+        "tyre-and-zidon",
+        "gilgal"
+      ],
+      "story": [
+        "“Rejoice not, O Israel.” They thanked Baal for the harvest, and the floor and the winepress will fail them (1–2).",
+        "They will leave the LORD's land: Ephraim to Egypt and to Assyria, with no offerings and no feast days. Memphis shall bury them (3–6).",
+        "The days of visitation have come. Israel calls the prophet a fool and is as corrupt as in the days of Gibeah (7–9).",
+        "God found Israel like grapes in the wilderness, but they went to Baal-peor. Their glory will fly away like a bird (10–14).",
+        "All their wickedness is in Gilgal. Ephraim's root is dried up, and they will be wanderers among the nations (15–17)."
+      ],
+      "key": {
+        "ref": "Hosea 9:10",
+        "text": "I found Israel like grapes in the wilderness; I saw your fathers as the firstripe in the fig tree at her first time: but they went to Baal-peor, and separated themselves unto that shame; and their abominations were according as they loved."
+      },
+      "big": "A party that leaves God out always runs dry, and a people cut off from Him bears no fruit. Judgment on Israel was real. But God's first thought of His people was delight, and Hosea's book ends with “I will love them freely.”"
+    }
+  },
+  {
     "id": "hosea-10",
     "type": "chapter",
     "book": "Hosea",
