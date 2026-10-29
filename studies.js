@@ -2437,6 +2437,195 @@ window.STUDIES = [
     }
   },
   {
+    "id": "hosea-01",
+    "type": "chapter",
+    "book": "Hosea",
+    "ch": 1,
+    "date": "2026-10-29",
+    "title": "Hosea 1",
+    "sub": "A marriage that preached",
+    "about": "God tells a prophet to marry a woman who will break his heart, so a whole nation can see what its sin has done to God, and how far His mercy reaches.",
+    "tags": [
+      "God's heart",
+      "Sin",
+      "God's word",
+      "Salvation",
+      "Mercy",
+      "Hope"
+    ],
+    "url": "studies/hosea-01.html",
+    "overview": {
+      "where": "Israel, the northern kingdom, with its capital at Samaria",
+      "when": "About 755 BC, in the last prosperous years of Jeroboam II, before Assyria carried the north into exile",
+      "people": [
+        "hosea",
+        "beeri",
+        "gomer",
+        "diblaim",
+        "lo-ruhamah",
+        "lo-ammi",
+        "jehu",
+        "jeroboam-ii",
+        "joash-king-of-israel",
+        "uzziah",
+        "jotham",
+        "ahaz",
+        "hezekiah"
+      ],
+      "places": [
+        "israel",
+        "judah",
+        "jezreel"
+      ],
+      "story": [
+        "The word of the LORD comes to Hosea in the days of Jeroboam II of Israel and four kings of Judah (1).",
+        "God tells Hosea to marry “a wife of whoredoms,” because the land has gone after other gods. He marries Gomer (2–3).",
+        "Their first son is named Jezreel: God will avenge the blood Jehu shed there and end Israel's kingdom (4–5).",
+        "A daughter, Lo-ruhamah, “no mercy,” for Israel; but Judah will be saved by the LORD, not by bow or sword (6–7).",
+        "A second son, Lo-ammi, “not my people” (8–9). Yet one day they will be called “the sons of the living God,” and Judah and Israel will be gathered under one head (10–11)."
+      ],
+      "key": {
+        "ref": "Hosea 1:10",
+        "text": "Yet the number of the children of Israel shall be as the sand of the sea, which cannot be measured nor numbered; and it shall come to pass, that in the place where it was said unto them, Ye are not my people, there it shall be said unto them, Ye are the sons of the living God."
+      },
+      "big": "Sin is unfaithfulness to a God who loves us like a husband. His judgment is real, and He keeps His word, but His last word is “Yet”: those who were “not my people” can be called the sons of the living God."
+    }
+  },
+  {
+    "id": "hosea-02",
+    "type": "chapter",
+    "book": "Hosea",
+    "ch": 2,
+    "date": "2026-10-29",
+    "title": "Hosea 2",
+    "sub": "A door of hope",
+    "about": "God takes His unfaithful wife to court, strips away everything she trusted, and then leads her into the wilderness to speak to her heart.",
+    "tags": [
+      "Sin's lies",
+      "God's provision",
+      "Hedged in",
+      "Hope",
+      "God's love",
+      "Belonging"
+    ],
+    "url": "studies/hosea-02.html",
+    "overview": {
+      "where": "Israel, the northern kingdom, pictured as Hosea's unfaithful wife",
+      "when": "About 750 BC, before Assyria carried the north into exile",
+      "people": [
+        "lo-ammi",
+        "lo-ruhamah",
+        "baal"
+      ],
+      "places": [
+        "wilderness",
+        "valley-of-achor",
+        "egypt",
+        "jezreel"
+      ],
+      "story": [
+        "The children are told to plead with their mother to put away her unfaithfulness before she is left bare and dry (1–5).",
+        "She says her lovers give her bread and water. God hedges her way with thorns until she says, “I will go and return to my first husband” (5–7).",
+        "She never knew it was God who gave her corn, wine and oil. He takes His gifts back and ends her feasts, because she forgot Him (8–13).",
+        "“Therefore, behold, I will allure her.” In the wilderness He speaks to her heart and makes the valley of Achor a door of hope (14–15).",
+        "She will call Him Ishi, not Baali. He betroths her for ever in faithfulness, and says to those who were not His people, “Thou art my people” (16–23)."
+      ],
+      "key": {
+        "ref": "Hosea 2:15",
+        "text": "And I will give her her vineyards from thence, and the valley of Achor for a door of hope: and she shall sing there, as in the days of her youth, and as in the day when she came up out of the land of Egypt."
+      },
+      "big": "Sin takes the credit for what God gave, then takes everything else. God's hedge of thorns is mercy that turns us toward home, and He meets us in the valley of trouble with a door of hope and a love that is for ever."
+    }
+  },
+  {
+    "id": "hosea-03",
+    "type": "chapter",
+    "book": "Hosea",
+    "ch": 3,
+    "date": "2026-10-29",
+    "title": "Hosea 3",
+    "sub": "Bought back",
+    "about": "Hosea's wife has sold herself into the gutter. God tells him to go and get her, pay the price, and bring her home. That is how God loves.",
+    "tags": [
+      "God's love",
+      "Redemption",
+      "Sin's slavery",
+      "New life",
+      "Life without God",
+      "The King"
+    ],
+    "url": "studies/hosea-03.html",
+    "overview": {
+      "where": "Israel, the northern kingdom",
+      "when": "About 750 BC, before the Assyrian exile; looking ahead to “the latter days”",
+      "people": [
+        "hosea",
+        "gomer",
+        "david"
+      ],
+      "places": [
+        "israel"
+      ],
+      "story": [
+        "God tells Hosea, “Go yet, love a woman… an adulteress,” just as the LORD loves Israel while they look to other gods (1).",
+        "Hosea buys her back for fifteen pieces of silver and a homer and a half of barley (2).",
+        "She is to stay with him many days and be faithful, and he will be faithful to her (3).",
+        "Israel will live many days without king or sacrifice, without idols too (4).",
+        "Afterward they will return and seek the LORD and “David their king” in the latter days (5)."
+      ],
+      "key": {
+        "ref": "Hosea 3:1",
+        "text": "Then said the LORD unto me, Go yet, love a woman beloved of her friend, yet an adulteress, according to the love of the LORD toward the children of Israel, who look to other gods, and love flagons of wine."
+      },
+      "big": "Sin promises freedom and ends in slavery. God loves us while we are still running, and in Christ He paid the price to buy us back and bring us home."
+    }
+  },
+  {
+    "id": "hosea-04",
+    "type": "chapter",
+    "book": "Hosea",
+    "ch": 4,
+    "date": "2026-10-29",
+    "title": "Hosea 4",
+    "sub": "The LORD's case against Israel",
+    "about": "Hosea moves from his own home to the courtroom. God brings charges against a nation that has forgotten Him, starting with the men who were supposed to teach it.",
+    "tags": [
+      "Knowing God",
+      "Sin's spread",
+      "Leaders",
+      "Wine",
+      "Backsliding",
+      "Let alone"
+    ],
+    "url": "studies/hosea-04.html",
+    "overview": {
+      "where": "Israel, the northern kingdom, with a warning to Judah; the idol shrines at Gilgal and Bethel (Beth-aven)",
+      "when": "About 750 BC, in Israel's last decades before Assyria",
+      "people": [
+        "priests",
+        "ephraim-kingdom"
+      ],
+      "places": [
+        "israel",
+        "judah",
+        "gilgal",
+        "beth-aven"
+      ],
+      "story": [
+        "The LORD has a controversy with the land: no truth, no mercy, no knowledge of God, only swearing, lying, killing, stealing and adultery (1–3).",
+        "“My people are destroyed for lack of knowledge.” The priests rejected it and fed on the people's sin: “like people, like priest” (4–10).",
+        "Whoredom and wine take away the heart. The people ask counsel of wooden idols and worship at the hilltop shrines (11–13).",
+        "God holds the men to account for leading their families astray, and warns Judah not to follow Israel to Gilgal and Beth-aven (14–15).",
+        "Israel is a backsliding heifer. “Ephraim is joined to idols: let him alone,” and a wind will sweep them away (16–19)."
+      ],
+      "key": {
+        "ref": "Hosea 4:6",
+        "text": "My people are destroyed for lack of knowledge: because thou hast rejected knowledge, I will also reject thee, that thou shalt be no priest to me: seeing thou hast forgotten the law of thy God, I will also forget thy children."
+      },
+      "big": "When people reject the knowledge of God, everything falls apart: homes, leaders, the land itself. Sin takes away the heart, and the worst judgment is to be left to it. But God still calls backsliders to return."
+    }
+  },
+  {
     "id": "joel-01",
     "type": "chapter",
     "book": "Joel",

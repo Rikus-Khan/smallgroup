@@ -728,6 +728,9 @@ window.GLOSSARY = [
     "Amos", 1,
     [ 2 ] ],
    [
+    "Amos", 2,
+    [ 5 ] ],
+   [
     "John", 1,
     [ 19 ] ],
    [
@@ -802,6 +805,9 @@ window.GLOSSARY = [
    [
     "Joel", 3,
     [ 19 ] ],
+   [
+    "Amos", 2,
+    [ 10 ] ],
    [
     "Amos", 5,
     [ 25 ] ],
@@ -989,6 +995,9 @@ window.GLOSSARY = [
     "Amos", 1,
     [ 1 ] ],
    [
+    "Amos", 2,
+    [ 6, 11 ] ],
+   [
     "Amos", 5,
     [ 1, 2, 3, 4, 25 ] ],
    [
@@ -1117,6 +1126,9 @@ window.GLOSSARY = [
    [
     "Amos", 1,
     [ 1 ] ],
+   [
+    "Amos", 2,
+    [ 4, 5 ] ],
    [
     "Amos", 7,
     [ 12 ] ] ]
@@ -1426,6 +1438,9 @@ window.GLOSSARY = [
    [
     "Hosea", 8,
     [ 1, 12 ] ],
+   [
+    "Amos", 2,
+    [ 4 ] ],
    [
     "John", 1,
     [ 17, 45 ] ],
@@ -1867,6 +1882,9 @@ window.GLOSSARY = [
    [
     "Joel", 3,
     [ 3, 18 ] ],
+   [
+    "Amos", 2,
+    [ 8, 12 ] ],
    [
     "Amos", 5,
     [ 11 ] ],
@@ -2632,6 +2650,9 @@ window.GLOSSARY = [
    [
     "Hosea", 10,
     [ 12 ] ],
+   [
+    "Amos", 2,
+    [ 6 ] ],
    [
     "Amos", 5,
     [ 7, 24 ] ],
@@ -4997,6 +5018,9 @@ window.GLOSSARY = [
     "Proverbs", 17,
     [ 15 ] ],
    [
+    "Amos", 2,
+    [ 8 ] ],
+   [
     "John", 3,
     [ 17, 18 ] ],
    [
@@ -6656,11 +6680,26 @@ window.GLOSSARY = [
   "name": "The priests (the LORD's ministers)",
   "refs": [
    [
+    "Hosea", 4,
+    [ 4, 6, 9 ] ],
+   [
+    "Hosea", 5,
+    [ 1 ] ],
+   [
+    "Hosea", 6,
+    [ 9 ] ],
+   [
+    "Hosea", 10,
+    [ 5 ] ],
+   [
     "Joel", 1,
     [ 9, 13 ] ],
    [
     "Joel", 2,
-    [ 17 ] ] ]
+    [ 17 ] ],
+   [
+    "Amos", 7,
+    [ 10 ] ] ]
  },
  {
   "id": "elders",
@@ -6792,7 +6831,10 @@ window.GLOSSARY = [
     [ 1 ] ],
    [
     "Joel", 2,
-    [ 1, 15 ] ] ]
+    [ 1, 15 ] ],
+   [
+    "Amos", 2,
+    [ 2 ] ] ]
  },
  {
   "id": "rend-your-heart",
@@ -7067,6 +7109,9 @@ window.GLOSSARY = [
     "Joel", 3,
     [ 19 ] ],
    [
+    "Amos", 2,
+    [ 10 ] ],
+   [
     "Amos", 8,
     [ 8 ] ],
    [
@@ -7085,7 +7130,436 @@ window.GLOSSARY = [
     "Amos", 1,
     [ 6, 9, 11 ] ],
    [
+    "Amos", 2,
+    [ 1 ] ],
+   [
     "Amos", 9,
+    [ 12 ] ] ]
+ },
+ {
+  "id": "hosea",
+  "kind": "person",
+  "name": "Hosea the prophet",
+  "refs": [
+   [
+    "Hosea", 1,
+    [ 1, 2 ] ] ]
+ },
+ {
+  "id": "beeri",
+  "kind": "person",
+  "name": "Beeri, father of Hosea",
+  "refs": [
+   [
+    "Hosea", 1,
+    [ 1 ] ] ]
+ },
+ {
+  "id": "gomer",
+  "kind": "person",
+  "name": "Gomer, Hosea's wife",
+  "refs": [
+   [
+    "Hosea", 1,
+    [ 3 ] ] ]
+ },
+ {
+  "id": "diblaim",
+  "kind": "person",
+  "name": "Diblaim, father of Gomer",
+  "refs": [
+   [
+    "Hosea", 1,
+    [ 3 ] ] ]
+ },
+ {
+  "id": "uzziah",
+  "kind": "person",
+  "name": "Uzziah, king of Judah",
+  "refs": [
+   [
+    "Hosea", 1,
+    [ 1 ] ],
+   [
+    "Amos", 1,
+    [ 1 ] ] ]
+ },
+ {
+  "id": "jotham",
+  "kind": "person",
+  "name": "Jotham, king of Judah",
+  "refs": [
+   [
+    "Hosea", 1,
+    [ 1 ] ] ]
+ },
+ {
+  "id": "ahaz",
+  "kind": "person",
+  "name": "Ahaz, king of Judah",
+  "refs": [
+   [
+    "Hosea", 1,
+    [ 1 ] ] ]
+ },
+ {
+  "id": "jeroboam-ii",
+  "kind": "person",
+  "name": "Jeroboam II, king of Israel",
+  "refs": [
+   [
+    "Hosea", 1,
+    [ 1 ] ],
+   [
+    "Amos", 1,
+    [ 1 ] ],
+   [
+    "Amos", 7,
+    [ 9, 10, 11 ] ] ]
+ },
+ {
+  "id": "joash-king-of-israel",
+  "kind": "person",
+  "name": "Joash, king of Israel (father of Jeroboam II)",
+  "refs": [
+   [
+    "Hosea", 1,
+    [ 1 ] ],
+   [
+    "Amos", 1,
+    [ 1 ] ] ]
+ },
+ {
+  "id": "jehu",
+  "kind": "person",
+  "name": "Jehu, king of Israel",
+  "refs": [
+   [
+    "Hosea", 1,
+    [ 4 ] ] ]
+ },
+ {
+  "id": "lo-ruhamah",
+  "kind": "person",
+  "name": "Lo-ruhamah (\"no mercy\"), later Ruhamah",
+  "refs": [
+   [
+    "Hosea", 1,
+    [ 6, 8 ] ],
+   [
+    "Hosea", 2,
+    [ 1 ] ] ]
+ },
+ {
+  "id": "lo-ammi",
+  "kind": "person",
+  "name": "Lo-ammi (\"not my people\"), later Ammi",
+  "refs": [
+   [
+    "Hosea", 1,
+    [ 9 ] ],
+   [
+    "Hosea", 2,
+    [ 1 ] ] ]
+ },
+ {
+  "id": "jezreel",
+  "kind": "place",
+  "name": "Jezreel (the valley, and Hosea's son: \"God sows\")",
+  "refs": [
+   [
+    "Hosea", 1,
+    [ 4, 5, 11 ] ],
+   [
+    "Hosea", 2,
+    [ 22 ] ] ]
+ },
+ {
+  "id": "living-god",
+  "kind": "term",
+  "name": "The living God",
+  "refs": [
+   [
+    "Hosea", 1,
+    [ 10 ] ],
+   [
+    "John", 6,
+    [ 69 ] ] ]
+ },
+ {
+  "id": "whoredom",
+  "kind": "term",
+  "name": "Whoredom, harlot (unfaithfulness; idolatry)",
+  "refs": [
+   [
+    "Hosea", 1,
+    [ 2 ] ],
+   [
+    "Hosea", 2,
+    [ 2, 4, 5 ] ],
+   [
+    "Hosea", 3,
+    [ 3 ] ],
+   [
+    "Hosea", 4,
+    [ 10, 12, 13, 14, 15, 18 ] ],
+   [
+    "Hosea", 5,
+    [ 3, 4 ] ],
+   [
+    "Hosea", 6,
+    [ 10 ] ] ]
+ },
+ {
+  "id": "mercy",
+  "kind": "term",
+  "name": "Mercy",
+  "refs": [
+   [
+    "Proverbs", 3,
+    [ 3 ] ],
+   [
+    "Proverbs", 12,
+    [ 10 ] ],
+   [
+    "Proverbs", 14,
+    [ 21, 22, 31 ] ],
+   [
+    "Proverbs", 16,
+    [ 6 ] ],
+   [
+    "Proverbs", 20,
+    [ 28 ] ],
+   [
+    "Proverbs", 21,
+    [ 21 ] ],
+   [
+    "Proverbs", 28,
+    [ 13 ] ],
+   [
+    "Hosea", 1,
+    [ 6, 7 ] ],
+   [
+    "Hosea", 2,
+    [ 4, 19, 23 ] ],
+   [
+    "Hosea", 4,
+    [ 1 ] ],
+   [
+    "Hosea", 6,
+    [ 6 ] ],
+   [
+    "Hosea", 10,
+    [ 12 ] ],
+   [
+    "Hosea", 12,
+    [ 6 ] ],
+   [
+    "Hosea", 14,
+    [ 3 ] ] ]
+ },
+ {
+  "id": "baal",
+  "kind": "person",
+  "name": "Baal, Baalim (the Canaanite idol)",
+  "refs": [
+   [
+    "Hosea", 2,
+    [ 8, 13, 17 ] ],
+   [
+    "Hosea", 9,
+    [ 10 ] ],
+   [
+    "Hosea", 11,
+    [ 2 ] ],
+   [
+    "Hosea", 13,
+    [ 1 ] ] ]
+ },
+ {
+  "id": "valley-of-achor",
+  "kind": "place",
+  "name": "The valley of Achor (\"trouble\")",
+  "refs": [
+   [
+    "Hosea", 2,
+    [ 15 ] ] ]
+ },
+ {
+  "id": "plead",
+  "kind": "term",
+  "name": "Plead, controversy (God's case in court)",
+  "refs": [
+   [
+    "Hosea", 2,
+    [ 2 ] ],
+   [
+    "Hosea", 4,
+    [ 1 ] ],
+   [
+    "Hosea", 12,
+    [ 2 ] ] ]
+ },
+ {
+  "id": "allure",
+  "kind": "term",
+  "name": "Allure (woo, win over)",
+  "refs": [
+   [
+    "Hosea", 2,
+    [ 14 ] ] ]
+ },
+ {
+  "id": "ishi-and-baali",
+  "kind": "term",
+  "name": "Ishi and Baali (\"my husband\" and \"my master\")",
+  "refs": [
+   [
+    "Hosea", 2,
+    [ 16 ] ] ]
+ },
+ {
+  "id": "betroth",
+  "kind": "term",
+  "name": "Betroth (a binding promise of marriage)",
+  "refs": [
+   [
+    "Hosea", 2,
+    [ 19, 20 ] ] ]
+ },
+ {
+  "id": "lovingkindness",
+  "kind": "term",
+  "name": "Lovingkindness (loyal love)",
+  "refs": [
+   [
+    "Hosea", 2,
+    [ 19 ] ] ]
+ },
+ {
+  "id": "homer",
+  "kind": "term",
+  "name": "Homer (a dry measure, about six bushels)",
+  "refs": [
+   [
+    "Hosea", 3,
+    [ 2 ] ] ]
+ },
+ {
+  "id": "flagons",
+  "kind": "term",
+  "name": "Flagons of wine",
+  "refs": [
+   [
+    "Hosea", 3,
+    [ 1 ] ] ]
+ },
+ {
+  "id": "ephod",
+  "kind": "term",
+  "name": "Ephod (the priest's vest)",
+  "refs": [
+   [
+    "Hosea", 3,
+    [ 4 ] ] ]
+ },
+ {
+  "id": "teraphim",
+  "kind": "term",
+  "name": "Teraphim (household idols)",
+  "refs": [
+   [
+    "Hosea", 3,
+    [ 4 ] ] ]
+ },
+ {
+  "id": "latter-days",
+  "kind": "term",
+  "name": "The latter days",
+  "refs": [
+   [
+    "Hosea", 3,
+    [ 5 ] ] ]
+ },
+ {
+  "id": "ephraim-kingdom",
+  "kind": "person",
+  "name": "Ephraim (the northern kingdom)",
+  "refs": [
+   [
+    "Hosea", 4,
+    [ 17 ] ],
+   [
+    "Hosea", 5,
+    [ 3, 5, 9, 11, 12, 13, 14 ] ],
+   [
+    "Hosea", 6,
+    [ 4, 10 ] ],
+   [
+    "Hosea", 7,
+    [ 1, 8, 11 ] ],
+   [
+    "Hosea", 8,
+    [ 9, 11 ] ],
+   [
+    "Hosea", 9,
+    [ 3, 8, 11, 13, 16 ] ],
+   [
+    "Hosea", 10,
+    [ 6, 11 ] ],
+   [
+    "Hosea", 11,
+    [ 3, 8, 9, 12 ] ],
+   [
+    "Hosea", 12,
+    [ 1, 8, 14 ] ],
+   [
+    "Hosea", 13,
+    [ 1, 12 ] ],
+   [
+    "Hosea", 14,
+    [ 8 ] ] ]
+ },
+ {
+  "id": "gilgal",
+  "kind": "place",
+  "name": "Gilgal",
+  "refs": [
+   [
+    "Hosea", 4,
+    [ 15 ] ],
+   [
+    "Hosea", 9,
+    [ 15 ] ],
+   [
+    "Hosea", 12,
+    [ 11 ] ],
+   [
+    "Amos", 5,
+    [ 5 ] ] ]
+ },
+ {
+  "id": "beth-aven",
+  "kind": "place",
+  "name": "Beth-aven (\"house of nothing,\" Hosea's name for Bethel)",
+  "refs": [
+   [
+    "Hosea", 4,
+    [ 15 ] ],
+   [
+    "Hosea", 5,
+    [ 8 ] ],
+   [
+    "Hosea", 10,
+    [ 5 ] ] ]
+ },
+ {
+  "id": "stocks",
+  "kind": "term",
+  "name": "Stocks and staff (wooden idols, a diviner's stick)",
+  "refs": [
+   [
+    "Hosea", 4,
     [ 12 ] ] ]
  }
 ];
