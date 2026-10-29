@@ -4680,5 +4680,196 @@ window.STUDIES = [
       },
       "big": "God's judgment is real, but it isn't His last word. He takes away shame, keeps the humble, gathers the limping, and rejoices over His people with singing."
     }
+  },
+  {
+    "id": "haggai-01",
+    "type": "chapter",
+    "book": "Haggai",
+    "ch": 1,
+    "date": "2026-10-29",
+    "title": "Haggai 1",
+    "sub": "Consider your ways",
+    "about": "God's people came home from exile, roofed their own houses, and left His house in rubble. God tells them to stop and look at where that has got them.",
+    "tags": [
+      "Priorities",
+      "Taking stock",
+      "Never enough",
+      "God's discipline",
+      "Obedience",
+      "God's presence"
+    ],
+    "url": "studies/haggai-01.html",
+    "overview": {
+      "where": "Jerusalem and Judah, a small Persian province, where the temple lay in ruins",
+      "when": "About 520 BC, after the exile, in the second year of Darius king of Persia",
+      "people": [
+        "haggai",
+        "the-lord",
+        "darius",
+        "zerubbabel",
+        "joshua-the-high-priest"
+      ],
+      "places": [
+        "judah",
+        "jerusalem"
+      ],
+      "story": [
+        "In about 520 BC, Haggai brings God's word to Zerubbabel the governor and Joshua the high priest. The people say it isn't time to build the LORD's house (1–2).",
+        "God asks: is it time for you to live in panelled houses while My house lies waste (3–4)?",
+        "“Consider your ways.” They sow much and reap little, and earn wages into a bag with holes (5–7).",
+        "Go up, bring wood, and build, and God will take pleasure in it. The drought came because they ran to their own houses and left His in ruins (8–11).",
+        "The leaders and the remnant obey and fear the LORD. God says, “I am with you,” stirs up their spirits, and in 23 days the work begins (12–15)."
+      ],
+      "key": {
+        "ref": "Haggai 1:5",
+        "text": "Now therefore thus saith the LORD of hosts; Consider your ways."
+      },
+      "big": "Take an honest look at the road you're on and put God first. When His people turn back and obey, He meets them at once: “I am with you.”"
+    }
+  },
+  {
+    "id": "haggai-02",
+    "type": "chapter",
+    "book": "Haggai",
+    "ch": 2,
+    "date": "2026-10-29",
+    "title": "Haggai 2",
+    "sub": "Be strong, and work",
+    "about": "The new temple looks like nothing next to the old one. God tells the builders to keep going: He is with them, and the best is still to come.",
+    "tags": [
+      "Small beginnings",
+      "Courage",
+      "God's provision",
+      "Clean and unclean",
+      "Blessing",
+      "God's promises"
+    ],
+    "url": "studies/haggai-02.html",
+    "overview": {
+      "where": "Jerusalem, at the half-built second temple",
+      "when": "About 520 BC, after the exile, from October to December in Darius's second year",
+      "people": [
+        "haggai",
+        "the-lord",
+        "zerubbabel",
+        "joshua-the-high-priest",
+        "priests"
+      ],
+      "places": [
+        "temple",
+        "egypt"
+      ],
+      "story": [
+        "The old men think the new house is nothing next to Solomon's. God says: be strong, and work, for I am with you, and My Spirit remains among you (1–5).",
+        "God will shake heaven, earth and the nations. The silver and gold are His, and the glory of this latter house will be greater than the former (6–9).",
+        "Haggai asks the priests: holiness doesn't spread by touch, but uncleanness does. So the people's offerings were unclean (10–14).",
+        "Their harvests had come up half or less, and still they didn't turn. But from the day the foundation was laid, God will bless them (15–19).",
+        "God will overthrow the thrones of kingdoms, and He will make Zerubbabel as a signet, for He has chosen him (20–23)."
+      ],
+      "key": {
+        "ref": "Haggai 2:4",
+        "text": "Yet now be strong, O Zerubbabel, saith the LORD; and be strong, O Joshua, son of Josedech, the high priest; and be strong, all ye people of the land, saith the LORD, and work: for I am with you, saith the LORD of hosts:"
+      },
+      "big": "Don't despise a small start. The strength to keep going comes from the God who is with us, His blessing begins the day we turn back, and He keeps His promises, as He did in Jesus."
+    }
+  },
+  {
+    "id": "zechariah-01",
+    "type": "chapter",
+    "book": "Zechariah",
+    "ch": 1,
+    "date": "2026-10-29",
+    "title": "Zechariah 1",
+    "sub": "Turn ye unto me",
+    "about": "God calls His people to turn back to Him. Then, in the night, a prophet sees horsemen among the myrtle trees, and hears God say He has come back to Jerusalem with mercy.",
+    "tags": [
+      "Turning back",
+      "The past",
+      "God's word",
+      "Someone pleading",
+      "God's heart",
+      "The enemy"
+    ],
+    "url": "studies/zechariah-01.html",
+    "overview": {
+      "where": "Jerusalem and Judah, being rebuilt after the exile; the visions look out over the whole earth",
+      "when": "About 520–519 BC, after the exile, in the second year of Darius king of Persia, alongside Haggai",
+      "people": [
+        "zechariah",
+        "berechiah-and-iddo",
+        "the-lord",
+        "darius",
+        "angel-of-the-lord",
+        "angel-that-talked-with-me"
+      ],
+      "places": [
+        "jerusalem",
+        "judah",
+        "sion",
+        "israel"
+      ],
+      "story": [
+        "God tells Zechariah to call the people back: “Turn ye unto me, and I will turn unto you.” Don't be like your fathers, who would not listen (1–4).",
+        "The fathers and the prophets are gone, but God's words took hold of them, just as He said (5–6).",
+        "In a night vision, a man on a red horse stands among the myrtle trees. His riders report that all the earth is at rest (7–11).",
+        "The angel of the LORD pleads: how long, after seventy years, before You have mercy on Jerusalem? God answers with comfortable words (12–13).",
+        "God is jealous for Jerusalem, angry with the nations that made her suffering worse, and has returned to her with mercies. He will yet comfort Zion and choose Jerusalem (14–17).",
+        "Four horns that scattered Judah, and four carpenters sent to terrify them and cast them out (18–21)."
+      ],
+      "key": {
+        "ref": "Zechariah 1:3",
+        "text": "Therefore say thou unto them, Thus saith the LORD of hosts; Turn ye unto me, saith the LORD of hosts, and I will turn unto you, saith the LORD of hosts."
+      },
+      "big": "God calls His people to turn back, and He turns toward them. His word stands, His correction ends, and He comes back to His people with mercy."
+    }
+  },
+  {
+    "id": "zechariah-02",
+    "type": "chapter",
+    "book": "Zechariah",
+    "ch": 2,
+    "date": "2026-10-29",
+    "title": "Zechariah 2",
+    "sub": "A wall of fire",
+    "about": "A young man sets out to measure Jerusalem's walls. God says the city will overflow its walls, and He Himself will be the wall around it.",
+    "tags": [
+      "Protection",
+      "God's presence",
+      "Getting out",
+      "God's care",
+      "The nations",
+      "Reverence"
+    ],
+    "url": "studies/zechariah-02.html",
+    "overview": {
+      "where": "Jerusalem, still without walls, and Babylon, “the land of the north”",
+      "when": "About 519 BC, after the exile, in Zechariah's night visions under Darius king of Persia",
+      "people": [
+        "zechariah",
+        "angel-that-talked-with-me",
+        "the-lord",
+        "heathen"
+      ],
+      "places": [
+        "jerusalem",
+        "sion",
+        "babylon",
+        "land-of-the-north",
+        "judah",
+        "holy-land"
+      ],
+      "story": [
+        "A man with a measuring line goes to measure Jerusalem (1–2).",
+        "An angel runs to say Jerusalem will spill out like towns without walls, and the LORD will be a wall of fire around her and the glory in her midst (3–5).",
+        "God calls His people to flee from Babylon, the land of the north. Whoever touches them touches the apple of His eye (6–9).",
+        "Sing and rejoice: the LORD is coming to dwell among His people, and many nations will be joined to Him (10–11).",
+        "The LORD will inherit Judah as His portion in the holy land and choose Jerusalem again. Be silent, all flesh, before the LORD (12–13)."
+      ],
+      "key": {
+        "ref": "Zechariah 2:5",
+        "text": "For I, saith the LORD, will be unto her a wall of fire round about, and will be the glory in the midst of her."
+      },
+      "big": "God Himself is the wall around His people and the glory in their midst. He calls us out of the old life, treasures us as the apple of His eye, and opens His door to every nation."
+    }
   }
 ];
