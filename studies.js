@@ -3242,5 +3242,240 @@ window.STUDIES = [
       },
       "big": "God sees every wrong done to His people and will settle it Himself. His patience is long, but His verdict is coming, and those who trust Him are safe. The story ends with God living among His people."
     }
+  },
+  {
+    "id": "amos-05",
+    "type": "chapter",
+    "book": "Amos",
+    "ch": 5,
+    "date": "2026-10-29",
+    "title": "Amos 5",
+    "sub": "Seek me, and ye shall live",
+    "about": "A funeral song for a nation that's still walking around, a call to seek God and live, and a cry for justice to roll like a river.",
+    "tags": [
+      "Repentance",
+      "Who God is",
+      "Justice",
+      "God's mercy",
+      "The day of the LORD",
+      "Real worship"
+    ],
+    "url": "studies/amos-05.html",
+    "overview": {
+      "where": "Spoken to the northern kingdom of Israel, likely at Bethel",
+      "when": "About 760 BC, under Jeroboam II, about forty years before Assyria carried Israel away",
+      "people": [
+        "amos"
+      ],
+      "places": [
+        "israel",
+        "bethel",
+        "gilgal",
+        "beer-sheba",
+        "damascus",
+        "wilderness"
+      ],
+      "story": [
+        "Amos sings a funeral song for Israel: a town that sends out a thousand men will have a hundred left (1–3).",
+        "“Seek ye me, and ye shall live”: not the famous shrines at Bethel, Gilgal, and Beer-sheba, but the God who made the seven stars and Orion (4–9).",
+        "Israel's courts hate the truth, take bribes, and trample the poor. They will not live in the stone houses they built. “Hate the evil, and love the good” (10–15).",
+        "Wailing will fill the streets, because God will pass through them (16–17).",
+        "The day of the LORD that they long for will be darkness, not light (18–20).",
+        "God refuses their feasts and songs: “let judgment run down as waters.” Israel will go into captivity beyond Damascus (21–27)."
+      ],
+      "key": {
+        "ref": "Amos 5:4",
+        "text": "For thus saith the LORD unto the house of Israel, Seek ye me, and ye shall live:"
+      },
+      "big": "God's judgment was coming, but His first word after the funeral song was “live.” He wants us to seek Him, not religious places or rituals, and to let right living flow like a stream that never runs dry."
+    }
+  },
+  {
+    "id": "amos-06",
+    "type": "chapter",
+    "book": "Amos",
+    "ch": 6,
+    "date": "2026-10-29",
+    "title": "Amos 6",
+    "sub": "At ease in Zion",
+    "about": "Rich men on ivory couches, with the best food, music, and drink, and not one of them grieving for a nation that's coming apart.",
+    "tags": [
+      "Comfort",
+      "Warning",
+      "Compassion",
+      "Pride",
+      "Strength"
+    ],
+    "url": "studies/amos-06.html",
+    "overview": {
+      "where": "Spoken to the leaders of Samaria, and of Zion too",
+      "when": "About 760 BC, under Jeroboam II, about forty years before Assyria carried Israel away",
+      "people": [
+        "amos",
+        "jacob",
+        "philistines"
+      ],
+      "places": [
+        "sion",
+        "samaria",
+        "calneh",
+        "hamath",
+        "gath",
+        "israel"
+      ],
+      "story": [
+        "Woe to the comfortable leaders in Zion and Samaria. Look at Calneh, Hamath, and Gath: are you better than they were? (1–2).",
+        "They push the evil day away while they lounge on ivory beds, feast, sing, drink wine by the bowlful, and feel nothing for the ruin of their people (3–6).",
+        "They will go captive first, and the party will end (7).",
+        "God swears by Himself that He hates Israel's pride. When the city falls, the survivors will be afraid to say His name (8–11).",
+        "They have turned justice into poison and bragged about their own strength. God will raise up a nation against them (12–14)."
+      ],
+      "key": {
+        "ref": "Amos 6:1",
+        "text": "Woe to them that are at ease in Zion, and trust in the mountain of Samaria, which are named chief of the nations, to whom the house of Israel came!"
+      },
+      "big": "Comfort can make a man careless, numb, and proud. God wants men who stay awake, who still grieve for people who are hurting, and who know their strength comes from Him."
+    }
+  },
+  {
+    "id": "amos-07",
+    "type": "chapter",
+    "book": "Amos",
+    "ch": 7,
+    "date": "2026-10-29",
+    "title": "Amos 7",
+    "sub": "A plumbline",
+    "about": "Twice Amos prays and God holds back. The third time God holds up a plumbline. Then a priest tells the farmer-prophet to go home.",
+    "tags": [
+      "Prayer",
+      "God's standard",
+      "God's patience",
+      "Calling",
+      "Courage"
+    ],
+    "url": "studies/amos-07.html",
+    "overview": {
+      "where": "Bethel, the king's shrine in the northern kingdom of Israel",
+      "when": "About 760 BC, under Jeroboam II, about forty years before Assyria carried Israel away",
+      "people": [
+        "amos",
+        "amaziah",
+        "jeroboam-ii",
+        "isaac",
+        "jacob"
+      ],
+      "places": [
+        "bethel",
+        "israel",
+        "judah"
+      ],
+      "story": [
+        "God shows Amos locusts eating the land. Amos prays, “forgive,” and the LORD holds back (1–3).",
+        "God shows him a fire eating up the deep. Amos prays, “cease,” and the LORD holds back again (4–6).",
+        "God stands on a wall with a plumbline: Israel is out of true, and He will not pass them by any more (7–9).",
+        "Amaziah, the priest of Bethel, reports Amos to King Jeroboam and tells him to go home to Judah (10–13).",
+        "Amos answers: I was a herdman and a fig picker, and the LORD sent me. He gives Amaziah God's word anyway (14–17)."
+      ],
+      "key": {
+        "ref": "Amos 7:8",
+        "text": "And the LORD said unto me, Amos, what seest thou? And I said, A plumbline. Then said the Lord, Behold, I will set a plumbline in the midst of my people Israel: I will not again pass by them any more:"
+      },
+      "big": "God listens when we pray for others, and His patience is long, but He measures us by His own straight line. He still calls ordinary men, and no one can silence His word."
+    }
+  },
+  {
+    "id": "amos-08",
+    "type": "chapter",
+    "book": "Amos",
+    "ch": 8,
+    "date": "2026-10-29",
+    "title": "Amos 8",
+    "sub": "A famine of the word",
+    "about": "A basket of ripe fruit, merchants who can't wait for the Sabbath to end, and a hunger worse than any famine: no word from the LORD.",
+    "tags": [
+      "God's timing",
+      "Honesty",
+      "The poor",
+      "God's memory",
+      "God's Word",
+      "False gods"
+    ],
+    "url": "studies/amos-08.html",
+    "overview": {
+      "where": "Spoken to the northern kingdom of Israel",
+      "when": "About 760 BC, under Jeroboam II, about forty years before Assyria carried Israel away",
+      "people": [
+        "amos"
+      ],
+      "places": [
+        "israel",
+        "samaria",
+        "dan",
+        "beer-sheba",
+        "egypt"
+      ],
+      "story": [
+        "God shows Amos a basket of summer fruit: the end has come for Israel (1–3).",
+        "Merchants wait for the holy days to end so they can cheat with small measures and false scales, and sell the poor for a pair of shoes (4–6).",
+        "God swears He will never forget it. The land will heave like the Nile, the sun will set at noon, and feasts will turn to mourning (7–10).",
+        "God will send a famine, not of bread, but of hearing His words. People will search from sea to sea and not find it (11–12).",
+        "Those who swear by the idols of Samaria, Dan, and Beer-sheba will fall and never rise again (13–14)."
+      ],
+      "key": {
+        "ref": "Amos 8:11",
+        "text": "Behold, the days come, saith the Lord GOD, that I will send a famine in the land, not a famine of bread, nor a thirst for water, but of hearing the words of the LORD:"
+      },
+      "big": "God sees cheating and cruelty toward the poor, and unrepented sin stays on His books. The worst famine is a silent heaven, so feed on His Word while it's in your hand."
+    }
+  },
+  {
+    "id": "amos-09",
+    "type": "chapter",
+    "book": "Amos",
+    "ch": 9,
+    "date": "2026-10-29",
+    "title": "Amos 9",
+    "sub": "I will raise up",
+    "about": "Nobody can hide from God's judgment, but He will not utterly destroy. The book that opened with a lion's roar ends with a fallen house rebuilt and a harvest too big to bring in.",
+    "tags": [
+      "God sees",
+      "Who God is",
+      "God's mercy",
+      "Christ",
+      "The nations",
+      "Restoration"
+    ],
+    "url": "studies/amos-09.html",
+    "overview": {
+      "where": "Amos's last vision, at the altar, likely at Bethel",
+      "when": "About 760 BC, under Jeroboam II, about forty years before Assyria carried Israel away",
+      "people": [
+        "amos",
+        "david",
+        "philistines",
+        "syrians",
+        "ethiopians"
+      ],
+      "places": [
+        "israel",
+        "carmel",
+        "egypt",
+        "caphtor",
+        "kir",
+        "edom"
+      ],
+      "story": [
+        "Amos sees the LORD by the altar. No one can escape His judgment, not in the grave, the sky, Carmel, or the sea (1–4).",
+        "The LORD of hosts touches the land and it melts: “The LORD is his name” (5–6).",
+        "Israel is no more safe than any other nation, yet God will not utterly destroy the house of Jacob. He will sift them, and not the least grain will be lost (7–10).",
+        "God will raise up the fallen tabernacle of David, and the nations will be called by His name. James quotes this in Acts 15 (11–12).",
+        "The plowman will overtake the reaper. God will bring His people home and plant them, never to be pulled up again (13–15)."
+      ],
+      "key": {
+        "ref": "Amos 9:11",
+        "text": "In that day will I raise up the tabernacle of David that is fallen, and close up the breaches thereof; and I will raise up his ruins, and I will build it as in the days of old:"
+      },
+      "big": "God's judgment is real, but His mercy has the last word. He raised up David's fallen house in Jesus, called the nations by His name, and keeps every promise He makes."
+    }
   }
 ];

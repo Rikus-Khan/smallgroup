@@ -8416,5 +8416,407 @@ window.GLOSSARY = [
    [
     "Hosea", 9,
     [ 8 ] ] ]
+ },
+ {
+  "id": "amos",
+  "kind": "person",
+  "name": "Amos, the herdman of Tekoa",
+  "refs": [
+   [
+    "Amos", 1,
+    [ 1 ] ],
+   [
+    "Amos", 7,
+    [ 8, 10, 11, 12, 14 ] ],
+   [
+    "Amos", 8,
+    [ 2 ] ] ]
+ },
+ {
+  "id": "beer-sheba",
+  "kind": "place",
+  "name": "Beer-sheba",
+  "refs": [
+   [
+    "Amos", 5,
+    [ 5 ] ],
+   [
+    "Amos", 8,
+    [ 14 ] ] ]
+ },
+ {
+  "id": "damascus",
+  "kind": "place",
+  "name": "Damascus",
+  "refs": [
+   [
+    "Amos", 1,
+    [ 3, 5 ] ],
+   [
+    "Amos", 3,
+    [ 12 ] ],
+   [
+    "Amos", 5,
+    [ 27 ] ] ]
+ },
+ {
+  "id": "lamentation",
+  "kind": "term",
+  "name": "Lamentation (a funeral song)",
+  "refs": [
+   [
+    "Amos", 5,
+    [ 1, 16, 17 ] ],
+   [
+    "Amos", 8,
+    [ 10 ] ] ]
+ },
+ {
+  "id": "wormwood",
+  "kind": "term",
+  "name": "Wormwood, gall and hemlock (bitter plants)",
+  "refs": [
+   [
+    "Proverbs", 5,
+    [ 4 ] ],
+   [
+    "Hosea", 10,
+    [ 4 ] ],
+   [
+    "Amos", 5,
+    [ 7 ] ],
+   [
+    "Amos", 6,
+    [ 12 ] ] ]
+ },
+ {
+  "id": "seven-stars-and-orion",
+  "kind": "term",
+  "name": "The seven stars and Orion",
+  "refs": [
+   [
+    "Amos", 5,
+    [ 8 ] ] ]
+ },
+ {
+  "id": "viol",
+  "kind": "term",
+  "name": "Viol (a harp)",
+  "refs": [
+   [
+    "Amos", 5,
+    [ 23 ] ],
+   [
+    "Amos", 6,
+    [ 5 ] ] ]
+ },
+ {
+  "id": "moloch-and-chiun",
+  "kind": "term",
+  "name": "Moloch and Chiun (false gods)",
+  "refs": [
+   [
+    "Amos", 5,
+    [ 26 ] ] ]
+ },
+ {
+  "id": "lord-of-hosts",
+  "kind": "term",
+  "name": "The LORD, the God of hosts",
+  "refs": [
+   [
+    "Hosea", 12,
+    [ 5 ] ],
+   [
+    "Amos", 3,
+    [ 13 ] ],
+   [
+    "Amos", 4,
+    [ 13 ] ],
+   [
+    "Amos", 5,
+    [ 14, 15, 16, 27 ] ],
+   [
+    "Amos", 6,
+    [ 8, 14 ] ],
+   [
+    "Amos", 9,
+    [ 5 ] ] ]
+ },
+ {
+  "id": "captivity",
+  "kind": "term",
+  "name": "Captivity (exile)",
+  "refs": [
+   [
+    "Amos", 1,
+    [ 5, 6, 9, 15 ] ],
+   [
+    "Amos", 5,
+    [ 5, 27 ] ],
+   [
+    "Amos", 6,
+    [ 7 ] ],
+   [
+    "Amos", 7,
+    [ 11, 17 ] ],
+   [
+    "Amos", 9,
+    [ 4 ] ] ]
+ },
+ {
+  "id": "calneh",
+  "kind": "place",
+  "name": "Calneh",
+  "refs": [
+   [
+    "Amos", 6,
+    [ 2 ] ] ]
+ },
+ {
+  "id": "hamath",
+  "kind": "place",
+  "name": "Hamath (Hemath)",
+  "refs": [
+   [
+    "Amos", 6,
+    [ 2, 14 ] ] ]
+ },
+ {
+  "id": "gath",
+  "kind": "place",
+  "name": "Gath of the Philistines",
+  "refs": [
+   [
+    "Amos", 6,
+    [ 2 ] ] ]
+ },
+ {
+  "id": "philistines",
+  "kind": "person",
+  "name": "The Philistines",
+  "refs": [
+   [
+    "Amos", 1,
+    [ 8 ] ],
+   [
+    "Amos", 6,
+    [ 2 ] ],
+   [
+    "Amos", 9,
+    [ 7 ] ] ]
+ },
+ {
+  "id": "at-ease",
+  "kind": "term",
+  "name": "At ease (careless and complacent)",
+  "refs": [
+   [
+    "Amos", 6,
+    [ 1 ] ] ]
+ },
+ {
+  "id": "ivory",
+  "kind": "term",
+  "name": "Beds of ivory",
+  "refs": [
+   [
+    "Amos", 3,
+    [ 15 ] ],
+   [
+    "Amos", 6,
+    [ 4 ] ] ]
+ },
+ {
+  "id": "excellency-of-jacob",
+  "kind": "term",
+  "name": "The excellency of Jacob (Israel's pride)",
+  "refs": [
+   [
+    "Amos", 6,
+    [ 8 ] ],
+   [
+    "Amos", 8,
+    [ 7 ] ] ]
+ },
+ {
+  "id": "amaziah",
+  "kind": "person",
+  "name": "Amaziah, priest of Bethel",
+  "refs": [
+   [
+    "Amos", 7,
+    [ 10, 12, 14 ] ] ]
+ },
+ {
+  "id": "isaac",
+  "kind": "person",
+  "name": "Isaac",
+  "refs": [
+   [
+    "Amos", 7,
+    [ 9, 16 ] ] ]
+ },
+ {
+  "id": "plumbline",
+  "kind": "term",
+  "name": "Plumbline",
+  "refs": [
+   [
+    "Amos", 7,
+    [ 7, 8 ] ] ]
+ },
+ {
+  "id": "the-lord-repented",
+  "kind": "term",
+  "name": "The LORD repented (relented)",
+  "refs": [
+   [
+    "Amos", 7,
+    [ 3, 6 ] ] ]
+ },
+ {
+  "id": "seer",
+  "kind": "term",
+  "name": "Seer (a prophet)",
+  "refs": [
+   [
+    "Amos", 7,
+    [ 12 ] ] ]
+ },
+ {
+  "id": "herdman",
+  "kind": "term",
+  "name": "Herdman",
+  "refs": [
+   [
+    "Amos", 1,
+    [ 1 ] ],
+   [
+    "Amos", 7,
+    [ 14 ] ] ]
+ },
+ {
+  "id": "sycomore-fruit",
+  "kind": "term",
+  "name": "Sycomore fruit (wild figs)",
+  "refs": [
+   [
+    "Amos", 7,
+    [ 14 ] ] ]
+ },
+ {
+  "id": "dan",
+  "kind": "place",
+  "name": "Dan",
+  "refs": [
+   [
+    "Amos", 8,
+    [ 14 ] ] ]
+ },
+ {
+  "id": "summer-fruit",
+  "kind": "term",
+  "name": "A basket of summer fruit",
+  "refs": [
+   [
+    "Amos", 8,
+    [ 1, 2 ] ] ]
+ },
+ {
+  "id": "new-moon",
+  "kind": "term",
+  "name": "The new moon (a monthly feast)",
+  "refs": [
+   [
+    "Amos", 8,
+    [ 5 ] ] ]
+ },
+ {
+  "id": "ephah-and-shekel",
+  "kind": "term",
+  "name": "Ephah and shekel (measure and weight)",
+  "refs": [
+   [
+    "Amos", 8,
+    [ 5 ] ] ]
+ },
+ {
+  "id": "famine-of-the-word",
+  "kind": "term",
+  "name": "A famine of hearing the words of the LORD",
+  "refs": [
+   [
+    "Amos", 8,
+    [ 11, 12 ] ] ]
+ },
+ {
+  "id": "carmel",
+  "kind": "place",
+  "name": "Mount Carmel",
+  "refs": [
+   [
+    "Amos", 1,
+    [ 2 ] ],
+   [
+    "Amos", 9,
+    [ 3 ] ] ]
+ },
+ {
+  "id": "caphtor",
+  "kind": "place",
+  "name": "Caphtor",
+  "refs": [
+   [
+    "Amos", 9,
+    [ 7 ] ] ]
+ },
+ {
+  "id": "kir",
+  "kind": "place",
+  "name": "Kir",
+  "refs": [
+   [
+    "Amos", 1,
+    [ 5 ] ],
+   [
+    "Amos", 9,
+    [ 7 ] ] ]
+ },
+ {
+  "id": "ethiopians",
+  "kind": "person",
+  "name": "The Ethiopians (Cush)",
+  "refs": [
+   [
+    "Amos", 9,
+    [ 7 ] ] ]
+ },
+ {
+  "id": "syrians",
+  "kind": "person",
+  "name": "The Syrians",
+  "refs": [
+   [
+    "Amos", 9,
+    [ 7 ] ] ]
+ },
+ {
+  "id": "sieve",
+  "kind": "term",
+  "name": "Sifted in a sieve",
+  "refs": [
+   [
+    "Amos", 9,
+    [ 9 ] ] ]
+ },
+ {
+  "id": "tabernacle-of-david",
+  "kind": "term",
+  "name": "The tabernacle of David",
+  "refs": [
+   [
+    "Amos", 9,
+    [ 11 ] ] ]
  }
 ];
