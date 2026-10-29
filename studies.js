@@ -3871,6 +3871,149 @@ window.STUDIES = [
     }
   },
   {
+    "id": "nahum-01",
+    "type": "chapter",
+    "book": "Nahum",
+    "ch": 1,
+    "date": "2026-10-29",
+    "title": "Nahum 1",
+    "sub": "A strong hold in the day of trouble",
+    "about": "More than a hundred years after Nineveh repented at Jonah's preaching, it has gone back to its cruelty. God's patience is long, but it has an end, and so does the yoke Assyria laid on His people.",
+    "tags": [
+      "Who God is",
+      "Patience",
+      "Refuge",
+      "Justice",
+      "Freedom",
+      "Good news"
+    ],
+    "url": "studies/nahum-01.html",
+    "overview": {
+      "where": "Nineveh, the capital of Assyria, on the Tigris; the message is carried to Judah, the southern kingdom",
+      "when": "About 650 BC, before the exile, after Assyria had carried off the northern kingdom (722) and more than a hundred years after Jonah preached to Nineveh",
+      "people": [
+        "nahum",
+        "the-lord"
+      ],
+      "places": [
+        "nineveh",
+        "elkosh",
+        "bashan",
+        "carmel",
+        "lebanon",
+        "judah"
+      ],
+      "story": [
+        "“The burden of Nineveh”: a vision given to Nahum, whose name means comfort (1).",
+        "The LORD is jealous and avenges; He is slow to anger and great in power, and will not at all acquit the wicked (2–3).",
+        "The sea, the rivers, Bashan, Carmel, Lebanon and the mountains all shake and wither before Him: who can stand? (4–6).",
+        "The LORD is good, a strong hold in the day of trouble, and He knows those who trust Him; His enemies He overruns like a flood (7–8).",
+        "Affliction will not rise a second time; the plotters against the LORD are tangled thorns and dry stubble (9–11).",
+        "God will break Assyria's yoke off Judah, cut off Nineveh's name and idols, and make its grave (12–14).",
+        "Behold on the mountains the feet of him that brings good tidings: Judah, keep your feasts and your vows (15)."
+      ],
+      "key": {
+        "ref": "Nahum 1:7",
+        "text": "The LORD is good, a strong hold in the day of trouble; and he knoweth them that trust in him."
+      },
+      "big": "God is jealous and just, and slow to anger, but slow is not never. To His enemies He is a flood; to those who trust Him He is good, a strong hold in the day of trouble, and He breaks yokes His people cannot break."
+    }
+  },
+  {
+    "id": "nahum-02",
+    "type": "chapter",
+    "book": "Nahum",
+    "ch": 2,
+    "date": "2026-10-29",
+    "title": "Nahum 2",
+    "sub": "The lion's den left empty",
+    "about": "Nahum watches Nineveh's fall as if it were already happening: red shields, racing chariots, the river gates thrown open, and the richest city on earth carried off.",
+    "tags": [
+      "God's power",
+      "Restoration",
+      "Riches",
+      "Pride",
+      "Courage"
+    ],
+    "url": "studies/nahum-02.html",
+    "overview": {
+      "where": "Nineveh, the capital of Assyria, on the Tigris, under siege",
+      "when": "Written about 650 BC; it describes Nineveh's fall to the Babylonians and Medes in 612 BC",
+      "people": [
+        "huzzab",
+        "jacob",
+        "the-lord"
+      ],
+      "places": [
+        "nineveh",
+        "israel"
+      ],
+      "story": [
+        "The destroyer comes up against Nineveh; God taunts it to man the walls (1).",
+        "The LORD takes up the cause of Jacob and Israel, whom the emptiers had stripped like a vine (2).",
+        "Red shields, scarlet soldiers, and chariots like torches race through the streets (3–4).",
+        "The defenders stumble to the wall; the river gates are opened and the palace dissolves (5–6).",
+        "Huzzab is led away; the people drain out like a pool and no one looks back (7–8).",
+        "The endless treasure is plundered: empty, void and waste (9–10).",
+        "Where is the lions' den now? The LORD of hosts says, “I am against thee,” and Nineveh's messengers are silenced (11–13)."
+      ],
+      "key": {
+        "ref": "Nahum 2:13",
+        "text": "Behold, I am against thee, saith the LORD of hosts, and I will burn her chariots in the smoke, and the sword shall devour thy young lions: and I will cut off thy prey from the earth, and the voice of thy messengers shall no more be heard."
+      },
+      "big": "When the LORD of hosts says “I am against thee,” no wall, river, army or treasure can stand. He takes up the cause of His robbed people, and the God who was against proud Nineveh is for those who trust Him."
+    }
+  },
+  {
+    "id": "nahum-03",
+    "type": "chapter",
+    "book": "Nahum",
+    "ch": 3,
+    "date": "2026-10-29",
+    "title": "Nahum 3",
+    "sub": "Woe to the bloody city",
+    "about": "Nahum reads out the charges against Nineveh, points to a great city it had already destroyed, and ends with a question that answers the question at the end of Jonah.",
+    "tags": [
+      "Sin",
+      "Hidden sin",
+      "Lessons",
+      "Strength",
+      "Shepherds",
+      "Mercy"
+    ],
+    "url": "studies/nahum-03.html",
+    "overview": {
+      "where": "Nineveh, the capital of Assyria; with a look back at No (Thebes) in Egypt",
+      "when": "About 650 BC, after Assyria sacked Thebes (663) and before Nineveh fell (612)",
+      "people": [
+        "the-lord"
+      ],
+      "places": [
+        "nineveh",
+        "no-amon",
+        "egypt",
+        "ethiopians",
+        "put-and-lubim",
+        "assyria"
+      ],
+      "story": [
+        "Woe to the bloody city, full of lies and robbery, with the battle noise of whips, wheels and swords (1–3).",
+        "Nineveh is a good-looking harlot and sorceress who sells nations and families (4).",
+        "The LORD will uncover her shame before the nations, and no one will mourn her (5–7).",
+        "Is she better than No (Thebes), with its rivers and allies? Thebes still fell (8–10).",
+        "Nineveh's forts are like ripe figs that fall at a shake; her gates stand open to fire (11–13).",
+        "Store water and bake bricks all you like: fire, sword and locust-like swarms will consume you (14–15).",
+        "Her merchants and officers vanish like locusts at sunrise (16–17).",
+        "Her shepherds slumber, her people are scattered, and her wound has no healing; everyone who hears claps (18–19)."
+      ],
+      "key": {
+        "ref": "Nahum 3:1",
+        "text": "Woe to the bloody city! it is all full of lies and robbery; the prey departeth not;"
+      },
+      "big": "God judged Nineveh for real blood, lies and robbery, after giving it every chance since Jonah. Hidden sin comes out, no preparation saves a man from God, and the world's shepherds sleep, but the Good Shepherd never does, and by His stripes we can be healed."
+    }
+  },
+  {
     "id": "habakkuk-01",
     "type": "chapter",
     "book": "Habakkuk",

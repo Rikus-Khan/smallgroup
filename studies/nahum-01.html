@@ -1,0 +1,495 @@
+<!doctype html>
+<html lang="en" data-theme="slate">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Nahum 1</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="../assets/fonts.css">
+<link rel="stylesheet" href="../assets/deck.css">
+<link rel="stylesheet" href="../assets/themes.css">
+<style>
+/* A yoke that snaps in two and bonds that fall away (Nahum 1:13). A .nah01-go step breaks it. */
+.nah01-yoke { display: block; width: 100%; max-width: 30rem; margin: 0 auto; overflow: visible; }
+.nah01-wood { fill: var(--leather); stroke: var(--leather-light); stroke-width: 3; }
+.nah01-bow { fill: none; stroke: var(--leather-light); stroke-width: 8; stroke-linecap: round; }
+.nah01-link { fill: none; stroke: var(--ink-soft); stroke-width: 5; }
+.nah01-peg { fill: var(--ink-soft); }
+.nah01-ground { stroke: var(--line-strong); stroke-width: 2; }
+.nah01-label { fill: var(--ink-soft); font-weight: 700; letter-spacing: .08em; }
+.nah01-crack { fill: none; stroke: var(--accent-hot); stroke-width: 4; stroke-linejoin: round; opacity: 0; transition: opacity .3s ease; }
+.nah01-half { transform-box: fill-box; transition: transform 1.1s cubic-bezier(.3, 1.3, .5, 1) .25s; }
+.nah01-half.l { transform-origin: 100% 100%; }
+.nah01-half.r { transform-origin: 0% 100%; }
+.nah01-bonds { transition: opacity .9s ease .6s, transform .9s ease .6s; }
+.nah01-free { opacity: 0; fill: var(--accent-hot); font-weight: 700; transition: opacity .9s ease 1.3s; }
+.slide:has(.nah01-go.on) .nah01-crack { opacity: 1; }
+.slide:has(.nah01-go.on) .nah01-half.l { transform: translate(-18px, -10px) rotate(-12deg); }
+.slide:has(.nah01-go.on) .nah01-half.r { transform: translate(18px, -10px) rotate(12deg); }
+.slide:has(.nah01-go.on) .nah01-bonds { opacity: 0; transform: translateY(30px); }
+.slide:has(.nah01-go.on) .nah01-free { opacity: 1; }
+</style>
+</head>
+<body>
+<main class="deck" id="deck">
+
+<!-- ======================= OPENING ======================= -->
+<section class="slide title">
+  <div class="inner">
+    <div class="emblem rise"></div>
+    <h1 class="rise" style="--d:1">Nahum 1</h1>
+    <p class="sub rise" style="--d:3">A strong hold in the day of trouble</p>
+    <p class="tag rise" style="--d:5">More than a hundred years after Nineveh repented at Jonah's preaching, it has gone back to its cruelty. God's patience is long, but it has an end, and so does the yoke Assyria laid on His people.</p>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <div class="split">
+      <div class="stage">
+        <svg class="map" style="overflow:hidden" viewBox="0 0 600 420" role="img" aria-label="A map of the ancient Near East. Nineveh, the capital of Assyria, sits on the Tigris river in the northeast. Far to the west, by the Great Sea, are Samaria and Jerusalem. Egypt is to the southwest. An arrow runs from Nineveh to Samaria.">
+          <rect class="map-land" x="0" y="0" width="600" height="420" rx="6"/>
+          <path class="map-sea" d="M0 30 H150 C 162 90, 176 150, 172 210 C 168 255, 152 292, 128 318 C 92 330, 44 322, 0 328 Z"/>
+          <text class="map-water" x="72" y="190" text-anchor="middle">the Great Sea</text>
+          <path class="map-river" d="M108 420 C 104 390, 112 360, 100 330"/>
+          <path class="map-river" d="M290 20 C 300 90, 340 150, 390 200 S 470 270, 540 340"/>
+          <path class="map-river" d="M408 20 C 430 60, 444 100, 454 150 S 490 250, 540 340"/>
+          <text class="map-water" x="372" y="196" text-anchor="middle" transform="rotate(44 372 196)">Euphrates</text>
+          <text class="map-water" x="476" y="196" text-anchor="middle" transform="rotate(66 476 196)">Tigris</text>
+          <text class="map-region" x="420" y="138" text-anchor="middle">ASSYRIA</text>
+          <text class="map-region" x="60" y="390" text-anchor="middle">EGYPT</text>
+          <text class="map-region" x="232" y="290" text-anchor="middle">JUDAH</text>
+          <path class="map-route r1" pathLength="1" d="M426 78 C 360 60, 262 100, 208 176"/>
+          <path class="map-route r1" pathLength="1" d="M208 156 L208 176 L226 166"/>
+          <text class="map-soft" x="318" y="66" text-anchor="middle" font-size="15">722 BC</text>
+          <g class="map-town here"><circle cx="438" cy="80" r="7"/><circle class="map-ping" cx="438" cy="80" r="9"/><text x="452" y="85">Nineveh</text></g>
+          <g class="map-town"><circle cx="196" cy="192" r="6"/><text x="186" y="186" text-anchor="end">Samaria</text></g>
+          <g class="map-town"><circle cx="200" cy="236" r="6"/><text x="190" y="252" text-anchor="end">Jerusalem</text></g>
+          <g class="map-town"><circle cx="450" cy="252" r="6"/><text x="438" y="257" text-anchor="end">Babylon</text></g>
+        </svg>
+      </div>
+      <div>
+        <h2 class="rise" style="--d:1">The book of Nahum</h2>
+        <p class="note rise" style="--d:2"><em>Who:</em> Nahum “the Elkoshite,” from a town called Elkosh. Nobody knows today where it was. His name means <em>comfort</em>.</p>
+        <p class="note rise" style="--d:3"><em>When:</em> about 650 BC, before the exile. Assyria had already carried off the northern kingdom in 722. Judah, in the south, was still standing, but paying Assyria to be left alone.</p>
+        <p class="note rise" style="--d:4"><em>About whom:</em> Nineveh, the capital of Assyria, the strongest and cruelest empire on earth. <em>For whom:</em> Judah, who had lived in its shadow for a hundred years.</p>
+        <p class="note step map-go1">This is the same Nineveh Jonah preached to, more than a hundred years before. Back then it repented, and God spared it. Since then it went back to its old ways, and worse. Nineveh fell in 612 BC, just as Nahum said.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="slide watch">
+  <div class="inner">
+    <h2 class="rise">Things to watch for</h2>
+    <p class="lede rise" style="--d:1">Keep these questions in the back of your mind as we read. We'll come back to every one of them at the end.</p>
+    <ol class="seeds">
+      <li class="step"><span class="topic">Who God is</span><span class="seed-q">How can the same God be jealous and furious, and also good?</span></li>
+      <li class="step"><span class="topic">Patience</span><span class="seed-q">Why does God wait so long before He judges?</span></li>
+      <li class="step"><span class="topic">Refuge</span><span class="seed-q">Where can a man run in the day of trouble?</span></li>
+      <li class="step"><span class="topic">Justice</span><span class="seed-q">Will the wicked get away with it forever?</span></li>
+      <li class="step"><span class="topic">Freedom</span><span class="seed-q">What does God do with the yoke on His people's neck?</span></li>
+      <li class="step"><span class="topic">Good news</span><span class="seed-q">What are the good tidings on the mountains?</span></li>
+    </ol>
+  </div>
+</section>
+
+<!-- ======================= PART ONE: WHO GOD IS ======================= -->
+<section class="slide part">
+  <div class="inner">
+    <p class="part-n rise">Part one</p>
+    <h2 class="rise" style="--d:1">The LORD revengeth</h2>
+    <p class="range rise" style="--d:2">Verses 1–6</p>
+    <div class="rule"></div>
+    <p class="hook rise" style="--d:4">Before Nahum says one word about what will happen to Nineveh, he shows us who God is.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="1" data-hl="The burden of Nineveh"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="1" data-hl="The burden of Nineveh|Nahum"></blockquote>
+    <h2 class="rise" style="--d:1">A heavy word, and a comfort</h2>
+    <div class="morph">
+      <span class="big rise" style="--d:2">נַחוּם</span>
+      <span class="say step">said <em class="gk">Nachum</em></span>
+      <span class="means step">“comfort”</span>
+    </div>
+    <p class="note step">A <em>“burden”</em> is a load, something lifted and carried. The prophets used the word for a heavy message God laid on them to deliver.</p>
+    <p class="note step">The same message is heavy for Nineveh and comfort for Judah. For a hundred years Judah had lived with a bully on its back. God's word to them was: <em>I see it, and it will not last.</em></p>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise">Nineveh, before and after</h2>
+    <ol class="timeline" aria-label="About 760 BC, Jonah preaches and Nineveh repents. 722, Assyria takes Samaria and the north. 701, Sennacherib surrounds Jerusalem and God saves the city. About 650, Nahum. 612, Nineveh falls.">
+      <li style="--k:0"><b>about 760 BC</b><span>Jonah preaches; Nineveh repents</span><small>Jonah 3</small></li>
+      <li style="--k:1"><b>722</b><span>Assyria takes Samaria and the north</span><small>2 Kings 17</small></li>
+      <li style="--k:2"><b>701</b><span>Sennacherib surrounds Jerusalem; God saves it</span><small>2 Kings 19</small></li>
+      <li class="lit" style="--k:3"><b>about 650</b><span>Nahum: Nineveh will fall</span></li>
+      <li class="wait" style="--k:4"><b>612</b><span>Nineveh falls to the Babylonians and Medes</span></li>
+    </ol>
+    <p class="note rise" style="--d:3">Nineveh's repentance under Jonah was real, and God spared the city. But it didn't last past that generation. Their grandsons built an empire on terror, and their own kings carved their cruelty into stone to boast about it.</p>
+    <p class="note step">One generation's turning doesn't carry the next. Every man has to answer to God for himself.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="2-3" data-hl="God is jealous|The LORD is slow to anger, and great in power|will not at all acquit the wicked"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="2" data-hl="God is jealous|the LORD revengeth"></blockquote>
+    <h2 class="rise" style="--d:1">Jealous, and avenging</h2>
+    <p class="note rise" style="--d:2">These words sound harsh to us, because with people they usually mean something petty. With God they don't.</p>
+    <div class="columns">
+      <div class="col law step">
+        <p class="who">Jealous</p>
+        <h3>Not envy</h3>
+        <p>Not wanting what someone else has. It's a husband's protective love for his wife: <em>she is mine, and no one else gets her heart.</em> God will not share His people with idols.</p>
+      </div>
+      <div class="col grace step">
+        <p class="who">Revengeth</p>
+        <h3>Not a grudge</h3>
+        <p>Not a man losing his temper and getting even. It's a just Judge making wrong things right, for people who have been crushed with no one to stand up for them.</p>
+      </div>
+    </div>
+    <blockquote class="quote step"><p>“Dearly beloved, avenge not yourselves, but rather give place unto wrath: for it is written, Vengeance is mine; I will repay, saith the Lord.”</p><cite>Romans 12:19</cite></blockquote>
+    <p class="note step">That's freedom for a man who's been wronged. You don't have to carry the score. God keeps it, and He will settle it.</p>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="3" data-hl="slow to anger|will not at all acquit the wicked"></blockquote>
+    <h2 class="rise" style="--d:1">Slow is not never</h2>
+    <div class="pair">
+      <div class="scroll rise" style="--d:2"><p class="ref">Jonah, about 760 BC, angry that God spared Nineveh</p><p class="kjv">“…for I knew that thou art a gracious God, and merciful, slow to anger, and of great kindness, and repentest thee of the evil.”</p><p class="ref">Jonah 4:2</p></div>
+      <div class="scroll step"><p class="ref">Nahum, about 650 BC, a hundred years later</p><p class="kjv">“The LORD is slow to anger, and great in power, and will not at all acquit the wicked…”</p><p class="ref">Nahum 1:3</p></div>
+    </div>
+    <p class="note step">Same God, same words. Jonah was angry that God was slow to anger with Nineveh. A hundred years on, God has given that city every chance. Slow to anger, but not blind, and not never.</p>
+    <p class="note step">“Acquit” means to declare a man not guilty. God won't pretend sin didn't happen. He either judges it, or (as the New Testament shows) He pays for it Himself at the cross for everyone who believes.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="4-6" data-hl="Bashan languisheth, and Carmel, and the flower of Lebanon languisheth|Who can stand before his indignation?"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="6" data-hl="Who can stand before his indignation?"></blockquote>
+    <h2 class="rise" style="--d:1">When the green hills wilt</h2>
+    <ol class="signs rise" style="--d:2">
+      <li><b>Bashan</b>rich grazing land east of the Jordan, famous for fat cattle and oaks</li>
+      <li><b>Carmel</b>the mountain by the sea; its name means “garden land”</li>
+      <li><b>Lebanon</b>the mountains of cedar and flowers to the north</li>
+    </ol>
+    <p class="note step">“Languisheth” means wilts, withers. Nahum names the greenest, richest places anyone in Judah knew. If those dry up when God moves, what are Nineveh's walls?</p>
+    <div class="asks">
+      <div class="ask step"><span class="q">“Who can stand before his indignation?”</span><span class="stamp">No one</span><span class="ctx">Not the sea, not the mountains, not the greatest army on earth.</span></div>
+    </div>
+    <p class="note step">That's a frightening question. But Nahum doesn't leave it there. The very next verse tells you where to stand.</p>
+  </div>
+</section>
+
+<!-- ======================= PART TWO: A STRONG HOLD ======================= -->
+<section class="slide part">
+  <div class="inner">
+    <p class="part-n rise">Part two</p>
+    <h2 class="rise" style="--d:1">A strong hold</h2>
+    <p class="range rise" style="--d:2">Verses 7–11</p>
+    <div class="rule"></div>
+    <p class="hook rise" style="--d:4">In the middle of the storm, one verse of shelter.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="7" data-hl="The LORD is good, a strong hold in the day of trouble|he knoweth them that trust in him"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="7"></blockquote>
+    <div class="split">
+      <div class="stage">
+        <svg class="kept" viewBox="0 0 600 360" role="img" aria-label="Men safe inside a strong hold. Waves and arrows come at it and fall away.">
+          <circle class="kept-wall" cx="300" cy="185" r="135"/>
+          <circle class="kept-wall inner" cx="300" cy="185" r="88"/>
+          <text class="kept-tag" font-size="20" x="300" y="38" text-anchor="middle">a strong hold</text>
+          <text class="kept-tag" font-size="16" x="300" y="136" text-anchor="middle">who trust Him</text>
+          <g class="kept-in"><circle cx="268" cy="168" r="10"/><circle cx="300" cy="160" r="10"/><circle cx="332" cy="168" r="10"/><circle cx="276" cy="205" r="10"/><circle cx="324" cy="205" r="10"/><circle cx="300" cy="228" r="10"/></g>
+          <path class="kept-dart" style="--dx:60px;--dy:20px;--w:0s" d="M40 120 l40 14 m-14 -12 l14 12 l-18 4"/>
+          <path class="kept-dart" style="--dx:-60px;--dy:24px;--w:1s" d="M560 110 l-40 16 m12 -14 l-12 14 l18 4"/>
+          <g class="kept-foe" style="--dx:30px;--dy:-14px;--w:.4s"><text x="20" y="330" font-size="17">trouble</text><path d="M60 300 q30 -30 60 0 q30 30 60 0" stroke-width="5" style="fill:none;stroke:var(--danger)"/></g>
+          <g class="kept-foe" style="--dx:-30px;--dy:-14px;--w:1.6s"><text x="490" y="340" font-size="17">the flood</text><path d="M420 305 q30 -30 60 0 q30 30 60 0" stroke-width="5" style="fill:none;stroke:var(--danger)"/></g>
+        </svg>
+      </div>
+      <div>
+        <h2 class="rise" style="--d:1">The LORD is good</h2>
+        <p class="note rise" style="--d:2">After six verses of storm, earthquake and fire, this. The same power that shakes mountains is a wall around the men who trust Him.</p>
+        <p class="note step">A <em>“strong hold”</em> was a fortress on high ground. When an army came, the people in the open fields ran to it and shut the gates.</p>
+        <p class="note step"><em>“In the day of trouble”</em>: He doesn't promise there won't be one. He promises a place to run when it comes.</p>
+        <p class="note step"><em>“He knoweth them”</em>: not just knows <em>about</em> them. He knows them personally, the way a man knows his own family.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="7" data-hl="a strong hold in the day of trouble"></blockquote>
+    <h2 class="rise" style="--d:1">Where do you run?</h2>
+    <p class="note rise" style="--d:2">Every man has somewhere he runs when trouble hits: the bad news, the craving at two in the morning, the court date, the phone call. For a lot of us, it used to be a bottle, a pill, a woman, or just shutting down.</p>
+    <p class="note step">Those places promised to be a strong hold. They turned out to be the flood.</p>
+    <blockquote class="quote step"><p>“The name of the LORD is a strong tower: the righteous runneth into it, and is safe.”</p><cite>Proverbs 18:10</cite></blockquote>
+    <p class="note step">Running to Him looks like ordinary things: praying out loud in the truck, calling a brother, opening the Book, showing up here. It isn't weakness. It's going to the one place that holds.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="8-11" data-hl="an overrunning flood|affliction shall not rise up the second time|a wicked counsellor"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="9" data-hl="What do ye imagine against the LORD?|affliction shall not rise up the second time"></blockquote>
+    <h2 class="rise" style="--d:1">The second time</h2>
+    <p class="note rise" style="--d:2">About fifty years earlier, Sennacherib of Assyria had Jerusalem surrounded, and his spokesman mocked the LORD:</p>
+    <div class="talk">
+      <p class="step"><small>Sennacherib's man, outside Jerusalem</small>Who are they among all the gods of the countries, that have delivered their country out of mine hand, that the LORD should deliver Jerusalem out of mine hand?<br><span class="flag">2 Kings 18:35</span></p>
+      <p class="reply step"><small>The LORD, by Nahum</small>What do ye imagine against the LORD? he will make an utter end: affliction shall not rise up the second time.</p>
+    </div>
+    <p class="note step">That night God struck the Assyrian camp, and Sennacherib went home. Verse 11's <em>“wicked counsellor”</em> sounds like him. Nineveh would never get a second try.</p>
+    <p class="note step">Verse 10: tangled thorns, men too drunk to stand, dry straw that burns in a moment. Many of us know that picture from the inside: sure of ourselves, and unable to stand.</p>
+  </div>
+</section>
+
+<!-- ======================= PART THREE: GOOD TIDINGS ======================= -->
+<section class="slide part">
+  <div class="inner">
+    <p class="part-n rise">Part three</p>
+    <h2 class="rise" style="--d:1">Good tidings</h2>
+    <p class="range rise" style="--d:2">Verses 12–15</p>
+    <div class="rule"></div>
+    <p class="hook rise" style="--d:4">For a hundred years Judah wore Assyria's yoke. God says: no more.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="12-13" data-hl="Though I have afflicted thee, I will afflict thee no more|For now will I break his yoke from off thee, and will burst thy bonds in sunder"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="13"></blockquote>
+    <h2 class="rise" style="--d:1">I will break his yoke</h2>
+    <div class="split">
+      <div class="stage">
+        <svg class="nah01-yoke" viewBox="-20 30 460 200" role="img" aria-label="A heavy wooden yoke with chains holding it to the ground. It cracks in the middle, the halves fly apart, and the chains fall away.">
+          <line class="nah01-ground" x1="10" y1="216" x2="410" y2="216"/>
+          <text class="nah01-label" x="210" y="48" text-anchor="middle" font-size="16">ASSYRIA'S YOKE</text>
+          <g class="nah01-bonds">
+            <g class="nah01-link"><ellipse cx="112" cy="168" rx="7" ry="11"/><ellipse cx="112" cy="188" rx="5" ry="10"/><ellipse cx="308" cy="168" rx="7" ry="11"/><ellipse cx="308" cy="188" rx="5" ry="10"/></g>
+            <rect class="nah01-peg" x="100" y="200" width="24" height="16" rx="3"/><rect class="nah01-peg" x="296" y="200" width="24" height="16" rx="3"/>
+          </g>
+          <g class="nah01-half l"><rect class="nah01-wood" x="30" y="62" width="180" height="30" rx="10"/><path class="nah01-bow" d="M90 92 v40 a22 22 0 0 0 44 0 v-40"/></g>
+          <g class="nah01-half r"><rect class="nah01-wood" x="210" y="62" width="180" height="30" rx="10"/><path class="nah01-bow" d="M286 92 v40 a22 22 0 0 0 44 0 v-40"/></g>
+          <path class="nah01-crack" d="M210 58 l-8 10 l10 8 l-8 10 l8 10"/>
+          <text class="nah01-free" x="210" y="184" text-anchor="middle" font-size="22">“I will burst thy bonds”</text>
+        </svg>
+      </div>
+      <div>
+        <p class="note rise" style="--d:2">A yoke is the wooden beam laid across an ox's neck so it can be driven. Assyria had Judah yoked: paying tribute, doing as it was told. <em>“Though I have afflicted thee”</em>: God admits He allowed it, to discipline His people. Now He says, <em>enough</em>.</p>
+        <p class="note step nah01-go">Notice who breaks it. Not Judah. <em>“I will.”</em></p>
+        <p class="note step">That promise was to Judah, and God kept it. The principle holds for us: there are yokes a man can't break by trying harder. God can.</p>
+      </div>
+    </div>
+    <blockquote class="quote step"><p>“If the Son therefore shall make you free, ye shall be free indeed.”</p><cite>John 8:36</cite></blockquote>
+  </div>
+</section>
+
+<section class="slide verse" data-v="14" data-hl="I will make thy grave; for thou art vile"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="14" data-hl="no more of thy name be sown|I will make thy grave"></blockquote>
+    <h2 class="rise" style="--d:1">A city that disappeared</h2>
+    <ol class="timeline" aria-label="612 BC, Nineveh falls and burns. 401 BC, a Greek army marches past the ruins, and its writer doesn't even know the city's name. The 1840s, the city is dug out of the mounds.">
+      <li style="--k:0"><b>612 BC</b><span>Nineveh falls and burns</span></li>
+      <li style="--k:1"><b>401 BC</b><span>A Greek army marches past the ruins. Its writer doesn't know the city's name.</span></li>
+      <li class="lit" style="--k:2"><b>the 1840s</b><span>Dug out of grassy mounds by the Tigris</span></li>
+    </ol>
+    <p class="note rise" style="--d:3"><em>“No more of thy name be sown”</em> means no more sons to carry the name on. Within two hundred years, people walking past the ruins didn't know what they had been. The greatest city in the world became a grave.</p>
+    <p class="note step">Its gods couldn't help. <em>“Out of the house of thy gods will I cut off the graven image and the molten image.”</em> Carved idols and metal idols, the work of men's hands. When the day came, they burned with everything else.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="15" data-hl="Behold upon the mountains the feet of him that bringeth good tidings, that publisheth peace!|perform thy vows"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="15" data-hl="the feet of him that bringeth good tidings"></blockquote>
+    <h2 class="rise" style="--d:1">A runner on the hills</h2>
+    <p class="note rise" style="--d:2">Picture the watchman on Jerusalem's wall. A runner comes over the mountains, and you can tell by the way he runs that the news is good: <em>the enemy is finished. It's over.</em></p>
+    <div class="pair">
+      <div class="scroll step"><p class="ref">Isaiah, about the LORD saving His people</p><p class="kjv">“How beautiful upon the mountains are the feet of him that bringeth good tidings, that publisheth peace…”</p><p class="ref">Isaiah 52:7</p></div>
+      <div class="scroll step"><p class="ref">Paul, quoting Isaiah, about the gospel</p><p class="kjv">“…How beautiful are the feet of them that preach the gospel of peace, and bring glad tidings of good things!”</p><p class="ref">Romans 10:15</p></div>
+    </div>
+    <p class="note step">Nahum uses Isaiah's words for Nineveh's fall. Paul uses them for the gospel: Jesus has beaten the enemy that held us, sin and death. That's the best news ever carried over a hill.</p>
+    <p class="note step"><em>“Keep thy solemn feasts, perform thy vows.”</em> With the enemy gone, go back to worship, and keep the promises you made to God when you were in trouble. A lot of us made a few of those.</p>
+  </div>
+</section>
+
+<!-- ======================= CLOSING ======================= -->
+<section class="slide remember">
+  <div class="inner">
+    <h2 class="rise">Points to remember</h2>
+    <ol class="seeds">
+      <li class="step"><span class="topic">Who God is</span><span class="seed-q">“The LORD is good” <cite>1:7</cite></span><span class="take">His jealousy is a husband's protective love, and His anger is a just Judge's. Both come from His goodness.</span></li>
+      <li class="step"><span class="topic">Patience</span><span class="seed-q">“The LORD is slow to anger” <cite>1:3</cite></span><span class="take">He gave Nineveh a hundred years. Slow to anger, but not never.</span></li>
+      <li class="step"><span class="topic">Refuge</span><span class="seed-q">“A strong hold in the day of trouble” <cite>1:7</cite></span><span class="take">Run to Him, and He knows you by name.</span></li>
+      <li class="step"><span class="topic">Justice</span><span class="seed-q">“Will not at all acquit the wicked” <cite>1:3</cite></span><span class="take">Evil doesn't get away with it. God settles every account.</span></li>
+      <li class="step"><span class="topic">Freedom</span><span class="seed-q">“I will break his yoke from off thee” <cite>1:13</cite></span><span class="take">God breaks yokes a man can't break himself.</span></li>
+      <li class="step"><span class="topic">Good news</span><span class="seed-q">“Him that bringeth good tidings” <cite>1:15</cite></span><span class="take">The enemy is beaten. Go back to worship, and keep your vows.</span></li>
+    </ol>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 1 of 6</p>
+      <span class="topic">Who God is</span>
+      <h2>How can the same God be jealous and furious, and also good?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="2" data-hl="God is jealous"></blockquote>
+      <blockquote class="quote step" data-q="7" data-hl="The LORD is good"></blockquote>
+      <blockquote class="quote step"><p>“For thou shalt worship no other god: for the LORD, whose name is Jealous, is a jealous God:”</p><cite>Exodus 34:14</cite></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>Because His jealousy and His anger come out of His goodness, not against it. A good husband is jealous for his wife. A good judge is angry at men who crush the weak. A God who shrugged at Nineveh's cruelty wouldn't be good. The same God who is a fire to His enemies is a strong hold to those who trust Him.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 2 of 6</p>
+      <span class="topic">Patience</span>
+      <h2>Why does God wait so long before He judges?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="3" data-hl="The LORD is slow to anger"></blockquote>
+      <blockquote class="quote step"><p>“And God saw their works, that they turned from their evil way; and God repented of the evil, that he had said that he would do unto them; and he did it not.”</p><cite>Jonah 3:10</cite></blockquote>
+      <blockquote class="quote step"><p>“The Lord is not slack concerning his promise, as some men count slackness; but is longsuffering to us-ward, not willing that any should perish, but that all should come to repentance.”</p><cite>2 Peter 3:9</cite></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>Because He wants people to turn and live. He spared Nineveh when it repented under Jonah, and then waited another hundred years. His patience isn't weakness, and it isn't permission. It's room to come home. Today is part of that room.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 3 of 6</p>
+      <span class="topic">Refuge</span>
+      <h2>Where can a man run in the day of trouble?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="7"></blockquote>
+      <blockquote class="quote step"><p>“The name of the LORD is a strong tower: the righteous runneth into it, and is safe.”</p><cite>Proverbs 18:10</cite></blockquote>
+      <blockquote class="quote step"><p>“Come unto me, all ye that labour and are heavy laden, and I will give you rest.”</p><cite>Matthew 11:28</cite></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>To the LORD. He is good, He is a strong hold, and He knows the men who trust Him. The old places we ran to promised safety and turned out to be the flood. Running to Him looks like prayer, His Word, and His people, and He doesn't turn anyone away.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 4 of 6</p>
+      <span class="topic">Justice</span>
+      <h2>Will the wicked get away with it forever?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="3" data-hl="will not at all acquit the wicked"></blockquote>
+      <blockquote class="quote step"><p>“Fret not thyself because of evildoers, neither be thou envious against the workers of iniquity. For they shall soon be cut down like the grass, and wither as the green herb.”</p><cite>Psalm 37:1–2</cite></blockquote>
+      <blockquote class="quote step"><p>“Dearly beloved, avenge not yourselves, but rather give place unto wrath: for it is written, Vengeance is mine; I will repay, saith the Lord.”</p><cite>Romans 12:19</cite></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>No. Nineveh looked untouchable for a hundred years, and then it was gone. God keeps the books. That frees us from having to get even with the people who hurt us. It also reminds us that our own sin needs dealing with, and the only safe place for it is at the cross.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 5 of 6</p>
+      <span class="topic">Freedom</span>
+      <h2>What does God do with the yoke on His people's neck?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="13"></blockquote>
+      <blockquote class="quote step"><p>“If the Son therefore shall make you free, ye shall be free indeed.”</p><cite>John 8:36</cite></blockquote>
+      <blockquote class="quote step"><p>“Stand fast therefore in the liberty wherewith Christ hath made us free, and be not entangled again with the yoke of bondage.”</p><cite>Galatians 5:1</cite></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>He breaks it. Judah couldn't throw off Assyria, but God said, “I will.” Christ does that for us with sin: He sets us free. Then Paul says, “Stand fast,” don't put the old yoke back on. Staying free means staying close to Him.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 6 of 6</p>
+      <span class="topic">Good news</span>
+      <h2>What are the good tidings on the mountains?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="15" data-hl="the feet of him that bringeth good tidings, that publisheth peace"></blockquote>
+      <blockquote class="quote step"><p>“How beautiful upon the mountains are the feet of him that bringeth good tidings, that publisheth peace; that bringeth good tidings of good, that publisheth salvation; that saith unto Zion, Thy God reigneth!”</p><cite>Isaiah 52:7</cite></blockquote>
+      <blockquote class="quote step"><p>“And how shall they preach, except they be sent? as it is written, How beautiful are the feet of them that preach the gospel of peace, and bring glad tidings of good things!”</p><cite>Romans 10:15</cite></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>For Judah, it was news that Nineveh was finished and the enemy would never pass through again. Paul uses the same words for the gospel: Christ has won, and peace with God is offered to anyone who believes. Every man who has heard it can carry it to the next man.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide prayer">
+  <div class="inner">
+    <div class="emblem rise"></div>
+    <h2 class="rise" style="--d:1">Prayer requests</h2>
+    <p class="ask-line rise" style="--d:2">What can we pray about for you today?</p>
+    <blockquote class="quote rise" style="--d:4"><p>“God is our refuge and strength, a very present help in trouble.”</p><cite>Psalm 46:1</cite></blockquote>
+  </div>
+</section>
+
+</main>
+
+<script>
+// King James Version, Nahum chapter 1
+const V = {
+  1: "The burden of Nineveh. The book of the vision of Nahum the Elkoshite.",
+  2: "God is jealous, and the LORD revengeth; the LORD revengeth, and is furious; the LORD will take vengeance on his adversaries, and he reserveth wrath for his enemies.",
+  3: "The LORD is slow to anger, and great in power, and will not at all acquit the wicked: the LORD hath his way in the whirlwind and in the storm, and the clouds are the dust of his feet.",
+  4: "He rebuketh the sea, and maketh it dry, and drieth up all the rivers: Bashan languisheth, and Carmel, and the flower of Lebanon languisheth.",
+  5: "The mountains quake at him, and the hills melt, and the earth is burned at his presence, yea, the world, and all that dwell therein.",
+  6: "Who can stand before his indignation? and who can abide in the fierceness of his anger? his fury is poured out like fire, and the rocks are thrown down by him.",
+  7: "The LORD is good, a strong hold in the day of trouble; and he knoweth them that trust in him.",
+  8: "But with an overrunning flood he will make an utter end of the place thereof, and darkness shall pursue his enemies.",
+  9: "What do ye imagine against the LORD? he will make an utter end: affliction shall not rise up the second time.",
+  10: "For while they be folden together as thorns, and while they are drunken as drunkards, they shall be devoured as stubble fully dry.",
+  11: "There is one come out of thee, that imagineth evil against the LORD, a wicked counsellor.",
+  12: "Thus saith the LORD: Though they be quiet, and likewise many, yet thus shall they be cut down, when he shall pass through. Though I have afflicted thee, I will afflict thee no more.",
+  13: "For now will I break his yoke from off thee, and will burst thy bonds in sunder.",
+  14: "And the LORD hath given a commandment concerning thee, that no more of thy name be sown: out of the house of thy gods will I cut off the graven image and the molten image: I will make thy grave; for thou art vile.",
+  15: "Behold upon the mountains the feet of him that bringeth good tidings, that publisheth peace! O Judah, keep thy solemn feasts, perform thy vows: for the wicked shall no more pass through thee; he is utterly cut off."
+};
+const BOOK = "Nahum 1";
+</script>
+<script src="../assets/deck.js"></script>
+</body>
+</html>

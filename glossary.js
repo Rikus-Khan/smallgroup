@@ -791,6 +791,9 @@ window.GLOSSARY = [
     "Jonah", 2,
     [ 1, 2, 6, 7, 9, 10 ] ],
    [
+    "Jonah", 3,
+    [ 1, 3 ] ],
+   [
     "Micah", 1,
     [ 1, 3, 12 ] ],
    [
@@ -1901,6 +1904,9 @@ window.GLOSSARY = [
     "Proverbs", 26,
     [ 25 ] ],
    [
+    "Jonah", 3,
+    [ 5 ] ],
+   [
     "Habakkuk", 1,
     [ 5 ] ],
    [
@@ -2877,28 +2883,7 @@ window.GLOSSARY = [
     [ 27, 33 ] ],
    [
     "Proverbs", 27,
-    [ 13 ] ],
-   [
-    "Hosea", 2,
-    [ 5 ] ],
-   [
-    "Hosea", 3,
-    [ 3 ] ],
-   [
-    "Hosea", 4,
-    [ 15 ] ],
-   [
-    "Joel", 3,
-    [ 3 ] ],
-   [
-    "Amos", 7,
-    [ 17 ] ],
-   [
-    "Micah", 1,
-    [ 7 ] ],
-   [
-    "Nahum", 3,
-    [ 4 ] ] ]
+    [ 13 ] ] ]
  },
  {
   "id": "righteous",
@@ -3409,6 +3394,9 @@ window.GLOSSARY = [
    [
     "Amos", 1,
     [ 11 ] ],
+   [
+    "Jonah", 3,
+    [ 9 ] ],
    [
     "Micah", 5,
     [ 15 ] ],
@@ -7320,7 +7308,10 @@ window.GLOSSARY = [
     [ 8, 13 ] ],
    [
     "Amos", 8,
-    [ 10 ] ] ]
+    [ 10 ] ],
+   [
+    "Jonah", 3,
+    [ 5, 6, 8 ] ] ]
  },
  {
   "id": "meat-offering",
@@ -7989,7 +7980,13 @@ window.GLOSSARY = [
     [ 3, 4 ] ],
    [
     "Hosea", 6,
-    [ 10 ] ] ]
+    [ 10 ] ],
+   [
+    "Micah", 1,
+    [ 7 ] ],
+   [
+    "Nahum", 3,
+    [ 4 ] ] ]
  },
  {
   "id": "mercy",
@@ -9497,6 +9494,9 @@ window.GLOSSARY = [
     "Amos", 9,
     [ 7 ] ],
    [
+    "Nahum", 3,
+    [ 9 ] ],
+   [
     "Zephaniah", 2,
     [ 12 ] ] ]
  },
@@ -9962,6 +9962,9 @@ window.GLOSSARY = [
   "name": "Burden (a prophet's heavy message)",
   "refs": [
    [
+    "Nahum", 1,
+    [ 1 ] ],
+   [
     "Habakkuk", 1,
     [ 1 ] ] ]
  },
@@ -10345,5 +10348,329 @@ window.GLOSSARY = [
    [
     "Habakkuk", 3,
     [ 12 ] ] ]
+ },
+ {
+  "id": "nahum",
+  "kind": "person",
+  "name": "Nahum the prophet (\"comfort\")",
+  "refs": [
+   [
+    "Nahum", 1,
+    [ 1 ] ] ]
+ },
+ {
+  "id": "elkosh",
+  "kind": "place",
+  "name": "Elkosh (Nahum's hometown, \"the Elkoshite\")",
+  "refs": [
+   [
+    "Nahum", 1,
+    [ 1 ] ] ]
+ },
+ {
+  "id": "nineveh",
+  "kind": "place",
+  "name": "Nineveh (the capital of Assyria)",
+  "refs": [
+   [
+    "Jonah", 1,
+    [ 2 ] ],
+   [
+    "Jonah", 3,
+    [ 2, 3, 4, 5, 6, 7 ] ],
+   [
+    "Nahum", 1,
+    [ 1 ] ],
+   [
+    "Nahum", 2,
+    [ 8 ] ],
+   [
+    "Nahum", 3,
+    [ 7 ] ],
+   [
+    "Zephaniah", 2,
+    [ 13 ] ] ]
+ },
+ {
+  "id": "vengeance",
+  "kind": "term",
+  "name": "Vengeance, revengeth (God's just payback)",
+  "refs": [
+   [
+    "Proverbs", 6,
+    [ 34 ] ],
+   [
+    "Micah", 5,
+    [ 15 ] ],
+   [
+    "Nahum", 1,
+    [ 2 ] ] ]
+ },
+ {
+  "id": "slow-to-anger",
+  "kind": "term",
+  "name": "Slow to anger",
+  "refs": [
+   [
+    "Proverbs", 15,
+    [ 18 ] ],
+   [
+    "Proverbs", 16,
+    [ 32 ] ],
+   [
+    "Joel", 2,
+    [ 13 ] ],
+   [
+    "Nahum", 1,
+    [ 3 ] ] ]
+ },
+ {
+  "id": "acquit",
+  "kind": "term",
+  "name": "Acquit (declare not guilty)",
+  "refs": [
+   [
+    "Nahum", 1,
+    [ 3 ] ] ]
+ },
+ {
+  "id": "languisheth",
+  "kind": "term",
+  "name": "Languisheth (wilts, withers)",
+  "refs": [
+   [
+    "Hosea", 4,
+    [ 3 ] ],
+   [
+    "Joel", 1,
+    [ 10, 12 ] ],
+   [
+    "Nahum", 1,
+    [ 4 ] ] ]
+ },
+ {
+  "id": "strong-hold",
+  "kind": "term",
+  "name": "Strong hold (a fortress, a safe place)",
+  "refs": [
+   [
+    "Micah", 4,
+    [ 8 ] ],
+   [
+    "Micah", 5,
+    [ 11 ] ],
+   [
+    "Nahum", 1,
+    [ 7 ] ],
+   [
+    "Nahum", 3,
+    [ 12, 14 ] ],
+   [
+    "Habakkuk", 1,
+    [ 10 ] ] ]
+ },
+ {
+  "id": "folden",
+  "kind": "term",
+  "name": "Folden together (tangled, like thorns)",
+  "refs": [
+   [
+    "Nahum", 1,
+    [ 10 ] ] ]
+ },
+ {
+  "id": "yoke",
+  "kind": "term",
+  "name": "Yoke (the beam laid on an ox's neck; bondage)",
+  "refs": [
+   [
+    "Hosea", 11,
+    [ 4 ] ],
+   [
+    "Nahum", 1,
+    [ 13 ] ] ]
+ },
+ {
+  "id": "vile",
+  "kind": "term",
+  "name": "Vile (worthless, contemptible)",
+  "refs": [
+   [
+    "Nahum", 1,
+    [ 14 ] ],
+   [
+    "Nahum", 3,
+    [ 6 ] ] ]
+ },
+ {
+  "id": "good-tidings",
+  "kind": "term",
+  "name": "Good tidings (good news)",
+  "refs": [
+   [
+    "Nahum", 1,
+    [ 15 ] ] ]
+ },
+ {
+  "id": "solemn-feasts",
+  "kind": "term",
+  "name": "Solemn feasts (the appointed feasts of the LORD)",
+  "refs": [
+   [
+    "Hosea", 2,
+    [ 11 ] ],
+   [
+    "Nahum", 1,
+    [ 15 ] ] ]
+ },
+ {
+  "id": "munition",
+  "kind": "term",
+  "name": "Munition (the fortress)",
+  "refs": [
+   [
+    "Nahum", 2,
+    [ 1 ] ] ]
+ },
+ {
+  "id": "emptiers",
+  "kind": "term",
+  "name": "Emptiers (plunderers)",
+  "refs": [
+   [
+    "Nahum", 2,
+    [ 2 ] ] ]
+ },
+ {
+  "id": "justle",
+  "kind": "term",
+  "name": "Justle (jostle, crash together)",
+  "refs": [
+   [
+    "Nahum", 2,
+    [ 4 ] ] ]
+ },
+ {
+  "id": "worthies",
+  "kind": "term",
+  "name": "Worthies (his best officers)",
+  "refs": [
+   [
+    "Nahum", 2,
+    [ 5 ] ] ]
+ },
+ {
+  "id": "huzzab",
+  "kind": "person",
+  "name": "Huzzab (probably Nineveh's queen, or the city itself)",
+  "refs": [
+   [
+    "Nahum", 2,
+    [ 7 ] ] ]
+ },
+ {
+  "id": "tabering",
+  "kind": "term",
+  "name": "Tabering (beating, as on a drum)",
+  "refs": [
+   [
+    "Nahum", 2,
+    [ 7 ] ] ]
+ },
+ {
+  "id": "ravin",
+  "kind": "term",
+  "name": "Ravin (prey torn apart)",
+  "refs": [
+   [
+    "Nahum", 2,
+    [ 12 ] ] ]
+ },
+ {
+  "id": "witchcrafts",
+  "kind": "term",
+  "name": "Witchcrafts (sorcery, spells)",
+  "refs": [
+   [
+    "Micah", 5,
+    [ 12 ] ],
+   [
+    "Nahum", 3,
+    [ 4 ] ] ]
+ },
+ {
+  "id": "wellfavoured",
+  "kind": "term",
+  "name": "Wellfavoured (good-looking)",
+  "refs": [
+   [
+    "Nahum", 3,
+    [ 4 ] ] ]
+ },
+ {
+  "id": "discover",
+  "kind": "term",
+  "name": "Discover (uncover, expose)",
+  "refs": [
+   [
+    "Proverbs", 18,
+    [ 2 ] ],
+   [
+    "Proverbs", 25,
+    [ 9 ] ],
+   [
+    "Hosea", 2,
+    [ 10 ] ],
+   [
+    "Micah", 1,
+    [ 6 ] ],
+   [
+    "Nahum", 3,
+    [ 5 ] ] ]
+ },
+ {
+  "id": "gazingstock",
+  "kind": "term",
+  "name": "Gazingstock (a public spectacle)",
+  "refs": [
+   [
+    "Nahum", 3,
+    [ 6 ] ] ]
+ },
+ {
+  "id": "no-amon",
+  "kind": "place",
+  "name": "No, No-Amon (Thebes in Egypt)",
+  "refs": [
+   [
+    "Nahum", 3,
+    [ 8 ] ] ]
+ },
+ {
+  "id": "put-and-lubim",
+  "kind": "place",
+  "name": "Put and Lubim (peoples of Libya)",
+  "refs": [
+   [
+    "Nahum", 3,
+    [ 9 ] ] ]
+ },
+ {
+  "id": "morter-and-brickkiln",
+  "kind": "term",
+  "name": "Morter and brickkiln (making mud bricks)",
+  "refs": [
+   [
+    "Nahum", 3,
+    [ 14 ] ] ]
+ },
+ {
+  "id": "bruit",
+  "kind": "term",
+  "name": "Bruit (the news, the report)",
+  "refs": [
+   [
+    "Nahum", 3,
+    [ 19 ] ] ]
  }
 ];
