@@ -185,6 +185,9 @@ window.GLOSSARY = [
     "Micah", 6,
     [ 4 ] ],
    [
+    "Malachi", 4,
+    [ 4 ] ],
+   [
     "John", 1,
     [ 17, 45 ] ],
    [
@@ -211,6 +214,9 @@ window.GLOSSARY = [
   "kind": "person",
   "name": "Elias (Elijah)",
   "refs": [
+   [
+    "Malachi", 4,
+    [ 5 ] ],
    [
     "John", 1,
     [ 21, 25 ] ] ]
@@ -578,6 +584,9 @@ window.GLOSSARY = [
     "Zechariah", 12,
     [ 7, 8, 10, 12 ] ],
    [
+    "Zechariah", 13,
+    [ 1 ] ],
+   [
     "John", 7,
     [ 42 ] ] ]
  },
@@ -860,11 +869,20 @@ window.GLOSSARY = [
     "Zechariah", 5,
     [ 4 ] ],
    [
+    "Zechariah", 6,
+    [ 9, 12, 13, 14, 15 ] ],
+   [
     "Zechariah", 7,
     [ 1, 2, 3, 4, 7, 8, 9, 12, 13 ] ],
    [
     "Zechariah", 8,
     [ 1, 2, 3, 4, 6, 7, 9, 11, 14, 17, 18, 19, 20, 21, 22, 23 ] ],
+   [
+    "Zechariah", 9,
+    [ 1, 14, 15, 16 ] ],
+   [
+    "Zechariah", 10,
+    [ 1, 3, 5, 6, 7, 12 ] ],
    [
     "Zechariah", 11,
     [ 4, 5, 6, 11, 13, 15 ] ],
@@ -872,8 +890,23 @@ window.GLOSSARY = [
     "Zechariah", 12,
     [ 1, 4, 5, 7, 8 ] ],
    [
+    "Zechariah", 13,
+    [ 2, 3, 7, 8, 9 ] ],
+   [
+    "Zechariah", 14,
+    [ 1, 3, 5, 7, 9, 12, 13, 16, 17, 18, 20, 21 ] ],
+   [
     "Malachi", 1,
-    [ 1, 2, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14 ] ] ]
+    [ 1, 2, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14 ] ],
+   [
+    "Malachi", 2,
+    [ 2, 4, 7, 8, 11, 12, 13, 14, 16, 17 ] ],
+   [
+    "Malachi", 3,
+    [ 1, 3, 4, 5, 6, 7, 10, 11, 12, 13, 14, 16, 17 ] ],
+   [
+    "Malachi", 4,
+    [ 1, 3, 5 ] ] ]
  },
  {
   "id": "jakeh",
@@ -944,8 +977,23 @@ window.GLOSSARY = [
     "Zechariah", 8,
     [ 3, 4, 8, 15, 22 ] ],
    [
+    "Zechariah", 9,
+    [ 9, 10 ] ],
+   [
     "Zechariah", 12,
     [ 2, 3, 5, 6, 7, 8, 9, 10, 11 ] ],
+   [
+    "Zechariah", 13,
+    [ 1 ] ],
+   [
+    "Zechariah", 14,
+    [ 2, 4, 8, 10, 11, 12, 14, 16, 17, 21 ] ],
+   [
+    "Malachi", 2,
+    [ 11 ] ],
+   [
+    "Malachi", 3,
+    [ 4 ] ],
    [
     "John", 1,
     [ 19 ] ],
@@ -1154,8 +1202,14 @@ window.GLOSSARY = [
     "Haggai", 2,
     [ 15, 18 ] ],
    [
+    "Zechariah", 6,
+    [ 12, 13, 14, 15 ] ],
+   [
     "Zechariah", 8,
     [ 9 ] ],
+   [
+    "Malachi", 3,
+    [ 1 ] ],
    [
     "John", 2,
     [ 14, 15, 19, 20, 21 ] ],
@@ -1292,6 +1346,9 @@ window.GLOSSARY = [
     "Zechariah", 8,
     [ 13 ] ],
    [
+    "Zechariah", 9,
+    [ 1 ] ],
+   [
     "Zechariah", 11,
     [ 14 ] ],
    [
@@ -1300,6 +1357,12 @@ window.GLOSSARY = [
    [
     "Malachi", 1,
     [ 1, 5 ] ],
+   [
+    "Malachi", 2,
+    [ 11, 16 ] ],
+   [
+    "Malachi", 4,
+    [ 4 ] ],
    [
     "John", 1,
     [ 31, 49 ] ],
@@ -1354,6 +1417,9 @@ window.GLOSSARY = [
    [
     "Zechariah", 5,
     [ 9 ] ],
+   [
+    "Malachi", 3,
+    [ 10 ] ],
    [
     "John", 1,
     [ 32, 51 ] ],
@@ -1478,11 +1544,26 @@ window.GLOSSARY = [
     "Zechariah", 8,
     [ 13, 15, 19 ] ],
    [
+    "Zechariah", 9,
+    [ 7, 13 ] ],
+   [
+    "Zechariah", 10,
+    [ 3, 6 ] ],
+   [
     "Zechariah", 11,
     [ 14 ] ],
    [
     "Zechariah", 12,
-    [ 2, 4, 5, 6, 7 ] ] ]
+    [ 2, 4, 5, 6, 7 ] ],
+   [
+    "Zechariah", 14,
+    [ 5, 14, 21 ] ],
+   [
+    "Malachi", 2,
+    [ 11 ] ],
+   [
+    "Malachi", 3,
+    [ 4 ] ] ]
  },
  {
   "id": "city-gate",
@@ -1558,6 +1639,9 @@ window.GLOSSARY = [
    [
     "Zephaniah", 3,
     [ 4, 5 ] ],
+   [
+    "Zechariah", 14,
+    [ 6, 7 ] ],
    [
     "John", 1,
     [ 4, 5, 7, 8, 9 ] ],
@@ -1691,6 +1775,9 @@ window.GLOSSARY = [
     "Zechariah", 8,
     [ 3, 8, 16, 19 ] ],
    [
+    "Malachi", 2,
+    [ 6 ] ],
+   [
     "John", 1,
     [ 14, 17 ] ],
    [
@@ -1787,11 +1874,17 @@ window.GLOSSARY = [
     "Zechariah", 2,
     [ 5, 8 ] ],
    [
+    "Zechariah", 6,
+    [ 13 ] ],
+   [
     "Zechariah", 11,
     [ 3 ] ],
    [
     "Zechariah", 12,
     [ 7 ] ],
+   [
+    "Malachi", 2,
+    [ 2 ] ],
    [
     "John", 1,
     [ 14 ] ],
@@ -1870,6 +1963,12 @@ window.GLOSSARY = [
    [
     "Zechariah", 7,
     [ 12 ] ],
+   [
+    "Malachi", 2,
+    [ 6, 7, 8, 9 ] ],
+   [
+    "Malachi", 4,
+    [ 4 ] ],
    [
     "John", 1,
     [ 17, 45 ] ],
@@ -2141,6 +2240,12 @@ window.GLOSSARY = [
     "Micah", 1,
     [ 2 ] ],
    [
+    "Malachi", 2,
+    [ 14 ] ],
+   [
+    "Malachi", 3,
+    [ 5 ] ],
+   [
     "John", 1,
     [ 7, 8, 15, 19, 32, 34 ] ],
    [
@@ -2350,6 +2455,12 @@ window.GLOSSARY = [
    [
     "Haggai", 2,
     [ 12 ] ],
+   [
+    "Zechariah", 9,
+    [ 15, 17 ] ],
+   [
+    "Zechariah", 10,
+    [ 7 ] ],
    [
     "John", 2,
     [ 3, 9, 10 ] ],
@@ -2721,7 +2832,10 @@ window.GLOSSARY = [
     [ 6 ] ],
    [
     "Habakkuk", 2,
-    [ 14 ] ] ]
+    [ 14 ] ],
+   [
+    "Malachi", 2,
+    [ 7 ] ] ]
  },
  {
   "id": "instruction",
@@ -3131,6 +3245,12 @@ window.GLOSSARY = [
     "Zechariah", 8,
     [ 8 ] ],
    [
+    "Malachi", 3,
+    [ 3, 18 ] ],
+   [
+    "Malachi", 4,
+    [ 2 ] ],
+   [
     "John", 7,
     [ 24 ] ],
    [
@@ -3258,7 +3378,13 @@ window.GLOSSARY = [
     [ 8 ] ],
    [
     "Malachi", 1,
-    [ 4 ] ] ]
+    [ 4 ] ],
+   [
+    "Malachi", 3,
+    [ 15, 18 ] ],
+   [
+    "Malachi", 4,
+    [ 3 ] ] ]
  },
  {
   "id": "heart",
@@ -3383,8 +3509,17 @@ window.GLOSSARY = [
     "Zechariah", 7,
     [ 10 ] ],
    [
+    "Zechariah", 10,
+    [ 7 ] ],
+   [
     "Zechariah", 12,
     [ 5 ] ],
+   [
+    "Malachi", 2,
+    [ 2 ] ],
+   [
+    "Malachi", 4,
+    [ 6 ] ],
    [
     "John", 12,
     [ 40 ] ],
@@ -3500,6 +3635,12 @@ window.GLOSSARY = [
     "Zephaniah", 3,
     [ 13 ] ],
    [
+    "Zechariah", 14,
+    [ 12 ] ],
+   [
+    "Malachi", 2,
+    [ 6, 7 ] ],
+   [
     "John", 5,
     [ 2 ] ] ]
  },
@@ -3608,6 +3749,9 @@ window.GLOSSARY = [
     "Zechariah", 8,
     [ 14 ] ],
    [
+    "Zechariah", 10,
+    [ 3 ] ],
+   [
     "John", 3,
     [ 36 ] ],
    [
@@ -3671,8 +3815,20 @@ window.GLOSSARY = [
     "Zephaniah", 3,
     [ 11 ] ],
    [
+    "Zechariah", 9,
+    [ 6 ] ],
+   [
+    "Zechariah", 10,
+    [ 11 ] ],
+   [
     "Zechariah", 11,
-    [ 3 ] ] ]
+    [ 3 ] ],
+   [
+    "Malachi", 3,
+    [ 15 ] ],
+   [
+    "Malachi", 4,
+    [ 1 ] ] ]
  },
  {
   "id": "humility",
@@ -3822,7 +3978,10 @@ window.GLOSSARY = [
     [ 2 ] ],
    [
     "Zechariah", 3,
-    [ 2 ] ] ]
+    [ 2 ] ],
+   [
+    "Malachi", 3,
+    [ 11 ] ] ]
  },
  {
   "id": "friend",
@@ -3859,6 +4018,9 @@ window.GLOSSARY = [
    [
     "Micah", 7,
     [ 5 ] ],
+   [
+    "Zechariah", 13,
+    [ 6 ] ],
    [
     "John", 3,
     [ 29 ] ],
@@ -3924,7 +4086,13 @@ window.GLOSSARY = [
     [ 27 ] ],
    [
     "Hosea", 9,
-    [ 10 ] ] ]
+    [ 10 ] ],
+   [
+    "Zechariah", 9,
+    [ 7 ] ],
+   [
+    "Malachi", 2,
+    [ 11 ] ] ]
  },
  {
   "id": "adultery",
@@ -4081,6 +4249,9 @@ window.GLOSSARY = [
    [
     "Nahum", 1,
     [ 11 ] ],
+   [
+    "Zechariah", 6,
+    [ 13 ] ],
    [
     "John", 11,
     [ 53 ] ],
@@ -4698,7 +4869,10 @@ window.GLOSSARY = [
     [ 1 ] ],
    [
     "Habakkuk", 2,
-    [ 2, 3 ] ] ]
+    [ 2, 3 ] ],
+   [
+    "Zechariah", 13,
+    [ 4 ] ] ]
  },
  {
   "id": "weights-and-balances",
@@ -5255,6 +5429,9 @@ window.GLOSSARY = [
     "Zephaniah", 2,
     [ 11 ] ],
    [
+    "Zechariah", 14,
+    [ 16, 17 ] ],
+   [
     "John", 4,
     [ 20, 21, 22, 23, 24 ] ],
    [
@@ -5320,6 +5497,9 @@ window.GLOSSARY = [
   "kind": "person",
   "name": "The hireling (hired hand)",
   "refs": [
+   [
+    "Malachi", 3,
+    [ 5 ] ],
    [
     "John", 10,
     [ 12, 13 ] ] ]
@@ -5504,6 +5684,9 @@ window.GLOSSARY = [
   "name": "Feast of Tabernacles",
   "refs": [
    [
+    "Zechariah", 14,
+    [ 16, 18, 19 ] ],
+   [
     "John", 7,
     [ 2 ] ] ]
  },
@@ -5686,6 +5869,9 @@ window.GLOSSARY = [
   "kind": "place",
   "name": "The Mount of Olives",
   "refs": [
+   [
+    "Zechariah", 14,
+    [ 4 ] ],
    [
     "John", 8,
     [ 1 ] ] ]
@@ -5963,6 +6149,12 @@ window.GLOSSARY = [
     "Malachi", 1,
     [ 2 ] ],
    [
+    "Malachi", 2,
+    [ 12 ] ],
+   [
+    "Malachi", 3,
+    [ 6 ] ],
+   [
     "John", 4,
     [ 5, 6, 12 ] ] ]
  },
@@ -6070,6 +6262,9 @@ window.GLOSSARY = [
    [
     "Habakkuk", 3,
     [ 8, 13, 18 ] ],
+   [
+    "Zechariah", 9,
+    [ 9 ] ],
    [
     "John", 4,
     [ 22 ] ] ]
@@ -6650,6 +6845,9 @@ window.GLOSSARY = [
     "Zechariah", 3,
     [ 1, 8 ] ],
    [
+    "Zechariah", 6,
+    [ 11 ] ],
+   [
     "John", 11,
     [ 49, 51 ] ],
    [
@@ -6737,6 +6935,9 @@ window.GLOSSARY = [
     "Zechariah", 8,
     [ 2, 3 ] ],
    [
+    "Zechariah", 9,
+    [ 9, 13 ] ],
+   [
     "John", 12,
     [ 15 ] ] ]
  },
@@ -6787,6 +6988,12 @@ window.GLOSSARY = [
    [
     "Hosea", 8,
     [ 9 ] ],
+   [
+    "Zechariah", 9,
+    [ 9 ] ],
+   [
+    "Zechariah", 14,
+    [ 15 ] ],
    [
     "John", 12,
     [ 14, 15 ] ] ]
@@ -7087,6 +7294,9 @@ window.GLOSSARY = [
    [
     "Amos", 5,
     [ 16 ] ],
+   [
+    "Zechariah", 13,
+    [ 5 ] ],
    [
     "John", 15,
     [ 1 ] ] ]
@@ -7538,11 +7748,17 @@ window.GLOSSARY = [
     "Zechariah", 3,
     [ 1, 8 ] ],
    [
+    "Zechariah", 6,
+    [ 11, 13 ] ],
+   [
     "Zechariah", 7,
     [ 3, 5 ] ],
    [
     "Malachi", 1,
-    [ 6 ] ] ]
+    [ 6 ] ],
+   [
+    "Malachi", 2,
+    [ 1, 7 ] ] ]
  },
  {
   "id": "elders",
@@ -7680,7 +7896,13 @@ window.GLOSSARY = [
     [ 7, 8, 14, 18 ] ],
    [
     "Zephaniah", 2,
-    [ 2, 3 ] ] ]
+    [ 2, 3 ] ],
+   [
+    "Zechariah", 14,
+    [ 1 ] ],
+   [
+    "Malachi", 4,
+    [ 5 ] ] ]
  },
  {
   "id": "garners",
@@ -7713,7 +7935,10 @@ window.GLOSSARY = [
     [ 6 ] ],
    [
     "Zephaniah", 1,
-    [ 16 ] ] ]
+    [ 16 ] ],
+   [
+    "Zechariah", 9,
+    [ 14 ] ] ]
  },
  {
   "id": "rend-your-heart",
@@ -7778,6 +8003,12 @@ window.GLOSSARY = [
     "Zechariah", 8,
     [ 13 ] ],
    [
+    "Zechariah", 9,
+    [ 10 ] ],
+   [
+    "Zechariah", 14,
+    [ 14, 18 ] ],
+   [
     "Malachi", 1,
     [ 11, 14 ] ] ]
  },
@@ -7821,7 +8052,10 @@ window.GLOSSARY = [
     [ 3 ] ],
    [
     "Joel", 2,
-    [ 23 ] ] ]
+    [ 23 ] ],
+   [
+    "Zechariah", 10,
+    [ 1 ] ] ]
  },
  {
   "id": "fats",
@@ -7956,7 +8190,10 @@ window.GLOSSARY = [
     [ 4 ] ],
    [
     "Amos", 1,
-    [ 9, 10 ] ] ]
+    [ 9, 10 ] ],
+   [
+    "Zechariah", 9,
+    [ 2, 3 ] ] ]
  },
  {
   "id": "palestine",
@@ -8103,7 +8340,13 @@ window.GLOSSARY = [
     [ 9 ] ],
    [
     "Haggai", 2,
-    [ 5 ] ] ]
+    [ 5 ] ],
+   [
+    "Zechariah", 10,
+    [ 10, 11 ] ],
+   [
+    "Zechariah", 14,
+    [ 18, 19 ] ] ]
  },
  {
   "id": "edom",
@@ -8175,7 +8418,10 @@ window.GLOSSARY = [
     [ 1 ] ],
    [
     "Amos", 1,
-    [ 1 ] ] ]
+    [ 1 ] ],
+   [
+    "Zechariah", 14,
+    [ 5 ] ] ]
  },
  {
   "id": "jotham",
@@ -8379,7 +8625,10 @@ window.GLOSSARY = [
     [ 12, 16 ] ],
    [
     "Zechariah", 7,
-    [ 9 ] ] ]
+    [ 9 ] ],
+   [
+    "Zechariah", 10,
+    [ 6 ] ] ]
  },
  {
   "id": "baal",
@@ -8661,7 +8910,10 @@ window.GLOSSARY = [
     [ 18 ] ],
    [
     "Zephaniah", 2,
-    [ 13 ] ] ]
+    [ 13 ] ],
+   [
+    "Zechariah", 10,
+    [ 10, 11 ] ] ]
  },
  {
   "id": "bethel",
@@ -8943,7 +9195,10 @@ window.GLOSSARY = [
     [ 11 ] ],
    [
     "Habakkuk", 2,
-    [ 13 ] ] ]
+    [ 13 ] ],
+   [
+    "Zechariah", 10,
+    [ 2 ] ] ]
  },
  {
   "id": "gilead",
@@ -8964,7 +9219,10 @@ window.GLOSSARY = [
     [ 19 ] ],
    [
     "Micah", 7,
-    [ 14 ] ] ]
+    [ 14 ] ],
+   [
+    "Zechariah", 10,
+    [ 10 ] ] ]
  },
  {
   "id": "syria",
@@ -9000,7 +9258,13 @@ window.GLOSSARY = [
     [ 7 ] ],
    [
     "Habakkuk", 2,
-    [ 18 ] ] ]
+    [ 18 ] ],
+   [
+    "Zechariah", 10,
+    [ 2 ] ],
+   [
+    "Zechariah", 13,
+    [ 2 ] ] ]
  },
  {
   "id": "morning-cloud",
@@ -9126,7 +9390,10 @@ window.GLOSSARY = [
     [ 3 ] ],
    [
     "Zechariah", 7,
-    [ 10 ] ] ]
+    [ 10 ] ],
+   [
+    "Malachi", 3,
+    [ 5 ] ] ]
  },
  {
   "id": "lily",
@@ -9152,6 +9419,9 @@ window.GLOSSARY = [
     "Habakkuk", 2,
     [ 17 ] ],
    [
+    "Zechariah", 10,
+    [ 10 ] ],
+   [
     "Zechariah", 11,
     [ 1 ] ] ]
  },
@@ -9174,7 +9444,10 @@ window.GLOSSARY = [
     [ 8 ] ],
    [
     "Obadiah", 1,
-    [ 19 ] ] ]
+    [ 19 ] ],
+   [
+    "Zechariah", 14,
+    [ 10 ] ] ]
  },
  {
   "id": "mizpah",
@@ -9278,8 +9551,17 @@ window.GLOSSARY = [
     "Amos", 1,
     [ 9 ] ],
    [
+    "Zechariah", 9,
+    [ 11 ] ],
+   [
     "Zechariah", 11,
-    [ 10 ] ] ]
+    [ 10 ] ],
+   [
+    "Malachi", 2,
+    [ 4, 5, 8, 10, 14 ] ],
+   [
+    "Malachi", 3,
+    [ 1 ] ] ]
  },
  {
   "id": "oven",
@@ -9462,7 +9744,10 @@ window.GLOSSARY = [
     [ 12 ] ],
    [
     "Amos", 5,
-    [ 27 ] ] ]
+    [ 27 ] ],
+   [
+    "Zechariah", 9,
+    [ 1 ] ] ]
  },
  {
   "id": "lamentation",
@@ -9581,17 +9866,41 @@ window.GLOSSARY = [
     "Zechariah", 5,
     [ 4 ] ],
    [
+    "Zechariah", 6,
+    [ 12, 15 ] ],
+   [
     "Zechariah", 7,
     [ 3, 4, 9, 12, 13 ] ],
    [
     "Zechariah", 8,
     [ 1, 2, 3, 4, 6, 7, 9, 11, 14, 18, 19, 20, 21, 22, 23 ] ],
    [
+    "Zechariah", 9,
+    [ 15 ] ],
+   [
+    "Zechariah", 10,
+    [ 3 ] ],
+   [
     "Zechariah", 12,
     [ 5 ] ],
    [
+    "Zechariah", 13,
+    [ 2, 7 ] ],
+   [
+    "Zechariah", 14,
+    [ 16, 17, 21 ] ],
+   [
     "Malachi", 1,
-    [ 4, 6, 8, 9, 10, 11, 13, 14 ] ] ]
+    [ 4, 6, 8, 9, 10, 11, 13, 14 ] ],
+   [
+    "Malachi", 2,
+    [ 2, 4, 7, 8, 12, 16 ] ],
+   [
+    "Malachi", 3,
+    [ 1, 5, 7, 10, 11, 12, 14, 17 ] ],
+   [
+    "Malachi", 4,
+    [ 1, 3 ] ] ]
  },
  {
   "id": "captivity",
@@ -9636,7 +9945,13 @@ window.GLOSSARY = [
     [ 7 ] ],
    [
     "Zephaniah", 3,
-    [ 20 ] ] ]
+    [ 20 ] ],
+   [
+    "Zechariah", 6,
+    [ 10 ] ],
+   [
+    "Zechariah", 14,
+    [ 2 ] ] ]
  },
  {
   "id": "calneh",
@@ -9654,7 +9969,10 @@ window.GLOSSARY = [
   "refs": [
    [
     "Amos", 6,
-    [ 2, 14 ] ] ]
+    [ 2, 14 ] ],
+   [
+    "Zechariah", 9,
+    [ 2 ] ] ]
  },
  {
   "id": "gath",
@@ -9687,7 +10005,10 @@ window.GLOSSARY = [
     [ 19 ] ],
    [
     "Zephaniah", 2,
-    [ 5 ] ] ]
+    [ 5 ] ],
+   [
+    "Zechariah", 9,
+    [ 6 ] ] ]
  },
  {
   "id": "at-ease",
@@ -9984,7 +10305,10 @@ window.GLOSSARY = [
     [ 6, 7 ] ],
    [
     "Zephaniah", 2,
-    [ 4 ] ] ]
+    [ 4 ] ],
+   [
+    "Zechariah", 9,
+    [ 5 ] ] ]
  },
  {
   "id": "ashdod",
@@ -9999,7 +10323,10 @@ window.GLOSSARY = [
     [ 9 ] ],
    [
     "Zephaniah", 2,
-    [ 4 ] ] ]
+    [ 4 ] ],
+   [
+    "Zechariah", 9,
+    [ 6 ] ] ]
  },
  {
   "id": "ashkelon",
@@ -10011,7 +10338,10 @@ window.GLOSSARY = [
     [ 8 ] ],
    [
     "Zephaniah", 2,
-    [ 4, 7 ] ] ]
+    [ 4, 7 ] ],
+   [
+    "Zechariah", 9,
+    [ 5 ] ] ]
  },
  {
   "id": "ekron",
@@ -10023,7 +10353,10 @@ window.GLOSSARY = [
     [ 8 ] ],
    [
     "Zephaniah", 2,
-    [ 4 ] ] ]
+    [ 4 ] ],
+   [
+    "Zechariah", 9,
+    [ 5, 7 ] ] ]
  },
  {
   "id": "teman",
@@ -10266,7 +10599,10 @@ window.GLOSSARY = [
   "refs": [
    [
     "Amos", 4,
-    [ 4 ] ] ]
+    [ 4 ] ],
+   [
+    "Malachi", 3,
+    [ 8, 10 ] ] ]
  },
  {
   "id": "leaven",
@@ -10365,7 +10701,10 @@ window.GLOSSARY = [
     [ 10 ] ],
    [
     "Zechariah", 2,
-    [ 7 ] ] ]
+    [ 7 ] ],
+   [
+    "Zechariah", 6,
+    [ 10 ] ] ]
  },
  {
   "id": "burden",
@@ -10377,6 +10716,9 @@ window.GLOSSARY = [
     [ 1 ] ],
    [
     "Habakkuk", 1,
+    [ 1 ] ],
+   [
+    "Zechariah", 9,
     [ 1 ] ],
    [
     "Zechariah", 12,
@@ -10734,7 +11076,10 @@ window.GLOSSARY = [
   "refs": [
    [
     "Micah", 4,
-    [ 4 ] ] ]
+    [ 4 ] ],
+   [
+    "Zechariah", 3,
+    [ 10 ] ] ]
  },
  {
   "id": "halteth",
@@ -10893,7 +11238,10 @@ window.GLOSSARY = [
     [ 12, 14 ] ],
    [
     "Habakkuk", 1,
-    [ 10 ] ] ]
+    [ 10 ] ],
+   [
+    "Zechariah", 9,
+    [ 3, 12 ] ] ]
  },
  {
   "id": "folden",
@@ -10947,7 +11295,10 @@ window.GLOSSARY = [
     [ 11 ] ],
    [
     "Nahum", 1,
-    [ 15 ] ] ]
+    [ 15 ] ],
+   [
+    "Malachi", 2,
+    [ 3 ] ] ]
  },
  {
   "id": "munition",
@@ -11826,7 +12177,10 @@ window.GLOSSARY = [
   "refs": [
    [
     "Zephaniah", 1,
-    [ 1 ] ] ]
+    [ 1 ] ],
+   [
+    "Zechariah", 6,
+    [ 10 ] ] ]
  },
  {
   "id": "amon",
@@ -12084,7 +12438,10 @@ window.GLOSSARY = [
     [ 2, 4 ] ],
    [
     "Zechariah", 3,
-    [ 1, 3, 6, 8, 9 ] ] ]
+    [ 1, 3, 6, 8, 9 ] ],
+   [
+    "Zechariah", 6,
+    [ 11 ] ] ]
  },
  {
   "id": "cieled",
@@ -12230,8 +12587,20 @@ window.GLOSSARY = [
     "Zechariah", 1,
     [ 8 ] ],
    [
+    "Zechariah", 6,
+    [ 2, 3, 6 ] ],
+   [
+    "Zechariah", 9,
+    [ 10 ] ],
+   [
+    "Zechariah", 10,
+    [ 3, 5 ] ],
+   [
     "Zechariah", 12,
-    [ 4 ] ] ]
+    [ 4 ] ],
+   [
+    "Zechariah", 14,
+    [ 15, 20 ] ] ]
  },
  {
   "id": "myrtle-trees",
@@ -12273,7 +12642,10 @@ window.GLOSSARY = [
     [ 1, 4, 5 ] ],
    [
     "Zechariah", 5,
-    [ 5, 10 ] ] ]
+    [ 5, 10 ] ],
+   [
+    "Zechariah", 6,
+    [ 4 ] ] ]
  },
  {
   "id": "seventy-years",
@@ -12357,7 +12729,10 @@ window.GLOSSARY = [
   "refs": [
    [
     "Zechariah", 2,
-    [ 6 ] ] ]
+    [ 6 ] ],
+   [
+    "Zechariah", 6,
+    [ 6, 8 ] ] ]
  },
  {
   "id": "holy-land",
@@ -12367,5 +12742,389 @@ window.GLOSSARY = [
    [
     "Zechariah", 2,
     [ 12 ] ] ]
+ },
+ {
+  "id": "the-branch",
+  "kind": "person",
+  "name": "The BRANCH (the promised King from David's line)",
+  "refs": [
+   [
+    "Zechariah", 3,
+    [ 8 ] ],
+   [
+    "Zechariah", 6,
+    [ 12 ] ] ]
+ },
+ {
+  "id": "brand-plucked-out-of-the-fire",
+  "kind": "term",
+  "name": "A brand plucked out of the fire",
+  "refs": [
+   [
+    "Zechariah", 3,
+    [ 2 ] ] ]
+ },
+ {
+  "id": "filthy-garments",
+  "kind": "term",
+  "name": "Filthy garments, change of raiment",
+  "refs": [
+   [
+    "Zechariah", 3,
+    [ 3, 4 ] ] ]
+ },
+ {
+  "id": "mitre",
+  "kind": "term",
+  "name": "Mitre (the high priest's turban)",
+  "refs": [
+   [
+    "Zechariah", 3,
+    [ 5 ] ] ]
+ },
+ {
+  "id": "protested",
+  "kind": "term",
+  "name": "Protested (solemnly charged)",
+  "refs": [
+   [
+    "Zechariah", 3,
+    [ 6 ] ] ]
+ },
+ {
+  "id": "men-wondered-at",
+  "kind": "term",
+  "name": "Men wondered at (men who are a sign)",
+  "refs": [
+   [
+    "Zechariah", 3,
+    [ 8 ] ] ]
+ },
+ {
+  "id": "seven-eyes",
+  "kind": "term",
+  "name": "The stone with seven eyes",
+  "refs": [
+   [
+    "Zechariah", 3,
+    [ 9 ] ] ]
+ },
+ {
+  "id": "candlestick",
+  "kind": "term",
+  "name": "Candlestick (a lampstand that burns olive oil)",
+  "refs": [
+   [
+    "Zechariah", 4,
+    [ 2, 11 ] ] ]
+ },
+ {
+  "id": "olive-trees",
+  "kind": "term",
+  "name": "The two olive trees",
+  "refs": [
+   [
+    "Zechariah", 4,
+    [ 3, 11, 12 ] ] ]
+ },
+ {
+  "id": "not-by-might",
+  "kind": "term",
+  "name": "Not by might, nor by power, but by my spirit",
+  "refs": [
+   [
+    "Zechariah", 4,
+    [ 6 ] ] ]
+ },
+ {
+  "id": "great-mountain",
+  "kind": "term",
+  "name": "O great mountain (what stood in Zerubbabel's way)",
+  "refs": [
+   [
+    "Zechariah", 4,
+    [ 7 ] ] ]
+ },
+ {
+  "id": "headstone",
+  "kind": "term",
+  "name": "Headstone (the finishing stone)",
+  "refs": [
+   [
+    "Zechariah", 4,
+    [ 7 ] ] ]
+ },
+ {
+  "id": "day-of-small-things",
+  "kind": "term",
+  "name": "The day of small things",
+  "refs": [
+   [
+    "Zechariah", 4,
+    [ 10 ] ] ]
+ },
+ {
+  "id": "plummet",
+  "kind": "term",
+  "name": "Plummet (a plumb line)",
+  "refs": [
+   [
+    "Zechariah", 4,
+    [ 10 ] ] ]
+ },
+ {
+  "id": "eyes-of-the-lord",
+  "kind": "term",
+  "name": "The eyes of the LORD",
+  "refs": [
+   [
+    "Proverbs", 5,
+    [ 21 ] ],
+   [
+    "Proverbs", 15,
+    [ 3 ] ],
+   [
+    "Proverbs", 22,
+    [ 12 ] ],
+   [
+    "Zechariah", 4,
+    [ 10 ] ] ]
+ },
+ {
+  "id": "two-anointed-ones",
+  "kind": "term",
+  "name": "The two anointed ones (“sons of oil”)",
+  "refs": [
+   [
+    "Zechariah", 4,
+    [ 14 ] ] ]
+ },
+ {
+  "id": "lord-of-the-whole-earth",
+  "kind": "term",
+  "name": "The Lord of the whole earth",
+  "refs": [
+   [
+    "Micah", 4,
+    [ 13 ] ],
+   [
+    "Zechariah", 4,
+    [ 14 ] ],
+   [
+    "Zechariah", 6,
+    [ 5 ] ] ]
+ },
+ {
+  "id": "flying-roll",
+  "kind": "term",
+  "name": "The flying roll (scroll)",
+  "refs": [
+   [
+    "Zechariah", 5,
+    [ 1, 2 ] ] ]
+ },
+ {
+  "id": "the-curse",
+  "kind": "term",
+  "name": "The curse (the law's penalty on those who break it)",
+  "refs": [
+   [
+    "Zechariah", 5,
+    [ 3 ] ] ]
+ },
+ {
+  "id": "stealeth",
+  "kind": "term",
+  "name": "Stealeth, the thief",
+  "refs": [
+   [
+    "Zechariah", 5,
+    [ 3, 4 ] ] ]
+ },
+ {
+  "id": "sweareth-falsely",
+  "kind": "term",
+  "name": "Sweareth falsely (a lie backed by God's name)",
+  "refs": [
+   [
+    "Zechariah", 5,
+    [ 3, 4 ] ] ]
+ },
+ {
+  "id": "resemblance",
+  "kind": "term",
+  "name": "Resemblance (appearance, what they look like)",
+  "refs": [
+   [
+    "Zechariah", 5,
+    [ 6 ] ] ]
+ },
+ {
+  "id": "talent-of-lead",
+  "kind": "term",
+  "name": "A talent of lead (a lid of about 75 pounds)",
+  "refs": [
+   [
+    "Zechariah", 5,
+    [ 7, 8 ] ] ]
+ },
+ {
+  "id": "stork",
+  "kind": "term",
+  "name": "Stork",
+  "refs": [
+   [
+    "Zechariah", 5,
+    [ 9 ] ] ]
+ },
+ {
+  "id": "shinar",
+  "kind": "place",
+  "name": "Shinar (the land of Babylon)",
+  "refs": [
+   [
+    "Zechariah", 5,
+    [ 11 ] ] ]
+ },
+ {
+  "id": "four-chariots",
+  "kind": "term",
+  "name": "The four chariots",
+  "refs": [
+   [
+    "Zechariah", 6,
+    [ 1, 2, 3 ] ] ]
+ },
+ {
+  "id": "mountains-of-brass",
+  "kind": "term",
+  "name": "Mountains of brass (bronze)",
+  "refs": [
+   [
+    "Zechariah", 6,
+    [ 1 ] ] ]
+ },
+ {
+  "id": "grisled-and-bay",
+  "kind": "term",
+  "name": "Grisled and bay (spotted, and strong)",
+  "refs": [
+   [
+    "Zechariah", 6,
+    [ 3, 6, 7 ] ] ]
+ },
+ {
+  "id": "four-spirits-of-the-heavens",
+  "kind": "term",
+  "name": "The four spirits (winds) of the heavens",
+  "refs": [
+   [
+    "Zechariah", 6,
+    [ 5 ] ] ]
+ },
+ {
+  "id": "south-country",
+  "kind": "place",
+  "name": "The south country (Egypt)",
+  "refs": [
+   [
+    "Zechariah", 6,
+    [ 6 ] ] ]
+ },
+ {
+  "id": "quieted-my-spirit",
+  "kind": "term",
+  "name": "Quieted my spirit (God's anger at rest)",
+  "refs": [
+   [
+    "Zechariah", 6,
+    [ 8 ] ] ]
+ },
+ {
+  "id": "heldai",
+  "kind": "person",
+  "name": "Heldai (Helem), back from Babylon",
+  "refs": [
+   [
+    "Zechariah", 6,
+    [ 10, 14 ] ] ]
+ },
+ {
+  "id": "tobijah",
+  "kind": "person",
+  "name": "Tobijah, back from Babylon",
+  "refs": [
+   [
+    "Zechariah", 6,
+    [ 10, 14 ] ] ]
+ },
+ {
+  "id": "jedaiah",
+  "kind": "person",
+  "name": "Jedaiah, back from Babylon",
+  "refs": [
+   [
+    "Zechariah", 6,
+    [ 10, 14 ] ] ]
+ },
+ {
+  "id": "josiah-son-of-zephaniah",
+  "kind": "person",
+  "name": "Josiah (Hen) the son of Zephaniah",
+  "refs": [
+   [
+    "Zechariah", 6,
+    [ 10, 14 ] ] ]
+ },
+ {
+  "id": "josedech",
+  "kind": "person",
+  "name": "Josedech (father of Joshua the high priest)",
+  "refs": [
+   [
+    "Haggai", 1,
+    [ 1, 12, 14 ] ],
+   [
+    "Haggai", 2,
+    [ 2, 4 ] ],
+   [
+    "Zechariah", 6,
+    [ 11 ] ] ]
+ },
+ {
+  "id": "crowns",
+  "kind": "term",
+  "name": "The crowns made for Joshua",
+  "refs": [
+   [
+    "Zechariah", 6,
+    [ 11, 14 ] ] ]
+ },
+ {
+  "id": "priest-upon-his-throne",
+  "kind": "term",
+  "name": "A priest upon his throne",
+  "refs": [
+   [
+    "Zechariah", 6,
+    [ 13 ] ] ]
+ },
+ {
+  "id": "memorial",
+  "kind": "term",
+  "name": "A memorial (a reminder kept in the temple)",
+  "refs": [
+   [
+    "Zechariah", 6,
+    [ 14 ] ] ]
+ },
+ {
+  "id": "far-off",
+  "kind": "term",
+  "name": "They that are far off",
+  "refs": [
+   [
+    "Zechariah", 6,
+    [ 15 ] ] ]
  }
 ];

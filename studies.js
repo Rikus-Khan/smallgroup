@@ -4871,5 +4871,189 @@ window.STUDIES = [
       },
       "big": "God Himself is the wall around His people and the glory in their midst. He calls us out of the old life, treasures us as the apple of His eye, and opens His door to every nation."
     }
+  },
+  {
+    "id": "zechariah-03",
+    "type": "chapter",
+    "book": "Zechariah",
+    "ch": 3,
+    "date": "2026-10-29",
+    "title": "Zechariah 3",
+    "sub": "A brand plucked out of the fire",
+    "about": "Joshua the high priest stands before God in filthy clothes while Satan accuses him. God rebukes the accuser, takes the filth away, and dresses him clean.",
+    "tags": [
+      "Accused",
+      "Rescued",
+      "Cleansed",
+      "New clothes",
+      "Walking",
+      "The BRANCH"
+    ],
+    "url": "studies/zechariah-03.html",
+    "overview": {
+      "where": "Jerusalem, in a vision of God's courtroom",
+      "when": "About 520–519 BC, after the exile, under Persian rule, while the temple was being rebuilt",
+      "people": [
+        "zechariah",
+        "joshua-the-high-priest",
+        "angel-of-the-lord",
+        "satan",
+        "the-lord",
+        "the-branch"
+      ],
+      "places": [
+        "jerusalem"
+      ],
+      "story": [
+        "Zechariah sees Joshua the high priest standing before the angel of the LORD, with Satan at his right hand to accuse him (1).",
+        "The LORD rebukes Satan: Joshua is a brand plucked out of the fire (2).",
+        "Joshua's filthy garments are taken away, his iniquity is made to pass from him, and he is clothed with change of raiment and a fair mitre (3–5).",
+        "The angel of the LORD charges him: if he walks in God's ways, he will keep God's house and have a place among those that stand by (6–7).",
+        "Joshua and his fellows are a sign: God will bring forth His servant the BRANCH, remove the iniquity of the land in one day, and bring peace under the vine and fig tree (8–10)."
+      ],
+      "key": {
+        "ref": "Zechariah 3:4",
+        "text": "And he answered and spake unto those that stood before him, saying, Take away the filthy garments from him. And unto him he said, Behold, I have caused thine iniquity to pass from thee, and I will clothe thee with change of raiment."
+      },
+      "big": "God answers the accuser, takes away our filth, and clothes us clean, before we have done a thing. Then He calls us to walk in His ways. It all points to the BRANCH, who would take sin away in one day."
+    }
+  },
+  {
+    "id": "zechariah-04",
+    "type": "chapter",
+    "book": "Zechariah",
+    "ch": 4,
+    "date": "2026-10-29",
+    "title": "Zechariah 4",
+    "sub": "Not by might, nor by power",
+    "about": "Zechariah sees a golden lampstand fed by two olive trees. The word to a tired builder: the work will be finished, not by human strength, but by God's Spirit.",
+    "tags": [
+      "God's Spirit",
+      "Mountains",
+      "Grace",
+      "Finishing",
+      "Small things",
+      "God's eyes"
+    ],
+    "url": "studies/zechariah-04.html",
+    "overview": {
+      "where": "Jerusalem, where the temple stood half built",
+      "when": "About 520–519 BC, after the exile, under Persian rule",
+      "people": [
+        "zechariah",
+        "angel-that-talked-with-me",
+        "zerubbabel",
+        "the-lord"
+      ],
+      "places": [
+        "temple"
+      ],
+      "story": [
+        "The angel wakes Zechariah, and he sees a golden candlestick with a bowl and seven lamps, and an olive tree on each side (1–3).",
+        "Zechariah honestly says he doesn't know what they mean (4–5).",
+        "The word to Zerubbabel: not by might, nor by power, but by my spirit. The great mountain will become a plain, and the headstone will go up with shouts of “Grace, grace” (6–7).",
+        "Zerubbabel's hands laid the foundation and will finish it. No one should despise the day of small things; the eyes of the LORD run through the whole earth (8–10).",
+        "The two olive trees are the two anointed ones who stand by the LORD of the whole earth (11–14)."
+      ],
+      "key": {
+        "ref": "Zechariah 4:6",
+        "text": "Then he answered and spake unto me, saying, This is the word of the LORD unto Zerubbabel, saying, Not by might, nor by power, but by my spirit, saith the LORD of hosts."
+      },
+      "big": "God's work is done by His Spirit, not by human strength. He finishes what He starts, it is grace from first to last, and no beginning is too small for Him."
+    }
+  },
+  {
+    "id": "zechariah-05",
+    "type": "chapter",
+    "book": "Zechariah",
+    "ch": 5,
+    "date": "2026-10-29",
+    "title": "Zechariah 5",
+    "sub": "The flying roll",
+    "about": "Two strange visions: a giant flying scroll that brings God's curse into the houses of thieves and liars, and a woman called Wickedness, sealed in a basket and carried far away.",
+    "tags": [
+      "Hidden sin",
+      "Stealing",
+      "Truth",
+      "Wickedness",
+      "Removed",
+      "The curse"
+    ],
+    "url": "studies/zechariah-05.html",
+    "overview": {
+      "where": "Jerusalem, in two visions that reach out to Shinar",
+      "when": "About 520–519 BC, after the exile, under Persian rule",
+      "people": [
+        "zechariah",
+        "angel-that-talked-with-me",
+        "the-lord"
+      ],
+      "places": [
+        "shinar"
+      ],
+      "story": [
+        "Zechariah sees a flying roll, twenty cubits by ten (1–2).",
+        "It is the curse going out over the land against everyone who steals and everyone who swears falsely by God's name. It enters their houses and consumes them (3–4).",
+        "He sees an ephah with a woman sitting in it: this is wickedness. The angel thrusts her back and seals it with a talent of lead (5–8).",
+        "Two women with wings like a stork carry the ephah away to build it a house in the land of Shinar (9–11)."
+      ],
+      "key": {
+        "ref": "Zechariah 5:4",
+        "text": "I will bring it forth, saith the LORD of hosts, and it shall enter into the house of the thief, and into the house of him that sweareth falsely by my name: and it shall remain in the midst of his house, and shall consume it with the timber thereof and the stones thereof."
+      },
+      "big": "Sin hidden at home doesn't stay hidden, and God's law pronounces a curse on it. But God also removes wickedness from His people, and in Christ, who became a curse for us, the guilty are set free."
+    }
+  },
+  {
+    "id": "zechariah-06",
+    "type": "chapter",
+    "book": "Zechariah",
+    "ch": 6,
+    "date": "2026-10-29",
+    "title": "Zechariah 6",
+    "sub": "A priest upon his throne",
+    "about": "The last night vision sends God's chariots out across the earth. Then Zechariah puts a crown on Joshua the high priest: a living picture of the BRANCH, who will be both priest and King.",
+    "tags": [
+      "God's rule",
+      "Judgment",
+      "The BRANCH",
+      "Priest and King",
+      "Far off",
+      "Obeying"
+    ],
+    "url": "studies/zechariah-06.html",
+    "overview": {
+      "where": "Jerusalem, with God's chariots going out to the north and south countries",
+      "when": "About 520–519 BC, after the exile, under Persian rule",
+      "people": [
+        "zechariah",
+        "angel-that-talked-with-me",
+        "joshua-the-high-priest",
+        "heldai",
+        "tobijah",
+        "jedaiah",
+        "josiah-son-of-zephaniah",
+        "the-branch",
+        "the-lord"
+      ],
+      "places": [
+        "babylon",
+        "land-of-the-north",
+        "south-country",
+        "temple"
+      ],
+      "story": [
+        "Four chariots with red, black, white, and grisled and bay horses come out from between two mountains of brass (1–3).",
+        "They are the four spirits of the heavens, sent from the Lord of all the earth. Those that go to the north country have quieted God's spirit there (4–8).",
+        "Zechariah is told to take silver and gold from the returned exiles, make crowns, and set them on Joshua the high priest (9–11).",
+        "Behold the man whose name is The BRANCH: he will build the temple of the LORD and be a priest upon his throne (12–13).",
+        "The crowns are kept as a memorial. Those far off will come and build, if the people diligently obey the LORD (14–15)."
+      ],
+      "key": {
+        "ref": "Zechariah 6:13",
+        "text": "Even he shall build the temple of the LORD; and he shall bear the glory, and shall sit and rule upon his throne; and he shall be a priest upon his throne: and the counsel of peace shall be between them both."
+      },
+      "big": "God rules all the earth and deals fully with evil. The BRANCH, Jesus, is both Priest and King: He offered Himself for us and now reigns, and He brings the far-off near."
+    }
   }
 ];
