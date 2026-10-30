@@ -6989,6 +6989,114 @@ window.STUDIES = [
     }
   },
   {
+    "id": "mark-07",
+    "type": "chapter",
+    "book": "Mark",
+    "ch": 7,
+    "date": "2026-10-29",
+    "title": "Mark 7",
+    "sub": "From within",
+    "about": "Religious men fuss over washed hands. Jesus points to the heart, then a Gentile mother and a deaf man find Him.",
+    "tags": [
+      "The heart",
+      "Worship",
+      "God's Word",
+      "Faith",
+      "Outsiders",
+      "Who Jesus is"
+    ],
+    "url": "studies/mark-07.html",
+    "overview": {
+      "where": "Galilee by the lake, then the borders of Tyre and Sidon, then the Decapolis on the far side of the Sea of Galilee",
+      "when": "About AD 29, the summer after the feeding of the five thousand, about a year before the cross",
+      "people": [
+        "jesus",
+        "pharisees",
+        "scribes",
+        "disciples",
+        "isaiah",
+        "moses",
+        "woman-of-canaan",
+        "deaf-man"
+      ],
+      "places": [
+        "jerusalem",
+        "tyre-and-zidon",
+        "decapolis",
+        "sea-of-galilee"
+      ],
+      "story": [
+        "Pharisees and scribes from Jerusalem find fault: some of Jesus' disciples eat with unwashen hands, against the tradition of the elders (1–5).",
+        "Jesus quotes Esaias: “This people honoureth me with their lips, but their heart is far from me.” With “Corban” they set aside God's command to honour father and mother (6–13).",
+        "He calls the people: nothing that goes into a man can defile him; what comes out of him does (14–16).",
+        "In the house He explains: food goes to the belly, but evil thoughts, adulteries, thefts, pride and more come from within, out of the heart (17–23).",
+        "In the borders of Tyre and Sidon, a Greek woman begs Him to free her daughter: “Yes, Lord: yet the dogs under the table eat of the children’s crumbs.” She goes home and finds the devil gone (24–30).",
+        "In the Decapolis He takes a deaf man aside, touches his ears and tongue, and says, “Ephphatha, that is, Be opened.” The people say, “He hath done all things well” (31–37)."
+      ],
+      "key": {
+        "ref": "Mark 7:15",
+        "text": "There is nothing from without a man, that entering into him can defile him: but the things which come out of him, those are they that defile the man."
+      },
+      "big": "The real problem isn't dirt on the hands but sin in the heart, and no rule can wash that. Jesus puts God's Word above man's traditions, welcomes a humble Gentile's faith, and opens deaf ears. He does all things well."
+    }
+  },
+  {
+    "id": "mark-08",
+    "type": "chapter",
+    "book": "Mark",
+    "ch": 8,
+    "date": "2026-10-29",
+    "title": "Mark 8",
+    "sub": "Whom say ye that I am?",
+    "about": "Seven loaves feed four thousand, a blind man sees in two touches, and Peter says it: Thou art the Christ. Then Jesus tells them what following Him will cost.",
+    "tags": [
+      "Compassion",
+      "Remembering",
+      "Growing",
+      "Who Jesus is",
+      "The cross",
+      "Following"
+    ],
+    "url": "studies/mark-08.html",
+    "overview": {
+      "where": "The Decapolis, across the lake to Dalmanutha and Bethsaida, then north to the towns of Caesarea Philippi",
+      "when": "About AD 29, about a year before the cross, when Jesus first tells His disciples plainly that He must die and rise again",
+      "people": [
+        "jesus",
+        "disciples",
+        "pharisees",
+        "herod-antipas",
+        "blind-man-of-bethsaida",
+        "simon-peter",
+        "john-the-baptist",
+        "elijah",
+        "satan",
+        "chief-priests",
+        "scribes",
+        "elders"
+      ],
+      "places": [
+        "wilderness",
+        "dalmanutha",
+        "bethsaida",
+        "caesarea-philippi"
+      ],
+      "story": [
+        "Three days into the wilderness, a great crowd has nothing to eat. Jesus has compassion and feeds about four thousand with seven loaves and a few small fishes, and seven baskets are left (1–9).",
+        "At Dalmanutha the Pharisees demand a sign from heaven. He sighs deeply in His spirit and refuses (10–13).",
+        "In the ship He warns, “beware of the leaven of the Pharisees, and of the leaven of Herod.” They think He means bread, and He reminds them of the twelve baskets and the seven (14–21).",
+        "At Bethsaida He leads a blind man out of town. After one touch he sees “men as trees, walking”; after a second he sees every man clearly (22–26).",
+        "Near Caesarea Philippi He asks, “But whom say ye that I am?” Peter answers, “Thou art the Christ.” Jesus teaches that He must suffer, be killed, and rise again, and rebukes Peter: “Get thee behind me, Satan” (27–33).",
+        "“Whosoever will come after me, let him deny himself, and take up his cross, and follow me.” What does the whole world profit a man who loses his own soul? (34–38)"
+      ],
+      "key": {
+        "ref": "Mark 8:29",
+        "text": "And he saith unto them, But whom say ye that I am? And Peter answereth and saith unto him, Thou art the Christ."
+      },
+      "big": "Jesus is the Christ, the promised King, and He came to suffer, die and rise again. He feeds the hungry, finishes what He starts, and calls every man to deny himself, take up his cross, and follow Him, because one soul is worth more than the whole world."
+    }
+  },
+  {
     "id": "luke-01",
     "type": "chapter",
     "book": "Luke",

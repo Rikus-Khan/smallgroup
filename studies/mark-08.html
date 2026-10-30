@@ -1,0 +1,636 @@
+<!doctype html>
+<html lang="en" data-theme="slate">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Mark 8</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="../assets/fonts.css">
+<link rel="stylesheet" href="../assets/deck.css">
+<link rel="stylesheet" href="../assets/themes.css">
+<style>
+/* mk08-map: a tightly cropped data-land map (the lake and the north), with names, dots and lines scaled down to fit */
+.mk08-map .map-town text { font-size: 7.5px; }
+.mk08-map .map-town > circle:not(.map-ping) { r: 2.6px; }
+.mk08-map .map-town > .map-ping { r: 4.2px; stroke-width: 1.6; }
+.mk08-map .map-region { font-size: 6.5px; letter-spacing: .1em; }
+.mk08-map .map-route { stroke-width: 2.2px; }
+.mk08-map .map-river, .mk08-map .map-lake, .mk08-map .map-land { stroke-width: 1.2px; }
+.mk08-map .map-border { stroke-width: 1px; stroke-dasharray: 2 3; }
+.mk08-map .mk08-small { font-size: 6.2px; fill: var(--ink-soft); }
+.mk08-map .mk08-zone { fill: color-mix(in srgb, var(--warm) 22%, transparent); stroke: color-mix(in srgb, var(--warm) 60%, transparent); stroke-width: .8; stroke-dasharray: 2 2; }
+.mk08-map .mk08-mount { fill: color-mix(in srgb, var(--ink-soft) 30%, transparent); stroke: var(--ink-soft); stroke-width: .8; }
+
+/* mk08-leaven: a lump of dough with a speck of leaven in it. On a .mk08-rise step the leaven spreads through the whole lump. */
+.mk08-leaven .mk08-dough { fill: color-mix(in srgb, var(--warm) 35%, var(--surface)); stroke: var(--leather-light); stroke-width: 3; }
+.mk08-leaven .mk08-spread { fill: color-mix(in srgb, var(--warm) 75%, var(--leather)); transform-box: fill-box; transform-origin: center; transform: scale(.05); transition: transform 3.2s cubic-bezier(.3,.1,.3,1) .3s; }
+.mk08-leaven .mk08-bub { fill: none; stroke: color-mix(in srgb, var(--leather) 70%, transparent); stroke-width: 2; }
+.mk08-leaven .mk08-speck { fill: var(--leather); }
+.slide:has(.mk08-rise.on) .mk08-leaven .mk08-spread { transform: scale(1); }
+.mk08-leaven text { font-size: 18px; fill: var(--ink-soft); }
+
+/* mk08-cmp: the two feedings side by side, row by row */
+.mk08-cmp { display: grid; gap: .25rem; margin: .3em 0 .8em; max-width: 46rem; }
+.mk08-cmp > div { display: grid; grid-template-columns: 8.5em 1fr 1fr; gap: .2rem 1rem; padding: .25em .8em; border-radius: 8px; background: var(--surface); font-size: clamp(.92rem, .82rem + .5vw, 1.25rem); line-height: 1.3; }
+.mk08-cmp > div > span:first-child { color: var(--ink-soft); }
+.mk08-cmp > div > span:last-child { color: var(--accent-hot); }
+.mk08-cmp .mk08-cmp-head { background: none; padding-top: 0; padding-bottom: 0; font-weight: 700; }
+.mk08-cmp .mk08-cmp-head span:last-child { color: var(--ink); }
+.mk08-cmp b { font: 600 1.25em var(--serif); }
+@media (max-width: 640px) { .mk08-cmp > div { grid-template-columns: 5.6em 1fr 1fr; gap: .2rem .6rem; } }
+
+/* mk08-sight: a scene of men and trees, seen through blind eyes. A .mk08-t1 step brings it into a blur ("men as trees, walking");
+   a .mk08-t2 step makes it sharp ("saw every man clearly"). */
+.mk08-sight .mk08-sky { fill: color-mix(in srgb, var(--cool) 14%, var(--surface)); }
+.mk08-sight .mk08-ground { fill: color-mix(in srgb, var(--leather-light) 30%, var(--surface)); }
+.mk08-sight .mk08-tree { fill: color-mix(in srgb, var(--cool) 55%, var(--ink-soft)); }
+.mk08-sight .mk08-trunk { fill: var(--leather); }
+.mk08-sight .mk08-man { fill: var(--ink); }
+.mk08-sight .mk08-scene { filter: blur(14px); opacity: .25; transition: filter 1.8s ease, opacity 1.8s ease; }
+.slide:has(.mk08-t1.on) .mk08-sight .mk08-scene { filter: blur(4.5px); opacity: .8; }
+.slide:has(.mk08-t2.on) .mk08-sight .mk08-scene { filter: none; opacity: 1; }
+.mk08-sight .mk08-walk { transform-box: fill-box; }
+.slide.active .mk08-sight .mk08-walk { animation: mk08-walk 7s ease-in-out infinite alternate; }
+@keyframes mk08-walk { from { transform: translateX(-18px); } to { transform: translateX(18px); } }
+.mk08-sight text { font-size: 17px; fill: var(--ink-soft); }
+@media (prefers-reduced-motion: reduce) { .slide.active .mk08-sight .mk08-walk { animation: none; } }
+</style>
+</head>
+<body>
+<main class="deck" id="deck">
+
+<!-- ======================= OPENING ======================= -->
+<section class="slide title">
+  <div class="inner">
+    <div class="emblem rise"></div>
+    <h1 class="rise">Mark 8</h1>
+    <p class="sub rise" style="--d:3">Whom say ye that I am?</p>
+    <p class="tag rise" style="--d:5">Seven loaves feed four thousand, a blind man sees in two touches, and Peter says it out loud: Thou art the Christ. Then Jesus tells them what it will cost.</p>
+  </div>
+</section>
+
+<section class="slide watch">
+  <div class="inner">
+    <h2 class="rise">Things to watch for</h2>
+    <p class="lede rise" style="--d:1">Keep these questions in the back of your mind as we read. We'll come back to every one of them at the end.</p>
+    <ol class="seeds">
+      <li class="step"><span class="topic">Compassion</span><span class="seed-q">How does Jesus feel about hungry, worn-out people?</span></li>
+      <li class="step"><span class="topic">A warning</span><span class="seed-q">What leaven did Jesus warn His disciples about?</span></li>
+      <li class="step"><span class="topic">Remembering</span><span class="seed-q">Why did Jesus ask the disciples to remember the baskets?</span></li>
+      <li class="step"><span class="topic">Growing</span><span class="seed-q">What does the healing in two stages teach us?</span></li>
+      <li class="step"><span class="topic">Who Jesus is</span><span class="seed-q">Who did Peter say Jesus is?</span></li>
+      <li class="step"><span class="topic">Following</span><span class="seed-q">What does it mean to take up your cross?</span></li>
+    </ol>
+  </div>
+</section>
+
+<!-- ======================= PART ONE: SEVEN LOAVES ======================= -->
+<section class="slide part">
+  <div class="inner">
+    <p class="part-n rise">Part one</p>
+    <h2 class="rise" style="--d:1">Seven loaves</h2>
+    <p class="range rise" style="--d:2">Verses 1–9</p>
+    <div class="rule"></div>
+    <p class="hook rise" style="--d:4">Three days in the wilderness with Jesus, and the food has run out.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="1-3" data-hl="I have compassion on the multitude|they have now been with me three days|divers of them came from far"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="1" data-hl="the multitude being very great"></blockquote>
+    <div class="split">
+      <div class="stage">
+        <svg class="map mk08-map" data-land viewBox="200 14 136 172" role="img" aria-label="A map of the Sea of Galilee and the land north of it. The four thousand are fed on the east side of the lake, in the Decapolis. On steps, a boat route crosses the lake west to Dalmanutha, then another crosses back to Bethsaida on the north shore, and a road runs north up the Jordan to Caesarea Philippi.">
+          <path class="mk08-zone" d="M284 150 C 296 144, 322 144, 336 150 L 336 186 L 278 186 C 278 172, 280 158, 284 150 Z"/>
+          <text class="map-region" x="292" y="180">DECAPOLIS</text>
+          <g class="map-town"><circle cx="285" cy="34" r="5"/><text x="291" y="37">Caesarea Philippi</text></g>
+          <g class="map-town"><circle cx="280" cy="124" r="5"/><text x="286" y="121">Bethsaida</text></g>
+          <g class="map-town"><circle cx="255" cy="141" r="5"/><text x="250" y="139" text-anchor="end">Dalmanutha</text></g>
+          <g class="map-town here"><circle class="map-ping" cx="293" cy="160" r="7"/><circle cx="293" cy="160" r="5"/><text x="299" y="163">4,000 fed</text></g>
+          <path class="map-route r1" pathLength="1" d="M290 158 C 280 156, 266 150, 258 143"/>
+          <path class="map-route r2" pathLength="1" d="M256 138 C 260 128, 270 122, 277 124"/>
+          <path class="map-route r3" pathLength="1" d="M281 120 C 286 98, 276 66, 285 38"/>
+          <text class="mk08-small" x="226" y="160">by ship (v. 10)</text>
+        </svg>
+      </div>
+      <div>
+        <h2 class="rise" style="--d:1">Where this chapter goes</h2>
+        <p class="note rise" style="--d:2">We're still in the Decapolis, the Gentile side of the lake, where Jesus came at the end of chapter 7. Many in this crowd were likely Gentiles, and <em>“divers of them came from far.”</em></p>
+        <p class="note step map-go1">By ship west to <em>Dalmanutha</em>, near Magdala (Matthew 15:39), where Pharisees want a sign (vv. 10–13).</p>
+        <p class="note step map-go2">Back across to <em>Bethsaida</em>, where a blind man sees (v. 22).</p>
+        <p class="note step map-go3">Then north, up toward Mount Hermon, to <em>Caesarea Philippi</em> (v. 27).</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="slide verse" data-v="4-5" data-hl="From whence can a man satisfy these men with bread here in the wilderness?|How many loaves have ye?"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="3" data-hl="they will faint by the way"></blockquote>
+    <h2 class="rise" style="--d:1">He thought about the walk home</h2>
+    <div class="math">
+      <div class="rise" style="--d:2"><b>3 days</b><span>with Him, nothing left to eat</span></div>
+      <div class="rise" style="--d:3"><b>≈ 4,000</b><span>men, some from far away</span></div>
+      <div class="step"><b>7 loaves</b><span>and a few small fishes</span></div>
+    </div>
+    <p class="note step">Nobody asked Jesus for food. He noticed. <em>“Compassion”</em> means His heart went out to them. He knew they <em>“will faint by the way”</em> if He sent them off empty. He cares about your body, your hunger, and the long road home.</p>
+    <p class="note step">The disciples had watched Him feed five thousand not long before (6:35–44). Still they asked, <em>“From whence?”</em> We do the same. God gets us through one hard week, and the next one we panic like it never happened.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="6-9" data-hl="gave thanks, and brake|they did eat, and were filled|seven baskets|about four thousand"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="8" data-hl="they did eat, and were filled"></blockquote>
+    <h2 class="rise" style="--d:1">Four thousand filled</h2>
+    <div class="dots rows step" data-dots="40" style="--cols:20;--dot:var(--ink-soft);--wait:0ms" aria-label="Forty dots, each standing for a hundred people"></div>
+    <p class="dots-cap step"><span>each dot is 100 people</span><span>about 4,000, “beside women and children” (Matthew 15:38)</span></p>
+    <p class="note step">Same pattern as before: He <em>gave thanks</em>, broke the bread, and gave it to His disciples to hand out. And it kept coming until everyone was <em>filled</em>.</p>
+    <p class="note step">The <em>baskets</em> here are a different word from chapter 6: big hampers, the kind of basket Paul was later let down over a city wall in (Acts 9:25). Seven of those, left over. Jesus never runs short.</p>
+  </div>
+</section>
+
+<!-- ======================= PART TWO: EYES THAT DON'T SEE ======================= -->
+<section class="slide part">
+  <div class="inner">
+    <p class="part-n rise">Part two</p>
+    <h2 class="rise" style="--d:1">Eyes that don't see</h2>
+    <p class="range rise" style="--d:2">Verses 10–26</p>
+    <div class="rule"></div>
+    <p class="hook rise" style="--d:4">The Pharisees want a sign. The disciples want bread. A blind man just wants to see.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="10-13" data-hl="the parts of Dalmanutha|seeking of him a sign from heaven, tempting him|he sighed deeply in his spirit|There shall no sign be given unto this generation"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="11" data-hl="seeking of him a sign from heaven, tempting him"></blockquote>
+    <h2 class="rise" style="--d:1">What more did they need?</h2>
+    <ol class="signs rise" style="--d:3">
+      <li><b>A leper cleansed</b>Mark 1</li>
+      <li><b>A palsied man walks</b>Mark 2</li>
+      <li><b>A storm stilled</b>Mark 4</li>
+      <li><b>Legion set free</b>Mark 5</li>
+      <li><b>A dead girl raised</b>Mark 5</li>
+      <li><b>Five thousand fed</b>Mark 6</li>
+      <li><b>Walking on the sea</b>Mark 6</li>
+      <li><b>A deaf man hears</b>Mark 7</li>
+      <li><b>Four thousand fed</b>Mark 8</li>
+      <li class="now"><b>“A sign from heaven”?</b>Mark 8:11</li>
+    </ol>
+    <p class="note step">They weren't asking because they wanted to believe. They were <em>“tempting him,”</em> testing Him, hoping He'd fail. No sign is enough for a heart that has already decided. Jesus <em>sighed deeply</em>, got back in the boat, and left them.</p>
+    <blockquote class="quote step"><p>“And he said unto him, If they hear not Moses and the prophets, neither will they be persuaded, though one rose from the dead.”</p><cite>Luke 16:31</cite></blockquote>
+  </div>
+</section>
+
+<section class="slide verse" data-v="14-16" data-hl="more than one loaf|beware of the leaven of the Pharisees, and of the leaven of Herod|It is because we have no bread"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="15" data-hl="beware of the leaven of the Pharisees, and of the leaven of Herod"></blockquote>
+    <div class="split">
+      <div class="stage">
+        <svg class="mk08-leaven" viewBox="0 0 420 300" role="img" aria-label="A round lump of dough with one small dark speck of leaven in it. On a step, the leaven spreads until it fills the whole lump.">
+          <defs><clipPath id="mk08-lump"><ellipse cx="210" cy="150" rx="180" ry="105"/></clipPath></defs>
+          <ellipse class="mk08-dough" cx="210" cy="150" rx="180" ry="105"/>
+          <g clip-path="url(#mk08-lump)">
+            <g class="mk08-spread">
+              <circle cx="170" cy="140" r="230" style="fill:inherit"/>
+              <circle class="mk08-bub" cx="120" cy="120" r="10"/><circle class="mk08-bub" cx="190" cy="100" r="7"/><circle class="mk08-bub" cx="250" cy="150" r="12"/>
+              <circle class="mk08-bub" cx="150" cy="190" r="8"/><circle class="mk08-bub" cx="300" cy="120" r="9"/><circle class="mk08-bub" cx="280" cy="200" r="6"/>
+              <circle class="mk08-bub" cx="80" cy="170" r="6"/><circle class="mk08-bub" cx="220" cy="210" r="9"/><circle class="mk08-bub" cx="340" cy="160" r="7"/>
+            </g>
+          </g>
+          <circle class="mk08-speck" cx="170" cy="140" r="7"/>
+          <text x="210" y="290" text-anchor="middle">“a little leaven leaveneth the whole lump”</text>
+        </svg>
+      </div>
+      <div>
+        <h2 class="rise" style="--d:1">A little leaven</h2>
+        <p class="note rise" style="--d:2"><em>Leaven</em> is yeast, or a bit of old sour dough. Work a pinch into the lump, and in time it spreads through all of it (Galatians 5:9).</p>
+        <p class="note step mk08-rise"><b>The Pharisees' leaven</b> is <em>“hypocrisy”</em> (Luke 12:1): religion for show. <b>Herod's leaven</b> is the life Herod lived: power, pleasure, and silencing the man who told him the truth (6:17–28).</p>
+        <p class="note step">Neither one moves in all at once. One small compromise, one old friend, one “just this once,” and it spreads. Beware of the little things.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="slide verse" data-v="17-21" data-hl="have ye your heart yet hardened?|Having eyes, see ye not? and having ears, hear ye not? and do ye not remember?|How is it that ye do not understand?"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="18" data-hl="do ye not remember?"></blockquote>
+    <h2 class="rise" style="--d:1">Do ye not remember?</h2>
+    <div class="mk08-cmp" aria-label="The two feedings compared">
+      <div class="mk08-cmp-head rise" style="--d:2"><span></span><span>Mark 6</span><span>Mark 8</span></div>
+      <div class="step"><span>loaves</span><span><b>5</b></span><span><b>7</b></span></div>
+      <div class="step"><span>fed</span><span><b>5,000</b> men</span><span><b>4,000</b></span></div>
+      <div class="step"><span>left over</span><span><b>12</b> baskets</span><span><b>7</b> big baskets</span></div>
+      <div class="step"><span>where</span><span>near Bethsaida, mostly Jews</span><span>the Decapolis, many Gentiles</span></div>
+    </div>
+    <p class="note step">They were worried about lunch, with one loaf in the boat. Jesus had them count the baskets out loud: <em>“Twelve… Seven.”</em> The One who fed thousands was in the boat.</p>
+    <p class="note step">Fear forgets. Keep a record of what God has done for you, and read it when worry comes: <em>“forget not all his benefits”</em> (Psalm 103:2).</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="22-24" data-hl="took the blind man by the hand, and led him out of the town|I see men as trees, walking"></section>
+<section class="slide verse" data-v="25-26" data-hl="he put his hands again upon his eyes|he was restored, and saw every man clearly"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="25" data-hl="he was restored, and saw every man clearly"></blockquote>
+    <div class="split">
+      <div class="stage">
+        <svg class="mk08-sight" viewBox="0 0 520 300" role="img" aria-label="A scene of trees and men walking. At first it is dark and blurred. After the first touch it is a blur where men look like trees. After the second touch every man is clear.">
+          <defs><clipPath id="mk08-view"><rect x="0" y="0" width="520" height="260" rx="10"/></clipPath></defs>
+          <g clip-path="url(#mk08-view)">
+            <rect class="mk08-sky" x="0" y="0" width="520" height="260"/>
+            <g class="mk08-scene">
+              <rect class="mk08-ground" x="0" y="190" width="520" height="70"/>
+              <rect class="mk08-trunk" x="66" y="120" width="14" height="80"/><ellipse class="mk08-tree" cx="73" cy="104" rx="42" ry="52"/>
+              <rect class="mk08-trunk" x="420" y="130" width="12" height="70"/><ellipse class="mk08-tree" cx="426" cy="114" rx="36" ry="46"/>
+              <g class="mk08-walk">
+                <circle class="mk08-man" cx="190" cy="118" r="13"/><path class="mk08-man" d="M176 134 Q190 128 204 134 L208 200 L172 200 Z"/>
+                <circle class="mk08-man" cx="250" cy="122" r="12"/><path class="mk08-man" d="M237 137 Q250 131 263 137 L266 200 L234 200 Z"/>
+              </g>
+              <g class="mk08-walk" style="animation-direction:alternate-reverse">
+                <circle class="mk08-man" cx="330" cy="116" r="13"/><path class="mk08-man" d="M316 132 Q330 126 344 132 L348 200 L312 200 Z"/>
+              </g>
+            </g>
+          </g>
+          <text x="260" y="290" text-anchor="middle">blind → “men as trees, walking” → “every man clearly”</text>
+        </svg>
+      </div>
+      <div>
+        <h2 class="rise" style="--d:1">A second touch</h2>
+        <p class="note rise" style="--d:2">Jesus took the man <em>by the hand</em> and walked him out of town, the blind man holding on to Him.</p>
+        <p class="note step mk08-t1">After the first touch he could see something: <em>“men as trees, walking.”</em> Better, not finished. He told the truth about it, and Jesus didn't send him off half-healed.</p>
+        <p class="note step mk08-t2">A second touch, and <em>“he saw every man clearly.”</em> This is the only healing in the Gospels that comes in stages. Recovery often does too. Don't quit after the first touch. He finishes what He starts (Philippians 1:6).</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ======================= PART THREE: THOU ART THE CHRIST ======================= -->
+<section class="slide part">
+  <div class="inner">
+    <p class="part-n rise">Part three</p>
+    <h2 class="rise" style="--d:1">Thou art the Christ</h2>
+    <p class="range rise" style="--d:2">Verses 27–33</p>
+    <div class="rule"></div>
+    <p class="hook rise" style="--d:4">The most important question anyone will ever be asked.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="27-28" data-hl="the towns of Caesarea Philippi|Whom do men say that I am?"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="27" data-hl="into the towns of Caesarea Philippi"></blockquote>
+    <div class="split">
+      <div class="stage">
+        <svg class="map mk08-map" data-land viewBox="176 0 164 150" role="img" aria-label="A map of the far north of the land. A road draws itself from Bethsaida on the Sea of Galilee north along the Jordan, about 25 miles, to Caesarea Philippi at the foot of Mount Hermon.">
+          <path class="mk08-mount" d="M298 24 L309 9 L321 23 Z"/>
+          <text class="mk08-small" x="300" y="33">Mount Hermon</text>
+          <g class="map-town here"><circle class="map-ping" cx="285" cy="34" r="7"/><circle cx="285" cy="34" r="5"/><text x="280" y="30" text-anchor="end">Caesarea Philippi</text></g>
+          <g class="map-town"><circle cx="280" cy="124" r="5"/><text x="286" y="128">Bethsaida</text></g>
+          <path class="map-route" pathLength="1" style="--wait:.8s;--draw:2.6s" d="M281 120 C 286 98, 276 66, 285 38"/>
+          <text class="mk08-small" x="288" y="80">about 25 miles</text>
+        </svg>
+      </div>
+      <div>
+        <h2 class="rise" style="--d:1">Among the gods of men</h2>
+        <p class="note rise" style="--d:2">Caesarea Philippi sat at the foot of Mount Hermon, where one of the springs of the Jordan comes out of a cave. Pagans worshipped the god Pan at that cave. Herod the Great built a temple there to Caesar.</p>
+        <p class="note step">His son Philip rebuilt the town and named it for Caesar, and himself. A town full of other gods and a man the empire called divine. Here Jesus asks who He is.</p>
+        <p class="note step">Men had plenty of opinions: John come back to life, Elijah, a prophet. Good things to say, but all too small.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="slide verse" data-v="29-30" data-hl="But whom say ye that I am?|Thou art the Christ"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="29" data-hl="But whom say ye that I am?"></blockquote>
+    <h2 class="rise" style="--d:1">“But whom say ye?”</h2>
+    <ul class="nots">
+      <li class="step"><span class="k">John the Baptist</span><span class="why">Herod had already killed John (6:16)</span></li>
+      <li class="step"><span class="k">Elias</span><span class="why">a great prophet, but only a man</span></li>
+      <li class="step"><span class="k">one of the prophets</span><span class="why">a messenger, not the Message</span></li>
+      <li class="step yes"><span class="k">“Thou art the Christ”</span><span class="why">the Anointed One, the King God promised</span></li>
+    </ul>
+    <p class="note step"><em>Christ</em> is Greek for the Hebrew <em>Messiah</em>: <em>anointed</em>. Israel's kings were anointed with oil. For centuries God had promised one final King to save His people. Peter says: You're Him.</p>
+    <p class="note step">What others say about Jesus can't save you. Your mother's faith can't either. He asks every man for himself: <em>“But whom say ye that I am?”</em></p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="31-33" data-hl="the Son of man must suffer many things|be killed, and after three days rise again|Get thee behind me, Satan|thou savourest not the things that be of God, but the things that be of men"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="31" data-hl="the Son of man must suffer many things"></blockquote>
+    <h2 class="rise" style="--d:1">The turning point</h2>
+    <ol class="timeline" aria-label="Jesus' ministry: baptized about AD 27; teaching and healing in Galilee; five thousand fed at Passover about AD 29; Caesarea Philippi, the Christ named and the cross foretold; the road to Jerusalem; the cross and the empty tomb about AD 30.">
+      <li style="--k:0"><b>Baptized</b><span>about AD 27</span><small>Mark 1</small></li>
+      <li style="--k:1"><b>Galilee</b><span>crowds, healings</span><small>Mark 1–6</small></li>
+      <li style="--k:2"><b>5,000 fed</b><span>a Passover, about AD 29</span><small>Mark 6</small></li>
+      <li class="lit" style="--k:3"><b>Caesarea Philippi</b><span>“Thou art the Christ”</span><small>Mark 8</small></li>
+      <li class="wait" style="--k:4"><b>To Jerusalem</b><span>the cross foretold again</span><small>Mark 9–10</small></li>
+      <li style="--k:5"><b>The cross</b><span>and the empty tomb, about AD 30</span><small>Mark 15–16</small></li>
+    </ol>
+    <p class="note step">As soon as they know who He is, He tells them what He came to do: <em>suffer, be rejected, be killed, and rise again.</em> The elders, chief priests and scribes were the three groups of the Jews' ruling council. He would say it twice more (9:31, 10:33–34).</p>
+    <p class="note step"><em>“Must.”</em> Not bad luck, not a plan gone wrong. The cross was why He came: <em>“while we were yet sinners, Christ died for us”</em> (Romans 5:8).</p>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="33" data-hl="Get thee behind me, Satan"></blockquote>
+    <h2 class="rise" style="--d:1">Right, then wrong</h2>
+    <div class="mirror">
+      <div class="step"><span>Peter, v. 29</span><span class="arrow">→</span><span class="word">“Thou art the Christ”</span><small>Right. Matthew says the Father showed him that (Matthew 16:17).</small></div>
+      <div class="step"><span>Peter, v. 32</span><span class="arrow">→</span><span class="word">took Jesus aside to rebuke Him</span><small>Wrong. He wanted a Christ with a crown and no cross.</small></div>
+    </div>
+    <p class="note step"><em>“Savourest”</em> means <em>set your mind on</em>. A crown without a cross was the same offer Satan made in the wilderness. Jesus turned and looked at the others as He said it. They all needed to hear it.</p>
+    <p class="note step">A man can be dead right one minute and dead wrong the next. Jesus rebuked Peter, but He never dropped him. Peter stayed, and grew.</p>
+  </div>
+</section>
+
+<!-- ======================= PART FOUR: TAKE UP THE CROSS ======================= -->
+<section class="slide part">
+  <div class="inner">
+    <p class="part-n rise">Part four</p>
+    <h2 class="rise" style="--d:1">Take up the cross</h2>
+    <p class="range rise" style="--d:2">Verses 34–38</p>
+    <div class="rule"></div>
+    <p class="hook rise" style="--d:4">Jesus calls the crowd in close and tells them plainly what following Him means.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="34-35" data-hl="Whosoever will come after me, let him deny himself, and take up his cross, and follow me|whosoever shall lose his life for my sake and the gospel’s, the same shall save it"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="34" data-hl="Whosoever will come after me"></blockquote>
+    <h2 class="rise" style="--d:1">What following looks like</h2>
+    <div class="ifthen rise" style="--d:2">
+      <div class="if"><small>If</small>any man will come after me,</div>
+      <span class="arrow" aria-hidden="true">→</span>
+      <div class="then"><small>then</small>deny himself, take up his cross, follow me.</div>
+    </div>
+    <p class="note step"><em>Deny himself</em>: stop letting <em>me</em> run the show. <em>Take up his cross</em>: in Jesus' day a man carrying a cross was a dead man walking, on his way out of his old life for good. <em>Follow me</em>: go where He goes.</p>
+    <p class="note step">This isn't the price of salvation. Salvation is a free gift, received by faith (Ephesians 2:8–9). This is what life looks like for the man who has come to Him. And it's daily:</p>
+    <blockquote class="quote step"><p>“And he said to them all, If any man will come after me, let him deny himself, and take up his cross daily, and follow me.”</p><cite>Luke 9:23</cite></blockquote>
+  </div>
+</section>
+
+<section class="slide verse" data-v="36-38" data-hl="what shall it profit a man, if he shall gain the whole world, and lose his own soul?|what shall a man give in exchange for his soul?|ashamed of me and of my words"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="36"></blockquote>
+    <div class="split">
+      <div class="stage">
+        <svg class="scale" viewBox="0 0 600 330" style="--tip:12deg;--wait:.4s" role="img" aria-label="A balance scale with the whole world on one side and one man's soul on the other. The soul outweighs the world.">
+          <path d="M270 320 L330 320 L312 300 L288 300 Z" style="fill:var(--line-strong)"/>
+          <line x1="300" y1="300" x2="300" y2="70" stroke-width="8" style="stroke:var(--line-strong)"/>
+          <g class="scale-beam">
+            <line x1="80" y1="70" x2="520" y2="70" stroke-width="8" stroke-linecap="round" style="stroke:var(--ink-soft)"/>
+            <circle cx="300" cy="70" r="11" style="fill:var(--accent)"/>
+          </g>
+          <g class="scale-pan l">
+            <g stroke-width="2" style="stroke:var(--ink-soft)"><line x1="80" y1="70" x2="30" y2="190"/><line x1="80" y1="70" x2="130" y2="190"/></g>
+            <path d="M20 190 L140 190 Q130 220 80 220 Q30 220 20 190 Z" style="fill:var(--surface-2);stroke:var(--ink-soft)" stroke-width="2"/>
+            <circle cx="80" cy="160" r="30" style="fill:color-mix(in srgb, var(--cool) 45%, var(--surface));stroke:var(--cool)" stroke-width="2"/>
+            <path d="M54 150 Q80 140 106 150 M52 168 Q80 178 108 168 M80 130 Q62 160 80 190 M80 130 Q98 160 80 190" style="fill:none;stroke:var(--cool)" stroke-width="1.5"/>
+            <text x="80" y="252" text-anchor="middle" font-size="19" style="fill:var(--ink-soft)">the whole world</text>
+          </g>
+          <g class="scale-pan r">
+            <g stroke-width="2" style="stroke:var(--ink-soft)"><line x1="520" y1="70" x2="470" y2="190"/><line x1="520" y1="70" x2="570" y2="190"/></g>
+            <path d="M460 190 L580 190 Q570 220 520 220 Q470 220 460 190 Z" style="fill:var(--surface-2);stroke:var(--accent)" stroke-width="2"/>
+            <circle cx="520" cy="168" r="28" style="fill:var(--accent)" opacity=".25"/>
+            <circle cx="520" cy="158" r="8" style="fill:var(--accent-hot)"/>
+            <path d="M508 188 Q520 166 532 188 Z" style="fill:var(--accent-hot)"/>
+            <text x="520" y="252" text-anchor="middle" font-size="20" font-weight="700" style="fill:var(--accent-hot)">one soul</text>
+          </g>
+        </svg>
+      </div>
+      <div>
+        <h2 class="rise" style="--d:1">A bad trade</h2>
+        <p class="note rise" style="--d:2">The word for <em>“soul”</em> here is the same word as <em>“life”</em> in verse 35. Jesus is asking: what is <em>your</em> life worth?</p>
+        <p class="note step scale-go">Put the whole world on one side: every dollar, every high, every woman, every win. Your soul still outweighs it. Most of us traded our lives for far less than the world, and came up empty.</p>
+        <p class="note step"><em>“In exchange”</em>: once a soul is lost, there's nothing a man can pay to buy it back. But Jesus paid that price Himself, on the cross, for any man who will trust Him.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="38" data-hl="ashamed of me and of my words"></blockquote>
+    <h2 class="rise" style="--d:1">Not ashamed</h2>
+    <div class="columns">
+      <div class="col law rise" style="--d:2">
+        <p class="who">Now</p>
+        <h3>“this adulterous and sinful generation”</h3>
+        <p>A world that laughs at faith. It's easy to keep quiet about Jesus around the old crowd.</p>
+      </div>
+      <div class="col grace step">
+        <p class="who">Then</p>
+        <h3>“in the glory of his Father”</h3>
+        <p>He is coming back, with the holy angels. What matters then is whose side you stood on.</p>
+      </div>
+    </div>
+    <p class="note step">Peter, who heard this, was ashamed of Jesus one night by a fire and denied Him three times. Jesus met him again after He rose and gave him work to do (John 21). Failing Him isn't the end. Coming back to Him is always open.</p>
+  </div>
+</section>
+
+<!-- ======================= CLOSING ======================= -->
+<section class="slide remember">
+  <div class="inner">
+    <h2 class="rise">Points to remember</h2>
+    <ol class="seeds">
+      <li class="step"><span class="topic">Compassion</span><span class="seed-q">“I have compassion on the multitude” <cite>8:2</cite></span><span class="take">Jesus sees your need before you ask, and cares about the road home.</span></li>
+      <li class="step"><span class="topic">A warning</span><span class="seed-q">“Beware of the leaven of the Pharisees, and of the leaven of Herod” <cite>8:15</cite></span><span class="take">Hypocrisy and worldliness spread from a little. Watch the small things.</span></li>
+      <li class="step"><span class="topic">Remembering</span><span class="seed-q">“And do ye not remember?” <cite>8:18</cite></span><span class="take">Fear forgets. Remember what He has already done.</span></li>
+      <li class="step"><span class="topic">Growing</span><span class="seed-q">“He put his hands again upon his eyes” <cite>8:25</cite></span><span class="take">He sometimes works in stages, and He always finishes.</span></li>
+      <li class="step"><span class="topic">Who Jesus is</span><span class="seed-q">“Thou art the Christ” <cite>8:29</cite></span><span class="take">He is the promised King who came to die and rise again.</span></li>
+      <li class="step"><span class="topic">Following</span><span class="seed-q">“Take up his cross, and follow me” <cite>8:34</cite></span><span class="take">Say no to self, leave the old life behind, and go where He goes, daily.</span></li>
+    </ol>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 1 of 6</p>
+      <span class="topic">Compassion</span>
+      <h2>How does Jesus feel about hungry, worn-out people?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="2"></blockquote>
+      <blockquote class="quote step" data-q="3"></blockquote>
+      <blockquote class="quote step" data-q="8" data-hl="they did eat, and were filled"></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>He has compassion on them. Nobody asked Him; He noticed they had been with Him three days with nothing to eat, and He worried they would faint on the road home. Then He filled every one of them. He cares about the whole man, body and soul.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 2 of 6</p>
+      <span class="topic">A warning</span>
+      <h2>What leaven did Jesus warn His disciples about?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="15"></blockquote>
+      <blockquote class="quote step"><p>“Beware ye of the leaven of the Pharisees, which is hypocrisy.”</p><cite>Luke 12:1</cite></blockquote>
+      <blockquote class="quote step"><p>“A little leaven leaveneth the whole lump.”</p><cite>Galatians 5:9</cite></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>The Pharisees' hypocrisy, religion for show, and Herod's worldliness, living for power and pleasure. Like yeast, both start small and spread through a whole life. So watch the little compromises before they take over.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 3 of 6</p>
+      <span class="topic">Remembering</span>
+      <h2>Why did Jesus ask the disciples to remember the baskets?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="17" data-hl="have ye your heart yet hardened?"></blockquote>
+      <blockquote class="quote step" data-q="18"></blockquote>
+      <blockquote class="quote step" data-q="19-20"></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>Because they were worried about one loaf of bread when He had already fed thousands twice, with basketfuls left over. Remembering what He has done is the cure for fear about what we lack. The Bread-maker was in the boat with them.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 4 of 6</p>
+      <span class="topic">Growing</span>
+      <h2>What does the healing in two stages teach us?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="23" data-hl="took the blind man by the hand"></blockquote>
+      <blockquote class="quote step" data-q="24"></blockquote>
+      <blockquote class="quote step" data-q="25"></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>That Jesus sometimes works in stages, and He doesn't stop halfway. The man was honest about what he still couldn't see, and Jesus touched him again until he saw every man clearly. In recovery and in faith, keep coming back to Him. He finishes what He starts.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 5 of 6</p>
+      <span class="topic">Who Jesus is</span>
+      <h2>Who did Peter say Jesus is?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="28"></blockquote>
+      <blockquote class="quote step" data-q="29"></blockquote>
+      <blockquote class="quote step"><p>“And Simon Peter answered and said, Thou art the Christ, the Son of the living God.”</p><cite>Matthew 16:16</cite></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>“Thou art the Christ”: the Messiah, the anointed King God had promised for centuries, the Son of the living God. Not just a prophet or a good teacher. And right away Jesus told them that the Christ must suffer, die, and rise again on the third day.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 6 of 6</p>
+      <span class="topic">Following</span>
+      <h2>What does it mean to take up your cross?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="34"></blockquote>
+      <blockquote class="quote step" data-q="35"></blockquote>
+      <blockquote class="quote step"><p>“And he said to them all, If any man will come after me, let him deny himself, and take up his cross daily, and follow me.”</p><cite>Luke 9:23</cite></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>It means saying no to self running the show, leaving the old life behind like a man who isn't going back, and going where Jesus goes, every day. It doesn't earn salvation; that's a free gift. It's how a saved man lives. And the life you lose for Him, you find.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide prayer">
+  <div class="inner">
+    <div class="emblem rise"></div>
+    <h2 class="rise" style="--d:1">Prayer requests</h2>
+    <p class="ask-line rise" style="--d:2">What can we pray about for you today?</p>
+    <blockquote class="quote rise" style="--d:4"><p>“Being confident of this very thing, that he which hath begun a good work in you will perform it until the day of Jesus Christ:”</p><cite>Philippians 1:6</cite></blockquote>
+  </div>
+</section>
+
+</main>
+
+<script>
+// King James Version, Mark chapter 8
+const V = {
+  1: "In those days the multitude being very great, and having nothing to eat, Jesus called his disciples unto him, and saith unto them,",
+  2: "I have compassion on the multitude, because they have now been with me three days, and have nothing to eat:",
+  3: "And if I send them away fasting to their own houses, they will faint by the way: for divers of them came from far.",
+  4: "And his disciples answered him, From whence can a man satisfy these men with bread here in the wilderness?",
+  5: "And he asked them, How many loaves have ye? And they said, Seven.",
+  6: "And he commanded the people to sit down on the ground: and he took the seven loaves, and gave thanks, and brake, and gave to his disciples to set before them; and they did set them before the people.",
+  7: "And they had a few small fishes: and he blessed, and commanded to set them also before them.",
+  8: "So they did eat, and were filled: and they took up of the broken meat that was left seven baskets.",
+  9: "And they that had eaten were about four thousand: and he sent them away.",
+  10: "And straightway he entered into a ship with his disciples, and came into the parts of Dalmanutha.",
+  11: "And the Pharisees came forth, and began to question with him, seeking of him a sign from heaven, tempting him.",
+  12: "And he sighed deeply in his spirit, and saith, Why doth this generation seek after a sign? verily I say unto you, There shall no sign be given unto this generation.",
+  13: "And he left them, and entering into the ship again departed to the other side.",
+  14: "Now the disciples had forgotten to take bread, neither had they in the ship with them more than one loaf.",
+  15: "And he charged them, saying, Take heed, beware of the leaven of the Pharisees, and of the leaven of Herod.",
+  16: "And they reasoned among themselves, saying, It is because we have no bread.",
+  17: "And when Jesus knew it, he saith unto them, Why reason ye, because ye have no bread? perceive ye not yet, neither understand? have ye your heart yet hardened?",
+  18: "Having eyes, see ye not? and having ears, hear ye not? and do ye not remember?",
+  19: "When I brake the five loaves among five thousand, how many baskets full of fragments took ye up? They say unto him, Twelve.",
+  20: "And when the seven among four thousand, how many baskets full of fragments took ye up? And they said, Seven.",
+  21: "And he said unto them, How is it that ye do not understand?",
+  22: "And he cometh to Bethsaida; and they bring a blind man unto him, and besought him to touch him.",
+  23: "And he took the blind man by the hand, and led him out of the town; and when he had spit on his eyes, and put his hands upon him, he asked him if he saw ought.",
+  24: "And he looked up, and said, I see men as trees, walking.",
+  25: "After that he put his hands again upon his eyes, and made him look up: and he was restored, and saw every man clearly.",
+  26: "And he sent him away to his house, saying, Neither go into the town, nor tell it to any in the town.",
+  27: "And Jesus went out, and his disciples, into the towns of Caesarea Philippi: and by the way he asked his disciples, saying unto them, Whom do men say that I am?",
+  28: "And they answered, John the Baptist: but some say, Elias; and others, One of the prophets.",
+  29: "And he saith unto them, But whom say ye that I am? And Peter answereth and saith unto him, Thou art the Christ.",
+  30: "And he charged them that they should tell no man of him.",
+  31: "And he began to teach them, that the Son of man must suffer many things, and be rejected of the elders, and of the chief priests, and scribes, and be killed, and after three days rise again.",
+  32: "And he spake that saying openly. And Peter took him, and began to rebuke him.",
+  33: "But when he had turned about and looked on his disciples, he rebuked Peter, saying, Get thee behind me, Satan: for thou savourest not the things that be of God, but the things that be of men.",
+  34: "And when he had called the people unto him with his disciples also, he said unto them, Whosoever will come after me, let him deny himself, and take up his cross, and follow me.",
+  35: "For whosoever will save his life shall lose it; but whosoever shall lose his life for my sake and the gospel’s, the same shall save it.",
+  36: "For what shall it profit a man, if he shall gain the whole world, and lose his own soul?",
+  37: "Or what shall a man give in exchange for his soul?",
+  38: "Whosoever therefore shall be ashamed of me and of my words in this adulterous and sinful generation; of him also shall the Son of man be ashamed, when he cometh in the glory of his Father with the holy angels."
+};
+const BOOK = "Mark 8";
+</script>
+<script src="../assets/deck.js"></script>
+</body>
+</html>
