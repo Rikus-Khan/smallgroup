@@ -1,0 +1,590 @@
+<!doctype html>
+<html lang="en" data-theme="stone">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>1 Corinthians 9</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="../assets/fonts.css">
+<link rel="stylesheet" href="../assets/deck.css">
+<link rel="stylesheet" href="../assets/themes.css">
+<style>
+/* c109-where: where this chapter sits in the whole letter. The 16 chapters in five groups, the current one lit (.now) */
+.c109-where { display: flex; gap: 6px; margin: .3em 0 1em; }
+.c109-where > div { flex: var(--n) 1 0; min-width: 0; display: flex; flex-direction: column; gap: 4px; }
+.c109-where small { font: 700 clamp(.62rem, .55rem + .3vw, .85rem)/1.15 var(--sans); color: var(--ink-soft); min-height: 2.3em; display: flex; align-items: flex-end; }
+.c109-where p { display: flex; gap: 3px; margin: 0; }
+.c109-where span { flex: 1 1 0; min-width: 0; display: grid; place-items: center; height: clamp(1.6rem, 1.3rem + 1vw, 2.3rem); border-radius: 5px; border: 1.5px solid var(--line-strong); background: var(--surface); font: 600 clamp(.7rem, .6rem + .35vw, .95rem) var(--sans); color: var(--ink-soft); }
+.c109-where > div.on small { color: var(--accent); }
+.c109-where > div.on span { border-color: var(--accent); }
+.c109-where span.now { background: var(--accent); border-color: var(--accent); color: var(--on-accent); box-shadow: 0 0 0 5px color-mix(in srgb, var(--accent) 22%, transparent); }
+.slide.active .c109-where span.now { animation: c109-pulse 2.4s ease-in-out .8s 2; }
+@keyframes c109-pulse { 50% { box-shadow: 0 0 0 10px color-mix(in srgb, var(--accent) 8%, transparent); } }
+
+/* c109-rights: rights Paul could claim, each stamped "not used" on a step (a deck.css candidate) */
+.c109-rights { display: grid; gap: .55rem; margin: .5em 0; }
+.c109-rights p { margin: 0; display: flex; align-items: center; justify-content: space-between; gap: 1rem; padding: .6em 1em; border: 1.5px solid var(--line-strong); border-radius: 10px; background: var(--surface); font-size: clamp(1rem, .9rem + .45vw, 1.3rem); }
+.c109-rights b { font-weight: 700; }
+.c109-rights small { display: block; color: var(--ink-soft); font-size: .72em; font-weight: 400; }
+.c109-rights p.gain { border-color: var(--accent); background: color-mix(in srgb, var(--accent) 12%, var(--surface)); }
+.c109-laid { flex: none; border: 3px solid var(--accent-hot); color: var(--accent-hot); border-radius: 6px; padding: .05em .55em; font-weight: 800; font-size: .8em; text-transform: uppercase; letter-spacing: .07em; opacity: 0; transform: rotate(-5deg) scale(2.2); transition: transform .45s cubic-bezier(.3,1.5,.5,1) .6s, opacity .3s ease .6s; }
+.c109-rights p.on .c109-laid { opacity: 1; transform: rotate(-5deg); }
+
+/* c109-ox: an ox treading out the corn; the muzzle he must never wear falls off (9:9) */
+.c109-ground { stroke: var(--line-strong); stroke-width: 3; stroke-linecap: round; }
+.c109-floor { fill: color-mix(in srgb, var(--warm) 22%, var(--surface)); }
+.c109-ox { transition: transform .6s ease; }
+.slide.active .c109-ox { animation: c109-tread 1.6s ease-in-out infinite alternate; }
+@keyframes c109-tread { to { transform: translateX(-12px); } }
+.c109-ox .body, .c109-ox .head { fill: var(--leather); stroke: var(--leather-light); stroke-width: 3; }
+.c109-ox .leg { stroke: var(--leather); stroke-width: 13; stroke-linecap: round; }
+.c109-ox .horn { fill: none; stroke: var(--ink-soft); stroke-width: 6; stroke-linecap: round; }
+.c109-ox .eye { fill: var(--surface); }
+.c109-muzzle { transition: transform 1s cubic-bezier(.5,0,.8,.5), opacity .8s ease .3s; }
+.c109-muzzle rect { fill: var(--danger); }
+.c109-muzzle path { stroke: var(--bg); stroke-width: 2; }
+.c109-grain circle { fill: var(--warm); }
+.c109-bite { opacity: 0; transition: opacity .8s ease 1s; }
+.c109-bite circle { fill: var(--warm); }
+.c109-cap { fill: var(--ink-soft); }
+.c109-capok { fill: var(--accent-hot); font-weight: 700; opacity: 0; transition: opacity 1s ease 1.2s; }
+.split:has(.c109-off.on) .c109-muzzle { transform: translate(40px, 110px) rotate(60deg); opacity: 0; }
+.split:has(.c109-off.on) .c109-bite, .split:has(.c109-off.on) .c109-capok { opacity: 1; }
+.split:has(.c109-off.on) .c109-capno { opacity: 0; }
+.c109-capno { transition: opacity .5s ease; fill: var(--danger); font-weight: 700; }
+
+/* c109-hub: Paul at the centre, going out to each kind of man (9:19-22) */
+.c109-ring { fill: none; stroke: var(--line-strong); stroke-width: 2; stroke-dasharray: 6 8; }
+.c109-spoke { fill: none; stroke: var(--accent); stroke-width: 4; stroke-linecap: round; stroke-dasharray: 1; stroke-dashoffset: 1; }
+.slide.active .c109-spoke { animation: c109-draw 1.1s ease forwards; animation-delay: calc(.6s + var(--k) * .55s); }
+@keyframes c109-draw { to { stroke-dashoffset: 0; } }
+.c109-node { fill: var(--surface); stroke: var(--line-strong); stroke-width: 2.5; opacity: 0; }
+.slide.active .c109-node { animation: c109-pop .6s ease forwards; animation-delay: calc(1.2s + var(--k) * .55s); }
+@keyframes c109-pop { from { opacity: 0; } to { opacity: 1; } }
+.c109-nodet { fill: var(--ink); font-weight: 700; opacity: 0; }
+.slide.active .c109-nodet { animation: c109-pop .6s ease forwards; animation-delay: calc(1.3s + var(--k) * .55s); }
+.c109-nodes { fill: var(--ink-soft); font-weight: 400; opacity: 0; }
+.slide.active .c109-nodes { animation: c109-pop .6s ease forwards; animation-delay: calc(1.3s + var(--k) * .55s); }
+.c109-paul { fill: var(--accent); }
+.c109-pault { fill: var(--on-accent); font-weight: 800; }
+
+/* c109-crown: a wreath that withers beside a crown that doesn't (9:25) */
+.c109-leaf { fill: none; stroke: var(--cool); stroke-width: 15; stroke-dasharray: 11 7; transition: stroke 2.6s ease 1.6s, opacity 2.6s ease 1.6s; }
+.slide.active .c109-leaf { stroke: var(--line-strong); opacity: .35; }
+.c109-droop { fill: none; stroke: var(--ink-soft); stroke-width: 2; }
+.c109-crown { fill: var(--glow); stroke: var(--warm); stroke-width: 3; stroke-linejoin: round; }
+.c109-gem { fill: var(--accent-hot); }
+.c109-shine { fill: color-mix(in srgb, var(--glow) 45%, transparent); opacity: 0; }
+.slide.active .c109-shine { animation: c109-shine 2.8s ease-in-out 1s infinite alternate; }
+@keyframes c109-shine { from { opacity: .15; } to { opacity: .8; } }
+.c109-cl { fill: var(--ink); font-weight: 700; }
+.c109-cs { fill: var(--ink-soft); }
+
+/* c109-lanes: two runners, one with the finish in sight and one wandering (9:26) */
+.c109-lane { fill: none; stroke: var(--surface-2); stroke-width: 58; stroke-linecap: butt; }
+.c109-line { stroke: var(--line-strong); stroke-width: 2; stroke-dasharray: 10 10; }
+.c109-way { fill: none; stroke-width: 5; stroke-linecap: round; stroke-dasharray: 1; stroke-dashoffset: 1; }
+.c109-way.good { stroke: var(--accent); }
+.c109-way.lost { stroke: var(--danger); }
+.slide.active .c109-way.good { animation: c109-draw 3s ease-in-out .5s forwards; }
+.slide.active .c109-way.lost { animation: c109-draw 5s ease-in-out .5s forwards; }
+.c109-finish { fill: none; stroke: var(--ink); stroke-width: 6; }
+.c109-flagt { fill: var(--ink-soft); }
+.c109-who { fill: var(--accent); }
+.c109-who.lost { fill: var(--danger); }
+.c109-lanet { fill: var(--ink); font-weight: 700; }
+.c109-lanes-end { opacity: 0; transition: opacity 1s ease .3s; fill: var(--danger); font-weight: 700; }
+.split:has(.c109-nope.on) .c109-lanes-end { opacity: 1; }
+</style>
+</head>
+<body>
+<main class="deck" id="deck">
+
+<!-- ======================= OPENING ======================= -->
+<section class="slide title">
+  <div class="inner">
+    <div class="emblem rise"></div>
+    <h1 class="rise" style="--d:1">1 Corinthians 9</h1>
+    <p class="sub rise" style="--d:3">Rights laid down, a race to run</p>
+    <p class="tag rise" style="--d:5">Paul has every right to be paid and looked after, and gives them all up so nothing will stand in the gospel's way. Then he runs like a man who means to finish.</p>
+  </div>
+</section>
+
+<section class="slide watch">
+  <div class="inner">
+    <h2 class="rise">Things to watch for</h2>
+    <p class="lede rise" style="--d:1">Keep these questions in the back of your mind as we read. We'll come back to every one of them at the end.</p>
+    <ol class="seeds">
+      <li class="step"><span class="topic">Rights</span><span class="seed-q">What rights did Paul have, and why did he lay them down?</span></li>
+      <li class="step"><span class="topic">Paying preachers</span><span class="seed-q">Should a man who preaches the gospel be supported?</span></li>
+      <li class="step"><span class="topic">Reaching people</span><span class="seed-q">What does “I am made all things to all men” mean?</span></li>
+      <li class="step"><span class="topic">The prize</span><span class="seed-q">What are we running for?</span></li>
+      <li class="step"><span class="topic">Discipline</span><span class="seed-q">Why does Paul “keep under” his body?</span></li>
+      <li class="step"><span class="topic">Castaway</span><span class="seed-q">What does Paul mean by “castaway”?</span></li>
+    </ol>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise">Where we are in 1 Corinthians</h2>
+    <div class="c109-where rise" style="--d:1" role="img" aria-label="The sixteen chapters of 1 Corinthians in five groups: quarrels, chapters 1 to 4; sin and marriage, 5 to 7; food offered to idols, 8 to 10; worship, 11 to 14; the resurrection and goodbye, 15 and 16. Chapter 9 is lit.">
+      <div style="--n:4"><small>Quarrels in the church</small><p><span>1</span><span>2</span><span>3</span><span>4</span></p></div>
+      <div style="--n:3"><small>Sin and marriage</small><p><span>5</span><span>6</span><span>7</span></p></div>
+      <div class="on" style="--n:3"><small>Food offered to idols</small><p><span>8</span><span class="now">9</span><span>10</span></p></div>
+      <div style="--n:4"><small>Worship together</small><p><span>11</span><span>12</span><span>13</span><span>14</span></p></div>
+      <div style="--n:2"><small>Raised, and goodbye</small><p><span>15</span><span>16</span></p></div>
+    </div>
+    <p class="note rise" style="--d:2">Paul is answering a troubled church he started in Corinth, about AD 55. Chapters 8 to 10 answer one question: should a believer eat meat that was offered to an idol? In chapter 8 he said <em>knowing you're free</em> isn't enough. Love comes first, and if my freedom makes a brother stumble, I'll give it up (8:13).</p>
+    <p class="note step">Chapter 9 is Paul proving he means it. He lays out what <em>he</em> gave up, then runs a race he doesn't intend to lose.</p>
+  </div>
+</section>
+
+<!-- ======================= PART ONE: THE MAN WITH RIGHTS ======================= -->
+<section class="slide part">
+  <div class="inner">
+    <p class="part-n rise">Part one</p>
+    <h2 class="rise" style="--d:1">The man with rights</h2>
+    <p class="range rise" style="--d:2">Verses 1–14</p>
+    <div class="rule"></div>
+    <p class="hook rise" style="--d:4">Paul has every right to be paid for his work. He lists them.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="1-2" data-hl="Am I not an apostle?|the seal of mine apostleship are ye in the Lord"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise">Four questions, four yeses</h2>
+    <div class="asks">
+      <div class="ask step"><span class="q">“Am I not an apostle?”</span><span class="stamp">Yes</span><span class="ctx">Some in Corinth ran him down. An apostle was a man sent out by Jesus Himself.</span></div>
+      <div class="ask step"><span class="q">“Am I not free?”</span><span class="stamp">Yes</span><span class="ctx">Free to be paid, rested and looked after, like any worker.</span></div>
+      <div class="ask step"><span class="q">“Have I not seen Jesus Christ our Lord?”</span><span class="stamp">Yes</span><span class="ctx">On the Damascus road (Acts 9), about AD 34 to 35.</span></div>
+      <div class="ask step"><span class="q">“Are not ye my work in the Lord?”</span><span class="stamp">Yes</span><span class="ctx">The Corinthian church began under his hands (Acts 18).</span></div>
+    </div>
+    <p class="note step">A <em>seal</em> was a stamp pressed in wax to prove a letter or contract was real. Paul says the Corinthians themselves are his seal. Their changed lives are the proof, and a changed life is still the best proof there is.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="3-6" data-hl="Have we not power to eat and to drink?|Have we not power to lead about a sister, a wife|forbear working"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise">What Paul was free to claim</h2>
+    <p class="note rise" style="--d:1">“Power” here means <em>right</em>. A preacher on the road could ask a church for three things:</p>
+    <div class="c109-rights">
+      <p class="step"><span><b>Food and drink, at the church's cost</b><small>verse 4</small></span></p>
+      <p class="step"><span><b>His wife along on the road</b><small>verse 5: the other apostles did, and the Lord's brothers, and Cephas (Peter)</small></span></p>
+      <p class="step"><span><b>Time off from his tent-making</b><small>verse 6: Paul and Barnabas worked with their hands to pay their own way</small></span></p>
+    </div>
+    <p class="note step">None of it was greedy. These were fair claims, and Paul says so. Hold on to that: he gives up things that were <em>his</em>.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="7-10" data-hl="Thou shalt not muzzle the mouth of the ox that treadeth out the corn|Doth God take care for oxen?"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <div class="split">
+      <div class="stage">
+        <svg viewBox="0 0 400 300" role="img" aria-label="An ox walks round a threshing floor, trampling the grain. A basket muzzle is on his mouth. The muzzle falls off, and he eats.">
+          <ellipse class="c109-floor" cx="200" cy="262" rx="190" ry="26"/>
+          <line class="c109-ground" x1="20" y1="262" x2="380" y2="262"/>
+          <g class="c109-grain"><circle cx="70" cy="252" r="5"/><circle cx="90" cy="258" r="5"/><circle cx="110" cy="250" r="4"/><circle cx="330" cy="256" r="5"/><circle cx="352" cy="250" r="4"/></g>
+          <g class="c109-ox">
+            
+            <line class="leg" x1="126" y1="196" x2="126" y2="252"/><line class="leg" x1="160" y1="200" x2="160" y2="256"/>
+            <line class="leg" x1="226" y1="200" x2="226" y2="256"/><line class="leg" x1="260" y1="196" x2="260" y2="252"/>
+            <path class="body" d="M100 168 Q100 126 150 124 L240 124 Q284 124 284 164 L284 200 Q284 212 262 212 L120 212 Q100 212 100 192 Z"/>
+            <path d="M100 150 Q80 160 78 196" fill="none" style="stroke:var(--leather-light);stroke-width:6;stroke-linecap:round"/>
+            <ellipse class="head" cx="304" cy="176" rx="30" ry="25"/>
+            <path class="horn" d="M290 156 Q280 128 300 124 M318 156 Q330 130 312 124"/>
+            <circle class="eye" cx="310" cy="168" r="3.4"/>
+            <g class="c109-muzzle"><rect x="312" y="180" width="32" height="22" rx="5"/><path d="M322 180 V202 M332 180 V202 M312 191 H344" fill="none"/></g>
+            <g class="c109-bite"><circle cx="330" cy="212" r="4"/><circle cx="342" cy="218" r="4"/><circle cx="322" cy="220" r="3.4"/></g>
+          </g>
+          <text class="c109-cap c109-capno" x="200" y="60" text-anchor="middle" font-size="22">muzzled</text>
+          <text class="c109-capok" x="200" y="60" text-anchor="middle" font-size="22">“Thou shalt not muzzle”</text>
+        </svg>
+      </div>
+      <div>
+        <h2 class="rise" style="--d:1">The working ox</h2>
+        <p class="note rise" style="--d:2">Paul gives four pictures: a soldier gets wages, a vineyard-keeper eats the grapes, a shepherd drinks the milk, and an ox that tramples out the grain is allowed to eat as he goes.</p>
+        <p class="note step c109-off">That last one is straight from the law (Deuteronomy 25:4). “Doth God take care for oxen?” means <em>surely the law was about more than cattle</em>. If God looks after the ox, He means the man who works for Him to be looked after too.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="slide verse" data-v="11-14" data-hl="we have not used this power|that they which preach the gospel should live of the gospel"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="14" data-hl="that they which preach the gospel should live of the gospel"></blockquote>
+    <h2 class="rise" style="--d:1">Fair pay for the work</h2>
+    <p class="note rise" style="--d:2">“Carnal things” in verse 11 means <em>ordinary, material things</em>: food, a roof. Paul says: we gave you the things of the Spirit, and it isn't much to ask for bread in return. The priests in the temple ate from the sacrifices the same way (verse 13).</p>
+    <p class="note step">So a church that looks after its pastor is doing right, and a man who works hard has earned what he's paid. Nobody should feel guilty for fair wages.</p>
+    <p class="note step">Notice the end of verse 12: <em>“Nevertheless we have not used this power.”</em> The point of this whole list is what comes next.</p>
+  </div>
+</section>
+
+<!-- ======================= PART TWO: MADE ALL THINGS TO ALL MEN ======================= -->
+<section class="slide part">
+  <div class="inner">
+    <p class="part-n rise">Part two</p>
+    <h2 class="rise" style="--d:1">Made all things to all men</h2>
+    <p class="range rise" style="--d:2">Verses 15–23</p>
+    <div class="rule"></div>
+    <p class="hook rise" style="--d:4">Paul lays every one of those rights down, and tells us why.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="15-18" data-hl="I may make the gospel of Christ without charge|woe is unto me, if I preach not the gospel!"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise">“I have used none of these things”</h2>
+    <div class="c109-rights">
+      <p class="step"><span><b>Paid by the church</b><small>a right, and he asked for none of it</small></span><span class="c109-laid">not used</span></p>
+      <p class="step"><span><b>Looked after on the road</b><small>he paid his own way</small></span><span class="c109-laid">not used</span></p>
+      <p class="step gain"><span><b>What he got instead</b><small>“the gospel of Christ without charge”: no one could say he was in it for the money</small></span></p>
+    </div>
+    <p class="note step">Why? So that nothing he did would give anyone a reason to wave the gospel away. He wasn't trying to be a hero. He says he <em>couldn't</em> stay quiet: <em>“woe is unto me, if I preach not.”</em> A steward carries out a trust his Master gave him (Acts 9), and Paul wanted to carry it out cleanly.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="19-23" data-hl="though I be free from all men, yet have I made myself servant unto all|I am made all things to all men, that I might by all means save some"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <div class="split">
+      <div class="stage">
+        <svg viewBox="0 0 400 330" role="img" aria-label="Paul in the middle. Lines go out to three groups: the Jews, the Gentiles without the law, and the weak. A dashed ring around them is labelled all men.">
+          <circle class="c109-ring" cx="200" cy="165" r="150"/>
+          <path class="c109-spoke" style="--k:0" pathLength="1" d="M200 165 L200 87"/>
+          <path class="c109-spoke" style="--k:1" pathLength="1" d="M200 165 L102 219"/>
+          <path class="c109-spoke" style="--k:2" pathLength="1" d="M200 165 L298 219"/>
+          <circle class="c109-paul" cx="200" cy="165" r="38"/>
+          <text class="c109-pault" x="200" y="172" text-anchor="middle" font-size="20">Paul</text>
+          <circle class="c109-node" style="--k:0" cx="200" cy="52" r="34"/>
+          <text class="c109-nodet" style="--k:0" x="200" y="50" text-anchor="middle" font-size="17">the Jews</text>
+          <text class="c109-nodes" style="--k:0" x="200" y="68" text-anchor="middle" font-size="12">under the law</text>
+          <circle class="c109-node" style="--k:1" cx="72" cy="236" r="34"/>
+          <text class="c109-nodet" style="--k:1" x="72" y="234" text-anchor="middle" font-size="17">Gentiles</text>
+          <text class="c109-nodes" style="--k:1" x="72" y="252" text-anchor="middle" font-size="12">without the law</text>
+          <circle class="c109-node" style="--k:2" cx="328" cy="236" r="34"/>
+          <text class="c109-nodet" style="--k:2" x="328" y="234" text-anchor="middle" font-size="17">the weak</text>
+          <text class="c109-nodes" style="--k:2" x="328" y="252" text-anchor="middle" font-size="12">tender conscience</text>
+          <text class="c109-nodes" style="--k:3;fill:var(--accent-hot)" x="200" y="318" text-anchor="middle" font-size="15">“that I might by all means save some”</text>
+        </svg>
+      </div>
+      <div>
+        <h2 class="rise" style="--d:1">All things to all men</h2>
+        <p class="note rise" style="--d:2">With Jews he kept to their customs. With Gentiles he didn't make them keep Jewish ones. With the weak he was gentle. Free from every man, yet <em>servant</em> to all, so more might be won.</p>
+        <p class="note step">Somebody once did that for you. He sat down where you were, talked like you talked, and didn't make you clean up first. Now it's your turn to do it for the next man.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="21" data-hl="but under the law to Christ"></blockquote>
+    <h2 class="rise" style="--d:1">Beside them, not back with them</h2>
+    <div class="columns">
+      <div class="col grace rise" style="--d:2">
+        <p class="who">What he did</p>
+        <h3>met them where they were</h3>
+        <p>Ate at their tables, learned how they thought, spoke so they could understand, and never made them feel small.</p>
+      </div>
+      <div class="col law step">
+        <p class="who">What he never did</p>
+        <h3>joined them in their sin</h3>
+        <p>“Not without law to God.” He stayed under Christ's rule the whole time. Meeting a man isn't the same as going back to what ruined him.</p>
+      </div>
+    </div>
+    <p class="note step">That line matters for us. You can sit with the man who's still using, and be a friend to him. You can't go back to his place to prove you're not above it. Know where your own line is, and keep to it.</p>
+  </div>
+</section>
+
+<!-- ======================= PART THREE: THE RACE ======================= -->
+<section class="slide part">
+  <div class="inner">
+    <p class="part-n rise">Part three</p>
+    <h2 class="rise" style="--d:1">So run</h2>
+    <p class="range rise" style="--d:2">Verses 24–27</p>
+    <div class="rule"></div>
+    <p class="hook rise" style="--d:4">Corinth's own games were a few miles from the city wall. Paul picks his picture from there.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="24-25" data-hl="So run, that ye may obtain|an incorruptible"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <div class="split">
+      <div class="stage">
+        <svg class="map" data-world viewBox="438 262 80 56" data-towns="Corinth*:l, Athens:r" role="img" aria-label="Map of southern Greece. Corinth sits on the narrow neck of land between two seas. The Isthmian games were held just east of the city, on the same neck of land. Athens lies to the east.">
+          <circle class="map-ping" cx="483" cy="288" r="1.8"/>
+          <circle cx="483" cy="288" r=".9" style="fill:var(--accent-hot)"/>
+          <text x="485" y="300" text-anchor="middle" font-size="2.3" style="fill:var(--accent-hot);font-weight:700">the Isthmian games</text>
+        </svg>
+      </div>
+      <div>
+        <h2 class="rise" style="--d:1">Corinth's games</h2>
+        <p class="note rise" style="--d:2">Every two years or so, crowds came to the Isthmus, the narrow neck beside Corinth, for the Isthmian Games: foot races, wrestling, boxing, chariots. They were among the biggest games in the Greek world, and every man in the Corinthian church had seen them.</p>
+        <p class="note step">In a race, <em>everyone</em> runs and <em>one</em> wins. Paul isn't saying only one Christian gets a prize. He's saying: run like the one who means to win.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <div class="split">
+      <div class="stage">
+        <svg viewBox="0 0 500 330" role="img" aria-label="Two prizes. On the left, a wreath of leaves that fades and droops: a corruptible crown. On the right, a gold crown that shines and stays: an incorruptible one.">
+          <circle class="c109-leaf" cx="125" cy="140" r="68"/>
+          <path class="c109-droop" d="M125 208 q-6 22 -2 40 M95 198 q-10 14 -8 28"/>
+          <text class="c109-cl" x="125" y="270" text-anchor="middle" font-size="20">a wreath of leaves</text>
+          <text class="c109-cs" x="125" y="294" text-anchor="middle" font-size="15">dead within days</text>
+          <circle class="c109-shine" cx="375" cy="130" r="92"/>
+          <path class="c109-crown" d="M322 176 L314 96 L346 128 L375 80 L404 128 L436 96 L428 176 Z"/>
+          <rect class="c109-crown" x="320" y="176" width="110" height="16" rx="4"/>
+          <circle class="c109-gem" cx="375" cy="150" r="9"/><circle class="c109-gem" cx="346" cy="156" r="5"/><circle class="c109-gem" cx="404" cy="156" r="5"/>
+          <text class="c109-cl" x="375" y="270" text-anchor="middle" font-size="20">a crown that stays</text>
+          <text class="c109-cs" x="375" y="294" text-anchor="middle" font-size="15">“incorruptible”</text>
+        </svg>
+      </div>
+      <div>
+        <h2 class="rise" style="--d:1">A crown that doesn't wither</h2>
+        <p class="note rise" style="--d:2">The winner at the Isthmus was handed a wreath of leaves. It was cut fresh and was dead in days. “Temperate in all things” (verse 25) means every runner held back from food, drink and late nights while he trained, for a prize like that.</p>
+        <p class="note step">We run for one that lasts. It is not salvation: that's a gift, never earned. This crown is a reward for how a saved man <em>serves</em>.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="slide verse" data-v="26-27" data-hl="I keep under my body, and bring it into subjection|I myself should be a castaway"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <div class="split">
+      <div class="stage">
+        <svg viewBox="0 0 560 300" role="img" aria-label="Two running lanes. In the top lane a runner goes straight to the finish line. In the bottom lane a runner wanders back and forth and never gets there.">
+          <path class="c109-lane" d="M20 90 H470"/>
+          <path class="c109-lane" d="M20 220 H470"/>
+          <line class="c109-line" x1="470" y1="55" x2="470" y2="255"/>
+          <path class="c109-finish" d="M470 50 V258"/>
+          <path class="c109-way good" pathLength="1" d="M30 90 H462"/>
+          <circle class="c109-who" cx="30" cy="90" r="10"/>
+          <path class="c109-way lost" pathLength="1" d="M30 220 C90 175 130 265 190 205 C250 160 270 270 330 215 C380 175 400 250 440 210"/>
+          <circle class="c109-who lost" cx="30" cy="220" r="10"/>
+          <text class="c109-lanet" x="30" y="38" font-size="19">not as uncertainly</text>
+          <text class="c109-lanet" x="30" y="290" font-size="19" style="fill:var(--danger)">swinging at the air</text>
+          <text class="c109-lanes-end" x="440" y="168" text-anchor="end" font-size="16">never gets there</text>
+        </svg>
+      </div>
+      <div>
+        <h2 class="rise" style="--d:1">Running on purpose</h2>
+        <p class="note rise" style="--d:2">Paul has two pictures. A runner who can see the finish line and heads for it, and a boxer whose punches land, not one throwing blows at the air. <em>“I keep under my body”</em> is the language of a boxer: he hits his own body hard enough to make it obey.</p>
+        <p class="note step c109-nope">Our bodies want the easy road. A drifting man never runs a straight line. He only follows whatever pulls him next.</p>
+        <p class="note step"><em>Do one thing today.</em> Name your hardest hour (when, where, with whom), and decide before it comes what you'll do. A man with a plan isn't trusting his mood to hold.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="27" data-hl="I myself should be a castaway"></blockquote>
+    <h2 class="rise" style="--d:1">What “castaway” means</h2>
+    <div class="columns">
+      <div class="col law rise" style="--d:2">
+        <p class="who">Not this</p>
+        <h3>losing his salvation</h3>
+        <p>Jesus says of His own: <em>“they shall never perish.”</em></p>
+      </div>
+      <div class="col grace step">
+        <p class="who">This</p>
+        <h3>disqualified from the prize</h3>
+        <p>The Greek word is <span class="gk">adokimos</span>: <em>tested and not approved</em>. An athlete who broke the rules was sent off the field, with no crown. A saved man can still lose his usefulness and his reward.</p>
+      </div>
+    </div>
+    <blockquote class="quote step"><p>“And I give unto them eternal life; and they shall never perish, neither shall any man pluck them out of my hand.”</p><cite>John 10:28</cite></blockquote>
+    <blockquote class="quote step"><p>“If any man’s work shall be burned, he shall suffer loss: but he himself shall be saved; yet so as by fire.”</p><cite>1 Corinthians 3:15</cite></blockquote>
+    <p class="note step">If you fell yesterday, you haven't been put out of the stadium. Paul himself writes later, <em>“forgetting those things which are behind… I press toward the mark.”</em> Get up, and run today's stretch.</p>
+  </div>
+</section>
+
+<!-- ======================= CLOSING ======================= -->
+<section class="slide remember">
+  <div class="inner">
+    <h2 class="rise">Points to remember</h2>
+    <ol class="seeds">
+      <li class="step"><span class="topic">Rights</span><span class="seed-q">“Nevertheless we have not used this power” <cite>9:12</cite></span><span class="take">Paul laid down rights that were really his, so nothing would block the gospel. Love will do that.</span></li>
+      <li class="step"><span class="topic">Paying preachers</span><span class="seed-q">“They which preach the gospel should live of the gospel” <cite>9:14</cite></span><span class="take">Yes. The worker is worth his wages, and a church that supports its pastor does right.</span></li>
+      <li class="step"><span class="topic">Reaching people</span><span class="seed-q">“I am made all things to all men, that I might by all means save some” <cite>9:22</cite></span><span class="take">Meet a man where he is, without going back to where he was.</span></li>
+      <li class="step"><span class="topic">The prize</span><span class="seed-q">“They do it to obtain a corruptible crown; but we an incorruptible” <cite>9:25</cite></span><span class="take">A wreath dies in days. We run for a reward that stays, given to a saved man for faithful service.</span></li>
+      <li class="step"><span class="topic">Discipline</span><span class="seed-q">“I keep under my body, and bring it into subjection” <cite>9:27</cite></span><span class="take">Run with a plan. A man who drifts never runs straight.</span></li>
+      <li class="step"><span class="topic">Castaway</span><span class="seed-q">“Lest… I myself should be a castaway” <cite>9:27</cite></span><span class="take">Disqualified from the prize, not lost again. Get up and run.</span></li>
+    </ol>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 1 of 6</p>
+      <span class="topic">Rights</span>
+      <h2>What rights did Paul have, and why did he lay them down?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="12"></blockquote>
+      <blockquote class="quote step" data-q="18"></blockquote>
+      <blockquote class="quote step"><p>“Wherefore, if meat make my brother to offend, I will eat no flesh while the world standeth, lest I make my brother to offend.”</p><cite>1 Corinthians 8:13</cite></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>He could have been paid, fed, and travelled with his wife. He used none of it, so that nothing would get in the gospel's way and no one could say he was in it for money. A right is something you can give up for love.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 2 of 6</p>
+      <span class="topic">Paying preachers</span>
+      <h2>Should a man who preaches the gospel be supported?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="7"></blockquote>
+      <blockquote class="quote step" data-q="14"></blockquote>
+      <blockquote class="quote step"><p>“Thou shalt not muzzle the ox when he treadeth out the corn.”</p><cite>Deuteronomy 25:4</cite></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>Yes. The law fed the ox that worked, and the Lord ordained that those who preach the gospel live of the gospel. Paul's choice to go without was his own, not a rule for everyone else.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 3 of 6</p>
+      <span class="topic">Reaching people</span>
+      <h2>What does “I am made all things to all men” mean?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="19"></blockquote>
+      <blockquote class="quote step" data-q="21"></blockquote>
+      <blockquote class="quote step" data-q="22"></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>He went to people where they were, with respect for their customs, so that he could win them. He never joined them in sin: he stayed “under the law to Christ.” Meet a man where he is without going back to where he was.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 4 of 6</p>
+      <span class="topic">The prize</span>
+      <h2>What are we running for?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="24"></blockquote>
+      <blockquote class="quote step" data-q="25"></blockquote>
+      <blockquote class="quote step"><p>“I press toward the mark for the prize of the high calling of God in Christ Jesus.”</p><cite>Philippians 3:14</cite></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>An incorruptible crown: a lasting reward from Christ for a saved man's faithful service. A wreath at the Isthmus died in days. This one won't.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 5 of 6</p>
+      <span class="topic">Discipline</span>
+      <h2>Why does Paul “keep under” his body?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="26"></blockquote>
+      <blockquote class="quote step" data-q="27" data-hl="I keep under my body, and bring it into subjection"></blockquote>
+      <blockquote class="quote step"><p>“All things are lawful unto me, but all things are not expedient: all things are lawful for me, but I will not be brought under the power of any.”</p><cite>1 Corinthians 6:12</cite></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>So that he runs on purpose and finishes, and so that no appetite is his master. A man who trains is a man who has decided ahead of time.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 6 of 6</p>
+      <span class="topic">Castaway</span>
+      <h2>What does Paul mean by “castaway”?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="27" data-hl="I myself should be a castaway"></blockquote>
+      <blockquote class="quote step"><p>“And I give unto them eternal life; and they shall never perish, neither shall any man pluck them out of my hand.”</p><cite>John 10:28</cite></blockquote>
+      <blockquote class="quote step"><p>“If any man’s work shall be burned, he shall suffer loss: but he himself shall be saved; yet so as by fire.”</p><cite>1 Corinthians 3:15</cite></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>Disqualified from the prize, like an athlete sent off the field, and not lost again. A believer is safe in Christ's hand, but he can lose his reward and his usefulness. That's reason to stay in the race, not to quit it.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide prayer">
+  <div class="inner">
+    <div class="emblem rise"></div>
+    <h2 class="rise" style="--d:1">Prayer requests</h2>
+    <p class="ask-line rise" style="--d:2">What can we pray about for you today?</p>
+    <blockquote class="quote rise" style="--d:4"><p>“I have fought a good fight, I have finished my course, I have kept the faith:”</p><cite>2 Timothy 4:7</cite></blockquote>
+  </div>
+</section>
+
+</main>
+
+<script>
+// King James Version, 1 Corinthians chapter 9
+const V = {
+  1: "Am I not an apostle? am I not free? have I not seen Jesus Christ our Lord? are not ye my work in the Lord?",
+  2: "If I be not an apostle unto others, yet doubtless I am to you: for the seal of mine apostleship are ye in the Lord.",
+  3: "Mine answer to them that do examine me is this,",
+  4: "Have we not power to eat and to drink?",
+  5: "Have we not power to lead about a sister, a wife, as well as other apostles, and as the brethren of the Lord, and Cephas?",
+  6: "Or I only and Barnabas, have not we power to forbear working?",
+  7: "Who goeth a warfare any time at his own charges? who planteth a vineyard, and eateth not of the fruit thereof? or who feedeth a flock, and eateth not of the milk of the flock?",
+  8: "Say I these things as a man? or saith not the law the same also?",
+  9: "For it is written in the law of Moses, Thou shalt not muzzle the mouth of the ox that treadeth out the corn. Doth God take care for oxen?",
+  10: "Or saith he it altogether for our sakes? For our sakes, no doubt, this is written: that he that ploweth should plow in hope; and that he that thresheth in hope should be partaker of his hope.",
+  11: "If we have sown unto you spiritual things, is it a great thing if we shall reap your carnal things?",
+  12: "If others be partakers of this power over you, are not we rather? Nevertheless we have not used this power; but suffer all things, lest we should hinder the gospel of Christ.",
+  13: "Do ye not know that they which minister about holy things live of the things of the temple? and they which wait at the altar are partakers with the altar?",
+  14: "Even so hath the Lord ordained that they which preach the gospel should live of the gospel.",
+  15: "But I have used none of these things: neither have I written these things, that it should be so done unto me: for it were better for me to die, than that any man should make my glorying void.",
+  16: "For though I preach the gospel, I have nothing to glory of: for necessity is laid upon me; yea, woe is unto me, if I preach not the gospel!",
+  17: "For if I do this thing willingly, I have a reward: but if against my will, a dispensation of the gospel is committed unto me.",
+  18: "What is my reward then? Verily that, when I preach the gospel, I may make the gospel of Christ without charge, that I abuse not my power in the gospel.",
+  19: "For though I be free from all men, yet have I made myself servant unto all, that I might gain the more.",
+  20: "And unto the Jews I became as a Jew, that I might gain the Jews; to them that are under the law, as under the law, that I might gain them that are under the law;",
+  21: "To them that are without law, as without law, (being not without law to God, but under the law to Christ,) that I might gain them that are without law.",
+  22: "To the weak became I as weak, that I might gain the weak: I am made all things to all men, that I might by all means save some.",
+  23: "And this I do for the gospel’s sake, that I might be partaker thereof with you.",
+  24: "Know ye not that they which run in a race run all, but one receiveth the prize? So run, that ye may obtain.",
+  25: "And every man that striveth for the mastery is temperate in all things. Now they do it to obtain a corruptible crown; but we an incorruptible.",
+  26: "I therefore so run, not as uncertainly; so fight I, not as one that beateth the air:",
+  27: "But I keep under my body, and bring it into subjection: lest that by any means, when I have preached to others, I myself should be a castaway."
+};
+const BOOK = "1 Corinthians 9";
+</script>
+<script src="../assets/deck.js"></script>
+</body>
+</html>

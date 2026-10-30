@@ -11911,6 +11911,96 @@ window.STUDIES = [
     }
   },
   {
+    "id": "1-corinthians-09",
+    "type": "chapter",
+    "book": "1 Corinthians",
+    "url": "studies/1-corinthians-09.html",
+    "ch": 9,
+    "date": "2026-10-31",
+    "title": "1 Corinthians 9",
+    "sub": "Rights laid down, a race to run",
+    "about": "Paul has every right to be paid and looked after, and gives them all up so nothing will stand in the gospel's way. Then he runs like a man who means to finish.",
+    "tags": [
+      "Giving up rights",
+      "Paying preachers",
+      "Reaching people",
+      "The prize",
+      "Discipline",
+      "Castaway"
+    ],
+    "overview": {
+      "where": "A letter from Ephesus to the church in Corinth, the Greek port city beside the Isthmian games",
+      "when": "About AD 55",
+      "people": [
+        "paul",
+        "barnabas",
+        "simon-peter",
+        "jesus"
+      ],
+      "places": [
+        "corinth",
+        "isthmian-games"
+      ],
+      "story": [
+        "Paul asks four questions that all have the answer yes: he is an apostle, he is free, he has seen the Lord, and the Corinthian church is his work (1–3).",
+        "He had the right to be fed, to bring a wife, and to stop working for his living, as the other apostles did. A soldier, a farmer and a shepherd all live from their work, and the law says not to muzzle the ox that treads the corn (4–10).",
+        "The Lord ordained that those who preach the gospel should live of the gospel. Yet Paul used none of these rights, so that nothing would hinder the gospel (11–18).",
+        "Free from all men, he made himself a servant to all: to the Jews as a Jew, to those without the law as without the law, to the weak as weak, so that he might by all means save some (19–23).",
+        "Everyone in a race runs, but one wins the prize. Paul runs on purpose, and keeps his body under, so that after preaching to others he himself isn't disqualified (24–27)."
+      ],
+      "key": {
+        "ref": "1 Corinthians 9:27",
+        "text": "But I keep under my body, and bring it into subjection: lest that by any means, when I have preached to others, I myself should be a castaway."
+      },
+      "big": "Love will lay down a right for the sake of the gospel. And a saved man runs on purpose, with a plan, for a reward that lasts, because he can still be disqualified from the prize."
+    }
+  },
+  {
+    "id": "1-corinthians-10",
+    "type": "chapter",
+    "book": "1 Corinthians",
+    "url": "studies/1-corinthians-10.html",
+    "ch": 10,
+    "date": "2026-10-31",
+    "title": "1 Corinthians 10",
+    "sub": "A warning, a way out, and a table",
+    "about": "Israel was saved out of Egypt and still fell in the wilderness. Paul says their story is a mirror for us, and promises that no temptation ever comes without a door out.",
+    "tags": [
+      "Warning",
+      "Temptation",
+      "The way of escape",
+      "Idolatry",
+      "The Lord's Supper",
+      "God's glory"
+    ],
+    "overview": {
+      "where": "A letter from Ephesus to the church in Corinth, looking back to Israel in the wilderness",
+      "when": "About AD 55",
+      "people": [
+        "paul",
+        "moses",
+        "jesus"
+      ],
+      "places": [
+        "corinth",
+        "israel",
+        "wilderness"
+      ],
+      "story": [
+        "Israel's fathers were under the cloud, through the sea, fed with manna and given water from the Rock, who was Christ. Yet most of them fell in the wilderness (1–5).",
+        "Their failures are examples: craving evil things, idolatry, fornication, tempting Christ, and murmuring. They are written for our warning (6–11).",
+        "“Let him that thinketh he standeth take heed lest he fall.” But no temptation is more than common to man, God is faithful, and with every temptation He makes a way to escape (12–13).",
+        "Flee from idolatry. The cup and the bread are a sharing in Christ's blood and body, and you cannot sit at the Lord's table and the table of devils (14–22).",
+        "All things are lawful but not all things help or build up. Eat what is sold in the market, but give up what would trip another man's conscience. Whether you eat or drink or whatsoever you do, do all to the glory of God (23–33)."
+      ],
+      "key": {
+        "ref": "1 Corinthians 10:13",
+        "text": "There hath no temptation taken you but such as is common to man: but God is faithful, who will not suffer you to be tempted above that ye are able; but will with the temptation also make a way to escape, that ye may be able to bear it."
+      },
+      "big": "No temptation is too big or too strange: it's common to man, God is faithful, He limits it, and with it He makes a way out. Flee the old table, take the way out, and live every ordinary hour to God's glory."
+    }
+  },
+  {
     "id": "1-corinthians-11",
     "type": "chapter",
     "book": "1 Corinthians",

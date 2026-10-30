@@ -1,0 +1,744 @@
+<!doctype html>
+<html lang="en" data-theme="night">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>1 Corinthians 10</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="../assets/fonts.css">
+<link rel="stylesheet" href="../assets/deck.css">
+<link rel="stylesheet" href="../assets/themes.css">
+<style>
+/* c110-where: where this chapter sits in the whole letter. The 16 chapters in five groups, the current one lit (.now) */
+.c110-where { display: flex; gap: 6px; margin: .3em 0 1em; }
+.c110-where > div { flex: var(--n) 1 0; min-width: 0; display: flex; flex-direction: column; gap: 4px; }
+.c110-where small { font: 700 clamp(.62rem, .55rem + .3vw, .85rem)/1.15 var(--sans); color: var(--ink-soft); min-height: 2.3em; display: flex; align-items: flex-end; }
+.c110-where p { display: flex; gap: 3px; margin: 0; }
+.c110-where span { flex: 1 1 0; min-width: 0; display: grid; place-items: center; height: clamp(1.6rem, 1.3rem + 1vw, 2.3rem); border-radius: 5px; border: 1.5px solid var(--line-strong); background: var(--surface); font: 600 clamp(.7rem, .6rem + .35vw, .95rem) var(--sans); color: var(--ink-soft); }
+.c110-where > div.on small { color: var(--accent); }
+.c110-where > div.on span { border-color: var(--accent); }
+.c110-where span.now { background: var(--accent); border-color: var(--accent); color: var(--on-accent); box-shadow: 0 0 0 5px color-mix(in srgb, var(--accent) 22%, transparent); }
+.slide.active .c110-where span.now { animation: c110-pulse 2.4s ease-in-out .8s 2; }
+@keyframes c110-pulse { 50% { box-shadow: 0 0 0 10px color-mix(in srgb, var(--accent) 8%, transparent); } }
+
+/* c110-rock: the staff strikes the rock and water pours out (10:4) */
+.c110-ground { stroke: var(--line-strong); stroke-width: 3; stroke-linecap: round; }
+.c110-rock { fill: var(--leather); stroke: var(--leather-light); stroke-width: 3; stroke-linejoin: round; }
+.c110-crack { fill: none; stroke: var(--bg); stroke-width: 4; stroke-linecap: round; stroke-linejoin: round; stroke-dasharray: 1; stroke-dashoffset: 1; transition: stroke-dashoffset .5s ease .7s; }
+.c110-staff { transform-box: view-box; transform-origin: 60px 40px; transform: rotate(-38deg); transition: transform .8s cubic-bezier(.6,0,.9,.5); }
+.c110-staff line { stroke: var(--warm); stroke-width: 9; stroke-linecap: round; }
+.c110-flow { fill: none; stroke: var(--cool); stroke-width: 11; stroke-linecap: round; stroke-dasharray: 1; stroke-dashoffset: 1; transition: stroke-dashoffset 1.6s ease 1s; }
+.c110-pool { fill: color-mix(in srgb, var(--cool) 55%, transparent); transform-box: fill-box; transform-origin: center; transform: scale(0); transition: transform 1.6s ease 1.8s; }
+.c110-name { fill: var(--accent-hot); font-weight: 700; opacity: 0; transition: opacity 1s ease 2s; }
+.c110-thirst { fill: var(--ink-soft); transition: opacity .5s ease; }
+.split:has(.c110-strike.on) .c110-staff { transform: none; }
+.split:has(.c110-strike.on) .c110-crack, .split:has(.c110-strike.on) .c110-flow { stroke-dashoffset: 0; }
+.split:has(.c110-strike.on) .c110-pool { transform: scale(1); }
+.split:has(.c110-strike.on) .c110-name { opacity: 1; }
+.split:has(.c110-strike.on) .c110-thirst { opacity: 0; }
+
+/* c110-camp: a whole camp blessed, then nearly all of that generation fell in the wilderness (10:1-5) */
+.c110-camp { display: grid; grid-template-columns: repeat(12, 1fr); gap: clamp(5px, .7vw, 10px); margin: .5em auto; max-width: 34rem; }
+.c110-camp i { aspect-ratio: 1; border-radius: 50%; background: var(--accent); box-shadow: 0 0 0 3px color-mix(in srgb, var(--accent) 20%, transparent); transition: background .9s ease, opacity .9s ease, transform .9s ease, box-shadow .9s ease; transition-delay: calc(var(--i) * 28ms); }
+.c110-camp i.k { background: var(--accent-hot); }
+.split:has(.c110-fell.on) .c110-camp i:not(.k) { background: var(--line-strong); opacity: .35; transform: scale(.55); box-shadow: none; }
+.c110-campcap { text-align: center; color: var(--ink-soft); font-size: clamp(.8rem, .75rem + .3vw, 1rem); margin: 0 0 .3em; }
+.c110-campcap b { color: var(--accent-hot); }
+
+/* c110-falls: four ways they fell, and what each looks like now (10:7-10) */
+.c110-falls { display: grid; grid-template-columns: repeat(2, 1fr); gap: .7rem; margin: .6em 0; }
+.c110-falls > div { border: 1.5px solid var(--line-strong); border-radius: 12px; background: var(--surface); padding: .7em .95em; }
+.c110-falls h3 { margin: 0 0 .15em; font-size: clamp(1.05rem, .95rem + .5vw, 1.4rem); color: var(--accent); }
+.c110-falls .v { display: block; color: var(--ink-soft); font-size: .78em; font-weight: 600; letter-spacing: .04em; text-transform: uppercase; margin-bottom: .2em; }
+.c110-falls p { margin: 0; font-size: clamp(.9rem, .85rem + .3vw, 1.1rem); line-height: 1.35; }
+.c110-falls .now { margin-top: .35em; padding-top: .35em; border-top: 1px dashed var(--line-strong); color: var(--ink-soft); }
+.c110-falls .now em { color: var(--accent-hot); font-style: normal; font-weight: 700; }
+@media (max-width: 620px) { .c110-falls { grid-template-columns: 1fr; } }
+
+/* c110-edge: a man at ease on the edge of a drop; he takes heed and steps back (10:12) */
+.c110-cliff { fill: var(--leather); stroke: var(--leather-light); stroke-width: 3; stroke-linejoin: round; }
+.c110-chasm { fill: var(--surface-2); }
+.c110-crumb { fill: var(--leather-light); opacity: 0; }
+.slide.active .c110-crumb { animation: c110-fallbit 2.4s ease-in 1.2s infinite; }
+@keyframes c110-fallbit { 0% { opacity: .9; transform: translateY(0); } 100% { opacity: 0; transform: translateY(70px); } }
+.c110-mand { transition: transform 1.2s ease .3s; }
+.c110-mand g { stroke: var(--accent-hot); stroke-width: 9; stroke-linecap: round; fill: none; }
+.c110-mand circle { fill: var(--accent-hot); stroke: none; }
+.c110-boast { fill: var(--ink-soft); transition: opacity .5s ease; }
+.c110-heedt { fill: var(--accent-hot); font-weight: 700; opacity: 0; transition: opacity 1s ease 1s; }
+.split:has(.c110-heed.on) .c110-mand { transform: translateX(-120px); }
+.split:has(.c110-heed.on) .c110-boast { opacity: 0; }
+.split:has(.c110-heed.on) .c110-heedt { opacity: 1; }
+
+/* c110-promises: the four promises packed into 10:13, one per step (a deck.css candidate) */
+.c110-promises { list-style: none; margin: .5em 0; padding: 0; display: grid; gap: .55rem; counter-reset: c110p; }
+.c110-promises li { counter-increment: c110p; display: grid; grid-template-columns: 2.2rem 1fr; align-items: start; column-gap: .8rem; padding: .55em .9em; border: 1.5px solid var(--line-strong); border-radius: 10px; background: var(--surface); }
+.c110-promises li::before { content: counter(c110p); grid-row: 1 / 3; display: grid; place-items: center; width: 2.2rem; height: 2.2rem; border-radius: 50%; background: var(--accent); color: var(--on-accent); font-weight: 800; }
+.c110-promises b { font-size: clamp(1.05rem, .95rem + .5vw, 1.4rem); }
+.c110-promises small { color: var(--ink-soft); font-size: clamp(.85rem, .8rem + .3vw, 1.05rem); line-height: 1.3; }
+.c110-promises li.last { border-color: var(--accent-hot); background: color-mix(in srgb, var(--accent-hot) 12%, var(--surface)); }
+.c110-promises li.last::before { background: var(--accent-hot); }
+
+/* c110-door: a narrowing corridor, and a door in the wall that lights up: the way of escape (10:13) (a deck.css candidate) */
+.c110-back { fill: var(--surface-2); }
+.c110-side { fill: color-mix(in srgb, var(--leather) 70%, var(--bg)); stroke: var(--line-strong); stroke-width: 2; stroke-linejoin: round; }
+.c110-lid { fill: color-mix(in srgb, var(--leather) 40%, var(--bg)); stroke: var(--line-strong); stroke-width: 2; stroke-linejoin: round; }
+.c110-floor { fill: color-mix(in srgb, var(--leather) 55%, var(--bg)); stroke: var(--line-strong); stroke-width: 2; stroke-linejoin: round; }
+.c110-brick { stroke: var(--line); stroke-width: 1.5; fill: none; }
+.c110-light { fill: var(--glow); opacity: .12; transition: opacity 1.2s ease; }
+.c110-spill { fill: var(--glow); opacity: 0; transition: opacity 1.4s ease .3s; }
+.c110-leaf { fill: var(--leather); stroke: var(--leather-light); stroke-width: 2; stroke-linejoin: round; transition: opacity .9s ease; }
+.c110-knob { fill: var(--warm); transition: opacity .9s ease; }
+.c110-push { stroke: var(--danger); stroke-width: 5; stroke-linecap: round; fill: none; opacity: 0; transition: opacity .6s ease; }
+.c110-pusht { fill: var(--danger); font-weight: 700; opacity: 0; transition: opacity .8s ease; }
+.c110-way { fill: var(--accent-hot); font-weight: 700; opacity: 0; transition: opacity 1s ease .8s; }
+.c110-walk { transition: transform 2.4s ease-in-out, opacity .8s ease 2s; }
+.c110-walk g { stroke: var(--accent-hot); stroke-width: 8; stroke-linecap: round; fill: none; }
+.c110-walk circle { fill: var(--accent-hot); stroke: none; }
+.split:has(.c110-sq.on) .c110-push, .split:has(.c110-sq.on) .c110-pusht { opacity: 1; }
+.split:has(.c110-open.on) .c110-light { opacity: .85; }
+.split:has(.c110-open.on) .c110-spill { opacity: .5; }
+.split:has(.c110-open.on) .c110-leaf, .split:has(.c110-open.on) .c110-knob { opacity: 0; }
+.split:has(.c110-open.on) .c110-way { opacity: 1; }
+.split:has(.c110-go.on) .c110-walk { transform: translate(172px, 10px) scale(.8); opacity: 0; }
+.split:has(.c110-go.on) .c110-push, .split:has(.c110-go.on) .c110-pusht { opacity: 0; }
+
+/* c110-flee: a man runs from the idol, farther on each step (10:14) */
+.c110-idol { fill: var(--leather); stroke: var(--leather-light); stroke-width: 3; stroke-linejoin: round; }
+.c110-idoleye { fill: var(--danger); }
+.c110-runner { transition: transform 2s ease-in-out .2s; }
+.c110-runner g { stroke: var(--accent-hot); stroke-width: 9; stroke-linecap: round; fill: none; }
+.c110-runner circle { fill: var(--accent-hot); stroke: none; }
+.c110-prints { fill: none; stroke: var(--line-strong); stroke-width: 4; stroke-linecap: round; stroke-dasharray: 2 14; stroke-dashoffset: 1; opacity: 0; transition: opacity 1s ease .4s; }
+.c110-fleet { fill: var(--accent-hot); font-weight: 800; opacity: 0; transition: opacity 1s ease 1.2s; }
+.c110-idolt { fill: var(--ink-soft); }
+.split:has(.c110-run.on) .c110-runner { transform: translateX(190px); }
+.split:has(.c110-run.on) .c110-prints, .split:has(.c110-run.on) .c110-fleet { opacity: 1; }
+
+/* c110-loaf: one loaf, many men: the bread is shared round the table (10:16-17) */
+.c110-seat { fill: var(--surface-2); stroke: var(--line-strong); stroke-width: 2.5; }
+.c110-seat.me { fill: var(--accent); stroke: var(--accent); }
+.c110-ring { fill: none; stroke: var(--line-strong); stroke-width: 2; stroke-dasharray: 5 7; }
+.c110-loaf { fill: var(--warm); stroke: var(--leather-light); stroke-width: 3; }
+.c110-score { stroke: var(--leather); stroke-width: 3; stroke-linecap: round; fill: none; }
+.c110-cup { fill: color-mix(in srgb, var(--wine) 70%, var(--bg)); stroke: var(--ink-soft); stroke-width: 3; }
+.c110-bit { fill: var(--warm); stroke: var(--leather-light); stroke-width: 2; transition: transform 1.3s ease; }
+.c110-link { fill: none; stroke: var(--accent); stroke-width: 3; opacity: 0; transition: opacity 1.2s ease 1s; }
+.c110-bread { fill: var(--accent-hot); font-weight: 700; opacity: 0; transition: opacity 1s ease 1.2s; }
+.split:has(.c110-share.on) .c110-bit { transform: translate(var(--tx), var(--ty)); }
+.split:has(.c110-share.on) .c110-link, .split:has(.c110-share.on) .c110-bread { opacity: 1; }
+
+/* c110-tables: two tables, and one man who can only sit at one (10:21) (a deck.css candidate) */
+.c110-tab { fill: var(--leather); }
+.c110-leg { stroke: var(--leather-light); stroke-width: 8; stroke-linecap: round; }
+.c110-lord .c110-tab { fill: color-mix(in srgb, var(--accent) 40%, var(--leather)); }
+.c110-dev .c110-tab { fill: color-mix(in srgb, var(--danger) 35%, var(--leather)); }
+.c110-tcap { fill: var(--ink); font-weight: 700; }
+.c110-tsub { fill: var(--ink-soft); }
+.c110-man { fill: var(--accent-hot); }
+.c110-no { stroke: var(--danger); stroke-width: 9; stroke-linecap: round; opacity: 0; transition: opacity .6s ease .2s; }
+.c110-notxt { fill: var(--danger); font-weight: 800; opacity: 0; transition: opacity .8s ease .5s; }
+.c110-cup2 { fill: color-mix(in srgb, var(--danger) 45%, var(--bg)); stroke: var(--ink-soft); stroke-width: 3; }
+.split:has(.c110-xx.on) .c110-no, .split:has(.c110-xx.on) .c110-notxt { opacity: 1; }
+</style>
+</head>
+<body>
+<main class="deck" id="deck">
+
+<!-- ======================= OPENING ======================= -->
+<section class="slide title">
+  <div class="inner">
+    <div class="emblem rise"></div>
+    <h1 class="rise" style="--d:1">1 Corinthians 10</h1>
+    <p class="sub rise" style="--d:3">A warning, a way out, and a table</p>
+    <p class="tag rise" style="--d:5">Israel was saved out of Egypt and still fell in the wilderness. Paul says their story is a mirror for us, and promises that no temptation ever comes without a door out.</p>
+  </div>
+</section>
+
+<section class="slide watch">
+  <div class="inner">
+    <h2 class="rise">Things to watch for</h2>
+    <p class="lede rise" style="--d:1">Keep these questions in the back of your mind as we read. We'll come back to every one of them at the end.</p>
+    <ol class="seeds">
+      <li class="step"><span class="topic">Examples</span><span class="seed-q">Why did God put Israel's failures in the Bible?</span></li>
+      <li class="step"><span class="topic">The Rock</span><span class="seed-q">Who was the Rock in the wilderness?</span></li>
+      <li class="step"><span class="topic">Falling</span><span class="seed-q">What does “let him that thinketh he standeth take heed” mean?</span></li>
+      <li class="step"><span class="topic">Temptation</span><span class="seed-q">What does God promise when I'm tempted?</span></li>
+      <li class="step"><span class="topic">Two tables</span><span class="seed-q">Why can't we sit at the Lord's table and the table of devils?</span></li>
+      <li class="step"><span class="topic">Glory</span><span class="seed-q">How do I live “to the glory of God” on an ordinary day?</span></li>
+    </ol>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise">Where we are in 1 Corinthians</h2>
+    <div class="c110-where rise" style="--d:1" role="img" aria-label="The sixteen chapters of 1 Corinthians in five groups: quarrels, chapters 1 to 4; sin and marriage, 5 to 7; food offered to idols, 8 to 10; worship, 11 to 14; the resurrection and goodbye, 15 and 16. Chapter 10 is lit.">
+      <div style="--n:4"><small>Quarrels in the church</small><p><span>1</span><span>2</span><span>3</span><span>4</span></p></div>
+      <div style="--n:3"><small>Sin and marriage</small><p><span>5</span><span>6</span><span>7</span></p></div>
+      <div class="on" style="--n:3"><small>Food offered to idols</small><p><span>8</span><span>9</span><span class="now">10</span></p></div>
+      <div style="--n:4"><small>Worship together</small><p><span>11</span><span>12</span><span>13</span><span>14</span></p></div>
+      <div style="--n:2"><small>Raised, and goodbye</small><p><span>15</span><span>16</span></p></div>
+    </div>
+    <p class="note rise" style="--d:2">Paul wrote this to the church in Corinth, from Ephesus, about AD 55. Chapters 8 to 10 answer one question: may a believer eat meat that was offered to an idol? Chapter 9 ended with Paul running his race and saying he could be disqualified. Chapter 10 picks that up.</p>
+    <p class="note step">It opens with a warning from Israel's history, gives the best promise about temptation in the Bible, and finishes at two tables: the Lord's, and the idol's.</p>
+  </div>
+</section>
+
+<!-- ======================= PART ONE: A WARNING FROM THE WILDERNESS ======================= -->
+<section class="slide part">
+  <div class="inner">
+    <p class="part-n rise">Part one</p>
+    <h2 class="rise" style="--d:1">Our fathers in the wilderness</h2>
+    <p class="range rise" style="--d:2">Verses 1–13</p>
+    <div class="rule"></div>
+    <p class="hook rise" style="--d:4">They were rescued, fed and guided, and most of them still fell.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="1-4" data-hl="all passed through the sea|that Rock was Christ"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise">All, all, all, all</h2>
+    <p class="note rise" style="--d:1">“Our fathers” are the Israelites Moses led out of Egypt, about 1,400 years before Paul (about 1450 BC). Count how many times Paul says <em>all</em>.</p>
+    <ol class="timeline" aria-label="Five gifts every Israelite shared: the cloud, the sea, the baptism into Moses, the manna, and the water from the rock.">
+      <li class="step" style="--k:0" data-n="1"><b>All</b><span>under the cloud</span><small>God's presence leading them</small></li>
+      <li class="step" style="--k:1" data-n="2"><b>All</b><span>through the sea</span><small>the Red Sea, on dry ground</small></li>
+      <li class="step" style="--k:2" data-n="3"><b>All</b><span>baptized unto Moses</span><small>joined to their leader</small></li>
+      <li class="step" style="--k:3" data-n="4"><b>All</b><span>ate the same food</span><small>manna, from heaven</small></li>
+      <li class="step lit" style="--k:4" data-n="5"><b>All</b><span>drank the same drink</span><small>water from the rock</small></li>
+    </ol>
+    <p class="note step">“Baptized unto Moses” means they were joined to him as their leader, going down into the sea and up the other side. It pictures how a believer's baptism joins him to Christ. But the water didn't save them, and being a part of the crowd didn't keep them: God <em>“was not well pleased”</em> with most of them. Going through the motions of religion has never been the same as walking with God.</p>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="4" data-hl="that Rock was Christ"></blockquote>
+    <div class="split">
+      <div class="stage">
+        <svg viewBox="0 0 400 330" role="img" aria-label="A man's staff strikes a great rock. A crack opens and water pours out and pools on the ground. The words say: that Rock was Christ.">
+          <line class="c110-ground" x1="20" y1="296" x2="380" y2="296"/>
+          <path class="c110-rock" d="M96 296 L104 236 Q108 172 150 136 Q194 100 244 124 Q292 148 298 212 L304 296 Z"/>
+          <path class="c110-crack" pathLength="1" d="M200 108 L190 150 L212 182 L198 226 L206 262"/>
+          <path class="c110-flow" pathLength="1" d="M204 236 C206 262 200 278 196 292"/>
+          <ellipse class="c110-pool" cx="200" cy="296" rx="96" ry="12"/>
+          <g class="c110-staff"><line x1="60" y1="40" x2="164" y2="132"/></g>
+          <text class="c110-thirst" x="200" y="326" text-anchor="middle" font-size="20">dry desert</text>
+          <text class="c110-name" x="200" y="326" text-anchor="middle" font-size="24">that Rock was Christ</text>
+        </svg>
+      </div>
+      <div>
+        <h2 class="rise" style="--d:1">The Rock that followed them</h2>
+        <p class="note rise" style="--d:2">In the desert there was no water, and Moses struck a rock at Horeb and water poured out (Exodus 17). Paul says the supply never left them: it went where they went. And that Rock, Paul says, <em>was Christ</em>.</p>
+        <p class="note step c110-strike">So Christ was there in the wilderness, giving the thirsty a drink they'd never earn. The rock was struck once; Christ was struck once for sin. Now He stands and says <em>“If any man thirst, let him come unto me, and drink”</em> (John 7:37).</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="slide verse" data-v="5-6" data-hl="God was not well pleased|lust after evil things"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <div class="split">
+      <div class="stage">
+        <p class="c110-campcap rise" style="--d:1">One camp. <b>All</b> of them blessed.</p>
+        <div class="c110-camp rise" style="--d:2" role="img" aria-label="A camp of dots, all lit. Then nearly all of them fade, and two stay bright: Joshua and Caleb."><i style="--i:0"></i><i style="--i:1"></i><i style="--i:2"></i><i style="--i:3"></i><i style="--i:4"></i><i style="--i:5"></i><i style="--i:6"></i><i style="--i:7"></i><i style="--i:8"></i><i style="--i:9"></i><i style="--i:10"></i><i style="--i:11"></i><i style="--i:12"></i><i style="--i:13"></i><i class="k" style="--i:14"></i><i style="--i:15"></i><i style="--i:16"></i><i style="--i:17"></i><i style="--i:18"></i><i style="--i:19"></i><i style="--i:20"></i><i style="--i:21"></i><i style="--i:22"></i><i style="--i:23"></i><i style="--i:24"></i><i style="--i:25"></i><i style="--i:26"></i><i style="--i:27"></i><i style="--i:28"></i><i style="--i:29"></i><i style="--i:30"></i><i style="--i:31"></i><i style="--i:32"></i><i style="--i:33"></i><i style="--i:34"></i><i style="--i:35"></i><i style="--i:36"></i><i style="--i:37"></i><i style="--i:38"></i><i style="--i:39"></i><i style="--i:40"></i><i class="k" style="--i:41"></i><i style="--i:42"></i><i style="--i:43"></i><i style="--i:44"></i><i style="--i:45"></i><i style="--i:46"></i><i style="--i:47"></i><i style="--i:48"></i><i style="--i:49"></i><i style="--i:50"></i><i style="--i:51"></i><i style="--i:52"></i><i style="--i:53"></i><i style="--i:54"></i><i style="--i:55"></i><i style="--i:56"></i><i style="--i:57"></i><i style="--i:58"></i><i style="--i:59"></i></div>
+      </div>
+      <div>
+        <h2 class="rise" style="--d:1">Overthrown in the wilderness</h2>
+        <p class="note rise" style="--d:2">God had freed them from slavery. Yet they kept longing for Egypt's food and refused to trust Him at the edge of the promised land. So that whole generation died in the desert, short of the land, all but two.</p>
+        <p class="note step c110-fell">“Doubtless ye shall not come into the land… save Caleb the son of Jephunneh, and Joshua the son of Nun.” <span style="color:var(--ink-soft)">(Numbers 14:30)</span></p>
+        <p class="note step"><em>“Lust”</em> means a strong craving. They were free, and the old life still looked better from the desert.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise">What this does and doesn't mean</h2>
+    <div class="columns">
+      <div class="col law rise" style="--d:1">
+        <p class="who">It doesn't mean</p>
+        <h3>a saved man is un-saved</h3>
+        <p>They were already out of Egypt, delivered by blood on the doorposts. What they lost in the wilderness was the land, the rest, and years of their lives. Jesus says of His own, <em>“they shall never perish”</em> (John 10:28).</p>
+      </div>
+      <div class="col grace step">
+        <p class="who">It does mean</p>
+        <h3>sin costs a believer plenty</h3>
+        <p>The Father disciplines the sons He loves. It can cost health, years, family, a clear conscience, and usefulness. Not His love, and not your place in His family.</p>
+      </div>
+    </div>
+    <blockquote class="quote step"><p>“But when we are judged, we are chastened of the Lord, that we should not be condemned with the world.”</p><cite>1 Corinthians 11:32</cite></blockquote>
+    <p class="note step">If you've fallen, take this as the opposite of a death sentence: a Father who corrects you is a Father who still owns you.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="7-10" data-hl="Neither be ye idolaters|Neither murmur ye"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise">Four ways they fell</h2>
+    <div class="c110-falls">
+      <div class="step"><span class="v">Verse 7 · the golden calf</span><h3>Idolatry</h3><p>They made an idol, feasted before it, and “rose up to play” (Exodus 32:6).</p><p class="now"><em>Today:</em> whatever you run to for comfort in place of God.</p></div>
+      <div class="step"><span class="v">Verse 8 · Baal-peor</span><h3>Fornication</h3><p>Israel's men were drawn into sex and idol feasts with Moab's women. 23,000 fell in a day.</p><p class="now"><em>Today:</em> sex outside marriage, and everything that leads to it.</p></div>
+      <div class="step"><span class="v">Verse 9 · the serpents</span><h3>Tempting Christ</h3><p>They tested God's patience and complained He hadn't done enough. Snakes came.</p><p class="now"><em>Today:</em> seeing how close to the edge you can stand.</p></div>
+      <div class="step"><span class="v">Verse 10 · Korah's rebellion</span><h3>Murmuring</h3><p>Constant grumbling against God and the men He put over them. “The destroyer” came.</p><p class="now"><em>Today:</em> bitter talk that poisons the room.</p></div>
+    </div>
+    <p class="note step">Paul's “23,000” counts those who fell in one day; Numbers 25:9 gives 24,000 for the whole plague. Careful readers have long known they describe the same event in two ways.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="11-13" data-hl="let him that thinketh he standeth take heed lest he fall|make a way to escape"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="12" data-hl="let him that thinketh he standeth take heed lest he fall"></blockquote>
+    <div class="split">
+      <div class="stage">
+        <svg viewBox="0 0 400 300" role="img" aria-label="A man stands calmly at the edge of a cliff, thinking 'I've got this'. The ground crumbles. He takes heed and steps back from the edge.">
+          <rect class="c110-chasm" x="228" y="150" width="172" height="150"/>
+          <path class="c110-cliff" d="M0 150 L222 150 Q232 150 232 164 L228 220 L216 232 L222 300 L0 300 Z"/>
+          <circle class="c110-crumb" cx="226" cy="156" r="5" style="animation-delay:1.2s"/>
+          <circle class="c110-crumb" cx="219" cy="164" r="4" style="animation-delay:2s"/>
+          <circle class="c110-crumb" cx="231" cy="172" r="3.5" style="animation-delay:2.9s"/>
+          <g class="c110-mand">
+            <g>
+              <circle cx="196" cy="60" r="16"/>
+              <path d="M196 80 L196 124 M196 124 L184 148 M196 124 L208 148 M196 92 L180 114 M196 92 L212 112"/>
+            </g>
+          </g>
+          <text class="c110-boast" x="140" y="34" text-anchor="middle" font-size="20">“I've got this.”</text>
+          <text class="c110-heedt" x="170" y="34" text-anchor="middle" font-size="20">take heed</text>
+        </svg>
+      </div>
+      <div>
+        <h2 class="rise" style="--d:1">Take heed</h2>
+        <p class="note rise" style="--d:2">Verse 11: these things are written <em>“for our admonition”</em>, as warnings. They're not there to shame anybody. They show us where other people went wrong, so we don't have to learn it the hard way.</p>
+        <p class="note step c110-heed">Then the sharp one: the man most in danger is the man who is sure he can't fall. <em>“Take heed”</em> means <em>watch out</em>: step back from the edge while you still can. Knowing you could fall is the first defense you have.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise">Four promises in one verse</h2>
+    <blockquote class="quote rise" style="--d:1" data-q="13"></blockquote>
+    <ol class="c110-promises">
+      <li class="step"><div><b>It's common to man</b><br><small>You aren't the only one, and you aren't the first. Other men have faced exactly this and come through.</small></div></li>
+      <li class="step"><div><b>God is faithful</b><br><small>He stays on your side, even on the day you were not on His.</small></div></li>
+      <li class="step"><div><b>Never above what you're able</b><br><small>He sets the limit on the pressure.</small></div></li>
+      <li class="step last"><div><b>A way to escape, with it</b><br><small>The way out comes <em>with</em> the temptation, at the same time, not afterward.</small></div></li>
+    </ol>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <div class="split">
+      <div class="stage">
+        <svg viewBox="0 0 400 340" role="img" aria-label="A man stands in a narrow corridor with the walls pressing in. A door in the right-hand wall lights up and swings open. He walks through it.">
+          <polygon class="c110-lid" points="0,0 400,0 280,70 120,70"/>
+          <rect class="c110-back" x="120" y="70" width="160" height="220"/>
+          <path class="c110-brick" d="M120 108 H280 M120 146 H280 M120 184 H280 M120 222 H280 M120 260 H280 M160 70 V108 M240 108 V146 M180 146 V184 M220 184 V222 M160 222 V260 M250 260 V290"/>
+          <polygon class="c110-side" points="0,0 120,70 120,290 0,340"/>
+          <polygon class="c110-side" points="400,0 280,70 280,290 400,340"/>
+          <polygon class="c110-floor" points="0,340 120,290 280,290 400,340"/>
+          <polygon class="c110-light" points="320,124.7 370,110.5 370,327.5 320,306.7"/>
+          <polygon class="c110-spill" points="320,306.7 370,327.5 292,338 270,300"/>
+          <polygon class="c110-leaf" points="320,124.7 370,110.5 370,327.5 320,306.7"/>
+          <circle class="c110-knob" cx="332" cy="224" r="3.4"/>
+          <g class="c110-walk">
+            <g>
+              <circle cx="164" cy="226" r="12"/>
+              <path d="M164 242 L164 278 M164 278 L154 302 M164 278 L174 302 M164 252 L151 270 M164 252 L177 268"/>
+            </g>
+          </g>
+          <path class="c110-push" d="M16 150 L78 150 M64 138 L78 150 L64 162 M384 150 L322 150 M336 138 L322 150 L336 162"/>
+          <text class="c110-pusht" x="200" y="28" text-anchor="middle" font-size="19">the walls close in</text>
+          <text class="c110-way" x="335" y="98" text-anchor="middle" font-size="15">a way to escape</text>
+        </svg>
+      </div>
+      <div>
+        <h2 class="rise" style="--d:1">A door in the wall</h2>
+        <p class="note rise" style="--d:2">God doesn't promise there'll be no walls. He promises there's a door in them. The Greek word is <span class="gk">ekbasis</span>: a way out, like a pass through a mountain.</p>
+        <p class="note step c110-sq">The temptation is real. At that moment, it feels like the walls are shutting in and there's only one thing left to do.</p>
+        <p class="note step c110-open">It isn't true. God has already put a door in that wall. <em>“Faithful is he.”</em> He doesn't just say it exists; the Spirit lives in you now and will show it to you.</p>
+        <p class="note step c110-go">Your part is to walk through it. Pick up the phone. Leave the room. Walk out of the place. Tell somebody. <em>Do one thing today:</em> write down your door ahead of time, the name you'll call and where you'll go, while the walls are still far off.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="13" data-hl="make a way to escape"></blockquote>
+    <h2 class="rise" style="--d:1">He knows what it is to be tempted</h2>
+    <blockquote class="quote step"><p>“For in that he himself hath suffered being tempted, he is able to succour them that are tempted.”</p><cite>Hebrews 2:18</cite></blockquote>
+    <p class="note step">“Succour” means <em>run to help</em>. Jesus was tempted in every way, and didn't give in. He isn't looking down from a distance. He knows exactly how heavy it is.</p>
+    <p class="note step">And if you've already gone through the wall the wrong way, again, the door hasn't been bricked up. It's open this morning, and so is He. Confess it, and take the next step through it.</p>
+  </div>
+</section>
+
+<!-- ======================= PART TWO: FLEE, AND THE TABLE ======================= -->
+<section class="slide part">
+  <div class="inner">
+    <p class="part-n rise">Part two</p>
+    <h2 class="rise" style="--d:1">Flee, and the table</h2>
+    <p class="range rise" style="--d:2">Verses 14–22</p>
+    <div class="rule"></div>
+    <p class="hook rise" style="--d:4">Some things you stand and fight. This one you run from.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="14-17" data-hl="flee from idolatry|we being many are one bread"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <div class="split">
+      <div class="stage">
+        <svg viewBox="0 0 400 300" role="img" aria-label="A stone idol on the left. A man runs away from it to the right, leaving footprints, and the word Flee.">
+          <line class="c110-ground" x1="20" y1="262" x2="380" y2="262"/>
+          <path class="c110-prints" d="M80 252 C150 258 220 256 330 252"/>
+          <rect class="c110-idol" x="26" y="130" width="70" height="132" rx="10"/>
+          <circle class="c110-idol" cx="61" cy="106" r="28"/>
+          <circle class="c110-idoleye" cx="51" cy="102" r="4"/><circle class="c110-idoleye" cx="71" cy="102" r="4"/>
+          <path d="M49 122 L73 122" fill="none" style="stroke:var(--line-strong);stroke-width:3;stroke-linecap:round"/>
+          <text class="c110-idolt" x="61" y="288" text-anchor="middle" font-size="16">the idol</text>
+          <g class="c110-runner">
+            <g>
+              <circle cx="130" cy="150" r="15"/>
+              <path d="M130 170 L124 214 M124 214 L102 250 M124 214 L146 244 M128 182 L104 196 M128 182 L152 170"/>
+            </g>
+          </g>
+          <text class="c110-fleet" x="260" y="90" text-anchor="middle" font-size="42">Flee</text>
+        </svg>
+      </div>
+      <div>
+        <h2 class="rise" style="--d:1">Flee from idolatry</h2>
+        <p class="note rise" style="--d:2">An idol is whatever you serve in the place of God, the thing you go to for comfort, courage or escape. In Corinth it was a stone god at a feast. For us it might be a bottle, a woman, money or a screen.</p>
+        <p class="note step c110-run">Notice the word. Not <em>resist</em>, not <em>reason with</em>. <em>Flee.</em> When Potiphar's wife grabbed Joseph, <em>“he left his garment in her hand, and fled”</em> (Genesis 39:12). He lost the coat and kept his life. And to Timothy: <em>“Flee also youthful lusts”</em> (2 Timothy 2:22).</p>
+        <p class="note step">Running isn't weakness. Everyone who gets free has to learn it: some things you don't fight, you leave.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <div class="split">
+      <div class="stage">
+        <svg viewBox="0 -14 400 392" role="img" aria-label="Eight men sit around a table with one loaf and one cup in the middle. The loaf breaks and a piece goes to each man, and the ring tightens: one bread, one body.">
+          <circle class="c110-ring" cx="200" cy="170" r="128"/>
+          <circle class="c110-link" cx="200" cy="170" r="128"/>
+          <circle class="c110-seat" cx="200.0" cy="42.0" r="20"/><circle class="c110-seat" cx="290.5" cy="79.5" r="20"/><circle class="c110-seat" cx="328.0" cy="170.0" r="20"/><circle class="c110-seat" cx="290.5" cy="260.5" r="20"/><circle class="c110-seat me" cx="200.0" cy="298.0" r="20"/><circle class="c110-seat" cx="109.5" cy="260.5" r="20"/><circle class="c110-seat" cx="72.0" cy="170.0" r="20"/><circle class="c110-seat" cx="109.5" cy="79.5" r="20"/>
+          <ellipse class="c110-loaf" cx="200" cy="172" rx="48" ry="26"/>
+          <path class="c110-score" d="M176 164 L184 180 M200 160 L204 184 M222 164 L216 182"/>
+          <ellipse class="c110-bit" cx="200" cy="172" rx="9" ry="6" style="--tx:0px;--ty:-98px"/><ellipse class="c110-bit" cx="200" cy="172" rx="9" ry="6" style="--tx:69px;--ty:-69px"/><ellipse class="c110-bit" cx="200" cy="172" rx="9" ry="6" style="--tx:98px;--ty:0px"/><ellipse class="c110-bit" cx="200" cy="172" rx="9" ry="6" style="--tx:69px;--ty:69px"/><ellipse class="c110-bit" cx="200" cy="172" rx="9" ry="6" style="--tx:0px;--ty:98px"/><ellipse class="c110-bit" cx="200" cy="172" rx="9" ry="6" style="--tx:-69px;--ty:69px"/><ellipse class="c110-bit" cx="200" cy="172" rx="9" ry="6" style="--tx:-98px;--ty:0px"/><ellipse class="c110-bit" cx="200" cy="172" rx="9" ry="6" style="--tx:-69px;--ty:-69px"/>
+          <path class="c110-cup" d="M254 144 L282 144 L278 176 Q268 184 258 176 Z"/>
+          <text class="c110-bread" x="200" y="370" text-anchor="middle" font-size="22">one bread, one body</text>
+        </svg>
+      </div>
+      <div>
+        <h2 class="rise" style="--d:1">The cup and the bread</h2>
+        <p class="note rise" style="--d:2">In verse 16 Paul calls the Lord's Supper a <em>communion</em>. The Greek is <span class="gk">koinōnia</span>: sharing together, fellowship. It's a reminder, not a magic act: the bread and cup stay bread and cup, and don't save anyone.</p>
+        <blockquote class="quote step"><p>“And when he had given thanks, he brake it, and said, Take, eat: this is my body, which is broken for you: this do in remembrance of me.”</p><cite>1 Corinthians 11:24</cite></blockquote>
+        <p class="note step c110-share">So it does two things: it <em>remembers</em> what Christ did for you, and it joins you to everyone else at the table. One loaf, many men: <em>“we being many are one bread.”</em> A man with nobody around him needs this table.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="slide verse" data-v="18-22" data-hl="the cup of the Lord, and the cup of devils|are we stronger than he?"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <div class="split">
+      <div class="stage">
+        <svg viewBox="0 0 400 320" role="img" aria-label="Two tables. On the left, the Lord's table, with a loaf and a cup. On the right, a table of devils, with a cup and a small idol. A man stands between, and a red cross says he cannot sit at both.">
+          <g class="c110-lord">
+            <rect class="c110-tab" x="14" y="190" width="150" height="14" rx="5"/>
+            <line class="c110-leg" x1="26" y1="204" x2="26" y2="262"/><line class="c110-leg" x1="152" y1="204" x2="152" y2="262"/>
+            <ellipse class="c110-loaf" cx="60" cy="182" rx="26" ry="10"/>
+            <path class="c110-cup" d="M104 158 L128 158 L125 184 Q116 190 107 184 Z"/>
+            <text class="c110-tcap" x="89" y="296" text-anchor="middle" font-size="17">the Lord's table</text>
+          </g>
+          <g class="c110-dev">
+            <rect class="c110-tab" x="236" y="190" width="150" height="14" rx="5"/>
+            <line class="c110-leg" x1="248" y1="204" x2="248" y2="262"/><line class="c110-leg" x1="374" y1="204" x2="374" y2="262"/>
+            <path class="c110-cup2" d="M262 158 L286 158 L283 184 Q274 190 265 184 Z"/>
+            <path class="c110-idol" d="M330 186 L330 150 Q330 126 345 126 Q360 126 360 150 L360 186 Z"/>
+            <text class="c110-tcap" x="311" y="296" text-anchor="middle" font-size="17">the table of devils</text>
+          </g>
+          <circle class="c110-man" cx="200" cy="110" r="18"/>
+          <path class="c110-man" d="M170 190 Q170 134 200 134 Q230 134 230 190 Z"/>
+          <path class="c110-no" d="M166 108 L234 196 M234 108 L166 196"/>
+          <text class="c110-notxt" x="200" y="70" text-anchor="middle" font-size="22">not both</text>
+        </svg>
+      </div>
+      <div>
+        <h2 class="rise" style="--d:1">Two tables</h2>
+        <p class="note rise" style="--d:2">Eating the sacrifice made Israel partners with the altar (verse 18). It's the same here. An idol is nothing (8:4), but Paul says the powers behind it are real: <em>“they sacrifice to devils”</em>, meaning demons. A believer who joined the feast was sitting at their table.</p>
+        <p class="note step c110-xx"><em>“Ye cannot drink the cup of the Lord, and the cup of devils.”</em> You can't be at both. If you've spent years at the other table, with the old crowd and the old routine, hear it plainly: you can't keep a seat there and be fed here.</p>
+        <p class="note step">Verse 22 asks, <em>“are we stronger than he?”</em> If we make Him jealous, we'll lose. But He holds you, and He'll set you a place at the better table.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ======================= PART THREE: ALL TO THE GLORY OF GOD ======================= -->
+<section class="slide part">
+  <div class="inner">
+    <p class="part-n rise">Part three</p>
+    <h2 class="rise" style="--d:1">To the glory of God</h2>
+    <p class="range rise" style="--d:2">Verses 23–33</p>
+    <div class="rule"></div>
+    <p class="hook rise" style="--d:4">What about the meat itself, and the dinner invitations? Paul sorts it out, and lands on a verse for every day.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="23-26" data-hl="all things are not expedient|Let no man seek his own"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise">Three questions before I do it</h2>
+    <ol class="stairs" style="--n:3" aria-label="Three tests: is it lawful, is it helpful, does it build up.">
+      <li class="step" style="--k:0"><b>“All things are lawful for me”</b></li>
+      <li class="step" style="--k:1"><b>“but all things are not expedient”</b></li>
+      <li class="step" style="--k:2"><b>“all things edify not”</b></li>
+    </ol>
+    <p class="note rise" style="--d:2"><em>Lawful</em> means I'm allowed. <em>Expedient</em> means it actually helps. <em>Edify</em> means it builds someone up. Paul said much the same in 6:12.</p>
+    <p class="note step">This isn't a license. A man in recovery can say “nobody can stop me” about a hundred things and still be walking back under their power. Ask the second and third questions too: <em>does it help me, and does it build up the people around me?</em></p>
+    <p class="note step"><em>“Let no man seek his own, but every man another's wealth”</em>: “wealth” here means <em>good</em>. Look out for the next man as well as yourself.</p>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" style="--d:1"><p>“The earth is the LORD’S, and the fulness thereof; the world, and they that dwell therein.”</p><cite>Psalm 24:1</cite></blockquote>
+    <h2 class="rise" style="--d:2">Meat from the market</h2>
+    <p class="note rise" style="--d:3">The <em>shambles</em> was the meat market. A lot of its meat had come from temple sacrifices and was sold on. Paul says: buy it, eat it, and don't quiz the butcher. The food itself is the Lord's, as Psalm 24 says, and it can't be spoiled by an idol that's nothing.</p>
+    <p class="note step">The line is between <em>eating a steak</em> and <em>sitting at an idol's feast</em> (verses 14–22). A feast is worship. A shop is only food.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="27-30" data-hl="eat not for his sake that shewed it|if I by grace be a partaker"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise">An invitation to dinner</h2>
+    <div class="ifthen rise" style="--d:1">
+      <div class="if"><small>If an unbeliever invites you</small>and you want to go,</div>
+      <span class="arrow" aria-hidden="true">→</span>
+      <div class="then"><small>then</small>eat what's set before you. Ask nothing.</div>
+    </div>
+    <div class="ifthen step">
+      <div class="if"><small>But if someone says</small>“This was offered to idols,”</div>
+      <span class="arrow" aria-hidden="true">→</span>
+      <div class="then"><small>then</small>don't eat it: for his sake.</div>
+    </div>
+    <p class="note step">The one who spoke up has a tender conscience, and your plate isn't worth tripping him over. Verses 29 and 30 raise the obvious complaint: why should another man's conscience limit my liberty? Paul's answer is in the next verses. He isn't trying to win the argument. He's aiming at God's glory and other people's good.</p>
+    <p class="note step">Paul is talking about idol meat, but the principle carries over. A man in recovery can ask the same about any invitation: <em>will this table pull me back or push someone else back?</em> You don't owe anyone an apology for saying no.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="31-33" data-hl="do all to the glory of God|Give none offence"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="31" data-hl="do all to the glory of God"></blockquote>
+    <h2 class="rise" style="--d:1">An ordinary day</h2>
+    <ol class="timeline" aria-label="An ordinary working day: waking, breakfast, work, lunch, evening, bed. Each is done to the glory of God.">
+      <li class="step" style="--k:0" data-n="1"><b>Wake up</b><span>another day given</span></li>
+      <li class="step" style="--k:1" data-n="2"><b>Eat</b><span>“whether ye eat”</span></li>
+      <li class="step" style="--k:2" data-n="3"><b>Work</b><span>“whatsoever ye do”</span></li>
+      <li class="step" style="--k:3" data-n="4"><b>Drink</b><span>“or drink”: water, coffee, thanks</span></li>
+      <li class="step" style="--k:4" data-n="5"><b>Evening</b><span>home, family, the phone call</span></li>
+      <li class="step lit" style="--k:5" data-n="6"><b>Bed</b><span>honest before God</span></li>
+    </ol>
+    <p class="note step">Glory isn't only for church. A man does his job honestly, shows up on time, tells the truth, and doesn't take the drink he'd have taken last year. That's all done <em>“to the glory of God.”</em></p>
+    <p class="note step">Verses 32 and 33 add the aim. <em>“Give none offence”</em>, neither to the Jews, nor to the Gentiles, nor to the church. The same pattern as chapter 9: a life lived so that others <em>“may be saved.”</em></p>
+  </div>
+</section>
+
+<!-- ======================= CLOSING ======================= -->
+<section class="slide remember">
+  <div class="inner">
+    <h2 class="rise">Points to remember</h2>
+    <ol class="seeds">
+      <li class="step"><span class="topic">Examples</span><span class="seed-q">“These things were our examples” <cite>10:6</cite></span><span class="take">Their failures are warnings, not shame. Learn from them so you don't have to learn the hard way.</span></li>
+      <li class="step"><span class="topic">The Rock</span><span class="seed-q">“That Rock was Christ” <cite>10:4</cite></span><span class="take">Christ was with them in the wilderness, giving water they'd never earn. He gives it to you too.</span></li>
+      <li class="step"><span class="topic">Falling</span><span class="seed-q">“Let him that thinketh he standeth take heed lest he fall” <cite>10:12</cite></span><span class="take">The man who is sure he can't fall is the man in danger. Step back from the edge.</span></li>
+      <li class="step"><span class="topic">Temptation</span><span class="seed-q">“God is faithful… will with the temptation also make a way to escape” <cite>10:13</cite></span><span class="take">It's common, it's limited, and there's always a door. Write down yours today.</span></li>
+      <li class="step"><span class="topic">Two tables</span><span class="seed-q">“Ye cannot drink the cup of the Lord, and the cup of devils” <cite>10:21</cite></span><span class="take">Flee the old table. The Lord's table is a memorial, and a fellowship with Him and His people.</span></li>
+      <li class="step"><span class="topic">Glory</span><span class="seed-q">“Whether therefore ye eat, or drink, or whatsoever ye do, do all to the glory of God” <cite>10:31</cite></span><span class="take">Every ordinary hour of today can be worship.</span></li>
+    </ol>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 1 of 6</p>
+      <span class="topic">Examples</span>
+      <h2>Why did God put Israel's failures in the Bible?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="5"></blockquote>
+      <blockquote class="quote step" data-q="6"></blockquote>
+      <blockquote class="quote step" data-q="11"></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>As examples and warnings for us. Israel was rescued, fed and guided, and still fell into craving, idols, sex, testing God and complaining. Their story shows where those roads lead, so we can turn off them early.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 2 of 6</p>
+      <span class="topic">The Rock</span>
+      <h2>Who was the Rock in the wilderness?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="4"></blockquote>
+      <blockquote class="quote step"><p>“Behold, I will stand before thee there upon the rock in Horeb; and thou shalt smite the rock, and there shall come water out of it, that the people may drink.”</p><cite>Exodus 17:6</cite></blockquote>
+      <blockquote class="quote step"><p>“In the last day, that great day of the feast, Jesus stood and cried, saying, If any man thirst, let him come unto me, and drink.”</p><cite>John 7:37</cite></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>Christ. Paul says the spiritual Rock that gave Israel water in the desert was Christ Himself. He was there, supplying them, and He still says to the thirsty, “Let him come unto me, and drink.”</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 3 of 6</p>
+      <span class="topic">Falling</span>
+      <h2>What does “let him that thinketh he standeth take heed” mean?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="12" data-hl="let him that thinketh he standeth take heed lest he fall"></blockquote>
+      <blockquote class="quote step"><p>“For whom the Lord loveth he chasteneth, and scourgeth every son whom he receiveth.”</p><cite>Hebrews 12:6</cite></blockquote>
+      <blockquote class="quote step"><p>“But when we are judged, we are chastened of the Lord, that we should not be condemned with the world.”</p><cite>1 Corinthians 11:32</cite></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>The man most in danger is the one who is sure he is safe. “Take heed” means watch out and step back from the edge. A believer who falls isn't thrown out of the family; he's disciplined by a Father who loves him, but the fall is still costly.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 4 of 6</p>
+      <span class="topic">Temptation</span>
+      <h2>What does God promise when I'm tempted?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="13"></blockquote>
+      <blockquote class="quote step"><p>“For in that he himself hath suffered being tempted, he is able to succour them that are tempted.”</p><cite>Hebrews 2:18</cite></blockquote>
+      <blockquote class="quote step"><p>“And she caught him by his garment, saying, Lie with me: and he left his garment in her hand, and fled, and got him out.”</p><cite>Genesis 39:12</cite></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>Four things: it's common to man, God is faithful, He won't let it go beyond what you can bear, and with the temptation He makes a way to escape. Jesus was tempted too, and He runs to help. Your part is to take the way out, like Joseph, who ran.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 5 of 6</p>
+      <span class="topic">Two tables</span>
+      <h2>Why can't we sit at the Lord's table and the table of devils?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="14"></blockquote>
+      <blockquote class="quote step" data-q="17"></blockquote>
+      <blockquote class="quote step" data-q="21"></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>Because each table is a fellowship, and the powers behind idols are real. The Lord's Supper remembers Christ and joins His people together; it can't be mixed with a seat at the old table. So flee idolatry and the places and company that go with it.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 6 of 6</p>
+      <span class="topic">Glory</span>
+      <h2>How do I live “to the glory of God” on an ordinary day?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="31"></blockquote>
+      <blockquote class="quote step" data-q="32"></blockquote>
+      <blockquote class="quote step" data-q="33"></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>Whether you eat, or drink, or whatever you do: in honest work, plain truth, and in doing right by the people around you. Every ordinary hour can be worship, aimed at helping others be saved.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide prayer">
+  <div class="inner">
+    <div class="emblem rise"></div>
+    <h2 class="rise" style="--d:1">Prayer requests</h2>
+    <p class="ask-line rise" style="--d:2">What can we pray about for you today?</p>
+    <blockquote class="quote rise" style="--d:4"><p>“For in that he himself hath suffered being tempted, he is able to succour them that are tempted.”</p><cite>Hebrews 2:18</cite></blockquote>
+  </div>
+</section>
+
+</main>
+
+<script>
+// King James Version, 1 Corinthians chapter 10
+const V = {
+  1: "Moreover, brethren, I would not that ye should be ignorant, how that all our fathers were under the cloud, and all passed through the sea;",
+  2: "And were all baptized unto Moses in the cloud and in the sea;",
+  3: "And did all eat the same spiritual meat;",
+  4: "And did all drink the same spiritual drink: for they drank of that spiritual Rock that followed them: and that Rock was Christ.",
+  5: "But with many of them God was not well pleased: for they were overthrown in the wilderness.",
+  6: "Now these things were our examples, to the intent we should not lust after evil things, as they also lusted.",
+  7: "Neither be ye idolaters, as were some of them; as it is written, The people sat down to eat and drink, and rose up to play.",
+  8: "Neither let us commit fornication, as some of them committed, and fell in one day three and twenty thousand.",
+  9: "Neither let us tempt Christ, as some of them also tempted, and were destroyed of serpents.",
+  10: "Neither murmur ye, as some of them also murmured, and were destroyed of the destroyer.",
+  11: "Now all these things happened unto them for ensamples: and they are written for our admonition, upon whom the ends of the world are come.",
+  12: "Wherefore let him that thinketh he standeth take heed lest he fall.",
+  13: "There hath no temptation taken you but such as is common to man: but God is faithful, who will not suffer you to be tempted above that ye are able; but will with the temptation also make a way to escape, that ye may be able to bear it.",
+  14: "Wherefore, my dearly beloved, flee from idolatry.",
+  15: "I speak as to wise men; judge ye what I say.",
+  16: "The cup of blessing which we bless, is it not the communion of the blood of Christ? The bread which we break, is it not the communion of the body of Christ?",
+  17: "For we being many are one bread, and one body: for we are all partakers of that one bread.",
+  18: "Behold Israel after the flesh: are not they which eat of the sacrifices partakers of the altar?",
+  19: "What say I then? that the idol is any thing, or that which is offered in sacrifice to idols is any thing?",
+  20: "But I say, that the things which the Gentiles sacrifice, they sacrifice to devils, and not to God: and I would not that ye should have fellowship with devils.",
+  21: "Ye cannot drink the cup of the Lord, and the cup of devils: ye cannot be partakers of the Lord’s table, and of the table of devils.",
+  22: "Do we provoke the Lord to jealousy? are we stronger than he?",
+  23: "All things are lawful for me, but all things are not expedient: all things are lawful for me, but all things edify not.",
+  24: "Let no man seek his own, but every man another’s wealth.",
+  25: "Whatsoever is sold in the shambles, that eat, asking no question for conscience sake:",
+  26: "For the earth is the Lord’s, and the fulness thereof.",
+  27: "If any of them that believe not bid you to a feast, and ye be disposed to go; whatsoever is set before you, eat, asking no question for conscience sake.",
+  28: "But if any man say unto you, This is offered in sacrifice unto idols, eat not for his sake that shewed it, and for conscience sake: for the earth is the Lord’s, and the fulness thereof:",
+  29: "Conscience, I say, not thine own, but of the other: for why is my liberty judged of another man’s conscience?",
+  30: "For if I by grace be a partaker, why am I evil spoken of for that for which I give thanks?",
+  31: "Whether therefore ye eat, or drink, or whatsoever ye do, do all to the glory of God.",
+  32: "Give none offence, neither to the Jews, nor to the Gentiles, nor to the church of God:",
+  33: "Even as I please all men in all things, not seeking mine own profit, but the profit of many, that they may be saved."
+};
+const BOOK = "1 Corinthians 10";
+</script>
+<script src="../assets/deck.js"></script>
+</body>
+</html>
