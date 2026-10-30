@@ -8564,5 +8564,110 @@ window.STUDIES = [
       },
       "big": "Money is a tool, not a master. Use it now for what lasts, be faithful in little things, and serve God alone. Death fixes a man's place forever, and God has already spoken in His Word, so the time to hear and turn is today."
     }
+  },
+  {
+    "id": "luke-17",
+    "type": "chapter",
+    "book": "Luke",
+    "ch": 17,
+    "date": "2026-10-29",
+    "title": "Luke 17",
+    "sub": "Where are the nine?",
+    "about": "Forgive seven times in a day, faith like a mustard seed, ten lepers cleansed and only one comes back, and a warning that the Son of man will come as suddenly as lightning.",
+    "tags": [
+      "Forgiveness",
+      "Faith",
+      "Gratitude",
+      "The kingdom of God",
+      "Christ's return",
+      "Looking back"
+    ],
+    "url": "studies/luke-17.html",
+    "overview": {
+      "where": "On the road to Jerusalem, along the border between Samaria and Galilee, at a village where ten lepers met Him",
+      "when": "About AD 29–30, on Jesus' last journey to Jerusalem (9:51–19:28), in the last months before the cross",
+      "people": [
+        "jesus",
+        "disciples",
+        "apostles",
+        "ten-lepers",
+        "samaritans",
+        "priests",
+        "pharisees",
+        "noah",
+        "lot"
+      ],
+      "places": [
+        "jerusalem",
+        "samaria",
+        "galilee",
+        "sodom-and-gomorrah"
+      ],
+      "story": [
+        "Stumbling blocks will come, but woe to the man who trips up one of these little ones. If a brother repents, forgive him, even seven times in a day (1–4).",
+        "The apostles ask, “Increase our faith.” Faith like a grain of mustard seed could uproot a tree. And a servant who does all he's told has only done his duty (5–10).",
+        "Ten lepers cry, “Jesus, Master, have mercy on us,” and are cleansed on their way to the priests. Only one, a Samaritan, turns back to give thanks: “Where are the nine?” (11–19).",
+        "The Pharisees ask when the kingdom of God will come. It doesn't come with signs to watch for: “the kingdom of God is within you” (20–21).",
+        "The Son of man will come like lightning, but first He must suffer. Life will go on as in the days of Noe and Lot until judgment falls. “Remember Lot’s wife.” One shall be taken, and the other left (22–37)."
+      ],
+      "key": {
+        "ref": "Luke 17:17",
+        "text": "And Jesus answering said, Were there not ten cleansed? but where are the nine?"
+      },
+      "big": "Forgive freely, trust God with even a small faith, and never take His gifts and forget the Giver. The Son of man is coming suddenly, so be ready now and don't look back at the life He brought you out of."
+    }
+  },
+  {
+    "id": "luke-18",
+    "type": "chapter",
+    "book": "Luke",
+    "ch": 18,
+    "date": "2026-10-29",
+    "title": "Luke 18",
+    "sub": "God be merciful to me a sinner",
+    "about": "A widow who won't quit, a Pharisee and a publican at prayer, little children welcomed, a rich ruler who walks away sorrowful, and a blind beggar who won't be quiet.",
+    "tags": [
+      "Prayer",
+      "Humility",
+      "Justification",
+      "Salvation",
+      "Riches",
+      "Mercy"
+    ],
+    "url": "studies/luke-18.html",
+    "overview": {
+      "where": "On the road toward Jerusalem; the temple in the parable; then near Jericho, the last town before the climb up to Jerusalem",
+      "when": "About AD 29–30, near the end of Jesus' last journey to Jerusalem, shortly before the Passover of the cross",
+      "people": [
+        "jesus",
+        "unjust-judge",
+        "persistent-widow",
+        "pharisees",
+        "publicans",
+        "disciples",
+        "rich-young-ruler",
+        "simon-peter",
+        "the-twelve",
+        "bartimaeus"
+      ],
+      "places": [
+        "temple",
+        "jerusalem",
+        "jericho",
+        "nazareth"
+      ],
+      "story": [
+        "Men ought always to pray and not to faint. A widow keeps coming to an unjust judge until he gives her justice. How much more will God hear His own (1–8).",
+        "A Pharisee prays about himself; a publican, standing afar off, prays, “God be merciful to me a sinner.” The publican goes home justified (9–14).",
+        "Jesus welcomes the infants the disciples turned away. Whoever won't receive the kingdom as a little child can't enter it (15–17).",
+        "A rich ruler has kept the commandments but lacks one thing. Told to sell all and follow Jesus, he goes away very sorrowful. What is impossible with men is possible with God (18–30).",
+        "Jesus tells the twelve He will be mocked, scourged and killed, and rise the third day; they don't understand. Near Jericho a blind beggar cries, “Thou Son of David, have mercy on me,” receives his sight, and follows Him (31–43)."
+      ],
+      "key": {
+        "ref": "Luke 18:13",
+        "text": "And the publican, standing afar off, would not lift up so much as his eyes unto heaven, but smote upon his breast, saying, God be merciful to me a sinner."
+      },
+      "big": "God hears the man who comes for mercy, not the man who brings his record. Keep praying, come like a child with empty hands, let go of whatever has God's place, and cry out to Jesus. What is impossible with men is possible with God."
+    }
   }
 ];
