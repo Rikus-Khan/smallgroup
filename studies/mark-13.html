@@ -1,0 +1,651 @@
+<!doctype html>
+<html lang="en" data-theme="night">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Mark 13</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="../assets/fonts.css">
+<link rel="stylesheet" href="../assets/deck.css">
+<link rel="stylesheet" href="../assets/themes.css">
+<style>
+/* mk13-wall: the temple's great stones, with a man for scale. On a .mk13-fall step every stone is thrown down (--dx, --dy, --r, --k). */
+.mk13-wall { display: block; width: 100%; height: auto; max-height: 34vh; }
+.mk13-stone { fill: var(--surface-2); stroke: var(--line-strong); stroke-width: 2.5; transform-box: fill-box; transform-origin: 50% 50%; transition: transform 1.3s cubic-bezier(.55,0,.75,.4); transition-delay: calc(var(--k, 0) * 120ms); }
+.slide:has(.mk13-fall.on) .mk13-stone { transform: translate(var(--dx, 0), var(--dy, 0)) rotate(var(--r, 0deg)); }
+.mk13-ground { stroke: var(--line-strong); stroke-width: 3; }
+.mk13-man { fill: var(--ink-soft); }
+.mk13-cap { font: 600 16px var(--sans); fill: var(--ink-soft); }
+.mk13-word { font: italic 600 24px var(--serif); fill: var(--danger); opacity: 0; transition: opacity .8s ease 1.8s; }
+.slide:has(.mk13-fall.on) .mk13-word { opacity: 1; }
+
+/* mk13-gather: His people gathered from the four winds. The .mk13-one dots travel by --tx/--ty to the One in the middle when the slide opens. */
+.mk13-gather { display: block; width: 100%; height: auto; max-height: 42vh; }
+.mk13-halo { fill: color-mix(in srgb, var(--accent) 16%, transparent); }
+.mk13-him { fill: var(--accent); }
+.mk13-one { fill: var(--cool); }
+.slide.active .mk13-one { animation: mk13-come 2.6s cubic-bezier(.4,0,.2,1) forwards; animation-delay: calc(.8s + var(--k, 0) * 140ms); }
+@keyframes mk13-come { to { transform: translate(var(--tx), var(--ty)); } }
+.mk13-wind { font: 700 15px var(--sans); fill: var(--ink-soft); letter-spacing: .08em; }
+
+/* mk13-fig: a fig branch; its leaves unfurl one by one when the slide opens, then the summer sun comes up. */
+.mk13-fig { display: block; width: 100%; height: auto; max-height: 40vh; }
+.mk13-bough { fill: none; stroke: var(--leather); stroke-width: 9; stroke-linecap: round; }
+.mk13-leaf { fill: color-mix(in srgb, var(--cool) 70%, var(--warm)); stroke: var(--ink-soft); stroke-width: 1.5; transform-box: fill-box; transform: scale(0); transition: transform 1.2s cubic-bezier(.3,1.4,.5,1); transition-delay: calc(.6s + var(--k, 0) * 350ms); }
+.mk13-leaf.l { transform-origin: 100% 100%; }
+.mk13-leaf.r { transform-origin: 0% 100%; }
+.slide.active .mk13-leaf { transform: scale(1); }
+.mk13-sun { fill: var(--warm); opacity: 0; transition: opacity 1.4s ease 3s; }
+.mk13-sun-cap { font: italic 600 22px var(--serif); fill: var(--accent-hot); opacity: 0; transition: opacity 1.2s ease 3.4s; }
+.slide.active .mk13-sun, .slide.active .mk13-sun-cap { opacity: 1; }
+</style>
+</head>
+<body>
+<main class="deck" id="deck">
+
+<!-- ======================= OPENING ======================= -->
+<section class="slide title">
+  <div class="inner">
+    <div class="emblem rise"></div>
+    <h1 class="rise" style="--d:1">Mark 13</h1>
+    <p class="sub rise" style="--d:3">Watch</p>
+    <p class="tag rise" style="--d:5">Sitting across from the temple, Jesus tells four of His men what is coming, and gives them one command over and over: take heed, and watch.</p>
+  </div>
+</section>
+
+<section class="slide watch">
+  <div class="inner">
+    <h2 class="rise">Things to watch for</h2>
+    <p class="lede rise" style="--d:1">Keep these questions in the back of your mind as we read. We'll come back to every one of them at the end.</p>
+    <ol class="seeds">
+      <li class="step"><span class="topic">The temple</span><span class="seed-q">What did Jesus say would happen to the temple?</span></li>
+      <li class="step"><span class="topic">Deceivers</span><span class="seed-q">What is the first thing Jesus warns His men about?</span></li>
+      <li class="step"><span class="topic">Hard times</span><span class="seed-q">Who helps a believer when he is put on trial for Jesus?</span></li>
+      <li class="step"><span class="topic">His coming</span><span class="seed-q">How will the Son of man come?</span></li>
+      <li class="step"><span class="topic">His words</span><span class="seed-q">What will still stand when heaven and earth pass away?</span></li>
+      <li class="step"><span class="topic">Watch</span><span class="seed-q">If no man knows the day or the hour, what are we to do?</span></li>
+    </ol>
+  </div>
+</section>
+
+<!-- ======================= PART ONE: NOT ONE STONE ======================= -->
+<section class="slide part">
+  <div class="inner">
+    <p class="part-n rise">Part one</p>
+    <h2 class="rise" style="--d:1">Not one stone</h2>
+    <p class="range rise" style="--d:2">Verses 1–13</p>
+    <div class="rule"></div>
+    <p class="hook rise" style="--d:4">Jesus walks out of the temple for the last time. His men admire the building. He tells them it's coming down.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="1-2" data-hl="see what manner of stones and what buildings are here!|there shall not be left one stone upon another"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="2" data-hl="there shall not be left one stone upon another"></blockquote>
+    <div class="split">
+      <div class="stage">
+        <svg class="mk13-wall" viewBox="0 0 600 320" role="img" aria-label="A wall of huge, squared temple stones, with a small man standing beside it for scale. Then the stones are thrown down, not one left on another.">
+          <line class="mk13-ground" x1="10" y1="290" x2="590" y2="290"/>
+          <rect class="mk13-stone" x="120" y="60" width="150" height="74" rx="3" style="--dx:40px; --dy:150px; --r:-20deg; --k:0"/>
+          <rect class="mk13-stone" x="270" y="60" width="200" height="74" rx="3" style="--dx:40px; --dy:140px; --r:14deg; --k:1"/>
+          <rect class="mk13-stone" x="470" y="60" width="110" height="74" rx="3" style="--dx:-30px; --dy:160px; --r:30deg; --k:2"/>
+          <rect class="mk13-stone" x="120" y="134" width="230" height="78" rx="3" style="--dx:30px; --dy:70px; --r:-9deg; --k:3"/>
+          <rect class="mk13-stone" x="350" y="134" width="230" height="78" rx="3" style="--dx:-10px; --dy:76px; --r:8deg; --k:4"/>
+          <rect class="mk13-stone" x="120" y="212" width="170" height="78" rx="3" style="--dx:10px; --dy:0px; --r:-3deg; --k:5"/>
+          <rect class="mk13-stone" x="290" y="212" width="290" height="78" rx="3" style="--dx:0px; --dy:0px; --r:3deg; --k:6"/>
+          <g class="mk13-man"><circle cx="56" cy="236" r="9"/><path d="M46 250 h20 l4 40 h-28 Z"/></g>
+          <text class="mk13-cap" x="56" y="312" text-anchor="middle">a man</text>
+          <text class="mk13-word" x="300" y="34" text-anchor="middle">“thrown down”</text>
+        </svg>
+      </div>
+      <div>
+        <h2 class="rise" style="--d:1">Great buildings</h2>
+        <p class="note rise" style="--d:2">Herod the Great had been rebuilding the temple for about fifty years: white stone and gold, some stones over thirty feet long.</p>
+        <p class="note step mk13-fall">Jesus says every stone will come down. About forty years later, in A.D. 70, the Romans burned it and tore it apart.</p>
+        <p class="note step">What everyone thought would stand forever didn't. Build your life on something that lasts.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="slide verse" data-v="3-4" data-hl="as he sat upon the mount of Olives over against the temple|when shall these things be? and what shall be the sign"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="3" data-hl="upon the mount of Olives over against the temple"></blockquote>
+    <div class="split">
+      <div class="stage">
+        <svg class="map" viewBox="0 0 600 420" role="img" aria-label="Map of Jerusalem and the Mount of Olives. Jesus sits on the slope of the Mount of Olives, across the Kidron valley from the temple, looking straight at it.">
+          <rect class="map-land" x="0" y="0" width="600" height="420" rx="6"/>
+          <path d="M318 40 C 380 20, 440 60, 456 130 C 470 210, 430 300, 340 340 C 330 250, 330 140, 318 40 Z" style="fill:color-mix(in srgb, var(--ink-soft) 16%, transparent)"/>
+          <text class="map-region" x="370" y="76" font-size="13">MOUNT OF</text>
+          <text class="map-region" x="376" y="94" font-size="13">OLIVES</text>
+          <path class="map-river" d="M296 10 C 286 110, 306 210, 290 410" style="stroke-dasharray:6 6"/>
+          <text class="map-water" x="282" y="372" text-anchor="end">Kidron valley</text>
+          <path d="M40 92 L252 70 L266 330 L62 352 Z" stroke-width="3" style="fill:color-mix(in srgb, var(--accent) 8%, transparent);stroke:var(--line-strong)"/>
+          <path d="M178 112 L252 104 L258 212 L184 218 Z" stroke-width="2" style="fill:color-mix(in srgb, var(--accent) 26%, transparent);stroke:var(--accent)"/>
+          <text x="218" y="166" text-anchor="middle" font-size="16" font-weight="700" style="fill:var(--accent-hot)">temple</text>
+          <text class="map-region" x="80" y="290">JERUSALEM</text>
+          <path class="map-route" pathLength="1" style="--draw:1.6s" d="M376 168 C 340 166, 300 164, 262 162"/>
+          <g class="map-town here"><circle class="map-ping" cx="380" cy="168" r="9"/><circle cx="380" cy="168" r="7"/><text x="392" y="174">He sat here</text></g>
+          <text class="map-soft" x="392" y="196" font-size="14">with Peter, James,</text>
+          <text class="map-soft" x="392" y="214" font-size="14">John and Andrew</text>
+        </svg>
+      </div>
+      <div>
+        <h2 class="rise" style="--d:1">Two questions</h2>
+        <p class="note rise" style="--d:2">From the Mount of Olives you look across the Kidron valley straight down on the temple. Four men, the first four He called (1:16–20), ask Him privately:</p>
+        <p class="note step"><em>“When shall these things be?”</em> and <em>“What shall be the sign?”</em></p>
+        <p class="note step">Watch how He answers. He talks about signs, but He never gives them a date. Instead He keeps saying, <em>“Take heed.”</em></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="slide verse" data-v="5-6" data-hl="Take heed lest any man deceive you|I am Christ"></section>
+<section class="slide verse" data-v="7-8" data-hl="be ye not troubled|the end shall not be yet|these are the beginnings of sorrows"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="5"></blockquote>
+    <h2 class="rise" style="--d:1">“Take heed” and “watch”</h2>
+    <p class="note rise" style="--d:2">The verses of this chapter where Jesus says <em>“take heed”</em> or <em>“watch”</em>:</p>
+    <div class="tally rise" style="--d:3" aria-label="Verses 1 through 37, with take heed or watch in verses 5, 9, 23, 33 (twice), 34, 35 and 37">
+      <span><i>1</i>&nbsp;</span><span><i>2</i>&nbsp;</span><span><i>3</i>&nbsp;</span><span><i>4</i>&nbsp;</span>
+      <span class="hit" style="--k:0"><i>5</i>×1</span>
+      <span><i>6</i>&nbsp;</span><span><i>7</i>&nbsp;</span><span><i>8</i>&nbsp;</span>
+      <span class="hit" style="--k:1"><i>9</i>×1</span>
+      <span><i>10</i>&nbsp;</span><span><i>11</i>&nbsp;</span><span><i>12</i>&nbsp;</span><span><i>13</i>&nbsp;</span><span><i>14</i>&nbsp;</span><span><i>15</i>&nbsp;</span><span><i>16</i>&nbsp;</span><span><i>17</i>&nbsp;</span><span><i>18</i>&nbsp;</span><span><i>19</i>&nbsp;</span><span><i>20</i>&nbsp;</span><span><i>21</i>&nbsp;</span><span><i>22</i>&nbsp;</span>
+      <span class="hit" style="--k:2"><i>23</i>×1</span>
+      <span><i>24</i>&nbsp;</span><span><i>25</i>&nbsp;</span><span><i>26</i>&nbsp;</span><span><i>27</i>&nbsp;</span><span><i>28</i>&nbsp;</span><span><i>29</i>&nbsp;</span><span><i>30</i>&nbsp;</span><span><i>31</i>&nbsp;</span><span><i>32</i>&nbsp;</span>
+      <span class="hit" style="--k:3"><i>33</i>×2</span>
+      <span class="hit" style="--k:4"><i>34</i>×1</span>
+      <span class="hit" style="--k:5"><i>35</i>×1</span>
+      <span><i>36</i>&nbsp;</span>
+      <span class="hit" style="--k:6"><i>37</i>×1</span>
+    </div>
+    <p class="note step">That's the heart of the chapter. The disciples asked for a date. Jesus gave them a warning, again and again: <em>keep your eyes open, and don't be fooled.</em></p>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="8" data-hl="these are the beginnings of sorrows"></blockquote>
+    <h2 class="rise" style="--d:1">Not the end yet</h2>
+    <ul class="nots">
+      <li class="step"><span class="k">every man who says “I am Christ”</span><span class="why">“shall deceive many” (v. 6)</span></li>
+      <li class="step"><span class="k">wars mean it's the end</span><span class="why">“the end shall not be yet” (v. 7)</span></li>
+      <li class="step"><span class="k">earthquakes and famines mean it's the end</span><span class="why">only “the beginnings of sorrows” (v. 8)</span></li>
+      <li class="step yes"><span class="k">be ye not troubled</span><span class="why">keep your head, and keep your eyes on Him (v. 7)</span></li>
+    </ul>
+    <p class="note step"><em>“Sorrows”</em> here is the word for a woman's birth pains. The first pains tell you a child is coming. They don't tell you the hour. Every generation since has seen wars and earthquakes. Jesus never told us to read the news like a calendar.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="9-11" data-hl="they shall deliver you up to councils|the gospel must first be published among all nations|it is not ye that speak, but the Holy Ghost"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="11" data-hl="it is not ye that speak, but the Holy Ghost"></blockquote>
+    <h2 class="rise" style="--d:1">It happened to them</h2>
+    <ol class="checks">
+      <li class="step"><span class="tick">✓</span><q>deliver you up to councils</q><small>Peter and John stand before the council (Acts 4)</small></li>
+      <li class="step"><span class="tick">✓</span><q>in the synagogues ye shall be beaten</q><small>Paul is beaten five times (2 Corinthians 11:24)</small></li>
+      <li class="step"><span class="tick">✓</span><q>before rulers and kings for my sake</q><small>Paul before Felix, Festus and King Agrippa (Acts 24–26)</small></li>
+      <li class="step"><span class="tick">✓</span><q>the Holy Ghost</q><small>“Peter, filled with the Holy Ghost,” answers the council (Acts 4:8)</small></li>
+    </ol>
+    <p class="note step">And the gospel went out to the nations. It reached us. You won't face the hard moment alone: the Spirit who lives in every believer gives the words.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="12-13" data-hl="the brother shall betray the brother to death|ye shall be hated of all men for my name’s sake|he that shall endure unto the end, the same shall be saved"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="13"></blockquote>
+    <h2 class="rise" style="--d:1">Endure unto the end</h2>
+    <p class="note rise" style="--d:2">Following Jesus can cost a man his family, or the friends he used to run with. Some of us know that already. Jesus said it plainly, so it wouldn't take us by surprise.</p>
+    <p class="note step"><em>“Endure unto the end”</em> isn't a man holding on by his own grip to keep from losing his salvation. The ones who truly belong to Jesus keep going, because He keeps them. He finishes what He starts:</p>
+    <blockquote class="quote step"><p>“Being confident of this very thing, that he which hath begun a good work in you will perform it until the day of Jesus Christ:”</p><cite>Philippians 1:6</cite></blockquote>
+  </div>
+</section>
+
+<!-- ======================= PART TWO: FLEE TO THE MOUNTAINS ======================= -->
+<section class="slide part">
+  <div class="inner">
+    <p class="part-n rise">Part two</p>
+    <h2 class="rise" style="--d:1">Flee to the mountains</h2>
+    <p class="range rise" style="--d:2">Verses 14–23</p>
+    <div class="rule"></div>
+    <p class="hook rise" style="--d:4">A sign from Daniel, days of trouble like none before, and false Christs. Jesus' answer to all of it: don't stop to pack, and don't believe them.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="14" data-hl="the abomination of desolation, spoken of by Daniel the prophet|let him that readeth understand|flee to the mountains"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="14" data-hl="the abomination of desolation, spoken of by Daniel the prophet"></blockquote>
+    <h2 class="rise" style="--d:1">The abomination of desolation</h2>
+    <p class="note rise" style="--d:2">An <em>abomination</em> is something God hates, usually an idol. <em>Desolation</em> means left empty and ruined. Daniel saw it coming:</p>
+    <blockquote class="quote rise" style="--d:3"><p>“And arms shall stand on his part, and they shall pollute the sanctuary of strength, and shall take away the daily sacrifice, and they shall place the abomination that maketh desolate.”</p><cite>Daniel 11:31</cite></blockquote>
+    <p class="note step">About 167 B.C. a Greek king, Antiochus, did just that: he stopped the sacrifices and set up an altar to a pagan god in the temple. Jesus says something like it will stand <em>“where it ought not”</em> again.</p>
+    <p class="note step"><em>“Let him that readeth understand”</em> is Mark speaking to us: go back and read Daniel, and pay attention.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="15-16" data-hl="not go down into the house|not turn back again for to take up his garment"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="15"></blockquote>
+    <div class="split">
+      <div class="stage">
+        <svg class="map" data-land viewBox="100 190 280 250" data-towns="Jerusalem!:l, Jericho:b" role="img" aria-label="Map of Judaea and the land east of the Jordan. From Jerusalem a route runs away from the city, out of Judaea, across the Jordan and north to the town of Pella.">
+          <path class="map-route r1" pathLength="1" style="--draw:2.6s" d="M202 385 C 222 360, 246 330, 256 300 S 276 250, 290 230"/>
+          <g class="map-town step map-go1"><circle cx="290" cy="230" r="6"/><text x="301" y="235">Pella</text></g>
+          <text class="map-soft step map-go1" x="300" y="290" font-size="13">across</text><text class="map-soft step map-go1" x="300" y="306" font-size="13">the Jordan</text>
+        </svg>
+      </div>
+      <div>
+        <h2 class="rise" style="--d:1">Don't stop to pack</h2>
+        <p class="note rise" style="--d:2">Roofs were flat, with stairs on the outside. A man on his roof was to come down and run, not go in for his things. A man in the field wasn't to go back for his coat.</p>
+        <p class="note step map-go1">An old story from the early church says that when the Roman armies came, the believers in Jerusalem remembered these words and fled across the Jordan to Pella.</p>
+        <p class="note step">When Jesus says <em>run</em>, a wise man doesn't stop to argue.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="slide verse" data-v="17-20" data-hl="pray ye that your flight be not in the winter|affliction, such as was not from the beginning of the creation|for the elect’s sake, whom he hath chosen, he hath shortened the days"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="20" data-hl="for the elect’s sake, whom he hath chosen, he hath shortened the days"></blockquote>
+    <h2 class="rise" style="--d:1">When, and how much?</h2>
+    <ol class="timeline" aria-label="About 20 B.C., Herod begins rebuilding the temple. About A.D. 30, Jesus sits on the Mount of Olives and speaks these words. A.D. 66, the Jews revolt against Rome. A.D. 70, Rome destroys the temple. Then, on a day no man knows, the Son of man comes in the clouds.">
+      <li style="--k:0"><b>about 20 B.C.</b><span>Herod begins rebuilding the temple</span></li>
+      <li class="lit" style="--k:1"><b>about A.D. 30</b><span>Jesus speaks these words</span></li>
+      <li style="--k:2"><b>A.D. 66</b><span>the Jews revolt against Rome</span></li>
+      <li style="--k:3"><b>A.D. 70</b><span>Rome destroys the temple</span></li>
+      <li class="wait" style="--k:4"><b>a day no man knows</b><span>the Son of man comes (v. 26)</span></li>
+    </ol>
+    <p class="note step">Part of this came true within forty years, just as He said. Many Bible teachers believe these words also look ahead to a time of great trouble just before He returns. Good men differ on the details. Jesus didn't give us a chart. He gave us a command.</p>
+    <p class="note step">And notice God's mercy: He cuts the days short <em>“for the elect's sake,”</em> for His own people, everyone who has come to Him by faith.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="21-23" data-hl="Lo, here is Christ; or, lo, he is there; believe him not|false Christs and false prophets|I have foretold you all things"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="23"></blockquote>
+    <h2 class="rise" style="--d:1">“Believe him not”</h2>
+    <div class="talk">
+      <p class="rise" style="--d:2"><small>The voices</small>Lo, here is Christ! … Lo, he is there!</p>
+      <p class="reply step"><small>Jesus</small>Believe him not.</p>
+    </div>
+    <p class="note step">Signs and wonders don't prove a man speaks for God. False Christs can do them too (v. 22). The test is what Jesus already told us. When He really comes, nobody will need to tell you where He is (v. 26).</p>
+  </div>
+</section>
+
+<!-- ======================= PART THREE: COMING IN THE CLOUDS ======================= -->
+<section class="slide part">
+  <div class="inner">
+    <p class="part-n rise">Part three</p>
+    <h2 class="rise" style="--d:1">Coming in the clouds</h2>
+    <p class="range rise" style="--d:2">Verses 24–31</p>
+    <div class="rule"></div>
+    <p class="hook rise" style="--d:4">The lights go out in the sky, and the King comes for His people.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="24-27" data-hl="the sun shall be darkened|the Son of man coming in the clouds with great power and glory|gather together his elect from the four winds"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="26"></blockquote>
+    <h2 class="rise" style="--d:1">Words the prophets used</h2>
+    <div class="pair">
+      <div class="scroll rise" style="--d:2"><p class="ref">Isaiah 13:10</p><p class="kjv">“For the stars of heaven and the constellations thereof shall not give their light: <mark>the sun shall be darkened</mark> in his going forth, and the moon shall not cause her light to shine.”</p></div>
+      <div class="scroll step"><p class="ref">Daniel 7:13</p><p class="kjv">“I saw in the night visions, and, behold, one like <mark>the Son of man came with the clouds of heaven</mark>, and came to the Ancient of days, and they brought him near before him.”</p></div>
+    </div>
+    <p class="note step"><em>“The Son of man”</em> is the name Jesus used for Himself more than any other, and it comes from Daniel. In the next chapter He'll say it to the high priest's face (14:62). The One they put on trial is the One who is coming in glory.</p>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="27" data-hl="gather together his elect from the four winds"></blockquote>
+    <div class="split">
+      <div class="stage">
+        <svg class="mk13-gather" viewBox="0 0 600 330" role="img" aria-label="People scattered at the four edges, north, south, east and west, all move in and gather around the Lord in the middle.">
+          <circle class="mk13-halo" cx="300" cy="165" r="96"/>
+          <circle class="mk13-him" cx="300" cy="165" r="26"/>
+          <text class="mk13-wind" x="20" y="24">NORTH</text>
+          <text class="mk13-wind" x="580" y="318" text-anchor="end">SOUTH</text>
+          <text class="mk13-wind" x="14" y="252">WEST</text>
+          <text class="mk13-wind" x="586" y="252" text-anchor="end">EAST</text>
+          <circle class="mk13-one" cx="245" cy="14" r="7" style="--tx:19px; --ty:100px; --k:0"/>
+          <circle class="mk13-one" cx="267" cy="30" r="7" style="--tx:5px; --ty:62px; --k:1"/>
+          <circle class="mk13-one" cx="289" cy="14" r="7" style="--tx:3px; --ty:89px; --k:2"/>
+          <circle class="mk13-one" cx="311" cy="30" r="7" style="--tx:-1px; --ty:58px; --k:3"/>
+          <circle class="mk13-one" cx="333" cy="14" r="7" style="--tx:-11px; --ty:93px; --k:4"/>
+          <circle class="mk13-one" cx="355" cy="30" r="7" style="--tx:-10px; --ty:71px; --k:5"/>
+          <circle class="mk13-one" cx="245" cy="304" r="7" style="--tx:91px; --ty:-88px; --k:0"/>
+          <circle class="mk13-one" cx="267" cy="320" r="7" style="--tx:61px; --ty:-82px; --k:1"/>
+          <circle class="mk13-one" cx="289" cy="304" r="7" style="--tx:19px; --ty:-77px; --k:2"/>
+          <circle class="mk13-one" cx="311" cy="320" r="7" style="--tx:-21px; --ty:-78px; --k:3"/>
+          <circle class="mk13-one" cx="333" cy="304" r="7" style="--tx:-55px; --ty:-81px; --k:4"/>
+          <circle class="mk13-one" cx="355" cy="320" r="7" style="--tx:-100px; --ty:-91px; --k:5"/>
+          <circle class="mk13-one" cx="30" cy="115" r="7" style="--tx:219px; --ty:86px; --k:0"/>
+          <circle class="mk13-one" cx="50" cy="135" r="7" style="--tx:177px; --ty:58px; --k:1"/>
+          <circle class="mk13-one" cx="30" cy="155" r="7" style="--tx:208px; --ty:18px; --k:2"/>
+          <circle class="mk13-one" cx="50" cy="175" r="7" style="--tx:173px; --ty:-20px; --k:3"/>
+          <circle class="mk13-one" cx="30" cy="195" r="7" style="--tx:212px; --ty:-52px; --k:4"/>
+          <circle class="mk13-one" cx="50" cy="215" r="7" style="--tx:186px; --ty:-95px; --k:5"/>
+          <circle class="mk13-one" cx="550" cy="115" r="7" style="--tx:-199px; --ty:14px; --k:0"/>
+          <circle class="mk13-one" cx="570" cy="135" r="7" style="--tx:-197px; --ty:2px; --k:1"/>
+          <circle class="mk13-one" cx="550" cy="155" r="7" style="--tx:-188px; --ty:2px; --k:2"/>
+          <circle class="mk13-one" cx="570" cy="175" r="7" style="--tx:-193px; --ty:-0px; --k:3"/>
+          <circle class="mk13-one" cx="550" cy="195" r="7" style="--tx:-192px; --ty:-8px; --k:4"/>
+          <circle class="mk13-one" cx="570" cy="215" r="7" style="--tx:-206px; --ty:-5px; --k:5"/>
+        </svg>
+      </div>
+      <div>
+        <h2 class="rise" style="--d:1">From the four winds</h2>
+        <p class="note rise" style="--d:2"><em>“The four winds”</em> means every direction: north, south, east and west. <em>“From the uttermost part of the earth to the uttermost part of heaven”</em> means nobody is too far away.</p>
+        <p class="note step">Not one of His people gets left behind or forgotten. The man who has trusted Jesus will be gathered home, wherever he is.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="slide verse" data-v="28-29" data-hl="learn a parable of the fig tree|ye know that summer is near|know that it is nigh, even at the doors"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="28"></blockquote>
+    <div class="split">
+      <div class="stage">
+        <svg class="mk13-fig" viewBox="0 0 520 320" role="img" aria-label="A bare fig branch puts out its leaves one by one. Then the summer sun comes up: summer is near.">
+          <circle class="mk13-sun" cx="460" cy="70" r="32"/>
+          <text class="mk13-sun-cap" x="460" y="136" text-anchor="middle">summer</text>
+          <path class="mk13-bough" d="M20 300 C 90 260, 140 230, 190 200 S 260 140, 300 100"/>
+          <path class="mk13-bough" style="stroke-width:6" d="M150 224 C 140 190, 130 170, 116 150"/>
+          <path class="mk13-bough" style="stroke-width:6" d="M232 166 C 250 190, 270 200, 296 204"/>
+          <path class="mk13-leaf l" style="--k:0" d="M116 150 C 80 140, 70 104, 90 84 C 96 110, 112 120, 116 150 Z"/>
+          <path class="mk13-leaf r" style="--k:1" d="M296 204 C 330 196, 350 214, 356 240 C 330 236, 310 226, 296 204 Z"/>
+          <path class="mk13-leaf l" style="--k:2" d="M190 200 C 150 196, 136 160, 150 140 C 166 160, 186 172, 190 200 Z"/>
+          <path class="mk13-leaf r" style="--k:3" d="M300 100 C 330 80, 360 92, 370 116 C 340 120, 316 114, 300 100 Z"/>
+          <path class="mk13-leaf l" style="--k:4" d="M260 140 C 230 120, 232 84, 252 70 C 262 96, 266 116, 260 140 Z"/>
+        </svg>
+      </div>
+      <div>
+        <h2 class="rise" style="--d:1">The fig tree</h2>
+        <p class="note rise" style="--d:2">Many trees in that land stay green all winter. The fig tree goes bare. So when its tender new leaves come out, everyone knows summer is close.</p>
+        <p class="note step">Jesus says: learn to read the signs the way a farmer reads his trees. When these things happen, He is <em>“nigh, even at the doors.”</em></p>
+        <p class="note step">Leaves tell you the season. They don't tell you the day.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="slide verse" data-v="30-31" data-hl="this generation shall not pass|Heaven and earth shall pass away: but my words shall not pass away"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="30"></blockquote>
+    <h2 class="rise" style="--d:1">“This generation”</h2>
+    <p class="note rise" style="--d:2">A hard verse, and good Bible teachers read it more than one way: the men listening that day, who saw the temple fall in A.D. 70, or the generation that sees the final signs. We don't have to settle it today.</p>
+    <p class="note step">What we can't miss is the next verse:</p>
+    <p class="saying step">Heaven and earth shall pass away: but <em>my words</em> shall not pass away.</p>
+    <p class="note step">The temple looked like it would stand forever, and it fell. The sky itself will go one day. What Jesus said will still be standing.</p>
+  </div>
+</section>
+
+<!-- ======================= PART FOUR: WATCH ======================= -->
+<section class="slide part">
+  <div class="inner">
+    <p class="part-n rise">Part four</p>
+    <h2 class="rise" style="--d:1">Watch</h2>
+    <p class="range rise" style="--d:2">Verses 32–37</p>
+    <div class="rule"></div>
+    <p class="hook rise" style="--d:4">Nobody knows the day. So Jesus tells every one of us the same thing.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="32-33" data-hl="of that day and that hour knoweth no man|neither the Son, but the Father|watch and pray: for ye know not when the time is"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="32"></blockquote>
+    <h2 class="rise" style="--d:1">Nobody knows the day</h2>
+    <div class="columns">
+      <div class="col law step"><p class="who">What we don't know</p><h3>the day and the hour</h3><p>not men, not angels. Anyone who sets a date for His coming has been wrong every time.</p></div>
+      <div class="col grace step"><p class="who">What we do know</p><h3>He is coming</h3><p>and He told us what to do until then: <em>“watch and pray”</em> (v. 33).</p></div>
+    </div>
+    <p class="note step">After He rose from the dead, they asked Him again. He gave the same answer:</p>
+    <blockquote class="quote step"><p>“And he said unto them, It is not for you to know the times or the seasons, which the Father hath put in his own power.”</p><cite>Acts 1:7</cite></blockquote>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="32" data-hl="neither the Son, but the Father"></blockquote>
+    <h2 class="rise" style="--d:1">“Neither the Son”</h2>
+    <p class="note rise" style="--d:2">Jesus is fully God. So how could He not know? When the Son came to earth as a man, He took the place of a servant. He set aside using some of His rights, and lived trusting His Father, the way we have to.</p>
+    <blockquote class="quote rise" style="--d:3"><p>“But made himself of no reputation, and took upon him the form of a servant, and was made in the likeness of men:”</p><cite>Philippians 2:7</cite></blockquote>
+    <p class="note step">If Jesus Himself was content to leave the date with the Father, we can be too.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="34-35" data-hl="to every man his work|commanded the porter to watch|at even, or at midnight, or at the cockcrowing, or in the morning"></section>
+<section class="slide verse" data-v="36-37" data-hl="Lest coming suddenly he find you sleeping|I say unto all, Watch"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="35" data-hl="at even, or at midnight, or at the cockcrowing, or in the morning"></blockquote>
+    <h2 class="rise" style="--d:1">The four watches of the night</h2>
+    <ol class="timeline" aria-label="The Roman night had four watches: at even, about 6 to 9 p.m.; midnight, about 9 to 12; cockcrowing, about 12 to 3 a.m.; and morning, about 3 to 6 a.m.">
+      <li style="--k:0" data-n="1"><b>at even</b><span>about 6–9 p.m.</span><small>the supper (14:17)</small></li>
+      <li style="--k:1" data-n="2"><b>midnight</b><span>about 9–12</span><small>the garden (14:32)</small></li>
+      <li style="--k:2" data-n="3"><b>cockcrowing</b><span>about 12–3 a.m.</span><small>Peter's denial (14:72)</small></li>
+      <li style="--k:3" data-n="4"><b>morning</b><span>about 3–6 a.m.</span><small>to Pilate (15:1)</small></li>
+    </ol>
+    <p class="note step">The Romans split the night into four watches, and a <em>porter</em>, the doorkeeper, stayed awake through every one of them.</p>
+    <p class="note step">Look at the small print. In the very next chapter, Jesus goes through that whole night, watch by watch. And His men keep falling asleep.</p>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="37"></blockquote>
+    <h2 class="rise" style="--d:1">What it means to watch</h2>
+    <p class="note rise" style="--d:2">The master gave <em>“to every man his work.”</em> Watching isn't staring at the sky. It's a servant awake and busy at what his master gave him to do, ready for the door to open.</p>
+    <p class="note step">A man in recovery knows about staying awake. Trouble rarely comes on the day you're on guard. It comes on the night you decide you're fine and doze off. Stay awake. Stay close to Him. Stay at your work.</p>
+    <p class="note step">Why hasn't He come yet? Not because He forgot:</p>
+    <blockquote class="quote step"><p>“The Lord is not slack concerning his promise, as some men count slackness; but is longsuffering to us-ward, not willing that any should perish, but that all should come to repentance.”</p><cite>2 Peter 3:9</cite></blockquote>
+  </div>
+</section>
+
+<!-- ======================= CLOSING ======================= -->
+<section class="slide remember">
+  <div class="inner">
+    <h2 class="rise">Points to remember</h2>
+    <ol class="seeds">
+      <li class="step"><span class="topic">The temple</span><span class="seed-q">“There shall not be left one stone upon another” <cite>13:2</cite></span><span class="take">The building everyone trusted came down, just as He said. Build on what lasts.</span></li>
+      <li class="step"><span class="topic">Deceivers</span><span class="seed-q">“Take heed lest any man deceive you” <cite>13:5</cite></span><span class="take">Many will claim to speak for Christ. Test them by what He already told us.</span></li>
+      <li class="step"><span class="topic">Hard times</span><span class="seed-q">“It is not ye that speak, but the Holy Ghost” <cite>13:11</cite></span><span class="take">A believer is never alone in the hard moment. The Spirit in him gives the words.</span></li>
+      <li class="step"><span class="topic">His coming</span><span class="seed-q">“Coming in the clouds with great power and glory” <cite>13:26</cite></span><span class="take">Jesus will come openly, for all to see, and gather every one of His people.</span></li>
+      <li class="step"><span class="topic">His words</span><span class="seed-q">“My words shall not pass away” <cite>13:31</cite></span><span class="take">Everything else will go. What Jesus said will stand.</span></li>
+      <li class="step"><span class="topic">Watch</span><span class="seed-q">“What I say unto you I say unto all, Watch” <cite>13:37</cite></span><span class="take">No date-setting. Stay awake, keep praying, and keep at the work He gave you.</span></li>
+    </ol>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 1 of 6</p>
+      <span class="topic">The temple</span>
+      <h2>What did Jesus say would happen to the temple?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="1"></blockquote>
+      <blockquote class="quote step" data-q="2"></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>It would be thrown down, not one stone left on another. About forty years later, in A.D. 70, the Romans destroyed it. Even the greatest thing men build won't last. His words will.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 2 of 6</p>
+      <span class="topic">Deceivers</span>
+      <h2>What is the first thing Jesus warns His men about?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="5"></blockquote>
+      <blockquote class="quote step" data-q="6"></blockquote>
+      <blockquote class="quote step" data-q="22"></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>Being deceived. Many would come claiming to be Christ, and false prophets would even do signs and wonders. Don't believe them. Jesus has told us all things ahead of time, and His Word is the test.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 3 of 6</p>
+      <span class="topic">Hard times</span>
+      <h2>Who helps a believer when he is put on trial for Jesus?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="11"></blockquote>
+      <blockquote class="quote step" data-q="13"></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>The Holy Ghost. A believer doesn't have to rehearse a speech. The Spirit who lives in him gives him the words. And the man who truly belongs to Jesus endures to the end, because Jesus keeps him.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 4 of 6</p>
+      <span class="topic">His coming</span>
+      <h2>How will the Son of man come?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="21"></blockquote>
+      <blockquote class="quote step" data-q="26"></blockquote>
+      <blockquote class="quote step" data-q="27"></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>Not in secret, where someone has to point Him out, but in the clouds with great power and glory, for everyone to see. He will send His angels and gather His people from every corner of the earth.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 5 of 6</p>
+      <span class="topic">His words</span>
+      <h2>What will still stand when heaven and earth pass away?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="23"></blockquote>
+      <blockquote class="quote step" data-q="31"></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>The words of Jesus. The temple fell, and one day the sky itself will go, but everything He said will stand. That's something a man can build his life on.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 6 of 6</p>
+      <span class="topic">Watch</span>
+      <h2>If no man knows the day or the hour, what are we to do?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="32"></blockquote>
+      <blockquote class="quote step" data-q="33"></blockquote>
+      <blockquote class="quote step" data-q="37"></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>Watch and pray. Don't guess at dates. Stay awake like a porter at the door, and stay busy at the work the Master gave you, so that whenever He comes, He doesn't find you sleeping.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide prayer">
+  <div class="inner">
+    <div class="emblem rise"></div>
+    <h2 class="rise" style="--d:1">Prayer requests</h2>
+    <p class="ask-line rise" style="--d:2">What can we pray about for you today?</p>
+    <blockquote class="quote rise" style="--d:4"><p>“Therefore let us not sleep, as do others; but let us watch and be sober.”</p><cite>1 Thessalonians 5:6</cite></blockquote>
+  </div>
+</section>
+
+</main>
+
+<script>
+// King James Version, Mark chapter 13
+const V = {
+  1: "And as he went out of the temple, one of his disciples saith unto him, Master, see what manner of stones and what buildings are here!",
+  2: "And Jesus answering said unto him, Seest thou these great buildings? there shall not be left one stone upon another, that shall not be thrown down.",
+  3: "And as he sat upon the mount of Olives over against the temple, Peter and James and John and Andrew asked him privately,",
+  4: "Tell us, when shall these things be? and what shall be the sign when all these things shall be fulfilled?",
+  5: "And Jesus answering them began to say, Take heed lest any man deceive you:",
+  6: "For many shall come in my name, saying, I am Christ; and shall deceive many.",
+  7: "And when ye shall hear of wars and rumours of wars, be ye not troubled: for such things must needs be; but the end shall not be yet.",
+  8: "For nation shall rise against nation, and kingdom against kingdom: and there shall be earthquakes in divers places, and there shall be famines and troubles: these are the beginnings of sorrows.",
+  9: "But take heed to yourselves: for they shall deliver you up to councils; and in the synagogues ye shall be beaten: and ye shall be brought before rulers and kings for my sake, for a testimony against them.",
+  10: "And the gospel must first be published among all nations.",
+  11: "But when they shall lead you, and deliver you up, take no thought beforehand what ye shall speak, neither do ye premeditate: but whatsoever shall be given you in that hour, that speak ye: for it is not ye that speak, but the Holy Ghost.",
+  12: "Now the brother shall betray the brother to death, and the father the son; and children shall rise up against their parents, and shall cause them to be put to death.",
+  13: "And ye shall be hated of all men for my name’s sake: but he that shall endure unto the end, the same shall be saved.",
+  14: "But when ye shall see the abomination of desolation, spoken of by Daniel the prophet, standing where it ought not, (let him that readeth understand,) then let them that be in Judaea flee to the mountains:",
+  15: "And let him that is on the housetop not go down into the house, neither enter therein, to take any thing out of his house:",
+  16: "And let him that is in the field not turn back again for to take up his garment.",
+  17: "But woe to them that are with child, and to them that give suck in those days!",
+  18: "And pray ye that your flight be not in the winter.",
+  19: "For in those days shall be affliction, such as was not from the beginning of the creation which God created unto this time, neither shall be.",
+  20: "And except that the Lord had shortened those days, no flesh should be saved: but for the elect’s sake, whom he hath chosen, he hath shortened the days.",
+  21: "And then if any man shall say to you, Lo, here is Christ; or, lo, he is there; believe him not:",
+  22: "For false Christs and false prophets shall rise, and shall shew signs and wonders, to seduce, if it were possible, even the elect.",
+  23: "But take ye heed: behold, I have foretold you all things.",
+  24: "But in those days, after that tribulation, the sun shall be darkened, and the moon shall not give her light,",
+  25: "And the stars of heaven shall fall, and the powers that are in heaven shall be shaken.",
+  26: "And then shall they see the Son of man coming in the clouds with great power and glory.",
+  27: "And then shall he send his angels, and shall gather together his elect from the four winds, from the uttermost part of the earth to the uttermost part of heaven.",
+  28: "Now learn a parable of the fig tree; When her branch is yet tender, and putteth forth leaves, ye know that summer is near:",
+  29: "So ye in like manner, when ye shall see these things come to pass, know that it is nigh, even at the doors.",
+  30: "Verily I say unto you, that this generation shall not pass, till all these things be done.",
+  31: "Heaven and earth shall pass away: but my words shall not pass away.",
+  32: "But of that day and that hour knoweth no man, no, not the angels which are in heaven, neither the Son, but the Father.",
+  33: "Take ye heed, watch and pray: for ye know not when the time is.",
+  34: "For the Son of man is as a man taking a far journey, who left his house, and gave authority to his servants, and to every man his work, and commanded the porter to watch.",
+  35: "Watch ye therefore: for ye know not when the master of the house cometh, at even, or at midnight, or at the cockcrowing, or in the morning:",
+  36: "Lest coming suddenly he find you sleeping.",
+  37: "And what I say unto you I say unto all, Watch."
+};
+const BOOK = "Mark 13";
+</script>
+<script src="../assets/deck.js"></script>
+</body>
+</html>

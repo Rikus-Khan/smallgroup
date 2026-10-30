@@ -7673,6 +7673,117 @@ window.STUDIES = [
     }
   },
   {
+    "id": "mark-13",
+    "type": "chapter",
+    "book": "Mark",
+    "ch": 13,
+    "date": "2026-10-29",
+    "title": "Mark 13",
+    "sub": "Watch",
+    "about": "Sitting on the Mount of Olives across from the temple, Jesus tells four of His men that it will be thrown down, warns them of deceivers and hard days ahead, promises He will come in glory, and gives one command to everyone: watch.",
+    "tags": [
+      "The temple",
+      "Deception",
+      "Persecution",
+      "His coming",
+      "His Word",
+      "Watchfulness"
+    ],
+    "url": "studies/mark-13.html",
+    "overview": {
+      "where": "Leaving the temple in Jerusalem, then sitting on the Mount of Olives over against it",
+      "when": "The last week before the cross, about A.D. 30, a day or two before the Passover",
+      "people": [
+        "jesus",
+        "disciples",
+        "simon-peter",
+        "sons-of-zebedee",
+        "andrew",
+        "daniel",
+        "false-christs",
+        "the-elect",
+        "angels"
+      ],
+      "places": [
+        "temple",
+        "mount-of-olives",
+        "judaea"
+      ],
+      "story": [
+        "A disciple admires the temple's great stones. Jesus says, “There shall not be left one stone upon another, that shall not be thrown down.” About forty years later Rome destroyed it (1–2).",
+        "Peter, James, John and Andrew ask when, and what sign. Jesus warns, “Take heed lest any man deceive you.” Wars, earthquakes and famines are only “the beginnings of sorrows” (3–8).",
+        "His men will be handed over, beaten and hated, but the gospel must go to all nations, and the Holy Ghost will give them words. “He that shall endure unto the end, the same shall be saved” (9–13).",
+        "When the abomination of desolation stands where it ought not, those in Judaea must flee. False Christs will come with signs and wonders: “believe him not” (14–23).",
+        "After that tribulation the Son of man will come in the clouds with great power and glory and gather His elect from the four winds. Like a fig tree in leaf, the signs show He is near, and His words will not pass away (24–31).",
+        "No man knows the day or the hour, not even the angels. Like servants left with their work and a porter at the door, “What I say unto you I say unto all, Watch” (32–37)."
+      ],
+      "key": {
+        "ref": "Mark 13:37",
+        "text": "And what I say unto you I say unto all, Watch."
+      },
+      "big": "Jesus didn't give His followers a date or a chart. He told them plainly what was coming, promised to return in glory for all His people, and gave them one command: take heed, and watch. His words will outlast heaven and earth."
+    }
+  },
+  {
+    "id": "mark-14",
+    "type": "chapter",
+    "book": "Mark",
+    "ch": 14,
+    "date": "2026-10-29",
+    "title": "Mark 14",
+    "sub": "Not what I will",
+    "about": "A woman pours out costly ointment on Jesus, Judas sells Him, and at the Passover Jesus gives His men the bread and the cup. In Gethsemane He prays “not what I will,” is betrayed with a kiss, confesses “I am” before the high priest, and Peter denies Him three times.",
+    "tags": [
+      "Devotion",
+      "The Lord's Supper",
+      "Prayer",
+      "Temptation",
+      "Who Jesus is",
+      "Failure and restoration"
+    ],
+    "url": "studies/mark-14.html",
+    "overview": {
+      "where": "Bethany, an upper room in Jerusalem, Gethsemane on the Mount of Olives, and the high priest's palace",
+      "when": "Two days before the Passover, then the Passover night itself, about A.D. 30",
+      "people": [
+        "jesus",
+        "simon-the-leper",
+        "judas-iscariot",
+        "chief-priests",
+        "scribes",
+        "the-twelve",
+        "disciples",
+        "simon-peter",
+        "sons-of-zebedee",
+        "young-man-who-fled",
+        "elders",
+        "maids-of-the-high-priest"
+      ],
+      "places": [
+        "bethany",
+        "upper-room",
+        "mount-of-olives",
+        "gethsemane",
+        "palace-of-the-high-priest",
+        "galilee"
+      ],
+      "story": [
+        "The chief priests plot to take Jesus by craft. At Bethany a woman breaks an alabaster box of spikenard over His head. Some call it waste, but Jesus says, “She hath done what she could” (1–9).",
+        "Judas Iscariot, one of the twelve, goes to the chief priests to betray Him for money (10–11).",
+        "In a large upper room Jesus eats the Passover with the twelve and says one of them will betray Him. He takes bread, “this is my body,” and the cup, “my blood of the new testament, which is shed for many” (12–26).",
+        "On the way to the Mount of Olives He says they will all be scattered, but He will go before them into Galilee. Peter boasts he will never deny Him; Jesus says he will, three times, before the cock crows twice (27–31).",
+        "In Gethsemane Jesus prays, “Abba, Father … not what I will, but what thou wilt,” while His men sleep: “Watch ye and pray, lest ye enter into temptation” (32–42).",
+        "Judas comes with a crowd and betrays Him with a kiss. All the disciples forsake Him and flee, even a young man who leaves his linen cloth behind (43–52).",
+        "False witnesses can't agree. Asked if He is the Christ, Jesus says, “I am,” and is condemned. Below in the palace Peter denies Him three times, hears the cock crow the second time, and weeps (53–72)."
+      ],
+      "key": {
+        "ref": "Mark 14:36",
+        "text": "And he said, Abba, Father, all things are possible unto thee; take away this cup from me: nevertheless not what I will, but what thou wilt."
+      },
+      "big": "Jesus went to the cross knowing everything ahead of time, and surrendered to His Father's will for us. The bread and the cup remember His body and blood given for many. Peter's fall shows that a willing heart isn't enough, but his tears show the way back."
+    }
+  },
+  {
     "id": "luke-01",
     "type": "chapter",
     "book": "Luke",
