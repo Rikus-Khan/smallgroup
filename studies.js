@@ -10791,6 +10791,93 @@ window.STUDIES = [
     }
   },
   {
+    "id": "romans-03",
+    "type": "chapter",
+    "book": "Romans",
+    "ch": 3,
+    "date": "2026-10-30",
+    "title": "Romans 3",
+    "sub": "None righteous, freely justified",
+    "about": "The court finds the whole world guilty, Jew and Gentile alike. Then, in the very next breath, God justifies the guilty freely by His grace through Christ.",
+    "tags": [
+      "Sin",
+      "Justification",
+      "Redemption",
+      "Grace",
+      "Faith",
+      "Humility"
+    ],
+    "url": "studies/romans-03.html",
+    "overview": {
+      "where": "Paul’s letter to the church at Rome, written from Corinth",
+      "when": "About AD 57",
+      "people": [
+        "paul",
+        "the-jews",
+        "jesus"
+      ],
+      "places": [
+        "rome"
+      ],
+      "story": [
+        "The Jews had a real advantage: God trusted them with His Word. Their unbelief can’t make God unfaithful, and our sin is no excuse to do evil that good may come (1–8).",
+        "Paul strings together quotes from the Psalms and Isaiah: “There is none righteous, no, not one.” Every mouth is stopped and all the world is guilty; the law shows sin but can’t justify (9–20).",
+        "“But now” God’s righteousness comes by faith in Jesus Christ to all who believe. All have sinned, and all who believe are justified freely by His grace through the redemption in Christ (21–24).",
+        "God set Christ forth as a propitiation through faith in His blood, so He is just and the justifier of the one who believes. Boasting is shut out; Jew and Gentile come by faith, and the law is upheld (25–31)."
+      ],
+      "key": {
+        "ref": "Romans 3:23–24",
+        "text": "For all have sinned, and come short of the glory of God; Being justified freely by his grace through the redemption that is in Christ Jesus:"
+      },
+      "big": "All have sinned, and all who believe are justified freely by God’s grace through Jesus: declared righteous in the courtroom, bought out of the slave market, covered at the mercy seat."
+    }
+  },
+  {
+    "id": "romans-04",
+    "type": "chapter",
+    "book": "Romans",
+    "ch": 4,
+    "date": "2026-10-30",
+    "title": "Romans 4",
+    "sub": "Counted for righteousness",
+    "about": "Abraham was made right with God the way any man is: he believed God. David sings of the man whose sins are covered, and it was all written for us also.",
+    "tags": [
+      "Faith",
+      "Justification",
+      "Forgiveness",
+      "Hope",
+      "Grace",
+      "Assurance"
+    ],
+    "url": "studies/romans-04.html",
+    "overview": {
+      "where": "Paul’s letter to the church at Rome, looking back to Abraham in Canaan",
+      "when": "Written about AD 57; Abraham lived about 2000 BC",
+      "people": [
+        "abraham",
+        "david",
+        "sarah",
+        "jesus",
+        "paul"
+      ],
+      "places": [
+        "canaan",
+        "rome"
+      ],
+      "story": [
+        "Abraham, the father of the Jews, had nothing to boast of before God. He believed God, and it was counted to him for righteousness: a gift, not wages. God justifies the ungodly (1–5).",
+        "David describes the same blessing: “Blessed are they whose iniquities are forgiven, and whose sins are covered,” the man to whom the Lord will not impute sin (6–8).",
+        "Abraham was counted righteous before he was circumcised, and the promise came long before the law. So he is the father of all who believe, and the promise is sure by grace (9–17).",
+        "Against hope Abraham believed God’s promise, though he was about a hundred and Sara past age. It was written for us also, who believe on God who raised Jesus, delivered for our offences and raised for our justification (18–25)."
+      ],
+      "key": {
+        "ref": "Romans 4:3",
+        "text": "For what saith the scripture? Abraham believed God, and it was counted unto him for righteousness."
+      },
+      "big": "God counts righteousness to anyone who believes Him, without works, and the man whose sins are covered is blessed."
+    }
+  },
+  {
     "id": "romans-05",
     "type": "chapter",
     "book": "Romans",

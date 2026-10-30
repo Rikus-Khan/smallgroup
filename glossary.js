@@ -314,6 +314,12 @@ window.GLOSSARY = [
     "Romans", 2,
     [ 16 ] ],
    [
+    "Romans", 3,
+    [ 22, 24, 26 ] ],
+   [
+    "Romans", 4,
+    [ 24 ] ],
+   [
     "Romans", 5,
     [ 1, 11, 15, 17, 21 ] ],
    [
@@ -1734,7 +1740,10 @@ window.GLOSSARY = [
     [ 16 ] ],
    [
     "Romans", 2,
-    [ 9, 10, 17, 28, 29 ] ] ]
+    [ 9, 10, 17, 28, 29 ] ],
+   [
+    "Romans", 3,
+    [ 1, 9, 29 ] ] ]
  },
  {
   "id": "servants",
@@ -1926,7 +1935,10 @@ window.GLOSSARY = [
     [ 16 ] ],
    [
     "Romans", 1,
-    [ 3 ] ] ]
+    [ 3 ] ],
+   [
+    "Romans", 4,
+    [ 6 ] ] ]
  },
  {
   "id": "hezekiah",
@@ -4040,6 +4052,12 @@ window.GLOSSARY = [
     "Romans", 1,
     [ 5, 7 ] ],
    [
+    "Romans", 3,
+    [ 24 ] ],
+   [
+    "Romans", 4,
+    [ 4, 16 ] ],
+   [
     "Romans", 5,
     [ 2, 15, 17, 20, 21 ] ],
    [
@@ -4155,7 +4173,10 @@ window.GLOSSARY = [
     [ 18, 25 ] ],
    [
     "Romans", 2,
-    [ 2, 8, 20 ] ] ]
+    [ 2, 8, 20 ] ],
+   [
+    "Romans", 3,
+    [ 7 ] ] ]
  },
  {
   "id": "glory",
@@ -4315,6 +4336,12 @@ window.GLOSSARY = [
    [
     "Romans", 2,
     [ 7, 10 ] ],
+   [
+    "Romans", 3,
+    [ 7, 23 ] ],
+   [
+    "Romans", 4,
+    [ 2, 20 ] ],
    [
     "Romans", 5,
     [ 2, 3 ] ],
@@ -4480,6 +4507,12 @@ window.GLOSSARY = [
    [
     "Romans", 2,
     [ 12, 13, 14, 15, 17, 18, 20, 23, 25, 26, 27 ] ],
+   [
+    "Romans", 3,
+    [ 19, 20, 21, 27, 28, 31 ] ],
+   [
+    "Romans", 4,
+    [ 13, 14, 15, 16 ] ],
    [
     "Romans", 5,
     [ 13, 20 ] ],
@@ -4675,6 +4708,9 @@ window.GLOSSARY = [
    [
     "Romans", 2,
     [ 16 ] ],
+   [
+    "Romans", 3,
+    [ 22, 24 ] ],
    [
     "Romans", 5,
     [ 1, 6, 8, 11, 15, 17, 21 ] ],
@@ -5101,6 +5137,12 @@ window.GLOSSARY = [
    [
     "Romans", 1,
     [ 16 ] ],
+   [
+    "Romans", 3,
+    [ 3, 22, 26 ] ],
+   [
+    "Romans", 4,
+    [ 3, 5, 11, 17, 18, 24 ] ],
    [
     "Romans", 6,
     [ 8 ] ] ]
@@ -6078,6 +6120,9 @@ window.GLOSSARY = [
     [ 28 ] ],
    [
     "Romans", 2,
+    [ 20 ] ],
+   [
+    "Romans", 3,
     [ 20 ] ] ]
  },
  {
@@ -6598,6 +6643,12 @@ window.GLOSSARY = [
    [
     "Romans", 2,
     [ 5, 26 ] ],
+   [
+    "Romans", 3,
+    [ 5, 10, 21, 22, 25, 26 ] ],
+   [
+    "Romans", 4,
+    [ 3, 5, 6, 9, 11, 13, 22 ] ],
    [
     "Romans", 5,
     [ 7, 17, 18, 19, 21 ] ],
@@ -7158,7 +7209,10 @@ window.GLOSSARY = [
     [ 2 ] ],
    [
     "Acts", 26,
-    [ 14 ] ] ]
+    [ 14 ] ],
+   [
+    "Romans", 3,
+    [ 13 ] ] ]
  },
  {
   "id": "anger",
@@ -7315,6 +7369,9 @@ window.GLOSSARY = [
    [
     "Romans", 2,
     [ 5, 8 ] ],
+   [
+    "Romans", 4,
+    [ 15 ] ],
    [
     "Romans", 5,
     [ 9 ] ] ]
@@ -8928,7 +8985,10 @@ window.GLOSSARY = [
     [ 21 ] ],
    [
     "John", 6,
-    [ 63 ] ] ]
+    [ 63 ] ],
+   [
+    "Romans", 4,
+    [ 17 ] ] ]
  },
  {
   "id": "everlasting-life",
@@ -9010,6 +9070,9 @@ window.GLOSSARY = [
    [
     "John", 5,
     [ 24, 29 ] ],
+   [
+    "Romans", 3,
+    [ 8 ] ],
    [
     "Romans", 5,
     [ 16, 18 ] ] ]
@@ -9144,7 +9207,10 @@ window.GLOSSARY = [
     [ 24, 28 ] ],
    [
     "Romans", 1,
-    [ 2 ] ] ]
+    [ 2 ] ],
+   [
+    "Romans", 4,
+    [ 3 ] ] ]
  },
  {
   "id": "the-lad",
@@ -10608,7 +10674,13 @@ window.GLOSSARY = [
     [ 21 ] ],
    [
     "Romans", 2,
-    [ 25, 26, 27, 28, 29 ] ] ]
+    [ 25, 26, 27, 28, 29 ] ],
+   [
+    "Romans", 3,
+    [ 1, 30 ] ],
+   [
+    "Romans", 4,
+    [ 9, 10, 11, 12 ] ] ]
  },
  {
   "id": "living-water",
@@ -10815,7 +10887,10 @@ window.GLOSSARY = [
     [ 13 ] ],
    [
     "Romans", 2,
-    [ 14, 24 ] ] ]
+    [ 14, 24 ] ],
+   [
+    "Romans", 3,
+    [ 9, 29 ] ] ]
  },
  {
   "id": "glorified",
@@ -11061,7 +11136,10 @@ window.GLOSSARY = [
     [ 2, 8, 16, 17, 32 ] ],
    [
     "Acts", 13,
-    [ 26 ] ] ]
+    [ 26 ] ],
+   [
+    "Romans", 4,
+    [ 1, 2, 3, 9, 12, 13, 16 ] ] ]
  },
  {
   "id": "samaritans",
@@ -13746,7 +13824,10 @@ window.GLOSSARY = [
     [ 6 ] ],
    [
     "Romans", 1,
-    [ 19 ] ] ]
+    [ 19 ] ],
+   [
+    "Romans", 3,
+    [ 21 ] ] ]
  },
  {
   "id": "vine",
@@ -18609,7 +18690,10 @@ window.GLOSSARY = [
     [ 2 ] ],
    [
     "Luke", 21,
-    [ 22 ] ] ]
+    [ 22 ] ],
+   [
+    "Romans", 3,
+    [ 5 ] ] ]
  },
  {
   "id": "slow-to-anger",
@@ -21900,7 +21984,10 @@ window.GLOSSARY = [
     [ 38 ] ],
    [
     "Acts", 10,
-    [ 43 ] ] ]
+    [ 43 ] ],
+   [
+    "Romans", 3,
+    [ 25 ] ] ]
  },
  {
   "id": "dayspring",
@@ -22692,7 +22779,10 @@ window.GLOSSARY = [
     [ 34 ] ],
    [
     "Acts", 8,
-    [ 22 ] ] ]
+    [ 22 ] ],
+   [
+    "Romans", 4,
+    [ 7 ] ] ]
  },
  {
   "id": "on-this-fashion",
@@ -23061,7 +23151,10 @@ window.GLOSSARY = [
     [ 38 ] ],
    [
     "Luke", 21,
-    [ 28 ] ] ]
+    [ 28 ] ],
+   [
+    "Romans", 3,
+    [ 24 ] ] ]
  },
  {
   "id": "waxed",
@@ -24408,7 +24501,10 @@ window.GLOSSARY = [
     [ 15 ] ],
    [
     "Luke", 23,
-    [ 29 ] ] ]
+    [ 29 ] ],
+   [
+    "Romans", 4,
+    [ 7, 8 ] ] ]
  },
  {
   "id": "poor-in-spirit",
@@ -24546,7 +24642,10 @@ window.GLOSSARY = [
     [ 45 ] ],
    [
     "Acts", 13,
-    [ 15 ] ] ]
+    [ 15 ] ],
+   [
+    "Romans", 3,
+    [ 21 ] ] ]
  },
  {
   "id": "jot-and-tittle",
@@ -26841,7 +26940,13 @@ window.GLOSSARY = [
     [ 24 ] ],
    [
     "Mark", 16,
-    [ 14 ] ] ]
+    [ 14 ] ],
+   [
+    "Romans", 3,
+    [ 3 ] ],
+   [
+    "Romans", 4,
+    [ 20 ] ] ]
  },
  {
   "id": "dureth",
@@ -31217,6 +31322,12 @@ window.GLOSSARY = [
     "Romans", 2,
     [ 13 ] ],
    [
+    "Romans", 3,
+    [ 20, 24, 28 ] ],
+   [
+    "Romans", 4,
+    [ 2 ] ],
+   [
     "Romans", 5,
     [ 1, 9, 16, 18 ] ] ]
  },
@@ -31459,6 +31570,9 @@ window.GLOSSARY = [
    [
     "Luke", 20,
     [ 16 ] ],
+   [
+    "Romans", 3,
+    [ 4, 6, 31 ] ],
    [
     "Romans", 6,
     [ 2, 15 ] ] ]
@@ -33022,6 +33136,9 @@ window.GLOSSARY = [
    [
     "Acts", 8,
     [ 23 ] ],
+   [
+    "Romans", 4,
+    [ 7 ] ],
    [
     "Romans", 6,
     [ 19 ] ] ]
@@ -36801,7 +36918,10 @@ window.GLOSSARY = [
   "refs": [
    [
     "Romans", 2,
-    [ 4 ] ] ]
+    [ 4 ] ],
+   [
+    "Romans", 3,
+    [ 25 ] ] ]
  },
  {
   "id": "longsuffering",
@@ -36854,6 +36974,9 @@ window.GLOSSARY = [
   "name": "Hope (a sure expectation, not a wish)",
   "refs": [
    [
+    "Romans", 4,
+    [ 18 ] ],
+   [
     "Romans", 5,
     [ 2, 4, 5 ] ] ]
  },
@@ -36871,6 +36994,9 @@ window.GLOSSARY = [
   "kind": "term",
   "name": "Ungodly (living without God)",
   "refs": [
+   [
+    "Romans", 4,
+    [ 5 ] ],
    [
     "Romans", 5,
     [ 6 ] ] ]
@@ -37150,5 +37276,95 @@ window.GLOSSARY = [
    [
     "Romans", 6,
     [ 23 ] ] ]
+ },
+ {
+  "id": "oracles-of-god",
+  "kind": "term",
+  "name": "The oracles of God (God's own words, the Scriptures)",
+  "refs": [
+   [
+    "Acts", 7,
+    [ 38 ] ],
+   [
+    "Romans", 3,
+    [ 2 ] ] ]
+ },
+ {
+  "id": "asp",
+  "kind": "term",
+  "name": "Asp (a cobra, a deadly snake)",
+  "refs": [
+   [
+    "Romans", 3,
+    [ 13 ] ] ]
+ },
+ {
+  "id": "propitiation",
+  "kind": "term",
+  "name": "Propitiation (the sacrifice that turns God's anger away; the mercy seat)",
+  "refs": [
+   [
+    "Romans", 3,
+    [ 25 ] ] ]
+ },
+ {
+  "id": "boasting",
+  "kind": "term",
+  "name": "Boasting (bragging before God)",
+  "refs": [
+   [
+    "Romans", 3,
+    [ 27 ] ] ]
+ },
+ {
+  "id": "sarah",
+  "kind": "person",
+  "name": "Sara (Sarah), Abraham's wife",
+  "refs": [
+   [
+    "Romans", 4,
+    [ 19 ] ] ]
+ },
+ {
+  "id": "impute",
+  "kind": "term",
+  "name": "Impute, count, reckon (put to a man's account)",
+  "refs": [
+   [
+    "Romans", 2,
+    [ 26 ] ],
+   [
+    "Romans", 4,
+    [ 3, 4, 5, 6, 8, 9, 10, 11, 22, 23, 24 ] ],
+   [
+    "Romans", 5,
+    [ 13 ] ] ]
+ },
+ {
+  "id": "seal",
+  "kind": "term",
+  "name": "Seal (a mark that confirms what is already true)",
+  "refs": [
+   [
+    "Romans", 4,
+    [ 11 ] ] ]
+ },
+ {
+  "id": "father-of-many-nations",
+  "kind": "term",
+  "name": "Father of many nations (Abraham's new name)",
+  "refs": [
+   [
+    "Romans", 4,
+    [ 17, 18 ] ] ]
+ },
+ {
+  "id": "staggered",
+  "kind": "term",
+  "name": "Staggered (wavered in doubt)",
+  "refs": [
+   [
+    "Romans", 4,
+    [ 20 ] ] ]
  }
 ];

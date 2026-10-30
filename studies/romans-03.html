@@ -1,0 +1,702 @@
+<!doctype html>
+<html lang="en" data-theme="slate">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Romans 3</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="../assets/fonts.css">
+<link rel="stylesheet" href="../assets/deck.css">
+<link rel="stylesheet" href="../assets/themes.css">
+<style>
+/* ro03-book: where we are in Romans. Sixteen chapter cells, the letter's big sections as bands above them, this chapter lit */
+.ro03-book { display: grid; grid-template-columns: repeat(16, 1fr); gap: 5px 4px; margin: .5em 0 1em; }
+.ro03-band { grid-row: var(--r); grid-column: var(--c); padding: .35em .5em; border-radius: 6px; border-left: 3px solid var(--x, var(--line-strong)); background: color-mix(in srgb, var(--x, var(--ink-soft)) 14%, transparent); font-size: clamp(.74rem, .66rem + .4vw, 1rem); line-height: 1.2; color: var(--ink); }
+.ro03-band small { display: block; color: var(--ink-soft); font-size: .85em; }
+.ro03-band.sin { --x: var(--danger); }
+.ro03-band.just { --x: var(--accent); }
+.ro03-ch { grid-row: 3; text-align: center; padding: .4em 0; border: 1.5px solid var(--line-strong); border-radius: 6px; background: var(--surface); font-weight: 700; font-size: clamp(.72rem, .65rem + .4vw, 1.05rem); color: var(--ink-soft); }
+.ro03-ch.now { background: var(--accent); border-color: var(--accent); color: var(--on-accent); box-shadow: 0 0 0 5px color-mix(in srgb, var(--accent) 22%, transparent); }
+.ro03-book > * { opacity: 0; transform: translateY(6px); transition: opacity .6s ease, transform .6s ease; transition-delay: calc(var(--k, 0) * 120ms + 200ms); }
+.slide.active .ro03-book > * { opacity: 1; transform: none; }
+@media (max-width: 600px) { .ro03-band small { display: none; } .ro03-band { padding: .3em .25em; } }
+
+/* ro03-src: a chain of Old Testament quotes, each line beside the place it comes from */
+.ro03-src { display: grid; gap: .4em; margin: .3em 0 .9em; }
+.ro03-src > div { display: grid; grid-template-columns: 3.6em 1fr auto; gap: .15em .9em; align-items: baseline; padding: .4em .8em; background: var(--surface); border-left: 3px solid var(--accent); border-radius: 0 8px 8px 0; }
+.ro03-src i { font-style: normal; color: var(--ink-soft); font-size: clamp(.8rem, .74rem + .3vw, 1rem); }
+.ro03-src q { font: italic clamp(1rem, .88rem + .55vw, 1.4rem)/1.3 var(--serif); quotes: "“" "”"; }
+.ro03-src b { padding: .12em .65em; border: 1.5px solid var(--accent); border-radius: 999px; color: var(--accent-hot); white-space: nowrap; font-size: clamp(.8rem, .74rem + .3vw, 1rem); }
+.ro03-src b.isa { border-color: var(--cool); color: var(--cool); }
+@media (max-width: 600px) { .ro03-src > div { grid-template-columns: 1fr auto; } .ro03-src i { grid-column: 1 / -1; } }
+
+/* ro03-body: head to foot. A man's outline with each part Paul names, and where the line comes from */
+.ro03-fig { fill: color-mix(in srgb, var(--ink-soft) 22%, var(--surface-2)); stroke: var(--line-strong); stroke-width: 2.5; }
+.ro03-pt { fill: var(--danger); }
+.ro03-lead { stroke: var(--line-strong); stroke-width: 1.5; stroke-dasharray: 3 4; fill: none; }
+.ro03-lab { fill: var(--ink); font-size: 18px; }
+.ro03-lab tspan.ref { fill: var(--ink-soft); font-size: 14px; }
+.ro03-lab tspan.part { fill: var(--accent-hot); font-weight: 700; }
+.ro03-in { opacity: 0; }
+.slide.active .ro03-in { animation: ro03-show .6s ease both; animation-delay: calc(var(--k, 0) * 380ms + 500ms); }
+@keyframes ro03-show { from { opacity: 0; } to { opacity: 1; } }
+@media (max-width: 600px) { .ro03-lab { font-size: 20px; } .ro03-lab tspan.ref { font-size: 16px; } }
+
+/* ro03-court: a courtroom. The Judge's bench, all the world in the dock, the law in the witness box.
+   A .ro03-hush step stops every mouth and stamps GUILTY; in the second court a .ro03-free step brings Christ in and stamps JUSTIFIED */
+.ro03-wood { fill: var(--surface-2); stroke: var(--line-strong); stroke-width: 2.5; }
+.ro03-floor { stroke: var(--line-strong); stroke-width: 2; }
+.ro03-men use { fill: var(--ink-soft); transition: fill 1s ease 1s; }
+.ro03-t { fill: var(--ink); font: 600 21px var(--serif); }
+.ro03-s { fill: var(--ink-soft); font-size: 15px; }
+.ro03-gag { stroke: var(--danger); stroke-width: 4; stroke-linecap: round; opacity: 0; transition: opacity .6s ease; }
+.ro03-stamp rect { fill: none; stroke-width: 4; }
+.ro03-stamp text { font: 800 32px var(--sans); letter-spacing: .08em; }
+.ro03-stamp.no rect { stroke: var(--danger); } .ro03-stamp.no text { fill: var(--danger); }
+.ro03-stamp.yes rect { stroke: var(--accent); } .ro03-stamp.yes text { fill: var(--accent-hot); }
+.ro03-stamp { opacity: 0; transform-box: fill-box; transform-origin: center; transform: rotate(-8deg) scale(1.5); transition: opacity .5s ease .5s, transform .5s cubic-bezier(.3,1.6,.6,1) .5s; }
+.slide:has(.ro03-hush.on) .ro03-gag { opacity: 1; }
+.slide:has(.ro03-hush.on) .ro03-stamp.no, .ro03-court.guilty .ro03-stamp.no { opacity: 1; transform: rotate(-8deg) scale(1); }
+.ro03-court.guilty .ro03-gag { opacity: 1; }
+.ro03-christ { opacity: 0; transform: translateY(14px); transition: opacity 1s ease, transform 1s ease; }
+.ro03-christ use { fill: var(--accent); filter: drop-shadow(0 0 8px var(--accent)); }
+.slide:has(.ro03-free.on) .ro03-christ { opacity: 1; transform: none; }
+.slide:has(.ro03-free.on) .ro03-court.guilty .ro03-stamp.no { opacity: 0; transition-delay: 0s; }
+.slide:has(.ro03-free.on) .ro03-stamp.yes { opacity: 1; transform: rotate(-8deg) scale(1); transition-delay: 1.4s; }
+.slide:has(.ro03-free.on) .ro03-gag { opacity: 0; transition-delay: 1.2s; }
+.slide:has(.ro03-free.on) .ro03-men use { fill: var(--accent-hot); transition-delay: 1.6s; }
+@media (max-width: 600px) { .ro03-s { font-size: 19px; } .ro03-t { font-size: 25px; } }
+
+/* ro03-short: everyone comes short. Bars of different heights rise toward a line marked "the glory of God"; none reaches it */
+.ro03-glory { stroke: var(--accent); stroke-width: 3; stroke-dasharray: 10 6; }
+.ro03-haze { fill: color-mix(in srgb, var(--accent) 12%, transparent); }
+.ro03-bar { fill: color-mix(in srgb, var(--ink-soft) 45%, var(--surface-2)); transform-box: fill-box; transform-origin: 50% 100%; transform: scaleY(0); transition: transform 1.1s cubic-bezier(.3,.8,.3,1); transition-delay: calc(var(--k, 0) * 220ms + 300ms); }
+.slide.active .ro03-bar { transform: none; }
+.ro03-who { fill: var(--ink-soft); font-size: 15px; }
+.ro03-gl { fill: var(--accent-hot); font: italic 600 21px var(--serif); }
+.ro03-gap { opacity: 0; transition: opacity .8s ease; }
+.ro03-gap path { stroke: var(--danger); stroke-width: 2.5; fill: none; }
+.ro03-gap text { fill: var(--danger); font-size: 17px; font-weight: 700; }
+.slide:has(.ro03-short-go.on) .ro03-gap { opacity: 1; }
+@media (max-width: 600px) { .ro03-who { font-size: 19px; } }
+
+/* ro03-market: the slave market. A man in chains on the block; a .ro03-buy step pays the price, the chains drop, and he walks free */
+.ro03-block { fill: var(--surface-2); stroke: var(--line-strong); stroke-width: 2.5; }
+.ro03-chain ellipse { fill: none; stroke: var(--ink-soft); stroke-width: 3; }
+.ro03-chain { transform-box: fill-box; transform-origin: 0 0; transition: transform 1s ease .4s, opacity 1s ease .4s; }
+.ro03-slave use { fill: var(--ink-soft); transition: fill 1s ease 1.2s; }
+.ro03-slave { transition: transform 2.6s ease-in-out 1.2s; }
+.ro03-cross { fill: none; stroke: var(--accent); stroke-width: 7; stroke-linecap: round; }
+.ro03-tag { fill: var(--ink-soft); font-size: 16px; }
+.ro03-tag.hot { fill: var(--accent-hot); font-weight: 700; }
+.ro03-tag.after { opacity: 0; transition: opacity .8s ease 3.4s; }
+.ro03-tag.before { transition: opacity .5s ease; }
+.slide:has(.ro03-buy.on) .ro03-chain { transform: translate(-6px, 34px) rotate(14deg); opacity: .25; }
+.slide:has(.ro03-buy.on) .ro03-slave { transform: translate(370px, 40px); }
+.slide:has(.ro03-buy.on) .ro03-slave use { fill: var(--accent-hot); }
+.slide:has(.ro03-buy.on) .ro03-tag.after { opacity: 1; }
+.slide:has(.ro03-buy.on) .ro03-tag.before { opacity: 0; }
+@media (max-width: 600px) { .ro03-tag { font-size: 21px; } }
+
+/* ro03-seat: the mercy seat in the holy of holies (a night panel in every theme: --on-glow with --glow).
+   The broken law lies inside the ark; a .ro03-blood step sprinkles blood on the lid between the cherubim */
+.ro03-room { fill: var(--on-glow); }
+.ro03-gold { fill: color-mix(in srgb, var(--warm) 80%, var(--glow)); }
+.ro03-gold-d { fill: color-mix(in srgb, var(--warm) 60%, var(--on-glow)); }
+.ro03-wing { fill: color-mix(in srgb, var(--warm) 55%, var(--on-glow)); stroke: color-mix(in srgb, var(--warm) 80%, var(--glow)); stroke-width: 2; }
+.ro03-inside { fill: color-mix(in srgb, var(--glow) 10%, var(--on-glow)); stroke: color-mix(in srgb, var(--glow) 35%, transparent); stroke-width: 1.5; stroke-dasharray: 4 4; }
+.ro03-tablet { fill: color-mix(in srgb, var(--glow) 55%, var(--on-glow)); }
+.ro03-crack { stroke: var(--on-glow); stroke-width: 2.5; fill: none; }
+.ro03-say { fill: var(--glow); font-size: 16px; }
+.ro03-say.big { font: italic 600 20px var(--serif); fill: color-mix(in srgb, var(--warm) 60%, var(--glow)); }
+.ro03-drop { fill: var(--danger); opacity: 0; }
+.slide:has(.ro03-blood.on) .ro03-drop { animation: ro03-fall 1s ease-in both; animation-delay: calc(var(--k, 0) * 260ms); }
+@keyframes ro03-fall { 0% { opacity: 0; transform: translateY(-48px); } 20% { opacity: 1; } 100% { opacity: 1; transform: none; } }
+.ro03-stain { fill: var(--danger); opacity: 0; transition: opacity 1s ease 2s; }
+.slide:has(.ro03-blood.on) .ro03-stain { opacity: .85; }
+.ro03-after { opacity: 0; transition: opacity 1s ease 2.6s; }
+.slide:has(.ro03-blood.on) .ro03-after { opacity: 1; }
+@media (max-width: 600px) { .ro03-say { font-size: 20px; } .ro03-say.big { font-size: 21px; } }
+
+/* the cross on the pivot of the shared svg.scale */
+.ro03-pivot { fill: none; stroke: var(--accent); stroke-width: 6; stroke-linecap: round; }
+.ro03-pan-t { fill: var(--ink); font: 600 19px var(--serif); }
+.ro03-pan-s { fill: var(--ink-soft); font-size: 14px; }
+@media (max-width: 600px) { .ro03-pan-t { font-size: 22px; } .ro03-pan-s { font-size: 17px; } }
+</style>
+</head>
+<body>
+<main class="deck" id="deck">
+
+<!-- ======================= OPENING ======================= -->
+<section class="slide title">
+  <div class="inner">
+    <div class="emblem rise"></div>
+    <h1 class="rise" style="--d:1">Romans 3</h1>
+    <p class="sub rise" style="--d:3">None righteous, freely justified</p>
+    <p class="tag rise" style="--d:5">The court finds the whole world guilty. Then, in the very next breath, the Judge sets the guilty free.</p>
+  </div>
+</section>
+
+<section class="slide watch">
+  <div class="inner">
+    <h2 class="rise">Things to watch for</h2>
+    <p class="lede rise" style="--d:1">Keep these questions in the back of your mind as we read. We'll come back to every one of them at the end.</p>
+    <ol class="seeds">
+      <li class="step"><span class="topic">Advantage</span><span class="seed-q">What advantage did the Jews have?</span></li>
+      <li class="step"><span class="topic">Guilty</span><span class="seed-q">Who is under sin?</span></li>
+      <li class="step"><span class="topic">The law</span><span class="seed-q">What can the law do, and what can't it do?</span></li>
+      <li class="step"><span class="topic">Justified</span><span class="seed-q">How is a man justified before God?</span></li>
+      <li class="step"><span class="topic">The price</span><span class="seed-q">What did it cost to set us free?</span></li>
+      <li class="step"><span class="topic">Boasting</span><span class="seed-q">Why is boasting shut out?</span></li>
+    </ol>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise">Where we are in Romans</h2>
+    <p class="note rise" style="--d:1">Paul wrote this letter from Corinth, about AD 57, to the church at Rome. He lays out the gospel like a lawyer laying out a case, one step at a time.</p>
+    <div class="ro03-book" aria-label="Romans chapters 1 to 16. Chapters 1 to 3: all the world guilty. Chapters 3 to 5: justified by faith. Chapters 6 to 8: new life. Chapters 9 to 11: Israel and the nations. Chapters 12 to 16: living it out. Chapter 3 is lit: the place where the guilty verdict turns into good news.">
+      <div class="ro03-band sin" style="--r:1;--c:1/4;--k:0">All guilty<small>1:18–3:20</small></div>
+      <div class="ro03-band just" style="--r:2;--c:3/6;--k:1">Justified by faith<small>3:21–5:21</small></div>
+      <div class="ro03-band" style="--r:2;--c:6/9;--k:2">New life<small>6–8</small></div>
+      <div class="ro03-band" style="--r:2;--c:9/12;--k:3">Israel and the nations<small>9–11</small></div>
+      <div class="ro03-band" style="--r:2;--c:12/17;--k:4">Living it out<small>12–16</small></div>
+      <span class="ro03-ch" style="--k:5">1</span><span class="ro03-ch" style="--k:5">2</span><span class="ro03-ch now" style="--k:6">3</span><span class="ro03-ch" style="--k:5">4</span>
+      <span class="ro03-ch" style="--k:5">5</span><span class="ro03-ch" style="--k:5">6</span><span class="ro03-ch" style="--k:5">7</span><span class="ro03-ch" style="--k:5">8</span>
+      <span class="ro03-ch" style="--k:5">9</span><span class="ro03-ch" style="--k:5">10</span><span class="ro03-ch" style="--k:5">11</span><span class="ro03-ch" style="--k:5">12</span>
+      <span class="ro03-ch" style="--k:5">13</span><span class="ro03-ch" style="--k:5">14</span><span class="ro03-ch" style="--k:5">15</span><span class="ro03-ch" style="--k:5">16</span>
+    </div>
+    <p class="note step">Chapters 1 and 2 put the pagan world and then the religious man on trial. Chapter 3 is where the case closes: <em>everybody</em> is guilty. And then, at verse 21, two words change everything: <em>“But now.”</em></p>
+  </div>
+</section>
+
+<!-- ======================= PART ONE: LET GOD BE TRUE ======================= -->
+<section class="slide part">
+  <div class="inner">
+    <p class="part-n rise">Part one</p>
+    <h2 class="rise" style="--d:1">Let God be true</h2>
+    <p class="range rise" style="--d:2">Verses 1–8</p>
+    <div class="rule"></div>
+    <p class="hook rise" style="--d:4">If everyone is guilty, what good was it to be a Jew? And doesn't our sin make God's goodness look better? Paul answers the hecklers.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="1-2" data-hl="unto them were committed the oracles of God"></section>
+
+<section class="slide verse" data-v="3-4" data-hl="shall their unbelief make the faith of God without effect?|let God be true, but every man a liar"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="2"></blockquote>
+    <h2 class="rise" style="--d:1">Trusted with God's words</h2>
+    <p class="note rise" style="--d:2">The Jews' great advantage was the <em>oracles of God</em>: the Scriptures, handed to them to keep. Some didn't believe what they held. A man's unbelief can't make God unfaithful.</p>
+    <div class="pair">
+      <div class="scroll step"><p class="ref">Paul quotes, Romans 3:4</p><p class="kjv">That thou mightest be justified in thy sayings, and mightest overcome when thou art judged.</p></div>
+      <div class="scroll step"><p class="ref">David wrote it, Psalm 51:4</p><p class="kjv">Against thee, thee only, have I sinned, and done this evil in thy sight: <mark>that thou mightest be justified when thou speakest</mark>, and be clear when thou judgest.</p></div>
+    </div>
+    <p class="note step">Psalm 51 is David's prayer after his adultery with Bathsheba and the murder of her husband. He stopped making excuses and said: God, You're right about me. That's where getting free from regret starts: <em>“let God be true.”</em></p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="5-8" data-hl="Is God unrighteous who taketh vengeance?|for then how shall God judge the world?|Let us do evil, that good may come?"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise">The excuses</h2>
+    <div class="talk">
+      <p class="rise" style="--d:2"><small>The excuse</small>If my sin makes God look good, why should I be judged? <span class="flag">3:5, 3:7</span></p>
+      <p class="reply step"><small>Paul</small>God forbid: for then how shall God judge the world?</p>
+      <p class="step"><small>The slander</small>Let us do evil, that good may come. <span class="flag">3:8</span></p>
+      <p class="reply step"><small>Paul</small>…whose damnation is just.</p>
+    </div>
+    <p class="note step">People twisted Paul's message about grace, and the voice still says, <em>“One more time. God forgives anyway.”</em> Grace is bigger than your worst day. But it isn't permission.</p>
+  </div>
+</section>
+
+<!-- ======================= PART TWO: NONE RIGHTEOUS ======================= -->
+<section class="slide part">
+  <div class="inner">
+    <p class="part-n rise">Part two</p>
+    <h2 class="rise" style="--d:1">None righteous</h2>
+    <p class="range rise" style="--d:2">Verses 9–20</p>
+    <div class="rule"></div>
+    <p class="hook rise" style="--d:4">Paul calls his witnesses, and every one of them is from the Jews' own Bible. The verdict is the same for everyone.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="9-12" data-hl="they are all under sin|There is none righteous, no, not one|there is none that doeth good, no, not one"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise">Where each line comes from</h2>
+    <p class="note rise" style="--d:1">Verses 10–18 aren't Paul's own words. He strings together quotes from the Psalms and Isaiah, like a lawyer calling witnesses.</p>
+    <div class="ro03-src">
+      <div class="step"><i>3:10–12</i><q>There is none righteous, no, not one</q><b>Psalm 14:1–3</b></div>
+      <div class="step"><i>3:13</i><q>Their throat is an open sepulchre</q><b>Psalm 5:9</b></div>
+      <div class="step"><i>3:13</i><q>the poison of asps is under their lips</q><b>Psalm 140:3</b></div>
+      <div class="step"><i>3:14</i><q>Whose mouth is full of cursing and bitterness</q><b>Psalm 10:7</b></div>
+      <div class="step"><i>3:15–17</i><q>Their feet are swift to shed blood</q><b class="isa">Isaiah 59:7–8</b></div>
+      <div class="step"><i>3:18</i><q>There is no fear of God before their eyes</q><b>Psalm 36:1</b></div>
+    </div>
+    <p class="note step">Psalm 14 begins, <em>“The fool hath said in his heart, There is no God.”</em> Then it says, <em>“They are all gone aside… there is none that doeth good, no, not one.”</em> Paul didn't invent this verdict. God had said it for a thousand years.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="13-15" data-hl="Their throat is an open sepulchre|the poison of asps is under their lips|Their feet are swift to shed blood"></section>
+
+<section class="slide verse" data-v="16-18" data-hl="the way of peace have they not known|There is no fear of God before their eyes"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise">Head to foot</h2>
+    <div class="stage">
+      <svg viewBox="0 0 640 330" style="max-height:40vh" role="img" aria-label="A man's outline. Labels appear one by one, each pointing to a part of him: throat, an open sepulchre; tongues, deceit; lips, the poison of asps; mouth, cursing and bitterness; feet, swift to shed blood; ways, destruction and misery; eyes, no fear of God. Each label gives the Psalm or Isaiah verse it comes from.">
+        <path class="ro03-fig" d="M320 20 C 344 20, 356 38, 356 58 C 356 80, 340 96, 320 96 C 300 96, 284 80, 284 58 C 284 38, 296 20, 320 20 Z"/>
+        <path class="ro03-fig" d="M306 96 L 334 96 L 336 114 C 372 118, 392 130, 396 160 L 404 238 L 388 240 L 374 170 L 368 222 L 362 300 L 342 300 L 326 230 L 314 230 L 298 300 L 278 300 L 272 222 L 266 170 L 252 240 L 236 238 L 244 160 C 248 130, 268 118, 304 114 Z"/>
+        <ellipse class="ro03-fig" cx="286" cy="306" rx="20" ry="8"/><ellipse class="ro03-fig" cx="354" cy="306" rx="20" ry="8"/>
+        <g class="ro03-in" style="--k:0"><circle class="ro03-pt" cx="320" cy="108" r="5"/><path class="ro03-lead" d="M314 108 L 250 108"/>
+          <text class="ro03-lab" x="244" y="104" text-anchor="end"><tspan class="part">throat</tspan> an open sepulchre</text><text class="ro03-lab" x="244" y="124" text-anchor="end"><tspan class="ref">Psalm 5:9</tspan></text></g>
+        <g class="ro03-in" style="--k:1"><circle class="ro03-pt" cx="314" cy="80" r="5"/><path class="ro03-lead" d="M308 80 L 270 64 L 250 64"/>
+          <text class="ro03-lab" x="244" y="60" text-anchor="end"><tspan class="part">tongues</tspan> used deceit</text><text class="ro03-lab" x="244" y="80" text-anchor="end"><tspan class="ref">Psalm 5:9</tspan></text></g>
+        <g class="ro03-in" style="--k:2"><circle class="ro03-pt" cx="326" cy="78" r="5"/><path class="ro03-lead" d="M332 78 L 370 60 L 392 60"/>
+          <text class="ro03-lab" x="398" y="56"><tspan class="part">lips</tspan> the poison of asps</text><text class="ro03-lab" x="398" y="76"><tspan class="ref">Psalm 140:3</tspan></text></g>
+        <g class="ro03-in" style="--k:3"><circle class="ro03-pt" cx="332" cy="86" r="5"/><path class="ro03-lead" d="M338 88 L 372 112 L 392 112"/>
+          <text class="ro03-lab" x="398" y="108"><tspan class="part">mouth</tspan> full of cursing</text><text class="ro03-lab" x="398" y="128"><tspan class="ref">Psalm 10:7</tspan></text></g>
+        <g class="ro03-in" style="--k:4"><circle class="ro03-pt" cx="288" cy="306" r="5"/><path class="ro03-lead" d="M282 304 L 250 284"/>
+          <text class="ro03-lab" x="244" y="270" text-anchor="end"><tspan class="part">feet</tspan> swift to shed blood</text><text class="ro03-lab" x="244" y="290" text-anchor="end"><tspan class="ref">Isaiah 59:7</tspan></text></g>
+        <g class="ro03-in" style="--k:5"><circle class="ro03-pt" cx="356" cy="306" r="5"/><path class="ro03-lead" d="M362 304 L 392 262"/>
+          <text class="ro03-lab" x="398" y="250"><tspan class="part">ways</tspan> destruction</text><text class="ro03-lab" x="398" y="270"><tspan class="ref">Isaiah 59:7–8</tspan></text></g>
+        <g class="ro03-in" style="--k:6"><circle class="ro03-pt" cx="308" cy="52" r="5"/><circle class="ro03-pt" cx="332" cy="52" r="5"/><path class="ro03-lead" d="M338 50 L 372 18 L 392 18"/>
+          <text class="ro03-lab" x="398" y="14"><tspan class="part">eyes</tspan> no fear of God</text><text class="ro03-lab" x="398" y="34"><tspan class="ref">Psalm 36:1</tspan></text></g>
+      </svg>
+    </div>
+    <p class="note step">First the words: throat, tongue, lips, mouth. Then the feet. Last, the root of it all: <em>“no fear of God.”</em> An <em>asp</em> is a cobra; an <em>open sepulchre</em> is a grave with the stone rolled off.</p>
+    <p class="note step">Not every man is as bad as he could be, but no part of any man is untouched. Some of us knew the cursing and the blood. Others hid it better. Same verdict.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="19-20" data-hl="that every mouth may be stopped, and all the world may become guilty before God|by the deeds of the law there shall no flesh be justified in his sight|by the law is the knowledge of sin"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <div class="stage">
+      <svg class="ro03-court" viewBox="0 0 640 300" style="max-height:36vh" role="img" aria-label="A courtroom. God the Judge sits at a high bench. On the left, the whole world stands in the dock. On the right, the law stands in the witness box as a scroll. On a step, a bar falls across every mouth in the dock, and the word GUILTY is stamped between them.">
+        <defs><g id="ro03-man"><circle cx="0" cy="-38" r="9"/><path d="M-10 -27 h20 l5 27 h-30 z"/></g></defs>
+        <line class="ro03-floor" x1="10" y1="268" x2="630" y2="268"/>
+        <rect class="ro03-wood" x="272" y="4" width="96" height="40" rx="8"/>
+        <rect class="ro03-wood" x="214" y="38" width="212" height="66" rx="6"/>
+        <text class="ro03-t" x="320" y="70" text-anchor="middle">God, the Judge</text>
+        <text class="ro03-s" x="320" y="93" text-anchor="middle">“how shall God judge the world?” 3:6</text>
+        <g class="ro03-men">
+          <use href="#ro03-man" x="54" y="236"/><use href="#ro03-man" x="84" y="240"/><use href="#ro03-man" x="114" y="234"/><use href="#ro03-man" x="144" y="240"/>
+          <use href="#ro03-man" x="174" y="236"/><use href="#ro03-man" x="204" y="240"/><use href="#ro03-man" x="232" y="236"/>
+        </g>
+        <g class="ro03-gag"><path d="M47 201 h14 M77 205 h14 M107 199 h14 M137 205 h14 M167 201 h14 M197 205 h14 M225 201 h14"/></g>
+        <rect class="ro03-wood" x="30" y="232" width="224" height="36" rx="4"/>
+        <text class="ro03-s" x="142" y="256" text-anchor="middle">Jews and Gentiles</text>
+        <text class="ro03-s" x="142" y="290" text-anchor="middle">all the world (3:19)</text>
+        <rect class="ro03-wood" x="452" y="232" width="156" height="36" rx="4"/>
+        <g><rect x="490" y="174" width="80" height="40" rx="4" style="fill:var(--glow);stroke:var(--line-strong)" stroke-width="2"/><circle cx="490" cy="194" r="9" style="fill:var(--surface-2);stroke:var(--line-strong)" stroke-width="2"/><circle cx="570" cy="194" r="9" style="fill:var(--surface-2);stroke:var(--line-strong)" stroke-width="2"/>
+          <path d="M504 188 h52 M504 200 h40" stroke-width="2" style="stroke:var(--on-glow)"/></g>
+        <text class="ro03-s" x="530" y="256" text-anchor="middle">the witness</text>
+        <text class="ro03-s" x="530" y="290" text-anchor="middle">the law (3:19)</text>
+        <g class="ro03-stamp no"><rect x="250" y="120" width="140" height="46" rx="6"/><text x="320" y="155" text-anchor="middle">GUILTY</text></g>
+      </svg>
+    </div>
+    <h2 class="rise" style="--d:1">Every mouth stopped</h2>
+    <p class="note step ro03-hush">The case is closed. The law, God's own witness, has testified, and nobody in the dock has anything to say. No excuses, no comparisons, no <em>“but you don't know what I've been through.”</em> <em>All the world</em> is guilty before God.</p>
+    <p class="note step">That's hard to hear. But a man has to hear the verdict before he'll listen to the pardon.</p>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="20"></blockquote>
+    <h2 class="rise" style="--d:1">What the law can and can't do</h2>
+    <div class="columns">
+      <div class="col law step"><p class="who">The law can</p><h3>Show you the dirt</h3><p><em>“By the law is the knowledge of sin.”</em> Like a mirror, it tells the truth about your face.</p></div>
+      <div class="col grace step"><p class="who">The law can't</p><h3>Wash it off</h3><p>Nobody washes his face with the mirror. <em>“By the deeds of the law there shall no flesh be justified.”</em></p></div>
+    </div>
+    <p class="note step">Trying harder to keep the rules can't clear your record. You could keep every rule from today on, and yesterday would still be on the books. Something else has to happen. And it does, in the very next verse.</p>
+  </div>
+</section>
+
+<!-- ======================= PART THREE: BUT NOW ======================= -->
+<section class="slide part">
+  <div class="inner">
+    <p class="part-n rise">Part three</p>
+    <h2 class="rise" style="--d:1">But now</h2>
+    <p class="range rise" style="--d:2">Verses 21–31</p>
+    <div class="rule"></div>
+    <p class="hook rise" style="--d:4">The guilty verdict stands. Then God does what no court on earth can do: He sets the guilty free, and stays just.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="21-23" data-hl="But now the righteousness of God without the law is manifested|unto all and upon all them that believe: for there is no difference|For all have sinned, and come short of the glory of God"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <div class="stage">
+      <svg viewBox="0 0 640 310" style="max-height:38vh" role="img" aria-label="A dotted line high above is marked the glory of God. Six bars rise toward it, each a little taller: a murderer, a thief, an addict, a good neighbour, a preacher, and the best man you know. None of them reaches the line. On a step, the gap above the tallest bar is marked: still short.">
+        <rect class="ro03-haze" x="10" y="0" width="620" height="46" rx="6"/>
+        <line class="ro03-glory" x1="10" y1="46" x2="630" y2="46"/>
+        <text class="ro03-gl" x="620" y="32" text-anchor="end">the glory of God</text>
+        <line class="ro03-floor" x1="10" y1="252" x2="630" y2="252"/>
+        <rect class="ro03-bar" style="--k:0" x="34" y="212" width="70" height="40" rx="4"/>
+        <rect class="ro03-bar" style="--k:1" x="134" y="196" width="70" height="56" rx="4"/>
+        <rect class="ro03-bar" style="--k:2" x="234" y="180" width="70" height="72" rx="4"/>
+        <rect class="ro03-bar" style="--k:3" x="334" y="156" width="70" height="96" rx="4"/>
+        <rect class="ro03-bar" style="--k:4" x="434" y="138" width="70" height="114" rx="4"/>
+        <rect class="ro03-bar" style="--k:5" x="534" y="120" width="70" height="132" rx="4"/>
+        <text class="ro03-who" text-anchor="middle"><tspan x="69" y="274">a murderer</tspan></text>
+        <text class="ro03-who" text-anchor="middle"><tspan x="169" y="274">a thief</tspan></text>
+        <text class="ro03-who" text-anchor="middle"><tspan x="269" y="274">an addict</tspan></text>
+        <text class="ro03-who" text-anchor="middle"><tspan x="369" y="274">a good</tspan><tspan x="369" y="293">neighbour</tspan></text>
+        <text class="ro03-who" text-anchor="middle"><tspan x="469" y="274">a preacher</tspan></text>
+        <text class="ro03-who" text-anchor="middle"><tspan x="569" y="274">the best man</tspan><tspan x="569" y="293">you know</tspan></text>
+        <g class="ro03-gap"><path d="M569 114 V 54 M561 64 L569 52 L577 64 M561 104 L569 116 L577 104"/><text x="556" y="90" text-anchor="end">still short</text></g>
+      </svg>
+    </div>
+    <h2 class="rise" style="--d:1">Come short</h2>
+    <p class="note step ro03-short-go"><em>Come short</em> means to fall short, to lack. Some get closer than others; nobody reaches it. <em>“There is no difference.”</em> The man in the cell and the man in the pulpit stand on the same ground.</p>
+    <p class="note step">That's good news both ways. Nobody here is worse off than anyone else at the cross. And the way across the gap is <em>“unto all and upon all them that believe.”</em></p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="24-26" data-hl="Being justified freely by his grace through the redemption that is in Christ Jesus|to be a propitiation through faith in his blood|that he might be just, and the justifier of him which believeth in Jesus"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <div class="stage">
+      <svg class="ro03-court guilty" viewBox="0 0 640 300" style="max-height:36vh" role="img" aria-label="The same courtroom. The world in the dock is stamped GUILTY, every mouth stopped. On a step, Christ Jesus stands in the middle of the court, the GUILTY stamp disappears, the people in the dock are lit up, and the word JUSTIFIED is stamped instead.">
+        <line class="ro03-floor" x1="10" y1="268" x2="630" y2="268"/>
+        <rect class="ro03-wood" x="272" y="4" width="96" height="40" rx="8"/>
+        <rect class="ro03-wood" x="214" y="38" width="212" height="66" rx="6"/>
+        <text class="ro03-t" x="320" y="70" text-anchor="middle">God, the Judge</text>
+        <text class="ro03-s" x="320" y="93" text-anchor="middle">“just, and the justifier” 3:26</text>
+        <g class="ro03-men">
+          <use href="#ro03-man" x="54" y="236"/><use href="#ro03-man" x="84" y="240"/><use href="#ro03-man" x="114" y="234"/><use href="#ro03-man" x="144" y="240"/>
+          <use href="#ro03-man" x="174" y="236"/><use href="#ro03-man" x="204" y="240"/><use href="#ro03-man" x="232" y="236"/>
+        </g>
+        <g class="ro03-gag"><path d="M47 201 h14 M77 205 h14 M107 199 h14 M137 205 h14 M167 201 h14 M197 205 h14 M225 201 h14"/></g>
+        <rect class="ro03-wood" x="30" y="232" width="224" height="36" rx="4"/>
+        <text class="ro03-s" x="142" y="256" text-anchor="middle">them that believe</text>
+        <text class="ro03-s" x="142" y="290" text-anchor="middle">“unto all and upon all” (3:22)</text>
+        <rect class="ro03-wood" x="452" y="232" width="156" height="36" rx="4"/>
+        <g><rect x="490" y="174" width="80" height="40" rx="4" style="fill:var(--glow);stroke:var(--line-strong)" stroke-width="2"/><circle cx="490" cy="194" r="9" style="fill:var(--surface-2);stroke:var(--line-strong)" stroke-width="2"/><circle cx="570" cy="194" r="9" style="fill:var(--surface-2);stroke:var(--line-strong)" stroke-width="2"/>
+          <path d="M504 188 h52 M504 200 h40" stroke-width="2" style="stroke:var(--on-glow)"/></g>
+        <text class="ro03-s" x="530" y="256" text-anchor="middle">the law agrees</text>
+        <text class="ro03-s" x="530" y="290" text-anchor="middle">“witnessed by the law” (3:21)</text>
+        <g class="ro03-christ"><use href="#ro03-man" x="0" y="0" transform="translate(352 268) scale(1.35)"/><text class="ro03-s" x="352" y="290" text-anchor="middle" style="fill:var(--accent-hot);font-weight:700">Christ Jesus</text></g>
+        <g class="ro03-stamp no"><rect x="250" y="120" width="140" height="46" rx="6"/><text x="320" y="155" text-anchor="middle">GUILTY</text></g>
+        <g class="ro03-stamp yes"><rect x="232" y="120" width="176" height="46" rx="6"/><text x="320" y="155" text-anchor="middle">JUSTIFIED</text></g>
+      </svg>
+    </div>
+    <h2 class="rise" style="--d:1">Justified: the courtroom</h2>
+    <p class="note step ro03-free"><em>Justified</em> is a courtroom word. Not <em>made better</em>, but <em>declared righteous</em>: the Judge rules your record clear. Not because you were innocent, but because Christ Jesus stood in for you.</p>
+    <p class="note step"><em>Freely</em> is <span class="gk">dōrean</span>, the word in John 15:25: <em>“They hated me without a cause.”</em> No cause in Him for their hate; no cause in us for His grace.</p>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <div class="stage">
+      <svg viewBox="0 0 640 250" style="max-height:34vh" role="img" aria-label="A slave market. A man in chains stands on the selling block under the words sold under sin. To the right stands a cross, marked the price: the precious blood of Christ. On a step, the chains fall away and the man walks past the cross, free.">
+        <defs><g id="ro03-man2"><circle cx="0" cy="-38" r="9"/><path d="M-10 -27 h20 l5 27 h-30 z"/></g></defs>
+        <line class="ro03-floor" x1="10" y1="226" x2="630" y2="226"/>
+        <rect class="ro03-block" x="70" y="186" width="160" height="40" rx="3"/>
+        <rect class="ro03-block" x="40" y="206" width="30" height="20" rx="2"/>
+        <rect x="76" y="70" width="10" height="116" style="fill:var(--line-strong)"/>
+        <g class="ro03-chain"><ellipse cx="96" cy="134" rx="8" ry="5"/><ellipse cx="110" cy="138" rx="8" ry="5"/><ellipse cx="124" cy="142" rx="8" ry="5"/><ellipse cx="138" cy="146" rx="8" ry="5"/><ellipse cx="150" cy="150" rx="7" ry="5"/></g>
+        <g class="ro03-slave"><use href="#ro03-man2" transform="translate(160 186) scale(1.5)"/></g>
+        <text class="ro03-tag before" x="150" y="48" text-anchor="middle">“sold under sin” (7:14)</text>
+        <path class="ro03-cross" d="M420 216 V 96 M392 126 H 448"/>
+        <text class="ro03-tag hot" x="420" y="62" text-anchor="middle">the price</text>
+        <text class="ro03-tag" x="420" y="84" text-anchor="middle">“the precious blood of Christ”</text>
+        <text class="ro03-tag hot after" x="530" y="112" text-anchor="middle">free indeed</text>
+      </svg>
+    </div>
+    <h2 class="rise" style="--d:1">Redemption: the slave market</h2>
+    <p class="note step ro03-buy"><em>Redemption</em> is a slave-market word: to buy a man back and set him free by paying the price. Rome was full of slaves, and many in that church were likely slaves or freed slaves. The price here was <em>“the precious blood of Christ”</em> (1 Peter 1:19).</p>
+    <p class="note step">Some of us know what it is to belong to something: a bottle, a pipe, a habit that tells you when to jump. Christ didn't just forgive the slave. He bought him out. <em>“If the Son therefore shall make you free, ye shall be free indeed”</em> (John 8:36).</p>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <div class="stage">
+      <svg viewBox="0 0 640 300" style="max-height:38vh" role="img" aria-label="The holy of holies, dark. The golden ark of the covenant, with two cherubim whose wings arch over its lid, the mercy seat. Light glows above the lid: God's presence. Inside the ark lie the two tablets of the law, cracked. On a step, drops of blood fall onto the mercy seat and stain it, between God's presence above and the broken law below.">
+        <defs><radialGradient id="ro03-shine"><stop offset="0" style="stop-color:var(--glow);stop-opacity:.75"/><stop offset="1" style="stop-color:var(--glow);stop-opacity:0"/></radialGradient></defs>
+        <rect class="ro03-room" x="0" y="0" width="640" height="300" rx="12"/>
+        <circle cx="320" cy="112" r="92" style="fill:url(#ro03-shine)"/>
+        <text class="ro03-say" x="320" y="30" text-anchor="middle">God's presence</text>
+        <path class="ro03-wing" d="M228 186 C 214 140, 236 104, 300 120 C 270 128, 252 150, 262 186 Z"/>
+        <path class="ro03-wing" d="M412 186 C 426 140, 404 104, 340 120 C 370 128, 388 150, 378 186 Z"/>
+        <rect class="ro03-gold-d" x="180" y="228" width="280" height="9" rx="4"/>
+        <rect class="ro03-gold" x="214" y="196" width="212" height="80" rx="3"/>
+        <rect class="ro03-inside" x="236" y="210" width="168" height="54" rx="3"/>
+        <path class="ro03-tablet" d="M266 260 V 226 C 266 216, 300 216, 300 226 V 260 Z"/><path class="ro03-tablet" d="M340 260 V 226 C 340 216, 374 216, 374 226 V 260 Z"/>
+        <path class="ro03-crack" d="M284 222 L 280 236 L 288 244 L 282 258 M358 222 L 362 234 L 354 246 L 360 258"/>
+        <rect class="ro03-gold" x="206" y="184" width="228" height="13" rx="3"/>
+        <ellipse class="ro03-stain" cx="320" cy="187" rx="34" ry="4"/>
+        <circle class="ro03-drop" style="--k:0" cx="306" cy="180" r="4"/><circle class="ro03-drop" style="--k:1" cx="320" cy="178" r="4"/><circle class="ro03-drop" style="--k:2" cx="334" cy="180" r="4"/>
+        <circle class="ro03-drop" style="--k:3" cx="313" cy="181" r="3.5"/><circle class="ro03-drop" style="--k:4" cx="327" cy="181" r="3.5"/><circle class="ro03-drop" style="--k:5" cx="296" cy="182" r="3"/><circle class="ro03-drop" style="--k:6" cx="344" cy="182" r="3"/>
+        <text class="ro03-say" x="196" y="164" text-anchor="end">the mercy seat</text>
+        <text class="ro03-say" x="320" y="292" text-anchor="middle">inside: the law we broke</text>
+        <text class="ro03-say big ro03-after" x="446" y="164">blood between God</text>
+        <text class="ro03-say big ro03-after" x="446" y="186">and the broken law</text>
+      </svg>
+    </div>
+    <h2 class="rise" style="--d:1">Propitiation: the mercy seat</h2>
+    <p class="note step ro03-blood">A <em>propitiation</em> is a sacrifice that satisfies God's just anger at sin and turns it away. Paul's word, <span class="gk">hilastērion</span>, also names the <em>mercy seat</em>, the gold lid of the ark (Hebrews 9:5). Once a year the high priest sprinkled blood on it (Leviticus 16:14). God looked at His broken law and saw blood in between.</p>
+    <p class="note step">Now God has <em>“set forth”</em> Jesus in the open. And not for a few: <em>“not for ours only, but also for the sins of the whole world”</em> (1 John 2:2).</p>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="26" data-hl="that he might be just, and the justifier of him which believeth in Jesus"></blockquote>
+    <div class="split">
+      <div class="stage">
+        <svg class="scale now" style="--at:300px 80px; --from:-12deg; --tip:0deg; --wait:1s" viewBox="0 0 600 300" role="img" aria-label="A balance scale with a cross at its pivot. It starts tipped, then settles level. On one pan: just, sin paid for in full. On the other: justifier, the sinner set free.">
+          <path d="M240 290 L360 290 L330 270 L270 270 Z" stroke-width="2.5" style="fill:var(--surface-2);stroke:var(--ink-soft)"/>
+          <rect x="294" y="74" width="12" height="198" style="fill:var(--ink-soft)"/>
+          <g class="scale-beam">
+            <rect x="80" y="74" width="440" height="12" rx="6" style="fill:var(--ink)"/>
+            <g fill="none" stroke-width="2" style="stroke:var(--ink-soft)"><path d="M90 86 L40 186 M90 86 L140 186"/><path d="M510 86 L460 186 M510 86 L560 186"/></g>
+            <path d="M28 186 L152 186 Q90 226 28 186 Z" stroke-width="2.5" style="fill:var(--surface-2);stroke:var(--ink-soft)"/>
+            <path d="M448 186 L572 186 Q510 226 448 186 Z" stroke-width="2.5" style="fill:var(--surface-2);stroke:var(--ink-soft)"/>
+            <text class="ro03-pan-t" x="90" y="176" text-anchor="middle">just</text>
+            <text class="ro03-pan-t" x="510" y="176" text-anchor="middle">justifier</text>
+          </g>
+          <path class="ro03-pivot" d="M300 16 V 78 M280 34 H 320"/>
+          <text class="ro03-pan-s" x="90" y="250" text-anchor="middle">sin paid in full</text>
+          <text class="ro03-pan-s" x="510" y="250" text-anchor="middle">the sinner set free</text>
+        </svg>
+      </div>
+      <div>
+        <h2 class="rise" style="--d:1">Just, and the justifier</h2>
+        <p class="note step">Here's the problem only the cross solves. A judge who lets the guilty walk is a crooked judge. A judge who punishes everyone has no one left to save.</p>
+        <p class="note step">For centuries, in His <em>forbearance</em>, God held back, and <em>“sins that are past”</em>, like Abraham's and David's, went unpunished. At the cross He showed He never let sin slide: it was punished in His Son. So God stays just, and the man who believes in Jesus goes free.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="slide verse" data-v="27-28" data-hl="Where is boasting then? It is excluded|a man is justified by faith without the deeds of the law"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="27"></blockquote>
+    <h2 class="rise" style="--d:1">Boasting is shut out</h2>
+    <ul class="nots">
+      <li class="step"><span class="k">“I'm not as bad as him”</span><span class="why">no difference (3:22)</span></li>
+      <li class="step"><span class="k">“I was raised in church”</span><span class="why">the Jews had the oracles, and still came short (3:2, 3:9)</span></li>
+      <li class="step"><span class="k">“I've cleaned up my life”</span><span class="why">not by the deeds of the law (3:28)</span></li>
+      <li class="step yes"><span class="k">“by the law of faith”</span><span class="why">Christ did the work. I just believed Him.</span></li>
+    </ul>
+    <blockquote class="quote step"><p>“For by grace are ye saved through faith; and that not of yourselves: it is the gift of God: Not of works, lest any man should boast.”</p><cite>Ephesians 2:8–9</cite></blockquote>
+    <p class="note step">Faith isn't one more good work God grades. It's an empty hand taking a gift. Nobody brags about taking a gift. And that also means nobody here gets to look down on the man next to him.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="29-31" data-hl="is he not also of the Gentiles? Yes, of the Gentiles also|Do we then make void the law through faith? God forbid: yea, we establish the law"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise">One God, one way in</h2>
+    <div class="columns">
+      <div class="col grace step"><p class="who">The circumcision: Jews</p><h3>justified by faith</h3><p>With all their history, the Jews come in the same way: believing.</p></div>
+      <div class="col grace step"><p class="who">The uncircumcision: Gentiles</p><h3>justified through faith</h3><p>With none of that history, the Gentiles come in the same way: believing.</p></div>
+    </div>
+    <p class="note step">There's only one God, so there's only one door, and it's wide open. <em>“For whosoever shall call upon the name of the Lord shall be saved”</em> (Romans 10:13).</p>
+    <p class="note step">Does faith throw out the law? <em>“God forbid.”</em> Faith agrees with the law. The law said sin must be paid for, and at the cross it was paid in full. Faith doesn't cancel the law's verdict. It stands behind the One who met it.</p>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise">Three pictures of one gift</h2>
+    <p class="note rise" style="--d:1">Verses 24 and 25 use three words from three different places. Each shows a different side of what Jesus did for you.</p>
+    <ol class="signs">
+      <li class="step now"><b>The courtroom</b><em>justified</em>: the guilty man declared righteous. Your record is clear.</li>
+      <li class="step now"><b>The slave market</b><em>redemption</em>: the slave bought back and set free. You don't belong to sin anymore.</li>
+      <li class="step now"><b>The temple</b><em>propitiation</em>: blood on the mercy seat. God isn't angry with you anymore.</li>
+    </ol>
+    <p class="note step">If you fell yesterday, all three are still true this morning. The verdict wasn't based on your good days, so your bad days can't reverse it. Get up, tell God the truth, and go to work a free man.</p>
+  </div>
+</section>
+
+<!-- ======================= CLOSING ======================= -->
+<section class="slide remember">
+  <div class="inner">
+    <h2 class="rise">Points to remember</h2>
+    <ol class="seeds">
+      <li class="step"><span class="topic">Advantage</span><span class="seed-q">“Unto them were committed the oracles of God” <cite>3:2</cite></span><span class="take">They had God's Word. Our unbelief can't make God unfaithful.</span></li>
+      <li class="step"><span class="topic">Guilty</span><span class="seed-q">“There is none righteous, no, not one” <cite>3:10</cite></span><span class="take">Jews and Gentiles alike: all the world is guilty before God.</span></li>
+      <li class="step"><span class="topic">The law</span><span class="seed-q">“By the law is the knowledge of sin” <cite>3:20</cite></span><span class="take">The law is a mirror. It shows the dirt but can't wash it off.</span></li>
+      <li class="step"><span class="topic">Justified</span><span class="seed-q">“Being justified freely by his grace” <cite>3:24</cite></span><span class="take">Declared righteous as a gift, by faith in Jesus, not by works.</span></li>
+      <li class="step"><span class="topic">The price</span><span class="seed-q">“A propitiation through faith in his blood” <cite>3:25</cite></span><span class="take">Jesus bought us out of slavery and turned God's anger away.</span></li>
+      <li class="step"><span class="topic">Boasting</span><span class="seed-q">“Where is boasting then? It is excluded” <cite>3:27</cite></span><span class="take">Christ did the work. Nobody brags about taking a gift.</span></li>
+    </ol>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 1 of 6</p>
+      <span class="topic">Advantage</span>
+      <h2>What advantage did the Jews have?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="2"></blockquote>
+      <blockquote class="quote step" data-q="3"></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>God trusted them with His Word, the oracles of God. Many didn't believe it, but their unbelief couldn't make God unfaithful. Having the Bible was a great privilege. It still didn't make them righteous: they were under sin like everyone else.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 2 of 6</p>
+      <span class="topic">Guilty</span>
+      <h2>Who is under sin?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="9"></blockquote>
+      <blockquote class="quote step" data-q="10"></blockquote>
+      <blockquote class="quote step" data-q="23"></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>Everyone: Jews and Gentiles, religious and not. There is none righteous, no, not one. Some come closer than others, but all have sinned and come short of the glory of God. There's no difference.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 3 of 6</p>
+      <span class="topic">The law</span>
+      <h2>What can the law do, and what can't it do?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="19"></blockquote>
+      <blockquote class="quote step" data-q="20"></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>The law shows us our sin and stops every mouth: it proves we're guilty. It can't make us right with God. Like a mirror, it shows the dirt but can't wash it off. The righteousness of God comes another way, without the law, though the law and prophets point to it.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 4 of 6</p>
+      <span class="topic">Justified</span>
+      <h2>How is a man justified before God?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="24"></blockquote>
+      <blockquote class="quote step" data-q="28"></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>By faith in Jesus Christ, not by the deeds of the law. God declares him righteous freely, as a gift of grace, because of what Christ did. It's offered unto all, and comes upon all them that believe.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 5 of 6</p>
+      <span class="topic">The price</span>
+      <h2>What did it cost to set us free?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="24"></blockquote>
+      <blockquote class="quote step" data-q="25"></blockquote>
+      <blockquote class="quote step"><p>“But with the precious blood of Christ, as of a lamb without blemish and without spot:”</p><cite>1 Peter 1:19</cite></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>The blood of Jesus. It's free to us because it cost Him everything. He redeemed us, buying us out of slavery to sin, and He is the propitiation, the sacrifice that turned God's just anger away. So God is both just and the justifier of the one who believes.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 6 of 6</p>
+      <span class="topic">Boasting</span>
+      <h2>Why is boasting shut out?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="27"></blockquote>
+      <blockquote class="quote step"><p>“For by grace are ye saved through faith; and that not of yourselves: it is the gift of God: Not of works, lest any man should boast.”</p><cite>Ephesians 2:8–9</cite></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>Because salvation comes by the law of faith, not works. Christ did all the work; we only believe and receive. You can't brag about a gift, and you can't look down on another man who received the same one.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide prayer">
+  <div class="inner">
+    <div class="emblem rise"></div>
+    <h2 class="rise" style="--d:1">Prayer requests</h2>
+    <p class="ask-line rise" style="--d:2">What can we pray about for you today?</p>
+    <blockquote class="quote rise" style="--d:4" data-q="24"></blockquote>
+  </div>
+</section>
+
+</main>
+
+<script>
+// King James Version, Romans chapter 3
+const V = {
+  1: "What advantage then hath the Jew? or what profit is there of circumcision?",
+  2: "Much every way: chiefly, because that unto them were committed the oracles of God.",
+  3: "For what if some did not believe? shall their unbelief make the faith of God without effect?",
+  4: "God forbid: yea, let God be true, but every man a liar; as it is written, That thou mightest be justified in thy sayings, and mightest overcome when thou art judged.",
+  5: "But if our unrighteousness commend the righteousness of God, what shall we say? Is God unrighteous who taketh vengeance? (I speak as a man)",
+  6: "God forbid: for then how shall God judge the world?",
+  7: "For if the truth of God hath more abounded through my lie unto his glory; why yet am I also judged as a sinner?",
+  8: "And not rather, (as we be slanderously reported, and as some affirm that we say,) Let us do evil, that good may come? whose damnation is just.",
+  9: "What then? are we better than they? No, in no wise: for we have before proved both Jews and Gentiles, that they are all under sin;",
+  10: "As it is written, There is none righteous, no, not one:",
+  11: "There is none that understandeth, there is none that seeketh after God.",
+  12: "They are all gone out of the way, they are together become unprofitable; there is none that doeth good, no, not one.",
+  13: "Their throat is an open sepulchre; with their tongues they have used deceit; the poison of asps is under their lips:",
+  14: "Whose mouth is full of cursing and bitterness:",
+  15: "Their feet are swift to shed blood:",
+  16: "Destruction and misery are in their ways:",
+  17: "And the way of peace have they not known:",
+  18: "There is no fear of God before their eyes.",
+  19: "Now we know that what things soever the law saith, it saith to them who are under the law: that every mouth may be stopped, and all the world may become guilty before God.",
+  20: "Therefore by the deeds of the law there shall no flesh be justified in his sight: for by the law is the knowledge of sin.",
+  21: "But now the righteousness of God without the law is manifested, being witnessed by the law and the prophets;",
+  22: "Even the righteousness of God which is by faith of Jesus Christ unto all and upon all them that believe: for there is no difference:",
+  23: "For all have sinned, and come short of the glory of God;",
+  24: "Being justified freely by his grace through the redemption that is in Christ Jesus:",
+  25: "Whom God hath set forth to be a propitiation through faith in his blood, to declare his righteousness for the remission of sins that are past, through the forbearance of God;",
+  26: "To declare, I say, at this time his righteousness: that he might be just, and the justifier of him which believeth in Jesus.",
+  27: "Where is boasting then? It is excluded. By what law? of works? Nay: but by the law of faith.",
+  28: "Therefore we conclude that a man is justified by faith without the deeds of the law.",
+  29: "Is he the God of the Jews only? is he not also of the Gentiles? Yes, of the Gentiles also:",
+  30: "Seeing it is one God, which shall justify the circumcision by faith, and uncircumcision through faith.",
+  31: "Do we then make void the law through faith? God forbid: yea, we establish the law."
+};
+const BOOK = "Romans 3";
+</script>
+<script src="../assets/deck.js"></script>
+</body>
+</html>

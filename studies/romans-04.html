@@ -1,0 +1,565 @@
+<!doctype html>
+<html lang="en" data-theme="night">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Romans 4</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="../assets/fonts.css">
+<link rel="stylesheet" href="../assets/deck.css">
+<link rel="stylesheet" href="../assets/themes.css">
+<style>
+/* ro04-ur: a label on the world map for a place off its edge */
+.map.world .ro04-ur { fill: var(--ink-soft); font: italic calc(21px * var(--u, 1)) var(--serif); }
+
+/* ro04-acct: an account page. What was earned, and what was counted (credited) to him; the credit line comes in on a step */
+.ro04-acct { max-width: 34rem; margin: .4em 0 1em; padding: .8em 1.1em .9em; border: 1.5px solid var(--line-strong); border-radius: 6px; background: var(--surface); }
+.ro04-acct h3 { font: 700 clamp(.85rem, .8rem + .3vw, 1.05rem) var(--sans); color: var(--ink-soft); border-bottom: 1px solid var(--line-strong); padding-bottom: .35em; margin-bottom: .3em; }
+.ro04-acct div { display: grid; grid-template-columns: 1fr auto; gap: 0 1em; align-items: baseline; padding: .4em 0; border-bottom: 1px dashed var(--line); }
+.ro04-acct span { font-size: clamp(.95rem, .85rem + .4vw, 1.2rem); color: var(--ink-soft); }
+.ro04-acct b { font: italic 400 clamp(1.05rem, .9rem + .6vw, 1.45rem) var(--serif); color: var(--ink-soft); }
+.ro04-acct small { grid-column: 1 / -1; color: var(--ink-soft); font-size: .85rem; }
+.ro04-acct .credit b { font-style: normal; font-weight: 600; color: var(--accent-hot); }
+.ro04-acct .credit.on { animation: ro04-glow 1.6s ease .2s both; }
+@keyframes ro04-glow { from { background: color-mix(in srgb, var(--accent) 30%, transparent); } to { background: transparent; } }
+
+/* ro04-ruler: Abraham's age from 75 to 100, the years between believing and circumcision marked on a step */
+.ro04-axis { stroke: var(--line-strong); stroke-width: 3; }
+.ro04-tick { stroke: var(--line-strong); stroke-width: 2; }
+.ro04-num { fill: var(--ink-soft); font-size: 15px; }
+.ro04-dot { fill: var(--bg); stroke: var(--ink-soft); stroke-width: 3; }
+.ro04-dot.lit { fill: var(--accent); stroke: var(--accent); }
+.ro04-ev { fill: var(--ink); font: 600 18px var(--serif); }
+.ro04-ref { fill: var(--ink-soft); font-size: 14px; }
+.ro04-lead { stroke: var(--line-strong); stroke-width: 1.5; stroke-dasharray: 3 4; }
+.ro04-band { fill: color-mix(in srgb, var(--accent) 22%, transparent); stroke: var(--accent); stroke-width: 2; transform-box: fill-box; transform-origin: 0 50%; transform: scaleX(0); transition: transform 1.4s ease; }
+.ro04-bandlab { fill: var(--accent-hot); font: italic 600 19px var(--serif); opacity: 0; transition: opacity .8s ease 1.2s; }
+.slide:has(.ro04-gap.on) .ro04-band { transform: none; }
+.slide:has(.ro04-gap.on) .ro04-bandlab { opacity: 1; }
+@media (max-width: 600px) { .ro04-ev { font-size: 21px; } .ro04-ref, .ro04-num { font-size: 17px; } .ro04-bandlab { font-size: 21px; } }
+
+/* ro04-seal: a written page (righteousness by faith), and on a step the wax seal of circumcision pressed onto it, years later */
+.ro04-page { fill: var(--glow); stroke: var(--line-strong); stroke-width: 2; }
+.ro04-line { stroke: color-mix(in srgb, var(--on-glow) 30%, var(--glow)); stroke-width: 3; stroke-linecap: round; }
+.ro04-pt { fill: var(--on-glow); font: italic 600 22px var(--serif); }
+.ro04-ps { fill: color-mix(in srgb, var(--on-glow) 65%, var(--glow)); font-size: 15px; }
+.ro04-wax { opacity: 0; transform-box: fill-box; transform-origin: center; transform: scale(1.8); transition: transform .5s cubic-bezier(.3,1.5,.6,1), opacity .4s ease; }
+.ro04-wax circle { fill: var(--wine); }
+.ro04-wax .ring { fill: none; stroke: color-mix(in srgb, var(--glow) 45%, var(--wine)); stroke-width: 2; }
+.ro04-wax text { fill: var(--glow); font: 700 13px var(--sans); letter-spacing: .06em; }
+.slide:has(.ro04-press.on) .ro04-wax { opacity: 1; transform: none; }
+@media (max-width: 600px) { .ro04-ps { font-size: 18px; } }
+
+/* ro04-sky: Abraham under the stars (a night panel in every theme: --on-glow with --glow). The stars come out one by one */
+.ro04-night { fill: var(--on-glow); }
+.ro04-hill { fill: color-mix(in srgb, var(--glow) 9%, var(--on-glow)); }
+.ro04-star { fill: var(--glow); opacity: 0; }
+.slide.active .ro04-star { animation: ro04-twinkle 2.6s ease-in-out both; animation-delay: calc(var(--k, 0) * 70ms + 300ms); }
+@keyframes ro04-twinkle { 0% { opacity: 0; } 40% { opacity: 1; } 100% { opacity: .75; } }
+.ro04-man { fill: color-mix(in srgb, var(--glow) 35%, var(--on-glow)); }
+.ro04-sayit { fill: var(--warm); font: italic 600 26px var(--serif); opacity: 0; transition: opacity 1.2s ease; }
+.slide.active .ro04-sayit { opacity: 1; transition-delay: 3.4s; }
+.ro04-small { fill: color-mix(in srgb, var(--glow) 75%, transparent); font-size: 15px; }
+@media (max-width: 600px) { .ro04-sayit { font-size: 30px; } .ro04-small { font-size: 19px; } }
+</style>
+</head>
+<body>
+<main class="deck" id="deck">
+
+<!-- ======================= OPENING ======================= -->
+<section class="slide title">
+  <div class="inner">
+    <div class="emblem rise"></div>
+    <h1 class="rise" style="--d:1">Romans 4</h1>
+    <p class="sub rise" style="--d:3">Counted for righteousness</p>
+    <p class="tag rise" style="--d:5">Abraham, the father of the Jews, was made right with God the same way any man is: he believed God. And it was written for us also.</p>
+  </div>
+</section>
+
+<section class="slide watch">
+  <div class="inner">
+    <h2 class="rise">Things to watch for</h2>
+    <p class="lede rise" style="--d:1">Keep these questions in the back of your mind as we read. We'll come back to every one of them at the end.</p>
+    <ol class="seeds">
+      <li class="step"><span class="topic">Abraham</span><span class="seed-q">How was Abraham made right with God?</span></li>
+      <li class="step"><span class="topic">Wages</span><span class="seed-q">What's the difference between wages and a gift?</span></li>
+      <li class="step"><span class="topic">Covered</span><span class="seed-q">What blessing did David describe?</span></li>
+      <li class="step"><span class="topic">Before</span><span class="seed-q">Why does it matter when Abraham was circumcised?</span></li>
+      <li class="step"><span class="topic">Hope</span><span class="seed-q">What did Abraham do when things looked hopeless?</span></li>
+      <li class="step"><span class="topic">For us</span><span class="seed-q">Who else was this written for?</span></li>
+    </ol>
+  </div>
+</section>
+
+<!-- ======================= PART ONE: ABRAHAM BELIEVED GOD ======================= -->
+<section class="slide part">
+  <div class="inner">
+    <p class="part-n rise">Part one</p>
+    <h2 class="rise" style="--d:1">Abraham believed God</h2>
+    <p class="range rise" style="--d:2">Verses 1–8</p>
+    <div class="rule"></div>
+    <p class="hook rise" style="--d:4">Paul has said a man is justified by faith, not works. Now he calls two witnesses every Jew respected: Abraham and David.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="1-3" data-hl="but not before God|Abraham believed God, and it was counted unto him for righteousness"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <div class="split">
+      <div class="stage">
+        <svg data-world viewBox="736 292 172 222" data-towns="Damascus" role="img" aria-label="A close map of the eastern end of the Great Sea. A route comes in from the east along the river Euphrates, from Ur of the Chaldees, up to Haran, then south past Damascus into Canaan, to Shechem and Hebron.">
+          <path class="map-route" data-via="@40 35.1, @39 36, @39.03 36.86, @37.6 35.4, Damascus, @35.28 32.21, @35.1 31.53"/>
+          <text class="map-region" x="814" y="462" text-anchor="middle" style="font-size:calc(19px * var(--u))">CANAAN</text>
+          <g class="map-town here"><circle cx="882.8" cy="324.5" r="1.6"/><circle class="map-ping" cx="882.8" cy="324.5" r="2.1"/><text x="879.8" y="325.9" text-anchor="end">Haran</text></g>
+          <g class="map-town"><circle cx="788.3" cy="473.3" r="1.6"/><text x="791.3" y="474.7" text-anchor="start">Shechem</text></g>
+          <g class="map-town here"><circle cx="783.7" cy="495" r="1.6"/><text x="786.7" y="496.4" text-anchor="start">Hebron</text></g>
+          <text class="ro04-ur" x="905" y="404" text-anchor="end">from Ur of the Chaldees</text>
+        </svg>
+      </div>
+      <div>
+        <h2 class="rise" style="--d:1">Who was Abraham?</h2>
+        <p class="note rise" style="--d:2">About 2000 BC, God called Abraham out of Ur, a city far down the Euphrates. He went up to Haran, and at seventy-five he set out for Canaan, a land God promised to show him (Genesis 12:4). He lived there in tents, near Shechem and Hebron.</p>
+        <p class="note step">Every Jew called him <em>“our father.”</em> If any man could boast of his works, it was Abraham. But Paul says he had nothing to boast of <em>“before God.”</em></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="3" data-hl="it was counted unto him for righteousness"></blockquote>
+    <h2 class="rise" style="--d:1">Counted</h2>
+    <div class="ro04-acct rise" style="--d:2">
+      <h3>Abraham's account</h3>
+      <div><span>Earned by his works</span><b>nothing to glory of “before God”</b></div>
+      <div class="credit step"><span>Counted to him by God</span><b>righteousness</b><small>“And he believed in the LORD; and he counted it to him for righteousness.” Genesis 15:6</small></div>
+    </div>
+    <p class="note step"><em>Counted</em> is a bookkeeping word: to put something on a man's account. Abraham didn't earn righteousness. He believed God's promise, and God wrote righteousness into his account. Paul uses the word eleven times in this chapter, as <em>counted</em>, <em>reckoned</em> and <em>imputed</em>.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="4-5" data-hl="Now to him that worketh is the reward not reckoned of grace, but of debt|believeth on him that justifieth the ungodly"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise">A paycheck, or a gift?</h2>
+    <div class="columns">
+      <div class="col law step"><p class="who">To him that worketh</p><h3>Wages</h3><p>Owed to you. You earned it, so you can brag about it. If heaven were a paycheck, God would be in your debt.</p></div>
+      <div class="col grace step"><p class="who">To him that worketh not, but believeth</p><h3>A gift</h3><p>Grace: given, not owed. All you can do with a gift is take it and say thank you.</p></div>
+    </div>
+    <p class="saying step">He <em>“justifieth the ungodly.”</em></p>
+    <p class="note step">Not the cleaned-up. Not the ones who got their act together first. The ungodly. That's the only kind of man God has ever justified, so you qualify.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="6-8" data-hl="Blessed are they whose iniquities are forgiven, and whose sins are covered|Blessed is the man to whom the Lord will not impute sin"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <div class="split">
+      <div class="stage">
+        <svg class="lid" viewBox="0 0 600 300" style="max-height:42vh" role="img" aria-label="A pile of sin hidden under a heavy cover, with a dark cloud above it marked my bones waxed old. On a step the man lifts his own cover off and the cloud clears. On the next step the pile is carried away and light shines where it was: forgiven.">
+          <line x1="20" y1="252" x2="580" y2="252" stroke-width="2" style="stroke:var(--line-strong)"/>
+          <g class="lid-light">
+            <g stroke-width="5" stroke-linecap="round" style="stroke:var(--warm)"><path d="M300 150 L300 70 M300 150 L360 92 M300 150 L240 92 M300 150 L392 150 M300 150 L208 150"/></g>
+            <circle cx="300" cy="150" r="34" style="fill:var(--warm)"/>
+            <text x="300" y="215" text-anchor="middle" font-size="30" font-weight="700" style="fill:var(--accent)">forgiven</text>
+          </g>
+          <g class="lid-pile">
+            <rect x="236" y="204" width="56" height="48" rx="8" style="fill:color-mix(in srgb, var(--danger) 55%, var(--surface-2))"/>
+            <rect x="296" y="190" width="64" height="62" rx="8" style="fill:color-mix(in srgb, var(--ink-soft) 70%, var(--surface-2))"/>
+            <rect x="268" y="168" width="48" height="40" rx="8" style="fill:color-mix(in srgb, var(--danger) 35%, var(--surface-2))"/>
+          </g>
+          <path class="lid-cover" d="M200 252 Q206 150 300 146 Q394 150 400 252 Z" stroke-width="3" style="fill:color-mix(in srgb, var(--ink-soft) 55%, var(--surface-2));stroke:var(--ink-soft)"/>
+          <g class="lid-cloud">
+            <g style="fill:var(--ink-soft)"><ellipse cx="270" cy="60" rx="50" ry="26"/><ellipse cx="320" cy="50" rx="44" ry="30"/><ellipse cx="350" cy="66" rx="40" ry="22"/></g>
+            <path d="M260 96 l-6 18 M300 96 l-6 18 M340 96 l-6 18" stroke-width="3" stroke-linecap="round" style="stroke:var(--ink-soft)"/>
+            <text x="490" y="56" text-anchor="middle" font-size="19" style="fill:var(--ink-soft)">“my bones</text>
+            <text x="490" y="80" text-anchor="middle" font-size="19" style="fill:var(--ink-soft)">waxed old”</text>
+          </g>
+        </svg>
+      </div>
+      <div>
+        <h2 class="rise" style="--d:1">Whose sins are covered</h2>
+        <blockquote class="quote step lid-off"><p>“When I kept silence, my bones waxed old through my roaring all the day long.”</p><cite>Psalm 32:3</cite></blockquote>
+        <blockquote class="quote step lid-gone"><p>“I acknowledged my sin unto thee, and mine iniquity have I not hid… and thou forgavest the iniquity of my sin.”</p><cite>Psalm 32:5</cite></blockquote>
+        <p class="note step">David wrote this after adultery and murder. When a man covers his own sin, it eats him alive. When he uncovers it to God, God covers it, for good.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="8"></blockquote>
+    <h2 class="rise" style="--d:1">For the man carrying guilt</h2>
+    <ol class="signs">
+      <li class="step now"><b>Forgiven</b>sent away, the weight lifted off you (4:7)</li>
+      <li class="step now"><b>Covered</b>out of God's sight, under the blood (4:7)</li>
+      <li class="step now"><b>Not imputed</b>never charged to your account again (4:8)</li>
+    </ol>
+    <p class="note step">Some of you carry things nobody in this room knows about. If you belong to Christ, God isn't keeping that file open. <em>“Will not impute”</em> is a promise about the future too: He won't bring it back up.</p>
+    <blockquote class="quote step"><p>“As far as the east is from the west, so far hath he removed our transgressions from us.”</p><cite>Psalm 103:12</cite></blockquote>
+  </div>
+</section>
+
+<!-- ======================= PART TWO: FATHER OF US ALL ======================= -->
+<section class="slide part">
+  <div class="inner">
+    <p class="part-n rise">Part two</p>
+    <h2 class="rise" style="--d:1">The father of us all</h2>
+    <p class="range rise" style="--d:2">Verses 9–17</p>
+    <div class="rule"></div>
+    <p class="hook rise" style="--d:4">Was this blessing only for the circumcised Jew? Paul checks the dates, and the answer opens the door to everyone.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="9-10" data-hl="Cometh this blessedness then upon the circumcision only, or upon the uncircumcision also?|Not in circumcision, but in uncircumcision"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise">Check the dates</h2>
+    <div class="stage">
+      <svg viewBox="0 0 640 200" role="img" aria-label="Abraham's age on a line from 75 to 100. At 75 he leaves Haran. By 85 he believed God and was counted righteous. At 99 he is circumcised, and at 100 Isaac is born. On a step, the years between believing and circumcision are marked: at least 14 years righteous and uncircumcised.">
+        <rect class="ro04-band" x="264" y="100" width="314" height="20" rx="4"/>
+        <line class="ro04-axis" x1="40" y1="110" x2="600" y2="110"/>
+        <g><line class="ro04-tick" x1="40" y1="104" x2="40" y2="116"/><line class="ro04-tick" x1="152" y1="104" x2="152" y2="116"/><line class="ro04-tick" x1="264" y1="104" x2="264" y2="116"/><line class="ro04-tick" x1="376" y1="104" x2="376" y2="116"/><line class="ro04-tick" x1="488" y1="104" x2="488" y2="116"/><line class="ro04-tick" x1="600" y1="104" x2="600" y2="116"/></g>
+        <text class="ro04-num" x="40" y="138" text-anchor="middle">75</text><text class="ro04-num" x="152" y="138" text-anchor="middle">80</text><text class="ro04-num" x="264" y="138" text-anchor="middle">85</text>
+        <text class="ro04-num" x="376" y="138" text-anchor="middle">90</text><text class="ro04-num" x="488" y="138" text-anchor="middle">95</text><text class="ro04-num" x="600" y="138" text-anchor="middle">100</text>
+        <text class="ro04-ref" x="320" y="196" text-anchor="middle">Abraham's age</text>
+        <line class="ro04-lead" x1="40" y1="76" x2="40" y2="102"/><circle class="ro04-dot" cx="40" cy="110" r="7"/>
+        <text class="ro04-ev" x="34" y="52">left Haran</text><text class="ro04-ref" x="34" y="70">Genesis 12:4</text>
+        <line class="ro04-lead" x1="264" y1="76" x2="264" y2="102"/><circle class="ro04-dot lit" cx="264" cy="110" r="8"/>
+        <text class="ro04-ev" x="264" y="52" text-anchor="middle">believed God</text><text class="ro04-ref" x="264" y="70" text-anchor="middle">Genesis 15:6</text>
+        <line class="ro04-lead" x1="578" y1="76" x2="578" y2="102"/><circle class="ro04-dot" cx="578" cy="110" r="7"/>
+        <text class="ro04-ev" x="572" y="52" text-anchor="end">circumcised</text><text class="ro04-ref" x="572" y="70" text-anchor="end">Genesis 17:24</text>
+        <line class="ro04-lead" x1="600" y1="40" x2="600" y2="102"/><circle class="ro04-dot" cx="600" cy="110" r="7"/>
+        <text class="ro04-ev" x="606" y="18" text-anchor="end">Isaac born</text>
+        <text class="ro04-bandlab" x="421" y="168" text-anchor="middle">at least 14 years: righteous, uncircumcised</text>
+      </svg>
+    </div>
+    <p class="note step ro04-gap">God counted Abraham righteous in Genesis 15. Ishmael was born when Abraham was 86 (Genesis 16:16). Abraham wasn't circumcised until he was <em>“ninety years old and nine”</em> (Genesis 17:24). So he was right with God for at least fourteen years before circumcision.</p>
+    <p class="note step">A ritual didn't make Abraham righteous. Faith did. So the door can't be marked <em>“Jews only.”</em></p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="11-12" data-hl="a seal of the righteousness of the faith which he had yet being uncircumcised|that he might be the father of all them that believe|walk in the steps of that faith of our father Abraham"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <div class="split">
+      <div class="stage">
+        <svg viewBox="0 0 400 270" role="img" aria-label="A page with writing on it, headed righteousness by faith, Genesis 15. On a step a red wax seal is pressed onto the bottom corner, marked Genesis 17: the sign, added years later to what was already written.">
+          <rect class="ro04-page" x="50" y="14" width="300" height="230" rx="4"/>
+          <text class="ro04-pt" x="200" y="56" text-anchor="middle">righteousness by faith</text>
+          <text class="ro04-ps" x="200" y="80" text-anchor="middle">Genesis 15, already written</text>
+          <path class="ro04-line" d="M84 110 H 316 M84 134 H 300 M84 158 H 316 M84 182 H 220"/>
+          <g class="ro04-wax"><circle cx="292" cy="206" r="36"/><circle class="ring" cx="292" cy="206" r="27"/><text x="292" y="202" text-anchor="middle">SEAL</text><text x="292" y="218" text-anchor="middle">GEN 17</text></g>
+          <text class="ro04-ps" x="200" y="266" text-anchor="middle">the seal came after the letter was written</text>
+        </svg>
+      </div>
+      <div>
+        <h2 class="rise" style="--d:1">A sign and a seal</h2>
+        <p class="note step ro04-press">A seal doesn't write the letter. It's pressed on afterward to show the letter is real. Circumcision didn't give Abraham righteousness. It marked the righteousness <em>“which he had yet being uncircumcised.”</em></p>
+        <p class="note step">Baptism works the same way for us: a picture of what Christ has already done, not the thing that saves. And Abraham is <em>“the father of all them that believe,”</em> Jew or Gentile. Anyone who walks <em>“in the steps of that faith”</em> is his son.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="slide verse" data-v="13-15" data-hl="not to Abraham, or to his seed, through the law, but through the righteousness of faith|for where no law is, there is no transgression"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise">The promise came first</h2>
+    <ol class="timeline" aria-label="A timeline: Abraham is promised and believes, about 2000 BC; 430 years later the law is given at Sinai; Christ dies and rises, about AD 30 to 33; Paul writes Romans, about AD 57; and you, today.">
+      <li class="lit" style="--k:0"><b>The promise</b><span>Abraham believes</span><small>about 2000 BC</small></li>
+      <li style="--k:1"><b>The law</b><span>given at Sinai</span><small>430 years later</small></li>
+      <li class="lit" style="--k:2"><b>The cross</b><span>Christ dies and rises</span><small>about AD 30–33</small></li>
+      <li style="--k:3"><b>Romans</b><span>Paul writes this</span><small>about AD 57</small></li>
+      <li class="lit" style="--k:4"><b>You</b><span>believe the same promise</span><small>today</small></li>
+    </ol>
+    <blockquote class="quote step"><p>“And this I say, that the covenant, that was confirmed before of God in Christ, the law, which was four hundred and thirty years after, cannot disannul, that it should make the promise of none effect.”</p><cite>Galatians 3:17</cite></blockquote>
+    <p class="note step">The law came centuries after the promise, and it can't cancel it. If the promise depended on keeping the law, nobody would get it, because <em>“the law worketh wrath”</em>: it shows how far we fall short. The promise rests on faith.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="16-17" data-hl="Therefore it is of faith, that it might be by grace; to the end the promise might be sure to all the seed|who is the father of us all|calleth those things which be not as though they were"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="16" data-hl="that it might be by grace; to the end the promise might be sure to all the seed"></blockquote>
+    <h2 class="rise" style="--d:1">Sure to all</h2>
+    <div class="rename">
+      <span class="old rise" style="--d:2">Abram</span>
+      <span class="arrow step n2">→</span>
+      <span class="new step">Abraham</span>
+      <span class="gloss step"><em class="gk">Abram</em> means <em>high father</em>. <em class="gk">Abraham</em> means <em>father of a multitude</em>. <em>“for a father of many nations have I made thee”</em> (Genesis 17:5).</span>
+    </div>
+    <p class="note step">God renamed him <em>“father of many nations”</em> while he still had no son by Sarah. God <em>“calleth those things which be not as though they were.”</em> He calls you by what He's making you, not by what you were. And because it rests on grace, not your performance, the promise is <em>sure</em>.</p>
+  </div>
+</section>
+
+<!-- ======================= PART THREE: AGAINST HOPE ======================= -->
+<section class="slide part">
+  <div class="inner">
+    <p class="part-n rise">Part three</p>
+    <h2 class="rise" style="--d:1">Against hope</h2>
+    <p class="range rise" style="--d:2">Verses 18–25</p>
+    <div class="rule"></div>
+    <p class="hook rise" style="--d:4">An old man, an old wife, and a promise of more children than stars. Abraham believed it, and it was written down for us.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="18-19" data-hl="Who against hope believed in hope|So shall thy seed be|neither yet the deadness of Sara’s womb"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <div class="stage">
+      <svg viewBox="0 0 640 280" style="max-height:40vh" role="img" aria-label="A night sky over a dark hill. An old man stands on the hill looking up as the stars come out one by one, until the sky is full. Then the words appear: So shall thy seed be.">
+        <rect class="ro04-night" x="0" y="0" width="640" height="280" rx="12"/>
+        <circle class="ro04-star" style="--k:1" cx="463" cy="115" r="1.1"/><circle class="ro04-star" style="--k:2" cx="479" cy="117" r="1.1"/><circle class="ro04-star" style="--k:3" cx="518" cy="56" r="1.1"/><circle class="ro04-star" style="--k:4" cx="444" cy="19" r="1.1"/><circle class="ro04-star" style="--k:5" cx="584" cy="169" r="1.1"/><circle class="ro04-star" style="--k:6" cx="584" cy="146" r="1.1"/><circle class="ro04-star" style="--k:7" cx="577" cy="190" r="1.8"/><circle class="ro04-star" style="--k:8" cx="530" cy="74" r="1.8"/><circle class="ro04-star" style="--k:9" cx="275" cy="67" r="1.1"/><circle class="ro04-star" style="--k:10" cx="463" cy="184" r="2.6"/><circle class="ro04-star" style="--k:11" cx="179" cy="120" r="1.1"/><circle class="ro04-star" style="--k:13" cx="236" cy="77" r="1.1"/><circle class="ro04-star" style="--k:14" cx="329" cy="41" r="1.8"/><circle class="ro04-star" style="--k:15" cx="235" cy="93" r="1.1"/><circle class="ro04-star" style="--k:16" cx="391" cy="55" r="1.1"/><circle class="ro04-star" style="--k:17" cx="547" cy="135" r="1.1"/><circle class="ro04-star" style="--k:18" cx="323" cy="146" r="1.8"/><circle class="ro04-star" style="--k:19" cx="450" cy="58" r="1.8"/><circle class="ro04-star" style="--k:20" cx="214" cy="86" r="1.1"/><circle class="ro04-star" style="--k:22" cx="262" cy="39" r="2.6"/><circle class="ro04-star" style="--k:23" cx="630" cy="52" r="1.8"/><circle class="ro04-star" style="--k:24" cx="293" cy="127" r="1.1"/><circle class="ro04-star" style="--k:25" cx="560" cy="186" r="1.1"/><circle class="ro04-star" style="--k:26" cx="483" cy="63" r="2.6"/><circle class="ro04-star" style="--k:27" cx="163" cy="23" r="2.6"/><circle class="ro04-star" style="--k:28" cx="393" cy="54" r="1.1"/><circle class="ro04-star" style="--k:29" cx="437" cy="56" r="1.8"/><circle class="ro04-star" style="--k:30" cx="241" cy="187" r="2.6"/><circle class="ro04-star" style="--k:31" cx="313" cy="9" r="1.1"/><circle class="ro04-star" style="--k:32" cx="583" cy="12" r="1.8"/><circle class="ro04-star" style="--k:33" cx="612" cy="121" r="1.8"/><circle class="ro04-star" style="--k:34" cx="147" cy="50" r="1.8"/><circle class="ro04-star" style="--k:35" cx="488" cy="148" r="1.1"/><circle class="ro04-star" style="--k:36" cx="28" cy="30" r="1.8"/><circle class="ro04-star" style="--k:37" cx="437" cy="187" r="2.6"/><circle class="ro04-star" style="--k:38" cx="559" cy="180" r="1.1"/><circle class="ro04-star" style="--k:39" cx="485" cy="92" r="1.1"/><circle class="ro04-star" style="--k:0" cx="559" cy="88" r="1.1"/><circle class="ro04-star" style="--k:1" cx="561" cy="120" r="1.1"/><circle class="ro04-star" style="--k:2" cx="467" cy="75" r="1.1"/><circle class="ro04-star" style="--k:3" cx="132" cy="70" r="1.1"/><circle class="ro04-star" style="--k:4" cx="403" cy="182" r="1.8"/><circle class="ro04-star" style="--k:5" cx="411" cy="35" r="1.1"/><circle class="ro04-star" style="--k:6" cx="489" cy="197" r="1.8"/><circle class="ro04-star" style="--k:7" cx="287" cy="41" r="1.1"/><circle class="ro04-star" style="--k:8" cx="358" cy="109" r="1.8"/><circle class="ro04-star" style="--k:9" cx="477" cy="13" r="1.1"/><circle class="ro04-star" style="--k:10" cx="135" cy="153" r="1.8"/><circle class="ro04-star" style="--k:11" cx="420" cy="94" r="2.6"/><circle class="ro04-star" style="--k:12" cx="490" cy="173" r="1.1"/><circle class="ro04-star" style="--k:13" cx="433" cy="200" r="2.6"/><circle class="ro04-star" style="--k:14" cx="483" cy="128" r="1.1"/><circle class="ro04-star" style="--k:15" cx="31" cy="35" r="2.6"/><circle class="ro04-star" style="--k:16" cx="76" cy="25" r="2.6"/><circle class="ro04-star" style="--k:17" cx="386" cy="197" r="1.8"/><circle class="ro04-star" style="--k:18" cx="134" cy="143" r="1.1"/><circle class="ro04-star" style="--k:19" cx="628" cy="93" r="1.1"/><circle class="ro04-star" style="--k:20" cx="256" cy="91" r="2.6"/><circle class="ro04-star" style="--k:21" cx="152" cy="170" r="1.8"/><circle class="ro04-star" style="--k:22" cx="586" cy="110" r="1.8"/><circle class="ro04-star" style="--k:23" cx="384" cy="42" r="2.6"/><circle class="ro04-star" style="--k:24" cx="178" cy="137" r="1.1"/><circle class="ro04-star" style="--k:25" cx="628" cy="23" r="1.8"/><circle class="ro04-star" style="--k:26" cx="11" cy="9" r="1.8"/><circle class="ro04-star" style="--k:28" cx="281" cy="179" r="1.1"/><circle class="ro04-star" style="--k:29" cx="421" cy="122" r="1.1"/><circle class="ro04-star" style="--k:30" cx="318" cy="107" r="1.1"/><circle class="ro04-star" style="--k:31" cx="423" cy="135" r="1.1"/><circle class="ro04-star" style="--k:32" cx="535" cy="206" r="1.1"/><circle class="ro04-star" style="--k:33" cx="605" cy="203" r="1.8"/><circle class="ro04-star" style="--k:34" cx="222" cy="185" r="1.1"/><circle class="ro04-star" style="--k:35" cx="604" cy="165" r="1.8"/><circle class="ro04-star" style="--k:36" cx="506" cy="29" r="1.1"/><circle class="ro04-star" style="--k:37" cx="404" cy="150" r="1.1"/><circle class="ro04-star" style="--k:38" cx="552" cy="121" r="1.8"/><circle class="ro04-star" style="--k:39" cx="436" cy="95" r="1.8"/><circle class="ro04-star" style="--k:0" cx="376" cy="54" r="1.1"/><circle class="ro04-star" style="--k:1" cx="219" cy="145" r="1.8"/><circle class="ro04-star" style="--k:2" cx="200" cy="192" r="2.6"/><circle class="ro04-star" style="--k:3" cx="90" cy="87" r="2.6"/><circle class="ro04-star" style="--k:4" cx="440" cy="188" r="1.8"/><circle class="ro04-star" style="--k:5" cx="599" cy="148" r="1.8"/><circle class="ro04-star" style="--k:6" cx="399" cy="11" r="1.1"/><circle class="ro04-star" style="--k:7" cx="477" cy="34" r="1.1"/><circle class="ro04-star" style="--k:8" cx="604" cy="118" r="1.1"/><circle class="ro04-star" style="--k:9" cx="446" cy="155" r="1.8"/><circle class="ro04-star" style="--k:10" cx="36" cy="131" r="1.1"/><circle class="ro04-star" style="--k:11" cx="165" cy="53" r="1.1"/><circle class="ro04-star" style="--k:12" cx="515" cy="56" r="1.8"/><circle class="ro04-star" style="--k:13" cx="439" cy="89" r="1.1"/><circle class="ro04-star" style="--k:14" cx="510" cy="29" r="1.1"/><circle class="ro04-star" style="--k:15" cx="522" cy="93" r="1.1"/><circle class="ro04-star" style="--k:16" cx="462" cy="190" r="1.8"/><circle class="ro04-star" style="--k:17" cx="457" cy="39" r="1.1"/><circle class="ro04-star" style="--k:18" cx="604" cy="19" r="2.6"/><circle class="ro04-star" style="--k:20" cx="181" cy="48" r="2.6"/><circle class="ro04-star" style="--k:21" cx="301" cy="120" r="1.8"/><circle class="ro04-star" style="--k:22" cx="308" cy="53" r="2.6"/><circle class="ro04-star" style="--k:23" cx="36" cy="27" r="1.1"/><circle class="ro04-star" style="--k:24" cx="512" cy="154" r="1.1"/><circle class="ro04-star" style="--k:25" cx="250" cy="131" r="1.1"/><circle class="ro04-star" style="--k:26" cx="608" cy="150" r="1.1"/><circle class="ro04-star" style="--k:27" cx="115" cy="21" r="1.1"/><circle class="ro04-star" style="--k:28" cx="277" cy="117" r="1.1"/><circle class="ro04-star" style="--k:29" cx="84" cy="21" r="2.6"/><circle class="ro04-star" style="--k:30" cx="229" cy="77" r="1.1"/><circle class="ro04-star" style="--k:31" cx="86" cy="18" r="2.6"/><circle class="ro04-star" style="--k:32" cx="530" cy="182" r="2.6"/><circle class="ro04-star" style="--k:33" cx="487" cy="72" r="1.1"/><circle class="ro04-star" style="--k:34" cx="505" cy="10" r="1.8"/><circle class="ro04-star" style="--k:35" cx="409" cy="94" r="2.6"/><circle class="ro04-star" style="--k:36" cx="116" cy="159" r="1.8"/><circle class="ro04-star" style="--k:37" cx="543" cy="171" r="1.1"/><circle class="ro04-star" style="--k:38" cx="195" cy="59" r="1.1"/><circle class="ro04-star" style="--k:39" cx="431" cy="108" r="1.1"/>
+        <path class="ro04-hill" d="M0 280 V 238 C 80 214, 170 210, 250 232 C 330 254, 420 246, 520 236 C 570 231, 610 236, 640 240 V 280 Z"/>
+        <g class="ro04-man" transform="translate(120 230)"><circle cx="4" cy="-46" r="9"/><path d="M-9 -36 h18 l6 36 h-30 z"/><path d="M8 -34 l14 -20 l4 3 l-12 21 z"/></g>
+        <text class="ro04-sayit" x="620" y="226" text-anchor="end">“So shall thy seed be.”</text>
+        <text class="ro04-small" x="620" y="258" text-anchor="end">“Look now toward heaven, and tell the stars” Genesis 15:5</text>
+      </svg>
+    </div>
+    <h2 class="rise" style="--d:1">Against hope, in hope</h2>
+    <p class="note step">God took Abraham outside at night and told him to count the stars. That's how many children you'll have, He said, to a man with none. Every human hope said no. Abraham hoped anyway, because of who had promised.</p>
+    <p class="note step">Faith isn't positive thinking. It's taking God at His word when nothing you can see backs it up.</p>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="19"></blockquote>
+    <h2 class="rise" style="--d:1">He looked at the facts, and past them</h2>
+    <div class="math">
+      <div class="step"><b>about 100</b><span>Abraham's age (4:19)</span></div>
+      <div class="step"><b>90</b><span>Sara's age (Genesis 17:17)</span></div>
+      <div class="step"><b>25 years</b><span>waiting, from Haran to Isaac</span></div>
+      <div class="step"><b>1</b><span>promise from God</span></div>
+    </div>
+    <p class="note step">He knew his body was as good as dead, and Sara's too. He didn't pretend otherwise. He just didn't let those facts have the last word. God did.</p>
+    <p class="note step">You've got facts too: a record, a debt, a family that doesn't trust you yet. Don't lie about them. But don't let them outvote God.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="20-22" data-hl="He staggered not at the promise of God through unbelief|being fully persuaded that, what he had promised, he was able also to perform"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise">How God tells the story</h2>
+    <div class="columns">
+      <div class="col law step"><p class="who">What Genesis records</p><h3>A man who stumbled</h3><p>Twice he lied that Sarah was only his sister (Genesis 12, 20). He took Hagar to get a son his own way (Genesis 16). When God repeated the promise, he fell on his face and laughed (17:17).</p></div>
+      <div class="col grace step"><p class="who">What Romans records</p><h3>“He staggered not”</h3><p><em>“Strong in faith, giving glory to God… fully persuaded.”</em> Not one word about the lies or Hagar.</p></div>
+    </div>
+    <p class="note step">Genesis tells the truth about Abraham's failures. But when God sums up a justified man, He writes what He counted to him. Abraham wobbled; his faith in the promise held. If you fell yesterday, your story isn't over, and God isn't telling it by your worst day.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="23-25" data-hl="Now it was not written for his sake alone|But for us also|Who was delivered for our offences, and was raised again for our justification"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="25"></blockquote>
+    <div class="split">
+      <div class="ledger rise" style="--d:2">
+        <h3>Charged against us</h3>
+        <ul>
+          <li style="--k:0"><span>Every lie I told</span><span>offence</span></li>
+          <li style="--k:1"><span>Every person I hurt</span><span>offence</span></li>
+          <li style="--k:2"><span>Every promise I broke</span><span>offence</span></li>
+          <li style="--k:3"><span>Every time I went back</span><span>offence</span></li>
+        </ul>
+        <div class="total"><span>The wages</span><b>death (6:23)</b></div>
+        <div class="ledger-stamp">RAISED<small>for our justification</small></div>
+      </div>
+      <div>
+        <h2 class="rise" style="--d:1">Delivered, and raised</h2>
+        <p class="note step ledger-paid">On Friday Jesus was <em>delivered</em>, handed over to die, for our offences. On Sunday He was <em>raised</em>. The empty tomb is God's receipt: the payment was accepted, and the account is settled.</p>
+        <p class="note step">That's why it was <em>“not written for his sake alone, But for us also.”</em> Righteousness is counted to anyone who believes on the God who raised Jesus. Anyone. <em>“Whosoever”</em> (Romans 10:13).</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise">Walk in his steps today</h2>
+    <div class="daybreak climb">
+      <div class="rise" style="--d:1"><i>4:24</i><b>Believe God</b><p>Take Him at His word about Jesus, the way Abraham took Him at His word about the stars.</p></div>
+      <div class="step"><i>Psalm 32:5</i><b>Uncover, don't cover</b><p>Tell God the truth about yesterday. Let Him do the covering.</p></div>
+      <div class="step"><i>4:12</i><b>Take the next step</b><p>Faith walks. Do the one thing in front of you today, trusting Him with the rest.</p></div>
+    </div>
+    <blockquote class="quote step"><p>“Therefore being justified by faith, we have peace with God through our Lord Jesus Christ:”</p><cite>Romans 5:1</cite></blockquote>
+  </div>
+</section>
+
+<!-- ======================= CLOSING ======================= -->
+<section class="slide remember">
+  <div class="inner">
+    <h2 class="rise">Points to remember</h2>
+    <ol class="seeds">
+      <li class="step"><span class="topic">Abraham</span><span class="seed-q">“Abraham believed God” <cite>4:3</cite></span><span class="take">He believed, and God counted it to him for righteousness.</span></li>
+      <li class="step"><span class="topic">Wages</span><span class="seed-q">“Him that justifieth the ungodly” <cite>4:5</cite></span><span class="take">Wages are owed. Salvation is a gift, for the ungodly.</span></li>
+      <li class="step"><span class="topic">Covered</span><span class="seed-q">“Whose sins are covered” <cite>4:7</cite></span><span class="take">Forgiven, covered, and never charged to you again.</span></li>
+      <li class="step"><span class="topic">Before</span><span class="seed-q">“Not in circumcision, but in uncircumcision” <cite>4:10</cite></span><span class="take">Righteous before the ritual, so the door is open to all.</span></li>
+      <li class="step"><span class="topic">Hope</span><span class="seed-q">“Against hope believed in hope” <cite>4:18</cite></span><span class="take">He faced the facts and trusted the God who keeps promises.</span></li>
+      <li class="step"><span class="topic">For us</span><span class="seed-q">“But for us also” <cite>4:24</cite></span><span class="take">Anyone who believes on the God who raised Jesus.</span></li>
+    </ol>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 1 of 6</p>
+      <span class="topic">Abraham</span>
+      <h2>How was Abraham made right with God?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="2"></blockquote>
+      <blockquote class="quote step" data-q="3"></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>He believed God, and God counted his faith as righteousness. He didn't earn it by works; before God he had nothing to boast of. God put righteousness on his account as a gift.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 2 of 6</p>
+      <span class="topic">Wages</span>
+      <h2>What's the difference between wages and a gift?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="4"></blockquote>
+      <blockquote class="quote step" data-q="5"></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>Wages are owed: you earned them, and you can brag about them. A gift is grace: given freely to someone who didn't earn it. God justifies the ungodly who believe, not the ones who work for it.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 3 of 6</p>
+      <span class="topic">Covered</span>
+      <h2>What blessing did David describe?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="7"></blockquote>
+      <blockquote class="quote step" data-q="8"></blockquote>
+      <blockquote class="quote step"><p>“I acknowledged my sin unto thee, and mine iniquity have I not hid. I said, I will confess my transgressions unto the LORD; and thou forgavest the iniquity of my sin. Selah.”</p><cite>Psalm 32:5</cite></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>The happiness of a man whose sins are forgiven and covered, and whom the Lord will never charge with sin. David knew it firsthand: when he hid his sin it ate at him; when he confessed it, God forgave him.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 4 of 6</p>
+      <span class="topic">Before</span>
+      <h2>Why does it matter when Abraham was circumcised?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="10"></blockquote>
+      <blockquote class="quote step" data-q="11"></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>Because God counted him righteous years before he was circumcised. Circumcision was only a seal of the faith he already had. So righteousness doesn't come by a ritual, and Abraham is the father of all who believe, Jew or Gentile.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 5 of 6</p>
+      <span class="topic">Hope</span>
+      <h2>What did Abraham do when things looked hopeless?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="18"></blockquote>
+      <blockquote class="quote step" data-q="20"></blockquote>
+      <blockquote class="quote step" data-q="21"></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>He believed in hope against hope. He faced the facts about his age and Sara's, but he didn't stagger at God's promise. He gave glory to God, fully persuaded that God could do what He had promised.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 6 of 6</p>
+      <span class="topic">For us</span>
+      <h2>Who else was this written for?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="23-24"></blockquote>
+      <blockquote class="quote step" data-q="25"></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>For us. Righteousness will be counted to anyone who believes on the God who raised Jesus from the dead. Jesus was delivered for our offences and raised for our justification.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide prayer">
+  <div class="inner">
+    <div class="emblem rise"></div>
+    <h2 class="rise" style="--d:1">Prayer requests</h2>
+    <p class="ask-line rise" style="--d:2">What can we pray about for you today?</p>
+    <blockquote class="quote rise" style="--d:4" data-q="7-8"></blockquote>
+  </div>
+</section>
+
+</main>
+
+<script>
+// King James Version, Romans chapter 4
+const V = {
+  1: "What shall we say then that Abraham our father, as pertaining to the flesh, hath found?",
+  2: "For if Abraham were justified by works, he hath whereof to glory; but not before God.",
+  3: "For what saith the scripture? Abraham believed God, and it was counted unto him for righteousness.",
+  4: "Now to him that worketh is the reward not reckoned of grace, but of debt.",
+  5: "But to him that worketh not, but believeth on him that justifieth the ungodly, his faith is counted for righteousness.",
+  6: "Even as David also describeth the blessedness of the man, unto whom God imputeth righteousness without works,",
+  7: "Saying, Blessed are they whose iniquities are forgiven, and whose sins are covered.",
+  8: "Blessed is the man to whom the Lord will not impute sin.",
+  9: "Cometh this blessedness then upon the circumcision only, or upon the uncircumcision also? for we say that faith was reckoned to Abraham for righteousness.",
+  10: "How was it then reckoned? when he was in circumcision, or in uncircumcision? Not in circumcision, but in uncircumcision.",
+  11: "And he received the sign of circumcision, a seal of the righteousness of the faith which he had yet being uncircumcised: that he might be the father of all them that believe, though they be not circumcised; that righteousness might be imputed unto them also:",
+  12: "And the father of circumcision to them who are not of the circumcision only, but who also walk in the steps of that faith of our father Abraham, which he had being yet uncircumcised.",
+  13: "For the promise, that he should be the heir of the world, was not to Abraham, or to his seed, through the law, but through the righteousness of faith.",
+  14: "For if they which are of the law be heirs, faith is made void, and the promise made of none effect:",
+  15: "Because the law worketh wrath: for where no law is, there is no transgression.",
+  16: "Therefore it is of faith, that it might be by grace; to the end the promise might be sure to all the seed; not to that only which is of the law, but to that also which is of the faith of Abraham; who is the father of us all,",
+  17: "(As it is written, I have made thee a father of many nations,) before him whom he believed, even God, who quickeneth the dead, and calleth those things which be not as though they were.",
+  18: "Who against hope believed in hope, that he might become the father of many nations, according to that which was spoken, So shall thy seed be.",
+  19: "And being not weak in faith, he considered not his own body now dead, when he was about an hundred years old, neither yet the deadness of Sara’s womb:",
+  20: "He staggered not at the promise of God through unbelief; but was strong in faith, giving glory to God;",
+  21: "And being fully persuaded that, what he had promised, he was able also to perform.",
+  22: "And therefore it was imputed to him for righteousness.",
+  23: "Now it was not written for his sake alone, that it was imputed to him;",
+  24: "But for us also, to whom it shall be imputed, if we believe on him that raised up Jesus our Lord from the dead;",
+  25: "Who was delivered for our offences, and was raised again for our justification."
+};
+const BOOK = "Romans 4";
+</script>
+<script src="../assets/deck.js"></script>
+</body>
+</html>
