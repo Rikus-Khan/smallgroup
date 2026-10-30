@@ -10295,5 +10295,306 @@ window.STUDIES = [
       },
       "big": "When you are afraid, the Lord says what He told Paul: I am with thee, and I already have people here. Do honest work, accept a quiet correction, and keep going. It is grace from the beginning."
     }
+  },
+  {
+    "id": "acts-19",
+    "type": "chapter",
+    "book": "Acts",
+    "ch": 19,
+    "date": "2026-10-30",
+    "title": "Acts 19",
+    "sub": "Ephesus: the fire and the uproar",
+    "about": "Paul settles in Ephesus. Men who dabbled in magic burn their books, and a city riots over lost business.",
+    "tags": [
+      "The Holy Spirit",
+      "The name of Jesus",
+      "Confession",
+      "Starting over",
+      "The cost",
+      "Money"
+    ],
+    "url": "studies/acts-19.html",
+    "overview": {
+      "where": "Ephesus, the chief city of Roman Asia, on the coast of what is now Turkey",
+      "when": "About AD 53 to 56, during Paul's third journey",
+      "people": [
+        "paul",
+        "disciples",
+        "tyrannus",
+        "sceva",
+        "demetrius",
+        "townclerk"
+      ],
+      "places": [
+        "ephesus",
+        "asia",
+        "macedonia",
+        "rome",
+        "theatre"
+      ],
+      "story": [
+        "Paul reaches Ephesus and finds twelve men who only know John's baptism. They hear about Jesus, believe, and the Holy Spirit comes on them (1–7).",
+        "Paul teaches daily in the hall of Tyrannus for two years, so that all Asia hears the word. God does special miracles by his hands (8–12).",
+        "Seven sons of Sceva try to use Jesus' name like a spell and are beaten by the man they try to help. Fear falls on the city (13–17).",
+        "Believers come and confess their deeds. Many who practiced magic burn their books, worth fifty thousand pieces of silver. The word of God grows (18–20).",
+        "Paul plans to go to Jerusalem and Rome. The silversmith Demetrius stirs up a riot at the theatre because the gospel is hurting his trade, until the townclerk calms the crowd (21–41)."
+      ],
+      "key": {
+        "ref": "Acts 19:19",
+        "text": "Many of them also which used curious arts brought their books together, and burned them before all men: and they counted the price of them, and found it fifty thousand pieces of silver."
+      },
+      "big": "Jesus changes a whole life, and the old life has a price. These believers confessed, counted the cost, and burned what bound them, and the word of God grew."
+    }
+  },
+  {
+    "id": "acts-20",
+    "type": "chapter",
+    "book": "Acts",
+    "ch": 20,
+    "date": "2026-10-30",
+    "title": "Acts 20",
+    "sub": "Midnight in Troas, and goodbye at Miletus",
+    "about": "A young man falls from a window and is lifted up alive. Then Paul says goodbye to the Ephesian elders with the gospel of the grace of God.",
+    "tags": [
+      "Grace",
+      "Repentance and faith",
+      "Falling and rising",
+      "Courage",
+      "Staying alert",
+      "Giving"
+    ],
+    "url": "studies/acts-20.html",
+    "overview": {
+      "where": "Greece, Troas and Miletus, on the coast of the Aegean Sea",
+      "when": "About AD 57, at the end of Paul's third journey",
+      "people": [
+        "paul",
+        "timothy",
+        "eutychus",
+        "disciples",
+        "elders",
+        "the-jews"
+      ],
+      "places": [
+        "greece",
+        "troas",
+        "assos",
+        "miletus",
+        "ephesus"
+      ],
+      "story": [
+        "Paul leaves Ephesus, spends three months in Greece, and turns back through Macedonia when the Jews plot against him. Seven companions go ahead to Troas (1–6).",
+        "On the first day of the week the church meets in an upper room. Paul talks until midnight, and Eutychus falls asleep, falls from the third loft, and is taken up dead. Paul embraces him, and he is brought up alive (7–12).",
+        "Paul walks to Assos and sails past Ephesus, hurrying to be at Jerusalem by Pentecost (13–16).",
+        "At Miletus he calls the Ephesian elders. He reminds them of his tears, of repentance toward God and faith toward Jesus, and of the gospel of the grace of God (17–27).",
+        "He warns them of wolves from outside and within, commends them to God and the word of His grace, quotes Jesus' words, \"It is more blessed to give than to receive,\" and prays with them as they weep (28–38)."
+      ],
+      "key": {
+        "ref": "Acts 20:24",
+        "text": "But none of these things move me, neither count I my life dear unto myself, so that I might finish my course with joy, and the ministry, which I have received of the Lord Jesus, to testify the gospel of the grace of God."
+      },
+      "big": "The gospel is the grace of God, a gift. A man who falls is lifted up, and a man who has been given grace can finish the race with joy and give to others."
+    }
+  },
+  {
+    "id": "acts-23",
+    "type": "chapter",
+    "book": "Acts",
+    "ch": 23,
+    "date": "2026-10-30",
+    "title": "Acts 23",
+    "sub": "Be of good cheer, Paul",
+    "about": "Paul stands before the council, forty men swear to kill him, and in the worst night of his trip the Lord stands beside him and says take heart.",
+    "tags": [
+      "Courage",
+      "Resurrection hope",
+      "Temper and apology",
+      "God's plan",
+      "Ordinary helpers",
+      "Conscience"
+    ],
+    "url": "studies/acts-23.html",
+    "overview": {
+      "where": "The council chamber and the Roman castle in Jerusalem, then by night to Antipatris and Caesarea",
+      "when": "About AD 57, just after Paul's arrest in Jerusalem",
+      "people": [
+        "paul",
+        "ananias-high-priest",
+        "pharisees",
+        "sadducees",
+        "chief-priests",
+        "pauls-nephew",
+        "claudius-lysias",
+        "felix"
+      ],
+      "places": [
+        "jerusalem",
+        "the-castle",
+        "antipatris",
+        "caesarea"
+      ],
+      "story": [
+        "Paul tells the council he has lived in all good conscience. The high priest Ananias has him struck. Paul snaps back, then backs down when he learns who it is (1–5).",
+        "Paul says he is on trial for the hope of the resurrection, and the Pharisees and Sadducees start fighting each other. The Romans pull him out (6–10).",
+        "That night the Lord stands by him: “Be of good cheer, Paul… so must thou bear witness also at Rome” (11).",
+        "More than forty men swear not to eat or drink until Paul is dead. His nephew hears of it and tells the Roman commander (12–22).",
+        "Four hundred and seventy soldiers take Paul by night to Antipatris and on to Caesarea, with a letter to the governor Felix (23–35)."
+      ],
+      "key": {
+        "ref": "Acts 23:11",
+        "text": "And the night following the Lord stood by him, and said, Be of good cheer, Paul: for as thou hast testified of me in Jerusalem, so must thou bear witness also at Rome."
+      },
+      "big": "God is not stopped by angry councils or forty men's oaths. He stands beside His man in the worst night, and He still has the next chapter planned."
+    }
+  },
+  {
+    "id": "acts-24",
+    "type": "chapter",
+    "book": "Acts",
+    "ch": 24,
+    "date": "2026-10-30",
+    "title": "Acts 24",
+    "sub": "Go thy way for this time",
+    "about": "A lawyer flatters, Paul tells the truth with a clear conscience, and Felix trembles and says not yet. Putting God off is the most dangerous answer of all.",
+    "tags": [
+      "Flattery and truth",
+      "A clear conscience",
+      "Resurrection hope",
+      "Conviction",
+      "Putting God off",
+      "Waiting on God"
+    ],
+    "url": "studies/acts-24.html",
+    "overview": {
+      "where": "The governor's headquarters at Caesarea",
+      "when": "About AD 57 to 59: the trial five days after the night ride, then two years in custody",
+      "people": [
+        "paul",
+        "ananias-high-priest",
+        "tertullus",
+        "felix",
+        "drusilla",
+        "festus"
+      ],
+      "places": [
+        "caesarea",
+        "jerusalem"
+      ],
+      "story": [
+        "The high priest and the lawyer Tertullus accuse Paul before Felix, flattering him first (1–9).",
+        "Paul answers plainly: twelve days in Jerusalem, no riot, no witnesses. He worships the God of his fathers and holds a conscience void of offence (10–21).",
+        "Felix puts the case off and gives Paul some freedom (22–23).",
+        "Felix and his wife Drusilla hear Paul on righteousness, self-control and the judgment to come. Felix trembles and says, “Go thy way for this time” (24–25).",
+        "Felix hopes for a bribe, keeps Paul two years, and leaves him bound for his successor Festus (26–27)."
+      ],
+      "key": {
+        "ref": "Acts 24:25",
+        "text": "And as he reasoned of righteousness, temperance, and judgment to come Felix trembled, and answered, Go thy way for this time; when I have a convenient season, I will call for thee."
+      },
+      "big": "Being afraid of God is not the same as coming to Him. There is no convenient season. Now is the day to believe."
+    }
+  },
+  {
+    "id": "acts-25",
+    "type": "chapter",
+    "book": "Acts",
+    "ch": 25,
+    "date": "2026-10-30",
+    "title": "Acts 25",
+    "sub": "I appeal unto Caesar",
+    "about": "A new governor, Festus, hears the same old plot against Paul. Paul uses his rights as a Roman and appeals to Caesar, and King Agrippa and Bernice arrive to hear his case.",
+    "tags": [
+      "Hatred",
+      "The truth",
+      "A clear conscience",
+      "Waiting",
+      "Open doors"
+    ],
+    "url": "studies/acts-25.html",
+    "overview": {
+      "where": "Caesarea, the Roman capital on the coast of Judaea, with Jerusalem about sixty miles away",
+      "when": "About AD 59, two years after Paul's arrest",
+      "people": [
+        "paul",
+        "festus",
+        "felix",
+        "agrippa-ii",
+        "bernice",
+        "augustus",
+        "chief-priests",
+        "the-jews"
+      ],
+      "places": [
+        "caesarea",
+        "jerusalem"
+      ],
+      "story": [
+        "Festus arrives as governor and goes up to Jerusalem, where the leaders ask him to send Paul there, planning to kill him on the road (1–3).",
+        "Festus says Paul stays in Caesarea and the accusers must come to him (4–5).",
+        "At the hearing the Jews bring many serious charges they cannot prove, and Paul answers that he has offended against neither the law, the temple, nor Caesar (6–8).",
+        "Wanting to please the Jews, Festus asks if Paul will be tried in Jerusalem. Paul refuses to be handed over and appeals to Caesar, and Festus agrees (9–12).",
+        "King Agrippa and Bernice come to greet Festus. Festus tells them Paul's case: no crime, only a dispute about one Jesus, who was dead, whom Paul says is alive (13–21).",
+        "Agrippa asks to hear Paul himself. The next day he comes with great pomp, and Festus presents Paul, saying he has found nothing worthy of death (22–27)."
+      ],
+      "key": {
+        "ref": "Acts 25:12",
+        "text": "Then Festus, when he had conferred with the council, answered, Hast thou appealed unto Caesar? unto Caesar shalt thou go."
+      },
+      "big": "Paul's enemies still wanted him dead, but he used the law that protected him, and God used the appeal to carry out His promise that Paul would bear witness in Rome. The whole dispute came down to one question, whether Jesus is alive, and a king came to hear it."
+    }
+  },
+  {
+    "id": "acts-26",
+    "type": "chapter",
+    "book": "Acts",
+    "ch": 26,
+    "date": "2026-10-30",
+    "title": "Acts 26",
+    "sub": "Almost persuaded",
+    "about": "Paul tells King Agrippa the story of his life, the worst of it and the Damascus road, and Agrippa answers, “Almost thou persuadest me to be a Christian.”",
+    "tags": [
+      "A changed man",
+      "Salvation",
+      "Repentance",
+      "Hope",
+      "Almost",
+      "Telling others"
+    ],
+    "url": "studies/acts-26.html",
+    "overview": {
+      "where": "The hearing room at Caesarea, and the Damascus road in Paul's story",
+      "when": "About AD 59, and Paul's conversion about AD 34 to 35",
+      "people": [
+        "paul",
+        "agrippa-ii",
+        "festus",
+        "bernice",
+        "jesus",
+        "pharisees",
+        "chief-priests"
+      ],
+      "places": [
+        "caesarea",
+        "damascus",
+        "jerusalem",
+        "judaea"
+      ],
+      "story": [
+        "Agrippa lets Paul speak, and Paul says he is glad to answer a king who knows the Jewish customs (1–3).",
+        "He tells of his life as a strict Pharisee, now on trial for the hope of God's promise and the resurrection of the dead (4–8).",
+        "He admits he once did all he could against Jesus: he jailed the saints, voted for their deaths and chased them to foreign cities (9–11).",
+        "At midday on the road to Damascus a light above the sun struck him down, and Jesus said, “Saul, Saul, why persecutest thou me?” (12–15)",
+        "Jesus sent him to open eyes, turn people from darkness to light and from the power of Satan to God, so they may receive forgiveness and an inheritance by faith (16–18).",
+        "Paul was not disobedient to the vision, and preached repentance from Damascus to the Gentiles. That is why the Jews tried to kill him (19–23).",
+        "Festus says he is mad; Paul says he speaks the words of truth and soberness. He asks Agrippa if he believes the prophets (24–27).",
+        "Agrippa says, “Almost thou persuadest me to be a Christian.” Paul wishes all who hear him were altogether such as he is, except for his chains (28–29).",
+        "The king and the governor agree that Paul has done nothing worthy of death or bonds, and he could have been freed if he had not appealed to Caesar (30–32)."
+      ],
+      "key": {
+        "ref": "Acts 26:28",
+        "text": "Then Agrippa said unto Paul, Almost thou persuadest me to be a Christian."
+      },
+      "big": "Paul never hid his past, and he told it with Jesus at the center, from persecutor to messenger of light. Agrippa was moved and stopped one step short, a warning that almost saved is not saved, and a reason not to put off turning to God."
+    }
   }
 ];

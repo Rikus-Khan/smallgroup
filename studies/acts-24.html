@@ -1,0 +1,486 @@
+<!doctype html>
+<html lang="en" data-theme="slate">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Acts 24</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="../assets/fonts.css">
+<link rel="stylesheet" href="../assets/deck.css">
+<link rel="stylesheet" href="../assets/themes.css">
+<style>
+/* ac24-no: a checklist of what the case lacked (crosses, not ticks) */
+.ac24-no li.on .tick, .slide.active .ac24-no li:not(.step) .tick { background: var(--danger); border-color: var(--danger); color: var(--on-accent); }
+
+/* ac24-three: the three subjects Paul reasoned about, and a man who trembled */
+.ac24-three { display: grid; grid-template-columns: repeat(3, 1fr); gap: .8rem; margin: .4em 0 .8em; }
+@media (max-width: 640px) { .ac24-three { grid-template-columns: 1fr; } }
+.ac24-card { padding: .7em .9em; border: 1.5px solid var(--line-strong); border-radius: 10px; background: var(--surface); }
+.ac24-card h3 { font: 600 clamp(1.15rem, 1rem + .8vw, 1.7rem) var(--serif); color: var(--accent-hot); }
+.ac24-card p { font-size: clamp(.88rem, .82rem + .4vw, 1.15rem); line-height: 1.35; color: var(--ink-soft); margin-top: .25em; }
+.ac24-card p b { color: var(--ink); font-weight: 600; }
+.ac24-shake { display: inline-block; font: 300 clamp(1.8rem, 1.2rem + 2.6vw, 3.4rem)/1.1 var(--serif); font-style: italic; color: var(--danger); margin: .1em 0 .2em; }
+.slide:has(.ac24-trem.on) .ac24-shake { animation: ac24-tremble .14s linear 14; }
+@keyframes ac24-tremble { 0%, 100% { transform: translate(0, 0); } 25% { transform: translate(-3px, 1px); } 50% { transform: translate(3px, -1px); } 75% { transform: translate(-2px, -2px); } }
+
+/* ac24-days: one "today", and a row of days that keep sliding away (a convenient season) */
+.ac24-days { display: flex; flex-wrap: wrap; gap: .5rem; margin: .5em 0 .8em; }
+.ac24-day { padding: .55em .9em; border-radius: 8px; border: 2px dashed var(--line-strong); font: 600 clamp(.9rem, .82rem + .4vw, 1.2rem) var(--sans); color: var(--ink-soft); transition: opacity 1s ease, transform 1s ease; transition-delay: calc(var(--k) * 260ms); }
+.ac24-day.now { border: 2px solid var(--accent); border-style: solid; background: color-mix(in srgb, var(--accent) 18%, transparent); color: var(--accent-hot); }
+.slide:has(.ac24-fade.on) .ac24-day:not(.now) { opacity: calc(.9 - var(--k) * .17); transform: translateX(calc(var(--k) * 6px)); }
+.slide:has(.ac24-fade.on) .ac24-day.now { opacity: 1; }
+</style>
+</head>
+<body>
+<main class="deck" id="deck">
+
+<!-- ======================= OPENING ======================= -->
+<section class="slide title">
+  <div class="inner">
+    <div class="emblem rise"></div>
+    <h1 class="rise" style="--d:1">Acts 24</h1>
+    <p class="sub rise" style="--d:3">Go thy way for this time</p>
+    <p class="tag rise" style="--d:5">A lawyer flatters, a prisoner tells the truth, and a governor trembles. Then he says the most dangerous words in the Bible: not yet.</p>
+  </div>
+</section>
+
+<section class="slide watch">
+  <div class="inner">
+    <h2 class="rise">Things to watch for</h2>
+    <p class="lede rise" style="--d:1">Keep these questions in the back of your mind as we read. We'll come back to every one of them at the end.</p>
+    <ol class="seeds">
+      <li class="step"><span class="topic">Flattery</span><span class="seed-q">How did Tertullus try to win over the governor?</span></li>
+      <li class="step"><span class="topic">Honesty</span><span class="seed-q">How did Paul answer the charges against him?</span></li>
+      <li class="step"><span class="topic">Conscience</span><span class="seed-q">What did Paul say he worked at keeping?</span></li>
+      <li class="step"><span class="topic">Hope</span><span class="seed-q">What hope did Paul say he shared with his accusers?</span></li>
+      <li class="step"><span class="topic">Conviction</span><span class="seed-q">What made Felix tremble?</span></li>
+      <li class="step"><span class="topic">Delay</span><span class="seed-q">What did Felix say instead of believing?</span></li>
+    </ol>
+  </div>
+</section>
+
+<!-- ======================= PART ONE: THE ACCUSATION ======================= -->
+<section class="slide part">
+  <div class="inner">
+    <p class="part-n rise">Part one</p>
+    <h2 class="rise" style="--d:1">The accusation</h2>
+    <p class="range rise" style="--d:2">Verses 1–9</p>
+    <div class="rule"></div>
+    <p class="hook rise" style="--d:4">Five days later, the high priest arrives in Caesarea with a lawyer.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="1-4" data-hl="a certain orator named Tertullus|we enjoy great quietness|most noble Felix"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="3" data-hl="most noble Felix"></blockquote>
+    <h2 class="rise" style="--d:1">Flattery first</h2>
+    <p class="note rise" style="--d:2">An <em>orator</em> was a hired professional speaker, a lawyer. Tertullus opens by buttering up the governor:</p>
+    <div class="match" style="--n:3" aria-label="What Tertullus said: great quietness, very worthy deeds, most noble Felix. What was true: unrest put down hard, a taste for bribes, a former slave in a governor's chair.">
+      <div class="a rise" style="--d:3"><span class="tag">he said</span><span class="w">“great quietness”</span><span class="w">“very worthy deeds”</span><span class="w">“most noble Felix”</span></div>
+      <div class="step"><span></span><span class="link">not quite</span><span class="link">not quite</span><span class="link">not quite</span></div>
+      <div class="b step"><span class="but">but</span><span class="w">unrest, put down hard</span><span class="w">a taste for bribes (v. 26)</span><span class="w">a freed slave with a governor's power</span></div>
+    </div>
+    <p class="note step">Roman writers remember Felix as cruel and greedy. Tertullus was paid to say otherwise. He also leaves out that Lysias <em>rescued</em> Paul from a mob that wanted him dead. He calls it <em>“great violence.”</em></p>
+    <p class="note step">A man who flatters wants something from you. Watch for it in the voices around you, and watch for it in yourself. Compare how Paul opens his answer in verse 10: respectful, and true.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="5-9" data-hl="a pestilent fellow, and a mover of sedition|a ringleader of the sect of the Nazarenes|Who also hath gone about to profane the temple"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="5" data-hl="a ringleader of the sect of the Nazarenes"></blockquote>
+    <h2 class="rise" style="--d:1">Four charges, one true</h2>
+    <ul class="nots">
+      <li class="step"><span class="k">“a pestilent fellow”</span><span class="why">a plague, a troublemaker. Nobody could name what he'd done</span></li>
+      <li class="step"><span class="k">“a mover of sedition”</span><span class="why">stirring up riots worldwide. No witness stood up</span></li>
+      <li class="step"><span class="k">“gone about to profane the temple”</span><span class="why">he was found there quietly purified, not causing a scene</span></li>
+      <li class="step yes"><span class="k">“the sect of the Nazarenes”</span><span class="why">followers of Jesus of Nazareth. That one he'd never deny.</span></li>
+    </ul>
+    <p class="note step">The only charge that stuck was the best one to be guilty of. Peter says it for every believer:</p>
+    <blockquote class="quote step"><p>“But let none of you suffer as a murderer, or as a thief, or as an evildoer, or as a busybody in other men’s matters. Yet if any man suffer as a Christian, let him not be ashamed; but let him glorify God on this behalf.”</p><cite>1 Peter 4:15–16</cite></blockquote>
+  </div>
+</section>
+
+<!-- ======================= PART TWO: PAUL'S DEFENCE ======================= -->
+<section class="slide part">
+  <div class="inner">
+    <p class="part-n rise">Part two</p>
+    <h2 class="rise" style="--d:1">Paul's defence</h2>
+    <p class="range rise" style="--d:2">Verses 10–23</p>
+    <div class="rule"></div>
+    <p class="hook rise" style="--d:4">No flattery, no panic. Just what happened, what he believes, and a clean conscience.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="10-13" data-hl="there are yet but twelve days since I went up to Jerusalem for to worship|Neither can they prove the things whereof they now accuse me"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="11" data-hl="there are yet but twelve days since I went up to Jerusalem for to worship"></blockquote>
+    <h2 class="rise" style="--d:1">Twelve days</h2>
+    <ol class="timeline" aria-label="Day 1, Paul reaches Jerusalem. About day 7, he is seized in the temple. Soon after, the council and the forty-man plot. Day 12, the trial before Felix.">
+      <li style="--k:0" data-n="1"><b>Day 1</b><span>Reaches Jerusalem</span><small>Acts 21:17</small></li>
+      <li style="--k:1" data-n="2"><b>About day 7</b><span>Seized in the temple</span><small>Acts 21:27</small></li>
+      <li style="--k:2" data-n="3"><b>Then</b><span>Council, plot, night ride</span><small>Acts 22–23</small></li>
+      <li class="lit" style="--k:3" data-n="4"><b>Day 12</b><span>On trial before Felix</span><small>Acts 24:11</small></li>
+    </ol>
+    <p class="note step">Paul just states the facts, and they're easy to check. In twelve days, spread over a trip to the temple, an arrest and a night ride, when was he supposed to start a worldwide uprising?</p>
+    <p class="note step">He also puts the weight where it belongs: <em>“Neither can they prove”</em> it. The accusers had to prove their charges, and they had no witnesses. An honest man can stand on what he really did.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="14-16" data-hl="after the way which they call heresy|there shall be a resurrection of the dead, both of the just and unjust|a conscience void of offence toward God, and toward men"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="14" data-hl="after the way which they call heresy"></blockquote>
+    <h2 class="rise" style="--d:1">“The way, which they call heresy”</h2>
+    <div class="morph">
+      <span class="big rise" style="--d:3">αἵρεσις</span>
+      <span class="say step">said <em class="gk">hairesis</em></span>
+      <span class="means step">a choice, a party, a sect</span>
+    </div>
+    <p class="note step">In the King James, <em>“heresy”</em> just means a sect or party. It's the same word used for the Sadducees and the Pharisees. They called following Jesus “a sect.” Paul answers: it's <em>the Way</em>, and it's not new. It's the same God of his fathers, <em>“believing all things which are written in the law and in the prophets.”</em></p>
+    <p class="note step">And the hope is shared: <em>“a resurrection of the dead, both of the just and unjust.”</em> Everyone rises, and everyone answers to God. For the one who trusts Jesus, that's good news, not fear.</p>
+    <blockquote class="quote step"><p>“And as it is appointed unto men once to die, but after this the judgment:”</p><cite>Hebrews 9:27</cite></blockquote>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="16" data-hl="a conscience void of offence toward God, and toward men"></blockquote>
+    <h2 class="rise" style="--d:1">A conscience void of offence</h2>
+    <div class="columns">
+      <div class="col law rise" style="--d:2">
+        <p class="who">The old way</p>
+        <h3>Dull it</h3>
+        <p>Bury it, drink it quiet, keep busy, argue with it. The guilt just waits for the next 2 a.m.</p>
+      </div>
+      <div class="col grace step">
+        <p class="who">The way out</p>
+        <h3>Clean it</h3>
+        <p>Tell God the truth and be forgiven: <em>“If we confess our sins, he is faithful and just to forgive us our sins, and to cleanse us from all unrighteousness”</em> (1 John 1:9).</p>
+      </div>
+    </div>
+    <p class="note step"><em>“Void of offence”</em> means nothing left that accuses you. Paul isn't claiming he never failed. He says <em>“herein do I exercise myself”</em>, which is training language, and <em>“always.”</em> He works at it daily, the way you train a muscle.</p>
+    <p class="note step">And notice the two directions: <em>toward God, and toward men.</em> One thing for today: if there's somebody you owe an apology or a repayment, that's the next step, and it's how a conscience gets quiet for real. Hebrews 9:14 says the blood of Christ can <em>“purge your conscience from dead works.”</em></p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="17-21" data-hl="to bring alms to my nation, and offerings|found me purified in the temple, neither with multitude, nor with tumult|Touching the resurrection of the dead I am called in question by you this day"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="17" data-hl="to bring alms to my nation, and offerings"></blockquote>
+    <div class="split">
+      <div class="stage">
+        <svg data-world viewBox="440 165 420 350" style="max-height:56vh" data-towns="Corinth*:l, Philippi:t, Troas:t, Ephesus:l, Jerusalem!:r, Caesarea:l" role="img" aria-label="Map of the eastern Mediterranean. Paul travels from Greece through Macedonia and Troas, along the coast of Asia, and by sea to Caesarea and Jerusalem, carrying a gift for the poor believers there.">
+          <path class="map-route j3" data-via="Corinth, Berea, Thessalonica, Philippi, Neapolis, @24.5 40.84, @25.2 40.75, @25.6 40.05, @26.0 39.7, Troas, Assos, Mitylene, @26.2 38.4, @26.6 37.95, @27.0 37.6, Miletus, Coos, @27.5 36.55, @27.9 36.6, Rhodes, Patara, @31 35.0, @33.5 34.3, Tyre, Ptolemais, Caesarea, Jerusalem"/>
+        </svg>
+      </div>
+      <div>
+        <h2 class="rise" style="--d:1">He came to give</h2>
+        <p class="note rise" style="--d:2">After years away, Paul came to Jerusalem carrying <em>alms</em>, a gift of money from the churches of Greece and Macedonia for the poor believers there.</p>
+        <p class="note step">That's his answer to “troublemaker”: a man who crossed the sea to bring a gift. The Jews from Asia who started the trouble found him <em>“purified in the temple, neither with multitude, nor with tumult.”</em></p>
+        <p class="note step">He had nothing to hide, and he told it plainly. A life that's been put right can say what it did, without spin.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="19" data-hl="Who ought to have been here before thee, and object, if they had ought against me"></blockquote>
+    <h2 class="rise" style="--d:1">What the case was missing</h2>
+    <ol class="checks ac24-no">
+      <li class="step"><span class="tick">✗</span><q>Who ought to have been here before thee, and object, if they had ought against me.</q><small>The men from Asia who began it never came</small><b>v. 19</b></li>
+      <li class="step"><span class="tick">✗</span><q>found me purified in the temple, neither with multitude, nor with tumult</q><small>No riot, no crowd</small><b>v. 18</b></li>
+      <li class="step"><span class="tick">✗</span><q>Except it be for this one voice, that I cried standing among them</q><small>The only “crime” before the council was one sentence about the resurrection</small><b>v. 21</b></li>
+    </ol>
+    <p class="note step">A fair judge would have let him go. Felix didn't. We'll see why.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="22-23" data-hl="he deferred them|let him have liberty"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="22" data-hl="having more perfect knowledge of that way, he deferred them"></blockquote>
+    <h2 class="rise" style="--d:1">Knowing more is not deciding</h2>
+    <p class="saying rise" style="--d:2">Felix knew. <em>He stalled.</em></p>
+    <p class="note step">Felix had <em>“more perfect knowledge of that way.”</em> His wife was Jewish, and he'd been governor for years. He knew enough to see Paul was no criminal. And he <em>“deferred”</em> the case: <em>postponed it</em>, waiting for Lysias, who as far as we read never came.</p>
+    <p class="note step">Meanwhile, Paul got <em>“liberty”</em>, with his friends free to come and look after him. God gave him people even in a cell. (Philip the evangelist lived in Caesarea, 21:8, and Luke was likely nearby.)</p>
+    <p class="note step">It's one thing to know about Jesus. It's another to decide. Felix is about to show us the difference.</p>
+  </div>
+</section>
+
+<!-- ======================= PART THREE: FELIX TREMBLED ======================= -->
+<section class="slide part">
+  <div class="inner">
+    <p class="part-n rise">Part three</p>
+    <h2 class="rise" style="--d:1">Felix trembled</h2>
+    <p class="range rise" style="--d:2">Verses 24–27</p>
+    <div class="rule"></div>
+    <p class="hook rise" style="--d:4">The governor and his wife send for the prisoner, and hear more than they bargained for.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="24-25" data-hl="Felix came with his wife Drusilla|righteousness, temperance, and judgment to come Felix trembled|Go thy way for this time; when I have a convenient season, I will call for thee"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="24" data-hl="Felix came with his wife Drusilla, which was a Jewess"></blockquote>
+    <h2 class="rise" style="--d:1">A governor, his wife, and a prisoner with the truth</h2>
+    <div class="chains">
+      <div class="chain step"><span class="who-chip">Herod the Great</span><span class="said">her great-grandfather, who tried to kill the baby Jesus (Matthew 2)</span></div>
+      <div class="chain step"><span class="who-chip">Herod Agrippa I</span><span class="said">her father, who killed James and was struck down (Acts 12)</span></div>
+      <div class="chain step"><span class="who-chip">Drusilla</span><span class="said">now sitting in a room, hearing about Christ from a prisoner</span></div>
+    </div>
+    <p class="note step">Drusilla was a Jewish princess, very young, and by the Jewish historian Josephus she had left her first husband to marry Felix. Felix had been a slave, freed, and risen to rule Judaea.</p>
+    <p class="note step">Think what it took for Paul to speak. He was a prisoner. Felix could free him or have him killed. He still told the truth, because that's what these two needed to hear.</p>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="25" data-hl="righteousness, temperance, and judgment to come Felix trembled"></blockquote>
+    <h2 class="rise" style="--d:1">Three things Felix didn't want to hear</h2>
+    <div class="ac24-three">
+      <div class="ac24-card step"><h3>Righteousness</h3><p>Living right with God and men. <b>Felix wanted bribes</b> (v. 26).</p></div>
+      <div class="ac24-card step"><h3>Temperance</h3><p>Self-control, mastery over appetites. <b>Felix was ruled by his.</b> This is the word in Galatians 5:23, a fruit of the Spirit.</p></div>
+      <div class="ac24-card step"><h3>Judgment to come</h3><p>One day everyone answers to God. <b>Felix had a lot to answer for.</b></p></div>
+    </div>
+    <div class="ac24-shake step ac24-trem">Felix trembled.</div>
+    <p class="note step"><em>“Trembled”</em> means he became afraid. That's conviction: God's Spirit pressing on a man's conscience. Jesus said He would <em>“reprove the world of sin, and of righteousness, and of judgment”</em> (John 16:8). Conviction is a gift. It points to a door and says <em>this way.</em> Shame only says hide. Paul didn't call Felix names. He told him the truth and where it ends.</p>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="25" data-hl="Go thy way for this time; when I have a convenient season, I will call for thee"></blockquote>
+    <h2 class="rise" style="--d:1">“When I have a convenient season”</h2>
+    <div class="ac24-days" aria-label="Today, then tomorrow, next week, after things settle down, and a convenient season. The later days fade away.">
+      <span class="ac24-day now" style="--k:0">Today</span>
+      <span class="ac24-day" style="--k:1">Tomorrow</span>
+      <span class="ac24-day" style="--k:2">Next week</span>
+      <span class="ac24-day" style="--k:3">After things calm down</span>
+      <span class="ac24-day" style="--k:4">A convenient season</span>
+    </div>
+    <p class="note step ac24-fade">The convenient season never comes. There is always one more reason: work, a bad week, a better time. <em>“For this time”</em> is a polite way to say no.</p>
+    <p class="note step">Every man here has said it. “I'll deal with God once things settle.” “I'll quit Monday.” “I'll make that call after the holidays.” Felix felt it, and he put it off. Trembling doesn't save anyone. Believing does.</p>
+    <blockquote class="quote step"><p>“(For he saith, I have heard thee in a time accepted, and in the day of salvation have I succoured thee: behold, now is the accepted time; behold, now is the day of salvation.)”</p><cite>2 Corinthians 6:2</cite></blockquote>
+  </div>
+</section>
+
+<section class="slide verse" data-v="26-27" data-hl="He hoped also that money should have been given him of Paul|after two years Porcius Festus came into Felix’ room|left Paul bound"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="27" data-hl="after two years Porcius Festus came into Felix’ room"></blockquote>
+    <h2 class="rise" style="--d:1">How it ended for Felix</h2>
+    <ol class="timeline" aria-label="Felix trembles. He says go thy way. He sends for Paul often, hoping for money. Two years pass. Festus takes over and Paul is left bound.">
+      <li class="lit" style="--k:0" data-n="1"><b>The day</b><span>Felix trembles</span><small>v. 25</small></li>
+      <li class="wait" style="--k:1" data-n="2"><b>Next</b><span>“Go thy way for this time”</span><small>v. 25</small></li>
+      <li class="wait" style="--k:2" data-n="3"><b>Often</b><span>Sends for Paul, hoping for a bribe</span><small>v. 26</small></li>
+      <li class="wait" style="--k:3" data-n="4"><b>Two years</b><span>Paul in custody</span><small>v. 27</small></li>
+      <li class="wait" style="--k:4" data-n="5"><b>The end</b><span>Festus takes over. Paul left bound.</span><small>v. 27</small></li>
+    </ol>
+    <p class="note step">Felix did send for Paul <em>“the oftener”</em>, but not to hear about Christ. He <em>“hoped… that money should have been given him.”</em> He talked with Paul, and wanted a bribe. When he left office, he <em>“left Paul bound”</em> to please the Jews. His parting favor to the Jews cost an innocent man his freedom.</p>
+    <p class="note step">We aren't told that Felix ever believed. The record just ends. That's the danger of <em>not yet</em>: nobody announces the last chance. Is there something you've been putting off with God? <em>Today</em> is the day.</p>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="27" data-hl="after two years"></blockquote>
+    <div class="split">
+      <div class="stage">
+        <svg data-world viewBox="170 110 700 440" style="max-height:56vh" data-towns="Caesarea*:t, Rome!:t, Melita:b" role="img" aria-label="Map of the Mediterranean. After two years in Caesarea, Paul sails west to Rome.">
+          <path class="map-route j1" data-journey="rome"/>
+        </svg>
+      </div>
+      <div>
+        <h2 class="rise" style="--d:1">Two kinds of waiting</h2>
+        <p class="note rise" style="--d:2">Felix <em>put God off</em>, and nothing came of it. Paul <em>waited on God</em> for two years in Caesarea, about AD 57 to 59, and the road led to Rome, just as the Lord had said (23:11).</p>
+        <p class="note step">From the outside they look alike: two years go by. But Paul wasn't running out the clock. He was trusting a promise he'd been given.</p>
+        <p class="note step">If you're waiting in a hard place, a program, a job, a courtroom, a long recovery, you can wait like Paul. Not “not yet”, but “Lord, I'm here. I'm Yours. Take me where You said.”</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ======================= CLOSING ======================= -->
+<section class="slide remember">
+  <div class="inner">
+    <h2 class="rise">Points to remember</h2>
+    <ol class="seeds">
+      <li class="step"><span class="topic">Flattery</span><span class="seed-q">“Most noble Felix” <cite>24:3</cite></span><span class="take">Smooth words usually want something. Be wary of flattery, and tell the truth kindly.</span></li>
+      <li class="step"><span class="topic">Honesty</span><span class="seed-q">“Neither can they prove the things whereof they now accuse me” <cite>24:13</cite></span><span class="take">Say what really happened, plainly. A life put right can stand on the facts.</span></li>
+      <li class="step"><span class="topic">Conscience</span><span class="seed-q">“A conscience void of offence toward God, and toward men” <cite>24:16</cite></span><span class="take">Don't dull it. Confess, be cleansed, and make it right with people today.</span></li>
+      <li class="step"><span class="topic">Hope</span><span class="seed-q">“A resurrection of the dead, both of the just and unjust” <cite>24:15</cite></span><span class="take">There is a day ahead. In Christ it is hope, not dread.</span></li>
+      <li class="step"><span class="topic">Conviction</span><span class="seed-q">“Felix trembled” <cite>24:25</cite></span><span class="take">If God is pressing on you, that's a door opening, not a judge's finger.</span></li>
+      <li class="step"><span class="topic">Delay</span><span class="seed-q">“Go thy way for this time” <cite>24:25</cite></span><span class="take">There is no convenient season. “Now is the day of salvation.”</span></li>
+    </ol>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 1 of 6</p>
+      <span class="topic">Flattery</span>
+      <h2>How did Tertullus try to win over the governor?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="2" data-hl="we enjoy great quietness"></blockquote>
+      <blockquote class="quote step" data-q="3"></blockquote>
+      <blockquote class="quote step"><p>“A man that flattereth his neighbour spreadeth a net for his feet.”</p><cite>Proverbs 29:5</cite></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>With flattery: “great quietness,” “very worthy deeds,” “most noble Felix.” A hired lawyer, he buttered up the governor before he made his charges. The Bible says flattery is a net for someone's feet.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 2 of 6</p>
+      <span class="topic">Honesty</span>
+      <h2>How did Paul answer the charges against him?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="11"></blockquote>
+      <blockquote class="quote step" data-q="13"></blockquote>
+      <blockquote class="quote step" data-q="18" data-hl="found me purified in the temple, neither with multitude, nor with tumult"></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>Plainly, with the facts and no flattery. Twelve days in Jerusalem, no riot, no crowd, and no witnesses who could prove a thing. Paul admitted the one true charge, that he followed Jesus, and held to it.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 3 of 6</p>
+      <span class="topic">Conscience</span>
+      <h2>What did Paul say he worked at keeping?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="16"></blockquote>
+      <blockquote class="quote step"><p>“If we confess our sins, he is faithful and just to forgive us our sins, and to cleanse us from all unrighteousness.”</p><cite>1 John 1:9</cite></blockquote>
+      <blockquote class="quote step"><p>“How much more shall the blood of Christ, who through the eternal Spirit offered himself without spot to God, purge your conscience from dead works to serve the living God?”</p><cite>Hebrews 9:14</cite></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>“A conscience void of offence toward God, and toward men.” He worked at it always, daily, like training. A clean conscience comes from confessing and being forgiven through Christ's blood, and from making things right with people.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 4 of 6</p>
+      <span class="topic">Hope</span>
+      <h2>What hope did Paul say he shared with his accusers?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="15"></blockquote>
+      <blockquote class="quote step" data-q="21" data-hl="Touching the resurrection of the dead I am called in question by you this day"></blockquote>
+      <blockquote class="quote step"><p>“And as it is appointed unto men once to die, but after this the judgment:”</p><cite>Hebrews 9:27</cite></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>The resurrection of the dead, both the just and the unjust. Paul's whole case came down to that one hope. Everyone will rise and answer to God, and for the man who trusts Jesus, that day is hope, not dread.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 5 of 6</p>
+      <span class="topic">Conviction</span>
+      <h2>What made Felix tremble?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="24"></blockquote>
+      <blockquote class="quote step" data-q="25" data-hl="righteousness, temperance, and judgment to come Felix trembled"></blockquote>
+      <blockquote class="quote step"><p>“And when he is come, he will reprove the world of sin, and of righteousness, and of judgment:”</p><cite>John 16:8</cite></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>Paul reasoned about righteousness, self-control and the judgment to come, and Felix's own life was in every one of them. That fear was conviction, God's Spirit pressing on a conscience. It is meant to lead a man to Christ.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 6 of 6</p>
+      <span class="topic">Delay</span>
+      <h2>What did Felix say instead of believing?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="25" data-hl="Go thy way for this time; when I have a convenient season, I will call for thee"></blockquote>
+      <blockquote class="quote step" data-q="27" data-hl="left Paul bound"></blockquote>
+      <blockquote class="quote step"><p>“Boast not thyself of to morrow; for thou knowest not what a day may bring forth.”</p><cite>Proverbs 27:1</cite></blockquote>
+      <blockquote class="quote step"><p>“(For he saith, I have heard thee in a time accepted, and in the day of salvation have I succoured thee: behold, now is the accepted time; behold, now is the day of salvation.)”</p><cite>2 Corinthians 6:2</cite></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>“Go thy way for this time; when I have a convenient season, I will call for thee.” Not no, just not yet. The Bible doesn't record that he ever called. Now is the accepted time. Don't wait for a convenient season, because tomorrow is not promised.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide prayer">
+  <div class="inner">
+    <div class="emblem rise"></div>
+    <h2 class="rise" style="--d:1">Prayer requests</h2>
+    <p class="ask-line rise" style="--d:2">What can we pray about for you today?</p>
+    <blockquote class="quote rise" style="--d:4"><p>“If we confess our sins, he is faithful and just to forgive us our sins, and to cleanse us from all unrighteousness.”</p><cite>1 John 1:9</cite></blockquote>
+  </div>
+</section>
+
+</main>
+
+<script>
+// King James Version, Acts chapter 24
+const V = {
+  1: "And after five days Ananias the high priest descended with the elders, and with a certain orator named Tertullus, who informed the governor against Paul.",
+  2: "And when he was called forth, Tertullus began to accuse him, saying, Seeing that by thee we enjoy great quietness, and that very worthy deeds are done unto this nation by thy providence,",
+  3: "We accept it always, and in all places, most noble Felix, with all thankfulness.",
+  4: "Notwithstanding, that I be not further tedious unto thee, I pray thee that thou wouldest hear us of thy clemency a few words.",
+  5: "For we have found this man a pestilent fellow, and a mover of sedition among all the Jews throughout the world, and a ringleader of the sect of the Nazarenes:",
+  6: "Who also hath gone about to profane the temple: whom we took, and would have judged according to our law.",
+  7: "But the chief captain Lysias came upon us, and with great violence took him away out of our hands,",
+  8: "Commanding his accusers to come unto thee: by examining of whom thyself mayest take knowledge of all these things, whereof we accuse him.",
+  9: "And the Jews also assented, saying that these things were so.",
+  10: "Then Paul, after that the governor had beckoned unto him to speak, answered, Forasmuch as I know that thou hast been of many years a judge unto this nation, I do the more cheerfully answer for myself:",
+  11: "Because that thou mayest understand, that there are yet but twelve days since I went up to Jerusalem for to worship.",
+  12: "And they neither found me in the temple disputing with any man, neither raising up the people, neither in the synagogues, nor in the city:",
+  13: "Neither can they prove the things whereof they now accuse me.",
+  14: "But this I confess unto thee, that after the way which they call heresy, so worship I the God of my fathers, believing all things which are written in the law and in the prophets:",
+  15: "And have hope toward God, which they themselves also allow, that there shall be a resurrection of the dead, both of the just and unjust.",
+  16: "And herein do I exercise myself, to have always a conscience void of offence toward God, and toward men.",
+  17: "Now after many years I came to bring alms to my nation, and offerings.",
+  18: "Whereupon certain Jews from Asia found me purified in the temple, neither with multitude, nor with tumult.",
+  19: "Who ought to have been here before thee, and object, if they had ought against me.",
+  20: "Or else let these same here say, if they have found any evil doing in me, while I stood before the council,",
+  21: "Except it be for this one voice, that I cried standing among them, Touching the resurrection of the dead I am called in question by you this day.",
+  22: "And when Felix heard these things, having more perfect knowledge of that way, he deferred them, and said, When Lysias the chief captain shall come down, I will know the uttermost of your matter.",
+  23: "And he commanded a centurion to keep Paul, and to let him have liberty, and that he should forbid none of his acquaintance to minister or come unto him.",
+  24: "And after certain days, when Felix came with his wife Drusilla, which was a Jewess, he sent for Paul, and heard him concerning the faith in Christ.",
+  25: "And as he reasoned of righteousness, temperance, and judgment to come Felix trembled, and answered, Go thy way for this time; when I have a convenient season, I will call for thee.",
+  26: "He hoped also that money should have been given him of Paul, that he might loose him: wherefore he sent for him the oftener, and communed with him.",
+  27: "But after two years Porcius Festus came into Felix’ room: and Felix, willing to shew the Jews a pleasure, left Paul bound."
+};
+const BOOK = "Acts 24";
+</script>
+<script src="../assets/deck.js"></script>
+</body>
+</html>
