@@ -1,0 +1,692 @@
+<!doctype html>
+<html lang="en" data-theme="slate">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Mark 11</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="../assets/fonts.css">
+<link rel="stylesheet" href="../assets/deck.css">
+<link rel="stylesheet" href="../assets/themes.css">
+<style>
+/* mk11-fig: a fig tree in full leaf with nothing on it. A .mk11-look step rings the branches: "nothing but leaves".
+   svg.mk11-fig.dry: when the slide opens, the leaves fall one by one, the tree greys, and the roots show dried up. */
+.mk11-fig { --leaf: color-mix(in srgb, var(--cool) 70%, var(--warm)); }
+.mk11-ground { fill: color-mix(in srgb, var(--leather-light) 22%, transparent); stroke: var(--line-strong); stroke-width: 2; }
+.mk11-wood { fill: none; stroke: var(--leather-light); stroke-linecap: round; transition: stroke 1.6s ease; }
+.mk11-root { fill: none; stroke: var(--leather-light); stroke-width: 4; stroke-linecap: round; opacity: .6; transition: stroke 1.6s ease, opacity 1.6s ease; }
+.mk11-leaf { transform-box: fill-box; transform-origin: 50% 50%; transition: transform 1.6s cubic-bezier(.5,0,.7,1), opacity 1.6s ease; }
+.mk11-leaf path { fill: var(--leaf); stroke: color-mix(in srgb, var(--leaf) 60%, var(--ink)); stroke-width: 1.2; transition: fill 1.4s ease; }
+.mk11-look { opacity: 0; transition: opacity .8s ease; }
+.slide:has(.mk11-seek.on) .mk11-look { opacity: 1; }
+.mk11-look circle { fill: none; stroke: var(--accent); stroke-width: 3; stroke-dasharray: 8 7; }
+.mk11-look text, .mk11-dead { fill: var(--accent-hot); font-weight: 700; }
+.mk11-dead { opacity: 0; transition: opacity 1s ease; }
+.slide.active .mk11-fig.dry .mk11-leaf { transform: translate(var(--dx, 0px), var(--fall)) rotate(var(--spin, 160deg)); opacity: .55; transition-delay: calc(var(--k) * 140ms + .6s); }
+.slide.active .mk11-fig.dry .mk11-leaf path { fill: var(--line-strong); transition-delay: calc(var(--k) * 140ms + .3s); }
+.slide.active .mk11-fig.dry .mk11-wood { stroke: var(--ink-soft); transition-delay: 2.4s; }
+.slide.active .mk11-fig.dry .mk11-root { stroke: var(--danger); opacity: 1; stroke-dasharray: 10 6; transition-delay: 2.8s; }
+.slide.active .mk11-fig.dry .mk11-dead { opacity: 1; transition-delay: 3.2s; }
+
+/* mk11-court: the temple courts from above. A .mk11-flip step turns over the changers' tables and spills the coins. */
+.mk11-court .mk11-outer { fill: var(--surface); stroke: var(--line-strong); stroke-width: 3; }
+.mk11-court .mk11-inner { fill: var(--surface-2); stroke: var(--ink-soft); stroke-width: 2; }
+.mk11-court .mk11-soreg { fill: none; stroke: var(--danger); stroke-width: 2.5; stroke-dasharray: 7 6; }
+.mk11-court .mk11-house { fill: color-mix(in srgb, var(--accent) 30%, var(--surface-2)); stroke: var(--accent); stroke-width: 2; }
+.mk11-court text { fill: var(--ink); }
+.mk11-court .mk11-soft { fill: var(--ink-soft); }
+.mk11-court .mk11-warn { fill: var(--danger); font-weight: 700; }
+.mk11-table { transform-box: fill-box; transform-origin: 50% 50%; transition: transform .9s cubic-bezier(.5,1.6,.6,1); }
+.mk11-table rect { fill: var(--leather-light); stroke: var(--ink-soft); stroke-width: 1.5; }
+.mk11-coin { fill: var(--warm); transition: transform 1.1s cubic-bezier(.2,.8,.3,1); }
+.mk11-cage { fill: none; stroke: var(--ink-soft); stroke-width: 2; }
+.slide:has(.mk11-flip.on) .mk11-table { transform: translate(var(--tx, 0px), var(--ty, 0px)) rotate(var(--r, 30deg)); }
+.slide:has(.mk11-flip.on) .mk11-coin { transform: translate(var(--cx), var(--cy)); }
+.mk11-gone { opacity: 0; transition: opacity .8s ease .6s; }
+.slide:has(.mk11-flip.on) .mk11-gone { opacity: 1; }
+</style>
+</head>
+<body>
+<main class="deck" id="deck">
+
+<!-- ======================= OPENING ======================= -->
+<section class="slide title">
+  <div class="inner">
+    <div class="emblem rise"></div>
+    <h1 class="rise" style="--d:1">Mark 11</h1>
+    <p class="sub rise" style="--d:3">Have faith in God</p>
+    <p class="tag rise" style="--d:5">Jesus rides into Jerusalem on a colt, finds a fig tree with nothing but leaves, clears the temple, teaches His men to pray believing and forgiving, and turns the leaders' question back on them.</p>
+  </div>
+</section>
+
+<section class="slide watch">
+  <div class="inner">
+    <h2 class="rise">Things to watch for</h2>
+    <p class="lede rise" style="--d:1">Keep these questions in the back of your mind as we read. We'll come back to every one of them at the end.</p>
+    <ol class="seeds">
+      <li class="step"><span class="topic">The King</span><span class="seed-q">How did Jesus ride into Jerusalem, and what did the people cry?</span></li>
+      <li class="step"><span class="topic">Fruit</span><span class="seed-q">What did Jesus find on the fig tree?</span></li>
+      <li class="step"><span class="topic">Prayer</span><span class="seed-q">What did Jesus say God's house should be called?</span></li>
+      <li class="step"><span class="topic">Faith</span><span class="seed-q">What did Jesus tell His men when they saw the fig tree withered?</span></li>
+      <li class="step"><span class="topic">Forgive</span><span class="seed-q">What must we do when we stand praying?</span></li>
+      <li class="step"><span class="topic">Authority</span><span class="seed-q">Why wouldn't the leaders say where John's baptism came from?</span></li>
+    </ol>
+  </div>
+</section>
+
+<!-- ======================= PART ONE: THE KING COMES ======================= -->
+<section class="slide part">
+  <div class="inner">
+    <p class="part-n rise">Part one</p>
+    <h2 class="rise" style="--d:1">Blessed is he that cometh</h2>
+    <p class="range rise" style="--d:2">Verses 1–11</p>
+    <div class="rule"></div>
+    <p class="hook rise" style="--d:4">Jesus has walked up the long road from Jericho. Now He rides the last mile into Jerusalem, and the crowd cheers Him in.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="1-3" data-hl="unto Bethphage and Bethany, at the mount of Olives|ye shall find a colt tied, whereon never man sat|say ye that the Lord hath need of him"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="1" data-hl="unto Bethphage and Bethany, at the mount of Olives"></blockquote>
+    <div class="split">
+      <div class="stage">
+        <svg class="map" viewBox="0 0 600 420" role="img" aria-label="Map of Jerusalem and the Mount of Olives. The road from Jericho climbs from the east through Bethany and Bethphage, over the Mount of Olives, down across the Kidron valley, and into the city and the temple. At evening Jesus walks back out to Bethany.">
+          <rect class="map-land" x="0" y="0" width="600" height="420" rx="6"/>
+          <path d="M318 40 C 380 20, 440 60, 456 130 C 470 210, 430 300, 340 340 C 330 250, 330 140, 318 40 Z" style="fill:color-mix(in srgb, var(--ink-soft) 16%, transparent)"/>
+          <text class="map-region" x="330" y="76" font-size="13">MOUNT OF</text>
+          <text class="map-region" x="336" y="94" font-size="13">OLIVES</text>
+          <path class="map-river" d="M296 10 C 286 110, 306 210, 290 410" style="stroke-dasharray:6 6"/>
+          <text class="map-water" x="282" y="372" text-anchor="end">Kidron valley</text>
+          <path d="M40 92 L252 70 L266 330 L62 352 Z" stroke-width="3" style="fill:color-mix(in srgb, var(--accent) 8%, transparent);stroke:var(--line-strong)"/>
+          <path d="M178 112 L252 104 L258 212 L184 218 Z" stroke-width="2" style="fill:color-mix(in srgb, var(--accent) 26%, transparent);stroke:var(--accent)"/>
+          <text x="218" y="166" text-anchor="middle" font-size="16" font-weight="700" style="fill:var(--accent-hot)">temple</text>
+          <text class="map-region" x="80" y="290">JERUSALEM</text>
+          <path class="map-way" d="M600 300 C 570 276, 546 248, 520 236 C 492 222, 462 186, 442 166 C 414 142, 374 128, 336 142 C 304 154, 278 160, 258 160"/>
+          <text class="map-soft" x="596" y="334" text-anchor="end" font-size="14">to Jericho, 15 miles</text>
+          <text class="map-soft" x="596" y="352" text-anchor="end" font-size="14">(uphill all the way)</text>
+          <g class="step map-go1">
+            <path class="map-route r1" pathLength="1" d="M600 300 C 570 276, 546 248, 520 236 C 492 222, 462 186, 442 166 C 414 142, 374 128, 336 142 C 304 154, 278 160, 226 160"/>
+          </g>
+          <g class="step map-go2">
+            <path class="map-route r2" pathLength="1" style="stroke:var(--cool);--draw:1.6s" d="M232 196 C 290 240, 360 300, 440 300 C 480 298, 506 270, 516 248"/>
+            <text x="300" y="398" font-size="14" style="fill:var(--cool)">at evening, back to Bethany (v. 11)</text>
+          </g>
+          <g class="map-town"><circle cx="442" cy="166" r="7"/><text x="452" y="160">Bethphage</text></g>
+          <g class="map-town here"><circle class="map-ping" cx="520" cy="236" r="9"/><circle cx="520" cy="236" r="7"/><text x="530" y="226">Bethany</text></g>
+        </svg>
+      </div>
+      <div>
+        <h2 class="rise" style="--d:1">The last mile</h2>
+        <p class="note rise" style="--d:2">He has climbed fifteen miles up from Jericho (10:46). <em>Bethany</em> sits on the far slope of the <em>Mount of Olives</em>, about two miles from Jerusalem. <em>Bethphage</em> was a village nearer the top.</p>
+        <p class="note step map-go1">From the ridge you look straight down across the Kidron valley at the temple. That's where He's riding.</p>
+        <p class="note step">He knows where the colt is and what the owners will say. Nothing ahead takes Him by surprise.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="slide verse" data-v="4-7" data-hl="found the colt tied by the door without in a place where two ways met|they let them go|cast their garments on him; and he sat upon him"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="7" data-hl="he sat upon him"></blockquote>
+    <h2 class="rise" style="--d:1">A King on a colt</h2>
+    <div class="columns">
+      <div class="col law step">
+        <p class="who">How conquerors came</p>
+        <h3>On a warhorse</h3>
+        <p>A general came home at the head of his army, with prisoners behind him. Rome knew how to throw a parade.</p>
+      </div>
+      <div class="col grace step">
+        <p class="who">How this King came</p>
+        <h3>On a young donkey</h3>
+        <p>Lowly, in peace, on a colt no one had ever ridden. Nothing about it threatened Rome. Everything about it fulfilled Scripture.</p>
+      </div>
+    </div>
+    <blockquote class="quote step"><p>“Rejoice greatly, O daughter of Zion; shout, O daughter of Jerusalem: behold, thy King cometh unto thee: he is just, and having salvation; lowly, and riding upon an ass, and upon a colt the foal of an ass.”</p><cite>Zechariah 9:9</cite></blockquote>
+    <p class="note step">Mark doesn't quote it, but Matthew (21:5) and John (12:15) both point to this promise, made about 500 years before. An animal <em>“whereon never man sat”</em> was fit for a holy use. Jesus had walked everywhere for three years. The one time He rides, He's telling Jerusalem plainly who He is.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="8-10" data-hl="many spread their garments in the way|Hosanna; Blessed is he that cometh in the name of the Lord|Blessed be the kingdom of our father David"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="9" data-hl="Hosanna"></blockquote>
+    <h2 class="rise" style="--d:1">What does “Hosanna” mean?</h2>
+    <div class="morph">
+      <span class="big rise" style="--d:3">הוֹשִׁיעָה נָּא</span>
+      <span class="say step">said <em class="gk">hoshia na</em></span>
+      <span class="means step">save now, we pray</span>
+    </div>
+    <blockquote class="quote step"><p>“Save now, I beseech thee, O LORD: O LORD, I beseech thee, send now prosperity. Blessed be he that cometh in the name of the LORD: we have blessed you out of the house of the LORD.”</p><cite>Psalm 118:25–26</cite></blockquote>
+    <p class="note step">Pilgrims sang this psalm on the way up to the feasts. Garments in the road were a welcome for a king (2 Kings 9:13). They hoped David's Son had come to throw out Rome.</p>
+    <p class="note step">He came to save them from something worse: their sins. Within days a crowd here would shout <em>“Crucify him”</em> (15:13). He knew it, and rode in anyway.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="11" data-hl="when he had looked round about upon all things|he went out unto Bethany with the twelve"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="11" data-hl="looked round about upon all things"></blockquote>
+    <h2 class="rise" style="--d:1">The last week</h2>
+    <ol class="timeline" aria-label="The last week in Mark. Day one, 11:1 to 11, He rides in and looks round. Day two, 11:12 to 19, the fig tree and the temple cleared. Day three, 11:20 to 13:37, questions and teaching in the temple. Then the Passover in chapter 14, the cross in chapter 15, and the empty tomb in chapter 16.">
+      <li class="lit" style="--k:0"><b>Day one</b><span>rides in, looks round</span><small>11:1–11</small></li>
+      <li class="lit" style="--k:1"><b>Day two</b><span>fig tree, temple cleared</span><small>11:12–19</small></li>
+      <li class="lit" style="--k:2"><b>Day three</b><span>questions in the temple</span><small>11:20–13:37</small></li>
+      <li style="--k:3"><b>Passover</b><span>the supper, the arrest</span><small>14</small></li>
+      <li style="--k:4"><b>The cross</b><span>crucified and buried</span><small>15</small></li>
+      <li style="--k:5"><b>Third day</b><span>He is risen</span><small>16</small></li>
+    </ol>
+    <p class="note step">Mark slows way down here. More than a third of his book covers about one week, the Passover of about AD 30. Christians have long called this first day Palm Sunday (the palms come from John 12:13).</p>
+    <p class="note step">The crowd went home. Jesus stood in the temple and <em>“looked round about upon all things”</em>: the tables, the trading, the noise. He saw all of it, and said nothing yet. Luke tells us that coming over the hill, <em>“he beheld the city, and wept over it”</em> (Luke 19:41). Then He went back to Bethany for the night.</p>
+  </div>
+</section>
+
+<!-- ======================= PART TWO: NOTHING BUT LEAVES ======================= -->
+<section class="slide part">
+  <div class="inner">
+    <p class="part-n rise">Part two</p>
+    <h2 class="rise" style="--d:1">Nothing but leaves</h2>
+    <p class="range rise" style="--d:2">Verses 12–19</p>
+    <div class="rule"></div>
+    <p class="hook rise" style="--d:4">A tree that looks alive and has nothing on it. Then a temple that looks holy and has no room for prayer.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="12-14" data-hl="seeing a fig tree afar off having leaves|he found nothing but leaves; for the time of figs was not yet|No man eat fruit of thee hereafter for ever"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="13" data-hl="he found nothing but leaves"></blockquote>
+    <div class="split">
+      <div class="stage">
+        <svg class="mk11-fig" style="max-height:46vh" viewBox="0 -34 360 414" role="img" aria-label="A fig tree in full leaf. Up close, there is nothing on it but leaves.">
+          <path class="mk11-ground" d="M10 320 Q180 304 350 320 L350 372 L10 372 Z"/>
+          <g class="mk11-roots"><path class="mk11-root" d="M180 322 C 170 340, 140 350, 110 362"/><path class="mk11-root" d="M182 322 C 192 342, 222 352, 254 360"/><path class="mk11-root" d="M181 324 L 178 366"/></g>
+          <g class="mk11-wood">
+            <path d="M180 324 C 176 280, 186 250, 178 214" stroke-width="16"/>
+            <path d="M178 228 C 150 200, 120 180, 92 150" stroke-width="8"/>
+            <path d="M180 220 C 206 190, 236 170, 268 142" stroke-width="8"/>
+            <path d="M178 214 C 176 170, 184 130, 180 92" stroke-width="7"/>
+            <path d="M120 182 C 112 160, 112 140, 118 118" stroke-width="5"/>
+            <path d="M236 172 C 248 150, 252 130, 248 108" stroke-width="5"/>
+          </g>
+          <g class="mk11-leaves">
+            <g class="mk11-leaf" style="--k:0;--fall:200px;--dx:-20px"><path transform="translate(70 140) rotate(-30)" d="M0 0 C 6 -16, 26 -20, 38 -8 C 44 -2, 44 8, 38 14 C 26 24, 6 16, 0 0 Z"/></g>
+            <g class="mk11-leaf" style="--k:1;--fall:190px;--dx:14px;--spin:-140deg"><path transform="translate(100 112) rotate(-60)" d="M0 0 C 6 -16, 26 -20, 38 -8 C 44 -2, 44 8, 38 14 C 26 24, 6 16, 0 0 Z"/></g>
+            <g class="mk11-leaf" style="--k:2;--fall:220px;--dx:30px"><path transform="translate(118 160) rotate(10)" d="M0 0 C 6 -16, 26 -20, 38 -8 C 44 -2, 44 8, 38 14 C 26 24, 6 16, 0 0 Z"/></g>
+            <g class="mk11-leaf" style="--k:3;--fall:230px;--dx:-10px;--spin:200deg"><path transform="translate(140 96) rotate(-80)" d="M0 0 C 6 -16, 26 -20, 38 -8 C 44 -2, 44 8, 38 14 C 26 24, 6 16, 0 0 Z"/></g>
+            <g class="mk11-leaf" style="--k:4;--fall:250px;--dx:24px"><path transform="translate(160 70) rotate(-40)" d="M0 0 C 6 -16, 26 -20, 38 -8 C 44 -2, 44 8, 38 14 C 26 24, 6 16, 0 0 Z"/></g>
+            <g class="mk11-leaf" style="--k:5;--fall:260px;--dx:-26px;--spin:-170deg"><path transform="translate(196 74) rotate(-110)" d="M0 0 C 6 -16, 26 -20, 38 -8 C 44 -2, 44 8, 38 14 C 26 24, 6 16, 0 0 Z"/></g>
+            <g class="mk11-leaf" style="--k:6;--fall:240px;--dx:10px"><path transform="translate(200 108) rotate(-10)" d="M0 0 C 6 -16, 26 -20, 38 -8 C 44 -2, 44 8, 38 14 C 26 24, 6 16, 0 0 Z"/></g>
+            <g class="mk11-leaf" style="--k:7;--fall:236px;--dx:-30px;--spin:130deg"><path transform="translate(226 94) rotate(-70)" d="M0 0 C 6 -16, 26 -20, 38 -8 C 44 -2, 44 8, 38 14 C 26 24, 6 16, 0 0 Z"/></g>
+            <g class="mk11-leaf" style="--k:8;--fall:214px;--dx:16px"><path transform="translate(250 124) rotate(-20)" d="M0 0 C 6 -16, 26 -20, 38 -8 C 44 -2, 44 8, 38 14 C 26 24, 6 16, 0 0 Z"/></g>
+            <g class="mk11-leaf" style="--k:9;--fall:190px;--dx:-14px;--spin:-200deg"><path transform="translate(262 150) rotate(20)" d="M0 0 C 6 -16, 26 -20, 38 -8 C 44 -2, 44 8, 38 14 C 26 24, 6 16, 0 0 Z"/></g>
+            <g class="mk11-leaf" style="--k:10;--fall:206px;--dx:20px"><path transform="translate(222 150) rotate(30)" d="M0 0 C 6 -16, 26 -20, 38 -8 C 44 -2, 44 8, 38 14 C 26 24, 6 16, 0 0 Z"/></g>
+            <g class="mk11-leaf" style="--k:11;--fall:226px;--dx:-6px;--spin:150deg"><path transform="translate(150 134) rotate(-50)" d="M0 0 C 6 -16, 26 -20, 38 -8 C 44 -2, 44 8, 38 14 C 26 24, 6 16, 0 0 Z"/></g>
+            <g class="mk11-leaf" style="--k:12;--fall:200px;--dx:-22px"><path transform="translate(86 176) rotate(40)" d="M0 0 C 6 -16, 26 -20, 38 -8 C 44 -2, 44 8, 38 14 C 26 24, 6 16, 0 0 Z"/></g>
+            <g class="mk11-leaf" style="--k:13;--fall:256px;--dx:28px;--spin:-120deg"><path transform="translate(178 42) rotate(-90)" d="M0 0 C 6 -16, 26 -20, 38 -8 C 44 -2, 44 8, 38 14 C 26 24, 6 16, 0 0 Z"/></g>
+            <g class="mk11-leaf" style="--k:14;--fall:180px;--dx:6px"><path transform="translate(284 120) rotate(-30)" d="M0 0 C 6 -16, 26 -20, 38 -8 C 44 -2, 44 8, 38 14 C 26 24, 6 16, 0 0 Z"/></g>
+          </g>
+          <g class="mk11-look"><circle cx="180" cy="118" r="62"/><text x="180" y="-10" text-anchor="middle" font-size="20" font-weight="700">nothing but leaves</text></g>
+        </svg>
+      </div>
+      <div>
+        <h2 class="rise" style="--d:1">A tree with nothing on it</h2>
+        <p class="note rise" style="--d:2">In spring a fig tree puts out small early figs with its leaves. The real crop, <em>“the time of figs,”</em> came in summer.</p>
+        <p class="note step mk11-seek">This tree had the leaves and nothing else. All show, no fruit.</p>
+        <p class="note step">Jesus wasn't losing His temper. Like the prophets, He was acting out a picture, and they often pictured Israel as a fig tree (Hosea 9:10). Watch where He goes next.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="slide verse" data-v="15-17" data-hl="overthrew the tables of the moneychangers, and the seats of them that sold doves|would not suffer that any man should carry any vessel through the temple|My house shall be called of all nations the house of prayer|ye have made it a den of thieves"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="15" data-hl="overthrew the tables of the moneychangers"></blockquote>
+    <div class="split">
+      <div class="stage">
+        <svg class="mk11-court" viewBox="0 0 560 400" role="img" aria-label="The temple courts from above. The tables and dove cages stand in the big outer court, the Court of the Gentiles. A warning wall keeps Gentiles out of the inner courts. Jesus turns the tables over.">
+          <rect class="mk11-outer" x="10" y="10" width="540" height="380" rx="6"/>
+          <text x="28" y="42" font-size="20" font-weight="700" style="fill:var(--accent-hot)">Court of the Gentiles</text>
+          <text class="mk11-soft" x="28" y="64" font-size="14">the only place a non-Jew could come to pray</text>
+          <rect class="mk11-soreg" x="226" y="92" width="304" height="216" rx="4"/>
+          <text class="mk11-warn" x="232" y="326" font-size="14">warning wall: no Gentile past here</text>
+          <rect class="mk11-inner" x="244" y="110" width="268" height="180"/>
+          <rect class="mk11-house" x="270" y="146" width="96" height="108"/>
+          <text x="318" y="196" text-anchor="middle" font-size="15" font-weight="700">holy</text>
+          <text x="318" y="214" text-anchor="middle" font-size="15" font-weight="700">house</text>
+          <text class="mk11-soft" x="440" y="196" text-anchor="middle" font-size="14">Court of</text>
+          <text class="mk11-soft" x="440" y="214" text-anchor="middle" font-size="14">the Women</text>
+          <line x1="390" y1="112" x2="390" y2="288" stroke-width="2" style="stroke:var(--ink-soft)"/>
+          <g>
+            <g class="mk11-table" style="--r:-28deg;--tx:-6px;--ty:14px"><rect x="40" y="128" width="70" height="14" rx="2"/></g>
+            <g class="mk11-table" style="--r:34deg;--tx:8px;--ty:20px"><rect x="124" y="128" width="70" height="14" rx="2"/></g>
+            <g class="mk11-table" style="--r:22deg;--tx:-4px;--ty:-10px"><rect x="40" y="198" width="70" height="14" rx="2"/></g>
+            <g class="mk11-table" style="--r:-38deg;--tx:10px;--ty:6px"><rect x="124" y="198" width="70" height="14" rx="2"/></g>
+            <circle class="mk11-coin" cx="58" cy="122" r="5" style="--cx:-20px;--cy:40px"/><circle class="mk11-coin" cx="76" cy="122" r="5" style="--cx:6px;--cy:58px"/><circle class="mk11-coin" cx="94" cy="122" r="5" style="--cx:30px;--cy:46px"/>
+            <circle class="mk11-coin" cx="142" cy="122" r="5" style="--cx:-14px;--cy:52px"/><circle class="mk11-coin" cx="160" cy="122" r="5" style="--cx:18px;--cy:40px"/><circle class="mk11-coin" cx="178" cy="122" r="5" style="--cx:34px;--cy:60px"/>
+            <circle class="mk11-coin" cx="58" cy="192" r="5" style="--cx:-24px;--cy:44px"/><circle class="mk11-coin" cx="94" cy="192" r="5" style="--cx:22px;--cy:58px"/>
+            <circle class="mk11-coin" cx="142" cy="192" r="5" style="--cx:-8px;--cy:50px"/><circle class="mk11-coin" cx="178" cy="192" r="5" style="--cx:30px;--cy:42px"/>
+            <text class="mk11-soft" x="40" y="104" font-size="14">money changers' tables</text>
+          </g>
+          <g>
+            <rect class="mk11-cage" x="40" y="272" width="34" height="28" rx="3"/><path class="mk11-cage" d="M48 272 v28 M57 272 v28 M66 272 v28"/>
+            <rect class="mk11-cage" x="84" y="272" width="34" height="28" rx="3"/><path class="mk11-cage" d="M92 272 v28 M101 272 v28 M110 272 v28"/>
+            <rect class="mk11-cage" x="128" y="272" width="34" height="28" rx="3"/><path class="mk11-cage" d="M136 272 v28 M145 272 v28 M154 272 v28"/>
+            <text class="mk11-soft" x="40" y="322" font-size="14">seats of them that sold doves</text>
+          </g>
+          <path d="M20 360 H 540" stroke-width="2" stroke-dasharray="3 7" style="stroke:var(--ink-soft)"/>
+          <text class="mk11-soft" x="280" y="380" text-anchor="middle" font-size="13">a short cut through the court, carrying loads (v. 16)</text>
+          <text class="mk11-gone" x="118" y="248" text-anchor="middle" font-size="18" font-weight="700" style="fill:var(--accent-hot)">overthrown</text>
+        </svg>
+      </div>
+      <div>
+        <h2 class="rise" style="--d:1">A market in the house of prayer</h2>
+        <p class="note rise" style="--d:2">The temple tax had to be paid in one kind of silver coin, so <em>moneychangers</em> swapped coins for a fee. <em>Doves</em> were the poor man's offering (Leviticus 12:8).</p>
+        <p class="note step mk11-flip">It filled the one court where Gentiles could pray; a sign on the inner wall warned them not to pass, on pain of death. Jesus turned it over, as He had three years before (John 2:15).</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="17"></blockquote>
+    <h2 class="rise" style="--d:1">Two prophets, one house</h2>
+    <div class="pair">
+      <div class="scroll step"><p class="ref">Isaiah 56:7</p><p class="kjv">Even them will I bring to my holy mountain, and make them joyful in my house of prayer … for <mark>mine house shall be called an house of prayer for all people</mark>.</p></div>
+      <div class="scroll step"><p class="ref">Jeremiah 7:11</p><p class="kjv">Is this house, which is called by my name, become <mark>a den of robbers</mark> in your eyes? Behold, even I have seen it, saith the LORD.</p></div>
+    </div>
+    <p class="note step">God promised to make outsiders <em>joyful</em> in His house. The market crowded them out.</p>
+    <p class="note step">A <em>den</em> is where robbers hide after robbing out on the road. Church can be a place to hide instead of a place to meet God. He wants a house of prayer, where we come honest.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="18-19" data-hl="sought how they might destroy him: for they feared him|all the people was astonished at his doctrine"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="18" data-hl="sought how they might destroy him"></blockquote>
+    <h2 class="rise" style="--d:1">Same words, two reactions</h2>
+    <div class="columns">
+      <div class="col law step">
+        <p class="who">The scribes and chief priests</p>
+        <h3>Sought how to destroy Him</h3>
+        <p>The temple was their house, their business, and their power. He had just walked in and taken charge of it.</p>
+      </div>
+      <div class="col grace step">
+        <p class="who">The people</p>
+        <h3>Astonished at His doctrine</h3>
+        <p>They'd never heard anyone teach like this. <em>Doctrine</em> just means teaching.</p>
+      </div>
+    </div>
+    <blockquote class="quote step"><p>“And they were astonished at his doctrine: for he taught them as one that had authority, and not as the scribes.”</p><cite>Mark 1:22</cite></blockquote>
+    <p class="note step">The truth that set the people free was the same truth that threatened the leaders. When Jesus puts His finger on something that pays us, or that we're proud of, we can either be astonished or get defensive. They <em>“feared him”</em>, and fear made them plot. At evening He left the city again (v. 19).</p>
+  </div>
+</section>
+
+<!-- ======================= PART THREE: HAVE FAITH IN GOD ======================= -->
+<section class="slide part">
+  <div class="inner">
+    <p class="part-n rise">Part three</p>
+    <h2 class="rise" style="--d:1">Have faith in God</h2>
+    <p class="range rise" style="--d:2">Verses 20–26</p>
+    <div class="rule"></div>
+    <p class="hook rise" style="--d:4">The next morning the tree is dead to its roots. Jesus turns it into a lesson about prayer.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="20-21" data-hl="they saw the fig tree dried up from the roots|the fig tree which thou cursedst is withered away"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="20" data-hl="dried up from the roots"></blockquote>
+    <div class="split">
+      <div class="stage">
+        <svg class="mk11-fig dry" style="max-height:46vh" viewBox="0 -34 360 414" role="img" aria-label="The same fig tree the next morning. The leaves fall, the tree turns grey, and the roots are dried up.">
+          <path class="mk11-ground" d="M10 320 Q180 304 350 320 L350 372 L10 372 Z"/>
+          <g class="mk11-roots"><path class="mk11-root" d="M180 322 C 170 340, 140 350, 110 362"/><path class="mk11-root" d="M182 322 C 192 342, 222 352, 254 360"/><path class="mk11-root" d="M181 324 L 178 366"/></g>
+          <g class="mk11-wood">
+            <path d="M180 324 C 176 280, 186 250, 178 214" stroke-width="16"/>
+            <path d="M178 228 C 150 200, 120 180, 92 150" stroke-width="8"/>
+            <path d="M180 220 C 206 190, 236 170, 268 142" stroke-width="8"/>
+            <path d="M178 214 C 176 170, 184 130, 180 92" stroke-width="7"/>
+            <path d="M120 182 C 112 160, 112 140, 118 118" stroke-width="5"/>
+            <path d="M236 172 C 248 150, 252 130, 248 108" stroke-width="5"/>
+          </g>
+          <g class="mk11-leaves">
+            <g class="mk11-leaf" style="--k:0;--fall:200px;--dx:-20px"><path transform="translate(70 140) rotate(-30)" d="M0 0 C 6 -16, 26 -20, 38 -8 C 44 -2, 44 8, 38 14 C 26 24, 6 16, 0 0 Z"/></g>
+            <g class="mk11-leaf" style="--k:1;--fall:190px;--dx:14px;--spin:-140deg"><path transform="translate(100 112) rotate(-60)" d="M0 0 C 6 -16, 26 -20, 38 -8 C 44 -2, 44 8, 38 14 C 26 24, 6 16, 0 0 Z"/></g>
+            <g class="mk11-leaf" style="--k:2;--fall:180px;--dx:30px"><path transform="translate(118 160) rotate(10)" d="M0 0 C 6 -16, 26 -20, 38 -8 C 44 -2, 44 8, 38 14 C 26 24, 6 16, 0 0 Z"/></g>
+            <g class="mk11-leaf" style="--k:3;--fall:230px;--dx:-10px;--spin:200deg"><path transform="translate(140 96) rotate(-80)" d="M0 0 C 6 -16, 26 -20, 38 -8 C 44 -2, 44 8, 38 14 C 26 24, 6 16, 0 0 Z"/></g>
+            <g class="mk11-leaf" style="--k:4;--fall:250px;--dx:24px"><path transform="translate(160 70) rotate(-40)" d="M0 0 C 6 -16, 26 -20, 38 -8 C 44 -2, 44 8, 38 14 C 26 24, 6 16, 0 0 Z"/></g>
+            <g class="mk11-leaf" style="--k:5;--fall:260px;--dx:-26px;--spin:-170deg"><path transform="translate(196 74) rotate(-110)" d="M0 0 C 6 -16, 26 -20, 38 -8 C 44 -2, 44 8, 38 14 C 26 24, 6 16, 0 0 Z"/></g>
+            <g class="mk11-leaf" style="--k:6;--fall:226px;--dx:10px"><path transform="translate(200 108) rotate(-10)" d="M0 0 C 6 -16, 26 -20, 38 -8 C 44 -2, 44 8, 38 14 C 26 24, 6 16, 0 0 Z"/></g>
+            <g class="mk11-leaf" style="--k:7;--fall:236px;--dx:-30px;--spin:130deg"><path transform="translate(226 94) rotate(-70)" d="M0 0 C 6 -16, 26 -20, 38 -8 C 44 -2, 44 8, 38 14 C 26 24, 6 16, 0 0 Z"/></g>
+            <g class="mk11-leaf" style="--k:8;--fall:200px;--dx:16px"><path transform="translate(250 124) rotate(-20)" d="M0 0 C 6 -16, 26 -20, 38 -8 C 44 -2, 44 8, 38 14 C 26 24, 6 16, 0 0 Z"/></g>
+            <g class="mk11-leaf" style="--k:9;--fall:176px;--dx:-14px;--spin:-200deg"><path transform="translate(262 150) rotate(20)" d="M0 0 C 6 -16, 26 -20, 38 -8 C 44 -2, 44 8, 38 14 C 26 24, 6 16, 0 0 Z"/></g>
+            <g class="mk11-leaf" style="--k:10;--fall:176px;--dx:20px"><path transform="translate(222 150) rotate(30)" d="M0 0 C 6 -16, 26 -20, 38 -8 C 44 -2, 44 8, 38 14 C 26 24, 6 16, 0 0 Z"/></g>
+            <g class="mk11-leaf" style="--k:11;--fall:196px;--dx:-6px;--spin:150deg"><path transform="translate(150 134) rotate(-50)" d="M0 0 C 6 -16, 26 -20, 38 -8 C 44 -2, 44 8, 38 14 C 26 24, 6 16, 0 0 Z"/></g>
+            <g class="mk11-leaf" style="--k:12;--fall:150px;--dx:-22px"><path transform="translate(86 176) rotate(40)" d="M0 0 C 6 -16, 26 -20, 38 -8 C 44 -2, 44 8, 38 14 C 26 24, 6 16, 0 0 Z"/></g>
+            <g class="mk11-leaf" style="--k:13;--fall:270px;--dx:28px;--spin:-120deg"><path transform="translate(178 42) rotate(-90)" d="M0 0 C 6 -16, 26 -20, 38 -8 C 44 -2, 44 8, 38 14 C 26 24, 6 16, 0 0 Z"/></g>
+            <g class="mk11-leaf" style="--k:14;--fall:190px;--dx:6px"><path transform="translate(284 120) rotate(-30)" d="M0 0 C 6 -16, 26 -20, 38 -8 C 44 -2, 44 8, 38 14 C 26 24, 6 16, 0 0 Z"/></g>
+          </g>
+          <text class="mk11-dead" x="180" y="-10" text-anchor="middle" font-size="20">dried up from the roots</text>
+        </svg>
+      </div>
+      <div>
+        <h2 class="rise" style="--d:1">Dead from the roots up</h2>
+        <p class="note rise" style="--d:2">One day, and the tree was dead <em>“from the roots.”</em> Mark wraps the temple inside the fig tree story, so each explains the other.</p>
+        <ol class="timeline" aria-label="Morning: a fig tree with leaves and no fruit. Midday: a temple full of business and no prayer. Next morning: the tree is dried up from the roots.">
+          <li class="step lit" style="--k:0"><b>Morning</b><span>a tree: leaves, no fruit</span></li>
+          <li class="step lit" style="--k:1"><b>Midday</b><span>a temple: business, no prayer</span></li>
+          <li class="step lit" style="--k:2"><b>Next day</b><span>dried up from the roots</span></li>
+        </ol>
+        <p class="note step">Busy religion with no fruit doesn't last. About forty years later, in AD 70, Rome burned that temple down (13:2).</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="13" data-hl="nothing but leaves"></blockquote>
+    <h2 class="rise" style="--d:1">Leaves are easy</h2>
+    <p class="saying rise" style="--d:2">Leaves are easy. <em>Fruit</em> takes roots.</p>
+    <p class="note step">Leaves are the parts people can see: the church words, the right look, showing up. None of that is bad. But Jesus came looking for fruit: a changed heart, honesty, love, a life that feeds somebody else.</p>
+    <blockquote class="quote step"><p>“I am the vine, ye are the branches: He that abideth in me, and I in him, the same bringeth forth much fruit: for without me ye can do nothing.”</p><cite>John 15:5</cite></blockquote>
+    <p class="note step">A man can't squeeze fruit out of himself by trying harder. Fruit grows from roots that drink. Stay close to Him, in His Word, in prayer, with His people, and the fruit comes in its season.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="22-24" data-hl="Have faith in God|Be thou removed, and be thou cast into the sea|What things soever ye desire, when ye pray, believe that ye receive them"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="22"></blockquote>
+    <h2 class="rise" style="--d:1">Faith in God, not faith in faith</h2>
+    <p class="note rise" style="--d:2">They were on the Mount of Olives road. On a clear day you can see the Dead Sea from up there. <em>“This mountain … cast into the sea”</em> was a picture of the impossible.</p>
+    <ul class="nots">
+      <li class="step"><span class="k">a magic formula</span><span class="why">the words don't move God; God moves the mountain</span></li>
+      <li class="step"><span class="k">a blank check</span><span class="why">this is not a promise to fill a wish list</span></li>
+      <li class="step"><span class="k">faith in my own faith</span><span class="why">I'm not the power; He is</span></li>
+      <li class="step yes"><span class="k">“Have faith in God”</span><span class="why">trust Him to do what only He can do</span></li>
+    </ul>
+    <blockquote class="quote step"><p>“And this is the confidence that we have in him, that, if we ask any thing according to his will, he heareth us:”</p><cite>1 John 5:14</cite></blockquote>
+    <p class="note step">Everybody has a mountain: a habit, a debt, a wreck of a marriage, a court date. You can't move it. Ask the God who can, and trust Him with the answer.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="25-26" data-hl="when ye stand praying, forgive, if ye have ought against any|that your Father also which is in heaven may forgive you your trespasses"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="25" data-hl="forgive, if ye have ought against any"></blockquote>
+    <h2 class="rise" style="--d:1">Tear up the bill</h2>
+    <div class="split">
+    <div class="ledger rise" style="--d:2">
+      <h3>What I hold against them</h3>
+      <ul>
+        <li style="--k:0"><span>What my father did</span><span>owed</span></li>
+        <li style="--k:1"><span>The friend who stole from me</span><span>owed</span></li>
+        <li style="--k:2"><span>The ones who got me started</span><span>owed</span></li>
+        <li style="--k:3"><span>The years it cost me</span><span>owed</span></li>
+      </ul>
+      <div class="total"><span>Balance due</span><b>they can never pay it back</b></div>
+      <div class="ledger-stamp">FORGIVEN<small>handed to God</small></div>
+    </div>
+    <div>
+    <blockquote class="quote step ledger-paid"><p>“And be ye kind one to another, tenderhearted, forgiving one another, even as God for Christ’s sake hath forgiven you.”</p><cite>Ephesians 4:32</cite></blockquote>
+    <p class="note step"><em>Ought</em> means anything. Forgiving isn't how a man gets saved; that's by grace, through faith. It's how a saved man stays close to his Father. A grudge stands between us and God.</p>
+    </div>
+    </div>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="26"></blockquote>
+    <h2 class="rise" style="--d:1">What forgiving is, and isn't</h2>
+    <ul class="nots">
+      <li class="step"><span class="k">saying it was all right</span><span class="why">it wasn't, and God knows it wasn't</span></li>
+      <li class="step"><span class="k">trusting them again tomorrow</span><span class="why">trust is rebuilt slowly; forgiveness is given</span></li>
+      <li class="step"><span class="k">pretending you've forgotten</span><span class="why">you may remember it for years</span></li>
+      <li class="step yes"><span class="k">handing the debt to God</span><span class="why">you stop collecting, and let Him be the judge</span></li>
+    </ul>
+    <p class="note step">A man in recovery can't afford to carry resentment. It's one of the surest roads back to the bottle. And a man who has been forgiven by God of everything has the power, by His Spirit in him, to let go of what others owe.</p>
+  </div>
+</section>
+
+<!-- ======================= PART FOUR: BY WHAT AUTHORITY ======================= -->
+<section class="slide part">
+  <div class="inner">
+    <p class="part-n rise">Part four</p>
+    <h2 class="rise" style="--d:1">By what authority?</h2>
+    <p class="range rise" style="--d:2">Verses 27–33</p>
+    <div class="rule"></div>
+    <p class="hook rise" style="--d:4">The leaders come at Him with a question. He answers with one of His own.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="27-30" data-hl="the chief priests, and the scribes, and the elders|By what authority doest thou these things?|The baptism of John, was it from heaven, or of men?"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="28" data-hl="By what authority doest thou these things?"></blockquote>
+    <h2 class="rise" style="--d:1">Who's asking</h2>
+    <ol class="signs">
+      <li class="step"><b>The chief priests</b>the high priest's family and the leading priests. They ran the temple, and its money.</li>
+      <li class="step"><b>The scribes</b>the experts in the Law of Moses, the Bible teachers of the day</li>
+      <li class="step"><b>The elders</b>the senior men of the leading families of Israel</li>
+      <li class="now step"><b>Together</b>the council (14:55), about seventy men: the highest Jewish court Rome allowed</li>
+    </ol>
+    <p class="note step"><em>“These things”</em> means clearing out their temple. Who said you could? They had the titles. He had the authority of God.</p>
+    <p class="note step">Answering a question with a question was normal for a teacher in Israel, and this one wasn't a dodge. John had pointed to Jesus: <em>“There cometh one mightier than I after me”</em> (1:7). If John was from God, then so was the One John pointed to. The answer to their question was in His.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="31-33" data-hl="Why then did ye not believe him?|for all men counted John, that he was a prophet indeed|We cannot tell"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="33" data-hl="We cannot tell"></blockquote>
+    <h2 class="rise" style="--d:1">What's safe, not what's true</h2>
+    <div class="ifthen step">
+      <div class="if"><small>if we say</small>“From heaven”</div>
+      <span class="arrow">→</span>
+      <div class="then"><small>then he'll say</small>“Why then did ye not believe him?”</div>
+    </div>
+    <div class="ifthen step">
+      <div class="if"><small>if we say</small>“Of men”</div>
+      <span class="arrow">→</span>
+      <div class="then"><small>then</small>the people turn on us: they all held John was a prophet</div>
+    </div>
+    <p class="note step">Not one of them asks, “Was he from God?” They only ask what each answer will cost. So: <em>“We cannot tell.”</em> They could. They wouldn't.</p>
+    <p class="note step">Jesus doesn't owe more light to a man who won't walk in the light he has. But no one who honestly seeks Him is turned away: God is <em>“a rewarder of them that diligently seek him”</em> (Hebrews 11:6).</p>
+  </div>
+</section>
+
+<!-- ======================= CLOSING ======================= -->
+<section class="slide remember">
+  <div class="inner">
+    <h2 class="rise">Points to remember</h2>
+    <ol class="seeds">
+      <li class="step"><span class="topic">The King</span><span class="seed-q">“Blessed is he that cometh in the name of the Lord” <cite>11:9</cite></span><span class="take">He came lowly, on a colt, just as Zechariah said: a King who saves, riding toward His cross on purpose.</span></li>
+      <li class="step"><span class="topic">Fruit</span><span class="seed-q">“He found nothing but leaves” <cite>11:13</cite></span><span class="take">Leaves are easy. He's looking for fruit, and fruit grows from staying close to Him.</span></li>
+      <li class="step"><span class="topic">Prayer</span><span class="seed-q">“My house shall be called of all nations the house of prayer” <cite>11:17</cite></span><span class="take">God's house is a place to meet Him honestly, open to everyone, not a den to hide in.</span></li>
+      <li class="step"><span class="topic">Faith</span><span class="seed-q">“Have faith in God” <cite>11:22</cite></span><span class="take">Not faith in faith. Trust in the God who moves mountains we can't.</span></li>
+      <li class="step"><span class="topic">Forgive</span><span class="seed-q">“When ye stand praying, forgive” <cite>11:25</cite></span><span class="take">Forgiven men forgive. Hand the debt to God and stop collecting.</span></li>
+      <li class="step"><span class="topic">Authority</span><span class="seed-q">“We cannot tell” <cite>11:33</cite></span><span class="take">They asked what was safe, not what was true. Honest seekers find Him.</span></li>
+    </ol>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 1 of 6</p>
+      <span class="topic">The King</span>
+      <h2>How did Jesus ride into Jerusalem, and what did the people cry?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="7"></blockquote>
+      <blockquote class="quote step" data-q="8"></blockquote>
+      <blockquote class="quote step" data-q="9"></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>On a young colt no one had ever ridden, over garments and branches spread in the road. The people cried “Hosanna” (save now), “Blessed is he that cometh in the name of the Lord.” He came lowly, as Zechariah said the King would.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 2 of 6</p>
+      <span class="topic">Fruit</span>
+      <h2>What did Jesus find on the fig tree?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="13"></blockquote>
+      <blockquote class="quote step" data-q="20"></blockquote>
+      <blockquote class="quote step" data-q="21"></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>Nothing but leaves. It looked fruitful from a distance, like the busy temple with no room for prayer, and the next morning it was dried up from the roots. He looks for real fruit, and fruit grows when we abide in Him.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 3 of 6</p>
+      <span class="topic">Prayer</span>
+      <h2>What did Jesus say God's house should be called?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="16"></blockquote>
+      <blockquote class="quote step" data-q="17"></blockquote>
+      <blockquote class="quote step"><p>“Is this house, which is called by my name, become a den of robbers in your eyes? Behold, even I have seen it, saith the LORD.”</p><cite>Jeremiah 7:11</cite></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>“The house of prayer” for all nations. They had made it a den of thieves, a market in the one court where outsiders could pray, and a hideout for people who wanted religion without change. Jesus cleared it out.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 4 of 6</p>
+      <span class="topic">Faith</span>
+      <h2>What did Jesus tell His men when they saw the fig tree withered?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="22"></blockquote>
+      <blockquote class="quote step" data-q="24"></blockquote>
+      <blockquote class="quote step"><p>“And this is the confidence that we have in him, that, if we ask any thing according to his will, he heareth us:”</p><cite>1 John 5:14</cite></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>“Have faith in God.” Pray believing, because God can move what no man can move. The power isn't in our words or in our faith. It's in God, and we ask according to His will.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 5 of 6</p>
+      <span class="topic">Forgive</span>
+      <h2>What must we do when we stand praying?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="25"></blockquote>
+      <blockquote class="quote step" data-q="26"></blockquote>
+      <blockquote class="quote step"><p>“And be ye kind one to another, tenderhearted, forgiving one another, even as God for Christ’s sake hath forgiven you.”</p><cite>Ephesians 4:32</cite></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>Forgive anyone we hold anything against. We've been forgiven far more than anyone owes us, and a grudge gets between us and the Father. Forgiving doesn't excuse the wrong. It hands the debt to God.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 6 of 6</p>
+      <span class="topic">Authority</span>
+      <h2>Why wouldn't the leaders say where John's baptism came from?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="30"></blockquote>
+      <blockquote class="quote step" data-q="31"></blockquote>
+      <blockquote class="quote step" data-q="33"></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>Either answer would cost them. “From heaven” meant admitting they hadn't believed John, who pointed to Jesus. “Of men” would turn the people against them. They wanted what was safe, not what was true.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide prayer">
+  <div class="inner">
+    <div class="emblem rise"></div>
+    <h2 class="rise" style="--d:1">Prayer requests</h2>
+    <p class="ask-line rise" style="--d:2">What can we pray about for you today?</p>
+    <blockquote class="quote rise" style="--d:4"><p>“Be careful for nothing; but in every thing by prayer and supplication with thanksgiving let your requests be made known unto God.”</p><cite>Philippians 4:6</cite></blockquote>
+  </div>
+</section>
+
+</main>
+
+<script>
+// King James Version, Mark chapter 11
+const V = {
+  1: "And when they came nigh to Jerusalem, unto Bethphage and Bethany, at the mount of Olives, he sendeth forth two of his disciples,",
+  2: "And saith unto them, Go your way into the village over against you: and as soon as ye be entered into it, ye shall find a colt tied, whereon never man sat; loose him, and bring him.",
+  3: "And if any man say unto you, Why do ye this? say ye that the Lord hath need of him; and straightway he will send him hither.",
+  4: "And they went their way, and found the colt tied by the door without in a place where two ways met; and they loose him.",
+  5: "And certain of them that stood there said unto them, What do ye, loosing the colt?",
+  6: "And they said unto them even as Jesus had commanded: and they let them go.",
+  7: "And they brought the colt to Jesus, and cast their garments on him; and he sat upon him.",
+  8: "And many spread their garments in the way: and others cut down branches off the trees, and strawed them in the way.",
+  9: "And they that went before, and they that followed, cried, saying, Hosanna; Blessed is he that cometh in the name of the Lord:",
+  10: "Blessed be the kingdom of our father David, that cometh in the name of the Lord: Hosanna in the highest.",
+  11: "And Jesus entered into Jerusalem, and into the temple: and when he had looked round about upon all things, and now the eventide was come, he went out unto Bethany with the twelve.",
+  12: "And on the morrow, when they were come from Bethany, he was hungry:",
+  13: "And seeing a fig tree afar off having leaves, he came, if haply he might find any thing thereon: and when he came to it, he found nothing but leaves; for the time of figs was not yet.",
+  14: "And Jesus answered and said unto it, No man eat fruit of thee hereafter for ever. And his disciples heard it.",
+  15: "And they come to Jerusalem: and Jesus went into the temple, and began to cast out them that sold and bought in the temple, and overthrew the tables of the moneychangers, and the seats of them that sold doves;",
+  16: "And would not suffer that any man should carry any vessel through the temple.",
+  17: "And he taught, saying unto them, Is it not written, My house shall be called of all nations the house of prayer? but ye have made it a den of thieves.",
+  18: "And the scribes and chief priests heard it, and sought how they might destroy him: for they feared him, because all the people was astonished at his doctrine.",
+  19: "And when even was come, he went out of the city.",
+  20: "And in the morning, as they passed by, they saw the fig tree dried up from the roots.",
+  21: "And Peter calling to remembrance saith unto him, Master, behold, the fig tree which thou cursedst is withered away.",
+  22: "And Jesus answering saith unto them, Have faith in God.",
+  23: "For verily I say unto you, That whosoever shall say unto this mountain, Be thou removed, and be thou cast into the sea; and shall not doubt in his heart, but shall believe that those things which he saith shall come to pass; he shall have whatsoever he saith.",
+  24: "Therefore I say unto you, What things soever ye desire, when ye pray, believe that ye receive them, and ye shall have them.",
+  25: "And when ye stand praying, forgive, if ye have ought against any: that your Father also which is in heaven may forgive you your trespasses.",
+  26: "But if ye do not forgive, neither will your Father which is in heaven forgive your trespasses.",
+  27: "And they come again to Jerusalem: and as he was walking in the temple, there come to him the chief priests, and the scribes, and the elders,",
+  28: "And say unto him, By what authority doest thou these things? and who gave thee this authority to do these things?",
+  29: "And Jesus answered and said unto them, I will also ask of you one question, and answer me, and I will tell you by what authority I do these things.",
+  30: "The baptism of John, was it from heaven, or of men? answer me.",
+  31: "And they reasoned with themselves, saying, If we shall say, From heaven; he will say, Why then did ye not believe him?",
+  32: "But if we shall say, Of men; they feared the people: for all men counted John, that he was a prophet indeed.",
+  33: "And they answered and said unto Jesus, We cannot tell. And Jesus answering saith unto them, Neither do I tell you by what authority I do these things."
+};
+const BOOK = "Mark 11";
+</script>
+<script src="../assets/deck.js"></script>
+</body>
+</html>

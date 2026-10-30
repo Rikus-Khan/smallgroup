@@ -7302,6 +7302,119 @@ window.STUDIES = [
     }
   },
   {
+    "id": "mark-11",
+    "type": "chapter",
+    "book": "Mark",
+    "ch": 11,
+    "date": "2026-10-29",
+    "title": "Mark 11",
+    "sub": "Have faith in God",
+    "about": "Jesus rides into Jerusalem on a colt, finds a fig tree with nothing but leaves, clears the temple, teaches His men to pray believing and forgiving, and turns the leaders' question back on them.",
+    "tags": [
+      "The King",
+      "Fruit",
+      "Prayer",
+      "Faith",
+      "Forgiveness",
+      "Authority"
+    ],
+    "url": "studies/mark-11.html",
+    "overview": {
+      "where": "Bethphage and Bethany on the Mount of Olives, the road into Jerusalem, and the temple courts",
+      "when": "About AD 30, the first three days of Jesus' last week before the Passover, while Pilate governed Judaea for Rome",
+      "people": [
+        "jesus",
+        "disciples",
+        "the-twelve",
+        "simon-peter",
+        "money-changers",
+        "chief-priests",
+        "scribes",
+        "elders",
+        "john-the-baptist",
+        "david"
+      ],
+      "places": [
+        "bethphage",
+        "bethany",
+        "mount-of-olives",
+        "jerusalem",
+        "temple"
+      ],
+      "story": [
+        "Near Bethphage and Bethany, Jesus sends two disciples for a colt no man has ridden. Everything happens just as He said (1–6).",
+        "He rides into Jerusalem over garments and branches while the crowd cries, “Hosanna; Blessed is he that cometh in the name of the Lord.” He looks round the temple and goes back to Bethany (7–11).",
+        "Next morning He finds a fig tree with nothing but leaves and says no man will eat fruit of it again (12–14).",
+        "In the temple He overturns the tables of the moneychangers: “My house shall be called of all nations the house of prayer? but ye have made it a den of thieves.” The leaders seek to destroy Him (15–19).",
+        "The fig tree is dried up from the roots. Jesus says, “Have faith in God,” teaches His men to pray believing, and to forgive when they stand praying (20–26).",
+        "The chief priests, scribes and elders demand His authority. He asks them about John's baptism, and when they won't answer, neither does He (27–33)."
+      ],
+      "key": {
+        "ref": "Mark 11:22",
+        "text": "And Jesus answering saith unto them, Have faith in God."
+      },
+      "big": "Jesus came to Jerusalem as the lowly King who saves, riding toward His cross on purpose. He looks past the leaves for real fruit, clears out whatever blocks the way to God, and calls His people to pray with faith in God, to forgive as they've been forgiven, and to seek what is true, not what is safe."
+    }
+  },
+  {
+    "id": "mark-12",
+    "type": "chapter",
+    "book": "Mark",
+    "ch": 12,
+    "date": "2026-10-29",
+    "title": "Mark 12",
+    "sub": "Render to God the things that are God's",
+    "about": "In the temple, Jesus tells of a vineyard and a murdered son, answers three hard questions, asks one of His own, warns about showy religion, and praises a poor widow's two mites.",
+    "tags": [
+      "Rejection",
+      "Caesar and God",
+      "Resurrection",
+      "Love",
+      "Christ",
+      "Giving"
+    ],
+    "url": "studies/mark-12.html",
+    "overview": {
+      "where": "The temple courts in Jerusalem, and at the end the treasury in the Court of the Women",
+      "when": "About AD 30, the third day of Jesus' last week, a few days before the Passover and the cross",
+      "people": [
+        "jesus",
+        "the-heir",
+        "pharisees",
+        "herodians",
+        "caesar",
+        "sadducees",
+        "moses",
+        "abraham",
+        "isaac",
+        "jacob",
+        "scribes",
+        "david",
+        "poor-widow",
+        "disciples"
+      ],
+      "places": [
+        "temple",
+        "the-bush",
+        "synagogue",
+        "treasury"
+      ],
+      "story": [
+        "Jesus tells of a vineyard let out to husbandmen who beat and kill the owner's servants, and at last kill his wellbeloved son. “The stone which the builders rejected is become the head of the corner.” The leaders know it's about them (1–12).",
+        "Pharisees and Herodians ask whether to pay tribute to Caesar. He asks for a penny: “Render to Caesar the things that are Caesar’s, and to God the things that are God’s” (13–17).",
+        "Sadducees, who deny the resurrection, bring a riddle about seven brothers and one wife. Jesus answers from Moses at the bush: God “is not the God of the dead, but the God of the living” (18–27).",
+        "A scribe asks which commandment is first. Love the Lord thy God with all thy heart, soul, mind and strength, and thy neighbour as thyself. “Thou art not far from the kingdom of God” (28–34).",
+        "Jesus asks how the Christ can be David's son when David calls Him Lord, and warns against scribes who love long robes, chief seats, and long prayers for a pretence (35–40).",
+        "At the treasury a poor widow throws in two mites. Jesus says she has given more than all the rich, for she gave all her living (41–44)."
+      ],
+      "key": {
+        "ref": "Mark 12:17",
+        "text": "And Jesus answering said unto them, Render to Caesar the things that are Caesar’s, and to God the things that are God’s. And they marvelled at him."
+      },
+      "big": "God sent prophet after prophet, and last of all His beloved Son, whom men rejected and God made the cornerstone. We bear God's image, so we owe Him ourselves: a love for Him with all we are, and for our neighbour as ourselves. He is the God of the living, the Christ is David's Lord, and He sees the gift nobody else notices."
+    }
+  },
+  {
     "id": "luke-01",
     "type": "chapter",
     "book": "Luke",

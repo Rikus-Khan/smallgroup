@@ -1,0 +1,772 @@
+<!doctype html>
+<html lang="en" data-theme="scribe">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Mark 12</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="../assets/fonts.css">
+<link rel="stylesheet" href="../assets/deck.css">
+<link rel="stylesheet" href="../assets/themes.css">
+<style>
+/* mk12-vine: a vineyard from above (Isaiah 5 / Mark 12:1): the hedge, rows of vines, the winefat, the tower, the tenants. */
+.mk12-vine .mk12-ground { fill: var(--surface); stroke: var(--line-strong); stroke-width: 2; }
+.mk12-vine .mk12-hedge { fill: none; stroke: color-mix(in srgb, var(--cool) 60%, var(--leather-light)); stroke-width: 12; stroke-linecap: round; stroke-dasharray: 1 13; }
+.mk12-vine .mk12-row { fill: none; stroke: color-mix(in srgb, var(--cool) 70%, var(--warm)); stroke-width: 3; stroke-linecap: round; }
+.mk12-vine .mk12-grape { fill: var(--wine); }
+.mk12-vine .mk12-press { fill: var(--surface-2); stroke: var(--ink-soft); stroke-width: 2; }
+.mk12-vine .mk12-pit { fill: color-mix(in srgb, var(--wine) 45%, var(--surface-2)); stroke: var(--wine); stroke-width: 2; }
+.mk12-vine .mk12-tower { fill: var(--surface-2); stroke: var(--ink); stroke-width: 2; }
+.mk12-vine .mk12-man { fill: var(--ink-soft); }
+.mk12-vine .mk12-lab { fill: var(--accent-hot); font-weight: 700; font-size: 16px; }
+.mk12-vine .mk12-soft { fill: var(--ink-soft); font-size: 14px; }
+
+/* mk12-corner: the stone the builders refused (Psalm 118:22). It lies tossed aside; a .mk12-set step lifts it into the corner of the wall. */
+.mk12-corner .mk12-block { fill: var(--surface-2); stroke: var(--line-strong); stroke-width: 2; }
+.mk12-corner .mk12-slot { fill: none; stroke: var(--accent); stroke-width: 2.5; stroke-dasharray: 6 5; }
+.mk12-corner .mk12-earth { fill: none; stroke: var(--line-strong); stroke-width: 3; }
+.mk12-corner .mk12-soft { fill: var(--ink-soft); }
+.mk12-stone { transform-box: fill-box; transform-origin: 50% 50%; transform: translate(-176px, 14px) rotate(-16deg); transition: transform 2s cubic-bezier(.4,0,.2,1); }
+.mk12-stone rect { fill: var(--ink-soft); stroke: var(--ink); stroke-width: 2; transition: fill 1.4s ease 1.2s; }
+.slide:has(.mk12-set.on) .mk12-stone { transform: none; }
+.slide:has(.mk12-set.on) .mk12-stone rect { fill: var(--accent); }
+.mk12-refused, .mk12-head { transition: opacity .8s ease; }
+.mk12-refused { fill: var(--danger); font-weight: 700; }
+.mk12-head { opacity: 0; fill: var(--accent-hot); font-weight: 700; transition-delay: 1.8s; }
+.slide:has(.mk12-set.on) .mk12-refused { opacity: 0; }
+.slide:has(.mk12-set.on) .mk12-head { opacity: 1; }
+
+/* mk12-coin: the tribute penny (a denarius of Tiberius) beside a man made in the image of God. A .mk12-god step lights the man. */
+.mk12-coin .mk12-face { fill: color-mix(in srgb, var(--warm) 35%, var(--surface-2)); stroke: var(--warm); stroke-width: 4; }
+.mk12-coin .mk12-rim { fill: none; stroke: var(--warm); stroke-width: 1.5; stroke-dasharray: 2 4; }
+.mk12-coin .mk12-bust { fill: var(--warm); }
+.mk12-coin .mk12-legend { fill: var(--ink); font: 700 15px var(--sans); letter-spacing: .12em; }
+.mk12-coin .mk12-cap { fill: var(--ink); font-size: 17px; font-weight: 700; }
+.mk12-coin .mk12-soft { fill: var(--ink-soft); font-size: 14px; }
+.mk12-coin .mk12-man { opacity: .25; transition: opacity 1.2s ease; }
+.mk12-coin .mk12-body { fill: var(--accent); }
+.mk12-coin .mk12-halo { fill: color-mix(in srgb, var(--accent) 18%, transparent); opacity: 0; transition: opacity 1.4s ease .4s; }
+.slide:has(.mk12-god.on) .mk12-coin .mk12-man { opacity: 1; }
+.slide:has(.mk12-god.on) .mk12-coin .mk12-halo { opacity: 1; }
+
+/* mk12-courts: where the widow gave. The Court of the Women with its offering chests; two small coins drop into one. */
+.mk12-courts .mk12-outer { fill: var(--surface); stroke: var(--line-strong); stroke-width: 3; }
+.mk12-courts .mk12-inner { fill: var(--surface-2); stroke: var(--ink-soft); stroke-width: 2; }
+.mk12-courts .mk12-women { fill: color-mix(in srgb, var(--accent) 14%, var(--surface-2)); stroke: var(--accent); stroke-width: 2.5; }
+.mk12-courts .mk12-house { fill: var(--line-strong); stroke: var(--ink-soft); stroke-width: 2; }
+.mk12-courts .mk12-chest { fill: var(--warm); }
+.mk12-courts .mk12-chest.her { fill: var(--accent); }
+.mk12-courts text { fill: var(--ink); }
+.mk12-courts .mk12-soft { fill: var(--ink-soft); }
+.mk12-courts .mk12-mite { fill: var(--accent-hot); stroke: var(--ink); stroke-width: 1; opacity: 0; }
+.slide.active .mk12-courts .mk12-mite { animation: mk12-drop 2.4s ease-in 1.2s infinite; }
+.slide.active .mk12-courts .mk12-mite.b { animation-delay: 1.6s; }
+@keyframes mk12-drop { 0% { opacity: 0; transform: translateY(-34px); } 15% { opacity: 1; } 55% { opacity: 1; transform: translateY(0); } 70%, 100% { opacity: 0; transform: translateY(4px); } }
+</style>
+</head>
+<body>
+<main class="deck" id="deck">
+
+<!-- ======================= OPENING ======================= -->
+<section class="slide title">
+  <div class="inner">
+    <div class="emblem rise"></div>
+    <h1 class="rise" style="--d:1">Mark 12</h1>
+    <p class="sub rise" style="--d:3">Render to God the things that are God's</p>
+    <p class="tag rise" style="--d:5">In the temple, Jesus tells of a vineyard and a murdered son, answers three hard questions, asks one of His own, warns about showy religion, and praises a poor widow's two mites.</p>
+  </div>
+</section>
+
+<section class="slide watch">
+  <div class="inner">
+    <h2 class="rise">Things to watch for</h2>
+    <p class="lede rise" style="--d:1">Keep these questions in the back of your mind as we read. We'll come back to every one of them at the end.</p>
+    <ol class="seeds">
+      <li class="step"><span class="topic">The Son</span><span class="seed-q">What did the husbandmen do with the owner's son?</span></li>
+      <li class="step"><span class="topic">Caesar</span><span class="seed-q">What belongs to Caesar, and what belongs to God?</span></li>
+      <li class="step"><span class="topic">Life</span><span class="seed-q">How did Jesus show from Moses that the dead rise?</span></li>
+      <li class="step"><span class="topic">Love</span><span class="seed-q">Which commandment did Jesus call the first of all?</span></li>
+      <li class="step"><span class="topic">David's Lord</span><span class="seed-q">Why did David call his own son Lord?</span></li>
+      <li class="step"><span class="topic">Giving</span><span class="seed-q">Why did the poor widow give more than all the rich?</span></li>
+    </ol>
+  </div>
+</section>
+
+<!-- ======================= PART ONE: THE VINEYARD ======================= -->
+<section class="slide part">
+  <div class="inner">
+    <p class="part-n rise">Part one</p>
+    <h2 class="rise" style="--d:1">They will reverence my son</h2>
+    <p class="range rise" style="--d:2">Verses 1–12</p>
+    <div class="rule"></div>
+    <p class="hook rise" style="--d:4">Still in the temple, still the same day, Jesus tells the leaders a story. By the end they know it's about them.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="1-2" data-hl="A certain man planted a vineyard|set an hedge about it, and digged a place for the winefat, and built a tower|let it out to husbandmen, and went into a far country|that he might receive from the husbandmen of the fruit of the vineyard"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="1" data-hl="A certain man planted a vineyard"></blockquote>
+    <div class="split">
+      <div class="stage">
+        <svg class="mk12-vine" viewBox="0 0 520 380" role="img" aria-label="A vineyard from above. A thorny hedge runs all the way round. Inside are rows of vines with grapes, a stone tower for the watchman, and a winepress with a pit below it for the juice. Tenant farmers work it while the owner goes away.">
+          <rect class="mk12-ground" x="10" y="10" width="500" height="360" rx="10"/>
+          <rect class="mk12-hedge" x="34" y="40" width="452" height="300" rx="26"/>
+          <g>
+            <path class="mk12-row" d="M70 90 H 330"/><path class="mk12-row" d="M70 130 H 330"/><path class="mk12-row" d="M70 170 H 330"/><path class="mk12-row" d="M70 210 H 330"/><path class="mk12-row" d="M70 250 H 300"/>
+            <g class="mk12-grape"><circle cx="100" cy="98" r="5"/><circle cx="160" cy="98" r="5"/><circle cx="220" cy="98" r="5"/><circle cx="280" cy="98" r="5"/><circle cx="130" cy="138" r="5"/><circle cx="190" cy="138" r="5"/><circle cx="250" cy="138" r="5"/><circle cx="310" cy="138" r="5"/><circle cx="100" cy="178" r="5"/><circle cx="160" cy="178" r="5"/><circle cx="220" cy="178" r="5"/><circle cx="280" cy="178" r="5"/><circle cx="130" cy="218" r="5"/><circle cx="190" cy="218" r="5"/><circle cx="250" cy="218" r="5"/><circle cx="100" cy="258" r="5"/><circle cx="160" cy="258" r="5"/><circle cx="220" cy="258" r="5"/></g>
+          </g>
+          <g><rect class="mk12-tower" x="384" y="72" width="62" height="80"/><path class="mk12-tower" d="M380 72 h70 v-12 h-12 v8 h-10 v-8 h-12 v8 h-10 v-8 h-12 v8 h-14 Z"/><rect x="408" y="120" width="14" height="32" style="fill:var(--ink-soft)"/></g>
+          <text class="mk12-lab" x="415" y="176" text-anchor="middle">a tower</text>
+          <rect class="mk12-press" x="372" y="226" width="60" height="44" rx="4"/>
+          <ellipse class="mk12-pit" cx="402" cy="300" rx="34" ry="16"/>
+          <path d="M402 270 V 286" stroke-width="3" style="stroke:var(--wine)"/>
+          <text class="mk12-lab" x="362" y="254" text-anchor="end">the press</text>
+          <text class="mk12-lab" x="362" y="306" text-anchor="end">the winefat</text>
+          <text class="mk12-lab" x="60" y="28">an hedge (a thorny fence) all round</text>
+          <g class="mk12-man"><circle cx="128" cy="296" r="8"/><path d="M118 324 Q128 302 138 324 Z"/><circle cx="168" cy="300" r="8"/><path d="M158 328 Q168 306 178 328 Z"/><circle cx="208" cy="296" r="8"/><path d="M198 324 Q208 302 218 324 Z"/></g>
+          <text class="mk12-soft" x="120" y="282">husbandmen (tenants)</text>
+        </svg>
+      </div>
+      <div>
+        <h2 class="rise" style="--d:1">A vineyard everyone knew</h2>
+        <p class="note rise" style="--d:2">The owner built everything a vineyard needs. The <em>winefat</em> is the pit where juice ran from the press. Then he rented it to <em>husbandmen</em>, tenants who owed him a share of the crop.</p>
+        <p class="note step">The owner went away and trusted them with it. All he asked was his share of the fruit.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="2" data-hl="the fruit of the vineyard"></blockquote>
+    <h2 class="rise" style="--d:1">A story they already knew</h2>
+    <div class="pair">
+      <div class="scroll step"><p class="ref">Isaiah 5:2</p><p class="kjv">And he fenced it, and gathered out the stones thereof, and planted it with the choicest vine, and built a tower in the midst of it, and also made a winepress therein: and <mark>he looked that it should bring forth grapes, and it brought forth wild grapes</mark>.</p></div>
+      <div class="scroll step"><p class="ref">Isaiah 5:7</p><p class="kjv">For <mark>the vineyard of the LORD of hosts is the house of Israel</mark>, and the men of Judah his pleasant plant: and he looked for judgment, but behold oppression; for righteousness, but behold a cry.</p></div>
+    </div>
+    <p class="note step">Isaiah sang this song about 700 years before. The leaders knew it by heart: the vineyard is Israel, the owner is God. So they're listening closely for who the husbandmen are.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="3-5" data-hl="beat him, and sent him away empty|wounded him in the head, and sent him away shamefully handled|him they killed, and many others"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="5" data-hl="beating some, and killing some"></blockquote>
+    <h2 class="rise" style="--d:1">Servant after servant</h2>
+    <ol class="stairs down" style="--n:4" aria-label="Four steps down: the first servant beaten and sent away empty; the second stoned, wounded in the head, and shamefully handled; the third killed; and many others, beaten or killed.">
+      <li style="--k:0"><b>beaten</b>sent away empty (v. 3)</li>
+      <li style="--k:1"><b>stoned</b>wounded in the head (v. 4)</li>
+      <li style="--k:2"><b>killed</b>the third servant (v. 5)</li>
+      <li style="--k:3"><b>many others</b>beating some, killing some (v. 5)</li>
+    </ol>
+    <p class="note step">The servants are the prophets God sent to His people, one after another, for centuries. Israel's own history says it plainly:</p>
+    <blockquote class="quote step"><p>“But they mocked the messengers of God, and despised his words, and misused his prophets, until the wrath of the LORD arose against his people, till there was no remedy.”</p><cite>2 Chronicles 36:16</cite></blockquote>
+    <p class="note step">Notice who the patient one is. Any landlord would have sent soldiers after the first beating. This owner keeps sending messengers. That's the patience of God.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="6-8" data-hl="Having yet therefore one son, his wellbeloved|They will reverence my son|This is the heir; come, let us kill him|cast him out of the vineyard"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="6" data-hl="one son, his wellbeloved"></blockquote>
+    <h2 class="rise" style="--d:1">Last of all, the Son</h2>
+    <div class="columns">
+      <div class="col law step">
+        <p class="who">The servants</p>
+        <h3>Sent for the fruit</h3>
+        <p>Messengers who spoke for the owner. Many came, and the tenants treated them worse and worse.</p>
+      </div>
+      <div class="col grace step">
+        <p class="who">The son</p>
+        <h3>The heir, the only one</h3>
+        <p>Not one more messenger. The owner's own <em>“wellbeloved.”</em> The last one he had to send.</p>
+      </div>
+    </div>
+    <p class="note step">At the Jordan the Father had said, <em>“Thou art my beloved Son, in whom I am well pleased”</em> (1:11). Jesus is telling the leaders, to their faces, who He is, and what they are planning to do to Him (11:18).</p>
+    <p class="note step"><em>“Cast him out of the vineyard”</em>: He would die outside the city walls. <em>“Jesus also, that he might sanctify the people with his own blood, suffered without the gate”</em> (Hebrews 13:12). And the Father sent Him knowing all of it, for these very men too.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="9-12" data-hl="will give the vineyard unto others|The stone which the builders rejected is become the head of the corner|This was the Lord’s doing, and it is marvellous in our eyes|they knew that he had spoken the parable against them"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="10" data-hl="The stone which the builders rejected is become the head of the corner"></blockquote>
+    <div class="split">
+      <div class="stage">
+        <svg class="mk12-corner" viewBox="0 0 520 330" role="img" aria-label="A stone wall going up. One stone lies tossed aside on the ground, refused by the builders. Then it is lifted into the corner, the stone the whole wall lines up on.">
+          <path class="mk12-earth" d="M10 300 H 510"/>
+          <g>
+            <rect class="mk12-block" x="270" y="240" width="80" height="60"/><rect class="mk12-block" x="350" y="240" width="80" height="60"/><rect class="mk12-block" x="430" y="240" width="80" height="60"/>
+            <rect class="mk12-block" x="230" y="180" width="80" height="60"/><rect class="mk12-block" x="310" y="180" width="80" height="60"/><rect class="mk12-block" x="390" y="180" width="80" height="60"/><rect class="mk12-block" x="470" y="180" width="40" height="60"/>
+            <rect class="mk12-block" x="190" y="120" width="40" height="60"/><rect class="mk12-block" x="230" y="120" width="80" height="60"/><rect class="mk12-block" x="310" y="120" width="80" height="60"/><rect class="mk12-block" x="390" y="120" width="80" height="60"/>
+            <rect class="mk12-block" x="190" y="180" width="40" height="60"/>
+          </g>
+          <rect class="mk12-slot" x="190" y="240" width="80" height="60"/>
+          <g class="mk12-stone"><rect x="190" y="240" width="80" height="60" rx="3"/></g>
+          <text class="mk12-refused" x="54" y="232" font-size="18">refused</text>
+          <text class="mk12-soft" x="200" y="104" font-size="15">the builders</text>
+          <text class="mk12-head" x="230" y="324" text-anchor="middle" font-size="18">the head of the corner</text>
+        </svg>
+      </div>
+      <div>
+        <h2 class="rise" style="--d:1">The stone they threw away</h2>
+        <p class="note rise" style="--d:2">Jesus quotes Psalm 118, the same psalm the crowd sang the day before (11:9). The <em>builders</em> are the leaders. They looked Him over and tossed Him aside.</p>
+        <p class="note step mk12-set">But God set Him as <em>the head of the corner</em>, the stone the whole building lines up on. They would reject Him at the cross. God would raise Him from the dead.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="12" data-hl="they knew that he had spoken the parable against them"></blockquote>
+    <h2 class="rise" style="--d:1">They knew</h2>
+    <p class="saying rise" style="--d:2">God builds with <em>rejected</em> stones.</p>
+    <p class="note step">They understood the story perfectly. It didn't change them. They only wanted Him gone faster, and the crowd was all that held them back.</p>
+    <p class="note step">Thrown away by people, written off by family, locked up? Jesus knows how that feels. His own nation's leaders said, “Not this one.” God made Him the cornerstone.</p>
+    <blockquote class="quote step"><p>“This is the stone which was set at nought of you builders, which is become the head of the corner. Neither is there salvation in any other: for there is none other name under heaven given among men, whereby we must be saved.”</p><cite>Acts 4:11–12</cite></blockquote>
+  </div>
+</section>
+
+<!-- ======================= PART TWO: TRIBUTE AND RESURRECTION ======================= -->
+<section class="slide part">
+  <div class="inner">
+    <p class="part-n rise">Part two</p>
+    <h2 class="rise" style="--d:1">Two traps</h2>
+    <p class="range rise" style="--d:2">Verses 13–27</p>
+    <div class="rule"></div>
+    <p class="hook rise" style="--d:4">First a question about taxes, then a riddle about heaven. Each one is built to catch Him.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="13-15" data-hl="certain of the Pharisees and of the Herodians, to catch him in his words|Is it lawful to give tribute to Caesar, or not?|Why tempt ye me? bring me a penny"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="14" data-hl="Is it lawful to give tribute to Caesar, or not?"></blockquote>
+    <h2 class="rise" style="--d:1">Heads they win, tails He loses</h2>
+    <div class="ifthen step">
+      <div class="if"><small>if He says</small>“Pay it”</div>
+      <span class="arrow">→</span>
+      <div class="then"><small>then</small>the people hate Him: He sides with Rome</div>
+    </div>
+    <div class="ifthen step">
+      <div class="if"><small>if He says</small>“Don't pay it”</div>
+      <span class="arrow">→</span>
+      <div class="then"><small>then</small>the Herodians report Him to Rome as a rebel</div>
+    </div>
+    <p class="note step"><em>Pharisees</em> hated Roman rule; <em>Herodians</em> backed Herod's family, who ruled for Rome. Enemies, joined against Jesus. <em>Tribute</em> was the head tax every man paid Caesar.</p>
+    <p class="note step">Their flattery was true, and none of it meant. Jesus saw through it: <em>“Why tempt ye me?”</em></p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="16-17" data-hl="Whose is this image and superscription?|Render to Caesar the things that are Caesar’s, and to God the things that are God’s|they marvelled at him"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="17" data-hl="Render to Caesar the things that are Caesar’s, and to God the things that are God’s"></blockquote>
+    <div class="split">
+      <div class="stage">
+        <svg class="mk12-coin" viewBox="0 0 520 330" role="img" aria-label="Left: a Roman penny, a silver denarius, with the head of Tiberius Caesar and his name around the edge. Right: a man, made in the image of God.">
+          <defs><path id="mk12-arc" d="M50 150 A 100 100 0 1 1 250 150"/></defs>
+          <circle class="mk12-face" cx="150" cy="150" r="124"/>
+          <circle class="mk12-rim" cx="150" cy="150" r="112"/>
+          <text class="mk12-legend"><textPath href="#mk12-arc" startOffset="50%" text-anchor="middle">TI CAESAR DIVI AVG F AVGVSTVS</textPath></text>
+          <path class="mk12-bust" d="M120 230 C 118 210, 112 196, 116 182 C 104 176, 104 166, 110 160 C 104 154, 106 146, 110 142 C 100 132, 102 112, 112 100 C 124 84, 150 80, 170 88 C 190 96, 198 116, 194 136 C 200 146, 206 154, 202 160 C 198 164, 194 164, 192 166 C 196 170, 194 176, 188 178 C 190 186, 186 192, 178 192 C 172 194, 168 198, 170 212 C 172 222, 178 228, 182 232 Z"/>
+          <text class="mk12-cap" x="150" y="310" text-anchor="middle">Caesar's image</text>
+          <g class="mk12-man">
+            <circle class="mk12-halo" cx="410" cy="150" r="96"/>
+            <circle class="mk12-body" cx="410" cy="104" r="30"/>
+            <path class="mk12-body" d="M350 240 C 352 176, 380 148, 410 148 C 440 148, 468 176, 470 240 Z"/>
+          </g>
+          <text class="mk12-cap" x="410" y="290" text-anchor="middle">God's image</text>
+          <text class="mk12-soft" x="410" y="310" text-anchor="middle">Genesis 1:27</text>
+        </svg>
+      </div>
+      <div>
+        <h2 class="rise" style="--d:1">Whose image?</h2>
+        <p class="note rise" style="--d:2">A <em>penny</em> was a silver denarius, a day's wage. This one bore Tiberius Caesar's face, and a <em>superscription</em> (writing) calling him “son of the divine Augustus.”</p>
+        <p class="note step">His picture is on it, so give Caesar his coin. Christians pay their taxes (Romans 13:7).</p>
+        <p class="note step mk12-god">But whose image is on <em>you</em>? <em>“God created man in his own image”</em> (Genesis 1:27). Caesar gets the coin. God gets the man, all of him.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="slide verse" data-v="18-20" data-hl="the Sadducees, which say there is no resurrection|that his brother should take his wife, and raise up seed unto his brother|there were seven brethren"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="18" data-hl="which say there is no resurrection"></blockquote>
+    <h2 class="rise" style="--d:1">Who were the Sadducees?</h2>
+    <ol class="signs">
+      <li class="step"><b>Priests and rich men</b>the party of the high priest's family. They ran the temple.</li>
+      <li class="step"><b>Moses first</b>they held above all to the five books of Moses</li>
+      <li class="now step"><b>No resurrection</b>no angels, no spirits, no life after death</li>
+    </ol>
+    <blockquote class="quote step"><p>“For the Sadducees say that there is no resurrection, neither angel, nor spirit: but the Pharisees confess both.”</p><cite>Acts 23:8</cite></blockquote>
+    <p class="note step">They quote Moses' law about a man who died with no son. His brother was to marry the widow, so the dead man's name and land would stay in the family (Deuteronomy 25:5–6). This mattered for a widow: it kept her from being left with nothing.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="21-23" data-hl="the seven had her, and left no seed|whose wife shall she be of them?"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="23" data-hl="whose wife shall she be of them?"></blockquote>
+    <h2 class="rise" style="--d:1">A riddle to make heaven look silly</h2>
+    <ol class="timeline" aria-label="Seven brothers marry the same woman one after another, and each dies without a child. Last of all the woman dies too.">
+      <li data-n="1" style="--k:0"><span>died</span></li>
+      <li data-n="2" style="--k:1"><span>died</span></li>
+      <li data-n="3" style="--k:2"><span>died</span></li>
+      <li data-n="4" style="--k:3"><span>died</span></li>
+      <li data-n="5" style="--k:4"><span>died</span></li>
+      <li data-n="6" style="--k:5"><span>died</span></li>
+      <li data-n="7" style="--k:6"><span>died</span></li>
+      <li class="lit" data-n="" style="--k:7"><b>the woman</b><span>died also</span></li>
+    </ol>
+    <p class="note step">Seven brothers, one wife, no children. It's a made-up story, and an old one: the kind of puzzle men tell to win an argument. The point was to make the resurrection sound ridiculous: if there's life after death, she'll have seven husbands!</p>
+    <p class="note step">They didn't want an answer. They wanted a laugh at the Pharisees' expense, and maybe at His. But Jesus takes the question seriously, because death is serious.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="24-25" data-hl="because ye know not the scriptures, neither the power of God|they neither marry, nor are given in marriage; but are as the angels which are in heaven"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="24" data-hl="ye know not the scriptures, neither the power of God"></blockquote>
+    <h2 class="rise" style="--d:1">Two mistakes</h2>
+    <div class="columns">
+      <div class="col law step">
+        <p class="who">They didn't know</p>
+        <h3>The power of God</h3>
+        <p>They pictured the next life as this one carried on. But the God who made life can make it new. No more death means no more need for heirs: <em>“they neither marry, nor are given in marriage.”</em></p>
+      </div>
+      <div class="col grace step">
+        <p class="who">They didn't know</p>
+        <h3>The scriptures</h3>
+        <p>They trusted Moses most. So Jesus answers them from Moses, at the burning bush (Exodus 3).</p>
+      </div>
+    </div>
+    <p class="note step"><em>“As the angels”</em> doesn't mean we become angels. It means, like them, we'll never die again. Heaven isn't less than the best of this life. It's more.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="26-27" data-hl="I am the God of Abraham, and the God of Isaac, and the God of Jacob|He is not the God of the dead, but the God of the living"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="27" data-hl="He is not the God of the dead, but the God of the living"></blockquote>
+    <h2 class="rise" style="--d:1">“I am,” not “I was”</h2>
+    <ol class="timeline" aria-label="Abraham died, then Isaac, then Jacob. Centuries later, at the bush, God told Moses: I am the God of Abraham, Isaac, and Jacob. Jesus: He is the God of the living.">
+      <li style="--k:0"><b>Abraham</b><span>died</span></li>
+      <li style="--k:1"><b>Isaac</b><span>died</span></li>
+      <li style="--k:2"><b>Jacob</b><span>died</span></li>
+      <li class="lit" style="--k:3"><b>The bush</b><span>centuries later: “I am”</span><small>Exodus 3:6</small></li>
+      <li class="lit" style="--k:4"><b>Jesus</b><span>“the God of the living”</span><small>12:27</small></li>
+    </ol>
+    <blockquote class="quote step"><p>“Moreover he said, I am the God of thy father, the God of Abraham, the God of Isaac, and the God of Jacob. And Moses hid his face; for he was afraid to look upon God.”</p><cite>Exodus 3:6</cite></blockquote>
+    <p class="note step">Abraham had been dead for centuries. God didn't say, “I <em>was</em> his God.” He said, “I <em>am</em>.” Abraham, Isaac and Jacob were still alive to God, waiting for the day He raises the dead.</p>
+    <p class="note step">If you've buried someone who knew the Lord, hold on to this. They are not lost. God is still their God.</p>
+  </div>
+</section>
+
+<!-- ======================= PART THREE: THE FIRST COMMANDMENT ======================= -->
+<section class="slide part">
+  <div class="inner">
+    <p class="part-n rise">Part three</p>
+    <h2 class="rise" style="--d:1">The first of all the commandments</h2>
+    <p class="range rise" style="--d:2">Verses 28–34</p>
+    <div class="rule"></div>
+    <p class="hook rise" style="--d:4">One scribe has been listening, and he likes what he hears. His question is an honest one.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="28-31" data-hl="Which is the first commandment of all?|Hear, O Israel; The Lord our God is one Lord|with all thy heart, and with all thy soul, and with all thy mind, and with all thy strength|Thou shalt love thy neighbour as thyself"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="29" data-hl="Hear, O Israel"></blockquote>
+    <h2 class="rise" style="--d:1">The words every Jew knew</h2>
+    <div class="morph">
+      <span class="big rise" style="--d:3">שְׁמַע</span>
+      <span class="say step">said <em class="gk">shema</em></span>
+      <span class="means step">hear, listen, and do it</span>
+    </div>
+    <p class="note step">Later rabbis counted 613 commands in the Law and argued over which ones mattered most. Jesus answered with the <em>Shema</em>, the words a faithful Jew said every morning and evening (Deuteronomy 6:4–5). It starts with who God is: one Lord. Then it says what He wants: all of you.</p>
+    <ol class="signs">
+      <li class="step"><b>heart</b>what you want</li>
+      <li class="step"><b>soul</b>your life itself</li>
+      <li class="step"><b>mind</b>how you think</li>
+      <li class="step"><b>strength</b>what you do</li>
+    </ol>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="31" data-hl="There is none other commandment greater than these"></blockquote>
+    <h2 class="rise" style="--d:1">Up, then out</h2>
+    <div class="pair">
+      <div class="scroll step"><p class="ref">Deuteronomy 6:4–5</p><p class="kjv">Hear, O Israel: The LORD our God is one LORD: And <mark>thou shalt love the LORD thy God</mark> with all thine heart, and with all thy soul, and with all thy might.</p></div>
+      <div class="scroll step"><p class="ref">Leviticus 19:18</p><p class="kjv">Thou shalt not avenge, nor bear any grudge against the children of thy people, but <mark>thou shalt love thy neighbour as thyself</mark>: I am the LORD.</p></div>
+    </div>
+    <p class="note step">He was asked for one commandment and gave two, because they can't be pulled apart. Love for God that never reaches people is a lie (1 John 4:20). Love for people with no love for God runs dry.</p>
+    <p class="note step">Look at the verse He picked for the second: <em>“not … bear any grudge.”</em> Loving your neighbor starts with letting go.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="32-34" data-hl="there is one God; and there is none other but he|is more than all whole burnt offerings and sacrifices|Thou art not far from the kingdom of God|no man after that durst ask him any question"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="34" data-hl="Thou art not far from the kingdom of God"></blockquote>
+    <h2 class="rise" style="--d:1">Not far</h2>
+    <p class="saying rise" style="--d:2">Not far is still <em>not in</em>.</p>
+    <p class="note step">This scribe <em>“answered discreetly”</em>, wisely. Love beats sacrifices, as Samuel said long before (1 Samuel 15:22).</p>
+    <p class="note step">But knowing the right answer isn't coming in. A man can know every slogan in the room and never surrender. This scribe didn't need a better answer. He needed the One standing in front of him.</p>
+    <blockquote class="quote step"><p>“For God so loved the world, that he gave his only begotten Son, that whosoever believeth in him should not perish, but have everlasting life.”</p><cite>John 3:16</cite></blockquote>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="34" data-hl="no man after that durst ask him any question"></blockquote>
+    <h2 class="rise" style="--d:1">Three questions, three answers</h2>
+    <div class="asks">
+      <div class="ask step"><span class="q">“Is it lawful to give tribute to Caesar?”</span><span class="stamp">Render</span><span class="ctx">The Pharisees and Herodians: a trap. Give Caesar his coin, and give God yourself (v. 17).</span></div>
+      <div class="ask step"><span class="q">“Whose wife shall she be?”</span><span class="stamp">Ye err</span><span class="ctx">The Sadducees: a riddle. God is the God of the living, and He raises the dead (v. 27).</span></div>
+      <div class="ask step"><span class="q">“Which is the first commandment?”</span><span class="stamp">Love</span><span class="ctx">A scribe: an honest question. Love God with everything, and your neighbor as yourself (vv. 30–31).</span></div>
+    </div>
+    <p class="note step"><em>Durst</em> means dared. After that, nobody dared ask Him anything. So He asks them one.</p>
+  </div>
+</section>
+
+<!-- ======================= PART FOUR: DAVID'S LORD, A WIDOW'S MITES ======================= -->
+<section class="slide part">
+  <div class="inner">
+    <p class="part-n rise">Part four</p>
+    <h2 class="rise" style="--d:1">David's Lord, and a widow's two mites</h2>
+    <p class="range rise" style="--d:2">Verses 35–44</p>
+    <div class="rule"></div>
+    <p class="hook rise" style="--d:4">A question nobody can answer, a warning about men who love to be seen, and a poor woman nobody else noticed.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="35-37" data-hl="How say the scribes that Christ is the Son of David?|The Lord said to my Lord, Sit thou on my right hand|David therefore himself calleth him Lord; and whence is he then his son?|the common people heard him gladly"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="37" data-hl="whence is he then his son?"></blockquote>
+    <h2 class="rise" style="--d:1">David's son, and David's Lord</h2>
+    <div class="chains">
+      <div class="chain step"><span class="who-chip">the LORD (God)</span><span class="said">“Sit thou on my right hand”</span><span class="who-chip jesus">my Lord (the Christ)</span></div>
+      <div class="chain step"><span class="who-chip">King David</span><span class="said">calls Him</span><span class="who-chip jesus">“my Lord”</span></div>
+      <div class="chain step"><span class="who-chip">Everyone agreed</span><span class="said">the Christ is</span><span class="who-chip">David's son</span></div>
+    </div>
+    <blockquote class="quote step"><p>“The LORD said unto my Lord, Sit thou at my right hand, until I make thine enemies thy footstool.”</p><cite>Psalm 110:1</cite></blockquote>
+    <p class="note step">No king calls his own descendant “my Lord.” Unless the Son is more than a man. The Christ is David's son by birth, and David's Lord because He is God. Jesus says David wrote it <em>“by the Holy Ghost.”</em> After He rose, Jesus sat down at that right hand (16:19).</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="38-40" data-hl="Beware of the scribes|love to go in long clothing, and love salutations in the marketplaces|the chief seats in the synagogues, and the uppermost rooms at feasts|Which devour widows’ houses, and for a pretence make long prayers"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="38" data-hl="Beware of the scribes"></blockquote>
+    <h2 class="rise" style="--d:1">Dressed for the part</h2>
+    <ol class="signs">
+      <li class="step"><b>long clothing</b>flowing robes that said “scholar”</li>
+      <li class="step"><b>salutations</b>being greeted by title in the market</li>
+      <li class="step"><b>chief seats</b>the front bench of the synagogue, facing the people</li>
+      <li class="step"><b>uppermost rooms</b>the places of honor at a feast</li>
+      <li class="now step"><b>devour widows' houses</b>cheated the women who trusted them, then made <em>long prayers</em> for a <em>pretence</em>: for show</li>
+    </ol>
+    <p class="note step">Jesus isn't saying every religious man is a fraud. One scribe just came close to the kingdom. He's warning about men who love the look of holiness. More light means more responsibility, and so <em>“greater damnation.”</em></p>
+    <blockquote class="quote step"><p>“For the LORD seeth not as man seeth; for man looketh on the outward appearance, but the LORD looketh on the heart.”</p><cite>1 Samuel 16:7</cite></blockquote>
+  </div>
+</section>
+
+<section class="slide verse" data-v="41-42" data-hl="beheld how the people cast money into the treasury|many that were rich cast in much|she threw in two mites, which make a farthing"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="42" data-hl="two mites, which make a farthing"></blockquote>
+    <div class="split">
+      <div class="stage">
+        <svg class="mk12-courts" viewBox="0 0 520 330" role="img" aria-label="The temple courts from above. In the Court of the Women stand offering chests along the walls. Two small coins drop into one of them.">
+          <rect class="mk12-outer" x="10" y="10" width="500" height="310" rx="6"/>
+          <text class="mk12-soft" x="28" y="40" font-size="15">Court of the Gentiles</text>
+          <rect class="mk12-inner" x="40" y="70" width="440" height="200"/>
+          <rect class="mk12-house" x="70" y="116" width="110" height="108"/>
+          <text x="125" y="166" text-anchor="middle" font-size="15" font-weight="700">holy</text>
+          <text x="125" y="184" text-anchor="middle" font-size="15" font-weight="700">house</text>
+          <text class="mk12-soft" x="125" y="252" text-anchor="middle" font-size="13">Court of Israel (men)</text>
+          <rect class="mk12-women" x="270" y="86" width="190" height="168"/>
+          <text x="365" y="164" text-anchor="middle" font-size="16" font-weight="700" style="fill:var(--accent-hot)">Court of</text>
+          <text x="365" y="184" text-anchor="middle" font-size="16" font-weight="700" style="fill:var(--accent-hot)">the Women</text>
+          <g>
+            <path class="mk12-chest" d="M286 100 h14 l-4 18 h-6 Z"/><path class="mk12-chest" d="M314 100 h14 l-4 18 h-6 Z"/><path class="mk12-chest" d="M342 100 h14 l-4 18 h-6 Z"/><path class="mk12-chest" d="M370 100 h14 l-4 18 h-6 Z"/><path class="mk12-chest" d="M398 100 h14 l-4 18 h-6 Z"/><path class="mk12-chest" d="M426 100 h14 l-4 18 h-6 Z"/>
+            <path class="mk12-chest" d="M286 222 h14 l-4 18 h-6 Z"/><path class="mk12-chest" d="M314 222 h14 l-4 18 h-6 Z"/><path class="mk12-chest" d="M342 222 h14 l-4 18 h-6 Z"/><path class="mk12-chest her" d="M370 222 h14 l-4 18 h-6 Z"/><path class="mk12-chest" d="M398 222 h14 l-4 18 h-6 Z"/><path class="mk12-chest" d="M426 222 h14 l-4 18 h-6 Z"/>
+            <path class="mk12-chest" d="M440 160 h14 l-4 18 h-6 Z"/>
+          </g>
+          <circle class="mk12-mite" cx="374" cy="218" r="4"/><circle class="mk12-mite b" cx="381" cy="218" r="4"/>
+          <text class="mk12-soft" x="365" y="296" text-anchor="middle" font-size="14">the offering chests: “the treasury”</text>
+        </svg>
+      </div>
+      <div>
+        <h2 class="rise" style="--d:1">Two mites</h2>
+        <p class="note rise" style="--d:2">The <em>treasury</em> was the offering chests in the Court of the Women; Jewish writings describe thirteen, shaped like trumpets. Big gifts clattered loudly.</p>
+        <div class="math step">
+          <div><b>2 mites</b><span>1 farthing</span></div>
+          <div><b>64 farthings</b><span>1 penny</span></div>
+          <div><b>1 penny</b><span>a day's wage</span></div>
+        </div>
+        <p class="note step">A <em>mite</em> was the smallest coin. Her gift was a few minutes' wages. Nobody heard it land.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="slide verse" data-v="43-44" data-hl="this poor widow hath cast more in, than all they which have cast into the treasury|she of her want did cast in all that she had, even all her living"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="44" data-hl="she of her want did cast in all that she had"></blockquote>
+    <div class="split">
+      <div class="stage">
+        <svg class="scale" style="--tip:12deg;--wait:.3s" viewBox="0 0 600 330" role="img" aria-label="A balance scale. On the left, bags of money from the rich, given out of their abundance. On the right, two tiny coins from the widow, all she had. God's scale tips toward the widow.">
+          <path d="M270 320 L330 320 L312 300 L288 300 Z" style="fill:var(--line-strong)"/>
+          <line x1="300" y1="300" x2="300" y2="70" stroke-width="8" style="stroke:var(--line-strong)"/>
+          <g class="scale-beam">
+            <line x1="80" y1="70" x2="520" y2="70" stroke-width="8" stroke-linecap="round" style="stroke:var(--ink-soft)"/>
+            <circle cx="300" cy="70" r="11" style="fill:var(--accent)"/>
+          </g>
+          <g class="scale-pan l">
+            <g stroke-width="2" style="stroke:var(--ink-soft)"><line x1="80" y1="70" x2="30" y2="190"/><line x1="80" y1="70" x2="130" y2="190"/></g>
+            <path d="M20 190 L140 190 Q130 220 80 220 Q30 220 20 190 Z" stroke-width="2" style="fill:var(--surface-2);stroke:var(--ink-soft)"/>
+            <path d="M44 188 C 36 170, 44 156, 56 152 L 52 144 L 66 144 L 62 152 C 74 156, 80 170, 72 188 Z" style="fill:var(--warm)"/>
+            <path d="M84 188 C 76 166, 86 150, 98 146 L 94 138 L 110 138 L 106 146 C 120 150, 128 166, 118 188 Z" style="fill:var(--warm)"/>
+            <text x="80" y="250" text-anchor="middle" font-size="18" style="fill:var(--ink-soft)">much, of their</text>
+            <text x="80" y="272" text-anchor="middle" font-size="18" style="fill:var(--ink-soft)">abundance</text>
+          </g>
+          <g class="scale-pan r">
+            <g stroke-width="2" style="stroke:var(--ink-soft)"><line x1="520" y1="70" x2="470" y2="190"/><line x1="520" y1="70" x2="570" y2="190"/></g>
+            <path d="M460 190 L580 190 Q570 220 520 220 Q470 220 460 190 Z" stroke-width="2" style="fill:var(--surface-2);stroke:var(--accent)"/>
+            <circle cx="512" cy="184" r="6" style="fill:var(--accent-hot)"/><circle cx="528" cy="184" r="6" style="fill:var(--accent-hot)"/>
+            <text x="520" y="250" text-anchor="middle" font-size="18" font-weight="700" style="fill:var(--accent-hot)">two mites:</text>
+            <text x="520" y="272" text-anchor="middle" font-size="18" font-weight="700" style="fill:var(--accent-hot)">all her living</text>
+          </g>
+        </svg>
+      </div>
+      <div>
+        <h2 class="rise" style="--d:1">How God counts</h2>
+        <p class="note rise" style="--d:2">Men count what you give. God counts what you keep back. The rich gave what they'd never miss. She gave what she had to live on.</p>
+        <p class="note step scale-go">Just before, Jesus warned about men who <em>“devour widows' houses.”</em> Here a widow gives God everything they had left her. Jesus saw it when no one else did.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="43" data-hl="this poor widow hath cast more in"></blockquote>
+    <h2 class="rise" style="--d:1">He sees what nobody else sees</h2>
+    <p class="note rise" style="--d:2">This isn't a sales pitch for giving to get. She went home that day with nothing anyone could see. But Jesus called His men over just to point her out.</p>
+    <p class="note step">Some of us feel we've got nothing left to give: no money, no reputation, years wasted. Two mites from a man who has nothing is worth more to God than a rich man's show. Your time, your honesty today, a phone call to a brother who's struggling. He sees it.</p>
+    <blockquote class="quote step"><p>“For if there be first a willing mind, it is accepted according to that a man hath, and not according to that he hath not.”</p><cite>2 Corinthians 8:12</cite></blockquote>
+    <p class="note step">And it points ahead. In a few days Jesus Himself would give <em>“all that he had, even all his living”</em>: His own life, for us.</p>
+  </div>
+</section>
+
+<!-- ======================= CLOSING ======================= -->
+<section class="slide remember">
+  <div class="inner">
+    <h2 class="rise">Points to remember</h2>
+    <ol class="seeds">
+      <li class="step"><span class="topic">The Son</span><span class="seed-q">“This is the heir; come, let us kill him” <cite>12:7</cite></span><span class="take">God sent prophet after prophet, and last of all His Son. The stone they rejected became the head of the corner.</span></li>
+      <li class="step"><span class="topic">Caesar</span><span class="seed-q">“Render to Caesar the things that are Caesar’s, and to God the things that are God’s” <cite>12:17</cite></span><span class="take">Caesar's image is on the coin. God's image is on you. Give Him yourself.</span></li>
+      <li class="step"><span class="topic">Life</span><span class="seed-q">“He is not the God of the dead, but the God of the living” <cite>12:27</cite></span><span class="take">God said “I am” the God of Abraham. Those who belong to Him are alive to Him, and He will raise the dead.</span></li>
+      <li class="step"><span class="topic">Love</span><span class="seed-q">“Thou shalt love the Lord thy God with all thy heart” <cite>12:30</cite></span><span class="take">Love God with all you are, and your neighbor as yourself. Not far is still not in.</span></li>
+      <li class="step"><span class="topic">David's Lord</span><span class="seed-q">“David therefore himself calleth him Lord” <cite>12:37</cite></span><span class="take">The Christ is David's son by birth, and David's Lord because He is God.</span></li>
+      <li class="step"><span class="topic">Giving</span><span class="seed-q">“She of her want did cast in all that she had” <cite>12:44</cite></span><span class="take">God doesn't count the size of the gift. He sees the heart, and He sees what nobody else does.</span></li>
+    </ol>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 1 of 6</p>
+      <span class="topic">The Son</span>
+      <h2>What did the husbandmen do with the owner's son?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="6"></blockquote>
+      <blockquote class="quote step" data-q="7"></blockquote>
+      <blockquote class="quote step" data-q="8"></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>They said, “This is the heir; come, let us kill him,” and they killed him and threw him out of the vineyard. Jesus was telling the leaders what they would do to Him, God's beloved Son. But the stone they rejected, God made the head of the corner.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 2 of 6</p>
+      <span class="topic">Caesar</span>
+      <h2>What belongs to Caesar, and what belongs to God?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="16"></blockquote>
+      <blockquote class="quote step" data-q="17"></blockquote>
+      <blockquote class="quote step"><p>“So God created man in his own image, in the image of God created he him; male and female created he them.”</p><cite>Genesis 1:27</cite></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>The coin with Caesar's image belongs to Caesar, so pay what you owe. But we bear God's image, so we belong to God, all of us.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 3 of 6</p>
+      <span class="topic">Life</span>
+      <h2>How did Jesus show from Moses that the dead rise?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="26"></blockquote>
+      <blockquote class="quote step" data-q="27"></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>At the burning bush, long after Abraham, Isaac and Jacob had died, God said, “I am the God of Abraham,” not “I was.” He is the God of the living. They are alive to Him, and He has the power to raise the dead.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 4 of 6</p>
+      <span class="topic">Love</span>
+      <h2>Which commandment did Jesus call the first of all?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="30"></blockquote>
+      <blockquote class="quote step" data-q="31"></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>“Hear, O Israel; The Lord our God is one Lord: and thou shalt love the Lord thy God” with all your heart, soul, mind and strength. The second is like it: love your neighbor as yourself. No commandment is greater than these.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 5 of 6</p>
+      <span class="topic">David's Lord</span>
+      <h2>Why did David call his own son Lord?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="36"></blockquote>
+      <blockquote class="quote step" data-q="37"></blockquote>
+      <blockquote class="quote step"><p>“Therefore let all the house of Israel know assuredly, that God hath made that same Jesus, whom ye have crucified, both Lord and Christ.”</p><cite>Acts 2:36</cite></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>Because the Christ is more than a man. He is David's son by birth, and David's Lord because He is God. Speaking by the Holy Ghost, David saw Him seated at God's right hand.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 6 of 6</p>
+      <span class="topic">Giving</span>
+      <h2>Why did the poor widow give more than all the rich?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="42"></blockquote>
+      <blockquote class="quote step" data-q="43"></blockquote>
+      <blockquote class="quote step" data-q="44"></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>They gave out of their abundance, what they'd never miss. She gave out of her want, all she had to live on. God measures the heart and what it costs, not the size of the gift.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide prayer">
+  <div class="inner">
+    <div class="emblem rise"></div>
+    <h2 class="rise" style="--d:1">Prayer requests</h2>
+    <p class="ask-line rise" style="--d:2">What can we pray about for you today?</p>
+    <blockquote class="quote rise" style="--d:4"><p>“Casting all your care upon him; for he careth for you.”</p><cite>1 Peter 5:7</cite></blockquote>
+  </div>
+</section>
+
+</main>
+
+<script>
+// King James Version, Mark chapter 12
+const V = {
+  1: "And he began to speak unto them by parables. A certain man planted a vineyard, and set an hedge about it, and digged a place for the winefat, and built a tower, and let it out to husbandmen, and went into a far country.",
+  2: "And at the season he sent to the husbandmen a servant, that he might receive from the husbandmen of the fruit of the vineyard.",
+  3: "And they caught him, and beat him, and sent him away empty.",
+  4: "And again he sent unto them another servant; and at him they cast stones, and wounded him in the head, and sent him away shamefully handled.",
+  5: "And again he sent another; and him they killed, and many others; beating some, and killing some.",
+  6: "Having yet therefore one son, his wellbeloved, he sent him also last unto them, saying, They will reverence my son.",
+  7: "But those husbandmen said among themselves, This is the heir; come, let us kill him, and the inheritance shall be ours.",
+  8: "And they took him, and killed him, and cast him out of the vineyard.",
+  9: "What shall therefore the lord of the vineyard do? he will come and destroy the husbandmen, and will give the vineyard unto others.",
+  10: "And have ye not read this scripture; The stone which the builders rejected is become the head of the corner:",
+  11: "This was the Lord’s doing, and it is marvellous in our eyes?",
+  12: "And they sought to lay hold on him, but feared the people: for they knew that he had spoken the parable against them: and they left him, and went their way.",
+  13: "And they send unto him certain of the Pharisees and of the Herodians, to catch him in his words.",
+  14: "And when they were come, they say unto him, Master, we know that thou art true, and carest for no man: for thou regardest not the person of men, but teachest the way of God in truth: Is it lawful to give tribute to Caesar, or not?",
+  15: "Shall we give, or shall we not give? But he, knowing their hypocrisy, said unto them, Why tempt ye me? bring me a penny, that I may see it.",
+  16: "And they brought it. And he saith unto them, Whose is this image and superscription? And they said unto him, Caesar’s.",
+  17: "And Jesus answering said unto them, Render to Caesar the things that are Caesar’s, and to God the things that are God’s. And they marvelled at him.",
+  18: "Then come unto him the Sadducees, which say there is no resurrection; and they asked him, saying,",
+  19: "Master, Moses wrote unto us, If a man’s brother die, and leave his wife behind him, and leave no children, that his brother should take his wife, and raise up seed unto his brother.",
+  20: "Now there were seven brethren: and the first took a wife, and dying left no seed.",
+  21: "And the second took her, and died, neither left he any seed: and the third likewise.",
+  22: "And the seven had her, and left no seed: last of all the woman died also.",
+  23: "In the resurrection therefore, when they shall rise, whose wife shall she be of them? for the seven had her to wife.",
+  24: "And Jesus answering said unto them, Do ye not therefore err, because ye know not the scriptures, neither the power of God?",
+  25: "For when they shall rise from the dead, they neither marry, nor are given in marriage; but are as the angels which are in heaven.",
+  26: "And as touching the dead, that they rise: have ye not read in the book of Moses, how in the bush God spake unto him, saying, I am the God of Abraham, and the God of Isaac, and the God of Jacob?",
+  27: "He is not the God of the dead, but the God of the living: ye therefore do greatly err.",
+  28: "And one of the scribes came, and having heard them reasoning together, and perceiving that he had answered them well, asked him, Which is the first commandment of all?",
+  29: "And Jesus answered him, The first of all the commandments is, Hear, O Israel; The Lord our God is one Lord:",
+  30: "And thou shalt love the Lord thy God with all thy heart, and with all thy soul, and with all thy mind, and with all thy strength: this is the first commandment.",
+  31: "And the second is like, namely this, Thou shalt love thy neighbour as thyself. There is none other commandment greater than these.",
+  32: "And the scribe said unto him, Well, Master, thou hast said the truth: for there is one God; and there is none other but he:",
+  33: "And to love him with all the heart, and with all the understanding, and with all the soul, and with all the strength, and to love his neighbour as himself, is more than all whole burnt offerings and sacrifices.",
+  34: "And when Jesus saw that he answered discreetly, he said unto him, Thou art not far from the kingdom of God. And no man after that durst ask him any question.",
+  35: "And Jesus answered and said, while he taught in the temple, How say the scribes that Christ is the Son of David?",
+  36: "For David himself said by the Holy Ghost, The Lord said to my Lord, Sit thou on my right hand, till I make thine enemies thy footstool.",
+  37: "David therefore himself calleth him Lord; and whence is he then his son? And the common people heard him gladly.",
+  38: "And he said unto them in his doctrine, Beware of the scribes, which love to go in long clothing, and love salutations in the marketplaces,",
+  39: "And the chief seats in the synagogues, and the uppermost rooms at feasts:",
+  40: "Which devour widows’ houses, and for a pretence make long prayers: these shall receive greater damnation.",
+  41: "And Jesus sat over against the treasury, and beheld how the people cast money into the treasury: and many that were rich cast in much.",
+  42: "And there came a certain poor widow, and she threw in two mites, which make a farthing.",
+  43: "And he called unto him his disciples, and saith unto them, Verily I say unto you, That this poor widow hath cast more in, than all they which have cast into the treasury:",
+  44: "For all they did cast in of their abundance; but she of her want did cast in all that she had, even all her living."
+};
+const BOOK = "Mark 12";
+</script>
+<script src="../assets/deck.js"></script>
+</body>
+</html>
