@@ -1,0 +1,593 @@
+<!doctype html>
+<html lang="en" data-theme="stone">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Matthew 20</title>
+<link rel="stylesheet" href="../assets/fonts.css">
+<link rel="stylesheet" href="../assets/deck.css">
+<link rel="stylesheet" href="../assets/themes.css">
+<style>
+/* mt20-map: a cropped data-land map, with town names and dots scaled down to fit the crop */
+.mt20-map .map-town text { font-size: 9px; }
+.mt20-map .map-town > circle:not(.map-ping) { r: 3px; }
+.mt20-map .map-town > .map-ping { r: 5px; stroke-width: 1.5px; }
+.mt20-map .map-region, .mt20-map .map-water { font-size: 8px; }
+.mt20-small { font-size: 8px; }
+
+/* mt20-pay: one row per group of workers. Each bar grows to the hours they worked; on a .mt20-paid step,
+   every row gets the same coin, paid from the last row up to the first (v. 8). */
+.mt20-pay { display: grid; gap: .45rem; margin: .5em 0 1em; }
+.mt20-row { display: grid; grid-template-columns: minmax(6.5rem, 9rem) 1fr 6.2rem; gap: .7rem; align-items: center; }
+.mt20-row > b { font: 600 clamp(.95rem, .85rem + .45vw, 1.3rem)/1.15 var(--serif); }
+.mt20-row > b small { display: block; font: 400 clamp(.75rem, .7rem + .25vw, .92rem) var(--sans); color: var(--ink-soft); }
+.mt20-track { height: 1.6rem; border-radius: 6px; background: var(--surface); border: 1px solid var(--line); overflow: hidden; }
+.mt20-bar { display: block; height: 100%; width: 0; border-radius: 6px; background: color-mix(in srgb, var(--cool) 55%, transparent);
+  font: 700 .85rem/1.6rem var(--sans); color: var(--ink); white-space: nowrap; padding-left: .5em; box-sizing: border-box;
+  transition: width 1.2s cubic-bezier(.3,.7,.3,1); transition-delay: calc(var(--k) * .3s + .3s); }
+.slide.active .mt20-bar { width: calc(var(--h) / 12 * 100%); }
+.mt20-coin { justify-self: start; display: inline-grid; place-items: center; padding: .2em .7em; border-radius: 999px; border: 2px solid var(--accent);
+  background: color-mix(in srgb, var(--accent) 18%, transparent); color: var(--accent-hot); font: 700 .9rem var(--sans);
+  opacity: 0; transform: scale(.4); transition: opacity .5s ease, transform .5s cubic-bezier(.3,1.6,.5,1); transition-delay: calc((4 - var(--k)) * .45s); }
+.slide:has(.mt20-paid.on) .mt20-coin { opacity: 1; transform: none; }
+
+/* mt20-seats: a throne with a seat on each side; on a .mt20-go step it fades into the three crosses of 27:38 */
+.mt20-seats .mt20-throne, .mt20-seats .mt20-crosses { transition: opacity 1.2s ease; }
+.mt20-seats .mt20-crosses { opacity: 0; }
+.slide:has(.mt20-go.on) .mt20-throne { opacity: 0; }
+.slide:has(.mt20-go.on) .mt20-crosses { opacity: 1; }
+.mt20-seat { fill: var(--surface-2); stroke: var(--line-strong); stroke-width: 2; }
+.mt20-king { fill: color-mix(in srgb, var(--accent) 30%, var(--surface-2)); stroke: var(--accent); stroke-width: 2.5; }
+.mt20-crown { fill: var(--accent); }
+.mt20-lbl { font: 700 15px var(--sans); fill: var(--ink-soft); }
+.mt20-lbl.hot { fill: var(--accent-hot); }
+.mt20-hill { fill: color-mix(in srgb, var(--ink-soft) 22%, transparent); }
+.mt20-wood { fill: var(--leather); stroke: var(--leather-light); stroke-width: 1.5; }
+
+/* mt20-flip: a pyramid of rank. On a .mt20-turn step it turns upside down: the great one ends up underneath, holding the rest up */
+.mt20-flip { display: grid; grid-template-columns: 1fr minmax(12rem, 16rem); gap: 1rem; align-items: center; margin: .3em 0 1em; }
+.mt20-flip svg { width: 100%; max-height: 13.5rem; }
+.mt20-pyr { transform-box: fill-box; transform-origin: 50% 50%; transition: transform 1.6s cubic-bezier(.6,0,.3,1); }
+.slide:has(.mt20-turn.on) .mt20-pyr { transform: rotate(180deg); }
+.mt20-block { fill: var(--surface-2); stroke: var(--line-strong); stroke-width: 2; }
+.mt20-block.top { fill: var(--accent); stroke: var(--accent); }
+.mt20-says { display: grid; }
+.mt20-says p { grid-area: 1 / 1; margin: 0; transition: opacity .8s ease; font-size: clamp(1rem, .9rem + .45vw, 1.3rem); line-height: 1.4; }
+.mt20-says p b { display: block; font: 600 clamp(1.15rem, 1rem + .6vw, 1.6rem) var(--serif); color: var(--accent-hot); }
+.mt20-says .after { opacity: 0; }
+.slide:has(.mt20-turn.on) .mt20-says .before { opacity: 0; }
+.slide:has(.mt20-turn.on) .mt20-says .after { opacity: 1; }
+
+/* mt20-climb: the road from Jericho up to Jerusalem, drawn as a side view; a dot (the crowd) walks it up */
+.mt20-sea { stroke: var(--cool); stroke-width: 1.5; stroke-dasharray: 6 5; }
+.mt20-ground { fill: color-mix(in srgb, var(--leather) 30%, transparent); }
+.mt20-road { fill: none; stroke: var(--accent); stroke-width: 4; stroke-linecap: round; stroke-dasharray: 1; stroke-dashoffset: 1; transition: stroke-dashoffset 3s ease-in-out .4s; }
+.slide.active .mt20-road { stroke-dashoffset: 0; }
+.mt20-walker { fill: var(--accent-hot); offset-path: path("M40 214 C 110 210, 150 186, 210 156 S 330 92, 410 70 C 430 66, 450 70, 480 80"); offset-distance: 0%; offset-rotate: 0deg; }
+.slide.active .mt20-walker { animation: mt20-walk 3s ease-in-out .4s forwards; }
+@keyframes mt20-walk { to { offset-distance: 100%; } }
+.mt20-t { font: 700 15px var(--sans); fill: var(--ink); }
+.mt20-s { font: 13px var(--sans); fill: var(--ink-soft); }
+
+/* mt20-checks: the shared checklist in two columns, one line per item */
+.mt20-checks { grid-template-columns: 1fr 1fr; }
+.mt20-checks li { grid-template-columns: 2.2rem 1fr auto; }
+@media (max-width: 700px) {
+  .mt20-checks { grid-template-columns: 1fr; } .mt20-flip { grid-template-columns: 1fr; }
+  .mt20-row { grid-template-columns: 5.6rem 1fr 4.6rem; gap: .4rem; } .mt20-coin { font-size: .78rem; padding: .15em .5em; }
+}
+</style>
+</head>
+<body>
+<main class="deck" id="deck">
+
+<!-- ======================= OPENING ======================= -->
+<section class="slide title">
+  <div class="inner">
+    <div class="emblem rise"></div>
+    <h1 class="rise" style="--d:1">Matthew 20</h1>
+    <p class="sub rise" style="--d:3">The last shall be first</p>
+    <p class="tag rise" style="--d:5">Workers hired at the last hour get a full day's pay. Jesus tells the twelve what waits in Jerusalem, two brothers ask for the best seats, and two blind men won't be quiet.</p>
+  </div>
+</section>
+
+<section class="slide watch">
+  <div class="inner">
+    <h2 class="rise">Things to watch for</h2>
+    <p class="lede rise" style="--d:1">Keep these questions in the back of your mind as we read. We'll come back to every one of them at the end.</p>
+    <ol class="seeds">
+      <li class="step"><span class="topic">Grace</span><span class="seed-q">Why did the men hired last get a full day's pay?</span></li>
+      <li class="step"><span class="topic">Envy</span><span class="seed-q">What made the first workers grumble?</span></li>
+      <li class="step"><span class="topic">The cross</span><span class="seed-q">What did Jesus tell the twelve would happen in Jerusalem?</span></li>
+      <li class="step"><span class="topic">Ambition</span><span class="seed-q">What did the mother of Zebedee's children ask for?</span></li>
+      <li class="step"><span class="topic">Greatness</span><span class="seed-q">Who is great in Jesus' kingdom?</span></li>
+      <li class="step"><span class="topic">Mercy</span><span class="seed-q">What did the blind men do when the crowd told them to be quiet?</span></li>
+    </ol>
+  </div>
+</section>
+
+<!-- ======================= PART ONE: THE VINEYARD ======================= -->
+<section class="slide part">
+  <div class="inner">
+    <p class="part-n rise">Part one</p>
+    <h2 class="rise" style="--d:1">Labourers in the vineyard</h2>
+    <p class="range rise" style="--d:2">Verses 1–16</p>
+    <div class="rule"></div>
+    <p class="hook rise" style="--d:4">A boss who keeps hiring all day long, and pays the latecomers first.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="1-2" data-hl="early in the morning to hire labourers|for a penny a day"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="2" data-hl="for a penny a day"></blockquote>
+    <h2 class="rise" style="--d:1">Peter's question</h2>
+    <p class="note rise" style="--d:2">This story answers something Peter had just asked. The rich young ruler walked away from Jesus, and Peter said:</p>
+    <blockquote class="quote step"><p>“Then answered Peter and said unto him, Behold, we have forsaken all, and followed thee; what shall we have therefore?”</p><cite>Matthew 19:27</cite></blockquote>
+    <div class="pair">
+      <div class="scroll step"><p class="ref">Matthew 19:30, just before</p><p class="kjv">But many that are first shall be last; and <mark>the last shall be first.</mark></p></div>
+      <div class="scroll step"><p class="ref">Matthew 20:16, just after</p><p class="kjv">So <mark>the last shall be first</mark>, and the first last: for many be called, but few chosen.</p></div>
+    </div>
+    <p class="note step">The same saying sits on both sides of the story like bookends. A <em>householder</em> is the owner of a house and land. A <em>penny</em> was a Roman silver coin, the denarius: a fair day's wage for a farm hand.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="3-5" data-hl="standing idle in the marketplace|whatsoever is right I will give you"></section>
+<section class="slide verse" data-v="6-7" data-hl="about the eleventh hour|Why stand ye here all the day idle?|Because no man hath hired us"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="7" data-hl="Because no man hath hired us"></blockquote>
+    <h2 class="rise" style="--d:1">All day long, he keeps coming back</h2>
+    <ol class="timeline" aria-label="The working day, counted from sunrise. Early, about 6 a.m.: the first men hired for a penny. The third hour, about 9. The sixth hour, about noon. The ninth hour, about 3 p.m. The eleventh hour, about 5 p.m., one hour before quitting time. Evening: everyone is paid.">
+      <li style="--k:0"><b>early</b><span>about 6 a.m.</span><small>“for a penny”</small></li>
+      <li style="--k:1"><b>third hour</b><span>about 9 a.m.</span><small>“whatsoever is right”</small></li>
+      <li style="--k:2"><b>sixth hour</b><span>about noon</span></li>
+      <li style="--k:3"><b>ninth hour</b><span>about 3 p.m.</span></li>
+      <li class="lit" style="--k:4"><b>eleventh hour</b><span>about 5 p.m.</span><small>one hour left</small></li>
+      <li style="--k:5"><b>even</b><span>about 6 p.m.</span><small>pay time</small></li>
+    </ol>
+    <p class="note step">The Jews counted the day's hours from sunrise. Men who needed work stood in the <em>marketplace</em> and waited to be picked. By five o'clock, the men still standing there were the ones everybody had passed over.</p>
+    <p class="note step"><em>“Because no man hath hired us.”</em> Some of us know that feeling: the record, the gaps in the work history, the years we lost. But this owner kept going back out. He went looking for the men nobody wanted, and he had a place for them.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="8-10" data-hl="beginning from the last unto the first|they received every man a penny|they supposed that they should have received more"></section>
+<section class="slide verse" data-v="11-12" data-hl="thou hast made them equal unto us"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="12" data-hl="thou hast made them equal unto us"></blockquote>
+    <h2 class="rise" style="--d:1">Every man a penny</h2>
+    <div class="mt20-pay" role="img" aria-label="Five rows of workers with bars for the hours they worked: the early men twelve hours, the third-hour men nine, the sixth-hour men six, the ninth-hour men three, the eleventh-hour men one. Then every row is paid the same: one penny, starting with the last.">
+      <div class="mt20-row" style="--k:0;--h:12"><b>early<small>about 6 a.m.</small></b><span class="mt20-track"><i class="mt20-bar">12 hours</i></span><span class="mt20-coin">a penny</span></div>
+      <div class="mt20-row" style="--k:1;--h:9"><b>third hour<small>about 9 a.m.</small></b><span class="mt20-track"><i class="mt20-bar">9 hours</i></span><span class="mt20-coin">a penny</span></div>
+      <div class="mt20-row" style="--k:2;--h:6"><b>sixth hour<small>about noon</small></b><span class="mt20-track"><i class="mt20-bar">6 hours</i></span><span class="mt20-coin">a penny</span></div>
+      <div class="mt20-row" style="--k:3;--h:3"><b>ninth hour<small>about 3 p.m.</small></b><span class="mt20-track"><i class="mt20-bar">3</i></span><span class="mt20-coin">a penny</span></div>
+      <div class="mt20-row" style="--k:4;--h:1"><b>eleventh hour<small>about 5 p.m.</small></b><span class="mt20-track"><i class="mt20-bar">1</i></span><span class="mt20-coin">a penny</span></div>
+    </div>
+    <p class="note step mt20-paid">The <em>steward</em>, the manager, pays from the last up to the first. The one-hour men get a full day's wage. The first men watch it happen and start counting.</p>
+    <p class="note step">They <em>murmured</em>, grumbled, against the <em>goodman of the house</em>, the master. Nobody had cheated them. They got exactly what they agreed to. What hurt was somebody else getting what he didn't earn.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="13-16" data-hl="Friend, I do thee no wrong|Is thine eye evil, because I am good?|So the last shall be first, and the first last"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="15" data-hl="Is thine eye evil, because I am good?"></blockquote>
+    <h2 class="rise" style="--d:1">Fair, and then some</h2>
+    <div class="columns">
+      <div class="col law step"><p class="who">to the first men</p><h3>“I do thee no wrong”</h3><p>He's fair. They agreed to a penny, and they got a penny. <em>“Take that thine is.”</em></p></div>
+      <div class="col grace step"><p class="who">to the last men</p><h3>“I will give unto this last”</h3><p>He's generous. They got what they hadn't earned, because the owner is good.</p></div>
+    </div>
+    <p class="note step">An <em>evil eye</em> is an envious eye, one that goes sour when someone else is blessed. The owner's question cuts deep: <em>Are you angry because I'm good?</em></p>
+    <p class="note step">Salvation isn't a paycheck. Nobody works long enough to earn it. It's a gift, the same gift, to the man who's served God fifty years and the man who came to Him last month.</p>
+    <blockquote class="quote step"><p>“For the wages of sin is death; but the gift of God is eternal life through Jesus Christ our Lord.”</p><cite>Romans 6:23</cite></blockquote>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="16"></blockquote>
+    <h2 class="rise" style="--d:1">Never too late</h2>
+    <p class="note rise" style="--d:2">The plainest eleventh-hour man in the Bible hung on a cross beside Jesus. He had nothing left to give, not even one hour of work. All he had was a prayer:</p>
+    <blockquote class="quote step"><p>“And he said unto Jesus, Lord, remember me when thou comest into thy kingdom.”</p><cite>Luke 23:42</cite></blockquote>
+    <blockquote class="quote step"><p>“And Jesus said unto him, Verily I say unto thee, To day shalt thou be with me in paradise.”</p><cite>Luke 23:43</cite></blockquote>
+    <p class="note step"><em>“Many be called, but few chosen.”</em> The call, the invitation, goes out to many: every man in that marketplace was asked. The chosen are the ones who come when He calls, and come on His terms, grace and not wages. If you're hearing the call today, it's not too late to come.</p>
+  </div>
+</section>
+
+<!-- ======================= PART TWO: THE CUP ======================= -->
+<section class="slide part">
+  <div class="inner">
+    <p class="part-n rise">Part two</p>
+    <h2 class="rise" style="--d:1">Going up to Jerusalem</h2>
+    <p class="range rise" style="--d:2">Verses 17–28</p>
+    <div class="rule"></div>
+    <p class="hook rise" style="--d:4">Jesus tells them plainly He is going to die. Two of them want to talk about thrones.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="17-19" data-hl="Behold, we go up to Jerusalem|they shall condemn him to death|to mock, and to scourge, and to crucify him|the third day he shall rise again"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="18" data-hl="Behold, we go up to Jerusalem"></blockquote>
+    <div class="split">
+      <div class="stage">
+        <svg class="mt20-map" data-land viewBox="150 100 200 320" data-towns="Capernaum:r, Jericho*:t, Jerusalem!:l" role="img" aria-label="Map of the land. Jesus has left Galilee and come down the east side of the Jordan, through Perea, called Judaea beyond Jordan. The route crosses the river near Jericho, then climbs west up to Jerusalem.">
+          <path class="map-way" d="M268 131 C 288 170, 292 230, 286 290 C 282 330, 272 352, 248 362"/>
+          <path class="map-route" pathLength="1" d="M243 363 C 230 368, 214 378, 204 384"/>
+          <text class="map-soft mt20-small" x="296" y="250">beyond</text>
+          <text class="map-soft mt20-small" x="296" y="260">Jordan (19:1)</text>
+          <text class="map-soft mt20-small" x="190" y="408" text-anchor="middle">uphill, about 15 miles</text>
+        </svg>
+      </div>
+      <div>
+        <h2 class="rise" style="--d:1">Up to Jerusalem</h2>
+        <p class="note rise" style="--d:2">Jesus has left Galilee for the last time (19:1) and come down the far side of the Jordan. You always went <em>up</em> to Jerusalem: the city sits high in the hills.</p>
+        <p class="note step">This is the third time He has told them (16:21, 17:22–23), and the plainest. He takes the twelve <em>apart</em> and spells it out.</p>
+        <p class="note step">He wasn't walking into a trap. He was walking to the cross on purpose, eyes open.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="19" data-hl="the third day he shall rise again"></blockquote>
+    <h2 class="rise" style="--d:1">Every word came true</h2>
+    <ol class="checks mt20-checks">
+      <li class="step"><span class="tick">✓</span><q>betrayed</q><b>26:49</b></li>
+      <li class="step"><span class="tick">✓</span><q>condemn him to death</q><b>26:66</b></li>
+      <li class="step"><span class="tick">✓</span><q>deliver him to the Gentiles</q><b>27:2</b></li>
+      <li class="step"><span class="tick">✓</span><q>to mock</q><b>27:29</b></li>
+      <li class="step"><span class="tick">✓</span><q>to scourge</q><b>27:26</b></li>
+      <li class="step"><span class="tick">✓</span><q>to crucify him</q><b>27:35</b></li>
+    </ol>
+    <ol class="checks"><li class="step"><span class="tick">✓</span><q>the third day he shall rise again</q><small>“He is not here: for he is risen, as he said.”</small><b>28:6</b></li></ol>
+    <p class="note step">The <em>Gentiles</em> here are the Romans. The Jewish council could condemn Him, but only Pilate could put Him to death. To <em>scourge</em> is to whip with a lash. Jesus knew every step before it happened, and He kept walking. And the last line is the one that matters most: <em>“as he said.”</em></p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="20-21" data-hl="the mother of Zebedee’s children with her sons|the one on thy right hand, and the other on the left"></section>
+<section class="slide verse" data-v="22-23" data-hl="Ye know not what ye ask|Are ye able to drink of the cup that I shall drink of|We are able|Ye shall drink indeed of my cup"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="22" data-hl="Ye know not what ye ask"></blockquote>
+    <h2 class="rise" style="--d:1">The cup</h2>
+    <p class="note rise" style="--d:2">The <em>sons</em> are James and John, fishermen Jesus called early on (4:21). Mark says the brothers asked it themselves (Mark 10:35); here their mother asks for them.</p>
+    <p class="note step">Jesus had just said He would die, and they heard <em>kingdom</em>. A <em>cup</em> is what God hands a man to go through. His cup was the cross:</p>
+    <blockquote class="quote step"><p>“O my Father, if it be possible, let this cup pass from me: nevertheless not as I will, but as thou wilt.”</p><cite>Matthew 26:39</cite></blockquote>
+    <p class="note step"><em>“We are able,”</em> they said. Not yet, they weren't. But they would drink it. James was the first of the twelve to die for Him:</p>
+    <blockquote class="quote step"><p>“And he killed James the brother of John with the sword.”</p><cite>Acts 12:2</cite></blockquote>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="23" data-hl="is not mine to give"></blockquote>
+    <div class="split">
+      <div class="stage">
+        <svg class="mt20-seats" viewBox="0 0 400 300" role="img" aria-label="A king's throne with a seat on his right hand and a seat on his left. Then the picture changes to three crosses on a hill, the middle one Jesus', with a thief on His right hand and another on His left.">
+          <g class="mt20-throne">
+            <rect class="mt20-seat" x="40" y="120" width="70" height="100" rx="6"/><rect class="mt20-seat" x="34" y="200" width="82" height="22" rx="4"/>
+            <rect class="mt20-seat" x="290" y="120" width="70" height="100" rx="6"/><rect class="mt20-seat" x="284" y="200" width="82" height="22" rx="4"/>
+            <rect class="mt20-king" x="150" y="80" width="100" height="140" rx="8"/><rect class="mt20-king" x="142" y="196" width="116" height="28" rx="4"/>
+            <path class="mt20-crown" d="M170 66 L178 40 L190 56 L200 32 L210 56 L222 40 L230 66 Z"/>
+            <text class="mt20-lbl" x="75" y="250" text-anchor="middle">“right hand”</text>
+            <text class="mt20-lbl" x="325" y="250" text-anchor="middle">“the left”</text>
+            <text class="mt20-lbl hot" x="200" y="250" text-anchor="middle">thy kingdom</text>
+          </g>
+          <g class="mt20-crosses">
+            <path class="mt20-hill" d="M0 300 C 80 236, 150 226, 200 226 C 250 226, 320 236, 400 300 Z"/>
+            <rect class="mt20-wood" x="194" y="40" width="12" height="190"/><rect class="mt20-wood" x="160" y="76" width="80" height="11"/>
+            <rect class="mt20-wood" x="85" y="92" width="10" height="148"/><rect class="mt20-wood" x="60" y="118" width="60" height="9"/>
+            <rect class="mt20-wood" x="305" y="92" width="10" height="148"/><rect class="mt20-wood" x="280" y="118" width="60" height="9"/>
+            <text class="mt20-lbl" x="90" y="80" text-anchor="middle">a thief</text>
+            <text class="mt20-lbl" x="310" y="80" text-anchor="middle">a thief</text>
+            <text class="mt20-lbl hot" x="200" y="24" text-anchor="middle">27:38</text>
+          </g>
+        </svg>
+      </div>
+      <div>
+        <h2 class="rise" style="--d:1">On His right and left</h2>
+        <p class="note rise" style="--d:2">They pictured a throne, and themselves in the two best seats. Now look who was really there, on His right hand and His left:</p>
+        <blockquote class="quote step mt20-go"><p>“Then were there two thieves crucified with him, one on the right hand, and another on the left.”</p><cite>Matthew 27:38</cite></blockquote>
+        <p class="note step">The way to His glory went through the cross. The honours are the Father's to give. Ours is to follow.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="slide verse" data-v="24-25" data-hl="moved with indignation against the two brethren|exercise dominion over them"></section>
+<section class="slide verse" data-v="26-28" data-hl="it shall not be so among you|let him be your minister|let him be your servant|to give his life a ransom for many"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="26" data-hl="it shall not be so among you"></blockquote>
+    <h2 class="rise" style="--d:1">Greatness turned upside down</h2>
+    <div class="mt20-flip">
+      <svg viewBox="0 0 300 200" role="img" aria-label="A pyramid of blocks with one gold block on top, over the rest. Then it turns upside down, and the gold block is at the bottom, holding all the others up.">
+        <g class="mt20-pyr">
+          <rect class="mt20-block top" x="120" y="20" width="60" height="40" rx="4"/>
+          <rect class="mt20-block" x="80" y="64" width="66" height="40" rx="4"/><rect class="mt20-block" x="154" y="64" width="66" height="40" rx="4"/>
+          <rect class="mt20-block" x="40" y="108" width="68" height="40" rx="4"/><rect class="mt20-block" x="116" y="108" width="68" height="40" rx="4"/><rect class="mt20-block" x="192" y="108" width="68" height="40" rx="4"/>
+          <rect class="mt20-block" x="10" y="152" width="66" height="40" rx="4"/><rect class="mt20-block" x="82" y="152" width="66" height="40" rx="4"/><rect class="mt20-block" x="154" y="152" width="66" height="40" rx="4"/><rect class="mt20-block" x="226" y="152" width="64" height="40" rx="4"/>
+        </g>
+      </svg>
+      <div class="mt20-says">
+        <p class="before"><b>The world's way</b>The <em>princes of the Gentiles</em> sit on top. The great ones <em>exercise authority</em> over everybody under them.</p>
+        <p class="after"><b>Jesus' way</b>The great one gets underneath and holds the others up. A <em>minister</em> is one who serves; a <em>servant</em> here is a slave.</p>
+      </div>
+    </div>
+    <p class="note step mt20-turn">The ten were angry at James and John, likely because they wanted the same seats. Jesus doesn't scold their wish to be great. He shows them where greatness is.</p>
+    <p class="note step">In recovery we learn this the hard way: the man who helps the next man up is the strongest man in the room.</p>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="28" data-hl="to give his life a ransom for many"></blockquote>
+    <h2 class="rise" style="--d:1">A ransom</h2>
+    <p class="note rise" style="--d:2">A <em>ransom</em> was the price paid to set a captive or a slave free. Sin had us in chains, and we couldn't pay our own way out.</p>
+    <div class="swap rise" style="--d:3">
+      <h3><span>Bound</span>the price to pay</h3>
+      <h3><span>Free</span>walked out</h3>
+      <div class="a"><b>the many</b><small>captives of sin</small></div>
+      <div class="b"><b>the Son of man</b><small>“to give his life”</small></div>
+    </div>
+    <p class="note step swap-go">So He paid it with His own life, and took our place. <em>“For many”</em> doesn't mean some are left out. Paul says it plainly:</p>
+    <blockquote class="quote step"><p>“Who gave himself a ransom for all, to be testified in due time.”</p><cite>1 Timothy 2:6</cite></blockquote>
+  </div>
+</section>
+
+<!-- ======================= PART THREE: JERICHO ======================= -->
+<section class="slide part">
+  <div class="inner">
+    <p class="part-n rise">Part three</p>
+    <h2 class="rise" style="--d:1">Have mercy on us</h2>
+    <p class="range rise" style="--d:2">Verses 29–34</p>
+    <div class="rule"></div>
+    <p class="hook rise" style="--d:4">Two blind beggars by the road out of Jericho, and a crowd that wants them to shut up.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="29-31" data-hl="as they departed from Jericho|Have mercy on us, O Lord, thou Son of David|the multitude rebuked them|they cried the more"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="29" data-hl="as they departed from Jericho"></blockquote>
+    <div class="split">
+      <div class="stage">
+    <svg viewBox="0 0 520 260" role="img" aria-label="A side view of the road from Jericho to Jerusalem. Jericho sits about 850 feet below sea level by the Jordan. The road climbs about 15 miles west, past the Mount of Olives, to Jerusalem, about 2,500 feet above sea level. A dot walks the road up.">
+      <path class="mt20-ground" d="M40 214 C 110 210, 150 186, 210 156 S 330 92, 410 70 C 430 66, 450 70, 480 80 L 480 250 L 40 250 Z"/>
+      <line class="mt20-sea" x1="20" y1="180" x2="500" y2="180"/>
+      <text class="mt20-s" x="500" y="198" text-anchor="end">sea level</text>
+      <path class="mt20-road" pathLength="1" d="M40 214 C 110 210, 150 186, 210 156 S 330 92, 410 70 C 430 66, 450 70, 480 80"/>
+      <circle class="mt20-walker" r="7"/>
+      <circle cx="40" cy="214" r="6" style="fill:var(--ink)"/>
+      <text class="mt20-t" x="34" y="240">Jericho</text>
+      <text class="mt20-s" x="110" y="240">about 850 ft below sea level</text>
+      <circle cx="480" cy="80" r="6" style="fill:var(--accent)"/>
+      <text class="mt20-t" x="480" y="40" text-anchor="end">Jerusalem</text>
+      <text class="mt20-s" x="480" y="58" text-anchor="end">about 2,500 ft up</text>
+      <text class="mt20-s" x="410" y="104" text-anchor="middle">Mount of Olives</text>
+      <text class="mt20-s" x="230" y="210" text-anchor="middle">about 15 miles, climbing over 3,000 feet</text>
+    </svg>
+      </div>
+      <div>
+    <h2 class="rise" style="--d:1">The last climb</h2>
+    <p class="note rise" style="--d:3"><em>Jericho</em> was an oasis town of palms near the Jordan, the last stop before the climb. Passover was near, and pilgrims crowded the road. Mark names one of the two men: blind Bartimaeus (Mark 10:46).</p>
+    <p class="note step">They sat by the <em>way side</em> to beg. They couldn't see Jesus, but they saw who He was. <em>“Son of David”</em> is a King's name: the promised Messiah from David's line.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="31" data-hl="they cried the more"></blockquote>
+    <h2 class="rise" style="--d:1">They cried the more</h2>
+    <div class="talk">
+      <p class="rise" style="--d:2"><small>Two blind men</small>Have mercy on us, O Lord, thou Son of David.</p>
+      <p class="reply step"><small>The multitude</small>Hold your peace. <span class="flag">rebuked</span></p>
+      <p class="step"><small>Two blind men, louder</small>Have mercy on us, O Lord, thou Son of David!</p>
+    </div>
+    <p class="note step">To the crowd, they were two beggars bothering an important Man. There are always voices telling a man he's not worth Jesus' time: other people, his past, his own head. These two didn't argue. They just got louder. Cry out to Him anyway.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="32-34" data-hl="Jesus stood still|What will ye that I shall do unto you?|that our eyes may be opened|they followed him"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="32" data-hl="Jesus stood still"></blockquote>
+    <h2 class="rise" style="--d:1">The same question, twice</h2>
+    <div class="columns">
+      <div class="col law step"><p class="who">to the mother of James and John (v. 21)</p><h3>“What wilt thou?”</h3><p>Seats of power, one on each side of the King.</p></div>
+      <div class="col grace step"><p class="who">to two blind beggars (v. 32)</p><h3>“What will ye?”</h3><p><em>“Lord, that our eyes may be opened.”</em> Just mercy.</p></div>
+    </div>
+    <p class="note step">He was walking to His death, and still He <em>stood still</em> for two beggars the crowd wanted gone. He <em>had compassion</em>, touched their eyes, and they could see.</p>
+    <p class="note step">And then <em>“they followed him,”</em> straight up the road to Jerusalem. The disciples who asked for thrones were still learning. The men who asked for mercy got it, and followed.</p>
+  </div>
+</section>
+
+<!-- ======================= CLOSING ======================= -->
+<section class="slide remember">
+  <div class="inner">
+    <h2 class="rise">Points to remember</h2>
+    <ol class="seeds">
+      <li class="step"><span class="topic">Grace</span><span class="seed-q">“They received every man a penny” <cite>20:9</cite></span><span class="take">Salvation is a gift, not wages. It's never too late to come.</span></li>
+      <li class="step"><span class="topic">Envy</span><span class="seed-q">“Is thine eye evil, because I am good?” <cite>20:15</cite></span><span class="take">Don't let God's kindness to someone else make you sour. He's been more than fair with you.</span></li>
+      <li class="step"><span class="topic">The cross</span><span class="seed-q">“And the third day he shall rise again” <cite>20:19</cite></span><span class="take">Jesus knew every step of the cross ahead, and walked toward it on purpose.</span></li>
+      <li class="step"><span class="topic">Ambition</span><span class="seed-q">“Ye know not what ye ask” <cite>20:22</cite></span><span class="take">They wanted the best seats. The way to glory goes through the cross.</span></li>
+      <li class="step"><span class="topic">Greatness</span><span class="seed-q">“Whosoever will be great among you, let him be your minister” <cite>20:26</cite></span><span class="take">In His kingdom the great man serves, like the Son of man who gave His life a ransom.</span></li>
+      <li class="step"><span class="topic">Mercy</span><span class="seed-q">“They cried the more” <cite>20:31</cite></span><span class="take">Don't let anyone hush you. Jesus stands still for the man who cries for mercy.</span></li>
+    </ol>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 1 of 6</p>
+      <span class="topic">Grace</span>
+      <h2>Why did the men hired last get a full day's pay?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="7" data-hl="Because no man hath hired us"></blockquote>
+      <blockquote class="quote step" data-q="9"></blockquote>
+      <blockquote class="quote step" data-q="15" data-hl="because I am good"></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>Because the owner was good, not because they earned it. He chose to give the last the same as the first. That's grace. Salvation is God's gift, offered to whosoever will come, early or late.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 2 of 6</p>
+      <span class="topic">Envy</span>
+      <h2>What made the first workers grumble?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="10"></blockquote>
+      <blockquote class="quote step" data-q="12"></blockquote>
+      <blockquote class="quote step" data-q="15"></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>They compared. They got what they agreed to, but they couldn't stand the latecomers getting the same. Their eye was evil, envious, because the owner was good. Comparing turns thanks into grumbling.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 3 of 6</p>
+      <span class="topic">The cross</span>
+      <h2>What did Jesus tell the twelve would happen in Jerusalem?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="18"></blockquote>
+      <blockquote class="quote step" data-q="19"></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>He would be betrayed, condemned, handed to the Romans, mocked, whipped and crucified, and the third day He would rise again. Every word came true. He went to the cross knowing all of it, for us.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 4 of 6</p>
+      <span class="topic">Ambition</span>
+      <h2>What did the mother of Zebedee's children ask for?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="21"></blockquote>
+      <blockquote class="quote step" data-q="22" data-hl="Ye know not what ye ask"></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>The two best seats in His kingdom for her sons, James and John. They didn't know what they were asking. The way to His glory went through His cup, the cross, and they would share His sufferings too. The honours are the Father's to give.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 5 of 6</p>
+      <span class="topic">Greatness</span>
+      <h2>Who is great in Jesus' kingdom?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="26"></blockquote>
+      <blockquote class="quote step" data-q="27"></blockquote>
+      <blockquote class="quote step" data-q="28"></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>The servant. The world's great men rule over others. In His kingdom the great man gets underneath and serves, like Jesus, who came not to be served but to serve, and to give His life a ransom.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 6 of 6</p>
+      <span class="topic">Mercy</span>
+      <h2>What did the blind men do when the crowd told them to be quiet?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="31"></blockquote>
+      <blockquote class="quote step" data-q="32" data-hl="Jesus stood still"></blockquote>
+      <blockquote class="quote step" data-q="34"></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>They cried out even louder. Jesus stood still, called them, had compassion, and opened their eyes. Then they followed Him. Don't let anyone hush you from crying to Jesus for mercy.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide prayer">
+  <div class="inner">
+    <div class="emblem rise"></div>
+    <h2 class="rise" style="--d:1">Prayer requests</h2>
+    <p class="ask-line rise" style="--d:2">What can we pray about for you today?</p>
+    <blockquote class="quote rise" style="--d:4"><p>“Let us therefore come boldly unto the throne of grace, that we may obtain mercy, and find grace to help in time of need.”</p><cite>Hebrews 4:16</cite></blockquote>
+  </div>
+</section>
+
+</main>
+
+<script>
+// King James Version, Matthew chapter 20
+const V = {
+  1: "For the kingdom of heaven is like unto a man that is an householder, which went out early in the morning to hire labourers into his vineyard.",
+  2: "And when he had agreed with the labourers for a penny a day, he sent them into his vineyard.",
+  3: "And he went out about the third hour, and saw others standing idle in the marketplace,",
+  4: "And said unto them; Go ye also into the vineyard, and whatsoever is right I will give you. And they went their way.",
+  5: "Again he went out about the sixth and ninth hour, and did likewise.",
+  6: "And about the eleventh hour he went out, and found others standing idle, and saith unto them, Why stand ye here all the day idle?",
+  7: "They say unto him, Because no man hath hired us. He saith unto them, Go ye also into the vineyard; and whatsoever is right, that shall ye receive.",
+  8: "So when even was come, the lord of the vineyard saith unto his steward, Call the labourers, and give them their hire, beginning from the last unto the first.",
+  9: "And when they came that were hired about the eleventh hour, they received every man a penny.",
+  10: "But when the first came, they supposed that they should have received more; and they likewise received every man a penny.",
+  11: "And when they had received it, they murmured against the goodman of the house,",
+  12: "Saying, These last have wrought but one hour, and thou hast made them equal unto us, which have borne the burden and heat of the day.",
+  13: "But he answered one of them, and said, Friend, I do thee no wrong: didst not thou agree with me for a penny?",
+  14: "Take that thine is, and go thy way: I will give unto this last, even as unto thee.",
+  15: "Is it not lawful for me to do what I will with mine own? Is thine eye evil, because I am good?",
+  16: "So the last shall be first, and the first last: for many be called, but few chosen.",
+  17: "And Jesus going up to Jerusalem took the twelve disciples apart in the way, and said unto them,",
+  18: "Behold, we go up to Jerusalem; and the Son of man shall be betrayed unto the chief priests and unto the scribes, and they shall condemn him to death,",
+  19: "And shall deliver him to the Gentiles to mock, and to scourge, and to crucify him: and the third day he shall rise again.",
+  20: "Then came to him the mother of Zebedee’s children with her sons, worshipping him, and desiring a certain thing of him.",
+  21: "And he said unto her, What wilt thou? She saith unto him, Grant that these my two sons may sit, the one on thy right hand, and the other on the left, in thy kingdom.",
+  22: "But Jesus answered and said, Ye know not what ye ask. Are ye able to drink of the cup that I shall drink of, and to be baptized with the baptism that I am baptized with? They say unto him, We are able.",
+  23: "And he saith unto them, Ye shall drink indeed of my cup, and be baptized with the baptism that I am baptized with: but to sit on my right hand, and on my left, is not mine to give, but it shall be given to them for whom it is prepared of my Father.",
+  24: "And when the ten heard it, they were moved with indignation against the two brethren.",
+  25: "But Jesus called them unto him, and said, Ye know that the princes of the Gentiles exercise dominion over them, and they that are great exercise authority upon them.",
+  26: "But it shall not be so among you: but whosoever will be great among you, let him be your minister;",
+  27: "And whosoever will be chief among you, let him be your servant:",
+  28: "Even as the Son of man came not to be ministered unto, but to minister, and to give his life a ransom for many.",
+  29: "And as they departed from Jericho, a great multitude followed him.",
+  30: "And, behold, two blind men sitting by the way side, when they heard that Jesus passed by, cried out, saying, Have mercy on us, O Lord, thou Son of David.",
+  31: "And the multitude rebuked them, because they should hold their peace: but they cried the more, saying, Have mercy on us, O Lord, thou Son of David.",
+  32: "And Jesus stood still, and called them, and said, What will ye that I shall do unto you?",
+  33: "They say unto him, Lord, that our eyes may be opened.",
+  34: "So Jesus had compassion on them, and touched their eyes: and immediately their eyes received sight, and they followed him."
+};
+const BOOK = "Matthew 20";
+</script>
+<script src="../assets/deck.js"></script>
+</body>
+</html>

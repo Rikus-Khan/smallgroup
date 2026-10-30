@@ -6650,6 +6650,108 @@ window.STUDIES = [
     }
   },
   {
+    "id": "matthew-20",
+    "type": "chapter",
+    "book": "Matthew",
+    "ch": 20,
+    "date": "2026-10-29",
+    "title": "Matthew 20",
+    "sub": "The last shall be first",
+    "about": "Workers hired at the last hour get a full day's pay, two brothers ask for the best seats, and two blind men won't be hushed.",
+    "tags": [
+      "Grace",
+      "Envy",
+      "The cross",
+      "Ambition",
+      "Servanthood",
+      "Mercy"
+    ],
+    "url": "studies/matthew-20.html",
+    "overview": {
+      "where": "A vineyard in Jesus' story, then the road from beyond the Jordan up to Jerusalem, by way of Jericho",
+      "when": "The last journey to Jerusalem, shortly before His final Passover (about AD 30 or 33)",
+      "people": [
+        "jesus",
+        "householder",
+        "the-twelve",
+        "sons-of-zebedee",
+        "mother-of-zebedees-children",
+        "chief-priests",
+        "scribes",
+        "blind-men-of-jericho"
+      ],
+      "places": [
+        "jerusalem",
+        "jericho"
+      ],
+      "story": [
+        "A householder hires labourers all day long, the last at the eleventh hour, and pays every man a penny, starting with the last (1–10).",
+        "The first men grumble. The owner did them no wrong; he is simply good. “So the last shall be first, and the first last” (11–16).",
+        "Going up to Jerusalem, Jesus tells the twelve for the third time that He will be betrayed, condemned, mocked, scourged and crucified, and rise the third day (17–19).",
+        "The mother of Zebedee's children asks for her sons to sit at His right hand and left. Jesus speaks of His cup, and teaches that the great must serve, as He came to give His life a ransom for many (20–28).",
+        "Leaving Jericho, two blind men cry, “Have mercy on us, O Lord, thou Son of David.” The crowd hushes them; they cry the more. Jesus stands still, touches their eyes, and they follow Him (29–34)."
+      ],
+      "key": {
+        "ref": "Matthew 20:28",
+        "text": "Even as the Son of man came not to be ministered unto, but to minister, and to give his life a ransom for many."
+      },
+      "big": "Salvation is a gift of grace, not wages, and it's offered to the last as freely as the first. In His kingdom greatness means serving, because the Son of man came to serve and to give His life a ransom."
+    }
+  },
+  {
+    "id": "matthew-21",
+    "type": "chapter",
+    "book": "Matthew",
+    "ch": 21,
+    "date": "2026-10-29",
+    "title": "Matthew 21",
+    "sub": "Thy King cometh",
+    "about": "Jesus rides into Jerusalem on an ass, clears the temple, curses a fig tree with nothing but leaves, and tells the leaders two stories about vineyards.",
+    "tags": [
+      "The King",
+      "Worship",
+      "Prayer",
+      "Fruit",
+      "Repentance",
+      "The cornerstone"
+    ],
+    "url": "studies/matthew-21.html",
+    "overview": {
+      "where": "Bethphage and the Mount of Olives, then Jerusalem and the temple, with nights at Bethany",
+      "when": "The first days of the last week, from the Sunday He rode in (about AD 30 or 33)",
+      "people": [
+        "jesus",
+        "disciples",
+        "chief-priests",
+        "scribes",
+        "elders",
+        "pharisees",
+        "john-the-baptist",
+        "publicans",
+        "harlots"
+      ],
+      "places": [
+        "bethphage",
+        "mount-of-olives",
+        "jerusalem",
+        "temple",
+        "bethany"
+      ],
+      "story": [
+        "Jesus sends for an ass and her colt and rides into Jerusalem, as Zechariah foretold. The crowds spread their garments and cry, “Hosanna to the Son of David” (1–11).",
+        "He casts out the traders and overturns the moneychangers' tables: “My house shall be called the house of prayer.” He heals the blind and lame, and children sing His praise (12–17).",
+        "A fig tree with leaves but no fruit withers at His word. Faith that doubts not can move a mountain; ask in prayer, believing (18–22).",
+        "The chief priests and elders demand His authority. He asks about John's baptism, and they won't answer. Two sons: the one who refused but repented did his father's will (23–32).",
+        "Wicked husbandmen beat the owner's servants and kill his son. The stone the builders rejected becomes the head of the corner. The leaders know He means them (33–46)."
+      ],
+      "key": {
+        "ref": "Matthew 21:5",
+        "text": "Tell ye the daughter of Sion, Behold, thy King cometh unto thee, meek, and sitting upon an ass, and a colt the foal of an ass."
+      },
+      "big": "Jesus is the meek King who comes to save. He wants a house of prayer and real fruit, not leaves. It isn't how a man started but whether he turns and goes. The rejected Stone is God's cornerstone."
+    }
+  },
+  {
     "id": "mark-01",
     "type": "chapter",
     "book": "Mark",

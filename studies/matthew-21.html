@@ -1,0 +1,717 @@
+<!doctype html>
+<html lang="en" data-theme="night">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Matthew 21</title>
+<link rel="stylesheet" href="../assets/fonts.css">
+<link rel="stylesheet" href="../assets/deck.css">
+<link rel="stylesheet" href="../assets/themes.css">
+<style>
+/* mt21-map: a close-up of Jerusalem, the Kidron valley, the Mount of Olives, Bethphage and Bethany, using the shared map classes */
+.mt21-wall { fill: color-mix(in srgb, var(--ink-soft) 12%, transparent); stroke: var(--line-strong); stroke-width: 3; }
+.mt21-mount { fill: color-mix(in srgb, var(--accent) 22%, transparent); stroke: var(--accent); stroke-width: 2; }
+.mt21-hill { fill: color-mix(in srgb, var(--leather) 40%, transparent); }
+.mt21-kidron { fill: none; stroke: var(--cool); stroke-width: 2; stroke-dasharray: 3 5; }
+.mt21-name { font: 700 15px var(--sans); fill: var(--ink); }
+.mt21-soft { font: 13px var(--sans); fill: var(--ink-soft); }
+
+/* mt21-courts: the temple courts from above. On a .mt21-clear step, the tables in the outer court turn over and slide away */
+.mt21-court { fill: color-mix(in srgb, var(--ink-soft) 10%, transparent); stroke: var(--line-strong); stroke-width: 2; }
+.mt21-inner { fill: color-mix(in srgb, var(--ink-soft) 18%, transparent); stroke: var(--line-strong); stroke-width: 1.5; }
+.mt21-holy { fill: var(--accent); }
+.mt21-soreg { fill: none; stroke: var(--danger); stroke-width: 2; stroke-dasharray: 6 4; }
+.mt21-table { fill: var(--leather); stroke: var(--leather-light); stroke-width: 1.5; transform-box: fill-box; transform-origin: 50% 50%;
+  transition: transform 1.1s cubic-bezier(.5,0,.4,1), opacity 1.1s ease; transition-delay: calc(var(--k) * .12s); }
+.mt21-coin { fill: var(--accent-hot); transition: transform 1.1s ease, opacity 1.1s ease; transition-delay: calc(var(--k) * .12s); }
+.mt21-dove { fill: var(--glow); stroke: var(--line-strong); stroke-width: 1; transition: transform 1.4s ease-out, opacity 1.4s ease; transition-delay: calc(var(--k) * .12s); }
+.slide:has(.mt21-clear.on) .mt21-table { transform: translate(var(--dx), 30px) rotate(var(--r)); opacity: .35; }
+.slide:has(.mt21-clear.on) .mt21-coin { transform: translate(var(--dx), 40px); opacity: 0; }
+.slide:has(.mt21-clear.on) .mt21-dove { transform: translate(-60px, -120px); opacity: 0; }
+.mt21-label { font: 700 14px var(--sans); fill: var(--ink); }
+.mt21-label.warn { fill: var(--danger); font-size: 12px; }
+.mt21-label.small { font-size: 12px; fill: var(--ink-soft); font-weight: 400; }
+
+/* mt21-fig: a fig tree full of leaves. On a .mt21-wither step the leaves fall and the tree goes grey */
+.mt21-trunk { fill: none; stroke: var(--leather-light); stroke-width: 10; stroke-linecap: round; transition: stroke 1.6s ease .6s; }
+.mt21-trunk.thin { stroke-width: 5; }
+.mt21-leaf { fill: color-mix(in srgb, var(--cool) 55%, var(--warm)); transform-box: fill-box; transform-origin: 50% 0;
+  transition: transform 1.6s cubic-bezier(.5,0,.8,.6), opacity 1.6s ease; transition-delay: calc(var(--k) * .07s); }
+.slide:has(.mt21-wither.on) .mt21-leaf { transform: translateY(var(--fall, 150px)) rotate(70deg); opacity: 0; }
+.slide:has(.mt21-wither.on) .mt21-trunk { stroke: var(--ink-soft); }
+.mt21-none { font: 700 16px var(--sans); fill: var(--danger); }
+.mt21-ground { stroke: var(--line-strong); stroke-width: 2; }
+
+/* mt21-vine: a vineyard as Isaiah 5 and Jesus describe it: hedge, rows of vines, a winepress, a tower */
+.mt21-hedge { fill: color-mix(in srgb, var(--leather) 14%, transparent); stroke: var(--leather-light); stroke-width: 7; stroke-dasharray: 2 6; stroke-linecap: round; }
+.mt21-row { fill: none; stroke: var(--leather-light); stroke-width: 3; }
+.mt21-grape { fill: var(--wine); }
+.mt21-tower { fill: var(--surface-2); stroke: var(--line-strong); stroke-width: 2; }
+.mt21-press { fill: color-mix(in srgb, var(--wine) 40%, transparent); stroke: var(--line-strong); stroke-width: 2; }
+
+/* mt21-stone: a wall with an empty corner. The stone thrown aside on the right moves up into the corner on a .mt21-set step */
+.mt21-block { fill: var(--surface-2); stroke: var(--line-strong); stroke-width: 1.5; }
+.mt21-slot { fill: none; stroke: var(--accent); stroke-width: 2; stroke-dasharray: 5 4; }
+.mt21-head { transform-box: view-box; transition: transform 1.6s cubic-bezier(.5,0,.3,1); }
+.mt21-head rect { fill: var(--accent); stroke: var(--accent-hot); stroke-width: 2; }
+.slide:has(.mt21-set.on) .mt21-head { transform: translate(-280px, -150px); }
+.mt21-x { stroke: var(--danger); stroke-width: 4; stroke-linecap: round; transition: opacity .6s ease; }
+.slide:has(.mt21-set.on) .mt21-x { opacity: 0; }
+.mt21-tag { font: 700 14px var(--sans); fill: var(--ink-soft); transition: opacity .6s ease; }
+.mt21-tag.after { fill: var(--accent-hot); opacity: 0; }
+.slide:has(.mt21-set.on) .mt21-tag.before { opacity: 0; }
+.slide:has(.mt21-set.on) .mt21-tag.after { opacity: 1; }
+</style>
+</head>
+<body>
+<main class="deck" id="deck">
+
+<!-- ======================= OPENING ======================= -->
+<section class="slide title">
+  <div class="inner">
+    <div class="emblem rise"></div>
+    <h1 class="rise" style="--d:1">Matthew 21</h1>
+    <p class="sub rise" style="--d:3">Thy King cometh</p>
+    <p class="tag rise" style="--d:5">Jesus rides into Jerusalem on an ass, turns over the tables in the temple, curses a fig tree with nothing but leaves, and tells the leaders two stories they can't miss.</p>
+  </div>
+</section>
+
+<section class="slide watch">
+  <div class="inner">
+    <h2 class="rise">Things to watch for</h2>
+    <p class="lede rise" style="--d:1">Keep these questions in the back of your mind as we read. We'll come back to every one of them at the end.</p>
+    <ol class="seeds">
+      <li class="step"><span class="topic">The King</span><span class="seed-q">What kind of King rode into Jerusalem?</span></li>
+      <li class="step"><span class="topic">House of prayer</span><span class="seed-q">Why did Jesus turn over the tables in the temple?</span></li>
+      <li class="step"><span class="topic">Fruit</span><span class="seed-q">What did Jesus find on the fig tree?</span></li>
+      <li class="step"><span class="topic">Prayer</span><span class="seed-q">What did Jesus promise about faith and prayer?</span></li>
+      <li class="step"><span class="topic">Turning around</span><span class="seed-q">Which of the two sons did the will of his father?</span></li>
+      <li class="step"><span class="topic">The cornerstone</span><span class="seed-q">What happened to the stone the builders rejected?</span></li>
+    </ol>
+  </div>
+</section>
+
+<!-- ======================= PART ONE: THE KING ======================= -->
+<section class="slide part">
+  <div class="inner">
+    <p class="part-n rise">Part one</p>
+    <h2 class="rise" style="--d:1">Thy King cometh</h2>
+    <p class="range rise" style="--d:2">Verses 1–11</p>
+    <div class="rule"></div>
+    <p class="hook rise" style="--d:4">A borrowed animal, a road covered in coats, and a whole city asking one question.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="1-3" data-hl="were come to Bethphage, unto the mount of Olives|an ass tied, and a colt with her|The Lord hath need of them"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="1" data-hl="were come to Bethphage, unto the mount of Olives"></blockquote>
+    <div class="split">
+      <div class="stage">
+        <svg class="map" viewBox="0 0 460 340" role="img" aria-label="Close-up map of Jerusalem and the hills to its east. The walled city is on the left with the temple on its east side. East of the city is the Kidron valley, then the Mount of Olives. Bethphage is on the far slope of the mount, and Bethany is about two miles from the city, where the road from Jericho comes in from the east. A route runs from Bethany through Bethphage, over the Mount of Olives, down across the Kidron, and into the city.">
+          <path class="mt21-wall" d="M30 70 L150 50 L196 66 L200 290 L120 312 L40 290 Z"/>
+          <rect class="mt21-mount" x="140" y="92" width="52" height="84" rx="3"/>
+          <text class="mt21-name" x="166" y="196" text-anchor="middle">temple</text>
+          <text class="mt21-name" x="96" y="250" text-anchor="middle">Jerusalem</text>
+          <path class="mt21-kidron" d="M222 20 C 216 100, 226 200, 212 330"/>
+          <text class="mt21-soft" x="230" y="320">Kidron valley</text>
+          <path class="mt21-hill" d="M246 40 C 290 30, 320 80, 316 160 C 312 230, 300 290, 262 300 C 248 220, 240 120, 246 40 Z"/>
+          <text class="mt21-soft" x="282" y="54" text-anchor="middle">Mount of</text>
+          <text class="mt21-soft" x="282" y="70" text-anchor="middle">Olives</text>
+          <path class="map-way" d="M460 236 C 440 226, 426 214, 410 206"/>
+          <text class="mt21-soft" x="452" y="262" text-anchor="end">from Jericho</text>
+          <path class="map-route" pathLength="1" d="M408 204 C 380 180, 356 156, 334 140 C 310 126, 290 120, 266 124 C 240 128, 226 134, 198 136"/>
+          <g class="map-town"><circle cx="334" cy="140" r="7"/><text x="334" y="118" text-anchor="middle" font-weight="700">Bethphage</text></g>
+          <g class="map-town"><circle cx="410" cy="206" r="7"/><text x="410" y="186" text-anchor="middle" font-weight="700">Bethany</text></g>
+          <text class="mt21-soft" x="410" y="230" text-anchor="middle">about 2 miles out</text>
+        </svg>
+      </div>
+      <div>
+        <h2 class="rise" style="--d:1">Over the Mount of Olives</h2>
+        <p class="note rise" style="--d:2">The road from Jericho comes over the <em>mount of Olives</em>, a ridge just east of the city. <em>Bethphage</em> sat on its slope; Bethany, Lazarus' town, a little farther out. From the top, the temple shines right across the valley.</p>
+        <p class="note step"><em>“The Lord hath need of them.”</em> The King borrows a young donkey. He uses ordinary things, and ordinary men, for His work.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise" style="--d:1">The last week</h2>
+    <p class="note rise" style="--d:2">Matthew gives eight of his twenty-eight chapters to these few days. Passover fell in spring, about AD 30 or 33.</p>
+    <ol class="timeline" aria-label="The last week, day by day. Sunday: He rides into Jerusalem. Monday: the fig tree and the temple, as Mark lays out the days. Tuesday: questions and parables in the temple, chapters 21 to 25. Thursday: the Last Supper. Friday: the cross. Sunday: He is risen.">
+      <li class="lit" style="--k:0"><b>Sunday</b><span>He rides into Jerusalem</span><small>21:1–11</small></li>
+      <li class="lit" style="--k:1"><b>Monday</b><span>the fig tree; the temple cleared</span><small>21:12–19</small></li>
+      <li class="lit" style="--k:2"><b>Tuesday</b><span>questions and parables in the temple</span><small>21:23 – 25:46</small></li>
+      <li style="--k:3"><b>Thursday</b><span>the Last Supper; Gethsemane</span><small>ch. 26</small></li>
+      <li style="--k:4"><b>Friday</b><span>the cross</span><small>ch. 27</small></li>
+      <li style="--k:5"><b>Sunday</b><span>He is risen</span><small>ch. 28</small></li>
+    </ol>
+    <p class="note step">Mark lays out the days more exactly: Jesus looked around the temple on Sunday evening, went back to Bethany, and cleared it the next morning (Mark 11:11–15). Matthew tells the temple story right alongside the entry, because they belong together: the King comes to His city, and then to His Father's house.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="4-5" data-hl="that it might be fulfilled|Behold, thy King cometh unto thee, meek, and sitting upon an ass"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="5" data-hl="meek, and sitting upon an ass"></blockquote>
+    <h2 class="rise" style="--d:1">Spoken by the prophet</h2>
+    <div class="pair">
+      <div class="scroll rise" style="--d:2"><p class="ref">Zechariah 9:9, about 500 years before</p><p class="kjv">Rejoice greatly, O daughter of Zion; shout, O daughter of Jerusalem: <mark>behold, thy King cometh unto thee</mark>: he is just, and having salvation; lowly, and <mark>riding upon an ass</mark>, and upon a colt the foal of an ass.</p></div>
+      <div class="scroll step"><p class="ref">Matthew 21:5</p><p class="kjv">Tell ye the daughter of Sion, <mark>Behold, thy King cometh unto thee</mark>, meek, and <mark>sitting upon an ass</mark>, and a colt the foal of an ass.</p></div>
+    </div>
+    <p class="note step">Jesus didn't stumble into this. He sent for the animals so the prophecy would be fulfilled in front of everyone. <em>Sion</em> is Zion, the hill of Jerusalem; its <em>daughter</em> is its people.</p>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="5" data-hl="meek"></blockquote>
+    <h2 class="rise" style="--d:1">Meek, and sitting upon an ass</h2>
+    <div class="columns">
+      <div class="col law step"><p class="who">a conquering king</p><h3>a war horse</h3><p>comes to take a city by force</p></div>
+      <div class="col grace step"><p class="who">this King</p><h3>a donkey</h3><p>comes in peace, the way ordinary folk travelled</p></div>
+    </div>
+    <p class="note step"><em>Meek</em> isn't weak. It's strength that comes gently. He comes to you the same way.</p>
+    <blockquote class="quote step"><p>“Take my yoke upon you, and learn of me; for I am meek and lowly in heart: and ye shall find rest unto your souls.”</p><cite>Matthew 11:29</cite></blockquote>
+  </div>
+</section>
+
+<section class="slide verse" data-v="6-9" data-hl="spread their garments in the way|cut down branches from the trees|Hosanna to the Son of David|Blessed is he that cometh in the name of the Lord"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="9" data-hl="Hosanna to the Son of David"></blockquote>
+    <h2 class="rise" style="--d:1">Hosanna</h2>
+    <div class="morph">
+      <span class="big rise" style="--d:2">הוֹשִׁיעָה נָּא</span>
+      <span class="say step">said <em class="gk">hoshia na</em></span>
+      <span class="means step">save now, we pray</span>
+    </div>
+    <p class="note step">The crowd was singing Psalm 118, a psalm the pilgrims sang every Passover. They were shouting it at Jesus:</p>
+    <blockquote class="quote step"><p>“Save now, I beseech thee, O LORD: O LORD, I beseech thee, send now prosperity. Blessed be he that cometh in the name of the LORD: we have blessed you out of the house of the LORD.”</p><cite>Psalm 118:25–26</cite></blockquote>
+    <p class="note step">Spreading coats on the road was how you welcomed a king (2 Kings 9:13). John says the branches were palms (John 12:13). They were saying: <em>This is the King. Save us now.</em></p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="10-11" data-hl="all the city was moved, saying, Who is this?|This is Jesus the prophet of Nazareth of Galilee"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="10" data-hl="Who is this?"></blockquote>
+    <h2 class="rise" style="--d:1">Who is this?</h2>
+    <p class="note rise" style="--d:2">The whole city was <em>moved</em>, stirred up, shaken. The crowd's answer was true as far as it went: <em>“the prophet of Nazareth of Galilee.”</em> This one chapter gives a fuller answer:</p>
+    <ol class="signs rise" style="--d:3">
+      <li class="now"><b>thy King</b>21:5</li>
+      <li><b>the Son of David</b>21:9, 15</li>
+      <li><b>he that cometh in the name of the Lord</b>21:9</li>
+      <li><b>the prophet</b>21:11</li>
+      <li><b>his son, the heir</b>21:37–38</li>
+      <li><b>the stone, the head of the corner</b>21:42</li>
+    </ol>
+    <p class="note step">Within the week a crowd in this same city would shout, <em>“Let him be crucified”</em> (27:22). Cheering Jesus is easy on a good day. The question is still the one the city asked: <em>Who is this?</em> Every man has to answer it for himself.</p>
+  </div>
+</section>
+
+<!-- ======================= PART TWO: THE TEMPLE AND THE FIG TREE ======================= -->
+<section class="slide part">
+  <div class="inner">
+    <p class="part-n rise">Part two</p>
+    <h2 class="rise" style="--d:1">My house</h2>
+    <p class="range rise" style="--d:2">Verses 12–22</p>
+    <div class="rule"></div>
+    <p class="hook rise" style="--d:4">Tables crash, the blind see, children sing, and a tree full of leaves has nothing to give.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="12-13" data-hl="overthrew the tables of the moneychangers|My house shall be called the house of prayer|ye have made it a den of thieves"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="12" data-hl="overthrew the tables of the moneychangers"></blockquote>
+    <div class="split">
+      <div class="stage">
+        <svg viewBox="0 0 460 300" role="img" aria-label="A plan of the temple courts from above. The big outer court, the Court of the Gentiles, is full of traders' tables and dove sellers. A low barrier marks where Gentiles could go no farther. Inside are the inner courts and the holy house. Then the tables are turned over and slide away, and the doves fly off.">
+          <rect class="mt21-court" x="8" y="8" width="444" height="284" rx="6"/>
+          <rect class="mt21-soreg" x="236" y="64" width="190" height="172" rx="4"/>
+          <rect class="mt21-inner" x="250" y="88" width="80" height="124"/>
+          <rect class="mt21-inner" x="330" y="104" width="80" height="92"/>
+          <rect class="mt21-holy" x="372" y="128" width="30" height="44"/>
+          <text class="mt21-label small" x="290" y="228" text-anchor="middle">inner courts</text>
+          <text class="mt21-label small" x="387" y="122" text-anchor="middle">holy house</text>
+          <text class="mt21-label warn" x="331" y="56" text-anchor="middle">Gentiles: no farther</text>
+          <text class="mt21-label" x="120" y="34" text-anchor="middle">Court of the Gentiles</text>
+          <g>
+            <rect class="mt21-table" style="--k:0;--dx:-20px;--r:-80deg" x="40" y="70" width="46" height="22" rx="2"/>
+            <rect class="mt21-table" style="--k:1;--dx:14px;--r:95deg" x="110" y="70" width="46" height="22" rx="2"/>
+            <rect class="mt21-table" style="--k:2;--dx:-10px;--r:120deg" x="160" y="120" width="46" height="22" rx="2"/>
+            <rect class="mt21-table" style="--k:3;--dx:-30px;--r:-110deg" x="50" y="140" width="46" height="22" rx="2"/>
+            <rect class="mt21-table" style="--k:4;--dx:20px;--r:75deg" x="100" y="200" width="46" height="22" rx="2"/>
+            <rect class="mt21-table" style="--k:5;--dx:-14px;--r:-95deg" x="170" y="236" width="46" height="22" rx="2"/>
+            <circle class="mt21-coin" style="--k:0;--dx:-20px" cx="56" cy="66" r="4"/><circle class="mt21-coin" style="--k:0;--dx:-20px" cx="68" cy="66" r="4"/>
+            <circle class="mt21-coin" style="--k:1;--dx:14px" cx="126" cy="66" r="4"/><circle class="mt21-coin" style="--k:3;--dx:-30px" cx="70" cy="136" r="4"/>
+            <circle class="mt21-coin" style="--k:4;--dx:20px" cx="116" cy="196" r="4"/><circle class="mt21-coin" style="--k:4;--dx:20px" cx="128" cy="196" r="4"/>
+            <circle class="mt21-dove" style="--k:2" cx="176" cy="112" r="6"/><circle class="mt21-dove" style="--k:3" cx="190" cy="112" r="6"/>
+            <circle class="mt21-dove" style="--k:5" cx="186" cy="228" r="6"/><circle class="mt21-dove" style="--k:6" cx="200" cy="228" r="6"/>
+          </g>
+          <text class="mt21-label small" x="120" y="282" text-anchor="middle">the market was here</text>
+        </svg>
+      </div>
+      <div>
+        <h2 class="rise" style="--d:1">A market in God's house</h2>
+        <p class="note rise" style="--d:2">The outer court was the one place a Gentile could pray. It had become a market: animals for sacrifice, <em>doves</em> for the poor man's offering, and <em>moneychangers</em> trading pilgrims' coins for temple money, at a cut.</p>
+        <p class="note step mt21-clear">Jesus cleared it out, as He had once before (John 2:13–16). When He comes into a man's life, some tables get turned over. That's a house being made clean.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="13"></blockquote>
+    <h2 class="rise" style="--d:1">It is written</h2>
+    <p class="note rise" style="--d:2">Jesus puts two prophets side by side: what God meant His house to be, and what they had made it.</p>
+    <div class="pair">
+      <div class="scroll step"><p class="ref">Isaiah 56:7</p><p class="kjv">…for <mark>mine house shall be called an house of prayer</mark> for all people.</p></div>
+      <div class="scroll step"><p class="ref">Jeremiah 7:11</p><p class="kjv">Is this house, which is called by my name, become <mark>a den of robbers</mark> in your eyes? Behold, even I have seen it, saith the LORD.</p></div>
+    </div>
+    <p class="note step">A <em>den of thieves</em> is a robbers' hideout, the cave they run back to after the job. They cheated people, then hid behind religion. And notice Isaiah's <em>“for all people.”</em> The market filled the only room the outsiders had.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="14-16" data-hl="the blind and the lame came to him in the temple; and he healed them|the children crying in the temple|they were sore displeased|Out of the mouth of babes and sucklings thou hast perfected praise"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="14"></blockquote>
+    <h2 class="rise" style="--d:1">Who was glad, and who wasn't</h2>
+    <div class="columns">
+      <div class="col grace step"><p class="who">the blind, the lame, the children</p><h3>healed and singing</h3><p>The broken came, and He healed them. Children picked up the crowd's song: <em>“Hosanna to the Son of David.”</em></p></div>
+      <div class="col law step"><p class="who">the chief priests and scribes</p><h3>“sore displeased”</h3><p>They saw <em>“the wonderful things that he did”</em> and were angry. <em>Hearest thou what these say?</em></p></div>
+    </div>
+    <p class="note step">Jesus answers from Psalm 8: God gets His praise out of the mouths of <em>babes and sucklings</em>, little children and nursing babies. The men in charge missed it. The kids got it.</p>
+    <p class="note step">You don't need a title, a long church history, or the right words to praise Him. The blind and the lame are welcome in His house, and so are you.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="17-19" data-hl="went out of the city into Bethany|he hungered|found nothing thereon, but leaves only|the fig tree withered away"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="19" data-hl="found nothing thereon, but leaves only"></blockquote>
+    <div class="split">
+      <div class="stage">
+        <svg viewBox="0 0 300 300" role="img" aria-label="A fig tree full of green leaves but with no fruit. Then the leaves fall away and the tree goes grey and dry.">
+          <line class="mt21-ground" x1="20" y1="280" x2="280" y2="280"/>
+          <path class="mt21-trunk" d="M150 280 C 148 240, 152 200, 150 160"/>
+          <path class="mt21-trunk thin" d="M150 190 C 130 170, 104 156, 80 120 M150 176 C 172 156, 196 140, 220 108 M150 160 C 146 130, 152 104, 150 70 M114 150 C 96 148, 76 152, 56 146 M190 146 C 210 150, 230 148, 248 140"/>
+          <g>
+            <ellipse class="mt21-leaf" style="--k:0;--fall:170px" cx="80" cy="112" rx="20" ry="13"/><ellipse class="mt21-leaf" style="--k:1;--fall:160px" cx="110" cy="96" rx="20" ry="13"/>
+            <ellipse class="mt21-leaf" style="--k:2;--fall:190px" cx="150" cy="62" rx="22" ry="14"/><ellipse class="mt21-leaf" style="--k:3;--fall:170px" cx="190" cy="92" rx="20" ry="13"/>
+            <ellipse class="mt21-leaf" style="--k:4;--fall:170px" cx="222" cy="102" rx="20" ry="13"/><ellipse class="mt21-leaf" style="--k:5;--fall:130px" cx="52" cy="140" rx="18" ry="12"/>
+            <ellipse class="mt21-leaf" style="--k:6;--fall:130px" cx="250" cy="134" rx="18" ry="12"/><ellipse class="mt21-leaf" style="--k:7;--fall:150px" cx="124" cy="130" rx="20" ry="13"/>
+            <ellipse class="mt21-leaf" style="--k:8;--fall:150px" cx="178" cy="128" rx="20" ry="13"/><ellipse class="mt21-leaf" style="--k:9;--fall:180px" cx="132" cy="80" rx="18" ry="12"/>
+            <ellipse class="mt21-leaf" style="--k:10;--fall:180px" cx="168" cy="76" rx="18" ry="12"/><ellipse class="mt21-leaf" style="--k:11;--fall:140px" cx="96" cy="140" rx="16" ry="11"/>
+            <ellipse class="mt21-leaf" style="--k:12;--fall:140px" cx="210" cy="132" rx="16" ry="11"/><ellipse class="mt21-leaf" style="--k:13;--fall:170px" cx="150" cy="104" rx="18" ry="12"/>
+          </g>
+          <text class="mt21-none" x="150" y="28" text-anchor="middle">“but leaves only”</text>
+        </svg>
+      </div>
+      <div>
+        <h2 class="rise" style="--d:1">All leaves, no fruit</h2>
+        <p class="note rise" style="--d:2">A fig tree in full leaf looked like it should have figs. It had nothing.</p>
+        <p class="note step mt21-wither">It's a picture of the temple He'd just seen: busy, impressive, and no fruit for God.</p>
+        <p class="note step">Leaves are easy: the right clothes, the right words. He's looking for fruit, and it grows only one way: <em>“He that abideth in me, and I in him, the same bringeth forth much fruit”</em> (John 15:5).</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="slide verse" data-v="20-22" data-hl="If ye have faith, and doubt not|Be thou removed, and be thou cast into the sea|whatsoever ye shall ask in prayer, believing, ye shall receive"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="22"></blockquote>
+    <h2 class="rise" style="--d:1">This mountain</h2>
+    <div class="ifthen step">
+      <div class="if"><small>If</small>ye have faith, and doubt not,</div>
+      <span class="arrow" aria-hidden="true">→</span>
+      <div class="then"><small>then</small>this mountain… it shall be done.</div>
+    </div>
+    <p class="note step">They were likely on the Mount of Olives, on the road from Bethany, so <em>“this mountain”</em> was under their feet. The power isn't in how hard a man believes. It's in the God he trusts. And it isn't a blank check: faith asks in line with what God wants.</p>
+    <blockquote class="quote step"><p>“And this is the confidence that we have in him, that, if we ask any thing according to his will, he heareth us:”</p><cite>1 John 5:14</cite></blockquote>
+    <p class="note step">Facing a mountain, a habit, a debt, a broken family? Bring it to Him, believing. Mountains have moved before.</p>
+  </div>
+</section>
+
+<!-- ======================= PART THREE: BY WHAT AUTHORITY? ======================= -->
+<section class="slide part">
+  <div class="inner">
+    <p class="part-n rise">Part three</p>
+    <h2 class="rise" style="--d:1">By what authority?</h2>
+    <p class="range rise" style="--d:2">Verses 23–46</p>
+    <div class="rule"></div>
+    <p class="hook rise" style="--d:4">The leaders come to trap Him, and walk away caught in two stories about vineyards.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="23-24" data-hl="By what authority doest thou these things?|I also will ask you one thing"></section>
+<section class="slide verse" data-v="25-27" data-hl="from heaven, or of men?|Why did ye not then believe him?|we fear the people|We cannot tell"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="27" data-hl="We cannot tell"></blockquote>
+    <h2 class="rise" style="--d:1">Trapped by their own question</h2>
+    <p class="note rise" style="--d:2">The <em>chief priests</em> and <em>elders</em> ran the temple. <em>“By what authority?”</em> meant: <em>Who said you could clear our temple?</em> Jesus asks about John the Baptist, and they huddle:</p>
+    <div class="ifthen step">
+      <div class="if"><small>If we say</small>“From heaven,”</div>
+      <span class="arrow" aria-hidden="true">→</span>
+      <div class="then"><small>then he'll say</small>“Why did ye not then believe him?”</div>
+    </div>
+    <div class="ifthen step">
+      <div class="if"><small>If we say</small>“Of men,”</div>
+      <span class="arrow" aria-hidden="true">→</span>
+      <div class="then"><small>then</small>the people will turn on us.</div>
+    </div>
+    <p class="note step"><em>“We cannot tell.”</em> They could. They just wouldn't. Their trouble wasn't lack of proof but pride and fear. A man who won't follow the light he has won't be given more.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="28-30" data-hl="Son, go work to day in my vineyard|I will not: but afterward he repented, and went|I go, sir: and went not"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="31" data-hl="Whether of them twain did the will of his father?"></blockquote>
+    <h2 class="rise" style="--d:1">Two sons</h2>
+    <div class="columns">
+      <div class="col grace step"><p class="who">the first son</p><h3>“I will not”</h3><p>Then <em>“afterward he repented, and went.”</em> He changed his mind, and his feet followed.</p></div>
+      <div class="col law step"><p class="who">the second son</p><h3>“I go, sir”</h3><p>Polite, respectful, all the right words. <em>“And went not.”</em></p></div>
+    </div>
+    <p class="note step"><em>Twain</em> means two. The leaders answer right: the first son. What counts isn't what a man said at the start. It's what he did afterward.</p>
+    <p class="note step">Plenty of us started out saying <em>“I will not”</em> to God, loudly, for years. That isn't the end of the story. The door is open to the man who turns around and goes.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="31-32" data-hl="the publicans and the harlots go into the kingdom of God before you|repented not afterward"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="31" data-hl="the publicans and the harlots go into the kingdom of God before you"></blockquote>
+    <h2 class="rise" style="--d:1">Before you</h2>
+    <p class="note rise" style="--d:2"><em>Publicans</em> were tax collectors who worked for Rome and skimmed off their own people. <em>Harlots</em> were prostitutes.</p>
+    <p class="saying step">Not how you started. <em>Whether you went.</em></p>
+    <p class="note step">They believed John and turned around (Luke 3:12). The religious men watched their lives change and <em>“repented not afterward.”</em> They were the second son.</p>
+    <p class="note step">Jesus says <em>“before you,”</em> not <em>“instead of you.”</em> The door was still open, even to them. It's open to any man who turns, whatever list he's been on.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="33-36" data-hl="planted a vineyard, and hedged it round about|let it out to husbandmen|beat one, and killed another, and stoned another"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="33" data-hl="planted a vineyard, and hedged it round about"></blockquote>
+    <div class="split">
+      <div class="stage">
+        <svg viewBox="0 0 420 300" role="img" aria-label="A vineyard from above: rows of grape vines inside a hedge, with a stone tower for a watchman in one corner and a winepress cut into the rock in another.">
+          <rect class="mt21-hedge" x="14" y="14" width="392" height="272" rx="22"/>
+          <g>
+            <path class="mt21-row" d="M50 80 q 25 -12 50 0 t 50 0 t 50 0 t 50 0"/>
+            <path class="mt21-row" d="M50 130 q 25 -12 50 0 t 50 0 t 50 0 t 50 0"/>
+            <path class="mt21-row" d="M50 180 q 25 -12 50 0 t 50 0 t 50 0 t 50 0"/>
+            <path class="mt21-row" d="M50 230 q 25 -12 50 0 t 50 0 t 50 0 t 50 0"/>
+            <g class="mt21-grape">
+              <circle cx="75" cy="82" r="5"/><circle cx="125" cy="82" r="5"/><circle cx="175" cy="82" r="5"/><circle cx="225" cy="82" r="5"/>
+              <circle cx="75" cy="132" r="5"/><circle cx="125" cy="132" r="5"/><circle cx="175" cy="132" r="5"/><circle cx="225" cy="132" r="5"/>
+              <circle cx="75" cy="182" r="5"/><circle cx="125" cy="182" r="5"/><circle cx="175" cy="182" r="5"/><circle cx="225" cy="182" r="5"/>
+              <circle cx="75" cy="232" r="5"/><circle cx="125" cy="232" r="5"/><circle cx="175" cy="232" r="5"/><circle cx="225" cy="232" r="5"/>
+            </g>
+          </g>
+          <rect class="mt21-tower" x="300" y="44" width="56" height="70" rx="3"/><path class="mt21-tower" d="M294 46 L328 22 L362 46 Z"/>
+          <text class="mt21-label" x="328" y="134" text-anchor="middle">a tower</text>
+          <rect class="mt21-press" x="296" y="176" width="64" height="40" rx="4"/><rect class="mt21-press" x="314" y="222" width="28" height="24" rx="3"/>
+          <text class="mt21-label" x="328" y="266" text-anchor="middle">a winepress</text>
+          <text class="mt21-label small" x="150" y="40" text-anchor="middle">“hedged it round about”</text>
+        </svg>
+      </div>
+      <div>
+        <h2 class="rise" style="--d:1">God's vineyard</h2>
+        <p class="note rise" style="--d:2">Isaiah sang of this vineyard about 700 years before (Isaiah 5:1–2):</p>
+        <blockquote class="quote step"><p>“For the vineyard of the LORD of hosts is the house of Israel, and the men of Judah his pleasant plant: and he looked for judgment, but behold oppression; for righteousness, but behold a cry.”</p><cite>Isaiah 5:7</cite></blockquote>
+        <p class="note step"><em>Husbandmen</em> are tenant farmers who owed the owner his share. Here the tenants are the leaders; the servants are God's prophets.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="slide verse" data-v="37-39" data-hl="last of all he sent unto them his son|They will reverence my son|This is the heir; come, let us kill him|cast him out of the vineyard, and slew him"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="37"></blockquote>
+    <h2 class="rise" style="--d:1">Last of all, his son</h2>
+    <ol class="timeline" aria-label="The owner sends again and again. First servants: beaten, killed, stoned. More servants: the same. Last of all his son: they cast him out of the vineyard and kill him.">
+      <li style="--k:0" data-n="1"><b>servants</b><span>beat one, killed another, stoned another</span><small>v. 35</small></li>
+      <li style="--k:1" data-n="2"><b>more servants</b><span>“they did unto them likewise”</span><small>v. 36</small></li>
+      <li class="lit" style="--k:2" data-n="3"><b>his son</b><span>“They will reverence my son”</span><small>v. 37</small></li>
+      <li class="lit step" style="--k:0" data-n="4"><b>cast out, slain</b><span>“out of the vineyard”</span><small>v. 39</small></li>
+    </ol>
+    <p class="note step">The owner's patience is the most surprising thing in the story. Who keeps sending after the first servant is killed? God does. And then He sends His Son. Jesus is telling them, a few days ahead, exactly what they are about to do to Him.</p>
+    <p class="note step">They <em>knew</em> who He was: <em>“This is the heir.”</em> And they took Him outside and killed Him. Jesus died outside the city walls:</p>
+    <blockquote class="quote step"><p>“Wherefore Jesus also, that he might sanctify the people with his own blood, suffered without the gate.”</p><cite>Hebrews 13:12</cite></blockquote>
+  </div>
+</section>
+
+<section class="slide verse" data-v="40-41" data-hl="what will he do unto those husbandmen?|He will miserably destroy those wicked men"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="41" data-hl="He will miserably destroy those wicked men"></blockquote>
+    <h2 class="rise" style="--d:1">Their own verdict</h2>
+    <div class="talk">
+      <p class="rise" style="--d:2"><small>Jesus</small>When the lord therefore of the vineyard cometh, what will he do unto those husbandmen?</p>
+      <p class="reply step"><small>The chief priests and elders</small>He will miserably destroy those wicked men. <span class="flag">their own words</span></p>
+    </div>
+    <p class="note step">They judged themselves without knowing it, like King David when Nathan told him the story of the stolen lamb, then said, <em>“Thou art the man”</em> (2 Samuel 12:7).</p>
+    <p class="note step">David broke and repented. These men saw it too (v. 45), and dug in. When God's Word puts a finger on us, the right answer is David's, not theirs.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="42-44" data-hl="The stone which the builders rejected, the same is become the head of the corner|this is the Lord’s doing, and it is marvellous in our eyes|whosoever shall fall on this stone shall be broken"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="42" data-hl="The stone which the builders rejected, the same is become the head of the corner"></blockquote>
+    <div class="split">
+      <div class="stage">
+        <svg viewBox="0 66 400 224" role="img" aria-label="A stone wall with an empty place at its top corner. A stone lies off to the side on the ground, crossed out: rejected. Then it rises into the corner and becomes the head stone of the wall.">
+          <g>
+            <rect class="mt21-block" x="20" y="250" width="60" height="30"/><rect class="mt21-block" x="80" y="250" width="60" height="30"/><rect class="mt21-block" x="140" y="250" width="60" height="30"/><rect class="mt21-block" x="200" y="250" width="60" height="30"/>
+            <rect class="mt21-block" x="20" y="220" width="40" height="30"/><rect class="mt21-block" x="60" y="220" width="60" height="30"/><rect class="mt21-block" x="120" y="220" width="60" height="30"/><rect class="mt21-block" x="180" y="220" width="80" height="30"/>
+            <rect class="mt21-block" x="20" y="190" width="60" height="30"/><rect class="mt21-block" x="80" y="190" width="60" height="30"/><rect class="mt21-block" x="140" y="190" width="60" height="30"/><rect class="mt21-block" x="200" y="190" width="60" height="30"/>
+            <rect class="mt21-block" x="20" y="160" width="40" height="30"/><rect class="mt21-block" x="60" y="160" width="60" height="30"/><rect class="mt21-block" x="120" y="160" width="60" height="30"/><rect class="mt21-block" x="180" y="160" width="80" height="30"/>
+            <rect class="mt21-block" x="20" y="130" width="60" height="30"/><rect class="mt21-block" x="80" y="130" width="60" height="30"/><rect class="mt21-block" x="140" y="130" width="60" height="30"/><rect class="mt21-block" x="200" y="130" width="60" height="30"/>
+            <rect class="mt21-block" x="96" y="100" width="54" height="30"/><rect class="mt21-block" x="150" y="100" width="60" height="30"/><rect class="mt21-block" x="210" y="100" width="50" height="30"/>
+          </g>
+          <rect class="mt21-slot" x="20" y="100" width="76" height="30"/>
+          <line x1="262" y1="280" x2="400" y2="280" class="mt21-ground"/>
+          <g class="mt21-head">
+            <rect x="300" y="250" width="76" height="30" rx="2"/>
+          </g>
+          <path class="mt21-x" d="M292 242 L384 288 M384 242 L292 288"/>
+          <text class="mt21-tag before" x="338" y="230" text-anchor="middle">“rejected”</text>
+          <text class="mt21-tag after" x="20" y="86">the head of the corner</text>
+        </svg>
+      </div>
+      <div>
+        <h2 class="rise" style="--d:1">The corner stone</h2>
+        <p class="note rise" style="--d:2">Psalm 118 again, the crowd's song of two days before. Builders threw a stone aside as no good.</p>
+        <p class="note step mt21-set">God made it the <em>head of the corner</em>, the stone that holds the walls together.</p>
+        <p class="note step">The leaders rejected Jesus and crucified Him. God raised Him and made Him the one foundation everything else rests on (1 Corinthians 3:11). <em>“This is the Lord’s doing.”</em></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="44"></blockquote>
+    <h2 class="rise" style="--d:1">Broken, or ground to powder</h2>
+    <div class="columns">
+      <div class="col grace step"><p class="who">a man falls on the stone</p><h3>“shall be broken”</h3><p>He comes to Jesus, and his pride breaks. That hurts, and it's the beginning of being made whole.</p></div>
+      <div class="col law step"><p class="who">the stone falls on a man</p><h3>“grind him to powder”</h3><p>He refuses Jesus to the end, and meets Him as Judge.</p></div>
+    </div>
+    <p class="note step">Every man meets this Stone one way or the other. Being broken on Him is mercy. Many of us came to Him broken: hit bottom, out of answers. God doesn't turn that man away:</p>
+    <blockquote class="quote step"><p>“The sacrifices of God are a broken spirit: a broken and a contrite heart, O God, thou wilt not despise.”</p><cite>Psalm 51:17</cite></blockquote>
+    <p class="note step"><em>“Taken from you”</em> (v. 43): the kingdom would go to <em>“a nation bringing forth the fruits thereof,”</em> His people from every nation, Jew and Gentile, who believe.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="45-46" data-hl="they perceived that he spake of them|they feared the multitude"></section>
+
+<!-- ======================= CLOSING ======================= -->
+<section class="slide remember">
+  <div class="inner">
+    <h2 class="rise">Points to remember</h2>
+    <ol class="seeds">
+      <li class="step"><span class="topic">The King</span><span class="seed-q">“Thy King cometh unto thee, meek” <cite>21:5</cite></span><span class="take">He's the King, and He comes gently, on a donkey, to men who need saving.</span></li>
+      <li class="step"><span class="topic">House of prayer</span><span class="seed-q">“My house shall be called the house of prayer” <cite>21:13</cite></span><span class="take">He clears out what doesn't belong. That's how a house gets clean.</span></li>
+      <li class="step"><span class="topic">Fruit</span><span class="seed-q">“Nothing thereon, but leaves only” <cite>21:19</cite></span><span class="take">Leaves are easy. He's looking for fruit, and it grows from staying close to Him.</span></li>
+      <li class="step"><span class="topic">Prayer</span><span class="seed-q">“Whatsoever ye shall ask in prayer, believing, ye shall receive” <cite>21:22</cite></span><span class="take">Bring your mountain to Him, asking in line with His will.</span></li>
+      <li class="step"><span class="topic">Turning around</span><span class="seed-q">“Afterward he repented, and went” <cite>21:29</cite></span><span class="take">It's not how you started. It's whether you turn around and go.</span></li>
+      <li class="step"><span class="topic">The cornerstone</span><span class="seed-q">“The same is become the head of the corner” <cite>21:42</cite></span><span class="take">Men threw Jesus away. God made Him the foundation. Fall on Him and be broken, and be saved.</span></li>
+    </ol>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 1 of 6</p>
+      <span class="topic">The King</span>
+      <h2>What kind of King rode into Jerusalem?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="5"></blockquote>
+      <blockquote class="quote step" data-q="9"></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>A meek King, the Son of David, riding a donkey just as Zechariah said. He came in peace, not on a war horse. He is strong, and He comes gently, to save.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 2 of 6</p>
+      <span class="topic">House of prayer</span>
+      <h2>Why did Jesus turn over the tables in the temple?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="12"></blockquote>
+      <blockquote class="quote step" data-q="13"></blockquote>
+      <blockquote class="quote step" data-q="14"></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>God's house was meant to be a house of prayer for all people, and they had made it a den of thieves. He cleared out the market, then healed the blind and the lame who came to Him there.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 3 of 6</p>
+      <span class="topic">Fruit</span>
+      <h2>What did Jesus find on the fig tree?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="19"></blockquote>
+      <blockquote class="quote step" data-q="20"></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>Nothing but leaves. It looked fruitful and had nothing to give, like the busy temple. Jesus is looking for real fruit in our lives, not just the look of it, and that fruit grows as we abide in Him.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 4 of 6</p>
+      <span class="topic">Prayer</span>
+      <h2>What did Jesus promise about faith and prayer?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="21"></blockquote>
+      <blockquote class="quote step" data-q="22"></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>That faith without doubting can move a mountain, and that what we ask in prayer, believing, we shall receive. The power is God's, and faith asks according to His will. No mountain is too big for Him.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 5 of 6</p>
+      <span class="topic">Turning around</span>
+      <h2>Which of the two sons did the will of his father?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="29"></blockquote>
+      <blockquote class="quote step" data-q="30"></blockquote>
+      <blockquote class="quote step" data-q="31" data-hl="the publicans and the harlots go into the kingdom of God before you"></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>The first, who said “I will not” but afterward repented and went. Fine words don't count; turning around does. That's why publicans and harlots who believed went in ahead of the religious leaders.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 6 of 6</p>
+      <span class="topic">The cornerstone</span>
+      <h2>What happened to the stone the builders rejected?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="42"></blockquote>
+      <blockquote class="quote step" data-q="44"></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>It became the head of the corner. Men rejected Jesus and crucified Him, and God raised Him up and made Him the foundation. The man who falls on Him is broken and saved; the man who refuses Him meets Him as Judge.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide prayer">
+  <div class="inner">
+    <div class="emblem rise"></div>
+    <h2 class="rise" style="--d:1">Prayer requests</h2>
+    <p class="ask-line rise" style="--d:2">What can we pray about for you today?</p>
+    <blockquote class="quote rise" style="--d:4"><p>“This is the day which the LORD hath made; we will rejoice and be glad in it.”</p><cite>Psalm 118:24</cite></blockquote>
+  </div>
+</section>
+
+</main>
+
+<script>
+// King James Version, Matthew chapter 21
+const V = {
+  1: "And when they drew nigh unto Jerusalem, and were come to Bethphage, unto the mount of Olives, then sent Jesus two disciples,",
+  2: "Saying unto them, Go into the village over against you, and straightway ye shall find an ass tied, and a colt with her: loose them, and bring them unto me.",
+  3: "And if any man say ought unto you, ye shall say, The Lord hath need of them; and straightway he will send them.",
+  4: "All this was done, that it might be fulfilled which was spoken by the prophet, saying,",
+  5: "Tell ye the daughter of Sion, Behold, thy King cometh unto thee, meek, and sitting upon an ass, and a colt the foal of an ass.",
+  6: "And the disciples went, and did as Jesus commanded them,",
+  7: "And brought the ass, and the colt, and put on them their clothes, and they set him thereon.",
+  8: "And a very great multitude spread their garments in the way; others cut down branches from the trees, and strawed them in the way.",
+  9: "And the multitudes that went before, and that followed, cried, saying, Hosanna to the Son of David: Blessed is he that cometh in the name of the Lord; Hosanna in the highest.",
+  10: "And when he was come into Jerusalem, all the city was moved, saying, Who is this?",
+  11: "And the multitude said, This is Jesus the prophet of Nazareth of Galilee.",
+  12: "And Jesus went into the temple of God, and cast out all them that sold and bought in the temple, and overthrew the tables of the moneychangers, and the seats of them that sold doves,",
+  13: "And said unto them, It is written, My house shall be called the house of prayer; but ye have made it a den of thieves.",
+  14: "And the blind and the lame came to him in the temple; and he healed them.",
+  15: "And when the chief priests and scribes saw the wonderful things that he did, and the children crying in the temple, and saying, Hosanna to the Son of David; they were sore displeased,",
+  16: "And said unto him, Hearest thou what these say? And Jesus saith unto them, Yea; have ye never read, Out of the mouth of babes and sucklings thou hast perfected praise?",
+  17: "And he left them, and went out of the city into Bethany; and he lodged there.",
+  18: "Now in the morning as he returned into the city, he hungered.",
+  19: "And when he saw a fig tree in the way, he came to it, and found nothing thereon, but leaves only, and said unto it, Let no fruit grow on thee henceforward for ever. And presently the fig tree withered away.",
+  20: "And when the disciples saw it, they marvelled, saying, How soon is the fig tree withered away!",
+  21: "Jesus answered and said unto them, Verily I say unto you, If ye have faith, and doubt not, ye shall not only do this which is done to the fig tree, but also if ye shall say unto this mountain, Be thou removed, and be thou cast into the sea; it shall be done.",
+  22: "And all things, whatsoever ye shall ask in prayer, believing, ye shall receive.",
+  23: "And when he was come into the temple, the chief priests and the elders of the people came unto him as he was teaching, and said, By what authority doest thou these things? and who gave thee this authority?",
+  24: "And Jesus answered and said unto them, I also will ask you one thing, which if ye tell me, I in like wise will tell you by what authority I do these things.",
+  25: "The baptism of John, whence was it? from heaven, or of men? And they reasoned with themselves, saying, If we shall say, From heaven; he will say unto us, Why did ye not then believe him?",
+  26: "But if we shall say, Of men; we fear the people; for all hold John as a prophet.",
+  27: "And they answered Jesus, and said, We cannot tell. And he said unto them, Neither tell I you by what authority I do these things.",
+  28: "But what think ye? A certain man had two sons; and he came to the first, and said, Son, go work to day in my vineyard.",
+  29: "He answered and said, I will not: but afterward he repented, and went.",
+  30: "And he came to the second, and said likewise. And he answered and said, I go, sir: and went not.",
+  31: "Whether of them twain did the will of his father? They say unto him, The first. Jesus saith unto them, Verily I say unto you, That the publicans and the harlots go into the kingdom of God before you.",
+  32: "For John came unto you in the way of righteousness, and ye believed him not: but the publicans and the harlots believed him: and ye, when ye had seen it, repented not afterward, that ye might believe him.",
+  33: "Hear another parable: There was a certain householder, which planted a vineyard, and hedged it round about, and digged a winepress in it, and built a tower, and let it out to husbandmen, and went into a far country:",
+  34: "And when the time of the fruit drew near, he sent his servants to the husbandmen, that they might receive the fruits of it.",
+  35: "And the husbandmen took his servants, and beat one, and killed another, and stoned another.",
+  36: "Again, he sent other servants more than the first: and they did unto them likewise.",
+  37: "But last of all he sent unto them his son, saying, They will reverence my son.",
+  38: "But when the husbandmen saw the son, they said among themselves, This is the heir; come, let us kill him, and let us seize on his inheritance.",
+  39: "And they caught him, and cast him out of the vineyard, and slew him.",
+  40: "When the lord therefore of the vineyard cometh, what will he do unto those husbandmen?",
+  41: "They say unto him, He will miserably destroy those wicked men, and will let out his vineyard unto other husbandmen, which shall render him the fruits in their seasons.",
+  42: "Jesus saith unto them, Did ye never read in the scriptures, The stone which the builders rejected, the same is become the head of the corner: this is the Lord’s doing, and it is marvellous in our eyes?",
+  43: "Therefore say I unto you, The kingdom of God shall be taken from you, and given to a nation bringing forth the fruits thereof.",
+  44: "And whosoever shall fall on this stone shall be broken: but on whomsoever it shall fall, it will grind him to powder.",
+  45: "And when the chief priests and Pharisees had heard his parables, they perceived that he spake of them.",
+  46: "But when they sought to lay hands on him, they feared the multitude, because they took him for a prophet."
+};
+const BOOK = "Matthew 21";
+</script>
+<script src="../assets/deck.js"></script>
+</body>
+</html>
