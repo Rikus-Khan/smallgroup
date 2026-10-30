@@ -8780,5 +8780,117 @@ window.STUDIES = [
       },
       "big": "God hears the man who comes for mercy, not the man who brings his record. Keep praying, come like a child with empty hands, let go of whatever has God's place, and cry out to Jesus. What is impossible with men is possible with God."
     }
+  },
+  {
+    "id": "luke-19",
+    "type": "chapter",
+    "book": "Luke",
+    "ch": 19,
+    "date": "2026-10-29",
+    "title": "Luke 19",
+    "sub": "To seek and to save",
+    "about": "A hated tax man up a tree, ten servants and ten pounds, a King riding a colt down the mount of Olives, and Jesus weeping over Jerusalem.",
+    "tags": [
+      "Salvation",
+      "Grace",
+      "Making amends",
+      "Faithfulness",
+      "Jesus the King",
+      "Jesus' compassion"
+    ],
+    "url": "studies/luke-19.html",
+    "overview": {
+      "where": "Jericho, the road climbing to Jerusalem, Bethphage and Bethany on the mount of Olives, and the temple",
+      "when": "The last days before the Passover at which Jesus was crucified, while Pilate governed Judaea (about AD 30)",
+      "people": [
+        "jesus",
+        "zacchaeus",
+        "publicans",
+        "abraham",
+        "nobleman-kingdom",
+        "disciples",
+        "pharisees",
+        "chief-priests",
+        "scribes"
+      ],
+      "places": [
+        "jericho",
+        "bethphage",
+        "bethany",
+        "mount-of-olives",
+        "jerusalem",
+        "temple"
+      ],
+      "story": [
+        "In Jericho, Zacchaeus, the rich chief of the publicans, is too short to see over the crowd, so he climbs a sycomore tree. Jesus stops, calls him by name, and says, “to day I must abide at thy house.” He comes down and receives Him joyfully (1–6).",
+        "The crowd murmurs that Jesus is the guest of a sinner. Zacchaeus stands and gives half his goods to the poor and restores fourfold to anyone he cheated. Jesus says, “This day is salvation come to this house… For the Son of man is come to seek and to save that which was lost” (7–10).",
+        "Because the people think the kingdom will appear at once, Jesus tells of a nobleman who goes to a far country to receive a kingdom. He gives ten servants a pound each: “Occupy till I come.” The faithful are set over cities; the servant who hid his pound in a napkin loses it; the citizens who would not have him reign are judged (11–27).",
+        "Jesus climbs to the mount of Olives, sends for a colt never ridden, and rides down toward the city. The disciples spread their clothes and shout, “Blessed be the King that cometh in the name of the Lord.” If they were silent, the stones would cry out (28–40).",
+        "Seeing the city, Jesus weeps over it: it did not know the things belonging to its peace, and enemies would one day lay it even with the ground. In the temple He casts out the sellers, “ye have made it a den of thieves,” and teaches daily while the people hang on His words (41–48)."
+      ],
+      "key": {
+        "ref": "Luke 19:10",
+        "text": "For the Son of man is come to seek and to save that which was lost."
+      },
+      "big": "Jesus came looking for the lost and called a crook by name before he changed; making things right followed grace, it didn't buy it. His servants are to be faithful with what He gives until He returns. He came as a King of peace, and He wept over those who missed their day."
+    }
+  },
+  {
+    "id": "luke-20",
+    "type": "chapter",
+    "book": "Luke",
+    "ch": 20,
+    "date": "2026-10-29",
+    "title": "Luke 20",
+    "sub": "By what authority?",
+    "about": "One trap after another in the temple courts: priests, spies and Sadducees try to catch Jesus in His words, and every one of them walks away silent.",
+    "tags": [
+      "Jesus' authority",
+      "Rejection",
+      "Christ the cornerstone",
+      "Church and state",
+      "Resurrection",
+      "Hypocrisy"
+    ],
+    "url": "studies/luke-20.html",
+    "overview": {
+      "where": "The temple in Jerusalem, where Jesus taught the people each day",
+      "when": "The last week before the cross, while Tiberius was Caesar and Pilate governed Judaea (about AD 30)",
+      "people": [
+        "jesus",
+        "chief-priests",
+        "scribes",
+        "elders",
+        "john-the-baptist",
+        "lord-of-the-vineyard",
+        "spies",
+        "caesar",
+        "pilate",
+        "sadducees",
+        "moses",
+        "abraham",
+        "isaac",
+        "jacob",
+        "david"
+      ],
+      "places": [
+        "temple",
+        "the-bush",
+        "markets",
+        "synagogue"
+      ],
+      "story": [
+        "The chief priests, scribes and elders demand to know by what authority Jesus acts. He asks whether the baptism of John was from heaven or of men. Trapped either way, they say they cannot tell, and He does not tell them either (1–8).",
+        "Jesus tells of husbandmen who beat the owner's servants and then kill his beloved son, the heir, to keep the vineyard. The owner will destroy them and give it to others. “The stone which the builders rejected, the same is become the head of the corner” (9–19).",
+        "Spies pretending to be honest ask if it is lawful to pay tribute to Caesar. Jesus asks whose image is on a penny: “Render therefore unto Caesar the things which be Caesar’s, and unto God the things which be God’s” (20–26).",
+        "Sadducees, who deny the resurrection, ask whose wife a woman married to seven brothers will be. Jesus answers that the children of the resurrection neither marry nor die, and that God at the bush called Himself the God of Abraham, Isaac and Jacob: “not a God of the dead, but of the living” (27–40).",
+        "Jesus asks how the Christ can be David's son when David calls him Lord in the Psalms, then warns His disciples against scribes who love long robes and the best seats, devour widows' houses, and make long prayers for a show (41–47)."
+      ],
+      "key": {
+        "ref": "Luke 20:25",
+        "text": "And he said unto them, Render therefore unto Caesar the things which be Caesar’s, and unto God the things which be God’s."
+      },
+      "big": "Jesus answers every trap and silences every critic. The Son whom men rejected is God's cornerstone; give Caesar his coin and give God yourself, since you bear His image; and God is the God of the living, so the resurrection is real. Beware of religion that is only a show."
+    }
   }
 ];

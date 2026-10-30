@@ -1,0 +1,639 @@
+<!doctype html>
+<html lang="en" data-theme="slate">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Luke 20</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="../assets/fonts.css">
+<link rel="stylesheet" href="../assets/deck.css">
+<link rel="stylesheet" href="../assets/themes.css">
+<style>
+/* lk20-corner: a stone thrown on the reject pile is lifted into the empty corner of the wall */
+.lk20-block { fill: color-mix(in srgb, var(--leather-light) 40%, var(--surface)); stroke: var(--leather); stroke-width: 2; }
+.lk20-gap { fill: none; stroke: var(--accent); stroke-width: 2.5; stroke-dasharray: 6 5; }
+.lk20-rubble { fill: color-mix(in srgb, var(--ink-soft) 30%, var(--surface)); stroke: var(--ink-soft); stroke-width: 1.5; }
+.lk20-stone { fill: var(--accent); stroke: var(--accent-hot); stroke-width: 2.5; transform-box: view-box; transition: transform 2s cubic-bezier(.4,.1,.3,1); }
+.slide:has(.lk20-go.on) .lk20-stone { transform: translate(296px, -128px); }
+.lk20-cap { font-size: 16px; fill: var(--ink-soft); }
+.lk20-hot { font-size: 17px; font-weight: 700; fill: var(--accent-hot); }
+.lk20-before { transition: opacity .5s ease; }
+.slide:has(.lk20-go.on) .lk20-before { opacity: 0; }
+.lk20-after { opacity: 0; transition: opacity .8s ease 1.8s; }
+.slide:has(.lk20-go.on) .lk20-after { opacity: 1; }
+
+/* lk20-coin: Caesar's penny turns over, and on the other side is a man made in God's image */
+.lk20-face { transform-box: fill-box; transform-origin: center; }
+.lk20-disc { fill: color-mix(in srgb, var(--warm) 55%, var(--surface)); stroke: var(--leather); stroke-width: 4; }
+.lk20-ring { fill: none; stroke: var(--leather); stroke-width: 1.5; stroke-dasharray: 2 4; }
+.lk20-head { fill: var(--leather); }
+.lk20-rim { font-size: 15px; font-weight: 700; letter-spacing: 2px; fill: var(--leather); }
+.lk20-front { transition: transform .5s ease-in; }
+.lk20-back { transform: scaleX(0); transition: transform .5s ease-out; }
+.slide:has(.lk20-go2.on) .lk20-front { transform: scaleX(0); }
+.slide:has(.lk20-go2.on) .lk20-back { transform: none; transition-delay: .5s; }
+.lk20-man { fill: var(--accent); }
+.lk20-say { font-size: 16px; font-weight: 700; fill: var(--accent-hot); }
+
+/* lk20-seven: seven brothers go out one by one, and the Sadducees' question is left standing */
+.lk20-seven { display: flex; flex-wrap: wrap; gap: .5rem; align-items: center; margin: .6rem 0 .4rem; }
+.lk20-seven > span { display: inline-flex; flex-direction: column; align-items: center; min-width: 3.4rem; padding: .4rem .5rem; border-radius: .6rem; border: 2px solid var(--line-strong); background: var(--surface); color: var(--ink); font-weight: 700; transition: opacity .6s ease, border-color .6s ease; transition-delay: calc(.6s + var(--k) * .45s); }
+.lk20-seven > span small { font-weight: 400; font-size: .75em; color: var(--ink-soft); }
+.slide.active .lk20-seven > span.gone { opacity: .45; border-style: dashed; }
+.lk20-seven > span.her { border-color: var(--accent); color: var(--accent-hot); }
+.lk20-seven > b { font-size: 1.6rem; color: var(--accent-hot); }
+</style>
+</head>
+<body>
+<main class="deck" id="deck">
+
+<!-- ======================= OPENING ======================= -->
+<section class="slide title">
+  <div class="inner">
+    <div class="emblem rise"></div>
+    <h1 class="rise" style="--d:1">Luke 20</h1>
+    <p class="sub rise" style="--d:3">By what authority?</p>
+    <p class="tag rise" style="--d:5">One trap after another in the temple courts: priests, spies and Sadducees try to catch Jesus in His words, and every one of them walks away silent.</p>
+  </div>
+</section>
+
+<section class="slide watch">
+  <div class="inner">
+    <h2 class="rise">Things to watch for</h2>
+    <p class="lede rise" style="--d:1">Keep these questions in the back of your mind as we read. We'll come back to every one of them at the end.</p>
+    <ol class="seeds">
+      <li class="step"><span class="topic">Authority</span><span class="seed-q">When the leaders asked by what authority Jesus did these things, what did He ask them?</span></li>
+      <li class="step"><span class="topic">The beloved son</span><span class="seed-q">Whom did the lord of the vineyard send last, and what did the husbandmen do to him?</span></li>
+      <li class="step"><span class="topic">The stone</span><span class="seed-q">What did Jesus say about the stone which the builders rejected?</span></li>
+      <li class="step"><span class="topic">Caesar and God</span><span class="seed-q">What did Jesus say to render to Caesar, and what to God?</span></li>
+      <li class="step"><span class="topic">The living</span><span class="seed-q">How did Jesus show from Moses that the dead are raised?</span></li>
+      <li class="step"><span class="topic">Beware</span><span class="seed-q">What did Jesus warn His disciples about the scribes?</span></li>
+    </ol>
+  </div>
+</section>
+
+<!-- ======================= PART ONE: AUTHORITY ======================= -->
+<section class="slide part">
+  <div class="inner">
+    <p class="part-n rise">Part one</p>
+    <h2 class="rise" style="--d:1">Who gave thee this authority?</h2>
+    <p class="range rise" style="--d:2">Verses 1–8</p>
+    <div class="rule"></div>
+    <p class="hook rise" style="--d:4">The men who run the temple want to know who Jesus thinks He is.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="1-2" data-hl="as he taught the people in the temple, and preached the gospel|by what authority doest thou these things? or who is he that gave thee this authority?"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise">Questions in the temple</h2>
+    <p class="note rise" style="--d:1">It's the last week before the cross. The day before, Jesus rode in as King and drove the sellers out of the temple (19:45). Now He's teaching there every day, and the people who run the place come at Him with question after question, each one a trap:</p>
+    <ol class="signs rise" style="--d:2">
+      <li class="now"><b>“By what authority?”</b>chief priests, scribes, elders (1–8)</li>
+      <li><b>“Is it lawful to give tribute?”</b>spies (20–26)</li>
+      <li><b>“Whose wife shall she be?”</b>Sadducees (27–38)</li>
+      <li><b>“How is Christ David's son?”</b>Jesus asks (41–44)</li>
+    </ol>
+    <p class="note step">The <em>chief priests</em>, <em>scribes</em> and <em>elders</em> together made up the council that ruled the Jews under Rome. They had their own authority from the temple. Who had given Him any?</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="3-6" data-hl="I will also ask you one thing|The baptism of John, was it from heaven, or of men?|Why then believed ye him not?|all the people will stone us"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="4"></blockquote>
+    <h2 class="rise" style="--d:1">Stuck either way</h2>
+    <p class="note rise" style="--d:2">They huddled up and worked out both answers:</p>
+    <div class="ifthen step">
+      <div class="if"><small>If we say</small>“From heaven,”</div>
+      <span class="arrow" aria-hidden="true">→</span>
+      <div class="then"><small>then</small>“Why then believed ye him not?”</div>
+    </div>
+    <div class="ifthen step">
+      <div class="if"><small>If we say</small>“Of men,”</div>
+      <span class="arrow" aria-hidden="true">→</span>
+      <div class="then"><small>then</small>the people will stone us.</div>
+    </div>
+    <p class="note step">Notice what they never asked: <em>which one is true?</em> Only <em>which one is safe for us?</em></p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="7-8" data-hl="they could not tell whence it was|Neither tell I you by what authority I do these things"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="8"></blockquote>
+    <h2 class="rise" style="--d:1">Not a dodge</h2>
+    <p class="note rise" style="--d:2">Jesus wasn't ducking. His question <em>was</em> the answer. John the Baptist had pointed straight at Him and said who He was:</p>
+    <blockquote class="quote step"><p>“The next day John seeth Jesus coming unto him, and saith, Behold the Lamb of God, which taketh away the sin of the world.”</p><cite>John 1:29</cite></blockquote>
+    <p class="note step">If John was from heaven, so was Jesus' authority. They knew it. They just wouldn't say it. A man who won't be honest about the light he already has won't be given more.</p>
+    <p class="note step">Many of us have been there: we knew the truth, but we were more worried about what it would cost us. Honesty with God starts with “I know, Lord.”</p>
+  </div>
+</section>
+
+<!-- ======================= PART TWO: THE VINEYARD ======================= -->
+<section class="slide part">
+  <div class="inner">
+    <p class="part-n rise">Part two</p>
+    <h2 class="rise" style="--d:1">My beloved son</h2>
+    <p class="range rise" style="--d:2">Verses 9–19</p>
+    <div class="rule"></div>
+    <p class="hook rise" style="--d:4">A story about tenant farmers, told to the faces of the men it was about.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="9-10" data-hl="A certain man planted a vineyard, and let it forth to husbandmen|the husbandmen beat him, and sent him away empty"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="9" data-hl="let it forth to husbandmen"></blockquote>
+    <h2 class="rise" style="--d:1">An owner far away</h2>
+    <p class="note rise" style="--d:2"><em>Husbandmen</em> were tenant farmers. They worked another man's land and paid him a share of the crop at harvest. Absentee owners and angry tenants were a common story in Galilee.</p>
+    <p class="note step">Every Jew listening knew whose vineyard this was. Isaiah had told the same story seven hundred years earlier:</p>
+    <blockquote class="quote step"><p>“For the vineyard of the LORD of hosts is the house of Israel, and the men of Judah his pleasant plant: and he looked for judgment, but behold oppression; for righteousness, but behold a cry.”</p><cite>Isaiah 5:7</cite></blockquote>
+    <p class="note step">God planted His people and looked for fruit. The leaders put in charge of them treated it like their own.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="11-13" data-hl="entreated him shamefully|What shall I do? I will send my beloved son: it may be they will reverence him when they see him"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise">Sent, and sent, and sent again</h2>
+    <ol class="timeline" aria-label="The first servant is beaten and sent away empty. The second is beaten, treated shamefully, and sent away empty. The third is wounded and cast out. Last of all, the owner sends his beloved son.">
+      <li style="--k:0"><b>a servant</b><span>beaten, sent away empty</span></li>
+      <li style="--k:1"><b>another</b><span>beaten, shamed, sent away</span></li>
+      <li style="--k:2"><b>a third</b><span>wounded, cast out</span></li>
+      <li class="lit" style="--k:3"><b>my beloved son</b><span>“they will reverence him”</span><small>the last one</small></li>
+    </ol>
+    <p class="note step">The servants are the prophets God sent to Israel, one after another, over hundreds of years. Most were ignored, many were mistreated, and some were killed.</p>
+    <p class="note step">Any landlord would have sent soldiers by now. This one sends his son. <em>What shall I do?</em> That's how patient God is with people who keep turning Him away.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="14-16" data-hl="This is the heir: come, let us kill him, that the inheritance may be ours|cast him out of the vineyard, and killed him|God forbid"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="14" data-hl="This is the heir"></blockquote>
+    <h2 class="rise" style="--d:1">“Let us kill him”</h2>
+    <p class="note rise" style="--d:2">They knew exactly who he was: <em>This is the heir</em>. They didn't kill him by mistake. They killed him because he was the son, so they could keep the vineyard for themselves.</p>
+    <p class="note step">Jesus is telling the chief priests what they would do to Him within days: take Him out of the city and kill Him. And the crowd gasped, <em>God forbid!</em> May it never be!</p>
+    <p class="note step">The deepest reason men reject Jesus isn't usually that they can't believe. It's that they want to keep running their own lives. The son still came. The Father still sent Him.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="17-19" data-hl="The stone which the builders rejected, the same is become the head of the corner|Whosoever shall fall upon that stone shall be broken|he had spoken this parable against them"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <div class="split">
+      <div class="stage">
+        <svg viewBox="0 0 480 320" role="img" aria-label="A stone wall being built, with the top corner left empty. Below, on the reject pile, lies one stone the builders threw away. On a step it is lifted up into the corner and fits: the head of the corner.">
+          <g class="lk20-block">
+            <rect x="166" y="96" width="70" height="40"/><rect x="236" y="96" width="70" height="40"/><rect x="306" y="96" width="70" height="40"/>
+            <rect x="200" y="136" width="70" height="40"/><rect x="270" y="136" width="70" height="40"/><rect x="340" y="136" width="70" height="40"/><rect x="410" y="136" width="36" height="40"/>
+            <rect x="166" y="176" width="70" height="40"/><rect x="236" y="176" width="70" height="40"/><rect x="306" y="176" width="70" height="40"/><rect x="376" y="176" width="70" height="40"/>
+            <rect x="200" y="216" width="70" height="40"/><rect x="270" y="216" width="70" height="40"/><rect x="340" y="216" width="70" height="40"/><rect x="410" y="216" width="36" height="40"/>
+            <rect x="166" y="256" width="70" height="40"/><rect x="236" y="256" width="70" height="40"/><rect x="306" y="256" width="70" height="40"/><rect x="376" y="256" width="70" height="40"/>
+          </g>
+          <rect class="lk20-gap" x="376" y="96" width="70" height="40"/>
+          <text class="lk20-cap lk20-before" x="411" y="80" text-anchor="middle">the corner: empty</text>
+          <path class="lk20-rubble" d="M20 300 L34 278 L60 284 L66 300 Z M58 300 L74 270 L104 276 L112 300 Z M100 300 L118 282 L142 290 L146 300 Z"/>
+          <rect class="lk20-stone" x="80" y="224" width="70" height="40" rx="2"/>
+          <text class="lk20-cap lk20-before" x="88" y="212" text-anchor="middle">“rejected”</text>
+          <text class="lk20-hot lk20-after" x="411" y="80" text-anchor="middle">the head of the corner</text>
+          <line x1="10" y1="300" x2="470" y2="300" stroke-width="2" style="stroke:var(--line-strong)"/>
+        </svg>
+      </div>
+      <div>
+        <h2 class="rise" style="--d:1">The stone they threw out</h2>
+        <p class="note rise" style="--d:2">Jesus quotes Psalm 118, the same psalm the crowd sang two verses earlier (19:38). The builders looked at a stone, decided it didn't fit, and tossed it on the pile.</p>
+        <p class="note step lk20-go">God picked it up and made it the cornerstone, the one every other stone in the building lines up with. The leaders would reject Jesus, and God would raise Him up.</p>
+        <blockquote class="quote step"><p>“This is the stone which was set at nought of you builders, which is become the head of the corner.”</p><cite>Acts 4:11</cite></blockquote>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="18"></blockquote>
+    <h2 class="rise" style="--d:1">Broken, or ground to powder</h2>
+    <div class="columns">
+      <div class="col grace rise" style="--d:2">
+        <p class="who">Fall on the stone</p>
+        <h3>Broken</h3>
+        <p>A man throws himself on Jesus, and his pride gets broken. It hurts. But a broken man can be put back together.</p>
+      </div>
+      <div class="col law step">
+        <p class="who">The stone falls on him</p>
+        <h3>Ground to powder</h3>
+        <p>A man who never comes will one day meet that stone as his Judge. There's nothing left to mend.</p>
+      </div>
+    </div>
+    <p class="note step">Every man meets this stone one way or the other. Better to be broken now, at the feet of the One who heals the broken, than crushed later.</p>
+    <blockquote class="quote step"><p>“Neither is there salvation in any other: for there is none other name under heaven given among men, whereby we must be saved.”</p><cite>Acts 4:12</cite></blockquote>
+  </div>
+</section>
+
+<!-- ======================= PART THREE: CAESAR ======================= -->
+<section class="slide part">
+  <div class="inner">
+    <p class="part-n rise">Part three</p>
+    <h2 class="rise" style="--d:1">Whose image?</h2>
+    <p class="range rise" style="--d:2">Verses 20–26</p>
+    <div class="rule"></div>
+    <p class="hook rise" style="--d:4">Flattering spies, a question about taxes, and a coin with a face on it.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="20-22" data-hl="sent forth spies, which should feign themselves just men|deliver him unto the power and authority of the governor|Is it lawful for us to give tribute unto Caesar, or no?"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise">The setup</h2>
+    <div class="talk">
+      <p class="rise" style="--d:1"><small>The spies, smiling</small>Master, we know that thou sayest and teachest rightly, neither acceptest thou the person of any. <span class="flag">flattery first</span></p>
+      <p class="step"><small>The spies</small>Is it lawful for us to give tribute unto Caesar, or no?</p>
+    </div>
+    <p class="note step"><em>Tribute</em> was the tax every Jew paid straight to Rome, to <em>Caesar</em>, the emperor Tiberius. People hated it. If Jesus said “pay it,” the crowd would turn on Him. If He said “don't,” the spies would run to the <em>governor</em>, Pilate, and report a rebel.</p>
+    <p class="note step">These men <em>feigned</em> themselves just: they pretended to be honest seekers. Flattery is often the front porch of a trap. Jesus saw straight through it.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="23-24" data-hl="he perceived their craftiness|Whose image and superscription hath it?"></section>
+
+<section class="slide verse" data-v="25-26" data-hl="Render therefore unto Caesar the things which be Caesar’s, and unto God the things which be God’s|they marvelled at his answer"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <div class="split">
+      <div class="stage">
+        <svg viewBox="0 0 400 340" role="img" aria-label="A Roman silver penny with Caesar's head and the words around the edge: Tiberius Caesar, son of the divine Augustus, Augustus. On a step the coin turns over. On the other side is a man, with the words: in the image of God.">
+          <defs><path id="lk20-rimpath" d="M200 300 A 120 120 0 1 1 200.1 300"/></defs>
+          <g class="lk20-face lk20-front">
+            <circle class="lk20-disc" cx="200" cy="180" r="140"/>
+            <circle class="lk20-ring" cx="200" cy="180" r="104"/>
+            <path class="lk20-head" d="M226 112 C 196 98, 160 112, 154 146 C 150 166, 160 176, 150 192 L 138 206 L 152 212 C 150 226, 158 236, 170 236 L 176 262 L 236 262 C 230 240, 240 222, 250 204 C 262 180, 258 130, 226 112 Z"/>
+            <path d="M160 128 C 180 112, 220 106, 248 128" fill="none" stroke-width="5" stroke-dasharray="4 6" style="stroke:var(--warm)"/>
+            <text class="lk20-rim"><textPath href="#lk20-rimpath" startOffset="2%">TI CAESAR DIVI AVG F AVGVSTVS</textPath></text>
+          </g>
+          <g class="lk20-face lk20-back">
+            <circle class="lk20-disc" cx="200" cy="180" r="140"/>
+            <circle class="lk20-ring" cx="200" cy="180" r="104"/>
+            <g class="lk20-man"><circle cx="200" cy="130" r="24"/><path d="M160 250 L166 172 Q200 152 234 172 L240 250 Z"/></g>
+            <text class="lk20-say" x="200" y="304" text-anchor="middle">in the image of God</text>
+            <text class="lk20-say" x="200" y="66" text-anchor="middle" style="font-size:14px">Genesis 1:27</text>
+          </g>
+        </svg>
+      </div>
+      <div>
+        <h2 class="rise" style="--d:1">Caesar's penny</h2>
+        <p class="note rise" style="--d:2">The <em>penny</em> was a Roman silver denarius, a day's pay. On it: Tiberius' head, and the words <em>Tiberius Caesar, son of the divine Augustus</em>. Jesus didn't have one. They did.</p>
+        <p class="note step">It has his picture on it, so give it back to him. Pay your taxes. A believer can be an honest citizen.</p>
+        <p class="note step lk20-go2">But you're stamped with an image too. Caesar gets the coin. God gets <em>you</em>.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <p class="saying rise" style="--d:1">Unto God the things which be <em>God's</em>.</p>
+    <blockquote class="quote rise" style="--d:2"><p>“So God created man in his own image, in the image of God created he him; male and female created he them.”</p><cite>Genesis 1:27</cite></blockquote>
+    <p class="note step">Every man carries God's image, no matter how scratched up and worn down it got. Drink, drugs, prison, years thrown away: the image is still there, and it still says who you belong to.</p>
+    <p class="note step">Caesar wanted a share of what men earned. God wants the man: the heart, the body, the days. Give yourself back to the One whose likeness you bear.</p>
+  </div>
+</section>
+
+<!-- ======================= PART FOUR: THE LIVING ======================= -->
+<section class="slide part">
+  <div class="inner">
+    <p class="part-n rise">Part four</p>
+    <h2 class="rise" style="--d:1">Not a God of the dead</h2>
+    <p class="range rise" style="--d:2">Verses 27–40</p>
+    <div class="rule"></div>
+    <p class="hook rise" style="--d:4">Men who don't believe in the resurrection bring Jesus a riddle about it.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="27-28" data-hl="the Sadducees, which deny that there is any resurrection|his brother should take his wife, and raise up seed unto his brother"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="27" data-hl="which deny that there is any resurrection"></blockquote>
+    <h2 class="rise" style="--d:1">The Sadducees</h2>
+    <p class="note rise" style="--d:2">The <em>Sadducees</em> were the wealthy priestly party; the high priest's family were Sadducees. They held mainly to the five books of Moses, and they said this life is all there is:</p>
+    <blockquote class="quote step"><p>“For the Sadducees say that there is no resurrection, neither angel, nor spirit: but the Pharisees confess both.”</p><cite>Acts 23:8</cite></blockquote>
+    <p class="note step">They start with a real law of Moses. If a man died with no children, his brother married the widow, so the dead man's name and land would carry on:</p>
+    <blockquote class="quote step"><p>“If brethren dwell together, and one of them die, and have no child, the wife of the dead shall not marry without unto a stranger: her husband’s brother shall go in unto her, and take her to him to wife, and perform the duty of an husband’s brother unto her.”</p><cite>Deuteronomy 25:5</cite></blockquote>
+  </div>
+</section>
+
+<section class="slide verse" data-v="29-33" data-hl="There were therefore seven brethren|Last of all the woman died also|whose wife of them is she? for seven had her to wife"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise">Seven brothers, one riddle</h2>
+    <div class="lk20-seven" aria-label="Seven brothers, one after another, marry the woman and die without children. Last of all the woman dies. Their question: whose wife is she?">
+      <span class="gone" style="--k:0">1<small>died</small></span><span class="gone" style="--k:1">2<small>died</small></span><span class="gone" style="--k:2">3<small>died</small></span><span class="gone" style="--k:3">4<small>died</small></span><span class="gone" style="--k:4">5<small>died</small></span><span class="gone" style="--k:5">6<small>died</small></span><span class="gone" style="--k:6">7<small>died</small></span>
+      <span class="her gone" style="--k:7">the woman<small>last of all</small></span>
+      <b>?</b>
+    </div>
+    <p class="note rise" style="--d:3">It's a made-up story meant to make the resurrection look silly. Seven husbands in heaven? Who gets her? They'd probably used it to win arguments with the Pharisees for years.</p>
+    <p class="note step">The riddle only works if the next life is just this life, carried on. That's the mistake Jesus is about to show them.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="34-36" data-hl="neither marry, nor are given in marriage|Neither can they die any more|being the children of the resurrection"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise">This world, and that world</h2>
+    <div class="columns">
+      <div class="col law rise" style="--d:1">
+        <p class="who">The children of this world</p>
+        <h3>Marry, and die</h3>
+        <p>Marriage is God's good gift for this life, and children carry a family on, because men die.</p>
+      </div>
+      <div class="col grace step">
+        <p class="who">The children of the resurrection</p>
+        <h3>Can't die any more</h3>
+        <p>No more dying, so no need for heirs. <em>Equal unto the angels</em>: deathless like them. Not turned into angels, but raised whole as the children of God.</p>
+      </div>
+    </div>
+    <p class="note step">The Sadducees pictured heaven as more of the same. Jesus says it's a different order of life altogether. Our questions about it are often too small, not too big.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="37-40" data-hl="even Moses shewed at the bush|the God of Abraham, and the God of Isaac, and the God of Jacob|For he is not a God of the dead, but of the living: for all live unto him|they durst not ask him any question at all"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="37" data-hl="at the bush"></blockquote>
+    <h2 class="rise" style="--d:1">“I am,” not “I was”</h2>
+    <p class="note rise" style="--d:2">They trusted Moses, so Jesus answered from Moses. At the burning bush, hundreds of years after those men were buried, God said:</p>
+    <blockquote class="quote step"><p>“Moreover he said, I am the God of thy father, the God of Abraham, the God of Isaac, and the God of Jacob. And Moses hid his face; for he was afraid to look upon God.”</p><cite>Exodus 3:6</cite></blockquote>
+    <p class="note step">Not “I <em>was</em> their God.” <em>I am.</em> God doesn't call Himself the God of a pile of bones. <em>All live unto him</em>. Even the scribes said, <em>Master, thou hast well said</em>, and nobody dared ask Him anything else.</p>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <p class="saying rise" style="--d:1">He is not a God of the dead, but of the <em>living</em>.</p>
+    <p class="note rise" style="--d:3">Many of us have buried friends: overdoses, wrecks, fights, bodies that gave out too young. Some of us came close ourselves. Death is real, and it hurts.</p>
+    <p class="note step">But it doesn't get the last word. For everyone who belongs to Jesus, the grave is not the end of the story.</p>
+    <blockquote class="quote step"><p>“Jesus said unto her, I am the resurrection, and the life: he that believeth in me, though he were dead, yet shall he live:”</p><cite>John 11:25</cite></blockquote>
+  </div>
+</section>
+
+<!-- ======================= PART FIVE: DAVID'S LORD ======================= -->
+<section class="slide part">
+  <div class="inner">
+    <p class="part-n rise">Part five</p>
+    <h2 class="rise" style="--d:1">David's son, David's Lord</h2>
+    <p class="range rise" style="--d:2">Verses 41–47</p>
+    <div class="rule"></div>
+    <p class="hook rise" style="--d:4">Now Jesus asks the question, and then warns about men who love to be seen.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="41-44" data-hl="How say they that Christ is David’s son?|The LORD said unto my Lord, Sit thou on my right hand|David therefore calleth him Lord, how is he then his son?"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="42-43" data-hl="The LORD said unto my Lord"></blockquote>
+    <h2 class="rise" style="--d:1">How can both be true?</h2>
+    <p class="note rise" style="--d:2">Everyone agreed the <em>Christ</em> would be <em>David's son</em>, a king from David's family. But in Psalm 110 David calls Him <em>my Lord</em>. No father calls his own son “my Lord.” Unless the son is greater than the father.</p>
+    <div class="columns">
+      <div class="col law step">
+        <p class="who">By birth</p>
+        <h3>David's son</h3>
+        <p>Born of Mary, of David's line: “the Lord God shall give unto him the throne of his father David” (Luke 1:32).</p>
+      </div>
+      <div class="col grace step">
+        <p class="who">Before David ever lived</p>
+        <h3>David's Lord</h3>
+        <p>The eternal Son of God, now seated at the Father's right hand until every enemy bows.</p>
+      </div>
+    </div>
+    <p class="note step">The answer to the riddle was standing right in front of them in the temple.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="45-47" data-hl="Beware of the scribes|desire to walk in long robes|devour widows’ houses, and for a shew make long prayers|the same shall receive greater damnation"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="46" data-hl="Beware of the scribes"></blockquote>
+    <h2 class="rise" style="--d:1">Religion for show</h2>
+    <div class="columns">
+      <div class="col grace rise" style="--d:2">
+        <p class="who">What they loved in public</p>
+        <h3>To be seen</h3>
+        <p><em>Long robes</em> that marked them as important. Greetings in the <em>markets</em>. The <em>highest seats</em> in the synagogue, the <em>chief rooms</em> at feasts.</p>
+      </div>
+      <div class="col law step">
+        <p class="who">What they did in private</p>
+        <h3>Devour widows' houses</h3>
+        <p>They took advantage of the poorest people in town, likely by handling their estates and taking their homes. Then they covered it with long, loud prayers.</p>
+      </div>
+    </div>
+    <p class="note step"><em>Greater damnation</em>: the more you know, and the more you use God's name as a cover, the heavier the judgment. Jesus isn't impressed by a show. He wants an honest heart.</p>
+    <p class="note step">The very next thing Luke shows us is a poor widow giving everything she had (21:1–4). That's the real thing.</p>
+  </div>
+</section>
+
+<!-- ======================= CLOSING ======================= -->
+<section class="slide remember">
+  <div class="inner">
+    <h2 class="rise">Points to remember</h2>
+    <ol class="seeds">
+      <li class="step"><span class="topic">Authority</span><span class="seed-q">“The baptism of John, was it from heaven, or of men?” <cite>20:4</cite></span><span class="take">They cared what was safe, not what was true. Be honest with the light you have.</span></li>
+      <li class="step"><span class="topic">The beloved son</span><span class="seed-q">“I will send my beloved son” <cite>20:13</cite></span><span class="take">God kept sending, last of all His Son, and men killed Him.</span></li>
+      <li class="step"><span class="topic">The stone</span><span class="seed-q">“The same is become the head of the corner” <cite>20:17</cite></span><span class="take">The One men threw away, God made the cornerstone. Be broken on Him now.</span></li>
+      <li class="step"><span class="topic">Caesar and God</span><span class="seed-q">“Unto God the things which be God’s” <cite>20:25</cite></span><span class="take">Caesar gets the coin. God gets the man who bears His image.</span></li>
+      <li class="step"><span class="topic">The living</span><span class="seed-q">“Not a God of the dead, but of the living” <cite>20:38</cite></span><span class="take">God is still the God of those who died. The resurrection is real.</span></li>
+      <li class="step"><span class="topic">Beware</span><span class="seed-q">“Beware of the scribes” <cite>20:46</cite></span><span class="take">Religion for show hides cruelty. God wants honest hearts.</span></li>
+    </ol>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 1 of 6</p>
+      <span class="topic">Authority</span>
+      <h2>When the leaders asked by what authority Jesus did these things, what did He ask them?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="2"></blockquote>
+      <blockquote class="quote step" data-q="4"></blockquote>
+      <blockquote class="quote step" data-q="7"></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>“The baptism of John, was it from heaven, or of men?” If they admitted John was from God, they would have to admit that Jesus, whom John pointed to, was too. They wouldn't, so they said they couldn't tell.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 2 of 6</p>
+      <span class="topic">The beloved son</span>
+      <h2>Whom did the lord of the vineyard send last, and what did the husbandmen do to him?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="13"></blockquote>
+      <blockquote class="quote step" data-q="14"></blockquote>
+      <blockquote class="quote step" data-q="15"></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>His beloved son. They recognized him as the heir, cast him out of the vineyard, and killed him, so they could keep it. Jesus was telling the leaders what they were about to do to Him.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 3 of 6</p>
+      <span class="topic">The stone</span>
+      <h2>What did Jesus say about the stone which the builders rejected?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="17"></blockquote>
+      <blockquote class="quote step" data-q="18"></blockquote>
+      <blockquote class="quote step"><p>“Neither is there salvation in any other: for there is none other name under heaven given among men, whereby we must be saved.”</p><cite>Acts 4:12</cite></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>It is become the head of the corner. The One the leaders rejected, God raised up as the cornerstone. Whoever falls on that stone is broken; whoever it falls on is ground to powder.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 4 of 6</p>
+      <span class="topic">Caesar and God</span>
+      <h2>What did Jesus say to render to Caesar, and what to God?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="24"></blockquote>
+      <blockquote class="quote step" data-q="25"></blockquote>
+      <blockquote class="quote step"><p>“So God created man in his own image, in the image of God created he him; male and female created he them.”</p><cite>Genesis 1:27</cite></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>Render unto Caesar the things which be Caesar's: the coin that carries his image. And unto God the things which be God's: ourselves, because we carry His image.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 5 of 6</p>
+      <span class="topic">The living</span>
+      <h2>How did Jesus show from Moses that the dead are raised?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="37"></blockquote>
+      <blockquote class="quote step" data-q="38"></blockquote>
+      <blockquote class="quote step"><p>“Jesus said unto her, I am the resurrection, and the life: he that believeth in me, though he were dead, yet shall he live:”</p><cite>John 11:25</cite></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>At the burning bush, long after Abraham, Isaac and Jacob had died, God called Himself their God. He is not a God of the dead, but of the living: all live unto Him.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 6 of 6</p>
+      <span class="topic">Beware</span>
+      <h2>What did Jesus warn His disciples about the scribes?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="46"></blockquote>
+      <blockquote class="quote step" data-q="47"></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>Beware of them. They loved long robes, greetings, and the best seats, while they devoured widows' houses and made long prayers for show. They will receive greater damnation.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide prayer">
+  <div class="inner">
+    <div class="emblem rise"></div>
+    <h2 class="rise" style="--d:1">Prayer requests</h2>
+    <p class="ask-line rise" style="--d:2">What can we pray about for you today?</p>
+    <blockquote class="quote rise" style="--d:4"><p>“Jesus said unto her, I am the resurrection, and the life: he that believeth in me, though he were dead, yet shall he live:”</p><cite>John 11:25</cite></blockquote>
+  </div>
+</section>
+
+</main>
+
+<script>
+// King James Version, Luke chapter 20
+const V = {
+  1: "And it came to pass, that on one of those days, as he taught the people in the temple, and preached the gospel, the chief priests and the scribes came upon him with the elders,",
+  2: "And spake unto him, saying, Tell us, by what authority doest thou these things? or who is he that gave thee this authority?",
+  3: "And he answered and said unto them, I will also ask you one thing; and answer me:",
+  4: "The baptism of John, was it from heaven, or of men?",
+  5: "And they reasoned with themselves, saying, If we shall say, From heaven; he will say, Why then believed ye him not?",
+  6: "But and if we say, Of men; all the people will stone us: for they be persuaded that John was a prophet.",
+  7: "And they answered, that they could not tell whence it was.",
+  8: "And Jesus said unto them, Neither tell I you by what authority I do these things.",
+  9: "Then began he to speak to the people this parable; A certain man planted a vineyard, and let it forth to husbandmen, and went into a far country for a long time.",
+  10: "And at the season he sent a servant to the husbandmen, that they should give him of the fruit of the vineyard: but the husbandmen beat him, and sent him away empty.",
+  11: "And again he sent another servant: and they beat him also, and entreated him shamefully, and sent him away empty.",
+  12: "And again he sent a third: and they wounded him also, and cast him out.",
+  13: "Then said the lord of the vineyard, What shall I do? I will send my beloved son: it may be they will reverence him when they see him.",
+  14: "But when the husbandmen saw him, they reasoned among themselves, saying, This is the heir: come, let us kill him, that the inheritance may be ours.",
+  15: "So they cast him out of the vineyard, and killed him. What therefore shall the lord of the vineyard do unto them?",
+  16: "He shall come and destroy these husbandmen, and shall give the vineyard to others. And when they heard it, they said, God forbid.",
+  17: "And he beheld them, and said, What is this then that is written, The stone which the builders rejected, the same is become the head of the corner?",
+  18: "Whosoever shall fall upon that stone shall be broken; but on whomsoever it shall fall, it will grind him to powder.",
+  19: "And the chief priests and the scribes the same hour sought to lay hands on him; and they feared the people: for they perceived that he had spoken this parable against them.",
+  20: "And they watched him, and sent forth spies, which should feign themselves just men, that they might take hold of his words, that so they might deliver him unto the power and authority of the governor.",
+  21: "And they asked him, saying, Master, we know that thou sayest and teachest rightly, neither acceptest thou the person of any, but teachest the way of God truly:",
+  22: "Is it lawful for us to give tribute unto Caesar, or no?",
+  23: "But he perceived their craftiness, and said unto them, Why tempt ye me?",
+  24: "Shew me a penny. Whose image and superscription hath it? They answered and said, Caesar’s.",
+  25: "And he said unto them, Render therefore unto Caesar the things which be Caesar’s, and unto God the things which be God’s.",
+  26: "And they could not take hold of his words before the people: and they marvelled at his answer, and held their peace.",
+  27: "Then came to him certain of the Sadducees, which deny that there is any resurrection; and they asked him,",
+  28: "Saying, Master, Moses wrote unto us, If any man’s brother die, having a wife, and he die without children, that his brother should take his wife, and raise up seed unto his brother.",
+  29: "There were therefore seven brethren: and the first took a wife, and died without children.",
+  30: "And the second took her to wife, and he died childless.",
+  31: "And the third took her; and in like manner the seven also: and they left no children, and died.",
+  32: "Last of all the woman died also.",
+  33: "Therefore in the resurrection whose wife of them is she? for seven had her to wife.",
+  34: "And Jesus answering said unto them, The children of this world marry, and are given in marriage:",
+  35: "But they which shall be accounted worthy to obtain that world, and the resurrection from the dead, neither marry, nor are given in marriage:",
+  36: "Neither can they die any more: for they are equal unto the angels; and are the children of God, being the children of the resurrection.",
+  37: "Now that the dead are raised, even Moses shewed at the bush, when he calleth the Lord the God of Abraham, and the God of Isaac, and the God of Jacob.",
+  38: "For he is not a God of the dead, but of the living: for all live unto him.",
+  39: "Then certain of the scribes answering said, Master, thou hast well said.",
+  40: "And after that they durst not ask him any question at all.",
+  41: "And he said unto them, How say they that Christ is David’s son?",
+  42: "And David himself saith in the book of Psalms, The LORD said unto my Lord, Sit thou on my right hand,",
+  43: "Till I make thine enemies thy footstool.",
+  44: "David therefore calleth him Lord, how is he then his son?",
+  45: "Then in the audience of all the people he said unto his disciples,",
+  46: "Beware of the scribes, which desire to walk in long robes, and love greetings in the markets, and the highest seats in the synagogues, and the chief rooms at feasts;",
+  47: "Which devour widows’ houses, and for a shew make long prayers: the same shall receive greater damnation."
+};
+const BOOK = "Luke 20";
+</script>
+<script src="../assets/deck.js"></script>
+</body>
+</html>
