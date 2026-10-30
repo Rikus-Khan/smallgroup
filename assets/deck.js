@@ -150,8 +150,9 @@
   const chapterOf = bookRef.match(/^(.+) (\d+)$/);
   const studyId = location.pathname.split("/").pop().replace(/\.html$/, "");
   const contents = chapterOf ? `${home}#book=${encodeURIComponent(chapterOf[1])}` : "";
-  if (chapterOf && studyId) document.querySelector(".slide.title .inner")?.insertAdjacentHTML("beforeend",
-    `<a class="to-overview rise" style="--d:7" href="${home.replace(/index\.html$/, "")}overview.html?id=${encodeURIComponent(studyId)}">Chapter overview</a>`);
+  const topical = /^(topic|doctrine|concept)-/.test(studyId);   // topic studies get the same link
+  if ((chapterOf || topical) && studyId) document.querySelector(".slide.title .inner")?.insertAdjacentHTML("beforeend",
+    `<a class="to-overview rise" style="--d:7" href="${home.replace(/index\.html$/, "")}overview.html?id=${encodeURIComponent(studyId)}">${topical ? "Overview" : "Chapter overview"}</a>`);
   document.body.insertAdjacentHTML("afterbegin", `<div class="ambient" aria-hidden="true">
     <div class="sky"></div><div class="stars"></div>
     <div class="liquid"><svg viewBox="0 0 1200 18" preserveAspectRatio="none"><path d="M0 9 Q75 0 150 9 T300 9 T450 9 T600 9 T750 9 T900 9 T1050 9 T1200 9 V18 H0 Z"/></svg></div>
