@@ -6398,6 +6398,102 @@ window.STUDIES = [
     }
   },
   {
+    "id": "matthew-18",
+    "type": "chapter",
+    "book": "Matthew",
+    "ch": 18,
+    "date": "2026-10-29",
+    "title": "Matthew 18",
+    "sub": "Seventy times seven",
+    "about": "The disciples argue about who is greatest. Jesus sets a little child among them, warns against causing believers to fall, goes after the one lost sheep, shows how to win back a brother, and tells of a forgiven servant who would not forgive.",
+    "tags": [
+      "Humility",
+      "Temptation",
+      "The lost sheep",
+      "Restoring a brother",
+      "Forgiveness",
+      "Grace"
+    ],
+    "url": "studies/matthew-18.html",
+    "overview": {
+      "where": "Capernaum, in a house, back from the road (17:24; Mark 9:33)",
+      "when": "About AD 29, late in Jesus' ministry in Galilee",
+      "people": [
+        "jesus",
+        "disciples",
+        "simon-peter",
+        "the-father"
+      ],
+      "places": [
+        "capernaum",
+        "galilee"
+      ],
+      "story": [
+        "The disciples ask who is greatest in the kingdom of heaven. Jesus sets a little child among them: except ye be converted, and become as little children, ye shall not enter in (1–5).",
+        "Whoever causes one of these little ones to fall would be better off drowned with a millstone. Cut off whatever makes you fall: better to enter life maimed than be cast into hell fire (6–9).",
+        "Despise not the little ones. The Son of man came to save the lost, and a shepherd leaves the ninety and nine to seek the one gone astray (10–14).",
+        "If a brother trespasses, go to him alone, then with one or two witnesses, then tell the church. Where two or three gather in His name, He is in the midst (15–20).",
+        "Peter asks if seven times is enough to forgive. Jesus says, “Until seventy times seven” (21–22).",
+        "A king forgives a servant ten thousand talents. That servant chokes a fellowservant over a hundred pence, and the king hands him to the tormentors. So forgive from the heart (23–35)."
+      ],
+      "key": {
+        "ref": "Matthew 18:22",
+        "text": "Jesus saith unto him, I say not unto thee, Until seven times: but, Until seventy times seven."
+      },
+      "big": "In God's kingdom, greatness means going low like a child. Jesus guards the weakest believer, seeks the one who wanders, and teaches us to win back a brother. We have been forgiven a debt we could never pay, so we forgive others from the heart, without keeping score."
+    }
+  },
+  {
+    "id": "matthew-19",
+    "type": "chapter",
+    "book": "Matthew",
+    "ch": 19,
+    "date": "2026-10-29",
+    "title": "Matthew 19",
+    "sub": "With God all things are possible",
+    "about": "Jesus leaves Galilee for Judaea beyond Jordan. He answers the Pharisees about divorce from God's plan in the beginning, blesses little children, and tells a rich young man to sell all and follow Him.",
+    "tags": [
+      "Marriage",
+      "Divorce",
+      "Children",
+      "Riches",
+      "Salvation",
+      "Reward"
+    ],
+    "url": "studies/matthew-19.html",
+    "overview": {
+      "where": "Judaea beyond Jordan (Perea), east of the Jordan River, on the way to Jerusalem",
+      "when": "About AD 30, in the months before the cross",
+      "people": [
+        "jesus",
+        "pharisees",
+        "moses",
+        "disciples",
+        "rich-young-ruler",
+        "simon-peter"
+      ],
+      "places": [
+        "galilee",
+        "judaea",
+        "beyond-jordan",
+        "jordan"
+      ],
+      "story": [
+        "Jesus leaves Galilee for the coasts of Judaea beyond Jordan, and great multitudes follow Him to be healed (1–2).",
+        "Pharisees test Him: may a man put away his wife for every cause? Jesus points to the beginning: male and female, one flesh. What God hath joined, let not man put asunder (3–6).",
+        "Moses allowed divorce because of the hardness of their hearts, but from the beginning it was not so. Jesus names fornication as the exception, and speaks of some who stay unmarried for the kingdom (7–12).",
+        "The disciples turn away little children. Jesus says, “Suffer little children… to come unto me,” and lays His hands on them (13–15).",
+        "A rich young man asks what good thing he must do for eternal life. Told to sell all and follow Jesus, he goes away sorrowful, for he had great possessions (16–22).",
+        "A camel goes through a needle's eye more easily than a rich man enters the kingdom. With men it is impossible, but with God all things are possible. Those who leave all for Him receive an hundredfold and everlasting life (23–30)."
+      ],
+      "key": {
+        "ref": "Matthew 19:26",
+        "text": "But Jesus beheld them, and said unto them, With men this is impossible; but with God all things are possible."
+      },
+      "big": "God made marriage one man and one woman, joined by Him for life, and His grace covers our failures. Jesus welcomes the small and the helpless. No one can save himself by money or rule-keeping, but with God all things are possible, and nothing given up to follow Jesus is lost."
+    }
+  },
+  {
     "id": "mark-01",
     "type": "chapter",
     "book": "Mark",
