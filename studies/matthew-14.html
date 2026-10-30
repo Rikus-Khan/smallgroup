@@ -1,0 +1,596 @@
+<!doctype html>
+<html lang="en" data-theme="slate">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Matthew 14</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="../assets/fonts.css">
+<link rel="stylesheet" href="../assets/deck.css">
+<link rel="stylesheet" href="../assets/themes.css">
+<style>
+/* mt14-map: a cropped data-land map, with town names, dots and lines scaled down to fit the crop */
+.mt14-map .map-town text { font-size: var(--mt14-t, 11px); }
+.mt14-map .map-town > circle:not(.map-ping) { r: var(--mt14-r, 3.6px); }
+.mt14-map .map-town > .map-ping { r: calc(var(--mt14-r, 3.6px) + 2px); stroke-width: 2px; }
+.mt14-map .map-region { font-size: var(--mt14-g, 10px); }
+.mt14-map .map-water { font-size: var(--mt14-g, 10px); }
+.mt14-small { font-size: var(--mt14-g, 10px); }
+.mt14-land { fill: color-mix(in srgb, var(--accent) 16%, transparent); stroke: color-mix(in srgb, var(--accent) 60%, transparent); stroke-width: 1.4; stroke-dasharray: 4 3; }
+.mt14-fort { fill: var(--danger); }
+.mt14-fort-t { font-weight: 700; fill: var(--danger); }
+.mt14-boat { fill: var(--accent-hot); }
+
+/* mt14-tree: a family tree in boxes. .mt14-kin rows of .mt14-who cards; the .mt14-left card shows Herodias leaving one husband for the other */
+.mt14-tree { display: grid; gap: .5rem; margin: .4em 0 1em; text-align: center; }
+.mt14-kin { display: grid; grid-template-columns: repeat(3, 1fr); gap: .6rem; }
+.mt14-kin.top { grid-template-columns: 1fr; justify-items: center; }
+.mt14-who { position: relative; padding: .45em .6em; border: 1.5px solid var(--line-strong); border-radius: 8px; background: var(--surface); }
+.mt14-who b { display: block; font: 600 clamp(1rem, .88rem + .5vw, 1.35rem) var(--serif); color: var(--ink); }
+.mt14-who span { display: block; font-size: clamp(.78rem, .72rem + .3vw, .98rem); line-height: 1.3; color: var(--ink-soft); }
+.mt14-who.her { border-color: var(--wine); }
+.mt14-who.her b { color: var(--wine); }
+.mt14-who.now { border-color: var(--accent); background: color-mix(in srgb, var(--accent) 10%, var(--surface)); }
+.mt14-who.now b { color: var(--accent-hot); }
+.mt14-down { height: 1.1rem; width: 2px; margin: -.2rem auto; background: var(--line-strong); }
+.mt14-left { font-size: clamp(.85rem, .8rem + .3vw, 1.05rem); color: var(--wine); font-weight: 700; }
+
+/* mt14-walk: Peter steps out of the boat and walks toward Jesus on the water at night. On .mt14-sink the wind rises
+   and he goes down; on .mt14-catch Jesus' hand reaches him and pulls him up. The panel is night in every theme. */
+.mt14-sky { fill: var(--on-glow); }
+.mt14-moon { fill: var(--glow); opacity: .85; }
+.mt14-wave { fill: color-mix(in srgb, var(--cool) 45%, var(--on-glow)); }
+.mt14-wave.front { fill: color-mix(in srgb, var(--cool) 62%, var(--on-glow)); }
+.slide.active .mt14-wave { animation: mt14-roll 3s linear infinite; }
+.slide.active .mt14-wave.front { animation-duration: 2.2s; animation-direction: reverse; }
+@keyframes mt14-roll { to { transform: translateX(-120px); } }
+.mt14-hull { fill: var(--leather); stroke: var(--leather-light); stroke-width: 2; }
+.mt14-men { fill: color-mix(in srgb, var(--glow) 55%, var(--on-glow)); }
+.mt14-lord { fill: var(--glow); }
+.mt14-halo { fill: var(--glow); opacity: .14; }
+.mt14-arm { fill: none; stroke: var(--glow); stroke-width: 6; stroke-linecap: round; transform-box: view-box; transform-origin: 470px 150px; transform: rotate(-8deg); transition: transform 1s cubic-bezier(.3,.7,.3,1); }
+.mt14-peter { fill: var(--warm); transform-box: fill-box; transform-origin: 50% 50%; transform: translate(0, 0); transition: transform 2.4s ease-in-out .4s; }
+.slide.active .mt14-peter { transform: translate(200px, 0); }
+.slide.active:has(.mt14-sink.on) .mt14-peter { transform: translate(236px, 46px) rotate(6deg); transition: transform 1.6s ease-in; }
+.slide.active:has(.mt14-catch.on) .mt14-peter { transform: translate(262px, 4px); transition: transform .9s cubic-bezier(.3,.7,.3,1); }
+.slide:has(.mt14-catch.on) .mt14-arm { transform: rotate(52deg); }
+.mt14-gust { stroke: var(--glow); stroke-width: 2.5; stroke-linecap: round; opacity: 0; }
+.slide:has(.mt14-sink.on) .mt14-gust { animation: mt14-gust 1.3s linear infinite; animation-delay: calc(var(--k) * .3s); }
+@keyframes mt14-gust { 0% { opacity: 0; transform: translateX(60px); } 30% { opacity: .7; } 100% { opacity: 0; transform: translateX(-160px); } }
+.mt14-say { font: 700 19px var(--sans); fill: var(--glow); transition: opacity .8s ease; }
+.mt14-say.b, .mt14-say.c { opacity: 0; }
+.slide:has(.mt14-sink.on) .mt14-say.a { opacity: 0; }
+.slide:has(.mt14-sink.on) .mt14-say.b { opacity: 1; }
+.slide:has(.mt14-catch.on) .mt14-say.b { opacity: 0; }
+.slide:has(.mt14-catch.on) .mt14-say.c { opacity: 1; }
+</style>
+</head>
+<body>
+<main class="deck" id="deck">
+
+<!-- ======================= OPENING ======================= -->
+<section class="slide title">
+  <div class="inner">
+    <div class="emblem rise"></div>
+    <h1 class="rise" style="--d:1">Matthew 14</h1>
+    <p class="sub rise" style="--d:3">It is I; be not afraid</p>
+    <p class="tag rise" style="--d:5">A king's foolish oath costs John the Baptist his life. Jesus feeds five thousand men with five loaves, walks on a stormy sea, and catches Peter when he sinks.</p>
+  </div>
+</section>
+
+<section class="slide watch">
+  <div class="inner">
+    <h2 class="rise">Things to watch for</h2>
+    <p class="lede rise" style="--d:1">Keep these questions in the back of your mind as we read. We'll come back to every one of them at the end.</p>
+    <ol class="seeds">
+      <li class="step"><span class="topic">Conscience</span><span class="seed-q">What does a guilty conscience do to a man?</span></li>
+      <li class="step"><span class="topic">Fear of man</span><span class="seed-q">Why did Herod keep a promise he was sorry he made?</span></li>
+      <li class="step"><span class="topic">Grief</span><span class="seed-q">What did Jesus do when He heard John was dead?</span></li>
+      <li class="step"><span class="topic">Little is much</span><span class="seed-q">What can Jesus do with what little we bring Him?</span></li>
+      <li class="step"><span class="topic">Eyes on Jesus</span><span class="seed-q">Why did Peter begin to sink?</span></li>
+      <li class="step"><span class="topic">Rescue</span><span class="seed-q">What does Jesus do when a man cries, Lord, save me?</span></li>
+    </ol>
+  </div>
+</section>
+
+<!-- ======================= PART ONE: HEROD AND JOHN ======================= -->
+<section class="slide part">
+  <div class="inner">
+    <p class="part-n rise">Part one</p>
+    <h2 class="rise" style="--d:1">For the oath's sake</h2>
+    <p class="range rise" style="--d:2">Verses 1–12</p>
+    <div class="rule"></div>
+    <p class="hook rise" style="--d:4">A king who couldn't stand to look weak, a woman with a grudge, and a prophet who told the truth.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="1-2" data-hl="Herod the tetrarch heard of the fame of Jesus|This is John the Baptist; he is risen from the dead"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="1" data-hl="Herod the tetrarch"></blockquote>
+    <div class="split">
+      <div class="stage">
+        <svg class="map mt14-map" data-land viewBox="110 30 250 460" data-towns="Tiberias!:l, Capernaum:r, Jerusalem:l" role="img" aria-label="Map of the land. The two parts Herod Antipas ruled are shaded: Galilee, west of the Sea of Galilee, and Perea, east of the Jordan. His capital, Tiberias, is on the lake. The fortress of Machaerus is east of the Dead Sea, at the south end of Perea.">
+          <path class="mt14-land rise" style="--d:2" d="M150 70 C190 60 250 56 276 60 L280 110 L266 172 L266 214 C230 222 180 212 140 219 C150 180 158 130 150 70 Z"/>
+          <path class="mt14-land rise" style="--d:2" d="M272 232 C290 228 312 230 322 236 L324 448 C300 452 280 450 268 446 C266 400 272 340 266 292 C268 270 270 250 272 232 Z"/>
+          <g class="rise" style="--d:4">
+            <rect class="mt14-fort" x="288" y="430" width="9" height="9"/>
+            <text class="mt14-fort-t mt14-small" x="302" y="458" text-anchor="middle">Machaerus</text>
+          </g>
+          <text class="map-soft mt14-small" x="120" y="486">shaded: Herod Antipas' land (rough lines)</text>
+        </svg>
+      </div>
+      <div>
+        <h2 class="rise" style="--d:1">Herod the tetrarch</h2>
+        <p class="note rise" style="--d:2">This is Herod Antipas, a son of the Herod who killed the babies of Bethlehem (2:16). When the old king died, about 4 BC, Rome split his kingdom among his sons. Antipas got Galilee and Perea. A <em>tetrarch</em> was a ruler of part of a kingdom.</p>
+        <p class="note step">He ruled from Tiberias, on the lake, for over forty years. Jesus did most of His work in Antipas' backyard.</p>
+        <p class="note step">When he hears about Jesus, his first thought is <em>“This is John the Baptist; he is risen from the dead.”</em> He had killed John, and he couldn't get away from it. A guilty conscience hears footsteps everywhere.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="slide verse" data-v="3-5" data-hl="for Herodias’ sake, his brother Philip’s wife|It is not lawful for thee to have her|he feared the multitude"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="4" data-hl="It is not lawful for thee to have her"></blockquote>
+    <h2 class="rise" style="--d:1">His brother Philip's wife</h2>
+    <div class="mt14-tree">
+      <div class="mt14-kin top"><div class="mt14-who rise" style="--d:2"><b>Herod the Great</b><span>king when Jesus was born (2:1), died about 4 BC</span></div></div>
+      <div class="mt14-down rise" style="--d:3"></div>
+      <div class="mt14-kin">
+        <div class="mt14-who rise" style="--d:3"><b>Philip</b><span>his son, Herodias' first husband</span></div>
+        <div class="mt14-who her rise" style="--d:4"><b>Herodias</b><span>his granddaughter, niece of both men</span></div>
+        <div class="mt14-who now rise" style="--d:5"><b>Herod Antipas</b><span>his son, tetrarch of Galilee</span></div>
+      </div>
+      <p class="mt14-left step">She left her husband, and Antipas sent away his own wife, so the two could marry.</p>
+    </div>
+    <p class="note step">John didn't whisper about it. He told the ruler of the land to his face: <em>“It is not lawful for thee to have her.”</em> God's law was plain:</p>
+    <blockquote class="quote step"><p>“Thou shalt not uncover the nakedness of thy brother’s wife: it is thy brother’s nakedness.”</p><cite>Leviticus 18:16</cite></blockquote>
+    <p class="note step">Herod wanted John dead, but he was afraid of the crowds who counted John a prophet. So John sat in prison. The historian Josephus says it was Machaerus, a fortress east of the Dead Sea.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="6-9" data-hl="he promised with an oath to give her whatsoever she would ask|being before instructed of her mother|the king was sorry: nevertheless for the oath’s sake"></section>
+<section class="slide verse" data-v="10-12" data-hl="beheaded John in the prison|went and told Jesus"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="9" data-hl="nevertheless for the oath’s sake, and them which sat with him at meat"></blockquote>
+    <h2 class="rise" style="--d:1">One step at a time, down</h2>
+    <ol class="stairs down" style="--n:5" aria-label="Five steps down: Herod laid hold on John; he would have put him to death; he promised with an oath; the king was sorry, nevertheless; he beheaded John in the prison.">
+      <li style="--k:0"><b>laid hold on John</b>locked up the man who named his sin (v. 3)</li>
+      <li style="--k:1"><b>would have put him to death</b>held back only by fear of the crowd (v. 5)</li>
+      <li style="--k:2"><b>promised with an oath</b>at a party, showing off for his guests (v. 7)</li>
+      <li style="--k:3"><b>was sorry: nevertheless</b>too proud to back down (v. 9)</li>
+      <li style="--k:4"><b>beheaded John</b>in the prison (v. 10)</li>
+    </ol>
+    <p class="note step">Herod knew it was wrong. He was sorry. But his guests were watching, and he couldn't stand to look weak. A <em>charger</em> was a large serving platter. The girl was the daughter of Herodias, Salome by name according to Josephus, and her mother put her up to it.</p>
+    <blockquote class="quote step"><p>“The fear of man bringeth a snare: but whoso putteth his trust in the LORD shall be safe.”</p><cite>Proverbs 29:25</cite></blockquote>
+    <p class="note step">A foolish promise isn't made right by keeping it. Plenty of us have done something we knew was wrong because of who was watching. It's never too late to say, “I was wrong,” and stop.</p>
+  </div>
+</section>
+
+<!-- ======================= PART TWO: GIVE YE THEM TO EAT ======================= -->
+<section class="slide part">
+  <div class="inner">
+    <p class="part-n rise">Part two</p>
+    <h2 class="rise" style="--d:1">Give ye them to eat</h2>
+    <p class="range rise" style="--d:2">Verses 13–21</p>
+    <div class="rule"></div>
+    <p class="hook rise" style="--d:4">Jesus goes looking for a quiet place to grieve, and finds a crowd that needs Him.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="13-14" data-hl="he departed thence by ship into a desert place apart|they followed him on foot out of the cities|was moved with compassion toward them"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="13" data-hl="When Jesus heard of it"></blockquote>
+    <div class="split">
+      <div class="stage">
+        <svg class="map" viewBox="0 0 420 470" role="img" aria-label="Map of the Sea of Galilee. Jesus crosses by boat along the north end of the lake from near Capernaum to a lonely place near Bethsaida. On a step, the crowds walk around the shore on foot and get there too.">
+          <path class="map-river" d="M238 0 C228 20 248 34 236 62"/>
+          <path class="map-river" d="M206 420 C214 436 198 450 210 470"/>
+          <path class="map-lake" d="M195 58 C250 52 292 82 306 132 C320 188 314 262 294 322 C274 382 240 420 205 424 C168 420 142 382 122 332 C102 278 96 202 110 142 C124 92 150 62 195 58 Z"/>
+          <text class="map-water" x="210" y="250" text-anchor="middle" font-size="18">Sea of Galilee</text>
+          <g class="map-town">
+            <circle cx="146" cy="78" r="7"/><text x="134" y="72" text-anchor="end" font-weight="700">Capernaum</text>
+            <circle cx="256" cy="58" r="7"/><text x="262" y="40" font-weight="700">Bethsaida</text>
+            <circle cx="104" cy="250" r="7"/><text x="92" y="256" text-anchor="end" font-weight="700">Tiberias</text>
+          </g>
+          <path class="map-route" pathLength="1" d="M152 96 C190 96 248 86 296 104"/>
+          <text class="map-soft" x="206" y="122" text-anchor="middle" font-size="15">by ship</text>
+          <g class="step map-go1">
+            <path class="map-route r1" pathLength="1" style="stroke:var(--warm);stroke-dasharray:1" d="M140 66 C168 40 214 30 244 40 C266 48 286 70 300 94"/>
+            <text class="map-soft" x="190" y="22" text-anchor="middle" font-size="15">the crowds, on foot</text>
+          </g>
+          <g class="map-town here">
+            <circle class="map-ping" cx="304" cy="104" r="10"/><circle cx="304" cy="104" r="7"/>
+            <text x="318" y="128" font-size="15">a desert</text>
+            <text x="318" y="146" font-size="15">place</text>
+          </g>
+        </svg>
+      </div>
+      <div>
+        <h2 class="rise" style="--d:1">Looking for a quiet place</h2>
+        <p class="note rise" style="--d:2">John's disciples buried him, then went and told Jesus. John was His kinsman (Luke 1:36) and His forerunner. Jesus got in a boat to get away and be alone. Luke says the place was near Bethsaida (Luke 9:10). A <em>desert place</em> means a lonely, empty one, not sand dunes.</p>
+        <p class="note step map-go1">The crowds saw the boat and walked around the shore. When He landed, they were already there.</p>
+        <p class="note step">He didn't send them off. He was <em>moved with compassion</em>, and He healed their sick. Even grieving, He had room for them. And when you're grieving, you can do what John's disciples did: go and tell Jesus.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="slide verse" data-v="15-18" data-hl="send the multitude away|They need not depart; give ye them to eat|We have here but five loaves, and two fishes|Bring them hither to me"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="18"></blockquote>
+    <h2 class="rise" style="--d:1">Bring them hither to me</h2>
+    <div class="columns">
+      <div class="col law step"><p class="who">the disciples</p><h3>“send the multitude away”</h3><p>Let them fend for themselves. They can buy <em>victuals</em>, food, in the villages.</p></div>
+      <div class="col grace step"><p class="who">Jesus</p><h3>“give ye them to eat”</h3><p>You do it. Then He showed them how.</p></div>
+    </div>
+    <p class="note step"><em>“We have here but five loaves, and two fishes.”</em> Notice the word <em>but</em>. They looked at what they had, then at the crowd, and it was nothing. They were right. It wasn't enough.</p>
+    <p class="note step">Jesus didn't ask them for enough. He asked them to bring what they had to Him. Your strength, your time, your clean days so far: it's not enough for what's in front of you. Bring it to Him anyway.</p>
+    <blockquote class="quote step"><p>“But my God shall supply all your need according to his riches in glory by Christ Jesus.”</p><cite>Philippians 4:19</cite></blockquote>
+  </div>
+</section>
+
+<section class="slide verse" data-v="19-21" data-hl="looking up to heaven, he blessed, and brake|they did all eat, and were filled|twelve baskets full|about five thousand men, beside women and children"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="20" data-hl="they did all eat, and were filled"></blockquote>
+    <h2 class="rise" style="--d:1">Did all eat, and were filled</h2>
+    <div class="math">
+      <div class="rise" style="--d:2"><b>5 + 2</b><span>loaves and fishes</span></div>
+      <div class="step"><b>about 5,000</b><span>men, “beside women and children”</span></div>
+      <div class="step"><b>12</b><span>baskets full left over</span></div>
+    </div>
+    <ol class="timeline" aria-label="Four things Jesus did with the bread: took, blessed, brake, gave.">
+      <li class="step" style="--k:0"><b>took</b><span>the five loaves and two fishes</span></li>
+      <li class="step" style="--k:1"><b>blessed</b><span>looking up to heaven, He gave thanks</span></li>
+      <li class="step" style="--k:2"><b>brake</b><span>tore the loaves apart</span></li>
+      <li class="step lit" style="--k:3"><b>gave</b><span>to the disciples, and they to the crowd</span></li>
+    </ol>
+    <p class="note step">With women and children, the crowd may have been two or three times that. Nobody went home with just a crumb. They <em>“were filled.”</em> And there was more left over than He started with: a basket for each of the twelve who had said it couldn't be done.</p>
+    <p class="note step">The disciples didn't make the bread. They carried it. That's our job too: to take what He gives and hand it on. The same four words come back at the Last Supper (26:26).</p>
+  </div>
+</section>
+
+<!-- ======================= PART THREE: IT IS I ======================= -->
+<section class="slide part">
+  <div class="inner">
+    <p class="part-n rise">Part three</p>
+    <h2 class="rise" style="--d:1">It is I; be not afraid</h2>
+    <p class="range rise" style="--d:2">Verses 22–36</p>
+    <div class="rule"></div>
+    <p class="hook rise" style="--d:4">A night on the mountain, a boat fighting the wind, and a man who stepped out onto the water.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="22-24" data-hl="Jesus constrained his disciples to get into a ship|he went up into a mountain apart to pray|for the wind was contrary"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="23" data-hl="he went up into a mountain apart to pray"></blockquote>
+    <h2 class="rise" style="--d:1">A long night</h2>
+    <p class="note rise" style="--d:2"><em>Constrained</em> means <em>made them</em>. John tells us the crowd wanted to take Jesus by force and make Him king (John 6:15). He sent His disciples off before that fever could catch them, sent the crowd home, and went up the mountain alone to pray.</p>
+    <ol class="timeline" aria-label="The night in four Roman watches. Evening: Jesus prays alone. First, second and third watches: the disciples row against the wind. Fourth watch, from about 3 to 6 in the morning: Jesus comes walking on the sea.">
+      <li class="lit" style="--k:0"><b>evening</b><span>Jesus alone on the mountain, praying</span><small>v. 23</small></li>
+      <li style="--k:1"><b>first watch</b><span>about 6 to 9 p.m.</span><small>rowing</small></li>
+      <li style="--k:2"><b>second watch</b><span>about 9 to midnight</span><small>still rowing</small></li>
+      <li style="--k:3"><b>third watch</b><span>about midnight to 3</span><small>“the wind was contrary”</small></li>
+      <li class="lit step" style="--k:4"><b>fourth watch</b><span>about 3 to 6 a.m.</span><small>“Jesus went unto them”</small></li>
+    </ol>
+    <p class="note step">The disciples rowed most of the night and got almost nowhere. They were right where He had sent them, and they were still in trouble. Obeying Jesus doesn't keep the wind away.</p>
+    <p class="note step">But He knew where they were the whole time. Mark says He saw them toiling in rowing (Mark 6:48). He came in the darkest, coldest stretch, when they were most worn out.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="25-27" data-hl="walking on the sea|It is a spirit|Be of good cheer; it is I; be not afraid"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="27" data-hl="Be of good cheer; it is I; be not afraid"></blockquote>
+    <h2 class="rise" style="--d:1">Walking on the sea</h2>
+    <p class="note rise" style="--d:2">Grown fishermen cried out for fear. In the dark, a figure walking on the waves could only be a <em>spirit</em>, a ghost. They knew no man could do this. The Old Testament says only God can:</p>
+    <blockquote class="quote step"><p>“Which alone spreadeth out the heavens, and treadeth upon the waves of the sea.”</p><cite>Job 9:8</cite></blockquote>
+    <p class="note step"><em>“It is I”</em> is two words in Greek, <span class="gk">egō eimi</span>, literally <em>“I am.”</em> It's how God named Himself to Moses at the burning bush (Exodus 3:14). Jesus walks where only God walks and speaks the way God speaks.</p>
+    <p class="note step">And the first thing He says is <em>“Be of good cheer.”</em> Take heart. Not because the wind has stopped, because He has come.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="28-31" data-hl="bid me come unto thee on the water|he walked on the water, to go to Jesus|when he saw the wind boisterous, he was afraid|Lord, save me|immediately Jesus stretched forth his hand, and caught him"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="30" data-hl="when he saw the wind boisterous, he was afraid"></blockquote>
+    <div class="split">
+      <div class="stage">
+        <svg viewBox="0 0 600 300" role="img" aria-label="Night on the sea. Peter steps out of the boat and walks across the waves toward Jesus. Then the wind blows and Peter sinks into the waves. Then Jesus reaches out His hand and pulls him up.">
+          <defs><clipPath id="mt14-frame"><rect x="0" y="0" width="600" height="300" rx="8"/></clipPath></defs>
+          <g clip-path="url(#mt14-frame)">
+            <rect class="mt14-sky" x="0" y="0" width="600" height="300"/>
+            <circle class="mt14-moon" cx="548" cy="52" r="16"/>
+            <line class="mt14-gust" style="--k:0" x1="360" y1="70" x2="470" y2="70"/>
+            <line class="mt14-gust" style="--k:1" x1="300" y1="104" x2="420" y2="104"/>
+            <line class="mt14-gust" style="--k:2" x1="390" y1="128" x2="480" y2="128"/>
+            <path class="mt14-wave" d="M0 212 q30 -14 60 0 t60 0 t60 0 t60 0 t60 0 t60 0 t60 0 t60 0 t60 0 t60 0 t60 0 t60 0 V300 H0 Z"/>
+            <path class="mt14-hull" d="M30 198 L190 198 L172 228 L48 228 Z"/>
+            <line x1="112" y1="198" x2="112" y2="104" stroke-width="4" style="stroke:var(--leather-light)"/>
+            <g class="mt14-men"><circle cx="66" cy="188" r="8"/><circle cx="90" cy="186" r="8"/><circle cx="136" cy="188" r="8"/></g>
+            <circle class="mt14-halo" cx="478" cy="160" r="46"/>
+            <g class="mt14-lord"><circle cx="478" cy="128" r="11"/><path d="M466 142 Q478 136 490 142 L488 210 L468 210 Z"/></g>
+            <path class="mt14-arm" d="M470 150 L470 198"/>
+            <g class="mt14-peter"><circle cx="150" cy="152" r="10"/><path d="M140 164 Q150 160 160 164 L158 210 L142 210 Z"/><path d="M158 170 L170 152" fill="none" stroke-width="5" stroke-linecap="round" style="stroke:var(--warm)"/></g>
+            <path class="mt14-wave front" d="M0 226 q30 -12 60 0 t60 0 t60 0 t60 0 t60 0 t60 0 t60 0 t60 0 t60 0 t60 0 t60 0 t60 0 V300 H0 Z"/>
+            <text class="mt14-say a" x="300" y="34" text-anchor="middle">“Come.”</text>
+            <text class="mt14-say b" x="300" y="34" text-anchor="middle">“when he saw the wind boisterous”</text>
+            <text class="mt14-say c" x="300" y="34" text-anchor="middle">“immediately Jesus stretched forth his hand”</text>
+          </g>
+        </svg>
+      </div>
+      <div>
+        <h2 class="rise" style="--d:1">Eyes on Jesus</h2>
+        <p class="note rise" style="--d:2">Give Peter credit. Eleven men stayed in the boat. He asked, Jesus said <em>“Come,”</em> and he climbed over the side and walked on the water.</p>
+        <p class="note step mt14-sink">The wind hadn't changed. Peter's eyes had. He looked at the wind, <em>boisterous</em>, wild and strong, and down he went.</p>
+        <p class="note step mt14-catch">He had breath for three words: <em>“Lord, save me.”</em> And <em>immediately</em> Jesus caught him.</p>
+        <blockquote class="quote step"><p>“Looking unto Jesus the author and finisher of our faith; who for the joy that was set before him endured the cross, despising the shame, and is set down at the right hand of the throne of God.”</p><cite>Hebrews 12:2</cite></blockquote>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="31" data-hl="O thou of little faith, wherefore didst thou doubt?"></blockquote>
+    <h2 class="rise" style="--d:1">Lord, save me</h2>
+    <p class="saying rise" style="--d:2">Three words, <em>and a hand.</em></p>
+    <p class="note rise" style="--d:3">Peter didn't make a speech or promise to do better. He was going under, and he cried out. That's a prayer God always hears. Plenty of men first prayed it from the bottom: a cell, a detox bed, a bathroom floor.</p>
+    <p class="note step"><em>“O thou of little faith”</em> isn't a slap. Jesus says it with Peter already in His grip. Little faith is still faith, and it reached for the right Man. And <em>“wherefore didst thou doubt?”</em> is a gentle question: <em>Why doubt, when I was right here?</em></p>
+    <blockquote class="quote step"><p>“Fear thou not; for I am with thee: be not dismayed; for I am thy God: I will strengthen thee; yea, I will help thee; yea, I will uphold thee with the right hand of my righteousness.”</p><cite>Isaiah 41:10</cite></blockquote>
+  </div>
+</section>
+
+<section class="slide verse" data-v="32-33" data-hl="the wind ceased|Of a truth thou art the Son of God"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="33" data-hl="Of a truth thou art the Son of God"></blockquote>
+    <h2 class="rise" style="--d:1">Who is this?</h2>
+    <ul class="nots">
+      <li class="step"><span class="k">“It is a spirit”</span><span class="why">what they thought in the dark (v. 26)</span></li>
+      <li class="step"><span class="k">a teacher, a healer, a prophet</span><span class="why">true, but not enough</span></li>
+      <li class="step yes"><span class="k">“Of a truth thou art the Son of God”</span><span class="why">what they knew when He climbed into the boat (v. 33)</span></li>
+    </ul>
+    <p class="note step">This is the first time in Matthew that the disciples together call Him the Son of God, and they <em>worshipped Him</em>. Jesus didn't stop them. A good man would have. God's Son accepts worship.</p>
+    <p class="note step">The moment He stepped into the boat, the wind stopped. Some storms He calms with a word. This one just quit when He arrived.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="34-36" data-hl="they came into the land of Gennesaret|only touch the hem of his garment|as many as touched were made perfectly whole"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="36" data-hl="as many as touched were made perfectly whole"></blockquote>
+    <div class="split">
+      <div class="stage">
+        <svg class="map" viewBox="0 0 420 470" role="img" aria-label="Map of the Sea of Galilee. The boat's path runs from the lonely place near Bethsaida out into the middle of the lake, where the storm was, then on a step to the land of Gennesaret, a small plain on the northwest shore between Capernaum and Magdala.">
+          <path class="map-river" d="M238 0 C228 20 248 34 236 62"/>
+          <path class="map-river" d="M206 420 C214 436 198 450 210 470"/>
+          <path class="map-lake" d="M195 58 C250 52 292 82 306 132 C320 188 314 262 294 322 C274 382 240 420 205 424 C168 420 142 382 122 332 C102 278 96 202 110 142 C124 92 150 62 195 58 Z"/>
+          <path class="mt14-land" d="M118 98 C136 104 132 156 116 188 C100 194 86 176 82 150 C80 124 98 100 118 98 Z"/>
+          <text class="map-soft" x="74" y="126" text-anchor="end" font-size="16" font-weight="700">Gennesaret</text>
+          <text class="map-soft" x="74" y="144" text-anchor="end" font-size="13">a rich, small plain</text>
+          <g class="map-town">
+            <circle cx="146" cy="78" r="7"/><text x="156" y="72" font-weight="700">Capernaum</text>
+            <circle cx="256" cy="58" r="7"/><text x="262" y="40" font-weight="700">Bethsaida</text>
+            <circle cx="108" cy="200" r="7"/><text x="96" y="214" text-anchor="end" font-weight="700">Magdala</text>
+            <circle cx="104" cy="250" r="7"/><text x="92" y="256" text-anchor="end" font-weight="700">Tiberias</text>
+          </g>
+          <circle cx="304" cy="104" r="5" style="fill:var(--ink-soft)"/>
+          <path class="map-route" pathLength="1" d="M300 110 C280 150 250 186 214 206"/>
+          <g class="map-town here">
+            <circle class="map-ping" cx="214" cy="208" r="10"/>
+            <text x="214" y="240" text-anchor="middle" font-size="15">the storm,</text>
+            <text x="214" y="258" text-anchor="middle" font-size="15">“in the midst of the sea”</text>
+          </g>
+          <g class="step map-go1">
+            <path class="map-route r1" pathLength="1" d="M210 204 C180 186 150 168 128 150"/>
+          </g>
+        </svg>
+      </div>
+      <div>
+        <h2 class="rise" style="--d:1">The land of Gennesaret</h2>
+        <p class="note rise" style="--d:2">When the night was over, they came ashore at <em>Gennesaret</em>, a small, rich farming plain on the northwest shore, a few miles south of Capernaum.</p>
+        <p class="note step map-go1">Word spread, and people carried their sick in from all around. They only asked to touch the <em>hem of his garment</em>, the tassel the Law told every Jewish man to wear on the corners of his cloak (Numbers 15:38). Like the woman in 9:20–22, they believed one touch would be enough.</p>
+        <p class="note step">And <em>“as many as touched were made perfectly whole.”</em> Not one was turned away. Nobody comes to Him too sick, too far gone, or too late.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ======================= CLOSING ======================= -->
+<section class="slide remember">
+  <div class="inner">
+    <h2 class="rise">Points to remember</h2>
+    <ol class="seeds">
+      <li class="step"><span class="topic">Conscience</span><span class="seed-q">“This is John the Baptist; he is risen from the dead” <cite>14:2</cite></span><span class="take">Unconfessed sin doesn't stay buried. Only Jesus can clean a guilty conscience.</span></li>
+      <li class="step"><span class="topic">Fear of man</span><span class="seed-q">“Nevertheless for the oath's sake, and them which sat with him” <cite>14:9</cite></span><span class="take">Herod did what he knew was wrong because people were watching. It's never too late to stop.</span></li>
+      <li class="step"><span class="topic">Grief</span><span class="seed-q">“Was moved with compassion toward them” <cite>14:14</cite></span><span class="take">He took His grief to a quiet place, and still had room for the hurting. Take yours to Him.</span></li>
+      <li class="step"><span class="topic">Little is much</span><span class="seed-q">“Bring them hither to me” <cite>14:18</cite></span><span class="take">What you have isn't enough. Bring it to Him anyway, and watch what He does with it.</span></li>
+      <li class="step"><span class="topic">Eyes on Jesus</span><span class="seed-q">“When he saw the wind boisterous, he was afraid” <cite>14:30</cite></span><span class="take">Peter sank when he looked at the wind instead of at Jesus.</span></li>
+      <li class="step"><span class="topic">Rescue</span><span class="seed-q">“Immediately Jesus stretched forth his hand” <cite>14:31</cite></span><span class="take">“Lord, save me” is a prayer He always answers, and He doesn't wait.</span></li>
+    </ol>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 1 of 6</p>
+      <span class="topic">Conscience</span>
+      <h2>What does a guilty conscience do to a man?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="1"></blockquote>
+      <blockquote class="quote step" data-q="2"></blockquote>
+      <blockquote class="quote step" data-q="10"></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>It haunts him. Herod killed John, and when he heard of Jesus, his first thought was that John had come back from the dead. Hiding sin doesn't make it go away. Confessing it to the Lord does, because He forgives and cleanses.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 2 of 6</p>
+      <span class="topic">Fear of man</span>
+      <h2>Why did Herod keep a promise he was sorry he made?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="5" data-hl="he feared the multitude"></blockquote>
+      <blockquote class="quote step" data-q="7"></blockquote>
+      <blockquote class="quote step" data-q="9" data-hl="for the oath’s sake, and them which sat with him at meat"></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>Because of his pride and the people watching. He had sworn in front of his guests and couldn't stand to look weak. He feared men more than God. A wrong promise isn't made right by keeping it.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 3 of 6</p>
+      <span class="topic">Grief</span>
+      <h2>What did Jesus do when He heard John was dead?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="12" data-hl="went and told Jesus"></blockquote>
+      <blockquote class="quote step" data-q="13" data-hl="he departed thence by ship into a desert place apart"></blockquote>
+      <blockquote class="quote step" data-q="14"></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>He went away by boat to a quiet place to be alone. When the crowd followed, He didn't send them away. He was moved with compassion and healed their sick. Later He went up a mountain alone to pray (v. 23). Grief is real, and it's right to take it to God.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 4 of 6</p>
+      <span class="topic">Little is much</span>
+      <h2>What can Jesus do with what little we bring Him?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="17"></blockquote>
+      <blockquote class="quote step" data-q="18"></blockquote>
+      <blockquote class="quote step" data-q="20"></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>More than enough. Five loaves and two fishes fed about five thousand men, besides women and children, and twelve baskets were left over. He doesn't ask us to have enough. He asks us to bring what we have to Him.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 5 of 6</p>
+      <span class="topic">Eyes on Jesus</span>
+      <h2>Why did Peter begin to sink?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="29"></blockquote>
+      <blockquote class="quote step" data-q="30" data-hl="when he saw the wind boisterous, he was afraid"></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>He took his eyes off Jesus and looked at the wind. The water was just as rough when he was walking on it. What changed was where he was looking. Keep your eyes on Jesus, not on the storm.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 6 of 6</p>
+      <span class="topic">Rescue</span>
+      <h2>What does Jesus do when a man cries, Lord, save me?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="30" data-hl="Lord, save me"></blockquote>
+      <blockquote class="quote step" data-q="31" data-hl="immediately Jesus stretched forth his hand, and caught him"></blockquote>
+      <blockquote class="quote step" data-q="32-33"></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>He reaches out immediately and catches him. He doesn't wait for the man to clean up or prove himself. Then He brings him back into the boat, the wind stops, and the men worship Him as the Son of God.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide prayer">
+  <div class="inner">
+    <div class="emblem rise"></div>
+    <h2 class="rise" style="--d:1">Prayer requests</h2>
+    <p class="ask-line rise" style="--d:2">What can we pray about for you today?</p>
+    <blockquote class="quote rise" style="--d:4"><p>“What time I am afraid, I will trust in thee.”</p><cite>Psalm 56:3</cite></blockquote>
+  </div>
+</section>
+
+</main>
+
+<script>
+// King James Version, Matthew chapter 14
+const V = {
+  1: "At that time Herod the tetrarch heard of the fame of Jesus,",
+  2: "And said unto his servants, This is John the Baptist; he is risen from the dead; and therefore mighty works do shew forth themselves in him.",
+  3: "For Herod had laid hold on John, and bound him, and put him in prison for Herodias’ sake, his brother Philip’s wife.",
+  4: "For John said unto him, It is not lawful for thee to have her.",
+  5: "And when he would have put him to death, he feared the multitude, because they counted him as a prophet.",
+  6: "But when Herod’s birthday was kept, the daughter of Herodias danced before them, and pleased Herod.",
+  7: "Whereupon he promised with an oath to give her whatsoever she would ask.",
+  8: "And she, being before instructed of her mother, said, Give me here John Baptist’s head in a charger.",
+  9: "And the king was sorry: nevertheless for the oath’s sake, and them which sat with him at meat, he commanded it to be given her.",
+  10: "And he sent, and beheaded John in the prison.",
+  11: "And his head was brought in a charger, and given to the damsel: and she brought it to her mother.",
+  12: "And his disciples came, and took up the body, and buried it, and went and told Jesus.",
+  13: "When Jesus heard of it, he departed thence by ship into a desert place apart: and when the people had heard thereof, they followed him on foot out of the cities.",
+  14: "And Jesus went forth, and saw a great multitude, and was moved with compassion toward them, and he healed their sick.",
+  15: "And when it was evening, his disciples came to him, saying, This is a desert place, and the time is now past; send the multitude away, that they may go into the villages, and buy themselves victuals.",
+  16: "But Jesus said unto them, They need not depart; give ye them to eat.",
+  17: "And they say unto him, We have here but five loaves, and two fishes.",
+  18: "He said, Bring them hither to me.",
+  19: "And he commanded the multitude to sit down on the grass, and took the five loaves, and the two fishes, and looking up to heaven, he blessed, and brake, and gave the loaves to his disciples, and the disciples to the multitude.",
+  20: "And they did all eat, and were filled: and they took up of the fragments that remained twelve baskets full.",
+  21: "And they that had eaten were about five thousand men, beside women and children.",
+  22: "And straightway Jesus constrained his disciples to get into a ship, and to go before him unto the other side, while he sent the multitudes away.",
+  23: "And when he had sent the multitudes away, he went up into a mountain apart to pray: and when the evening was come, he was there alone.",
+  24: "But the ship was now in the midst of the sea, tossed with waves: for the wind was contrary.",
+  25: "And in the fourth watch of the night Jesus went unto them, walking on the sea.",
+  26: "And when the disciples saw him walking on the sea, they were troubled, saying, It is a spirit; and they cried out for fear.",
+  27: "But straightway Jesus spake unto them, saying, Be of good cheer; it is I; be not afraid.",
+  28: "And Peter answered him and said, Lord, if it be thou, bid me come unto thee on the water.",
+  29: "And he said, Come. And when Peter was come down out of the ship, he walked on the water, to go to Jesus.",
+  30: "But when he saw the wind boisterous, he was afraid; and beginning to sink, he cried, saying, Lord, save me.",
+  31: "And immediately Jesus stretched forth his hand, and caught him, and said unto him, O thou of little faith, wherefore didst thou doubt?",
+  32: "And when they were come into the ship, the wind ceased.",
+  33: "Then they that were in the ship came and worshipped him, saying, Of a truth thou art the Son of God.",
+  34: "And when they were gone over, they came into the land of Gennesaret.",
+  35: "And when the men of that place had knowledge of him, they sent out into all that country round about, and brought unto him all that were diseased;",
+  36: "And besought him that they might only touch the hem of his garment: and as many as touched were made perfectly whole."
+};
+const BOOK = "Matthew 14";
+</script>
+<script src="../assets/deck.js"></script>
+</body>
+</html>

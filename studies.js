@@ -6302,6 +6302,102 @@ window.STUDIES = [
     }
   },
   {
+    "id": "matthew-13",
+    "type": "chapter",
+    "book": "Matthew",
+    "ch": 13,
+    "date": "2026-10-29",
+    "title": "Matthew 13",
+    "sub": "Treasure hid in a field",
+    "about": "From a boat by the lake, Jesus tells seven stories of the kingdom of heaven, from a sower's seed to a net full of fish. Then His hometown can't see past the carpenter's son.",
+    "tags": [
+      "Hearing",
+      "Parables",
+      "Patience",
+      "Small beginnings",
+      "Treasure",
+      "Unbelief"
+    ],
+    "url": "studies/matthew-13.html",
+    "overview": {
+      "where": "By the Sea of Galilee, most likely near Capernaum, then Nazareth, His own country",
+      "when": "The same day as Matthew 12, in Jesus' work in Galilee, about AD 28",
+      "people": [
+        "jesus",
+        "disciples",
+        "isaiah",
+        "mary",
+        "brothers-of-jesus"
+      ],
+      "places": [
+        "sea-of-galilee",
+        "own-country",
+        "synagogue"
+      ],
+      "story": [
+        "From a boat, Jesus tells the crowd of a sower whose seed falls on the way side, stony places, thorns, and good ground. He tells His disciples why He speaks in parables, as Isaiah foretold, and explains the four kinds of hearers (1–23).",
+        "An enemy sows tares among the wheat, and the owner lets both grow until the harvest. A mustard seed becomes a tree, and a little leaven works through the whole batch (24–35).",
+        "In the house Jesus explains the tares: the field is the world, the enemy is the devil, and the angels will sort at the end. Then three more: a treasure hid in a field, a pearl of great price, and a net that is sorted on the shore (36–52).",
+        "In His own country the people are astonished but offended: “Is not this the carpenter's son?” He did not many mighty works there because of their unbelief (53–58)."
+      ],
+      "key": {
+        "ref": "Matthew 13:44",
+        "text": "Again, the kingdom of heaven is like unto treasure hid in a field; the which when a man hath found, he hideth, and for joy thereof goeth and selleth all that he hath, and buyeth that field."
+      },
+      "big": "The kingdom of heaven starts small and grows quietly, good and evil grow side by side until God sorts them at the end, and Christ is worth more than everything a man owns. The word bears fruit in the heart that hears it and takes it in."
+    }
+  },
+  {
+    "id": "matthew-14",
+    "type": "chapter",
+    "book": "Matthew",
+    "ch": 14,
+    "date": "2026-10-29",
+    "title": "Matthew 14",
+    "sub": "It is I; be not afraid",
+    "about": "Herod's foolish oath costs John the Baptist his life. Jesus feeds five thousand men from five loaves, walks on a stormy sea, and catches Peter when he sinks.",
+    "tags": [
+      "Conscience",
+      "Fear of man",
+      "Grief",
+      "Provision",
+      "Faith",
+      "Rescue"
+    ],
+    "url": "studies/matthew-14.html",
+    "overview": {
+      "where": "Herod Antipas' court; a lonely place near Bethsaida; the Sea of Galilee at night; the land of Gennesaret",
+      "when": "About AD 29, in the spring, with the Passover near (John 6:4), soon after John the Baptist was killed",
+      "people": [
+        "jesus",
+        "herod-antipas",
+        "herodias",
+        "daughter-of-herodias",
+        "philip-herodias-husband",
+        "john-the-baptist",
+        "disciples",
+        "simon-peter"
+      ],
+      "places": [
+        "desert-place",
+        "bethsaida",
+        "sea-of-galilee",
+        "gennesaret"
+      ],
+      "story": [
+        "Herod the tetrarch hears of Jesus and fears John the Baptist has risen. Herod had jailed John for saying he could not have his brother Philip's wife. At Herod's birthday, a rash oath and a girl's request cost John his head (1–12).",
+        "Jesus withdraws by ship to a desert place, but the crowds follow on foot. Moved with compassion, He heals them, then feeds about five thousand men, besides women and children, with five loaves and two fishes, and twelve baskets are left over (13–21).",
+        "He sends the disciples across the lake and prays alone on a mountain. In the fourth watch He comes walking on the sea: “It is I; be not afraid.” Peter walks on the water, sinks when he sees the wind, and cries, “Lord, save me.” Jesus catches him, and they worship Him as the Son of God (22–33).",
+        "At Gennesaret the sick are brought from all around, and as many as touch the hem of His garment are made perfectly whole (34–36)."
+      ],
+      "key": {
+        "ref": "Matthew 14:27",
+        "text": "But straightway Jesus spake unto them, saying, Be of good cheer; it is I; be not afraid."
+      },
+      "big": "A king who feared men killed a prophet, but Jesus, moved with compassion, feeds the hungry from almost nothing and walks on the storm to reach His men. When a sinking man cries out to Him, He reaches out immediately."
+    }
+  },
+  {
     "id": "mark-01",
     "type": "chapter",
     "book": "Mark",

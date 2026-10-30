@@ -1,0 +1,778 @@
+<!doctype html>
+<html lang="en" data-theme="scribe">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Matthew 13</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="../assets/fonts.css">
+<link rel="stylesheet" href="../assets/deck.css">
+<link rel="stylesheet" href="../assets/themes.css">
+<style>
+/* mt13-map: a cropped data-land map, with town names, dots and lines scaled down to fit the crop */
+.mt13-map .map-town text { font-size: var(--mt13-t, 8px); }
+.mt13-map .map-town > circle:not(.map-ping) { r: var(--mt13-r, 2.6px); }
+.mt13-map .map-town > .map-ping { r: calc(var(--mt13-r, 2.6px) + 2px); stroke-width: 1.5px; }
+.mt13-map .map-region, .mt13-map .map-water { font-size: var(--mt13-g, 6.5px); }
+.mt13-map .map-route { stroke-width: var(--mt13-w, 2.2px); }
+.mt13-map .map-river, .mt13-map .map-lake { stroke-width: 1.2px; }
+.mt13-map .map-border { stroke-width: 1px; stroke-dasharray: 3 3; }
+.mt13-small { font-size: var(--mt13-g, 6.5px); }
+.mt13-boat { fill: var(--accent-hot); }
+.mt13-crowd { fill: var(--ink-soft); }
+
+/* mt13-tares: a field where wheat and tares come up looking the same. On .mt13-ripen the heads show which is which;
+   on .mt13-roots the roots underground are seen tangled together. */
+.mt13-soil { fill: color-mix(in srgb, var(--leather) 60%, var(--bg)); }
+.mt13-stalk { color: var(--accent); transform-box: fill-box; transform-origin: 50% 100%; transform: scaleY(0); transition: transform 1.6s cubic-bezier(.3,.7,.3,1), color 1.4s ease; transition-delay: calc(var(--k) * 90ms + .3s); }
+.slide.active .mt13-stalk { transform: none; }
+.mt13-stem { fill: none; stroke: currentColor; stroke-width: 3.5; stroke-linecap: round; }
+.mt13-ear, .mt13-darnel { opacity: 0; transform-box: fill-box; transform-origin: 50% 100%; transition: opacity 1s ease, transform 1.4s ease; transition-delay: calc(var(--k) * 90ms); }
+.mt13-ear { fill: var(--warm); }
+.mt13-darnel { fill: var(--ink); }
+.mt13-tag { font: 700 13px var(--sans); fill: var(--danger); opacity: 0; transition: opacity .8s ease 1.2s; }
+.mt13-root { fill: none; stroke: var(--leather-light); stroke-width: 2.2; stroke-linecap: round; opacity: 0; transition: opacity 1.2s ease; }
+.mt13-root.t { stroke: var(--ink); }
+.mt13-say { font: 700 19px var(--sans); fill: var(--ink-soft); transition: opacity .8s ease; }
+.mt13-say.b, .mt13-say.c { opacity: 0; }
+.mt13-say.c { fill: var(--accent-hot); }
+.slide:has(.mt13-ripen.on) .mt13-ear, .slide:has(.mt13-ripen.on) .mt13-darnel { opacity: 1; }
+.slide:has(.mt13-ripen.on) .mt13-ear { transform: rotate(24deg); }
+.slide:has(.mt13-ripen.on) .mt13-stalk:not(.tare) { color: color-mix(in srgb, var(--warm) 75%, var(--accent)); }
+.slide:has(.mt13-ripen.on) .mt13-tag { opacity: 1; }
+.slide:has(.mt13-ripen.on) .mt13-say.a { opacity: 0; }
+.slide:has(.mt13-ripen.on) .mt13-say.b { opacity: 1; }
+.slide:has(.mt13-roots.on) .mt13-root { opacity: 1; }
+.slide:has(.mt13-roots.on) .mt13-say.b { opacity: 0; }
+.slide:has(.mt13-roots.on) .mt13-say.c { opacity: 1; }
+
+/* mt13-key: a parable decoded, piece by piece: the picture, an arrow, what it means */
+.mt13-key { display: grid; grid-template-columns: 1fr 1fr; gap: .5rem 1.6rem; margin: .5em 0 1em; }
+@media (max-width: 760px) { .mt13-key { grid-template-columns: 1fr; } }
+.mt13-key > div { display: grid; grid-template-columns: 1fr auto 1fr; align-items: center; gap: .6em; padding: .45em .7em; border: 1px solid var(--line-strong); border-radius: 8px; background: var(--surface); }
+.mt13-key b { font: 600 clamp(.95rem, .85rem + .45vw, 1.25rem) var(--serif); color: var(--ink-soft); }
+.mt13-key i { font-style: normal; color: var(--accent); font-weight: 700; }
+.mt13-key span { font: 700 clamp(.95rem, .85rem + .45vw, 1.25rem) var(--sans); color: var(--accent-hot); }
+</style>
+</head>
+<body>
+<main class="deck" id="deck">
+
+<!-- ======================= OPENING ======================= -->
+<section class="slide title">
+  <div class="inner">
+    <div class="emblem rise"></div>
+    <h1 class="rise" style="--d:1">Matthew 13</h1>
+    <p class="sub rise" style="--d:3">Treasure hid in a field</p>
+    <p class="tag rise" style="--d:5">From a boat, Jesus tells seven stories about the kingdom of heaven: seed and soil, wheat and tares, a mustard seed, leaven, a treasure, a pearl, and a net. Then His own town turns Him away.</p>
+  </div>
+</section>
+
+<section class="slide watch">
+  <div class="inner">
+    <h2 class="rise">Things to watch for</h2>
+    <p class="lede rise" style="--d:1">Keep these questions in the back of your mind as we read. We'll come back to every one of them at the end.</p>
+    <ol class="seeds">
+      <li class="step"><span class="topic">Hearing</span><span class="seed-q">What does good ground do with the word?</span></li>
+      <li class="step"><span class="topic">Wheat and tares</span><span class="seed-q">Why does God let the wheat and the tares grow together?</span></li>
+      <li class="step"><span class="topic">Small beginnings</span><span class="seed-q">How does the kingdom of heaven grow?</span></li>
+      <li class="step"><span class="topic">Treasure</span><span class="seed-q">What is the kingdom of heaven worth?</span></li>
+      <li class="step"><span class="topic">The end</span><span class="seed-q">What happens at the end of the world?</span></li>
+      <li class="step"><span class="topic">Unbelief</span><span class="seed-q">What did unbelief cost Jesus' hometown?</span></li>
+    </ol>
+  </div>
+</section>
+
+<!-- ======================= PART ONE: A SOWER WENT FORTH ======================= -->
+<section class="slide part">
+  <div class="inner">
+    <p class="part-n rise">Part one</p>
+    <h2 class="rise" style="--d:1">A sower went forth to sow</h2>
+    <p class="range rise" style="--d:2">Verses 1–23</p>
+    <div class="rule"></div>
+    <p class="hook rise" style="--d:4">A boat for a pulpit, a crowd on the shore, and a story about seed that every farmer knew.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="1-2" data-hl="sat by the sea side|he went into a ship, and sat"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="1" data-hl="The same day"></blockquote>
+    <div class="split">
+      <div class="stage">
+        <svg class="map mt13-map" data-land viewBox="200 98 140 100" data-towns="Capernaum!:t, Bethsaida:r, Magdala:l, Tiberias:l" style="--mt13-t:6.5px;--mt13-r:2.2px;--mt13-g:5.5px" role="img" aria-label="Map of the Sea of Galilee. Near Capernaum on the north shore, a crowd stands on the beach and Jesus sits in a boat just off shore, teaching.">
+          <g class="rise" style="--d:3">
+            <g class="mt13-crowd"><circle cx="258" cy="128" r="1.3"/><circle cx="261" cy="126" r="1.3"/><circle cx="255" cy="131" r="1.3"/><circle cx="259" cy="132" r="1.3"/><circle cx="262" cy="129.5" r="1.3"/><circle cx="256" cy="125" r="1.3"/></g>
+            <path class="mt13-boat" d="M266 140 h9 l-2 2.6 h-5 Z"/>
+            <line x1="270.5" y1="140" x2="270.5" y2="134" stroke-width=".8" style="stroke:var(--accent-hot)"/>
+          </g>
+          <text class="map-soft mt13-small rise" style="--d:4" x="292" y="150">Jesus in a ship,</text>
+          <text class="map-soft mt13-small rise" style="--d:4" x="292" y="157">the crowd</text>
+          <text class="map-soft mt13-small rise" style="--d:4" x="292" y="164">on the shore</text>
+          <text class="map-water" x="296" y="182" text-anchor="middle">the sea</text>
+        </svg>
+      </div>
+      <div>
+        <h2 class="rise" style="--d:1">The same day</h2>
+        <p class="note rise" style="--d:2">It had been a long day already. In chapter 12 Jesus healed a man who was blind and dumb, the Pharisees said He did it by the prince of devils (12:24), and His own mother and brethren stood outside asking for Him (12:46).</p>
+        <p class="note step">Now He walks out of the house, most likely in Capernaum, and sits down by the lake. The crowd gets so big that He climbs into a boat and teaches from the water.</p>
+        <p class="note step">This is the first time Matthew uses the word <em>parables</em>. A parable is a story from everyday life that carries a truth about God. It's simple enough for anybody to remember, and it keeps giving to the man who keeps thinking about it.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise">Seven pictures of one kingdom</h2>
+    <p class="note rise" style="--d:1">Every story today begins the same way: <em>“The kingdom of heaven is like…”</em> The kingdom of heaven is God's rule, where He is King and His word is obeyed. Here are the seven, in order:</p>
+    <ol class="signs">
+      <li class="rise now" style="--d:2"><b>The sower</b>seed on four kinds of ground (vv. 3–23)</li>
+      <li class="rise" style="--d:3"><b>Wheat and tares</b>good and bad grow together (vv. 24–30, 36–43)</li>
+      <li class="rise" style="--d:4"><b>The mustard seed</b>tiny, then a tree (vv. 31–32)</li>
+      <li class="rise" style="--d:5"><b>The leaven</b>hidden, then everywhere (v. 33)</li>
+      <li class="rise" style="--d:6"><b>The treasure</b>found in a field (v. 44)</li>
+      <li class="rise" style="--d:7"><b>The pearl</b>worth everything (vv. 45–46)</li>
+      <li class="rise" style="--d:8"><b>The net</b>sorted at the end (vv. 47–50)</li>
+    </ol>
+    <p class="note step">The first four He told the crowd from the boat. The last three He told only His disciples, in the house (v. 36). Matthew writes <em>“kingdom of heaven”</em> where Mark and Luke say <em>“kingdom of God.”</em> It's the same kingdom. Jews of the day often said “heaven” out of reverence for God's name.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="3-5" data-hl="Behold, a sower went forth to sow|some seeds fell by the way side|Some fell upon stony places"></section>
+<section class="slide verse" data-v="6-9" data-hl="because they had no root, they withered away|some fell among thorns|other fell into good ground|Who hath ears to hear, let him hear"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="8" data-hl="some an hundredfold, some sixtyfold, some thirtyfold"></blockquote>
+    <h2 class="rise" style="--d:1">Same seed, different ground</h2>
+    <p class="note rise" style="--d:2">A farmer walked his field throwing seed by the handful. Footpaths ran through the fields, rock lay just under the soil in places, and thorn roots waited in the ground. Some seed always landed where it couldn't grow.</p>
+    <div class="sort">
+      <div class="step"><h3>By the way side</h3><div class="vs"><b>4</b></div><p>Packed hard by feet. The birds eat it.</p></div>
+      <div class="step"><h3>Stony places</h3><div class="vs"><b>5</b><b>6</b></div><p>Up fast, no depth, no root. The sun scorches it.</p></div>
+      <div class="step"><h3>Among thorns</h3><div class="vs"><b>7</b></div><p>It comes up, but the thorns come up with it and choke it.</p></div>
+      <div class="step"><h3>Good ground</h3><div class="vs"><b>8</b></div><p>It grows and bears fruit, a hundred, sixty, thirty.</p></div>
+    </div>
+    <div class="math step">
+      <div><b>1 seed</b><span>sown</span></div>
+      <div><b>30</b><span>a good year</span></div>
+      <div><b>60</b><span>a great year</span></div>
+      <div><b>100</b><span>more than any farmer dared hope</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide verse" data-v="10-12" data-hl="Why speakest thou unto them in parables?|it is given unto you to know the mysteries of the kingdom of heaven"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="10" data-hl="Why speakest thou unto them in parables?"></blockquote>
+    <h2 class="rise" style="--d:1">Why stories?</h2>
+    <div class="columns">
+      <div class="col grace step"><p class="who">“unto you”</p><h3>came and asked</h3><p>The disciples came close and wanted to know. To them the meaning was given.</p></div>
+      <div class="col law step"><p class="who">“to them”</p><h3>heard a story and went home</h3><p>The same words, but no wish to understand them.</p></div>
+    </div>
+    <p class="note step">A <em>mystery</em> in the Bible isn't a riddle. It's something God kept hidden for a long time and now makes known. The door was open to anyone who would come and ask. The disciples weren't smarter than the crowd. They just came.</p>
+    <p class="note step">Verse 12 is how it works: <em>“whosoever hath, to him shall be given.”</em> Take in what God shows you, and He shows you more. Push it away, and you lose even the little you had.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="13-15" data-hl="they seeing see not|the prophecy of Esaias|their eyes they have closed|and I should heal them"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="15" data-hl="their eyes they have closed"></blockquote>
+    <h2 class="rise" style="--d:1">Eyes they have closed</h2>
+    <p class="note rise" style="--d:2"><em>Esaias</em> is Isaiah. About 700 years earlier God told him that the people would hear him and not take it in (Isaiah 6:9–10). Jesus says it came true again in His own day. <em>Waxed gross</em> means <em>grown fat and dull</em>, like a heart wrapped in fat.</p>
+    <div class="ifthen step">
+      <div class="if"><small>they</small>closed their own eyes</div>
+      <span class="arrow">→</span>
+      <div class="if"><small>so they</small>see, and see not</div>
+      <span class="arrow">→</span>
+      <div class="then"><small>and miss</small>“I should heal them”</div>
+    </div>
+    <p class="note step">Look at the end of verse 15. What God wanted all along was to heal them. They shut their eyes so they wouldn't have to see, because seeing would mean turning. The parables don't shut anyone out. They leave the door open for whoever will come and ask.</p>
+    <blockquote class="quote step"><p>“The Lord is not slack concerning his promise, as some men count slackness; but is longsuffering to us-ward, not willing that any should perish, but that all should come to repentance.”</p><cite>2 Peter 3:9</cite></blockquote>
+  </div>
+</section>
+
+<section class="slide verse" data-v="16-17" data-hl="But blessed are your eyes, for they see|many prophets and righteous men have desired to see those things which ye see"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="17" data-hl="have desired to see those things which ye see"></blockquote>
+    <h2 class="rise" style="--d:1">What the prophets longed to see</h2>
+    <ol class="timeline" aria-label="A timeline: Abraham about 2000 BC, Moses about 1400 BC, David about 1000 BC, Isaiah about 700 BC, Malachi about 430 BC, all looking ahead; then the disciples, about AD 28, seeing Jesus.">
+      <li class="wait" style="--k:0"><b>Abraham</b><span>a seed to bless all nations</span><small>about 2000 BC</small></li>
+      <li class="wait" style="--k:1"><b>Moses</b><span>a Prophet like him</span><small>about 1400 BC</small></li>
+      <li class="wait" style="--k:2"><b>David</b><span>a Son on his throne</span><small>about 1000 BC</small></li>
+      <li class="wait" style="--k:3"><b>Isaiah</b><span>a virgin's Son, a suffering Servant</span><small>about 700 BC</small></li>
+      <li class="wait" style="--k:4"><b>Malachi</b><span>the Lord coming to His temple</span><small>about 430 BC</small></li>
+      <li class="lit" style="--k:5"><b>“ye see”</b><span>the disciples, with Jesus</span><small>about AD 28</small></li>
+    </ol>
+    <p class="note step">For two thousand years, God's best men looked ahead to the Christ and died without seeing Him. These fishermen and a tax collector sat in a boat and heard Him tell stories.</p>
+    <p class="note step">You have it better still: the whole story, His cross and His empty tomb, in a book you can open any day. <em>“Blessed are your eyes.”</em></p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="18-19" data-hl="Hear ye therefore the parable of the sower|understandeth it not, then cometh the wicked one"></section>
+<section class="slide verse" data-v="20-21" data-hl="anon with joy receiveth it|dureth for a while|by and by he is offended"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="21" data-hl="Yet hath he not root in himself, but dureth for a while"></blockquote>
+    <h2 class="rise" style="--d:1">Fast up, fast down</h2>
+    <p class="note rise" style="--d:2"><em>The way side</em>: the word lands on a heart packed hard and never gets in. <em>The wicked one</em>, the devil, <em>“catcheth away”</em> what was sown. He snatches it, because he knows what it can do.</p>
+    <div class="ifthen step">
+      <div class="if"><small>stony places</small>“anon with joy receiveth it”</div>
+      <span class="arrow">→</span>
+      <div class="if"><small>but</small>“not root in himself”</div>
+      <span class="arrow">→</span>
+      <div class="then"><small>so</small>“dureth for a while”</div>
+    </div>
+    <p class="note step"><em>Anon</em> means <em>right away</em>. <em>Dureth</em> means <em>lasts</em>. <em>By and by</em> here means <em>at once</em>, and <em>offended</em> means <em>tripped up</em>. Most of us have seen this man, or been him: fired up after a meeting or a scare, and gone the first time trouble comes.</p>
+    <p class="note step">Roots grow where nobody sees them: daily in the word, in prayer, with other believers. That's what holds a man up when the sun gets hot.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="22-23" data-hl="the care of this world, and the deceitfulness of riches, choke the word|heareth the word, and understandeth it"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="23" data-hl="heareth the word, and understandeth it"></blockquote>
+    <h2 class="rise" style="--d:1">Understandeth it</h2>
+    <p class="note rise" style="--d:2">Thorns don't kill in a day. <em>“The care of this world”</em> (worry about bills, court, the job, the family) and <em>“the deceitfulness of riches”</em> (money that promises to fix everything) grow up beside the word until there's no room for it.</p>
+    <p class="note step">Matthew's key word in this chapter is <em>understand</em>. Count where it turns up:</p>
+    <div class="tally step" aria-label="Verses 13 to 23, with understand in verses 13, 14, 15, 19 and 23, and again in verse 51">
+      <span class="hit" style="--k:0"><i>13</i>×1</span>
+      <span class="hit" style="--k:1"><i>14</i>×1</span>
+      <span class="hit" style="--k:2"><i>15</i>×1</span>
+      <span><i>16</i>&nbsp;</span>
+      <span><i>17</i>&nbsp;</span>
+      <span><i>18</i>&nbsp;</span>
+      <span class="hit" style="--k:3"><i>19</i>×1</span>
+      <span><i>20</i>&nbsp;</span>
+      <span><i>21</i>&nbsp;</span>
+      <span><i>22</i>&nbsp;</span>
+      <span class="hit" style="--k:4"><i>23</i>×1</span>
+      <span><i>…</i>&nbsp;</span>
+      <span class="hit" style="--k:5"><i>51</i>×1</span>
+    </div>
+    <p class="note step">The good-ground man isn't a better kind of man. He's the one who lets the word in, thinks it over until it makes sense, and lives by it. Then it bears fruit, and Jesus is glad of thirty as well as a hundred.</p>
+  </div>
+</section>
+
+<!-- ======================= PART TWO: LET BOTH GROW TOGETHER ======================= -->
+<section class="slide part">
+  <div class="inner">
+    <p class="part-n rise">Part two</p>
+    <h2 class="rise" style="--d:1">Let both grow together</h2>
+    <p class="range rise" style="--d:2">Verses 24–43</p>
+    <div class="rule"></div>
+    <p class="hook rise" style="--d:4">An enemy in the field at night, a seed too small to see, and a pinch of leaven in a big batch of dough.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="24-26" data-hl="a man which sowed good seed in his field|his enemy came and sowed tares among the wheat|then appeared the tares also"></section>
+<section class="slide verse" data-v="27-30" data-hl="An enemy hath done this|lest while ye gather up the tares, ye root up also the wheat with them|Let both grow together until the harvest"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="30" data-hl="Let both grow together until the harvest"></blockquote>
+    <div class="split">
+      <div class="stage">
+        <svg viewBox="0 0 600 320" role="img" aria-label="A field of young green stalks that all look alike. Then the heads come out: the wheat turns gold and bows with heavy grain, while three tares stand straight with dark seed. Then the roots show under the ground, wheat and tare roots tangled together.">
+          <rect class="mt13-soil" x="0" y="234" width="600" height="86"/>
+          <path class="mt13-root" d="M50 238 Q70 262 95 296 M50 238 Q32 266 18 300 M50 238 Q53 270 48 306"/>
+<path class="mt13-root" d="M112 238 Q132 262 157 296 M112 238 Q94 266 69 300 M112 238 Q115 270 110 306"/>
+<path class="mt13-root t" d="M174 238 Q194 262 219 296 M174 238 Q156 266 131 300 M174 238 Q177 270 172 306"/>
+<path class="mt13-root" d="M236 238 Q256 262 281 296 M236 238 Q218 266 193 300 M236 238 Q239 270 234 306"/>
+<path class="mt13-root" d="M298 238 Q318 262 343 296 M298 238 Q280 266 255 300 M298 238 Q301 270 296 306"/>
+<path class="mt13-root t" d="M360 238 Q380 262 405 296 M360 238 Q342 266 317 300 M360 238 Q363 270 358 306"/>
+<path class="mt13-root" d="M422 238 Q442 262 467 296 M422 238 Q404 266 379 300 M422 238 Q425 270 420 306"/>
+<path class="mt13-root t" d="M484 238 Q504 262 529 296 M484 238 Q466 266 441 300 M484 238 Q487 270 482 306"/>
+<path class="mt13-root" d="M546 238 Q566 262 580 296 M546 238 Q528 266 503 300 M546 238 Q549 270 544 306"/>
+<g class="mt13-stalk" style="--k:0"><path class="mt13-stem" d="M50 236 Q54 170 50 104"/><path class="mt13-stem" d="M51 196 Q66 186 74 166"/><path class="mt13-stem" d="M51 172 Q36 162 30 144"/><g class="mt13-ear" style="--k:0"><ellipse cx="45" cy="98" rx="4.5" ry="7"/><ellipse cx="55" cy="98" rx="4.5" ry="7"/><ellipse cx="45" cy="86" rx="4.5" ry="7"/><ellipse cx="55" cy="86" rx="4.5" ry="7"/><ellipse cx="45" cy="74" rx="4.5" ry="7"/><ellipse cx="55" cy="74" rx="4.5" ry="7"/><ellipse cx="50" cy="62" rx="3.5" ry="6"/></g></g>
+<g class="mt13-stalk" style="--k:1"><path class="mt13-stem" d="M112 236 Q116 170 112 104"/><path class="mt13-stem" d="M113 196 Q128 186 136 166"/><path class="mt13-stem" d="M113 172 Q98 162 92 144"/><g class="mt13-ear" style="--k:1"><ellipse cx="107" cy="98" rx="4.5" ry="7"/><ellipse cx="117" cy="98" rx="4.5" ry="7"/><ellipse cx="107" cy="86" rx="4.5" ry="7"/><ellipse cx="117" cy="86" rx="4.5" ry="7"/><ellipse cx="107" cy="74" rx="4.5" ry="7"/><ellipse cx="117" cy="74" rx="4.5" ry="7"/><ellipse cx="112" cy="62" rx="3.5" ry="6"/></g></g>
+<g class="mt13-stalk tare" style="--k:2"><path class="mt13-stem" d="M174 236 Q178 170 174 96"/><path class="mt13-stem" d="M175 196 Q190 186 198 166"/><path class="mt13-stem" d="M175 172 Q160 162 154 144"/><g class="mt13-darnel" style="--k:2"><path d="M173 96 V48 h2 V96 Z"/><ellipse cx="169" cy="90" rx="3" ry="4.5"/><ellipse cx="179" cy="80" rx="3" ry="4.5"/><ellipse cx="169" cy="70" rx="3" ry="4.5"/><ellipse cx="179" cy="60" rx="3" ry="4.5"/><ellipse cx="174" cy="50" rx="3" ry="4.5"/></g></g>
+<g class="mt13-stalk" style="--k:3"><path class="mt13-stem" d="M236 236 Q240 170 236 104"/><path class="mt13-stem" d="M237 196 Q252 186 260 166"/><path class="mt13-stem" d="M237 172 Q222 162 216 144"/><g class="mt13-ear" style="--k:3"><ellipse cx="231" cy="98" rx="4.5" ry="7"/><ellipse cx="241" cy="98" rx="4.5" ry="7"/><ellipse cx="231" cy="86" rx="4.5" ry="7"/><ellipse cx="241" cy="86" rx="4.5" ry="7"/><ellipse cx="231" cy="74" rx="4.5" ry="7"/><ellipse cx="241" cy="74" rx="4.5" ry="7"/><ellipse cx="236" cy="62" rx="3.5" ry="6"/></g></g>
+<g class="mt13-stalk" style="--k:4"><path class="mt13-stem" d="M298 236 Q302 170 298 104"/><path class="mt13-stem" d="M299 196 Q314 186 322 166"/><path class="mt13-stem" d="M299 172 Q284 162 278 144"/><g class="mt13-ear" style="--k:4"><ellipse cx="293" cy="98" rx="4.5" ry="7"/><ellipse cx="303" cy="98" rx="4.5" ry="7"/><ellipse cx="293" cy="86" rx="4.5" ry="7"/><ellipse cx="303" cy="86" rx="4.5" ry="7"/><ellipse cx="293" cy="74" rx="4.5" ry="7"/><ellipse cx="303" cy="74" rx="4.5" ry="7"/><ellipse cx="298" cy="62" rx="3.5" ry="6"/></g></g>
+<g class="mt13-stalk tare" style="--k:5"><path class="mt13-stem" d="M360 236 Q364 170 360 96"/><path class="mt13-stem" d="M361 196 Q376 186 384 166"/><path class="mt13-stem" d="M361 172 Q346 162 340 144"/><g class="mt13-darnel" style="--k:5"><path d="M359 96 V48 h2 V96 Z"/><ellipse cx="355" cy="90" rx="3" ry="4.5"/><ellipse cx="365" cy="80" rx="3" ry="4.5"/><ellipse cx="355" cy="70" rx="3" ry="4.5"/><ellipse cx="365" cy="60" rx="3" ry="4.5"/><ellipse cx="360" cy="50" rx="3" ry="4.5"/></g></g>
+<g class="mt13-stalk" style="--k:6"><path class="mt13-stem" d="M422 236 Q426 170 422 104"/><path class="mt13-stem" d="M423 196 Q438 186 446 166"/><path class="mt13-stem" d="M423 172 Q408 162 402 144"/><g class="mt13-ear" style="--k:6"><ellipse cx="417" cy="98" rx="4.5" ry="7"/><ellipse cx="427" cy="98" rx="4.5" ry="7"/><ellipse cx="417" cy="86" rx="4.5" ry="7"/><ellipse cx="427" cy="86" rx="4.5" ry="7"/><ellipse cx="417" cy="74" rx="4.5" ry="7"/><ellipse cx="427" cy="74" rx="4.5" ry="7"/><ellipse cx="422" cy="62" rx="3.5" ry="6"/></g></g>
+<g class="mt13-stalk tare" style="--k:7"><path class="mt13-stem" d="M484 236 Q488 170 484 96"/><path class="mt13-stem" d="M485 196 Q500 186 508 166"/><path class="mt13-stem" d="M485 172 Q470 162 464 144"/><g class="mt13-darnel" style="--k:7"><path d="M483 96 V48 h2 V96 Z"/><ellipse cx="479" cy="90" rx="3" ry="4.5"/><ellipse cx="489" cy="80" rx="3" ry="4.5"/><ellipse cx="479" cy="70" rx="3" ry="4.5"/><ellipse cx="489" cy="60" rx="3" ry="4.5"/><ellipse cx="484" cy="50" rx="3" ry="4.5"/></g></g>
+<g class="mt13-stalk" style="--k:8"><path class="mt13-stem" d="M546 236 Q550 170 546 104"/><path class="mt13-stem" d="M547 196 Q562 186 570 166"/><path class="mt13-stem" d="M547 172 Q532 162 526 144"/><g class="mt13-ear" style="--k:8"><ellipse cx="541" cy="98" rx="4.5" ry="7"/><ellipse cx="551" cy="98" rx="4.5" ry="7"/><ellipse cx="541" cy="86" rx="4.5" ry="7"/><ellipse cx="551" cy="86" rx="4.5" ry="7"/><ellipse cx="541" cy="74" rx="4.5" ry="7"/><ellipse cx="551" cy="74" rx="4.5" ry="7"/><ellipse cx="546" cy="62" rx="3.5" ry="6"/></g></g>
+<text class="mt13-tag" x="174" y="41" text-anchor="middle">tares</text><text class="mt13-tag" x="360" y="41" text-anchor="middle">tares</text><text class="mt13-tag" x="484" y="41" text-anchor="middle">tares</text>
+          <text class="mt13-say a" x="300" y="18" text-anchor="middle">the blade sprung up: all look alike</text>
+          <text class="mt13-say b" x="300" y="18" text-anchor="middle">“then appeared the tares also”</text>
+          <text class="mt13-say c" x="300" y="18" text-anchor="middle">the roots are tangled together</text>
+        </svg>
+      </div>
+      <div>
+        <h2 class="rise" style="--d:1">Tares in the wheat</h2>
+        <p class="note rise" style="--d:2"><em>Tares</em> were most likely darnel, a weed that looks almost exactly like wheat while it's young. Sowing it in a man's field was a real way to ruin a neighbor.</p>
+        <p class="note step mt13-ripen">You only tell them apart when the heads come out. Ripe wheat bows under the weight of its grain. Darnel stands up straight, with small dark seed.</p>
+        <p class="note step mt13-roots">By then the roots are wound together. Pull the tares, and you tear up the wheat. So the owner says to wait: <em>“Let both grow together until the harvest.”</em></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="29" data-hl="Nay"></blockquote>
+    <h2 class="rise" style="--d:1">Not our job</h2>
+    <p class="note rise" style="--d:2">The servants were eager: <em>“Wilt thou then that we go and gather them up?”</em> The owner said no. They couldn't be trusted to tell wheat from tares, and they'd do more harm than good.</p>
+    <p class="note step">Jesus explains it in verses 36–43: the field is the world. Good and evil grow side by side until the end, and God is patient with it for now. That doesn't mean He doesn't see. <em>“An enemy hath done this.”</em> He knows exactly where the evil came from.</p>
+    <p class="note step">For us it means two things. It isn't our job to rip up every man we think is a fake. Leave the sorting to the Lord of the harvest. And when you find bad men among good ones, even in a church, don't let it shake you. Jesus said it would be this way.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="31-32" data-hl="a grain of mustard seed|the least of all seeds|becometh a tree"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="32" data-hl="the least of all seeds|becometh a tree"></blockquote>
+    <h2 class="rise" style="--d:1">The least of all seeds</h2>
+    <div class="temples">
+      <div class="stone-t step"><h3>sown</h3><div class="big">a speck</div><p>A mustard seed is about the size of a pinhead, the smallest seed a Galilean farmer sowed.</p></div>
+      <div class="body-t step"><h3>grown</h3><div class="big">a tree</div><p>By the lake it can grow ten feet tall or more, with birds sitting in its branches.</p></div>
+    </div>
+    <p class="note step">That's the kingdom of heaven. It started with a carpenter from Nazareth and a dozen ordinary men. Today there are believers in nearly every nation on earth.</p>
+    <p class="note step">God works the same way in a man. One honest prayer. One day clean. It looks like nothing. Don't despise it. He grows big things from seeds too small to see.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="33" data-hl="leaven, which a woman took, and hid in three measures of meal|till the whole was leavened"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="33" data-hl="till the whole was leavened"></blockquote>
+    <h2 class="rise" style="--d:1">Hidden, then everywhere</h2>
+    <p class="note rise" style="--d:2"><em>Leaven</em> is yeast, a lump of old dough saved from the last baking. <em>Three measures of meal</em> was a huge batch of flour, enough bread for a crowd. A woman works a little lump into it and covers it up.</p>
+    <div class="dots fill rows rise" data-dots="90" style="--d:3;--cols:30;--dot:var(--warm);--pace:45ms;--wait:900ms;max-width:44rem" aria-label="Ninety empty rings fill in one by one until every one is full."></div>
+    <p class="dots-cap rise" style="--d:3"><span>a little leaven, hid in the meal</span><span>“till the whole was leavened”</span></p>
+    <p class="note step">You can't see it work. You can't hurry it. But it doesn't stop until it has gone through the whole batch. Elsewhere leaven pictures sin spreading (16:6). Here Jesus uses it for His kingdom: quiet, from the inside, and it reaches everything.</p>
+    <p class="note step">The mustard seed grows out where people can see it. The leaven works inside, where nobody sees. That's how He changes a man too: from the inside out, until it shows in everything.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="34-35" data-hl="without a parable spake he not unto them|I will open my mouth in parables"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="35" data-hl="That it might be fulfilled"></blockquote>
+    <h2 class="rise" style="--d:1">Spoken by the prophet</h2>
+    <ol class="checks">
+      <li class="step"><span class="tick">✓</span><q>I will open my mouth in a parable: I will utter dark sayings of old:</q><small>Psalm 78:2</small><b>13:34–35</b></li>
+    </ol>
+    <p class="note step">Psalm 78 was written by Asaph, one of David's chief singers, who is also called a seer, a prophet (2 Chronicles 29:30). He told Israel's history as a lesson for the next generation. Matthew sees Jesus doing the same thing, only more so.</p>
+    <p class="note step"><em>“Kept secret from the foundation of the world”</em>: God's plan wasn't made up as He went along. It was there from the start, waiting to be told. Jesus is the One who tells it.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="36-39" data-hl="Declare unto us the parable of the tares of the field|He that soweth the good seed is the Son of man|The field is the world|The enemy that sowed them is the devil"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="36" data-hl="Declare unto us the parable of the tares of the field"></blockquote>
+    <h2 class="rise" style="--d:1">The key to the story</h2>
+    <div class="mt13-key">
+      <div class="rise" style="--d:2"><b>the sower</b><i>→</i><span>the Son of man</span></div>
+      <div class="rise" style="--d:3"><b>the field</b><i>→</i><span>the world</span></div>
+      <div class="rise" style="--d:4"><b>the good seed</b><i>→</i><span>the children of the kingdom</span></div>
+      <div class="rise" style="--d:5"><b>the tares</b><i>→</i><span>the children of the wicked one</span></div>
+      <div class="rise" style="--d:6"><b>the enemy</b><i>→</i><span>the devil</span></div>
+      <div class="rise" style="--d:7"><b>the harvest</b><i>→</i><span>the end of the world</span></div>
+      <div class="rise" style="--d:8"><b>the reapers</b><i>→</i><span>the angels</span></div>
+    </div>
+    <p class="note step">The disciples didn't get it, so they asked. That's the right move. Jesus never sends away a man who comes asking.</p>
+    <p class="note step">Notice that the good seed are <em>people</em>, and Jesus plants them in the world on purpose. A believer isn't meant to hide from the world but to grow right where he's been planted, tares and all.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="40-43" data-hl="so shall it be in the end of this world|a furnace of fire|Then shall the righteous shine forth as the sun"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="43" data-hl="Then shall the righteous shine forth as the sun"></blockquote>
+    <h2 class="rise" style="--d:1">Two endings</h2>
+    <div class="columns">
+      <div class="col law step"><p class="who">“them which do iniquity”</p><h3>a furnace of fire</h3><p>“There shall be wailing and gnashing of teeth.” Grief, and anger, that never ends.</p></div>
+      <div class="col grace step"><p class="who">“the righteous”</p><h3>shine forth as the sun</h3><p>At home “in the kingdom of their Father.”</p></div>
+    </div>
+    <p class="note step">Nobody in the Bible spoke about hell more plainly than Jesus did, and He did it because He doesn't want anyone to go there. Things that <em>offend</em> are things that trip people into sin. God will clear them all out.</p>
+    <p class="note step">Who are <em>“the righteous”</em>? Not men who were never tares. Every one of us was. It's the man who has believed on Jesus, and He has made him righteous. The door is open to whosoever will come today:</p>
+    <blockquote class="quote step"><p>“Verily, verily, I say unto you, He that heareth my word, and believeth on him that sent me, hath everlasting life, and shall not come into condemnation; but is passed from death unto life.”</p><cite>John 5:24</cite></blockquote>
+  </div>
+</section>
+
+<!-- ======================= PART THREE: TREASURE, A PEARL, AND A NET ======================= -->
+<section class="slide part">
+  <div class="inner">
+    <p class="part-n rise">Part three</p>
+    <h2 class="rise" style="--d:1">Treasure, a pearl, and a net</h2>
+    <p class="range rise" style="--d:2">Verses 44–52</p>
+    <div class="rule"></div>
+    <p class="hook rise" style="--d:4">Inside the house, just the disciples: what the kingdom is worth, and how it ends.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="44" data-hl="treasure hid in a field|for joy thereof goeth and selleth all that he hath"></section>
+<section class="slide verse" data-v="45-46" data-hl="a merchant man, seeking goodly pearls|one pearl of great price"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="44" data-hl="for joy thereof"></blockquote>
+    <h2 class="rise" style="--d:1">One stumbled on it, one searched</h2>
+    <div class="columns">
+      <div class="col grace step"><p class="who">the treasure (v. 44)</p><h3>wasn't looking</h3><p>A working man digging in another man's field hits a pot of coins. With no banks, people buried their valuables, and sometimes the owner died and nobody knew.</p></div>
+      <div class="col grace step"><p class="who">the pearl (vv. 45–46)</p><h3>looked for years</h3><p>A merchant who dealt in fine pearls, searching all his life for the best. Then he finds the one.</p></div>
+    </div>
+    <p class="note step">Some men come to Christ like the digger: we weren't looking for God at all, and He found us, in a cell, a hospital, a meeting we got dragged to. Others searched for years through everything else first. Both found the same treasure.</p>
+    <p class="note step">And look at the digger's face: <em>“for joy thereof.”</em> He isn't grieving what he sold. He can't believe what he got.</p>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="46" data-hl="sold all that he had, and bought it"></blockquote>
+    <div class="split">
+      <div class="stage">
+        <svg class="scale" viewBox="0 0 600 330" style="--tip:12deg" role="img" aria-label="A balance scale. On the left pan, everything a man owns: coins, a house, a robe. On the right pan, one pearl. The scale tips toward the pearl.">
+          <path d="M270 320 L330 320 L312 300 L288 300 Z" style="fill:var(--line-strong)"/>
+          <line x1="300" y1="300" x2="300" y2="70" stroke-width="8" style="stroke:var(--line-strong)"/>
+          <g class="scale-beam">
+            <line x1="80" y1="70" x2="520" y2="70" stroke-width="8" stroke-linecap="round" style="stroke:var(--ink-soft)"/>
+            <circle cx="300" cy="70" r="11" style="fill:var(--accent)"/>
+          </g>
+          <g class="scale-pan l">
+            <g stroke-width="2" style="stroke:var(--ink-soft)"><line x1="80" y1="70" x2="30" y2="190"/><line x1="80" y1="70" x2="130" y2="190"/></g>
+            <path d="M20 190 L140 190 Q130 220 80 220 Q30 220 20 190 Z" style="fill:var(--surface-2);stroke:var(--ink-soft)" stroke-width="2"/>
+            <g>
+              <ellipse cx="44" cy="184" rx="13" ry="5" style="fill:var(--warm)"/>
+              <ellipse cx="46" cy="178" rx="13" ry="5" style="fill:var(--warm)"/>
+              <path d="M70 188 V164 L86 152 L102 164 V188 Z" style="fill:var(--leather-light);stroke:var(--leather)" stroke-width="2"/>
+              <path d="M108 188 L112 166 Q120 160 128 166 L132 188 Z" style="fill:var(--wine)"/>
+            </g>
+            <text x="80" y="250" text-anchor="middle" font-size="18" style="fill:var(--ink-soft)">“all that</text>
+            <text x="80" y="272" text-anchor="middle" font-size="18" style="fill:var(--ink-soft)">he had”</text>
+          </g>
+          <g class="scale-pan r">
+            <g stroke-width="2" style="stroke:var(--ink-soft)"><line x1="520" y1="70" x2="470" y2="190"/><line x1="520" y1="70" x2="570" y2="190"/></g>
+            <path d="M460 190 L580 190 Q570 220 520 220 Q470 220 460 190 Z" style="fill:var(--surface-2);stroke:var(--accent)" stroke-width="2"/>
+            <circle cx="520" cy="176" r="24" style="fill:var(--accent)" opacity=".22"/>
+            <circle cx="520" cy="176" r="13" style="fill:var(--glow);stroke:var(--accent)" stroke-width="2"/>
+            <circle cx="515" cy="171" r="4" style="fill:var(--on-glow)" opacity=".18"/>
+            <text x="520" y="250" text-anchor="middle" font-size="20" font-weight="700" style="fill:var(--accent-hot)">one pearl</text>
+          </g>
+        </svg>
+      </div>
+      <div>
+        <h2 class="rise" style="--d:1">Worth everything</h2>
+        <p class="note rise" style="--d:2">Before modern pearl farms, a large, perfect pearl was one of the most valuable things in the world. Both men sold <em>all</em>. Neither one was cheated.</p>
+        <p class="note step scale-go">This isn't about buying salvation. Nobody can pay for it. <em>“The gift of God is eternal life through Jesus Christ our Lord”</em> (Romans 6:23). It's about what Christ is worth once you see Him. Paul saw it:</p>
+        <blockquote class="quote step"><p>“Yea doubtless, and I count all things but loss for the excellency of the knowledge of Christ Jesus my Lord: for whom I have suffered the loss of all things, and do count them but dung, that I may win Christ,”</p><cite>Philippians 3:8</cite></blockquote>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="slide verse" data-v="47-50" data-hl="like unto a net, that was cast into the sea, and gathered of every kind|gathered the good into vessels, but cast the bad away|sever the wicked from among the just"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="47" data-hl="gathered of every kind"></blockquote>
+    <h2 class="rise" style="--d:1">The net</h2>
+    <p class="note rise" style="--d:2">The fishermen in the room knew this one by heart. A dragnet was a long net with floats on top and weights on the bottom. Boats dragged it in a wide sweep and hauled it to the beach, full of everything in its path.</p>
+    <div class="dots fish rise" data-dots="48" style="--d:3;--size:30px;--pace:40ms;max-width:44rem" aria-label="A net full of fish of every kind."></div>
+    <p class="note step">Then the men sat down on the shore and sorted: good fish into baskets, the bad thrown out. The Law called some fish unclean (Leviticus 11:9–12), and some were simply worthless.</p>
+    <p class="note step">The gospel net goes out to everyone and gathers <em>“of every kind.”</em> Nobody is left out of the invitation. But there is a day of sorting, and the angels do it, not us. The time to settle where you stand is now, while the net is still in the water.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="51-52" data-hl="Have ye understood all these things?|bringeth forth out of his treasure things new and old"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="52" data-hl="things new and old"></blockquote>
+    <h2 class="rise" style="--d:1">Things new and old</h2>
+    <p class="saying rise" style="--d:2">Old truth, <em>new light.</em></p>
+    <p class="note rise" style="--d:3">A <em>scribe</em> was a man who studied and taught the Old Testament. A <em>householder</em> is the man of the house, with a storeroom he can bring things out of.</p>
+    <p class="note step">A scribe <em>“instructed unto the kingdom”</em> has both. He has the old: Moses, the prophets, the Psalms. And he has the new: Jesus, who fills all of it up. He doesn't throw out the old. He finally understands it.</p>
+    <p class="note step"><em>“Yea, Lord,”</em> they said. They had understood, and now they were to pass it on. That's you too: what you learn here isn't only for you. Somebody you know needs it.</p>
+  </div>
+</section>
+
+<!-- ======================= PART FOUR: HIS OWN COUNTRY ======================= -->
+<section class="slide part">
+  <div class="inner">
+    <p class="part-n rise">Part four</p>
+    <h2 class="rise" style="--d:1">Is not this the carpenter's son?</h2>
+    <p class="range rise" style="--d:2">Verses 53–58</p>
+    <div class="rule"></div>
+    <p class="hook rise" style="--d:4">Jesus goes home to Nazareth, and the people who knew Him best can't get past who they think He is.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="53-54" data-hl="he was come into his own country|Whence hath this man this wisdom, and these mighty works?"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="54" data-hl="his own country"></blockquote>
+    <div class="split">
+      <div class="stage">
+        <svg class="map mt13-map" data-land viewBox="172 92 136 100" data-towns="Capernaum:t, Cana:l, Nazareth!:l" style="--mt13-t:7px;--mt13-r:2.4px;--mt13-g:6px;--mt13-w:2px" role="img" aria-label="Map of Galilee. A route runs from Capernaum on the Sea of Galilee southwest into the hills to Nazareth, about a day's walk.">
+          <text class="map-water" x="294" y="158" text-anchor="middle">the sea</text>
+          <path class="map-route" pathLength="1" d="M266 133 C252 142 238 150 228 160 C222 166 218 170 215 172"/>
+          <text class="map-soft mt13-small" x="244" y="182" text-anchor="middle">about 20 miles,</text>
+          <text class="map-soft mt13-small" x="244" y="189" text-anchor="middle">uphill</text>
+        </svg>
+      </div>
+      <div>
+        <h2 class="rise" style="--d:1">Home to Nazareth</h2>
+        <p class="note rise" style="--d:2"><em>His own country</em> is Nazareth, the hill village where He grew up (2:23). Capernaum, His base now, was about a day's walk away.</p>
+        <p class="note step">He teaches in the <em>synagogue</em>, the town's meeting house for prayer and reading the Scriptures every Sabbath. These were the same benches He sat on as a boy.</p>
+        <p class="note step">And they were <em>astonished</em>. Nobody denied the wisdom or the mighty works. They just couldn't figure out where a man like Him got them.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="slide verse" data-v="55-56" data-hl="Is not this the carpenter’s son?|is not his mother called Mary?|his brethren, James, and Joses, and Simon, and Judas"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="55" data-hl="Is not this the carpenter’s son?"></blockquote>
+    <h2 class="rise" style="--d:1">We know him</h2>
+    <div class="talk">
+      <p class="rise" style="--d:2"><small>The town</small>Is not this the carpenter's son?</p>
+      <p class="reply step"><small>The town</small>Is not his mother called Mary? and his brethren, James, and Joses, and Simon, and Judas?</p>
+      <p class="step"><small>The town</small>Whence then hath this man all these things?<br><span class="flag">they never asked the answer</span></p>
+    </div>
+    <p class="note step">A <em>carpenter</em> built in wood and stone. It was Joseph's trade, and Jesus learned it. His brothers were Mary and Joseph's sons, born after Him.</p>
+    <p class="note step">They didn't believe in Him yet (John 7:5). But after He rose, there they were, praying with the disciples. James came to lead the church in Jerusalem, and Judas wrote the letter of Jude.</p>
+    <blockquote class="quote step"><p>“These all continued with one accord in prayer and supplication, with the women, and Mary the mother of Jesus, and with his brethren.”</p><cite>Acts 1:14</cite></blockquote>
+  </div>
+</section>
+
+<section class="slide verse" data-v="57-58" data-hl="A prophet is not without honour, save in his own country|he did not many mighty works there because of their unbelief"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="58" data-hl="because of their unbelief"></blockquote>
+    <h2 class="rise" style="--d:1">Too familiar</h2>
+    <p class="note rise" style="--d:2"><em>“Offended in him”</em>: they tripped over Him. He was too ordinary, too local, too much like them. <em>“A prophet is not without honour, save in his own country”</em>: the people who knew you before are often the slowest to believe you've changed.</p>
+    <div class="ifthen step">
+      <div class="if"><small>they had</small>the Son of God in their synagogue</div>
+      <span class="arrow">→</span>
+      <div class="if"><small>but</small>“their unbelief”</div>
+      <span class="arrow">→</span>
+      <div class="then"><small>so</small>“not many mighty works there”</div>
+    </div>
+    <p class="note step">His power wasn't too small for Nazareth. They just wouldn't come to Him for it. Unbelief doesn't weaken Christ. It closes the door on Him. And if you're short on faith, bring that to Him too, honestly. He has never turned away a prayer like this one:</p>
+    <blockquote class="quote step"><p>“And straightway the father of the child cried out, and said with tears, Lord, I believe; help thou mine unbelief.”</p><cite>Mark 9:24</cite></blockquote>
+  </div>
+</section>
+
+<!-- ======================= CLOSING ======================= -->
+<section class="slide remember">
+  <div class="inner">
+    <h2 class="rise">Points to remember</h2>
+    <ol class="seeds">
+      <li class="step"><span class="topic">Hearing</span><span class="seed-q">“Heareth the word, and understandeth it” <cite>13:23</cite></span><span class="take">Good ground lets the word in, thinks it through, and lives it. Then it bears fruit.</span></li>
+      <li class="step"><span class="topic">Wheat and tares</span><span class="seed-q">“Let both grow together until the harvest” <cite>13:30</cite></span><span class="take">God is patient now and will sort it out at the end. The judging is His job, not ours.</span></li>
+      <li class="step"><span class="topic">Small beginnings</span><span class="seed-q">“The least of all seeds” <cite>13:32</cite></span><span class="take">The kingdom starts small and hidden, and it grows until it reaches everything.</span></li>
+      <li class="step"><span class="topic">Treasure</span><span class="seed-q">“For joy thereof goeth and selleth all” <cite>13:44</cite></span><span class="take">Christ is worth more than everything else put together, and finding Him is pure joy.</span></li>
+      <li class="step"><span class="topic">The end</span><span class="seed-q">“Then shall the righteous shine forth as the sun” <cite>13:43</cite></span><span class="take">There will be a harvest and a sorting. Settle where you stand with Jesus today.</span></li>
+      <li class="step"><span class="topic">Unbelief</span><span class="seed-q">“Because of their unbelief” <cite>13:58</cite></span><span class="take">Nazareth had Jesus in its synagogue and missed what He could have done there.</span></li>
+    </ol>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 1 of 6</p>
+      <span class="topic">Hearing</span>
+      <h2>What does good ground do with the word?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="19" data-hl="understandeth it not"></blockquote>
+      <blockquote class="quote step" data-q="22" data-hl="choke the word"></blockquote>
+      <blockquote class="quote step" data-q="23"></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>It hears the word and understands it: lets it in, thinks it through, and lives by it. Then it bears fruit, some a hundredfold, some sixty, some thirty. The hard path, the shallow rock, and the thorns all hear too, but the word never takes root or gets choked out.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 2 of 6</p>
+      <span class="topic">Wheat and tares</span>
+      <h2>Why does God let the wheat and the tares grow together?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="28" data-hl="An enemy hath done this"></blockquote>
+      <blockquote class="quote step" data-q="29"></blockquote>
+      <blockquote class="quote step" data-q="30" data-hl="Let both grow together until the harvest"></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>Because pulling the tares now would tear up the wheat too. God knows the evil came from the enemy, and He is patient with the world until the harvest. Then His angels will do the sorting. Our job isn't to rip up everyone we think is a fake, but to grow where He planted us.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 3 of 6</p>
+      <span class="topic">Small beginnings</span>
+      <h2>How does the kingdom of heaven grow?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="31"></blockquote>
+      <blockquote class="quote step" data-q="32" data-hl="the least of all seeds"></blockquote>
+      <blockquote class="quote step" data-q="33"></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>It starts small, like the least of all seeds, and grows into a tree. And it works quietly from the inside, like leaven, until the whole batch is changed. That's how it spread through the world, and that's how God changes a man.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 4 of 6</p>
+      <span class="topic">Treasure</span>
+      <h2>What is the kingdom of heaven worth?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="44" data-hl="for joy thereof"></blockquote>
+      <blockquote class="quote step" data-q="45-46"></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>Everything. Both men sold all they had, and gladly. We can't buy salvation, because it's God's free gift. But once a man sees who Christ is, everything else looks small next to Him. Some of us stumbled on Him without looking, and some searched for years. Same treasure.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 5 of 6</p>
+      <span class="topic">The end</span>
+      <h2>What happens at the end of the world?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="41-42"></blockquote>
+      <blockquote class="quote step" data-q="43" data-hl="Then shall the righteous shine forth as the sun"></blockquote>
+      <blockquote class="quote step" data-q="49"></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>The Son of man sends His angels to gather out everything that offends and everyone who does evil, and there is a furnace of fire. The righteous, those made right with God through faith in Jesus, shine like the sun in their Father's kingdom. The invitation is open to everyone now, before the sorting.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 6 of 6</p>
+      <span class="topic">Unbelief</span>
+      <h2>What did unbelief cost Jesus' hometown?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="54" data-hl="Whence hath this man this wisdom, and these mighty works?"></blockquote>
+      <blockquote class="quote step" data-q="57" data-hl="And they were offended in him"></blockquote>
+      <blockquote class="quote step" data-q="58"></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>They had the Son of God teaching in their own synagogue, and they missed it. They couldn't get past knowing Him as the carpenter's son, so He did not many mighty works there. Unbelief doesn't make Him weak. It keeps us from coming to Him.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide prayer">
+  <div class="inner">
+    <div class="emblem rise"></div>
+    <h2 class="rise" style="--d:1">Prayer requests</h2>
+    <p class="ask-line rise" style="--d:2">What can we pray about for you today?</p>
+    <blockquote class="quote rise" style="--d:4"><p>“So shall my word be that goeth forth out of my mouth: it shall not return unto me void, but it shall accomplish that which I please, and it shall prosper in the thing whereto I sent it.”</p><cite>Isaiah 55:11</cite></blockquote>
+  </div>
+</section>
+
+</main>
+
+<script>
+// King James Version, Matthew chapter 13
+const V = {
+  1: "The same day went Jesus out of the house, and sat by the sea side.",
+  2: "And great multitudes were gathered together unto him, so that he went into a ship, and sat; and the whole multitude stood on the shore.",
+  3: "And he spake many things unto them in parables, saying, Behold, a sower went forth to sow;",
+  4: "And when he sowed, some seeds fell by the way side, and the fowls came and devoured them up:",
+  5: "Some fell upon stony places, where they had not much earth: and forthwith they sprung up, because they had no deepness of earth:",
+  6: "And when the sun was up, they were scorched; and because they had no root, they withered away.",
+  7: "And some fell among thorns; and the thorns sprung up, and choked them:",
+  8: "But other fell into good ground, and brought forth fruit, some an hundredfold, some sixtyfold, some thirtyfold.",
+  9: "Who hath ears to hear, let him hear.",
+  10: "And the disciples came, and said unto him, Why speakest thou unto them in parables?",
+  11: "He answered and said unto them, Because it is given unto you to know the mysteries of the kingdom of heaven, but to them it is not given.",
+  12: "For whosoever hath, to him shall be given, and he shall have more abundance: but whosoever hath not, from him shall be taken away even that he hath.",
+  13: "Therefore speak I to them in parables: because they seeing see not; and hearing they hear not, neither do they understand.",
+  14: "And in them is fulfilled the prophecy of Esaias, which saith, By hearing ye shall hear, and shall not understand; and seeing ye shall see, and shall not perceive:",
+  15: "For this people’s heart is waxed gross, and their ears are dull of hearing, and their eyes they have closed; lest at any time they should see with their eyes, and hear with their ears, and should understand with their heart, and should be converted, and I should heal them.",
+  16: "But blessed are your eyes, for they see: and your ears, for they hear.",
+  17: "For verily I say unto you, That many prophets and righteous men have desired to see those things which ye see, and have not seen them; and to hear those things which ye hear, and have not heard them.",
+  18: "Hear ye therefore the parable of the sower.",
+  19: "When any one heareth the word of the kingdom, and understandeth it not, then cometh the wicked one, and catcheth away that which was sown in his heart. This is he which received seed by the way side.",
+  20: "But he that received the seed into stony places, the same is he that heareth the word, and anon with joy receiveth it;",
+  21: "Yet hath he not root in himself, but dureth for a while: for when tribulation or persecution ariseth because of the word, by and by he is offended.",
+  22: "He also that received seed among the thorns is he that heareth the word; and the care of this world, and the deceitfulness of riches, choke the word, and he becometh unfruitful.",
+  23: "But he that received seed into the good ground is he that heareth the word, and understandeth it; which also beareth fruit, and bringeth forth, some an hundredfold, some sixty, some thirty.",
+  24: "Another parable put he forth unto them, saying, The kingdom of heaven is likened unto a man which sowed good seed in his field:",
+  25: "But while men slept, his enemy came and sowed tares among the wheat, and went his way.",
+  26: "But when the blade was sprung up, and brought forth fruit, then appeared the tares also.",
+  27: "So the servants of the householder came and said unto him, Sir, didst not thou sow good seed in thy field? from whence then hath it tares?",
+  28: "He said unto them, An enemy hath done this. The servants said unto him, Wilt thou then that we go and gather them up?",
+  29: "But he said, Nay; lest while ye gather up the tares, ye root up also the wheat with them.",
+  30: "Let both grow together until the harvest: and in the time of harvest I will say to the reapers, Gather ye together first the tares, and bind them in bundles to burn them: but gather the wheat into my barn.",
+  31: "Another parable put he forth unto them, saying, The kingdom of heaven is like to a grain of mustard seed, which a man took, and sowed in his field:",
+  32: "Which indeed is the least of all seeds: but when it is grown, it is the greatest among herbs, and becometh a tree, so that the birds of the air come and lodge in the branches thereof.",
+  33: "Another parable spake he unto them; The kingdom of heaven is like unto leaven, which a woman took, and hid in three measures of meal, till the whole was leavened.",
+  34: "All these things spake Jesus unto the multitude in parables; and without a parable spake he not unto them:",
+  35: "That it might be fulfilled which was spoken by the prophet, saying, I will open my mouth in parables; I will utter things which have been kept secret from the foundation of the world.",
+  36: "Then Jesus sent the multitude away, and went into the house: and his disciples came unto him, saying, Declare unto us the parable of the tares of the field.",
+  37: "He answered and said unto them, He that soweth the good seed is the Son of man;",
+  38: "The field is the world; the good seed are the children of the kingdom; but the tares are the children of the wicked one;",
+  39: "The enemy that sowed them is the devil; the harvest is the end of the world; and the reapers are the angels.",
+  40: "As therefore the tares are gathered and burned in the fire; so shall it be in the end of this world.",
+  41: "The Son of man shall send forth his angels, and they shall gather out of his kingdom all things that offend, and them which do iniquity;",
+  42: "And shall cast them into a furnace of fire: there shall be wailing and gnashing of teeth.",
+  43: "Then shall the righteous shine forth as the sun in the kingdom of their Father. Who hath ears to hear, let him hear.",
+  44: "Again, the kingdom of heaven is like unto treasure hid in a field; the which when a man hath found, he hideth, and for joy thereof goeth and selleth all that he hath, and buyeth that field.",
+  45: "Again, the kingdom of heaven is like unto a merchant man, seeking goodly pearls:",
+  46: "Who, when he had found one pearl of great price, went and sold all that he had, and bought it.",
+  47: "Again, the kingdom of heaven is like unto a net, that was cast into the sea, and gathered of every kind:",
+  48: "Which, when it was full, they drew to shore, and sat down, and gathered the good into vessels, but cast the bad away.",
+  49: "So shall it be at the end of the world: the angels shall come forth, and sever the wicked from among the just,",
+  50: "And shall cast them into the furnace of fire: there shall be wailing and gnashing of teeth.",
+  51: "Jesus saith unto them, Have ye understood all these things? They say unto him, Yea, Lord.",
+  52: "Then said he unto them, Therefore every scribe which is instructed unto the kingdom of heaven is like unto a man that is an householder, which bringeth forth out of his treasure things new and old.",
+  53: "And it came to pass, that when Jesus had finished these parables, he departed thence.",
+  54: "And when he was come into his own country, he taught them in their synagogue, insomuch that they were astonished, and said, Whence hath this man this wisdom, and these mighty works?",
+  55: "Is not this the carpenter’s son? is not his mother called Mary? and his brethren, James, and Joses, and Simon, and Judas?",
+  56: "And his sisters, are they not all with us? Whence then hath this man all these things?",
+  57: "And they were offended in him. But Jesus said unto them, A prophet is not without honour, save in his own country, and in his own house.",
+  58: "And he did not many mighty works there because of their unbelief."
+};
+const BOOK = "Matthew 13";
+</script>
+<script src="../assets/deck.js"></script>
+</body>
+</html>
