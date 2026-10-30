@@ -10181,5 +10181,119 @@ window.STUDIES = [
       },
       "big": "Salvation is not something to do but Someone to trust. Believe on the Lord Jesus Christ and you are saved, and midnight is not the end of the story."
     }
+  },
+  {
+    "id": "acts-17",
+    "type": "chapter",
+    "book": "Acts",
+    "ch": 17,
+    "date": "2026-10-30",
+    "title": "Acts 17",
+    "sub": "The world turned upside down",
+    "about": "Paul is run out of Thessalonica, meets Bereans who check everything against the Scriptures, and tells the thinkers of Athens about the God they don’t know.",
+    "tags": [
+      "Searching the Scriptures",
+      "Standing out",
+      "The God who made everything",
+      "God is near",
+      "Repentance",
+      "The resurrection"
+    ],
+    "url": "studies/acts-17.html",
+    "overview": {
+      "where": "Thessalonica, Berea and Athens, on the second journey",
+      "when": "About AD 50, on the second journey (about AD 49 to 52)",
+      "people": [
+        "paul",
+        "silas",
+        "timothy",
+        "jason",
+        "jesus",
+        "the-jews",
+        "greeks",
+        "epicureans-and-stoicks",
+        "dionysius",
+        "damaris"
+      ],
+      "places": [
+        "thessalonica",
+        "amphipolis",
+        "apollonia",
+        "berea",
+        "athens",
+        "areopagus"
+      ],
+      "story": [
+        "In Thessalonica Paul reasons from the Scriptures for three sabbaths that the Christ had to suffer and rise. Some believe, but envious men start a riot and drag Jason before the rulers, shouting that these men have “turned the world upside down” (1–9).",
+        "Paul and Silas slip away by night to Berea, where the people receive the word eagerly and search the Scriptures daily to see whether it is so. Many believe, until the Thessalonian Jews arrive and Paul is sent south to Athens (10–15).",
+        "Waiting in Athens, Paul is stirred by a city full of idols and argues in the market. Philosophers bring him to the Areopagus, Mars’ hill (16–21).",
+        "Paul starts from an altar “TO THE UNKNOWN GOD.” The God who made the world needs nothing, is not far from any of us, and now commands everyone everywhere to repent, because He has set a day to judge the world by the Man He raised from the dead (22–31).",
+        "Some mock, some say “we will hear thee again,” and some believe, among them Dionysius and a woman named Damaris (32–34)."
+      ],
+      "key": {
+        "ref": "Acts 17:11",
+        "text": "These were more noble than those in Thessalonica, in that they received the word with all readiness of mind, and searched the scriptures daily, whether those things were so."
+      },
+      "big": "Check what you hear against the Bible, every day. The God who made everything is near to anyone who is groping for Him, and He calls every man to turn around now, because the Judge is the Jesus who rose from the dead."
+    }
+  },
+  {
+    "id": "acts-18",
+    "type": "chapter",
+    "book": "Acts",
+    "ch": 18,
+    "date": "2026-10-30",
+    "title": "Acts 18",
+    "sub": "I am with thee",
+    "about": "A frightened Paul works as a tentmaker in rough Corinth and hears the Lord say, “Be not afraid… I am with thee.” Then a gifted preacher named Apollos is taught the rest of the story.",
+    "tags": [
+      "Honest work",
+      "A new start",
+      "Fear",
+      "The Lord is with us",
+      "Taking correction",
+      "Grace"
+    ],
+    "url": "studies/acts-18.html",
+    "overview": {
+      "where": "Corinth in Achaia, then home by Ephesus, Caesarea and Antioch; Apollos at Ephesus",
+      "when": "About AD 50 to 52, the end of the second journey; Gallio was proconsul about AD 51 to 52",
+      "people": [
+        "paul",
+        "aquila",
+        "priscilla",
+        "silas",
+        "timothy",
+        "justus",
+        "crispus",
+        "gallio",
+        "sosthenes",
+        "apollos",
+        "claudius",
+        "the-jews"
+      ],
+      "places": [
+        "corinth",
+        "achaia",
+        "cenchrea",
+        "ephesus",
+        "caesarea",
+        "antioch",
+        "alexandria",
+        "galatia"
+      ],
+      "story": [
+        "Paul comes from Athens to Corinth and works as a tentmaker with Aquila and Priscilla, Jews who had been put out of Rome by Claudius. Every sabbath he reasons in the synagogue (1–4).",
+        "When Silas and Timothy come, Paul is gripped by the message. The Jews oppose him, so he goes next door to Justus’ house. Crispus, the synagogue ruler, believes with his household, and many Corinthians believe and are baptized (5–8).",
+        "The Lord speaks to Paul in a vision: “Be not afraid… for I am with thee… for I have much people in this city.” Paul stays a year and six months (9–11).",
+        "The Jews drag Paul before Gallio, the Roman proconsul, who throws out the case. The crowd beats Sosthenes, and Gallio cares nothing for it (12–17).",
+        "Paul sails home by Ephesus, Caesarea and Antioch and later returns to Galatia and Phrygia (18–23). Apollos, an eloquent man who knows only John’s baptism, is taken aside by Aquila and Priscilla, taught more fully, and goes on to help the believers at Corinth (24–28)."
+      ],
+      "key": {
+        "ref": "Acts 18:9–10",
+        "text": "Then spake the Lord to Paul in the night by a vision, Be not afraid, but speak, and hold not thy peace: For I am with thee, and no man shall set on thee to hurt thee: for I have much people in this city."
+      },
+      "big": "When you are afraid, the Lord says what He told Paul: I am with thee, and I already have people here. Do honest work, accept a quiet correction, and keep going. It is grace from the beginning."
+    }
   }
 ];

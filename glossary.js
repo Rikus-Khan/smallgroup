@@ -282,7 +282,13 @@ window.GLOSSARY = [
     [ 11, 26 ] ],
    [
     "Acts", 16,
-    [ 18, 31 ] ] ]
+    [ 18, 31 ] ],
+   [
+    "Acts", 17,
+    [ 3, 7, 18 ] ],
+   [
+    "Acts", 18,
+    [ 5, 28 ] ] ]
  },
  {
   "id": "john-the-baptist",
@@ -1623,7 +1629,13 @@ window.GLOSSARY = [
     [ 1, 2, 4, 5, 19 ] ],
    [
     "Acts", 16,
-    [ 3, 20 ] ] ]
+    [ 3, 20 ] ],
+   [
+    "Acts", 17,
+    [ 1, 5, 10, 13, 17 ] ],
+   [
+    "Acts", 18,
+    [ 2, 4, 5, 12, 14, 19, 28 ] ] ]
  },
  {
   "id": "servants",
@@ -2376,7 +2388,10 @@ window.GLOSSARY = [
     [ 2, 4 ] ],
    [
     "Acts", 16,
-    [ 4 ] ] ]
+    [ 4 ] ],
+   [
+    "Acts", 18,
+    [ 21 ] ] ]
  },
  {
   "id": "bethabara",
@@ -3378,7 +3393,10 @@ window.GLOSSARY = [
     [ 5, 9, 10 ] ],
    [
     "Acts", 14,
-    [ 15, 17 ] ] ]
+    [ 15, 17 ] ],
+   [
+    "Acts", 17,
+    [ 24 ] ] ]
  },
  {
   "id": "hell",
@@ -3831,7 +3849,10 @@ window.GLOSSARY = [
     [ 3, 26 ] ],
    [
     "Acts", 15,
-    [ 11, 40 ] ] ]
+    [ 11, 40 ] ],
+   [
+    "Acts", 18,
+    [ 27 ] ] ]
  },
  {
   "id": "truth",
@@ -4218,7 +4239,10 @@ window.GLOSSARY = [
     [ 15, 39 ] ],
    [
     "Acts", 15,
-    [ 5, 24 ] ] ]
+    [ 5, 24 ] ],
+   [
+    "Acts", 18,
+    [ 13, 15 ] ] ]
  },
  {
   "id": "only-begotten",
@@ -4383,7 +4407,13 @@ window.GLOSSARY = [
     [ 11, 26 ] ],
    [
     "Acts", 16,
-    [ 18, 31 ] ] ]
+    [ 18, 31 ] ],
+   [
+    "Acts", 17,
+    [ 3 ] ],
+   [
+    "Acts", 18,
+    [ 5, 28 ] ] ]
  },
  {
   "id": "son-of-god",
@@ -4776,7 +4806,13 @@ window.GLOSSARY = [
     [ 5, 7, 11 ] ],
    [
     "Acts", 16,
-    [ 1, 31, 34 ] ] ]
+    [ 1, 31, 34 ] ],
+   [
+    "Acts", 17,
+    [ 4, 5, 12, 34 ] ],
+   [
+    "Acts", 18,
+    [ 8, 27 ] ] ]
  },
  {
   "id": "witness",
@@ -4962,7 +4998,10 @@ window.GLOSSARY = [
     [ 16 ] ],
    [
     "Acts", 16,
-    [ 15, 33 ] ] ]
+    [ 15, 33 ] ],
+   [
+    "Acts", 18,
+    [ 8 ] ] ]
  },
  {
   "id": "sons-of-god",
@@ -5697,6 +5736,9 @@ window.GLOSSARY = [
     [ 52 ] ],
    [
     "Acts", 4,
+    [ 13 ] ],
+   [
+    "Acts", 17,
     [ 13 ] ] ]
  },
  {
@@ -6198,7 +6240,10 @@ window.GLOSSARY = [
     [ 35 ] ],
    [
     "Acts", 13,
-    [ 10 ] ] ]
+    [ 10 ] ],
+   [
+    "Acts", 17,
+    [ 31 ] ] ]
  },
  {
   "id": "wicked",
@@ -6360,7 +6405,10 @@ window.GLOSSARY = [
     [ 23 ] ],
    [
     "Acts", 8,
-    [ 22 ] ] ]
+    [ 22 ] ],
+   [
+    "Acts", 18,
+    [ 14 ] ] ]
  },
  {
   "id": "heart",
@@ -8202,7 +8250,10 @@ window.GLOSSARY = [
     [ 9 ] ],
    [
     "Acts", 16,
-    [ 9, 10 ] ] ]
+    [ 9, 10 ] ],
+   [
+    "Acts", 18,
+    [ 9 ] ] ]
  },
  {
   "id": "weights-and-balances",
@@ -8349,7 +8400,13 @@ window.GLOSSARY = [
     [ 21 ] ],
    [
     "Acts", 16,
-    [ 13 ] ] ]
+    [ 13 ] ],
+   [
+    "Acts", 17,
+    [ 2 ] ],
+   [
+    "Acts", 18,
+    [ 4 ] ] ]
  },
  {
   "id": "made-whole",
@@ -8625,7 +8682,13 @@ window.GLOSSARY = [
     [ 9 ] ],
    [
     "Acts", 8,
-    [ 32, 35 ] ] ]
+    [ 32, 35 ] ],
+   [
+    "Acts", 17,
+    [ 2, 11 ] ],
+   [
+    "Acts", 18,
+    [ 24, 28 ] ] ]
  },
  {
   "id": "the-lad",
@@ -8898,7 +8961,13 @@ window.GLOSSARY = [
     [ 1 ] ],
    [
     "Acts", 15,
-    [ 21 ] ] ]
+    [ 21 ] ],
+   [
+    "Acts", 17,
+    [ 1, 10, 17 ] ],
+   [
+    "Acts", 18,
+    [ 4, 7, 8, 17, 19, 26 ] ] ]
  },
  {
   "id": "bread-of-life",
@@ -9453,7 +9522,13 @@ window.GLOSSARY = [
     [ 25 ] ],
    [
     "Acts", 16,
-    [ 14 ] ] ]
+    [ 14 ] ],
+   [
+    "Acts", 17,
+    [ 23, 25 ] ],
+   [
+    "Acts", 18,
+    [ 7, 13 ] ] ]
  },
  {
   "id": "good-shepherd",
@@ -9690,7 +9765,10 @@ window.GLOSSARY = [
     [ 11, 13 ] ],
    [
     "Acts", 13,
-    [ 45 ] ] ]
+    [ 45 ] ],
+   [
+    "Acts", 18,
+    [ 6 ] ] ]
  },
  {
   "id": "ye-are-gods",
@@ -10083,7 +10161,10 @@ window.GLOSSARY = [
     [ 28 ] ],
    [
     "Acts", 13,
-    [ 12 ] ] ]
+    [ 12 ] ],
+   [
+    "Acts", 17,
+    [ 19 ] ] ]
  },
  {
   "id": "letters",
@@ -10188,7 +10269,10 @@ window.GLOSSARY = [
     [ 2, 5, 27 ] ],
    [
     "Acts", 15,
-    [ 3, 7, 12, 14, 17, 19, 23 ] ] ]
+    [ 3, 7, 12, 14, 17, 19, 23 ] ],
+   [
+    "Acts", 18,
+    [ 6 ] ] ]
  },
  {
   "id": "glorified",
@@ -12063,7 +12147,10 @@ window.GLOSSARY = [
     [ 22, 23 ] ],
    [
     "Acts", 10,
-    [ 48 ] ] ]
+    [ 48 ] ],
+   [
+    "Acts", 18,
+    [ 20 ] ] ]
  },
  {
   "id": "testimony",
@@ -12273,7 +12360,10 @@ window.GLOSSARY = [
     [ 31 ] ],
    [
     "Acts", 4,
-    [ 2, 33 ] ] ]
+    [ 2, 33 ] ],
+   [
+    "Acts", 17,
+    [ 18, 32 ] ] ]
  },
  {
   "id": "graveclothes",
@@ -12423,7 +12513,13 @@ window.GLOSSARY = [
     [ 20 ] ],
    [
     "Acts", 14,
-    [ 1 ] ] ]
+    [ 1 ] ],
+   [
+    "Acts", 17,
+    [ 4, 12 ] ],
+   [
+    "Acts", 18,
+    [ 4, 17 ] ] ]
  },
  {
   "id": "sion",
@@ -12867,7 +12963,13 @@ window.GLOSSARY = [
     [ 6 ] ],
    [
     "John", 14,
-    [ 23 ] ] ]
+    [ 23 ] ],
+   [
+    "Acts", 17,
+    [ 14 ] ],
+   [
+    "Acts", 18,
+    [ 3 ] ] ]
  },
  {
   "id": "the-way",
@@ -13380,7 +13482,10 @@ window.GLOSSARY = [
     [ 12, 15 ] ],
    [
     "Acts", 11,
-    [ 28 ] ] ]
+    [ 28 ] ],
+   [
+    "Acts", 17,
+    [ 7 ] ] ]
  },
  {
   "id": "soldiers",
@@ -15561,7 +15666,10 @@ window.GLOSSARY = [
     [ 2 ] ],
    [
     "Acts", 15,
-    [ 23, 41 ] ] ]
+    [ 23, 41 ] ],
+   [
+    "Acts", 18,
+    [ 18 ] ] ]
  },
  {
   "id": "idols",
@@ -20448,7 +20556,10 @@ window.GLOSSARY = [
   "refs": [
    [
     "Malachi", 1,
-    [ 14 ] ] ]
+    [ 14 ] ],
+   [
+    "Acts", 18,
+    [ 18 ] ] ]
  },
  {
   "id": "covenant-curse",
@@ -21255,7 +21366,10 @@ window.GLOSSARY = [
     [ 31 ] ],
    [
     "Acts", 11,
-    [ 18 ] ] ]
+    [ 18 ] ],
+   [
+    "Acts", 17,
+    [ 30 ] ] ]
  },
  {
   "id": "camels-hair",
@@ -25350,7 +25464,10 @@ window.GLOSSARY = [
     [ 34 ] ],
    [
     "Luke", 24,
-    [ 27 ] ] ]
+    [ 27 ] ],
+   [
+    "Acts", 18,
+    [ 26 ] ] ]
  },
  {
   "id": "hinder-part",
@@ -26358,7 +26475,10 @@ window.GLOSSARY = [
     [ 23, 27 ] ],
    [
     "Acts", 15,
-    [ 3, 4, 22 ] ] ]
+    [ 3, 4, 22 ] ],
+   [
+    "Acts", 18,
+    [ 22 ] ] ]
  },
  {
   "id": "bind-and-loose",
@@ -28686,7 +28806,10 @@ window.GLOSSARY = [
     [ 29 ] ],
    [
     "Acts", 5,
-    [ 39 ] ] ]
+    [ 39 ] ],
+   [
+    "Acts", 17,
+    [ 27 ] ] ]
  },
  {
   "id": "faith-in-god",
@@ -28743,7 +28866,10 @@ window.GLOSSARY = [
     [ 4 ] ],
    [
     "Acts", 1,
-    [ 22 ] ] ]
+    [ 22 ] ],
+   [
+    "Acts", 18,
+    [ 25 ] ] ]
  },
  {
   "id": "winefat",
@@ -30663,7 +30789,10 @@ window.GLOSSARY = [
     [ 9 ] ],
    [
     "Acts", 13,
-    [ 45 ] ] ]
+    [ 45 ] ],
+   [
+    "Acts", 17,
+    [ 5 ] ] ]
  },
  {
   "id": "wine-mingled-with-myrrh",
@@ -31149,7 +31278,10 @@ window.GLOSSARY = [
   "refs": [
    [
     "Matthew", 27,
-    [ 19 ] ] ]
+    [ 19 ] ],
+   [
+    "Acts", 18,
+    [ 12, 16, 17 ] ] ]
  },
  {
   "id": "washed-his-hands",
@@ -31587,7 +31719,10 @@ window.GLOSSARY = [
     [ 2, 7 ] ],
    [
     "Acts", 13,
-    [ 50 ] ] ]
+    [ 50 ] ],
+   [
+    "Acts", 17,
+    [ 4, 17 ] ] ]
  },
  {
   "id": "confounded",
@@ -31644,7 +31779,10 @@ window.GLOSSARY = [
   "refs": [
    [
     "Acts", 2,
-    [ 9 ] ] ]
+    [ 9 ] ],
+   [
+    "Acts", 18,
+    [ 2 ] ] ]
  },
  {
   "id": "asia",
@@ -31671,7 +31809,10 @@ window.GLOSSARY = [
     [ 10 ] ],
    [
     "Acts", 16,
-    [ 6 ] ] ]
+    [ 6 ] ],
+   [
+    "Acts", 18,
+    [ 23 ] ] ]
  },
  {
   "id": "cyrene",
@@ -31710,7 +31851,10 @@ window.GLOSSARY = [
   "refs": [
    [
     "Acts", 2,
-    [ 10 ] ] ]
+    [ 10 ] ],
+   [
+    "Acts", 18,
+    [ 2 ] ] ]
  },
  {
   "id": "new-wine",
@@ -32550,7 +32694,10 @@ window.GLOSSARY = [
     [ 26 ] ],
    [
     "Acts", 15,
-    [ 22, 23, 30, 35 ] ] ]
+    [ 22, 23, 30, 35 ] ],
+   [
+    "Acts", 18,
+    [ 22 ] ] ]
  },
  {
   "id": "tarsus",
@@ -32595,7 +32742,10 @@ window.GLOSSARY = [
     [ 11 ] ],
    [
     "Acts", 12,
-    [ 19 ] ] ]
+    [ 19 ] ],
+   [
+    "Acts", 18,
+    [ 22 ] ] ]
  },
  {
   "id": "dearth",
@@ -32772,7 +32922,13 @@ window.GLOSSARY = [
     [ 2, 12, 22, 25, 35, 36, 38, 40 ] ],
    [
     "Acts", 16,
-    [ 3, 9, 14, 17, 18, 19, 25, 28, 29, 36, 37 ] ] ]
+    [ 3, 9, 14, 17, 18, 19, 25, 28, 29, 36, 37 ] ],
+   [
+    "Acts", 17,
+    [ 2, 4, 10, 13, 14, 15, 16, 22, 33 ] ],
+   [
+    "Acts", 18,
+    [ 1, 5, 9, 12, 14, 18 ] ] ]
  },
  {
   "id": "silas",
@@ -32784,7 +32940,13 @@ window.GLOSSARY = [
     [ 22, 27, 32, 34, 40 ] ],
    [
     "Acts", 16,
-    [ 19, 25, 29 ] ] ]
+    [ 19, 25, 29 ] ],
+   [
+    "Acts", 17,
+    [ 4, 10, 14, 15 ] ],
+   [
+    "Acts", 18,
+    [ 5 ] ] ]
  },
  {
   "id": "judas-barsabas",
@@ -32895,7 +33057,13 @@ window.GLOSSARY = [
   "refs": [
    [
     "Acts", 16,
-    [ 1 ] ] ]
+    [ 1 ] ],
+   [
+    "Acts", 17,
+    [ 14, 15 ] ],
+   [
+    "Acts", 18,
+    [ 5 ] ] ]
  },
  {
   "id": "lydia",
@@ -32958,7 +33126,10 @@ window.GLOSSARY = [
   "refs": [
    [
     "Acts", 16,
-    [ 9, 10, 12 ] ] ]
+    [ 9, 10, 12 ] ],
+   [
+    "Acts", 18,
+    [ 5 ] ] ]
  },
  {
   "id": "samothracia",
@@ -33024,7 +33195,10 @@ window.GLOSSARY = [
   "refs": [
    [
     "Acts", 16,
-    [ 6 ] ] ]
+    [ 6 ] ],
+   [
+    "Acts", 18,
+    [ 23 ] ] ]
  },
  {
   "id": "mysia",
@@ -33462,7 +33636,10 @@ window.GLOSSARY = [
   "refs": [
    [
     "Acts", 13,
-    [ 7, 8, 12 ] ] ]
+    [ 7, 8, 12 ] ],
+   [
+    "Acts", 18,
+    [ 12 ] ] ]
  },
  {
   "id": "sorcerer",
@@ -33973,5 +34150,392 @@ window.GLOSSARY = [
    [
     "Acts", 8,
     [ 26 ] ] ]
+ },
+ {
+  "id": "thessalonica",
+  "kind": "place",
+  "name": "Thessalonica (the capital and chief port of Macedonia, on the Egnatian Way)",
+  "refs": [
+   [
+    "Acts", 17,
+    [ 1, 11, 13 ] ] ]
+ },
+ {
+  "id": "amphipolis",
+  "kind": "place",
+  "name": "Amphipolis (a Macedonian city on the road from Philippi)",
+  "refs": [
+   [
+    "Acts", 17,
+    [ 1 ] ] ]
+ },
+ {
+  "id": "apollonia",
+  "kind": "place",
+  "name": "Apollonia (a town on the road between Amphipolis and Thessalonica)",
+  "refs": [
+   [
+    "Acts", 17,
+    [ 1 ] ] ]
+ },
+ {
+  "id": "berea",
+  "kind": "place",
+  "name": "Berea (a town in Macedonia, about fifty miles from Thessalonica)",
+  "refs": [
+   [
+    "Acts", 17,
+    [ 10, 13 ] ] ]
+ },
+ {
+  "id": "athens",
+  "kind": "place",
+  "name": "Athens (the great city of Greek learning, full of idols)",
+  "refs": [
+   [
+    "Acts", 17,
+    [ 15, 16, 21, 22 ] ],
+   [
+    "Acts", 18,
+    [ 1 ] ] ]
+ },
+ {
+  "id": "areopagus",
+  "kind": "place",
+  "name": "The Areopagus, or Mars' hill (the hill where Athens' council heard new ideas)",
+  "refs": [
+   [
+    "Acts", 17,
+    [ 19, 22 ] ] ]
+ },
+ {
+  "id": "jason",
+  "kind": "person",
+  "name": "Jason (the Thessalonian who took Paul in, and paid security for him)",
+  "refs": [
+   [
+    "Acts", 17,
+    [ 5, 6, 7, 9 ] ] ]
+ },
+ {
+  "id": "dionysius",
+  "kind": "person",
+  "name": "Dionysius the Areopagite (a member of the Athenian council who believed)",
+  "refs": [
+   [
+    "Acts", 17,
+    [ 34 ] ] ]
+ },
+ {
+  "id": "damaris",
+  "kind": "person",
+  "name": "Damaris (a woman of Athens who believed)",
+  "refs": [
+   [
+    "Acts", 17,
+    [ 34 ] ] ]
+ },
+ {
+  "id": "epicureans-and-stoicks",
+  "kind": "term",
+  "name": "Epicureans and Stoicks (two Greek schools: chase pleasure, or endure fate)",
+  "refs": [
+   [
+    "Acts", 17,
+    [ 18 ] ] ]
+ },
+ {
+  "id": "babbler",
+  "kind": "term",
+  "name": "Babbler (Greek spermologos, a seed-picker: one who picks up scraps of ideas)",
+  "refs": [
+   [
+    "Acts", 17,
+    [ 18 ] ] ]
+ },
+ {
+  "id": "unknown-god",
+  "kind": "term",
+  "name": "The unknown god (the Athenian altar Paul preached from)",
+  "refs": [
+   [
+    "Acts", 17,
+    [ 23 ] ] ]
+ },
+ {
+  "id": "superstitious",
+  "kind": "term",
+  "name": "Too superstitious (very religious, careful to honor every god)",
+  "refs": [
+   [
+    "Acts", 17,
+    [ 22 ] ] ]
+ },
+ {
+  "id": "idolatry",
+  "kind": "term",
+  "name": "Idolatry (worshipping made things in place of God)",
+  "refs": [
+   [
+    "Acts", 17,
+    [ 16 ] ] ]
+ },
+ {
+  "id": "consorted",
+  "kind": "term",
+  "name": "Consorted (joined themselves to)",
+  "refs": [
+   [
+    "Acts", 17,
+    [ 4 ] ] ]
+ },
+ {
+  "id": "lewd-fellows",
+  "kind": "term",
+  "name": "Lewd fellows of the baser sort (idlers from the marketplace, hired for a riot)",
+  "refs": [
+   [
+    "Acts", 17,
+    [ 5 ] ] ]
+ },
+ {
+  "id": "taken-security",
+  "kind": "term",
+  "name": "Taken security (a pledge or bail paid so the accused could go free)",
+  "refs": [
+   [
+    "Acts", 17,
+    [ 9 ] ] ]
+ },
+ {
+  "id": "disputed",
+  "kind": "term",
+  "name": "Disputed (argued, reasoned with)",
+  "refs": [
+   [
+    "Acts", 9,
+    [ 29 ] ],
+   [
+    "Acts", 17,
+    [ 17 ] ] ]
+ },
+ {
+  "id": "godhead",
+  "kind": "term",
+  "name": "The Godhead (God's divine nature)",
+  "refs": [
+   [
+    "Acts", 17,
+    [ 29 ] ] ]
+ },
+ {
+  "id": "winked-at",
+  "kind": "term",
+  "name": "Winked at (overlooked, and patiently held back judgment)",
+  "refs": [
+   [
+    "Acts", 17,
+    [ 30 ] ] ]
+ },
+ {
+  "id": "clave",
+  "kind": "term",
+  "name": "Clave (stuck to, joined himself to)",
+  "refs": [
+   [
+    "Acts", 17,
+    [ 34 ] ] ]
+ },
+ {
+  "id": "corinth",
+  "kind": "place",
+  "name": "Corinth (the rich, rough port city of Achaia)",
+  "refs": [
+   [
+    "Acts", 18,
+    [ 1 ] ] ]
+ },
+ {
+  "id": "corinthians",
+  "kind": "person",
+  "name": "The Corinthians (the people of Corinth who believed)",
+  "refs": [
+   [
+    "Acts", 18,
+    [ 8 ] ] ]
+ },
+ {
+  "id": "achaia",
+  "kind": "place",
+  "name": "Achaia (the Roman province of southern Greece)",
+  "refs": [
+   [
+    "Acts", 18,
+    [ 12, 27 ] ] ]
+ },
+ {
+  "id": "cenchrea",
+  "kind": "place",
+  "name": "Cenchrea (the eastern harbor of Corinth)",
+  "refs": [
+   [
+    "Acts", 18,
+    [ 18 ] ] ]
+ },
+ {
+  "id": "ephesus",
+  "kind": "place",
+  "name": "Ephesus (the great port city of Asia, home of the temple of Diana)",
+  "refs": [
+   [
+    "Acts", 18,
+    [ 19, 21, 24 ] ] ]
+ },
+ {
+  "id": "alexandria",
+  "kind": "place",
+  "name": "Alexandria (the great city of learning in Egypt)",
+  "refs": [
+   [
+    "Acts", 18,
+    [ 24 ] ] ]
+ },
+ {
+  "id": "italy",
+  "kind": "place",
+  "name": "Italy",
+  "refs": [
+   [
+    "Acts", 18,
+    [ 2 ] ] ]
+ },
+ {
+  "id": "aquila",
+  "kind": "person",
+  "name": "Aquila (a Jewish tentmaker from Pontus, Paul's friend and helper)",
+  "refs": [
+   [
+    "Acts", 18,
+    [ 2, 18, 26 ] ] ]
+ },
+ {
+  "id": "priscilla",
+  "kind": "person",
+  "name": "Priscilla (Aquila's wife, Paul's friend and fellow worker)",
+  "refs": [
+   [
+    "Acts", 18,
+    [ 2, 18, 26 ] ] ]
+ },
+ {
+  "id": "justus",
+  "kind": "person",
+  "name": "Justus (a God-fearer in Corinth whose house stood beside the synagogue)",
+  "refs": [
+   [
+    "Acts", 18,
+    [ 7 ] ] ]
+ },
+ {
+  "id": "crispus",
+  "kind": "person",
+  "name": "Crispus (the chief ruler of the synagogue in Corinth, who believed)",
+  "refs": [
+   [
+    "Acts", 18,
+    [ 8 ] ] ]
+ },
+ {
+  "id": "sosthenes",
+  "kind": "person",
+  "name": "Sosthenes (the next ruler of the synagogue, beaten before Gallio)",
+  "refs": [
+   [
+    "Acts", 18,
+    [ 17 ] ] ]
+ },
+ {
+  "id": "gallio",
+  "kind": "person",
+  "name": "Gallio (the Roman proconsul of Achaia, about AD 51 to 52)",
+  "refs": [
+   [
+    "Acts", 18,
+    [ 12, 14, 17 ] ] ]
+ },
+ {
+  "id": "apollos",
+  "kind": "person",
+  "name": "Apollos (an eloquent Jew of Alexandria who taught the Scriptures)",
+  "refs": [
+   [
+    "Acts", 18,
+    [ 24 ] ] ]
+ },
+ {
+  "id": "tentmakers",
+  "kind": "term",
+  "name": "Tentmakers (workers in goat-hair cloth and leather)",
+  "refs": [
+   [
+    "Acts", 18,
+    [ 3 ] ] ]
+ },
+ {
+  "id": "wrought",
+  "kind": "term",
+  "name": "Wrought (worked at his trade)",
+  "refs": [
+   [
+    "Acts", 18,
+    [ 3 ] ] ]
+ },
+ {
+  "id": "pressed-in-the-spirit",
+  "kind": "term",
+  "name": "Pressed in the spirit (gripped by the urgency of the message)",
+  "refs": [
+   [
+    "Acts", 18,
+    [ 5 ] ] ]
+ },
+ {
+  "id": "shook-his-raiment",
+  "kind": "term",
+  "name": "Shook his raiment (a sign that he was finished with them)",
+  "refs": [
+   [
+    "Acts", 18,
+    [ 6 ] ] ]
+ },
+ {
+  "id": "drave",
+  "kind": "term",
+  "name": "Drave (drove, forced away)",
+  "refs": [
+   [
+    "Acts", 7,
+    [ 45 ] ],
+   [
+    "Acts", 18,
+    [ 16 ] ] ]
+ },
+ {
+  "id": "shorn",
+  "kind": "term",
+  "name": "Shorn his head (shaved, as part of a vow)",
+  "refs": [
+   [
+    "Acts", 18,
+    [ 18 ] ] ]
+ },
+ {
+  "id": "eloquent",
+  "kind": "term",
+  "name": "Eloquent (a gifted, powerful speaker)",
+  "refs": [
+   [
+    "Acts", 18,
+    [ 24 ] ] ]
  }
 ];

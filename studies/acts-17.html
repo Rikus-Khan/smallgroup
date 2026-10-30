@@ -1,0 +1,559 @@
+<!doctype html>
+<html lang="en" data-theme="stone">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Acts 17</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="../assets/fonts.css">
+<link rel="stylesheet" href="../assets/deck.css">
+<link rel="stylesheet" href="../assets/themes.css">
+<style>
+/* ac17-globe: "turned the world upside down", then set right way up */
+.ac17-globe { transform-box: fill-box; transform-origin: 50% 50%; transition: transform 1.8s cubic-bezier(.5,0,.2,1); }
+.split:has(.ac17-flip.on) .ac17-globe { transform: rotate(180deg); }
+.split:has(.ac17-back.on) .ac17-globe { transform: rotate(360deg); }
+.ac17-sea { fill: color-mix(in srgb, var(--cool) 34%, var(--bg)); stroke: var(--line-strong); stroke-width: 3; }
+.ac17-land { fill: color-mix(in srgb, var(--accent) 30%, var(--surface-2)); }
+.ac17-man { fill: var(--ink); }
+.ac17-roof { fill: var(--warm); }
+.ac17-tag { font: 700 15px var(--sans); fill: var(--ink-soft); text-anchor: middle; }
+
+/* ac17-altar: an altar to a god nobody knew, and the word "unknown" struck out */
+.ac17-stone { fill: color-mix(in srgb, var(--surface-2) 80%, var(--bg)); stroke: var(--line-strong); stroke-width: 3; }
+.ac17-letters { font: 700 30px var(--serif); letter-spacing: .12em; fill: var(--ink); text-anchor: middle; }
+.ac17-strike { stroke: var(--danger); stroke-width: 5; stroke-linecap: round; stroke-dasharray: 1; stroke-dashoffset: 1; transition: stroke-dashoffset .9s ease; }
+.split:has(.ac17-go.on) .ac17-strike { stroke-dashoffset: 0; }
+.ac17-known { font: 700 30px var(--serif); letter-spacing: .12em; fill: var(--accent-hot); text-anchor: middle; opacity: 0; transition: opacity 1s ease .8s; }
+.split:has(.ac17-go.on) .ac17-known { opacity: 1; }
+.ac17-glow { fill: color-mix(in srgb, var(--accent) 22%, transparent); opacity: 0; transition: opacity 1.4s ease .6s; }
+.split:has(.ac17-go.on) .ac17-glow { opacity: 1; }
+
+/* ac17-days: seven days of searching, ticked off one by one */
+.ac17-days { display: flex; flex-wrap: wrap; gap: .5rem; margin: .5em 0 1em; }
+.ac17-days span { flex: 1 1 5.2rem; text-align: center; padding: .5em .3em; border: 2px solid var(--line-strong); border-radius: 10px; background: var(--surface); font: 700 clamp(.85rem, .8rem + .35vw, 1.1rem) var(--sans); color: var(--ink-soft); }
+.ac17-days i { display: block; font-style: normal; font-size: 1.5em; line-height: 1.2; color: transparent; transform: scale(2.4); }
+.ac17-days.on span { animation: ac17-lit .5s ease forwards; animation-delay: calc(var(--k) * 260ms + 150ms); }
+.ac17-days.on span i { animation: ac17-tick .45s cubic-bezier(.3,1.6,.5,1) forwards; animation-delay: calc(var(--k) * 260ms + 150ms); }
+@keyframes ac17-lit { to { border-color: var(--accent); color: var(--ink); background: color-mix(in srgb, var(--accent) 14%, var(--surface)); } }
+@keyframes ac17-tick { to { color: var(--accent-hot); transform: none; } }
+
+/* ac17-bird: a seed-picker, scraps of ideas */
+.ac17-seeds { display: flex; flex-wrap: wrap; gap: .4rem .7rem; margin: .3em 0 .6em; font: italic clamp(.95rem, .85rem + .5vw, 1.3rem) var(--serif); color: var(--ink-soft); }
+.ac17-seeds span { padding: .15em .7em; border-radius: 999px; background: var(--surface); border: 1px dashed var(--line-strong); }
+</style>
+</head>
+<body>
+<main class="deck" id="deck">
+
+<!-- ======================= OPENING ======================= -->
+<section class="slide title">
+  <div class="inner">
+    <div class="emblem rise"></div>
+    <h1 class="rise" style="--d:1">Acts 17</h1>
+    <p class="sub rise" style="--d:3">The world turned upside down</p>
+    <p class="tag rise" style="--d:5">Paul is run out of Thessalonica, finds men in Berea who check everything against the Bible, and stands on Mars' hill to tell the cleverest city in the world about a God they don't know.</p>
+  </div>
+</section>
+
+<section class="slide watch">
+  <div class="inner">
+    <h2 class="rise">Things to watch for</h2>
+    <p class="lede rise" style="--d:1">Keep these questions in the back of your mind as we read. We'll come back to every one of them at the end.</p>
+    <ol class="seeds">
+      <li class="step"><span class="topic">God's Word</span><span class="seed-q">How did the Bereans test what Paul taught?</span></li>
+      <li class="step"><span class="topic">Standing out</span><span class="seed-q">Why were Paul and Silas called men who “turned the world upside down”?</span></li>
+      <li class="step"><span class="topic">Who God is</span><span class="seed-q">What does Paul say about the God who made the world?</span></li>
+      <li class="step"><span class="topic">Close to God</span><span class="seed-q">How near is God to every man?</span></li>
+      <li class="step"><span class="topic">Repentance</span><span class="seed-q">What does God now command all men everywhere to do?</span></li>
+      <li class="step"><span class="topic">Hearing the news</span><span class="seed-q">What did the men of Athens do when they heard about the resurrection?</span></li>
+    </ol>
+  </div>
+</section>
+
+<!-- ======================= PART ONE: THESSALONICA ======================= -->
+<section class="slide part">
+  <div class="inner">
+    <p class="part-n rise">Part one</p>
+    <h2 class="rise" style="--d:1">Thessalonica</h2>
+    <p class="range rise" style="--d:2">Verses 1–9</p>
+    <div class="rule"></div>
+    <p class="hook rise" style="--d:4">Three sabbaths in the synagogue, and then a mob.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="1-4" data-hl="three sabbath days reasoned with them out of the scriptures|Christ must needs have suffered, and risen again from the dead"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="1" data-hl="they came to Thessalonica, where was a synagogue of the Jews"></blockquote>
+    <div class="split">
+      <div class="stage">
+        <svg data-world viewBox="445 160 90 75" style="max-height:52vh" data-towns="Philippi:t, Amphipolis:r, Thessalonica*:l" role="img" aria-label="Map of Macedonia. From Philippi the road runs west through Amphipolis and Apollonia to Thessalonica, a long walk of about a hundred miles.">
+          <path class="map-route j2 r1" data-via="Philippi, Amphipolis, @23.5 40.65, Thessalonica"/>
+          <g class="map-town"><circle cx="491.4" cy="203.2" r=".7"/><text x="491.4" y="206.2" text-anchor="middle">Apollonia</text></g>
+        </svg>
+      </div>
+      <div>
+        <h2 class="rise" style="--d:1">A hundred miles on foot</h2>
+        <p class="note rise" style="--d:2">Paul and Silas had just been beaten and jailed at Philippi (Acts 16). Their backs were still raw, and they walked on west along the Roman road, through Amphipolis and Apollonia, to Thessalonica.</p>
+        <p class="note step map-go1">Thessalonica was the big port and capital of Macedonia, and it had a synagogue. Paul always started there. He had been hurt, and he went right back to work.</p>
+        <p class="note step">Timothy was with them too (verse 14). That is how Paul's team grew: one man at a time.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="3" data-hl="Opening and alleging, that Christ must needs have suffered, and risen again from the dead"></blockquote>
+    <h2 class="rise" style="--d:1">What Paul proved from the scriptures</h2>
+    <p class="note rise" style="--d:2"><em>“Opening”</em> means unrolling the scroll and explaining it. <em>“Alleging”</em> means laying the evidence out, one piece at a time. For three sabbaths he used only the Old Testament:</p>
+    <ol class="checks">
+      <li class="step"><span class="tick">✓</span><q>The Christ <em>must</em> suffer</q><small>the prophets had said so (Isaiah 53; Psalm 22). The cross was the plan, not a defeat</small><b>verse 3</b></li>
+      <li class="step"><span class="tick">✓</span><q>And rise again from the dead</q><small>death was not the last word (Psalm 16)</small><b>verse 3</b></li>
+      <li class="step"><span class="tick">✓</span><q>This Jesus… is Christ</q><small>the One who did exactly this is the One God promised</small><b>verse 3</b></li>
+    </ol>
+    <p class="note step">Some believed, <em>“of the devout Greeks a great multitude, and of the chief women not a few”</em> (verse 4). The good news was never for one kind of man. Notice who believed: people who already worshipped, people with money, people with none.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="5-9" data-hl="moved with envy|turned the world upside down|there is another king, one Jesus|taken security of Jason"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="6" data-hl="These that have turned the world upside down are come hither also"></blockquote>
+    <div class="split">
+      <div class="stage">
+        <svg viewBox="70 10 260 320" role="img" aria-label="A little world with a man, a house and a tree standing on top. When the world turns, they hang upside down. Then it turns again and everything is right way up.">
+          <g class="ac17-globe">
+            <circle cx="200" cy="160" r="146" style="fill:none;stroke:none"/>
+            <circle class="ac17-sea" cx="200" cy="160" r="110"/>
+            <path class="ac17-land" d="M118 120 C140 80 190 70 236 78 C282 86 296 128 282 156 C268 188 224 176 200 196 C172 218 124 200 112 168 C106 150 108 132 118 120 Z"/>
+            <path class="ac17-land" d="M240 220 C262 206 288 214 294 232 C282 252 252 256 238 246 Z"/>
+            <g>
+              <circle class="ac17-man" cx="200" cy="26" r="7"/>
+              <path class="ac17-man" d="M194 34 L206 34 L208 54 L192 54 Z"/>
+              <path class="ac17-roof" d="M146 54 L162 38 L178 54 Z"/>
+              <rect class="ac17-roof" x="150" y="54" width="24" height="6" style="opacity:.6"/>
+              <rect class="ac17-man" x="226" y="38" width="5" height="16"/>
+              <circle class="ac17-man" cx="228" cy="34" r="10" style="opacity:.6"/>
+            </g>
+          </g>
+          <text class="ac17-tag" x="200" y="322">the crowd's charge</text>
+        </svg>
+      </div>
+      <div>
+        <h2 class="rise" style="--d:1">“The world upside down”</h2>
+        <p class="note rise" style="--d:2">The Jews who wouldn't believe were <em>“moved with envy”</em>: Paul's crowd was bigger than theirs. So they paid some loafers from the marketplace, <em>“lewd fellows of the baser sort,”</em> and started a riot. When they couldn't find Paul, they dragged his host, Jason, in front of the city rulers.</p>
+        <p class="note step ac17-flip">“These that have turned the world upside down.” They meant it as an insult. It's actually the best review anyone ever gave the early church.</p>
+        <p class="note step ac17-back">But look at who was really upside down. Greed, idols, cruelty and a dead conscience were the normal run of that world. Jesus doesn't flip the world over. He turns it right way up, and He does it one life at a time.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="7" data-hl="saying that there is another king, one Jesus"></blockquote>
+    <h2 class="rise" style="--d:1">A charge with a little truth in it</h2>
+    <div class="columns">
+      <div class="col law rise" style="--d:2">
+        <p class="who">What they said</p>
+        <h3>“They defy Caesar's decrees”</h3>
+        <p>Calling someone else king sounded like treason. Caesar was the only king the empire allowed.</p>
+      </div>
+      <div class="col grace step">
+        <p class="who">What was true</p>
+        <h3>Jesus <em>is</em> King</h3>
+        <p>But His kingdom doesn't take over Caesar's throne. It starts in the heart, and it makes better neighbors and better workers, not rebels.</p>
+      </div>
+    </div>
+    <p class="note step">Jason put up <em>“security”</em>, a kind of bail, and the rulers let them go. Jason took a real risk for men he'd known a few weeks. That night the brethren sent Paul and Silas away.</p>
+    <p class="note step">Doing right can still get you slandered. If someone twists your new life into something ugly, you don't have to fight it. Keep showing up, keep working, and let your life answer.</p>
+  </div>
+</section>
+
+<!-- ======================= PART TWO: BEREA ======================= -->
+<section class="slide part">
+  <div class="inner">
+    <p class="part-n rise">Part two</p>
+    <h2 class="rise" style="--d:1">Berea</h2>
+    <p class="range rise" style="--d:2">Verses 10–15</p>
+    <div class="rule"></div>
+    <p class="hook rise" style="--d:4">A town of men who checked everything themselves.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="10-12" data-hl="more noble than those in Thessalonica|received the word with all readiness of mind|searched the scriptures daily, whether those things were so"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="11" data-hl="more noble than those in Thessalonica"></blockquote>
+    <h2 class="rise" style="--d:1">What “noble” means here</h2>
+    <p class="note rise" style="--d:2">The word means <em>well-born</em>, and here it means <em>fair-minded</em>. The Bereans weren't better people by birth. They were better listeners by choice.</p>
+    <ul class="nots">
+      <li class="step"><span class="k">swallow it because a preacher said so</span><span class="why">even an apostle got checked, and he was glad of it</span></li>
+      <li class="step"><span class="k">shut it out because it was new</span><span class="why">that is pride dressed up as caution</span></li>
+      <li class="step yes"><span class="k">hear it gladly, then check it</span><span class="why">“received the word with all readiness of mind, and searched the scriptures daily”</span></li>
+    </ul>
+    <blockquote class="quote step"><p>“Prove all things; hold fast that which is good.”</p><cite>1 Thessalonians 5:21</cite></blockquote>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="11" data-hl="searched the scriptures daily, whether those things were so"></blockquote>
+    <h2 class="rise" style="--d:1">Daily</h2>
+    <div class="ac17-days step" aria-label="Seven days, each ticked off">
+      <span style="--k:0"><i>✓</i>Mon</span><span style="--k:1"><i>✓</i>Tue</span><span style="--k:2"><i>✓</i>Wed</span><span style="--k:3"><i>✓</i>Thu</span><span style="--k:4"><i>✓</i>Fri</span><span style="--k:5"><i>✓</i>Sat</span><span style="--k:6"><i>✓</i>Sun</span>
+    </div>
+    <p class="note step">They didn't hear Paul on Saturday and forget it by Monday. Every day they opened the scrolls and asked, <em>“Is that really what it says?”</em> The result: <em>“Therefore many of them believed”</em> (verse 12), Greek women of standing and men, not a few.</p>
+    <p class="note step">That is why this group meets daily. A man in recovery lives one day at a time, and he eats one day at a time too. Today, read one chapter yourself, even a short one, and ask the Bereans' question: <em>“Is that so?”</em></p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="13-15" data-hl="stirred up the people|Silas and Timotheus abode there still|brought him unto Athens"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="14" data-hl="the brethren sent away Paul to go as it were to the sea"></blockquote>
+    <div class="split">
+      <div class="stage">
+        <svg data-world viewBox="430 190 125 130" style="max-height:52vh" data-towns="Thessalonica:r, Berea:l, Athens*:r" role="img" aria-label="Map of Greece. From Thessalonica Paul goes to Berea, then south down the coast by sea to Athens.">
+          <path class="map-route j2 r1" data-via="Thessalonica, Berea"/>
+          <path class="map-route j2 r2" data-via="Berea, @22.85 40.2, @23.2 39.75, @24.0 39.3, @24.2 38.75, @24.72 38.12, @24.45 37.85, @24.1 37.55, @23.6 37.85, Athens"/>
+        </svg>
+      </div>
+      <div>
+        <h2 class="rise" style="--d:1">Chased out, and sent south</h2>
+        <p class="note step map-go1">The Thessalonian Jews heard Paul was getting a hearing at Berea, and they came about fifty miles to stir up the crowd. Some men can't leave a thing alone.</p>
+        <p class="note step map-go2">The believers moved Paul out fast, <em>“as it were to the sea,”</em> and then down the coast to Athens. Silas and Timothy stayed behind to keep the new church going, and Paul sent word for them to follow.</p>
+        <p class="note step">Paul stood alone in a strange city with no team and no plan. He will later write that he came to Corinth <em>“in weakness, and in fear, and in much trembling”</em> (1 Corinthians 2:3). Even an apostle gets worn down.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ======================= PART THREE: ATHENS ======================= -->
+<section class="slide part">
+  <div class="inner">
+    <p class="part-n rise">Part three</p>
+    <h2 class="rise" style="--d:1">Athens</h2>
+    <p class="range rise" style="--d:2">Verses 16–34</p>
+    <div class="rule"></div>
+    <p class="hook rise" style="--d:4">The smartest city in the world, and a hole in the middle of it shaped like God.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="16-18" data-hl="his spirit was stirred in him|wholly given to idolatry|Epicureans, and of the Stoicks|What will this babbler say?"></section>
+<section class="slide verse" data-v="19-21" data-hl="Areopagus|spent their time in nothing else, but either to tell, or to hear some new thing"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="18" data-hl="certain philosophers of the Epicureans, and of the Stoicks"></blockquote>
+    <h2 class="rise" style="--d:1">Two ways Athens lived without God</h2>
+    <p class="note rise" style="--d:2">Paul's spirit was <em>“stirred”</em>, provoked and grieved, to see a city packed with idols. But he didn't just fume. He argued in the synagogue and talked in the marketplace every day. Then two schools of thinkers took him on:</p>
+    <div class="columns">
+      <div class="col law rise" style="--d:3">
+        <p class="who">The Epicureans</p>
+        <h3>“Get all the pleasure you can”</h3>
+        <p>Life is short, the gods are far away and don't care, so chase what feels good and avoid what hurts.</p>
+      </div>
+      <div class="col law step">
+        <p class="who">The Stoicks</p>
+        <h3>“Grit your teeth and take it”</h3>
+        <p>Fate runs everything. Don't feel too much, don't hope too much, just do your duty and endure.</p>
+      </div>
+    </div>
+    <p class="note step">Every man in recovery knows both. One says <em>chase the feeling</em>. The other says <em>just try harder and stop feeling</em>. Neither one has a God who is near and who helps. Paul is about to introduce Him.</p>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="18" data-hl="What will this babbler say?"></blockquote>
+    <h2 class="rise" style="--d:1">A “babbler”</h2>
+    <div class="morph">
+      <span class="big rise" style="--d:3">σπερμολόγος</span>
+      <span class="say step">said <em class="gk">spermologos</em></span>
+      <span class="means step">“seed-picker”</span>
+    </div>
+    <p class="note step">A street word for a bird pecking up scattered seed, then for a man who picks up scraps of other people's ideas and repeats them. They figured Paul was passing off odd bits of religion.</p>
+    <p class="note step">Their other guess: <em>“a setter forth of strange gods.”</em> They heard <em>Jesus</em> and <em>the resurrection</em> (Anastasis) and may have taken them for two new gods. Being misunderstood didn't make Paul quit.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="22-23" data-hl="Mars’ hill|too superstitious|TO THE UNKNOWN GOD|Whom therefore ye ignorantly worship, him declare I unto you"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="23" data-hl="TO THE UNKNOWN GOD"></blockquote>
+    <div class="split">
+      <div class="stage">
+        <svg viewBox="0 0 400 320" role="img" aria-label="A stone altar with the words TO THE UNKNOWN GOD. The word UNKNOWN is struck out and the altar begins to glow.">
+          <ellipse class="ac17-glow" cx="200" cy="130" rx="190" ry="130"/>
+          <rect class="ac17-stone" x="40" y="250" width="320" height="34" rx="3"/>
+          <rect class="ac17-stone" x="64" y="214" width="272" height="36" rx="3"/>
+          <rect class="ac17-stone" x="84" y="60" width="232" height="154" rx="4"/>
+          <text class="ac17-letters" x="200" y="110" style="font-size:22px">TO THE</text>
+          <text class="ac17-letters" x="200" y="150">UNKNOWN</text>
+          <line class="ac17-strike" pathLength="1" x1="100" y1="140" x2="300" y2="140"/>
+          <text class="ac17-letters" x="200" y="194" style="font-size:22px">GOD</text>
+          <text class="ac17-tag" x="200" y="308">an altar in Athens, about AD 50</text>
+        </svg>
+      </div>
+      <div>
+        <h2 class="rise" style="--d:1">Mars' hill and an honest hole</h2>
+        <p class="note rise" style="--d:2"><em>Mars' hill</em> is the Areopagus, the rocky hill by the Acropolis where Athens' council heard new ideas. Mars is the Roman name for the Greek god Ares.</p>
+        <p class="note step">Paul doesn't open by attacking. He opens with what he saw: a very religious city, and an altar <em>“TO THE UNKNOWN GOD.”</em></p>
+        <p class="note step ac17-go">They built a spare altar in case they'd missed one. Paul says: I can tell you who He is. Every man has that hole. Some fill it with a bottle, some with money, some with a woman. It was made for God.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="slide verse" data-v="24-26" data-hl="dwelleth not in temples made with hands|he giveth to all life, and breath, and all things|made of one blood all nations of men"></section>
+<section class="slide verse" data-v="27-29" data-hl="he be not far from every one of us|in him we live, and move, and have our being|we ought not to think that the Godhead is like unto gold, or silver, or stone"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="24-25" data-hl="dwelleth not in temples made with hands|he giveth to all life, and breath, and all things"></blockquote>
+    <h2 class="rise" style="--d:1">Gods that need us, and the God who doesn't</h2>
+    <div class="columns">
+      <div class="col law rise" style="--d:2">
+        <p class="who">The gods of Athens</p>
+        <h3>Made, carried, fed, housed</h3>
+        <p>A man carved the statue, built the temple, brought the food, and polished the god every morning. The god needed him.</p>
+      </div>
+      <div class="col grace step">
+        <p class="who">The God who made everything</p>
+        <h3>Gives life, breath, all things</h3>
+        <p>He doesn't need a thing from you. He gives you every breath you've ever taken, and He gave you the next one too.</p>
+      </div>
+    </div>
+    <p class="note step">One more thing, in verse 26: <em>“hath made of one blood all nations of men.”</em> Every man on earth came from one family, and no race, class, or past puts anyone outside His reach.</p>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="27-28" data-hl="though he be not far from every one of us|in him we live, and move, and have our being"></blockquote>
+    <h2 class="rise" style="--d:1">Not far from every one of us</h2>
+    <p class="saying rise" style="--d:2">Not far. <em>Feel after him.</em></p>
+    <p class="note step"><em>“Feel after him”</em> is a picture of a man groping in the dark, hands out, for a door. And Paul says the door isn't far. God set the nations where they are so they would seek Him, and He is right there.</p>
+    <p class="note step">Paul even quotes their own poets: <em>“we are also his offspring.”</em> It's from a Greek poem, Aratus, a man from Paul's home region. He found the true thing in their own words and used it. Because we are God's children by creation, a stone statue can't be what He looks like.</p>
+    <blockquote class="quote step"><p>“Seek ye the LORD while he may be found, call ye upon him while he is near: Let the wicked forsake his way, and the unrighteous man his thoughts: and let him return unto the LORD, and he will have mercy upon him; and to our God, for he will abundantly pardon.”</p><cite>Isaiah 55:6–7</cite></blockquote>
+    <p class="note step">If you're groping today, tired, ashamed, unsure He'd want you, that verse is for you. He's near. He will <em>“abundantly pardon.”</em></p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="30-31" data-hl="the times of this ignorance God winked at|now commandeth all men every where to repent|he hath raised him from the dead"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="30-31" data-hl="now commandeth all men every where to repent|in that he hath raised him from the dead"></blockquote>
+    <h2 class="rise" style="--d:1">Before, now, and the day appointed</h2>
+    <ol class="timeline" aria-label="Before: the times of ignorance, which God winked at. Now: he commands all men everywhere to repent. Then: the day he has appointed to judge the world in righteousness. The proof: he raised Jesus from the dead.">
+      <li style="--k:0"><b>before</b><span>“the times of this ignorance”</span><small>God “winked at” them: He overlooked, and held back</small></li>
+      <li class="lit" style="--k:1"><b>now</b><span>“commandeth all men every where to repent”</span><small>everyone, in every place</small></li>
+      <li class="wait" style="--k:2"><b>a day</b><span>“he will judge the world in righteousness”</span><small>by the Man God has chosen</small></li>
+      <li style="--k:3"><b>the proof</b><span>“raised him from the dead”</span><small>given “unto all men”</small></li>
+    </ol>
+    <p class="note step"><em>“Winked at”</em> doesn't mean they were innocent. It means God was patient and didn't wipe them out. That patience has a purpose: <em>now</em> He asks every man to <em>repent</em>, which is to change your mind and turn around. It isn't a punishment. It is the way back.</p>
+    <p class="note step">And the Judge is the same Jesus who died for sinners and then rose. The One who will judge you is the One who already took your place. Turn to Him today, and the judgment is already settled.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="32-34" data-hl="some mocked|We will hear thee again of this matter|Dionysius the Areopagite, and a woman named Damaris"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="32-34" data-hl="some mocked|We will hear thee again of this matter|certain men clave unto him, and believed"></blockquote>
+    <h2 class="rise" style="--d:1">Three answers</h2>
+    <div class="sort">
+      <div class="step"><h3>“Some mocked”</h3><div class="vs"><b>32</b></div><p>They laughed at a man who rises from the dead. Mockery is the easiest way to avoid thinking.</p></div>
+      <div class="step"><h3>“We will hear thee again”</h3><div class="vs"><b>32</b></div><p>Polite, and gone. <em>Later</em> is how most men miss it. Nobody's later is promised.</p></div>
+      <div class="step"><h3>“Clave unto him, and believed”</h3><div class="vs"><b>34</b></div><p>A judge from the council, Dionysius, and a woman, Damaris, by name. Not a crowd, but real.</p></div>
+    </div>
+    <p class="note step">A small result, but not a failure: Luke names them, and God knows every one. Paul did his part and left the rest to God.</p>
+    <p class="note step">If something in this chapter stirred you, don't say <em>“later.”</em> Pray it, or tell somebody, today.</p>
+  </div>
+</section>
+
+<!-- ======================= CLOSING ======================= -->
+<section class="slide remember">
+  <div class="inner">
+    <h2 class="rise">Points to remember</h2>
+    <ol class="seeds">
+      <li class="step"><span class="topic">God's Word</span><span class="seed-q">“Searched the scriptures daily” <cite>17:11</cite></span><span class="take">Listen gladly, then check it against the Bible yourself, every day.</span></li>
+      <li class="step"><span class="topic">Standing out</span><span class="seed-q">“Turned the world upside down” <cite>17:6</cite></span><span class="take">Following Jesus will look strange to some. It's the world that's upside down.</span></li>
+      <li class="step"><span class="topic">Who God is</span><span class="seed-q">“He giveth to all life, and breath, and all things” <cite>17:25</cite></span><span class="take">The God who made everything needs nothing from you and gives you everything.</span></li>
+      <li class="step"><span class="topic">Close to God</span><span class="seed-q">“He be not far from every one of us” <cite>17:27</cite></span><span class="take">Whoever is groping for Him will find Him close.</span></li>
+      <li class="step"><span class="topic">Repentance</span><span class="seed-q">“Commandeth all men every where to repent” <cite>17:30</cite></span><span class="take">Turn around today. The Judge is the One who already died for you.</span></li>
+      <li class="step"><span class="topic">Hearing the news</span><span class="seed-q">“We will hear thee again of this matter” <cite>17:32</cite></span><span class="take">Don't say “later.” Some clave to Him, and God knows each by name.</span></li>
+    </ol>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 1 of 6</p>
+      <span class="topic">God's Word</span>
+      <h2>How did the Bereans test what Paul taught?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="10" data-hl="went into the synagogue of the Jews"></blockquote>
+      <blockquote class="quote step" data-q="11"></blockquote>
+      <blockquote class="quote step" data-q="12" data-hl="many of them believed"></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>They listened with open minds, and then they went to the Scriptures every day to see whether what Paul said was so. They were not gullible and not stubborn. The result was that many believed, and Luke calls them “more noble.”</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 2 of 6</p>
+      <span class="topic">Standing out</span>
+      <h2>Why were Paul and Silas called men who “turned the world upside down”?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="3" data-hl="this Jesus, whom I preach unto you, is Christ"></blockquote>
+      <blockquote class="quote step" data-q="5" data-hl="moved with envy"></blockquote>
+      <blockquote class="quote step" data-q="6"></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>Because they preached that Jesus is the Christ, and people believed. The jealous crowd called it trouble. In truth, they were setting a crooked world right. Following Jesus still looks odd to people who are upside down.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 3 of 6</p>
+      <span class="topic">Who God is</span>
+      <h2>What does Paul say about the God who made the world?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="24"></blockquote>
+      <blockquote class="quote step" data-q="25"></blockquote>
+      <blockquote class="quote step" data-q="26" data-hl="made of one blood all nations of men"></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>He made the world and everything in it, He is Lord of heaven and earth, and He doesn't live in buildings made by hand. He needs nothing from us, and He gives every one of us life and breath. He made every nation from one blood.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 4 of 6</p>
+      <span class="topic">Close to God</span>
+      <h2>How near is God to every man?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="27"></blockquote>
+      <blockquote class="quote step" data-q="28" data-hl="in him we live, and move, and have our being"></blockquote>
+      <blockquote class="quote step"><p>“Seek ye the LORD while he may be found, call ye upon him while he is near.”</p><cite>Isaiah 55:6</cite></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>Not far at all. We live and move and have our being in Him. A man who is groping for God, however lost, finds Him near, and He will abundantly pardon.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 5 of 6</p>
+      <span class="topic">Repentance</span>
+      <h2>What does God now command all men everywhere to do?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="30"></blockquote>
+      <blockquote class="quote step" data-q="31"></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>To repent: to change your mind about sin and God, and turn around to Him. God was patient with the old ignorance, but now He calls every man, everywhere. The reason to trust Him is the resurrection: the Judge is the Man God raised from the dead.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 6 of 6</p>
+      <span class="topic">Hearing the news</span>
+      <h2>What did the men of Athens do when they heard about the resurrection?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="32"></blockquote>
+      <blockquote class="quote step" data-q="34"></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>Three things. Some mocked, some put it off, and some believed, including Dionysius and a woman named Damaris. The message is the same for everyone. What changes is what each man does with it, and today is the day to answer.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide prayer">
+  <div class="inner">
+    <div class="emblem rise"></div>
+    <h2 class="rise" style="--d:1">Prayer requests</h2>
+    <p class="ask-line rise" style="--d:2">What can we pray about for you today?</p>
+    <blockquote class="quote rise" style="--d:4"><p>“Seek ye the LORD while he may be found, call ye upon him while he is near: Let the wicked forsake his way, and the unrighteous man his thoughts: and let him return unto the LORD, and he will have mercy upon him; and to our God, for he will abundantly pardon.”</p><cite>Isaiah 55:6–7</cite></blockquote>
+  </div>
+</section>
+
+</main>
+
+<script>
+// King James Version, Acts chapter 17
+const V = {
+  1: "Now when they had passed through Amphipolis and Apollonia, they came to Thessalonica, where was a synagogue of the Jews:",
+  2: "And Paul, as his manner was, went in unto them, and three sabbath days reasoned with them out of the scriptures,",
+  3: "Opening and alleging, that Christ must needs have suffered, and risen again from the dead; and that this Jesus, whom I preach unto you, is Christ.",
+  4: "And some of them believed, and consorted with Paul and Silas; and of the devout Greeks a great multitude, and of the chief women not a few.",
+  5: "But the Jews which believed not, moved with envy, took unto them certain lewd fellows of the baser sort, and gathered a company, and set all the city on an uproar, and assaulted the house of Jason, and sought to bring them out to the people.",
+  6: "And when they found them not, they drew Jason and certain brethren unto the rulers of the city, crying, These that have turned the world upside down are come hither also;",
+  7: "Whom Jason hath received: and these all do contrary to the decrees of Caesar, saying that there is another king, one Jesus.",
+  8: "And they troubled the people and the rulers of the city, when they heard these things.",
+  9: "And when they had taken security of Jason, and of the other, they let them go.",
+  10: "And the brethren immediately sent away Paul and Silas by night unto Berea: who coming thither went into the synagogue of the Jews.",
+  11: "These were more noble than those in Thessalonica, in that they received the word with all readiness of mind, and searched the scriptures daily, whether those things were so.",
+  12: "Therefore many of them believed; also of honourable women which were Greeks, and of men, not a few.",
+  13: "But when the Jews of Thessalonica had knowledge that the word of God was preached of Paul at Berea, they came thither also, and stirred up the people.",
+  14: "And then immediately the brethren sent away Paul to go as it were to the sea: but Silas and Timotheus abode there still.",
+  15: "And they that conducted Paul brought him unto Athens: and receiving a commandment unto Silas and Timotheus for to come to him with all speed, they departed.",
+  16: "Now while Paul waited for them at Athens, his spirit was stirred in him, when he saw the city wholly given to idolatry.",
+  17: "Therefore disputed he in the synagogue with the Jews, and with the devout persons, and in the market daily with them that met with him.",
+  18: "Then certain philosophers of the Epicureans, and of the Stoicks, encountered him. And some said, What will this babbler say? other some, He seemeth to be a setter forth of strange gods: because he preached unto them Jesus, and the resurrection.",
+  19: "And they took him, and brought him unto Areopagus, saying, May we know what this new doctrine, whereof thou speakest, is?",
+  20: "For thou bringest certain strange things to our ears: we would know therefore what these things mean.",
+  21: "(For all the Athenians and strangers which were there spent their time in nothing else, but either to tell, or to hear some new thing.)",
+  22: "Then Paul stood in the midst of Mars’ hill, and said, Ye men of Athens, I perceive that in all things ye are too superstitious.",
+  23: "For as I passed by, and beheld your devotions, I found an altar with this inscription, TO THE UNKNOWN GOD. Whom therefore ye ignorantly worship, him declare I unto you.",
+  24: "God that made the world and all things therein, seeing that he is Lord of heaven and earth, dwelleth not in temples made with hands;",
+  25: "Neither is worshipped with men’s hands, as though he needed any thing, seeing he giveth to all life, and breath, and all things;",
+  26: "And hath made of one blood all nations of men for to dwell on all the face of the earth, and hath determined the times before appointed, and the bounds of their habitation;",
+  27: "That they should seek the Lord, if haply they might feel after him, and find him, though he be not far from every one of us:",
+  28: "For in him we live, and move, and have our being; as certain also of your own poets have said, For we are also his offspring.",
+  29: "Forasmuch then as we are the offspring of God, we ought not to think that the Godhead is like unto gold, or silver, or stone, graven by art and man’s device.",
+  30: "And the times of this ignorance God winked at; but now commandeth all men every where to repent:",
+  31: "Because he hath appointed a day, in the which he will judge the world in righteousness by that man whom he hath ordained; whereof he hath given assurance unto all men, in that he hath raised him from the dead.",
+  32: "And when they heard of the resurrection of the dead, some mocked: and others said, We will hear thee again of this matter.",
+  33: "So Paul departed from among them.",
+  34: "Howbeit certain men clave unto him, and believed: among the which was Dionysius the Areopagite, and a woman named Damaris, and others with them."
+};
+const BOOK = "Acts 17";
+</script>
+<script src="../assets/deck.js"></script>
+</body>
+</html>
