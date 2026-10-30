@@ -6398,6 +6398,162 @@ window.STUDIES = [
     }
   },
   {
+    "id": "matthew-15",
+    "type": "chapter",
+    "book": "Matthew",
+    "ch": 15,
+    "date": "2026-10-29",
+    "title": "Matthew 15",
+    "sub": "From the heart",
+    "about": "Jesus exposes religion that washes hands but leaves hearts far from God, then a Gentile mother's humble, stubborn faith wins her daughter's healing, and four thousand are fed.",
+    "tags": [
+      "God's word",
+      "The heart",
+      "Prayer",
+      "Faith",
+      "Grace for outsiders",
+      "Compassion"
+    ],
+    "url": "studies/matthew-15.html",
+    "overview": {
+      "where": "By the Sea of Galilee, then north in the coasts of Tyre and Sidon, then back to the lake and across to Magdala",
+      "when": "Late in Jesus' work in Galilee, about AD 29",
+      "people": [
+        "jesus",
+        "scribes",
+        "pharisees",
+        "disciples",
+        "simon-peter",
+        "isaiah",
+        "woman-of-canaan"
+      ],
+      "places": [
+        "jerusalem",
+        "tyre-and-zidon",
+        "sea-of-galilee",
+        "magdala"
+      ],
+      "story": [
+        "Scribes and Pharisees from Jerusalem complain that the disciples eat with unwashed hands, against the tradition of the elders (1–2).",
+        "Jesus shows how their tradition cancels God's command to honour father and mother, and quotes Esaias: “their heart is far from me” (3–9).",
+        "What goes into the mouth doesn't defile a man; what comes out of the heart does. The Pharisees are blind leaders of the blind (10–20).",
+        "In the coasts of Tyre and Sidon a woman of Canaan begs mercy for her daughter. Met with silence and hard words, she asks for the crumbs (21–27).",
+        "“O woman, great is thy faith”: her daughter is healed from that very hour (28).",
+        "By the Sea of Galilee He heals the lame, blind, dumb and maimed, and the crowds glorify the God of Israel (29–31).",
+        "Moved with compassion, He feeds four thousand men, besides women and children, with seven loaves and a few fishes; seven baskets are left (32–39)."
+      ],
+      "key": {
+        "ref": "Matthew 15:18",
+        "text": "But those things which proceed out of the mouth come forth from the heart; and they defile the man."
+      },
+      "big": "God looks at the heart. Rules and rituals can't make a man clean, because sin comes from inside, and only God can give a new heart. That mercy is open to outsiders too: whoever comes to Jesus humbly, asking for mercy, finds Him more than willing."
+    }
+  },
+  {
+    "id": "matthew-16",
+    "type": "chapter",
+    "book": "Matthew",
+    "ch": 16,
+    "date": "2026-10-29",
+    "title": "Matthew 16",
+    "sub": "Thou art the Christ",
+    "about": "Far north at Caesarea Philippi, Peter confesses Jesus as the Christ, the Son of the living God, and Jesus begins to show His disciples the cross ahead and what it means to follow Him.",
+    "tags": [
+      "Who Jesus is",
+      "False teaching",
+      "The church",
+      "The cross",
+      "Following Jesus",
+      "The soul"
+    ],
+    "url": "studies/matthew-16.html",
+    "overview": {
+      "where": "By the Sea of Galilee, then north to the coasts of Caesarea Philippi, below Mount Hermon",
+      "when": "Late in Jesus' work in Galilee, about AD 29, as He turns toward Jerusalem and the cross",
+      "people": [
+        "jesus",
+        "pharisees",
+        "sadducees",
+        "disciples",
+        "simon-peter",
+        "john-the-baptist",
+        "elijah",
+        "jeremiah",
+        "jonah",
+        "satan"
+      ],
+      "places": [
+        "caesarea-philippi",
+        "jerusalem"
+      ],
+      "story": [
+        "Pharisees and Sadducees demand a sign from heaven. They can read the sky but not the times; they'll get only the sign of Jonas (1–4).",
+        "The disciples forget bread and misunderstand His warning. Jesus reminds them of the five thousand and the four thousand: beware the doctrine of the Pharisees and Sadducees (5–12).",
+        "At Caesarea Philippi He asks, “Whom say ye that I am?” Peter answers, “Thou art the Christ, the Son of the living God” (13–17).",
+        "On this rock Jesus will build His church, and the gates of hell won't prevail; He gives Peter the keys of the kingdom (18–20).",
+        "From that time He shows them He must suffer, be killed, and rise the third day. Peter rebukes Him and is told, “Get thee behind me, Satan” (21–23).",
+        "Whoever follows Him must deny himself and take up his cross. What profit is the whole world if a man loses his soul? (24–28)"
+      ],
+      "key": {
+        "ref": "Matthew 16:16",
+        "text": "And Simon Peter answered and said, Thou art the Christ, the Son of the living God."
+      },
+      "big": "Every man has to answer who Jesus is. He is the Christ, the Son of the living God, and He builds His church on that rock. But He is a Messiah who goes by way of the cross, and those who follow Him give up running their own lives, because one soul is worth more than the whole world."
+    }
+  },
+  {
+    "id": "matthew-17",
+    "type": "chapter",
+    "book": "Matthew",
+    "ch": 17,
+    "date": "2026-10-29",
+    "title": "Matthew 17",
+    "sub": "Jesus only",
+    "about": "On a high mountain Peter, James and John see Jesus transfigured in glory and hear the Father say, “hear ye him”; below, Jesus frees a boy His disciples couldn't help, and provides the temple tax from a fish.",
+    "tags": [
+      "Who Jesus is",
+      "Listening to Jesus",
+      "Fear",
+      "Faith",
+      "The cross",
+      "Freedom"
+    ],
+    "url": "studies/matthew-17.html",
+    "overview": {
+      "where": "A high mountain (perhaps Hermon, near Caesarea Philippi, or Tabor), then Galilee and Capernaum",
+      "when": "Six days after Peter's confession, about AD 29",
+      "people": [
+        "jesus",
+        "simon-peter",
+        "sons-of-zebedee",
+        "moses",
+        "elijah",
+        "john-the-baptist",
+        "disciples"
+      ],
+      "places": [
+        "high-mountain",
+        "galilee",
+        "capernaum"
+      ],
+      "story": [
+        "Jesus takes Peter, James and John up an high mountain and is transfigured: His face shines as the sun (1–2).",
+        "Moses and Elias talk with Him. Peter offers to build three tabernacles (3–4).",
+        "A bright cloud overshadows them and the Father says, “This is my beloved Son … hear ye him.” Jesus touches the frightened men; they see no man, save Jesus only (5–8).",
+        "Coming down, Jesus explains that Elias has already come, in John the Baptist, and that the Son of man will suffer too (9–13).",
+        "A father brings his lunatick son, whom the disciples couldn't cure. Jesus rebukes the devil and the child is cured (14–18).",
+        "Their failure came from unbelief: faith as a grain of mustard seed can move a mountain; this kind goes out only by prayer and fasting (19–21).",
+        "In Galilee He foretells again His betrayal, death, and rising (22–23).",
+        "At Capernaum, though the King's children are free, He has Peter pay the temple tax with a coin from a fish's mouth (24–27)."
+      ],
+      "key": {
+        "ref": "Matthew 17:5",
+        "text": "While he yet spake, behold, a bright cloud overshadowed them: and behold a voice out of the cloud, which said, This is my beloved Son, in whom I am well pleased; hear ye him."
+      },
+      "big": "Jesus is the beloved Son of God, greater than the law and the prophets, and the Father's command is simple: hear Him. He lifts up the afraid, frees those no one else can help, and asks for faith in Him, not in ourselves. He is headed to the cross, and He pays what His people owe."
+    }
+  },
+  {
     "id": "matthew-18",
     "type": "chapter",
     "book": "Matthew",
