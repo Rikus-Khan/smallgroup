@@ -1,0 +1,643 @@
+<!doctype html>
+<html lang="en" data-theme="night">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Romans 15</title>
+<link rel="stylesheet" href="../assets/fonts.css">
+<link rel="stylesheet" href="../assets/deck.css">
+<link rel="stylesheet" href="../assets/themes.css">
+<style>
+/* ro15-strip: where this chapter sits in the whole letter (16 chapters in five movements, this one lit) */
+.ro15-strip { display: flex; gap: .45rem; width: min(40rem, 100%); margin-top: 1.6em; }
+.ro15-sec { flex: var(--n) 1 auto; min-width: 0; }
+.ro15-sec > b { display: block; margin-bottom: .3em; font: 700 clamp(.66rem, .6rem + .25vw, .82rem) var(--sans); letter-spacing: .04em; color: var(--ink-soft); white-space: nowrap; }
+.ro15-sec.now > b { color: var(--accent-hot); }
+.ro15-sec > span { display: flex; gap: 3px; }
+.ro15-sec i { flex: 1; border-top: .45rem solid color-mix(in srgb, var(--accent) 35%, var(--line-strong)); padding-top: .2em; text-align: center; font: 600 clamp(.6rem, .55rem + .2vw, .75rem) var(--sans); color: var(--ink-soft); opacity: 0; transition: opacity .4s ease; transition-delay: calc(var(--k) * 70ms + 900ms); }
+.ro15-sec i.now { border-top-color: var(--accent-hot); color: var(--accent-hot); font-weight: 800; box-shadow: 0 -8px 14px -8px var(--accent); }
+.ro15-sec i.later { border-top-color: var(--line); }
+.slide.active .ro15-sec i { opacity: 1; }
+
+/* ro15-carry: one man carrying the weak man's load with him, up the hill */
+.ro15-carry .ro15-sky { fill: color-mix(in srgb, var(--surface) 70%, transparent); }
+.ro15-hill { fill: color-mix(in srgb, var(--surface-2) 85%, var(--bg)); stroke: var(--line-strong); stroke-width: 2; }
+.ro15-man circle, .ro15-man .ro15-torso { fill: var(--ink); }
+.ro15-man .ro15-limb { fill: none; stroke: var(--ink); stroke-width: 7; stroke-linecap: round; stroke-linejoin: round; }
+.ro15-strong circle, .ro15-strong .ro15-torso { fill: var(--accent); }
+.ro15-strong .ro15-limb { stroke: var(--accent); }
+.ro15-weak { transform-box: view-box; transform-origin: 250px 245px; transform: rotate(24deg); transition: transform 1.6s ease 1s; }
+.slide:has(.ro15-t1.on) .ro15-weak { transform: rotate(6deg); }
+.ro15-strong { opacity: 0; transform: translateX(-170px); transition: transform 2s ease, opacity 1s ease; }
+.slide:has(.ro15-t1.on) .ro15-strong { opacity: 1; transform: none; }
+.ro15-sack { fill: color-mix(in srgb, var(--warm) 55%, var(--leather)); stroke: var(--leather-light); stroke-width: 2.5; }
+.ro15-load { transform: translate(28px, -36px); transition: transform 1.6s ease 1.2s; }
+.slide:has(.ro15-t1.on) .ro15-load { transform: none; }
+.ro15-pole { stroke: var(--leather-light); stroke-width: 6; stroke-linecap: round; opacity: 0; transition: opacity .8s ease 2s; }
+.slide:has(.ro15-t1.on) .ro15-pole { opacity: 1; }
+.ro15-pair { transition: transform 3s ease-in-out; }
+.slide:has(.ro15-t2.on) .ro15-pair { transform: translate(170px, -30px); }
+.ro15-lab { font-size: 17px; font-weight: 700; fill: var(--ink-soft); text-anchor: middle; }
+.ro15-strong .ro15-lab { fill: var(--accent-hot); }
+.ro15-not { font: italic 22px var(--serif); fill: var(--ink); opacity: 0; transition: opacity 1.2s ease 2.6s; }
+.slide:has(.ro15-t2.on) .ro15-not { opacity: 1; }
+
+/* ro15-flow: old scriptures, through patience and comfort, to hope */
+.ro15-flow { display: flex; align-items: stretch; gap: .6rem; margin: .5em 0 1em; }
+.ro15-node { flex: 1; display: grid; align-content: center; gap: .25em; padding: .8em 1em; border: 1.5px solid var(--line-strong); border-radius: 10px; background: var(--surface); text-align: center; opacity: 0; transform: translateY(10px); transition: opacity .7s ease, transform .7s ease; transition-delay: calc(var(--k) * 650ms + 400ms); }
+.ro15-node b { font: 600 clamp(1.05rem, .9rem + .7vw, 1.6rem)/1.2 var(--serif); }
+.ro15-node small { font-size: clamp(.82rem, .76rem + .3vw, 1.02rem); color: var(--ink-soft); line-height: 1.35; }
+.ro15-node.hope { border: 2px solid var(--accent); background: color-mix(in srgb, var(--accent) 14%, var(--surface)); }
+.ro15-node.hope b { font-size: clamp(1.6rem, 1.2rem + 1.6vw, 2.6rem); color: var(--accent-hot); }
+.slide.active .ro15-node.hope { animation: ro15-glow 2.4s ease-in-out 3.4s infinite alternate; }
+@keyframes ro15-glow { to { box-shadow: 0 0 26px color-mix(in srgb, var(--accent) 45%, transparent); } }
+.ro15-flow > i { align-self: center; font-style: normal; font-size: 1.8rem; color: var(--accent); opacity: 0; transition: opacity .6s ease; transition-delay: calc(var(--k) * 650ms + 400ms); }
+.ro15-flow > i::before { content: "\2192"; }
+.slide.active .ro15-node, .slide.active .ro15-flow > i { opacity: 1; transform: none; }
+@media (max-width: 700px) { .ro15-flow { flex-direction: column; } .ro15-flow > i::before { content: "\2193"; } }
+
+/* ro15-fill: a cup filled from above with joy and peace, until hope runs over */
+.ro15-glass { fill: none; stroke: var(--ink-soft); stroke-width: 4; stroke-linejoin: round; }
+.ro15-joy { fill: color-mix(in srgb, var(--warm) 72%, var(--bg)); }
+.ro15-peace { fill: color-mix(in srgb, var(--cool) 62%, var(--bg)); }
+.ro15-level { transform: translateY(210px); transition: transform 3.6s ease-in-out 1.6s; }
+.slide.active .ro15-level { transform: none; }
+.ro15-pour { fill: none; stroke: color-mix(in srgb, var(--warm) 70%, var(--glow)); stroke-width: 9; stroke-linecap: round; stroke-dasharray: 1; stroke-dashoffset: 1; transition: stroke-dashoffset 1.2s ease .5s; }
+.slide.active .ro15-pour { stroke-dashoffset: 0; }
+.ro15-source { fill: var(--warm); }
+.ro15-halo { opacity: .5; }
+.slide.active .ro15-halo { animation: ro15-breathe 2.6s ease-in-out infinite alternate; }
+@keyframes ro15-breathe { from { opacity: .35; } to { opacity: .8; } }
+.ro15-word { font: 700 21px var(--sans); fill: var(--ink); text-anchor: middle; paint-order: stroke; stroke: var(--bg); stroke-width: 5px; stroke-linejoin: round; opacity: 0; transition: opacity .8s ease; }
+.slide.active .ro15-word.w1 { opacity: 1; transition-delay: 3.2s; }
+.slide.active .ro15-word.w2 { opacity: 1; transition-delay: 4.6s; }
+.ro15-tag { font: italic 18px var(--serif); fill: var(--ink-soft); opacity: 0; transition: opacity .8s ease 1.4s; }
+.slide.active .ro15-tag { opacity: 1; }
+.ro15-spill { fill: none; stroke: color-mix(in srgb, var(--cool) 62%, var(--bg)); stroke-width: 9; stroke-linecap: round; stroke-dasharray: 1; stroke-dashoffset: 1; transition: stroke-dashoffset 1.8s ease-in .2s; }
+.slide:has(.ro15-over.on) .ro15-spill { stroke-dashoffset: 0; }
+.ro15-brim { fill: color-mix(in srgb, var(--cool) 62%, var(--bg)); transform: scaleY(0); transform-box: fill-box; transform-origin: 50% 100%; transition: transform .8s ease; }
+.slide:has(.ro15-over.on) .ro15-brim { transform: none; }
+.ro15-abound { font: italic 600 24px var(--serif); fill: var(--accent-hot); text-anchor: middle; opacity: 0; transition: opacity 1s ease 1.6s; }
+.slide:has(.ro15-over.on) .ro15-abound { opacity: 1; }
+
+/* ro15-plan: Paul's plan beside what happened, on the world map */
+.ro15-key { display: flex; flex-wrap: wrap; gap: .3rem 1.4rem; margin-top: .5em; font-size: clamp(.82rem, .76rem + .3vw, 1.02rem); color: var(--ink-soft); }
+.ro15-key span::before { content: ""; display: inline-block; width: 1.4em; height: .3em; margin-right: .45em; border-radius: 3px; vertical-align: .2em; background: var(--c); }
+.ro15-arrowhead { fill: none; stroke: var(--warm); stroke-width: 5; stroke-linecap: round; stroke-linejoin: round; opacity: 0; transition: opacity .6s ease 6.4s; }
+.slide.active .ro15-arrowhead { opacity: 1; }
+.ro15-spain { font: italic 700 22px var(--serif); fill: var(--warm); opacity: 0; transition: opacity .6s ease 6.6s; paint-order: stroke; stroke: var(--bg); stroke-width: 5px; stroke-linejoin: round; }
+.slide.active .ro15-spain { opacity: 1; }
+.ro15-chains { font: italic 700 21px var(--serif); fill: var(--wine); opacity: 0; transition: opacity .8s ease 2s; paint-order: stroke; stroke: var(--bg); stroke-width: 5px; stroke-linejoin: round; }
+.slide:has(.map-go2.on) .ro15-chains { opacity: 1; }
+
+.ro15-wide { margin-bottom: .6em; }
+.ro15-wide svg { max-height: 41vh; }
+.ro15-notes { display: grid; grid-template-columns: 1fr 1fr; gap: 0 2rem; }
+.ro15-notes .note { margin: 0 0 .5em; }
+.ro15-notes b.plan { color: var(--warm); }
+.ro15-notes b.real { color: var(--wine); }
+@media (max-width: 700px) { .ro15-notes { grid-template-columns: 1fr; } }
+
+/* ro15-gift: what flowed out from Jerusalem, and what flowed back */
+.ro15-gift { display: grid; grid-template-columns: auto 1fr auto; align-items: center; gap: .8rem; margin: .4em 0 1em; }
+.ro15-place { padding: .7em .9em; border: 2px solid var(--line-strong); border-radius: 10px; background: var(--surface); text-align: center; min-width: 8.5em; }
+.ro15-place b { display: block; font: 600 clamp(1.05rem, .9rem + .6vw, 1.5rem) var(--serif); }
+.ro15-place small { color: var(--ink-soft); font-size: clamp(.8rem, .74rem + .3vw, 1rem); }
+.ro15-ways { display: grid; gap: .9rem; }
+.ro15-way { position: relative; margin: 0; padding: .45em 1.6em; text-align: center; border-top: 4px solid var(--c); line-height: 1.3; }
+.ro15-way::after { content: ""; position: absolute; top: -12px; width: 0; height: 0; border: 10px solid transparent; }
+.ro15-way.out { --c: var(--accent); }
+.ro15-way.out::after { right: -6px; border-left: 14px solid var(--c); border-right: 0; }
+.ro15-way.back { --c: var(--warm); }
+.ro15-way.back::after { left: -6px; border-right: 14px solid var(--c); border-left: 0; }
+.ro15-way span { display: block; font-weight: 700; color: var(--c); font-size: clamp(.95rem, .85rem + .4vw, 1.25rem); }
+.ro15-way small { color: var(--ink-soft); font-size: clamp(.8rem, .74rem + .3vw, 1rem); }
+@media (max-width: 700px) { .ro15-gift { grid-template-columns: 1fr; } .ro15-place { min-width: 0; } }
+</style>
+</head>
+<body>
+<main class="deck" id="deck">
+
+<!-- ======================= OPENING ======================= -->
+<section class="slide title">
+  <div class="inner">
+    <div class="emblem rise"></div>
+    <h1 class="rise" style="--d:1">Romans 15</h1>
+    <p class="sub rise" style="--d:3">The God of hope</p>
+    <p class="tag rise" style="--d:5">The strong carry the weak, the old Scriptures give hope, and Paul makes plans for Rome and Spain that God will keep in His own way.</p>
+  </div>
+</section>
+
+<section class="slide watch">
+  <div class="inner">
+    <h2 class="rise">Things to watch for</h2>
+    <p class="lede rise" style="--d:1">Keep these questions in the back of your mind as we read. We'll come back to every one of them at the end.</p>
+    <ol class="seeds">
+      <li class="step"><span class="topic">Strong and weak</span><span class="seed-q">What do the strong owe the weak?</span></li>
+      <li class="step"><span class="topic">The Scriptures</span><span class="seed-q">Why were the old Scriptures written?</span></li>
+      <li class="step"><span class="topic">Received</span><span class="seed-q">How are we to receive one another?</span></li>
+      <li class="step"><span class="topic">Hope</span><span class="seed-q">Where does real hope come from?</span></li>
+      <li class="step"><span class="topic">Plans and providence</span><span class="seed-q">What did Paul plan, and what did God do with his plans?</span></li>
+      <li class="step"><span class="topic">Prayer</span><span class="seed-q">What did Paul ask the Romans to pray for?</span></li>
+    </ol>
+  </div>
+</section>
+
+<!-- ======================= PART ONE ======================= -->
+<section class="slide part">
+  <div class="inner">
+    <p class="part-n rise">Part one</p>
+    <h2 class="rise" style="--d:1">Not to please ourselves</h2>
+    <p class="range rise" style="--d:2">Verses 1–7</p>
+    <div class="rule"></div>
+    <p class="hook rise" style="--d:4">The strong pick up one end of the weak man's load, because Christ picked up ours.</p>
+    <div class="ro15-strip rise" style="--d:5" role="img" aria-label="Where we are in Romans: chapters 1 to 3 on sin, 4 and 5 on being justified by faith, 6 to 8 on new life, 9 to 11 on God's plan, and 12 to 16 on living it out. Chapter 15 is lit.">
+      <div class="ro15-sec" style="--n:3"><b>Sin</b><span><i style="--k:0">1</i><i style="--k:1">2</i><i style="--k:2">3</i></span></div>
+      <div class="ro15-sec" style="--n:2"><b>Justified</b><span><i style="--k:3">4</i><i style="--k:4">5</i></span></div>
+      <div class="ro15-sec" style="--n:3"><b>New life</b><span><i style="--k:5">6</i><i style="--k:6">7</i><i style="--k:7">8</i></span></div>
+      <div class="ro15-sec" style="--n:3"><b>God's plan</b><span><i style="--k:8">9</i><i style="--k:9">10</i><i style="--k:10">11</i></span></div>
+      <div class="ro15-sec now" style="--n:5"><b>Living it out</b><span><i style="--k:11">12</i><i style="--k:12">13</i><i style="--k:13">14</i><i class="now" style="--k:14">15</i><i class="later" style="--k:15">16</i></span></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide verse" data-v="1-3" data-hl="We then that are strong ought to bear the infirmities of the weak|not to please ourselves|even Christ pleased not himself"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="1" data-hl="ought to bear the infirmities of the weak"></blockquote>
+    <div class="split">
+      <div class="stage">
+        <svg class="ro15-carry" viewBox="90 30 440 270" role="img" aria-label="A man walks uphill bent almost double under a heavy sack. A second man comes alongside, the sack goes onto a pole between their shoulders, the first man straightens up, and the two of them walk on up the hill together.">
+          <rect class="ro15-sky" x="90" y="30" width="440" height="270" rx="8"/>
+          <path class="ro15-hill" d="M90 274 L530 195 L530 300 L90 300 Z"/>
+          <g class="ro15-pair">
+            <line class="ro15-pole" x1="146" y1="208" x2="258" y2="190"/>
+            <g class="ro15-load">
+              <line class="ro15-pole" x1="202" y1="199" x2="202" y2="214" style="stroke-width:3"/>
+              <path class="ro15-sack" d="M184 216 Q202 206 220 216 L226 252 Q202 262 178 252 Z"/>
+            </g>
+            <g class="ro15-man ro15-strong">
+              <circle cx="152" cy="190" r="11"/>
+              <path class="ro15-torso" d="M141 204 Q151 199 161 204 L158 238 L143 238 Z"/>
+              <path class="ro15-limb" d="M146 238 L138 262 M155 238 L164 260"/>
+              <path class="ro15-limb" d="M158 208 L166 222 L160 204" style="stroke-width:6"/>
+              <text class="ro15-lab" x="150" y="288">strong</text>
+            </g>
+            <g class="ro15-man ro15-weak">
+              <circle cx="252" cy="172" r="11"/>
+              <path class="ro15-torso" d="M241 186 Q251 181 261 186 L258 220 L243 220 Z"/>
+              <path class="ro15-limb" d="M246 220 L240 245 M255 220 L262 243"/>
+            </g>
+            <text class="ro15-lab" x="262" y="272">weak</text>
+          </g>
+          <text class="ro15-not" x="310" y="70" text-anchor="middle">“not to please ourselves”</text>
+        </svg>
+      </div>
+      <div>
+        <h2 class="rise" style="--d:1">Pick up the other end</h2>
+        <p class="note rise" style="--d:2">Chapter 14 was about the <em>“weak”</em>: believers with a tender conscience about food, drink and holy days. Paul counts himself among the <em>“strong,”</em> and says strength comes with a job. <em>“Bear”</em> means carry.</p>
+        <p class="note step ro15-t1">It's what a sponsor or an accountability partner does. The man with five years doesn't laugh at the man with five days. He picks up one end of the load.</p>
+        <p class="note step ro15-t2">Carrying costs you time and patience. But you go further together. And pleasing your neighbour <em>“for his good”</em> isn't telling him what he wants to hear.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="3" data-hl="even Christ pleased not himself"></blockquote>
+    <h2 class="rise" style="--d:1">He took the blows meant for God</h2>
+    <p class="note rise" style="--d:2">Paul quotes a psalm of David, a man hated for his love of God's house. The insults men threw at God landed on David. Paul says they landed, finally and fully, on Jesus.</p>
+    <blockquote class="quote rise" style="--d:3"><p>“For the zeal of thine house hath eaten me up; and the reproaches of them that reproached thee are fallen upon me.”</p><cite>Psalm 69:9</cite></blockquote>
+    <p class="note step">Jesus didn't spend His life pleasing Himself. He went to the cross and took the shame that belonged to us. Every ugly thing you've ever done, and every ugly thing done to you, He took on Himself. That's grace, and it's already done.</p>
+    <p class="note step">So when carrying a weaker brother costs you something (your evening, your patience, your pride), you're not doing anything Jesus didn't do first, and far more.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="4-6" data-hl="whatsoever things were written aforetime were written for our learning|might have hope|with one mind and one mouth glorify God"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="4" data-hl="whatsoever things were written aforetime were written for our learning"></blockquote>
+    <h2 class="rise" style="--d:1">Written for you</h2>
+    <div class="ro15-flow" role="img" aria-label="The old Scriptures lead to patience and comfort, and patience and comfort lead to hope.">
+      <div class="ro15-node" style="--k:0"><b>“written aforetime”</b><small>Moses, the Psalms, the prophets</small></div>
+      <i style="--k:1"></i>
+      <div class="ro15-node" style="--k:2"><b>patience · comfort</b><small>“of the scriptures”</small></div>
+      <i style="--k:3"></i>
+      <div class="ro15-node hope" style="--k:4"><b>hope</b><small>“might have hope”</small></div>
+    </div>
+    <p class="note step">The Old Testament wasn't written just for people long ago. It was written <em>“for our learning.”</em> Joseph sold by his brothers. Moses the killer. David the adulterer. Jonah running the other way. God put their failures on the record so a man like you could see Him keep going with men like them.</p>
+    <p class="note step">Notice the order: patience first. Scripture doesn't usually work like a switch. It's slow and steady, a chapter at a time, until one day you notice you've got hope where you didn't before. So read today, even if nothing seems to happen.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="7" data-hl="receive ye one another, as Christ also received us"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="7" data-hl="receive ye one another, as Christ also received us"></blockquote>
+    <h2 class="rise" style="--d:1">Pass it on</h2>
+    <div class="chains">
+      <div class="chain step"><span class="who-chip jesus">Christ</span><span class="said">received</span><span class="who-chip">you, as you were</span></div>
+      <div class="chain step"><span class="who-chip">someone who'd been there</span><span class="said">took your call</span><span class="who-chip">you, on a bad night</span></div>
+      <div class="chain step"><span class="who-chip">you</span><span class="said">“receive ye one another”</span><span class="who-chip">the new man, today</span></div>
+    </div>
+    <p class="note step">How did Christ receive you? Before you'd cleaned up. Before you'd proved anything. He didn't make you earn a place at the table. That's the measure: <em>“as Christ also received us.”</em></p>
+    <p class="note step">Which means the man who walks in late, smelling like last night, gets the same welcome you got. It's not just being nice. It's <em>“to the glory of God.”</em></p>
+  </div>
+</section>
+
+<!-- ======================= PART TWO ======================= -->
+<section class="slide part">
+  <div class="inner">
+    <p class="part-n rise">Part two</p>
+    <h2 class="rise" style="--d:1">One song</h2>
+    <p class="range rise" style="--d:2">Verses 8–13</p>
+    <div class="rule"></div>
+    <p class="hook rise" style="--d:4">Jews and Gentiles praising the same God, just as the Scriptures always said, and a prayer that fills you to overflowing.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="8-10" data-hl="a minister of the circumcision|to confirm the promises made unto the fathers|that the Gentiles might glorify God for his mercy|Rejoice, ye Gentiles, with his people"></section>
+<section class="slide verse" data-v="11-13" data-hl="Praise the Lord, all ye Gentiles|a root of Jesse|in him shall the Gentiles trust|the God of hope fill you with all joy and peace in believing"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="9" data-hl="that the Gentiles might glorify God for his mercy"></blockquote>
+    <h2 class="rise" style="--d:1">It was always the plan</h2>
+    <p class="note rise" style="--d:2">Jesus came as <em>“a minister of the circumcision”</em>: a Jew, serving the Jewish people, keeping the promises God made to Abraham, Isaac and Jacob. But those promises always had the rest of the world in them. Paul proves it four times, from every part of the Old Testament.</p>
+    <ol class="signs">
+      <li class="step"><b>The Psalms</b>“I will confess to thee among the Gentiles”<br><small>v. 9, from Psalm 18:49 (David)</small></li>
+      <li class="step"><b>The Law</b>“Rejoice, ye Gentiles, with his people”<br><small>v. 10, from Deuteronomy 32:43 (Moses)</small></li>
+      <li class="step"><b>The Psalms</b>“Praise the Lord, all ye Gentiles”<br><small>v. 11, from Psalm 117:1</small></li>
+      <li class="step now"><b>The Prophets</b>“There shall be a root of Jesse”<br><small>v. 12, from Isaiah 11:10</small></li>
+    </ol>
+    <p class="note step">Jesse was King David's father. By Isaiah's day the royal family tree looked like a stump. Out of that stump God promised a shoot, a King the nations would trust. That's Jesus. And <em>“Gentiles”</em> is everyone who isn't Jewish, which is almost certainly you. You were in God's plan from the beginning.</p>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="13"></blockquote>
+    <div class="split">
+      <div class="stage">
+        <svg viewBox="0 -10 420 355" role="img" aria-label="A light above pours into an empty glass. The glass fills with joy at the bottom and peace above it. Then it runs over the brim on both sides: abound in hope.">
+          <defs>
+            <clipPath id="ro15-cup"><path d="M120 80 L140 270 Q210 292 280 270 L300 80 Z"/></clipPath>
+            <radialGradient id="ro15-lightglow"><stop offset="0" style="stop-color:var(--warm);stop-opacity:.9"/><stop offset="1" style="stop-color:var(--warm);stop-opacity:0"/></radialGradient>
+          </defs>
+          <circle class="ro15-halo" cx="210" cy="16" r="40" style="fill:url(#ro15-lightglow)"/>
+          <circle class="ro15-source" cx="210" cy="16" r="10"/>
+          <path class="ro15-pour" pathLength="1" d="M210 26 V250"/>
+          <text class="ro15-tag" x="230" y="62">in believing</text>
+          <g clip-path="url(#ro15-cup)">
+            <g class="ro15-level">
+              <rect class="ro15-peace" x="100" y="78" width="220" height="102"/>
+              <rect class="ro15-joy" x="100" y="180" width="220" height="120"/>
+            </g>
+          </g>
+          <path class="ro15-brim" d="M116 80 Q210 62 304 80 Z"/>
+          <path class="ro15-spill" pathLength="1" d="M118 80 L137 266 Q139 286 136 306"/>
+          <path class="ro15-spill" pathLength="1" d="M302 80 L283 266 Q281 286 284 306"/>
+          <ellipse class="ro15-brim" cx="210" cy="306" rx="96" ry="6"/>
+          <path class="ro15-glass" d="M120 80 L140 270 Q210 292 280 270 L300 80"/>
+          <text class="ro15-word w1" x="210" y="236">joy</text>
+          <text class="ro15-word w2" x="210" y="140">peace</text>
+          <text class="ro15-abound" x="210" y="334">“abound in hope”</text>
+        </svg>
+      </div>
+      <div>
+        <h2 class="rise" style="--d:1">The God of hope</h2>
+        <p class="note rise" style="--d:2">Look who does the work in this prayer. God fills. You don't squeeze joy and peace out of yourself. They come <em>“in believing”</em>: trusting Him, one day at a time.</p>
+        <p class="note step ro15-over">And He doesn't stop at the line. He fills you until it runs over: <em>“that ye may abound in hope.”</em> Enough for you, and some for the man next to you.</p>
+        <p class="note step">It comes <em>“through the power of the Holy Ghost,”</em> who has lived in you since the day you believed. If your hope ran dry yesterday, the source didn't.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ======================= PART THREE ======================= -->
+<section class="slide part">
+  <div class="inner">
+    <p class="part-n rise">Part three</p>
+    <h2 class="rise" style="--d:1">Round about unto Illyricum</h2>
+    <p class="range rise" style="--d:2">Verses 14–21</p>
+    <div class="rule"></div>
+    <p class="hook rise" style="--d:4">Why Paul wrote so boldly, and the long road he'd already walked.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="14-16" data-hl="able also to admonish one another|I have written the more boldly unto you|that the offering up of the Gentiles might be acceptable, being sanctified by the Holy Ghost"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="16" data-hl="the offering up of the Gentiles might be acceptable"></blockquote>
+    <h2 class="rise" style="--d:1">People are the offering</h2>
+    <div class="columns">
+      <div class="col law rise" style="--d:2">
+        <p class="who">A priest at the temple</p>
+        <h3>A lamb on the altar</h3>
+        <p>He brought an animal to God, washed and offered by the rules of the Law.</p>
+      </div>
+      <div class="col grace step">
+        <p class="who">Paul, “the minister of Jesus Christ to the Gentiles”</p>
+        <h3>Men and women</h3>
+        <p>He brings God people who believed the gospel, made clean and holy <em>“by the Holy Ghost.”</em></p>
+      </div>
+    </div>
+    <p class="note step">Paul is painting a picture, not starting a priesthood. The point is how God sees a Gentile who believes: not as a leftover or an outsider, but as a gift that pleases Him.</p>
+    <p class="note step">And look at verse 14. Paul trusts the believers to <em>“admonish one another”</em>: to set each other straight. You don't need a seminary degree to tell a brother the truth in love. That's your job in this room.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="17-19" data-hl="which Christ hath not wrought by me|from Jerusalem, and round about unto Illyricum, I have fully preached the gospel of Christ"></section>
+<section class="slide verse" data-v="20-21" data-hl="not where Christ was named|lest I should build upon another man’s foundation|they that have not heard shall understand"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="19" data-hl="from Jerusalem, and round about unto Illyricum"></blockquote>
+    <div class="split">
+      <div class="stage">
+        <svg data-world viewBox="290 60 560 480" data-towns="Jerusalem!:l, Antioch:t, Tarsus:t, Ephesus:l, Troas:r, Philippi:t, Thessalonica:l, Corinth:l, Illyricum*" role="img" aria-label="Map of the eastern Mediterranean. Paul's three journeys are drawn one after another: the first through Cyprus and Galatia, the second across to Macedonia and Greece, the third to Ephesus and back through Greece. A dotted arc sweeps from Jerusalem round to Illyricum on the Adriatic.">
+          <path class="map-route j4" data-journey="1" style="--wait:.6s;--draw:2.4s"/>
+          <path class="map-route j2" data-journey="2" style="--wait:3s;--draw:3.2s"/>
+          <path class="map-route j3" data-journey="3" style="--wait:6.2s;--draw:3.2s"/>
+          <path class="map-way r1" d="M787 487 Q800 150 343 109"/>
+          <text class="map-region" x="370" y="140" text-anchor="middle" style="font-size:12px">ILLYRICUM</text>
+        </svg>
+        <p class="ro15-key rise" style="--d:3"><span style="--c:var(--warm)">first journey</span><span style="--c:var(--cool)">second</span><span style="--c:var(--wine)">third</span></p>
+      </div>
+      <div>
+        <h2 class="rise" style="--d:1">Full circle</h2>
+        <p class="note rise" style="--d:2">Illyricum is the Adriatic coast across from Italy: today's Albania and the old Yugoslavia. Paul had carried the gospel around that whole curve of the world, well over a thousand miles as the crow flies, and many times that on foot and by ship.</p>
+        <p class="note step map-go1">And look how he talks about it: <em>“I will not dare to speak of any of those things which Christ hath not wrought by me.”</em> Tell your story the same way. Not your war stories. What Christ did.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ======================= PART FOUR ======================= -->
+<section class="slide part">
+  <div class="inner">
+    <p class="part-n rise">Part four</p>
+    <h2 class="rise" style="--d:1">Rome, then Spain</h2>
+    <p class="range rise" style="--d:2">Verses 22–33</p>
+    <div class="rule"></div>
+    <p class="hook rise" style="--d:4">Paul makes his plans and asks for prayer. God answers every prayer, in a way nobody expected.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="22-24" data-hl="I have been much hindered from coming to you|a great desire these many years to come unto you|Whensoever I take my journey into Spain, I will come to you"></section>
+<section class="slide verse" data-v="25-29" data-hl="now I go unto Jerusalem to minister unto the saints|a certain contribution for the poor saints which are at Jerusalem|their debtors they are|I will come by you into Spain"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="27" data-hl="if the Gentiles have been made partakers of their spiritual things, their duty is also to minister unto them in carnal things"></blockquote>
+    <h2 class="rise" style="--d:1">The gift that went back</h2>
+    <div class="ro15-gift">
+      <div class="ro15-place rise" style="--d:2"><b>Jerusalem</b><small>the poor saints</small></div>
+      <div class="ro15-ways">
+        <p class="ro15-way out rise" style="--d:3"><span>spiritual things</span><small>the Scriptures, the promises, the Saviour, the gospel</small></p>
+        <p class="ro15-way back step"><span>carnal things</span><small>“carnal” here just means material: money for food</small></p>
+      </div>
+      <div class="ro15-place rise" style="--d:2"><b>Gentile churches</b><small>Macedonia and Achaia</small></div>
+    </div>
+    <p class="note step">The believers in Jerusalem were poor, likely made poorer by famine and by being pushed out for following Jesus. So the mostly Gentile churches of Greece took up a collection, and Paul was carrying it to Jerusalem himself.</p>
+    <p class="note step"><em>“Their debtors they are.”</em> The good news came to the Gentiles through Jewish believers. Sending help back was simply paying a debt of love. Somebody carried the message to you. You owe it forward, and sometimes you owe it back.</p>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="28" data-hl="I will come by you into Spain"></blockquote>
+    <h2 class="rise" style="--d:1">Plans and providence</h2>
+    <div class="stage ro15-wide">
+        <svg data-world viewBox="0 140 908 380" data-towns="Corinth*:l, Jerusalem:r, Caesarea:l, Rome!" role="img" aria-label="Map of the Roman world. Paul's plan, in gold: sail from Corinth to Jerusalem, then on to Rome, then west past Sardinia toward Spain, which lies off the left edge of the map. Then what happened, in red: a plot sends him the long way round through Macedonia to Jerusalem, where he's arrested, and two years later he sails from Caesarea to Rome as a prisoner.">
+          <path class="map-route j4" data-via="Corinth, Cenchrea, @24.3 37.4, @25.35 37.3, @26.0 37.45, @26.8 36.6, @27.4 35.8, @29 35.3, @32.5 34.2, Caesarea, Jerusalem" style="--wait:.6s;--draw:1.8s"/>
+          <path class="map-route j4" data-via="Jerusalem, Caesarea, Sidon, @34.5 35.95, @33 36.0, Myra, @29.5 36.05, @28.6 36.5, @27.6 36.55, Cnidus, @26.3 34.95, Fair havens, Clauda, Melita, @15.3 36.6, Syracuse, Rhegium, Puteoli, Appii forum, Rome" style="--wait:2.4s;--draw:2.4s"/>
+          <path class="map-route j4" data-via="Rome, @12.0 41.4, @10.6 39.8, @9.6 38.5, @7 38.3, @4.3 38.6" style="--wait:4.8s;--draw:1.6s"/>
+          <path class="ro15-arrowhead" d="M30 269 L3 269 M16 257 L3 269 L16 281"/>
+          <text class="ro15-spain" x="8" y="306">to Spain</text>
+          <path class="map-route j3 r1" data-via="Corinth, Berea, Thessalonica, Philippi, Neapolis, @24.5 40.84, @25.2 40.75, @25.6 40.05, @26.0 39.7, Troas, Assos, Mitylene, @26.2 38.4, @26.6 37.95, @27.0 37.6, Miletus, Coos, @27.5 36.55, @27.9 36.6, Rhodes, Patara, @31 35.0, @33.5 34.3, Tyre, Ptolemais, Caesarea, Jerusalem" style="--draw:3s"/>
+          <path class="map-route j3 r2" data-journey="rome" style="--draw:3.4s"/>
+          <text class="ro15-chains" x="262" y="392" text-anchor="middle">in chains</text>
+        </svg>
+    </div>
+    <div class="ro15-notes">
+      <p class="note rise" style="--d:2"><b class="plan">The plan:</b> the gift to Jerusalem, then Rome, then west to Spain, the far end of the known world, off the left edge of this map.</p>
+      <p class="note step map-go1"><b class="real">What happened:</b> a plot sent him the long way round (Acts 20:3). In Jerusalem a mob nearly killed him, and soldiers took him away in chains.</p>
+      <p class="note step map-go2">Two years in a cell at Caesarea, then a shipwreck. He reached Rome about AD 60, a prisoner.</p>
+      <p class="note step">Spain? Nobody knows. God didn't cancel Paul's plan. He rewrote the route.</p>
+    </div>
+  </div>
+</section>
+
+<section class="slide verse" data-v="30-33" data-hl="that ye strive together with me in your prayers to God for me|That I may be delivered from them that do not believe in Judaea|That I may come unto you with joy by the will of God|the God of peace be with you all"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="30" data-hl="strive together with me in your prayers to God for me"></blockquote>
+    <h2 class="rise" style="--d:1">Three prayers, three answers</h2>
+    <ol class="timeline" aria-label="Corinth, about AD 57: Paul writes Romans and asks for prayer. Jerusalem, AD 57: a mob tries to kill him and soldiers rescue him. Caesarea, AD 57 to 59: two years in prison. At sea, AD 59 to 60: the storm and the wreck. Rome, about AD 60 to 62: the brethren come to meet him, and he preaches for two years with no man forbidding him. Spain: unknown.">
+      <li style="--k:0"><b>Corinth</b><span>writes Romans, asks for prayer</span><small>about AD 57</small></li>
+      <li style="--k:1"><b>Jerusalem</b><span>a mob; soldiers rescue him</span><small>AD 57 · Acts 21</small></li>
+      <li style="--k:2"><b>Caesarea</b><span>two years in prison</span><small>AD 57–59</small></li>
+      <li style="--k:3"><b>At sea</b><span>storm and shipwreck</span><small>AD 59–60 · Acts 27</small></li>
+      <li class="lit" style="--k:4"><b>Rome</b><span>met by the brethren; preaching</span><small>AD 60–62 · Acts 28</small></li>
+      <li class="wait" style="--k:5"><b>Spain?</b><span>we don't know</span><small>after AD 62?</small></li>
+    </ol>
+    <p class="note step"><em>“Delivered from them that do not believe in Judaea”</em>: yes. <em>“As they went about to kill him,”</em> the Roman captain ran down with soldiers (Acts 21:31–32). Rescued by the army.</p>
+    <p class="note step"><em>“Come unto you with joy”</em> and <em>“with you be refreshed”</em>: yes. The brethren walked out to meet him on the road, and <em>“when Paul saw, he thanked God, and took courage”</em> (Acts 28:15). He just came in chains.</p>
+    <blockquote class="quote step"><p>“A man’s heart deviseth his way: but the LORD directeth his steps.”</p><cite>Proverbs 16:9</cite></blockquote>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="30" data-hl="that ye strive together with me in your prayers to God for me"></blockquote>
+    <h2 class="rise" style="--d:1">Even Paul asked</h2>
+    <p class="saying rise" style="--d:2">“Strive together <em>with me</em>.”</p>
+    <p class="note rise" style="--d:3">The great apostle didn't pretend he had it handled. He told them exactly what he was afraid of (men in Judaea who wanted him dead) and asked them to fight it out in prayer beside him. <em>“Strive”</em> is a wrestler's word.</p>
+    <p class="note step">Plans are good. Paul made them. But you hold them with an open hand. Your plan for this year might get rewritten too: a setback, a court date, a door that shuts. That doesn't mean God has left. It may mean He's taking you the long way, to the same place.</p>
+    <p class="note step">One thing to do today: tell one man here the specific thing you're afraid of, and ask him to pray about it with you. Then ask what you can pray for him.</p>
+  </div>
+</section>
+
+<!-- ======================= CLOSING ======================= -->
+<section class="slide remember">
+  <div class="inner">
+    <h2 class="rise">Points to remember</h2>
+    <ol class="seeds">
+      <li class="step"><span class="topic">Strong and weak</span><span class="seed-q">“We then that are strong ought to bear the infirmities of the weak” <cite>15:1</cite></span><span class="take">Strength is for carrying. Pick up one end of a weaker brother's load.</span></li>
+      <li class="step"><span class="topic">The Scriptures</span><span class="seed-q">“whatsoever things were written aforetime were written for our learning” <cite>15:4</cite></span><span class="take">The old stories of failing men and a faithful God were written for you, so you'd have hope.</span></li>
+      <li class="step"><span class="topic">Received</span><span class="seed-q">“receive ye one another, as Christ also received us” <cite>15:7</cite></span><span class="take">Welcome the next man the way Christ welcomed you: before he's cleaned up.</span></li>
+      <li class="step"><span class="topic">Hope</span><span class="seed-q">“the God of hope fill you with all joy and peace in believing” <cite>15:13</cite></span><span class="take">God fills, by the Holy Ghost, until hope runs over. You don't have to make it yourself.</span></li>
+      <li class="step"><span class="topic">Plans and providence</span><span class="seed-q">“I will come by you into Spain” <cite>15:28</cite></span><span class="take">Paul got to Rome, but in chains. Make plans, and trust God with the route.</span></li>
+      <li class="step"><span class="topic">Prayer</span><span class="seed-q">“strive together with me in your prayers to God for me” <cite>15:30</cite></span><span class="take">Even Paul asked for prayer. Tell a brother what you're afraid of, and pray together.</span></li>
+    </ol>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 1 of 6</p>
+      <span class="topic">Strong and weak</span>
+      <h2>What do the strong owe the weak?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="1"></blockquote>
+      <blockquote class="quote step" data-q="2"></blockquote>
+      <blockquote class="quote step" data-q="3"></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>To carry them. The strong are to “bear the infirmities of the weak,” not please themselves, and do what builds the other man up. That's what Christ did for us: He didn't please Himself, and He took the reproaches that were aimed at God.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 2 of 6</p>
+      <span class="topic">The Scriptures</span>
+      <h2>Why were the old Scriptures written?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="4"></blockquote>
+      <blockquote class="quote step" data-q="12"></blockquote>
+      <blockquote class="quote step" data-q="21"></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>“For our learning,” so that through the patience and comfort they give, we might have hope. Paul keeps quoting them in this chapter: the root of Jesse, the Gentiles who would hear. God kept every one of those promises in Jesus, and He'll keep His promises to you.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 3 of 6</p>
+      <span class="topic">Received</span>
+      <h2>How are we to receive one another?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="5"></blockquote>
+      <blockquote class="quote step" data-q="6"></blockquote>
+      <blockquote class="quote step" data-q="7"></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>“As Christ also received us”: freely, before we'd earned anything. And with one mind, so that together, with one mouth, we glorify God. The welcome we give the next man is meant to look like the welcome Jesus gave us.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 4 of 6</p>
+      <span class="topic">Hope</span>
+      <h2>Where does real hope come from?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="4"></blockquote>
+      <blockquote class="quote step" data-q="12"></blockquote>
+      <blockquote class="quote step" data-q="13"></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>From God Himself, “the God of hope.” He fills us with joy and peace as we believe, through the Scriptures and by the power of the Holy Ghost, until we “abound in hope.” It's His work in us, not something we have to manufacture.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 5 of 6</p>
+      <span class="topic">Plans and providence</span>
+      <h2>What did Paul plan, and what did God do with his plans?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="24"></blockquote>
+      <blockquote class="quote step" data-q="25"></blockquote>
+      <blockquote class="quote step" data-q="28"></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>He planned to take the gift to Jerusalem, visit Rome, and go on to Spain. God did bring him to Rome, but by way of an arrest, two years in prison, and a shipwreck. Paul arrived in chains and preached there for two years. God kept the goal and changed the route.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 6 of 6</p>
+      <span class="topic">Prayer</span>
+      <h2>What did Paul ask the Romans to pray for?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="30"></blockquote>
+      <blockquote class="quote step" data-q="31"></blockquote>
+      <blockquote class="quote step" data-q="32"></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>That he'd be delivered from the unbelievers in Judaea, that the gift would be welcomed in Jerusalem, and that he'd reach Rome with joy and be refreshed. God answered: Roman soldiers rescued him, and the brethren met him on the road to Rome.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide prayer">
+  <div class="inner">
+    <div class="emblem rise"></div>
+    <h2 class="rise" style="--d:1">Prayer requests</h2>
+    <p class="ask-line rise" style="--d:2">What can we pray about for you today?</p>
+    <blockquote class="quote rise" style="--d:4"><p>“Now the God of hope fill you with all joy and peace in believing, that ye may abound in hope, through the power of the Holy Ghost.”</p><cite>Romans 15:13</cite></blockquote>
+  </div>
+</section>
+
+</main>
+
+<script>
+// King James Version, Romans chapter 15
+const V = {
+  1: "We then that are strong ought to bear the infirmities of the weak, and not to please ourselves.",
+  2: "Let every one of us please his neighbour for his good to edification.",
+  3: "For even Christ pleased not himself; but, as it is written, The reproaches of them that reproached thee fell on me.",
+  4: "For whatsoever things were written aforetime were written for our learning, that we through patience and comfort of the scriptures might have hope.",
+  5: "Now the God of patience and consolation grant you to be likeminded one toward another according to Christ Jesus:",
+  6: "That ye may with one mind and one mouth glorify God, even the Father of our Lord Jesus Christ.",
+  7: "Wherefore receive ye one another, as Christ also received us to the glory of God.",
+  8: "Now I say that Jesus Christ was a minister of the circumcision for the truth of God, to confirm the promises made unto the fathers:",
+  9: "And that the Gentiles might glorify God for his mercy; as it is written, For this cause I will confess to thee among the Gentiles, and sing unto thy name.",
+  10: "And again he saith, Rejoice, ye Gentiles, with his people.",
+  11: "And again, Praise the Lord, all ye Gentiles; and laud him, all ye people.",
+  12: "And again, Esaias saith, There shall be a root of Jesse, and he that shall rise to reign over the Gentiles; in him shall the Gentiles trust.",
+  13: "Now the God of hope fill you with all joy and peace in believing, that ye may abound in hope, through the power of the Holy Ghost.",
+  14: "And I myself also am persuaded of you, my brethren, that ye also are full of goodness, filled with all knowledge, able also to admonish one another.",
+  15: "Nevertheless, brethren, I have written the more boldly unto you in some sort, as putting you in mind, because of the grace that is given to me of God,",
+  16: "That I should be the minister of Jesus Christ to the Gentiles, ministering the gospel of God, that the offering up of the Gentiles might be acceptable, being sanctified by the Holy Ghost.",
+  17: "I have therefore whereof I may glory through Jesus Christ in those things which pertain to God.",
+  18: "For I will not dare to speak of any of those things which Christ hath not wrought by me, to make the Gentiles obedient, by word and deed,",
+  19: "Through mighty signs and wonders, by the power of the Spirit of God; so that from Jerusalem, and round about unto Illyricum, I have fully preached the gospel of Christ.",
+  20: "Yea, so have I strived to preach the gospel, not where Christ was named, lest I should build upon another man’s foundation:",
+  21: "But as it is written, To whom he was not spoken of, they shall see: and they that have not heard shall understand.",
+  22: "For which cause also I have been much hindered from coming to you.",
+  23: "But now having no more place in these parts, and having a great desire these many years to come unto you;",
+  24: "Whensoever I take my journey into Spain, I will come to you: for I trust to see you in my journey, and to be brought on my way thitherward by you, if first I be somewhat filled with your company.",
+  25: "But now I go unto Jerusalem to minister unto the saints.",
+  26: "For it hath pleased them of Macedonia and Achaia to make a certain contribution for the poor saints which are at Jerusalem.",
+  27: "It hath pleased them verily; and their debtors they are. For if the Gentiles have been made partakers of their spiritual things, their duty is also to minister unto them in carnal things.",
+  28: "When therefore I have performed this, and have sealed to them this fruit, I will come by you into Spain.",
+  29: "And I am sure that, when I come unto you, I shall come in the fulness of the blessing of the gospel of Christ.",
+  30: "Now I beseech you, brethren, for the Lord Jesus Christ’s sake, and for the love of the Spirit, that ye strive together with me in your prayers to God for me;",
+  31: "That I may be delivered from them that do not believe in Judaea; and that my service which I have for Jerusalem may be accepted of the saints;",
+  32: "That I may come unto you with joy by the will of God, and may with you be refreshed.",
+  33: "Now the God of peace be with you all. Amen."
+};
+const BOOK = "Romans 15";
+</script>
+<script src="../assets/deck.js"></script>
+</body>
+</html>

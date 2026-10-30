@@ -344,6 +344,12 @@ window.GLOSSARY = [
     "Romans", 14,
     [ 14 ] ],
    [
+    "Romans", 15,
+    [ 5, 6, 8, 16, 17, 30 ] ],
+   [
+    "Romans", 16,
+    [ 3, 18, 20, 24, 25, 27 ] ],
+   [
     "1 Corinthians", 1,
     [ 1, 2, 3, 4, 7, 8, 9, 10, 30 ] ],
    [
@@ -945,7 +951,10 @@ window.GLOSSARY = [
     [ 27, 29 ] ],
    [
     "Romans", 10,
-    [ 16, 20 ] ] ]
+    [ 16, 20 ] ],
+   [
+    "Romans", 15,
+    [ 12 ] ] ]
  },
  {
   "id": "joseph",
@@ -1149,7 +1158,10 @@ window.GLOSSARY = [
     [ 4 ] ],
    [
     "Romans", 8,
-    [ 15 ] ] ]
+    [ 15 ] ],
+   [
+    "Romans", 15,
+    [ 6 ] ] ]
  },
  {
   "id": "holy-spirit",
@@ -1294,6 +1306,9 @@ window.GLOSSARY = [
    [
     "Romans", 14,
     [ 17 ] ],
+   [
+    "Romans", 15,
+    [ 13, 16, 19, 30 ] ],
    [
     "1 Corinthians", 2,
     [ 4, 10, 11, 12, 13, 14 ] ] ]
@@ -2613,7 +2628,10 @@ window.GLOSSARY = [
     [ 4, 10, 20 ] ],
    [
     "Acts", 28,
-    [ 17 ] ] ]
+    [ 17 ] ],
+   [
+    "Romans", 15,
+    [ 19, 25, 26, 31 ] ] ]
  },
  {
   "id": "bethabara",
@@ -4175,6 +4193,12 @@ window.GLOSSARY = [
     "Romans", 12,
     [ 3, 6 ] ],
    [
+    "Romans", 15,
+    [ 15 ] ],
+   [
+    "Romans", 16,
+    [ 20, 24 ] ],
+   [
     "1 Corinthians", 1,
     [ 4 ] ] ]
  },
@@ -4293,7 +4317,10 @@ window.GLOSSARY = [
     [ 7 ] ],
    [
     "Romans", 9,
-    [ 1 ] ] ]
+    [ 1 ] ],
+   [
+    "Romans", 15,
+    [ 8 ] ] ]
  },
  {
   "id": "glory",
@@ -4474,6 +4501,12 @@ window.GLOSSARY = [
    [
     "Romans", 11,
     [ 36 ] ],
+   [
+    "Romans", 15,
+    [ 7, 17 ] ],
+   [
+    "Romans", 16,
+    [ 27 ] ],
    [
     "1 Corinthians", 1,
     [ 29, 31 ] ],
@@ -4891,6 +4924,12 @@ window.GLOSSARY = [
    [
     "Romans", 14,
     [ 9, 10, 15, 18 ] ],
+   [
+    "Romans", 15,
+    [ 3, 5, 6, 7, 8, 16, 17, 18, 19, 20, 29, 30 ] ],
+   [
+    "Romans", 16,
+    [ 3, 5, 7, 9, 10, 16, 18, 20, 24, 25, 27 ] ],
    [
     "1 Corinthians", 1,
     [ 1, 2, 3, 4, 6, 7, 8, 9, 10, 12, 13, 17, 23, 24, 30 ] ],
@@ -5347,6 +5386,9 @@ window.GLOSSARY = [
    [
     "Romans", 14,
     [ 2 ] ],
+   [
+    "Romans", 15,
+    [ 13, 31 ] ],
    [
     "1 Corinthians", 1,
     [ 21 ] ] ]
@@ -5933,6 +5975,9 @@ window.GLOSSARY = [
     "Acts", 28,
     [ 11 ] ],
    [
+    "Romans", 15,
+    [ 19 ] ],
+   [
     "1 Corinthians", 1,
     [ 22 ] ] ]
  },
@@ -6377,6 +6422,9 @@ window.GLOSSARY = [
     "Romans", 11,
     [ 33 ] ],
    [
+    "Romans", 15,
+    [ 14 ] ],
+   [
     "1 Corinthians", 1,
     [ 5 ] ] ]
  },
@@ -6717,7 +6765,10 @@ window.GLOSSARY = [
     [ 3 ] ],
    [
     "Proverbs", 27,
-    [ 12 ] ] ]
+    [ 12 ] ],
+   [
+    "Romans", 16,
+    [ 18, 19 ] ] ]
  },
  {
   "id": "strange-woman",
@@ -8424,7 +8475,10 @@ window.GLOSSARY = [
     [ 9 ] ],
    [
     "Romans", 8,
-    [ 23 ] ] ]
+    [ 23 ] ],
+   [
+    "Romans", 16,
+    [ 5 ] ] ]
  },
  {
   "id": "flattery",
@@ -9579,7 +9633,13 @@ window.GLOSSARY = [
     [ 11 ] ],
    [
     "Romans", 11,
-    [ 2 ] ] ]
+    [ 2 ] ],
+   [
+    "Romans", 15,
+    [ 4 ] ],
+   [
+    "Romans", 16,
+    [ 26 ] ] ]
  },
  {
   "id": "the-lad",
@@ -10745,6 +10805,9 @@ window.GLOSSARY = [
     "Acts", 26,
     [ 18 ] ],
    [
+    "Romans", 15,
+    [ 16 ] ],
+   [
     "1 Corinthians", 1,
     [ 2, 30 ] ] ]
  },
@@ -10992,7 +11055,10 @@ window.GLOSSARY = [
     [ 20 ] ],
    [
     "Acts", 28,
-    [ 21 ] ] ]
+    [ 21 ] ],
+   [
+    "Romans", 15,
+    [ 31 ] ] ]
  },
  {
   "id": "bethlehem",
@@ -11064,7 +11130,10 @@ window.GLOSSARY = [
     [ 1, 30 ] ],
    [
     "Romans", 4,
-    [ 9, 10, 11, 12 ] ] ]
+    [ 9, 10, 11, 12 ] ],
+   [
+    "Romans", 15,
+    [ 8 ] ] ]
  },
  {
   "id": "living-water",
@@ -11148,6 +11217,9 @@ window.GLOSSARY = [
     [ 19 ] ],
    [
     "Romans", 6,
+    [ 17 ] ],
+   [
+    "Romans", 16,
     [ 17 ] ] ]
  },
  {
@@ -11283,7 +11355,13 @@ window.GLOSSARY = [
     [ 24, 30 ] ],
    [
     "Romans", 11,
-    [ 11, 12, 13, 25 ] ] ]
+    [ 11, 12, 13, 25 ] ],
+   [
+    "Romans", 15,
+    [ 9, 10, 11, 12, 16, 18, 27 ] ],
+   [
+    "Romans", 16,
+    [ 4 ] ] ]
  },
  {
   "id": "glorified",
@@ -11352,7 +11430,10 @@ window.GLOSSARY = [
     [ 21 ] ],
    [
     "Romans", 8,
-    [ 17, 30 ] ] ]
+    [ 17, 30 ] ],
+   [
+    "Romans", 15,
+    [ 6, 9 ] ] ]
  },
  {
   "id": "scribes",
@@ -12465,7 +12546,10 @@ window.GLOSSARY = [
     [ 12 ] ],
    [
     "Acts", 14,
-    [ 3 ] ] ]
+    [ 3 ] ],
+   [
+    "Romans", 15,
+    [ 19 ] ] ]
  },
  {
   "id": "mary-magdalene",
@@ -12861,7 +12945,13 @@ window.GLOSSARY = [
     [ 6 ] ],
    [
     "Romans", 10,
-    [ 15 ] ] ]
+    [ 15 ] ],
+   [
+    "Romans", 15,
+    [ 13, 33 ] ],
+   [
+    "Romans", 16,
+    [ 20 ] ] ]
  },
  {
   "id": "remit",
@@ -13965,7 +14055,10 @@ window.GLOSSARY = [
     [ 3 ] ],
    [
     "Acts", 26,
-    [ 18 ] ] ]
+    [ 18 ] ],
+   [
+    "Romans", 16,
+    [ 20 ] ] ]
  },
  {
   "id": "girded",
@@ -14325,7 +14418,10 @@ window.GLOSSARY = [
     [ 19 ] ],
    [
     "Romans", 10,
-    [ 20 ] ] ]
+    [ 20 ] ],
+   [
+    "Romans", 16,
+    [ 26 ] ] ]
  },
  {
   "id": "vine",
@@ -16377,7 +16473,10 @@ window.GLOSSARY = [
     [ 30, 31, 32 ] ],
    [
     "Romans", 12,
-    [ 1, 8 ] ] ]
+    [ 1, 8 ] ],
+   [
+    "Romans", 15,
+    [ 9 ] ] ]
  },
  {
   "id": "baal",
@@ -22754,6 +22853,12 @@ window.GLOSSARY = [
     "Romans", 11,
     [ 28 ] ],
    [
+    "Romans", 15,
+    [ 16, 19, 20, 29 ] ],
+   [
+    "Romans", 16,
+    [ 25 ] ],
+   [
     "1 Corinthians", 1,
     [ 17 ] ] ]
  },
@@ -24144,7 +24249,10 @@ window.GLOSSARY = [
     [ 32 ] ],
    [
     "Acts", 13,
-    [ 22 ] ] ]
+    [ 22 ] ],
+   [
+    "Romans", 15,
+    [ 12 ] ] ]
  },
  {
   "id": "noah",
@@ -24437,6 +24545,9 @@ window.GLOSSARY = [
     "Romans", 1,
     [ 1, 5 ] ],
    [
+    "Romans", 16,
+    [ 7 ] ],
+   [
     "1 Corinthians", 1,
     [ 1 ] ] ]
  },
@@ -24597,7 +24708,10 @@ window.GLOSSARY = [
     [ 18 ] ],
    [
     "Luke", 10,
-    [ 4 ] ] ]
+    [ 4 ] ],
+   [
+    "Romans", 16,
+    [ 5, 7, 9, 10, 11, 12, 13, 14, 15, 16, 21, 22, 23 ] ] ]
  },
  {
   "id": "shake-off-the-dust",
@@ -24789,7 +24903,10 @@ window.GLOSSARY = [
     [ 42 ] ],
    [
     "Romans", 10,
-    [ 9, 10 ] ] ]
+    [ 9, 10 ] ],
+   [
+    "Romans", 15,
+    [ 9 ] ] ]
  },
  {
   "id": "not-peace-but-a-sword",
@@ -26040,7 +26157,13 @@ window.GLOSSARY = [
     [ 5 ] ],
    [
     "Romans", 11,
-    [ 36 ] ] ]
+    [ 36 ] ],
+   [
+    "Romans", 15,
+    [ 33 ] ],
+   [
+    "Romans", 16,
+    [ 20, 24, 27 ] ] ]
  },
  {
   "id": "treasure-in-heaven",
@@ -26502,7 +26625,10 @@ window.GLOSSARY = [
     [ 2 ] ],
    [
     "Romans", 8,
-    [ 26 ] ] ]
+    [ 26 ] ],
+   [
+    "Romans", 15,
+    [ 1 ] ] ]
  },
  {
   "id": "dead-bury-their-dead",
@@ -26919,6 +27045,9 @@ window.GLOSSARY = [
     [ 10 ] ],
    [
     "Romans", 11,
+    [ 25 ] ],
+   [
+    "Romans", 16,
     [ 25 ] ],
    [
     "1 Corinthians", 2,
@@ -28075,6 +28204,9 @@ window.GLOSSARY = [
    [
     "Acts", 20,
     [ 17, 28 ] ],
+   [
+    "Romans", 16,
+    [ 1, 5, 23 ] ],
    [
     "1 Corinthians", 1,
     [ 2 ] ] ]
@@ -29298,7 +29430,10 @@ window.GLOSSARY = [
     [ 3 ] ],
    [
     "Romans", 13,
-    [ 4, 6 ] ] ]
+    [ 4, 6 ] ],
+   [
+    "Romans", 15,
+    [ 8, 16, 25, 27 ] ] ]
  },
  {
   "id": "joanna",
@@ -29856,7 +29991,10 @@ window.GLOSSARY = [
     [ 31, 33 ] ],
    [
     "Luke", 10,
-    [ 27, 29, 36 ] ] ]
+    [ 27, 29, 36 ] ],
+   [
+    "Romans", 15,
+    [ 2 ] ] ]
  },
  {
   "id": "oil-and-wine",
@@ -32793,7 +32931,10 @@ window.GLOSSARY = [
     [ 3, 4 ] ],
    [
     "Romans", 8,
-    [ 25 ] ] ]
+    [ 25 ] ],
+   [
+    "Romans", 15,
+    [ 4, 5 ] ] ]
  },
  {
   "id": "jerusalem-compassed",
@@ -34905,7 +35046,10 @@ window.GLOSSARY = [
   "refs": [
    [
     "Acts", 15,
-    [ 31 ] ] ]
+    [ 31 ] ],
+   [
+    "Romans", 15,
+    [ 5 ] ] ]
  },
  {
   "id": "contention",
@@ -34935,7 +35079,10 @@ window.GLOSSARY = [
     [ 22 ] ],
    [
     "Acts", 20,
-    [ 4 ] ] ]
+    [ 4 ] ],
+   [
+    "Romans", 16,
+    [ 21 ] ] ]
  },
  {
   "id": "lydia",
@@ -35019,7 +35166,10 @@ window.GLOSSARY = [
     [ 21, 22, 29 ] ],
    [
     "Acts", 20,
-    [ 1, 3 ] ] ]
+    [ 1, 3 ] ],
+   [
+    "Romans", 15,
+    [ 26 ] ] ]
  },
  {
   "id": "samothracia",
@@ -35372,6 +35522,12 @@ window.GLOSSARY = [
     "Romans", 12,
     [ 13 ] ],
    [
+    "Romans", 15,
+    [ 25, 26, 31 ] ],
+   [
+    "Romans", 16,
+    [ 2, 15 ] ],
+   [
     "1 Corinthians", 1,
     [ 2 ] ] ]
  },
@@ -35454,7 +35610,10 @@ window.GLOSSARY = [
     [ 24 ] ],
    [
     "Romans", 9,
-    [ 3 ] ] ]
+    [ 3 ] ],
+   [
+    "Romans", 16,
+    [ 7, 11, 21 ] ] ]
  },
  {
   "id": "quick-and-dead",
@@ -36330,7 +36489,13 @@ window.GLOSSARY = [
     [ 12, 27 ] ],
    [
     "Acts", 19,
-    [ 21 ] ] ]
+    [ 21 ] ],
+   [
+    "Romans", 15,
+    [ 26 ] ],
+   [
+    "Romans", 16,
+    [ 5 ] ] ]
  },
  {
   "id": "cenchrea",
@@ -36339,7 +36504,10 @@ window.GLOSSARY = [
   "refs": [
    [
     "Acts", 18,
-    [ 18 ] ] ]
+    [ 18 ] ],
+   [
+    "Romans", 16,
+    [ 1 ] ] ]
  },
  {
   "id": "ephesus",
@@ -36390,7 +36558,10 @@ window.GLOSSARY = [
   "refs": [
    [
     "Acts", 18,
-    [ 2, 18, 26 ] ] ]
+    [ 2, 18, 26 ] ],
+   [
+    "Romans", 16,
+    [ 3 ] ] ]
  },
  {
   "id": "priscilla",
@@ -36399,7 +36570,10 @@ window.GLOSSARY = [
   "refs": [
    [
     "Acts", 18,
-    [ 2, 18, 26 ] ] ]
+    [ 2, 18, 26 ] ],
+   [
+    "Romans", 16,
+    [ 3 ] ] ]
  },
  {
   "id": "justus",
@@ -37101,7 +37275,10 @@ window.GLOSSARY = [
   "refs": [
    [
     "Acts", 19,
-    [ 22 ] ] ]
+    [ 22 ] ],
+   [
+    "Romans", 16,
+    [ 23 ] ] ]
  },
  {
   "id": "demetrius",
@@ -37821,7 +37998,10 @@ window.GLOSSARY = [
     [ 20, 24, 25 ] ],
    [
     "Romans", 12,
-    [ 12 ] ] ]
+    [ 12 ] ],
+   [
+    "Romans", 15,
+    [ 4, 13 ] ] ]
  },
  {
   "id": "experience",
@@ -37947,7 +38127,10 @@ window.GLOSSARY = [
     [ 15, 20 ] ],
    [
     "Romans", 6,
-    [ 1 ] ] ]
+    [ 1 ] ],
+   [
+    "Romans", 15,
+    [ 13 ] ] ]
  },
  {
   "id": "reign",
@@ -37959,6 +38142,9 @@ window.GLOSSARY = [
     [ 14, 17, 21 ] ],
    [
     "Romans", 6,
+    [ 12 ] ],
+   [
+    "Romans", 15,
     [ 12 ] ] ]
  },
  {
@@ -38604,7 +38790,13 @@ window.GLOSSARY = [
     [ 1, 4 ] ],
    [
     "Romans", 8,
-    [ 12, 29 ] ] ]
+    [ 12, 29 ] ],
+   [
+    "Romans", 15,
+    [ 14, 15, 30 ] ],
+   [
+    "Romans", 16,
+    [ 14, 17 ] ] ]
  },
  {
   "id": "captain-of-the-guard",
@@ -39064,6 +39256,12 @@ window.GLOSSARY = [
    [
     "Romans", 12,
     [ 1 ] ],
+   [
+    "Romans", 15,
+    [ 30 ] ],
+   [
+    "Romans", 16,
+    [ 17 ] ],
    [
     "1 Corinthians", 1,
     [ 10 ] ] ]
@@ -39709,5 +39907,419 @@ window.GLOSSARY = [
    [
     "Romans", 10,
     [ 17 ] ] ]
+ },
+ {
+  "id": "illyricum",
+  "kind": "place",
+  "name": "Illyricum (the Adriatic coast across from Italy: today's Albania and the old Yugoslavia)",
+  "refs": [
+   [
+    "Romans", 15,
+    [ 19 ] ] ]
+ },
+ {
+  "id": "spain",
+  "kind": "place",
+  "name": "Spain (the far west of the Roman world, where Paul hoped to go)",
+  "refs": [
+   [
+    "Romans", 15,
+    [ 24, 28 ] ] ]
+ },
+ {
+  "id": "edification",
+  "kind": "term",
+  "name": "Edification (building someone up)",
+  "refs": [
+   [
+    "Romans", 15,
+    [ 2 ] ] ]
+ },
+ {
+  "id": "aforetime",
+  "kind": "term",
+  "name": "Aforetime (in earlier days, long ago)",
+  "refs": [
+   [
+    "John", 9,
+    [ 13 ] ],
+   [
+    "Romans", 15,
+    [ 4 ] ] ]
+ },
+ {
+  "id": "likeminded",
+  "kind": "term",
+  "name": "Likeminded (of one mind, agreed)",
+  "refs": [
+   [
+    "Romans", 15,
+    [ 5 ] ] ]
+ },
+ {
+  "id": "admonish",
+  "kind": "term",
+  "name": "Admonish (warn, set straight)",
+  "refs": [
+   [
+    "Romans", 15,
+    [ 14 ] ] ]
+ },
+ {
+  "id": "thitherward",
+  "kind": "term",
+  "name": "Thitherward (on the way there)",
+  "refs": [
+   [
+    "Romans", 15,
+    [ 24 ] ] ]
+ },
+ {
+  "id": "contribution",
+  "kind": "term",
+  "name": "Contribution (the collection for the poor saints at Jerusalem)",
+  "refs": [
+   [
+    "Romans", 15,
+    [ 26 ] ] ]
+ },
+ {
+  "id": "carnal-things",
+  "kind": "term",
+  "name": "Carnal things (material things: money, food)",
+  "refs": [
+   [
+    "Romans", 15,
+    [ 27 ] ] ]
+ },
+ {
+  "id": "partakers",
+  "kind": "term",
+  "name": "Partakers (sharers)",
+  "refs": [
+   [
+    "Matthew", 23,
+    [ 30 ] ],
+   [
+    "Romans", 15,
+    [ 27 ] ] ]
+ },
+ {
+  "id": "strive",
+  "kind": "term",
+  "name": "Strive (struggle hard, as a wrestler)",
+  "refs": [
+   [
+    "Romans", 15,
+    [ 20, 30 ] ] ]
+ },
+ {
+  "id": "much-hindered",
+  "kind": "term",
+  "name": "Hindered (held back, kept from going)",
+  "refs": [
+   [
+    "Romans", 15,
+    [ 22 ] ] ]
+ },
+ {
+  "id": "phebe",
+  "kind": "person",
+  "name": "Phebe (a servant of the church at Cenchrea, who carried Romans to Rome)",
+  "refs": [
+   [
+    "Romans", 16,
+    [ 1 ] ] ]
+ },
+ {
+  "id": "succourer",
+  "kind": "term",
+  "name": "Succourer (a helper, one who stands behind and looks after others)",
+  "refs": [
+   [
+    "Romans", 16,
+    [ 2 ] ] ]
+ },
+ {
+  "id": "commend-introduce",
+  "kind": "term",
+  "name": "Commend (recommend, introduce)",
+  "refs": [
+   [
+    "Romans", 16,
+    [ 1 ] ] ]
+ },
+ {
+  "id": "epaenetus",
+  "kind": "person",
+  "name": "Epaenetus (the first convert of Achaia, greeted in Rome)",
+  "refs": [
+   [
+    "Romans", 16,
+    [ 5 ] ] ]
+ },
+ {
+  "id": "mary-of-rome",
+  "kind": "person",
+  "name": "Mary of Rome (who bestowed much labour on Paul and his helpers)",
+  "refs": [
+   [
+    "Romans", 16,
+    [ 6 ] ] ]
+ },
+ {
+  "id": "andronicus",
+  "kind": "person",
+  "name": "Andronicus (Paul's kinsman and fellow prisoner)",
+  "refs": [
+   [
+    "Romans", 16,
+    [ 7 ] ] ]
+ },
+ {
+  "id": "junia",
+  "kind": "person",
+  "name": "Junia (Paul's kinswoman and fellow prisoner, probably Andronicus' wife)",
+  "refs": [
+   [
+    "Romans", 16,
+    [ 7 ] ] ]
+ },
+ {
+  "id": "fellowprisoners",
+  "kind": "term",
+  "name": "Fellowprisoners (men and women who shared Paul's prison)",
+  "refs": [
+   [
+    "Romans", 16,
+    [ 7 ] ] ]
+ },
+ {
+  "id": "amplias",
+  "kind": "person",
+  "name": "Amplias (beloved in the Lord)",
+  "refs": [
+   [
+    "Romans", 16,
+    [ 8 ] ] ]
+ },
+ {
+  "id": "urbane",
+  "kind": "person",
+  "name": "Urbane (Paul's helper in Christ)",
+  "refs": [
+   [
+    "Romans", 16,
+    [ 9 ] ] ]
+ },
+ {
+  "id": "stachys",
+  "kind": "person",
+  "name": "Stachys (beloved of Paul)",
+  "refs": [
+   [
+    "Romans", 16,
+    [ 9 ] ] ]
+ },
+ {
+  "id": "apelles",
+  "kind": "person",
+  "name": "Apelles (approved in Christ)",
+  "refs": [
+   [
+    "Romans", 16,
+    [ 10 ] ] ]
+ },
+ {
+  "id": "aristobulus",
+  "kind": "person",
+  "name": "Aristobulus' household (the believers among his servants)",
+  "refs": [
+   [
+    "Romans", 16,
+    [ 10 ] ] ]
+ },
+ {
+  "id": "herodion",
+  "kind": "person",
+  "name": "Herodion (Paul's kinsman)",
+  "refs": [
+   [
+    "Romans", 16,
+    [ 11 ] ] ]
+ },
+ {
+  "id": "narcissus",
+  "kind": "person",
+  "name": "Narcissus' household (the believers among his servants)",
+  "refs": [
+   [
+    "Romans", 16,
+    [ 11 ] ] ]
+ },
+ {
+  "id": "tryphena-and-tryphosa",
+  "kind": "person",
+  "name": "Tryphena and Tryphosa (two women who laboured in the Lord)",
+  "refs": [
+   [
+    "Romans", 16,
+    [ 12 ] ] ]
+ },
+ {
+  "id": "persis",
+  "kind": "person",
+  "name": "Persis (the beloved, who laboured much in the Lord)",
+  "refs": [
+   [
+    "Romans", 16,
+    [ 12 ] ] ]
+ },
+ {
+  "id": "rufus",
+  "kind": "person",
+  "name": "Rufus (chosen in the Lord; perhaps the son of Simon of Cyrene)",
+  "refs": [
+   [
+    "Romans", 16,
+    [ 13 ] ] ]
+ },
+ {
+  "id": "romans-16-brethren",
+  "kind": "person",
+  "name": "Asyncritus, Phlegon, Hermas, Patrobas and Hermes (believers greeted in Rome)",
+  "refs": [
+   [
+    "Romans", 16,
+    [ 14 ] ] ]
+ },
+ {
+  "id": "romans-16-saints",
+  "kind": "person",
+  "name": "Philologus, Julia, Nereus and his sister, and Olympas (believers greeted in Rome)",
+  "refs": [
+   [
+    "Romans", 16,
+    [ 15 ] ] ]
+ },
+ {
+  "id": "holy-kiss",
+  "kind": "term",
+  "name": "An holy kiss (the warm family greeting of the early church)",
+  "refs": [
+   [
+    "Romans", 16,
+    [ 16 ] ] ]
+ },
+ {
+  "id": "mark-them",
+  "kind": "term",
+  "name": "Mark them (keep an eye on them, take note)",
+  "refs": [
+   [
+    "Romans", 16,
+    [ 17 ] ] ]
+ },
+ {
+  "id": "their-own-belly",
+  "kind": "term",
+  "name": "Their own belly (their own appetites)",
+  "refs": [
+   [
+    "Romans", 16,
+    [ 18 ] ] ]
+ },
+ {
+  "id": "fair-speeches",
+  "kind": "term",
+  "name": "Good words and fair speeches (smooth, flattering talk)",
+  "refs": [
+   [
+    "Romans", 16,
+    [ 18 ] ] ]
+ },
+ {
+  "id": "bruise",
+  "kind": "term",
+  "name": "Bruise (crush; Genesis 3:15)",
+  "refs": [
+   [
+    "Nahum", 3,
+    [ 19 ] ],
+   [
+    "Romans", 16,
+    [ 20 ] ] ]
+ },
+ {
+  "id": "workfellow",
+  "kind": "term",
+  "name": "Workfellow (fellow worker)",
+  "refs": [
+   [
+    "Romans", 16,
+    [ 21 ] ] ]
+ },
+ {
+  "id": "lucius",
+  "kind": "person",
+  "name": "Lucius (Paul's kinsman, with him in Corinth)",
+  "refs": [
+   [
+    "Romans", 16,
+    [ 21 ] ] ]
+ },
+ {
+  "id": "sosipater",
+  "kind": "person",
+  "name": "Sosipater (Paul's kinsman, with him in Corinth)",
+  "refs": [
+   [
+    "Romans", 16,
+    [ 21 ] ] ]
+ },
+ {
+  "id": "tertius",
+  "kind": "person",
+  "name": "Tertius (who wrote down the letter to the Romans)",
+  "refs": [
+   [
+    "Romans", 16,
+    [ 22 ] ] ]
+ },
+ {
+  "id": "gaius-of-corinth",
+  "kind": "person",
+  "name": "Gaius of Corinth (Paul's host, in whose house the church met)",
+  "refs": [
+   [
+    "Romans", 16,
+    [ 23 ] ] ]
+ },
+ {
+  "id": "chamberlain-of-the-city",
+  "kind": "term",
+  "name": "Chamberlain of the city (the city treasurer)",
+  "refs": [
+   [
+    "Romans", 16,
+    [ 23 ] ] ]
+ },
+ {
+  "id": "quartus",
+  "kind": "person",
+  "name": "Quartus (a brother in Corinth)",
+  "refs": [
+   [
+    "Romans", 16,
+    [ 23 ] ] ]
+ },
+ {
+  "id": "stablish",
+  "kind": "term",
+  "name": "Stablish (make firm, make to stand)",
+  "refs": [
+   [
+    "Romans", 16,
+    [ 25 ] ] ]
  }
 ];

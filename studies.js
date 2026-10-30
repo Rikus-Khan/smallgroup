@@ -11439,6 +11439,117 @@ window.STUDIES = [
     }
   },
   {
+    "id": "romans-15",
+    "type": "chapter",
+    "book": "Romans",
+    "ch": 15,
+    "date": "2026-10-30",
+    "title": "Romans 15",
+    "sub": "The God of hope",
+    "about": "The strong carry the weak, the old Scriptures give hope, and Paul plans a trip to Rome and Spain that God will keep in His own way.",
+    "tags": [
+      "Strong and weak",
+      "Scripture",
+      "Hope",
+      "Unity",
+      "Plans and providence",
+      "Prayer"
+    ],
+    "url": "studies/romans-15.html",
+    "overview": {
+      "where": "Paul writes from Corinth to the believers in Rome, looking back over his work from Jerusalem to Illyricum",
+      "when": "About AD 57, just before Paul carries the gift to Jerusalem",
+      "people": [
+        "paul",
+        "jesus",
+        "gentiles",
+        "saints-believers",
+        "jesse",
+        "isaiah",
+        "holy-spirit"
+      ],
+      "places": [
+        "jerusalem",
+        "illyricum",
+        "spain",
+        "rome",
+        "macedonia",
+        "achaia",
+        "judaea"
+      ],
+      "story": [
+        "The strong are to bear the infirmities of the weak and not please themselves, because even Christ pleased not himself (1–3).",
+        "The old Scriptures were written for our learning, that through patience and comfort we might have hope. Receive one another as Christ received us (4–7).",
+        "Christ came to the Jews to keep God's promises, and so that the Gentiles might glorify God. The God of hope fills believers with joy and peace (8–13).",
+        "Paul has written boldly as the minister of Christ to the Gentiles, and has preached the gospel from Jerusalem round about unto Illyricum (14–21).",
+        "He plans to take the gift of Macedonia and Achaia to the poor saints at Jerusalem, then visit Rome on his way to Spain (22–29).",
+        "He asks them to strive together with him in prayer for his safety in Judaea and a joyful arrival in Rome (30–33)."
+      ],
+      "key": {
+        "ref": "Romans 15:13",
+        "text": "Now the God of hope fill you with all joy and peace in believing, that ye may abound in hope, through the power of the Holy Ghost."
+      },
+      "big": "Strength is for carrying the weak, the way Christ carried us. Hope doesn't come from inside us; the God of hope fills us by His Spirit and His Word. We make our plans, and God keeps His purpose, even when He changes the route."
+    }
+  },
+  {
+    "id": "romans-16",
+    "type": "chapter",
+    "book": "Romans",
+    "ch": 16,
+    "date": "2026-10-30",
+    "title": "Romans 16",
+    "sub": "Every name",
+    "about": "Paul's greatest letter ends with a list of friends, each one known and loved, then a warning, a promise of victory, and a song of praise.",
+    "tags": [
+      "Friendship",
+      "Serving",
+      "The church",
+      "Discernment",
+      "Victory",
+      "Praise"
+    ],
+    "url": "studies/romans-16.html",
+    "overview": {
+      "where": "Written in Corinth, carried by Phebe from nearby Cenchrea to the churches in Rome",
+      "when": "About AD 57, the close of the letter",
+      "people": [
+        "paul",
+        "phebe",
+        "priscilla",
+        "aquila",
+        "andronicus",
+        "junia",
+        "rufus",
+        "timothy",
+        "tertius",
+        "gaius-of-corinth",
+        "erastus",
+        "satan",
+        "jesus"
+      ],
+      "places": [
+        "cenchrea",
+        "achaia",
+        "rome",
+        "corinth"
+      ],
+      "story": [
+        "Paul commends Phebe, a servant of the church at Cenchrea, who is carrying the letter (1–2).",
+        "He greets Priscilla and Aquila, who risked their necks for him and have a church in their house (3–5).",
+        "A long, warm list of greetings: men and women, Jews and Gentiles, households of servants, each named with love (6–16).",
+        "Mark and avoid those who cause divisions with smooth words; be wise unto good and simple concerning evil, for God will soon bruise Satan under your feet (17–20).",
+        "Greetings from Timotheus, Tertius who wrote the letter, Gaius, Erastus and others in Corinth (21–24).",
+        "The closing praise to the God who is able to stablish you, through Jesus Christ for ever (25–27)."
+      ],
+      "key": {
+        "ref": "Romans 16:20",
+        "text": "And the God of peace shall bruise Satan under your feet shortly. The grace of our Lord Jesus Christ be with you. Amen."
+      },
+      "big": "The gospel is people. God knows every believer by name, and the church is one family. Stay wise about good and simple about evil, and stand on the victory God has already won."
+    }
+  },
+  {
     "id": "1-corinthians-01",
     "type": "chapter",
     "book": "1 Corinthians",
