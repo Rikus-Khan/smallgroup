@@ -9644,6 +9644,108 @@ window.STUDIES = [
     }
   },
   {
+    "id": "acts-09",
+    "type": "chapter",
+    "book": "Acts",
+    "ch": 9,
+    "date": "2026-10-30",
+    "title": "Acts 9",
+    "sub": "Turned around",
+    "about": "The man hunting Christians is stopped by Jesus on the Damascus road, a frightened church has to decide whether to trust him, and Peter finds the Lord already at work in Lydda and Joppa.",
+    "tags": [
+      "Conversion",
+      "Grace",
+      "Forgiveness",
+      "Fear",
+      "Encouragement",
+      "Good works"
+    ],
+    "url": "studies/acts-09.html",
+    "overview": {
+      "where": "The road to Damascus and the city, then Jerusalem, Caesarea and Tarsus; Peter at Lydda and Joppa",
+      "when": "About AD 34 to 35, the years right after Saul's conversion",
+      "people": [
+        "jesus",
+        "saul",
+        "ananias-of-damascus",
+        "barnabas",
+        "simon-peter",
+        "aeneas",
+        "dorcas",
+        "simon-the-tanner",
+        "disciples"
+      ],
+      "places": [
+        "damascus",
+        "street-called-straight",
+        "jerusalem",
+        "tarsus",
+        "caesarea",
+        "lydda",
+        "joppa"
+      ],
+      "story": [
+        "Saul, breathing threats against the Lord's disciples, sets out for Damascus with letters to arrest believers (1–2).",
+        "A light from heaven stops him. Jesus asks, “Saul, Saul, why persecutest thou me?” Saul is led blind into Damascus and waits three days (3–9).",
+        "The Lord sends a frightened Ananias to Saul. Ananias calls him “Brother Saul”; Saul sees, is filled with the Holy Ghost, is baptized, and starts to preach Christ (10–22).",
+        "The Jews plot to kill him, and the disciples let him down the wall in a basket. In Jerusalem the church is afraid of him until Barnabas takes him to the apostles, and the brothers send him home to Tarsus (23–31).",
+        "Peter heals Aeneas, who has been paralyzed for eight years, at Lydda, then raises Dorcas, a woman full of good works, at Joppa (32–43)."
+      ],
+      "key": {
+        "ref": "Acts 9:15",
+        "text": "But the Lord said unto him, Go thy way: for he is a chosen vessel unto me, to bear my name before the Gentiles, and kings, and the children of Israel:"
+      },
+      "big": "No sin is too big for Jesus to stop and turn around, and a changed man needs a friend like Barnabas to stand with him. God also uses ordinary hands, like Dorcas's, and nothing done for Him is forgotten."
+    }
+  },
+  {
+    "id": "acts-10",
+    "type": "chapter",
+    "book": "Acts",
+    "ch": 10,
+    "date": "2026-10-30",
+    "title": "Acts 10",
+    "sub": "The door opens wide",
+    "about": "A Roman officer prays, a Jewish fisherman has a vision he doesn't like, and God brings them together to show that the good news is for everybody.",
+    "tags": [
+      "Gentiles",
+      "No favorites",
+      "Forgiveness",
+      "The Holy Spirit",
+      "Baptism",
+      "Obedience"
+    ],
+    "url": "studies/acts-10.html",
+    "overview": {
+      "where": "Caesarea and Joppa on the coast of Judaea, about thirty miles apart",
+      "when": "About AD 40, in the years after Saul's conversion",
+      "people": [
+        "cornelius",
+        "simon-peter",
+        "simon-the-tanner",
+        "jesus",
+        "holy-spirit",
+        "angels"
+      ],
+      "places": [
+        "caesarea",
+        "joppa"
+      ],
+      "story": [
+        "Cornelius, a Roman centurion who fears God, prays and gives to the poor. An angel tells him to send men to Joppa for Peter (1–8).",
+        "Peter, praying on a rooftop, sees a great sheet full of animals and hears, “What God hath cleansed, that call not thou common.” Then three men arrive from Cornelius and the Spirit says, “go with them, doubting nothing” (9–23).",
+        "Four days after the angel, Peter enters Cornelius's house, where a crowd of Gentiles waits to hear (24–33).",
+        "Peter preaches: God is no respecter of persons, Jesus is Lord of all, and whosoever believeth in him shall receive remission of sins (34–43).",
+        "While Peter is still speaking, the Holy Ghost falls on the Gentiles. They are baptized in the name of the Lord (44–48)."
+      ],
+      "key": {
+        "ref": "Acts 10:43",
+        "text": "To him give all the prophets witness, that through his name whosoever believeth in him shall receive remission of sins."
+      },
+      "big": "God has no favorites. Forgiveness is for whosoever believes in Jesus, received by faith and not earned, and no one God has cleansed should be called common or unclean."
+    }
+  },
+  {
     "id": "acts-11",
     "type": "chapter",
     "book": "Acts",
@@ -9751,6 +9853,120 @@ window.STUDIES = [
         "text": "Peter therefore was kept in prison: but prayer was made without ceasing of the church unto God for him."
       },
       "big": "The church had no power but prayer, and God answered, even when their faith was shaky. Kings die, and the word of God grows. A believer who stumbles is forgiven, but pride that takes God’s glory ends badly."
+    }
+  },
+  {
+    "id": "acts-13",
+    "type": "chapter",
+    "book": "Acts",
+    "ch": 13,
+    "date": "2026-10-30",
+    "title": "Acts 13",
+    "sub": "Sent out",
+    "about": "The church at Antioch sends Barnabas and Saul across the sea, John Mark turns back, and Paul tells a synagogue how a guilty man is made right with God.",
+    "tags": [
+      "Missions",
+      "Justification",
+      "Failure and restoration",
+      "The resurrection",
+      "The gospel for all",
+      "Joy"
+    ],
+    "url": "studies/acts-13.html",
+    "overview": {
+      "where": "Antioch in Syria, the island of Cyprus, then Antioch in Pisidia",
+      "when": "About AD 46, the start of Paul's first missionary journey",
+      "people": [
+        "paul",
+        "barnabas",
+        "john-mark",
+        "antioch-leaders",
+        "elymas",
+        "sergius-paulus",
+        "david",
+        "john-the-baptist",
+        "jesus",
+        "holy-spirit",
+        "the-jews",
+        "gentiles"
+      ],
+      "places": [
+        "antioch",
+        "seleucia",
+        "cyprus",
+        "salamis",
+        "paphos",
+        "perga",
+        "antioch-in-pisidia",
+        "iconium"
+      ],
+      "story": [
+        "The church at Antioch worships and fasts, and the Holy Ghost says, “Separate me Barnabas and Saul.” They are prayed over and sent out (1–3).",
+        "On Cyprus the sorcerer Elymas fights the message and is struck blind for a season. The governor, Sergius Paulus, believes (4–12).",
+        "At Perga, John Mark turns back and goes home to Jerusalem. Paul and Barnabas climb on to Antioch in Pisidia (13–15).",
+        "Paul preaches in the synagogue, from Israel's story to the risen Jesus: “by him all that believe are justified from all things” (16–41).",
+        "The Gentiles beg to hear more and the whole city turns out. The leaders' envy sends Paul and Barnabas to the Gentiles, and the disciples are filled with joy even after the missionaries are expelled (42–52)."
+      ],
+      "key": {
+        "ref": "Acts 13:39",
+        "text": "And by him all that believe are justified from all things, from which ye could not be justified by the law of Moses."
+      },
+      "big": "Forgiveness and a right standing with God come through Jesus alone, to everyone who believes. A man who quit can come back, and God's word goes out to all."
+    }
+  },
+  {
+    "id": "acts-14",
+    "type": "chapter",
+    "book": "Acts",
+    "ch": 14,
+    "date": "2026-10-30",
+    "title": "Acts 14",
+    "sub": "Gods, stones, and the long way home",
+    "about": "Paul and Barnabas are called gods at Lystra, then Paul is stoned and left for dead. He gets up, goes back into the city, and keeps going.",
+    "tags": [
+      "Humility",
+      "Idolatry",
+      "Suffering",
+      "Perseverance",
+      "The church",
+      "Elders"
+    ],
+    "url": "studies/acts-14.html",
+    "overview": {
+      "where": "Iconium, Lystra and Derbe, then back through Pisidia and home to Antioch in Syria",
+      "when": "About AD 46 to 48, the first missionary journey",
+      "people": [
+        "paul",
+        "barnabas",
+        "jupiter-and-mercurius",
+        "the-jews",
+        "apostles",
+        "disciples",
+        "elders"
+      ],
+      "places": [
+        "iconium",
+        "lystra",
+        "derbe",
+        "lycaonia",
+        "antioch-in-pisidia",
+        "perga",
+        "pamphylia",
+        "attalia",
+        "antioch"
+      ],
+      "story": [
+        "At Iconium a great crowd believes, but the city splits. When a plot to stone them comes out, Paul and Barnabas flee to Lystra and Derbe (1–7).",
+        "At Lystra Paul heals a man who had never walked. The crowd calls them gods, and the two men tear their clothes and tell the people to turn to the living God (8–18).",
+        "Jews from Antioch and Iconium turn the crowd. They stone Paul and drag him out of the city, but he rises up, goes back in, and leaves for Derbe the next day (19–20).",
+        "They go back through Lystra, Iconium and Antioch, strengthening the new believers: “we must through much tribulation enter into the kingdom of God.” They appoint elders (21–23).",
+        "They sail home to Antioch and tell the church all that God had done, and how He had opened the door of faith to the Gentiles (24–28)."
+      ],
+      "key": {
+        "ref": "Acts 14:22",
+        "text": "Confirming the souls of the disciples, and exhorting them to continue in the faith, and that we must through much tribulation enter into the kingdom of God."
+      },
+      "big": "Following Jesus isn't an easy road, but a man who gets knocked down can get up again. Paul is stoned, rises, goes back to the towns that hurt him, and gives God the credit for it all."
     }
   },
   {
