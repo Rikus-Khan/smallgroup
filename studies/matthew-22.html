@@ -1,0 +1,715 @@
+<!doctype html>
+<html lang="en" data-theme="scribe">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Matthew 22</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="../assets/fonts.css">
+<link rel="stylesheet" href="../assets/deck.css">
+<link rel="stylesheet" href="../assets/themes.css">
+<style>
+/* mt22-coin: a silver penny with Caesar's head and title; on a .mt22-go step a man appears beside it, bearing God's image */
+.mt22-coin { width: 100%; height: auto; overflow: visible; }
+.mt22-face { fill: color-mix(in srgb, var(--line-strong) 30%, var(--surface-2)); stroke: var(--line-strong); stroke-width: 4; }
+.mt22-rim { fill: none; stroke: var(--line-strong); stroke-width: 1.5; stroke-dasharray: 2 5; }
+.mt22-head { fill: var(--ink-soft); }
+.mt22-legend { font: 700 12.5px var(--sans); letter-spacing: .12em; fill: var(--ink); }
+.mt22-lab { font: 600 18px var(--sans); fill: var(--ink); }
+.mt22-sub { font: italic 15px var(--serif); fill: var(--ink-soft); }
+.mt22-man { opacity: 0; transform: translateY(12px); transition: opacity 1.2s ease, transform 1.2s ease; }
+.split:has(.mt22-go.on) .mt22-man { opacity: 1; transform: none; }
+.mt22-halo { fill: color-mix(in srgb, var(--accent) 16%, transparent); stroke: var(--accent); stroke-width: 2; }
+.mt22-body { fill: var(--accent); }
+.mt22-god { fill: var(--accent-hot); }
+
+/* mt22-hang: two pegs, "Love God" and "love thy neighbour"; on a .mt22-hgo step the whole law and the prophets hangs from them */
+.mt22-hang { width: 100%; height: auto; overflow: visible; }
+.mt22-wall { stroke: var(--line-strong); stroke-width: 2; stroke-dasharray: 6 6; }
+.mt22-peg { fill: var(--accent); stroke: var(--accent-hot); stroke-width: 3; }
+.mt22-pegname { font: 700 17px var(--sans); fill: var(--accent-hot); }
+.mt22-cord { fill: none; stroke: var(--ink-soft); stroke-width: 2.5; stroke-dasharray: 1; stroke-dashoffset: 1; transition: stroke-dashoffset 1s ease; }
+.mt22-scroll { opacity: 0; transform: translateY(-30px); transition: opacity 1s ease .8s, transform 1.1s cubic-bezier(.3,1.4,.5,1) .8s; }
+.split:has(.mt22-hgo.on) .mt22-cord { stroke-dashoffset: 0; }
+.split:has(.mt22-hgo.on) .mt22-scroll { opacity: 1; transform: none; }
+.mt22-sheet { fill: var(--surface-2); stroke: var(--line-strong); stroke-width: 2; }
+.mt22-roll { fill: var(--leather-light); stroke: var(--leather); stroke-width: 2; }
+.mt22-words { font: italic 600 20px var(--serif); fill: var(--ink); }
+
+/* mt22-lords: Psalm 110:1 drawn out. The LORD speaks to "my Lord" at His right hand; David, below, calls Him Lord */
+.mt22-lords { width: 100%; height: auto; overflow: visible; }
+.mt22-n1 { fill: var(--accent); }
+.mt22-n2 { fill: color-mix(in srgb, var(--accent) 22%, var(--surface)); stroke: var(--accent); stroke-width: 3; }
+.mt22-n3 { fill: var(--surface-2); stroke: var(--line-strong); stroke-width: 2.5; }
+.mt22-t1 { font: 700 17px var(--sans); fill: var(--on-accent); }
+.mt22-t { font: 700 17px var(--sans); fill: var(--ink); }
+.mt22-said { font: italic 15px var(--serif); fill: var(--ink-soft); }
+.mt22-link { fill: none; stroke: var(--line-strong); stroke-width: 2.5; }
+.mt22-call { fill: none; stroke: var(--accent); stroke-width: 2.5; stroke-dasharray: 6 5; }
+.mt22-both { opacity: 0; transition: opacity 1s ease; }
+.mt22-bothtxt { font: 700 16px var(--sans); fill: var(--accent-hot); }
+.split:has(.mt22-lgo.on) .mt22-both { opacity: 1; }
+
+/* the 613 dots wave out faster than the default, and the two kept dots grow */
+.slide:has(.dots-go.on) .mt22-dots i.keep { transform: scale(2.4); }
+.slide:has(.dots-go.on) .mt22-dots i { transition-delay: calc(var(--k, 0) * 2ms); }
+</style>
+</head>
+<body>
+<main class="deck" id="deck">
+
+<!-- ======================= OPENING ======================= -->
+<section class="slide title">
+  <div class="inner">
+    <div class="emblem rise"></div>
+    <h1 class="rise" style="--d:1">Matthew 22</h1>
+    <p class="sub rise" style="--d:3">What think ye of Christ?</p>
+    <p class="tag rise" style="--d:5">In the temple, days before the cross, Jesus tells of a king's wedding feast. Then His enemies take turns trying to trap Him, until no man dares ask Him anything more.</p>
+  </div>
+</section>
+
+<section class="slide watch">
+  <div class="inner">
+    <h2 class="rise">Things to watch for</h2>
+    <p class="lede rise" style="--d:1">Keep these questions in the back of your mind as we read. We'll come back to every one of them at the end.</p>
+    <ol class="seeds">
+      <li class="step"><span class="topic">Invitation</span><span class="seed-q">Who did the king invite when the first guests would not come?</span></li>
+      <li class="step"><span class="topic">The garment</span><span class="seed-q">Why was the man without a wedding garment cast out?</span></li>
+      <li class="step"><span class="topic">Caesar and God</span><span class="seed-q">What do we owe Caesar, and what do we owe God?</span></li>
+      <li class="step"><span class="topic">Resurrection</span><span class="seed-q">How did Jesus show from Moses that the dead will rise?</span></li>
+      <li class="step"><span class="topic">Love</span><span class="seed-q">Which commandments did Jesus say hold up all the law?</span></li>
+      <li class="step"><span class="topic">Christ</span><span class="seed-q">How can the Christ be both David's son and David's Lord?</span></li>
+    </ol>
+  </div>
+</section>
+
+<!-- ======================= PART ONE: THE WEDDING IS READY ======================= -->
+<section class="slide part">
+  <div class="inner">
+    <p class="part-n rise">Part one</p>
+    <h2 class="rise" style="--d:1">The wedding is ready</h2>
+    <p class="range rise" style="--d:2">Verses 1–14</p>
+    <div class="rule"></div>
+    <p class="hook rise" style="--d:4">A king throws a wedding for his son, and the guests he invited can't be bothered to come.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="1-3" data-hl="a certain king, which made a marriage for his son|they would not come"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="1" data-hl="spake unto them again by parables"></blockquote>
+    <div class="split">
+      <div class="stage">
+        <svg class="map" data-land viewBox="96 280 260 190" data-towns="Jerusalem!:l, Bethany:r, Jericho:t, Bethlehem:l" role="img" aria-label="Map of Judaea. Jerusalem is lit, with Bethany just to the east over the Mount of Olives, Bethlehem to the south, and the road down to Jericho by the Jordan.">
+          <path class="map-way" d="M243 363 C 230 372, 216 380, 207 386"/>
+        </svg>
+      </div>
+      <div>
+        <h2 class="rise" style="--d:1">Still in the temple</h2>
+        <p class="note rise" style="--d:2">We pick up right where chapter 21 left off: Jesus is teaching in the temple courts in Jerusalem, a few days before Passover, about AD 30. At night He stayed in Bethany, just over the Mount of Olives (21:17).</p>
+        <p class="note step"><em>“Again by parables”</em>: His third story in a row, after the two sons (21:28) and the wicked husbandmen (21:33). The leaders <em>“perceived that he spake of them”</em> (21:45).</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise"><p>“Behold, thy King cometh unto thee, meek, and sitting upon an ass,”</p><cite>Matthew 21:5</cite></blockquote>
+    <h2 class="rise" style="--d:1">The last week</h2>
+    <ol class="timeline" aria-label="Sunday, the King rides in, 21:1 to 11. Monday, the temple cleansed, 21:12 to 17. Probably Tuesday, questions in the temple, today's chapter, 21:23 to 23:39. Thursday, the Passover supper, chapter 26. Friday, the cross, chapter 27. Sunday, He is risen, chapter 28.">
+      <li style="--k:0"><b>Sun.</b><span>the King rides in</span><small>21:1</small></li>
+      <li style="--k:1"><b>Mon.</b><span>the temple cleansed</span><small>21:12</small></li>
+      <li class="lit" style="--k:2"><b>Tue.</b><span>questions: today</span><small>21:23–23:39</small></li>
+      <li class="wait" style="--k:3"><b>Thu.</b><span>the Passover supper</span><small>ch. 26</small></li>
+      <li class="wait" style="--k:4"><b>Fri.</b><span>the cross</span><small>ch. 27</small></li>
+      <li class="wait" style="--k:5"><b>Sun.</b><span>He is risen</span><small>ch. 28</small></li>
+    </ol>
+    <p class="note step">The gospels don't name every day, so the days here are the usual way of counting them, probably right. What's sure is this: these questions come in the last few days before the cross, from men who already wanted Him dead (21:46).</p>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="2" data-hl="made a marriage for his son"></blockquote>
+    <h2 class="rise" style="--d:1">Who's who in the story</h2>
+    <div class="asks">
+      <div class="ask step"><span class="q">“a certain king”</span><span class="stamp">God</span><span class="ctx">The one throwing the feast, and paying for all of it.</span></div>
+      <div class="ask step"><span class="q">“his son”</span><span class="stamp">Jesus</span><span class="ctx">The feast is in His honour. Jesus called Himself the bridegroom (9:15).</span></div>
+      <div class="ask step"><span class="q">“them that were bidden”</span><span class="stamp">Israel</span><span class="ctx"><em>Bidden</em> means invited. God had been inviting His people for centuries.</span></div>
+      <div class="ask step"><span class="q">“his servants”</span><span class="stamp">messengers</span><span class="ctx">The prophets, John the Baptist, and soon the apostles.</span></div>
+    </div>
+    <p class="note step">A big feast had two calls: the invitation, then a servant at the door when all was ready. These guests had been asked long before. When the day came, <em>“they would not come.”</em></p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="4-5" data-hl="all things are ready: come unto the marriage|they made light of it"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="5" data-hl="they made light of it"></blockquote>
+    <h2 class="rise" style="--d:1">Too busy for the King</h2>
+    <div class="split">
+    <div class="talk">
+      <p class="rise" style="--d:2"><small>The king's servant</small>Behold, I have prepared my dinner… all things are ready: come unto the marriage.</p>
+      <p class="reply step"><small>One man</small>…one to his farm,<br><span class="flag">made light of it</span></p>
+      <p class="reply step"><small>Another</small>…another to his merchandise.<br><span class="flag">made light of it</span></p>
+    </div>
+    <div>
+    <p class="note step"><em>“Fatlings”</em> are calves fattened for a feast. <em>“Made light of it”</em> means they shrugged it off. Farms and business aren't wicked; they just mattered more than the king.</p>
+    <p class="note step">Most men don't miss God by arguing with Him. They miss Him by putting Him off: “later, when things settle down.”</p>
+    </div>
+    </div>
+  </div>
+</section>
+
+<section class="slide verse" data-v="6-7" data-hl="entreated them spitefully, and slew them|burned up their city"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="7" data-hl="he sent forth his armies"></blockquote>
+    <h2 class="rise" style="--d:1">From shrugging to killing</h2>
+    <p class="note rise" style="--d:2">The rest went further. <em>“Entreated them spitefully”</em> means they treated the servants shamefully, then killed them. Israel had done that to the prophets (23:37). Herod had just killed John. In three days they would crucify the King's own Son.</p>
+    <p class="note step">Then the king <em>“burned up their city.”</em> Many hear in this a warning of what came about forty years later, in AD 70, when Roman armies burned Jerusalem and its temple.</p>
+    <p class="note step">God is patient, and He sends messenger after messenger. But refusing His Son is no small thing, and it doesn't end well.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="8-10" data-hl="Go ye therefore into the highways|both bad and good|the wedding was furnished with guests"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="9" data-hl="as many as ye shall find"></blockquote>
+    <h2 class="rise" style="--d:1">As many as ye shall find</h2>
+    <div class="dots rows rise" data-dots="120" style="--d:2;--cols:30;--pace:14ms;--dot:var(--accent);max-width:40rem" aria-label="A hundred and twenty dots pop in, filling the hall with guests."></div>
+    <p class="note step">The <em>“highways”</em> were the roads leading out of town, where travellers, beggars, and nobodies were. The servants brought in <em>“both bad and good.”</em> Nobody checked a record at the door.</p>
+    <p class="note step">That's us. Men off the street, out of jail, out of the bottle. The invitation found us right where we were.</p>
+    <blockquote class="quote step"><p>“And the Spirit and the bride say, Come. And let him that heareth say, Come. And let him that is athirst come. And whosoever will, let him take the water of life freely.”</p><cite>Revelation 22:17</cite></blockquote>
+  </div>
+</section>
+
+<section class="slide verse" data-v="11-12" data-hl="a man which had not on a wedding garment|Friend, how camest thou in hither|he was speechless"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="11" data-hl="had not on a wedding garment"></blockquote>
+    <h2 class="rise" style="--d:1">Not in his own clothes</h2>
+    <p class="note rise" style="--d:2">Guests pulled in off the road had no fine clothes of their own. The king must have provided the garment, and every other guest put it on. This man came in his own clothes, on his own terms.</p>
+    <div class="rename">
+      <span class="old step">my own clothes</span>
+      <span class="arrow step n2">→</span>
+      <span class="new step">the King's garment</span>
+    </div>
+    <blockquote class="quote step"><p>“For he hath clothed me with the garments of salvation, he hath covered me with the robe of righteousness,”</p><cite>Isaiah 61:10</cite></blockquote>
+    <p class="note step">Our own goodness won't get us in, not even our own work at getting clean. Christ's righteousness, given free to all who trust Him, is the only garment that fits. This man had no answer: <em>“he was speechless.”</em></p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="13-14" data-hl="cast him into outer darkness|many are called, but few are chosen"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="14"></blockquote>
+    <h2 class="rise" style="--d:1">Called, and chosen</h2>
+    <div class="columns">
+      <div class="col law step">
+        <p class="who">Many are called</p>
+        <h3>everybody is invited</h3>
+        <p>The king's call went out to <em>“as many as ye shall find.”</em> The invitation was real, and it was for all of them.</p>
+      </div>
+      <div class="col grace step">
+        <p class="who">Few are chosen</p>
+        <h3>those who come His way</h3>
+        <p>The ones who came, and came on the king's terms, wearing his garment. The bidden <em>“would not come.”</em> Nobody was turned away who wanted in.</p>
+      </div>
+    </div>
+    <p class="note step"><em>“Outer darkness”</em> is hell, outside the light of the feast, and Jesus warned about it more than anyone. He doesn't say it to scare us off. He says it so nobody has to go. The garment is free.</p>
+  </div>
+</section>
+
+<!-- ======================= PART TWO: THREE TRAPS ======================= -->
+<section class="slide part">
+  <div class="inner">
+    <p class="part-n rise">Part two</p>
+    <h2 class="rise" style="--d:1">Caesar, and the resurrection</h2>
+    <p class="range rise" style="--d:2">Verses 15–33</p>
+    <div class="rule"></div>
+    <p class="hook rise" style="--d:4">First a political trap, then a riddle to make the resurrection look silly. Both fall apart in His hands.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="15-17" data-hl="how they might entangle him in his talk|with the Herodians|Is it lawful to give tribute unto Caesar, or not?"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="15" data-hl="entangle him in his talk"></blockquote>
+    <h2 class="rise" style="--d:1">Strange partners, and a trap</h2>
+    <div class="columns">
+      <div class="col law rise" style="--d:2">
+        <p class="who">The Pharisees</p>
+        <h3>hated the Roman tax</h3>
+        <p>So did the crowds. Paying Rome felt like bowing to pagans.</p>
+      </div>
+      <div class="col grace rise" style="--d:3">
+        <p class="who">The Herodians</p>
+        <h3>backed Herod's family</h3>
+        <p>Herod's family ruled with Rome's blessing, so this party was all for keeping Rome happy.</p>
+      </div>
+    </div>
+    <div class="ifthen step">
+      <div class="if"><small>If He says</small>“Pay it,”</div>
+      <span class="arrow" aria-hidden="true">→</span>
+      <div class="then"><small>then</small>the crowds turn on Him.</div>
+    </div>
+    <div class="ifthen step">
+      <div class="if"><small>If He says</small>“Don't,”</div>
+      <span class="arrow" aria-hidden="true">→</span>
+      <div class="then"><small>then</small>He's a rebel, and Pilate hears of it.</div>
+    </div>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="16" data-hl="Master, we know that thou art true"></blockquote>
+    <h2 class="rise" style="--d:1">Flattery first</h2>
+    <p class="note rise" style="--d:2"><em>“Entangle”</em> means to snare, the way you'd net a bird. Enemies who couldn't stand each other teamed up because they hated Jesus more.</p>
+    <p class="note step">And notice how they start: <em>“Master, we know that thou art true… thou regardest not the person of men.”</em> Every word of it was true, and none of it was meant. They were buttering Him up before the trap shut.</p>
+    <p class="note step">Most of us know that move. We've used it, and we've been worked by it. Jesus <em>“perceived their wickedness”</em> (v. 18). You can't flatter your way past Him.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="18-20" data-hl="Why tempt ye me, ye hypocrites?|Shew me the tribute money|Whose is this image and superscription?"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="20" data-hl="Whose is this image and superscription?"></blockquote>
+    <div class="split">
+      <div class="stage">
+        <svg class="mt22-coin rise" viewBox="0 0 400 270" style="--d:2;max-height:44vh" role="img" aria-label="A silver penny with the head of Caesar and his title around the edge. Then beside it, a man, made in the image of God.">
+          <defs><path id="mt22-ring" d="M110 210 a 90 90 0 1 1 0.1 0"/></defs>
+          <circle class="mt22-face" cx="110" cy="120" r="98"/>
+          <circle class="mt22-rim" cx="110" cy="120" r="78"/>
+          <path class="mt22-head" d="M76 74 C 90 52, 128 48, 140 72 L 143 92 L 155 108 L 145 112 L 147 120 L 142 124 L 144 132 C 138 140, 128 143, 120 142 L 118 158 L 134 178 L 70 178 L 82 152 C 68 136, 62 100, 76 74 Z"/>
+          <path d="M74 84 C 86 58, 116 50, 136 62" fill="none" stroke-width="6" stroke-linecap="round" style="stroke:var(--accent)" stroke-dasharray="4 7"/>
+          <text class="mt22-legend"><textPath href="#mt22-ring" startOffset="4%">TI CAESAR DIVI AVG F AVGVSTVS</textPath></text>
+          <text class="mt22-lab" x="110" y="248" text-anchor="middle">Caesar's image</text>
+          <text class="mt22-sub" x="110" y="268" text-anchor="middle">“Render… unto Caesar”</text>
+          <g class="mt22-man">
+            <circle class="mt22-halo" cx="300" cy="120" r="88"/>
+            <circle class="mt22-body" cx="300" cy="76" r="22"/>
+            <path class="mt22-body" d="M262 182 C 262 136, 278 108, 300 108 C 322 108, 338 136, 338 182 Z"/>
+            <text class="mt22-lab" x="300" y="248" text-anchor="middle">God's image</text>
+            <text class="mt22-sub mt22-god" x="300" y="268" text-anchor="middle">“unto God”</text>
+          </g>
+        </svg>
+      </div>
+      <div>
+        <h2 class="rise" style="--d:1">Whose face is on it?</h2>
+        <p class="note rise" style="--d:2">The <em>“penny”</em> was a Roman silver coin, a day's pay (20:2), stamped with the emperor Tiberius and a <em>“superscription”</em> calling him son of the “divine” Augustus.</p>
+        <p class="note step">They carried his money, even in the temple. Give it back to him.</p>
+        <p class="note step mt22-go">But you bear an image too:</p>
+        <blockquote class="quote step"><p>“So God created man in his own image, in the image of God created he him; male and female created he them.”</p><cite>Genesis 1:27</cite></blockquote>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="slide verse" data-v="21-22" data-hl="Render therefore unto Caesar the things which are Caesar’s; and unto God the things that are God’s|they marvelled"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="21" data-hl="Render therefore unto Caesar the things which are Caesar’s; and unto God the things that are God’s"></blockquote>
+    <h2 class="rise" style="--d:1">Both, each in its place</h2>
+    <div class="columns">
+      <div class="col law step">
+        <p class="who">Unto Caesar</p>
+        <h3>the coin with his face on it</h3>
+        <p><em>Render</em> means pay back what's owed. A Christian pays his taxes, keeps the law, and gives leaders their due.</p>
+      </div>
+      <div class="col grace step">
+        <p class="who">Unto God</p>
+        <h3>the man with His image on him</h3>
+        <p>Your heart, your mind, your body, your days. Caesar gets a coin. God gets you.</p>
+      </div>
+    </div>
+    <blockquote class="quote step"><p>“Render therefore to all their dues: tribute to whom tribute is due; custom to whom custom; fear to whom fear; honour to whom honour.”</p><cite>Romans 13:7</cite></blockquote>
+  </div>
+</section>
+
+<section class="slide verse" data-v="23-25" data-hl="which say that there is no resurrection|his brother shall marry his wife, and raise up seed unto his brother"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="23" data-hl="which say that there is no resurrection"></blockquote>
+    <h2 class="rise" style="--d:1">The Sadducees</h2>
+    <p class="note rise" style="--d:2">The Sadducees were the rich priestly families who ran the temple and got along with Rome. They held to the written law of Moses, threw out the Pharisees' traditions, and didn't believe in life after death at all.</p>
+    <blockquote class="quote step"><p>“For the Sadducees say that there is no resurrection, neither angel, nor spirit: but the Pharisees confess both.”</p><cite>Acts 23:8</cite></blockquote>
+    <p class="note step">Their question leans on a real law. If a man died with no children, his brother married the widow, so she wasn't left alone and poor, and so the dead man's family line went on. That's <em>“raise up seed”</em> (Deuteronomy 25:5). <em>“No issue”</em> means no children.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="26-28" data-hl="unto the seventh|whose wife shall she be of the seven?"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="28" data-hl="whose wife shall she be of the seven?"></blockquote>
+    <h2 class="rise" style="--d:1">A riddle built to mock</h2>
+    <ol class="timeline" aria-label="Seven brothers marry the same woman, one after another, and each one dies. Last of all the woman dies too.">
+      <li style="--k:0" data-n="1"><b>the first</b><span>married her, died</span></li>
+      <li style="--k:1" data-n="2–6"><b>the next five</b><span>each married her, each died</span></li>
+      <li style="--k:2" data-n="7"><b>the seventh</b><span>married her, died</span></li>
+      <li class="lit" style="--k:3"><b>the woman</b><span>died also</span></li>
+    </ol>
+    <p class="note step">Nobody thinks this happened. It's a made-up case, the kind of riddle they likely used to make Pharisees squirm. Their point: if there's a resurrection, heaven is a mess of seven husbands and one wife. So there can't be one.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="29-30" data-hl="Ye do err, not knowing the scriptures, nor the power of God|but are as the angels of God in heaven"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="29" data-hl="Ye do err"></blockquote>
+    <h2 class="rise" style="--d:1">Two mistakes</h2>
+    <div class="asks">
+      <div class="ask step"><span class="q">“not knowing the scriptures”</span><span class="stamp">wrong book</span><span class="ctx">They knew the words, but missed what God was saying in them.</span></div>
+      <div class="ask step"><span class="q">“nor the power of God”</span><span class="stamp">too small a God</span><span class="ctx">They pictured the next life as this life, just carried on. God can raise the dead to a new kind of life.</span></div>
+    </div>
+    <p class="note step">In the resurrection, people don't marry. In that way they are <em>“as the angels,”</em> not turned into angels. And with a smile, Jesus mentions angels to the men who said there weren't any.</p>
+    <p class="note step">Married love is God's gift for this life. In the next, what it pointed to is here: the wedding of His Son. Nobody there will feel short-changed.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="31-33" data-hl="I am the God of Abraham|God is not the God of the dead, but of the living|they were astonished at his doctrine"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="32" data-hl="God is not the God of the dead, but of the living"></blockquote>
+    <h2 class="rise" style="--d:1">“I am,” not “I was”</h2>
+    <p class="note rise" style="--d:2">They trusted Moses, so Jesus answers from Moses, at the burning bush. Abraham, Isaac, and Jacob had been dead for centuries when God said this:</p>
+    <blockquote class="quote rise" style="--d:3"><p>“Moreover he said, I am the God of thy father, the God of Abraham, the God of Isaac, and the God of Jacob. And Moses hid his face; for he was afraid to look upon God.”</p><cite>Exodus 3:6</cite></blockquote>
+    <ul class="nots">
+      <li class="step"><span class="k">“I was the God of Abraham”</span><span class="why">as if they were gone for good</span></li>
+      <li class="step yes"><span class="k">“I am the God of Abraham”</span><span class="why">they are alive to Him right now</span></li>
+    </ul>
+    <p class="note step">God doesn't stay the God of dust. If He is still their God, they still live, and one day their bodies will rise. If you've buried someone who trusted the Lord, they are not lost.</p>
+  </div>
+</section>
+
+<!-- ======================= PART THREE: WHAT THINK YE OF CHRIST? ======================= -->
+<section class="slide part">
+  <div class="inner">
+    <p class="part-n rise">Part three</p>
+    <h2 class="rise" style="--d:1">What think ye of Christ?</h2>
+    <p class="range rise" style="--d:2">Verses 34–46</p>
+    <div class="rule"></div>
+    <p class="hook rise" style="--d:4">A lawyer asks for the greatest commandment. Then Jesus asks one question, and nobody can answer it.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="34-36" data-hl="he had put the Sadducees to silence|which was a lawyer|which is the great commandment in the law?"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="36" data-hl="which is the great commandment in the law?"></blockquote>
+    <h2 class="rise" style="--d:1">One out of 613</h2>
+    <div class="dots rows rise mt22-dots" data-dots="613" data-keep="200 420" style="--d:2;--cols:62;--pace:3ms;--dot:var(--ink-soft);--wait:200ms;max-width:44rem" aria-label="Six hundred and thirteen small dots, one for each commandment the rabbis counted. Then all fade but two."></div>
+    <p class="dots-cap rise" style="--d:3;max-width:44rem"><span>commandments the rabbis counted in the law</span><b class="dots-num" style="--to:613;--count:2s"></b></p>
+    <p class="note step">A <em>“lawyer”</em> here isn't a courtroom man. He's an expert in the law of Moses. The rabbis later counted 613 commands in it, and they loved to argue which ones were heaviest.</p>
+    <p class="note step dots-go">Jesus didn't pick one. He picked two, and said everything else hangs on them.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="37-40" data-hl="Thou shalt love the Lord thy God with all thy heart|Thou shalt love thy neighbour as thyself|On these two commandments hang all the law and the prophets"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="40" data-hl="hang all the law and the prophets"></blockquote>
+    <div class="split">
+      <div class="stage">
+        <svg class="mt22-hang rise" style="--d:2" viewBox="0 0 400 290" role="img" aria-label="Two pegs on a wall, named love God and love thy neighbour. A long scroll, all the law and the prophets, comes down and hangs from the two of them.">
+          <line class="mt22-wall" x1="10" y1="60" x2="390" y2="60"/>
+          <text class="mt22-pegname" x="100" y="34" text-anchor="middle">Love God</text>
+          <text class="mt22-pegname" x="300" y="34" text-anchor="middle">Love thy neighbour</text>
+          <path class="mt22-cord" pathLength="1" d="M100 60 L 62 170"/>
+          <path class="mt22-cord" pathLength="1" d="M100 60 L 138 170"/>
+          <path class="mt22-cord" pathLength="1" d="M300 60 L 262 170"/>
+          <path class="mt22-cord" pathLength="1" d="M300 60 L 338 170"/>
+          <circle class="mt22-peg" cx="100" cy="60" r="11"/>
+          <circle class="mt22-peg" cx="300" cy="60" r="11"/>
+          <g class="mt22-scroll">
+            <rect class="mt22-sheet" x="44" y="170" width="312" height="96" rx="4"/>
+            <rect class="mt22-roll" x="30" y="162" width="22" height="112" rx="10"/>
+            <rect class="mt22-roll" x="348" y="162" width="22" height="112" rx="10"/>
+            <text class="mt22-words" x="200" y="212" text-anchor="middle">all the law</text>
+            <text class="mt22-words" x="200" y="242" text-anchor="middle">and the prophets</text>
+          </g>
+        </svg>
+      </div>
+      <div>
+        <h2 class="rise" style="--d:1">Two pegs</h2>
+        <blockquote class="quote rise" style="--d:2"><p>“And thou shalt love the LORD thy God with all thine heart, and with all thy soul, and with all thy might.”</p><cite>Deuteronomy 6:5</cite></blockquote>
+        <blockquote class="quote step"><p>“…but thou shalt love thy neighbour as thyself: I am the LORD.”</p><cite>Leviticus 19:18</cite></blockquote>
+        <p class="note step mt22-hgo">Both are from Moses. <em>“Hang”</em>, like a coat on a peg. Every other command is one of these two worked out. Take away love, and the rest falls.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="37" data-hl="with all thy heart, and with all thy soul, and with all thy mind"></blockquote>
+    <h2 class="rise" style="--d:1">Who can keep that?</h2>
+    <p class="note rise" style="--d:2">Be honest. None of us has loved God with all our heart for one whole day. For years, a lot of us gave all our heart to a bottle, a pipe, or ourselves.</p>
+    <p class="note step">Jesus is the only Man who ever kept these two perfectly. Then He died for the rest of us who didn't. Love doesn't start with us trying harder. It starts with Him:</p>
+    <blockquote class="quote step"><p>“We love him, because he first loved us.”</p><cite>1 John 4:19</cite></blockquote>
+    <p class="note step">Mark tells us Jesus said to this lawyer, <em>“Thou art not far from the kingdom of God”</em> (Mark 12:34). Close is good. But close isn't in.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="41-43" data-hl="What think ye of Christ? whose son is he?|The Son of David|How then doth David in spirit call him Lord"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="42" data-hl="What think ye of Christ? whose son is he?"></blockquote>
+    <h2 class="rise" style="--d:1">Now He asks</h2>
+    <p class="note rise" style="--d:2">All day they had asked Him questions. Now Jesus asks them one, while the Pharisees are still standing there together.</p>
+    <p class="note step">Their answer was right as far as it went. God had promised David a son who would reign forever (2 Samuel 7:12–13). Matthew opened his book with <em>“Jesus Christ, the son of David”</em> (1:1), and two days earlier the crowds had shouted <em>“Hosanna to the Son of David”</em> (21:9).</p>
+    <p class="note step"><em>“In spirit”</em> means David wrote it by the Holy Ghost. Mark says so plainly (Mark 12:36). So this isn't David's guess. It's God speaking through him.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="44-46" data-hl="The LORD said unto my Lord, Sit thou on my right hand|how is he his son?|neither durst any man from that day forth ask him any more questions"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="45"></blockquote>
+    <div class="split">
+      <div class="stage">
+        <svg class="mt22-lords rise" style="--d:2;max-height:48vh" viewBox="0 0 400 300" role="img" aria-label="Psalm 110 drawn out. The LORD speaks to my Lord, who sits at His right hand. Below them David looks up and calls Him my Lord. He is both David's son and David's Lord.">
+          <path class="mt22-link" d="M150 70 L 246 70"/>
+          <path d="M238 63 L 250 70 L 238 77 Z" style="fill:var(--line-strong)"/>
+          <text class="mt22-said" x="198" y="58" text-anchor="middle">said unto</text>
+          <circle class="mt22-n1" cx="105" cy="70" r="44"/>
+          <text class="mt22-t1" x="105" y="76" text-anchor="middle">the LORD</text>
+          <circle class="mt22-n2" cx="295" cy="70" r="44"/>
+          <text class="mt22-t" x="295" y="76" text-anchor="middle">my Lord</text>
+          <text class="mt22-said" x="295" y="134" text-anchor="middle">“Sit thou on my right hand”</text>
+          <path class="mt22-call" d="M214 214 C 250 190, 290 170, 295 146"/>
+          <text class="mt22-said" x="282" y="196" text-anchor="start">“my Lord”</text>
+          <circle class="mt22-n3" cx="180" cy="230" r="36"/>
+          <text class="mt22-t" x="180" y="236" text-anchor="middle">David</text>
+          <g class="mt22-both">
+            <text class="mt22-bothtxt" x="200" y="292" text-anchor="middle">His son by birth · His Lord as God's Son</text>
+          </g>
+        </svg>
+      </div>
+      <div>
+        <h2 class="rise" style="--d:1">Son, and Lord</h2>
+        <blockquote class="quote rise" style="--d:2"><p>“The LORD said unto my Lord, Sit thou at my right hand, until I make thine enemies thy footstool.”</p><cite>Psalm 110:1</cite></blockquote>
+        <p class="note step">In those days a father never called his son “my lord.” A son honoured his father. Yet David, the great king, calls his own descendant <em>“my Lord.”</em></p>
+        <p class="note step mt22-lgo">Only one answer works. The Christ would be David's son by birth, and David's Lord because He is the Son of God.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="46" data-hl="no man was able to answer him a word"></blockquote>
+    <p class="saying rise" style="--d:1">What think ye of <em>Christ</em>?</p>
+    <p class="note rise" style="--d:2">The Pharisees, the Herodians, the Sadducees, and the lawyers each took a turn. By the end of the day, nobody dared ask Him anything more. Mark adds, <em>“the common people heard him gladly”</em> (Mark 12:37).</p>
+    <p class="note step">Every trap they set was about getting something on Jesus. His question is about getting something settled in us. It's the question every man has to answer for himself: Who is He to you? A good teacher? Or your Lord?</p>
+  </div>
+</section>
+
+<!-- ======================= CLOSING ======================= -->
+<section class="slide remember">
+  <div class="inner">
+    <h2 class="rise">Points to remember</h2>
+    <ol class="seeds">
+      <li class="step"><span class="topic">Invitation</span><span class="seed-q">“As many as ye shall find, bid to the marriage” <cite>22:9</cite></span><span class="take">The King's invitation goes to the highways, to the bad and the good. Whosoever will may come.</span></li>
+      <li class="step"><span class="topic">The garment</span><span class="seed-q">“He saw there a man which had not on a wedding garment” <cite>22:11</cite></span><span class="take">We come in His righteousness, not our own. The garment is free, but we must put it on.</span></li>
+      <li class="step"><span class="topic">Caesar and God</span><span class="seed-q">“Render therefore unto Caesar the things which are Caesar’s; and unto God the things that are God’s” <cite>22:21</cite></span><span class="take">Caesar gets his coin. God gets the man who bears His image.</span></li>
+      <li class="step"><span class="topic">Resurrection</span><span class="seed-q">“God is not the God of the dead, but of the living” <cite>22:32</cite></span><span class="take">God said “I am” the God of Abraham. His people who have died are alive to Him.</span></li>
+      <li class="step"><span class="topic">Love</span><span class="seed-q">“On these two commandments hang all the law and the prophets” <cite>22:40</cite></span><span class="take">Love God with everything, and love your neighbour as yourself. He loved us first.</span></li>
+      <li class="step"><span class="topic">Christ</span><span class="seed-q">“What think ye of Christ? whose son is he?” <cite>22:42</cite></span><span class="take">Jesus is David's son by birth and David's Lord as the Son of God.</span></li>
+    </ol>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 1 of 6</p>
+      <span class="topic">Invitation</span>
+      <h2>Who did the king invite when the first guests would not come?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="9"></blockquote>
+      <blockquote class="quote step" data-q="10"></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>Anyone his servants could find on the highways, both bad and good. The ones first invited weren't worthy because they wouldn't come. The new guests didn't earn their seats; they were simply asked and came. That's how the gospel reached men like us.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 2 of 6</p>
+      <span class="topic">The garment</span>
+      <h2>Why was the man without a wedding garment cast out?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="11"></blockquote>
+      <blockquote class="quote step" data-q="12"></blockquote>
+      <blockquote class="quote step"><p>“For he hath clothed me with the garments of salvation, he hath covered me with the robe of righteousness,”</p><cite>Isaiah 61:10</cite></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>He came in on his own terms, in his own clothes, instead of the garment the king provided. When asked, he had no excuse. We can't come to God in our own goodness. We come clothed in the righteousness of Christ, which He gives free to all who trust Him.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 3 of 6</p>
+      <span class="topic">Caesar and God</span>
+      <h2>What do we owe Caesar, and what do we owe God?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="20"></blockquote>
+      <blockquote class="quote step" data-q="21"></blockquote>
+      <blockquote class="quote step"><p>“So God created man in his own image, in the image of God created he him; male and female created he them.”</p><cite>Genesis 1:27</cite></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>The coin bore Caesar's image, so we give the government what it's owed: taxes, obedience to the law, and honour. But we bear God's image, so we owe God ourselves: heart, soul, mind, and life.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 4 of 6</p>
+      <span class="topic">Resurrection</span>
+      <h2>How did Jesus show from Moses that the dead will rise?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="31"></blockquote>
+      <blockquote class="quote step" data-q="32"></blockquote>
+      <blockquote class="quote step"><p>“Jesus said unto her, I am the resurrection, and the life: he that believeth in me, though he were dead, yet shall he live:”</p><cite>John 11:25</cite></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>Long after Abraham, Isaac, and Jacob died, God told Moses, “I am the God of Abraham,” not “I was.” God is the God of the living, so they live to Him still, and they will rise. Everyone who believes in Jesus has that same hope.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 5 of 6</p>
+      <span class="topic">Love</span>
+      <h2>Which commandments did Jesus say hold up all the law?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="37"></blockquote>
+      <blockquote class="quote step" data-q="39"></blockquote>
+      <blockquote class="quote step" data-q="40"></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>Love the Lord thy God with all thy heart, soul, and mind, and love thy neighbour as thyself. All the law and the prophets hang on these two. None of us keeps them perfectly, but Jesus did, and His love for us is where ours begins.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 6 of 6</p>
+      <span class="topic">Christ</span>
+      <h2>How can the Christ be both David's son and David's Lord?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="42"></blockquote>
+      <blockquote class="quote step" data-q="45"></blockquote>
+      <blockquote class="quote step"><p>“Concerning his Son Jesus Christ our Lord, which was made of the seed of David according to the flesh; And declared to be the Son of God with power, according to the spirit of holiness, by the resurrection from the dead:”</p><cite>Romans 1:3–4</cite></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>He is David's son by birth, born in David's line. And He is David's Lord because He is the Son of God, who sits at the Father's right hand. Jesus is both man and God.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide prayer">
+  <div class="inner">
+    <div class="emblem rise"></div>
+    <h2 class="rise" style="--d:1">Prayer requests</h2>
+    <p class="ask-line rise" style="--d:2">What can we pray about for you today?</p>
+    <blockquote class="quote rise" style="--d:4"><p>“Casting all your care upon him; for he careth for you.”</p><cite>1 Peter 5:7</cite></blockquote>
+  </div>
+</section>
+
+</main>
+
+<script>
+// King James Version, Matthew chapter 22
+const V = {
+  1: "And Jesus answered and spake unto them again by parables, and said,",
+  2: "The kingdom of heaven is like unto a certain king, which made a marriage for his son,",
+  3: "And sent forth his servants to call them that were bidden to the wedding: and they would not come.",
+  4: "Again, he sent forth other servants, saying, Tell them which are bidden, Behold, I have prepared my dinner: my oxen and my fatlings are killed, and all things are ready: come unto the marriage.",
+  5: "But they made light of it, and went their ways, one to his farm, another to his merchandise:",
+  6: "And the remnant took his servants, and entreated them spitefully, and slew them.",
+  7: "But when the king heard thereof, he was wroth: and he sent forth his armies, and destroyed those murderers, and burned up their city.",
+  8: "Then saith he to his servants, The wedding is ready, but they which were bidden were not worthy.",
+  9: "Go ye therefore into the highways, and as many as ye shall find, bid to the marriage.",
+  10: "So those servants went out into the highways, and gathered together all as many as they found, both bad and good: and the wedding was furnished with guests.",
+  11: "And when the king came in to see the guests, he saw there a man which had not on a wedding garment:",
+  12: "And he saith unto him, Friend, how camest thou in hither not having a wedding garment? And he was speechless.",
+  13: "Then said the king to the servants, Bind him hand and foot, and take him away, and cast him into outer darkness; there shall be weeping and gnashing of teeth.",
+  14: "For many are called, but few are chosen.",
+  15: "Then went the Pharisees, and took counsel how they might entangle him in his talk.",
+  16: "And they sent out unto him their disciples with the Herodians, saying, Master, we know that thou art true, and teachest the way of God in truth, neither carest thou for any man: for thou regardest not the person of men.",
+  17: "Tell us therefore, What thinkest thou? Is it lawful to give tribute unto Caesar, or not?",
+  18: "But Jesus perceived their wickedness, and said, Why tempt ye me, ye hypocrites?",
+  19: "Shew me the tribute money. And they brought unto him a penny.",
+  20: "And he saith unto them, Whose is this image and superscription?",
+  21: "They say unto him, Caesar’s. Then saith he unto them, Render therefore unto Caesar the things which are Caesar’s; and unto God the things that are God’s.",
+  22: "When they had heard these words, they marvelled, and left him, and went their way.",
+  23: "The same day came to him the Sadducees, which say that there is no resurrection, and asked him,",
+  24: "Saying, Master, Moses said, If a man die, having no children, his brother shall marry his wife, and raise up seed unto his brother.",
+  25: "Now there were with us seven brethren: and the first, when he had married a wife, deceased, and, having no issue, left his wife unto his brother:",
+  26: "Likewise the second also, and the third, unto the seventh.",
+  27: "And last of all the woman died also.",
+  28: "Therefore in the resurrection whose wife shall she be of the seven? for they all had her.",
+  29: "Jesus answered and said unto them, Ye do err, not knowing the scriptures, nor the power of God.",
+  30: "For in the resurrection they neither marry, nor are given in marriage, but are as the angels of God in heaven.",
+  31: "But as touching the resurrection of the dead, have ye not read that which was spoken unto you by God, saying,",
+  32: "I am the God of Abraham, and the God of Isaac, and the God of Jacob? God is not the God of the dead, but of the living.",
+  33: "And when the multitude heard this, they were astonished at his doctrine.",
+  34: "But when the Pharisees had heard that he had put the Sadducees to silence, they were gathered together.",
+  35: "Then one of them, which was a lawyer, asked him a question, tempting him, and saying,",
+  36: "Master, which is the great commandment in the law?",
+  37: "Jesus said unto him, Thou shalt love the Lord thy God with all thy heart, and with all thy soul, and with all thy mind.",
+  38: "This is the first and great commandment.",
+  39: "And the second is like unto it, Thou shalt love thy neighbour as thyself.",
+  40: "On these two commandments hang all the law and the prophets.",
+  41: "While the Pharisees were gathered together, Jesus asked them,",
+  42: "Saying, What think ye of Christ? whose son is he? They say unto him, The Son of David.",
+  43: "He saith unto them, How then doth David in spirit call him Lord, saying,",
+  44: "The LORD said unto my Lord, Sit thou on my right hand, till I make thine enemies thy footstool?",
+  45: "If David then call him Lord, how is he his son?",
+  46: "And no man was able to answer him a word, neither durst any man from that day forth ask him any more questions."
+};
+const BOOK = "Matthew 22";
+</script>
+<script src="../assets/deck.js"></script>
+</body>
+</html>

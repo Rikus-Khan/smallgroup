@@ -1,0 +1,718 @@
+<!doctype html>
+<html lang="en" data-theme="night">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Matthew 23</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="../assets/fonts.css">
+<link rel="stylesheet" href="../assets/deck.css">
+<link rel="stylesheet" href="../assets/themes.css">
+<style>
+/* mt23-gnat: a cloth strainer over a cup catches one tiny gnat, while a whole camel goes down unnoticed (on a .mt23-ggo step) */
+.mt23-gnat { width: 100%; height: auto; overflow: visible; }
+.mt23-cupb { fill: var(--surface-2); stroke: var(--line-strong); stroke-width: 3; }
+.mt23-cloth { fill: color-mix(in srgb, var(--ink-soft) 22%, transparent); stroke: var(--ink-soft); stroke-width: 2; stroke-dasharray: 3 3; }
+.mt23-bug { fill: var(--danger); }
+.mt23-ring { fill: none; stroke: var(--danger); stroke-width: 2; }
+.mt23-camel { fill: var(--warm); transform-box: view-box; transition: transform 2.2s cubic-bezier(.5,0,.7,1), opacity 1s ease 1.6s; }
+.split:has(.mt23-ggo.on) .mt23-camel { transform: translate(150px, 170px) scale(.12); opacity: 0; }
+.mt23-lab { font: 600 16px var(--sans); fill: var(--ink); }
+.mt23-soft { font: italic 15px var(--serif); fill: var(--ink-soft); }
+.mt23-camlab { transition: opacity .8s ease 1s; }
+.split:has(.mt23-ggo.on) .mt23-camlab { opacity: 0; }
+.mt23-gulp { font: italic 700 22px var(--serif); fill: var(--accent-hot); opacity: 0; transition: opacity .8s ease 2s; }
+.split:has(.mt23-ggo.on) .mt23-gulp { opacity: 1; }
+
+/* mt23-cup: a cup cut away. The outside shines; the inside is dark with greed. On a .mt23-cgo step the inside is washed clean */
+.mt23-cup { width: 100%; height: auto; overflow: visible; }
+.mt23-shell { fill: var(--surface-2); stroke: var(--accent); stroke-width: 4; }
+.mt23-shine { fill: none; stroke: var(--glow); stroke-width: 5; stroke-linecap: round; opacity: .8; }
+.mt23-dirt { fill: color-mix(in srgb, var(--danger) 55%, var(--on-glow)); transition: opacity 1.4s ease; }
+.mt23-clean { fill: color-mix(in srgb, var(--cool) 45%, transparent); opacity: 0; transition: opacity 1.4s ease .6s; }
+.mt23-word { font: 700 16px var(--sans); fill: var(--glow); transition: opacity 1s ease; }
+.mt23-new { font: 700 17px var(--sans); fill: var(--ink); opacity: 0; transition: opacity 1s ease 1.2s; }
+.split:has(.mt23-cgo.on) .mt23-dirt, .split:has(.mt23-cgo.on) .mt23-word { opacity: 0; }
+.split:has(.mt23-cgo.on) .mt23-clean, .split:has(.mt23-cgo.on) .mt23-new { opacity: 1; }
+
+/* mt23-tomb: a tomb painted white, bright and clean; on a .mt23-tgo step the paint thins and the bones inside show */
+.mt23-tomb { width: 100%; height: auto; overflow: visible; }
+.mt23-ground { stroke: var(--line-strong); stroke-width: 3; }
+.mt23-rock { fill: color-mix(in srgb, var(--glow) 80%, var(--surface-2)); stroke: var(--ink-soft); stroke-width: 4; transition: fill-opacity 1.6s ease; }
+.mt23-door { fill: color-mix(in srgb, var(--glow) 60%, var(--line-strong)); stroke: var(--ink-soft); stroke-width: 2; transition: fill-opacity 1.6s ease; }
+.mt23-bones { fill: none; stroke: var(--ink-soft); stroke-width: 5; stroke-linecap: round; opacity: 0; transition: opacity 1.6s ease .5s; }
+.mt23-skull { fill: var(--ink-soft); }
+.mt23-brush { fill: none; stroke: var(--line-strong); stroke-width: 3; stroke-linecap: round; opacity: .7; transition: opacity 1.6s ease; }
+.split:has(.mt23-tgo.on) .mt23-brush { opacity: 0; }
+.split:has(.mt23-tgo.on) .mt23-rock, .split:has(.mt23-tgo.on) .mt23-door { fill-opacity: .14; }
+.split:has(.mt23-tgo.on) .mt23-bones { opacity: 1; }
+
+/* mt23-hen: a hen spreads her wings when the slide opens; the chicks keep away ("ye would not"), until a .mt23-hcome step brings them in */
+.mt23-hen { width: 100%; height: auto; overflow: visible; }
+.mt23-hbody { fill: var(--warm); stroke: var(--leather); stroke-width: 2; }
+.mt23-wing { fill: var(--leather-light); stroke: var(--leather); stroke-width: 2; transform-box: fill-box; transition: transform 1.2s cubic-bezier(.3,1.3,.5,1); }
+.mt23-wl { transform-origin: 100% 20%; }
+.mt23-wr { transform-origin: 0% 20%; }
+.slide.active .mt23-wl { transform: rotate(28deg); transition-delay: .9s; }
+.slide.active .mt23-wr { transform: rotate(-28deg); transition-delay: .9s; }
+.mt23-comb { fill: var(--danger); }
+.mt23-beak { fill: var(--accent); }
+.mt23-eye { fill: var(--on-glow); }
+.mt23-chick { fill: var(--accent-hot); transition: transform 1.4s cubic-bezier(.4,0,.2,1); transition-delay: calc(var(--k, 0) * 150ms); }
+.split:has(.mt23-hcome.on) .mt23-chick { transform: translate(var(--dx), var(--dy)); }
+.mt23-not { font: italic 700 22px var(--serif); fill: var(--danger); opacity: 0; transition: opacity 1s ease; }
+.split:has(.mt23-hnot.on) .mt23-not { opacity: 1; }
+.split:has(.mt23-hcome.on) .mt23-not { opacity: 0; }
+</style>
+</head>
+<body>
+<main class="deck" id="deck">
+
+<!-- ======================= OPENING ======================= -->
+<section class="slide title">
+  <div class="inner">
+    <div class="emblem rise"></div>
+    <h1 class="rise" style="--d:1">Matthew 23</h1>
+    <p class="sub rise" style="--d:3">They say, and do not</p>
+    <p class="tag rise" style="--d:5">Jesus' last public sermon in Matthew. He warns the crowds about religion that is all show, speaks eight woes over the scribes and Pharisees, and ends by grieving over Jerusalem.</p>
+  </div>
+</section>
+
+<section class="slide watch">
+  <div class="inner">
+    <h2 class="rise">Things to watch for</h2>
+    <p class="lede rise" style="--d:1">Keep these questions in the back of your mind as we read. We'll come back to every one of them at the end.</p>
+    <ol class="seeds">
+      <li class="step"><span class="topic">Leaders</span><span class="seed-q">What did Jesus tell the people to do with what the scribes and Pharisees taught?</span></li>
+      <li class="step"><span class="topic">Show</span><span class="seed-q">Why did the scribes and Pharisees do their works?</span></li>
+      <li class="step"><span class="topic">Greatness</span><span class="seed-q">Who does Jesus say is greatest among us?</span></li>
+      <li class="step"><span class="topic">Weightier matters</span><span class="seed-q">What weightier matters of the law had they left undone?</span></li>
+      <li class="step"><span class="topic">Inside</span><span class="seed-q">Which must be cleansed first, the inside or the outside?</span></li>
+      <li class="step"><span class="topic">His heart</span><span class="seed-q">What did Jesus long to do for Jerusalem, and why didn't it happen?</span></li>
+    </ol>
+  </div>
+</section>
+
+<!-- ======================= PART ONE: MOSES' SEAT ======================= -->
+<section class="slide part">
+  <div class="inner">
+    <p class="part-n rise">Part one</p>
+    <h2 class="rise" style="--d:1">Moses' seat</h2>
+    <p class="range rise" style="--d:2">Verses 1–12</p>
+    <div class="rule"></div>
+    <p class="hook rise" style="--d:4">Jesus turns to the crowd and His own men: listen to the teaching, but don't copy the teachers.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="1-3" data-hl="sit in Moses’ seat|that observe and do|for they say, and do not"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="2" data-hl="sit in Moses’ seat"></blockquote>
+    <h2 class="rise" style="--d:1">The teacher's chair</h2>
+    <p class="note rise" style="--d:2">Same day, same temple courts as chapter 22. The questions are over. Now Jesus speaks to <em>“the multitude, and to his disciples”</em> about the men who had just tried to trap Him.</p>
+    <p class="note step"><em>“Moses' seat”</em> was the place of the man who taught the law. Stone seats from old synagogues have been dug up, one at Chorazin in Galilee, where a teacher sat to explain the Scriptures.</p>
+    <div class="columns">
+      <div class="col grace step">
+        <p class="who">Their words</p>
+        <h3>“observe and do”</h3>
+        <p>When they read and taught God's law, it was still God's law. Listen to it.</p>
+      </div>
+      <div class="col law step">
+        <p class="who">Their works</p>
+        <h3>“do not ye after”</h3>
+        <p>Don't follow their example. <em>“They say, and do not.”</em></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="slide verse" data-v="4" data-hl="they bind heavy burdens and grievous to be borne|will not move them with one of their fingers"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="4" data-hl="heavy burdens and grievous to be borne"></blockquote>
+    <h2 class="rise" style="--d:1">Two kinds of load</h2>
+    <div class="pair">
+      <div class="scroll rise" style="--d:2"><p class="ref">Matthew 23:4</p><p class="kjv">For they bind <mark>heavy burdens and grievous to be borne</mark>, and lay them on men’s shoulders; but they themselves will not move them with one of their fingers.</p></div>
+      <div class="scroll step"><p class="ref">Matthew 11:28, 30</p><p class="kjv">Come unto me, all ye that labour and are <mark>heavy laden</mark>, and I will give you rest. … For my yoke is easy, and <mark>my burden is light</mark>.</p></div>
+    </div>
+    <p class="note step">They piled their own rules on top of God's law, then wouldn't lift a finger to help. <em>“Grievous”</em> means crushing. A heavier list can't set a man free. Jesus carries the load with us, and He carried our sin to the cross.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="5-7" data-hl="for to be seen of men|they make broad their phylacteries|Rabbi, Rabbi"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="5" data-hl="all their works they do for to be seen of men"></blockquote>
+    <h2 class="rise" style="--d:1">Dressed to be seen</h2>
+    <div class="asks">
+      <div class="ask step"><span class="q">“phylacteries”</span><span class="stamp">made broad</span><span class="ctx">Small leather boxes of Scripture tied on the forehead and arm (Deuteronomy 6:8). They made theirs bigger.</span></div>
+      <div class="ask step"><span class="q">“the borders of their garments”</span><span class="stamp">made longer</span><span class="ctx">Tassels the law told Israel to wear, to remember God's commands (Numbers 15:38). They wore theirs long.</span></div>
+      <div class="ask step"><span class="q">“the uppermost rooms… the chief seats”</span><span class="stamp">best seat</span><span class="ctx">The places of honour at feasts and up front in the synagogue.</span></div>
+      <div class="ask step"><span class="q">“Rabbi, Rabbi”</span><span class="stamp">the title</span><span class="ctx">“My master,” teacher. They loved hearing it in the market.</span></div>
+    </div>
+    <p class="note step">Most of us know how to put on a front. The trouble isn't the tassel. It's doing God's things to get men's eyes.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="8-10" data-hl="one is your Master, even Christ; and all ye are brethren|call no man your father upon the earth"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="8" data-hl="all ye are brethren"></blockquote>
+    <h2 class="rise" style="--d:1">One Master, one Father</h2>
+    <div class="sort">
+      <div class="rise" style="--d:2"><h3>not “Rabbi”</h3><div class="vs"><b>8</b></div><p>One is your Master, even Christ.</p></div>
+      <div class="rise" style="--d:3"><h3>not “father”</h3><div class="vs"><b>9</b></div><p>One is your Father, which is in heaven.</p></div>
+      <div class="rise" style="--d:4"><h3>not “masters”</h3><div class="vs"><b>10</b></div><p>One is your Master, even Christ.</p></div>
+    </div>
+    <p class="note step">Jesus isn't banning the word “father” for your dad, or the word “teacher.” Paul called himself a father to the believers he led to Christ (1 Corinthians 4:15). He's banning titles that put a man between you and God, so that other men owe you a bow.</p>
+    <p class="note step">In His church nobody outranks anybody. <em>“All ye are brethren.”</em> The new believer and the old preacher stand on the same level ground.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="11-12" data-hl="he that is greatest among you shall be your servant|he that shall humble himself shall be exalted"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="11"></blockquote>
+    <h2 class="rise" style="--d:1">The way up is down</h2>
+    <div class="mirror">
+      <div class="step"><span>exalt himself</span><span class="arrow">→</span><span class="word">abased</span><small><em>Abased</em> means brought low. The man who climbs over others gets taken down.</small></div>
+      <div class="step"><span>humble himself</span><span class="arrow">→</span><span class="word">exalted</span><small>The man who takes the low place gets lifted up, by God.</small></div>
+    </div>
+    <blockquote class="quote step"><p>“Humble yourselves in the sight of the Lord, and he shall lift you up.”</p><cite>James 4:10</cite></blockquote>
+    <p class="note step">Two days later, Jesus would kneel and wash His disciples' feet. The greatest Man who ever lived took the servant's towel.</p>
+  </div>
+</section>
+
+<!-- ======================= PART TWO: WOE UNTO YOU ======================= -->
+<section class="slide part">
+  <div class="inner">
+    <p class="part-n rise">Part two</p>
+    <h2 class="rise" style="--d:1">Woe unto you</h2>
+    <p class="range rise" style="--d:2">Verses 13–28</p>
+    <div class="rule"></div>
+    <p class="hook rise" style="--d:4">Eight times Jesus says it. Shut doors, loophole oaths, a swallowed camel, a dirty cup, and painted tombs.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="13-15" data-hl="ye shut up the kingdom of heaven against men|ye devour widows’ houses|ye compass sea and land to make one proselyte"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="13" data-hl="woe unto you, scribes and Pharisees, hypocrites!"></blockquote>
+    <h2 class="rise" style="--d:1">Eight woes</h2>
+    <div class="tally rise" style="--d:2" aria-label="Verses 13 through 29. Woe is spoken in verses 13, 14, 15, 16, 23, 25, 27, and 29.">
+      <span class="hit" style="--k:0"><i>13</i>woe</span>
+      <span class="hit" style="--k:1"><i>14</i>woe</span>
+      <span class="hit" style="--k:2"><i>15</i>woe</span>
+      <span class="hit" style="--k:3"><i>16</i>woe</span>
+      <span><i>17</i>&nbsp;</span><span><i>18</i>&nbsp;</span><span><i>19</i>&nbsp;</span><span><i>20</i>&nbsp;</span><span><i>21</i>&nbsp;</span><span><i>22</i>&nbsp;</span>
+      <span class="hit" style="--k:4"><i>23</i>woe</span>
+      <span><i>24</i>&nbsp;</span>
+      <span class="hit" style="--k:5"><i>25</i>woe</span>
+      <span><i>26</i>&nbsp;</span>
+      <span class="hit" style="--k:6"><i>27</i>woe</span>
+      <span><i>28</i>&nbsp;</span>
+      <span class="hit" style="--k:7"><i>29</i>woe</span>
+    </div>
+    <p class="note step"><em>“Woe”</em> is a cry of grief over coming disaster, like “alas.” It's a warning, and it's sorrow too. This chapter ends with Jesus longing to gather these very people (v. 37).</p>
+    <p class="note step">A <em>“hypocrite”</em> was a stage actor, playing a part behind a mask. Jesus was gentle with sinners who knew they were sinners. His hardest words were saved for religious men who wore a mask and shut the door on everyone else.</p>
+    <blockquote class="quote step"><p>“And the Pharisees and scribes murmured, saying, This man receiveth sinners, and eateth with them.”</p><cite>Luke 15:2</cite></blockquote>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="14" data-hl="for a pretence make long prayer"></blockquote>
+    <h2 class="rise" style="--d:1">The first three</h2>
+    <div class="asks">
+      <div class="ask step"><span class="q">“ye shut up the kingdom”</span><span class="stamp">blocking the door</span><span class="ctx">They wouldn't come to Jesus, and they stood in the way of anyone who tried.</span></div>
+      <div class="ask step"><span class="q">“ye devour widows' houses”</span><span class="stamp">robbing the weak</span><span class="ctx">They took advantage of widows who trusted them, then covered it with long prayers. <em>“Pretence”</em> means for show.</span></div>
+      <div class="ask step"><span class="q">“to make one proselyte”</span><span class="stamp">making it worse</span><span class="ctx">A <em>proselyte</em> was a Gentile who converted to the Jewish faith. They'd go anywhere to win one, then make him twice as lost as they were.</span></div>
+    </div>
+    <p class="note step"><em>“The greater damnation”</em>: the more light a man has, and the more he uses God's name to hurt people, the heavier his judgment.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="16-19" data-hl="ye blind guides|whether is greater, the gold, or the temple that sanctifieth the gold?"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="17" data-hl="whether is greater, the gold, or the temple that sanctifieth the gold?"></blockquote>
+    <div class="split">
+      <div class="stage">
+        <svg class="scale" viewBox="0 0 600 330" style="--tip:12deg" role="img" aria-label="A balance scale. On one side, the gold. On the other, the temple. The temple side goes down: it is the greater.">
+          <path d="M270 320 L330 320 L312 300 L288 300 Z" style="fill:var(--line-strong)"/>
+          <line x1="300" y1="300" x2="300" y2="70" stroke-width="8" style="stroke:var(--line-strong)"/>
+          <g class="scale-beam">
+            <line x1="80" y1="70" x2="520" y2="70" stroke-width="8" stroke-linecap="round" style="stroke:var(--ink-soft)"/>
+            <circle cx="300" cy="70" r="11" style="fill:var(--accent)"/>
+          </g>
+          <g class="scale-pan l">
+            <g stroke-width="2" style="stroke:var(--ink-soft)"><line x1="80" y1="70" x2="30" y2="190"/><line x1="80" y1="70" x2="130" y2="190"/></g>
+            <path d="M20 190 L140 190 Q130 220 80 220 Q30 220 20 190 Z" style="fill:var(--surface-2);stroke:var(--ink-soft)" stroke-width="2"/>
+            <ellipse cx="62" cy="183" rx="16" ry="6" style="fill:var(--warm)"/>
+            <ellipse cx="96" cy="183" rx="16" ry="6" style="fill:var(--warm)"/>
+            <ellipse cx="80" cy="174" rx="16" ry="6" style="fill:var(--warm)"/>
+            <text x="80" y="256" text-anchor="middle" font-size="20" style="fill:var(--ink-soft)">the gold</text>
+          </g>
+          <g class="scale-pan r">
+            <g stroke-width="2" style="stroke:var(--accent)"><line x1="520" y1="70" x2="470" y2="190"/><line x1="520" y1="70" x2="570" y2="190"/></g>
+            <path d="M460 190 L580 190 Q570 220 520 220 Q470 220 460 190 Z" style="fill:var(--surface-2);stroke:var(--accent)" stroke-width="2"/>
+            <path d="M478 188 L478 150 L520 128 L562 150 L562 188 Z" style="fill:var(--accent)"/>
+            <rect x="508" y="160" width="24" height="28" style="fill:var(--surface-2)"/>
+            <text x="520" y="256" text-anchor="middle" font-size="20" font-weight="700" style="fill:var(--accent-hot)">the temple</text>
+          </g>
+        </svg>
+      </div>
+      <div>
+        <h2 class="rise" style="--d:1">Loophole oaths</h2>
+        <p class="note rise" style="--d:2">They had a system. Swear <em>“by the temple”</em> and it didn't count. Swear <em>“by the gold of the temple”</em> and you were <em>“a debtor,”</em> bound to keep it. Same with the altar and the gift on it.</p>
+        <p class="note step scale-go">It was crossing your fingers behind your back, with a rulebook to back it up. And it had things upside down: the temple is what made the gold holy. <em>“Sanctifieth”</em> means makes holy, set apart for God.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="slide verse" data-v="20-22" data-hl="sweareth by the throne of God, and by him that sitteth thereon"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="22" data-hl="sweareth by the throne of God"></blockquote>
+    <h2 class="rise" style="--d:1">Every word is said before God</h2>
+    <p class="note rise" style="--d:2">Every oath goes back to God, whatever you swear by: the altar, the temple, heaven itself. You can't find a promise that God isn't in on.</p>
+    <p class="note step">He'd said it plainly on the mountain:</p>
+    <blockquote class="quote step"><p>“But let your communication be, Yea, yea; Nay, nay: for whatsoever is more than these cometh of evil.”</p><cite>Matthew 5:37</cite></blockquote>
+    <p class="note step">A lot of us lived on promises we never meant to keep: to wives, to kids, to judges, to ourselves. “I swear, this is the last time.” A new man in Christ doesn't need to swear. He just needs his yes to mean yes, one kept word at a time.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="23-24" data-hl="ye pay tithe of mint and anise and cummin|judgment, mercy, and faith|strain at a gnat, and swallow a camel"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="23" data-hl="the weightier matters of the law, judgment, mercy, and faith"></blockquote>
+    <h2 class="rise" style="--d:1">Counting leaves</h2>
+    <p class="note rise" style="--d:2"><em>Mint, anise, and cummin</em> are kitchen herbs. A tithe is a tenth. They counted out every tenth leaf for God, and felt good about it.</p>
+    <div class="asks">
+      <div class="ask step"><span class="q">“judgment”</span><span class="stamp">doing right</span><span class="ctx">Justice and fair dealing.</span></div>
+      <div class="ask step"><span class="q">“mercy”</span><span class="stamp">kindness</span><span class="ctx">Treating people as God treats you.</span></div>
+      <div class="ask step"><span class="q">“faith”</span><span class="stamp">faithfulness</span><span class="ctx">Trusting God, and being trustworthy.</span></div>
+    </div>
+    <p class="note step">Jesus doesn't sneer at the tithe: <em>“not to leave the other undone.”</em> Small things matter. They just don't replace the big ones (Micah 6:8).</p>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="24"></blockquote>
+    <div class="split">
+      <div class="stage">
+        <svg class="mt23-gnat rise" style="--d:2;max-height:44vh" viewBox="0 0 400 300" role="img" aria-label="A cup with a cloth strainer over it. One tiny gnat is caught in the cloth and circled. Then a whole camel shrinks and slides down into the cup, swallowed.">
+          <g class="mt23-camel">
+            <ellipse cx="290" cy="80" rx="62" ry="28"/>
+            <ellipse cx="282" cy="58" rx="30" ry="22"/>
+            <path d="M346 76 C 362 60, 366 36, 372 22 L 386 26 C 382 44, 372 70, 356 90 Z"/>
+            <ellipse cx="384" cy="22" rx="14" ry="8"/>
+            <rect x="242" y="96" width="9" height="56" rx="4"/>
+            <rect x="262" y="98" width="9" height="54" rx="4"/>
+            <rect x="314" y="98" width="9" height="54" rx="4"/>
+            <rect x="334" y="96" width="9" height="56" rx="4"/>
+          </g>
+          <path class="mt23-cupb" d="M70 170 L 230 170 L 214 270 Q 150 286 86 270 Z"/>
+          <path class="mt23-cloth" d="M58 166 Q 150 196 242 166 L 238 160 Q 150 186 62 160 Z"/>
+          <circle class="mt23-bug" cx="150" cy="178" r="3.5"/>
+          <circle class="mt23-ring" cx="150" cy="178" r="14"/>
+          <text class="mt23-lab" x="150" y="140" text-anchor="middle">one gnat, caught</text>
+          <text class="mt23-gulp" x="150" y="230" text-anchor="middle">gulp</text>
+          <text class="mt23-soft mt23-camlab" x="300" y="182" text-anchor="middle">a camel</text>
+        </svg>
+      </div>
+      <div>
+        <h2 class="rise" style="--d:1">A gnat and a camel</h2>
+        <p class="note rise" style="--d:2">Gnats and camels were both unclean under the law (Leviticus 11:4). A careful Pharisee strained his drink through a cloth so he wouldn't swallow a gnat.</p>
+        <p class="note step mt23-ggo">Then he gulped down a whole camel, hump and all. Careful about tiny rules, blind to huge sins.</p>
+        <p class="note step">It's easy to fuss over another man's language while ignoring our own pride, or how we treat our families. Jesus calls that <em>“blind.”</em></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="slide verse" data-v="25-26" data-hl="ye make clean the outside of the cup|within they are full of extortion and excess|cleanse first that which is within"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="26" data-hl="cleanse first that which is within the cup and platter"></blockquote>
+    <div class="split">
+      <div class="stage">
+        <svg class="mt23-cup rise" style="--d:2" viewBox="0 0 400 290" role="img" aria-label="A cup cut open. The outside is polished and shining, but inside it is dark, full of extortion and excess. Then the inside is washed clean, and the whole cup is clean.">
+          <clipPath id="mt23-inside"><path d="M118 72 L 282 72 L 262 222 Q 200 240 138 222 Z"/></clipPath>
+          <path class="mt23-shell" d="M96 60 L 304 60 L 280 236 Q 200 258 120 236 Z"/>
+          <path d="M160 250 L 240 250 L 250 272 L 150 272 Z" style="fill:var(--surface-2);stroke:var(--accent)" stroke-width="3"/>
+          <path class="mt23-shine" d="M110 80 L 128 220"/>
+          <path class="mt23-shine" d="M290 80 L 276 180"/>
+          <g clip-path="url(#mt23-inside)">
+            <rect class="mt23-dirt" x="100" y="72" width="200" height="180"/>
+            <rect class="mt23-clean" x="100" y="72" width="200" height="180"/>
+          </g>
+          <text class="mt23-word" x="200" y="140" text-anchor="middle">extortion</text>
+          <text class="mt23-word" x="200" y="170" text-anchor="middle">excess</text>
+          <text class="mt23-new" x="200" y="155" text-anchor="middle">clean within</text>
+          <text class="mt23-soft" x="200" y="36" text-anchor="middle">shining on the outside</text>
+        </svg>
+      </div>
+      <div>
+        <h2 class="rise" style="--d:1">Start on the inside</h2>
+        <p class="note rise" style="--d:2"><em>“Platter”</em> is a dish. <em>“Extortion”</em> is taking from people by pressure. <em>“Excess”</em> means no self-control, grabbing more than enough.</p>
+        <p class="note step">We know this cup: say the right things, look sober, act fine. Inside, nothing changed.</p>
+        <p class="note step mt23-cgo">Jesus starts where we can't reach. Clean the inside, and the outside follows.</p>
+        <blockquote class="quote step"><p>“Create in me a clean heart, O God; and renew a right spirit within me.”</p><cite>Psalm 51:10</cite></blockquote>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="slide verse" data-v="27-28" data-hl="ye are like unto whited sepulchres|within full of dead men’s bones|within ye are full of hypocrisy and iniquity"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="27" data-hl="like unto whited sepulchres"></blockquote>
+    <div class="split">
+      <div class="stage">
+        <svg class="mt23-tomb rise" style="--d:2" viewBox="0 0 400 260" role="img" aria-label="A tomb painted bright white. Then the paint thins, and the dead men's bones inside can be seen.">
+          <line class="mt23-ground" x1="10" y1="230" x2="390" y2="230"/>
+          <path class="mt23-rock" d="M40 230 C 40 120, 110 50, 200 50 C 290 50, 360 120, 360 230 Z"/>
+          <path class="mt23-brush" d="M90 120 C 130 96, 170 86, 200 86 M80 160 C 120 136, 170 124, 230 124 M260 100 C 290 116, 312 140, 322 160"/>
+          <g class="mt23-bones">
+            <circle class="mt23-skull" cx="150" cy="170" r="16"/>
+            <path d="M172 178 L 262 186"/>
+            <path d="M190 196 L 250 160"/>
+            <path d="M120 206 L 200 214"/>
+            <path d="M222 208 L 290 200"/>
+            <path d="M260 172 L 300 210"/>
+          </g>
+          <circle class="mt23-door" cx="300" cy="196" r="30"/>
+        </svg>
+      </div>
+      <div>
+        <h2 class="rise" style="--d:1">Painted tombs</h2>
+        <p class="note rise" style="--d:2">Touching a grave made a man unclean for seven days (Numbers 19:16). So each spring before Passover, tombs by the roads were whitewashed to warn pilgrims away. This was Passover week: the men listening had just walked past them, freshly painted and bright in the sun.</p>
+        <p class="note step mt23-tgo">Beautiful outside. Full of death inside.</p>
+        <blockquote class="quote step"><p>“…for man looketh on the outward appearance, but the LORD looketh on the heart.”</p><cite>1 Samuel 16:7</cite></blockquote>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ======================= PART THREE: O JERUSALEM ======================= -->
+<section class="slide part">
+  <div class="inner">
+    <p class="part-n rise">Part three</p>
+    <h2 class="rise" style="--d:1">O Jerusalem</h2>
+    <p class="range rise" style="--d:2">Verses 29–39</p>
+    <div class="rule"></div>
+    <p class="hook rise" style="--d:4">The last woe, the blood of the prophets, and the saddest words in the chapter: “ye would not.”</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="29-31" data-hl="ye build the tombs of the prophets|we would not have been partakers with them|ye are the children of them which killed the prophets"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="30" data-hl="we would not have been partakers"></blockquote>
+    <h2 class="rise" style="--d:1">“We'd never have done that”</h2>
+    <div class="split">
+    <div class="talk">
+      <p class="rise" style="--d:2"><small>The scribes and Pharisees</small>If we had been in the days of our fathers, we would not have been partakers with them in the blood of the prophets.</p>
+      <p class="reply step"><small>Jesus</small>Wherefore ye be witnesses unto yourselves, that ye are the children of them which killed the prophets.<br><span class="flag">already planning it</span></p>
+    </div>
+    <div>
+    <p class="note step">They built and decorated monuments to the dead prophets. <em>“Garnish”</em> means adorn. Dead prophets are easy to honour; they can't tell you anything you don't want to hear. Meanwhile these men were plotting to kill the greatest Prophet of all.</p>
+    <p class="note step">“I'll never be like my old man” is a hard promise to keep without God. Only a new heart breaks the pattern.</p>
+    </div>
+    </div>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="29" data-hl="Woe unto you, scribes and Pharisees, hypocrites!"></blockquote>
+    <h2 class="rise" style="--d:1">All eight woes</h2>
+    <ol class="signs rise" style="--d:2">
+      <li><b>Shutting the door</b>23:13</li>
+      <li><b>Robbing widows</b>23:14</li>
+      <li><b>Making converts worse</b>23:15</li>
+      <li><b>Loophole oaths</b>23:16</li>
+      <li><b>Herbs, not mercy</b>23:23</li>
+      <li><b>A clean cup, a dirty inside</b>23:25</li>
+      <li><b>Painted tombs</b>23:27</li>
+      <li class="now"><b>Tombs for the prophets</b>23:29</li>
+    </ol>
+    <p class="note step">Run your eye down that list. Every one of them is about the gap between the outside and the inside, between saying and doing. That gap is what <em>“hypocrite”</em> means. And none of us is a stranger to it.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="32-33" data-hl="Fill ye up then the measure of your fathers|how can ye escape the damnation of hell?"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="33" data-hl="how can ye escape the damnation of hell?"></blockquote>
+    <h2 class="rise" style="--d:1">The hardest words</h2>
+    <p class="note rise" style="--d:2"><em>“Fill ye up then the measure”</em>: their fathers had filled the cup of guilt partway by killing the prophets. Now they would fill it to the top by killing Him.</p>
+    <p class="note step"><em>“Generation of vipers”</em> means brood of snakes. John the Baptist had said the same to the Pharisees and Sadducees (3:7). Hell is real, and Jesus doesn't soften it. These are the hardest words He ever spoke.</p>
+    <p class="note step">But even these men weren't beyond reach. Nicodemus and Joseph of Arimathaea were rulers of the Jews, and Paul was a Pharisee. And soon after the cross:</p>
+    <blockquote class="quote step"><p>“And the word of God increased; and the number of the disciples multiplied in Jerusalem greatly; and a great company of the priests were obedient to the faith.”</p><cite>Acts 6:7</cite></blockquote>
+  </div>
+</section>
+
+<section class="slide verse" data-v="34-36" data-hl="I send unto you prophets, and wise men, and scribes|from the blood of righteous Abel unto the blood of Zacharias son of Barachias|All these things shall come upon this generation"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="35" data-hl="from the blood of righteous Abel unto the blood of Zacharias son of Barachias"></blockquote>
+    <h2 class="rise" style="--d:1">All the righteous blood</h2>
+    <ol class="timeline" aria-label="Abel, the first righteous man murdered, Genesis 4. The prophets, killed through the centuries. Zacharias, slain between the temple and the altar. John the Baptist, beheaded, Matthew 14. Jesus, crucified in a few days. And about AD 70, about forty years later, Jerusalem and the temple destroyed.">
+      <li style="--k:0"><b>Abel</b><span>the first murder</span><small>Genesis 4</small></li>
+      <li style="--k:1"><b>prophets</b><span>stoned and killed</span><small>through the centuries</small></li>
+      <li style="--k:2"><b>Zacharias</b><span>between temple and altar</span></li>
+      <li style="--k:3"><b>John</b><span>beheaded</span><small>14:10</small></li>
+      <li class="lit" style="--k:4"><b>Jesus</b><span>crucified</span><small>in a few days</small></li>
+      <li class="wait" style="--k:5"><b>AD 70</b><span>the temple falls</span><small>about 40 years on</small></li>
+    </ol>
+    <p class="note step">Abel was murdered by his own brother. Zacharias was killed in the temple courts themselves. From first to last, the blood cried out.</p>
+    <blockquote class="quote step"><p>“And he said, What hast thou done? the voice of thy brother’s blood crieth unto me from the ground.”</p><cite>Genesis 4:10</cite></blockquote>
+    <p class="note step"><em>“This generation”</em>: the people alive then. The men He sent were scourged and killed (Acts 5, 7, 12), and about AD 70 Rome destroyed Jerusalem and its temple.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="37" data-hl="how often would I have gathered thy children together|even as a hen gathereth her chickens under her wings|and ye would not!"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="37" data-hl="how often would I have gathered thy children together"></blockquote>
+    <div class="split">
+      <div class="stage">
+        <svg class="mt23-hen rise" style="--d:2;max-height:44vh" viewBox="0 0 400 270" role="img" aria-label="A hen spreads her wings wide to gather her chicks. The chicks stay away: ye would not. Then the chicks run in under her wings.">
+          <path class="mt23-wing mt23-wl" d="M200 150 C 160 120, 110 130, 84 176 C 120 182, 160 186, 200 186 Z"/>
+          <path class="mt23-wing mt23-wr" d="M200 150 C 240 120, 290 130, 316 176 C 280 182, 240 186, 200 186 Z"/>
+          <ellipse class="mt23-hbody" cx="200" cy="168" rx="66" ry="44"/>
+          <circle class="mt23-hbody" cx="200" cy="104" r="28"/>
+          <path class="mt23-comb" d="M186 80 Q 190 66 198 76 Q 204 62 210 76 Q 218 68 216 84 Z"/>
+          <path class="mt23-beak" d="M196 112 L 204 112 L 200 124 Z"/>
+          <circle class="mt23-eye" cx="190" cy="100" r="3.5"/>
+          <circle class="mt23-eye" cx="210" cy="100" r="3.5"/>
+          <circle class="mt23-chick" cx="40" cy="236" r="11" style="--k:0;--dx:120px;--dy:-30px"/>
+          <circle class="mt23-chick" cx="90" cy="250" r="11" style="--k:1;--dx:80px;--dy:-44px"/>
+          <circle class="mt23-chick" cx="360" cy="240" r="11" style="--k:2;--dx:-122px;--dy:-34px"/>
+          <circle class="mt23-chick" cx="310" cy="254" r="11" style="--k:3;--dx:-84px;--dy:-46px"/>
+          <circle class="mt23-chick" cx="200" cy="262" r="11" style="--k:4;--dx:0px;--dy:-52px"/>
+          <text class="mt23-not" x="200" y="34" text-anchor="middle">“and ye would not!”</text>
+        </svg>
+      </div>
+      <div>
+        <h2 class="rise" style="--d:1">Under His wings</h2>
+        <p class="note rise" style="--d:2">After all the woes, this: open arms. A hen spreads her wings over her chicks when danger comes, and takes the hit herself.</p>
+        <p class="note step mt23-hnot"><em>“How often would I… and ye would not!”</em> Jesus wanted them; they refused. God doesn't drag anyone in, and a man can say no.</p>
+        <p class="note step mt23-hcome">But the wings are still open today. Whatever you've done, there's room under them.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="slide verse" data-v="38-39" data-hl="your house is left unto you desolate|Blessed is he that cometh in the name of the Lord"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="38"></blockquote>
+    <h2 class="rise" style="--d:1">He walks out</h2>
+    <p class="note rise" style="--d:2"><em>“Your house”</em> is the temple. Not “My Father's house” any more (John 2:16), but <em>yours</em>. <em>Desolate</em> means left empty. In the very next verse, He leaves it:</p>
+    <blockquote class="quote step"><p>“And Jesus went out, and departed from the temple: and his disciples came to him for to shew him the buildings of the temple.”</p><cite>Matthew 24:1</cite></blockquote>
+    <p class="note step">His last public teaching in Matthew, but not a slammed door. <em>“Blessed is he that cometh”</em> is from Psalm 118:26, the welcome the crowds shouted on Sunday (21:9). Jesus gives no date. He says a day is coming when His people will welcome Him.</p>
+    <blockquote class="quote step"><p>“The Lord is not slack concerning his promise, as some men count slackness; but is longsuffering to us-ward, not willing that any should perish, but that all should come to repentance.”</p><cite>2 Peter 3:9</cite></blockquote>
+  </div>
+</section>
+
+<!-- ======================= CLOSING ======================= -->
+<section class="slide remember">
+  <div class="inner">
+    <h2 class="rise">Points to remember</h2>
+    <ol class="seeds">
+      <li class="step"><span class="topic">Leaders</span><span class="seed-q">“All therefore whatsoever they bid you observe, that observe and do; but do not ye after their works” <cite>23:3</cite></span><span class="take">Keep God's Word, even from imperfect teachers. Don't copy what they do.</span></li>
+      <li class="step"><span class="topic">Show</span><span class="seed-q">“All their works they do for to be seen of men” <cite>23:5</cite></span><span class="take">Doing God's things for men's eyes misses God.</span></li>
+      <li class="step"><span class="topic">Greatness</span><span class="seed-q">“He that is greatest among you shall be your servant” <cite>23:11</cite></span><span class="take">The way up is down. God lifts the humble.</span></li>
+      <li class="step"><span class="topic">Weightier matters</span><span class="seed-q">“Judgment, mercy, and faith” <cite>23:23</cite></span><span class="take">Don't strain at gnats and swallow camels. Justice, mercy, and faithfulness come first.</span></li>
+      <li class="step"><span class="topic">Inside</span><span class="seed-q">“Cleanse first that which is within the cup and platter” <cite>23:26</cite></span><span class="take">God starts on the inside. A clean heart changes the outside.</span></li>
+      <li class="step"><span class="topic">His heart</span><span class="seed-q">“How often would I have gathered thy children together… and ye would not!” <cite>23:37</cite></span><span class="take">Jesus wanted to gather them, and they refused. His wings are still open to anyone who will come.</span></li>
+    </ol>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 1 of 6</p>
+      <span class="topic">Leaders</span>
+      <h2>What did Jesus tell the people to do with what the scribes and Pharisees taught?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="2"></blockquote>
+      <blockquote class="quote step" data-q="3"></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>When they taught the law of Moses, the people were to observe and do it, because it was God's Word. But they were not to follow their example, because they said and did not.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 2 of 6</p>
+      <span class="topic">Show</span>
+      <h2>Why did the scribes and Pharisees do their works?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="5"></blockquote>
+      <blockquote class="quote step" data-q="6"></blockquote>
+      <blockquote class="quote step" data-q="7"></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>To be seen of men. Big phylacteries, long tassels, the best seats, and being called Rabbi in the market. Their religion was a show for other people's eyes, not service to God.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 3 of 6</p>
+      <span class="topic">Greatness</span>
+      <h2>Who does Jesus say is greatest among us?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="11"></blockquote>
+      <blockquote class="quote step" data-q="12"></blockquote>
+      <blockquote class="quote step"><p>“Humble yourselves in the sight of the Lord, and he shall lift you up.”</p><cite>James 4:10</cite></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>The servant. The man who exalts himself will be brought low, and the man who humbles himself will be lifted up by God. Jesus showed it by washing His disciples' feet.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 4 of 6</p>
+      <span class="topic">Weightier matters</span>
+      <h2>What weightier matters of the law had they left undone?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="23"></blockquote>
+      <blockquote class="quote step"><p>“He hath shewed thee, O man, what is good; and what doth the LORD require of thee, but to do justly, and to love mercy, and to walk humbly with thy God?”</p><cite>Micah 6:8</cite></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>Judgment, mercy, and faith: doing right by people, showing kindness, and being faithful. They tithed their garden herbs but ignored these. Jesus said to do both, without leaving the weightier things undone.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 5 of 6</p>
+      <span class="topic">Inside</span>
+      <h2>Which must be cleansed first, the inside or the outside?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="25"></blockquote>
+      <blockquote class="quote step" data-q="26"></blockquote>
+      <blockquote class="quote step"><p>“Create in me a clean heart, O God; and renew a right spirit within me.”</p><cite>Psalm 51:10</cite></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>The inside. A polished outside can hide a heart full of greed. When God cleans the heart, the outside is made clean too. Only He can do that work.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 6 of 6</p>
+      <span class="topic">His heart</span>
+      <h2>What did Jesus long to do for Jerusalem, and why didn't it happen?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="37"></blockquote>
+      <blockquote class="quote step"><p>“The Lord is not slack concerning his promise, as some men count slackness; but is longsuffering to us-ward, not willing that any should perish, but that all should come to repentance.”</p><cite>2 Peter 3:9</cite></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>He longed to gather them like a hen gathers her chicks under her wings, again and again. It didn't happen because they would not come. God isn't willing that any should perish, but He doesn't force anyone. Today His wings are still open.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide prayer">
+  <div class="inner">
+    <div class="emblem rise"></div>
+    <h2 class="rise" style="--d:1">Prayer requests</h2>
+    <p class="ask-line rise" style="--d:2">What can we pray about for you today?</p>
+    <blockquote class="quote rise" style="--d:4"><p>“He shall cover thee with his feathers, and under his wings shalt thou trust: his truth shall be thy shield and buckler.”</p><cite>Psalm 91:4</cite></blockquote>
+  </div>
+</section>
+
+</main>
+
+<script>
+// King James Version, Matthew chapter 23
+const V = {
+  1: "Then spake Jesus to the multitude, and to his disciples,",
+  2: "Saying, The scribes and the Pharisees sit in Moses’ seat:",
+  3: "All therefore whatsoever they bid you observe, that observe and do; but do not ye after their works: for they say, and do not.",
+  4: "For they bind heavy burdens and grievous to be borne, and lay them on men’s shoulders; but they themselves will not move them with one of their fingers.",
+  5: "But all their works they do for to be seen of men: they make broad their phylacteries, and enlarge the borders of their garments,",
+  6: "And love the uppermost rooms at feasts, and the chief seats in the synagogues,",
+  7: "And greetings in the markets, and to be called of men, Rabbi, Rabbi.",
+  8: "But be not ye called Rabbi: for one is your Master, even Christ; and all ye are brethren.",
+  9: "And call no man your father upon the earth: for one is your Father, which is in heaven.",
+  10: "Neither be ye called masters: for one is your Master, even Christ.",
+  11: "But he that is greatest among you shall be your servant.",
+  12: "And whosoever shall exalt himself shall be abased; and he that shall humble himself shall be exalted.",
+  13: "But woe unto you, scribes and Pharisees, hypocrites! for ye shut up the kingdom of heaven against men: for ye neither go in yourselves, neither suffer ye them that are entering to go in.",
+  14: "Woe unto you, scribes and Pharisees, hypocrites! for ye devour widows’ houses, and for a pretence make long prayer: therefore ye shall receive the greater damnation.",
+  15: "Woe unto you, scribes and Pharisees, hypocrites! for ye compass sea and land to make one proselyte, and when he is made, ye make him twofold more the child of hell than yourselves.",
+  16: "Woe unto you, ye blind guides, which say, Whosoever shall swear by the temple, it is nothing; but whosoever shall swear by the gold of the temple, he is a debtor!",
+  17: "Ye fools and blind: for whether is greater, the gold, or the temple that sanctifieth the gold?",
+  18: "And, Whosoever shall swear by the altar, it is nothing; but whosoever sweareth by the gift that is upon it, he is guilty.",
+  19: "Ye fools and blind: for whether is greater, the gift, or the altar that sanctifieth the gift?",
+  20: "Whoso therefore shall swear by the altar, sweareth by it, and by all things thereon.",
+  21: "And whoso shall swear by the temple, sweareth by it, and by him that dwelleth therein.",
+  22: "And he that shall swear by heaven, sweareth by the throne of God, and by him that sitteth thereon.",
+  23: "Woe unto you, scribes and Pharisees, hypocrites! for ye pay tithe of mint and anise and cummin, and have omitted the weightier matters of the law, judgment, mercy, and faith: these ought ye to have done, and not to leave the other undone.",
+  24: "Ye blind guides, which strain at a gnat, and swallow a camel.",
+  25: "Woe unto you, scribes and Pharisees, hypocrites! for ye make clean the outside of the cup and of the platter, but within they are full of extortion and excess.",
+  26: "Thou blind Pharisee, cleanse first that which is within the cup and platter, that the outside of them may be clean also.",
+  27: "Woe unto you, scribes and Pharisees, hypocrites! for ye are like unto whited sepulchres, which indeed appear beautiful outward, but are within full of dead men’s bones, and of all uncleanness.",
+  28: "Even so ye also outwardly appear righteous unto men, but within ye are full of hypocrisy and iniquity.",
+  29: "Woe unto you, scribes and Pharisees, hypocrites! because ye build the tombs of the prophets, and garnish the sepulchres of the righteous,",
+  30: "And say, If we had been in the days of our fathers, we would not have been partakers with them in the blood of the prophets.",
+  31: "Wherefore ye be witnesses unto yourselves, that ye are the children of them which killed the prophets.",
+  32: "Fill ye up then the measure of your fathers.",
+  33: "Ye serpents, ye generation of vipers, how can ye escape the damnation of hell?",
+  34: "Wherefore, behold, I send unto you prophets, and wise men, and scribes: and some of them ye shall kill and crucify; and some of them shall ye scourge in your synagogues, and persecute them from city to city:",
+  35: "That upon you may come all the righteous blood shed upon the earth, from the blood of righteous Abel unto the blood of Zacharias son of Barachias, whom ye slew between the temple and the altar.",
+  36: "Verily I say unto you, All these things shall come upon this generation.",
+  37: "O Jerusalem, Jerusalem, thou that killest the prophets, and stonest them which are sent unto thee, how often would I have gathered thy children together, even as a hen gathereth her chickens under her wings, and ye would not!",
+  38: "Behold, your house is left unto you desolate.",
+  39: "For I say unto you, Ye shall not see me henceforth, till ye shall say, Blessed is he that cometh in the name of the Lord."
+};
+const BOOK = "Matthew 23";
+</script>
+<script src="../assets/deck.js"></script>
+</body>
+</html>

@@ -6752,6 +6752,108 @@ window.STUDIES = [
     }
   },
   {
+    "id": "matthew-22",
+    "type": "chapter",
+    "book": "Matthew",
+    "ch": 22,
+    "date": "2026-10-29",
+    "title": "Matthew 22",
+    "sub": "What think ye of Christ?",
+    "about": "In the temple days before the cross, Jesus tells of a king's wedding feast. Then Pharisees, Herodians, Sadducees, and a lawyer each try to trap Him, until His own question about David's Lord silences them all.",
+    "tags": [
+      "Invitation",
+      "Righteousness",
+      "Government",
+      "Resurrection",
+      "Love",
+      "Christ"
+    ],
+    "url": "studies/matthew-22.html",
+    "overview": {
+      "where": "The temple courts in Jerusalem",
+      "when": "About AD 30, probably the Tuesday of the last week before the cross",
+      "people": [
+        "jesus",
+        "pharisees",
+        "herodians",
+        "caesar",
+        "sadducees",
+        "lawyers",
+        "david",
+        "abraham",
+        "moses"
+      ],
+      "places": [
+        "jerusalem",
+        "temple"
+      ],
+      "story": [
+        "Jesus tells of a king who made a marriage for his son. The bidden guests made light of it, and some killed his servants, so the king sent his armies and burned their city (1–7).",
+        "The servants went into the highways and gathered both bad and good. A man without a wedding garment was cast into outer darkness: many are called, but few are chosen (8–14).",
+        "Pharisees and Herodians ask whether to pay tribute to Caesar. Shown a penny with Caesar's image, Jesus says, “Render therefore unto Caesar the things which are Caesar’s; and unto God the things that are God’s” (15–22).",
+        "Sadducees, who deny the resurrection, tell of seven brothers and one wife. Jesus says they know neither the scriptures nor the power of God: God is “the God of Abraham,” not of the dead but of the living (23–33).",
+        "A lawyer asks for the great commandment. Love God with all thy heart, soul, and mind, and thy neighbour as thyself; on these two hang all the law and the prophets (34–40).",
+        "Jesus asks whose son the Christ is. If David calls Him Lord in Psalm 110, how is He his son? No man could answer, and none dared ask Him more (41–46)."
+      ],
+      "key": {
+        "ref": "Matthew 22:37",
+        "text": "Jesus said unto him, Thou shalt love the Lord thy God with all thy heart, and with all thy soul, and with all thy mind."
+      },
+      "big": "God invites everyone to His Son's wedding, bad and good, but we come clothed in the righteousness He gives, not our own. We give Caesar his coin and give God ourselves, made in His image. God is the God of the living, so His people will rise. Love for God and neighbour holds up the whole law, and Jesus is both David's son and David's Lord."
+    }
+  },
+  {
+    "id": "matthew-23",
+    "type": "chapter",
+    "book": "Matthew",
+    "ch": 23,
+    "date": "2026-10-29",
+    "title": "Matthew 23",
+    "sub": "They say, and do not",
+    "about": "Jesus' last public sermon in Matthew. He warns the crowds about religion that is all show, speaks eight woes over the scribes and Pharisees, and grieves over Jerusalem: “how often would I have gathered thy children together… and ye would not!”",
+    "tags": [
+      "Hypocrisy",
+      "Humility",
+      "Mercy",
+      "The heart",
+      "Judgment",
+      "God's love"
+    ],
+    "url": "studies/matthew-23.html",
+    "overview": {
+      "where": "The temple courts in Jerusalem",
+      "when": "About AD 30, the same day as chapter 22, days before the cross",
+      "people": [
+        "jesus",
+        "scribes",
+        "pharisees",
+        "disciples",
+        "abel",
+        "zacharias-slain"
+      ],
+      "places": [
+        "jerusalem",
+        "temple",
+        "altar",
+        "synagogue",
+        "markets"
+      ],
+      "story": [
+        "The scribes and Pharisees sit in Moses' seat: do what they teach, but not what they do, for they say and do not. They bind heavy burdens on others and do their works to be seen of men (1–7).",
+        "Call no man Rabbi, father, or master on earth: one is your Master, even Christ, and all ye are brethren. The greatest shall be your servant, and the humble shall be exalted (8–12).",
+        "Woe after woe: they shut the kingdom, devour widows' houses, make converts twice the child of hell, and swear by loopholes, as if the gold were greater than the temple (13–22).",
+        "They tithe mint, anise, and cummin but leave judgment, mercy, and faith; they strain at a gnat and swallow a camel. Clean outside, full of extortion within, like whited sepulchres full of dead men's bones (23–28).",
+        "They build the prophets' tombs while plotting like their fathers. All the righteous blood from Abel to Zacharias will come on this generation (29–36).",
+        "“O Jerusalem, Jerusalem… how often would I have gathered thy children together, even as a hen gathereth her chickens under her wings, and ye would not!” Their house is left desolate till they say, “Blessed is he that cometh in the name of the Lord” (37–39)."
+      ],
+      "key": {
+        "ref": "Matthew 23:37",
+        "text": "O Jerusalem, Jerusalem, thou that killest the prophets, and stonest them which are sent unto thee, how often would I have gathered thy children together, even as a hen gathereth her chickens under her wings, and ye would not!"
+      },
+      "big": "God looks on the heart. Religion done for show, heavy rules without mercy, and a polished outside over a dirty inside are what Jesus condemned most sharply. The way up is down: the greatest serves. And behind the woes is a Saviour who longs to gather us under His wings. He never forces anyone, and His arms are still open."
+    }
+  },
+  {
     "id": "matthew-24",
     "type": "chapter",
     "book": "Matthew",
