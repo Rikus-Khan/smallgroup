@@ -6188,6 +6188,120 @@ window.STUDIES = [
     }
   },
   {
+    "id": "matthew-11",
+    "type": "chapter",
+    "book": "Matthew",
+    "ch": 11,
+    "date": "2026-10-29",
+    "title": "Matthew 11",
+    "sub": "Come unto me",
+    "about": "John doubts in Herod's prison, Jesus defends him, the crowds and three favored towns won't repent, and Jesus invites every weary man to come and find rest.",
+    "tags": [
+      "Doubt",
+      "John the Baptist",
+      "Repentance",
+      "Humility",
+      "Invitation",
+      "Rest"
+    ],
+    "url": "studies/matthew-11.html",
+    "overview": {
+      "where": "The towns of Galilee around the Sea of Galilee; John in Herod's prison",
+      "when": "About A.D. 28, during Jesus' work in Galilee",
+      "people": [
+        "jesus",
+        "john-the-baptist",
+        "disciples",
+        "elijah",
+        "publicans",
+        "sinners",
+        "the-father"
+      ],
+      "places": [
+        "capernaum",
+        "bethsaida",
+        "chorazin",
+        "tyre-and-zidon",
+        "sodom-and-gomorrah",
+        "wilderness"
+      ],
+      "story": [
+        "Jesus finishes instructing the twelve and goes on preaching in the cities of Galilee (1).",
+        "John, in prison, sends two disciples to ask, “Art thou he that should come?” Jesus answers with what they see: the blind see, the lame walk, the poor hear the gospel (2–6).",
+        "Jesus tells the crowds John is more than a prophet: the messenger Malachi promised, the Elias who was to come (7–15).",
+        "This generation is like children who won't play: John was too strict for them, and Jesus, the friend of publicans and sinners, too loose (16–19).",
+        "Jesus grieves over Chorazin, Bethsaida, and Capernaum, which saw His mighty works and repented not (20–24).",
+        "He thanks the Father for revealing these things to babes, and invites all who labour and are heavy laden to come to Him for rest (25–30)."
+      ],
+      "key": {
+        "ref": "Matthew 11:28",
+        "text": "Come unto me, all ye that labour and are heavy laden, and I will give you rest."
+      },
+      "big": "Jesus meets honest doubt with evidence, not scolding. Seeing much and not repenting is dangerous, but the door is open to every humble, weary man: come to Him, take His yoke, and find rest for your soul."
+    }
+  },
+  {
+    "id": "matthew-12",
+    "type": "chapter",
+    "book": "Matthew",
+    "ch": 12,
+    "date": "2026-10-29",
+    "title": "Matthew 12",
+    "sub": "A greater is here",
+    "about": "The Pharisees fight Jesus over the sabbath and say His power is from the devil. He shows Himself the merciful Lord of the sabbath, the gentle Servant, the One stronger than Satan, and the head of a new family.",
+    "tags": [
+      "Mercy",
+      "The sabbath",
+      "Gentleness",
+      "Spiritual warfare",
+      "Forgiveness",
+      "Recovery",
+      "Family"
+    ],
+    "url": "studies/matthew-12.html",
+    "overview": {
+      "where": "The grainfields and a synagogue in Galilee",
+      "when": "About A.D. 28, during Jesus' work in Galilee",
+      "people": [
+        "jesus",
+        "disciples",
+        "pharisees",
+        "scribes",
+        "david",
+        "isaiah",
+        "withered-hand",
+        "satan",
+        "beelzebub",
+        "holy-spirit",
+        "jonah",
+        "solomon",
+        "queen-of-the-south",
+        "mary",
+        "brethren",
+        "the-father"
+      ],
+      "places": [
+        "synagogue",
+        "temple",
+        "house-of-god",
+        "nineveh"
+      ],
+      "story": [
+        "The disciples pluck grain on the sabbath. Jesus answers the Pharisees with David and the shewbread, the priests in the temple, and Hosea: “I will have mercy, and not sacrifice.” He is Lord of the sabbath (1–8).",
+        "In the synagogue Jesus heals a man's withered hand on the sabbath. The Pharisees go out and plot to destroy Him (9–14).",
+        "Jesus withdraws and heals them all quietly, fulfilling Isaiah: “A bruised reed shall he not break” (15–21).",
+        "He heals a blind and dumb man held by a devil. The Pharisees say He works by Beelzebub. Jesus answers: a divided kingdom can't stand, and He has bound the strong man (22–30).",
+        "All manner of sin can be forgiven, but not blasphemy against the Holy Ghost. A tree is known by its fruit, and words show the heart (31–37).",
+        "Asked for a sign, Jesus gives the sign of Jonas. He warns of the house swept and left empty, and names as His family whoever does the will of His Father (38–50)."
+      ],
+      "key": {
+        "ref": "Matthew 12:20",
+        "text": "A bruised reed shall he not break, and smoking flax shall he not quench, till he send forth judgment unto victory."
+      },
+      "big": "Jesus cares more for mercy than for rule-keeping, treats the broken gently, and is stronger than Satan. Any sin can be forgiven to the man who comes, and an emptied life must be filled with Christ. Whoever does the Father's will is family."
+    }
+  },
+  {
     "id": "mark-01",
     "type": "chapter",
     "book": "Mark",
