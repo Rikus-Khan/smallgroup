@@ -13,8 +13,11 @@ new Function("window", fs.readFileSync(path.join(root, "bible.js"), "utf8"))(win
 const order = Object.fromEntries(window.BIBLE_BOOKS.map(([name], k) => [name, k]));
 
 // Every study that carries a chapter of scripture: const BOOK = "John 2"; const V = { 1: "...", ... };
+// Only studies listed in studies.js count, so a half-written file can't add links to a page that isn't published
+new Function("window", fs.readFileSync(path.join(root, "studies.js"), "utf8"))(window);
+const listed = new Set(window.STUDIES.map(s => path.basename(s.url)));
 const chapters = [];
-for (const file of fs.readdirSync(path.join(root, "studies")).filter(f => f.endsWith(".html"))) {
+for (const file of fs.readdirSync(path.join(root, "studies")).filter(f => f.endsWith(".html") && listed.has(f))) {
   const html = fs.readFileSync(path.join(root, "studies", file), "utf8");
   const book = html.match(/const BOOK = "([^"]+?) (\d+)";/);
   const verses = html.match(/const V = (\{[\s\S]*?\n\});/);
@@ -28,8 +31,11 @@ for (const t of terms) {
   if (t.match.global) throw new Error(`${t.id}: drop the /g flag from its match pattern`);
   const refs = [];
   for (const c of chapters) {
-    if (t.books && !t.books.includes(c.book)) continue;
-    const hits = Object.keys(c.verses).map(Number).filter(n => t.match.test(c.verses[n])).sort((a, b) => a - b);
+    // books: whole books ("John") or single chapters ("Matthew 5"); matchIn: a different pattern for a book or chapter
+    const here = `${c.book} ${c.ch}`;
+    if (t.books && !t.books.includes(c.book) && !t.books.includes(here)) continue;
+    const match = t.matchIn?.[here] ?? t.matchIn?.[c.book] ?? t.match;
+    const hits = Object.keys(c.verses).map(Number).filter(n => match.test(c.verses[n])).sort((a, b) => a - b);
     if (hits.length) refs.push([c.book, c.ch, hits]);
   }
   if (refs.length) entries.push({ id: t.id, kind: t.kind, name: t.name, refs });

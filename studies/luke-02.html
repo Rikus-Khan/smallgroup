@@ -1,0 +1,731 @@
+<!doctype html>
+<html lang="en" data-theme="night">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Luke 2</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="../assets/fonts.css">
+<link rel="stylesheet" href="../assets/deck.css">
+<link rel="stylesheet" href="../assets/themes.css">
+<style>
+/* lk02-manger: a feeding trough for a bed, and a full house with no room */
+.lk02-wood { fill: var(--leather); stroke: var(--leather-light); stroke-width: 3; }
+.lk02-straw { stroke: var(--warm); stroke-width: 3; stroke-linecap: round; }
+.lk02-cloth { fill: var(--surface-2); stroke: var(--ink-soft); stroke-width: 2; }
+.lk02-wrap { fill: none; stroke: var(--ink-soft); stroke-width: 2; }
+.lk02-face { fill: var(--warm); }
+.lk02-halo { fill: var(--accent); opacity: 0; transition: opacity 1.6s ease .4s; }
+.on .lk02-halo, .lk02-halo.on { opacity: .22; }
+.lk02-house { fill: var(--surface); stroke: var(--line-strong); stroke-width: 3; }
+.lk02-win { fill: var(--accent-hot); opacity: .75; }
+.lk02-door { fill: var(--surface-2); stroke: var(--line-strong); stroke-width: 3; }
+.lk02-full { fill: var(--ink-soft); }
+
+/* lk02-glory: a dark field at night, then the glory of the Lord shines round about */
+.lk02-sky { fill: var(--on-glow); }
+.lk02-star { fill: var(--glow); }
+.slide.active .lk02-star { animation: lk02-twinkle 2.6s ease-in-out infinite alternate; animation-delay: calc(var(--k) * -.4s); }
+@keyframes lk02-twinkle { from { opacity: .25; } to { opacity: .95; } }
+.lk02-hill { fill: color-mix(in srgb, var(--glow) 14%, var(--on-glow)); }
+.lk02-sheep { fill: color-mix(in srgb, var(--glow) 70%, var(--on-glow)); }
+.lk02-man { fill: color-mix(in srgb, var(--glow) 35%, var(--on-glow)); }
+.lk02-fire { fill: var(--warm); }
+.slide.active .lk02-fire { animation: lk02-flick 1s ease-in-out infinite alternate; transform-box: fill-box; transform-origin: 50% 100%; }
+@keyframes lk02-flick { from { transform: scaleY(.8); } to { transform: scaleY(1.15); } }
+.lk02-shine { opacity: 0; transition: opacity 2.2s ease; }
+.lk02-shine.on { opacity: 1; }
+.lk02-shine.on ~ g .lk02-sheep, .lk02-shine.on ~ g .lk02-man { fill: var(--on-glow); }
+
+/* lk02-life: Anna's years, drawn to scale */
+.lk02-life { margin: .4em 0 1em; }
+.lk02-bar { display: flex; height: clamp(34px, 6vh, 52px); border-radius: 8px; overflow: hidden; border: 1.5px solid var(--line-strong); background: var(--surface); }
+.lk02-bar i { display: block; width: 0; height: 100%; transition: width 1.6s cubic-bezier(.3,.7,.3,1); transition-delay: var(--w8, .2s); }
+.lk02-bar .lk02-wed { background: var(--cool); border-right: 3px solid var(--bg); }
+.lk02-bar .lk02-wid { background: var(--accent); --w8: 1.6s; }
+.slide.active .lk02-bar .lk02-wed { width: calc(7 / 91 * 100%); }
+.slide.active .lk02-bar .lk02-wid { width: calc(84 / 91 * 100%); }
+.lk02-keys { display: flex; flex-wrap: wrap; justify-content: space-between; gap: .3rem 1rem; margin-top: .45em; font-size: clamp(.85rem, .8rem + .3vw, 1.05rem); color: var(--ink-soft); }
+.lk02-keys b { color: var(--accent-hot); font-weight: 700; }
+.lk02-keys span:first-child b { color: var(--cool); }
+
+/* lk02-grow: four ways the boy grew, rising together */
+.lk02-grow { display: grid; grid-template-columns: repeat(4, 1fr); gap: clamp(.5rem, 1.6vw, 1.4rem); margin: .4em 0 1em; text-align: center; }
+.lk02-grow > div { display: grid; grid-template-rows: auto auto; gap: .4em; }
+.lk02-col { position: relative; height: clamp(90px, 17vh, 170px); border-bottom: 3px solid var(--line-strong); }
+.lk02-col i { position: absolute; left: 38%; right: 38%; bottom: 0; height: 12%; border-radius: 8px 8px 0 0; background: color-mix(in srgb, var(--accent) 75%, transparent);
+  transition: height 2.6s cubic-bezier(.3,.7,.3,1); transition-delay: calc(var(--k) * 180ms + 300ms); }
+.lk02-grow.on .lk02-col i { height: 92%; background: var(--accent); }
+.lk02-grow b { display: block; font: 600 clamp(.95rem, .85rem + .5vw, 1.3rem) var(--serif); }
+.lk02-grow small { display: block; color: var(--ink-soft); font-size: clamp(.78rem, .72rem + .3vw, 1rem); line-height: 1.3; }
+</style>
+</head>
+<body>
+<main class="deck" id="deck">
+
+<!-- ======================= OPENING ======================= -->
+<section class="slide title">
+  <div class="inner">
+    <div class="emblem rise"></div>
+    <h1 class="rise" style="--d:1">Luke 2</h1>
+    <p class="sub rise" style="--d:3">Unto you is born a Saviour</p>
+    <p class="tag rise" style="--d:5">Jesus is born in Bethlehem, shepherds hear the news first, two old saints see God's promise in a baby, and a twelve-year-old boy is found in His Father's house.</p>
+  </div>
+</section>
+
+<section class="slide watch">
+  <div class="inner">
+    <h2 class="rise">Things to watch for</h2>
+    <p class="lede rise" style="--d:1">Keep these questions in the back of your mind as we read. We'll come back to every one of them at the end.</p>
+    <ol class="seeds">
+      <li class="step"><span class="topic">Who Jesus is</span><span class="seed-q">What three names does the angel give the baby born in Bethlehem?</span></li>
+      <li class="step"><span class="topic">Good news</span><span class="seed-q">Who is the good news of Jesus for?</span></li>
+      <li class="step"><span class="topic">Telling others</span><span class="seed-q">What did the shepherds do after they had seen Jesus?</span></li>
+      <li class="step"><span class="topic">Waiting on God</span><span class="seed-q">How did Simeon and Anna spend their long years of waiting?</span></li>
+      <li class="step"><span class="topic">Salvation</span><span class="seed-q">What did Simeon see when he took the baby in his arms?</span></li>
+      <li class="step"><span class="topic">Growing</span><span class="seed-q">How did Jesus grow up in Nazareth?</span></li>
+    </ol>
+  </div>
+</section>
+
+<!-- ======================= PART ONE: NO ROOM ======================= -->
+<section class="slide part">
+  <div class="inner">
+    <p class="part-n rise">Part one</p>
+    <h2 class="rise" style="--d:1">No room in the inn</h2>
+    <p class="range rise" style="--d:2">Verses 1–7</p>
+    <div class="rule"></div>
+    <p class="hook rise" style="--d:4">An emperor signs a decree in Rome, and a carpenter and his young wife set out for Bethlehem.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="1-3" data-hl="a decree from Caesar Augustus|every one into his own city"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="1" data-hl="a decree from Caesar Augustus"></blockquote>
+    <h2 class="rise" style="--d:1">Caesar's decree, God's plan</h2>
+    <p class="note rise" style="--d:2">Caesar Augustus was Rome's first emperor. He ruled from 27 BC to AD 14, and people hailed him as a bringer of peace. To be <em>“taxed”</em> here means to be <em>registered</em>: every man signed up in the town his family came from, so Rome knew whom to tax. Cyrenius was the Roman governor of Syria, the province that oversaw this corner of the empire.</p>
+    <div class="chains">
+      <div class="chain step"><span class="who-chip">Caesar in Rome</span><span class="said">signs a decree</span><span class="who-chip">the governor of Syria</span><span class="said">carries it out</span><span class="who-chip">every man</span><span class="said">to his own city</span><span class="who-chip jesus">Joseph and Mary, to Bethlehem</span></div>
+    </div>
+    <p class="note step">The most powerful man in the world thought he was counting his subjects. Without knowing it, he was moving a carpenter and his wife to the one town the prophet had named.</p>
+    <blockquote class="quote step"><p>“But when the fulness of the time was come, God sent forth his Son, made of a woman, made under the law,”</p><cite>Galatians 4:4</cite></blockquote>
+  </div>
+</section>
+
+<section class="slide verse" data-v="4-5" data-hl="unto the city of David, which is called Bethlehem|the house and lineage of David|being great with child"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <div class="split">
+      <div class="stage">
+        <svg class="map" data-land viewBox="100 110 260 330" data-towns="Nazareth*:l, Jerusalem:r, Bethlehem!:l" role="img" aria-label="A map of the land. A road runs south from Nazareth in Galilee, down through Samaria, past Jerusalem to Bethlehem in Judaea, about 80 to 90 miles.">
+          <path class="map-route" pathLength="1" d="M214 172 C 204 205, 208 240, 205 270 C 202 300, 212 330, 206 352 C 202 368, 202 378, 200 390 L 195 401"/>
+          <text class="map-soft" x="240" y="296" font-size="13">about 80–90</text>
+          <text class="map-soft" x="240" y="312" font-size="13">miles on foot</text>
+        </svg>
+      </div>
+      <div>
+        <h2 class="rise" style="--d:1">Down to the city of David</h2>
+        <p class="note rise" style="--d:2">About 80 or 90 miles, most of a week on foot, with Mary <em>“great with child.”</em> <em>“Espoused”</em> means promised in marriage, as binding as marriage itself.</p>
+        <p class="note step">Joseph was of David's family line, so he registered in Bethlehem, David's hometown, the very town the prophet named:</p>
+        <blockquote class="quote step"><p>“But thou, Beth-lehem Ephratah, though thou be little among the thousands of Judah, yet out of thee shall he come forth unto me that is to be ruler in Israel; whose goings forth have been from of old, from everlasting.”</p><cite>Micah 5:2, about 700 years earlier</cite></blockquote>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="slide verse" data-v="6-7" data-hl="wrapped him in swaddling clothes, and laid him in a manger|there was no room for them in the inn"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <div class="split">
+      <div class="stage">
+        <svg viewBox="0 0 520 300" role="img" aria-label="A wooden feeding trough with straw, and a baby wrapped tight in strips of cloth lying in it. Beside it, a small house with lit windows is full, its door shut.">
+          <g class="rise" style="--d:2">
+            <path class="lk02-house" d="M300 120 L410 60 L520 120 L520 270 L300 270 Z"/>
+            <rect class="lk02-win" x="322" y="150" width="34" height="30" rx="3"/>
+            <rect class="lk02-win" x="466" y="150" width="34" height="30" rx="3"/>
+            <rect class="lk02-door" x="390" y="190" width="42" height="80" rx="4"/>
+            <circle class="lk02-full" cx="334" cy="168" r="6"/><circle class="lk02-full" cx="346" cy="170" r="5"/>
+            <circle class="lk02-full" cx="478" cy="168" r="6"/><circle class="lk02-full" cx="490" cy="169" r="5"/>
+            <text x="411" y="298" text-anchor="middle" font-size="18" style="fill:var(--ink-soft)">no room</text>
+          </g>
+          <g class="rise" style="--d:3">
+            <ellipse class="lk02-halo step" cx="140" cy="170" rx="130" ry="90"/>
+            <path class="lk02-wood" d="M40 160 L240 160 L215 230 L65 230 Z"/>
+            <line class="lk02-wood" x1="70" y1="230" x2="52" y2="280"/><line class="lk02-wood" x1="210" y1="230" x2="228" y2="280"/>
+            <line class="lk02-straw" x1="58" y1="158" x2="80" y2="142"/><line class="lk02-straw" x1="96" y1="160" x2="84" y2="140"/><line class="lk02-straw" x1="196" y1="160" x2="214" y2="141"/><line class="lk02-straw" x1="226" y1="158" x2="208" y2="144"/>
+            <path class="lk02-cloth" d="M88 152 C 88 126, 186 124, 192 146 C 196 164, 96 172, 88 152 Z"/>
+            <path class="lk02-wrap" d="M112 132 C 116 146, 116 156, 112 166 M136 128 C 140 144, 140 156, 136 168 M160 128 C 164 144, 164 156, 160 167"/>
+            <circle class="lk02-face" cx="188" cy="140" r="15"/>
+          </g>
+          <text x="140" y="298" text-anchor="middle" font-size="18" style="fill:var(--accent-hot)">a manger</text>
+        </svg>
+      </div>
+      <div>
+        <h2 class="rise" style="--d:1">A feed trough for a bed</h2>
+        <p class="note rise" style="--d:2"><em>Swaddling clothes</em> were strips of cloth wrapped snug around a newborn, as every mother did. A <em>manger</em> is a feeding trough for animals, of stone or wood.</p>
+        <p class="note step">The <em>inn</em> may have been a guest room in a house already packed with family in town for the count. No space for a birth, so the baby was laid where the animals ate.</p>
+        <p class="note step">The Son of God's first bed was a feed box. He started at the bottom on purpose. Nobody who comes to Him will ever find Him too high up to reach.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ======================= PART TWO: GOOD TIDINGS ======================= -->
+<section class="slide part">
+  <div class="inner">
+    <p class="part-n rise">Part two</p>
+    <h2 class="rise" style="--d:1">Good tidings of great joy</h2>
+    <p class="range rise" style="--d:2">Verses 8–20</p>
+    <div class="rule"></div>
+    <p class="hook rise" style="--d:4">A night shift in the fields, and heaven breaks in.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="8-9" data-hl="keeping watch over their flock by night|the glory of the Lord shone round about them|they were sore afraid"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <div class="split">
+      <div class="stage">
+        <svg viewBox="0 0 560 330" role="img" aria-label="A dark hillside at night under stars, with sheep and shepherds by a small fire. Then a great light floods the whole sky.">
+          <defs>
+            <clipPath id="lk02-frame"><rect x="0" y="0" width="560" height="330" rx="8"/></clipPath>
+            <radialGradient id="lk02-glow" cx="50%" cy="22%" r="75%"><stop offset="0" style="stop-color:var(--glow)"/><stop offset=".35" stop-opacity=".9" style="stop-color:var(--glow)"/><stop offset=".7" stop-opacity=".35" style="stop-color:var(--accent)"/><stop offset="1" stop-opacity="0" style="stop-color:var(--accent)"/></radialGradient>
+          </defs>
+          <g clip-path="url(#lk02-frame)">
+            <rect class="lk02-sky" x="0" y="0" width="560" height="330"/>
+            <circle class="lk02-star" style="--k:0" cx="60" cy="40" r="2.5"/><circle class="lk02-star" style="--k:1" cx="140" cy="80" r="2"/><circle class="lk02-star" style="--k:2" cx="230" cy="30" r="3"/>
+            <circle class="lk02-star" style="--k:3" cx="330" cy="70" r="2"/><circle class="lk02-star" style="--k:4" cx="420" cy="36" r="2.5"/><circle class="lk02-star" style="--k:5" cx="500" cy="90" r="2"/>
+            <circle class="lk02-star" style="--k:6" cx="280" cy="120" r="1.8"/><circle class="lk02-star" style="--k:7" cx="90" cy="130" r="1.8"/><circle class="lk02-star" style="--k:8" cx="470" cy="150" r="1.8"/>
+            <rect class="lk02-shine step" x="0" y="0" width="560" height="330" fill="url(#lk02-glow)"/>
+            <g>
+              <path class="lk02-hill" d="M0 240 C 120 200, 260 210, 380 230 C 450 240, 520 226, 560 214 L560 330 L0 330 Z"/>
+              <ellipse class="lk02-sheep" cx="90" cy="258" rx="20" ry="11"/><ellipse class="lk02-sheep" cx="130" cy="268" rx="18" ry="10"/><ellipse class="lk02-sheep" cx="170" cy="254" rx="19" ry="11"/>
+              <ellipse class="lk02-sheep" cx="420" cy="262" rx="18" ry="10"/><ellipse class="lk02-sheep" cx="460" cy="272" rx="20" ry="11"/>
+              <g class="lk02-man"><circle cx="268" cy="214" r="9"/><path d="M256 226 Q268 220 280 226 L284 272 L252 272 Z"/></g>
+              <g class="lk02-man"><circle cx="326" cy="220" r="9"/><path d="M314 232 Q326 226 338 232 L342 276 L310 276 Z"/></g>
+              <path class="lk02-fire" d="M290 282 C 288 268, 298 262, 297 252 C 304 262, 310 270, 306 282 Z"/>
+            </g>
+          </g>
+        </svg>
+      </div>
+      <div>
+        <h2 class="rise" style="--d:1">The night shift</h2>
+        <p class="note rise" style="--d:2">Shepherds worked rough hours and slept in the field with the flock. They were working men, and many people in their day looked down on them.</p>
+        <p class="note step">Then <em>“the glory of the Lord shone round about them.”</em> The bright light of God's own presence lit up a sheep pasture.</p>
+        <p class="note step">God sent the first news of His Son to men at work in the dark, not to the palace or the temple. If you've ever thought you were too far down for God to notice, notice who heard first.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="slide verse" data-v="10-12" data-hl="Fear not: for, behold, I bring you good tidings of great joy, which shall be to all people|a Saviour, which is Christ the Lord"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="11"></blockquote>
+    <h2 class="rise" style="--d:1">Three names for one baby</h2>
+    <ul class="signs">
+      <li class="step now"><b>a Saviour</b>He came to rescue. “thou shalt call his name JESUS: for he shall save his people from their sins” (Matthew 1:21).</li>
+      <li class="step now"><b>Christ</b>Greek for “the Anointed One,” the same as the Hebrew <span class="gk">Messiah</span>: the King God had promised for centuries.</li>
+      <li class="step now"><b>the Lord</b>The name above every name. The baby in the manger is God come in the flesh.</li>
+    </ul>
+    <p class="note step"><em>“Good tidings”</em> means good news, which is what the word <em>gospel</em> means. And it's <em>“to all people.”</em> Not to the good people, or the religious people. All people. Then the angel makes it personal: <em>“unto you.”</em></p>
+    <p class="note step">The sign was strange: a newborn lying in a feed trough. There would be only one of those in Bethlehem that night.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="13-14" data-hl="a multitude of the heavenly host|Glory to God in the highest, and on earth peace, good will toward men"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="13" data-hl="a multitude of the heavenly host"></blockquote>
+    <p class="saying rise" style="--d:1">Glory to God in the highest, and on earth <em>peace</em>.</p>
+    <p class="note rise" style="--d:2">A <em>“host”</em> is an army. Heaven's army showed up, not to fight, but to sing.</p>
+    <p class="note step">The peace they announced isn't first a world without wars. It's peace between God and men. Through this child, sinners who were God's enemies can be made right with Him.</p>
+    <blockquote class="quote step"><p>“Therefore being justified by faith, we have peace with God through our Lord Jesus Christ:”</p><cite>Romans 5:1</cite></blockquote>
+    <p class="note step">A man can quit fighting God today. That's where real peace starts, the kind no bottle or pill ever gave.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="15-17" data-hl="Let us now go even unto Bethlehem, and see|they came with haste|they made known abroad the saying"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="17" data-hl="they made known abroad the saying"></blockquote>
+    <h2 class="rise" style="--d:1">Hear it, go see, tell it</h2>
+    <div class="chains">
+      <div class="chain step"><span class="who-chip">the angel</span><span class="said">told</span><span class="who-chip">the shepherds</span><span class="said">“Let us now go… and see”</span><span class="who-chip jesus">the babe in the manger</span></div>
+      <div class="chain step"><span class="who-chip">the shepherds</span><span class="said">“made known abroad”</span><span class="who-chip">everyone they met</span><span class="said">wondered</span></div>
+    </div>
+    <p class="note step">They didn't hold a meeting about it. They went <em>“with haste,”</em> found it just as the angel said, and then couldn't keep quiet.</p>
+    <p class="note step">You don't need a Bible degree to do what these men did. Tell what you've seen and heard. <em>Here's what Jesus did for me</em> is a testimony nobody can argue you out of.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="18-20" data-hl="Mary kept all these things, and pondered them in her heart|the shepherds returned, glorifying and praising God"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="19"></blockquote>
+    <h2 class="rise" style="--d:1">Two ways to answer what God did</h2>
+    <div class="columns">
+      <div class="col law rise" style="--d:2">
+        <p class="who">Mary</p>
+        <h3>Kept and pondered</h3>
+        <p>She held on to every word and turned it over in her heart. She'd keep doing that for thirty years.</p>
+      </div>
+      <div class="col grace step">
+        <p class="who">The shepherds</p>
+        <h3>Returned, praising God</h3>
+        <p>Back to the same fields, the same sheep, the same night shift. But they weren't the same men.</p>
+      </div>
+    </div>
+    <p class="note step">Meeting Jesus doesn't always change your address or your job. It changes the man who goes back to them. Some of us go home to the same town and the same family, and they notice the difference before we say a word.</p>
+  </div>
+</section>
+
+<!-- ======================= PART THREE: SIMEON AND ANNA ======================= -->
+<section class="slide part">
+  <div class="inner">
+    <p class="part-n rise">Part three</p>
+    <h2 class="rise" style="--d:1">Mine eyes have seen</h2>
+    <p class="range rise" style="--d:2">Verses 21–40</p>
+    <div class="rule"></div>
+    <p class="hook rise" style="--d:4">At the temple, an old man and an old woman who never stopped waiting.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="21-24" data-hl="his name was called JESUS|to present him to the Lord|A pair of turtledoves, or two young pigeons"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise">Everything the law asked</h2>
+    <ol class="checks">
+      <li class="step"><span class="tick">✓</span><q>for the circumcising of the child</q><small>on the eighth day, the sign of God's covenant with Abraham (Leviticus 12:3)</small><b>2:21</b></li>
+      <li class="step"><span class="tick">✓</span><q>his name was called JESUS</q><small>the name the angel gave before He was conceived (Luke 1:31)</small><b>2:21</b></li>
+      <li class="step"><span class="tick">✓</span><q>the days of her purification</q><small>forty days after a son's birth, the mother came to the temple (Leviticus 12:2–4)</small><b>2:22</b></li>
+      <li class="step"><span class="tick">✓</span><q>to present him to the Lord</q><small>every firstborn son belonged to God (Exodus 13:2)</small><b>2:22–23</b></li>
+    </ol>
+    <p class="note step">The offering tells us something. The law asked for a lamb, but made room for the poor:</p>
+    <blockquote class="quote step"><p>“And if she be not able to bring a lamb, then she shall bring two turtles, or two young pigeons; the one for the burnt offering, and the other for a sin offering: and the priest shall make an atonement for her, and she shall be clean.”</p><cite>Leviticus 12:8</cite></blockquote>
+    <p class="note step">Joseph and Mary couldn't afford a lamb. They didn't need to. They were carrying the Lamb of God.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="25-28" data-hl="waiting for the consolation of Israel|he should not see death, before he had seen the Lord’s Christ|Then took he him up in his arms"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <div class="split">
+      <div class="stage">
+        <svg class="clock" viewBox="0 -44 320 364" style="--from:-330deg;--stop:0deg" role="img" aria-label="A clock hand sweeps all the way round and stops right on the hour: the wait is over.">
+          <circle class="clock-face" cx="160" cy="160" r="140"/>
+          <g>
+            <line class="clock-tick" x1="160" y1="38" x2="160" y2="58" transform="rotate(30 160 160)"/>
+            <line class="clock-tick" x1="160" y1="38" x2="160" y2="58" transform="rotate(60 160 160)"/>
+            <line class="clock-tick" x1="160" y1="38" x2="160" y2="58" transform="rotate(90 160 160)"/>
+            <line class="clock-tick" x1="160" y1="38" x2="160" y2="58" transform="rotate(120 160 160)"/>
+            <line class="clock-tick" x1="160" y1="38" x2="160" y2="58" transform="rotate(150 160 160)"/>
+            <line class="clock-tick" x1="160" y1="38" x2="160" y2="58" transform="rotate(180 160 160)"/>
+            <line class="clock-tick" x1="160" y1="38" x2="160" y2="58" transform="rotate(210 160 160)"/>
+            <line class="clock-tick" x1="160" y1="38" x2="160" y2="58" transform="rotate(240 160 160)"/>
+            <line class="clock-tick" x1="160" y1="38" x2="160" y2="58" transform="rotate(270 160 160)"/>
+            <line class="clock-tick" x1="160" y1="38" x2="160" y2="58" transform="rotate(300 160 160)"/>
+            <line class="clock-tick" x1="160" y1="38" x2="160" y2="58" transform="rotate(330 160 160)"/>
+          </g>
+          <circle class="clock-hour" cx="160" cy="44" r="13"/>
+          <line class="clock-hand" x1="160" y1="160" x2="160" y2="62"/>
+          <circle cx="160" cy="160" r="10" style="fill:var(--accent)"/>
+          <text x="160" y="-14" text-anchor="middle" font-size="20" class="serif" style="fill:var(--accent-hot)">“the Lord’s Christ”</text>
+        </svg>
+      </div>
+      <div>
+        <h2 class="rise" style="--d:1">A lifetime of waiting</h2>
+        <p class="note rise" style="--d:2">The <em>“consolation of Israel”</em> means the comfort God had promised His people: the Christ who would come and set things right. Simeon had watched for Him for years.</p>
+        <p class="note step">God had told him he would see the Christ before he died. Day after day it was just another day. Then one day a poor couple walked in with a baby, and he knew.</p>
+        <p class="note step">Simeon was <em>“just and devout,”</em> and the Holy Ghost was on him. Waiting didn't make him bitter. Waiting kept him close to God and ready.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="slide verse" data-v="29-32" data-hl="now lettest thou thy servant depart in peace|mine eyes have seen thy salvation|A light to lighten the Gentiles"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="30"></blockquote>
+    <h2 class="rise" style="--d:1">Salvation has a face</h2>
+    <p class="note rise" style="--d:2"><em>“Lettest thou thy servant depart”</em>: Simeon talks like a watchman at the end of his shift. <em>Lord, I've seen what You posted me here to see. I can go home now.</em> He was ready to die.</p>
+    <p class="note step">He held a baby and said <em>“mine eyes have seen thy salvation.”</em> Salvation isn't a program or a set of rules. It's a Person, and Simeon had Him in his arms.</p>
+    <div class="columns">
+      <div class="col law step">
+        <p class="who">For the nations</p>
+        <h3>“A light to lighten the Gentiles”</h3>
+        <p>God promised this long before: “I will also give thee for a light to the Gentiles” (Isaiah 49:6). That's most of us in this room.</p>
+      </div>
+      <div class="col grace step">
+        <p class="who">For the Jews</p>
+        <h3>“The glory of thy people Israel”</h3>
+        <p>The best thing that ever came out of Israel is the Messiah, born a Jew of David's line.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="slide verse" data-v="33-35" data-hl="this child is set for the fall and rising again of many in Israel|a sword shall pierce through thy own soul also"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <div class="split">
+      <div class="stage">
+        <svg class="curve" viewBox="0 0 600 330" role="img" aria-label="A line falls to a low point, then climbs high: a fall and a rising again.">
+          <line class="curve-base" x1="10" y1="110" x2="590" y2="110"/>
+          <path class="curve-line" pathLength="1" d="M20 110 C 90 110, 130 140, 180 240 C 210 300, 250 300, 280 240 C 330 130, 400 50, 580 40"/>
+          <g class="curve-pt low" style="--at:1.6s"><circle cx="230" cy="284" r="9"/><text x="230" y="318" text-anchor="middle">“the fall”</text></g>
+          <g class="curve-pt high" style="--at:3.4s"><circle cx="575" cy="41" r="10"/><text class="q" x="590" y="150" text-anchor="end">“and rising</text><text class="q" x="590" y="174" text-anchor="end">again of many”</text></g>
+        </svg>
+      </div>
+      <div>
+        <h2 class="rise" style="--d:1">A child no one can ignore</h2>
+        <p class="note rise" style="--d:2">Jesus would divide people. Some would trip over Him and fall. Many would be lifted up by Him. What a man does with Jesus shows what is in his heart.</p>
+        <p class="note step">Plenty of us know both halves. We fell hard, and He picked us up.</p>
+        <p class="note step">Then a hard word for Mary: <em>“a sword shall pierce through thy own soul.”</em> Some thirty years later, <em>“there stood by the cross of Jesus his mother”</em> (John 19:25).</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="slide verse" data-v="36-38" data-hl="a widow of about fourscore and four years|served God with fastings and prayers night and day|spake of him to all them that looked for redemption in Jerusalem"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="37" data-hl="served God with fastings and prayers night and day"></blockquote>
+    <h2 class="rise" style="--d:1">Anna: loss that didn't end in bitterness</h2>
+    <div class="lk02-life rise" style="--d:2" role="img" aria-label="A bar: a short piece for seven years of marriage, then a long piece for the rest of her long life as a widow serving God.">
+      <div class="lk02-bar"><i class="lk02-wed"></i><i class="lk02-wid"></i></div>
+      <div class="lk02-keys"><span><b>7 years</b> married</span><span>then <b>a widow</b> the rest of her long life, serving God in the temple</span></div>
+    </div>
+    <p class="note step">A <em>prophetess</em> spoke God's word. Anna was of the tribe of Aser (Asher), one of the northern tribes scattered by Assyria some 700 years before. <em>“Fourscore and four”</em> is 84. That's either her age, or how long she'd been a widow, which would put her past a hundred.</p>
+    <p class="note step">She lost her husband young. Grief like that drives some people away from God. It drove Anna to Him. <em>“Fastings”</em> means going without food to give the time to prayer.</p>
+    <p class="note step">Then she went and told everyone in Jerusalem who was looking for redemption that He had come. Whatever you've lost, God isn't finished with you.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="39-40" data-hl="they returned into Galilee, to their own city Nazareth|the grace of God was upon him"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise">The early years</h2>
+    <ol class="timeline" aria-label="About 5 BC, Jesus is born in Bethlehem. Eight days later He is circumcised and named. At forty days He is presented in the temple. Then the wise men come and the family flees to Egypt, told in Matthew 2. They settle in Nazareth. At twelve, about AD 7, Jesus is in the temple at Passover. About AD 27, at about thirty, He is baptized in Luke 3.">
+      <li class="lit" style="--k:0"><b>about 5 BC</b><span>born in Bethlehem</span><small>2:7</small></li>
+      <li class="lit" style="--k:1"><b>day 8</b><span>circumcised and named</span><small>2:21</small></li>
+      <li class="lit" style="--k:2"><b>day 40</b><span>presented in the temple</span><small>2:22</small></li>
+      <li class="wait" style="--k:3"><b>after that</b><span>wise men, then Egypt</span><small>Matthew 2</small></li>
+      <li style="--k:4"><b>about AD 7</b><span>twelve, at the Passover</span><small>2:42</small></li>
+      <li style="--k:5"><b>about AD 27</b><span>about thirty, baptized</span><small>Luke 3</small></li>
+    </ol>
+    <p class="note rise" style="--d:3">Luke goes straight from the temple to Nazareth. Matthew fills in what came between: the wise men, Herod's rage, and a few years in Egypt before the family settled in Galilee (Matthew 2). Both are true. Each writer tells what serves his purpose.</p>
+    <p class="note step">Then Luke sums up about ten years in one sentence: the child <em>“grew, and waxed strong in spirit.”</em> To <em>wax</em> is to grow. And <em>“the grace of God was upon him.”</em></p>
+  </div>
+</section>
+
+<!-- ======================= PART FOUR: MY FATHER'S BUSINESS ======================= -->
+<section class="slide part">
+  <div class="inner">
+    <p class="part-n rise">Part four</p>
+    <h2 class="rise" style="--d:1">My Father's business</h2>
+    <p class="range rise" style="--d:2">Verses 41–52</p>
+    <div class="rule"></div>
+    <p class="hook rise" style="--d:4">A Passover trip, a missing boy, and the first words of Jesus we have.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="41-42" data-hl="his parents went to Jerusalem every year|when he was twelve years old"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <div class="split">
+      <div class="stage">
+        <svg class="map" data-land viewBox="100 110 260 330" data-towns="Nazareth*:l, Jericho:l, Jerusalem!:l" role="img" aria-label="A map of the land with two pilgrim roads from Nazareth to Jerusalem: one straight south through Samaria, and one down the Jordan valley to Jericho and up to Jerusalem.">
+          <path class="map-way" d="M214 172 C 204 205, 208 240, 205 270 C 202 300, 212 330, 206 352 C 202 368, 202 378, 202 385"/>
+          <path class="map-route" pathLength="1" d="M214 172 C 236 176, 256 190, 262 214 C 268 250, 266 300, 258 340 C 254 352, 248 358, 243 363 C 232 370, 214 378, 202 385"/>
+          <text class="map-soft" x="128" y="300" font-size="12">through Samaria</text>
+          <text class="map-soft" x="276" y="292" font-size="12">down the</text>
+          <text class="map-soft" x="276" y="306" font-size="12">Jordan valley</text>
+        </svg>
+      </div>
+      <div>
+        <h2 class="rise" style="--d:1">Up to Jerusalem</h2>
+        <p class="note rise" style="--d:2">The law called the men of Israel to Jerusalem for the great feasts. Joseph and Mary went <em>“every year”</em> for Passover, about 70 to 90 miles each way depending on the road, several days on foot.</p>
+        <p class="note step">Families from a village traveled together in a big group for safety. Some went straight south through Samaria. Others took the road down the Jordan valley and up the steep climb from Jericho. Luke doesn't say which way they went.</p>
+        <p class="note step">At twelve, a Jewish boy was close to the age when he would take on the law's duties as a man. This trip mattered.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="slide verse" data-v="43-45" data-hl="the child Jesus tarried behind in Jerusalem|supposing him to have been in the company|they turned back again to Jerusalem, seeking him"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="44" data-hl="supposing him to have been in the company"></blockquote>
+    <h2 class="rise" style="--d:1">Three days</h2>
+    <ol class="timeline">
+      <li data-n="1" style="--k:0"><b>Day one</b><span>a day's walk toward home</span><small>“supposing him to have been in the company”</small></li>
+      <li data-n="2" style="--k:1"><b>Day two</b><span>back to Jerusalem</span><small>“seeking him”</small></li>
+      <li class="lit" data-n="3" style="--k:2"><b>Day three</b><span>found in the temple</span><small>“after three days”</small></li>
+    </ol>
+    <p class="note step">In a crowd of relatives, it was easy to assume He was somewhere up ahead with the cousins. Nobody checked until night fell.</p>
+    <p class="note step">It can happen to us. We keep going to the meetings and going through the motions, assuming Jesus is with us, and one day we notice we haven't spoken to Him in weeks. The answer is what Joseph and Mary did: turn back, and go find Him.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="46-47" data-hl="sitting in the midst of the doctors, both hearing them, and asking them questions|astonished at his understanding and answers"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="46" data-hl="both hearing them, and asking them questions"></blockquote>
+    <h2 class="rise" style="--d:1">A boy among the teachers</h2>
+    <p class="note rise" style="--d:2">The <em>doctors</em> weren't physicians. They were teachers of the law, the scholars who taught in the temple courts. Anyone could sit and listen.</p>
+    <ul class="signs">
+      <li class="step"><b>hearing them</b>He listened first.</li>
+      <li class="step"><b>asking them questions</b>He was a real student, not a show-off.</li>
+      <li class="step now"><b>answers</b>And when they questioned Him, His understanding amazed them.</li>
+    </ul>
+    <p class="note step">Jesus is God's Son, and at twelve He still sat and listened. None of us is too old or too far along to sit under God's Word and ask questions.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="48-50" data-hl="thy father and I have sought thee sorrowing|wist ye not that I must be about my Father’s business?"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="49"></blockquote>
+    <h2 class="rise" style="--d:1">Which father?</h2>
+    <div class="mirror">
+      <div class="step"><span>Mary</span><span class="arrow">→</span><span class="word">“thy father and I”</span><small>Joseph, the man who raised Him.</small></div>
+      <div class="step"><span>Jesus</span><span class="arrow">→</span><span class="word">“my Father's business”</span><small>God. The temple was His Father's house.</small></div>
+    </div>
+    <p class="note step">These are the first words of Jesus the Bible records. <em>“Wist ye not”</em> means <em>didn't you know?</em> At twelve He already knew who His Father was and why He had come.</p>
+    <p class="note step">He wasn't being rude. And they didn't understand yet (v. 50). Mary kept that saying too, and one day it would make sense.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="51-52" data-hl="was subject unto them|Jesus increased in wisdom and stature, and in favour with God and man"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="52"></blockquote>
+    <h2 class="rise" style="--d:1">Growing up whole</h2>
+    <div class="lk02-grow step" role="img" aria-label="Four columns rise together: wisdom, stature, favour with God, and favour with man.">
+      <div><div class="lk02-col"><i style="--k:0"></i></div><b>wisdom</b><small>His mind</small></div>
+      <div><div class="lk02-col"><i style="--k:1"></i></div><b>stature</b><small>His body</small></div>
+      <div><div class="lk02-col"><i style="--k:2"></i></div><b>favour with God</b><small>His walk with the Father</small></div>
+      <div><div class="lk02-col"><i style="--k:3"></i></div><b>favour with man</b><small>His dealings with people</small></div>
+    </div>
+    <p class="note step">The Son of God went home and <em>“was subject unto them,”</em> obeying Joseph and Mary in a carpenter's house in a small town for some eighteen more years.</p>
+    <p class="note step">Growth is slow and it's daily. Recovery is like that: a clearer mind, a body healing, time with God, and learning to deal honestly with people. Nobody grows all four overnight. Just keep growing.</p>
+  </div>
+</section>
+
+<!-- ======================= CLOSING ======================= -->
+<section class="slide remember">
+  <div class="inner">
+    <h2 class="rise">Points to remember</h2>
+    <ol class="seeds">
+      <li class="step"><span class="topic">Who Jesus is</span><span class="seed-q">“A Saviour, which is Christ the Lord” <cite>2:11</cite></span><span class="take">He came to save. He is the promised King. He is God Himself.</span></li>
+      <li class="step"><span class="topic">Good news</span><span class="seed-q">“Which shall be to all people” <cite>2:10</cite></span><span class="take">No one is shut out. The news came first to working men in the dark.</span></li>
+      <li class="step"><span class="topic">Telling others</span><span class="seed-q">“They made known abroad the saying” <cite>2:17</cite></span><span class="take">Go and see, then tell what you've seen. That's all a witness is.</span></li>
+      <li class="step"><span class="topic">Waiting on God</span><span class="seed-q">“Fastings and prayers night and day” <cite>2:37</cite></span><span class="take">They kept close to God while they waited, and He kept His word.</span></li>
+      <li class="step"><span class="topic">Salvation</span><span class="seed-q">“Mine eyes have seen thy salvation” <cite>2:30</cite></span><span class="take">Salvation is a Person: Jesus, a light for the Gentiles and the glory of Israel.</span></li>
+      <li class="step"><span class="topic">Growing</span><span class="seed-q">“Jesus increased in wisdom and stature” <cite>2:52</cite></span><span class="take">He grew in mind, body, spirit, and with people. Growth is daily.</span></li>
+    </ol>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 1 of 6</p>
+      <span class="topic">Who Jesus is</span>
+      <h2>What three names does the angel give the baby born in Bethlehem?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="11" data-hl="a Saviour, which is Christ the Lord"></blockquote>
+      <blockquote class="quote step" data-q="21" data-hl="his name was called JESUS"></blockquote>
+      <blockquote class="quote step"><p>“And she shall bring forth a son, and thou shalt call his name JESUS: for he shall save his people from their sins.”</p><cite>Matthew 1:21</cite></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>A Saviour, Christ, and the Lord. He came to rescue us from our sins, He is the Messiah God promised, and He is God come in the flesh. All three were true of the baby lying in a manger.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 2 of 6</p>
+      <span class="topic">Good news</span>
+      <h2>Who is the good news of Jesus for?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="10" data-hl="which shall be to all people"></blockquote>
+      <blockquote class="quote step" data-q="31"></blockquote>
+      <blockquote class="quote step" data-q="32"></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>All people. The angel said so, and God showed it by telling shepherds first. Simeon said Jesus is a light for the Gentiles as well as the glory of Israel. No one is too low, too far gone, or from the wrong people. It's for you.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 3 of 6</p>
+      <span class="topic">Telling others</span>
+      <h2>What did the shepherds do after they had seen Jesus?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="16"></blockquote>
+      <blockquote class="quote step" data-q="17"></blockquote>
+      <blockquote class="quote step" data-q="20"></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>They told everyone what they had been told about the child, and went back to their work glorifying and praising God. They didn't wait until they understood it all. They told what they had seen and heard.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 4 of 6</p>
+      <span class="topic">Waiting on God</span>
+      <h2>How did Simeon and Anna spend their long years of waiting?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="25"></blockquote>
+      <blockquote class="quote step" data-q="37"></blockquote>
+      <blockquote class="quote step" data-q="38"></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>Close to God. Simeon lived a just and devout life with the Holy Ghost upon him. Anna stayed at the temple, praying and fasting night and day. Neither of them quit or grew bitter, and God kept His promise to both of them.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 5 of 6</p>
+      <span class="topic">Salvation</span>
+      <h2>What did Simeon see when he took the baby in his arms?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="28"></blockquote>
+      <blockquote class="quote step" data-q="30"></blockquote>
+      <blockquote class="quote step" data-q="32"></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>God's salvation. Simeon held a baby and said he had seen it. Salvation isn't something we work up. It's a Person God prepared and sent: Jesus, the light for the nations and the glory of Israel. Whoever receives Him has it.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 6 of 6</p>
+      <span class="topic">Growing</span>
+      <h2>How did Jesus grow up in Nazareth?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="40"></blockquote>
+      <blockquote class="quote step" data-q="51" data-hl="was subject unto them"></blockquote>
+      <blockquote class="quote step" data-q="52"></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>Under His parents' roof and in obedience to them. He grew strong in spirit, filled with wisdom, with God's grace upon Him. He grew in wisdom, in body, in favour with God, and in favour with people. It happened over years, one day at a time.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide prayer">
+  <div class="inner">
+    <div class="emblem rise"></div>
+    <h2 class="rise" style="--d:1">Prayer requests</h2>
+    <p class="ask-line rise" style="--d:2">What can we pray about for you today?</p>
+    <blockquote class="quote rise" style="--d:4"><p>“Be careful for nothing; but in every thing by prayer and supplication with thanksgiving let your requests be made known unto God.”</p><cite>Philippians 4:6</cite></blockquote>
+  </div>
+</section>
+
+</main>
+
+<script>
+// King James Version, Luke chapter 2
+const V = {
+  1: "And it came to pass in those days, that there went out a decree from Caesar Augustus, that all the world should be taxed.",
+  2: "(And this taxing was first made when Cyrenius was governor of Syria.)",
+  3: "And all went to be taxed, every one into his own city.",
+  4: "And Joseph also went up from Galilee, out of the city of Nazareth, into Judaea, unto the city of David, which is called Bethlehem; (because he was of the house and lineage of David:)",
+  5: "To be taxed with Mary his espoused wife, being great with child.",
+  6: "And so it was, that, while they were there, the days were accomplished that she should be delivered.",
+  7: "And she brought forth her firstborn son, and wrapped him in swaddling clothes, and laid him in a manger; because there was no room for them in the inn.",
+  8: "And there were in the same country shepherds abiding in the field, keeping watch over their flock by night.",
+  9: "And, lo, the angel of the Lord came upon them, and the glory of the Lord shone round about them: and they were sore afraid.",
+  10: "And the angel said unto them, Fear not: for, behold, I bring you good tidings of great joy, which shall be to all people.",
+  11: "For unto you is born this day in the city of David a Saviour, which is Christ the Lord.",
+  12: "And this shall be a sign unto you; Ye shall find the babe wrapped in swaddling clothes, lying in a manger.",
+  13: "And suddenly there was with the angel a multitude of the heavenly host praising God, and saying,",
+  14: "Glory to God in the highest, and on earth peace, good will toward men.",
+  15: "And it came to pass, as the angels were gone away from them into heaven, the shepherds said one to another, Let us now go even unto Bethlehem, and see this thing which is come to pass, which the Lord hath made known unto us.",
+  16: "And they came with haste, and found Mary, and Joseph, and the babe lying in a manger.",
+  17: "And when they had seen it, they made known abroad the saying which was told them concerning this child.",
+  18: "And all they that heard it wondered at those things which were told them by the shepherds.",
+  19: "But Mary kept all these things, and pondered them in her heart.",
+  20: "And the shepherds returned, glorifying and praising God for all the things that they had heard and seen, as it was told unto them.",
+  21: "And when eight days were accomplished for the circumcising of the child, his name was called JESUS, which was so named of the angel before he was conceived in the womb.",
+  22: "And when the days of her purification according to the law of Moses were accomplished, they brought him to Jerusalem, to present him to the Lord;",
+  23: "(As it is written in the law of the Lord, Every male that openeth the womb shall be called holy to the Lord;)",
+  24: "And to offer a sacrifice according to that which is said in the law of the Lord, A pair of turtledoves, or two young pigeons.",
+  25: "And, behold, there was a man in Jerusalem, whose name was Simeon; and the same man was just and devout, waiting for the consolation of Israel: and the Holy Ghost was upon him.",
+  26: "And it was revealed unto him by the Holy Ghost, that he should not see death, before he had seen the Lord’s Christ.",
+  27: "And he came by the Spirit into the temple: and when the parents brought in the child Jesus, to do for him after the custom of the law,",
+  28: "Then took he him up in his arms, and blessed God, and said,",
+  29: "Lord, now lettest thou thy servant depart in peace, according to thy word:",
+  30: "For mine eyes have seen thy salvation,",
+  31: "Which thou hast prepared before the face of all people;",
+  32: "A light to lighten the Gentiles, and the glory of thy people Israel.",
+  33: "And Joseph and his mother marvelled at those things which were spoken of him.",
+  34: "And Simeon blessed them, and said unto Mary his mother, Behold, this child is set for the fall and rising again of many in Israel; and for a sign which shall be spoken against;",
+  35: "(Yea, a sword shall pierce through thy own soul also,) that the thoughts of many hearts may be revealed.",
+  36: "And there was one Anna, a prophetess, the daughter of Phanuel, of the tribe of Aser: she was of a great age, and had lived with an husband seven years from her virginity;",
+  37: "And she was a widow of about fourscore and four years, which departed not from the temple, but served God with fastings and prayers night and day.",
+  38: "And she coming in that instant gave thanks likewise unto the Lord, and spake of him to all them that looked for redemption in Jerusalem.",
+  39: "And when they had performed all things according to the law of the Lord, they returned into Galilee, to their own city Nazareth.",
+  40: "And the child grew, and waxed strong in spirit, filled with wisdom: and the grace of God was upon him.",
+  41: "Now his parents went to Jerusalem every year at the feast of the passover.",
+  42: "And when he was twelve years old, they went up to Jerusalem after the custom of the feast.",
+  43: "And when they had fulfilled the days, as they returned, the child Jesus tarried behind in Jerusalem; and Joseph and his mother knew not of it.",
+  44: "But they, supposing him to have been in the company, went a day’s journey; and they sought him among their kinsfolk and acquaintance.",
+  45: "And when they found him not, they turned back again to Jerusalem, seeking him.",
+  46: "And it came to pass, that after three days they found him in the temple, sitting in the midst of the doctors, both hearing them, and asking them questions.",
+  47: "And all that heard him were astonished at his understanding and answers.",
+  48: "And when they saw him, they were amazed: and his mother said unto him, Son, why hast thou thus dealt with us? behold, thy father and I have sought thee sorrowing.",
+  49: "And he said unto them, How is it that ye sought me? wist ye not that I must be about my Father’s business?",
+  50: "And they understood not the saying which he spake unto them.",
+  51: "And he went down with them, and came to Nazareth, and was subject unto them: but his mother kept all these sayings in her heart.",
+  52: "And Jesus increased in wisdom and stature, and in favour with God and man."
+};
+const BOOK = "Luke 2";
+</script>
+<script src="../assets/deck.js"></script>
+</body>
+</html>

@@ -5652,5 +5652,290 @@ window.STUDIES = [
       },
       "big": "God will set all things right. For those who fear Him, that day is a sunrise. The Old Testament ends with a curse and a promise, and Jesus, who took the curse on Himself, keeps the promise."
     }
+  },
+  {
+    "id": "mark-01",
+    "type": "chapter",
+    "book": "Mark",
+    "ch": 1,
+    "date": "2026-10-29",
+    "title": "Mark 1",
+    "sub": "Straightway",
+    "about": "No birth story, no warm-up: the Son of God is baptized, tempted, calls four fishermen, drives out an unclean spirit, and touches a leper.",
+    "tags": [
+      "Who Jesus is",
+      "Repentance and faith",
+      "Temptation",
+      "Following Jesus",
+      "Power over evil",
+      "Compassion"
+    ],
+    "url": "studies/mark-01.html",
+    "overview": {
+      "where": "The Jordan River and the wilderness, then Galilee: the lakeshore, Capernaum's synagogue and Simon's house, and the towns around",
+      "when": "About AD 27, at the start of Jesus' ministry",
+      "people": [
+        "jesus",
+        "john-the-baptist",
+        "holy-spirit",
+        "satan",
+        "angels",
+        "simon-peter",
+        "andrew",
+        "sons-of-zebedee",
+        "scribes",
+        "simons-wifes-mother",
+        "the-leper"
+      ],
+      "places": [
+        "jordan",
+        "wilderness",
+        "judaea",
+        "jerusalem",
+        "nazareth",
+        "galilee",
+        "sea-of-galilee",
+        "capernaum",
+        "synagogue"
+      ],
+      "story": [
+        "The beginning of the gospel: John the Baptist, the messenger the prophets promised, preaches repentance and baptizes in the Jordan (1–8).",
+        "Jesus is baptized. The heavens open, the Spirit comes down like a dove, and the Father says, “Thou art my beloved Son” (9–11).",
+        "The Spirit drives Him into the wilderness for forty days, tempted of Satan, and angels minister to Him (12–13).",
+        "In Galilee He preaches, “repent ye, and believe the gospel,” and calls Simon, Andrew, James and John to become fishers of men (14–20).",
+        "In Capernaum's synagogue He teaches with authority and casts out an unclean spirit. He heals Simon's wife's mother, and at sunset the whole city comes to the door (21–34).",
+        "He rises before day to pray, then goes on to preach in the next towns (35–39).",
+        "A leper begs, “If thou wilt, thou canst make me clean.” Jesus touches him and says, “I will.” Then Jesus is the one left outside in desert places (40–45)."
+      ],
+      "key": {
+        "ref": "Mark 1:15",
+        "text": "And saying, The time is fulfilled, and the kingdom of God is at hand: repent ye, and believe the gospel."
+      },
+      "big": "Jesus is the Son of God, and He moves fast: He calls men to turn and believe, makes fishermen into fishers of men, drives out evil with a word, and is willing to touch the man everyone else keeps away from."
+    }
+  },
+  {
+    "id": "mark-02",
+    "type": "chapter",
+    "book": "Mark",
+    "ch": 2,
+    "date": "2026-10-29",
+    "title": "Mark 2",
+    "sub": "Not the righteous, but sinners",
+    "about": "Four friends tear open a roof, a tax man gets up from his table, and Jesus says He came for the sick, not the healthy.",
+    "tags": [
+      "Friends",
+      "Forgiveness",
+      "Salvation",
+      "New life",
+      "The sabbath",
+      "Who Jesus is"
+    ],
+    "url": "studies/mark-02.html",
+    "overview": {
+      "where": "Capernaum: a crowded house, Levi's tax booth and his table, then the grain fields on a sabbath",
+      "when": "About AD 27 or 28, early in Jesus' ministry in Galilee",
+      "people": [
+        "jesus",
+        "sick-of-the-palsy",
+        "scribes",
+        "levi-matthew",
+        "publicans",
+        "sinners",
+        "pharisees",
+        "disciples",
+        "john-the-baptist",
+        "david",
+        "abiathar"
+      ],
+      "places": [
+        "capernaum",
+        "receipt-of-custom",
+        "house-of-god"
+      ],
+      "story": [
+        "Back home in Capernaum, the house is packed. Four men carry a paralyzed friend, dig through the roof, and let him down in front of Jesus (1–4).",
+        "Jesus sees their faith and says, “Son, thy sins be forgiven thee.” The scribes think, “who can forgive sins but God only?” (5–7).",
+        "To show the Son of man has power on earth to forgive sins, Jesus tells the man to take up his bed and walk, and he does (8–12).",
+        "Jesus calls Levi from the tax booth and eats with publicans and sinners: “I came not to call the righteous, but sinners to repentance” (13–17).",
+        "Asked why His disciples don't fast, He speaks of the bridegroom, new cloth, and new wine in new bottles (18–22).",
+        "His disciples pluck grain on the sabbath. Jesus answers with David and the shewbread: “The sabbath was made for man,” and the Son of man is its Lord (23–28)."
+      ],
+      "key": {
+        "ref": "Mark 2:17",
+        "text": "When Jesus heard it, he saith unto them, They that are whole have no need of the physician, but they that are sick: I came not to call the righteous, but sinners to repentance."
+      },
+      "big": "Jesus has God's own power to forgive sins, and He came for people who know they're sick. He doesn't patch up an old life; He makes a new one, and He is Lord even of the sabbath."
+    }
+  },
+  {
+    "id": "luke-01",
+    "type": "chapter",
+    "book": "Luke",
+    "ch": 1,
+    "date": "2026-10-29",
+    "title": "Luke 1",
+    "sub": "Nothing shall be impossible",
+    "about": "After four hundred quiet years God speaks again: an old priest is promised a son, and a virgin in Nazareth is told she will bear the Son of God.",
+    "tags": [
+      "God's Word",
+      "Prayer",
+      "Faith and doubt",
+      "Who Jesus is",
+      "God's power",
+      "Salvation"
+    ],
+    "url": "studies/luke-01.html",
+    "overview": {
+      "where": "The temple in Jerusalem, Nazareth in Galilee, and a town in the hill country of Judaea",
+      "when": "About 6 to 5 BC, in the days of Herod the Great",
+      "people": [
+        "theophilus",
+        "zacharias",
+        "elisabeth",
+        "gabriel",
+        "mary",
+        "joseph",
+        "jesus",
+        "john-the-baptist",
+        "herod-the-great"
+      ],
+      "places": [
+        "temple",
+        "judaea",
+        "galilee",
+        "nazareth",
+        "hill-country"
+      ],
+      "story": [
+        "Luke writes to Theophilus an orderly account, checked with the eyewitnesses, so that he may know the certainty of what he was taught (1–4).",
+        "The angel Gabriel meets the old priest Zacharias at the altar of incense: his barren wife Elisabeth will bear a son, John. Zacharias doubts and is struck dumb (5–25).",
+        "Six months later Gabriel tells Mary, a virgin in Nazareth, that she will bear Jesus, the Son of God, by the Holy Ghost. “Be it unto me according to thy word” (26–38).",
+        "Mary visits Elisabeth, the babe leaps in Elisabeth's womb, and Mary sings, “My soul doth magnify the Lord” (39–56).",
+        "John is born. Zacharias writes, “His name is John,” gets his voice back, and prophesies of salvation, the remission of sins, and the dayspring from on high (57–80)."
+      ],
+      "key": {
+        "ref": "Luke 1:37",
+        "text": "For with God nothing shall be impossible."
+      },
+      "big": "God keeps every promise, even after long silence and long waiting. Nothing is too hard for Him, and He sent His Son to send our sins away and bring light to men sitting in darkness."
+    }
+  },
+  {
+    "id": "luke-02",
+    "type": "chapter",
+    "book": "Luke",
+    "ch": 2,
+    "date": "2026-10-29",
+    "title": "Luke 2",
+    "sub": "Unto you is born a Saviour",
+    "about": "Jesus is born in Bethlehem and laid in a manger. Shepherds hear the news first, Simeon and Anna see God's promise in a baby, and at twelve Jesus is found in His Father's house.",
+    "tags": [
+      "The birth of Jesus",
+      "Good news",
+      "Telling others",
+      "Waiting on God",
+      "Salvation",
+      "Growing"
+    ],
+    "url": "studies/luke-02.html",
+    "overview": {
+      "where": "From Nazareth to Bethlehem, the fields outside Bethlehem, the temple in Jerusalem, and home to Nazareth",
+      "when": "About 5 BC, when Jesus was born, to about AD 7, when He was twelve",
+      "people": [
+        "jesus",
+        "mary",
+        "joseph",
+        "caesar",
+        "cyrenius",
+        "the-shepherds",
+        "angels",
+        "simeon",
+        "anna",
+        "doctors"
+      ],
+      "places": [
+        "nazareth",
+        "galilee",
+        "judaea",
+        "bethlehem",
+        "city-of-david",
+        "jerusalem",
+        "temple"
+      ],
+      "story": [
+        "Caesar Augustus orders a census, and Joseph takes Mary, great with child, from Nazareth to Bethlehem, the city of David. Jesus is born and laid in a manger, because there is no room in the inn (1–7).",
+        "An angel tells shepherds keeping watch by night: “Unto you is born this day in the city of David a Saviour, which is Christ the Lord.” A heavenly host praises God (8–14).",
+        "The shepherds hurry to Bethlehem, find the babe, and spread the word. Mary keeps all these things in her heart (15–20).",
+        "Jesus is circumcised and named, then presented at the temple with the poor family's offering. Simeon takes Him in his arms: “Mine eyes have seen thy salvation” (21–35).",
+        "Anna, a widowed prophetess, gives thanks and tells all who looked for redemption. The family goes home to Nazareth, and the child grows strong (36–40).",
+        "At twelve, Jesus stays behind at the Passover. After three days His parents find Him in the temple: “Wist ye not that I must be about my Father’s business?” He grows in wisdom and stature (41–52)."
+      ],
+      "key": {
+        "ref": "Luke 2:11",
+        "text": "For unto you is born this day in the city of David a Saviour, which is Christ the Lord."
+      },
+      "big": "God's Son came as a baby in a feed trough, and the good news went first to working men in the dark. He is the Saviour, the Christ, and the Lord, and His salvation is for all people."
+    }
+  },
+  {
+    "id": "luke-03",
+    "type": "chapter",
+    "book": "Luke",
+    "ch": 3,
+    "date": "2026-10-29",
+    "title": "Luke 3",
+    "sub": "Prepare ye the way of the Lord",
+    "about": "John the Baptist calls the nation to repent, Jesus is baptized while the Spirit descends and the Father speaks, and Luke traces Jesus' family all the way back to Adam.",
+    "tags": [
+      "Repentance",
+      "John the Baptist",
+      "Humility",
+      "The baptism of Jesus",
+      "Father, Son, and Holy Ghost",
+      "For everyone"
+    ],
+    "url": "studies/luke-03.html",
+    "overview": {
+      "where": "The wilderness and the country along the Jordan River",
+      "when": "About AD 27–29, the fifteenth year of Tiberius Caesar",
+      "people": [
+        "john-the-baptist",
+        "jesus",
+        "caesar",
+        "pilate",
+        "herod-antipas",
+        "philip-the-tetrarch",
+        "lysanias",
+        "annas",
+        "caiaphas",
+        "publicans",
+        "herodias",
+        "holy-spirit",
+        "adam"
+      ],
+      "places": [
+        "judaea",
+        "galilee",
+        "ituraea",
+        "trachonitis",
+        "abilene",
+        "wilderness",
+        "jordan"
+      ],
+      "story": [
+        "In the fifteenth year of Tiberius Caesar, with Pilate, Herod, Philip, and Lysanias ruling and Annas and Caiaphas high priests, the word of God comes to John in the wilderness (1–2).",
+        "John preaches the baptism of repentance for the remission of sins, fulfilling Isaiah: “Prepare ye the way of the Lord” (3–6).",
+        "He warns the crowds that being Abraham's children won't save them. When the people, publicans, and soldiers ask, “What shall we do?”, he gives each a plain answer (7–14).",
+        "John points to One mightier than he, who will baptize with the Holy Ghost and with fire. Herod shuts John up in prison for rebuking him over Herodias (15–20).",
+        "Jesus is baptized and praying; the heaven opens, the Holy Ghost descends like a dove, and the Father says, “Thou art my beloved Son” (21–22).",
+        "Jesus begins His work at about thirty. Luke traces His line back through David and Abraham to Adam, “which was the son of God” (23–38)."
+      ],
+      "key": {
+        "ref": "Luke 3:22",
+        "text": "And the Holy Ghost descended in a bodily shape like a dove upon him, and a voice came from heaven, which said, Thou art my beloved Son; in thee I am well pleased."
+      },
+      "big": "Repentance is a turned heart that shows up in a changed life, and no family name can stand in for it. Jesus is the Father's beloved Son, and He came as a son of Adam for every man."
+    }
   }
 ];

@@ -1,0 +1,826 @@
+<!doctype html>
+<html lang="en" data-theme="scribe">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Luke 1</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="../assets/fonts.css">
+<link rel="stylesheet" href="../assets/deck.css">
+<link rel="stylesheet" href="../assets/themes.css">
+<style>
+/* Luke 1: the temple at the hour of incense (svg.lk01-temple). The smoke rises from the altar on its own;
+   a .step g shows the angel beside it. */
+.lk01-temple .lk01-wall { fill: var(--surface); stroke: var(--ink-soft); stroke-width: 2; }
+.lk01-temple .lk01-holiest { fill: var(--surface-2); stroke: var(--ink-soft); stroke-width: 2; }
+.lk01-temple .lk01-veil { stroke: var(--wine); stroke-width: 5; stroke-dasharray: 10 6; }
+.lk01-temple .lk01-man { fill: var(--ink-soft); }
+.lk01-temple .lk01-priest { fill: var(--ink); }
+.lk01-temple .lk01-altar { fill: var(--leather); stroke: var(--leather-light); stroke-width: 2; }
+.lk01-temple text { font-size: 16px; fill: var(--ink-soft); }
+.lk01-temple text.lk01-big { font-size: 18px; fill: var(--ink); font-weight: 700; }
+.lk01-temple text.lk01-hot { fill: var(--accent-hot); font-weight: 700; }
+.lk01-smoke { fill: none; stroke: var(--ink-soft); stroke-width: 3; stroke-linecap: round; opacity: 0; animation: lk01-smoke 4.8s ease-out infinite; }
+.lk01-smoke:nth-of-type(2) { animation-delay: -1.6s; }
+.lk01-smoke:nth-of-type(3) { animation-delay: -3.2s; }
+@keyframes lk01-smoke { 0% { opacity: 0; transform: translateY(12px); } 25% { opacity: .75; } 100% { opacity: 0; transform: translateY(-80px); } }
+@media (prefers-reduced-motion: reduce) { .lk01-smoke { animation: none; opacity: .5; } }
+
+/* Luke 1: "magnify" (svg.lk01-glass). A small word, then a magnifying glass slides over it on a step and shows it large. */
+.lk01-glass .lk01-small { font-size: 34px; fill: var(--ink-soft); }
+.lk01-glass .lk01-lens { transform-origin: 300px 118px; transform: translateX(-210px) scale(.45); transition: transform 1.5s cubic-bezier(.2,.7,.2,1); }
+.lk01-glass .step.on .lk01-lens { transform: none; }
+.lk01-glass .lk01-rim { fill: var(--bg); stroke: var(--accent); stroke-width: 9; }
+.lk01-glass .lk01-handle { stroke: var(--leather); stroke-width: 18; stroke-linecap: round; }
+.lk01-glass .lk01-large { font-size: 72px; fill: var(--accent-hot); }
+</style>
+</head>
+<body>
+<main class="deck" id="deck">
+
+<!-- ======================= OPENING ======================= -->
+<section class="slide title">
+  <div class="inner">
+    <div class="emblem rise"></div>
+    <h1 class="rise">Luke 1</h1>
+    <p class="sub rise" style="--d:3">Nothing shall be impossible</p>
+    <p class="tag rise" style="--d:5">After four hundred quiet years, God speaks again: to an old priest in the temple, and to a young woman in a village.</p>
+  </div>
+</section>
+
+<section class="slide watch">
+  <div class="inner">
+    <h2 class="rise">Things to watch for</h2>
+    <p class="lede rise" style="--d:1">Keep these questions in the back of your mind as we read. We'll come back to every one of them at the end.</p>
+    <ol class="seeds">
+      <li class="step"><span class="topic">God's Word</span><span class="seed-q">Can we be sure what we believe is true?</span></li>
+      <li class="step"><span class="topic">Prayer</span><span class="seed-q">Does God still hear prayers we have stopped praying?</span></li>
+      <li class="step"><span class="topic">Faith and doubt</span><span class="seed-q">What is the difference between doubting God and asking Him?</span></li>
+      <li class="step"><span class="topic">Who Jesus is</span><span class="seed-q">Who did the angel say Mary's son would be?</span></li>
+      <li class="step"><span class="topic">God's power</span><span class="seed-q">Is anything too hard for God?</span></li>
+      <li class="step"><span class="topic">Salvation (soteriology)</span><span class="seed-q">What did God send Jesus to do for His people?</span></li>
+    </ol>
+  </div>
+</section>
+
+<!-- ======================= SETTING ======================= -->
+<section class="slide ex">
+  <div class="inner">
+    <div class="split">
+      <div class="stage">
+        <svg class="map" data-land viewBox="100 60 260 420" data-towns="Nazareth*:l, Jerusalem!:l" role="img" aria-label="A map of the land in Jesus' day. Luke 1 begins in the temple at Jerusalem, in Judaea. On a step, a line runs north to Nazareth, a village in Galilee, where the angel went six months later.">
+          <path class="map-route r1" pathLength="1" d="M206 375 C 214 320, 226 260, 220 200 C 219 192, 217 186, 215 182"/>
+          <path class="map-route r1" pathLength="1" d="M206 192 L215 181 L224 191"/>
+        </svg>
+      </div>
+      <div>
+        <h2 class="rise" style="--d:1">The Gospel of Luke</h2>
+        <p class="note rise" style="--d:2"><em>Who:</em> Luke, “the beloved physician” (Colossians 4:14), who travelled with Paul. He wrote Acts too. He was probably not a Jew, the only Gentile writer in the Bible.</p>
+        <p class="note rise" style="--d:3"><em>When:</em> about AD 60, before he wrote Acts.</p>
+        <p class="note rise" style="--d:4"><em>To whom:</em> “most excellent Theophilus” (v. 3), and through him to anyone, Jew or Gentile, who wants to be sure about Jesus.</p>
+        <p class="note step map-go1">The chapter opens in the temple at Jerusalem (v. 9). Six months later the same angel goes north, to a small town in Galilee called Nazareth (v. 26).</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise">Where Luke 1 fits</h2>
+    <ol class="timeline" aria-label="About 430 BC, Malachi, the last Old Testament prophet. Then about four hundred years with no prophet. About 6 BC, the angel Gabriel speaks, which is Luke chapter 1. About 5 BC, Jesus is born. About AD 30 or 33, the cross and the empty tomb. About AD 60, Luke writes his Gospel, then Acts.">
+      <li style="--k:0"><b>about 430 BC</b><span>Malachi, the last Old Testament prophet</span></li>
+      <li class="wait" style="--k:1"><b>about 400 years</b><span>no prophet, no word from heaven</span></li>
+      <li class="lit" style="--k:2"><b>about 6 BC</b><span>Gabriel speaks: John and Jesus are promised</span><small>this chapter</small></li>
+      <li style="--k:3"><b>about 5 BC</b><span>Jesus is born in Bethlehem</span></li>
+      <li style="--k:4"><b>about AD 30 or 33</b><span>the cross and the empty tomb</span></li>
+      <li style="--k:5"><b>about AD 60</b><span>Luke writes his Gospel, then Acts</span></li>
+    </ol>
+    <p class="note rise" style="--d:3">The last book of the Old Testament ends with a promise: God will send Elijah before the day of the LORD (Malachi 4:5). Then heaven goes quiet for about four hundred years.</p>
+    <p class="note step">Luke 1 is where the silence breaks. And the very first thing the angel says picks up Malachi's promise word for word (v. 17).</p>
+  </div>
+</section>
+
+<!-- ======================= PART ONE: A PRIEST AND A PRAYER ======================= -->
+<section class="slide part">
+  <div class="inner">
+    <p class="part-n rise">Part one</p>
+    <h2 class="rise" style="--d:1">A priest and a prayer</h2>
+    <p class="range rise" style="--d:2">Verses 1–25</p>
+    <div class="rule"></div>
+    <p class="hook rise" style="--d:4">An old man burns incense, and God answers a prayer he had given up on.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="1-4" data-hl="most surely believed|eyewitnesses|the certainty of those things"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="3-4" data-hl="having had perfect understanding of all things from the very first|the certainty"></blockquote>
+    <h2 class="rise" style="--d:1">Luke checked his facts</h2>
+    <div class="chains">
+      <div class="chain step"><span class="who-chip">Eyewitnesses</span><span class="said">saw it “from the beginning”</span><span class="who-chip">ministers of the word</span><span class="said">“delivered them unto us”</span></div>
+      <div class="chain step"><span class="who-chip">Luke the doctor</span><span class="said">traced it all “from the very first”</span><span class="who-chip">Theophilus</span><span class="said">“that thou mightest know the certainty”</span><span class="who-chip jesus">you</span></div>
+    </div>
+    <p class="note step">Luke wasn't there himself. So he did what a careful doctor does: he went back to the people who were, and put it “in order.” Some of what follows (what Mary thought, what she said) most likely came from Mary herself, or from people close to her.</p>
+    <p class="note step">Your faith doesn't rest on a feeling or a legend. It rests on things that happened, told by men who saw them. You can be <em>sure</em>.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="5-7" data-hl="righteous before God|Elisabeth was barren"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="5" data-hl="in the days of Herod, the king of Judaea|of the course of Abia"></blockquote>
+    <h2 class="rise" style="--d:1">Herod, and a priest on duty</h2>
+    <p class="note rise" style="--d:2"><em>Herod</em> here is Herod the Great, the king Rome set over the Jews. He rebuilt the temple in grand style, and he was a cruel and jealous man. He died about 4 BC.</p>
+    <div class="dots rows rise" data-dots="24" data-keep="8" style="--d:3;--cols:12;--dot:var(--ink-soft);--pace:60ms;max-width:24rem" aria-label="Twenty-four dots, one for each course of priests. On a step the rest fade and the eighth lights up: the course of Abia."></div>
+    <p class="note step dots-go">King David split the priests into <em>24 courses</em>, or teams (1 Chronicles 24). Each took its turn at the temple for a week. “The eighth to Abijah” (24:10): that's Abia, Zacharias' course.</p>
+    <p class="note step">Zacharias and Elisabeth both came from priestly families, and they both walked with God. And still they had no child. Trouble in your life doesn't prove God is against you.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="8-10" data-hl="his lot was to burn incense|praying without"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="9-10" data-hl="his lot was to burn incense|the whole multitude of the people were praying without"></blockquote>
+    <div class="split">
+      <div class="stage">
+        <svg class="lk01-temple" viewBox="0 0 660 345" role="img" aria-label="The temple from the side. The people stand praying outside. Inside the Holy Place, Zacharias stands at the altar of incense, and smoke rises from it. Behind him the veil hangs before the Most Holy Place. On a step, an angel appears on the right side of the altar.">
+          <rect class="lk01-wall" x="250" y="60" width="52" height="240"/>
+          <rect class="lk01-wall" x="302" y="120" width="258" height="180"/>
+          <rect class="lk01-holiest" x="560" y="120" width="86" height="180"/>
+          <line class="lk01-veil" x1="560" y1="122" x2="560" y2="298"/>
+          <line x1="10" y1="300" x2="650" y2="300" stroke-width="2" style="stroke:var(--ink-soft)"/>
+          <text class="lk01-big" x="400" y="148" text-anchor="middle">the Holy Place</text>
+          <text x="603" y="148" text-anchor="middle">Most</text><text x="603" y="166" text-anchor="middle">Holy</text>
+          <text x="560" y="110" text-anchor="middle" style="fill:var(--wine)">the veil</text>
+          <g>
+            <g class="lk01-man"><circle cx="40" cy="236" r="9"/><path d="M26 300 L30 252 Q40 246 50 252 L54 300 Z"/></g>
+            <g class="lk01-man"><circle cx="72" cy="240" r="9"/><path d="M58 300 L62 256 Q72 250 82 256 L86 300 Z"/></g>
+            <g class="lk01-man"><circle cx="104" cy="234" r="9"/><path d="M90 300 L94 250 Q104 244 114 250 L118 300 Z"/></g>
+            <g class="lk01-man"><circle cx="136" cy="240" r="9"/><path d="M122 300 L126 256 Q136 250 146 256 L150 300 Z"/></g>
+            <g class="lk01-man"><circle cx="168" cy="236" r="9"/><path d="M154 300 L158 252 Q168 246 178 252 L182 300 Z"/></g>
+            <g class="lk01-man"><circle cx="200" cy="240" r="9"/><path d="M186 300 L190 256 Q200 250 210 256 L214 300 Z"/></g>
+          </g>
+          <text x="120" y="324" text-anchor="middle">the people, praying outside</text>
+          <path class="lk01-smoke" d="M482 252 c -9 -12 9 -22 0 -34 c -9 -12 9 -22 0 -34"/>
+          <path class="lk01-smoke" d="M482 252 c 9 -12 -9 -22 0 -34 c 9 -12 -9 -22 0 -34"/>
+          <path class="lk01-smoke" d="M482 252 c -6 -14 6 -20 0 -34 c -6 -14 6 -20 0 -34"/>
+          <rect class="lk01-altar" x="468" y="262" width="28" height="38"/>
+          <rect class="lk01-altar" x="464" y="256" width="36" height="8"/>
+          <g class="lk01-priest"><circle cx="420" cy="236" r="10"/><path d="M404 300 L409 253 Q420 246 431 253 L436 300 Z"/></g>
+          <text x="420" y="324" text-anchor="middle">Zacharias</text>
+          <text x="484" y="324" text-anchor="start">altar of</text><text x="484" y="341" text-anchor="start">incense</text>
+          <g class="step">
+            <circle cx="528" cy="244" r="34" style="fill:var(--glow);opacity:.35"/>
+            <circle cx="528" cy="234" r="9" style="fill:var(--accent-hot)"/>
+            <path d="M514 300 L518 250 Q528 243 538 250 L542 300 Z" style="fill:var(--accent-hot)"/>
+            <text class="lk01-hot" x="528" y="196" text-anchor="middle">an angel</text>
+          </g>
+        </svg>
+      </div>
+      <div>
+        <h2 class="rise" style="--d:1">Once in a lifetime</h2>
+        <p class="note rise" style="--d:2">With thousands of priests, the honor went by lot. Tradition says a priest got it once in his life, if ever.</p>
+        <p class="note step">While the smoke went up inside, the people prayed outside. Incense was a picture of prayer: “Let my prayer be set forth before thee as incense” (Psalm 141:2).</p>
+        <p class="note step">On the biggest day of this old man's life, God showed up.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="slide verse" data-v="11-14" data-hl="Fear not, Zacharias: for thy prayer is heard|thou shalt call his name John"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="13" data-hl="thy prayer is heard"></blockquote>
+    <h2 class="rise" style="--d:1">“Thy prayer is heard”</h2>
+    <div class="morph">
+      <span class="big rise" style="--d:3">יוֹחָנָן</span>
+      <span class="say step">said <em class="gk">Yōḥanan</em>, John</span>
+      <span class="means step">“the LORD is gracious”</span>
+    </div>
+    <p class="note step">Which prayer? Most likely the one for a son, prayed when they were young, and probably given up on long ago. They were “well stricken in years” now (v. 7). God hadn't forgotten a word of it.</p>
+    <p class="note step">Some prayers you stopped praying years ago are still before Him. God's “not yet” is not the same as “no.”</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="15-17" data-hl="neither wine nor strong drink|filled with the Holy Ghost|to make ready a people prepared for the Lord"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="15" data-hl="drink neither wine nor strong drink|filled with the Holy Ghost"></blockquote>
+    <h2 class="rise" style="--d:1">Filled with something better</h2>
+    <div class="columns">
+      <div class="col law rise" style="--d:2">
+        <p class="who">What John would leave alone</p>
+        <h3>Wine and strong drink</h3>
+        <p>Like a Nazarite, who “shall separate himself from wine and strong drink” (Numbers 6:3). John was set apart for God from birth.</p>
+      </div>
+      <div class="col grace step">
+        <p class="who">What would fill him</p>
+        <h3>The Holy Ghost</h3>
+        <p>“Be not drunk with wine, wherein is excess; but be filled with the Spirit” (Ephesians 5:18).</p>
+      </div>
+    </div>
+    <p class="note step">Whatever fills a man runs him. For a man who knows what the bottle can do, this lands close to home. The answer isn't only to empty the glass. It's to be filled with God's Spirit instead.</p>
+    <p class="note step">John was filled from the womb, a rare gift for a special job. Every believer receives the Spirit when he's saved. Being <em>filled</em> is letting Him run your life, day by day.</p>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="17" data-hl="in the spirit and power of Elias|to turn the hearts of the fathers to the children"></blockquote>
+    <h2 class="rise" style="--d:1">The silence breaks right where it began</h2>
+    <div class="pair">
+      <div class="scroll rise" style="--d:2"><p class="ref">Malachi 4:6, the last page of the Old Testament</p><p class="kjv">And he shall <mark>turn the heart of the fathers to the children</mark>, and the heart of the children to their fathers, lest I come and smite the earth with a curse.</p></div>
+      <div class="scroll step"><p class="ref">Luke 1:17, about 400 years later</p><p class="kjv">And he shall go before him in the spirit and power of Elias, <mark>to turn the hearts of the fathers to the children</mark>…</p></div>
+    </div>
+    <p class="note step">God picked up where He left off. John would come in the spirit of Elijah, to get the people ready for the Lord. Jesus later said John was that Elijah who was promised (Matthew 11:14).</p>
+    <p class="note step">And look what turning to God does: it turns fathers back to their children. Broken families are part of what God came to mend.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="18-20" data-hl="Whereby shall I know this?|because thou believest not my words"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise">“Whereby shall I know this?”</h2>
+    <div class="talk">
+      <p class="rise" style="--d:2"><small>Zacharias</small>Whereby shall I know this? for I am an old man, and my wife well stricken in years.<br><span class="flag">prove it</span></p>
+      <p class="reply step"><small>The angel</small>I am Gabriel, that stand in the presence of God… thou shalt be dumb… because thou believest not my words…</p>
+    </div>
+    <p class="note step">He had prayed for this, and when the answer came, he looked at his age instead of at God. So he got his sign: nine months without a word.</p>
+    <p class="note step">But God did <em>not</em> take the promise back. Zacharias' doubt cost him his voice, not the blessing. God is more faithful than our faith.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="21-23" data-hl="remained speechless"></section>
+
+<section class="slide verse" data-v="24-25" data-hl="to take away my reproach among men"></section>
+
+<section class="slide ex ex-name">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="25" data-hl="Thus hath the Lord dealt with me|to take away my reproach among men"></blockquote>
+    <h2 class="rise" style="--d:1">Shame taken away</h2>
+    <div class="rename">
+      <span class="old rise" style="--d:2">“called barren” (v. 36)</span>
+      <span class="arrow step n2">→</span>
+      <span class="new step">looked on</span>
+      <span class="gloss step">“the Lord … looked on me” (v. 25)</span>
+    </div>
+    <p class="note step">“Reproach” means <em>shame, disgrace</em>. In those days people whispered that a childless woman must have done something to deserve it. Elisabeth had carried that label for years.</p>
+    <p class="note step">God took it off her. Some of you carry names people put on you: drunk, junkie, loser, convict. When the Lord looks on you, those labels don't get the last word.</p>
+  </div>
+</section>
+
+<!-- ======================= PART TWO: THE ANGEL AND THE VIRGIN ======================= -->
+<section class="slide part">
+  <div class="inner">
+    <p class="part-n rise">Part two</p>
+    <h2 class="rise" style="--d:1">The angel and the virgin</h2>
+    <p class="range rise" style="--d:2">Verses 26–38</p>
+    <div class="rule"></div>
+    <p class="hook rise" style="--d:4">The same angel goes to a nobody in a nowhere town, with the biggest news ever told.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="26-27" data-hl="a virgin espoused to a man whose name was Joseph, of the house of David"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="27" data-hl="a virgin espoused"></blockquote>
+    <h2 class="rise" style="--d:1">“Espoused”</h2>
+    <ol class="timeline" aria-label="A Jewish marriage in three stages. First the betrothal, or espousal, a binding promise; this is where Mary is. Then a waiting time, often up to a year, living apart. Then the wedding, when the husband takes his wife home.">
+      <li class="lit" style="--k:0" data-n="1"><b>Espoused</b><span>a binding promise, sealed before witnesses</span><small>Mary is here</small></li>
+      <li class="wait" style="--k:1" data-n="2"><b>Waiting</b><span>often up to a year, still living apart</span></li>
+      <li style="--k:2" data-n="3"><b>The wedding</b><span>he takes her home as his wife</span></li>
+    </ol>
+    <p class="note step">Being espoused was more than our engagement. The couple were legally bound, and only a divorce could end it (Matthew 1:19). But they didn't live together yet, and Mary was still a virgin.</p>
+    <p class="note step">Joseph was “of the house of David,” the royal family line. God had promised David a son who would reign for ever. Watch for that promise in verse 32.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="28-30" data-hl="thou that art highly favoured|thou hast found favour with God"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="28" data-hl="highly favoured"></blockquote>
+    <h2 class="rise" style="--d:1">“Highly favoured”</h2>
+    <div class="morph">
+      <span class="big rise" style="--d:3">κεχαριτωμένη</span>
+      <span class="means step">from <span class="gk">charis</span>, <em>grace</em>: “graced,” one God has shown great kindness to</span>
+    </div>
+    <p class="note step">Mary was troubled by it (v. 29). She was a young woman from a small town with no name to speak of. Why would God pick her?</p>
+    <p class="note step">That's what grace is: favour you didn't earn. Mary received God's grace like any other believer, and she said so herself: “my spirit hath rejoiced in God <em>my Saviour</em>” (v. 47). God still loves to choose people nobody else would pick.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="31-33" data-hl="shalt call his name JESUS|the throne of his father David|of his kingdom there shall be no end"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="32-33" data-hl="the Son of the Highest|the throne of his father David|of his kingdom there shall be no end"></blockquote>
+    <h2 class="rise" style="--d:1">Five things about the baby</h2>
+    <ol class="signs">
+      <li class="step now"><b>JESUS</b>“the LORD saves”: “he shall save his people from their sins” (Matthew 1:21)</li>
+      <li class="step"><b>Great</b>John would be “great in the sight of the Lord” (v. 15). Jesus is simply great.</li>
+      <li class="step"><b>Son of the Highest</b>God's own Son</li>
+      <li class="step"><b>David's throne</b>the King God promised David</li>
+      <li class="step"><b>No end</b>“for ever” over the house of Jacob</li>
+    </ol>
+    <blockquote class="quote step"><p>“And thine house and thy kingdom shall be established for ever before thee: thy throne shall be established for ever.”</p><cite>2 Samuel 7:16, God's promise to David</cite></blockquote>
+    <p class="note step">A thousand years after that promise, here is the King who keeps it.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="34-35" data-hl="How shall this be, seeing I know not a man?|The Holy Ghost shall come upon thee|the Son of God"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="35" data-hl="The Holy Ghost shall come upon thee|that holy thing which shall be born of thee shall be called the Son of God"></blockquote>
+    <h2 class="rise" style="--d:1">Born of a virgin</h2>
+    <p class="note rise" style="--d:2">Mary's question was honest. She was a virgin, and she knew how babies come. The answer: this child would have no human father. The Holy Ghost would bring it about.</p>
+    <blockquote class="quote step"><p>“Therefore the Lord himself shall give you a sign; Behold, a virgin shall conceive, and bear a son, and shall call his name Immanuel.”</p><cite>Isaiah 7:14, about 700 years earlier</cite></blockquote>
+    <p class="note step">That's why Jesus is both. Born of Mary, He is truly a man. Conceived by the Holy Ghost, He is “the Son of God,” and “holy,” without sin. Only someone like that could take our place.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="36-38" data-hl="For with God nothing shall be impossible.|Behold the handmaid of the Lord; be it unto me according to thy word"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <p class="saying rise" style="--d:1">For with God <em>nothing</em> shall be impossible.</p>
+    <div class="pair">
+      <div class="scroll rise" style="--d:3"><p class="ref">Genesis 18:14, to old, barren Sarah</p><p class="kjv">Is any thing too hard for the LORD? At the time appointed I will return unto thee, according to the time of life, and Sarah shall have a son.</p></div>
+      <div class="scroll step"><p class="ref">Luke 1:36–37, about old, barren Elisabeth</p><p class="kjv">She hath also conceived a son in her old age… For with God nothing shall be impossible.</p></div>
+    </div>
+    <p class="note step">The angel gave Mary a sign she could check: go and see Elisabeth. An old woman pregnant, and a virgin with child. Both impossible, both done.</p>
+    <p class="note step">A man free after twenty years of drinking. A family put back together. A heart made new. Don't tell God what can't be done.</p>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise">Two questions, two answers</h2>
+    <div class="columns">
+      <div class="col law rise" style="--d:2">
+        <p class="who">An old priest, in the temple, in Jerusalem</p>
+        <h3>“Whereby shall I know this?”</h3>
+        <p>Asked for proof, because he didn't believe it (v. 20). He went home unable to speak.</p>
+      </div>
+      <div class="col grace step">
+        <p class="who">A young woman, at home, in a little town</p>
+        <h3>“How shall this be?”</h3>
+        <p>Asked how, not whether. Then: “Be it unto me according to thy word” (v. 38). Elisabeth called her blessed because she “believed” (v. 45).</p>
+      </div>
+    </div>
+    <p class="note step">God doesn't mind honest questions. Mary asked one. The difference is the heart behind it: “prove it to me” or “I believe You; show me how.”</p>
+    <p class="note step">And her yes cost her. An unmarried girl with child faced gossip, and the chance of losing Joseph. She said yes anyway.</p>
+  </div>
+</section>
+
+<!-- ======================= PART THREE: TWO MOTHERS AND A SONG ======================= -->
+<section class="slide part">
+  <div class="inner">
+    <p class="part-n rise">Part three</p>
+    <h2 class="rise" style="--d:1">Two mothers and a song</h2>
+    <p class="range rise" style="--d:2">Verses 39–56</p>
+    <div class="rule"></div>
+    <p class="hook rise" style="--d:4">An unborn baby jumps for joy, and a young woman sings about a God who lifts the low.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="39-41" data-hl="went into the hill country with haste|the babe leaped in her womb"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <div class="split">
+      <div class="stage">
+        <svg class="map" data-land viewBox="110 120 220 330" data-towns="Nazareth*:r, Jerusalem:r" role="img" aria-label="A map from Galilee to Judaea. A line draws itself from Nazareth south through the hills, about eighty miles, to a town in the hill country of Judaea near Jerusalem.">
+          <path class="map-route" pathLength="1" d="M214 180 C 224 230, 214 290, 206 330 C 200 356, 192 376, 186 388"/>
+          <path class="map-route" pathLength="1" d="M180 378 L186 390 L196 381"/>
+          <g class="map-town here"><circle cx="184" cy="396" r="6"/><circle class="map-ping" cx="184" cy="396" r="8"/><text x="173" y="401" text-anchor="end">“a city of Juda”</text></g>
+          <text class="map-soft" x="160" y="426" text-anchor="middle" font-size="15">the hill country</text>
+          <text class="map-soft" x="230" y="282" font-size="15">about 80 miles</text>
+        </svg>
+      </div>
+      <div>
+        <blockquote class="quote rise" data-q="39" data-hl="went into the hill country with haste"></blockquote>
+        <h2 class="rise" style="--d:1">Mary goes south</h2>
+        <p class="note rise" style="--d:2">From Nazareth to the hills of Judaea is about 80 miles, several days on foot. Luke doesn't name the town. It was somewhere in the hill country near Jerusalem.</p>
+        <p class="note step">She went “with haste.” The angel had pointed her to Elisabeth, and she went straight to the one other woman on earth who would understand.</p>
+        <p class="note step">When God does something big in you, find the people who will rejoice with you.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="slide verse" data-v="42-45" data-hl="blessed is the fruit of thy womb|the mother of my Lord|the babe leaped in my womb for joy|blessed is she that believed"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="43-44" data-hl="the mother of my Lord|the babe leaped in my womb for joy"></blockquote>
+    <h2 class="rise" style="--d:1">John's first witness</h2>
+    <p class="note rise" style="--d:2">Before either baby was born, John jumped for joy at the sound of Mary's voice. His whole life would be pointing to Jesus. He started early.</p>
+    <p class="note step">Elisabeth, filled with the Holy Ghost, calls Mary “the mother of <em>my Lord</em>.” She calls the tiny child in Mary's womb her Lord. Jesus was Lord from the start.</p>
+    <p class="note step">Luke, the doctor, uses the same Greek word, <span class="gk">brephos</span>, “babe,” for John in the womb here and for Jesus in the manger: “Ye shall find the babe wrapped in swaddling clothes” (Luke 2:12). To God, a child in the womb is a child.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="46-50" data-hl="My soul doth magnify the Lord|God my Saviour|his mercy is on them that fear him"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="46-47" data-hl="magnify|God my Saviour"></blockquote>
+    <div class="split">
+      <div class="stage">
+        <svg class="lk01-glass" viewBox="0 0 600 260" role="img" aria-label="The words 'the Lord' written small. On a step, a magnifying glass slides over them and they appear large.">
+          <defs><clipPath id="lk01-lensclip"><circle cx="300" cy="118" r="88"/></clipPath></defs>
+          <text class="lk01-small serif" x="300" y="130" text-anchor="middle">the Lord</text>
+          <g class="step">
+            <g class="lk01-lens">
+              <line class="lk01-handle" x1="364" y1="184" x2="440" y2="250"/>
+              <circle class="lk01-rim" cx="300" cy="118" r="92"/>
+              <text class="lk01-large serif" x="300" y="142" text-anchor="middle" clip-path="url(#lk01-lensclip)">Lord</text>
+            </g>
+          </g>
+        </svg>
+      </div>
+      <div>
+        <h2 class="rise" style="--d:1">“My soul doth magnify”</h2>
+        <p class="note rise" style="--d:2">To magnify is to <em>make great</em>. A magnifying glass doesn't make a thing bigger. It makes it look as big as it really is.</p>
+        <p class="note step">Mary's song makes God look big and herself small: “the low estate of his handmaiden” (v. 48). She calls Him “God my Saviour.” Even the mother of Jesus needed saving.</p>
+        <p class="note step">When your problems look huge and God looks small, you're holding the glass the wrong way round.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="slide verse" data-v="51-53" data-hl="exalted them of low degree|He hath filled the hungry with good things"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="52-53" data-hl="put down the mighty from their seats|exalted them of low degree|filled the hungry with good things"></blockquote>
+    <h2 class="rise" style="--d:1">God turns things upside down</h2>
+    <div class="swap rise" style="--d:2">
+      <h3><span>Up high</span>on the seat</h3>
+      <h3><span>Down low</span>at the bottom</h3>
+      <div class="a"><b>The proud and the mighty</b><small>the rich, sent “empty away”</small></div>
+      <div class="b"><b>The low and the hungry</b><small>“filled … with good things”</small></div>
+    </div>
+    <p class="note step swap-go">Mary sings as if it's already done. God puts down the ones who think they don't need Him, and lifts up the ones who know they do.</p>
+    <p class="note step">If you came to Jesus at the bottom, broke and hungry, you're in good company. That's exactly who He fills. The only thing that keeps a man empty is thinking he's already full.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="54-56" data-hl="in remembrance of his mercy|to Abraham, and to his seed for ever"></section>
+
+<!-- ======================= PART FOUR: HIS NAME IS JOHN ======================= -->
+<section class="slide part">
+  <div class="inner">
+    <p class="part-n rise">Part four</p>
+    <h2 class="rise" style="--d:1">His name is John</h2>
+    <p class="range rise" style="--d:2">Verses 57–80</p>
+    <div class="rule"></div>
+    <p class="hook rise" style="--d:4">The silent priest writes one line, gets his voice back, and sings about the sunrise.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="57-61" data-hl="on the eighth day they came to circumcise the child|he shall be called John"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="59" data-hl="on the eighth day they came to circumcise the child"></blockquote>
+    <h2 class="rise" style="--d:1">The eighth day</h2>
+    <blockquote class="quote rise" style="--d:2"><p>“And he that is eight days old shall be circumcised among you, every man child in your generations…”</p><cite>Genesis 17:12</cite></blockquote>
+    <p class="note step">Circumcision was the mark of God's covenant with Abraham. On that day a Jewish boy was also named. Everyone expected “Zacharias, after the name of his father.” That was the custom.</p>
+    <p class="note step">Elisabeth said no. “None of thy kindred” had this name (v. 61). This boy wasn't going to carry on the old family pattern. God had named him. Your family's past doesn't have to be your future.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="62-66" data-hl="His name is John|his tongue loosed, and he spake, and praised God|the hand of the Lord was with him"></section>
+
+<section class="slide ex ex-name">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="63-64" data-hl="His name is John|his mouth was opened immediately"></blockquote>
+    <h2 class="rise" style="--d:1">One line on a tablet</h2>
+    <div class="rename">
+      <span class="old rise" style="--d:2">Zacharias, after his father</span>
+      <span class="arrow step n2">→</span>
+      <span class="new step">John</span>
+      <span class="gloss step">“the LORD is gracious,” the name God gave (v. 13)</span>
+    </div>
+    <p class="note step">A “writing table” was a small board coated with wax, written on with a point. Nine months earlier Zacharias wouldn't take God at His word. Now he writes it down in front of everybody: <em>His name is John.</em></p>
+    <p class="note step">The moment he obeyed, his tongue was loosed, and the first thing out of his mouth was praise. The man who doubted got a second chance. So do we.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="67-71" data-hl="visited and redeemed his people|an horn of salvation"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="68-69" data-hl="he hath visited and redeemed his people|an horn of salvation"></blockquote>
+    <h2 class="rise" style="--d:1">“An horn of salvation”</h2>
+    <p class="note rise" style="--d:2">A horn was a picture of strength, like the horns of a bull. David used it of God: “my buckler, and <em>the horn of my salvation</em>, and my high tower” (Psalm 18:2).</p>
+    <p class="note step">Zacharias sings about God raising up a strong Saviour “in the house of his servant David.” That's not John, who was from Aaron's line. It's Mary's baby, from David's line, not even born yet.</p>
+    <p class="note step">And notice the tense: God “<em>hath</em> visited and redeemed.” When God promises it, it's as good as done.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="72-75" data-hl="to remember his holy covenant|The oath which he sware|serve him without fear"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="72-73" data-hl="to remember his holy covenant|The oath which he sware"></blockquote>
+    <h2 class="rise" style="--d:1">The names tell the story</h2>
+    <div class="tongues">
+      <div class="rise" style="--d:2"><div class="w" lang="he">זְכַרְיָה</div><div class="t">Zacharias</div><div class="l">“the LORD remembers”</div></div>
+      <div class="rise" style="--d:4"><div class="w" lang="he">אֱלִישֶׁבַע</div><div class="t">Elisabeth</div><div class="l">“my God is an oath”</div></div>
+      <div class="rise" style="--d:6"><div class="w" lang="he">יוֹחָנָן</div><div class="t">John</div><div class="l">“the LORD is gracious”</div></div>
+    </div>
+    <p class="note step">Listen to the song: God <em>remembers</em> His covenant (v. 72). He keeps the <em>oath</em> He swore to Abraham (v. 73), and it's all His <em>tender mercy</em> (v. 78). The father, the mother, and the boy: the LORD remembered His oath, and He was gracious.</p>
+    <p class="note step">Why did He save them? “That we … might serve him <em>without fear</em>” (v. 74). Not to live scared, but free.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="76-79" data-hl="the remission of their sins|the dayspring from on high hath visited us|To give light to them that sit in darkness and in the shadow of death"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="77" data-hl="knowledge of salvation|by the remission of their sins"></blockquote>
+    <h2 class="rise" style="--d:1">“Remission” means the debt is cancelled</h2>
+    <div class="ledger rise" style="--d:2">
+      <h3>What I owe God</h3>
+      <ul>
+        <li style="--k:0"><span>Every lie I told</span><span>owed</span></li>
+        <li style="--k:1"><span>Every person I hurt</span><span>owed</span></li>
+        <li style="--k:2"><span>Every wasted year</span><span>owed</span></li>
+        <li style="--k:3"><span>Every promise I broke</span><span>owed</span></li>
+      </ul>
+      <div class="total"><span>Balance due</span><b>more than I can pay</b></div>
+      <div class="ledger-stamp">REMITTED<small>sent away</small></div>
+    </div>
+    <p class="note step ledger-paid">The Greek word, <span class="gk">aphesis</span>, means <em>a sending away, a release</em>, like a debt written off. John's job was to tell people how to be saved: their sins could be sent away.</p>
+    <p class="note step">Not by working it off. “Through the tender mercy of our God” (v. 78), paid for by the One who was coming.</p>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="78-79" data-hl="the dayspring from on high hath visited us|them that sit in darkness and in the shadow of death"></blockquote>
+    <h2 class="rise" style="--d:1">The dayspring: sunrise</h2>
+    <div class="daybreak">
+      <div class="rise" style="--d:3"><i>v. 79</i><b>Sitting in darkness</b><p>“In the shadow of death.” Not walking, sitting: stuck, with no way out.</p></div>
+      <div class="step"><i>v. 78</i><b>The dayspring</b><p>The first light over the hills. God's Son, coming “from on high” to visit us.</p></div>
+      <div class="step"><i>v. 79</i><b>The way of peace</b><p>Light enough to see the road, and feet guided onto it.</p></div>
+    </div>
+    <blockquote class="quote step"><p>“The people that walked in darkness have seen a great light: they that dwell in the land of the shadow of death, upon them hath the light shined.”</p><cite>Isaiah 9:2</cite></blockquote>
+    <p class="note step">Sunrise doesn't wait for you to climb out of the dark first. It comes to where you are.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="80" data-hl="waxed strong in spirit|was in the deserts till the day of his shewing unto Israel"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="80" data-hl="was in the deserts till the day of his shewing"></blockquote>
+    <h2 class="rise" style="--d:1">The quiet years</h2>
+    <ol class="timeline" aria-label="About 6 BC, John is born. Then about thirty years of growing strong in the deserts. About AD 27, the word of God comes to John in the wilderness, and he begins to preach.">
+      <li style="--k:0"><b>about 6 BC</b><span>John is born</span></li>
+      <li class="wait" style="--k:1"><b>about 30 years</b><span>growing strong, out of sight in the deserts</span></li>
+      <li class="lit" style="--k:2"><b>about AD 27</b><span>“the word of God came unto John the son of Zacharias in the wilderness” (Luke 3:2)</span></li>
+    </ol>
+    <p class="note step">One verse covers some thirty years. No crowds, no preaching, just growing. God was getting His man ready.</p>
+    <p class="note step">Recovery has quiet years too: the slow days when nobody's clapping and you're just growing strong. They're not wasted. God does some of His best work out of sight.</p>
+  </div>
+</section>
+
+<!-- ======================= CLOSING ======================= -->
+<section class="slide remember">
+  <div class="inner">
+    <h2 class="rise">Points to remember</h2>
+    <ol class="seeds">
+      <li class="step"><span class="topic">God's Word</span><span class="seed-q">“That thou mightest know the certainty” <cite>1:4</cite></span><span class="take">The Gospel rests on eyewitnesses and careful checking. You can be sure.</span></li>
+      <li class="step"><span class="topic">Prayer</span><span class="seed-q">“Thy prayer is heard” <cite>1:13</cite></span><span class="take">God hadn't forgotten an old prayer. “Not yet” isn't “no.”</span></li>
+      <li class="step"><span class="topic">Faith and doubt</span><span class="seed-q">“Be it unto me according to thy word” <cite>1:38</cite></span><span class="take">Ask God honest questions, but take Him at His word.</span></li>
+      <li class="step"><span class="topic">Who Jesus is</span><span class="seed-q">“Shall be called the Son of God” <cite>1:35</cite></span><span class="take">Jesus: born of a virgin, the Son of God, the King whose kingdom never ends.</span></li>
+      <li class="step"><span class="topic">God's power</span><span class="seed-q">“With God nothing shall be impossible” <cite>1:37</cite></span><span class="take">Don't tell God what can't be done in your life.</span></li>
+      <li class="step"><span class="topic">Salvation</span><span class="seed-q">“By the remission of their sins” <cite>1:77</cite></span><span class="take">He came to send our sins away, and to bring light to men sitting in the dark.</span></li>
+    </ol>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+    <p class="counter">Question 1 of 6</p>
+    <span class="topic">God's Word</span>
+    <h2>Can we be sure what we believe is true?</h2>
+    <p class="ask-line">What verses tell us about this?</p>
+    <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+    <blockquote class="quote step" data-q="2" data-hl="eyewitnesses"></blockquote>
+    <blockquote class="quote step" data-q="3" data-hl="having had perfect understanding of all things from the very first"></blockquote>
+    <blockquote class="quote step" data-q="4" data-hl="the certainty of those things"></blockquote>
+    <div class="answer step"><h3>Answer</h3><p>Yes. Luke didn't write down rumors. He went back to the eyewitnesses, traced everything from the start, and set it out in order, so that we could know “the certainty” of what we've been taught. Our faith rests on things that really happened.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+    <p class="counter">Question 2 of 6</p>
+    <span class="topic">Prayer</span>
+    <h2>Does God still hear prayers we have stopped praying?</h2>
+    <p class="ask-line">What verses tell us about this?</p>
+    <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+    <blockquote class="quote step" data-q="7"></blockquote>
+    <blockquote class="quote step" data-q="13" data-hl="thy prayer is heard"></blockquote>
+    <blockquote class="quote step" data-q="25"></blockquote>
+    <blockquote class="quote step" data-q="58" data-hl="the Lord had shewed great mercy upon her"></blockquote>
+    <div class="answer step"><h3>Answer</h3><p>Yes. Zacharias and Elisabeth were too old to hope any more, and God said, “Thy prayer is heard.” He answers in His time, not ours. A prayer you gave up on may still be before Him.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+    <p class="counter">Question 3 of 6</p>
+    <span class="topic">Faith and doubt</span>
+    <h2>What is the difference between doubting God and asking Him?</h2>
+    <p class="ask-line">What verses tell us about this?</p>
+    <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+    <blockquote class="quote step" data-q="18" data-hl="Whereby shall I know this?"></blockquote>
+    <blockquote class="quote step" data-q="34" data-hl="How shall this be"></blockquote>
+    <blockquote class="quote step" data-q="38" data-hl="be it unto me according to thy word"></blockquote>
+    <blockquote class="quote step" data-q="45" data-hl="blessed is she that believed"></blockquote>
+    <div class="answer step"><h3>Answer</h3><p>Zacharias wanted proof because he didn't believe. Mary asked how, because she did. God welcomes honest questions. What matters is whether we take Him at His word: “be it unto me according to thy word.”</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+    <p class="counter">Question 4 of 6</p>
+    <span class="topic">Who Jesus is</span>
+    <h2>Who did the angel say Mary's son would be?</h2>
+    <p class="ask-line">What verses tell us about this?</p>
+    <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+    <blockquote class="quote step" data-q="31" data-hl="JESUS"></blockquote>
+    <blockquote class="quote step" data-q="33" data-hl="of his kingdom there shall be no end"></blockquote>
+    <blockquote class="quote step" data-q="35" data-hl="the Son of God"></blockquote>
+    <div class="answer step"><h3>Answer</h3><p>Jesus, “the LORD saves.” Born of a virgin by the Holy Ghost, He is the Son of God, holy, and truly a man. He is the promised King, and His kingdom will never end.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+    <p class="counter">Question 5 of 6</p>
+    <span class="topic">God's power</span>
+    <h2>Is anything too hard for God?</h2>
+    <p class="ask-line">What verses tell us about this?</p>
+    <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+    <blockquote class="quote step" data-q="36"></blockquote>
+    <blockquote class="quote step" data-q="37"></blockquote>
+    <blockquote class="quote step" data-q="49"></blockquote>
+    <div class="answer step"><h3>Answer</h3><p>No. An old barren woman had a son, and a virgin conceived. “With God nothing shall be impossible.” Whatever looks hopeless in your life is not too hard for Him.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+    <p class="counter">Question 6 of 6</p>
+    <span class="topic">Salvation (soteriology)</span>
+    <h2>What did God send Jesus to do for His people?</h2>
+    <p class="ask-line">What verses tell us about this?</p>
+    <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+    <blockquote class="quote step" data-q="68" data-hl="visited and redeemed his people"></blockquote>
+    <blockquote class="quote step" data-q="77"></blockquote>
+    <blockquote class="quote step" data-q="78"></blockquote>
+    <blockquote class="quote step" data-q="79"></blockquote>
+    <div class="answer step"><h3>Answer</h3><p>To redeem them: to buy them back. To send their sins away, by God's tender mercy and not by their own work. To bring light to people sitting in darkness, and to guide their feet into the way of peace.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide prayer">
+  <div class="inner">
+    <div class="emblem rise"></div>
+    <h2 class="rise" style="--d:1">Prayer requests</h2>
+    <p class="ask-line rise" style="--d:2">What can we pray about for you today?</p>
+    <blockquote class="quote rise" style="--d:4" data-q="13" data-hl="Fear not, Zacharias: for thy prayer is heard"></blockquote>
+  </div>
+</section>
+
+</main>
+
+<script>
+// King James Version, Luke chapter 1
+const V = {
+  1: "Forasmuch as many have taken in hand to set forth in order a declaration of those things which are most surely believed among us,",
+  2: "Even as they delivered them unto us, which from the beginning were eyewitnesses, and ministers of the word;",
+  3: "It seemed good to me also, having had perfect understanding of all things from the very first, to write unto thee in order, most excellent Theophilus,",
+  4: "That thou mightest know the certainty of those things, wherein thou hast been instructed.",
+  5: "There was in the days of Herod, the king of Judaea, a certain priest named Zacharias, of the course of Abia: and his wife was of the daughters of Aaron, and her name was Elisabeth.",
+  6: "And they were both righteous before God, walking in all the commandments and ordinances of the Lord blameless.",
+  7: "And they had no child, because that Elisabeth was barren, and they both were now well stricken in years.",
+  8: "And it came to pass, that while he executed the priest’s office before God in the order of his course,",
+  9: "According to the custom of the priest’s office, his lot was to burn incense when he went into the temple of the Lord.",
+  10: "And the whole multitude of the people were praying without at the time of incense.",
+  11: "And there appeared unto him an angel of the Lord standing on the right side of the altar of incense.",
+  12: "And when Zacharias saw him, he was troubled, and fear fell upon him.",
+  13: "But the angel said unto him, Fear not, Zacharias: for thy prayer is heard; and thy wife Elisabeth shall bear thee a son, and thou shalt call his name John.",
+  14: "And thou shalt have joy and gladness; and many shall rejoice at his birth.",
+  15: "For he shall be great in the sight of the Lord, and shall drink neither wine nor strong drink; and he shall be filled with the Holy Ghost, even from his mother’s womb.",
+  16: "And many of the children of Israel shall he turn to the Lord their God.",
+  17: "And he shall go before him in the spirit and power of Elias, to turn the hearts of the fathers to the children, and the disobedient to the wisdom of the just; to make ready a people prepared for the Lord.",
+  18: "And Zacharias said unto the angel, Whereby shall I know this? for I am an old man, and my wife well stricken in years.",
+  19: "And the angel answering said unto him, I am Gabriel, that stand in the presence of God; and am sent to speak unto thee, and to shew thee these glad tidings.",
+  20: "And, behold, thou shalt be dumb, and not able to speak, until the day that these things shall be performed, because thou believest not my words, which shall be fulfilled in their season.",
+  21: "And the people waited for Zacharias, and marvelled that he tarried so long in the temple.",
+  22: "And when he came out, he could not speak unto them: and they perceived that he had seen a vision in the temple: for he beckoned unto them, and remained speechless.",
+  23: "And it came to pass, that, as soon as the days of his ministration were accomplished, he departed to his own house.",
+  24: "And after those days his wife Elisabeth conceived, and hid herself five months, saying,",
+  25: "Thus hath the Lord dealt with me in the days wherein he looked on me, to take away my reproach among men.",
+  26: "And in the sixth month the angel Gabriel was sent from God unto a city of Galilee, named Nazareth,",
+  27: "To a virgin espoused to a man whose name was Joseph, of the house of David; and the virgin’s name was Mary.",
+  28: "And the angel came in unto her, and said, Hail, thou that art highly favoured, the Lord is with thee: blessed art thou among women.",
+  29: "And when she saw him, she was troubled at his saying, and cast in her mind what manner of salutation this should be.",
+  30: "And the angel said unto her, Fear not, Mary: for thou hast found favour with God.",
+  31: "And, behold, thou shalt conceive in thy womb, and bring forth a son, and shalt call his name JESUS.",
+  32: "He shall be great, and shall be called the Son of the Highest: and the Lord God shall give unto him the throne of his father David:",
+  33: "And he shall reign over the house of Jacob for ever; and of his kingdom there shall be no end.",
+  34: "Then said Mary unto the angel, How shall this be, seeing I know not a man?",
+  35: "And the angel answered and said unto her, The Holy Ghost shall come upon thee, and the power of the Highest shall overshadow thee: therefore also that holy thing which shall be born of thee shall be called the Son of God.",
+  36: "And, behold, thy cousin Elisabeth, she hath also conceived a son in her old age: and this is the sixth month with her, who was called barren.",
+  37: "For with God nothing shall be impossible.",
+  38: "And Mary said, Behold the handmaid of the Lord; be it unto me according to thy word. And the angel departed from her.",
+  39: "And Mary arose in those days, and went into the hill country with haste, into a city of Juda;",
+  40: "And entered into the house of Zacharias, and saluted Elisabeth.",
+  41: "And it came to pass, that, when Elisabeth heard the salutation of Mary, the babe leaped in her womb; and Elisabeth was filled with the Holy Ghost:",
+  42: "And she spake out with a loud voice, and said, Blessed art thou among women, and blessed is the fruit of thy womb.",
+  43: "And whence is this to me, that the mother of my Lord should come to me?",
+  44: "For, lo, as soon as the voice of thy salutation sounded in mine ears, the babe leaped in my womb for joy.",
+  45: "And blessed is she that believed: for there shall be a performance of those things which were told her from the Lord.",
+  46: "And Mary said, My soul doth magnify the Lord,",
+  47: "And my spirit hath rejoiced in God my Saviour.",
+  48: "For he hath regarded the low estate of his handmaiden: for, behold, from henceforth all generations shall call me blessed.",
+  49: "For he that is mighty hath done to me great things; and holy is his name.",
+  50: "And his mercy is on them that fear him from generation to generation.",
+  51: "He hath shewed strength with his arm; he hath scattered the proud in the imagination of their hearts.",
+  52: "He hath put down the mighty from their seats, and exalted them of low degree.",
+  53: "He hath filled the hungry with good things; and the rich he hath sent empty away.",
+  54: "He hath holpen his servant Israel, in remembrance of his mercy;",
+  55: "As he spake to our fathers, to Abraham, and to his seed for ever.",
+  56: "And Mary abode with her about three months, and returned to her own house.",
+  57: "Now Elisabeth’s full time came that she should be delivered; and she brought forth a son.",
+  58: "And her neighbours and her cousins heard how the Lord had shewed great mercy upon her; and they rejoiced with her.",
+  59: "And it came to pass, that on the eighth day they came to circumcise the child; and they called him Zacharias, after the name of his father.",
+  60: "And his mother answered and said, Not so; but he shall be called John.",
+  61: "And they said unto her, There is none of thy kindred that is called by this name.",
+  62: "And they made signs to his father, how he would have him called.",
+  63: "And he asked for a writing table, and wrote, saying, His name is John. And they marvelled all.",
+  64: "And his mouth was opened immediately, and his tongue loosed, and he spake, and praised God.",
+  65: "And fear came on all that dwelt round about them: and all these sayings were noised abroad throughout all the hill country of Judaea.",
+  66: "And all they that heard them laid them up in their hearts, saying, What manner of child shall this be! And the hand of the Lord was with him.",
+  67: "And his father Zacharias was filled with the Holy Ghost, and prophesied, saying,",
+  68: "Blessed be the Lord God of Israel; for he hath visited and redeemed his people,",
+  69: "And hath raised up an horn of salvation for us in the house of his servant David;",
+  70: "As he spake by the mouth of his holy prophets, which have been since the world began:",
+  71: "That we should be saved from our enemies, and from the hand of all that hate us;",
+  72: "To perform the mercy promised to our fathers, and to remember his holy covenant;",
+  73: "The oath which he sware to our father Abraham,",
+  74: "That he would grant unto us, that we being delivered out of the hand of our enemies might serve him without fear,",
+  75: "In holiness and righteousness before him, all the days of our life.",
+  76: "And thou, child, shalt be called the prophet of the Highest: for thou shalt go before the face of the Lord to prepare his ways;",
+  77: "To give knowledge of salvation unto his people by the remission of their sins,",
+  78: "Through the tender mercy of our God; whereby the dayspring from on high hath visited us,",
+  79: "To give light to them that sit in darkness and in the shadow of death, to guide our feet into the way of peace.",
+  80: "And the child grew, and waxed strong in spirit, and was in the deserts till the day of his shewing unto Israel."
+};
+const BOOK = "Luke 1";
+</script>
+<script src="../assets/deck.js"></script>
+</body>
+</html>

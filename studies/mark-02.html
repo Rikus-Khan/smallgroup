@@ -1,0 +1,571 @@
+<!doctype html>
+<html lang="en" data-theme="scribe">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Mark 2</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="../assets/fonts.css">
+<link rel="stylesheet" href="../assets/deck.css">
+<link rel="stylesheet" href="../assets/themes.css">
+<style>
+/* Mark 2: through the roof. A flat-roofed house in cross-section, crowd at the door. A .mk02-dig step opens a hole in the roof;
+   a .mk02-lower step lowers the bed on ropes down in front of Jesus. */
+.mk02-roof .mk02-wall { fill: var(--surface-2); stroke: var(--ink-soft); stroke-width: 2; }
+.mk02-roof .mk02-top { fill: var(--leather); stroke: var(--leather-light); stroke-width: 2; }
+.mk02-roof .mk02-patch { fill: var(--leather); stroke: var(--leather-light); stroke-width: 2; transition: opacity .8s ease, transform .8s ease; transform-box: fill-box; transform-origin: center; }
+.mk02-roof .mk02-stair { fill: none; stroke: var(--ink-soft); stroke-width: 3; stroke-linejoin: round; }
+.mk02-roof .mk02-folk { fill: var(--ink-soft); }
+.mk02-roof .mk02-four { fill: var(--ink); }
+.mk02-roof .mk02-jesus { fill: var(--accent-hot); }
+.mk02-roof .mk02-bed rect { fill: var(--leather-light); stroke: var(--leather); stroke-width: 2; }
+.mk02-roof .mk02-bed circle { fill: var(--ink); }
+.mk02-roof .mk02-bed line { stroke: var(--ink-soft); stroke-width: 2; }
+.mk02-roof .mk02-bed { transition: transform 2.2s cubic-bezier(.45,0,.3,1) .3s; }
+.mk02-roof .mk02-light { opacity: 0; fill: color-mix(in srgb, var(--glow) 45%, transparent); transition: opacity 1s ease .4s; }
+.slide:has(.mk02-dig.on) .mk02-patch { opacity: 0; transform: translateY(-14px) rotate(-10deg); }
+.slide:has(.mk02-dig.on) .mk02-light { opacity: 1; }
+.slide:has(.mk02-lower.on) .mk02-bed { transform: translateY(132px); }
+
+/* Mark 2: old and new bottles (wineskins). On a .mk02-pour step, new wine goes into both: the old skin cracks, shakes and spills;
+   the new one swells and holds. */
+.mk02-skins .mk02-skin { stroke-width: 3; transform-box: fill-box; transform-origin: 50% 100%; transition: transform 1.2s ease .6s; }
+.mk02-skins .mk02-skin.old { fill: color-mix(in srgb, var(--leather) 70%, var(--ink-soft)); stroke: var(--ink-soft); }
+.mk02-skins .mk02-skin.new { fill: var(--leather-light); stroke: var(--leather); }
+.mk02-skins .mk02-crack { fill: none; stroke: var(--danger); stroke-width: 3; stroke-linecap: round; stroke-dasharray: 1; stroke-dashoffset: 1; transition: stroke-dashoffset .5s ease 1.4s; }
+.mk02-skins .mk02-spill { fill: var(--wine); opacity: 0; transition: opacity .6s ease 1.8s; }
+.mk02-skins .mk02-pourin { fill: none; stroke: var(--wine); stroke-width: 5; stroke-linecap: round; stroke-dasharray: 1; stroke-dashoffset: 1; transition: stroke-dashoffset .8s ease; }
+.mk02-skins text { font-size: 17px; }
+.slide:has(.mk02-pour.on) .mk02-pourin { stroke-dashoffset: 0; }
+.slide:has(.mk02-pour.on) .mk02-crack { stroke-dashoffset: 0; }
+.slide:has(.mk02-pour.on) .mk02-spill { opacity: .85; }
+.slide:has(.mk02-pour.on) .mk02-skin.new { transform: scale(1.08); }
+.slide.active:has(.mk02-pour.on) .mk02-skin.old { animation: mk02-shake .12s 1.3s 6 alternate; }
+@keyframes mk02-shake { from { transform: translateX(-3px); } to { transform: translateX(3px); } }
+@media (prefers-reduced-motion: reduce) { .slide.active:has(.mk02-pour.on) .mk02-skin.old { animation: none; } }
+</style>
+</head>
+<body>
+<main class="deck" id="deck">
+
+<!-- ======================= OPENING ======================= -->
+<section class="slide title">
+  <div class="inner">
+    <div class="emblem rise"></div>
+    <h1 class="rise">Mark 2</h1>
+    <p class="sub rise" style="--d:3">Not the righteous, but sinners</p>
+    <p class="tag rise" style="--d:5">Four friends tear open a roof, a tax man gets up from his table, and Jesus says He came for the sick.</p>
+  </div>
+</section>
+
+<section class="slide watch">
+  <div class="inner">
+    <h2 class="rise">Things to watch for</h2>
+    <p class="lede rise" style="--d:1">Keep these questions in the back of your mind as we read. We'll come back to every one of them at the end.</p>
+    <ol class="seeds">
+      <li class="step"><span class="topic">Friends</span><span class="seed-q">What can friends do for a man who can't get to Jesus on his own?</span></li>
+      <li class="step"><span class="topic">Forgiveness</span><span class="seed-q">Who can forgive sins?</span></li>
+      <li class="step"><span class="topic">Salvation (soteriology)</span><span class="seed-q">Who did Jesus come to call?</span></li>
+      <li class="step"><span class="topic">Something new</span><span class="seed-q">Can Jesus just be patched onto an old life?</span></li>
+      <li class="step"><span class="topic">The sabbath</span><span class="seed-q">What was the sabbath made for?</span></li>
+      <li class="step"><span class="topic">Who Jesus is</span><span class="seed-q">Who is the Son of man?</span></li>
+    </ol>
+  </div>
+</section>
+
+<!-- ======================= PART ONE: THROUGH THE ROOF ======================= -->
+<section class="slide part">
+  <div class="inner">
+    <p class="part-n rise">Part one</p>
+    <h2 class="rise" style="--d:1">Through the roof</h2>
+    <p class="range rise" style="--d:2">Verses 1–12</p>
+    <div class="rule"></div>
+    <p class="hook rise" style="--d:4">The door is blocked. Four men won't take no for an answer.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="1-2" data-hl="it was noised that he was in the house|no, not so much as about the door"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="1" data-hl="again he entered into Capernaum"></blockquote>
+    <div class="split">
+      <div class="stage">
+        <svg class="map" data-land viewBox="100 50 300 250" data-towns="Capernaum!:l, Nazareth:l" role="img" aria-label="A map of Galilee. Capernaum sits on the north shore of the Sea of Galilee, where Jesus comes home after preaching in the towns around. Nazareth, where He grew up, lies to the southwest."></svg>
+      </div>
+      <div>
+        <h2 class="rise" style="--d:1">Home in Capernaum</h2>
+        <p class="note rise" style="--d:2">After His preaching trip around Galilee (1:39), Jesus comes back to Capernaum, the lakeside town that had become His home base. “The house” is most likely Simon Peter's house from 1:29.</p>
+        <p class="note step">“It was noised” means <em>word got around</em>. A house in a town like that was small: a room or two around a courtyard. In no time it was packed, and the doorway was jammed.</p>
+        <p class="note step">And what did Jesus do with the crowd? “He preached the word unto them.” The healings drew people. The word was what He came to give.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="slide verse" data-v="3-4" data-hl="borne of four|they uncovered the roof where he was"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="4" data-hl="they uncovered the roof where he was|they let down the bed"></blockquote>
+    <div class="split">
+      <div class="stage">
+        <svg class="mk02-roof" viewBox="0 0 600 380" role="img" aria-label="A house in cross-section with a flat roof and an outside stair. A crowd fills the house and blocks the door. Four men on the roof. On a step, they dig a hole through the roof. On the next step, they lower the sick man's bed on ropes, down in front of Jesus.">
+          <defs><clipPath id="mk02-clip"><rect x="0" y="150" width="600" height="230"/></clipPath></defs>
+          <line x1="0" y1="340" x2="600" y2="340" stroke-width="2" style="stroke:var(--ink-soft)"/>
+          <rect class="mk02-wall rise" style="--d:1" x="150" y="170" width="300" height="170"/>
+          <rect class="rise" style="--d:1;fill:var(--bg);stroke:var(--ink-soft)" stroke-width="2" x="168" y="268" width="38" height="72"/>
+          <rect class="mk02-light" x="262" y="170" width="76" height="170"/>
+          <g class="rise" style="--d:1">
+            <rect class="mk02-top" x="140" y="150" width="122" height="20"/>
+            <rect class="mk02-top" x="338" y="150" width="122" height="20"/>
+            <rect class="mk02-patch" x="262" y="150" width="76" height="20"/>
+          </g>
+          <path class="mk02-stair rise" style="--d:2" d="M560 340 L560 320 L540 320 L540 300 L520 300 L520 280 L500 280 L500 260 L480 260 L480 240 L460 240 L460 220 L460 170"/>
+          <g class="mk02-folk rise" style="--d:2">
+            <circle cx="40" cy="322" r="10"/><circle cx="68" cy="318" r="10"/><circle cx="96" cy="322" r="10"/><circle cx="124" cy="318" r="10"/><circle cx="150" cy="322" r="10"/>
+            <circle cx="187" cy="320" r="10"/><circle cx="224" cy="300" r="10"/><circle cx="250" cy="318" r="10"/><circle cx="360" cy="300" r="10"/><circle cx="392" cy="318" r="10"/><circle cx="424" cy="300" r="10"/>
+            <circle cx="240" cy="276" r="10"/><circle cx="410" cy="268" r="10"/><circle cx="376" cy="262" r="10"/>
+          </g>
+          <circle class="mk02-jesus rise" style="--d:3" cx="300" cy="312" r="13"/>
+          <text class="rise" x="300" y="368" text-anchor="middle" font-size="17" font-weight="700" style="--d:3;fill:var(--accent-hot)">Jesus</text>
+          <text class="rise" x="70" y="290" text-anchor="middle" font-size="16" style="--d:2;fill:var(--ink-soft)">no room at the door</text>
+          <g clip-path="url(#mk02-clip)">
+            <g class="mk02-bed">
+              <line x1="274" y1="10" x2="274" y2="156"/><line x1="326" y1="10" x2="326" y2="156"/>
+              <rect x="256" y="152" width="88" height="14" rx="3"/>
+              <circle cx="272" cy="148" r="8"/>
+            </g>
+          </g>
+          <g class="mk02-four rise" style="--d:3">
+            <circle cx="225" cy="135" r="10"/><circle cx="250" cy="135" r="10"/><circle cx="350" cy="135" r="10"/><circle cx="375" cy="135" r="10"/>
+          </g>
+          <text class="rise" x="300" y="100" text-anchor="middle" font-size="17" style="--d:3;fill:var(--ink)">four friends</text>
+        </svg>
+      </div>
+      <div>
+        <h2 class="rise" style="--d:1">Digging through</h2>
+        <p class="note rise" style="--d:2">Houses had flat roofs, reached by a stair outside. The roof was wooden beams covered with branches and packed clay.</p>
+        <p class="note step mk02-dig">So they climbed up and dug a hole right over Jesus' head. Dirt and straw falling on the crowd. Somebody's roof, wrecked.</p>
+        <p class="note step mk02-lower">Then they let him down on ropes. The “bed” was a sleeping mat, light enough to carry. “The palsy” means <em>paralysis</em>: he couldn't walk at all.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="slide verse" data-v="5-7" data-hl="When Jesus saw their faith|Son, thy sins be forgiven thee|who can forgive sins but God only?"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="5" data-hl="When Jesus saw their faith"></blockquote>
+    <h2 class="rise" style="--d:1">Their faith</h2>
+    <div class="chains">
+      <div class="chain step"><span class="who-chip">four friends</span><span class="said">carried him</span><span class="who-chip">a man who couldn't walk</span><span class="said">down through the roof</span><span class="who-chip jesus">Jesus</span></div>
+    </div>
+    <p class="note step">Jesus saw <em>their</em> faith, the faith of the four. Some men can't get to Jesus on their own legs. They need somebody to carry them. A sponsor, a brother, a man who keeps showing up.</p>
+    <blockquote class="quote step"><p>“Bear ye one another’s burdens, and so fulfil the law of Christ.”</p><cite>Galatians 6:2</cite></blockquote>
+    <p class="note step">And Jesus' first words weren't about his legs. “Son, thy sins be forgiven thee.” He went to the deepest need first. A man can walk and still be lost. Jesus fixes the inside first.</p>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="7" data-hl="blasphemies|who can forgive sins but God only?"></blockquote>
+    <h2 class="rise" style="--d:1">The scribes were half right</h2>
+    <p class="note rise" style="--d:2">“Blasphemy” means speaking against God, or claiming what belongs only to Him. Under the law, it was punished by death.</p>
+    <div class="ifthen step">
+      <div class="if"><small>If</small>only God can forgive sins,</div>
+      <span class="arrow" aria-hidden="true">→</span>
+      <div class="then"><small>and</small>Jesus forgives sins…</div>
+    </div>
+    <p class="note step">…then either He is lying, or He is God. The scribes got the first part right. God says it Himself:</p>
+    <blockquote class="quote step"><p>“I, even I, am he that blotteth out thy transgressions for mine own sake, and will not remember thy sins.”</p><cite>Isaiah 43:25</cite></blockquote>
+    <p class="note step">Where they went wrong was in who was standing in front of them.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="8-9" data-hl="Why reason ye these things in your hearts?|Whether is it easier"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="9" data-hl="Whether is it easier to say"></blockquote>
+    <h2 class="rise" style="--d:1">Which is easier to say?</h2>
+    <p class="note rise" style="--d:2">First notice: they only thought it, “in their hearts.” Jesus answered what they hadn't said out loud. He knew their thoughts.</p>
+    <div class="columns">
+      <div class="col law step">
+        <p class="who">Can't be checked</p>
+        <h3>“Thy sins be forgiven thee”</h3>
+        <p>Anybody can say it. Nobody in the room can see whether it happened.</p>
+      </div>
+      <div class="col grace step">
+        <p class="who">Everyone will see</p>
+        <h3>“Arise, and take up thy bed”</h3>
+        <p>Say that, and in a few seconds the whole room knows whether you're for real.</p>
+      </div>
+    </div>
+    <p class="note step">So Jesus does the one they can see to prove the one they can't. If the legs work, the forgiveness is real too.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="10-12" data-hl="the Son of man hath power on earth to forgive sins|Arise, and take up thy bed|We never saw it on this fashion"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="10" data-hl="the Son of man hath power on earth to forgive sins"></blockquote>
+    <h2 class="rise" style="--d:1">“The Son of man”</h2>
+    <p class="note rise" style="--d:2">This was Jesus' favorite name for Himself. It sounds humble, and it is: He is truly a man. But it comes from a vision of heaven's throne room:</p>
+    <blockquote class="quote step"><p>“I saw in the night visions, and, behold, one like the Son of man came with the clouds of heaven, and came to the Ancient of days, and they brought him near before him. And there was given him dominion, and glory, and a kingdom…”</p><cite>Daniel 7:13–14</cite></blockquote>
+    <p class="note step">The Son of man has heaven's authority, and He uses it “on earth,” right here, in a crowded little house, on a paralyzed man's sins.</p>
+    <p class="note step">The man who was carried in walked out carrying his own bed. And “they were all amazed, and glorified God.” They all saw a man on his feet: proof of what they couldn't see, a forgiven man.</p>
+  </div>
+</section>
+
+<!-- ======================= PART TWO: FOLLOW ME ======================= -->
+<section class="slide part">
+  <div class="inner">
+    <p class="part-n rise">Part two</p>
+    <h2 class="rise" style="--d:1">Follow me</h2>
+    <p class="range rise" style="--d:2">Verses 13–22</p>
+    <div class="rule"></div>
+    <p class="hook rise" style="--d:4">A tax man, a dinner party, and a doctor who goes where the sick are.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="13-14" data-hl="sitting at the receipt of custom|Follow me. And he arose and followed him"></section>
+
+<section class="slide ex ex-name">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="14" data-hl="the receipt of custom"></blockquote>
+    <h2 class="rise" style="--d:1">The tax booth</h2>
+    <p class="note rise" style="--d:2">“The receipt of custom” was a toll booth. Capernaum sat on a main road and a busy lake, so goods were taxed coming through. The tax men worked for Herod Antipas and Rome, and they collected extra for themselves. Their own people saw them as traitors and crooks.</p>
+    <div class="rename">
+      <span class="old rise" style="--d:3">Levi the tax man</span>
+      <span class="arrow step n2">→</span>
+      <span class="new step">Matthew</span>
+      <span class="gloss step">Matthew tells the same story about himself: “a man, named Matthew, sitting at the receipt of custom” (Matthew 9:9). He became one of the twelve and wrote the first Gospel in our Bible.</span>
+    </div>
+    <p class="note step">Two words, “Follow me,” and he got up and left the money on the table. A fisherman could go back to fishing. A tax man who walked away couldn't get his job back.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="15-17" data-hl="many publicans and sinners sat also together with Jesus|They that are whole have no need of the physician|I came not to call the righteous, but sinners to repentance"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise" style="--d:1">The doctor goes where the sick are</h2>
+    <p class="note rise" style="--d:2">“Publicans” are tax men. Levi had Jesus to dinner with his friends: more tax men, and people everyone knew as “sinners.” Eating together meant you accepted someone.</p>
+    <div class="talk">
+      <p class="step"><small>The scribes and Pharisees</small>How is it that he eateth and drinketh with publicans and sinners?</p>
+      <p class="reply step"><small>Jesus</small>They that are whole have no need of the physician, but they that are sick: I came not to call the righteous, but sinners to repentance.</p>
+    </div>
+    <p class="note step">A doctor who won't go near the sick isn't much of a doctor. If you know you're sick, you're exactly who He came for.</p>
+    <p class="note step">And “the righteous”? “There is none righteous, no, not one” (Romans 3:10). The only men He can't help are the ones who think they're fine.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="18-20" data-hl="Can the children of the bridechamber fast, while the bridegroom is with them?|the bridegroom shall be taken away from them"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="19" data-hl="the children of the bridechamber|the bridegroom"></blockquote>
+    <h2 class="rise" style="--d:1">Nobody fasts at a wedding</h2>
+    <p class="note rise" style="--d:2">To “fast” is to go without food for a time, to pray and mourn. The law set one fast day a year. The Pharisees fasted twice a week, and John's disciples fasted too.</p>
+    <div class="columns">
+      <div class="col grace step">
+        <p class="who">While He is with them</p>
+        <h3>A wedding feast</h3>
+        <p>“The children of the bridechamber” are the groom's friends. A village wedding went on for days, and nobody mourned at it.</p>
+      </div>
+      <div class="col law step">
+        <p class="who">When He is taken away</p>
+        <h3>Then they fast</h3>
+        <p>“Taken away” is the first hint in Mark of the cross. The Bridegroom would be taken from them by force.</p>
+      </div>
+    </div>
+    <p class="note step">Jesus isn't against fasting. He's saying following Him isn't a funeral. When the Bridegroom is in the room, it's a celebration.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="21-22" data-hl="new cloth on an old garment|new wine must be put into new bottles"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <div class="split">
+      <div class="stage">
+        <svg class="mk02-skins" viewBox="0 0 600 340" role="img" aria-label="Two leather bottles, wineskins: an old, dry one and a new, soft one. On a step, new wine is poured into both. The old one cracks, shakes and spills. The new one stretches and holds.">
+          <g class="rise" style="--d:2">
+            <path class="mk02-skin old" d="M136 66 L164 66 L161 96 C 208 106, 228 160, 222 220 C 216 278, 184 302, 150 302 C 116 302, 84 278, 78 220 C 72 160, 92 106, 139 96 Z"/>
+            <path d="M136 82 L164 82" stroke-width="4" style="stroke:var(--ink-soft)"/>
+            <path d="M112 150 l18 8 M168 188 l22 -6 M120 238 l20 -4 M180 132 l12 10" fill="none" stroke-width="2" style="stroke:var(--ink-soft)"/>
+            <path class="mk02-crack" pathLength="1" d="M200 150 L184 178 L196 196 L178 226 L188 250"/>
+            <path class="mk02-spill" d="M190 250 C 198 268, 206 286, 214 300 C 240 300, 270 304, 272 310 C 270 316, 220 318, 196 314 C 190 296, 186 270, 190 250 Z"/>
+            <text x="150" y="328" text-anchor="middle" style="fill:var(--ink-soft)">old bottle: dry and stiff</text>
+          </g>
+          <g class="rise" style="--d:3">
+            <path class="mk02-skin new" d="M436 66 L464 66 L461 96 C 508 106, 528 160, 522 220 C 516 278, 484 302, 450 302 C 416 302, 384 278, 378 220 C 372 160, 392 106, 439 96 Z"/>
+            <path d="M436 82 L464 82" stroke-width="4" style="stroke:var(--leather)"/>
+            <text x="450" y="328" text-anchor="middle" style="fill:var(--accent-hot)">new bottle: soft, it stretches</text>
+          </g>
+          <path class="mk02-pourin" pathLength="1" d="M150 10 L150 72"/>
+          <path class="mk02-pourin" pathLength="1" d="M450 10 L450 72"/>
+          <text x="300" y="40" text-anchor="middle" style="fill:var(--wine)">new wine, still working</text>
+        </svg>
+      </div>
+      <div>
+        <h2 class="rise" style="--d:1">Old bottles</h2>
+        <p class="note rise" style="--d:2">“Bottles” here are goatskin bags. New wine keeps working and swelling, so it goes in a new, soft skin. An old skin is stretched out and stiff.</p>
+        <p class="note step mk02-pour">Pour it into an old skin and the skin splits: wine and bottle both lost. A new patch tears an old coat the same way.</p>
+        <p class="note step">This isn't about drinking. It's about the container. Jesus doesn't patch up the old life. He makes a new man.</p>
+        <blockquote class="quote step"><p>“Therefore if any man be in Christ, he is a new creature: old things are passed away; behold, all things are become new.”</p><cite>2 Corinthians 5:17</cite></blockquote>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ======================= PART THREE: LORD OF THE SABBATH ======================= -->
+<section class="slide part">
+  <div class="inner">
+    <p class="part-n rise">Part three</p>
+    <h2 class="rise" style="--d:1">Lord of the sabbath</h2>
+    <p class="range rise" style="--d:2">Verses 23–28</p>
+    <div class="rule"></div>
+    <p class="hook rise" style="--d:4">A handful of grain, and a question about who the day of rest belongs to.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="23-24" data-hl="to pluck the ears of corn|why do they on the sabbath day that which is not lawful?"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="23" data-hl="the corn fields|to pluck the ears of corn"></blockquote>
+    <h2 class="rise" style="--d:1">What the law said, and what they added</h2>
+    <p class="note rise" style="--d:2">In the King James Bible, “corn” means <em>grain</em>: wheat or barley, not the corn we grow. Hungry men walking along a field pulled off heads of grain, rubbed them, and ate them.</p>
+    <div class="columns">
+      <div class="col grace step">
+        <p class="who">God's law</p>
+        <h3>Allowed</h3>
+        <p>“When thou comest into the standing corn of thy neighbour, then thou mayest pluck the ears with thine hand; but thou shalt not move a sickle unto thy neighbour’s standing corn.” (Deuteronomy 23:25)</p>
+      </div>
+      <div class="col law step">
+        <p class="who">The Pharisees' rules</p>
+        <h3>“Not lawful”</h3>
+        <p>They had made long lists of what counted as work. To them, picking was reaping and rubbing was threshing: two jobs on the sabbath.</p>
+      </div>
+    </div>
+    <p class="note step">God gave the sabbath. The fences men built around it had grown so high you couldn't see God's kindness anymore.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="25-26" data-hl="what David did, when he had need|did eat the shewbread"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise" style="--d:1">David and the holy bread</h2>
+    <div class="dots rows rise" data-dots="12" style="--d:2;--cols:6;--pace:120ms;--dot:var(--leather-light);max-width:13rem" aria-label="Twelve loaves set out in two rows of six."></div>
+    <p class="note rise" style="--d:3">The “shewbread” was twelve loaves set out on a table in the house of God, “two rows, six on a row” (Leviticus 24:6). Each sabbath fresh loaves went on, and only the priests could eat the old ones.</p>
+    <p class="note step">When David was running for his life from King Saul, hungry, he came to the house of God, and the priest gave him those loaves (1 Samuel 21):</p>
+    <blockquote class="quote step"><p>“So the priest gave him hallowed bread: for there was no bread there but the shewbread, that was taken from before the LORD, to put hot bread in the day when it was taken away.”</p><cite>1 Samuel 21:6</cite></blockquote>
+    <p class="note step">The Pharisees honored David. God didn't let a hungry man starve over a rule about bread. Meeting real need was never against His heart.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="27-28" data-hl="The sabbath was made for man, and not man for the sabbath|the Son of man is Lord also of the sabbath"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="28" data-hl="Lord also of the sabbath"></blockquote>
+    <h2 class="rise" style="--d:1">A gift, not a cage</h2>
+    <p class="saying rise" style="--d:2">“The sabbath was made <em>for man</em>.”</p>
+    <p class="note step">God made the sabbath as a gift: a day to stop, rest, and remember Him (Exodus 20:8–11). The Pharisees had turned it into a burden that men served.</p>
+    <p class="note step">And then the bigger claim: the Son of man is <em>Lord</em> of the sabbath. God made the sabbath. Jesus says it's His. Real rest is found in Him.</p>
+    <blockquote class="quote step"><p>“Come unto me, all ye that labour and are heavy laden, and I will give you rest.”</p><cite>Matthew 11:28</cite></blockquote>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise">Five complaints</h2>
+    <p class="note rise" style="--d:1">Mark lines up five run-ins with the religious leaders, one after another. Watch them get sharper.</p>
+    <ol class="timeline" aria-label="Five complaints against Jesus. One, 2:7: who can forgive sins but God only? Two, 2:16: He eats with publicans and sinners. Three, 2:18: His disciples don't fast. Four, 2:24: they pick grain on the sabbath. Five, 3:2, in the next chapter: will He heal on the sabbath? And they plot to kill Him.">
+      <li data-n="1" style="--k:0"><b>2:7</b><span>“Who can forgive sins?”</span><small>in their hearts</small></li>
+      <li data-n="2" style="--k:1"><b>2:16</b><span>“He eateth with sinners”</span><small>to His disciples</small></li>
+      <li data-n="3" style="--k:2"><b>2:18</b><span>“Thy disciples fast not”</span><small>to His face</small></li>
+      <li data-n="4" class="lit" style="--k:3"><b>2:24</b><span>“Not lawful” on the sabbath</span><small>an accusation</small></li>
+      <li data-n="5" class="wait" style="--k:4"><b>3:2–6</b><span>healing on the sabbath</span><small>a plot to kill Him</small></li>
+    </ol>
+    <p class="note step">Every answer Jesus gives points to who He is: the One who forgives sins, the Physician, the Bridegroom, the Lord of the sabbath.</p>
+    <p class="note step">They were watching for something to accuse. The sinners at Levi's table were just glad He came. Which one you are depends on whether you know you need Him.</p>
+  </div>
+</section>
+
+<!-- ======================= CLOSING ======================= -->
+<section class="slide remember">
+  <div class="inner">
+    <h2 class="rise">Points to remember</h2>
+    <ol class="seeds">
+      <li class="step"><span class="topic">Friends</span><span class="seed-q">“When Jesus saw their faith” <cite>2:5</cite></span><span class="take">Some men need carrying. Be one of the four, and let others carry you.</span></li>
+      <li class="step"><span class="topic">Forgiveness</span><span class="seed-q">“Who can forgive sins but God only?” <cite>2:7</cite></span><span class="take">Only God can, and Jesus did, because He is God.</span></li>
+      <li class="step"><span class="topic">Salvation</span><span class="seed-q">“Not to call the righteous, but sinners” <cite>2:17</cite></span><span class="take">Jesus came for the sick. Knowing you need Him is the door in.</span></li>
+      <li class="step"><span class="topic">Something new</span><span class="seed-q">“New wine must be put into new bottles” <cite>2:22</cite></span><span class="take">He doesn't patch the old life. He makes a new man.</span></li>
+      <li class="step"><span class="topic">The sabbath</span><span class="seed-q">“The sabbath was made for man” <cite>2:27</cite></span><span class="take">God's rest is a gift, not a cage. Real rest is in Jesus.</span></li>
+      <li class="step"><span class="topic">Who Jesus is</span><span class="seed-q">“The Son of man hath power on earth to forgive sins” <cite>2:10</cite></span><span class="take">The Son of man has heaven's authority, and He is Lord of the sabbath.</span></li>
+    </ol>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+    <p class="counter">Question 1 of 6</p>
+    <span class="topic">Friends</span>
+    <h2>What can friends do for a man who can't get to Jesus on his own?</h2>
+    <p class="ask-line">What verses tell us about this?</p>
+    <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+    <blockquote class="quote step" data-q="3" data-hl="borne of four"></blockquote>
+    <blockquote class="quote step" data-q="4" data-hl="they uncovered the roof"></blockquote>
+    <blockquote class="quote step" data-q="5" data-hl="When Jesus saw their faith"></blockquote>
+    <div class="answer step"><h3>Answer</h3><p>They can carry him. They can refuse to quit when the door is blocked. And Jesus honors their faith. Some days you're the man on the mat, some days you're one of the four.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+    <p class="counter">Question 2 of 6</p>
+    <span class="topic">Forgiveness</span>
+    <h2>Who can forgive sins?</h2>
+    <p class="ask-line">What verses tell us about this?</p>
+    <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+    <blockquote class="quote step" data-q="5" data-hl="Son, thy sins be forgiven thee"></blockquote>
+    <blockquote class="quote step" data-q="7" data-hl="who can forgive sins but God only?"></blockquote>
+    <blockquote class="quote step" data-q="10" data-hl="the Son of man hath power on earth to forgive sins"></blockquote>
+    <div class="answer step"><h3>Answer</h3><p>Only God, and the scribes were right about that. Jesus forgave the man's sins, then proved He had the power by making him walk. He forgives because He is God, and He still forgives anyone who comes to Him.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+    <p class="counter">Question 3 of 6</p>
+    <span class="topic">Salvation (soteriology)</span>
+    <h2>Who did Jesus come to call?</h2>
+    <p class="ask-line">What verses tell us about this?</p>
+    <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+    <blockquote class="quote step" data-q="14" data-hl="Follow me"></blockquote>
+    <blockquote class="quote step" data-q="15" data-hl="many publicans and sinners sat also together with Jesus"></blockquote>
+    <blockquote class="quote step" data-q="17"></blockquote>
+    <div class="answer step"><h3>Answer</h3><p>Sinners. He called a crooked tax man and sat down to eat with his friends. He is the Physician, and He came for the sick. Nobody is too far gone for Him. The only ones who miss out are those who think they don't need Him.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+    <p class="counter">Question 4 of 6</p>
+    <span class="topic">Something new</span>
+    <h2>Can Jesus just be patched onto an old life?</h2>
+    <p class="ask-line">What verses tell us about this?</p>
+    <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+    <blockquote class="quote step" data-q="21"></blockquote>
+    <blockquote class="quote step" data-q="22" data-hl="new wine must be put into new bottles"></blockquote>
+    <div class="answer step"><h3>Answer</h3><p>No. A new patch tears an old coat, and new wine bursts old bottles. Jesus doesn't add a little religion to the old life. He makes a new man, like Levi, who got up from his table and followed.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+    <p class="counter">Question 5 of 6</p>
+    <span class="topic">The sabbath</span>
+    <h2>What was the sabbath made for?</h2>
+    <p class="ask-line">What verses tell us about this?</p>
+    <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+    <blockquote class="quote step" data-q="24"></blockquote>
+    <blockquote class="quote step" data-q="25" data-hl="when he had need, and was an hungred"></blockquote>
+    <blockquote class="quote step" data-q="27"></blockquote>
+    <div class="answer step"><h3>Answer</h3><p>For man: as God's gift of rest, not a burden to serve. God never meant His day to keep a hungry man from eating. And the Son of man is its Lord, so real rest is found in Him.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+    <p class="counter">Question 6 of 6</p>
+    <span class="topic">Who Jesus is</span>
+    <h2>Who is the Son of man?</h2>
+    <p class="ask-line">What verses tell us about this?</p>
+    <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+    <blockquote class="quote step" data-q="10" data-hl="the Son of man hath power on earth to forgive sins"></blockquote>
+    <blockquote class="quote step" data-q="19" data-hl="while the bridegroom is with them"></blockquote>
+    <blockquote class="quote step" data-q="28"></blockquote>
+    <div class="answer step"><h3>Answer</h3><p>Jesus. It's His own name for Himself, from Daniel's vision of the One given an everlasting kingdom. He is truly a man, and He has the power of God: to forgive sins on earth, to be the Bridegroom, and to be Lord of the sabbath.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide prayer">
+  <div class="inner">
+    <div class="emblem rise"></div>
+    <h2 class="rise" style="--d:1">Prayer requests</h2>
+    <p class="ask-line rise" style="--d:2">What can we pray about for you today?</p>
+    <blockquote class="quote rise" style="--d:4"><p>“Bear ye one another’s burdens, and so fulfil the law of Christ.”</p><cite>Galatians 6:2</cite></blockquote>
+  </div>
+</section>
+
+</main>
+
+<script>
+// King James Version, Mark chapter 2
+const V = {
+  1: "And again he entered into Capernaum, after some days; and it was noised that he was in the house.",
+  2: "And straightway many were gathered together, insomuch that there was no room to receive them, no, not so much as about the door: and he preached the word unto them.",
+  3: "And they come unto him, bringing one sick of the palsy, which was borne of four.",
+  4: "And when they could not come nigh unto him for the press, they uncovered the roof where he was: and when they had broken it up, they let down the bed wherein the sick of the palsy lay.",
+  5: "When Jesus saw their faith, he said unto the sick of the palsy, Son, thy sins be forgiven thee.",
+  6: "But there were certain of the scribes sitting there, and reasoning in their hearts,",
+  7: "Why doth this man thus speak blasphemies? who can forgive sins but God only?",
+  8: "And immediately when Jesus perceived in his spirit that they so reasoned within themselves, he said unto them, Why reason ye these things in your hearts?",
+  9: "Whether is it easier to say to the sick of the palsy, Thy sins be forgiven thee; or to say, Arise, and take up thy bed, and walk?",
+  10: "But that ye may know that the Son of man hath power on earth to forgive sins, (he saith to the sick of the palsy,)",
+  11: "I say unto thee, Arise, and take up thy bed, and go thy way into thine house.",
+  12: "And immediately he arose, took up the bed, and went forth before them all; insomuch that they were all amazed, and glorified God, saying, We never saw it on this fashion.",
+  13: "And he went forth again by the sea side; and all the multitude resorted unto him, and he taught them.",
+  14: "And as he passed by, he saw Levi the son of Alphaeus sitting at the receipt of custom, and said unto him, Follow me. And he arose and followed him.",
+  15: "And it came to pass, that, as Jesus sat at meat in his house, many publicans and sinners sat also together with Jesus and his disciples: for there were many, and they followed him.",
+  16: "And when the scribes and Pharisees saw him eat with publicans and sinners, they said unto his disciples, How is it that he eateth and drinketh with publicans and sinners?",
+  17: "When Jesus heard it, he saith unto them, They that are whole have no need of the physician, but they that are sick: I came not to call the righteous, but sinners to repentance.",
+  18: "And the disciples of John and of the Pharisees used to fast: and they come and say unto him, Why do the disciples of John and of the Pharisees fast, but thy disciples fast not?",
+  19: "And Jesus said unto them, Can the children of the bridechamber fast, while the bridegroom is with them? as long as they have the bridegroom with them, they cannot fast.",
+  20: "But the days will come, when the bridegroom shall be taken away from them, and then shall they fast in those days.",
+  21: "No man also seweth a piece of new cloth on an old garment: else the new piece that filled it up taketh away from the old, and the rent is made worse.",
+  22: "And no man putteth new wine into old bottles: else the new wine doth burst the bottles, and the wine is spilled, and the bottles will be marred: but new wine must be put into new bottles.",
+  23: "And it came to pass, that he went through the corn fields on the sabbath day; and his disciples began, as they went, to pluck the ears of corn.",
+  24: "And the Pharisees said unto him, Behold, why do they on the sabbath day that which is not lawful?",
+  25: "And he said unto them, Have ye never read what David did, when he had need, and was an hungred, he, and they that were with him?",
+  26: "How he went into the house of God in the days of Abiathar the high priest, and did eat the shewbread, which is not lawful to eat but for the priests, and gave also to them which were with him?",
+  27: "And he said unto them, The sabbath was made for man, and not man for the sabbath:",
+  28: "Therefore the Son of man is Lord also of the sabbath."
+};
+const BOOK = "Mark 2";
+</script>
+<script src="../assets/deck.js"></script>
+</body>
+</html>
