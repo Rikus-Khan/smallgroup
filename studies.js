@@ -6851,6 +6851,63 @@ window.STUDIES = [
     }
   },
   {
+    "id": "matthew-26",
+    "type": "chapter",
+    "book": "Matthew",
+    "ch": 26,
+    "date": "2026-10-29",
+    "title": "Matthew 26",
+    "sub": "Not as I will",
+    "about": "A woman pours out her best, a friend sells Jesus for silver, the Lord gives His men the bread and the cup, prays alone in Gethsemane, and is arrested, while Peter falls in the courtyard.",
+    "tags": [
+      "The Lord's Supper",
+      "Surrender",
+      "Temptation",
+      "Betrayal",
+      "Peter's denial",
+      "Restoration"
+    ],
+    "url": "studies/matthew-26.html",
+    "overview": {
+      "where": "Bethany, an upper room in Jerusalem, the garden of Gethsemane on the Mount of Olives, and the high priest's palace",
+      "when": "The last week, about AD 30 or 33: two days before the Passover, then the Thursday night of the Passover",
+      "people": [
+        "jesus",
+        "disciples",
+        "caiaphas",
+        "chief-priests",
+        "scribes",
+        "elders",
+        "simon-the-leper",
+        "woman-of-bethany",
+        "judas-iscariot",
+        "simon-peter",
+        "sons-of-zebedee"
+      ],
+      "places": [
+        "bethany",
+        "mount-of-olives",
+        "gethsemane",
+        "palace-of-the-high-priest"
+      ],
+      "story": [
+        "Two days before the Passover, the chief priests and elders meet at Caiaphas' palace to take Jesus by stealth, but not on the feast day (1–5).",
+        "At Bethany a woman pours very precious ointment on His head. The disciples call it waste; Jesus calls it a good work, done for His burial (6–13).",
+        "Judas goes to the chief priests and sells Him for thirty pieces of silver (14–16).",
+        "At the Passover Jesus says one of the twelve will betray Him. He gives them the bread, His body, and the cup, His blood of the new testament, shed for the remission of sins (17–30).",
+        "Jesus warns that all will stumble and Peter will deny Him thrice; He promises to go before them into Galilee (31–35).",
+        "In Gethsemane He prays three times, “not as I will, but as thou wilt,” while the disciples sleep. Judas betrays Him with a kiss, and all the disciples flee (36–56).",
+        "Before Caiaphas, false witnesses fail. Put under oath, Jesus says He is the Christ, the Son of God, and is condemned and beaten (57–68).",
+        "In the courtyard Peter denies Him three times. The cock crows, and Peter goes out and weeps bitterly (69–75)."
+      ],
+      "key": {
+        "ref": "Matthew 26:39",
+        "text": "And he went a little further, and fell on his face, and prayed, saying, O my Father, if it be possible, let this cup pass from me: nevertheless not as I will, but as thou wilt."
+      },
+      "big": "Jesus went to the cross on purpose, giving His will to the Father and His body and blood for our sins. Men fail Him, even His friends, but a man who falls can weep, come back, and be restored."
+    }
+  },
+  {
     "id": "mark-01",
     "type": "chapter",
     "book": "Mark",

@@ -1,0 +1,749 @@
+<!doctype html>
+<html lang="en" data-theme="night">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Matthew 26</title>
+<link rel="stylesheet" href="../assets/fonts.css">
+<link rel="stylesheet" href="../assets/deck.css">
+<link rel="stylesheet" href="../assets/themes.css">
+<style>
+/* mt26-map: Jerusalem and the Mount of Olives on the night of the arrest, using the shared map classes.
+   Leg r1 (upper room to Gethsemane) draws on a .map-go1 step, leg r2 (Gethsemane to Caiaphas) on a .map-go2 step */
+.mt26-wall { fill: color-mix(in srgb, var(--ink-soft) 12%, transparent); stroke: var(--line-strong); stroke-width: 3; }
+.mt26-mount { fill: color-mix(in srgb, var(--accent) 22%, transparent); stroke: var(--accent); stroke-width: 2; }
+.mt26-hill { fill: color-mix(in srgb, var(--leather) 40%, transparent); }
+.mt26-kidron { fill: none; stroke: var(--cool); stroke-width: 2; stroke-dasharray: 3 5; }
+.mt26-tree { fill: color-mix(in srgb, var(--cool) 55%, var(--warm)); }
+.mt26-spot { fill: var(--bg); stroke: var(--ink); stroke-width: 3; }
+.mt26-name { font: 700 15px var(--sans); fill: var(--ink); }
+.mt26-soft { font: 13px var(--sans); fill: var(--ink-soft); }
+.mt26-map .map-route.r2 { stroke: var(--danger); }
+
+/* mt26-door: a house door at the first Passover. On a .mt26-mark step the blood is drawn on the lintel and the two side posts */
+.mt26-house { fill: color-mix(in srgb, var(--leather) 30%, var(--surface)); stroke: var(--line-strong); stroke-width: 2; }
+.mt26-dark { fill: var(--on-glow); }
+.mt26-post { fill: var(--leather); stroke: var(--leather-light); stroke-width: 1.5; }
+.mt26-blood { fill: none; stroke: var(--danger); stroke-width: 9; stroke-linecap: round; stroke-dasharray: 1; stroke-dashoffset: 1;
+  transition: stroke-dashoffset 1s ease; transition-delay: calc(var(--k) * .6s); }
+.slide:has(.mt26-mark.on) .mt26-blood { stroke-dashoffset: 0; }
+.mt26-word { font: italic 600 20px var(--serif); fill: var(--accent-hot); opacity: 0; transition: opacity .8s ease 1.9s; }
+.slide:has(.mt26-mark.on) .mt26-word { opacity: 1; }
+.mt26-lbl { font: 13px var(--sans); fill: var(--ink-soft); }
+
+/* mt26-louder: Peter's three denials, each one louder than the last (bigger words, a longer bar), ending at the cock crow */
+.mt26-louder { display: grid; gap: .55rem; margin: .3em 0 1em; }
+.mt26-louder > div { display: grid; grid-template-columns: minmax(8rem, 13rem) 1fr; gap: .1rem 1rem; align-items: center; padding: .45em .8em; border-left: 4px solid var(--danger); border-radius: 6px; background: color-mix(in srgb, var(--danger) calc(6% + var(--k) * 5%), transparent); }
+.mt26-louder small { font: 700 clamp(.78rem, .72rem + .3vw, .98rem) var(--sans); color: var(--ink-soft); }
+.mt26-louder small i { display: block; font-style: normal; color: var(--danger); }
+.mt26-louder b { font: 600 calc(clamp(1rem, .9rem + .5vw, 1.3rem) * (1 + var(--k) * .22)) / 1.15 var(--serif); }
+.mt26-louder > div::after { content: ""; grid-column: 2; height: 5px; border-radius: 3px; background: var(--danger); width: calc(30% + var(--k) * 35%); transform: scaleX(0); transform-origin: left; transition: transform .8s ease .3s; }
+.mt26-louder > div.on::after { transform: scaleX(1); }
+.mt26-louder > .mt26-cock { display: block; border-left-color: var(--accent); background: color-mix(in srgb, var(--accent) 14%, transparent); text-align: center; font: italic 600 clamp(1.1rem, 1rem + .6vw, 1.5rem) var(--serif); color: var(--accent-hot); }
+.mt26-louder > .mt26-cock::after { display: none; }
+@media (max-width: 640px) { .mt26-louder > div { grid-template-columns: 1fr; } .mt26-louder > div::after { grid-column: 1; } }
+
+/* An un-ticked line on the shared .checks list: a promise still ahead */
+.checks li.mt26-ahead { border-style: dashed; }
+.checks li.mt26-ahead .tick, .checks li.mt26-ahead.on .tick { background: transparent; border-style: dashed; border-color: var(--accent); color: var(--accent); }
+</style>
+</head>
+<body>
+<main class="deck" id="deck">
+
+<!-- ======================= OPENING ======================= -->
+<section class="slide title">
+  <div class="inner">
+    <div class="emblem rise"></div>
+    <h1 class="rise" style="--d:1">Matthew 26</h1>
+    <p class="sub rise" style="--d:3">Not as I will</p>
+    <p class="tag rise" style="--d:5">A woman pours out her best, a friend sells Jesus for silver, the Lord gives His men the bread and the cup, prays alone in a garden, and is arrested, while Peter warms himself outside and falls.</p>
+  </div>
+</section>
+
+<section class="slide watch">
+  <div class="inner">
+    <h2 class="rise">Things to watch for</h2>
+    <p class="lede rise" style="--d:1">Keep these questions in the back of your mind as we read. We'll come back to every one of them at the end.</p>
+    <ol class="seeds">
+      <li class="step"><span class="topic">Worship</span><span class="seed-q">What did the woman do that the disciples called waste?</span></li>
+      <li class="step"><span class="topic">The Lord's Supper</span><span class="seed-q">What did Jesus say the bread and the cup mean?</span></li>
+      <li class="step"><span class="topic">Surrender</span><span class="seed-q">How did Jesus pray in Gethsemane?</span></li>
+      <li class="step"><span class="topic">Temptation</span><span class="seed-q">What did Jesus tell the sleeping disciples to do?</span></li>
+      <li class="step"><span class="topic">Who He is</span><span class="seed-q">What did Jesus say when the high priest put Him under oath?</span></li>
+      <li class="step"><span class="topic">Falling and getting up</span><span class="seed-q">What did Peter do when the cock crew?</span></li>
+    </ol>
+  </div>
+</section>
+
+<!-- ======================= PART ONE: TWO DAYS BEFORE ======================= -->
+<section class="slide part">
+  <div class="inner">
+    <p class="part-n rise">Part one</p>
+    <h2 class="rise" style="--d:1">Two days before</h2>
+    <p class="range rise" style="--d:2">Verses 1–16</p>
+    <div class="rule"></div>
+    <p class="hook rise" style="--d:4">The leaders plot in a palace. A woman pours out a fortune. A disciple asks for a price.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="1-2" data-hl="after two days is the feast of the passover|the Son of man is betrayed to be crucified"></section>
+<section class="slide verse" data-v="3-5" data-hl="the palace of the high priest, who was called Caiaphas|take Jesus by subtilty, and kill him|Not on the feast day"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="5" data-hl="Not on the feast day"></blockquote>
+    <h2 class="rise" style="--d:1">Their plan, His hour</h2>
+    <ol class="timeline" aria-label="The last week. Sunday: He rides into Jerusalem, chapter 21. Tuesday: teaching in the temple, chapters 21 to 25. Two days before the Passover: the plot is laid, 26:1 to 5. Thursday: the Passover supper and Gethsemane, 26:17 to 56. That night: the trial and Peter's denial, 26:57 to 75. Friday: the cross, chapter 27.">
+      <li class="lit" style="--k:0"><b>Sunday</b><span>He rides in</span><small>21:1–11</small></li>
+      <li class="lit" style="--k:1"><b>Tuesday</b><span>teaching in the temple</span><small>21:23 – 25:46</small></li>
+      <li class="lit" style="--k:2"><b>Two days before</b><span>the plot is laid</span><small>26:1–5</small></li>
+      <li style="--k:3"><b>Thursday</b><span>the Passover; Gethsemane</span><small>26:17–56</small></li>
+      <li style="--k:4"><b>That night</b><span>the trial; Peter's fall</span><small>26:57–75</small></li>
+      <li style="--k:5"><b>Friday</b><span>the cross</span><small>ch. 27</small></li>
+    </ol>
+    <p class="note step"><em>Caiaphas</em> was high priest from about AD 18 to 36, the man Rome let run the temple. The leaders wanted Jesus dead, but <em>quietly</em>, after the crowds of pilgrims went home.</p>
+    <p class="note step">Jesus had already named the day: <em>at the passover</em>. And that's when it happened. Men made their plans; God kept His. Jesus was never a victim of their schedule.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="6-7" data-hl="in the house of Simon the leper|an alabaster box of very precious ointment"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="7" data-hl="an alabaster box of very precious ointment"></blockquote>
+    <h2 class="rise" style="--d:1">Very precious ointment</h2>
+    <p class="note rise" style="--d:2">At <em>Bethany</em>, two miles out of Jerusalem, Jesus eats with <em>Simon the leper</em>, likely a man He had healed. An <em>alabaster box</em> was a sealed flask of soft white stone. John tells us what was in it:</p>
+    <blockquote class="quote step"><p>“Why was not this ointment sold for three hundred pence, and given to the poor?”</p><cite>John 12:5</cite></blockquote>
+    <div class="math step">
+      <div><b>1 penny</b><span>a day's pay (Matthew 20:2)</span></div>
+      <div><b>300 pence</b><span>about a year's wages</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide verse" data-v="8-9" data-hl="To what purpose is this waste?|given to the poor"></section>
+<section class="slide verse" data-v="10-13" data-hl="she hath wrought a good work upon me|she did it for my burial|be told for a memorial of her"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="10" data-hl="she hath wrought a good work upon me"></blockquote>
+    <h2 class="rise" style="--d:1">Waste, or a good work?</h2>
+    <div class="columns">
+      <div class="col law step"><p class="who">the disciples</p><h3>“this waste”</h3><p>A year's wages, gone in a minute, poured on a man's head. They did the math and were angry.</p></div>
+      <div class="col grace step"><p class="who">Jesus</p><h3>“a good work”</h3><p>She saw what the men hadn't: He was going to die. She gave her best while she still could, <em>“for my burial.”</em></p></div>
+    </div>
+    <p class="note step">Some men look back and think their whole life has been wasted. Nothing you pour out on Jesus is wasted, not your time, your money, your years, or what's left of them. He remembers it, and here He made sure the whole world would too.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="14-16" data-hl="What will ye give me, and I will deliver him unto you?|thirty pieces of silver"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="15" data-hl="thirty pieces of silver"></blockquote>
+    <h2 class="rise" style="--d:1">The price of a slave</h2>
+    <p class="note rise" style="--d:2">Right after a woman gives Jesus a fortune, one of the twelve asks what He's worth to His enemies.</p>
+    <div class="pair">
+      <div class="scroll step"><p class="ref">Exodus 21:32, the law</p><p class="kjv">If the ox shall push a manservant or a maidservant; he shall give unto their master <mark>thirty shekels of silver</mark>, and the ox shall be stoned.</p></div>
+      <div class="scroll step"><p class="ref">Zechariah 11:12, about 500 years before</p><p class="kjv">And I said unto them, If ye think good, give me my price; and if not, forbear. So they weighed for my price <mark>thirty pieces of silver</mark>.</p></div>
+    </div>
+    <p class="note step">The law set thirty shekels as payment for a dead slave. That's what the Son of God went for. Matthew comes back to these coins and Zechariah in the next chapter (27:3–10).</p>
+  </div>
+</section>
+
+<!-- ======================= PART TWO: THE SUPPER ======================= -->
+<section class="slide part">
+  <div class="inner">
+    <p class="part-n rise">Part two</p>
+    <h2 class="rise" style="--d:1">This is my body</h2>
+    <p class="range rise" style="--d:2">Verses 17–35</p>
+    <div class="rule"></div>
+    <p class="hook rise" style="--d:4">The last Passover, a traitor at the table, and a meal to remember Him by.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="17-19" data-hl="the first day of the feast of unleavened bread|My time is at hand|they made ready the passover"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="17" data-hl="Where wilt thou that we prepare for thee to eat the passover?"></blockquote>
+    <div class="split">
+      <div class="stage">
+        <svg viewBox="0 0 300 300" role="img" aria-label="The door of a house on the night of the first Passover in Egypt. The doorway is dark. Then blood is painted across the lintel at the top and down both side posts, and the words appear: I will pass over you.">
+          <rect class="mt26-house" x="30" y="40" width="240" height="240" rx="4"/>
+          <rect class="mt26-dark" x="100" y="110" width="100" height="170"/>
+          <rect class="mt26-post" x="84" y="94" width="132" height="18" rx="2"/>
+          <rect class="mt26-post" x="84" y="112" width="16" height="168"/>
+          <rect class="mt26-post" x="200" y="112" width="16" height="168"/>
+          <path class="mt26-blood" style="--k:0" pathLength="1" d="M92 103 H208"/>
+          <path class="mt26-blood" style="--k:1" pathLength="1" d="M92 118 V230"/>
+          <path class="mt26-blood" style="--k:2" pathLength="1" d="M208 118 V230"/>
+          <text class="mt26-lbl" x="150" y="84" text-anchor="middle">the lintel</text>
+          <text class="mt26-lbl" x="56" y="200" text-anchor="middle">side</text>
+          <text class="mt26-lbl" x="56" y="216" text-anchor="middle">post</text>
+          <text class="mt26-word" x="150" y="28" text-anchor="middle">“I will pass over you”</text>
+        </svg>
+      </div>
+      <div>
+        <h2 class="rise" style="--d:1">The passover</h2>
+        <p class="note rise" style="--d:2">Every spring Israel remembered the night God brought them out of Egypt. A lamb died for each house, and its blood went on the door. <em>Unleavened bread</em> is bread baked without yeast.</p>
+        <blockquote class="quote step mt26-mark"><p>“…and when I see the blood, I will pass over you…”</p><cite>Exodus 12:13</cite></blockquote>
+        <p class="note step">Every one of those lambs pointed to this one: <em>“For even Christ our passover is sacrificed for us”</em> (1 Corinthians 5:7).</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="slide verse" data-v="20-22" data-hl="one of you shall betray me|Lord, is it I?"></section>
+<section class="slide verse" data-v="23-25" data-hl="He that dippeth his hand with me in the dish|woe unto that man by whom the Son of man is betrayed|Master, is it I?|Thou hast said"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise">“Is it I?”</h2>
+    <div class="talk">
+      <p class="rise" style="--d:2"><small>Jesus</small>Verily I say unto you, that one of you shall betray me.</p>
+      <p class="reply step"><small>Eleven men, one at a time</small>Lord, is it I?</p>
+      <p class="reply step"><small>Judas</small>Master, is it I? <span class="flag">not “Lord”</span></p>
+    </div>
+    <p class="note step">Nobody pointed across the table. Each man looked at his own heart first, a good habit for us. Judas, already paid, calls Him <em>Master</em>, teacher, never <em>Lord</em>. Jesus knew, and still let him dip in the same dish, as a friend.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="26-28" data-hl="Take, eat; this is my body|this is my blood of the new testament|for the remission of sins"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="26" data-hl="Take, eat; this is my body"></blockquote>
+    <h2 class="rise" style="--d:1">The Lord's Supper</h2>
+    <div class="columns">
+      <div class="col grace step"><p class="who">the bread</p><h3>“my body”</h3><p>Broken and handed to them. His body would be broken on the cross the next day, for them.</p></div>
+      <div class="col grace step"><p class="who">the cup</p><h3>“my blood”</h3><p>Poured out for the forgiving of sins, the way the lamb's blood marked the door.</p></div>
+    </div>
+    <p class="note step">Jesus was sitting right there holding them. The bread and the cup are pictures, and the Supper is a <em>memorial</em>. It doesn't save anyone; we keep it to remember the One who does.</p>
+    <blockquote class="quote step"><p>“This is my body which is given for you: this do in remembrance of me.”</p><cite>Luke 22:19</cite></blockquote>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="28" data-hl="my blood of the new testament|for the remission of sins"></blockquote>
+    <h2 class="rise" style="--d:1">A new testament</h2>
+    <p class="note rise" style="--d:2">A <em>testament</em> here is a covenant, a binding promise. God promised a new one through Jeremiah, and Jesus says His blood seals it:</p>
+    <blockquote class="quote step"><p>“…for I will forgive their iniquity, and I will remember their sin no more.”</p><cite>Jeremiah 31:34</cite></blockquote>
+    <div class="morph step">
+      <span class="big">ἄφεσις</span>
+      <span class="say">said <em class="gk">aphesis</em>, “remission”</span>
+      <span class="means">a sending away; set free</span>
+    </div>
+    <p class="note step">Remission means your sins are sent away, the debt cancelled. <em>“Shed for many”</em>: for anyone who will come. Not for the good men only. For sinners.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="29-30" data-hl="this fruit of the vine|until that day when I drink it new with you in my Father’s kingdom|when they had sung an hymn"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="29" data-hl="until that day when I drink it new with you in my Father’s kingdom"></blockquote>
+    <h2 class="rise" style="--d:1">Until that day</h2>
+    <p class="note rise" style="--d:2">Jesus calls the cup <em>“this fruit of the vine.”</em> What matters is what it stands for. Most Baptist churches use grape juice, so no man in recovery has to choose between the Lord's table and his sobriety. If you're unsure, ask your pastor; he'll be glad you did.</p>
+    <p class="note step">And the promise: <em>“with you.”</em> On His way to the cross, Jesus is already planning to sit down with these men again in His Father's kingdom. A seat is waiting for every believer.</p>
+    <p class="note step">The <em>hymn</em> was likely from Psalms 113–118, sung at Passover: <em>“The LORD is my strength and song, and is become my salvation”</em> (Psalm 118:14).</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="31-32" data-hl="All ye shall be offended because of me this night|I will smite the shepherd|after I am risen again, I will go before you into Galilee"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="31" data-hl="I will smite the shepherd, and the sheep of the flock shall be scattered abroad"></blockquote>
+    <h2 class="rise" style="--d:1">The shepherd struck</h2>
+    <div class="pair">
+      <div class="scroll rise" style="--d:2"><p class="ref">Zechariah 13:7, about 500 years before</p><p class="kjv">Awake, O sword, against my shepherd, and against the man that is my fellow, saith the LORD of hosts: <mark>smite the shepherd, and the sheep shall be scattered</mark>: and I will turn mine hand upon the little ones.</p></div>
+      <div class="scroll step"><p class="ref">Matthew 26:32</p><p class="kjv">But after I am risen again, <mark>I will go before you into Galilee</mark>.</p></div>
+    </div>
+    <p class="note step"><em>Offended</em> means tripped up. Jesus tells them they'll all run, and in the same breath makes a date to meet them afterward. He knew about their failure before it happened, and planned the reunion anyway.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="33-35" data-hl="yet will I never be offended|before the cock crow, thou shalt deny me thrice|Though I should die with thee, yet will I not deny thee"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise">“I will never”</h2>
+    <div class="talk">
+      <p class="reply rise" style="--d:2"><small>Peter</small>Though all men shall be offended because of thee, yet will I never be offended.</p>
+      <p class="step"><small>Jesus</small>This night, before the cock crow, thou shalt deny me thrice.</p>
+    </div>
+    <p class="note step">Peter meant every word, and so did the rest (v. 35). That was the problem: he trusted his own strength. Plenty of us have said <em>“never again”</em> and meant it. Being sure of yourself isn't the same as being safe.</p>
+    <blockquote class="quote step"><p>“Wherefore let him that thinketh he standeth take heed lest he fall.”</p><cite>1 Corinthians 10:12</cite></blockquote>
+  </div>
+</section>
+
+<!-- ======================= PART THREE: GETHSEMANE ======================= -->
+<section class="slide part">
+  <div class="inner">
+    <p class="part-n rise">Part three</p>
+    <h2 class="rise" style="--d:1">Not as I will</h2>
+    <p class="range rise" style="--d:2">Verses 36–56</p>
+    <div class="rule"></div>
+    <p class="hook rise" style="--d:4">The Son of God on His face in the dirt, three sleeping friends, and a kiss.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="36-38" data-hl="a place called Gethsemane|began to be sorrowful and very heavy|My soul is exceeding sorrowful, even unto death|watch with me"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="36" data-hl="a place called Gethsemane"></blockquote>
+    <div class="split">
+      <div class="stage">
+        <svg class="map mt26-map" viewBox="0 0 460 340" role="img" aria-label="Sketch map of Jerusalem by night. The walled city is on the left with the temple on its east side, and the upper room and the high priest's palace in the south-west of the city. East of the city is the Kidron valley, then the Mount of Olives with the olive garden of Gethsemane on its lower slope. Bethany is off to the east, about two miles. A route runs from the upper room out of the city and across the Kidron to Gethsemane, then a second route runs back into the city to the high priest's palace.">
+          <path class="mt26-wall" d="M30 60 L170 44 L206 60 L210 290 L130 312 L40 292 Z"/>
+          <rect class="mt26-mount" x="148" y="80" width="50" height="80" rx="3"/>
+          <text class="mt26-name" x="173" y="178" text-anchor="middle">temple</text>
+          <path class="mt26-kidron" d="M232 20 C 226 100, 236 200, 222 330"/>
+          <text class="mt26-soft" x="240" y="300">Kidron valley</text>
+          <path class="mt26-hill" d="M252 40 C 300 30, 330 80, 326 160 C 322 230, 310 290, 270 300 C 256 220, 246 120, 252 40 Z"/>
+          <text class="mt26-soft" x="292" y="56" text-anchor="middle">Mount of</text>
+          <text class="mt26-soft" x="292" y="72" text-anchor="middle">Olives</text>
+          <g class="mt26-tree"><circle cx="276" cy="160" r="8"/><circle cx="290" cy="152" r="8"/><circle cx="290" cy="170" r="8"/><circle cx="304" cy="161" r="8"/></g>
+          <text class="mt26-name" x="334" y="166">Gethsemane</text>
+          <path class="map-way" d="M324 232 C 370 238, 400 242, 446 248"/>
+          <text class="mt26-soft" x="452" y="272" text-anchor="end">to Bethany, 2 miles</text>
+          <path class="map-route r1" pathLength="1" d="M74 270 C 120 300, 190 304, 224 262 S 260 190, 278 166"/>
+          <path class="map-route r2" pathLength="1" d="M278 166 C 250 196, 226 214, 196 224 S 150 234, 122 232"/>
+          <circle class="mt26-spot" cx="74" cy="270" r="7"/><text class="mt26-name" x="58" y="256">upper room</text>
+          <circle class="mt26-spot" cx="122" cy="232" r="7"/><text class="mt26-name" x="56" y="212">Caiaphas' palace</text>
+          <text class="mt26-soft" x="14" y="332">A sketch: places in the city are approximate.</text>
+        </svg>
+      </div>
+      <div>
+        <h2 class="rise" style="--d:1">The oil press</h2>
+        <p class="note rise" style="--d:2"><em>Gethsemane</em> means <em>oil press</em>, an olive grove across the Kidron from the city.</p>
+        <p class="note step map-go1">From the supper, Jesus leads the eleven out across the valley in the dark.</p>
+        <p class="note step">With Peter, James and John near, the weight comes down: <em>“exceeding sorrowful, even unto death.”</em> Where olives were crushed, He was pressed.</p>
+        <p class="note step map-go2">Before morning He'll be marched back to Caiaphas (v. 57).</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="slide verse" data-v="39-40" data-hl="fell on his face|let this cup pass from me: nevertheless not as I will, but as thou wilt|could ye not watch with me one hour?"></section>
+<section class="slide verse" data-v="41" data-hl="Watch and pray, that ye enter not into temptation|the spirit indeed is willing, but the flesh is weak"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="41"></blockquote>
+    <h2 class="rise" style="--d:1">Watch and pray</h2>
+    <div class="columns">
+      <div class="col grace step"><p class="who">the spirit</p><h3>“willing”</h3><p>They loved Him. They wanted to stay awake for Him. Peter wanted to die for Him.</p></div>
+      <div class="col law step"><p class="who">the flesh</p><h3>“weak”</h3><p>Tired, heavy-eyed, asleep within the hour. Wanting to isn't the same as being able.</p></div>
+    </div>
+    <p class="note step">Jesus doesn't say <em>try harder</em>. He says <em>watch</em>: stay awake, see it coming. And <em>pray</em>: lean on God before the hour hits. Most battles with temptation are won or lost in the hours before it.</p>
+    <blockquote class="quote step"><p>“…but God is faithful, who will not suffer you to be tempted above that ye are able; but will with the temptation also make a way to escape, that ye may be able to bear it.”</p><cite>1 Corinthians 10:13</cite></blockquote>
+  </div>
+</section>
+
+<section class="slide verse" data-v="42-44" data-hl="if this cup may not pass away from me, except I drink it, thy will be done|found them asleep again|prayed the third time, saying the same words"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="42" data-hl="thy will be done"></blockquote>
+    <h2 class="rise" style="--d:1">Three times, the same prayer</h2>
+    <ol class="timeline" aria-label="Jesus prays three times. First: if it be possible, let this cup pass from me; nevertheless not as I will, but as thou wilt. Second: if this cup may not pass away from me, except I drink it, thy will be done. Third: the same words.">
+      <li class="lit" style="--k:0" data-n="1"><b>“if it be possible”</b><span>let this cup pass… not as I will</span><small>v. 39</small></li>
+      <li class="lit" style="--k:1" data-n="2"><b>“except I drink it”</b><span>thy will be done</span><small>v. 42</small></li>
+      <li class="lit" style="--k:2" data-n="3"><b>“the same words”</b><span>settled</span><small>v. 44</small></li>
+    </ol>
+    <p class="note step">The <em>cup</em> is the suffering ahead, above all God's judgment on sin, which Jesus would drink on the cross in our place. He was a real man, and He didn't want it. He asked honestly, then gave His will to His Father.</p>
+    <p class="note step">That's how to pray when life is crushing you: tell God plainly what you want, then say <em>“thy will be done”</em> and mean it. He knows that place from the inside (Hebrews 4:15).</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="45-46" data-hl="the hour is at hand|Rise, let us be going"></section>
+<section class="slide verse" data-v="47-48" data-hl="a great multitude with swords and staves|Whomsoever I shall kiss, that same is he"></section>
+<section class="slide verse" data-v="49-50" data-hl="Hail, master; and kissed him|Friend, wherefore art thou come?"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="50" data-hl="Friend, wherefore art thou come?"></blockquote>
+    <h2 class="rise" style="--d:1">Betrayed with a kiss</h2>
+    <p class="note rise" style="--d:2">A disciple greeted his teacher with a kiss. Judas used it to point Him out in the dark to a mob with <em>swords and staves</em>, wooden clubs.</p>
+    <blockquote class="quote step"><p>“Yea, mine own familiar friend, in whom I trusted, which did eat of my bread, hath lifted up his heel against me.”</p><cite>Psalm 41:9</cite></blockquote>
+    <p class="note step">And Jesus' answer: <em>“Friend.”</em> Not <em>traitor</em>. Even then He gave Judas one more chance to face what he was doing. And He didn't wait to be dragged out: <em>“Rise, let us be going”</em> (v. 46).</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="51-52" data-hl="drew his sword|all they that take the sword shall perish with the sword"></section>
+<section class="slide verse" data-v="53-54" data-hl="more than twelve legions of angels|how then shall the scriptures be fulfilled"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="53" data-hl="more than twelve legions of angels"></blockquote>
+    <h2 class="rise" style="--d:1">Twelve legions</h2>
+    <p class="note rise" style="--d:2">John tells us the sword was Peter's (John 18:10). Jesus heals the man's ear (Luke 22:51) and tells Peter to put it away. A Roman <em>legion</em> was an army unit of about 6,000 men.</p>
+    <div class="math step">
+      <div><b>12</b><span>legions</span></div>
+      <div><b>× 6,000</b><span>about, in each</span></div>
+      <div><b>72,000+</b><span>angels, for the asking</span></div>
+    </div>
+    <p class="note step">He could have walked away from that garden any moment He chose. He stayed so <em>“the scriptures be fulfilled.”</em> Nobody took His life from Him. He gave it.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="55-56" data-hl="Are ye come out as against a thief|I sat daily with you teaching in the temple|Then all the disciples forsook him, and fled"></section>
+
+<!-- ======================= PART FOUR: BEFORE THE COCK CROW ======================= -->
+<section class="slide part">
+  <div class="inner">
+    <p class="part-n rise">Part four</p>
+    <h2 class="rise" style="--d:1">Before the cock crow</h2>
+    <p class="range rise" style="--d:2">Verses 57–75</p>
+    <div class="rule"></div>
+    <p class="hook rise" style="--d:4">Inside, Jesus tells the truth and is condemned. Outside, Peter lies to save himself.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="57-58" data-hl="led him away to Caiaphas the high priest|Peter followed him afar off|sat with the servants, to see the end"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="58" data-hl="Peter followed him afar off"></blockquote>
+    <h2 class="rise" style="--d:1">Afar off</h2>
+    <p class="note rise" style="--d:2">Peter didn't fall all at once. Look at the night one step at a time:</p>
+    <ol class="stairs down" style="--n:6" aria-label="Six steps down: Peter says I will never, verse 33. He sleeps, verse 40. He swings a sword, verse 51. He flees, verse 56. He follows afar off, verse 58. He sits with the servants, verse 58.">
+      <li style="--k:0"><b>“I will never”</b>sure of himself (v. 33)</li>
+      <li style="--k:1"><b>asleep</b>instead of praying (v. 40)</li>
+      <li style="--k:2"><b>the sword</b>his own way (v. 51)</li>
+      <li style="--k:3"><b>fled</b>with the rest (v. 56)</li>
+      <li style="--k:4"><b>afar off</b>following at a distance (v. 58)</li>
+      <li style="--k:5"><b>with the servants</b>in the enemy's courtyard (v. 58)</li>
+    </ol>
+    <p class="note step">Over-confident, under-prayed, acting on his own, then keeping his distance and sitting with the wrong crowd. Most falls look like that from the inside. If you notice yourself on one of those steps, turn around there. Don't wait for the bottom.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="59-62" data-hl="sought false witness against Jesus|yet found they none|I am able to destroy the temple of God, and to build it in three days|Answerest thou nothing?"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="60" data-hl="though many false witnesses came, yet found they none"></blockquote>
+    <h2 class="rise" style="--d:1">Looking for a reason</h2>
+    <p class="note rise" style="--d:2">The <em>council</em> was the Sanhedrin, the Jewish high court of about seventy. The verdict was settled (v. 4); they needed a charge. God's law guarded against exactly this:</p>
+    <blockquote class="quote step"><p>“…at the mouth of two witnesses, or at the mouth of three witnesses, shall the matter be established.”</p><cite>Deuteronomy 19:15</cite></blockquote>
+    <p class="note step">At last they twisted something He'd said years before: <em>“Destroy this temple, and in three days I will raise it up”</em> (John 2:19). He meant His body, and in three days He'd do it. Meanwhile <em>“Jesus held his peace”</em> (v. 63), a lamb silent before its shearers (Isaiah 53:7).</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="63-64" data-hl="I adjure thee by the living God|whether thou be the Christ, the Son of God|Thou hast said|sitting on the right hand of power, and coming in the clouds of heaven"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="64" data-hl="Thou hast said"></blockquote>
+    <h2 class="rise" style="--d:1">Under oath</h2>
+    <p class="note rise" style="--d:2"><em>“I adjure thee”</em> puts Him under oath before God. Silent until now, Jesus answers: <em>“Thou hast said,”</em> meaning yes. Then He quotes two scriptures the court knew well:</p>
+    <div class="pair">
+      <div class="scroll step"><p class="ref">Psalm 110:1</p><p class="kjv">The LORD said unto my Lord, <mark>Sit thou at my right hand</mark>, until I make thine enemies thy footstool.</p></div>
+      <div class="scroll step"><p class="ref">Daniel 7:13</p><p class="kjv">I saw in the night visions, and, behold, one like <mark>the Son of man came with the clouds of heaven</mark>, and came to the Ancient of days, and they brought him near before him.</p></div>
+    </div>
+    <p class="note step">The prisoner tells His judges that one day they will stand before <em>Him</em>. He's the Christ, the Son of God, and He went to the cross for saying so.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="65-66" data-hl="the high priest rent his clothes|He is guilty of death"></section>
+<section class="slide verse" data-v="67-68" data-hl="spit in his face, and buffeted him|Prophesy unto us, thou Christ"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="68" data-hl="Prophesy unto us, thou Christ"></blockquote>
+    <h2 class="rise" style="--d:1">“Prophesy!”</h2>
+    <p class="note rise" style="--d:2">Tearing his robe was the high priest's show of horror at <em>blasphemy</em>, words that insult God. It would have been, if Jesus weren't the Son of God. Then they spat on Him and <em>buffeted</em> Him, beat Him with fists. Isaiah saw it:</p>
+    <blockquote class="quote step"><p>“I gave my back to the smiters, and my cheeks to them that plucked off the hair: I hid not my face from shame and spitting.”</p><cite>Isaiah 50:6</cite></blockquote>
+    <div class="columns">
+      <div class="col law step"><p class="who">inside</p><h3>“Prophesy!”</h3><p>Blindfolded (Luke 22:64), He's mocked as a fake prophet.</p></div>
+      <div class="col grace step"><p class="who">outside, at that hour</p><h3>“Thou shalt deny me”</h3><p>In the courtyard, His word about Peter is coming true.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide verse" data-v="69-70" data-hl="Thou also wast with Jesus of Galilee|he denied before them all"></section>
+<section class="slide verse" data-v="71-72" data-hl="This fellow was also with Jesus of Nazareth|again he denied with an oath, I do not know the man"></section>
+<section class="slide verse" data-v="73-75" data-hl="thy speech bewrayeth thee|Then began he to curse and to swear|immediately the cock crew|he went out, and wept bitterly"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="74" data-hl="Then began he to curse and to swear"></blockquote>
+    <h2 class="rise" style="--d:1">Louder each time</h2>
+    <div class="mt26-louder">
+      <div class="step" style="--k:0"><small>a damsel, in the palace<i>he denied</i></small><b>“I know not what thou sayest.”</b></div>
+      <div class="step" style="--k:1"><small>another maid, in the porch<i>with an oath</i></small><b>“I do not know the man.”</b></div>
+      <div class="step" style="--k:2"><small>they that stood by<i>cursing and swearing</i></small><b>“I know not the man.”</b></div>
+      <div class="step mt26-cock">“And immediately the cock crew.”</div>
+    </div>
+    <p class="note step">A servant girl, not a soldier. <em>Bewrayeth</em> means gives away: his Galilean accent. To <em>curse and swear</em> wasn't just rough talk; Peter called down curses on himself if he was lying. Each lie needed a bigger one to hold it up.</p>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="75" data-hl="he went out, and wept bitterly"></blockquote>
+    <h2 class="rise" style="--d:1">Wept bitterly, and not the end</h2>
+    <div class="stage">
+      <svg class="curve" viewBox="0 0 680 300" role="img" aria-label="A line that runs from Peter's boast, I will never, down through sleeping, fleeing and denying Jesus three times, to its lowest point where he wept bitterly. Then it climbs back up: the angel names him, and Peter; Jesus restores him, Feed my sheep; and Peter preaches at Pentecost.">
+        <line class="curve-base" x1="20" y1="140" x2="660" y2="140"/>
+        <path class="curve-line" pathLength="1" d="M40 50 L120 110 L200 170 L280 220 L360 250 L440 190 L540 110 L640 50"/>
+        <g class="curve-pt" style="--k:0"><circle cx="40" cy="50" r="9"/><text x="26" y="26">“I will never”</text><text class="ref" x="136" y="26">26:33</text></g>
+        <g class="curve-pt" style="--k:1"><circle cx="120" cy="110" r="9"/><text x="134" y="98">asleep</text><text class="ref" x="190" y="98">26:40</text></g>
+        <g class="curve-pt low" style="--k:2"><circle cx="200" cy="170" r="9"/><text x="186" y="196" text-anchor="end">fled</text><text class="ref" x="186" y="214" text-anchor="end">26:56</text></g>
+        <g class="curve-pt low" style="--k:3"><circle cx="280" cy="220" r="9"/><text x="266" y="248" text-anchor="end">denied 3×</text><text class="ref" x="266" y="266" text-anchor="end">26:70–74</text></g>
+        <g class="curve-pt low" style="--k:4"><circle cx="360" cy="250" r="9"/><text x="360" y="282" text-anchor="middle">wept bitterly</text><text class="ref" x="360" y="298" text-anchor="middle">26:75</text></g>
+        <g class="curve-pt" style="--k:5"><circle cx="440" cy="190" r="9"/><text x="454" y="214">“and Peter”</text><text class="ref" x="454" y="232">Mark 16:7</text></g>
+        <g class="curve-pt high" style="--k:6"><circle cx="540" cy="110" r="10"/><text x="526" y="100" text-anchor="end" font-weight="700" style="fill:var(--accent-hot)">“Feed my sheep”</text><text class="ref" x="554" y="132">John 21:17</text></g>
+        <g class="curve-pt" style="--k:7"><circle cx="640" cy="50" r="9"/><text x="660" y="28" text-anchor="end">Pentecost</text><text class="ref" x="660" y="76" text-anchor="end">Acts 2</text></g>
+      </svg>
+    </div>
+    <p class="note step">Peter's lowest point wasn't the end. On Easter morning the angel said, <em>“tell his disciples and Peter”</em> (Mark 16:7), by name. By the lake in Galilee, Jesus restored him and gave him work to do.</p>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="75" data-hl="wept bitterly"></blockquote>
+    <h2 class="rise" style="--d:1">Two kinds of sorrow</h2>
+    <div class="columns">
+      <div class="col law step"><p class="who">Judas</p><h3>sorry, and alone</h3><p>He regretted it, took his sorrow to the priests instead of to Jesus, and despaired (27:3–5).</p></div>
+      <div class="col grace step"><p class="who">Peter</p><h3>sorry, and found</h3><p>He wept, stayed with the disciples, and was there when the risen Lord came looking for him.</p></div>
+    </div>
+    <blockquote class="quote step"><p>“For godly sorrow worketh repentance to salvation not to be repented of: but the sorrow of the world worketh death.”</p><cite>2 Corinthians 7:10</cite></blockquote>
+    <p class="note step">Shame says, <em>hide</em>. Godly sorrow says, <em>go back to Him</em>. If you've fallen, don't carry it alone. Bring it to Jesus, and tell a brother.</p>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="75" data-hl="Peter remembered the word of Jesus"></blockquote>
+    <h2 class="rise" style="--d:1">Every word He said that night</h2>
+    <ol class="checks">
+      <li class="step"><span class="tick">✓</span><q>one of you shall betray me</q><small>said at supper, v. 21</small><b>v. 49</b></li>
+      <li class="step"><span class="tick">✓</span><q>the sheep of the flock shall be scattered abroad</q><small>said on the way out, v. 31</small><b>v. 56</b></li>
+      <li class="step"><span class="tick">✓</span><q>before the cock crow, thou shalt deny me thrice</q><small>said to Peter, v. 34</small><b>v. 74</b></li>
+      <li class="step mt26-ahead"><span class="tick">…</span><q>after I am risen again, I will go before you into Galilee</q><small>said in the same breath, v. 32</small><b>28:7, 16</b></li>
+    </ol>
+    <p class="note step">Every hard word Jesus spoke that night came true, to the letter. So will the promise. He knew about Peter's fall before Peter did, and had already set the place to meet him on the other side of it.</p>
+  </div>
+</section>
+
+<!-- ======================= CLOSING ======================= -->
+<section class="slide remember">
+  <div class="inner">
+    <h2 class="rise">Points to remember</h2>
+    <ol class="seeds">
+      <li class="step"><span class="topic">Worship</span><span class="seed-q">“She hath wrought a good work upon me” <cite>26:10</cite></span><span class="take">Nothing poured out on Jesus is wasted.</span></li>
+      <li class="step"><span class="topic">The Lord's Supper</span><span class="seed-q">“This is my body… this is my blood of the new testament” <cite>26:26, 28</cite></span><span class="take">A memorial of His body broken and His blood shed for the remission of sins.</span></li>
+      <li class="step"><span class="topic">Surrender</span><span class="seed-q">“Nevertheless not as I will, but as thou wilt” <cite>26:39</cite></span><span class="take">Tell God honestly what you want, then give Him your will.</span></li>
+      <li class="step"><span class="topic">Temptation</span><span class="seed-q">“Watch and pray, that ye enter not into temptation” <cite>26:41</cite></span><span class="take">The flesh is weak. Stay awake and lean on God before the hour comes.</span></li>
+      <li class="step"><span class="topic">Who He is</span><span class="seed-q">“Thou hast said” <cite>26:64</cite></span><span class="take">Under oath, Jesus said He is the Christ, the Son of God, and the coming Judge.</span></li>
+      <li class="step"><span class="topic">Falling and getting up</span><span class="seed-q">“He went out, and wept bitterly” <cite>26:75</cite></span><span class="take">Peter's worst night wasn't his last word. Godly sorrow leads back to Jesus.</span></li>
+    </ol>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 1 of 6</p>
+      <span class="topic">Worship</span>
+      <h2>What did the woman do that the disciples called waste?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="7"></blockquote>
+      <blockquote class="quote step" data-q="10"></blockquote>
+      <blockquote class="quote step" data-q="13"></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>She poured a box of very precious ointment, worth about a year's wages, on Jesus' head. The disciples saw waste; Jesus called it a good work, done for His burial, and said it would be told wherever the gospel goes.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 2 of 6</p>
+      <span class="topic">The Lord's Supper</span>
+      <h2>What did Jesus say the bread and the cup mean?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="26"></blockquote>
+      <blockquote class="quote step" data-q="28"></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>The bread is His body, given for us; the cup is His blood of the new testament, shed for many for the remission of sins. We eat and drink in remembrance of Him, showing His death until He comes.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 3 of 6</p>
+      <span class="topic">Surrender</span>
+      <h2>How did Jesus pray in Gethsemane?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="39"></blockquote>
+      <blockquote class="quote step" data-q="42"></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>On His face, in deep sorrow, three times. He honestly asked that the cup might pass, and gave His will to His Father: “not as I will, but as thou wilt.” Then He rose and went to meet the men who came for Him.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 4 of 6</p>
+      <span class="topic">Temptation</span>
+      <h2>What did Jesus tell the sleeping disciples to do?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="40"></blockquote>
+      <blockquote class="quote step" data-q="41"></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>To watch and pray, so they wouldn't enter into temptation. Their spirit was willing but their flesh was weak. Willpower wasn't enough; they needed to stay alert and lean on God before the hour came.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 5 of 6</p>
+      <span class="topic">Who He is</span>
+      <h2>What did Jesus say when the high priest put Him under oath?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="63"></blockquote>
+      <blockquote class="quote step" data-q="64"></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>“Thou hast said”: yes, He is the Christ, the Son of God. And they would see Him at the right hand of power, coming in the clouds of heaven. He was condemned for telling the truth about who He is.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 6 of 6</p>
+      <span class="topic">Falling and getting up</span>
+      <h2>What did Peter do when the cock crew?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="74"></blockquote>
+      <blockquote class="quote step" data-q="75"></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>He remembered Jesus' word, went out, and wept bitterly. It was godly sorrow, and it led him back. Jesus had already promised to meet them in Galilee, and He restored Peter there and gave him work to do.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide prayer">
+  <div class="inner">
+    <div class="emblem rise"></div>
+    <h2 class="rise" style="--d:1">Prayer requests</h2>
+    <p class="ask-line rise" style="--d:2">What can we pray about for you today?</p>
+    <blockquote class="quote rise" style="--d:4"><p>“The LORD is nigh unto them that are of a broken heart; and saveth such as be of a contrite spirit.”</p><cite>Psalm 34:18</cite></blockquote>
+  </div>
+</section>
+
+</main>
+
+<script>
+// King James Version, Matthew chapter 26
+const V = {
+  1: "And it came to pass, when Jesus had finished all these sayings, he said unto his disciples,",
+  2: "Ye know that after two days is the feast of the passover, and the Son of man is betrayed to be crucified.",
+  3: "Then assembled together the chief priests, and the scribes, and the elders of the people, unto the palace of the high priest, who was called Caiaphas,",
+  4: "And consulted that they might take Jesus by subtilty, and kill him.",
+  5: "But they said, Not on the feast day, lest there be an uproar among the people.",
+  6: "Now when Jesus was in Bethany, in the house of Simon the leper,",
+  7: "There came unto him a woman having an alabaster box of very precious ointment, and poured it on his head, as he sat at meat.",
+  8: "But when his disciples saw it, they had indignation, saying, To what purpose is this waste?",
+  9: "For this ointment might have been sold for much, and given to the poor.",
+  10: "When Jesus understood it, he said unto them, Why trouble ye the woman? for she hath wrought a good work upon me.",
+  11: "For ye have the poor always with you; but me ye have not always.",
+  12: "For in that she hath poured this ointment on my body, she did it for my burial.",
+  13: "Verily I say unto you, Wheresoever this gospel shall be preached in the whole world, there shall also this, that this woman hath done, be told for a memorial of her.",
+  14: "Then one of the twelve, called Judas Iscariot, went unto the chief priests,",
+  15: "And said unto them, What will ye give me, and I will deliver him unto you? And they covenanted with him for thirty pieces of silver.",
+  16: "And from that time he sought opportunity to betray him.",
+  17: "Now the first day of the feast of unleavened bread the disciples came to Jesus, saying unto him, Where wilt thou that we prepare for thee to eat the passover?",
+  18: "And he said, Go into the city to such a man, and say unto him, The Master saith, My time is at hand; I will keep the passover at thy house with my disciples.",
+  19: "And the disciples did as Jesus had appointed them; and they made ready the passover.",
+  20: "Now when the even was come, he sat down with the twelve.",
+  21: "And as they did eat, he said, Verily I say unto you, that one of you shall betray me.",
+  22: "And they were exceeding sorrowful, and began every one of them to say unto him, Lord, is it I?",
+  23: "And he answered and said, He that dippeth his hand with me in the dish, the same shall betray me.",
+  24: "The Son of man goeth as it is written of him: but woe unto that man by whom the Son of man is betrayed! it had been good for that man if he had not been born.",
+  25: "Then Judas, which betrayed him, answered and said, Master, is it I? He said unto him, Thou hast said.",
+  26: "And as they were eating, Jesus took bread, and blessed it, and brake it, and gave it to the disciples, and said, Take, eat; this is my body.",
+  27: "And he took the cup, and gave thanks, and gave it to them, saying, Drink ye all of it;",
+  28: "For this is my blood of the new testament, which is shed for many for the remission of sins.",
+  29: "But I say unto you, I will not drink henceforth of this fruit of the vine, until that day when I drink it new with you in my Father’s kingdom.",
+  30: "And when they had sung an hymn, they went out into the mount of Olives.",
+  31: "Then saith Jesus unto them, All ye shall be offended because of me this night: for it is written, I will smite the shepherd, and the sheep of the flock shall be scattered abroad.",
+  32: "But after I am risen again, I will go before you into Galilee.",
+  33: "Peter answered and said unto him, Though all men shall be offended because of thee, yet will I never be offended.",
+  34: "Jesus said unto him, Verily I say unto thee, That this night, before the cock crow, thou shalt deny me thrice.",
+  35: "Peter said unto him, Though I should die with thee, yet will I not deny thee. Likewise also said all the disciples.",
+  36: "Then cometh Jesus with them unto a place called Gethsemane, and saith unto the disciples, Sit ye here, while I go and pray yonder.",
+  37: "And he took with him Peter and the two sons of Zebedee, and began to be sorrowful and very heavy.",
+  38: "Then saith he unto them, My soul is exceeding sorrowful, even unto death: tarry ye here, and watch with me.",
+  39: "And he went a little further, and fell on his face, and prayed, saying, O my Father, if it be possible, let this cup pass from me: nevertheless not as I will, but as thou wilt.",
+  40: "And he cometh unto the disciples, and findeth them asleep, and saith unto Peter, What, could ye not watch with me one hour?",
+  41: "Watch and pray, that ye enter not into temptation: the spirit indeed is willing, but the flesh is weak.",
+  42: "He went away again the second time, and prayed, saying, O my Father, if this cup may not pass away from me, except I drink it, thy will be done.",
+  43: "And he came and found them asleep again: for their eyes were heavy.",
+  44: "And he left them, and went away again, and prayed the third time, saying the same words.",
+  45: "Then cometh he to his disciples, and saith unto them, Sleep on now, and take your rest: behold, the hour is at hand, and the Son of man is betrayed into the hands of sinners.",
+  46: "Rise, let us be going: behold, he is at hand that doth betray me.",
+  47: "And while he yet spake, lo, Judas, one of the twelve, came, and with him a great multitude with swords and staves, from the chief priests and elders of the people.",
+  48: "Now he that betrayed him gave them a sign, saying, Whomsoever I shall kiss, that same is he: hold him fast.",
+  49: "And forthwith he came to Jesus, and said, Hail, master; and kissed him.",
+  50: "And Jesus said unto him, Friend, wherefore art thou come? Then came they, and laid hands on Jesus, and took him.",
+  51: "And, behold, one of them which were with Jesus stretched out his hand, and drew his sword, and struck a servant of the high priest’s, and smote off his ear.",
+  52: "Then said Jesus unto him, Put up again thy sword into his place: for all they that take the sword shall perish with the sword.",
+  53: "Thinkest thou that I cannot now pray to my Father, and he shall presently give me more than twelve legions of angels?",
+  54: "But how then shall the scriptures be fulfilled, that thus it must be?",
+  55: "In that same hour said Jesus to the multitudes, Are ye come out as against a thief with swords and staves for to take me? I sat daily with you teaching in the temple, and ye laid no hold on me.",
+  56: "But all this was done, that the scriptures of the prophets might be fulfilled. Then all the disciples forsook him, and fled.",
+  57: "And they that had laid hold on Jesus led him away to Caiaphas the high priest, where the scribes and the elders were assembled.",
+  58: "But Peter followed him afar off unto the high priest’s palace, and went in, and sat with the servants, to see the end.",
+  59: "Now the chief priests, and elders, and all the council, sought false witness against Jesus, to put him to death;",
+  60: "But found none: yea, though many false witnesses came, yet found they none. At the last came two false witnesses,",
+  61: "And said, This fellow said, I am able to destroy the temple of God, and to build it in three days.",
+  62: "And the high priest arose, and said unto him, Answerest thou nothing? what is it which these witness against thee?",
+  63: "But Jesus held his peace. And the high priest answered and said unto him, I adjure thee by the living God, that thou tell us whether thou be the Christ, the Son of God.",
+  64: "Jesus saith unto him, Thou hast said: nevertheless I say unto you, Hereafter shall ye see the Son of man sitting on the right hand of power, and coming in the clouds of heaven.",
+  65: "Then the high priest rent his clothes, saying, He hath spoken blasphemy; what further need have we of witnesses? behold, now ye have heard his blasphemy.",
+  66: "What think ye? They answered and said, He is guilty of death.",
+  67: "Then did they spit in his face, and buffeted him; and others smote him with the palms of their hands,",
+  68: "Saying, Prophesy unto us, thou Christ, Who is he that smote thee?",
+  69: "Now Peter sat without in the palace: and a damsel came unto him, saying, Thou also wast with Jesus of Galilee.",
+  70: "But he denied before them all, saying, I know not what thou sayest.",
+  71: "And when he was gone out into the porch, another maid saw him, and said unto them that were there, This fellow was also with Jesus of Nazareth.",
+  72: "And again he denied with an oath, I do not know the man.",
+  73: "And after a while came unto him they that stood by, and said to Peter, Surely thou also art one of them; for thy speech bewrayeth thee.",
+  74: "Then began he to curse and to swear, saying, I know not the man. And immediately the cock crew.",
+  75: "And Peter remembered the word of Jesus, which said unto him, Before the cock crow, thou shalt deny me thrice. And he went out, and wept bitterly."
+};
+const BOOK = "Matthew 26";
+</script>
+<script src="../assets/deck.js"></script>
+</body>
+</html>
