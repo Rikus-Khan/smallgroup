@@ -10705,6 +10705,112 @@ window.STUDIES = [
     }
   },
   {
+    "id": "acts-27",
+    "type": "chapter",
+    "book": "Acts",
+    "ch": 27,
+    "date": "2026-10-30",
+    "title": "Acts 27",
+    "sub": "The storm",
+    "about": "Paul sails for Rome as a prisoner. A warning goes unheard, a storm takes everything but hope, and God keeps a promise to the last man aboard.",
+    "tags": [
+      "Good counsel",
+      "Despair",
+      "God's promise",
+      "Staying together",
+      "Taking care",
+      "Rescue"
+    ],
+    "url": "studies/acts-27.html",
+    "overview": {
+      "where": "From Caesarea by sea to Fair Havens on Crete, then fourteen days adrift in the Adria, ending on a beach on Malta",
+      "when": "Autumn, about AD 59, after the fast",
+      "people": [
+        "paul",
+        "julius",
+        "aristarchus",
+        "angels",
+        "caesar",
+        "soldiers"
+      ],
+      "places": [
+        "sidon",
+        "myra",
+        "crete",
+        "fair-havens",
+        "clauda",
+        "adria"
+      ],
+      "story": [
+        "A centurion named Julius takes Paul and other prisoners by sea toward Italy. Contrary winds slow them down, and they put in at Fair Havens on Crete (1–8).",
+        "The sailing season is nearly over. Paul warns that the voyage will end in loss, but the centurion believes the master and the owner, and the ship sails on (9–13).",
+        "A northeaster called Euroclydon drives them for days. The cargo and gear go overboard, and with no sun or stars, “all hope that we should be saved was then taken away” (14–20).",
+        "Paul stands up and tells them an angel of God has promised no loss of life, only of the ship, and that they must be cast on an island (21–26).",
+        "On the fourteenth night they sound the depth and drop four anchors. Paul stops the sailors escaping in the boat, urges everyone to eat, and gives thanks for bread (27–38).",
+        "The ship runs aground on a bar and breaks up. The centurion stops the soldiers killing the prisoners, and all 276 get safe to land (39–44)."
+      ],
+      "key": {
+        "ref": "Acts 27:22",
+        "text": "And now I exhort you to be of good cheer: for there shall be no loss of any man’s life among you, but of the ship."
+      },
+      "big": "God didn't promise Paul a smooth trip. He promised to bring every man through, and He did, even the men who ignored the warning. The ship was lost and not one life was."
+    }
+  },
+  {
+    "id": "acts-28",
+    "type": "chapter",
+    "book": "Acts",
+    "ch": 28,
+    "date": "2026-10-30",
+    "title": "Acts 28",
+    "sub": "Rome at last",
+    "about": "A viper on the beach, brothers on the road, and Paul in chains in Rome, preaching with all confidence and no one forbidding him.",
+    "tags": [
+      "Judging by looks",
+      "Kindness",
+      "Brothers",
+      "The message",
+      "Unbelief",
+      "The open door"
+    ],
+    "url": "studies/acts-28.html",
+    "overview": {
+      "where": "Melita (Malta), then Syracuse, Rhegium, Puteoli, Appii Forum and Rome",
+      "when": "Winter into spring, about AD 59 to 60, then two years in Rome",
+      "people": [
+        "paul",
+        "publius",
+        "brethren-believers",
+        "the-jews",
+        "holy-spirit",
+        "isaiah",
+        "caesar"
+      ],
+      "places": [
+        "melita",
+        "syracuse",
+        "rhegium",
+        "puteoli",
+        "appii-forum",
+        "rome",
+        "jerusalem"
+      ],
+      "story": [
+        "The islanders of Melita light a fire for the shipwrecked men. A viper fastens on Paul's hand, and he shakes it off and feels no harm. They call him a murderer, then a god (1–6).",
+        "Publius, the chief man of the island, takes them in. Paul prays for his sick father, and he is healed, and others come and are healed (7–10).",
+        "After three months they sail on to Syracuse, Rhegium and Puteoli. Brothers from Rome meet Paul on the road, and he thanks God and takes courage (11–15).",
+        "In Rome Paul is allowed to live by himself with a soldier guarding him. He calls the Jewish leaders together and explains why he is a prisoner (16–22).",
+        "From morning till evening he teaches them about the kingdom of God and Jesus. Some believe and some don't, and Paul quotes Isaiah and says salvation is sent to the Gentiles (23–29).",
+        "For two whole years Paul lives in his own rented house, receiving everyone who comes and preaching “with all confidence, no man forbidding him” (30–31)."
+      ],
+      "key": {
+        "ref": "Acts 28:31",
+        "text": "Preaching the kingdom of God, and teaching those things which concern the Lord Jesus Christ, with all confidence, no man forbidding him."
+      },
+      "big": "Acts ends with Paul still in chains and the door still open. The gospel has gone from Jerusalem to Rome, and the story is still being written, in us."
+    }
+  },
+  {
     "id": "romans-01",
     "type": "chapter",
     "book": "Romans",

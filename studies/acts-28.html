@@ -1,0 +1,625 @@
+<!doctype html>
+<html lang="en" data-theme="scribe">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Acts 28</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="../assets/fonts.css">
+<link rel="stylesheet" href="../assets/deck.css">
+<link rel="stylesheet" href="../assets/themes.css">
+<style>
+/* ac28-viper: a bundle of sticks, a fire, a snake shaken off, and the islanders watching */
+.ac28-vsky { fill: color-mix(in srgb, var(--cool) 16%, var(--surface)); }
+.ac28-vground { fill: var(--surface-2); }
+.ac28-rain { stroke: var(--cool); stroke-width: 2; stroke-linecap: round; opacity: 0; }
+.slide.active .ac28-rain { animation: ac28-rain 1s linear infinite; animation-delay: calc(var(--k) * -.17s); }
+@keyframes ac28-rain { 0% { opacity: 0; transform: translate(0, -30px); } 20% { opacity: .7; } 100% { opacity: 0; transform: translate(-26px, 90px); } }
+.ac28-log { fill: var(--leather); stroke: var(--leather-light); stroke-width: 2; }
+.ac28-fl { transform-box: fill-box; transform-origin: 50% 100%; }
+.slide.active .ac28-fl { animation: ac28-flick 1s ease-in-out infinite alternate; animation-delay: calc(var(--k) * -.3s); }
+@keyframes ac28-flick { from { transform: scale(1, 1); } to { transform: scale(.88, 1.12); } }
+.ac28-man { fill: var(--ink-soft); }
+.ac28-arm { stroke: var(--ink-soft); stroke-width: 10; stroke-linecap: round; fill: none; }
+.ac28-sticks { stroke: var(--leather-light); stroke-width: 5; stroke-linecap: round; }
+.ac28-snake { fill: none; stroke: var(--danger); stroke-width: 7; stroke-linecap: round; stroke-linejoin: round; transform-box: fill-box; transform-origin: 0 0; opacity: 0; transition: transform 1.3s cubic-bezier(.5, 0, .7, .4), opacity .6s ease; }
+.slide:has(.ac28-bite.on) .ac28-snake { opacity: 1; animation: ac28-wriggle .45s ease-in-out infinite alternate; }
+@keyframes ac28-wriggle { from { rotate: -4deg; } to { rotate: 5deg; } }
+.slide:has(.ac28-shake.on) .ac28-snake { transform: translate(80px, 34px) rotate(60deg); animation: none; opacity: 0; transition: transform 1.3s cubic-bezier(.5, 0, .7, .4), opacity .5s ease 1.1s; }
+.ac28-eye { fill: var(--danger); opacity: 0; transition: opacity .3s ease; }
+.ac28-watch { fill: var(--ink-soft); opacity: .75; }
+.ac28-vlab { font: italic 16px var(--serif); fill: var(--ink); }
+
+/* ac28-guard: a prisoner chained to a soldier, a new soldier every shift */
+.ac28-room { fill: var(--surface); }
+.ac28-floor { fill: var(--surface-2); }
+.ac28-bubble { fill: var(--surface-2); stroke: var(--line-strong); stroke-width: 2; }
+.ac28-say { font: italic 18px var(--serif); fill: var(--ink); }
+.ac28-link { fill: none; stroke: var(--ink-soft); stroke-width: 3.5; }
+.slide.active .ac28-chain { animation: ac28-sway 2.2s ease-in-out infinite alternate; transform-box: fill-box; transform-origin: 0 50%; }
+@keyframes ac28-sway { from { transform: rotate(-2deg); } to { transform: rotate(2deg); } }
+.ac28-sol { opacity: 0; }
+.slide.active .ac28-sol { animation: ac28-shift 9s ease-in-out infinite; animation-delay: calc(var(--k) * 3s); }
+@keyframes ac28-shift { 0% { opacity: 0; } 6%, 30% { opacity: 1; } 36%, 100% { opacity: 0; } }
+.ac28-solbody { fill: var(--c); }
+.ac28-solspear { stroke: var(--leather-light); stroke-width: 4; stroke-linecap: round; }
+.ac28-shiftlab { font: 700 15px var(--sans); fill: var(--ink-soft); text-anchor: middle; }
+
+/* ac28-legend: Paul's four trips on one map, a swatch per route */
+.ac28-legend { list-style: none; margin: .2em 0 .8em; padding: 0; display: grid; gap: .55rem; }
+.ac28-legend li { display: grid; grid-template-columns: 1.3rem 1fr; gap: .1rem .8rem; align-items: start; font-size: clamp(.95rem, .86rem + .4vw, 1.2rem); line-height: 1.3; }
+.ac28-legend i { display: block; width: 1.3rem; height: .38rem; margin-top: .5em; border-radius: 3px; background: var(--c); }
+.ac28-legend b { font-family: var(--serif); font-weight: 600; }
+.ac28-legend small { display: block; color: var(--ink-soft); font-size: .85em; }
+
+/* wider text or wider picture on a wide screen only */
+@media (min-width: 900px) and (min-aspect-ratio: 4/3) {
+  .ac28-wa { grid-template-columns: .95fr 1.05fr; } .ac28-wb { grid-template-columns: 1.1fr .9fr; } .ac28-wc { grid-template-columns: 1.05fr .95fr; } .ac28-wd { grid-template-columns: .8fr 1.2fr; } .ac28-we { grid-template-columns: 1.25fr .75fr; }
+}
+</style>
+</head>
+<body>
+<main class="deck" id="deck">
+
+<!-- ======================= OPENING ======================= -->
+<section class="slide title">
+  <div class="inner">
+    <div class="emblem rise"></div>
+    <h1 class="rise" style="--d:1">Acts 28</h1>
+    <p class="sub rise" style="--d:3">Rome at last</p>
+    <p class="tag rise" style="--d:5">A viper on the beach, brothers on the road, and Paul in chains, preaching in Rome with no one forbidding him.</p>
+  </div>
+</section>
+
+<section class="slide watch">
+  <div class="inner">
+    <h2 class="rise">Things to watch for</h2>
+    <p class="lede rise" style="--d:1">Keep these questions in the back of your mind as we read. We'll come back to every one of them at the end.</p>
+    <ol class="seeds">
+      <li class="step"><span class="topic">Judging by looks</span><span class="seed-q">What did the islanders think when the viper bit Paul, and were they right?</span></li>
+      <li class="step"><span class="topic">Kindness</span><span class="seed-q">How did the people of Melita treat the shipwrecked men?</span></li>
+      <li class="step"><span class="topic">Brothers</span><span class="seed-q">What did Paul do when he saw the brothers who came to meet him?</span></li>
+      <li class="step"><span class="topic">The message</span><span class="seed-q">What did Paul teach the Jews in Rome?</span></li>
+      <li class="step"><span class="topic">Unbelief</span><span class="seed-q">What did Paul say about those who would not believe?</span></li>
+      <li class="step"><span class="topic">The open door</span><span class="seed-q">What could Paul still do while he was in chains?</span></li>
+    </ol>
+  </div>
+</section>
+
+<!-- ======================= PART ONE: MELITA ======================= -->
+<section class="slide part">
+  <div class="inner">
+    <p class="part-n rise">Part one</p>
+    <h2 class="rise" style="--d:1">The island</h2>
+    <p class="range rise" style="--d:2">Verses 1–10</p>
+    <div class="rule"></div>
+    <p class="hook rise" style="--d:4">A fire on the beach, a snake in the sticks, and a sick man healed.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="1-2" data-hl="the island was called Melita|the barbarous people shewed us no little kindness|because of the present rain, and because of the cold"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <div class="split ac28-wc">
+      <div class="stage">
+        <svg data-world viewBox="205 285 300 185" data-towns="Melita!:t" role="img" aria-label="Map of the central Mediterranean. The ship's zigzag course across the Adriatic ends at the island of Melita, south of Sicily.">
+          <path class="map-route j2" data-via="@23 34.8, @22.4 34.8, @21 35.4, @19.6 34.8, @18.1 35.5, @16.7 35.0, @15.4 35.7, Melita" style="--wait:.6s;--draw:4s"/>
+          <text class="map-region" x="262" y="310" text-anchor="middle">SICILY</text>
+        </svg>
+      </div>
+      <div>
+        <h2 class="rise" style="--d:1">Melita</h2>
+        <p class="note rise" style="--d:2">Two hundred and seventy-six soaked men crawl up a beach, and only then do they learn where they are: Melita, today's Malta, about 60 miles south of Sicily.</p>
+        <p class="note step">“Barbarous” doesn't mean savage. It's the Greek <span class="gk">barbaros</span>, a person who didn't speak Greek, whose speech sounded like “bar-bar.” These islanders spoke their own language.</p>
+        <p class="note step">And they showed <em>“no little kindness.”</em> They lit a fire for <em>“every one”</em> of the strangers, because of the rain and the cold.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="slide verse" data-v="3-6" data-hl="there came a viper out of the heat, and fastened on his hand|No doubt this man is a murderer|he shook off the beast into the fire, and felt no harm|said that he was a god"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <div class="split ac28-wc">
+      <div class="stage">
+        <svg viewBox="0 0 600 300" role="img" aria-label="A rainy beach. Paul stands by a fire with a bundle of sticks. A viper fastens on his hand. He shakes it off into the fire. The islanders stand and watch.">
+          <defs><clipPath id="ac28-vclip"><rect x="0" y="0" width="600" height="300" rx="8"/></clipPath>
+            <radialGradient id="ac28-fg"><stop offset="0" style="stop-color:var(--warm);stop-opacity:.55"/><stop offset="1" style="stop-color:var(--warm);stop-opacity:0"/></radialGradient></defs>
+          <g clip-path="url(#ac28-vclip)">
+            <rect class="ac28-vsky" x="0" y="0" width="600" height="300"/>
+            <rect class="ac28-vground" x="0" y="236" width="600" height="64"/>
+            <g>
+              <line class="ac28-rain" style="--k:0" x1="30" y1="30" x2="22" y2="50"/><line class="ac28-rain" style="--k:1" x1="90" y1="50" x2="82" y2="70"/><line class="ac28-rain" style="--k:2" x1="150" y1="20" x2="142" y2="40"/><line class="ac28-rain" style="--k:3" x1="220" y1="60" x2="212" y2="80"/><line class="ac28-rain" style="--k:4" x1="280" y1="26" x2="272" y2="46"/><line class="ac28-rain" style="--k:5" x1="350" y1="56" x2="342" y2="76"/><line class="ac28-rain" style="--k:6" x1="420" y1="30" x2="412" y2="50"/><line class="ac28-rain" style="--k:7" x1="480" y1="62" x2="472" y2="82"/><line class="ac28-rain" style="--k:8" x1="550" y1="34" x2="542" y2="54"/><line class="ac28-rain" style="--k:9" x1="60" y1="110" x2="52" y2="130"/><line class="ac28-rain" style="--k:10" x1="380" y1="110" x2="372" y2="130"/><line class="ac28-rain" style="--k:11" x1="520" y1="120" x2="512" y2="140"/>
+            </g>
+            <g transform="translate(330 236)">
+              <circle cx="0" cy="-30" r="70" fill="url(#ac28-fg)"/>
+              <rect class="ac28-log" x="-46" y="-12" width="92" height="14" rx="6" transform="rotate(-8)"/>
+              <rect class="ac28-log" x="-46" y="-12" width="92" height="14" rx="6" transform="rotate(8)"/>
+              <path class="ac28-fl" style="--k:0;fill:color-mix(in srgb, var(--danger) 60%, var(--warm))" d="M-22 -8 C-30 -30 -14 -44 -12 -60 C2 -46 8 -26 -2 -8 Z"/>
+              <path class="ac28-fl" style="--k:1;fill:var(--warm)" d="M0 -8 C-8 -34 8 -52 14 -76 C28 -52 34 -28 22 -8 Z"/>
+              <path class="ac28-fl" style="--k:2;fill:var(--glow)" d="M6 -8 C2 -24 12 -34 14 -46 C22 -34 24 -20 18 -8 Z"/>
+            </g>
+            <g>
+              <circle class="ac28-man" cx="150" cy="130" r="15"/>
+              <path class="ac28-man" d="M124 236 Q126 168 150 156 Q176 168 180 236 Z"/>
+              <path class="ac28-arm" d="M164 178 L246 194"/>
+              <path class="ac28-sticks" d="M236 184 L272 206 M240 178 L276 198 M246 190 L270 214"/>
+            </g>
+            <g class="ac28-snake"><path d="M254 196 q-12 12 2 24 q14 12 0 26 q-10 10 2 18"/></g>
+            <g>
+              <circle class="ac28-watch" cx="450" cy="190" r="11"/><path class="ac28-watch" d="M434 236 Q436 206 450 202 Q464 206 466 236 Z"/>
+              <circle class="ac28-watch" cx="496" cy="194" r="11"/><path class="ac28-watch" d="M480 236 Q482 210 496 206 Q510 210 512 236 Z"/>
+              <circle class="ac28-watch" cx="542" cy="190" r="11"/><path class="ac28-watch" d="M526 236 Q528 206 542 202 Q556 206 558 236 Z"/>
+            </g>
+          </g>
+        </svg>
+      </div>
+      <div>
+        <h2 class="rise" style="--d:1">The viper</h2>
+        <p class="note rise" style="--d:2">Wet and cold, 276 men need a fire, and Paul pitches in with a bundle of sticks.</p>
+        <p class="note step ac28-bite">A viper, driven out by the heat, fastens on his hand.</p>
+        <p class="note step ac28-shake">He shakes it into the fire and <em>“felt no harm.”</em> The islanders wait for him to swell up or drop dead. He doesn't.</p>
+        <p class="note step">It confirmed God's messenger to people who'd never heard the gospel. It isn't a pattern for the rest of us. Nothing in Scripture tells a believer to prove his faith with snakes.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise" style="--d:1">“A murderer,” then “a god”</h2>
+    <ul class="nots">
+      <li class="step"><span class="k">“No doubt this man is a murderer”</span><span class="why">trouble must mean guilt, they figured</span></li>
+      <li class="step"><span class="k">“he was a god”</span><span class="why">an hour later, the same crowd flipped</span></li>
+      <li class="step yes"><span class="k">a man God was keeping alive for Rome</span><span class="why">just as the angel had said</span></li>
+    </ul>
+    <p class="note step">Both guesses were wrong. People read a man by the first thing they see. Paul knew something about that: he had once stood by while Stephen was killed (Acts 7:58, 8:1). If anyone had a past that sounded like “murderer,” it was him.</p>
+    <blockquote class="quote step"><p>“This is a faithful saying, and worthy of all acceptation, that Christ Jesus came into the world to save sinners; of whom I am chief.”</p><cite>1 Timothy 1:15</cite></blockquote>
+    <p class="note step">When people size you up by your past, you don't have to argue. God has dealt with it. Shake it off and do the next right thing.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="7-10" data-hl="Publius|the father of Publius lay sick of a fever and of a bloody flux|prayed, and laid his hands on him, and healed him"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="8" data-hl="prayed, and laid his hands on him, and healed him"></blockquote>
+    <h2 class="rise" style="--d:1">Making the most of a shipwreck</h2>
+    <div class="chains">
+      <div class="chain step"><span class="who-chip">Publius, the chief man</span><span class="said">lodged us three days</span><span class="who-chip">Paul</span><span class="said">prayed, laid hands on his father</span><span class="who-chip jesus">healed</span></div>
+      <div class="chain step"><span class="who-chip">the rest of the island</span><span class="said">came with their sick</span><span class="who-chip jesus">healed</span><span class="said">and sent us off with</span><span class="who-chip">all we needed</span></div>
+    </div>
+    <p class="note rise" style="--d:3">Publius was <em>“the chief man of the island,”</em> and he took in strangers for three days. His father lay sick with <em>“a fever and… a bloody flux”</em> (likely dysentery). Luke, the doctor, notes the symptoms.</p>
+    <p class="note step">Paul <em>prayed</em> first, then laid on his hands. Healings like this marked the apostles' message as it reached new places. But look at the man: a prisoner and a shipwreck survivor, and he was still serving the people in front of him.</p>
+  </div>
+</section>
+
+<!-- ======================= PART TWO: ON TO ROME ======================= -->
+<section class="slide part">
+  <div class="inner">
+    <p class="part-n rise">Part two</p>
+    <h2 class="rise" style="--d:1">On to Rome</h2>
+    <p class="range rise" style="--d:2">Verses 11–16</p>
+    <div class="rule"></div>
+    <p class="hook rise" style="--d:4">Three months of winter, a ship with twin gods on its bow, and brothers on the road.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="11-14" data-hl="Castor and Pollux|landing at Syracuse|Rhegium|Puteoli|we found brethren"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="11" data-hl="Castor and Pollux"></blockquote>
+    <div class="split ac28-wd">
+      <div class="stage">
+        <svg data-world viewBox="170 135 250 250" data-towns="Melita, Syracuse:r, Rhegium:r, Puteoli!:r, Appii forum:r, Rome!:r" role="img" aria-label="Map of southern Italy and Sicily. The ship sails from Melita to Syracuse, then to Rhegium and Puteoli. Then the road runs north from Puteoli through Appii Forum to Rome.">
+          <path class="map-route j2" data-via="Melita, @15.3 36.6, Syracuse, Rhegium, Puteoli" style="--wait:.6s;--draw:3s"/>
+          <path class="map-route j4 r1" data-via="Puteoli, Appii forum, Rome"/>
+        </svg>
+      </div>
+      <div>
+        <h2 class="rise" style="--d:1">Winter over, sails up</h2>
+        <p class="note rise" style="--d:2">After three months they leave on another Egyptian grain ship that had wintered on the island. Its figurehead was <em>Castor and Pollux</em>, the twin gods sailors prayed to for safe passage. Paul sailed under them, and the only safe passage was the one God had promised.</p>
+        <p class="note step">Syracuse, three days. Round to Rhegium, then a south wind pushes them to Puteoli in two. Brothers there asked them to stay seven days.</p>
+        <p class="note step map-go1">Then the last stretch, on foot along the Appian Way, toward Rome.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="slide verse" data-v="15-16" data-hl="Appii Forum, and The three taverns|he thanked God, and took courage|Paul was suffered to dwell by himself with a soldier that kept him"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="15" data-hl="he thanked God, and took courage"></blockquote>
+    <h2 class="rise" style="--d:1">They walked out to meet him</h2>
+    <ol class="timeline" aria-label="Puteoli, seven days with the brothers. Appii Forum, 43 miles from Rome, where the first group meets him. Three Taverns, 33 miles from Rome, where more brothers meet him. Rome, where he is handed to the captain of the guard.">
+      <li style="--k:0"><b>Puteoli</b><span>seven days with the brothers</span><small>v. 14</small></li>
+      <li class="lit" style="--k:1"><b>Appii Forum</b><span>43 miles from Rome: the first group</span><small>v. 15</small></li>
+      <li class="lit" style="--k:2"><b>Three Taverns</b><span>33 miles from Rome: more brothers</span><small>v. 15</small></li>
+      <li style="--k:3"><b>Rome</b><span>handed to the captain of the guard</span><small>v. 16</small></li>
+    </ol>
+    <p class="note step">Word had gone ahead. Believers from Rome walked a long way out to meet a prisoner. They'd had his letter for about three years (Romans), and now they were seeing the man. And <em>“he thanked God, and took courage.”</em></p>
+    <p class="note step">Even the strongest man in the book needed brothers to show up: shipwrecked, three months from a hot meal, still in chains, headed for a trial. Be that guy today. Who could use one text, one visit, or one ride to a meeting from you?</p>
+  </div>
+</section>
+
+<!-- ======================= PART THREE: PAUL IN ROME ======================= -->
+<section class="slide part">
+  <div class="inner">
+    <p class="part-n rise">Part three</p>
+    <h2 class="rise" style="--d:1">Paul in Rome</h2>
+    <p class="range rise" style="--d:2">Verses 17–31</p>
+    <div class="rule"></div>
+    <p class="hook rise" style="--d:4">A chain on his wrist, a house full of visitors, and a story with no last line.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="17-20" data-hl="I have committed nothing against the people|I was constrained to appeal unto Caesar|for the hope of Israel I am bound with this chain"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="16" data-hl="a soldier that kept him"></blockquote>
+    <div class="split ac28-wc">
+      <div class="stage">
+        <svg viewBox="0 0 600 230" role="img" aria-label="Paul sits in a room writing, a chain on his wrist linking him to a Roman soldier. Every few seconds a different soldier stands in the same place.">
+          <defs><clipPath id="ac28-gclip"><rect x="0" y="0" width="600" height="230" rx="8"/></clipPath></defs>
+          <g clip-path="url(#ac28-gclip)">
+            <rect class="ac28-room" x="0" y="0" width="600" height="230"/>
+            <rect class="ac28-floor" x="0" y="190" width="600" height="40"/>
+            <path class="ac28-bubble" d="M120 20 h170 q12 0 12 12 v34 q0 12 -12 12 h-110 l-18 18 l2 -18 h-44 q-12 0 -12 -12 v-34 q0 -12 12 -12 Z"/>
+            <text class="ac28-say" x="205" y="56" text-anchor="middle">“the kingdom of God”</text>
+            <circle style="fill:var(--ink)" cx="206" cy="118" r="16"/>
+            <path style="fill:var(--ink)" d="M176 192 Q178 138 206 132 Q236 138 238 192 Z"/>
+            <rect style="fill:var(--surface-2);stroke:var(--ink-soft);stroke-width:2" x="212" y="156" width="40" height="24" rx="2"/>
+            <path style="stroke:var(--ink-soft);stroke-width:2;fill:none" d="M218 164 h28 M218 170 h24"/>
+            <g class="ac28-chain">
+              <ellipse class="ac28-link" cx="252" cy="152" rx="9" ry="5"/><ellipse class="ac28-link" cx="272" cy="156" rx="9" ry="5" transform="rotate(14 272 156)"/><ellipse class="ac28-link" cx="292" cy="158" rx="9" ry="5"/><ellipse class="ac28-link" cx="312" cy="156" rx="9" ry="5" transform="rotate(-14 312 156)"/><ellipse class="ac28-link" cx="332" cy="152" rx="9" ry="5"/>
+            </g>
+            <g class="ac28-sol" style="--k:0;--c:var(--ink-soft)">
+              <path class="ac28-solbody" d="M344 98 Q366 74 388 98 Z"/><circle class="ac28-solbody" cx="366" cy="110" r="13"/><rect class="ac28-solbody" x="346" y="124" width="40" height="68" rx="8"/>
+              <line class="ac28-solspear" x1="404" y1="56" x2="404" y2="192"/>
+            </g>
+            <g class="ac28-sol" style="--k:1;--c:var(--cool)">
+              <path class="ac28-solbody" d="M344 98 Q366 74 388 98 Z"/><circle class="ac28-solbody" cx="366" cy="110" r="13"/><rect class="ac28-solbody" x="346" y="124" width="40" height="68" rx="8"/>
+              <line class="ac28-solspear" x1="404" y1="56" x2="404" y2="192"/>
+            </g>
+            <g class="ac28-sol" style="--k:2;--c:var(--wine)">
+              <path class="ac28-solbody" d="M344 98 Q366 74 388 98 Z"/><circle class="ac28-solbody" cx="366" cy="110" r="13"/><rect class="ac28-solbody" x="346" y="124" width="40" height="68" rx="8"/>
+              <line class="ac28-solspear" x1="404" y1="56" x2="404" y2="192"/>
+            </g>
+            <text class="ac28-shiftlab" x="366" y="216">a new soldier every shift</text>
+          </g>
+        </svg>
+      </div>
+      <div>
+        <h2 class="rise" style="--d:1">Chained to a guard</h2>
+        <p class="note rise" style="--d:2">Roman house arrest meant a soldier chained to your wrist, in shifts. Paul called it <em>“this chain”</em> (v. 20).</p>
+        <p class="note step">Think of it from Paul's side: a captive audience, and a fresh one every few hours. He'd later write what it did:</p>
+        <blockquote class="quote step"><p>“But I would ye should understand, brethren, that the things which happened unto me have fallen out rather unto the furtherance of the gospel; So that my bonds in Christ are manifest in all the palace, and in all other places;”</p><cite>Philippians 1:12–13</cite></blockquote>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="slide verse" data-v="21-24" data-hl="expounded and testified the kingdom of God|from morning till evening|some believed the things which were spoken, and some believed not"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="24"></blockquote>
+    <h2 class="rise" style="--d:1">Same room, same message</h2>
+    <div class="columns">
+      <div class="col grace rise" style="--d:2">
+        <p class="who">Some</p>
+        <h3>Believed</h3>
+        <p>They heard it from morning till evening: the kingdom of God, and Jesus, out of Moses and the prophets. They <em>“believed the things which were spoken.”</em></p>
+      </div>
+      <div class="col law step">
+        <p class="who">Some</p>
+        <h3>Believed not</h3>
+        <p>Same room. Same words. They <em>“agreed not among themselves”</em> and walked out.</p>
+      </div>
+    </div>
+    <p class="note step">Paul didn't pressure them or trick them. He laid it out, all day long, and left the choice with them. God's offer goes to everyone, and each man answers it for himself.</p>
+    <p class="note step">If someone you love isn't responding, that isn't your failure. Keep the door open, like Paul.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="25-29" data-hl="Well spake the Holy Ghost by Esaias the prophet|their eyes have they closed|the salvation of God is sent unto the Gentiles, and that they will hear it"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="28" data-hl="the salvation of God is sent unto the Gentiles, and that they will hear it"></blockquote>
+    <h2 class="rise" style="--d:1">A door that stays open</h2>
+    <div class="walls">
+      <div class="rise" style="--d:2"><b>a closed eye</b><i aria-hidden="true"></i><b>an open door</b><small>Isaiah's words: <em>“their eyes have they closed.”</em> They shut them themselves.</small></div>
+      <div class="step"><b>Israel, first</b><i aria-hidden="true"></i><b>the Gentiles, too</b><small>“Be it known therefore unto you.” God's salvation goes to anyone who will hear it.</small></div>
+    </div>
+    <p class="note step">Paul isn't giving up on his own people. Every city he entered he spoke first in the synagogue, and later in Romans he'll say how his heart aches for them. But when the door is shut from the inside, it doesn't shut the gospel in. It goes on to whoever will listen. That includes most of us.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="30-31" data-hl="two whole years in his own hired house|Preaching the kingdom of God|with all confidence, no man forbidding him"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="31" data-hl="with all confidence, no man forbidding him"></blockquote>
+    <h2 class="rise" style="--d:1">With all confidence</h2>
+    <div class="morph">
+      <span class="big rise" style="--d:3">παρρησίας</span>
+      <span class="say step">the word is <em class="gk">parrhēsias</em></span>
+      <span class="means step">“boldness”</span>
+    </div>
+    <p class="note step">Speaking freely, nothing held back, nothing to hide. This is a man chained to a soldier, in a rented house, under a charge that could end in his death, and <em>“no man forbidding him.”</em></p>
+    <blockquote class="quote step"><p>“Wherein I suffer trouble, as an evil doer, even unto bonds; but the word of God is not bound.”</p><cite>2 Timothy 2:9</cite></blockquote>
+    <p class="note step">Paul's body was chained. The message wasn't. Whatever is chaining you today, it doesn't get to decide what God does through you.</p>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="30" data-hl="two whole years"></blockquote>
+    <h2 class="rise" style="--d:1">What those two years held</h2>
+    <ol class="timeline" aria-label="About AD 60, Paul arrives in Rome. About 60 to 62, he writes Ephesians, Philippians, Colossians and Philemon from his house. About 62, Luke finishes Acts. About 62 to 64, Paul is released and writes 1 Timothy and Titus. About 64, Rome burns. About 67 to 68, Paul is put to death in Rome, by tradition.">
+      <li style="--k:0"><b>about AD 60</b><span>arrives in Rome</span></li>
+      <li class="lit" style="--k:1"><b>60 to 62</b><span>writes from this house: Ephesians, Philippians, Colossians, Philemon</span></li>
+      <li style="--k:2"><b>about 62</b><span>Luke finishes Acts</span></li>
+      <li style="--k:3"><b>62 to 64</b><span>released; 1 Timothy and Titus</span></li>
+      <li style="--k:4"><b>about 64</b><span>Rome burns; Nero turns on Christians</span></li>
+      <li style="--k:5"><b>67 to 68</b><span>Paul put to death in Rome, by tradition</span></li>
+    </ol>
+    <p class="note step">Luke stops with Paul still in the house, because that's where he was when Acts was finished. The rest we know from Paul's letters and church history. Those two years in chains gave us four of the New Testament's letters.</p>
+  </div>
+</section>
+
+<!-- ======================= PART FOUR: LOOKING BACK ======================= -->
+<section class="slide part">
+  <div class="inner">
+    <p class="part-n rise">Looking back</p>
+    <h2 class="rise" style="--d:1">From Jerusalem to Rome</h2>
+    <p class="range rise" style="--d:2">The whole book of Acts</p>
+    <div class="rule"></div>
+    <p class="hook rise" style="--d:4">An upper room in Jerusalem, and a rented house in the capital of the world.</p>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise"><p>“But ye shall receive power, after that the Holy Ghost is come upon you: and ye shall be witnesses unto me both in Jerusalem, and in all Judaea, and in Samaria, and unto the uttermost part of the earth.”</p><cite>Acts 1:8</cite></blockquote>
+    <div class="split ac28-we">
+      <div class="stage">
+        <svg data-world viewBox="170 120 720 395" data-towns="Jerusalem!:l, Antioch:r, Ephesus, Corinth, Philippi, Melita, Rome!" role="img" aria-label="Map of the Roman world with Paul's four trips drawn in different colors: the first journey around Cyprus and Galatia, the second to Philippi, Athens and Corinth, the third to Ephesus, and the last, as a prisoner, from Caesarea to Rome.">
+          <path class="map-route j1" data-journey="1"/>
+          <path class="map-route j2 r1" data-journey="2"/>
+          <path class="map-route j3 r2" data-journey="3"/>
+          <path class="map-route j4 r3" data-journey="rome"/>
+        </svg>
+      </div>
+      <div>
+        <ul class="ac28-legend">
+          <li class="rise" style="--d:2"><i style="--c:var(--accent)"></i><span><b>First journey</b><small>Cyprus and Galatia, about AD 46 to 48</small></span></li>
+          <li class="step map-go1"><i style="--c:var(--cool)"></i><span><b>Second journey</b><small>Philippi to Corinth, about AD 49 to 52</small></span></li>
+          <li class="step map-go2"><i style="--c:var(--wine)"></i><span><b>Third journey</b><small>three years at Ephesus, about AD 53 to 57</small></span></li>
+          <li class="step map-go3"><i style="--c:var(--warm)"></i><span><b>To Rome in chains</b><small>storm, shipwreck, about AD 59 to 60</small></span></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise" style="--d:1">Acts at a glance</h2>
+    <ol class="timeline" aria-label="Acts 1 to 7, Jerusalem. Acts 8 and 9, Judaea and Samaria. Acts 10 to 12, the Gentiles. Acts 13 and 14, the first journey. Acts 15 to 18, the council and the second journey. Acts 18 to 21, the third journey. Acts 21 to 28, a prisoner to Rome.">
+      <li style="--k:0"><b>Acts 1–7</b><span>Jerusalem: the church is born</span><small>AD 30 to 33</small></li>
+      <li style="--k:1"><b>8–9</b><span>Judaea and Samaria: scattered, and Saul turned around</span><small>to AD 35</small></li>
+      <li style="--k:2"><b>10–12</b><span>the Gentiles: Cornelius, Antioch</span></li>
+      <li style="--k:3"><b>13–14</b><span>first journey</span><small>AD 46 to 48</small></li>
+      <li style="--k:4"><b>15–18</b><span>the council, second journey</span><small>AD 49 to 52</small></li>
+      <li style="--k:5"><b>18–21</b><span>third journey</span><small>AD 53 to 57</small></li>
+      <li class="lit" style="--k:6"><b>21–28</b><span>prisoner to Rome</span><small>AD 57 to 60</small></li>
+    </ol>
+    <p class="note step">Seven steps in about thirty years: from a locked upper room to the capital of the world. And in every one, God used people who weren't ready.</p>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise" style="--d:1">A book of second chances</h2>
+    <div class="chains">
+      <div class="chain step"><span class="who-chip">Peter</span><span class="said">denied Jesus three times, then</span><span class="who-chip jesus">preached at Pentecost</span><span class="said">Acts 2</span></div>
+      <div class="chain step"><span class="who-chip">Saul</span><span class="said">agreed to Stephen's death, then</span><span class="who-chip jesus">turned around on the Damascus road</span><span class="said">Acts 9</span></div>
+      <div class="chain step"><span class="who-chip">a jailor</span><span class="said">ready to take his own life, then</span><span class="who-chip jesus">believed, with his whole house</span><span class="said">Acts 16</span></div>
+      <div class="chain step"><span class="who-chip">Ephesus</span><span class="said">burned its magic books, then</span><span class="who-chip jesus">saw the word grow mightily</span><span class="said">Acts 19</span></div>
+      <div class="chain step"><span class="who-chip">Paul</span><span class="said">shipwrecked, in chains, then</span><span class="who-chip jesus">preaching in Rome</span><span class="said">Acts 28</span></div>
+    </div>
+    <p class="note step">Not one of them was ready, and not one was finished by his worst day. That's the book. If you fell yesterday, it was written for you.</p>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise" style="--d:1">There is no “The End”</h2>
+    <p class="saying rise" style="--d:2">Luke just stops. <em>The story doesn't.</em></p>
+    <blockquote class="quote rise" style="--d:3"><p>“For so hath the Lord commanded us, saying, I have set thee to be a light of the Gentiles, that thou shouldest be for salvation unto the ends of the earth.”</p><cite>Acts 13:47</cite></blockquote>
+    <p class="note step">“The uttermost part of the earth” kept moving. It reached the man who handed you this study. Today it might reach someone at your job.</p>
+    <p class="note step">Your part today: one true sentence about what Jesus has done for you, said to one person. You don't need a pulpit. Paul only had a rented house.</p>
+  </div>
+</section>
+
+<!-- ======================= CLOSING ======================= -->
+<section class="slide remember">
+  <div class="inner">
+    <h2 class="rise">Points to remember</h2>
+    <ol class="seeds">
+      <li class="step"><span class="topic">Judging by looks</span><span class="seed-q">“they changed their minds, and said that he was a god” <cite>28:6</cite></span><span class="take">People read you by the first thing they see, and they're wrong both ways. God has already dealt with your past.</span></li>
+      <li class="step"><span class="topic">Kindness</span><span class="seed-q">“shewed us no little kindness” <cite>28:2</cite></span><span class="take">Strangers fed 276 wet men. Serve the people in front of you, even on your worst day.</span></li>
+      <li class="step"><span class="topic">Brothers</span><span class="seed-q">“he thanked God, and took courage” <cite>28:15</cite></span><span class="take">Even Paul needed brothers to show up. Be one today.</span></li>
+      <li class="step"><span class="topic">The message</span><span class="seed-q">“expounded and testified the kingdom of God” <cite>28:23</cite></span><span class="take">Jesus, out of the law and the prophets, from morning till evening. It's all about Him.</span></li>
+      <li class="step"><span class="topic">Unbelief</span><span class="seed-q">“the salvation of God is sent unto the Gentiles, and that they will hear it” <cite>28:28</cite></span><span class="take">Some close their eyes, but the door stays open to anyone who will hear.</span></li>
+      <li class="step"><span class="topic">The open door</span><span class="seed-q">“with all confidence, no man forbidding him” <cite>28:31</cite></span><span class="take">Chains can't bind the word of God. Whatever holds you today doesn't decide what He does through you.</span></li>
+    </ol>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 1 of 6</p>
+      <span class="topic">Judging by looks</span>
+      <h2>What did the islanders think when the viper bit Paul, and were they right?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="4"></blockquote>
+      <blockquote class="quote step" data-q="5"></blockquote>
+      <blockquote class="quote step" data-q="6"></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>They decided he must be a murderer whom justice wouldn't let live. When he felt no harm, they decided he was a god. They were wrong both times. People judge by the first thing they see. God knows the whole man.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 2 of 6</p>
+      <span class="topic">Kindness</span>
+      <h2>How did the people of Melita treat the shipwrecked men?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="2"></blockquote>
+      <blockquote class="quote step" data-q="7"></blockquote>
+      <blockquote class="quote step" data-q="10"></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>With “no little kindness.” They lit a fire for all of them in the cold rain, Publius took them in for three days, and when they left the islanders loaded them with what they needed. Paul prayed for Publius' father, and he was healed.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 3 of 6</p>
+      <span class="topic">Brothers</span>
+      <h2>What did Paul do when he saw the brothers who came to meet him?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="14"></blockquote>
+      <blockquote class="quote step" data-q="15"></blockquote>
+      <blockquote class="quote step" data-q="16"></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>He “thanked God, and took courage.” After a storm, a shipwreck and three months on the road, the sight of believers who'd walked out to meet him lifted him. Even a strong man needs brothers to show up.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 4 of 6</p>
+      <span class="topic">The message</span>
+      <h2>What did Paul teach the Jews in Rome?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="20"></blockquote>
+      <blockquote class="quote step" data-q="23"></blockquote>
+      <blockquote class="quote step" data-q="24"></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>The kingdom of God, and Jesus, from the law of Moses and the prophets, from morning until evening. His message is the same as Acts 1: Jesus is the hope of Israel. Some believed it and some didn't.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 5 of 6</p>
+      <span class="topic">Unbelief</span>
+      <h2>What did Paul say about those who would not believe?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="26"></blockquote>
+      <blockquote class="quote step" data-q="27"></blockquote>
+      <blockquote class="quote step" data-q="28"></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>Quoting Isaiah, he said their ears were dull and “their eyes have they closed.” They'd shut them themselves. But the salvation of God was sent on to the Gentiles, “and they will hear it.” The door stays open to anyone who will listen.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 6 of 6</p>
+      <span class="topic">The open door</span>
+      <h2>What could Paul still do while he was in chains?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="30"></blockquote>
+      <blockquote class="quote step" data-q="31"></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>Everything that mattered. He received all who came, preached the kingdom of God, and taught about the Lord Jesus Christ, “with all confidence, no man forbidding him.” His body was chained, but the word of God was not.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide prayer">
+  <div class="inner">
+    <div class="emblem rise"></div>
+    <h2 class="rise" style="--d:1">Prayer requests</h2>
+    <p class="ask-line rise" style="--d:2">What can we pray about for you today?</p>
+    <blockquote class="quote rise" style="--d:4"><p>“For which I am an ambassador in bonds: that therein I may speak boldly, as I ought to speak.”</p><cite>Ephesians 6:20</cite></blockquote>
+  </div>
+</section>
+
+</main>
+
+<script>
+// King James Version, Acts chapter 28
+const V = {
+  1: "And when they were escaped, then they knew that the island was called Melita.",
+  2: "And the barbarous people shewed us no little kindness: for they kindled a fire, and received us every one, because of the present rain, and because of the cold.",
+  3: "And when Paul had gathered a bundle of sticks, and laid them on the fire, there came a viper out of the heat, and fastened on his hand.",
+  4: "And when the barbarians saw the venomous beast hang on his hand, they said among themselves, No doubt this man is a murderer, whom, though he hath escaped the sea, yet vengeance suffereth not to live.",
+  5: "And he shook off the beast into the fire, and felt no harm.",
+  6: "Howbeit they looked when he should have swollen, or fallen down dead suddenly: but after they had looked a great while, and saw no harm come to him, they changed their minds, and said that he was a god.",
+  7: "In the same quarters were possessions of the chief man of the island, whose name was Publius; who received us, and lodged us three days courteously.",
+  8: "And it came to pass, that the father of Publius lay sick of a fever and of a bloody flux: to whom Paul entered in, and prayed, and laid his hands on him, and healed him.",
+  9: "So when this was done, others also, which had diseases in the island, came, and were healed:",
+  10: "Who also honoured us with many honours; and when we departed, they laded us with such things as were necessary.",
+  11: "And after three months we departed in a ship of Alexandria, which had wintered in the isle, whose sign was Castor and Pollux.",
+  12: "And landing at Syracuse, we tarried there three days.",
+  13: "And from thence we fetched a compass, and came to Rhegium: and after one day the south wind blew, and we came the next day to Puteoli:",
+  14: "Where we found brethren, and were desired to tarry with them seven days: and so we went toward Rome.",
+  15: "And from thence, when the brethren heard of us, they came to meet us as far as Appii Forum, and The three taverns: whom when Paul saw, he thanked God, and took courage.",
+  16: "And when we came to Rome, the centurion delivered the prisoners to the captain of the guard: but Paul was suffered to dwell by himself with a soldier that kept him.",
+  17: "And it came to pass, that after three days Paul called the chief of the Jews together: and when they were come together, he said unto them, Men and brethren, though I have committed nothing against the people, or customs of our fathers, yet was I delivered prisoner from Jerusalem into the hands of the Romans.",
+  18: "Who, when they had examined me, would have let me go, because there was no cause of death in me.",
+  19: "But when the Jews spake against it, I was constrained to appeal unto Caesar; not that I had ought to accuse my nation of.",
+  20: "For this cause therefore have I called for you, to see you, and to speak with you: because that for the hope of Israel I am bound with this chain.",
+  21: "And they said unto him, We neither received letters out of Judaea concerning thee, neither any of the brethren that came shewed or spake any harm of thee.",
+  22: "But we desire to hear of thee what thou thinkest: for as concerning this sect, we know that every where it is spoken against.",
+  23: "And when they had appointed him a day, there came many to him into his lodging; to whom he expounded and testified the kingdom of God, persuading them concerning Jesus, both out of the law of Moses, and out of the prophets, from morning till evening.",
+  24: "And some believed the things which were spoken, and some believed not.",
+  25: "And when they agreed not among themselves, they departed, after that Paul had spoken one word, Well spake the Holy Ghost by Esaias the prophet unto our fathers,",
+  26: "Saying, Go unto this people, and say, Hearing ye shall hear, and shall not understand; and seeing ye shall see, and not perceive:",
+  27: "For the heart of this people is waxed gross, and their ears are dull of hearing, and their eyes have they closed; lest they should see with their eyes, and hear with their ears, and understand with their heart, and should be converted, and I should heal them.",
+  28: "Be it known therefore unto you, that the salvation of God is sent unto the Gentiles, and that they will hear it.",
+  29: "And when he had said these words, the Jews departed, and had great reasoning among themselves.",
+  30: "And Paul dwelt two whole years in his own hired house, and received all that came in unto him,",
+  31: "Preaching the kingdom of God, and teaching those things which concern the Lord Jesus Christ, with all confidence, no man forbidding him."
+};
+const BOOK = "Acts 28";
+</script>
+<script src="../assets/deck.js"></script>
+</body>
+</html>

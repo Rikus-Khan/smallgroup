@@ -1,0 +1,836 @@
+<!doctype html>
+<html lang="en" data-theme="night">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Acts 27</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="../assets/fonts.css">
+<link rel="stylesheet" href="../assets/deck.css">
+<link rel="stylesheet" href="../assets/themes.css">
+<style>
+/* ac27-season: the sailing year, and where "the fast" falls in it */
+.ac27-season { position: relative; margin: .4em 0 1em; padding-top: 2.1em; }
+.ac27-mark { position: absolute; top: 0; bottom: 2.2em; left: 43%; border-left: 3px solid var(--ink); z-index: 2; opacity: 0; transition: opacity .6s ease 2.4s; }
+.slide.active .ac27-mark { opacity: 1; }
+.ac27-mark b { position: absolute; top: 0; left: 0; transform: translateX(-50%); padding: .1em .6em; border-radius: 6px; background: var(--ink); color: var(--bg); font: 700 clamp(.78rem, .72rem + .35vw, 1rem) var(--sans); white-space: nowrap; }
+.ac27-bar { display: grid; grid-template-columns: repeat(24, 1fr); height: clamp(1.8rem, 5vh, 2.8rem); border-radius: 8px; overflow: hidden; }
+.ac27-bar i { display: block; transform: scaleX(0); transform-origin: left; transition: transform .8s ease; }
+.slide.active .ac27-bar i { transform: scaleX(1); transition-delay: calc(var(--k) * 500ms + 200ms); }
+.ac27-open { grid-column: 1 / 10; background: color-mix(in srgb, var(--accent) 55%, var(--bg)); }
+.ac27-risky { grid-column: 10 / 14; background: color-mix(in srgb, var(--warm) 75%, var(--bg)); }
+.ac27-shut { grid-column: 14 / 22; background: color-mix(in srgb, var(--danger) 65%, var(--bg)); }
+.ac27-open2 { grid-column: 22 / 25; background: color-mix(in srgb, var(--accent) 55%, var(--bg)); }
+.ac27-months { display: grid; grid-template-columns: repeat(12, 1fr); margin-top: .25em; text-align: center; font-size: clamp(.68rem, .6rem + .32vw, .92rem); color: var(--ink-soft); }
+.ac27-key { display: flex; flex-wrap: wrap; gap: .3rem 1.4rem; margin-top: .5em; font-size: clamp(.82rem, .76rem + .3vw, 1.02rem); color: var(--ink-soft); }
+.ac27-key span::before { content: ""; display: inline-block; width: .8em; height: .8em; margin-right: .4em; border-radius: 3px; vertical-align: -.05em; background: var(--c); }
+
+/* ac27-sky: the sun and the stars covered, one day after another */
+.ac27-skyday { fill: color-mix(in srgb, var(--cool) 55%, var(--glow)); }
+.ac27-skynight { fill: var(--on-glow); }
+.ac27-sun { fill: var(--warm); }
+.ac27-star { fill: var(--glow); }
+.ac27-cloudmass { fill: color-mix(in srgb, var(--glow) 24%, var(--on-glow)); }
+.ac27-clouds { transform: translateY(-300px); transition: transform 3.6s ease-in-out 1s; }
+.slide.active .ac27-clouds { transform: none; }
+.ac27-sky text { fill: var(--glow); font-size: 20px; font-family: var(--serif); font-style: italic; }
+.ac27-nolabel { opacity: 0; transition: opacity 1.2s ease 4.4s; }
+.slide.active .ac27-nolabel { opacity: 1; }
+.ac27-day { fill: none; stroke: var(--glow); stroke-width: 2; transition: fill .3s ease calc(var(--k) * 240ms + 4.6s); }
+.slide.active .ac27-day { fill: var(--glow); }
+.ac27-flame { transform-box: fill-box; transform-origin: 50% 100%; opacity: 0; transition: opacity 1s ease 5s, transform 2s ease; }
+.slide.active .ac27-flame { opacity: 1; animation: ac27-flick 1.1s ease-in-out infinite alternate; }
+@keyframes ac27-flick { from { transform: scale(1, 1); } to { transform: scale(.92, 1.08); } }
+.slide:has(.ac27-hopeout.on) .ac27-flame { opacity: .08; animation: none; transform: scale(.3); }
+.ac27-flameglow { fill: var(--warm); opacity: .3; }
+
+/* ac27-storm: the ship in the storm, with the cargo and then the gear going over the side */
+.ac27-night { fill: var(--on-glow); }
+.ac27-cl { fill: color-mix(in srgb, var(--glow) 20%, var(--on-glow)); }
+.ac27-bolt { fill: none; stroke: var(--glow); stroke-width: 4; stroke-linejoin: round; opacity: 0; }
+.slide.active .ac27-bolt { animation: ac27-flash 5.5s linear infinite; }
+@keyframes ac27-flash { 0%, 58%, 63%, 100% { opacity: 0; } 59%, 61% { opacity: 1; } 60% { opacity: .2; } }
+.ac27-flashfill { fill: var(--glow); opacity: 0; }
+.slide.active .ac27-flashfill { animation: ac27-flashbg 5.5s linear infinite; }
+@keyframes ac27-flashbg { 0%, 58%, 66%, 100% { opacity: 0; } 59%, 61% { opacity: .16; } 60% { opacity: .04; } }
+.ac27-rain { stroke: var(--glow); stroke-width: 2; opacity: 0; stroke-linecap: round; }
+.slide.active .ac27-rain { animation: ac27-rain .9s linear infinite; animation-delay: calc(var(--k) * -.13s); }
+@keyframes ac27-rain { 0% { opacity: 0; transform: translate(0, -40px); } 20% { opacity: .45; } 100% { opacity: 0; transform: translate(-40px, 90px); } }
+.ac27-wv1 { fill: color-mix(in srgb, var(--cool) 38%, var(--on-glow)); }
+.ac27-wv2 { fill: color-mix(in srgb, var(--cool) 62%, var(--on-glow)); }
+.slide.active .ac27-wv1 { animation: ac27-roll 4.8s linear infinite; }
+.slide.active .ac27-wv2 { animation: ac27-roll 3.2s linear infinite reverse; }
+@keyframes ac27-roll { to { transform: translateX(-160px); } }
+.ac27-rock { transform-box: fill-box; transform-origin: 50% 90%; }
+.slide.active .ac27-rock { animation: ac27-pitch 2.6s ease-in-out infinite alternate; }
+@keyframes ac27-pitch { from { transform: rotate(-6deg) translateY(-6px); } to { transform: rotate(7deg) translateY(7px); } }
+.ac27-hull { fill: var(--leather); stroke: var(--leather-light); stroke-width: 3; stroke-linejoin: round; }
+.ac27-plank { fill: none; stroke: var(--leather-light); stroke-width: 2; opacity: .7; }
+.ac27-spar { stroke: var(--leather-light); stroke-width: 6; stroke-linecap: round; fill: none; }
+.ac27-furl { fill: var(--surface-2); stroke: var(--ink-soft); stroke-width: 2; }
+.ac27-girdle { fill: none; stroke: var(--accent-hot); stroke-width: 3.5; stroke-linecap: round; }
+.ac27-bale { fill: color-mix(in srgb, var(--warm) 55%, var(--leather)); stroke: var(--leather-light); stroke-width: 2; transition: transform 1.8s cubic-bezier(.5, 0, .9, .6), opacity 1.8s ease-in; }
+.ac27-gear { fill: none; stroke: var(--ink-soft); stroke-width: 5; stroke-linecap: round; transition: transform 1.8s cubic-bezier(.5, 0, .9, .6), opacity 1.8s ease-in; }
+.slide:has(.ac27-t1.on) .ac27-bale { transform: translate(var(--dx), 130px) rotate(var(--r)); opacity: 0; }
+.slide:has(.ac27-t2.on) .ac27-gear { transform: translate(var(--dx), 120px) rotate(var(--r)); opacity: 0; }
+.ac27-man { fill: var(--ink); }
+.ac27-cap { font-size: 17px; font-weight: 700; fill: var(--glow); }
+
+/* ac27-night: soundings, four anchors, and the day they wished for */
+.ac27-dawn { fill: color-mix(in srgb, var(--warm) 32%, var(--cool)); }
+.ac27-dark { fill: var(--on-glow); transition: opacity 4s ease; opacity: .9; }
+.slide:has(.ac27-a4.on) .ac27-dark { opacity: 0; }
+.ac27-sunrise { fill: var(--warm); transform: translateY(80px); transition: transform 4s ease; }
+.slide:has(.ac27-a4.on) .ac27-sunrise { transform: translateY(-14px); }
+.ac27-sunglow { fill: var(--warm); opacity: .25; }
+.ac27-sea { fill: color-mix(in srgb, var(--cool) 40%, var(--bg)); }
+.ac27-floor { fill: color-mix(in srgb, var(--leather) 70%, var(--bg)); stroke: var(--leather-light); stroke-width: 2; }
+.ac27-sh { transform: translate(110px, 150px) scale(1.3); transition: transform 2.8s ease-in-out; }
+.slide:has(.ac27-a2.on) .ac27-sh { transform: translate(290px, 150px) scale(1.3); }
+.ac27-lead { fill: none; stroke: var(--ink); stroke-width: 3; stroke-dasharray: 1; stroke-dashoffset: 1; transition: stroke-dashoffset 1.8s ease, opacity .8s ease; }
+.slide:has(.ac27-a1.on) .ac27-lead1 { stroke-dashoffset: 0; }
+.slide:has(.ac27-a2.on) .ac27-lead1 { opacity: 0; }
+.slide:has(.ac27-a2.on) .ac27-lead2 { stroke-dashoffset: 0; transition-delay: 2.6s; }
+.ac27-weight { fill: var(--ink); opacity: 0; transition: opacity .4s ease 1.6s; }
+.slide:has(.ac27-a1.on) .ac27-weight1 { opacity: 1; }
+.slide:has(.ac27-a2.on) .ac27-weight1 { opacity: 0; transition-delay: 0s; }
+.slide:has(.ac27-a2.on) .ac27-weight2 { opacity: 1; transition-delay: 4.2s; }
+.ac27-sound { opacity: 0; transition: opacity .8s ease; font-size: 19px; font-weight: 700; fill: var(--ink); paint-order: stroke; stroke: var(--bg); stroke-width: 5px; stroke-linejoin: round; }
+.slide:has(.ac27-a1.on) .ac27-sound1 { opacity: 1; transition-delay: 1.4s; }
+.slide:has(.ac27-a2.on) .ac27-sound2 { opacity: 1; transition-delay: 4.2s; }
+.ac27-rope { fill: none; stroke: var(--ink-soft); stroke-width: 3; stroke-dasharray: 1; stroke-dashoffset: 1; transition: stroke-dashoffset 1.2s ease; transition-delay: calc(var(--k) * 500ms); }
+.slide:has(.ac27-a3.on) .ac27-rope { stroke-dashoffset: 0; }
+.ac27-anchor { fill: none; stroke: var(--accent-hot); stroke-width: 4; stroke-linecap: round; stroke-linejoin: round; opacity: 0; transition: opacity .5s ease calc(var(--k) * 500ms + 1000ms); }
+.slide:has(.ac27-a3.on) .ac27-anchor { opacity: 1; }
+.ac27-lantern { fill: var(--warm); transition: opacity 3s ease; }
+.slide.active .ac27-lantern { animation: ac27-lamp 1.4s ease-in-out infinite alternate; }
+@keyframes ac27-lamp { from { opacity: .8; } to { opacity: 1; } }
+.ac27-lanternglow { opacity: 1; transition: opacity 3s ease; }
+.slide:has(.ac27-a4.on) .ac27-lanternglow { opacity: 0; }
+.ac27-wished { opacity: 0; transition: opacity 1.2s ease 2.5s; font: italic 22px var(--serif); fill: var(--ink); paint-order: stroke; stroke: var(--bg); stroke-width: 5px; stroke-linejoin: round; }
+.slide:has(.ac27-a4.on) .ac27-wished { opacity: 1; }
+.ac27-tag { opacity: 0; transition: opacity .8s ease; font-size: 15px; font-weight: 700; fill: var(--ink); paint-order: stroke; stroke: var(--bg); stroke-width: 5px; stroke-linejoin: round; text-anchor: middle; }
+.slide:has(.ac27-a5.on) .ac27-tag { opacity: 1; transition-delay: calc(var(--k) * 350ms); }
+
+/* ac27-boat: the sailors' lifeboat, and the ropes the soldiers cut */
+.ac27-boatwater { fill: color-mix(in srgb, var(--cool) 38%, var(--bg)); }
+.ac27-skiff { transform-box: fill-box; transition: transform 3.5s ease-in; }
+.slide:has(.ac27-cut.on) .ac27-skiff { transform: translate(100px, 8px); }
+.ac27-skiff-bob { animation: ac27-bob 2s ease-in-out infinite alternate; }
+@keyframes ac27-bob { from { transform: translateY(-3px); } to { transform: translateY(4px); } }
+.ac27-sailor { fill: var(--danger); opacity: 0; transition: opacity .6s ease; }
+.slide:has(.ac27-sneak.on) .ac27-sailor { opacity: 1; }
+.ac27-line { stroke: var(--ink-soft); stroke-width: 3; fill: none; stroke-linecap: round; transition: opacity .3s ease; }
+.slide:has(.ac27-cut.on) .ac27-line.b { opacity: 0; }
+.ac27-snip { opacity: 0; font-size: 26px; transition: opacity .3s ease; }
+.slide:has(.ac27-cut.on) .ac27-snip { opacity: 1; }
+.ac27-gone { opacity: 0; font: italic 17px var(--serif); fill: var(--ink-soft); transition: opacity 1s ease 2.5s; }
+.slide:has(.ac27-cut.on) .ac27-gone { opacity: 1; }
+
+/* ac27-aground: a ship running onto a bar, the stern breaking, everyone getting to land */
+.ac27-agsky { fill: color-mix(in srgb, var(--warm) 14%, var(--surface)); }
+.ac27-agsea { fill: color-mix(in srgb, var(--cool) 38%, var(--bg)); }
+.ac27-agbar { fill: color-mix(in srgb, var(--warm) 30%, var(--surface-2)); stroke: var(--line-strong); stroke-width: 2; }
+.ac27-agland { fill: color-mix(in srgb, var(--warm) 22%, var(--surface-2)); stroke: var(--line-strong); stroke-width: 2; }
+.ac27-arrive { transform: translateX(-230px); }
+.slide.active .ac27-arrive { transform: none; transition: transform 3s cubic-bezier(.2, .7, .3, 1) .4s; }
+.ac27-stern { transform-box: view-box; transform-origin: 330px 194px; }
+.slide.active .ac27-stern { transform: rotate(-17deg) translate(-12px, 12px); transition: transform 2.4s cubic-bezier(.4, 0, .2, 1) 3.8s; }
+.ac27-bowrock { transform-box: fill-box; transform-origin: 50% 100%; }
+.slide.active .ac27-bowrock { animation: ac27-shudder .5s ease-in-out 3.4s 3 alternate; }
+@keyframes ac27-shudder { from { transform: rotate(0); } to { transform: rotate(-3deg); } }
+.ac27-plk { fill: var(--leather-light); opacity: 0; }
+.slide.active .ac27-plk { animation: ac27-plank 3.2s ease-out forwards; animation-delay: calc(3.9s + var(--k) * .15s); }
+@keyframes ac27-plank { 0% { opacity: 0; transform: translate(0, 0) rotate(0); } 10% { opacity: 1; } 100% { opacity: .9; transform: translate(var(--dx), var(--dy)) rotate(var(--r)); } }
+.ac27-surf { fill: none; stroke: var(--glow); stroke-width: 4; stroke-linecap: round; stroke-dasharray: 18 14; opacity: .8; }
+.slide.active .ac27-surf { animation: ac27-surfgo 1.4s linear infinite; }
+@keyframes ac27-surfgo { to { stroke-dashoffset: -64; } }
+.ac27-head { fill: var(--ink); transition: transform 3.4s ease-in-out, fill 1s ease 3s; transition-delay: calc(var(--k) * 180ms); }
+.slide:has(.ac27-swim.on) .ac27-head { transform: translate(var(--dx), var(--dy)); fill: var(--accent-hot); }
+.ac27-board { fill: var(--leather-light); }
+.ac27-lab { font-size: 16px; font-style: italic; fill: var(--ink); paint-order: stroke; stroke: var(--bg); stroke-width: 5px; stroke-linejoin: round; }
+.ac27-count { display: flex; flex-wrap: wrap; align-items: baseline; gap: .3rem 1rem; margin: .1em 0 .2em; }
+.ac27-count span { color: var(--ink-soft); font-size: clamp(.9rem, .82rem + .4vw, 1.2rem); }
+
+/* wider text or wider picture on a wide screen only */
+@media (min-width: 900px) and (min-aspect-ratio: 4/3) {
+  .ac27-wa { grid-template-columns: .95fr 1.05fr; } .ac27-wb { grid-template-columns: 1.1fr .9fr; } .ac27-wc { grid-template-columns: 1.05fr .95fr; } .ac27-wd { grid-template-columns: .8fr 1.2fr; } .ac27-we { grid-template-columns: 1.25fr .75fr; }
+}
+</style>
+</head>
+<body>
+<main class="deck" id="deck">
+
+<!-- ======================= OPENING ======================= -->
+<section class="slide title">
+  <div class="inner">
+    <div class="emblem rise"></div>
+    <h1 class="rise" style="--d:1">Acts 27</h1>
+    <p class="sub rise" style="--d:3">The storm</p>
+    <p class="tag rise" style="--d:5">Paul sails for Rome as a prisoner. A warning goes unheard, a storm takes everything but hope, and God keeps a promise to the last man aboard.</p>
+  </div>
+</section>
+
+<section class="slide watch">
+  <div class="inner">
+    <h2 class="rise">Things to watch for</h2>
+    <p class="lede rise" style="--d:1">Keep these questions in the back of your mind as we read. We'll come back to every one of them at the end.</p>
+    <ol class="seeds">
+      <li class="step"><span class="topic">Good counsel</span><span class="seed-q">Why did the ship sail on when Paul warned them not to?</span></li>
+      <li class="step"><span class="topic">Despair</span><span class="seed-q">What did the men lose besides the cargo?</span></li>
+      <li class="step"><span class="topic">God's promise</span><span class="seed-q">What did God promise Paul in the night?</span></li>
+      <li class="step"><span class="topic">Staying together</span><span class="seed-q">Who had to stay in the ship, and why?</span></li>
+      <li class="step"><span class="topic">Taking care</span><span class="seed-q">Why did Paul tell hungry, frightened men to eat?</span></li>
+      <li class="step"><span class="topic">Rescue</span><span class="seed-q">Who made it safe to land?</span></li>
+    </ol>
+  </div>
+</section>
+
+<!-- ======================= PART ONE: SAILING FOR ROME ======================= -->
+<section class="slide part">
+  <div class="inner">
+    <p class="part-n rise">Part one</p>
+    <h2 class="rise" style="--d:1">A warning nobody wanted</h2>
+    <p class="range rise" style="--d:2">Verses 1–12</p>
+    <div class="rule"></div>
+    <p class="hook rise" style="--d:4">A prisoner, a centurion, a late-season ship, and a harbor that was no good for winter.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="1-3" data-hl="Julius, a centurion|Aristarchus, a Macedonian of Thessalonica|Julius courteously entreated Paul"></section>
+<section class="slide verse" data-v="4-8" data-hl="we sailed under Cyprus|Myra, a city of Lycia|a ship of Alexandria|The fair havens"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="6" data-hl="a ship of Alexandria sailing into Italy"></blockquote>
+    <div class="split ac27-wa">
+      <div class="stage">
+        <svg data-world viewBox="480 285 340 205" data-towns="Caesarea*, Sidon, Myra, Cnidus, Crete:t, Fair havens!" role="img" aria-label="Map of the eastern Mediterranean. The ship sails north from Caesarea to Sidon, then around the north side of Cyprus to Myra in Lycia. Then it sails on past Cnidus and along the south side of Crete to Fair Havens.">
+          <path class="map-route" data-via="Caesarea, Sidon, @34.5 35.95, @33 36.0, Myra" style="--wait:.8s"/>
+          <path class="map-route j2 r1" data-via="Myra, @29.5 36.05, @28.6 36.5, @27.6 36.55, Cnidus, @26.3 34.95, Fair havens"/>
+          <text class="map-region" x="716" y="400" text-anchor="middle">CYPRUS</text>
+        </svg>
+      </div>
+      <div>
+        <h2 class="rise" style="--d:1">A prisoner at sea</h2>
+        <p class="note rise" style="--d:2">After two years in a cell at Caesarea, Paul is bound for Rome with a centurion named Julius. The “we” is Luke, writing as he goes.</p>
+        <p class="note step">At Sidon, Julius <em>“courteously entreated Paul”</em> and let him visit friends. Remember that kindness. It comes back.</p>
+        <p class="note step">Contrary winds push them <em>“under Cyprus.”</em> At Myra they change to a big grain ship out of Egypt, bound for Rome.</p>
+        <p class="note step map-go1">Then <em>“sailed slowly many days,”</em> curling around Crete to Fair Havens, a small bay on its south coast.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="slide verse" data-v="9-12" data-hl="the fast was now already past|this voyage will be with hurt and much damage|the centurion believed the master and the owner of the ship, more than those things which were spoken by Paul|the haven was not commodious to winter in"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="9" data-hl="sailing was now dangerous, because the fast was now already past"></blockquote>
+    <h2 class="rise" style="--d:1">Late in the sailing year</h2>
+    <div class="ac27-season rise" style="--d:2" role="img" aria-label="A bar of the year from May to April. Sailing is open from May to mid-September, risky until mid-November, and shut until about March. The fast falls at the start of October, inside the risky weeks.">
+      <div class="ac27-mark"><b>“the fast”</b></div>
+      <div class="ac27-bar"><i class="ac27-open" style="--k:0"></i><i class="ac27-risky" style="--k:1"></i><i class="ac27-shut" style="--k:2"></i><i class="ac27-open2" style="--k:3"></i></div>
+      <div class="ac27-months"><span>May</span><span>Jun</span><span>Jul</span><span>Aug</span><span>Sep</span><span>Oct</span><span>Nov</span><span>Dec</span><span>Jan</span><span>Feb</span><span>Mar</span><span>Apr</span></div>
+      <div class="ac27-key"><span style="--c:color-mix(in srgb, var(--accent) 55%, var(--bg))">open water</span><span style="--c:color-mix(in srgb, var(--warm) 75%, var(--bg))">risky: weather turning</span><span style="--c:color-mix(in srgb, var(--danger) 65%, var(--bg))">shut: ships stay in harbor</span></div>
+    </div>
+    <p class="note step">“The fast” is the Day of Atonement, the Jewish fast that falls about the start of October. Luke uses it as a calendar: <em>the safe season is over.</em> Sailors of that day counted mid-September to mid-November as risky, and the winter as closed.</p>
+    <p class="note step">Paul was no landlubber. He'd already written, <em>“thrice I suffered shipwreck, a night and a day I have been in the deep”</em> (2 Corinthians 11:25). Three wrecks before this one. He knew what he was talking about.</p>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="11" data-hl="the centurion believed the master and the owner of the ship, more than those things which were spoken by Paul"></blockquote>
+    <h2 class="rise" style="--d:1">Who do you believe?</h2>
+    <div class="talk">
+      <p class="rise" style="--d:2"><small>Paul, a prisoner</small>“Sirs, I perceive that this voyage will be with hurt and much damage… of our lives.”</p>
+      <p class="reply step"><small>The master and the owner, and most of the crowd</small><em>“The haven was not commodious to winter in.”</em></p>
+    </div>
+    <p class="note step">Nobody here is a villain. The harbor really was poor for winter, the owner had money on the line, the pilot was the expert, and the man with the warning was a prisoner. He was right.</p>
+    <p class="note step">Then <em>“the south wind blew softly”</em> (v. 13), and they felt sure. A bad decision feels great for the first hour. If you've ever waved off the guy telling you the truth, you know how this goes.</p>
+  </div>
+</section>
+
+<!-- ======================= PART TWO: THE STORM ======================= -->
+<section class="slide part">
+  <div class="inner">
+    <p class="part-n rise">Part two</p>
+    <h2 class="rise" style="--d:1">Fourteen days with no sun</h2>
+    <p class="range rise" style="--d:2">Verses 13–26</p>
+    <div class="rule"></div>
+    <p class="hook rise" style="--d:4">A wind off the mountains, a ship driven blind, and a word from God in the night.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="13-17" data-hl="the south wind blew softly|Euroclydon|we let her drive|Clauda|strake sail"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="14" data-hl="a tempestuous wind, called Euroclydon"></blockquote>
+    <div class="split ac27-wa">
+      <div class="stage">
+        <svg data-world viewBox="228 300 345 208" data-towns="Fair havens:r, Clauda!:l, Melita, Crete:t" role="img" aria-label="Map of the central Mediterranean. A north-east wind hits the ship off Crete and drives it past the little island of Clauda, away from the sandbanks of the Syrtis off Libya, and zigzagging west across the sea called Adria toward Melita.">
+          <path class="map-route j2" data-via="Fair havens, @24.5 34.9, Clauda, @22.4 34.8, @21 35.4, @19.6 34.8, @18.1 35.5, @16.7 35.0, @15.4 35.7, Melita" style="--wait:1s;--draw:5s"/>
+          <path class="map-way" d="M 505 393 L 432 440 L 380 474"/>
+          <text class="map-region" x="352" y="490" text-anchor="middle">SYRTIS: SHOALS</text>
+          <g style="stroke:var(--cool);fill:none;stroke-linecap:round;stroke-linejoin:round">
+            <path d="M 566 306 L 526 338" stroke-width="5" stroke-dasharray="14 12"><animate attributeName="stroke-dashoffset" from="0" to="-26" dur=".9s" repeatCount="indefinite"/></path>
+            <path d="M 568 332 L 528 364" stroke-width="5" stroke-dasharray="14 12"><animate attributeName="stroke-dashoffset" from="0" to="-26" dur=".9s" repeatCount="indefinite"/></path>
+            <path d="M 538 331 L 526 338 L 530 324" stroke-width="4"/>
+            <path d="M 540 357 L 528 364 L 532 350" stroke-width="4"/>
+          </g>
+          <text class="map-water" x="560" y="316" text-anchor="end">Euroclydon</text>
+        </svg>
+      </div>
+      <div>
+        <h2 class="rise" style="--d:1">Caught, and driven</h2>
+        <p class="note rise" style="--d:2"><em>Euroclydon</em> is a northeaster, Greek for <em>east wind</em> plus <em>billows</em>. It tore down off Crete's mountains, and the ship <em>“could not bear up into the wind.”</em> <em>“We let her drive.”</em></p>
+        <p class="note step">Behind little Clauda they hauled up the lifeboat and bound cables around the hull, <em>“undergirding the ship.”</em></p>
+        <p class="note step">Their fear was the <em>“quicksands,”</em> the Syrtis shoals off Libya. So they slowed down and let the wind take them across the Adria, about 475 miles.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="slide verse" data-v="18-20" data-hl="they lightened the ship|cast out with our own hands the tackling of the ship|neither sun nor stars in many days appeared|all hope that we should be saved was then taken away"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="19" data-hl="we cast out with our own hands the tackling of the ship"></blockquote>
+    <div class="split ac27-wa">
+      <div class="stage">
+        <svg viewBox="0 0 640 330" role="img" aria-label="A ship pitches in a night storm with rain and lightning. First the cargo is thrown over the side, then the ship's own gear.">
+          <defs><clipPath id="ac27-stclip"><rect x="0" y="0" width="640" height="330" rx="8"/></clipPath></defs>
+          <g clip-path="url(#ac27-stclip)">
+            <rect class="ac27-night" x="0" y="0" width="640" height="330"/>
+            <ellipse class="ac27-cl" cx="90" cy="30" rx="190" ry="46"/><ellipse class="ac27-cl" cx="360" cy="14" rx="200" ry="40"/><ellipse class="ac27-cl" cx="600" cy="44" rx="150" ry="44"/>
+            <polyline class="ac27-bolt" points="470,40 438,112 462,114 424,196"/>
+            <rect class="ac27-flashfill" x="0" y="0" width="640" height="330"/>
+            <g>
+              <line class="ac27-rain" style="--k:0" x1="40" y1="60" x2="30" y2="82"/><line class="ac27-rain" style="--k:1" x1="110" y1="40" x2="100" y2="62"/><line class="ac27-rain" style="--k:2" x1="180" y1="70" x2="170" y2="92"/><line class="ac27-rain" style="--k:3" x1="250" y1="30" x2="240" y2="52"/><line class="ac27-rain" style="--k:4" x1="320" y1="64" x2="310" y2="86"/><line class="ac27-rain" style="--k:5" x1="390" y1="36" x2="380" y2="58"/><line class="ac27-rain" style="--k:6" x1="520" y1="60" x2="510" y2="82"/><line class="ac27-rain" style="--k:7" x1="590" y1="34" x2="580" y2="56"/><line class="ac27-rain" style="--k:8" x1="70" y1="120" x2="60" y2="142"/><line class="ac27-rain" style="--k:9" x1="210" y1="130" x2="200" y2="152"/><line class="ac27-rain" style="--k:10" x1="350" y1="120" x2="340" y2="142"/><line class="ac27-rain" style="--k:11" x1="560" y1="130" x2="550" y2="152"/>
+            </g>
+            <path class="ac27-wv1" d="M-160 236 q40 -32 80 0 t80 0 t80 0 t80 0 t80 0 t80 0 t80 0 t80 0 t80 0 t80 0 t80 0 t80 0 t80 0 t80 0 t80 0 V330 H-160 Z"/>
+            <g class="ac27-rock">
+              <path class="ac27-hull" d="M150 196 Q134 170 142 138 Q158 150 168 172 L478 188 Q474 226 424 246 L218 246 Q170 232 150 196 Z"/>
+              <path class="ac27-plank" d="M168 200 Q190 224 232 232 L420 232 M158 188 L474 198"/>
+              <line class="ac27-spar" x1="322" y1="186" x2="322" y2="64"/>
+              <line class="ac27-spar" x1="262" y1="152" x2="388" y2="132"/>
+              <path class="ac27-furl" d="M264 150 L386 130 L386 140 L266 162 Z"/>
+              <path class="ac27-girdle" d="M246 182 Q238 222 252 246 M326 188 Q320 222 332 246 M404 190 Q398 224 408 244"/>
+              <g class="ac27-bales">
+                <rect class="ac27-bale" style="--dx:-60px;--r:-40deg" x="196" y="164" width="38" height="26" rx="3"/>
+                <rect class="ac27-bale" style="--dx:-20px;--r:30deg" x="238" y="170" width="32" height="20" rx="3"/>
+                <rect class="ac27-bale" style="--dx:50px;--r:50deg" x="354" y="162" width="40" height="28" rx="3"/>
+                <rect class="ac27-bale" style="--dx:90px;--r:-30deg" x="398" y="170" width="34" height="20" rx="3"/>
+              </g>
+              <g class="ac27-gear" style="--dx:70px;--r:35deg"><path d="M436 190 L478 154 M446 190 L482 166"/></g>
+              <g class="ac27-gear" style="--dx:20px;--r:-25deg"><path d="M288 186 L300 150 M296 188 L312 154"/></g>
+              <circle class="ac27-man" cx="304" cy="170" r="6"/><path class="ac27-man" d="M298 188 L300 176 Q304 172 308 176 L310 188 Z"/>
+              <circle class="ac27-man" cx="340" cy="168" r="6"/><path class="ac27-man" d="M334 188 L336 174 Q340 170 344 174 L346 188 Z"/>
+            </g>
+            <path class="ac27-wv2" d="M-160 262 q40 -26 80 0 t80 0 t80 0 t80 0 t80 0 t80 0 t80 0 t80 0 t80 0 t80 0 t80 0 t80 0 t80 0 t80 0 t80 0 V330 H-160 Z"/>
+            <text class="ac27-cap" x="320" y="312" text-anchor="middle" style="fill:var(--glow)">the cargo, then the gear: gone</text>
+          </g>
+        </svg>
+      </div>
+      <div>
+        <h2 class="rise" style="--d:1">Over the side</h2>
+        <p class="note rise" style="--d:2">Day two, they <em>“lightened the ship,”</em> and a fortune in grain and freight went over.</p>
+        <p class="note step ac27-t1">Day three, <em>“with our own hands,”</em> they threw out the ship's own tackling. Their lives were worth more than their gear.</p>
+        <p class="note step ac27-t2">Maybe you've been here. The thing you swore you needed (a phone number, the old crowd, the bottle in the glove box) has to go over the side or it takes you down. And notice whose hands did it: <em>our own.</em> It hurts. It's how you stay afloat.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="20" data-hl="neither sun nor stars in many days appeared|all hope that we should be saved was then taken away"></blockquote>
+    <div class="split ac27-wa">
+      <div class="stage">
+        <svg class="ac27-sky" viewBox="0 0 600 240" role="img" aria-label="A sunny sky on the left and a night sky of stars on the right. Thick cloud rolls over both until neither the sun nor the stars can be seen. Fourteen small circles fill in, one for each day, and a small flame that stands for hope flickers in the middle.">
+          <defs>
+            <clipPath id="ac27-skyclip"><rect x="0" y="0" width="600" height="240" rx="8"/></clipPath>
+            <radialGradient id="ac27-sunglow"><stop offset="0" style="stop-color:var(--warm);stop-opacity:.9"/><stop offset="1" style="stop-color:var(--warm);stop-opacity:0"/></radialGradient>
+          </defs>
+          <g clip-path="url(#ac27-skyclip)">
+            <rect class="ac27-skyday" x="0" y="0" width="300" height="240"/>
+            <rect class="ac27-skynight" x="300" y="0" width="300" height="240"/>
+            <circle cx="140" cy="86" r="70" fill="url(#ac27-sunglow)"/>
+            <circle class="ac27-sun" cx="140" cy="86" r="30"/>
+            <g class="ac27-star"><circle cx="350" cy="40" r="4"/><circle cx="420" cy="84" r="3.5"/><circle cx="500" cy="36" r="4.5"/><circle cx="548" cy="112" r="3.5"/><circle cx="392" cy="140" r="4"/><circle cx="470" cy="150" r="3"/><circle cx="332" cy="100" r="3"/><circle cx="560" cy="60" r="3"/></g>
+            <g class="ac27-clouds">
+              <path class="ac27-cloudmass" d="M0 -320 H600 V180 q-25 30 -50 0 t-50 0 t-50 0 t-50 0 t-50 0 t-50 0 t-50 0 t-50 0 t-50 0 t-50 0 t-50 0 t-50 0 Z"/>
+            </g>
+            <text class="ac27-nolabel" x="150" y="86" text-anchor="middle">no sun</text>
+            <text class="ac27-nolabel" x="450" y="86" text-anchor="middle">no stars</text>
+            <g class="ac27-flame">
+              <circle class="ac27-flameglow" cx="300" cy="124" r="40"/>
+              <path d="M300 94 C316 114 322 128 312 142 C306 150 294 150 288 142 C278 128 284 114 300 94 Z" style="fill:var(--warm)"/>
+              <path d="M300 118 C306 128 308 134 303 140 C298 144 294 140 295 134 C296 128 298 124 300 118 Z" style="fill:var(--glow)"/>
+            </g>
+            <text class="ac27-nolabel" x="300" y="172" text-anchor="middle" style="font-size:17px">hope</text>
+            <g>
+              <circle class="ac27-day" style="--k:0" cx="60" cy="212" r="7"/><circle class="ac27-day" style="--k:1" cx="100" cy="212" r="7"/><circle class="ac27-day" style="--k:2" cx="140" cy="212" r="7"/><circle class="ac27-day" style="--k:3" cx="180" cy="212" r="7"/><circle class="ac27-day" style="--k:4" cx="220" cy="212" r="7"/><circle class="ac27-day" style="--k:5" cx="260" cy="212" r="7"/><circle class="ac27-day" style="--k:6" cx="300" cy="212" r="7"/><circle class="ac27-day" style="--k:7" cx="340" cy="212" r="7"/><circle class="ac27-day" style="--k:8" cx="380" cy="212" r="7"/><circle class="ac27-day" style="--k:9" cx="420" cy="212" r="7"/><circle class="ac27-day" style="--k:10" cx="460" cy="212" r="7"/><circle class="ac27-day" style="--k:11" cx="500" cy="212" r="7"/><circle class="ac27-day" style="--k:12" cx="540" cy="212" r="7"/><circle class="ac27-day" style="--k:13" cx="580" cy="212" r="7"/>
+            </g>
+          </g>
+        </svg>
+      </div>
+      <div>
+        <h2 class="rise" style="--d:1">No sun, no stars</h2>
+        <p class="note rise" style="--d:2">Sailors steered by the sun by day and the stars by night. There was no compass. With both hidden, they didn't know where they were.</p>
+        <p class="note step">The storm took the cargo, then the gear, then the last thing: <em>“all hope.”</em> Luke writes “we.” He's in that sentence too.</p>
+        <p class="note step ac27-hopeout">If you've had a night like that, with no sign of morning, you're in good company. The Bible doesn't skip the hopeless part. It doesn't stop there either.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="slide verse" data-v="21-26" data-hl="Paul stood forth in the midst of them|there shall be no loss of any man’s life among you, but of the ship|the angel of God, whose I am, and whom I serve|Fear not, Paul|thou must be brought before Caesar|I believe God|we must be cast upon a certain island"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="22" data-hl="there shall be no loss of any man’s life among you, but of the ship"></blockquote>
+    <h2 class="rise" style="--d:1">What the storm could take</h2>
+    <div class="columns">
+      <div class="col law rise" style="--d:2">
+        <p class="who">It could take</p>
+        <h3>The ship</h3>
+        <p>The cargo, the gear, the whole vessel. <em>“Ye should have hearkened unto me… and to have gained this harm and loss.”</em> Paul says it once, plainly, and moves on.</p>
+      </div>
+      <div class="col grace step">
+        <p class="who">It could not take</p>
+        <h3>A single life</h3>
+        <p><em>“There shall be no loss of any man's life among you.”</em> Every one of the people who ignored the warning is still included.</p>
+      </div>
+    </div>
+    <p class="note step">Notice how Paul handles their mistake. He names it, because they need to know why they're here, and then he turns straight to hope: <em>“And now I exhort you to be of good cheer.”</em> He doesn't make them live in it.</p>
+    <p class="note step">That's a good way to treat your own regret too. Say what happened, honestly. Then ask what God says to do next.</p>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="23" data-hl="the angel of God, whose I am, and whom I serve"></blockquote>
+    <h2 class="rise" style="--d:1">Whose I am</h2>
+    <p class="saying rise" style="--d:2">“Whose I am, and <em>whom I serve.</em>”</p>
+    <p class="note rise" style="--d:3">A prisoner of Rome, on a doomed ship, in the worst night of his life, and Paul knows who owns him. Not the emperor, not the storm. <em>Whose I am:</em> I belong to God. <em>Whom I serve:</em> He's who I work for.</p>
+    <p class="note step">God had told him already, months before, in a Jerusalem cell:</p>
+    <blockquote class="quote step"><p>“And the night following the Lord stood by him, and said, Be of good cheer, Paul: for as thou hast testified of me in Jerusalem, so must thou bear witness also at Rome.”</p><cite>Acts 23:11</cite></blockquote>
+    <p class="note step">And notice what the angel does <em>not</em> say: no wreck. <em>“We must be cast upon a certain island.”</em> God promised Paul he'd get through, not that it would be smooth. <em>“I believe God”</em> means taking Him at His word before anything changes.</p>
+  </div>
+</section>
+
+<!-- ======================= PART THREE: THE FOURTEENTH NIGHT ======================= -->
+<section class="slide part">
+  <div class="inner">
+    <p class="part-n rise">Part three</p>
+    <h2 class="rise" style="--d:1">The fourteenth night</h2>
+    <p class="range rise" style="--d:2">Verses 27–44</p>
+    <div class="rule"></div>
+    <p class="hook rise" style="--d:4">The sound of surf in the dark, four anchors, a loaf of bread, and a beach.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="27-29" data-hl="the fourteenth night was come|twenty fathoms|fifteen fathoms|they cast four anchors out of the stern, and wished for the day"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <div class="split ac27-wb">
+      <div class="stage">
+        <svg viewBox="0 0 640 380" role="img" aria-label="A cutaway of the sea at night. A ship drifts toward the shore while a sailor drops a lead weight on a line: twenty fathoms, then fifteen, so the bottom is rising. Then four anchors go down from the stern, and the sun comes up.">
+          <defs>
+            <clipPath id="ac27-nclip"><rect x="0" y="0" width="640" height="380" rx="8"/></clipPath>
+            <radialGradient id="ac27-lglow"><stop offset="0" style="stop-color:var(--warm);stop-opacity:.9"/><stop offset="1" style="stop-color:var(--warm);stop-opacity:0"/></radialGradient>
+          </defs>
+          <g clip-path="url(#ac27-nclip)">
+            <rect class="ac27-dawn" x="0" y="0" width="640" height="160"/>
+            <circle class="ac27-sunglow" cx="560" cy="150" r="90"/>
+            <circle class="ac27-sunrise" cx="560" cy="170" r="36"/>
+            <rect class="ac27-sea" x="0" y="150" width="640" height="230"/>
+            <path class="ac27-floor" d="M0 335 C120 333 200 322 330 283 C430 255 520 225 580 190 C605 172 625 154 640 140 V380 H0 Z"/>
+            <rect class="ac27-dark" x="0" y="0" width="640" height="380"/>
+            <path class="ac27-lead ac27-lead1" pathLength="1" d="M188 180 V318"/>
+            <path class="ac27-lead ac27-lead2" pathLength="1" d="M368 180 V272"/>
+            <path class="ac27-weight ac27-weight1" d="M181 318 h14 l-3 -12 h-8 z"/>
+            <path class="ac27-weight ac27-weight2" d="M361 272 h14 l-3 -12 h-8 z"/>
+            <text class="ac27-sound ac27-sound1" x="10" y="296" style="font-size:17px">20 fathoms · 120 feet</text>
+            <text class="ac27-sound ac27-sound2" x="384" y="232">15 fathoms · 90 feet</text>
+            <g>
+              <path class="ac27-rope" style="--k:0" pathLength="1" d="M296 168 L200 306"/>
+              <path class="ac27-rope" style="--k:1" pathLength="1" d="M296 168 L232 299"/>
+              <path class="ac27-rope" style="--k:2" pathLength="1" d="M296 168 L258 293"/>
+              <path class="ac27-rope" style="--k:3" pathLength="1" d="M296 168 L282 287"/>
+              <g class="ac27-anchor" style="--k:0"><path d="M200 292 v18 M193 297 h14 M190 306 q10 12 20 0"/></g>
+              <g class="ac27-anchor" style="--k:1"><path d="M232 285 v18 M225 290 h14 M222 299 q10 12 20 0"/></g>
+              <g class="ac27-anchor" style="--k:2"><path d="M258 279 v18 M251 284 h14 M248 293 q10 12 20 0"/></g>
+              <g class="ac27-anchor" style="--k:3"><path d="M282 273 v18 M275 278 h14 M272 287 q10 12 20 0"/></g>
+            </g>
+            <g class="ac27-sh">
+              <g class="ac27-rock">
+                <path class="ac27-hull" d="M0 -30 Q-8 -8 6 8 L14 24 L124 24 L150 6 Q156 -4 150 -12 L126 -12 L26 -12 Q10 -22 0 -30 Z"/>
+                <line class="ac27-spar" x1="78" y1="-12" x2="78" y2="-90"/>
+                <path class="ac27-furl" d="M52 -66 L108 -72 L108 -64 L54 -58 Z"/>
+                <circle class="ac27-lanternglow" cx="-4" cy="-38" r="34" fill="url(#ac27-lglow)"/>
+                <circle class="ac27-lantern" cx="-4" cy="-38" r="6"/>
+              </g>
+            </g>
+            <text class="ac27-wished" x="320" y="62" text-anchor="middle">“wished for the day”</text>
+            <text class="ac27-tag" style="--k:0" x="95" y="364">God's word</text>
+            <text class="ac27-tag" style="--k:1" x="215" y="364">your people</text>
+            <text class="ac27-tag" style="--k:2" x="345" y="364">food and sleep</text>
+            <text class="ac27-tag" style="--k:3" x="490" y="364">one honest prayer</text>
+          </g>
+        </svg>
+      </div>
+      <div>
+        <h2 class="rise" style="--d:1">Four anchors</h2>
+        <p class="note rise" style="--d:2">Midnight, fourteen days in. They sense land and <em>“sounded”</em> with a lead weight on a line.</p>
+        <p class="note step ac27-a1">Twenty fathoms: 120 feet of water (a fathom is six feet).</p>
+        <p class="note step ac27-a2">Then fifteen: 90 feet. The bottom is rising, and they can't see the rocks.</p>
+        <p class="note step ac27-a3">So <em>“four anchors out of the stern.”</em> They couldn't steer in the dark. All they could do was hold still.</p>
+        <p class="note step ac27-a4">And <em>“wished for the day.”</em> Just men waiting for light. It came.</p>
+        <p class="note step ac27-a5">What are your anchors today?</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="29" data-hl="they cast four anchors out of the stern"></blockquote>
+    <h2 class="rise" style="--d:1">An anchor that holds</h2>
+    <p class="saying rise" style="--d:2">Sure and <em>stedfast.</em></p>
+    <blockquote class="quote rise" style="--d:3"><p>“Which hope we have as an anchor of the soul, both sure and stedfast, and which entereth into that within the veil;”</p><cite>Hebrews 6:19</cite></blockquote>
+    <p class="note step">Those four anchors held because they caught on something solid. Hope in Jesus is like that. It holds you not because you're gripping it hard enough, but because it's fastened to Him, <em>“within the veil,”</em> in God's own presence. You can drag and slip and still be held.</p>
+    <p class="note step">Today's real-world anchors: open God's Word for five minutes, text one brother, eat something, and say one honest prayer. Put them down before the night, not after.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="30-32" data-hl="the shipmen were about to flee out of the ship|Except these abide in the ship, ye cannot be saved|the soldiers cut off the ropes of the boat"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="31" data-hl="Except these abide in the ship, ye cannot be saved"></blockquote>
+    <div class="split ac27-wa">
+      <div class="stage">
+        <svg viewBox="0 0 480 230" role="img" aria-label="A ship's side with a small lifeboat tied beside it. Two sailors slip toward the boat. Then the rope is cut, and the empty boat drifts away across the water while the ship stays put.">
+          <rect class="ac27-boatwater" x="0" y="106" width="480" height="124" rx="8"/>
+          <path class="ac27-hull" d="M20 96 Q12 70 22 46 Q34 58 40 78 L250 78 Q254 110 232 132 L60 132 Q26 120 20 96 Z"/>
+          <line class="ac27-spar" x1="140" y1="78" x2="140" y2="8"/>
+          <path class="ac27-furl" d="M116 30 L164 26 L164 34 L118 38 Z"/>
+          <g class="ac27-skiff"><g class="ac27-skiff-bob">
+            <path class="ac27-hull" d="M276 122 L352 122 Q346 144 328 150 L298 150 Q280 144 276 122 Z"/>
+            <path class="ac27-line b" d="M276 122 L242 90"/>
+          </g></g>
+          <path class="ac27-line a" d="M242 90 L252 98"/>
+          <g class="ac27-sailor"><circle cx="226" cy="64" r="8"/><path d="M218 78 L220 70 Q226 66 232 70 L234 78 Z"/><circle cx="204" cy="66" r="8"/><path d="M196 78 L198 72 Q204 68 210 72 L212 78 Z"/></g>
+          <text class="ac27-snip" x="256" y="96">✂</text>
+          <text class="ac27-gone" x="380" y="196" text-anchor="middle">drifting off, empty</text>
+        </svg>
+      </div>
+      <div>
+        <h2 class="rise" style="--d:1">Stay in the ship</h2>
+        <p class="note rise" style="--d:2">Some sailors decide to save themselves. They lower the boat <em>“under colour,”</em> a cover story about anchors, ready to slip away and leave 270 people behind.</p>
+        <p class="note step ac27-sneak">Paul tells the centurion, <em>“Except these abide in the ship, ye cannot be saved.”</em> They'd need those sailors to steer her in at daylight.</p>
+        <p class="note step ac27-cut">The soldiers cut the ropes, and the boat falls away.</p>
+        <p class="note step">Every man knows the lifeboat: skip the meeting, ignore the guys' calls, <em>“I've got this on my own.”</em> Stay in the ship.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="slide verse" data-v="33-36" data-hl="continued fasting, having taken nothing|he took bread, and gave thanks to God in presence of them all|there shall not an hair fall from the head of any of you"></section>
+<section class="slide verse" data-v="37-38" data-hl="two hundred threescore and sixteen souls|cast out the wheat into the sea"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise" style="--d:1">Bread in the storm</h2>
+    <div class="dots rows fill rise" data-dots="276" style="--d:2;--cols:46;--pace:10ms;--wait:600ms;--dot:var(--accent);max-width:48rem" aria-label="Two hundred seventy-six dots fill in one by one, one for each person on the ship."></div>
+    <p class="dots-cap rise" style="--d:3;max-width:44rem"><span>souls on the ship, one dot each</span><b class="dots-num" style="--to:276;--count:3.2s"></b></p>
+    <p class="note step">Fourteen days of fear, and nobody has eaten properly. Then Paul, a prisoner among 275 strangers, takes bread and <em>“gave thanks to God in presence of them all.”</em> No sermon. Just thanks, out loud, and a man eating.</p>
+    <p class="note step">This isn't the Lord's Supper. It's a plain meal for men about to swim for their lives. But it's what a man who walks with Jesus does: thanks first.</p>
+    <p class="note step"><em>“For this is for your health.”</em> Hungry, angry, lonely, tired: the guys call it HALT, and each one makes a hard day harder. Eat something. Sleep when you can. Looking after your body is part of looking after the rest.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="39-41" data-hl="a certain creek with a shore|a place where two seas met|the forepart stuck fast|the hinder part was broken with the violence of the waves"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="41" data-hl="the forepart stuck fast, and remained unmoveable, but the hinder part was broken with the violence of the waves"></blockquote>
+    <div class="split ac27-wc">
+      <div class="stage">
+        <svg viewBox="0 0 640 300" role="img" aria-label="A ship runs onto a sandbar near a beach. The front half sticks fast. The back half is broken up by the waves. Then people swim and float on boards to the shore.">
+          <defs><clipPath id="ac27-agclip"><rect x="0" y="0" width="640" height="300" rx="8"/></clipPath></defs>
+          <g clip-path="url(#ac27-agclip)">
+            <rect class="ac27-agsky" x="0" y="0" width="640" height="300"/>
+            <rect class="ac27-agsea" x="0" y="170" width="640" height="130"/>
+            <path class="ac27-agbar" d="M230 300 Q290 238 380 232 Q440 230 486 248 L486 300 Z"/>
+            <path class="ac27-agland" d="M470 300 L470 214 Q510 190 552 166 Q596 146 640 140 V300 Z"/>
+            <g class="ac27-arrive">
+              <g class="ac27-stern">
+                <path class="ac27-hull" d="M212 154 Q206 184 222 202 L238 218 L330 218 L336 208 L328 198 L334 188 L328 176 L330 170 L246 170 Q226 162 212 154 Z"/>
+                <path class="ac27-plank" d="M232 190 L326 192"/>
+              </g>
+              <g class="ac27-bowrock">
+                <path class="ac27-hull" d="M330 170 L328 176 L334 188 L328 198 L336 208 L330 218 L396 218 Q430 210 446 170 Q442 168 436 170 Z"/>
+                <line class="ac27-spar" x1="372" y1="170" x2="372" y2="116"/>
+                <path class="ac27-furl" d="M356 124 L390 120 L390 128 L358 132 Z"/>
+              </g>
+            </g>
+            <path class="ac27-surf" d="M200 214 Q216 202 232 214 T264 214 T296 214"/>
+            <path class="ac27-surf" d="M232 236 Q248 224 264 236 T296 236 T328 236" style="animation-delay:-.5s"/>
+            <rect class="ac27-plk" style="--dx:-50px;--dy:20px;--r:70deg" x="262" y="190" width="30" height="8" rx="2"/>
+            <rect class="ac27-plk" style="--dx:-20px;--dy:44px;--r:-40deg;--k:1" x="270" y="196" width="26" height="7" rx="2"/>
+            <rect class="ac27-plk" style="--dx:-80px;--dy:8px;--r:120deg;--k:2" x="250" y="186" width="28" height="8" rx="2"/>
+            <rect class="ac27-plk" style="--dx:24px;--dy:50px;--r:60deg;--k:3" x="290" y="200" width="24" height="7" rx="2"/>
+            <rect class="ac27-plk" style="--dx:-40px;--dy:-6px;--r:-90deg;--k:4" x="256" y="206" width="30" height="8" rx="2"/>
+            <rect class="ac27-plk" style="--dx:6px;--dy:30px;--r:150deg;--k:5" x="300" y="206" width="26" height="7" rx="2"/>
+            <g>
+              <circle class="ac27-head" style="--k:0;--dx:262px;--dy:2px" cx="290" cy="178" r="7"/>
+              <circle class="ac27-head" style="--k:1;--dx:246px;--dy:-8px" cx="300" cy="184" r="7"/>
+              <circle class="ac27-head" style="--k:2;--dx:272px;--dy:-4px" cx="280" cy="186" r="7"/>
+              <circle class="ac27-head" style="--k:3;--dx:238px;--dy:-16px" cx="318" cy="180" r="7"/>
+              <circle class="ac27-head" style="--k:4;--dx:254px;--dy:-18px" cx="326" cy="188" r="7"/>
+              <circle class="ac27-head" style="--k:5;--dx:284px;--dy:-14px" cx="270" cy="176" r="7"/>
+              <circle class="ac27-head" style="--k:6;--dx:228px;--dy:-24px" cx="338" cy="180" r="7"/>
+              <circle class="ac27-head" style="--k:7;--dx:268px;--dy:-22px" cx="290" cy="192" r="7"/>
+            </g>
+            <text class="ac27-lab" x="330" y="268">where two seas met</text>
+            <text class="ac27-lab" x="150" y="132">the hinder part, broken</text>
+            <text class="ac27-lab" x="330" y="96">the forepart, stuck fast</text>
+            <text class="ac27-lab" x="520" y="124">the beach</text>
+          </g>
+        </svg>
+      </div>
+      <div>
+        <h2 class="rise" style="--d:1">Aground</h2>
+        <p class="note rise" style="--d:2">At daylight they spot a beach, cut the anchors loose, put up a sail and run for it. But <em>“a place where two seas met,”</em> a sandbar with water on both sides, catches her.</p>
+        <p class="note step">The bow digs in and won't budge. The stern comes apart in the surf. By tradition this was St. Paul's Bay on Malta.</p>
+        <p class="note step ac27-swim">God said no loss of life, <em>“but of the ship.”</em> He kept every word, including the hard one.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="slide verse" data-v="42-44" data-hl="counsel was to kill the prisoners|the centurion, willing to save Paul|they escaped all safe to land"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="44" data-hl="they escaped all safe to land"></blockquote>
+    <h2 class="rise" style="--d:1">All safe to land</h2>
+    <div class="dots rows fill step" data-dots="276" style="--cols:46;--pace:8ms;--wait:300ms;--dot:var(--accent-hot);max-width:48rem" aria-label="Two hundred seventy-six dots fill in, one for each person who reached the shore."></div>
+    <p class="dots-cap step" style="max-width:44rem"><span>reached land, out of 276</span><b class="dots-num" style="--to:276;--count:2.6s"></b></p>
+    <p class="note step">The soldiers wanted to kill the prisoners so none could escape (a guard paid with his own life for a lost prisoner, as the jailor in Acts 16 knew). Julius, who'd let Paul visit friends at Sidon, stopped them. A small kindness, and it came back.</p>
+    <p class="note step">Look who's on that beach: the men who ignored the warning, the sailors who tried to run, the soldiers who wanted blood. None earned it. <em>“God hath given thee all them that sail with thee.”</em> That's grace: not because they listened, but because God had said so.</p>
+    <p class="note step">Paul never got the ship back. He got every man. Maybe you're standing on a beach you never expected.</p>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="27" data-hl="the fourteenth night was come"></blockquote>
+    <h2 class="rise" style="--d:1">Fourteen days, at a glance</h2>
+    <ol class="timeline" aria-label="Fair Havens: Paul warns and they sail on. Day one: the storm hits. Day two: the cargo goes overboard. Day three: the ship's gear goes overboard. Many days: no sun, no stars, no hope. Night fourteen: soundings and four anchors. Dawn: bread, the beach, and everyone safe.">
+      <li style="--k:0"><b>Fair Havens</b><span>Paul warns them; they sail on</span><small>vv. 9–12</small></li>
+      <li style="--k:1"><b>Day 1</b><span>Euroclydon hits</span><small>vv. 14–17</small></li>
+      <li style="--k:2"><b>Days 2–3</b><span>cargo, then gear, overboard</span><small>vv. 18–19</small></li>
+      <li class="lit" style="--k:3"><b>Many days</b><span>no sun, no stars, no hope</span><small>v. 20</small></li>
+      <li style="--k:4"><b>Night 14</b><span>soundings, four anchors</span><small>vv. 27–29</small></li>
+      <li style="--k:5"><b>Dawn</b><span>bread, a beach, all safe</span><small>vv. 35–44</small></li>
+    </ol>
+    <p class="note step">The very bottom is in the middle of that line, and it's not where the story ends. If this is a low stretch for you, you may not be at the end of the line. You're at day twelve.</p>
+    <blockquote class="quote step"><p>“Then they cry unto the LORD in their trouble, and he bringeth them out of their distresses. He maketh the storm a calm, so that the waves thereof are still. Then are they glad because they be quiet; so he bringeth them unto their desired haven.”</p><cite>Psalm 107:28–30</cite></blockquote>
+  </div>
+</section>
+
+<!-- ======================= CLOSING ======================= -->
+<section class="slide remember">
+  <div class="inner">
+    <h2 class="rise">Points to remember</h2>
+    <ol class="seeds">
+      <li class="step"><span class="topic">Good counsel</span><span class="seed-q">“the centurion believed the master and the owner of the ship, more than those things which were spoken by Paul” <cite>27:11</cite></span><span class="take">A soft wind makes a bad decision feel right. Listen to the one who's been through it.</span></li>
+      <li class="step"><span class="topic">Despair</span><span class="seed-q">“all hope that we should be saved was then taken away” <cite>27:20</cite></span><span class="take">There are nights with no sun and no stars. They're not the end of the story.</span></li>
+      <li class="step"><span class="topic">God's promise</span><span class="seed-q">“there shall be no loss of any man’s life among you” <cite>27:22</cite></span><span class="take">God didn't promise a smooth trip. He promised to bring them through, and He did.</span></li>
+      <li class="step"><span class="topic">Staying together</span><span class="seed-q">“Except these abide in the ship, ye cannot be saved” <cite>27:31</cite></span><span class="take">Don't slip away in the lifeboat. Stay with the people God put around you.</span></li>
+      <li class="step"><span class="topic">Taking care</span><span class="seed-q">“I pray you to take some meat: for this is for your health” <cite>27:34</cite></span><span class="take">Eat, sleep, and give thanks. Looking after the body is part of looking after your soul.</span></li>
+      <li class="step"><span class="topic">Rescue</span><span class="seed-q">“they escaped all safe to land” <cite>27:44</cite></span><span class="take">The ship was lost, and every life was saved. By grace, none of them was left out.</span></li>
+    </ol>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 1 of 6</p>
+      <span class="topic">Good counsel</span>
+      <h2>Why did the ship sail on when Paul warned them not to?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="10"></blockquote>
+      <blockquote class="quote step" data-q="11"></blockquote>
+      <blockquote class="quote step" data-q="13"></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>The centurion believed the pilot and the owner, not the prisoner. The harbor was poor for winter, most wanted to go, and a soft south wind made it look right. The warning came from the one man with no authority, and it was true.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 2 of 6</p>
+      <span class="topic">Despair</span>
+      <h2>What did the men lose besides the cargo?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="18"></blockquote>
+      <blockquote class="quote step" data-q="19"></blockquote>
+      <blockquote class="quote step" data-q="20"></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>Hope. First the cargo went overboard, then the ship's gear, and after many days with no sun or stars to steer by, “all hope that we should be saved was then taken away.” The Bible doesn't hide the hopeless part. But it doesn't stop there.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 3 of 6</p>
+      <span class="topic">God's promise</span>
+      <h2>What did God promise Paul in the night?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="23"></blockquote>
+      <blockquote class="quote step" data-q="24"></blockquote>
+      <blockquote class="quote step" data-q="25"></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>“Fear not, Paul.” He would stand before Caesar, and God had given him every person on the ship. There would be no loss of life, only the ship. It wasn't a promise of a smooth trip, but it was a promise of coming through. Paul believed God, and it happened just as he was told.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 4 of 6</p>
+      <span class="topic">Staying together</span>
+      <h2>Who had to stay in the ship, and why?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="30"></blockquote>
+      <blockquote class="quote step" data-q="31"></blockquote>
+      <blockquote class="quote step" data-q="32"></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>The sailors. They were about to slip away in the lifeboat and leave everyone else. Paul said they had to stay aboard for the rest to be saved, because God's promise would come through the people He had put on that ship. Nobody gets through the night alone.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 5 of 6</p>
+      <span class="topic">Taking care</span>
+      <h2>Why did Paul tell hungry, frightened men to eat?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="34" data-hl="for this is for your health"></blockquote>
+      <blockquote class="quote step" data-q="35" data-hl="he took bread, and gave thanks to God in presence of them all"></blockquote>
+      <blockquote class="quote step" data-q="36"></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>They'd gone fourteen days without a real meal and were about to swim for their lives. “For this is for your health.” Paul gave thanks to God in front of everyone, broke the bread, and ate, and they all took heart. God cares for the body as well as the soul.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 6 of 6</p>
+      <span class="topic">Rescue</span>
+      <h2>Who made it safe to land?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="24"></blockquote>
+      <blockquote class="quote step" data-q="43"></blockquote>
+      <blockquote class="quote step" data-q="44"></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>All 276 of them: the men who ignored the warning, the sailors who tried to run, and the soldiers who wanted to kill the prisoners. God had given Paul “all them that sail with thee.” The ship was lost, but not one life. They didn't earn it. God had said so.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide prayer">
+  <div class="inner">
+    <div class="emblem rise"></div>
+    <h2 class="rise" style="--d:1">Prayer requests</h2>
+    <p class="ask-line rise" style="--d:2">What can we pray about for you today?</p>
+    <blockquote class="quote rise" style="--d:4"><p>“Then they cry unto the LORD in their trouble, and he bringeth them out of their distresses. He maketh the storm a calm, so that the waves thereof are still.”</p><cite>Psalm 107:28–29</cite></blockquote>
+  </div>
+</section>
+
+</main>
+
+<script>
+// King James Version, Acts chapter 27
+const V = {
+  1: "And when it was determined that we should sail into Italy, they delivered Paul and certain other prisoners unto one named Julius, a centurion of Augustus’ band.",
+  2: "And entering into a ship of Adramyttium, we launched, meaning to sail by the coasts of Asia; one Aristarchus, a Macedonian of Thessalonica, being with us.",
+  3: "And the next day we touched at Sidon. And Julius courteously entreated Paul, and gave him liberty to go unto his friends to refresh himself.",
+  4: "And when we had launched from thence, we sailed under Cyprus, because the winds were contrary.",
+  5: "And when we had sailed over the sea of Cilicia and Pamphylia, we came to Myra, a city of Lycia.",
+  6: "And there the centurion found a ship of Alexandria sailing into Italy; and he put us therein.",
+  7: "And when we had sailed slowly many days, and scarce were come over against Cnidus, the wind not suffering us, we sailed under Crete, over against Salmone;",
+  8: "And, hardly passing it, came unto a place which is called The fair havens; nigh whereunto was the city of Lasea.",
+  9: "Now when much time was spent, and when sailing was now dangerous, because the fast was now already past, Paul admonished them,",
+  10: "And said unto them, Sirs, I perceive that this voyage will be with hurt and much damage, not only of the lading and ship, but also of our lives.",
+  11: "Nevertheless the centurion believed the master and the owner of the ship, more than those things which were spoken by Paul.",
+  12: "And because the haven was not commodious to winter in, the more part advised to depart thence also, if by any means they might attain to Phenice, and there to winter; which is an haven of Crete, and lieth toward the south west and north west.",
+  13: "And when the south wind blew softly, supposing that they had obtained their purpose, loosing thence, they sailed close by Crete.",
+  14: "But not long after there arose against it a tempestuous wind, called Euroclydon.",
+  15: "And when the ship was caught, and could not bear up into the wind, we let her drive.",
+  16: "And running under a certain island which is called Clauda, we had much work to come by the boat:",
+  17: "Which when they had taken up, they used helps, undergirding the ship; and, fearing lest they should fall into the quicksands, strake sail, and so were driven.",
+  18: "And we being exceedingly tossed with a tempest, the next day they lightened the ship;",
+  19: "And the third day we cast out with our own hands the tackling of the ship.",
+  20: "And when neither sun nor stars in many days appeared, and no small tempest lay on us, all hope that we should be saved was then taken away.",
+  21: "But after long abstinence Paul stood forth in the midst of them, and said, Sirs, ye should have hearkened unto me, and not have loosed from Crete, and to have gained this harm and loss.",
+  22: "And now I exhort you to be of good cheer: for there shall be no loss of any man’s life among you, but of the ship.",
+  23: "For there stood by me this night the angel of God, whose I am, and whom I serve,",
+  24: "Saying, Fear not, Paul; thou must be brought before Caesar: and, lo, God hath given thee all them that sail with thee.",
+  25: "Wherefore, sirs, be of good cheer: for I believe God, that it shall be even as it was told me.",
+  26: "Howbeit we must be cast upon a certain island.",
+  27: "But when the fourteenth night was come, as we were driven up and down in Adria, about midnight the shipmen deemed that they drew near to some country;",
+  28: "And sounded, and found it twenty fathoms: and when they had gone a little further, they sounded again, and found it fifteen fathoms.",
+  29: "Then fearing lest we should have fallen upon rocks, they cast four anchors out of the stern, and wished for the day.",
+  30: "And as the shipmen were about to flee out of the ship, when they had let down the boat into the sea, under colour as though they would have cast anchors out of the foreship,",
+  31: "Paul said to the centurion and to the soldiers, Except these abide in the ship, ye cannot be saved.",
+  32: "Then the soldiers cut off the ropes of the boat, and let her fall off.",
+  33: "And while the day was coming on, Paul besought them all to take meat, saying, This day is the fourteenth day that ye have tarried and continued fasting, having taken nothing.",
+  34: "Wherefore I pray you to take some meat: for this is for your health: for there shall not an hair fall from the head of any of you.",
+  35: "And when he had thus spoken, he took bread, and gave thanks to God in presence of them all: and when he had broken it, he began to eat.",
+  36: "Then were they all of good cheer, and they also took some meat.",
+  37: "And we were in all in the ship two hundred threescore and sixteen souls.",
+  38: "And when they had eaten enough, they lightened the ship, and cast out the wheat into the sea.",
+  39: "And when it was day, they knew not the land: but they discovered a certain creek with a shore, into the which they were minded, if it were possible, to thrust in the ship.",
+  40: "And when they had taken up the anchors, they committed themselves unto the sea, and loosed the rudder bands, and hoised up the mainsail to the wind, and made toward shore.",
+  41: "And falling into a place where two seas met, they ran the ship aground; and the forepart stuck fast, and remained unmoveable, but the hinder part was broken with the violence of the waves.",
+  42: "And the soldiers’ counsel was to kill the prisoners, lest any of them should swim out, and escape.",
+  43: "But the centurion, willing to save Paul, kept them from their purpose; and commanded that they which could swim should cast themselves first into the sea, and get to land:",
+  44: "And the rest, some on boards, and some on broken pieces of the ship. And so it came to pass, that they escaped all safe to land."
+};
+const BOOK = "Acts 27";
+</script>
+<script src="../assets/deck.js"></script>
+</body>
+</html>

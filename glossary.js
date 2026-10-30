@@ -308,6 +308,9 @@ window.GLOSSARY = [
     "Acts", 26,
     [ 9, 15 ] ],
    [
+    "Acts", 28,
+    [ 23, 31 ] ],
+   [
     "Romans", 1,
     [ 1, 3, 6, 7, 8 ] ],
    [
@@ -809,6 +812,9 @@ window.GLOSSARY = [
     "Acts", 26,
     [ 22 ] ],
    [
+    "Acts", 28,
+    [ 23 ] ],
+   [
     "Romans", 5,
     [ 14 ] ] ]
  },
@@ -897,7 +903,10 @@ window.GLOSSARY = [
     [ 38, 39, 41 ] ],
    [
     "Acts", 8,
-    [ 28, 30 ] ] ]
+    [ 28, 30 ] ],
+   [
+    "Acts", 28,
+    [ 25 ] ] ]
  },
  {
   "id": "joseph",
@@ -1228,6 +1237,9 @@ window.GLOSSARY = [
    [
     "Acts", 21,
     [ 4, 11 ] ],
+   [
+    "Acts", 28,
+    [ 25 ] ],
    [
     "Romans", 5,
     [ 5 ] ] ]
@@ -1735,6 +1747,9 @@ window.GLOSSARY = [
    [
     "Acts", 26,
     [ 2, 3, 4, 7, 21 ] ],
+   [
+    "Acts", 28,
+    [ 17, 19, 29 ] ],
    [
     "Romans", 1,
     [ 16 ] ],
@@ -2529,7 +2544,10 @@ window.GLOSSARY = [
     [ 1, 3, 7, 9, 15, 20, 24 ] ],
    [
     "Acts", 26,
-    [ 4, 10, 20 ] ] ]
+    [ 4, 10, 20 ] ],
+   [
+    "Acts", 28,
+    [ 17 ] ] ]
  },
  {
   "id": "bethabara",
@@ -3327,7 +3345,10 @@ window.GLOSSARY = [
     [ 16, 17, 23, 24 ] ],
    [
     "Acts", 21,
-    [ 28 ] ] ]
+    [ 28 ] ],
+   [
+    "Acts", 28,
+    [ 20 ] ] ]
  },
  {
   "id": "heaven",
@@ -4505,6 +4526,9 @@ window.GLOSSARY = [
     "Acts", 25,
     [ 8 ] ],
    [
+    "Acts", 28,
+    [ 23 ] ],
+   [
     "Romans", 2,
     [ 12, 13, 14, 15, 17, 18, 20, 23, 25, 26, 27 ] ],
    [
@@ -4702,6 +4726,9 @@ window.GLOSSARY = [
    [
     "Acts", 26,
     [ 23 ] ],
+   [
+    "Acts", 28,
+    [ 31 ] ],
    [
     "Romans", 1,
     [ 1, 3, 6, 7, 8, 16 ] ],
@@ -5134,6 +5161,12 @@ window.GLOSSARY = [
    [
     "Acts", 26,
     [ 27 ] ],
+   [
+    "Acts", 27,
+    [ 11, 25 ] ],
+   [
+    "Acts", 28,
+    [ 24 ] ],
    [
     "Romans", 1,
     [ 16 ] ],
@@ -5703,6 +5736,9 @@ window.GLOSSARY = [
     [ 12 ] ],
    [
     "Acts", 19,
+    [ 11 ] ],
+   [
+    "Acts", 28,
     [ 11 ] ] ]
  },
  {
@@ -7067,6 +7103,9 @@ window.GLOSSARY = [
     "Acts", 21,
     [ 13 ] ],
    [
+    "Acts", 28,
+    [ 27 ] ],
+   [
     "Romans", 1,
     [ 21 ] ],
    [
@@ -7740,7 +7779,10 @@ window.GLOSSARY = [
     [ 20 ] ],
    [
     "Acts", 19,
-    [ 31 ] ] ]
+    [ 31 ] ],
+   [
+    "Acts", 27,
+    [ 3 ] ] ]
  },
  {
   "id": "abomination",
@@ -8034,7 +8076,10 @@ window.GLOSSARY = [
     [ 23 ] ],
    [
     "Acts", 20,
-    [ 27 ] ] ]
+    [ 27 ] ],
+   [
+    "Acts", 27,
+    [ 42 ] ] ]
  },
  {
   "id": "discretion",
@@ -9666,7 +9711,10 @@ window.GLOSSARY = [
     [ 5 ] ],
    [
     "Acts", 9,
-    [ 19 ] ] ]
+    [ 19 ] ],
+   [
+    "Acts", 27,
+    [ 33, 34, 36 ] ] ]
  },
  {
   "id": "sealed",
@@ -9946,6 +9994,9 @@ window.GLOSSARY = [
    [
     "Acts", 8,
     [ 28, 30, 34 ] ],
+   [
+    "Acts", 28,
+    [ 25 ] ],
    [
     "Romans", 1,
     [ 2 ] ] ]
@@ -10608,7 +10659,10 @@ window.GLOSSARY = [
     [ 10 ] ],
    [
     "Acts", 26,
-    [ 20 ] ] ]
+    [ 20 ] ],
+   [
+    "Acts", 28,
+    [ 21 ] ] ]
  },
  {
   "id": "bethlehem",
@@ -10882,6 +10936,9 @@ window.GLOSSARY = [
    [
     "Acts", 26,
     [ 17, 20, 23 ] ],
+   [
+    "Acts", 28,
+    [ 28 ] ],
    [
     "Romans", 1,
     [ 13 ] ],
@@ -11487,7 +11544,10 @@ window.GLOSSARY = [
     [ 8 ] ],
    [
     "Acts", 20,
-    [ 25 ] ] ]
+    [ 25 ] ],
+   [
+    "Acts", 28,
+    [ 23, 31 ] ] ]
  },
  {
   "id": "wind",
@@ -11918,6 +11978,9 @@ window.GLOSSARY = [
     "Acts", 16,
     [ 17 ] ],
    [
+    "Acts", 28,
+    [ 28 ] ],
+   [
     "Romans", 1,
     [ 16 ] ] ]
  },
@@ -12204,7 +12267,10 @@ window.GLOSSARY = [
     [ 7, 8, 9, 10, 11, 15, 23 ] ],
    [
     "Acts", 23,
-    [ 8, 9 ] ] ]
+    [ 8, 9 ] ],
+   [
+    "Acts", 27,
+    [ 23 ] ] ]
  },
  {
   "id": "sepulchre",
@@ -12698,6 +12764,9 @@ window.GLOSSARY = [
     "Acts", 26,
     [ 20, 23 ] ],
    [
+    "Acts", 28,
+    [ 2, 21 ] ],
+   [
     "Romans", 1,
     [ 19 ] ],
    [
@@ -12843,7 +12912,10 @@ window.GLOSSARY = [
     [ 4, 10 ] ],
    [
     "Acts", 22,
-    [ 16 ] ] ]
+    [ 16 ] ],
+   [
+    "Acts", 28,
+    [ 14 ] ] ]
  },
  {
   "id": "testimony",
@@ -14250,7 +14322,13 @@ window.GLOSSARY = [
     [ 8, 10, 11, 12, 21 ] ],
    [
     "Acts", 26,
-    [ 32 ] ] ]
+    [ 32 ] ],
+   [
+    "Acts", 27,
+    [ 24 ] ],
+   [
+    "Acts", 28,
+    [ 19 ] ] ]
  },
  {
   "id": "soldiers",
@@ -14280,7 +14358,13 @@ window.GLOSSARY = [
     [ 2, 23, 24, 32, 34 ] ],
    [
     "Acts", 23,
-    [ 10, 23, 31 ] ] ]
+    [ 10, 23, 31 ] ],
+   [
+    "Acts", 27,
+    [ 31, 32, 42 ] ],
+   [
+    "Acts", 28,
+    [ 16 ] ] ]
  },
  {
   "id": "mary-of-cleophas",
@@ -14898,7 +14982,10 @@ window.GLOSSARY = [
     [ 33, 34, 35 ] ],
    [
     "Luke", 18,
-    [ 12 ] ] ]
+    [ 12 ] ],
+   [
+    "Acts", 27,
+    [ 33 ] ] ]
  },
  {
   "id": "solemn-assembly",
@@ -18692,6 +18779,9 @@ window.GLOSSARY = [
     "Luke", 21,
     [ 22 ] ],
    [
+    "Acts", 28,
+    [ 4 ] ],
+   [
     "Romans", 3,
     [ 5 ] ] ]
  },
@@ -22386,7 +22476,10 @@ window.GLOSSARY = [
     [ 38, 39 ] ],
    [
     "John", 4,
-    [ 52 ] ] ]
+    [ 52 ] ],
+   [
+    "Acts", 28,
+    [ 8 ] ] ]
  },
  {
   "id": "divers",
@@ -23175,7 +23268,10 @@ window.GLOSSARY = [
     [ 19 ] ],
    [
     "Acts", 13,
-    [ 46 ] ] ]
+    [ 46 ] ],
+   [
+    "Acts", 28,
+    [ 27 ] ] ]
  },
  {
   "id": "kinsfolk",
@@ -26373,7 +26469,10 @@ window.GLOSSARY = [
     [ 27 ] ],
    [
     "Acts", 18,
-    [ 26 ] ] ]
+    [ 26 ] ],
+   [
+    "Acts", 28,
+    [ 23 ] ] ]
  },
  {
   "id": "hinder-part",
@@ -27171,7 +27270,10 @@ window.GLOSSARY = [
     [ 33 ] ],
    [
     "Acts", 23,
-    [ 11 ] ] ]
+    [ 11 ] ],
+   [
+    "Acts", 27,
+    [ 22, 25 ] ] ]
  },
  {
   "id": "boisterous",
@@ -32781,7 +32883,10 @@ window.GLOSSARY = [
     [ 27 ] ],
    [
     "Acts", 24,
-    [ 18 ] ] ]
+    [ 18 ] ],
+   [
+    "Acts", 27,
+    [ 2 ] ] ]
  },
  {
   "id": "phrygia",
@@ -32817,7 +32922,10 @@ window.GLOSSARY = [
   "refs": [
    [
     "Acts", 2,
-    [ 11 ] ] ]
+    [ 11 ] ],
+   [
+    "Acts", 27,
+    [ 7, 12, 13, 21 ] ] ]
  },
  {
   "id": "arabians",
@@ -32845,6 +32953,9 @@ window.GLOSSARY = [
    [
     "Acts", 23,
     [ 11 ] ],
+   [
+    "Acts", 28,
+    [ 14, 16 ] ],
    [
     "Romans", 1,
     [ 7, 15 ] ] ]
@@ -33198,7 +33309,10 @@ window.GLOSSARY = [
     [ 39 ] ],
    [
     "Acts", 21,
-    [ 3, 16 ] ] ]
+    [ 3, 16 ] ],
+   [
+    "Acts", 27,
+    [ 4 ] ] ]
  },
  {
   "id": "high-priests-kindred",
@@ -33603,7 +33717,10 @@ window.GLOSSARY = [
     [ 3 ] ],
    [
     "Acts", 23,
-    [ 34 ] ] ]
+    [ 34 ] ],
+   [
+    "Acts", 27,
+    [ 5 ] ] ]
  },
  {
   "id": "suborned",
@@ -33759,7 +33876,10 @@ window.GLOSSARY = [
     [ 3 ] ],
    [
     "Acts", 21,
-    [ 2 ] ] ]
+    [ 2 ] ],
+   [
+    "Acts", 27,
+    [ 12 ] ] ]
  },
  {
   "id": "caesarea",
@@ -34007,6 +34127,12 @@ window.GLOSSARY = [
     "Acts", 26,
     [ 1, 24, 28, 29 ] ],
    [
+    "Acts", 27,
+    [ 1, 3, 9, 11, 21, 24, 31, 33, 43 ] ],
+   [
+    "Acts", 28,
+    [ 3, 8, 15, 16, 17, 25, 30 ] ],
+   [
     "Romans", 1,
     [ 1 ] ] ]
  },
@@ -34053,7 +34179,10 @@ window.GLOSSARY = [
     [ 24 ] ],
    [
     "Acts", 15,
-    [ 38 ] ] ]
+    [ 38 ] ],
+   [
+    "Acts", 27,
+    [ 5 ] ] ]
  },
  {
   "id": "sect",
@@ -34071,7 +34200,10 @@ window.GLOSSARY = [
     [ 5 ] ],
    [
     "Acts", 26,
-    [ 5 ] ] ]
+    [ 5 ] ],
+   [
+    "Acts", 28,
+    [ 22 ] ] ]
  },
  {
   "id": "subverting",
@@ -35304,7 +35436,10 @@ window.GLOSSARY = [
   "refs": [
    [
     "Acts", 17,
-    [ 1, 11, 13 ] ] ]
+    [ 1, 11, 13 ] ],
+   [
+    "Acts", 27,
+    [ 2 ] ] ]
  },
  {
   "id": "amphipolis",
@@ -35562,7 +35697,13 @@ window.GLOSSARY = [
   "refs": [
    [
     "Acts", 18,
-    [ 24 ] ] ]
+    [ 24 ] ],
+   [
+    "Acts", 27,
+    [ 6 ] ],
+   [
+    "Acts", 28,
+    [ 11 ] ] ]
  },
  {
   "id": "italy",
@@ -35571,7 +35712,10 @@ window.GLOSSARY = [
   "refs": [
    [
     "Acts", 18,
-    [ 2 ] ] ]
+    [ 2 ] ],
+   [
+    "Acts", 27,
+    [ 1, 6 ] ] ]
  },
  {
   "id": "aquila",
@@ -36348,7 +36492,10 @@ window.GLOSSARY = [
     [ 29 ] ],
    [
     "Acts", 20,
-    [ 4 ] ] ]
+    [ 4 ] ],
+   [
+    "Acts", 27,
+    [ 2 ] ] ]
  },
  {
   "id": "alexander-of-ephesus",
@@ -36811,6 +36958,9 @@ window.GLOSSARY = [
   "kind": "person",
   "name": "Barbarians (anyone who didn't speak Greek)",
   "refs": [
+   [
+    "Acts", 28,
+    [ 4 ] ],
    [
     "Romans", 1,
     [ 14 ] ] ]
@@ -37366,5 +37516,413 @@ window.GLOSSARY = [
    [
     "Romans", 4,
     [ 20 ] ] ]
+ },
+ {
+  "id": "julius",
+  "kind": "person",
+  "name": "Julius (the centurion of Augustus’ band, who guarded Paul)",
+  "refs": [
+   [
+    "Acts", 27,
+    [ 1, 3, 6, 11, 31, 43 ] ] ]
+ },
+ {
+  "id": "augustus-band",
+  "kind": "term",
+  "name": "Augustus’ band (an imperial cohort of the Roman army)",
+  "refs": [
+   [
+    "Acts", 27,
+    [ 1 ] ] ]
+ },
+ {
+  "id": "adramyttium",
+  "kind": "place",
+  "name": "Adramyttium (a port near Troas, home of the first ship)",
+  "refs": [
+   [
+    "Acts", 27,
+    [ 2 ] ] ]
+ },
+ {
+  "id": "sidon",
+  "kind": "place",
+  "name": "Sidon (the Phoenician port where Paul visited friends)",
+  "refs": [
+   [
+    "Acts", 27,
+    [ 3 ] ] ]
+ },
+ {
+  "id": "myra",
+  "kind": "place",
+  "name": "Myra (a port city of Lycia where they changed ships)",
+  "refs": [
+   [
+    "Acts", 27,
+    [ 5 ] ] ]
+ },
+ {
+  "id": "cnidus",
+  "kind": "place",
+  "name": "Cnidus (the headland on the south-west tip of Asia Minor)",
+  "refs": [
+   [
+    "Acts", 27,
+    [ 7 ] ] ]
+ },
+ {
+  "id": "salmone",
+  "kind": "place",
+  "name": "Salmone (the eastern cape of Crete)",
+  "refs": [
+   [
+    "Acts", 27,
+    [ 7 ] ] ]
+ },
+ {
+  "id": "fair-havens",
+  "kind": "place",
+  "name": "Fair Havens (a small bay on Crete’s south coast)",
+  "refs": [
+   [
+    "Acts", 27,
+    [ 8 ] ] ]
+ },
+ {
+  "id": "lasea",
+  "kind": "place",
+  "name": "Lasea (a city on Crete near Fair Havens)",
+  "refs": [
+   [
+    "Acts", 27,
+    [ 8 ] ] ]
+ },
+ {
+  "id": "clauda",
+  "kind": "place",
+  "name": "Clauda (a small island south of Crete)",
+  "refs": [
+   [
+    "Acts", 27,
+    [ 16 ] ] ]
+ },
+ {
+  "id": "adria",
+  "kind": "place",
+  "name": "Adria (the sea between Greece, Italy and Africa)",
+  "refs": [
+   [
+    "Acts", 27,
+    [ 27 ] ] ]
+ },
+ {
+  "id": "euroclydon",
+  "kind": "term",
+  "name": "Euroclydon (a violent north-easterly wind)",
+  "refs": [
+   [
+    "Acts", 27,
+    [ 14 ] ] ]
+ },
+ {
+  "id": "quicksands",
+  "kind": "term",
+  "name": "The quicksands (the Syrtis, shoals off Libya)",
+  "refs": [
+   [
+    "Acts", 27,
+    [ 17 ] ] ]
+ },
+ {
+  "id": "the-fast",
+  "kind": "term",
+  "name": "The fast (the Day of Atonement, about the start of October)",
+  "refs": [
+   [
+    "Acts", 27,
+    [ 9 ] ] ]
+ },
+ {
+  "id": "lading",
+  "kind": "term",
+  "name": "Lading (the cargo)",
+  "refs": [
+   [
+    "Acts", 27,
+    [ 10 ] ] ]
+ },
+ {
+  "id": "commodious",
+  "kind": "term",
+  "name": "Commodious (suitable, convenient)",
+  "refs": [
+   [
+    "Acts", 27,
+    [ 12 ] ] ]
+ },
+ {
+  "id": "undergirding",
+  "kind": "term",
+  "name": "Undergirding the ship (binding cables round the hull)",
+  "refs": [
+   [
+    "Acts", 27,
+    [ 17 ] ] ]
+ },
+ {
+  "id": "strake-sail",
+  "kind": "term",
+  "name": "Strake sail (lowered the gear to slow the ship)",
+  "refs": [
+   [
+    "Acts", 27,
+    [ 17 ] ] ]
+ },
+ {
+  "id": "tackling",
+  "kind": "term",
+  "name": "Tackling (a ship’s rigging and gear)",
+  "refs": [
+   [
+    "Acts", 27,
+    [ 19 ] ] ]
+ },
+ {
+  "id": "abstinence",
+  "kind": "term",
+  "name": "Abstinence (going without food)",
+  "refs": [
+   [
+    "Acts", 27,
+    [ 21 ] ] ]
+ },
+ {
+  "id": "good-cheer",
+  "kind": "term",
+  "name": "Good cheer (take heart)",
+  "refs": [
+   [
+    "Acts", 27,
+    [ 22, 25, 36 ] ] ]
+ },
+ {
+  "id": "sounded",
+  "kind": "term",
+  "name": "Sounded (measured the depth with a lead line)",
+  "refs": [
+   [
+    "Acts", 27,
+    [ 28 ] ] ]
+ },
+ {
+  "id": "fathom",
+  "kind": "term",
+  "name": "A fathom (six feet of depth)",
+  "refs": [
+   [
+    "Acts", 27,
+    [ 28 ] ] ]
+ },
+ {
+  "id": "anchors",
+  "kind": "term",
+  "name": "Anchors (four dropped from the stern)",
+  "refs": [
+   [
+    "Acts", 27,
+    [ 29, 30, 40 ] ] ]
+ },
+ {
+  "id": "under-colour",
+  "kind": "term",
+  "name": "Under colour (under a pretense)",
+  "refs": [
+   [
+    "Acts", 27,
+    [ 30 ] ] ]
+ },
+ {
+  "id": "creek",
+  "kind": "term",
+  "name": "A creek (a small bay or inlet)",
+  "refs": [
+   [
+    "Acts", 27,
+    [ 39 ] ] ]
+ },
+ {
+  "id": "hoised",
+  "kind": "term",
+  "name": "Hoised (hoisted)",
+  "refs": [
+   [
+    "Acts", 27,
+    [ 40 ] ] ]
+ },
+ {
+  "id": "rudder-bands",
+  "kind": "term",
+  "name": "Rudder bands (the ropes that held the steering oars up)",
+  "refs": [
+   [
+    "Acts", 27,
+    [ 40 ] ] ]
+ },
+ {
+  "id": "two-seas-met",
+  "kind": "term",
+  "name": "A place where two seas met (a sandbar between two bodies of water)",
+  "refs": [
+   [
+    "Acts", 27,
+    [ 41 ] ] ]
+ },
+ {
+  "id": "melita",
+  "kind": "place",
+  "name": "Melita (the island of Malta)",
+  "refs": [
+   [
+    "Acts", 28,
+    [ 1 ] ] ]
+ },
+ {
+  "id": "publius",
+  "kind": "person",
+  "name": "Publius (the chief man of Melita)",
+  "refs": [
+   [
+    "Acts", 28,
+    [ 7, 8 ] ] ]
+ },
+ {
+  "id": "viper",
+  "kind": "term",
+  "name": "The viper (the venomous snake on Melita)",
+  "refs": [
+   [
+    "Acts", 28,
+    [ 3, 4, 5 ] ] ]
+ },
+ {
+  "id": "bloody-flux",
+  "kind": "term",
+  "name": "A bloody flux (dysentery)",
+  "refs": [
+   [
+    "Acts", 28,
+    [ 8 ] ] ]
+ },
+ {
+  "id": "castor-and-pollux",
+  "kind": "term",
+  "name": "Castor and Pollux (the twin gods of sailors, the ship’s sign)",
+  "refs": [
+   [
+    "Acts", 28,
+    [ 11 ] ] ]
+ },
+ {
+  "id": "fetched-a-compass",
+  "kind": "term",
+  "name": "Fetched a compass (sailed a circular route)",
+  "refs": [
+   [
+    "Acts", 28,
+    [ 13 ] ] ]
+ },
+ {
+  "id": "syracuse",
+  "kind": "place",
+  "name": "Syracuse (the chief city of Sicily)",
+  "refs": [
+   [
+    "Acts", 28,
+    [ 12 ] ] ]
+ },
+ {
+  "id": "rhegium",
+  "kind": "place",
+  "name": "Rhegium (a port at the toe of Italy)",
+  "refs": [
+   [
+    "Acts", 28,
+    [ 13 ] ] ]
+ },
+ {
+  "id": "puteoli",
+  "kind": "place",
+  "name": "Puteoli (the great port on the Bay of Naples)",
+  "refs": [
+   [
+    "Acts", 28,
+    [ 13 ] ] ]
+ },
+ {
+  "id": "appii-forum",
+  "kind": "place",
+  "name": "Appii Forum (a market town on the Appian Way, 43 miles from Rome)",
+  "refs": [
+   [
+    "Acts", 28,
+    [ 15 ] ] ]
+ },
+ {
+  "id": "three-taverns",
+  "kind": "place",
+  "name": "The Three Taverns (a stop on the Appian Way, 33 miles from Rome)",
+  "refs": [
+   [
+    "Acts", 28,
+    [ 15 ] ] ]
+ },
+ {
+  "id": "brethren-believers",
+  "kind": "person",
+  "name": "The brethren (fellow believers)",
+  "refs": [
+   [
+    "Acts", 28,
+    [ 14, 15, 17, 21 ] ] ]
+ },
+ {
+  "id": "captain-of-the-guard",
+  "kind": "person",
+  "name": "The captain of the guard (the officer over Rome’s prisoners)",
+  "refs": [
+   [
+    "Acts", 28,
+    [ 16 ] ] ]
+ },
+ {
+  "id": "hope-of-israel",
+  "kind": "term",
+  "name": "The hope of Israel (the Messiah)",
+  "refs": [
+   [
+    "Acts", 28,
+    [ 20 ] ] ]
+ },
+ {
+  "id": "waxed-gross",
+  "kind": "term",
+  "name": "Waxed gross (grown dull and hard)",
+  "refs": [
+   [
+    "Matthew", 13,
+    [ 15 ] ],
+   [
+    "Acts", 28,
+    [ 27 ] ] ]
+ },
+ {
+  "id": "hired-house",
+  "kind": "term",
+  "name": "His own hired house (the rented place where Paul lived under guard)",
+  "refs": [
+   [
+    "Acts", 28,
+    [ 30 ] ] ]
  }
 ];
