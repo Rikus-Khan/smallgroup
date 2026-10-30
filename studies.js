@@ -6585,5 +6585,119 @@ window.STUDIES = [
       },
       "big": "Repentance is a turned heart that shows up in a changed life, and no family name can stand in for it. Jesus is the Father's beloved Son, and He came as a son of Adam for every man."
     }
+  },
+  {
+    "id": "luke-04",
+    "type": "chapter",
+    "book": "Luke",
+    "ch": 4,
+    "date": "2026-10-29",
+    "title": "Luke 4",
+    "sub": "The Spirit of the Lord is upon me",
+    "about": "Jesus beats the devil with the word of God, is thrown out of His hometown, and sets people free in Capernaum.",
+    "tags": [
+      "Temptation",
+      "God's word",
+      "Freedom",
+      "Grace",
+      "Authority",
+      "Prayer"
+    ],
+    "url": "studies/luke-04.html",
+    "overview": {
+      "where": "The wilderness of Judaea and the temple in Jerusalem, then Galilee: the synagogue at Nazareth, and Capernaum by the lake",
+      "when": "Right after His baptism, at the start of His ministry, about AD 27–29",
+      "people": [
+        "jesus",
+        "holy-spirit",
+        "satan",
+        "isaiah",
+        "elijah",
+        "widow-of-sarepta",
+        "elisha",
+        "naaman",
+        "simon-peter",
+        "simons-wifes-mother"
+      ],
+      "places": [
+        "jordan",
+        "wilderness",
+        "jerusalem",
+        "pinnacle-of-the-temple",
+        "galilee",
+        "nazareth",
+        "synagogue",
+        "zarephath",
+        "capernaum"
+      ],
+      "story": [
+        "Full of the Holy Ghost, Jesus is led into the wilderness and tempted by the devil for forty days. Three times He answers, “It is written,” and the devil leaves Him for a season (1–13).",
+        "Back in Galilee, Jesus reads Isaiah in the synagogue at Nazareth: “The Spirit of the Lord is upon me.” He says, “This day is this scripture fulfilled” (14–21).",
+        "His hometown wonders at Him but asks, “Is not this Joseph’s son?” He reminds them of the widow of Sarepta and Naaman the Syrian, and they try to throw Him off a cliff. He walks through the middle of them (22–30).",
+        "In Capernaum His word has power. He casts an unclean devil out of a man in the synagogue and heals Simon’s wife’s mother of a great fever (31–39).",
+        "At sunset He lays His hands on every sick person brought to Him. At daybreak He goes to a desert place, and won’t be kept: He must preach the kingdom of God to other cities also (40–44)."
+      ],
+      "key": {
+        "ref": "Luke 4:18",
+        "text": "The Spirit of the Lord is upon me, because he hath anointed me to preach the gospel to the poor; he hath sent me to heal the brokenhearted, to preach deliverance to the captives, and recovering of sight to the blind, to set at liberty them that are bruised,"
+      },
+      "big": "Jesus beat temptation with the word of God, and He came for the poor, the brokenhearted, the captive, the blind, and the bruised. He still sets captives free, one man at a time."
+    }
+  },
+  {
+    "id": "luke-05",
+    "type": "chapter",
+    "book": "Luke",
+    "ch": 5,
+    "date": "2026-10-29",
+    "title": "Luke 5",
+    "sub": "Launch out into the deep",
+    "about": "Fishermen leave their nets, a leper is touched, a crippled man walks home forgiven, and a tax collector throws a feast for sinners.",
+    "tags": [
+      "Obedience",
+      "Calling",
+      "Cleansing",
+      "Forgiveness",
+      "Grace for sinners",
+      "New life"
+    ],
+    "url": "studies/luke-05.html",
+    "overview": {
+      "where": "The shore of the lake of Gennesaret (the Sea of Galilee), towns of Galilee, a crowded house, and Levi's tax booth and home",
+      "when": "Early in Jesus' ministry in Galilee, soon after Luke 4",
+      "people": [
+        "jesus",
+        "simon-peter",
+        "sons-of-zebedee",
+        "pharisees",
+        "doctors",
+        "scribes",
+        "sick-of-the-palsy",
+        "levi-matthew",
+        "publicans",
+        "sinners",
+        "john-the-baptist"
+      ],
+      "places": [
+        "sea-of-galilee",
+        "galilee",
+        "judaea",
+        "jerusalem",
+        "wilderness",
+        "receipt-of-custom"
+      ],
+      "story": [
+        "Jesus teaches from Simon’s boat, then tells him to launch out into the deep. After a night of catching nothing, Simon obeys: “nevertheless at thy word.” The nets break and two boats nearly sink (1–7).",
+        "Simon falls at Jesus’ knees: “Depart from me; for I am a sinful man, O Lord.” Jesus says, “Fear not; from henceforth thou shalt catch men,” and they forsake all to follow Him (8–11).",
+        "A man full of leprosy says, “If thou wilt, thou canst make me clean.” Jesus touches him: “I will: be thou clean.” Then He withdraws into the wilderness to pray (12–16).",
+        "Friends let a paralyzed man down through the roof. Jesus forgives his sins, and to prove He has that power, tells him to rise. He walks home carrying his bed, glorifying God (17–26).",
+        "Levi the publican leaves all to follow Jesus and throws a feast. To the grumbling Pharisees Jesus says the sick need a physician, and new wine must go into new bottles (27–39)."
+      ],
+      "key": {
+        "ref": "Luke 5:32",
+        "text": "I came not to call the righteous, but sinners to repentance."
+      },
+      "big": "Jesus came for sinners, not for people who think they're fine. He cleanses the untouchable, forgives what no one else can, and makes a man new, not patched."
+    }
   }
 ];

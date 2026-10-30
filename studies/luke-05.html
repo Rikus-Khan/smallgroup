@@ -1,0 +1,603 @@
+<!doctype html>
+<html lang="en" data-theme="slate">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Luke 5</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="../assets/fonts.css">
+<link rel="stylesheet" href="../assets/deck.css">
+<link rel="stylesheet" href="../assets/themes.css">
+<style>
+/* lk05-roof: a house cut open; the roof tiles come off and a man on a bed is let down on ropes into the crowd */
+.lk05-wall { fill: var(--surface); stroke: var(--line-strong); stroke-width: 3; }
+.lk05-beam { fill: var(--leather); }
+.lk05-stair { fill: none; stroke: var(--leather-light); stroke-width: 6; stroke-linejoin: round; }
+.lk05-ground { stroke: var(--ink-soft); stroke-width: 2; }
+.lk05-tile { fill: var(--leather-light); stroke: var(--leather); stroke-width: 1.5; transform-box: fill-box; transform-origin: center; transition: transform 1.1s cubic-bezier(.4,.1,.3,1), opacity 1.1s ease; transition-delay: calc(var(--k) * 120ms + .5s); }
+.slide.active .lk05-tile { transform: translate(var(--dx), -60px) rotate(var(--r)); opacity: 0; }
+.lk05-friend { fill: var(--ink-soft); }
+.lk05-crowd { fill: color-mix(in srgb, var(--ink-soft) 55%, transparent); }
+.lk05-jesus { fill: var(--accent); }
+.lk05-rope { fill: var(--ink); transform-box: fill-box; transform-origin: 50% 0; transition: transform 2.6s ease-in-out 1.8s; }
+.slide.active .lk05-rope { transform: scaleY(14); }
+.lk05-bed { transition: transform 2.6s ease-in-out 1.8s; }
+.slide.active .lk05-bed { transform: translateY(132px); }
+.lk05-mat { fill: var(--warm); stroke: var(--leather); stroke-width: 2; }
+.lk05-man { fill: var(--ink); }
+.lk05-cap { fill: var(--ink-soft); font-size: 15px; }
+
+/* lk05-skins: an old, stiff wineskin and a new one; new wine swells both; the old one splits */
+.lk05-skin { stroke: var(--leather); stroke-width: 3; transform-box: fill-box; transform-origin: 50% 100%; transition: transform 1.6s cubic-bezier(.3,.7,.3,1); }
+.lk05-skin.old { fill: color-mix(in srgb, var(--leather) 70%, var(--surface)); }
+.lk05-skin.new { fill: var(--leather-light); }
+.lk05-crack { fill: none; stroke: var(--surface); stroke-width: 2; stroke-linecap: round; opacity: .8; }
+.lk05-split { fill: none; stroke: var(--danger); stroke-width: 4; stroke-linecap: round; stroke-dasharray: 1; stroke-dashoffset: 1; transition: stroke-dashoffset .6s ease 1.2s; }
+.lk05-drop { fill: var(--wine); opacity: 0; }
+.slide:has(.lk05-go.on) .lk05-skin { transform: scale(1.12, 1.1); }
+.slide:has(.lk05-go.on) .lk05-split { stroke-dashoffset: 0; }
+.slide:has(.lk05-go.on) .lk05-drop { animation: lk05-drip 1.4s ease-in infinite; animation-delay: calc(1.6s + var(--k) * .35s); }
+@keyframes lk05-drip { 0% { opacity: 0; transform: translateY(0); } 15% { opacity: 1; } 100% { opacity: 0; transform: translateY(70px); } }
+.lk05-tag { font-size: 17px; font-weight: 700; fill: var(--ink); }
+.lk05-sub { font-size: 14px; fill: var(--ink-soft); }
+.lk05-burst { font-size: 15px; font-weight: 700; fill: var(--danger); opacity: 0; transition: opacity .6s ease 1.6s; }
+.lk05-ok { font-size: 15px; font-weight: 700; fill: var(--accent-hot); opacity: 0; transition: opacity .6s ease 1.6s; }
+.slide:has(.lk05-go.on) .lk05-burst, .slide:has(.lk05-go.on) .lk05-ok { opacity: 1; }
+</style>
+</head>
+<body>
+<main class="deck" id="deck">
+
+<!-- ======================= OPENING ======================= -->
+<section class="slide title">
+  <div class="inner">
+    <div class="emblem rise"></div>
+    <h1 class="rise" style="--d:1">Luke 5</h1>
+    <p class="sub rise" style="--d:3">Launch out into the deep</p>
+    <p class="tag rise" style="--d:5">Fishermen leave their nets, a leper is touched, a crippled man walks home forgiven, and a tax collector throws a feast for sinners.</p>
+  </div>
+</section>
+
+<section class="slide watch">
+  <div class="inner">
+    <h2 class="rise">Things to watch for</h2>
+    <p class="lede rise" style="--d:1">Keep these questions in the back of your mind as we read. We'll come back to every one of them at the end.</p>
+    <ol class="seeds">
+      <li class="step"><span class="topic">Obedience</span><span class="seed-q">What did Simon do when Jesus' word didn't make sense to him?</span></li>
+      <li class="step"><span class="topic">Seeing yourself</span><span class="seed-q">What did Simon say when he saw who Jesus really was?</span></li>
+      <li class="step"><span class="topic">The touch</span><span class="seed-q">What did Jesus do for the leper that no one else would?</span></li>
+      <li class="step"><span class="topic">Forgiveness</span><span class="seed-q">How did Jesus prove He has power to forgive sins?</span></li>
+      <li class="step"><span class="topic">Sinners welcome</span><span class="seed-q">Who did Jesus say He came to call?</span></li>
+      <li class="step"><span class="topic">New life</span><span class="seed-q">What do the new wine and the new bottles teach us about the life Jesus brings?</span></li>
+    </ol>
+  </div>
+</section>
+
+<!-- ======================= PART ONE: FISHERS ======================= -->
+<section class="slide part">
+  <div class="inner">
+    <p class="part-n rise">Part one</p>
+    <h2 class="rise" style="--d:1">Launch out into the deep</h2>
+    <p class="range rise" style="--d:2">Verses 1–11</p>
+    <div class="rule"></div>
+    <p class="hook rise" style="--d:4">A long night, empty nets, and one word from Jesus.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="1-3" data-hl="he stood by the lake of Gennesaret|were washing their nets|he sat down, and taught the people out of the ship"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <div class="split">
+      <div class="stage">
+        <svg class="map" data-land viewBox="100 50 300 250" data-towns="Capernaum*:l, Bethsaida:r, Tiberias:l, Nazareth:l" role="img" aria-label="A map of Galilee. The lake of Gennesaret, also called the Sea of Galilee, lies in the Jordan valley. Capernaum and Bethsaida sit on its north shore, Tiberias on the west.">
+          <text class="map-water" x="292" y="160">the lake of</text>
+          <text class="map-water" x="292" y="176">Gennesaret</text>
+        </svg>
+      </div>
+      <div>
+        <h2 class="rise" style="--d:1">The lake of Gennesaret</h2>
+        <p class="note rise" style="--d:2">It's the Sea of Galilee by another name: a freshwater lake about 13 miles long and 8 wide, sitting about 700 feet below sea level. Fishing towns ringed the shore, Capernaum among them.</p>
+        <p class="note step">The fishermen had worked all night and were washing their nets, finished. Jesus borrowed Simon's boat and sat in it a little off the shore. The water carried His voice to the crowd on the slope.</p>
+        <p class="note step">Simon already knew Jesus. He'd seen his mother-in-law healed (4:38–39). Today Jesus asks for his boat, then for a lot more.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="slide verse" data-v="4-7" data-hl="Launch out into the deep|we have toiled all the night, and have taken nothing: nevertheless at thy word I will let down the net|their net brake"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise">“Nevertheless at thy word”</h2>
+    <div class="talk">
+      <p class="rise" style="--d:1"><small>Jesus</small>Launch out into the deep, and let down your nets for a draught.</p>
+      <p class="reply step"><small>Simon</small>Master, we have toiled all the night, and have taken nothing: nevertheless at thy word I will let down the net.<br><span class="flag">tired, doubtful, and obedient</span></p>
+    </div>
+    <p class="note step">Fishermen on that lake fished at night, near the shore. Out in the deep, in broad daylight, every fisherman knew you'd catch nothing. A carpenter's son was telling a professional how to do his job.</p>
+    <p class="note step">Simon didn't feel like it, and he didn't see the point. He did it anyway, because Jesus said so. Faith doesn't wait until the feelings show up.</p>
+    <p class="note step">Some of us have <em>toiled all the night</em> for years, trying to fix our lives in our own strength, and come up with nothing. The turn starts with one word: <em>nevertheless</em>.</p>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="7" data-hl="filled both the ships, so that they began to sink"></blockquote>
+    <div class="dots rows fish" data-dots="240" style="--cols:30;--pace:9ms;gap:4px 5px;max-width:46rem" aria-label="Fish pour in, row after row, until the net is full."></div>
+    <p class="dots-cap rise" style="--d:2;max-width:46rem"><span>all night: nothing</span><b>one word: more than the nets could hold</b></p>
+    <p class="note step">All night: nothing. One word from Jesus: so many fish the net tore and two boats nearly sank. Luke doesn't count them. He tells us it was more than they could handle.</p>
+    <p class="note step">Jesus didn't need Simon's skill. He needed Simon's yes.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="8-11" data-hl="Depart from me; for I am a sinful man, O Lord|Fear not; from henceforth thou shalt catch men|they forsook all, and followed him"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="8"></blockquote>
+    <h2 class="rise" style="--d:1">From “Master” to “Lord”</h2>
+    <div class="rename">
+      <span class="old rise" style="--d:2">“Master”</span>
+      <span class="arrow step n2">→</span>
+      <span class="new step">“O Lord”</span>
+      <span class="gloss step">In verse 5 Jesus was the boss on the boat. In verse 8 Simon is on his knees in the fish.</span>
+    </div>
+    <p class="note step">Simon didn't say, “Look what I caught.” He said, <em>“I am a sinful man.”</em> When a man really sees who Jesus is, the first thing he sees is himself. Isaiah said the same when he saw the Lord:</p>
+    <blockquote class="quote step"><p>“Then said I, Woe is me! for I am undone; because I am a man of unclean lips, and I dwell in the midst of a people of unclean lips: for mine eyes have seen the King, the LORD of hosts.”</p><cite>Isaiah 6:5</cite></blockquote>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="10" data-hl="Fear not; from henceforth thou shalt catch men"></blockquote>
+    <h2 class="rise" style="--d:1">“Fear not”</h2>
+    <p class="note rise" style="--d:2">Simon said, <em>“Depart from me.”</em> Jesus didn't. He said, <em>“Fear not,”</em> and gave the sinful man a job.</p>
+    <div class="morph">
+      <span class="big step">ζωγρέω</span>
+      <span class="say step">said <em class="gk">zōgreō</em></span>
+      <span class="means step">“to catch alive”</span>
+    </div>
+    <p class="note step">Fish are caught to die. Men are caught to live. And notice when they left it all: on the best day of fishing they ever had. They <em>forsook all</em> at the top, not because the business failed, but because they'd found Someone better.</p>
+  </div>
+</section>
+
+<!-- ======================= PART TWO: CLEAN AND FORGIVEN ======================= -->
+<section class="slide part">
+  <div class="inner">
+    <p class="part-n rise">Part two</p>
+    <h2 class="rise" style="--d:1">I will: be thou clean</h2>
+    <p class="range rise" style="--d:2">Verses 12–26</p>
+    <div class="rule"></div>
+    <p class="hook rise" style="--d:4">A man nobody would touch, and a man who couldn't walk.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="12-14" data-hl="a man full of leprosy|Lord, if thou wilt, thou canst make me clean|he put forth his hand, and touched him, saying, I will: be thou clean|shew thyself to the priest"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise">“Full of leprosy”</h2>
+    <p class="note rise" style="--d:1">In the Bible, <em>leprosy</em> covered a number of serious skin diseases. Luke, a doctor, says this man was <em>full</em> of it: far gone. The Law of Moses said what his life had to look like:</p>
+    <blockquote class="quote step"><p>“And the leper in whom the plague is, his clothes shall be rent, and his head bare, and he shall put a covering upon his upper lip, and shall cry, Unclean, unclean.”</p><cite>Leviticus 13:45</cite></blockquote>
+    <blockquote class="quote step"><p>“All the days wherein the plague shall be in him he shall be defiled; he is unclean: he shall dwell alone; without the camp shall his habitation be.”</p><cite>Leviticus 13:46</cite></blockquote>
+    <p class="note step">Torn clothes, shouting <em>“Unclean!”</em> so people could get out of the way, living alone outside town. No work, no family, no worship, no touch. Maybe for years.</p>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="13" data-hl="touched him"></blockquote>
+    <h2 class="rise" style="--d:1">He touched him</h2>
+    <div class="ifthen step">
+      <div class="if"><small>He said</small>“If thou wilt, thou canst.”</div>
+      <span class="arrow" aria-hidden="true">→</span>
+      <div class="then"><small>Jesus said</small>“I will: be thou clean.”</div>
+    </div>
+    <p class="note step">The man had no doubt Jesus <em>could</em>. He wasn't sure Jesus <em>would</em>, not for someone like him. Jesus answered with His hand first. Touching a leper made a man unclean, but this time the uncleanness didn't spread to Jesus. The cleanness spread to the man.</p>
+    <p class="note step">If you've felt like the man nobody wants to get close to, hear it: He is willing. <em>“Moved with compassion”</em> (Mark 1:41).</p>
+    <p class="note step">Then: go to the priest. The priest would look him over and declare him clean (Leviticus 14), and he could go home to his family and his town again.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="15-16" data-hl="great multitudes came together to hear|he withdrew himself into the wilderness, and prayed"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="16"></blockquote>
+    <h2 class="rise" style="--d:1">Luke keeps showing Him praying</h2>
+    <ol class="timeline" aria-label="The times Luke shows Jesus praying: at His baptism, 3:21; in the wilderness, 5:16; all night before choosing the twelve, 6:12; alone with His disciples, 9:18; on the mountain, 9:29; teaching them to pray, 11:1; in the garden, 22:41; and on the cross, 23:46.">
+      <li style="--k:0"><b>3:21</b><span>at His baptism</span></li>
+      <li class="lit" style="--k:1"><b>5:16</b><span>alone, with crowds waiting</span><small>today</small></li>
+      <li style="--k:2"><b>6:12</b><span>all night, before choosing the twelve</span></li>
+      <li style="--k:3"><b>9:18</b><span>“Whom say the people that I am?”</span></li>
+      <li style="--k:4"><b>9:29</b><span>on the mountain</span></li>
+      <li style="--k:5"><b>11:1</b><span>“Lord, teach us to pray”</span></li>
+      <li style="--k:6"><b>22:41</b><span>in the garden</span></li>
+      <li style="--k:7"><b>23:46</b><span>on the cross</span></li>
+    </ol>
+    <p class="note rise" style="--d:4">The busier He got, the more He pulled away to pray. Big crowds didn't replace time alone with the Father. If the Son of God needed that, we need it more.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="17-20" data-hl="the power of the Lord was present to heal them|let him down through the tiling with his couch|when he saw their faith|Man, thy sins are forgiven thee"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <div class="split">
+      <div class="stage">
+        <svg viewBox="0 0 520 340" role="img" aria-label="A house cut open to show the inside, packed with people around Jesus. On the flat roof, four friends pull up the tiles, and a man lying on a bed is let down on ropes into the middle of the room.">
+          <line class="lk05-ground" x1="0" y1="320" x2="520" y2="320"/>
+          <rect class="lk05-wall" x="40" y="120" width="380" height="200"/>
+          <path class="lk05-stair" d="M420 320 L420 300 L440 300 L440 270 L460 270 L460 240 L480 240 L480 210 L500 210 L500 120 L420 120"/>
+          <rect class="lk05-beam" x="30" y="110" width="170" height="14"/>
+          <rect class="lk05-beam" x="270" y="110" width="160" height="14"/>
+          <rect class="lk05-tile" style="--k:0;--dx:-40px;--r:-30deg" x="200" y="110" width="18" height="14"/>
+          <rect class="lk05-tile" style="--k:1;--dx:-20px;--r:20deg" x="218" y="110" width="18" height="14"/>
+          <rect class="lk05-tile" style="--k:2;--dx:20px;--r:-25deg" x="236" y="110" width="17" height="14"/>
+          <rect class="lk05-tile" style="--k:3;--dx:40px;--r:35deg" x="253" y="110" width="17" height="14"/>
+          <g class="lk05-friend">
+            <circle cx="180" cy="86" r="10"/><path d="M168 108 Q180 96 192 108 Z"/>
+            <circle cx="206" cy="80" r="10"/><path d="M194 108 Q206 92 218 108 Z"/>
+            <circle cx="264" cy="80" r="10"/><path d="M252 108 Q264 92 276 108 Z"/>
+            <circle cx="290" cy="86" r="10"/><path d="M278 108 Q290 96 302 108 Z"/>
+          </g>
+          <rect class="lk05-rope" x="210" y="108" width="2" height="10"/>
+          <rect class="lk05-rope" x="258" y="108" width="2" height="10"/>
+          <g class="lk05-bed">
+            <rect class="lk05-mat" x="200" y="118" width="70" height="10" rx="3"/>
+            <circle class="lk05-man" cx="210" cy="112" r="6"/>
+            <rect class="lk05-man" x="216" y="108" width="46" height="9" rx="4"/>
+          </g>
+          <g class="lk05-crowd">
+            <circle cx="70" cy="262" r="11"/><circle cx="96" cy="252" r="11"/><circle cx="122" cy="264" r="11"/><circle cx="84" cy="290" r="11"/><circle cx="116" cy="294" r="11"/>
+            <circle cx="320" cy="258" r="11"/><circle cx="346" cy="250" r="11"/><circle cx="372" cy="262" r="11"/><circle cx="396" cy="252" r="11"/><circle cx="334" cy="290" r="11"/><circle cx="364" cy="294" r="11"/><circle cx="394" cy="288" r="11"/>
+            <circle cx="150" cy="296" r="11"/><circle cx="300" cy="296" r="11"/>
+          </g>
+          <g class="lk05-jesus">
+            <circle cx="170" cy="236" r="12"/>
+            <path d="M154 300 L158 256 Q170 248 182 256 L186 300 Z"/>
+          </g>
+          <text class="lk05-cap" x="235" y="338" text-anchor="middle">“into the midst before Jesus”</text>
+        </svg>
+      </div>
+      <div>
+        <h2 class="rise" style="--d:1">Through the roof</h2>
+        <p class="note rise" style="--d:2">Houses had flat roofs, reached by an outside stair, made of beams covered with tiles or packed clay. The friends climbed up, opened a hole, and lowered their friend <em>“into the midst before Jesus.”</em></p>
+        <p class="note step">He couldn't get himself there. His friends carried him, and they wouldn't quit when the door was blocked. Mark says it took four of them. Jesus <em>saw their faith</em>.</p>
+        <p class="note step">Every man in recovery needs men like that: brothers who'll carry you when you can't walk, and tear up a roof to get you to Jesus.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="20"></blockquote>
+    <h2 class="rise" style="--d:1">First things first</h2>
+    <p class="note rise" style="--d:2">Everyone in that room could see what the man needed: his legs. Jesus went to what he needed more. His body was broken, but his sins were the deeper problem, the one that lasts forever.</p>
+    <p class="note step">We usually come to Jesus about the thing that hurts most right now: the habit, the health, the money, the marriage. He cares about all of it. But He starts with the heart.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="21-24" data-hl="Who can forgive sins, but God alone?|Whether is easier|the Son of man hath power upon earth to forgive sins|Arise, and take up thy couch"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="21" data-hl="Who can forgive sins, but God alone?"></blockquote>
+    <h2 class="rise" style="--d:1">They were right, and wrong</h2>
+    <p class="note rise" style="--d:2">The <em>scribes</em> (experts in the Law) and the <em>Pharisees</em> (the strictest religious party) got the theology right: only God can forgive sins. A sin is against God, so only He can let it go. Where they went wrong was about who was standing in front of them.</p>
+    <div class="columns">
+      <div class="col law step">
+        <p class="who">“Thy sins be forgiven thee”</p>
+        <h3>Easy to say</h3>
+        <p>Nobody can see whether it happened.</p>
+      </div>
+      <div class="col grace step">
+        <p class="who">“Rise up and walk”</p>
+        <h3>Easy to check</h3>
+        <p>Everybody will see whether it happens.</p>
+      </div>
+    </div>
+    <p class="note step">So Jesus did the one they could see, to prove the one they couldn't. <em>“That ye may know.”</em> Only God can forgive sins, and Jesus did. <em>Son of man</em> was His favorite name for Himself, taken from Daniel 7:13–14, the One given an everlasting kingdom.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="25-26" data-hl="took up that whereon he lay|departed to his own house, glorifying God|We have seen strange things to day"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="25" data-hl="took up that whereon he lay"></blockquote>
+    <h2 class="rise" style="--d:1">Carrying the bed that carried him</h2>
+    <p class="note rise" style="--d:2">He came in on a bed, through the roof, carried by others. He walked out the door carrying the bed, on his own two legs, praising God.</p>
+    <p class="note step">The thing that used to hold you down becomes your testimony. You carry it out the door as proof of what God did.</p>
+    <p class="note step"><em>“We have seen strange things to day.”</em> Strange means unheard of, never seen before. That's what forgiveness looks like up close.</p>
+  </div>
+</section>
+
+<!-- ======================= PART THREE: SINNERS ======================= -->
+<section class="slide part">
+  <div class="inner">
+    <p class="part-n rise">Part three</p>
+    <h2 class="rise" style="--d:1">Not the righteous, but sinners</h2>
+    <p class="range rise" style="--d:2">Verses 27–39</p>
+    <div class="rule"></div>
+    <p class="hook rise" style="--d:4">A tax man follows Jesus, throws a party, and the religious men don't like the guest list.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="27-29" data-hl="a publican, named Levi, sitting at the receipt of custom|Follow me|he left all, rose up, and followed him|a great company of publicans"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="27" data-hl="sitting at the receipt of custom"></blockquote>
+    <h2 class="rise" style="--d:1">Levi the publican</h2>
+    <p class="note rise" style="--d:2">A <em>publican</em> collected taxes and tolls for the rulers who answered to Rome. The <em>receipt of custom</em> was his booth, likely on the busy road through Capernaum. Publicans charged what they could get away with and kept the rest. People counted them traitors and thieves.</p>
+    <div class="columns">
+      <div class="col law step">
+        <p class="who">Simon the fisherman</p>
+        <h3>Could go back to his nets</h3>
+        <p>And one day he did, for a night (John 21:3).</p>
+      </div>
+      <div class="col grace step">
+        <p class="who">Levi the publican</p>
+        <h3>Could never get his booth back</h3>
+        <p>Somebody else would have it by morning.</p>
+      </div>
+    </div>
+    <p class="note step">Levi burned the bridge, and threw a party. His first move as a follower was to bring all his crooked friends to meet Jesus. We know him by his other name, Matthew, who wrote the first gospel:</p>
+    <blockquote class="quote step"><p>“And as Jesus passed forth from thence, he saw a man, named Matthew, sitting at the receipt of custom: and he saith unto him, Follow me. And he arose, and followed him.”</p><cite>Matthew 9:9</cite></blockquote>
+  </div>
+</section>
+
+<section class="slide verse" data-v="30-32" data-hl="Why do ye eat and drink with publicans and sinners?|They that are whole need not a physician; but they that are sick|I came not to call the righteous, but sinners to repentance"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <p class="saying rise" style="--d:1">They that are whole need not a <em>physician</em>; but they that are sick.</p>
+    <p class="note rise" style="--d:3">A doctor who stays away from sick people isn't much of a doctor. Jesus came for the sick, and He wasn't ashamed to sit at their table. (Luke, who wrote it down, was a physician himself.)</p>
+    <p class="note step"><em>“I came not to call the righteous.”</em> There aren't any truly righteous people (Romans 3:10). But there are people who think they're fine, and they never call the doctor. The first step is admitting you're sick. Every man in recovery knows that step.</p>
+    <blockquote class="quote step"><p>“This is a faithful saying, and worthy of all acceptation, that Christ Jesus came into the world to save sinners; of whom I am chief.”</p><cite>1 Timothy 1:15</cite></blockquote>
+  </div>
+</section>
+
+<section class="slide verse" data-v="33-35" data-hl="Why do the disciples of John fast often|while the bridegroom is with them|the bridegroom shall be taken away from them"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="34"></blockquote>
+    <h2 class="rise" style="--d:1">You don't fast at a wedding</h2>
+    <p class="note rise" style="--d:2">To <em>fast</em> is to go without food for a time to seek God, often in sorrow. The Pharisees fasted twice a week (Luke 18:12). The <em>children of the bridechamber</em> were the groom's friends at the wedding, and a wedding feast could last a week. Nobody went hungry at a wedding.</p>
+    <p class="note step">Jesus is the Bridegroom. Having Him with them was a celebration, not a funeral.</p>
+    <p class="note step">Then a hint of what's coming: <em>“the bridegroom shall be taken away.”</em> This is the first time in Luke that Jesus points toward His death. After that, His people would fast. Christians still do: not to earn anything, but to seek the Lord.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="36-39" data-hl="No man putteth a piece of a new garment upon an old|new wine must be put into new bottles|The old is better"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <div class="split">
+      <div class="stage">
+        <svg viewBox="0 0 520 320" role="img" aria-label="Two wineskins, an old cracked one and a new one. When new wine is poured in, both swell. The old one splits and leaks; the new one stretches and holds.">
+          <g transform="translate(140 60)">
+            <path class="lk05-skin old" d="M-56 60 C -80 110, -70 190, 0 200 C 70 190, 80 110, 56 60 C 44 36, 22 30, 12 22 L 12 0 L -12 0 L -12 22 C -22 30, -44 36, -56 60 Z"/>
+            <path class="lk05-crack" d="M-40 90 l 12 10 l -6 12 M 20 120 l 14 -8 l 4 14 M -20 160 l 10 -6 l 8 10"/>
+            <path class="lk05-split" pathLength="1" d="M30 80 l 10 18 l -8 14 l 12 20 l -6 16"/>
+            <circle class="lk05-drop" style="--k:0" cx="40" cy="150" r="4"/>
+            <circle class="lk05-drop" style="--k:1" cx="36" cy="140" r="3.5"/>
+            <circle class="lk05-drop" style="--k:2" cx="42" cy="160" r="4"/>
+            <text class="lk05-tag" x="0" y="236" text-anchor="middle">old bottle</text>
+            <text class="lk05-sub" x="0" y="256" text-anchor="middle">dry, stiff, cracked</text>
+            <text class="lk05-burst" x="0" y="-34" text-anchor="middle">“burst”</text>
+          </g>
+          <g transform="translate(380 60)">
+            <path class="lk05-skin new" d="M-56 60 C -80 110, -70 190, 0 200 C 70 190, 80 110, 56 60 C 44 36, 22 30, 12 22 L 12 0 L -12 0 L -12 22 C -22 30, -44 36, -56 60 Z"/>
+            <text class="lk05-tag" x="0" y="236" text-anchor="middle">new bottle</text>
+            <text class="lk05-sub" x="0" y="256" text-anchor="middle">soft, able to stretch</text>
+            <text class="lk05-ok" x="0" y="-34" text-anchor="middle">“both are preserved”</text>
+          </g>
+        </svg>
+      </div>
+      <div>
+        <h2 class="rise" style="--d:1">New wine, new bottles</h2>
+        <p class="note rise" style="--d:2">These <em>bottles</em> were wineskins: goat hides sewn into bags. New wine was still working and swelling. A new skin could stretch with it. An old skin had gone dry and stiff.</p>
+        <p class="note step lk05-go">Pour new wine into an old skin, and it bursts: the wine is lost and the skin is ruined. Same with sewing a patch of new cloth on an old coat: the patch shrinks and tears it.</p>
+        <p class="note step">Jesus isn't giving advice about wine. The life He brings can't be patched onto an old way of living or old religion. He doesn't fix up the old man. He makes a new one.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="39" data-hl="The old is better"></blockquote>
+    <h2 class="rise" style="--d:1">“The old is better”</h2>
+    <p class="note rise" style="--d:2">People get used to what they know. The Pharisees liked their old system, where they came out looking good, and they didn't want what Jesus was pouring.</p>
+    <p class="note step">The old life says the same thing to a man in recovery: <em>the old was better</em>. The old friends, the old places, the old ways of coping. It's a lie that remembers the taste and forgets the wreckage.</p>
+    <blockquote class="quote step"><p>“Therefore if any man be in Christ, he is a new creature: old things are passed away; behold, all things are become new.”</p><cite>2 Corinthians 5:17</cite></blockquote>
+  </div>
+</section>
+
+<!-- ======================= CLOSING ======================= -->
+<section class="slide remember">
+  <div class="inner">
+    <h2 class="rise">Points to remember</h2>
+    <ol class="seeds">
+      <li class="step"><span class="topic">Obedience</span><span class="seed-q">“Nevertheless at thy word” <cite>5:5</cite></span><span class="take">Do what He says, even tired, even doubtful. Feelings can follow.</span></li>
+      <li class="step"><span class="topic">Seeing yourself</span><span class="seed-q">“I am a sinful man, O Lord” <cite>5:8</cite></span><span class="take">Seeing Jesus shows us ourselves, and He answers, “Fear not.”</span></li>
+      <li class="step"><span class="topic">The touch</span><span class="seed-q">“He put forth his hand, and touched him” <cite>5:13</cite></span><span class="take">He is willing. No man is too unclean for His hand.</span></li>
+      <li class="step"><span class="topic">Forgiveness</span><span class="seed-q">“That ye may know” <cite>5:24</cite></span><span class="take">The healing you could see proved the forgiveness you couldn't.</span></li>
+      <li class="step"><span class="topic">Sinners welcome</span><span class="seed-q">“Sinners to repentance” <cite>5:32</cite></span><span class="take">Jesus came for the sick. Admitting it is the first step.</span></li>
+      <li class="step"><span class="topic">New life</span><span class="seed-q">“New wine must be put into new bottles” <cite>5:38</cite></span><span class="take">He doesn't patch up the old life. He makes a new man.</span></li>
+    </ol>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 1 of 6</p>
+      <span class="topic">Obedience</span>
+      <h2>What did Simon do when Jesus' word didn't make sense to him?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="4"></blockquote>
+      <blockquote class="quote step" data-q="5" data-hl="nevertheless at thy word I will let down the net"></blockquote>
+      <blockquote class="quote step" data-q="6"></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>He told Jesus honestly how it looked: a whole night of work and nothing to show for it. Then he obeyed anyway: “Nevertheless at thy word.” He didn't wait to understand or to feel like it, and the nets filled until they broke.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 2 of 6</p>
+      <span class="topic">Seeing yourself</span>
+      <h2>What did Simon say when he saw who Jesus really was?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="8"></blockquote>
+      <blockquote class="quote step" data-q="10" data-hl="Fear not; from henceforth thou shalt catch men"></blockquote>
+      <blockquote class="quote step"><p>“Then said I, Woe is me! for I am undone; because I am a man of unclean lips, and I dwell in the midst of a people of unclean lips: for mine eyes have seen the King, the LORD of hosts.”</p><cite>Isaiah 6:5</cite></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>“Depart from me; for I am a sinful man, O Lord.” Seeing Jesus' power made Simon see his own sin. But Jesus didn't leave. He said, “Fear not,” and called him to catch men. Admitting what we are is where Jesus starts with us.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 3 of 6</p>
+      <span class="topic">The touch</span>
+      <h2>What did Jesus do for the leper that no one else would?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="12"></blockquote>
+      <blockquote class="quote step" data-q="13"></blockquote>
+      <blockquote class="quote step"><p>“And Jesus, moved with compassion, put forth his hand, and touched him, and saith unto him, I will; be thou clean.”</p><cite>Mark 1:41</cite></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>He touched him. The Law kept everyone away from a leper, and this man may not have felt a human hand in years. Jesus reached out before He spoke, said, “I will,” and made him clean. He is willing to touch the man everyone else avoids.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 4 of 6</p>
+      <span class="topic">Forgiveness</span>
+      <h2>How did Jesus prove He has power to forgive sins?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="20"></blockquote>
+      <blockquote class="quote step" data-q="24"></blockquote>
+      <blockquote class="quote step" data-q="25"></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>He forgave the man's sins, something no one could see, and then healed his body, something everyone could see. The man got up, picked up his bed, and walked home praising God. Only God can forgive sins, and Jesus proved He has that power.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 5 of 6</p>
+      <span class="topic">Sinners welcome</span>
+      <h2>Who did Jesus say He came to call?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="30"></blockquote>
+      <blockquote class="quote step" data-q="31"></blockquote>
+      <blockquote class="quote step" data-q="32"></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>Sinners, to repentance. Like a doctor, He goes to the sick, and He sat at the table with publicans and sinners without shame. The only people He can't help are the ones who think they're well. Whosoever admits he's sick can come.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 6 of 6</p>
+      <span class="topic">New life</span>
+      <h2>What do the new wine and the new bottles teach us about the life Jesus brings?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="37"></blockquote>
+      <blockquote class="quote step" data-q="38"></blockquote>
+      <blockquote class="quote step"><p>“Therefore if any man be in Christ, he is a new creature: old things are passed away; behold, all things are become new.”</p><cite>2 Corinthians 5:17</cite></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>The life Jesus gives doesn't fit into the old life or old religion. It isn't a patch on an old coat. In Christ, a man is made new, with room to grow, and both the new life and the new man are kept safe.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide prayer">
+  <div class="inner">
+    <div class="emblem rise"></div>
+    <h2 class="rise" style="--d:1">Prayer requests</h2>
+    <p class="ask-line rise" style="--d:2">What can we pray about for you today?</p>
+    <blockquote class="quote rise" style="--d:4"><p>“Come unto me, all ye that labour and are heavy laden, and I will give you rest.”</p><cite>Matthew 11:28</cite></blockquote>
+  </div>
+</section>
+
+</main>
+
+<script>
+// King James Version, Luke chapter 5
+const V = {
+  1: "And it came to pass, that, as the people pressed upon him to hear the word of God, he stood by the lake of Gennesaret,",
+  2: "And saw two ships standing by the lake: but the fishermen were gone out of them, and were washing their nets.",
+  3: "And he entered into one of the ships, which was Simon’s, and prayed him that he would thrust out a little from the land. And he sat down, and taught the people out of the ship.",
+  4: "Now when he had left speaking, he said unto Simon, Launch out into the deep, and let down your nets for a draught.",
+  5: "And Simon answering said unto him, Master, we have toiled all the night, and have taken nothing: nevertheless at thy word I will let down the net.",
+  6: "And when they had this done, they inclosed a great multitude of fishes: and their net brake.",
+  7: "And they beckoned unto their partners, which were in the other ship, that they should come and help them. And they came, and filled both the ships, so that they began to sink.",
+  8: "When Simon Peter saw it, he fell down at Jesus’ knees, saying, Depart from me; for I am a sinful man, O Lord.",
+  9: "For he was astonished, and all that were with him, at the draught of the fishes which they had taken:",
+  10: "And so was also James, and John, the sons of Zebedee, which were partners with Simon. And Jesus said unto Simon, Fear not; from henceforth thou shalt catch men.",
+  11: "And when they had brought their ships to land, they forsook all, and followed him.",
+  12: "And it came to pass, when he was in a certain city, behold a man full of leprosy: who seeing Jesus fell on his face, and besought him, saying, Lord, if thou wilt, thou canst make me clean.",
+  13: "And he put forth his hand, and touched him, saying, I will: be thou clean. And immediately the leprosy departed from him.",
+  14: "And he charged him to tell no man: but go, and shew thyself to the priest, and offer for thy cleansing, according as Moses commanded, for a testimony unto them.",
+  15: "But so much the more went there a fame abroad of him: and great multitudes came together to hear, and to be healed by him of their infirmities.",
+  16: "And he withdrew himself into the wilderness, and prayed.",
+  17: "And it came to pass on a certain day, as he was teaching, that there were Pharisees and doctors of the law sitting by, which were come out of every town of Galilee, and Judaea, and Jerusalem: and the power of the Lord was present to heal them.",
+  18: "And, behold, men brought in a bed a man which was taken with a palsy: and they sought means to bring him in, and to lay him before him.",
+  19: "And when they could not find by what way they might bring him in because of the multitude, they went upon the housetop, and let him down through the tiling with his couch into the midst before Jesus.",
+  20: "And when he saw their faith, he said unto him, Man, thy sins are forgiven thee.",
+  21: "And the scribes and the Pharisees began to reason, saying, Who is this which speaketh blasphemies? Who can forgive sins, but God alone?",
+  22: "But when Jesus perceived their thoughts, he answering said unto them, What reason ye in your hearts?",
+  23: "Whether is easier, to say, Thy sins be forgiven thee; or to say, Rise up and walk?",
+  24: "But that ye may know that the Son of man hath power upon earth to forgive sins, (he said unto the sick of the palsy,) I say unto thee, Arise, and take up thy couch, and go into thine house.",
+  25: "And immediately he rose up before them, and took up that whereon he lay, and departed to his own house, glorifying God.",
+  26: "And they were all amazed, and they glorified God, and were filled with fear, saying, We have seen strange things to day.",
+  27: "And after these things he went forth, and saw a publican, named Levi, sitting at the receipt of custom: and he said unto him, Follow me.",
+  28: "And he left all, rose up, and followed him.",
+  29: "And Levi made him a great feast in his own house: and there was a great company of publicans and of others that sat down with them.",
+  30: "But their scribes and Pharisees murmured against his disciples, saying, Why do ye eat and drink with publicans and sinners?",
+  31: "And Jesus answering said unto them, They that are whole need not a physician; but they that are sick.",
+  32: "I came not to call the righteous, but sinners to repentance.",
+  33: "And they said unto him, Why do the disciples of John fast often, and make prayers, and likewise the disciples of the Pharisees; but thine eat and drink?",
+  34: "And he said unto them, Can ye make the children of the bridechamber fast, while the bridegroom is with them?",
+  35: "But the days will come, when the bridegroom shall be taken away from them, and then shall they fast in those days.",
+  36: "And he spake also a parable unto them; No man putteth a piece of a new garment upon an old; if otherwise, then both the new maketh a rent, and the piece that was taken out of the new agreeth not with the old.",
+  37: "And no man putteth new wine into old bottles; else the new wine will burst the bottles, and be spilled, and the bottles shall perish.",
+  38: "But new wine must be put into new bottles; and both are preserved.",
+  39: "No man also having drunk old wine straightway desireth new: for he saith, The old is better."
+};
+const BOOK = "Luke 5";
+</script>
+<script src="../assets/deck.js"></script>
+</body>
+</html>
