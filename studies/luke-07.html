@@ -1,0 +1,705 @@
+<!doctype html>
+<html lang="en" data-theme="scribe">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Luke 7</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="../assets/fonts.css">
+<link rel="stylesheet" href="../assets/deck.css">
+<link rel="stylesheet" href="../assets/themes.css">
+<style>
+/* lk07-map: a tightly cropped data-land map of lower Galilee, with names, dots and lines scaled down to fit */
+.lk07-map .map-town text { font-size: 5.2px; }
+.lk07-map .map-town > circle:not(.map-ping) { r: 1.8px; }
+.lk07-map .map-town > .map-ping { r: 3px; stroke-width: 1.2; }
+.lk07-map .map-region { font-size: 6.5px; letter-spacing: .1em; }
+.lk07-map .map-route { stroke-width: 1.6px; }
+.lk07-map .map-way { stroke-width: 1.4px; stroke-dasharray: 1.5 3; }
+.lk07-map .map-river, .lk07-map .map-lake, .lk07-map .map-land { stroke-width: 1px; }
+.lk07-map .map-border { stroke-width: .8px; stroke-dasharray: 2 3; }
+.lk07-map .map-soft { font-size: 4.6px; font-style: italic; }
+.lk07-hill { fill: color-mix(in srgb, var(--ink-soft) 22%, transparent); }
+
+/* lk07-gate: two crowds meet at the gate of Nain, a funeral coming out and Jesus coming in; on a step, the dead man sits up */
+.lk07-road { stroke: var(--line-strong); stroke-width: 3; }
+.lk07-wall { fill: var(--surface-2); stroke: var(--ink-soft); stroke-width: 2; }
+.lk07-arch { fill: color-mix(in srgb, var(--ink) 55%, var(--bg)); }
+.lk07-life use, .lk07-death use { transition: fill 1s ease; }
+.lk07-life { fill: var(--ink); transform: translateX(-150px); transition: transform 3s ease-out .4s; }
+.lk07-life .lk07-lord { fill: var(--accent); filter: drop-shadow(0 0 6px var(--accent)); }
+.lk07-death { fill: var(--ink-soft); transform: translateX(150px); transition: transform 3s ease-out .4s; }
+.lk07-death .lk07-mother { fill: var(--wine); }
+.slide.active .lk07-life, .slide.active .lk07-death { transform: none; }
+.lk07-bier { fill: var(--leather); }
+.lk07-lying { fill: var(--ink-soft); transition: opacity .8s ease; }
+.lk07-sat { fill: var(--accent-hot); opacity: 0; transition: opacity .8s ease .3s; }
+.slide:has(.lk07-arise.on) .lk07-lying { opacity: 0; }
+.slide:has(.lk07-arise.on) .lk07-sat { opacity: 1; }
+.slide:has(.lk07-arise.on) .lk07-death use { fill: var(--accent-hot); }
+.lk07-say { fill: var(--accent-hot); font: italic 600 20px var(--serif); opacity: 0; transition: opacity .6s ease .3s; }
+.slide:has(.lk07-arise.on) .lk07-say { opacity: 1; }
+.lk07-lab { fill: var(--ink-soft); font-size: 15px; font-weight: 700; }
+@media (max-width: 600px) { .lk07-lab { font-size: 22px; } .lk07-say { font-size: 26px; } }
+
+/* lk07-table: guests reclining at a low table, feet stretched out behind them */
+.lk07-board { fill: var(--leather); }
+.lk07-couch { fill: color-mix(in srgb, var(--leather-light) 40%, transparent); }
+.lk07-guest { fill: var(--ink-soft); stroke: var(--ink-soft); stroke-width: 15; stroke-linecap: round; }
+.lk07-guest circle, .lk07-jesus circle { stroke: var(--bg); stroke-width: 2.5; }
+.lk07-jesus { fill: var(--accent); stroke: var(--accent); stroke-width: 15; stroke-linecap: round; }
+.lk07-her { fill: var(--wine); opacity: 0; transition: opacity .8s ease; }
+.slide:has(.lk07-come.on) .lk07-her { opacity: 1; }
+.lk07-tag { fill: var(--ink); font-size: 15px; }
+.lk07-tag.hot { fill: var(--accent-hot); font-weight: 700; }
+.lk07-tag.her { fill: var(--wine); font-weight: 700; opacity: 0; transition: opacity .8s ease .2s; }
+.slide:has(.lk07-come.on) .lk07-tag.her { opacity: 1; }
+.lk07-arrow { fill: none; stroke: var(--ink-soft); stroke-width: 2; stroke-dasharray: 4 4; }
+@media (max-width: 600px) { .lk07-tag { font-size: 20px; } }
+
+/* lk07-debts: two ledgers side by side */
+.lk07-debts { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+.lk07-debts .ledger { margin-bottom: .6em; }
+.lk07-debts .ledger-stamp { top: 46%; right: 3%; }
+@media (max-width: 600px) { .lk07-debts { grid-template-columns: 1fr; } }
+</style>
+</head>
+<body>
+<main class="deck" id="deck">
+
+<!-- ======================= OPENING ======================= -->
+<section class="slide title">
+  <div class="inner">
+    <div class="emblem rise"></div>
+    <h1 class="rise" style="--d:1">Luke 7</h1>
+    <p class="sub rise" style="--d:3">Thy faith hath saved thee</p>
+    <p class="tag rise" style="--d:5">A Roman officer trusts a word, a widow gets her son back, John wonders, and a woman who was a sinner goes home in peace.</p>
+  </div>
+</section>
+
+<section class="slide watch">
+  <div class="inner">
+    <h2 class="rise">Things to watch for</h2>
+    <p class="lede rise" style="--d:1">Keep these questions in the back of your mind as we read. We'll come back to every one of them at the end.</p>
+    <ol class="seeds">
+      <li class="step"><span class="topic">Faith</span><span class="seed-q">What was so great about the centurion's faith?</span></li>
+      <li class="step"><span class="topic">Compassion</span><span class="seed-q">What moved Jesus at the gate of Nain?</span></li>
+      <li class="step"><span class="topic">Doubt</span><span class="seed-q">What did Jesus do with John's doubts?</span></li>
+      <li class="step"><span class="topic">Critics</span><span class="seed-q">Why did people find fault with both John and Jesus?</span></li>
+      <li class="step"><span class="topic">Love</span><span class="seed-q">Why did the woman love Jesus so much?</span></li>
+      <li class="step"><span class="topic">Saved</span><span class="seed-q">What saved the woman who was a sinner?</span></li>
+    </ol>
+  </div>
+</section>
+
+<!-- ======================= PART ONE: THE CENTURION ======================= -->
+<section class="slide part">
+  <div class="inner">
+    <p class="part-n rise">Part one</p>
+    <h2 class="rise" style="--d:1">So great faith</h2>
+    <p class="range rise" style="--d:2">Verses 1–10</p>
+    <div class="rule"></div>
+    <p class="hook rise" style="--d:4">A Roman officer in Capernaum, a dying servant, and a man who knew what a word of command can do.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="1-3" data-hl="a certain centurion’s servant, who was dear unto him, was sick, and ready to die|he sent unto him the elders of the Jews"></section>
+
+<section class="slide verse" data-v="4-5" data-hl="That he was worthy for whom he should do this|he hath built us a synagogue"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="2"></blockquote>
+    <h2 class="rise" style="--d:1">An unlikely good man</h2>
+    <p class="note rise" style="--d:2">A <em>centurion</em> was a Roman army officer over about a hundred soldiers. He was a Gentile, a soldier of the power that ruled the Jews. Most Jews kept their distance from men like him.</p>
+    <p class="note step">But this one was different. He loved the Jewish nation and paid to build Capernaum's synagogue. And he cared about a <em>servant</em>, a slave most masters would have counted as property. This one was <em>“dear unto him.”</em></p>
+    <p class="note step">He didn't come himself. He sent the town's Jewish <em>elders</em>, and they went to bat for him: <em>“he was worthy.”</em> Hold on to that word.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="6-8" data-hl="for I am not worthy that thou shouldest enter under my roof|but say in a word, and my servant shall be healed|For I also am a man set under authority"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise">Worthy, or not worthy?</h2>
+    <div class="columns">
+      <div class="col law step">
+        <p class="who">The elders said</p>
+        <h3>“He was worthy”</h3>
+        <p>Look at his record: he loves our nation, he built our synagogue. He's earned it.</p>
+      </div>
+      <div class="col grace step">
+        <p class="who">The centurion said</p>
+        <h3>“I am not worthy”</h3>
+        <p>Not worthy to have You under my roof, not even worthy to come to You myself.</p>
+      </div>
+    </div>
+    <p class="note step">The good man with the good record knew he had no claim on Jesus. That's where faith starts. Nobody comes to Christ on his résumé. We come as men who don't deserve it, and He comes anyway.</p>
+    <p class="note step">He may also have known that a Jew who entered a Gentile's house became ceremonially unclean. He wanted to spare Jesus the trouble.</p>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="8" data-hl="I say unto one, Go, and he goeth"></blockquote>
+    <h2 class="rise" style="--d:1">A soldier understands orders</h2>
+    <div class="chains">
+      <div class="chain step"><span class="who-chip">Rome</span><span class="said">gives the order</span><span class="who-chip">the centurion</span><span class="said">“Go,” “Come”</span><span class="who-chip">his soldiers</span><span class="said">obey</span></div>
+      <div class="chain step"><span class="who-chip">the centurion</span><span class="said">“Do this”</span><span class="who-chip">his servant</span><span class="said">does it</span></div>
+      <div class="chain step"><span class="who-chip jesus">Jesus</span><span class="said">“say in a word”</span><span class="who-chip">the sickness</span><span class="said">must go</span></div>
+    </div>
+    <p class="note step">He reasoned like a soldier. My orders work because Rome stands behind me. Your word works because God stands behind You. You don't need to be in the room. Just say it.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="9-10" data-hl="he marvelled at him|I have not found so great faith, no, not in Israel|found the servant whole that had been sick"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="9" data-hl="I have not found so great faith, no, not in Israel"></blockquote>
+    <h2 class="rise" style="--d:1">Jesus marvelled</h2>
+    <p class="note rise" style="--d:2">Only twice do the gospels say Jesus <em>marvelled</em>: at this outsider's faith, and at His hometown's unbelief (Mark 6:6).</p>
+    <p class="note step">The centurion never saw Jesus. He never touched Him. He trusted His word, and the servant was healed from a distance. We're in the same place today. We don't see Him either. We have His word, and His word is enough.</p>
+    <blockquote class="quote step"><p>“So then faith cometh by hearing, and hearing by the word of God.”</p><cite>Romans 10:17</cite></blockquote>
+  </div>
+</section>
+
+<!-- ======================= PART TWO: NAIN ======================= -->
+<section class="slide part">
+  <div class="inner">
+    <p class="part-n rise">Part two</p>
+    <h2 class="rise" style="--d:1">Young man, arise</h2>
+    <p class="range rise" style="--d:2">Verses 11–17</p>
+    <div class="rule"></div>
+    <p class="hook rise" style="--d:4">Two crowds meet at a town gate. One is following Jesus. The other is following a coffin.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="11-13" data-hl="a city called Nain|the only son of his mother, and she was a widow|he had compassion on her, and said unto her, Weep not"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <div class="split">
+      <div class="stage">
+        <svg class="map lk07-map" data-land viewBox="176 112 128 104" role="img" aria-label="A close-up map of lower Galilee. A road draws from Capernaum on the lake south-west to Nain, a village on the slope of a hill south-east of Nazareth. Shunem lies just over the hill from Nain.">
+          <ellipse class="lk07-hill" cx="224" cy="194" rx="8" ry="4.5"/>
+          <path class="map-route" pathLength="1" style="--wait:.8s;--draw:3s" d="M268 131 C 262 136, 258 140, 257 144 C 254 152, 248 162, 242 172 C 236 180, 230 185, 226 188"/>
+          <g class="map-town"><circle cx="268" cy="131" r="1.8"/><text x="268" y="126" text-anchor="middle">Capernaum</text></g>
+          <g class="map-town"><circle cx="257" cy="144" r="1.8"/><text x="253" y="146" text-anchor="end">Magdala</text></g>
+          <g class="map-town"><circle cx="212" cy="152" r="1.8"/><text x="208" y="154" text-anchor="end">Cana</text></g>
+          <g class="map-town"><circle cx="214" cy="172" r="1.8"/><text x="210" y="174" text-anchor="end">Nazareth</text></g>
+          <g class="map-town here"><circle cx="226" cy="188" r="1.8"/><circle class="map-ping" cx="226" cy="188" r="3"/><text x="230" y="190">Nain</text></g>
+          <g class="map-town step map-go1"><circle cx="219" cy="197" r="1.8"/><text x="215" y="203" text-anchor="end">Shunem</text></g>
+          <text class="map-soft" x="234" y="200">hill of Moreh</text>
+        </svg>
+      </div>
+      <div>
+        <h2 class="rise" style="--d:1">At the gate of Nain</h2>
+        <p class="note rise" style="--d:2"><em>Nain</em> was a small town in the hills of lower Galilee, a long day's walk from Capernaum, about 25 miles.</p>
+        <p class="note step map-go1">Just over the hill was <em>Shunem</em>, where the prophet Elisha once raised a mother's only son (2 Kings 4). The people of Nain knew that story.</p>
+        <p class="note step">A funeral was coming out of the gate. In that climate the dead were buried the same day, outside the town, carried on an open <em>bier</em>, a stretcher, with the family and mourners walking behind.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="slide verse" data-v="14-15" data-hl="he came and touched the bier|Young man, I say unto thee, Arise|And he delivered him to his mother"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <div class="stage">
+      <svg viewBox="0 0 640 250" role="img" aria-label="A road leading to a town gate. From the left, Jesus and His disciples walk toward the gate. From the gate, a funeral comes out: the mother in front, then bearers carrying a bier with the dead son. The two crowds meet. On a step, the young man sits up on the bier.">
+        <defs>
+          <g id="lk07-p"><circle cx="0" cy="-38" r="8"/><path d="M-8 -28 h16 l4 28 h-24 z"/></g>
+        </defs>
+        <line class="lk07-road" x1="0" y1="212" x2="640" y2="212"/>
+        <g class="lk07-life">
+          <use href="#lk07-p" x="110" y="212"/><use href="#lk07-p" x="140" y="210"/><use href="#lk07-p" x="168" y="212"/><use href="#lk07-p" x="196" y="211"/><use href="#lk07-p" x="224" y="212"/>
+          <use class="lk07-lord" href="#lk07-p" x="262" y="212"/>
+        </g>
+        <g class="lk07-death">
+          <use class="lk07-mother" href="#lk07-p" x="318" y="212"/>
+          <use href="#lk07-p" x="356" y="212"/><use href="#lk07-p" x="420" y="212"/>
+          <rect class="lk07-bier" x="346" y="170" width="86" height="7" rx="2"/>
+          <g class="lk07-lying"><circle cx="360" cy="163" r="7"/><rect x="368" y="159" width="56" height="10" rx="5"/></g>
+          <g class="lk07-sat"><circle cx="392" cy="128" r="8"/><path d="M384 138 h16 l2 32 h-20 z M400 160 h28 v10 h-28 z"/></g>
+          <use href="#lk07-p" x="452" y="212"/><use href="#lk07-p" x="480" y="211"/><use href="#lk07-p" x="506" y="212"/>
+        </g>
+        <path class="lk07-wall" d="M530 212 V 70 h14 v-12 h14 v12 h14 v-12 h14 v12 h14 v-12 h14 v12 h16 V 212 H 600 V 150 C 600 128, 560 128, 560 150 V 212 Z"/>
+        <path class="lk07-arch" d="M560 212 V 150 C 560 128, 600 128, 600 150 V 212 Z" style="opacity:.35"/>
+        <text class="lk07-lab" x="170" y="40" text-anchor="middle">Jesus, coming in</text>
+        <text class="lk07-lab" x="430" y="40" text-anchor="middle">a funeral, going out</text>
+        <text class="lk07-say" x="392" y="100" text-anchor="middle">“Arise”</text>
+      </svg>
+    </div>
+    <h2 class="rise" style="--d:1">Life meets death at the gate</h2>
+    <p class="note step lk07-arise">Jesus <em>touched the bier</em>. By the law, touching the dead made a man unclean. But when Jesus touched death, death didn't spread to Him. Life went the other way. <em>“And he that was dead sat up, and began to speak.”</em></p>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="13" data-hl="he had compassion on her"></blockquote>
+    <h2 class="rise" style="--d:1">He saw her</h2>
+    <p class="note rise" style="--d:2">Nobody asked Jesus for anything. No one in this funeral had faith that He would act. He saw a widow burying her only son, with no husband, no son, and no one left to provide for her, and He was moved.</p>
+    <p class="note step"><em>“Weep not”</em> is cruel from anyone else. From Jesus, it's a promise, because He was about to give her a reason to stop.</p>
+    <p class="note step">Some of our mothers have cried over us like that, sure they'd lost us. Jesus still gives sons back to their mothers. <em>“He delivered him to his mother.”</em></p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="16-17" data-hl="That a great prophet is risen up among us|That God hath visited his people"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise">“A great prophet is risen”</h2>
+    <p class="note rise" style="--d:1">The crowd thought of Elijah. He too raised a widow's only son, and Luke uses the very same words.</p>
+    <div class="pair">
+      <div class="scroll rise" style="--d:2"><p class="ref">1 Kings 17:23, Elijah</p><p class="kjv">And Elijah took the child, and brought him down out of the chamber into the house, and <mark>delivered him unto his mother</mark>: and Elijah said, See, thy son liveth.</p></div>
+      <div class="scroll step"><p class="ref">Luke 7:15, Jesus</p><p class="kjv">And he that was dead sat up, and began to speak. And <mark>he delivered him to his mother</mark>.</p></div>
+    </div>
+    <p class="note step">But Elijah stretched himself on the child three times and cried to the LORD. Jesus just spoke. He is more than a prophet. In Him, <em>“God hath visited his people”</em>: God Himself had come to help.</p>
+  </div>
+</section>
+
+<!-- ======================= PART THREE: JOHN'S QUESTION ======================= -->
+<section class="slide part">
+  <div class="inner">
+    <p class="part-n rise">Part three</p>
+    <h2 class="rise" style="--d:1">Art thou he that should come?</h2>
+    <p class="range rise" style="--d:2">Verses 18–35</p>
+    <div class="rule"></div>
+    <p class="hook rise" style="--d:4">The greatest of the prophets, sitting in a prison, sends Jesus a question.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="18-20" data-hl="Art thou he that should come? or look we for another?"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <div class="split">
+      <div class="stage">
+        <svg class="map" data-land viewBox="110 100 260 380" data-towns="Capernaum:r, Nazareth:l, Jerusalem:l" role="img" aria-label="A map of the land. Machaerus, Herod's fortress, sits east of the Dead Sea in Perea. On a step, a line draws north from Machaerus up the Jordan valley to Galilee: the road John's two disciples walked to find Jesus.">
+          <path class="map-route r1" pathLength="1" style="--draw:3s" d="M286 436 C 282 410, 276 380, 272 350 C 268 300, 270 250, 262 210 C 254 196, 240 192, 226 188"/>
+          <g class="map-town here"><circle cx="286" cy="436" r="6"/><circle class="map-ping" cx="286" cy="436" r="8"/><text x="297" y="452">Machaerus</text></g>
+          <g class="map-town"><circle cx="226" cy="188" r="6"/><text x="215" y="200" text-anchor="end">Nain</text></g>
+        </svg>
+      </div>
+      <div>
+        <h2 class="rise" style="--d:1">A question from prison</h2>
+        <p class="note rise" style="--d:2">Herod had locked John up (3:20), probably in his fortress at <em>Machaerus</em>, east of the Dead Sea. He heard what Jesus was doing, but not what he expected: judgment on the wicked, freedom for prisoners like him.</p>
+        <p class="note step map-go1">So he sent two of his disciples a long way north with one question: <em>are You the One, or do we wait for someone else?</em></p>
+        <p class="note step">The man who had pointed at Jesus and said, “Behold the Lamb of God,” now had doubts. Doubt can come to the best of men, especially in a dark place.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="slide verse" data-v="21-23" data-hl="tell John what things ye have seen and heard|to the poor the gospel is preached|blessed is he, whosoever shall not be offended in me"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise">Jesus answered with evidence</h2>
+    <p class="note rise" style="--d:1">He didn't scold John. He let the messengers watch for an hour, then sent them back with a list John would recognise from Isaiah, the signs of the Messiah:</p>
+    <ol class="checks">
+      <li class="step"><span class="tick">✓</span><q>the eyes of the blind shall be opened</q><small>Isaiah 35:5</small><b>7:21</b></li>
+      <li class="step"><span class="tick">✓</span><q>Then shall the lame man leap as an hart</q><small>Isaiah 35:6</small><b>5:25</b></li>
+      <li class="step"><span class="tick">✓</span><q>the ears of the deaf shall be unstopped</q><small>Isaiah 35:5</small><b>7:22</b></li>
+      <li class="step"><span class="tick">✓</span><q>to preach good tidings unto the meek</q><small>Isaiah 61:1</small><b>4:18; 6:20</b></li>
+    </ol>
+    <p class="note step">Plus a leper cleansed (5:13) and a dead man raised at Nain, only days before. <em>“Blessed is he, whosoever shall not be offended in me”</em>: happy is the man who doesn't stumble because Jesus works differently than he expected.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="24-26" data-hl="A reed shaken with the wind?|A man clothed in soft raiment?|much more than a prophet"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="24" data-hl="What went ye out into the wilderness for to see?"></blockquote>
+    <h2 class="rise" style="--d:1">What did you go out to see?</h2>
+    <ul class="nots">
+      <li class="step"><span class="k">A reed shaken with the wind?</span><span class="why">John never bent to please the crowd.</span></li>
+      <li class="step"><span class="k">A man clothed in soft raiment?</span><span class="why">He wore camel's hair and lived rough.</span></li>
+      <li class="step yes"><span class="k">A prophet, and much more</span><span class="why">the messenger sent ahead of the Lord Himself</span></li>
+    </ul>
+    <p class="note step">Notice when Jesus said this: right after John's messengers left. John's doubts didn't lower him in Jesus' eyes. Jesus defended him in public. He does the same for His struggling people.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="27-28" data-hl="Behold, I send my messenger before thy face|he that is least in the kingdom of God is greater than he"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="28"></blockquote>
+    <h2 class="rise" style="--d:1">Greater than John?</h2>
+    <p class="note rise" style="--d:2">Jesus quotes Malachi: God would send a messenger to clear the road before the Lord came. John was that man, the last and greatest of the Old Testament prophets.</p>
+    <blockquote class="quote step"><p>“Behold, I will send my messenger, and he shall prepare the way before me: and the Lord, whom ye seek, shall suddenly come to his temple, even the messenger of the covenant, whom ye delight in: behold, he shall come, saith the LORD of hosts.”</p><cite>Malachi 3:1</cite></blockquote>
+    <p class="note step">So how is the least believer <em>greater</em>? Not in character. In privilege. John pointed to the cross from a distance and died before it. We stand on the far side of the cross and the empty tomb, with the Holy Spirit living in us. The weakest believer in this room has seen more of God's plan than John ever did.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="29-30" data-hl="justified God, being baptized with the baptism of John|rejected the counsel of God against themselves"></section>
+
+<section class="slide verse" data-v="31-32" data-hl="We have piped unto you, and ye have not danced"></section>
+
+<section class="slide verse" data-v="33-35" data-hl="He hath a devil|Behold a gluttonous man, and a winebibber, a friend of publicans and sinners!|wisdom is justified of all her children"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise">Children in the marketplace</h2>
+    <p class="note rise" style="--d:1">Picture kids in the town square playing pretend. Some want to play wedding and pipe a tune. Others want to play funeral and wail. Some kids won't play either game. That's this generation, Jesus says.</p>
+    <div class="columns">
+      <div class="col law step">
+        <p class="who">John the Baptist</p>
+        <h3>“He hath a devil”</h3>
+        <p>He came fasting, with no bread and no wine. Too strict, they said. Something's wrong with him.</p>
+      </div>
+      <div class="col grace step">
+        <p class="who">The Son of man</p>
+        <h3>“A gluttonous man”</h3>
+        <p>He came eating and drinking at people's tables. Too loose, they said: a glutton and a <em>winebibber</em>, a heavy drinker.</p>
+      </div>
+    </div>
+    <p class="note step">Jesus ate ordinary meals of His day, wine included. The Bible never shows Him drunk or careless. The charge was a smear by men who had already decided. People who won't come will always find a reason.</p>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="34" data-hl="a friend of publicans and sinners!"></blockquote>
+    <h2 class="rise" style="--d:1">The insult that's good news</h2>
+    <p class="note rise" style="--d:2">They meant it as a slur. <em>“A friend of publicans and sinners.”</em> Tax collectors, drunks, prostitutes, men with records: Jesus ate with them and they felt welcome around Him.</p>
+    <p class="note step">If you've been one of those men, that's the best line in the chapter. He is still that friend.</p>
+    <blockquote class="quote step"><p>“This is a faithful saying, and worthy of all acceptation, that Christ Jesus came into the world to save sinners; of whom I am chief.”</p><cite>1 Timothy 1:15</cite></blockquote>
+    <p class="note step">And note the plain people, the <em>publicans</em>, <em>“justified God”</em>: they agreed with God's verdict on them, repented, and were baptized by John. The Pharisees and <em>lawyers</em>, experts in the law of Moses, said no, and missed what God had for them.</p>
+  </div>
+</section>
+
+<!-- ======================= PART FOUR: THE WOMAN WHO WAS A SINNER ======================= -->
+<section class="slide part">
+  <div class="inner">
+    <p class="part-n rise">Part four</p>
+    <h2 class="rise" style="--d:1">She loved much</h2>
+    <p class="range rise" style="--d:2">Verses 36–50</p>
+    <div class="rule"></div>
+    <p class="hook rise" style="--d:4">A dinner at a Pharisee's house, and a guest nobody invited.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="36-38" data-hl="a woman in the city, which was a sinner|stood at his feet behind him weeping|began to wash his feet with tears, and did wipe them with the hairs of her head"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <div class="split">
+      <div class="stage">
+        <svg viewBox="0 0 400 320" role="img" aria-label="A view from above of a dinner. Guests recline on couches around three sides of a low table, leaning on one elbow with their heads toward the table and their feet stretched out behind them. Jesus is one of the guests. On a step, a woman appears behind Him, at His feet.">
+          <path class="lk07-couch" d="M104 64 H296 V116 H104 Z M64 118 H126 V262 H64 Z M274 118 H336 V262 H274 Z"/>
+          <path class="lk07-board" d="M130 120 H270 V250 H248 V142 H152 V250 H130 Z"/>
+          <g class="lk07-guest">
+            <line x1="164" y1="106" x2="140" y2="74"/><circle cx="164" cy="106" r="9"/>
+            <line x1="236" y1="106" x2="212" y2="74"/><circle cx="236" cy="106" r="9"/>
+            <line x1="116" y1="146" x2="76" y2="176"/><circle cx="116" cy="146" r="9"/>
+            <line x1="284" y1="150" x2="324" y2="180"/><circle cx="284" cy="150" r="9"/>
+            <line x1="284" y1="208" x2="324" y2="238"/><circle cx="284" cy="208" r="9"/>
+          </g>
+          <g class="lk07-jesus">
+            <line x1="116" y1="204" x2="70" y2="244"/><circle cx="116" cy="204" r="10"/>
+          </g>
+          <g class="lk07-her"><circle cx="40" cy="262" r="10"/><path d="M28 274 h24 l6 30 h-36 z"/></g>
+          <text class="lk07-tag" x="200" y="40" text-anchor="middle">couches around a low table</text>
+          <text class="lk07-tag" x="200" y="200" text-anchor="middle">the table</text>
+          <text class="lk07-tag hot" x="140" y="282">Jesus</text>
+          <text class="lk07-tag her" x="70" y="306">“at his feet behind him”</text>
+        </svg>
+      </div>
+      <div>
+        <h2 class="rise" style="--d:1">At His feet</h2>
+        <p class="note rise" style="--d:2">Guests didn't sit on chairs. <em>“Sat down to meat”</em> means they lay on couches around a low table, on one elbow, feet stretched out behind.</p>
+        <p class="note step lk07-come">Townspeople could wander in to watch a big dinner. She slipped in, stood behind Jesus, and broke down. Her tears fell on His dusty feet. She wiped them with her hair and poured out her <em>alabaster box</em>, a costly jar of perfume.</p>
+        <p class="note step">The whole town knew what she was. She came anyway. Don't let shame keep you away from Jesus either.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="slide verse" data-v="39-40" data-hl="This man, if he were a prophet, would have known who and what manner of woman this is|Simon, I have somewhat to say unto thee"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise">Simon's silent thought</h2>
+    <div class="talk">
+      <p class="rise" style="--d:1"><small>Simon, to himself</small>This man, if he were a prophet, would have known who and what manner of woman this is that toucheth him: for she is a sinner.</p>
+      <p class="reply step"><small>Jesus, out loud</small>Simon, I have somewhat to say unto thee.</p>
+    </div>
+    <p class="note step">Simon thought Jesus didn't know who the woman was. Jesus knew exactly who she was, and He knew what Simon was thinking too. He was a prophet, and more.</p>
+    <p class="note step">Simon had sorted the room into sinners and good people, and put himself in the second group. Jesus is about to show him he's a debtor too.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="41-43" data-hl="the one owed five hundred pence, and the other fifty|when they had nothing to pay, he frankly forgave them both|which of them will love him most?"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise">Two debtors</h2>
+    <p class="note rise" style="--d:1">A <em>penny</em> was about a day's pay for a working man.</p>
+    <div class="lk07-debts">
+      <div class="ledger rise" style="--d:2">
+        <h3>The first debtor</h3>
+        <ul>
+          <li style="--k:0"><span>The debt</span><span>500 pence</span></li>
+          <li style="--k:1"><span>In wages</span><span>500 days</span></li>
+        </ul>
+        <div class="total"><span>He can pay</span><b>nothing</b></div>
+        <div class="ledger-stamp">FORGIVEN<small>frankly</small></div>
+      </div>
+      <div class="ledger rise" style="--d:3">
+        <h3>The second debtor</h3>
+        <ul>
+          <li style="--k:0"><span>The debt</span><span>50 pence</span></li>
+          <li style="--k:1"><span>In wages</span><span>50 days</span></li>
+        </ul>
+        <div class="total"><span>He can pay</span><b>nothing</b></div>
+        <div class="ledger-stamp">FORGIVEN<small>frankly</small></div>
+      </div>
+    </div>
+    <p class="note step ledger-paid"><em>Frankly</em> means freely, as a gift. Big debt or small, neither man could pay, and both were forgiven the same way. Simon was the fifty-pence man. He still couldn't pay.</p>
+    <p class="note step">Simon had to answer: the one forgiven most loves most. He walked right into it.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="44-46" data-hl="Seest thou this woman?|thou gavest me no water for my feet|hath not ceased to kiss my feet|hath anointed my feet with ointment"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise">Seest thou this woman?</h2>
+    <p class="note rise" style="--d:1">A good host gave a guest water to wash the road dust off his feet, greeted him with a kiss, and put a little oil on his head. Simon skipped all three. She more than made up for it.</p>
+    <div class="match" style="--n:3" aria-label="Simon gave no water for His feet; she washed them with tears. Simon gave no kiss; she has not stopped kissing His feet. Simon put no oil on His head; she anointed His feet with ointment.">
+      <div class="a step"><span class="tag">Simon</span><span class="w">no water for My feet</span><span class="w">no kiss</span><span class="w">no oil for My head</span></div>
+      <div class="step"><span></span><span class="link">washing</span><span class="link">welcome</span><span class="link">anointing</span></div>
+      <div class="b step"><span class="but">she</span><span class="w">washed My feet with tears</span><span class="w">hath not ceased to kiss My feet</span><span class="w">anointed My feet with ointment</span></div>
+    </div>
+    <p class="note step">Simon gave Jesus less than ordinary manners. She gave Him everything she had. The difference wasn't how bad they were. It was how forgiven they knew they were.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="47-50" data-hl="Her sins, which are many, are forgiven; for she loved much|Thy sins are forgiven|Who is this that forgiveth sins also?|Thy faith hath saved thee; go in peace"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="47" data-hl="Her sins, which are many, are forgiven; for she loved much"></blockquote>
+    <h2 class="rise" style="--d:1">Which came first?</h2>
+    <p class="note rise" style="--d:2">Did her love earn her forgiveness? No. The story of the debtors shows the order: the debt is forgiven first, then the love comes. Her love was the evidence. And verse 50 says what saved her: faith.</p>
+    <ol class="timeline">
+      <li style="--k:0"><b>She believed</b><span>trusted Jesus to receive her</span></li>
+      <li style="--k:1" class="lit"><b>Forgiven</b><span>“which are many”</span></li>
+      <li style="--k:2"><b>She loved much</b><span>tears, kisses, perfume</span></li>
+      <li style="--k:3"><b>He said it out loud</b><span>“Thy sins are forgiven”</span></li>
+      <li style="--k:4" class="lit"><b>Go in peace</b><span>sent home whole</span></li>
+    </ol>
+    <blockquote class="quote step"><p>“For by grace are ye saved through faith; and that not of yourselves: it is the gift of God: Not of works, lest any man should boast.”</p><cite>Ephesians 2:8–9</cite></blockquote>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="50"></blockquote>
+    <h2 class="rise" style="--d:1">Go in peace</h2>
+    <p class="note rise" style="--d:2">The guests muttered, <em>“Who is this that forgiveth sins also?”</em> Good question. Only God can forgive sins (5:21). Jesus did, with a word, because He is God.</p>
+    <p class="note step">Jesus said it out loud, in front of the people who had judged her, so she would never have to wonder. She walked out of that house the same woman everyone knew, but forgiven, saved, and at peace with God. Her past was real. It didn't get the last word.</p>
+    <p class="note step">If you've trusted Christ, the same is true of you. Your sins, which are many, are forgiven. Go in peace.</p>
+    <blockquote class="quote step"><p>“Therefore being justified by faith, we have peace with God through our Lord Jesus Christ:”</p><cite>Romans 5:1</cite></blockquote>
+  </div>
+</section>
+
+<!-- ======================= CLOSING ======================= -->
+<section class="slide remember">
+  <div class="inner">
+    <h2 class="rise">Points to remember</h2>
+    <ol class="seeds">
+      <li class="step"><span class="topic">Faith</span><span class="seed-q">“Say in a word” <cite>7:7</cite></span><span class="take">He knew he wasn't worthy, and he trusted Jesus' word alone.</span></li>
+      <li class="step"><span class="topic">Compassion</span><span class="seed-q">“He had compassion on her” <cite>7:13</cite></span><span class="take">Jesus sees grief nobody brings to Him, and He acts.</span></li>
+      <li class="step"><span class="topic">Doubt</span><span class="seed-q">“Tell John what things ye have seen” <cite>7:22</cite></span><span class="take">Jesus meets honest doubt with evidence, not scolding.</span></li>
+      <li class="step"><span class="topic">Critics</span><span class="seed-q">“A friend of publicans and sinners” <cite>7:34</cite></span><span class="take">People who won't come will always find a reason. Jesus is still the sinner's friend.</span></li>
+      <li class="step"><span class="topic">Love</span><span class="seed-q">“She loved much” <cite>7:47</cite></span><span class="take">The more you know you've been forgiven, the more you love.</span></li>
+      <li class="step"><span class="topic">Saved</span><span class="seed-q">“Thy faith hath saved thee” <cite>7:50</cite></span><span class="take">Saved by faith, sent home in peace.</span></li>
+    </ol>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 1 of 6</p>
+      <span class="topic">Faith</span>
+      <h2>What was so great about the centurion's faith?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="7"></blockquote>
+      <blockquote class="quote step" data-q="9" data-hl="I have not found so great faith, no, not in Israel"></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>He knew he had no claim on Jesus: “I am not worthy.” And he believed Jesus' word alone was enough, with no visit and no touch. A Gentile soldier trusted Jesus more than Israel did.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 2 of 6</p>
+      <span class="topic">Compassion</span>
+      <h2>What moved Jesus at the gate of Nain?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="12" data-hl="the only son of his mother, and she was a widow"></blockquote>
+      <blockquote class="quote step" data-q="13"></blockquote>
+      <blockquote class="quote step" data-q="15"></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>A widow burying her only son. Nobody asked Him. He saw her grief and had compassion. He touched the bier, raised the young man, and gave him back to his mother.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 3 of 6</p>
+      <span class="topic">Doubt</span>
+      <h2>What did Jesus do with John's doubts?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="19"></blockquote>
+      <blockquote class="quote step" data-q="22"></blockquote>
+      <blockquote class="quote step" data-q="23"></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>He didn't scold him. He sent back evidence: the very signs Isaiah had promised. Then He praised John in public as more than a prophet. Jesus is patient with honest doubt and answers it.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 4 of 6</p>
+      <span class="topic">Critics</span>
+      <h2>Why did people find fault with both John and Jesus?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="30"></blockquote>
+      <blockquote class="quote step" data-q="33"></blockquote>
+      <blockquote class="quote step" data-q="34"></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>Because they had already rejected God's counsel. John was too strict for them and Jesus too free. When a man doesn't want to come, he will find a reason. But the insult was true in the best way: Jesus is the friend of sinners.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 5 of 6</p>
+      <span class="topic">Love</span>
+      <h2>Why did the woman love Jesus so much?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="42"></blockquote>
+      <blockquote class="quote step" data-q="47"></blockquote>
+      <blockquote class="quote step"><p>“As far as the east is from the west, so far hath he removed our transgressions from us.”</p><cite>Psalm 103:12</cite></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>Because she knew how much she had been forgiven. Her sins were many, and Jesus forgave them all. A man who knows he was forgiven a mountain of debt can't help loving the One who cancelled it.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 6 of 6</p>
+      <span class="topic">Saved</span>
+      <h2>What saved the woman who was a sinner?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="48"></blockquote>
+      <blockquote class="quote step" data-q="50"></blockquote>
+      <blockquote class="quote step"><p>“For by grace are ye saved through faith; and that not of yourselves: it is the gift of God: Not of works, lest any man should boast.”</p><cite>Ephesians 2:8–9</cite></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>Her faith in Jesus. Not her tears, not her perfume, and not her love. Those came from being forgiven. She trusted Him, He forgave her, and He sent her home in peace.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide prayer">
+  <div class="inner">
+    <div class="emblem rise"></div>
+    <h2 class="rise" style="--d:1">Prayer requests</h2>
+    <p class="ask-line rise" style="--d:2">What can we pray about for you today?</p>
+    <blockquote class="quote rise" style="--d:4"><p>“The LORD is nigh unto them that are of a broken heart; and saveth such as be of a contrite spirit.”</p><cite>Psalm 34:18</cite></blockquote>
+  </div>
+</section>
+
+</main>
+
+<script>
+// King James Version, Luke chapter 7
+const V = {
+  1: "Now when he had ended all his sayings in the audience of the people, he entered into Capernaum.",
+  2: "And a certain centurion’s servant, who was dear unto him, was sick, and ready to die.",
+  3: "And when he heard of Jesus, he sent unto him the elders of the Jews, beseeching him that he would come and heal his servant.",
+  4: "And when they came to Jesus, they besought him instantly, saying, That he was worthy for whom he should do this:",
+  5: "For he loveth our nation, and he hath built us a synagogue.",
+  6: "Then Jesus went with them. And when he was now not far from the house, the centurion sent friends to him, saying unto him, Lord, trouble not thyself: for I am not worthy that thou shouldest enter under my roof:",
+  7: "Wherefore neither thought I myself worthy to come unto thee: but say in a word, and my servant shall be healed.",
+  8: "For I also am a man set under authority, having under me soldiers, and I say unto one, Go, and he goeth; and to another, Come, and he cometh; and to my servant, Do this, and he doeth it.",
+  9: "When Jesus heard these things, he marvelled at him, and turned him about, and said unto the people that followed him, I say unto you, I have not found so great faith, no, not in Israel.",
+  10: "And they that were sent, returning to the house, found the servant whole that had been sick.",
+  11: "And it came to pass the day after, that he went into a city called Nain; and many of his disciples went with him, and much people.",
+  12: "Now when he came nigh to the gate of the city, behold, there was a dead man carried out, the only son of his mother, and she was a widow: and much people of the city was with her.",
+  13: "And when the Lord saw her, he had compassion on her, and said unto her, Weep not.",
+  14: "And he came and touched the bier: and they that bare him stood still. And he said, Young man, I say unto thee, Arise.",
+  15: "And he that was dead sat up, and began to speak. And he delivered him to his mother.",
+  16: "And there came a fear on all: and they glorified God, saying, That a great prophet is risen up among us; and, That God hath visited his people.",
+  17: "And this rumour of him went forth throughout all Judaea, and throughout all the region round about.",
+  18: "And the disciples of John shewed him of all these things.",
+  19: "And John calling unto him two of his disciples sent them to Jesus, saying, Art thou he that should come? or look we for another?",
+  20: "When the men were come unto him, they said, John Baptist hath sent us unto thee, saying, Art thou he that should come? or look we for another?",
+  21: "And in that same hour he cured many of their infirmities and plagues, and of evil spirits; and unto many that were blind he gave sight.",
+  22: "Then Jesus answering said unto them, Go your way, and tell John what things ye have seen and heard; how that the blind see, the lame walk, the lepers are cleansed, the deaf hear, the dead are raised, to the poor the gospel is preached.",
+  23: "And blessed is he, whosoever shall not be offended in me.",
+  24: "And when the messengers of John were departed, he began to speak unto the people concerning John, What went ye out into the wilderness for to see? A reed shaken with the wind?",
+  25: "But what went ye out for to see? A man clothed in soft raiment? Behold, they which are gorgeously apparelled, and live delicately, are in kings courts.",
+  26: "But what went ye out for to see? A prophet? Yea, I say unto you, and much more than a prophet.",
+  27: "This is he, of whom it is written, Behold, I send my messenger before thy face, which shall prepare thy way before thee.",
+  28: "For I say unto you, Among those that are born of women there is not a greater prophet than John the Baptist: but he that is least in the kingdom of God is greater than he.",
+  29: "And all the people that heard him, and the publicans, justified God, being baptized with the baptism of John.",
+  30: "But the Pharisees and lawyers rejected the counsel of God against themselves, being not baptized of him.",
+  31: "And the Lord said, Whereunto then shall I liken the men of this generation? and to what are they like?",
+  32: "They are like unto children sitting in the marketplace, and calling one to another, and saying, We have piped unto you, and ye have not danced; we have mourned to you, and ye have not wept.",
+  33: "For John the Baptist came neither eating bread nor drinking wine; and ye say, He hath a devil.",
+  34: "The Son of man is come eating and drinking; and ye say, Behold a gluttonous man, and a winebibber, a friend of publicans and sinners!",
+  35: "But wisdom is justified of all her children.",
+  36: "And one of the Pharisees desired him that he would eat with him. And he went into the Pharisee’s house, and sat down to meat.",
+  37: "And, behold, a woman in the city, which was a sinner, when she knew that Jesus sat at meat in the Pharisee’s house, brought an alabaster box of ointment,",
+  38: "And stood at his feet behind him weeping, and began to wash his feet with tears, and did wipe them with the hairs of her head, and kissed his feet, and anointed them with the ointment.",
+  39: "Now when the Pharisee which had bidden him saw it, he spake within himself, saying, This man, if he were a prophet, would have known who and what manner of woman this is that toucheth him: for she is a sinner.",
+  40: "And Jesus answering said unto him, Simon, I have somewhat to say unto thee. And he saith, Master, say on.",
+  41: "There was a certain creditor which had two debtors: the one owed five hundred pence, and the other fifty.",
+  42: "And when they had nothing to pay, he frankly forgave them both. Tell me therefore, which of them will love him most?",
+  43: "Simon answered and said, I suppose that he, to whom he forgave most. And he said unto him, Thou hast rightly judged.",
+  44: "And he turned to the woman, and said unto Simon, Seest thou this woman? I entered into thine house, thou gavest me no water for my feet: but she hath washed my feet with tears, and wiped them with the hairs of her head.",
+  45: "Thou gavest me no kiss: but this woman since the time I came in hath not ceased to kiss my feet.",
+  46: "My head with oil thou didst not anoint: but this woman hath anointed my feet with ointment.",
+  47: "Wherefore I say unto thee, Her sins, which are many, are forgiven; for she loved much: but to whom little is forgiven, the same loveth little.",
+  48: "And he said unto her, Thy sins are forgiven.",
+  49: "And they that sat at meat with him began to say within themselves, Who is this that forgiveth sins also?",
+  50: "And he said to the woman, Thy faith hath saved thee; go in peace."
+};
+const BOOK = "Luke 7";
+</script>
+<script src="../assets/deck.js"></script>
+</body>
+</html>

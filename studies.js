@@ -7379,5 +7379,125 @@ window.STUDIES = [
       },
       "big": "Jesus came for sinners, not for people who think they're fine. He cleanses the untouchable, forgives what no one else can, and makes a man new, not patched."
     }
+  },
+  {
+    "id": "luke-06",
+    "type": "chapter",
+    "book": "Luke",
+    "ch": 6,
+    "date": "2026-10-29",
+    "title": "Luke 6",
+    "sub": "Hear, and do",
+    "about": "Jesus is Lord of the sabbath, prays all night before choosing twelve ordinary men, and teaches a crowd on the plain to love their enemies and build on the rock.",
+    "tags": [
+      "Sabbath",
+      "Prayer",
+      "Blessing",
+      "Enemies",
+      "Mercy",
+      "Obedience"
+    ],
+    "url": "studies/luke-06.html",
+    "overview": {
+      "where": "Galilee: grain fields and a synagogue on two sabbaths, a mountain where Jesus prayed, then a level place, probably near Capernaum, with crowds from Judaea, Jerusalem, Tyre and Sidon",
+      "when": "Early in Jesus' work in Galilee, about AD 28",
+      "people": [
+        "jesus",
+        "pharisees",
+        "scribes",
+        "disciples",
+        "apostles",
+        "simon-peter",
+        "andrew",
+        "sons-of-zebedee",
+        "philip",
+        "bartholomew",
+        "levi-matthew",
+        "thomas",
+        "james-son-of-alphaeus",
+        "simon-the-zealot",
+        "judas-not-iscariot",
+        "judas-iscariot",
+        "david",
+        "withered-hand"
+      ],
+      "places": [
+        "synagogue",
+        "house-of-god",
+        "judaea",
+        "jerusalem",
+        "tyre-and-zidon"
+      ],
+      "story": [
+        "His disciples pick grain on the sabbath. Jesus answers the Pharisees with David and the shewbread: “The Son of man is Lord also of the sabbath” (1–5).",
+        "On another sabbath, with the scribes and Pharisees watching, He heals a man's withered hand. They are filled with madness (6–11).",
+        "Jesus prays all night on a mountain, then chooses twelve and names them apostles (12–16).",
+        "On a level place, crowds from Judaea, Jerusalem, Tyre and Sidon come to hear Him and be healed (17–19).",
+        "He blesses the poor, the hungry, the weeping and the hated, and warns the rich and the full (20–26).",
+        "Love your enemies, do as you would be done by, be merciful as your Father is merciful, judge not, forgive, and give (27–38).",
+        "Blind guides, the mote and the beam, trees known by their fruit, and two houses: one dug deep to the rock, one with no foundation (39–49)."
+      ],
+      "key": {
+        "ref": "Luke 6:46",
+        "text": "And why call ye me, Lord, Lord, and do not the things which I say?"
+      },
+      "big": "Calling Jesus Lord means doing what He says. He meets people at the bottom, teaches us to love as God loved us when we were His enemies, and a life built on His word stands when the flood comes."
+    }
+  },
+  {
+    "id": "luke-07",
+    "type": "chapter",
+    "book": "Luke",
+    "ch": 7,
+    "date": "2026-10-29",
+    "title": "Luke 7",
+    "sub": "Thy faith hath saved thee",
+    "about": "A Roman officer trusts a word, a widow gets her son back at the gate of Nain, John asks from prison, and a woman who was a sinner is forgiven and sent home in peace.",
+    "tags": [
+      "Faith",
+      "Compassion",
+      "Doubt",
+      "Forgiveness",
+      "Grace",
+      "Salvation"
+    ],
+    "url": "studies/luke-07.html",
+    "overview": {
+      "where": "Capernaum, then the gate of Nain in lower Galilee, and a Pharisee's house; John the Baptist sends word from Herod's prison",
+      "when": "Soon after the teaching on the plain, about AD 28",
+      "people": [
+        "jesus",
+        "centurion",
+        "elders",
+        "widow-of-nain",
+        "john-the-baptist",
+        "disciples",
+        "publicans",
+        "pharisees",
+        "lawyers",
+        "simon-the-pharisee",
+        "woman-who-was-a-sinner"
+      ],
+      "places": [
+        "capernaum",
+        "nain",
+        "synagogue",
+        "judaea",
+        "wilderness"
+      ],
+      "story": [
+        "A centurion in Capernaum, a Gentile who built the synagogue, sends word: “I am not worthy… say in a word.” Jesus marvels at his faith, and the servant is healed (1–10).",
+        "At the gate of Nain, Jesus meets a widow burying her only son. He has compassion, touches the bier, and says, “Young man, I say unto thee, Arise” (11–17).",
+        "John, in prison, sends two disciples to ask, “Art thou he that should come?” Jesus heals many and sends back what they have seen and heard (18–23).",
+        "Jesus calls John more than a prophet, and says this generation is like children who won't play: they said John had a devil, and called Jesus a glutton and a friend of sinners (24–35).",
+        "At Simon the Pharisee's table, a woman who was a sinner washes Jesus' feet with her tears. He tells of two debtors, both forgiven (36–43).",
+        "Simon gave Him no water, no kiss, no oil. She loved much. “Thy sins are forgiven… Thy faith hath saved thee; go in peace” (44–50)."
+      ],
+      "key": {
+        "ref": "Luke 7:50",
+        "text": "And he said to the woman, Thy faith hath saved thee; go in peace."
+      },
+      "big": "Jesus' word is enough. He sees grief nobody brings to Him, answers honest doubt with evidence, and is the friend of sinners. Faith in Him saves, and those forgiven much love much."
+    }
   }
 ];

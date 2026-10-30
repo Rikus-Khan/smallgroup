@@ -1,0 +1,678 @@
+<!doctype html>
+<html lang="en" data-theme="stone">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Luke 6</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="../assets/fonts.css">
+<link rel="stylesheet" href="../assets/deck.css">
+<link rel="stylesheet" href="../assets/themes.css">
+<style>
+/* lk06-loaves: the table of shewbread, twelve loaves in two rows, set out one by one */
+.lk06-table { fill: var(--leather); }
+.lk06-leg { stroke: var(--leather); stroke-width: 10; stroke-linecap: round; }
+.lk06-loaf { fill: var(--warm); stroke: var(--leather-light); stroke-width: 2; opacity: 0; transform: translateY(-14px); transition: opacity .5s ease, transform .5s ease; transition-delay: calc(var(--k, 0) * 160ms + .5s); }
+.slide.active .lk06-loaf { opacity: 1; transform: none; }
+.lk06-cap { fill: var(--ink-soft); font-size: 15px; }
+.lk06-big { fill: var(--accent-hot); font: 600 22px var(--serif); }
+
+/* lk06-measure: four grain measures, one per step: good measure, pressed down, shaken together, running over */
+.lk06-bowl { fill: none; stroke: var(--leather-light); stroke-width: 4; stroke-linejoin: round; }
+.lk06-grain { fill: var(--warm); stroke: var(--leather); stroke-width: 1.5; }
+.lk06-air { fill: var(--bg); }
+.lk06-mark { fill: none; stroke: var(--accent); stroke-width: 3.5; stroke-linecap: round; stroke-linejoin: round; }
+.lk06-bit { fill: var(--warm); stroke: var(--leather); stroke-width: 1; }
+.lk06-name { fill: var(--ink); font: 600 17px var(--serif); }
+.slide.active .lk06-g3.on .lk06-shake { animation: lk06-shake .18s ease-in-out 6 alternate; transform-box: fill-box; transform-origin: center; }
+@keyframes lk06-shake { from { transform: translateX(-4px); } to { transform: translateX(4px); } }
+.slide.active .lk06-g4.on .lk06-bit { animation: lk06-fall 1.6s ease-in infinite; animation-delay: var(--dl, 0s); }
+@keyframes lk06-fall { 0% { transform: translateY(-10px); opacity: 0; } 20% { opacity: 1; } 100% { transform: translateY(46px); opacity: 0; } }
+
+/* lk06-dig: two houses in cross-section; one dug down to the rock, then the flood comes */
+.lk06-sky { fill: none; }
+.lk06-soil { fill: var(--surface-2); stroke: var(--line-strong); stroke-width: 1.5; }
+.lk06-rock { fill: color-mix(in srgb, var(--ink-soft) 38%, var(--bg)); }
+.lk06-crack { fill: none; stroke: var(--bg); stroke-width: 2; opacity: .5; }
+.lk06-wall { fill: var(--surface); stroke: var(--ink-soft); stroke-width: 2.5; }
+.lk06-roof { fill: var(--leather); stroke: var(--ink-soft); stroke-width: 2; stroke-linejoin: round; }
+.lk06-door { fill: var(--leather-light); }
+.lk06-found { fill: var(--leather-light); stroke: var(--ink-soft); stroke-width: 2; transform-box: fill-box; transform-origin: top; transform: scaleY(0); transition: transform 1.6s ease-in-out; }
+.slide:has(.lk06-digs.on) .lk06-found { transform: scaleY(1); }
+.lk06-water { fill: color-mix(in srgb, var(--cool) 55%, transparent); opacity: 0; transform-box: fill-box; transform-origin: bottom; transform: scaleY(0); transition: opacity .6s ease, transform 1.4s ease-out; }
+.slide:has(.lk06-flood.on) .lk06-water { opacity: 1; transform: scaleY(1); }
+.lk06-fall { transform-box: fill-box; transform-origin: 100% 100%; transition: transform 1.3s cubic-bezier(.5,0,.8,.4) 1.2s, opacity 1.3s ease 1.2s; }
+.slide:has(.lk06-flood.on) .lk06-fall { transform: translate(18px, 34px) rotate(28deg); opacity: .45; }
+.lk06-label { fill: var(--ink); font-size: 16px; font-weight: 700; }
+.lk06-note { fill: var(--ink-soft); font-size: 14px; }
+.lk06-tag { fill: var(--accent-hot); font: italic 600 16px var(--serif); opacity: 0; transition: opacity .6s ease 2.4s; }
+.slide:has(.lk06-flood.on) .lk06-tag { opacity: 1; }
+@media (max-width: 600px) { .lk06-name, .lk06-label, .lk06-tag { font-size: 22px; } .lk06-note, .lk06-cap { font-size: 18px; } }
+</style>
+</head>
+<body>
+<main class="deck" id="deck">
+
+<!-- ======================= OPENING ======================= -->
+<section class="slide title">
+  <div class="inner">
+    <div class="emblem rise"></div>
+    <h1 class="rise" style="--d:1">Luke 6</h1>
+    <p class="sub rise" style="--d:3">Hear, and do</p>
+    <p class="tag rise" style="--d:5">Jesus is Lord of the sabbath, chooses twelve ordinary men, and teaches a crowd on the plain how His people live.</p>
+  </div>
+</section>
+
+<section class="slide watch">
+  <div class="inner">
+    <h2 class="rise">Things to watch for</h2>
+    <p class="lede rise" style="--d:1">Keep these questions in the back of your mind as we read. We'll come back to every one of them at the end.</p>
+    <ol class="seeds">
+      <li class="step"><span class="topic">The sabbath</span><span class="seed-q">What is the sabbath for, and who is Lord of it?</span></li>
+      <li class="step"><span class="topic">Prayer</span><span class="seed-q">What did Jesus do before He chose the twelve?</span></li>
+      <li class="step"><span class="topic">Blessed</span><span class="seed-q">Who did Jesus call blessed, and why?</span></li>
+      <li class="step"><span class="topic">Enemies</span><span class="seed-q">How are we to treat the people who hurt us?</span></li>
+      <li class="step"><span class="topic">Judging</span><span class="seed-q">What should a man look at first, before he points out another man's fault?</span></li>
+      <li class="step"><span class="topic">Foundation</span><span class="seed-q">What made the difference between the two houses?</span></li>
+    </ol>
+  </div>
+</section>
+
+<!-- ======================= PART ONE: LORD OF THE SABBATH ======================= -->
+<section class="slide part">
+  <div class="inner">
+    <p class="part-n rise">Part one</p>
+    <h2 class="rise" style="--d:1">Lord of the sabbath</h2>
+    <p class="range rise" style="--d:2">Verses 1–11</p>
+    <div class="rule"></div>
+    <p class="hook rise" style="--d:4">Two sabbaths, two run-ins with the Pharisees: one in a grain field, one in a synagogue.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="1-2" data-hl="his disciples plucked the ears of corn|Why do ye that which is not lawful to do on the sabbath days?"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="1" data-hl="plucked the ears of corn, and did eat, rubbing them in their hands"></blockquote>
+    <h2 class="rise" style="--d:1">A snack, or a crime?</h2>
+    <p class="note rise" style="--d:2"><em>Corn</em> in the King James means grain: wheat or barley. Walking along a path through a field, hungry men picked a few heads, rubbed off the husks, and ate.</p>
+    <div class="columns">
+      <div class="col grace step">
+        <p class="who">What God's law said</p>
+        <h3>Allowed</h3>
+        <p>A hungry man could pick by hand in his neighbour's field. He just couldn't bring a sickle and harvest it.</p>
+      </div>
+      <div class="col law step">
+        <p class="who">What the Pharisees' rules said</p>
+        <h3>“Not lawful”</h3>
+        <p>Picking was reaping. Rubbing was threshing. Both were work, so both broke the sabbath.</p>
+      </div>
+    </div>
+    <blockquote class="quote step"><p>“When thou comest into the standing corn of thy neighbour, then thou mayest pluck the ears with thine hand; but thou shalt not move a sickle unto thy neighbour’s standing corn.”</p><cite>Deuteronomy 23:25</cite></blockquote>
+  </div>
+</section>
+
+<section class="slide verse" data-v="3-5" data-hl="what David did, when himself was an hungred|did take and eat the shewbread|That the Son of man is Lord also of the sabbath"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <div class="split">
+      <div class="stage">
+        <svg viewBox="0 0 400 300" role="img" aria-label="The table of shewbread in the house of God: twelve loaves set out in two rows of six, one by one.">
+          <text class="lk06-big" x="200" y="34" text-anchor="middle">twelve loaves</text>
+          <text class="lk06-cap" x="200" y="56" text-anchor="middle">two rows of six, set out fresh every sabbath</text>
+          <g>
+            <ellipse class="lk06-loaf" style="--k:0" cx="70" cy="118" rx="24" ry="13"/>
+            <ellipse class="lk06-loaf" style="--k:1" cx="122" cy="118" rx="24" ry="13"/>
+            <ellipse class="lk06-loaf" style="--k:2" cx="174" cy="118" rx="24" ry="13"/>
+            <ellipse class="lk06-loaf" style="--k:3" cx="226" cy="118" rx="24" ry="13"/>
+            <ellipse class="lk06-loaf" style="--k:4" cx="278" cy="118" rx="24" ry="13"/>
+            <ellipse class="lk06-loaf" style="--k:5" cx="330" cy="118" rx="24" ry="13"/>
+            <ellipse class="lk06-loaf" style="--k:6" cx="70" cy="150" rx="24" ry="13"/>
+            <ellipse class="lk06-loaf" style="--k:7" cx="122" cy="150" rx="24" ry="13"/>
+            <ellipse class="lk06-loaf" style="--k:8" cx="174" cy="150" rx="24" ry="13"/>
+            <ellipse class="lk06-loaf" style="--k:9" cx="226" cy="150" rx="24" ry="13"/>
+            <ellipse class="lk06-loaf" style="--k:10" cx="278" cy="150" rx="24" ry="13"/>
+            <ellipse class="lk06-loaf" style="--k:11" cx="330" cy="150" rx="24" ry="13"/>
+          </g>
+          <rect class="lk06-table" x="30" y="166" width="340" height="18" rx="4"/>
+          <line class="lk06-leg" x1="56" y1="184" x2="56" y2="262"/>
+          <line class="lk06-leg" x1="344" y1="184" x2="344" y2="262"/>
+          <text class="lk06-cap" x="200" y="290" text-anchor="middle">“which it is not lawful to eat but for the priests alone”</text>
+        </svg>
+      </div>
+      <div>
+        <h2 class="rise" style="--d:1">David and the holy bread</h2>
+        <p class="note rise" style="--d:2">In the house of God stood a table with twelve loaves, one for each tribe. The <em>shewbread</em> was changed every sabbath, and only priests ate the old loaves.</p>
+        <p class="note step">David, running from King Saul, came hungry, and the priest gave him that bread (1 Samuel 21). God's law was given to help people, not to starve them.</p>
+        <p class="note step">Then Jesus said something only God could say: <em>“The Son of man is Lord also of the sabbath.”</em> The One who made the day of rest was standing in the field.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="slide verse" data-v="6-8" data-hl="whose right hand was withered|watched him, whether he would heal on the sabbath day|Rise up, and stand forth in the midst"></section>
+
+<section class="slide verse" data-v="9-11" data-hl="Is it lawful on the sabbath days to do good, or to do evil?|Stretch forth thy hand|his hand was restored whole as the other|they were filled with madness"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="9" data-hl="to save life, or to destroy it?"></blockquote>
+    <h2 class="rise" style="--d:1">Two plans on the same sabbath</h2>
+    <div class="columns">
+      <div class="col grace step">
+        <p class="who">Jesus</p>
+        <h3>Made a man whole</h3>
+        <p>He saw a man with a dead right hand, his working hand, and gave it back.</p>
+      </div>
+      <div class="col law step">
+        <p class="who">The scribes and Pharisees</p>
+        <h3>Planned harm</h3>
+        <p>They came to watch for a charge, and left <em>“filled with madness,”</em> working out what to do to Jesus.</p>
+      </div>
+    </div>
+    <p class="note step">Jesus answered their real question with His own: if you won't do good on the sabbath, you're doing evil. Doing nothing for a man in need isn't holiness. And who was really breaking the sabbath that day?</p>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="10" data-hl="Stretch forth thy hand. And he did so"></blockquote>
+    <h2 class="rise" style="--d:1">He did so</h2>
+    <p class="note rise" style="--d:2">Think about what Jesus asked. <em>“Stretch forth thy hand”</em> was the one thing this man couldn't do. He had to stand up in front of everyone, with the whole room watching, and try.</p>
+    <p class="note step">He didn't wait to feel healed first. He obeyed, and the power came with the obeying. <em>“And he did so: and his hand was restored.”</em></p>
+    <p class="note step">Many of us have something withered: a marriage, a trust, a working life, a part of us we've given up on. Jesus still says, <em>stretch it out to me</em>. Take the step He asks today, before you can see how it will work.</p>
+  </div>
+</section>
+
+<!-- ======================= PART TWO: THE TWELVE ======================= -->
+<section class="slide part">
+  <div class="inner">
+    <p class="part-n rise">Part two</p>
+    <h2 class="rise" style="--d:1">He chose twelve</h2>
+    <p class="range rise" style="--d:2">Verses 12–19</p>
+    <div class="rule"></div>
+    <p class="hook rise" style="--d:4">A night of prayer, twelve names, and a crowd from every direction.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="12-16" data-hl="continued all night in prayer to God|of them he chose twelve, whom also he named apostles|which also was the traitor"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="12"></blockquote>
+    <h2 class="rise" style="--d:1">All night, then the choice</h2>
+    <ol class="timeline">
+      <li style="--k:0"><b>Evening</b><span>He goes up a mountain alone</span></li>
+      <li style="--k:1" class="lit"><b>All night</b><span>in prayer to God</span></li>
+      <li style="--k:2"><b>When it was day</b><span>He calls His disciples</span></li>
+      <li style="--k:3"><b>Twelve chosen</b><span>named <em>apostles</em>, “sent ones”</span></li>
+      <li style="--k:4"><b>Down to the plain</b><span>to the crowds (v. 17)</span></li>
+    </ol>
+    <p class="note step">The Son of God faced His biggest decision so far, and He spent the whole night talking to His Father about it. If He didn't make big choices without prayer, we shouldn't either.</p>
+    <p class="note step">Luke shows Jesus praying more than any other gospel does: at His baptism (3:21), alone in the wilderness (5:16), here, and on to Gethsemane.</p>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise">Not the men you'd pick</h2>
+    <ul class="signs">
+      <li class="rise" style="--d:1"><b>Simon Peter</b>fisherman, big mouth</li>
+      <li class="rise" style="--d:1"><b>Andrew</b>his brother, a fisherman</li>
+      <li class="rise" style="--d:2"><b>James</b>fisherman, a temper</li>
+      <li class="rise" style="--d:2"><b>John</b>his brother, the same</li>
+      <li class="rise" style="--d:3"><b>Philip</b>from Bethsaida</li>
+      <li class="rise" style="--d:3"><b>Bartholomew</b>likely Nathanael</li>
+      <li class="step now"><b>Matthew</b>a tax collector, worked for Rome</li>
+      <li class="rise" style="--d:4"><b>Thomas</b>the twin, slow to believe</li>
+      <li class="rise" style="--d:4"><b>James</b>son of Alphaeus</li>
+      <li class="step now"><b>Simon Zelotes</b>a Zealot, hated Rome</li>
+      <li class="rise" style="--d:5"><b>Judas</b>brother of James</li>
+      <li class="step"><b>Judas Iscariot</b>“which also was the traitor”</li>
+    </ul>
+    <p class="note step">No priests, no scholars. Fishermen, a tax man, and a rebel who would once have counted Matthew a traitor, all at one table. Jesus makes enemies into brothers.</p>
+    <p class="note step">Even Judas sat under the same teaching and saw the same miracles. Being close to Jesus isn't the same as trusting Him.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="17-19" data-hl="stood in the plain|out of all Judaea and Jerusalem, and from the sea coast of Tyre and Sidon|there went virtue out of him, and healed them all"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <div class="split">
+      <div class="stage">
+        <svg class="map" data-land viewBox="100 0 300 420" data-towns="Capernaum!:r, Jerusalem:l" role="img" aria-label="A map of the land. Lines draw toward the lake of Galilee from every side: north from Jerusalem and Judaea up the Jordan valley, and south-east from the coast of Tyre and Sidon.">
+          <path class="map-way" d="M196 2 L 190 58"/>
+          <g class="map-town"><circle cx="190" cy="60" r="6"/><text x="179" y="65" text-anchor="end">Tyre</text></g>
+          <text class="map-soft" x="203" y="20" font-size="14">to Sidon</text>
+          <path class="map-route r1" pathLength="1" d="M202 385 C 230 372, 252 356, 262 320 S 262 230, 258 190 C 256 170, 260 152, 264 140"/>
+          <path class="map-route r2" pathLength="1" d="M196 4 L 191 54 M196 66 C 220 90, 246 112, 264 130"/>
+        </svg>
+      </div>
+      <div>
+        <h2 class="rise" style="--d:1">From every direction</h2>
+        <p class="note rise" style="--d:2">Jesus came down from the mountain to a level place, probably near Capernaum and the lake.</p>
+        <p class="note step map-go1">People had walked up from Judaea and Jerusalem, around 80 miles, several days on foot.</p>
+        <p class="note step map-go2">Others came down from the coast of Tyre and Sidon, Gentile country. Hurting people will walk a long way to find help.</p>
+        <p class="note step"><em>Virtue</em> here means power. It flowed out of Him, and <em>“healed them all.”</em> Nobody went home unhelped.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ======================= PART THREE: ON THE PLAIN ======================= -->
+<section class="slide part">
+  <div class="inner">
+    <p class="part-n rise">Part three</p>
+    <h2 class="rise" style="--d:1">Love your enemies</h2>
+    <p class="range rise" style="--d:2">Verses 20–38</p>
+    <div class="rule"></div>
+    <p class="hook rise" style="--d:4">Jesus looks at His disciples and turns the world's thinking upside down.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="20-23" data-hl="Blessed be ye poor: for yours is the kingdom of God|Blessed are ye that hunger now: for ye shall be filled|your reward is great in heaven"></section>
+
+<section class="slide verse" data-v="24-26" data-hl="woe unto you that are rich! for ye have received your consolation|Woe unto you, when all men shall speak well of you!"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise">Blessed, and woe</h2>
+    <p class="note rise" style="--d:1">Four blessings, then four woes, each one the mirror of the other. <em>Blessed</em> means happy, favoured by God. <em>Woe</em> is a cry of grief: look out.</p>
+    <div class="match" style="--n:4" aria-label="Blessed: ye poor, ye that hunger now, ye that weep now, when men hate you. Woe: you that are rich, you that are full, you that laugh now, when all men speak well of you. Each blessing matches a woe.">
+      <div class="a rise" style="--d:2"><span class="tag">blessed</span><span class="w">ye poor</span><span class="w">ye that hunger now</span><span class="w">ye that weep now</span><span class="w">when men hate you</span></div>
+      <div class="step"><span></span><span class="link">the kingdom, or comfort now</span><span class="link">filled, or hungry</span><span class="link">laugh, or mourn</span><span class="link">prophets, or false prophets</span></div>
+      <div class="b step"><span class="but">woe</span><span class="w">you that are rich</span><span class="w">you that are full</span><span class="w">you that laugh now</span><span class="w">when all men speak well of you</span></div>
+    </div>
+    <p class="note step">Notice the word <em>now</em>. Today is not the end of the story. The man who has everything now may have nothing then. The man at the bottom who comes to Jesus has the kingdom.</p>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="21" data-hl="Blessed are ye that hunger now"></blockquote>
+    <h2 class="rise" style="--d:1">Good news at the bottom</h2>
+    <p class="note rise" style="--d:2">Being poor doesn't save anybody, and money doesn't damn anybody. The danger in riches is <em>“ye have received your consolation”</em>: a man who has all he wants doesn't think he needs God.</p>
+    <p class="note step">Many of us found Jesus at the bottom: broke, hungry, crying, and cut off from the people we used to run with. Jesus says that's not a curse. It's often where God meets a man.</p>
+    <p class="note step">And if people mock you now because you follow Christ, Jesus says <em>“leap for joy.”</em> You're in good company: they did the same to the prophets.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="27-29" data-hl="Love your enemies, do good to them which hate you|pray for them which despitefully use you|offer also the other"></section>
+
+<section class="slide verse" data-v="30-31" data-hl="Give to every man that asketh of thee|as ye would that men should do to you, do ye also to them likewise"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise">Four commands, four kinds of people</h2>
+    <ul class="signs">
+      <li class="step now"><b>Love</b>your enemies</li>
+      <li class="step now"><b>Do good</b>to them which hate you</li>
+      <li class="step now"><b>Bless</b>them that curse you</li>
+      <li class="step now"><b>Pray</b>for them which despitefully use you</li>
+    </ul>
+    <p class="note step">This isn't about feelings. It's what you <em>do</em>: a kind act, a good word, a prayer. You can pray for a man you can't stand yet.</p>
+    <p class="note step">The cheek and the coat are about an insult and a lawsuit, not about letting someone harm your family. The point: don't hit back, don't keep score.</p>
+    <p class="saying step">“As ye would that men should do to you, <em>do ye also to them</em>”</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="32-34" data-hl="what thank have ye?|for sinners also love those that love them"></section>
+
+<section class="slide verse" data-v="35-36" data-hl="But love ye your enemies, and do good, and lend, hoping for nothing again|ye shall be the children of the Highest|he is kind unto the unthankful and to the evil|Be ye therefore merciful, as your Father also is merciful"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="35" data-hl="he is kind unto the unthankful and to the evil"></blockquote>
+    <h2 class="rise" style="--d:1">Like Father, like son</h2>
+    <p class="note rise" style="--d:2"><em>“What thank have ye?”</em> means: what credit is that? Anybody loves his friends. Crooks lend to crooks, expecting payback. Jesus asks for more than the world gives.</p>
+    <p class="note step">Why? Because that's how God treated us. He is kind to <em>the unthankful and to the evil</em>. That was us. We didn't earn His love. He loved us first, while we were still His enemies.</p>
+    <blockquote class="quote step"><p>“But God commendeth his love toward us, in that, while we were yet sinners, Christ died for us.”</p><cite>Romans 5:8</cite></blockquote>
+    <p class="note step">On the cross, Jesus did exactly what He taught here:</p>
+    <blockquote class="quote step"><p>“Then said Jesus, Father, forgive them; for they know not what they do. And they parted his raiment, and cast lots.”</p><cite>Luke 23:34</cite></blockquote>
+  </div>
+</section>
+
+<section class="slide verse" data-v="37-38" data-hl="Judge not, and ye shall not be judged|forgive, and ye shall be forgiven|good measure, pressed down, and shaken together, and running over"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise">Good measure</h2>
+    <p class="note rise" style="--d:1">Picture the grain market. A seller fills your measure. An honest, generous seller doesn't stop there.</p>
+    <div class="stage">
+      <svg viewBox="0 0 680 210" role="img" aria-label="Four grain measures, one at a time: filled; pressed down, so it holds more; shaken together, so it settles; and heaped up until it runs over the rim.">
+        <g class="step lk06-g1">
+          <path class="lk06-grain" d="M28 74 L 142 74 L 128 160 L 42 160 Z"/>
+          <circle class="lk06-air" cx="60" cy="98" r="5"/><circle class="lk06-air" cx="98" cy="112" r="6"/><circle class="lk06-air" cx="76" cy="134" r="5"/><circle class="lk06-air" cx="116" cy="92" r="4"/>
+          <path class="lk06-bowl" d="M20 60 L 150 60 L 130 166 L 40 166 Z"/>
+          <text class="lk06-name" x="85" y="196" text-anchor="middle">good measure</text>
+        </g>
+        <g class="step lk06-g2">
+          <path class="lk06-grain" d="M198 66 L 322 66 L 302 160 L 216 160 Z"/>
+          <path class="lk06-mark" d="M260 6 L 260 46 M248 34 L 260 48 L 272 34"/>
+          <path class="lk06-bowl" d="M195 60 L 325 60 L 305 166 L 215 166 Z"/>
+          <text class="lk06-name" x="260" y="196" text-anchor="middle">pressed down</text>
+        </g>
+        <g class="step lk06-g3">
+          <g class="lk06-shake">
+            <path class="lk06-grain" d="M372 62 C 400 48, 470 48, 498 62 L 480 160 L 390 160 Z"/>
+            <path class="lk06-bowl" d="M370 60 L 500 60 L 480 166 L 390 166 Z"/>
+          </g>
+          <path class="lk06-mark" d="M356 92 C 346 104, 346 120, 356 132 M514 92 C 524 104, 524 120, 514 132"/>
+          <text class="lk06-name" x="435" y="196" text-anchor="middle">shaken together</text>
+        </g>
+        <g class="step lk06-g4">
+          <path class="lk06-grain" d="M548 62 C 560 18, 650 18, 662 62 L 654 66 L 634 160 L 566 160 L 546 66 Z"/>
+          <path class="lk06-grain" d="M546 60 C 538 66, 536 84, 540 104 L 548 104 C 546 86, 548 70, 552 62 Z"/>
+          <path class="lk06-grain" d="M664 60 C 672 66, 674 84, 670 104 L 662 104 C 664 86, 662 70, 658 62 Z"/>
+          <path class="lk06-bowl" d="M545 60 L 675 60 L 655 166 L 565 166 Z"/>
+          <circle class="lk06-bit" style="--dl:0s" cx="540" cy="112" r="3.5"/><circle class="lk06-bit" style="--dl:.5s" cx="670" cy="112" r="3.5"/><circle class="lk06-bit" style="--dl:1s" cx="543" cy="112" r="3"/><circle class="lk06-bit" style="--dl:.8s" cx="667" cy="112" r="3"/>
+          <text class="lk06-name" x="610" y="196" text-anchor="middle">running over</text>
+        </g>
+      </svg>
+    </div>
+    <p class="note step">He pours it <em>“into your bosom”</em>: the fold of your robe above the belt, held out like an apron. Jesus says God pays back like that seller. And the measuring cup you use on other people, with judgment or with mercy, is the one used on you.</p>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="37" data-hl="Judge not|forgive, and ye shall be forgiven"></blockquote>
+    <h2 class="rise" style="--d:1">What “judge not” means</h2>
+    <p class="note rise" style="--d:2">It doesn't mean you can never call wrong <em>wrong</em>. A few verses on, Jesus tells us to judge a tree by its fruit. It means: don't take God's seat. Don't write a man off, and don't pass a final sentence on him.</p>
+    <p class="note step">We are not forgiven <em>because</em> we forgive. We're forgiven by grace, through faith in Christ. But a man who has been forgiven a mountain of debt and won't forgive his brother a pebble has forgotten where he came from.</p>
+    <blockquote class="quote step"><p>“And be ye kind one to another, tenderhearted, forgiving one another, even as God for Christ’s sake hath forgiven you.”</p><cite>Ephesians 4:32</cite></blockquote>
+  </div>
+</section>
+
+<!-- ======================= PART FOUR: TWO BUILDERS ======================= -->
+<section class="slide part">
+  <div class="inner">
+    <p class="part-n rise">Part four</p>
+    <h2 class="rise" style="--d:1">Hear, and do</h2>
+    <p class="range rise" style="--d:2">Verses 39–49</p>
+    <div class="rule"></div>
+    <p class="hook rise" style="--d:4">Blind guides, a plank in the eye, trees and their fruit, and two houses in a flood.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="39-40" data-hl="Can the blind lead the blind?|The disciple is not above his master"></section>
+
+<section class="slide verse" data-v="41-42" data-hl="the mote that is in thy brother’s eye|the beam that is in thine own eye|cast out first the beam out of thine own eye, and then shalt thou see clearly"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise">The speck and the plank</h2>
+    <p class="note rise" style="--d:1">A <em>mote</em> is a speck of sawdust. A <em>beam</em> is a roof timber. Jesus was a carpenter, and you can almost hear Him laughing at the picture: a man with a plank sticking out of his eye, squinting to help his brother with a speck.</p>
+    <div class="ifthen step">
+      <div class="if"><small>First</small>cast out the beam out of thine own eye,</div>
+      <span class="arrow" aria-hidden="true">→</span>
+      <div class="then"><small>then</small>thou shalt see clearly to help thy brother.</div>
+    </div>
+    <p class="note step">Jesus doesn't say leave your brother's speck alone. He says deal with yourself first, honestly, and then help him gently.</p>
+    <blockquote class="quote step"><p>“Brethren, if a man be overtaken in a fault, ye which are spiritual, restore such an one in the spirit of meekness; considering thyself, lest thou also be tempted.”</p><cite>Galatians 6:1</cite></blockquote>
+  </div>
+</section>
+
+<section class="slide verse" data-v="43-45" data-hl="every tree is known by his own fruit|of the abundance of the heart his mouth speaketh"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="45" data-hl="for of the abundance of the heart his mouth speaketh"></blockquote>
+    <h2 class="rise" style="--d:1">Fruit comes from the root</h2>
+    <div class="columns">
+      <div class="col grace step">
+        <p class="who">Trying harder</p>
+        <h3>Tie on new fruit</h3>
+        <p>Swear less, drink less, try to act right. Good things, but a thorn bush with figs tied on is still a thorn bush.</p>
+      </div>
+      <div class="col law step">
+        <p class="who">What Jesus does</p>
+        <h3>A new tree</h3>
+        <p>He changes the heart, and the heart changes the mouth, the hands, and the habits.</p>
+      </div>
+    </div>
+    <p class="note step">Your mouth tells on your heart. What comes out when you're tired, angry, or cornered is what's stored up inside. That's why we need more than willpower. We need a new heart.</p>
+    <blockquote class="quote step"><p>“Therefore if any man be in Christ, he is a new creature: old things are passed away; behold, all things are become new.”</p><cite>2 Corinthians 5:17</cite></blockquote>
+  </div>
+</section>
+
+<section class="slide verse" data-v="46-47" data-hl="why call ye me, Lord, Lord, and do not the things which I say?|heareth my sayings, and doeth them"></section>
+
+<section class="slide verse" data-v="48-49" data-hl="digged deep, and laid the foundation on a rock|could not shake it|without a foundation built an house upon the earth|the ruin of that house was great"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <div class="stage">
+      <svg viewBox="0 0 600 300" role="img" aria-label="Two houses side by side in cross-section. Under the left house a foundation is dug down through the soil to the rock. Then a flood rises: the left house stands, and the right house, built on the soil with no foundation, tips over and falls.">
+        <rect class="lk06-soil" x="0" y="190" width="600" height="50"/>
+        <rect class="lk06-rock" x="0" y="240" width="600" height="60"/>
+        <path class="lk06-crack" d="M40 258 L 70 272 L 66 290 M180 252 L 200 268 M380 262 L 410 252 L 430 270 M520 256 L 546 276"/>
+        <text class="lk06-note" x="590" y="216" text-anchor="end">earth</text>
+        <text class="lk06-note" x="590" y="290" text-anchor="end">rock</text>
+        <rect class="lk06-found" x="76" y="190" width="128" height="68"/>
+        <g>
+          <rect class="lk06-wall" x="80" y="120" width="120" height="70"/>
+          <path class="lk06-roof" d="M68 122 L 140 74 L 212 122 Z"/>
+          <rect class="lk06-door" x="128" y="150" width="24" height="40" rx="2"/>
+        </g>
+        <g class="lk06-fall">
+          <rect class="lk06-wall" x="380" y="120" width="120" height="70"/>
+          <path class="lk06-roof" d="M368 122 L 440 74 L 512 122 Z"/>
+          <rect class="lk06-door" x="428" y="150" width="24" height="40" rx="2"/>
+        </g>
+        <path class="lk06-water" d="M0 150 C 40 142, 80 158, 120 150 S 200 142, 240 150 S 320 158, 360 150 S 440 142, 480 150 S 560 158, 600 150 L 600 190 L 0 190 Z"/>
+        <text class="lk06-label" x="140" y="40" text-anchor="middle">heard, and did</text>
+        <text class="lk06-label" x="440" y="40" text-anchor="middle">heard, and did not</text>
+        <text class="lk06-tag" x="140" y="62" text-anchor="middle">“could not shake it”</text>
+        <text class="lk06-tag" x="440" y="62" text-anchor="middle">“immediately it fell”</text>
+      </svg>
+    </div>
+    <h2 class="rise" style="--d:1">Dig deep</h2>
+    <p class="note step lk06-digs">Luke gives a detail: the wise man <em>“digged deep.”</em> Down through the loose earth, all the way to the rock. That's slow, dirty, unseen work, and nobody admires a foundation.</p>
+    <p class="note step lk06-flood">Then the flood comes to both houses. From the road they looked the same. The storm showed the difference.</p>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="46"></blockquote>
+    <h2 class="rise" style="--d:1">Hearing isn't building</h2>
+    <p class="note rise" style="--d:2">Both men <em>heard</em>. Both sat in the same crowd. The only difference was that one went home and did what Jesus said.</p>
+    <p class="note step">Calling Jesus “Lord” means doing what He says. Not perfectly, and not to earn salvation, but as the way a saved man lives. Floods will come: a loss, a temptation, a craving, a bad day. The man who has been digging into God's word every day finds rock under his feet.</p>
+    <blockquote class="quote step"><p>“But be ye doers of the word, and not hearers only, deceiving your own selves.”</p><cite>James 1:22</cite></blockquote>
+    <blockquote class="quote step"><p>“For other foundation can no man lay than that is laid, which is Jesus Christ.”</p><cite>1 Corinthians 3:11</cite></blockquote>
+  </div>
+</section>
+
+<!-- ======================= CLOSING ======================= -->
+<section class="slide remember">
+  <div class="inner">
+    <h2 class="rise">Points to remember</h2>
+    <ol class="seeds">
+      <li class="step"><span class="topic">The sabbath</span><span class="seed-q">“Lord also of the sabbath” <cite>6:5</cite></span><span class="take">God's day of rest was made to do men good, and Jesus is its Lord.</span></li>
+      <li class="step"><span class="topic">Prayer</span><span class="seed-q">“All night in prayer to God” <cite>6:12</cite></span><span class="take">Jesus prayed before He chose. So should we.</span></li>
+      <li class="step"><span class="topic">Blessed</span><span class="seed-q">“Blessed are ye that hunger now” <cite>6:21</cite></span><span class="take">The bottom is often where God meets a man.</span></li>
+      <li class="step"><span class="topic">Enemies</span><span class="seed-q">“Love your enemies” <cite>6:27</cite></span><span class="take">Do good, bless, and pray, because God was kind to us when we were His enemies.</span></li>
+      <li class="step"><span class="topic">Judging</span><span class="seed-q">“Cast out first the beam” <cite>6:42</cite></span><span class="take">Deal honestly with yourself first, then help your brother gently.</span></li>
+      <li class="step"><span class="topic">Foundation</span><span class="seed-q">“Digged deep, and laid the foundation on a rock” <cite>6:48</cite></span><span class="take">Hear Jesus and do what He says. That's what stands in the flood.</span></li>
+    </ol>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 1 of 6</p>
+      <span class="topic">The sabbath</span>
+      <h2>What is the sabbath for, and who is Lord of it?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="5"></blockquote>
+      <blockquote class="quote step" data-q="9"></blockquote>
+      <blockquote class="quote step"><p>“The sabbath was made for man, and not man for the sabbath:”</p><cite>Mark 2:27</cite></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>God gave the sabbath as a gift of rest and a day to do good, not a trap of rules. Jesus, the Son of man, is Lord of it. He fed the hungry and healed the hurting on that day, because that is what God's day is for.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 2 of 6</p>
+      <span class="topic">Prayer</span>
+      <h2>What did Jesus do before He chose the twelve?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="12"></blockquote>
+      <blockquote class="quote step" data-q="13"></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>He went up a mountain and prayed to God all night. Only when it was day did He call His disciples and choose the twelve. If the Son of God prayed through a big decision, we need to pray through ours.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 3 of 6</p>
+      <span class="topic">Blessed</span>
+      <h2>Who did Jesus call blessed, and why?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="20"></blockquote>
+      <blockquote class="quote step" data-q="21"></blockquote>
+      <blockquote class="quote step" data-q="24"></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>The poor, the hungry, the weeping, and the hated who follow Him. Not because hardship saves, but because God meets people who know they need Him. They will have the kingdom, be filled, and laugh. Those who have everything now and need nothing are in danger.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 4 of 6</p>
+      <span class="topic">Enemies</span>
+      <h2>How are we to treat the people who hurt us?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="27"></blockquote>
+      <blockquote class="quote step" data-q="28"></blockquote>
+      <blockquote class="quote step" data-q="35" data-hl="for he is kind unto the unthankful and to the evil"></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>Love them, do them good, bless them, and pray for them. Treat them the way you'd want to be treated. We can do it because God did it first: He was kind to us when we were unthankful and evil.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 5 of 6</p>
+      <span class="topic">Judging</span>
+      <h2>What should a man look at first, before he points out another man's fault?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="42" data-hl="cast out first the beam out of thine own eye"></blockquote>
+      <blockquote class="quote step"><p>“Brethren, if a man be overtaken in a fault, ye which are spiritual, restore such an one in the spirit of meekness; considering thyself, lest thou also be tempted.”</p><cite>Galatians 6:1</cite></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>At himself. He should deal honestly with the beam in his own eye first. Then he can see clearly enough to help his brother, gently, remembering he could fall too.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 6 of 6</p>
+      <span class="topic">Foundation</span>
+      <h2>What made the difference between the two houses?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="48" data-hl="digged deep, and laid the foundation on a rock"></blockquote>
+      <blockquote class="quote step" data-q="49" data-hl="he that heareth, and doeth not"></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>Not the storm, and not the hearing. Both men heard Jesus, and both faced the flood. One did what Jesus said and dug down to the rock. The other heard and did nothing, and his house fell.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide prayer">
+  <div class="inner">
+    <div class="emblem rise"></div>
+    <h2 class="rise" style="--d:1">Prayer requests</h2>
+    <p class="ask-line rise" style="--d:2">What can we pray about for you today?</p>
+    <blockquote class="quote rise" style="--d:4"><p>“Casting all your care upon him; for he careth for you.”</p><cite>1 Peter 5:7</cite></blockquote>
+  </div>
+</section>
+
+</main>
+
+<script>
+// King James Version, Luke chapter 6
+const V = {
+  1: "And it came to pass on the second sabbath after the first, that he went through the corn fields; and his disciples plucked the ears of corn, and did eat, rubbing them in their hands.",
+  2: "And certain of the Pharisees said unto them, Why do ye that which is not lawful to do on the sabbath days?",
+  3: "And Jesus answering them said, Have ye not read so much as this, what David did, when himself was an hungred, and they which were with him;",
+  4: "How he went into the house of God, and did take and eat the shewbread, and gave also to them that were with him; which it is not lawful to eat but for the priests alone?",
+  5: "And he said unto them, That the Son of man is Lord also of the sabbath.",
+  6: "And it came to pass also on another sabbath, that he entered into the synagogue and taught: and there was a man whose right hand was withered.",
+  7: "And the scribes and Pharisees watched him, whether he would heal on the sabbath day; that they might find an accusation against him.",
+  8: "But he knew their thoughts, and said to the man which had the withered hand, Rise up, and stand forth in the midst. And he arose and stood forth.",
+  9: "Then said Jesus unto them, I will ask you one thing; Is it lawful on the sabbath days to do good, or to do evil? to save life, or to destroy it?",
+  10: "And looking round about upon them all, he said unto the man, Stretch forth thy hand. And he did so: and his hand was restored whole as the other.",
+  11: "And they were filled with madness; and communed one with another what they might do to Jesus.",
+  12: "And it came to pass in those days, that he went out into a mountain to pray, and continued all night in prayer to God.",
+  13: "And when it was day, he called unto him his disciples: and of them he chose twelve, whom also he named apostles;",
+  14: "Simon, (whom he also named Peter,) and Andrew his brother, James and John, Philip and Bartholomew,",
+  15: "Matthew and Thomas, James the son of Alphaeus, and Simon called Zelotes,",
+  16: "And Judas the brother of James, and Judas Iscariot, which also was the traitor.",
+  17: "And he came down with them, and stood in the plain, and the company of his disciples, and a great multitude of people out of all Judaea and Jerusalem, and from the sea coast of Tyre and Sidon, which came to hear him, and to be healed of their diseases;",
+  18: "And they that were vexed with unclean spirits: and they were healed.",
+  19: "And the whole multitude sought to touch him: for there went virtue out of him, and healed them all.",
+  20: "And he lifted up his eyes on his disciples, and said, Blessed be ye poor: for yours is the kingdom of God.",
+  21: "Blessed are ye that hunger now: for ye shall be filled. Blessed are ye that weep now: for ye shall laugh.",
+  22: "Blessed are ye, when men shall hate you, and when they shall separate you from their company, and shall reproach you, and cast out your name as evil, for the Son of man’s sake.",
+  23: "Rejoice ye in that day, and leap for joy: for, behold, your reward is great in heaven: for in the like manner did their fathers unto the prophets.",
+  24: "But woe unto you that are rich! for ye have received your consolation.",
+  25: "Woe unto you that are full! for ye shall hunger. Woe unto you that laugh now! for ye shall mourn and weep.",
+  26: "Woe unto you, when all men shall speak well of you! for so did their fathers to the false prophets.",
+  27: "But I say unto you which hear, Love your enemies, do good to them which hate you,",
+  28: "Bless them that curse you, and pray for them which despitefully use you.",
+  29: "And unto him that smiteth thee on the one cheek offer also the other; and him that taketh away thy cloke forbid not to take thy coat also.",
+  30: "Give to every man that asketh of thee; and of him that taketh away thy goods ask them not again.",
+  31: "And as ye would that men should do to you, do ye also to them likewise.",
+  32: "For if ye love them which love you, what thank have ye? for sinners also love those that love them.",
+  33: "And if ye do good to them which do good to you, what thank have ye? for sinners also do even the same.",
+  34: "And if ye lend to them of whom ye hope to receive, what thank have ye? for sinners also lend to sinners, to receive as much again.",
+  35: "But love ye your enemies, and do good, and lend, hoping for nothing again; and your reward shall be great, and ye shall be the children of the Highest: for he is kind unto the unthankful and to the evil.",
+  36: "Be ye therefore merciful, as your Father also is merciful.",
+  37: "Judge not, and ye shall not be judged: condemn not, and ye shall not be condemned: forgive, and ye shall be forgiven:",
+  38: "Give, and it shall be given unto you; good measure, pressed down, and shaken together, and running over, shall men give into your bosom. For with the same measure that ye mete withal it shall be measured to you again.",
+  39: "And he spake a parable unto them, Can the blind lead the blind? shall they not both fall into the ditch?",
+  40: "The disciple is not above his master: but every one that is perfect shall be as his master.",
+  41: "And why beholdest thou the mote that is in thy brother’s eye, but perceivest not the beam that is in thine own eye?",
+  42: "Either how canst thou say to thy brother, Brother, let me pull out the mote that is in thine eye, when thou thyself beholdest not the beam that is in thine own eye? Thou hypocrite, cast out first the beam out of thine own eye, and then shalt thou see clearly to pull out the mote that is in thy brother’s eye.",
+  43: "For a good tree bringeth not forth corrupt fruit; neither doth a corrupt tree bring forth good fruit.",
+  44: "For every tree is known by his own fruit. For of thorns men do not gather figs, nor of a bramble bush gather they grapes.",
+  45: "A good man out of the good treasure of his heart bringeth forth that which is good; and an evil man out of the evil treasure of his heart bringeth forth that which is evil: for of the abundance of the heart his mouth speaketh.",
+  46: "And why call ye me, Lord, Lord, and do not the things which I say?",
+  47: "Whosoever cometh to me, and heareth my sayings, and doeth them, I will shew you to whom he is like:",
+  48: "He is like a man which built an house, and digged deep, and laid the foundation on a rock: and when the flood arose, the stream beat vehemently upon that house, and could not shake it: for it was founded upon a rock.",
+  49: "But he that heareth, and doeth not, is like a man that without a foundation built an house upon the earth; against which the stream did beat vehemently, and immediately it fell; and the ruin of that house was great."
+};
+const BOOK = "Luke 6";
+</script>
+<script src="../assets/deck.js"></script>
+</body>
+</html>
