@@ -149,8 +149,8 @@
   // and its title slide links to the chapter overview (overview.html?id=<this file's name>)
   const chapterOf = bookRef.match(/^(.+) (\d+)$/);
   const studyId = location.pathname.split("/").pop().replace(/\.html$/, "");
-  const contents = chapterOf ? `${home}#book=${encodeURIComponent(chapterOf[1])}` : "";
-  const topical = /^(topic|doctrine|concept)-/.test(studyId);   // topic studies get the same link
+  const topical = /^(topic|doctrine|concept)-/.test(studyId);   // topic studies get the same links
+  const contents = chapterOf ? `${home}#book=${encodeURIComponent(chapterOf[1])}` : topical ? `${home}#study=${encodeURIComponent(studyId)}` : "";
   if ((chapterOf || topical) && studyId) document.querySelector(".slide.title .inner")?.insertAdjacentHTML("beforeend",
     `<a class="to-overview rise" style="--d:7" href="${home.replace(/index\.html$/, "")}overview.html?id=${encodeURIComponent(studyId)}">${topical ? "Overview" : "Chapter overview"}</a>`);
   document.body.insertAdjacentHTML("afterbegin", `<div class="ambient" aria-hidden="true">
@@ -160,7 +160,7 @@
   document.body.insertAdjacentHTML("beforeend", `
   <nav class="nav" aria-label="Slide controls">
     <a href="${home}" aria-label="All studies"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 11l8-7 8 7M6 9.5V20h12V9.5"/></svg></a>
-    ${contents ? `<a href="${contents}" aria-label="${chapterOf[1]}: contents"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 6.5C10 5 7 4.5 3.5 5v13c3.5-.5 6.5 0 8.5 1.5 2-1.5 5-2 8.5-1.5V5C17 4.5 14 5 12 6.5zM12 6.5v13"/></svg></a>` : ""}
+    ${contents ? `<a href="${contents}" aria-label="${chapterOf ? chapterOf[1] : "Topic"}: contents"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 6.5C10 5 7 4.5 3.5 5v13c3.5-.5 6.5 0 8.5 1.5 2-1.5 5-2 8.5-1.5V5C17 4.5 14 5 12 6.5zM12 6.5v13"/></svg></a>` : ""}
     <button type="button" id="prev" aria-label="Previous"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M15 5l-7 7 7 7"/></svg></button>
     <button type="button" id="next" aria-label="Next"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M9 5l7 7-7 7"/></svg></button>
     <div class="horizon"><span id="bar"></span></div>

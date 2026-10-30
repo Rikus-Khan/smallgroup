@@ -148,6 +148,9 @@ a.spine { text-decoration: none; }
 }
 .open-book.nt { --cover: var(--nt); }
 .open-book.ot { --cover: var(--ot); }
+.open-book.topic { --cover: var(--topic); }
+.open-book.doctrine { --cover: var(--doctrine); }
+.open-book.concept { --cover: var(--concept); }
 .page {
   position: relative; color: var(--ink); padding: 1.6rem 1.5rem 1.8rem;
   background-color: var(--paper);
@@ -402,8 +405,8 @@ function drawShelves() {
     html += `<section class="case-sec" aria-label="Topics, doctrines, and more">
       <div class="shelf-head"><h3>Topics, doctrines, and more</h3><ul class="legend">
       ${kinds.map(k => `<li><span style="background:var(--${k})"></span>${KINDS[k].many}</li>`).join("")}</ul></div>
-      <div class="shelf">${others.map(s => `<a class="spine ${s.type}${s.title.length > 9 ? " long" : ""}" href="${esc(s.url)}"
-          style="height:${215 + (s.title.length % 5) * 7}px;width:58px" aria-label="${esc(s.title)}, ${esc(KINDS[s.type].one)}">${esc(s.title)}<small>${esc(KINDS[s.type].one)}</small></a>`).join("")}</div></section>`;
+      <div class="shelf">${others.map(s => spine(s.type, s.title, KINDS[s.type].one, "study:" + s.id, 215 + (s.title.length % 5) * 7, 58)).join("")}</div>
+      ${others.filter(s => openBook === "study:" + s.id).map(drawOpenTopic).join("")}</section>`;
   }
 
   // Reference set: the glossary, one volume per kind of entry
@@ -431,7 +434,7 @@ function drawShelves() {
   root.querySelectorAll("[data-key]").forEach(b => b.addEventListener("click", () => {
     const key = b.dataset.key;
     openBook = openBook === key ? null : key;
-    history.replaceState(null, "", openBook ? "#book=" + encodeURIComponent(openBook.slice(5)) : location.pathname + location.search);
+    history.replaceState(null, "", openBook ? "#" + openBook.replace(":", "=") : location.pathname + location.search);
     drawShelves();
     const panel = document.getElementById("open-book");
     if (panel) panel.scrollIntoView({ block: "nearest", behavior: "smooth" });
@@ -463,6 +466,23 @@ function drawOpenBook(book) {
     <div class="page right">
       ${short ? `<div class="end-mark" aria-hidden="true"><div class="flourish"></div></div>` : `<ol class="toc" id="toc-right"></ol>`}
     </div>
+  </div>`;
+}
+
+// A topic, doctrine or concept opens like a Bible book: its title page, and the one study as its contents
+function drawOpenTopic(s) {
+  return `<div class="open-book ${s.type} short" id="open-book">
+    <div class="page left">
+      <span class="ribbon" aria-hidden="true"></span>
+      <div class="title-page">
+        <h4>${esc(s.title)}</h4>
+        <div class="flourish" aria-hidden="true"></div>
+        <div class="page-card"><p class="sec">${esc(KINDS[s.type].one)}</p><p class="sum">${esc(s.about)}</p></div>
+      </div>
+      <h5>Contents</h5>
+      <ol class="toc" id="toc-left">${tocItem({ ...s, ch: 1 })}</ol>
+    </div>
+    <div class="page right"><div class="end-mark" aria-hidden="true"><div class="flourish"></div></div></div>
   </div>`;
 }
 
@@ -498,8 +518,10 @@ function tocItem(c) {
 }
 
 drawNewest();
-const linked = decodeURIComponent((location.hash.match(/^#book=(.+)$/) || [])[1] || "");
-if (linked && studies.some(s => s.book === linked && s.type === "chapter")) openBook = "book:" + linked;
+const [, linkKind, linkedRaw] = location.hash.match(/^#(book|study)=(.+)$/) || [];
+const linked = decodeURIComponent(linkedRaw || "");
+if (linkKind === "book" && studies.some(s => s.book === linked && s.type === "chapter")) openBook = "book:" + linked;
+if (linkKind === "study" && studies.some(s => s.id === linked && KINDS[s.type])) openBook = "study:" + linked;
 drawShelves();
 if (openBook) document.getElementById("open-book")?.scrollIntoView({ block: "start" });
 </script>
