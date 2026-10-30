@@ -1,0 +1,515 @@
+<!doctype html>
+<html lang="en" data-theme="night">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>1 Corinthians 6</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="../assets/fonts.css">
+<link rel="stylesheet" href="../assets/deck.css">
+<link rel="stylesheet" href="../assets/themes.css">
+<style>
+/* a long book name must stay on one line in every theme */
+.slide.title h1 { font-size: clamp(3.2rem, 1.2rem + 8.5vw, 9rem); }
+
+/* c105-where: where we are in 1 Corinthians (the same marker as 1 Corinthians 5). Eight chips (.done, .here): a run of chapters (i) and the subject (b) */
+.c105-where { display: grid; grid-template-columns: repeat(auto-fit, minmax(8.2rem, 1fr)); gap: 6px; margin: .3em 0 1em; }
+.c105-where div { padding: .5em .6em .55em; border-radius: 8px; background: var(--surface); border: 1px solid var(--line); color: var(--ink-soft); line-height: 1.2; }
+.c105-where i { display: block; font: 700 clamp(.8rem, .72rem + .35vw, 1rem)/1.1 var(--sans); font-style: normal; letter-spacing: .04em; margin-bottom: .2em; }
+.c105-where b { font: 400 clamp(.9rem, .82rem + .4vw, 1.15rem)/1.2 var(--serif); }
+.c105-where .done { background: color-mix(in srgb, var(--accent) 14%, var(--surface)); color: var(--ink); }
+.c105-where .here { background: var(--accent); border-color: var(--accent); color: var(--on-accent); box-shadow: 0 0 0 4px color-mix(in srgb, var(--accent) 25%, transparent); }
+.slide.active .c105-where .here { animation: c105-here 2.4s 1s ease-in-out infinite; }
+@keyframes c105-here { 50% { box-shadow: 0 0 0 8px color-mix(in srgb, var(--accent) 10%, transparent); } }
+
+/* c106-struck: the list of 6:9-10 crossed out name by name (.c106-strike), the three new words written over it (.c106-write) */
+.c106-struck { position: relative; margin: .5em 0 1em; padding: 1.1em 1em 1.3em; border: 1.5px solid var(--line-strong); border-radius: 12px; background: var(--surface); }
+.c106-lead { font: 700 .85rem var(--sans); letter-spacing: .06em; text-transform: uppercase; color: var(--ink-soft); text-align: center; margin-bottom: .4em; }
+.c106-list { display: flex; flex-wrap: wrap; justify-content: center; align-content: space-between; gap: 1em 1.3em; min-height: 12.5em; padding: .2em .4em .4em; }
+.c106-list span { position: relative; font: 400 clamp(1.15rem, .9rem + 1.15vw, 1.95rem)/1.2 var(--serif); color: var(--ink); transition: color .8s ease, opacity .8s ease; transition-delay: calc(var(--k, 0) * 220ms); }
+.c106-list span::after { content: ""; position: absolute; left: -4%; right: -4%; top: 56%; height: 3px; border-radius: 2px; background: var(--danger); transform: scaleX(0); transform-origin: left; transition: transform .5s ease; transition-delay: calc(var(--k, 0) * 220ms); }
+.slide:has(.c106-strike.on) .c106-list span::after { transform: scaleX(1); }
+.slide:has(.c106-strike.on) .c106-list span { color: var(--ink-soft); opacity: .6; }
+.c106-new { position: absolute; inset: 0; display: flex; flex-wrap: wrap; align-content: center; justify-content: center; gap: .3em .7em; padding: 1.8em .6em 0; pointer-events: none; }
+@media (max-width: 700px) { .c106-new { position: static; padding: .8em 0 0; } .c106-list { min-height: 0; } }
+.c106-new b { font: italic 700 clamp(1.7rem, 1.1rem + 2.8vw, 3.8rem)/1.1 var(--serif); color: var(--accent-hot); padding: .02em .3em .08em; border-radius: 10px; border: 2px solid var(--accent); background: color-mix(in srgb, var(--bg) 78%, transparent); box-shadow: 0 6px 22px -8px var(--accent); transform: rotate(var(--r, -2deg)) scale(1.7); opacity: 0; transition: transform .45s cubic-bezier(.3,1.5,.5,1), opacity .3s ease; transition-delay: calc(var(--k, 0) * 700ms + 200ms); }
+.c106-new small { flex-basis: 100%; text-align: center; margin-top: .3em; font: italic 400 clamp(1rem, .85rem + .7vw, 1.45rem) var(--serif); color: var(--ink); opacity: 0; transition: opacity .8s ease 2.5s; }
+.slide:has(.c106-write.on) .c106-new b { transform: rotate(var(--r, -2deg)) scale(1); opacity: 1; }
+.slide:has(.c106-write.on) .c106-new small { opacity: 1; }
+
+/* c106-flee: Joseph runs from the house and leaves his coat; the man runs on open, the speed lines trail him */
+.c106-house { fill: var(--surface-2); stroke: var(--line-strong); stroke-width: 3; }
+.c106-door { fill: var(--bg); stroke: var(--line-strong); stroke-width: 3; }
+.c106-coat { fill: color-mix(in srgb, var(--wine) 75%, var(--bg)); stroke: var(--ink-soft); stroke-width: 2; }
+.c106-man { fill: none; stroke: var(--ink); stroke-width: 9; stroke-linecap: round; stroke-linejoin: round; }
+.c106-man circle { fill: var(--ink); stroke: none; }
+.c106-run { transform: translateX(0); }
+.slide.active .c106-run { animation: c106-run 1.9s cubic-bezier(.3,.1,.4,1) .4s forwards; }
+@keyframes c106-run { to { transform: translateX(400px); } }
+.c106-speed { stroke: var(--ink-soft); stroke-width: 4; stroke-linecap: round; opacity: 0; }
+.slide.active .c106-speed { animation: c106-speed 1s ease-out .6s forwards; }
+@keyframes c106-speed { from { opacity: 0; } 30% { opacity: .9; } to { opacity: .7; } }
+.c106-t { fill: var(--ink-soft); font: italic 20px var(--serif); text-anchor: middle; }
+.c106-t.hot { fill: var(--accent-hot); font: 700 22px var(--sans); font-style: normal; }
+@media (max-width: 600px) { .c106-t { font-size: 27px; } .c106-t.hot { font-size: 29px; } }
+
+/* c106-temple: the temple that was a building, and the temple that is a man; the price tag hangs on him on .c106-buy */
+.c106-bldg { fill: var(--surface-2); stroke: var(--line-strong); stroke-width: 3; }
+.c106-core { fill: var(--accent); opacity: .85; }
+.c106-halo { fill: var(--accent); opacity: .18; }
+.slide.active .c106-halo { animation: c106-halo 2.6s ease-in-out infinite; }
+@keyframes c106-halo { 50% { opacity: .38; } }
+.c106-body { fill: color-mix(in srgb, var(--ink) 18%, transparent); stroke: var(--ink); stroke-width: 4; }
+.c106-tag { opacity: 0; transform: translateY(-10px); transition: opacity .6s ease, transform .6s ease; }
+.slide:has(.c106-buy.on) .c106-tag { opacity: 1; transform: none; }
+.c106-tag path { fill: var(--surface); stroke: var(--accent); stroke-width: 3; }
+.c106-tag line { stroke: var(--ink-soft); stroke-width: 2; }
+</style>
+</head>
+<body>
+<main class="deck" id="deck">
+
+<!-- ======================= OPENING ======================= -->
+<section class="slide title">
+  <div class="inner">
+    <div class="emblem rise"></div>
+    <h1 class="rise" style="--d:1">1 Corinthians 6</h1>
+    <p class="sub rise" style="--d:3">And such were some of you</p>
+    <p class="tag rise" style="--d:5">Brothers in court, a list of the sins that ruin a man, and the verse that says: that was you, but it isn't you now.</p>
+  </div>
+</section>
+
+<section class="slide watch">
+  <div class="inner">
+    <h2 class="rise">Things to watch for</h2>
+    <p class="lede rise" style="--d:1">Keep these questions in the back of your mind as we read. We'll come back to every one of them at the end.</p>
+    <ol class="seeds">
+      <li class="step"><span class="topic">Court</span><span class="seed-q">Why shouldn't believers take each other to court?</span></li>
+      <li class="step"><span class="topic">The list</span><span class="seed-q">Who will not inherit the kingdom of God?</span></li>
+      <li class="step"><span class="topic">Such were some</span><span class="seed-q">What are the men on that list told they now are?</span></li>
+      <li class="step"><span class="topic">Lawful</span><span class="seed-q">What will Paul not let anything lawful do to him?</span></li>
+      <li class="step"><span class="topic">Flee</span><span class="seed-q">What are we told to do about fornication?</span></li>
+      <li class="step"><span class="topic">Bought</span><span class="seed-q">Why is our body not our own?</span></li>
+    </ol>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise">Where we are in 1 Corinthians</h2>
+    <p class="note rise" style="--d:1">Paul is writing to a church he planted in Corinth, from Ephesus, about AD 55. The letter is his answer to one problem after another. In chapter 5 he told them not to shrug at a brother's open sin. Chapter 6 keeps going: more ways the church was letting the old life in.</p>
+    <div class="c105-where rise" style="--d:2" role="img" aria-label="1 Corinthians in eight parts. Chapters 1 to 4: divisions. Chapters 5 and 6: sin the church let in, and we are here. Chapter 7: marriage. Chapters 8 to 10: food and freedom. Chapter 11: order in worship. Chapters 12 to 14: gifts, and love. Chapter 15: the resurrection. Chapter 16: the offering, and goodbye.">
+      <div class="done"><i>1–4</i><b>Divisions</b></div>
+      <div class="here"><i>5–6</i><b>Sin the church let in</b></div>
+      <div><i>7</i><b>Marriage</b></div>
+      <div><i>8–10</i><b>Food and freedom</b></div>
+      <div><i>11</i><b>Order in worship</b></div>
+      <div><i>12–14</i><b>Gifts, and love</b></div>
+      <div><i>15</i><b>The resurrection</b></div>
+      <div><i>16</i><b>The offering, goodbye</b></div>
+    </div>
+    <p class="note step">Read alone, this chapter still stands: two corrections, then the best news in the letter for a man with a past, then what that news means for the way he lives in his body today.</p>
+  </div>
+</section>
+
+<!-- ======================= PART ONE ======================= -->
+<section class="slide part">
+  <div class="inner">
+    <p class="part-n rise">Part one</p>
+    <h2 class="rise" style="--d:1">Brothers in court</h2>
+    <p class="range rise" style="--d:2">Verses 1–8</p>
+    <div class="rule"></div>
+    <p class="hook rise" style="--d:4">Believers were suing each other in front of unbelievers. Paul says the church is better equipped than that.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="1-3" data-hl="go to law before the unjust, and not before the saints|the saints shall judge the world|we shall judge angels"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise">Bigger than a boundary dispute</h2>
+    <p class="note rise" style="--d:1">In Corinth, a man with a complaint took it to the city's courts, and the judges were pagans: <em>“the unjust,”</em> Paul calls them, men outside God's people. The whole town watched. Paul is embarrassed, and asks a simple question about size.</p>
+    <div class="math">
+      <div class="rise" style="--d:2"><b>The saints will judge the world</b><span>6:2</span></div>
+      <div class="step"><b>+ we will judge angels</b><span>6:3</span></div>
+      <div class="step"><b>= and you can't settle a quarrel over this life's business?</b><span>“the smallest matters”</span></div>
+    </div>
+    <p class="note step">He is not saying believers are important. He is saying <em>you belong to the One who is going to put everything right</em>, so a dispute over money or property shouldn't need a pagan judge.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="4-6" data-hl="set them to judge who are least esteemed in the church|Is it so, that there is not a wise man among you|But brother goeth to law with brother, and that before the unbelievers"></section>
+<section class="slide verse" data-v="7-8" data-hl="Why do ye not rather take wrong|why do ye not rather suffer yourselves to be defrauded|ye do wrong, and defraud, and that your brethren"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise">“Why do ye not rather take wrong?”</h2>
+    <div class="columns">
+      <div class="col law rise" style="--d:1"><p class="who">Sue him</p><h3>Win the case, lose the room</h3><p>You may get the money. But the town now watches two Christians at war, and they decide Jesus doesn't change anybody.</p></div>
+      <div class="col grace step"><p class="who">The better way</p><h3>Go to him, or take the loss</h3><p>Go to him alone first. Or ask a wise brother to help you both. Sometimes you simply lose, and that is cheaper than losing a brother.</p></div>
+    </div>
+    <blockquote class="quote step"><p>“And if any man will sue thee at the law, and take away thy coat, let him have thy cloke also.”</p><cite>Matthew 5:40</cite></blockquote>
+    <p class="note step">Two things Paul is <em>not</em> saying. He is not telling anyone to dodge the law: if you have a court date, fines, or something you owe, show up, tell the truth, and pay what is right. And he is not saying a man who has been beaten, robbed, or abused must keep quiet: that is a crime, and the police are God's servants for it (Romans 13:4). Paul is talking about <em>believers with money disputes against each other</em>.</p>
+  </div>
+</section>
+
+<!-- ======================= PART TWO ======================= -->
+<section class="slide part">
+  <div class="inner">
+    <p class="part-n rise">Part two</p>
+    <h2 class="rise" style="--d:1">And such were some of you</h2>
+    <p class="range rise" style="--d:2">Verses 9–11</p>
+    <div class="rule"></div>
+    <p class="hook rise" style="--d:4">The hardest list in the letter, and the verse that answers it.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="9-10" data-hl="the unrighteous shall not inherit the kingdom of God|Be not deceived|fornicators, nor idolaters, nor adulterers, nor effeminate, nor abusers of themselves with mankind|nor drunkards, nor revilers, nor extortioners"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise">The list, plainly</h2>
+    <p class="note rise" style="--d:1">Paul calls these <em>the unrighteous</em>. He names ten kinds. Read them soberly, and read them as a man who may find himself on it:</p>
+    <div class="sort">
+      <div class="rise" style="--d:2"><h3>With the body</h3><div class="vs"><b>fornicators</b><b>adulterers</b><b>effeminate</b><b>abusers of themselves with mankind</b></div><p>Sexual sin in several forms: sex outside the marriage of one man and one woman, as God made it.</p></div>
+      <div class="rise" style="--d:3"><h3>With worship</h3><div class="vs"><b>idolaters</b></div><p>Giving to anything else the place that belongs to God.</p></div>
+      <div class="rise" style="--d:4"><h3>With the hands</h3><div class="vs"><b>thieves</b><b>covetous</b><b>extortioners</b></div><p>Taking what isn't ours, or wanting it so badly we would.</p></div>
+      <div class="rise" style="--d:5"><h3>With the bottle and the mouth</h3><div class="vs"><b>drunkards</b><b>revilers</b></div><p>Drink that rules a man, and a tongue that tears people down.</p></div>
+    </div>
+    <p class="note step">Look who is on it: <em>covetous</em> and <em>revilers</em>, the respectable sins, sit beside the scandalous ones. Nobody reads this list from the outside. And <em>“be not deceived”</em>: a man who lives in these as his way of life, and calls it fine, is fooling himself.</p>
+    <p class="note step">This is not a list of unforgivable sins. Every one of them was in the Corinthian church's past. The very next verse says so.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="11" data-hl="And such were some of you|but ye are washed, but ye are sanctified, but ye are justified in the name of the Lord Jesus, and by the Spirit of our God"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise">“And such were some of you”</h2>
+    <div class="c106-struck rise" style="--d:1" role="img" aria-label="The ten names from verses 9 and 10: fornicators, idolaters, adulterers, effeminate, abusers of themselves with mankind, thieves, covetous, drunkards, revilers, extortioners. On the first click each is crossed through. On the second click three words are written over the list: washed, sanctified, justified, in the name of the Lord Jesus, and by the Spirit of our God.">
+      <p class="c106-lead">1 Corinthians 6:9–10</p>
+      <div class="c106-list">
+        <span style="--k:0">fornicators</span><span style="--k:1">idolaters</span><span style="--k:2">adulterers</span><span style="--k:3">effeminate</span><span style="--k:4">abusers of themselves with mankind</span><span style="--k:5">thieves</span><span style="--k:6">covetous</span><span style="--k:7">drunkards</span><span style="--k:8">revilers</span><span style="--k:9">extortioners</span>
+      </div>
+      <div class="c106-new" aria-hidden="true">
+        <b style="--k:0;--r:-3deg">washed</b><b style="--k:1;--r:2deg">sanctified</b><b style="--k:2;--r:-2deg">justified</b>
+        <small>in the name of the Lord Jesus, and by the Spirit of our God</small>
+      </div>
+    </div>
+    <p class="note c106-strike step">That is the old list. Some of those men sat in the church at Corinth, and Paul says so without flinching. <em>Were.</em></p>
+    <p class="note c106-write step">Now read what is written over it. Not <em>trying to be</em>. Not <em>on probation</em>. <em>Ye are washed, ye are sanctified, ye are justified.</em></p>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise">Three words, all done</h2>
+    <ul class="signs">
+      <li class="now rise" style="--d:1"><b>Washed</b>Made clean. The stain is gone, and it was Jesus' blood that took it, not your effort.</li>
+      <li class="now step"><b>Sanctified</b>Set apart as God's own. You are His, not your old habit's, from the day you believed.</li>
+      <li class="now step"><b>Justified</b>Declared right with God, as if the charge had never been brought. A judge's verdict.</li>
+    </ul>
+    <p class="note step">All three are in the past, and all three come <em>“in the name of the Lord Jesus, and by the Spirit of our God.”</em> Not by a program, a streak, or a sober-day count. God did it, and God lives in you to keep going with it.</p>
+    <blockquote class="quote step"><p>“For we ourselves also were sometimes foolish, disobedient, deceived, serving divers lusts and pleasures, living in malice and envy, hateful, and hating one another. But after that the kindness and love of God our Saviour toward man appeared, Not by works of righteousness which we have done, but according to his mercy he saved us, by the washing of regeneration, and renewing of the Holy Ghost;”</p><cite>Titus 3:3–5</cite></blockquote>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise">“But I did it again”</h2>
+    <div class="talk">
+      <p class="rise" style="--d:1"><small>A man who is honest</small>I was on that list last year. And to be straight, I was on it last Tuesday too.</p>
+      <p class="reply step"><small>The verse</small>Ye <em>are</em> washed. A slip does not un-wash you. You are not back on the list, you tripped on your way off it. <span class="flag">still His</span></p>
+    </div>
+    <blockquote class="quote step"><p>“If we confess our sins, he is faithful and just to forgive us our sins, and to cleanse us from all unrighteousness.”</p><cite>1 John 1:9</cite></blockquote>
+    <p class="note step">Call it what it is, tell God and one brother, and get up. The regret is a signal to turn, not a verdict. Nothing on that old list can be used against you now.</p>
+  </div>
+</section>
+
+<!-- ======================= PART THREE ======================= -->
+<section class="slide part">
+  <div class="inner">
+    <p class="part-n rise">Part three</p>
+    <h2 class="rise" style="--d:1">Not under the power of any</h2>
+    <p class="range rise" style="--d:2">Verses 12–20</p>
+    <div class="rule"></div>
+    <p class="hook rise" style="--d:4">Washed men live in a body God has bought. So what does a free man do with it?</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="12-14" data-hl="All things are lawful unto me, but all things are not expedient|I will not be brought under the power of any|the body is not for fornication, but for the Lord|will also raise up us by his own power"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise">Corinth's slogans, and Paul's answers</h2>
+    <p class="note rise" style="--d:1">Many teachers think these were Corinth's own slogans, and Paul quotes them back.</p>
+    <div class="talk">
+      <p class="rise" style="--d:2"><small>Corinth</small>“All things are lawful for me. I'm free.”</p>
+      <p class="reply step"><small>Paul</small>True, but <em>not all things are expedient</em> (helpful), and <em>I will not be brought under the power of any.</em></p>
+      <p class="step"><small>Corinth</small>“Food is for the belly. The body's just plumbing. What I do with it doesn't matter.”</p>
+      <p class="reply step"><small>Paul</small>Food and stomach will pass away. <em>The body is for the Lord</em>, and God will raise it up. <span class="flag">it matters</span></p>
+    </div>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="12" data-hl="I will not be brought under the power of any"></blockquote>
+    <h2 class="rise" style="--d:1">How a thing takes over</h2>
+    <ol class="stairs down" style="--n:4" aria-label="Four steps down: it's allowed; I can handle it; just this once more; I can't stop, brought under its power.">
+      <li style="--k:0"><b>“It's allowed”</b>no law against it</li>
+      <li style="--k:1"><b>“I can handle it”</b>it's only on weekends</li>
+      <li style="--k:2"><b>“Just once more”</b>and the once keeps moving</li>
+      <li style="--k:3"><b>“I can't stop”</b>brought under its power</li>
+    </ol>
+    <p class="note step">That is how Paul names addiction: <em>“brought under the power.”</em> The question is not whether a thing is allowed, but whether it is running you.</p>
+    <blockquote class="quote step"><p>“Stand fast therefore in the liberty wherewith Christ hath made us free, and be not entangled again with the yoke of bondage.”</p><cite>Galatians 5:1</cite></blockquote>
+    <p class="note step">Today: name the one thing that has more say over you than it should, and tell one brother. <em>“God is faithful… will with the temptation also make a way to escape”</em> (1 Corinthians 10:13).</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="15-17" data-hl="your bodies are the members of Christ|God forbid|he that is joined unto the Lord is one spirit"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise">Joined to whom?</h2>
+    <div class="columns">
+      <div class="col law rise" style="--d:1"><p class="who">The old way</p><h3>“One body”</h3><p>Sexual union joins two people, and it can't be taken back, whatever a man tells himself. Paul says it joins <em>members of Christ</em> to someone He never meant them to be joined to.</p></div>
+      <div class="col grace step"><p class="who">The new way</p><h3>“One spirit”</h3><p>The man who is joined to the Lord is one spirit with Him. That is a bond that doesn't wear off, and doesn't leave anyone feeling used.</p></div>
+    </div>
+    <p class="note step">Your body isn't a separate machine you run on your own time. It belongs to Christ, so <em>God forbid</em> that we hand a part of it to something that was never His.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="18" data-hl="Flee fornication|sinneth against his own body"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise">Don't fight it. Run.</h2>
+    <div class="stage">
+      <svg viewBox="0 0 720 250" style="max-height:34vh" role="img" aria-label="A house with an open door and a coat left hanging in it. A man runs away from the house toward the right, with speed lines behind him: Joseph, who left his garment, and fled, and got him out.">
+        <rect class="c106-house" x="20" y="55" width="170" height="160"/>
+        <rect class="c106-door" x="70" y="105" width="64" height="110"/>
+        <path class="c106-coat" d="M118 112 q22 4 24 30 l-6 50 q-18 6 -32 -2 l-8 -48 q4 -26 22 -30 z"/>
+        <text class="c106-t" x="105" y="244">his coat</text>
+                <g transform="translate(300 215)"><g class="c106-run"><line class="c106-speed" x1="-110" y1="-20" x2="-62" y2="-20"/><line class="c106-speed" x1="-120" y1="-52" x2="-66" y2="-52"/><line class="c106-speed" x1="-100" y1="-84" x2="-56" y2="-84"/><g class="c106-man">
+          <circle cx="2" cy="-100" r="14"/>
+          <path d="M0 -84 L-8 -44 M-8 -44 L-34 -8 M-8 -44 L18 -4 M-2 -76 L-28 -54 M-2 -76 L24 -58"/>
+        </g></g></g>
+        <text class="c106-t hot" x="540" y="60">Genesis 39:12</text>
+        <text class="c106-t" x="540" y="90">“left his garment, and fled,</text>
+        <text class="c106-t" x="540" y="118">and got him out”</text>
+      </svg>
+    </div>
+    <p class="note step">Not “resist.” <em>Flee.</em> Joseph didn't argue with temptation. He lost his coat and kept his life. Some fights you win by moving your feet.</p>
+    <blockquote class="quote step"><p>“Flee also youthful lusts: but follow righteousness, faith, charity, peace, with them that call on the Lord out of a pure heart.”</p><cite>2 Timothy 2:22</cite></blockquote>
+    <p class="note step">Today that looks plain: delete the number, change the route home, put the filter on the phone, call a brother <em>before</em>, not after. This sin is against <em>“his own body”</em>: it is done to the whole man.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="19-20" data-hl="your body is the temple of the Holy Ghost which is in you|ye are bought with a price|therefore glorify God in your body"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise">A temple, and a price</h2>
+    <div class="stage">
+      <svg viewBox="0 0 720 260" style="max-height:36vh" role="img" aria-label="On the left, a stone temple with columns and a glowing doorway: the temple at Jerusalem, where God lived. An arrow points right to a man, with a glowing light at his heart: God's Spirit now lives in him. On a click, a price tag hangs from the man: bought.">
+        <polygon class="c106-bldg" points="40,100 140,45 240,100"/>
+        <rect class="c106-bldg" x="48" y="100" width="184" height="14"/>
+        <rect class="c106-bldg" x="62" y="114" width="22" height="92"/><rect class="c106-bldg" x="104" y="114" width="22" height="92"/><rect class="c106-bldg" x="154" y="114" width="22" height="92"/><rect class="c106-bldg" x="196" y="114" width="22" height="92"/>
+        <rect class="c106-bldg" x="40" y="206" width="200" height="14"/>
+        <ellipse class="c106-core" cx="140" cy="162" rx="14" ry="38"/>
+        <text class="c106-t" x="140" y="248">where God lived</text>
+        <text x="360" y="150" text-anchor="middle" font-size="46" style="fill:var(--accent)">→</text>
+        <text class="c106-t" x="360" y="190">now</text>
+        <circle class="c106-halo" cx="540" cy="140" r="62"/>
+        <circle class="c106-body" cx="540" cy="72" r="24"/>
+        <path class="c106-body" d="M508 108 h64 l12 100 h-88 z"/>
+        <circle class="c106-core" cx="540" cy="146" r="13"/>
+        <text class="c106-t" x="540" y="248">the temple of the Holy Ghost</text>
+        <g class="c106-tag"><line x1="578" y1="116" x2="632" y2="86"/><path d="M628 78 h72 q8 0 8 8 v34 q0 8 -8 8 h-72 q-8 0 -8 -8 v-34 q0 -8 8 -8 z"/><text class="c106-t hot" x="664" y="110">bought</text></g>
+      </svg>
+    </div>
+    <p class="note rise" style="--d:3">God's presence once lived in a building, the temple at Jerusalem. Now the Holy Spirit lives in every man who trusts Christ, from the day he trusts Him, and He doesn't move out when we stumble. Paul says <em>you</em> are the temple.</p>
+    <p class="note c106-buy step">And the price was paid: <em>“Ye are bought with a price.”</em> Not silver or gold, as Peter puts it:</p>
+    <blockquote class="quote step"><p>“But with the precious blood of Christ, as of a lamb without blemish and without spot:”</p><cite>1 Peter 1:19</cite></blockquote>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise">1 Corinthians 6, on a work day</h2>
+    <ol class="checks">
+      <li class="step"><span class="tick">1</span><q>but ye are washed, but ye are sanctified, but ye are justified</q><small>When the old list comes to mind, answer it out loud: that was me; it isn't me now.</small><b>6:11</b></li>
+      <li class="step"><span class="tick">2</span><q>I will not be brought under the power of any</q><small>Name the one thing that has more say over you than it should, and tell one brother today.</small><b>6:12</b></li>
+      <li class="step"><span class="tick">3</span><q>Flee fornication</q><small>Don't negotiate. Delete the number, take the other road, call someone before the evening.</small><b>6:18</b></li>
+      <li class="step"><span class="tick">4</span><q>therefore glorify God in your body</q><small>You were bought. Give Him this day's work and this day's body.</small><b>6:20</b></li>
+    </ol>
+    <blockquote class="quote step"><p>“Therefore if any man be in Christ, he is a new creature: old things are passed away; behold, all things are become new.”</p><cite>2 Corinthians 5:17</cite></blockquote>
+    <p class="note step">Next, 1 Corinthians 7: Paul answers the church's own questions, beginning with marriage, and with being single.</p>
+  </div>
+</section>
+
+<!-- ======================= CLOSING ======================= -->
+<section class="slide remember">
+  <div class="inner">
+    <h2 class="rise">Points to remember</h2>
+    <ol class="seeds">
+      <li class="step"><span class="topic">Court</span><span class="seed-q">“Why do ye not rather take wrong?” <cite>6:7</cite></span><span class="take">Brothers shouldn't drag each other before unbelievers. Go to him first, or take the loss.</span></li>
+      <li class="step"><span class="topic">The list</span><span class="seed-q">“The unrighteous shall not inherit the kingdom of God” <cite>6:9</cite></span><span class="take">Ten kinds of sin, from the scandalous to the respectable. A man who lives in them and calls it fine is fooling himself.</span></li>
+      <li class="step"><span class="topic">Such were some</span><span class="seed-q">“But ye are washed, but ye are sanctified, but ye are justified” <cite>6:11</cite></span><span class="take">That was you, in the past. Now you're clean, set apart, and declared right, by Jesus and by the Spirit.</span></li>
+      <li class="step"><span class="topic">Lawful</span><span class="seed-q">“I will not be brought under the power of any” <cite>6:12</cite></span><span class="take">Freedom isn't doing whatever you like. It is not being owned by anything, even something allowed.</span></li>
+      <li class="step"><span class="topic">Flee</span><span class="seed-q">“Flee fornication” <cite>6:18</cite></span><span class="take">Don't argue with it. Run, like Joseph, and don't run alone.</span></li>
+      <li class="step"><span class="topic">Bought</span><span class="seed-q">“Ye are bought with a price” <cite>6:20</cite></span><span class="take">Your body is the Spirit's temple, and Christ paid for it with His blood. Glorify Him in it.</span></li>
+    </ol>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 1 of 6</p>
+      <span class="topic">Court</span>
+      <h2>Why shouldn't believers take each other to court?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="1"></blockquote>
+      <blockquote class="quote step" data-q="6"></blockquote>
+      <blockquote class="quote step" data-q="7"></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>It brings the church's quarrels in front of unbelievers, and it treats brothers as enemies. The church has wise men who can judge between brothers. Better to settle it among them, or to take the loss.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 2 of 6</p>
+      <span class="topic">The list</span>
+      <h2>Who will not inherit the kingdom of God?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="9"></blockquote>
+      <blockquote class="quote step" data-q="10"></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>The unrighteous: men whose life is given to sins like these, and who don't turn from them. It's a list of what a man is without Christ, and verse 11 shows it isn't where any man has to stay.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 3 of 6</p>
+      <span class="topic">Such were some</span>
+      <h2>What are the men on that list told they now are?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="11"></blockquote>
+      <blockquote class="quote step"><p>“Not by works of righteousness which we have done, but according to his mercy he saved us, by the washing of regeneration, and renewing of the Holy Ghost;”</p><cite>Titus 3:5</cite></blockquote>
+      <blockquote class="quote step"><p>“Therefore if any man be in Christ, he is a new creature: old things are passed away; behold, all things are become new.”</p><cite>2 Corinthians 5:17</cite></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>Washed, sanctified, and justified: clean, set apart for God, and declared right, in the name of the Lord Jesus and by the Spirit of our God. It is all God's doing, and it's finished.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 4 of 6</p>
+      <span class="topic">Lawful</span>
+      <h2>What will Paul not let anything lawful do to him?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="12"></blockquote>
+      <blockquote class="quote step"><p>“Stand fast therefore in the liberty wherewith Christ hath made us free, and be not entangled again with the yoke of bondage.”</p><cite>Galatians 5:1</cite></blockquote>
+      <blockquote class="quote step"><p>“For sin shall not have dominion over you: for ye are not under the law, but under grace.”</p><cite>Romans 6:14</cite></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>Bring him under its power. Many things are allowed that aren't good for us, and a free man won't let even an allowed thing become his master. Christ has set us free, and He gives the strength to stay that way.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 5 of 6</p>
+      <span class="topic">Flee</span>
+      <h2>What are we told to do about fornication?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="18"></blockquote>
+      <blockquote class="quote step"><p>“And she caught him by his garment, saying, Lie with me: and he left his garment in her hand, and fled, and got him out.”</p><cite>Genesis 39:12</cite></blockquote>
+      <blockquote class="quote step"><p>“Flee also youthful lusts: but follow righteousness, faith, charity, peace, with them that call on the Lord out of a pure heart.”</p><cite>2 Timothy 2:22</cite></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>Flee. Don't stand and argue with it. Get out, like Joseph, and run toward righteousness, faith, love and peace, with others who call on the Lord from a clean heart.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 6 of 6</p>
+      <span class="topic">Bought</span>
+      <h2>Why is our body not our own?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="19"></blockquote>
+      <blockquote class="quote step" data-q="20"></blockquote>
+      <blockquote class="quote step"><p>“But with the precious blood of Christ, as of a lamb without blemish and without spot:”</p><cite>1 Peter 1:19</cite></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>Because it was bought with a price, the blood of Christ, and because the Holy Spirit lives in it. So we glorify God in our body, with all of ourselves.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide prayer">
+  <div class="inner">
+    <div class="emblem rise"></div>
+    <h2 class="rise" style="--d:1">Prayer requests</h2>
+    <p class="ask-line rise" style="--d:2">What can we pray about for you today?</p>
+    <blockquote class="quote rise" style="--d:4"><p>“As far as the east is from the west, so far hath he removed our transgressions from us.”</p><cite>Psalm 103:12</cite></blockquote>
+  </div>
+</section>
+
+</main>
+
+<script>
+// King James Version, 1 Corinthians chapter 6
+const V = {
+  1: "Dare any of you, having a matter against another, go to law before the unjust, and not before the saints?",
+  2: "Do ye not know that the saints shall judge the world? and if the world shall be judged by you, are ye unworthy to judge the smallest matters?",
+  3: "Know ye not that we shall judge angels? how much more things that pertain to this life?",
+  4: "If then ye have judgments of things pertaining to this life, set them to judge who are least esteemed in the church.",
+  5: "I speak to your shame. Is it so, that there is not a wise man among you? no, not one that shall be able to judge between his brethren?",
+  6: "But brother goeth to law with brother, and that before the unbelievers.",
+  7: "Now therefore there is utterly a fault among you, because ye go to law one with another. Why do ye not rather take wrong? why do ye not rather suffer yourselves to be defrauded?",
+  8: "Nay, ye do wrong, and defraud, and that your brethren.",
+  9: "Know ye not that the unrighteous shall not inherit the kingdom of God? Be not deceived: neither fornicators, nor idolaters, nor adulterers, nor effeminate, nor abusers of themselves with mankind,",
+  10: "Nor thieves, nor covetous, nor drunkards, nor revilers, nor extortioners, shall inherit the kingdom of God.",
+  11: "And such were some of you: but ye are washed, but ye are sanctified, but ye are justified in the name of the Lord Jesus, and by the Spirit of our God.",
+  12: "All things are lawful unto me, but all things are not expedient: all things are lawful for me, but I will not be brought under the power of any.",
+  13: "Meats for the belly, and the belly for meats: but God shall destroy both it and them. Now the body is not for fornication, but for the Lord; and the Lord for the body.",
+  14: "And God hath both raised up the Lord, and will also raise up us by his own power.",
+  15: "Know ye not that your bodies are the members of Christ? shall I then take the members of Christ, and make them the members of an harlot? God forbid.",
+  16: "What? know ye not that he which is joined to an harlot is one body? for two, saith he, shall be one flesh.",
+  17: "But he that is joined unto the Lord is one spirit.",
+  18: "Flee fornication. Every sin that a man doeth is without the body; but he that committeth fornication sinneth against his own body.",
+  19: "What? know ye not that your body is the temple of the Holy Ghost which is in you, which ye have of God, and ye are not your own?",
+  20: "For ye are bought with a price: therefore glorify God in your body, and in your spirit, which are God’s."
+};
+const BOOK = "1 Corinthians 6";
+</script>
+<script src="../assets/deck.js"></script>
+</body>
+</html>

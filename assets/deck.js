@@ -231,6 +231,8 @@
   const chapterOf = bookRef.match(/^(.+) (\d+)$/);
   const studyId = location.pathname.split("/").pop().replace(/\.html$/, "");
   const topical = /^(topic|doctrine|concept)-/.test(studyId);   // topic studies get the same links
+  // a long title ("1 Corinthians 15", "Song of Solomon 2") steps down a size so it stays on one or two lines
+  document.querySelectorAll(".slide.title h1").forEach(h => { if (h.textContent.trim().length > 12) h.classList.add("long"); });
   const contents = chapterOf ? `${home}#book=${encodeURIComponent(chapterOf[1])}` : topical ? `${home}#study=${encodeURIComponent(studyId)}` : "";
   if ((chapterOf || topical) && studyId) document.querySelector(".slide.title .inner")?.insertAdjacentHTML("beforeend",
     `<a class="to-overview rise" style="--d:7" href="${home.replace(/index\.html$/, "")}overview.html?id=${encodeURIComponent(studyId)}">${topical ? "Overview" : "Chapter overview"}</a>`);

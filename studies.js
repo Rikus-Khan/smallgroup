@@ -11728,5 +11728,135 @@ window.STUDIES = [
       },
       "big": "God asks His servants for faithfulness, not show. The Lord alone judges, everything we have is a gift, and the church needs fathers, men who walk with others and live the power, not just the talk."
     }
+  },
+  {
+    "id": "1-corinthians-05",
+    "type": "chapter",
+    "book": "1 Corinthians",
+    "ch": 5,
+    "date": "2026-10-31",
+    "title": "1 Corinthians 5",
+    "sub": "A little leaven, and a door left open",
+    "about": "A man in the church is living in open sin and the church is proud of its tolerance. Paul says to deal with it, so that the man may be saved and welcomed home.",
+    "tags": [
+      "Church discipline",
+      "Restoration",
+      "Sin",
+      "Leaven",
+      "Passover",
+      "Grace",
+      "Brotherhood"
+    ],
+    "url": "studies/1-corinthians-05.html",
+    "overview": {
+      "where": "A letter from Ephesus to the church at Corinth, in Greece",
+      "when": "About AD 55, during Paul's three years at Ephesus",
+      "people": [
+        "satan",
+        "jesus"
+      ],
+      "places": [
+        "corinth",
+        "ephesus"
+      ],
+      "story": [
+        "Word reaches Paul that a man in the church is living with his father's wife, and the church is puffed up instead of mourning (1–2).",
+        "Paul says to put the man out of the fellowship, so that his spirit may be saved in the day of the Lord Jesus (3–5).",
+        "A little leaven leavens the whole lump. Christ our passover is sacrificed for us, so purge out the old leaven (6–8).",
+        "Paul had written before not to keep company with fornicators. He did not mean the sinners of the world, or we would have to leave the world (9–10).",
+        "He meant a brother who keeps on in open sin: not even to eat with him. God judges those outside; the church deals with those inside (11–13)."
+      ],
+      "key": {
+        "ref": "1 Corinthians 5:7",
+        "text": "Purge out therefore the old leaven, that ye may be a new lump, as ye are unleavened. For even Christ our passover is sacrificed for us:"
+      },
+      "big": "Love doesn't wink at a brother's open sin, and it doesn't give up on him either. Discipline aims at bringing him home, because Christ our Passover has already been sacrificed for us."
+    }
+  },
+  {
+    "id": "1-corinthians-06",
+    "type": "chapter",
+    "book": "1 Corinthians",
+    "ch": 6,
+    "date": "2026-10-31",
+    "title": "1 Corinthians 6",
+    "sub": "And such were some of you",
+    "about": "Brothers in court, a list of sins that ruin a man, and the verse that says: that was you, but now you are washed, sanctified and justified.",
+    "tags": [
+      "Lawsuits",
+      "Washed and justified",
+      "New identity",
+      "Addiction",
+      "Fleeing temptation",
+      "The body",
+      "Bought with a price"
+    ],
+    "url": "studies/1-corinthians-06.html",
+    "overview": {
+      "where": "A letter from Ephesus to the church at Corinth, in Greece",
+      "when": "About AD 55, during Paul's three years at Ephesus",
+      "people": [
+        "saints-believers",
+        "angels",
+        "jesus",
+        "holy-spirit"
+      ],
+      "places": [
+        "corinth",
+        "ephesus"
+      ],
+      "story": [
+        "Believers are taking each other to court before unbelievers. The saints will judge the world and angels: surely they can settle small matters, or take the wrong (1–8).",
+        "The unrighteous will not inherit the kingdom of God: fornicators, idolaters, adulterers, thieves, drunkards, and more (9–10).",
+        "“And such were some of you”: but you are washed, sanctified and justified, in the name of the Lord Jesus and by the Spirit of our God (11).",
+        "All things are lawful, but Paul will not be brought under the power of any. The body is for the Lord, and God will raise it up (12–14).",
+        "Your bodies are members of Christ. Flee fornication. Your body is the temple of the Holy Ghost, and you are bought with a price: glorify God in your body (15–20)."
+      ],
+      "key": {
+        "ref": "1 Corinthians 6:11",
+        "text": "And such were some of you: but ye are washed, but ye are sanctified, but ye are justified in the name of the Lord Jesus, and by the Spirit of our God."
+      },
+      "big": "The list of sins is the past tense of every man who has come to Christ. He is washed, sanctified and justified, and he now lives in a body God has bought and the Spirit lives in."
+    }
+  },
+  {
+    "id": "1-corinthians-11",
+    "type": "chapter",
+    "book": "1 Corinthians",
+    "url": "studies/1-corinthians-11.html",
+    "ch": 11,
+    "date": "2026-10-31",
+    "title": "1 Corinthians 11",
+    "sub": "Order, and the table",
+    "about": "Paul tells the church how to meet in honour and order, then corrects a supper where the rich ate well and the poor went hungry, and teaches what the Lord's table means.",
+    "tags": [
+      "Following Christ",
+      "Order in worship",
+      "Man and woman",
+      "The Lord's Supper",
+      "Self-examination",
+      "Forgiven sinners"
+    ],
+    "overview": {
+      "where": "The church meeting in a house in Corinth, written to from Ephesus",
+      "when": "About AD 55",
+      "people": [
+        "jesus",
+        "christ"
+      ],
+      "places": [],
+      "story": [
+        "“Be ye followers of me, even as I also am of Christ.” Paul praises them for keeping what he taught (1–2).",
+        "A hard text on head coverings: a Corinthian custom, with the plain points of order, honour, and “neither is the man without the woman, neither the woman without the man, in the Lord” (3–16).",
+        "The church supper has become a scandal: the rich eat and drink first, and the poor go hungry (17–22).",
+        "Paul hands on what he received of the Lord: the bread and the cup, “this do in remembrance of me,” shown “till he come” (23–26).",
+        "“Let a man examine himself”: to eat unworthily is to come in an unworthy manner, and the Lord disciplines His own as sons. “Tarry one for another” (27–34)."
+      ],
+      "key": {
+        "ref": "1 Corinthians 11:24",
+        "text": "And when he had given thanks, he brake it, and said, Take, eat: this is my body, which is broken for you: this do in remembrance of me."
+      },
+      "big": "The Lord's table is a memorial of Christ's death for forgiven sinners, not a prize for the worthy. Come honestly, remember Him, and make room for the brother beside you."
+    }
   }
 ];

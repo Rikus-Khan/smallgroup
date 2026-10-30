@@ -1,0 +1,465 @@
+<!doctype html>
+<html lang="en" data-theme="stone">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>1 Corinthians 5</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="../assets/fonts.css">
+<link rel="stylesheet" href="../assets/deck.css">
+<link rel="stylesheet" href="../assets/themes.css">
+<style>
+/* a long book name must stay on one line in every theme */
+.slide.title h1 { font-size: clamp(3.2rem, 1.2rem + 8.5vw, 9rem); }
+
+/* c105-where: where we are in 1 Corinthians. Eight chips (.done, .here), each a run of chapters (i) and what Paul deals with (b) */
+.c105-where { display: grid; grid-template-columns: repeat(auto-fit, minmax(8.2rem, 1fr)); gap: 6px; margin: .3em 0 1em; }
+.c105-where div { padding: .5em .6em .55em; border-radius: 8px; background: var(--surface); border: 1px solid var(--line); color: var(--ink-soft); line-height: 1.2; }
+.c105-where i { display: block; font: 700 clamp(.8rem, .72rem + .35vw, 1rem)/1.1 var(--sans); font-style: normal; letter-spacing: .04em; margin-bottom: .2em; }
+.c105-where b { font: 400 clamp(.9rem, .82rem + .4vw, 1.15rem)/1.2 var(--serif); }
+.c105-where .done { background: color-mix(in srgb, var(--accent) 14%, var(--surface)); color: var(--ink); }
+.c105-where .here { background: var(--accent); border-color: var(--accent); color: var(--on-accent); box-shadow: 0 0 0 4px color-mix(in srgb, var(--accent) 25%, transparent); }
+.slide.active .c105-where .here { animation: c105-here 2.4s 1s ease-in-out infinite; }
+@keyframes c105-here { 50% { box-shadow: 0 0 0 8px color-mix(in srgb, var(--accent) 10%, transparent); } }
+
+/* c105-door: a man put out of the circle of the church, and the way back. .c105-out moves him outside; .c105-back brings him home */
+.c105-ring { fill: color-mix(in srgb, var(--accent) 8%, var(--surface)); stroke: var(--line-strong); stroke-width: 3; }
+.c105-world { fill: none; stroke: var(--line-strong); stroke-width: 2; stroke-dasharray: 8 7; }
+.c105-lab { fill: var(--ink-soft); font: italic 20px var(--serif); text-anchor: middle; }
+.c105-lab.big { font: 400 26px var(--serif); fill: var(--ink); }
+.c105-lab.hot { fill: var(--accent-hot); font-weight: 700; font-style: normal; }
+.c105-friend { fill: var(--ink-soft); }
+.c105-man circle, .c105-man path { fill: var(--ink); transition: fill .8s ease; }
+.c105-man { transition: transform 1.6s ease-in-out; }
+.slide:has(.c105-out.on) .c105-man { transform: translateX(370px); }
+.slide:has(.c105-back.on) .c105-man { transform: translateX(0); }
+.slide:has(.c105-back.on) .c105-man circle, .slide:has(.c105-back.on) .c105-man path { fill: var(--accent-hot); }
+.c105-sad, .c105-glad { opacity: 0; transition: opacity .8s ease; }
+.slide:has(.c105-out.on) .c105-sad { opacity: 1; transition-delay: 1.4s; }
+.slide:has(.c105-back.on) .c105-sad { opacity: 0; transition-delay: 0s; }
+.slide:has(.c105-back.on) .c105-glad { opacity: 1; transition-delay: 1.2s; }
+.c105-return { fill: none; stroke: var(--accent); stroke-width: 6; stroke-linecap: round; stroke-dasharray: 1; stroke-dashoffset: 1; transition: stroke-dashoffset 1.6s ease; }
+.slide:has(.c105-back.on) .c105-return { stroke-dashoffset: 0; }
+.c105-head { fill: var(--accent); opacity: 0; transition: opacity .3s ease 1.4s; }
+.slide:has(.c105-back.on) .c105-head { opacity: 1; }
+.c105-halo { fill: var(--accent); opacity: 0; transition: opacity 1s ease 1.4s; }
+.slide:has(.c105-back.on) .c105-halo { opacity: .2; }
+@media (max-width: 600px) { .c105-lab { font-size: 27px; } .c105-lab.big { font-size: 33px; } }
+
+/* c105-lump: a lump of dough, one spot of leaven; on .c105-spread it works through the whole lump from the spot outward (--k = distance) */
+.c105-lump { display: grid; grid-template-columns: repeat(10, 1fr); gap: 5px; padding: 10px; width: 100%; margin: .4em 0 1em; border: 2px solid var(--line-strong); border-radius: 28px; background: var(--surface); }
+.c105-lump i { aspect-ratio: 1; border-radius: 50%; background: color-mix(in srgb, var(--accent) 22%, var(--bg)); transition: background-color .7s ease; transition-delay: calc(var(--k, 0) * 330ms); }
+.c105-lump i.seed { background: var(--danger); transition-delay: 0s; box-shadow: 0 0 0 3px color-mix(in srgb, var(--danger) 30%, transparent); }
+.slide:has(.c105-spread.on) .c105-lump i { background: color-mix(in srgb, var(--danger) 72%, var(--bg)); }
+</style>
+</head>
+<body>
+<main class="deck" id="deck">
+
+<!-- ======================= OPENING ======================= -->
+<section class="slide title">
+  <div class="inner">
+    <div class="emblem rise"></div>
+    <h1 class="rise" style="--d:1">1 Corinthians 5</h1>
+    <p class="sub rise" style="--d:3">A little leaven, and a door left open</p>
+    <p class="tag rise" style="--d:5">A man in the church lives in open sin, and the church is proud of how tolerant it is. Paul says: don't wink at it, and don't give up on him.</p>
+  </div>
+</section>
+
+<section class="slide watch">
+  <div class="inner">
+    <h2 class="rise">Things to watch for</h2>
+    <p class="lede rise" style="--d:1">Keep these questions in the back of your mind as we read. We'll come back to every one of them at the end.</p>
+    <ol class="seeds">
+      <li class="step"><span class="topic">Pride</span><span class="seed-q">What was wrong with the church's attitude, as well as the man's sin?</span></li>
+      <li class="step"><span class="topic">The goal</span><span class="seed-q">What is the goal when a church puts a man out?</span></li>
+      <li class="step"><span class="topic">Leaven</span><span class="seed-q">What does a little leaven do?</span></li>
+      <li class="step"><span class="topic">Our passover</span><span class="seed-q">Who is our passover?</span></li>
+      <li class="step"><span class="topic">The world</span><span class="seed-q">Does Paul tell us to cut off the sinners of this world?</span></li>
+      <li class="step"><span class="topic">A brother</span><span class="seed-q">Who are we told not to keep company with?</span></li>
+    </ol>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise">Where we are in 1 Corinthians</h2>
+    <p class="note rise" style="--d:1">Paul started this church himself, and about AD 55 he is writing to it from Ephesus. The letter is a pastor's answers, one problem after another. Chapters 1 to 4 dealt with the church splitting into camps. Now word has reached him of something worse.</p>
+    <div class="c105-where rise" style="--d:2" role="img" aria-label="1 Corinthians in eight parts. Chapters 1 to 4: divisions. Chapters 5 and 6: sin the church let in, and we are here. Chapter 7: marriage. Chapters 8 to 10: food and freedom. Chapter 11: order in worship. Chapters 12 to 14: gifts, and love. Chapter 15: the resurrection. Chapter 16: the offering, and goodbye.">
+      <div class="done"><i>1–4</i><b>Divisions</b></div>
+      <div class="here"><i>5–6</i><b>Sin the church let in</b></div>
+      <div><i>7</i><b>Marriage</b></div>
+      <div><i>8–10</i><b>Food and freedom</b></div>
+      <div><i>11</i><b>Order in worship</b></div>
+      <div><i>12–14</i><b>Gifts, and love</b></div>
+      <div><i>15</i><b>The resurrection</b></div>
+      <div><i>16</i><b>The offering, goodbye</b></div>
+    </div>
+    <p class="note step">Chapters 5 and 6 go together: two kinds of mess the church had let in, a man living in open sin (chapter 5) and brothers dragging each other to court and treating their bodies carelessly (chapter 6). Read alone, this chapter makes sense: a church has a hard decision to make, and Paul tells it how to do it.</p>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <div class="split">
+      <div class="stage">
+        <svg data-world viewBox="440 222 175 120" style="max-height:56vh" data-towns="Corinth*:l, Ephesus!:b" role="img" aria-label="Map of the Aegean Sea. A line runs from Corinth in Greece east across the sea to Ephesus in Asia, where Paul is: the report about the church travels to him. A second line runs back from Ephesus to Corinth: his letter sails home.">
+          <path class="map-route j2" data-via="Cenchrea, @24.3 37.4, @25.35 37.3, @26.0 37.45, @26.45 37.72, @26.6 37.95, @27.15 37.9, Ephesus"/>
+          <path class="map-route j1 r1" data-via="Ephesus, @27.15 38.2, @26.6 38.25, @26.45 38.0, @26.0 37.7, @25.35 37.55, @24.3 37.65, Cenchrea, Corinth"/>
+        </svg>
+      </div>
+      <div>
+        <h2 class="rise" style="--d:1">The news crosses the sea</h2>
+        <p class="note rise" style="--d:2">Corinth was a rich, rough port city with a name across the Roman world for loose living. Paul spent about a year and a half there (Acts 18:11), and some of the believers came out of exactly that life.</p>
+        <p class="note step">Now he is across the Aegean in Ephesus, and the report reaches him: <em>“It is reported commonly.”</em> Everybody knew.</p>
+        <p class="note step map-go1">His answer sails back: this letter. If a church can get this wrong, so can any of us.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ======================= PART ONE ======================= -->
+<section class="slide part">
+  <div class="inner">
+    <p class="part-n rise">Part one</p>
+    <h2 class="rise" style="--d:1">A thing they were proud of</h2>
+    <p class="range rise" style="--d:2">Verses 1–5</p>
+    <div class="rule"></div>
+    <p class="hook rise" style="--d:4">The sin was bad. What shocked Paul more was that nobody was grieved.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="1-2" data-hl="fornication among you|such fornication as is not so much as named among the Gentiles|ye are puffed up, and have not rather mourned"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise">What was wrong, and what they said about it</h2>
+    <p class="note rise" style="--d:1">A man was living with his <em>father's wife</em>, his stepmother. God's law had forbidden it long before (Leviticus 18:8), and Paul says even the pagans around them didn't do it. It was no secret, no private weakness he was fighting. It was out in the open, and the church was <em>puffed up</em>: proud of it, or proud of itself in spite of it.</p>
+    <ul class="nots">
+      <li class="step"><span class="k">“Who are we to judge? We're open-minded.”</span><span class="why">that's not love, that's looking away</span></li>
+      <li class="step"><span class="k">“It's his business. It's a private matter.”</span><span class="why">it wasn't private: it was <em>commonly reported</em></span></li>
+      <li class="step yes"><span class="k">“have not rather mourned”</span><span class="why">grieve, as a family grieves when a son is in trouble</span></li>
+    </ul>
+    <p class="note step">Notice what Paul asks for. Not anger, not a witch hunt. <em>Mourning.</em> A church that really loved this man would be broken-hearted for him, and not just embarrassed. Love that ignores a man walking toward a cliff isn't kindness.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="3-5" data-hl="deliver such an one unto Satan for the destruction of the flesh|that the spirit may be saved in the day of the Lord Jesus"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise">The goal: that he be saved, and come home</h2>
+    <div class="stage">
+      <svg viewBox="0 0 720 300" style="max-height:34vh" role="img" aria-label="A large circle labelled the church, with a man inside it. On the first click the man is put outside the circle, into the dotted world beyond, alone. On the second click an arrow curves from him back into the circle and he returns, lit up: forgiven, comforted, welcomed home.">
+        <rect class="c105-world" x="372" y="20" width="336" height="260" rx="24"/>
+        <text class="c105-lab" x="540" y="52">the world outside</text>
+        <circle class="c105-ring" cx="200" cy="150" r="125"/>
+        <text class="c105-lab big" x="200" y="64">the church</text>
+        <circle class="c105-friend" cx="120" cy="125" r="10"/><circle class="c105-friend" cx="270" cy="120" r="10"/><circle class="c105-friend" cx="145" cy="205" r="10"/><circle class="c105-friend" cx="255" cy="200" r="10"/>
+        <circle class="c105-halo" cx="200" cy="165" r="50"/>
+        <g class="c105-man"><circle cx="200" cy="150" r="14"/><path d="M185 170 h30 l7 52 h-44 z"/></g>
+        <g class="c105-sad"><text class="c105-lab" x="540" y="255">alone, and feeling it</text></g>
+        <path class="c105-return" pathLength="1" d="M530 112 Q440 30 336 112"/>
+        <path class="c105-head" d="M322 118 l26 -5 -8 22 z"/>
+        <g class="c105-glad"><text class="c105-lab hot" x="540" y="190">forgiven, comforted, loved</text></g>
+      </svg>
+    </div>
+    <p class="note c105-out step"><em>“Put away from among yourselves that wicked person”</em> (5:13). When a man will not turn from open sin, the church stops treating it as normal. He is sent out of the fellowship, back to the world to feel what he has traded for it.</p>
+    <p class="note c105-back step">And why? <em>“That the spirit may be saved.”</em> It is a door held open, not slammed. By the time Paul writes again, about a year later, it seems to have worked (many Bible teachers think this is the same man): <em>“Sufficient to such a man is this punishment… ye ought rather to forgive him, and comfort him”</em> (2 Corinthians 2:6–8).</p>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise">Hard words: “deliver unto Satan”</h2>
+    <p class="note rise" style="--d:1">This is a strange phrase, and good Bible teachers explain it a little differently. Here is what is plain, and what isn't.</p>
+    <ul class="signs">
+      <li class="rise" style="--d:2"><b>Unto Satan</b>Out of the church's protection and fellowship, back into the world, where Satan rules.</li>
+      <li class="rise" style="--d:3"><b>Destruction of the flesh</b>Some say the hardship and wreckage his sin would bring; some say his body suffering; some say his sinful nature broken. We can't know exactly.</li>
+      <li class="step now"><b>That the spirit may be saved</b>This is the plain part. The aim is his rescue, not his ruin.</li>
+    </ul>
+    <p class="note step">Notice it says <em>“the spirit may be saved in the day of the Lord Jesus.”</em> He is still treated as a brother in Christ in trouble, not as a man who lost his salvation. Salvation is not what is at stake in verse 5. His life, his witness, and his peace are.</p>
+    <blockquote class="quote step"><p>“Brethren, if a man be overtaken in a fault, ye which are spiritual, restore such an one in the spirit of meekness; considering thyself, lest thou also be tempted.”</p><cite>Galatians 6:1</cite></blockquote>
+  </div>
+</section>
+
+<!-- ======================= PART TWO ======================= -->
+<section class="slide part">
+  <div class="inner">
+    <p class="part-n rise">Part two</p>
+    <h2 class="rise" style="--d:1">A little leaven</h2>
+    <p class="range rise" style="--d:2">Verses 6–8</p>
+    <div class="rule"></div>
+    <p class="hook rise" style="--d:4">Sin that is allowed to sit quietly doesn't stay small. And the way out starts with what Christ has already done.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="6-8" data-hl="a little leaven leaveneth the whole lump|Purge out therefore the old leaven|Christ our passover is sacrificed for us"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <div class="split">
+      <div class="stage">
+        <div class="c105-lump rise" style="--d:2" role="img" aria-label="A lump of dough made of thirty pieces. One piece, in the middle, is dark with leaven. On a click the dark spreads out through every piece.">
+          <i style="--k:5"></i><i style="--k:4"></i><i style="--k:3"></i><i style="--k:2"></i><i style="--k:1"></i><i style="--k:2"></i><i style="--k:3"></i><i style="--k:4"></i><i style="--k:5"></i><i style="--k:6"></i><i style="--k:4"></i><i style="--k:3"></i><i style="--k:2"></i><i style="--k:1"></i><i class="seed"></i><i style="--k:1"></i><i style="--k:2"></i><i style="--k:3"></i><i style="--k:4"></i><i style="--k:5"></i><i style="--k:5"></i><i style="--k:4"></i><i style="--k:3"></i><i style="--k:2"></i><i style="--k:1"></i><i style="--k:2"></i><i style="--k:3"></i><i style="--k:4"></i><i style="--k:5"></i><i style="--k:6"></i>
+        </div>
+      </div>
+      <div>
+        <h2 class="rise" style="--d:1">A little leaven</h2>
+        <p class="note rise" style="--d:2"><em>Leaven</em> is yeast: a pinch of old, sour dough worked into a new batch makes the whole batch rise. In the Bible it is a picture of how something small spreads, and it is usually a picture of sin.</p>
+        <p class="note c105-spread step">Give it time and it works through every piece. That is why Paul won't let the church shrug. One man's open sin, shrugged at, tells everyone else <em>this is allowed here</em>.</p>
+        <p class="note step">The same is true of us one at a time. The “little” habit, the little lie, the one drink you let slide: you can't see it working. Deal with it while it's small, and with a brother beside you.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise">Already unleavened</h2>
+    <div class="ifthen">
+      <div class="if rise" style="--d:1"><small>First, what happened</small>Our passover is sacrificed</div>
+      <span class="arrow rise" style="--d:2">→</span>
+      <div class="if step"><small>So, what you are</small>ye are unleavened</div>
+      <span class="arrow step">→</span>
+      <div class="then step"><small>So, what to do</small>purge out the old leaven</div>
+    </div>
+    <p class="note step">Look at the order. Paul does not say <em>clean yourselves up so that Christ will accept you</em>. He says <em>you are unleavened already</em>, because of the Lamb. So <em>become what you are</em>.</p>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise">The lamb in Egypt, and the Lamb on the cross</h2>
+    <blockquote class="quote rise" style="--d:1"><p>“And the blood shall be to you for a token upon the houses where ye are: and when I see the blood, I will pass over you, and the plague shall not be upon you to destroy you, when I smite the land of Egypt.”</p><cite>Exodus 12:13</cite></blockquote>
+    <blockquote class="quote step"><p>“Behold the Lamb of God, which taketh away the sin of the world.”</p><cite>John 1:29</cite></blockquote>
+    <p class="note step">On the night of the first Passover the lamb died in the family's place, and the house was cleared of leaven for the feast that followed. Our Passover Lamb has already died. The feast is the whole Christian life: <em>“with the unleavened bread of sincerity and truth.”</em> If you fell yesterday, that Lamb has not been un-sacrificed.</p>
+  </div>
+</section>
+
+<!-- ======================= PART THREE ======================= -->
+<section class="slide part">
+  <div class="inner">
+    <p class="part-n rise">Part three</p>
+    <h2 class="rise" style="--d:1">Inside and outside</h2>
+    <p class="range rise" style="--d:2">Verses 9–13</p>
+    <div class="rule"></div>
+    <p class="hook rise" style="--d:4">Who Paul means, and who he doesn't. He is not telling us to cut off the world.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="9-10" data-hl="not to company with fornicators|then must ye needs go out of the world"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise">The letter before this letter</h2>
+    <p class="note rise" style="--d:1">Verse 9 shows that Paul had written to them already. That first letter is lost. In it he told them not to mix with the sexually immoral, and they took it too far.</p>
+    <div class="talk">
+      <p class="rise" style="--d:2"><small>Paul, in the earlier letter</small>Don't keep company with fornicators.</p>
+      <p class="reply step"><small>Some in Corinth</small>Everyone in this city is one! We'd have to leave the world.</p>
+      <p class="step"><small>Paul, now</small>Not the world's sinners. Then you <em>must needs go out of the world</em>. I meant someone who calls himself a brother.</p>
+    </div>
+    <p class="note step">Christians have been getting this wrong ever since, mostly in one of two ways: shutting themselves away from everyone who isn't like them, or never saying a word to a brother who is wrecking himself. Paul steers between both.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="11" data-hl="if any man that is called a brother be a fornicator|with such an one no not to eat"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise">Two groups, two ways</h2>
+    <div class="columns">
+      <div class="col grace rise" style="--d:1"><p class="who">The world, “them that are without”</p><h3>Keep eating with them</h3><p>Work beside them, live next door, be their friend. God is their judge, not you. This is how they meet Jesus, through men who are around and kind.</p></div>
+      <div class="col law step"><p class="who">A “brother”, “them that are within”</p><h3>Step back, together</h3><p>If a man who calls himself a brother is <em>living</em> in one of these and calling it fine: no easy fellowship, <em>no not to eat</em>. It is meant to wake him up.</p></div>
+    </div>
+    <blockquote class="quote step"><p>“Then drew near unto him all the publicans and sinners for to hear him. And the Pharisees and scribes murmured, saying, This man receiveth sinners, and eateth with them.”</p><cite>Luke 15:1–2</cite></blockquote>
+    <p class="note step">Jesus ate with sinners, and that is exactly why they came to Him. Paul's rule is not about them. It protects a family from a brother who is hurting it, and it protects the brother from himself.</p>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise">Who this is <em>not</em> about</h2>
+    <p class="note rise" style="--d:1">Paul's list in verse 11 is a fornicator, a covetous man, an idolater, a railer (an abusive talker), a drunkard, an extortioner. Some of us have been in that list. So read it carefully.</p>
+    <div class="columns">
+      <div class="col law step"><p class="who">The man Paul means</p><h3>Keeps on, and calls it fine</h3><p>He is a “brother” in name, and he goes right on, in the open, and when the church says something he shrugs. There is no grief and no turning.</p></div>
+      <div class="col grace step"><p class="who">The man Paul doesn't mean</p><h3>Falls, and hates it</h3><p>He had a drink last night and woke up sick about it. He is fighting. He is telling someone. That man doesn't need a cold shoulder. He needs a brother next to him.</p></div>
+    </div>
+    <blockquote class="quote step"><p>“For a just man falleth seven times, and riseth up again: but the wicked shall fall into mischief.”</p><cite>Proverbs 24:16</cite></blockquote>
+    <blockquote class="quote step"><p>“If we confess our sins, he is faithful and just to forgive us our sins, and to cleanse us from all unrighteousness.”</p><cite>1 John 1:9</cite></blockquote>
+  </div>
+</section>
+
+<section class="slide verse" data-v="12-13" data-hl="them that are without God judgeth|put away from among yourselves that wicked person"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise">1 Corinthians 5, on a work day</h2>
+    <ol class="checks">
+      <li class="step"><span class="tick">1</span><q>that the spirit may be saved</q><small>If you're the one living in something: tell one believer you trust today, before it grows. Little leaven, small fix.</small><b>5:5</b></li>
+      <li class="step"><span class="tick">2</span><q>restore such an one in the spirit of meekness</q><small>If you see a brother sliding: go to him alone, gently, with your own weak spots in mind (Matthew 18:15).</small><b>Gal. 6:1</b></li>
+      <li class="step"><span class="tick">3</span><q>Therefore let us keep the feast</q><small>Don't hide from your workmates. Eat lunch with them. You are not the unclean one, you are the one who was forgiven.</small><b>5:8</b></li>
+      <li class="step"><span class="tick">4</span><q>ye ought rather to forgive him, and comfort him</q><small>If you have been put out, or feel you should be: the door is open. They want you back.</small><b>2 Cor. 2:7</b></li>
+    </ol>
+    <blockquote class="quote step"><p>“Moreover if thy brother shall trespass against thee, go and tell him his fault between thee and him alone: if he shall hear thee, thou hast gained thy brother.”</p><cite>Matthew 18:15</cite></blockquote>
+    <p class="note step">Next, 1 Corinthians 6: brothers taking each other to court, and the most hopeful verse in the whole letter for men with a past: <em>“and such were some of you.”</em></p>
+  </div>
+</section>
+
+<!-- ======================= CLOSING ======================= -->
+<section class="slide remember">
+  <div class="inner">
+    <h2 class="rise">Points to remember</h2>
+    <ol class="seeds">
+      <li class="step"><span class="topic">Pride</span><span class="seed-q">“Ye are puffed up, and have not rather mourned” <cite>5:2</cite></span><span class="take">The church was proud when it should have been broken-hearted. Love grieves over a brother's sin. It doesn't wink at it.</span></li>
+      <li class="step"><span class="topic">The goal</span><span class="seed-q">“That the spirit may be saved” <cite>5:5</cite></span><span class="take">Putting a man out is aimed at bringing him home. Later he is forgiven and comforted, and welcomed back.</span></li>
+      <li class="step"><span class="topic">Leaven</span><span class="seed-q">“A little leaven leaveneth the whole lump” <cite>5:6</cite></span><span class="take">Sin allowed to sit doesn't stay small. Deal with it early, with a brother next to you.</span></li>
+      <li class="step"><span class="topic">Our passover</span><span class="seed-q">“Christ our passover is sacrificed for us” <cite>5:7</cite></span><span class="take">The Lamb has already died. You are unleavened in Him, so live like it.</span></li>
+      <li class="step"><span class="topic">The world</span><span class="seed-q">“Then must ye needs go out of the world” <cite>5:10</cite></span><span class="take">Paul does not tell us to cut off sinners in the world. God judges them, and we keep loving them.</span></li>
+      <li class="step"><span class="topic">A brother</span><span class="seed-q">“If any man that is called a brother” <cite>5:11</cite></span><span class="take">The warning is for a brother who keeps on and calls it fine, not for the man who fell and hates it.</span></li>
+    </ol>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 1 of 6</p>
+      <span class="topic">Pride</span>
+      <h2>What was wrong with the church's attitude, as well as the man's sin?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="1"></blockquote>
+      <blockquote class="quote step" data-q="2"></blockquote>
+      <blockquote class="quote step" data-q="6"></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>They were puffed up. They should have mourned. A church that loves a man grieves when he is in open sin, and doesn't brag about how tolerant it is.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 2 of 6</p>
+      <span class="topic">The goal</span>
+      <h2>What is the goal when a church puts a man out?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="5"></blockquote>
+      <blockquote class="quote step"><p>“So that contrariwise ye ought rather to forgive him, and comfort him, lest perhaps such a one should be swallowed up with overmuch sorrow.”</p><cite>2 Corinthians 2:7</cite></blockquote>
+      <blockquote class="quote step"><p>“Brethren, if a man be overtaken in a fault, ye which are spiritual, restore such an one in the spirit of meekness; considering thyself, lest thou also be tempted.”</p><cite>Galatians 6:1</cite></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>That the spirit may be saved: his rescue, not his ruin. When he turns, he is forgiven, comforted, and welcomed back.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 3 of 6</p>
+      <span class="topic">Leaven</span>
+      <h2>What does a little leaven do?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="6"></blockquote>
+      <blockquote class="quote step" data-q="7"></blockquote>
+      <blockquote class="quote step" data-q="8"></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>It leavens the whole lump. A little sin, allowed to sit, spreads. So purge out the old leaven and live with sincerity and truth.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 4 of 6</p>
+      <span class="topic">Our passover</span>
+      <h2>Who is our passover?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="7"></blockquote>
+      <blockquote class="quote step"><p>“Behold the Lamb of God, which taketh away the sin of the world.”</p><cite>John 1:29</cite></blockquote>
+      <blockquote class="quote step"><p>“Forasmuch as ye know that ye were not redeemed with corruptible things, as silver and gold, from your vain conversation received by tradition from your fathers; But with the precious blood of Christ, as of a lamb without blemish and without spot:”</p><cite>1 Peter 1:18–19</cite></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>Christ. The Lamb of God was sacrificed for us. His blood is why judgment passes over us, and why we are already unleavened in Him.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 5 of 6</p>
+      <span class="topic">The world</span>
+      <h2>Does Paul tell us to cut off the sinners of this world?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="10"></blockquote>
+      <blockquote class="quote step" data-q="12"></blockquote>
+      <blockquote class="quote step"><p>“And the Pharisees and scribes murmured, saying, This man receiveth sinners, and eateth with them.”</p><cite>Luke 15:2</cite></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>No. To avoid them we would have to go out of the world. God judges those outside; we keep living among them, and keep loving them, as Jesus did.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 6 of 6</p>
+      <span class="topic">A brother</span>
+      <h2>Who are we told not to keep company with?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="11"></blockquote>
+      <blockquote class="quote step" data-q="13"></blockquote>
+      <blockquote class="quote step"><p>“For a just man falleth seven times, and riseth up again: but the wicked shall fall into mischief.”</p><cite>Proverbs 24:16</cite></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>A man who is called a brother and keeps living in open sin and calls it fine. The aim is to wake him up. A believer who falls and grieves is not that man. He is to be restored.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide prayer">
+  <div class="inner">
+    <div class="emblem rise"></div>
+    <h2 class="rise" style="--d:1">Prayer requests</h2>
+    <p class="ask-line rise" style="--d:2">What can we pray about for you today?</p>
+    <blockquote class="quote rise" style="--d:4"><p>“If we confess our sins, he is faithful and just to forgive us our sins, and to cleanse us from all unrighteousness.”</p><cite>1 John 1:9</cite></blockquote>
+  </div>
+</section>
+
+</main>
+
+<script>
+// King James Version, 1 Corinthians chapter 5
+const V = {
+  1: "It is reported commonly that there is fornication among you, and such fornication as is not so much as named among the Gentiles, that one should have his father’s wife.",
+  2: "And ye are puffed up, and have not rather mourned, that he that hath done this deed might be taken away from among you.",
+  3: "For I verily, as absent in body, but present in spirit, have judged already, as though I were present, concerning him that hath so done this deed,",
+  4: "In the name of our Lord Jesus Christ, when ye are gathered together, and my spirit, with the power of our Lord Jesus Christ,",
+  5: "To deliver such an one unto Satan for the destruction of the flesh, that the spirit may be saved in the day of the Lord Jesus.",
+  6: "Your glorying is not good. Know ye not that a little leaven leaveneth the whole lump?",
+  7: "Purge out therefore the old leaven, that ye may be a new lump, as ye are unleavened. For even Christ our passover is sacrificed for us:",
+  8: "Therefore let us keep the feast, not with old leaven, neither with the leaven of malice and wickedness; but with the unleavened bread of sincerity and truth.",
+  9: "I wrote unto you in an epistle not to company with fornicators:",
+  10: "Yet not altogether with the fornicators of this world, or with the covetous, or extortioners, or with idolaters; for then must ye needs go out of the world.",
+  11: "But now I have written unto you not to keep company, if any man that is called a brother be a fornicator, or covetous, or an idolater, or a railer, or a drunkard, or an extortioner; with such an one no not to eat.",
+  12: "For what have I to do to judge them also that are without? do not ye judge them that are within?",
+  13: "But them that are without God judgeth. Therefore put away from among yourselves that wicked person."
+};
+const BOOK = "1 Corinthians 5";
+</script>
+<script src="../assets/deck.js"></script>
+</body>
+</html>

@@ -1,0 +1,693 @@
+<!doctype html>
+<html lang="en" data-theme="scribe">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>1 Corinthians 11</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="../assets/fonts.css">
+<link rel="stylesheet" href="../assets/deck.css">
+<link rel="stylesheet" href="../assets/themes.css">
+<style>
+/* c111-where: where we are in 1 Corinthians. Eight chips (.done, .here), each a run of chapters (i) and what Paul deals with (b) */
+.c111-where { display: grid; grid-template-columns: repeat(auto-fit, minmax(8.2rem, 1fr)); gap: 6px; margin: .3em 0 1em; }
+.c111-where div { padding: .5em .6em .55em; border-radius: 8px; background: var(--surface); border: 1px solid var(--line); color: var(--ink-soft); line-height: 1.2; }
+.c111-where i { display: block; font: 700 clamp(.8rem, .72rem + .35vw, 1rem)/1.1 var(--sans); font-style: normal; letter-spacing: .04em; margin-bottom: .2em; }
+.c111-where b { font: 400 clamp(.9rem, .82rem + .4vw, 1.15rem)/1.2 var(--serif); }
+.c111-where .done { background: color-mix(in srgb, var(--accent) 14%, var(--surface)); color: var(--ink); }
+.c111-where .here { background: var(--accent); border-color: var(--accent); color: var(--on-accent); box-shadow: 0 0 0 4px color-mix(in srgb, var(--accent) 25%, transparent); }
+.slide.active .c111-where .here { animation: c111-here 2.4s 1s ease-in-out infinite; }
+@keyframes c111-here { 50% { box-shadow: 0 0 0 8px color-mix(in srgb, var(--accent) 10%, transparent); } }
+
+/* c111-heads: who is head of whom, one pair per step. Order is not worth: the Son is equal with the Father */
+.c111-heads { display: grid; gap: .5rem; margin: .3em 0 .8em; }
+.c111-heads > div { display: grid; grid-template-columns: 1fr auto 1fr; align-items: center; gap: .8rem; padding: .5em .9em; border-radius: 10px; border: 1.5px solid var(--line-strong); background: var(--surface); }
+.c111-heads b { font: 400 clamp(1.15rem, .95rem + 1vw, 1.8rem)/1.15 var(--serif); }
+.c111-heads b:last-child { text-align: right; }
+.c111-heads i { font: 700 clamp(.72rem, .66rem + .3vw, .92rem) var(--sans); font-style: normal; text-transform: uppercase; letter-spacing: .08em; color: var(--accent); text-align: center; }
+.c111-heads small { grid-column: 1 / -1; font: clamp(.85rem, .78rem + .35vw, 1.05rem)/1.3 var(--sans); color: var(--ink-soft); text-align: center; }
+@media (max-width: 760px) { .c111-heads > div { grid-template-columns: 1fr; gap: .15rem; text-align: center; } .c111-heads b:last-child { text-align: center; } }
+
+/* c111-cards: small cards in a row, each with a label, a line set large, and a plain explanation. .all lights the one to land on */
+.c111-cards { display: grid; grid-template-columns: repeat(var(--n, 3), 1fr); gap: 10px; margin: .4em 0 1em; }
+@media (max-width: 760px) { .c111-cards { grid-template-columns: 1fr; } }
+.c111-cards > div { padding: .6em .85em .7em; border-radius: 10px; background: var(--surface); border: 1px solid var(--line-strong); }
+.c111-cards h3 { font: 700 clamp(.78rem, .72rem + .3vw, .98rem) var(--sans); color: var(--accent); text-transform: uppercase; letter-spacing: .06em; margin-bottom: .3em; }
+.c111-cards b { display: block; font: italic 600 clamp(1.05rem, .92rem + .55vw, 1.4rem)/1.2 var(--serif); color: var(--ink); margin-bottom: .2em; }
+.c111-cards p { margin: 0; font-size: clamp(.9rem, .82rem + .36vw, 1.1rem); line-height: 1.3; color: var(--ink-soft); }
+.c111-cards .all { border: 2px solid var(--accent); background: color-mix(in srgb, var(--accent) 12%, var(--surface)); }
+.c111-cards .all p { color: var(--ink); }
+
+/* c111-need: man and woman, "neither without the other, in the Lord". The first arc draws on open, the second on a step (.c111-n2) */
+.c111-ring { fill: color-mix(in srgb, var(--accent) 10%, var(--surface)); stroke: var(--line-strong); stroke-width: 3; }
+.c111-ring.w { fill: color-mix(in srgb, var(--cool) 14%, var(--surface)); }
+.c111-big { fill: var(--ink); font: 400 30px var(--serif); text-anchor: middle; }
+.c111-lab { fill: var(--ink-soft); font: italic 20px var(--serif); text-anchor: middle; }
+.c111-lab.hot { fill: var(--accent-hot); font-style: normal; font-weight: 700; }
+.c111-arc { fill: none; stroke: var(--accent); stroke-width: 4; stroke-linecap: round; stroke-dasharray: 1; stroke-dashoffset: 1; }
+.c111-arc.b { stroke: var(--cool); }
+.slide.active .c111-arc.a { animation: c111-draw 1.4s ease .8s forwards; }
+.slide:has(.c111-n2.on) .c111-arc.b { animation: c111-draw 1.4s ease forwards; }
+@keyframes c111-draw { to { stroke-dashoffset: 0; } }
+.c111-head { fill: var(--accent); }
+.c111-band { fill: color-mix(in srgb, var(--accent) 16%, var(--surface)); stroke: var(--accent); stroke-width: 2.5; }
+.c111-tie { stroke: var(--line-strong); stroke-width: 3; stroke-dasharray: 4 7; }
+.c111-fade { opacity: 0; transition: opacity .8s ease; }
+.slide.active .c111-fade.f1 { opacity: 1; transition-delay: .5s; }
+.slide:has(.c111-n2.on) .c111-fade.f2, .slide:has(.c111-n3.on) .c111-fade.f3 { opacity: 1; }
+
+/* c111-house: a house-church meal. Rich guests early in the dining room, workers late in the courtyard, then Paul's fix.
+   Steps .c111-b and .c111-c bring in the late workers (empty bowls), then fill every bowl */
+.c111-wall { fill: color-mix(in srgb, var(--accent) 5%, var(--surface)); stroke: var(--line-strong); stroke-width: 5; }
+.c111-room { fill: color-mix(in srgb, var(--accent) 15%, var(--surface)); stroke: var(--accent); stroke-width: 3; }
+.c111-pool { fill: color-mix(in srgb, var(--cool) 26%, transparent); stroke: var(--line-strong); stroke-width: 2; }
+.c111-couch { fill: none; stroke: var(--line-strong); stroke-width: 11; stroke-linecap: round; stroke-linejoin: round; }
+.c111-table { fill: var(--surface); stroke: var(--line-strong); stroke-width: 2.5; }
+.c111-door { fill: var(--surface); }
+.c111-rich { fill: var(--ink); }
+.c111-poor { fill: var(--ink-soft); opacity: 0; transform-box: fill-box; transform-origin: center; transform: translateY(18px); transition: opacity .8s ease, transform .8s ease; transition-delay: calc(var(--k) * 70ms); }
+.slide:has(.c111-b.on) .c111-poor { opacity: 1; transform: none; }
+.c111-food { fill: var(--accent); }
+.c111-bowl { fill: none; stroke: var(--ink-soft); stroke-width: 2.2; stroke-dasharray: 3 3; opacity: 0; transition: opacity .8s ease .5s, fill .8s ease, stroke .8s ease; }
+.slide:has(.c111-b.on) .c111-bowl { opacity: 1; }
+.slide:has(.c111-c.on) .c111-bowl { fill: var(--accent); stroke: var(--accent); stroke-dasharray: none; transition-delay: calc(var(--k) * 90ms); }
+.c111-t { fill: var(--ink-soft); font: 21px var(--sans); text-anchor: middle; }
+.c111-t.hot { fill: var(--accent-hot); font-weight: 700; }
+.c111-t.q { opacity: 0; transition: opacity .7s ease; }
+.slide:has(.c111-b.on) .c111-t.q.b, .slide:has(.c111-c.on) .c111-t.q.c { opacity: 1; }
+.slide:has(.c111-b.on) .c111-t.q.a, .slide:has(.c111-c.on) .c111-t.q.b { opacity: 0; }
+.c111-t.q.a { opacity: 1; }
+
+/* c111-looks: three looks at the table. Back to the cross, up to the covenant in His blood, ahead to His coming. .now is lit */
+.c111-looks { list-style: none; padding: 0; margin: .4em 0 1em; display: grid; grid-template-columns: repeat(3, 1fr); gap: 0; counter-reset: lk; }
+.c111-looks li { position: relative; padding: .7em .9em .8em; border: 1.5px solid var(--line-strong); background: var(--surface); }
+.c111-looks li:first-child { border-radius: 12px 0 0 12px; } .c111-looks li:last-child { border-radius: 0 12px 12px 0; }
+.c111-looks li + li { border-left-width: 0; }
+.c111-looks li:not(:last-child)::after { content: "\2192"; position: absolute; right: -.62em; top: 50%; transform: translateY(-50%); z-index: 1; width: 1.2em; height: 1.2em; display: grid; place-items: center; border-radius: 50%; background: var(--bg); border: 1.5px solid var(--line-strong); font-size: 1rem; color: var(--ink-soft); }
+.c111-looks i { display: block; font: 700 clamp(.75rem, .68rem + .3vw, .95rem) var(--sans); font-style: normal; text-transform: uppercase; letter-spacing: .08em; color: var(--accent); margin-bottom: .25em; }
+.c111-looks b { display: block; font: italic 400 clamp(1.1rem, .95rem + .7vw, 1.6rem)/1.2 var(--serif); margin-bottom: .3em; }
+.c111-looks p { margin: 0; font-size: clamp(.9rem, .82rem + .36vw, 1.1rem); line-height: 1.3; color: var(--ink-soft); }
+.c111-looks li.now { background: color-mix(in srgb, var(--accent) 14%, var(--surface)); border-color: var(--accent); border-left-width: 1.5px; }
+.c111-looks li.now p { color: var(--ink); }
+@media (max-width: 760px) { .c111-looks { grid-template-columns: 1fr; gap: .5rem; } .c111-looks li, .c111-looks li:first-child, .c111-looks li:last-child { border-radius: 12px; border-left-width: 1.5px; } .c111-looks li:not(:last-child)::after { display: none; } }
+
+/* c111-ask: the checklist, in plain words (no quote marks) */
+.c111-ask q { quotes: none; font-style: normal; font-family: var(--sans); font-weight: 600; }
+</style>
+</head>
+<body>
+<main class="deck" id="deck">
+
+<!-- ======================= OPENING ======================= -->
+<section class="slide title">
+  <div class="inner">
+    <div class="emblem rise"></div>
+    <h1 class="rise" style="--d:1">1 Corinthians 11</h1>
+    <p class="sub rise" style="--d:3">Order, and the table</p>
+    <p class="tag rise" style="--d:5">Follow Paul as he follows Christ, honour one another in worship, and come to the Lord's table as a forgiven sinner who remembers Him.</p>
+  </div>
+</section>
+
+<section class="slide watch">
+  <div class="inner">
+    <h2 class="rise">Things to watch for</h2>
+    <p class="lede rise" style="--d:1">Keep these questions in the back of your mind as we read. We'll come back to every one of them at the end.</p>
+    <ol class="seeds">
+      <li class="step"><span class="topic">The example</span><span class="seed-q">Whom does Paul ask us to follow, and how far?</span></li>
+      <li class="step"><span class="topic">A hard text</span><span class="seed-q">What is plain in Paul's teaching about head coverings, even where Christians differ?</span></li>
+      <li class="step"><span class="topic">Together</span><span class="seed-q">How do a man and a woman need each other?</span></li>
+      <li class="step"><span class="topic">The meal</span><span class="seed-q">What went wrong at the Corinthian church supper?</span></li>
+      <li class="step"><span class="topic">Remembering</span><span class="seed-q">What are we doing when we eat the bread and drink the cup?</span></li>
+      <li class="step"><span class="topic">Examining</span><span class="seed-q">What does it mean to eat “unworthily,” and who may come to the table?</span></li>
+    </ol>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise">Where we are in 1 Corinthians</h2>
+    <p class="note rise" style="--d:1">About AD 55, Paul is writing from Ephesus to the church he started in Corinth. The letter is a pastor's answers, one real problem after another. Chapters 8 to 10 were about food and freedom. Now he turns to how the church behaves when it meets.</p>
+    <div class="c111-where rise" style="--d:2" role="img" aria-label="1 Corinthians in eight parts. Chapters 1 to 4: divisions. Chapters 5 and 6: sin the church let in. Chapter 7: marriage. Chapters 8 to 10: food and freedom, done. Chapter 11: order in worship, and we are here. Chapters 12 to 14: gifts, and love. Chapter 15: the resurrection. Chapter 16: the offering, and goodbye.">
+      <div class="done"><i>1–4</i><b>Divisions</b></div>
+      <div class="done"><i>5–6</i><b>Sin the church let in</b></div>
+      <div class="done"><i>7</i><b>Marriage</b></div>
+      <div class="done"><i>8–10</i><b>Food and freedom</b></div>
+      <div class="here"><i>11</i><b>Order in worship</b></div>
+      <div><i>12–14</i><b>Gifts, and love</b></div>
+      <div><i>15</i><b>The resurrection</b></div>
+      <div><i>16</i><b>The offering, goodbye</b></div>
+    </div>
+    <p class="note step">Two problems in one chapter. First, some in the meeting were acting in ways that shamed one another. Then, at the church's shared meal, the rich ate well while the poor went hungry. Read alone, this chapter still makes sense: a church is meeting, and Paul tells it how to meet in a way that honours Christ and each other.</p>
+  </div>
+</section>
+
+<!-- ======================= PART ONE: ORDER IN WORSHIP ======================= -->
+<section class="slide part">
+  <div class="inner">
+    <p class="part-n rise">Part one</p>
+    <h2 class="rise" style="--d:1">Honour in worship</h2>
+    <p class="range rise" style="--d:2">Verses 1–16</p>
+    <div class="rule"></div>
+    <p class="hook rise" style="--d:4">Follow me as I follow Christ. Then a hard text, handled carefully.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="1-2" data-hl="Be ye followers of me, even as I also am of Christ"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="1" data-hl="even as I also am of Christ"></blockquote>
+    <h2 class="rise" style="--d:1">Follow me, as I follow Christ</h2>
+    <div class="chains">
+      <div class="chain rise" style="--d:2"><span class="who-chip jesus">Christ</span><span class="said">Paul followed Him</span><span class="who-chip">Paul</span><span class="said">“Be ye followers of me”</span><span class="who-chip">the Corinthians</span><span class="said">and so</span><span class="who-chip">someone watching you</span></div>
+    </div>
+    <p class="note step">Paul isn't boasting. The whole sentence matters: <em>“even as I also am of Christ.”</em> Follow him only as far as he follows his Lord. If he ever steps away from Christ, stop following him there.</p>
+    <p class="note step">And the line runs on past Paul. Somebody is watching you: a younger brother, a son, the new guy at work who knows your past. You may be the nearest picture of Christ he ever sees. You don't have to be perfect. You do have to be pointed the right way, and honest when you fall.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="3-6" data-hl="the head of every man is Christ|the head of the woman is the man|the head of Christ is God"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="3" data-hl="the head of every man is Christ|the head of the woman is the man|the head of Christ is God"></blockquote>
+    <h2 class="rise" style="--d:1">An order, not a ranking</h2>
+    <div class="c111-heads">
+      <div class="step"><b>God</b><i>is the head of</i><b>Christ</b><small>and yet the Son is fully God: “I and my Father are one” (John 10:30)</small></div>
+      <div class="step"><b>Christ</b><i>is the head of</i><b>every man</b></div>
+      <div class="step"><b>the man</b><i>is the head of</i><b>the woman</b></div>
+    </div>
+    <p class="note step">“Head” was a word Corinth knew, and good Bible teachers differ on whether it means <em>authority over</em> or <em>source of</em>. Either way, look at the first line: Christ answers to the Father and is not one bit less than the Father. So an order of headship is about how we honour each other, never about whose life is worth more.</p>
+    <p class="note step">And a man's own head is Christ. Before he is anyone's husband or boss, he answers to Him.</p>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise">What a head meant in Corinth</h2>
+    <div class="c111-cards" style="--n:3">
+      <div class="rise" style="--d:1"><h3>A man's head</h3><b>bare in worship</b><p>In some pagan temples, Roman men covered their heads to pray. Paul says a Christian man comes to God plainly, and does not cover his head.</p></div>
+      <div class="rise" style="--d:2"><h3>A woman's head</h3><b>covered in public</b><p>In much of that world a respectable woman went out with her head covered. To pray or speak in the meeting with her head bare would look like a shameful break with decency.</p></div>
+      <div class="rise" style="--d:3"><h3>A shaved head</h3><b>a mark of shame</b><p>A woman's head shaved was a mark of disgrace. That is why Paul says a bare head is “even all one as if she were shaven.”</p></div>
+    </div>
+    <p class="note step">Notice that both men and women are “praying or prophesying” in this meeting. <em>Prophesying</em> here means speaking God's word to the church. Paul's concern in this passage is how they carry themselves while they do it.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="7-10" data-hl="the image and glory of God|power on her head because of the angels"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="10" data-hl="power on her head because of the angels"></blockquote>
+    <h2 class="rise" style="--d:1">The hardest line in the chapter</h2>
+    <p class="note rise" style="--d:2">Verse 10 has two puzzles. <em>“Power”</em> most likely means a sign of her own authority, the right to pray and speak in the meeting. And <em>“the angels”</em>? Honest Bible teachers are not sure what Paul means, and we won't pretend to be.</p>
+    <p class="note step">What the verse seems to say is that worship happens in front of heaven's eyes, so it is no place for show or disorder. That is the plain part, and it matches the rest of the chapter.</p>
+    <p class="note step">Verses 7 to 9 go back to the creation story. They explain why Paul wants the difference between man and woman honoured. They do not say a woman matters less to God. Verse 12, a little further on, answers that directly.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="11-12" data-hl="neither is the man without the woman, neither the woman without the man, in the Lord"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="11" data-hl="neither is the man without the woman, neither the woman without the man, in the Lord"></blockquote>
+    <h2 class="rise" style="--d:1">Not without each other</h2>
+    <svg viewBox="0 0 700 350" style="width:100%;max-height:44vh;display:block;margin:0 auto" role="img" aria-label="A man and a woman, side by side. An arrow runs from the man to the woman: the first woman was made from the man. A second arrow runs back from the woman to the man: every man since is born of a woman. Above them both: all things of God. Between them: in the Lord.">
+      <rect class="c111-band c111-fade f1" x="150" y="6" width="400" height="44" rx="22"/>
+      <text class="c111-big c111-fade f1" x="350" y="37" style="font-size:24px">…but all things of God</text>
+      <circle class="c111-ring" cx="120" cy="205" r="66"/>
+      <circle class="c111-ring w" cx="580" cy="205" r="66"/>
+      <text class="c111-big" x="120" y="215">man</text>
+      <text class="c111-big" x="580" y="215">woman</text>
+      <line class="c111-tie" x1="190" y1="205" x2="510" y2="205"/>
+      <text class="c111-lab hot c111-fade f1" x="350" y="197">in the Lord</text>
+      <path class="c111-arc a" pathLength="1" d="M 165 150 Q 350 60 535 150"/>
+      <text class="c111-lab c111-fade f1" x="350" y="102" style="transition-delay:1.6s">first woman made from the man (v. 8)</text>
+      <path class="c111-arc b" pathLength="1" d="M 535 262 Q 350 350 165 262"/>
+      <text class="c111-lab c111-fade f2" x="350" y="322">every man since is born of a woman (v. 12)</text>
+    </svg>
+    <p class="note step c111-n2">Verses 8 and 9 look back to creation: the first woman was taken from the first man. Verse 12 answers it: every man since has come into the world through a woman. Neither of them stands alone.</p>
+    <p class="note step">Paul puts the little words in on purpose: <em>“not… without… in the Lord.”</em> Whatever order there is between them, in Christ neither one is a spare part. A man who looks down on women, or on any other man, has not read this verse.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="13-16" data-hl="is it comely that a woman pray unto God uncovered|we have no such custom"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise">A hard text, honestly</h2>
+    <p class="note rise" style="--d:1">Good, Bible-believing Baptists read these verses differently, and we're not going to settle it here.</p>
+    <div class="c111-cards" style="--n:3">
+      <div class="rise" style="--d:2"><h3>Some churches</h3><b>a covering today</b><p>They take it as a command for every age, and women cover their heads when the church worships. Some teachers think the long hair of verse 15 is itself the covering.</p></div>
+      <div class="rise" style="--d:3"><h3>Many churches</h3><b>a custom of that day</b><p>They read it as a custom of Corinth, and point to verse 16, where Paul will not make it a fight. The principle stays; the cloth was for their street.</p></div>
+      <div class="rise all" style="--d:4"><h3>What is plain to all</h3><b>honour, and order</b><p>Come to God with respect. Honour one another. Man and woman need each other in the Lord. And do not let your own way turn worship into a show or a fight.</p></div>
+    </div>
+    <p class="note step">Verse 16 is worth a second look: <em>“if any man seem to be contentious…”</em> There is always a man who would rather win the argument than worship. If you and a brother differ here, hold your view gently and pray together anyway.</p>
+  </div>
+</section>
+
+<!-- ======================= PART TWO: A MEAL GONE WRONG ======================= -->
+<section class="slide part">
+  <div class="inner">
+    <p class="part-n rise">Part two</p>
+    <h2 class="rise" style="--d:1">A supper that was no supper</h2>
+    <p class="range rise" style="--d:2">Verses 17–22</p>
+    <div class="rule"></div>
+    <p class="hook rise" style="--d:4">One went hungry, and another was drunk, at the same church meal.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="17-19" data-hl="there be divisions among you|there must be also heresies among you"></section>
+
+<section class="slide verse" data-v="20-22" data-hl="one is hungry, and another is drunken|have ye not houses to eat and to drink in|shame them that have not"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise">Who ate where</h2>
+    <div class="split">
+      <div class="stage">
+        <svg viewBox="0 0 720 450" style="width:100%;max-height:60vh" role="img" aria-label="Plan of a house where a church met. In the small dining room at the top right, wealthy members lie at a table full of food, eating early. In the courtyard, the poor and the slaves arrive late from work and find empty bowls. Then every bowl is filled, and everyone is fed.">
+<rect class="c111-wall" x="20" y="20" width="680" height="400" rx="6"/>
+<rect class="c111-pool" x="110" y="95" width="170" height="70" rx="10"/>
+<rect class="c111-room" x="380" y="30" width="310" height="205" rx="6"/>
+<path class="c111-couch" d="M440 195 L440 98 L625 98 L625 195"/>
+<rect class="c111-table" x="470" y="115" width="140" height="62" rx="6"/>
+<circle class="c111-food" cx="495" cy="134" r="7"/>
+<circle class="c111-food" cx="540" cy="134" r="7"/>
+<circle class="c111-food" cx="585" cy="134" r="7"/>
+<circle class="c111-food" cx="495" cy="160" r="7"/>
+<circle class="c111-food" cx="540" cy="160" r="7"/>
+<circle class="c111-food" cx="585" cy="160" r="7"/>
+<circle class="c111-rich" cx="420" cy="70" r="11"/>
+<circle class="c111-rich" cx="470" cy="70" r="11"/>
+<circle class="c111-rich" cx="520" cy="70" r="11"/>
+<circle class="c111-rich" cx="570" cy="70" r="11"/>
+<circle class="c111-rich" cx="620" cy="70" r="11"/>
+<circle class="c111-rich" cx="655" cy="125" r="11"/>
+<circle class="c111-rich" cx="655" cy="170" r="11"/>
+<circle class="c111-rich" cx="412" cy="125" r="11"/>
+<circle class="c111-rich" cx="412" cy="170" r="11"/>
+<text class="c111-t" x="535" y="224">dining room: holds about nine</text>
+<circle class="c111-poor" style="--k:0" cx="70" cy="318" r="11"/>
+<circle class="c111-bowl" style="--k:0" cx="70" cy="342" r="7"/>
+<circle class="c111-poor" style="--k:1" cx="128" cy="318" r="11"/>
+<circle class="c111-bowl" style="--k:1" cx="128" cy="342" r="7"/>
+<circle class="c111-poor" style="--k:2" cx="186" cy="318" r="11"/>
+<circle class="c111-bowl" style="--k:2" cx="186" cy="342" r="7"/>
+<circle class="c111-poor" style="--k:3" cx="244" cy="318" r="11"/>
+<circle class="c111-bowl" style="--k:3" cx="244" cy="342" r="7"/>
+<circle class="c111-poor" style="--k:4" cx="302" cy="318" r="11"/>
+<circle class="c111-bowl" style="--k:4" cx="302" cy="342" r="7"/>
+<circle class="c111-poor" style="--k:5" cx="360" cy="318" r="11"/>
+<circle class="c111-bowl" style="--k:5" cx="360" cy="342" r="7"/>
+<circle class="c111-poor" style="--k:6" cx="70" cy="370" r="11"/>
+<circle class="c111-bowl" style="--k:6" cx="70" cy="394" r="7"/>
+<circle class="c111-poor" style="--k:7" cx="128" cy="370" r="11"/>
+<circle class="c111-bowl" style="--k:7" cx="128" cy="394" r="7"/>
+<circle class="c111-poor" style="--k:8" cx="186" cy="370" r="11"/>
+<circle class="c111-bowl" style="--k:8" cx="186" cy="394" r="7"/>
+<circle class="c111-poor" style="--k:9" cx="244" cy="370" r="11"/>
+<circle class="c111-bowl" style="--k:9" cx="244" cy="394" r="7"/>
+<circle class="c111-poor" style="--k:10" cx="302" cy="370" r="11"/>
+<circle class="c111-bowl" style="--k:10" cx="302" cy="394" r="7"/>
+<circle class="c111-poor" style="--k:11" cx="360" cy="370" r="11"/>
+<circle class="c111-bowl" style="--k:11" cx="360" cy="394" r="7"/>
+<rect class="c111-door" x="320" y="416" width="70" height="9"/>
+<text class="c111-t" x="355" y="445">street door</text>
+<text class="c111-t q a" x="205" y="270">the courtyard</text>
+<text class="c111-t q b hot" x="205" y="270">late from work: nothing left</text>
+<text class="c111-t q c hot" x="205" y="270">wait, share: everyone fed</text>
+<text class="c111-t" x="205" y="62">(a pool, the open sky)</text>
+</svg>
+      </div>
+      <div>
+        <p class="note rise" style="--d:1">Churches then met in homes, often the house of a rich member. Many scholars picture it like this: a small dining room that held about nine, and a courtyard for everyone else. The church meal was a real supper, with the Lord's table at its end.</p>
+        <p class="note step c111-b">The wealthy came early, because they had no shift to work, and they ate and drank in the dining room. The poor and the slaves came after work, and found nothing left. <em>“One is hungry, and another is drunken.”</em></p>
+        <p class="note step c111-c">Paul's cure (verse 33) is simple: wait for each other, and share. Then it is a supper of the Lord, and not of the host's friends.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="22" data-hl="despise ye the church of God, and shame them that have not"></blockquote>
+    <h2 class="rise" style="--d:1">Shaming the ones with nothing</h2>
+    <p class="note rise" style="--d:2">Paul is angry, and it is not about etiquette. A table that shames the poor in front of the rich has stopped being the Lord's table. <em>“Divisions”</em> and <em>“heresies”</em> in verses 18 and 19 mean <em>factions</em>: cliques inside the church.</p>
+    <p class="note step">Verse 19 has a hard edge: factions show who is genuine. <em>“They which are approved”</em> are the ones who have been tested and proved true.</p>
+    <p class="note step">Some of us know the other side of this table. You've been the one without: the empty plate, the seat nobody saved, the look that said you didn't belong. The Lord's table was never meant to do that to anyone. It's meant to feed everyone who comes, and every man there to be one sinner among the rest.</p>
+  </div>
+</section>
+
+<!-- ======================= PART THREE: THE LORD'S TABLE ======================= -->
+<section class="slide part">
+  <div class="inner">
+    <p class="part-n rise">Part three</p>
+    <h2 class="rise" style="--d:1">The Lord's table</h2>
+    <p class="range rise" style="--d:2">Verses 23–34</p>
+    <div class="rule"></div>
+    <p class="hook rise" style="--d:4">What Jesus gave us to remember, and who it is for.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="23-24" data-hl="this do in remembrance of me|my body, which is broken for you"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise">The table travels</h2>
+    <div class="split">
+      <div class="stage">
+        <svg data-world viewBox="430 190 440 330" data-towns="Jerusalem*, Antioch, Corinth!, Ephesus" role="img" aria-label="Map of the eastern Mediterranean. A line runs north from Jerusalem through Damascus to Antioch. From Antioch, a second line runs west through Asia Minor, Macedonia and Greece to Corinth, where Paul handed the Lord's Supper on to the church.">
+          <path class="map-route j2" data-via="Jerusalem, Damascus, Antioch"/>
+          <path class="map-route j1 r1" data-via="Antioch, Tarsus, Derbe, Lystra, Iconium, Antioch in Pisidia, Troas, @26.0 39.7, @25.6 40.05, Samothracia, Neapolis, Philippi, Thessalonica, Berea, @22.85 40.2, @23.2 39.75, @24.0 39.3, @24.2 38.75, @24.72 38.12, @24.45 37.85, Athens, Corinth"/>
+        </svg>
+      </div>
+      <div>
+        <p class="note rise" style="--d:1">The first Lord's Supper was in an upper room in Jerusalem, <em>“the same night in which he was betrayed.”</em> Paul wasn't there. He says he <em>“received of the Lord”</em> what he handed on.</p>
+        <p class="note step map-go1">He carried it north to Antioch, then west across Asia Minor and Greece, and gave it to the new church in Corinth (about AD 50 to 52). Now he writes to remind them what it is.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise">One meal, passed hand to hand</h2>
+    <ol class="timeline" aria-label="About AD 30 to 33, Jesus gives the Supper in the upper room. About AD 50 to 52, Paul hands it on to the church at Corinth. About AD 55, Paul writes this letter from Ephesus. Until He comes, the church keeps it.">
+      <li style="--k:0"><b>about AD 30–33</b><span>Jesus and the Twelve, in the upper room</span><small>“the same night he was betrayed”</small></li>
+      <li style="--k:1"><b>about AD 50–52</b><span>Paul gives it to the church at Corinth</span><small>“that which also I delivered unto you”</small></li>
+      <li class="lit" style="--k:2"><b>about AD 55</b><span>Paul writes this letter, from Ephesus</span><small>“I have received of the Lord”</small></li>
+      <li class="wait" style="--k:3"><b>till He come</b><span>the church keeps the table</span><small>verse 26</small></li>
+    </ol>
+    <p class="note step">This is one of the earliest written accounts of the Supper that we have, set down about twenty-five years after that night. Nobody invented it later. Paul got it from the Lord, and gave it on.</p>
+    <blockquote class="quote step"><p>“And he took bread, and gave thanks, and brake it, and gave unto them, saying, This is my body which is given for you: this do in remembrance of me.”</p><cite>Luke 22:19</cite></blockquote>
+  </div>
+</section>
+
+<section class="slide verse" data-v="25-26" data-hl="This cup is the new testament in my blood|ye do shew the Lord’s death till he come"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="26" data-hl="ye do shew the Lord’s death till he come"></blockquote>
+    <h2 class="rise" style="--d:1">Three looks at one table</h2>
+    <ol class="c111-looks">
+      <li class="rise" style="--d:2"><i>Look back</i><b>“in remembrance of me”</b><p>The cross. We remember what it cost Him: His body broken, His blood poured out for us.</p></li>
+      <li class="now rise" style="--d:3"><i>Look up</i><b>“the new testament in my blood”</b><p>A new covenant, bought for us: sins forgiven, and God as our Father.</p></li>
+      <li class="rise" style="--d:4"><i>Look ahead</i><b>“till he come”</b><p>This is not the end of the story. He is coming back, and the table points to that day.</p></li>
+    </ol>
+    <p class="note step">“Shew” means to <em>announce</em>. Each time we eat and drink, we are telling the whole room what He did. It's a sermon without a preacher.</p>
+    <p class="note step">For a man who feels he has wrecked everything, the second look is the one to hold. The covenant is in His blood, and that blood has already been spent. It doesn’t run out on a bad day.</p>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise">A memorial, not a new sacrifice</h2>
+    <div class="columns">
+      <div class="col law rise" style="--d:1">
+        <p class="who">It is not</p>
+        <h3>a second sacrifice</h3>
+        <p>Christ gave Himself once. We do not offer Him again, and the bread does not become anything other than bread. It is not what saves you, and you cannot earn your way to it.</p>
+      </div>
+      <div class="col grace rise" style="--d:2">
+        <p class="who">It is</p>
+        <h3>a memorial meal</h3>
+        <p>“In remembrance of me,” twice over. A picture of what He did, that believers keep until He comes: simple, and for the forgiven.</p>
+      </div>
+    </div>
+    <blockquote class="quote step"><p>“But this man, after he had offered one sacrifice for sins for ever, sat down on the right hand of God;”</p><cite>Hebrews 10:12</cite></blockquote>
+    <p class="note step">That is why it is safe to come. The work is finished. At the table you aren't paying for anything. You're remembering that somebody already did.</p>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise">The cup, and a word to a brother</h2>
+    <blockquote class="quote rise" style="--d:1"><p>“But I say unto you, I will not drink henceforth of this fruit of the vine, until that day when I drink it new with you in my Father’s kingdom.”</p><cite>Matthew 26:29</cite></blockquote>
+    <p class="note rise" style="--d:2">Jesus called what was in the cup <em>“the fruit of the vine.”</em> Most Baptist churches use grape juice, and some use wine. The cup stands for His blood. What is in it is not the point.</p>
+    <div class="talk">
+      <p class="rise" style="--d:3"><small>A man in recovery</small>Pastor, could I have a word before Sunday? I don't know what to do about the cup.</p>
+      <p class="reply step"><small>His pastor</small>Glad you asked. Let's sort it out together. Nobody has to be tested at that table.</p>
+    </div>
+    <p class="note step">If the cup is a problem for you, because of the taste or smell or what it stirs up, talk to your pastor before the service. Don't skip the table out of shame, and don't take it in fear. A good pastor will work out something that lets you come.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="27-29" data-hl="unworthily|let a man examine himself"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="27" data-hl="unworthily"></blockquote>
+    <h2 class="rise" style="--d:1">“Unworthily” is about how, not who</h2>
+    <ul class="nots">
+      <li class="step"><span class="k">whoever is an unworthy man</span><span class="why">no man is worthy, so the table would be empty</span></li>
+      <li class="step"><span class="k">whoever failed yesterday</span><span class="why">the table is for forgiven sinners, and that is every one of us</span></li>
+      <li class="step"><span class="k">whoever has a record</span><span class="why">Jesus ate with men like you, and He still does</span></li>
+      <li class="step yes"><span class="k">eat and drink “unworthily”</span><span class="why">a word that tells <em>how</em> a man comes: in an unworthy manner, like Corinth, shaming the poor and caring nothing for Christ</span></li>
+    </ul>
+    <p class="note step">If somebody has told you that you can't come to the table because of what you've done, hear this: verse 27 doesn't say that. The Corinthians weren't cut off for having a past. They were warned about how they were treating Christ and each other at that very meal.</p>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="28" data-hl="let a man examine himself"></blockquote>
+    <h2 class="rise" style="--d:1">Let a man examine himself</h2>
+    <p class="note rise" style="--d:2">“Examine” means to <em>test and prove</em>, the way a man checks gold. It isn't a test of how good you've been. It's four honest questions:</p>
+    <ol class="checks c111-ask">
+      <li class="step"><span class="tick">✓</span><q>Am I trusting Christ's death for my sin?</q><small>not my record, and not my effort</small></li>
+      <li class="step"><span class="tick">✓</span><q>Is there sin I'm hiding instead of confessing?</q><small>bring it out, and He is “faithful and just to forgive” (1 John 1:9)</small></li>
+      <li class="step"><span class="tick">✓</span><q>Is there a brother I'm at odds with?</q><small>go and make it right, then come</small></li>
+      <li class="step"><span class="tick">✓</span><q>Am I here to remember Him?</q><small>not to be seen, and not to feel good about myself</small></li>
+    </ol>
+    <blockquote class="quote step"><p>“Search me, O God, and know my heart: try me, and know my thoughts: And see if there be any wicked way in me, and lead me in the way everlasting.”</p><cite>Psalm 139:23–24</cite></blockquote>
+    <p class="note step">Fell yesterday? Then the table is the right place to bring it, not the place to stay away from. Confess it, and eat and drink as a forgiven man.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="30-32" data-hl="many are weak and sickly among you, and many sleep|we are chastened of the Lord"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise">Hard words in verses 29 to 32</h2>
+    <div class="c111-cards" style="--n:3">
+      <div class="rise" style="--d:1"><h3>Damnation</h3><b>judgment</b><p>Not hell. The word means a verdict, a judgment from God on how they were behaving. Believers are never damned to hell for this (Romans 8:1).</p></div>
+      <div class="rise" style="--d:2"><h3>Not discerning</h3><b>not seeing</b><p>Not seeing what the meal means, and not seeing the brother or sister sitting beside you.</p></div>
+      <div class="rise" style="--d:3"><h3>Weak and sickly</h3><b>ill, and worn down</b><p>Some in Corinth were sick, and Paul links it to how they'd been treating the meal. He does not say that every sick man has sinned.</p></div>
+      <div class="step"><h3>Sleep</h3><b>have died</b><p>The Bible often calls a believer's death “sleep.” They were not lost. They were gone home, early.</p></div>
+      <div class="step"><h3>Chastened</h3><b>trained, as a son</b><p>Discipline from a Father who loves you, not punishment from a judge (Hebrews 12:6).</p></div>
+      <div class="step"><h3>Condemned with the world</h3><b>what God spares us</b><p>The world's final judgment. The Lord disciplines His own so that they are not swept into it.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="31-32" data-hl="if we would judge ourselves, we should not be judged"></blockquote>
+    <h2 class="rise" style="--d:1">Judge yourself, and He won't have to</h2>
+    <div class="ifthen rise" style="--d:2">
+      <div class="if"><small>If we</small>judge ourselves honestly,</div>
+      <span class="arrow" aria-hidden="true">→</span>
+      <div class="then"><small>then</small>we need not be judged.</div>
+    </div>
+    <div class="ifthen step">
+      <div class="if"><small>But when</small>we are judged,</div>
+      <span class="arrow" aria-hidden="true">→</span>
+      <div class="then"><small>it is</small>the Father training His son.</div>
+    </div>
+    <blockquote class="quote step"><p>“For whom the Lord loveth he chasteneth, and scourgeth every son whom he receiveth.”</p><cite>Hebrews 12:6</cite></blockquote>
+    <p class="note step">Here is what to do with regret. Don't carry it in secret, and don't beat yourself up. Say it plainly to God now, at the point when it is small, and be done with it. <em>“There is therefore now no condemnation to them which are in Christ Jesus”</em> (Romans 8:1). Being chastened proves you belong to Him.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="33-34" data-hl="tarry one for another"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="33" data-hl="tarry one for another"></blockquote>
+    <p class="saying rise" style="--d:1"><em>Tarry</em> one for another.</p>
+    <p class="note rise" style="--d:3">“Tarry” just means <em>wait</em>. Don't rush ahead and eat your fill while somebody is still on the way in. Make room, and wait until everyone is served. The table is for all of Christ's people, and there is a seat at it for you.</p>
+    <p class="note step">If a man is really hungry, Paul says, let him eat at home first (verse 34). The Lord's table is not for filling the stomach. It is for remembering Him.</p>
+    <p class="note step">And that last line: <em>“the rest will I set in order when I come.”</em> Paul has more to say about the church's meetings, and he does so in the next three chapters.</p>
+    <p class="note step">Today: if somebody new walks in the door of your church or your group, save him a seat. You know what it's like to stand in the courtyard.</p>
+  </div>
+</section>
+
+<!-- ======================= CLOSING ======================= -->
+<section class="slide remember">
+  <div class="inner">
+    <h2 class="rise">Points to remember</h2>
+    <ol class="seeds">
+      <li class="step"><span class="topic">The example</span><span class="seed-q">“Be ye followers of me, even as I also am of Christ” <cite>11:1</cite></span><span class="take">Follow men only as far as they follow Christ, and somebody is following you.</span></li>
+      <li class="step"><span class="topic">A hard text</span><span class="seed-q">“Judge in yourselves: is it comely…?” <cite>11:13</cite></span><span class="take">Christians apply the head covering differently. What is plain: honour, order, and no fighting over it.</span></li>
+      <li class="step"><span class="topic">Together</span><span class="seed-q">“Neither is the man without the woman, neither the woman without the man, in the Lord” <cite>11:11</cite></span><span class="take">In Christ neither one is a spare part. Honour each other.</span></li>
+      <li class="step"><span class="topic">The meal</span><span class="seed-q">“One is hungry, and another is drunken” <cite>11:21</cite></span><span class="take">The rich ate first and the poor went without. A table that shames anyone is not the Lord's table.</span></li>
+      <li class="step"><span class="topic">Remembering</span><span class="seed-q">“This do in remembrance of me” <cite>11:24</cite></span><span class="take">A memorial of His death for us, kept until He comes. It does not save, and it does not run out.</span></li>
+      <li class="step"><span class="topic">Examining</span><span class="seed-q">“Let a man examine himself” <cite>11:28</cite></span><span class="take">“Unworthily” is about how you come, not what you've done. The table is for forgiven sinners.</span></li>
+    </ol>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 1 of 6</p>
+      <span class="topic">The example</span>
+      <h2>Whom does Paul ask us to follow, and how far?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="1"></blockquote>
+      <blockquote class="quote step" data-q="3" data-hl="the head of every man is Christ"></blockquote>
+      <blockquote class="quote step"><p>“Even as I please all men in all things, not seeking mine own profit, but the profit of many, that they may be saved.”</p><cite>1 Corinthians 10:33</cite></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>Paul asks us to follow him only as he follows Christ. Christ is the one to follow, and somebody is watching you follow Him. Today, that is where your example counts.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 2 of 6</p>
+      <span class="topic">A hard text</span>
+      <h2>What is plain in Paul's teaching about head coverings, even where Christians differ?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="3" data-hl="the head of Christ is God"></blockquote>
+      <blockquote class="quote step" data-q="16"></blockquote>
+      <blockquote class="quote step"><p>“Let all things be done decently and in order.”</p><cite>1 Corinthians 14:40</cite></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>Christians read the covering differently: some as a command for today, many as a custom of Corinth. What is plain is honour, order in worship, and no fighting about it.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 3 of 6</p>
+      <span class="topic">Together</span>
+      <h2>How do a man and a woman need each other?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="11"></blockquote>
+      <blockquote class="quote step" data-q="12"></blockquote>
+      <blockquote class="quote step"><p>“There is neither Jew nor Greek, there is neither bond nor free, there is neither male nor female: for ye are all one in Christ Jesus.”</p><cite>Galatians 3:28</cite></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>Neither is without the other, in the Lord. The first woman came from the man, and every man since has been born of a woman, and both are from God. In Christ, no one is a spare part.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 4 of 6</p>
+      <span class="topic">The meal</span>
+      <h2>What went wrong at the Corinthian church supper?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="20"></blockquote>
+      <blockquote class="quote step" data-q="21"></blockquote>
+      <blockquote class="quote step" data-q="22"></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>The rich ate and drank first, and the poor who came late went hungry. They shamed the people who had nothing, and Paul says that is not the Lord's supper. The cure is to wait for each other and share.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 5 of 6</p>
+      <span class="topic">Remembering</span>
+      <h2>What are we doing when we eat the bread and drink the cup?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="24"></blockquote>
+      <blockquote class="quote step" data-q="26"></blockquote>
+      <blockquote class="quote step"><p>“But this man, after he had offered one sacrifice for sins for ever, sat down on the right hand of God;”</p><cite>Hebrews 10:12</cite></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>We remember Christ's death, and announce it, until He comes back. It is a memorial, not a new sacrifice: the work is finished, and nothing we do at the table adds to it.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 6 of 6</p>
+      <span class="topic">Examining</span>
+      <h2>What does it mean to eat “unworthily,” and who may come to the table?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="28"></blockquote>
+      <blockquote class="quote step"><p>“If we confess our sins, he is faithful and just to forgive us our sins, and to cleanse us from all unrighteousness.”</p><cite>1 John 1:9</cite></blockquote>
+      <blockquote class="quote step"><p>“There is therefore now no condemnation to them which are in Christ Jesus, who walk not after the flesh, but after the Spirit.”</p><cite>Romans 8:1</cite></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>“Unworthily” describes how a man comes (carelessly, shaming others), not what kind of man he is. No one is worthy. The table is for forgiven sinners who examine themselves, confess, and come to remember Him.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide prayer">
+  <div class="inner">
+    <div class="emblem rise"></div>
+    <h2 class="rise" style="--d:1">Prayer requests</h2>
+    <p class="ask-line rise" style="--d:2">What can we pray about for you today? A table you've been kept from, a brother you need to make peace with, something you're carrying?</p>
+    <blockquote class="quote rise" style="--d:4"><p>“Search me, O God, and know my heart: try me, and know my thoughts: And see if there be any wicked way in me, and lead me in the way everlasting.”</p><cite>Psalm 139:23–24</cite></blockquote>
+  </div>
+</section>
+
+</main>
+
+<script>
+// King James Version, 1 Corinthians chapter 11
+const V = {
+  1: "Be ye followers of me, even as I also am of Christ.",
+  2: "Now I praise you, brethren, that ye remember me in all things, and keep the ordinances, as I delivered them to you.",
+  3: "But I would have you know, that the head of every man is Christ; and the head of the woman is the man; and the head of Christ is God.",
+  4: "Every man praying or prophesying, having his head covered, dishonoureth his head.",
+  5: "But every woman that prayeth or prophesieth with her head uncovered dishonoureth her head: for that is even all one as if she were shaven.",
+  6: "For if the woman be not covered, let her also be shorn: but if it be a shame for a woman to be shorn or shaven, let her be covered.",
+  7: "For a man indeed ought not to cover his head, forasmuch as he is the image and glory of God: but the woman is the glory of the man.",
+  8: "For the man is not of the woman; but the woman of the man.",
+  9: "Neither was the man created for the woman; but the woman for the man.",
+  10: "For this cause ought the woman to have power on her head because of the angels.",
+  11: "Nevertheless neither is the man without the woman, neither the woman without the man, in the Lord.",
+  12: "For as the woman is of the man, even so is the man also by the woman; but all things of God.",
+  13: "Judge in yourselves: is it comely that a woman pray unto God uncovered?",
+  14: "Doth not even nature itself teach you, that, if a man have long hair, it is a shame unto him?",
+  15: "But if a woman have long hair, it is a glory to her: for her hair is given her for a covering.",
+  16: "But if any man seem to be contentious, we have no such custom, neither the churches of God.",
+  17: "Now in this that I declare unto you I praise you not, that ye come together not for the better, but for the worse.",
+  18: "For first of all, when ye come together in the church, I hear that there be divisions among you; and I partly believe it.",
+  19: "For there must be also heresies among you, that they which are approved may be made manifest among you.",
+  20: "When ye come together therefore into one place, this is not to eat the Lord’s supper.",
+  21: "For in eating every one taketh before other his own supper: and one is hungry, and another is drunken.",
+  22: "What? have ye not houses to eat and to drink in? or despise ye the church of God, and shame them that have not? What shall I say to you? shall I praise you in this? I praise you not.",
+  23: "For I have received of the Lord that which also I delivered unto you, That the Lord Jesus the same night in which he was betrayed took bread:",
+  24: "And when he had given thanks, he brake it, and said, Take, eat: this is my body, which is broken for you: this do in remembrance of me.",
+  25: "After the same manner also he took the cup, when he had supped, saying, This cup is the new testament in my blood: this do ye, as oft as ye drink it, in remembrance of me.",
+  26: "For as often as ye eat this bread, and drink this cup, ye do shew the Lord’s death till he come.",
+  27: "Wherefore whosoever shall eat this bread, and drink this cup of the Lord, unworthily, shall be guilty of the body and blood of the Lord.",
+  28: "But let a man examine himself, and so let him eat of that bread, and drink of that cup.",
+  29: "For he that eateth and drinketh unworthily, eateth and drinketh damnation to himself, not discerning the Lord’s body.",
+  30: "For this cause many are weak and sickly among you, and many sleep.",
+  31: "For if we would judge ourselves, we should not be judged.",
+  32: "But when we are judged, we are chastened of the Lord, that we should not be condemned with the world.",
+  33: "Wherefore, my brethren, when ye come together to eat, tarry one for another.",
+  34: "And if any man hunger, let him eat at home; that ye come not together unto condemnation. And the rest will I set in order when I come."
+};
+const BOOK = "1 Corinthians 11";
+</script>
+<script src="../assets/deck.js"></script>
+</body>
+</html>
