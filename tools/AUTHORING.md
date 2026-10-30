@@ -154,3 +154,4 @@ You're encouraged to invent new ways to show an idea. A new graphic is another s
 3. Run the checker until it says OK:
    `node tools/check-study.mjs studies/proverbs-03.html "<your folder>/proverbs-03.json"`
 4. Look at it. Copy the study into your folder, change `../assets/` to `file:///C:/Projects/SmallGroup/assets/`, and screenshot it with headless Edge using **your own** `--user-data-dir` inside your folder. Check several explanation slides in at least two themes (`?theme=night`, `?theme=scribe`, and so on). Check one phone frame by putting a 390px-wide iframe inside a wider page, because headless Edge won't make a window narrower than about 490px.
+5. Too tall? On a wide screen, deck.js shrinks a slide that doesn't fit, down to 70%, so nothing is ever hidden under the controls (phones scroll instead). Still aim to fit at full size: the stone theme leaves the least room because of its rising water band. If a slide shrinks below about 85%, split it.

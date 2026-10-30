@@ -1,0 +1,620 @@
+<!doctype html>
+<html lang="en" data-theme="night">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Matthew 8</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="../assets/fonts.css">
+<link rel="stylesheet" href="../assets/deck.css">
+<link rel="stylesheet" href="../assets/themes.css">
+<style>
+/* mt08-touch: a leper alone inside a ring of "unclean"; Jesus walks in and touches him */
+.mt08-crowd { fill: var(--ink-soft); opacity: .45; }
+.mt08-leper { fill: var(--ink-soft); transition: fill 1.4s ease 1.7s; }
+.slide:has(.mt08-go.on) .mt08-leper { fill: var(--accent-hot); }
+.mt08-ring { fill: none; stroke: var(--danger); stroke-width: 3; stroke-dasharray: 8 8; }
+.mt08-apart { transform-box: fill-box; transform-origin: center; transition: opacity 1.2s ease 1.5s, transform 1.6s ease 1.5s; }
+.slide:has(.mt08-go.on) .mt08-apart { opacity: 0; transform: scale(1.25); }
+.mt08-jesus { fill: var(--accent); transition: transform 1.6s cubic-bezier(.3,.7,.3,1); }
+.slide:has(.mt08-go.on) .mt08-jesus { transform: translateX(120px); }
+.mt08-hand { fill: none; stroke: var(--accent); stroke-width: 6; stroke-linecap: round; stroke-dasharray: 1; stroke-dashoffset: 1; transition: stroke-dashoffset .6s ease 1.5s; }
+.slide:has(.mt08-go.on) .mt08-hand { stroke-dashoffset: 0; }
+
+/* mt08-storm: the boat covered by waves, and Jesus asleep in the stern */
+.mt08-night { fill: color-mix(in srgb, var(--ink) 10%, var(--bg)); }
+.mt08-wave { fill: color-mix(in srgb, var(--cool) 40%, var(--bg)); }
+.mt08-wave2 { fill: color-mix(in srgb, var(--cool) 65%, var(--bg)); }
+.slide.active .mt08-wave { animation: mt08-roll 2.6s linear infinite; }
+.slide.active .mt08-wave2 { animation: mt08-roll 1.8s linear infinite reverse; }
+@keyframes mt08-roll { to { transform: translateX(-150px); } }
+.mt08-boat { transform-box: fill-box; transform-origin: 50% 90%; }
+.slide.active .mt08-boat { animation: mt08-rock 1.9s ease-in-out infinite alternate; }
+@keyframes mt08-rock { from { transform: rotate(-10deg) translateY(-6px); } to { transform: rotate(9deg) translateY(6px); } }
+.mt08-spray { fill: var(--cool); opacity: 0; }
+.slide.active .mt08-spray { animation: mt08-splash 1.9s ease-out infinite; animation-delay: calc(var(--k) * .3s); }
+@keyframes mt08-splash { 0% { opacity: 0; transform: translateY(0); } 30% { opacity: .8; } 100% { opacity: 0; transform: translateY(-40px); } }
+.mt08-sleeper { fill: var(--accent-hot); }
+.mt08-z { font: italic 700 18px var(--serif); fill: var(--accent-hot); opacity: 0; }
+.slide.active .mt08-z { animation: mt08-zz 3s ease-in-out infinite; animation-delay: calc(var(--k) * 1s); }
+@keyframes mt08-zz { 0% { opacity: 0; transform: translate(0, 0); } 40% { opacity: .9; } 100% { opacity: 0; transform: translate(14px, -30px); } }
+</style>
+</head>
+<body>
+<main class="deck" id="deck">
+
+<!-- ======================= OPENING ======================= -->
+<section class="slide title">
+  <div class="inner">
+    <div class="emblem rise"></div>
+    <h1 class="rise" style="--d:1">Matthew 8</h1>
+    <p class="sub rise" style="--d:3">What manner of man is this?</p>
+    <p class="tag rise" style="--d:5">Jesus comes down the mountain and shows His authority: over leprosy, over sickness at a distance, over the wind and the sea, and over demons.</p>
+  </div>
+</section>
+
+<section class="slide watch">
+  <div class="inner">
+    <h2 class="rise">Things to watch for</h2>
+    <p class="lede rise" style="--d:1">Keep these questions in the back of your mind as we read. We'll come back to every one of them at the end.</p>
+    <ol class="seeds">
+      <li class="step"><span class="topic">Willing</span><span class="seed-q">Is Jesus willing to touch the unclean and make them clean?</span></li>
+      <li class="step"><span class="topic">Faith</span><span class="seed-q">What did the centurion understand about Jesus' word?</span></li>
+      <li class="step"><span class="topic">Prophecy</span><span class="seed-q">What did Jesus carry for us?</span></li>
+      <li class="step"><span class="topic">Following</span><span class="seed-q">What does it cost to follow Jesus?</span></li>
+      <li class="step"><span class="topic">Storms</span><span class="seed-q">What do we do when the storm hits and Jesus seems asleep?</span></li>
+      <li class="step"><span class="topic">Freedom</span><span class="seed-q">Is anyone too far gone for Jesus to set free?</span></li>
+    </ol>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <div class="split">
+      <div class="stage">
+        <svg class="map" viewBox="0 0 420 470" role="img" aria-label="Map of the Sea of Galilee. The mountain of the sermon is above Capernaum on the north shore. A route comes down to Capernaum, then on a step crosses the lake to the country of the Gergesenes on the east shore, where the hills drop steeply to the water.">
+          <path class="map-river" d="M238 0 C228 20 248 34 236 62"/>
+          <path class="map-river" d="M206 420 C214 436 198 450 210 470"/>
+          <path class="map-lake" d="M195 58 C250 52 292 82 306 132 C320 188 314 262 294 322 C274 382 240 420 205 424 C168 420 142 382 122 332 C102 278 96 202 110 142 C124 92 150 62 195 58 Z"/>
+          <text x="210" y="290" text-anchor="middle" font-size="18" class="serif" style="fill:var(--cool);font-style:italic">Sea of Galilee</text>
+          <text x="210" y="312" text-anchor="middle" font-size="14" style="fill:var(--cool)">about 13 miles long</text>
+          <path class="map-soft" d="M318 178 l10 -12 l10 12 M330 214 l10 -12 l10 12 M316 248 l10 -12 l10 12" fill="none" stroke-width="2" style="stroke:var(--ink-soft)"/>
+          <text class="map-region" x="300" y="380" style="font-size:12px">DECAPOLIS</text>
+          <g class="map-town">
+            <circle cx="256" cy="58" r="7"/><text x="268" y="52">Bethsaida</text>
+            <circle cx="112" cy="178" r="7"/><text x="100" y="184" text-anchor="end">Magdala</text>
+            <circle cx="104" cy="250" r="7"/><text x="92" y="256" text-anchor="end">Tiberias</text>
+          </g>
+          <g class="map-town here">
+            <path d="M84 46 L96 26 L108 46 Z" style="fill:var(--accent)"/>
+            <text x="114" y="34">the mountain</text>
+            <circle cx="146" cy="80" r="8"/><text x="134" y="98" text-anchor="end">Capernaum</text>
+          </g>
+          <path class="map-route" pathLength="1" style="--draw:1.4s" d="M98 48 C 112 62, 128 72, 142 78"/>
+          <g>
+            <path class="map-route r1" pathLength="1" d="M154 88 C 196 130, 252 158, 304 212"/>
+            <text x="200" y="186" text-anchor="middle" font-size="15" font-weight="700" style="fill:var(--accent-hot)">the storm</text>
+          </g>
+          <g class="rise" style="--d:4">
+            <g class="map-town here"><circle class="map-ping" cx="312" cy="214" r="10"/><circle cx="312" cy="214" r="8"/></g>
+            <text x="318" y="282" font-size="14" font-weight="700" style="fill:var(--accent-hot)">country of the</text>
+            <text x="318" y="300" font-size="14" font-weight="700" style="fill:var(--accent-hot)">Gergesenes</text>
+          </g>
+        </svg>
+      </div>
+      <div>
+        <h2 class="rise" style="--d:1">Down the mountain, across the lake</h2>
+        <p class="note rise" style="--d:2">The sermon is over. Jesus comes down the hill with the crowds behind Him, and walks into Capernaum, His home base on the north shore (4:13).</p>
+        <p class="note step map-go1">That evening He tells the disciples to cross to <em>“the other side.”</em> A storm hits them on the way over.</p>
+        <p class="note step">They land on the east shore, Gentile country, where the hills drop steeply to the water. Mark and Luke call it the country of the Gadarenes, after the main town of the area. Matthew names it after the Gergesenes who lived there.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise">First His words, then His works</h2>
+    <p class="note rise" style="--d:1">In chapters 5 to 7, Matthew showed us Jesus' authority in what He <em>said</em>. In chapters 8 and 9, he shows it in what Jesus <em>did</em>: ten miracles, one after another. Five of them are today.</p>
+    <ul class="signs">
+      <li class="now rise" style="--d:2"><b>A leper cleansed</b>8:2</li>
+      <li class="now rise" style="--d:2"><b>The centurion's servant</b>8:5</li>
+      <li class="now rise" style="--d:2"><b>Peter's wife's mother</b>8:14</li>
+      <li class="now rise" style="--d:2"><b>The storm stilled</b>8:26</li>
+      <li class="now rise" style="--d:2"><b>Two men set free</b>8:28</li>
+      <li class="rise" style="--d:4"><b>A man sick of the palsy</b>9:2</li>
+      <li class="rise" style="--d:4"><b>The ruler's daughter</b>9:18</li>
+      <li class="rise" style="--d:4"><b>A woman made whole</b>9:20</li>
+      <li class="rise" style="--d:4"><b>Two blind men</b>9:27</li>
+      <li class="rise" style="--d:4"><b>A dumb man speaks</b>9:32</li>
+    </ul>
+    <p class="note step">Watch who He helps: a leper nobody would touch, a Roman soldier, a sick woman in bed, scared fishermen, and two wild men living in a graveyard. Nobody in this chapter is too unclean, too foreign, or too far gone.</p>
+  </div>
+</section>
+
+<!-- ======================= PART ONE: IF THOU WILT ======================= -->
+<section class="slide part">
+  <div class="inner">
+    <p class="part-n rise">Part one</p>
+    <h2 class="rise" style="--d:1">If thou wilt</h2>
+    <p class="range rise" style="--d:2">Verses 1–13</p>
+    <div class="rule"></div>
+    <p class="hook rise" style="--d:4">An outcast on his knees, and a Roman officer who understood authority.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="1-4" data-hl="Lord, if thou wilt, thou canst make me clean|Jesus put forth his hand, and touched him|I will; be thou clean"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="3" data-hl="put forth his hand, and touched him"></blockquote>
+    <div class="split">
+      <div class="stage">
+        <svg viewBox="0 0 600 280" role="img" aria-label="A leper stands alone inside a dashed ring marked unclean, far from the crowd. On a step, Jesus walks into the ring and puts out His hand to touch him. The ring disappears and the man is made bright.">
+          <g class="mt08-crowd"><circle cx="30" cy="150" r="9"/><circle cx="56" cy="136" r="9"/><circle cx="52" cy="168" r="9"/><circle cx="80" cy="152" r="9"/><circle cx="34" cy="190" r="9"/><circle cx="74" cy="196" r="9"/><circle cx="28" cy="112" r="9"/></g>
+          <text x="56" y="236" text-anchor="middle" font-size="15" style="fill:var(--ink-soft)">the crowd</text>
+          <g class="mt08-apart">
+            <circle class="mt08-ring" cx="430" cy="150" r="96"/>
+            <text x="430" y="40" text-anchor="middle" font-size="18" font-weight="700" style="fill:var(--danger)">“Unclean, unclean”</text>
+          </g>
+          <g class="mt08-leper">
+            <circle cx="430" cy="114" r="17"/>
+            <path d="M412 136 Q430 128 448 136 L452 196 L408 196 Z"/>
+          </g>
+          <g class="mt08-jesus">
+            <circle cx="250" cy="114" r="17"/>
+            <path d="M232 136 Q250 128 268 136 L272 196 L228 196 Z"/>
+            <path class="mt08-hand" pathLength="1" d="M266 146 L300 138"/>
+          </g>
+          <text class="step mt08-go" x="320" y="250" text-anchor="middle" font-size="18" font-weight="700" style="fill:var(--accent-hot)">“I will; be thou clean”</text>
+        </svg>
+      </div>
+      <div>
+        <h2 class="rise" style="--d:1">The leper touched</h2>
+        <p class="note rise" style="--d:2">The law said a leper must cry <em>“Unclean, unclean”</em> and <em>“dwell alone”</em> (Leviticus 13:45–46). He may not have felt a human hand in years.</p>
+        <p class="note step">He knew Jesus <em>could</em>. Would He? <em>“If thou wilt.”</em> Jesus touched him, <em>“moved with compassion”</em> (Mark 1:41).</p>
+        <p class="note step">Some of us feel untouchable. Jesus doesn't keep His distance. Touching a leper should have made Him unclean; instead, the leper was made clean.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="slide verse" data-v="5-9" data-hl="Lord, I am not worthy that thou shouldest come under my roof|speak the word only, and my servant shall be healed|I am a man under authority"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="8" data-hl="speak the word only"></blockquote>
+    <h2 class="rise" style="--d:1">A man under authority</h2>
+    <p class="note rise" style="--d:2">A <em>centurion</em> was an officer over about a hundred soldiers. He was a Gentile, an outsider, and a man of the occupying power. Luke adds that the Jewish elders spoke up for him: <em>“For he loveth our nation, and he hath built us a synagogue”</em> (Luke 7:5). <em>“Palsy”</em> means paralysis.</p>
+    <div class="chains">
+      <div class="chain step"><span class="who-chip">his commander</span><span class="said">gives an order</span><span class="who-chip">the centurion</span><span class="said">“Go”</span><span class="who-chip">a soldier</span><span class="said">“he goeth”</span></div>
+      <div class="chain step"><span class="who-chip jesus">Jesus</span><span class="said">“speak the word only”</span><span class="who-chip">the sickness</span><span class="said">“shall be healed”</span></div>
+    </div>
+    <p class="note step">He understood how authority works. He didn't need to be there in person to get something done. He just said the word. He saw that Jesus had that kind of authority over sickness. Distance didn't matter. Jesus' word was enough.</p>
+    <p class="note step">And he came humble: <em>“I am not worthy.”</em> A powerful man, asking for a servant.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="10-13" data-hl="I have not found so great faith, no, not in Israel|many shall come from the east and west|as thou hast believed, so be it done unto thee"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="11"></blockquote>
+    <h2 class="rise" style="--d:1">A seat at the table</h2>
+    <div class="columns">
+      <div class="col grace rise" style="--d:2">
+        <p class="who">“From the east and west”</p>
+        <h3>Outsiders welcomed</h3>
+        <p>Gentiles from every direction, sitting at the feast with Abraham, Isaac, and Jacob. They get in the same way the centurion did: by faith in Jesus.</p>
+      </div>
+      <div class="col law step">
+        <p class="who">“The children of the kingdom”</p>
+        <h3>Insiders shut out</h3>
+        <p>People who assumed they were in because of their family and religion, but who never trusted the King when He came.</p>
+      </div>
+    </div>
+    <p class="note step"><em>“Outer darkness… weeping and gnashing of teeth”</em> is Jesus' own description of hell: shut out from God's light, with grief and bitter regret. He says it plainly, because He doesn't want anyone to go there.</p>
+    <div class="ifthen step">
+      <div class="if"><small>As</small>thou hast believed,</div>
+      <span class="arrow" aria-hidden="true">→</span>
+      <div class="then"><small>so</small>be it done unto thee</div>
+    </div>
+  </div>
+</section>
+
+<!-- ======================= PART TWO: HE BARE OUR SICKNESSES ======================= -->
+<section class="slide part">
+  <div class="inner">
+    <p class="part-n rise">Part two</p>
+    <h2 class="rise" style="--d:1">He bare our sicknesses</h2>
+    <p class="range rise" style="--d:2">Verses 14–17</p>
+    <div class="rule"></div>
+    <p class="hook rise" style="--d:4">A fever in Peter's house, a town at the door, and a prophecy kept.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="14-15" data-hl="he touched her hand, and the fever left her|she arose, and ministered unto them"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="15"></blockquote>
+    <h2 class="rise" style="--d:1">Raised up to serve</h2>
+    <div class="chains">
+      <div class="chain step"><span class="who-chip jesus">Jesus</span><span class="said">“touched her hand”</span><span class="who-chip">the fever</span><span class="said">“left her”</span><span class="who-chip">Peter's wife's mother</span><span class="said">“arose, and ministered”</span><span class="who-chip">them</span></div>
+    </div>
+    <p class="note step">Peter was a married man, and his wife's mother lived with them in Capernaum. Peter's house became Jesus' base in town.</p>
+    <p class="note step">Mark tells us it was a sabbath (Mark 1:21, 29–32). At sundown the sabbath ended, and the whole town brought its sick to this door (v. 16).</p>
+    <p class="note step">A fever usually leaves you weak for days. This one left her well enough to get up and serve dinner right away. That's a complete healing.</p>
+    <p class="note step">And it's the pattern for every one of us. Jesus lifts a man up, and the first thing he does with his new strength is serve. Recovery isn't only getting well. It's getting well enough to help somebody else.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="16-17" data-hl="he cast out the spirits with his word|Himself took our infirmities, and bare our sicknesses"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="16" data-hl="When the even was come"></blockquote>
+    <h2 class="rise" style="--d:1">What Isaiah saw</h2>
+    <div class="pair">
+      <div class="scroll rise" style="--d:3"><p class="ref">Isaiah 53:4</p><p class="kjv"><mark>Surely he hath borne our griefs, and carried our sorrows</mark>: yet we did esteem him stricken, smitten of God, and afflicted.</p></div>
+      <div class="scroll step"><p class="ref">Matthew 8:17</p><p class="kjv">That it might be fulfilled which was spoken by Esaias the prophet, saying, <mark>Himself took our infirmities, and bare our sicknesses</mark>.</p></div>
+    </div>
+    <p class="note step">Isaiah's Hebrew words mean <em>sicknesses</em> and <em>pains</em>, and Matthew saw them come true as Jesus healed. But Isaiah 53 goes on to the cross, and something heavier:</p>
+    <blockquote class="quote step"><p>“Who his own self bare our sins in his own body on the tree, that we, being dead to sins, should live unto righteousness: by whose stripes ye were healed.”</p><cite>1 Peter 2:24</cite></blockquote>
+    <p class="note step">God doesn't promise every believer healing from every sickness now. He promises forgiveness now and a new body at the resurrection. Every healing is a preview.</p>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise">“That it might be fulfilled”</h2>
+    <p class="note rise" style="--d:1">Matthew wrote first for Jewish readers, and he keeps showing them that Jesus is the One the prophets promised. Here's his list so far:</p>
+    <ol class="checks">
+      <li class="step"><span class="tick">✓</span><q>Behold, a virgin shall be with child</q><small>Isaiah 7:14</small><b>1:23</b></li>
+      <li class="step"><span class="tick">✓</span><q>And thou Bethlehem, in the land of Juda</q><small>Micah 5:2</small><b>2:6</b></li>
+      <li class="step"><span class="tick">✓</span><q>Out of Egypt have I called my son</q><small>Hosea 11:1</small><b>2:15</b></li>
+      <li class="step"><span class="tick">✓</span><q>Rachel weeping for her children</q><small>Jeremiah 31:15</small><b>2:18</b></li>
+      <li class="step"><span class="tick">✓</span><q>Prepare ye the way of the Lord</q><small>Isaiah 40:3</small><b>3:3</b></li>
+      <li class="step"><span class="tick">✓</span><q>The people which sat in darkness saw great light</q><small>Isaiah 9:1–2</small><b>4:16</b></li>
+      <li class="step"><span class="tick">✓</span><q>Himself took our infirmities, and bare our sicknesses</q><small>Isaiah 53:4</small><b>8:17</b></li>
+    </ol>
+  </div>
+</section>
+
+<!-- ======================= PART THREE: WHAT MANNER OF MAN ======================= -->
+<section class="slide part">
+  <div class="inner">
+    <p class="part-n rise">Part three</p>
+    <h2 class="rise" style="--d:1">What manner of man is this?</h2>
+    <p class="range rise" style="--d:2">Verses 18–27</p>
+    <div class="rule"></div>
+    <p class="hook rise" style="--d:4">Two men who almost followed, and twelve men in a sinking boat.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="18-20" data-hl="Master, I will follow thee whithersoever thou goest|the Son of man hath not where to lay his head"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="20" data-hl="the Son of man hath not where to lay his head"></blockquote>
+    <h2 class="rise" style="--d:1">Count the cost</h2>
+    <div class="talk">
+      <p class="rise" style="--d:2"><small>A scribe</small>Master, I will follow thee whithersoever thou goest.</p>
+      <p class="reply step"><small>Jesus</small>The foxes have holes, and the birds of the air have nests; but the Son of man hath not where to lay his head.</p>
+    </div>
+    <p class="note step">A scribe was a respected teacher of the law, making a big promise on the spot. Jesus told him the truth: following Me doesn't come with a soft bed.</p>
+    <p class="note step">This is the first time in Matthew that Jesus calls Himself <em>“the Son of man,”</em> His favorite name for Himself, from Daniel's vision of the King of an everlasting kingdom: <em>“one like the Son of man came with the clouds of heaven”</em> (Daniel 7:13). That King had nowhere to sleep.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="21-22" data-hl="suffer me first to go and bury my father|Follow me; and let the dead bury their dead"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="22"></blockquote>
+    <h2 class="rise" style="--d:1">“Suffer me first”</h2>
+    <div class="talk">
+      <p class="rise" style="--d:2"><small>A disciple</small>Lord, suffer me first to go and bury my father.<br><span class="flag">“first”</span></p>
+      <p class="reply step"><small>Jesus</small>Follow me; and let the dead bury their dead.</p>
+    </div>
+    <p class="note step"><em>“Suffer me”</em> means <em>let me</em>. Many think his father hadn't died yet: let me wait until he's gone, maybe years from now, then I'll follow.</p>
+    <p class="note step"><em>“Let the dead bury their dead”</em>: let the spiritually dead take care of that business. You come and find life.</p>
+    <p class="note step">We all know “first.” First let me get my money right. First, one more weekend. Jesus doesn't take second place. <em>“Follow me,”</em> today.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="23-25" data-hl="there arose a great tempest in the sea|but he was asleep|Lord, save us: we perish"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="24" data-hl="but he was asleep"></blockquote>
+    <div class="split">
+      <div class="stage">
+        <svg viewBox="0 0 600 320" role="img" aria-label="A small fishing boat pitches in a storm at night. Waves break over it. In the back of the boat, Jesus lies asleep.">
+          <defs><clipPath id="mt08-frame"><rect x="0" y="0" width="600" height="320" rx="6"/></clipPath></defs>
+          <g clip-path="url(#mt08-frame)">
+            <rect class="mt08-night" x="0" y="0" width="600" height="320"/>
+            <path class="mt08-wave" d="M0 214 q37.5 -30 75 0 t75 0 t75 0 t75 0 t75 0 t75 0 t75 0 t75 0 t75 0 t75 0 t75 0 t75 0 V320 H0 Z"/>
+            <g class="mt08-boat">
+              <path d="M170 205 L360 205 L332 244 L196 244 Z" style="fill:var(--leather);stroke:var(--leather-light)" stroke-width="3"/>
+              <line x1="262" y1="205" x2="262" y2="104" stroke-width="4" style="stroke:var(--leather-light)"/>
+              <g style="fill:var(--ink)"><circle cx="210" cy="194" r="8"/><circle cx="236" cy="190" r="8"/><circle cx="290" cy="192" r="8"/></g>
+              <rect x="300" y="194" width="50" height="9" rx="4" style="fill:var(--surface-2)"/>
+              <circle class="mt08-sleeper" cx="306" cy="190" r="7"/>
+              <rect class="mt08-sleeper" x="312" y="186" width="34" height="9" rx="4"/>
+              <text class="mt08-z" style="--k:0" x="318" y="172">z</text>
+              <text class="mt08-z" style="--k:1" x="328" y="166">z</text>
+            </g>
+            <circle class="mt08-spray" style="--k:0" cx="180" cy="210" r="6"/><circle class="mt08-spray" style="--k:1" cx="360" cy="208" r="5"/><circle class="mt08-spray" style="--k:2" cx="200" cy="214" r="4"/><circle class="mt08-spray" style="--k:3" cx="344" cy="214" r="6"/>
+            <path class="mt08-wave2" d="M0 240 q37.5 -24 75 0 t75 0 t75 0 t75 0 t75 0 t75 0 t75 0 t75 0 t75 0 t75 0 t75 0 t75 0 V320 H0 Z"/>
+          </g>
+        </svg>
+      </div>
+      <div>
+        <h2 class="rise" style="--d:1">Asleep in the storm</h2>
+        <p class="note rise" style="--d:2">The Greek word for <em>“tempest”</em> also means an earthquake, a violent shaking. Winds drop into the lake's bowl of hills with little warning. Fishermen who knew that lake were scared.</p>
+        <p class="note step">Jesus was truly a man, tired enough to sleep through it. They woke Him: <em>“Master, carest thou not that we perish?”</em> (Mark 4:38).</p>
+      </div>
+    </div>
+    <p class="note step">Some nights it feels like He's asleep while your boat fills. They were in that storm because they obeyed Him, and He was in the boat the whole time.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="26-27" data-hl="Why are ye fearful, O ye of little faith?|there was a great calm|What manner of man is this, that even the winds and the sea obey him!"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="26" data-hl="there was a great calm"></blockquote>
+    <h2 class="rise" style="--d:1">A great calm</h2>
+    <div class="stage rise" style="--d:2;max-width:34rem;margin:0 auto">
+      <svg class="still" viewBox="0 0 600 170" role="img" aria-label="Wild, choppy water settles into a calm, still line.">
+        <defs><clipPath id="mt08-clip"><rect x="0" y="0" width="600" height="170"/></clipPath></defs>
+        <g clip-path="url(#mt08-clip)">
+          <g class="still-roll"><path class="still-chop" d="M0 95 Q25 35 50 95 T100 95 T150 95 T200 95 T250 95 T300 95 T350 95 T400 95 T450 95 T500 95 T550 95 T600 95 T650 95 T700 95"/></g>
+          <g class="still-roll b"><path class="still-chop b" d="M0 100 Q25 145 50 100 T100 100 T150 100 T200 100 T250 100 T300 100 T350 100 T400 100 T450 100 T500 100 T550 100 T600 100 T650 100 T700 100"/></g>
+          <path class="still-calm" d="M0 98 Q150 94 300 98 T600 98"/>
+        </g>
+        <text class="before" x="300" y="28" text-anchor="middle" style="fill:var(--cool)">“a great tempest” (v. 24)</text>
+        <text class="after" x="300" y="28" text-anchor="middle" style="fill:var(--accent-hot)">“a great calm” (v. 26)</text>
+      </svg>
+    </div>
+    <p class="note step still-go">He spoke to the wind and the water the way you'd speak to a dog that's barking: <em>“rebuked.”</em> And they obeyed at once. Not a slow settling down. A great calm.</p>
+    <blockquote class="quote step"><p>“He maketh the storm a calm, so that the waves thereof are still.”</p><cite>Psalm 107:29</cite></blockquote>
+    <p class="note step">Every Jew knew only God commands the sea. So they asked the right question: <em>“What manner of man is this?”</em> He is a man who sleeps when he's tired, and God who tells the storm to stop. Notice He calmed <em>them</em> first, then the sea.</p>
+  </div>
+</section>
+
+<!-- ======================= PART FOUR: AMONG THE TOMBS ======================= -->
+<section class="slide part">
+  <div class="inner">
+    <p class="part-n rise">Part four</p>
+    <h2 class="rise" style="--d:1">Among the tombs</h2>
+    <p class="range rise" style="--d:2">Verses 28–34</p>
+    <div class="rule"></div>
+    <p class="hook rise" style="--d:4">Two men no one could pass, and one word: “Go.”</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="28-29" data-hl="coming out of the tombs, exceeding fierce|What have we to do with thee, Jesus, thou Son of God?|art thou come hither to torment us before the time?"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="28" data-hl="coming out of the tombs, exceeding fierce"></blockquote>
+    <h2 class="rise" style="--d:1">What the devils knew</h2>
+    <p class="note rise" style="--d:2">The tombs were caves cut into the hillside. To a Jew, a graveyard was unclean. These men lived with the dead, so violent that nobody would take that road. Matthew mentions two men. Mark and Luke tell the story of the one who did the talking (Mark 5, Luke 8).</p>
+    <ul class="signs">
+      <li class="step"><b>Who He is</b>“thou Son of God”</li>
+      <li class="step"><b>That He's in charge</b>they beg Him for permission (v. 31)</li>
+      <li class="step"><b>That judgment is coming</b>“before the time”</li>
+    </ul>
+    <p class="note step">The demons had better theology than the crowds, and it didn't save them. <em>“the devils also believe, and tremble”</em> (James 2:19). Knowing facts about Jesus isn't the same as trusting Him.</p>
+    <p class="note step">Demons are real, and the Bible doesn't treat them as a joke. But watch who's afraid of whom on this beach. They're the ones trembling.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="30-32" data-hl="an herd of many swine feeding|And he said unto them, Go|ran violently down a steep place into the sea"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="32" data-hl="And he said unto them, Go"></blockquote>
+    <p class="saying rise" style="--d:1">One word: <em>“Go.”</em></p>
+    <div class="dots rows step" data-dots="40" style="--cols:20;--dot:var(--ink-soft);--wait:0ms" aria-label="Forty dots, each standing for fifty pigs"></div>
+    <p class="dots-cap step">each dot is 50 swine, “about two thousand” in all (Mark 5:13)</p>
+    <p class="note step">No Jewish farmer kept pigs. They were unclean under the law. A herd this size tells us we're in Gentile country. Jesus didn't need a ceremony or a long prayer to drive the devils out. He said one word, and they had to obey.</p>
+    <blockquote class="quote step"><p>“Ye are of God, little children, and have overcome them: because greater is he that is in you, than he that is in the world.”</p><cite>1 John 4:4</cite></blockquote>
+    <p class="note step">Every believer has the Holy Spirit living in him from the moment he's saved. Whatever has had its grip on you, it answers to Him.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="33-34" data-hl="the whole city came out to meet Jesus|they besought him that he would depart out of their coasts"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="34" data-hl="they besought him that he would depart out of their coasts"></blockquote>
+    <h2 class="rise" style="--d:1">Clothed, and in his right mind</h2>
+    <div class="daybreak">
+      <div class="step"><i>Matthew 8:28</i><b>Among the tombs</b><p class="kjv">“exceeding fierce, so that no man might pass by that way”</p><p>Chained, cut off, and living with the dead.</p></div>
+      <div class="step"><i>Matthew 8:32</i><b>One word</b><p class="kjv">“And he said unto them, Go.”</p><p>The thing that owned him had to leave.</p></div>
+      <div class="step"><i>Mark 5:15</i><b>A new man</b><p class="kjv">“sitting, and clothed, and in his right mind”</p><p>Calm, dressed, and sitting at Jesus' feet.</p></div>
+    </div>
+    <p class="note step">Some of us know what the tombs are like: living half-dead, scaring the people who love us. This is what Jesus does with a man like that. Nobody is too far gone for Him.</p>
+    <p class="note step">The town asked Jesus to leave their <em>“coasts,”</em> their borders. They cared more about pigs than men. Jesus sent the freed man home to <em>“tell them how great things the Lord hath done for thee”</em> (Mark 5:19).</p>
+  </div>
+</section>
+
+<!-- ======================= CLOSING ======================= -->
+<section class="slide remember">
+  <div class="inner">
+    <h2 class="rise">Points to remember</h2>
+    <ol class="seeds">
+      <li class="step"><span class="topic">Willing</span><span class="seed-q">“I will; be thou clean” <cite>8:3</cite></span><span class="take">Jesus is willing. He reaches out and touches the man everyone else avoids.</span></li>
+      <li class="step"><span class="topic">Faith</span><span class="seed-q">“Speak the word only” <cite>8:8</cite></span><span class="take">His word has all authority. Distance doesn't matter. Humble faith takes Him at His word.</span></li>
+      <li class="step"><span class="topic">Prophecy</span><span class="seed-q">“Himself took our infirmities, and bare our sicknesses” <cite>8:17</cite></span><span class="take">He carried our sicknesses, and on the cross He carried our sins.</span></li>
+      <li class="step"><span class="topic">Following</span><span class="seed-q">“Follow me” <cite>8:22</cite></span><span class="take">Following Him means no soft promises and no “first let me.” He comes first.</span></li>
+      <li class="step"><span class="topic">Storms</span><span class="seed-q">“There was a great calm” <cite>8:26</cite></span><span class="take">He's in the boat. Call on Him. Wind and sea obey Him.</span></li>
+      <li class="step"><span class="topic">Freedom</span><span class="seed-q">“And he said unto them, Go” <cite>8:32</cite></span><span class="take">Nobody is too far gone. One word from Him sets a man free.</span></li>
+    </ol>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 1 of 6</p>
+      <span class="topic">Willing</span>
+      <h2>Is Jesus willing to touch the unclean and make them clean?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="2"></blockquote>
+      <blockquote class="quote step" data-q="3"></blockquote>
+      <blockquote class="quote step"><p>“And Jesus, moved with compassion, put forth his hand, and touched him, and saith unto him, I will; be thou clean.”</p><cite>Mark 1:41</cite></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>Yes. The leper wasn't sure Jesus would. Jesus answered, “I will,” and touched the man nobody else would touch. His compassion reaches into our shame, and His touch makes the unclean clean.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 2 of 6</p>
+      <span class="topic">Faith</span>
+      <h2>What did the centurion understand about Jesus' word?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="8"></blockquote>
+      <blockquote class="quote step" data-q="9"></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>That Jesus' word carries full authority. Like an officer giving orders, Jesus only had to speak and sickness had to obey, even miles away. The centurion came humbly, trusted Jesus' word, and his servant was healed that same hour.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 3 of 6</p>
+      <span class="topic">Prophecy</span>
+      <h2>What did Jesus carry for us?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="17"></blockquote>
+      <blockquote class="quote step"><p>“Surely he hath borne our griefs, and carried our sorrows: yet we did esteem him stricken, smitten of God, and afflicted.”</p><cite>Isaiah 53:4</cite></blockquote>
+      <blockquote class="quote step"><p>“Who his own self bare our sins in his own body on the tree, that we, being dead to sins, should live unto righteousness: by whose stripes ye were healed.”</p><cite>1 Peter 2:24</cite></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>Our sicknesses and pains, as Isaiah promised; His healings showed it. And on the cross He carried something heavier: our sins, in His own body. Forgiveness is ours now, by faith, and full healing is coming at the resurrection.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 4 of 6</p>
+      <span class="topic">Following</span>
+      <h2>What does it cost to follow Jesus?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="20"></blockquote>
+      <blockquote class="quote step" data-q="21"></blockquote>
+      <blockquote class="quote step" data-q="22"></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>It may cost comfort and it costs first place. Jesus promised no soft bed, and He doesn't take second place behind our plans, even good ones. Salvation is free, but following Him means He comes first, starting today.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 5 of 6</p>
+      <span class="topic">Storms</span>
+      <h2>What do we do when the storm hits and Jesus seems asleep?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="24"></blockquote>
+      <blockquote class="quote step" data-q="25"></blockquote>
+      <blockquote class="quote step" data-q="26"></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>Call on Him. He's in the boat with us, even when He seems quiet. The disciples cried, “Lord, save us,” and He got up and brought a great calm. Even “little faith” called out to the right Person.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 6 of 6</p>
+      <span class="topic">Freedom</span>
+      <h2>Is anyone too far gone for Jesus to set free?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="28"></blockquote>
+      <blockquote class="quote step"><p>“And they come to Jesus, and see him that was possessed with the devil, and had the legion, sitting, and clothed, and in his right mind: and they were afraid.”</p><cite>Mark 5:15</cite></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>No. These men lived in a graveyard, so violent nobody would pass. One word from Jesus, and the demons had to go. The same man ended up sitting with Jesus, clothed and in his right mind. No one is beyond His reach.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide prayer">
+  <div class="inner">
+    <div class="emblem rise"></div>
+    <h2 class="rise" style="--d:1">Prayer requests</h2>
+    <p class="ask-line rise" style="--d:2">What can we pray about for you today?</p>
+    <blockquote class="quote rise" style="--d:4"><p>“Then they cry unto the LORD in their trouble, and he bringeth them out of their distresses.”</p><cite>Psalm 107:28</cite></blockquote>
+  </div>
+</section>
+
+</main>
+
+<script>
+// King James Version, Matthew chapter 8
+const V = {
+  1: "When he was come down from the mountain, great multitudes followed him.",
+  2: "And, behold, there came a leper and worshipped him, saying, Lord, if thou wilt, thou canst make me clean.",
+  3: "And Jesus put forth his hand, and touched him, saying, I will; be thou clean. And immediately his leprosy was cleansed.",
+  4: "And Jesus saith unto him, See thou tell no man; but go thy way, shew thyself to the priest, and offer the gift that Moses commanded, for a testimony unto them.",
+  5: "And when Jesus was entered into Capernaum, there came unto him a centurion, beseeching him,",
+  6: "And saying, Lord, my servant lieth at home sick of the palsy, grievously tormented.",
+  7: "And Jesus saith unto him, I will come and heal him.",
+  8: "The centurion answered and said, Lord, I am not worthy that thou shouldest come under my roof: but speak the word only, and my servant shall be healed.",
+  9: "For I am a man under authority, having soldiers under me: and I say to this man, Go, and he goeth; and to another, Come, and he cometh; and to my servant, Do this, and he doeth it.",
+  10: "When Jesus heard it, he marvelled, and said to them that followed, Verily I say unto you, I have not found so great faith, no, not in Israel.",
+  11: "And I say unto you, That many shall come from the east and west, and shall sit down with Abraham, and Isaac, and Jacob, in the kingdom of heaven.",
+  12: "But the children of the kingdom shall be cast out into outer darkness: there shall be weeping and gnashing of teeth.",
+  13: "And Jesus said unto the centurion, Go thy way; and as thou hast believed, so be it done unto thee. And his servant was healed in the selfsame hour.",
+  14: "And when Jesus was come into Peter’s house, he saw his wife’s mother laid, and sick of a fever.",
+  15: "And he touched her hand, and the fever left her: and she arose, and ministered unto them.",
+  16: "When the even was come, they brought unto him many that were possessed with devils: and he cast out the spirits with his word, and healed all that were sick:",
+  17: "That it might be fulfilled which was spoken by Esaias the prophet, saying, Himself took our infirmities, and bare our sicknesses.",
+  18: "Now when Jesus saw great multitudes about him, he gave commandment to depart unto the other side.",
+  19: "And a certain scribe came, and said unto him, Master, I will follow thee whithersoever thou goest.",
+  20: "And Jesus saith unto him, The foxes have holes, and the birds of the air have nests; but the Son of man hath not where to lay his head.",
+  21: "And another of his disciples said unto him, Lord, suffer me first to go and bury my father.",
+  22: "But Jesus said unto him, Follow me; and let the dead bury their dead.",
+  23: "And when he was entered into a ship, his disciples followed him.",
+  24: "And, behold, there arose a great tempest in the sea, insomuch that the ship was covered with the waves: but he was asleep.",
+  25: "And his disciples came to him, and awoke him, saying, Lord, save us: we perish.",
+  26: "And he saith unto them, Why are ye fearful, O ye of little faith? Then he arose, and rebuked the winds and the sea; and there was a great calm.",
+  27: "But the men marvelled, saying, What manner of man is this, that even the winds and the sea obey him!",
+  28: "And when he was come to the other side into the country of the Gergesenes, there met him two possessed with devils, coming out of the tombs, exceeding fierce, so that no man might pass by that way.",
+  29: "And, behold, they cried out, saying, What have we to do with thee, Jesus, thou Son of God? art thou come hither to torment us before the time?",
+  30: "And there was a good way off from them an herd of many swine feeding.",
+  31: "So the devils besought him, saying, If thou cast us out, suffer us to go away into the herd of swine.",
+  32: "And he said unto them, Go. And when they were come out, they went into the herd of swine: and, behold, the whole herd of swine ran violently down a steep place into the sea, and perished in the waters.",
+  33: "And they that kept them fled, and went their ways into the city, and told every thing, and what was befallen to the possessed of the devils.",
+  34: "And, behold, the whole city came out to meet Jesus: and when they saw him, they besought him that he would depart out of their coasts."
+};
+const BOOK = "Matthew 8";
+</script>
+<script src="../assets/deck.js"></script>
+</body>
+</html>

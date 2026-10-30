@@ -1,0 +1,643 @@
+<!doctype html>
+<html lang="en" data-theme="stone">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Matthew 7</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="../assets/fonts.css">
+<link rel="stylesheet" href="../assets/deck.css">
+<link rel="stylesheet" href="../assets/themes.css">
+<style>
+/* mt07-beam: a speck in one man's eye, a plank growing out of the other's */
+.mt07-head { fill: var(--surface-2); stroke: var(--ink-soft); stroke-width: 2.5; }
+.mt07-eye { fill: var(--ink); }
+.mt07-mote { fill: var(--accent-hot); }
+.mt07-plank { transform-box: fill-box; transform-origin: 100% 50%; transform: scaleX(.04); transition: transform 1.8s cubic-bezier(.3,.7,.3,1) .2s; }
+.slide:has(.mt07-grow.on) .mt07-plank { transform: none; }
+.mt07-wood { fill: var(--leather); stroke: var(--leather-light); stroke-width: 2.5; }
+.mt07-grain { fill: none; stroke: var(--leather-light); stroke-width: 1.5; opacity: .7; }
+.mt07-tag { font-size: 18px; font-weight: 700; }
+
+/* mt07-door: ask, seek, knock, and the door swings open onto light */
+.mt07-doorway { display: flex; flex-wrap: wrap; align-items: center; gap: 1rem 2.2rem; margin: .4em 0 1em; }
+.mt07-words { list-style: none; padding: 0; margin: 0; display: grid; gap: .5rem; }
+.mt07-words li { font: 400 clamp(1.3rem, 1rem + 1.4vw, 2.2rem)/1.15 var(--serif); }
+.mt07-words li b { color: var(--accent-hot); font-weight: 600; }
+.mt07-words li small { display: block; font: .5em var(--sans); color: var(--ink-soft); }
+.mt07-frame { position: relative; width: clamp(6.5rem, 11vw, 9.5rem); aspect-ratio: 3 / 5; perspective: 700px; border: 6px solid var(--leather-light); border-bottom: 0; border-radius: 48% 48% 0 0 / 26% 26% 0 0;
+  background: radial-gradient(circle at 50% 62%, var(--glow) 0 25%, color-mix(in srgb, var(--warm) 55%, var(--glow)) 55%, var(--warm)); }
+.mt07-panel { position: absolute; inset: 0; border-radius: 46% 46% 0 0 / 25% 25% 0 0; background: var(--leather); border: 2px solid var(--leather-light); transform-origin: 0 50%; transition: transform 1.8s cubic-bezier(.3,.7,.3,1) .5s; }
+.mt07-panel::before { content: ""; position: absolute; inset: 22% 18% 10%; border: 2px solid color-mix(in srgb, var(--leather-light) 60%, transparent); border-radius: 4px; }
+.mt07-panel i { position: absolute; right: 12%; top: 56%; width: 10px; height: 10px; border-radius: 50%; background: var(--accent); }
+.slide.active .mt07-door:not(.on) .mt07-panel { animation: mt07-knock 2.6s 1s ease-in-out infinite; }
+@keyframes mt07-knock { 0%, 80%, 100% { transform: none; } 84% { transform: rotateY(-3deg); } 88% { transform: none; } 92% { transform: rotateY(-3deg); } }
+.mt07-door.on .mt07-panel { transform: rotateY(-74deg); }
+
+/* mt07-gates: many on the broad way, few on the narrow one */
+.mt07-gate { fill: var(--leather-light); }
+.mt07-broad { fill: color-mix(in srgb, var(--ink-soft) 22%, transparent); }
+.mt07-narrow { fill: none; stroke: color-mix(in srgb, var(--accent) 45%, transparent); stroke-width: 12; stroke-linecap: round; }
+.mt07-many { fill: var(--ink-soft); }
+.mt07-few { fill: var(--accent-hot); }
+.mt07-dark { fill: var(--on-glow); }
+.mt07-light { fill: var(--glow); }
+
+/* mt07-trees: a good tree and a corrupt one, known by their fruit */
+.mt07-trunk { fill: var(--leather); }
+.mt07-leaves { fill: color-mix(in srgb, var(--cool) 55%, var(--bg)); }
+.mt07-bare { fill: color-mix(in srgb, var(--line-strong) 40%, var(--bg)); }
+.mt07-fruit { fill: var(--accent); stroke: var(--accent-hot); stroke-width: 1.5; }
+.mt07-bad { fill: var(--ink-soft); stroke: var(--danger); stroke-width: 1.5; }
+.mt07-fruit, .mt07-bad { transform-box: fill-box; transform-origin: center; transform: scale(0); transition: transform .6s cubic-bezier(.3,1.5,.5,1); transition-delay: calc(var(--k) * 180ms + 200ms); }
+.slide:has(.mt07-go1.on) .mt07-fruit, .slide:has(.mt07-go2.on) .mt07-bad { transform: none; }
+
+/* mt07-houses: rain, flood, and wind; one house stands and one falls */
+.mt07-rain { stroke: var(--cool); stroke-width: 2.5; stroke-linecap: round; opacity: .7; }
+.slide.active .mt07-rain { animation: mt07-fall 1s linear infinite; animation-delay: calc(var(--k) * -.23s); }
+@keyframes mt07-fall { from { transform: translate(14px, -60px); } to { transform: translate(-14px, 60px); } }
+.mt07-rock { fill: var(--surface-2); stroke: var(--line-strong); stroke-width: 2.5; }
+.mt07-sand { fill: color-mix(in srgb, var(--warm) 45%, var(--bg)); }
+.mt07-wall { fill: var(--leather-light); stroke: var(--leather); stroke-width: 2; }
+.mt07-roof { fill: var(--leather); }
+.mt07-flood { fill: color-mix(in srgb, var(--cool) 55%, transparent); transform: translateY(70px); transition: transform 2.2s ease; }
+.slide:has(.mt07-go1.on) .mt07-flood { transform: none; }
+.mt07-fallhouse { transform-box: fill-box; transform-origin: 100% 100%; transition: transform 1.6s cubic-bezier(.5,0,.8,.4) .2s, opacity 1.6s ease .6s; }
+.slide:has(.mt07-go2.on) .mt07-fallhouse { transform: translate(40px, 60px) rotate(32deg); opacity: .35; }
+.mt07-say { font-size: 19px; font-weight: 700; opacity: 0; transition: opacity 1s ease 1.4s; }
+.slide:has(.mt07-go2.on) .mt07-say { opacity: 1; }
+</style>
+</head>
+<body>
+<main class="deck" id="deck">
+
+<!-- ======================= OPENING ======================= -->
+<section class="slide title">
+  <div class="inner">
+    <div class="emblem rise"></div>
+    <h1 class="rise" style="--d:1">Matthew 7</h1>
+    <p class="sub rise" style="--d:3">Upon a rock</p>
+    <p class="tag rise" style="--d:5">Jesus ends the Sermon on the Mount with a choice: two gates, two trees, two kinds of followers, and two houses in the same storm.</p>
+  </div>
+</section>
+
+<section class="slide watch">
+  <div class="inner">
+    <h2 class="rise">Things to watch for</h2>
+    <p class="lede rise" style="--d:1">Keep these questions in the back of your mind as we read. We'll come back to every one of them at the end.</p>
+    <ol class="seeds">
+      <li class="step"><span class="topic">Judging</span><span class="seed-q">What does Jesus mean when He says, “Judge not”?</span></li>
+      <li class="step"><span class="topic">Prayer</span><span class="seed-q">What does Jesus promise to those who ask, seek, and knock?</span></li>
+      <li class="step"><span class="topic">Others</span><span class="seed-q">How should we treat other people?</span></li>
+      <li class="step"><span class="topic">The way</span><span class="seed-q">Why is the gate strait and the way narrow?</span></li>
+      <li class="step"><span class="topic">Real or fake</span><span class="seed-q">How can you tell what's real from what's fake?</span></li>
+      <li class="step"><span class="topic">Foundation</span><span class="seed-q">What does it take to build a life that stands?</span></li>
+    </ol>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise">The end of the sermon</h2>
+    <p class="note rise" style="--d:1">We're still on the hillside near Capernaum, about AD 28. Matthew 5, 6, and 7 are one sermon, and today Jesus finishes it.</p>
+    <ol class="timeline">
+      <li style="--k:0"><b>5:1–12</b><span>“Blessed are…”</span></li>
+      <li style="--k:1"><b>5:13–48</b><span>Salt, light, and “But I say unto you”</span></li>
+      <li style="--k:2"><b>6:1–34</b><span>In secret; treasure; worry</span></li>
+      <li class="lit" style="--k:3"><b>7:1–12</b><span>Judging, asking, the golden rule</span><small>today</small></li>
+      <li class="lit" style="--k:4"><b>7:13–29</b><span>Two ways, and the people's amazement</span><small>today</small></li>
+      <li class="wait" style="--k:5"><b>8:1</b><span>“When he was come down from the mountain”</span></li>
+    </ol>
+    <p class="note step">Jesus doesn't end with a summary. He ends with a fork in the road. Watch for the pairs:</p>
+    <ul class="signs">
+      <li class="step"><b>Two gates</b>wide and strait (13–14)</li>
+      <li class="step"><b>Two trees</b>good and corrupt (15–20)</li>
+      <li class="step"><b>Two claims</b>saying and doing (21–23)</li>
+      <li class="step"><b>Two houses</b>rock and sand (24–27)</li>
+    </ul>
+  </div>
+</section>
+
+<!-- ======================= PART ONE: JUDGE NOT ======================= -->
+<section class="slide part">
+  <div class="inner">
+    <p class="part-n rise">Part one</p>
+    <h2 class="rise" style="--d:1">Judge not</h2>
+    <p class="range rise" style="--d:2">Verses 1–6</p>
+    <div class="rule"></div>
+    <p class="hook rise" style="--d:4">A speck, a plank, and the man who can only see one of them.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="1-2" data-hl="Judge not, that ye be not judged|with what measure ye mete, it shall be measured to you again"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="1"></blockquote>
+    <h2 class="rise" style="--d:1">What “judge not” means</h2>
+    <ul class="nots">
+      <li class="step"><span class="k">never call anything wrong</span><span class="why">verses 6 and 15 require telling good from bad</span></li>
+      <li class="step"><span class="k">never help a brother with his sin</span><span class="why">verse 5 says help him, after dealing with your own</span></li>
+      <li class="step yes"><span class="k">don't condemn others while excusing yourself</span><span class="why">the harsh, fault-finding, “I'm better than him” spirit</span></li>
+    </ul>
+    <blockquote class="quote step"><p>“Judge not according to the appearance, but judge righteous judgment.”</p><cite>John 7:24</cite></blockquote>
+    <p class="note step"><em>“With what measure ye mete”</em> means <em>the measuring cup you use</em>. The standard you hold over others is the one held over you.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="3-5" data-hl="the mote that is in thy brother’s eye|the beam that is in thine own eye|first cast out the beam out of thine own eye"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="3"></blockquote>
+    <div class="split">
+      <div class="stage">
+        <svg viewBox="0 0 600 260" role="img" aria-label="Two men face each other. One has a tiny speck in his eye. A long wooden beam grows out of the other man's eye, reaching all the way across to his brother.">
+          <path class="mt07-head" d="M80 260 Q86 196 140 190 Q194 196 200 260 Z"/>
+          <circle class="mt07-head" cx="140" cy="140" r="44"/>
+          <circle class="mt07-eye" cx="162" cy="130" r="5"/>
+          <circle class="mt07-mote" cx="168" cy="126" r="2.5"/>
+          <path d="M172 104 L190 70" stroke-width="2" style="stroke:var(--accent-hot)"/>
+          <text class="mt07-tag" x="196" y="64" style="fill:var(--accent-hot)">a mote</text>
+          <path class="mt07-head" d="M400 260 Q406 196 460 190 Q514 196 520 260 Z"/>
+          <circle class="mt07-head" cx="460" cy="140" r="44"/>
+          <circle class="mt07-eye" cx="438" cy="130" r="5"/>
+          <g class="mt07-plank">
+            <rect class="mt07-wood" x="182" y="118" width="256" height="24" rx="3"/>
+            <path class="mt07-grain" d="M196 126 Q260 122 330 127 T430 125 M200 135 Q280 138 350 133 T428 136"/>
+          </g>
+          <text class="mt07-tag step mt07-grow" x="310" y="178" text-anchor="middle" style="fill:var(--leather-light)">a beam</text>
+        </svg>
+      </div>
+      <div>
+        <h2 class="rise" style="--d:1">The speck and the plank</h2>
+        <p class="note rise" style="--d:2">A <em>“mote”</em> is a speck of sawdust. A <em>“beam”</em> is a roof beam, a log. Jesus grew up a carpenter: <em>“Is not this the carpenter”</em> (Mark 6:3). He'd seen both.</p>
+        <p class="note step">It's meant to be funny: a man with a log in his eye, hunting for a speck in someone else's.</p>
+      </div>
+    </div>
+    <p class="note step">We're quickest to spot in others the sin we hide in ourselves. Recovery starts where this verse does: <em>“thine own eye.”</em> Then you'll see clearly enough to help your brother.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="6" data-hl="neither cast ye your pearls before swine"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="6" data-hl="Give not that which is holy unto the dogs"></blockquote>
+    <h2 class="rise" style="--d:1">Dogs and pearls</h2>
+    <p class="note rise" style="--d:2">These weren't pets. Dogs in that day were wild scavengers that ran the streets, and swine were unclean animals to a Jew. Give a pig a pearl, and he'll stomp it into the mud because he can't eat it, then turn on you.</p>
+    <p class="note step">Right after “judge not,” Jesus tells us to use judgment. Some people will mock and attack the holy things of God no matter how you offer them. You don't have to keep throwing your pearls at a man who keeps trampling them.</p>
+    <p class="note step">Pray for him. Love him. Live it in front of him. Be ready when he finally asks. But wisdom knows when to stop arguing.</p>
+  </div>
+</section>
+
+<!-- ======================= PART TWO: ASK, SEEK, KNOCK ======================= -->
+<section class="slide part">
+  <div class="inner">
+    <p class="part-n rise">Part two</p>
+    <h2 class="rise" style="--d:1">Ask, seek, knock</h2>
+    <p class="range rise" style="--d:2">Verses 7–12</p>
+    <div class="rule"></div>
+    <p class="hook rise" style="--d:4">A Father who gives good gifts, and a rule for treating everyone else.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="7-8" data-hl="Ask, and it shall be given you; seek, and ye shall find; knock, and it shall be opened unto you|every one that asketh receiveth"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="8" data-hl="every one that asketh receiveth"></blockquote>
+    <h2 class="rise" style="--d:1">Keep on knocking</h2>
+    <div class="mt07-doorway">
+      <ol class="mt07-words">
+        <li class="step"><b>Ask</b> <small>keep on asking</small></li>
+        <li class="step"><b>Seek</b> <small>keep on seeking</small></li>
+        <li class="step"><b>Knock</b> <small>keep on knocking</small></li>
+      </ol>
+      <div class="mt07-door step" aria-label="A wooden door. When it opens, light pours out."><div class="mt07-frame"><div class="mt07-panel"><i></i></div></div></div>
+    </div>
+    <p class="note step">In Greek, these verbs keep going: keep asking, keep seeking, keep knocking. Prayer isn't one try and then give up. And look who gets in: <em>“every one that asketh.”</em> Not the best men. Every one.</p>
+    <p class="note step">Some of us knocked on a lot of wrong doors looking for something. This is the door that opens.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="9-11" data-hl="if his son ask bread, will he give him a stone?|how much more shall your Father which is in heaven give good things to them that ask him?"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="11" data-hl="how much more"></blockquote>
+    <h2 class="rise" style="--d:1">How much more</h2>
+    <p class="note rise" style="--d:2">Bread was baked in round, flat loaves that could look like the stones on a Galilee hillside. Some fish of the lake look a bit like a snake. Would any father play a cruel trick like that on his hungry boy?</p>
+    <div class="columns">
+      <div class="col law step">
+        <p class="who">An earthly father</p>
+        <h3>“being evil”</h3>
+        <p>Even a sinful man, even one who's failed his kids, still knows how to hand his son bread and not a rock.</p>
+      </div>
+      <div class="col grace step">
+        <p class="who">Your Father in heaven</p>
+        <h3>“how much more”</h3>
+        <p>He has no evil in Him at all. He never tricks His children, never gives a snake for a fish.</p>
+      </div>
+    </div>
+    <blockquote class="quote step"><p>“If ye then, being evil, know how to give good gifts unto your children: how much more shall your heavenly Father give the Holy Spirit to them that ask him?”</p><cite>Luke 11:13</cite></blockquote>
+    <p class="note step">Maybe your own father gave you stones. God is not him. He is the Father you never had.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="12" data-hl="all things whatsoever ye would that men should do to you, do ye even so to them"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="12"></blockquote>
+    <h2 class="rise" style="--d:1">The golden rule</h2>
+    <p class="note rise" style="--d:2">Others had said something like it, the other way around. A well-known rabbi named Hillel, a generation earlier, taught: what you hate, don't do to your neighbor. Jesus turned it from a fence into a road:</p>
+    <div class="mirror">
+      <div class="step"><span>The old saying</span><span class="arrow">→</span><span class="word">don't do harm</span><small>Stay out of trouble. A man can keep that by staying home and doing nothing.</small></div>
+      <div class="step"><span>Jesus</span><span class="arrow">→</span><span class="word">“do ye even so to them”</span><small>Go and do good. Think about what you'd want, then do that for him first.</small></div>
+    </div>
+    <p class="note step"><em>“This is the law and the prophets”</em>: the whole Old Testament's teaching about how to treat people, in one sentence. Think of the men you've wronged, and the amends you'd want if it had been done to you.</p>
+  </div>
+</section>
+
+<!-- ======================= PART THREE: TWO WAYS ======================= -->
+<section class="slide part">
+  <div class="inner">
+    <p class="part-n rise">Part three</p>
+    <h2 class="rise" style="--d:1">Two ways</h2>
+    <p class="range rise" style="--d:2">Verses 13–23</p>
+    <div class="rule"></div>
+    <p class="hook rise" style="--d:4">A strait gate, wolves in wool, and a word no one wants to hear.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="13-14" data-hl="Enter ye in at the strait gate|wide is the gate, and broad is the way, that leadeth to destruction|narrow is the way, which leadeth unto life"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="14"></blockquote>
+    <div class="split">
+      <div class="stage">
+        <svg viewBox="0 0 600 380" role="img" aria-label="Two gates. Through the wide gate, a broad road full of people runs up into darkness, marked destruction. Through a narrow gate, a thin path with a few people winds up into light, marked life.">
+          <defs><radialGradient id="mt07-sun"><stop offset="0" style="stop-color:var(--glow)"/><stop offset=".5" stop-opacity=".5" style="stop-color:var(--warm)"/><stop offset="1" stop-opacity="0" style="stop-color:var(--warm)"/></radialGradient></defs>
+          <ellipse class="mt07-dark" cx="150" cy="36" rx="150" ry="42" opacity=".9"/>
+          <text x="150" y="44" text-anchor="middle" font-size="20" font-weight="700" style="fill:var(--glow)">destruction</text>
+          <circle cx="470" cy="40" r="70" fill="url(#mt07-sun)"/>
+          <circle class="mt07-light" cx="470" cy="40" r="26"/>
+          <text x="470" y="47" text-anchor="middle" font-size="20" font-weight="700" style="fill:var(--on-glow)">life</text>
+          <path class="mt07-broad" d="M50 320 L250 320 L262 74 L38 74 Z"/>
+          <path class="mt07-narrow" d="M470 320 C 456 270, 486 230, 470 190 C 456 150, 488 110, 470 70"/>
+          <rect class="mt07-gate" x="44" y="150" width="16" height="74"/><rect class="mt07-gate" x="240" y="150" width="16" height="74"/><rect class="mt07-gate" x="36" y="140" width="228" height="14" rx="3"/>
+          <rect class="mt07-gate" x="452" y="160" width="10" height="56"/><rect class="mt07-gate" x="478" y="160" width="10" height="56"/><rect class="mt07-gate" x="446" y="152" width="48" height="10" rx="3"/>
+          <g class="mt07-many">
+            <circle r="6"><animateMotion dur="7s" repeatCount="indefinite" begin="0s" path="M90 330 L80 80"/></circle>
+            <circle r="6"><animateMotion dur="7s" repeatCount="indefinite" begin="-1s" path="M130 330 L120 80"/></circle>
+            <circle r="6"><animateMotion dur="7s" repeatCount="indefinite" begin="-2.2s" path="M170 330 L180 80"/></circle>
+            <circle r="6"><animateMotion dur="7s" repeatCount="indefinite" begin="-3.1s" path="M210 330 L220 80"/></circle>
+            <circle r="6"><animateMotion dur="7s" repeatCount="indefinite" begin="-4s" path="M110 330 L100 80"/></circle>
+            <circle r="6"><animateMotion dur="7s" repeatCount="indefinite" begin="-5.2s" path="M150 330 L150 80"/></circle>
+            <circle r="6"><animateMotion dur="7s" repeatCount="indefinite" begin="-6s" path="M190 330 L200 80"/></circle>
+            <circle r="6"><animateMotion dur="7s" repeatCount="indefinite" begin="-.5s" path="M230 330 L236 80"/></circle>
+            <circle r="6"><animateMotion dur="7s" repeatCount="indefinite" begin="-2.7s" path="M70 330 L60 80"/></circle>
+            <circle r="6"><animateMotion dur="7s" repeatCount="indefinite" begin="-4.6s" path="M160 330 L164 80"/></circle>
+            <circle r="6"><animateMotion dur="7s" repeatCount="indefinite" begin="-3.6s" path="M100 330 L130 80"/></circle>
+            <circle r="6"><animateMotion dur="7s" repeatCount="indefinite" begin="-5.8s" path="M200 330 L170 80"/></circle>
+          </g>
+          <g class="mt07-few">
+            <circle r="6"><animateMotion dur="9s" repeatCount="indefinite" begin="0s" path="M470 330 C 456 270, 486 230, 470 190 C 456 150, 488 110, 470 70"/></circle>
+            <circle r="6"><animateMotion dur="9s" repeatCount="indefinite" begin="-4.5s" path="M470 330 C 456 270, 486 230, 470 190 C 456 150, 488 110, 470 70"/></circle>
+          </g>
+          <text x="150" y="348" text-anchor="middle" font-size="19" font-weight="700" style="fill:var(--ink)">wide gate, broad way</text>
+          <text x="150" y="372" text-anchor="middle" font-size="18" style="fill:var(--ink-soft)">“many”</text>
+          <text x="470" y="348" text-anchor="middle" font-size="19" font-weight="700" style="fill:var(--accent-hot)">strait gate, narrow way</text>
+          <text x="470" y="372" text-anchor="middle" font-size="18" style="fill:var(--accent-hot)">“few”</text>
+        </svg>
+      </div>
+      <div>
+        <h2 class="rise" style="--d:1">Strait, not straight</h2>
+        <p class="note rise" style="--d:2"><em>“Strait”</em> means <em>tight, narrow</em>, like the Strait of Gibraltar. It's a gate you squeeze through, one at a time.</p>
+        <p class="note step">The broad way takes no effort; you just follow the crowd. The narrow way runs through one Person: <em>“I am the way, the truth, and the life: no man cometh unto the Father, but by me”</em> (John 14:6).</p>
+        <p class="note step">Narrow doesn't mean closed: <em>“I am the door: by me if any man enter in, he shall be saved”</em> (John 10:9). Few find it because few will leave the crowd and come.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="slide verse" data-v="15-16" data-hl="in sheep’s clothing, but inwardly they are ravening wolves|Ye shall know them by their fruits"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="15"></blockquote>
+    <h2 class="rise" style="--d:1">Wolves in wool</h2>
+    <div class="rename">
+      <span class="old rise" style="--d:2">a sheep</span>
+      <span class="arrow step">→</span>
+      <span class="new step">a wolf</span>
+      <span class="gloss step"><em>“Ravening”</em> means <em>ravenous</em>, tearing for food.</span>
+    </div>
+    <p class="note step">A <em>false prophet</em> is someone who claims to speak for God but doesn't. He looks like one of the flock and talks like one. Underneath, he's feeding on the flock: their money, their trust, their bodies, their faith.</p>
+    <p class="note step">How do you tell? Not by the costume. <em>“Ye shall know them by their fruits.”</em> Thorn bushes don't grow grapes. Sooner or later, what a man really is shows up in what he produces.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="17-20" data-hl="every good tree bringeth forth good fruit|Wherefore by their fruits ye shall know them"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="18"></blockquote>
+    <div class="split">
+      <div class="stage">
+        <svg viewBox="0 0 600 300" role="img" aria-label="Two trees. The good tree is full and covered with bright fruit. The corrupt tree is thin and twisted, and its fruit is small and spoiled.">
+          <line x1="20" y1="282" x2="580" y2="282" stroke-width="2" style="stroke:var(--line-strong)"/>
+          <rect class="mt07-trunk" x="138" y="180" width="26" height="102" rx="4"/>
+          <circle class="mt07-leaves" cx="150" cy="120" r="74"/><circle class="mt07-leaves" cx="100" cy="150" r="46"/><circle class="mt07-leaves" cx="202" cy="150" r="46"/>
+          <g>
+            <circle class="mt07-fruit" style="--k:0" cx="110" cy="100" r="11"/><circle class="mt07-fruit" style="--k:1" cx="160" cy="76" r="11"/><circle class="mt07-fruit" style="--k:2" cx="196" cy="118" r="11"/>
+            <circle class="mt07-fruit" style="--k:3" cx="134" cy="138" r="11"/><circle class="mt07-fruit" style="--k:4" cx="86" cy="160" r="11"/><circle class="mt07-fruit" style="--k:5" cx="216" cy="164" r="11"/>
+            <circle class="mt07-fruit" style="--k:6" cx="176" cy="170" r="11"/><circle class="mt07-fruit" style="--k:7" cx="150" cy="110" r="11"/>
+          </g>
+          <path class="mt07-trunk" d="M438 282 C 444 240, 430 220, 452 190 C 468 170, 444 150, 460 128 L 470 132 C 458 156, 482 172, 466 196 C 450 222, 466 244, 462 282 Z"/>
+          <path class="mt07-trunk" d="M455 200 C 430 186, 410 180, 392 160 L 398 154 C 414 172, 436 178, 458 190 Z"/>
+          <path class="mt07-trunk" d="M462 160 C 488 150, 506 132, 520 110 L 527 115 C 512 140, 494 156, 466 168 Z"/>
+          <circle class="mt07-bare" cx="460" cy="112" r="36"/><circle class="mt07-bare" cx="396" cy="150" r="24"/><circle class="mt07-bare" cx="522" cy="104" r="22"/>
+          <g>
+            <circle class="mt07-bad" style="--k:0" cx="448" cy="104" r="6"/><circle class="mt07-bad" style="--k:1" cx="474" cy="124" r="5"/><circle class="mt07-bad" style="--k:2" cx="398" cy="160" r="5"/>
+            <circle class="mt07-bad" style="--k:3" cx="526" cy="112" r="6"/><circle class="mt07-bad" style="--k:4" cx="440" cy="268" r="5"/><circle class="mt07-bad" style="--k:5" cx="476" cy="274" r="5"/>
+          </g>
+          <text x="150" y="20" text-anchor="middle" font-size="18" font-weight="700" style="fill:var(--accent-hot)">a good tree</text>
+          <text x="460" y="56" text-anchor="middle" font-size="18" font-weight="700" style="fill:var(--danger)">a corrupt tree</text>
+        </svg>
+      </div>
+      <div>
+        <h2 class="rise" style="--d:1">You can't fake fruit for long</h2>
+        <p class="note step mt07-go1">Fruit grows out of what a tree <em>is</em>. A good tree doesn't strain to make good fruit. It just does, because of what's inside it.</p>
+        <p class="note step mt07-go2">A corrupt tree can hang fake fruit for a while. But the season always comes when the real crop shows.</p>
+        <p class="note step">Good fruit: <em>“the fruit of the Spirit is love, joy, peace, longsuffering, gentleness, goodness, faith, Meekness, temperance”</em> (Galatians 5:22–23). The Spirit grows it in every believer.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="slide verse" data-v="21-23" data-hl="but he that doeth the will of my Father which is in heaven|I never knew you"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="23" data-hl="I never knew you"></blockquote>
+    <h2 class="rise" style="--d:1">“Lord, Lord”</h2>
+    <div class="talk">
+      <p class="rise" style="--d:2"><small>Many, in that day</small>Lord, Lord, have we not prophesied in thy name? and in thy name have cast out devils? and in thy name done many wonderful works?<br><span class="flag">all about what we did</span></p>
+      <p class="reply step"><small>Jesus</small>I never knew you: depart from me, ye that work iniquity.</p>
+    </div>
+    <p class="note step"><em>We</em> prophesied, <em>we</em> cast out, <em>we</em> did. Not one word about trusting Him. And <em>“never”</em>: not “I knew you once, and you lost it.” Whoever truly belongs to Christ is known by Him and kept by Him.</p>
+    <p class="note step"><em>“The will of my Father”</em> is <em>“that every one which seeth the Son, and believeth on him, may have everlasting life”</em> (John 6:40). It starts with trusting Him.</p>
+  </div>
+</section>
+
+<!-- ======================= PART FOUR: ROCK OR SAND ======================= -->
+<section class="slide part">
+  <div class="inner">
+    <p class="part-n rise">Part four</p>
+    <h2 class="rise" style="--d:1">Rock or sand</h2>
+    <p class="range rise" style="--d:2">Verses 24–29</p>
+    <div class="rule"></div>
+    <p class="hook rise" style="--d:4">Two builders, one storm, and a teacher like no other.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="24-25" data-hl="whosoever heareth these sayings of mine, and doeth them|built his house upon a rock|it fell not: for it was founded upon a rock"></section>
+<section class="slide verse" data-v="26-27" data-hl="heareth these sayings of mine, and doeth them not|built his house upon the sand|and great was the fall of it"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="27" data-hl="and it fell: and great was the fall of it"></blockquote>
+    <div class="split">
+      <div class="stage">
+        <svg viewBox="0 0 600 320" role="img" aria-label="Rain pours on two houses. One sits on a high rock, the other on low sand. On a step a flood rises. On the next, the house on the sand collapses while the house on the rock stands.">
+          <defs><clipPath id="mt07-box"><rect x="0" y="0" width="600" height="320"/></clipPath></defs>
+          <g clip-path="url(#mt07-box)">
+            <g>
+              <line class="mt07-rain" style="--k:0" x1="40" y1="20" x2="30" y2="60"/><line class="mt07-rain" style="--k:1" x1="110" y1="40" x2="100" y2="80"/><line class="mt07-rain" style="--k:2" x1="180" y1="10" x2="170" y2="50"/>
+              <line class="mt07-rain" style="--k:3" x1="250" y1="50" x2="240" y2="90"/><line class="mt07-rain" style="--k:4" x1="320" y1="20" x2="310" y2="60"/><line class="mt07-rain" style="--k:5" x1="390" y1="44" x2="380" y2="84"/>
+              <line class="mt07-rain" style="--k:6" x1="460" y1="14" x2="450" y2="54"/><line class="mt07-rain" style="--k:7" x1="530" y1="40" x2="520" y2="80"/><line class="mt07-rain" style="--k:8" x1="580" y1="10" x2="570" y2="50"/>
+              <line class="mt07-rain" style="--k:2" x1="70" y1="110" x2="60" y2="150"/><line class="mt07-rain" style="--k:5" x1="290" y1="120" x2="280" y2="160"/><line class="mt07-rain" style="--k:7" x1="500" y1="110" x2="490" y2="150"/>
+            </g>
+            <path class="mt07-rock" d="M20 320 L30 236 Q60 196 130 192 Q210 190 250 230 L262 320 Z"/>
+            <path class="mt07-sand" d="M320 320 L330 278 Q420 266 520 272 Q570 276 590 284 L590 320 Z"/>
+            <g>
+              <rect class="mt07-wall" x="90" y="142" width="104" height="58"/>
+              <path class="mt07-roof" d="M80 146 L142 104 L204 146 Z"/>
+              <rect x="134" y="168" width="18" height="32" style="fill:var(--leather)"/>
+            </g>
+            <g class="mt07-fallhouse">
+              <rect class="mt07-wall" x="400" y="216" width="104" height="58"/>
+              <path class="mt07-roof" d="M390 220 L452 178 L514 220 Z"/>
+              <rect x="444" y="242" width="18" height="32" style="fill:var(--leather)"/>
+            </g>
+            <path class="mt07-flood" d="M0 262 Q50 252 100 262 T200 262 T300 262 T400 262 T500 262 T600 262 V320 H0 Z"/>
+          </g>
+          <text class="mt07-say" x="142" y="88" text-anchor="middle" style="fill:var(--accent-hot)">“it fell not”</text>
+          <text class="mt07-say" x="452" y="160" text-anchor="middle" style="fill:var(--danger)">“great was the fall of it”</text>
+          <text x="142" y="308" text-anchor="middle" font-size="16" font-weight="700" style="fill:var(--ink)">upon a rock</text>
+          <text x="470" y="308" text-anchor="middle" font-size="16" font-weight="700" style="fill:var(--ink)">upon the sand</text>
+        </svg>
+      </div>
+      <div>
+        <h2 class="rise" style="--d:1">The same storm</h2>
+        <p class="note rise" style="--d:2">Both men heard. Both built. Both got the same rain, flood, and wind. The difference was underneath, out of sight until the storm.</p>
+        <p class="note step mt07-go1">In Galilee, a dry stream bed looks like a fine flat lot in summer. Winter rains turn it into a river overnight.</p>
+        <p class="note step mt07-go2">The difference wasn't hearing. It was <em>doing</em>. Every man in recovery knows the storm is coming. A life built on Christ, doing what He says, <em>“fell not.”</em></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="slide verse" data-v="28-29" data-hl="the people were astonished at his doctrine|he taught them as one having authority, and not as the scribes"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="29"></blockquote>
+    <h2 class="rise" style="--d:1">As one having authority</h2>
+    <p class="note rise" style="--d:2">The <em>scribes</em> were the experts in the law of Moses. They taught by quoting other teachers: Rabbi So-and-so says this, Rabbi Such-and-such says that. Jesus quoted no one but Scripture. He spoke as the one who wrote it.</p>
+    <div class="math">
+      <div class="step"><b>13 times</b><span>“I say unto you” in chapters 5 and 6</span></div>
+      <div class="step"><b>6 times</b><span>“Ye have heard” or “It hath been said,” then “But I say unto you”</span></div>
+      <div class="step"><b>7:21–23</b><span>He's the Judge “in that day”</span></div>
+    </div>
+    <p class="note step"><em>“Doctrine”</em> simply means <em>teaching</em>. The crowd was <em>“astonished”</em>, stunned. No ordinary teacher talks like this. Either Jesus is out of His mind, or He is who He says He is. And if He is, His sayings are the rock to build on.</p>
+    <p class="note step">Next, He comes down the mountain and shows the same authority over sickness, storms, and demons (Matthew 8).</p>
+  </div>
+</section>
+
+<!-- ======================= CLOSING ======================= -->
+<section class="slide remember">
+  <div class="inner">
+    <h2 class="rise">Points to remember</h2>
+    <ol class="seeds">
+      <li class="step"><span class="topic">Judging</span><span class="seed-q">“First cast out the beam out of thine own eye” <cite>7:5</cite></span><span class="take">Don't condemn others while excusing yourself. Deal with your own sin first, then help your brother.</span></li>
+      <li class="step"><span class="topic">Prayer</span><span class="seed-q">“Every one that asketh receiveth” <cite>7:8</cite></span><span class="take">Keep asking, seeking, and knocking. Your Father gives good gifts, never stones.</span></li>
+      <li class="step"><span class="topic">Others</span><span class="seed-q">“Do ye even so to them” <cite>7:12</cite></span><span class="take">Don't just avoid harm. Do for others the good you'd want done for you.</span></li>
+      <li class="step"><span class="topic">The way</span><span class="seed-q">“Enter ye in at the strait gate” <cite>7:13</cite></span><span class="take">The way to life runs through Jesus alone. It's narrow, but open to anyone who comes.</span></li>
+      <li class="step"><span class="topic">Real or fake</span><span class="seed-q">“By their fruits ye shall know them” <cite>7:20</cite></span><span class="take">Look past the costume and the talk. What's inside shows up in what grows.</span></li>
+      <li class="step"><span class="topic">Foundation</span><span class="seed-q">“It fell not: for it was founded upon a rock” <cite>7:25</cite></span><span class="take">Hear Jesus' words and do them. The storm will come, and the house on the rock stands.</span></li>
+    </ol>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 1 of 6</p>
+      <span class="topic">Judging</span>
+      <h2>What does Jesus mean when He says, “Judge not”?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="1"></blockquote>
+      <blockquote class="quote step" data-q="5"></blockquote>
+      <blockquote class="quote step"><p>“Judge not according to the appearance, but judge righteous judgment.”</p><cite>John 7:24</cite></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>Not that we can never call anything wrong. He means don't be the harsh, self-righteous critic who condemns others and excuses himself. The measure we use on others is used on us. Deal honestly with your own sin first; then you'll see clearly enough to help your brother.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 2 of 6</p>
+      <span class="topic">Prayer</span>
+      <h2>What does Jesus promise to those who ask, seek, and knock?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="7"></blockquote>
+      <blockquote class="quote step" data-q="8"></blockquote>
+      <blockquote class="quote step" data-q="11"></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>That every one who keeps asking receives, every one who keeps seeking finds, and the door opens to every one who keeps knocking. Our Father is far better than any earthly father. He gives good things to His children who ask Him.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 3 of 6</p>
+      <span class="topic">Others</span>
+      <h2>How should we treat other people?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="12"></blockquote>
+      <blockquote class="quote step" data-q="2"></blockquote>
+      <blockquote class="quote step" data-q="3"></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>The way we'd want to be treated, and we go first. Not just avoiding harm, but actively doing good. We measure others with the grace we hope to receive, and we stop hunting for specks while ignoring our own beam.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 4 of 6</p>
+      <span class="topic">The way</span>
+      <h2>Why is the gate strait and the way narrow?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="13"></blockquote>
+      <blockquote class="quote step" data-q="14"></blockquote>
+      <blockquote class="quote step"><p>“Jesus saith unto him, I am the way, the truth, and the life: no man cometh unto the Father, but by me.”</p><cite>John 14:6</cite></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>Because there's only one way to life, and it's a Person: Jesus. The broad way is easy; you just follow the crowd. The narrow gate means leaving the crowd and coming to Christ yourself. It's narrow, but it's open to whosoever will come.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 5 of 6</p>
+      <span class="topic">Real or fake</span>
+      <h2>How can you tell what's real from what's fake?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="15"></blockquote>
+      <blockquote class="quote step" data-q="21"></blockquote>
+      <blockquote class="quote step"><p>“But the fruit of the Spirit is love, joy, peace, longsuffering, gentleness, goodness, faith, Meekness, temperance: against such there is no law.”</p><cite>Galatians 5:22–23</cite></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>By the fruit, not the costume. False prophets look like sheep, and some people say “Lord, Lord” and list their works. But what a man really is shows up over time in what he produces. Real faith in Jesus grows the Spirit's fruit.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 6 of 6</p>
+      <span class="topic">Foundation</span>
+      <h2>What does it take to build a life that stands?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="24"></blockquote>
+      <blockquote class="quote step" data-q="26"></blockquote>
+      <blockquote class="quote step"><p>“For other foundation can no man lay than that is laid, which is Jesus Christ.”</p><cite>1 Corinthians 3:11</cite></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>A foundation on the rock: Jesus Christ and His words, heard and done. Hearing alone isn't enough; the foolish man heard too. Storms come to every house. The life built on Christ, doing what He says, stands.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide prayer">
+  <div class="inner">
+    <div class="emblem rise"></div>
+    <h2 class="rise" style="--d:1">Prayer requests</h2>
+    <p class="ask-line rise" style="--d:2">What can we pray about for you today?</p>
+    <blockquote class="quote rise" style="--d:4"><p>“The LORD is my rock, and my fortress, and my deliverer; my God, my strength, in whom I will trust; my buckler, and the horn of my salvation, and my high tower.”</p><cite>Psalm 18:2</cite></blockquote>
+  </div>
+</section>
+
+</main>
+
+<script>
+// King James Version, Matthew chapter 7
+const V = {
+  1: "Judge not, that ye be not judged.",
+  2: "For with what judgment ye judge, ye shall be judged: and with what measure ye mete, it shall be measured to you again.",
+  3: "And why beholdest thou the mote that is in thy brother’s eye, but considerest not the beam that is in thine own eye?",
+  4: "Or how wilt thou say to thy brother, Let me pull out the mote out of thine eye; and, behold, a beam is in thine own eye?",
+  5: "Thou hypocrite, first cast out the beam out of thine own eye; and then shalt thou see clearly to cast out the mote out of thy brother’s eye.",
+  6: "Give not that which is holy unto the dogs, neither cast ye your pearls before swine, lest they trample them under their feet, and turn again and rend you.",
+  7: "Ask, and it shall be given you; seek, and ye shall find; knock, and it shall be opened unto you:",
+  8: "For every one that asketh receiveth; and he that seeketh findeth; and to him that knocketh it shall be opened.",
+  9: "Or what man is there of you, whom if his son ask bread, will he give him a stone?",
+  10: "Or if he ask a fish, will he give him a serpent?",
+  11: "If ye then, being evil, know how to give good gifts unto your children, how much more shall your Father which is in heaven give good things to them that ask him?",
+  12: "Therefore all things whatsoever ye would that men should do to you, do ye even so to them: for this is the law and the prophets.",
+  13: "Enter ye in at the strait gate: for wide is the gate, and broad is the way, that leadeth to destruction, and many there be which go in thereat:",
+  14: "Because strait is the gate, and narrow is the way, which leadeth unto life, and few there be that find it.",
+  15: "Beware of false prophets, which come to you in sheep’s clothing, but inwardly they are ravening wolves.",
+  16: "Ye shall know them by their fruits. Do men gather grapes of thorns, or figs of thistles?",
+  17: "Even so every good tree bringeth forth good fruit; but a corrupt tree bringeth forth evil fruit.",
+  18: "A good tree cannot bring forth evil fruit, neither can a corrupt tree bring forth good fruit.",
+  19: "Every tree that bringeth not forth good fruit is hewn down, and cast into the fire.",
+  20: "Wherefore by their fruits ye shall know them.",
+  21: "Not every one that saith unto me, Lord, Lord, shall enter into the kingdom of heaven; but he that doeth the will of my Father which is in heaven.",
+  22: "Many will say to me in that day, Lord, Lord, have we not prophesied in thy name? and in thy name have cast out devils? and in thy name done many wonderful works?",
+  23: "And then will I profess unto them, I never knew you: depart from me, ye that work iniquity.",
+  24: "Therefore whosoever heareth these sayings of mine, and doeth them, I will liken him unto a wise man, which built his house upon a rock:",
+  25: "And the rain descended, and the floods came, and the winds blew, and beat upon that house; and it fell not: for it was founded upon a rock.",
+  26: "And every one that heareth these sayings of mine, and doeth them not, shall be likened unto a foolish man, which built his house upon the sand:",
+  27: "And the rain descended, and the floods came, and the winds blew, and beat upon that house; and it fell: and great was the fall of it.",
+  28: "And it came to pass, when Jesus had ended these sayings, the people were astonished at his doctrine:",
+  29: "For he taught them as one having authority, and not as the scribes."
+};
+const BOOK = "Matthew 7";
+</script>
+<script src="../assets/deck.js"></script>
+</body>
+</html>

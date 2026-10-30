@@ -20,6 +20,12 @@ window.GLOSSARY = [
     "Matthew", 4,
     [ 1, 7, 10, 12, 17, 18, 23 ] ],
    [
+    "Matthew", 7,
+    [ 28 ] ],
+   [
+    "Matthew", 8,
+    [ 3, 4, 5, 7, 10, 13, 14, 18, 20, 22, 29, 34 ] ],
+   [
     "Matthew", 9,
     [ 2, 4, 9, 10, 12, 15, 19, 22, 23, 27, 28, 30, 35 ] ],
    [
@@ -200,6 +206,9 @@ window.GLOSSARY = [
     "Matthew", 4,
     [ 18 ] ],
    [
+    "Matthew", 8,
+    [ 14 ] ],
+   [
     "Matthew", 10,
     [ 2 ] ],
    [
@@ -272,6 +281,9 @@ window.GLOSSARY = [
     "Malachi", 4,
     [ 4 ] ],
    [
+    "Matthew", 8,
+    [ 4 ] ],
+   [
     "Mark", 1,
     [ 44 ] ],
    [
@@ -325,6 +337,9 @@ window.GLOSSARY = [
    [
     "Matthew", 4,
     [ 14 ] ],
+   [
+    "Matthew", 8,
+    [ 17 ] ],
    [
     "Luke", 3,
     [ 4 ] ],
@@ -382,6 +397,12 @@ window.GLOSSARY = [
    [
     "Matthew", 5,
     [ 16, 45, 48 ] ],
+   [
+    "Matthew", 6,
+    [ 1, 4, 6, 8, 9, 14, 15, 18, 26, 32 ] ],
+   [
+    "Matthew", 7,
+    [ 11, 21 ] ],
    [
     "Matthew", 10,
     [ 20, 29, 32, 33 ] ],
@@ -499,6 +520,9 @@ window.GLOSSARY = [
    [
     "Matthew", 5,
     [ 1 ] ],
+   [
+    "Matthew", 8,
+    [ 21, 23, 25 ] ],
    [
     "Matthew", 9,
     [ 10, 11, 14, 19, 37 ] ],
@@ -742,6 +766,9 @@ window.GLOSSARY = [
    [
     "Matthew", 1,
     [ 6, 7 ] ],
+   [
+    "Matthew", 6,
+    [ 29 ] ],
    [
     "John", 10,
     [ 23 ] ] ]
@@ -1457,6 +1484,9 @@ window.GLOSSARY = [
     "Matthew", 4,
     [ 13 ] ],
    [
+    "Matthew", 8,
+    [ 5 ] ],
+   [
     "Mark", 1,
     [ 21 ] ],
    [
@@ -1667,6 +1697,9 @@ window.GLOSSARY = [
     "Matthew", 2,
     [ 6, 20, 21 ] ],
    [
+    "Matthew", 8,
+    [ 10 ] ],
+   [
     "Matthew", 9,
     [ 33 ] ],
    [
@@ -1744,6 +1777,15 @@ window.GLOSSARY = [
    [
     "Matthew", 5,
     [ 3, 10, 12, 16, 18, 19, 20, 34, 45, 48 ] ],
+   [
+    "Matthew", 6,
+    [ 1, 9, 10, 20 ] ],
+   [
+    "Matthew", 7,
+    [ 11, 21 ] ],
+   [
+    "Matthew", 8,
+    [ 11 ] ],
    [
     "Matthew", 10,
     [ 7, 32, 33 ] ],
@@ -1997,6 +2039,9 @@ window.GLOSSARY = [
     "Matthew", 5,
     [ 14, 15, 16 ] ],
    [
+    "Matthew", 6,
+    [ 22, 23 ] ],
+   [
     "Matthew", 10,
     [ 27 ] ],
    [
@@ -2062,6 +2107,12 @@ window.GLOSSARY = [
    [
     "Matthew", 4,
     [ 16 ] ],
+   [
+    "Matthew", 6,
+    [ 23 ] ],
+   [
+    "Matthew", 8,
+    [ 12 ] ],
    [
     "Matthew", 10,
     [ 27 ] ],
@@ -2264,6 +2315,9 @@ window.GLOSSARY = [
     "Matthew", 4,
     [ 8 ] ],
    [
+    "Matthew", 6,
+    [ 2, 13, 29 ] ],
+   [
     "Luke", 2,
     [ 9, 32 ] ],
    [
@@ -2353,6 +2407,9 @@ window.GLOSSARY = [
    [
     "Matthew", 5,
     [ 17, 18 ] ],
+   [
+    "Matthew", 7,
+    [ 12 ] ],
    [
     "Luke", 2,
     [ 22, 23, 24, 27, 39 ] ],
@@ -2465,6 +2522,9 @@ window.GLOSSARY = [
     "Matthew", 4,
     [ 3, 6 ] ],
    [
+    "Matthew", 8,
+    [ 29 ] ],
+   [
     "Mark", 1,
     [ 1 ] ],
    [
@@ -2500,6 +2560,9 @@ window.GLOSSARY = [
   "kind": "term",
   "name": "Son of man",
   "refs": [
+   [
+    "Matthew", 8,
+    [ 20 ] ],
    [
     "Matthew", 9,
     [ 6 ] ],
@@ -2575,6 +2638,9 @@ window.GLOSSARY = [
    [
     "Habakkuk", 1,
     [ 5 ] ],
+   [
+    "Matthew", 8,
+    [ 13 ] ],
    [
     "Mark", 1,
     [ 15 ] ],
@@ -3489,7 +3555,10 @@ window.GLOSSARY = [
     [ 15 ] ],
    [
     "Matthew", 5,
-    [ 22 ] ] ]
+    [ 22 ] ],
+   [
+    "Matthew", 7,
+    [ 26 ] ] ]
  },
  {
   "id": "scorner",
@@ -3733,6 +3802,9 @@ window.GLOSSARY = [
    [
     "Matthew", 5,
     [ 6, 10, 20 ] ],
+   [
+    "Matthew", 6,
+    [ 33 ] ],
    [
     "Matthew", 9,
     [ 13 ] ],
@@ -4018,6 +4090,9 @@ window.GLOSSARY = [
    [
     "Matthew", 5,
     [ 8, 28 ] ],
+   [
+    "Matthew", 6,
+    [ 21 ] ],
    [
     "Luke", 2,
     [ 19, 51 ] ],
@@ -5600,6 +5675,9 @@ window.GLOSSARY = [
     "Matthew", 5,
     [ 21, 22 ] ],
    [
+    "Matthew", 7,
+    [ 2 ] ],
+   [
     "Matthew", 10,
     [ 15 ] ],
    [
@@ -5741,6 +5819,9 @@ window.GLOSSARY = [
     "Matthew", 4,
     [ 23 ] ],
    [
+    "Matthew", 6,
+    [ 2, 5 ] ],
+   [
     "Matthew", 9,
     [ 35 ] ],
    [
@@ -5836,6 +5917,9 @@ window.GLOSSARY = [
    [
     "Matthew", 3,
     [ 4 ] ],
+   [
+    "Matthew", 6,
+    [ 25 ] ],
    [
     "Matthew", 9,
     [ 10 ] ],
@@ -5984,6 +6068,9 @@ window.GLOSSARY = [
     "Matthew", 4,
     [ 14 ] ],
    [
+    "Matthew", 8,
+    [ 17 ] ],
+   [
     "Matthew", 10,
     [ 41 ] ],
    [
@@ -6058,6 +6145,9 @@ window.GLOSSARY = [
    [
     "Matthew", 4,
     [ 9, 10 ] ],
+   [
+    "Matthew", 8,
+    [ 2 ] ],
    [
     "Matthew", 9,
     [ 18 ] ],
@@ -6410,6 +6500,9 @@ window.GLOSSARY = [
     "Proverbs", 4,
     [ 2 ] ],
    [
+    "Matthew", 7,
+    [ 28 ] ],
+   [
     "Mark", 1,
     [ 22, 27 ] ],
    [
@@ -6466,6 +6559,9 @@ window.GLOSSARY = [
    [
     "Matthew", 4,
     [ 15 ] ],
+   [
+    "Matthew", 6,
+    [ 32 ] ],
    [
     "Matthew", 10,
     [ 5, 18 ] ],
@@ -6530,6 +6626,12 @@ window.GLOSSARY = [
     "Matthew", 5,
     [ 20 ] ],
    [
+    "Matthew", 7,
+    [ 29 ] ],
+   [
+    "Matthew", 8,
+    [ 19 ] ],
+   [
     "Matthew", 9,
     [ 3 ] ],
    [
@@ -6565,6 +6667,9 @@ window.GLOSSARY = [
    [
     "Matthew", 3,
     [ 9 ] ],
+   [
+    "Matthew", 8,
+    [ 11 ] ],
    [
     "Luke", 1,
     [ 55, 73 ] ],
@@ -6725,6 +6830,9 @@ window.GLOSSARY = [
   "name": "The kingdom of God",
   "refs": [
    [
+    "Matthew", 6,
+    [ 33 ] ],
+   [
     "Mark", 1,
     [ 14, 15 ] ],
    [
@@ -6772,6 +6880,9 @@ window.GLOSSARY = [
   "kind": "term",
   "name": "Whosoever",
   "refs": [
+   [
+    "Matthew", 7,
+    [ 24 ] ],
    [
     "Matthew", 10,
     [ 14, 32, 33, 42 ] ],
@@ -6889,6 +7000,9 @@ window.GLOSSARY = [
    [
     "Matthew", 1,
     [ 2 ] ],
+   [
+    "Matthew", 8,
+    [ 11 ] ],
    [
     "Luke", 1,
     [ 33 ] ],
@@ -7045,6 +7159,9 @@ window.GLOSSARY = [
   "kind": "term",
   "name": "Harvest (soweth, reapeth)",
   "refs": [
+   [
+    "Matthew", 6,
+    [ 26 ] ],
    [
     "Matthew", 9,
     [ 37, 38 ] ],
@@ -7376,6 +7493,9 @@ window.GLOSSARY = [
     "Matthew", 4,
     [ 8 ] ],
    [
+    "Matthew", 8,
+    [ 4 ] ],
+   [
     "Mark", 1,
     [ 44 ] ],
    [
@@ -7423,6 +7543,9 @@ window.GLOSSARY = [
    [
     "Zechariah", 5,
     [ 2 ] ],
+   [
+    "Matthew", 6,
+    [ 27 ] ],
    [
     "John", 21,
     [ 8 ] ] ]
@@ -7513,6 +7636,9 @@ window.GLOSSARY = [
   "kind": "term",
   "name": "Testimony, testify",
   "refs": [
+   [
+    "Matthew", 8,
+    [ 4 ] ],
    [
     "Matthew", 10,
     [ 18 ] ],
@@ -8042,6 +8168,9 @@ window.GLOSSARY = [
   "name": "The way",
   "refs": [
    [
+    "Matthew", 7,
+    [ 13, 14 ] ],
+   [
     "John", 1,
     [ 23 ] ],
    [
@@ -8384,6 +8513,9 @@ window.GLOSSARY = [
   "name": "The Roman soldiers",
   "refs": [
    [
+    "Matthew", 8,
+    [ 9 ] ],
+   [
     "John", 19,
     [ 2, 23, 24, 32, 34 ] ] ]
  },
@@ -8627,6 +8759,9 @@ window.GLOSSARY = [
     "Malachi", 2,
     [ 1, 7 ] ],
    [
+    "Matthew", 8,
+    [ 4 ] ],
+   [
     "Mark", 1,
     [ 44 ] ],
    [
@@ -8735,6 +8870,9 @@ window.GLOSSARY = [
     "Matthew", 4,
     [ 2 ] ],
    [
+    "Matthew", 6,
+    [ 16, 17, 18 ] ],
+   [
     "Matthew", 9,
     [ 14, 15 ] ],
    [
@@ -8832,7 +8970,10 @@ window.GLOSSARY = [
     [ 16 ] ],
    [
     "Zechariah", 9,
-    [ 14 ] ] ]
+    [ 14 ] ],
+   [
+    "Matthew", 6,
+    [ 2 ] ] ]
  },
  {
   "id": "rend-your-heart",
@@ -8904,7 +9045,10 @@ window.GLOSSARY = [
     [ 14, 18 ] ],
    [
     "Malachi", 1,
-    [ 11, 14 ] ] ]
+    [ 11, 14 ] ],
+   [
+    "Matthew", 6,
+    [ 7 ] ] ]
  },
  {
   "id": "jealous",
@@ -10350,7 +10494,10 @@ window.GLOSSARY = [
   "refs": [
    [
     "Hosea", 14,
-    [ 5 ] ] ]
+    [ 5 ] ],
+   [
+    "Matthew", 6,
+    [ 28 ] ] ]
  },
  {
   "id": "lebanon",
@@ -10530,7 +10677,10 @@ window.GLOSSARY = [
     [ 4, 6, 7 ] ],
    [
     "Malachi", 4,
-    [ 1 ] ] ]
+    [ 1 ] ],
+   [
+    "Matthew", 6,
+    [ 30 ] ] ]
  },
  {
   "id": "cake-not-turned",
@@ -11032,6 +11182,9 @@ window.GLOSSARY = [
    [
     "Matthew", 1,
     [ 2 ] ],
+   [
+    "Matthew", 8,
+    [ 11 ] ],
    [
     "Luke", 3,
     [ 34 ] ] ]
@@ -14331,7 +14484,10 @@ window.GLOSSARY = [
     [ 1, 2, 4 ] ],
    [
     "Zechariah", 14,
-    [ 4, 6, 8, 9, 13, 20, 21 ] ] ]
+    [ 4, 6, 8, 9, 13, 20, 21 ] ],
+   [
+    "Matthew", 7,
+    [ 22 ] ] ]
  },
  {
   "id": "cup-of-trembling",
@@ -14457,7 +14613,10 @@ window.GLOSSARY = [
   "refs": [
    [
     "Zechariah", 13,
-    [ 2, 3, 4, 5 ] ] ]
+    [ 2, 3, 4, 5 ] ],
+   [
+    "Matthew", 7,
+    [ 15 ] ] ]
  },
  {
   "id": "rough-garment",
@@ -15278,6 +15437,9 @@ window.GLOSSARY = [
   "name": "Simon Peter's wife's mother",
   "refs": [
    [
+    "Matthew", 8,
+    [ 14 ] ],
+   [
     "Mark", 1,
     [ 30 ] ] ]
  },
@@ -15286,6 +15448,9 @@ window.GLOSSARY = [
   "kind": "person",
   "name": "The leper Jesus touched",
   "refs": [
+   [
+    "Matthew", 8,
+    [ 2 ] ],
    [
     "Mark", 1,
     [ 40 ] ] ]
@@ -15380,6 +15545,9 @@ window.GLOSSARY = [
     "Matthew", 4,
     [ 20, 22 ] ],
    [
+    "Matthew", 8,
+    [ 3 ] ],
+   [
     "Mark", 1,
     [ 10, 12, 18, 20, 21, 28, 29, 30, 31, 42, 43 ] ],
    [
@@ -15391,6 +15559,9 @@ window.GLOSSARY = [
   "kind": "term",
   "name": "Fever",
   "refs": [
+   [
+    "Matthew", 8,
+    [ 14, 15 ] ],
    [
     "Mark", 1,
     [ 30, 31 ] ],
@@ -15422,6 +15593,12 @@ window.GLOSSARY = [
     "Matthew", 4,
     [ 24 ] ],
    [
+    "Matthew", 7,
+    [ 22 ] ],
+   [
+    "Matthew", 8,
+    [ 16, 28, 31, 33 ] ],
+   [
     "Matthew", 9,
     [ 34 ] ],
    [
@@ -15448,6 +15625,9 @@ window.GLOSSARY = [
   "kind": "term",
   "name": "Leper, leprosy",
   "refs": [
+   [
+    "Matthew", 8,
+    [ 2, 3 ] ],
    [
     "Matthew", 10,
     [ 8 ] ],
@@ -15539,6 +15719,9 @@ window.GLOSSARY = [
     "Matthew", 4,
     [ 24 ] ],
    [
+    "Matthew", 8,
+    [ 6 ] ],
+   [
     "Matthew", 9,
     [ 2, 6 ] ],
    [
@@ -15559,6 +15742,9 @@ window.GLOSSARY = [
   "kind": "term",
   "name": "Forgive sins",
   "refs": [
+   [
+    "Matthew", 6,
+    [ 12, 14, 15 ] ],
    [
     "Matthew", 9,
     [ 2, 5, 6 ] ],
@@ -15892,6 +16078,9 @@ window.GLOSSARY = [
   "kind": "term",
   "name": "Stature (height, growth in body)",
   "refs": [
+   [
+    "Matthew", 6,
+    [ 27 ] ],
    [
     "Luke", 2,
     [ 52 ] ] ]
@@ -16334,6 +16523,12 @@ window.GLOSSARY = [
     "Matthew", 5,
     [ 3, 10, 19, 20 ] ],
    [
+    "Matthew", 7,
+    [ 21 ] ],
+   [
+    "Matthew", 8,
+    [ 11 ] ],
+   [
     "Matthew", 10,
     [ 7 ] ] ]
  },
@@ -16514,6 +16709,9 @@ window.GLOSSARY = [
     "Matthew", 5,
     [ 12, 46 ] ],
    [
+    "Matthew", 6,
+    [ 1, 2, 4, 5, 6, 16, 18 ] ],
+   [
     "Matthew", 10,
     [ 41, 42 ] ] ]
  },
@@ -16613,6 +16811,9 @@ window.GLOSSARY = [
     "Matthew", 4,
     [ 24 ] ],
    [
+    "Matthew", 8,
+    [ 16, 28 ] ],
+   [
     "Matthew", 9,
     [ 32 ] ],
    [
@@ -16653,6 +16854,9 @@ window.GLOSSARY = [
   "refs": [
    [
     "Matthew", 5,
+    [ 1 ] ],
+   [
+    "Matthew", 8,
     [ 1 ] ] ]
  },
  {
@@ -16741,6 +16945,9 @@ window.GLOSSARY = [
    [
     "Matthew", 5,
     [ 17 ] ],
+   [
+    "Matthew", 7,
+    [ 12 ] ],
    [
     "John", 1,
     [ 45 ] ] ]
@@ -17097,7 +17304,10 @@ window.GLOSSARY = [
   "refs": [
    [
     "Matthew", 2,
-    [ 16 ] ] ]
+    [ 16 ] ],
+   [
+    "Matthew", 8,
+    [ 34 ] ] ]
  },
  {
   "id": "nazarene",
@@ -17143,5 +17353,431 @@ window.GLOSSARY = [
    [
     "Matthew", 3,
     [ 15 ] ] ]
+ },
+ {
+  "id": "hypocrites",
+  "kind": "term",
+  "name": "Hypocrite (a stage actor behind a mask)",
+  "refs": [
+   [
+    "Matthew", 6,
+    [ 2, 5, 16 ] ],
+   [
+    "Matthew", 7,
+    [ 5 ] ] ]
+ },
+ {
+  "id": "alms",
+  "kind": "term",
+  "name": "Alms (gifts to the poor)",
+  "refs": [
+   [
+    "Matthew", 6,
+    [ 1, 2, 3, 4 ] ] ]
+ },
+ {
+  "id": "closet",
+  "kind": "place",
+  "name": "Closet (the inner room)",
+  "refs": [
+   [
+    "Matthew", 6,
+    [ 6 ] ] ]
+ },
+ {
+  "id": "vain-repetitions",
+  "kind": "term",
+  "name": "Vain repetitions",
+  "refs": [
+   [
+    "Matthew", 6,
+    [ 7 ] ] ]
+ },
+ {
+  "id": "hallowed",
+  "kind": "term",
+  "name": "Hallowed (treated as holy)",
+  "refs": [
+   [
+    "Matthew", 6,
+    [ 9 ] ] ]
+ },
+ {
+  "id": "daily-bread",
+  "kind": "term",
+  "name": "Our daily bread",
+  "refs": [
+   [
+    "Matthew", 6,
+    [ 11 ] ] ]
+ },
+ {
+  "id": "debts",
+  "kind": "term",
+  "name": "Debts, debtors (sins owed)",
+  "refs": [
+   [
+    "Matthew", 6,
+    [ 12 ] ] ]
+ },
+ {
+  "id": "temptation",
+  "kind": "term",
+  "name": "Temptation",
+  "refs": [
+   [
+    "Matthew", 6,
+    [ 13 ] ] ]
+ },
+ {
+  "id": "amen",
+  "kind": "term",
+  "name": "Amen (so be it)",
+  "refs": [
+   [
+    "Matthew", 6,
+    [ 13 ] ] ]
+ },
+ {
+  "id": "treasure-in-heaven",
+  "kind": "term",
+  "name": "Treasure in heaven",
+  "refs": [
+   [
+    "Matthew", 6,
+    [ 19, 20, 21 ] ] ]
+ },
+ {
+  "id": "moth-and-rust",
+  "kind": "term",
+  "name": "Moth and rust",
+  "refs": [
+   [
+    "Matthew", 6,
+    [ 19, 20 ] ] ]
+ },
+ {
+  "id": "single-eye",
+  "kind": "term",
+  "name": "A single eye, an evil eye",
+  "refs": [
+   [
+    "Matthew", 6,
+    [ 22, 23 ] ] ]
+ },
+ {
+  "id": "mammon",
+  "kind": "term",
+  "name": "Mammon (money and possessions)",
+  "refs": [
+   [
+    "Matthew", 6,
+    [ 24 ] ] ]
+ },
+ {
+  "id": "take-no-thought",
+  "kind": "term",
+  "name": "Take no thought (don't worry)",
+  "refs": [
+   [
+    "Matthew", 6,
+    [ 25, 27, 28, 31, 34 ] ],
+   [
+    "Matthew", 10,
+    [ 19 ] ] ]
+ },
+ {
+  "id": "raiment",
+  "kind": "term",
+  "name": "Raiment (clothing)",
+  "refs": [
+   [
+    "Matthew", 3,
+    [ 4 ] ],
+   [
+    "Matthew", 6,
+    [ 25, 28 ] ] ]
+ },
+ {
+  "id": "fowls-of-the-air",
+  "kind": "term",
+  "name": "The fowls (birds) of the air",
+  "refs": [
+   [
+    "Matthew", 6,
+    [ 26 ] ] ]
+ },
+ {
+  "id": "little-faith",
+  "kind": "term",
+  "name": "O ye of little faith",
+  "refs": [
+   [
+    "Matthew", 6,
+    [ 30 ] ],
+   [
+    "Matthew", 8,
+    [ 26 ] ] ]
+ },
+ {
+  "id": "seek-ye-first",
+  "kind": "term",
+  "name": "Seek ye first the kingdom of God",
+  "refs": [
+   [
+    "Matthew", 6,
+    [ 33 ] ] ]
+ },
+ {
+  "id": "sufficient-unto-the-day",
+  "kind": "term",
+  "name": "Sufficient unto the day",
+  "refs": [
+   [
+    "Matthew", 6,
+    [ 34 ] ] ]
+ },
+ {
+  "id": "mote-and-beam",
+  "kind": "term",
+  "name": "The mote and the beam (a speck and a plank)",
+  "refs": [
+   [
+    "Matthew", 7,
+    [ 3, 4, 5 ] ] ]
+ },
+ {
+  "id": "pearls-before-swine",
+  "kind": "term",
+  "name": "Pearls before swine",
+  "refs": [
+   [
+    "Matthew", 7,
+    [ 6 ] ] ]
+ },
+ {
+  "id": "ask-seek-knock",
+  "kind": "term",
+  "name": "Ask, seek, knock",
+  "refs": [
+   [
+    "Matthew", 7,
+    [ 7, 8 ] ] ]
+ },
+ {
+  "id": "golden-rule",
+  "kind": "term",
+  "name": "The golden rule",
+  "refs": [
+   [
+    "Matthew", 7,
+    [ 12 ] ] ]
+ },
+ {
+  "id": "strait-gate",
+  "kind": "term",
+  "name": "The strait (narrow) gate",
+  "refs": [
+   [
+    "Matthew", 7,
+    [ 13, 14 ] ] ]
+ },
+ {
+  "id": "sheeps-clothing",
+  "kind": "term",
+  "name": "Wolves in sheep's clothing",
+  "refs": [
+   [
+    "Matthew", 7,
+    [ 15 ] ] ]
+ },
+ {
+  "id": "ravening",
+  "kind": "term",
+  "name": "Ravening (ravenous)",
+  "refs": [
+   [
+    "Matthew", 7,
+    [ 15 ] ] ]
+ },
+ {
+  "id": "known-by-their-fruits",
+  "kind": "term",
+  "name": "Known by their fruits",
+  "refs": [
+   [
+    "Matthew", 7,
+    [ 16, 17, 18, 19, 20 ] ] ]
+ },
+ {
+  "id": "lord-lord",
+  "kind": "term",
+  "name": "“Lord, Lord”",
+  "refs": [
+   [
+    "Matthew", 7,
+    [ 21, 22 ] ] ]
+ },
+ {
+  "id": "i-never-knew-you",
+  "kind": "term",
+  "name": "“I never knew you”",
+  "refs": [
+   [
+    "Matthew", 7,
+    [ 23 ] ] ]
+ },
+ {
+  "id": "rock-and-sand",
+  "kind": "term",
+  "name": "Built upon a rock, or upon the sand",
+  "refs": [
+   [
+    "Matthew", 7,
+    [ 24, 25, 26 ] ] ]
+ },
+ {
+  "id": "authority",
+  "kind": "term",
+  "name": "Authority",
+  "refs": [
+   [
+    "Matthew", 7,
+    [ 29 ] ],
+   [
+    "Matthew", 8,
+    [ 9 ] ],
+   [
+    "Mark", 1,
+    [ 22, 27 ] ] ]
+ },
+ {
+  "id": "centurion",
+  "kind": "person",
+  "name": "The centurion of Capernaum",
+  "refs": [
+   [
+    "Matthew", 8,
+    [ 5, 8, 13 ] ] ]
+ },
+ {
+  "id": "east-and-west",
+  "kind": "term",
+  "name": "Many from the east and west",
+  "refs": [
+   [
+    "Matthew", 8,
+    [ 11 ] ] ]
+ },
+ {
+  "id": "children-of-the-kingdom",
+  "kind": "term",
+  "name": "The children of the kingdom",
+  "refs": [
+   [
+    "Matthew", 8,
+    [ 12 ] ] ]
+ },
+ {
+  "id": "outer-darkness",
+  "kind": "place",
+  "name": "Outer darkness",
+  "refs": [
+   [
+    "Matthew", 8,
+    [ 12 ] ] ]
+ },
+ {
+  "id": "weeping-and-gnashing",
+  "kind": "term",
+  "name": "Weeping and gnashing of teeth",
+  "refs": [
+   [
+    "Matthew", 8,
+    [ 12 ] ] ]
+ },
+ {
+  "id": "infirmities",
+  "kind": "term",
+  "name": "Infirmities (sicknesses, weaknesses)",
+  "refs": [
+   [
+    "Matthew", 8,
+    [ 17 ] ] ]
+ },
+ {
+  "id": "dead-bury-their-dead",
+  "kind": "term",
+  "name": "Let the dead bury their dead",
+  "refs": [
+   [
+    "Matthew", 8,
+    [ 22 ] ] ]
+ },
+ {
+  "id": "tempest",
+  "kind": "term",
+  "name": "Tempest (a violent storm)",
+  "refs": [
+   [
+    "Matthew", 8,
+    [ 24 ] ] ]
+ },
+ {
+  "id": "great-calm",
+  "kind": "term",
+  "name": "A great calm",
+  "refs": [
+   [
+    "Matthew", 8,
+    [ 26 ] ] ]
+ },
+ {
+  "id": "what-manner-of-man",
+  "kind": "term",
+  "name": "“What manner of man is this?”",
+  "refs": [
+   [
+    "Matthew", 8,
+    [ 27 ] ] ]
+ },
+ {
+  "id": "gergesenes",
+  "kind": "place",
+  "name": "The country of the Gergesenes (Gadarenes)",
+  "refs": [
+   [
+    "Matthew", 8,
+    [ 28 ] ] ]
+ },
+ {
+  "id": "tombs",
+  "kind": "place",
+  "name": "The tombs",
+  "refs": [
+   [
+    "Matthew", 8,
+    [ 28 ] ] ]
+ },
+ {
+  "id": "before-the-time",
+  "kind": "term",
+  "name": "“Before the time” (the demons' coming judgment)",
+  "refs": [
+   [
+    "Matthew", 8,
+    [ 29 ] ] ]
+ },
+ {
+  "id": "swine",
+  "kind": "term",
+  "name": "Swine (unclean animals)",
+  "refs": [
+   [
+    "Matthew", 7,
+    [ 6 ] ],
+   [
+    "Matthew", 8,
+    [ 30, 31, 32 ] ] ]
  }
 ];

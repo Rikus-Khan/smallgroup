@@ -5925,6 +5925,161 @@ window.STUDIES = [
     }
   },
   {
+    "id": "matthew-06",
+    "type": "chapter",
+    "book": "Matthew",
+    "ch": 6,
+    "date": "2026-10-29",
+    "title": "Matthew 6",
+    "sub": "Thy Father which seeth in secret",
+    "about": "Jesus teaches us to give, pray, and fast for God's eyes alone, to store treasure in heaven, and to stop worrying about tomorrow.",
+    "tags": [
+      "Motives",
+      "Prayer",
+      "Temptation",
+      "Forgiveness",
+      "Treasure",
+      "Worry"
+    ],
+    "url": "studies/matthew-06.html",
+    "overview": {
+      "where": "On a mountain in Galilee near Capernaum, in the middle of the Sermon on the Mount",
+      "when": "Early in Jesus' ministry, about AD 28",
+      "people": [
+        "jesus",
+        "disciples",
+        "the-father",
+        "hypocrites",
+        "heathen",
+        "gentiles",
+        "solomon"
+      ],
+      "places": [
+        "the-mountain",
+        "capernaum",
+        "synagogue",
+        "closet",
+        "heaven"
+      ],
+      "story": [
+        "Don't give, pray, or fast to be seen by men. Their applause is the whole reward; the Father who sees in secret rewards openly (1–6, 16–18).",
+        "Pray simply, without vain repetitions. Jesus gives the pattern: “Our Father which art in heaven” (7–13).",
+        "Forgive others, as we ask God to forgive us (14–15).",
+        "Lay up treasure in heaven, keep a single eye, and serve one master: “Ye cannot serve God and mammon” (19–24).",
+        "Take no thought for food or clothes. The Father feeds the birds and dresses the lilies. Seek His kingdom first, and live one day at a time (25–34)."
+      ],
+      "big": "The Christian life is lived before the Father's eyes. He sees what's done in secret, forgives the forgiving, and knows what we need, so we can stop performing, stop hoarding, and stop worrying.",
+      "key": {
+        "ref": "Matthew 6:33",
+        "text": "But seek ye first the kingdom of God, and his righteousness; and all these things shall be added unto you."
+      }
+    }
+  },
+  {
+    "id": "matthew-07",
+    "type": "chapter",
+    "book": "Matthew",
+    "ch": 7,
+    "date": "2026-10-29",
+    "title": "Matthew 7",
+    "sub": "Upon a rock",
+    "about": "Jesus ends the Sermon on the Mount with a choice: two gates, two trees, two kinds of followers, and two houses in the same storm.",
+    "tags": [
+      "Judging",
+      "Prayer",
+      "The golden rule",
+      "The narrow way",
+      "False prophets",
+      "Foundation"
+    ],
+    "url": "studies/matthew-07.html",
+    "overview": {
+      "where": "The mountain near Capernaum, at the end of the Sermon on the Mount",
+      "when": "Early in Jesus' ministry, about AD 28",
+      "people": [
+        "jesus",
+        "the-father",
+        "hypocrites",
+        "false-prophets",
+        "scribes"
+      ],
+      "places": [
+        "the-mountain",
+        "capernaum",
+        "heaven"
+      ],
+      "story": [
+        "Judge not: get the beam out of your own eye before the mote in your brother's. Don't cast pearls before swine (1–6).",
+        "Ask, seek, knock. If sinful fathers give good gifts, how much more the Father in heaven. Do to others what you'd want done to you (7–12).",
+        "Enter the strait gate. Many take the broad way to destruction; few find the narrow way to life (13–14).",
+        "Beware of false prophets; you'll know them by their fruits. Not everyone who says “Lord, Lord” enters; to some He'll say, “I never knew you” (15–23).",
+        "The wise man hears and does, and his house on the rock stands; the foolish man's house on the sand falls. The people are astonished at His authority (24–29)."
+      ],
+      "big": "Hearing Jesus isn't enough. The way to life is narrow and runs through Him alone, and the life built on Him, hearing and doing His words, stands when the storm comes.",
+      "key": {
+        "ref": "Matthew 7:24",
+        "text": "Therefore whosoever heareth these sayings of mine, and doeth them, I will liken him unto a wise man, which built his house upon a rock:"
+      }
+    }
+  },
+  {
+    "id": "matthew-08",
+    "type": "chapter",
+    "book": "Matthew",
+    "ch": 8,
+    "date": "2026-10-29",
+    "title": "Matthew 8",
+    "sub": "What manner of man is this?",
+    "about": "Jesus comes down the mountain and shows His authority over leprosy, sickness, the wind and the sea, and demons.",
+    "tags": [
+      "Compassion",
+      "Faith",
+      "Prophecy fulfilled",
+      "Following",
+      "Storms",
+      "Freedom"
+    ],
+    "url": "studies/matthew-08.html",
+    "overview": {
+      "where": "Capernaum, the Sea of Galilee, and the country of the Gergesenes on the east shore",
+      "when": "Early in Jesus' ministry, about AD 28",
+      "people": [
+        "jesus",
+        "the-leper",
+        "centurion",
+        "simon-peter",
+        "simons-wifes-mother",
+        "isaiah",
+        "scribes",
+        "disciples",
+        "abraham",
+        "isaac",
+        "jacob",
+        "moses"
+      ],
+      "places": [
+        "the-mountain",
+        "capernaum",
+        "israel",
+        "gergesenes",
+        "tombs"
+      ],
+      "story": [
+        "Coming down the mountain, Jesus touches a leper and makes him clean (1–4).",
+        "A Roman centurion asks Jesus only to speak the word. Jesus marvels at his faith, and the servant is healed that same hour (5–13).",
+        "Jesus heals Peter's wife's mother and many more that evening, fulfilling Isaiah: “Himself took our infirmities” (14–17).",
+        "Two would-be followers learn the cost: the Son of man has nowhere to lay His head, and He comes first (18–22).",
+        "Jesus sleeps through a great tempest, then rebukes the wind and the sea: “What manner of man is this” (23–27).",
+        "Among the tombs of the Gergesenes, He sends the devils out of two men into a herd of swine, and the city begs Him to leave (28–34)."
+      ],
+      "big": "Jesus has authority over sickness, nature, and demons, and He uses it with compassion. No one is too unclean, too foreign, or too far gone for His word and His touch.",
+      "key": {
+        "ref": "Matthew 8:27",
+        "text": "But the men marvelled, saying, What manner of man is this, that even the winds and the sea obey him!"
+      }
+    }
+  },
+  {
     "id": "matthew-09",
     "type": "chapter",
     "book": "Matthew",

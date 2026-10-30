@@ -217,7 +217,24 @@
     s.querySelector(".inner").scrollTop = 0;
     s.classList.add("active");
     s.removeAttribute("aria-hidden");
+    fit(s);
     render();
+  }
+  // On a wide screen (the shared screen), a slide too tall for the window shrinks to fit, down to 70%,
+  // so nothing hides below the controls. Steps keep their space while hidden, so this holds for every step.
+  // Phones keep their normal size and scroll instead.
+  function fit(s) {
+    const inner = s.querySelector(".inner");
+    if (!inner) return;
+    inner.style.zoom = inner.style.maxHeight = "";
+    if (innerWidth < 700) return;
+    const cs = getComputedStyle(s);
+    const room = s.clientHeight - parseFloat(cs.paddingTop) - parseFloat(cs.paddingBottom);
+    const tall = inner.scrollHeight;
+    if (tall <= room + 2) return;
+    const z = Math.max(.7, room / tall);
+    inner.style.zoom = z.toFixed(3);
+    inner.style.maxHeight = (room / z).toFixed(1) + "px";   // lengths inside a zoomed box are scaled by the zoom
   }
   function next() {
     const st = stepsOf(slides[i]);
@@ -292,7 +309,13 @@
   const atVerse = verse ? slides.findIndex(s => s.dataset.v && range(s.dataset.v).includes(Number(verse[1]))) : -1;
   const fromHash = parseInt(location.hash.slice(1), 10);
   go(atVerse >= 0 ? atVerse : Number.isFinite(fromHash) ? Math.min(Math.max(fromHash - 1, 0), slides.length - 1) : 0);
+  // refit when the window changes, the web fonts arrive, or the look changes the type
+  let fitQueued = false;
+  const refit = () => { if (fitQueued) return; fitQueued = true; requestAnimationFrame(() => { fitQueued = false; fit(slides[i]); }); };
+  addEventListener("resize", refit);
+  document.fonts?.ready.then(refit);
+  new MutationObserver(refit).observe(root, { attributes: true, attributeFilter: ["data-theme"] });
 
   // For testing and for pages that need it
-  window.Deck = { go, next, prev, get index() { return i; }, get step() { return step; }, get slides() { return slides; }, themes: THEMES, applyTheme };
+  window.Deck = { go, next, prev, fit, get index() { return i; }, get step() { return step; }, get slides() { return slides; }, themes: THEMES, applyTheme };
 })();

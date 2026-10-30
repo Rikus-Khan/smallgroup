@@ -1,0 +1,641 @@
+<!doctype html>
+<html lang="en" data-theme="slate">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Matthew 6</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="../assets/fonts.css">
+<link rel="stylesheet" href="../assets/deck.css">
+<link rel="stylesheet" href="../assets/themes.css">
+<style>
+/* mt06-receipt: "They have their reward": a receipt from men, stamped paid in full */
+.mt06-receipt { position: relative; max-width: 34rem; margin: .4em 0 1em; padding: .8em 1.1em 3.3em; background: var(--surface); border: 1.5px dashed var(--line-strong); border-radius: 6px; font-size: clamp(.95rem, .86rem + .45vw, 1.2rem); }
+.mt06-receipt h3 { font: 700 .78em var(--sans); letter-spacing: .12em; text-transform: uppercase; color: var(--ink-soft); margin-bottom: .45em; }
+.mt06-receipt ul { list-style: none; padding: 0; margin: 0; }
+.mt06-receipt li { display: flex; justify-content: space-between; gap: 1em; padding: .28em 0; border-bottom: 1px dotted var(--line-strong); }
+.mt06-receipt li span:last-child { color: var(--accent-hot); font-style: italic; text-align: right; }
+.mt06-paid { position: absolute; right: 1rem; bottom: .55rem; padding: .12em .5em; border: 3px solid var(--danger); border-radius: 6px; color: var(--danger); font: 800 clamp(1.05rem, .9rem + .9vw, 1.6rem) var(--sans); letter-spacing: .08em; text-align: center; line-height: 1.1;
+  transform: rotate(-9deg) scale(2.3); opacity: 0; transition: transform .45s cubic-bezier(.3,1.6,.5,1), opacity .3s ease; }
+.mt06-paid small { display: block; font: 700 .5em var(--sans); letter-spacing: .1em; }
+.mt06-paid.on { transform: rotate(-9deg) scale(1); opacity: .92; }
+
+/* mt06-wear: moth, rust, and thieves get at every treasure on earth */
+.mt06-wear { display: grid; grid-template-columns: repeat(3, 1fr); gap: .8rem; margin: .4em 0 1em; text-align: center; }
+.mt06-wear > div { padding: .6em .5em .7em; border-radius: 10px; background: var(--surface); border: 1px solid var(--line-strong); }
+.mt06-wear svg { width: min(100%, 8.5rem); height: auto; display: block; margin: 0 auto .35em; overflow: visible; }
+.mt06-wear b { display: block; font: 600 clamp(1rem, .9rem + .45vw, 1.3rem) var(--serif); }
+.mt06-wear span { display: block; font-size: clamp(.82rem, .76rem + .3vw, 1rem); color: var(--ink-soft); line-height: 1.3; }
+.mt06-robe { fill: var(--wine); }
+.mt06-hole { fill: var(--bg); opacity: 0; transform-box: fill-box; transform-origin: center; transform: scale(.2); transition: opacity .8s ease, transform .8s ease; transition-delay: calc(var(--k) * 350ms + 300ms); }
+.mt06-wear > .on .mt06-hole { opacity: 1; transform: none; }
+.mt06-coin { fill: var(--accent); stroke: var(--accent-hot); stroke-width: 2; transition: fill 2s ease .4s, stroke 2s ease .4s; }
+.mt06-wear > .on .mt06-coin { fill: var(--leather); stroke: var(--danger); }
+.mt06-spot { fill: var(--danger); opacity: 0; transition: opacity 1.6s ease 1s; }
+.mt06-wear > .on .mt06-spot { opacity: .8; }
+.mt06-brick { fill: var(--leather-light); stroke: var(--bg); stroke-width: 2; }
+.mt06-dig { fill: var(--on-glow); opacity: 0; transform-box: fill-box; transform-origin: center; transform: scale(.1); transition: opacity 1s ease .3s, transform 1.4s ease .3s; }
+.mt06-wear > .on .mt06-dig { opacity: 1; transform: none; }
+@media (max-width: 600px) { .mt06-wear span { display: none; } }
+
+/* mt06-field: lilies of the field swaying in the wind */
+.mt06-stem { stroke: var(--cool); stroke-width: 3; fill: none; stroke-linecap: round; }
+.mt06-petal { fill: var(--accent); }
+.mt06-heart { fill: var(--warm); }
+.mt06-leaf { fill: var(--cool); opacity: .7; }
+.mt06-lily { transform-box: fill-box; transform-origin: 50% 100%; }
+.slide.active .mt06-lily { animation: mt06-sway 3.4s ease-in-out infinite alternate; animation-delay: calc(var(--k) * -.6s); }
+@keyframes mt06-sway { from { transform: rotate(-5deg); } to { transform: rotate(5deg); } }
+.mt06-crown { fill: none; stroke: var(--accent-hot); stroke-width: 3; stroke-linejoin: round; }
+</style>
+</head>
+<body>
+<main class="deck" id="deck">
+
+<!-- ======================= OPENING ======================= -->
+<section class="slide title">
+  <div class="inner">
+    <div class="emblem rise"></div>
+    <h1 class="rise" style="--d:1">Matthew 6</h1>
+    <p class="sub rise" style="--d:3">Thy Father which seeth in secret</p>
+    <p class="tag rise" style="--d:5">Jesus teaches us to give, pray, and fast for God's eyes alone, to store our treasure in heaven, and to stop worrying about tomorrow.</p>
+  </div>
+</section>
+
+<section class="slide watch">
+  <div class="inner">
+    <h2 class="rise">Things to watch for</h2>
+    <p class="lede rise" style="--d:1">Keep these questions in the back of your mind as we read. We'll come back to every one of them at the end.</p>
+    <ol class="seeds">
+      <li class="step"><span class="topic">Motives</span><span class="seed-q">Who are we really doing it for when we give, pray, and fast?</span></li>
+      <li class="step"><span class="topic">Prayer</span><span class="seed-q">How did Jesus teach us to pray?</span></li>
+      <li class="step"><span class="topic">Temptation</span><span class="seed-q">What are we asking when we pray, “lead us not into temptation”?</span></li>
+      <li class="step"><span class="topic">Forgiveness</span><span class="seed-q">Why does Jesus tie being forgiven to forgiving others?</span></li>
+      <li class="step"><span class="topic">Treasure</span><span class="seed-q">Why can't a man serve God and mammon?</span></li>
+      <li class="step"><span class="topic">Worry</span><span class="seed-q">What does Jesus tell us to do with worry?</span></li>
+    </ol>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <div class="split">
+      <div class="stage">
+        <svg class="map" data-land viewBox="110 60 290 380" data-towns="Capernaum!:r, Nazareth:l, Jerusalem:l" role="img" aria-label="Map of the land in Jesus' day. Capernaum on the Sea of Galilee is lit, with the mountain of the sermon just above it. On a step, roads draw in from Jerusalem and Judaea in the south, from beyond Jordan in the east, and from the Decapolis, all meeting at the mountain.">
+          <text class="map-region" x="292" y="206" style="font-size:12px">DECAPOLIS</text>
+          <g>
+            <path class="map-route r1" pathLength="1" d="M202 380 C 214 300, 232 210, 256 126"/>
+            <path class="map-route r1" pathLength="1" d="M292 400 C 288 310, 280 210, 262 128"/>
+            <path class="map-route r1" pathLength="1" d="M326 196 C 306 170, 282 140, 264 126"/>
+          </g>
+          <g class="map-town here">
+            <path d="M246 120 L256 104 L266 120 Z" style="fill:var(--accent)"/>
+            <text x="270" y="106" style="font-size:16px">the mountain</text>
+          </g>
+        </svg>
+      </div>
+      <div>
+        <h2 class="rise" style="--d:1">Still on the mountain</h2>
+        <p class="note rise" style="--d:2"><b>Where:</b> a hillside in Galilee, near Capernaum on the north shore of the lake. Jesus <em>“went up into a mountain: and when he was set, his disciples came unto him”</em> (Matthew 5:1). Teachers sat down to teach.</p>
+        <p class="note rise" style="--d:3"><b>When:</b> early in His ministry, about AD 28. Rome rules the land, and Herod Antipas rules Galilee for Rome.</p>
+        <p class="note step map-go1"><b>Who's listening:</b> His disciples up close, and behind them <em>“great multitudes of people from Galilee, and from Decapolis, and from Jerusalem, and from Judaea, and from beyond Jordan”</em> (4:25). Jews and Gentiles, the religious and the broken, all on one hill.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise">The middle of the Sermon on the Mount</h2>
+    <p class="note rise" style="--d:1">Matthew 5, 6, and 7 are one sermon, the longest stretch of Jesus' teaching anywhere in the Bible. Today we're in the middle of it.</p>
+    <ol class="timeline">
+      <li style="--k:0"><b>5:1–12</b><span>“Blessed are…” the poor in spirit, the mourners, the meek</span></li>
+      <li style="--k:1"><b>5:13–48</b><span>Salt and light. “Ye have heard… But I say unto you”</span></li>
+      <li class="lit" style="--k:2"><b>6:1–18</b><span>In secret: giving, praying, fasting</span><small>today</small></li>
+      <li class="lit" style="--k:3"><b>6:19–34</b><span>Treasure, two masters, and worry</span><small>today</small></li>
+      <li style="--k:4"><b>7:1–29</b><span>Judging, asking, two gates, two houses</span></li>
+    </ol>
+    <p class="note step">In chapter 5 Jesus said our righteousness has to go deeper than the scribes' and Pharisees' (5:20). Now He shows what that looks like in three things every religious man did: giving to the poor, praying, and fasting. The question in all three is the same: <em>who are you doing it for?</em></p>
+  </div>
+</section>
+
+<!-- ======================= PART ONE: IN SECRET ======================= -->
+<section class="slide part">
+  <div class="inner">
+    <p class="part-n rise">Part one</p>
+    <h2 class="rise" style="--d:1">In secret</h2>
+    <p class="range rise" style="--d:2">Verses 1–18</p>
+    <div class="rule"></div>
+    <p class="hook rise" style="--d:4">Giving, praying, and fasting for an audience of One.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="1-4" data-hl="to be seen of them|do not sound a trumpet before thee|let not thy left hand know what thy right hand doeth"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="2" data-hl="as the hypocrites do"></blockquote>
+    <h2 class="rise" style="--d:1">A man behind a mask</h2>
+    <div class="morph">
+      <span class="big rise" style="--d:3">ὑποκριτής</span>
+      <span class="say step">said <em class="gk">hupokritēs</em></span>
+      <span class="means step">“a stage actor”</span>
+    </div>
+    <p class="note step">In Greek theaters an actor wore a mask and played a part. A hypocrite is a man playing a part. He gives, but the giving is a performance, and the crowd is his real audience.</p>
+    <p class="note step"><em>“Alms”</em> are gifts to the poor. Nobody knows if men literally blew trumpets. It may be a picture, like our “blowing your own horn.” And <em>“let not thy left hand know”</em> means: don't even keep score yourself. Give, and forget it.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="5-6" data-hl="that they may be seen of men|enter into thy closet|thy Father which seeth in secret"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="5" data-hl="They have their reward"></blockquote>
+    <h2 class="rise" style="--d:1">Paid in full</h2>
+    <p class="note rise" style="--d:2">The Greek word behind <em>“they have”</em> was written on business receipts. It meant <em>paid in full, nothing more owed</em>.</p>
+    <div class="mt06-receipt rise" style="--d:3">
+      <h3>Received from men</h3>
+      <ul>
+        <li><span>a trumpet in the street (v. 2)</span><span>applause</span></li>
+        <li><span>a prayer on the corner (v. 5)</span><span>admiration</span></li>
+        <li><span>a sad face for fasting (v. 16)</span><span>respect</span></li>
+        <li><span>from the Father</span><span>nothing more</span></li>
+      </ul>
+      <div class="mt06-paid step">PAID IN FULL<small>“they have their reward”</small></div>
+    </div>
+    <p class="note step">The <em>“closet”</em> was the inner storeroom of a house, often the only room with a door. Go in, shut the door, and talk to your Father. He sees you there. Nobody else has to.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="7-8" data-hl="use not vain repetitions|your Father knoweth what things ye have need of, before ye ask him"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="8" data-hl="your Father knoweth what things ye have need of"></blockquote>
+    <h2 class="rise" style="--d:1">Not more words, a better Father</h2>
+    <div class="columns">
+      <div class="col law rise" style="--d:2">
+        <p class="who">The heathen</p>
+        <h3>“Much speaking”</h3>
+        <p>They piled up words and names of gods, hoping that enough of them would finally get through. Prayer was a machine, and you had to work it hard.</p>
+      </div>
+      <div class="col grace step">
+        <p class="who">Your Father</p>
+        <h3>“Before ye ask”</h3>
+        <p>He already knows what you need. You don't have to talk Him into caring. You come to Him like a son to his dad.</p>
+      </div>
+    </div>
+    <p class="note step">Asking more than once isn't the problem. Jesus prayed the same words three times in the garden (Matthew 26:44). The problem is <em>empty</em> words said to impress God or anybody else. Short and honest beats long and hollow.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="9-10" data-hl="Our Father which art in heaven|Thy will be done in earth, as it is in heaven"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="9" data-hl="After this manner therefore pray ye"></blockquote>
+    <h2 class="rise" style="--d:1">The shape of the prayer</h2>
+    <p class="note rise" style="--d:2"><em>“After this manner”</em> means <em>like this</em>. It's a pattern to pray by, not only words to recite. It has six requests, and God comes first.</p>
+    <div class="match" style="--n:3" aria-label="First, three requests for God: hallowed be thy name, thy kingdom come, thy will be done. Then three for us: our daily bread, forgive us our debts, deliver us from evil.">
+      <div class="a rise" style="--d:3"><span class="tag">for God</span><span class="w">Hallowed be thy name</span><span class="w">Thy kingdom come</span><span class="w">Thy will be done</span></div>
+      <div class="step"><span></span><span class="link">then</span><span class="link">then</span><span class="link">then</span></div>
+      <div class="b step"><span class="tag">for us</span><span class="w">our daily bread</span><span class="w">forgive us our debts</span><span class="w">deliver us from evil</span></div>
+    </div>
+    <p class="note step"><em>“Hallowed”</em> means <em>treated as holy</em>. And it starts with <em>“Our Father.”</em> Everyone who has received Jesus can say that: <em>“as many as received him, to them gave he power to become the sons of God”</em> (John 1:12). Before you bring God your list, remember who you're talking to.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="11-13" data-hl="Give us this day our daily bread|forgive us our debts|lead us not into temptation, but deliver us from evil"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="11"></blockquote>
+    <h2 class="rise" style="--d:1">One day's bread</h2>
+    <p class="note rise" style="--d:2">Israel learned this in the wilderness. Manna couldn't be stored up. You gathered today's, and tomorrow there would be more.</p>
+    <blockquote class="quote step"><p>“Then said the LORD unto Moses, Behold, I will rain bread from heaven for you; and the people shall go out and gather a certain rate every day, that I may prove them, whether they will walk in my law, or no.”</p><cite>Exodus 16:4</cite></blockquote>
+    <p class="note step">Notice the three requests for us. <em>Bread</em> is today's need. <em>Debts</em> are yesterday's sins. <em>Temptation</em> is tomorrow's danger. Jesus taught us to bring all three to the Father.</p>
+    <p class="note step">God gives grace the same way He gave manna: enough for today. Don't try to carry next month's sobriety today. Ask for today's bread, and come back tomorrow.</p>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="13" data-hl="lead us not into temptation, but deliver us from evil"></blockquote>
+    <h2 class="rise" style="--d:1">Lead us not into temptation</h2>
+    <p class="note rise" style="--d:2">God never tempts anyone to sin (James 1:13). This is a man who knows his weakness, asking his Father to steer him:</p>
+    <div class="mirror">
+      <div class="step"><span>“Lead us not”</span><span class="arrow">→</span><span class="word">keep me away from it</span></div>
+      <div class="step"><span>“Deliver us”</span><span class="arrow">→</span><span class="word">get me out of it</span></div>
+    </div>
+    <blockquote class="quote step"><p>“There hath no temptation taken you but such as is common to man: but God is faithful, who will not suffer you to be tempted above that ye are able; but will with the temptation also make a way to escape, that ye may be able to bear it.”</p><cite>1 Corinthians 10:13</cite></blockquote>
+    <p class="note step">Then live like you meant it. A man who prays “lead me not” and then drives past the old bar is praying one way and walking another.</p>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="13" data-hl="For thine is the kingdom, and the power, and the glory, for ever"></blockquote>
+    <h2 class="rise" style="--d:1">It ends where it began</h2>
+    <p class="saying rise" style="--d:2">Thine is the <em>kingdom</em>, the <em>power</em>, and the <em>glory</em>.</p>
+    <p class="note rise" style="--d:3">The prayer starts with God's name and ends with God's glory. Our needs sit in the middle, held on both sides by who He is.</p>
+    <p class="note step">That's why we can ask with confidence. The kingdom is His, so He can give it. The power is His, so He can deliver. The glory is His, so we don't have to make ourselves look good. <em>“Amen”</em> means <em>so be it</em>, or <em>it's true</em>.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="14-15" data-hl="if ye forgive men their trespasses|if ye forgive not men their trespasses"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="12"></blockquote>
+    <h2 class="rise" style="--d:1">Forgiven men forgive</h2>
+    <div class="ifthen step">
+      <div class="if"><small>If</small>ye forgive men</div>
+      <span class="arrow" aria-hidden="true">→</span>
+      <div class="then"><small>then</small>your Father will forgive you</div>
+    </div>
+    <div class="ifthen step">
+      <div class="if"><small>If</small>ye forgive not</div>
+      <span class="arrow" aria-hidden="true">→</span>
+      <div class="then"><small>then</small>neither will your Father</div>
+    </div>
+    <p class="note step">This isn't earning heaven; salvation is a gift received by faith. He's talking to sons about walking with their Father. You can't hold a grudge and close fellowship with God at once.</p>
+    <blockquote class="quote step"><p>“And be ye kind one to another, tenderhearted, forgiving one another, even as God for Christ’s sake hath forgiven you.”</p><cite>Ephesians 4:32</cite></blockquote>
+    <p class="note step">Resentment is poison for a man in recovery. Forgiving doesn't say it was fine. It hands the debt to God.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="16-18" data-hl="be not, as the hypocrites, of a sad countenance|anoint thine head, and wash thy face"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="17"></blockquote>
+    <h2 class="rise" style="--d:1">Fasting with a clean face</h2>
+    <p class="note rise" style="--d:2">To <em>fast</em> is to go without food for a time to seek God. Some Pharisees fasted twice a week, and made sure people noticed: <em>“I fast twice in the week, I give tithes of all that I possess”</em> (Luke 18:12). <em>“Disfigure their faces”</em> means they looked rough on purpose.</p>
+    <p class="note step">Jesus says, <em>“when ye fast,”</em> not “if.” But fix your hair and wash your face. Olive oil on the head was everyday grooming. Look normal, and let it stay between you and God.</p>
+    <div class="sort">
+      <div class="step"><h3>Giving</h3><div class="vs"><b>2</b><b>3</b><b>4</b></div><p>Not with a trumpet, but so quietly your left hand doesn't know.</p></div>
+      <div class="step"><h3>Praying</h3><div class="vs"><b>5</b><b>6</b></div><p>Not on the street corner, but behind a shut door.</p></div>
+      <div class="step"><h3>Fasting</h3><div class="vs"><b>16</b><b>17</b><b>18</b></div><p>Not with a sad face, but with a washed one.</p></div>
+    </div>
+    <p class="note step">Three times the same promise: <em>“thy Father which seeth in secret shall reward thee openly.”</em> What you do for Him alone is never wasted.</p>
+  </div>
+</section>
+
+<!-- ======================= PART TWO: TREASURE ======================= -->
+<section class="slide part">
+  <div class="inner">
+    <p class="part-n rise">Part two</p>
+    <h2 class="rise" style="--d:1">Treasure in heaven</h2>
+    <p class="range rise" style="--d:2">Verses 19–24</p>
+    <div class="rule"></div>
+    <p class="hook rise" style="--d:4">Where your treasure is, your heart follows. And it can only follow one master.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="19-21" data-hl="where moth and rust doth corrupt|treasures in heaven|where your treasure is, there will your heart be also"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="19"></blockquote>
+    <h2 class="rise" style="--d:1">Everything down here wears out</h2>
+    <p class="note rise" style="--d:2">In Jesus' day, wealth was kept in fine clothes, in coins, and in what you could store at home. Each one had an enemy:</p>
+    <div class="mt06-wear">
+      <div class="step">
+        <svg viewBox="0 0 120 100" aria-hidden="true">
+          <path class="mt06-robe" d="M38 8 L82 8 L104 30 L92 40 L86 34 L88 94 L32 94 L34 34 L28 40 L16 30 Z"/>
+          <circle class="mt06-hole" style="--k:0" cx="52" cy="48" r="5"/><circle class="mt06-hole" style="--k:1" cx="70" cy="66" r="7"/>
+          <circle class="mt06-hole" style="--k:2" cx="48" cy="80" r="4"/><circle class="mt06-hole" style="--k:3" cx="76" cy="40" r="3.5"/>
+        </svg>
+        <b>Moth</b><span>eats the fine robes</span>
+      </div>
+      <div class="step">
+        <svg viewBox="0 0 120 100" aria-hidden="true">
+          <circle class="mt06-coin" cx="40" cy="62" r="20"/><circle class="mt06-coin" cx="80" cy="62" r="20"/><circle class="mt06-coin" cx="60" cy="36" r="20"/>
+          <circle class="mt06-spot" cx="52" cy="30" r="5"/><circle class="mt06-spot" cx="86" cy="68" r="6"/><circle class="mt06-spot" cx="34" cy="58" r="4"/>
+        </svg>
+        <b>Rust</b><span>eats away the metal</span>
+      </div>
+      <div class="step">
+        <svg viewBox="0 0 120 100" aria-hidden="true">
+          <rect class="mt06-brick" x="10" y="10" width="34" height="18"/><rect class="mt06-brick" x="44" y="10" width="34" height="18"/><rect class="mt06-brick" x="78" y="10" width="34" height="18"/>
+          <rect class="mt06-brick" x="0" y="28" width="30" height="18"/><rect class="mt06-brick" x="30" y="28" width="34" height="18"/><rect class="mt06-brick" x="64" y="28" width="34" height="18"/><rect class="mt06-brick" x="98" y="28" width="22" height="18"/>
+          <rect class="mt06-brick" x="10" y="46" width="34" height="18"/><rect class="mt06-brick" x="44" y="46" width="34" height="18"/><rect class="mt06-brick" x="78" y="46" width="34" height="18"/>
+          <rect class="mt06-brick" x="0" y="64" width="30" height="18"/><rect class="mt06-brick" x="30" y="64" width="34" height="18"/><rect class="mt06-brick" x="64" y="64" width="34" height="18"/><rect class="mt06-brick" x="98" y="64" width="22" height="18"/>
+          <ellipse class="mt06-dig" cx="60" cy="60" rx="22" ry="24"/>
+        </svg>
+        <b>Thieves</b><span>“break through” a mud-brick wall</span>
+      </div>
+    </div>
+    <p class="note step">Houses were often mud brick. A thief didn't pick the lock. He dug through the wall. Jesus isn't saying it's wrong to own things. He's saying they won't last, and they'll own your heart if you let them: <em>“where your treasure is, there will your heart be also.”</em></p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="22-24" data-hl="if therefore thine eye be single|No man can serve two masters|Ye cannot serve God and mammon"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="24" data-hl="Ye cannot serve God and mammon"></blockquote>
+    <div class="split">
+      <div class="stage">
+        <svg class="scale" style="--at:300px 70px; --arm:220; --from:0deg; --tip:-12deg; --wait:.3s" viewBox="0 0 600 300" role="img" aria-label="A balance with God on one side and mammon on the other. It can't stay level: it tips to one side.">
+          <rect x="292" y="70" width="16" height="190" rx="3" style="fill:var(--line-strong)"/>
+          <path d="M230 270 L370 270 L340 252 L260 252 Z" style="fill:var(--surface-2);stroke:var(--ink-soft)" stroke-width="2"/>
+          <g class="scale-beam">
+            <rect x="70" y="64" width="460" height="12" rx="5" style="fill:var(--line-strong)"/>
+            <circle cx="300" cy="70" r="11" style="fill:var(--accent)"/>
+          </g>
+          <g class="scale-pan l">
+            <g stroke-width="2" style="stroke:var(--ink-soft)"><line x1="80" y1="70" x2="30" y2="180"/><line x1="80" y1="70" x2="130" y2="180"/></g>
+            <path d="M20 180 L140 180 Q130 210 80 210 Q30 210 20 180 Z" style="fill:var(--surface-2);stroke:var(--accent)" stroke-width="2"/>
+            <circle cx="80" cy="160" r="16" style="fill:var(--accent-hot)"/>
+            <circle cx="80" cy="160" r="27" style="fill:var(--accent)" opacity=".25"/>
+            <text x="80" y="242" text-anchor="middle" font-size="22" font-weight="700" style="fill:var(--accent-hot)">God</text>
+          </g>
+          <g class="scale-pan r">
+            <g stroke-width="2" style="stroke:var(--ink-soft)"><line x1="520" y1="70" x2="470" y2="180"/><line x1="520" y1="70" x2="570" y2="180"/></g>
+            <path d="M460 180 L580 180 Q570 210 520 210 Q470 210 460 180 Z" style="fill:var(--surface-2);stroke:var(--ink-soft)" stroke-width="2"/>
+            <ellipse cx="502" cy="172" rx="16" ry="6" style="fill:var(--warm)"/><ellipse cx="536" cy="172" rx="16" ry="6" style="fill:var(--warm)"/><ellipse cx="519" cy="164" rx="16" ry="6" style="fill:var(--warm)"/>
+            <text x="520" y="242" text-anchor="middle" font-size="22" font-weight="700" style="fill:var(--ink-soft)">mammon</text>
+          </g>
+        </svg>
+      </div>
+      <div>
+        <h2 class="rise" style="--d:1">Only one master</h2>
+        <p class="note rise" style="--d:2"><em>“Mammon”</em> is an Aramaic word for money and possessions. Jesus talks about it like a person, a master that wants to own you.</p>
+        <p class="note step scale-go">A slave can't belong to two owners. Sooner or later one wins. You can't keep it level: <em>“he will hold to the one, and despise the other.”</em></p>
+        <p class="note step">The <em>“single”</em> eye is a clear, undivided one, fixed on one thing. In Proverbs, an <em>“evil eye”</em> is a stingy, grasping one (Proverbs 23:6, 28:22). What a man stares at fills him, with light or with darkness.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ======================= PART THREE: TAKE NO THOUGHT ======================= -->
+<section class="slide part">
+  <div class="inner">
+    <p class="part-n rise">Part three</p>
+    <h2 class="rise" style="--d:1">Take no thought</h2>
+    <p class="range rise" style="--d:2">Verses 25–34</p>
+    <div class="rule"></div>
+    <p class="hook rise" style="--d:4">Birds, wildflowers, and a Father who knows what you need.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="25-27" data-hl="Take no thought for your life|Behold the fowls of the air|Are ye not much better than they?"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="27"></blockquote>
+    <h2 class="rise" style="--d:1">What worry adds</h2>
+    <p class="note rise" style="--d:2">In 1611, <em>“take thought”</em> meant <em>to be anxious, to worry</em>. Jesus isn't against planning. He's against the gnawing fear that eats a man alive. <em>“Meat”</em> is food, and <em>“raiment”</em> is clothing.</p>
+    <div class="math">
+      <div class="step"><b>one long night</b><span>lying awake, worrying</span></div>
+      <div class="step"><b>+ 0 cubits</b><span>a cubit is about 18 inches</span></div>
+      <div class="step"><b>+ 0 days</b><span>the word can also mean length of life</span></div>
+    </div>
+    <p class="note step">Birds don't plant, harvest, or build barns, and they eat every day. They work for it, but they don't worry about it. Your Father feeds them. <em>“Are ye not much better than they?”</em> You matter more to God than every bird in the sky.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="28-30" data-hl="Consider the lilies of the field|even Solomon in all his glory|O ye of little faith"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="29"></blockquote>
+    <div class="split">
+      <div class="stage">
+        <svg viewBox="0 0 400 260" role="img" aria-label="Wildflowers sway in the wind on a hillside. A small king's crown sits off to one side.">
+          <path d="M0 230 Q100 200 200 220 T400 214 V260 H0 Z" style="fill:color-mix(in srgb, var(--cool) 22%, transparent)"/>
+          <g class="mt06-lily" style="--k:0"><path class="mt06-stem" d="M60 232 Q56 180 64 140"/><path class="mt06-leaf" d="M60 200 Q40 190 36 172 Q54 178 60 200 Z"/><g transform="translate(64 132)"><ellipse class="mt06-petal" rx="8" ry="18" transform="rotate(0)"/><ellipse class="mt06-petal" rx="8" ry="18" transform="rotate(60)"/><ellipse class="mt06-petal" rx="8" ry="18" transform="rotate(120)"/><circle class="mt06-heart" r="6"/></g></g>
+          <g class="mt06-lily" style="--k:1"><path class="mt06-stem" d="M120 228 Q124 170 116 112"/><path class="mt06-leaf" d="M121 190 Q142 182 146 162 Q126 170 121 190 Z"/><g transform="translate(116 104)"><ellipse class="mt06-petal" rx="9" ry="20"/><ellipse class="mt06-petal" rx="9" ry="20" transform="rotate(60)"/><ellipse class="mt06-petal" rx="9" ry="20" transform="rotate(120)"/><circle class="mt06-heart" r="7"/></g></g>
+          <g class="mt06-lily" style="--k:2"><path class="mt06-stem" d="M180 222 Q176 180 184 150"/><g transform="translate(184 142)"><ellipse class="mt06-petal" rx="7" ry="16"/><ellipse class="mt06-petal" rx="7" ry="16" transform="rotate(60)"/><ellipse class="mt06-petal" rx="7" ry="16" transform="rotate(120)"/><circle class="mt06-heart" r="5"/></g></g>
+          <g class="mt06-lily" style="--k:3"><path class="mt06-stem" d="M236 222 Q242 166 232 120"/><path class="mt06-leaf" d="M238 186 Q216 178 212 160 Q232 166 238 186 Z"/><g transform="translate(232 112)"><ellipse class="mt06-petal" rx="9" ry="20"/><ellipse class="mt06-petal" rx="9" ry="20" transform="rotate(60)"/><ellipse class="mt06-petal" rx="9" ry="20" transform="rotate(120)"/><circle class="mt06-heart" r="7"/></g></g>
+          <g class="mt06-lily" style="--k:4"><path class="mt06-stem" d="M292 220 Q288 182 296 156"/><g transform="translate(296 148)"><ellipse class="mt06-petal" rx="7" ry="16"/><ellipse class="mt06-petal" rx="7" ry="16" transform="rotate(60)"/><ellipse class="mt06-petal" rx="7" ry="16" transform="rotate(120)"/><circle class="mt06-heart" r="5"/></g></g>
+          <g class="step">
+            <path class="mt06-crown" d="M330 92 L336 62 L350 80 L362 56 L374 80 L388 62 L394 92 Z"/>
+            <text x="362" y="116" text-anchor="middle" font-size="15" style="fill:var(--ink-soft)">Solomon:</text>
+            <text x="362" y="134" text-anchor="middle" font-size="15" style="fill:var(--ink-soft)">outdressed</text>
+          </g>
+        </svg>
+      </div>
+      <div>
+        <h2 class="rise" style="--d:1">Dressed by God</h2>
+        <p class="note rise" style="--d:2">The <em>“lilies of the field”</em> were the wildflowers that cover Galilee's hills in spring. Nobody planted them. Nobody sewed them anything to wear.</p>
+        <p class="note step">Solomon was the richest king Israel ever had. Jesus says one wildflower was better dressed than he was.</p>
+        <p class="note step">And that flower is gone in a few days. Dry grass was burned to heat the clay <em>“oven.”</em> If God dresses something that short-lived that well, <em>“shall he not much more clothe you”</em>?</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="slide verse" data-v="31-33" data-hl="your heavenly Father knoweth that ye have need of all these things|But seek ye first the kingdom of God, and his righteousness"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="33"></blockquote>
+    <h2 class="rise" style="--d:1">First things first</h2>
+    <div class="ifthen step">
+      <div class="if"><small>If</small>you seek first the kingdom of God, and His righteousness,</div>
+      <span class="arrow" aria-hidden="true">→</span>
+      <div class="then"><small>then</small>“all these things shall be added”</div>
+    </div>
+    <p class="note step"><em>“All these things”</em> means what He just named: food, drink, and clothes. It's a promise to supply what we need, not a promise to make us rich. Jesus Himself had <em>“not where to lay his head”</em> (Matthew 8:20).</p>
+    <p class="note step"><em>“Gentiles”</em> here means people who don't know God. They chase these things because they have no Father to trust. You do. Put Him first, and let Him handle the rest.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="34" data-hl="Sufficient unto the day is the evil thereof"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="34" data-hl="Take therefore no thought for the morrow"></blockquote>
+    <h2 class="rise" style="--d:1">One day at a time</h2>
+    <ol class="timeline">
+      <li style="--k:0"><b>Yesterday</b><span>forgiven: “forgive us our debts”</span></li>
+      <li class="lit" style="--k:1"><b>Today</b><span>“Give us this day our daily bread”</span><small>live here</small></li>
+      <li class="wait" style="--k:2"><b>Tomorrow</b><span>in His hands: “lead us not into temptation”</span></li>
+    </ol>
+    <p class="note step"><em>“Sufficient unto the day is the evil thereof”</em> means <em>each day has enough trouble of its own</em>. Don't borrow tomorrow's. Most of us have wrecked a good today by living in a bad tomorrow that never came.</p>
+    <blockquote class="quote step"><p>“It is of the LORD’S mercies that we are not consumed, because his compassions fail not. They are new every morning: great is thy faithfulness.”</p><cite>Lamentations 3:22–23</cite></blockquote>
+  </div>
+</section>
+
+<!-- ======================= CLOSING ======================= -->
+<section class="slide remember">
+  <div class="inner">
+    <h2 class="rise">Points to remember</h2>
+    <ol class="seeds">
+      <li class="step"><span class="topic">Motives</span><span class="seed-q">“Thy Father which seeth in secret” <cite>6:4</cite></span><span class="take">Do it for God's eyes. Applause from men is the whole payment; the Father's reward lasts.</span></li>
+      <li class="step"><span class="topic">Prayer</span><span class="seed-q">“After this manner therefore pray ye” <cite>6:9</cite></span><span class="take">Talk to your Father. Put His name, kingdom, and will first, then bring Him your needs.</span></li>
+      <li class="step"><span class="topic">Temptation</span><span class="seed-q">“Lead us not into temptation” <cite>6:13</cite></span><span class="take">Ask Him to keep you away from it and get you out of it. Then take the way of escape.</span></li>
+      <li class="step"><span class="topic">Forgiveness</span><span class="seed-q">“Forgive us our debts, as we forgive our debtors” <cite>6:12</cite></span><span class="take">A man who knows how much he's been forgiven learns to let others off the hook.</span></li>
+      <li class="step"><span class="topic">Treasure</span><span class="seed-q">“Ye cannot serve God and mammon” <cite>6:24</cite></span><span class="take">Your heart follows your treasure, and it can only have one master.</span></li>
+      <li class="step"><span class="topic">Worry</span><span class="seed-q">“Seek ye first the kingdom of God” <cite>6:33</cite></span><span class="take">Your Father knows what you need. Put Him first and live one day at a time.</span></li>
+    </ol>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 1 of 6</p>
+      <span class="topic">Motives</span>
+      <h2>Who are we really doing it for when we give, pray, and fast?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="1"></blockquote>
+      <blockquote class="quote step" data-q="4"></blockquote>
+      <blockquote class="quote step" data-q="6"></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>For our Father, who sees in secret. If we do it to be seen by men, their applause is the whole payment. If we do it for Him alone, He sees every hidden gift, prayer, and fast, and He rewards it.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 2 of 6</p>
+      <span class="topic">Prayer</span>
+      <h2>How did Jesus teach us to pray?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="8" data-hl="your Father knoweth what things ye have need of"></blockquote>
+      <blockquote class="quote step" data-q="9"></blockquote>
+      <blockquote class="quote step" data-q="10"></blockquote>
+      <blockquote class="quote step" data-q="11"></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>Simply and honestly, as sons talking to a Father who already knows what we need. Start with Him: His name, His kingdom, His will. Then ask for today's bread, forgiveness for yesterday, and protection for tomorrow, and end with His glory.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 3 of 6</p>
+      <span class="topic">Temptation</span>
+      <h2>What are we asking when we pray, “lead us not into temptation”?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="13" data-hl="lead us not into temptation, but deliver us from evil"></blockquote>
+      <blockquote class="quote step"><p>“Let no man say when he is tempted, I am tempted of God: for God cannot be tempted with evil, neither tempteth he any man:”</p><cite>James 1:13</cite></blockquote>
+      <blockquote class="quote step"><p>“There hath no temptation taken you but such as is common to man: but God is faithful, who will not suffer you to be tempted above that ye are able; but will with the temptation also make a way to escape, that ye may be able to bear it.”</p><cite>1 Corinthians 10:13</cite></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>God never tempts us to sin. We're admitting we're weak and asking our Father to steer us away from temptation, and to rescue us from evil when we're in it. He is faithful, and He always provides a way of escape. Our part is to take it.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 4 of 6</p>
+      <span class="topic">Forgiveness</span>
+      <h2>Why does Jesus tie being forgiven to forgiving others?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="12"></blockquote>
+      <blockquote class="quote step" data-q="14"></blockquote>
+      <blockquote class="quote step" data-q="15"></blockquote>
+      <blockquote class="quote step"><p>“And be ye kind one to another, tenderhearted, forgiving one another, even as God for Christ’s sake hath forgiven you.”</p><cite>Ephesians 4:32</cite></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>We don't earn salvation by forgiving; it's a gift received by faith. But a son who refuses to forgive can't walk close with his Father. God forgave us a debt we could never pay, so we forgive as we've been forgiven. Holding a grudge only keeps us chained to it.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 5 of 6</p>
+      <span class="topic">Treasure</span>
+      <h2>Why can't a man serve God and mammon?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="19"></blockquote>
+      <blockquote class="quote step" data-q="21"></blockquote>
+      <blockquote class="quote step" data-q="24"></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>Because a master wants all of you. Money and things can't last, and they'll still take over your heart if you let them. A man ends up loving one and despising the other. Treasure laid up in heaven is safe, and it keeps your heart pointed at God.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 6 of 6</p>
+      <span class="topic">Worry</span>
+      <h2>What does Jesus tell us to do with worry?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="32" data-hl="your heavenly Father knoweth that ye have need of all these things"></blockquote>
+      <blockquote class="quote step" data-q="33"></blockquote>
+      <blockquote class="quote step" data-q="34"></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>Stop carrying it. Worry adds nothing to our lives. Our Father feeds the birds and dresses the flowers, and He knows what we need. Seek His kingdom first, trust Him for the rest, and live today, not tomorrow.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide prayer">
+  <div class="inner">
+    <div class="emblem rise"></div>
+    <h2 class="rise" style="--d:1">Prayer requests</h2>
+    <p class="ask-line rise" style="--d:2">What can we pray about for you today?</p>
+    <blockquote class="quote rise" style="--d:4"><p>“Be careful for nothing; but in every thing by prayer and supplication with thanksgiving let your requests be made known unto God.”</p><cite>Philippians 4:6</cite></blockquote>
+  </div>
+</section>
+
+</main>
+
+<script>
+// King James Version, Matthew chapter 6
+const V = {
+  1: "Take heed that ye do not your alms before men, to be seen of them: otherwise ye have no reward of your Father which is in heaven.",
+  2: "Therefore when thou doest thine alms, do not sound a trumpet before thee, as the hypocrites do in the synagogues and in the streets, that they may have glory of men. Verily I say unto you, They have their reward.",
+  3: "But when thou doest alms, let not thy left hand know what thy right hand doeth:",
+  4: "That thine alms may be in secret: and thy Father which seeth in secret himself shall reward thee openly.",
+  5: "And when thou prayest, thou shalt not be as the hypocrites are: for they love to pray standing in the synagogues and in the corners of the streets, that they may be seen of men. Verily I say unto you, They have their reward.",
+  6: "But thou, when thou prayest, enter into thy closet, and when thou hast shut thy door, pray to thy Father which is in secret; and thy Father which seeth in secret shall reward thee openly.",
+  7: "But when ye pray, use not vain repetitions, as the heathen do: for they think that they shall be heard for their much speaking.",
+  8: "Be not ye therefore like unto them: for your Father knoweth what things ye have need of, before ye ask him.",
+  9: "After this manner therefore pray ye: Our Father which art in heaven, Hallowed be thy name.",
+  10: "Thy kingdom come. Thy will be done in earth, as it is in heaven.",
+  11: "Give us this day our daily bread.",
+  12: "And forgive us our debts, as we forgive our debtors.",
+  13: "And lead us not into temptation, but deliver us from evil: For thine is the kingdom, and the power, and the glory, for ever. Amen.",
+  14: "For if ye forgive men their trespasses, your heavenly Father will also forgive you:",
+  15: "But if ye forgive not men their trespasses, neither will your Father forgive your trespasses.",
+  16: "Moreover when ye fast, be not, as the hypocrites, of a sad countenance: for they disfigure their faces, that they may appear unto men to fast. Verily I say unto you, They have their reward.",
+  17: "But thou, when thou fastest, anoint thine head, and wash thy face;",
+  18: "That thou appear not unto men to fast, but unto thy Father which is in secret: and thy Father, which seeth in secret, shall reward thee openly.",
+  19: "Lay not up for yourselves treasures upon earth, where moth and rust doth corrupt, and where thieves break through and steal:",
+  20: "But lay up for yourselves treasures in heaven, where neither moth nor rust doth corrupt, and where thieves do not break through nor steal:",
+  21: "For where your treasure is, there will your heart be also.",
+  22: "The light of the body is the eye: if therefore thine eye be single, thy whole body shall be full of light.",
+  23: "But if thine eye be evil, thy whole body shall be full of darkness. If therefore the light that is in thee be darkness, how great is that darkness!",
+  24: "No man can serve two masters: for either he will hate the one, and love the other; or else he will hold to the one, and despise the other. Ye cannot serve God and mammon.",
+  25: "Therefore I say unto you, Take no thought for your life, what ye shall eat, or what ye shall drink; nor yet for your body, what ye shall put on. Is not the life more than meat, and the body than raiment?",
+  26: "Behold the fowls of the air: for they sow not, neither do they reap, nor gather into barns; yet your heavenly Father feedeth them. Are ye not much better than they?",
+  27: "Which of you by taking thought can add one cubit unto his stature?",
+  28: "And why take ye thought for raiment? Consider the lilies of the field, how they grow; they toil not, neither do they spin:",
+  29: "And yet I say unto you, That even Solomon in all his glory was not arrayed like one of these.",
+  30: "Wherefore, if God so clothe the grass of the field, which to day is, and to morrow is cast into the oven, shall he not much more clothe you, O ye of little faith?",
+  31: "Therefore take no thought, saying, What shall we eat? or, What shall we drink? or, Wherewithal shall we be clothed?",
+  32: "(For after all these things do the Gentiles seek:) for your heavenly Father knoweth that ye have need of all these things.",
+  33: "But seek ye first the kingdom of God, and his righteousness; and all these things shall be added unto you.",
+  34: "Take therefore no thought for the morrow: for the morrow shall take thought for the things of itself. Sufficient unto the day is the evil thereof."
+};
+const BOOK = "Matthew 6";
+</script>
+<script src="../assets/deck.js"></script>
+</body>
+</html>
