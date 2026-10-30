@@ -1,0 +1,603 @@
+<!doctype html>
+<html lang="en" data-theme="slate">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Romans 2</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="../assets/fonts.css">
+<link rel="stylesheet" href="../assets/deck.css">
+<link rel="stylesheet" href="../assets/themes.css">
+<style>
+/* ro01-book: the whole letter of Romans on one line (the same block as Romans 1; a deck.css candidate).
+   Row 1: the sixteen chapters (.ro01-ch, --k), the one we're in marked .here. Row 2: the five sections (.ro01-part, --k),
+   each with its chapters (small), its name (b), a key phrase (q) and where it is (cite); the section we're in is .now.
+   Each chapter is two grid columns, so a section can start halfway through a chapter (3:21, "But now"). */
+.ro01-book { display: grid; grid-template-columns: repeat(32, 1fr); gap: 8px 0; margin: .6em 0 1em; }
+.ro01-ch { grid-column: span 2; margin: 0 2px; padding: .25em 0 .3em; text-align: center; border-radius: 6px 6px 0 0; border-bottom: 3px solid var(--line-strong);
+  font: 700 clamp(.82rem, .74rem + .35vw, 1.08rem) var(--sans); color: var(--ink-soft);
+  opacity: 0; transition: opacity .4s ease; transition-delay: calc(var(--k, 0) * 55ms + 200ms); }
+.slide.active .ro01-ch { opacity: 1; }
+.ro01-ch.here { background: var(--accent); border-bottom-color: var(--accent); color: var(--on-accent); }
+.slide.active .ro01-ch.here { animation: ro01-here 2.4s ease-in-out 1.6s infinite; }
+@keyframes ro01-here { 50% { box-shadow: 0 0 0 6px color-mix(in srgb, var(--accent) 28%, transparent); } }
+.ro01-part { --c: var(--accent); margin: 0 3px; padding: .5em .65em .6em; border-top: 6px solid var(--c); border-radius: 0 0 10px 10px;
+  background: color-mix(in srgb, var(--c) 9%, transparent); opacity: 0; transform: translateY(10px);
+  transition: opacity .6s ease, transform .6s ease; transition-delay: calc(var(--k, 0) * 380ms + 1000ms); }
+.slide.active .ro01-part { opacity: 1; transform: none; }
+.ro01-part small { display: block; font: 700 clamp(.72rem, .68rem + .22vw, .92rem) var(--sans); letter-spacing: .04em; color: var(--ink-soft); }
+.ro01-part b { display: block; margin: .1em 0 .35em; font: 600 clamp(1.02rem, .86rem + .7vw, 1.55rem)/1.1 var(--serif); color: var(--ink); }
+.ro01-part q { display: block; font: italic clamp(.86rem, .78rem + .36vw, 1.12rem)/1.3 var(--serif); quotes: "\201C" "\201D"; }
+.ro01-part cite { display: block; margin-top: .25em; font-style: normal; font-size: clamp(.72rem, .68rem + .22vw, .92rem); color: var(--ink-soft); }
+.ro01-part.now { background: color-mix(in srgb, var(--c) 20%, transparent); box-shadow: inset 0 0 0 2px var(--c); }
+.ro01-sin  { --c: var(--danger); grid-column: 1 / 6; }
+.ro01-just { --c: var(--accent); grid-column: 6 / 11; }
+.ro01-life { --c: var(--cool); grid-column: 11 / 17; }
+.ro01-isr  { --c: var(--leather-light); grid-column: 17 / 23; }
+.ro01-live { --c: var(--wine); grid-column: 23 / 33; }
+@media (max-width: 640px) {
+  .ro01-book { grid-template-columns: 1fr; gap: 6px; }
+  .ro01-ch { display: none; }
+  .ro01-part { grid-column: 1; margin: 0; border-top: 0; border-left: 6px solid var(--c); border-radius: 0 10px 10px 0; }
+}
+/* ro02-finger: one finger points at another man; three curl back at the man pointing */
+.ro02-out { fill: none; stroke: var(--ink-soft); stroke-width: 3; stroke-linecap: round; stroke-dasharray: 1; stroke-dashoffset: 1; transition: stroke-dashoffset 1s ease .9s; }
+.slide.active .ro02-out { stroke-dashoffset: 0; }
+.ro02-back { fill: none; stroke: var(--danger); stroke-width: 3; stroke-linecap: round; stroke-dasharray: 1; stroke-dashoffset: 1; transition: stroke-dashoffset 1s ease; transition-delay: calc(var(--k, 0) * 300ms); }
+.slide:has(.ro02-backgo.on) .ro02-back { stroke-dashoffset: 0; }
+.ro02-self { transition: fill .6s ease 1.2s; fill: var(--ink-soft); }
+.slide:has(.ro02-backgo.on) .ro02-self { fill: var(--danger); }
+.ro02-hand { fill: var(--leather-light); stroke: var(--leather); stroke-width: 2; }
+
+/* ro02-turn: a road running toward the edge, with God's signs along it, and a U-turn back on a .ro02-turngo step */
+.ro02-road { fill: none; stroke: var(--line-strong); stroke-width: 14; stroke-linecap: round; }
+.ro02-go { fill: none; stroke: var(--ink-soft); stroke-width: 4; stroke-linecap: round; stroke-dasharray: 1; stroke-dashoffset: 1; transition: stroke-dashoffset 2.4s ease .5s; }
+.slide.active .ro02-go { stroke-dashoffset: 0; }
+.ro02-uturn { fill: none; stroke: var(--accent); stroke-width: 5; stroke-linecap: round; stroke-dasharray: 1; stroke-dashoffset: 1; transition: stroke-dashoffset 1.8s ease; }
+.slide:has(.ro02-turngo.on) .ro02-uturn { stroke-dashoffset: 0; }
+.ro02-sign { opacity: 0; transform: translateY(8px); transition: opacity .5s ease, transform .5s ease; transition-delay: calc(var(--k, 0) * 450ms + 900ms); }
+.slide.active .ro02-sign { opacity: 1; transform: none; }
+.ro02-home { opacity: 0; transition: opacity .8s ease 1.4s; }
+.slide:has(.ro02-turngo.on) .ro02-home { opacity: 1; }
+.ro02-drop { fill: var(--on-glow); }
+</style>
+</head>
+<body>
+<main class="deck" id="deck">
+
+<!-- ======================= OPENING ======================= -->
+<section class="slide title">
+  <div class="inner">
+    <div class="emblem rise"></div>
+    <h1 class="rise" style="--d:1">Romans 2</h1>
+    <p class="sub rise" style="--d:3">The man who points the finger</p>
+    <p class="tag rise" style="--d:5">Paul turns from the man who ran wild to the decent, religious man who judges him, and shows that he needs the gospel too.</p>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise" style="--d:1">Where we are in Romans</h2>
+    <div class="ro01-book" role="img" aria-label="Romans in five sections. Chapters 1 to 3: sin, all have sinned (3:23). From 3:21 through chapter 5: justified by faith (5:1). Chapters 6 to 8: new life, no condemnation (8:1). Chapters 9 to 11: Israel and the nations, whosoever shall call upon the name of the Lord shall be saved (10:13). Chapters 12 to 16: living it out, present your bodies a living sacrifice (12:1). We are in chapter 2.">
+      <span class="ro01-ch" style="--k:0">1</span><span class="ro01-ch here" style="--k:1">2</span><span class="ro01-ch" style="--k:2">3</span><span class="ro01-ch" style="--k:3">4</span>
+      <span class="ro01-ch" style="--k:4">5</span><span class="ro01-ch" style="--k:5">6</span><span class="ro01-ch" style="--k:6">7</span><span class="ro01-ch" style="--k:7">8</span>
+      <span class="ro01-ch" style="--k:8">9</span><span class="ro01-ch" style="--k:9">10</span><span class="ro01-ch" style="--k:10">11</span><span class="ro01-ch" style="--k:11">12</span>
+      <span class="ro01-ch" style="--k:12">13</span><span class="ro01-ch" style="--k:13">14</span><span class="ro01-ch" style="--k:14">15</span><span class="ro01-ch" style="--k:15">16</span>
+      <div class="ro01-part ro01-sin now" style="--k:0"><small>1–3</small><b>Sin</b><q>all have sinned</q><cite>3:23</cite></div>
+      <div class="ro01-part ro01-just" style="--k:1"><small>3:21–5</small><b>Justified by faith</b><q>being justified by faith, we have peace with God</q><cite>5:1</cite></div>
+      <div class="ro01-part ro01-life" style="--k:2"><small>6–8</small><b>New life</b><q>There is therefore now no condemnation</q><cite>8:1</cite></div>
+      <div class="ro01-part ro01-isr" style="--k:3"><small>9–11</small><b>Israel and the nations</b><q>whosoever shall call upon the name of the Lord shall be saved</q><cite>10:13</cite></div>
+      <div class="ro01-part ro01-live" style="--k:4"><small>12–16</small><b>Living it out</b><q>present your bodies a living sacrifice</q><cite>12:1</cite></div>
+    </div>
+    <p class="note rise" style="--d:3">Chapter 1 was the man who ran from God and fell all the way down. Reading it, a decent man might nod along: <em>that's those people.</em></p>
+    <p class="note step">Chapter 2 turns and looks him in the eye. By chapter 3 every man is standing in the same place, and that's where the good news starts.</p>
+  </div>
+</section>
+
+<section class="slide watch">
+  <div class="inner">
+    <h2 class="rise">Things to watch for</h2>
+    <p class="lede rise" style="--d:1">Keep these questions in the back of your mind as we read. We'll come back to every one of them at the end.</p>
+    <ol class="seeds">
+      <li class="step"><span class="topic">Judging</span><span class="seed-q">What happens when we judge others for the same things we do?</span></li>
+      <li class="step"><span class="topic">Kindness</span><span class="seed-q">Why is God so patient with us?</span></li>
+      <li class="step"><span class="topic">A hard heart</span><span class="seed-q">What is a man storing up when he will not repent?</span></li>
+      <li class="step"><span class="topic">A fair Judge</span><span class="seed-q">Does God play favorites?</span></li>
+      <li class="step"><span class="topic">Conscience</span><span class="seed-q">What has God written on every man's heart?</span></li>
+      <li class="step"><span class="topic">The inside</span><span class="seed-q">What kind of change does God care about most?</span></li>
+    </ol>
+  </div>
+</section>
+
+<!-- ======================= PART ONE: THOU ART THE MAN ======================= -->
+<section class="slide part">
+  <div class="inner">
+    <p class="part-n rise">Part one</p>
+    <h2 class="rise" style="--d:1">Thou art inexcusable</h2>
+    <p class="range rise" style="--d:2">Verses 1–11</p>
+    <div class="rule"></div>
+    <p class="hook rise" style="--d:4">The man who judges, the kindness of God, and a Judge who plays no favorites.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="1-3" data-hl="thou art inexcusable, O man|wherein thou judgest another, thou condemnest thyself|thou that judgest doest the same things"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="1" data-hl="wherein thou judgest another, thou condemnest thyself"></blockquote>
+    <div class="split">
+      <div class="stage">
+        <svg viewBox="0 0 560 300" role="img" aria-label="A hand points one finger at another man. Three fingers curl back toward the man who is pointing.">
+          <g>
+            <circle cx="490" cy="110" r="20" style="fill:var(--ink-soft)"/>
+            <path d="M462 200 Q462 140 490 136 Q518 140 518 200 Z" style="fill:var(--ink-soft)"/>
+            <text x="490" y="232" text-anchor="middle" font-size="19" font-weight="700">another</text>
+          </g>
+          <g class="ro02-self">
+            <circle cx="62" cy="110" r="20"/>
+            <path d="M34 200 Q34 140 62 136 Q90 140 90 200 Z"/>
+          </g>
+          <text x="62" y="232" text-anchor="middle" font-size="19" font-weight="700">thyself</text>
+          <g class="ro02-hand">
+            <rect x="180" y="118" width="92" height="74" rx="22"/>
+            <rect x="262" y="122" width="120" height="24" rx="12"/>
+            <rect x="200" y="86" width="24" height="48" rx="12"/>
+            <rect x="166" y="146" width="40" height="18" rx="9"/>
+            <rect x="166" y="164" width="40" height="18" rx="9"/>
+            <rect x="170" y="182" width="36" height="16" rx="8"/>
+          </g>
+          <path class="ro02-out" pathLength="1" d="M392 134 L452 134 M442 124 L452 134 L442 144"/>
+          <path class="ro02-back" style="--k:0" pathLength="1" d="M160 155 C130 150 115 140 100 128 M108 122 L100 128 L110 134"/>
+          <path class="ro02-back" style="--k:1" pathLength="1" d="M160 173 C130 172 112 170 98 166 M106 160 L98 166 L107 172"/>
+          <path class="ro02-back" style="--k:2" pathLength="1" d="M164 190 C134 196 114 200 98 204 M105 197 L98 204 L107 209"/>
+          <text class="ro02-backgo step" x="280" y="270" text-anchor="middle" font-size="20" font-weight="700" style="fill:var(--danger)">“thou condemnest thyself”</text>
+        </svg>
+      </div>
+      <div>
+        <h2 class="rise" style="--d:1">One finger out, three back</h2>
+        <p class="note rise" style="--d:2">Now Paul turns to the man in the front row who's been shaking his head at chapter 1: <em>“O man, whosoever thou art that judgest.”</em></p>
+        <p class="note step">His problem isn't that he sees sin. It's that <em>“thou that judgest doest the same things”</em>: maybe not the same act, but the same heart, kept indoors. Judging others is often how we hide from our own stuff.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="3" data-hl="that thou shalt escape the judgment of God?"></blockquote>
+    <h2 class="rise" style="--d:1">“Thou art the man”</h2>
+    <div class="pair">
+      <div class="scroll rise" style="--d:2"><p class="ref">Romans 1:20, the wild man</p><p class="kjv">“so that they are <mark>without excuse</mark>”</p></div>
+      <div class="scroll step"><p class="ref">Romans 2:1, the decent man</p><p class="kjv">“Therefore thou art <mark>inexcusable</mark>, O man”</p></div>
+    </div>
+    <p class="note step">In Greek it's the same word, <span class="gk">anapologētos</span>: <em>no defense</em>. The man in the gutter and the man in the pew get the same verdict.</p>
+    <p class="note step">King David once heard of a rich man who stole a poor man's only lamb, and he exploded: that man deserves to die! Then the prophet looked at the king, who had taken another man's wife:</p>
+    <blockquote class="quote step"><p>“And Nathan said to David, Thou art the man.”</p><cite>2 Samuel 12:7</cite></blockquote>
+  </div>
+</section>
+
+<section class="slide verse" data-v="4-5" data-hl="the riches of his goodness and forbearance and longsuffering|the goodness of God leadeth thee to repentance|thy hardness and impenitent heart"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="4" data-hl="the goodness of God leadeth thee to repentance"></blockquote>
+    <div class="split">
+      <div class="stage">
+        <svg viewBox="0 0 600 300" role="img" aria-label="A road runs toward a drop-off marked the day of wrath. Along it stand three signs: goodness, forbearance, longsuffering. Then the road makes a U-turn back toward home, marked repentance.">
+          <path class="ro02-drop" d="M540 150 L600 150 L600 300 L520 300 Z" stroke-width="2" style="stroke:var(--danger)"/>
+          <text x="572" y="102" text-anchor="middle" font-size="15" font-weight="700" style="fill:var(--danger)">the day</text>
+          <text x="572" y="138" text-anchor="middle" font-size="15" font-weight="700" style="fill:var(--danger)">wrath</text>
+          <text x="572" y="120" text-anchor="middle" font-size="15" font-weight="700" style="fill:var(--danger)">of</text>
+          <path class="ro02-road" d="M20 150 L530 150"/>
+          <path class="ro02-go" pathLength="1" d="M30 150 L470 150"/>
+          <g class="ro02-sign" style="--k:0"><line x1="140" y1="150" x2="140" y2="100" stroke-width="3" style="stroke:var(--ink-soft)"/><rect x="88" y="72" width="104" height="30" rx="5" style="fill:var(--accent)"/><text x="140" y="93" text-anchor="middle" font-size="15" font-weight="700" style="fill:var(--on-accent)">goodness</text></g>
+          <g class="ro02-sign" style="--k:1"><line x1="270" y1="150" x2="270" y2="100" stroke-width="3" style="stroke:var(--ink-soft)"/><rect x="210" y="72" width="120" height="30" rx="5" style="fill:var(--accent)"/><text x="270" y="93" text-anchor="middle" font-size="15" font-weight="700" style="fill:var(--on-accent)">forbearance</text></g>
+          <g class="ro02-sign" style="--k:2"><line x1="400" y1="150" x2="400" y2="100" stroke-width="3" style="stroke:var(--ink-soft)"/><rect x="338" y="72" width="124" height="30" rx="5" style="fill:var(--accent)"/><text x="400" y="93" text-anchor="middle" font-size="15" font-weight="700" style="fill:var(--on-accent)">longsuffering</text></g>
+          <path class="ro02-uturn" pathLength="1" d="M470 150 C520 150 520 226 470 226 L90 226"/>
+          <path class="ro02-uturn" pathLength="1" d="M104 214 L90 226 L104 238"/>
+          <g class="ro02-home">
+            <text x="290" y="256" text-anchor="middle" font-size="19" font-weight="700" style="fill:var(--accent-hot)">repentance: turned around</text>
+            <circle cx="66" cy="226" r="16" style="fill:var(--glow)"/>
+          </g>
+        </svg>
+      </div>
+      <div>
+        <h2 class="rise" style="--d:1">Why God waits</h2>
+        <p class="note rise" style="--d:2"><em>Goodness</em> is His kindness. <em>Forbearance</em> is holding back the punishment we've earned. <em>Longsuffering</em> is patience that goes on and on.</p>
+        <p class="note step"><em>Despisest</em> means taking it for granted: <em>I got away with it, so God must not care.</em> But His patience isn't Him looking away. It's a door held open.</p>
+        <p class="note step ro02-turngo"><em>Repentance</em> is a change of mind that turns a man around. And what does the turning? Not a scare, but <em>“the goodness of God.”</em></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="5" data-hl="thy hardness and impenitent heart|treasurest up unto thyself wrath"></blockquote>
+    <h2 class="rise" style="--d:1">Two ways to use God's patience</h2>
+    <div class="mirror">
+      <div class="rise" style="--d:2"><span>His patience, received</span><span class="arrow">→</span><span class="word">“leadeth thee to repentance”</span><small>Every extra day is a chance to turn around (v. 4).</small></div>
+      <div class="step"><span>His patience, despised</span><span class="arrow">→</span><span class="word">“treasurest up… wrath”</span><small>Every extra day is another deposit in the wrong account (v. 5).</small></div>
+    </div>
+    <p class="note step"><em>Hardness</em> is a heart like callused skin: it stops feeling. <em>Impenitent</em> means <em>un-sorry</em>, unwilling to repent. A man like that thinks he's saving up time. He's saving up judgment.</p>
+    <p class="note step">If you still feel the sting when you do wrong, thank God. That's His kindness keeping your heart soft. Turn today.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="6-8" data-hl="render to every man according to his deeds|patient continuance in well doing|indignation and wrath"></section>
+<section class="slide verse" data-v="9-11" data-hl="every soul of man that doeth evil|to every man that worketh good|there is no respect of persons with God"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="6"></blockquote>
+    <h2 class="rise" style="--d:1">Judged by what we do?</h2>
+    <div class="columns">
+      <div class="col grace rise" style="--d:2">
+        <p class="who">verse 7</p>
+        <h3>“patient continuance in well doing”</h3>
+        <p>seeks God's glory, and gets <em>“eternal life”</em></p>
+      </div>
+      <div class="col law rise" style="--d:3">
+        <p class="who">verse 8</p>
+        <h3>“contentious… obey unrighteousness”</h3>
+        <p>fights the truth, and gets <em>“indignation and wrath”</em></p>
+      </div>
+    </div>
+    <p class="note step">Is Paul saying we're saved by good works? No. He's showing that God's judgment is fair: He goes by what is really there, not by a man's talk or his family or his church. Could anyone pass that test on his own? Chapter 3 answers: <em>“There is none righteous, no, not one”</em> (3:10).</p>
+    <p class="note step">The man who trusts Christ isn't condemned for his sins (8:1). And a changed life, slow and patient, is what real faith looks like from the outside.</p>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="11"></blockquote>
+    <div class="split">
+      <div class="stage">
+        <svg class="scale rock" style="--at:300px 80px" viewBox="0 0 600 320" role="img" aria-label="A balance scale rocks, then settles perfectly level. On one side the Jew, the church man and the rich man. On the other the Gentile, the outsider and the poor man.">
+          <path d="M300 80 L300 286" stroke-width="8" stroke-linecap="round" style="stroke:var(--ink-soft)"/>
+          <path d="M230 296 L370 296" stroke-width="8" stroke-linecap="round" style="stroke:var(--ink-soft)"/>
+          <g class="scale-beam">
+            <path d="M80 80 L520 80" stroke-width="7" stroke-linecap="round" style="stroke:var(--accent)"/>
+            <circle cx="300" cy="80" r="11" style="fill:var(--accent-hot)"/>
+          </g>
+          <g class="scale-pan l">
+            <path d="M80 80 L36 180 M80 80 L124 180" stroke-width="2" style="stroke:var(--ink-soft)"/>
+            <path d="M24 180 L136 180 Q80 214 24 180 Z" stroke-width="2" style="fill:var(--surface-2);stroke:var(--line-strong)"/>
+            <g style="fill:var(--ink-soft)"><circle cx="56" cy="152" r="8"/><path d="M46 178 Q46 162 56 161 Q66 162 66 178 Z"/><circle cx="80" cy="148" r="8"/><path d="M70 178 Q70 158 80 157 Q90 158 90 178 Z"/><circle cx="104" cy="152" r="8"/><path d="M94 178 Q94 162 104 161 Q114 162 114 178 Z"/></g>
+            <text x="80" y="236" text-anchor="middle" font-size="17">the Jew,</text>
+            <text x="80" y="256" text-anchor="middle" font-size="17">the church man,</text>
+            <text x="80" y="276" text-anchor="middle" font-size="17">the rich man</text>
+          </g>
+          <g class="scale-pan r">
+            <path d="M520 80 L476 180 M520 80 L564 180" stroke-width="2" style="stroke:var(--ink-soft)"/>
+            <path d="M464 180 L576 180 Q520 214 464 180 Z" stroke-width="2" style="fill:var(--surface-2);stroke:var(--line-strong)"/>
+            <g style="fill:var(--ink-soft)"><circle cx="496" cy="152" r="8"/><path d="M486 178 Q486 162 496 161 Q506 162 506 178 Z"/><circle cx="520" cy="148" r="8"/><path d="M510 178 Q510 158 520 157 Q530 158 530 178 Z"/><circle cx="544" cy="152" r="8"/><path d="M534 178 Q534 162 544 161 Q554 162 554 178 Z"/></g>
+            <text x="520" y="236" text-anchor="middle" font-size="17">the Gentile,</text>
+            <text x="520" y="256" text-anchor="middle" font-size="17">the outsider,</text>
+            <text x="520" y="276" text-anchor="middle" font-size="17">the poor man</text>
+          </g>
+          <text x="300" y="34" text-anchor="middle" font-size="20" class="serif" style="fill:var(--accent-hot)">“no respect of persons”</text>
+        </svg>
+      </div>
+      <div>
+        <h2 class="rise" style="--d:1">No favorites</h2>
+        <p class="note rise" style="--d:2"><em>Respect of persons</em> means favoritism. The Greek pictures <em>receiving a face</em>: judging a man by who he is, not what he's done.</p>
+        <p class="note step">A good lawyer or a famous name can get a man off here. Not with God. The Jew had more light, so he's first in line for blessing and for judgment (vv. 9–10), but nobody gets a pass.</p>
+        <p class="note step">It cuts both ways: your record doesn't put you beneath God's notice, and nobody's résumé puts him above it. The ground is level at the cross.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ======================= PART TWO: WRITTEN IN THEIR HEARTS ======================= -->
+<section class="slide part">
+  <div class="inner">
+    <p class="part-n rise">Part two</p>
+    <h2 class="rise" style="--d:1">Written in their hearts</h2>
+    <p class="range rise" style="--d:2">Verses 12–16</p>
+    <div class="rule"></div>
+    <p class="hook rise" style="--d:4">What about the man who never had a Bible? He had a conscience.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="12-13" data-hl="not the hearers of the law are just before God|the doers of the law shall be justified"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="13" data-hl="shall be justified"></blockquote>
+    <h2 class="rise" style="--d:1">Justified</h2>
+    <p class="note rise" style="--d:2"><em>Justify</em> is a courtroom word. It doesn't mean to make excuses. It means the judge looks at the case and declares: <em>this man is in the right.</em></p>
+    <ul class="nots">
+      <li class="step"><span class="k">to excuse what you did</span><span class="why">God never calls sin okay</span></li>
+      <li class="step"><span class="k">to pretend it never happened</span><span class="why">the Judge knows every secret (v. 16)</span></li>
+      <li class="step"><span class="k">to make you a better man first</span><span class="why">that change follows, it doesn't come first</span></li>
+      <li class="step yes"><span class="k">the Judge declares you in the right</span><span class="why">a verdict, not a makeover</span></li>
+    </ul>
+    <p class="note step">By the law, that verdict goes only to the <em>doer</em> who keeps it all. Hearing sermons doesn't count. Nobody qualifies (3:20). So how can a guilty man ever hear it? Paul will answer: <em>“being justified freely by his grace”</em> (3:24).</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="14-16" data-hl="the work of the law written in their hearts|their conscience also bearing witness|accusing or else excusing one another|God shall judge the secrets of men by Jesus Christ"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="15" data-hl="their conscience also bearing witness"></blockquote>
+    <h2 class="rise" style="--d:1">The voice inside</h2>
+    <p class="note rise" style="--d:2">The Gentiles never got the Ten Commandments, but they still knew stealing and murder were wrong. God wrote His law on every heart, and gave every man a <em>conscience</em>: an inner witness that knows what he's done.</p>
+    <div class="talk">
+      <p class="rise" style="--d:3"><small>accusing</small>You shouldn't have said that to her. You know it was wrong.</p>
+      <p class="reply step"><small>excusing</small>She had it coming. Anybody would have done the same.</p>
+    </div>
+    <p class="note step">Every man has heard that argument at 2 a.m. Don't drown out the accusing voice; bring it to God. <em>“The secrets of men”</em> will be judged <em>“by Jesus Christ,”</em> who died for those secrets and forgives every one brought to Him.</p>
+  </div>
+</section>
+
+<!-- ======================= PART THREE: A JEW INWARDLY ======================= -->
+<section class="slide part">
+  <div class="inner">
+    <p class="part-n rise">Part three</p>
+    <h2 class="rise" style="--d:1">A Jew inwardly</h2>
+    <p class="range rise" style="--d:2">Verses 17–29</p>
+    <div class="rule"></div>
+    <p class="hook rise" style="--d:4">The religious man with the perfect résumé, and the one question that undoes it.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="17-20" data-hl="restest in the law, and makest thy boast of God|a guide of the blind, a light of them which are in darkness"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="17"></blockquote>
+    <h2 class="rise" style="--d:1">A religious résumé</h2>
+    <ol class="signs rise" style="--d:2">
+      <li><b>“called a Jew”</b>God's own people</li>
+      <li><b>“restest in the law”</b>leans on the Bible he owns</li>
+      <li><b>“makest thy boast of God”</b>proud to know God</li>
+      <li><b>“knowest his will”</b>knows right from wrong</li>
+      <li><b>“approvest the things… excellent”</b>can tell the best</li>
+      <li><b>“a guide of the blind”</b>leads others</li>
+      <li><b>“a light of them… in darkness”</b>the example</li>
+      <li><b>“a teacher of babes”</b>teaches beginners</li>
+    </ol>
+    <p class="note step">Every line is true, and every line is a gift from God. Israel really had the Scriptures, the promises and the knowledge of God. The trouble is what the man does with it.</p>
+    <p class="note step">Put your own name in. Grew up in church, can quote verses, knows the steps, tells the new guys what to do. Good things. None of them saves you.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="21-24" data-hl="teachest thou not thyself?|dost thou steal?|dost thou commit adultery?|the name of God is blasphemed among the Gentiles through you"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="21" data-hl="teachest thou not thyself?"></blockquote>
+    <h2 class="rise" style="--d:1">Teachest thou not thyself?</h2>
+    <div class="asks">
+      <div class="ask step"><span class="q">“a man should not steal”</span><span class="stamp">dost thou steal?</span><span class="ctx">The preacher who skims a little off the top.</span></div>
+      <div class="ask step"><span class="q">“a man should not commit adultery”</span><span class="stamp">dost thou?</span><span class="ctx">The man who condemns cheaters and cheats in his heart (Matthew 5:28).</span></div>
+      <div class="ask step"><span class="q">“thou that abhorrest idols”</span><span class="stamp">sacrilege?</span><span class="ctx"><em>Sacrilege</em> here is robbing temples: hating idols, but happy to profit off them.</span></div>
+    </div>
+    <p class="note step">Verse 24 is the cost: <em>“the name of God is blasphemed among the Gentiles through you.”</em> People judge God by the men who claim Him. Your crew at work is reading your life. Let it give them a reason to respect His name.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="25-27" data-hl="circumcision verily profiteth, if thou keep the law|thy circumcision is made uncircumcision"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="25" data-hl="thy circumcision is made uncircumcision"></blockquote>
+    <h2 class="rise" style="--d:1">A sign without the real thing</h2>
+    <p class="note rise" style="--d:2"><em>Circumcision</em> was the mark God gave Abraham's family (Genesis 17): the foreskin cut away, done to every Jewish boy at eight days old. It marked him as one of God's covenant people, and many Jews trusted that mark to get them through the judgment.</p>
+    <div class="ifthen step">
+      <div class="if"><small>the sign, with no obedience</small>“a breaker of the law”</div>
+      <span class="arrow">→</span>
+      <div class="then"><small>counts for nothing</small>“made uncircumcision”</div>
+    </div>
+    <p class="note step">A wedding ring on a man who's cheating is just metal. The sign is only worth something when the real thing is there.</p>
+    <p class="note step">It's the same with baptism today. Baptism is a believer's step of obedience that <em>pictures</em> his salvation. It doesn't save him. A man can go under the water and come up unchanged.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="28-29" data-hl="he is a Jew, which is one inwardly|circumcision is that of the heart|whose praise is not of men, but of God"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="29" data-hl="circumcision is that of the heart"></blockquote>
+    <h2 class="rise" style="--d:1">What God is after</h2>
+    <div class="columns">
+      <div class="col law rise" style="--d:2">
+        <p class="who">outwardly · v. 28</p>
+        <h3>“in the flesh”</h3>
+        <p>a mark on the body, the letter of the rules, and the <em>“praise of men”</em></p>
+      </div>
+      <div class="col grace step">
+        <p class="who">inwardly · v. 29</p>
+        <h3>“of the heart”</h3>
+        <p>a heart cut free from sin, the Spirit at work, and <em>“praise… of God”</em></p>
+      </div>
+    </div>
+    <p class="note step">God doesn't want a man who just looks right. He wants a new man. And He doesn't ask you to carve your own heart into shape. He promised to do it:</p>
+    <blockquote class="quote step"><p>“A new heart also will I give you, and a new spirit will I put within you: and I will take away the stony heart out of your flesh, and I will give you an heart of flesh.”</p><cite>Ezekiel 36:26</cite></blockquote>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise" style="--d:1">Everybody in the dock</h2>
+    <div class="asks">
+      <div class="ask step"><span class="q">The man who ran from God</span><span class="stamp">without excuse</span><span class="ctx">Romans 1:20</span></div>
+      <div class="ask step"><span class="q">The decent man who judges him</span><span class="stamp">inexcusable</span><span class="ctx">Romans 2:1</span></div>
+      <div class="ask step"><span class="q">The religious man with the résumé</span><span class="stamp">a breaker of the law</span><span class="ctx">Romans 2:25</span></div>
+    </div>
+    <p class="note step">Nobody is singled out, and nobody is left out. That's where chapter 3 lands, and right there the door opens:</p>
+    <blockquote class="quote step"><p>“For all have sinned, and come short of the glory of God; Being justified freely by his grace through the redemption that is in Christ Jesus:”</p><cite>Romans 3:23–24</cite></blockquote>
+  </div>
+</section>
+
+<!-- ======================= CLOSING ======================= -->
+<section class="slide remember">
+  <div class="inner">
+    <h2 class="rise">Points to remember</h2>
+    <ol class="seeds">
+      <li class="step"><span class="topic">Judging</span><span class="seed-q">“Thou condemnest thyself” <cite>2:1</cite></span><span class="take">The finger we point at others has three pointing back. Deal with your own heart first.</span></li>
+      <li class="step"><span class="topic">Kindness</span><span class="seed-q">“The goodness of God leadeth thee to repentance” <cite>2:4</cite></span><span class="take">God's patience is a door held open. Let His kindness turn you around.</span></li>
+      <li class="step"><span class="topic">A hard heart</span><span class="seed-q">“Treasurest up unto thyself wrath” <cite>2:5</cite></span><span class="take">Refusing to repent doesn't save up time. It saves up judgment.</span></li>
+      <li class="step"><span class="topic">A fair Judge</span><span class="seed-q">“There is no respect of persons with God” <cite>2:11</cite></span><span class="take">No one buys his way past God, and no one is beneath His notice.</span></li>
+      <li class="step"><span class="topic">Conscience</span><span class="seed-q">“The work of the law written in their hearts” <cite>2:15</cite></span><span class="take">Every man knows right from wrong. Bring the accusing voice to God.</span></li>
+      <li class="step"><span class="topic">The inside</span><span class="seed-q">“Circumcision is that of the heart” <cite>2:29</cite></span><span class="take">God wants a changed heart, not a religious show. And He gives the new heart.</span></li>
+    </ol>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 1 of 6</p>
+      <span class="topic">Judging</span>
+      <h2>What happens when we judge others for the same things we do?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="1"></blockquote>
+      <blockquote class="quote step" data-q="3"></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>We condemn ourselves. Pointing at someone else's sin doesn't hide ours from God; it proves we know right from wrong and do wrong anyway. The decent man is just as inexcusable as the wild one, and needs the same Savior.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 2 of 6</p>
+      <span class="topic">Kindness</span>
+      <h2>Why is God so patient with us?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="4"></blockquote>
+      <blockquote class="quote step"><p>“The Lord is not slack concerning his promise, as some men count slackness; but is longsuffering to us-ward, not willing that any should perish, but that all should come to repentance.”</p><cite>2 Peter 3:9</cite></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>To lead us to repentance. His patience isn't Him ignoring sin; it's time He gives us to turn around. He doesn't want anyone to perish. His kindness, not fear, is what turns a man's heart back to Him.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 3 of 6</p>
+      <span class="topic">A hard heart</span>
+      <h2>What is a man storing up when he will not repent?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="5"></blockquote>
+      <blockquote class="quote step" data-q="8"></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>Wrath. Every day a hard heart refuses God's kindness, it adds to what it will face on the day of judgment. The same patience that could have led him home becomes evidence against him. That's why today is the day to turn.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 4 of 6</p>
+      <span class="topic">A fair Judge</span>
+      <h2>Does God play favorites?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="6"></blockquote>
+      <blockquote class="quote step" data-q="10"></blockquote>
+      <blockquote class="quote step" data-q="11"></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>No. He judges every man by the truth, Jew and Gentile alike. No name, money or religion buys a pass, and no past puts a man beneath His notice. That's bad news for the proud and good news for the outsider.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 5 of 6</p>
+      <span class="topic">Conscience</span>
+      <h2>What has God written on every man's heart?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="14"></blockquote>
+      <blockquote class="quote step" data-q="15"></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>The work of His law. Even without a Bible, men know right from wrong, and the conscience argues inside them, accusing or excusing. Don't silence it. Let it bring you to Jesus, who judges the secrets of men and forgives every one brought to Him.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 6 of 6</p>
+      <span class="topic">The inside</span>
+      <h2>What kind of change does God care about most?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="28"></blockquote>
+      <blockquote class="quote step" data-q="29"></blockquote>
+      <blockquote class="quote step"><p>“A new heart also will I give you, and a new spirit will I put within you: and I will take away the stony heart out of your flesh, and I will give you an heart of flesh.”</p><cite>Ezekiel 36:26</cite></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>A changed heart. Outward marks, rituals and a good reputation can't make a man right with God. He wants the inside, and He gives a new heart by His Spirit to everyone who trusts Christ.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide prayer">
+  <div class="inner">
+    <div class="emblem rise"></div>
+    <h2 class="rise" style="--d:1">Prayer requests</h2>
+    <p class="ask-line rise" style="--d:2">What can we pray about for you today?</p>
+    <blockquote class="quote rise" style="--d:4"><p>“It is of the LORD’S mercies that we are not consumed, because his compassions fail not. They are new every morning: great is thy faithfulness.”</p><cite>Lamentations 3:22–23</cite></blockquote>
+  </div>
+</section>
+
+</main>
+
+<script>
+// King James Version, Romans chapter 2
+const V = {
+  1: "Therefore thou art inexcusable, O man, whosoever thou art that judgest: for wherein thou judgest another, thou condemnest thyself; for thou that judgest doest the same things.",
+  2: "But we are sure that the judgment of God is according to truth against them which commit such things.",
+  3: "And thinkest thou this, O man, that judgest them which do such things, and doest the same, that thou shalt escape the judgment of God?",
+  4: "Or despisest thou the riches of his goodness and forbearance and longsuffering; not knowing that the goodness of God leadeth thee to repentance?",
+  5: "But after thy hardness and impenitent heart treasurest up unto thyself wrath against the day of wrath and revelation of the righteous judgment of God;",
+  6: "Who will render to every man according to his deeds:",
+  7: "To them who by patient continuance in well doing seek for glory and honour and immortality, eternal life:",
+  8: "But unto them that are contentious, and do not obey the truth, but obey unrighteousness, indignation and wrath,",
+  9: "Tribulation and anguish, upon every soul of man that doeth evil, of the Jew first, and also of the Gentile;",
+  10: "But glory, honour, and peace, to every man that worketh good, to the Jew first, and also to the Gentile:",
+  11: "For there is no respect of persons with God.",
+  12: "For as many as have sinned without law shall also perish without law: and as many as have sinned in the law shall be judged by the law;",
+  13: "(For not the hearers of the law are just before God, but the doers of the law shall be justified.",
+  14: "For when the Gentiles, which have not the law, do by nature the things contained in the law, these, having not the law, are a law unto themselves:",
+  15: "Which shew the work of the law written in their hearts, their conscience also bearing witness, and their thoughts the mean while accusing or else excusing one another;)",
+  16: "In the day when God shall judge the secrets of men by Jesus Christ according to my gospel.",
+  17: "Behold, thou art called a Jew, and restest in the law, and makest thy boast of God,",
+  18: "And knowest his will, and approvest the things that are more excellent, being instructed out of the law;",
+  19: "And art confident that thou thyself art a guide of the blind, a light of them which are in darkness,",
+  20: "An instructor of the foolish, a teacher of babes, which hast the form of knowledge and of the truth in the law.",
+  21: "Thou therefore which teachest another, teachest thou not thyself? thou that preachest a man should not steal, dost thou steal?",
+  22: "Thou that sayest a man should not commit adultery, dost thou commit adultery? thou that abhorrest idols, dost thou commit sacrilege?",
+  23: "Thou that makest thy boast of the law, through breaking the law dishonourest thou God?",
+  24: "For the name of God is blasphemed among the Gentiles through you, as it is written.",
+  25: "For circumcision verily profiteth, if thou keep the law: but if thou be a breaker of the law, thy circumcision is made uncircumcision.",
+  26: "Therefore if the uncircumcision keep the righteousness of the law, shall not his uncircumcision be counted for circumcision?",
+  27: "And shall not uncircumcision which is by nature, if it fulfil the law, judge thee, who by the letter and circumcision dost transgress the law?",
+  28: "For he is not a Jew, which is one outwardly; neither is that circumcision, which is outward in the flesh:",
+  29: "But he is a Jew, which is one inwardly; and circumcision is that of the heart, in the spirit, and not in the letter; whose praise is not of men, but of God."
+};
+const BOOK = "Romans 2";
+</script>
+<script src="../assets/deck.js"></script>
+</body>
+</html>

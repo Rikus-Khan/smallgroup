@@ -10703,5 +10703,91 @@ window.STUDIES = [
       },
       "big": "Paul never hid his past, and he told it with Jesus at the center, from persecutor to messenger of light. Agrippa was moved and stopped one step short, a warning that almost saved is not saved, and a reason not to put off turning to God."
     }
+  },
+  {
+    "id": "romans-01",
+    "type": "chapter",
+    "book": "Romans",
+    "ch": 1,
+    "date": "2026-10-30",
+    "title": "Romans 1",
+    "sub": "Not ashamed",
+    "about": "Paul writes to the believers in Rome: the gospel is God's power to save anyone who believes. Then he shows why every man needs it.",
+    "tags": [
+      "The gospel",
+      "Righteousness",
+      "Faith",
+      "Creation",
+      "Sin",
+      "God's wrath"
+    ],
+    "url": "studies/romans-01.html",
+    "overview": {
+      "where": "Written from Corinth, in Greece, to the believers in Rome",
+      "when": "About AD 57, near the end of Paul's third journey",
+      "people": [
+        "paul",
+        "jesus",
+        "david",
+        "the-jews",
+        "greeks",
+        "barbarians"
+      ],
+      "places": [
+        "rome"
+      ],
+      "story": [
+        "Paul, once a persecutor, introduces himself as a servant of Jesus Christ, set apart for the gospel about God's Son: born in David's line, and declared the Son of God by the resurrection (1–7).",
+        "He thanks God for the believers in Rome, whose faith is talked about everywhere, and tells them how long he has wanted to come and preach to them (8–15).",
+        "“I am not ashamed of the gospel of Christ.” It is God's power to save every one who believes, and in it God gives a righteousness received by faith (16–17).",
+        "God's wrath is revealed against men who hold down the truth that creation shows them. They would not thank Him, and they traded His glory for idols (18–23).",
+        "So God gave them up: to their lusts, to shameful passions, and to a reprobate mind full of every sin, from murder to gossip (24–32)."
+      ],
+      "key": {
+        "ref": "Romans 1:16",
+        "text": "For I am not ashamed of the gospel of Christ: for it is the power of God unto salvation to every one that believeth; to the Jew first, and also to the Greek."
+      },
+      "big": "The gospel is God's power to save anyone who believes. Chapter 1 shows why we need it: men who know God and won't thank Him slide into the dark, and God gives them what they insist on."
+    }
+  },
+  {
+    "id": "romans-02",
+    "type": "chapter",
+    "book": "Romans",
+    "ch": 2,
+    "date": "2026-10-30",
+    "title": "Romans 2",
+    "sub": "The man who points the finger",
+    "about": "Paul turns from the man who ran wild to the decent, religious man who judges him, and shows that he needs the gospel too.",
+    "tags": [
+      "Judging others",
+      "Repentance",
+      "God's patience",
+      "Conscience",
+      "Hypocrisy",
+      "The heart"
+    ],
+    "url": "studies/romans-02.html",
+    "overview": {
+      "where": "Written from Corinth, in Greece, to the believers in Rome",
+      "when": "About AD 57, near the end of Paul's third journey",
+      "people": [
+        "jesus",
+        "the-jews"
+      ],
+      "places": [],
+      "story": [
+        "The man who judges others is without excuse, because he does the same things. He will not escape the judgment of God (1–3).",
+        "God's goodness, forbearance and longsuffering are meant to lead him to repentance. A hard, impenitent heart only stores up wrath for the day of judgment (4–5).",
+        "God will render to every man according to his deeds, the Jew first and also the Gentile, for there is no respect of persons with God (6–11).",
+        "Hearing the law doesn't make a man right. Gentiles without the law have it written on their hearts, and their conscience accuses or excuses them. God will judge men's secrets by Jesus Christ (12–16).",
+        "The Jew who boasts in the law and teaches others breaks it himself. Circumcision means nothing without obedience: a true Jew is one inwardly, with a heart changed by the Spirit (17–29)."
+      ],
+      "key": {
+        "ref": "Romans 2:4",
+        "text": "Or despisest thou the riches of his goodness and forbearance and longsuffering; not knowing that the goodness of God leadeth thee to repentance?"
+      },
+      "big": "The decent, religious man is no better off than the wild one. God plays no favorites. His kindness is meant to turn us around, and what He wants is a changed heart, not an outward show."
+    }
   }
 ];

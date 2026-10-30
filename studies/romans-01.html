@@ -1,0 +1,754 @@
+<!doctype html>
+<html lang="en" data-theme="scribe">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Romans 1</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="../assets/fonts.css">
+<link rel="stylesheet" href="../assets/deck.css">
+<link rel="stylesheet" href="../assets/themes.css">
+<style>
+/* ro01-book: the whole letter of Romans on one line (a deck.css candidate; every Romans study can show it).
+   Row 1: the sixteen chapters (.ro01-ch, --k), the one we're in marked .here. Row 2: the five sections (.ro01-part, --k),
+   each with its chapters (small), its name (b), a key phrase (q) and where it is (cite); the section we're in is .now.
+   Each chapter is two grid columns, so a section can start halfway through a chapter (3:21, "But now"). */
+.ro01-book { display: grid; grid-template-columns: repeat(32, 1fr); gap: 8px 0; margin: .6em 0 1em; }
+.ro01-ch { grid-column: span 2; margin: 0 2px; padding: .25em 0 .3em; text-align: center; border-radius: 6px 6px 0 0; border-bottom: 3px solid var(--line-strong);
+  font: 700 clamp(.82rem, .74rem + .35vw, 1.08rem) var(--sans); color: var(--ink-soft);
+  opacity: 0; transition: opacity .4s ease; transition-delay: calc(var(--k, 0) * 55ms + 200ms); }
+.slide.active .ro01-ch { opacity: 1; }
+.ro01-ch.here { background: var(--accent); border-bottom-color: var(--accent); color: var(--on-accent); }
+.slide.active .ro01-ch.here { animation: ro01-here 2.4s ease-in-out 1.6s infinite; }
+@keyframes ro01-here { 50% { box-shadow: 0 0 0 6px color-mix(in srgb, var(--accent) 28%, transparent); } }
+.ro01-part { --c: var(--accent); margin: 0 3px; padding: .5em .65em .6em; border-top: 6px solid var(--c); border-radius: 0 0 10px 10px;
+  background: color-mix(in srgb, var(--c) 9%, transparent); opacity: 0; transform: translateY(10px);
+  transition: opacity .6s ease, transform .6s ease; transition-delay: calc(var(--k, 0) * 380ms + 1000ms); }
+.slide.active .ro01-part { opacity: 1; transform: none; }
+.ro01-part small { display: block; font: 700 clamp(.72rem, .68rem + .22vw, .92rem) var(--sans); letter-spacing: .04em; color: var(--ink-soft); }
+.ro01-part b { display: block; margin: .1em 0 .35em; font: 600 clamp(1.02rem, .86rem + .7vw, 1.55rem)/1.1 var(--serif); color: var(--ink); }
+.ro01-part q { display: block; font: italic clamp(.86rem, .78rem + .36vw, 1.12rem)/1.3 var(--serif); quotes: "\201C" "\201D"; }
+.ro01-part cite { display: block; margin-top: .25em; font-style: normal; font-size: clamp(.72rem, .68rem + .22vw, .92rem); color: var(--ink-soft); }
+.ro01-part.now { background: color-mix(in srgb, var(--c) 20%, transparent); box-shadow: inset 0 0 0 2px var(--c); }
+.ro01-sin  { --c: var(--danger); grid-column: 1 / 6; }
+.ro01-just { --c: var(--accent); grid-column: 6 / 11; }
+.ro01-life { --c: var(--cool); grid-column: 11 / 17; }
+.ro01-isr  { --c: var(--leather-light); grid-column: 17 / 23; }
+.ro01-live { --c: var(--wine); grid-column: 23 / 33; }
+@media (max-width: 640px) {
+  .ro01-book { grid-template-columns: 1fr; gap: 6px; }
+  .ro01-ch { display: none; }
+  .ro01-part { grid-column: 1; margin: 0; border-top: 0; border-left: 6px solid var(--c); border-radius: 0 10px 10px 0; }
+}
+
+/* ro01-measure: God's standard, a row of men who come short of it, and a righteousness given that reaches it */
+.ro01-bar { transform: scaleY(0); transform-box: fill-box; transform-origin: 50% 100%; transition: transform 1s cubic-bezier(.3,.7,.3,1); transition-delay: calc(var(--k, 0) * 220ms + 400ms); }
+.slide.active .ro01-bar { transform: scaleY(1); }
+.ro01-gift { transform: scaleY(0); transform-box: fill-box; transform-origin: 50% 100%; transition: transform 1.6s cubic-bezier(.3,.7,.3,1); }
+.ro01-giftword { opacity: 0; transition: opacity .6s ease 1.3s; }
+.slide:has(.ro01-give.on) .ro01-gift { transform: scaleY(1); }
+.slide:has(.ro01-give.on) .ro01-giftword { opacity: 1; }
+
+/* ro01-hold: the truth held down, like a ball pushed under water, and pushing back up */
+.ro01-water { fill: color-mix(in srgb, var(--cool) 30%, var(--bg)); }
+.ro01-wave { fill: color-mix(in srgb, var(--cool) 45%, var(--bg)); }
+.slide.active .ro01-wave { animation: ro01-roll 3s linear infinite; }
+@keyframes ro01-roll { to { transform: translateX(-120px); } }
+.slide.active .ro01-push { animation: ro01-push 2.6s ease-in-out infinite; }
+@keyframes ro01-push { 0%, 100% { transform: translateY(0); } 45% { transform: translateY(16px); } 70% { transform: translateY(-6px); } }
+.ro01-up { opacity: 0; }
+.slide.active .ro01-up { animation: ro01-up 2.6s ease-out infinite; animation-delay: calc(var(--k, 0) * .3s + 1s); }
+@keyframes ro01-up { 0% { opacity: 0; transform: translateY(14px); } 40% { opacity: .9; } 100% { opacity: 0; transform: translateY(-22px); } }
+
+/* ro01-sky: a night sky over the hills, every star a witness */
+.ro01-night { fill: var(--on-glow); }
+.ro01-star { fill: var(--glow); }
+.slide.active .ro01-star { animation: ro01-twinkle 3s ease-in-out infinite alternate; animation-delay: calc(var(--k, 0) * -.43s); }
+@keyframes ro01-twinkle { from { opacity: .25; } to { opacity: 1; } }
+.ro01-hills { fill: color-mix(in srgb, var(--glow) 14%, var(--on-glow)); }
+.ro01-skytext { fill: var(--glow); }
+
+/* ro01-words: the list of verses 29 to 31 as chips, with the "everyday" sins lighting up on a .ro01-us step */
+.ro01-words { display: grid; grid-template-columns: repeat(auto-fill, minmax(8.8rem, 1fr)); gap: 5px; margin: .4em 0 1em; }
+.ro01-words span { padding: .28em .55em .32em; border-radius: 6px; border: 1.5px solid var(--line-strong); font: clamp(.88rem, .8rem + .38vw, 1.12rem)/1.2 var(--serif);
+  opacity: 0; transition: opacity .4s ease, border-color .6s ease, background-color .6s ease; transition-delay: calc(var(--k, 0) * 55ms + 300ms), 0s, 0s; }
+.slide.active .ro01-words span { opacity: 1; }
+.ro01-words small { display: block; font: clamp(.7rem, .66rem + .2vw, .86rem)/1.2 var(--sans); color: var(--ink-soft); }
+.slide:has(.ro01-us.on) .ro01-words .us { border-color: var(--accent); background: color-mix(in srgb, var(--accent) 16%, transparent); }
+</style>
+</head>
+<body>
+<main class="deck" id="deck">
+
+<!-- ======================= OPENING ======================= -->
+<section class="slide title">
+  <div class="inner">
+    <div class="emblem rise"></div>
+    <h1 class="rise" style="--d:1">Romans 1</h1>
+    <p class="sub rise" style="--d:3">Not ashamed</p>
+    <p class="tag rise" style="--d:5">Paul writes to the believers in Rome: the gospel is God's power to save anyone who believes. Then he shows why every man needs it.</p>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <div class="split">
+      <div class="stage">
+        <svg data-world viewBox="150 110 370 255" data-towns="Rome!:t, Puteoli:r, Rhegium:r, Corinth*:l, Cenchrea:r" role="img" aria-label="A map of Italy and Greece. A line runs by sea from Corinth in Greece, around the south of Greece, past the toe of Italy, up to Puteoli and on to Rome.">
+          <path class="map-route" data-via="Corinth, @21.6 36.6, @18.5 37.2, @16 37.6, Rhegium, Puteoli, Rome"/>
+        </svg>
+      </div>
+      <div>
+        <h2 class="rise" style="--d:1">The letter to the Romans</h2>
+        <div class="letter">
+          <p class="from">“Paul, a servant of Jesus Christ, called to be an apostle … To all that be in Rome, beloved of God, called to be saints”</p>
+          <dl>
+            <dt>Written from</dt><dd>Corinth, in Greece, near the end of Paul's third journey (Acts 20:2–3)</dd>
+            <dt>When</dt><dd>about AD 57</dd>
+            <dt>To whom</dt><dd>the believers in Rome, Jews and Gentiles, a church Paul had never visited</dd>
+            <dt>Why</dt><dd class="step">to lay out the whole gospel, start to finish, before he came. Most think Phebe of Cenchrea carried it (16:1).</dd>
+          </dl>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise" style="--d:1">Where Romans fits in Paul's life</h2>
+    <ol class="timeline" aria-label="About AD 34 to 35, Saul is turned around on the Damascus road. About 46 to 48, the first journey. About 49 to 52, the second journey. About 53 to 57, the third journey. About AD 57, Paul writes Romans from Corinth. About 57 to 59, he is arrested and held at Caesarea. About 59 to 60, the shipwreck, and Rome at last. About 67 to 68, by tradition, he is put to death in Rome.">
+      <li style="--k:0"><b>about AD 34 to 35</b><span>Saul the persecutor turned around</span><small>Acts 9</small></li>
+      <li style="--k:1"><b>about 46 to 48</b><span>First journey</span><small>Acts 13–14</small></li>
+      <li style="--k:2"><b>about 49 to 52</b><span>Second journey</span><small>Acts 15–18</small></li>
+      <li style="--k:3"><b>about 53 to 57</b><span>Third journey</span><small>Acts 18–21</small></li>
+      <li class="lit" style="--k:4"><b>about 57</b><span>Romans, from Corinth</span><small>“I long to see you”</small></li>
+      <li style="--k:5"><b>about 57 to 59</b><span>Arrested; held at Caesarea</span><small>Acts 21–26</small></li>
+      <li style="--k:6"><b>about 59 to 60</b><span>Shipwreck, then Rome</span><small>Acts 27–28</small></li>
+      <li class="wait" style="--k:7"><b>about 67 to 68</b><span>Put to death in Rome</span><small>by tradition</small></li>
+    </ol>
+    <p class="note rise" style="--d:3">When Paul wrote this letter, he had been a believer for over twenty years and had planted churches across what is now Turkey and Greece. Rome was the capital of the world, and he had never been there.</p>
+    <p class="note step">He did get to Rome, about three years later. Not the way he planned: in chains, after a shipwreck. We'll see that in verse 10.</p>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise" style="--d:1">The whole letter on one line</h2>
+    <p class="note rise" style="--d:2">Romans is the clearest explanation of the gospel ever written. It moves in five big steps. We'll come back to this map as we go.</p>
+    <div class="ro01-book" role="img" aria-label="Romans in five sections. Chapters 1 to 3: sin, all have sinned (3:23). From 3:21 through chapter 5: justified by faith (5:1). Chapters 6 to 8: new life, no condemnation (8:1). Chapters 9 to 11: Israel and the nations, whosoever shall call upon the name of the Lord shall be saved (10:13). Chapters 12 to 16: living it out, present your bodies a living sacrifice (12:1). We are in chapter 1.">
+      <span class="ro01-ch here" style="--k:0">1</span><span class="ro01-ch" style="--k:1">2</span><span class="ro01-ch" style="--k:2">3</span><span class="ro01-ch" style="--k:3">4</span>
+      <span class="ro01-ch" style="--k:4">5</span><span class="ro01-ch" style="--k:5">6</span><span class="ro01-ch" style="--k:6">7</span><span class="ro01-ch" style="--k:7">8</span>
+      <span class="ro01-ch" style="--k:8">9</span><span class="ro01-ch" style="--k:9">10</span><span class="ro01-ch" style="--k:10">11</span><span class="ro01-ch" style="--k:11">12</span>
+      <span class="ro01-ch" style="--k:12">13</span><span class="ro01-ch" style="--k:13">14</span><span class="ro01-ch" style="--k:14">15</span><span class="ro01-ch" style="--k:15">16</span>
+      <div class="ro01-part ro01-sin now" style="--k:0"><small>1–3</small><b>Sin</b><q>all have sinned</q><cite>3:23</cite></div>
+      <div class="ro01-part ro01-just" style="--k:1"><small>3:21–5</small><b>Justified by faith</b><q>being justified by faith, we have peace with God</q><cite>5:1</cite></div>
+      <div class="ro01-part ro01-life" style="--k:2"><small>6–8</small><b>New life</b><q>There is therefore now no condemnation</q><cite>8:1</cite></div>
+      <div class="ro01-part ro01-isr" style="--k:3"><small>9–11</small><b>Israel and the nations</b><q>whosoever shall call upon the name of the Lord shall be saved</q><cite>10:13</cite></div>
+      <div class="ro01-part ro01-live" style="--k:4"><small>12–16</small><b>Living it out</b><q>present your bodies a living sacrifice</q><cite>12:1</cite></div>
+    </div>
+    <p class="note step">We start in the dark: the bad news, so the good news makes sense. Paul isn't singling anyone out. By chapter 3 every man is in the same spot. Then comes <em>“But now”</em> (3:21).</p>
+  </div>
+</section>
+
+<section class="slide watch">
+  <div class="inner">
+    <h2 class="rise">Things to watch for</h2>
+    <p class="lede rise" style="--d:1">Keep these questions in the back of your mind as we read. We'll come back to every one of them at the end.</p>
+    <ol class="seeds">
+      <li class="step"><span class="topic">The good news</span><span class="seed-q">What is the gospel, and why was Paul not ashamed of it?</span></li>
+      <li class="step"><span class="topic">For everyone</span><span class="seed-q">Who is the gospel for?</span></li>
+      <li class="step"><span class="topic">Right with God</span><span class="seed-q">How does a man become right with God?</span></li>
+      <li class="step"><span class="topic">What every man knows</span><span class="seed-q">What can every man know about God, even without a Bible?</span></li>
+      <li class="step"><span class="topic">The road down</span><span class="seed-q">Where does the road away from God begin?</span></li>
+      <li class="step"><span class="topic">Given up</span><span class="seed-q">What does it mean that God “gave them up”?</span></li>
+    </ol>
+  </div>
+</section>
+
+<!-- ======================= PART ONE: PAUL TO ROME ======================= -->
+<section class="slide part">
+  <div class="inner">
+    <p class="part-n rise">Part one</p>
+    <h2 class="rise" style="--d:1">To all that be in Rome</h2>
+    <p class="range rise" style="--d:2">Verses 1–15</p>
+    <div class="rule"></div>
+    <p class="hook rise" style="--d:4">A former persecutor writes to a church he's never met, in the capital of the world.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="1-2" data-hl="a servant of Jesus Christ|separated unto the gospel of God"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="1" data-hl="a servant of Jesus Christ"></blockquote>
+    <h2 class="rise" style="--d:1">Who is writing</h2>
+    <div class="rename">
+      <span class="old rise" style="--d:2">Saul of Tarsus, persecutor</span>
+      <span class="arrow step n2">→</span>
+      <span class="new step">Paul, a servant</span>
+      <span class="gloss step">“Servant” is <span class="gk">doulos</span>: a slave, a man who belongs to his master.</span>
+    </div>
+    <blockquote class="quote step"><p>“As for Saul, he made havock of the church, entering into every house, and haling men and women committed them to prison.”</p><cite>Acts 8:3</cite></blockquote>
+    <p class="note step">He once dragged believers to prison. Now the first thing he says about himself is that he belongs to Jesus. An <em>apostle</em> is <em>one sent</em> with a message; <em>separated</em> means set apart for one job. If God could turn Saul around, no man is too far gone.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="3-4" data-hl="the seed of David according to the flesh|declared to be the Son of God with power|by the resurrection from the dead"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="3-4" data-hl="the seed of David|declared to be the Son of God with power"></blockquote>
+    <h2 class="rise" style="--d:1">What is “the gospel”?</h2>
+    <div class="morph">
+      <span class="big rise" style="--d:2">εὐαγγέλιον</span>
+      <span class="say step">said <em class="gk">euangelion</em></span>
+      <span class="means step">“good news”</span>
+    </div>
+    <div class="columns">
+      <div class="col law step">
+        <p class="who">“the seed of David according to the flesh”</p>
+        <h3>Truly a man</h3>
+        <p>Born in King David's family line, the King the prophets promised (v. 2).</p>
+      </div>
+      <div class="col grace step">
+        <p class="who">“the Son of God with power… by the resurrection”</p>
+        <h3>Truly God</h3>
+        <p>The empty tomb settled it. Death couldn't hold Him.</p>
+      </div>
+    </div>
+    <p class="note step">The gospel isn't advice about what you should do. It's <em>news</em> about what Jesus has done. And the whole thing is about a Person: <em>“Concerning his Son Jesus Christ our Lord.”</em></p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="5-7" data-hl="among all nations|the called of Jesus Christ|beloved of God, called to be saints|Grace to you and peace"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="7" data-hl="beloved of God, called to be saints"></blockquote>
+    <h2 class="rise" style="--d:1">Called, three times</h2>
+    <ol class="signs rise" style="--d:2">
+      <li><b>Paul</b>“called to be an apostle” · v. 1</li>
+      <li><b>You</b>“the called of Jesus Christ” · v. 6</li>
+      <li class="now"><b>Every believer in Rome</b>“called to be saints” · v. 7</li>
+    </ol>
+    <p class="note step"><em>Saints</em> doesn't mean statues or super-Christians. It means <em>holy ones</em>, people set apart for God. Paul calls every believer in Rome a saint, slaves and soldiers and shopkeepers alike. If you belong to Jesus, God calls you one too.</p>
+    <p class="note step"><em>“Grace to you and peace.”</em> Grace is God's favor you didn't earn. Peace is what follows: being at peace with God, and then inside yourself. It's always in that order. Grace first, then peace.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="8-10" data-hl="your faith is spoken of throughout the whole world|without ceasing I make mention of you always in my prayers|a prosperous journey by the will of God"></section>
+<section class="slide verse" data-v="11-13" data-hl="I long to see you|but was let hitherto"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <div class="split">
+      <div class="stage">
+        <svg data-world viewBox="150 95 758 481" data-towns="Rome!:t, Corinth:l, Caesarea:l, Jerusalem*:r, Melita:b, Crete:t" role="img" aria-label="A map of the Mediterranean. Paul's voyage as a prisoner runs from Caesarea, along the coast of Asia, past Crete, through a storm to Melita, and on to Rome.">
+          <path class="map-route r1 j4" data-journey="rome"/>
+        </svg>
+      </div>
+      <div>
+        <h2 class="rise" style="--d:1">A prayer answered the hard way</h2>
+        <p class="note rise" style="--d:2"><em>“Let hitherto”</em> is old English for <em>hindered until now</em>. Paul had tried again and again to get to Rome.</p>
+        <p class="note step map-go1">He prayed for <em>“a prosperous journey,”</em> and God said yes: about three years later, as a prisoner, after a shipwreck, with the empire paying his fare (Acts 27–28). A setback isn't always a no.</p>
+        <blockquote class="quote step"><p>“Be of good cheer, Paul: for as thou hast testified of me in Jerusalem, so must thou bear witness also at Rome.”</p><cite>Acts 23:11</cite></blockquote>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="slide verse" data-v="14-15" data-hl="I am debtor|I am ready to preach the gospel to you that are at Rome also"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="14" data-hl="I am debtor"></blockquote>
+    <h2 class="rise" style="--d:1">A debt Paul owed everybody</h2>
+    <div class="ledger rise" style="--d:2">
+      <h3>What Paul owes, and to whom</h3>
+      <ul>
+        <li style="--k:0"><span>the Greeks</span><span>the gospel</span></li>
+        <li style="--k:1"><span>the Barbarians</span><span>the gospel</span></li>
+        <li style="--k:2"><span>the wise</span><span>the gospel</span></li>
+        <li style="--k:3"><span>the unwise</span><span>the gospel</span></li>
+        <li style="--k:4"><span>you that are at Rome</span><span>the gospel</span></li>
+      </ul>
+      <p class="total"><span>Balance due</span><b>every man he meets</b></p>
+    </div>
+    <p class="note step"><em>Barbarians</em> meant anyone who didn't speak Greek; to Greek ears other languages sounded like “bar-bar-bar.” Insiders and outsiders, schooled and unschooled: Paul owed them all.</p>
+    <p class="note step">If you're handed a fortune to deliver, you owe it to the man it's meant for. Somebody delivered the gospel to you. Who is it meant for next?</p>
+  </div>
+</section>
+
+<!-- ======================= PART TWO: NOT ASHAMED ======================= -->
+<section class="slide part">
+  <div class="inner">
+    <p class="part-n rise">Part two</p>
+    <h2 class="rise" style="--d:1">Not ashamed</h2>
+    <p class="range rise" style="--d:2">Verses 16–17</p>
+    <div class="rule"></div>
+    <p class="hook rise" style="--d:4">The two verses the whole letter hangs on.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="16-17" data-hl="I am not ashamed of the gospel of Christ|the power of God unto salvation to every one that believeth|the righteousness of God revealed from faith to faith|The just shall live by faith"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="16" data-hl="the power of God unto salvation to every one that believeth"></blockquote>
+    <h2 class="rise" style="--d:1">Why would anyone be ashamed?</h2>
+    <blockquote class="quote rise" style="--d:2"><p>“But we preach Christ crucified, unto the Jews a stumblingblock, and unto the Greeks foolishness;”</p><cite>1 Corinthians 1:23</cite></blockquote>
+    <p class="note step">In Rome, the cross was how you killed slaves and rebels. Telling the capital of the world that the Savior died on one sounded crazy. Paul says it anyway, because it works:</p>
+    <div class="morph step">
+      <span class="big">δύναμις</span>
+      <span class="say"><em class="gk">dunamis</em>, “power”</span>
+      <span class="means">the root of our word dynamite</span>
+    </div>
+    <p class="note step">Not power for those who help themselves: <em>“to every one that believeth.”</em> <em>“The Jew first”</em> is the order history went, Israel first and then the nations (Acts 13:46). It isn't a ranking.</p>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="17" data-hl="the righteousness of God revealed"></blockquote>
+    <div class="split">
+      <div class="stage">
+        <svg viewBox="0 0 600 340" role="img" aria-label="A high dashed line marks God's standard. Four bars, a decent man, a church man, me on my best day and me on my worst day, all stop short of it. Then a fifth bar, given by God, rises all the way to the line.">
+          <line x1="30" y1="54" x2="590" y2="54" stroke-width="3" stroke-dasharray="10 7" style="stroke:var(--accent)"/>
+          <text x="30" y="36" font-size="19" font-weight="700" style="fill:var(--accent-hot)">God's standard: His own righteousness</text>
+          <line x1="30" y1="300" x2="590" y2="300" stroke-width="2" style="stroke:var(--line-strong)"/>
+          <rect class="ro01-bar" style="--k:0;fill:var(--surface-2);stroke:var(--ink-soft)" x="52" y="150" width="78" height="150" rx="5" stroke-width="2"/>
+          <rect class="ro01-bar" style="--k:1;fill:var(--surface-2);stroke:var(--ink-soft)" x="160" y="118" width="78" height="182" rx="5" stroke-width="2"/>
+          <rect class="ro01-bar" style="--k:2;fill:var(--surface-2);stroke:var(--ink-soft)" x="268" y="176" width="78" height="124" rx="5" stroke-width="2"/>
+          <rect class="ro01-bar" style="--k:3;fill:var(--surface-2);stroke:var(--ink-soft)" x="376" y="240" width="78" height="60" rx="5" stroke-width="2"/>
+          <g font-size="15" text-anchor="middle" style="fill:var(--ink-soft)">
+            <text x="91" y="322">a decent man</text><text x="199" y="322">a church man</text>
+            <text x="307" y="322">me, best day</text><text x="415" y="322">me, worst day</text>
+          </g>
+          <path d="M199 62 L199 110" stroke-width="2" style="stroke:var(--danger)"/>
+          <text x="208" y="92" font-size="15" font-style="italic" style="fill:var(--danger)">come short</text>
+          <rect class="ro01-gift" x="486" y="54" width="82" height="246" rx="5" style="fill:var(--accent)"/>
+          <g class="ro01-giftword">
+            <text x="527" y="186" text-anchor="middle" font-size="17" font-weight="700" style="fill:var(--on-accent)">given</text>
+            <text x="527" y="322" text-anchor="middle" font-size="15" font-weight="700" style="fill:var(--accent-hot)">by faith</text>
+          </g>
+        </svg>
+      </div>
+      <div>
+        <h2 class="rise" style="--d:1">Righteousness</h2>
+        <p class="note rise" style="--d:2"><em>Righteousness</em> means being right: right with God, measuring up to what He is. Nobody does. Not the decent man, not the church man, not you on your best day. <em>“All have sinned, and come short”</em> (3:23).</p>
+        <p class="note step ro01-give">Here's the news: God doesn't just demand righteousness. He <em>gives</em> it. <em>“The righteousness of God”</em> is a right standing with Him that He hands to the man who believes. It's received, not achieved.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="17" data-hl="The just shall live by faith"></blockquote>
+    <h2 class="rise" style="--d:1">The just shall live by faith</h2>
+    <div class="pair">
+      <div class="scroll rise" style="--d:2"><p class="ref">Habakkuk 2:4, about 600 years earlier</p><p class="kjv">“Behold, his soul which is lifted up is not upright in him: but <mark>the just shall live by his faith</mark>.”</p></div>
+      <div class="scroll step"><p class="ref">Romans 1:17</p><p class="kjv">“as it is written, <mark>The just shall live by faith</mark>.”</p></div>
+    </div>
+    <p class="note step"><em>The just</em> is the man God counts right. It's a courtroom word: the Judge looks at the case and declares, <em>this man is in the right</em>. Paul will call that being <em>justified</em> (3:24, 5:1).</p>
+    <p class="note step"><em>“From faith to faith”</em>: it starts with trusting Christ, and it goes on that way. You're not saved by faith and then kept by your own effort. The just man <em>lives</em> by faith, every day, including today.</p>
+  </div>
+</section>
+
+<!-- ======================= PART THREE: THE ROAD DOWN ======================= -->
+<section class="slide part">
+  <div class="inner">
+    <p class="part-n rise">Part three</p>
+    <h2 class="rise" style="--d:1">God gave them up</h2>
+    <p class="range rise" style="--d:2">Verses 18–32</p>
+    <div class="rule"></div>
+    <p class="hook rise" style="--d:4">Why men need the gospel: a slide that starts small and ends in the dark.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="18-20" data-hl="the wrath of God is revealed from heaven|who hold the truth in unrighteousness|clearly seen|they are without excuse"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="18" data-hl="the wrath of God|hold the truth in unrighteousness"></blockquote>
+    <div class="split">
+      <div class="stage">
+        <svg viewBox="0 0 500 330" role="img" aria-label="A hand pushes a ball labeled the truth down into the water. The ball keeps pushing back up.">
+          <defs><clipPath id="ro01-tank"><rect x="0" y="0" width="500" height="330" rx="8"/></clipPath></defs>
+          <g clip-path="url(#ro01-tank)">
+            <rect class="ro01-water" x="0" y="168" width="500" height="170"/>
+            <path class="ro01-wave" d="M0 168 q30 -12 60 0 t60 0 t60 0 t60 0 t60 0 t60 0 t60 0 t60 0 t60 0 t60 0 t60 0 V200 H0 Z"/>
+            <g style="fill:var(--accent-hot)">
+              <circle class="ro01-up" style="--k:0" cx="176" cy="250" r="5"/><circle class="ro01-up" style="--k:1" cx="324" cy="236" r="4"/>
+              <circle class="ro01-up" style="--k:2" cx="196" cy="280" r="3.5"/><circle class="ro01-up" style="--k:3" cx="306" cy="270" r="5"/>
+            </g>
+            <g class="ro01-push">
+              <circle cx="250" cy="196" r="62" style="fill:var(--accent)"/>
+              <text x="250" y="204" text-anchor="middle" font-size="22" font-weight="700" style="fill:var(--on-accent)">the truth</text>
+              <rect x="222" y="-20" width="56" height="128" rx="24" style="fill:var(--ink-soft)"/>
+              <rect x="200" y="96" width="100" height="40" rx="18" style="fill:var(--ink-soft)"/>
+              <g style="fill:var(--ink-soft)"><rect x="203" y="118" width="22" height="22" rx="10"/><rect x="227" y="120" width="22" height="22" rx="10"/><rect x="251" y="120" width="22" height="22" rx="10"/><rect x="275" y="118" width="22" height="22" rx="10"/></g>
+            </g>
+          </g>
+          <g font-size="16" font-weight="700" style="fill:var(--ink)">
+            <text x="292" y="40">held down</text>
+            <text x="480" y="300" text-anchor="end" style="fill:var(--accent-hot)">keeps pushing up</text>
+          </g>
+        </svg>
+      </div>
+      <div>
+        <h2 class="rise" style="--d:1">Wrath</h2>
+        <p class="note rise" style="--d:2"><em>Wrath</em> is God's settled, holy anger at evil. It isn't a temper. A God who shrugged at murder, abuse and lies wouldn't be good.</p>
+        <p class="note step"><em>“Hold the truth in unrighteousness”</em> means <em>hold it down</em>, like a ball under water. It takes constant effort, and it keeps pushing back up. Every man who's lived a lie knows how tiring that is.</p>
+        <p class="note step">Wrath comes before the cure, because nobody wants a rescue until he sees the danger. The cure: <em>“we shall be saved from wrath through him”</em> (5:9).</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="20" data-hl="clearly seen|his eternal power and Godhead"></blockquote>
+    <div class="split">
+      <div class="stage">
+        <svg viewBox="0 0 600 320" role="img" aria-label="A night sky full of twinkling stars over dark hills.">
+          <defs><clipPath id="ro01-frame"><rect x="0" y="0" width="600" height="320" rx="10"/></clipPath></defs>
+          <g clip-path="url(#ro01-frame)">
+          <rect class="ro01-night" x="0" y="0" width="600" height="320"/>
+          <g>
+            <circle class="ro01-star" style="--k:0" cx="44" cy="40" r="2.2"/><circle class="ro01-star" style="--k:1" cx="96" cy="88" r="1.6"/>
+            <circle class="ro01-star" style="--k:2" cx="138" cy="30" r="2.6"/><circle class="ro01-star" style="--k:3" cx="182" cy="120" r="1.5"/>
+            <circle class="ro01-star" style="--k:4" cx="224" cy="62" r="2"/><circle class="ro01-star" style="--k:5" cx="268" cy="22" r="1.4"/>
+            <circle class="ro01-star" style="--k:6" cx="300" cy="100" r="2.4"/><circle class="ro01-star" style="--k:7" cx="344" cy="48" r="1.6"/>
+            <circle class="ro01-star" style="--k:8" cx="390" cy="132" r="1.8"/><circle class="ro01-star" style="--k:9" cx="428" cy="26" r="2.2"/>
+            <circle class="ro01-star" style="--k:10" cx="470" cy="80" r="1.5"/><circle class="ro01-star" style="--k:11" cx="512" cy="40" r="2.6"/>
+            <circle class="ro01-star" style="--k:12" cx="556" cy="104" r="1.7"/><circle class="ro01-star" style="--k:13" cx="70" cy="150" r="1.4"/>
+            <circle class="ro01-star" style="--k:14" cx="150" cy="176" r="1.8"/><circle class="ro01-star" style="--k:15" cx="248" cy="160" r="1.3"/>
+            <circle class="ro01-star" style="--k:16" cx="460" cy="168" r="1.6"/><circle class="ro01-star" style="--k:17" cx="580" cy="150" r="1.4"/>
+            <circle class="ro01-star" style="--k:18" cx="20" cy="104" r="1.3"/><circle class="ro01-star" style="--k:19" cx="364" cy="88" r="1.2"/>
+            <circle class="ro01-star" style="--k:20" cx="534" cy="186" r="1.2"/><circle class="ro01-star" style="--k:21" cx="200" cy="94" r="1.1"/>
+            <circle cx="500" cy="64" r="16" style="fill:var(--glow);opacity:.9"/>
+          </g>
+          <path class="ro01-hills" d="M0 250 C70 210 120 214 180 236 C240 258 280 196 360 204 C430 212 470 248 530 230 C560 222 584 226 600 232 V320 H0 Z"/>
+          <text class="ro01-skytext serif" x="300" y="298" text-anchor="middle" font-size="20" font-style="italic">“The heavens declare the glory of God”</text>
+          </g>
+        </svg>
+      </div>
+      <div>
+        <h2 class="rise" style="--d:1">Clearly seen</h2>
+        <p class="note rise" style="--d:2">Nobody needs a Bible to know there is a God. The night sky, the ocean, a newborn baby: <em>“the things that are made”</em> all say Someone powerful made this.</p>
+        <p class="note step"><em>Godhead</em> means God's divine nature. Creation can't tell you how to be saved, but it tells every man enough to look for Him.</p>
+        <p class="note step"><em>“Without excuse”</em> means no one can say, <em>nobody ever told me</em>. The stars over the prison yard preached the same sermon as the ones over the church.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="slide verse" data-v="21-23" data-hl="they glorified him not as God, neither were thankful|their foolish heart was darkened|Professing themselves to be wise, they became fools"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="21" data-hl="neither were thankful"></blockquote>
+    <h2 class="rise" style="--d:1">The road down</h2>
+    <ol class="stairs down" style="--n:6" aria-label="Six steps down: they knew God; glorified Him not; neither were thankful; became vain in their imaginations; their foolish heart was darkened; professing themselves wise, they became fools and changed God's glory for an image.">
+      <li style="--k:0"><b>“knew God”</b>where it starts</li>
+      <li style="--k:1"><b>“glorified him not”</b>didn't give Him His due</li>
+      <li style="--k:2"><b>“neither were thankful”</b>took it all for granted</li>
+      <li style="--k:3"><b>“vain in their imaginations”</b>empty thinking</li>
+      <li style="--k:4"><b>“heart was darkened”</b>can't see straight</li>
+      <li style="--k:5"><b>“became fools”</b>bowing to things they made</li>
+    </ol>
+    <p class="note step">Look where the slide starts. Not with drugs or crime. It starts with a man who knows God and won't thank Him. Ingratitude is the first step down.</p>
+    <p class="note step">Relapse works the same way. It starts days before the drink: quit praying, nurse a resentment, decide you know better. Then the thinking goes dark, and a man ends up bowing to a bottle, a pill or a screen, things far smaller than himself.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="24-25" data-hl="God also gave them up|changed the truth of God into a lie|served the creature more than the Creator"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="25" data-hl="changed the truth of God into a lie"></blockquote>
+    <h2 class="rise" style="--d:1">Bad trades</h2>
+    <div class="mirror">
+      <div class="rise" style="--d:2"><span>“the glory of the uncorruptible God”</span><span class="arrow">→</span><span class="word">an image of man or beast</span><small>verse 23</small></div>
+      <div class="step"><span>“the truth of God”</span><span class="arrow">→</span><span class="word">a lie</span><small>verse 25</small></div>
+      <div class="step"><span>“the natural use”</span><span class="arrow">→</span><span class="word">“that which is against nature”</span><small>verse 26</small></div>
+    </div>
+    <p class="note step">To <em>worship</em> something is to serve it: give it your time, your money, your loyalty. Nobody bows to statues anymore, but plenty of men serve a bottle, a needle, a paycheck or a woman <em>“more than the Creator.”</em></p>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="24" data-hl="God also gave them up"></blockquote>
+    <h2 class="rise" style="--d:1">“God gave them up”</h2>
+    <div class="tally rise" style="--d:2" aria-label="Verses 18 to 32, with God gave them up or gave them over in verses 24, 26 and 28">
+      <span><i>18</i></span><span><i>19</i></span><span><i>20</i></span><span><i>21</i></span><span><i>22</i></span><span><i>23</i></span>
+      <span class="hit" style="--k:0"><i>24</i>gave up</span><span><i>25</i></span><span class="hit" style="--k:1"><i>26</i>gave up</span><span><i>27</i></span>
+      <span class="hit" style="--k:2"><i>28</i>gave over</span><span><i>29</i></span><span><i>30</i></span><span><i>31</i></span><span><i>32</i></span>
+    </div>
+    <p class="note step">To <em>give up</em> is to hand over. God stopped holding them back and let them have what they insisted on. Getting what you want, and then finding it owns you: every addict knows that judgment.</p>
+    <p class="note step">But it isn't the last word. Paul uses the very same word for what God did with His own Son:</p>
+    <blockquote class="quote step"><p>“He that spared not his own Son, but delivered him up for us all, how shall he not with him also freely give us all things?”</p><cite>Romans 8:32</cite></blockquote>
+  </div>
+</section>
+
+<section class="slide verse" data-v="26-27" data-hl="For this cause God gave them up unto vile affections"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="26" data-hl="God gave them up unto vile affections"></blockquote>
+    <h2 class="rise" style="--d:1">A hard passage, read plainly</h2>
+    <p class="note rise" style="--d:2"><em>Vile affections</em> means shameful passions. Paul's example is sex between women and between men. He calls it <em>“against nature”</em>, against the way God made man and woman for each other, and he names it as sin, plainly.</p>
+    <p class="note step">It's one more bad trade: God's design swapped for desires that go against it. <em>“That recompence of their error which was meet”</em> is the harm that comes built in.</p>
+    <p class="note step">But the next verses list envy, gossip, pride and disobeying parents. Nobody here stands above this list. And Paul wrote this to a church of men who had lived every kind of life, this one included:</p>
+    <blockquote class="quote step"><p>“And such were some of you: but ye are washed, but ye are sanctified, but ye are justified in the name of the Lord Jesus, and by the Spirit of our God.”</p><cite>1 Corinthians 6:11</cite></blockquote>
+  </div>
+</section>
+
+<section class="slide verse" data-v="28-29" data-hl="they did not like to retain God in their knowledge|God gave them over to a reprobate mind"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="28" data-hl="a reprobate mind"></blockquote>
+    <h2 class="rise" style="--d:1">Reprobate</h2>
+    <div class="morph">
+      <span class="big rise" style="--d:2">ἀδόκιμος</span>
+      <span class="say step">said <em class="gk">adokimos</em></span>
+      <span class="means step">“failed the test,” like a fake coin thrown out</span>
+    </div>
+    <div class="ifthen step">
+      <div class="if"><small>They decided God wasn't worth keeping</small>“they did not like to retain God”</div>
+      <span class="arrow">→</span>
+      <div class="then"><small>So God handed them a mind that can't judge right</small>“a reprobate mind”</div>
+    </div>
+    <p class="note step">They tested God and threw Him out, so their minds stopped passing the test. <em>“Not convenient”</em> means <em>not fitting</em>. If you're worried you've gone too far for God, that worry is a sign He's still speaking to you. A reprobate mind doesn't care.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="30-32" data-hl="worthy of death|have pleasure in them that do them"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="32" data-hl="have pleasure in them that do them"></blockquote>
+    <h2 class="rise" style="--d:1">The list</h2>
+    <div class="ro01-words" aria-label="The sins listed in verses 29 to 31, with the everyday ones lit up">
+      <span style="--k:0">un&shy;righteousness<small>doing wrong</small></span>
+      <span style="--k:1">fornication<small>sex outside marriage</small></span>
+      <span style="--k:2">wickedness</span>
+      <span class="us" style="--k:3">covetousness<small>always wanting more</small></span>
+      <span style="--k:4">maliciousness<small>wanting to hurt</small></span>
+      <span class="us" style="--k:5">envy</span>
+      <span style="--k:6">murder</span>
+      <span class="us" style="--k:7">debate<small>quarreling</small></span>
+      <span class="us" style="--k:8">deceit<small>lying, conning</small></span>
+      <span style="--k:9">malignity<small>meanness</small></span>
+      <span class="us" style="--k:10">whisperers<small>gossips</small></span>
+      <span class="us" style="--k:11">backbiters<small>run people down</small></span>
+      <span style="--k:12">haters of God</span>
+      <span style="--k:13">despiteful<small>insulting</small></span>
+      <span class="us" style="--k:14">proud</span>
+      <span class="us" style="--k:15">boasters</span>
+      <span style="--k:16">inventors of evil things</span>
+      <span class="us" style="--k:17">disobedient to parents</span>
+      <span style="--k:18">without understanding</span>
+      <span class="us" style="--k:19">covenant&shy;breakers<small>promise breakers</small></span>
+      <span style="--k:20">without natural affection<small>cold to their own family</small></span>
+      <span class="us" style="--k:21">implacable<small>won't make peace</small></span>
+      <span style="--k:22">unmerciful</span>
+    </div>
+    <p class="note step ro01-us">Murder is on the list. So are gossip, bragging and lying, the sins we do before lunch. Paul's case is about to take in every reader, the decent man most of all (chapter 2).</p>
+    <p class="note step">Verse 32 is the bottom: not just doing it, but cheering others on. Every one of us has stood in that crowd.</p>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise" style="--d:1">Where Paul is going</h2>
+    <div class="daybreak">
+      <div class="rise" style="--d:2"><i>Romans 1–3</i><b>All have sinned</b><p>Chapter 1 the wild man, chapter 2 the decent man, chapter 3 everybody. No one is singled out.</p></div>
+      <div class="step"><i>Romans 3:21–5</i><b>But now</b><p>“Being justified freely by his grace through the redemption that is in Christ Jesus” (3:24).</p></div>
+      <div class="step"><i>Romans 8:1</i><b>No condemnation</b><p>For every man who is in Christ Jesus. Nothing can separate him from God's love (8:39).</p></div>
+    </div>
+    <p class="note step">If chapter 1 read like your own story, good: that means you see the need. You haven't read the end of the story yet.</p>
+    <blockquote class="quote step"><p>“But God commendeth his love toward us, in that, while we were yet sinners, Christ died for us.”</p><cite>Romans 5:8</cite></blockquote>
+  </div>
+</section>
+
+<!-- ======================= CLOSING ======================= -->
+<section class="slide remember">
+  <div class="inner">
+    <h2 class="rise">Points to remember</h2>
+    <ol class="seeds">
+      <li class="step"><span class="topic">The good news</span><span class="seed-q">“I am not ashamed of the gospel of Christ” <cite>1:16</cite></span><span class="take">The gospel is news about Jesus, the risen Son of God, and it has the power to save.</span></li>
+      <li class="step"><span class="topic">For everyone</span><span class="seed-q">“To every one that believeth” <cite>1:16</cite></span><span class="take">Jew or Greek, wise or unwise: no one is too far gone, and no one is first in line.</span></li>
+      <li class="step"><span class="topic">Right with God</span><span class="seed-q">“The just shall live by faith” <cite>1:17</cite></span><span class="take">Righteousness is God's gift to the man who believes, and he lives by faith every day.</span></li>
+      <li class="step"><span class="topic">What every man knows</span><span class="seed-q">“They are without excuse” <cite>1:20</cite></span><span class="take">Creation tells every man there is a powerful God he must answer to.</span></li>
+      <li class="step"><span class="topic">The road down</span><span class="seed-q">“Neither were thankful” <cite>1:21</cite></span><span class="take">The slide away from God starts small: not giving Him thanks.</span></li>
+      <li class="step"><span class="topic">Given up</span><span class="seed-q">“God gave them up” <cite>1:24</cite></span><span class="take">Keep insisting on sin and God lets you have it. But He gave up His own Son to get you back.</span></li>
+    </ol>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 1 of 6</p>
+      <span class="topic">The good news</span>
+      <h2>What is the gospel, and why was Paul not ashamed of it?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="3"></blockquote>
+      <blockquote class="quote step" data-q="4"></blockquote>
+      <blockquote class="quote step" data-q="16" data-hl="it is the power of God unto salvation"></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>The gospel is the good news about Jesus: truly a man from David's line, and declared the Son of God by rising from the dead. A crucified Savior sounded foolish to the world, but Paul wasn't ashamed, because it works. It is God's own power to save.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 2 of 6</p>
+      <span class="topic">For everyone</span>
+      <h2>Who is the gospel for?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="5" data-hl="among all nations"></blockquote>
+      <blockquote class="quote step" data-q="14"></blockquote>
+      <blockquote class="quote step" data-q="16" data-hl="to every one that believeth"></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>Everyone: Greeks and Barbarians, the wise and the unwise, Jews and Gentiles. It saves “every one that believeth.” There's no one it was not meant for, including you.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 3 of 6</p>
+      <span class="topic">Right with God</span>
+      <h2>How does a man become right with God?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="17"></blockquote>
+      <blockquote class="quote step"><p>“Therefore being justified by faith, we have peace with God through our Lord Jesus Christ:”</p><cite>Romans 5:1</cite></blockquote>
+      <blockquote class="quote step"><p>“And be found in him, not having mine own righteousness, which is of the law, but that which is through the faith of Christ, the righteousness which is of God by faith:”</p><cite>Philippians 3:9</cite></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>By faith, not by measuring up. No man reaches God's standard on his own. God gives His righteousness to the man who trusts Christ, and declares him right. Then that man goes on living by faith, from the first day to the last.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 4 of 6</p>
+      <span class="topic">What every man knows</span>
+      <h2>What can every man know about God, even without a Bible?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="19"></blockquote>
+      <blockquote class="quote step" data-q="20" data-hl="his eternal power and Godhead"></blockquote>
+      <blockquote class="quote step"><p>“The heavens declare the glory of God; and the firmament sheweth his handywork.”</p><cite>Psalm 19:1</cite></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>That He is there, that He is powerful, and that He is God and we are not. Creation shows it to everyone, so no one can say he was never told. It can't tell us how to be saved. That's what the gospel is for.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 5 of 6</p>
+      <span class="topic">The road down</span>
+      <h2>Where does the road away from God begin?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="21" data-hl="they glorified him not as God, neither were thankful"></blockquote>
+      <blockquote class="quote step" data-q="22"></blockquote>
+      <blockquote class="quote step" data-q="25"></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>With men who knew God but wouldn't honor Him or thank Him. From there the thinking goes empty, the heart goes dark, and they trade the truth for a lie. So guard the small things: thank God today, and keep your thinking in the light.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 6 of 6</p>
+      <span class="topic">Given up</span>
+      <h2>What does it mean that God “gave them up”?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="24" data-hl="God also gave them up"></blockquote>
+      <blockquote class="quote step" data-q="28" data-hl="God gave them over to a reprobate mind"></blockquote>
+      <blockquote class="quote step"><p>“He that spared not his own Son, but delivered him up for us all, how shall he not with him also freely give us all things?”</p><cite>Romans 8:32</cite></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>God stopped holding them back and handed them over to what they kept choosing, and it ruled them. But God also handed over His own Son for us, so no man has to stay given up.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide prayer">
+  <div class="inner">
+    <div class="emblem rise"></div>
+    <h2 class="rise" style="--d:1">Prayer requests</h2>
+    <p class="ask-line rise" style="--d:2">What can we pray about for you today?</p>
+    <blockquote class="quote rise" style="--d:4"><p>“Now the God of hope fill you with all joy and peace in believing, that ye may abound in hope, through the power of the Holy Ghost.”</p><cite>Romans 15:13</cite></blockquote>
+  </div>
+</section>
+
+</main>
+
+<script>
+// King James Version, Romans chapter 1
+const V = {
+  1: "Paul, a servant of Jesus Christ, called to be an apostle, separated unto the gospel of God,",
+  2: "(Which he had promised afore by his prophets in the holy scriptures,)",
+  3: "Concerning his Son Jesus Christ our Lord, which was made of the seed of David according to the flesh;",
+  4: "And declared to be the Son of God with power, according to the spirit of holiness, by the resurrection from the dead:",
+  5: "By whom we have received grace and apostleship, for obedience to the faith among all nations, for his name:",
+  6: "Among whom are ye also the called of Jesus Christ:",
+  7: "To all that be in Rome, beloved of God, called to be saints: Grace to you and peace from God our Father, and the Lord Jesus Christ.",
+  8: "First, I thank my God through Jesus Christ for you all, that your faith is spoken of throughout the whole world.",
+  9: "For God is my witness, whom I serve with my spirit in the gospel of his Son, that without ceasing I make mention of you always in my prayers;",
+  10: "Making request, if by any means now at length I might have a prosperous journey by the will of God to come unto you.",
+  11: "For I long to see you, that I may impart unto you some spiritual gift, to the end ye may be established;",
+  12: "That is, that I may be comforted together with you by the mutual faith both of you and me.",
+  13: "Now I would not have you ignorant, brethren, that oftentimes I purposed to come unto you, (but was let hitherto,) that I might have some fruit among you also, even as among other Gentiles.",
+  14: "I am debtor both to the Greeks, and to the Barbarians; both to the wise, and to the unwise.",
+  15: "So, as much as in me is, I am ready to preach the gospel to you that are at Rome also.",
+  16: "For I am not ashamed of the gospel of Christ: for it is the power of God unto salvation to every one that believeth; to the Jew first, and also to the Greek.",
+  17: "For therein is the righteousness of God revealed from faith to faith: as it is written, The just shall live by faith.",
+  18: "For the wrath of God is revealed from heaven against all ungodliness and unrighteousness of men, who hold the truth in unrighteousness;",
+  19: "Because that which may be known of God is manifest in them; for God hath shewed it unto them.",
+  20: "For the invisible things of him from the creation of the world are clearly seen, being understood by the things that are made, even his eternal power and Godhead; so that they are without excuse:",
+  21: "Because that, when they knew God, they glorified him not as God, neither were thankful; but became vain in their imaginations, and their foolish heart was darkened.",
+  22: "Professing themselves to be wise, they became fools,",
+  23: "And changed the glory of the uncorruptible God into an image made like to corruptible man, and to birds, and fourfooted beasts, and creeping things.",
+  24: "Wherefore God also gave them up to uncleanness through the lusts of their own hearts, to dishonour their own bodies between themselves:",
+  25: "Who changed the truth of God into a lie, and worshipped and served the creature more than the Creator, who is blessed for ever. Amen.",
+  26: "For this cause God gave them up unto vile affections: for even their women did change the natural use into that which is against nature:",
+  27: "And likewise also the men, leaving the natural use of the woman, burned in their lust one toward another; men with men working that which is unseemly, and receiving in themselves that recompence of their error which was meet.",
+  28: "And even as they did not like to retain God in their knowledge, God gave them over to a reprobate mind, to do those things which are not convenient;",
+  29: "Being filled with all unrighteousness, fornication, wickedness, covetousness, maliciousness; full of envy, murder, debate, deceit, malignity; whisperers,",
+  30: "Backbiters, haters of God, despiteful, proud, boasters, inventors of evil things, disobedient to parents,",
+  31: "Without understanding, covenantbreakers, without natural affection, implacable, unmerciful:",
+  32: "Who knowing the judgment of God, that they which commit such things are worthy of death, not only do the same, but have pleasure in them that do them."
+};
+const BOOK = "Romans 1";
+</script>
+<script src="../assets/deck.js"></script>
+</body>
+</html>
