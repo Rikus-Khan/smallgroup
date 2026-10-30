@@ -312,7 +312,13 @@ window.GLOSSARY = [
     [ 1, 3, 6, 7, 8 ] ],
    [
     "Romans", 2,
-    [ 16 ] ] ]
+    [ 16 ] ],
+   [
+    "Romans", 5,
+    [ 1, 11, 15, 17, 21 ] ],
+   [
+    "Romans", 6,
+    [ 3, 11, 23 ] ] ]
  },
  {
   "id": "john-the-baptist",
@@ -795,7 +801,10 @@ window.GLOSSARY = [
     [ 21 ] ],
    [
     "Acts", 26,
-    [ 22 ] ] ]
+    [ 22 ] ],
+   [
+    "Romans", 5,
+    [ 14 ] ] ]
  },
  {
   "id": "elijah",
@@ -1080,7 +1089,10 @@ window.GLOSSARY = [
     [ 33 ] ],
    [
     "Romans", 1,
-    [ 7 ] ] ]
+    [ 7 ] ],
+   [
+    "Romans", 6,
+    [ 4 ] ] ]
  },
  {
   "id": "holy-spirit",
@@ -1209,7 +1221,10 @@ window.GLOSSARY = [
     [ 23, 28 ] ],
    [
     "Acts", 21,
-    [ 4, 11 ] ] ]
+    [ 4, 11 ] ],
+   [
+    "Romans", 5,
+    [ 5 ] ] ]
  },
  {
   "id": "disciples",
@@ -4023,7 +4038,13 @@ window.GLOSSARY = [
     [ 24, 32 ] ],
    [
     "Romans", 1,
-    [ 5, 7 ] ] ]
+    [ 5, 7 ] ],
+   [
+    "Romans", 5,
+    [ 2, 15, 17, 20, 21 ] ],
+   [
+    "Romans", 6,
+    [ 1, 14, 15 ] ] ]
  },
  {
   "id": "truth",
@@ -4293,7 +4314,13 @@ window.GLOSSARY = [
     [ 23 ] ],
    [
     "Romans", 2,
-    [ 7, 10 ] ] ]
+    [ 7, 10 ] ],
+   [
+    "Romans", 5,
+    [ 2, 3 ] ],
+   [
+    "Romans", 6,
+    [ 4 ] ] ]
  },
  {
   "id": "the-law",
@@ -4452,7 +4479,13 @@ window.GLOSSARY = [
     [ 8 ] ],
    [
     "Romans", 2,
-    [ 12, 13, 14, 15, 17, 18, 20, 23, 25, 26, 27 ] ] ]
+    [ 12, 13, 14, 15, 17, 18, 20, 23, 25, 26, 27 ] ],
+   [
+    "Romans", 5,
+    [ 13, 20 ] ],
+   [
+    "Romans", 6,
+    [ 14, 15 ] ] ]
  },
  {
   "id": "only-begotten",
@@ -4641,7 +4674,13 @@ window.GLOSSARY = [
     [ 1, 3, 6, 7, 8, 16 ] ],
    [
     "Romans", 2,
-    [ 16 ] ] ]
+    [ 16 ] ],
+   [
+    "Romans", 5,
+    [ 1, 6, 8, 11, 15, 17, 21 ] ],
+   [
+    "Romans", 6,
+    [ 3, 4, 8, 9, 11, 23 ] ] ]
  },
  {
   "id": "son-of-god",
@@ -5061,7 +5100,10 @@ window.GLOSSARY = [
     [ 27 ] ],
    [
     "Romans", 1,
-    [ 16 ] ] ]
+    [ 16 ] ],
+   [
+    "Romans", 6,
+    [ 8 ] ] ]
  },
  {
   "id": "witness",
@@ -5274,7 +5316,10 @@ window.GLOSSARY = [
     [ 3, 4, 5 ] ],
    [
     "Acts", 22,
-    [ 16 ] ] ]
+    [ 16 ] ],
+   [
+    "Romans", 6,
+    [ 3 ] ] ]
  },
  {
   "id": "sons-of-god",
@@ -6552,7 +6597,13 @@ window.GLOSSARY = [
     [ 17 ] ],
    [
     "Romans", 2,
-    [ 5, 26 ] ] ]
+    [ 5, 26 ] ],
+   [
+    "Romans", 5,
+    [ 7, 17, 18, 19, 21 ] ],
+   [
+    "Romans", 6,
+    [ 13, 16, 18, 19, 20 ] ] ]
  },
  {
   "id": "wicked",
@@ -6969,7 +7020,10 @@ window.GLOSSARY = [
     [ 21 ] ],
    [
     "Romans", 2,
-    [ 5, 29 ] ] ]
+    [ 5, 29 ] ],
+   [
+    "Romans", 6,
+    [ 17 ] ] ]
  },
  {
   "id": "tongue",
@@ -7260,7 +7314,10 @@ window.GLOSSARY = [
     [ 18 ] ],
    [
     "Romans", 2,
-    [ 5, 8 ] ] ]
+    [ 5, 8 ] ],
+   [
+    "Romans", 5,
+    [ 9 ] ] ]
  },
  {
   "id": "pride",
@@ -8919,7 +8976,13 @@ window.GLOSSARY = [
     [ 46, 48 ] ],
    [
     "Romans", 2,
-    [ 7 ] ] ]
+    [ 7 ] ],
+   [
+    "Romans", 5,
+    [ 21 ] ],
+   [
+    "Romans", 6,
+    [ 22, 23 ] ] ]
  },
  {
   "id": "condemnation",
@@ -8946,7 +9009,10 @@ window.GLOSSARY = [
     [ 19 ] ],
    [
     "John", 5,
-    [ 24, 29 ] ] ]
+    [ 24, 29 ] ],
+   [
+    "Romans", 5,
+    [ 16, 18 ] ] ]
  },
  {
   "id": "judgment",
@@ -9009,7 +9075,10 @@ window.GLOSSARY = [
     [ 32 ] ],
    [
     "Romans", 2,
-    [ 2, 3, 5 ] ] ]
+    [ 2, 3, 5 ] ],
+   [
+    "Romans", 5,
+    [ 16, 18 ] ] ]
  },
  {
   "id": "scriptures",
@@ -10620,7 +10689,10 @@ window.GLOSSARY = [
     [ 12 ] ],
    [
     "Acts", 17,
-    [ 19 ] ] ]
+    [ 19 ] ],
+   [
+    "Romans", 6,
+    [ 17 ] ] ]
  },
  {
   "id": "letters",
@@ -11184,7 +11256,10 @@ window.GLOSSARY = [
   "refs": [
    [
     "John", 8,
-    [ 32, 33, 36 ] ] ]
+    [ 32, 33, 36 ] ],
+   [
+    "Romans", 6,
+    [ 18, 22 ] ] ]
  },
  {
   "id": "bondage",
@@ -11205,7 +11280,10 @@ window.GLOSSARY = [
   "refs": [
    [
     "John", 8,
-    [ 34 ] ] ]
+    [ 34 ] ],
+   [
+    "Romans", 6,
+    [ 17, 20 ] ] ]
  },
  {
   "id": "aenon",
@@ -12234,7 +12312,10 @@ window.GLOSSARY = [
     [ 36 ] ],
    [
     "Romans", 1,
-    [ 7 ] ] ]
+    [ 7 ] ],
+   [
+    "Romans", 5,
+    [ 1 ] ] ]
  },
  {
   "id": "remit",
@@ -12906,7 +12987,10 @@ window.GLOSSARY = [
     [ 15, 21 ] ],
    [
     "Romans", 1,
-    [ 4 ] ] ]
+    [ 4 ] ],
+   [
+    "Romans", 6,
+    [ 5 ] ] ]
  },
  {
   "id": "graveclothes",
@@ -13821,7 +13905,10 @@ window.GLOSSARY = [
     [ 22 ] ],
    [
     "Romans", 2,
-    [ 9 ] ] ]
+    [ 9 ] ],
+   [
+    "Romans", 5,
+    [ 3 ] ] ]
  },
  {
   "id": "son-of-perdition",
@@ -14253,7 +14340,10 @@ window.GLOSSARY = [
     [ 23, 36 ] ],
    [
     "Acts", 4,
-    [ 10 ] ] ]
+    [ 10 ] ],
+   [
+    "Romans", 6,
+    [ 6 ] ] ]
  },
  {
   "id": "title-on-the-cross",
@@ -23406,7 +23496,10 @@ window.GLOSSARY = [
   "refs": [
    [
     "Luke", 3,
-    [ 38 ] ] ]
+    [ 38 ] ],
+   [
+    "Romans", 5,
+    [ 14 ] ] ]
  },
  {
   "id": "jairus",
@@ -24537,7 +24630,10 @@ window.GLOSSARY = [
     [ 19 ] ],
    [
     "Romans", 1,
-    [ 24, 27 ] ] ]
+    [ 24, 27 ] ],
+   [
+    "Romans", 6,
+    [ 12 ] ] ]
  },
  {
   "id": "divorcement",
@@ -31119,7 +31215,10 @@ window.GLOSSARY = [
     [ 39 ] ],
    [
     "Romans", 2,
-    [ 13 ] ] ]
+    [ 13 ] ],
+   [
+    "Romans", 5,
+    [ 1, 9, 16, 18 ] ] ]
  },
  {
   "id": "beginnings-of-sorrows",
@@ -31359,7 +31458,10 @@ window.GLOSSARY = [
   "refs": [
    [
     "Luke", 20,
-    [ 16 ] ] ]
+    [ 16 ] ],
+   [
+    "Romans", 6,
+    [ 2, 15 ] ] ]
  },
  {
   "id": "broken-or-ground",
@@ -31839,7 +31941,10 @@ window.GLOSSARY = [
   "refs": [
    [
     "Luke", 21,
-    [ 19 ] ] ]
+    [ 19 ] ],
+   [
+    "Romans", 5,
+    [ 3, 4 ] ] ]
  },
  {
   "id": "jerusalem-compassed",
@@ -32916,7 +33021,10 @@ window.GLOSSARY = [
     [ 26 ] ],
    [
     "Acts", 8,
-    [ 23 ] ] ]
+    [ 23 ] ],
+   [
+    "Romans", 6,
+    [ 19 ] ] ]
  },
  {
   "id": "barnabas",
@@ -36730,5 +36838,317 @@ window.GLOSSARY = [
    [
     "Romans", 2,
     [ 22 ] ] ]
+ },
+ {
+  "id": "access",
+  "kind": "term",
+  "name": "Access (a way in to God)",
+  "refs": [
+   [
+    "Romans", 5,
+    [ 2 ] ] ]
+ },
+ {
+  "id": "hope",
+  "kind": "term",
+  "name": "Hope (a sure expectation, not a wish)",
+  "refs": [
+   [
+    "Romans", 5,
+    [ 2, 4, 5 ] ] ]
+ },
+ {
+  "id": "experience",
+  "kind": "term",
+  "name": "Experience (proven character, tested and found true)",
+  "refs": [
+   [
+    "Romans", 5,
+    [ 4 ] ] ]
+ },
+ {
+  "id": "ungodly",
+  "kind": "term",
+  "name": "Ungodly (living without God)",
+  "refs": [
+   [
+    "Romans", 5,
+    [ 6 ] ] ]
+ },
+ {
+  "id": "peradventure",
+  "kind": "term",
+  "name": "Peradventure (perhaps)",
+  "refs": [
+   [
+    "Romans", 5,
+    [ 7 ] ] ]
+ },
+ {
+  "id": "commendeth",
+  "kind": "term",
+  "name": "Commendeth (shows, proves)",
+  "refs": [
+   [
+    "Romans", 5,
+    [ 8 ] ] ]
+ },
+ {
+  "id": "much-more",
+  "kind": "term",
+  "name": "“Much more” (Paul's argument from the greater to the lesser)",
+  "refs": [
+   [
+    "Romans", 5,
+    [ 9, 10, 15, 17, 20 ] ] ]
+ },
+ {
+  "id": "reconciled",
+  "kind": "term",
+  "name": "Reconciled (enemies made friends again)",
+  "refs": [
+   [
+    "Romans", 5,
+    [ 10 ] ] ]
+ },
+ {
+  "id": "atonement",
+  "kind": "term",
+  "name": "Atonement (here: being made at one with God, reconciliation)",
+  "refs": [
+   [
+    "Romans", 5,
+    [ 11 ] ] ]
+ },
+ {
+  "id": "imputed",
+  "kind": "term",
+  "name": "Imputed (counted, put on someone's account)",
+  "refs": [
+   [
+    "Romans", 5,
+    [ 13 ] ] ]
+ },
+ {
+  "id": "similitude",
+  "kind": "term",
+  "name": "Similitude (likeness)",
+  "refs": [
+   [
+    "Romans", 5,
+    [ 14 ] ] ]
+ },
+ {
+  "id": "figure-of-him-to-come",
+  "kind": "term",
+  "name": "“The figure of him that was to come” (Adam, a pattern of Christ)",
+  "refs": [
+   [
+    "Romans", 5,
+    [ 14 ] ] ]
+ },
+ {
+  "id": "offence-trespass",
+  "kind": "term",
+  "name": "Offence (a trespass, a false step)",
+  "refs": [
+   [
+    "Romans", 5,
+    [ 15, 16, 17, 18, 20 ] ] ]
+ },
+ {
+  "id": "free-gift",
+  "kind": "term",
+  "name": "The free gift (grace, righteousness and life, given and not earned)",
+  "refs": [
+   [
+    "Romans", 5,
+    [ 15, 16, 18 ] ] ]
+ },
+ {
+  "id": "abound",
+  "kind": "term",
+  "name": "Abound (overflow, pile up)",
+  "refs": [
+   [
+    "Romans", 5,
+    [ 15, 20 ] ],
+   [
+    "Romans", 6,
+    [ 1 ] ] ]
+ },
+ {
+  "id": "reign",
+  "kind": "term",
+  "name": "Reign (rule like a king)",
+  "refs": [
+   [
+    "Romans", 5,
+    [ 14, 17, 21 ] ],
+   [
+    "Romans", 6,
+    [ 12 ] ] ]
+ },
+ {
+  "id": "newness-of-life",
+  "kind": "term",
+  "name": "Newness of life",
+  "refs": [
+   [
+    "Romans", 6,
+    [ 4 ] ] ]
+ },
+ {
+  "id": "planted-together",
+  "kind": "term",
+  "name": "Planted together (joined with Christ, like a seed in the ground)",
+  "refs": [
+   [
+    "Romans", 6,
+    [ 5 ] ] ]
+ },
+ {
+  "id": "old-man",
+  "kind": "term",
+  "name": "The old man (who we were in Adam, before Christ)",
+  "refs": [
+   [
+    "Romans", 6,
+    [ 6 ] ] ]
+ },
+ {
+  "id": "body-of-sin",
+  "kind": "term",
+  "name": "The body of sin (the old life ruled by sin)",
+  "refs": [
+   [
+    "Romans", 6,
+    [ 6 ] ] ]
+ },
+ {
+  "id": "dominion",
+  "kind": "term",
+  "name": "Dominion (rule, mastery)",
+  "refs": [
+   [
+    "Romans", 6,
+    [ 9, 14 ] ] ]
+ },
+ {
+  "id": "reckon",
+  "kind": "term",
+  "name": "Reckon (count it as true, put it on the books)",
+  "refs": [
+   [
+    "Romans", 6,
+    [ 11 ] ] ]
+ },
+ {
+  "id": "mortal",
+  "kind": "term",
+  "name": "Mortal (able to die)",
+  "refs": [
+   [
+    "Romans", 6,
+    [ 12 ] ] ]
+ },
+ {
+  "id": "members",
+  "kind": "term",
+  "name": "Members (the parts of the body)",
+  "refs": [
+   [
+    "Romans", 6,
+    [ 13, 19 ] ] ]
+ },
+ {
+  "id": "instruments",
+  "kind": "term",
+  "name": "Instruments (tools, even weapons)",
+  "refs": [
+   [
+    "Romans", 6,
+    [ 13 ] ] ]
+ },
+ {
+  "id": "yield",
+  "kind": "term",
+  "name": "Yield (hand yourself over, present)",
+  "refs": [
+   [
+    "Romans", 6,
+    [ 13, 16, 19 ] ] ]
+ },
+ {
+  "id": "servants-of-righteousness",
+  "kind": "term",
+  "name": "Servants of righteousness, servants to God",
+  "refs": [
+   [
+    "Romans", 6,
+    [ 18, 19, 22 ] ] ]
+ },
+ {
+  "id": "form-of-doctrine",
+  "kind": "term",
+  "name": "“That form of doctrine” (the gospel, like a mold)",
+  "refs": [
+   [
+    "Romans", 6,
+    [ 17 ] ] ]
+ },
+ {
+  "id": "infirmity-of-your-flesh",
+  "kind": "term",
+  "name": "“The infirmity of your flesh” (human weakness in understanding)",
+  "refs": [
+   [
+    "Romans", 6,
+    [ 19 ] ] ]
+ },
+ {
+  "id": "uncleanness",
+  "kind": "term",
+  "name": "Uncleanness (moral filth)",
+  "refs": [
+   [
+    "Zechariah", 13,
+    [ 1 ] ],
+   [
+    "Matthew", 23,
+    [ 27 ] ],
+   [
+    "Romans", 1,
+    [ 24 ] ],
+   [
+    "Romans", 6,
+    [ 19 ] ] ]
+ },
+ {
+  "id": "holiness",
+  "kind": "term",
+  "name": "Holiness (set apart for God)",
+  "refs": [
+   [
+    "Romans", 6,
+    [ 19, 22 ] ] ]
+ },
+ {
+  "id": "wages",
+  "kind": "term",
+  "name": "Wages (what is earned and paid)",
+  "refs": [
+   [
+    "Romans", 6,
+    [ 23 ] ] ]
+ },
+ {
+  "id": "gift-of-god",
+  "kind": "term",
+  "name": "The gift of God (eternal life, free)",
+  "refs": [
+   [
+    "Romans", 6,
+    [ 23 ] ] ]
  }
 ];

@@ -10789,5 +10789,93 @@ window.STUDIES = [
       },
       "big": "The decent, religious man is no better off than the wild one. God plays no favorites. His kindness is meant to turn us around, and what He wants is a changed heart, not an outward show."
     }
+  },
+  {
+    "id": "romans-05",
+    "type": "chapter",
+    "book": "Romans",
+    "ch": 5,
+    "date": "2026-10-30",
+    "title": "Romans 5",
+    "sub": "Peace with God",
+    "about": "What a man has once God declares him right: peace, a place to stand, hope that hard days can't kill, and a grace bigger than all Adam broke.",
+    "tags": [
+      "Peace with God",
+      "Justified by faith",
+      "Hope in hard times",
+      "God's love",
+      "Adam and Christ",
+      "Grace",
+      "Assurance"
+    ],
+    "url": "studies/romans-05.html",
+    "overview": {
+      "where": "A letter from Corinth to the believers in Rome",
+      "when": "About AD 57, near the end of Paul's third journey",
+      "people": [
+        "jesus",
+        "holy-spirit",
+        "adam",
+        "moses"
+      ],
+      "places": [
+        "rome"
+      ],
+      "story": [
+        "Justified by faith, we have peace with God, access into His grace, and hope of His glory (1–2).",
+        "We glory in tribulations too: tribulation works patience, patience experience, experience hope, and that hope never shames us (3–5).",
+        "While we were without strength, ungodly, sinners, even enemies, Christ died for us. Much more, now reconciled, we shall be saved by His life (6–11).",
+        "By one man, Adam, sin and death entered the world and reigned over all, even before the law of Moses (12–14).",
+        "The free gift is not like the offence: by one man's obedience, Jesus Christ, many are made righteous. Where sin abounded, grace did much more abound (15–21)."
+      ],
+      "key": {
+        "ref": "Romans 5:8",
+        "text": "But God commendeth his love toward us, in that, while we were yet sinners, Christ died for us."
+      },
+      "big": "God didn't wait for us to clean up. Christ died for us as sinners and enemies, so a believer has peace with God now, a hope that hard times only strengthen, and a grace that is always bigger than his sin."
+    }
+  },
+  {
+    "id": "romans-06",
+    "type": "chapter",
+    "book": "Romans",
+    "ch": 6,
+    "date": "2026-10-30",
+    "title": "Romans 6",
+    "sub": "Dead to sin, alive unto God",
+    "about": "If grace covers everything, why not keep sinning? Because you died with Christ, rose with Him, and have a new Master.",
+    "tags": [
+      "Freedom from sin",
+      "Baptism",
+      "New life",
+      "Temptation",
+      "Recovery",
+      "Eternal life",
+      "Assurance"
+    ],
+    "url": "studies/romans-06.html",
+    "overview": {
+      "where": "A letter from Corinth to the believers in Rome",
+      "when": "About AD 57, near the end of Paul's third journey",
+      "people": [
+        "jesus",
+        "the-father"
+      ],
+      "places": [
+        "rome"
+      ],
+      "story": [
+        "Shall we continue in sin, that grace may abound? God forbid. We are dead to sin (1–2).",
+        "Baptism pictures it: buried with Christ into death, raised to walk in newness of life. Our old man is crucified with Him (3–7).",
+        "Christ died unto sin once and dies no more. So reckon yourselves dead indeed unto sin, but alive unto God (8–11).",
+        "Don't let sin reign. Yield yourselves and your members to God: sin shall not have dominion over you, for you are under grace (12–14).",
+        "Whomever you yield to, his servant you are. Made free from sin, become servants to God: the wages of sin is death, but the gift of God is eternal life (15–23)."
+      ],
+      "key": {
+        "ref": "Romans 6:23",
+        "text": "For the wages of sin is death; but the gift of God is eternal life through Jesus Christ our Lord."
+      },
+      "big": "A believer died with Christ and rose with Him. Sin no longer owns him. He counts that true, hands himself to God each day, and holds a gift of eternal life he could never earn and will never lose."
+    }
   }
 ];

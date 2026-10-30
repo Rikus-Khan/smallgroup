@@ -1,0 +1,621 @@
+<!doctype html>
+<html lang="en" data-theme="slate">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Romans 6</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="../assets/fonts.css">
+<link rel="stylesheet" href="../assets/deck.css">
+<link rel="stylesheet" href="../assets/themes.css">
+<style>
+/* ro05-where: where we are in Romans (the same marker as Romans 5). Sixteen chapter cells (i), .done and .here, over five parts (span, --s) */
+.ro05-where { display: grid; grid-template-columns: repeat(16, 1fr); gap: 4px; margin: .3em 0 1em; }
+.ro05-where i { font: 600 clamp(.75rem, .65rem + .4vw, 1.05rem)/1 var(--sans); font-style: normal; text-align: center; padding: .45em 0; border-radius: 6px; background: var(--surface); border: 1px solid var(--line); color: var(--ink-soft); }
+.ro05-where i.done { background: color-mix(in srgb, var(--accent) 16%, var(--surface)); color: var(--ink); }
+.ro05-where i.here { background: var(--accent); border-color: var(--accent); color: var(--on-accent); box-shadow: 0 0 0 4px color-mix(in srgb, var(--accent) 25%, transparent); }
+.slide.active .ro05-where i.here { animation: ro05-here 2.4s 1s ease-in-out infinite; }
+@keyframes ro05-here { 50% { box-shadow: 0 0 0 8px color-mix(in srgb, var(--accent) 10%, transparent); } }
+.ro05-where span { grid-column: span var(--s, 1); border-top: 3px solid var(--line-strong); padding-top: .35em; text-align: center; font-size: clamp(.72rem, .66rem + .3vw, .98rem); line-height: 1.2; color: var(--ink-soft); }
+.ro05-where span.now { border-top-color: var(--accent); color: var(--ink); font-weight: 700; }
+
+/* ro06-dip: baptism as a picture: Christ died, was buried, rose again; the believer dead to sin, buried with Him, raised to newness of life */
+.ro06-p { opacity: 0; }
+.slide.active .ro06-p { animation: ro06-in .9s ease-out forwards; animation-delay: calc(var(--k) * 1.1s + .4s); }
+@keyframes ro06-in { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: none; } }
+.ro06-water { fill: color-mix(in srgb, var(--cool) 45%, transparent); }
+.ro06-wave { fill: none; stroke: var(--cool); stroke-width: 3; }
+.ro06-man { fill: var(--ink); }
+.ro06-sink { transform: translateY(-70px); }
+.slide.active .ro06-sink { animation: ro06-sink 1.6s ease-in-out forwards; animation-delay: 1.8s; }
+@keyframes ro06-sink { to { transform: translateY(0); } }
+.ro06-ring { fill: none; stroke: var(--cool); stroke-width: 2; opacity: 0; }
+.slide.active .ro06-ring { animation: ro06-ring 2.4s ease-out infinite; animation-delay: 3.2s; }
+@keyframes ro06-ring { 0% { opacity: .9; transform: scale(.4); } 100% { opacity: 0; transform: scale(1.4); } }
+.ro06-ring { transform-box: fill-box; transform-origin: 50% 50%; }
+.ro06-halo { fill: var(--accent); opacity: .18; }
+.slide.active .ro06-halo { animation: ro06-halo 2.6s ease-in-out infinite 3.6s; }
+@keyframes ro06-halo { 50% { opacity: .38; } }
+.ro06-drop { fill: var(--cool); opacity: 0; }
+.slide.active .ro06-drop { animation: ro06-drop 1.4s ease-in infinite; animation-delay: calc(3.4s + var(--w, 0s)); }
+@keyframes ro06-drop { 0% { opacity: 1; transform: translateY(0); } 100% { opacity: 0; transform: translateY(40px); } }
+.ro06-christ { fill: var(--ink-soft); font: italic 19px var(--serif); text-anchor: middle; }
+.ro06-you { fill: var(--ink); font: 700 18px var(--sans); text-anchor: middle; }
+.ro06-you.hot { fill: var(--accent-hot); }
+.ro06-arrow { fill: var(--accent); font: 30px var(--sans); text-anchor: middle; }
+@media (max-width: 600px) { .ro06-christ { font-size: 26px; } .ro06-you { font-size: 25px; } }
+
+/* ro06-tools: your members as instruments, one row per member: to sin (left, shown) or to God (right, on a step) */
+.ro06-tools { display: grid; grid-template-columns: 1fr auto 1fr; grid-auto-flow: row dense; gap: 6px 12px; align-items: center; margin: .3em 0 1em; font-size: clamp(.95rem, .85rem + .45vw, 1.25rem); }
+.ro06-tools :is(.bad, .h.l) { grid-column: 1; } .ro06-tools b, .ro06-tools .h.mid { grid-column: 2; } .ro06-tools :is(.good, .h.r) { grid-column: 3; }
+.ro06-tools .h { font: 700 .78em var(--sans); color: var(--ink-soft); text-transform: uppercase; letter-spacing: .06em; }
+.ro06-tools .h.r { text-align: left; color: var(--accent); }
+.ro06-tools .h.l { text-align: right; }
+.ro06-tools b { font: 400 1.25em var(--serif); color: var(--ink); text-align: center; padding: .1em .5em; border-radius: 999px; background: var(--surface-2); }
+.ro06-tools .bad { text-align: right; color: var(--ink-soft); padding: .35em .7em; border-right: 3px solid var(--danger); background: color-mix(in srgb, var(--danger) 9%, transparent); border-radius: 8px 0 0 8px; }
+.ro06-tools .good { padding: .35em .7em; border-left: 3px solid var(--accent); background: color-mix(in srgb, var(--accent) 13%, transparent); border-radius: 0 8px 8px 0; color: var(--ink); }
+@media (max-width: 600px) { .ro06-tools { grid-template-columns: 1fr 1fr; } .ro06-tools b { grid-column: 1 / -1; justify-self: center; } .ro06-tools .h.mid { display: none; } .ro06-tools :is(.bad, .h.l) { grid-column: 1; } .ro06-tools :is(.good, .h.r) { grid-column: 2; } }
+
+/* ro06-roads: two roads from the same start; every yield is a step down one or the other. Sin's road drawn on open, God's on .ro06-go */
+.ro06-road { fill: none; stroke-width: 9; stroke-linecap: round; stroke-dasharray: 1; stroke-dashoffset: 1; transition: stroke-dashoffset 2.4s ease; }
+.ro06-road.sin { stroke: color-mix(in srgb, var(--danger) 70%, var(--bg)); }
+.ro06-road.god { stroke: var(--accent); }
+.slide.active .ro06-road.sin { stroke-dashoffset: 0; transition-delay: .6s; }
+.slide:has(.ro06-go.on) .ro06-road.god { stroke-dashoffset: 0; }
+.ro06-stop { stroke: var(--bg); stroke-width: 3; }
+.ro06-stop.sin { fill: var(--danger); }
+.ro06-stop.god { fill: var(--accent-hot); }
+.ro06-start { fill: var(--ink); }
+.ro06-t { font: 17px var(--sans); fill: var(--ink-soft); }
+.ro06-t.sin { fill: var(--danger); }
+.ro06-t.god { fill: var(--accent-hot); }
+.ro06-end { font: 400 28px var(--serif); text-anchor: middle; }
+.ro06-end.sin { fill: var(--danger); }
+.ro06-end.god { fill: var(--accent-hot); }
+.ro06-lab-g { opacity: 0; transition: opacity .8s ease; }
+.slide:has(.ro06-go.on) .ro06-lab-g { opacity: 1; transition-delay: 1.4s; }
+.ro06-lab-s { opacity: 0; transition: opacity .8s ease; }
+.slide.active .ro06-lab-s { opacity: 1; transition-delay: 2s; }
+.ro06-glow { fill: var(--accent); opacity: .2; }
+@media (max-width: 600px) { .ro06-t { font-size: 23px; } .ro06-end { font-size: 34px; } }
+
+/* ro06-pay: a pay stub (wages) beside a gift card (the gift of God) */
+.ro06-pay { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem 1.6rem; margin: .4em 0 1em; }
+@media (max-width: 640px) { .ro06-pay { grid-template-columns: 1fr; } }
+.ro06-pay > div { position: relative; padding: .8em 1.1em 1em; border-radius: 8px; }
+.ro06-pay h3 { font: 700 clamp(.8rem, .75rem + .3vw, 1rem) var(--sans); letter-spacing: .1em; text-transform: uppercase; margin-bottom: .5em; }
+.ro06-pay dl { display: grid; grid-template-columns: auto 1fr; gap: .15em .9em; margin: 0 0 .5em; font-size: clamp(.9rem, .82rem + .4vw, 1.15rem); }
+.ro06-pay dt { color: var(--ink-soft); }
+.ro06-pay dd { margin: 0; color: var(--ink); }
+.ro06-pay .amt { font: 400 clamp(1.8rem, 1.2rem + 2.4vw, 3rem)/1.1 var(--serif); }
+.ro06-pay small { display: block; color: var(--ink-soft); font-size: clamp(.82rem, .78rem + .25vw, 1rem); }
+.ro06-stub { background: var(--surface); border: 1.5px dashed var(--line-strong); }
+.ro06-stub h3 { color: var(--ink-soft); }
+.ro06-stub .amt { color: var(--danger); }
+.ro06-gift { border: 2px solid var(--accent); background: linear-gradient(90deg, transparent calc(85% - 7px), color-mix(in srgb, var(--accent) 45%, transparent) calc(85% - 7px) calc(85% + 7px), transparent calc(85% + 7px)), color-mix(in srgb, var(--accent) 12%, var(--surface)); }
+.ro06-gift h3 { color: var(--accent-hot); }
+.ro06-gift .amt { color: var(--accent-hot); }
+.ro06-gift::after { content: "✦"; position: absolute; top: -.75em; right: calc(15% - .55em); font-size: 1.6em; color: var(--accent); }
+</style>
+</head>
+<body>
+<main class="deck" id="deck">
+
+<!-- ======================= OPENING ======================= -->
+<section class="slide title">
+  <div class="inner">
+    <div class="emblem rise"></div>
+    <h1 class="rise" style="--d:1">Romans 6</h1>
+    <p class="sub rise" style="--d:3">Dead to sin, alive unto God</p>
+    <p class="tag rise" style="--d:5">If grace covers everything, why not keep sinning? Paul's answer is the heart of the free life: you died with Christ, you rose with Him, and you have a new Master.</p>
+  </div>
+</section>
+
+<section class="slide watch">
+  <div class="inner">
+    <h2 class="rise">Things to watch for</h2>
+    <p class="lede rise" style="--d:1">Keep these questions in the back of your mind as we read. We'll come back to every one of them at the end.</p>
+    <ol class="seeds">
+      <li class="step"><span class="topic">Grace</span><span class="seed-q">Since grace is bigger than sin, should we keep on sinning?</span></li>
+      <li class="step"><span class="topic">Baptism</span><span class="seed-q">What does baptism picture?</span></li>
+      <li class="step"><span class="topic">The old man</span><span class="seed-q">What happened to our old man?</span></li>
+      <li class="step"><span class="topic">Reckon</span><span class="seed-q">What are we told to reckon about ourselves?</span></li>
+      <li class="step"><span class="topic">Yield</span><span class="seed-q">How do you know whose servant you are?</span></li>
+      <li class="step"><span class="topic">Wages and gift</span><span class="seed-q">What does sin pay, and what does God give?</span></li>
+    </ol>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise">Where we are in Romans</h2>
+    <div class="ro05-where rise" style="--d:1" role="img" aria-label="Romans has sixteen chapters. Chapters 1 to 3: all have sinned. Chapters 4 and 5: justified by faith. Chapters 6 to 8: living free. Chapters 9 to 11: Israel and the nations. Chapters 12 to 16: living it out. We are in chapter 6.">
+      <i class="done">1</i><i class="done">2</i><i class="done">3</i><i class="done">4</i><i class="done">5</i><i class="here">6</i><i>7</i><i>8</i><i>9</i><i>10</i><i>11</i><i>12</i><i>13</i><i>14</i><i>15</i><i>16</i>
+      <span style="--s:3">All have sinned</span><span style="--s:2">Justified by faith</span><span class="now" style="--s:3">Living free</span><span style="--s:3">Israel and the nations</span><span style="--s:5">Living it out</span>
+    </div>
+    <div class="columns">
+      <div class="col law rise" style="--d:2"><p class="who">Chapters 1–5</p><h3>Made right</h3><p>How a guilty man is declared right with God: by grace, through faith in Jesus. Not by trying harder.</p></div>
+      <div class="col grace step"><p class="who">Chapters 6–8</p><h3>Set free</h3><p>How a man God has declared right gets free from sin's grip, day by day. Also not by trying harder.</p></div>
+    </div>
+    <blockquote class="quote step"><p>“Moreover the law entered, that the offence might abound. But where sin abounded, grace did much more abound:”</p><cite>Romans 5:20</cite></blockquote>
+  </div>
+</section>
+
+<!-- ======================= PART ONE: GOD FORBID ======================= -->
+<section class="slide part">
+  <div class="inner">
+    <p class="part-n rise">Part one</p>
+    <h2 class="rise" style="--d:1">God forbid</h2>
+    <p class="range rise" style="--d:2">Verses 1–10</p>
+    <div class="rule"></div>
+    <p class="hook rise" style="--d:4">Grace isn't a license. A man who has died with Christ doesn't go back to live in the grave.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="1-2" data-hl="Shall we continue in sin, that grace may abound?|God forbid|How shall we, that are dead to sin, live any longer therein?"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise">“Shall we continue in sin?”</h2>
+    <div class="talk">
+      <p class="rise" style="--d:1"><small>Someone</small>If grace is bigger than all my sin, and sinning makes more room for grace, why stop?</p>
+      <p class="reply step"><small>Paul</small>God forbid. How shall we, that are dead to sin, live any longer therein? <span class="flag">not a chance</span></p>
+    </div>
+    <p class="note step"><em>God forbid</em> is the strongest “No!” Paul has. A man who wants grace so he can keep sinning hasn't understood grace at all.</p>
+    <p class="note step">But notice who this verse is <em>not</em> about: the man who fell yesterday and hates it. That hatred is a sign grace has hold of him. <em>Dead to sin</em> doesn't mean sin stops calling. It means sin doesn't own you any more.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="3-5" data-hl="baptized into his death|buried with him by baptism into death|even so we also should walk in newness of life|planted together in the likeness of his death"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise">Baptism tells the story</h2>
+    <div class="stage">
+      <svg viewBox="0 0 720 300" role="img" aria-label="Three pictures. First, a man stands in the water: Christ died, and the believer is dead to sin. Second, he is laid back under the water: Christ was buried, and the believer is buried with Him. Third, he rises up out of the water, with drops falling: Christ rose again, and the believer walks in newness of life.">
+        <g class="ro06-p" style="--k:0">
+          <text class="ro06-christ" x="120" y="30">Christ died</text>
+          <circle class="ro06-man" cx="120" cy="104" r="15"/>
+          <path class="ro06-man" d="M104 124 h32 l8 90 h-48 z"/>
+          <rect class="ro06-water" x="30" y="168" width="180" height="82"/>
+          <path class="ro06-wave" d="M30 168 q15 -8 30 0 t30 0 t30 0 t30 0 t30 0 t30 0"/>
+          <text class="ro06-you" x="120" y="282">dead to sin</text>
+        </g>
+        <text class="ro06-arrow ro06-p" style="--k:1" x="240" y="150">→</text>
+        <g class="ro06-p" style="--k:1">
+          <text class="ro06-christ" x="360" y="30">was buried</text>
+          <g class="ro06-sink">
+            <circle class="ro06-man" cx="360" cy="196" r="15"/>
+            <path class="ro06-man" d="M344 214 h32 l6 30 h-44 z"/>
+          </g>
+          <rect class="ro06-water" x="270" y="168" width="180" height="82"/>
+          <path class="ro06-wave" d="M270 168 q15 -8 30 0 t30 0 t30 0 t30 0 t30 0 t30 0"/>
+          <ellipse class="ro06-ring" cx="360" cy="168" rx="40" ry="7"/>
+          <text class="ro06-you" x="360" y="282">buried with him</text>
+        </g>
+        <text class="ro06-arrow ro06-p" style="--k:2" x="480" y="150">→</text>
+        <g class="ro06-p" style="--k:2">
+          <text class="ro06-christ" x="600" y="30">rose again</text>
+          <circle class="ro06-halo" cx="600" cy="110" r="62"/>
+          <circle class="ro06-man" cx="600" cy="92" r="15"/>
+          <path class="ro06-man" d="M584 112 h32 l8 100 h-48 z"/>
+          <path d="M586 118 L556 64 M614 118 L644 64" fill="none" stroke-width="10" stroke-linecap="round" style="stroke:var(--ink)"/>
+          <circle class="ro06-drop" style="--w:0s" cx="584" cy="122" r="3.5"/>
+          <circle class="ro06-drop" style="--w:.5s" cx="616" cy="130" r="3.5"/>
+          <circle class="ro06-drop" style="--w:.9s" cx="600" cy="140" r="3.5"/>
+          <rect class="ro06-water" x="510" y="186" width="180" height="64"/>
+          <path class="ro06-wave" d="M510 186 q15 -8 30 0 t30 0 t30 0 t30 0 t30 0 t30 0"/>
+          <text class="ro06-you hot" x="600" y="282">newness of life</text>
+        </g>
+      </svg>
+    </div>
+    <p class="note step">The New Testament believers were baptized by going down into the water and coming back up (Acts 8:38). It acts out the gospel: Christ <em>died</em>, was <em>buried</em>, and <em>rose again</em>. And it says out loud that the believer was joined to Him in all three.</p>
+    <p class="note step"><em>Planted together</em>: like a seed in the ground. If you're joined to Him in His death, you're joined to Him in His rising.</p>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise">A picture, not the means</h2>
+    <ul class="nots">
+      <li class="step"><span class="k">the water washes sin away</span><span class="why">only the blood of Christ does that</span></li>
+      <li class="step"><span class="k">baptism makes you a Christian</span><span class="why">faith in Jesus does, before you ever get wet</span></li>
+      <li class="step yes"><span class="k">a believer's step of obedience</span><span class="why">a public picture of what Jesus has already done in him</span></li>
+    </ul>
+    <blockquote class="quote step"><p>“And Philip said, If thou believest with all thine heart, thou mayest. And he answered and said, I believe that Jesus Christ is the Son of God.”</p><cite>Acts 8:37</cite></blockquote>
+    <blockquote class="quote step"><p>“For by grace are ye saved through faith; and that not of yourselves: it is the gift of God: Not of works, lest any man should boast.”</p><cite>Ephesians 2:8–9</cite></blockquote>
+    <p class="note step">Believe first, then be baptized. A wedding ring doesn't make a man married, but a married man wears it gladly. If you've trusted Christ and haven't been baptized yet, say so today, and we'll talk about it.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="6-7" data-hl="our old man is crucified with him|that henceforth we should not serve sin|he that is dead is freed from sin"></section>
+
+<section class="slide ex ex-name">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="6" data-hl="our old man is crucified with him"></blockquote>
+    <h2 class="rise" style="--d:1">The old man</h2>
+    <div class="rename">
+      <span class="old rise" style="--d:2">the old man</span>
+      <span class="arrow step">→</span>
+      <span class="new step">crucified</span>
+      <span class="gloss step">The <em>old man</em> is who you were in Adam: the man who belonged to sin. He was nailed to the cross with Christ. That's a fact God has done, not a goal you're working toward.</span>
+    </div>
+    <p class="note step"><em>“He that is dead is freed from sin.”</em> A slave owner can shout all he wants at a grave. The dead man doesn't have to get up and obey. Sin still shouts. You don't have to answer.</p>
+    <blockquote class="quote step"><p>“I am crucified with Christ: nevertheless I live; yet not I, but Christ liveth in me: and the life which I now live in the flesh I live by the faith of the Son of God, who loved me, and gave himself for me.”</p><cite>Galatians 2:20</cite></blockquote>
+  </div>
+</section>
+
+<section class="slide verse" data-v="8-10" data-hl="if we be dead with Christ, we believe that we shall also live with him|death hath no more dominion over him|he died unto sin once|in that he liveth, he liveth unto God"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <div class="split">
+      <div class="stage">
+        <svg class="tomb open" style="--roll:150px;--turn:190deg" viewBox="0 0 600 330" role="img" aria-label="A tomb cut into a hillside, its round stone already rolled away, light shining out of the empty doorway as the sun rises behind the hill.">
+          <g class="tomb-sun">
+            <defs><radialGradient id="ro06-halo"><stop offset="0" style="stop-color:var(--accent);stop-opacity:.6"/><stop offset="1" style="stop-color:var(--accent);stop-opacity:0"/></radialGradient></defs>
+            <circle cx="470" cy="80" r="115" fill="url(#ro06-halo)"/>
+            <circle cx="470" cy="80" r="38" style="fill:var(--glow)"/>
+          </g>
+          <path d="M0 330 L0 150 Q110 70 250 105 Q400 140 600 120 L600 330 Z" stroke-width="3" style="fill:var(--surface-2);stroke:var(--line-strong)"/>
+          <rect x="0" y="292" width="600" height="38" style="fill:var(--surface-2)"/>
+          <line x1="0" y1="292" x2="600" y2="292" stroke-width="2" style="stroke:var(--line-strong)"/>
+          <path class="tomb-door" d="M150 292 L150 215 Q200 160 250 215 L250 292 Z" stroke-width="3" style="stroke:var(--ink-soft)"/>
+          <g class="tomb-light">
+            <path d="M150 292 L150 215 Q200 160 250 215 L250 292 Z" style="fill:var(--glow)"/>
+            <path d="M250 292 L360 330 L40 330 L150 292 Z" style="fill:color-mix(in srgb, var(--glow) 35%, transparent)"/>
+          </g>
+          <g class="tomb-stone">
+            <circle cx="200" cy="240" r="62" stroke-width="3" style="fill:var(--line-strong);stroke:var(--ink-soft)"/>
+            <circle cx="200" cy="240" r="44" fill="none" stroke-width="2.5" stroke-dasharray="10 8" style="stroke:var(--bg)"/>
+            <circle cx="200" cy="240" r="6" style="fill:var(--bg)"/>
+          </g>
+          <text class="tomb-word" x="200" y="140" text-anchor="middle" font-size="22" font-weight="700" style="fill:var(--accent-hot)">dieth no more</text>
+        </svg>
+      </div>
+      <div>
+        <h2 class="rise" style="--d:1">Once, for good</h2>
+        <p class="note rise" style="--d:2">Christ <em>died unto sin once</em>. Not over and over. And now <em>death hath no more dominion over him</em>. He will never be in that grave again.</p>
+        <blockquote class="quote step"><p>“By the which will we are sanctified through the offering of the body of Jesus Christ once for all.”</p><cite>Hebrews 10:10</cite></blockquote>
+        <p class="note step">You're joined to Him. If you <em>shall also live with him</em>, and He can never die again, the life He gave you can't die either. You can't lose what He holds.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ======================= PART TWO: RECKON AND YIELD ======================= -->
+<section class="slide part">
+  <div class="inner">
+    <p class="part-n rise">Part two</p>
+    <h2 class="rise" style="--d:1">Reckon, and yield</h2>
+    <p class="range rise" style="--d:2">Verses 11–14</p>
+    <div class="rule"></div>
+    <p class="hook rise" style="--d:4">The first command in the chapter isn't “try harder.” It's “count on what God has done.”</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="11" data-hl="reckon ye also yourselves to be dead indeed unto sin, but alive unto God through Jesus Christ our Lord"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="11" data-hl="reckon"></blockquote>
+    <h2 class="rise" style="--d:1">Do the math</h2>
+    <p class="note rise" style="--d:2"><em>Reckon</em> is a bookkeeper's word: count it, add it up, put it on the books as true.</p>
+    <div class="math step">
+      <div><b>He died unto sin once</b><span>6:10</span></div>
+      <div><b>+ you are in Him</b><span>6:3–5</span></div>
+      <div><b>= dead indeed unto sin</b><span>and alive unto God</span></div>
+    </div>
+    <p class="note step">You don't reckon it <em>because</em> you feel dead to sin. Some mornings you won't. You reckon it because God says it's so. A man who is told his debt is paid stops answering the collector's calls, even before he feels rich.</p>
+    <p class="note step">Try it on the hard morning: <em>“That's not who I am any more. I'm dead to that, and alive to God, in Christ.”</em> Say it out loud if you have to.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="12-14" data-hl="Let not sin therefore reign in your mortal body|yield yourselves unto God, as those that are alive from the dead|sin shall not have dominion over you: for ye are not under the law, but under grace"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise">Whose tools are your hands?</h2>
+    <p class="note rise" style="--d:1">Your <em>members</em> are the parts of your body. <em>Instruments</em> are tools, even weapons. Every one of them gets handed to somebody, every day.</p>
+    <div class="ro06-tools">
+      <span class="h l rise" style="--d:2">to sin</span><span class="h mid rise" style="--d:2"></span><span class="h r rise" style="--d:2">to God</span>
+      <b class="rise" style="--d:3">Eyes</b><span class="bad rise" style="--d:3">what I scroll and stare at</span><span class="good step">the Word, the man who's hurting</span>
+      <b class="rise" style="--d:4">Tongue</b><span class="bad rise" style="--d:4">lies, cursing, the old war stories</span><span class="good step">the truth, thanks, a word that builds up</span>
+      <b class="rise" style="--d:5">Hands</b><span class="bad rise" style="--d:5">taking what isn't mine</span><span class="good step">honest work, and giving</span>
+      <b class="rise" style="--d:6">Feet</b><span class="bad rise" style="--d:6">the old street, the old house</span><span class="good step">the job, the meeting, the church door</span>
+    </div>
+    <blockquote class="quote step"><p>“Let him that stole steal no more: but rather let him labour, working with his hands the thing which is good, that he may have to give to him that needeth.”</p><cite>Ephesians 4:28</cite></blockquote>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="14" data-hl="sin shall not have dominion over you"></blockquote>
+    <h2 class="rise" style="--d:1">Not “just try harder”</h2>
+    <ul class="nots">
+      <li class="step"><span class="k">white-knuckle it</span><span class="why">willpower alone always runs out</span></li>
+      <li class="step"><span class="k">more rules</span><span class="why">the law shows sin; it can't break its grip</span></li>
+      <li class="step yes"><span class="k">under grace</span><span class="why">a new Master, and His Spirit living in you</span></li>
+    </ul>
+    <p class="note step"><em>“Sin shall not have dominion over you”</em> is a promise. The law gives a man a list of his failures. Grace gives him God Himself, working in him.</p>
+    <blockquote class="quote step"><p>“For it is God which worketh in you both to will and to do of his good pleasure.”</p><cite>Philippians 2:13</cite></blockquote>
+    <blockquote class="quote step"><p>“There hath no temptation taken you but such as is common to man: but God is faithful, who will not suffer you to be tempted above that ye are able; but will with the temptation also make a way to escape, that ye may be able to bear it.”</p><cite>1 Corinthians 10:13</cite></blockquote>
+  </div>
+</section>
+
+<!-- ======================= PART THREE: WHOSE SERVANT ======================= -->
+<section class="slide part">
+  <div class="inner">
+    <p class="part-n rise">Part three</p>
+    <h2 class="rise" style="--d:1">His servants ye are</h2>
+    <p class="range rise" style="--d:2">Verses 15–23</p>
+    <div class="rule"></div>
+    <p class="hook rise" style="--d:4">Every man serves somebody. Two masters, two roads, and what each one pays at the end.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="15-16" data-hl="shall we sin, because we are not under the law, but under grace? God forbid|to whom ye yield yourselves servants to obey, his servants ye are to whom ye obey|whether of sin unto death, or of obedience unto righteousness"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise">Two masters, two roads</h2>
+    <div class="stage">
+      <svg viewBox="0 0 720 330" style="max-height:38vh" role="img" aria-label="Two roads from the same starting point, today. The left road, yielding to sin, runs through 'servants of sin' and 'iniquity unto iniquity' and ends in death. The right road, yielding to God, runs through 'servants to God' and 'fruit unto holiness' and ends in everlasting life.">
+        <circle class="ro06-glow ro06-lab-g" cx="600" cy="64" r="24"/>
+        <path class="ro06-road sin" pathLength="1" d="M360 290 Q 250 280 220 240 T 150 150 T 120 64"/>
+        <path class="ro06-road god" pathLength="1" d="M360 290 Q 470 280 500 240 T 570 150 T 600 64"/>
+        <circle class="ro06-start" cx="360" cy="290" r="11"/>
+        <text class="ro06-t" x="360" y="324" text-anchor="middle">you, today: whom will you yield to?</text>
+        <g class="ro06-lab-s">
+          <circle class="ro06-stop sin" cx="220" cy="240" r="9"/><text class="ro06-t sin" x="204" y="246" text-anchor="end">servants of sin</text>
+          <circle class="ro06-stop sin" cx="150" cy="150" r="9"/><text class="ro06-t sin" x="168" y="156">iniquity unto iniquity</text>
+          <circle class="ro06-stop sin" cx="120" cy="64" r="12"/><text class="ro06-end sin" x="120" y="28">death</text>
+        </g>
+        <g class="ro06-lab-g">
+          <circle class="ro06-stop god" cx="500" cy="240" r="9"/><text class="ro06-t god" x="516" y="246">servants to God</text>
+          <circle class="ro06-stop god" cx="570" cy="150" r="9"/><text class="ro06-t god" x="552" y="156" text-anchor="end">fruit unto holiness</text>
+          <circle class="ro06-stop god" cx="600" cy="64" r="12"/><text class="ro06-end god" x="600" y="28">everlasting life</text>
+        </g>
+      </svg>
+    </div>
+    <p class="note step">Nobody plans to become a slave. The first drink, the first hit, the first look didn't own anybody. But every <em>yield</em> is a step down a road, and that road goes <em>iniquity unto iniquity</em>: it always wants more.</p>
+    <p class="note step ro06-go">The other road works the same way. Every time you hand yourself to God, the path gets more worn in, and it ends somewhere good. You can't walk both. Which one are you on this morning?</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="17-19" data-hl="But God be thanked, that ye were the servants of sin|ye have obeyed from the heart that form of doctrine which was delivered you|Being then made free from sin, ye became the servants of righteousness|even so now yield your members servants to righteousness unto holiness"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="17" data-hl="God be thanked, that ye were the servants of sin"></blockquote>
+    <h2 class="rise" style="--d:1">“Ye <em>were</em>”</h2>
+    <div class="columns">
+      <div class="col law step"><p class="who">Then</p><h3>Servants of sin</h3><p>Owned. It told you where to go, and you went.</p></div>
+      <div class="col grace step"><p class="who">Now</p><h3>Servants of righteousness</h3><p>Bought free, and serving a Master who's good to His men.</p></div>
+    </div>
+    <p class="note step"><em>That form of doctrine</em>: the gospel, poured into you like metal into a mold. They <em>obeyed from the heart</em>: they believed it.</p>
+    <p class="note step">Paul uses slavery <em>“after the manner of men”</em>: everyone in Rome knew it. Then: <em>as ye have yielded… even so now yield</em>. Put the energy you once gave the old life into the new one. You knew how to chase a high. Chase this.</p>
+    <blockquote class="quote step"><p>“If the Son therefore shall make you free, ye shall be free indeed.”</p><cite>John 8:36</cite></blockquote>
+  </div>
+</section>
+
+<section class="slide verse" data-v="20-22" data-hl="What fruit had ye then in those things whereof ye are now ashamed?|for the end of those things is death|now being made free from sin, and become servants to God|ye have your fruit unto holiness, and the end everlasting life"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="21" data-hl="whereof ye are now ashamed"></blockquote>
+    <h2 class="rise" style="--d:1">What did it ever pay?</h2>
+    <div class="daybreak">
+      <div class="rise" style="--d:2"><i>6:20–21</i><b>Then</b><p>Free from righteousness, and what did you have to show for it? Things you're ashamed of now.</p></div>
+      <div class="step"><i>6:22</i><b>But now</b><p>Made free from sin. Servants to God. Fruit that's good for something.</p></div>
+      <div class="step"><i>6:22</i><b>The end</b><p>Everlasting life. That's where this road comes out.</p></div>
+    </div>
+    <p class="note step">Paul asks the question honestly: <em>what fruit had ye then?</em> Look back once, squarely, and name it. That shame tells the truth about the old life. Then let Paul turn the page for you: <em>but now</em>. You don't live in “then” any more.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="23" data-hl="the wages of sin is death|the gift of God is eternal life through Jesus Christ our Lord"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise">Wages, or a gift</h2>
+    <div class="ro06-pay">
+      <div class="ro06-stub rise" style="--d:1">
+        <h3>Pay stub</h3>
+        <dl><dt>Paid by</dt><dd>Sin</dd><dt>For</dt><dd>years of hard service</dd><dt>Earned</dt><dd>every cent of it</dd></dl>
+        <p class="amt">Death</p>
+        <small>wages: what you've got coming</small>
+      </div>
+      <div class="ro06-gift step">
+        <h3>A gift</h3>
+        <dl><dt>From</dt><dd>God</dd><dt>To</dt><dd>whosoever will receive it</dd><dt>Paid for by</dt><dd>Jesus, at the cross</dd></dl>
+        <p class="amt">Eternal life</p>
+        <small>through Jesus Christ our Lord</small>
+      </div>
+    </div>
+    <p class="note step">Sin is a boss that always pays, and it pays in full. You don't earn a gift, and you can't. You only take it, and say thank you. And God doesn't take His gifts back: <em>eternal</em> life that could run out wouldn't be eternal.</p>
+    <blockquote class="quote step"><p>“And I give unto them eternal life; and they shall never perish, neither shall any man pluck them out of my hand.”</p><cite>John 10:28</cite></blockquote>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise">Romans 6, on a work day</h2>
+    <ol class="checks">
+      <li class="step"><span class="tick">1</span><q>reckon ye also yourselves to be dead indeed unto sin</q><small>When you wake up, say what's true: I'm dead to that, and alive to God.</small><b>6:11</b></li>
+      <li class="step"><span class="tick">2</span><q>yield yourselves unto God</q><small>Hand Him your eyes, tongue, hands and feet before the day starts.</small><b>6:13</b></li>
+      <li class="step"><span class="tick">3</span><q>sin shall not have dominion over you</q><small>When temptation comes, look for the way out. He promised there is one.</small><b>6:14</b></li>
+      <li class="step"><span class="tick">4</span><q>the gift of God is eternal life</q><small>If you fall, don't quit. Confess it, get up, and yield again. You're still His.</small><b>6:23</b></li>
+    </ol>
+    <blockquote class="quote step"><p>“My little children, these things write I unto you, that ye sin not. And if any man sin, we have an advocate with the Father, Jesus Christ the righteous:”</p><cite>1 John 2:1</cite></blockquote>
+    <p class="note step">Next, Romans 7: the fight every believer knows, a man who wants to do right and keeps doing wrong. You're not the only one.</p>
+  </div>
+</section>
+
+<!-- ======================= CLOSING ======================= -->
+<section class="slide remember">
+  <div class="inner">
+    <h2 class="rise">Points to remember</h2>
+    <ol class="seeds">
+      <li class="step"><span class="topic">Grace</span><span class="seed-q">“God forbid” <cite>6:2</cite></span><span class="take">Grace is never a reason to keep sinning. We died to sin. Why live in the grave?</span></li>
+      <li class="step"><span class="topic">Baptism</span><span class="seed-q">“Buried with him by baptism” <cite>6:4</cite></span><span class="take">A picture of Christ's death, burial and rising, and ours with Him. It shows salvation; it doesn't save.</span></li>
+      <li class="step"><span class="topic">The old man</span><span class="seed-q">“Our old man is crucified with him” <cite>6:6</cite></span><span class="take">Who you were in Adam died with Christ. Sin still shouts, but it doesn't own you.</span></li>
+      <li class="step"><span class="topic">Reckon</span><span class="seed-q">“Reckon ye also yourselves to be dead indeed unto sin” <cite>6:11</cite></span><span class="take">Count on what God has done, even on mornings you don't feel it.</span></li>
+      <li class="step"><span class="topic">Yield</span><span class="seed-q">“His servants ye are to whom ye obey” <cite>6:16</cite></span><span class="take">Every yield is a step down one road or the other. Hand yourself to God today.</span></li>
+      <li class="step"><span class="topic">Wages and gift</span><span class="seed-q">“The gift of God is eternal life” <cite>6:23</cite></span><span class="take">Sin pays in full: death. God gives what we could never earn, and never takes it back.</span></li>
+    </ol>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 1 of 6</p>
+      <span class="topic">Grace</span>
+      <h2>Since grace is bigger than sin, should we keep on sinning?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="1"></blockquote>
+      <blockquote class="quote step" data-q="2"></blockquote>
+      <blockquote class="quote step" data-q="15"></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>God forbid. We are dead to sin, so how could we keep living in it? Grace doesn't give a man permission to sin. It gives him a new life and a new Master. A believer who falls still belongs to God; he gets up and turns back.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 2 of 6</p>
+      <span class="topic">Baptism</span>
+      <h2>What does baptism picture?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="3"></blockquote>
+      <blockquote class="quote step" data-q="4"></blockquote>
+      <blockquote class="quote step"><p>“Buried with him in baptism, wherein also ye are risen with him through the faith of the operation of God, who hath raised him from the dead.”</p><cite>Colossians 2:12</cite></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>Christ's death, burial and rising, and the believer joined to Him in all three. It's a step of obedience after faith. The water doesn't save.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 3 of 6</p>
+      <span class="topic">The old man</span>
+      <h2>What happened to our old man?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="6"></blockquote>
+      <blockquote class="quote step" data-q="7"></blockquote>
+      <blockquote class="quote step"><p>“Therefore if any man be in Christ, he is a new creature: old things are passed away; behold, all things are become new.”</p><cite>2 Corinthians 5:17</cite></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>He was crucified with Christ, so that we would no longer serve sin. A dead man is freed from sin's claim. Sin can still tempt us, but it no longer owns us.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 4 of 6</p>
+      <span class="topic">Reckon</span>
+      <h2>What are we told to reckon about ourselves?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="10"></blockquote>
+      <blockquote class="quote step" data-q="11"></blockquote>
+      <blockquote class="quote step"><p>“This I say then, Walk in the Spirit, and ye shall not fulfil the lust of the flesh.”</p><cite>Galatians 5:16</cite></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>That we are dead indeed unto sin, but alive unto God through Jesus Christ our Lord. We count it true because God says so, not because we feel it, and we live from it, in the Spirit's strength.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 5 of 6</p>
+      <span class="topic">Yield</span>
+      <h2>How do you know whose servant you are?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="16"></blockquote>
+      <blockquote class="quote step" data-q="18"></blockquote>
+      <blockquote class="quote step"><p>“Jesus answered them, Verily, verily, I say unto you, Whosoever committeth sin is the servant of sin.”</p><cite>John 8:34</cite></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>Look at whom you obey. Whatever you keep yielding yourself to is your master. So yield yourself to God, your whole self, every part, as a man who's been brought back from the dead.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 6 of 6</p>
+      <span class="topic">Wages and gift</span>
+      <h2>What does sin pay, and what does God give?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="21"></blockquote>
+      <blockquote class="quote step" data-q="23"></blockquote>
+      <blockquote class="quote step"><p>“For by grace are ye saved through faith; and that not of yourselves: it is the gift of God: Not of works, lest any man should boast.”</p><cite>Ephesians 2:8–9</cite></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>Sin pays wages, and the wage is death. God gives a gift, eternal life through Jesus Christ our Lord. Nobody earns it. Whoever receives it by faith has it, and it never runs out.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide prayer">
+  <div class="inner">
+    <div class="emblem rise"></div>
+    <h2 class="rise" style="--d:1">Prayer requests</h2>
+    <p class="ask-line rise" style="--d:2">What can we pray about for you today?</p>
+    <blockquote class="quote rise" style="--d:4"><p>“Being confident of this very thing, that he which hath begun a good work in you will perform it until the day of Jesus Christ:”</p><cite>Philippians 1:6</cite></blockquote>
+  </div>
+</section>
+
+</main>
+
+<script>
+// King James Version, Romans chapter 6
+const V = {
+  1: "What shall we say then? Shall we continue in sin, that grace may abound?",
+  2: "God forbid. How shall we, that are dead to sin, live any longer therein?",
+  3: "Know ye not, that so many of us as were baptized into Jesus Christ were baptized into his death?",
+  4: "Therefore we are buried with him by baptism into death: that like as Christ was raised up from the dead by the glory of the Father, even so we also should walk in newness of life.",
+  5: "For if we have been planted together in the likeness of his death, we shall be also in the likeness of his resurrection:",
+  6: "Knowing this, that our old man is crucified with him, that the body of sin might be destroyed, that henceforth we should not serve sin.",
+  7: "For he that is dead is freed from sin.",
+  8: "Now if we be dead with Christ, we believe that we shall also live with him:",
+  9: "Knowing that Christ being raised from the dead dieth no more; death hath no more dominion over him.",
+  10: "For in that he died, he died unto sin once: but in that he liveth, he liveth unto God.",
+  11: "Likewise reckon ye also yourselves to be dead indeed unto sin, but alive unto God through Jesus Christ our Lord.",
+  12: "Let not sin therefore reign in your mortal body, that ye should obey it in the lusts thereof.",
+  13: "Neither yield ye your members as instruments of unrighteousness unto sin: but yield yourselves unto God, as those that are alive from the dead, and your members as instruments of righteousness unto God.",
+  14: "For sin shall not have dominion over you: for ye are not under the law, but under grace.",
+  15: "What then? shall we sin, because we are not under the law, but under grace? God forbid.",
+  16: "Know ye not, that to whom ye yield yourselves servants to obey, his servants ye are to whom ye obey; whether of sin unto death, or of obedience unto righteousness?",
+  17: "But God be thanked, that ye were the servants of sin, but ye have obeyed from the heart that form of doctrine which was delivered you.",
+  18: "Being then made free from sin, ye became the servants of righteousness.",
+  19: "I speak after the manner of men because of the infirmity of your flesh: for as ye have yielded your members servants to uncleanness and to iniquity unto iniquity; even so now yield your members servants to righteousness unto holiness.",
+  20: "For when ye were the servants of sin, ye were free from righteousness.",
+  21: "What fruit had ye then in those things whereof ye are now ashamed? for the end of those things is death.",
+  22: "But now being made free from sin, and become servants to God, ye have your fruit unto holiness, and the end everlasting life.",
+  23: "For the wages of sin is death; but the gift of God is eternal life through Jesus Christ our Lord."
+};
+const BOOK = "Romans 6";
+</script>
+<script src="../assets/deck.js"></script>
+</body>
+</html>
