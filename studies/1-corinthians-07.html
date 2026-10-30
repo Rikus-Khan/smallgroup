@@ -1,0 +1,746 @@
+<!doctype html>
+<html lang="en" data-theme="scribe">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>1 Corinthians 7</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="../assets/fonts.css">
+<link rel="stylesheet" href="../assets/deck.css">
+<link rel="stylesheet" href="../assets/themes.css">
+<style>
+/* c107-where: where this chapter sits in 1 Corinthians. The 16 chapters in their groups (the current one lit, .now),
+   and under them the letter's two halves: what Paul heard (1–6) and what they wrote to ask (7–16, "Now concerning") */
+.c107-where { margin: .3em 0 1em; }
+.c107-groups, .c107-halves { display: flex; gap: 6px; }
+.c107-groups > div { flex: var(--n) 1 0; min-width: 0; display: flex; flex-direction: column; gap: 4px; }
+.c107-groups small { font: 700 clamp(.6rem, .52rem + .3vw, .85rem)/1.15 var(--sans); color: var(--ink-soft); min-height: 2.3em; display: flex; align-items: flex-end; }
+.c107-groups p { display: flex; gap: 3px; margin: 0; }
+.c107-groups span { flex: 1 1 0; min-width: 0; display: grid; place-items: center; height: clamp(1.6rem, 1.3rem + 1vw, 2.3rem); border-radius: 5px; border: 1.5px solid var(--line-strong); background: var(--surface); font: 600 clamp(.7rem, .6rem + .35vw, .95rem) var(--sans); color: var(--ink-soft); }
+.c107-groups > div.on small { color: var(--accent); }
+.c107-groups > div.on span { border-color: var(--accent); }
+.c107-groups span.now { background: var(--accent); border-color: var(--accent); color: var(--on-accent); box-shadow: 0 0 0 5px color-mix(in srgb, var(--accent) 22%, transparent); }
+.slide.active .c107-groups span.now { animation: c107-pulse 2.4s ease-in-out .8s 2; }
+@keyframes c107-pulse { 50% { box-shadow: 0 0 0 10px color-mix(in srgb, var(--accent) 8%, transparent); } }
+.c107-halves { margin-top: 10px; }
+.c107-halves > div { flex: var(--n) 1 0; min-width: 0; border-top: 3px solid var(--line-strong); padding-top: 6px; font: 600 clamp(.72rem, .62rem + .35vw, 1rem)/1.3 var(--sans); color: var(--ink-soft); position: relative; }
+.c107-halves > div::before, .c107-halves > div::after { content: ""; position: absolute; top: -10px; width: 3px; height: 10px; background: var(--line-strong); }
+.c107-halves > div::before { left: 0; } .c107-halves > div::after { right: 0; }
+.c107-halves > div.on { border-color: var(--accent); color: var(--accent-hot); }
+.c107-halves > div.on::before, .c107-halves > div.on::after { background: var(--accent); }
+.c107-halves em { font-family: var(--serif); }
+
+/* c107-ans: the label on Paul's answer, shown with its route */
+.c107-ans { opacity: 0; transition: opacity .8s ease 1.4s; }
+.slide:has(.map-go1.on) .c107-ans { opacity: 1; }
+
+/* c107-rings: two rings slide together and lock: "What therefore God hath joined together" (7:10–11) */
+.c107-ring { fill: none; stroke-width: 16; transition: transform 1.6s cubic-bezier(.3,1.2,.5,1) .6s; }
+.c107-ring.a { stroke: var(--accent); transform: translateX(-70px); }
+.c107-ring.b { stroke: var(--warm); transform: translateX(70px); }
+.slide.active .c107-ring { transform: none; }
+.c107-joined { fill: var(--accent-hot); font-weight: 700; opacity: 0; transition: opacity 1s ease 2s; }
+.slide.active .c107-joined { opacity: 1; }
+.c107-apart { fill: var(--danger); font-weight: 700; opacity: 0; transition: opacity .8s ease; }
+.split:has(.c107-split.on) .c107-apart { opacity: 1; }
+
+/* c107-house: a house with one lit window; the light spreads through the whole house (7:14, "sanctified") */
+.c107-wall { fill: var(--surface-2); stroke: var(--ink-soft); stroke-width: 3; stroke-linejoin: round; }
+.c107-roof { fill: var(--leather); stroke: var(--ink-soft); stroke-width: 3; stroke-linejoin: round; }
+.c107-win { fill: var(--surface); stroke: var(--ink-soft); stroke-width: 3; }
+.c107-win.lit { fill: var(--glow); }
+.c107-door { fill: var(--leather-light); stroke: var(--ink-soft); stroke-width: 3; }
+.c107-beam { fill: var(--warm); opacity: .35; transform-box: fill-box; transform-origin: center; transform: scale(.12); transition: transform 2.2s ease, opacity 2.2s ease; }
+.split:has(.c107-spread.on) .c107-beam { transform: none; opacity: .3; }
+.c107-tag { fill: var(--accent-hot); font-weight: 700; opacity: 0; transition: opacity 1s ease 1.6s; }
+.split:has(.c107-spread.on) .c107-tag { opacity: 1; }
+.c107-cap { fill: var(--ink-soft); }
+
+/* c107-pin: a "you are here" pin drops onto the life a man already has (7:20, 24) */
+.c107-block { fill: var(--surface); stroke: var(--line-strong); stroke-width: 2; }
+.c107-street { fill: none; stroke: var(--surface-2); stroke-width: 26; stroke-linecap: round; }
+.c107-lbl { fill: var(--ink-soft); font-weight: 600; }
+.c107-drop { transform: translateY(-240px); opacity: 0; transition: transform .9s cubic-bezier(.5,0,.6,1.4) .7s, opacity .2s ease .7s; }
+.slide.active .c107-drop { transform: none; opacity: 1; }
+.c107-drop path { fill: var(--accent); }
+.c107-drop circle { fill: var(--on-accent); }
+.c107-ring2 { fill: none; stroke: var(--accent); stroke-width: 3; opacity: 0; transform-box: fill-box; transform-origin: center; }
+.slide.active .c107-ring2 { animation: c107-ripple 2.4s ease-out 1.7s infinite; }
+@keyframes c107-ripple { 0% { opacity: .9; transform: scale(.4); } 100% { opacity: 0; transform: scale(2.2); } }
+.c107-here { fill: var(--accent-hot); font-weight: 700; opacity: 0; transition: opacity 1s ease 1.8s; }
+.slide.active .c107-here { opacity: 1; }
+
+/* c107-sand: an hourglass running down: "the time is short" (7:29–31) */
+.c107-frame { fill: none; stroke: var(--ink-soft); stroke-width: 4; stroke-linejoin: round; }
+.c107-cap2 { fill: var(--leather); }
+.c107-sandt, .c107-sandb { fill: var(--warm); }
+.c107-sandt { transform-box: view-box; transform: translateY(0); }
+.c107-sandb { transform-box: view-box; transform: translateY(150px); }
+.slide.active .c107-sandt { animation: c107-fall 9s linear .6s forwards; }
+.slide.active .c107-sandb { animation: c107-fill 9s linear .6s forwards; }
+@keyframes c107-fall { to { transform: translateY(125px); } }
+@keyframes c107-fill { to { transform: translateY(25px); } }
+.c107-stream { stroke: var(--warm); stroke-width: 3; stroke-dasharray: 4 6; opacity: 0; }
+.slide.active .c107-stream { opacity: 1; animation: c107-flow .5s linear infinite; }
+@keyframes c107-flow { to { stroke-dashoffset: -10; } }
+.c107-word { fill: var(--ink-soft); font-style: italic; transition: opacity 1.4s ease; }
+.split:has(.c107-pass.on) .c107-word.go { opacity: .15; }
+
+/* c107-cares: one man's heart on one thing; another man's rightly on two (7:32–34) */
+.c107-man { fill: var(--ink-soft); }
+.c107-man.wife { fill: var(--cool); }
+.c107-lord { fill: var(--accent); }
+.c107-line { fill: none; stroke: var(--accent); stroke-width: 4; stroke-linecap: round; stroke-dasharray: 1; stroke-dashoffset: 1; transition: stroke-dashoffset 1.2s ease .6s; }
+.c107-line.home { stroke: var(--cool); transition-delay: 1.4s; }
+.slide.active .c107-line { stroke-dashoffset: 0; }
+.c107-who { fill: var(--ink-soft); font-weight: 600; }
+.c107-up { fill: var(--accent-hot); font-weight: 700; }
+</style>
+</head>
+<body>
+<main class="deck" id="deck">
+
+<!-- ======================= OPENING ======================= -->
+<section class="slide title">
+  <div class="inner">
+    <div class="emblem rise"></div>
+    <h1 class="rise" style="--d:1">1 Corinthians 7</h1>
+    <p class="sub rise" style="--d:3">Married, single, or somewhere hard</p>
+    <p class="tag rise" style="--d:5">The Corinthians asked Paul about marriage. He answers with honesty and grace: keep yourself pure, love the one you have, and follow Christ right where He found you.</p>
+  </div>
+</section>
+
+<section class="slide watch">
+  <div class="inner">
+    <h2 class="rise">Things to watch for</h2>
+    <p class="lede rise" style="--d:1">Keep these questions in the back of your mind as we read. We'll come back to every one of them at the end.</p>
+    <ol class="seeds">
+      <li class="step"><span class="topic">Purity</span><span class="seed-q">Why does Paul tell some men to marry?</span></li>
+      <li class="step"><span class="topic">Marriage</span><span class="seed-q">What do a husband and wife owe each other?</span></li>
+      <li class="step"><span class="topic">Singleness</span><span class="seed-q">Is being single second best?</span></li>
+      <li class="step"><span class="topic">Divorce</span><span class="seed-q">What does the Lord say about leaving a marriage?</span></li>
+      <li class="step"><span class="topic">An unbelieving spouse</span><span class="seed-q">What should a believer do if his wife doesn't believe?</span></li>
+      <li class="step"><span class="topic">Your calling</span><span class="seed-q">Do I have to fix my life before I can follow Christ?</span></li>
+    </ol>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise">Where we are in 1 Corinthians</h2>
+    <div class="c107-where rise" style="--d:1" role="img" aria-label="The sixteen chapters of 1 Corinthians: divisions, 1 to 4; sin in the church, 5 and 6; marriage, 7; meat offered to idols, 8 to 10; worship, 11 to 14; the resurrection, 15; the collection and closing words, 16. Chapter 7 is lit. Chapters 1 to 6 answer what Paul heard; chapters 7 to 16 answer what the church wrote to ask him.">
+      <div class="c107-groups">
+        <div style="--n:4"><small>Divisions</small><p><span>1</span><span>2</span><span>3</span><span>4</span></p></div>
+        <div style="--n:2"><small>Sin in the church</small><p><span>5</span><span>6</span></p></div>
+        <div class="on" style="--n:1"><small>Marriage</small><p><span class="now">7</span></p></div>
+        <div style="--n:3"><small>Idol meat</small><p><span>8</span><span>9</span><span>10</span></p></div>
+        <div style="--n:4"><small>Worship</small><p><span>11</span><span>12</span><span>13</span><span>14</span></p></div>
+        <div style="--n:1"><small>Resurrection</small><p><span>15</span></p></div>
+        <div style="--n:1"><small>Closing</small><p><span>16</span></p></div>
+      </div>
+      <div class="c107-halves">
+        <div style="--n:6">What Paul <em>heard</em></div>
+        <div class="on" style="--n:10">What they <em>wrote to ask</em>: “Now concerning…”</div>
+      </div>
+    </div>
+    <p class="note rise" style="--d:2">Chapters 1–6 dealt with bad news Paul had heard: a church split into camps, a man living with his father's wife, believers suing each other, men visiting prostitutes.</p>
+    <p class="note step">Now he turns to a letter they had sent him. <em>“Now concerning the things whereof ye wrote unto me”</em>: their first question was about marriage. From here on, almost every new subject opens with <em>“Now concerning”</em>.</p>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <div class="split">
+      <div class="stage">
+        <svg data-world viewBox="440 245 180 90" data-towns="Corinth!:b, Athens:t, Ephesus*:b" role="img" aria-label="Map of the Aegean Sea. The church's letter crosses the sea from Corinth east to Ephesus, where Paul is. Then Paul's answer crosses back from Ephesus to Corinth.">
+          <path class="map-route j2" data-via="Corinth, Cenchrea, @23.4 37.66, @23.95 37.5, @24.6 37.57, @25.1 37.68, @25.8 37.8, @26.6 37.97, Ephesus"/>
+          <path class="map-route j1 r1" data-via="Ephesus, @26.6 38.07, @25.8 37.9, @25.1 37.78, @24.6 37.67, @23.95 37.6, @23.4 37.76, Cenchrea, Corinth"/>
+          <text x="530" y="312" text-anchor="middle" font-size="5.5" style="fill:var(--cool);font-weight:700">their letter →</text>
+          <text class="c107-ans" x="540" y="276" text-anchor="middle" font-size="5.5" style="fill:var(--accent-hot);font-weight:700">← Paul's answer</text>
+        </svg>
+      </div>
+      <div>
+        <h2 class="rise" style="--d:1">Letters across the sea</h2>
+        <p class="note rise" style="--d:2">Paul was at Ephesus, about AD 55, about 250 miles across the Aegean from Corinth. The church sent him a letter full of questions. Three men from Corinth came to him there (16:17), and many think they carried it.</p>
+        <p class="note step map-go1">1 Corinthians is his answer. We only have his side, so sometimes we hear their words quoted back, the way you can guess a question from someone's reply on the phone.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ======================= PART ONE: MARRIAGE ======================= -->
+<section class="slide part">
+  <div class="inner">
+    <p class="part-n rise">Part one</p>
+    <h2 class="rise" style="--d:1">Every man his own wife</h2>
+    <p class="range rise" style="--d:2">Verses 1–9</p>
+    <div class="rule"></div>
+    <p class="hook rise" style="--d:4">God made a good place for a man's desire. He also gives some men the gift of living single.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="1-2" data-hl="Now concerning the things whereof ye wrote unto me|let every man have his own wife, and let every woman have her own husband"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="2" data-hl="to avoid fornication"></blockquote>
+    <h2 class="rise" style="--d:1">Two ditches beside one road</h2>
+    <div class="columns">
+      <div class="col law rise" style="--d:2">
+        <p class="who">One ditch</p>
+        <h3>anything goes</h3>
+        <p>Corinth was a port city with a name for loose living. Some in the church said the body doesn't matter, and went to prostitutes (6:15–16).</p>
+      </div>
+      <div class="col law step">
+        <p class="who">The other ditch</p>
+        <h3>touch nothing</h3>
+        <p>Others swung the other way: no sex at all, even for married couples. Verse 1 may be their own slogan quoted back, or Paul agreeing that single life is good.</p>
+      </div>
+    </div>
+    <p class="note step">Paul's road runs between them. <em>“Fornication”</em> is sex outside marriage. God's answer to desire isn't shame and it isn't a free-for-all. It's marriage: one man, one woman, each his own.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="3-5" data-hl="due benevolence|Defraud ye not one the other|that Satan tempt you not for your incontinency"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="4"></blockquote>
+    <h2 class="rise" style="--d:1">It runs both ways</h2>
+    <div class="mirror">
+      <div class="step"><span>The husband</span><span class="arrow">→</span><span class="word">renders to the wife</span><small>her needs, before his own</small></div>
+      <div class="step"><span>The wife</span><span class="arrow">→</span><span class="word">renders to the husband</span><small>his needs, before her own</small></div>
+    </div>
+    <p class="note step"><em>“Due benevolence”</em> is the kindness that's owed: love, care, and the marriage bed. In that world, a husband was thought to own his wife's body. Paul says the husband's body belongs to his wife too. That was new.</p>
+    <p class="note step">Marriage isn't a place to take. It's a place to give.</p>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="5" data-hl="Defraud ye not one the other"></blockquote>
+    <h2 class="rise" style="--d:1">Defraud ye not</h2>
+    <p class="note rise" style="--d:2"><em>“Defraud”</em> means <em>rob</em>. Holding back from your wife, or using the bedroom as a weapon to punish her, robs her of what's hers.</p>
+    <p class="note step">Only three conditions for time apart: both agree, it's <em>“for a time”</em>, and it's for prayer. Then come together again.</p>
+    <p class="note step">Why? <em>“That Satan tempt you not for your incontinency”</em>: your lack of self-control. Paul is a realist. He knows where a man is weak, and so does the devil. Don't leave the door open.</p>
+    <blockquote class="quote step"><p>“Marriage is honourable in all, and the bed undefiled: but whoremongers and adulterers God will judge.”</p><cite>Hebrews 13:4</cite></blockquote>
+  </div>
+</section>
+
+<section class="slide verse" data-v="6-7" data-hl="by permission, and not of commandment|every man hath his proper gift of God"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="6"></blockquote>
+    <h2 class="rise" style="--d:1">Listen for who is speaking</h2>
+    <ol class="timeline rise" style="--d:2" aria-label="Five places in this chapter where Paul marks what kind of word he is giving: verse 6, by permission; verse 10, not I but the Lord; verse 12, I, not the Lord; verse 25, my judgment; verse 40, I have the Spirit of God.">
+      <li style="--k:0"><b>v. 6</b><span>“by permission”</span><small>advice, not a rule</small></li>
+      <li class="lit" style="--k:1"><b>v. 10</b><span>“not I, but the Lord”</span><small>Jesus said it Himself</small></li>
+      <li style="--k:2"><b>v. 12</b><span>“I, not the Lord”</span><small>Paul, as an apostle</small></li>
+      <li style="--k:3"><b>v. 25</b><span>“my judgment”</span><small>wise counsel</small></li>
+      <li style="--k:4"><b>v. 40</b><span>“the Spirit of God”</span><small>all of it Spirit-led</small></li>
+    </ol>
+    <p class="note step">Paul is careful. When Jesus had already spoken to a question on earth, Paul says so. When Jesus hadn't, Paul answers as His apostle. And some things he gives as advice, not as law.</p>
+    <p class="note step">It's all God's Word. But we should be careful the same way: don't turn advice into a rule, and don't turn a command into a suggestion.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="8-9" data-hl="It is good for them if they abide even as I|it is better to marry than to burn"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="9" data-hl="it is better to marry than to burn"></blockquote>
+    <h2 class="rise" style="--d:1">Better to marry than to burn</h2>
+    <div class="ifthen rise" style="--d:2">
+      <div class="if"><small>If they</small>cannot contain, can't keep themselves in check,</div>
+      <span class="arrow" aria-hidden="true">→</span>
+      <div class="then"><small>then</small>let them marry.</div>
+    </div>
+    <p class="note step"><em>“Burn”</em> here means to burn with desire, not hell. Desire isn't sin. God made it, and He made marriage for it.</p>
+    <p class="note step">Paul was single when he wrote (we aren't told if he'd been married before). He calls it a <em>“gift of God”</em> (v. 7). If you're single today, you're not half a man waiting for life to start. Use these years for the Lord. And if desire is burning, the answer isn't the old way. It's purity now, and marriage God's way, in God's time.</p>
+  </div>
+</section>
+
+<!-- ======================= PART TWO: STAYING ======================= -->
+<section class="slide part">
+  <div class="inner">
+    <p class="part-n rise">Part two</p>
+    <h2 class="rise" style="--d:1">Not I, but the Lord</h2>
+    <p class="range rise" style="--d:2">Verses 10–16</p>
+    <div class="rule"></div>
+    <p class="hook rise" style="--d:4">Marriage is meant to last, even when only one of you believes.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="10-11" data-hl="yet not I, but the Lord|or be reconciled to her husband|let not the husband put away his wife"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <div class="split">
+      <div class="stage">
+        <svg viewBox="0 0 600 320" role="img" aria-label="Two rings slide together and lock: What God hath joined together.">
+          <circle class="c107-ring a" cx="250" cy="160" r="82"/>
+          <circle class="c107-ring b" cx="350" cy="160" r="82"/>
+          <text class="c107-joined" x="300" y="290" text-anchor="middle" font-size="24">“What God hath joined together”</text>
+          <text class="c107-apart" x="300" y="44" text-anchor="middle" font-size="22">“let not man put asunder”</text>
+        </svg>
+      </div>
+      <div>
+        <h2 class="rise" style="--d:1">The Lord's own word</h2>
+        <p class="note rise" style="--d:2">Here Jesus had already spoken. When He was asked about divorce, He went back to the beginning:</p>
+        <blockquote class="quote step c107-split"><p>“What therefore God hath joined together, let not man put asunder.”</p><cite>Mark 10:9</cite></blockquote>
+        <p class="note step">So: don't leave. And if a believer has already left, the way forward is to stay unmarried or to make peace and go back. <em>“Put away”</em> means <em>divorce</em>.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="slide verse" data-v="12-14" data-hl="But to the rest speak I, not the Lord|let him not put her away|the unbelieving wife is sanctified by the husband"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <div class="split">
+      <div class="stage">
+        <svg viewBox="0 0 400 340" role="img" aria-label="A house with one lit window. The light spreads until it fills the whole house.">
+          <defs><clipPath id="c107-houseclip"><path d="M56 162 L200 52 L344 162 L320 162 L320 300 L80 300 L80 162 Z"/></clipPath></defs>
+          <path class="c107-wall" d="M80 150 L320 150 L320 300 L80 300 Z"/>
+          <path class="c107-roof" d="M56 162 L200 52 L344 162 Z"/>
+          <rect class="c107-win" x="110" y="180" width="56" height="48" rx="3"/>
+          <rect class="c107-win lit" x="234" y="180" width="56" height="48" rx="3"/>
+          <rect class="c107-door" x="176" y="230" width="48" height="70" rx="3"/>
+          <g clip-path="url(#c107-houseclip)"><circle class="c107-beam" cx="262" cy="204" r="240"/></g>
+          <text class="c107-cap" x="262" y="252" text-anchor="middle" font-size="16">a believer</text>
+          <text class="c107-tag" x="200" y="330" text-anchor="middle" font-size="22">“sanctified”: set apart</text>
+        </svg>
+      </div>
+      <div>
+        <h2 class="rise" style="--d:1">A light in the house</h2>
+        <p class="note rise" style="--d:2">Jesus never spoke to this one, so Paul does. In Corinth, people were coming to Christ one at a time, and a man might go home to a wife who didn't believe. Should he leave her? No. If she's willing to stay, stay.</p>
+        <p class="note step c107-spread"><em>“Sanctified”</em> means <em>set apart</em>. It doesn't mean she's saved because he is. It means God has a foothold in that house. The children grow up near a believer, and that's <em>“holy”</em>, set apart, not unclean.</p>
+        <p class="note step">Each one still has to come to Christ by his own faith. But you being there matters.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="slide verse" data-v="15-16" data-hl="God hath called us to peace|whether thou shalt save thy wife"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="15" data-hl="God hath called us to peace"></blockquote>
+    <h2 class="rise" style="--d:1">Called to peace</h2>
+    <p class="note rise" style="--d:2">And if the unbelieving spouse leaves? <em>“Let him depart.”</em> The believer <em>“is not under bondage”</em>: not chained to chasing someone who has walked out.</p>
+    <p class="note step">Good Baptist teachers differ on whether verse 15 frees the one left behind to marry again. What's plain: God has called you to peace, not to a lifelong fight.</p>
+    <p class="note step">Verse 16 is hope: the wife who doesn't believe today may believe one day, because of how you live in front of her.</p>
+    <blockquote class="quote step"><p>“Likewise, ye wives, be in subjection to your own husbands; that, if any obey not the word, they also may without the word be won by the conversation of the wives;”</p><cite>1 Peter 3:1</cite></blockquote>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise">If your marriage is already broken</h2>
+    <p class="note rise" style="--d:1">Many men in this room are divorced, separated, remarried, or living in a hard marriage right now. This chapter isn't here to sort you into a pile.</p>
+    <p class="note step">Every situation has its own history, and some of it is too tangled for a slide. <em>Take yours to your pastor</em>, sit down, and let him walk through it with you from the Word.</p>
+    <p class="note step">But hear this first. Paul wrote this letter to a church full of men with a past. Just one chapter back he listed the sins, and then he said:</p>
+    <blockquote class="quote step"><p>“And such were some of you: but ye are washed, but ye are sanctified, but ye are justified in the name of the Lord Jesus, and by the Spirit of our God.”</p><cite>1 Corinthians 6:11</cite></blockquote>
+    <p class="note step">Whatever you did to wreck a marriage, or whatever was done to you, the blood of Christ is enough for it. Start from where you stand today.</p>
+  </div>
+</section>
+
+<!-- ======================= PART THREE: ABIDE ======================= -->
+<section class="slide part">
+  <div class="inner">
+    <p class="part-n rise">Part three</p>
+    <h2 class="rise" style="--d:1">Abide with God</h2>
+    <p class="range rise" style="--d:2">Verses 17–24</p>
+    <div class="rule"></div>
+    <p class="hook rise" style="--d:4">You don't have to fix your life before you follow Christ. Start right where He found you.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="17-19" data-hl="as the Lord hath called every one, so let him walk|but the keeping of the commandments of God"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="19"></blockquote>
+    <h2 class="rise" style="--d:1">What counts</h2>
+    <ul class="nots">
+      <li class="step"><span class="k">circumcised</span><span class="why">the Jewish mark</span></li>
+      <li class="step"><span class="k">uncircumcised</span><span class="why">the Gentile without it</span></li>
+      <li class="step yes"><span class="k">keeping the commandments of God</span><span class="why">a life that obeys Him</span></li>
+    </ul>
+    <p class="note step">New believers in Corinth wanted to change everything on the outside: leave the unbelieving wife, get circumcised, undo the mark. Paul says the outside label isn't the point. <em>“So ordain I in all churches”</em>: this is my rule everywhere. The change God wants is inside.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="20-22" data-hl="Let every man abide in the same calling wherein he was called|is the Lord’s freeman"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="20"></blockquote>
+    <div class="split">
+      <div class="stage">
+        <svg viewBox="0 0 600 340" role="img" aria-label="A street map of a man's life: the job, the home, the family, the past. A pin drops in the middle, marked: you are here. Follow Christ here.">
+          <path class="c107-street" d="M30 180 L570 180 M300 30 L300 320"/>
+          <rect class="c107-block" x="40" y="40" width="220" height="110" rx="10"/>
+          <rect class="c107-block" x="340" y="40" width="220" height="110" rx="10"/>
+          <rect class="c107-block" x="40" y="210" width="220" height="110" rx="10"/>
+          <rect class="c107-block" x="340" y="210" width="220" height="110" rx="10"/>
+          <text class="c107-lbl" x="150" y="102" text-anchor="middle" font-size="20">the job you have</text>
+          <text class="c107-lbl" x="450" y="102" text-anchor="middle" font-size="20">the home you're in</text>
+          <text class="c107-lbl" x="150" y="272" text-anchor="middle" font-size="20">the family you've got</text>
+          <text class="c107-lbl" x="450" y="272" text-anchor="middle" font-size="20">the record you carry</text>
+          <circle class="c107-ring2" cx="300" cy="180" r="28"/>
+          <g class="c107-drop">
+            <path d="M300 180 C292 160 268 140 268 116 A32 32 0 0 1 332 116 C332 140 308 160 300 180 Z"/>
+            <circle cx="300" cy="116" r="12"/>
+          </g>
+          <text class="c107-here" x="300" y="212" text-anchor="middle" font-size="22">you are here</text>
+        </svg>
+      </div>
+      <div>
+        <h2 class="rise" style="--d:1">Right where you are</h2>
+        <p class="note rise" style="--d:2">Paul says it three times (vv. 17, 20, 24). A <em>“calling”</em> here is the life you were in when God called you.</p>
+        <p class="note step">You don't have to wait until the case is closed, the debt is paid, or the family is fixed. Follow Christ at that job, in that home, with that record, starting today.</p>
+        <p class="note step">This isn't staying in sin: a thief stops stealing. It's not waiting for a better life before you start walking with God.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="22"></blockquote>
+    <h2 class="rise" style="--d:1">Slave and free</h2>
+    <div class="rename">
+      <span class="old rise" style="--d:2">a servant</span>
+      <span class="arrow step">→</span>
+      <span class="new step">the Lord's freeman</span>
+    </div>
+    <p class="note step">Many in the Corinthian church were slaves, owned by another man. Paul doesn't call slavery good: <em>“if thou mayest be made free, use it rather.”</em> But a slave who knows Christ is already free where it counts most.</p>
+    <p class="note step">And the free man? He's <em>“Christ's servant”</em>. Before God, we all stand on the same ground: set free, and glad to serve.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="23-24" data-hl="Ye are bought with a price|therein abide with God"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <p class="saying rise">Bought <em>with a price.</em></p>
+    <p class="note rise" style="--d:1">Slaves were bought and sold in the market at Corinth. Paul says you were bought too, and the price was paid in full.</p>
+    <blockquote class="quote step"><p>“Forasmuch as ye know that ye were not redeemed with corruptible things, as silver and gold, from your vain conversation received by tradition from your fathers; But with the precious blood of Christ, as of a lamb without blemish and without spot:”</p><cite>1 Peter 1:18–19</cite></blockquote>
+    <p class="note step"><em>“Be not ye the servants of men.”</em> No dealer, no bottle, no old crew, no man's opinion owns you now. Christ does. And <em>“abide with God”</em>: wherever you are today, you're not there alone.</p>
+  </div>
+</section>
+
+<!-- ======================= PART FOUR: THE TIME IS SHORT ======================= -->
+<section class="slide part">
+  <div class="inner">
+    <p class="part-n rise">Part four</p>
+    <h2 class="rise" style="--d:1">The time is short</h2>
+    <p class="range rise" style="--d:2">Verses 25–40</p>
+    <div class="rule"></div>
+    <p class="hook rise" style="--d:4">Married or single, live with your eyes on the Lord. This world is passing.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="25-26" data-hl="as one that hath obtained mercy of the Lord to be faithful|the present distress"></section>
+
+<section class="slide verse" data-v="27-28" data-hl="But and if thou marry, thou hast not sinned"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="25" data-hl="as one that hath obtained mercy of the Lord"></blockquote>
+    <h2 class="rise" style="--d:1">Counsel from a man who got mercy</h2>
+    <p class="note rise" style="--d:2"><em>“Virgins”</em> here are the never-married. Jesus left no command about them, so Paul gives his judgment, and look how he describes himself: a man who <em>“obtained mercy”</em>. He once hunted Christians. He never forgot it.</p>
+    <div class="columns">
+      <div class="col law step">
+        <p class="who">Bound to a wife?</p>
+        <h3>seek not to be loosed</h3>
+      </div>
+      <div class="col grace step">
+        <p class="who">Loosed from one?</p>
+        <h3>seek not a wife</h3>
+      </div>
+    </div>
+    <p class="note step">The <em>“present distress”</em> was some hard time they were living through; we don't know exactly what. In it, Paul says, don't rush to change your state. But <em>“if thou marry, thou hast not sinned.”</em> Marriage brings <em>“trouble in the flesh”</em>, real-life pressures, and he'd like to spare them that.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="29-31" data-hl="the time is short|the fashion of this world passeth away"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <div class="split">
+      <div class="stage">
+        <svg viewBox="0 0 400 340" role="img" aria-label="An hourglass. The sand runs from the top to the bottom. Around it are the things of this world: weeping, rejoicing, buying. They fade.">
+          <defs>
+            <clipPath id="c107-top"><path d="M150 40 L250 40 L250 70 Q250 130 204 168 L196 168 Q150 130 150 70 Z"/></clipPath>
+            <clipPath id="c107-bot"><path d="M196 172 L204 172 Q250 210 250 270 L250 300 L150 300 L150 270 Q150 210 196 172 Z"/></clipPath>
+          </defs>
+          <g clip-path="url(#c107-top)"><rect class="c107-sandt" x="140" y="50" width="120" height="130"/></g>
+          <g clip-path="url(#c107-bot)"><rect class="c107-sandb" x="140" y="150" width="120" height="160"/></g>
+          <line class="c107-stream" x1="200" y1="166" x2="200" y2="300"/>
+          <path class="c107-frame" d="M150 40 L250 40 L250 70 Q250 130 204 170 Q250 210 250 270 L250 300 L150 300 L150 270 Q150 210 196 170 Q150 130 150 70 Z"/>
+          <rect class="c107-cap2" x="130" y="26" width="140" height="16" rx="5"/>
+          <rect class="c107-cap2" x="130" y="298" width="140" height="16" rx="5"/>
+          <text class="c107-word go" x="70" y="90" text-anchor="middle" font-size="20">weeping</text>
+          <text class="c107-word go" x="330" y="120" text-anchor="middle" font-size="20">rejoicing</text>
+          <text class="c107-word go" x="70" y="230" text-anchor="middle" font-size="20">buying</text>
+          <text class="c107-word go" x="330" y="260" text-anchor="middle" font-size="20">owning</text>
+        </svg>
+      </div>
+      <div>
+        <h2 class="rise" style="--d:1">The time is short</h2>
+        <p class="note rise" style="--d:2">Life is short, and the Lord is coming. So hold everything here with an open hand: tears, good times, the things you buy. None of it is the main thing.</p>
+        <p class="note step c107-pass"><em>“The fashion of this world passeth away”</em>: the whole scene, like a stage set being changed. <em>“As not abusing it”</em> means <em>not using it up</em> as if it were all there is.</p>
+        <p class="note step">Paul isn't telling husbands to ignore their wives. He's saying even the best things here are not forever. Only Christ is.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="slide verse" data-v="32-33" data-hl="But I would have you without carefulness"></section>
+
+<section class="slide verse" data-v="34-35" data-hl="that ye may attend upon the Lord without distraction"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <div class="split">
+      <div class="stage">
+        <svg viewBox="0 0 600 320" role="img" aria-label="Two men. The single man has one line, up to the Lord. The married man has two lines: one up to the Lord, and one across to his wife.">
+          <circle class="c107-lord" cx="300" cy="46" r="20"/>
+          <text class="c107-up" x="300" y="94" text-anchor="middle" font-size="18">the Lord</text>
+          <path class="c107-line" pathLength="1" d="M140 196 Q170 90 280 56"/>
+          <path class="c107-line" pathLength="1" d="M390 196 Q380 100 320 56"/>
+          <path class="c107-line home" pathLength="1" d="M420 236 L492 236"/>
+          <circle class="c107-man" cx="140" cy="222" r="20"/>
+          <path class="c107-man" d="M104 300 Q104 248 140 248 Q176 248 176 300 Z"/>
+          <circle class="c107-man" cx="390" cy="222" r="20"/>
+          <path class="c107-man" d="M354 300 Q354 248 390 248 Q426 248 426 300 Z"/>
+          <circle class="c107-man wife" cx="520" cy="222" r="19"/>
+          <path class="c107-man wife" d="M486 300 Q486 248 520 248 Q554 248 554 300 Z"/>
+          <text class="c107-who" x="140" y="316" text-anchor="middle" font-size="18">single</text>
+          <text class="c107-who" x="455" y="316" text-anchor="middle" font-size="18">married</text>
+        </svg>
+      </div>
+      <div>
+        <h2 class="rise" style="--d:1">Without distraction</h2>
+        <p class="note rise" style="--d:2"><em>“Carefulness”</em> means <em>anxious care</em>. A single man can give the Lord his whole attention. A married man rightly has a wife to care for too. That isn't sin. It's his job.</p>
+        <p class="note step">Paul isn't trying to <em>“cast a snare”</em>, to put a leash on anyone. He wants what is <em>“comely”</em>, fitting, for each man.</p>
+        <p class="note step">Single or married, the goal is the same: a heart that attends upon the Lord.</p>
+        <blockquote class="quote step"><p>“Be careful for nothing; but in every thing by prayer and supplication with thanksgiving let your requests be made known unto God.”</p><cite>Philippians 4:6</cite></blockquote>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="slide verse" data-v="36-38" data-hl="let them marry|doeth well"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="38"></blockquote>
+    <h2 class="rise" style="--d:1">Well, and better</h2>
+    <p class="note rise" style="--d:2">These three verses are hard to read today. <em>“His virgin”</em> is a young woman under his care. Some good teachers think Paul means a father deciding about his daughter's marriage. Others think he means an engaged man and his bride-to-be.</p>
+    <p class="note step"><em>“If she pass the flower of her age”</em>: if she's getting past the usual age to marry, and it's right that they marry, <em>“he sinneth not: let them marry.”</em></p>
+    <p class="note step">Either way the point is plain. Marrying is good. Staying single to serve the Lord is good too. Nobody in this chapter is a second-class Christian.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="39-40" data-hl="only in the Lord|I think also that I have the Spirit of God"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="39" data-hl="only in the Lord"></blockquote>
+    <h2 class="rise" style="--d:1">Only in the Lord</h2>
+    <p class="note rise" style="--d:2">Marriage is for life: <em>“as long as her husband liveth.”</em> When a husband dies, his widow is free to marry whomever she wants, with one condition: a believer.</p>
+    <blockquote class="quote step"><p>“Be ye not unequally yoked together with unbelievers: for what fellowship hath righteousness with unrighteousness? and what communion hath light with darkness?”</p><cite>2 Corinthians 6:14</cite></blockquote>
+    <p class="note step">Single men, that's for you too. Pray about who you marry. Marry someone who loves Jesus.</p>
+    <p class="note step"><em>“I think also that I have the Spirit of God”</em>: a gentle way of saying it. Paul's judgment here isn't a guess. The Spirit is in it.</p>
+  </div>
+</section>
+
+<!-- ======================= CLOSING ======================= -->
+<section class="slide remember">
+  <div class="inner">
+    <h2 class="rise">Points to remember</h2>
+    <ol class="seeds">
+      <li class="step"><span class="topic">Purity</span><span class="seed-q">“It is better to marry than to burn” <cite>7:9</cite></span><span class="take">God made marriage as the good place for desire. Keep yourself pure until then.</span></li>
+      <li class="step"><span class="topic">Marriage</span><span class="seed-q">“Render unto the wife due benevolence” <cite>7:3</cite></span><span class="take">Each belongs to the other. Marriage is a place to give, not to take.</span></li>
+      <li class="step"><span class="topic">Singleness</span><span class="seed-q">“Every man hath his proper gift of God” <cite>7:7</cite></span><span class="take">Single life is a gift, not a waiting room. Use it for the Lord.</span></li>
+      <li class="step"><span class="topic">Divorce</span><span class="seed-q">“Not I, but the Lord” <cite>7:10</cite></span><span class="take">Marriage is meant to last. Take your own situation to your pastor, and know that grace covers the past.</span></li>
+      <li class="step"><span class="topic">An unbelieving spouse</span><span class="seed-q">“God hath called us to peace” <cite>7:15</cite></span><span class="take">If she's willing, stay. Your life may be how she meets Christ.</span></li>
+      <li class="step"><span class="topic">Your calling</span><span class="seed-q">“Therein abide with God” <cite>7:24</cite></span><span class="take">Start following Christ right where you are, today.</span></li>
+    </ol>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 1 of 6</p>
+      <span class="topic">Purity</span>
+      <h2>Why does Paul tell some men to marry?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="2"></blockquote>
+      <blockquote class="quote step" data-q="9"></blockquote>
+      <blockquote class="quote step"><p>“Marriage is honourable in all, and the bed undefiled: but whoremongers and adulterers God will judge.”</p><cite>Hebrews 13:4</cite></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>To avoid fornication. Desire isn't sin; God made it, and He made marriage as its good and honourable place. A man who can't contain himself shouldn't burn, or go back to the old way. He should marry, in the Lord.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 2 of 6</p>
+      <span class="topic">Marriage</span>
+      <h2>What do a husband and wife owe each other?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="3"></blockquote>
+      <blockquote class="quote step" data-q="4"></blockquote>
+      <blockquote class="quote step" data-q="5" data-hl="Defraud ye not one the other"></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>Love, kindness and the marriage bed, freely given, both ways. Each belongs to the other. Don't hold back or use it as a weapon; apart only by agreement, for a short time, for prayer.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 3 of 6</p>
+      <span class="topic">Singleness</span>
+      <h2>Is being single second best?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="7"></blockquote>
+      <blockquote class="quote step" data-q="32"></blockquote>
+      <blockquote class="quote step" data-q="35" data-hl="that ye may attend upon the Lord without distraction"></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>No. Paul calls it a gift of God, and he lived it himself. A single man can give the Lord his undivided attention. Married or single, both are good; each man has his own gift.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 4 of 6</p>
+      <span class="topic">Divorce</span>
+      <h2>What does the Lord say about leaving a marriage?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="10"></blockquote>
+      <blockquote class="quote step" data-q="11"></blockquote>
+      <blockquote class="quote step"><p>“What therefore God hath joined together, let not man put asunder.”</p><cite>Mark 10:9</cite></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>Don't. God joins a husband and wife, and Jesus said man must not separate them. One who has left should stay unmarried or be reconciled. Every man's own story is different: take yours to your pastor, and remember that the blood of Christ washes every sin.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 5 of 6</p>
+      <span class="topic">An unbelieving spouse</span>
+      <h2>What should a believer do if his wife doesn't believe?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="12" data-hl="let him not put her away"></blockquote>
+      <blockquote class="quote step" data-q="15"></blockquote>
+      <blockquote class="quote step" data-q="16"></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>If she's willing to stay, stay, and love her. A believer in the house sets it apart for God. If she leaves, he isn't chained to chasing her; God has called us to peace. And keep hoping: she may yet come to Christ.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 6 of 6</p>
+      <span class="topic">Your calling</span>
+      <h2>Do I have to fix my life before I can follow Christ?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="17" data-hl="as the Lord hath called every one, so let him walk"></blockquote>
+      <blockquote class="quote step" data-q="20"></blockquote>
+      <blockquote class="quote step" data-q="24"></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>No. God called you where you were. Walk with Him there: at that job, in that home, with that record. Leave behind what's sin, but don't wait for a better life to start. You're bought with a price, and you abide with God.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide prayer">
+  <div class="inner">
+    <div class="emblem rise"></div>
+    <h2 class="rise" style="--d:1">Prayer requests</h2>
+    <p class="ask-line rise" style="--d:2">What can we pray about for you today?</p>
+    <blockquote class="quote rise" style="--d:4"><p>“God setteth the solitary in families: he bringeth out those which are bound with chains: but the rebellious dwell in a dry land.”</p><cite>Psalm 68:6</cite></blockquote>
+  </div>
+</section>
+
+</main>
+
+<script>
+// King James Version, 1 Corinthians chapter 7
+const V = {
+  1: "Now concerning the things whereof ye wrote unto me: It is good for a man not to touch a woman.",
+  2: "Nevertheless, to avoid fornication, let every man have his own wife, and let every woman have her own husband.",
+  3: "Let the husband render unto the wife due benevolence: and likewise also the wife unto the husband.",
+  4: "The wife hath not power of her own body, but the husband: and likewise also the husband hath not power of his own body, but the wife.",
+  5: "Defraud ye not one the other, except it be with consent for a time, that ye may give yourselves to fasting and prayer; and come together again, that Satan tempt you not for your incontinency.",
+  6: "But I speak this by permission, and not of commandment.",
+  7: "For I would that all men were even as I myself. But every man hath his proper gift of God, one after this manner, and another after that.",
+  8: "I say therefore to the unmarried and widows, It is good for them if they abide even as I.",
+  9: "But if they cannot contain, let them marry: for it is better to marry than to burn.",
+  10: "And unto the married I command, yet not I, but the Lord, Let not the wife depart from her husband:",
+  11: "But and if she depart, let her remain unmarried, or be reconciled to her husband: and let not the husband put away his wife.",
+  12: "But to the rest speak I, not the Lord: If any brother hath a wife that believeth not, and she be pleased to dwell with him, let him not put her away.",
+  13: "And the woman which hath an husband that believeth not, and if he be pleased to dwell with her, let her not leave him.",
+  14: "For the unbelieving husband is sanctified by the wife, and the unbelieving wife is sanctified by the husband: else were your children unclean; but now are they holy.",
+  15: "But if the unbelieving depart, let him depart. A brother or a sister is not under bondage in such cases: but God hath called us to peace.",
+  16: "For what knowest thou, O wife, whether thou shalt save thy husband? or how knowest thou, O man, whether thou shalt save thy wife?",
+  17: "But as God hath distributed to every man, as the Lord hath called every one, so let him walk. And so ordain I in all churches.",
+  18: "Is any man called being circumcised? let him not become uncircumcised. Is any called in uncircumcision? let him not be circumcised.",
+  19: "Circumcision is nothing, and uncircumcision is nothing, but the keeping of the commandments of God.",
+  20: "Let every man abide in the same calling wherein he was called.",
+  21: "Art thou called being a servant? care not for it: but if thou mayest be made free, use it rather.",
+  22: "For he that is called in the Lord, being a servant, is the Lord’s freeman: likewise also he that is called, being free, is Christ’s servant.",
+  23: "Ye are bought with a price; be not ye the servants of men.",
+  24: "Brethren, let every man, wherein he is called, therein abide with God.",
+  25: "Now concerning virgins I have no commandment of the Lord: yet I give my judgment, as one that hath obtained mercy of the Lord to be faithful.",
+  26: "I suppose therefore that this is good for the present distress, I say, that it is good for a man so to be.",
+  27: "Art thou bound unto a wife? seek not to be loosed. Art thou loosed from a wife? seek not a wife.",
+  28: "But and if thou marry, thou hast not sinned; and if a virgin marry, she hath not sinned. Nevertheless such shall have trouble in the flesh: but I spare you.",
+  29: "But this I say, brethren, the time is short: it remaineth, that both they that have wives be as though they had none;",
+  30: "And they that weep, as though they wept not; and they that rejoice, as though they rejoiced not; and they that buy, as though they possessed not;",
+  31: "And they that use this world, as not abusing it: for the fashion of this world passeth away.",
+  32: "But I would have you without carefulness. He that is unmarried careth for the things that belong to the Lord, how he may please the Lord:",
+  33: "But he that is married careth for the things that are of the world, how he may please his wife.",
+  34: "There is difference also between a wife and a virgin. The unmarried woman careth for the things of the Lord, that she may be holy both in body and in spirit: but she that is married careth for the things of the world, how she may please her husband.",
+  35: "And this I speak for your own profit; not that I may cast a snare upon you, but for that which is comely, and that ye may attend upon the Lord without distraction.",
+  36: "But if any man think that he behaveth himself uncomely toward his virgin, if she pass the flower of her age, and need so require, let him do what he will, he sinneth not: let them marry.",
+  37: "Nevertheless he that standeth stedfast in his heart, having no necessity, but hath power over his own will, and hath so decreed in his heart that he will keep his virgin, doeth well.",
+  38: "So then he that giveth her in marriage doeth well; but he that giveth her not in marriage doeth better.",
+  39: "The wife is bound by the law as long as her husband liveth; but if her husband be dead, she is at liberty to be married to whom she will; only in the Lord.",
+  40: "But she is happier if she so abide, after my judgment: and I think also that I have the Spirit of God."
+};
+const BOOK = "1 Corinthians 7";
+</script>
+<script src="../assets/deck.js"></script>
+</body>
+</html>

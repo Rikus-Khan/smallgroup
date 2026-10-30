@@ -1,0 +1,582 @@
+<!doctype html>
+<html lang="en" data-theme="night">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>1 Corinthians 8</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="../assets/fonts.css">
+<link rel="stylesheet" href="../assets/deck.css">
+<link rel="stylesheet" href="../assets/themes.css">
+<style>
+/* c107-where (the same marker as 1 Corinthians 7): where this chapter sits in 1 Corinthians. The 16 chapters in their groups (the current one lit, .now),
+   and under them the letter's two halves: what Paul heard (1–6) and what they wrote to ask (7–16, "Now concerning") */
+.c107-where { margin: .3em 0 1em; }
+.c107-groups, .c107-halves { display: flex; gap: 6px; }
+.c107-groups > div { flex: var(--n) 1 0; min-width: 0; display: flex; flex-direction: column; gap: 4px; }
+.c107-groups small { font: 700 clamp(.6rem, .52rem + .3vw, .85rem)/1.15 var(--sans); color: var(--ink-soft); min-height: 2.3em; display: flex; align-items: flex-end; }
+.c107-groups p { display: flex; gap: 3px; margin: 0; }
+.c107-groups span { flex: 1 1 0; min-width: 0; display: grid; place-items: center; height: clamp(1.6rem, 1.3rem + 1vw, 2.3rem); border-radius: 5px; border: 1.5px solid var(--line-strong); background: var(--surface); font: 600 clamp(.7rem, .6rem + .35vw, .95rem) var(--sans); color: var(--ink-soft); }
+.c107-groups > div.on small { color: var(--accent); }
+.c107-groups > div.on span { border-color: var(--accent); }
+.c107-groups span.now { background: var(--accent); border-color: var(--accent); color: var(--on-accent); box-shadow: 0 0 0 5px color-mix(in srgb, var(--accent) 22%, transparent); }
+.slide.active .c107-groups span.now { animation: c107-pulse 2.4s ease-in-out .8s 2; }
+@keyframes c107-pulse { 50% { box-shadow: 0 0 0 10px color-mix(in srgb, var(--accent) 8%, transparent); } }
+.c107-halves { margin-top: 10px; }
+.c107-halves > div { flex: var(--n) 1 0; min-width: 0; border-top: 3px solid var(--line-strong); padding-top: 6px; font: 600 clamp(.72rem, .62rem + .35vw, 1rem)/1.3 var(--sans); color: var(--ink-soft); position: relative; }
+.c107-halves > div::before, .c107-halves > div::after { content: ""; position: absolute; top: -10px; width: 3px; height: 10px; background: var(--line-strong); }
+.c107-halves > div::before { left: 0; } .c107-halves > div::after { right: 0; }
+.c107-halves > div.on { border-color: var(--accent); color: var(--accent-hot); }
+.c107-halves > div.on::before, .c107-halves > div.on::after { background: var(--accent); }
+.c107-halves em { font-family: var(--serif); }
+
+/* c108-market: where the meat in Corinth came from. A temple altar, and three roads out of it:
+   burned for the god, eaten at a feast in the temple (8:10), or sold in the market (10:25). Each road draws on its step (.c108-go1–3) */
+.c108-market { max-height: 40vh; }
+.c108-stone { fill: var(--surface-2); stroke: var(--ink-soft); stroke-width: 2.5; stroke-linejoin: round; }
+.c108-fire { fill: var(--warm); }
+.slide.active .c108-fire { animation: c108-flick 1.1s ease-in-out infinite alternate; transform-box: fill-box; transform-origin: bottom center; }
+@keyframes c108-flick { to { transform: scaleY(1.18) skewX(4deg); } }
+.c108-road { fill: none; stroke: var(--accent); stroke-width: 5; stroke-linecap: round; stroke-dasharray: 1; stroke-dashoffset: 1; transition: stroke-dashoffset 1.4s ease; }
+.c108-stop { opacity: 0; transition: opacity .8s ease 1s; }
+.slide:has(.c108-go1.on) .c108-road.r1, .slide:has(.c108-go2.on) .c108-road.r2, .slide:has(.c108-go3.on) .c108-road.r3 { stroke-dashoffset: 0; }
+.slide:has(.c108-go1.on) .c108-stop.r1, .slide:has(.c108-go2.on) .c108-stop.r2, .slide:has(.c108-go3.on) .c108-stop.r3 { opacity: 1; }
+.c108-smoke { fill: none; stroke: var(--ink-soft); stroke-width: 4; stroke-linecap: round; }
+.c108-table { fill: var(--leather); }
+.c108-guest { fill: var(--ink-soft); }
+.c108-meat { fill: var(--wine); }
+.c108-awning { fill: var(--accent); }
+.c108-label { fill: var(--ink); font-weight: 700; }
+.c108-small { fill: var(--ink-soft); font-style: italic; }
+
+/* c108-puff: a balloon that swells with air beside a wall that is built brick by brick (8:1) */
+.c108-balloon { fill: color-mix(in srgb, var(--accent) 22%, transparent); stroke: var(--accent); stroke-width: 3; stroke-dasharray: 8 7; transform-box: fill-box; transform-origin: 50% 100%; transform: scale(.3); }
+.slide.active .c108-balloon { animation: c108-swell 2.6s cubic-bezier(.3,1.4,.5,1) .5s forwards, c108-bob 2.4s ease-in-out 3.1s infinite alternate; }
+@keyframes c108-swell { to { transform: scale(1); } }
+@keyframes c108-bob { from { transform: scale(1); } to { transform: scale(1.04) translateY(-6px); } }
+.c108-string { fill: none; stroke: var(--ink-soft); stroke-width: 2; }
+.c108-brick { fill: var(--leather-light); stroke: var(--leather); stroke-width: 2; opacity: 0; transform: translateY(-30px); }
+.slide.active .c108-brick { animation: c108-lay .5s ease-out calc(.6s + var(--k) * .22s) forwards; }
+@keyframes c108-lay { to { opacity: 1; transform: none; } }
+.c108-word { fill: var(--accent-hot); font-weight: 700; }
+.c108-gloss { fill: var(--ink-soft); }
+
+/* c108-door: a dining room in an idol's temple. A man "which hast knowledge" reclines at the table; a weak brother watches
+   from outside, then (.c108-in step) is "emboldened" to walk in (8:10) */
+.c108-col { fill: var(--surface-2); stroke: var(--ink-soft); stroke-width: 2; }
+.c108-floor { stroke: var(--line-strong); stroke-width: 3; }
+.c108-strong { fill: var(--ink-soft); }
+.c108-weak g { fill: var(--cool); }
+.c108-weak { transition: transform 2.2s ease-in-out; }
+.split:has(.c108-in.on) .c108-weak { transform: translateX(190px); }
+.c108-bold { fill: var(--danger); font-weight: 700; opacity: 0; transition: opacity 1s ease 1.8s; }
+.split:has(.c108-in.on) .c108-bold { opacity: 1; }
+.c108-who { fill: var(--ink-soft); }
+</style>
+</head>
+<body>
+<main class="deck" id="deck">
+
+<!-- ======================= OPENING ======================= -->
+<section class="slide title">
+  <div class="inner">
+    <div class="emblem rise"></div>
+    <h1 class="rise" style="--d:1">1 Corinthians 8</h1>
+    <p class="sub rise" style="--d:3">Knowledge puffs up, love builds up</p>
+    <p class="tag rise" style="--d:5">Is it all right to eat meat that was offered to an idol? Paul says the real question is what your freedom does to your brother.</p>
+  </div>
+</section>
+
+<section class="slide watch">
+  <div class="inner">
+    <h2 class="rise">Things to watch for</h2>
+    <p class="lede rise" style="--d:1">Keep these questions in the back of your mind as we read. We'll come back to every one of them at the end.</p>
+    <ol class="seeds">
+      <li class="step"><span class="topic">Knowledge</span><span class="seed-q">What's the difference between knowledge that puffs up and love that builds up?</span></li>
+      <li class="step"><span class="topic">One God</span><span class="seed-q">What do believers know about idols?</span></li>
+      <li class="step"><span class="topic">Conscience</span><span class="seed-q">What is a weak conscience?</span></li>
+      <li class="step"><span class="topic">Food and God</span><span class="seed-q">Does what I eat make me better or worse with God?</span></li>
+      <li class="step"><span class="topic">Stumbling</span><span class="seed-q">How can my freedom hurt a brother?</span></li>
+      <li class="step"><span class="topic">Love</span><span class="seed-q">What will love give up for a brother?</span></li>
+    </ol>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise">Where we are in 1 Corinthians</h2>
+    <div class="c107-where rise" style="--d:1" role="img" aria-label="The sixteen chapters of 1 Corinthians: divisions, 1 to 4; sin in the church, 5 and 6; marriage, 7; meat offered to idols, 8 to 10; worship, 11 to 14; the resurrection, 15; the collection and closing words, 16. Chapter 8 is lit. Chapters 1 to 6 answer what Paul heard; chapters 7 to 16 answer what the church wrote to ask him.">
+      <div class="c107-groups">
+        <div style="--n:4"><small>Divisions</small><p><span>1</span><span>2</span><span>3</span><span>4</span></p></div>
+        <div style="--n:2"><small>Sin in the church</small><p><span>5</span><span>6</span></p></div>
+        <div style="--n:1"><small>Marriage</small><p><span>7</span></p></div>
+        <div class="on" style="--n:3"><small>Idol meat</small><p><span class="now">8</span><span>9</span><span>10</span></p></div>
+        <div style="--n:4"><small>Worship</small><p><span>11</span><span>12</span><span>13</span><span>14</span></p></div>
+        <div style="--n:1"><small>Resurrection</small><p><span>15</span></p></div>
+        <div style="--n:1"><small>Closing</small><p><span>16</span></p></div>
+      </div>
+      <div class="c107-halves">
+        <div style="--n:6">What Paul <em>heard</em></div>
+        <div class="on" style="--n:10">What they <em>wrote to ask</em>: “Now concerning…”</div>
+      </div>
+    </div>
+    <p class="note rise" style="--d:2">Chapter 7 answered their questions about marriage. Now the next one: <em>“Now as touching things offered unto idols.”</em> Paul takes three chapters to answer it.</p>
+    <p class="note step">Chapter 8: love limits my freedom. Chapter 9: Paul's own example, a man who gave up his rights. Chapter 10: run from idolatry, and do everything to the glory of God.</p>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise">Where Corinth's meat came from</h2>
+    <svg class="c108-market rise" style="--d:1" viewBox="0 0 720 360" role="img" aria-label="A temple with an altar fire in front. Three roads lead out from the altar: up to smoke, burned for the god; across to a table, eaten at a feast in the temple; down to a market stall with meat hanging, sold in the market.">
+      <path class="c108-stone" d="M30 116 L100 76 L170 116 Z"/>
+      <rect class="c108-stone" x="30" y="116" width="140" height="12"/>
+      <rect class="c108-stone" x="40" y="128" width="12" height="96"/><rect class="c108-stone" x="72" y="128" width="12" height="96"/>
+      <rect class="c108-stone" x="116" y="128" width="12" height="96"/><rect class="c108-stone" x="148" y="128" width="12" height="96"/>
+      <rect class="c108-stone" x="24" y="224" width="152" height="12"/>
+      <rect class="c108-stone" x="78" y="262" width="44" height="34"/>
+      <path class="c108-fire" d="M86 262 Q88 238 100 230 Q98 246 108 240 Q116 252 114 262 Z"/>
+      <text class="c108-label" x="100" y="324" text-anchor="middle" font-size="19">the altar</text>
+      <text class="c108-small" x="100" y="346" text-anchor="middle" font-size="16">offered to an idol</text>
+
+      <path class="c108-road r1" pathLength="1" d="M124 270 C210 270 220 70 316 70"/>
+      <path class="c108-road r2" pathLength="1" d="M124 276 C210 276 230 186 316 186"/>
+      <path class="c108-road r3" pathLength="1" d="M124 282 C210 282 230 306 316 306"/>
+
+      <g class="c108-stop r1">
+        <path class="c108-smoke" d="M346 92 Q336 76 348 62 Q360 48 350 30 M366 92 Q356 72 370 58 Q382 44 372 24"/>
+        <text class="c108-label" x="400" y="62" font-size="19">burned for the god</text>
+        <text class="c108-small" x="400" y="84" font-size="16">a portion went up in smoke</text>
+      </g>
+      <g class="c108-stop r2">
+        <circle class="c108-guest" cx="338" cy="168" r="11"/><circle class="c108-guest" cx="378" cy="168" r="11"/>
+        <rect class="c108-table" x="326" y="186" width="64" height="10" rx="3"/>
+        <rect class="c108-table" x="352" y="196" width="10" height="20"/>
+        <text class="c108-label" x="400" y="182" font-size="19">a feast in the temple</text>
+        <text class="c108-small" x="400" y="204" font-size="16">“sit at meat in the idol’s temple” (v. 10)</text>
+      </g>
+      <g class="c108-stop r3">
+        <path class="c108-awning" d="M322 284 L392 284 L384 298 L330 298 Z"/>
+        <line x1="330" y1="298" x2="330" y2="340" stroke-width="4" style="stroke:var(--leather)"/><line x1="384" y1="298" x2="384" y2="340" stroke-width="4" style="stroke:var(--leather)"/>
+        <ellipse class="c108-meat" cx="346" cy="314" rx="7" ry="11"/><ellipse class="c108-meat" cx="368" cy="316" rx="7" ry="12"/>
+        <text class="c108-label" x="400" y="302" font-size="19">sold in the market</text>
+        <text class="c108-small" x="400" y="324" font-size="16">“the shambles” (10:25), then on to dinner</text>
+      </g>
+    </svg>
+    <p class="note step c108-go1">Corinth was a city of temples, and most meat started at an altar.</p>
+    <p class="note step c108-go2">Part was burned. Part was eaten at a feast: archaeologists have found dining rooms at Corinth's temples, where a wedding or a birthday might be held.</p>
+    <p class="note step c108-go3">The rest was sold in the meat market. A believer could buy a roast and never know where it had been.</p>
+  </div>
+</section>
+
+<!-- ======================= PART ONE: KNOWLEDGE AND LOVE ======================= -->
+<section class="slide part">
+  <div class="inner">
+    <p class="part-n rise">Part one</p>
+    <h2 class="rise" style="--d:1">Charity edifieth</h2>
+    <p class="range rise" style="--d:2">Verses 1–3</p>
+    <div class="rule"></div>
+    <p class="hook rise" style="--d:4">Being right isn't the same as being loving.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="1-3" data-hl="Knowledge puffeth up, but charity edifieth|if any man love God, the same is known of him"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="1" data-hl="Knowledge puffeth up, but charity edifieth"></blockquote>
+    <div class="split">
+      <div class="stage">
+        <svg viewBox="0 0 600 340" role="img" aria-label="On the left, a balloon swells up, full of air: knowledge puffeth up. On the right, a wall is built one brick at a time: charity edifieth.">
+          <ellipse class="c108-balloon" cx="160" cy="140" rx="86" ry="100"/>
+          <path class="c108-string" d="M160 240 Q150 262 166 282 Q178 298 160 318"/>
+          <g>
+            <rect class="c108-brick" style="--k:0" x="360" y="262" width="66" height="30" rx="3"/>
+            <rect class="c108-brick" style="--k:1" x="430" y="262" width="66" height="30" rx="3"/>
+            <rect class="c108-brick" style="--k:2" x="500" y="262" width="66" height="30" rx="3"/>
+            <rect class="c108-brick" style="--k:3" x="394" y="228" width="66" height="30" rx="3"/>
+            <rect class="c108-brick" style="--k:4" x="464" y="228" width="66" height="30" rx="3"/>
+            <rect class="c108-brick" style="--k:5" x="360" y="194" width="66" height="30" rx="3"/>
+            <rect class="c108-brick" style="--k:6" x="430" y="194" width="66" height="30" rx="3"/>
+            <rect class="c108-brick" style="--k:7" x="500" y="194" width="66" height="30" rx="3"/>
+            <rect class="c108-brick" style="--k:8" x="394" y="160" width="66" height="30" rx="3"/>
+            <rect class="c108-brick" style="--k:9" x="464" y="160" width="66" height="30" rx="3"/>
+          </g>
+          <text class="c108-word" x="160" y="146" text-anchor="middle" font-size="22">knowledge</text>
+          <text class="c108-word" x="463" y="128" text-anchor="middle" font-size="22">charity</text>
+          <text class="c108-gloss" x="160" y="336" text-anchor="middle" font-size="17">puffeth up: full of air</text>
+          <text class="c108-gloss" x="463" y="320" text-anchor="middle" font-size="17">edifieth: builds a house</text>
+        </svg>
+      </div>
+      <div>
+        <h2 class="rise" style="--d:1">Air, or bricks</h2>
+        <p class="note rise" style="--d:2"><em>“We all have knowledge”</em> was probably the strong Corinthians' own line. We know idols aren't real. So we can eat whatever we like.</p>
+        <p class="note step">Paul doesn't say they're wrong about idols. He says knowledge alone swells a man up like a balloon: big, and full of air. <em>“Charity”</em>, love, <em>“edifieth”</em>: it builds, one brick at a time, like a house.</p>
+        <p class="note step">You can win the argument and lose the brother.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="3"></blockquote>
+    <h2 class="rise" style="--d:1">Known of him</h2>
+    <p class="note rise" style="--d:2">The man who thinks he has it all figured out <em>“knoweth nothing yet as he ought to know.”</em> Real knowledge always comes with humility.</p>
+    <p class="note step">Then Paul turns it around. The thing that matters most isn't what you know about God. It's that God knows <em>you</em>.</p>
+    <blockquote class="quote step"><p>“But now, after that ye have known God, or rather are known of God, how turn ye again to the weak and beggarly elements, whereunto ye desire again to be in bondage?”</p><cite>Galatians 4:9</cite></blockquote>
+    <p class="note step">Some of us were never good at school. You don't have to be. If you love God, He knows you by name. That's the knowledge that counts.</p>
+  </div>
+</section>
+
+<!-- ======================= PART TWO: ONE GOD ======================= -->
+<section class="slide part">
+  <div class="inner">
+    <p class="part-n rise">Part two</p>
+    <h2 class="rise" style="--d:1">But to us there is but one God</h2>
+    <p class="range rise" style="--d:2">Verses 4–6</p>
+    <div class="rule"></div>
+    <p class="hook rise" style="--d:4">A city full of gods, and only one is real.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="4-6" data-hl="an idol is nothing in the world|But to us there is but one God, the Father|one Lord Jesus Christ, by whom are all things"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="5" data-hl="as there be gods many, and lords many"></blockquote>
+    <h2 class="rise" style="--d:1">Gods many</h2>
+    <ul class="nots">
+      <li class="step"><span class="k">Apollo</span><span class="why">his temple stood in the middle of Corinth</span></li>
+      <li class="step"><span class="k">Aphrodite</span><span class="why">goddess of love, on the hill above the city</span></li>
+      <li class="step"><span class="k">Asclepius</span><span class="why">the god of healing, with his dining rooms</span></li>
+      <li class="step"><span class="k">Poseidon</span><span class="why">god of the sea, honoured at the games near Corinth</span></li>
+      <li class="step yes"><span class="k">one God, the Father … and one Lord Jesus Christ</span><span class="why">of whom, and by whom, are all things</span></li>
+    </ul>
+    <p class="note step">Devout Jews prayed it every day: <em>“Hear, O Israel: The LORD our God is one LORD”</em> (Deuteronomy 6:4). Paul says the same, and puts Jesus right inside it. The Lord who made all things is the Lord who died for us.</p>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="4" data-hl="an idol is nothing in the world"></blockquote>
+    <h2 class="rise" style="--d:1">An idol is nothing</h2>
+    <p class="note rise" style="--d:2">A statue can't hear, help, or hurt you. It's wood and stone. The power an idol has over a man is the power he hands it.</p>
+    <p class="note step">We had idols too. Not on a hill: in a bottle, a pipe, a bag, a screen, a bank account. Things we gave our whole lives to, that gave nothing back.</p>
+    <p class="note step">But <em>nothing</em> doesn't mean <em>harmless</em>. Two chapters on, Paul says devils stand behind the idols (10:20), and he says plainly:</p>
+    <blockquote class="quote step"><p>“Wherefore, my dearly beloved, flee from idolatry.”</p><cite>1 Corinthians 10:14</cite></blockquote>
+  </div>
+</section>
+
+<!-- ======================= PART THREE: THE WEAK BROTHER ======================= -->
+<section class="slide part">
+  <div class="inner">
+    <p class="part-n rise">Part three</p>
+    <h2 class="rise" style="--d:1">For whom Christ died</h2>
+    <p class="range rise" style="--d:2">Verses 7–13</p>
+    <div class="rule"></div>
+    <p class="hook rise" style="--d:4">What's harmless to you may be deadly to him.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="7-8" data-hl="with conscience of the idol unto this hour|But meat commendeth us not to God"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="7" data-hl="with conscience of the idol unto this hour"></blockquote>
+    <h2 class="rise" style="--d:1">Unto this hour</h2>
+    <div class="columns">
+      <div class="col grace rise" style="--d:2">
+        <p class="who">The strong man sees</p>
+        <h3>a plate of meat</h3>
+        <p>Just dinner. The idol is nothing. He eats and gives thanks.</p>
+      </div>
+      <div class="col law step">
+        <p class="who">The weak man sees</p>
+        <h3>the old altar</h3>
+        <p>He worshipped there for years. The smell, the place, the people pull him straight back to the old life.</p>
+      </div>
+    </div>
+    <p class="note step">A <em>“weak”</em> conscience here isn't a bad man. It's a new believer whose past is still close. We know this one. A smell, a song, a street corner, a certain kind of night: <em>“unto this hour”</em> it can bring the old life right back.</p>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="8"></blockquote>
+    <div class="split">
+      <div class="stage">
+        <svg class="scale now" style="--at:300px 80px; --from:-9deg; --tip:0deg; --wait:.9s" viewBox="0 0 600 320" role="img" aria-label="A balance scale settles level: on one side, if we eat; on the other, if we eat not. Neither is heavier before God.">
+          <path d="M240 300 L360 300 L330 280 L270 280 Z" style="fill:var(--surface-2);stroke:var(--ink-soft)" stroke-width="2.5"/>
+          <rect x="294" y="74" width="12" height="208" style="fill:var(--ink-soft)"/>
+          <g class="scale-beam">
+            <rect x="130" y="74" width="340" height="12" rx="6" style="fill:var(--ink)"/>
+            <circle cx="300" cy="80" r="11" style="fill:var(--accent)"/>
+            <g fill="none" stroke-width="2" style="stroke:var(--ink-soft)"><path d="M140 86 L100 196 M140 86 L180 196"/><path d="M460 86 L420 196 M460 86 L500 196"/></g>
+            <path d="M88 196 L192 196 Q140 236 88 196 Z" stroke-width="2.5" style="fill:var(--surface-2);stroke:var(--ink-soft)"/>
+            <path d="M408 196 L512 196 Q460 236 408 196 Z" stroke-width="2.5" style="fill:var(--surface-2);stroke:var(--ink-soft)"/>
+            <ellipse cx="140" cy="190" rx="34" ry="6" style="fill:var(--line-strong)"/>
+            <ellipse cx="140" cy="182" rx="18" ry="9" style="fill:var(--wine)"/>
+            <ellipse cx="460" cy="190" rx="34" ry="6" style="fill:var(--line-strong)"/>
+            <text x="140" y="262" text-anchor="middle" font-size="20" style="fill:var(--ink-soft)">if we eat</text>
+            <text x="460" y="262" text-anchor="middle" font-size="20" style="fill:var(--ink-soft)">if we eat not</text>
+          </g>
+          <text x="300" y="40" text-anchor="middle" font-size="22" font-weight="700" style="fill:var(--accent-hot)">no better, no worse</text>
+        </svg>
+      </div>
+      <div>
+        <h2 class="rise" style="--d:1">Meat commendeth us not</h2>
+        <p class="note rise" style="--d:2"><em>“Commendeth”</em> means <em>brings us closer</em>, wins us credit. Eating doesn't make you more spiritual. Not eating doesn't either.</p>
+        <p class="note step">On the scale before God, the plate weighs nothing. What we stand on with Him is Christ alone.</p>
+        <p class="note step">So the strong man is right. But being right doesn't settle it, as the next verse shows.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="slide verse" data-v="9-10" data-hl="take heed lest by any means this liberty of yours become a stumblingblock to them that are weak|sit at meat in the idol’s temple"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="10" data-hl="be emboldened"></blockquote>
+    <div class="split">
+      <div class="stage">
+        <svg viewBox="0 0 600 340" role="img" aria-label="A dining room in an idol's temple, with columns and a roof. A man who knows better reclines at the table inside. A weak brother stands outside watching. Then he walks in and sits down too.">
+          <path d="M270 96 L430 42 L590 96 Z" style="fill:var(--surface-2);stroke:var(--ink-soft)" stroke-width="2"/>
+          <rect class="c108-col" x="284" y="96" width="16" height="200"/>
+          <rect class="c108-col" x="560" y="96" width="16" height="200"/>
+          <line class="c108-floor" x1="20" y1="298" x2="590" y2="298"/>
+          <rect class="c108-table" x="400" y="232" width="130" height="12" rx="4"/>
+          <rect class="c108-table" x="458" y="244" width="12" height="54"/>
+          <ellipse cx="490" cy="226" rx="20" ry="6" style="fill:var(--wine)"/>
+          <circle class="c108-strong" cx="440" cy="190" r="17"/>
+          <path class="c108-strong" d="M412 232 Q414 208 440 208 Q462 208 468 232 Z"/>
+          <g class="c108-weak"><g>
+            <circle cx="150" cy="200" r="17"/>
+            <path d="M126 298 L130 228 Q132 218 150 218 Q168 218 170 228 L174 298 Z"/>
+          </g></g>
+          <text class="c108-who" x="452" y="326" text-anchor="middle" font-size="18">“thee which hast knowledge”</text>
+          <text class="c108-who" x="150" y="326" text-anchor="middle" font-size="18">a weak brother</text>
+          <text class="c108-bold" x="150" y="120" text-anchor="middle" font-size="22">“emboldened”</text>
+          <text class="c108-bold" x="150" y="146" text-anchor="middle" font-size="17">built up, to fall</text>
+        </svg>
+      </div>
+      <div>
+        <h2 class="rise" style="--d:1">Emboldened</h2>
+        <p class="note rise" style="--d:2">A strong believer goes to a dinner in a temple's dining room. He knows the idol is nothing. He's fine.</p>
+        <p class="note step c108-in">But a new believer sees him through the door, and follows him in. For him it's not dinner. It's worship of the old god, and his conscience is wounded.</p>
+        <p class="note step"><em>“Emboldened”</em> is the same Greek word as <em>“edifieth”</em> in verse 1: <em>built up</em>. Your freedom built him up, right into his fall.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="9"></blockquote>
+    <h2 class="rise" style="--d:1">This liberty of yours</h2>
+    <p class="note rise" style="--d:2">Maybe you can sit in a bar with a soda and be fine. Maybe you can watch that show, or drive down that street, and it doesn't touch you.</p>
+    <p class="note step">But the man two weeks out of rehab who sees you there doesn't see a soda. He sees permission. <em>“If he can, I can.”</em></p>
+    <blockquote class="quote step"><p>“For, brethren, ye have been called unto liberty; only use not liberty for an occasion to the flesh, but by love serve one another.”</p><cite>Galatians 5:13</cite></blockquote>
+    <p class="note step">Freedom in Christ is real. It was given to serve with, not to show off.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="11-13" data-hl="for whom Christ died|ye sin against Christ|I will eat no flesh while the world standeth"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="12" data-hl="ye sin against Christ"></blockquote>
+    <h2 class="rise" style="--d:1">Against Christ</h2>
+    <p class="note rise" style="--d:2">To <em>“perish”</em> here is to be ruined: a brother wrecked, pulled back under. And Paul calls him <em>“the weak brother … for whom Christ died.”</em> Jesus counted him worth His blood. Is he worth a plate of meat to you?</p>
+    <p class="note step">Wound a brother and you wound Christ. Paul learned that on the road to Damascus, when he was hurting believers:</p>
+    <blockquote class="quote step"><p>“And he fell to the earth, and heard a voice saying unto him, Saul, Saul, why persecutest thou me?”</p><cite>Acts 9:4</cite></blockquote>
+    <p class="note step">Jesus takes it personally when His people are hurt. That's how close He is to them.</p>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="13"></blockquote>
+    <h2 class="rise" style="--d:1">While the world standeth</h2>
+    <div class="ifthen rise" style="--d:2">
+      <div class="if"><small>If</small>meat make my brother to offend,</div>
+      <span class="arrow" aria-hidden="true">→</span>
+      <div class="then"><small>then</small>no meat for me, ever.</div>
+    </div>
+    <p class="note step">For us the same rule reaches further. Put anything in the place of the meat:</p>
+    <ol class="signs step">
+      <li class="now"><b>a drink at dinner</b>with a man in recovery</li>
+      <li><b>the beer in your fridge</b>when he comes over</li>
+      <li><b>a bar you can handle</b>that he can't</li>
+      <li><b>a joke, a show, a song</b>that drags him back</li>
+    </ol>
+    <p class="note step">Paul isn't being forced. He chooses it, gladly, for a brother. That's what love does.</p>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise">Both sides of the table</h2>
+    <p class="note rise" style="--d:1">Some of us have been the weak brother. Somebody's example, or somebody's offer, and we went down. Hear verse 11: you are a brother <em>“for whom Christ died.”</em> He hasn't given up on you. Get up and come back.</p>
+    <p class="note step">Some of us have been the stumblingblock. We brought it to the party. We said, <em>“One won't hurt.”</em> That's sin against Christ, and it's forgiven the same way as any other:</p>
+    <blockquote class="quote step"><p>“If we confess our sins, he is faithful and just to forgive us our sins, and to cleanse us from all unrighteousness.”</p><cite>1 John 1:9</cite></blockquote>
+    <p class="note step">Then, if you can, go to that brother and make it right. Today, look at your own liberty: is there one thing you should set down for someone else's sake?</p>
+  </div>
+</section>
+
+<!-- ======================= CLOSING ======================= -->
+<section class="slide remember">
+  <div class="inner">
+    <h2 class="rise">Points to remember</h2>
+    <ol class="seeds">
+      <li class="step"><span class="topic">Knowledge</span><span class="seed-q">“Knowledge puffeth up, but charity edifieth” <cite>8:1</cite></span><span class="take">Being right swells a man up. Love builds his brother up.</span></li>
+      <li class="step"><span class="topic">One God</span><span class="seed-q">“An idol is nothing in the world” <cite>8:4</cite></span><span class="take">There is one God, the Father, and one Lord Jesus Christ. Every idol is empty, so run from it.</span></li>
+      <li class="step"><span class="topic">Conscience</span><span class="seed-q">“With conscience of the idol unto this hour” <cite>8:7</cite></span><span class="take">A new believer's past is still close. What's nothing to you can pull him back.</span></li>
+      <li class="step"><span class="topic">Food and God</span><span class="seed-q">“Meat commendeth us not to God” <cite>8:8</cite></span><span class="take">What's on the plate doesn't make us better or worse. We stand on Christ alone.</span></li>
+      <li class="step"><span class="topic">Stumbling</span><span class="seed-q">“Take heed lest … this liberty of yours become a stumblingblock” <cite>8:9</cite></span><span class="take">Your freedom can build a brother up, right into a fall. Watch who's watching.</span></li>
+      <li class="step"><span class="topic">Love</span><span class="seed-q">“I will eat no flesh while the world standeth” <cite>8:13</cite></span><span class="take">Love gladly sets down the drink, or anything else, that trips a brother.</span></li>
+    </ol>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 1 of 6</p>
+      <span class="topic">Knowledge</span>
+      <h2>What's the difference between knowledge that puffs up and love that builds up?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="1" data-hl="Knowledge puffeth up, but charity edifieth"></blockquote>
+      <blockquote class="quote step" data-q="3"></blockquote>
+      <blockquote class="quote step"><p>“Charity suffereth long, and is kind; charity envieth not; charity vaunteth not itself, is not puffed up,”</p><cite>1 Corinthians 13:4</cite></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>Knowledge alone swells a man with pride; he's right, and he lets everyone know it. Love builds others up, brick by brick. And what matters most isn't what I know about God, but that God knows me.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 2 of 6</p>
+      <span class="topic">One God</span>
+      <h2>What do believers know about idols?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="4"></blockquote>
+      <blockquote class="quote step" data-q="6"></blockquote>
+      <blockquote class="quote step"><p>“Little children, keep yourselves from idols. Amen.”</p><cite>1 John 5:21</cite></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>An idol is nothing: there is one God, the Father, and one Lord Jesus Christ, who made all things. Empty as they are, idols still enslave the men who serve them, so keep away from them, whatever shape they take.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 3 of 6</p>
+      <span class="topic">Conscience</span>
+      <h2>What is a weak conscience?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="7"></blockquote>
+      <blockquote class="quote step" data-q="10"></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>It's the conscience of a believer whose old life is still close. Something harmless in itself still means the old idol to him. If he goes against it, his conscience is wounded and he can be pulled back under.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 4 of 6</p>
+      <span class="topic">Food and God</span>
+      <h2>Does what I eat make me better or worse with God?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="8"></blockquote>
+      <blockquote class="quote step"><p>“Whether therefore ye eat, or drink, or whatsoever ye do, do all to the glory of God.”</p><cite>1 Corinthians 10:31</cite></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>No. Food doesn't bring us closer to God, and skipping it doesn't either. We stand before Him on Christ alone. So eat with thanks, and do it all to His glory.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 5 of 6</p>
+      <span class="topic">Stumbling</span>
+      <h2>How can my freedom hurt a brother?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="9"></blockquote>
+      <blockquote class="quote step" data-q="11"></blockquote>
+      <blockquote class="quote step" data-q="12"></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>He sees me do it and follows, against his own conscience, into what ruins him. Christ died for that brother. When I wound him, I sin against Christ.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 6 of 6</p>
+      <span class="topic">Love</span>
+      <h2>What will love give up for a brother?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="13"></blockquote>
+      <blockquote class="quote step"><p>“It is good neither to eat flesh, nor to drink wine, nor any thing whereby thy brother stumbleth, or is offended, or is made weak.”</p><cite>Romans 14:21</cite></blockquote>
+      <blockquote class="quote step"><p>“For, brethren, ye have been called unto liberty; only use not liberty for an occasion to the flesh, but by love serve one another.”</p><cite>Galatians 5:13</cite></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>Anything. Meat, drink, a place, a habit: whatever trips him. Paul would rather never eat meat again than make a brother fall. Love doesn't ask what I'm allowed. It asks what will help him.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide prayer">
+  <div class="inner">
+    <div class="emblem rise"></div>
+    <h2 class="rise" style="--d:1">Prayer requests</h2>
+    <p class="ask-line rise" style="--d:2">What can we pray about for you today?</p>
+    <blockquote class="quote rise" style="--d:4"><p>“And this I pray, that your love may abound yet more and more in knowledge and in all judgment;”</p><cite>Philippians 1:9</cite></blockquote>
+  </div>
+</section>
+
+</main>
+
+<script>
+// King James Version, 1 Corinthians chapter 8
+const V = {
+  1: "Now as touching things offered unto idols, we know that we all have knowledge. Knowledge puffeth up, but charity edifieth.",
+  2: "And if any man think that he knoweth any thing, he knoweth nothing yet as he ought to know.",
+  3: "But if any man love God, the same is known of him.",
+  4: "As concerning therefore the eating of those things that are offered in sacrifice unto idols, we know that an idol is nothing in the world, and that there is none other God but one.",
+  5: "For though there be that are called gods, whether in heaven or in earth, (as there be gods many, and lords many,)",
+  6: "But to us there is but one God, the Father, of whom are all things, and we in him; and one Lord Jesus Christ, by whom are all things, and we by him.",
+  7: "Howbeit there is not in every man that knowledge: for some with conscience of the idol unto this hour eat it as a thing offered unto an idol; and their conscience being weak is defiled.",
+  8: "But meat commendeth us not to God: for neither, if we eat, are we the better; neither, if we eat not, are we the worse.",
+  9: "But take heed lest by any means this liberty of yours become a stumblingblock to them that are weak.",
+  10: "For if any man see thee which hast knowledge sit at meat in the idol’s temple, shall not the conscience of him which is weak be emboldened to eat those things which are offered to idols;",
+  11: "And through thy knowledge shall the weak brother perish, for whom Christ died?",
+  12: "But when ye sin so against the brethren, and wound their weak conscience, ye sin against Christ.",
+  13: "Wherefore, if meat make my brother to offend, I will eat no flesh while the world standeth, lest I make my brother to offend."
+};
+const BOOK = "1 Corinthians 8";
+</script>
+<script src="../assets/deck.js"></script>
+</body>
+</html>

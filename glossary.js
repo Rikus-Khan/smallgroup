@@ -368,6 +368,9 @@ window.GLOSSARY = [
     "1 Corinthians", 6,
     [ 11 ] ],
    [
+    "1 Corinthians", 8,
+    [ 6 ] ],
+   [
     "1 Corinthians", 11,
     [ 23 ] ] ]
  },
@@ -1179,6 +1182,9 @@ window.GLOSSARY = [
     [ 15 ] ],
    [
     "Romans", 15,
+    [ 6 ] ],
+   [
+    "1 Corinthians", 8,
     [ 6 ] ] ]
  },
  {
@@ -1335,7 +1341,10 @@ window.GLOSSARY = [
     [ 16 ] ],
    [
     "1 Corinthians", 6,
-    [ 11, 19 ] ] ]
+    [ 11, 19 ] ],
+   [
+    "1 Corinthians", 7,
+    [ 40 ] ] ]
  },
  {
   "id": "disciples",
@@ -3237,13 +3246,7 @@ window.GLOSSARY = [
     [ 8 ] ],
    [
     "Acts", 26,
-    [ 21 ] ],
-   [
-    "1 Corinthians", 3,
-    [ 16, 17 ] ],
-   [
-    "1 Corinthians", 6,
-    [ 19 ] ] ]
+    [ 21 ] ] ]
  },
  {
   "id": "israel",
@@ -3720,7 +3723,10 @@ window.GLOSSARY = [
     [ 18 ] ],
    [
     "Romans", 10,
-    [ 6 ] ] ]
+    [ 6 ] ],
+   [
+    "1 Corinthians", 8,
+    [ 5 ] ] ]
  },
  {
   "id": "hell",
@@ -4752,7 +4758,10 @@ window.GLOSSARY = [
     [ 4, 5 ] ],
    [
     "Romans", 13,
-    [ 8, 10 ] ] ]
+    [ 8, 10 ] ],
+   [
+    "1 Corinthians", 7,
+    [ 39 ] ] ]
  },
  {
   "id": "only-begotten",
@@ -4999,6 +5008,12 @@ window.GLOSSARY = [
    [
     "1 Corinthians", 6,
     [ 15 ] ],
+   [
+    "1 Corinthians", 7,
+    [ 22 ] ],
+   [
+    "1 Corinthians", 8,
+    [ 6, 11, 12 ] ],
    [
     "1 Corinthians", 11,
     [ 1, 3 ] ] ]
@@ -5461,6 +5476,9 @@ window.GLOSSARY = [
    [
     "1 Corinthians", 3,
     [ 5 ] ],
+   [
+    "1 Corinthians", 7,
+    [ 12, 13 ] ],
    [
     "1 Corinthians", 11,
     [ 18 ] ] ]
@@ -6504,7 +6522,10 @@ window.GLOSSARY = [
     [ 14 ] ],
    [
     "1 Corinthians", 1,
-    [ 5 ] ] ]
+    [ 5 ] ],
+   [
+    "1 Corinthians", 8,
+    [ 1, 7, 10, 11 ] ] ]
  },
  {
   "id": "instruction",
@@ -7506,7 +7527,10 @@ window.GLOSSARY = [
     [ 1, 6, 8, 9, 10 ] ],
    [
     "1 Corinthians", 2,
-    [ 9 ] ] ]
+    [ 9 ] ],
+   [
+    "1 Corinthians", 7,
+    [ 37 ] ] ]
  },
  {
   "id": "tongue",
@@ -8910,7 +8934,10 @@ window.GLOSSARY = [
     [ 35 ] ],
    [
     "Romans", 11,
-    [ 9 ] ] ]
+    [ 9 ] ],
+   [
+    "1 Corinthians", 7,
+    [ 35 ] ] ]
  },
  {
   "id": "sound-wisdom",
@@ -10215,7 +10242,10 @@ window.GLOSSARY = [
     [ 33, 34, 36 ] ],
    [
     "Romans", 14,
-    [ 15, 17, 20 ] ] ]
+    [ 15, 17, 20 ] ],
+   [
+    "1 Corinthians", 8,
+    [ 8, 10, 13 ] ] ]
  },
  {
   "id": "sealed",
@@ -10932,7 +10962,10 @@ window.GLOSSARY = [
     [ 2, 30 ] ],
    [
     "1 Corinthians", 6,
-    [ 11 ] ] ]
+    [ 11 ] ],
+   [
+    "1 Corinthians", 7,
+    [ 14 ] ] ]
  },
  {
   "id": "stoning",
@@ -11256,7 +11289,10 @@ window.GLOSSARY = [
     [ 9, 10, 11, 12 ] ],
    [
     "Romans", 15,
-    [ 8 ] ] ]
+    [ 8 ] ],
+   [
+    "1 Corinthians", 7,
+    [ 18 ] ] ]
  },
  {
   "id": "living-water",
@@ -11916,7 +11952,10 @@ window.GLOSSARY = [
     [ 1 ] ],
    [
     "Romans", 13,
-    [ 5 ] ] ]
+    [ 5 ] ],
+   [
+    "1 Corinthians", 8,
+    [ 7, 10, 12 ] ] ]
  },
  {
   "id": "i-am",
@@ -11970,7 +12009,10 @@ window.GLOSSARY = [
     [ 3 ] ],
    [
     "Romans", 8,
-    [ 2 ] ] ]
+    [ 2 ] ],
+   [
+    "1 Corinthians", 7,
+    [ 21, 22 ] ] ]
  },
  {
   "id": "bondage",
@@ -11985,7 +12027,10 @@ window.GLOSSARY = [
     [ 6, 7 ] ],
    [
     "Romans", 8,
-    [ 15, 21 ] ] ]
+    [ 15, 21 ] ],
+   [
+    "1 Corinthians", 7,
+    [ 15 ] ] ]
  },
  {
   "id": "servant-of-sin",
@@ -14211,6 +14256,9 @@ window.GLOSSARY = [
     [ 20 ] ],
    [
     "1 Corinthians", 5,
+    [ 5 ] ],
+   [
+    "1 Corinthians", 7,
     [ 5 ] ] ]
  },
  {
@@ -14622,7 +14670,10 @@ window.GLOSSARY = [
     [ 4, 5, 6, 7, 10 ] ],
    [
     "Romans", 11,
-    [ 23 ] ] ]
+    [ 23 ] ],
+   [
+    "1 Corinthians", 7,
+    [ 8, 20, 24, 40 ] ] ]
  },
  {
   "id": "purge",
@@ -15675,7 +15726,10 @@ window.GLOSSARY = [
     [ 12 ] ],
    [
     "Acts", 27,
-    [ 33 ] ] ]
+    [ 33 ] ],
+   [
+    "1 Corinthians", 7,
+    [ 5 ] ] ]
  },
  {
   "id": "solemn-assembly",
@@ -16629,7 +16683,10 @@ window.GLOSSARY = [
     [ 1, 8 ] ],
    [
     "Romans", 15,
-    [ 9 ] ] ]
+    [ 9 ] ],
+   [
+    "1 Corinthians", 7,
+    [ 25 ] ] ]
  },
  {
   "id": "baal",
@@ -17325,7 +17382,10 @@ window.GLOSSARY = [
     [ 25 ] ],
    [
     "Romans", 2,
-    [ 22 ] ] ]
+    [ 22 ] ],
+   [
+    "1 Corinthians", 8,
+    [ 1, 4, 10 ] ] ]
  },
  {
   "id": "morning-cloud",
@@ -25212,7 +25272,10 @@ window.GLOSSARY = [
     [ 9 ] ],
    [
     "Acts", 15,
-    [ 10 ] ] ]
+    [ 10 ] ],
+   [
+    "1 Corinthians", 7,
+    [ 5 ] ] ]
  },
  {
   "id": "an-hungred",
@@ -25698,7 +25761,10 @@ window.GLOSSARY = [
     [ 1 ] ],
    [
     "1 Corinthians", 6,
-    [ 13, 18 ] ] ]
+    [ 13, 18 ] ],
+   [
+    "1 Corinthians", 7,
+    [ 2 ] ] ]
  },
  {
   "id": "forswear",
@@ -28470,7 +28536,10 @@ window.GLOSSARY = [
     [ 2, 4, 11, 12 ] ],
    [
     "Luke", 16,
-    [ 18 ] ] ]
+    [ 18 ] ],
+   [
+    "1 Corinthians", 7,
+    [ 11, 12 ] ] ]
  },
  {
   "id": "one-flesh",
@@ -28674,7 +28743,10 @@ window.GLOSSARY = [
     [ 11, 18, 20 ] ],
    [
     "Mark", 7,
-    [ 2, 15, 18, 20, 23 ] ] ]
+    [ 2, 15, 18, 20, 23 ] ],
+   [
+    "1 Corinthians", 8,
+    [ 7 ] ] ]
  },
  {
   "id": "blind-leaders",
@@ -29529,7 +29601,10 @@ window.GLOSSARY = [
   "refs": [
    [
     "Mark", 10,
-    [ 19 ] ] ]
+    [ 19 ] ],
+   [
+    "1 Corinthians", 7,
+    [ 5 ] ] ]
  },
  {
   "id": "riches",
@@ -30600,7 +30675,10 @@ window.GLOSSARY = [
     [ 30, 31, 33 ] ],
    [
     "Romans", 7,
-    [ 2 ] ] ]
+    [ 2 ] ],
+   [
+    "1 Corinthians", 7,
+    [ 27 ] ] ]
  },
  {
   "id": "ruler-of-the-synagogue",
@@ -38289,7 +38367,10 @@ window.GLOSSARY = [
     [ 10 ] ],
    [
     "Romans", 11,
-    [ 15 ] ] ]
+    [ 15 ] ],
+   [
+    "1 Corinthians", 7,
+    [ 11 ] ] ]
  },
  {
   "id": "atonement",
@@ -39027,7 +39108,13 @@ window.GLOSSARY = [
     [ 14, 15, 30 ] ],
    [
     "Romans", 16,
-    [ 14, 17 ] ] ]
+    [ 14, 17 ] ],
+   [
+    "1 Corinthians", 7,
+    [ 29 ] ],
+   [
+    "1 Corinthians", 8,
+    [ 12 ] ] ]
  },
  {
   "id": "captain-of-the-guard",
@@ -39285,7 +39372,10 @@ window.GLOSSARY = [
     [ 13 ] ],
    [
     "1 Corinthians", 1,
-    [ 23 ] ] ]
+    [ 23 ] ],
+   [
+    "1 Corinthians", 8,
+    [ 9 ] ] ]
  },
  {
   "id": "charitably",
@@ -39876,7 +39966,10 @@ window.GLOSSARY = [
   "refs": [
    [
     "Romans", 8,
-    [ 28, 30 ] ] ]
+    [ 28, 30 ] ],
+   [
+    "1 Corinthians", 7,
+    [ 15, 17, 18, 20, 21, 22, 24 ] ] ]
  },
  {
   "id": "foreknow",
@@ -40896,7 +40989,10 @@ window.GLOSSARY = [
   "refs": [
    [
     "1 Corinthians", 6,
-    [ 20 ] ] ]
+    [ 20 ] ],
+   [
+    "1 Corinthians", 7,
+    [ 23 ] ] ]
  },
  {
   "id": "head-of-every-man",
@@ -40969,5 +41065,263 @@ window.GLOSSARY = [
    [
     "1 Corinthians", 11,
     [ 30 ] ] ]
+ },
+ {
+  "id": "due-benevolence",
+  "kind": "term",
+  "name": "Due benevolence (the love and the marriage bed a husband and wife owe each other)",
+  "refs": [
+   [
+    "1 Corinthians", 7,
+    [ 3 ] ] ]
+ },
+ {
+  "id": "incontinency",
+  "kind": "term",
+  "name": "Incontinency (lack of self-control)",
+  "refs": [
+   [
+    "1 Corinthians", 7,
+    [ 5 ] ] ]
+ },
+ {
+  "id": "by-permission",
+  "kind": "term",
+  "name": "By permission, and not of commandment (advice, not a command)",
+  "refs": [
+   [
+    "1 Corinthians", 7,
+    [ 6 ] ] ]
+ },
+ {
+  "id": "proper-gift",
+  "kind": "term",
+  "name": "His proper gift of God (each man's own gift: married or single)",
+  "refs": [
+   [
+    "1 Corinthians", 7,
+    [ 7 ] ] ]
+ },
+ {
+  "id": "better-to-marry-than-to-burn",
+  "kind": "term",
+  "name": "Better to marry than to burn (burn with desire)",
+  "refs": [
+   [
+    "1 Corinthians", 7,
+    [ 9 ] ] ]
+ },
+ {
+  "id": "not-i-but-the-lord",
+  "kind": "term",
+  "name": "Not I, but the Lord (what Jesus Himself taught, and what Paul added as His apostle)",
+  "refs": [
+   [
+    "1 Corinthians", 7,
+    [ 10, 12 ] ] ]
+ },
+ {
+  "id": "unbelieving-spouse",
+  "kind": "term",
+  "name": "The unbelieving husband or wife",
+  "refs": [
+   [
+    "1 Corinthians", 7,
+    [ 12, 13, 14, 15 ] ] ]
+ },
+ {
+  "id": "called-to-peace",
+  "kind": "term",
+  "name": "God hath called us to peace",
+  "refs": [
+   [
+    "1 Corinthians", 7,
+    [ 15 ] ] ]
+ },
+ {
+  "id": "calling-where-called",
+  "kind": "term",
+  "name": "Abide in the same calling (follow Christ right where He found you)",
+  "refs": [
+   [
+    "1 Corinthians", 7,
+    [ 20, 24 ] ] ]
+ },
+ {
+  "id": "lords-freeman",
+  "kind": "term",
+  "name": "The Lord's freeman (a slave set free in Christ)",
+  "refs": [
+   [
+    "1 Corinthians", 7,
+    [ 22 ] ] ]
+ },
+ {
+  "id": "present-distress",
+  "kind": "term",
+  "name": "The present distress (a hard time the Corinthians were living through)",
+  "refs": [
+   [
+    "1 Corinthians", 7,
+    [ 26 ] ] ]
+ },
+ {
+  "id": "virgins-unmarried",
+  "kind": "term",
+  "name": "Virgin (here, a never-married person)",
+  "refs": [
+   [
+    "1 Corinthians", 7,
+    [ 25, 28, 34, 36, 37 ] ] ]
+ },
+ {
+  "id": "the-time-is-short",
+  "kind": "term",
+  "name": "The time is short",
+  "refs": [
+   [
+    "1 Corinthians", 7,
+    [ 29 ] ] ]
+ },
+ {
+  "id": "fashion-of-this-world",
+  "kind": "term",
+  "name": "The fashion of this world passeth away (the whole scene of this life is passing)",
+  "refs": [
+   [
+    "1 Corinthians", 7,
+    [ 31 ] ] ]
+ },
+ {
+  "id": "carefulness",
+  "kind": "term",
+  "name": "Carefulness (anxious care, worry)",
+  "refs": [
+   [
+    "1 Corinthians", 7,
+    [ 32 ] ] ]
+ },
+ {
+  "id": "comely",
+  "kind": "term",
+  "name": "Comely, uncomely (fitting, not fitting)",
+  "refs": [
+   [
+    "1 Corinthians", 7,
+    [ 35, 36 ] ] ]
+ },
+ {
+  "id": "only-in-the-lord",
+  "kind": "term",
+  "name": "Only in the Lord (marry a believer)",
+  "refs": [
+   [
+    "1 Corinthians", 7,
+    [ 39 ] ] ]
+ },
+ {
+  "id": "things-offered-unto-idols",
+  "kind": "term",
+  "name": "Things offered unto idols (meat from a pagan sacrifice)",
+  "refs": [
+   [
+    "Acts", 15,
+    [ 29 ] ],
+   [
+    "Acts", 21,
+    [ 25 ] ],
+   [
+    "1 Corinthians", 8,
+    [ 1, 4, 7, 10 ] ] ]
+ },
+ {
+  "id": "puffeth-up",
+  "kind": "term",
+  "name": "Puffeth up (swells a man with pride, like air in a balloon)",
+  "refs": [
+   [
+    "1 Corinthians", 8,
+    [ 1 ] ] ]
+ },
+ {
+  "id": "charity",
+  "kind": "term",
+  "name": "Charity (love: the Greek agapē, love that gives itself for others)",
+  "refs": [
+   [
+    "1 Corinthians", 8,
+    [ 1 ] ] ]
+ },
+ {
+  "id": "edifieth",
+  "kind": "term",
+  "name": "Edifieth (builds up, like building a house)",
+  "refs": [
+   [
+    "1 Corinthians", 8,
+    [ 1 ] ] ]
+ },
+ {
+  "id": "known-of-him",
+  "kind": "term",
+  "name": "Known of him (known by God)",
+  "refs": [
+   [
+    "1 Corinthians", 8,
+    [ 3 ] ] ]
+ },
+ {
+  "id": "gods-many",
+  "kind": "term",
+  "name": "Gods many, and lords many (the idols of the pagan world)",
+  "refs": [
+   [
+    "1 Corinthians", 8,
+    [ 5 ] ] ]
+ },
+ {
+  "id": "one-god-one-lord",
+  "kind": "term",
+  "name": "One God, the Father, and one Lord Jesus Christ",
+  "refs": [
+   [
+    "1 Corinthians", 8,
+    [ 4, 6 ] ] ]
+ },
+ {
+  "id": "weak-conscience",
+  "kind": "term",
+  "name": "The weak (a believer whose conscience is still tender toward his old idols)",
+  "refs": [
+   [
+    "1 Corinthians", 8,
+    [ 7, 9, 10, 11, 12 ] ] ]
+ },
+ {
+  "id": "emboldened",
+  "kind": "term",
+  "name": "Emboldened (literally “built up”: the same word as “edifieth”)",
+  "refs": [
+   [
+    "1 Corinthians", 8,
+    [ 10 ] ] ]
+ },
+ {
+  "id": "idols-temple",
+  "kind": "place",
+  "name": "The idol's temple (a pagan temple, with its dining rooms)",
+  "refs": [
+   [
+    "1 Corinthians", 8,
+    [ 10 ] ] ]
+ },
+ {
+  "id": "sin-against-christ",
+  "kind": "term",
+  "name": "Ye sin against Christ (to wound a brother is to wound Christ)",
+  "refs": [
+   [
+    "1 Corinthians", 8,
+    [ 12 ] ] ]
  }
 ];

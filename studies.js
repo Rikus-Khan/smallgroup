@@ -11820,6 +11820,97 @@ window.STUDIES = [
     }
   },
   {
+    "id": "1-corinthians-07",
+    "type": "chapter",
+    "book": "1 Corinthians",
+    "ch": 7,
+    "date": "2026-10-31",
+    "title": "1 Corinthians 7",
+    "sub": "Married, single, or somewhere hard",
+    "about": "The Corinthians asked Paul about marriage. He answers with honesty and grace: keep yourself pure, love the one you have, and follow Christ right where He found you.",
+    "tags": [
+      "Marriage",
+      "Singleness",
+      "Sexual purity",
+      "Divorce",
+      "Calling",
+      "Grace"
+    ],
+    "url": "studies/1-corinthians-07.html",
+    "overview": {
+      "where": "A letter from Ephesus to the church at Corinth",
+      "when": "About AD 55, during Paul's three years at Ephesus",
+      "people": [
+        "paul",
+        "jesus",
+        "satan",
+        "holy-spirit",
+        "brethren-believers"
+      ],
+      "places": [
+        "corinth",
+        "ephesus"
+      ],
+      "story": [
+        "Now concerning the things they wrote: to avoid fornication, let every man have his own wife. Husband and wife owe each other love and the marriage bed; don't defraud one another (1–5).",
+        "Paul speaks by permission, not commandment. Single life is a gift; but if they cannot contain, it is better to marry than to burn (6–9).",
+        "Not I, but the Lord: a wife should not depart, nor a husband put away his wife. A believer with an unbelieving spouse who is willing to stay should stay; the home is sanctified. If the unbeliever departs, God hath called us to peace (10–16).",
+        "Let every man abide in the calling wherein he was called, circumcised or not, slave or free. Ye are bought with a price (17–24).",
+        "Concerning virgins: the time is short and the fashion of this world passeth away. To marry is no sin; to stay single serves the Lord without distraction. A widow may remarry, only in the Lord (25–40)."
+      ],
+      "key": {
+        "ref": "1 Corinthians 7:24",
+        "text": "Brethren, let every man, wherein he is called, therein abide with God."
+      },
+      "big": "God made marriage as the good place for a man's desire, and made single life a gift. Whatever your situation, you don't have to fix it first: follow Christ right where He found you, take the hard questions to your pastor, and live as one bought with a price."
+    }
+  },
+  {
+    "id": "1-corinthians-08",
+    "type": "chapter",
+    "book": "1 Corinthians",
+    "ch": 8,
+    "date": "2026-10-31",
+    "title": "1 Corinthians 8",
+    "sub": "Knowledge puffs up, love builds up",
+    "about": "Is it all right to eat meat that was offered to an idol? Paul says the real question is what your freedom does to your brother.",
+    "tags": [
+      "Love",
+      "Christian liberty",
+      "Conscience",
+      "Idols",
+      "Stumbling",
+      "Recovery"
+    ],
+    "url": "studies/1-corinthians-08.html",
+    "overview": {
+      "where": "A letter from Ephesus to the church at Corinth, a city of temples",
+      "when": "About AD 55, during Paul's three years at Ephesus",
+      "people": [
+        "paul",
+        "the-father",
+        "jesus",
+        "brethren-believers"
+      ],
+      "places": [
+        "corinth",
+        "ephesus"
+      ],
+      "story": [
+        "Now as touching things offered unto idols: we all have knowledge, but knowledge puffeth up, and charity edifieth. The man who loves God is known of Him (1–3).",
+        "An idol is nothing. There are gods many and lords many, but to us there is one God, the Father, and one Lord Jesus Christ (4–6).",
+        "Not every man knows it. Some still eat with conscience of the idol, and their weak conscience is defiled. Meat does not commend us to God (7–8).",
+        "Take heed lest your liberty become a stumblingblock. A weak brother who sees you at meat in the idol's temple may be emboldened to eat, and perish, a brother for whom Christ died (9–11).",
+        "To wound his conscience is to sin against Christ. If meat make my brother to offend, I will eat no flesh while the world standeth (12–13)."
+      ],
+      "key": {
+        "ref": "1 Corinthians 8:1",
+        "text": "Now as touching things offered unto idols, we know that we all have knowledge. Knowledge puffeth up, but charity edifieth."
+      },
+      "big": "Being right is not enough. A believer is free, but love limits that freedom for the sake of a weaker brother. For men in recovery, the rule reaches to drink and to anything that would trip a brother: set it down gladly, because Christ died for him."
+    }
+  },
+  {
     "id": "1-corinthians-11",
     "type": "chapter",
     "book": "1 Corinthians",
