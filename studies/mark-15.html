@@ -1,0 +1,702 @@
+<!doctype html>
+<html lang="en" data-theme="night">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Mark 15</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="../assets/fonts.css">
+<link rel="stylesheet" href="../assets/deck.css">
+<link rel="stylesheet" href="../assets/themes.css">
+<style>
+/* mk15-world: a hand-drawn map of the Great Sea, with Simon's long road from Cyrene to Jerusalem (a .map-route) */
+.mk15-world { display: block; width: 100%; height: auto; max-height: 46vh; border-radius: 6px; }
+.mk15-world .map-town text { font-size: 18px; }
+
+/* mk15-noon: a noon sky that goes dark from the sixth hour to the ninth, while a bar under it fills */
+.mk15-noon { display: block; width: 100%; height: auto; max-height: 40vh; }
+.mk15-sky { fill: var(--glow); transition: fill 3.5s ease .8s; }
+.slide.active .mk15-sky { fill: var(--on-glow); }
+.mk15-sun { fill: var(--accent); transition: opacity 3.5s ease .8s; }
+.slide.active .mk15-sun { opacity: .12; }
+.mk15-hill { fill: var(--surface-2); stroke: var(--line-strong); stroke-width: 2; }
+.mk15-cross { stroke: var(--on-glow); stroke-width: 6; stroke-linecap: round; transition: stroke 3.5s ease .8s; }
+.slide.active .mk15-cross { stroke: color-mix(in srgb, var(--glow) 55%, transparent); }
+.mk15-bar { fill: var(--surface-2); stroke: var(--line-strong); stroke-width: 1.5; }
+.mk15-fill { fill: var(--accent); transform: scaleX(0); transform-box: fill-box; transform-origin: left; transition: transform 3.5s ease .8s; }
+.slide.active .mk15-fill { transform: none; }
+.mk15-noon text { font-size: 17px; fill: var(--ink-soft); }
+.mk15-noon text b, .mk15-noon .strong { font-weight: 700; fill: var(--ink); }
+
+/* mk15-veil: the temple curtain tears from the top down (.mk15-rend step), and the halves fall open on the holiest place */
+.mk15-veilbox { display: block; width: 100%; height: auto; max-height: 44vh; }
+.mk15-holy { fill: var(--on-glow); }
+.mk15-light { opacity: .25; transition: opacity 1.6s ease 1.4s; }
+.mk15-half { fill: var(--wine); stroke: var(--line-strong); stroke-width: 2; transform-box: view-box; transition: transform 1.6s cubic-bezier(.5,0,.3,1) 1.2s; }
+.mk15-half.l { transform-origin: 60px 20px; }
+.mk15-half.r { transform-origin: 340px 20px; }
+.mk15-fold { stroke: color-mix(in srgb, var(--ink) 25%, transparent); stroke-width: 2; fill: none; }
+.mk15-tear { fill: none; stroke: var(--glow); stroke-width: 4; stroke-linejoin: round; stroke-dasharray: 1; stroke-dashoffset: 1; transition: stroke-dashoffset 1.2s ease-in; }
+.slide:has(.mk15-rend.on) .mk15-tear { stroke-dashoffset: 0; }
+.slide:has(.mk15-rend.on) .mk15-half.l { transform: translateX(-16px) skewX(-8deg); }
+.slide:has(.mk15-rend.on) .mk15-half.r { transform: translateX(16px) skewX(8deg); }
+.slide:has(.mk15-rend.on) .mk15-light { opacity: 1; }
+.mk15-veilbox text { font-size: 16px; fill: var(--ink-soft); }
+</style>
+</head>
+<body>
+<main class="deck" id="deck">
+
+<!-- ======================= OPENING ======================= -->
+<section class="slide title">
+  <div class="inner">
+    <div class="emblem rise"></div>
+    <h1 class="rise" style="--d:1">Mark 15</h1>
+    <p class="sub rise" style="--d:3">The King on a cross</p>
+    <p class="tag rise" style="--d:5">Pilate gives up an innocent man to please a crowd. Barabbas walks free. Jesus is crucified, darkness covers the land, the temple veil tears in two, and He is laid in a rock tomb.</p>
+  </div>
+</section>
+
+<section class="slide watch">
+  <div class="inner">
+    <h2 class="rise">Things to watch for</h2>
+    <p class="lede rise" style="--d:1">Keep these questions in the back of your mind as we read. We'll come back to every one of them at the end.</p>
+    <ol class="seeds">
+      <li class="step"><span class="topic">Silent</span><span class="seed-q">Why did Jesus answer nothing to His accusers?</span></li>
+      <li class="step"><span class="topic">Exchanged</span><span class="seed-q">Who walked free because Jesus was condemned?</span></li>
+      <li class="step"><span class="topic">The crowd</span><span class="seed-q">What made Pilate give up a man he knew was innocent?</span></li>
+      <li class="step"><span class="topic">He stayed</span><span class="seed-q">Why didn't Jesus come down from the cross?</span></li>
+      <li class="step"><span class="topic">Forsaken</span><span class="seed-q">Why did Jesus cry, “My God, my God, why hast thou forsaken me?”</span></li>
+      <li class="step"><span class="topic">The way in</span><span class="seed-q">What did the torn veil of the temple mean?</span></li>
+    </ol>
+  </div>
+</section>
+
+<!-- ======================= PART ONE: BEFORE PILATE ======================= -->
+<section class="slide part">
+  <div class="inner">
+    <p class="part-n rise">Part one</p>
+    <h2 class="rise" style="--d:1">Before Pilate</h2>
+    <p class="range rise" style="--d:2">Verses 1–15</p>
+    <div class="rule"></div>
+    <p class="hook rise" style="--d:4">The council hands Jesus to Rome. A murderer goes free, and the innocent One is sent to die.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="1-2" data-hl="straightway in the morning|delivered him to Pilate|Art thou the King of the Jews?"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="1" data-hl="straightway in the morning|delivered him to Pilate"></blockquote>
+    <h2 class="rise" style="--d:1">One long Friday</h2>
+    <p class="note rise" style="--d:2">The council had tried Jesus through the night (14:53–65). At daybreak they take Him to the Roman governor, <em>Pontius Pilate</em>, who ruled Judaea for Rome from about A.D. 26 to 36. Under Rome, the council had no power to put a man to death (John 18:31). Mark marks the hours of the day:</p>
+    <div class="hours rise" style="--d:3" aria-label="Morning, Jesus is taken to Pilate. The third hour, about nine in the morning, He is crucified. The sixth hour, noon, darkness. The ninth hour, about three in the afternoon, He dies. Evening, He is buried.">
+      <div class="hour"><div class="dot"></div><b>Morning</b><span>to Pilate (v. 1)</span></div>
+      <div class="hour"><div class="dot"></div><b>3rd hour</b><span>about 9 a.m., crucified (v. 25)</span></div>
+      <div class="hour"><div class="dot"></div><b>6th hour</b><span>noon, darkness (v. 33)</span></div>
+      <div class="hour come"><div class="dot"></div><b>9th hour</b><span>about 3 p.m., He dies (v. 37)</span></div>
+      <div class="hour"><div class="dot"></div><b>Even</b><span>buried before the sabbath (v. 42)</span></div>
+    </div>
+    <p class="note step">Pilate asks one question: <em>“Art thou the King of the Jews?”</em> A rival king meant rebellion against Caesar. Jesus answers, <em>“Thou sayest it”</em>: yes, it is as you say. Everything that follows today happens to the King.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="3-5" data-hl="he answered nothing|Answerest thou nothing?|so that Pilate marvelled"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="5"></blockquote>
+    <h2 class="rise" style="--d:1">The silence of the Lamb</h2>
+    <div class="talk">
+      <p class="rise" style="--d:2"><small>The chief priests</small>“…accused him of many things”</p>
+      <p class="step"><small>Pilate</small>Answerest thou nothing? behold how many things they witness against thee.</p>
+      <p class="reply step"><small>Jesus</small>…<br><span class="flag">answered nothing</span></p>
+    </div>
+    <p class="note step">Pilate had seen plenty of prisoners shout, beg, and argue. He had never seen this, and he <em>“marvelled.”</em></p>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise">As a lamb</h2>
+    <p class="note rise" style="--d:1">Isaiah saw this silence about seven hundred years before it happened:</p>
+    <blockquote class="quote rise" style="--d:2"><p>“He was oppressed, and he was afflicted, yet he opened not his mouth: he is brought as a lamb to the slaughter, and as a sheep before her shearers is dumb, so he openeth not his mouth.”</p><cite>Isaiah 53:7</cite></blockquote>
+    <p class="note step">He wasn't beaten, and He wasn't trapped. He had come to die for these very men, and He wasn't going to talk His way out of it.</p>
+    <p class="note step">Most of us learned to fight for ourselves with our mouths: arguing, excusing, blaming. Jesus could have won any argument in that hall. He chose to lose it, for us.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="6-8" data-hl="he released unto them one prisoner|Barabbas|who had committed murder in the insurrection"></section>
+<section class="slide verse" data-v="9-11" data-hl="the chief priests had delivered him for envy|that he should rather release Barabbas unto them"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="10"></blockquote>
+    <h2 class="rise" style="--d:1">“For envy”</h2>
+    <p class="note rise" style="--d:2">Pilate saw straight through it. The chief priests didn't hand Jesus over for blasphemy or for Rome's sake. They did it because the people were following Him and not them.</p>
+    <p class="note step">Envy is hating somebody for having what you want. It doesn't stay small. Here it ends with men who served at God's altar <em>“moving”</em> a crowd to ask for a murderer instead of the Son of God.</p>
+    <blockquote class="quote step"><p>“A sound heart is the life of the flesh: but envy the rottenness of the bones.”</p><cite>Proverbs 14:30</cite></blockquote>
+    <p class="note step">Most of us know that rot: the brother who's doing well, the man who got the job, the friend who stayed clean when we didn't. Name it before God. He can heal what envy eats.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="12-15" data-hl="Why, what evil hath he done?|Crucify him|willing to content the people|released Barabbas unto them"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="15" data-hl="willing to content the people"></blockquote>
+    <div class="split">
+      <div class="stage">
+        <svg class="scale" style="--tip:-12deg; --wait:.6s" viewBox="0 0 600 330" role="img" aria-label="A balance scale. On one side, the truth: what evil hath he done? On the other, keeping the crowd happy. The crowd's side goes down.">
+          <path d="M270 320 L330 320 L312 300 L288 300 Z" style="fill:var(--line-strong)"/>
+          <line x1="300" y1="300" x2="300" y2="70" stroke-width="8" style="stroke:var(--line-strong)"/>
+          <g class="scale-beam">
+            <line x1="80" y1="70" x2="520" y2="70" stroke-width="8" stroke-linecap="round" style="stroke:var(--ink-soft)"/>
+            <circle cx="300" cy="70" r="11" style="fill:var(--accent)"/>
+          </g>
+          <g class="scale-pan l">
+            <g stroke-width="2" style="stroke:var(--ink-soft)"><line x1="80" y1="70" x2="30" y2="190"/><line x1="80" y1="70" x2="130" y2="190"/></g>
+            <path d="M20 190 L140 190 Q130 220 80 220 Q30 220 20 190 Z" style="fill:var(--surface-2);stroke:var(--danger)" stroke-width="2"/>
+            <g style="fill:var(--danger)" opacity=".8"><circle cx="50" cy="176" r="10"/><circle cx="72" cy="172" r="11"/><circle cx="95" cy="174" r="10"/><circle cx="114" cy="178" r="9"/><circle cx="62" cy="158" r="9"/><circle cx="86" cy="155" r="10"/><circle cx="106" cy="160" r="8"/></g>
+            <text x="80" y="250" text-anchor="middle" font-size="19" font-weight="700" style="fill:var(--danger)">the crowd</text>
+            <text x="80" y="272" text-anchor="middle" font-size="16" style="fill:var(--ink-soft)">“Crucify him”</text>
+          </g>
+          <g class="scale-pan r">
+            <g stroke-width="2" style="stroke:var(--ink-soft)"><line x1="520" y1="70" x2="470" y2="190"/><line x1="520" y1="70" x2="570" y2="190"/></g>
+            <path d="M460 190 L580 190 Q570 220 520 220 Q470 220 460 190 Z" style="fill:var(--surface-2);stroke:var(--accent)" stroke-width="2"/>
+            <circle cx="520" cy="170" r="16" style="fill:var(--accent)"/>
+            <text x="520" y="250" text-anchor="middle" font-size="19" font-weight="700" style="fill:var(--accent-hot)">the truth</text>
+            <text x="520" y="272" text-anchor="middle" font-size="16" style="fill:var(--ink-soft)">“what evil hath he done?”</text>
+          </g>
+        </svg>
+      </div>
+      <div>
+        <h2 class="rise" style="--d:1">To content the people</h2>
+        <p class="note rise" style="--d:2">Pilate knew the truth. He said it out loud: <em>“what evil hath he done?”</em> But the crowd only shouted louder, and keeping them happy weighed more with him than doing right.</p>
+        <blockquote class="quote step"><p>“For do I now persuade men, or God? or do I seek to please men? for if I yet pleased men, I should not be the servant of Christ.”</p><cite>Galatians 1:10</cite></blockquote>
+        <p class="note step">Going along to get along has put a lot of us back where we swore we'd never go. The crowd will always be loud. You don't have to obey it.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise">The guilty man walks out</h2>
+    <p class="note rise" style="--d:2">Barabbas was a rebel against Rome and a killer, locked up and waiting for a cross of his own. That morning he heard the crowd outside shouting his name.</p>
+    <div class="swap rise" style="--d:3">
+      <h3><span>To the cross</span>condemned</h3>
+      <h3><span>Out the door</span>released</h3>
+      <div class="a"><b>Barabbas</b><small>insurrection and murder (v. 7)</small></div>
+      <div class="b"><b>Jesus</b><small>“what evil hath he done?” (v. 14)</small></div>
+    </div>
+    <p class="note step swap-go">Then they trade places. The cross that was made for Barabbas gets Jesus instead.</p>
+    <blockquote class="quote step"><p>“For he hath made him to be sin for us, who knew no sin; that we might be made the righteousness of God in him.”</p><cite>2 Corinthians 5:21</cite></blockquote>
+    <p class="note step">That's the gospel in one morning. We're Barabbas: guilty, and set free because Jesus took our place.</p>
+  </div>
+</section>
+
+<!-- ======================= PART TWO: THE PLACE OF A SKULL ======================= -->
+<section class="slide part">
+  <div class="inner">
+    <p class="part-n rise">Part two</p>
+    <h2 class="rise" style="--d:1">The place of a skull</h2>
+    <p class="range rise" style="--d:2">Verses 16–32</p>
+    <div class="rule"></div>
+    <p class="hook rise" style="--d:4">Mocked as a king, crucified between two thieves, and dared to come down.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="16-20" data-hl="Praetorium|the whole band|platted a crown of thorns|Hail, King of the Jews!|bowing their knees worshipped him"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="19"></blockquote>
+    <h2 class="rise" style="--d:1">A joke that was true</h2>
+    <p class="note rise" style="--d:2">The <em>Praetorium</em> was the governor's headquarters. <em>“The whole band”</em> was a Roman cohort, several hundred soldiers, called together for the fun. Every piece of their joke said more than they knew:</p>
+    <div class="columns">
+      <div class="col law rise" style="--d:3">
+        <p class="who">What they did to mock Him</p>
+        <h3>A play king</h3>
+        <p>A purple cloak, a crown of thorns, a reed for a sceptre, <em>“Hail, King of the Jews!”</em>, and knees bent in scorn.</p>
+      </div>
+      <div class="col grace step">
+        <p class="who">What is true</p>
+        <h3>The King</h3>
+        <p>“That at the name of Jesus every knee should bow, of things in heaven, and things in earth, and things under the earth; And that every tongue should confess that Jesus Christ is Lord, to the glory of God the Father.” (Philippians 2:10–11)</p>
+      </div>
+    </div>
+    <p class="note step">He let them do it. Every man who knelt in that hall to mock Him will one day kneel for real. The only question for any of us is whether we bow to Him now, by choice, or later.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="21-23" data-hl="Simon a Cyrenian|the father of Alexander and Rufus|to bear his cross|wine mingled with myrrh: but he received it not"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="21" data-hl="Simon a Cyrenian|the father of Alexander and Rufus"></blockquote>
+    <div class="split">
+      <div class="stage">
+        <svg class="map mk15-world" viewBox="0 0 600 300" role="img" aria-label="A map of the Great Sea. Cyrene is on the coast of North Africa, in Libya. A route runs east along the coast, past Alexandria in Egypt, to Jerusalem, about eight hundred miles away.">
+          <rect class="map-sea" x="0" y="0" width="600" height="300"/>
+          <path class="map-land" d="M0 40 L22 38 L14 84 L18 124 L4 150 L40 170 L74 191 L117 210 L152 255 L207 285 L230 221 L276 191 L290 197 L322 221 L350 240 L396 249 L458 255 L480 250 L501 244 L513 253 L547 259 L562 244 L569 223 L573 206 L580 177 L590 130 L596 60 L600 45 L600 300 L0 300 Z"/>
+          <path class="map-land" d="M600 0 L600 45 L560 50 L506 56 L476 43 L450 52 L414 49 L400 30 L405 0 Z"/>
+          <path class="map-land" d="M250 0 L262 30 L287 60 L300 40 L310 20 L320 0 Z"/>
+          <path class="map-land" d="M70 37 L130 22 L120 0 L80 0 Z"/>
+          <path class="map-land" d="M308 98 L342 92 L376 96 L370 106 L340 108 L312 106 Z"/>
+          <path class="map-land" d="M513 100 L540 88 L566 78 L548 98 L530 112 Z"/>
+          <text class="map-water" x="300" y="150" text-anchor="middle">the Great Sea</text>
+          <text class="map-region" x="200" y="272" text-anchor="middle">LIBYA</text>
+          <text class="map-region" x="430" y="285" text-anchor="middle">EGYPT</text>
+          <path class="map-route" pathLength="1" style="--draw:3s" d="M276 204 C 330 240, 400 262, 458 266 S 540 268, 579 236"/>
+          <g class="map-town here"><circle cx="276" cy="204" r="6"/><text x="276" y="232" text-anchor="middle">Cyrene</text></g>
+          <g class="map-town"><circle cx="458" cy="262" r="5"/><text x="458" y="242" text-anchor="middle" font-size="15">Alexandria</text></g>
+          <g class="map-town here"><circle cx="579" cy="232" r="6"/><circle class="map-ping" cx="579" cy="232" r="8"/><text x="570" y="214" text-anchor="end">Jerusalem</text></g>
+          <text class="map-soft" x="420" y="184" text-anchor="middle" font-size="15">about 800 miles</text>
+        </svg>
+      </div>
+      <div>
+        <h2 class="rise" style="--d:1">A stranger made to carry it</h2>
+        <p class="note rise" style="--d:2">Cyrene was a city on the coast of North Africa, in Libya, with a large Jewish community. Simon may have come all that way for the Passover. He was just coming in from the country when the soldiers grabbed him.</p>
+        <p class="note step">The cross beam was laid on a stranger, and Simon walked the rest of the way to Golgotha behind Jesus.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="21" data-hl="the father of Alexander and Rufus"></blockquote>
+    <h2 class="rise" style="--d:1">Behind Jesus, carrying a cross</h2>
+    <p class="note rise" style="--d:2">Mark names Simon's sons, <em>Alexander and Rufus</em>, as if his readers knew them. Writing to the church at Rome, Paul says:</p>
+    <blockquote class="quote step"><p>“Salute Rufus chosen in the Lord, and his mother and mine.”</p><cite>Romans 16:13</cite></blockquote>
+    <p class="note step">It may be the same family. A man forced to carry the cross for an hour may have raised a family that followed Jesus for life. Simon didn't choose that day. But what he carried, and Who he walked behind, changed everything after it.</p>
+    <blockquote class="quote step"><p>“Whosoever will come after me, let him deny himself, and take up his cross, and follow me.”</p><cite>Mark 8:34</cite></blockquote>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="23"></blockquote>
+    <h2 class="rise" style="--d:1">He received it not</h2>
+    <p class="note rise" style="--d:2">Wine mixed with myrrh was a drug, offered to dull the pain of a man about to be nailed up. Jesus tasted it and turned it down (Matthew 27:34).</p>
+    <p class="note step">He meant to bear the whole of it, awake and clear-headed, for us. He didn't numb Himself to get through the worst day any man has ever had.</p>
+    <p class="note step">Many of us have reached for something to kill the pain. Jesus knows what that pain is from the inside. He isn't standing over you in judgment. He went through it with nothing in His hand, and He can carry you through yours.</p>
+    <blockquote class="quote step"><p>“For in that he himself hath suffered being tempted, he is able to succour them that are tempted.”</p><cite>Hebrews 2:18</cite></blockquote>
+  </div>
+</section>
+
+<section class="slide verse" data-v="24-28" data-hl="they parted his garments, casting lots upon them|it was the third hour|THE KING OF THE JEWS|two thieves; the one on his right hand, and the other on his left|And he was numbered with the transgressors"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="27"></blockquote>
+    <h2 class="rise" style="--d:1">On His right hand and on His left</h2>
+    <p class="note rise" style="--d:2">Mark doesn't dwell on the pain. He says it in four words: <em>“they crucified him.”</em> Crucifixion was Rome's most shameful death, kept for slaves, rebels, and the worst of criminals. Over His head hung the charge: <em>THE KING OF THE JEWS</em>.</p>
+    <div class="pair">
+      <div class="scroll rise" style="--d:3"><p class="ref">Mark 10:37, James and John, on the road</p><p class="kjv">“Grant unto us that we may sit, <mark>one on thy right hand, and the other on thy left hand</mark>, in thy glory.”</p></div>
+      <div class="scroll step"><p class="ref">Mark 15:27, at the cross</p><p class="kjv">“And with him they crucify two thieves; <mark>the one on his right hand, and the other on his left</mark>.”</p></div>
+    </div>
+    <p class="note step">Jesus told them then, <em>“Ye know not what ye ask”</em> (10:38). This is the throne He was headed for. And Isaiah had said He would be <em>“numbered with the transgressors”</em> (Isaiah 53:12): counted in with the criminals, because He came for criminals.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="29-32" data-hl="wagging their heads|Save thyself, and come down from the cross|He saved others; himself he cannot save|that we may see and believe"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="31" data-hl="He saved others; himself he cannot save"></blockquote>
+    <h2 class="rise" style="--d:1">Why He didn't come down</h2>
+    <p class="note rise" style="--d:2">Everybody mocks: the people passing by, the chief priests, even the thieves. And their dare is the same: <em>“come down from the cross.”</em></p>
+    <div class="ifthen">
+      <div class="if step"><small>If He had saved Himself</small>He comes down</div>
+      <span class="arrow step">→</span>
+      <div class="then step"><small>then</small>no one is saved</div>
+    </div>
+    <p class="note step">The priests meant it as an insult, but they told the truth: He couldn't save Himself <em>and</em> save others. He could have come down. The nails weren't what held Him there. Love was.</p>
+    <blockquote class="quote step"><p>“For even the Son of man came not to be ministered unto, but to minister, and to give his life a ransom for many.”</p><cite>Mark 10:45</cite></blockquote>
+  </div>
+</section>
+
+<!-- ======================= PART THREE: DARKNESS AT NOON ======================= -->
+<section class="slide part">
+  <div class="inner">
+    <p class="part-n rise">Part three</p>
+    <h2 class="rise" style="--d:1">Darkness at noon</h2>
+    <p class="range rise" style="--d:2">Verses 33–41</p>
+    <div class="rule"></div>
+    <p class="hook rise" style="--d:4">Three hours of darkness, a cry, a torn curtain, and a Roman soldier who sees who Jesus is.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="33-36" data-hl="there was darkness over the whole land until the ninth hour|Eloi, Eloi, lama sabachthani?|My God, my God, why hast thou forsaken me?"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="33"></blockquote>
+    <div class="split">
+      <div class="stage">
+        <svg class="mk15-noon" viewBox="0 0 600 300" role="img" aria-label="A bright noon sky over a hill with three crosses. The sky slowly turns dark, while a bar below fills from the sixth hour, noon, to the ninth hour, three o'clock.">
+          <rect class="mk15-sky" x="0" y="0" width="600" height="210" rx="8"/>
+          <circle class="mk15-sun" cx="300" cy="62" r="34"/>
+          <path class="mk15-hill" d="M0 210 L0 180 Q160 120 300 140 Q450 160 600 175 L600 210 Z"/>
+          <line class="mk15-cross" x1="300" y1="72" x2="300" y2="142"/><line class="mk15-cross" x1="282" y1="90" x2="318" y2="90"/>
+          <line class="mk15-cross" x1="238" y1="96" x2="238" y2="142"/><line class="mk15-cross" x1="226" y1="108" x2="250" y2="108"/>
+          <line class="mk15-cross" x1="362" y1="96" x2="362" y2="148"/><line class="mk15-cross" x1="350" y1="108" x2="374" y2="108"/>
+          <rect class="mk15-bar" x="60" y="236" width="480" height="14" rx="7"/>
+          <rect class="mk15-fill" x="60" y="236" width="480" height="14" rx="7"/>
+          <text class="strong" x="60" y="276">6th hour</text><text x="60" y="296">noon</text>
+          <text class="strong" x="540" y="276" text-anchor="end">9th hour</text><text x="540" y="296" text-anchor="end">about 3 p.m.</text>
+        </svg>
+      </div>
+      <div>
+        <h2 class="rise" style="--d:1">The sun goes out at midday</h2>
+        <p class="note rise" style="--d:2">From noon until three, darkness lay over <em>“the whole land.”</em> It couldn't have been an eclipse: Passover always fell at the full moon, when the moon is on the far side of the earth from the sun.</p>
+        <p class="note step">In the Bible, darkness at noon is a sign of God's judgment (Amos 8:9). For three hours the judgment our sin deserved was falling, and it fell on Jesus.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <div class="morph rise" style="--d:1">
+      <span class="big">Eloi, Eloi, lama sabachthani?</span>
+      <span class="say">ay-LOH-ee, ay-LOH-ee, LAH-mah sah-BAHK-thah-nee</span>
+      <span class="means">“My God, my God, why hast thou forsaken me?”</span>
+    </div>
+    <p class="note rise" style="--d:2">Mark keeps the very words, in <em>Aramaic</em>, the everyday language Jesus spoke. Some bystanders heard “Eloi” and thought He was calling for <em>Elias</em>, Elijah. He was praying the first line of Psalm 22:</p>
+    <blockquote class="quote step"><p>“My God, my God, why hast thou forsaken me? why art thou so far from helping me, and from the words of my roaring?”</p><cite>Psalm 22:1</cite></blockquote>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="34" data-hl="My God, my God, why hast thou forsaken me?"></blockquote>
+    <h2 class="rise" style="--d:1">Forsaken in our place</h2>
+    <p class="note rise" style="--d:2">We can't fully understand what passed between the Father and the Son in that darkness. But Scripture tells us why: He was carrying our sin, and God is <em>“of purer eyes than to behold evil”</em> (Habakkuk 1:13). The Son was forsaken in our place. Even then, He still said <em>“My God.”</em></p>
+    <blockquote class="quote step"><p>“Let your conversation be without covetousness; and be content with such things as ye have: for he hath said, I will never leave thee, nor forsake thee.”</p><cite>Hebrews 13:5</cite></blockquote>
+    <p class="note step">He was forsaken so that no one who trusts Him ever will be.</p>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise">Psalm 22 at the foot of the cross</h2>
+    <p class="note rise" style="--d:1">David wrote Psalm 22 about a thousand years earlier, long before anyone was crucified. Watch it come true in Mark 15:</p>
+    <ol class="checks">
+      <li class="step"><span class="tick">✓</span><q>They part my garments among them, and cast lots upon my vesture.</q><small>Psalm 22:18</small><b>15:24</b></li>
+      <li class="step"><span class="tick">✓</span><q>All they that see me laugh me to scorn: they shoot out the lip, they shake the head, saying,</q><small>Psalm 22:7</small><b>15:29</b></li>
+      <li class="step"><span class="tick">✓</span><q>My God, my God, why hast thou forsaken me?</q><small>Psalm 22:1</small><b>15:34</b></li>
+      <li class="step"><span class="tick">✓</span><q>in my thirst they gave me vinegar to drink</q><small>Psalm 69:21</small><b>15:36</b></li>
+    </ol>
+    <p class="note step">Gamblers, mockers, a sponge on a reed: none of them were trying to fulfil anything. The cross wasn't a plan that went wrong. It was God's plan, written down ahead of time.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="37-39" data-hl="gave up the ghost|the veil of the temple was rent in twain from the top to the bottom|Truly this man was the Son of God"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="38"></blockquote>
+    <div class="split">
+      <div class="stage">
+        <svg class="mk15-veilbox" viewBox="0 0 400 320" role="img" aria-label="A heavy curtain hangs in front of the most holy place. A tear runs down it from the top to the bottom, and the two halves fall open, letting the light through.">
+          <defs><radialGradient id="mk15-glow"><stop offset="0" style="stop-color:var(--glow);stop-opacity:.95"/><stop offset="1" style="stop-color:var(--glow);stop-opacity:0"/></radialGradient></defs>
+          <rect class="mk15-holy" x="60" y="20" width="280" height="260" rx="4"/>
+          <ellipse class="mk15-light" cx="200" cy="150" rx="130" ry="120" fill="url(#mk15-glow)"/>
+          <g class="mk15-half l"><path d="M60 20 H200 L194 60 L204 100 L195 140 L205 180 L196 220 L203 250 L200 280 H60 Z"/><path class="mk15-fold" d="M95 24 V276 M130 24 V276 M165 24 V276"/></g>
+          <g class="mk15-half r"><path d="M200 20 H340 V280 H200 L203 250 L196 220 L205 180 L195 140 L204 100 L194 60 Z"/><path class="mk15-fold" d="M235 24 V276 M270 24 V276 M305 24 V276"/></g>
+          <path class="mk15-tear" pathLength="1" d="M200 20 L194 60 L204 100 L195 140 L205 180 L196 220 L203 250 L200 280"/>
+          <line x1="40" y1="20" x2="360" y2="20" stroke-width="6" stroke-linecap="round" style="stroke:var(--leather-light)"/>
+          <text x="200" y="306" text-anchor="middle">the holiest place, behind the veil</text>
+        </svg>
+      </div>
+      <div>
+        <h2 class="rise" style="--d:1">Torn from the top</h2>
+        <p class="note rise" style="--d:2">A great curtain, the <em>veil</em>, hung in the temple to <em>“divide unto you between the holy place and the most holy”</em> (Exodus 26:33). Only the high priest went behind it, once a year, with blood.</p>
+        <p class="note step mk15-rend">The moment Jesus died, it tore in two, <em>“from the top to the bottom.”</em> No man tore it. God opened it from above.</p>
+        <blockquote class="quote step"><p>“Having therefore, brethren, boldness to enter into the holiest by the blood of Jesus, By a new and living way, which he hath consecrated for us, through the veil, that is to say, his flesh;”</p><cite>Hebrews 10:19–20</cite></blockquote>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="39" data-hl="Truly this man was the Son of God"></blockquote>
+    <h2 class="rise" style="--d:1">The first line and the last word</h2>
+    <p class="note rise" style="--d:2">A <em>centurion</em> commanded about a hundred Roman soldiers. This one had run the execution. He'd seen men die before, but never like this.</p>
+    <div class="pair">
+      <div class="scroll rise" style="--d:3"><p class="ref">Mark 1:1, the first line of the book</p><p class="kjv">“The beginning of the gospel of Jesus Christ, <mark>the Son of God</mark>;”</p></div>
+      <div class="scroll step"><p class="ref">Mark 15:39, at the cross</p><p class="kjv">“Truly this man was <mark>the Son of God</mark>.”</p></div>
+    </div>
+    <p class="note step">Mark opened his book by telling us who Jesus is. The first man in the book to say it out loud, as Jesus died, wasn't a priest or a disciple. It was a Gentile soldier with blood on his hands. Nobody is too far outside to see it.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="40-41" data-hl="women looking on afar off|Mary Magdalene|Salome|followed him, and ministered unto him"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="40" data-hl="women looking on afar off"></blockquote>
+    <h2 class="rise" style="--d:1">The ones who stayed</h2>
+    <p class="note rise" style="--d:2">The night before, Mark had written of the twelve: <em>“And they all forsook him, and fled”</em> (14:50). But some never left:</p>
+    <div class="chains">
+      <div class="chain step"><span class="who-chip">Mary Magdalene</span><span class="said">set free from seven devils (Luke 8:2)</span></div>
+      <div class="chain step"><span class="who-chip">Mary</span><span class="said">the mother of James the less and of Joses</span></div>
+      <div class="chain step"><span class="who-chip">Salome</span><span class="said">probably the mother of James and John (Matthew 27:56)</span></div>
+    </div>
+    <p class="note step">They had followed Him from Galilee and <em>“ministered unto him”</em>: they served Him and helped pay His way. They couldn't stop what was happening. They stayed anyway. Sometimes being faithful just means showing up and not leaving.</p>
+  </div>
+</section>
+
+<!-- ======================= PART FOUR: LAID IN A TOMB ======================= -->
+<section class="slide part">
+  <div class="inner">
+    <p class="part-n rise">Part four</p>
+    <h2 class="rise" style="--d:1">Laid in a tomb</h2>
+    <p class="range rise" style="--d:2">Verses 42–47</p>
+    <div class="rule"></div>
+    <p class="hook rise" style="--d:4">A council member steps out of hiding, and a stone is rolled across the door.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="42-45" data-hl="the day before the sabbath|went in boldly unto Pilate, and craved the body of Jesus|Pilate marvelled if he were already dead|when he knew it of the centurion"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="43" data-hl="went in boldly unto Pilate"></blockquote>
+    <h2 class="rise" style="--d:1">Really dead, really buried</h2>
+    <p class="note rise" style="--d:2">The sabbath began at sundown. <em>Joseph of Arimathaea</em>, an <em>“honourable counsellor,”</em> sat on the very council that condemned Jesus. Asking for the body tied him to Jesus in front of everyone. He went anyway, <em>“boldly.”</em></p>
+    <ol class="checks">
+      <li class="step"><span class="tick">✓</span><q>he asked him whether he had been any while dead</q><small>Pilate checks with the soldier who ran the execution</small><b>15:44</b></li>
+      <li class="step"><span class="tick">✓</span><q>he gave the body to Joseph</q><small>Rome signs off: the man is dead</small><b>15:45</b></li>
+      <li class="step"><span class="tick">✓</span><q>wrapped him in the linen, and laid him in a sepulchre</q><small>buried by a member of the council</small><b>15:46</b></li>
+      <li class="step"><span class="tick">✓</span><q>beheld where he was laid</q><small>the women saw the very tomb</small><b>15:47</b></li>
+    </ol>
+    <p class="note step">He really died, and He was really buried. That matters, because of what happens next.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="46-47" data-hl="hewn out of a rock|rolled a stone unto the door of the sepulchre|beheld where he was laid"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="46" data-hl="rolled a stone unto the door of the sepulchre"></blockquote>
+    <div class="split">
+      <div class="stage">
+        <svg class="tomb now" style="--roll:-150px;--turn:-200deg;--wait:.8s" viewBox="0 0 600 330" role="img" aria-label="A tomb cut into a rock hillside at evening. A great round stone rolls across the doorway and shuts it.">
+          <path d="M0 330 L0 150 Q110 70 250 105 Q400 140 600 120 L600 330 Z" stroke-width="3" style="fill:var(--surface-2);stroke:var(--line-strong)"/>
+          <rect x="0" y="292" width="600" height="38" style="fill:var(--surface-2)"/>
+          <line x1="0" y1="292" x2="600" y2="292" stroke-width="2" style="stroke:var(--line-strong)"/>
+          <path class="tomb-door" d="M150 292 L150 215 Q200 160 250 215 L250 292 Z" stroke-width="3" style="stroke:var(--ink-soft)"/>
+          <g class="tomb-stone">
+            <circle cx="350" cy="240" r="62" stroke-width="3" style="fill:var(--line-strong);stroke:var(--ink-soft)"/>
+            <circle cx="350" cy="240" r="44" fill="none" stroke-width="2.5" stroke-dasharray="10 8" style="stroke:var(--bg)"/>
+            <circle cx="350" cy="240" r="6" style="fill:var(--bg)"/>
+          </g>
+          <text class="tomb-word" x="200" y="140" text-anchor="middle" font-size="20" font-weight="700" style="fill:var(--ink-soft)">laid here</text>
+        </svg>
+      </div>
+      <div>
+        <h2 class="rise" style="--d:1">A stone at the door</h2>
+        <p class="note rise" style="--d:2">The tomb was a room cut into the rock. A heavy round stone ran in a groove across the door. Joseph rolled it shut, and that was that, as far as anyone could see.</p>
+        <p class="note step">Two women watched where He was laid. They would be back, and they would know they had the right tomb.</p>
+        <p class="note step">Mark 15 ends in the dark, with a dead man, a stone across the door, and a lot of grieving people. If that's where your life is today, hold on. Friday is not the end of this story.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ======================= CLOSING ======================= -->
+<section class="slide remember">
+  <div class="inner">
+    <h2 class="rise">Points to remember</h2>
+    <ol class="seeds">
+      <li class="step"><span class="topic">Silent</span><span class="seed-q">“But Jesus yet answered nothing” <cite>15:5</cite></span><span class="take">He was the Lamb, and He didn't argue His way off the altar.</span></li>
+      <li class="step"><span class="topic">Exchanged</span><span class="seed-q">“Released Barabbas unto them” <cite>15:15</cite></span><span class="take">The guilty man walked free. The innocent One took his cross. We're Barabbas.</span></li>
+      <li class="step"><span class="topic">The crowd</span><span class="seed-q">“Willing to content the people” <cite>15:15</cite></span><span class="take">Pilate knew the truth and gave it up to keep a crowd happy.</span></li>
+      <li class="step"><span class="topic">He stayed</span><span class="seed-q">“He saved others; himself he cannot save” <cite>15:31</cite></span><span class="take">To save us, He wouldn't save Himself. Love held Him there.</span></li>
+      <li class="step"><span class="topic">Forsaken</span><span class="seed-q">“My God, my God, why hast thou forsaken me?” <cite>15:34</cite></span><span class="take">He was forsaken in our place, so we never will be.</span></li>
+      <li class="step"><span class="topic">The way in</span><span class="seed-q">“Rent in twain from the top to the bottom” <cite>15:38</cite></span><span class="take">God Himself opened the way into His presence, through the death of Jesus.</span></li>
+    </ol>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 1 of 6</p>
+      <span class="topic">Silent</span>
+      <h2>Why did Jesus answer nothing to His accusers?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="5"></blockquote>
+      <blockquote class="quote step"><p>“He was oppressed, and he was afflicted, yet he opened not his mouth: he is brought as a lamb to the slaughter, and as a sheep before her shearers is dumb, so he openeth not his mouth.”</p><cite>Isaiah 53:7</cite></blockquote>
+      <blockquote class="quote step"><p>“Who, when he was reviled, reviled not again; when he suffered, he threatened not; but committed himself to him that judgeth righteously:”</p><cite>1 Peter 2:23</cite></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>Because He was the Lamb going willingly to the slaughter, just as Isaiah said. He wasn't trapped or beaten. He had come to die for sinners, so He didn't defend Himself or fight back. He left His case with the Father, who judges rightly.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 2 of 6</p>
+      <span class="topic">Exchanged</span>
+      <h2>Who walked free because Jesus was condemned?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="7"></blockquote>
+      <blockquote class="quote step" data-q="15" data-hl="released Barabbas unto them"></blockquote>
+      <blockquote class="quote step"><p>“For he hath made him to be sin for us, who knew no sin; that we might be made the righteousness of God in him.”</p><cite>2 Corinthians 5:21</cite></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>Barabbas, a rebel and a murderer. He walked out, and Jesus took the cross meant for him. And so does every sinner who trusts Christ: Jesus took our sin and our sentence, and we go free.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 3 of 6</p>
+      <span class="topic">The crowd</span>
+      <h2>What made Pilate give up a man he knew was innocent?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="10"></blockquote>
+      <blockquote class="quote step" data-q="15" data-hl="willing to content the people"></blockquote>
+      <blockquote class="quote step"><p>“For do I now persuade men, or God? or do I seek to please men? for if I yet pleased men, I should not be the servant of Christ.”</p><cite>Galatians 1:10</cite></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>Wanting to please the crowd. Pilate knew the priests acted out of envy, and he said himself that Jesus had done no evil. But he was <em>“willing to content the people,”</em> and he traded the truth for their approval. A man who lives to please people can't serve Christ.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 4 of 6</p>
+      <span class="topic">He stayed</span>
+      <h2>Why didn't Jesus come down from the cross?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="31" data-hl="He saved others; himself he cannot save"></blockquote>
+      <blockquote class="quote step"><p>“For even the Son of man came not to be ministered unto, but to minister, and to give his life a ransom for many.”</p><cite>Mark 10:45</cite></blockquote>
+      <blockquote class="quote step"><p>“Who his own self bare our sins in his own body on the tree, that we, being dead to sins, should live unto righteousness: by whose stripes ye were healed.”</p><cite>1 Peter 2:24</cite></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>Because He came to give His life as a ransom. He could have come down, but then He couldn't have saved anyone. He stayed and carried our sins in His own body on the tree. The mockers were right without meaning to be: to save others, He would not save Himself.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 5 of 6</p>
+      <span class="topic">Forsaken</span>
+      <h2>Why did Jesus cry, “My God, my God, why hast thou forsaken me?”</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="34"></blockquote>
+      <blockquote class="quote step"><p>“For he hath made him to be sin for us, who knew no sin; that we might be made the righteousness of God in him.”</p><cite>2 Corinthians 5:21</cite></blockquote>
+      <blockquote class="quote step"><p>“Let your conversation be without covetousness; and be content with such things as ye have: for he hath said, I will never leave thee, nor forsake thee.”</p><cite>Hebrews 13:5</cite></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>Because on the cross He was carrying our sin, and He took the full weight of being cut off from God that our sin deserved. He was praying Psalm 22, still calling Him “My God.” He was forsaken in our place, so God can promise every believer, “I will never leave thee, nor forsake thee.”</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 6 of 6</p>
+      <span class="topic">The way in</span>
+      <h2>What did the torn veil of the temple mean?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="38"></blockquote>
+      <blockquote class="quote step"><p>“Having therefore, brethren, boldness to enter into the holiest by the blood of Jesus, By a new and living way, which he hath consecrated for us, through the veil, that is to say, his flesh;”</p><cite>Hebrews 10:19–20</cite></blockquote>
+      <blockquote class="quote step"><p>“For whosoever shall call upon the name of the Lord shall be saved.”</p><cite>Romans 10:13</cite></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>The way into God's presence is open. For centuries the veil said “keep out”: only one man, once a year. When Jesus died, God tore it from the top down. Now anyone who comes by the blood of Jesus can come to God boldly, any day, whoever he is and whatever he has done.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide prayer">
+  <div class="inner">
+    <div class="emblem rise"></div>
+    <h2 class="rise">Prayer requests</h2>
+    <p class="ask-line rise" style="--d:1">What can we pray about for you today?</p>
+    <blockquote class="quote rise" style="--d:3"><p>“Casting all your care upon him; for he careth for you.”</p><cite>1 Peter 5:7</cite></blockquote>
+  </div>
+</section>
+
+</main>
+
+<script>
+// King James Version, Mark chapter 15
+const V = {
+  1: "And straightway in the morning the chief priests held a consultation with the elders and scribes and the whole council, and bound Jesus, and carried him away, and delivered him to Pilate.",
+  2: "And Pilate asked him, Art thou the King of the Jews? And he answering said unto him, Thou sayest it.",
+  3: "And the chief priests accused him of many things: but he answered nothing.",
+  4: "And Pilate asked him again, saying, Answerest thou nothing? behold how many things they witness against thee.",
+  5: "But Jesus yet answered nothing; so that Pilate marvelled.",
+  6: "Now at that feast he released unto them one prisoner, whomsoever they desired.",
+  7: "And there was one named Barabbas, which lay bound with them that had made insurrection with him, who had committed murder in the insurrection.",
+  8: "And the multitude crying aloud began to desire him to do as he had ever done unto them.",
+  9: "But Pilate answered them, saying, Will ye that I release unto you the King of the Jews?",
+  10: "For he knew that the chief priests had delivered him for envy.",
+  11: "But the chief priests moved the people, that he should rather release Barabbas unto them.",
+  12: "And Pilate answered and said again unto them, What will ye then that I shall do unto him whom ye call the King of the Jews?",
+  13: "And they cried out again, Crucify him.",
+  14: "Then Pilate said unto them, Why, what evil hath he done? And they cried out the more exceedingly, Crucify him.",
+  15: "And so Pilate, willing to content the people, released Barabbas unto them, and delivered Jesus, when he had scourged him, to be crucified.",
+  16: "And the soldiers led him away into the hall, called Praetorium; and they call together the whole band.",
+  17: "And they clothed him with purple, and platted a crown of thorns, and put it about his head,",
+  18: "And began to salute him, Hail, King of the Jews!",
+  19: "And they smote him on the head with a reed, and did spit upon him, and bowing their knees worshipped him.",
+  20: "And when they had mocked him, they took off the purple from him, and put his own clothes on him, and led him out to crucify him.",
+  21: "And they compel one Simon a Cyrenian, who passed by, coming out of the country, the father of Alexander and Rufus, to bear his cross.",
+  22: "And they bring him unto the place Golgotha, which is, being interpreted, The place of a skull.",
+  23: "And they gave him to drink wine mingled with myrrh: but he received it not.",
+  24: "And when they had crucified him, they parted his garments, casting lots upon them, what every man should take.",
+  25: "And it was the third hour, and they crucified him.",
+  26: "And the superscription of his accusation was written over, THE KING OF THE JEWS.",
+  27: "And with him they crucify two thieves; the one on his right hand, and the other on his left.",
+  28: "And the scripture was fulfilled, which saith, And he was numbered with the transgressors.",
+  29: "And they that passed by railed on him, wagging their heads, and saying, Ah, thou that destroyest the temple, and buildest it in three days,",
+  30: "Save thyself, and come down from the cross.",
+  31: "Likewise also the chief priests mocking said among themselves with the scribes, He saved others; himself he cannot save.",
+  32: "Let Christ the King of Israel descend now from the cross, that we may see and believe. And they that were crucified with him reviled him.",
+  33: "And when the sixth hour was come, there was darkness over the whole land until the ninth hour.",
+  34: "And at the ninth hour Jesus cried with a loud voice, saying, Eloi, Eloi, lama sabachthani? which is, being interpreted, My God, my God, why hast thou forsaken me?",
+  35: "And some of them that stood by, when they heard it, said, Behold, he calleth Elias.",
+  36: "And one ran and filled a spunge full of vinegar, and put it on a reed, and gave him to drink, saying, Let alone; let us see whether Elias will come to take him down.",
+  37: "And Jesus cried with a loud voice, and gave up the ghost.",
+  38: "And the veil of the temple was rent in twain from the top to the bottom.",
+  39: "And when the centurion, which stood over against him, saw that he so cried out, and gave up the ghost, he said, Truly this man was the Son of God.",
+  40: "There were also women looking on afar off: among whom was Mary Magdalene, and Mary the mother of James the less and of Joses, and Salome;",
+  41: "(Who also, when he was in Galilee, followed him, and ministered unto him;) and many other women which came up with him unto Jerusalem.",
+  42: "And now when the even was come, because it was the preparation, that is, the day before the sabbath,",
+  43: "Joseph of Arimathaea, an honourable counsellor, which also waited for the kingdom of God, came, and went in boldly unto Pilate, and craved the body of Jesus.",
+  44: "And Pilate marvelled if he were already dead: and calling unto him the centurion, he asked him whether he had been any while dead.",
+  45: "And when he knew it of the centurion, he gave the body to Joseph.",
+  46: "And he bought fine linen, and took him down, and wrapped him in the linen, and laid him in a sepulchre which was hewn out of a rock, and rolled a stone unto the door of the sepulchre.",
+  47: "And Mary Magdalene and Mary the mother of Joses beheld where he was laid."
+};
+const BOOK = "Mark 15";
+</script>
+<script src="../assets/deck.js"></script>
+</body>
+</html>

@@ -7784,6 +7784,112 @@ window.STUDIES = [
     }
   },
   {
+    "id": "mark-15",
+    "type": "chapter",
+    "book": "Mark",
+    "ch": 15,
+    "date": "2026-10-29",
+    "title": "Mark 15",
+    "sub": "The King on a cross",
+    "about": "Pilate gives up an innocent man to please a crowd, Barabbas walks free, and Jesus dies under a darkened sky while the temple veil tears in two.",
+    "tags": [
+      "The cross",
+      "Substitution",
+      "People-pleasing",
+      "Prophecy fulfilled",
+      "Access to God",
+      "Courage"
+    ],
+    "url": "studies/mark-15.html",
+    "overview": {
+      "where": "Jerusalem: Pilate's Praetorium, then Golgotha outside the city, then a rock tomb nearby",
+      "when": "The Friday of Passover week, about A.D. 30, from early morning to sundown",
+      "people": [
+        "jesus",
+        "pilate",
+        "chief-priests",
+        "barabbas",
+        "soldiers",
+        "simon-of-cyrene",
+        "centurion-at-the-cross",
+        "mary-magdalene",
+        "salome",
+        "joseph-of-arimathaea"
+      ],
+      "places": [
+        "jerusalem",
+        "hall-of-judgment",
+        "golgotha",
+        "veil-of-the-temple",
+        "sepulchre"
+      ],
+      "story": [
+        "At daybreak the council hands Jesus to Pilate. He answers nothing to their charges, and Pilate marvels (1–5).",
+        "Pilate knows the priests acted from envy, but to content the people he releases Barabbas, a murderer, and gives Jesus to be crucified (6–15).",
+        "Soldiers mock Him as a king. Simon of Cyrene is made to carry His cross to Golgotha, and Jesus refuses the wine mingled with myrrh (16–23).",
+        "At the third hour He is crucified between two thieves, under the charge THE KING OF THE JEWS, while everyone mocks: “He saved others; himself he cannot save” (24–32).",
+        "Darkness falls from noon until three. Jesus cries, “Eloi, Eloi, lama sabachthani?” and gives up the ghost. The temple veil tears from top to bottom, and the centurion confesses Him the Son of God (33–41).",
+        "Joseph of Arimathaea boldly asks Pilate for the body, wraps it in linen, and lays it in a rock tomb, while two women watch where He is laid (42–47)."
+      ],
+      "key": {
+        "ref": "Mark 15:39",
+        "text": "And when the centurion, which stood over against him, saw that he so cried out, and gave up the ghost, he said, Truly this man was the Son of God."
+      },
+      "big": "The innocent King took the guilty man's cross. He would not save Himself, so that He could save us, and His death tore open the way to God for whosoever comes."
+    }
+  },
+  {
+    "id": "mark-16",
+    "type": "chapter",
+    "book": "Mark",
+    "ch": 16,
+    "date": "2026-10-29",
+    "title": "Mark 16",
+    "sub": "He is risen",
+    "about": "Three women find the stone rolled away, the risen Lord appears first to a woman He set free, and He sends His doubting men into all the world.",
+    "tags": [
+      "Resurrection",
+      "Restoration",
+      "Faith",
+      "Salvation",
+      "Baptism",
+      "The Great Commission"
+    ],
+    "url": "studies/mark-16.html",
+    "overview": {
+      "where": "The tomb outside Jerusalem, the road into the country, the room where the eleven ate, and then heaven",
+      "when": "The first day of the week after the crucifixion, about A.D. 30, and the days after it until He was received up",
+      "people": [
+        "jesus",
+        "mary-magdalene",
+        "mary-mother-of-james",
+        "salome",
+        "young-man-in-white",
+        "simon-peter",
+        "disciples",
+        "the-eleven"
+      ],
+      "places": [
+        "sepulchre",
+        "galilee",
+        "heaven",
+        "right-hand-of-god"
+      ],
+      "story": [
+        "After the sabbath, three women bring sweet spices to the tomb at sunrise, wondering who will roll away the great stone. It is already rolled away (1–4).",
+        "A young man in white tells them, “he is risen; he is not here,” and sends word to the disciples “and Peter” that He goes before them into Galilee. They flee, trembling (5–8).",
+        "Jesus appears first to Mary Magdalene, out of whom He had cast seven devils, then to two in the country, but the others believe not (9–13).",
+        "He appears to the eleven at meat and rebukes their unbelief, then sends them: “Go ye into all the world, and preach the gospel to every creature.” He that believeth shall be saved; he that believeth not shall be damned (14–16).",
+        "Signs will follow them that believe. He is received up into heaven and sits at God's right hand, and they preach everywhere, the Lord working with them (17–20)."
+      ],
+      "key": {
+        "ref": "Mark 16:6",
+        "text": "And he saith unto them, Be not affrighted: Ye seek Jesus of Nazareth, which was crucified: he is risen; he is not here: behold the place where they laid him."
+      },
+      "big": "He is risen. The Lord calls back failures and doubters, sends them with good news for every creature, and works with them from the right hand of God. Whoever believes is saved."
+    }
+  },
+  {
     "id": "luke-01",
     "type": "chapter",
     "book": "Luke",
