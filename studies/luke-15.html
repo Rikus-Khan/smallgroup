@@ -1,0 +1,615 @@
+<!doctype html>
+<html lang="en" data-theme="night">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Luke 15</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="../assets/fonts.css">
+<link rel="stylesheet" href="../assets/deck.css">
+<link rel="stylesheet" href="../assets/themes.css">
+<style>
+/* lk15-three: three lost things side by side (1 of 100, 1 of 10, 1 of 2); a .lk15-found step lights the lost one in each */
+.lk15-three { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem 1.6rem; margin: .4em 0 1em; }
+.lk15-three > div { padding: .8em 1em 1em; border-top: 3px solid var(--accent); background: var(--surface); border-radius: 0 0 10px 10px; }
+.lk15-three h3 { font: 400 clamp(1.4rem, 1rem + 1.4vw, 2.2rem)/1.1 var(--serif); color: var(--accent-hot); }
+.lk15-three small { display: block; color: var(--ink-soft); font-size: clamp(.88rem, .8rem + .3vw, 1.1rem); margin: .15em 0 .7em; }
+.lk15-many { display: grid; grid-template-columns: repeat(var(--cols, 10), 1fr); gap: var(--gap, 4px); max-width: var(--w, 13rem); }
+.lk15-many i { aspect-ratio: var(--shape, 1); border-radius: var(--round, 50%); background: var(--ink-soft); opacity: .75; }
+.lk15-many i.lost { background: transparent; opacity: 1; box-shadow: inset 0 0 0 2px var(--danger); transition: background .8s ease, box-shadow .8s ease; }
+.lk15-many.coins i { background: var(--warm); }
+.lk15-many.sons i { border-radius: 50% 50% 18% 18%; }
+.slide:has(.lk15-found.on) .lk15-many i.lost { background: var(--accent-hot); box-shadow: 0 0 12px var(--accent); }
+@media (max-width: 640px) { .lk15-three { grid-template-columns: 1fr; } }
+
+/* lk15-fold: ninety and nine in a stone pen, one far off in the wilderness; a .lk15-go step draws the search, .lk15-home carries it back */
+.lk15-pen { fill: color-mix(in srgb, var(--surface-2) 70%, transparent); stroke: var(--line-strong); stroke-width: 6; stroke-dasharray: 14 4; }
+.lk15-sheep { fill: var(--ink-soft); }
+.lk15-hill { fill: color-mix(in srgb, var(--ink-soft) 16%, transparent); }
+.lk15-seek { fill: none; stroke: var(--accent); stroke-width: 4; stroke-linecap: round; stroke-dasharray: 1; stroke-dashoffset: 1; transition: stroke-dashoffset 2.4s ease; }
+.slide:has(.lk15-go.on) .lk15-seek { stroke-dashoffset: 0; }
+.lk15-one { transition: transform 2.6s ease-in-out; }
+.lk15-one circle { fill: var(--danger); transition: fill .8s ease; }
+.lk15-one .map-ping { fill: none; stroke: var(--danger); stroke-width: 3; transform-box: fill-box; transform-origin: center; opacity: 0; }
+.slide.active .lk15-one .map-ping { animation: ping 2.2s 1s ease-out infinite; }
+.slide:has(.lk15-home.on) .lk15-one { transform: translate(-318px, 46px); }
+.slide:has(.lk15-home.on) .lk15-one circle { fill: var(--accent-hot); }
+.slide:has(.lk15-home.on) .lk15-one .map-ping { animation: none; }
+.lk15-lab { fill: var(--ink-soft); font-size: 16px; }
+.lk15-lab.hot { fill: var(--accent-hot); font-weight: 700; }
+.lk15-joy { fill: var(--accent-hot); font: italic 600 22px var(--serif); opacity: 0; transition: opacity .8s ease 2.2s; }
+.slide:has(.lk15-home.on) .lk15-joy { opacity: 1; }
+.slide:has(.lk15-home.on) .lk15-lost-lab { opacity: 0; }
+.lk15-lost-lab { transition: opacity .6s ease; }
+@media (max-width: 600px) { .lk15-lab { font-size: 22px; } .lk15-joy { font-size: 28px; } }
+
+/* lk15-lamp: a dark room; a lamp's light sweeps the floor and finds the coin (night in every theme: --on-glow with --glow) */
+.lk15-room { fill: var(--on-glow); }
+.lk15-floor { stroke: color-mix(in srgb, var(--glow) 30%, transparent); stroke-width: 2; }
+.lk15-dust { fill: color-mix(in srgb, var(--glow) 18%, transparent); }
+.lk15-coin { fill: color-mix(in srgb, var(--glow) 22%, var(--on-glow)); transition: fill .8s ease, filter .8s ease; }
+.slide:has(.lk15-shine.on) .lk15-coin { fill: var(--warm); filter: drop-shadow(0 0 8px var(--warm)); }
+.lk15-lampgo { transform: translateX(0); }
+.slide.active .lk15-lampgo { animation: lk15-sweep 6s .6s ease-in-out forwards; }
+@keyframes lk15-sweep { 30% { transform: translateX(150px); } 55% { transform: translateX(60px); } 100% { transform: translateX(272px); } }
+.lk15-clay { fill: var(--leather-light); }
+.lk15-flame { fill: var(--warm); }
+.lk15-say { fill: var(--glow); font-size: 16px; }
+.lk15-say.joy { font: italic 600 22px var(--serif); fill: var(--warm); opacity: 0; transition: opacity .8s ease .4s; }
+.slide:has(.lk15-shine.on) .lk15-say.joy { opacity: 1; }
+@media (max-width: 600px) { .lk15-say { font-size: 22px; } .lk15-say.joy { font-size: 28px; } }
+
+/* lk15-run: the road home; the son far off, and on a step the father runs out to meet him */
+.lk15-road { stroke: var(--line-strong); stroke-width: 3; }
+.lk15-house { fill: var(--surface-2); stroke: var(--ink-soft); stroke-width: 2; }
+.lk15-son { fill: var(--ink-soft); transform: translateX(0); }
+.slide.active .lk15-son { transform: translateX(-40px); transition: transform 5s linear .3s; }
+.lk15-dad { fill: var(--accent); filter: drop-shadow(0 0 6px var(--accent)); transition: transform 2.4s cubic-bezier(.5,0,.3,1); }
+.slide:has(.lk15-ran.on) .lk15-dad { transform: translateX(316px); }
+.lk15-tag { fill: var(--ink-soft); font-size: 16px; }
+.lk15-tag.hot { fill: var(--accent-hot); font-weight: 700; }
+.lk15-tag.after { opacity: 0; transition: opacity .8s ease 2s; }
+.slide:has(.lk15-ran.on) .lk15-tag.after { opacity: 1; }
+.slide:has(.lk15-ran.on) .lk15-tag.before { opacity: 0; }
+.lk15-tag.before { transition: opacity .5s ease; }
+@media (max-width: 600px) { .lk15-tag { font-size: 22px; } }
+</style>
+</head>
+<body>
+<main class="deck" id="deck">
+
+<!-- ======================= OPENING ======================= -->
+<section class="slide title">
+  <div class="inner">
+    <div class="emblem rise"></div>
+    <h1 class="rise" style="--d:1">Luke 15</h1>
+    <p class="sub rise" style="--d:3">Lost, and found</p>
+    <p class="tag rise" style="--d:5">A lost sheep, a lost coin, and two lost sons, told to men who grumbled that Jesus welcomed sinners.</p>
+  </div>
+</section>
+
+<section class="slide watch">
+  <div class="inner">
+    <h2 class="rise">Things to watch for</h2>
+    <p class="lede rise" style="--d:1">Keep these questions in the back of your mind as we read. We'll come back to every one of them at the end.</p>
+    <ol class="seeds">
+      <li class="step"><span class="topic">Sinners</span><span class="seed-q">Why did the Pharisees murmur about Jesus?</span></li>
+      <li class="step"><span class="topic">Seeking</span><span class="seed-q">Who does the searching in the first two stories?</span></li>
+      <li class="step"><span class="topic">Joy</span><span class="seed-q">What makes heaven rejoice?</span></li>
+      <li class="step"><span class="topic">Rock bottom</span><span class="seed-q">What changed when the younger son came to himself?</span></li>
+      <li class="step"><span class="topic">Welcome</span><span class="seed-q">How did the father receive his son?</span></li>
+      <li class="step"><span class="topic">The elder son</span><span class="seed-q">Why wouldn't the elder son go in?</span></li>
+    </ol>
+  </div>
+</section>
+
+<!-- ======================= PART ONE: THE SHEEP AND THE COIN ======================= -->
+<section class="slide part">
+  <div class="inner">
+    <p class="part-n rise">Part one</p>
+    <h2 class="rise" style="--d:1">Rejoice with me</h2>
+    <p class="range rise" style="--d:2">Verses 1–10</p>
+    <div class="rule"></div>
+    <p class="hook rise" style="--d:4">The wrong crowd comes close to Jesus, the religious crowd complains, and Jesus answers with stories.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="1-3" data-hl="Then drew near unto him all the publicans and sinners for to hear him|This man receiveth sinners, and eateth with them"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="2"></blockquote>
+    <h2 class="rise" style="--d:1">The complaint</h2>
+    <p class="saying rise" style="--d:2">“This man <em>receiveth sinners</em>”</p>
+    <p class="note step"><em>Publicans</em> were tax collectors for Rome, known as traitors and cheats. <em>Sinners</em> were people the whole town knew for their sin. They were coming close to Jesus <em>“for to hear him.”</em></p>
+    <p class="note step">The <em>Pharisees and scribes</em>, the strict keepers and teachers of the law, <em>murmured</em>: they grumbled. To eat with a man was to accept him. A holy teacher, they thought, should keep his distance.</p>
+    <p class="note step">They meant it as an accusation. It's the best news in the Bible. He still receives sinners. That's why men like us are in this room.</p>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise">One parable, three lost things</h2>
+    <p class="note rise" style="--d:1">Jesus answers the complaint with one parable in three parts. Each time something is lost, someone searches, it's found, and there's a party.</p>
+    <div class="lk15-three">
+      <div class="step"><h3>1 of 100</h3><small>a sheep (15:4)</small>
+        <div class="lk15-many" style="--cols:20;--gap:2px;--w:15rem" aria-label="A hundred dots, one of them missing">
+          <i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i>
+          <i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i>
+          <i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i>
+          <i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i class="lost"></i><i></i><i></i>
+          <i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i>
+        </div></div>
+      <div class="step"><h3>1 of 10</h3><small>a piece of silver (15:8)</small>
+        <div class="lk15-many coins" style="--cols:5;--gap:8px;--w:12rem" aria-label="Ten coins, one of them missing">
+          <i></i><i></i><i></i><i></i><i></i><i></i><i></i><i class="lost"></i><i></i><i></i>
+        </div></div>
+      <div class="step"><h3>1 of 2</h3><small>a son (15:11)</small>
+        <div class="lk15-many sons" style="--cols:2;--gap:16px;--w:7rem;--shape:.55" aria-label="Two sons, one of them missing">
+          <i></i><i class="lost"></i>
+        </div></div>
+    </div>
+    <p class="note step lk15-found">Watch the numbers shrink: one in a hundred, one in ten, one in two. The loss gets more personal each time, until it's a father's own son. And every story ends the same way: <em>found</em>.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="4-5" data-hl="go after that which is lost, until he find it|he layeth it on his shoulders, rejoicing"></section>
+
+<section class="slide verse" data-v="6-7" data-hl="Rejoice with me; for I have found my sheep which was lost|joy shall be in heaven over one sinner that repenteth"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <div class="stage">
+      <svg viewBox="0 0 640 260" role="img" aria-label="On the left, ninety-nine sheep inside a stone pen. Far off to the right, in the hills of the wilderness, one sheep alone. On a step, a path draws from the pen out to the lost sheep. On the next step, the lost sheep is carried back beside the pen, and the words Rejoice with me appear.">
+        <defs>
+          <pattern id="lk15-flock" width="18" height="18" patternUnits="userSpaceOnUse" x="38" y="56"><circle class="lk15-sheep" cx="9" cy="9" r="6"/></pattern>
+        </defs>
+        <path class="lk15-hill" d="M300 230 C 360 150, 420 160, 470 120 C 520 80, 580 70, 640 90 V 230 Z"/>
+        <path class="lk15-hill" d="M420 230 C 470 190, 540 170, 640 160 V 230 Z"/>
+        <rect class="lk15-pen" x="28" y="46" width="218" height="182" rx="14"/>
+        <rect x="38" y="56" width="198" height="162" style="fill:url(#lk15-flock)"/>
+        <path class="lk15-seek" pathLength="1" d="M250 150 C 330 160, 380 130, 430 120 C 480 110, 520 100, 556 92"/>
+        <g class="lk15-one"><circle class="map-ping" cx="566" cy="88" r="12"/><circle cx="566" cy="88" r="8"/></g>
+        <text class="lk15-lab" x="137" y="252" text-anchor="middle">the ninety and nine</text>
+        <text class="lk15-lab hot lk15-lost-lab" x="566" y="62" text-anchor="middle">one, lost</text>
+        <text class="lk15-lab" x="560" y="215" text-anchor="middle">the wilderness</text>
+        <text class="lk15-joy" x="400" y="40" text-anchor="middle">“Rejoice with me”</text>
+      </svg>
+    </div>
+    <h2 class="rise" style="--d:1">Until he find it</h2>
+    <p class="note step lk15-go"><em>“What man of you”</em>: Jesus puts the Pharisees in the shepherd's sandals. Any of you would go. The ninety-nine were left in open pasture while he went out into the rough country, and he kept looking <em>until</em> he found it.</p>
+    <p class="note step lk15-home">A lost sheep often just lies down, scared and worn out, and won't move. So he picks it up and carries it home across his shoulders. No beating, no lecture: <em>“rejoicing.”</em></p>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="7" data-hl="joy shall be in heaven over one sinner that repenteth"></blockquote>
+    <h2 class="rise" style="--d:1">Who are the ninety and nine?</h2>
+    <p class="note rise" style="--d:2">The sheep didn't find its way home. It got found. The work was all the shepherd's. All the sheep did was get carried. That's how salvation works: Jesus came looking for us before we ever went looking for Him.</p>
+    <blockquote class="quote step"><p>“All we like sheep have gone astray; we have turned every one to his own way; and the LORD hath laid on him the iniquity of us all.”</p><cite>Isaiah 53:6</cite></blockquote>
+    <p class="note step">And the <em>“ninety and nine just persons, which need no repentance”</em>? There aren't any. <em>“For all have sinned, and come short of the glory of God”</em> (Romans 3:23). Jesus is talking to men who thought they were in that group. The only people heaven can't celebrate are the ones who think they don't need finding.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="8-10" data-hl="light a candle, and sweep the house, and seek diligently till she find it|Rejoice with me; for I have found the piece which I had lost|there is joy in the presence of the angels of God over one sinner that repenteth"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <div class="stage">
+      <svg viewBox="0 0 640 210" role="img" aria-label="A dark room. A small clay lamp moves back and forth across the floor, its light sweeping through the dust. It stops at one coin lying on the floor. On a step, the coin shines and the words Rejoice with me appear.">
+        <defs>
+          <radialGradient id="lk15-light"><stop offset="0" style="stop-color:var(--glow);stop-opacity:.55"/><stop offset="1" style="stop-color:var(--glow);stop-opacity:0"/></radialGradient>
+        </defs>
+        <rect class="lk15-room" x="0" y="0" width="640" height="210" rx="12"/>
+        <line class="lk15-floor" x1="20" y1="170" x2="620" y2="170"/>
+        <circle class="lk15-dust" cx="90" cy="176" r="2"/><circle class="lk15-dust" cx="150" cy="180" r="1.5"/><circle class="lk15-dust" cx="230" cy="177" r="2"/>
+        <circle class="lk15-dust" cx="300" cy="182" r="1.5"/><circle class="lk15-dust" cx="380" cy="176" r="2"/><circle class="lk15-dust" cx="520" cy="181" r="1.5"/>
+        <ellipse class="lk15-coin" cx="470" cy="172" rx="13" ry="5"/>
+        <g class="lk15-lampgo">
+          <circle cx="140" cy="150" r="90" style="fill:url(#lk15-light)"/>
+          <path class="lk15-clay" d="M118 160 C 118 150, 162 150, 162 160 C 162 168, 118 168, 118 160 Z M158 156 L 172 150 L 170 160 Z"/>
+          <path class="lk15-flame" d="M171 150 C 166 142, 170 134, 174 128 C 177 136, 180 142, 171 150 Z"/>
+        </g>
+        <text class="lk15-say" x="24" y="34">“light a candle, and sweep the house, and seek diligently”</text>
+        <text class="lk15-say joy" x="470" y="110" text-anchor="middle">“Rejoice with me”</text>
+      </svg>
+    </div>
+    <h2 class="rise" style="--d:1">A coin in the dust</h2>
+    <p class="note rise" style="--d:2">A <em>piece of silver</em> was a Greek drachma, about a day's pay. To a poor woman, one in ten was a lot of money.</p>
+    <p class="note step lk15-shine">A village house had few windows and a dirt or stone floor, often with straw on it. So she lights her little clay lamp, her <em>candle</em>, in broad day, and sweeps every corner until it glints. A coin can't know it's lost, and it can't come back on its own. Somebody has to want it.</p>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="10"></blockquote>
+    <h2 class="rise" style="--d:1">A party in heaven</h2>
+    <p class="note rise" style="--d:2">The Pharisees grumbled when sinners came near. Heaven throws a party. That's the contrast Jesus is drawing: the people who should have been glad were angry, and the angels of God were rejoicing.</p>
+    <p class="note step">Notice <em>“one sinner.”</em> Not a crowd. One man turning around is enough for heaven to rejoice. When you turned to Christ, there was joy in heaven over you, by name.</p>
+    <p class="note step"><em>Repenteth</em> means to turn: a change of mind that changes direction. The sheep and the coin can't do that, so Jesus tells a third story about someone who can.</p>
+  </div>
+</section>
+
+<!-- ======================= PART TWO: THE YOUNGER SON ======================= -->
+<section class="slide part">
+  <div class="inner">
+    <p class="part-n rise">Part two</p>
+    <h2 class="rise" style="--d:1">He came to himself</h2>
+    <p class="range rise" style="--d:2">Verses 11–24</p>
+    <div class="rule"></div>
+    <p class="hook rise" style="--d:4">A son takes the money and runs, hits bottom in a pigpen, and heads home with a speech.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="11-13" data-hl="Father, give me the portion of goods that falleth to me|took his journey into a far country|wasted his substance with riotous living"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="12" data-hl="Father, give me the portion of goods that falleth to me"></blockquote>
+    <h2 class="rise" style="--d:1">“Give me”</h2>
+    <p class="note rise" style="--d:2">A son normally got his share when his father died. Asking for it early was close to saying, <em>I wish you were dead. I want your money, not you.</em> By the law, the elder son got a double share, so this younger son walked off with about a third of the estate (Deuteronomy 21:17).</p>
+    <div class="math step">
+      <div><b>2 shares</b><span>the elder son</span></div>
+      <div><b>1 share</b><span>the younger son</span></div>
+      <div><b>0</b><span>left after “riotous living”</span></div>
+    </div>
+    <p class="note step">The father let him go. God doesn't chain men to the house. Then the son sold what he got, <em>“gathered all together,”</em> and went as far from home as he could: <em>a far country</em>, a land of Gentiles. <em>Riotous living</em> is wild, wasteful living. His substance, everything he had, went through his fingers.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="14-16" data-hl="when he had spent all, there arose a mighty famine in that land|he sent him into his fields to feed swine|he would fain have filled his belly with the husks that the swine did eat: and no man gave unto him"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise">All the way down</h2>
+    <ol class="stairs down" style="--n:7" aria-label="Seven steps down: give me; a far country; wasted his substance; spent all; in want; feed swine; no man gave unto him.">
+      <li style="--k:0"><b>“give me”</b>(15:12)</li>
+      <li style="--k:1"><b>a far country</b>(15:13)</li>
+      <li style="--k:2"><b>wasted his substance</b>(15:13)</li>
+      <li style="--k:3"><b>spent all</b>(15:14)</li>
+      <li style="--k:4"><b>in want</b>(15:14)</li>
+      <li style="--k:5"><b>feed swine</b>(15:15)</li>
+      <li style="--k:6"><b>no man gave unto him</b>(15:16)</li>
+    </ol>
+    <p class="note step">The money ran out right when the famine came. The friends ran out with the money. He <em>joined himself</em>, hired himself out, to a foreigner, who sent him to feed <em>swine</em>. For a Jew, pigs were unclean. There was no lower job.</p>
+    <p class="note step">He'd <em>fain</em>, gladly, have eaten the <em>husks</em>, the pods of the carob tree that farmers fed to pigs. Some of us know that place: the money gone, the friends gone, and wanting what nobody should want.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="17-19" data-hl="And when he came to himself|I will arise and go to my father|Father, I have sinned against heaven, and before thee"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="17" data-hl="And when he came to himself"></blockquote>
+    <h2 class="rise" style="--d:1">When he came to himself</h2>
+    <div class="daybreak">
+      <div class="rise" style="--d:2"><i>15:17</i><b>“I perish”</b><p>Starving in a pigpen, still telling himself it would turn around.</p></div>
+      <div class="step"><i>15:17</i><b>He came to himself</b><p>He woke up. He saw the truth about where he was, and remembered his father's house.</p></div>
+      <div class="step"><i>15:18</i><b>“I will arise”</b><p>Seeing it wasn't enough. He made a choice, and he got up and went.</p></div>
+    </div>
+    <p class="note step">A lot of men in recovery know that moment of clarity. You stop lying to yourself. That's what repenting looks like: <em>“I have sinned”</em>, no excuses, no blaming the famine, then turning around and going to the Father.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="20-21" data-hl="when he was yet a great way off, his father saw him, and had compassion, and ran, and fell on his neck, and kissed him"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <div class="stage">
+      <svg viewBox="0 60 640 145" role="img" aria-label="A long road. The father's house stands on the left. Far off on the right, the son walks slowly toward home. On a step, the father runs the whole length of the road to meet him.">
+        <defs>
+          <g id="lk15-p"><circle cx="0" cy="-40" r="9"/><path d="M-9 -29 h18 l5 29 h-28 z"/></g>
+        </defs>
+        <line class="lk15-road" x1="20" y1="190" x2="630" y2="190"/>
+        <path class="lk15-house" d="M40 190 V 120 L 85 88 L 130 120 V 190 Z"/>
+        <rect x="74" y="150" width="22" height="40" style="fill:color-mix(in srgb, var(--ink) 40%, var(--bg))"/>
+        <g class="lk15-dad"><use href="#lk15-p" x="160" y="190"/></g>
+        <g class="lk15-son"><use href="#lk15-p" x="580" y="190" transform="translate(580 190) scale(.8) translate(-580 -190)"/></g>
+        <text class="lk15-tag hot before" x="160" y="120" text-anchor="middle">his father saw him</text>
+        <text class="lk15-tag before" x="560" y="120" text-anchor="middle">“a great way off”</text>
+        <text class="lk15-tag hot after" x="440" y="92" text-anchor="middle">and ran, and fell on his neck, and kissed him</text>
+      </svg>
+    </div>
+    <h2 class="rise" style="--d:1">The father ran</h2>
+    <p class="note step lk15-ran">He saw him <em>a great way off</em>, so he must have been watching the road. A man of standing in that culture didn't run. He'd have to hitch up his robe and show his legs. This father didn't care. He ran, threw his arms around his son's neck, and kissed him, pig smell and all.</p>
+    <p class="note step">The son never had to walk the whole way back alone. That's God the Father. He's not waiting with folded arms to see if you've suffered enough. He runs.</p>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise">The speech he never finished</h2>
+    <div class="pair">
+      <div class="scroll rise" style="--d:1"><p class="ref">What he practised, 15:18–19</p><p class="kjv">Father, I have sinned against heaven, and before thee, And am no more worthy to be called thy son: <mark>make me as one of thy hired servants.</mark></p></div>
+      <div class="scroll step"><p class="ref">What he got to say, 15:21</p><p class="kjv">Father, I have sinned against heaven, and in thy sight, and am no more worthy to be called thy son.</p></div>
+    </div>
+    <p class="note step">He planned to earn his way back as a <em>hired servant</em>, a day labourer who worked for wages and went home at night. He got the confession out. He never got to the bargain. The father cut him off with a party.</p>
+    <p class="note step">Confession matters. Bargaining doesn't. You can't work your way back into the family. You come home as a son or not at all.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="22-24" data-hl="Bring forth the best robe, and put it on him|put a ring on his hand, and shoes on his feet|For this my son was dead, and is alive again; he was lost, and is found"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="22"></blockquote>
+    <h2 class="rise" style="--d:1">Dressed as a son</h2>
+    <ol class="signs">
+      <li class="step now"><b>The best robe</b>the finest one in the house, maybe the father's own. Honour, covering his rags.</li>
+      <li class="step now"><b>A ring</b>likely a signet ring, used to seal family business. He belongs and he's trusted.</li>
+      <li class="step now"><b>Shoes</b>slaves and hired men often went barefoot. Sons wore shoes. Not a servant.</li>
+      <li class="step now"><b>The fatted calf</b>kept for a great feast. The whole village is invited.</li>
+    </ol>
+    <p class="note step">Every gift answers the son's shame. He came home in rags and went in to the feast in a robe. That's what God does with a sinner who comes home: forgiven, clothed, and called His son.</p>
+    <blockquote class="quote step"><p>“If we confess our sins, he is faithful and just to forgive us our sins, and to cleanse us from all unrighteousness.”</p><cite>1 John 1:9</cite></blockquote>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="24" data-hl="this my son was dead, and is alive again; he was lost, and is found"></blockquote>
+    <h2 class="rise" style="--d:1">Down, and back up</h2>
+    <div class="stage">
+      <svg class="curve" viewBox="0 0 620 350" role="img" aria-label="A line starts level at home, falls through the far country to the pigpen at the bottom, turns where he came to himself, and climbs past the father running to the top: alive again, found.">
+        <line class="curve-base" x1="10" y1="110" x2="610" y2="110"/>
+        <path class="curve-line" pathLength="1" d="M20 110 C 120 110, 160 170, 205 225 C 240 268, 265 300, 300 300 C 340 300, 360 255, 400 190 C 445 118, 500 58, 590 40"/>
+        <g class="curve-pt" style="--at:.6s"><circle cx="73" cy="117" r="8"/><text x="73" y="92" text-anchor="middle">“give me”</text></g>
+        <g class="curve-pt" style="--at:1.2s"><circle cx="171" cy="184" r="8"/><text x="160" y="190" text-anchor="end">a far country</text></g>
+        <g class="curve-pt low" style="--at:1.9s"><circle cx="300" cy="300" r="9"/><text x="300" y="334" text-anchor="middle">feeding swine</text></g>
+        <g class="curve-pt" style="--at:2.4s"><circle cx="341" cy="280" r="8"/><text class="q" x="356" y="286">he came to himself</text></g>
+        <g class="curve-pt" style="--at:2.9s"><circle cx="436" cy="139" r="8"/><text x="450" y="150">the father ran</text></g>
+        <g class="curve-pt high" style="--at:3.4s"><circle cx="590" cy="40" r="10"/><text class="q" x="572" y="22" text-anchor="end">“is alive again”</text></g>
+      </svg>
+    </div>
+    <p class="note step">The son said <em>“no more worthy to be called thy son.”</em> The father said <em>“this my son.”</em> The father's word was the one that counted. Lost and dead is how God sees a man without Him. Found and alive is what He makes of the man who comes home.</p>
+  </div>
+</section>
+
+<!-- ======================= PART THREE: THE ELDER SON ======================= -->
+<section class="slide part">
+  <div class="inner">
+    <p class="part-n rise">Part three</p>
+    <h2 class="rise" style="--d:1">He would not go in</h2>
+    <p class="range rise" style="--d:2">Verses 25–32</p>
+    <div class="rule"></div>
+    <p class="hook rise" style="--d:4">The party is going strong. One man stands outside in the dark with his arms folded.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="25-26" data-hl="he heard musick and dancing"></section>
+
+<section class="slide verse" data-v="27-28" data-hl="he hath received him safe and sound|And he was angry, and would not go in: therefore came his father out, and intreated him"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="28" data-hl="therefore came his father out, and intreated him"></blockquote>
+    <h2 class="rise" style="--d:1">The father went out twice</h2>
+    <p class="note rise" style="--d:2">The elder son was out working, like always. He came in from the field, heard <em>musick and dancing</em>, and had to ask a servant what was going on. Nobody had run to tell him. Maybe they knew how he'd take it.</p>
+    <div class="columns">
+      <div class="col grace step"><p class="who">Verse 20</p><h3>He ran out</h3><p>to the son who had wasted everything, while he was still a great way off.</p></div>
+      <div class="col grace step"><p class="who">Verse 28</p><h3>He came out</h3><p>to the son who was angry, and <em>intreated</em> him: pleaded with him to come in.</p></div>
+    </div>
+    <p class="note step">The father left his own party for both of them. He wants both sons at the table.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="29-30" data-hl="Lo, these many years do I serve thee|thou never gavest me a kid|this thy son"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise">Listen to how he talks</h2>
+    <div class="talk">
+      <p class="rise" style="--d:1"><small>The elder son</small>Lo, these many years do I serve thee, neither transgressed I at any time thy commandment: and yet thou never gavest me a kid, that I might make merry with my friends: But as soon as <b>this thy son</b> was come… <span class="flag">not “my brother”</span></p>
+      <p class="reply step"><small>The father</small>Son, thou art ever with me, and all that I have is thine. It was meet that we should make merry, and be glad: for <b>this thy brother</b> was dead, and is alive again…</p>
+    </div>
+    <p class="note step">He says <em>serve</em>, like a slave counting hours, not a son. He won't call him <em>brother</em>. And he brings up the <em>harlots</em>, something nobody had told him. A <em>kid</em> is a young goat, a cheap meal. He'd lived next to all his father had, and never once enjoyed it.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="31-32" data-hl="Son, thou art ever with me, and all that I have is thine|for this thy brother was dead, and is alive again; and was lost, and is found"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise">Two lost sons</h2>
+    <div class="columns">
+      <div class="col law step">
+        <p class="who">The younger son</p>
+        <h3>Lost far from home</h3>
+        <p>Broke every rule. Knew he was lost. Came home with nothing, and was welcomed in.</p>
+      </div>
+      <div class="col grace step">
+        <p class="who">The elder son</p>
+        <h3>Lost at home</h3>
+        <p>Kept every rule. Never knew he was lost. Stood outside, angry, while the party went on.</p>
+      </div>
+    </div>
+    <p class="note step">Remember who Jesus was talking to (15:2). The younger son is the publicans and sinners. The elder son is the Pharisees and scribes, murmuring outside while sinners go in.</p>
+    <p class="note step">The story never says whether the elder son went in. Jesus left it open, for the Pharisees and for us. Both kinds of men are invited. Some of us have been the younger son. Some days we act like the elder one, when another man's comeback makes us bitter. The door is open to both.</p>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise">Dead, and alive again</h2>
+    <p class="saying rise" style="--d:1">“He was <em>lost</em>, and is <em>found</em>.”</p>
+    <p class="note rise" style="--d:2">The three stories end in one place: a lost thing found, and a party. God is not a reluctant Father. He looks, He sweeps, He runs, and He rejoices.</p>
+    <blockquote class="quote step"><p>“For the Son of man is come to seek and to save that which was lost.”</p><cite>Luke 19:10</cite></blockquote>
+    <p class="note step">If you've come home, you're His son, not a hired hand. If you're still in the far country, the road home is open today, and the Father is watching it.</p>
+  </div>
+</section>
+
+<!-- ======================= CLOSING ======================= -->
+<section class="slide remember">
+  <div class="inner">
+    <h2 class="rise">Points to remember</h2>
+    <ol class="seeds">
+      <li class="step"><span class="topic">Sinners</span><span class="seed-q">“This man receiveth sinners” <cite>15:2</cite></span><span class="take">They meant it as a complaint. It's the best news there is.</span></li>
+      <li class="step"><span class="topic">Seeking</span><span class="seed-q">“Until he find it” <cite>15:4</cite></span><span class="take">God goes looking for lost people, and carries them home.</span></li>
+      <li class="step"><span class="topic">Joy</span><span class="seed-q">“Joy … over one sinner that repenteth” <cite>15:10</cite></span><span class="take">One man turning around makes heaven glad.</span></li>
+      <li class="step"><span class="topic">Rock bottom</span><span class="seed-q">“When he came to himself” <cite>15:17</cite></span><span class="take">He saw the truth, owned his sin, and got up and went home.</span></li>
+      <li class="step"><span class="topic">Welcome</span><span class="seed-q">“His father … ran” <cite>15:20</cite></span><span class="take">The Father runs to meet us, and restores us as sons.</span></li>
+      <li class="step"><span class="topic">The elder son</span><span class="seed-q">“He was angry, and would not go in” <cite>15:28</cite></span><span class="take">A man can be lost at home. Grace is for rule-keepers too.</span></li>
+    </ol>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 1 of 6</p>
+      <span class="topic">Sinners</span>
+      <h2>Why did the Pharisees murmur about Jesus?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="1"></blockquote>
+      <blockquote class="quote step" data-q="2"></blockquote>
+      <blockquote class="quote step"><p>“But God commendeth his love toward us, in that, while we were yet sinners, Christ died for us.”</p><cite>Romans 5:8</cite></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>Because publicans and sinners came close to Him, and He welcomed them and ate with them. They thought a holy man should keep his distance. Jesus came for sinners, and He still receives them.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 2 of 6</p>
+      <span class="topic">Seeking</span>
+      <h2>Who does the searching in the first two stories?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="4"></blockquote>
+      <blockquote class="quote step" data-q="5"></blockquote>
+      <blockquote class="quote step" data-q="8"></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>The owner, not the lost thing. The shepherd goes after the sheep until he finds it and carries it home. The woman lights a lamp and sweeps until she finds the coin. God goes looking for lost people first.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 3 of 6</p>
+      <span class="topic">Joy</span>
+      <h2>What makes heaven rejoice?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="7"></blockquote>
+      <blockquote class="quote step" data-q="10"></blockquote>
+      <blockquote class="quote step" data-q="32"></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>One sinner who repents: who turns around and comes to God. Not a crowd, just one. While the Pharisees grumbled, heaven was throwing a party.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 4 of 6</p>
+      <span class="topic">Rock bottom</span>
+      <h2>What changed when the younger son came to himself?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="17"></blockquote>
+      <blockquote class="quote step" data-q="18"></blockquote>
+      <blockquote class="quote step" data-q="20" data-hl="And he arose, and came to his father"></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>He stopped lying to himself. He saw where he was, remembered his father's house, owned his sin with no excuses, and got up and went home. Seeing the truth turned into a choice, and the choice turned into walking.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 5 of 6</p>
+      <span class="topic">Welcome</span>
+      <h2>How did the father receive his son?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="20"></blockquote>
+      <blockquote class="quote step" data-q="22"></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>He saw him far off, ran to him, hugged him and kissed him before the son said a word. Then he cut the bargain short, dressed him as a son with a robe, a ring and shoes, and threw a feast. That's how God receives a sinner who comes home.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 6 of 6</p>
+      <span class="topic">The elder son</span>
+      <h2>Why wouldn't the elder son go in?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="28"></blockquote>
+      <blockquote class="quote step" data-q="29"></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>He was angry. He thought his years of service earned him more, and his brother deserved less. He served his father like a hired man, not a son, and wouldn't even call his brother “brother.” The father came out and pleaded with him too.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide prayer">
+  <div class="inner">
+    <div class="emblem rise"></div>
+    <h2 class="rise" style="--d:1">Prayer requests</h2>
+    <p class="ask-line rise" style="--d:2">What can we pray about for you today?</p>
+    <blockquote class="quote rise" style="--d:4"><p>“For the Son of man is come to seek and to save that which was lost.”</p><cite>Luke 19:10</cite></blockquote>
+  </div>
+</section>
+
+</main>
+
+<script>
+// King James Version, Luke chapter 15
+const V = {
+  1: "Then drew near unto him all the publicans and sinners for to hear him.",
+  2: "And the Pharisees and scribes murmured, saying, This man receiveth sinners, and eateth with them.",
+  3: "And he spake this parable unto them, saying,",
+  4: "What man of you, having an hundred sheep, if he lose one of them, doth not leave the ninety and nine in the wilderness, and go after that which is lost, until he find it?",
+  5: "And when he hath found it, he layeth it on his shoulders, rejoicing.",
+  6: "And when he cometh home, he calleth together his friends and neighbours, saying unto them, Rejoice with me; for I have found my sheep which was lost.",
+  7: "I say unto you, that likewise joy shall be in heaven over one sinner that repenteth, more than over ninety and nine just persons, which need no repentance.",
+  8: "Either what woman having ten pieces of silver, if she lose one piece, doth not light a candle, and sweep the house, and seek diligently till she find it?",
+  9: "And when she hath found it, she calleth her friends and her neighbours together, saying, Rejoice with me; for I have found the piece which I had lost.",
+  10: "Likewise, I say unto you, there is joy in the presence of the angels of God over one sinner that repenteth.",
+  11: "And he said, A certain man had two sons:",
+  12: "And the younger of them said to his father, Father, give me the portion of goods that falleth to me. And he divided unto them his living.",
+  13: "And not many days after the younger son gathered all together, and took his journey into a far country, and there wasted his substance with riotous living.",
+  14: "And when he had spent all, there arose a mighty famine in that land; and he began to be in want.",
+  15: "And he went and joined himself to a citizen of that country; and he sent him into his fields to feed swine.",
+  16: "And he would fain have filled his belly with the husks that the swine did eat: and no man gave unto him.",
+  17: "And when he came to himself, he said, How many hired servants of my father’s have bread enough and to spare, and I perish with hunger!",
+  18: "I will arise and go to my father, and will say unto him, Father, I have sinned against heaven, and before thee,",
+  19: "And am no more worthy to be called thy son: make me as one of thy hired servants.",
+  20: "And he arose, and came to his father. But when he was yet a great way off, his father saw him, and had compassion, and ran, and fell on his neck, and kissed him.",
+  21: "And the son said unto him, Father, I have sinned against heaven, and in thy sight, and am no more worthy to be called thy son.",
+  22: "But the father said to his servants, Bring forth the best robe, and put it on him; and put a ring on his hand, and shoes on his feet:",
+  23: "And bring hither the fatted calf, and kill it; and let us eat, and be merry:",
+  24: "For this my son was dead, and is alive again; he was lost, and is found. And they began to be merry.",
+  25: "Now his elder son was in the field: and as he came and drew nigh to the house, he heard musick and dancing.",
+  26: "And he called one of the servants, and asked what these things meant.",
+  27: "And he said unto him, Thy brother is come; and thy father hath killed the fatted calf, because he hath received him safe and sound.",
+  28: "And he was angry, and would not go in: therefore came his father out, and intreated him.",
+  29: "And he answering said to his father, Lo, these many years do I serve thee, neither transgressed I at any time thy commandment: and yet thou never gavest me a kid, that I might make merry with my friends:",
+  30: "But as soon as this thy son was come, which hath devoured thy living with harlots, thou hast killed for him the fatted calf.",
+  31: "And he said unto him, Son, thou art ever with me, and all that I have is thine.",
+  32: "It was meet that we should make merry, and be glad: for this thy brother was dead, and is alive again; and was lost, and is found."
+};
+const BOOK = "Luke 15";
+</script>
+<script src="../assets/deck.js"></script>
+</body>
+</html>

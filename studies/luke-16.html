@@ -1,0 +1,508 @@
+<!doctype html>
+<html lang="en" data-theme="scribe">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Luke 16</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="../assets/fonts.css">
+<link rel="stylesheet" href="../assets/deck.css">
+<link rel="stylesheet" href="../assets/themes.css">
+<style>
+/* lk16-bills: two promissory notes; a .lk16-write step strikes the old amount and writes in the new one */
+.lk16-bills { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem 1.6rem; margin: .4em 0 1em; max-width: 54rem; }
+.lk16-bill { position: relative; padding: .8em 1.1em 1em; border: 1.5px solid var(--line-strong); border-radius: 6px; background: var(--surface); box-shadow: 0 10px 24px -16px var(--ink); }
+.lk16-bill small { display: block; font: 700 clamp(.8rem, .75rem + .3vw, 1rem) var(--sans); color: var(--ink-soft); border-bottom: 1px solid var(--line-strong); padding-bottom: .3em; margin-bottom: .4em; }
+.lk16-bill p { font: 400 clamp(1.2rem, 1rem + 1vw, 1.8rem)/1.3 var(--serif); }
+.lk16-bill .old { position: relative; display: inline-block; margin-right: .35em; }
+.lk16-bill .old::after { content: ""; position: absolute; left: -6%; right: -6%; top: 52%; height: 3px; background: var(--danger); transform: scaleX(0); transform-origin: left; transition: transform .6s ease; }
+.lk16-bill .new { display: inline-block; margin-right: .35em; color: var(--danger); font: italic 600 1.15em var(--serif); opacity: 0; transform: rotate(-6deg) translateY(-.2em); transition: opacity .6s ease .5s; }
+.slide:has(.lk16-write.on) .lk16-bill .old::after { transform: scaleX(1); }
+.slide:has(.lk16-write.on) .lk16-bill .new { opacity: 1; }
+.lk16-bill i { display: block; font-size: clamp(.85rem, .8rem + .3vw, 1.05rem); color: var(--ink-soft); }
+@media (max-width: 600px) { .lk16-bills { grid-template-columns: 1fr; } }
+
+/* lk16-gulf: two sides with a chasm between; a .lk16-cross step shows the crossings that can't be made */
+.lk16-near { fill: color-mix(in srgb, var(--accent) 18%, var(--surface)); stroke: var(--accent); stroke-width: 2; }
+.lk16-far { fill: color-mix(in srgb, var(--danger) 16%, var(--surface)); stroke: var(--danger); stroke-width: 2; }
+.lk16-pit { fill: var(--on-glow); stroke: var(--ink-soft); stroke-width: 1.5; stroke-dasharray: 3 5; }
+.lk16-side { font: 600 20px var(--serif); }
+.lk16-side.near { fill: var(--accent-hot); }
+.lk16-side.far { fill: var(--danger); }
+.lk16-small { fill: var(--ink-soft); font-size: 15px; }
+.lk16-gap { fill: var(--glow); font: italic 600 17px var(--serif); }
+.lk16-try { fill: none; stroke: var(--ink-soft); stroke-width: 3; stroke-dasharray: 6 6; opacity: 0; transition: opacity .8s ease; }
+.lk16-stop { stroke: var(--danger); stroke-width: 4; stroke-linecap: round; opacity: 0; transition: opacity .6s ease .6s; }
+.slide:has(.lk16-cross.on) .lk16-try, .slide:has(.lk16-cross.on) .lk16-stop { opacity: 1; }
+@media (max-width: 600px) { .lk16-side { font-size: 24px; } .lk16-small { font-size: 19px; } .lk16-gap { font-size: 21px; } }
+</style>
+</head>
+<body>
+<main class="deck" id="deck">
+
+<!-- ======================= OPENING ======================= -->
+<section class="slide title">
+  <div class="inner">
+    <div class="emblem rise"></div>
+    <h1 class="rise" style="--d:1">Luke 16</h1>
+    <p class="sub rise" style="--d:3">Ye cannot serve God and mammon</p>
+    <p class="tag rise" style="--d:5">A crooked manager who planned ahead, a warning about money, and a rich man and a beggar on both sides of the grave.</p>
+  </div>
+</section>
+
+<section class="slide watch">
+  <div class="inner">
+    <h2 class="rise">Things to watch for</h2>
+    <p class="lede rise" style="--d:1">Keep these questions in the back of your mind as we read. We'll come back to every one of them at the end.</p>
+    <ol class="seeds">
+      <li class="step"><span class="topic">Shrewd</span><span class="seed-q">Why did the master praise a dishonest steward?</span></li>
+      <li class="step"><span class="topic">Money</span><span class="seed-q">How should a believer use money?</span></li>
+      <li class="step"><span class="topic">Faithful</span><span class="seed-q">What does faithfulness in little things show?</span></li>
+      <li class="step"><span class="topic">Masters</span><span class="seed-q">Why can't a man serve God and mammon?</span></li>
+      <li class="step"><span class="topic">Eternity</span><span class="seed-q">What does the rich man and Lazarus teach about life after death?</span></li>
+      <li class="step"><span class="topic">The Word</span><span class="seed-q">Why wouldn't the brothers believe even if one rose from the dead?</span></li>
+    </ol>
+  </div>
+</section>
+
+<!-- ======================= PART ONE: THE UNJUST STEWARD ======================= -->
+<section class="slide part">
+  <div class="inner">
+    <p class="part-n rise">Part one</p>
+    <h2 class="rise" style="--d:1">The unjust steward</h2>
+    <p class="range rise" style="--d:2">Verses 1–13</p>
+    <div class="rule"></div>
+    <p class="hook rise" style="--d:4">A manager about to be fired cooks the books on his way out, and his boss is impressed.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="1-2" data-hl="There was a certain rich man, which had a steward|he had wasted his goods|give an account of thy stewardship"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="1"></blockquote>
+    <h2 class="rise" style="--d:1">A steward caught</h2>
+    <p class="note rise" style="--d:2">A <em>steward</em> ran a rich man's estate for him: the land, the crops, the accounts. He could make deals and sign for his master. This one was reported for <em>wasting</em> his master's goods, the same word Luke used for the younger son who <em>“wasted his substance”</em> (15:13).</p>
+    <p class="note step">Jesus is still talking, the same day. The publicans, the Pharisees and the disciples are all listening (15:1–2, 16:14). This story is aimed at the disciples, and it's about money.</p>
+    <p class="note step"><em>“Give an account”</em>: hand in the books, you're done. Every one of us will give account to God for what He put in our hands.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="3-4" data-hl="What shall I do?|I cannot dig; to beg I am ashamed|I am resolved what to do"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise">What shall I do?</h2>
+    <ul class="nots">
+      <li class="step"><span class="k">“I cannot dig”</span><span class="why">Too soft for hard labour in the fields.</span></li>
+      <li class="step"><span class="k">“To beg I am ashamed”</span><span class="why">Too proud to sit by the road with his hand out.</span></li>
+      <li class="step yes"><span class="k">Make friends while he still can</span><span class="why">“that … they may receive me into their houses”</span></li>
+    </ul>
+    <p class="note step">He had a few hours left with the books and the master's name. He knew his future depended on what he did with them before the door shut. He didn't waste the time feeling sorry for himself. He moved.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="5-7" data-hl="How much owest thou unto my lord?|Take thy bill, and sit down quickly, and write fifty|Take thy bill, and write fourscore"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise">Cooking the books</h2>
+    <div class="lk16-bills">
+      <div class="lk16-bill rise" style="--d:1"><small>The first debtor's bill</small><p><span class="old">100</span><span class="new">50</span> measures of oil</p><i>hundreds of gallons of olive oil</i></div>
+      <div class="lk16-bill rise" style="--d:2"><small>The second debtor's bill</small><p><span class="old">100</span><span class="new">80</span> measures of wheat</p><i>hundreds of bushels of wheat</i></div>
+    </div>
+    <p class="note step lk16-write">A <em>bill</em> was a written note of what a man owed. The steward had each debtor rewrite his own bill in his own hand, <em>quickly</em>, before word got out. <em>Fourscore</em> is eighty.</p>
+    <p class="note step">Each man walked away owing his master far less and owing the steward a big favour. He was spending his master's money to buy himself friends.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="8-9" data-hl="the lord commended the unjust steward, because he had done wisely|the children of this world are in their generation wiser than the children of light|Make to yourselves friends of the mammon of unrighteousness"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="8" data-hl="the lord commended the unjust steward, because he had done wisely"></blockquote>
+    <h2 class="rise" style="--d:1">Praised for what?</h2>
+    <p class="note rise" style="--d:2">The <em>lord</em> here is the rich man in the story, not Jesus. He still calls the steward <em>unjust</em>. He didn't praise the cheating. He admired the man's sharpness: <em>“he had done wisely,”</em> shrewdly. He saw his day coming and got ready for it.</p>
+    <div class="columns">
+      <div class="col law step"><p class="who">The children of this world</p><h3>Plan for next year</h3><p>They work every angle to set themselves up for the future they can see.</p></div>
+      <div class="col grace step"><p class="who">The children of light</p><h3>Forget forever</h3><p>God's people often give less thought to eternity than a crook gives to his retirement.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="9"></blockquote>
+    <h2 class="rise" style="--d:1">Friends with mammon</h2>
+    <p class="note rise" style="--d:2"><em>Mammon</em> is money and possessions. It's <em>“of unrighteousness”</em> because it belongs to this crooked world, and it so easily pulls men into sin.</p>
+    <p class="note step">Here's the point. Money won't last. One day it runs out, or you do: <em>“when ye fail.”</em> So use it now for what lasts, which is people. Help a brother, feed the hungry, support the work that brings men to Christ. Some of the people you help will be in heaven to welcome you, in <em>everlasting habitations</em>.</p>
+    <p class="note step">That's not buying a way into heaven. Salvation is a free gift by faith. It's spending wisely, because you already know where you're going.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="10-12" data-hl="He that is faithful in that which is least is faithful also in much|who will commit to your trust the true riches?"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="10"></blockquote>
+    <h2 class="rise" style="--d:1">Little things show big things</h2>
+    <div class="ifthen">
+      <div class="if step"><small>If</small>you can't be trusted with money, the smallest thing God gives you,</div>
+      <span class="arrow step">→</span>
+      <div class="then step"><small>then</small>who will trust you with <em>the true riches</em>?</div>
+    </div>
+    <p class="note step">Money is the <em>least</em> thing God trusts us with. The <em>true riches</em> are His Word, His people, the souls of men. And it's all <em>another man's</em>: we only manage what is God's.</p>
+    <p class="note step">Many of us burned through money and trust. Trust is rebuilt in little things: pay the small bill, return what you borrowed, show up when you said you would.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="13" data-hl="No servant can serve two masters|Ye cannot serve God and mammon"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise">One master</h2>
+    <p class="saying rise" style="--d:1">“Ye cannot serve <em>God</em> and <em>mammon</em>.”</p>
+    <p class="note rise" style="--d:2">A slave in that world belonged to one owner, all day, every day. Two owners would pull him in two directions until he loved one and hated the other. Jesus doesn't say you <em>shouldn't</em> serve both. He says you <em>can't</em>.</p>
+    <p class="note step">Money makes a good servant and a terrible master. So does anything a man starts living for: the bottle, the pipe, the paycheck, the next win. Whatever runs your life is your master. There's room for only one.</p>
+  </div>
+</section>
+
+<!-- ======================= PART TWO: THE PHARISEES ======================= -->
+<section class="slide part">
+  <div class="inner">
+    <p class="part-n rise">Part two</p>
+    <h2 class="rise" style="--d:1">God knoweth your hearts</h2>
+    <p class="range rise" style="--d:2">Verses 14–18</p>
+    <div class="rule"></div>
+    <p class="hook rise" style="--d:4">The Pharisees love money and laugh at Jesus. He answers with the law they claimed to keep.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="14-15" data-hl="who were covetous, heard all these things: and they derided him|Ye are they which justify yourselves before men; but God knoweth your hearts|that which is highly esteemed among men is abomination in the sight of God"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="15" data-hl="God knoweth your hearts"></blockquote>
+    <h2 class="rise" style="--d:1">They laughed</h2>
+    <p class="note rise" style="--d:2"><em>Covetous</em> means greedy, always wanting more. They <em>derided</em> Jesus: sneered at Him. Many of them taught that wealth proved God was pleased with you. A poor teacher telling rich men how to use money was a joke to them.</p>
+    <div class="columns">
+      <div class="col law step"><p class="who">Before men</p><h3>Highly esteemed</h3><p>They looked good, prayed in public, gave where people could see, and grew rich.</p></div>
+      <div class="col grace step"><p class="who">In the sight of God</p><h3>Abomination</h3><p>He saw the greed and pride underneath. God looks at the heart.</p></div>
+    </div>
+    <blockquote class="quote step"><p>“For the love of money is the root of all evil: which while some coveted after, they have erred from the faith, and pierced themselves through with many sorrows.”</p><cite>1 Timothy 6:10</cite></blockquote>
+  </div>
+</section>
+
+<section class="slide verse" data-v="16-18" data-hl="The law and the prophets were until John|every man presseth into it|than one tittle of the law to fail|Whosoever putteth away his wife, and marrieth another, committeth adultery"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="16"></blockquote>
+    <h2 class="rise" style="--d:1">Until John</h2>
+    <ol class="timeline">
+      <li style="--k:0"><b>Moses</b><span>the law given</span></li>
+      <li style="--k:1"><b>The prophets</b><span>Isaiah to Malachi</span></li>
+      <li style="--k:2" class="wait"><b>Silence</b><span>about four hundred years</span></li>
+      <li style="--k:3" class="lit"><b>John the Baptist</b><span>the last of the old prophets</span></li>
+      <li style="--k:4" class="lit"><b>The kingdom of God</b><span>preached by Jesus, now</span></li>
+    </ol>
+    <p class="note step">The law and the prophets pointed ahead. John pointed at Jesus. Now the good news is out, and all kinds of men are <em>pressing</em> in, forcing their way in like a crowd at a gate: publicans, sinners, men like us.</p>
+    <p class="note step">But the new day doesn't throw out the old law. A <em>tittle</em> is the tiny stroke that tells one Hebrew letter from another. Heaven and earth will go before the smallest stroke of God's Word fails. And the Pharisees, who claimed to keep it, were bending it.</p>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="18"></blockquote>
+    <h2 class="rise" style="--d:1">An example: marriage</h2>
+    <p class="note rise" style="--d:2">Here's one place the Pharisees bent the law. Some of their teachers let a man <em>put away</em>, divorce, his wife for almost any reason, then marry someone else, all properly on paper. Jesus says God sees it as <em>adultery</em>. Marriage is meant to last for life.</p>
+    <p class="note step">Matthew records Jesus giving one exception, <em>“except it be for fornication”</em> (Matthew 19:9). Luke gives the short form of the teaching. Jesus held marriage higher than the Pharisees did, not lower.</p>
+    <p class="note step">Some men in this room have broken marriages behind them. This verse isn't here to crush you, and we're not ruling on anyone's situation today. If it hits home, talk with the pastor. The Father who ran to the prodigal forgives every sin we confess, this one too.</p>
+  </div>
+</section>
+
+<!-- ======================= PART THREE: THE RICH MAN AND LAZARUS ======================= -->
+<section class="slide part">
+  <div class="inner">
+    <p class="part-n rise">Part three</p>
+    <h2 class="rise" style="--d:1">A great gulf fixed</h2>
+    <p class="range rise" style="--d:2">Verses 19–31</p>
+    <div class="rule"></div>
+    <p class="hook rise" style="--d:4">Two men, one gate. Then death, and the gate between them is gone, and something far wider takes its place.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="19-21" data-hl="clothed in purple and fine linen, and fared sumptuously every day|a certain beggar named Lazarus, which was laid at his gate, full of sores|the dogs came and licked his sores"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise">Two men at one gate</h2>
+    <div class="columns">
+      <div class="col law step">
+        <p class="who">The rich man</p>
+        <h3>No name</h3>
+        <p><em>Purple</em>, the costliest dye there was, and <em>fine linen</em>. He <em>fared sumptuously</em>: feasted in luxury, not now and then, but <em>every day</em>.</p>
+      </div>
+      <div class="col grace step">
+        <p class="who">The beggar</p>
+        <h3>Lazarus</h3>
+        <p>Too sick to walk, <em>laid</em> at the gate each day, covered in sores, hoping for the scraps. Street dogs licked his sores, and he couldn't drive them off.</p>
+      </div>
+    </div>
+    <p class="note step">This isn't the Lazarus of Bethany from John 11. His name means <em>“God helps,”</em> and he's the only person in any of Jesus' stories who gets a name. The world knew the rich man's name and ignored the beggar. Jesus did the opposite.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="22-23" data-hl="the beggar died, and was carried by the angels into Abraham’s bosom|the rich man also died, and was buried|And in hell he lift up his eyes, being in torments"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="25" data-hl="but now he is comforted, and thou art tormented"></blockquote>
+    <h2 class="rise" style="--d:1">Everything turned over</h2>
+    <div class="swap rise" style="--d:2">
+      <h3><span>Comfort</span>“good things”</h3>
+      <h3><span>Misery</span>“evil things”</h3>
+      <div class="a"><b>The rich man</b><small>purple, linen, feasting; then a funeral</small></div>
+      <div class="b"><b>Lazarus</b><small>sores, dogs, crumbs; then carried by angels</small></div>
+    </div>
+    <p class="note step swap-go">At death they trade places. Lazarus is carried to <em>Abraham's bosom</em>, the place of honour at a feast, leaning beside father Abraham. The rich man <em>“was buried,”</em> probably in style, and wakes up in torment.</p>
+    <p class="note step">Money didn't damn the rich man, and poverty didn't save Lazarus. The rich man lived for himself and never turned to God (16:30). Lazarus, <em>“God helps,”</em> had nothing to lean on but God.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="24-26" data-hl="Father Abraham, have mercy on me|Son, remember|between us and you there is a great gulf fixed"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <div class="stage">
+      <svg viewBox="0 0 640 220" role="img" aria-label="Two high cliffs with a deep chasm between them. On the left, comfort, at Abraham's side. On the right, torment. Across the top of the chasm: a great gulf fixed. On a step, dashed lines try to cross from each side and are stopped at the edge.">
+        <path class="lk16-near" d="M0 70 H 250 L 262 220 H 0 Z"/>
+        <path class="lk16-far" d="M390 70 H 640 V 220 H 378 Z"/>
+        <path class="lk16-pit" d="M252 72 L 264 220 H 376 L 388 72 Z"/>
+        <text class="lk16-side near" x="125" y="120" text-anchor="middle">comforted</text>
+        <text class="lk16-small" x="125" y="146" text-anchor="middle">with Abraham</text>
+        <text class="lk16-side far" x="515" y="120" text-anchor="middle">tormented</text>
+        <text class="lk16-small" x="515" y="146" text-anchor="middle">“this flame”</text>
+        <text class="lk16-gap" x="320" y="110" text-anchor="middle">a great</text>
+        <text class="lk16-gap" x="320" y="132" text-anchor="middle">gulf fixed</text>
+        <path class="lk16-try" d="M200 60 C 230 30, 260 30, 290 52"/>
+        <path class="lk16-try" d="M440 60 C 410 30, 380 30, 350 52"/>
+        <path class="lk16-stop" d="M284 44 l 12 12 m 0 -12 l -12 12"/>
+        <path class="lk16-stop" d="M344 44 l 12 12 m 0 -12 l -12 12"/>
+      </svg>
+    </div>
+    <h2 class="rise" style="--d:1">No crossing over</h2>
+    <p class="note step lk16-cross">Jesus speaks plainly about hell, more than anyone else in the Bible. Here it's real and conscious. The rich man can see, feel, speak and <em>remember</em>. He asks for one drop of water and can't have it. And the <em>great gulf</em> is <em>fixed</em>: after death, nobody crosses either way.</p>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="26"></blockquote>
+    <h2 class="rise" style="--d:1">This side of the gulf</h2>
+    <p class="note rise" style="--d:2">Jesus didn't say this to scare men for sport. He said it so nobody would end up there. He went to the cross to carry our sin, so whosoever believes in Him can be on Abraham's side of that gulf.</p>
+    <p class="note step">The time to settle where you'll spend forever is on this side of the gulf, while you can still hear and turn. Not someday. Today.</p>
+    <blockquote class="quote step"><p>“(For he saith, I have heard thee in a time accepted, and in the day of salvation have I succoured thee: behold, now is the accepted time; behold, now is the day of salvation.)”</p><cite>2 Corinthians 6:2</cite></blockquote>
+  </div>
+</section>
+
+<section class="slide verse" data-v="27-29" data-hl="send him to my father’s house|For I have five brethren|They have Moses and the prophets; let them hear them"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="29"></blockquote>
+    <h2 class="rise" style="--d:1">“Send Lazarus”</h2>
+    <p class="note rise" style="--d:2">Notice how he talks. Even in torment he's giving orders: <em>send Lazarus</em> with water, <em>send</em> him to my brothers. He still sees the beggar as a servant. He never once speaks to Lazarus himself.</p>
+    <p class="note step">But he does care about his five <em>brethren</em>, his brothers, still living the way he lived. He doesn't want them to come where he is.</p>
+    <p class="note step">Abraham's answer: they already have what they need. <em>Moses and the prophets</em>, the Scriptures. God had already spoken. They only had to listen.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="30-31" data-hl="if one went unto them from the dead, they will repent|If they hear not Moses and the prophets, neither will they be persuaded, though one rose from the dead"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="31"></blockquote>
+    <h2 class="rise" style="--d:1">Though one rose from the dead</h2>
+    <div class="ifthen">
+      <div class="if step"><small>If</small>a man won't listen to what God has said,</div>
+      <span class="arrow step">→</span>
+      <div class="then step"><small>then</small>a miracle won't change his mind either.</div>
+    </div>
+    <p class="note step">It came true. Lazarus of Bethany rose from the dead, and the chief priests plotted to kill him too (John 12:10). Then Jesus rose, and many still refused. We don't need a voice from the grave. We have the Bible and a risen Saviour.</p>
+    <blockquote class="quote step"><p>“For had ye believed Moses, ye would have believed me: for he wrote of me.”</p><cite>John 5:46</cite></blockquote>
+  </div>
+</section>
+
+<!-- ======================= CLOSING ======================= -->
+<section class="slide remember">
+  <div class="inner">
+    <h2 class="rise">Points to remember</h2>
+    <ol class="seeds">
+      <li class="step"><span class="topic">Shrewd</span><span class="seed-q">“Because he had done wisely” <cite>16:8</cite></span><span class="take">Praised for planning ahead, not for cheating. Plan for eternity.</span></li>
+      <li class="step"><span class="topic">Money</span><span class="seed-q">“Make to yourselves friends” <cite>16:9</cite></span><span class="take">Money won't last. Spend it on what will: people.</span></li>
+      <li class="step"><span class="topic">Faithful</span><span class="seed-q">“Faithful in that which is least” <cite>16:10</cite></span><span class="take">Little things show what a man is, and rebuild trust.</span></li>
+      <li class="step"><span class="topic">Masters</span><span class="seed-q">“Ye cannot serve God and mammon” <cite>16:13</cite></span><span class="take">Whatever runs your life is your master. Only one fits.</span></li>
+      <li class="step"><span class="topic">Eternity</span><span class="seed-q">“A great gulf fixed” <cite>16:26</cite></span><span class="take">After death there's no crossing over. Today is the day to settle it.</span></li>
+      <li class="step"><span class="topic">The Word</span><span class="seed-q">“They have Moses and the prophets” <cite>16:29</cite></span><span class="take">God's Word is enough. A heart that won't hear it won't be moved by a miracle.</span></li>
+    </ol>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 1 of 6</p>
+      <span class="topic">Shrewd</span>
+      <h2>Why did the master praise a dishonest steward?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="4"></blockquote>
+      <blockquote class="quote step" data-q="8"></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>Not for cheating. He still called him unjust. He praised him for being sharp: he saw his end coming and used what he had to get ready. Jesus wants His people to think that hard about eternity.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 2 of 6</p>
+      <span class="topic">Money</span>
+      <h2>How should a believer use money?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="9"></blockquote>
+      <blockquote class="quote step"><p>“But lay up for yourselves treasures in heaven, where neither moth nor rust doth corrupt, and where thieves do not break through nor steal:”</p><cite>Matthew 6:20</cite></blockquote>
+      <blockquote class="quote step"><p>“For where your treasure is, there will your heart be also.”</p><cite>Matthew 6:21</cite></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>As a tool, not a master. Money won't last, so we use it now for what will: helping people and supporting the work that brings men to Christ. That's treasure in heaven.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 3 of 6</p>
+      <span class="topic">Faithful</span>
+      <h2>What does faithfulness in little things show?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="10"></blockquote>
+      <blockquote class="quote step" data-q="11"></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>What a man really is. The way he handles small things, like money, is the way he'll handle big things. God trusts the true riches to men who are faithful with the least.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 4 of 6</p>
+      <span class="topic">Masters</span>
+      <h2>Why can't a man serve God and mammon?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="13"></blockquote>
+      <blockquote class="quote step" data-q="14"></blockquote>
+      <blockquote class="quote step"><p>“For the love of money is the root of all evil: which while some coveted after, they have erred from the faith, and pierced themselves through with many sorrows.”</p><cite>1 Timothy 6:10</cite></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>Because a servant can only truly belong to one master. Two will pull him apart until he loves one and despises the other. Whatever we live for becomes our master, and God won't share the throne.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 5 of 6</p>
+      <span class="topic">Eternity</span>
+      <h2>What does the rich man and Lazarus teach about life after death?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="22"></blockquote>
+      <blockquote class="quote step" data-q="26"></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>It's real and conscious, and it starts at death: comfort for one, torment for the other. Men remember, feel and speak. And the gulf is fixed, so there's no changing sides afterward. The time to turn to God is now.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 6 of 6</p>
+      <span class="topic">The Word</span>
+      <h2>Why wouldn't the brothers believe even if one rose from the dead?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="29"></blockquote>
+      <blockquote class="quote step" data-q="31"></blockquote>
+      <blockquote class="quote step"><p>“For had ye believed Moses, ye would have believed me: for he wrote of me.”</p><cite>John 5:46</cite></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>Because the problem wasn't a lack of evidence. God had already spoken in the Scriptures. A heart that won't hear God's Word won't be moved by a miracle either. Jesus did rise, and many still refused.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide prayer">
+  <div class="inner">
+    <div class="emblem rise"></div>
+    <h2 class="rise" style="--d:1">Prayer requests</h2>
+    <p class="ask-line rise" style="--d:2">What can we pray about for you today?</p>
+    <blockquote class="quote rise" style="--d:4"><p>“For where your treasure is, there will your heart be also.”</p><cite>Matthew 6:21</cite></blockquote>
+  </div>
+</section>
+
+</main>
+
+<script>
+// King James Version, Luke chapter 16
+const V = {
+  1: "And he said also unto his disciples, There was a certain rich man, which had a steward; and the same was accused unto him that he had wasted his goods.",
+  2: "And he called him, and said unto him, How is it that I hear this of thee? give an account of thy stewardship; for thou mayest be no longer steward.",
+  3: "Then the steward said within himself, What shall I do? for my lord taketh away from me the stewardship: I cannot dig; to beg I am ashamed.",
+  4: "I am resolved what to do, that, when I am put out of the stewardship, they may receive me into their houses.",
+  5: "So he called every one of his lord’s debtors unto him, and said unto the first, How much owest thou unto my lord?",
+  6: "And he said, An hundred measures of oil. And he said unto him, Take thy bill, and sit down quickly, and write fifty.",
+  7: "Then said he to another, And how much owest thou? And he said, An hundred measures of wheat. And he said unto him, Take thy bill, and write fourscore.",
+  8: "And the lord commended the unjust steward, because he had done wisely: for the children of this world are in their generation wiser than the children of light.",
+  9: "And I say unto you, Make to yourselves friends of the mammon of unrighteousness; that, when ye fail, they may receive you into everlasting habitations.",
+  10: "He that is faithful in that which is least is faithful also in much: and he that is unjust in the least is unjust also in much.",
+  11: "If therefore ye have not been faithful in the unrighteous mammon, who will commit to your trust the true riches?",
+  12: "And if ye have not been faithful in that which is another man’s, who shall give you that which is your own?",
+  13: "No servant can serve two masters: for either he will hate the one, and love the other; or else he will hold to the one, and despise the other. Ye cannot serve God and mammon.",
+  14: "And the Pharisees also, who were covetous, heard all these things: and they derided him.",
+  15: "And he said unto them, Ye are they which justify yourselves before men; but God knoweth your hearts: for that which is highly esteemed among men is abomination in the sight of God.",
+  16: "The law and the prophets were until John: since that time the kingdom of God is preached, and every man presseth into it.",
+  17: "And it is easier for heaven and earth to pass, than one tittle of the law to fail.",
+  18: "Whosoever putteth away his wife, and marrieth another, committeth adultery: and whosoever marrieth her that is put away from her husband committeth adultery.",
+  19: "There was a certain rich man, which was clothed in purple and fine linen, and fared sumptuously every day:",
+  20: "And there was a certain beggar named Lazarus, which was laid at his gate, full of sores,",
+  21: "And desiring to be fed with the crumbs which fell from the rich man’s table: moreover the dogs came and licked his sores.",
+  22: "And it came to pass, that the beggar died, and was carried by the angels into Abraham’s bosom: the rich man also died, and was buried;",
+  23: "And in hell he lift up his eyes, being in torments, and seeth Abraham afar off, and Lazarus in his bosom.",
+  24: "And he cried and said, Father Abraham, have mercy on me, and send Lazarus, that he may dip the tip of his finger in water, and cool my tongue; for I am tormented in this flame.",
+  25: "But Abraham said, Son, remember that thou in thy lifetime receivedst thy good things, and likewise Lazarus evil things: but now he is comforted, and thou art tormented.",
+  26: "And beside all this, between us and you there is a great gulf fixed: so that they which would pass from hence to you cannot; neither can they pass to us, that would come from thence.",
+  27: "Then he said, I pray thee therefore, father, that thou wouldest send him to my father’s house:",
+  28: "For I have five brethren; that he may testify unto them, lest they also come into this place of torment.",
+  29: "Abraham saith unto him, They have Moses and the prophets; let them hear them.",
+  30: "And he said, Nay, father Abraham: but if one went unto them from the dead, they will repent.",
+  31: "And he said unto him, If they hear not Moses and the prophets, neither will they be persuaded, though one rose from the dead."
+};
+const BOOK = "Luke 16";
+</script>
+<script src="../assets/deck.js"></script>
+</body>
+</html>

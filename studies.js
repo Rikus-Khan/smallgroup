@@ -8157,5 +8157,154 @@ window.STUDIES = [
       },
       "big": "Disaster is not a scorecard; everyone needs to repent. God gives time and works the soil, Jesus looses those Satan has bound, and His arms are open. The only thing that keeps a man out is that he would not come."
     }
+  },
+  {
+    "id": "luke-14",
+    "type": "chapter",
+    "book": "Luke",
+    "ch": 14,
+    "date": "2026-10-29",
+    "title": "Luke 14",
+    "sub": "Come; for all things are now ready",
+    "about": "At a chief Pharisee's sabbath dinner, Jesus heals a man with the dropsy, tells guests to take the lowest seat, invites the poor, tells of a great supper the invited guests skipped, and warns the crowds to count the cost of following Him.",
+    "tags": [
+      "Mercy",
+      "Humility",
+      "Grace",
+      "Invitation",
+      "Excuses",
+      "Discipleship"
+    ],
+    "url": "studies/luke-14.html",
+    "overview": {
+      "where": "The house of a chief Pharisee, somewhere on Jesus' last journey to Jerusalem, probably in Galilee or Perea; then on the road with great crowds",
+      "when": "Late in Jesus' ministry, on His last journey toward Jerusalem, a few months before the cross",
+      "people": [
+        "jesus",
+        "pharisees",
+        "lawyers",
+        "man-with-dropsy"
+      ],
+      "places": [
+        "streets-and-hedges"
+      ],
+      "story": [
+        "On the sabbath, at a chief Pharisee's house, they watch Jesus. He heals a man with the dropsy and asks who wouldn't pull an ox out of a pit on the sabbath. They can't answer (1–6).",
+        "Seeing guests grab the best seats, He tells them to take the lowest room: “whosoever exalteth himself shall be abased; and he that humbleth himself shall be exalted” (7–11).",
+        "He tells the host to invite the poor, the maimed, the lame and the blind, who can't repay him; he will be repaid at the resurrection of the just (12–14).",
+        "A great supper: the invited guests all make excuses, so the master sends for the poor and the lame, then out to the highways and hedges. “Yet there is room” (15–24).",
+        "To the crowds: a disciple puts Christ before family and life itself and bears his cross. Count the cost, like a man building a tower or a king facing a bigger army (25–33).",
+        "Salt that has lost its savour is good for nothing. “He that hath ears to hear, let him hear” (34–35)."
+      ],
+      "key": {
+        "ref": "Luke 14:27",
+        "text": "And whosoever doth not bear his cross, and come after me, cannot be my disciple."
+      },
+      "big": "God's table is free and open to the poor, the broken and the outsider; there is still room. The proud are brought low and the humble lifted up. Salvation costs nothing, but following Jesus costs everything, so count the cost and keep going."
+    }
+  },
+  {
+    "id": "luke-15",
+    "type": "chapter",
+    "book": "Luke",
+    "ch": 15,
+    "date": "2026-10-29",
+    "title": "Luke 15",
+    "sub": "Lost, and found",
+    "about": "When the Pharisees grumble that Jesus receives sinners, He tells of a lost sheep, a lost coin and a lost son: a shepherd who searches, a woman who sweeps, and a father who runs, with joy in heaven over one sinner that repenteth.",
+    "tags": [
+      "Grace",
+      "Repentance",
+      "Joy",
+      "Forgiveness",
+      "Recovery",
+      "Pride"
+    ],
+    "url": "studies/luke-15.html",
+    "overview": {
+      "where": "Somewhere on Jesus' last journey toward Jerusalem, among publicans and sinners, with Pharisees and scribes looking on",
+      "when": "Late in Jesus' ministry, on the same journey as Luke 14, a few months before the cross",
+      "people": [
+        "jesus",
+        "publicans",
+        "sinners",
+        "pharisees",
+        "scribes",
+        "prodigal-son",
+        "father-of-the-prodigal",
+        "elder-son",
+        "angels"
+      ],
+      "places": [
+        "wilderness",
+        "far-country",
+        "heaven"
+      ],
+      "story": [
+        "Publicans and sinners draw near to hear Jesus. The Pharisees and scribes murmur, “This man receiveth sinners, and eateth with them” (1–2).",
+        "A shepherd leaves the ninety and nine, goes after the one lost sheep until he finds it, and carries it home rejoicing. There is joy in heaven over one sinner that repenteth (3–7).",
+        "A woman lights a candle and sweeps the house until she finds her lost piece of silver. There is joy before the angels of God (8–10).",
+        "A younger son takes his share, wastes it in a far country, and ends up feeding swine. He comes to himself and heads home to confess (11–19).",
+        "His father sees him a great way off, runs, and kisses him, then gives him the best robe, a ring, shoes, and the fatted calf: “this my son was dead, and is alive again” (20–24).",
+        "The elder son is angry and won't go in. The father comes out and pleads: “thy brother was dead, and is alive again; and was lost, and is found” (25–32)."
+      ],
+      "key": {
+        "ref": "Luke 15:20",
+        "text": "And he arose, and came to his father. But when he was yet a great way off, his father saw him, and had compassion, and ran, and fell on his neck, and kissed him."
+      },
+      "big": "God seeks the lost and rejoices when one sinner repents. Any man who comes to himself and comes home is met by a running Father and restored as a son, not a hired servant. And grace is for the proud elder brother too, if he'll come in."
+    }
+  },
+  {
+    "id": "luke-16",
+    "type": "chapter",
+    "book": "Luke",
+    "ch": 16,
+    "date": "2026-10-29",
+    "title": "Luke 16",
+    "sub": "Ye cannot serve God and mammon",
+    "about": "Jesus tells of a dishonest steward who planned ahead, teaches faithfulness with money and warns that no man can serve two masters, rebukes the covetous Pharisees, and tells of a rich man and a beggar named Lazarus on both sides of death.",
+    "tags": [
+      "Money",
+      "Faithfulness",
+      "Idolatry",
+      "Marriage",
+      "Eternity",
+      "The Word"
+    ],
+    "url": "studies/luke-16.html",
+    "overview": {
+      "where": "On Jesus' last journey toward Jerusalem, teaching His disciples while the Pharisees listen",
+      "when": "Late in Jesus' ministry, the same day as Luke 15, a few months before the cross",
+      "people": [
+        "jesus",
+        "disciples",
+        "pharisees",
+        "rich-man",
+        "lazarus-the-beggar",
+        "abraham",
+        "moses",
+        "john-the-baptist",
+        "angels"
+      ],
+      "places": [
+        "abrahams-bosom",
+        "hell",
+        "heaven"
+      ],
+      "story": [
+        "A steward about to be fired calls in his master's debtors and cuts their bills, to make friends for later. His master praises his shrewdness (1–8).",
+        "Use money to make friends for eternity. He that is faithful in least is faithful in much. “Ye cannot serve God and mammon” (9–13).",
+        "The covetous Pharisees deride Jesus. He says God knows their hearts, the law stands to the smallest tittle, and a man who puts away his wife to marry another commits adultery (14–18).",
+        "A rich man feasts every day while a sick beggar named Lazarus lies at his gate. Both die: Lazarus is carried to Abraham's bosom, and the rich man is in torment in hell (19–23).",
+        "The rich man begs for water, but a great gulf is fixed and no one can cross (24–26).",
+        "He begs that Lazarus warn his five brothers. Abraham: “They have Moses and the prophets”; if they won't hear them, they won't believe though one rose from the dead (27–31)."
+      ],
+      "key": {
+        "ref": "Luke 16:13",
+        "text": "No servant can serve two masters: for either he will hate the one, and love the other; or else he will hold to the one, and despise the other. Ye cannot serve God and mammon."
+      },
+      "big": "Money is a tool, not a master. Use it now for what lasts, be faithful in little things, and serve God alone. Death fixes a man's place forever, and God has already spoken in His Word, so the time to hear and turn is today."
+    }
   }
 ];
