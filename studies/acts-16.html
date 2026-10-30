@@ -1,0 +1,600 @@
+<!doctype html>
+<html lang="en" data-theme="night">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Acts 16</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="../assets/fonts.css">
+<link rel="stylesheet" href="../assets/deck.css">
+<link rel="stylesheet" href="../assets/themes.css">
+<style>
+/* ac16-stop: a closed door on the map (the Spirit said no, twice) */
+.ac16-stop { opacity: 0; transition: opacity .8s ease; }
+.slide:has(.ac16-gostop.on) .ac16-stop { opacity: 1; }
+.ac16-stop circle { fill: var(--danger); stroke: var(--bg); stroke-width: 3; }
+.ac16-stop path { stroke: var(--on-accent); stroke-width: 4; stroke-linecap: round; fill: none; }
+.ac16-stop text { fill: var(--ink); font: 700 26px var(--sans); paint-order: stroke; stroke: var(--bg); stroke-width: 5px; }
+
+/* ac16-prison: night in the inner prison; two men singing, then the earthquake (v25-26) */
+.ac16-sky { fill: var(--on-glow); }
+.ac16-wall { fill: color-mix(in srgb, var(--glow) 9%, var(--on-glow)); stroke: color-mix(in srgb, var(--glow) 40%, transparent); stroke-width: 3; }
+.ac16-in { fill: color-mix(in srgb, var(--on-glow) 70%, black); }
+.ac16-man { fill: var(--glow); }
+.ac16-door { fill: var(--leather); stroke: var(--leather-light); stroke-width: 3; transition: transform 1.1s cubic-bezier(.3,.7,.3,1) .5s; transform-box: fill-box; }
+.ac16-beam { fill: var(--leather-light); transform-box: fill-box; transform-origin: 0 50%; transition: transform 1.1s ease .6s, opacity 1.2s ease .6s; }
+.ac16-chain { stroke: var(--glow); stroke-width: 2.5; stroke-dasharray: 5 4; opacity: .7; transition: opacity .6s ease .5s; }
+.ac16-light { fill: url(#ac16-glow); opacity: 0; transition: opacity 1.2s ease .8s; }
+.ac16-crack { fill: none; stroke: var(--glow); stroke-width: 2.5; stroke-linecap: round; stroke-dasharray: 1; stroke-dashoffset: 1; transition: stroke-dashoffset .5s ease .2s; }
+.ac16-note { fill: var(--glow); font: 700 30px var(--serif); opacity: 0; }
+.slide.active .ac16-note { animation: ac16-rise 4.2s ease-in infinite; animation-delay: calc(var(--k) * -1.05s); }
+@keyframes ac16-rise { 0% { opacity: 0; transform: translateY(0); } 15% { opacity: .95; } 80% { opacity: .5; } 100% { opacity: 0; transform: translateY(-120px); } }
+.split:has(.ac16-quakego.on) .ac16-cell { animation: ac16-shake .55s linear 3; }
+@keyframes ac16-shake { 0%, 100% { transform: translate(0, 0); } 20% { transform: translate(-6px, 3px); } 40% { transform: translate(6px, -3px); } 60% { transform: translate(-5px, -2px); } 80% { transform: translate(5px, 2px); } }
+.split:has(.ac16-quakego.on) .ac16-door.l { transform: translateX(-34px) skewY(-4deg); }
+.split:has(.ac16-quakego.on) .ac16-door.r { transform: translateX(34px) skewY(4deg); }
+.split:has(.ac16-quakego.on) .ac16-beam { transform: rotate(-32deg); opacity: .5; }
+.split:has(.ac16-quakego.on) .ac16-chain { opacity: 0; }
+.split:has(.ac16-quakego.on) .ac16-light { opacity: 1; }
+.split:has(.ac16-quakego.on) .ac16-crack { stroke-dashoffset: 0; }
+.split:has(.ac16-quakego.on) .ac16-note { animation: none; opacity: 0; }
+
+/* ac16-two: two very different nights, one grace (Lydia and the jailor) */
+.ac16-two { display: grid; grid-template-columns: 1fr 1fr; gap: .8rem 1.4rem; margin: .3em 0 .8em; }
+@media (max-width: 640px) { .ac16-two { grid-template-columns: 1fr; } }
+.ac16-card { padding: .7em 1em; border: 1.5px solid var(--line-strong); border-radius: 10px; background: var(--surface); }
+.ac16-card h3 { font: 600 clamp(1.15rem, 1rem + .7vw, 1.6rem) var(--serif); color: var(--accent-hot); margin-bottom: .25em; }
+.ac16-card ul { list-style: none; padding: 0; margin: 0; font-size: clamp(.92rem, .85rem + .4vw, 1.2rem); line-height: 1.45; color: var(--ink-soft); }
+.ac16-card li b { color: var(--ink); font-weight: 600; }
+.ac16-same { text-align: center; font: 300 clamp(1.3rem, 1rem + 1.6vw, 2.2rem)/1.2 var(--serif); color: var(--accent-hot); margin: .2em 0 .6em; }
+</style>
+</head>
+<body>
+<main class="deck" id="deck">
+
+<!-- ======================= OPENING ======================= -->
+<section class="slide title">
+  <div class="inner">
+    <div class="emblem rise"></div>
+    <h1 class="rise" style="--d:1">Acts 16</h1>
+    <p class="sub rise" style="--d:3">Midnight in Philippi</p>
+    <p class="tag rise" style="--d:5">The second journey begins. Doors close, a call comes from Macedonia, and in a Roman prison at midnight a jailor asks the question every man eventually asks.</p>
+  </div>
+</section>
+
+<section class="slide watch">
+  <div class="inner">
+    <h2 class="rise">Things to watch for</h2>
+    <p class="lede rise" style="--d:1">Keep these questions in the back of your mind as we read. We'll come back to every one of them at the end.</p>
+    <ol class="seeds">
+      <li class="step"><span class="topic">Guidance</span><span class="seed-q">How did God steer Paul when his plans were blocked?</span></li>
+      <li class="step"><span class="topic">Salvation</span><span class="seed-q">What must a man do to be saved?</span></li>
+      <li class="step"><span class="topic">A new heart</span><span class="seed-q">Who opened Lydia's heart?</span></li>
+      <li class="step"><span class="topic">Trouble</span><span class="seed-q">What did Paul and Silas do at midnight?</span></li>
+      <li class="step"><span class="topic">Despair</span><span class="seed-q">What did Paul say to the jailor who thought it was all over?</span></li>
+      <li class="step"><span class="topic">A new life</span><span class="seed-q">What happened to the jailor and his house?</span></li>
+    </ol>
+  </div>
+</section>
+
+<!-- ======================= PART ONE: CLOSED DOORS ======================= -->
+<section class="slide part">
+  <div class="inner">
+    <p class="part-n rise">Part one</p>
+    <h2 class="rise" style="--d:1">Closed doors, then a call</h2>
+    <p class="range rise" style="--d:2">Verses 1–10</p>
+    <div class="rule"></div>
+    <p class="hook rise" style="--d:4">A young man joins the team, and God says no, and no, and then yes.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="1-5" data-hl="named Timotheus|delivered them the decrees for to keep"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="1-2" data-hl="named Timotheus|well reported of by the brethren"></blockquote>
+    <h2 class="rise" style="--d:1">Timothy: a faith passed down</h2>
+    <div class="chains">
+      <div class="chain step"><span class="who-chip">Lois, his grandmother</span><span class="said">passed on her faith to</span><span class="who-chip">Eunice, his mother</span><span class="said">who raised</span><span class="who-chip">Timothy</span><span class="said">who joined</span><span class="who-chip jesus">Paul</span></div>
+    </div>
+    <blockquote class="quote step"><p>“When I call to remembrance the unfeigned faith that is in thee, which dwelt first in thy grandmother Lois, and thy mother Eunice; and I am persuaded that in thee also.”</p><cite>2 Timothy 1:5</cite></blockquote>
+    <p class="note step">His mother was a Jewish believer. His father was a Greek, and he isn't named. A man doesn't need a perfect home to be useful to God. And if you're a father, you are a link in a chain like this one.</p>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="3" data-hl="circumcised him because of the Jews"></blockquote>
+    <h2 class="rise" style="--d:1">Timothy, but not Titus</h2>
+    <div class="columns">
+      <div class="col law rise" style="--d:2">
+        <p class="who">Titus</p>
+        <h3>Pressed to be circumcised</h3>
+        <p>Some insisted it was required. Paul said no: “neither Titus… was compelled to be circumcised” (Galatians 2:3).</p>
+      </div>
+      <div class="col grace step">
+        <p class="who">Timothy</p>
+        <h3>Chose it, to reach people</h3>
+        <p>Nobody said it saved him. Paul did it so that Jews who knew Timothy's Greek father would hear him.</p>
+      </div>
+    </div>
+    <p class="note step">This is what Acts 15 settled: circumcision can't save anyone, so it's never <em>required</em>. But a man who is free can also give up a right out of love. Verse 4 says they carried the council's letter to the churches as they went.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="6-8" data-hl="forbidden of the Holy Ghost to preach the word in Asia|the Spirit suffered them not"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="6-7" data-hl="forbidden of the Holy Ghost|the Spirit suffered them not"></blockquote>
+    <div class="split">
+      <div class="stage">
+        <svg data-world viewBox="520 170 330 210" style="max-height:52vh" data-towns="Antioch!:r, Tarsus:t, Lystra:l, Antioch in Pisidia:t, Ephesus:l, Troas*" role="img" aria-label="Map of Asia Minor. Paul's team goes from Antioch through Cilicia to Lystra and Pisidian Antioch. Two doors are closed, Asia to the west and Bithynia to the north, and they turn northwest to Troas.">
+          <path class="map-route j2 r1" data-via="Antioch, @36.2 36.9, Tarsus, Derbe, Lystra, Iconium, Antioch in Pisidia"/>
+          <path class="map-route j2 r2" data-via="Antioch in Pisidia, @29.4 39.1, @28.0 39.9, Troas"/>
+          <g class="ac16-stop" transform="translate(612 262) scale(.363)"><circle r="14"/><path d="M-6 -6 L6 6 M6 -6 L-6 6"/><text x="-24" y="38" text-anchor="end">Asia: no</text></g>
+          <g class="ac16-stop" transform="translate(672 214) scale(.363)"><circle r="14"/><path d="M-6 -6 L6 6 M6 -6 L-6 6"/><text x="-24" y="-18" text-anchor="end">Bithynia: no</text></g>
+        </svg>
+      </div>
+      <div>
+        <h2 class="rise" style="--d:1">No, and no again</h2>
+        <p class="note step map-go1">They set out from Antioch with Silas, and Timothy joined them at Lystra.</p>
+        <p class="note step ac16-gostop">Then two closed doors. The Holy Ghost forbade them to preach in Asia, and when they tried for Bithynia, <em>“the Spirit suffered them not.”</em> We aren't told how.</p>
+        <p class="note step map-go2">So they walked on northwest to Troas, by the sea. God steers a man who is already moving, and a closed door is sometimes God being kind.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="slide verse" data-v="9-10" data-hl="Come over into Macedonia, and help us|the Lord had called us"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="9" data-hl="Come over into Macedonia, and help us"></blockquote>
+    <div class="split">
+      <div class="stage">
+        <svg data-world viewBox="425 170 210 170" style="max-height:52vh" data-towns="Troas*, Samothracia:t, Neapolis:r, Philippi!, Thessalonica, Athens" role="img" aria-label="Map of the Aegean. Paul sails from Troas in Asia, past the island of Samothrace, to Neapolis, and walks to Philippi in Macedonia, the first step of the gospel into Europe.">
+          <path class="map-route j2" data-via="Troas, @26.0 39.7, @25.6 40.05, Samothracia, Neapolis, Philippi"/>
+        </svg>
+      </div>
+      <div>
+        <h2 class="rise" style="--d:1">The gospel steps onto a new continent</h2>
+        <p class="note rise" style="--d:2">A man of Macedonia begged for help in Paul's dream, and they sailed at once: Troas, in Asia, to Philippi, in Europe.</p>
+        <p class="note step">Look at the little word <em>“we.”</em> From verse 10 the writer, Luke the physician, is in the boat, telling it as an eyewitness.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ======================= PART TWO: PHILIPPI ======================= -->
+<section class="slide part">
+  <div class="inner">
+    <p class="part-n rise">Part two</p>
+    <h2 class="rise" style="--d:1">Philippi</h2>
+    <p class="range rise" style="--d:2">Verses 11–24</p>
+    <div class="rule"></div>
+    <p class="hook rise" style="--d:4">A businesswoman, a slave girl, and a beating they didn't deserve.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="11-12" data-hl="a straight course to Samothracia|the chief city of that part of Macedonia, and a colony"></section>
+<section class="slide verse" data-v="13-15" data-hl="by a river side, where prayer was wont to be made|whose heart the Lord opened|she was baptized, and her household"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="14" data-hl="whose heart the Lord opened"></blockquote>
+    <div class="split">
+      <div class="stage">
+        <svg data-world viewBox="440 150 230 150" style="max-height:48vh" data-towns="Thyatira*:b, Troas:l, Philippi!:t" role="img" aria-label="Map showing Thyatira in Asia, where Lydia came from, and Philippi in Macedonia, where she met Paul.">
+          <path class="map-way" data-via="Thyatira, Troas, Samothracia, Neapolis, Philippi"/>
+        </svg>
+      </div>
+      <div>
+        <h2 class="rise" style="--d:1">Lydia: the Lord opened her heart</h2>
+        <p class="note rise" style="--d:2">Lydia sold “purple,” costly dyed cloth, and had come from Thyatira. She already worshipped God and came to the riverside to pray.</p>
+        <p class="note step"><em>“The Lord opened”</em> her heart, and she <em>“attended”</em>: she listened and believed. Then she was baptized, a step that pictures her faith but doesn't save her.</p>
+        <p class="note step">No earthquake, no fear. If your story is a quiet one, it is the same grace.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="slide verse" data-v="16-18" data-hl="a spirit of divination|These men are the servants of the most high God|I command thee in the name of Jesus Christ to come out of her"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="16" data-hl="brought her masters much gain by soothsaying"></blockquote>
+    <h2 class="rise" style="--d:1">A girl somebody else owned</h2>
+    <div class="talk">
+      <p class="rise" style="--d:2"><small>The girl, for many days</small>These men are the servants of the most high God, which shew unto us the way of salvation.</p>
+      <p class="reply step"><small>Paul, grieved</small>I command thee in the name of Jesus Christ to come out of her.<br><span class="flag">not a thank-you</span></p>
+    </div>
+    <p class="note step">She was a slave, and her owners made money from her bondage. What she shouted was true, but from the wrong source. Paul was <em>grieved</em>, not angry. He saw a person being used.</p>
+    <p class="note step">Some of us know being used by someone who profits while we stay stuck. In Jesus' name she was free <em>“the same hour.”</em> Nothing that owns you is stronger than He is.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="19-21" data-hl="the hope of their gains was gone|do exceedingly trouble our city"></section>
+<section class="slide verse" data-v="22-24" data-hl="laid many stripes upon them|made their feet fast in the stocks"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="23-24" data-hl="laid many stripes upon them|made their feet fast in the stocks"></blockquote>
+    <h2 class="rise" style="--d:1">All for doing the right thing</h2>
+    <ol class="stairs down" style="--n:6" aria-label="Six steps down: dragged to the marketplace, brought before the magistrates, the crowd turns, clothes torn off, many stripes, the inner prison with feet in the stocks.">
+      <li style="--k:0"><b>dragged</b>into the marketplace (19)</li>
+      <li style="--k:1"><b>accused</b>before the magistrates (20)</li>
+      <li style="--k:2"><b>the crowd</b>rose up against them (22)</li>
+      <li style="--k:3"><b>stripped</b>clothes torn off (22)</li>
+      <li style="--k:4"><b>beaten</b>many stripes (23)</li>
+      <li style="--k:5"><b>the inner prison</b>feet in the stocks (24)</li>
+    </ol>
+    <p class="note step">Paul and Silas had freed a girl and preached the gospel. For that they were beaten with rods, with no trial, and chained in the darkest cell with their feet locked wide apart in the stocks.</p>
+    <p class="note step">Sometimes doing right costs you. The job, the friends, the old crowd. They weren't being punished by God. They were exactly where He sent them, and it was dark.</p>
+  </div>
+</section>
+
+<!-- ======================= PART THREE: MIDNIGHT ======================= -->
+<section class="slide part">
+  <div class="inner">
+    <p class="part-n rise">Part three</p>
+    <h2 class="rise" style="--d:1">Midnight</h2>
+    <p class="range rise" style="--d:2">Verses 25–34</p>
+    <div class="rule"></div>
+    <p class="hook rise" style="--d:4">Chains, a song, an earthquake, and a question.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="25-26" data-hl="at midnight Paul and Silas prayed, and sang praises unto God|every one’s bands were loosed"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="25" data-hl="Paul and Silas prayed, and sang praises unto God|the prisoners heard them"></blockquote>
+    <div class="split">
+      <div class="stage">
+        <svg viewBox="0 0 600 380" role="img" aria-label="Night in the inner prison. Two men sit with their feet in the stocks, praying and singing, and music notes rise. Then an earthquake shakes the cell, the doors swing open, and the stocks break.">
+          <defs>
+            <radialGradient id="ac16-glow"><stop offset="0" style="stop-color:var(--glow)"/><stop offset=".5" stop-opacity=".35" style="stop-color:var(--glow)"/><stop offset="1" stop-opacity="0" style="stop-color:var(--glow)"/></radialGradient>
+            <clipPath id="ac16-frame"><rect x="0" y="0" width="600" height="380" rx="8"/></clipPath>
+          </defs>
+          <g clip-path="url(#ac16-frame)">
+            <rect class="ac16-sky" x="0" y="0" width="600" height="380"/>
+            <g class="ac16-cell">
+              <rect class="ac16-wall" x="70" y="40" width="460" height="300" rx="4"/>
+              <rect class="ac16-in" x="110" y="80" width="380" height="260"/>
+              <ellipse class="ac16-light" cx="300" cy="230" rx="170" ry="140"/>
+              <rect class="ac16-door l" x="260" y="150" width="40" height="190"/>
+              <rect class="ac16-door r" x="300" y="150" width="40" height="190"/>
+              <path class="ac16-crack" pathLength="1" d="M110 80 L135 130 L120 175 L150 230 M490 80 L470 140 L488 200 L462 260"/>
+              <g class="ac16-man"><circle cx="190" cy="236" r="19"/><path d="M168 332 L172 262 Q190 252 208 262 L212 332 Z"/></g>
+              <g class="ac16-man"><circle cx="410" cy="236" r="19"/><path d="M388 332 L392 262 Q410 252 428 262 L432 332 Z"/></g>
+              <rect class="ac16-beam" x="150" y="316" width="300" height="14" rx="3"/>
+              <line class="ac16-chain" x1="190" y1="300" x2="190" y2="316"/><line class="ac16-chain" x1="410" y1="300" x2="410" y2="316"/>
+              <text class="ac16-note" style="--k:0" x="205" y="205">♪</text>
+              <text class="ac16-note" style="--k:1" x="250" y="205">♫</text>
+              <text class="ac16-note" style="--k:2" x="330" y="205">♪</text>
+              <text class="ac16-note" style="--k:3" x="380" y="205">♫</text>
+            </g>
+          </g>
+        </svg>
+      </div>
+      <div>
+        <h2 class="rise" style="--d:1">A song in the inner prison</h2>
+        <p class="note rise" style="--d:2">Their backs were cut open, their feet were locked in wood, and it was midnight. And they <em>prayed, and sang praises unto God.</em> Loud enough that <em>“the prisoners heard them.”</em></p>
+        <p class="note step ac16-quakego">Then <em>“suddenly there was a great earthquake.”</em> Every door opened and every man's chains came loose.</p>
+        <p class="note step">Somebody is always listening to how you handle your night: your kids, your coworkers, the guy two cells down.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="25" data-hl="prayed, and sang praises unto God"></blockquote>
+    <p class="saying rise" style="--d:1">They sang <em>before</em> the shaking.</p>
+    <blockquote class="quote step"><p>“I waited patiently for the LORD; and he inclined unto me, and heard my cry. He brought me up also out of an horrible pit, out of the miry clay, and set my feet upon a rock, and established my goings. And he hath put a new song in my mouth, even praise unto our God: many shall see it, and fear, and shall trust in the LORD.”</p><cite>Psalm 40:1–3</cite></blockquote>
+    <p class="note step">It isn't a magic trick: sing and the doors open. Paul spent years in prison cells and some doors stayed shut. The point is where their eyes were. Praying and singing in the dark, they were trusting a God who was bigger than the stocks.</p>
+    <p class="note step">Years later Paul wrote this very church from another cell: <em>“Rejoice in the Lord alway: and again I say, Rejoice”</em> (Philippians 4:4). Start with one honest prayer today.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="27-29" data-hl="he drew out his sword, and would have killed himself|Do thyself no harm: for we are all here"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="27-28" data-hl="would have killed himself|Do thyself no harm: for we are all here"></blockquote>
+    <h2 class="rise" style="--d:1">The jailor's night</h2>
+    <ol class="timeline rise" style="--d:2">
+      <li><b>Evening</b><span>The jailor locks them in the inner prison (23–24)</span></li>
+      <li><b>Midnight</b><span>Prayer and praise (25)</span></li>
+      <li><b>The quake</b><span>Doors open, chains loose (26)</span></li>
+      <li class="lit"><b>The sword</b><span>He thinks they've escaped, and draws it (27)</span></li>
+      <li class="lit"><b>“Do thyself no harm”</b><span>Paul cries out (28)</span></li>
+      <li class="wait"><b>Daybreak</b><span>The magistrates send word (35)</span></li>
+    </ol>
+    <p class="note step">He believed the prisoners had fled, and Roman guards who lost prisoners were put to death (see Acts 12:19). In one second he saw his whole life as over, and he reached for the sword.</p>
+    <p class="note step">Paul had every reason to let him. Instead: <em>“Do thyself no harm: for we are all here.”</em> A man in the dark can be wrong about how it ends. If you ever stand where he stood, tell someone today. In the US you can call or text 988.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="30-31" data-hl="Sirs, what must I do to be saved?|Believe on the Lord Jesus Christ, and thou shalt be saved"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="30-31" data-hl="Sirs, what must I do to be saved?|Believe on the Lord Jesus Christ, and thou shalt be saved"></blockquote>
+    <h2 class="rise" style="--d:1">The question every man asks</h2>
+    <div class="talk">
+      <p class="rise" style="--d:2"><small>The jailor, trembling</small>Sirs, what must I do to be saved?</p>
+      <p class="reply step"><small>Paul and Silas</small>Believe on the Lord Jesus Christ, and thou shalt be saved, and thy house.</p>
+    </div>
+    <p class="note step">Note his word, <em>“Sirs,”</em> or <em>“Lords.”</em> A moment ago he had them in the stocks. Now he's on his knees. He asks what he must <em>do</em>, and the answer isn't a task. It's a Person.</p>
+    <p class="note step">He had no clean record to bring, nothing to offer, a sword in his hand a minute ago. The answer was the same as for Lydia, and for you.</p>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="31" data-hl="Believe on the Lord Jesus Christ, and thou shalt be saved"></blockquote>
+    <div class="ifthen rise" style="--d:1">
+      <div class="if"><small>If</small>you <em>believe</em> on the Lord Jesus Christ,</div>
+      <span class="arrow" aria-hidden="true">→</span>
+      <div class="then"><small>then</small>thou shalt be saved.</div>
+    </div>
+    <blockquote class="quote step"><p>“For whosoever shall call upon the name of the Lord shall be saved.”</p><cite>Romans 10:13</cite></blockquote>
+    <p class="note step"><em>Whosoever.</em> The jailor, the slave girl, you. Trust Jesus Christ as your Lord and Saviour, and you are saved: not “maybe,” not “for now.” <em>Thou shalt be saved</em> is a promise from the One who can keep it.</p>
+    <p class="note step">And <em>“thy house.”</em> It doesn't mean his faith saves his family. Verse 32 says they all heard the word, and verse 34 says they all believed. But a believing man can be the doorway for his whole household.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="32-34" data-hl="was baptized, he and all his, straightway|rejoiced, believing in God with all his house"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="33-34" data-hl="washed their stripes|was baptized, he and all his, straightway|rejoiced, believing in God with all his house"></blockquote>
+    <h2 class="rise" style="--d:1">Two nights, one grace</h2>
+    <div class="ac16-two">
+      <div class="ac16-card rise" style="--d:2">
+        <h3>Lydia</h3>
+        <ul><li><b>Where:</b> a riverbank</li><li><b>When:</b> a Sabbath morning</li><li><b>How:</b> quietly, “the Lord opened” her heart</li><li><b>Then:</b> baptized, and opened her home</li></ul>
+      </div>
+      <div class="ac16-card step">
+        <h3>The jailor</h3>
+        <ul><li><b>Where:</b> a prison</li><li><b>When:</b> midnight</li><li><b>How:</b> earthquake, a sword, terror</li><li><b>Then:</b> baptized “the same hour,” and set a table</li></ul>
+      </div>
+    </div>
+    <p class="ac16-same step">Same Lord. Same grace. Same way: believe.</p>
+    <p class="note step">Look at the first thing the jailor did: he <em>washed their stripes</em>, tending the wounds of men he had chained. Then they baptized him, a believer's step that pictures what had already happened. And he <em>“rejoiced.”</em></p>
+  </div>
+</section>
+
+<!-- ======================= PART FOUR: MORNING ======================= -->
+<section class="slide part">
+  <div class="inner">
+    <p class="part-n rise">Part four</p>
+    <h2 class="rise" style="--d:1">Morning</h2>
+    <p class="range rise" style="--d:2">Verses 35–40</p>
+    <div class="rule"></div>
+    <p class="hook rise" style="--d:4">The magistrates want it all quietly forgotten. Paul says no.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="35-37" data-hl="They have beaten us openly uncondemned, being Romans|let them come themselves and fetch us out"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="37" data-hl="beaten us openly uncondemned, being Romans"></blockquote>
+    <h2 class="rise" style="--d:1">“Being Romans”</h2>
+    <div class="chains">
+      <div class="chain step"><span class="who-chip jesus">Paul</span><span class="said">“let them come themselves”</span><span class="who-chip">the serjeants</span><span class="said">told</span><span class="who-chip">the magistrates</span><span class="said">who feared, and came and besought them</span></div>
+    </div>
+    <p class="note step">Roman law didn't allow a citizen to be beaten without a trial. Paul and Silas were Roman citizens, and the magistrates had broken the law in front of everyone. Now <em>they</em> were the frightened ones.</p>
+    <p class="note step">Scripture doesn't say why Paul waited until now. It very likely protected the young church left behind. He didn't take revenge, though. He made them come and walk the two men out themselves, and he left a town that knew they'd been wronged.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="38-40" data-hl="they feared, when they heard that they were Romans|entered into the house of Lydia"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="40" data-hl="entered into the house of Lydia|they comforted them"></blockquote>
+    <div class="split">
+      <div class="stage">
+        <svg data-world viewBox="425 170 210 170" style="max-height:50vh" data-towns="Philippi!, Amphipolis:b, Thessalonica*, Athens, Corinth" role="img" aria-label="Map of Macedonia and Greece. From Philippi the road goes on to Amphipolis and Thessalonica.">
+          <path class="map-route j2" data-via="Troas, @26.0 39.7, @25.6 40.05, Samothracia, Neapolis, Philippi"/>
+          <path class="map-route j1 r1" data-via="Philippi, Amphipolis, Thessalonica"/>
+        </svg>
+      </div>
+      <div>
+        <h2 class="rise" style="--d:1">The church at Philippi begins</h2>
+        <p class="note rise" style="--d:2">They went back to Lydia's house, <em>“comforted”</em> the believers, and left. Philippi now had a church.</p>
+        <blockquote class="quote step"><p>“Being confident of this very thing, that he which hath begun a good work in you will perform it until the day of Jesus Christ:”</p><cite>Philippians 1:6</cite></blockquote>
+        <p class="note step map-go1">Paul later wrote that to this church. Next stop: Thessalonica. God finishes what He starts, in you too.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ======================= CLOSING ======================= -->
+<section class="slide remember">
+  <div class="inner">
+    <h2 class="rise">Points to remember</h2>
+    <ol class="seeds">
+      <li class="step"><span class="topic">Guidance</span><span class="seed-q">“The Spirit suffered them not” <cite>16:7</cite></span><span class="take">A closed door isn't God gone. He steers men who keep walking, and He often says yes after no.</span></li>
+      <li class="step"><span class="topic">Salvation</span><span class="seed-q">“Believe on the Lord Jesus Christ, and thou shalt be saved” <cite>16:31</cite></span><span class="take">Not something to do. Someone to trust. It's for whosoever, and it's a promise.</span></li>
+      <li class="step"><span class="topic">A new heart</span><span class="seed-q">“Whose heart the Lord opened” <cite>16:14</cite></span><span class="take">God opens the heart. You listen and believe. Quiet stories count just as much.</span></li>
+      <li class="step"><span class="topic">Trouble</span><span class="seed-q">“Paul and Silas prayed, and sang praises unto God” <cite>16:25</cite></span><span class="take">Pray and praise in your dark hour. People are listening, and God is bigger than the stocks.</span></li>
+      <li class="step"><span class="topic">Despair</span><span class="seed-q">“Do thyself no harm: for we are all here” <cite>16:28</cite></span><span class="take">When it feels like the end, you are wrong about the ending. Tell someone today.</span></li>
+      <li class="step"><span class="topic">A new life</span><span class="seed-q">“Rejoiced, believing in God with all his house” <cite>16:34</cite></span><span class="take">One night turned a hard man into a washed, baptized, rejoicing believer with a table full of family.</span></li>
+    </ol>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 1 of 6</p>
+      <span class="topic">Guidance</span>
+      <h2>How did God steer Paul when his plans were blocked?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="6"></blockquote>
+      <blockquote class="quote step" data-q="7"></blockquote>
+      <blockquote class="quote step" data-q="9"></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>He closed two doors, Asia and Bithynia, and then opened the right one with a vision of a man of Macedonia. Paul didn't sit still. He kept moving, and God steered him where He wanted him. The closed doors were part of the guidance.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 2 of 6</p>
+      <span class="topic">Salvation</span>
+      <h2>What must a man do to be saved?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="30"></blockquote>
+      <blockquote class="quote step" data-q="31"></blockquote>
+      <blockquote class="quote step"><p>“For whosoever shall call upon the name of the Lord shall be saved.”</p><cite>Romans 10:13</cite></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>Believe on the Lord Jesus Christ. That's it. The jailor asked what he must do, and the answer was to trust a Person, not to perform a task. It is for whosoever, and it comes with a promise: “thou shalt be saved.”</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 3 of 6</p>
+      <span class="topic">A new heart</span>
+      <h2>Who opened Lydia's heart?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="13"></blockquote>
+      <blockquote class="quote step" data-q="14"></blockquote>
+      <blockquote class="quote step" data-q="15" data-hl="she was baptized, and her household"></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>The Lord did. She was already worshipping and praying, and when Paul spoke, the Lord opened her heart so that she attended to the message, believed, and was baptized. It was a quiet conversion, and just as real as the jailor's.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 4 of 6</p>
+      <span class="topic">Trouble</span>
+      <h2>What did Paul and Silas do at midnight?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="24"></blockquote>
+      <blockquote class="quote step" data-q="25"></blockquote>
+      <blockquote class="quote step" data-q="26"></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>They prayed and sang praises to God, beaten, bleeding and in the stocks, while the other prisoners listened. God shook the prison. The point isn't a formula. It's that they trusted God in the dark, and everyone around them saw it.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 5 of 6</p>
+      <span class="topic">Despair</span>
+      <h2>What did Paul say to the jailor who thought it was all over?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="27"></blockquote>
+      <blockquote class="quote step" data-q="28"></blockquote>
+      <blockquote class="quote step" data-q="29"></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>“Do thyself no harm: for we are all here.” The jailor thought his life was finished, but he was wrong about the ending. Paul stopped him with a loud voice, and that same night he was saved. If you are in that dark place, tell someone today.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 6 of 6</p>
+      <span class="topic">A new life</span>
+      <h2>What happened to the jailor and his house?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="32"></blockquote>
+      <blockquote class="quote step" data-q="33"></blockquote>
+      <blockquote class="quote step" data-q="34"></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>They all heard the word, and they all believed. The jailor washed the wounds of the men he'd chained, was baptized that same hour, set a meal before them, and rejoiced with his whole house. One night changed a man and his entire family.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide prayer">
+  <div class="inner">
+    <div class="emblem rise"></div>
+    <h2 class="rise" style="--d:1">Prayer requests</h2>
+    <p class="ask-line rise" style="--d:2">What can we pray about for you today?</p>
+    <blockquote class="quote rise" style="--d:4"><p>“I waited patiently for the LORD; and he inclined unto me, and heard my cry.”</p><cite>Psalm 40:1</cite></blockquote>
+  </div>
+</section>
+
+</main>
+
+<script>
+// King James Version, Acts chapter 16
+const V = {
+  1: "Then came he to Derbe and Lystra: and, behold, a certain disciple was there, named Timotheus, the son of a certain woman, which was a Jewess, and believed; but his father was a Greek:",
+  2: "Which was well reported of by the brethren that were at Lystra and Iconium.",
+  3: "Him would Paul have to go forth with him; and took and circumcised him because of the Jews which were in those quarters: for they knew all that his father was a Greek.",
+  4: "And as they went through the cities, they delivered them the decrees for to keep, that were ordained of the apostles and elders which were at Jerusalem.",
+  5: "And so were the churches established in the faith, and increased in number daily.",
+  6: "Now when they had gone throughout Phrygia and the region of Galatia, and were forbidden of the Holy Ghost to preach the word in Asia,",
+  7: "After they were come to Mysia, they assayed to go into Bithynia: but the Spirit suffered them not.",
+  8: "And they passing by Mysia came down to Troas.",
+  9: "And a vision appeared to Paul in the night; There stood a man of Macedonia, and prayed him, saying, Come over into Macedonia, and help us.",
+  10: "And after he had seen the vision, immediately we endeavoured to go into Macedonia, assuredly gathering that the Lord had called us for to preach the gospel unto them.",
+  11: "Therefore loosing from Troas, we came with a straight course to Samothracia, and the next day to Neapolis;",
+  12: "And from thence to Philippi, which is the chief city of that part of Macedonia, and a colony: and we were in that city abiding certain days.",
+  13: "And on the sabbath we went out of the city by a river side, where prayer was wont to be made; and we sat down, and spake unto the women which resorted thither.",
+  14: "And a certain woman named Lydia, a seller of purple, of the city of Thyatira, which worshipped God, heard us: whose heart the Lord opened, that she attended unto the things which were spoken of Paul.",
+  15: "And when she was baptized, and her household, she besought us, saying, If ye have judged me to be faithful to the Lord, come into my house, and abide there. And she constrained us.",
+  16: "And it came to pass, as we went to prayer, a certain damsel possessed with a spirit of divination met us, which brought her masters much gain by soothsaying:",
+  17: "The same followed Paul and us, and cried, saying, These men are the servants of the most high God, which shew unto us the way of salvation.",
+  18: "And this did she many days. But Paul, being grieved, turned and said to the spirit, I command thee in the name of Jesus Christ to come out of her. And he came out the same hour.",
+  19: "And when her masters saw that the hope of their gains was gone, they caught Paul and Silas, and drew them into the marketplace unto the rulers,",
+  20: "And brought them to the magistrates, saying, These men, being Jews, do exceedingly trouble our city,",
+  21: "And teach customs, which are not lawful for us to receive, neither to observe, being Romans.",
+  22: "And the multitude rose up together against them: and the magistrates rent off their clothes, and commanded to beat them.",
+  23: "And when they had laid many stripes upon them, they cast them into prison, charging the jailor to keep them safely:",
+  24: "Who, having received such a charge, thrust them into the inner prison, and made their feet fast in the stocks.",
+  25: "And at midnight Paul and Silas prayed, and sang praises unto God: and the prisoners heard them.",
+  26: "And suddenly there was a great earthquake, so that the foundations of the prison were shaken: and immediately all the doors were opened, and every one’s bands were loosed.",
+  27: "And the keeper of the prison awaking out of his sleep, and seeing the prison doors open, he drew out his sword, and would have killed himself, supposing that the prisoners had been fled.",
+  28: "But Paul cried with a loud voice, saying, Do thyself no harm: for we are all here.",
+  29: "Then he called for a light, and sprang in, and came trembling, and fell down before Paul and Silas,",
+  30: "And brought them out, and said, Sirs, what must I do to be saved?",
+  31: "And they said, Believe on the Lord Jesus Christ, and thou shalt be saved, and thy house.",
+  32: "And they spake unto him the word of the Lord, and to all that were in his house.",
+  33: "And he took them the same hour of the night, and washed their stripes; and was baptized, he and all his, straightway.",
+  34: "And when he had brought them into his house, he set meat before them, and rejoiced, believing in God with all his house.",
+  35: "And when it was day, the magistrates sent the serjeants, saying, Let those men go.",
+  36: "And the keeper of the prison told this saying to Paul, The magistrates have sent to let you go: now therefore depart, and go in peace.",
+  37: "But Paul said unto them, They have beaten us openly uncondemned, being Romans, and have cast us into prison; and now do they thrust us out privily? nay verily; but let them come themselves and fetch us out.",
+  38: "And the serjeants told these words unto the magistrates: and they feared, when they heard that they were Romans.",
+  39: "And they came and besought them, and brought them out, and desired them to depart out of the city.",
+  40: "And they went out of the prison, and entered into the house of Lydia and when they had seen the brethren, they comforted them, and departed."
+};
+const BOOK = "Acts 16";
+</script>
+<script src="../assets/deck.js"></script>
+</body>
+</html>

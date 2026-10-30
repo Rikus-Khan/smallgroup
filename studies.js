@@ -9318,5 +9318,546 @@ window.STUDIES = [
       },
       "big": "Jesus rose bodily from the dead, just as He and the Scriptures said. He met doubters patiently, restored the man who had denied Him, and sent His followers to tell every nation that sins can be forgiven in His name."
     }
+  },
+  {
+    "id": "acts-01",
+    "type": "chapter",
+    "book": "Acts",
+    "ch": 1,
+    "date": "2026-10-30",
+    "title": "Acts 1",
+    "sub": "Wait for the promise",
+    "about": "Jesus goes back to heaven and leaves His followers a promise and a job. The men He leaves behind are the same ones who ran from Him, and He is not done with them.",
+    "tags": [
+      "The resurrection",
+      "The Holy Spirit",
+      "Witnessing",
+      "His return",
+      "Second chances",
+      "Judas and Peter"
+    ],
+    "url": "studies/acts-01.html",
+    "overview": {
+      "where": "Jerusalem: the Mount of Olives, and an upper room in the city",
+      "when": "About AD 30 to 33, the forty days after the resurrection and the days before Pentecost",
+      "people": [
+        "jesus",
+        "theophilus",
+        "simon-peter",
+        "holy-spirit",
+        "apostles",
+        "the-eleven",
+        "andrew",
+        "philip",
+        "thomas",
+        "bartholomew",
+        "james-son-of-alphaeus",
+        "simon-zelotes",
+        "judas-not-iscariot",
+        "mary",
+        "brethren",
+        "john-the-baptist",
+        "david",
+        "judas-iscariot",
+        "joseph-barsabas",
+        "matthias"
+      ],
+      "places": [
+        "jerusalem",
+        "judaea",
+        "samaria",
+        "galilee",
+        "mount-of-olives",
+        "upper-room",
+        "aceldama"
+      ],
+      "story": [
+        "Luke writes to Theophilus. For forty days the risen Jesus showed Himself alive by many infallible proofs, and told His followers to wait in Jerusalem for the promise of the Father (1–5).",
+        "They ask whether He will now restore the kingdom to Israel. He says the timing is not theirs to know, but they will receive power and be His witnesses in Jerusalem, Judaea, Samaria, and to the uttermost part of the earth (6–8).",
+        "Jesus is taken up in a cloud. Two men in white ask why they stand gazing, and promise that this same Jesus will come back the same way (9–11).",
+        "Back in Jerusalem, the eleven, the women, Mary, and the brothers of Jesus, who once did not believe in Him, pray together in an upper room (12–14).",
+        "About a hundred and twenty believers gather. Peter explains the end of Judas, who betrayed Jesus and fell, and they pray and choose Matthias to take his place among the twelve (15–26)."
+      ],
+      "key": {
+        "ref": "Acts 1:8",
+        "text": "But ye shall receive power, after that the Holy Ghost is come upon you: and ye shall be witnesses unto me both in Jerusalem, and in all Judaea, and in Samaria, and unto the uttermost part of the earth."
+      },
+      "big": "Jesus gives His people a promise and a job: wait for the Spirit, then tell what you have seen, starting right where you are. He starts with failures who came back, and Judas shows that the difference is whether a man takes his failure back to Jesus."
+    }
+  },
+  {
+    "id": "acts-02",
+    "type": "chapter",
+    "book": "Acts",
+    "ch": 2,
+    "date": "2026-10-30",
+    "title": "Acts 2",
+    "sub": "The day the Spirit came",
+    "about": "Fifty days after the cross, the Holy Ghost comes, and Peter, who swore he never knew Jesus, stands up and says His name to thousands.",
+    "tags": [
+      "The Holy Spirit",
+      "Salvation",
+      "Repentance",
+      "Baptism",
+      "The church",
+      "Hope"
+    ],
+    "url": "studies/acts-02.html",
+    "overview": {
+      "where": "Jerusalem, at the feast of Pentecost",
+      "when": "About AD 30 to 33, fifty days after the resurrection",
+      "people": [
+        "jesus",
+        "simon-peter",
+        "holy-spirit",
+        "apostles",
+        "the-eleven",
+        "joel",
+        "david",
+        "the-jews",
+        "christ"
+      ],
+      "places": [
+        "jerusalem",
+        "judaea",
+        "parthians",
+        "mesopotamia",
+        "cappadocia",
+        "pontus",
+        "asia",
+        "phrygia",
+        "egypt",
+        "cyrene",
+        "rome",
+        "crete",
+        "arabians",
+        "temple"
+      ],
+      "story": [
+        "On the day of Pentecost the believers are together. A sound like a rushing mighty wind fills the house, flames sit on each of them, and they speak in other languages as the Spirit gives them utterance (1–4).",
+        "Jews from every nation hear the wonderful works of God, each in his own language. Some are amazed, and others mock and say they are full of new wine (5–13).",
+        "Peter stands up with the eleven. It is only the third hour, so they are not drunk. This is what Joel prophesied: the Spirit poured out on all flesh, and whosoever calls on the name of the Lord shall be saved (14–21).",
+        "Peter preaches Jesus: a man approved of God, crucified by wicked hands according to God's plan, and raised up. David's tomb is still there, but Jesus' tomb is empty, and God has made Him both Lord and Christ (22–36).",
+        "The crowd is pricked in the heart and asks what to do. Peter tells them to repent and be baptized, and about three thousand gladly receive the word and are baptized (37–41).",
+        "The new believers keep to the apostles' teaching, fellowship, the breaking of bread, and prayer. They meet daily, look after one another, and the Lord adds to them daily (42–47)."
+      ],
+      "key": {
+        "ref": "Acts 2:21",
+        "text": "And it shall come to pass, that whosoever shall call on the name of the Lord shall be saved."
+      },
+      "big": "The Holy Ghost comes to live in God's people, and the gospel goes out in every language. Anyone who calls on the Lord is saved. Repentance and faith come first, and baptism follows as the believer's step of obedience. Believers then keep going together every day."
+    }
+  },
+  {
+    "id": "acts-03",
+    "type": "chapter",
+    "book": "Acts",
+    "ch": 3,
+    "date": "2026-10-30",
+    "title": "Acts 3",
+    "sub": "Silver and gold have I none",
+    "about": "Peter and John meet a man who has begged at the temple gate for forty years. They have no money, but they have the name of Jesus.",
+    "tags": [
+      "Giving",
+      "The name of Jesus",
+      "Sin",
+      "Mercy",
+      "Repentance",
+      "Blessing"
+    ],
+    "url": "studies/acts-03.html",
+    "overview": {
+      "where": "The temple in Jerusalem: the Beautiful gate, then Solomon's porch",
+      "when": "Soon after Pentecost, at the ninth hour (about 3 p.m.), about AD 30 to 33",
+      "people": [
+        "simon-peter",
+        "john-the-apostle",
+        "lame-man-healed",
+        "jesus",
+        "pilate",
+        "moses",
+        "abraham"
+      ],
+      "places": [
+        "temple",
+        "beautiful-gate",
+        "solomons-porch"
+      ],
+      "story": [
+        "Peter and John go up to the temple at the hour of prayer. A man lame from birth, laid daily at the Beautiful gate, asks them for money (1–3).",
+        "“Silver and gold have I none; but such as I have give I thee.” In the name of Jesus Christ of Nazareth, Peter lifts him up and he walks, leaps and praises God (4–8).",
+        "The crowd runs to Solomon's porch, amazed. Peter says it was not their power, but Jesus, whom they denied and killed and whom God raised (9–16).",
+        "Peter calls them brethren: they acted in ignorance, and God foretold it all. “Repent ye therefore, and be converted, that your sins may be blotted out” (17–21).",
+        "Moses promised a prophet like himself, and Abraham a blessing for all the families of the earth. God sent His Son first to them, “in turning away every one of you from his iniquities” (22–26)."
+      ],
+      "key": {
+        "ref": "Acts 3:19",
+        "text": "Repent ye therefore, and be converted, that your sins may be blotted out, when the times of refreshing shall come from the presence of the Lord;"
+      },
+      "big": "The name of Jesus can do for a man what money never could. Whatever he has done, he can turn to God, and his sins are wiped clean."
+    }
+  },
+  {
+    "id": "acts-04",
+    "type": "chapter",
+    "book": "Acts",
+    "ch": 4,
+    "date": "2026-10-30",
+    "title": "Acts 4",
+    "sub": "We cannot but speak",
+    "about": "Two men with no schooling are arrested for healing a cripple, and they stand before the council and say there is salvation in no one else.",
+    "tags": [
+      "Opposition",
+      "Only Jesus",
+      "Boldness",
+      "Obeying God",
+      "Prayer",
+      "Fellowship"
+    ],
+    "url": "studies/acts-04.html",
+    "overview": {
+      "where": "The temple court, the council chamber in Jerusalem, then the believers' meeting place",
+      "when": "The day after the healing in Acts 3, about AD 30 to 33",
+      "people": [
+        "simon-peter",
+        "john-the-apostle",
+        "annas",
+        "caiaphas",
+        "sadducees",
+        "lame-man-healed",
+        "apostles",
+        "barnabas"
+      ],
+      "places": [
+        "jerusalem",
+        "temple",
+        "cyprus"
+      ],
+      "story": [
+        "The priests, the captain of the temple and the Sadducees arrest Peter and John for preaching the resurrection, yet about five thousand men believe (1–4).",
+        "Before the council, Peter, filled with the Holy Ghost, says the man was healed by Jesus Christ of Nazareth, the stone the builders rejected. “Neither is there salvation in any other” (5–12).",
+        "The council sees their boldness, knows they are unlearned and ignorant men who had been with Jesus, and can say nothing against the healed man. They forbid them to speak, and Peter answers: “we cannot but speak” (13–22).",
+        "Let go, they pray with the believers: Lord, thou art God. They ask for boldness, not safety, and the place is shaken and they are filled again (23–31).",
+        "The believers are of one heart and one soul, and share so that no one lacks. Joses, called Barnabas, the son of consolation, sells his land and gives it (32–37)."
+      ],
+      "key": {
+        "ref": "Acts 4:12",
+        "text": "Neither is there salvation in any other: for there is none other name under heaven given among men, whereby we must be saved."
+      },
+      "big": "There is one Savior and one name, offered to every man. Men with no polish can stand up for Him if they have been with Jesus, and a family of believers stands with them."
+    }
+  },
+  {
+    "id": "acts-05",
+    "type": "chapter",
+    "book": "Acts",
+    "ch": 5,
+    "date": "2026-10-30",
+    "title": "Acts 5",
+    "sub": "Honest before God",
+    "about": "A couple lies to look generous, the apostles walk out of a locked prison, and a wise teacher warns the council not to fight God.",
+    "tags": [
+      "Honesty",
+      "Sin and confession",
+      "Courage",
+      "Obeying God",
+      "Suffering for Christ",
+      "Joy"
+    ],
+    "url": "studies/acts-05.html",
+    "overview": {
+      "where": "Jerusalem: the temple courts, Solomon's porch, the common prison and the council chamber",
+      "when": "A few years after Pentecost (about AD 31 to 33)",
+      "people": [
+        "ananias",
+        "sapphira",
+        "simon-peter",
+        "apostles",
+        "high-priest",
+        "sadducees",
+        "gamaliel",
+        "council"
+      ],
+      "places": [
+        "jerusalem",
+        "temple",
+        "solomons-porch",
+        "common-prison"
+      ],
+      "story": [
+        "Ananias and Sapphira sell a field, keep back part of the money, and let the church think they gave it all. Peter says they lied to the Holy Ghost, and both die. Great fear falls on the church (1–11).",
+        "Signs and wonders continue, and the sick are brought in from the towns round about. The jealous high priest jails the apostles, but an angel opens the prison doors by night and sends them back to teach (12–26).",
+        "Peter tells the council, “We ought to obey God rather than men.” Gamaliel advises them to leave the apostles alone. They are beaten and let go, rejoicing that they were counted worthy to suffer shame for His name (27–42)."
+      ],
+      "key": {
+        "ref": "Acts 5:29",
+        "text": "Then Peter and the other apostles answered and said, We ought to obey God rather than men."
+      },
+      "big": "God wants honesty, not a show. Ananias and Sapphira pretended; Peter, who had once lied too, came back and was forgiven. A man who tells the truth to God can stand firm before anyone, and find joy even when it costs him."
+    }
+  },
+  {
+    "id": "acts-06",
+    "type": "chapter",
+    "book": "Acts",
+    "ch": 6,
+    "date": "2026-10-30",
+    "title": "Acts 6",
+    "sub": "Seven to serve",
+    "about": "The church settles a complaint about neglected widows by choosing seven men to serve, and one of them, Stephen, is dragged before the council on lies.",
+    "tags": [
+      "Serving",
+      "Character",
+      "Fairness",
+      "Growth",
+      "False accusation",
+      "Peace"
+    ],
+    "url": "studies/acts-06.html",
+    "overview": {
+      "where": "Jerusalem: the church's daily food for the widows, a synagogue, and the council chamber",
+      "when": "Soon after Acts 5, a few years after Pentecost (about AD 33 to 34)",
+      "people": [
+        "grecian-jews",
+        "hebrews-of-jerusalem",
+        "the-twelve",
+        "stephen",
+        "philip",
+        "nicolas",
+        "council"
+      ],
+      "places": [
+        "jerusalem",
+        "synagogue",
+        "cilicia"
+      ],
+      "story": [
+        "As the church grows, the Greek-speaking widows are missed in the daily food. The twelve have the people choose seven men of honest report, full of the Holy Ghost and wisdom, so they can keep to prayer and the word (1–6).",
+        "The word of God increases, and a great company of priests become obedient to the faith (7).",
+        "Stephen does great wonders. Men from several synagogues argue with him and cannot answer his wisdom, so they bribe men to lie, stir up the crowd, and drag him before the council. His face looks like the face of an angel (8–15)."
+      ],
+      "key": {
+        "ref": "Acts 6:3",
+        "text": "Wherefore, brethren, look ye out among you seven men of honest report, full of the Holy Ghost and wisdom, whom we may appoint over this business."
+      },
+      "big": "A church fixes its blind spots by bringing them into the open and sharing the work. Character matters more than fame. And a man with a clear conscience and the Spirit can stand calm in a room full of lies."
+    }
+  },
+  {
+    "id": "acts-11",
+    "type": "chapter",
+    "book": "Acts",
+    "ch": 11,
+    "date": "2026-10-30",
+    "title": "Acts 11",
+    "sub": "Called Christians first in Antioch",
+    "about": "Peter explains why he ate with Gentiles, a new church in Antioch gets a name that has lasted, and Barnabas goes to Tarsus to find Saul.",
+    "tags": [
+      "Grace for outsiders",
+      "Old walls",
+      "Scattered and sowing",
+      "Encouragement",
+      "Second chances",
+      "Giving"
+    ],
+    "url": "studies/acts-11.html",
+    "overview": {
+      "where": "Jerusalem, then Antioch in Syria, Tarsus, and the road south to Judaea",
+      "when": "About AD 40 to 46, soon after Cornelius",
+      "people": [
+        "simon-peter",
+        "barnabas",
+        "saul",
+        "agabus",
+        "grecians",
+        "claudius"
+      ],
+      "places": [
+        "jerusalem",
+        "judaea",
+        "joppa",
+        "caesarea",
+        "antioch",
+        "tarsus",
+        "cyprus",
+        "cyrene",
+        "phenice"
+      ],
+      "story": [
+        "Peter comes up to Jerusalem, and believers who kept the old customs argue with him for eating with Gentiles (1–3).",
+        "Peter tells it from the beginning: the sheet, the three men, the angel, and the Holy Ghost falling on them as on us. “What was I, that I could withstand God?” (4–17)",
+        "They hold their peace and glorify God: “Then hath God also to the Gentiles granted repentance unto life” (18).",
+        "Believers scattered after Stephen reach Antioch, where men from Cyprus and Cyrene preach to Greeks and a great number believe (19–21).",
+        "Barnabas, a good man, sees the grace of God and is glad, then goes to Tarsus to find Saul. They teach a whole year, and the disciples are called Christians first in Antioch (22–26).",
+        "Agabus warns of a famine. Every man gives according to his ability, and Barnabas and Saul carry the relief to Judaea (27–30)."
+      ],
+      "key": {
+        "ref": "Acts 11:18",
+        "text": "When they heard these things, they held their peace, and glorified God, saying, Then hath God also to the Gentiles granted repentance unto life."
+      },
+      "big": "God opened the door of life to the outsiders, and the church had to stop arguing and praise Him. In Antioch the disciples were first called Christians, and they lived up to it by encouraging, finding the lost, and giving."
+    }
+  },
+  {
+    "id": "acts-12",
+    "type": "chapter",
+    "book": "Acts",
+    "ch": 12,
+    "date": "2026-10-30",
+    "title": "Acts 12",
+    "sub": "Peter in prison, and the church on its knees",
+    "about": "Herod kills James and chains Peter, the church prays through the night, and an angel walks Peter out past every guard. Then Herod takes the glory that belongs to God.",
+    "tags": [
+      "Hard things",
+      "Prayer",
+      "Peace",
+      "God's power",
+      "Weak faith",
+      "Pride"
+    ],
+    "url": "studies/acts-12.html",
+    "overview": {
+      "where": "Jerusalem (the prison and Mary’s house), then Caesarea",
+      "when": "About AD 44, in the days of unleavened bread",
+      "people": [
+        "herod-agrippa",
+        "james-brother-of-john",
+        "simon-peter",
+        "angel-of-the-lord",
+        "mary-mother-of-john-mark",
+        "john-mark",
+        "rhoda",
+        "james-the-lords-brother",
+        "blastus",
+        "barnabas",
+        "saul"
+      ],
+      "places": [
+        "jerusalem",
+        "judaea",
+        "caesarea",
+        "tyre-and-sidon"
+      ],
+      "story": [
+        "King Herod kills James the brother of John with the sword. Because it pleases the Jews, he arrests Peter and sets four squads of soldiers to guard him until after the feast (1–4).",
+        "The church prays without ceasing. The night before his trial, Peter sleeps between two soldiers, chained (5–6).",
+        "An angel wakes Peter, the chains fall off, and he walks past two wards and an iron gate that opens by itself (7–11).",
+        "Peter knocks at Mary’s house. Rhoda is so glad she forgets to open it, the church says she is mad, and then they are astonished (12–17).",
+        "Herod has the guards put to death, goes down to Caesarea, and accepts the crowd’s shout, “the voice of a god.” The angel of the Lord strikes him because he gave not God the glory (18–23).",
+        "The word of God grows and multiplies. Barnabas and Saul return, with John Mark (24–25)."
+      ],
+      "key": {
+        "ref": "Acts 12:5",
+        "text": "Peter therefore was kept in prison: but prayer was made without ceasing of the church unto God for him."
+      },
+      "big": "The church had no power but prayer, and God answered, even when their faith was shaky. Kings die, and the word of God grows. A believer who stumbles is forgiven, but pride that takes God’s glory ends badly."
+    }
+  },
+  {
+    "id": "acts-15",
+    "type": "chapter",
+    "book": "Acts",
+    "ch": 15,
+    "date": "2026-10-30",
+    "title": "Acts 15",
+    "sub": "Saved by grace, and nothing added",
+    "about": "The church meets in Jerusalem to settle one question: is Jesus enough? Then Paul and Barnabas part ways over a young man who quit.",
+    "tags": [
+      "Grace alone",
+      "Salvation",
+      "God's Word",
+      "Freedom and love",
+      "Disagreement",
+      "Second chances"
+    ],
+    "url": "studies/acts-15.html",
+    "overview": {
+      "where": "Antioch in Syria, the road to Jerusalem, the council at Jerusalem, and back to Antioch",
+      "when": "About AD 49, after the first journey and before the second",
+      "people": [
+        "paul",
+        "barnabas",
+        "simon-peter",
+        "james-the-lords-brother",
+        "pharisees",
+        "holy-spirit",
+        "judas-barsabas",
+        "silas",
+        "john-mark"
+      ],
+      "places": [
+        "antioch",
+        "phenice",
+        "samaria",
+        "jerusalem",
+        "cilicia",
+        "cyprus"
+      ],
+      "story": [
+        "Men from Judaea teach that Gentiles cannot be saved unless they are circumcised. Paul and Barnabas dispute it and go up to Jerusalem (1–5).",
+        "Peter says God gave the Holy Ghost to the Gentiles when they believed, and that we are saved through the grace of the Lord Jesus Christ, even as they (6–12).",
+        "James points to the prophets and asks only a few things of the Gentiles, so as not to trouble those turned to God (13–21).",
+        "The church sends a short, kind letter to Antioch with Judas and Silas, and the believers rejoice (22–35).",
+        "Paul and Barnabas split over John Mark. Barnabas takes Mark to Cyprus, and Paul takes Silas through Syria and Cilicia (36–41)."
+      ],
+      "key": {
+        "ref": "Acts 15:11",
+        "text": "But we believe that through the grace of the Lord Jesus Christ we shall be saved, even as they."
+      },
+      "big": "We are saved by the grace of the Lord Jesus Christ, received by faith, with nothing added. Even a good man's failure, like Mark's, is not the end of his story."
+    }
+  },
+  {
+    "id": "acts-16",
+    "type": "chapter",
+    "book": "Acts",
+    "ch": 16,
+    "date": "2026-10-30",
+    "title": "Acts 16",
+    "sub": "Midnight in Philippi",
+    "about": "The second journey begins. Doors close, a call comes from Macedonia, and in a Roman prison at midnight a jailor asks the question every man eventually asks.",
+    "tags": [
+      "Guidance",
+      "Salvation",
+      "A new heart",
+      "Trouble",
+      "Despair",
+      "A new life"
+    ],
+    "url": "studies/acts-16.html",
+    "overview": {
+      "where": "Lystra, across Asia Minor to Troas, then Philippi in Macedonia",
+      "when": "About AD 49 to 52, the second journey",
+      "people": [
+        "paul",
+        "silas",
+        "timothy",
+        "holy-spirit",
+        "lydia",
+        "jailor",
+        "magistrates"
+      ],
+      "places": [
+        "lystra",
+        "troas",
+        "macedonia",
+        "philippi",
+        "thyatira",
+        "asia"
+      ],
+      "story": [
+        "Timothy joins Paul and Silas at Lystra, and the churches grow as they carry the council's decrees (1–5).",
+        "The Holy Ghost forbids Asia and Bithynia. At Troas Paul sees a man of Macedonia saying, “Come over into Macedonia, and help us” (6–10).",
+        "At Philippi the Lord opens Lydia's heart by the river, and she is baptized (11–15).",
+        "Paul frees a slave girl from a spirit of divination. Her owners drag Paul and Silas to the magistrates, and they are beaten and put in the stocks (16–24).",
+        "At midnight they pray and sing. An earthquake opens the doors, and the jailor asks, “Sirs, what must I do to be saved?” He believes and is baptized with all his house (25–34).",
+        "In the morning Paul insists the magistrates come themselves, because they are Romans. Then he leaves Philippi (35–40)."
+      ],
+      "key": {
+        "ref": "Acts 16:31",
+        "text": "And they said, Believe on the Lord Jesus Christ, and thou shalt be saved, and thy house."
+      },
+      "big": "Salvation is not something to do but Someone to trust. Believe on the Lord Jesus Christ and you are saved, and midnight is not the end of the story."
+    }
   }
 ];

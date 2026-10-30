@@ -240,7 +240,34 @@ window.GLOSSARY = [
     [ 2, 12, 14, 15, 16, 17, 19, 21, 24, 26, 29, 30, 31 ] ],
    [
     "John", 21,
-    [ 1, 4, 5, 7, 10, 12, 13, 14, 15, 17, 20, 21, 22, 23, 25 ] ] ]
+    [ 1, 4, 5, 7, 10, 12, 13, 14, 15, 17, 20, 21, 22, 23, 25 ] ],
+   [
+    "Acts", 1,
+    [ 1, 11, 14, 16, 21 ] ],
+   [
+    "Acts", 2,
+    [ 22, 32, 36, 38 ] ],
+   [
+    "Acts", 3,
+    [ 6, 13, 20, 26 ] ],
+   [
+    "Acts", 4,
+    [ 2, 10, 13, 18, 27, 30, 33 ] ],
+   [
+    "Acts", 5,
+    [ 30, 40, 42 ] ],
+   [
+    "Acts", 6,
+    [ 14 ] ],
+   [
+    "Acts", 11,
+    [ 17, 20 ] ],
+   [
+    "Acts", 15,
+    [ 11, 26 ] ],
+   [
+    "Acts", 16,
+    [ 18, 31 ] ] ]
  },
  {
   "id": "john-the-baptist",
@@ -327,7 +354,10 @@ window.GLOSSARY = [
     [ 33, 36 ] ],
    [
     "John", 10,
-    [ 40, 41 ] ] ]
+    [ 40, 41 ] ],
+   [
+    "Acts", 1,
+    [ 5, 22 ] ] ]
  },
  {
   "id": "mary",
@@ -369,7 +399,10 @@ window.GLOSSARY = [
     [ 42 ] ],
    [
     "John", 19,
-    [ 25, 26, 27 ] ] ]
+    [ 25, 26, 27 ] ],
+   [
+    "Acts", 1,
+    [ 14 ] ] ]
  },
  {
   "id": "andrew",
@@ -402,7 +435,10 @@ window.GLOSSARY = [
     [ 8 ] ],
    [
     "John", 12,
-    [ 22 ] ] ]
+    [ 22 ] ],
+   [
+    "Acts", 1,
+    [ 13 ] ] ]
  },
  {
   "id": "simon-peter",
@@ -516,7 +552,31 @@ window.GLOSSARY = [
     [ 2, 3, 4, 6 ] ],
    [
     "John", 21,
-    [ 2, 3, 7, 11, 15, 16, 17, 20, 21 ] ] ]
+    [ 2, 3, 7, 11, 15, 16, 17, 20, 21 ] ],
+   [
+    "Acts", 1,
+    [ 13, 15 ] ],
+   [
+    "Acts", 2,
+    [ 14, 37, 38 ] ],
+   [
+    "Acts", 3,
+    [ 1, 3, 4, 6, 11, 12 ] ],
+   [
+    "Acts", 4,
+    [ 8, 13, 19 ] ],
+   [
+    "Acts", 5,
+    [ 3, 8, 9, 15, 29 ] ],
+   [
+    "Acts", 11,
+    [ 2, 4, 7, 13 ] ],
+   [
+    "Acts", 12,
+    [ 3, 5, 6, 7, 11, 13, 14, 16, 18 ] ],
+   [
+    "Acts", 15,
+    [ 7, 14 ] ] ]
  },
  {
   "id": "philip",
@@ -543,7 +603,19 @@ window.GLOSSARY = [
     [ 21, 22 ] ],
    [
     "John", 14,
-    [ 8, 9 ] ] ]
+    [ 8, 9 ] ],
+   [
+    "Acts", 1,
+    [ 13 ] ] ]
+ },
+ {
+  "id": "philip-the-evangelist",
+  "kind": "person",
+  "name": "Philip the evangelist, one of the seven",
+  "refs": [
+   [
+    "Acts", 6,
+    [ 5 ] ] ]
  },
  {
   "id": "nathanael",
@@ -636,7 +708,16 @@ window.GLOSSARY = [
     [ 5 ] ],
    [
     "John", 9,
-    [ 28, 29 ] ] ]
+    [ 28, 29 ] ],
+   [
+    "Acts", 3,
+    [ 22 ] ],
+   [
+    "Acts", 6,
+    [ 11, 14 ] ],
+   [
+    "Acts", 15,
+    [ 1, 5, 21 ] ] ]
  },
  {
   "id": "elijah",
@@ -909,7 +990,13 @@ window.GLOSSARY = [
     [ 11 ] ],
    [
     "John", 20,
-    [ 17, 21 ] ] ]
+    [ 17, 21 ] ],
+   [
+    "Acts", 1,
+    [ 4, 7 ] ],
+   [
+    "Acts", 2,
+    [ 33 ] ] ]
  },
  {
   "id": "holy-spirit",
@@ -990,7 +1077,31 @@ window.GLOSSARY = [
     [ 13 ] ],
    [
     "John", 20,
-    [ 22 ] ] ]
+    [ 22 ] ],
+   [
+    "Acts", 1,
+    [ 2, 5, 8, 16 ] ],
+   [
+    "Acts", 2,
+    [ 4, 17, 18, 33, 38 ] ],
+   [
+    "Acts", 4,
+    [ 8, 31 ] ],
+   [
+    "Acts", 5,
+    [ 3, 9, 32 ] ],
+   [
+    "Acts", 6,
+    [ 3, 5 ] ],
+   [
+    "Acts", 11,
+    [ 12, 15, 16, 24, 28 ] ],
+   [
+    "Acts", 15,
+    [ 8, 28 ] ],
+   [
+    "Acts", 16,
+    [ 6, 7 ] ] ]
  },
  {
   "id": "disciples",
@@ -1188,7 +1299,13 @@ window.GLOSSARY = [
     [ 10, 18, 19, 20, 25, 26, 30 ] ],
    [
     "John", 21,
-    [ 1, 2, 4, 8, 12, 14 ] ] ]
+    [ 1, 2, 4, 8, 12, 14 ] ],
+   [
+    "Acts", 6,
+    [ 1, 2, 7 ] ],
+   [
+    "Acts", 11,
+    [ 26, 29 ] ] ]
  },
  {
   "id": "brethren",
@@ -1218,7 +1335,10 @@ window.GLOSSARY = [
     [ 17 ] ],
    [
     "John", 21,
-    [ 23 ] ] ]
+    [ 23 ] ],
+   [
+    "Acts", 1,
+    [ 14 ] ] ]
  },
  {
   "id": "pharisees",
@@ -1338,7 +1458,13 @@ window.GLOSSARY = [
     [ 19, 42 ] ],
    [
     "John", 18,
-    [ 3 ] ] ]
+    [ 3 ] ],
+   [
+    "Acts", 5,
+    [ 34 ] ],
+   [
+    "Acts", 15,
+    [ 5 ] ] ]
  },
  {
   "id": "priests-and-levites",
@@ -1350,7 +1476,10 @@ window.GLOSSARY = [
     [ 32 ] ],
    [
     "John", 1,
-    [ 19 ] ] ]
+    [ 19 ] ],
+   [
+    "Acts", 4,
+    [ 36 ] ] ]
  },
  {
   "id": "the-jews",
@@ -1407,7 +1536,19 @@ window.GLOSSARY = [
     [ 3, 7, 12, 14, 20, 21, 31, 38, 40, 42 ] ],
    [
     "John", 20,
-    [ 19 ] ] ]
+    [ 19 ] ],
+   [
+    "Acts", 2,
+    [ 5, 10 ] ],
+   [
+    "Acts", 11,
+    [ 19 ] ],
+   [
+    "Acts", 12,
+    [ 3, 11 ] ],
+   [
+    "Acts", 16,
+    [ 3, 20 ] ] ]
  },
  {
   "id": "servants",
@@ -1494,7 +1635,10 @@ window.GLOSSARY = [
     [ 27 ] ],
    [
     "John", 10,
-    [ 23 ] ] ]
+    [ 23 ] ],
+   [
+    "Acts", 3,
+    [ 11 ] ] ]
  },
  {
   "id": "david",
@@ -1572,7 +1716,19 @@ window.GLOSSARY = [
     [ 41, 42, 44 ] ],
    [
     "John", 7,
-    [ 42 ] ] ]
+    [ 42 ] ],
+   [
+    "Acts", 1,
+    [ 16 ] ],
+   [
+    "Acts", 2,
+    [ 25, 29, 34 ] ],
+   [
+    "Acts", 4,
+    [ 25 ] ],
+   [
+    "Acts", 15,
+    [ 16 ] ] ]
  },
  {
   "id": "hezekiah",
@@ -1899,7 +2055,10 @@ window.GLOSSARY = [
     [ 44 ] ],
    [
     "Luke", 20,
-    [ 42 ] ] ]
+    [ 42 ] ],
+   [
+    "Acts", 2,
+    [ 34 ] ] ]
  },
  {
   "id": "jakeh",
@@ -2094,7 +2253,34 @@ window.GLOSSARY = [
     [ 18, 55 ] ],
    [
     "John", 12,
-    [ 12 ] ] ]
+    [ 12 ] ],
+   [
+    "Acts", 1,
+    [ 4, 8, 12, 19 ] ],
+   [
+    "Acts", 2,
+    [ 5, 14 ] ],
+   [
+    "Acts", 4,
+    [ 6, 16 ] ],
+   [
+    "Acts", 5,
+    [ 16, 28 ] ],
+   [
+    "Acts", 6,
+    [ 7 ] ],
+   [
+    "Acts", 11,
+    [ 2, 22, 27 ] ],
+   [
+    "Acts", 12,
+    [ 25 ] ],
+   [
+    "Acts", 15,
+    [ 2, 4 ] ],
+   [
+    "Acts", 16,
+    [ 4 ] ] ]
  },
  {
   "id": "bethabara",
@@ -2343,7 +2529,13 @@ window.GLOSSARY = [
     [ 21 ] ],
    [
     "John", 21,
-    [ 2 ] ] ]
+    [ 2 ] ],
+   [
+    "Acts", 1,
+    [ 11 ] ],
+   [
+    "Acts", 5,
+    [ 37 ] ] ]
  },
  {
   "id": "bethsaida",
@@ -2421,7 +2613,19 @@ window.GLOSSARY = [
     [ 45, 46 ] ],
    [
     "John", 18,
-    [ 5, 7 ] ] ]
+    [ 5, 7 ] ],
+   [
+    "Acts", 2,
+    [ 22 ] ],
+   [
+    "Acts", 3,
+    [ 6 ] ],
+   [
+    "Acts", 4,
+    [ 10 ] ],
+   [
+    "Acts", 6,
+    [ 14 ] ] ]
  },
  {
   "id": "cana",
@@ -2601,7 +2805,19 @@ window.GLOSSARY = [
     [ 56 ] ],
    [
     "John", 18,
-    [ 20 ] ] ]
+    [ 20 ] ],
+   [
+    "Acts", 2,
+    [ 46 ] ],
+   [
+    "Acts", 3,
+    [ 1, 2, 3, 8, 10 ] ],
+   [
+    "Acts", 4,
+    [ 1 ] ],
+   [
+    "Acts", 5,
+    [ 20, 21, 24, 25, 42 ] ] ]
  },
  {
   "id": "israel",
@@ -2787,7 +3003,22 @@ window.GLOSSARY = [
     [ 10 ] ],
    [
     "John", 12,
-    [ 13 ] ] ]
+    [ 13 ] ],
+   [
+    "Acts", 1,
+    [ 6 ] ],
+   [
+    "Acts", 2,
+    [ 22, 36 ] ],
+   [
+    "Acts", 3,
+    [ 12 ] ],
+   [
+    "Acts", 4,
+    [ 8, 10, 27 ] ],
+   [
+    "Acts", 5,
+    [ 21, 31, 35 ] ] ]
  },
  {
   "id": "heaven",
@@ -2994,7 +3225,22 @@ window.GLOSSARY = [
     [ 28 ] ],
    [
     "John", 17,
-    [ 1 ] ] ]
+    [ 1 ] ],
+   [
+    "Acts", 1,
+    [ 10, 11 ] ],
+   [
+    "Acts", 2,
+    [ 2, 5, 19 ] ],
+   [
+    "Acts", 3,
+    [ 21 ] ],
+   [
+    "Acts", 4,
+    [ 12, 24 ] ],
+   [
+    "Acts", 11,
+    [ 5, 9, 10 ] ] ]
  },
  {
   "id": "hell",
@@ -3054,7 +3300,10 @@ window.GLOSSARY = [
     [ 5 ] ],
    [
     "Luke", 16,
-    [ 23 ] ] ]
+    [ 23 ] ],
+   [
+    "Acts", 2,
+    [ 27, 31 ] ] ]
  },
  {
   "id": "judah",
@@ -3297,7 +3546,13 @@ window.GLOSSARY = [
     [ 9, 10 ] ],
    [
     "John", 12,
-    [ 35, 36, 46 ] ] ]
+    [ 35, 36, 46 ] ],
+   [
+    "Acts", 12,
+    [ 7 ] ],
+   [
+    "Acts", 16,
+    [ 29 ] ] ]
  },
  {
   "id": "darkness",
@@ -3381,7 +3636,10 @@ window.GLOSSARY = [
     [ 12 ] ],
    [
     "John", 12,
-    [ 35, 46 ] ] ]
+    [ 35, 46 ] ],
+   [
+    "Acts", 2,
+    [ 20 ] ] ]
  },
  {
   "id": "grace",
@@ -3411,7 +3669,16 @@ window.GLOSSARY = [
     [ 40 ] ],
    [
     "John", 1,
-    [ 14, 16, 17 ] ] ]
+    [ 14, 16, 17 ] ],
+   [
+    "Acts", 4,
+    [ 33 ] ],
+   [
+    "Acts", 11,
+    [ 23 ] ],
+   [
+    "Acts", 15,
+    [ 11, 40 ] ] ]
  },
  {
   "id": "truth",
@@ -3507,7 +3774,10 @@ window.GLOSSARY = [
     [ 17, 19 ] ],
    [
     "John", 18,
-    [ 37, 38 ] ] ]
+    [ 37, 38 ] ],
+   [
+    "Acts", 4,
+    [ 27 ] ] ]
  },
  {
   "id": "glory",
@@ -3651,7 +3921,10 @@ window.GLOSSARY = [
     [ 41 ] ],
    [
     "John", 17,
-    [ 5, 22, 24 ] ] ]
+    [ 5, 22, 24 ] ],
+   [
+    "Acts", 12,
+    [ 23 ] ] ]
  },
  {
   "id": "the-law",
@@ -3771,7 +4044,16 @@ window.GLOSSARY = [
     [ 31 ] ],
    [
     "John", 19,
-    [ 7 ] ] ]
+    [ 7 ] ],
+   [
+    "Acts", 5,
+    [ 34 ] ],
+   [
+    "Acts", 6,
+    [ 13 ] ],
+   [
+    "Acts", 15,
+    [ 5, 24 ] ] ]
  },
  {
   "id": "only-begotten",
@@ -3906,7 +4188,28 @@ window.GLOSSARY = [
     [ 3 ] ],
    [
     "John", 20,
-    [ 31 ] ] ]
+    [ 31 ] ],
+   [
+    "Acts", 2,
+    [ 30, 31, 36, 38 ] ],
+   [
+    "Acts", 3,
+    [ 6, 18, 20 ] ],
+   [
+    "Acts", 4,
+    [ 10, 26 ] ],
+   [
+    "Acts", 5,
+    [ 42 ] ],
+   [
+    "Acts", 11,
+    [ 17 ] ],
+   [
+    "Acts", 15,
+    [ 11, 26 ] ],
+   [
+    "Acts", 16,
+    [ 18, 31 ] ] ]
  },
  {
   "id": "son-of-god",
@@ -4257,7 +4560,25 @@ window.GLOSSARY = [
     [ 35 ] ],
    [
     "John", 20,
-    [ 8, 25, 27, 29, 31 ] ] ]
+    [ 8, 25, 27, 29, 31 ] ],
+   [
+    "Acts", 2,
+    [ 44 ] ],
+   [
+    "Acts", 4,
+    [ 4, 32 ] ],
+   [
+    "Acts", 5,
+    [ 14 ] ],
+   [
+    "Acts", 11,
+    [ 17, 21 ] ],
+   [
+    "Acts", 15,
+    [ 5, 7, 11 ] ],
+   [
+    "Acts", 16,
+    [ 1, 31, 34 ] ] ]
  },
  {
   "id": "witness",
@@ -4359,7 +4680,19 @@ window.GLOSSARY = [
     [ 23, 37 ] ],
    [
     "John", 19,
-    [ 35 ] ] ]
+    [ 35 ] ],
+   [
+    "Acts", 1,
+    [ 8, 22 ] ],
+   [
+    "Acts", 2,
+    [ 32 ] ],
+   [
+    "Acts", 4,
+    [ 33 ] ],
+   [
+    "Acts", 15,
+    [ 8 ] ] ]
  },
  {
   "id": "baptize",
@@ -4404,7 +4737,19 @@ window.GLOSSARY = [
     [ 1, 2 ] ],
    [
     "John", 10,
-    [ 40 ] ] ]
+    [ 40 ] ],
+   [
+    "Acts", 1,
+    [ 5 ] ],
+   [
+    "Acts", 2,
+    [ 38, 41 ] ],
+   [
+    "Acts", 11,
+    [ 16 ] ],
+   [
+    "Acts", 16,
+    [ 15, 33 ] ] ]
  },
  {
   "id": "sons-of-god",
@@ -4608,7 +4953,10 @@ window.GLOSSARY = [
     [ 3, 9, 10 ] ],
    [
     "John", 4,
-    [ 46 ] ] ]
+    [ 46 ] ],
+   [
+    "Acts", 2,
+    [ 13 ] ] ]
  },
  {
   "id": "waterpots",
@@ -4641,7 +4989,10 @@ window.GLOSSARY = [
     [ 6 ] ],
    [
     "John", 3,
-    [ 25 ] ] ]
+    [ 25 ] ],
+   [
+    "Acts", 15,
+    [ 9 ] ] ]
  },
  {
   "id": "sign",
@@ -4710,7 +5061,22 @@ window.GLOSSARY = [
     [ 18, 37 ] ],
    [
     "John", 20,
-    [ 30 ] ] ]
+    [ 30 ] ],
+   [
+    "Acts", 2,
+    [ 19, 22, 43 ] ],
+   [
+    "Acts", 4,
+    [ 16, 22, 30 ] ],
+   [
+    "Acts", 5,
+    [ 12 ] ],
+   [
+    "Acts", 6,
+    [ 8 ] ],
+   [
+    "Acts", 15,
+    [ 12 ] ] ]
  },
  {
   "id": "passover",
@@ -4902,7 +5268,10 @@ window.GLOSSARY = [
     [ 31, 49 ] ],
    [
     "Luke", 21,
-    [ 15 ] ] ]
+    [ 15 ] ],
+   [
+    "Acts", 6,
+    [ 3, 10 ] ] ]
  },
  {
   "id": "understanding",
@@ -5100,7 +5469,10 @@ window.GLOSSARY = [
     [ 77 ] ],
    [
     "Luke", 11,
-    [ 52 ] ] ]
+    [ 52 ] ],
+   [
+    "Acts", 4,
+    [ 13 ] ] ]
  },
  {
   "id": "instruction",
@@ -5748,7 +6120,10 @@ window.GLOSSARY = [
     [ 26, 39 ] ],
    [
     "Luke", 19,
-    [ 22 ] ] ]
+    [ 22 ] ],
+   [
+    "Acts", 2,
+    [ 23 ] ] ]
  },
  {
   "id": "heart",
@@ -5961,7 +6336,22 @@ window.GLOSSARY = [
     [ 1, 27 ] ],
    [
     "John", 16,
-    [ 6, 22 ] ] ]
+    [ 6, 22 ] ],
+   [
+    "Acts", 2,
+    [ 26, 37, 46 ] ],
+   [
+    "Acts", 4,
+    [ 32 ] ],
+   [
+    "Acts", 5,
+    [ 3, 4, 33 ] ],
+   [
+    "Acts", 11,
+    [ 23 ] ],
+   [
+    "Acts", 16,
+    [ 14 ] ] ]
  },
  {
   "id": "tongue",
@@ -6081,7 +6471,13 @@ window.GLOSSARY = [
     [ 64 ] ],
    [
     "John", 5,
-    [ 2 ] ] ]
+    [ 2 ] ],
+   [
+    "Acts", 1,
+    [ 19 ] ],
+   [
+    "Acts", 2,
+    [ 8, 26 ] ] ]
  },
  {
   "id": "anger",
@@ -6408,7 +6804,10 @@ window.GLOSSARY = [
     [ 45 ] ],
    [
     "Luke", 21,
-    [ 34 ] ] ]
+    [ 34 ] ],
+   [
+    "Acts", 2,
+    [ 15 ] ] ]
  },
  {
   "id": "reproof",
@@ -6576,7 +6975,10 @@ window.GLOSSARY = [
     [ 13, 14, 15 ] ],
    [
     "John", 19,
-    [ 12 ] ] ]
+    [ 12 ] ],
+   [
+    "Acts", 12,
+    [ 20 ] ] ]
  },
  {
   "id": "abomination",
@@ -6852,7 +7254,16 @@ window.GLOSSARY = [
     [ 53 ] ],
    [
     "John", 18,
-    [ 14 ] ] ]
+    [ 14 ] ],
+   [
+    "Acts", 2,
+    [ 23 ] ],
+   [
+    "Acts", 4,
+    [ 28 ] ],
+   [
+    "Acts", 5,
+    [ 33, 38 ] ] ]
  },
  {
   "id": "discretion",
@@ -7287,7 +7698,10 @@ window.GLOSSARY = [
     [ 3 ] ],
    [
     "Luke", 22,
-    [ 24 ] ] ]
+    [ 24 ] ],
+   [
+    "Acts", 15,
+    [ 39 ] ] ]
  },
  {
   "id": "subtilty",
@@ -7323,7 +7737,10 @@ window.GLOSSARY = [
     [ 26 ] ],
    [
     "Proverbs", 27,
-    [ 13 ] ] ]
+    [ 13 ] ],
+   [
+    "Acts", 12,
+    [ 11 ] ] ]
  },
  {
   "id": "talebearer",
@@ -7365,7 +7782,10 @@ window.GLOSSARY = [
     [ 7 ] ],
    [
     "Luke", 1,
-    [ 9 ] ] ]
+    [ 9 ] ],
+   [
+    "Acts", 1,
+    [ 26 ] ] ]
  },
  {
   "id": "tree-of-life",
@@ -7500,7 +7920,16 @@ window.GLOSSARY = [
     [ 22 ] ],
    [
     "Luke", 24,
-    [ 23 ] ] ]
+    [ 23 ] ],
+   [
+    "Acts", 11,
+    [ 5 ] ],
+   [
+    "Acts", 12,
+    [ 9 ] ],
+   [
+    "Acts", 16,
+    [ 9, 10 ] ] ]
  },
  {
   "id": "weights-and-balances",
@@ -7635,7 +8064,16 @@ window.GLOSSARY = [
     [ 14, 16 ] ],
    [
     "John", 19,
-    [ 31 ] ] ]
+    [ 31 ] ],
+   [
+    "Acts", 1,
+    [ 12 ] ],
+   [
+    "Acts", 15,
+    [ 21 ] ],
+   [
+    "Acts", 16,
+    [ 13 ] ] ]
  },
  {
   "id": "made-whole",
@@ -7659,7 +8097,10 @@ window.GLOSSARY = [
     [ 50 ] ],
    [
     "John", 5,
-    [ 4, 6, 9, 14 ] ] ]
+    [ 4, 6, 9, 14 ] ],
+   [
+    "Acts", 4,
+    [ 9 ] ] ]
  },
  {
   "id": "impotent",
@@ -7668,7 +8109,10 @@ window.GLOSSARY = [
   "refs": [
    [
     "John", 5,
-    [ 3, 7 ] ] ]
+    [ 3, 7 ] ],
+   [
+    "Acts", 4,
+    [ 9 ] ] ]
  },
  {
   "id": "halt",
@@ -7704,7 +8148,10 @@ window.GLOSSARY = [
     [ 49 ] ],
    [
     "John", 5,
-    [ 13 ] ] ]
+    [ 13 ] ],
+   [
+    "Acts", 12,
+    [ 9 ] ] ]
  },
  {
   "id": "quicken",
@@ -7959,7 +8406,10 @@ window.GLOSSARY = [
     [ 67, 71 ] ],
    [
     "John", 20,
-    [ 24 ] ] ]
+    [ 24 ] ],
+   [
+    "Acts", 6,
+    [ 2 ] ] ]
  },
  {
   "id": "judas-iscariot",
@@ -7998,7 +8448,13 @@ window.GLOSSARY = [
     [ 2, 26, 29 ] ],
    [
     "John", 18,
-    [ 2, 3, 5 ] ] ]
+    [ 2, 3, 5 ] ],
+   [
+    "Acts", 1,
+    [ 16, 25 ] ],
+   [
+    "Acts", 15,
+    [ 22, 27, 32 ] ] ]
  },
  {
   "id": "sea-of-galilee",
@@ -8139,7 +8595,13 @@ window.GLOSSARY = [
     [ 2 ] ],
    [
     "John", 18,
-    [ 20 ] ] ]
+    [ 20 ] ],
+   [
+    "Acts", 6,
+    [ 9 ] ],
+   [
+    "Acts", 15,
+    [ 21 ] ] ]
  },
  {
   "id": "bread-of-life",
@@ -8337,7 +8799,10 @@ window.GLOSSARY = [
     [ 41, 61 ] ],
    [
     "John", 7,
-    [ 12, 32 ] ] ]
+    [ 12, 32 ] ],
+   [
+    "Acts", 6,
+    [ 1 ] ] ]
  },
  {
   "id": "last-day",
@@ -8562,7 +9027,10 @@ window.GLOSSARY = [
     [ 17 ] ],
    [
     "John", 12,
-    [ 38 ] ] ]
+    [ 38 ] ],
+   [
+    "Acts", 3,
+    [ 18, 21, 24, 25 ] ] ]
  },
  {
   "id": "of-age",
@@ -8661,7 +9129,10 @@ window.GLOSSARY = [
     [ 31, 38 ] ],
    [
     "John", 12,
-    [ 20 ] ] ]
+    [ 20 ] ],
+   [
+    "Acts", 16,
+    [ 14 ] ] ]
  },
  {
   "id": "good-shepherd",
@@ -8844,7 +9315,13 @@ window.GLOSSARY = [
   "refs": [
    [
     "John", 10,
-    [ 23 ] ] ]
+    [ 23 ] ],
+   [
+    "Acts", 3,
+    [ 11 ] ],
+   [
+    "Acts", 5,
+    [ 12 ] ] ]
  },
  {
   "id": "blasphemy",
@@ -8886,7 +9363,10 @@ window.GLOSSARY = [
     [ 65 ] ],
    [
     "John", 10,
-    [ 33, 36 ] ] ]
+    [ 33, 36 ] ],
+   [
+    "Acts", 6,
+    [ 11, 13 ] ] ]
  },
  {
   "id": "ye-are-gods",
@@ -9018,7 +9498,13 @@ window.GLOSSARY = [
     [ 3, 35 ] ],
    [
     "John", 19,
-    [ 6, 15, 21 ] ] ]
+    [ 6, 15, 21 ] ],
+   [
+    "Acts", 4,
+    [ 23 ] ],
+   [
+    "Acts", 5,
+    [ 24 ] ] ]
  },
  {
   "id": "officers",
@@ -9033,7 +9519,10 @@ window.GLOSSARY = [
     [ 3, 12, 18, 22 ] ],
    [
     "John", 19,
-    [ 6 ] ] ]
+    [ 6 ] ],
+   [
+    "Acts", 5,
+    [ 22, 26 ] ] ]
  },
  {
   "id": "judaea",
@@ -9102,7 +9591,22 @@ window.GLOSSARY = [
     [ 1, 3 ] ],
    [
     "John", 11,
-    [ 7 ] ] ]
+    [ 7 ] ],
+   [
+    "Acts", 1,
+    [ 8 ] ],
+   [
+    "Acts", 2,
+    [ 9, 14 ] ],
+   [
+    "Acts", 11,
+    [ 1, 29 ] ],
+   [
+    "Acts", 12,
+    [ 19 ] ],
+   [
+    "Acts", 15,
+    [ 1 ] ] ]
  },
  {
   "id": "bethlehem",
@@ -9147,7 +9651,16 @@ window.GLOSSARY = [
     [ 21 ] ],
    [
     "John", 7,
-    [ 22, 23 ] ] ]
+    [ 22, 23 ] ],
+   [
+    "Acts", 11,
+    [ 2 ] ],
+   [
+    "Acts", 15,
+    [ 1, 5, 24 ] ],
+   [
+    "Acts", 16,
+    [ 3 ] ] ]
  },
  {
   "id": "living-water",
@@ -9216,7 +9729,13 @@ window.GLOSSARY = [
     [ 16, 17 ] ],
    [
     "John", 18,
-    [ 19 ] ] ]
+    [ 19 ] ],
+   [
+    "Acts", 2,
+    [ 42 ] ],
+   [
+    "Acts", 5,
+    [ 28 ] ] ]
  },
  {
   "id": "letters",
@@ -9240,7 +9759,10 @@ window.GLOSSARY = [
     [ 10 ] ],
    [
     "John", 7,
-    [ 35 ] ] ]
+    [ 35 ] ],
+   [
+    "Acts", 5,
+    [ 37 ] ] ]
  },
  {
   "id": "gentiles",
@@ -9294,7 +9816,16 @@ window.GLOSSARY = [
     [ 25 ] ],
    [
     "John", 7,
-    [ 35 ] ] ]
+    [ 35 ] ],
+   [
+    "Acts", 4,
+    [ 27 ] ],
+   [
+    "Acts", 11,
+    [ 1, 18 ] ],
+   [
+    "Acts", 15,
+    [ 3, 7, 12, 14, 17, 19, 23 ] ] ]
  },
  {
   "id": "glorified",
@@ -9468,7 +9999,13 @@ window.GLOSSARY = [
     [ 10 ] ],
    [
     "John", 8,
-    [ 3 ] ] ]
+    [ 3 ] ],
+   [
+    "Acts", 4,
+    [ 5 ] ],
+   [
+    "Acts", 6,
+    [ 12 ] ] ]
  },
  {
   "id": "woman-taken-in-adultery",
@@ -9522,7 +10059,10 @@ window.GLOSSARY = [
     [ 37 ] ],
    [
     "John", 8,
-    [ 33, 37, 39, 40, 52, 53, 56, 57, 58 ] ] ]
+    [ 33, 37, 39, 40, 52, 53, 56, 57, 58 ] ],
+   [
+    "Acts", 3,
+    [ 13, 25 ] ] ]
  },
  {
   "id": "samaritans",
@@ -9585,7 +10125,10 @@ window.GLOSSARY = [
     [ 39 ] ],
    [
     "John", 8,
-    [ 1 ] ] ]
+    [ 1 ] ],
+   [
+    "Acts", 1,
+    [ 12 ] ] ]
  },
  {
   "id": "treasury",
@@ -9828,7 +10371,10 @@ window.GLOSSARY = [
     [ 51 ] ],
    [
     "John", 3,
-    [ 3, 5 ] ] ]
+    [ 3, 5 ] ],
+   [
+    "Acts", 1,
+    [ 3 ] ] ]
  },
  {
   "id": "wind",
@@ -9837,7 +10383,10 @@ window.GLOSSARY = [
   "refs": [
    [
     "John", 3,
-    [ 8 ] ] ]
+    [ 8 ] ],
+   [
+    "Acts", 2,
+    [ 2 ] ] ]
  },
  {
   "id": "listeth",
@@ -10086,7 +10635,10 @@ window.GLOSSARY = [
     [ 37 ] ],
    [
     "John", 4,
-    [ 5, 6, 12 ] ] ]
+    [ 5, 6, 12 ] ],
+   [
+    "Acts", 3,
+    [ 13 ] ] ]
  },
  {
   "id": "galilaeans",
@@ -10104,7 +10656,10 @@ window.GLOSSARY = [
     [ 59 ] ],
    [
     "John", 4,
-    [ 45 ] ] ]
+    [ 45 ] ],
+   [
+    "Acts", 2,
+    [ 7 ] ] ]
  },
  {
   "id": "nobleman",
@@ -10155,7 +10710,13 @@ window.GLOSSARY = [
     [ 11 ] ],
    [
     "John", 4,
-    [ 4, 5, 7, 9 ] ] ]
+    [ 4, 5, 7, 9 ] ],
+   [
+    "Acts", 1,
+    [ 8 ] ],
+   [
+    "Acts", 15,
+    [ 3 ] ] ]
  },
  {
   "id": "sychar",
@@ -10221,7 +10782,13 @@ window.GLOSSARY = [
     [ 9 ] ],
    [
     "John", 4,
-    [ 22 ] ] ]
+    [ 22 ] ],
+   [
+    "Acts", 4,
+    [ 12 ] ],
+   [
+    "Acts", 16,
+    [ 17 ] ] ]
  },
  {
   "id": "sixth-hour",
@@ -10296,7 +10863,16 @@ window.GLOSSARY = [
     [ 22 ] ],
    [
     "John", 4,
-    [ 48 ] ] ]
+    [ 48 ] ],
+   [
+    "Acts", 2,
+    [ 22, 43 ] ],
+   [
+    "Acts", 4,
+    [ 30 ] ],
+   [
+    "Acts", 5,
+    [ 12 ] ] ]
  },
  {
   "id": "mary-magdalene",
@@ -10353,7 +10929,10 @@ window.GLOSSARY = [
     [ 24, 26, 27, 28, 29 ] ],
    [
     "John", 21,
-    [ 2 ] ] ]
+    [ 2 ] ],
+   [
+    "Acts", 1,
+    [ 13 ] ] ]
  },
  {
   "id": "beloved-disciple",
@@ -10464,7 +11043,19 @@ window.GLOSSARY = [
     [ 29 ] ],
    [
     "John", 20,
-    [ 12 ] ] ]
+    [ 12 ] ],
+   [
+    "Acts", 5,
+    [ 19 ] ],
+   [
+    "Acts", 6,
+    [ 15 ] ],
+   [
+    "Acts", 11,
+    [ 13 ] ],
+   [
+    "Acts", 12,
+    [ 7, 8, 9, 10, 11, 15, 23 ] ] ]
  },
  {
   "id": "sepulchre",
@@ -10497,7 +11088,10 @@ window.GLOSSARY = [
     [ 41, 42 ] ],
    [
     "John", 20,
-    [ 1, 2, 3, 4, 6, 8, 11 ] ] ]
+    [ 1, 2, 3, 4, 6, 8, 11 ] ],
+   [
+    "Acts", 2,
+    [ 29 ] ] ]
  },
  {
   "id": "first-day-of-the-week",
@@ -10632,7 +11226,13 @@ window.GLOSSARY = [
     [ 33 ] ],
    [
     "John", 20,
-    [ 19, 21, 26 ] ] ]
+    [ 19, 21, 26 ] ],
+   [
+    "Acts", 15,
+    [ 33 ] ],
+   [
+    "Acts", 16,
+    [ 36 ] ] ]
  },
  {
   "id": "remit",
@@ -10884,7 +11484,28 @@ window.GLOSSARY = [
     [ 20 ] ],
    [
     "John", 21,
-    [ 1, 14 ] ] ]
+    [ 1, 14 ] ],
+   [
+    "Acts", 1,
+    [ 3, 24 ] ],
+   [
+    "Acts", 2,
+    [ 19 ] ],
+   [
+    "Acts", 3,
+    [ 18 ] ],
+   [
+    "Acts", 4,
+    [ 22 ] ],
+   [
+    "Acts", 11,
+    [ 13 ] ],
+   [
+    "Acts", 12,
+    [ 17 ] ],
+   [
+    "Acts", 16,
+    [ 17 ] ] ]
  },
  {
   "id": "fishers-coat",
@@ -11130,7 +11751,10 @@ window.GLOSSARY = [
     [ 49 ] ],
    [
     "John", 18,
-    [ 13, 14, 24, 28 ] ] ]
+    [ 13, 14, 24, 28 ] ],
+   [
+    "Acts", 4,
+    [ 6 ] ] ]
  },
  {
   "id": "bethany",
@@ -11202,7 +11826,16 @@ window.GLOSSARY = [
     [ 29 ] ],
    [
     "John", 11,
-    [ 24, 25 ] ] ]
+    [ 24, 25 ] ],
+   [
+    "Acts", 1,
+    [ 22 ] ],
+   [
+    "Acts", 2,
+    [ 31 ] ],
+   [
+    "Acts", 4,
+    [ 2, 33 ] ] ]
  },
  {
   "id": "graveclothes",
@@ -11241,7 +11874,16 @@ window.GLOSSARY = [
     [ 50 ] ],
    [
     "John", 11,
-    [ 47 ] ] ]
+    [ 47 ] ],
+   [
+    "Acts", 4,
+    [ 15 ] ],
+   [
+    "Acts", 5,
+    [ 21, 27, 34, 41 ] ],
+   [
+    "Acts", 6,
+    [ 12, 15 ] ] ]
  },
  {
   "id": "high-priest",
@@ -11280,7 +11922,13 @@ window.GLOSSARY = [
     [ 49, 51 ] ],
    [
     "John", 18,
-    [ 10, 13, 15, 16, 19, 22, 24, 26 ] ] ]
+    [ 10, 13, 15, 16, 19, 22, 24, 26 ] ],
+   [
+    "Acts", 4,
+    [ 6 ] ],
+   [
+    "Acts", 5,
+    [ 17, 21, 24, 27 ] ] ]
  },
  {
   "id": "expedient",
@@ -11538,7 +12186,10 @@ window.GLOSSARY = [
     [ 3, 31 ] ],
    [
     "John", 13,
-    [ 27 ] ] ]
+    [ 27 ] ],
+   [
+    "Acts", 5,
+    [ 3 ] ] ]
  },
  {
   "id": "girded",
@@ -11727,7 +12378,10 @@ window.GLOSSARY = [
     [ 16 ] ],
    [
     "John", 14,
-    [ 22 ] ] ]
+    [ 22 ] ],
+   [
+    "Acts", 1,
+    [ 13 ] ] ]
  },
  {
   "id": "mansions",
@@ -12045,7 +12699,10 @@ window.GLOSSARY = [
     [ 2 ] ],
    [
     "John", 18,
-    [ 13, 24 ] ] ]
+    [ 13, 24 ] ],
+   [
+    "Acts", 4,
+    [ 6 ] ] ]
  },
  {
   "id": "malchus",
@@ -12090,7 +12747,13 @@ window.GLOSSARY = [
     [ 29, 31, 33, 35, 37, 38 ] ],
    [
     "John", 19,
-    [ 1, 4, 5, 6, 8, 10, 12, 13, 15, 19, 21, 22, 31, 38 ] ] ]
+    [ 1, 4, 5, 6, 8, 10, 12, 13, 15, 19, 21, 22, 31, 38 ] ],
+   [
+    "Acts", 3,
+    [ 13 ] ],
+   [
+    "Acts", 4,
+    [ 27 ] ] ]
  },
  {
   "id": "barabbas",
@@ -12258,7 +12921,10 @@ window.GLOSSARY = [
     [ 2 ] ],
    [
     "John", 19,
-    [ 12, 15 ] ] ]
+    [ 12, 15 ] ],
+   [
+    "Acts", 11,
+    [ 28 ] ] ]
  },
  {
   "id": "soldiers",
@@ -12420,7 +13086,13 @@ window.GLOSSARY = [
     [ 7, 20 ] ],
    [
     "John", 19,
-    [ 6, 10, 15, 16, 17, 18, 19, 20, 23, 25, 31, 32, 41 ] ] ]
+    [ 6, 10, 15, 16, 17, 18, 19, 20, 23, 25, 31, 32, 41 ] ],
+   [
+    "Acts", 2,
+    [ 23, 36 ] ],
+   [
+    "Acts", 4,
+    [ 10 ] ] ]
  },
  {
   "id": "title-on-the-cross",
@@ -12519,7 +13191,13 @@ window.GLOSSARY = [
     [ 46 ] ],
    [
     "John", 19,
-    [ 30 ] ] ]
+    [ 30 ] ],
+   [
+    "Acts", 5,
+    [ 5, 10 ] ],
+   [
+    "Acts", 12,
+    [ 23 ] ] ]
  },
  {
   "id": "preparation",
@@ -12564,7 +13242,10 @@ window.GLOSSARY = [
   "refs": [
    [
     "Joel", 1,
-    [ 1 ] ] ]
+    [ 1 ] ],
+   [
+    "Acts", 2,
+    [ 16 ] ] ]
  },
  {
   "id": "pethuel",
@@ -12657,7 +13338,13 @@ window.GLOSSARY = [
     [ 31 ] ],
    [
     "Luke", 17,
-    [ 14 ] ] ]
+    [ 14 ] ],
+   [
+    "Acts", 4,
+    [ 1 ] ],
+   [
+    "Acts", 6,
+    [ 7 ] ] ]
  },
  {
   "id": "elders",
@@ -12711,7 +13398,22 @@ window.GLOSSARY = [
     [ 1 ] ],
    [
     "Luke", 22,
-    [ 52, 66 ] ] ]
+    [ 52, 66 ] ],
+   [
+    "Acts", 4,
+    [ 5, 8, 23 ] ],
+   [
+    "Acts", 6,
+    [ 12 ] ],
+   [
+    "Acts", 11,
+    [ 30 ] ],
+   [
+    "Acts", 15,
+    [ 2, 4, 6, 22, 23 ] ],
+   [
+    "Acts", 16,
+    [ 4 ] ] ]
  },
  {
   "id": "locusts",
@@ -12888,7 +13590,10 @@ window.GLOSSARY = [
     [ 1 ] ],
    [
     "Malachi", 4,
-    [ 5 ] ] ]
+    [ 5 ] ],
+   [
+    "Acts", 2,
+    [ 20 ] ] ]
  },
  {
   "id": "garners",
@@ -13014,7 +13719,10 @@ window.GLOSSARY = [
     [ 7 ] ],
    [
     "Matthew", 18,
-    [ 17 ] ] ]
+    [ 17 ] ],
+   [
+    "Acts", 4,
+    [ 25 ] ] ]
  },
  {
   "id": "jealous",
@@ -13107,7 +13815,10 @@ window.GLOSSARY = [
     [ 23 ] ],
    [
     "Joel", 2,
-    [ 28, 29 ] ] ]
+    [ 28, 29 ] ],
+   [
+    "Acts", 2,
+    [ 17, 18 ] ] ]
  },
  {
   "id": "call-on-the-name-of-the-lord",
@@ -13116,7 +13827,10 @@ window.GLOSSARY = [
   "refs": [
    [
     "Joel", 2,
-    [ 32 ] ] ]
+    [ 32 ] ],
+   [
+    "Acts", 2,
+    [ 21 ] ] ]
  },
  {
   "id": "remnant",
@@ -13224,7 +13938,10 @@ window.GLOSSARY = [
     [ 17 ] ],
    [
     "Luke", 10,
-    [ 13, 14 ] ] ]
+    [ 13, 14 ] ],
+   [
+    "Acts", 12,
+    [ 20 ] ] ]
  },
  {
   "id": "palestine",
@@ -13242,7 +13959,10 @@ window.GLOSSARY = [
   "refs": [
    [
     "Joel", 3,
-    [ 6 ] ] ]
+    [ 6 ] ],
+   [
+    "Acts", 11,
+    [ 20 ] ] ]
  },
  {
   "id": "sabeans",
@@ -13386,7 +14106,10 @@ window.GLOSSARY = [
     [ 18, 19 ] ],
    [
     "Matthew", 2,
-    [ 13, 14, 15, 19 ] ] ]
+    [ 13, 14, 15, 19 ] ],
+   [
+    "Acts", 2,
+    [ 10 ] ] ]
  },
  {
   "id": "edom",
@@ -13854,7 +14577,10 @@ window.GLOSSARY = [
   "refs": [
    [
     "Hosea", 3,
-    [ 5 ] ] ]
+    [ 5 ] ],
+   [
+    "Acts", 2,
+    [ 17 ] ] ]
  },
  {
   "id": "ephraim-kingdom",
@@ -14232,7 +14958,13 @@ window.GLOSSARY = [
     [ 24 ] ],
    [
     "Luke", 4,
-    [ 34 ] ] ]
+    [ 34 ] ],
+   [
+    "Acts", 2,
+    [ 27 ] ],
+   [
+    "Acts", 3,
+    [ 14 ] ] ]
  },
  {
   "id": "east-wind",
@@ -14346,7 +15078,10 @@ window.GLOSSARY = [
     [ 24 ] ],
    [
     "Luke", 2,
-    [ 2 ] ] ]
+    [ 2 ] ],
+   [
+    "Acts", 15,
+    [ 23, 41 ] ] ]
  },
  {
   "id": "idols",
@@ -14376,7 +15111,10 @@ window.GLOSSARY = [
     [ 2 ] ],
    [
     "Zechariah", 13,
-    [ 2 ] ] ]
+    [ 2 ] ],
+   [
+    "Acts", 15,
+    [ 20, 29 ] ] ]
  },
  {
   "id": "morning-cloud",
@@ -14709,7 +15447,10 @@ window.GLOSSARY = [
     [ 1 ] ],
    [
     "Luke", 1,
-    [ 72 ] ] ]
+    [ 72 ] ],
+   [
+    "Acts", 3,
+    [ 25 ] ] ]
  },
  {
   "id": "oven",
@@ -15255,7 +15996,10 @@ window.GLOSSARY = [
     [ 28 ] ],
    [
     "Luke", 20,
-    [ 37 ] ] ]
+    [ 37 ] ],
+   [
+    "Acts", 3,
+    [ 13 ] ] ]
  },
  {
   "id": "plumbline",
@@ -15447,7 +16191,10 @@ window.GLOSSARY = [
   "refs": [
    [
     "Amos", 9,
-    [ 11 ] ] ]
+    [ 11 ] ],
+   [
+    "Acts", 15,
+    [ 16 ] ] ]
  },
  {
   "id": "hazael",
@@ -16125,7 +16872,10 @@ window.GLOSSARY = [
   "refs": [
    [
     "Habakkuk", 3,
-    [ 13 ] ] ]
+    [ 13 ] ],
+   [
+    "Acts", 4,
+    [ 27 ] ] ]
  },
  {
   "id": "hinds-feet",
@@ -16374,7 +17124,10 @@ window.GLOSSARY = [
   "refs": [
    [
     "Micah", 4,
-    [ 1 ] ] ]
+    [ 1 ] ],
+   [
+    "Acts", 2,
+    [ 17 ] ] ]
  },
  {
   "id": "vine-and-fig-tree",
@@ -16584,7 +17337,10 @@ window.GLOSSARY = [
     [ 29, 30 ] ],
    [
     "Luke", 14,
-    [ 19 ] ] ]
+    [ 19 ] ],
+   [
+    "Acts", 15,
+    [ 10 ] ] ]
  },
  {
   "id": "vile",
@@ -17268,7 +18024,10 @@ window.GLOSSARY = [
   "refs": [
    [
     "Jonah", 1,
-    [ 3 ] ] ]
+    [ 3 ] ],
+   [
+    "Acts", 11,
+    [ 5, 13 ] ] ]
  },
  {
   "id": "presence-of-the-lord",
@@ -18018,7 +18777,10 @@ window.GLOSSARY = [
     [ 1, 5, 6 ] ],
    [
     "Zechariah", 12,
-    [ 8 ] ] ]
+    [ 8 ] ],
+   [
+    "Acts", 12,
+    [ 7, 23 ] ] ]
  },
  {
   "id": "angel-that-talked-with-me",
@@ -19434,7 +20196,10 @@ window.GLOSSARY = [
   "refs": [
    [
     "Luke", 1,
-    [ 3 ] ] ]
+    [ 3 ] ],
+   [
+    "Acts", 1,
+    [ 1 ] ] ]
  },
  {
   "id": "zacharias",
@@ -19638,7 +20403,10 @@ window.GLOSSARY = [
   "refs": [
    [
     "Luke", 1,
-    [ 38, 48 ] ] ]
+    [ 38, 48 ] ],
+   [
+    "Acts", 2,
+    [ 18 ] ] ]
  },
  {
   "id": "magnify",
@@ -19713,7 +20481,10 @@ window.GLOSSARY = [
     [ 3 ] ],
    [
     "Luke", 24,
-    [ 47 ] ] ]
+    [ 47 ] ],
+   [
+    "Acts", 2,
+    [ 38 ] ] ]
  },
  {
   "id": "dayspring",
@@ -19854,7 +20625,13 @@ window.GLOSSARY = [
     [ 6 ] ],
    [
     "Luke", 20,
-    [ 1 ] ] ]
+    [ 1 ] ],
+   [
+    "Acts", 15,
+    [ 7 ] ],
+   [
+    "Acts", 16,
+    [ 10 ] ] ]
  },
  {
   "id": "repent",
@@ -19914,7 +20691,19 @@ window.GLOSSARY = [
     [ 3, 4 ] ],
    [
     "Luke", 24,
-    [ 47 ] ] ]
+    [ 47 ] ],
+   [
+    "Acts", 2,
+    [ 38 ] ],
+   [
+    "Acts", 3,
+    [ 19 ] ],
+   [
+    "Acts", 5,
+    [ 31 ] ],
+   [
+    "Acts", 11,
+    [ 18 ] ] ]
  },
  {
   "id": "camels-hair",
@@ -20052,7 +20841,13 @@ window.GLOSSARY = [
     [ 43 ] ],
    [
     "Luke", 19,
-    [ 11, 40 ] ] ]
+    [ 11, 40 ] ],
+   [
+    "Acts", 5,
+    [ 10 ] ],
+   [
+    "Acts", 16,
+    [ 10, 26, 33 ] ] ]
  },
  {
   "id": "fever",
@@ -20358,7 +21153,10 @@ window.GLOSSARY = [
     [ 1 ] ],
    [
     "Luke", 1,
-    [ 65 ] ] ]
+    [ 65 ] ],
+   [
+    "Acts", 2,
+    [ 6 ] ] ]
  },
  {
   "id": "palsy",
@@ -20649,7 +21447,10 @@ window.GLOSSARY = [
   "refs": [
    [
     "Luke", 2,
-    [ 1, 2, 3, 5 ] ] ]
+    [ 1, 2, 3, 5 ] ],
+   [
+    "Acts", 5,
+    [ 37 ] ] ]
  },
  {
   "id": "city-of-david",
@@ -20910,7 +21711,10 @@ window.GLOSSARY = [
     [ 31, 32 ] ],
    [
     "Luke", 23,
-    [ 7, 8, 11, 12, 15 ] ] ]
+    [ 7, 8, 11, 12, 15 ] ],
+   [
+    "Acts", 4,
+    [ 27 ] ] ]
  },
  {
   "id": "tetrarch",
@@ -21417,7 +22221,31 @@ window.GLOSSARY = [
     [ 14 ] ],
    [
     "Luke", 24,
-    [ 10 ] ] ]
+    [ 10 ] ],
+   [
+    "Acts", 1,
+    [ 2, 26 ] ],
+   [
+    "Acts", 2,
+    [ 37, 42, 43 ] ],
+   [
+    "Acts", 4,
+    [ 33, 35, 36, 37 ] ],
+   [
+    "Acts", 5,
+    [ 2, 12, 18, 29, 34, 40 ] ],
+   [
+    "Acts", 6,
+    [ 6 ] ],
+   [
+    "Acts", 11,
+    [ 1 ] ],
+   [
+    "Acts", 15,
+    [ 2, 4, 6, 22, 23, 33 ] ],
+   [
+    "Acts", 16,
+    [ 4 ] ] ]
  },
  {
   "id": "bartholomew",
@@ -21432,7 +22260,10 @@ window.GLOSSARY = [
     [ 18 ] ],
    [
     "Luke", 6,
-    [ 14 ] ] ]
+    [ 14 ] ],
+   [
+    "Acts", 1,
+    [ 13 ] ] ]
  },
  {
   "id": "james-son-of-alphaeus",
@@ -21447,7 +22278,10 @@ window.GLOSSARY = [
     [ 18 ] ],
    [
     "Luke", 6,
-    [ 15 ] ] ]
+    [ 15 ] ],
+   [
+    "Acts", 1,
+    [ 13 ] ] ]
  },
  {
   "id": "simon-the-zealot",
@@ -21462,7 +22296,10 @@ window.GLOSSARY = [
     [ 18 ] ],
    [
     "Luke", 6,
-    [ 15 ] ] ]
+    [ 15 ] ],
+   [
+    "Acts", 1,
+    [ 13 ] ] ]
  },
  {
   "id": "lost-sheep",
@@ -21891,7 +22728,13 @@ window.GLOSSARY = [
     [ 16 ] ],
    [
     "Luke", 20,
-    [ 23 ] ] ]
+    [ 23 ] ],
+   [
+    "Acts", 5,
+    [ 9 ] ],
+   [
+    "Acts", 15,
+    [ 10 ] ] ]
  },
  {
   "id": "an-hungred",
@@ -22329,7 +23172,10 @@ window.GLOSSARY = [
     [ 9 ] ],
    [
     "John", 8,
-    [ 41 ] ] ]
+    [ 41 ] ],
+   [
+    "Acts", 15,
+    [ 20, 29 ] ] ]
  },
  {
   "id": "forswear",
@@ -22518,7 +23364,10 @@ window.GLOSSARY = [
     [ 19 ] ],
    [
     "Matthew", 2,
-    [ 7 ] ] ]
+    [ 7 ] ],
+   [
+    "Acts", 16,
+    [ 37 ] ] ]
  },
  {
   "id": "publick-example",
@@ -22707,7 +23556,13 @@ window.GLOSSARY = [
     [ 18 ] ],
    [
     "Luke", 20,
-    [ 27 ] ] ]
+    [ 27 ] ],
+   [
+    "Acts", 4,
+    [ 1 ] ],
+   [
+    "Acts", 5,
+    [ 17 ] ] ]
  },
  {
   "id": "fruits-meet-for-repentance",
@@ -22737,7 +23592,10 @@ window.GLOSSARY = [
     [ 32 ] ],
    [
     "Luke", 9,
-    [ 59 ] ] ]
+    [ 59 ] ],
+   [
+    "Acts", 16,
+    [ 7 ] ] ]
  },
  {
   "id": "fulfil-all-righteousness",
@@ -22806,7 +23664,10 @@ window.GLOSSARY = [
     [ 41 ] ],
    [
     "Luke", 12,
-    [ 33 ] ] ]
+    [ 33 ] ],
+   [
+    "Acts", 3,
+    [ 2, 3, 10 ] ] ]
  },
  {
   "id": "closet",
@@ -23778,7 +24639,10 @@ window.GLOSSARY = [
     [ 12 ] ],
    [
     "Luke", 22,
-    [ 32 ] ] ]
+    [ 32 ] ],
+   [
+    "Acts", 3,
+    [ 19 ] ] ]
  },
  {
   "id": "deceitfulness-of-riches",
@@ -24777,7 +25641,13 @@ window.GLOSSARY = [
     [ 69 ] ],
    [
     "Mark", 5,
-    [ 39, 40, 41, 42 ] ] ]
+    [ 39, 40, 41, 42 ] ],
+   [
+    "Acts", 12,
+    [ 13 ] ],
+   [
+    "Acts", 16,
+    [ 16 ] ] ]
  },
  {
   "id": "anointed-with-oil",
@@ -24843,7 +25713,22 @@ window.GLOSSARY = [
     [ 18 ] ],
    [
     "Matthew", 18,
-    [ 17 ] ] ]
+    [ 17 ] ],
+   [
+    "Acts", 2,
+    [ 47 ] ],
+   [
+    "Acts", 5,
+    [ 11 ] ],
+   [
+    "Acts", 11,
+    [ 22, 26 ] ],
+   [
+    "Acts", 12,
+    [ 1, 5 ] ],
+   [
+    "Acts", 15,
+    [ 3, 4, 22 ] ] ]
  },
  {
   "id": "bind-and-loose",
@@ -25812,6 +26697,9 @@ window.GLOSSARY = [
     [ 12 ] ],
    [
     "Luke", 23,
+    [ 11 ] ],
+   [
+    "Acts", 4,
     [ 11 ] ] ]
  },
  {
@@ -26283,7 +27171,10 @@ window.GLOSSARY = [
   "refs": [
    [
     "Matthew", 20,
-    [ 3 ] ] ]
+    [ 3 ] ],
+   [
+    "Acts", 16,
+    [ 19 ] ] ]
  },
  {
   "id": "eleventh-hour",
@@ -26502,7 +27393,10 @@ window.GLOSSARY = [
     [ 10 ] ],
    [
     "Luke", 20,
-    [ 17 ] ] ]
+    [ 17 ] ],
+   [
+    "Acts", 4,
+    [ 11 ] ] ]
  },
  {
   "id": "the-seventy",
@@ -26880,7 +27774,10 @@ window.GLOSSARY = [
   "refs": [
    [
     "Luke", 12,
-    [ 47, 48 ] ] ]
+    [ 47, 48 ] ],
+   [
+    "Acts", 16,
+    [ 23, 33 ] ] ]
  },
  {
   "id": "much-required",
@@ -26916,7 +27813,10 @@ window.GLOSSARY = [
   "refs": [
    [
     "Luke", 12,
-    [ 11, 58 ] ] ]
+    [ 11, 58 ] ],
+   [
+    "Acts", 16,
+    [ 20, 22, 35, 36, 38 ] ] ]
  },
  {
   "id": "officer",
@@ -27132,7 +28032,10 @@ window.GLOSSARY = [
   "refs": [
    [
     "Mark", 11,
-    [ 11 ] ] ]
+    [ 11 ] ],
+   [
+    "Acts", 4,
+    [ 3 ] ] ]
  },
  {
   "id": "haply",
@@ -27144,7 +28047,10 @@ window.GLOSSARY = [
     [ 13 ] ],
    [
     "Luke", 14,
-    [ 29 ] ] ]
+    [ 29 ] ],
+   [
+    "Acts", 5,
+    [ 39 ] ] ]
  },
  {
   "id": "faith-in-god",
@@ -27198,7 +28104,10 @@ window.GLOSSARY = [
     [ 29 ] ],
    [
     "Luke", 20,
-    [ 4 ] ] ]
+    [ 4 ] ],
+   [
+    "Acts", 1,
+    [ 22 ] ] ]
  },
  {
   "id": "winefat",
@@ -27330,7 +28239,10 @@ window.GLOSSARY = [
     [ 40 ] ],
    [
     "John", 21,
-    [ 12 ] ] ]
+    [ 12 ] ],
+   [
+    "Acts", 5,
+    [ 13 ] ] ]
  },
  {
   "id": "lord-said-to-my-lord",
@@ -27345,7 +28257,10 @@ window.GLOSSARY = [
     [ 36 ] ],
    [
     "Luke", 20,
-    [ 42 ] ] ]
+    [ 42 ] ],
+   [
+    "Acts", 2,
+    [ 34 ] ] ]
  },
  {
   "id": "long-clothing",
@@ -28185,7 +29100,10 @@ window.GLOSSARY = [
     [ 1, 12 ] ],
    [
     "Luke", 22,
-    [ 1, 7 ] ] ]
+    [ 1, 7 ] ],
+   [
+    "Acts", 12,
+    [ 3 ] ] ]
  },
  {
   "id": "lords-supper",
@@ -28392,7 +29310,10 @@ window.GLOSSARY = [
     [ 26 ] ],
    [
     "Luke", 20,
-    [ 37 ] ] ]
+    [ 37 ] ],
+   [
+    "Acts", 3,
+    [ 13 ] ] ]
  },
  {
   "id": "no-issue",
@@ -28452,7 +29373,13 @@ window.GLOSSARY = [
   "refs": [
    [
     "Matthew", 23,
-    [ 15 ] ] ]
+    [ 15 ] ],
+   [
+    "Acts", 2,
+    [ 10 ] ],
+   [
+    "Acts", 6,
+    [ 5 ] ] ]
  },
  {
   "id": "blind-guides",
@@ -28695,7 +29622,10 @@ window.GLOSSARY = [
     [ 15 ] ],
    [
     "Luke", 22,
-    [ 12 ] ] ]
+    [ 12 ] ],
+   [
+    "Acts", 1,
+    [ 13 ] ] ]
  },
  {
   "id": "guestchamber",
@@ -29094,7 +30024,10 @@ window.GLOSSARY = [
     [ 3 ] ],
    [
     "Mark", 15,
-    [ 25 ] ] ]
+    [ 25 ] ],
+   [
+    "Acts", 2,
+    [ 15 ] ] ]
  },
  {
   "id": "ninth-hour",
@@ -29112,7 +30045,10 @@ window.GLOSSARY = [
     [ 33, 34 ] ],
    [
     "Luke", 23,
-    [ 44 ] ] ]
+    [ 44 ] ],
+   [
+    "Acts", 3,
+    [ 1 ] ] ]
  },
  {
   "id": "superscription-of-his-accusation",
@@ -29238,7 +30174,13 @@ window.GLOSSARY = [
     [ 14 ] ],
    [
     "Luke", 24,
-    [ 9, 33 ] ] ]
+    [ 9, 33 ] ],
+   [
+    "Acts", 1,
+    [ 26 ] ],
+   [
+    "Acts", 2,
+    [ 14 ] ] ]
  },
  {
   "id": "every-creature",
@@ -29292,7 +30234,10 @@ window.GLOSSARY = [
   "refs": [
    [
     "Mark", 16,
-    [ 19 ] ] ]
+    [ 19 ] ],
+   [
+    "Acts", 2,
+    [ 33 ] ] ]
  },
  {
   "id": "penury",
@@ -29415,7 +30360,10 @@ window.GLOSSARY = [
   "refs": [
    [
     "Luke", 22,
-    [ 4, 52 ] ] ]
+    [ 4, 52 ] ],
+   [
+    "Acts", 4,
+    [ 1 ] ] ]
  },
  {
   "id": "pitcher-of-water",
@@ -29805,7 +30753,10 @@ window.GLOSSARY = [
   "refs": [
    [
     "Luke", 24,
-    [ 30, 35 ] ] ]
+    [ 30, 35 ] ],
+   [
+    "Acts", 2,
+    [ 42, 46 ] ] ]
  },
  {
   "id": "flesh-and-bones",
@@ -29832,6 +30783,1605 @@ window.GLOSSARY = [
   "refs": [
    [
     "Luke", 24,
-    [ 49 ] ] ]
+    [ 49 ] ],
+   [
+    "Acts", 1,
+    [ 4 ] ],
+   [
+    "Acts", 2,
+    [ 33 ] ] ]
+ },
+ {
+  "id": "taken-up",
+  "kind": "term",
+  "name": "Taken up (the ascension, Jesus going back to heaven)",
+  "refs": [
+   [
+    "Acts", 1,
+    [ 2, 9, 11, 22 ] ] ]
+ },
+ {
+  "id": "his-passion",
+  "kind": "term",
+  "name": "His passion (His suffering and death)",
+  "refs": [
+   [
+    "Acts", 1,
+    [ 3 ] ] ]
+ },
+ {
+  "id": "infallible-proofs",
+  "kind": "term",
+  "name": "Infallible proofs (sure signs that cannot fail)",
+  "refs": [
+   [
+    "Acts", 1,
+    [ 3 ] ] ]
+ },
+ {
+  "id": "restore-the-kingdom",
+  "kind": "term",
+  "name": "Restore the kingdom to Israel (what the apostles hoped for)",
+  "refs": [
+   [
+    "Acts", 1,
+    [ 6 ] ] ]
+ },
+ {
+  "id": "sabbath-days-journey",
+  "kind": "term",
+  "name": "A sabbath day's journey (about two-thirds of a mile)",
+  "refs": [
+   [
+    "Acts", 1,
+    [ 12 ] ] ]
+ },
+ {
+  "id": "simon-zelotes",
+  "kind": "person",
+  "name": "Simon Zelotes (the Zealot)",
+  "refs": [
+   [
+    "Acts", 1,
+    [ 13 ] ] ]
+ },
+ {
+  "id": "matthias",
+  "kind": "person",
+  "name": "Matthias, chosen to take Judas' place",
+  "refs": [
+   [
+    "Acts", 1,
+    [ 23, 26 ] ] ]
+ },
+ {
+  "id": "joseph-barsabas",
+  "kind": "person",
+  "name": "Joseph Barsabas, surnamed Justus",
+  "refs": [
+   [
+    "Acts", 1,
+    [ 23 ] ],
+   [
+    "Acts", 15,
+    [ 22 ] ] ]
+ },
+ {
+  "id": "aceldama",
+  "kind": "place",
+  "name": "Aceldama, the field of blood (Aramaic: Hakal dema)",
+  "refs": [
+   [
+    "Acts", 1,
+    [ 19 ] ] ]
+ },
+ {
+  "id": "bishoprick",
+  "kind": "term",
+  "name": "Bishoprick (the office of overseer)",
+  "refs": [
+   [
+    "Acts", 1,
+    [ 20 ] ] ]
+ },
+ {
+  "id": "pentecost",
+  "kind": "term",
+  "name": "Pentecost (the feast fifty days after Passover)",
+  "refs": [
+   [
+    "Acts", 2,
+    [ 1 ] ] ]
+ },
+ {
+  "id": "other-tongues",
+  "kind": "term",
+  "name": "Other tongues (real languages, each man hearing his own)",
+  "refs": [
+   [
+    "Acts", 2,
+    [ 3, 4, 6, 8, 11 ] ] ]
+ },
+ {
+  "id": "devout",
+  "kind": "term",
+  "name": "Devout (godly, reverent)",
+  "refs": [
+   [
+    "Acts", 2,
+    [ 5 ] ] ]
+ },
+ {
+  "id": "confounded",
+  "kind": "term",
+  "name": "Confounded (bewildered, thrown into confusion)",
+  "refs": [
+   [
+    "Acts", 2,
+    [ 6 ] ] ]
+ },
+ {
+  "id": "noised-abroad",
+  "kind": "term",
+  "name": "Noised abroad (the news spread)",
+  "refs": [
+   [
+    "Acts", 2,
+    [ 6 ] ] ]
+ },
+ {
+  "id": "parthians",
+  "kind": "place",
+  "name": "Parthians, Medes and Elamites (the far east, beyond the Euphrates)",
+  "refs": [
+   [
+    "Acts", 2,
+    [ 9 ] ] ]
+ },
+ {
+  "id": "mesopotamia",
+  "kind": "place",
+  "name": "Mesopotamia (the land between the rivers)",
+  "refs": [
+   [
+    "Acts", 2,
+    [ 9 ] ] ]
+ },
+ {
+  "id": "cappadocia",
+  "kind": "place",
+  "name": "Cappadocia (inland Asia Minor)",
+  "refs": [
+   [
+    "Acts", 2,
+    [ 9 ] ] ]
+ },
+ {
+  "id": "pontus",
+  "kind": "place",
+  "name": "Pontus (on the Black Sea)",
+  "refs": [
+   [
+    "Acts", 2,
+    [ 9 ] ] ]
+ },
+ {
+  "id": "asia",
+  "kind": "place",
+  "name": "Asia (the Roman province in the west of Asia Minor)",
+  "refs": [
+   [
+    "Acts", 2,
+    [ 9 ] ],
+   [
+    "Acts", 6,
+    [ 9 ] ],
+   [
+    "Acts", 16,
+    [ 6 ] ] ]
+ },
+ {
+  "id": "phrygia",
+  "kind": "place",
+  "name": "Phrygia and Pamphylia (central and southern Asia Minor)",
+  "refs": [
+   [
+    "Acts", 2,
+    [ 10 ] ],
+   [
+    "Acts", 16,
+    [ 6 ] ] ]
+ },
+ {
+  "id": "cyrene",
+  "kind": "place",
+  "name": "Libya and Cyrene (north Africa)",
+  "refs": [
+   [
+    "Acts", 2,
+    [ 10 ] ],
+   [
+    "Acts", 11,
+    [ 20 ] ] ]
+ },
+ {
+  "id": "crete",
+  "kind": "place",
+  "name": "Crete (the island)",
+  "refs": [
+   [
+    "Acts", 2,
+    [ 11 ] ] ]
+ },
+ {
+  "id": "arabians",
+  "kind": "place",
+  "name": "The Arabians (the desert lands to the east and south)",
+  "refs": [
+   [
+    "Acts", 2,
+    [ 11 ] ] ]
+ },
+ {
+  "id": "rome",
+  "kind": "place",
+  "name": "Rome (the capital of the empire)",
+  "refs": [
+   [
+    "Acts", 2,
+    [ 10 ] ] ]
+ },
+ {
+  "id": "new-wine",
+  "kind": "term",
+  "name": "New wine (sweet wine, newly pressed)",
+  "refs": [
+   [
+    "Acts", 2,
+    [ 13 ] ] ]
+ },
+ {
+  "id": "prophesy",
+  "kind": "term",
+  "name": "Prophesy (speak for God)",
+  "refs": [
+   [
+    "Acts", 2,
+    [ 17, 18 ] ] ]
+ },
+ {
+  "id": "determinate-counsel",
+  "kind": "term",
+  "name": "Determinate counsel and foreknowledge (God's plan, and what He knew beforehand)",
+  "refs": [
+   [
+    "Acts", 2,
+    [ 23 ] ] ]
+ },
+ {
+  "id": "pains-of-death",
+  "kind": "term",
+  "name": "The pains of death (death's grip)",
+  "refs": [
+   [
+    "Acts", 2,
+    [ 24 ] ] ]
+ },
+ {
+  "id": "holden-of-death",
+  "kind": "term",
+  "name": "Holden of death (held by death)",
+  "refs": [
+   [
+    "Acts", 2,
+    [ 24 ] ] ]
+ },
+ {
+  "id": "patriarch",
+  "kind": "person",
+  "name": "The patriarch (father of the nation)",
+  "refs": [
+   [
+    "Acts", 2,
+    [ 29 ] ] ]
+ },
+ {
+  "id": "fruit-of-his-loins",
+  "kind": "term",
+  "name": "Fruit of his loins (his own descendant)",
+  "refs": [
+   [
+    "Acts", 2,
+    [ 30 ] ] ]
+ },
+ {
+  "id": "see-corruption",
+  "kind": "term",
+  "name": "See corruption (the body decaying in the grave)",
+  "refs": [
+   [
+    "Acts", 2,
+    [ 27, 31 ] ] ]
+ },
+ {
+  "id": "footstool",
+  "kind": "term",
+  "name": "Footstool (enemies under His feet)",
+  "refs": [
+   [
+    "Acts", 2,
+    [ 35 ] ] ]
+ },
+ {
+  "id": "pricked-in-the-heart",
+  "kind": "term",
+  "name": "Pricked in the heart (stabbed through with conviction)",
+  "refs": [
+   [
+    "Acts", 2,
+    [ 37 ] ] ]
+ },
+ {
+  "id": "gift-of-the-holy-ghost",
+  "kind": "term",
+  "name": "The gift of the Holy Ghost",
+  "refs": [
+   [
+    "Acts", 2,
+    [ 38 ] ] ]
+ },
+ {
+  "id": "afar-off",
+  "kind": "term",
+  "name": "Afar off (far away; the nations)",
+  "refs": [
+   [
+    "Acts", 2,
+    [ 39 ] ] ]
+ },
+ {
+  "id": "untoward",
+  "kind": "term",
+  "name": "Untoward (crooked, twisted)",
+  "refs": [
+   [
+    "Acts", 2,
+    [ 40 ] ] ]
+ },
+ {
+  "id": "fellowship",
+  "kind": "term",
+  "name": "Fellowship (sharing life together)",
+  "refs": [
+   [
+    "Acts", 2,
+    [ 42 ] ] ]
+ },
+ {
+  "id": "all-things-common",
+  "kind": "term",
+  "name": "All things common (they shared what they had)",
+  "refs": [
+   [
+    "Acts", 2,
+    [ 44 ] ],
+   [
+    "Acts", 4,
+    [ 32 ] ] ]
+ },
+ {
+  "id": "singleness-of-heart",
+  "kind": "term",
+  "name": "Singleness of heart (a plain, undivided heart)",
+  "refs": [
+   [
+    "Acts", 2,
+    [ 46 ] ] ]
+ },
+ {
+  "id": "john-the-apostle",
+  "kind": "person",
+  "name": "John the apostle (Peter's friend, a fisherman who followed Jesus)",
+  "refs": [
+   [
+    "Acts", 3,
+    [ 1, 3, 4, 11 ] ],
+   [
+    "Acts", 4,
+    [ 13, 19 ] ] ]
+ },
+ {
+  "id": "lame-man-healed",
+  "kind": "person",
+  "name": "The lame man at the Beautiful gate (lame from birth, over forty years old)",
+  "refs": [
+   [
+    "Acts", 3,
+    [ 2, 11, 12, 16 ] ],
+   [
+    "Acts", 4,
+    [ 9, 10, 14, 22 ] ] ]
+ },
+ {
+  "id": "beautiful-gate",
+  "kind": "place",
+  "name": "The Beautiful gate (a gate of the temple where the lame man was laid to beg)",
+  "refs": [
+   [
+    "Acts", 3,
+    [ 2, 10 ] ] ]
+ },
+ {
+  "id": "ankle-bones",
+  "kind": "term",
+  "name": "Ankle bones (Luke the physician's careful detail of the healing)",
+  "refs": [
+   [
+    "Acts", 3,
+    [ 7 ] ] ]
+ },
+ {
+  "id": "prince-of-life",
+  "kind": "term",
+  "name": "The Prince of life (Jesus, the Author and Leader of life)",
+  "refs": [
+   [
+    "Acts", 3,
+    [ 15 ] ] ]
+ },
+ {
+  "id": "wot",
+  "kind": "term",
+  "name": "I wot (I know)",
+  "refs": [
+   [
+    "Acts", 3,
+    [ 17 ] ] ]
+ },
+ {
+  "id": "through-ignorance",
+  "kind": "term",
+  "name": "Through ignorance (not knowing who He really was)",
+  "refs": [
+   [
+    "Acts", 3,
+    [ 17 ] ] ]
+ },
+ {
+  "id": "blotted-out",
+  "kind": "term",
+  "name": "Blotted out (wiped clean, like ink washed off a page)",
+  "refs": [
+   [
+    "Acts", 3,
+    [ 19 ] ] ]
+ },
+ {
+  "id": "times-of-refreshing",
+  "kind": "term",
+  "name": "Times of refreshing (a cooling rest that comes from the Lord)",
+  "refs": [
+   [
+    "Acts", 3,
+    [ 19 ] ] ]
+ },
+ {
+  "id": "restitution-of-all-things",
+  "kind": "term",
+  "name": "The times of restitution of all things (everything put right when Jesus returns)",
+  "refs": [
+   [
+    "Acts", 3,
+    [ 21 ] ] ]
+ },
+ {
+  "id": "prophet-like-moses",
+  "kind": "term",
+  "name": "A prophet like Moses (the One God promised to raise up: Jesus)",
+  "refs": [
+   [
+    "Acts", 3,
+    [ 22, 23 ] ] ]
+ },
+ {
+  "id": "kindreds",
+  "kind": "term",
+  "name": "Kindreds (families and tribes)",
+  "refs": [
+   [
+    "Acts", 3,
+    [ 25 ] ] ]
+ },
+ {
+  "id": "iniquities",
+  "kind": "term",
+  "name": "Iniquities (sins, the crooked things we do)",
+  "refs": [
+   [
+    "Acts", 1,
+    [ 18 ] ],
+   [
+    "Acts", 3,
+    [ 26 ] ] ]
+ },
+ {
+  "id": "barnabas",
+  "kind": "person",
+  "name": "Barnabas (Joses, a Levite from Cyprus, the encourager)",
+  "refs": [
+   [
+    "Acts", 4,
+    [ 36 ] ],
+   [
+    "Acts", 11,
+    [ 22, 25, 30 ] ],
+   [
+    "Acts", 12,
+    [ 25 ] ],
+   [
+    "Acts", 15,
+    [ 2, 12, 22, 25, 35, 36, 37, 39 ] ] ]
+ },
+ {
+  "id": "son-of-consolation",
+  "kind": "term",
+  "name": "Son of consolation (Barnabas' nickname: one who comes alongside and encourages)",
+  "refs": [
+   [
+    "Acts", 4,
+    [ 36 ] ] ]
+ },
+ {
+  "id": "cyprus",
+  "kind": "place",
+  "name": "Cyprus (the island off the coast of Syria where Barnabas came from)",
+  "refs": [
+   [
+    "Acts", 4,
+    [ 36 ] ],
+   [
+    "Acts", 11,
+    [ 19, 20 ] ],
+   [
+    "Acts", 15,
+    [ 39 ] ] ]
+ },
+ {
+  "id": "high-priests-kindred",
+  "kind": "person",
+  "name": "John and Alexander (men of the high priest's family)",
+  "refs": [
+   [
+    "Acts", 4,
+    [ 6 ] ] ]
+ },
+ {
+  "id": "unlearned-and-ignorant",
+  "kind": "term",
+  "name": "Unlearned and ignorant (ordinary working men with no formal schooling)",
+  "refs": [
+   [
+    "Acts", 4,
+    [ 13 ] ] ]
+ },
+ {
+  "id": "boldness",
+  "kind": "term",
+  "name": "Boldness (plain, open, fearless speech)",
+  "refs": [
+   [
+    "Acts", 4,
+    [ 13, 29, 31 ] ] ]
+ },
+ {
+  "id": "straitly",
+  "kind": "term",
+  "name": "Straitly (strictly, sternly)",
+  "refs": [
+   [
+    "Acts", 4,
+    [ 17 ] ],
+   [
+    "Acts", 5,
+    [ 28 ] ] ]
+ },
+ {
+  "id": "notable-miracle",
+  "kind": "term",
+  "name": "A notable miracle (a sign everyone could see and know)",
+  "refs": [
+   [
+    "Acts", 4,
+    [ 16 ] ] ]
+ },
+ {
+  "id": "in-hold",
+  "kind": "term",
+  "name": "In hold (held in custody)",
+  "refs": [
+   [
+    "Acts", 4,
+    [ 3 ] ] ]
+ },
+ {
+  "id": "none-other-name",
+  "kind": "term",
+  "name": "None other name under heaven (only Jesus can save)",
+  "refs": [
+   [
+    "Acts", 4,
+    [ 12 ] ] ]
+ },
+ {
+  "id": "holy-child-jesus",
+  "kind": "term",
+  "name": "Thy holy child Jesus (God's holy Servant)",
+  "refs": [
+   [
+    "Acts", 4,
+    [ 27, 30 ] ] ]
+ },
+ {
+  "id": "one-heart-and-soul",
+  "kind": "term",
+  "name": "One heart and one soul (the early church, united)",
+  "refs": [
+   [
+    "Acts", 4,
+    [ 32 ] ] ]
+ },
+ {
+  "id": "ananias",
+  "kind": "person",
+  "name": "Ananias (who lied to the Holy Ghost)",
+  "refs": [
+   [
+    "Acts", 5,
+    [ 1, 3, 5 ] ] ]
+ },
+ {
+  "id": "sapphira",
+  "kind": "person",
+  "name": "Sapphira, wife of Ananias",
+  "refs": [
+   [
+    "Acts", 5,
+    [ 1 ] ] ]
+ },
+ {
+  "id": "gamaliel",
+  "kind": "person",
+  "name": "Gamaliel (a Pharisee and teacher of the law)",
+  "refs": [
+   [
+    "Acts", 5,
+    [ 34 ] ] ]
+ },
+ {
+  "id": "theudas",
+  "kind": "person",
+  "name": "Theudas (a rebel leader)",
+  "refs": [
+   [
+    "Acts", 5,
+    [ 36 ] ] ]
+ },
+ {
+  "id": "judas-of-galilee",
+  "kind": "person",
+  "name": "Judas of Galilee (a rebel at the census)",
+  "refs": [
+   [
+    "Acts", 5,
+    [ 37 ] ] ]
+ },
+ {
+  "id": "doctor-of-the-law",
+  "kind": "person",
+  "name": "A doctor of the law (a teacher of the law)",
+  "refs": [
+   [
+    "Acts", 5,
+    [ 34 ] ] ]
+ },
+ {
+  "id": "common-prison",
+  "kind": "place",
+  "name": "The common prison (the public jail)",
+  "refs": [
+   [
+    "Acts", 5,
+    [ 18 ] ] ]
+ },
+ {
+  "id": "privy",
+  "kind": "term",
+  "name": "Privy (knowing about it, in on it)",
+  "refs": [
+   [
+    "Acts", 5,
+    [ 2 ] ] ]
+ },
+ {
+  "id": "senate",
+  "kind": "term",
+  "name": "The senate of Israel (the council of elders)",
+  "refs": [
+   [
+    "Acts", 5,
+    [ 21 ] ] ]
+ },
+ {
+  "id": "overshadow",
+  "kind": "term",
+  "name": "Overshadow (to fall on as a shadow)",
+  "refs": [
+   [
+    "Acts", 5,
+    [ 15 ] ] ]
+ },
+ {
+  "id": "hanged-on-a-tree",
+  "kind": "term",
+  "name": "Hanged on a tree (the cross)",
+  "refs": [
+   [
+    "Acts", 5,
+    [ 30 ] ] ]
+ },
+ {
+  "id": "prince-and-saviour",
+  "kind": "term",
+  "name": "A Prince and a Saviour",
+  "refs": [
+   [
+    "Acts", 5,
+    [ 31 ] ] ]
+ },
+ {
+  "id": "cut-to-the-heart",
+  "kind": "term",
+  "name": "Cut to the heart (stung by the truth)",
+  "refs": [
+   [
+    "Acts", 5,
+    [ 33 ] ] ]
+ },
+ {
+  "id": "counted-worthy",
+  "kind": "term",
+  "name": "Counted worthy to suffer shame for his name",
+  "refs": [
+   [
+    "Acts", 5,
+    [ 41 ] ] ]
+ },
+ {
+  "id": "stephen",
+  "kind": "person",
+  "name": "Stephen, full of faith and power",
+  "refs": [
+   [
+    "Acts", 6,
+    [ 5, 8, 9 ] ],
+   [
+    "Acts", 11,
+    [ 19 ] ] ]
+ },
+ {
+  "id": "prochorus",
+  "kind": "person",
+  "name": "Prochorus, one of the seven",
+  "refs": [
+   [
+    "Acts", 6,
+    [ 5 ] ] ]
+ },
+ {
+  "id": "nicanor",
+  "kind": "person",
+  "name": "Nicanor, one of the seven",
+  "refs": [
+   [
+    "Acts", 6,
+    [ 5 ] ] ]
+ },
+ {
+  "id": "timon",
+  "kind": "person",
+  "name": "Timon, one of the seven",
+  "refs": [
+   [
+    "Acts", 6,
+    [ 5 ] ] ]
+ },
+ {
+  "id": "parmenas",
+  "kind": "person",
+  "name": "Parmenas, one of the seven",
+  "refs": [
+   [
+    "Acts", 6,
+    [ 5 ] ] ]
+ },
+ {
+  "id": "nicolas",
+  "kind": "person",
+  "name": "Nicolas, a proselyte of Antioch",
+  "refs": [
+   [
+    "Acts", 6,
+    [ 5 ] ] ]
+ },
+ {
+  "id": "grecian-jews",
+  "kind": "person",
+  "name": "The Grecians (Greek-speaking Jews)",
+  "refs": [
+   [
+    "Acts", 6,
+    [ 1 ] ] ]
+ },
+ {
+  "id": "hebrews-of-jerusalem",
+  "kind": "person",
+  "name": "The Hebrews (Hebrew-speaking Jews)",
+  "refs": [
+   [
+    "Acts", 6,
+    [ 1 ] ] ]
+ },
+ {
+  "id": "daily-ministration",
+  "kind": "term",
+  "name": "The daily ministration (the daily food for the widows)",
+  "refs": [
+   [
+    "Acts", 6,
+    [ 1 ] ] ]
+ },
+ {
+  "id": "ministry-of-the-word",
+  "kind": "term",
+  "name": "The ministry of the word",
+  "refs": [
+   [
+    "Acts", 6,
+    [ 4 ] ] ]
+ },
+ {
+  "id": "serve-tables",
+  "kind": "term",
+  "name": "Serve tables (handle the food and the money)",
+  "refs": [
+   [
+    "Acts", 6,
+    [ 2 ] ] ]
+ },
+ {
+  "id": "honest-report",
+  "kind": "term",
+  "name": "Honest report (a good name)",
+  "refs": [
+   [
+    "Acts", 6,
+    [ 3 ] ] ]
+ },
+ {
+  "id": "laid-hands-on-them",
+  "kind": "term",
+  "name": "Laying on of hands (setting apart)",
+  "refs": [
+   [
+    "Acts", 6,
+    [ 6 ] ] ]
+ },
+ {
+  "id": "obedient-to-the-faith",
+  "kind": "term",
+  "name": "Obedient to the faith",
+  "refs": [
+   [
+    "Acts", 6,
+    [ 7 ] ] ]
+ },
+ {
+  "id": "libertines",
+  "kind": "person",
+  "name": "The Libertines (freedmen)",
+  "refs": [
+   [
+    "Acts", 6,
+    [ 9 ] ] ]
+ },
+ {
+  "id": "cyrenians",
+  "kind": "person",
+  "name": "The Cyrenians (Jews from Cyrene)",
+  "refs": [
+   [
+    "Acts", 6,
+    [ 9 ] ] ]
+ },
+ {
+  "id": "alexandrians",
+  "kind": "person",
+  "name": "The Alexandrians (Jews from Alexandria)",
+  "refs": [
+   [
+    "Acts", 6,
+    [ 9 ] ] ]
+ },
+ {
+  "id": "cilicia",
+  "kind": "place",
+  "name": "Cilicia (the region of Tarsus)",
+  "refs": [
+   [
+    "Acts", 6,
+    [ 9 ] ],
+   [
+    "Acts", 15,
+    [ 23, 41 ] ] ]
+ },
+ {
+  "id": "suborned",
+  "kind": "term",
+  "name": "Suborned (secretly bribed to lie)",
+  "refs": [
+   [
+    "Acts", 6,
+    [ 11 ] ] ]
+ },
+ {
+  "id": "false-witnesses",
+  "kind": "term",
+  "name": "False witnesses",
+  "refs": [
+   [
+    "Acts", 6,
+    [ 13 ] ] ]
+ },
+ {
+  "id": "stedfastly",
+  "kind": "term",
+  "name": "Stedfastly (with a fixed look)",
+  "refs": [
+   [
+    "Acts", 6,
+    [ 15 ] ] ]
+ },
+ {
+  "id": "face-of-an-angel",
+  "kind": "term",
+  "name": "The face of an angel",
+  "refs": [
+   [
+    "Acts", 6,
+    [ 15 ] ] ]
+ },
+ {
+  "id": "saul",
+  "kind": "person",
+  "name": "Saul (later called Paul)",
+  "refs": [
+   [
+    "Acts", 11,
+    [ 25, 30 ] ],
+   [
+    "Acts", 12,
+    [ 25 ] ] ]
+ },
+ {
+  "id": "agabus",
+  "kind": "person",
+  "name": "Agabus, a prophet from Jerusalem",
+  "refs": [
+   [
+    "Acts", 11,
+    [ 28 ] ] ]
+ },
+ {
+  "id": "claudius",
+  "kind": "person",
+  "name": "Claudius, Roman emperor (AD 41 to 54)",
+  "refs": [
+   [
+    "Acts", 11,
+    [ 28 ] ] ]
+ },
+ {
+  "id": "christians",
+  "kind": "term",
+  "name": "Christians (\"belonging to Christ\")",
+  "refs": [
+   [
+    "Acts", 11,
+    [ 26 ] ] ]
+ },
+ {
+  "id": "antioch",
+  "kind": "place",
+  "name": "Antioch in Syria (the third city of the Roman world; the church that sent out Paul)",
+  "refs": [
+   [
+    "Acts", 11,
+    [ 19, 20, 22, 26, 27 ] ],
+   [
+    "Acts", 15,
+    [ 22, 23, 30, 35 ] ] ]
+ },
+ {
+  "id": "tarsus",
+  "kind": "place",
+  "name": "Tarsus (Saul's home city, in Cilicia)",
+  "refs": [
+   [
+    "Acts", 11,
+    [ 25 ] ] ]
+ },
+ {
+  "id": "phenice",
+  "kind": "place",
+  "name": "Phenice (Phoenicia, the coast north of Judaea: Tyre and Sidon)",
+  "refs": [
+   [
+    "Acts", 11,
+    [ 19 ] ],
+   [
+    "Acts", 15,
+    [ 3 ] ] ]
+ },
+ {
+  "id": "caesarea",
+  "kind": "place",
+  "name": "Caesarea (the Roman capital on the coast of Judaea)",
+  "refs": [
+   [
+    "Acts", 11,
+    [ 11 ] ],
+   [
+    "Acts", 12,
+    [ 19 ] ] ]
+ },
+ {
+  "id": "dearth",
+  "kind": "term",
+  "name": "Dearth (a famine)",
+  "refs": [
+   [
+    "Acts", 11,
+    [ 28 ] ] ]
+ },
+ {
+  "id": "trance",
+  "kind": "term",
+  "name": "Trance (a vision that takes hold of a man)",
+  "refs": [
+   [
+    "Acts", 11,
+    [ 5 ] ] ]
+ },
+ {
+  "id": "common-and-unclean",
+  "kind": "term",
+  "name": "Common and unclean (unfit by the old law)",
+  "refs": [
+   [
+    "Acts", 11,
+    [ 8, 9 ] ] ]
+ },
+ {
+  "id": "james-brother-of-john",
+  "kind": "person",
+  "name": "James, the brother of John (the first apostle to die for Jesus)",
+  "refs": [
+   [
+    "Acts", 12,
+    [ 2 ] ] ]
+ },
+ {
+  "id": "james-the-lords-brother",
+  "kind": "person",
+  "name": "James, the Lord's brother (leader of the church in Jerusalem)",
+  "refs": [
+   [
+    "Acts", 12,
+    [ 17 ] ],
+   [
+    "Acts", 15,
+    [ 13 ] ] ]
+ },
+ {
+  "id": "herod-agrippa",
+  "kind": "person",
+  "name": "Herod Agrippa I, king over the Jews (about AD 41 to 44)",
+  "refs": [
+   [
+    "Acts", 12,
+    [ 1, 6, 11, 19, 20, 21 ] ] ]
+ },
+ {
+  "id": "mary-mother-of-john-mark",
+  "kind": "person",
+  "name": "Mary, the mother of John Mark (the church met in her house)",
+  "refs": [
+   [
+    "Acts", 12,
+    [ 12 ] ] ]
+ },
+ {
+  "id": "john-mark",
+  "kind": "person",
+  "name": "John Mark (Barnabas's cousin, later Mark the Gospel writer)",
+  "refs": [
+   [
+    "Acts", 12,
+    [ 12, 25 ] ],
+   [
+    "Acts", 15,
+    [ 37 ] ] ]
+ },
+ {
+  "id": "rhoda",
+  "kind": "person",
+  "name": "Rhoda (the servant girl who answered the door)",
+  "refs": [
+   [
+    "Acts", 12,
+    [ 13 ] ] ]
+ },
+ {
+  "id": "blastus",
+  "kind": "person",
+  "name": "Blastus, the king's chamberlain",
+  "refs": [
+   [
+    "Acts", 12,
+    [ 20 ] ] ]
+ },
+ {
+  "id": "tyre-and-sidon",
+  "kind": "place",
+  "name": "Tyre and Sidon (the port cities of Phoenicia)",
+  "refs": [
+   [
+    "Matthew", 11,
+    [ 21, 22 ] ],
+   [
+    "Matthew", 15,
+    [ 21 ] ],
+   [
+    "Mark", 3,
+    [ 8 ] ],
+   [
+    "Mark", 7,
+    [ 24, 31 ] ],
+   [
+    "Luke", 6,
+    [ 17 ] ],
+   [
+    "Luke", 10,
+    [ 13, 14 ] ],
+   [
+    "Acts", 12,
+    [ 20 ] ] ]
+ },
+ {
+  "id": "quaternions",
+  "kind": "term",
+  "name": "Quaternions (squads of four soldiers)",
+  "refs": [
+   [
+    "Acts", 12,
+    [ 4 ] ] ]
+ },
+ {
+  "id": "easter",
+  "kind": "term",
+  "name": "Easter (here the Jewish Passover)",
+  "refs": [
+   [
+    "Acts", 12,
+    [ 4 ] ] ]
+ },
+ {
+  "id": "ward",
+  "kind": "term",
+  "name": "Ward (a guarded section of a prison)",
+  "refs": [
+   [
+    "Acts", 12,
+    [ 10 ] ] ]
+ },
+ {
+  "id": "paul",
+  "kind": "person",
+  "name": "Paul (Saul of Tarsus)",
+  "refs": [
+   [
+    "Acts", 15,
+    [ 2, 12, 22, 25, 35, 36, 38, 40 ] ],
+   [
+    "Acts", 16,
+    [ 3, 9, 14, 17, 18, 19, 25, 28, 29, 36, 37 ] ] ]
+ },
+ {
+  "id": "silas",
+  "kind": "person",
+  "name": "Silas, Paul's partner on the second journey",
+  "refs": [
+   [
+    "Acts", 15,
+    [ 22, 27, 32, 34, 40 ] ],
+   [
+    "Acts", 16,
+    [ 19, 25, 29 ] ] ]
+ },
+ {
+  "id": "judas-barsabas",
+  "kind": "person",
+  "name": "Judas Barsabas (a prophet sent from Jerusalem)",
+  "refs": [
+   [
+    "Acts", 15,
+    [ 22, 27, 32 ] ] ]
+ },
+ {
+  "id": "pamphylia",
+  "kind": "place",
+  "name": "Pamphylia (the south coast of Asia Minor, where Mark turned back)",
+  "refs": [
+   [
+    "Acts", 2,
+    [ 10 ] ],
+   [
+    "Acts", 15,
+    [ 38 ] ] ]
+ },
+ {
+  "id": "sect",
+  "kind": "term",
+  "name": "Sect (a party within Judaism)",
+  "refs": [
+   [
+    "Acts", 5,
+    [ 17 ] ],
+   [
+    "Acts", 15,
+    [ 5 ] ] ]
+ },
+ {
+  "id": "subverting",
+  "kind": "term",
+  "name": "Subverting (overturning, upsetting)",
+  "refs": [
+   [
+    "Acts", 15,
+    [ 24 ] ] ]
+ },
+ {
+  "id": "residue",
+  "kind": "term",
+  "name": "The residue (the rest, the remainder)",
+  "refs": [
+   [
+    "Acts", 15,
+    [ 17 ] ] ]
+ },
+ {
+  "id": "pollutions-of-idols",
+  "kind": "term",
+  "name": "Pollutions of idols (meat and feasts offered to idols)",
+  "refs": [
+   [
+    "Acts", 15,
+    [ 20 ] ] ]
+ },
+ {
+  "id": "things-strangled",
+  "kind": "term",
+  "name": "Things strangled (meat with the blood still in it)",
+  "refs": [
+   [
+    "Acts", 15,
+    [ 20, 29 ] ] ]
+ },
+ {
+  "id": "hazarded",
+  "kind": "term",
+  "name": "Hazarded (risked)",
+  "refs": [
+   [
+    "Acts", 15,
+    [ 26 ] ] ]
+ },
+ {
+  "id": "consolation",
+  "kind": "term",
+  "name": "Consolation (comfort, encouragement)",
+  "refs": [
+   [
+    "Acts", 15,
+    [ 31 ] ] ]
+ },
+ {
+  "id": "contention",
+  "kind": "term",
+  "name": "Contention (a sharp quarrel)",
+  "refs": [
+   [
+    "Acts", 15,
+    [ 39 ] ] ]
+ },
+ {
+  "id": "timothy",
+  "kind": "person",
+  "name": "Timothy (Timotheus), Paul's young helper",
+  "refs": [
+   [
+    "Acts", 16,
+    [ 1 ] ] ]
+ },
+ {
+  "id": "lydia",
+  "kind": "person",
+  "name": "Lydia, the seller of purple",
+  "refs": [
+   [
+    "Acts", 16,
+    [ 14, 40 ] ] ]
+ },
+ {
+  "id": "jailor",
+  "kind": "person",
+  "name": "The jailor (keeper of the prison) at Philippi",
+  "refs": [
+   [
+    "Acts", 16,
+    [ 23, 27, 36 ] ] ]
+ },
+ {
+  "id": "serjeants",
+  "kind": "person",
+  "name": "Serjeants (officers who carried out the magistrates' orders)",
+  "refs": [
+   [
+    "Acts", 16,
+    [ 35, 38 ] ] ]
+ },
+ {
+  "id": "romans",
+  "kind": "person",
+  "name": "Romans (Roman citizens, protected by Roman law)",
+  "refs": [
+   [
+    "Acts", 16,
+    [ 21, 37, 38 ] ] ]
+ },
+ {
+  "id": "philippi",
+  "kind": "place",
+  "name": "Philippi (a Roman colony in Macedonia)",
+  "refs": [
+   [
+    "Acts", 16,
+    [ 12 ] ] ]
+ },
+ {
+  "id": "troas",
+  "kind": "place",
+  "name": "Troas (the port where Paul saw the vision)",
+  "refs": [
+   [
+    "Acts", 16,
+    [ 8, 11 ] ] ]
+ },
+ {
+  "id": "macedonia",
+  "kind": "place",
+  "name": "Macedonia (northern Greece)",
+  "refs": [
+   [
+    "Acts", 16,
+    [ 9, 10, 12 ] ] ]
+ },
+ {
+  "id": "samothracia",
+  "kind": "place",
+  "name": "Samothracia (the island of Samothrace)",
+  "refs": [
+   [
+    "Acts", 16,
+    [ 11 ] ] ]
+ },
+ {
+  "id": "neapolis",
+  "kind": "place",
+  "name": "Neapolis (the port of Philippi)",
+  "refs": [
+   [
+    "Acts", 16,
+    [ 11 ] ] ]
+ },
+ {
+  "id": "lystra",
+  "kind": "place",
+  "name": "Lystra (Timothy's town)",
+  "refs": [
+   [
+    "Acts", 16,
+    [ 1, 2 ] ] ]
+ },
+ {
+  "id": "derbe",
+  "kind": "place",
+  "name": "Derbe",
+  "refs": [
+   [
+    "Acts", 16,
+    [ 1 ] ] ]
+ },
+ {
+  "id": "iconium",
+  "kind": "place",
+  "name": "Iconium",
+  "refs": [
+   [
+    "Acts", 16,
+    [ 2 ] ] ]
+ },
+ {
+  "id": "galatia",
+  "kind": "place",
+  "name": "Galatia (the region of Paul's first journey)",
+  "refs": [
+   [
+    "Acts", 16,
+    [ 6 ] ] ]
+ },
+ {
+  "id": "mysia",
+  "kind": "place",
+  "name": "Mysia (northwest Asia Minor)",
+  "refs": [
+   [
+    "Acts", 16,
+    [ 7, 8 ] ] ]
+ },
+ {
+  "id": "bithynia",
+  "kind": "place",
+  "name": "Bithynia (the province on the Black Sea)",
+  "refs": [
+   [
+    "Acts", 16,
+    [ 7 ] ] ]
+ },
+ {
+  "id": "thyatira",
+  "kind": "place",
+  "name": "Thyatira (Lydia's home town, famous for purple dye)",
+  "refs": [
+   [
+    "Acts", 16,
+    [ 14 ] ] ]
+ },
+ {
+  "id": "colony",
+  "kind": "term",
+  "name": "A colony (a city of Roman citizens, a little Rome)",
+  "refs": [
+   [
+    "Acts", 16,
+    [ 12 ] ] ]
+ },
+ {
+  "id": "decrees",
+  "kind": "term",
+  "name": "The decrees (the council's letter from Acts 15)",
+  "refs": [
+   [
+    "Acts", 16,
+    [ 4 ] ] ]
+ },
+ {
+  "id": "assayed",
+  "kind": "term",
+  "name": "Assayed (tried, attempted)",
+  "refs": [
+   [
+    "Acts", 16,
+    [ 7 ] ] ]
+ },
+ {
+  "id": "endeavoured",
+  "kind": "term",
+  "name": "Endeavoured (set out to, made every effort)",
+  "refs": [
+   [
+    "Acts", 16,
+    [ 10 ] ] ]
+ },
+ {
+  "id": "seller-of-purple",
+  "kind": "term",
+  "name": "A seller of purple (dealer in costly dyed cloth)",
+  "refs": [
+   [
+    "Acts", 16,
+    [ 14 ] ] ]
+ },
+ {
+  "id": "divination",
+  "kind": "term",
+  "name": "Divination, soothsaying (fortune-telling through a spirit)",
+  "refs": [
+   [
+    "Acts", 16,
+    [ 16 ] ] ]
+ },
+ {
+  "id": "uncondemned",
+  "kind": "term",
+  "name": "Uncondemned (never tried or found guilty)",
+  "refs": [
+   [
+    "Acts", 16,
+    [ 37 ] ] ]
+ },
+ {
+  "id": "inner-prison",
+  "kind": "place",
+  "name": "The inner prison (the deepest, darkest cell)",
+  "refs": [
+   [
+    "Acts", 16,
+    [ 24 ] ] ]
+ },
+ {
+  "id": "prison-stocks",
+  "kind": "term",
+  "name": "The stocks (a wooden frame locking the feet apart)",
+  "refs": [
+   [
+    "Acts", 16,
+    [ 24 ] ] ]
+ },
+ {
+  "id": "bands",
+  "kind": "term",
+  "name": "Bands (chains, shackles)",
+  "refs": [
+   [
+    "Acts", 16,
+    [ 26 ] ] ]
+ },
+ {
+  "id": "midnight",
+  "kind": "term",
+  "name": "Midnight (the middle of the night)",
+  "refs": [
+   [
+    "Acts", 16,
+    [ 25 ] ] ]
+ },
+ {
+  "id": "great-earthquake",
+  "kind": "term",
+  "name": "A great earthquake",
+  "refs": [
+   [
+    "Acts", 16,
+    [ 26 ] ] ]
+ },
+ {
+  "id": "sirs",
+  "kind": "term",
+  "name": "Sirs (lords, a polite and respectful address)",
+  "refs": [
+   [
+    "Acts", 16,
+    [ 30 ] ] ]
  }
 ];

@@ -1,0 +1,508 @@
+<!doctype html>
+<html lang="en" data-theme="scribe">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Acts 11</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="../assets/fonts.css">
+<link rel="stylesheet" href="../assets/deck.css">
+<link rel="stylesheet" href="../assets/themes.css">
+<style>
+/* ac11-sheet: the great sheet let down from heaven, three times, then drawn up again */
+.ac11-sky { fill: color-mix(in srgb, var(--cool) 16%, transparent); }
+.ac11-cord { stroke: var(--ink-soft); stroke-width: 3; fill: none; }
+.ac11-cloth { fill: color-mix(in srgb, var(--warm) 24%, var(--bg)); stroke: var(--leather-light); stroke-width: 3; stroke-linejoin: round; }
+.ac11-beast { fill: var(--ink-soft); }
+.ac11-line { stroke: var(--ink-soft); stroke-width: 3; fill: none; stroke-linecap: round; }
+.ac11-drop { transform: translateY(-330px); }
+.slide.active .ac11-drop { animation: ac11-lower 3.6s ease-in-out 3; }
+@keyframes ac11-lower { 0% { transform: translateY(-330px); } 30% { transform: translateY(0); } 70% { transform: translateY(0); } 100% { transform: translateY(-330px); } }
+.ac11-times { display: flex; gap: .6rem; margin: .3em 0 .8em; }
+.ac11-times span { padding: .25em .7em; border: 2px solid var(--line-strong); border-radius: 999px; font: 700 clamp(.85rem, .8rem + .3vw, 1.05rem) var(--sans); color: var(--ink-soft); }
+.slide.active .ac11-times span { animation: ac11-lit .5s ease forwards; animation-delay: calc(var(--k) * 3.6s + 1.1s); }
+@keyframes ac11-lit { to { background: var(--accent); border-color: var(--accent); color: var(--on-accent); } }
+
+/* ac11-tags: many labels, one name */
+.ac11-tags { display: flex; flex-wrap: wrap; gap: .5rem .6rem; margin: .4em 0 .8em; }
+.ac11-tag { padding: .3em .8em; border: 2px dashed var(--line-strong); border-radius: 6px; font: 600 clamp(.95rem, .85rem + .45vw, 1.25rem) var(--serif); color: var(--ink-soft); }
+.ac11-name { display: inline-block; width: min(100%, 22rem); border: 3px solid var(--accent); border-radius: 10px; overflow: hidden; background: var(--surface); text-align: center; transform: scale(.6); opacity: 0; transition: transform .7s cubic-bezier(.3,1.5,.5,1), opacity .5s ease; }
+.ac11-nameline.on .ac11-name { transform: none; opacity: 1; }
+.ac11-name small { display: block; padding: .3em; background: var(--accent); color: var(--on-accent); font: 700 clamp(.8rem, .75rem + .3vw, 1rem) var(--sans); letter-spacing: .12em; text-transform: uppercase; }
+.ac11-name b { display: block; padding: .15em .2em .25em; font: 400 clamp(2rem, 1.3rem + 3vw, 3.6rem)/1.1 var(--serif); color: var(--accent-hot); }
+.ac11-name i { display: block; padding: 0 .4em .6em; font: italic 400 clamp(.9rem, .82rem + .35vw, 1.1rem) var(--serif); color: var(--ink-soft); }
+.ac11-nameline { display: flex; flex-wrap: wrap; gap: .6rem 1.4rem; align-items: center; margin: .2em 0 1em; }
+
+/* ac11-gifts: every man gave what he could, and it added up */
+.ac11-gifts, .ac11-gifts-cap { max-width: 42rem; }
+.ac11-gifts { display: flex; align-items: flex-end; gap: clamp(5px, 1vw, 12px); height: clamp(110px, 20vh, 190px); margin: .5em 0 .2em; padding-bottom: 3px; border-bottom: 3px solid var(--line-strong); }
+.ac11-gifts i { flex: 1; height: var(--h); border-radius: 5px 5px 0 0; background: var(--accent); transform: scaleY(0); transform-origin: bottom; transition: transform .6s cubic-bezier(.3,1.4,.5,1); transition-delay: calc(var(--k) * 140ms); }
+.ac11-gifts.on i { transform: none; }
+.ac11-gifts-cap { display: flex; justify-content: space-between; color: var(--ink-soft); font-size: clamp(.85rem, .8rem + .3vw, 1.05rem); margin-bottom: 1em; }
+.ac11-gifts-cap b { color: var(--accent-hot); }
+</style>
+</head>
+<body>
+<main class="deck" id="deck">
+
+<!-- ======================= OPENING ======================= -->
+<section class="slide title">
+  <div class="inner">
+    <div class="emblem rise"></div>
+    <h1 class="rise" style="--d:1">Acts 11</h1>
+    <p class="sub rise" style="--d:3">Called Christians first in Antioch</p>
+    <p class="tag rise" style="--d:5">Peter explains himself to a church that is sure he went too far, and a new church in a rough city gets a name that has lasted ever since.</p>
+  </div>
+</section>
+
+<section class="slide watch">
+  <div class="inner">
+    <h2 class="rise">Things to watch for</h2>
+    <p class="lede rise" style="--d:1">Keep these questions in the back of your mind as we read. We'll come back to every one of them at the end.</p>
+    <ol class="seeds">
+      <li class="step"><span class="topic">Grace</span><span class="seed-q">What did God give the Gentiles, and how did they get it?</span></li>
+      <li class="step"><span class="topic">Old walls</span><span class="seed-q">How did the church go from arguing to praising God?</span></li>
+      <li class="step"><span class="topic">Hope</span><span class="seed-q">What did God do with the scattering after Stephen?</span></li>
+      <li class="step"><span class="topic">Encouragement</span><span class="seed-q">What kind of man was Barnabas?</span></li>
+      <li class="step"><span class="topic">Second chances</span><span class="seed-q">Why did Barnabas go looking for Saul?</span></li>
+      <li class="step"><span class="topic">Giving</span><span class="seed-q">What did the believers in Antioch do when they heard a famine was coming?</span></li>
+    </ol>
+  </div>
+</section>
+
+<!-- ======================= PART ONE: PETER EXPLAINS ======================= -->
+<section class="slide part">
+  <div class="inner">
+    <p class="part-n rise">Part one</p>
+    <h2 class="rise" style="--d:1">Peter explains</h2>
+    <p class="range rise" style="--d:2">Verses 1–18</p>
+    <div class="rule"></div>
+    <p class="hook rise" style="--d:4">Peter comes home to Jerusalem to a hard welcome, and tells it from the beginning.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="1-3" data-hl="the Gentiles had also received the word of God|they that were of the circumcision contended with him|Thou wentest in to men uncircumcised, and didst eat with them"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="3" data-hl="Thou wentest in to men uncircumcised, and didst eat with them"></blockquote>
+    <div class="split">
+      <div class="stage">
+        <svg data-world viewBox="670 395 200 127" data-towns="Jerusalem!, Caesarea*, Joppa" role="img" aria-label="Map of the coast of Judaea. Caesarea and Joppa are on the coast, Jerusalem up in the hills. Peter walks from Caesarea, where he stayed with Cornelius, up to Jerusalem.">
+          <path class="map-route" data-via="Caesarea, Jerusalem"/>
+        </svg>
+      </div>
+      <div>
+        <h2 class="rise" style="--d:1">Home to hard questions</h2>
+        <p class="note rise" style="--d:2">Peter had stayed with Cornelius, a Roman officer, in Caesarea. He walked back up to Jerusalem, about sixty miles, and the news had beaten him there.</p>
+        <p class="note step">“They that were of the circumcision” were Jewish believers who still kept the old customs. These were not enemies. They were brothers, good men, who loved the Lord. A Jew didn't walk into a Gentile house, and he certainly didn't sit at the table.</p>
+        <p class="note step">Notice what bothered them. Not that the Gentiles believed. It was that Peter <em>ate with them</em>. Sometimes the first thing we argue with is not what God did, but how close it brought us to people we'd rather keep at a distance.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="slide verse" data-v="4-6" data-hl="rehearsed the matter from the beginning|expounded it by order|a great sheet, let down from heaven by four corners"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="5" data-hl="a great sheet, let down from heaven by four corners"></blockquote>
+    <div class="split">
+      <div class="stage">
+        <svg viewBox="0 0 400 340" role="img" aria-label="A great sheet held by four cords comes down from the sky three times, full of animals, birds and crawling things, and each time is drawn back up.">
+          <defs><clipPath id="ac11-frame"><rect x="0" y="0" width="400" height="340" rx="6"/></clipPath></defs>
+          <g clip-path="url(#ac11-frame)">
+            <rect class="ac11-sky" x="0" y="0" width="400" height="340"/>
+            <g class="ac11-drop">
+              <path class="ac11-cord" d="M70 -20 L96 158 M330 -20 L304 158 M200 -20 L200 128"/>
+              <path class="ac11-cloth" d="M80 150 Q200 120 320 150 Q345 190 320 240 Q200 275 80 240 Q55 190 80 150 Z"/>
+              <g>
+                <ellipse class="ac11-beast" cx="140" cy="205" rx="22" ry="12"/><circle class="ac11-beast" cx="166" cy="196" r="7"/>
+                <path class="ac11-line" d="M128 214 L128 226 M138 216 L138 228 M150 216 L150 228 M158 214 L158 226"/>
+                <path class="ac11-line" d="M205 180 q8 -12 16 0 q8 -12 16 0 M235 196 q7 -10 14 0 q7 -10 14 0"/>
+                <path class="ac11-line" d="M190 220 q10 -14 20 0 t20 0 t20 0 t20 0"/>
+                <ellipse class="ac11-beast" cx="270" cy="222" rx="16" ry="9"/><circle class="ac11-beast" cx="290" cy="216" r="6"/>
+              </g>
+            </g>
+          </g>
+        </svg>
+      </div>
+      <div>
+        <h2 class="rise" style="--d:1">Peter tells it in order</h2>
+        <div class="ac11-times rise" style="--d:2" aria-label="It happened three times"><span style="--k:0">once</span><span style="--k:1">twice</span><span style="--k:2">three times</span></div>
+        <p class="note step">The sheet held every kind of creature the old law called unclean: <em>“fourfooted beasts… creeping things, and fowls of the air.”</em> God had given those food rules to Israel to set them apart (Leviticus 11). Now the same God was telling Peter to eat.</p>
+        <p class="note step">Peter doesn't tell it like a man making excuses. He says <em>“from the beginning,”</em> step by step, and he doesn't leave out the part where he argued with God. When you've got something hard to explain, the honest version, in order, is the strongest one you've got.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="slide verse" data-v="7-10" data-hl="Not so, Lord|What God hath cleansed, that call not thou common|this was done three times"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="8-9" data-hl="Not so, Lord|What God hath cleansed, that call not thou common"></blockquote>
+    <h2 class="rise" style="--d:1">“Not so, Lord”</h2>
+    <div class="talk">
+      <p class="rise" style="--d:2"><small>The voice</small>Arise, Peter; slay and eat.</p>
+      <p class="reply step"><small>Peter</small>Not so, Lord: for nothing common or unclean hath at any time entered into my mouth.<br><span class="flag">“No” and “Lord” in one breath</span></p>
+      <p class="step"><small>The voice</small>What God hath cleansed, that call not thou common.</p>
+    </div>
+    <p class="note step">“Common” and “unclean” meant the same thing here: set apart as unfit. Peter had kept those rules all his life, and he was proud of it. Then God told him He'd changed the rules, and Peter's first answer was a flat no.</p>
+    <p class="note step">If a man can say “No, Lord” and still be Peter, the rock of the church, then you and I are in good company. God doesn't throw us out for arguing. He just keeps saying it until it sinks in. <em>“What God hath cleansed.”</em> Not what Peter cleaned up, and not what the Gentiles cleaned up. What <em>God</em> cleansed.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="11-14" data-hl="three men already come unto the house|these six brethren accompanied me|Who shall tell thee words, whereby thou and all thy house shall be saved"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="14" data-hl="Who shall tell thee words, whereby thou and all thy house shall be saved"></blockquote>
+    <h2 class="rise" style="--d:1">Everybody needs the words</h2>
+    <div class="chains">
+      <div class="chain step"><span class="who-chip">an angel</span><span class="said">told Cornelius</span><span class="who-chip">Cornelius</span><span class="said">sent three men</span><span class="who-chip">to Joppa</span><span class="said">for</span><span class="who-chip">Peter</span></div>
+      <div class="chain step"><span class="who-chip">Peter</span><span class="said">took along</span><span class="who-chip">six brethren</span><span class="said">to see for themselves</span></div>
+    </div>
+    <p class="note step">Cornelius was already a good man. He prayed and he gave to the poor (Acts 10:2). And God still said he needed <em>“words, whereby thou… shall be saved.”</em> Being decent doesn't save anybody. Hearing the good news and believing it does.</p>
+    <p class="note step">Those six men matter too. Peter didn't ask Jerusalem to take his word for it. He brought witnesses, and he stood in front of the church with six men who had seen it. Peter was the apostle, and he still didn't go it alone.</p>
+    <blockquote class="quote step"><p>“Then Peter opened his mouth, and said, Of a truth I perceive that God is no respecter of persons: But in every nation he that feareth him, and worketh righteousness, is accepted with him.”</p><cite>Acts 10:34–35</cite></blockquote>
+  </div>
+</section>
+
+<section class="slide verse" data-v="15-18" data-hl="the Holy Ghost fell on them|Forasmuch then as God gave them the like gift|what was I, that I could withstand God?|granted repentance unto life"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="15" data-hl="the Holy Ghost fell on them, as on us at the beginning"></blockquote>
+    <h2 class="rise" style="--d:1">Each new group, shown to be in</h2>
+    <p class="note rise" style="--d:2">Acts is a book of history, and the church is moving outward just as Jesus said in Acts 1:8. At each new step, God gave a sign so nobody could say, “Those people don't count.”</p>
+    <ol class="signs rise" style="--d:3">
+      <li><b>Jews</b>Jerusalem, Acts 2</li>
+      <li><b>Samaritans</b>Acts 8</li>
+      <li class="now"><b>Gentiles</b>Cornelius, Acts 10–11</li>
+      <li><b>John's followers</b>Ephesus, Acts 19</li>
+    </ol>
+    <p class="note step">Peter's proof was simple: <em>“God gave them the like gift as he did unto us, who believed.”</em> Same gift, same faith, no extra steps. He was a witness that these men were fully in.</p>
+    <p class="note step">These scenes are not a pattern to chase. Nobody has to wait for a sign. The Holy Spirit comes to live in every believer the moment he believes (Ephesians 1:13).</p>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="17-18" data-hl="what was I, that I could withstand God?|granted repentance unto life"></blockquote>
+    <h2 class="rise" style="--d:1">Then they held their peace</h2>
+    <div class="ifthen rise" style="--d:2">
+      <div class="if"><small>If</small>God gave them the <em>same gift</em> as us,</div>
+      <span class="arrow" aria-hidden="true">→</span>
+      <div class="then"><small>then</small>who was I to stand in His way?</div>
+    </div>
+    <p class="note step">Peter put it as a question a man can't answer. Verse 2 says they <em>contended</em>. Verse 18 says they <em>held their peace, and glorified God.</em> Same men, same room. What changed was that they heard the evidence and let go of their pride.</p>
+    <p class="note step"><em>“Repentance unto life”</em> means turning around, a new mind and a new direction, and the result is life. God had opened that door to people nobody expected. If you've ever thought grace was for the clean church folk and not for a man with your past, this verse is for you. The door was opened for the outsiders. “Whosoever shall call upon the name of the Lord shall be saved” (Romans 10:13).</p>
+  </div>
+</section>
+
+<!-- ======================= PART TWO: ANTIOCH ======================= -->
+<section class="slide part">
+  <div class="inner">
+    <p class="part-n rise">Part two</p>
+    <h2 class="rise" style="--d:1">The church at Antioch</h2>
+    <p class="range rise" style="--d:2">Verses 19–26</p>
+    <div class="rule"></div>
+    <p class="hook rise" style="--d:4">What scattered the believers turned out to be how the gospel got out.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="19-21" data-hl="persecution that arose about Stephen|spake unto the Grecians|the hand of the Lord was with them"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="19" data-hl="persecution that arose about Stephen"></blockquote>
+    <div class="split">
+      <div class="stage">
+        <svg data-world viewBox="420 275 470 298" data-towns="Jerusalem, Tyre, Sidon, Salamis, Seleucia, Cyrene, Antioch!" role="img" aria-label="Map of the eastern Mediterranean. Believers scatter from Jerusalem north along the coast through Phoenicia, and by sea to Cyprus, and men from Cyprus and Cyrene come to Antioch in Syria.">
+          <path class="map-route j1" data-via="Jerusalem, Tyre, Sidon, @35.6 34.6, @35.9 35.6, Seleucia, Antioch"/>
+          <path class="map-route j2 r1" data-via="Cyrene, @26 33.9, @30 34.3, Salamis, @35.4 35.7, Seleucia, Antioch"/>
+          <g class="step map-go1"></g>
+        </svg>
+      </div>
+      <div>
+        <h2 class="rise" style="--d:1">Scattered, and sowing</h2>
+        <p class="note rise" style="--d:2">When Stephen was killed, the church in Jerusalem was driven out of the city (Acts 8:1). That looked like the end. They <em>travelled</em> as far as Phenice (Phoenicia, the coast north of Judaea), Cyprus, and Antioch.</p>
+        <p class="note step">At first they told the story <em>“to none but unto the Jews only.”</em> Then some men from Cyprus and Cyrene, nobody famous, we're not even given their names, spoke to the Greeks in Antioch.</p>
+        <p class="note step">God took the worst thing that had happened to His people and used it to carry the gospel farther than any plan they'd have made. If your own life got scattered, it is not too late for it to become a place where somebody else finds Jesus.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="slide verse" data-v="22-24" data-hl="Barnabas|had seen the grace of God, was glad|with purpose of heart they would cleave unto the Lord|a good man, and full of the Holy Ghost and of faith"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="23-24" data-hl="had seen the grace of God, was glad|with purpose of heart they would cleave unto the Lord"></blockquote>
+    <h2 class="rise" style="--d:1">Barnabas, the encourager</h2>
+    <div class="rename">
+      <span class="old rise" style="--d:2">Joses</span>
+      <span class="arrow step n2">→</span>
+      <span class="new step">Barnabas</span>
+      <span class="gloss step">“being interpreted, The son of consolation” (Acts 4:36): a man who builds others up.</span>
+    </div>
+    <p class="note step">Jerusalem sent him to check on a new church of Greeks nobody had planned for. He looked at it and <em>“saw the grace of God, and was glad.”</em> He could have found a hundred things wrong. He saw what God was doing, and he cheered.</p>
+    <p class="note step">Then his advice: <em>“with purpose of heart… cleave unto the Lord.”</em> Cleave means stick like glue. It isn't a single decision on a Sunday. It's a purpose, a choice you make again every morning. Barnabas didn't say it once and leave; he stayed and taught.</p>
+    <p class="note step">Today, send one man a message. Somebody new, somebody struggling. “Thinking of you. Proud of you.” That small thing is what Barnabas did for a whole church.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="25-26" data-hl="Barnabas to Tarsus, for to seek Saul|a whole year they assembled themselves with the church|called Christians first in Antioch"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="25" data-hl="Then departed Barnabas to Tarsus, for to seek Saul"></blockquote>
+    <h2 class="rise" style="--d:1">The man nobody had called on</h2>
+    <ol class="timeline" aria-label="About AD 34, Saul meets Jesus on the Damascus road. Then the believers in Jerusalem are afraid of him, and he is sent home to Tarsus. For years, about nine, he is out of sight. About AD 43, Barnabas goes to Tarsus and brings him to Antioch. About AD 46, Barnabas and Saul are sent out on the first journey.">
+      <li class="lit" style="--k:0"><b>about AD 34</b><span>Saul meets Jesus on the Damascus road</span><small>Acts 9</small></li>
+      <li style="--k:1"><b>sent home</b><span>the church is afraid of him</span><small>Acts 9:30</small></li>
+      <li class="wait" style="--k:2"><b>years in Tarsus</b><span>out of sight, no word of him</span></li>
+      <li class="lit" style="--k:3"><b>about AD 43</b><span>Barnabas finds him and brings him to Antioch</span><small>verse 26</small></li>
+      <li style="--k:4"><b>about AD 46</b><span>sent out on the first journey</span><small>Acts 13</small></li>
+    </ol>
+    <p class="note step">Saul had been the church's worst enemy, and then the church's biggest worry. When they were afraid of him, it was Barnabas who spoke up for him (Acts 9:27). Now it was Barnabas again who went looking.</p>
+    <p class="note step">Think about those years. A man with a past, back home, with his best days seemingly behind him. And God wasn't done with him. When it looks like you've been benched, and when you've done something you can't undo, you may be in Tarsus. God knows where to find you, and He often sends a friend like Barnabas.</p>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="26" data-hl="the disciples were called Christians first in Antioch"></blockquote>
+    <h2 class="rise" style="--d:1">One name for all of them</h2>
+    <div class="ac11-tags rise" style="--d:2" aria-label="Labels the church in Antioch might have worn">
+      <span class="ac11-tag">a Jew</span><span class="ac11-tag">a Greek</span><span class="ac11-tag">from Cyprus</span><span class="ac11-tag">from Cyrene</span><span class="ac11-tag">a Levite</span><span class="ac11-tag">the one who used to persecute us</span>
+    </div>
+    <div class="ac11-nameline step">
+      <div class="ac11-name"><small>Hello, my name is</small><b>Christian</b><i>Christ's people</i></div>
+    </div>
+    <p class="note step">The word is <span class="gk">Christianos</span>, <em>belonging to Christ</em>. It was probably first used by outsiders, maybe even as a joke. The church kept it. It shows up only twice more in the Bible (Acts 26:28, 1 Peter 4:16).</p>
+    <p class="note step">Whatever other labels you've carried, the ones the world stuck on you and the ones you stuck on yourself, this is the name that counts. You belong to Christ, and it doesn't wear off.</p>
+  </div>
+</section>
+
+<!-- ======================= PART THREE: FAMINE RELIEF ======================= -->
+<section class="slide part">
+  <div class="inner">
+    <p class="part-n rise">Part three</p>
+    <h2 class="rise" style="--d:1">Relief for Judaea</h2>
+    <p class="range rise" style="--d:2">Verses 27–30</p>
+    <div class="rule"></div>
+    <p class="hook rise" style="--d:4">A warning of hard times, and a church that answers it with its wallet.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="27-30" data-hl="Agabus|great dearth throughout all the world|every man according to his ability|by the hands of Barnabas and Saul"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="29" data-hl="every man according to his ability"></blockquote>
+    <div class="split">
+      <div class="stage">
+        <svg data-world viewBox="630 322 276 175" data-towns="Antioch*, Sidon, Caesarea, Jerusalem!" role="img" aria-label="Map of the road south. Barnabas and Saul carry the gift from Antioch down the coast to Jerusalem.">
+          <path class="map-route" data-via="Antioch, Sidon, Caesarea, Jerusalem"/>
+        </svg>
+      </div>
+      <div>
+        <h2 class="rise" style="--d:1">Sent down the road</h2>
+        <p class="note rise" style="--d:2">“Dearth” is a famine. Agabus, a prophet from Jerusalem, said it was coming, and it came in the days of the emperor Claudius, who ruled about AD 41 to 54. Judaea, about 300 miles to the south, felt it badly.</p>
+        <p class="note step">The gift went <em>“by the hands of Barnabas and Saul”</em>, two men the church trusted with the money. Honest hands matter when money moves.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="29" data-hl="every man according to his ability|determined to send relief"></blockquote>
+    <h2 class="rise" style="--d:1">Every man, according to his ability</h2>
+    <div class="ac11-gifts step" aria-label="Nine gifts of different sizes, side by side, all rising together">
+      <i style="--h:34%;--k:0"></i><i style="--h:80%;--k:1"></i><i style="--h:22%;--k:2"></i><i style="--h:56%;--k:3"></i><i style="--h:100%;--k:4"></i><i style="--h:40%;--k:5"></i><i style="--h:66%;--k:6"></i><i style="--h:28%;--k:7"></i><i style="--h:48%;--k:8"></i>
+    </div>
+    <p class="ac11-gifts-cap step"><span>no one set the amount</span><b>every one gave</b></p>
+    <p class="note step">Think about who was giving. Many in Antioch's church were Gentiles, people who not long before had no part in all this. They didn't wait for the famine to arrive, and they didn't wait to be asked. They gave to Jewish believers most of them had never met. The wall that nearly split the church in verse 2 was now carrying food across it.</p>
+    <p class="note step">Nobody was told how much. <em>“According to his ability”</em> means nobody was measured against the next man. A small gift and a big one were both welcome, and God loves a cheerful giver (2 Corinthians 9:7). Today, if there's a brother who's short, you can do something about it: a ride, a meal, a few dollars. Don't wait to be rich enough to help.</p>
+  </div>
+</section>
+
+<!-- ======================= CLOSING ======================= -->
+<section class="slide remember">
+  <div class="inner">
+    <h2 class="rise">Points to remember</h2>
+    <ol class="seeds">
+      <li class="step"><span class="topic">Grace</span><span class="seed-q">“Then hath God also to the Gentiles granted repentance unto life.” <cite>11:18</cite></span><span class="take">Life is God's gift, to anyone who turns to Him. Good people need it too.</span></li>
+      <li class="step"><span class="topic">Old walls</span><span class="seed-q">“What was I, that I could withstand God?” <cite>11:17</cite></span><span class="take">Hear the evidence, let go of pride, and praise God.</span></li>
+      <li class="step"><span class="topic">Hope</span><span class="seed-q">“The hand of the Lord was with them.” <cite>11:21</cite></span><span class="take">God turns scattering into sowing. Your wreck can become somebody else's road to Jesus.</span></li>
+      <li class="step"><span class="topic">Encouragement</span><span class="seed-q">“Had seen the grace of God, was glad.” <cite>11:23</cite></span><span class="take">Be the man who sees what God is doing and cheers. Send that message today.</span></li>
+      <li class="step"><span class="topic">Second chances</span><span class="seed-q">“Barnabas to Tarsus, for to seek Saul.” <cite>11:25</cite></span><span class="take">When it looks like you're benched, God knows where to find you.</span></li>
+      <li class="step"><span class="topic">Giving</span><span class="seed-q">“Every man according to his ability.” <cite>11:29</cite></span><span class="take">Give what you can, before you're asked, and let nobody go hungry.</span></li>
+    </ol>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 1 of 6</p>
+      <span class="topic">Grace</span>
+      <h2>What did God give the Gentiles, and how did they get it?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="14" data-hl="whereby thou and all thy house shall be saved"></blockquote>
+      <blockquote class="quote step" data-q="17" data-hl="who believed on the Lord Jesus Christ"></blockquote>
+      <blockquote class="quote step" data-q="18" data-hl="granted repentance unto life"></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>Life, and the same Holy Spirit the Jewish believers had received. They got it by hearing the good news and believing on the Lord Jesus Christ, just like anybody else. Nobody earned it, and nobody was too far outside. God opened the door, and they came through.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 2 of 6</p>
+      <span class="topic">Old walls</span>
+      <h2>How did the church go from arguing to praising God?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="2" data-hl="contended with him"></blockquote>
+      <blockquote class="quote step" data-q="3"></blockquote>
+      <blockquote class="quote step" data-q="17" data-hl="what was I, that I could withstand God?"></blockquote>
+      <blockquote class="quote step" data-q="18" data-hl="they held their peace, and glorified God"></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>Peter told them the whole story, in order, with six witnesses. When they saw that God had done it, they stopped arguing and gave Him the glory. These were good men with an old habit. When the evidence showed them God's hand, they let go.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 3 of 6</p>
+      <span class="topic">Hope</span>
+      <h2>What did God do with the scattering after Stephen?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="19" data-hl="persecution that arose about Stephen"></blockquote>
+      <blockquote class="quote step" data-q="20"></blockquote>
+      <blockquote class="quote step" data-q="21"></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>He used it. The believers were driven out by persecution, and wherever they landed they talked about Jesus. Ordinary men from Cyprus and Cyrene started a church in Antioch, and a great number turned to the Lord. What looked like a disaster became the way the gospel travelled.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 4 of 6</p>
+      <span class="topic">Encouragement</span>
+      <h2>What kind of man was Barnabas?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="22" data-hl="they sent forth Barnabas"></blockquote>
+      <blockquote class="quote step" data-q="23"></blockquote>
+      <blockquote class="quote step" data-q="24"></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>A good man, full of the Holy Ghost and of faith. He saw the grace of God, was glad, and encouraged everybody to hold tight to the Lord. He wasn't looking for problems. He was looking for what God was doing, and he helped it grow.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 5 of 6</p>
+      <span class="topic">Second chances</span>
+      <h2>Why did Barnabas go looking for Saul?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step"><p>“But Barnabas took him, and brought him to the apostles, and declared unto them how he had seen the Lord in the way, and that he had spoken to him, and how he had preached boldly at Damascus in the name of Jesus.”</p><cite>Acts 9:27</cite></blockquote>
+      <blockquote class="quote step"><p>“Which when the brethren knew, they brought him down to Caesarea, and sent him forth to Tarsus.”</p><cite>Acts 9:30</cite></blockquote>
+      <blockquote class="quote step" data-q="25" data-hl="Barnabas to Tarsus, for to seek Saul"></blockquote>
+      <blockquote class="quote step" data-q="26" data-hl="he brought him unto Antioch"></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>Barnabas had known Saul since the day nobody else would trust him, and he knew God wasn't finished with him. Saul had been quiet in Tarsus for years. Barnabas went and found him, and Saul ended up teaching a whole year in Antioch. A man with a past can still be the right man for the job.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 6 of 6</p>
+      <span class="topic">Giving</span>
+      <h2>What did the believers in Antioch do when they heard a famine was coming?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="28" data-hl="great dearth throughout all the world"></blockquote>
+      <blockquote class="quote step" data-q="29"></blockquote>
+      <blockquote class="quote step" data-q="30"></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>They decided to help, and every man gave what he was able. They didn't wait until the hunger arrived, and they sent it to people they had never met, through two men they trusted. Real faith has a wallet in it.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide prayer">
+  <div class="inner">
+    <div class="emblem rise"></div>
+    <h2 class="rise" style="--d:1">Prayer requests</h2>
+    <p class="ask-line rise" style="--d:2">What can we pray about for you today?</p>
+    <blockquote class="quote rise" style="--d:4"><p>“Casting all your care upon him; for he careth for you.”</p><cite>1 Peter 5:7</cite></blockquote>
+  </div>
+</section>
+
+</main>
+
+<script>
+// King James Version, Acts chapter 11
+const V = {
+  1: "And the apostles and brethren that were in Judaea heard that the Gentiles had also received the word of God.",
+  2: "And when Peter was come up to Jerusalem, they that were of the circumcision contended with him,",
+  3: "Saying, Thou wentest in to men uncircumcised, and didst eat with them.",
+  4: "But Peter rehearsed the matter from the beginning, and expounded it by order unto them, saying,",
+  5: "I was in the city of Joppa praying: and in a trance I saw a vision, A certain vessel descend, as it had been a great sheet, let down from heaven by four corners; and it came even to me:",
+  6: "Upon the which when I had fastened mine eyes, I considered, and saw fourfooted beasts of the earth, and wild beasts, and creeping things, and fowls of the air.",
+  7: "And I heard a voice saying unto me, Arise, Peter; slay and eat.",
+  8: "But I said, Not so, Lord: for nothing common or unclean hath at any time entered into my mouth.",
+  9: "But the voice answered me again from heaven, What God hath cleansed, that call not thou common.",
+  10: "And this was done three times: and all were drawn up again into heaven.",
+  11: "And, behold, immediately there were three men already come unto the house where I was, sent from Caesarea unto me.",
+  12: "And the spirit bade me go with them, nothing doubting. Moreover these six brethren accompanied me, and we entered into the man’s house:",
+  13: "And he shewed us how he had seen an angel in his house, which stood and said unto him, Send men to Joppa, and call for Simon, whose surname is Peter;",
+  14: "Who shall tell thee words, whereby thou and all thy house shall be saved.",
+  15: "And as I began to speak, the Holy Ghost fell on them, as on us at the beginning.",
+  16: "Then remembered I the word of the Lord, how that he said, John indeed baptized with water; but ye shall be baptized with the Holy Ghost.",
+  17: "Forasmuch then as God gave them the like gift as he did unto us, who believed on the Lord Jesus Christ; what was I, that I could withstand God?",
+  18: "When they heard these things, they held their peace, and glorified God, saying, Then hath God also to the Gentiles granted repentance unto life.",
+  19: "Now they which were scattered abroad upon the persecution that arose about Stephen travelled as far as Phenice, and Cyprus, and Antioch, preaching the word to none but unto the Jews only.",
+  20: "And some of them were men of Cyprus and Cyrene, which, when they were come to Antioch, spake unto the Grecians, preaching the Lord Jesus.",
+  21: "And the hand of the Lord was with them: and a great number believed, and turned unto the Lord.",
+  22: "Then tidings of these things came unto the ears of the church which was in Jerusalem: and they sent forth Barnabas, that he should go as far as Antioch.",
+  23: "Who, when he came, and had seen the grace of God, was glad, and exhorted them all, that with purpose of heart they would cleave unto the Lord.",
+  24: "For he was a good man, and full of the Holy Ghost and of faith: and much people was added unto the Lord.",
+  25: "Then departed Barnabas to Tarsus, for to seek Saul:",
+  26: "And when he had found him, he brought him unto Antioch. And it came to pass, that a whole year they assembled themselves with the church, and taught much people. And the disciples were called Christians first in Antioch.",
+  27: "And in these days came prophets from Jerusalem unto Antioch.",
+  28: "And there stood up one of them named Agabus, and signified by the spirit that there should be great dearth throughout all the world: which came to pass in the days of Claudius Caesar.",
+  29: "Then the disciples, every man according to his ability, determined to send relief unto the brethren which dwelt in Judaea:",
+  30: "Which also they did, and sent it to the elders by the hands of Barnabas and Saul."
+};
+const BOOK = "Acts 11";
+</script>
+<script src="../assets/deck.js"></script>
+</body>
+</html>
