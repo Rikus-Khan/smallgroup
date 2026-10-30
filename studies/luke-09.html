@@ -1,0 +1,687 @@
+<!doctype html>
+<html lang="en" data-theme="scribe">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Luke 9</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="../assets/fonts.css">
+<link rel="stylesheet" href="../assets/deck.css">
+<link rel="stylesheet" href="../assets/themes.css">
+<style>
+/* lk09-days: seven days in a row, each with a cross; "today" moves along them, one at a time, round and round */
+.lk09-days { display: grid; grid-template-columns: repeat(7, 1fr); gap: .5rem; max-width: 40rem; margin: .4em 0 .5em; }
+.lk09-days span { border: 1.5px solid var(--line-strong); border-radius: 10px; padding: .55em .2em .45em; text-align: center; font-size: clamp(.8rem, .7rem + .4vw, 1rem); font-weight: 700; color: var(--ink-soft); background: var(--surface); }
+.lk09-days i { display: block; position: relative; width: 1.3em; height: 1.9em; margin: 0 auto .35em; }
+.lk09-days i::before { content: ""; position: absolute; left: 50%; top: 0; bottom: 0; width: .24em; transform: translateX(-50%); background: currentColor; border-radius: 2px; }
+.lk09-days i::after { content: ""; position: absolute; top: 26%; left: 0; right: 0; height: .24em; background: currentColor; border-radius: 2px; }
+.slide.active .lk09-days span { animation: lk09-today 8.4s linear infinite; animation-delay: calc(var(--k) * 1.2s); }
+@keyframes lk09-today { 0%, 13% { background: var(--accent); color: var(--on-accent); border-color: var(--accent); } 15%, 100% { background: var(--surface); color: var(--ink-soft); border-color: var(--line-strong); } }
+.lk09-cap { max-width: 40rem; margin: 0 0 1em; text-align: center; font-family: var(--serif); font-style: italic; color: var(--accent-hot); font-size: clamp(1rem, .9rem + .5vw, 1.35rem); }
+
+/* lk09-tents: Peter's three shelters. On a .lk09-go step a cloud comes down over them; when it lifts,
+   the two side tents are gone and only the middle one, Jesus, is left */
+.lk09-tents { display: block; width: 100%; height: auto; max-width: 34rem; margin: 0 auto; }
+.lk09-tent { fill: var(--surface-2); stroke: var(--line-strong); stroke-width: 3; stroke-linejoin: round; transition: opacity 1s ease 1.2s; }
+.lk09-tent.mid { fill: color-mix(in srgb, var(--accent) 20%, var(--surface)); stroke: var(--accent); }
+.lk09-door { fill: var(--line-strong); }
+.lk09-name { font-size: 20px; font-weight: 700; fill: var(--ink); transition: opacity 1s ease 1.2s; }
+.lk09-name.mid { fill: var(--accent-hot); }
+.lk09-side { transition: opacity 1s ease 1.2s; }
+.lk09-ground { stroke: var(--line-strong); stroke-width: 2; }
+.lk09-cloud { fill: color-mix(in srgb, var(--ink-soft) 40%, var(--surface)); opacity: 0; }
+.lk09-say { font-size: 19px; font-style: italic; fill: var(--ink-soft); transition: opacity .6s ease; }
+.lk09-alone { font-size: 20px; font-weight: 700; fill: var(--accent-hot); opacity: 0; transition: opacity .8s ease 2.6s; }
+.slide:has(.lk09-go.on) .lk09-cloud { animation: lk09-cloud 3.2s ease forwards; }
+@keyframes lk09-cloud { 0% { opacity: 0; } 30%, 65% { opacity: .95; } 100% { opacity: 0; } }
+.slide:has(.lk09-go.on) .lk09-side { opacity: 0; }
+.slide:has(.lk09-go.on) .lk09-say { opacity: 0; }
+.slide:has(.lk09-go.on) .lk09-alone { opacity: 1; }
+
+/* lk09-furrow: two furrows ploughed toward a marker: one straight with the eyes ahead, one wandering from looking back */
+.lk09-furrow { display: block; width: 100%; height: auto; max-width: 30rem; margin: .2em auto .6em; }
+.lk09-field { fill: color-mix(in srgb, var(--leather) 35%, var(--surface)); }
+.lk09-row { fill: none; stroke: var(--accent); stroke-width: 7; stroke-linecap: round; stroke-dasharray: 1; stroke-dashoffset: 1; transition: stroke-dashoffset 2.6s ease .5s; }
+.lk09-row.bad { stroke: var(--danger); transition-delay: 1s; }
+.slide.active .lk09-row { stroke-dashoffset: 0; }
+.lk09-post { stroke: var(--ink); stroke-width: 4; }
+.lk09-flag { fill: var(--accent); }
+.lk09-lab { font-size: 17px; font-weight: 700; fill: var(--ink); }
+.lk09-lab.bad { fill: var(--danger); }
+</style>
+</head>
+<body>
+<main class="deck" id="deck">
+
+<!-- ======================= OPENING ======================= -->
+<section class="slide title">
+  <div class="inner">
+    <div class="emblem rise"></div>
+    <h1 class="rise" style="--d:1">Luke 9</h1>
+    <p class="sub rise" style="--d:3">Take up his cross daily</p>
+    <p class="tag rise" style="--d:5">Twelve men sent out with nothing, five thousand fed, Peter names the Christ, glory on the mountain, and Jesus sets His face toward Jerusalem.</p>
+  </div>
+</section>
+
+<section class="slide watch">
+  <div class="inner">
+    <h2 class="rise">Things to watch for</h2>
+    <p class="lede rise" style="--d:1">Keep these questions in the back of your mind as we read. We'll come back to every one of them at the end.</p>
+    <ol class="seeds">
+      <li class="step"><span class="topic">Sent</span><span class="seed-q">What did Jesus give the twelve, and what did He tell them to leave behind?</span></li>
+      <li class="step"><span class="topic">Enough</span><span class="seed-q">What did Jesus do with five loaves and two fishes?</span></li>
+      <li class="step"><span class="topic">Who He is</span><span class="seed-q">Who did Peter say Jesus is?</span></li>
+      <li class="step"><span class="topic">Daily</span><span class="seed-q">What does Jesus ask of any man who will come after Him?</span></li>
+      <li class="step"><span class="topic">Hear Him</span><span class="seed-q">What did the voice out of the cloud say?</span></li>
+      <li class="step"><span class="topic">No looking back</span><span class="seed-q">What did Jesus say about the man who puts his hand to the plough and looks back?</span></li>
+    </ol>
+  </div>
+</section>
+
+<!-- ======================= PART ONE: SENT AND FED ======================= -->
+<section class="slide part">
+  <div class="inner">
+    <p class="part-n rise">Part one</p>
+    <h2 class="rise" style="--d:1">Give ye them to eat</h2>
+    <p class="range rise" style="--d:2">Verses 1–17</p>
+    <div class="rule"></div>
+    <p class="hook rise" style="--d:4">Twelve men go out empty-handed, a king can't sleep, and a crowd eats its fill.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="1-2" data-hl="gave them power and authority over all devils, and to cure diseases|he sent them to preach the kingdom of God"></section>
+
+<section class="slide verse" data-v="3-6" data-hl="Take nothing for your journey|shake off the very dust from your feet for a testimony against them|preaching the gospel, and healing every where"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="3" data-hl="Take nothing for your journey"></blockquote>
+    <h2 class="rise" style="--d:1">Take nothing</h2>
+    <ul class="nots">
+      <li class="step"><span class="k">Staves</span><span class="why">a walking stick for the road</span></li>
+      <li class="step"><span class="k">Scrip</span><span class="why">a traveller's bag for food</span></li>
+      <li class="step"><span class="k">Bread, money</span><span class="why">no supplies, no cash</span></li>
+      <li class="step"><span class="k">Two coats</span><span class="why">not even a change of clothes</span></li>
+      <li class="step yes"><span class="k">Power and authority</span><span class="why">from Him, v. 1</span></li>
+    </ul>
+    <p class="note step">They went out depending on God and on the people who took them in. Where a town turned them away, they were to <em>shake off the dust</em>. Jews did that coming home from Gentile lands. Doing it to a Jewish town said, <em>you've chosen to stand outside.</em> It was a warning, not a curse.</p>
+    <p class="note step">He sent men with nothing but Him. You don't have to have your life together to carry His message. You just have to go.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="7-9" data-hl="Herod the tetrarch heard of all that was done by him: and he was perplexed|John have I beheaded: but who is this, of whom I hear such things?|he desired to see him"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="9"></blockquote>
+    <h2 class="rise" style="--d:1">A king with a guilty conscience</h2>
+    <p class="note rise" style="--d:2"><em>Herod the tetrarch</em> is Herod Antipas, a son of Herod the Great. Rome let him rule Galilee and Perea, part of his father's kingdom, from about 4 BC to AD 39. He had locked up John the Baptist, and then had him beheaded.</p>
+    <ol class="timeline step" aria-label="Herod and Jesus in Luke: 3:19–20, Herod shuts John up in prison; 9:9, John have I beheaded; 13:31, the Pharisees warn that Herod will kill Jesus; 23:8, Herod finally sees Jesus and hopes for a miracle; 23:11, Herod mocks Him and sends Him back to Pilate.">
+      <li style="--k:0"><b>3:19–20</b><span>John shut up in prison</span></li>
+      <li class="lit" style="--k:1"><b>9:9</b><span>“John have I beheaded”</span><small>today</small></li>
+      <li style="--k:2"><b>13:31</b><span>“Herod will kill thee”</span></li>
+      <li style="--k:3"><b>23:8</b><span>he finally sees Jesus</span></li>
+      <li style="--k:4"><b>23:11</b><span>mocks Him, sends Him back</span></li>
+    </ol>
+    <p class="note step">Herod got his wish at the trial. He wanted a show, not a Savior, and Jesus wouldn't say a word to him. Curiosity about Jesus isn't the same as coming to Him.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="10-11" data-hl="a desert place belonging to the city called Bethsaida|he received them, and spake unto them of the kingdom of God, and healed them that had need of healing"></section>
+
+<section class="slide verse" data-v="12-14" data-hl="Send the multitude away|Give ye them to eat|We have no more but five loaves and two fishes|about five thousand men"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise">Give ye them to eat</h2>
+    <div class="talk">
+      <p class="rise" style="--d:1"><small>The twelve</small>Send the multitude away… for we are here in a desert place.</p>
+      <p class="reply step"><small>Jesus</small>Give ye them to eat.</p>
+      <p class="step"><small>The twelve</small>We have no more but five loaves and two fishes.<br><span class="flag">and about five thousand men</span></p>
+    </div>
+    <p class="note step">Jesus had taken the twelve away to rest, and the crowd followed. He <em>received them</em> anyway. When it got late, the disciples' plan was to send the problem away. His plan was to hand it back to them.</p>
+    <p class="note step">They looked at what they didn't have. Jesus asked for what they did have. Bring Him your little. It's enough in His hands.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="15-17" data-hl="he blessed them, and brake, and gave to the disciples to set before the multitude|they did eat, and were all filled|twelve baskets"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="17"></blockquote>
+    <h2 class="rise" style="--d:1">More than enough</h2>
+    <div class="math">
+      <div class="rise" style="--d:2"><b>5 + 2</b><span>loaves and fishes</span></div>
+      <div class="rise" style="--d:3"><b>about 5,000</b><span>men, all filled</span></div>
+      <div class="rise" style="--d:4"><b>12</b><span>baskets left over</span></div>
+    </div>
+    <div class="dots rows fill" data-dots="100" style="--cols:25;--dot:var(--cool);--pace:14ms;--wait:.8s;max-width:40rem" aria-label="A hundred dots fill in, one by one."></div>
+    <p class="dots-cap rise" style="--d:5;max-width:40rem"><span>each dot is about 50 men, in groups of fifty</span><b class="dots-num" style="--to:5000;--count:2.6s"></b></p>
+    <p class="note step">He blessed it, broke it, and gave it to the disciples to pass out. The miracle went through their hands. And there was a basket of leftovers for each of the twelve who had said, <em>“We have no more.”</em></p>
+  </div>
+</section>
+
+<!-- ======================= PART TWO: WHO HE IS ======================= -->
+<section class="slide part">
+  <div class="inner">
+    <p class="part-n rise">Part two</p>
+    <h2 class="rise" style="--d:1">But whom say ye that I am?</h2>
+    <p class="range rise" style="--d:2">Verses 18–27</p>
+    <div class="rule"></div>
+    <p class="hook rise" style="--d:4">The most important question, and what it costs to follow the answer.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="18-20" data-hl="as he was alone praying|Whom say the people that I am?|But whom say ye that I am?|The Christ of God"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="20"></blockquote>
+    <h2 class="rise" style="--d:1">“The Christ of God”</h2>
+    <ul class="nots">
+      <li class="step"><span class="k">John the Baptist</span><span class="why">back from the dead</span></li>
+      <li class="step"><span class="k">Elias</span><span class="why">Elijah, come again</span></li>
+      <li class="step"><span class="k">One of the old prophets</span><span class="why">risen again</span></li>
+      <li class="step yes"><span class="k">The Christ of God</span><span class="why">Peter, v. 20</span></li>
+    </ul>
+    <p class="note step"><em>Christ</em> is the Greek word for the Hebrew <em>Messiah</em>: “the Anointed One,” the King God had promised for centuries. The crowds thought well of Jesus. A prophet is a compliment. Peter said more: He's the One.</p>
+    <p class="note step">Everybody has an opinion about Jesus. The question that counts is the second one: <em>“But whom say ye?”</em></p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="21-22" data-hl="The Son of man must suffer many things|be slain, and be raised the third day"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise">The Christ must suffer</h2>
+    <div class="stage">
+      <svg class="curve" viewBox="0 0 680 290" role="img" aria-label="A line that falls through suffering, rejection by the elders, chief priests and scribes, and death, then rises: raised the third day.">
+        <line class="curve-base" x1="20" y1="140" x2="660" y2="140"/>
+        <path class="curve-line" pathLength="1" d="M40 70 L190 150 L340 210 L460 250 L620 40"/>
+        <g class="curve-pt" style="--k:0"><circle cx="40" cy="70" r="9"/><text x="26" y="46">“suffer many things”</text></g>
+        <g class="curve-pt low" style="--k:1"><circle cx="190" cy="150" r="9"/><text x="176" y="184" text-anchor="end">“rejected”</text></g>
+        <g class="curve-pt low" style="--k:2"><circle cx="340" cy="210" r="9"/><text x="326" y="244" text-anchor="end">by the leaders</text></g>
+        <g class="curve-pt low" style="--k:3"><circle cx="460" cy="250" r="9"/><text x="476" y="278">“slain”</text></g>
+        <g class="curve-pt high" style="--k:4"><circle cx="620" cy="40" r="10"/><text x="604" y="28" text-anchor="end" font-weight="700" style="fill:var(--accent-hot)">“raised the third day”</text></g>
+      </svg>
+    </div>
+    <p class="note rise" style="--d:3">The <em>elders, chief priests and scribes</em> were the men of the council in Jerusalem that ruled the Jews under Rome. People expected the Christ to throw Rome out. That's why Jesus told them to keep quiet for now: they had to learn what kind of Christ He was.</p>
+    <p class="note step">He <em>must</em> suffer. Not an accident, not a defeat: the plan. And the line doesn't end at the bottom. It ends at the third day.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="23-27" data-hl="let him deny himself, and take up his cross daily, and follow me|whosoever will lose his life for my sake, the same shall save it|if he gain the whole world, and lose himself|whosoever shall be ashamed of me"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="23"></blockquote>
+    <h2 class="rise" style="--d:1">Take up his cross daily</h2>
+    <div class="lk09-days rise" style="--d:2" aria-label="Seven days in a row, each marked with a cross. Today lights up, one day after another.">
+      <span style="--k:0"><i></i>Sun</span><span style="--k:1"><i></i>Mon</span><span style="--k:2"><i></i>Tue</span><span style="--k:3"><i></i>Wed</span><span style="--k:4"><i></i>Thu</span><span style="--k:5"><i></i>Fri</span><span style="--k:6"><i></i>Sat</span>
+    </div>
+    <p class="lk09-cap rise" style="--d:3">deny himself · take up his cross · follow me</p>
+    <p class="note step">A man carrying a cross in those days wasn't carrying a hard life. He was walking to his death; Rome made the condemned carry it. To take up the cross is to let the old self, the one that runs the show, die.</p>
+    <p class="note step">And <em>daily</em>. Yesterday's surrender doesn't cover today. One day at a time is how a man follows Jesus.</p>
+    <p class="note step">This isn't how a man gets saved. Salvation is a gift, received by faith (Ephesians 2:8). This is how a saved man walks.</p>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="25"></blockquote>
+    <div class="split">
+      <div class="stage">
+        <svg class="scale now" style="--tip:11deg;--wait:.8s" viewBox="0 0 600 300" role="img" aria-label="A balance scale. On one side, the whole world. On the other, one man's own self. The side with the man goes down.">
+          <path d="M270 290 L330 290 L312 270 L288 270 Z" style="fill:var(--line-strong)"/>
+          <line x1="300" y1="270" x2="300" y2="70" stroke-width="8" style="stroke:var(--line-strong)"/>
+          <g class="scale-beam">
+            <line x1="80" y1="70" x2="520" y2="70" stroke-width="8" stroke-linecap="round" style="stroke:var(--ink-soft)"/>
+            <circle cx="300" cy="70" r="11" style="fill:var(--accent)"/>
+          </g>
+          <g class="scale-pan l">
+            <g stroke-width="2" style="stroke:var(--ink-soft)"><line x1="80" y1="70" x2="30" y2="190"/><line x1="80" y1="70" x2="130" y2="190"/></g>
+            <path d="M20 190 L140 190 Q130 220 80 220 Q30 220 20 190 Z" style="fill:var(--surface-2);stroke:var(--ink-soft)" stroke-width="2"/>
+            <circle cx="80" cy="164" r="24" style="fill:none;stroke:var(--cool)" stroke-width="3"/>
+            <path d="M56 164 H104 M80 140 C 66 152, 66 176, 80 188 M80 140 C 94 152, 94 176, 80 188" style="fill:none;stroke:var(--cool)" stroke-width="2"/>
+            <text x="80" y="250" text-anchor="middle" font-size="18" style="fill:var(--ink-soft)">the whole world</text>
+          </g>
+          <g class="scale-pan r">
+            <g stroke-width="2" style="stroke:var(--ink-soft)"><line x1="520" y1="70" x2="470" y2="190"/><line x1="520" y1="70" x2="570" y2="190"/></g>
+            <path d="M460 190 L580 190 Q570 220 520 220 Q470 220 460 190 Z" style="fill:var(--surface-2);stroke:var(--accent)" stroke-width="2"/>
+            <circle cx="520" cy="152" r="11" style="fill:var(--accent-hot)"/>
+            <path d="M502 188 Q504 166 520 164 Q536 166 538 188 Z" style="fill:var(--accent-hot)"/>
+            <text x="520" y="250" text-anchor="middle" font-size="18" font-weight="700" style="fill:var(--accent-hot)">himself</text>
+          </g>
+        </svg>
+      </div>
+      <div>
+        <h2 class="rise" style="--d:1">What is a man advantaged?</h2>
+        <p class="note rise" style="--d:2">Grab your life and hold on, and you lose it. Hand it over to Jesus, and you find it. Put the whole world on one side and your own soul on the other, and the world doesn't weigh enough.</p>
+        <p class="note step">Many of us chased the world: the high, the money, the approval. We didn't gain the world. We lost ourselves.</p>
+        <p class="note step">Verse 27: some standing there would <em>see the kingdom of God</em> before they died. About eight days later, three of them did.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ======================= PART THREE: THE MOUNTAIN ======================= -->
+<section class="slide part">
+  <div class="inner">
+    <p class="part-n rise">Part three</p>
+    <h2 class="rise" style="--d:1">This is my beloved Son: hear him</h2>
+    <p class="range rise" style="--d:2">Verses 28–45</p>
+    <div class="rule"></div>
+    <p class="hook rise" style="--d:4">Glory on the mountain, and a father's need at the bottom of it.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="28-31" data-hl="went up into a mountain to pray|the fashion of his countenance was altered, and his raiment was white and glistering|Moses and Elias|spake of his decease which he should accomplish at Jerusalem"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="31" data-hl="his decease which he should accomplish at Jerusalem"></blockquote>
+    <h2 class="rise" style="--d:1">Glory, and an exodus</h2>
+    <p class="note rise" style="--d:2">Luke doesn't name the mountain. He tells us Jesus went up to <em>pray</em>, and while He prayed, the glory He'd always had shone through: His face changed, His clothes went bright white. Moses, who gave the Law, and Elias, the great prophet, stood and talked with Him.</p>
+    <div class="morph">
+      <span class="big step">ἔξοδος</span>
+      <span class="say step">said <em class="gk">exodos</em></span>
+      <span class="means step">“decease”: a going out, a departure</span>
+    </div>
+    <p class="note step">They talked about His death in Jerusalem, and Luke's word is <em>exodus</em>. Moses led Israel out of slavery in Egypt. Jesus would lead a greater exodus, out of sin and death, through the cross. Peter never forgot that night:</p>
+    <blockquote class="quote step"><p>“For we have not followed cunningly devised fables, when we made known unto you the power and coming of our Lord Jesus Christ, but were eyewitnesses of his majesty.”</p><cite>2 Peter 1:16</cite></blockquote>
+  </div>
+</section>
+
+<section class="slide verse" data-v="32-33" data-hl="heavy with sleep|let us make three tabernacles|not knowing what he said"></section>
+
+<section class="slide verse" data-v="34-36" data-hl="there came a cloud, and overshadowed them|This is my beloved Son: hear him|Jesus was found alone"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <div class="split">
+      <div class="stage">
+        <svg class="lk09-tents" viewBox="0 0 600 280" role="img" aria-label="Three tents in a row: Moses, Jesus in the middle, and Elias. On a step a cloud comes down over them. When it lifts, the two side tents are gone and only Jesus is left.">
+          <text class="lk09-say" x="300" y="40" text-anchor="middle">“let us make three tabernacles”</text>
+          <text class="lk09-alone" x="300" y="40" text-anchor="middle">“Jesus was found alone”</text>
+          <line class="lk09-ground" x1="20" y1="220" x2="580" y2="220"/>
+          <g class="lk09-side">
+            <path class="lk09-tent" d="M50 220 L120 110 L190 220 Z"/><path class="lk09-door" d="M108 220 L120 178 L132 220 Z"/>
+            <text class="lk09-name" x="120" y="252" text-anchor="middle">Moses</text>
+          </g>
+          <path class="lk09-tent mid" d="M218 220 L300 84 L382 220 Z"/><path class="lk09-door" d="M286 220 L300 170 L314 220 Z"/>
+          <text class="lk09-name mid" x="300" y="252" text-anchor="middle">Jesus</text>
+          <g class="lk09-side">
+            <path class="lk09-tent" d="M410 220 L480 110 L550 220 Z"/><path class="lk09-door" d="M468 220 L480 178 L492 220 Z"/>
+            <text class="lk09-name" x="480" y="252" text-anchor="middle">Elias</text>
+          </g>
+          <g class="lk09-cloud">
+            <ellipse cx="150" cy="150" rx="150" ry="90"/><ellipse cx="300" cy="120" rx="170" ry="110"/><ellipse cx="450" cy="150" rx="150" ry="90"/><ellipse cx="300" cy="200" rx="290" ry="70"/>
+          </g>
+        </svg>
+      </div>
+      <div>
+        <h2 class="rise" style="--d:1">Jesus alone</h2>
+        <p class="note rise" style="--d:2"><em>Tabernacles</em> are shelters, booths of branches. Peter wanted to keep the moment going, and he put Jesus on the same shelf as Moses and Elias: <em>“not knowing what he said.”</em></p>
+        <p class="note step lk09-go">The Father answered out of the cloud: <em>“This is my beloved Son: hear him.”</em> When it lifted, Moses and Elias were gone. The Law and the Prophets point to Him, and then step aside.</p>
+        <blockquote class="quote step"><p>“The LORD thy God will raise up unto thee a Prophet from the midst of thee, of thy brethren, like unto me; unto him ye shall hearken;”</p><cite>Deuteronomy 18:15</cite></blockquote>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="slide verse" data-v="37-40" data-hl="look upon my son: for he is mine only child|I besought thy disciples to cast him out; and they could not"></section>
+
+<section class="slide verse" data-v="41-42" data-hl="O faithless and perverse generation|Bring thy son hither|healed the child, and delivered him again to his father"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="42" data-hl="delivered him again to his father"></blockquote>
+    <h2 class="rise" style="--d:1">Bring thy son hither</h2>
+    <p class="note rise" style="--d:2">Down from the glory, straight into a father's nightmare. His only boy, thrown down and torn by a spirit. The disciples had cast out devils before (v. 6), but not this time.</p>
+    <div class="ifthen step">
+      <div class="if"><small>The disciples</small>“they could not”</div>
+      <span class="arrow" aria-hidden="true">→</span>
+      <div class="then"><small>Jesus</small>“Bring thy son hither.”</div>
+    </div>
+    <p class="note step"><em>“O faithless and perverse generation”</em>: Jesus grieves over the unbelief all around Him, His own men included.</p>
+    <p class="note step">The father didn't quit when the disciples failed. Some of us have been let down by a church, a counselor, a program. Don't stop there. Bring it to Jesus. He gave the boy back to his father, and He still gives sons back to their fathers.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="43-45" data-hl="they were all amazed at the mighty power of God|Let these sayings sink down into your ears|the Son of man shall be delivered into the hands of men|they understood not this saying"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="44"></blockquote>
+    <h2 class="rise" style="--d:1">Let it sink in</h2>
+    <ol class="timeline" aria-label="The times in Luke that Jesus tells His disciples about His death and rising: 9:22, suffer, be slain, be raised; 9:44, delivered into the hands of men; 13:33, a prophet perishes at Jerusalem; 17:25, first He must suffer; 18:31–33, the third day He shall rise; and 24:6–7, after He rose, the angels say, remember how He spake unto you.">
+      <li style="--k:0"><b>9:22</b><span>suffer, be slain, be raised</span></li>
+      <li class="lit" style="--k:1"><b>9:44</b><span>delivered into men's hands</span><small>today</small></li>
+      <li style="--k:2"><b>13:33</b><span>“perish out of Jerusalem”</span></li>
+      <li style="--k:3"><b>17:25</b><span>“first must he suffer”</span></li>
+      <li style="--k:4"><b>18:31–33</b><span>“the third day he shall rise”</span></li>
+      <li style="--k:5"><b>24:6–7</b><span>“remember how he spake”</span></li>
+    </ol>
+    <p class="note rise" style="--d:4">Right when everybody was amazed, Jesus told them the hard part again. They didn't get it, and they were afraid to ask.</p>
+    <p class="note step">It finally sank in after He rose: <em>“And they remembered his words”</em> (24:8). Some things in God's word only make sense later. Keep listening anyway, and don't be afraid to ask.</p>
+  </div>
+</section>
+
+<!-- ======================= PART FOUR: THE ROAD ======================= -->
+<section class="slide part">
+  <div class="inner">
+    <p class="part-n rise">Part four</p>
+    <h2 class="rise" style="--d:1">He stedfastly set his face</h2>
+    <p class="range rise" style="--d:2">Verses 46–62</p>
+    <div class="rule"></div>
+    <p class="hook rise" style="--d:4">Arguments about rank, fire from heaven, and the road to Jerusalem.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="46-48" data-hl="which of them should be greatest|took a child, and set him by him|he that is least among you all, the same shall be great"></section>
+
+<section class="slide verse" data-v="49-50" data-hl="we forbad him, because he followeth not with us|Forbid him not: for he that is not against us is for us"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise">Us first</h2>
+    <div class="columns">
+      <div class="col law rise" style="--d:1">
+        <p class="who">The twelve, v. 46</p>
+        <h3>“which of them should be greatest”</h3>
+        <p>Jesus set a child beside Him: “he that is least among you all, the same shall be great.”</p>
+      </div>
+      <div class="col law rise" style="--d:2">
+        <p class="who">John, v. 49</p>
+        <h3>“he followeth not with us”</h3>
+        <p>Jesus: “Forbid him not: for he that is not against us is for us.”</p>
+      </div>
+    </div>
+    <p class="note step">He'd just told them He was going to be handed over to die, and they argued about rank. A child had no standing at all in that world. Jesus says: welcome the least, and you welcome Me.</p>
+    <p class="note step">Then John tried to shut down a man doing real good in Jesus' name, because he wasn't in their group. Same root both times: pride.</p>
+    <blockquote class="quote step"><p>“Pride goeth before destruction, and an haughty spirit before a fall.”</p><cite>Proverbs 16:18</cite></blockquote>
+  </div>
+</section>
+
+<section class="slide verse" data-v="51-53" data-hl="the time was come that he should be received up|he stedfastly set his face to go to Jerusalem|a village of the Samaritans|they did not receive him"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <div class="split">
+      <div class="stage">
+        <svg class="map" data-land viewBox="110 70 250 350" data-towns="Capernaum:l, Bethsaida:r, Nazareth:l, Samaria:l, Jerusalem!:l" role="img" aria-label="A map of the land. A route runs on a step from Galilee in the north, past a village of the Samaritans just over the border, south toward Jerusalem.">
+          <path class="map-route r1" pathLength="1" style="--draw:3s" d="M266 136 C 244 160, 222 186, 212 222 C 204 262, 214 300, 210 330 C 206 352, 204 370, 203 380"/>
+          <g class="step map-go1">
+            <circle cx="213" cy="232" r="7" style="fill:var(--danger)"/>
+            <text x="226" y="230" font-size="14" font-weight="700" style="fill:var(--danger)">a village of</text>
+            <text x="226" y="246" font-size="14" font-weight="700" style="fill:var(--danger)">the Samaritans</text>
+          </g>
+        </svg>
+      </div>
+      <div>
+        <h2 class="rise" style="--d:1">He set His face</h2>
+        <p class="note rise" style="--d:2"><em>Received up</em> means taken up into heaven (24:51). From here to 19:28, about ten chapters, Luke tells one long journey: Jesus walking toward Jerusalem, and the cross, on purpose.</p>
+        <p class="note step map-go1">The road south ran through Samaria. Jews and Samaritans had despised each other for centuries, and the Samaritans worshipped on their own mountain, not in Jerusalem (John 4:20). A Jew headed for the temple got no room.</p>
+        <blockquote class="quote step"><p>“For the Lord GOD will help me; therefore shall I not be confounded: therefore have I set my face like a flint, and I know that I shall not be ashamed.”</p><cite>Isaiah 50:7</cite></blockquote>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="slide verse" data-v="54-56" data-hl="wilt thou that we command fire to come down from heaven|Ye know not what manner of spirit ye are of|the Son of man is not come to destroy men’s lives, but to save them"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="56" data-hl="not come to destroy men’s lives, but to save them"></blockquote>
+    <h2 class="rise" style="--d:1">Fire, or the gospel</h2>
+    <p class="note rise" style="--d:2">Elijah once called down fire on soldiers sent to seize him (2 Kings 1:10). James and John, the <em>sons of thunder</em> (Mark 3:17), wanted to do the same to a village that snubbed Jesus. He turned and rebuked them.</p>
+    <div class="rename">
+      <span class="old step">“command fire to come down”</span>
+      <span class="arrow step n2">→</span>
+      <span class="new step">“preached the gospel”</span>
+      <span class="gloss step">“in many villages of the Samaritans”: John, a few years later, with Peter (Acts 8:25)</span>
+    </div>
+    <p class="note step">Jesus changed John's temper into a heart for the very people he wanted to burn. He can do that with our anger too.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="57-60" data-hl="Lord, I will follow thee whithersoever thou goest|Foxes have holes, and birds of the air have nests; but the Son of man hath not where to lay his head|Lord, suffer me first to go and bury my father|Let the dead bury their dead"></section>
+
+<section class="slide verse" data-v="61-62" data-hl="let me first go bid them farewell|No man, having put his hand to the plough, and looking back, is fit for the kingdom of God"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise">Three men on the road</h2>
+    <div class="sort">
+      <div class="rise" style="--d:1"><h3>“Whithersoever”</h3><div class="vs"><b>57</b><b>58</b></div><p>Big promise. Jesus: count the cost. I don't even have a bed.</p></div>
+      <div class="rise" style="--d:2"><h3>“Suffer me first”</h3><div class="vs"><b>59</b><b>60</b></div><p>Not yet. Let the spiritually dead handle that. You go preach life.</p></div>
+      <div class="rise" style="--d:3"><h3>“But let me first”</h3><div class="vs"><b>61</b><b>62</b></div><p>Half turned around already. No looking back.</p></div>
+    </div>
+    <p class="note step">The second man may not have meant his father had died that day. He may have meant, <em>“After Dad's gone, someday.”</em> Each of the three put something in front of Jesus: comfort, family duty, the old life at home.</p>
+    <p class="note step">Notice the word <em>first</em>, twice. Jesus doesn't take second place.</p>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="62"></blockquote>
+    <h2 class="rise" style="--d:1">Hand to the plough</h2>
+    <svg class="lk09-furrow" viewBox="0 0 600 220" role="img" aria-label="A field with a marker post at the far end. One furrow runs straight to the post. Another, ploughed while looking back, wanders crooked across the field.">
+      <rect class="lk09-field" x="0" y="0" width="600" height="220" rx="10"/>
+      <line class="lk09-post" x1="560" y1="40" x2="560" y2="110"/><path class="lk09-flag" d="M560 40 L590 50 L560 60 Z"/>
+      <path class="lk09-row" pathLength="1" d="M40 80 L550 80"/>
+      <path class="lk09-row bad" pathLength="1" d="M40 165 C 120 150, 160 190, 240 165 S 340 130, 400 180 S 500 200, 550 150"/>
+      <text class="lk09-lab" x="40" y="58">eyes on the mark</text>
+      <text class="lk09-lab bad" x="40" y="208">looking back</text>
+    </svg>
+    <p class="note rise" style="--d:2">A ploughman fixed his eyes on a mark at the far end of the field and walked toward it. Look back over your shoulder, and the furrow goes crooked.</p>
+    <p class="note step">Looking back with longing at the old life, the old crowd, the old high, is how a man starts to drift. Jesus isn't saying a believer gets thrown out. He's saying you can't plough straight while you look behind you. <em>“Remember Lot’s wife”</em> (17:32).</p>
+  </div>
+</section>
+
+<!-- ======================= CLOSING ======================= -->
+<section class="slide remember">
+  <div class="inner">
+    <h2 class="rise">Points to remember</h2>
+    <ol class="seeds">
+      <li class="step"><span class="topic">Sent</span><span class="seed-q">“Take nothing for your journey” <cite>9:3</cite></span><span class="take">He gives the power. We go with nothing but Him.</span></li>
+      <li class="step"><span class="topic">Enough</span><span class="seed-q">“They did eat, and were all filled” <cite>9:17</cite></span><span class="take">Bring Him your little. In His hands it's more than enough.</span></li>
+      <li class="step"><span class="topic">Who He is</span><span class="seed-q">“The Christ of God” <cite>9:20</cite></span><span class="take">Not just a prophet. The promised King, who must suffer and rise.</span></li>
+      <li class="step"><span class="topic">Daily</span><span class="seed-q">“Take up his cross daily, and follow me” <cite>9:23</cite></span><span class="take">One day at a time: say no to self, and follow Him.</span></li>
+      <li class="step"><span class="topic">Hear Him</span><span class="seed-q">“This is my beloved Son: hear him” <cite>9:35</cite></span><span class="take">Moses and Elias step aside. Listen to Jesus.</span></li>
+      <li class="step"><span class="topic">No looking back</span><span class="seed-q">“Having put his hand to the plough” <cite>9:62</cite></span><span class="take">Eyes ahead. Don't plough while looking at the old life.</span></li>
+    </ol>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 1 of 6</p>
+      <span class="topic">Sent</span>
+      <h2>What did Jesus give the twelve, and what did He tell them to leave behind?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="1"></blockquote>
+      <blockquote class="quote step" data-q="3"></blockquote>
+      <blockquote class="quote step" data-q="6"></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>He gave them power and authority over all devils and to cure diseases, and sent them to preach. They were to take nothing: no staff, no bag, no bread, no money, no extra coat. They went depending on Him, and the work got done.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 2 of 6</p>
+      <span class="topic">Enough</span>
+      <h2>What did Jesus do with five loaves and two fishes?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="13"></blockquote>
+      <blockquote class="quote step" data-q="16"></blockquote>
+      <blockquote class="quote step" data-q="17"></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>He looked up to heaven, blessed them, broke them, and gave them to the disciples to set before the crowd. About five thousand men ate until they were full, and twelve baskets were left over. What looked like nothing was more than enough in His hands.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 3 of 6</p>
+      <span class="topic">Who He is</span>
+      <h2>Who did Peter say Jesus is?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="19"></blockquote>
+      <blockquote class="quote step" data-q="20"></blockquote>
+      <blockquote class="quote step" data-q="22"></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>“The Christ of God”: the promised, anointed King. The crowds said a prophet; Peter said the One. Then Jesus showed what kind of Christ He is: one who must suffer, be slain, and be raised the third day.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 4 of 6</p>
+      <span class="topic">Daily</span>
+      <h2>What does Jesus ask of any man who will come after Him?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="23"></blockquote>
+      <blockquote class="quote step" data-q="24"></blockquote>
+      <blockquote class="quote step"><p>“I am crucified with Christ: nevertheless I live; yet not I, but Christ liveth in me: and the life which I now live in the flesh I live by the faith of the Son of God, who loved me, and gave himself for me.”</p><cite>Galatians 2:20</cite></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>To deny himself, take up his cross daily, and follow Him. Not to earn salvation, which is a free gift, but to walk with Him: saying no to self every day, and finding real life by giving it to Him.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 5 of 6</p>
+      <span class="topic">Hear Him</span>
+      <h2>What did the voice out of the cloud say?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="35"></blockquote>
+      <blockquote class="quote step" data-q="36" data-hl="Jesus was found alone"></blockquote>
+      <blockquote class="quote step"><p>“For he received from God the Father honour and glory, when there came such a voice to him from the excellent glory, This is my beloved Son, in whom I am well pleased.”</p><cite>2 Peter 1:17</cite></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>“This is my beloved Son: hear him.” The Father Himself named Jesus as His Son and told us to listen to Him. When the cloud lifted, Moses and Elias were gone, and Jesus was found alone.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 6 of 6</p>
+      <span class="topic">No looking back</span>
+      <h2>What did Jesus say about the man who puts his hand to the plough and looks back?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="61"></blockquote>
+      <blockquote class="quote step" data-q="62"></blockquote>
+      <blockquote class="quote step"><p>“Brethren, I count not myself to have apprehended: but this one thing I do, forgetting those things which are behind, and reaching forth unto those things which are before,”</p><cite>Philippians 3:13</cite></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>He is not fit for the kingdom of God. You can't plough a straight furrow while you look over your shoulder. Following Jesus means keeping your eyes ahead, not on the old life.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide prayer">
+  <div class="inner">
+    <div class="emblem rise"></div>
+    <h2 class="rise" style="--d:1">Prayer requests</h2>
+    <p class="ask-line rise" style="--d:2">What can we pray about for you today?</p>
+    <blockquote class="quote rise" style="--d:4"><p>“It is of the LORD’s mercies that we are not consumed, because his compassions fail not. They are new every morning: great is thy faithfulness.”</p><cite>Lamentations 3:22–23</cite></blockquote>
+  </div>
+</section>
+
+</main>
+
+<script>
+// King James Version, Luke chapter 9
+const V = {
+  1: "Then he called his twelve disciples together, and gave them power and authority over all devils, and to cure diseases.",
+  2: "And he sent them to preach the kingdom of God, and to heal the sick.",
+  3: "And he said unto them, Take nothing for your journey, neither staves, nor scrip, neither bread, neither money; neither have two coats apiece.",
+  4: "And whatsoever house ye enter into, there abide, and thence depart.",
+  5: "And whosoever will not receive you, when ye go out of that city, shake off the very dust from your feet for a testimony against them.",
+  6: "And they departed, and went through the towns, preaching the gospel, and healing every where.",
+  7: "Now Herod the tetrarch heard of all that was done by him: and he was perplexed, because that it was said of some, that John was risen from the dead;",
+  8: "And of some, that Elias had appeared; and of others, that one of the old prophets was risen again.",
+  9: "And Herod said, John have I beheaded: but who is this, of whom I hear such things? And he desired to see him.",
+  10: "And the apostles, when they were returned, told him all that they had done. And he took them, and went aside privately into a desert place belonging to the city called Bethsaida.",
+  11: "And the people, when they knew it, followed him: and he received them, and spake unto them of the kingdom of God, and healed them that had need of healing.",
+  12: "And when the day began to wear away, then came the twelve, and said unto him, Send the multitude away, that they may go into the towns and country round about, and lodge, and get victuals: for we are here in a desert place.",
+  13: "But he said unto them, Give ye them to eat. And they said, We have no more but five loaves and two fishes; except we should go and buy meat for all this people.",
+  14: "For they were about five thousand men. And he said to his disciples, Make them sit down by fifties in a company.",
+  15: "And they did so, and made them all sit down.",
+  16: "Then he took the five loaves and the two fishes, and looking up to heaven, he blessed them, and brake, and gave to the disciples to set before the multitude.",
+  17: "And they did eat, and were all filled: and there was taken up of fragments that remained to them twelve baskets.",
+  18: "And it came to pass, as he was alone praying, his disciples were with him: and he asked them, saying, Whom say the people that I am?",
+  19: "They answering said, John the Baptist; but some say, Elias; and others say, that one of the old prophets is risen again.",
+  20: "He said unto them, But whom say ye that I am? Peter answering said, The Christ of God.",
+  21: "And he straitly charged them, and commanded them to tell no man that thing;",
+  22: "Saying, The Son of man must suffer many things, and be rejected of the elders and chief priests and scribes, and be slain, and be raised the third day.",
+  23: "And he said to them all, If any man will come after me, let him deny himself, and take up his cross daily, and follow me.",
+  24: "For whosoever will save his life shall lose it: but whosoever will lose his life for my sake, the same shall save it.",
+  25: "For what is a man advantaged, if he gain the whole world, and lose himself, or be cast away?",
+  26: "For whosoever shall be ashamed of me and of my words, of him shall the Son of man be ashamed, when he shall come in his own glory, and in his Father’s, and of the holy angels.",
+  27: "But I tell you of a truth, there be some standing here, which shall not taste of death, till they see the kingdom of God.",
+  28: "And it came to pass about an eight days after these sayings, he took Peter and John and James, and went up into a mountain to pray.",
+  29: "And as he prayed, the fashion of his countenance was altered, and his raiment was white and glistering.",
+  30: "And, behold, there talked with him two men, which were Moses and Elias:",
+  31: "Who appeared in glory, and spake of his decease which he should accomplish at Jerusalem.",
+  32: "But Peter and they that were with him were heavy with sleep: and when they were awake, they saw his glory, and the two men that stood with him.",
+  33: "And it came to pass, as they departed from him, Peter said unto Jesus, Master, it is good for us to be here: and let us make three tabernacles; one for thee, and one for Moses, and one for Elias: not knowing what he said.",
+  34: "While he thus spake, there came a cloud, and overshadowed them: and they feared as they entered into the cloud.",
+  35: "And there came a voice out of the cloud, saying, This is my beloved Son: hear him.",
+  36: "And when the voice was past, Jesus was found alone. And they kept it close, and told no man in those days any of those things which they had seen.",
+  37: "And it came to pass, that on the next day, when they were come down from the hill, much people met him.",
+  38: "And, behold, a man of the company cried out, saying, Master, I beseech thee, look upon my son: for he is mine only child.",
+  39: "And, lo, a spirit taketh him, and he suddenly crieth out; and it teareth him that he foameth again, and bruising him hardly departeth from him.",
+  40: "And I besought thy disciples to cast him out; and they could not.",
+  41: "And Jesus answering said, O faithless and perverse generation, how long shall I be with you, and suffer you? Bring thy son hither.",
+  42: "And as he was yet a coming, the devil threw him down, and tare him. And Jesus rebuked the unclean spirit, and healed the child, and delivered him again to his father.",
+  43: "And they were all amazed at the mighty power of God. But while they wondered every one at all things which Jesus did, he said unto his disciples,",
+  44: "Let these sayings sink down into your ears: for the Son of man shall be delivered into the hands of men.",
+  45: "But they understood not this saying, and it was hid from them, that they perceived it not: and they feared to ask him of that saying.",
+  46: "Then there arose a reasoning among them, which of them should be greatest.",
+  47: "And Jesus, perceiving the thought of their heart, took a child, and set him by him,",
+  48: "And said unto them, Whosoever shall receive this child in my name receiveth me: and whosoever shall receive me receiveth him that sent me: for he that is least among you all, the same shall be great.",
+  49: "And John answered and said, Master, we saw one casting out devils in thy name; and we forbad him, because he followeth not with us.",
+  50: "And Jesus said unto him, Forbid him not: for he that is not against us is for us.",
+  51: "And it came to pass, when the time was come that he should be received up, he stedfastly set his face to go to Jerusalem,",
+  52: "And sent messengers before his face: and they went, and entered into a village of the Samaritans, to make ready for him.",
+  53: "And they did not receive him, because his face was as though he would go to Jerusalem.",
+  54: "And when his disciples James and John saw this, they said, Lord, wilt thou that we command fire to come down from heaven, and consume them, even as Elias did?",
+  55: "But he turned, and rebuked them, and said, Ye know not what manner of spirit ye are of.",
+  56: "For the Son of man is not come to destroy men’s lives, but to save them. And they went to another village.",
+  57: "And it came to pass, that, as they went in the way, a certain man said unto him, Lord, I will follow thee whithersoever thou goest.",
+  58: "And Jesus said unto him, Foxes have holes, and birds of the air have nests; but the Son of man hath not where to lay his head.",
+  59: "And he said unto another, Follow me. But he said, Lord, suffer me first to go and bury my father.",
+  60: "Jesus said unto him, Let the dead bury their dead: but go thou and preach the kingdom of God.",
+  61: "And another also said, Lord, I will follow thee; but let me first go bid them farewell, which are at home at my house.",
+  62: "And Jesus said unto him, No man, having put his hand to the plough, and looking back, is fit for the kingdom of God."
+};
+const BOOK = "Luke 9";
+</script>
+<script src="../assets/deck.js"></script>
+</body>
+</html>

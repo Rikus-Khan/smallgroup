@@ -1,0 +1,689 @@
+<!doctype html>
+<html lang="en" data-theme="night">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Luke 8</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="../assets/fonts.css">
+<link rel="stylesheet" href="../assets/deck.css">
+<link rel="stylesheet" href="../assets/themes.css">
+<style>
+/* lk08-soil: one handful of seed falls on four kinds of ground. A bird takes the seed on the path, the sprout on the rock
+   wilts, thorns grow up over the third, and the good ground comes up tall and full. It all plays when the slide opens. */
+.lk08-soil { display: block; width: 100%; max-width: 46rem; height: auto; margin: .2em auto .6em; }
+.lk08-dirt { fill: color-mix(in srgb, var(--leather) 55%, var(--surface)); }
+.lk08-path { fill: color-mix(in srgb, var(--ink-soft) 45%, var(--surface)); }
+.lk08-rock { fill: color-mix(in srgb, var(--ink-soft) 60%, var(--surface-2)); stroke: var(--line-strong); stroke-width: 2; }
+.lk08-line { stroke: var(--line-strong); stroke-width: 2; stroke-dasharray: 4 6; }
+.lk08-seed { fill: var(--warm); opacity: 0; }
+.slide.active .lk08-seed { animation: lk08-fall .9s cubic-bezier(.5,0,.8,.6) forwards; animation-delay: calc(.3s + var(--k) * 90ms); }
+.slide.active .lk08-seed.eaten { animation: lk08-fall .9s cubic-bezier(.5,0,.8,.6) forwards, lk08-gone .3s ease forwards; animation-delay: calc(.3s + var(--k) * 90ms), 2.9s; }
+@keyframes lk08-fall { from { transform: translateY(-170px); opacity: 0; } 25% { opacity: 1; } to { transform: none; opacity: 1; } }
+@keyframes lk08-gone { to { opacity: 0; } }
+@keyframes lk08-show { to { opacity: 1; } }
+.lk08-bird { fill: none; stroke: var(--ink); stroke-width: 3.5; stroke-linecap: round; stroke-linejoin: round; opacity: 0; }
+.slide.active .lk08-bird { animation: lk08-fly 2.4s 1.8s ease-in-out forwards; }
+@keyframes lk08-fly { 0% { opacity: 1; transform: translate(-110px, -90px); } 45% { transform: translate(0, 0); } 60% { transform: translate(10px, -6px); } 100% { opacity: 0; transform: translate(170px, -150px); } }
+.lk08-grow { fill: none; stroke: var(--accent); stroke-width: 4; stroke-linecap: round; transform: scaleY(0); transform-box: fill-box; transform-origin: 50% 100%; }
+.slide.active .lk08-grow { animation: lk08-up 1.4s ease-out forwards; animation-delay: var(--w, 2s); }
+@keyframes lk08-up { to { transform: none; } }
+.slide.active .lk08-grow.wilt { animation: lk08-up .9s ease-out 1.8s forwards, lk08-droop 1.6s ease 3.4s forwards; }
+@keyframes lk08-droop { from { transform: none; } to { transform: rotate(75deg) scaleY(.6); stroke: var(--leather-light); } }
+.slide.active .lk08-grow.dim { animation: lk08-up 1.2s ease-out 2s forwards, lk08-fade 1.2s ease 3.8s forwards; }
+@keyframes lk08-fade { from { transform: none; } to { transform: scaleY(.8); opacity: .25; } }
+.lk08-thorn { fill: none; stroke: var(--leather); stroke-width: 3.5; stroke-linecap: round; stroke-linejoin: round; transform: scaleY(0); transform-box: fill-box; transform-origin: 50% 100%; }
+.slide.active .lk08-thorn { animation: lk08-up 1.6s ease-out forwards; animation-delay: var(--w, 2.6s); }
+.lk08-head { fill: var(--accent-hot); opacity: 0; }
+.slide.active .lk08-head { animation: lk08-show .9s ease forwards; animation-delay: var(--w, 3.6s); }
+.lk08-tag { font-size: 18px; font-weight: 700; fill: var(--ink); }
+.lk08-out { font-size: 17px; font-style: italic; fill: var(--ink-soft); opacity: 0; }
+.lk08-out.good { fill: var(--accent-hot); font-weight: 700; font-style: normal; }
+.slide.active .lk08-out { animation: lk08-show .8s ease forwards; animation-delay: 4.4s; }
+</style>
+</head>
+<body>
+<main class="deck" id="deck">
+
+<!-- ======================= OPENING ======================= -->
+<section class="slide title">
+  <div class="inner">
+    <div class="emblem rise"></div>
+    <h1 class="rise" style="--d:1">Luke 8</h1>
+    <p class="sub rise" style="--d:3">Take heed how ye hear</p>
+    <p class="tag rise" style="--d:5">Seed on four kinds of ground, a storm stilled with a word, a wild man clothed and in his right mind, a sick woman's touch, and a dead girl told to arise.</p>
+  </div>
+</section>
+
+<section class="slide watch">
+  <div class="inner">
+    <h2 class="rise">Things to watch for</h2>
+    <p class="lede rise" style="--d:1">Keep these questions in the back of your mind as we read. We'll come back to every one of them at the end.</p>
+    <ol class="seeds">
+      <li class="step"><span class="topic">Hearing</span><span class="seed-q">What kind of hearer bears fruit?</span></li>
+      <li class="step"><span class="topic">Family</span><span class="seed-q">Who did Jesus call His mother and His brethren?</span></li>
+      <li class="step"><span class="topic">The storm</span><span class="seed-q">What did Jesus ask His disciples after He calmed the storm?</span></li>
+      <li class="step"><span class="topic">Set free</span><span class="seed-q">What did Jesus do for the man full of devils, and where did He send him?</span></li>
+      <li class="step"><span class="topic">The touch</span><span class="seed-q">What did Jesus say to the woman who touched Him?</span></li>
+      <li class="step"><span class="topic">Fear not</span><span class="seed-q">What did Jesus tell Jairus when the news was the worst it could be?</span></li>
+    </ol>
+  </div>
+</section>
+
+<!-- ======================= PART ONE: HEARING ======================= -->
+<section class="slide part">
+  <div class="inner">
+    <p class="part-n rise">Part one</p>
+    <h2 class="rise" style="--d:1">Take heed how ye hear</h2>
+    <p class="range rise" style="--d:2">Verses 1–21</p>
+    <div class="rule"></div>
+    <p class="hook rise" style="--d:4">One seed, four kinds of ground, and a family anyone can join.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="1-3" data-hl="preaching and shewing the glad tidings of the kingdom of God|Mary called Magdalene, out of whom went seven devils|which ministered unto him of their substance"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise">The women who followed Him</h2>
+    <ul class="signs">
+      <li class="now rise" style="--d:1"><b>Mary Magdalene</b>from Magdala; seven devils cast out</li>
+      <li class="rise" style="--d:2"><b>Joanna</b>wife of Chuza, who ran Herod's household</li>
+      <li class="rise" style="--d:3"><b>Susanna</b>named only here</li>
+      <li class="rise" style="--d:4"><b>Many others</b>paying the way “of their substance”</li>
+    </ul>
+    <p class="note step">Jesus walked town to town through Galilee with the twelve, and these women came too. They had been healed, and they paid for the work out of their own money. One of them came out of Herod's palace: the good news had already reached the court of the man who killed John.</p>
+    <p class="note step">Mary Magdalene had been held by <em>seven devils</em>, a life completely taken over. She became the first person to see Jesus risen from the dead:</p>
+    <blockquote class="quote step"><p>“Mary Magdalene came and told the disciples that she had seen the Lord, and that he had spoken these things unto her.”</p><cite>John 20:18</cite></blockquote>
+  </div>
+</section>
+
+<section class="slide verse" data-v="4-5" data-hl="A sower went out to sow his seed|some fell by the way side"></section>
+
+<section class="slide verse" data-v="6-8" data-hl="some fell upon a rock|some fell among thorns|other fell on good ground, and sprang up, and bare fruit an hundredfold|He that hath ears to hear, let him hear"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise">A sower went out</h2>
+    <svg class="lk08-soil" viewBox="0 0 640 300" role="img" aria-label="Seed falls on four strips of ground. On the hard path a bird swoops down and takes it. On thin soil over rock a sprout comes up fast and wilts. Among thorns a sprout comes up, but the thorns grow over it. On good ground tall stalks come up full of grain.">
+      <text class="lk08-out" x="80" y="40" text-anchor="middle">devoured</text>
+      <text class="lk08-out" x="240" y="40" text-anchor="middle">withered</text>
+      <text class="lk08-out" x="400" y="40" text-anchor="middle">choked</text>
+      <text class="lk08-out good" x="560" y="40" text-anchor="middle">an hundredfold</text>
+      <rect class="lk08-dirt" x="0" y="200" width="640" height="60"/>
+      <rect class="lk08-path" x="6" y="196" width="148" height="18" rx="6"/>
+      <path class="lk08-rock" d="M168 214 C 190 204, 220 206, 250 210 C 280 206, 300 210, 312 216 L 312 260 L 168 260 Z"/>
+      <line class="lk08-line" x1="160" y1="70" x2="160" y2="260"/>
+      <line class="lk08-line" x1="320" y1="70" x2="320" y2="260"/>
+      <line class="lk08-line" x1="480" y1="70" x2="480" y2="260"/>
+      <!-- the way side: seed lies on top, and the bird takes it -->
+      <g><ellipse class="lk08-seed eaten" style="--k:0" cx="50" cy="194" rx="5" ry="3.5"/><ellipse class="lk08-seed eaten" style="--k:3" cx="82" cy="193" rx="5" ry="3.5"/><ellipse class="lk08-seed eaten" style="--k:6" cx="112" cy="194" rx="5" ry="3.5"/></g>
+      <path class="lk08-bird" d="M60 170 Q72 158 82 168 Q92 158 104 170"/>
+      <!-- upon a rock -->
+      <g><ellipse class="lk08-seed" style="--k:1" cx="214" cy="204" rx="5" ry="3.5"/><ellipse class="lk08-seed" style="--k:4" cx="262" cy="204" rx="5" ry="3.5"/></g>
+      <path class="lk08-grow wilt" d="M238 206 C 236 180, 242 160, 238 140 M238 170 C 228 162, 222 160, 216 160 M238 156 C 248 148, 254 146, 260 146"/>
+      <!-- among thorns -->
+      <g><ellipse class="lk08-seed" style="--k:2" cx="372" cy="203" rx="5" ry="3.5"/><ellipse class="lk08-seed" style="--k:5" cx="426" cy="203" rx="5" ry="3.5"/></g>
+      <path class="lk08-grow dim" d="M400 200 C 398 180, 402 166, 400 150 M400 172 C 392 166, 386 164, 380 164"/>
+      <path class="lk08-thorn" style="--w:2.4s" d="M344 200 L 350 150 L 340 130 M350 170 L 362 156 M347 186 L 334 172 L 336 120"/>
+      <path class="lk08-thorn" style="--w:2.7s" d="M376 200 L 382 120 L 370 98 M380 150 L 394 134 L 392 104 M381 172 L 366 156"/>
+      <path class="lk08-thorn" style="--w:2.5s" d="M424 200 L 418 130 L 430 104 M420 160 L 406 146 M421 178 L 436 160 L 446 128"/>
+      <path class="lk08-thorn" style="--w:2.8s" d="M458 200 L 452 146 L 462 118 M455 172 L 468 160"/>
+      <!-- good ground -->
+      <g><ellipse class="lk08-seed" style="--k:7" cx="514" cy="203" rx="5" ry="3.5"/><ellipse class="lk08-seed" style="--k:8" cx="560" cy="203" rx="5" ry="3.5"/><ellipse class="lk08-seed" style="--k:9" cx="606" cy="203" rx="5" ry="3.5"/></g>
+      <path class="lk08-grow" style="--w:2s" d="M512 200 C 510 160, 514 120, 512 80 M512 150 C 502 140, 496 136, 490 136 M512 130 C 522 120, 528 116, 534 116"/>
+      <path class="lk08-grow" style="--w:2.2s" d="M560 200 C 558 160, 562 110, 560 66 M560 140 C 550 130, 544 126, 538 126 M560 118 C 570 108, 576 104, 582 104"/>
+      <path class="lk08-grow" style="--w:2.4s" d="M606 200 C 604 160, 608 120, 606 82 M606 150 C 596 140, 590 136, 584 136 M606 130 C 616 120, 622 116, 628 116"/>
+      <ellipse class="lk08-head" style="--w:3.6s" cx="512" cy="72" rx="7" ry="15"/>
+      <ellipse class="lk08-head" style="--w:3.8s" cx="560" cy="58" rx="7" ry="15"/>
+      <ellipse class="lk08-head" style="--w:4s" cx="606" cy="74" rx="7" ry="15"/>
+      <text class="lk08-tag" x="80" y="288" text-anchor="middle">by the way side</text>
+      <text class="lk08-tag" x="240" y="288" text-anchor="middle">upon a rock</text>
+      <text class="lk08-tag" x="400" y="288" text-anchor="middle">among thorns</text>
+      <text class="lk08-tag" x="560" y="288" text-anchor="middle">on good ground</text>
+    </svg>
+    <p class="note rise" style="--d:2">A farmer scattered seed by hand as he walked. Some landed on the footpath packed hard through the field, some on a thin skin of soil over rock, some where thorn roots were waiting, and some on good, deep soil.</p>
+    <p class="note step">Same sower. Same seed. The only difference was the ground.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="9-10" data-hl="Unto you it is given to know the mysteries of the kingdom of God|that seeing they might not see"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="9"></blockquote>
+    <h2 class="rise" style="--d:1">Why tell it in parables?</h2>
+    <p class="note rise" style="--d:2">A <em>parable</em> is an everyday story laid alongside a truth about God. A <em>mystery</em> in the Bible isn't a puzzle. It's something God kept hidden for a long time and now makes known.</p>
+    <p class="note step">Jesus is quoting Isaiah. A story opens the truth to a man who wants it, and leaves it closed to the man who has already made up his mind against God:</p>
+    <blockquote class="quote step"><p>“And he said, Go, and tell this people, Hear ye indeed, but understand not; and see ye indeed, but perceive not.”</p><cite>Isaiah 6:9</cite></blockquote>
+    <p class="note step">Look at what the disciples did. They didn't understand either, so they <em>asked</em>, and He explained it. That door is open to anyone who asks.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="11-12" data-hl="The seed is the word of God|lest they should believe and be saved"></section>
+
+<section class="slide verse" data-v="13-15" data-hl="in time of temptation fall away|choked with cares and riches and pleasures of this life|in an honest and good heart, having heard the word, keep it, and bring forth fruit with patience"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise">Four ways to hear</h2>
+    <div class="sort">
+      <div class="rise" style="--d:1"><h3>By the way side</h3><div class="vs"><b>12</b></div><p>Heard, but never let in. The devil takes it before it sinks down.</p></div>
+      <div class="rise" style="--d:2"><h3>Upon a rock</h3><div class="vs"><b>13</b></div><p>Glad at first, but no root. When temptation comes, it's gone.</p></div>
+      <div class="rise" style="--d:3"><h3>Among thorns</h3><div class="vs"><b>14</b></div><p>It grows, but worry, money, and pleasure grow faster and choke it.</p></div>
+      <div class="rise" style="--d:4"><h3>Good ground</h3><div class="vs"><b>15</b></div><p>An honest heart hears it, keeps it, and bears fruit with patience.</p></div>
+    </div>
+    <p class="note step"><em>“The seed is the word of God.”</em> The problem is never the seed. Jesus isn't telling us which kind of man we're stuck being. He's telling us how to hear. Hard ground can be broken up, rocks dug out, and thorns pulled.</p>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="13" data-hl="these have no root"></blockquote>
+    <h2 class="rise" style="--d:1">Roots, and patience</h2>
+    <p class="note rise" style="--d:2">Most of us know the rock: a big, emotional start, at the altar or in treatment, then the first hard week, and it's gone. The trouble wasn't the joy. It was the missing root.</p>
+    <p class="note step">Jesus isn't saying a child of God can lose his salvation. He keeps His own (John 10:28). He's warning about a faith that stays on the surface and never goes down into the heart.</p>
+    <p class="note step">And the thorns: <em>cares, riches, pleasures</em>. The old life grows back if nobody pulls it. Good ground keeps the word and waits: <em>“with patience.”</em> Fruit takes seasons, not days.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="16-18" data-hl="setteth it on a candlestick|Take heed therefore how ye hear|whosoever hath, to him shall be given"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="18" data-hl="Take heed therefore how ye hear"></blockquote>
+    <h2 class="rise" style="--d:1">A lamp isn't for hiding</h2>
+    <p class="note rise" style="--d:2">The <em>candle</em> was a small clay lamp that burned olive oil. Nobody lights one and then puts a jar over it or shoves it under the bed. You set it up high where it can light the room.</p>
+    <div class="ifthen step">
+      <div class="if"><small>The man who uses what he hears</small>“to him shall be given”</div>
+      <span class="arrow" aria-hidden="true">→</span>
+      <div class="then"><small>The man who lets it lie</small>loses “even that which he seemeth to have”</div>
+    </div>
+    <p class="note step">What God shows you is meant to be lived and seen. Use it, and you'll be given more. Sit on it, and you'll lose even what you thought you had.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="19-21" data-hl="Thy mother and thy brethren stand without|My mother and my brethren are these which hear the word of God, and do it"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise">A family anyone can join</h2>
+    <div class="columns">
+      <div class="col law rise" style="--d:1">
+        <p class="who">Family by birth</p>
+        <h3>“stand without”</h3>
+        <p>His mother and His brothers, outside, unable to get in for the crowd.</p>
+      </div>
+      <div class="col grace rise" style="--d:2">
+        <p class="who">Family by the word</p>
+        <h3>“hear the word of God, and do it”</h3>
+        <p>Anyone, from any family, with any past.</p>
+      </div>
+    </div>
+    <p class="note step">Jesus wasn't turning His back on His mother. He cared for her even from the cross (John 19:26–27). He was opening the door wider. Hearing <em>and doing</em> makes you His.</p>
+    <p class="note step">Some of us have burned every bridge we had. Jesus gives a man a new family, brothers who hear the word and do it.</p>
+    <blockquote class="quote step"><p>“But be ye doers of the word, and not hearers only, deceiving your own selves.”</p><cite>James 1:22</cite></blockquote>
+  </div>
+</section>
+
+<!-- ======================= PART TWO: WHAT MANNER OF MAN ======================= -->
+<section class="slide part">
+  <div class="inner">
+    <p class="part-n rise">Part two</p>
+    <h2 class="rise" style="--d:1">What manner of man is this!</h2>
+    <p class="range rise" style="--d:2">Verses 22–39</p>
+    <div class="rule"></div>
+    <p class="hook rise" style="--d:4">The wind obeys Him, and so does an army of devils.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="22-25" data-hl="Let us go over unto the other side of the lake|he fell asleep|Master, master, we perish|Where is your faith?|What manner of man is this!"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <div class="split">
+      <div class="stage">
+        <svg class="map" viewBox="0 0 420 470" role="img" aria-label="Map of the lake of Gennesaret. Capernaum, Bethsaida, Magdala and Tiberias sit on the north and west shores. On a step a route crosses the lake from Capernaum to the country of the Gadarenes on the east shore, where steep hills drop to the water. The town of Gadara lies about six miles inland to the southeast.">
+          <rect class="map-land" x="0" y="0" width="420" height="470" rx="6"/>
+          <path class="map-river" d="M238 0 C228 20 246 34 232 54"/>
+          <path class="map-river" d="M208 426 C216 440 200 452 212 470"/>
+          <path class="map-lake" d="M200 50 C255 46 296 78 308 130 C322 190 316 262 298 322 C280 384 244 424 206 428 C168 424 140 386 120 334 C100 280 94 204 108 144 C122 92 150 54 200 50 Z"/>
+          <text class="map-water" x="206" y="364" text-anchor="middle">the lake of</text>
+          <text class="map-water" x="206" y="382" text-anchor="middle">Gennesaret</text>
+          <text class="map-region" x="16" y="30">GALILEE</text>
+          <text class="map-region" x="362" y="404" text-anchor="middle" style="font-size:12px">DECAPOLIS</text>
+          <path class="map-soft" d="M330 168 l10 -12 l10 12 M338 214 l10 -12 l10 12 M328 252 l10 -12 l10 12 M344 288 l10 -12 l10 12" fill="none" stroke-width="2" style="stroke:var(--ink-soft)"/>
+          <g class="map-town"><circle cx="258" cy="58" r="6"/><text x="270" y="50">Bethsaida</text></g>
+          <g class="map-town"><circle cx="112" cy="180" r="6"/><text x="100" y="186" text-anchor="end">Magdala</text></g>
+          <g class="map-town"><circle cx="106" cy="252" r="6"/><text x="94" y="258" text-anchor="end">Tiberias</text></g>
+          <g class="map-town here"><circle cx="150" cy="84" r="7"/><text x="138" y="78" text-anchor="end">Capernaum</text></g>
+          <g class="map-town"><circle cx="372" cy="446" r="6"/><text x="360" y="451" text-anchor="end">Gadara</text></g>
+          <path class="map-route r1" pathLength="1" d="M158 94 C 196 150, 262 200, 310 292"/>
+          <g class="step map-go1">
+            <text x="268" y="166" text-anchor="middle" font-size="16" font-weight="700" style="fill:var(--accent-hot)">the storm</text>
+            <g class="map-town here"><circle class="map-ping" cx="312" cy="298" r="9"/><circle cx="312" cy="298" r="7"/></g>
+            <text x="366" y="330" text-anchor="middle" font-size="14" font-weight="700" style="fill:var(--accent-hot)">country of the</text>
+            <text x="366" y="347" text-anchor="middle" font-size="14" font-weight="700" style="fill:var(--accent-hot)">Gadarenes</text>
+          </g>
+        </svg>
+      </div>
+      <div>
+        <h2 class="rise" style="--d:1">The other side</h2>
+        <p class="note rise" style="--d:2">The lake lies about 700 feet below sea level, in a bowl of hills. Cool air can pour down the valleys and stir up a violent storm in minutes.</p>
+        <p class="note step map-go1">Jesus said, <em>“Let us go over,”</em> and on the way the storm hit. Some of these men had fished that water all their lives, and they thought they were going to drown.</p>
+        <p class="note step">The east shore was Gentile country, the Decapolis, with steep hills dropping to the water. That's where they were headed, and where a man was waiting among the tombs.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="25" data-hl="Where is your faith?"></blockquote>
+    <h2 class="rise" style="--d:1">Asleep in the storm</h2>
+    <div class="stage rise" style="--d:2">
+      <svg class="still" viewBox="0 0 600 150" style="display:block;max-width:34rem;margin:0 auto" role="img" aria-label="Raging waves settle into a calm, still line.">
+        <defs><clipPath id="lk08-clip"><rect x="0" y="0" width="600" height="150"/></clipPath></defs>
+        <g clip-path="url(#lk08-clip)">
+          <g class="still-roll"><path class="still-chop" d="M0 90 Q25 30 50 90 T100 90 T150 90 T200 90 T250 90 T300 90 T350 90 T400 90 T450 90 T500 90 T550 90 T600 90 T650 90 T700 90"/></g>
+          <g class="still-roll b"><path class="still-chop b" d="M0 96 Q25 140 50 96 T100 96 T150 96 T200 96 T250 96 T300 96 T350 96 T400 96 T450 96 T500 96 T550 96 T600 96 T650 96 T700 96"/></g>
+          <path class="still-calm" d="M0 94 Q150 88 300 94 T600 94"/>
+        </g>
+        <text class="before" x="300" y="26" text-anchor="middle" style="fill:var(--cool)">“Master, master, we perish”</text>
+        <text class="after" x="300" y="26" text-anchor="middle" style="fill:var(--accent-hot)">“and there was a calm”</text>
+      </svg>
+    </div>
+    <p class="note rise" style="--d:3">He was asleep: a real man, worn out after a long day. Then He stood up and <em>rebuked</em> the wind and the water, the way a master gives an order: a real God.</p>
+    <p class="note step still-go">Storms die down slowly. This one stopped at once. The craving, the panic, the 2 a.m. fear: the same voice speaks to those too.</p>
+    <p class="note step">They did right to wake Him. But He asked, <em>“Where is your faith?”</em> He was in the boat. He'd said they were going to the other side.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="26-29" data-hl="which had devils long time, and ware no clothes, neither abode in any house, but in the tombs|What have I to do with thee, Jesus, thou Son of God most high?|he brake the bands, and was driven of the devil into the wilderness"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="29" data-hl="he was kept bound with chains and in fetters; and he brake the bands"></blockquote>
+    <h2 class="rise" style="--d:1">Nothing could hold him</h2>
+    <ul class="nots">
+      <li class="step"><span class="k">Chains</span><span class="why">he broke them</span></li>
+      <li class="step"><span class="k">Fetters</span><span class="why">leg irons; he broke those too</span></li>
+      <li class="step"><span class="k">The tombs, the wilderness</span><span class="why">driven out, naked and alone</span></li>
+      <li class="step yes"><span class="k">Jesus</span><span class="why">“he fell down before him”</span></li>
+    </ul>
+    <p class="note step">The town tried to control him from the outside. Chains can hold a man for a while. They can't set him free. Some of us know that: courts, jail, rules, and our own promises held us for a while, and then we broke them.</p>
+    <p class="note step">The devils knew exactly who Jesus was, <em>“Son of God most high,”</em> and they were afraid of Him.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="30-33" data-hl="What is thy name? And he said, Legion|not command them to go out into the deep|the herd ran violently down a steep place into the lake"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="30"></blockquote>
+    <h2 class="rise" style="--d:1">“Legion”</h2>
+    <div class="morph">
+      <span class="big rise" style="--d:2">Legion</span>
+      <span class="say step">a Roman army unit</span>
+      <span class="means step">about 6,000 soldiers</span>
+    </div>
+    <p class="note step">Jesus asked his name, and an army answered. The man had lost even his own name. That's what bondage does: after a while, the thing that owns you does the talking.</p>
+    <p class="note step"><em>“The deep”</em> is the abyss, the bottomless pit, where the devils feared being locked away (Revelation 20:3). Notice that they <em>asked</em>. An army of devils couldn't move an inch without His leave. Whatever they got into, they wrecked. One man mattered more to Jesus than a whole herd of swine.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="34-36" data-hl="sitting at the feet of Jesus, clothed, and in his right mind"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="35" data-hl="sitting at the feet of Jesus, clothed, and in his right mind"></blockquote>
+    <h2 class="rise" style="--d:1">Clothed, and in his right mind</h2>
+    <div class="match" aria-label="Before: no clothes, in the tombs, driven by the devil. After: clothed, sitting at the feet of Jesus, in his right mind.">
+      <div class="a rise" style="--d:2"><span class="tag">before</span><span class="w">“ware no clothes”</span><span class="w">“in the tombs”</span><span class="w">“driven of the devil”</span></div>
+      <div class="step"><span></span><span class="link">covered</span><span class="link">at home</span><span class="link">his mind back</span></div>
+      <div class="b step"><span class="but">after</span><span class="w">“clothed”</span><span class="w">“sitting at the feet of Jesus”</span><span class="w">“in his right mind”</span></div>
+    </div>
+    <p class="note step">The whole town came out and found him sitting still, dressed, and talking sense. That's what Jesus does with a man: He covers his shame, sits him down at His feet, and gives him his mind back.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="37-39" data-hl="besought him to depart from them|Return to thine own house, and shew how great things God hath done unto thee|how great things Jesus had done unto him"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise">Go home and tell</h2>
+    <div class="columns">
+      <div class="col law rise" style="--d:1">
+        <p class="who">The town</p>
+        <h3>“besought him to depart”</h3>
+        <p>Afraid, and short a herd of swine. They'd rather have their pigs than their neighbor whole.</p>
+      </div>
+      <div class="col grace rise" style="--d:2">
+        <p class="who">The man</p>
+        <h3>“besought him that he might be with him”</h3>
+        <p>He wanted to get in the boat and go wherever Jesus went.</p>
+      </div>
+    </div>
+    <p class="note step">Jesus said no, and gave him a harder job: <em>“Return to thine own house.”</em> Go back to the people who knew you at your worst. Your story starts there.</p>
+    <p class="note step">Jesus said, <em>“how great things God hath done.”</em> The man told <em>“how great things Jesus had done.”</em> Luke sets them side by side. What Jesus did, God did.</p>
+  </div>
+</section>
+
+<!-- ======================= PART THREE: FEAR NOT ======================= -->
+<section class="slide part">
+  <div class="inner">
+    <p class="part-n rise">Part three</p>
+    <h2 class="rise" style="--d:1">Fear not: believe only</h2>
+    <p class="range rise" style="--d:2">Verses 40–56</p>
+    <div class="rule"></div>
+    <p class="hook rise" style="--d:4">A desperate father, a woman nobody would touch, and a little girl who wakes up.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="40-42" data-hl="the people gladly received him|a man named Jairus, and he was a ruler of the synagogue|one only daughter, about twelve years of age, and she lay a dying"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="41" data-hl="he fell down at Jesus’ feet"></blockquote>
+    <h2 class="rise" style="--d:1">Two twelves</h2>
+    <p class="note rise" style="--d:2">A <em>ruler of the synagogue</em> ran the town's Sabbath meetings: he chose who read and who spoke, and kept things in order. Jairus was a somebody. Today he's on his face in the street, because his only girl is dying.</p>
+    <div class="columns">
+      <div class="col grace step">
+        <p class="who">Jairus's daughter</p>
+        <h3>Twelve years of life</h3>
+        <p>Loved, at home, and now dying.</p>
+      </div>
+      <div class="col law step">
+        <p class="who">A woman in the crowd</p>
+        <h3>Twelve years of suffering</h3>
+        <p>Sick, broke, and shut out for as long as the girl had been alive.</p>
+      </div>
+    </div>
+    <p class="note step">Desperation doesn't care about dignity. Some of us only came to Jesus when we ran out of every other option. He didn't turn Jairus away for that, and He won't turn you away.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="43-44" data-hl="a woman having an issue of blood twelve years|had spent all her living upon physicians, neither could be healed of any|touched the border of his garment"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise">Twelve years down, then one touch</h2>
+    <div class="stage">
+      <svg class="curve" viewBox="0 0 680 300" role="img" aria-label="A line falling for twelve years: the bleeding starts, she goes to doctors, her money runs out, and she is no better. Then she touches His garment and the line shoots up: immediately healed.">
+        <line class="curve-base" x1="20" y1="150" x2="660" y2="150"/>
+        <path class="curve-line" pathLength="1" d="M40 70 L170 140 L300 200 L420 250 L520 266 L620 44"/>
+        <g class="curve-pt" style="--k:0"><circle cx="40" cy="70" r="9"/><text x="26" y="46">it starts</text><text class="ref" x="26" y="28">twelve years ago</text></g>
+        <g class="curve-pt low" style="--k:1"><circle cx="170" cy="140" r="9"/><text x="170" y="114" text-anchor="middle">physicians</text></g>
+        <g class="curve-pt low" style="--k:2"><circle cx="300" cy="200" r="9"/><text x="290" y="232" text-anchor="end">all her living spent</text></g>
+        <g class="curve-pt low" style="--k:3"><circle cx="420" cy="250" r="9"/><text x="410" y="290" text-anchor="middle">“neither could be healed”</text></g>
+        <g class="curve-pt" style="--k:4"><circle cx="520" cy="266" r="9"/><text x="536" y="292">one touch</text></g>
+        <g class="curve-pt high" style="--k:5"><circle cx="620" cy="44" r="10"/><text x="606" y="30" text-anchor="end" font-weight="700" style="fill:var(--accent-hot)">“immediately”</text><text class="ref" x="636" y="84">v. 44</text></g>
+      </svg>
+    </div>
+    <p class="note rise" style="--d:3">Luke was a doctor, and he says it straight: she spent everything on physicians and nobody could help her. Under the Law her bleeding made her unclean, and anyone she touched (Leviticus 15:25). No worship, no hugs, no hand on her shoulder for twelve years.</p>
+    <p class="note step">So she came from behind and touched the <em>border</em> of His garment, the tassel the Law told every Jewish man to wear on the corners of his cloak (Numbers 15:38). Twelve years, then one touch.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="45-48" data-hl="Who touched me?|Somebody hath touched me: for I perceive that virtue is gone out of me|she came trembling|Daughter, be of good comfort: thy faith hath made thee whole; go in peace"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="46" data-hl="Somebody hath touched me"></blockquote>
+    <h2 class="rise" style="--d:1">Thronged, and touched</h2>
+    <div class="dots rows rise" data-dots="150" data-keep="87" style="--d:2;--cols:30;--dot:var(--ink-soft);--pace:6ms;max-width:40rem" aria-label="A crowd of dots; on a step all fade but one, which lights up."></div>
+    <p class="note step dots-go">Peter was right: the whole crowd was pushing against Him. But only one person reached out to Him in faith, and He felt it. <em>Virtue</em> here means power: healing power went out from Him.</p>
+    <p class="note step">You can be pressed up against church, Bible study, and religious people your whole life and never touch Him. And in a crowd of hundreds, He knows the one who does.</p>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="48"></blockquote>
+    <div class="rename">
+      <span class="old rise" style="--d:1">“a woman”</span>
+      <span class="arrow step n2">→</span>
+      <span class="new step">“Daughter”</span>
+      <span class="gloss step">She came in as an outcast nobody would touch. She went home as family.</span>
+    </div>
+    <p class="note step">She meant to slip away healed and unseen. Jesus wouldn't let her. Not to shame her: she came <em>trembling</em>, and He answered with comfort. He called her out so the whole town would know she was clean, and so she'd hear what He thought of her.</p>
+    <p class="note step">He doesn't want you sneaking a blessing and hiding. He wants to give you a new name and send you off <em>in peace</em>.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="49-50" data-hl="Thy daughter is dead; trouble not the Master|Fear not: believe only, and she shall be made whole"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise">When the news is the worst</h2>
+    <div class="talk">
+      <p class="rise" style="--d:1"><small>From the ruler's house</small>Thy daughter is dead; trouble not the Master.</p>
+      <p class="reply step"><small>Jesus</small>Fear not: believe only, and she shall be made whole.<br><span class="flag">before Jairus could say a word</span></p>
+    </div>
+    <p class="note step">Think of Jairus while Jesus stopped for the woman. Every minute counted, and then the messenger came. It looked like Jesus had been too slow.</p>
+    <p class="note step">Jesus spoke before fear could settle in. <em>Believe only</em>: not believe and also fix it, or believe and also earn it. Just trust Him, even when the news says it's too late.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="51-53" data-hl="save Peter, and James, and John|Weep not; she is not dead, but sleepeth|they laughed him to scorn"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="52" data-hl="she is not dead, but sleepeth"></blockquote>
+    <h2 class="rise" style="--d:1">Not dead, but sleeping</h2>
+    <p class="note rise" style="--d:2">The mourners were already wailing; families even hired them. They knew a dead body when they saw one, and they laughed at Him.</p>
+    <p class="note step">Jesus wasn't saying she hadn't died. Verse 55 says <em>her spirit came again</em>. He meant that for Him, death is like sleep: He wakes people up from it. That's how the New Testament speaks of believers who have died:</p>
+    <blockquote class="quote step"><p>“For if we believe that Jesus died and rose again, even so them also which sleep in Jesus will God bring with him.”</p><cite>1 Thessalonians 4:14</cite></blockquote>
+  </div>
+</section>
+
+<section class="slide verse" data-v="54-56" data-hl="took her by the hand, and called, saying, Maid, arise|her spirit came again|he commanded to give her meat"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <p class="saying rise" style="--d:1">Maid, <em>arise</em>.</p>
+    <p class="note rise" style="--d:3">He took a dead girl by the hand. Touching the dead made a man unclean, but once again the uncleanness didn't spread to Jesus. Life spread to her.</p>
+    <p class="note step">Then: <em>“give her meat,”</em> something to eat. After the biggest moment of their lives, Jesus thought about her supper.</p>
+    <p class="note step">The Lord who raises the dead also cares that you eat, sleep, and get through an ordinary day. Recovery is lived in those plain things, and He's in them too.</p>
+  </div>
+</section>
+
+<!-- ======================= CLOSING ======================= -->
+<section class="slide remember">
+  <div class="inner">
+    <h2 class="rise">Points to remember</h2>
+    <ol class="seeds">
+      <li class="step"><span class="topic">Hearing</span><span class="seed-q">“Keep it, and bring forth fruit with patience” <cite>8:15</cite></span><span class="take">An honest heart hears the word, holds on to it, and waits for the fruit.</span></li>
+      <li class="step"><span class="topic">Family</span><span class="seed-q">“These which hear the word of God, and do it” <cite>8:21</cite></span><span class="take">Anyone who hears and does His word is His family.</span></li>
+      <li class="step"><span class="topic">The storm</span><span class="seed-q">“Where is your faith?” <cite>8:25</cite></span><span class="take">He's in the boat, and even the wind obeys Him.</span></li>
+      <li class="step"><span class="topic">Set free</span><span class="seed-q">“Clothed, and in his right mind” <cite>8:35</cite></span><span class="take">What chains couldn't do, Jesus did. Then He sent him home to tell it.</span></li>
+      <li class="step"><span class="topic">The touch</span><span class="seed-q">“Daughter, be of good comfort” <cite>8:48</cite></span><span class="take">He knows the one who reaches for Him, and gives her a new name.</span></li>
+      <li class="step"><span class="topic">Fear not</span><span class="seed-q">“Fear not: believe only” <cite>8:50</cite></span><span class="take">When the news says it's too late, keep trusting Him.</span></li>
+    </ol>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 1 of 6</p>
+      <span class="topic">Hearing</span>
+      <h2>What kind of hearer bears fruit?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="15"></blockquote>
+      <blockquote class="quote step" data-q="18" data-hl="Take heed therefore how ye hear"></blockquote>
+      <blockquote class="quote step"><p>“But be ye doers of the word, and not hearers only, deceiving your own selves.”</p><cite>James 1:22</cite></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>The good ground: a man with an honest and good heart who hears the word, keeps it, and bears fruit with patience. He doesn't let the devil snatch it, doesn't stay shallow, and doesn't let worry, money, or pleasure choke it out.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 2 of 6</p>
+      <span class="topic">Family</span>
+      <h2>Who did Jesus call His mother and His brethren?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="20"></blockquote>
+      <blockquote class="quote step" data-q="21"></blockquote>
+      <blockquote class="quote step"><p>“For whosoever shall do the will of God, the same is my brother, and my sister, and mother.”</p><cite>Mark 3:35</cite></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>Those who hear the word of God and do it. Jesus loved His own family, but He opened the door to everyone. Whosoever hears and obeys His word belongs to His family, whatever family he came from.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 3 of 6</p>
+      <span class="topic">The storm</span>
+      <h2>What did Jesus ask His disciples after He calmed the storm?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="24"></blockquote>
+      <blockquote class="quote step" data-q="25"></blockquote>
+      <blockquote class="quote step"><p>“He maketh the storm a calm, so that the waves thereof are still.”</p><cite>Psalm 107:29</cite></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>“Where is your faith?” They were right to run to Him, but they'd forgotten who was in the boat. He had said they were going to the other side, and even the wind and the water obey Him.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 4 of 6</p>
+      <span class="topic">Set free</span>
+      <h2>What did Jesus do for the man full of devils, and where did He send him?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="35"></blockquote>
+      <blockquote class="quote step" data-q="39"></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>Chains couldn't hold him, but Jesus set him free: clothed, and in his right mind, sitting at His feet. Then He sent him home to tell his own people how great things God had done for him.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 5 of 6</p>
+      <span class="topic">The touch</span>
+      <h2>What did Jesus say to the woman who touched Him?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="44"></blockquote>
+      <blockquote class="quote step" data-q="47"></blockquote>
+      <blockquote class="quote step" data-q="48"></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>“Daughter, be of good comfort: thy faith hath made thee whole; go in peace.” She came trembling, expecting trouble. He gave her comfort, told everyone she was healed, called her family, and sent her home in peace.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 6 of 6</p>
+      <span class="topic">Fear not</span>
+      <h2>What did Jesus tell Jairus when the news was the worst it could be?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="49"></blockquote>
+      <blockquote class="quote step" data-q="50"></blockquote>
+      <blockquote class="quote step" data-q="54-55"></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>“Fear not: believe only, and she shall be made whole.” He spoke before fear could take hold. Then He took the girl by the hand and raised her up. Too late for us is never too late for Him.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide prayer">
+  <div class="inner">
+    <div class="emblem rise"></div>
+    <h2 class="rise" style="--d:1">Prayer requests</h2>
+    <p class="ask-line rise" style="--d:2">What can we pray about for you today?</p>
+    <blockquote class="quote rise" style="--d:4"><p>“Then they cry unto the LORD in their trouble, and he bringeth them out of their distresses.”</p><cite>Psalm 107:28</cite></blockquote>
+  </div>
+</section>
+
+</main>
+
+<script>
+// King James Version, Luke chapter 8
+const V = {
+  1: "And it came to pass afterward, that he went throughout every city and village, preaching and shewing the glad tidings of the kingdom of God: and the twelve were with him,",
+  2: "And certain women, which had been healed of evil spirits and infirmities, Mary called Magdalene, out of whom went seven devils,",
+  3: "And Joanna the wife of Chuza Herod’s steward, and Susanna, and many others, which ministered unto him of their substance.",
+  4: "And when much people were gathered together, and were come to him out of every city, he spake by a parable:",
+  5: "A sower went out to sow his seed: and as he sowed, some fell by the way side; and it was trodden down, and the fowls of the air devoured it.",
+  6: "And some fell upon a rock; and as soon as it was sprung up, it withered away, because it lacked moisture.",
+  7: "And some fell among thorns; and the thorns sprang up with it, and choked it.",
+  8: "And other fell on good ground, and sprang up, and bare fruit an hundredfold. And when he had said these things, he cried, He that hath ears to hear, let him hear.",
+  9: "And his disciples asked him, saying, What might this parable be?",
+  10: "And he said, Unto you it is given to know the mysteries of the kingdom of God: but to others in parables; that seeing they might not see, and hearing they might not understand.",
+  11: "Now the parable is this: The seed is the word of God.",
+  12: "Those by the way side are they that hear; then cometh the devil, and taketh away the word out of their hearts, lest they should believe and be saved.",
+  13: "They on the rock are they, which, when they hear, receive the word with joy; and these have no root, which for a while believe, and in time of temptation fall away.",
+  14: "And that which fell among thorns are they, which, when they have heard, go forth, and are choked with cares and riches and pleasures of this life, and bring no fruit to perfection.",
+  15: "But that on the good ground are they, which in an honest and good heart, having heard the word, keep it, and bring forth fruit with patience.",
+  16: "No man, when he hath lighted a candle, covereth it with a vessel, or putteth it under a bed; but setteth it on a candlestick, that they which enter in may see the light.",
+  17: "For nothing is secret, that shall not be made manifest; neither any thing hid, that shall not be known and come abroad.",
+  18: "Take heed therefore how ye hear: for whosoever hath, to him shall be given; and whosoever hath not, from him shall be taken even that which he seemeth to have.",
+  19: "Then came to him his mother and his brethren, and could not come at him for the press.",
+  20: "And it was told him by certain which said, Thy mother and thy brethren stand without, desiring to see thee.",
+  21: "And he answered and said unto them, My mother and my brethren are these which hear the word of God, and do it.",
+  22: "Now it came to pass on a certain day, that he went into a ship with his disciples: and he said unto them, Let us go over unto the other side of the lake. And they launched forth.",
+  23: "But as they sailed he fell asleep: and there came down a storm of wind on the lake; and they were filled with water, and were in jeopardy.",
+  24: "And they came to him, and awoke him, saying, Master, master, we perish. Then he arose, and rebuked the wind and the raging of the water: and they ceased, and there was a calm.",
+  25: "And he said unto them, Where is your faith? And they being afraid wondered, saying one to another, What manner of man is this! for he commandeth even the winds and water, and they obey him.",
+  26: "And they arrived at the country of the Gadarenes, which is over against Galilee.",
+  27: "And when he went forth to land, there met him out of the city a certain man, which had devils long time, and ware no clothes, neither abode in any house, but in the tombs.",
+  28: "When he saw Jesus, he cried out, and fell down before him, and with a loud voice said, What have I to do with thee, Jesus, thou Son of God most high? I beseech thee, torment me not.",
+  29: "(For he had commanded the unclean spirit to come out of the man. For oftentimes it had caught him: and he was kept bound with chains and in fetters; and he brake the bands, and was driven of the devil into the wilderness.)",
+  30: "And Jesus asked him, saying, What is thy name? And he said, Legion: because many devils were entered into him.",
+  31: "And they besought him that he would not command them to go out into the deep.",
+  32: "And there was there an herd of many swine feeding on the mountain: and they besought him that he would suffer them to enter into them. And he suffered them.",
+  33: "Then went the devils out of the man, and entered into the swine: and the herd ran violently down a steep place into the lake, and were choked.",
+  34: "When they that fed them saw what was done, they fled, and went and told it in the city and in the country.",
+  35: "Then they went out to see what was done; and came to Jesus, and found the man, out of whom the devils were departed, sitting at the feet of Jesus, clothed, and in his right mind: and they were afraid.",
+  36: "They also which saw it told them by what means he that was possessed of the devils was healed.",
+  37: "Then the whole multitude of the country of the Gadarenes round about besought him to depart from them; for they were taken with great fear: and he went up into the ship, and returned back again.",
+  38: "Now the man out of whom the devils were departed besought him that he might be with him: but Jesus sent him away, saying,",
+  39: "Return to thine own house, and shew how great things God hath done unto thee. And he went his way, and published throughout the whole city how great things Jesus had done unto him.",
+  40: "And it came to pass, that, when Jesus was returned, the people gladly received him: for they were all waiting for him.",
+  41: "And, behold, there came a man named Jairus, and he was a ruler of the synagogue: and he fell down at Jesus’ feet, and besought him that he would come into his house:",
+  42: "For he had one only daughter, about twelve years of age, and she lay a dying. But as he went the people thronged him.",
+  43: "And a woman having an issue of blood twelve years, which had spent all her living upon physicians, neither could be healed of any,",
+  44: "Came behind him, and touched the border of his garment: and immediately her issue of blood stanched.",
+  45: "And Jesus said, Who touched me? When all denied, Peter and they that were with him said, Master, the multitude throng thee and press thee, and sayest thou, Who touched me?",
+  46: "And Jesus said, Somebody hath touched me: for I perceive that virtue is gone out of me.",
+  47: "And when the woman saw that she was not hid, she came trembling, and falling down before him, she declared unto him before all the people for what cause she had touched him and how she was healed immediately.",
+  48: "And he said unto her, Daughter, be of good comfort: thy faith hath made thee whole; go in peace.",
+  49: "While he yet spake, there cometh one from the ruler of the synagogue’s house, saying to him, Thy daughter is dead; trouble not the Master.",
+  50: "But when Jesus heard it, he answered him, saying, Fear not: believe only, and she shall be made whole.",
+  51: "And when he came into the house, he suffered no man to go in, save Peter, and James, and John, and the father and the mother of the maiden.",
+  52: "And all wept, and bewailed her: but he said, Weep not; she is not dead, but sleepeth.",
+  53: "And they laughed him to scorn, knowing that she was dead.",
+  54: "And he put them all out, and took her by the hand, and called, saying, Maid, arise.",
+  55: "And her spirit came again, and she arose straightway: and he commanded to give her meat.",
+  56: "And her parents were astonished: but he charged them that they should tell no man what was done."
+};
+const BOOK = "Luke 8";
+</script>
+<script src="../assets/deck.js"></script>
+</body>
+</html>

@@ -7602,5 +7602,118 @@ window.STUDIES = [
       },
       "big": "Jesus' word is enough. He sees grief nobody brings to Him, answers honest doubt with evidence, and is the friend of sinners. Faith in Him saves, and those forgiven much love much."
     }
+  },
+  {
+    "id": "luke-08",
+    "type": "chapter",
+    "book": "Luke",
+    "ch": 8,
+    "date": "2026-10-29",
+    "title": "Luke 8",
+    "sub": "Take heed how ye hear",
+    "about": "Seed on four kinds of ground, a storm stilled with a word, a wild man clothed and in his right mind, a sick woman's touch, and a dead girl told to arise.",
+    "tags": [
+      "Hearing the word",
+      "God's family",
+      "Faith in the storm",
+      "Set free",
+      "Healing",
+      "Fear not"
+    ],
+    "url": "studies/luke-08.html",
+    "overview": {
+      "where": "Towns and villages of Galilee, the lake of Gennesaret (the Sea of Galilee), the country of the Gadarenes on the east shore, and Jairus's house back on the Galilee side",
+      "when": "During Jesus' ministry in Galilee, after Luke 7",
+      "people": [
+        "jesus",
+        "the-twelve",
+        "mary-magdalene",
+        "joanna",
+        "susanna",
+        "herod-antipas",
+        "disciples",
+        "mary",
+        "brethren",
+        "legion",
+        "jairus",
+        "woman-with-issue",
+        "jairus-daughter",
+        "simon-peter"
+      ],
+      "places": [
+        "galilee",
+        "sea-of-galilee",
+        "gergesenes",
+        "tombs",
+        "the-deep"
+      ],
+      "story": [
+        "Jesus preaches from town to town with the twelve and a group of women He has healed, Mary Magdalene, Joanna and Susanna among them, who support Him from their own means (1–3).",
+        "He tells the parable of the sower: the seed is the word of God, and it falls on the way side, on rock, among thorns, and on good ground that brings forth fruit with patience. “Take heed therefore how ye hear” (4–18).",
+        "His mother and brethren can't reach Him for the crowd. “My mother and my brethren are these which hear the word of God, and do it” (19–21).",
+        "A storm nearly swamps the boat while Jesus sleeps. He rebukes the wind and the water: “Where is your faith?” (22–25).",
+        "Among the tombs of the Gadarenes, a man possessed by Legion is set free. The town finds him “sitting at the feet of Jesus, clothed, and in his right mind,” and Jesus sends him home to tell how great things God has done (26–39).",
+        "A woman who has bled for twelve years touches the border of His garment and is healed: “Daughter, be of good comfort.” Word comes that Jairus's daughter has died. “Fear not: believe only.” Jesus takes her by the hand: “Maid, arise” (40–56)."
+      ],
+      "key": {
+        "ref": "Luke 8:50",
+        "text": "But when Jesus heard it, he answered him, saying, Fear not: believe only, and she shall be made whole."
+      },
+      "big": "The word of God bears fruit in an honest heart that hears and keeps it. And the Jesus we hear has power over the storm, the devils, disease, and death itself, so we can fear not and believe only."
+    }
+  },
+  {
+    "id": "luke-09",
+    "type": "chapter",
+    "book": "Luke",
+    "ch": 9,
+    "date": "2026-10-29",
+    "title": "Luke 9",
+    "sub": "Take up his cross daily",
+    "about": "Twelve men sent out with nothing, five thousand fed, Peter names the Christ, glory on the mountain, and Jesus sets His face toward Jerusalem.",
+    "tags": [
+      "Sent out",
+      "Provision",
+      "Who Jesus is",
+      "Following daily",
+      "Hear Him",
+      "No looking back"
+    ],
+    "url": "studies/luke-09.html",
+    "overview": {
+      "where": "The towns of Galilee, a desert place near Bethsaida, a mountain where Jesus prayed, and the road south through a Samaritan village toward Jerusalem",
+      "when": "Near the end of Jesus' ministry in Galilee, as He turns toward Jerusalem and the cross",
+      "people": [
+        "jesus",
+        "the-twelve",
+        "herod-antipas",
+        "john-the-baptist",
+        "elijah",
+        "simon-peter",
+        "moses",
+        "sons-of-zebedee",
+        "boy-with-a-spirit",
+        "samaritans"
+      ],
+      "places": [
+        "bethsaida",
+        "desert-place",
+        "high-mountain",
+        "jerusalem"
+      ],
+      "story": [
+        "Jesus gives the twelve power and authority and sends them out to preach and heal, taking nothing for the journey (1–6).",
+        "Herod the tetrarch is perplexed: “John have I beheaded: but who is this?” (7–9).",
+        "With five loaves and two fishes Jesus feeds about five thousand men, and twelve baskets of fragments are left over (10–17).",
+        "Peter answers, “The Christ of God.” Jesus says the Son of man must suffer, be slain, and be raised the third day, and whoever will come after Him must deny himself and take up his cross daily (18–27).",
+        "On a mountain His face and clothes shine; Moses and Elias speak of His decease at Jerusalem, and a voice from the cloud says, “This is my beloved Son: hear him.” Below, He heals a father's only son (28–45).",
+        "The disciples argue over who is greatest. Jesus stedfastly sets His face to go to Jerusalem, rebukes James and John for wanting fire on a Samaritan village, and tells would-be followers that no man who looks back from the plough is fit for the kingdom of God (46–62)."
+      ],
+      "key": {
+        "ref": "Luke 9:23",
+        "text": "And he said to them all, If any man will come after me, let him deny himself, and take up his cross daily, and follow me."
+      },
+      "big": "Jesus is the Christ of God, who went to the cross on purpose. Salvation is His free gift; following Him means saying no to self and taking up the cross one day at a time, listening to Him, and not looking back."
+    }
   }
 ];
