@@ -203,12 +203,12 @@ h1 { font-family: var(--serif); font-weight: 300; font-size: clamp(2.5rem, 1.6re
 }
 .page h5 { font-family: var(--serif); font-style: italic; font-weight: 400; font-size: 1.6rem; text-align: center; margin: 0 0 .8rem; }
 .toc { list-style: none; margin: 0; padding: 0; }
-.toc button {
-  width: 100%; display: flex; align-items: baseline; gap: .55rem; text-align: left;
+.toc a {
+  width: 100%; display: flex; text-decoration: none; align-items: baseline; gap: .55rem; text-align: left;
   padding: .6rem .35rem; border: 0; border-radius: 4px; background: none; color: var(--ink);
   font-family: var(--serif); font-size: 1.15rem; line-height: 1.3;
 }
-.toc button:hover { background: rgb(139 30 43 / .08); }
+.toc a:hover { background: rgb(139 30 43 / .08); }
 .toc .num { flex: none; min-width: 1.4em; font-weight: 600; color: var(--ribbon); }
 .toc .t { flex: 0 1 auto; font-style: italic; }
 .toc .lead { flex: 1 1 1.5rem; border-bottom: 2px dotted rgb(42 35 32 / .35); transform: translateY(-.28em); }
@@ -455,11 +455,11 @@ function drawShelves() {
     const key = b.dataset.key;
     if (key.startsWith("study:")) return openStudy(key.slice(6), b);
     openBook = openBook === key ? null : key;
+    history.replaceState(null, "", openBook ? "#book=" + encodeURIComponent(openBook.slice(5)) : location.pathname + location.search);
     drawShelves();
     const panel = document.getElementById("open-book");
     if (panel) panel.scrollIntoView({ block: "nearest", behavior: "smooth" });
   }));
-  root.querySelectorAll("[data-study]").forEach(b => b.addEventListener("click", () => openStudy(b.dataset.study, b)));
   balanceToc();
 }
 
@@ -475,7 +475,6 @@ function drawOpenBook(book) {
       <div class="title-page">
         <h4>${esc(book)}</h4>
         <div class="flourish" aria-hidden="true"></div>
-        <p class="progress">${chs.length} of ${CHAPTERS[book]} chapters studied so far</p>
         ${CHAPTERS[book] <= 52
           ? `<div class="marks" aria-hidden="true">${Array.from({ length: CHAPTERS[book] }, (_, k) => `<i class="${done.has(k + 1) ? "done" : ""}"></i>`).join("")}</div>`
           : `<div class="marks-bar" aria-hidden="true"><i style="width:${Math.max(2, chs.length / CHAPTERS[book] * 100)}%"></i></div>`}
@@ -517,9 +516,9 @@ addEventListener("resize", () => {
 });
 document.fonts?.ready.then(balanceToc);
 function tocItem(c) {
-  return `<li><button type="button" data-study="${esc(c.id)}" aria-label="${esc(c.title)}: ${esc(c.sub)}">
+  return `<li><a href="${esc(c.url)}" aria-label="${esc(c.title)}: ${esc(c.sub)}">
     <span class="num">${c.ch}</span><span class="t">${esc(c.sub)}</span><span class="lead" aria-hidden="true"></span><span class="go" aria-hidden="true">Open</span>
-  </button></li>`;
+  </a></li>`;
 }
 
 // ---------- Study sheet ----------
@@ -546,7 +545,10 @@ sheetBg.addEventListener("click", closeStudy);
 document.addEventListener("keydown", e => { if (e.key === "Escape") closeStudy(); });
 
 drawNewest();
+const linked = decodeURIComponent((location.hash.match(/^#book=(.+)$/) || [])[1] || "");
+if (linked && studies.some(s => s.book === linked && s.type === "chapter")) openBook = "book:" + linked;
 drawShelves();
+if (openBook) document.getElementById("open-book")?.scrollIntoView({ block: "start" });
 </script>
 </body>
 </html>
