@@ -1,0 +1,564 @@
+<!doctype html>
+<html lang="en" data-theme="slate">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Romans 12</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="../assets/fonts.css">
+<link rel="stylesheet" href="../assets/deck.css">
+<link rel="stylesheet" href="../assets/themes.css">
+<style>
+/* ro12-book: where we are in Romans. Sixteen chapter tabs (.ro12-ch, --k; .here is this chapter) over the letter's five sections
+   (.ro12-part, --k; .now is this section). Each chapter is two grid columns, so a section can start halfway through a chapter. */
+.ro12-book { display: grid; grid-template-columns: repeat(32, 1fr); gap: 8px 0; margin: .6em 0 1em; }
+.ro12-ch { grid-column: span 2; margin: 0 2px; padding: .25em 0 .3em; text-align: center; border-radius: 6px 6px 0 0; border-bottom: 3px solid var(--line-strong);
+  font: 700 clamp(.82rem, .74rem + .35vw, 1.08rem) var(--sans); color: var(--ink-soft); opacity: 0; transition: opacity .4s ease; transition-delay: calc(var(--k, 0) * 55ms + 200ms); }
+.slide.active .ro12-ch { opacity: 1; }
+.ro12-ch.here { background: var(--accent); border-bottom-color: var(--accent); color: var(--on-accent); }
+.ro12-part { --c: var(--accent); margin: 0 3px; padding: .5em .65em .6em; border-top: 6px solid var(--c); border-radius: 0 0 10px 10px;
+  background: color-mix(in srgb, var(--c) 9%, transparent); opacity: 0; transform: translateY(10px); transition: opacity .6s ease, transform .6s ease; transition-delay: calc(var(--k, 0) * 300ms + 900ms); }
+.slide.active .ro12-part { opacity: 1; transform: none; }
+.ro12-part small { display: block; font: 700 clamp(.72rem, .68rem + .22vw, .92rem) var(--sans); color: var(--ink-soft); }
+.ro12-part b { display: block; margin-top: .1em; font: 600 clamp(1rem, .86rem + .65vw, 1.5rem)/1.1 var(--serif); color: var(--ink); }
+.ro12-part.now { background: color-mix(in srgb, var(--c) 22%, transparent); box-shadow: inset 0 0 0 2px var(--c); }
+.ro12-p1 { --c: var(--danger); grid-column: 1 / 6; } .ro12-p2 { grid-column: 6 / 11; } .ro12-p3 { --c: var(--cool); grid-column: 11 / 17; }
+.ro12-p4 { --c: var(--leather-light); grid-column: 17 / 23; } .ro12-p5 { --c: var(--wine); grid-column: 23 / 33; }
+@media (max-width: 640px) {
+  .ro12-book { grid-template-columns: 1fr; gap: 6px; }
+  .ro12-ch { display: none; }
+  .ro12-part { grid-column: 1; margin: 0; border-top: 0; border-left: 6px solid var(--c); border-radius: 0 10px 10px 0; }
+}
+
+/* ro12-mold: conformed (a mold presses a round lump square from the outside, when the slide opens) beside
+   transformed (a chrysalis opens into a butterfly from the inside, on a .ro12-turn step) */
+.ro12-split { stroke: var(--line-strong); stroke-width: 2; stroke-dasharray: 6 6; }
+.ro12-head { font: italic 600 24px var(--serif); fill: var(--accent-hot); }
+.ro12-cap { font-size: 16px; fill: var(--ink-soft); }
+.ro12-lump { fill: var(--cool); }
+.ro12-lump.round { transition: opacity .3s ease 1.1s; }
+.ro12-lump.square { opacity: 0; transition: opacity .3s ease 1.1s; }
+.slide.active .ro12-lump.round { opacity: 0; }
+.slide.active .ro12-lump.square { opacity: 1; }
+.ro12-press { fill: none; stroke: var(--ink-soft); stroke-width: 7; stroke-linejoin: round; transform: translateY(-88px); }
+.slide.active .ro12-press { animation: ro12-press 2.8s .3s ease-in-out forwards; }
+@keyframes ro12-press { 0% { transform: translateY(-88px); } 35%, 60% { transform: translateY(0); } 100% { transform: translateY(-88px); } }
+.ro12-pod { fill: var(--leather-light); stroke: var(--leather); stroke-width: 2; transform-box: fill-box; transform-origin: center; transition: opacity .8s ease, transform .8s ease; }
+.ro12-wing { fill: var(--accent); stroke: var(--accent-hot); stroke-width: 2; transform-box: fill-box; transform: scale(0); transition: transform 1.4s cubic-bezier(.3,1.4,.5,1) .5s; }
+.ro12-wing.ul { transform-origin: 100% 100%; } .ro12-wing.ur { transform-origin: 0 100%; } .ro12-wing.ll { transform-origin: 100% 0; } .ro12-wing.lr { transform-origin: 0 0; }
+.ro12-wing.lo { fill: color-mix(in srgb, var(--accent) 70%, var(--warm)); }
+.ro12-body { stroke: var(--ink); stroke-width: 5; stroke-linecap: round; fill: none; opacity: 0; transition: opacity .6s ease .5s; }
+.slide:has(.ro12-turn.on) .ro12-pod { opacity: 0; transform: scale(.4); }
+.slide:has(.ro12-turn.on) .ro12-wing { transform: scale(1); }
+.slide:has(.ro12-turn.on) .ro12-body { opacity: 1; }
+@media (min-width: 760px) { .ro12-gifts { grid-template-columns: repeat(4, 1fr); } }
+@media (max-width: 600px) { .ro12-cap { font-size: 21px; } .ro12-head { font-size: 28px; } }
+</style>
+</head>
+<body>
+<main class="deck" id="deck">
+
+<!-- ======================= OPENING ======================= -->
+<section class="slide title">
+  <div class="inner">
+    <div class="emblem rise"></div>
+    <h1 class="rise" style="--d:1">Romans 12</h1>
+    <p class="sub rise" style="--d:3">A living sacrifice</p>
+    <p class="tag rise" style="--d:5">Eleven chapters on what God has done. Now Paul turns to Monday morning: your body, your mind, your place among God's people, and the man who did you wrong.</p>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise" style="--d:1">Where we are in Romans</h2>
+    <div class="ro12-book" role="img" aria-label="Romans in five sections: chapters 1 to 3, sin; 3:21 to chapter 5, justified by faith; 6 to 8, new life; 9 to 11, Israel and the nations; 12 to 16, living it out. We are in chapter 12, the first chapter of living it out.">
+      <span class="ro12-ch" style="--k:0">1</span><span class="ro12-ch" style="--k:1">2</span><span class="ro12-ch" style="--k:2">3</span><span class="ro12-ch" style="--k:3">4</span>
+      <span class="ro12-ch" style="--k:4">5</span><span class="ro12-ch" style="--k:5">6</span><span class="ro12-ch" style="--k:6">7</span><span class="ro12-ch" style="--k:7">8</span>
+      <span class="ro12-ch" style="--k:8">9</span><span class="ro12-ch" style="--k:9">10</span><span class="ro12-ch" style="--k:10">11</span><span class="ro12-ch here" style="--k:11">12</span>
+      <span class="ro12-ch" style="--k:12">13</span><span class="ro12-ch" style="--k:13">14</span><span class="ro12-ch" style="--k:14">15</span><span class="ro12-ch" style="--k:15">16</span>
+      <div class="ro12-part ro12-p1" style="--k:0"><small>1–3</small><b>Sin</b></div>
+      <div class="ro12-part ro12-p2" style="--k:1"><small>3:21–5</small><b>Justified by faith</b></div>
+      <div class="ro12-part ro12-p3" style="--k:2"><small>6–8</small><b>New life</b></div>
+      <div class="ro12-part ro12-p4" style="--k:3"><small>9–11</small><b>Israel and the nations</b></div>
+      <div class="ro12-part ro12-p5 now" style="--k:4"><small>12–16</small><b>Living it out</b></div>
+    </div>
+    <p class="note rise" style="--d:3">Chapters 1 to 11 are what God has done: every man guilty, Christ dying for the ungodly, justified by faith, no condemnation, mercy upon all. Chapter 11 ended in worship.</p>
+    <p class="note step">Now the turn. Chapters 12 to 16 are how a forgiven man lives: at work, at home, in the church, and with people who hurt him. The hinge is one word in the first verse: <em>“therefore.”</em></p>
+  </div>
+</section>
+
+<section class="slide watch">
+  <div class="inner">
+    <h2 class="rise">Things to watch for</h2>
+    <p class="lede rise" style="--d:1">Keep these questions in the back of your mind as we read. We'll come back to every one of them at the end.</p>
+    <ol class="seeds">
+      <li class="step"><span class="topic">Your body</span><span class="seed-q">What does it mean to present your body a living sacrifice?</span></li>
+      <li class="step"><span class="topic">Your mind</span><span class="seed-q">How does a man stop being conformed to this world?</span></li>
+      <li class="step"><span class="topic">Humility</span><span class="seed-q">How should a man think of himself?</span></li>
+      <li class="step"><span class="topic">One body</span><span class="seed-q">Why does every believer matter in the church?</span></li>
+      <li class="step"><span class="topic">Real love</span><span class="seed-q">What does love without dissimulation look like day to day?</span></li>
+      <li class="step"><span class="topic">Enemies</span><span class="seed-q">What do you do with a man who has wronged you?</span></li>
+    </ol>
+  </div>
+</section>
+
+<!-- ======================= PART ONE: BODY AND MIND ======================= -->
+<section class="slide part">
+  <div class="inner">
+    <p class="part-n rise">Part one</p>
+    <h2 class="rise" style="--d:1">Body and mind</h2>
+    <p class="range rise" style="--d:2">Verses 1–2</p>
+    <div class="rule"></div>
+    <p class="hook rise" style="--d:4">Two verses that turn the whole letter into a way of life.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="1-2" data-hl="by the mercies of God|present your bodies a living sacrifice|be not conformed to this world: but be ye transformed by the renewing of your mind"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="1" data-hl="by the mercies of God"></blockquote>
+    <h2 class="rise" style="--d:1">Mercy first, then the ask</h2>
+    <div class="ifthen step">
+      <div class="if"><small>Because</small>God has shown you mercy (chapters 1–11),</div>
+      <span class="arrow" aria-hidden="true">→</span>
+      <div class="then"><small>therefore</small>give Him yourself.</div>
+    </div>
+    <p class="note step">Watch the order. Paul doesn't say, <em>clean yourself up so God will love you.</em> He says God already has, so now give Him your life. Obedience is the answer to grace, never the price of it.</p>
+    <p class="note step"><em>I beseech you</em>: I beg you. Paul is pleading, not threatening, the way a brother would.</p>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise">A living sacrifice</h2>
+    <div class="columns">
+      <div class="col law step"><p class="who">On the old altar</p><h3>A dead sacrifice</h3><p>An animal brought to the temple once, killed, and burned. Done.</p></div>
+      <div class="col grace step"><p class="who">Romans 12:1</p><h3>A living sacrifice</h3><p>You hand yourself over to God every morning, then get up and live for Him all day.</p></div>
+    </div>
+    <p class="note step"><em>Your bodies.</em> The same body some of us poisoned, fought with, and sold for a high. God wants it. Not a cleaned-up version first: this one, today, the hands, the eyes, the feet, the mouth.</p>
+    <blockquote class="quote step"><p>“For ye are bought with a price: therefore glorify God in your body, and in your spirit, which are God's.”</p><cite>1 Corinthians 6:20</cite></blockquote>
+    <p class="note step"><em>Reasonable service</em>: after all He's done, it's the only thing that makes sense.</p>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise">Conformed, or transformed</h2>
+    <div class="stage">
+      <svg viewBox="0 0 600 260" style="max-height:38vh" role="img" aria-label="On the left, conformed: a square mould presses down on a round lump and leaves it square, pressed into shape from the outside. On the right, transformed: on a step, a chrysalis opens into a butterfly, changed from the inside.">
+        <line class="ro12-split" x1="300" y1="10" x2="300" y2="250"/>
+        <circle class="ro12-lump round" cx="145" cy="150" r="42"/>
+        <rect class="ro12-lump square" x="103" y="108" width="84" height="84" rx="3"/>
+        <g class="ro12-press"><rect x="99" y="104" width="92" height="92" rx="3"/><path d="M145 104 V 92 M125 92 H 165"/></g>
+        <text class="ro12-head" x="145" y="228" text-anchor="middle">conformed</text>
+        <text class="ro12-cap" x="145" y="252" text-anchor="middle">pressed into shape from outside</text>
+        <ellipse class="ro12-pod" cx="455" cy="150" rx="20" ry="44"/>
+        <g transform="translate(0 45)">
+          <path class="ro12-wing ul" d="M455 100 C 420 50, 380 60, 392 100 C 400 120, 440 115, 455 105 Z"/>
+          <path class="ro12-wing ur" d="M455 100 C 490 50, 530 60, 518 100 C 510 120, 470 115, 455 105 Z"/>
+          <path class="ro12-wing lo ll" d="M455 108 C 425 120, 400 150, 425 158 C 440 162, 452 135, 455 110 Z"/>
+          <path class="ro12-wing lo lr" d="M455 108 C 485 120, 510 150, 485 158 C 470 162, 458 135, 455 110 Z"/>
+          <path class="ro12-body" d="M455 82 V 140 M455 84 L 444 66 M455 84 L 466 66"/>
+        </g>
+        <text class="ro12-head" x="455" y="228" text-anchor="middle">transformed</text>
+        <text class="ro12-cap" x="455" y="252" text-anchor="middle">changed from the inside</text>
+      </svg>
+    </div>
+    <p class="note rise" style="--d:2"><em>Conformed</em> means squeezed into a mould. The world presses from the outside: the old crowd, the old habits, the screen in your pocket.</p>
+    <p class="note step ro12-turn"><em>Transformed</em> is the Greek <span class="gk">metamorphoō</span>, where we get <em>metamorphosis</em>: a caterpillar becoming a butterfly. The same word is used of Jesus shining on the mountain (Matthew 17:2). It's a change from the inside out, and God does it.</p>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <div class="split">
+      <div class="stage">
+        <svg class="cycle" style="--at:320px 200px; --lap:6s" viewBox="0 0 640 400" role="img" aria-label="A circle with four stops: a trigger, an old lie, the old way, shame, and around again. A dot keeps running around it. On a step, a bright path leads out of the circle at the old lie: the renewing of your mind.">
+          <circle class="cycle-ring" cx="320" cy="200" r="140"/>
+          <g class="rise" style="--d:1"><circle class="cycle-stop" cx="320" cy="60" r="15"/><text x="320" y="30" text-anchor="middle" font-size="20">1. A trigger</text></g>
+          <g class="rise" style="--d:2"><circle class="cycle-stop" cx="460" cy="200" r="15"/><text x="484" y="196" font-size="20">2. An old lie</text><text x="484" y="222" font-size="17" class="serif" style="fill:var(--ink-soft)">“I deserve it.”</text></g>
+          <g class="rise" style="--d:3"><circle class="cycle-stop" cx="320" cy="340" r="15"/><text x="320" y="382" text-anchor="middle" font-size="20">3. The old way</text></g>
+          <g class="rise" style="--d:4"><circle class="cycle-stop" cx="180" cy="200" r="15"/><text x="156" y="196" text-anchor="end" font-size="20">4. Shame</text><text x="156" y="222" text-anchor="end" font-size="17" class="serif" style="fill:var(--ink-soft)">“I'm no good.”</text></g>
+          <g class="cycle-spin"><circle cx="320" cy="60" r="8" style="fill:var(--accent-hot);stroke:var(--bg)" stroke-width="2"/></g>
+          <text x="320" y="196" text-anchor="middle" font-size="24" class="serif" style="fill:var(--ink-soft)">around</text>
+          <text x="320" y="226" text-anchor="middle" font-size="24" class="serif" style="fill:var(--ink-soft)">and around</text>
+          <g class="cycle-out">
+            <path class="cycle-way" d="M470 186 C 520 150, 560 120, 600 76"/>
+            <path class="cycle-way" d="M578 78 L 602 72 L 598 98"/>
+            <text x="632" y="34" text-anchor="end" font-size="20" font-weight="700" style="fill:var(--accent-hot)">the renewing</text>
+            <text x="632" y="58" text-anchor="end" font-size="20" font-weight="700" style="fill:var(--accent-hot)">of your mind</text>
+          </g>
+        </svg>
+      </div>
+      <div>
+        <h2 class="rise" style="--d:1">The renewing of your mind</h2>
+        <p class="note rise" style="--d:2">Every man in recovery knows this loop. It runs through a thought: a lie you tell yourself just before you fall.</p>
+        <p class="note step cycle-go">God breaks it where it starts. <em>Renewing</em> is making new, again and again: swapping the lie for what God says is true.</p>
+        <blockquote class="quote step"><p>“…whatsoever things are true, whatsoever things are honest, whatsoever things are just, whatsoever things are pure… think on these things.”</p><cite>Philippians 4:8</cite></blockquote>
+              </div>
+    </div>
+  </div>
+</section>
+
+<!-- ======================= PART TWO: ONE BODY ======================= -->
+<section class="slide part">
+  <div class="inner">
+    <p class="part-n rise">Part two</p>
+    <h2 class="rise" style="--d:1">One body, many members</h2>
+    <p class="range rise" style="--d:2">Verses 3–8</p>
+    <div class="rule"></div>
+    <p class="hook rise" style="--d:4">Think straight about yourself, then find your place among God's people.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="3-5" data-hl="not to think of himself more highly than he ought to think; but to think soberly|we, being many, are one body in Christ, and every one members one of another"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <div class="split">
+      <div class="stage">
+        <svg class="scale rock" style="--at:300px 80px" viewBox="0 0 600 330" role="img" aria-label="A balance scale. One pan reads more highly than he ought, the other reads less than God says. It rocks back and forth, then settles level: soberly.">
+          <path d="M240 300 L360 300 L330 280 L270 280 Z" style="fill:var(--surface-2);stroke:var(--ink-soft)" stroke-width="2.5"/>
+          <rect x="294" y="74" width="12" height="208" style="fill:var(--ink-soft)"/>
+          <g class="scale-beam">
+            <rect x="110" y="74" width="380" height="12" rx="6" style="fill:var(--ink)"/>
+            <circle cx="300" cy="80" r="11" style="fill:var(--accent)"/>
+            <g fill="none" stroke-width="2" style="stroke:var(--ink-soft)"><path d="M140 86 L100 196 M140 86 L180 196"/><path d="M460 86 L420 196 M460 86 L500 196"/></g>
+            <path d="M80 196 L200 196 Q140 236 80 196 Z" stroke-width="2.5" style="fill:var(--surface-2);stroke:var(--ink-soft)"/>
+            <path d="M400 196 L520 196 Q460 236 400 196 Z" stroke-width="2.5" style="fill:var(--surface-2);stroke:var(--ink-soft)"/>
+            <text x="140" y="250" text-anchor="middle" font-size="17" style="fill:var(--ink)">too high:</text>
+            <text x="140" y="272" text-anchor="middle" font-size="16" style="fill:var(--ink-soft)">“more highly than he ought”</text>
+            <text x="460" y="250" text-anchor="middle" font-size="17" style="fill:var(--ink)">too low:</text>
+            <text x="460" y="272" text-anchor="middle" font-size="16" style="fill:var(--ink-soft)">less than God says</text>
+          </g>
+          <text x="300" y="324" text-anchor="middle" font-size="24" class="serif" style="fill:var(--accent-hot)">soberly</text>
+        </svg>
+      </div>
+      <div>
+        <h2 class="rise" style="--d:1">Think soberly</h2>
+        <p class="note rise" style="--d:2">Pride says, <em>I'm better than these guys.</em> Shame says, <em>I'm worthless; God could never use me.</em> Plenty of men swing between the two in one day. Both keep your eyes on yourself.</p>
+        <p class="note step"><em>Soberly</em>: clear-headed, level, the way a sober man sees. Not puffed up, not crushed. You're a sinner saved by grace, and God has given you a <em>measure of faith</em> to use.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="slide verse" data-v="6-8" data-hl="Having then gifts differing according to the grace that is given to us|he that giveth, let him do it with simplicity|he that sheweth mercy, with cheerfulness"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise">Every member has a job</h2>
+    <ol class="signs ro12-gifts">
+      <li class="rise" style="--d:1"><b>Prophecy</b>speaking God's word plainly, as far as your faith goes</li>
+      <li class="rise" style="--d:2"><b>Ministry</b>serving: the coffee, the chairs, the rides</li>
+      <li class="rise" style="--d:3"><b>Teaching</b>explaining the Bible so it makes sense</li>
+      <li class="rise" style="--d:4"><b>Exhorting</b>coming alongside a man to keep him going</li>
+      <li class="rise" style="--d:5"><b>Giving</b>with <em>simplicity</em>: freely, no strings</li>
+      <li class="rise" style="--d:6"><b>Ruling</b>leading, with <em>diligence</em></li>
+      <li class="rise" style="--d:7"><b>Mercy</b>with <em>cheerfulness</em>, not a long face</li>
+      <li class="step now"><b>Yours?</b>what has God given you to serve with?</li>
+    </ol>
+    <p class="note step">A hand isn't an eye, and the body needs both. Every gift is <em>“according to the grace that is given”</em>: a gift, not a reward. No believer is a spare part.</p>
+    <p class="note step">Your past can become your gift. The man who has been through the fire is often the best encourager for the next man walking in. Somebody in this room needs what God gave you.</p>
+  </div>
+</section>
+
+<!-- ======================= PART THREE: LOVE FOR REAL ======================= -->
+<section class="slide part">
+  <div class="inner">
+    <p class="part-n rise">Part three</p>
+    <h2 class="rise" style="--d:1">Love without a mask</h2>
+    <p class="range rise" style="--d:2">Verses 9–16</p>
+    <div class="rule"></div>
+    <p class="hook rise" style="--d:4">A string of short commands, every one of them something to do today.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="9-11" data-hl="Let love be without dissimulation|Abhor that which is evil; cleave to that which is good|Not slothful in business; fervent in spirit; serving the Lord"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise">No mask</h2>
+    <div class="morph">
+      <span class="big rise" style="--d:2">ἀνυπόκριτος</span>
+      <span class="say step">said <em class="gk">anypokritos</em></span>
+      <span class="means step">without a mask: un-hypocritical. A <em>hypokrites</em> was an actor on a stage.</span>
+    </div>
+    <p class="note step"><em>Dissimulation</em> is faking it. Plenty of us learned to wear a mask to survive: on the street, inside, at home. Love doesn't put on a show. It's the same in the room as out of it.</p>
+    <p class="note step"><em>Abhor</em> evil, recoil from it like a hot stove. <em>Cleave</em> to good, stick to it like glue. <em>Not slothful in business</em>: show up for work today and do it well. That's serving the Lord too.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="12-13" data-hl="Rejoicing in hope; patient in tribulation; continuing instant in prayer|given to hospitality"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise">A day in verses 12 and 13</h2>
+    <ol class="checks">
+      <li class="step"><span class="tick">✓</span><q>Rejoicing in hope</q><small>when you wake up: today is not the end of your story</small><b>morning</b></li>
+      <li class="step"><span class="tick">✓</span><q>patient in tribulation</q><small>when the day goes wrong: <em>tribulation</em> is pressure, and you don't have to break</small><b>midday</b></li>
+      <li class="step"><span class="tick">✓</span><q>continuing instant in prayer</q><small><em>instant</em> means always ready: a word to God in the truck, at the break, in the moment</small><b>all day</b></li>
+      <li class="step"><span class="tick">✓</span><q>Distributing to the necessity of saints</q><small>a brother needs a ride, a meal, a few dollars</small><b>when it comes up</b></li>
+      <li class="step"><span class="tick">✓</span><q>given to hospitality</q><small>open your door and your table, even to a stranger</small><b>evening</b></li>
+    </ol>
+  </div>
+</section>
+
+<section class="slide verse" data-v="14-16" data-hl="Bless them which persecute you: bless, and curse not|Rejoice with them that do rejoice, and weep with them that weep|condescend to men of low estate"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="14"></blockquote>
+    <h2 class="rise" style="--d:1">Written to people about to suffer</h2>
+    <ol class="timeline" aria-label="About AD 57, Paul writes Romans: bless them which persecute you. About 59 to 60, Paul reaches Rome in chains. About 64, Rome burns and Nero turns on the Christians. About 67 to 68, by tradition, Paul and Peter are put to death in Rome.">
+      <li class="lit" style="--k:0"><b>about AD 57</b><span>Romans: “bless them which persecute you”</span><small>12:14</small></li>
+      <li style="--k:1"><b>about 59 to 60</b><span>Paul reaches Rome in chains</span><small>Acts 28</small></li>
+      <li style="--k:2"><b>about 64</b><span>Rome burns; Nero turns on the Christians</span><small>history</small></li>
+      <li class="wait" style="--k:3"><b>about 67 to 68</b><span>Paul and Peter put to death in Rome</span><small>by tradition</small></li>
+    </ol>
+    <p class="note step">About seven years after this letter, many of the believers who first heard it were hunted down. <em>Bless, and curse not</em> was not theory for them.</p>
+    <p class="note step"><em>Weep with them that weep</em>: show up at the funeral, sit with the man whose wife left. <em>Condescend to men of low estate</em>: go and sit with the guy fresh out with nothing. Nobody is beneath you.</p>
+  </div>
+</section>
+
+<!-- ======================= PART FOUR: OVERCOME EVIL WITH GOOD ======================= -->
+<section class="slide part">
+  <div class="inner">
+    <p class="part-n rise">Part four</p>
+    <h2 class="rise" style="--d:1">Overcome evil with good</h2>
+    <p class="range rise" style="--d:2">Verses 17–21</p>
+    <div class="rule"></div>
+    <p class="hook rise" style="--d:4">For men who have been wronged, and men who have done wrong. Most of us are both.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="17-18" data-hl="Recompense to no man evil for evil|If it be possible, as much as lieth in you, live peaceably with all men"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise">How it goes down</h2>
+    <ol class="stairs down" style="--n:6" aria-label="Six steps down: he disrespects me; I mouth off; he shoves; I swing; somebody gets hurt; cuffs.">
+      <li style="--k:0"><b>he disrespects me</b></li>
+      <li style="--k:1"><b>I mouth off</b></li>
+      <li style="--k:2"><b>he shoves</b></li>
+      <li style="--k:3"><b>I swing</b></li>
+      <li style="--k:4"><b>somebody gets hurt</b></li>
+      <li style="--k:5"><b>cuffs</b></li>
+    </ol>
+    <p class="note step">Evil for evil only goes one direction. <em>Recompense to no man evil for evil</em> stops it on the first step. Somebody has to be the one who doesn't hit back. Let it be you.</p>
+    <p class="note step"><em>As much as lieth in you</em>: you can't control the other man, only your half. And if you're the one who did the wrong, that half may mean going back to make it right, where you can do it without making it worse.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="19-20" data-hl="avenge not yourselves, but rather give place unto wrath|Vengeance is mine; I will repay, saith the Lord|if thine enemy hunger, feed him; if he thirst, give him drink"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <div class="split">
+      <div>
+        <div class="ledger rise" style="--d:1">
+          <h3>What they owe me</h3>
+          <ul>
+            <li style="--k:0"><span>The friend who set me up</span><span>owed</span></li>
+            <li style="--k:1"><span>The one who stole from me</span><span>owed</span></li>
+            <li style="--k:2"><span>The family who wrote me off</span><span>owed</span></li>
+            <li style="--k:3"><span>The man who hurt someone I love</span><span>owed</span></li>
+          </ul>
+          <div class="total"><span>Balance due</span><b>I want them to pay</b></div>
+          <div class="ledger-stamp">MINE<small>I will repay, saith the Lord</small></div>
+        </div>
+      </div>
+      <div>
+        <h2 class="rise" style="--d:1">Hand Him the bill</h2>
+        <p class="note rise" style="--d:2"><em>Give place unto wrath</em>: step aside and leave room for God's anger. He doesn't say the wrong didn't happen. He says it's His to settle, and He will.</p>
+        <p class="note step ledger-paid">You stop carrying the bill. Revenge keeps a man chained to the person who hurt him.</p>
+        <blockquote class="quote step"><p>“Who, when he was reviled, reviled not again; when he suffered, he threatened not; but committed himself to him that judgeth righteously:”</p><cite>1 Peter 2:23</cite></blockquote>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="20" data-hl="heap coals of fire on his head"></blockquote>
+    <h2 class="rise" style="--d:1">Coals of fire</h2>
+    <p class="note rise" style="--d:2">Paul is quoting Proverbs 25:21–22. Kindness to an enemy is like live coals on his head: a burning shame he can't shake, that may bring him to his senses. You can't control whether it does. You can control whether you feed him.</p>
+    <div class="columns">
+      <div class="col law step"><p class="who">When you've been wronged</p><h3>Feed him</h3><p>Do him good on purpose. Pray for him by name. It won't feel fair. It isn't meant to be fair; it's meant to be like Jesus.</p></div>
+      <div class="col grace step"><p class="who">When you did the wrong</p><h3>Remember</h3><p>You were God's enemy once, and He fed you anyway. That's how every one of us got saved (5:8–10).</p></div>
+    </div>
+    <blockquote class="quote step"><p>“Then said Jesus, Father, forgive them; for they know not what they do.”</p><cite>Luke 23:34</cite></blockquote>
+  </div>
+</section>
+
+<section class="slide verse" data-v="21" data-hl="Be not overcome of evil, but overcome evil with good"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <p class="saying rise">“Be not <em>overcome</em> of evil, but <em>overcome</em> evil with good.”</p>
+    <p class="note rise" style="--d:2">Evil wins two ways: when it hurts you, and when it turns you into the same kind of man. Paying it back means it beat you twice.</p>
+    <p class="note step">Good is stronger. It isn't weakness to hold your fist; it takes more strength than swinging. Today, think of one person you'd rather get even with, and do one good thing for him instead. Then hand the rest to God.</p>
+  </div>
+</section>
+
+<!-- ======================= CLOSING ======================= -->
+<section class="slide remember">
+  <div class="inner">
+    <h2 class="rise">Points to remember</h2>
+    <ol class="seeds">
+      <li class="step"><span class="topic">Your body</span><span class="seed-q">“Present your bodies a living sacrifice” <cite>12:1</cite></span><span class="take">Because God has shown you mercy, hand Him your whole self, every day.</span></li>
+      <li class="step"><span class="topic">Your mind</span><span class="seed-q">“Be ye transformed by the renewing of your mind” <cite>12:2</cite></span><span class="take">Change starts on the inside, one true thought at a time.</span></li>
+      <li class="step"><span class="topic">Humility</span><span class="seed-q">“To think soberly” <cite>12:3</cite></span><span class="take">Not puffed up, not crushed: a sinner saved by grace.</span></li>
+      <li class="step"><span class="topic">One body</span><span class="seed-q">“We, being many, are one body in Christ” <cite>12:5</cite></span><span class="take">Every believer has a gift, and the body needs it.</span></li>
+      <li class="step"><span class="topic">Real love</span><span class="seed-q">“Let love be without dissimulation” <cite>12:9</cite></span><span class="take">No mask. Real love shows up, works, prays, and opens the door.</span></li>
+      <li class="step"><span class="topic">Enemies</span><span class="seed-q">“Overcome evil with good” <cite>12:21</cite></span><span class="take">Don't pay it back. Hand the bill to God, and feed your enemy.</span></li>
+    </ol>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 1 of 6</p>
+      <span class="topic">Your body</span>
+      <h2>What does it mean to present your body a living sacrifice?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="1"></blockquote>
+      <blockquote class="quote step"><p>“What? know ye not that your body is the temple of the Holy Ghost which is in you, which ye have of God, and ye are not your own?”</p><cite>1 Corinthians 6:19</cite></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>It means giving God your whole self, body included, not once but every day, and then living for Him. We don't do it to earn mercy; we do it because of the mercies He has already shown. After all He's done, it only makes sense.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 2 of 6</p>
+      <span class="topic">Your mind</span>
+      <h2>How does a man stop being conformed to this world?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="2"></blockquote>
+      <blockquote class="quote step"><p>“Therefore if any man be in Christ, he is a new creature: old things are passed away; behold, all things are become new.”</p><cite>2 Corinthians 5:17</cite></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>Not by squeezing harder from the outside, but by being changed from the inside. God renews the mind: we trade the old lies for what He says is true, one thought at a time. Then we prove, by living it, that God's will is good.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 3 of 6</p>
+      <span class="topic">Humility</span>
+      <h2>How should a man think of himself?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="3"></blockquote>
+      <blockquote class="quote step" data-q="16"></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>Soberly: clear-headed and level. Not more highly than he ought, and not as worthless either. He is a sinner saved by grace, given a measure of faith by God, and no one is beneath him.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 4 of 6</p>
+      <span class="topic">One body</span>
+      <h2>Why does every believer matter in the church?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="4-5"></blockquote>
+      <blockquote class="quote step" data-q="6" data-hl="gifts differing according to the grace that is given to us"></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>Because we are one body in Christ, and every member has a job the others can't do. Each gift comes by grace, so nobody gets to boast and nobody is useless. The body needs what God gave you.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 5 of 6</p>
+      <span class="topic">Real love</span>
+      <h2>What does love without dissimulation look like day to day?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="9-10"></blockquote>
+      <blockquote class="quote step" data-q="15"></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>No mask, no act. It hates evil and holds on to good, puts other people first, works hard, prays all day, shares, opens the door, and shows up to laugh or cry with a brother.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 6 of 6</p>
+      <span class="topic">Enemies</span>
+      <h2>What do you do with a man who has wronged you?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="19"></blockquote>
+      <blockquote class="quote step" data-q="20"></blockquote>
+      <blockquote class="quote step" data-q="21"></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>Don't pay him back. Leave the settling to God, who will repay. Then do him good on purpose: feed him, give him drink, pray for him. That's how evil is overcome.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide prayer">
+  <div class="inner">
+    <div class="emblem rise"></div>
+    <h2 class="rise" style="--d:1">Prayer requests</h2>
+    <p class="ask-line rise" style="--d:2">What can we pray about for you today?</p>
+    <blockquote class="quote rise" style="--d:4"><p>“Rejoicing in hope; patient in tribulation; continuing instant in prayer;”</p><cite>Romans 12:12</cite></blockquote>
+  </div>
+</section>
+
+</main>
+
+<script>
+// King James Version, Romans chapter 12
+const V = {
+  1: "I beseech you therefore, brethren, by the mercies of God, that ye present your bodies a living sacrifice, holy, acceptable unto God, which is your reasonable service.",
+  2: "And be not conformed to this world: but be ye transformed by the renewing of your mind, that ye may prove what is that good, and acceptable, and perfect, will of God.",
+  3: "For I say, through the grace given unto me, to every man that is among you, not to think of himself more highly than he ought to think; but to think soberly, according as God hath dealt to every man the measure of faith.",
+  4: "For as we have many members in one body, and all members have not the same office:",
+  5: "So we, being many, are one body in Christ, and every one members one of another.",
+  6: "Having then gifts differing according to the grace that is given to us, whether prophecy, let us prophesy according to the proportion of faith;",
+  7: "Or ministry, let us wait on our ministering: or he that teacheth, on teaching;",
+  8: "Or he that exhorteth, on exhortation: he that giveth, let him do it with simplicity; he that ruleth, with diligence; he that sheweth mercy, with cheerfulness.",
+  9: "Let love be without dissimulation. Abhor that which is evil; cleave to that which is good.",
+  10: "Be kindly affectioned one to another with brotherly love; in honour preferring one another;",
+  11: "Not slothful in business; fervent in spirit; serving the Lord;",
+  12: "Rejoicing in hope; patient in tribulation; continuing instant in prayer;",
+  13: "Distributing to the necessity of saints; given to hospitality.",
+  14: "Bless them which persecute you: bless, and curse not.",
+  15: "Rejoice with them that do rejoice, and weep with them that weep.",
+  16: "Be of the same mind one toward another. Mind not high things, but condescend to men of low estate. Be not wise in your own conceits.",
+  17: "Recompense to no man evil for evil. Provide things honest in the sight of all men.",
+  18: "If it be possible, as much as lieth in you, live peaceably with all men.",
+  19: "Dearly beloved, avenge not yourselves, but rather give place unto wrath: for it is written, Vengeance is mine; I will repay, saith the Lord.",
+  20: "Therefore if thine enemy hunger, feed him; if he thirst, give him drink: for in so doing thou shalt heap coals of fire on his head.",
+  21: "Be not overcome of evil, but overcome evil with good."
+};
+const BOOK = "Romans 12";
+</script>
+<script src="../assets/deck.js"></script>
+</body>
+</html>

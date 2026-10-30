@@ -1,0 +1,611 @@
+<!doctype html>
+<html lang="en" data-theme="night">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Romans 11</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="../assets/fonts.css">
+<link rel="stylesheet" href="../assets/deck.css">
+<link rel="stylesheet" href="../assets/themes.css">
+<style>
+/* ro11-book: where we are in Romans. Sixteen chapter tabs (.ro11-ch, --k; .here is this chapter) over the letter's five sections
+   (.ro11-part, --k; .now is this section). Each chapter is two grid columns, so a section can start halfway through a chapter. */
+.ro11-book { display: grid; grid-template-columns: repeat(32, 1fr); gap: 8px 0; margin: .6em 0 1em; }
+.ro11-ch { grid-column: span 2; margin: 0 2px; padding: .25em 0 .3em; text-align: center; border-radius: 6px 6px 0 0; border-bottom: 3px solid var(--line-strong);
+  font: 700 clamp(.82rem, .74rem + .35vw, 1.08rem) var(--sans); color: var(--ink-soft); opacity: 0; transition: opacity .4s ease; transition-delay: calc(var(--k, 0) * 55ms + 200ms); }
+.slide.active .ro11-ch { opacity: 1; }
+.ro11-ch.here { background: var(--accent); border-bottom-color: var(--accent); color: var(--on-accent); }
+.ro11-part { --c: var(--accent); margin: 0 3px; padding: .5em .65em .6em; border-top: 6px solid var(--c); border-radius: 0 0 10px 10px;
+  background: color-mix(in srgb, var(--c) 9%, transparent); opacity: 0; transform: translateY(10px); transition: opacity .6s ease, transform .6s ease; transition-delay: calc(var(--k, 0) * 300ms + 900ms); }
+.slide.active .ro11-part { opacity: 1; transform: none; }
+.ro11-part small { display: block; font: 700 clamp(.72rem, .68rem + .22vw, .92rem) var(--sans); color: var(--ink-soft); }
+.ro11-part b { display: block; margin-top: .1em; font: 600 clamp(1rem, .86rem + .65vw, 1.5rem)/1.1 var(--serif); color: var(--ink); }
+.ro11-part.now { background: color-mix(in srgb, var(--c) 22%, transparent); box-shadow: inset 0 0 0 2px var(--c); }
+.ro11-p1 { --c: var(--danger); grid-column: 1 / 6; } .ro11-p2 { grid-column: 6 / 11; } .ro11-p3 { --c: var(--cool); grid-column: 11 / 17; }
+.ro11-p4 { --c: var(--leather-light); grid-column: 17 / 23; } .ro11-p5 { --c: var(--wine); grid-column: 23 / 33; }
+@media (max-width: 640px) {
+  .ro11-book { grid-template-columns: 1fr; gap: 6px; }
+  .ro11-ch { display: none; }
+  .ro11-part { grid-column: 1; margin: 0; border-top: 0; border-left: 6px solid var(--c); border-radius: 0 10px 10px 0; }
+}
+
+/* ro11-olive: the olive tree of 11:16-24. Natural branches (.ro11-n1, .ro11-n2) break off and fall on a .ro11-break step,
+   a wild branch (.ro11-wild) is grafted in on a .ro11-graft step, and the natural branches go back on a .ro11-again step. */
+.ro11-ground { fill: color-mix(in srgb, var(--ink-soft) 16%, transparent); }
+.ro11-root { fill: none; stroke: var(--leather-light); stroke-width: 4; stroke-linecap: round; opacity: .75; }
+.ro11-trunk { fill: var(--leather); stroke: var(--leather-light); stroke-width: 2.5; }
+.ro11-wood { fill: none; stroke: var(--leather-light); stroke-width: 6; stroke-linecap: round; }
+.ro11-leaf ellipse { fill: color-mix(in srgb, var(--cool) 60%, var(--ink-soft)); }
+.ro11-wild .ro11-wood { stroke: var(--warm); stroke-width: 5; }
+.ro11-wild ellipse { fill: var(--accent); }
+.ro11-bind { fill: var(--accent-hot); }
+.ro11-scar { fill: var(--danger); opacity: 0; transition: opacity .8s ease 1s; }
+.ro11-lab { fill: var(--ink-soft); font-size: 17px; }
+.ro11-lab.hot { fill: var(--accent-hot); font-weight: 700; }
+.ro11-lab.kjv { font-family: var(--serif); font-style: italic; }
+.ro11-n1, .ro11-n2 { transform-box: fill-box; transform-origin: center; transition: transform 1.6s cubic-bezier(.55,0,.6,1), opacity 1.6s ease; }
+.ro11-wild { opacity: 0; transform: translate(-40px, -26px); transition: opacity 1.2s ease, transform 1.4s cubic-bezier(.3,.7,.3,1); }
+.ro11-say { opacity: 0; transition: opacity .8s ease .9s; }
+.slide:has(.ro11-break.on) .ro11-n1 { transform: translate(-80px, 122px) rotate(-12deg); opacity: .45; }
+.slide:has(.ro11-break.on) .ro11-n2 { transform: translate(70px, 112px) rotate(14deg); opacity: .45; }
+.slide:has(.ro11-break.on) .ro11-scar, .slide:has(.ro11-break.on) .ro11-say.s1 { opacity: 1; }
+.slide:has(.ro11-graft.on) .ro11-wild { opacity: 1; transform: none; }
+.slide:has(.ro11-graft.on) .ro11-say.s2 { opacity: 1; }
+.slide:has(.ro11-again.on) .ro11-n1, .slide:has(.ro11-again.on) .ro11-n2 { transform: none; opacity: 1; }
+.slide:has(.ro11-again.on) .ro11-scar, .slide:has(.ro11-again.on) .ro11-say.s1 { opacity: 0; transition-delay: 0s; }
+.slide:has(.ro11-again.on) .ro11-say.s3 { opacity: 1; }
+@media (max-width: 600px) { .ro11-lab { font-size: 22px; } }
+
+/* ro11-shut: 11:32, Jew and Gentile shut up together in one cell of unbelief; a .ro11-open step opens the door: mercy upon all */
+.ro11-cell { fill: color-mix(in srgb, var(--surface-2) 70%, transparent); transition: fill 1.2s ease; }
+.ro11-wall { fill: none; stroke: var(--line-strong); stroke-width: 7; stroke-linecap: round; }
+.ro11-g circle { fill: var(--warm); transition: fill .8s ease; transition-delay: calc(var(--k, 0) * 40ms + .8s); }
+.ro11-j circle { fill: var(--cool); transition: fill .8s ease; transition-delay: .8s; }
+.ro11-door { stroke: var(--ink-soft); stroke-width: 6; stroke-linecap: round; transition: transform 1.2s ease, opacity 1.2s ease; }
+.ro11-out { fill: none; stroke: var(--accent); stroke-width: 6; stroke-linecap: round; stroke-linejoin: round; stroke-dasharray: 1; stroke-dashoffset: 1; transition: stroke-dashoffset 1.2s ease 1s; }
+.ro11-mercy { fill: var(--accent-hot); font: italic 600 22px var(--serif); opacity: 0; transition: opacity .8s ease 1.6s; }
+.ro11-shutlab { fill: var(--ink-soft); font-size: 15px; }
+.ro11-shuttitle { fill: var(--danger); font: italic 600 21px var(--serif); }
+.slide:has(.ro11-open.on) .ro11-door { transform: translateY(-74px); opacity: 0; }
+.slide:has(.ro11-open.on) .ro11-out { stroke-dashoffset: 0; }
+.slide:has(.ro11-open.on) .ro11-mercy { opacity: 1; }
+.slide:has(.ro11-open.on) .ro11-cell { fill: color-mix(in srgb, var(--accent) 16%, transparent); }
+.slide:has(.ro11-open.on) .ro11-g circle, .slide:has(.ro11-open.on) .ro11-j circle { fill: var(--accent-hot); }
+@media (max-width: 600px) { .ro11-shutlab { font-size: 20px; } .ro11-mercy { font-size: 26px; } }
+
+/* ro11-deep: "O the depth": a plumb line let down into the night that never touches bottom (night in every theme: --on-glow with --glow) */
+.ro11-night { fill: var(--on-glow); }
+.ro11-band { fill: var(--glow); }
+.ro11-line { fill: none; stroke: var(--glow); stroke-width: 2; stroke-dasharray: 1; stroke-dashoffset: 1; opacity: .8; }
+.slide.active .ro11-line { stroke-dashoffset: 0; transition: stroke-dashoffset 5s cubic-bezier(.3,.1,.5,1) .4s; }
+.ro11-bob { fill: var(--warm); }
+.slide.active .ro11-bob { animation: ro11-sink 5s cubic-bezier(.3,.1,.5,1) .4s forwards; }
+@keyframes ro11-sink { 0% { transform: translateY(0); opacity: 1; } 80% { opacity: 1; } 100% { transform: translateY(300px); opacity: 0; } }
+.ro11-deepword { fill: var(--glow); font: italic 600 24px var(--serif); opacity: 0; transition: opacity .9s ease; transition-delay: var(--at, 1s); }
+.ro11-deepword.end { fill: var(--warm); font-size: 22px; }
+.slide.active .ro11-deepword { opacity: 1; }
+@media (max-width: 600px) { .ro11-deepword { font-size: 28px; } }
+</style>
+</head>
+<body>
+<main class="deck" id="deck">
+
+<!-- ======================= OPENING ======================= -->
+<section class="slide title">
+  <div class="inner">
+    <div class="emblem rise"></div>
+    <h1 class="rise" style="--d:1">Romans 11</h1>
+    <p class="sub rise" style="--d:3">Graffed in</p>
+    <p class="tag rise" style="--d:5">Has God given up on Israel? Not at all. A faithful few, an olive tree with wild branches grafted in by faith, and a mercy too deep to measure.</p>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise" style="--d:1">Where we are in Romans</h2>
+    <div class="ro11-book" role="img" aria-label="Romans in five sections: chapters 1 to 3, sin; 3:21 to chapter 5, justified by faith; 6 to 8, new life; 9 to 11, Israel and the nations; 12 to 16, living it out. We are in chapter 11, the last chapter of the section on Israel and the nations.">
+      <span class="ro11-ch" style="--k:0">1</span><span class="ro11-ch" style="--k:1">2</span><span class="ro11-ch" style="--k:2">3</span><span class="ro11-ch" style="--k:3">4</span>
+      <span class="ro11-ch" style="--k:4">5</span><span class="ro11-ch" style="--k:5">6</span><span class="ro11-ch" style="--k:6">7</span><span class="ro11-ch" style="--k:7">8</span>
+      <span class="ro11-ch" style="--k:8">9</span><span class="ro11-ch" style="--k:9">10</span><span class="ro11-ch here" style="--k:10">11</span><span class="ro11-ch" style="--k:11">12</span>
+      <span class="ro11-ch" style="--k:12">13</span><span class="ro11-ch" style="--k:13">14</span><span class="ro11-ch" style="--k:14">15</span><span class="ro11-ch" style="--k:15">16</span>
+      <div class="ro11-part ro11-p1" style="--k:0"><small>1–3</small><b>Sin</b></div>
+      <div class="ro11-part ro11-p2" style="--k:1"><small>3:21–5</small><b>Justified by faith</b></div>
+      <div class="ro11-part ro11-p3" style="--k:2"><small>6–8</small><b>New life</b></div>
+      <div class="ro11-part ro11-p4 now" style="--k:3"><small>9–11</small><b>Israel and the nations</b></div>
+      <div class="ro11-part ro11-p5" style="--k:4"><small>12–16</small><b>Living it out</b></div>
+    </div>
+    <p class="note rise" style="--d:3">Chapters 9 to 11 answer a hard question. The gospel came through Israel, yet most of Paul's own people had turned it down. Had God's promises to them failed? Had He given up on them?</p>
+    <p class="note step">Chapter 10 ended with God holding out His hands <em>“all day long”</em> to a people who wouldn't come. Chapter 11 is Paul's answer: God is not finished with them. Then it ends in worship.</p>
+  </div>
+</section>
+
+<section class="slide watch">
+  <div class="inner">
+    <h2 class="rise">Things to watch for</h2>
+    <p class="lede rise" style="--d:1">Keep these questions in the back of your mind as we read. We'll come back to every one of them at the end.</p>
+    <ol class="seeds">
+      <li class="step"><span class="topic">Not alone</span><span class="seed-q">What did God tell Elijah when he thought he was alone?</span></li>
+      <li class="step"><span class="topic">Grace</span><span class="seed-q">Why can't grace and works be mixed?</span></li>
+      <li class="step"><span class="topic">The olive tree</span><span class="seed-q">Why were some branches broken off, and how do the grafted ones stand?</span></li>
+      <li class="step"><span class="topic">Pride</span><span class="seed-q">Why must a grafted branch not boast?</span></li>
+      <li class="step"><span class="topic">God's promises</span><span class="seed-q">Does God take back His gifts and calling?</span></li>
+      <li class="step"><span class="topic">Mercy</span><span class="seed-q">Why did God conclude them all in unbelief?</span></li>
+    </ol>
+  </div>
+</section>
+
+<!-- ======================= PART ONE: A REMNANT ======================= -->
+<section class="slide part">
+  <div class="inner">
+    <p class="part-n rise">Part one</p>
+    <h2 class="rise" style="--d:1">Seven thousand men</h2>
+    <p class="range rise" style="--d:2">Verses 1–10</p>
+    <div class="rule"></div>
+    <p class="hook rise" style="--d:4">Has God thrown His people away? Paul points to himself, and to a prophet who thought he was the last one left.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="1-2" data-hl="Hath God cast away his people? God forbid|God hath not cast away his people which he foreknew"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="1" data-hl="For I also am an Israelite"></blockquote>
+    <h2 class="rise" style="--d:1">Exhibit A: Paul</h2>
+    <p class="note rise" style="--d:2"><em>God forbid</em> is Paul's strongest “no”: may it never be! His first proof is himself, a Jew of the tribe of <em>Benjamin</em> who once hunted Christians down (Acts 9). If God had given up on Israel, He'd have started with Saul of Tarsus. Instead He turned him around.</p>
+    <p class="note step"><em>Which he foreknew</em>: God knew this people long before, and chose them and made them promises. Nothing they did surprised Him, and He isn't going to drop them now.</p>
+    <p class="note step"><em>Wot ye not</em> means <em>don't you know</em>. <em>Elias</em> is Elijah, on the lowest day of his life.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="3-4" data-hl="I am left alone, and they seek my life|I have reserved to myself seven thousand men"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise">“I am left alone”</h2>
+    <p class="note rise" style="--d:1">Elijah had just seen God send fire from heaven on Mount Carmel. Then Queen Jezebel swore to kill him, and he ran into the wilderness:</p>
+    <blockquote class="quote rise" style="--d:2"><p>“…and he requested for himself that he might die; and said, It is enough; now, O LORD, take away my life; for I am not better than my fathers.”</p><cite>1 Kings 19:4</cite></blockquote>
+    <div class="dots rows step" data-dots="70" style="--cols:14;--dot:var(--cool);--pace:30ms;--wait:0ms;max-width:26rem" aria-label="Seventy dots, each standing for a hundred men: seven thousand in all."></div>
+    <p class="dots-cap step">God's answer: each dot is 100 men, seven thousand who never bowed to Baal</p>
+    <p class="note step">Isolation tells a man the lie it told Elijah: <em>I'm the only one.</em> That's where relapse lives. God had seven thousand men Elijah had never met. You're not alone either.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="5-6" data-hl="a remnant according to the election of grace|if by grace, then is it no more of works"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise">A remnant, by grace</h2>
+    <p class="note rise" style="--d:1">A <em>remnant</em> is what's left over. In Elijah's day and in Paul's, most of Israel had turned away, but some believed: Paul himself, and thousands of Jews at Pentecost.</p>
+    <p class="note step"><em>The election of grace</em>: God chose to save men by grace, and those who receive it by faith (11:20) are His. It was never a reward for the best behaved.</p>
+    <div class="columns">
+      <div class="col law step"><p class="who">If it's earned</p><h3>Works</h3><p>Then it's wages. God owes you, and you can lose it on your next bad day.</p></div>
+      <div class="col grace step"><p class="who">If it's given</p><h3>Grace</h3><p>Then it's a gift. You can't earn it on a good day, or wreck it on a bad one.</p></div>
+    </div>
+    <p class="note step">Mix the two and you lose grace altogether. <em>“Otherwise grace is no more grace.”</em></p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="7-8" data-hl="the election hath obtained it, and the rest were blinded|eyes that they should not see, and ears that they should not hear"></section>
+
+<section class="slide verse" data-v="9-10" data-hl="Let their table be made a snare"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise">The rest were blinded</h2>
+    <p class="note rise" style="--d:1">A hard verse; read it slowly. Israel <em>sought</em> to be right with God by keeping the law, and wouldn't take it as a gift (9:31–32). Those who took it by faith got it. The rest were blinded.</p>
+    <div class="mirror">
+      <div class="step"><span>They</span><span class="arrow">→</span><span class="word">would not see</span><span class="arrow">→</span><span>the Christ in front of them</span><small>“All day long I have stretched forth my hands” (10:21)</small></div>
+      <div class="step"><span>God</span><span class="arrow">→</span><span class="word">gave them what they chose</span><span class="arrow">→</span><span>“eyes that they should not see”</span><small>As He did in Moses' day and Isaiah's (Deuteronomy 29:4, Isaiah 29:10)</small></div>
+    </div>
+    <p class="note step">God doesn't blind men who want to see; He confirms a refusal already made. David's <em>table</em> turned <em>snare</em>? Their religion, God's good gifts, became the trap because they trusted it instead of Him. Anything you lean on in place of Christ can. But watch for <em>“until”</em> in verse 25.</p>
+  </div>
+</section>
+
+<!-- ======================= PART TWO: THE OLIVE TREE ======================= -->
+<section class="slide part">
+  <div class="inner">
+    <p class="part-n rise">Part two</p>
+    <h2 class="rise" style="--d:1">The olive tree</h2>
+    <p class="range rise" style="--d:2">Verses 11–24</p>
+    <div class="rule"></div>
+    <p class="hook rise" style="--d:4">Israel stumbled, and the gospel ran out to the nations. Then a picture every farmer knew: branches broken off, and a wild one grafted in.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="11-12" data-hl="Have they stumbled that they should fall? God forbid|through their fall salvation is come unto the Gentiles|how much more their fulness"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <div class="split">
+      <div class="stage">
+        <svg data-world viewBox="180 110 660 420" data-towns="Jerusalem*:l, Antioch:t, Antioch in Pisidia:t, Ephesus:l, Corinth:l, Philippi:t, Rome!:t" role="img" aria-label="A map of the Roman world from Rome to Jerusalem. Paul's three journeys are drawn out from Antioch: the first through Cyprus and Galatia, the second to Philippi, Athens and Corinth, the third through Ephesus and Greece. Rome pulses in the west.">
+          <path class="map-route j1" data-journey="1"/>
+          <path class="map-route j2" data-journey="2"/>
+          <path class="map-route j3" data-journey="3"/>
+        </svg>
+      </div>
+      <div>
+        <h2 class="rise" style="--d:1">Out to the nations</h2>
+        <p class="note rise" style="--d:2">Paul saw it in city after city. He went to the synagogue first; most of the Jews turned him away, and the <em>Gentiles</em>, everyone who isn't a Jew, believed. <em>“Lo, we turn to the Gentiles”</em> (Acts 13:46).</p>
+        <p class="note step">Israel's <em>no</em> sent the gospel out to Galatia, Greece, and Rome. That's how most of us came to hear it.</p>
+        <p class="note step">But they <em>stumbled</em>; they didn't fall for good. Paul hopes they'll see Gentiles enjoying their Messiah and want Him back: <em>provoke them to jealousy</em>.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="slide verse" data-v="13-15" data-hl="I am the apostle of the Gentiles|provoke to emulation them which are my flesh, and might save some of them|life from the dead"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise">A stumble, not the end</h2>
+    <div class="stage">
+      <svg class="curve" viewBox="0 0 620 300" style="max-height:44vh" role="img" aria-label="A line that starts level, falls where Israel stumbled, keeps going as salvation comes to the Gentiles, then rises: provoke to jealousy, their fulness, and at the top, life from the dead.">
+        <line class="curve-base" x1="10" y1="90" x2="610" y2="90"/>
+        <path class="curve-line" pathLength="1" d="M20 90 C 90 90, 120 160, 170 215 C 205 252, 240 262, 275 255 C 330 244, 370 200, 410 150 C 455 96, 510 52, 590 34"/>
+        <g class="curve-pt low" style="--at:1.1s"><circle cx="170" cy="215" r="9"/><text x="156" y="222" text-anchor="end">they stumbled (11)</text></g>
+        <g class="curve-pt" style="--at:1.7s"><circle cx="275" cy="255" r="8"/><text x="275" y="290" text-anchor="middle">salvation to the Gentiles (11)</text></g>
+        <g class="curve-pt" style="--at:2.3s"><circle cx="396" cy="167" r="8"/><text x="412" y="178">provoke them to jealousy (14)</text></g>
+        <g class="curve-pt" style="--at:2.8s"><circle cx="470" cy="85" r="8"/><text x="456" y="72" text-anchor="end">their fulness (12)</text></g>
+        <g class="curve-pt high" style="--at:3.4s"><circle cx="590" cy="34" r="10"/><text class="q" x="572" y="20" text-anchor="end">“life from the dead” (15)</text></g>
+      </svg>
+    </div>
+    <p class="note step"><em>The apostle of the Gentiles</em> <em>magnifies his office</em>, makes the most of it, hoping for <em>“emulation”</em>: his own people wanting what the Gentiles have.</p>
+    <p class="note step">If God could bring riches for the world out of a stumble, a fall is not the end of your story either. That's no reason to fall. It's a reason not to stay down.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="16-18" data-hl="if the root be holy, so are the branches|thou, being a wild olive tree, wert graffed in among them|thou bearest not the root, but the root thee"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="16"></blockquote>
+    <h2 class="rise" style="--d:1">The root and the branches</h2>
+    <p class="note rise" style="--d:2">Two pictures. The <em>firstfruit</em> was the first bit of dough given to God; that made the whole <em>lump</em> holy. The <em>root</em> is the same idea: the fathers, Abraham, Isaac and Jacob, and God's promises to them. What grows from a holy root belongs to God.</p>
+    <p class="note step">The olive tree is Israel's own picture; God once called them <em>“A green olive tree”</em> (Jeremiah 11:16). To <em>graff</em> is to graft: cut a slit in a living tree, set in a branch from somewhere else, and bind it until it grows in and lives on the tree's sap, its <em>fatness</em>.</p>
+    <p class="note step">Gentile believers are that wild branch. Everything we have, the promises, the Scriptures, the Messiah Himself, came to us through Israel's root. <em>“Thou bearest not the root, but the root thee.”</em> The branch doesn't hold up the tree.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="19-21" data-hl="because of unbelief they were broken off, and thou standest by faith|Be not highminded, but fear"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="20" data-hl="because of unbelief they were broken off, and thou standest by faith"></blockquote>
+    <h2 class="rise" style="--d:1">Don't look down on the branch on the ground</h2>
+    <p class="note rise" style="--d:2">The Gentile reader is tempted to brag: <em>they were broken off so I could be put in.</em> Paul says <em>“Well;”</em>, true enough, but think about why. They were broken off <em>because of unbelief</em>. You stand <em>by faith</em>. Not because you're better. Faith is just receiving what God gives. Nobody gets to brag about taking a gift.</p>
+    <blockquote class="quote step"><p>“Wherefore let him that thinketh he standeth take heed lest he fall.”</p><cite>1 Corinthians 10:12</cite></blockquote>
+    <p class="note step"><em>Highminded</em> is proud, looking down on others. In recovery it's the man with two years clean who sneers at the guy who used last weekend. That's exactly the pride that sets a man up to fall. Stay humble. You're standing on a gift too.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="22-24" data-hl="Behold therefore the goodness and severity of God|God is able to graff them in again|how much more shall these, which be the natural branches, be graffed into their own olive tree"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <div class="split">
+      <div class="stage">
+        <svg viewBox="0 40 600 410" role="img" aria-label="An olive tree with its roots in the ground. On a step, two of its natural branches break off and fall to the ground: because of unbelief. On the next step, a wild branch is grafted into the trunk: thou standest by faith. On the last step, the broken branches are grafted back into their own tree.">
+          <path class="ro11-ground" d="M30 388 C 150 366, 450 366, 570 388 C 450 404, 150 404, 30 388 Z"/>
+          <path class="ro11-root" d="M290 380 C 270 400, 230 410, 190 418 M300 382 C 296 404, 290 420, 278 436 M318 382 C 330 402, 360 414, 410 420 M330 380 C 350 392, 390 396, 430 400"/>
+          <path class="ro11-trunk" d="M276 382 C 284 340, 282 300, 288 262 C 292 236, 294 220, 297 204 L 315 204 C 318 225, 326 250, 331 280 C 336 320, 336 350, 344 382 Z"/>
+          <g class="ro11-leaf"><path class="ro11-wood" d="M300 212 C 280 170, 250 140, 212 112"/><ellipse cx="272" cy="182" rx="12" ry="4.5" transform="rotate(-161 272 182)"/><ellipse cx="277" cy="159" rx="12" ry="4.5" transform="rotate(-95 277 159)"/><ellipse cx="253" cy="159" rx="12" ry="4.5" transform="rotate(-168 253 159)"/><ellipse cx="254" cy="135" rx="12" ry="4.5" transform="rotate(-102 254 135)"/><ellipse cx="230" cy="138" rx="12" ry="4.5" transform="rotate(-175 230 138)"/><ellipse cx="229" cy="113" rx="12" ry="4.5" transform="rotate(-107 229 113)"/><ellipse cx="207" cy="119" rx="12" ry="4.5" transform="rotate(-179 207 119)"/></g>
+          <g class="ro11-leaf"><path class="ro11-wood" d="M314 212 C 340 160, 372 128, 410 104"/><ellipse cx="332" cy="165" rx="12" ry="4.5" transform="rotate(-89 332 165)"/><ellipse cx="357" cy="162" rx="12" ry="4.5" transform="rotate(-15 357 162)"/><ellipse cx="355" cy="137" rx="12" ry="4.5" transform="rotate(-81 355 137)"/><ellipse cx="379" cy="138" rx="12" ry="4.5" transform="rotate(-7 379 138)"/><ellipse cx="380" cy="114" rx="12" ry="4.5" transform="rotate(-73 380 114)"/><ellipse cx="404" cy="119" rx="12" ry="4.5" transform="rotate(0 404 119)"/><ellipse cx="405" cy="96" rx="12" ry="4.5" transform="rotate(-67 405 96)"/></g>
+          <g class="ro11-leaf"><path class="ro11-wood" d="M306 206 C 298 150, 318 108, 306 62"/><ellipse cx="296" cy="158" rx="12" ry="4.5" transform="rotate(-121 296 158)"/><ellipse cx="315" cy="142" rx="12" ry="4.5" transform="rotate(-49 315 142)"/><ellipse cx="299" cy="124" rx="12" ry="4.5" transform="rotate(-119 299 124)"/><ellipse cx="318" cy="109" rx="12" ry="4.5" transform="rotate(-51 318 109)"/><ellipse cx="301" cy="92" rx="12" ry="4.5" transform="rotate(-126 301 92)"/><ellipse cx="318" cy="74" rx="12" ry="4.5" transform="rotate(-63 318 74)"/><ellipse cx="297" cy="64" rx="12" ry="4.5" transform="rotate(-140 297 64)"/></g>
+          <g class="ro11-leaf"><path class="ro11-wood" d="M322 236 C 360 215, 400 195, 440 160"/><ellipse cx="352" cy="209" rx="12" ry="4.5" transform="rotate(-64 352 209)"/><ellipse cx="375" cy="217" rx="12" ry="4.5" transform="rotate(5 375 217)"/><ellipse cx="380" cy="193" rx="12" ry="4.5" transform="rotate(-67 380 193)"/><ellipse cx="404" cy="199" rx="12" ry="4.5" transform="rotate(1 404 199)"/><ellipse cx="408" cy="174" rx="12" ry="4.5" transform="rotate(-71 408 174)"/><ellipse cx="434" cy="177" rx="12" ry="4.5" transform="rotate(-4 434 177)"/><ellipse cx="434" cy="153" rx="12" ry="4.5" transform="rotate(-76 434 153)"/></g>
+          <ellipse class="ro11-scar" cx="288" cy="266" rx="5" ry="7"/>
+          <ellipse class="ro11-scar" cx="331" cy="280" rx="5" ry="7"/>
+          <g class="ro11-leaf ro11-n1"><path class="ro11-wood" d="M287 268 C 250 246, 210 236, 160 222"/><ellipse cx="249" cy="259" rx="12" ry="4.5" transform="rotate(-193 249 259)"/><ellipse cx="241" cy="237" rx="12" ry="4.5" transform="rotate(-125 241 237)"/><ellipse cx="221" cy="249" rx="12" ry="4.5" transform="rotate(-197 221 249)"/><ellipse cx="210" cy="227" rx="12" ry="4.5" transform="rotate(-128 210 227)"/><ellipse cx="189" cy="239" rx="12" ry="4.5" transform="rotate(-199 189 239)"/><ellipse cx="177" cy="217" rx="12" ry="4.5" transform="rotate(-129 177 217)"/><ellipse cx="158" cy="231" rx="12" ry="4.5" transform="rotate(-199 158 231)"/></g>
+          <g class="ro11-leaf ro11-n2"><path class="ro11-wood" d="M332 282 C 372 260, 414 244, 460 226"/><ellipse cx="365" cy="255" rx="12" ry="4.5" transform="rotate(-60 365 255)"/><ellipse cx="387" cy="265" rx="12" ry="4.5" transform="rotate(11 387 265)"/><ellipse cx="395" cy="242" rx="12" ry="4.5" transform="rotate(-58 395 242)"/><ellipse cx="418" cy="252" rx="12" ry="4.5" transform="rotate(13 418 252)"/><ellipse cx="427" cy="229" rx="12" ry="4.5" transform="rotate(-57 427 229)"/><ellipse cx="450" cy="240" rx="12" ry="4.5" transform="rotate(14 450 240)"/><ellipse cx="457" cy="218" rx="12" ry="4.5" transform="rotate(-56 457 218)"/></g>
+          <g class="ro11-wild"><path class="ro11-wood" d="M292 236 C 256 208, 222 190, 176 172"/><ellipse cx="255" cy="221" rx="9" ry="3.5" transform="rotate(-183 255 221)"/><ellipse cx="251" cy="197" rx="9" ry="3.5" transform="rotate(-115 251 197)"/><ellipse cx="229" cy="206" rx="9" ry="3.5" transform="rotate(-187 229 206)"/><ellipse cx="223" cy="183" rx="9" ry="3.5" transform="rotate(-119 223 183)"/><ellipse cx="201" cy="192" rx="9" ry="3.5" transform="rotate(-191 201 192)"/><ellipse cx="193" cy="169" rx="9" ry="3.5" transform="rotate(-123 193 169)"/><ellipse cx="173" cy="180" rx="9" ry="3.5" transform="rotate(-194 173 180)"/><rect class="ro11-bind" x="281" y="227" width="16" height="11" rx="3" transform="rotate(38 289 232)"/></g>
+          <text class="ro11-lab" x="300" y="440" text-anchor="middle">the root: God's promises to the fathers</text>
+          <g class="ro11-say s1"><text class="ro11-lab hot" x="20" y="306">broken off</text><text class="ro11-lab kjv" x="20" y="328">“because of unbelief”</text></g>
+          <g class="ro11-say s2"><text class="ro11-lab hot" x="14" y="142">graffed in</text><text class="ro11-lab kjv" x="14" y="164">“thou standest</text><text class="ro11-lab kjv" x="14" y="186">by faith”</text></g>
+          <g class="ro11-say s3"><text class="ro11-lab hot" x="590" y="300" text-anchor="end">graffed in again</text><text class="ro11-lab kjv" x="590" y="322" text-anchor="end">“God is able”</text></g>
+        </svg>
+      </div>
+      <div>
+        <h2 class="rise" style="--d:1">Broken off, graffed in</h2>
+        <p class="note step ro11-break">Natural branches, Jews by birth, <em>broken off</em>. Not because they were Jews, but <em>“because of unbelief”</em>.</p>
+        <p class="note step ro11-graft">A wild branch, a Gentile with no claim on this tree, set in among them, living on the root. <em>“Contrary to nature”</em>: farmers graft good branches onto wild trees, never the other way. Grace is like that.</p>
+        <p class="note step ro11-again">And the broken ones? <em>“If they abide not still in unbelief,”</em> they go back in. Putting a branch back into its own tree is easier than what God already did for us.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise">Goodness and severity</h2>
+    <div class="columns">
+      <div class="col law step"><p class="who">On them which fell</p><h3>Severity</h3><p>God is not soft on unbelief. Refusing His Son is serious, and branches really were broken off.</p></div>
+      <div class="col grace step"><p class="who">Toward thee</p><h3>Goodness</h3><p>Kindness nobody earned: a wild branch living on a root it never planted.</p></div>
+    </div>
+    <p class="note step"><em>“Otherwise thou also shalt be cut off”</em> is about whole branches: the Gentiles as a people, as he has been speaking of Israel as a people. He is not saying a man who has truly trusted Christ can lose his salvation:</p>
+    <blockquote class="quote step"><p>“And I give unto them eternal life; and they shall never perish, neither shall any man pluck them out of my hand.”</p><cite>John 10:28</cite></blockquote>
+    <p class="note step">It is a warning against pride, and against a faith that is only for show.</p>
+  </div>
+</section>
+
+<!-- ======================= PART THREE: MERCY UPON ALL ======================= -->
+<section class="slide part">
+  <div class="inner">
+    <p class="part-n rise">Part three</p>
+    <h2 class="rise" style="--d:1">Mercy upon all</h2>
+    <p class="range rise" style="--d:2">Verses 25–36</p>
+    <div class="rule"></div>
+    <p class="hook rise" style="--d:4">A mystery about Israel's future, a promise God won't take back, and a song when the argument runs out of words.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="25-27" data-hl="blindness in part is happened to Israel, until the fulness of the Gentiles be come in|And so all Israel shall be saved|when I shall take away their sins"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise" style="--d:1">Blindness in part, until…</h2>
+    <ol class="timeline" aria-label="The fathers: God's promise to Abraham, the root. About 860 BC, Elijah and the seven thousand. About AD 30 to 33, Pentecost, when thousands of Jews believe. About AD 57, Paul writes Romans: blindness in part. Today, the Gentiles still coming in. Then, only God knows when: the fulness of the Gentiles, and all Israel shall be saved.">
+      <li style="--k:0"><b>the fathers</b><span>God's promise to Abraham: the root</span><small>11:16, 28</small></li>
+      <li style="--k:1"><b>about 860 BC</b><span>Elijah and the 7,000</span><small>11:4</small></li>
+      <li style="--k:2"><b>about AD 30 to 33</b><span>Pentecost: thousands of Jews believe</span><small>Acts 2:41</small></li>
+      <li style="--k:3"><b>about AD 57</b><span>Romans: “blindness in part”</span><small>11:25</small></li>
+      <li class="lit" style="--k:4"><b>today</b><span>Gentiles still coming in</span><small>us</small></li>
+      <li class="wait" style="--k:5"><b>God knows when</b><span>“the fulness of the Gentiles”</span><small>11:25</small></li>
+      <li class="wait" style="--k:6"><b>God knows when</b><span>“all Israel shall be saved”</span><small>11:26</small></li>
+    </ol>
+    <p class="note rise" style="--d:3">A <em>mystery</em> in the Bible is a secret God has now made known. Israel's blindness is only <em>in part</em>, Jews have been coming to Christ ever since, and it lasts only <em>until</em>. Paul says plainly that a day is coming when Israel as a people turns to the <em>Deliverer</em>, Jesus, who takes away sins.</p>
+    <p class="note step">Good Bible-believing Christians differ on exactly how and when that happens, and Paul gave no dates. So we won't either. What's certain: God hasn't finished with Israel, and nobody, Jew or Gentile, is saved any other way than through the Deliverer. And <em>“wise in your own conceits”</em>? Don't be smug about any of it.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="28-29" data-hl="they are beloved for the fathers’ sakes|For the gifts and calling of God are without repentance"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise">He doesn't take it back</h2>
+    <p class="saying rise" style="--d:1">“The gifts and calling of God are <em>without repentance</em>.”</p>
+    <p class="note rise" style="--d:2"><em>Without repentance</em>: God never changes His mind about it. Israel set itself against the gospel, and God still calls them <em>beloved</em>, for the promises He made to their fathers.</p>
+    <p class="note step">If He kept faith with Israel through centuries of unbelief, He'll keep faith with you. Whatever you did yesterday, God didn't wake up this morning and cancel your salvation.</p>
+    <blockquote class="quote step"><p>“Being confident of this very thing, that he which hath begun a good work in you will perform it until the day of Jesus Christ:”</p><cite>Philippians 1:6</cite></blockquote>
+    <p class="note step">That's not permission to keep falling. It's solid ground to get up on.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="30-32" data-hl="have now obtained mercy through their unbelief|God hath concluded them all in unbelief, that he might have mercy upon all"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise">One cell, one way out</h2>
+    <div class="stage">
+      <svg viewBox="0 0 600 240" style="max-height:40vh" role="img" aria-label="One walled cell holds two groups of people, the Gentiles and Israel, shut up together under the words concluded them all in unbelief. On a step, the door slides open, everyone in the cell lights up, and a bright path leads out: mercy upon all.">
+        <text class="ro11-shuttitle" x="260" y="34" text-anchor="middle">“concluded them all in unbelief”</text>
+        <rect class="ro11-cell" x="60" y="56" width="400" height="166" rx="16"/>
+        <path class="ro11-wall" d="M460 100 V72 Q460 56 444 56 H76 Q60 56 60 72 V206 Q60 222 76 222 H444 Q460 222 460 206 V178"/>
+        <text class="ro11-shutlab" x="173" y="84" text-anchor="middle">the Gentiles (30)</text>
+        <text class="ro11-shutlab" x="357" y="84" text-anchor="middle">Israel (31)</text>
+        <g class="ro11-g"><circle cx="104" cy="112" r="8"/><circle cx="136" cy="112" r="8"/><circle cx="168" cy="112" r="8"/><circle cx="200" cy="112" r="8"/><circle cx="232" cy="112" r="8"/><circle cx="114" cy="140" r="8"/><circle cx="146" cy="140" r="8"/><circle cx="178" cy="140" r="8"/><circle cx="210" cy="140" r="8"/><circle cx="242" cy="140" r="8"/><circle cx="104" cy="168" r="8"/><circle cx="136" cy="168" r="8"/><circle cx="168" cy="168" r="8"/><circle cx="200" cy="168" r="8"/><circle cx="232" cy="168" r="8"/><circle cx="114" cy="196" r="8"/><circle cx="146" cy="196" r="8"/><circle cx="178" cy="196" r="8"/><circle cx="210" cy="196" r="8"/><circle cx="242" cy="196" r="8"/></g>
+        <g class="ro11-j"><circle cx="288" cy="112" r="8"/><circle cx="320" cy="112" r="8"/><circle cx="352" cy="112" r="8"/><circle cx="384" cy="112" r="8"/><circle cx="416" cy="112" r="8"/><circle cx="298" cy="140" r="8"/><circle cx="330" cy="140" r="8"/><circle cx="362" cy="140" r="8"/><circle cx="394" cy="140" r="8"/><circle cx="426" cy="140" r="8"/><circle cx="288" cy="168" r="8"/><circle cx="320" cy="168" r="8"/><circle cx="352" cy="168" r="8"/><circle cx="384" cy="168" r="8"/><circle cx="416" cy="168" r="8"/><circle cx="298" cy="196" r="8"/><circle cx="330" cy="196" r="8"/><circle cx="362" cy="196" r="8"/><circle cx="394" cy="196" r="8"/><circle cx="426" cy="196" r="8"/></g>
+        <g class="ro11-door"><line x1="460" y1="106" x2="460" y2="172"/><line x1="448" y1="110" x2="448" y2="168" style="stroke-width:3"/></g>
+        <path class="ro11-out" pathLength="1" d="M468 139 H 586 M572 126 L 588 139 L 572 152"/>
+        <text class="ro11-mercy" x="526" y="116" text-anchor="middle">mercy</text>
+        <text class="ro11-mercy" x="526" y="176" text-anchor="middle">upon all</text>
+      </svg>
+    </div>
+    <p class="note rise" style="--d:2"><em>Concluded</em> means shut up together, locked in. Gentiles who never knew God and Jews who had every advantage: the same cell. Nobody gets to look down on anybody.</p>
+    <p class="note step ro11-open">Why? <em>“That he might have mercy upon all”</em>: the same “all” who were shut in. Some of us know the sound of a cell door. Every man is in this one, and the only way out is mercy, offered to every one.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="33-34" data-hl="O the depth of the riches both of the wisdom and knowledge of God|how unsearchable are his judgments, and his ways past finding out"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise">“O the depth”</h2>
+    <div class="stage">
+      <svg viewBox="0 0 600 260" style="max-height:36vh" role="img" aria-label="A night sky deepening into darkness. A plumb line is let down from the top. As it sinks, the words riches, wisdom and knowledge appear beside it. The line never touches bottom, and the words past finding out appear at the bottom.">
+        <rect class="ro11-night" x="0" y="0" width="600" height="260" rx="12"/>
+        <rect class="ro11-band" x="0" y="0" width="600" height="65" rx="12" style="opacity:.14"/>
+        <rect class="ro11-band" x="0" y="65" width="600" height="65" style="opacity:.08"/>
+        <rect class="ro11-band" x="0" y="130" width="600" height="65" style="opacity:.035"/>
+        <path class="ro11-line" pathLength="1" d="M180 0 V 262"/>
+        <path class="ro11-bob" d="M174 6 L186 6 L180 22 Z"/>
+        <text class="ro11-deepword" x="210" y="48" style="--at:1s">the riches</text>
+        <text class="ro11-deepword" x="250" y="110" style="--at:2s">the wisdom</text>
+        <text class="ro11-deepword" x="290" y="172" style="--at:3s">the knowledge of God</text>
+        <text class="ro11-deepword end" x="580" y="238" text-anchor="end" style="--at:4.6s">“past finding out”</text>
+      </svg>
+    </div>
+    <p class="note step">Eleven chapters of hard thinking, and Paul ends not with one more argument but in worship. <em>Past finding out</em> is like tracks you can't follow: you see where God has been, but you can't trace every step.</p>
+    <blockquote class="quote step"><p>“For as the heavens are higher than the earth, so are my ways higher than your ways, and my thoughts than your thoughts.”</p><cite>Isaiah 55:9</cite></blockquote>
+  </div>
+</section>
+
+<section class="slide verse" data-v="35-36" data-hl="Or who hath first given to him|For of him, and through him, and to him, are all things: to whom be glory for ever. Amen."></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise">Three questions, one answer</h2>
+    <div class="asks">
+      <div class="ask step"><span class="q">“Who hath known the mind of the Lord?”</span><span class="stamp">No one</span><span class="ctx">God never had to ask anybody what He should do with Israel, or with you.</span></div>
+      <div class="ask step"><span class="q">“Who hath been his counsellor?”</span><span class="stamp">No one</span><span class="ctx">He doesn't need advice. He had this plan before any of us were born.</span></div>
+      <div class="ask step"><span class="q">“Who hath first given to him?”</span><span class="stamp">No one</span><span class="ctx">Nobody can put God in his debt. Every good thing we have came from Him first.</span></div>
+    </div>
+    <p class="note step"><em>“Of him, and through him, and to him, are all things”</em>: everything starts with God, runs on God, and ends up giving Him glory.</p>
+    <p class="note step">That's freeing. You can't earn God's favour, so you don't have to. And you can't pay Him back, so stop trying. Receive it, and give Him the glory.</p>
+  </div>
+</section>
+
+<!-- ======================= CLOSING ======================= -->
+<section class="slide remember">
+  <div class="inner">
+    <h2 class="rise">Points to remember</h2>
+    <ol class="seeds">
+      <li class="step"><span class="topic">Not alone</span><span class="seed-q">“I have reserved to myself seven thousand men” <cite>11:4</cite></span><span class="take">You're never the only one. God has His people, and He puts you among them.</span></li>
+      <li class="step"><span class="topic">Grace</span><span class="seed-q">“Otherwise grace is no more grace” <cite>11:6</cite></span><span class="take">Earned is wages; grace is a gift. Mix them and grace is gone.</span></li>
+      <li class="step"><span class="topic">The olive tree</span><span class="seed-q">“Because of unbelief they were broken off, and thou standest by faith” <cite>11:20</cite></span><span class="take">Unbelief cuts off; faith joins a man to the tree.</span></li>
+      <li class="step"><span class="topic">Pride</span><span class="seed-q">“Thou bearest not the root, but the root thee” <cite>11:18</cite></span><span class="take">You're standing on a gift. Never look down on a man who fell.</span></li>
+      <li class="step"><span class="topic">God's promises</span><span class="seed-q">“The gifts and calling of God are without repentance” <cite>11:29</cite></span><span class="take">God doesn't take back what He has given.</span></li>
+      <li class="step"><span class="topic">Mercy</span><span class="seed-q">“That he might have mercy upon all” <cite>11:32</cite></span><span class="take">Every man is in the same cell, and mercy is offered to all.</span></li>
+    </ol>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 1 of 6</p>
+      <span class="topic">Not alone</span>
+      <h2>What did God tell Elijah when he thought he was alone?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="3"></blockquote>
+      <blockquote class="quote step" data-q="4"></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>That He had kept seven thousand men who had not bowed to Baal. Elijah felt like the last faithful man, but he wasn't. In Paul's day there was a remnant too. A man who isolates believes a lie; God always has His people.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 2 of 6</p>
+      <span class="topic">Grace</span>
+      <h2>Why can't grace and works be mixed?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="6"></blockquote>
+      <blockquote class="quote step"><p>“For by grace are ye saved through faith; and that not of yourselves: it is the gift of God: Not of works, lest any man should boast.”</p><cite>Ephesians 2:8–9</cite></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>Because if salvation is earned, it isn't a gift any more; it's wages. The moment you add your works, grace stops being grace. God saves by grace, and we receive it by faith, so nobody can boast.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 3 of 6</p>
+      <span class="topic">The olive tree</span>
+      <h2>Why were some branches broken off, and how do the grafted ones stand?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="20"></blockquote>
+      <blockquote class="quote step" data-q="23"></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>The natural branches were broken off because of unbelief, not because they were Jews. The wild branches stand by faith, not because they're better. And God is able to graft the broken ones back in when they believe.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 4 of 6</p>
+      <span class="topic">Pride</span>
+      <h2>Why must a grafted branch not boast?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="18"></blockquote>
+      <blockquote class="quote step"><p>“Wherefore let him that thinketh he standeth take heed lest he fall.”</p><cite>1 Corinthians 10:12</cite></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>Because the branch doesn't hold up the root; the root holds up the branch. Everything a Gentile believer has came through Israel's root, and he stands only by faith in a gift. Pride is how a man sets himself up to fall.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 5 of 6</p>
+      <span class="topic">God's promises</span>
+      <h2>Does God take back His gifts and calling?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="29"></blockquote>
+      <blockquote class="quote step"><p>“Being confident of this very thing, that he which hath begun a good work in you will perform it until the day of Jesus Christ:”</p><cite>Philippians 1:6</cite></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>No. God never changes His mind about what He has given. He still loves Israel for the fathers' sakes, and He will finish the work He began in every believer. A bad day doesn't cancel God's promise.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 6 of 6</p>
+      <span class="topic">Mercy</span>
+      <h2>Why did God conclude them all in unbelief?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="32"></blockquote>
+      <blockquote class="quote step"><p>“Who will have all men to be saved, and to come unto the knowledge of the truth.”</p><cite>1 Timothy 2:4</cite></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>So that He might have mercy upon all. Jew and Gentile are shut up in the same unbelief, so nobody can boast and nobody is beyond reach. The way out is the same for everyone: mercy, received by faith in Jesus.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide prayer">
+  <div class="inner">
+    <div class="emblem rise"></div>
+    <h2 class="rise" style="--d:1">Prayer requests</h2>
+    <p class="ask-line rise" style="--d:2">What can we pray about for you today?</p>
+    <blockquote class="quote rise" style="--d:4"><p>“It is of the LORD’S mercies that we are not consumed, because his compassions fail not. They are new every morning: great is thy faithfulness.”</p><cite>Lamentations 3:22–23</cite></blockquote>
+  </div>
+</section>
+
+</main>
+
+<script>
+// King James Version, Romans chapter 11
+const V = {
+  1: "I say then, Hath God cast away his people? God forbid. For I also am an Israelite, of the seed of Abraham, of the tribe of Benjamin.",
+  2: "God hath not cast away his people which he foreknew. Wot ye not what the scripture saith of Elias? how he maketh intercession to God against Israel, saying,",
+  3: "Lord, they have killed thy prophets, and digged down thine altars; and I am left alone, and they seek my life.",
+  4: "But what saith the answer of God unto him? I have reserved to myself seven thousand men, who have not bowed the knee to the image of Baal.",
+  5: "Even so then at this present time also there is a remnant according to the election of grace.",
+  6: "And if by grace, then is it no more of works: otherwise grace is no more grace. But if it be of works, then is it no more grace: otherwise work is no more work.",
+  7: "What then? Israel hath not obtained that which he seeketh for; but the election hath obtained it, and the rest were blinded",
+  8: "(According as it is written, God hath given them the spirit of slumber, eyes that they should not see, and ears that they should not hear;) unto this day.",
+  9: "And David saith, Let their table be made a snare, and a trap, and a stumblingblock, and a recompence unto them:",
+  10: "Let their eyes be darkened, that they may not see, and bow down their back alway.",
+  11: "I say then, Have they stumbled that they should fall? God forbid: but rather through their fall salvation is come unto the Gentiles, for to provoke them to jealousy.",
+  12: "Now if the fall of them be the riches of the world, and the diminishing of them the riches of the Gentiles; how much more their fulness?",
+  13: "For I speak to you Gentiles, inasmuch as I am the apostle of the Gentiles, I magnify mine office:",
+  14: "If by any means I may provoke to emulation them which are my flesh, and might save some of them.",
+  15: "For if the casting away of them be the reconciling of the world, what shall the receiving of them be, but life from the dead?",
+  16: "For if the firstfruit be holy, the lump is also holy: and if the root be holy, so are the branches.",
+  17: "And if some of the branches be broken off, and thou, being a wild olive tree, wert graffed in among them, and with them partakest of the root and fatness of the olive tree;",
+  18: "Boast not against the branches. But if thou boast, thou bearest not the root, but the root thee.",
+  19: "Thou wilt say then, The branches were broken off, that I might be graffed in.",
+  20: "Well; because of unbelief they were broken off, and thou standest by faith. Be not highminded, but fear:",
+  21: "For if God spared not the natural branches, take heed lest he also spare not thee.",
+  22: "Behold therefore the goodness and severity of God: on them which fell, severity; but toward thee, goodness, if thou continue in his goodness: otherwise thou also shalt be cut off.",
+  23: "And they also, if they abide not still in unbelief, shall be graffed in: for God is able to graff them in again.",
+  24: "For if thou wert cut out of the olive tree which is wild by nature, and wert graffed contrary to nature into a good olive tree: how much more shall these, which be the natural branches, be graffed into their own olive tree?",
+  25: "For I would not, brethren, that ye should be ignorant of this mystery, lest ye should be wise in your own conceits; that blindness in part is happened to Israel, until the fulness of the Gentiles be come in.",
+  26: "And so all Israel shall be saved: as it is written, There shall come out of Sion the Deliverer, and shall turn away ungodliness from Jacob:",
+  27: "For this is my covenant unto them, when I shall take away their sins.",
+  28: "As concerning the gospel, they are enemies for your sakes: but as touching the election, they are beloved for the fathers’ sakes.",
+  29: "For the gifts and calling of God are without repentance.",
+  30: "For as ye in times past have not believed God, yet have now obtained mercy through their unbelief:",
+  31: "Even so have these also now not believed, that through your mercy they also may obtain mercy.",
+  32: "For God hath concluded them all in unbelief, that he might have mercy upon all.",
+  33: "O the depth of the riches both of the wisdom and knowledge of God! how unsearchable are his judgments, and his ways past finding out!",
+  34: "For who hath known the mind of the Lord? or who hath been his counsellor?",
+  35: "Or who hath first given to him, and it shall be recompensed unto him again?",
+  36: "For of him, and through him, and to him, are all things: to whom be glory for ever. Amen."
+};
+const BOOK = "Romans 11";
+</script>
+<script src="../assets/deck.js"></script>
+</body>
+</html>

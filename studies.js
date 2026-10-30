@@ -11072,6 +11072,97 @@ window.STUDIES = [
     }
   },
   {
+    "id": "romans-11",
+    "type": "chapter",
+    "book": "Romans",
+    "ch": 11,
+    "date": "2026-10-30",
+    "title": "Romans 11",
+    "sub": "Graffed in",
+    "about": "Has God given up on Israel? Not at all. A faithful few, an olive tree with wild branches grafted in by faith, and a mercy too deep to measure.",
+    "tags": [
+      "Israel",
+      "Grace",
+      "Faith",
+      "Pride",
+      "God's promises",
+      "Mercy"
+    ],
+    "url": "studies/romans-11.html",
+    "overview": {
+      "where": "Written from Corinth, in Greece, to the believers in Rome",
+      "when": "About AD 57, near the end of Paul's third journey",
+      "people": [
+        "paul",
+        "elijah",
+        "baal",
+        "david",
+        "abraham",
+        "jacob"
+      ],
+      "places": [
+        "israel",
+        "benjamin",
+        "sion"
+      ],
+      "story": [
+        "Has God cast away His people? God forbid. Paul, an Israelite of Benjamin, is proof; and as in Elijah's day, when God kept seven thousand who never bowed to Baal, there is a remnant saved by grace, not works (1–6).",
+        "Israel sought to be right with God and didn't obtain it; those who took it by faith did, and the rest were blinded, as Moses, Isaiah and David had written (7–10).",
+        "Israel stumbled, but did not fall for good. Their fall brought salvation to the Gentiles, and Paul, the apostle of the Gentiles, hopes it will stir his people to want it back (11–15).",
+        "The olive tree: natural branches broken off because of unbelief, a wild branch grafted in that stands by faith. Don't boast; God is able to graft them in again (16–24).",
+        "Blindness in part has come on Israel until the fulness of the Gentiles comes in, and so all Israel shall be saved. God's gifts and calling are without repentance, and He shut all men up in unbelief that He might have mercy upon all (25–32).",
+        "“O the depth of the riches both of the wisdom and knowledge of God!” Of Him, through Him and to Him are all things (33–36)."
+      ],
+      "key": {
+        "ref": "Romans 11:32",
+        "text": "For God hath concluded them all in unbelief, that he might have mercy upon all."
+      },
+      "big": "God has not given up on Israel, and He will not take back what He has promised. Every man, Jew or Gentile, is shut up in the same unbelief, and the only way out is the mercy God offers to all, received by faith."
+    }
+  },
+  {
+    "id": "romans-12",
+    "type": "chapter",
+    "book": "Romans",
+    "ch": 12,
+    "date": "2026-10-30",
+    "title": "Romans 12",
+    "sub": "A living sacrifice",
+    "about": "Eleven chapters on what God has done. Now Paul turns to Monday morning: your body, your mind, your place among God's people, and the man who did you wrong.",
+    "tags": [
+      "Surrender",
+      "Renewed mind",
+      "Humility",
+      "Spiritual gifts",
+      "Love",
+      "Enemies"
+    ],
+    "url": "studies/romans-12.html",
+    "overview": {
+      "where": "Written from Corinth, in Greece, to the believers in Rome",
+      "when": "About AD 57, some seven years before Nero turned on the Christians in Rome",
+      "people": [
+        "paul",
+        "saints-believers"
+      ],
+      "places": [
+        "rome"
+      ],
+      "story": [
+        "“Therefore”: because of the mercies of God, present your bodies a living sacrifice. Be not conformed to this world, but be transformed by the renewing of your mind (1–2).",
+        "Don't think of yourself more highly than you ought, but soberly. We are one body in Christ, with gifts that differ by grace: prophecy, ministry, teaching, exhorting, giving, leading and mercy (3–8).",
+        "Love without a mask: hate evil, hold to good, prefer one another, work hard, rejoice in hope, be patient in trouble, keep praying, share, and open your home (9–13).",
+        "Bless those who persecute you. Rejoice and weep with others, and go along with humble people (14–16).",
+        "Don't pay back evil for evil, or avenge yourself; vengeance is God's. Feed your enemy. Be not overcome of evil, but overcome evil with good (17–21)."
+      ],
+      "key": {
+        "ref": "Romans 12:2",
+        "text": "And be not conformed to this world: but be ye transformed by the renewing of your mind, that ye may prove what is that good, and acceptable, and perfect, will of God."
+      },
+      "big": "Grace comes first; then a forgiven man gives God his whole self. He is changed from the inside by a renewed mind, finds his place in the body, loves for real, and answers evil with good."
+    }
+  },
+  {
     "id": "romans-13",
     "type": "chapter",
     "book": "Romans",
