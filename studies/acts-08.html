@@ -1,0 +1,628 @@
+<!doctype html>
+<html lang="en" data-theme="slate">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Acts 8</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="../assets/fonts.css">
+<link rel="stylesheet" href="../assets/deck.css">
+<link rel="stylesheet" href="../assets/themes.css">
+<style>
+/* ac08-lab: a label on a map, sized with the crop (--u is set by deck.js for the world map) */
+.ac08-lab { fill: var(--accent-hot); font-size: calc(22px * var(--u, 1)); font-weight: 700; }
+.ac08-lab.soft { fill: var(--ink-soft); font-weight: 400; }
+.ac08-land { font-size: 15px; font-weight: 700; fill: var(--accent-hot); }
+
+/* ac08-rings: Acts 1:8 as ripples. The rings open outward one after another; the ring where we are is lit */
+.ac08-ring { fill: color-mix(in srgb, var(--accent) 7%, transparent); stroke: var(--line-strong); stroke-width: 2; transform-box: fill-box; transform-origin: center; transform: scale(.15); opacity: 0; }
+.slide.active .ac08-ring { animation: ac08-out 1.1s cubic-bezier(.2, .7, .2, 1) forwards; animation-delay: calc(var(--k, 0) * 650ms + 200ms); }
+@keyframes ac08-out { to { transform: scale(1); opacity: 1; } }
+.ac08-ring.now { fill: color-mix(in srgb, var(--accent) 24%, transparent); stroke: var(--accent); stroke-width: 3; }
+.ac08-core { fill: var(--accent-hot); }
+.ac08-t { fill: var(--ink); font-size: 19px; }
+.ac08-t.soft { fill: var(--ink-soft); font-size: 15px; }
+.ac08-t.hot { fill: var(--accent-hot); font-weight: 700; }
+.ac08-key { fill: color-mix(in srgb, var(--accent) 12%, transparent); stroke: var(--line-strong); stroke-width: 2; }
+.ac08-key.now { fill: color-mix(in srgb, var(--accent) 40%, transparent); stroke: var(--accent); }
+.ac08-row { opacity: 0; }
+.slide.active .ac08-row { animation: ac08-fade .8s ease forwards; animation-delay: calc(var(--k, 0) * 650ms + 700ms); }
+@keyframes ac08-fade { to { opacity: 1; } }
+@media (max-width: 600px) { .ac08-t { font-size: 24px; } .ac08-t.soft { font-size: 19px; } }
+
+/* ac08-dip: two men stand in the water; one goes under and comes up (baptism, a picture of dying and rising) */
+.ac08-water { fill: color-mix(in srgb, var(--cool) 38%, transparent); }
+.ac08-surf { fill: none; stroke: var(--cool); stroke-width: 3; stroke-linecap: round; }
+.ac08-man { fill: var(--ink); }
+.ac08-man.philip { fill: var(--ink-soft); }
+.ac08-dive { transform: translateY(0); }
+.slide.active .ac08-dive { animation: ac08-dip 6s ease-in-out .8s infinite; }
+@keyframes ac08-dip { 0%, 20% { transform: translateY(0); } 42%, 58% { transform: translateY(124px); } 80%, 100% { transform: translateY(0); } }
+.ac08-say { fill: var(--ink-soft); font-size: 17px; }
+.ac08-say.hot { fill: var(--accent-hot); font-weight: 700; }
+@media (max-width: 600px) { .ac08-say { font-size: 22px; } }
+</style>
+</head>
+<body>
+<main class="deck" id="deck">
+
+<!-- ======================= OPENING ======================= -->
+<section class="slide title">
+  <div class="inner">
+    <div class="emblem rise"></div>
+    <h1 class="rise" style="--d:1">Acts 8</h1>
+    <p class="sub rise" style="--d:3">Scattered, and sent</p>
+    <p class="tag rise" style="--d:5">Persecution drives the church out of Jerusalem, and the good news goes to Samaria and down a desert road to a man from Ethiopia.</p>
+  </div>
+</section>
+
+<section class="slide watch">
+  <div class="inner">
+    <h2 class="rise">Things to watch for</h2>
+    <p class="lede rise" style="--d:1">Keep these questions in the back of your mind as we read. We'll come back to every one of them at the end.</p>
+    <ol class="seeds">
+      <li class="step"><span class="topic">Scattered</span><span class="seed-q">What did the persecution do to the church?</span></li>
+      <li class="step"><span class="topic">Samaria</span><span class="seed-q">What happened in Samaria when Philip preached Christ?</span></li>
+      <li class="step"><span class="topic">The gift</span><span class="seed-q">What did Simon think he could buy?</span></li>
+      <li class="step"><span class="topic">Repent</span><span class="seed-q">What did Peter tell Simon to do?</span></li>
+      <li class="step"><span class="topic">Understanding</span><span class="seed-q">What was the man from Ethiopia reading, and who explained it?</span></li>
+      <li class="step"><span class="topic">Baptism</span><span class="seed-q">What happened once the man from Ethiopia believed?</span></li>
+    </ol>
+  </div>
+</section>
+
+<!-- ======================= PART ONE: SCATTERED ======================= -->
+<section class="slide part">
+  <div class="inner">
+    <p class="part-n rise">Part one</p>
+    <h2 class="rise" style="--d:1">A great persecution</h2>
+    <p class="range rise" style="--d:2">Verses 1–4</p>
+    <div class="rule"></div>
+    <p class="hook rise" style="--d:4">The church buries Stephen, Saul tries to wipe it out, and the plan backfires.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="1-3" data-hl="Saul was consenting unto his death|they were all scattered abroad throughout the regions of Judaea and Samaria|Saul, he made havock of the church"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise">Grief, and a hunter</h2>
+    <p class="note rise" style="--d:1"><em>Devout men</em> carried Stephen to his burial and <em>made great lamentation</em>: they wept out loud. Nothing in the Bible says a believer shouldn't grieve. These men loved him and buried him properly.</p>
+    <ol class="stairs down" style="--n:4" aria-label="Four steps down for Saul: consenting unto his death; made havock of the church; entering into every house; men and women committed to prison.">
+      <li style="--k:0"><b>consenting</b>to Stephen's death (8:1)</li>
+      <li style="--k:1"><b>made havock</b>of the church (8:3)</li>
+      <li style="--k:2"><b>every house</b>he entered (8:3)</li>
+      <li style="--k:3"><b>men and women</b>dragged to prison (8:3)</li>
+    </ol>
+    <p class="note step"><em>Havock</em> means wreck. <em>Haling</em> is dragging. Saul watched one killing and agreed with it, and it grew from there. A man doesn't usually fall in one step. He agrees with something small, and it gets easier each time.</p>
+    <p class="note step">He was sure he was serving God. He wasn't. The good news is that Jesus isn't done with him yet. We'll see that in Acts 9.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="4" data-hl="Therefore they that were scattered abroad went every where preaching the word"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <div class="split">
+      <div class="stage">
+        <svg viewBox="0 0 640 300" role="img" aria-label="Rings spreading outward from the middle, one after another. The smallest is Jerusalem. Then all Judaea. Then Samaria, which is lit, because that is where this chapter is. The outer ring is the uttermost part of the earth.">
+          <circle class="ac08-ring" style="--k:3" cx="150" cy="150" r="144"/>
+          <circle class="ac08-ring now" style="--k:2" cx="150" cy="150" r="108"/>
+          <circle class="ac08-ring" style="--k:1" cx="150" cy="150" r="72"/>
+          <circle class="ac08-ring" style="--k:0" cx="150" cy="150" r="36"/>
+          <circle class="ac08-core" cx="150" cy="150" r="6"/>
+          <g class="ac08-row" style="--k:0"><circle class="ac08-core" cx="336" cy="52" r="7"/><text class="ac08-t" x="356" y="50">Jerusalem</text><text class="ac08-t soft" x="356" y="70">Acts 1–7</text></g>
+          <g class="ac08-row" style="--k:1"><circle class="ac08-key" cx="336" cy="112" r="7"/><text class="ac08-t" x="356" y="110">all Judaea</text><text class="ac08-t soft" x="356" y="130">Acts 8:1</text></g>
+          <g class="ac08-row" style="--k:2"><circle class="ac08-key now" cx="336" cy="172" r="7"/><text class="ac08-t hot" x="356" y="170">Samaria</text><text class="ac08-t soft" x="356" y="190">Acts 8, today</text></g>
+          <g class="ac08-row" style="--k:3"><circle class="ac08-key" cx="336" cy="232" r="7"/><text class="ac08-t" x="356" y="230">the uttermost part</text><text class="ac08-t soft" x="356" y="250">Acts 10 and on</text></g>
+        </svg>
+      </div>
+      <div>
+        <h2 class="rise" style="--d:1">Scattered like seed</h2>
+        <blockquote class="quote rise" style="--d:2"><p>“But ye shall receive power, after that the Holy Ghost is come upon you: and ye shall be witnesses unto me both in Jerusalem, and in all Judaea, and in Samaria, and unto the uttermost part of the earth.”</p><cite>Acts 1:8</cite></blockquote>
+        <p class="note step">For seven chapters the church stayed in Jerusalem. Then persecution scattered them, <em>“except the apostles,”</em> and the plan started moving.</p>
+        <p class="note step">Who went <em>every where preaching the word</em>? Ordinary believers. Saul tried to stamp the church out and scattered it like seed.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ======================= PART TWO: SAMARIA ======================= -->
+<section class="slide part">
+  <div class="inner">
+    <p class="part-n rise">Part two</p>
+    <h2 class="rise" style="--d:1">Samaria</h2>
+    <p class="range rise" style="--d:2">Verses 5–25</p>
+    <div class="rule"></div>
+    <p class="hook rise" style="--d:4">The gospel crosses its first border, and runs into a man who thinks God's power is for sale.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="5-8" data-hl="Philip went down to the city of Samaria, and preached Christ unto them|unclean spirits, crying with loud voice, came out of many|there was great joy in that city"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <div class="split">
+      <div class="stage">
+        <svg class="map" data-land data-towns="Jerusalem:r, Samaria*:l, Sychar:r, Caesarea:r, Joppa:r" viewBox="40 150 300 270" style="max-height:52vh" role="img" aria-label="The land of Judaea and Samaria. A line runs north from Jerusalem to the city of Samaria, where Philip went to preach.">
+          <path class="map-route" pathLength="1" d="M200 382 C 198 350, 196 310, 193 274"/>
+          <text class="map-region" x="128" y="402" text-anchor="middle">JUDAEA</text>
+        </svg>
+      </div>
+      <div>
+        <h2 class="rise" style="--d:1">Philip goes down to Samaria</h2>
+        <p class="note rise" style="--d:2">This is <em>Philip</em> the evangelist, one of the seven chosen to serve in Acts 6, the same group as Stephen. He isn't one of the twelve apostles. He's a man who was handed a job and kept going when it got dangerous.</p>
+        <p class="note step"><em>Samaria</em> was the district just north of Judaea. Philip <em>went down</em>, away from Jerusalem, and <em>preached Christ.</em> People were freed of <em>unclean spirits</em> and the lame were healed. <em>“There was great joy in that city.”</em></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise">A wall comes down</h2>
+    <div class="walls">
+      <div class="rise" style="--d:1"><b>Jews</b><i aria-hidden="true"></i><b>Samaritans</b><small>“preached Christ unto them”</small></div>
+    </div>
+    <p class="note step">Jews and Samaritans had been enemies for hundreds of years. The Samaritans were descendants of mixed Israelite and foreign settlers, and they had their own temple on Mount Gerizim. Respectable Jews walked the long way around Samaria.</p>
+    <p class="note step">Jesus had already gone through it and talked to a Samaritan woman (John 4). Now Philip goes in, and the whole city comes. The people everyone had written off were the first to hear. The gospel doesn't ask who's respectable.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="9-11" data-hl="used sorcery, and bewitched the people of Samaria|giving out that himself was some great one|This man is the great power of God"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise">The biggest man in town</h2>
+    <p class="saying rise" style="--d:1">“This man is the <em>great power of God</em>”</p>
+    <p class="note step"><em>Simon</em> had been in town a long time. <em>Sorcery</em> means magic: tricks and spells, with the people's wonder as his income. He <em>bewitched</em> them (amazed and controlled them), and he gave out <em>that himself was some great one.</em> Everyone <em>“from the least to the greatest”</em> followed him.</p>
+    <p class="note step">Plenty of us know a man like that: the one with the show, the big talk, the people who need him. Some of us were him. The thing to see is what he was selling: <em>himself.</em></p>
+    <p class="note step">Then Philip arrives and talks about Someone else entirely. Hold on to that difference. It's the whole story.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="12-13" data-hl="when they believed Philip preaching the things concerning the kingdom of God|they were baptized, both men and women|Then Simon himself believed also"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise">Believed, then baptized</h2>
+    <div class="chains">
+      <div class="chain rise" style="--d:1"><span class="who-chip">Philip preached</span><span class="said">the kingdom of God, the name of Jesus Christ</span><span class="who-chip">they believed</span><span class="said">then</span><span class="who-chip">they were baptized</span></div>
+    </div>
+    <p class="note step">Look at the order: they <em>believed</em>, and <em>then</em> were baptized, <em>“both men and women.”</em> Baptism doesn't make anyone right with God. It's the step a believer takes to say, in front of everybody, <em>I belong to Jesus.</em></p>
+    <p class="note step">Even Simon <em>believed also</em> and was baptized. He stuck close to Philip, amazed at the real miracles. Keep an eye on him. The next verses show what was in his heart.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="14-17" data-hl="Samaria had received the word of God, they sent unto them Peter and John|as yet he was fallen upon none of them|they received the Holy Ghost"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise">The Spirit, in steps</h2>
+    <ol class="timeline" aria-label="Four steps as the church grows. One, Jerusalem, Acts 2, Jews. Two, Samaria, Acts 8, Samaritans. Three, Caesarea, Acts 10, Gentiles. Four, Ephesus, Acts 19, followers of John the Baptist.">
+      <li data-n="1" style="--k:0"><b>Jerusalem</b><span>Jews</span><small>Acts 2</small></li>
+      <li data-n="2" class="lit" style="--k:1"><b>Samaria</b><span>Samaritans</span><small>Acts 8</small></li>
+      <li data-n="3" style="--k:2"><b>Caesarea</b><span>Gentiles, Cornelius' house</span><small>Acts 10</small></li>
+      <li data-n="4" style="--k:3"><b>Ephesus</b><span>John's followers</span><small>Acts 19</small></li>
+    </ol>
+    <p class="note rise" style="--d:3">Verse 16 is odd: they believed and were baptized, but the Spirit <em>“was fallen upon none of them.”</em> Why wait for Peter and John? Because the apostles needed to see it, and so did the Samaritans. The Spirit coming through Jerusalem's own apostles showed everybody that these Samaritans are fully in: one church, not a rival one.</p>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise">Not a pattern to repeat</h2>
+    <p class="note rise" style="--d:1">Acts is a book of transition, and each new group gets this sign: Jews, Samaritans, Gentiles, and John's followers. It's God proving to everyone that each one belongs. It is not a pattern you have to repeat.</p>
+    <blockquote class="quote step"><p>“Now if any man have not the Spirit of Christ, he is none of his.”</p><cite>Romans 8:9</cite></blockquote>
+    <p class="note step">So if you've trusted Jesus, you have the Holy Spirit. Today, now, with no second step, no waiting, and nobody's hands needed. You don't have to chase a feeling to know it.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="18-21" data-hl="he offered them money|the gift of God may be purchased with money|thy heart is not right in the sight of God"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise">You can't buy it</h2>
+    <ul class="nots">
+      <li class="step"><span class="k">Money</span><span class="why">“Thy money perish with thee” (8:20)</span></li>
+      <li class="step"><span class="k">Power over people</span><span class="why">“Give me also this power” (8:19)</span></li>
+      <li class="step"><span class="k">A big show</span><span class="why">he'd already tried that</span></li>
+      <li class="step"><span class="k">Being good enough</span><span class="why">“Not of works, lest any man should boast”</span></li>
+      <li class="step yes"><span class="k">“The gift of God”</span><span class="why">Romans 6:23</span></li>
+    </ul>
+    <p class="note step">Simon watched the apostles lay hands on people, and he saw an opportunity. He had been the big man in town, and he wanted that power too. He didn't want God. He wanted what God could do for him.</p>
+    <blockquote class="quote step"><p>“For the wages of sin is death; but the gift of God is eternal life through Jesus Christ our Lord.”</p><cite>Romans 6:23</cite></blockquote>
+    <p class="note step">Peter's answer is blunt because Simon is about to make the biggest mistake of his life. A gift can't be bought. Trying to pay for it insults the One who paid all of it.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="22-25" data-hl="Repent therefore of this thy wickedness|the gall of bitterness, and in the bond of iniquity|Pray ye to the Lord for me"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise">Repent, and pray</h2>
+    <p class="saying rise" style="--d:1">“The gall of bitterness, and the <em>bond of iniquity</em>”</p>
+    <p class="note step"><em>Gall</em> is a bitter poison. <em>Bond</em> is a chain. Peter looks at a man who wants control and says he's already in chains himself. Plenty of us know what it is to chase power or a high and find out we're the ones being run.</p>
+    <p class="note step">But Peter doesn't write Simon off. <em>“Repent therefore... and pray God, if perhaps the thought of thine heart may be forgiven thee.”</em> There's a way out: turn around, and ask God yourself.</p>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise">Sorry, or just scared?</h2>
+    <p class="note rise" style="--d:1">Simon's answer is <em>“Pray ye to the Lord for me, that none of these things... come upon me.”</em> Asking others to pray is a good thing. But he asks them to keep the consequences off him. He doesn't say <em>I was wrong.</em> Luke doesn't tell us what happened next.</p>
+    <div class="columns">
+      <div class="col law step"><p class="who">Regret says</p><h3>“Keep it off me”</h3><p>I hope nothing bad happens. It's about the cost to me.</p></div>
+      <div class="col grace step"><p class="who">Repentance says</p><h3>“I was wrong”</h3><p>I'm turning around, and I'm asking You to forgive me.</p></div>
+    </div>
+    <blockquote class="quote step"><p>“If we confess our sins, he is faithful and just to forgive us our sins, and to cleanse us from all unrighteousness.”</p><cite>1 John 1:9</cite></blockquote>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise">Was Simon saved?</h2>
+    <p class="note rise" style="--d:1">The text says Simon <em>believed</em> and was baptized (verse 13). It also says his <em>heart is not right in the sight of God</em> (verse 21). Christians have read this two ways: a man who never really trusted Christ but followed the crowd, or a real believer who fell badly. The text doesn't settle it, so we won't pretend it does.</p>
+    <div class="columns">
+      <div class="col law step"><p class="who">Simon wanted</p><h3>What God can do for him</h3><p>Power, a name, the next show. He offered money for it.</p></div>
+      <div class="col grace step"><p class="who">A believer wants</p><h3>God Himself</h3><p>Forgiveness he can't buy, and a Saviour he can't earn.</p></div>
+    </div>
+    <p class="note step">This isn't a reason to doubt your own salvation. If you've trusted Jesus for forgiveness, you're not Simon. It's a reason to ask what you want from God: the gift, or the Giver.</p>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise">Peter and John go home by way of Samaria</h2>
+    <div class="rename">
+      <span class="old rise" style="--d:1">fire on a Samaritan village</span>
+      <span class="arrow step n2">→</span>
+      <span class="new step">the gospel in many villages</span>
+      <span class="gloss step">Verse 25 says Peter and John <em>“preached the gospel in many villages of the Samaritans.”</em> Years earlier, John had asked Jesus to call fire down on a Samaritan village that wouldn't welcome them (Luke 9:54). Now he's preaching to them.</span>
+    </div>
+    <p class="note step">Grace changes the thing a man hates most. If John can go from wanting to burn Samaria to preaching in it, there's room for the rest of us to change too.</p>
+  </div>
+</section>
+
+<!-- ======================= PART THREE: THE GAZA ROAD ======================= -->
+<section class="slide part">
+  <div class="inner">
+    <p class="part-n rise">Part three</p>
+    <h2 class="rise" style="--d:1">The desert road</h2>
+    <p class="range rise" style="--d:2">Verses 26–40</p>
+    <div class="rule"></div>
+    <p class="hook rise" style="--d:4">In the middle of a revival, an angel sends Philip away to meet one man in the desert.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="26-28" data-hl="Arise, and go toward the south|a man of Ethiopia, an eunuch of great authority|sitting in his chariot read Esaias the prophet"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <div class="split">
+      <div class="stage">
+        <svg data-world viewBox="610 400 298 176" style="max-height:58vh" data-towns="Alexandria:b, Gaza:l, Jerusalem:r" role="img" aria-label="The south-east corner of the map of the Roman world. A line comes up from the bottom edge, from Ethiopia, far up the Nile, through Egypt, along the coast to Gaza and on to Jerusalem. A ring marks the desert road between Jerusalem and Gaza, where Philip meets him on his way home.">
+          <path class="map-route j2" data-via="@31.4 28.6, @31.25 30.0, @32.6 31.1, Gaza, Jerusalem"/>
+          <g class="map-town here"><circle cx="777" cy="492" r="2.4"/><circle class="map-ping" cx="777" cy="492" r="3.1"/></g>
+          <text class="ac08-lab" x="770" y="474" style="text-anchor:end">Philip meets him</text>
+          <text class="ac08-lab soft" x="700" y="572">↓ Ethiopia, far up the Nile</text>
+        </svg>
+      </div>
+      <div>
+        <h2 class="rise" style="--d:1">A man from the far south</h2>
+        <p class="note rise" style="--d:2">The angel says <em>go toward the south</em>, down the road from Jerusalem to Gaza, <em>which is desert.</em> Philip is in the middle of a city-wide revival, and he's told to leave it for an empty road.</p>
+        <p class="note step"><em>Ethiopia</em> in the Bible is the land of Cush, up the Nile, south of Egypt: more than a thousand miles from Jerusalem. <em>Candace</em> was the title of Ethiopia's queen, like Pharaoh. This man was her treasurer, <em>a man of great authority.</em> He's reading <em>Esaias</em> (Isaiah) in his chariot.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise">A man the temple kept at a distance</h2>
+    <p class="note rise" style="--d:1">He had come to Jerusalem <em>for to worship</em>. He was an <em>eunuch</em> and a foreigner. By the law, a man like him couldn't fully enter the assembly of Israel (Deuteronomy 23:1). He may have made the long trip and been turned back at the gate.</p>
+    <p class="note step">So he was reading Isaiah on the road home, probably from a scroll he'd paid good money for. And the same prophet had written, hundreds of years before, a promise with his name on it:</p>
+    <blockquote class="quote step"><p>“For thus saith the LORD unto the eunuchs that keep my sabbaths, and choose the things that please me, and take hold of my covenant; Even unto them will I give in mine house and within my walls a place and a name better than of sons and of daughters: I will give them an everlasting name, that shall not be cut off.”</p><cite>Isaiah 56:4–5</cite></blockquote>
+    <p class="note step">Some of us have been told, one way or another, that we're not welcome. God sent a man across a desert for one who'd been kept out.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="29-31" data-hl="Go near, and join thyself to this chariot|Understandest thou what thou readest|How can I, except some man should guide me"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise">“Understandest thou?”</h2>
+    <div class="talk">
+      <p class="rise" style="--d:1"><small>The Spirit, to Philip</small>Go near, and join thyself to this chariot.</p>
+      <p class="step"><small>Philip, running up</small>Understandest thou what thou readest?</p>
+      <p class="reply step"><small>The Ethiopian</small>How can I, except some man should guide me?</p>
+    </div>
+    <p class="note step">Philip <em>ran.</em> The Spirit pointed him, and he moved. And he asked a simple question without any lecture or a speech. The man was reading, which means he was already looking.</p>
+    <p class="note step"><em>How can I, except some man should guide me?</em> That's an honest answer, and a humble one. He was a rich, powerful man, and he asked a stranger to sit beside him. It's the reason a group like this exists. None of us understands it alone.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="32-35" data-hl="He was led as a sheep to the slaughter|of whom speaketh the prophet this|began at the same scripture, and preached unto him Jesus"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise">He took our place</h2>
+    <div class="swap rise" style="--d:1">
+      <h3><span>Our road</span>gone astray</h3>
+      <h3><span>His road</span>to the slaughter</h3>
+      <div class="a"><b>Us</b><small>“every one to his own way”</small></div>
+      <div class="b"><b>Jesus</b><small>“wounded for our transgressions”</small></div>
+    </div>
+    <p class="note step swap-go">He asked: <em>of himself, or of some other man?</em> Philip <em>began at the same scripture, and preached unto him Jesus.</em> The swap is the whole good news.</p>
+    <blockquote class="quote step"><p>“But he was wounded for our transgressions, he was bruised for our iniquities: the chastisement of our peace was upon him; and with his stripes we are healed. All we like sheep have gone astray; we have turned every one to his own way; and the LORD hath laid on him the iniquity of us all.”</p><cite>Isaiah 53:5–6</cite></blockquote>
+  </div>
+</section>
+
+<section class="slide verse" data-v="36-38" data-hl="what doth hinder me to be baptized|If thou believest with all thine heart, thou mayest|I believe that Jesus Christ is the Son of God"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="37"></blockquote>
+    <h2 class="rise" style="--d:1">“If thou believest”</h2>
+    <div class="ifthen step">
+      <div class="if"><small>The question</small>“What doth hinder me to be baptized?”</div>
+      <span class="arrow">→</span>
+      <div class="then"><small>The answer</small>“If thou believest with all thine heart, thou mayest.”</div>
+    </div>
+    <p class="note step">The condition is faith. Not good works, not a clean record, not a long class. And he answers plainly: <em>“I believe that Jesus Christ is the Son of God.”</em></p>
+    <p class="note step">Notice who the question came from: the man who'd been told he couldn't enter. <em>What doth hinder me?</em> The answer is nothing. Not his skin, not his past, not his body.</p>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <div class="stage">
+      <svg viewBox="0 0 640 300" style="max-height:30vh;overflow:hidden" role="img" aria-label="Two men stand in water up to their waists. Philip stands still. The man from Ethiopia goes down under the water and comes up again.">
+        <g transform="translate(0 30)">
+          <rect class="ac08-man philip" x="214" y="40" width="30" height="120" rx="14"/>
+          <circle class="ac08-man philip" cx="229" cy="28" r="14"/>
+          <g class="ac08-dive"><rect class="ac08-man" x="396" y="40" width="30" height="120" rx="14"/><circle class="ac08-man" cx="411" cy="28" r="14"/></g>
+        </g>
+        <rect class="ac08-water" x="0" y="150" width="640" height="150" rx="10"/>
+        <path class="ac08-surf" d="M0 150 C 40 142, 80 158, 120 150 S 200 142, 240 150 S 320 158, 360 150 S 440 142, 480 150 S 560 158, 600 150 L 640 150"/>
+        <text class="ac08-say" x="229" y="28" text-anchor="middle">Philip</text>
+        <text class="ac08-say" x="411" y="28" text-anchor="middle">the man from Ethiopia</text>
+        <text class="ac08-say hot" x="20" y="110">down into the water…</text>
+        <text class="ac08-say hot" x="460" y="110">…and up out of it</text>
+      </svg>
+    </div>
+    <h2 class="rise" style="--d:1">Down, and up</h2>
+    <p class="note step">He <em>commanded the chariot to stand still.</em> They <em>went down both into the water</em>, and he baptized him. Right there, no waiting for a church service.</p>
+    <blockquote class="quote step"><p>“Therefore we are buried with him by baptism into death: that like as Christ was raised up from the dead by the glory of the Father, even so we also should walk in newness of life.”</p><cite>Romans 6:4</cite></blockquote>
+    <p class="note step">Baptism doesn't save anyone. It pictures what already happened: the old life buried, a new one raised. If you've believed and haven't taken that step, ask what hinders you.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="39-40" data-hl="the Spirit of the Lord caught away Philip|he went on his way rejoicing|Philip was found at Azotus"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <div class="split">
+      <div class="stage">
+        <svg class="map" data-land data-towns="Joppa:r, Caesarea*:r" viewBox="20 190 230 290" style="max-height:52vh" role="img" aria-label="The coast of the land. A line runs north from Gaza, where Philip met the man from Ethiopia, to Azotus, then past Joppa to Caesarea, preaching in every city on the way.">
+          <path class="map-route" pathLength="1" d="M56 436 C 66 416, 78 396, 88 378 C 96 356, 104 336, 108 321 C 116 290, 126 250, 136 220"/>
+          <g class="map-town"><circle cx="56" cy="436" r="6"/><text x="68" y="446">Gaza</text></g>
+          <g class="map-town here"><circle cx="88" cy="378" r="6"/><circle class="map-ping" cx="88" cy="378" r="8"/><text x="100" y="384">Azotus</text></g>
+        </svg>
+      </div>
+      <div>
+        <h2 class="rise" style="--d:1">Found at Azotus</h2>
+        <p class="note rise" style="--d:2">The moment he comes up out of the water, <em>the Spirit of the Lord caught away Philip</em>, and the man <em>saw him no more.</em> And he <em>went on his way rejoicing.</em> He didn't need Philip anymore. He had Jesus.</p>
+        <p class="note step"><em>Azotus</em> is the old Philistine city of Ashdod, about twenty miles up the coast. Philip <em>passing through preached in all the cities</em>, as far as <em>Caesarea</em>. He just kept going, one town after another.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise">Two men, two roads</h2>
+    <div class="columns">
+      <div class="col law rise" style="--d:1">
+        <p class="who">Simon, in the city</p>
+        <h3>Wanted the power</h3>
+        <p>Offered money. Had a heart <em>“not right in the sight of God.”</em> Asked to be kept from the consequences, and Luke doesn't say he repented.</p>
+      </div>
+      <div class="col grace step">
+        <p class="who">The Ethiopian, in the desert</p>
+        <h3>Asked, and believed</h3>
+        <p>Admitted he needed a guide. Heard about Jesus, believed with all his heart, and <em>“went on his way rejoicing.”</em></p>
+      </div>
+    </div>
+    <p class="note step">One was the biggest man in the city and the other was an outsider on a desert road. God doesn't care how big we are. He asks one question: <em>do you believe?</em></p>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <p class="saying rise">“He went on his way <em>rejoicing</em>”</p>
+    <p class="note rise" style="--d:1">That's the end of the chapter, and it's where a believer ends up: not fixed in a day, but rejoicing on the road home.</p>
+    <p class="note step"><strong>Today:</strong> two things from this chapter. First, if something in the Bible doesn't make sense, ask a man who knows, the way the Ethiopian did. Second, you don't need a title to tell one person what Jesus did for you. The scattered ones were ordinary people, and they changed a country.</p>
+    <blockquote class="quote step"><p>“For whosoever shall call upon the name of the Lord shall be saved.”</p><cite>Romans 10:13</cite></blockquote>
+  </div>
+</section>
+
+<!-- ======================= CLOSING ======================= -->
+<section class="slide remember">
+  <div class="inner">
+    <h2 class="rise">Points to remember</h2>
+    <ol class="seeds">
+      <li class="step"><span class="topic">Scattered</span><span class="seed-q">“Went every where preaching the word” <cite>8:4</cite></span><span class="take">What was meant to stop the church spread it. God can use your worst season.</span></li>
+      <li class="step"><span class="topic">Samaria</span><span class="seed-q">“There was great joy in that city” <cite>8:8</cite></span><span class="take">The people everyone wrote off were the first to hear and believe.</span></li>
+      <li class="step"><span class="topic">The gift</span><span class="seed-q">“The gift of God may be purchased with money” <cite>8:20</cite></span><span class="take">Grace can't be bought or earned. It's a gift.</span></li>
+      <li class="step"><span class="topic">Repent</span><span class="seed-q">“Repent therefore of this thy wickedness” <cite>8:22</cite></span><span class="take">Turn around, and ask God yourself. The door is open.</span></li>
+      <li class="step"><span class="topic">Understanding</span><span class="seed-q">“Understandest thou what thou readest?” <cite>8:30</cite></span><span class="take">He was reading Isaiah 53, and Philip showed him it was Jesus.</span></li>
+      <li class="step"><span class="topic">Baptism</span><span class="seed-q">“If thou believest with all thine heart, thou mayest” <cite>8:37</cite></span><span class="take">Believe, then take the step. Nothing hinders a man who believes.</span></li>
+    </ol>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 1 of 6</p>
+      <span class="topic">Scattered</span>
+      <h2>What did the persecution do to the church?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="1"></blockquote>
+      <blockquote class="quote step" data-q="4"></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>It scattered the believers across Judaea and Samaria, and everywhere they went they preached the word. Saul meant to wipe the church out, and he spread it instead.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 2 of 6</p>
+      <span class="topic">Samaria</span>
+      <h2>What happened in Samaria when Philip preached Christ?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="6-8"></blockquote>
+      <blockquote class="quote step" data-q="12"></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>The people gave heed, the sick were healed, evil spirits came out, and there was great joy in that city. Men and women believed and were baptized.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 3 of 6</p>
+      <span class="topic">The gift</span>
+      <h2>What did Simon think he could buy?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="18-19"></blockquote>
+      <blockquote class="quote step" data-q="20"></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>The power to give the Holy Ghost, the gift of God. Peter told him it can't be bought, because God gives His gifts freely. Salvation works the same way.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 4 of 6</p>
+      <span class="topic">Repent</span>
+      <h2>What did Peter tell Simon to do?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="22"></blockquote>
+      <blockquote class="quote step" data-q="23"></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>To repent of his wickedness and pray to God himself for forgiveness. Peter saw a man in the grip of bitterness and chains, and still pointed him to the way out.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 5 of 6</p>
+      <span class="topic">Understanding</span>
+      <h2>What was the man from Ethiopia reading, and who explained it?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="28"></blockquote>
+      <blockquote class="quote step" data-q="30-31"></blockquote>
+      <blockquote class="quote step" data-q="35"></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>He was reading Isaiah 53, about the sheep led to the slaughter. Philip, sent by the Spirit, sat beside him, started at that same passage, and preached Jesus.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 6 of 6</p>
+      <span class="topic">Baptism</span>
+      <h2>What happened once the man from Ethiopia believed?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="37"></blockquote>
+      <blockquote class="quote step" data-q="38-39"></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>He said, “I believe that Jesus Christ is the Son of God,” and Philip baptized him on the spot. He came up out of the water and went on his way rejoicing.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide prayer">
+  <div class="inner">
+    <div class="emblem rise"></div>
+    <h2 class="rise" style="--d:1">Prayer requests</h2>
+    <p class="ask-line rise" style="--d:2">What can we pray about for you today?</p>
+    <blockquote class="quote rise" style="--d:4"><p>“Ethiopia shall soon stretch out her hands unto God.”</p><cite>Psalm 68:31</cite></blockquote>
+  </div>
+</section>
+
+</main>
+
+<script>
+// King James Version, Acts chapter 8
+const V = {
+  1: "And Saul was consenting unto his death. And at that time there was a great persecution against the church which was at Jerusalem; and they were all scattered abroad throughout the regions of Judaea and Samaria, except the apostles.",
+  2: "And devout men carried Stephen to his burial, and made great lamentation over him.",
+  3: "As for Saul, he made havock of the church, entering into every house, and haling men and women committed them to prison.",
+  4: "Therefore they that were scattered abroad went every where preaching the word.",
+  5: "Then Philip went down to the city of Samaria, and preached Christ unto them.",
+  6: "And the people with one accord gave heed unto those things which Philip spake, hearing and seeing the miracles which he did.",
+  7: "For unclean spirits, crying with loud voice, came out of many that were possessed with them: and many taken with palsies, and that were lame, were healed.",
+  8: "And there was great joy in that city.",
+  9: "But there was a certain man, called Simon, which beforetime in the same city used sorcery, and bewitched the people of Samaria, giving out that himself was some great one:",
+  10: "To whom they all gave heed, from the least to the greatest, saying, This man is the great power of God.",
+  11: "And to him they had regard, because that of long time he had bewitched them with sorceries.",
+  12: "But when they believed Philip preaching the things concerning the kingdom of God, and the name of Jesus Christ, they were baptized, both men and women.",
+  13: "Then Simon himself believed also: and when he was baptized, he continued with Philip, and wondered, beholding the miracles and signs which were done.",
+  14: "Now when the apostles which were at Jerusalem heard that Samaria had received the word of God, they sent unto them Peter and John:",
+  15: "Who, when they were come down, prayed for them, that they might receive the Holy Ghost:",
+  16: "(For as yet he was fallen upon none of them: only they were baptized in the name of the Lord Jesus.)",
+  17: "Then laid they their hands on them, and they received the Holy Ghost.",
+  18: "And when Simon saw that through laying on of the apostles’ hands the Holy Ghost was given, he offered them money,",
+  19: "Saying, Give me also this power, that on whomsoever I lay hands, he may receive the Holy Ghost.",
+  20: "But Peter said unto him, Thy money perish with thee, because thou hast thought that the gift of God may be purchased with money.",
+  21: "Thou hast neither part nor lot in this matter: for thy heart is not right in the sight of God.",
+  22: "Repent therefore of this thy wickedness, and pray God, if perhaps the thought of thine heart may be forgiven thee.",
+  23: "For I perceive that thou art in the gall of bitterness, and in the bond of iniquity.",
+  24: "Then answered Simon, and said, Pray ye to the Lord for me, that none of these things which ye have spoken come upon me.",
+  25: "And they, when they had testified and preached the word of the Lord, returned to Jerusalem, and preached the gospel in many villages of the Samaritans.",
+  26: "And the angel of the Lord spake unto Philip, saying, Arise, and go toward the south unto the way that goeth down from Jerusalem unto Gaza, which is desert.",
+  27: "And he arose and went: and, behold, a man of Ethiopia, an eunuch of great authority under Candace queen of the Ethiopians, who had the charge of all her treasure, and had come to Jerusalem for to worship,",
+  28: "Was returning, and sitting in his chariot read Esaias the prophet.",
+  29: "Then the Spirit said unto Philip, Go near, and join thyself to this chariot.",
+  30: "And Philip ran thither to him, and heard him read the prophet Esaias, and said, Understandest thou what thou readest?",
+  31: "And he said, How can I, except some man should guide me? And he desired Philip that he would come up and sit with him.",
+  32: "The place of the scripture which he read was this, He was led as a sheep to the slaughter; and like a lamb dumb before his shearer, so opened he not his mouth:",
+  33: "In his humiliation his judgment was taken away: and who shall declare his generation? for his life is taken from the earth.",
+  34: "And the eunuch answered Philip, and said, I pray thee, of whom speaketh the prophet this? of himself, or of some other man?",
+  35: "Then Philip opened his mouth, and began at the same scripture, and preached unto him Jesus.",
+  36: "And as they went on their way, they came unto a certain water: and the eunuch said, See, here is water; what doth hinder me to be baptized?",
+  37: "And Philip said, If thou believest with all thine heart, thou mayest. And he answered and said, I believe that Jesus Christ is the Son of God.",
+  38: "And he commanded the chariot to stand still: and they went down both into the water, both Philip and the eunuch; and he baptized him.",
+  39: "And when they were come up out of the water, the Spirit of the Lord caught away Philip, that the eunuch saw him no more: and he went on his way rejoicing.",
+  40: "But Philip was found at Azotus: and passing through he preached in all the cities, till he came to Caesarea."
+};
+const BOOK = "Acts 8";
+</script>
+<script src="../assets/deck.js"></script>
+</body>
+</html>

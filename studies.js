@@ -9644,6 +9644,112 @@ window.STUDIES = [
     }
   },
   {
+    "id": "acts-07",
+    "type": "chapter",
+    "book": "Acts",
+    "ch": 7,
+    "date": "2026-10-30",
+    "title": "Acts 7",
+    "sub": "The man who forgave",
+    "about": "Stephen answers the council by telling Israel's story, from Abraham to Moses to the temple, then looks up, sees Jesus standing, and forgives the men who stone him.",
+    "tags": [
+      "God's promise",
+      "Refused",
+      "Turning back",
+      "God's house",
+      "Heaven opened",
+      "Forgiveness"
+    ],
+    "url": "studies/acts-07.html",
+    "overview": {
+      "where": "Jerusalem, before the council; Stephen's story reaches Mesopotamia, Haran, Egypt, Midian and Sinai",
+      "when": "Soon after Pentecost, about AD 34",
+      "people": [
+        "stephen",
+        "abraham",
+        "joseph-son-of-jacob",
+        "moses",
+        "pharaoh",
+        "david",
+        "solomon",
+        "saul"
+      ],
+      "places": [
+        "mesopotamia",
+        "charran",
+        "egypt",
+        "sychem",
+        "midian",
+        "sina",
+        "tabernacle"
+      ],
+      "story": [
+        "The high priest asks, “Are these things so?” Stephen answers with Israel's history, starting with Abraham, called out of Mesopotamia with no land and no child (1–8).",
+        "Joseph's brothers sell him out of envy, but God is with him and makes him governor of Egypt. Jacob's family of seventy-five comes down for bread (9–16).",
+        "Moses is saved as a baby and raised in the palace, kills an Egyptian at forty, runs to Madian, and is called from the burning bush at eighty. Israel refuses him, then God sends him anyway. In the wilderness they turn back to Egypt in their hearts and make a golden calf (17–43).",
+        "The tabernacle was a tent, and Solomon built a house, but the most High does not live in houses made with hands. Stephen tells the council they always resist the Holy Ghost, as their fathers did, and have betrayed and murdered the Just One (44–53).",
+        "Furious, they gnash their teeth. Stephen sees the heavens opened and Jesus standing at God's right hand. They stone him, with a young man named Saul watching the coats. Stephen prays, “Lord Jesus, receive my spirit,” and “Lord, lay not this sin to their charge” (54–60)."
+      ],
+      "key": {
+        "ref": "Acts 7:60",
+        "text": "And he kneeled down, and cried with a loud voice, Lord, lay not this sin to their charge. And when he had said this, he fell asleep."
+      },
+      "big": "God sends a deliverer, Israel pushes him away, and God raises him up anyway: Joseph, Moses, and Jesus. God is too big for any building and lives in His people. And a man can forgive even while he is being hurt, because Jesus is standing for him."
+    }
+  },
+  {
+    "id": "acts-08",
+    "type": "chapter",
+    "book": "Acts",
+    "ch": 8,
+    "date": "2026-10-30",
+    "title": "Acts 8",
+    "sub": "Scattered, and sent",
+    "about": "Persecution scatters the church, Philip takes the gospel to Samaria, a sorcerer tries to buy God's gift, and a man from Ethiopia believes on the desert road to Gaza.",
+    "tags": [
+      "Scattered",
+      "Samaria",
+      "The gift",
+      "Repent",
+      "Understanding",
+      "Baptism"
+    ],
+    "url": "studies/acts-08.html",
+    "overview": {
+      "where": "Jerusalem, Samaria, and the desert road from Jerusalem to Gaza, then Azotus and Caesarea",
+      "when": "Right after Stephen's death, about AD 34 to 35",
+      "people": [
+        "philip-the-evangelist",
+        "simon-the-sorcerer",
+        "simon-peter",
+        "john-the-apostle",
+        "candace",
+        "the-eunuch",
+        "saul"
+      ],
+      "places": [
+        "jerusalem",
+        "judaea",
+        "samaria",
+        "gaza",
+        "ashdod",
+        "caesarea"
+      ],
+      "story": [
+        "Saul agrees with Stephen's death and wrecks the church, dragging men and women to prison. The believers are scattered across Judaea and Samaria, and they go everywhere preaching the word (1–4).",
+        "Philip goes down to Samaria and preaches Christ. People are healed, and there is great joy in that city. Simon the sorcerer, who had amazed them for years, believes and is baptized (5–13).",
+        "Peter and John come from Jerusalem, pray, and lay hands on the Samaritans, and they receive the Holy Ghost, a sign that Samaritans are fully part of the church (14–17).",
+        "Simon offers money for the power to give the Holy Ghost. Peter tells him the gift of God can't be bought, calls him to repent and pray, and Simon asks them to pray for him. Peter and John preach in many Samaritan villages on the way home (18–25).",
+        "An angel sends Philip south to the Gaza road, where an Ethiopian official is reading Isaiah 53 in his chariot. Philip preaches Jesus from it, the man believes and is baptized, and he goes on his way rejoicing. Philip is found at Azotus and preaches as far as Caesarea (26–40)."
+      ],
+      "key": {
+        "ref": "Acts 8:37",
+        "text": "And Philip said, If thou believest with all thine heart, thou mayest. And he answered and said, I believe that Jesus Christ is the Son of God."
+      },
+      "big": "The gospel is for everyone, including the people the world writes off, and the gift of God can't be bought, only received by believing in Jesus. Ordinary scattered believers carried it, and nothing hinders a man who believes."
+    }
+  },
+  {
     "id": "acts-09",
     "type": "chapter",
     "book": "Acts",

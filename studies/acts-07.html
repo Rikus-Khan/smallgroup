@@ -1,0 +1,779 @@
+<!doctype html>
+<html lang="en" data-theme="scribe">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Acts 7</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="../assets/fonts.css">
+<link rel="stylesheet" href="../assets/deck.css">
+<link rel="stylesheet" href="../assets/themes.css">
+<style>
+/* ac07-lab: a label on a world map, sized with the crop (--u is set by deck.js) */
+.ac07-lab { fill: var(--accent-hot); font-size: calc(22px * var(--u, 1)); font-weight: 700; }
+.ac07-lab.cool { fill: var(--cool); }
+.ac07-lab.wine { fill: var(--wine); }
+.ac07-lab.end { text-anchor: end; }
+
+/* ac07-tl: the seven-point timeline turns into a list down the page on narrow screens */
+@media (max-width: 900px) {
+  .ac07-tl { grid-auto-flow: row; grid-auto-columns: auto; gap: .8rem; text-align: left; }
+  .ac07-tl li { display: grid; grid-template-columns: 1.6rem 1fr; column-gap: .9rem; align-items: start; }
+  .ac07-tl li::before { grid-row: 1 / span 3; margin: 0; }
+  .ac07-tl li > * { grid-column: 2; }
+  .ac07-tl li + li::after { content: none; }
+  .ac07-tl small { margin-top: .1em; }
+}
+
+/* ac07-pat: one pattern three times (sent, refused, raised up); rows step in, the last is the one that matters */
+.ac07-pat { margin: .3em 0 1em; display: grid; gap: .6rem; }
+.ac07-pat .row { display: grid; grid-template-columns: .7fr 1fr 1fr 1fr; gap: .6rem; }
+.ac07-pat .row > div { padding: .6em .85em; background: var(--surface); border-radius: 8px; font-size: clamp(.9rem, .8rem + .45vw, 1.2rem); line-height: 1.3; }
+.ac07-pat .row > div::before { content: attr(data-h); display: none; font-size: .72rem; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: var(--ink-soft); margin-bottom: .2em; }
+.ac07-pat .head > div { background: none; padding-bottom: 0; font-size: clamp(.72rem, .7rem + .25vw, .9rem); font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: var(--ink-soft); }
+.ac07-pat .who { font: 400 clamp(1.4rem, 1rem + 1.4vw, 2.1rem)/1.1 var(--serif); color: var(--accent-hot); background: none !important; padding-left: 0 !important; }
+.ac07-pat .no { border-left: 3px solid var(--danger); }
+.ac07-pat .up { border-left: 3px solid var(--accent); }
+.ac07-pat .row.now > div:not(.who) { background: color-mix(in srgb, var(--accent) 14%, var(--surface)); }
+.ac07-pat small { display: block; margin-top: .25em; color: var(--ink-soft); font-size: .82em; }
+@media (max-width: 700px) {
+  .ac07-pat .head { display: none; }
+  .ac07-pat .row { grid-template-columns: 1fr; gap: .35rem; padding-bottom: .5rem; border-bottom: 1px solid var(--line); }
+  .ac07-pat .row > div::before { display: block; }
+  .ac07-pat .who::before { display: none !important; }
+}
+
+/* ac07-open: night sky; the heavens part, the glory of God shines, Jesus stands at His right hand; Stephen looks up (night in every theme: --on-glow with --glow) */
+.ac07-sky { fill: var(--on-glow); }
+.ac07-lite { opacity: 0; transition: opacity 2.6s ease .5s; }
+.slide.active .ac07-lite { opacity: 1; }
+.ac07-half { fill: var(--on-glow); transition: transform 2.4s ease .4s; }
+.slide.active .ac07-half.l { transform: translateX(-330px); }
+.slide.active .ac07-half.r { transform: translateX(330px); }
+.ac07-orb { fill: var(--glow); filter: drop-shadow(0 0 16px var(--glow)); }
+.ac07-him { fill: var(--warm); filter: drop-shadow(0 0 10px var(--warm)); }
+.ac07-fig { fill: var(--glow); }
+.ac07-arm { stroke: var(--glow); stroke-width: 4; stroke-linecap: round; fill: none; }
+.ac07-stone { fill: color-mix(in srgb, var(--glow) 40%, var(--on-glow)); }
+.ac07-ground { stroke: color-mix(in srgb, var(--glow) 35%, transparent); stroke-width: 2; }
+.ac07-t { fill: var(--glow); font-size: 16px; }
+.ac07-t.big { font: italic 600 23px var(--serif); opacity: 0; transition: opacity 1.2s ease 2.6s; }
+.slide.active .ac07-t.big { opacity: 1; }
+@media (max-width: 600px) { .ac07-t { font-size: 21px; } .ac07-t.big { font-size: 27px; } }
+</style>
+</head>
+<body>
+<main class="deck" id="deck">
+
+<!-- ======================= OPENING ======================= -->
+<section class="slide title">
+  <div class="inner">
+    <div class="emblem rise"></div>
+    <h1 class="rise" style="--d:1">Acts 7</h1>
+    <p class="sub rise" style="--d:3">The man who forgave</p>
+    <p class="tag rise" style="--d:5">Stephen tells Israel's story to the men about to kill him, then prays for them as the stones fall.</p>
+  </div>
+</section>
+
+<section class="slide watch">
+  <div class="inner">
+    <h2 class="rise">Things to watch for</h2>
+    <p class="lede rise" style="--d:1">Keep these questions in the back of your mind as we read. We'll come back to every one of them at the end.</p>
+    <ol class="seeds">
+      <li class="step"><span class="topic">God's promise</span><span class="seed-q">What did God promise Abraham when he had no land and no child?</span></li>
+      <li class="step"><span class="topic">Refused</span><span class="seed-q">Whom did Israel push away, and then God sent to save them?</span></li>
+      <li class="step"><span class="topic">Turning back</span><span class="seed-q">Where did Israel's hearts turn back to in the wilderness?</span></li>
+      <li class="step"><span class="topic">God's house</span><span class="seed-q">Does the most High live in houses made with hands?</span></li>
+      <li class="step"><span class="topic">Heaven opened</span><span class="seed-q">What did Stephen see when he looked up?</span></li>
+      <li class="step"><span class="topic">Forgiveness</span><span class="seed-q">What did Stephen pray as the stones hit him?</span></li>
+    </ol>
+  </div>
+</section>
+
+<!-- ======================= PART ONE: ABRAHAM ======================= -->
+<section class="slide part">
+  <div class="inner">
+    <p class="part-n rise">Part one</p>
+    <h2 class="rise" style="--d:1">The God of glory</h2>
+    <p class="range rise" style="--d:2">Verses 1–8</p>
+    <div class="rule"></div>
+    <p class="hook rise" style="--d:4">Asked a yes-or-no question, Stephen starts at the beginning, with one man who owned nothing.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="1-3" data-hl="Are these things so|The God of glory appeared unto our father Abraham|Get thee out of thy country"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="1"></blockquote>
+    <h2 class="rise" style="--d:1">A man on trial</h2>
+    <p class="note rise" style="--d:2">Stephen was one of the seven men the church chose to serve and look after the widows (Acts 6). Now he stands before the same council that condemned Jesus. Liars said he spoke against the temple and the law of Moses (6:13–14). The high priest asks: <em>“Are these things so?”</em></p>
+    <p class="note step">Stephen doesn't say yes or no. He tells them their own story, the one every man in the room knew by heart. He's going to show them, from their own Scriptures, that God has never been tied to one building, and that Israel has a habit of pushing away the men God sends.</p>
+    <p class="note step">He isn't saying this to win. He's talking to men who are about to kill him, and every word is meant to turn them around. (Luke says his face looked like an angel's, 6:15.)</p>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise">Stephen's sermon in one line</h2>
+    <ol class="timeline ac07-tl" aria-label="Seven stops in Stephen's story. About 2000 BC, Abraham is called out of Mesopotamia. Joseph is sold and raised up in Egypt. Moses: forty years, forty years, forty years. The tabernacle, a tent that moves. About 960 BC, Solomon builds a house of stone. Jesus, the Just One, betrayed and killed, now at God's right hand. About AD 34, Stephen is stoned.">
+      <li style="--k:0"><b>about 2000 BC</b><span>Abraham is called</span><small>7:2–8</small></li>
+      <li style="--k:1"><b>Joseph</b><span>sold, then raised up</span><small>7:9–16</small></li>
+      <li style="--k:2"><b>Moses</b><span>40 + 40 + 40 years</span><small>7:17–43</small></li>
+      <li style="--k:3"><b>the tent</b><span>God moves with them</span><small>7:44–45</small></li>
+      <li style="--k:4"><b>about 960 BC</b><span>Solomon's house of stone</span><small>7:47</small></li>
+      <li style="--k:5"><b>the Just One</b><span>Jesus, betrayed and killed</span><small>7:52</small></li>
+      <li class="lit" style="--k:6"><b>about AD 34</b><span>Stephen is stoned</span><small>7:58–60</small></li>
+    </ol>
+    <p class="note rise" style="--d:3">That's about two thousand years in one sermon. Watch for one thing that keeps repeating: God sends a man to save His people, they refuse him, and God raises him up anyway.</p>
+    <p class="note step">Dates here are approximate. Scholars place Abraham and Moses a little earlier or later. What matters is the order.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="4-5" data-hl="when his father was dead|none inheritance in it|when as yet he had no child"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <div class="split">
+      <div class="stage">
+        <svg data-world viewBox="650 285 258 235" style="max-height:58vh" data-towns="Damascus:l, Jerusalem:b" role="img" aria-label="The eastern end of the map of the Roman world. A line comes in from the far east edge, from Ur of the Chaldees, to Haran in the north. It then turns south past Damascus into the land of Canaan, near Shechem and Jerusalem, where Abraham was told to go.">
+          <path class="map-route j1" data-via="@41.8 34.3, @39.03 36.87, Damascus, @35.28 32.2"/>
+          <g class="map-town here"><circle cx="883" cy="324" r="1.8"/><circle class="map-ping" cx="883" cy="324" r="2.3"/><text x="879.4" y="325.6" text-anchor="end">Haran (Charran)</text></g>
+          <text class="ac07-lab end" x="905" y="410">Ur of the Chaldees,</text><text class="ac07-lab end" x="905" y="419">far to the east →</text>
+          <text class="ac07-lab" x="797" y="466">the land</text>
+        </svg>
+      </div>
+      <div>
+        <h2 class="rise" style="--d:1">Called to walk away</h2>
+        <p class="note rise" style="--d:2">Abraham's family lived in <em>Ur of the Chaldees</em> in <em>Mesopotamia</em> (“between the rivers”), far to the east, past the edge of this map. Stephen says the God of glory appeared to him there. He had no Bible, no church, no promise yet. God spoke first.</p>
+        <p class="note step"><em>Charran</em> is Haran, in the north. The family stopped and settled until Abraham's father died. Then he moved on, into the land where these very men were standing. It was a walk of hundreds of miles on God's word alone.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="5" data-hl="no, not so much as to set his foot on|when as yet he had no child"></blockquote>
+    <h2 class="rise" style="--d:1">What Abraham owned</h2>
+    <div class="math">
+      <div class="rise" style="--d:2"><b>0</b><span>acres. Not enough to set his foot on</span></div>
+      <div class="step"><b>0</b><span>children, “when as yet he had no child”</span></div>
+      <div class="step"><b>1</b><span>promise from the God of glory</span></div>
+    </div>
+    <p class="note step">He had nothing to show for it, and God told him it would be four hundred years before his children owned the land. Abraham died a stranger in it. He lived on the promise anyway.</p>
+    <blockquote class="quote step"><p>“And he believed in the LORD; and he counted it to him for righteousness.”</p><cite>Genesis 15:6</cite></blockquote>
+    <p class="note step">That's grace. God didn't count Abraham righteous for what he did. He counted it because he believed. A man in recovery with nothing in his hands is in good company.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="6-8" data-hl="four hundred years|the covenant of circumcision|Jacob begat the twelve patriarchs"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise">Believing first, the sign after</h2>
+    <p class="note rise" style="--d:1">Verse 6 sums up four hundred years in a sentence: a strange land, then bondage. God said it before it happened, and He also said He would judge the nation that enslaved them, and bring them out (verse 7).</p>
+    <div class="columns">
+      <div class="col grace rise" style="--d:2">
+        <p class="who">First</p>
+        <h3>He believed</h3>
+        <p>“He believed in the LORD; and he counted it to him for righteousness” (Genesis 15:6).</p>
+      </div>
+      <div class="col law step">
+        <p class="who">Then</p>
+        <h3>The sign</h3>
+        <p><em>The covenant of circumcision.</em> A mark on the body showing he belonged to God. It was given after he believed, not to make him believe.</p>
+      </div>
+    </div>
+    <p class="note step">Baptism works the same way for us. It doesn't make anyone right with God. It's the step a believer takes to show it. We'll see that again in Acts 8.</p>
+    <p class="note step">And notice what's in verse 8: Abraham, Isaac, Jacob, the twelve sons. God works through ordinary, flawed families, one generation at a time.</p>
+  </div>
+</section>
+
+<!-- ======================= PART TWO: JOSEPH ======================= -->
+<section class="slide part">
+  <div class="inner">
+    <p class="part-n rise">Part two</p>
+    <h2 class="rise" style="--d:1">God was with him</h2>
+    <p class="range rise" style="--d:2">Verses 9–16</p>
+    <div class="rule"></div>
+    <p class="hook rise" style="--d:4">A boy sold by his own brothers ends up running Egypt, and feeds the men who did it.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="9-10" data-hl="moved with envy, sold Joseph into Egypt|but God was with him|delivered him out of all his afflictions"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise">Sold, and not alone</h2>
+    <div class="chains">
+      <div class="chain rise" style="--d:1"><span class="who-chip">his brothers</span><span class="said">moved with envy, sold him</span><span class="who-chip">Joseph</span><span class="said">“God was with him”</span><span class="who-chip">governor over Egypt</span></div>
+    </div>
+    <p class="note step">Envy is an ugly thing, and Stephen names it. Joseph's brothers weren't monsters. They were jealous of their father's favourite, and it grew until they sold him. Envy and resentment have wrecked more homes than most of us can count.</p>
+    <p class="note step">Joseph's afflictions were real: the pit, slavery, prison. The text doesn't skip them. It says <em>“but God was with him,”</em> in the pit too. Years later Joseph looked back on it and said:</p>
+    <blockquote class="quote step"><p>“But as for you, ye thought evil against me; but God meant it unto good, to bring to pass, as it is this day, to save much people alive.”</p><cite>Genesis 50:20</cite></blockquote>
+    <p class="note step">God doesn't cause evil, and He doesn't call it good. But He can take the worst thing done to you, and the worst thing you did, and still bring something out of it.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="11-13" data-hl="a dearth over all the land of Egypt and Chanaan|there was corn in Egypt|Joseph was made known to his brethren"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <div class="split">
+      <div class="stage">
+        <svg data-world viewBox="655 455 185 115" style="max-height:58vh" data-towns="Gaza:l, Jerusalem:r" role="img" aria-label="The south-east corner of the map of the Roman world. A line runs from the land of Canaan, near Hebron and Jerusalem, west along the coast of the Sinai to Egypt, where the Nile runs into the sea. Jacob and his family go down to Egypt because of the famine.">
+          <path class="map-route j1" data-via="@35.1 31.5, @33.4 31.1, @32 30.7"/>
+          <text class="ac07-lab" x="746" y="535">down to Egypt</text>
+          <text class="ac07-lab" x="690" y="546">Goshen</text>
+        </svg>
+      </div>
+      <div>
+        <h2 class="rise" style="--d:1">Down to Egypt for bread</h2>
+        <p class="note rise" style="--d:2">A <em>dearth</em> is a famine. <em>Chanaan</em> is Canaan, the land God promised. Egypt had grain because Joseph had stored it up. Egypt was the place with food.</p>
+        <p class="note step">The brothers came the first time and didn't know him (verse 12). The second time, <em>“Joseph was made known to his brethren.”</em> The brother they had sold was holding the bread, and he fed them instead of getting even.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="slide verse" data-v="14-16" data-hl="threescore and fifteen souls|Jacob went down into Egypt|were carried over into Sychem"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise">Seventy-five people</h2>
+    <div class="dots rows fill rise" data-dots="75" style="--d:1;--cols:25;--pace:40ms;--wait:400ms;max-width:44rem" aria-label="Seventy-five dots fill in one by one, one for each soul who went down to Egypt."></div>
+    <p class="dots-cap rise" style="--d:2;max-width:44rem"><span>“threescore and fifteen souls”</span><b class="dots-num" style="--to:75;--count:3s"></b></p>
+    <p class="note step"><em>Threescore</em> is three times twenty: sixty, plus fifteen. A small family went down. Four hundred years later they were a nation of hundreds of thousands. God keeps His promise even when it takes generations.</p>
+    <p class="note step">Verse 16 is a hard detail. Genesis says Abraham bought a burial cave at Hebron, and Jacob bought land at Shechem (Genesis 23 and 33; Joshua 24:32). Stephen is giving the family's story fast, and he joins the two purchases. A summary can do that. It doesn't touch his point: even in death, they wanted to lie in the land God promised.</p>
+  </div>
+</section>
+
+<!-- ======================= PART THREE: MOSES ======================= -->
+<section class="slide part">
+  <div class="inner">
+    <p class="part-n rise">Part three</p>
+    <h2 class="rise" style="--d:1">Who made thee a ruler?</h2>
+    <p class="range rise" style="--d:2">Verses 17–43</p>
+    <div class="rule"></div>
+    <p class="hook rise" style="--d:4">Moses tries to save Israel his own way and fails. God sends him back forty years later, and they refuse him again.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="17-19" data-hl="the people grew and multiplied in Egypt|another king arose, which knew not Joseph|they cast out their young children"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise">Forgotten, and then hunted</h2>
+    <ol class="stairs down" style="--n:4" aria-label="Four steps down: a king who knew not Joseph; they dealt subtilly with our kindred; they evil entreated our fathers; they cast out their young children.">
+      <li style="--k:0"><b>a new king</b>“knew not Joseph” (7:18)</li>
+      <li style="--k:1"><b>dealt subtilly</b>crafty, slippery (7:19)</li>
+      <li style="--k:2"><b>evil entreated</b>treated cruelly (7:19)</li>
+      <li style="--k:3"><b>their babies cast out</b>(7:19)</li>
+    </ol>
+    <p class="note step">Everything Joseph did was forgotten in a generation. That's how it goes: a good man's name fades and the next king doesn't care. <em>Subtilly</em> means with craft, with clever lies and small steps. Cruelty usually starts that way.</p>
+    <p class="note step">It looked like the end of the story. It's exactly when God's promise <em>“drew nigh”</em> (verse 17). The darkest hour of the story is when He moves.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="20-22" data-hl="Moses was born, and was exceeding fair|Pharaoh’s daughter took him up|learned in all the wisdom of the Egyptians"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise">A baby in the right house</h2>
+    <div class="rename">
+      <span class="old rise" style="--d:1">a baby cast out</span>
+      <span class="arrow step n2">→</span>
+      <span class="new step">raised in the palace</span>
+      <span class="gloss step">The very king who ordered the babies killed paid for the baby's upbringing. His mother's family kept him three months, and then the daughter of Pharaoh <em>“nourished him for her own son.”</em></span>
+    </div>
+    <p class="note step">Moses was <em>“learned in all the wisdom of the Egyptians,”</em> and <em>“mighty in words and in deeds.”</em> He had the best education in the world. And God was going to use him only after he had lost every bit of it.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="23-25" data-hl="it came into his heart to visit his brethren|smote the Egyptian|he supposed his brethren would have understood"></section>
+
+<section class="slide verse" data-v="26-29" data-hl="Who made thee a ruler and a judge over us|Wilt thou kill me, as thou diddest the Egyptian yesterday|Then fled Moses"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise">Forty, forty, forty</h2>
+    <div class="math">
+      <div class="rise" style="--d:1"><b>40 years</b><span>a prince in Egypt (7:23)</span></div>
+      <div class="step"><b>40 years</b><span>a stranger in Madian, with sheep (7:29–30)</span></div>
+      <div class="step"><b>40 years</b><span>leading them through the wilderness (7:36)</span></div>
+    </div>
+    <p class="note step">Moses was sure he was the one to deliver Israel, and he went about it his own way: at forty, he killed an Egyptian. <em>“He supposed his brethren would have understood”</em>, but they didn't, and he ran. A man who thought he was somebody ended up a refugee.</p>
+    <p class="note step">Plenty of us have a chapter like that: something done in anger that can't be undone, and the years of hiding that came after it. Moses spent forty years with it. And then God called him anyway, at eighty, from a bush. The worst thing he ever did was not the end of his story.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="30-32" data-hl="Sina an angel of the Lord in a flame of fire in a bush|I am the God of thy fathers|Moses trembled"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="34" data-hl="I have seen, I have seen the affliction of my people|I have heard their groaning"></blockquote>
+    <h2 class="rise" style="--d:1">A bush that burned and didn't burn up</h2>
+    <p class="saying rise" style="--d:2">“I have <em>seen</em>, I have <em>seen</em>”</p>
+    <p class="note step"><em>Sina</em> is Sinai, the mountain in the desert. After forty years in hiding, Moses sees a bush on fire that doesn't burn up, and he's afraid to look.</p>
+    <p class="note step"><em>“Put off thy shoes from thy feet: for the place where thou standest is holy ground”</em> (verse 33). A patch of desert, holy because God was there. And His first words: I've been watching all along, and I heard the groaning.</p>
+    <p class="note step">If you've ever groaned at the bottom of something where nobody seemed to hear, this is for you. He sees, and He hears.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="33-35" data-hl="Put off thy shoes from thy feet|This Moses whom they refused|the same did God send to be a ruler and a deliverer"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise">Refused, then sent</h2>
+    <div class="rename">
+      <span class="old rise" style="--d:1">“Who made thee a ruler and a judge?”</span>
+      <span class="arrow step n2">→</span>
+      <span class="new step">“the same did God send”</span>
+      <span class="gloss step">They shoved him away at forty. God sent <em>“this Moses whom they refused”</em> back at eighty, as <em>“a ruler and a deliverer.”</em> The man they rejected became the man who saved them.</span>
+    </div>
+    <p class="note step">Stephen is not just telling a Bible story. He is showing his judges what's about to happen again, because there's another man Israel pushed away: Jesus. Hold that thought. It comes back in verse 52.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="36-38" data-hl="wonders and signs in the land of Egypt, and in the Red sea|A prophet shall the Lord your God raise up unto you|the church in the wilderness"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <div class="split">
+      <div class="stage">
+        <svg data-world viewBox="650 440 258 136" style="max-height:58vh" data-towns="Gaza:l, Jerusalem:r" role="img" aria-label="The south-east corner of the map of the Roman world. Jacob's family goes down from Canaan to Egypt. On the first step, Moses flees from Egypt south-east to Madian and Sinai, off the bottom edge of the map. On the next step, the nation leaves Egypt, goes round through the wilderness off the bottom edge, and comes back up to the land of Canaan.">
+          <path class="map-route j1" data-via="@35.1 31.5, @33.4 31.1, @32 30.7"/>
+          <path class="map-route j2 r1" data-via="@32 30.7, @33.0 29.6, @34.6 28.4"/>
+          <path class="map-route j4 r2" data-via="@32.2 30.9, @32.7 29.9, @33.8 28.5, @35.3 28.6, @35.0 30.2, @35.0 31.3"/>
+          <text class="ac07-lab" x="746" y="522">down to Egypt</text>
+          <text class="ac07-lab cool" x="868" y="568" style="text-anchor:end">↓ Madian and Sinai, just south</text>
+          <text class="ac07-lab" x="800" y="540" style="fill:var(--warm)">forty years in the wilderness</text>
+        </svg>
+      </div>
+      <div>
+        <h2 class="rise" style="--d:1">From Egypt to the wilderness</h2>
+        <p class="note rise" style="--d:2">The first line is Jacob's family going down for bread. Then watch what Moses does.</p>
+        <p class="note step map-go1">Moses runs from Egypt to <em>Madian</em> (Midian) and <em>Sinai</em>, which are just south of this map. He spends forty years there with his sheep.</p>
+        <p class="note step map-go2">Then he leads the people out through <em>wonders and signs</em>, through <em>the Red sea</em>, and into <em>the wilderness forty years.</em> The people he led out would not obey him.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="37-38" data-hl="him shall ye hear|the church in the wilderness|the lively oracles"></blockquote>
+    <h2 class="rise" style="--d:1">“Him shall ye hear”</h2>
+    <p class="note rise" style="--d:2">Moses told Israel that God would raise up <em>a prophet like unto me.</em> Moses was pointing ahead to Jesus. The council is about to hear Stephen say they've killed the very One Moses told them to hear.</p>
+    <p class="note step"><em>“The church in the wilderness”</em> is not a building. The Greek word means an <em>assembly</em>, a gathered people. The church was always people, and in the wilderness there wasn't even a roof.</p>
+    <p class="note step"><em>“Lively oracles”</em> means living words: God's words that give life. Israel received them. Having them in your hands is not the same as doing them. They didn't obey.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="39-41" data-hl="in their hearts turned back again into Egypt|Make us gods to go before us|rejoiced in the works of their own hands"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <div class="split">
+      <div class="stage">
+        <svg class="cycle" style="--at:320px 200px; --lap:7s" viewBox="0 0 640 400" role="img" aria-label="A circle with four stops: rescued, the wilderness gets hard, hearts turn back to Egypt, make us gods. A dot keeps running around. Then a bright path leads out of the circle: hear him.">
+          <circle class="cycle-ring" cx="320" cy="200" r="140"/>
+          <g class="rise" style="--d:1"><circle class="cycle-stop" cx="320" cy="60" r="15"/><text x="320" y="30" text-anchor="middle" font-size="20">1. Rescued</text></g>
+          <g class="rise" style="--d:2"><circle class="cycle-stop" cx="460" cy="200" r="15"/><text x="484" y="206" font-size="20">2. It gets hard</text></g>
+          <g class="rise" style="--d:3"><circle class="cycle-stop" cx="320" cy="340" r="15"/><text x="320" y="382" text-anchor="middle" font-size="20">3. Heart turns back</text></g>
+          <g class="rise" style="--d:4"><circle class="cycle-stop" cx="180" cy="200" r="15"/><text x="156" y="206" text-anchor="end" font-size="20">4. Make us gods</text></g>
+          <g class="cycle-spin"><circle cx="320" cy="60" r="8" style="fill:var(--accent-hot);stroke:var(--bg)" stroke-width="2"/></g>
+          <text x="320" y="196" text-anchor="middle" font-size="24" class="serif" style="fill:var(--ink-soft)">“back again”</text>
+          <text x="320" y="226" text-anchor="middle" font-size="18" style="fill:var(--ink-soft)">verse 39</text>
+          <g class="cycle-out">
+            <path class="cycle-way" d="M200 120 C 180 80, 150 50, 70 40"/>
+            <path class="cycle-way" d="M88 24 L66 40 L88 56"/>
+            <text x="20" y="96" font-size="20" font-weight="700" style="fill:var(--accent-hot)">“him shall ye hear”</text>
+            <text x="20" y="120" font-size="16" style="fill:var(--ink-soft)">verse 37</text>
+          </g>
+        </svg>
+      </div>
+      <div>
+        <h2 class="rise" style="--d:1">Free, and still looking back</h2>
+        <p class="note rise" style="--d:2">They were out of Egypt, but <em>“in their hearts turned back again into Egypt.”</em> Rescued from slavery, and they still missed it. Every man who's been clean a while knows that pull.</p>
+        <p class="note step">While Moses was up the mountain they panicked: <em>“Make us gods to go before us.”</em> They <em>“rejoiced in the works of their own hands.”</em></p>
+        <blockquote class="quote step cycle-go"><p>“If we confess our sins, he is faithful and just to forgive us our sins, and to cleanse us from all unrighteousness.”</p><cite>1 John 1:9</cite></blockquote>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="slide verse" data-v="42-43" data-hl="God turned, and gave them up|Moloch|I will carry you away beyond Babylon"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="42" data-hl="Then God turned, and gave them up"></blockquote>
+    <h2 class="rise" style="--d:1">“God turned, and gave them up”</h2>
+    <p class="note rise" style="--d:2">This is a hard verse. God didn't give them up the first time they turned back. He put up with it for forty years in the wilderness and sent prophet after prophet. Stephen is quoting Amos (5:25–27). In the end God let them have what they kept choosing: <em>the host of heaven</em> (the stars), <em>Moloch</em> and <em>Remphan</em>, until Babylon carried them off.</p>
+    <p class="note step">He gave them up <em>to</em> their own gods. A man picks the thing over God again and again, until God lets him have it, and he finds out what it costs.</p>
+    <p class="note step">It's a warning, not a sentence on a man who turns. In this very chapter God keeps pointing the way: <em>“him shall ye hear.”</em> The door is open today.</p>
+  </div>
+</section>
+
+<!-- ======================= PART FOUR: THE HOUSE ======================= -->
+<section class="slide part">
+  <div class="inner">
+    <p class="part-n rise">Part four</p>
+    <h2 class="rise" style="--d:1">Not made with hands</h2>
+    <p class="range rise" style="--d:2">Verses 44–53</p>
+    <div class="rule"></div>
+    <p class="hook rise" style="--d:4">The temple was the charge against Stephen. He answers it, then turns on his judges.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="44-46" data-hl="the tabernacle of witness in the wilderness|the possession of the Gentiles|desired to find a tabernacle for the God of Jacob"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise">A tent, then a house</h2>
+    <div class="temples">
+      <div class="body-t step"><h3>The tabernacle</h3><div class="big">a tent</div><p>Built “according to the fashion that he had seen.” It moved with them through the wilderness for centuries, even into the land with Joshua (<em>“Jesus”</em> in verse 45 is Joshua).</p></div>
+      <div class="stone-t step"><h3>Solomon's house</h3><div class="big">stone</div><p>David <em>“found favour before God”</em> and wanted to build a house for God. Solomon actually built it, about 960 BC.</p></div>
+    </div>
+    <p class="note step">For most of their history, God's presence travelled with His people in a tent. The temple came later. Stephen's point is that the building was never the heart of it.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="47-50" data-hl="But Solomon built him an house|the most High dwelleth not in temples made with hands|Heaven is my throne, and earth is my footstool"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="48-49" data-hl="Heaven is my throne, and earth is my footstool"></blockquote>
+    <h2 class="rise" style="--d:1">A God too big for a building</h2>
+    <p class="note rise" style="--d:2">Stephen isn't mocking the temple. Solomon himself said the heaven of heavens couldn't contain God. The sin was treating the building as if it held Him, and caring more about the house than about the One who lived in it.</p>
+    <blockquote class="quote step"><p>“For all those things hath mine hand made, and all those things have been, saith the LORD: but to this man will I look, even to him that is poor and of a contrite spirit, and trembleth at my word.”</p><cite>Isaiah 66:2</cite></blockquote>
+      </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise">So where does He live?</h2>
+    <p class="saying rise" style="--d:1">In <em>His people</em></p>
+    <blockquote class="quote step"><p>“What? know ye not that your body is the temple of the Holy Ghost which is in you, which ye have of God, and ye are not your own?”</p><cite>1 Corinthians 6:19</cite></blockquote>
+    <p class="note step">The stone temple in Jerusalem was torn down by Rome in about AD 70, and not one stone was left on another. A believer can't be torn down.</p>
+    <p class="note step">If you belong to Jesus, God's Spirit lives in you, wherever you are, today. You don't have to get to a special place to find Him, and no failure has driven Him out.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="51-53" data-hl="Ye stiffnecked and uncircumcised in heart and ears|ye do always resist the Holy Ghost|have not kept it"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise">Hard words, said in love</h2>
+    <p class="saying rise" style="--d:1">“Ye do always <em>resist</em> the Holy Ghost”</p>
+    <p class="note step"><em>Stiffnecked</em> is an ox that won't be turned. <em>Uncircumcised in heart and ears</em> means they had the outward mark but never let God deal with the heart. They heard everything and listened to none of it.</p>
+    <p class="note step">Every prophet was pushed away, Stephen says, and now they've done it to <em>“the Just One.”</em> They had the law, <em>“and have not kept it.”</em> None of us has.</p>
+    <p class="note step">A man can resist the Spirit. When a hard truth lands and your teeth clench (verse 54), you can answer with rage or ask, <em>is it true?</em> Most turning around starts there.</p>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise">The same story, three times</h2>
+    <div class="ac07-pat">
+      <div class="row head rise" style="--d:1"><div></div><div>What they did</div><div>What God did</div><div>What came of it</div></div>
+      <div class="row rise" style="--d:2"><div class="who">Joseph</div><div data-h="What they did" class="no">sold him out of envy (v. 9)</div><div data-h="What God did" class="up">God was with him; governor of Egypt (v. 10)</div><div data-h="What came of it" class="up">brothers came to him for bread (v. 13)</div></div>
+      <div class="row step"><div class="who">Moses</div><div data-h="What they did" class="no">“Who made thee a ruler and a judge?” (v. 27)</div><div data-h="What God did" class="up">sent him as ruler and deliverer (v. 35)</div><div data-h="What came of it" class="up">brought them out of Egypt (v. 36)</div></div>
+      <div class="row now step"><div class="who">Jesus</div><div data-h="What they did" class="no">betrayed and murdered Him (v. 52)</div><div data-h="What God did" class="up">He stands at God's right hand (v. 56)</div><div data-h="What came of it" class="up">saves whosoever calls on Him</div></div>
+    </div>
+    <p class="note step">The last column is why this matters. The men who shoved Joseph aside ended up fed by him. The men who shoved Moses aside were led out by him. And the One they shoved aside is still offering the same thing: <em>“whosoever shall call upon the name of the Lord shall be saved”</em> (Romans 10:13).</p>
+  </div>
+</section>
+
+<!-- ======================= PART FIVE: STEPHEN ======================= -->
+<section class="slide part">
+  <div class="inner">
+    <p class="part-n rise">Part five</p>
+    <h2 class="rise" style="--d:1">Lord, lay not this sin</h2>
+    <p class="range rise" style="--d:2">Verses 54–60</p>
+    <div class="rule"></div>
+    <p class="hook rise" style="--d:4">They grind their teeth. Stephen looks up, sees Jesus, and forgives them.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="54-56" data-hl="cut to the heart|full of the Holy Ghost|the Son of man standing on the right hand of God"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <div class="stage">
+      <svg viewBox="0 0 640 300" style="max-height:34vh" role="img" aria-label="A night sky. At first it is dark and closed. Then the sky parts down the middle and light pours out. A bright glory shines, and Jesus stands beside it, at the right hand of God. Far below, Stephen looks up with his arms raised, with stones around him. The words appear: Behold, I see the heavens opened.">
+        <defs>
+          <radialGradient id="ac07-g" cx="50%" cy="34%" r="62%"><stop offset="0" style="stop-color:var(--glow);stop-opacity:.85"/><stop offset="1" style="stop-color:var(--glow);stop-opacity:0"/></radialGradient>
+          <clipPath id="ac07-clip"><rect x="0" y="0" width="640" height="300" rx="12"/></clipPath>
+        </defs>
+        <g clip-path="url(#ac07-clip)">
+          <rect class="ac07-sky" x="0" y="0" width="640" height="300"/>
+          <rect class="ac07-lite" x="0" y="0" width="640" height="300" style="fill:url(#ac07-g)"/>
+          <circle class="ac07-orb" cx="262" cy="100" r="30"/>
+          <g class="ac07-him"><circle cx="382" cy="62" r="11"/><path d="M370 76 h24 l7 70 h-38 z"/></g>
+          <line class="ac07-ground" x1="0" y1="262" x2="640" y2="262"/>
+          <ellipse class="ac07-stone" cx="270" cy="270" rx="9" ry="5"/><ellipse class="ac07-stone" cx="366" cy="272" rx="8" ry="4"/><ellipse class="ac07-stone" cx="300" cy="278" rx="7" ry="4"/><ellipse class="ac07-stone" cx="344" cy="278" rx="9" ry="4"/>
+          <circle class="ac07-fig" cx="320" cy="222" r="9"/><path class="ac07-fig" d="M310 232 h20 l4 30 h-28 z"/>
+          <path class="ac07-arm" d="M310 238 L292 212 M330 238 L348 212"/>
+          <rect class="ac07-half l" x="0" y="0" width="321" height="300"/>
+          <rect class="ac07-half r" x="319" y="0" width="321" height="300"/>
+          <text class="ac07-t big" x="320" y="34" text-anchor="middle">“Behold, I see the heavens opened”</text>
+          <text class="ac07-t" x="262" y="150" text-anchor="middle">the glory of God</text>
+          <text class="ac07-t" x="382" y="170" text-anchor="middle">Jesus, standing</text>
+          <text class="ac07-t" x="320" y="294" text-anchor="middle">Stephen</text>
+        </g>
+      </svg>
+    </div>
+    <h2 class="rise" style="--d:1">Heaven opened</h2>
+    <p class="note step"><em>Cut to the heart</em> means furious, not sorry: they <em>gnashed on him with their teeth.</em> Stephen, <em>full of the Holy Ghost</em>, looked up, away from them, and saw the glory of God.</p>
+    <p class="note step">He saw <em>Jesus standing</em>. Usually Jesus is seated at God's right hand, His work finished. Here He's on His feet, as if rising to receive His man. Stephen was not alone in that room, and neither are you.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="57-58" data-hl="cried out with a loud voice, and stopped their ears|cast him out of the city, and stoned him|a young man’s feet, whose name was Saul"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="58" data-hl="a young man’s feet, whose name was Saul"></blockquote>
+    <h2 class="rise" style="--d:1">A young man named Saul</h2>
+    <p class="note rise" style="--d:2">They <em>stopped their ears</em>, the same ears Stephen said were closed, and rushed him. They dragged him outside the city to stone him. The witnesses threw the first stones, so they took off their coats and piled them at the feet of a young man: Saul.</p>
+    <p class="note step">Saul didn't throw a stone. He stood there and watched, and agreed with it. Luke will say so in the next line: <em>“Saul was consenting unto his death”</em> (8:1). Sometimes the quiet part is the sin.</p>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise">The man who held the coats</h2>
+    <div class="pair">
+      <div class="scroll step"><p class="ref">Acts 22:20</p><p class="kjv">And when the blood of thy martyr Stephen was shed, I also was <mark>standing by, and consenting unto his death, and kept the raiment of them that slew him.</mark></p></div>
+      <div class="scroll step"><p class="ref">1 Timothy 1:13</p><p class="kjv">Who was before a blasphemer, and a persecutor, and injurious: <mark>but I obtained mercy, because I did it ignorantly in unbelief.</mark></p></div>
+    </div>
+    <p class="note step">Years later Saul, now Paul, told the story himself. He never forgot that day. And Jesus got hold of him anyway, in Acts 9. If God can reach the man holding the coats, He isn't finished with you.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="59-60" data-hl="Lord Jesus, receive my spirit|Lord, lay not this sin to their charge|he fell asleep"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise">He prayed like his Lord</h2>
+    <div class="pair">
+      <div class="scroll rise" style="--d:1"><p class="ref">Luke 23:34, Jesus on the cross</p><p class="kjv">Then said Jesus, <mark>Father, forgive them; for they know not what they do.</mark></p></div>
+      <div class="scroll step"><p class="ref">Acts 7:60, Stephen under the stones</p><p class="kjv">And he kneeled down, and cried with a loud voice, <mark>Lord, lay not this sin to their charge.</mark></p></div>
+    </div>
+    <div class="pair">
+      <div class="scroll step"><p class="ref">Luke 23:46, Jesus</p><p class="kjv">…Father, <mark>into thy hands I commend my spirit:</mark> and having said thus, he gave up the ghost.</p></div>
+      <div class="scroll step"><p class="ref">Acts 7:59, Stephen</p><p class="kjv">…calling upon God, and saying, <mark>Lord Jesus, receive my spirit.</mark></p></div>
+    </div>
+    <p class="note step">Stephen died the way Jesus did, forgiving the men doing it. And <em>“he fell asleep”</em>: for a believer, death is falling asleep in the arms of the One he'd just seen standing.</p>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <p class="saying rise">“Lord, lay not this sin to their charge”</p>
+    <p class="note rise" style="--d:1">Stephen wasn't saying what they did was fine. It was murder. He was handing it to God to deal with, instead of carrying it himself.</p>
+    <p class="note step">A lot of us are carrying someone: a father, an ex, a boss, a man who hurt us before we were old enough to fight back. Resentment is a heavy thing to hold, and it's the kind that takes a drink to carry. Forgiving doesn't make it okay. It puts the weight down.</p>
+    <p class="note step"><strong>Today:</strong> pick one name. Say, out loud if you can, <em>Lord, I give You this one.</em> Ask God to do for him what He did for Saul. You don't have to feel it yet. Stephen prayed it with stones in the air.</p>
+  </div>
+</section>
+
+<!-- ======================= CLOSING ======================= -->
+<section class="slide remember">
+  <div class="inner">
+    <h2 class="rise">Points to remember</h2>
+    <ol class="seeds">
+      <li class="step"><span class="topic">God's promise</span><span class="seed-q">“He promised that he would give it to him” <cite>7:5</cite></span><span class="take">Abraham owned nothing yet. God kept His word across four hundred years.</span></li>
+      <li class="step"><span class="topic">Refused</span><span class="seed-q">“This Moses whom they refused” <cite>7:35</cite></span><span class="take">Joseph, Moses, Jesus: the man God sends gets pushed away, then saves them.</span></li>
+      <li class="step"><span class="topic">Turning back</span><span class="seed-q">“Turned back again into Egypt” <cite>7:39</cite></span><span class="take">A man can be free and still look back. Hear Him, and turn.</span></li>
+      <li class="step"><span class="topic">God's house</span><span class="seed-q">“Dwelleth not in temples made with hands” <cite>7:48</cite></span><span class="take">God is too big for a building, and He lives in every believer.</span></li>
+      <li class="step"><span class="topic">Heaven opened</span><span class="seed-q">“I see the heavens opened” <cite>7:56</cite></span><span class="take">Jesus stood up for His man. He is with you in the worst room.</span></li>
+      <li class="step"><span class="topic">Forgiveness</span><span class="seed-q">“Lord, lay not this sin to their charge” <cite>7:60</cite></span><span class="take">Put the weight of the people who hurt you in God's hands today.</span></li>
+    </ol>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 1 of 6</p>
+      <span class="topic">God's promise</span>
+      <h2>What did God promise Abraham when he had no land and no child?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="3"></blockquote>
+      <blockquote class="quote step" data-q="5"></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>That He would give him the land he was standing in, and that his children would own it after him, even though Abraham didn't own a foot of it and had no child. Abraham believed, and God counted it as righteousness. God kept the promise, about four hundred years later.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 2 of 6</p>
+      <span class="topic">Refused</span>
+      <h2>Whom did Israel push away, and then God sent to save them?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="27"></blockquote>
+      <blockquote class="quote step" data-q="35"></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>Moses. They shoved him away with “Who made thee a ruler and a judge?”, and God sent that same man to be their ruler and deliverer. Joseph went the same way, and so did Jesus, whom the council had just betrayed and killed.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 3 of 6</p>
+      <span class="topic">Turning back</span>
+      <h2>Where did Israel's hearts turn back to in the wilderness?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="39"></blockquote>
+      <blockquote class="quote step" data-q="41"></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>To Egypt, where they'd been slaves. They were free, but they missed the old life, and they made a golden calf and celebrated what their own hands had made. It's the pull every man in recovery knows. The way out is the same one Moses gave them: hear Him, and confess it.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 4 of 6</p>
+      <span class="topic">God's house</span>
+      <h2>Does the most High live in houses made with hands?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="48"></blockquote>
+      <blockquote class="quote step" data-q="49-50"></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>No. Heaven is His throne and earth is His footstool, and no house can hold Him. He made all of it. He lives in His people by the Holy Spirit, so you can talk to Him anywhere today.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 5 of 6</p>
+      <span class="topic">Heaven opened</span>
+      <h2>What did Stephen see when he looked up?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="55"></blockquote>
+      <blockquote class="quote step" data-q="56"></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>The glory of God, and Jesus standing at God's right hand. He saw it while a mob ground their teeth at him. Jesus was already there, on His feet for him.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 6 of 6</p>
+      <span class="topic">Forgiveness</span>
+      <h2>What did Stephen pray as the stones hit him?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="59"></blockquote>
+      <blockquote class="quote step" data-q="60"></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>“Lord Jesus, receive my spirit,” and “Lord, lay not this sin to their charge.” He forgave the men killing him, with a young man named Saul standing by. That young man later became Paul.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide prayer">
+  <div class="inner">
+    <div class="emblem rise"></div>
+    <h2 class="rise" style="--d:1">Prayer requests</h2>
+    <p class="ask-line rise" style="--d:2">What can we pray about for you today?</p>
+    <blockquote class="quote rise" style="--d:4"><p>“For whosoever shall call upon the name of the Lord shall be saved.”</p><cite>Romans 10:13</cite></blockquote>
+  </div>
+</section>
+
+</main>
+
+<script>
+// King James Version, Acts chapter 7
+const V = {
+  1: "Then said the high priest, Are these things so?",
+  2: "And he said, Men, brethren, and fathers, hearken; The God of glory appeared unto our father Abraham, when he was in Mesopotamia, before he dwelt in Charran,",
+  3: "And said unto him, Get thee out of thy country, and from thy kindred, and come into the land which I shall shew thee.",
+  4: "Then came he out of the land of the Chaldaeans, and dwelt in Charran: and from thence, when his father was dead, he removed him into this land, wherein ye now dwell.",
+  5: "And he gave him none inheritance in it, no, not so much as to set his foot on: yet he promised that he would give it to him for a possession, and to his seed after him, when as yet he had no child.",
+  6: "And God spake on this wise, That his seed should sojourn in a strange land; and that they should bring them into bondage, and entreat them evil four hundred years.",
+  7: "And the nation to whom they shall be in bondage will I judge, said God: and after that shall they come forth, and serve me in this place.",
+  8: "And he gave him the covenant of circumcision: and so Abraham begat Isaac, and circumcised him the eighth day; and Isaac begat Jacob; and Jacob begat the twelve patriarchs.",
+  9: "And the patriarchs, moved with envy, sold Joseph into Egypt: but God was with him,",
+  10: "And delivered him out of all his afflictions, and gave him favour and wisdom in the sight of Pharaoh king of Egypt; and he made him governor over Egypt and all his house.",
+  11: "Now there came a dearth over all the land of Egypt and Chanaan, and great affliction: and our fathers found no sustenance.",
+  12: "But when Jacob heard that there was corn in Egypt, he sent out our fathers first.",
+  13: "And at the second time Joseph was made known to his brethren; and Joseph’s kindred was made known unto Pharaoh.",
+  14: "Then sent Joseph, and called his father Jacob to him, and all his kindred, threescore and fifteen souls.",
+  15: "So Jacob went down into Egypt, and died, he, and our fathers,",
+  16: "And were carried over into Sychem, and laid in the sepulchre that Abraham bought for a sum of money of the sons of Emmor the father of Sychem.",
+  17: "But when the time of the promise drew nigh, which God had sworn to Abraham, the people grew and multiplied in Egypt,",
+  18: "Till another king arose, which knew not Joseph.",
+  19: "The same dealt subtilly with our kindred, and evil entreated our fathers, so that they cast out their young children, to the end they might not live.",
+  20: "In which time Moses was born, and was exceeding fair, and nourished up in his father’s house three months:",
+  21: "And when he was cast out, Pharaoh’s daughter took him up, and nourished him for her own son.",
+  22: "And Moses was learned in all the wisdom of the Egyptians, and was mighty in words and in deeds.",
+  23: "And when he was full forty years old, it came into his heart to visit his brethren the children of Israel.",
+  24: "And seeing one of them suffer wrong, he defended him, and avenged him that was oppressed, and smote the Egyptian:",
+  25: "For he supposed his brethren would have understood how that God by his hand would deliver them: but they understood not.",
+  26: "And the next day he shewed himself unto them as they strove, and would have set them at one again, saying, Sirs, ye are brethren; why do ye wrong one to another?",
+  27: "But he that did his neighbour wrong thrust him away, saying, Who made thee a ruler and a judge over us?",
+  28: "Wilt thou kill me, as thou diddest the Egyptian yesterday?",
+  29: "Then fled Moses at this saying, and was a stranger in the land of Madian, where he begat two sons.",
+  30: "And when forty years were expired, there appeared to him in the wilderness of mount Sina an angel of the Lord in a flame of fire in a bush.",
+  31: "When Moses saw it, he wondered at the sight: and as he drew near to behold it, the voice of the Lord came unto him,",
+  32: "Saying, I am the God of thy fathers, the God of Abraham, and the God of Isaac, and the God of Jacob. Then Moses trembled, and durst not behold.",
+  33: "Then said the Lord to him, Put off thy shoes from thy feet: for the place where thou standest is holy ground.",
+  34: "I have seen, I have seen the affliction of my people which is in Egypt, and I have heard their groaning, and am come down to deliver them. And now come, I will send thee into Egypt.",
+  35: "This Moses whom they refused, saying, Who made thee a ruler and a judge? the same did God send to be a ruler and a deliverer by the hand of the angel which appeared to him in the bush.",
+  36: "He brought them out, after that he had shewed wonders and signs in the land of Egypt, and in the Red sea, and in the wilderness forty years.",
+  37: "This is that Moses, which said unto the children of Israel, A prophet shall the Lord your God raise up unto you of your brethren, like unto me; him shall ye hear.",
+  38: "This is he, that was in the church in the wilderness with the angel which spake to him in the mount Sina, and with our fathers: who received the lively oracles to give unto us:",
+  39: "To whom our fathers would not obey, but thrust him from them, and in their hearts turned back again into Egypt,",
+  40: "Saying unto Aaron, Make us gods to go before us: for as for this Moses, which brought us out of the land of Egypt, we wot not what is become of him.",
+  41: "And they made a calf in those days, and offered sacrifice unto the idol, and rejoiced in the works of their own hands.",
+  42: "Then God turned, and gave them up to worship the host of heaven; as it is written in the book of the prophets, O ye house of Israel, have ye offered to me slain beasts and sacrifices by the space of forty years in the wilderness?",
+  43: "Yea, ye took up the tabernacle of Moloch, and the star of your god Remphan, figures which ye made to worship them: and I will carry you away beyond Babylon.",
+  44: "Our fathers had the tabernacle of witness in the wilderness, as he had appointed, speaking unto Moses, that he should make it according to the fashion that he had seen.",
+  45: "Which also our fathers that came after brought in with Jesus into the possession of the Gentiles, whom God drave out before the face of our fathers, unto the days of David;",
+  46: "Who found favour before God, and desired to find a tabernacle for the God of Jacob.",
+  47: "But Solomon built him an house.",
+  48: "Howbeit the most High dwelleth not in temples made with hands; as saith the prophet,",
+  49: "Heaven is my throne, and earth is my footstool: what house will ye build me? saith the Lord: or what is the place of my rest?",
+  50: "Hath not my hand made all these things?",
+  51: "Ye stiffnecked and uncircumcised in heart and ears, ye do always resist the Holy Ghost: as your fathers did, so do ye.",
+  52: "Which of the prophets have not your fathers persecuted? and they have slain them which shewed before of the coming of the Just One; of whom ye have been now the betrayers and murderers:",
+  53: "Who have received the law by the disposition of angels, and have not kept it.",
+  54: "When they heard these things, they were cut to the heart, and they gnashed on him with their teeth.",
+  55: "But he, being full of the Holy Ghost, looked up stedfastly into heaven, and saw the glory of God, and Jesus standing on the right hand of God,",
+  56: "And said, Behold, I see the heavens opened, and the Son of man standing on the right hand of God.",
+  57: "Then they cried out with a loud voice, and stopped their ears, and ran upon him with one accord,",
+  58: "And cast him out of the city, and stoned him: and the witnesses laid down their clothes at a young man’s feet, whose name was Saul.",
+  59: "And they stoned Stephen, calling upon God, and saying, Lord Jesus, receive my spirit.",
+  60: "And he kneeled down, and cried with a loud voice, Lord, lay not this sin to their charge. And when he had said this, he fell asleep."
+};
+const BOOK = "Acts 7";
+</script>
+<script src="../assets/deck.js"></script>
+</body>
+</html>
