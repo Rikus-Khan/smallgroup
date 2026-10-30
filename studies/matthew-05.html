@@ -1,0 +1,753 @@
+<!doctype html>
+<html lang="en" data-theme="scribe">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Matthew 5</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="../assets/fonts.css">
+<link rel="stylesheet" href="../assets/deck.css">
+<link rel="stylesheet" href="../assets/themes.css">
+<style>
+/* mt05-map: a close crop of the data-land map, with names and dots scaled to fit */
+.mt05-map .map-town text { font-size: 4.2px; }
+.mt05-map .map-town > circle:not(.map-ping) { r: 1.4px; }
+.mt05-map .map-town > .map-ping { r: 2.4px; }
+.mt05-map .map-river, .mt05-map .map-lake { stroke-width: .7px; }
+.mt05-map .map-water { font-size: 4px; }
+.mt05-hill { fill: color-mix(in srgb, var(--warm) 45%, var(--surface-2)); stroke: var(--leather-light); stroke-width: .5; }
+.mt05-crowd circle { fill: var(--ink-soft); }
+.mt05-tiny { font-size: 3.6px; }
+
+/* mt05-bless: the eight blessings, row by row, with the kingdom-of-heaven rows as bookends */
+.mt05-bless { display: grid; gap: .3rem; margin: .4em 0 .8em; }
+.mt05-bless > div { display: grid; grid-template-columns: minmax(0, 15rem) auto 1fr; gap: .2rem .8rem; align-items: center; padding: .32em .8em; border-radius: 8px; background: var(--surface); font-size: clamp(.86rem, .78rem + .4vw, 1.12rem); line-height: 1.3; }
+.mt05-bless > div > span:first-child { font-family: var(--serif); }
+.mt05-bless > div > b { color: var(--accent); font-weight: 400; }
+.mt05-bless > div > span:last-child { color: var(--ink-soft); }
+.mt05-bless > div.mt05-k { border: 2px solid var(--accent); }
+.mt05-bless > div.mt05-k > span:last-child { color: var(--accent-hot); font-weight: 700; }
+.mt05-bless small { color: var(--ink-soft); font-size: .8em; }
+@media (max-width: 640px) { .mt05-bless > div { grid-template-columns: 1fr auto 1fr; gap: .2rem .5rem; } }
+
+/* mt05-lamp: a lamp hidden under a basket, then lifted onto its stand to light the house */
+.mt05-dark { fill: var(--on-glow); opacity: .78; transition: opacity 1.4s ease .5s; }
+.mt05-wall { fill: var(--surface-2); }
+.mt05-floor { stroke: var(--leather-light); stroke-width: 3; }
+.mt05-stand { fill: var(--leather); }
+.mt05-clay { fill: var(--leather-light); }
+.mt05-flame { fill: var(--warm); transform-box: fill-box; transform-origin: 50% 100%; }
+.slide.active .mt05-flame { animation: mt05-flick 1.1s ease-in-out infinite alternate; }
+@keyframes mt05-flick { from { transform: scale(.9, .85) rotate(-3deg); } to { transform: scale(1.05, 1.12) rotate(3deg); } }
+.mt05-halo { opacity: 0; transition: opacity 1.4s ease .5s; }
+.mt05-basket { fill: color-mix(in srgb, var(--warm) 55%, var(--surface-2)); stroke: var(--leather); stroke-width: 2; transition: transform 1.2s cubic-bezier(.3,.7,.3,1); }
+.mt05-lid-tag { transition: opacity .6s ease; }
+.mt05-lit-tag { opacity: 0; transition: opacity .8s ease 1s; }
+.slide:has(.mt05-lift.on) .mt05-basket { transform: translate(150px, 92px); }
+.slide:has(.mt05-lift.on) .mt05-dark { opacity: 0; }
+.slide:has(.mt05-lift.on) .mt05-halo { opacity: 1; }
+.slide:has(.mt05-lift.on) .mt05-lid-tag { opacity: 0; }
+.slide:has(.mt05-lift.on) .mt05-lit-tag { opacity: 1; }
+
+/* mt05-letters: Hebrew letters set large, to show a jot and a tittle */
+.mt05-letters { display: flex; flex-wrap: wrap; gap: .6rem 1.4rem; align-items: flex-end; margin: .3em 0 .8em; }
+.mt05-letters > div { text-align: center; }
+.mt05-letters b { display: block; font: 400 clamp(3rem, 2rem + 4vw, 5.4rem)/1.1 var(--serif); color: var(--ink); }
+.mt05-letters .mt05-jot b { color: var(--accent-hot); }
+.mt05-letters span { display: block; font-size: clamp(.8rem, .75rem + .3vw, 1rem); color: var(--ink-soft); }
+.mt05-letters i { align-self: center; font-style: normal; color: var(--accent); font-size: 1.6rem; }
+
+/* mt05-sun: the same sun and the same rain on two houses */
+.mt05-sky { fill: color-mix(in srgb, var(--cool) 12%, var(--bg)); }
+.mt05-ray { stroke: var(--warm); stroke-width: 4; stroke-linecap: round; }
+.mt05-rays { transform-box: fill-box; transform-origin: center; }
+.slide.active .mt05-rays { animation: mt05-turn 24s linear infinite; }
+@keyframes mt05-turn { to { transform: rotate(360deg); } }
+.mt05-cloud { fill: var(--surface-2); stroke: var(--line-strong); stroke-width: 2; }
+.mt05-drop { stroke: var(--cool); stroke-width: 3; stroke-linecap: round; opacity: 0; }
+.slide.active .mt05-drop { animation: mt05-rain 1.3s linear infinite; animation-delay: calc(var(--k) * -.23s); }
+@keyframes mt05-rain { 0% { opacity: 0; transform: translateY(0); } 20% { opacity: .9; } 100% { opacity: 0; transform: translateY(70px); } }
+.mt05-house { fill: var(--leather); }
+.mt05-roof { fill: var(--leather-light); }
+</style>
+</head>
+<body>
+<main class="deck" id="deck">
+
+<!-- ======================= OPENING ======================= -->
+<section class="slide title">
+  <div class="inner">
+    <div class="emblem rise"></div>
+    <h1 class="rise" style="--d:1">Matthew 5</h1>
+    <p class="sub rise" style="--d:3">The Sermon on the Mount</p>
+    <p class="tag rise" style="--d:5">On a hillside by the lake, Jesus tells who is truly blessed, and shows that God's law reaches all the way down into the heart.</p>
+  </div>
+</section>
+
+<section class="slide watch">
+  <div class="inner">
+    <h2 class="rise">Things to watch for</h2>
+    <p class="lede rise" style="--d:1">Keep these questions in the back of your mind as we read. We'll come back to every one of them at the end.</p>
+    <ol class="seeds">
+      <li class="step"><span class="topic">Blessed</span><span class="seed-q">Who does Jesus call blessed?</span></li>
+      <li class="step"><span class="topic">Salvation</span><span class="seed-q">How can anyone's righteousness exceed the righteousness of the scribes and Pharisees?</span></li>
+      <li class="step"><span class="topic">Salt and light</span><span class="seed-q">What does Jesus want the world to see in us?</span></li>
+      <li class="step"><span class="topic">The heart</span><span class="seed-q">Where does sin start, according to Jesus?</span></li>
+      <li class="step"><span class="topic">Making peace</span><span class="seed-q">What should a man do when his brother has something against him?</span></li>
+      <li class="step"><span class="topic">Enemies</span><span class="seed-q">How does Jesus tell us to treat people who hurt us?</span></li>
+    </ol>
+  </div>
+</section>
+
+<!-- ======================= PART ONE: THE BLESSED ======================= -->
+<section class="slide part">
+  <div class="inner">
+    <p class="part-n rise">Part one</p>
+    <h2 class="rise" style="--d:1">Who is blessed</h2>
+    <p class="range rise" style="--d:2">Verses 1–12</p>
+    <div class="rule"></div>
+    <p class="hook rise" style="--d:4">Jesus sits down on a hillside and turns the world's idea of a good life upside down.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="1-2" data-hl="he went up into a mountain|when he was set|he opened his mouth, and taught them"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <div class="split">
+      <div class="stage">
+        <svg class="map mt05-map" data-land viewBox="214 104 92 62" data-towns="Capernaum!:r" role="img" aria-label="Close map of the north end of the Sea of Galilee. Capernaum sits on the north shore. Just west of it is the hillside where, by tradition, Jesus sat and taught the crowds.">
+          <path class="mt05-hill rise" style="--d:2" d="M236 132 C240 124 246 118 252 118 C258 118 262 124 264 132 Z"/>
+          <g class="mt05-crowd rise" style="--d:4">
+            <circle cx="241" cy="134" r=".9"/><circle cx="244" cy="136" r=".9"/><circle cx="247" cy="134.5" r=".9"/><circle cx="250" cy="136.5" r=".9"/><circle cx="253" cy="134" r=".9"/><circle cx="256" cy="136" r=".9"/><circle cx="259" cy="134.5" r=".9"/>
+            <circle cx="243" cy="139" r=".9"/><circle cx="246" cy="141" r=".9"/><circle cx="249" cy="139" r=".9"/><circle cx="252" cy="141" r=".9"/><circle cx="255" cy="139" r=".9"/><circle cx="238" cy="137" r=".9"/><circle cx="261" cy="138" r=".9"/>
+          </g>
+          <circle class="rise" style="--d:3;fill:var(--accent)" cx="250" cy="122" r="1.6"/>
+          <text class="map-soft mt05-tiny" x="250" y="114" text-anchor="middle" style="font-weight:700">the mountain</text>
+          <text class="map-soft mt05-tiny" x="249" y="148" text-anchor="middle">the crowds of 4:25</text>
+          <text class="map-water" x="272" y="158" text-anchor="middle">Sea of Galilee</text>
+        </svg>
+      </div>
+      <div>
+        <h2 class="rise" style="--d:1">A hillside by the lake</h2>
+        <p class="note rise" style="--d:2">Chapters 5 to 7 are called the Sermon on the Mount. Tradition places it on a hillside above the north shore of the lake, near Capernaum. The crowds from every direction (4:25) are below.</p>
+        <p class="note step"><em>“When he was set”</em>: teachers sat down to teach. Moses brought God's law down from a mountain. Now Jesus sits on a mountain and opens it up.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="slide verse" data-v="3-6" data-hl="Blessed are the poor in spirit|Blessed are they that mourn|Blessed are the meek|hunger and thirst after righteousness"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise">“Blessed”</h2>
+    <div class="morph">
+      <span class="big rise" style="--d:2">μακάριοι</span>
+      <span class="say step">said <em class="gk">makarioi</em></span>
+      <span class="means step">“happy, favoured by God”</span>
+    </div>
+    <p class="note step">Not lucky. Not doing well by the world's measure. <em>Blessed</em> means God's favour is on you, whatever your bank account says.</p>
+    <p class="note step">And look who Jesus calls blessed: the broke in spirit, the grieving, the gentle, the hungry. The world calls these men losers. Jesus says they are the ones God is pleased to help.</p>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="3"></blockquote>
+    <h2 class="rise" style="--d:1">Down before up</h2>
+    <ol class="stairs" style="--n:4" aria-label="Four steps down: poor in spirit, mourning, meek, hungry for righteousness. Then filled.">
+      <li style="--k:0"><b>poor in spirit</b>I have nothing to bring</li>
+      <li style="--k:1"><b>they that mourn</b>I grieve over my sin</li>
+      <li style="--k:2"><b>the meek</b>I bow to God</li>
+      <li style="--k:3"><b>hunger and thirst</b>I want His righteousness</li>
+    </ol>
+    <p class="note step"><em>Poor in spirit</em> is a man who knows he's bankrupt before God. Every man who ever got well started there: <em>I can't fix this myself.</em> That isn't the end. It's the door in: <em>“theirs <b>is</b> the kingdom.”</em></p>
+    <blockquote class="quote step"><p>“And the publican, standing afar off, would not lift up so much as his eyes unto heaven, but smote upon his breast, saying, God be merciful to me a sinner.”</p><cite>Luke 18:13</cite></blockquote>
+    <p class="note step"><em>Meek</em> isn't weak. Moses was called <em>“very meek”</em> (Numbers 12:3). It's strength that has bowed to God. And the hungry man <em>“shall be filled.”</em></p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="7-9" data-hl="Blessed are the merciful|Blessed are the pure in heart|Blessed are the peacemakers"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="8"></blockquote>
+    <h2 class="rise" style="--d:1">Mercy, a clean heart, and peace</h2>
+    <div class="sort">
+      <div class="step"><h3>the merciful</h3><div class="vs"><b>7</b></div><p>Men who have been forgiven much, and forgive. They “shall obtain mercy.”</p></div>
+      <div class="step"><h3>the pure in heart</h3><div class="vs"><b>8</b></div><p>Not double-minded. One heart, washed clean and turned toward God. They “shall see God.”</p></div>
+      <div class="step"><h3>the peacemakers</h3><div class="vs"><b>9</b></div><p>Not just peace-keepers who avoid trouble. Men who go and make things right. Like their Father.</p></div>
+    </div>
+    <p class="note step">None of these are ways to earn heaven. They are what the kingdom looks like in a man God has changed. Jesus is describing His people, and Himself.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="10-12" data-hl="persecuted for righteousness sake|for my sake|Rejoice, and be exceeding glad"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise">Eight blessings, one kingdom</h2>
+    <div class="mt05-bless" aria-label="The eight blessings. The first and the last both promise the kingdom of heaven.">
+      <div class="mt05-k rise" style="--d:1"><span>the poor in spirit</span><b>→</b><span>theirs is the kingdom of heaven</span></div>
+      <div class="rise" style="--d:2"><span>they that mourn</span><b>→</b><span>shall be comforted</span></div>
+      <div class="rise" style="--d:2"><span>the meek</span><b>→</b><span>shall inherit the earth</span></div>
+      <div class="rise" style="--d:3"><span>they which hunger and thirst</span><b>→</b><span>shall be filled</span></div>
+      <div class="rise" style="--d:3"><span>the merciful</span><b>→</b><span>shall obtain mercy</span></div>
+      <div class="rise" style="--d:4"><span>the pure in heart</span><b>→</b><span>shall see God</span></div>
+      <div class="rise" style="--d:4"><span>the peacemakers</span><b>→</b><span>shall be called the children of God</span></div>
+      <div class="mt05-k rise" style="--d:5"><span>the persecuted</span><b>→</b><span>theirs is the kingdom of heaven</span></div>
+    </div>
+    <p class="note step">The first and last promises match, like bookends: <em>“theirs is.”</em> The kingdom is theirs now, and the rest is coming.</p>
+    <p class="note step">Then Jesus turns to His disciples: <em>“Blessed are ye.”</em> Following Him will cost you. Some old friends will mock you for changing. You're in good company: they did the same to the prophets.</p>
+  </div>
+</section>
+
+<!-- ======================= PART TWO: SALT AND LIGHT ======================= -->
+<section class="slide part">
+  <div class="inner">
+    <p class="part-n rise">Part two</p>
+    <h2 class="rise" style="--d:1">Salt and light</h2>
+    <p class="range rise" style="--d:2">Verses 13–16</p>
+    <div class="rule"></div>
+    <p class="hook rise" style="--d:4">What a changed man is for.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="13-14" data-hl="Ye are the salt of the earth|Ye are the light of the world"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="13" data-hl="Ye are the salt of the earth"></blockquote>
+    <h2 class="rise" style="--d:1">Salt</h2>
+    <div class="columns">
+      <div class="col grace rise" style="--d:2">
+        <p class="who">What salt did</p>
+        <h3>Kept and seasoned</h3>
+        <p>With no fridges, salt kept meat and fish from rotting. And it gave food its taste.</p>
+      </div>
+      <div class="col law step">
+        <p class="who">“Lost his savour”</p>
+        <h3>Good for nothing</h3>
+        <p>Salt then was rarely pure. If the salt washed out, the rest was just dust, thrown on the path.</p>
+      </div>
+    </div>
+    <p class="note step">Jesus doesn't say <em>try to be</em> salt. He says <em>you are</em>. A believer in a rough place, a job site, a jail, a halfway house, slows the rot just by being there and staying true.</p>
+    <p class="note step">But salt only works when it touches the meat. You can't help anyone from a distance.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="15-16" data-hl="put it under a bushel, but on a candlestick|Let your light so shine before men"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <div class="split">
+      <div class="stage">
+        <svg viewBox="0 0 400 300" role="img" aria-label="A dark room with a small clay oil lamp on a stand, covered by a basket. On a step the basket is lifted off, and the light fills the house.">
+          <defs>
+            <radialGradient id="mt05-glow"><stop offset="0" style="stop-color:var(--glow)" stop-opacity=".9"/><stop offset=".5" style="stop-color:var(--warm)" stop-opacity=".35"/><stop offset="1" style="stop-color:var(--warm)" stop-opacity="0"/></radialGradient>
+            <clipPath id="mt05-room"><rect x="10" y="10" width="380" height="280" rx="8"/></clipPath>
+          </defs>
+          <g clip-path="url(#mt05-room)">
+            <rect class="mt05-wall" x="10" y="10" width="380" height="280"/>
+            <circle class="mt05-halo" cx="200" cy="120" r="210" fill="url(#mt05-glow)"/>
+            <line class="mt05-floor" x1="10" y1="262" x2="390" y2="262"/>
+            <rect class="mt05-stand" x="193" y="140" width="14" height="122"/>
+            <rect class="mt05-stand" x="170" y="252" width="60" height="10" rx="3"/>
+            <path class="mt05-clay" d="M176 140 Q200 120 224 136 L232 132 L224 142 Q200 152 176 140 Z"/>
+            <path class="mt05-flame" d="M228 131 C224 122 230 112 232 104 C236 114 240 122 234 131 Z"/>
+            <g class="mt05-basket"><path d="M160 150 L240 150 L228 88 L172 88 Z"/><path d="M168 130 L232 130 M164 110 L236 110" style="stroke:var(--leather)" stroke-width="2"/></g>
+            <rect class="mt05-dark" x="10" y="10" width="380" height="280"/>
+          </g>
+          <text class="mt05-lid-tag" x="200" y="60" text-anchor="middle" font-size="18" style="fill:var(--glow);font-style:italic">under a bushel</text>
+          <text class="mt05-lit-tag" x="200" y="60" text-anchor="middle" font-size="18" style="fill:var(--ink);font-style:italic">on a candlestick</text>
+        </svg>
+      </div>
+      <div>
+        <h2 class="rise" style="--d:1">Light</h2>
+        <p class="note rise" style="--d:2">A <em>candle</em> here is a small clay lamp that burned olive oil. A <em>bushel</em> is a basket for measuring grain. A <em>candlestick</em> is a lampstand. Nobody lights a lamp just to cover it.</p>
+        <p class="note step mt05-lift">At night you could see the lamps of the hill towns around the lake for miles. <em>“A city that is set on an hill cannot be hid.”</em></p>
+        <p class="note step">Notice who gets the credit: men <em>“glorify your Father.”</em> We don't do good to be saved, or to be seen. We do it because we've been saved, so people look past us to Him.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ======================= PART THREE: THE LAW FULFILLED ======================= -->
+<section class="slide part">
+  <div class="inner">
+    <p class="part-n rise">Part three</p>
+    <h2 class="rise" style="--d:1">Not to destroy, but to fulfil</h2>
+    <p class="range rise" style="--d:2">Verses 17–20</p>
+    <div class="rule"></div>
+    <p class="hook rise" style="--d:4">Jesus didn't come to throw out God's law. He came to keep every bit of it.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="17-18" data-hl="I am not come to destroy, but to fulfil|one jot or one tittle"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="17" data-hl="I am not come to destroy, but to fulfil"></blockquote>
+    <h2 class="rise" style="--d:1">“The law, or the prophets”</h2>
+    <ol class="timeline" aria-label="Moses gives the law, about the 1400s B.C. David and the psalms, about 1000 B.C. The prophets, about 800 to 430 B.C. About four hundred silent years. Then Jesus comes to fulfil it all.">
+      <li style="--k:0"><b>Moses</b><span>the law at Sinai</span><small>about 1400s B.C.</small></li>
+      <li style="--k:1"><b>David</b><span>the psalms</span><small>about 1000 B.C.</small></li>
+      <li style="--k:2"><b>The prophets</b><span>Isaiah to Malachi</span><small>about 800–430 B.C.</small></li>
+      <li class="wait" style="--k:3"><b>Silence</b><span>no new prophet</span><small>about 400 years</small></li>
+      <li class="lit" style="--k:4"><b>Jesus</b><span>“to fulfil”</span><small>about A.D. 28</small></li>
+    </ol>
+    <p class="note rise" style="--d:3"><em>“The law, or the prophets”</em> was a way of saying the whole Old Testament.</p>
+    <p class="note step"><em>Fulfil</em> means <em>fill it full</em>. Jesus kept God's law perfectly, every command, His whole life. And He is what it all pointed to: the sacrifices, the promises, the prophecies. He didn't set the Old Testament aside. He completed it.</p>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="18" data-hl="one jot or one tittle"></blockquote>
+    <h2 class="rise" style="--d:1">A jot and a tittle</h2>
+    <div class="mt05-letters" aria-label="The Hebrew letter yod, the smallest letter. Then beth and kaph, two letters told apart by one small corner stroke.">
+      <div class="mt05-jot rise" style="--d:2"><b>י</b><span>yod, the smallest letter: the <em>jot</em></span></div>
+      <div class="step"><b>ב</b><span>beth</span></div>
+      <div class="step"><b>כ</b><span>kaph</span></div>
+    </div>
+    <p class="note step">The <em>jot</em> is <span class="gk">yod</span>, the smallest Hebrew letter, hardly bigger than an apostrophe. A <em>tittle</em> is a tiny stroke, like the little corner at the bottom right that tells <span class="gk">beth</span> from <span class="gk">kaph</span>.</p>
+    <p class="note step">Jesus says not even a pen stroke of God's Word will fail. Every promise in it will be kept. You can stand your whole weight on it.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="19-20" data-hl="except your righteousness shall exceed the righteousness of the scribes and Pharisees"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="20" data-hl="exceed the righteousness of the scribes and Pharisees"></blockquote>
+    <h2 class="rise" style="--d:1">Better than the Pharisees?</h2>
+    <p class="note rise" style="--d:2">The <em>scribes</em> copied and taught the law. The <em>Pharisees</em> were the strictest religious party in Israel. If anyone was good enough, people thought, they were.</p>
+    <div class="columns">
+      <div class="col law step">
+        <p class="who">The scribes and Pharisees</p>
+        <h3>Their own</h3>
+        <p>Earned, outward, from the outside in. Careful about rules, cold in the heart.</p>
+      </div>
+      <div class="col grace step">
+        <p class="who">The kind that exceeds</p>
+        <h3>A gift</h3>
+        <p>Given by God to whoever believes, and worked out from the inside, by His Spirit.</p>
+      </div>
+    </div>
+    <blockquote class="quote step"><p>“And be found in him, not having mine own righteousness, which is of the law, but that which is through the faith of Christ, the righteousness which is of God by faith:”</p><cite>Philippians 3:9</cite></blockquote>
+  </div>
+</section>
+
+<!-- ======================= PART FOUR: BUT I SAY UNTO YOU ======================= -->
+<section class="slide part">
+  <div class="inner">
+    <p class="part-n rise">Part four</p>
+    <h2 class="rise" style="--d:1">But I say unto you</h2>
+    <p class="range rise" style="--d:2">Verses 21–48</p>
+    <div class="rule"></div>
+    <p class="hook rise" style="--d:4">Six times Jesus takes a command they knew and follows it down into the heart.</p>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise">“Ye have heard… But I say unto you”</h2>
+    <ol class="signs rise" style="--d:1">
+      <li class="now"><b>Murder</b>and anger · 21–26</li>
+      <li><b>Adultery</b>and lust · 27–30</li>
+      <li><b>Divorce</b>31–32</li>
+      <li><b>Oaths</b>and plain honesty · 33–37</li>
+      <li><b>An eye for an eye</b>38–42</li>
+      <li><b>Love thy neighbour</b>and thine enemy · 43–48</li>
+    </ol>
+    <p class="note step"><em>“Ye have heard that it was said”</em>: what they heard read in the synagogue, often with the teachers' own add-ons.</p>
+    <p class="note step"><em>“But I say unto you.”</em> The prophets said, <em>“Thus saith the LORD.”</em> Jesus speaks on His own authority, as the One who gave the law. The crowds noticed: He taught <em>“as one having authority”</em> (7:29).</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="21-22" data-hl="whosoever is angry with his brother without a cause|Raca|Thou fool, shall be in danger of hell fire"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="22" data-hl="angry with his brother without a cause"></blockquote>
+    <h2 class="rise" style="--d:1">Murder starts smaller</h2>
+    <ol class="stairs down" style="--n:3" aria-label="Three steps down: angry without a cause, in danger of the local court. Raca, in danger of the council. Thou fool, in danger of hell fire.">
+      <li style="--k:0"><b>angry without a cause</b>the judgment: the town court</li>
+      <li style="--k:1"><b>“Raca”</b>the council: the Sanhedrin, the high court</li>
+      <li style="--k:2"><b>“Thou fool”</b>hell fire</li>
+    </ol>
+    <p class="note step"><em>Raca</em> is an Aramaic insult: <em>empty-head, worthless</em>. <em>Hell fire</em> is literally <span class="gk">Gehenna</span>, the valley of Hinnom outside Jerusalem, where idol worshippers once burned their children (Jeremiah 7:31). Jesus used it for the place of final judgment.</p>
+    <p class="note step">Jesus traces murder back to its root: the anger you feed and the contempt that says a man is worthless. Not all anger is sin:</p>
+    <blockquote class="quote step"><p>“Be ye angry, and sin not: let not the sun go down upon your wrath:”</p><cite>Ephesians 4:26</cite></blockquote>
+  </div>
+</section>
+
+<section class="slide verse" data-v="23-26" data-hl="first be reconciled to thy brother|Agree with thine adversary quickly|the uttermost farthing"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise" style="--d:1">Go make it right</h2>
+    <div class="ifthen step">
+      <div class="if"><small>If</small>your brother <em>“hath ought against thee,”</em></div>
+      <span class="arrow" aria-hidden="true">→</span>
+      <div class="then"><small>then</small>leave the gift, go, and <em>first be reconciled.</em></div>
+    </div>
+    <p class="note step">The <em>altar</em> was in the temple, where a man brought his offering to God. Jesus says God would rather have you fix things with your brother first. Worship and a broken relationship you could mend don't go together.</p>
+    <p class="note step">Some of us owe a lot of apologies. Make amends where you can, wisely, and where it won't hurt them more. Settle things <em>“quickly,”</em> before they grow. A <em>farthing</em> was the smallest Roman coin. Unsettled wrongs get paid down to the last cent.</p>
+    <blockquote class="quote step"><p>“If it be possible, as much as lieth in you, live peaceably with all men.”</p><cite>Romans 12:18</cite></blockquote>
+  </div>
+</section>
+
+<section class="slide verse" data-v="27-28" data-hl="whosoever looketh on a woman to lust after her hath committed adultery with her already in his heart"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="28" data-hl="already in his heart"></blockquote>
+    <h2 class="rise" style="--d:1">Adultery starts in the eyes</h2>
+    <div class="columns">
+      <div class="col law rise" style="--d:2">
+        <p class="who">What they had heard</p>
+        <h3>The act</h3>
+        <p>“Thou shalt not commit adultery” (Exodus 20:14). Many thought: if I haven't done it, I'm clean.</p>
+      </div>
+      <div class="col grace step">
+        <p class="who">What Jesus says</p>
+        <h3>The heart</h3>
+        <p>The look that wants her is where it starts. God sees the heart, not just the hands.</p>
+      </div>
+    </div>
+    <p class="note step">Noticing a woman is not sin. Looking <em>to lust</em>, the second look and the replay in your head, is. Job knew it long ago:</p>
+    <blockquote class="quote step"><p>“I made a covenant with mine eyes; why then should I think upon a maid?”</p><cite>Job 31:1</cite></blockquote>
+  </div>
+</section>
+
+<section class="slide verse" data-v="29-30" data-hl="pluck it out|cut it off|profitable for thee"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="30" data-hl="cut it off, and cast it from thee"></blockquote>
+    <h2 class="rise" style="--d:1">Cut it off</h2>
+    <p class="note rise" style="--d:2">Jesus isn't asking any man to hurt his body. A blind man can still lust. He's telling us to be ruthless with whatever feeds the sin.</p>
+    <ul class="nots">
+      <li class="step"><span class="k">keep it close and be careful</span><span class="why">that's how most of us fell</span></li>
+      <li class="step"><span class="k">manage it, cut back a little</span><span class="why">sin doesn't stay managed</span></li>
+      <li class="step yes"><span class="k">“cut it off, and cast it from thee”</span><span class="why">the app, the number, the shortcut home past the bar</span></li>
+    </ul>
+    <p class="note step">Whatever it costs to cut it off, it costs less than keeping it. And if you've already fallen here, hear this too:</p>
+    <blockquote class="quote step"><p>“If we confess our sins, he is faithful and just to forgive us our sins, and to cleanse us from all unrighteousness.”</p><cite>1 John 1:9</cite></blockquote>
+  </div>
+</section>
+
+<section class="slide verse" data-v="31-32" data-hl="a writing of divorcement|saving for the cause of fornication"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise" style="--d:1">Marriage is meant to last</h2>
+    <p class="note rise" style="--d:2">The law of Moses had a <em>writing of divorcement</em> (Deuteronomy 24:1). Some teachers in Jesus' day said a man could send his wife away for almost any reason, so long as he handed her that paper.</p>
+    <p class="note step">Jesus raises the bar. Marriage is for life, and He names one exception here: <em>fornication</em>, sexual unfaithfulness. In that day a woman put away often had little way to live except to marry again, and Jesus holds the man who pushed her out responsible.</p>
+    <blockquote class="quote step"><p>“Wherefore they are no more twain, but one flesh. What therefore God hath joined together, let not man put asunder.”</p><cite>Matthew 19:6</cite></blockquote>
+    <p class="note step">Many of us have a broken marriage behind us. This text isn't here to pile on shame or to rule on your story. Bring it to the Lord, and talk it through with your pastor. There is real forgiveness with Him.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="33-35" data-hl="Swear not at all"></section>
+<section class="slide verse" data-v="36-37" data-hl="let your communication be, Yea, yea; Nay, nay"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="37"></blockquote>
+    <h2 class="rise" style="--d:1">A man of his word</h2>
+    <p class="saying rise" style="--d:2">Let your yes <em>mean</em> yes.</p>
+    <p class="note step">Men swore by heaven, by Jerusalem, by their own heads, to make a promise sound solid. Then they argued their way out on a technicality: <em>“I didn't swear by God's name.”</em> Jesus says all of it belongs to God. Just tell the truth.</p>
+    <p class="note step">We've all said, <em>“I swear, this is the last time.”</em> A changed man makes fewer promises and keeps the ones he makes. (Jesus isn't forbidding an oath in court. He Himself answered under oath before the high priest, 26:63–64.)</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="38-40" data-hl="An eye for an eye|turn to him the other also|let him have thy cloke also"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="39" data-hl="turn to him the other also"></blockquote>
+    <h2 class="rise" style="--d:1">An eye for an eye</h2>
+    <p class="note rise" style="--d:2"><em>“Eye for eye, tooth for tooth”</em> (Exodus 21:24) was a rule for judges. It kept punishment fair and stopped feuds from growing. It was never a license for a man to get even.</p>
+    <p class="note step">A blow on the <em>right</em> cheek from a right hand is a backhand: an insult more than an attack. Jesus says don't hit back to defend your pride.</p>
+    <p class="note step">The <em>coat</em> was the shirt-like tunic. The <em>cloke</em> was the heavy outer robe a poor man slept in. The law said a cloak taken in pledge had to be given back by sundown:</p>
+    <blockquote class="quote step"><p>“If thou at all take thy neighbour’s raiment to pledge, thou shalt deliver it unto him by that the sun goeth down:”</p><cite>Exodus 22:26</cite></blockquote>
+    <p class="note step">Jesus says: let him have even that. Your rights aren't worth more than your witness.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="41-42" data-hl="go with him twain|Give to him that asketh thee"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise">The second mile</h2>
+    <svg class="map" viewBox="0 0 600 170" role="img" aria-label="A road with three mile markers. The first mile is drawn as the mile a soldier could force a man to walk. On a step, the second mile is drawn: the mile he chooses to go.">
+      <rect class="map-land" x="0" y="0" width="600" height="170" rx="8"/>
+      <path class="map-way" d="M40 110 C140 80 220 130 300 105 S 470 80 560 108"/>
+      <path class="map-route" pathLength="1" d="M40 110 C140 80 220 130 300 105"/>
+      <path class="map-route r1" pathLength="1" d="M300 105 S 470 80 560 108" style="stroke:var(--accent-hot)"/>
+      <g style="fill:var(--ink-soft)"><rect x="34" y="112" width="12" height="22" rx="2"/><rect x="294" y="107" width="12" height="22" rx="2"/><rect x="554" y="110" width="12" height="22" rx="2"/></g>
+      <text x="40" y="154" text-anchor="middle" font-size="15" style="fill:var(--ink-soft)">start</text>
+      <text x="300" y="150" text-anchor="middle" font-size="15" style="fill:var(--ink-soft)">1 mile</text>
+      <text x="560" y="152" text-anchor="middle" font-size="15" style="fill:var(--ink-soft)">2 miles</text>
+      <text x="170" y="56" text-anchor="middle" font-size="17" style="fill:var(--accent)">the mile he can make you go</text>
+      <text class="step map-go1" x="430" y="56" text-anchor="middle" font-size="17" style="fill:var(--accent-hot);font-weight:700">the mile you choose</text>
+    </svg>
+    <p class="note rise" style="--d:3">A Roman soldier could make any man in an occupied land carry his gear for one mile. That's what happened to Simon of Cyrene, <em>“compelled to bear his cross”</em> (27:32).</p>
+    <p class="note step">The first mile is forced. The second is a gift. When you choose to go further, nobody owns you anymore: you're serving because you decided to. <em>“Give to him that asketh thee”</em> comes from the same free heart.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="43-45" data-hl="Love your enemies|pray for them which despitefully use you|he maketh his sun to rise on the evil and on the good"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <div class="split">
+      <div class="stage">
+        <svg viewBox="0 0 400 280" role="img" aria-label="One sun and one rain cloud over two houses. One is labelled the evil, the other the good. The same sun shines and the same rain falls on both.">
+          <rect class="mt05-sky" x="0" y="0" width="400" height="280" rx="8"/>
+          <g transform="translate(90 -26) scale(.85)" style="transform-origin:110px 70px">
+            <g class="mt05-rays">
+              <line class="mt05-ray" x1="110" y1="22" x2="110" y2="34"/><line class="mt05-ray" x1="110" y1="106" x2="110" y2="118"/>
+              <line class="mt05-ray" x1="62" y1="70" x2="74" y2="70"/><line class="mt05-ray" x1="146" y1="70" x2="158" y2="70"/>
+              <line class="mt05-ray" x1="76" y1="36" x2="84" y2="44"/><line class="mt05-ray" x1="136" y1="96" x2="144" y2="104"/>
+              <line class="mt05-ray" x1="144" y1="36" x2="136" y2="44"/><line class="mt05-ray" x1="84" y1="96" x2="76" y2="104"/>
+            </g>
+            <circle cx="110" cy="70" r="26" style="fill:var(--warm)"/>
+          </g>
+          <g transform="translate(-180 6)">
+            <path class="mt05-cloud" d="M230 82 C226 62 250 50 266 60 C274 42 306 42 314 62 C334 58 346 76 336 90 L236 90 C226 90 224 84 230 82 Z"/>
+            <line class="mt05-drop" style="--k:0" x1="250" y1="100" x2="246" y2="112"/><line class="mt05-drop" style="--k:1" x1="272" y1="98" x2="268" y2="110"/>
+            <line class="mt05-drop" style="--k:2" x1="294" y1="102" x2="290" y2="114"/><line class="mt05-drop" style="--k:3" x1="316" y1="98" x2="312" y2="110"/>
+          </g>
+          <g transform="translate(10 6)">
+            <path class="mt05-cloud" d="M230 82 C226 62 250 50 266 60 C274 42 306 42 314 62 C334 58 346 76 336 90 L236 90 C226 90 224 84 230 82 Z"/>
+            <line class="mt05-drop" style="--k:4" x1="250" y1="100" x2="246" y2="112"/><line class="mt05-drop" style="--k:5" x1="272" y1="98" x2="268" y2="110"/>
+            <line class="mt05-drop" style="--k:2" x1="294" y1="102" x2="290" y2="114"/><line class="mt05-drop" style="--k:1" x1="316" y1="98" x2="312" y2="110"/>
+          </g>
+          <g><path class="mt05-roof" d="M50 196 L105 160 L160 196 Z"/><rect class="mt05-house" x="62" y="196" width="86" height="56"/></g>
+          <g><path class="mt05-roof" d="M240 196 L295 160 L350 196 Z"/><rect class="mt05-house" x="252" y="196" width="86" height="56"/></g>
+          <line x1="0" y1="252" x2="400" y2="252" stroke-width="3" style="stroke:var(--leather-light)"/>
+          <text x="105" y="274" text-anchor="middle" font-size="16" style="fill:var(--ink)">the evil</text>
+          <text x="295" y="274" text-anchor="middle" font-size="16" style="fill:var(--ink)">the good</text>
+        </svg>
+      </div>
+      <div>
+        <h2 class="rise" style="--d:1">Love your enemies</h2>
+        <p class="note rise" style="--d:2">The law said, <em>“love thy neighbour as thyself”</em> (Leviticus 19:18). It never said <em>hate thine enemy</em>. Men added that part.</p>
+        <p class="note step">God sends sunshine and rain on the evil man's field and the good man's field alike. That's what your Father is like. Be His son: bless, do good, and pray for the man who used you.</p>
+        <p class="note step">Jesus did it Himself. On the cross He prayed, <em>“Father, forgive them; for they know not what they do”</em> (Luke 23:34). And we were His enemies when He died for us.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="slide verse" data-v="46-48" data-hl="do not even the publicans the same?|Be ye therefore perfect, even as your Father which is in heaven is perfect"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="48"></blockquote>
+    <h2 class="rise" style="--d:1">“Perfect”</h2>
+    <p class="note rise" style="--d:2"><em>Publicans</em> collected taxes for Rome and often skimmed extra. People saw them as traitors and crooks. Matthew, who wrote this book, was one, until Jesus called him (9:9). Even publicans love their own friends.</p>
+    <div class="morph">
+      <span class="big step">τέλειοι</span>
+      <span class="say step">said <em class="gk">teleioi</em></span>
+      <span class="means step">“complete, whole, full-grown”</span>
+    </div>
+    <p class="note step">Here it means love that isn't lopsided, that reaches enemies too, like the Father's. No man gets there on his own. This standard sends us to Christ for His righteousness, and then His Spirit grows us toward it day by day.</p>
+    <blockquote class="quote step"><p>“Being confident of this very thing, that he which hath begun a good work in you will perform it until the day of Jesus Christ:”</p><cite>Philippians 1:6</cite></blockquote>
+  </div>
+</section>
+
+<!-- ======================= CLOSING ======================= -->
+<section class="slide remember">
+  <div class="inner">
+    <h2 class="rise">Points to remember</h2>
+    <ol class="seeds">
+      <li class="step"><span class="topic">Blessed</span><span class="seed-q">“Blessed are the poor in spirit” <cite>5:3</cite></span><span class="take">God's favour rests on the men who know they need Him.</span></li>
+      <li class="step"><span class="topic">Salvation</span><span class="seed-q">“Except your righteousness shall exceed…” <cite>5:20</cite></span><span class="take">The only righteousness good enough is the one God gives by faith in Christ.</span></li>
+      <li class="step"><span class="topic">Salt and light</span><span class="seed-q">“Ye are the light of the world” <cite>5:14</cite></span><span class="take">Let your good works show, so men glorify your Father.</span></li>
+      <li class="step"><span class="topic">The heart</span><span class="seed-q">“Already in his heart” <cite>5:28</cite></span><span class="take">Sin starts inside: anger, contempt, the look that wants. Cut off what feeds it.</span></li>
+      <li class="step"><span class="topic">Making peace</span><span class="seed-q">“First be reconciled to thy brother” <cite>5:24</cite></span><span class="take">Go and make it right, quickly, as far as it depends on you.</span></li>
+      <li class="step"><span class="topic">Enemies</span><span class="seed-q">“Love your enemies” <cite>5:44</cite></span><span class="take">Bless, do good, and pray for them, like your Father does.</span></li>
+    </ol>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 1 of 6</p>
+      <span class="topic">Blessed</span>
+      <h2>Who does Jesus call blessed?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="3"></blockquote>
+      <blockquote class="quote step" data-q="4"></blockquote>
+      <blockquote class="quote step" data-q="6"></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>Not the strong and successful, but the poor in spirit, the grieving, the meek, the hungry for righteousness, the merciful, the pure, the peacemakers, and the persecuted. God's favour rests on men who know they need Him.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 2 of 6</p>
+      <span class="topic">Salvation</span>
+      <h2>How can anyone's righteousness exceed the righteousness of the scribes and Pharisees?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="20"></blockquote>
+      <blockquote class="quote step"><p>“And be found in him, not having mine own righteousness, which is of the law, but that which is through the faith of Christ, the righteousness which is of God by faith:”</p><cite>Philippians 3:9</cite></blockquote>
+      <blockquote class="quote step"><p>“For he hath made him to be sin for us, who knew no sin; that we might be made the righteousness of God in him.”</p><cite>2 Corinthians 5:21</cite></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>Not by trying harder. The only righteousness that exceeds theirs is God's own, given to whoever believes in Jesus. He took our sin, and we receive His righteousness by faith.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 3 of 6</p>
+      <span class="topic">Salt and light</span>
+      <h2>What does Jesus want the world to see in us?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="14"></blockquote>
+      <blockquote class="quote step" data-q="16"></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>Our good works, done in the open, so that people see the Father behind them and glorify Him. Like salt, we slow the rot around us by staying true. Like a lamp on a stand, we aren't meant to hide.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 4 of 6</p>
+      <span class="topic">The heart</span>
+      <h2>Where does sin start, according to Jesus?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="28"></blockquote>
+      <blockquote class="quote step"><p>“But every man is tempted, when he is drawn away of his own lust, and enticed. Then when lust hath conceived, it bringeth forth sin: and sin, when it is finished, bringeth forth death.”</p><cite>James 1:14–15</cite></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>In the heart. Murder starts with anger and contempt. Adultery starts with the look that wants. So Jesus says to deal with sin at the root, and to cut off whatever feeds it.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 5 of 6</p>
+      <span class="topic">Making peace</span>
+      <h2>What should a man do when his brother has something against him?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="23"></blockquote>
+      <blockquote class="quote step" data-q="24"></blockquote>
+      <blockquote class="quote step"><p>“If it be possible, as much as lieth in you, live peaceably with all men.”</p><cite>Romans 12:18</cite></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>Go to him first and make it right, before you bring your gift to God, and do it quickly. You can't control how he answers, but you can do your part.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 6 of 6</p>
+      <span class="topic">Enemies</span>
+      <h2>How does Jesus tell us to treat people who hurt us?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="44"></blockquote>
+      <blockquote class="quote step" data-q="45" data-hl="he maketh his sun to rise on the evil and on the good"></blockquote>
+      <blockquote class="quote step"><p>“But God commendeth his love toward us, in that, while we were yet sinners, Christ died for us.”</p><cite>Romans 5:8</cite></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>Love them, bless them, do them good, and pray for them. Don't hit back. God is good even to the evil, and Christ died for us while we were still sinners.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide prayer">
+  <div class="inner">
+    <div class="emblem rise"></div>
+    <h2 class="rise" style="--d:1">Prayer requests</h2>
+    <p class="ask-line rise" style="--d:2">What can we pray about for you today?</p>
+    <blockquote class="quote rise" style="--d:4"><p>“Ask, and it shall be given you; seek, and ye shall find; knock, and it shall be opened unto you:”</p><cite>Matthew 7:7</cite></blockquote>
+  </div>
+</section>
+
+</main>
+
+<script>
+// King James Version, Matthew chapter 5
+const V = {
+  1: "And seeing the multitudes, he went up into a mountain: and when he was set, his disciples came unto him:",
+  2: "And he opened his mouth, and taught them, saying,",
+  3: "Blessed are the poor in spirit: for theirs is the kingdom of heaven.",
+  4: "Blessed are they that mourn: for they shall be comforted.",
+  5: "Blessed are the meek: for they shall inherit the earth.",
+  6: "Blessed are they which do hunger and thirst after righteousness: for they shall be filled.",
+  7: "Blessed are the merciful: for they shall obtain mercy.",
+  8: "Blessed are the pure in heart: for they shall see God.",
+  9: "Blessed are the peacemakers: for they shall be called the children of God.",
+  10: "Blessed are they which are persecuted for righteousness sake: for theirs is the kingdom of heaven.",
+  11: "Blessed are ye, when men shall revile you, and persecute you, and shall say all manner of evil against you falsely, for my sake.",
+  12: "Rejoice, and be exceeding glad: for great is your reward in heaven: for so persecuted they the prophets which were before you.",
+  13: "Ye are the salt of the earth: but if the salt have lost his savour, wherewith shall it be salted? it is thenceforth good for nothing, but to be cast out, and to be trodden under foot of men.",
+  14: "Ye are the light of the world. A city that is set on an hill cannot be hid.",
+  15: "Neither do men light a candle, and put it under a bushel, but on a candlestick; and it giveth light unto all that are in the house.",
+  16: "Let your light so shine before men, that they may see your good works, and glorify your Father which is in heaven.",
+  17: "Think not that I am come to destroy the law, or the prophets: I am not come to destroy, but to fulfil.",
+  18: "For verily I say unto you, Till heaven and earth pass, one jot or one tittle shall in no wise pass from the law, till all be fulfilled.",
+  19: "Whosoever therefore shall break one of these least commandments, and shall teach men so, he shall be called the least in the kingdom of heaven: but whosoever shall do and teach them, the same shall be called great in the kingdom of heaven.",
+  20: "For I say unto you, That except your righteousness shall exceed the righteousness of the scribes and Pharisees, ye shall in no case enter into the kingdom of heaven.",
+  21: "Ye have heard that it was said by them of old time, Thou shalt not kill; and whosoever shall kill shall be in danger of the judgment:",
+  22: "But I say unto you, That whosoever is angry with his brother without a cause shall be in danger of the judgment: and whosoever shall say to his brother, Raca, shall be in danger of the council: but whosoever shall say, Thou fool, shall be in danger of hell fire.",
+  23: "Therefore if thou bring thy gift to the altar, and there rememberest that thy brother hath ought against thee;",
+  24: "Leave there thy gift before the altar, and go thy way; first be reconciled to thy brother, and then come and offer thy gift.",
+  25: "Agree with thine adversary quickly, whiles thou art in the way with him; lest at any time the adversary deliver thee to the judge, and the judge deliver thee to the officer, and thou be cast into prison.",
+  26: "Verily I say unto thee, Thou shalt by no means come out thence, till thou hast paid the uttermost farthing.",
+  27: "Ye have heard that it was said by them of old time, Thou shalt not commit adultery:",
+  28: "But I say unto you, That whosoever looketh on a woman to lust after her hath committed adultery with her already in his heart.",
+  29: "And if thy right eye offend thee, pluck it out, and cast it from thee: for it is profitable for thee that one of thy members should perish, and not that thy whole body should be cast into hell.",
+  30: "And if thy right hand offend thee, cut it off, and cast it from thee: for it is profitable for thee that one of thy members should perish, and not that thy whole body should be cast into hell.",
+  31: "It hath been said, Whosoever shall put away his wife, let him give her a writing of divorcement:",
+  32: "But I say unto you, That whosoever shall put away his wife, saving for the cause of fornication, causeth her to commit adultery: and whosoever shall marry her that is divorced committeth adultery.",
+  33: "Again, ye have heard that it hath been said by them of old time, Thou shalt not forswear thyself, but shalt perform unto the Lord thine oaths:",
+  34: "But I say unto you, Swear not at all; neither by heaven; for it is God’s throne:",
+  35: "Nor by the earth; for it is his footstool: neither by Jerusalem; for it is the city of the great King.",
+  36: "Neither shalt thou swear by thy head, because thou canst not make one hair white or black.",
+  37: "But let your communication be, Yea, yea; Nay, nay: for whatsoever is more than these cometh of evil.",
+  38: "Ye have heard that it hath been said, An eye for an eye, and a tooth for a tooth:",
+  39: "But I say unto you, That ye resist not evil: but whosoever shall smite thee on thy right cheek, turn to him the other also.",
+  40: "And if any man will sue thee at the law, and take away thy coat, let him have thy cloke also.",
+  41: "And whosoever shall compel thee to go a mile, go with him twain.",
+  42: "Give to him that asketh thee, and from him that would borrow of thee turn not thou away.",
+  43: "Ye have heard that it hath been said, Thou shalt love thy neighbour, and hate thine enemy.",
+  44: "But I say unto you, Love your enemies, bless them that curse you, do good to them that hate you, and pray for them which despitefully use you, and persecute you;",
+  45: "That ye may be the children of your Father which is in heaven: for he maketh his sun to rise on the evil and on the good, and sendeth rain on the just and on the unjust.",
+  46: "For if ye love them which love you, what reward have ye? do not even the publicans the same?",
+  47: "And if ye salute your brethren only, what do ye more than others? do not even the publicans so?",
+  48: "Be ye therefore perfect, even as your Father which is in heaven is perfect."
+};
+const BOOK = "Matthew 5";
+</script>
+<script src="../assets/deck.js"></script>
+</body>
+</html>

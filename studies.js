@@ -5654,6 +5654,385 @@ window.STUDIES = [
     }
   },
   {
+    "id": "matthew-01",
+    "type": "chapter",
+    "book": "Matthew",
+    "ch": 1,
+    "date": "2026-10-29",
+    "title": "Matthew 1",
+    "sub": "The King's family tree",
+    "about": "Matthew opens with Jesus' family line, sinners and outsiders included, and an angel tells Joseph the name that says what Jesus came to do.",
+    "tags": [
+      "Who Jesus is",
+      "God's promises",
+      "Grace",
+      "A godly man",
+      "Salvation",
+      "God with us"
+    ],
+    "url": "studies/matthew-01.html",
+    "overview": {
+      "where": "Bethlehem in Judaea, through Joseph's family line back to Abraham",
+      "when": "About 5 BC, just before Jesus is born",
+      "people": [
+        "jesus",
+        "abraham",
+        "david",
+        "thamar",
+        "rachab",
+        "ruth",
+        "bathsheba",
+        "manasses",
+        "joseph",
+        "mary"
+      ],
+      "places": [
+        "babylon"
+      ],
+      "story": [
+        "“The son of David, the son of Abraham”: Matthew traces Jesus' family line from Abraham through King David (1–6).",
+        "The line runs through good kings and wicked ones, down to the carrying away into Babylon, and on to Joseph, the husband of Mary (7–16).",
+        "Three sets of fourteen generations: from Abraham to David, from David to Babylon, and from Babylon to Christ (17).",
+        "Mary, espoused to Joseph, is found with child of the Holy Ghost. Joseph, a just man, plans to put her away quietly (18–19).",
+        "An angel tells him in a dream: “thou shalt call his name JESUS: for he shall save his people from their sins” (20–21).",
+        "It fulfils Isaiah: a virgin's son, called Emmanuel, “God with us.” Joseph obeys, and names the child JESUS (22–25)."
+      ],
+      "key": {
+        "ref": "Matthew 1:21",
+        "text": "And she shall bring forth a son, and thou shalt call his name JESUS: for he shall save his people from their sins."
+      },
+      "big": "Jesus is the promised King, born into real history and a family full of sinners and outsiders. His name says why He came: to save His people from their sins. In Him, God is with us."
+    }
+  },
+  {
+    "id": "matthew-02",
+    "type": "chapter",
+    "book": "Matthew",
+    "ch": 2,
+    "date": "2026-10-29",
+    "title": "Matthew 2",
+    "sub": "Born King of the Jews",
+    "about": "Wise men travel far to worship the young King, Herod plots to kill Him, and God guards His Son all the way to Egypt and home to Nazareth.",
+    "tags": [
+      "Seeking Jesus",
+      "Worship",
+      "God's word",
+      "God's protection",
+      "Grief",
+      "Obedience"
+    ],
+    "url": "studies/matthew-02.html",
+    "overview": {
+      "where": "Jerusalem and Bethlehem in Judaea, then Egypt, then Nazareth in Galilee",
+      "when": "About 5 to 4 BC, in the last days of Herod the king",
+      "people": [
+        "jesus",
+        "herod-the-great",
+        "wise-men",
+        "chief-priests",
+        "scribes",
+        "joseph",
+        "mary",
+        "archelaus",
+        "rachel"
+      ],
+      "places": [
+        "bethlehem",
+        "jerusalem",
+        "judaea",
+        "egypt",
+        "ramah",
+        "galilee",
+        "nazareth"
+      ],
+      "story": [
+        "Wise men from the east come to Jerusalem asking, “Where is he that is born King of the Jews?” Herod is troubled (1–3).",
+        "The chief priests and scribes know the answer from Micah: Bethlehem. Herod sends the wise men there, pretending he wants to worship too (4–8).",
+        "The star leads them to the house. They fall down, worship the young child, and give gold, frankincense, and myrrh, then go home another way (9–12).",
+        "Warned in a dream, Joseph takes the child and His mother by night into Egypt: “Out of Egypt have I called my son” (13–15).",
+        "Herod, furious, kills the little boys of Bethlehem, and Rachel weeps for her children, as Jeremiah said (16–18).",
+        "After Herod dies, God brings the family back. Avoiding Archelaus in Judaea, they settle in Nazareth: “He shall be called a Nazarene” (19–23)."
+      ],
+      "key": {
+        "ref": "Matthew 2:11",
+        "text": "And when they were come into the house, they saw the young child with Mary his mother, and fell down, and worshipped him: and when they had opened their treasures, they presented unto him gifts; gold, and frankincense, and myrrh."
+      },
+      "big": "Outsiders came a long way to worship Jesus while the insiders stayed home. No king could touch God's Son before His time. God keeps His word, sees the suffering of the innocent, and leads those who obey Him one step at a time."
+    }
+  },
+  {
+    "id": "matthew-03",
+    "type": "chapter",
+    "book": "Matthew",
+    "ch": 3,
+    "date": "2026-10-29",
+    "title": "Matthew 3",
+    "sub": "The voice in the wilderness",
+    "about": "John the Baptist calls the nation to repent, warns the religious leaders, and baptizes Jesus, as the Spirit descends and the Father speaks from heaven.",
+    "tags": [
+      "Repentance",
+      "Fruit",
+      "Religious pride",
+      "Who Jesus is",
+      "Baptism",
+      "The Father's love"
+    ],
+    "url": "studies/matthew-03.html",
+    "overview": {
+      "where": "The wilderness of Judaea and the Jordan River",
+      "when": "About AD 27, some thirty years after Jesus' birth",
+      "people": [
+        "john-the-baptist",
+        "jesus",
+        "isaiah",
+        "pharisees",
+        "sadducees",
+        "abraham",
+        "holy-spirit"
+      ],
+      "places": [
+        "wilderness",
+        "judaea",
+        "jerusalem",
+        "jordan",
+        "galilee"
+      ],
+      "story": [
+        "John the Baptist preaches in the wilderness of Judaea: “Repent ye: for the kingdom of heaven is at hand,” the voice Isaiah foretold (1–3).",
+        "Dressed in camel's hair like Elijah, he baptizes crowds from Jerusalem and Judaea in the Jordan as they confess their sins (4–6).",
+        "He calls the Pharisees and Sadducees a generation of vipers: bring forth fruits meet for repentance, and don't lean on Abraham (7–10).",
+        "One mightier is coming, who will baptize with the Holy Ghost and with fire, and separate the wheat from the chaff (11–12).",
+        "Jesus comes to be baptized. John objects, but Jesus says, “thus it becometh us to fulfil all righteousness” (13–15).",
+        "The heavens open, the Spirit descends like a dove, and the Father says, “This is my beloved Son, in whom I am well pleased” (16–17)."
+      ],
+      "key": {
+        "ref": "Matthew 3:17",
+        "text": "And lo a voice from heaven, saying, This is my beloved Son, in whom I am well pleased."
+      },
+      "big": "Repentance means turning from sin to God, and a turned heart shows its fruit. No family line or religion can save. Jesus, the mightier One, stood in the sinners' place, and the Father declared His love for His Son."
+    }
+  },
+  {
+    "id": "matthew-04",
+    "type": "chapter",
+    "book": "Matthew",
+    "ch": 4,
+    "date": "2026-10-29",
+    "title": "Matthew 4",
+    "sub": "Tested, then sent",
+    "about": "Jesus answers the devil's three temptations with the Word of God, brings light to dark Galilee, and calls four fishermen to follow Him.",
+    "tags": [
+      "Temptation",
+      "The Word of God",
+      "Light and darkness",
+      "Repentance",
+      "Following Jesus",
+      "Fulfilled prophecy"
+    ],
+    "url": "studies/matthew-04.html",
+    "overview": {
+      "where": "The wilderness of Judaea and the temple in Jerusalem, then Capernaum by the Sea of Galilee",
+      "when": "Right after Jesus' baptism; then, some months later, when John the Baptist was put in prison (about A.D. 27–28)",
+      "people": [
+        "jesus",
+        "holy-spirit",
+        "satan",
+        "angels",
+        "john-the-baptist",
+        "isaiah",
+        "simon-peter",
+        "andrew",
+        "sons-of-zebedee"
+      ],
+      "places": [
+        "wilderness",
+        "pinnacle-of-the-temple",
+        "nazareth",
+        "capernaum",
+        "zabulon",
+        "nephthalim",
+        "sea-of-galilee",
+        "galilee",
+        "syria",
+        "decapolis",
+        "jerusalem",
+        "judaea",
+        "beyond-jordan"
+      ],
+      "story": [
+        "The Spirit leads Jesus into the wilderness. After forty days without food, the devil tells Him to turn stones into bread. Jesus answers, “It is written” (1–4).",
+        "On the pinnacle of the temple the devil quotes a psalm, and on a high mountain he offers all the kingdoms of the world for one act of worship. Jesus answers from Scripture each time and sends him away, and angels minister to Him (5–11).",
+        "When John is put in prison, Jesus leaves Nazareth for Capernaum. Isaiah's promise comes true: the people in darkness see a great light. Jesus begins to preach, “Repent” (12–17).",
+        "By the Sea of Galilee, Jesus calls Simon Peter, Andrew, James and John: “Follow me, and I will make you fishers of men.” They leave their nets at once (18–22).",
+        "Jesus teaches, preaches and heals all through Galilee, and great crowds follow Him from every direction (23–25)."
+      ],
+      "key": {
+        "ref": "Matthew 4:4",
+        "text": "But he answered and said, It is written, Man shall not live by bread alone, but by every word that proceedeth out of the mouth of God."
+      },
+      "big": "Jesus beat temptation where we fall, with the Word of God, and He was tempted without sin. He brings light to the darkest places, and He calls ordinary men to follow Him and makes them into something new."
+    }
+  },
+  {
+    "id": "matthew-05",
+    "type": "chapter",
+    "book": "Matthew",
+    "ch": 5,
+    "date": "2026-10-29",
+    "title": "Matthew 5",
+    "sub": "The Sermon on the Mount",
+    "about": "On a hillside by the lake, Jesus tells who is truly blessed, calls His people salt and light, and shows that God's law reaches all the way down into the heart.",
+    "tags": [
+      "Blessed",
+      "Humility",
+      "Salt and light",
+      "The heart",
+      "Anger and lust",
+      "Making peace",
+      "Loving enemies"
+    ],
+    "url": "studies/matthew-05.html",
+    "overview": {
+      "where": "A hillside in Galilee, near Capernaum on the Sea of Galilee",
+      "when": "Early in Jesus' Galilean ministry, soon after He called His first disciples (about A.D. 28)",
+      "people": [
+        "jesus",
+        "disciples",
+        "the-father",
+        "scribes",
+        "pharisees",
+        "publicans"
+      ],
+      "places": [
+        "the-mountain",
+        "galilee",
+        "jerusalem",
+        "heaven",
+        "hell"
+      ],
+      "story": [
+        "Jesus goes up a mountain, sits down, and teaches His disciples. He calls blessed the poor in spirit, the mourners, the meek, the hungry for righteousness, the merciful, the pure in heart, the peacemakers, and the persecuted (1–12).",
+        "His people are the salt of the earth and the light of the world. Their good works should shine so that men glorify the Father (13–16).",
+        "Jesus came not to destroy the law and the prophets but to fulfil them, and the righteousness that enters the kingdom must exceed that of the scribes and Pharisees (17–20).",
+        "Six times He says, “Ye have heard… But I say unto you”: anger is the root of murder, lust is adultery in the heart, marriage is meant to last, a man's plain word should be good, and he should not take revenge (21–42).",
+        "Love your enemies and pray for them, as the Father sends sun and rain on the evil and the good. “Be ye therefore perfect” (43–48)."
+      ],
+      "key": {
+        "ref": "Matthew 5:3",
+        "text": "Blessed are the poor in spirit: for theirs is the kingdom of heaven."
+      },
+      "big": "God's blessing rests on men who know they need Him. Jesus looks past the outside to the heart, and no man's own righteousness is enough; the righteousness that saves is God's gift through faith in Christ, and it shows in mercy, honesty, peacemaking, and love for enemies."
+    }
+  },
+  {
+    "id": "matthew-09",
+    "type": "chapter",
+    "book": "Matthew",
+    "ch": 9,
+    "date": "2026-10-29",
+    "title": "Matthew 9",
+    "sub": "The Physician",
+    "about": "Jesus forgives a paralyzed man, calls a tax collector, eats with sinners, raises a dead girl, and looks at the crowds with compassion.",
+    "tags": [
+      "Forgiveness",
+      "Mercy",
+      "New life",
+      "Faith",
+      "Compassion",
+      "Prayer"
+    ],
+    "url": "studies/matthew-09.html",
+    "overview": {
+      "where": "Capernaum, Jesus' own city on the Sea of Galilee, then the towns and villages of Galilee",
+      "when": "Early in Jesus' work in Galilee, about AD 28",
+      "people": [
+        "jesus",
+        "scribes",
+        "levi-matthew",
+        "publicans",
+        "sinners",
+        "pharisees",
+        "disciples",
+        "john-the-baptist",
+        "jairus",
+        "woman-with-issue"
+      ],
+      "places": [
+        "capernaum",
+        "galilee",
+        "israel"
+      ],
+      "story": [
+        "Back in Capernaum, friends carry a paralyzed man to Jesus. He forgives the man's sins, then proves His authority by telling him to walk (1–8).",
+        "Jesus calls Matthew from his tax booth and eats with publicans and sinners: “They that be whole need not a physician” (9–13).",
+        "Asked why His disciples don't fast, He calls Himself the bridegroom and says new wine needs new bottles (14–17).",
+        "A ruler's daughter dies. On the way, a woman sick for twelve years touches His hem and is made whole. Jesus takes the girl by the hand, and she arises (18–26).",
+        "Two blind men call Him the Son of David and see; a dumb man speaks. The crowds marvel, but the Pharisees blame the prince of the devils (27–34).",
+        "Moved with compassion for people scattered like sheep with no shepherd, Jesus tells His disciples to pray for labourers (35–38)."
+      ],
+      "key": {
+        "ref": "Matthew 9:12",
+        "text": "But when Jesus heard that, he said unto them, They that be whole need not a physician, but they that are sick."
+      },
+      "big": "Jesus came for the sick, not the healthy. He has authority to forgive every sin, He makes new men instead of patching old ones, and He looks at hurting people with compassion."
+    }
+  },
+  {
+    "id": "matthew-10",
+    "type": "chapter",
+    "book": "Matthew",
+    "ch": 10,
+    "date": "2026-10-29",
+    "title": "Matthew 10",
+    "sub": "Sent out",
+    "about": "Jesus names twelve ordinary men, gives them His power, and sends them out like sheep among wolves, with a Father who counts every hair.",
+    "tags": [
+      "Calling",
+      "Grace",
+      "Wisdom",
+      "Fear",
+      "Confession",
+      "The cross"
+    ],
+    "url": "studies/matthew-10.html",
+    "overview": {
+      "where": "Galilee, as Jesus sends the twelve out to the towns of Israel",
+      "when": "Right after Matthew 9, in Jesus' work in Galilee, about AD 28",
+      "people": [
+        "jesus",
+        "the-twelve",
+        "simon-peter",
+        "andrew",
+        "sons-of-zebedee",
+        "philip",
+        "bartholomew",
+        "thomas",
+        "levi-matthew",
+        "james-son-of-alphaeus",
+        "judas-not-iscariot",
+        "simon-the-zealot",
+        "judas-iscariot",
+        "samaritans"
+      ],
+      "places": [
+        "israel",
+        "sodom-and-gomorrah"
+      ],
+      "story": [
+        "Jesus gives His twelve disciples power over unclean spirits and every sickness. Their names: fishermen, a publican, a zealot, and Judas Iscariot (1–4).",
+        "He sends them to the lost sheep of Israel to preach and heal: “freely ye have received, freely give.” They travel light and offer peace to every house (5–15).",
+        "Sheep among wolves: they will face councils, scourging, and divided families, but the Spirit of their Father will give them words, and he that endureth to the end shall be saved (16–25).",
+        "Fear not: not one sparrow falls without the Father, and the hairs of their heads are all numbered (26–31).",
+        "Confess Him before men. He brings a sword that can divide a home. Take up the cross, lose your life for Him and find it. Not even a cup of cold water goes unrewarded (32–42)."
+      ],
+      "key": {
+        "ref": "Matthew 10:31",
+        "text": "Fear ye not therefore, ye are of more value than many sparrows."
+      },
+      "big": "Jesus sends ordinary men out with His power and His message. It will cost them, but the Father watches over every hair, and whoever loses his life for Christ finds it."
+    }
+  },
+  {
     "id": "mark-01",
     "type": "chapter",
     "book": "Mark",

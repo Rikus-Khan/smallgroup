@@ -1,0 +1,572 @@
+<!doctype html>
+<html lang="en" data-theme="night">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Matthew 4</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="../assets/fonts.css">
+<link rel="stylesheet" href="../assets/deck.css">
+<link rel="stylesheet" href="../assets/themes.css">
+<style>
+/* mt04-map: a cropped data-land map, with town names and dots scaled down to fit the crop */
+.mt04-map .map-town text { font-size: var(--mt04-t, 11px); }
+.mt04-map .map-town > circle:not(.map-ping) { r: var(--mt04-r, 4px); }
+.mt04-map .map-town > .map-ping { r: calc(var(--mt04-r, 4px) + 2px); }
+.mt04-map .map-region { font-size: var(--mt04-g, 9px); }
+.mt04-map .map-water { font-size: var(--mt04-g, 9px); }
+.mt04-map .map-route { stroke-width: var(--mt04-w, 3px); }
+.mt04-map .map-river, .mt04-map .map-lake { stroke-width: var(--mt04-s, 2px); }
+.mt04-map .map-way { stroke-width: 1.6px; stroke-dasharray: 2 4; }
+.mt04-small { font-size: var(--mt04-g, 9px); }
+.mt04-wild { fill: color-mix(in srgb, var(--warm) 26%, transparent); stroke: color-mix(in srgb, var(--warm) 60%, transparent); stroke-width: 1; stroke-dasharray: 3 3; }
+.mt04-tribe { fill: color-mix(in srgb, var(--accent) 14%, transparent); stroke: color-mix(in srgb, var(--accent) 45%, transparent); stroke-width: .6; stroke-dasharray: 2 2; }
+.mt04-tribe.b { fill: color-mix(in srgb, var(--cool) 16%, transparent); stroke: color-mix(in srgb, var(--cool) 50%, transparent); }
+
+/* mt04-cut: a verse quoted with a phrase cut out, struck through on a step (.mt04-strike) */
+.mt04-cut { margin: .5em 0 .9em; padding: .7em 1em; border-left: 4px solid var(--accent); border-radius: 8px; background: var(--surface); font: 400 clamp(1.05rem, .9rem + .7vw, 1.5rem)/1.5 var(--serif); }
+.mt04-cut cite { display: block; margin-top: .35em; font: 700 clamp(.8rem, .75rem + .3vw, 1rem) var(--sans); font-style: normal; color: var(--ink-soft); }
+.mt04-gone { text-decoration: line-through 3px transparent; transition: color .8s ease, text-decoration-color .8s ease; }
+.mt04-tag { display: inline-block; margin-left: .4em; padding: .05em .5em; border-radius: 6px; background: var(--danger); color: var(--bg); font: 700 .62em var(--sans); vertical-align: .2em; opacity: 0; transform: scale(.6); transition: opacity .5s ease .5s, transform .5s cubic-bezier(.3,1.6,.5,1) .5s; }
+.slide:has(.mt04-strike.on) .mt04-gone { color: var(--danger); text-decoration-color: var(--danger); }
+.slide:has(.mt04-strike.on) .mt04-tag { opacity: 1; transform: none; }
+
+/* mt04-net: a cast net thrown out over the water, opening as it flies */
+.mt04-water { fill: color-mix(in srgb, var(--cool) 30%, var(--bg)); }
+.mt04-water2 { fill: color-mix(in srgb, var(--cool) 50%, var(--bg)); }
+.slide.active .mt04-water { animation: mt04-roll 4s linear infinite; }
+@keyframes mt04-roll { to { transform: translateX(-100px); } }
+.mt04-net { transform-box: fill-box; transform-origin: center; transform: translate(-120px, 40px) scale(.12) rotate(-90deg); opacity: 0; transition: transform 1.8s cubic-bezier(.2,.7,.3,1) .5s, opacity .5s ease .5s; }
+.slide.active .mt04-net { transform: none; opacity: 1; }
+.mt04-mesh { fill: none; stroke: var(--ink-soft); stroke-width: 1.4; }
+.mt04-lead { fill: var(--accent); }
+.mt04-fish { fill: var(--cool); opacity: 0; transition: opacity .6s ease; }
+.slide.active .mt04-fish { opacity: 1; transition-delay: calc(2.2s + var(--k) * 150ms); }
+.mt04-man { fill: var(--accent-hot); opacity: 0; transition: opacity .8s ease; transition-delay: calc(var(--k) * 150ms); }
+.slide:has(.mt04-men.on) .mt04-fish { opacity: 0; transition-delay: 0s; }
+.slide:has(.mt04-men.on) .mt04-man { opacity: 1; }
+</style>
+</head>
+<body>
+<main class="deck" id="deck">
+
+<!-- ======================= OPENING ======================= -->
+<section class="slide title">
+  <div class="inner">
+    <div class="emblem rise"></div>
+    <h1 class="rise" style="--d:1">Matthew 4</h1>
+    <p class="sub rise" style="--d:3">Tested, then sent</p>
+    <p class="tag rise" style="--d:5">Jesus faces the devil alone in the wilderness, carries light into dark Galilee, and calls four fishermen to follow Him.</p>
+  </div>
+</section>
+
+<section class="slide watch">
+  <div class="inner">
+    <h2 class="rise">Things to watch for</h2>
+    <p class="lede rise" style="--d:1">Keep these questions in the back of your mind as we read. We'll come back to every one of them at the end.</p>
+    <ol class="seeds">
+      <li class="step"><span class="topic">Temptation</span><span class="seed-q">How did Jesus fight back when He was tempted?</span></li>
+      <li class="step"><span class="topic">No shame in the fight</span><span class="seed-q">Is it a sin to be tempted?</span></li>
+      <li class="step"><span class="topic">The devil's offer</span><span class="seed-q">What does the devil's shortcut always leave out?</span></li>
+      <li class="step"><span class="topic">Light</span><span class="seed-q">What happens when Jesus comes to people sitting in darkness?</span></li>
+      <li class="step"><span class="topic">Repentance</span><span class="seed-q">What does Jesus mean when He says, “Repent”?</span></li>
+      <li class="step"><span class="topic">Following</span><span class="seed-q">What did the fishermen leave, and what did Jesus promise to make them?</span></li>
+    </ol>
+  </div>
+</section>
+
+<!-- ======================= PART ONE: THE WILDERNESS ======================= -->
+<section class="slide part">
+  <div class="inner">
+    <p class="part-n rise">Part one</p>
+    <h2 class="rise" style="--d:1">Tempted in the wilderness</h2>
+    <p class="range rise" style="--d:2">Verses 1–11</p>
+    <div class="rule"></div>
+    <p class="hook rise" style="--d:4">Forty days without food, and then the devil comes with an offer.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="1-2" data-hl="led up of the Spirit into the wilderness|forty days and forty nights|an hungred"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <div class="split">
+      <div class="stage">
+        <svg class="map mt04-map" data-land viewBox="130 296 200 166" data-towns="Jerusalem:l, Bethlehem:l, Jericho:t, Bethabara!:r" style="--mt04-t:7.5px;--mt04-r:2.6px;--mt04-g:6.5px;--mt04-w:2.4px" role="img" aria-label="Map of Judaea near the Dead Sea. Jesus was baptized at the Jordan near Bethabara. A route runs from the river up into the wilderness of Judaea, the bare hills between Jerusalem and the Dead Sea.">
+          <path class="mt04-wild" d="M212 372 C224 366 236 368 240 380 C238 400 232 420 232 440 C232 452 228 462 222 470 L204 470 C206 450 212 430 210 410 C208 396 208 382 212 372 Z"/>
+          <text class="map-region" x="222" y="430" text-anchor="middle" transform="rotate(-80 222 430)">WILDERNESS</text>
+          <path class="map-route" pathLength="1" d="M268 368 C258 376 250 384 240 392 C234 398 230 404 226 410"/>
+          <text class="map-soft mt04-small" x="292" y="330" text-anchor="middle">baptized</text>
+          <text class="map-soft mt04-small" x="292" y="340" text-anchor="middle">here (3:16)</text>
+        </svg>
+      </div>
+      <div>
+        <h2 class="rise" style="--d:1">From the river to the desert</h2>
+        <p class="note rise" style="--d:2">At His baptism the Spirit came down on Him, and the Father spoke:</p>
+        <blockquote class="quote step"><p>“And lo a voice from heaven, saying, This is my beloved Son, in whom I am well pleased.”</p><cite>Matthew 3:17</cite></blockquote>
+        <p class="note step"><em>“Then.”</em> Right after that, the Spirit led Him up into the wilderness of Judaea: bare, rocky hills climbing from the Dead Sea toward Jerusalem. Mark says He was <em>“with the wild beasts”</em> (Mark 1:13).</p>
+        <p class="note step">The test often comes right after the high point. Being tested didn't mean God had left Him. The Spirit led Him there.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="2" data-hl="forty days and forty nights"></blockquote>
+    <h2 class="rise" style="--d:1">Forty in the wilderness</h2>
+    <div class="columns">
+      <div class="col law rise" style="--d:2">
+        <p class="who">Israel</p>
+        <h3>Forty years</h3>
+        <p>Grumbled for bread, put God to the test, and bowed down to a golden calf. They failed in the wilderness.</p>
+      </div>
+      <div class="col grace step">
+        <p class="who">Jesus</p>
+        <h3>Forty days</h3>
+        <p>Hungry and alone, tested on bread, on testing God, and on worship. He did not fail once.</p>
+      </div>
+    </div>
+    <blockquote class="quote step"><p>“And thou shalt remember all the way which the LORD thy God led thee these forty years in the wilderness, to humble thee, and to prove thee, to know what was in thine heart, whether thou wouldest keep his commandments, or no.”</p><cite>Deuteronomy 8:2</cite></blockquote>
+    <p class="note step">Watch where all three of Jesus' answers come from: Deuteronomy, the book where Moses looked back on Israel's forty years in the wilderness. Where Israel fell, Jesus stood, for them and for us. <em>“An hungred”</em> is old English for <em>hungry</em>.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="3-4" data-hl="If thou be the Son of God|command that these stones be made bread|Man shall not live by bread alone, but by every word that proceedeth out of the mouth of God"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise">Test one: bread</h2>
+    <div class="talk">
+      <p class="rise" style="--d:2"><small>The tempter</small>If thou be the Son of God, command that these stones be made bread.</p>
+      <p class="reply step"><small>Jesus</small>It is written, Man shall not live by bread alone, but by every word that proceedeth out of the mouth of God.<br><span class="flag">Deuteronomy 8:3</span></p>
+    </div>
+    <p class="note step"><em>“If thou be the Son of God.”</em> The Father had just said it. The devil's first move is to make Him doubt it, or prove it. He still works that way: <em>“If God really loved you…”</em></p>
+    <p class="note step">Bread isn't sinful, and Jesus was starving. The temptation was to meet a real need His own way, without the Father. Ours work the same way, and they come when we're hungry and worn down.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="5-7" data-hl="a pinnacle of the temple|cast thyself down: for it is written|Thou shalt not tempt the Lord thy God"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise" style="--d:1">Test two: the devil quotes Scripture</h2>
+    <p class="note rise" style="--d:2">The devil quoted Psalm 91. Here is what the psalm actually says:</p>
+    <div class="mt04-cut rise" style="--d:3">
+      “For he shall give his angels charge over thee, <span class="mt04-gone">to keep thee in all thy ways.</span><span class="mt04-tag">left out</span> They shall bear thee up in their hands, lest thou dash thy foot against a stone.”
+      <cite>Psalm 91:11–12</cite>
+    </div>
+    <p class="note step mt04-strike">He dropped the words <em>“to keep thee in all thy ways.”</em> The promise is for a man walking in God's ways, not for a man throwing himself off a roof to make God catch him.</p>
+    <p class="note step">The <em>pinnacle</em> was a high point on the temple's walls, probably the corner that looked straight down into the valley below. Jesus answered with Deuteronomy 6:16. To <em>“tempt”</em> God here means to test Him, to force His hand. Walking into the bar to prove you're strong, and calling it faith, is the same trap.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="8-11" data-hl="all the kingdoms of the world, and the glory of them|if thou wilt fall down and worship me|Get thee hence, Satan|angels came and ministered unto him"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise" style="--d:1">Test three: a crown without a cross</h2>
+    <div class="mirror">
+      <div class="step"><span>The devil's offer</span><span class="arrow">→</span><span class="word">all the kingdoms, today, for one bow</span><small>No cross, no suffering. Just a new master.</small></div>
+      <div class="step"><span>The Father's way</span><span class="arrow">→</span><span class="word">all the kingdoms, after the cross</span><small>“All power is given unto me in heaven and in earth” (Matthew 28:18).</small></div>
+    </div>
+    <p class="note step">Jesus was always going to have the kingdoms. The devil offered Him a shortcut that skipped the cross, and the cross is the only way anyone gets saved. <em>“Get thee hence, Satan”</em>: <em>Satan</em> means <em>the adversary</em>. Jesus didn't argue. He sent him away.</p>
+    <blockquote class="quote step"><p>“Submit yourselves therefore to God. Resist the devil, and he will flee from you.”</p><cite>James 4:7</cite></blockquote>
+    <p class="note step">The devil left, but Luke says only <em>“for a season”</em> (Luke 4:13). And the angels came and cared for Him, the very angels the devil had dared Him to call down.</p>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise">Three tests, one answer</h2>
+    <div class="asks">
+      <div class="ask step"><span class="q">“Command that these stones be made bread.”</span><span class="stamp">It is written</span><span class="ctx">Deuteronomy 8:3. Trust God's word more than your hunger.</span></div>
+      <div class="ask step"><span class="q">“Cast thyself down.”</span><span class="stamp">It is written</span><span class="ctx">Deuteronomy 6:16. Don't put God to the test.</span></div>
+      <div class="ask step"><span class="q">“Fall down and worship me.”</span><span class="stamp">It is written</span><span class="ctx">Deuteronomy 6:13. Worship and serve God alone.</span></div>
+    </div>
+    <p class="note step">Jesus didn't use any weapon we don't have. He used the written Word, with the Spirit's help. Every believer has both.</p>
+    <blockquote class="quote step"><p>“Thy word have I hid in mine heart, that I might not sin against thee.”</p><cite>Psalm 119:11</cite></blockquote>
+    <p class="note step">Pick a few verses for your weak moments and learn them by heart. When the craving talks, you need something to say back.</p>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise">Tempted is not the same as sinning</h2>
+    <p class="saying rise" style="--d:1">Tempted. <em>Yet without sin.</em></p>
+    <blockquote class="quote step"><p>“For we have not an high priest which cannot be touched with the feeling of our infirmities; but was in all points tempted like as we are, yet without sin.”</p><cite>Hebrews 4:15</cite></blockquote>
+    <p class="note step">Some men feel dirty just for being tempted. But Jesus was tempted, and He never sinned. The pull isn't the sin. Giving in is. So He understands the fight from the inside, and He doesn't look down on you for being in it.</p>
+    <blockquote class="quote step"><p>“There hath no temptation taken you but such as is common to man: but God is faithful, who will not suffer you to be tempted above that ye are able; but will with the temptation also make a way to escape, that ye may be able to bear it.”</p><cite>1 Corinthians 10:13</cite></blockquote>
+  </div>
+</section>
+
+<!-- ======================= PART TWO: LIGHT IN GALILEE ======================= -->
+<section class="slide part">
+  <div class="inner">
+    <p class="part-n rise">Part two</p>
+    <h2 class="rise" style="--d:1">A great light</h2>
+    <p class="range rise" style="--d:2">Verses 12–17</p>
+    <div class="rule"></div>
+    <p class="hook rise" style="--d:4">John is in prison. Jesus moves to a lakeside town and begins to preach.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="12-13" data-hl="John was cast into prison|dwelt in Capernaum"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="12" data-hl="John was cast into prison"></blockquote>
+    <h2 class="rise" style="--d:1">Where verse 12 fits</h2>
+    <ol class="timeline" aria-label="Jesus is baptized, then tempted forty days. Then come some months of early work in Judaea, told only in John's Gospel. Then John the Baptist is put in prison, and Jesus moves to Capernaum and begins to preach.">
+      <li style="--k:0"><b>Baptized</b><span>at the Jordan</span><small>3:13–17</small></li>
+      <li style="--k:1"><b>Forty days</b><span>tempted in the wilderness</span><small>4:1–11</small></li>
+      <li class="wait" style="--k:2"><b>Some months</b><span>early work, told only by John</span><small>John 1–4</small></li>
+      <li style="--k:3"><b>John in prison</b><span>Herod Antipas locks him up</span><small>4:12</small></li>
+      <li class="lit" style="--k:4"><b>Capernaum</b><span>Jesus moves there and preaches</span><small>4:13–17</small></li>
+    </ol>
+    <p class="note rise" style="--d:3">Matthew skips ahead. John's Gospel fills in the months between: the wedding at Cana, Nicodemus, the woman at the well. John even says so:</p>
+    <blockquote class="quote step"><p>“For John was not yet cast into prison.”</p><cite>John 3:24</cite></blockquote>
+    <p class="note step">Herod Antipas ruled Galilee for Rome. He jailed John for saying plainly that Herod had no right to his brother's wife (Matthew 14:3–4). This is probably around A.D. 27 or 28.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="14-16" data-hl="Galilee of the Gentiles|The people which sat in darkness saw great light|light is sprung up"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <div class="split">
+      <div class="stage">
+        <svg class="map mt04-map" data-land viewBox="172 92 136 100" data-towns="Nazareth:l, Cana:l, Capernaum!:t" style="--mt04-t:7px;--mt04-r:2.4px;--mt04-g:6px;--mt04-w:2px;--mt04-s:1.2px" role="img" aria-label="Map of Galilee. Jesus moves from Nazareth, in the hills of Zebulun's land, to Capernaum on the north shore of the Sea of Galilee, in Naphtali's land.">
+          <path class="mt04-tribe" d="M180 140 C192 132 214 136 238 146 C246 154 244 172 236 184 C220 190 196 190 182 180 C176 168 176 150 180 140 Z"/>
+          <path class="mt04-tribe b" d="M214 98 C234 94 258 96 270 104 C272 116 268 126 262 134 C252 142 244 146 238 146 C222 140 206 134 196 128 C198 114 204 102 214 98 Z"/>
+          <text class="map-soft mt04-small" x="198" y="186" text-anchor="middle" style="font-weight:700;letter-spacing:.1em">ZABULON</text>
+          <text class="map-soft mt04-small" x="226" y="108" text-anchor="middle" style="font-weight:700;letter-spacing:.1em">NEPHTHALIM</text>
+          <text class="map-water" x="294" y="158" text-anchor="middle">the sea</text>
+          <path class="map-route" pathLength="1" d="M214 172 C224 162 232 150 242 142 C250 136 258 132 266 131"/>
+        </svg>
+      </div>
+      <div>
+        <h2 class="rise" style="--d:1">From Nazareth to Capernaum</h2>
+        <p class="note rise" style="--d:2">Nazareth was the hill village where Jesus grew up. When He preached there, His own town tried to throw Him off a cliff (Luke 4:29).</p>
+        <p class="note step">Capernaum was a fishing town on the lakeshore (<em>“the sea coast”</em>), on a busy road. Peter's house was there (8:14). It became Jesus' home base.</p>
+        <p class="note step"><em>Zabulon</em> and <em>Nephthalim</em> are Zebulun and Naphtali, two of Israel's twelve tribes. This was their land. (The lines are rough.)</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise">First into the dark, first to see the light</h2>
+    <div class="daybreak">
+      <div class="rise" style="--d:2"><i>about 732 B.C.</i><b>Carried away</b><p>Assyria takes Galilee, “all the land of Naphtali,” and carries its people off (2 Kings 15:29).</p></div>
+      <div class="step"><i>the centuries between</i><b>“Galilee of the Gentiles”</b><p>Resettled with foreigners. Mixed, ruled by outsiders, looked down on by Jerusalem.</p></div>
+      <div class="step"><i>Matthew 4:16</i><b>“Great light”</b><p>Jesus makes His home there and begins to preach.</p></div>
+    </div>
+    <blockquote class="quote step"><p>“Nevertheless the dimness shall not be such as was in her vexation, when at the first he lightly afflicted the land of Zebulun and the land of Naphtali, and afterward did more grievously afflict her by the way of the sea, beyond Jordan, in Galilee of the nations. The people that walked in darkness have seen a great light: they that dwell in the land of the shadow of death, upon them hath the light shined.”</p><cite>Isaiah 9:1–2</cite></blockquote>
+    <p class="note step">Matthew says it plainly: <em>“that it might be fulfilled.”</em> The land hit first and hardest saw the light first. If you've lived in <em>“the region and shadow of death,”</em> Jesus doesn't just pass through. He moves in.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="17" data-hl="Repent: for the kingdom of heaven is at hand"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise" style="--d:1">What “repent” means</h2>
+    <div class="morph">
+      <span class="big rise" style="--d:3">μετανοεῖτε</span>
+      <span class="say step">said <em class="gk">metanoeite</em></span>
+      <span class="means step">“change your mind, turn around”</span>
+    </div>
+    <p class="note step">Repenting isn't just feeling bad. It's a change of mind that turns the whole man around: away from sin, and toward God. And you don't have to clean yourself up first. You turn to Him, and He does the cleaning.</p>
+    <p class="note step"><em>“The kingdom of heaven”</em> is Matthew's way of saying the kingdom of God. Many Jews said “heaven” out of respect for God's name. Mark gives the same sermon this way:</p>
+    <blockquote class="quote step"><p>“And saying, The time is fulfilled, and the kingdom of God is at hand: repent ye, and believe the gospel.”</p><cite>Mark 1:15</cite></blockquote>
+    <p class="note step"><em>“At hand”</em> means <em>close enough to touch</em>. The King was standing right in front of them.</p>
+  </div>
+</section>
+
+<!-- ======================= PART THREE: FISHERS OF MEN ======================= -->
+<section class="slide part">
+  <div class="inner">
+    <p class="part-n rise">Part three</p>
+    <h2 class="rise" style="--d:1">Fishers of men</h2>
+    <p class="range rise" style="--d:2">Verses 18–25</p>
+    <div class="rule"></div>
+    <p class="hook rise" style="--d:4">Four working men drop their nets. Then all Galilee comes looking for Jesus.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="18-20" data-hl="casting a net into the sea|Follow me, and I will make you fishers of men|straightway left their nets"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="19"></blockquote>
+    <div class="split">
+      <div class="stage">
+        <svg viewBox="0 16 400 240" role="img" aria-label="A round cast net flies open over the water. Fish appear under it. On a step, the fish become people.">
+          <defs><clipPath id="mt04-sea"><rect x="0" y="0" width="400" height="300" rx="6"/></clipPath></defs>
+          <g clip-path="url(#mt04-sea)">
+            <path class="mt04-water" d="M0 150 q25 -10 50 0 t50 0 t50 0 t50 0 t50 0 t50 0 t50 0 t50 0 t50 0 t50 0 V300 H0 Z"/>
+            <path class="mt04-water2" d="M0 190 q25 -8 50 0 t50 0 t50 0 t50 0 t50 0 t50 0 t50 0 t50 0 V300 H0 Z"/>
+            <g class="mt04-net">
+              <ellipse class="mt04-mesh" cx="210" cy="160" rx="120" ry="44"/>
+              <ellipse class="mt04-mesh" cx="210" cy="160" rx="80" ry="29"/>
+              <ellipse class="mt04-mesh" cx="210" cy="160" rx="40" ry="15"/>
+              <path class="mt04-mesh" d="M90 160 L330 160 M210 116 L210 204 M125 129 L295 191 M125 191 L295 129 M160 120 L260 200 M160 200 L260 120"/>
+              <g class="mt04-lead"><circle cx="90" cy="160" r="5"/><circle cx="330" cy="160" r="5"/><circle cx="210" cy="116" r="5"/><circle cx="210" cy="204" r="5"/><circle cx="125" cy="129" r="5"/><circle cx="295" cy="191" r="5"/><circle cx="125" cy="191" r="5"/><circle cx="295" cy="129" r="5"/><circle cx="160" cy="120" r="5"/><circle cx="260" cy="200" r="5"/><circle cx="160" cy="200" r="5"/><circle cx="260" cy="120" r="5"/></g>
+            </g>
+            <g>
+              <path class="mt04-fish" style="--k:0" d="M150 166 c6 -6 16 -6 22 0 c-6 6 -16 6 -22 0 Z m22 0 l8 -5 v10 Z"/>
+              <path class="mt04-fish" style="--k:1" d="M196 150 c6 -6 16 -6 22 0 c-6 6 -16 6 -22 0 Z m22 0 l8 -5 v10 Z"/>
+              <path class="mt04-fish" style="--k:2" d="M236 172 c6 -6 16 -6 22 0 c-6 6 -16 6 -22 0 Z m22 0 l8 -5 v10 Z"/>
+              <path class="mt04-fish" style="--k:3" d="M250 146 c6 -6 16 -6 22 0 c-6 6 -16 6 -22 0 Z m22 0 l8 -5 v10 Z"/>
+            </g>
+            <g>
+              <g class="mt04-man" style="--k:0"><circle cx="160" cy="150" r="6"/><path d="M152 172 Q160 156 168 172 Z"/></g>
+              <g class="mt04-man" style="--k:1"><circle cx="205" cy="136" r="6"/><path d="M197 158 Q205 142 213 158 Z"/></g>
+              <g class="mt04-man" style="--k:2"><circle cx="246" cy="156" r="6"/><path d="M238 178 Q246 162 254 178 Z"/></g>
+              <g class="mt04-man" style="--k:3"><circle cx="266" cy="132" r="6"/><path d="M258 154 Q266 138 274 154 Z"/></g>
+            </g>
+          </g>
+          <text x="200" y="40" text-anchor="middle" font-size="18" class="serif" style="fill:var(--ink-soft);font-style:italic">a cast net</text>
+        </svg>
+      </div>
+      <div>
+        <h2 class="rise" style="--d:1">“I will make you”</h2>
+        <p class="note rise" style="--d:2">A cast net is round and weighted all around its edge. Thrown by hand, it spreads open and sinks over the fish.</p>
+        <p class="note step mt04-men">Jesus used what they knew: <em>you catch fish; I'll make you catch men.</em> He can use your story, even the hard years, to reach men nobody else can.</p>
+        <p class="note step">They had met Him at the Jordan (John 1:40–42). Now He called them to leave it all. <em>“I will make you”</em>: you come, and He does the making.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="slide verse" data-v="21-22" data-hl="mending their nets|they immediately left the ship and their father, and followed him"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise" style="--d:1">What it cost them</h2>
+    <div class="mirror">
+      <div class="step"><span>Simon and Andrew</span><span class="arrow">→</span><span class="word">“straightway left their nets”</span><small>Their tools, and the way they made a living (v. 20).</small></div>
+      <div class="step"><span>James and John</span><span class="arrow">→</span><span class="word">“left the ship and their father”</span><small>The family business, and the man who ran it (v. 22).</small></div>
+    </div>
+    <blockquote class="quote step"><p>“And straightway he called them: and they left their father Zebedee in the ship with the hired servants, and went after him.”</p><cite>Mark 1:20</cite></blockquote>
+    <p class="note step">They didn't leave their father stranded. Zebedee had hired men to help. But they did leave. Following Jesus isn't how a man gets saved; that's a free gift, received by faith. It's how a saved man lives. Some of us have nets to drop today: old friends, old places, old ways of making money.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="23" data-hl="teaching in their synagogues, and preaching the gospel of the kingdom, and healing all manner of sickness"></section>
+<section class="slide verse" data-v="24-25" data-hl="his fame went throughout all Syria|and he healed them|there followed him great multitudes of people"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="25"></blockquote>
+    <div class="split">
+      <div class="stage">
+        <svg class="map" data-land viewBox="40 0 360 520" data-towns="Capernaum!:l, Jerusalem:l" role="img" aria-label="Map of the whole land. On a step, crowds come toward Capernaum in Galilee from every direction: from Syria in the north, from the Decapolis east of the lake, from Jerusalem and Judaea in the south, and from beyond the Jordan.">
+          <text class="map-region" x="300" y="22" text-anchor="middle">SYRIA</text>
+          <text class="map-region" x="338" y="200" text-anchor="middle">DECAPOLIS</text>
+          <g class="step map-go1">
+            <path class="map-route r1" pathLength="1" d="M300 30 C292 64 284 96 273 122"/>
+            <path class="map-route r1" pathLength="1" d="M330 186 C312 170 296 156 282 138"/>
+            <path class="map-route r1" pathLength="1" d="M202 378 C196 300 214 200 262 138"/>
+            <path class="map-route r1" pathLength="1" d="M300 410 C300 330 296 220 281 142"/>
+          </g>
+        </svg>
+      </div>
+      <div>
+        <h2 class="rise" style="--d:1">From every direction</h2>
+        <p class="note rise" style="--d:2">Word got out fast. <em>Syria</em> was the Roman province to the north, and Rome governed this whole region through it.</p>
+        <p class="note step map-go1"><em>Decapolis</em> means <em>the Ten Cities</em>: Greek-style towns, mostly east of the lake, full of Gentiles. <em>“Beyond Jordan”</em> is the land east of the river. Jews and Gentiles, city men and country men, all came.</p>
+        <p class="note step">Matthew 5 opens with this crowd. Jesus will go up the hillside and teach them.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="24" data-hl="and he healed them"></blockquote>
+    <h2 class="rise" style="--d:1">Teaching, preaching, healing</h2>
+    <ol class="signs rise" style="--d:2">
+      <li><b>Teaching</b>in their synagogues</li>
+      <li><b>Preaching</b>the good news of the kingdom</li>
+      <li class="now"><b>Healing</b>“all manner of sickness”</li>
+    </ol>
+    <div class="sort">
+      <div class="step"><h3>divers</h3><p>various, of many kinds</p></div>
+      <div class="step"><h3>possessed with devils</h3><p>held by evil spirits</p></div>
+      <div class="step"><h3>lunatick</h3><p>struck with fits; likely seizures (see 17:15)</p></div>
+      <div class="step"><h3>palsy</h3><p>paralysis</p></div>
+    </div>
+    <p class="note step">Notice the last four words: <em>“and he healed them.”</em> Whatever had hold of a man, sickness, pain, or a dark spirit, Jesus was stronger. Nothing that has hold of you is stronger than He is.</p>
+  </div>
+</section>
+
+<!-- ======================= CLOSING ======================= -->
+<section class="slide remember">
+  <div class="inner">
+    <h2 class="rise">Points to remember</h2>
+    <ol class="seeds">
+      <li class="step"><span class="topic">Temptation</span><span class="seed-q">“It is written” <cite>4:4</cite></span><span class="take">Jesus fought with the Word of God. Learn it, so you have something to say back.</span></li>
+      <li class="step"><span class="topic">No shame in the fight</span><span class="seed-q">“To be tempted of the devil” <cite>4:1</cite></span><span class="take">Jesus was tempted and never sinned. The pull isn't the sin. Giving in is.</span></li>
+      <li class="step"><span class="topic">The devil's offer</span><span class="seed-q">“All these things will I give thee” <cite>4:9</cite></span><span class="take">The devil's shortcut skips the cross, and it always comes with a new master.</span></li>
+      <li class="step"><span class="topic">Light</span><span class="seed-q">“The people which sat in darkness saw great light” <cite>4:16</cite></span><span class="take">The darkest places get His light first. He moves in.</span></li>
+      <li class="step"><span class="topic">Repentance</span><span class="seed-q">“Repent: for the kingdom of heaven is at hand” <cite>4:17</cite></span><span class="take">Repenting is turning around, away from sin and toward God.</span></li>
+      <li class="step"><span class="topic">Following</span><span class="seed-q">“I will make you fishers of men” <cite>4:19</cite></span><span class="take">They left their nets. Jesus does the making.</span></li>
+    </ol>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 1 of 6</p>
+      <span class="topic">Temptation</span>
+      <h2>How did Jesus fight back when He was tempted?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="4"></blockquote>
+      <blockquote class="quote step" data-q="7"></blockquote>
+      <blockquote class="quote step" data-q="10"></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>Every time, with Scripture: “It is written.” He didn't argue or bargain, and He used no power we don't have. The Word hidden in your heart is a weapon for your weakest moments.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 2 of 6</p>
+      <span class="topic">No shame in the fight</span>
+      <h2>Is it a sin to be tempted?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step"><p>“For we have not an high priest which cannot be touched with the feeling of our infirmities; but was in all points tempted like as we are, yet without sin.”</p><cite>Hebrews 4:15</cite></blockquote>
+      <blockquote class="quote step"><p>“There hath no temptation taken you but such as is common to man: but God is faithful, who will not suffer you to be tempted above that ye are able; but will with the temptation also make a way to escape, that ye may be able to bear it.”</p><cite>1 Corinthians 10:13</cite></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>No. Jesus was tempted in every way we are, and He never sinned. The pull is not the sin; giving in is. He understands the fight, He doesn't look down on you for being in it, and God always makes a way of escape.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 3 of 6</p>
+      <span class="topic">The devil's offer</span>
+      <h2>What does the devil's shortcut always leave out?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="8"></blockquote>
+      <blockquote class="quote step" data-q="9"></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>It leaves out God's way. The devil cut the words “to keep thee in all thy ways” out of the psalm, and he offered Jesus the kingdoms without the cross. His shortcuts always skip obedience, and they always come with a price: bowing down to him.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 4 of 6</p>
+      <span class="topic">Light</span>
+      <h2>What happens when Jesus comes to people sitting in darkness?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="15"></blockquote>
+      <blockquote class="quote step" data-q="16"></blockquote>
+      <blockquote class="quote step"><p>“Then spake Jesus again unto them, saying, I am the light of the world: he that followeth me shall not walk in darkness, but shall have the light of life.”</p><cite>John 8:12</cite></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>The light breaks in. Galilee was the land hit first and hardest, and it was the first to see the light. Jesus moved in there. Whoever follows Him will not walk in darkness.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 5 of 6</p>
+      <span class="topic">Repentance</span>
+      <h2>What does Jesus mean when He says, “Repent”?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="17"></blockquote>
+      <blockquote class="quote step"><p>“And saying, The time is fulfilled, and the kingdom of God is at hand: repent ye, and believe the gospel.”</p><cite>Mark 1:15</cite></blockquote>
+      <blockquote class="quote step"><p>“Repent ye therefore, and be converted, that your sins may be blotted out, when the times of refreshing shall come from the presence of the Lord;”</p><cite>Acts 3:19</cite></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>To change your mind and turn around: away from sin, and toward God. Repenting and believing go together. You don't clean up first. You turn to Jesus as you are, trust Him, and He blots out your sins.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 6 of 6</p>
+      <span class="topic">Following</span>
+      <h2>What did the fishermen leave, and what did Jesus promise to make them?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="19"></blockquote>
+      <blockquote class="quote step" data-q="20"></blockquote>
+      <blockquote class="quote step" data-q="22"></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>They left their nets, their boat, and their father's business, right away. Jesus promised to make them fishers of men. He used what they already knew, and He did the making. He can do the same with your story.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide prayer">
+  <div class="inner">
+    <div class="emblem rise"></div>
+    <h2 class="rise" style="--d:1">Prayer requests</h2>
+    <p class="ask-line rise" style="--d:2">What can we pray about for you today?</p>
+    <blockquote class="quote rise" style="--d:4"><p>“Let us therefore come boldly unto the throne of grace, that we may obtain mercy, and find grace to help in time of need.”</p><cite>Hebrews 4:16</cite></blockquote>
+  </div>
+</section>
+
+</main>
+
+<script>
+// King James Version, Matthew chapter 4
+const V = {
+  1: "Then was Jesus led up of the Spirit into the wilderness to be tempted of the devil.",
+  2: "And when he had fasted forty days and forty nights, he was afterward an hungred.",
+  3: "And when the tempter came to him, he said, If thou be the Son of God, command that these stones be made bread.",
+  4: "But he answered and said, It is written, Man shall not live by bread alone, but by every word that proceedeth out of the mouth of God.",
+  5: "Then the devil taketh him up into the holy city, and setteth him on a pinnacle of the temple,",
+  6: "And saith unto him, If thou be the Son of God, cast thyself down: for it is written, He shall give his angels charge concerning thee: and in their hands they shall bear thee up, lest at any time thou dash thy foot against a stone.",
+  7: "Jesus said unto him, It is written again, Thou shalt not tempt the Lord thy God.",
+  8: "Again, the devil taketh him up into an exceeding high mountain, and sheweth him all the kingdoms of the world, and the glory of them;",
+  9: "And saith unto him, All these things will I give thee, if thou wilt fall down and worship me.",
+  10: "Then saith Jesus unto him, Get thee hence, Satan: for it is written, Thou shalt worship the Lord thy God, and him only shalt thou serve.",
+  11: "Then the devil leaveth him, and, behold, angels came and ministered unto him.",
+  12: "Now when Jesus had heard that John was cast into prison, he departed into Galilee;",
+  13: "And leaving Nazareth, he came and dwelt in Capernaum, which is upon the sea coast, in the borders of Zabulon and Nephthalim:",
+  14: "That it might be fulfilled which was spoken by Esaias the prophet, saying,",
+  15: "The land of Zabulon, and the land of Nephthalim, by the way of the sea, beyond Jordan, Galilee of the Gentiles;",
+  16: "The people which sat in darkness saw great light; and to them which sat in the region and shadow of death light is sprung up.",
+  17: "From that time Jesus began to preach, and to say, Repent: for the kingdom of heaven is at hand.",
+  18: "And Jesus, walking by the sea of Galilee, saw two brethren, Simon called Peter, and Andrew his brother, casting a net into the sea: for they were fishers.",
+  19: "And he saith unto them, Follow me, and I will make you fishers of men.",
+  20: "And they straightway left their nets, and followed him.",
+  21: "And going on from thence, he saw other two brethren, James the son of Zebedee, and John his brother, in a ship with Zebedee their father, mending their nets; and he called them.",
+  22: "And they immediately left the ship and their father, and followed him.",
+  23: "And Jesus went about all Galilee, teaching in their synagogues, and preaching the gospel of the kingdom, and healing all manner of sickness and all manner of disease among the people.",
+  24: "And his fame went throughout all Syria: and they brought unto him all sick people that were taken with divers diseases and torments, and those which were possessed with devils, and those which were lunatick, and those that had the palsy; and he healed them.",
+  25: "And there followed him great multitudes of people from Galilee, and from Decapolis, and from Jerusalem, and from Judaea, and from beyond Jordan."
+};
+const BOOK = "Matthew 4";
+</script>
+<script src="../assets/deck.js"></script>
+</body>
+</html>

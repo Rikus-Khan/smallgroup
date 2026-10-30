@@ -1,0 +1,547 @@
+<!doctype html>
+<html lang="en" data-theme="slate">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Matthew 3</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="../assets/fonts.css">
+<link rel="stylesheet" href="../assets/deck.css">
+<link rel="stylesheet" href="../assets/themes.css">
+<style>
+/* Winnowing on a threshing floor (v. 12): grain tossed into the wind, the wheat falls back on the pile,
+   the chaff blows off. Each .mt03-wheat / .mt03-chaff has its own --k (delay) and --x (sideways drift). */
+.mt03-floor { fill: var(--surface-2); stroke: var(--line-strong); stroke-width: 2; }
+.mt03-pile { fill: var(--warm); }
+.mt03-fan { fill: none; stroke: var(--leather-light); stroke-width: 6; stroke-linecap: round; transform-box: view-box; transform-origin: 250px 300px; }
+.mt03-wheat { fill: var(--warm); }
+.mt03-chaff { fill: none; stroke: var(--ink-soft); stroke-width: 2.5; stroke-linecap: round; }
+.mt03-wind { fill: none; stroke: var(--cool); stroke-width: 3; stroke-linecap: round; stroke-dasharray: 26 18; opacity: .7; }
+.mt03-wheat, .mt03-chaff { opacity: 0; }
+.slide.active .mt03-fan { animation: mt03-toss 2.4s ease-in-out infinite; }
+.slide.active .mt03-wheat { animation: mt03-fall 2.4s ease-in-out infinite; animation-delay: calc(var(--k, 0) * 90ms); }
+.slide.active .mt03-chaff { animation: mt03-blow 2.4s ease-out infinite; animation-delay: calc(var(--k, 0) * 90ms); }
+.slide.active .mt03-wind { animation: mt03-gust 1.2s linear infinite; }
+@keyframes mt03-toss { 0%, 100% { transform: rotate(0deg); } 30% { transform: rotate(-24deg); } }
+@keyframes mt03-fall { 0%, 18% { opacity: 0; transform: translate(0, 0); } 25% { opacity: 1; } 50% { transform: translate(calc(var(--x, 0) * 1px), -120px); } 85% { opacity: 1; transform: translate(calc(var(--x, 0) * 1.4px), 0); } 100% { opacity: 0; transform: translate(calc(var(--x, 0) * 1.4px), 0); } }
+@keyframes mt03-blow { 0%, 18% { opacity: 0; transform: translate(0, 0); } 25% { opacity: 1; } 50% { transform: translate(calc(var(--x, 0) * 1px + 40px), -130px); } 100% { opacity: 0; transform: translate(calc(var(--x, 0) * 1px + 250px), -70px); } }
+@keyframes mt03-gust { to { stroke-dashoffset: -44; } }
+</style>
+</head>
+<body>
+<main class="deck" id="deck">
+
+<!-- ======================= OPENING ======================= -->
+<section class="slide title">
+  <div class="inner">
+    <div class="emblem rise"></div>
+    <h1 class="rise">Matthew 3</h1>
+    <p class="sub rise" style="--d:3">The voice in the wilderness</p>
+    <p class="tag rise" style="--d:5">John calls a whole nation to turn around, and the Father speaks over His Son.</p>
+  </div>
+</section>
+
+<section class="slide watch">
+  <div class="inner">
+    <h2 class="rise">Things to watch for</h2>
+    <p class="lede rise" style="--d:1">Keep these questions in the back of your mind as we read. We'll come back to every one of them at the end.</p>
+    <ol class="seeds">
+      <li class="step"><span class="topic">Repentance</span><span class="seed-q">What does it mean to repent?</span></li>
+      <li class="step"><span class="topic">Fruit</span><span class="seed-q">How can you tell a man has really repented?</span></li>
+      <li class="step"><span class="topic">Religious pride</span><span class="seed-q">Can your family or your religion save you?</span></li>
+      <li class="step"><span class="topic">Who Jesus is</span><span class="seed-q">Who is mightier than John, and why?</span></li>
+      <li class="step"><span class="topic">Baptism</span><span class="seed-q">Why was Jesus baptized if He had no sin?</span></li>
+      <li class="step"><span class="topic">The Father's love</span><span class="seed-q">What did the Father say about His Son?</span></li>
+    </ol>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise">About thirty years later</h2>
+    <ol class="timeline" aria-label="About 5 BC, Jesus is born. About 4 BC, Herod dies and the family settles in Nazareth. AD 6, Archelaus is removed and Roman governors rule Judaea. About AD 26, Pontius Pilate becomes governor. About AD 27, John preaches and Jesus is baptized, which is Matthew chapter 3.">
+      <li style="--k:0"><b>about 5 BC</b><span>Jesus is born</span><small>chapters 1–2</small></li>
+      <li style="--k:1"><b>about 4 BC</b><span>Herod dies; home to Nazareth</span></li>
+      <li style="--k:2"><b>AD 6</b><span>Rome removes Archelaus; Roman governors rule Judaea</span></li>
+      <li style="--k:3"><b>about AD 26</b><span>Pontius Pilate becomes governor</span></li>
+      <li class="lit" style="--k:4"><b>about AD 27</b><span>John preaches; Jesus is baptized</span><small>this chapter</small></li>
+    </ol>
+    <p class="note rise" style="--d:3"><em>“In those days”</em> skips about thirty quiet years. Jesus grew up in Nazareth and worked as a carpenter (Mark 6:3). Luke says He was “about thirty years of age” when He began (Luke 3:23).</p>
+    <p class="note step">By now Judaea was ruled directly by a Roman governor, and the people were waiting for God to do something. Then a prophet showed up in the desert.</p>
+  </div>
+</section>
+
+<!-- ======================= PART ONE: THE VOICE ======================= -->
+<section class="slide part">
+  <div class="inner">
+    <p class="part-n rise">Part one</p>
+    <h2 class="rise" style="--d:1">The voice</h2>
+    <p class="range rise" style="--d:2">Verses 1–6</p>
+    <div class="rule"></div>
+    <p class="hook rise" style="--d:4">A strange man in the desert, and the whole country walking out to hear him.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="1-3" data-hl="Repent ye: for the kingdom of heaven is at hand|Prepare ye the way of the Lord"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="1" data-hl="preaching in the wilderness of Judaea"></blockquote>
+    <div class="split">
+      <div class="stage">
+        <svg class="map" data-land viewBox="120 120 220 330" data-towns="Nazareth:l, Jerusalem:l, Bethabara!:r" role="img" aria-label="A map of the land. The wilderness of Judaea is shaded, the dry hills between Jerusalem and the Dead Sea. John baptizes at the Jordan, near Bethabara. A road draws from Jerusalem down to the river. On a step, another road draws from Nazareth in Galilee down the Jordan valley to the same place.">
+          <path d="M214 345 L245 352 L250 388 L236 430 L214 440 L212 405 Z" style="fill:color-mix(in srgb, var(--warm) 32%, transparent)"/>
+          <text class="map-soft" x="207" y="446" text-anchor="end" font-size="13">the wilderness</text>
+          <path class="map-route" style="--wait:.8s" pathLength="1" d="M202 385 C 220 380, 235 370, 243 363 L 268 368"/>
+          <path class="map-route r1" pathLength="1" d="M214 172 C 240 190, 266 200, 268 230 C 270 280, 268 330, 271 360"/>
+        </svg>
+      </div>
+      <div>
+        <h2 class="rise" style="--d:1">Out in the wilderness</h2>
+        <p class="note rise" style="--d:2">The wilderness of Judaea is the dry, empty hill country falling from Jerusalem down to the Dead Sea and the Jordan. John 1:28 names the place: Bethabara, beyond Jordan.</p>
+        <p class="note step">Not the temple, not the city. People had to leave their comfort and walk out to hear him.</p>
+        <p class="note step map-go1">And one day Jesus Himself would walk down from Galilee to the same river (v. 13).</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="2" data-hl="Repent ye"></blockquote>
+    <h2 class="rise" style="--d:1">What “repent” means</h2>
+    <div class="morph">
+      <span class="big rise" style="--d:3">μετάνοια</span>
+      <span class="say step">said <em class="gk">metanoia</em></span>
+      <span class="means step">a change of mind that turns the whole man around</span>
+    </div>
+    <div class="mirror">
+      <div class="step"><span>Turn</span><span class="arrow">←</span><span class="word">away from</span><span>sin</span><small>Not just feeling bad: turning your back on it.</small></div>
+      <div class="step"><span>Turn</span><span class="arrow">→</span><span class="word">toward</span><span>God</span><small>“ye turned to God from idols to serve the living and true God” (1 Thessalonians 1:9).</small></div>
+    </div>
+    <p class="note step">Why now? <em>“The kingdom of heaven is at hand”</em>: the King is about to appear.</p>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="3" data-hl="Prepare ye the way of the Lord, make his paths straight"></blockquote>
+    <div class="split road">
+      <div class="stage">
+        <svg viewBox="0 0 600 240" role="img" aria-label="A crooked road over hills is leveled and made straight.">
+          <path class="hill" d="M60 200 L150 80 L240 200 Z" stroke-width="2" style="fill:var(--surface-2);stroke:var(--ink-soft)"/>
+          <path class="hill" d="M300 200 L380 110 L460 200 Z" stroke-width="2" style="fill:var(--surface-2);stroke:var(--ink-soft)"/>
+          <path class="crooked" d="M20 200 C70 200 90 90 150 85 C210 80 220 210 270 205 C320 200 340 120 380 115 C420 110 440 205 480 200 C520 195 540 200 580 200" fill="none" stroke-width="5" stroke-dasharray="10 8" style="stroke:var(--ink-soft)"/>
+          <path class="draw" pathLength="1" d="M20 200 L580 200" fill="none" stroke-width="6" stroke-linecap="round" style="stroke:var(--accent)"/>
+          <line x1="0" y1="203" x2="600" y2="203" stroke-width="1" opacity=".4" style="stroke:var(--ink-soft)"/>
+          <text x="580" y="232" text-anchor="end" font-size="18" style="fill:var(--accent-hot)">the way of the Lord</text>
+        </svg>
+      </div>
+      <div>
+        <h2 class="rise" style="--d:1">Fixing the road for the King</h2>
+        <p class="note rise" style="--d:2">Isaiah wrote it about 700 years before (Isaiah 40:3). Before a king traveled, men went ahead to fix the road.</p>
+        <p class="note step road-go">“The crooked shall be made straight, and the rough places plain” (Isaiah 40:4).</p>
+        <p class="note step">John did that road work in hearts. Repenting is letting God level the pride and straighten what's crooked, so nothing stands between you and Jesus.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="slide verse" data-v="4-6" data-hl="camel’s hair|locusts and wild honey|confessing their sins"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="4" data-hl="his raiment of camel’s hair, and a leathern girdle about his loins"></blockquote>
+    <h2 class="rise" style="--d:1">Dressed like Elijah</h2>
+    <div class="columns">
+      <div class="col law rise" style="--d:2">
+        <p class="who">2 Kings 1:8</p>
+        <h3>Elijah</h3>
+        <p>“He was an hairy man, and girt with a girdle of leather about his loins.”</p>
+      </div>
+      <div class="col grace step">
+        <p class="who">Matthew 3:4</p>
+        <h3>John</h3>
+        <p>“His raiment of camel’s hair, and a leathern girdle about his loins.”</p>
+      </div>
+    </div>
+    <p class="note step">The last Old Testament prophet ended with a promise: “I will send you Elijah the prophet” (Malachi 4:5). Then four hundred quiet years. Now a man in Elijah's clothes is preaching in the desert. People got the message.</p>
+    <p class="note step">Locusts were food the law allowed (Leviticus 11:22). John lived on what the desert gave. Nothing about him was for show.</p>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="6" data-hl="confessing their sins"></blockquote>
+    <h2 class="rise" style="--d:1">First the heart, then the water</h2>
+    <div class="ifthen">
+      <div class="if rise" style="--d:2"><small>first</small>confessing their sins</div>
+      <span class="arrow rise" style="--d:3" aria-hidden="true">→</span>
+      <div class="then rise" style="--d:4"><small>then</small>baptized in Jordan</div>
+    </div>
+    <p class="note step">The water didn't wash their sins away. It was a public sign that they had owned up and turned around. Baptism still works that way: it's a believer's step of obedience after he trusts Christ, not what saves him.</p>
+    <p class="note step">And confession is still where it starts:</p>
+    <blockquote class="quote step"><p>“If we confess our sins, he is faithful and just to forgive us our sins, and to cleanse us from all unrighteousness.”</p><cite>1 John 1:9</cite></blockquote>
+  </div>
+</section>
+
+<!-- ======================= PART TWO: FRUIT AND FIRE ======================= -->
+<section class="slide part">
+  <div class="inner">
+    <p class="part-n rise">Part two</p>
+    <h2 class="rise" style="--d:1">Fruit and fire</h2>
+    <p class="range rise" style="--d:2">Verses 7–12</p>
+    <div class="rule"></div>
+    <p class="hook rise" style="--d:4">The religious leaders show up, and John doesn't go easy on them.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="7-9" data-hl="O generation of vipers|fruits meet for repentance|We have Abraham to our father"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="7" data-hl="Pharisees and Sadducees|O generation of vipers"></blockquote>
+    <h2 class="rise" style="--d:1">Two parties, one warning</h2>
+    <div class="columns">
+      <div class="col law rise" style="--d:2">
+        <p class="who">Strict about the law</p>
+        <h3>Pharisees</h3>
+        <p>Kept the law of Moses and piles of rules added to it. Popular with ordinary people. Believed in angels and the resurrection.</p>
+      </div>
+      <div class="col law rise" style="--d:3">
+        <p class="who">The priestly upper class</p>
+        <h3>Sadducees</h3>
+        <p>Wealthy, ran the temple, got along with Rome. “The Sadducees say that there is no resurrection, neither angel, nor spirit” (Acts 23:8).</p>
+      </div>
+    </div>
+    <p class="note step">They agreed on almost nothing, but both came to look. John calls them <em>vipers</em>: snakes running ahead of a brush fire. They wanted to escape the wrath, without turning from their sins.</p>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="8" data-hl="fruits meet for repentance"></blockquote>
+    <h2 class="rise" style="--d:1">What doesn't count, and what does</h2>
+    <ul class="nots">
+      <li class="step"><span class="k">“We have Abraham to our father”</span><span class="why">The right family can't save you.</span></li>
+      <li class="step"><span class="k">a seat on the council</span><span class="why">A religious title can't either.</span></li>
+      <li class="step"><span class="k">showing up for the baptism</span><span class="why">Going through the motions isn't turning.</span></li>
+      <li class="step yes"><span class="k">fruits meet for repentance</span><span class="why">a changed life that fits a changed heart</span></li>
+    </ul>
+    <p class="note step">Fruit doesn't make a tree alive. It shows that it is. God could make children of Abraham out of the rocks on the riverbank (v. 9). What He's looking for is a heart that has really turned.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="10-12" data-hl="the axe is laid unto the root of the trees|he shall baptize you with the Holy Ghost, and with fire|Whose fan is in his hand"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="12" data-hl="Whose fan is in his hand|gather his wheat into the garner|burn up the chaff"></blockquote>
+    <div class="split">
+      <div class="stage">
+        <svg viewBox="0 0 600 340" role="img" aria-label="A threshing floor. A wooden fan tosses grain into the wind, again and again. The heavy wheat falls back onto the pile. The light chaff blows away to the right.">
+          <path class="mt03-wind" d="M300 60 C 360 50, 420 70, 480 58 S 560 50, 600 60"/>
+          <path class="mt03-wind" d="M330 110 C 390 100, 450 120, 510 108 S 570 100, 600 108" style="animation-delay:-.6s"/>
+          <ellipse class="mt03-floor" cx="250" cy="300" rx="230" ry="30"/>
+          <path class="mt03-pile" d="M170 300 Q 250 250 330 300 Z"/>
+          <g>
+            <ellipse class="mt03-wheat" cx="250" cy="270" rx="5" ry="3.5" style="--k:0;--x:-14"/>
+            <ellipse class="mt03-wheat" cx="250" cy="270" rx="5" ry="3.5" style="--k:1;--x:10"/>
+            <ellipse class="mt03-wheat" cx="250" cy="270" rx="5" ry="3.5" style="--k:2;--x:-4"/>
+            <ellipse class="mt03-wheat" cx="250" cy="270" rx="5" ry="3.5" style="--k:3;--x:18"/>
+            <ellipse class="mt03-wheat" cx="250" cy="270" rx="5" ry="3.5" style="--k:4;--x:-22"/>
+            <ellipse class="mt03-wheat" cx="250" cy="270" rx="5" ry="3.5" style="--k:5;--x:4"/>
+            <path class="mt03-chaff" d="M246 270 l8 -3" style="--k:0;--x:10"/>
+            <path class="mt03-chaff" d="M246 270 l7 4" style="--k:1;--x:40"/>
+            <path class="mt03-chaff" d="M246 270 l9 -1" style="--k:2;--x:70"/>
+            <path class="mt03-chaff" d="M246 270 l6 -5" style="--k:3;--x:25"/>
+            <path class="mt03-chaff" d="M246 270 l8 2" style="--k:4;--x:55"/>
+            <path class="mt03-chaff" d="M246 270 l7 -3" style="--k:5;--x:90"/>
+          </g>
+          <g class="mt03-fan">
+            <line x1="250" y1="290" x2="80" y2="150"/>
+            <path d="M262 272 L 236 304 M 270 280 L 244 312 M 254 266 L 228 296" style="stroke-width:5"/>
+          </g>
+          <text x="250" y="338" text-anchor="middle" font-size="24" font-weight="700" style="fill:var(--warm)">the wheat falls back</text>
+          <text x="595" y="190" text-anchor="end" font-size="24" style="fill:var(--ink-soft)">the chaff</text><text x="595" y="218" text-anchor="end" font-size="24" style="fill:var(--ink-soft)">blows away</text>
+          <text x="595" y="34" text-anchor="end" font-size="22" style="fill:var(--cool)">the wind</text>
+        </svg>
+      </div>
+      <div>
+        <h2 class="rise" style="--d:1">The fan and the floor</h2>
+        <p class="note rise" style="--d:2">Grain was beaten loose on a hard, flat <em>floor</em>, then tossed into the wind with a <em>fan</em>, a wooden fork. The wheat fell back. The chaff blew away and was burned.</p>
+        <p class="note step">Jesus will do that with people. The <em>“unquenchable fire”</em> is real.</p>
+        <p class="note step">But nobody turns himself from chaff into wheat. Jesus came to do that: “he shall save his people from their sins” (1:21). The door is open today.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="11" data-hl="he that cometh after me is mightier than I|he shall baptize you with the Holy Ghost"></blockquote>
+    <h2 class="rise" style="--d:1">One mightier than John</h2>
+    <div class="columns">
+      <div class="col law rise" style="--d:2">
+        <p class="who">John</p>
+        <h3>Water</h3>
+        <p>On the outside. A sign of a turned heart. “Not worthy to bear” His shoes: a slave's job, carrying his master's sandals.</p>
+      </div>
+      <div class="col grace step">
+        <p class="who">Jesus</p>
+        <h3>The Holy Ghost</h3>
+        <p>On the inside. God's own Spirit coming to live in every believer the moment he is saved.</p>
+      </div>
+    </div>
+    <blockquote class="quote step"><p>“For by one Spirit are we all baptized into one body, whether we be Jews or Gentiles, whether we be bond or free; and have been all made to drink into one Spirit.”</p><cite>1 Corinthians 12:13</cite></blockquote>
+    <p class="note step">“And with fire”: the very next verse burns the chaff, so fire here speaks of judgment, and of God's cleansing. Jesus will do what no preacher can.</p>
+  </div>
+</section>
+
+<!-- ======================= PART THREE: MY BELOVED SON ======================= -->
+<section class="slide part">
+  <div class="inner">
+    <p class="part-n rise">Part three</p>
+    <h2 class="rise" style="--d:1">My beloved Son</h2>
+    <p class="range rise" style="--d:2">Verses 13–17</p>
+    <div class="rule"></div>
+    <p class="hook rise" style="--d:4">The sinless One steps into the line of sinners, and heaven opens.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="13-15" data-hl="I have need to be baptized of thee, and comest thou to me?|thus it becometh us to fulfil all righteousness"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise">“Comest thou to me?”</h2>
+    <div class="talk">
+      <p class="rise" style="--d:1"><small>John (v. 14)</small>“I have need to be baptized of thee, and comest thou to me?”</p>
+      <p class="reply step"><small>Jesus (v. 15)</small>“Suffer it to be so now: for thus it becometh us to fulfil all righteousness.”</p>
+    </div>
+    <p class="note step">John was right: Jesus had no sins to confess. <em>“Suffer it”</em> means <em>let it happen</em>. <em>“It becometh us”</em> means <em>it's fitting, it's the right thing</em>.</p>
+    <p class="note step">Jesus came to do everything the Father asked, all of it. And the Father's plan was for His Son to stand with sinners.</p>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise">He got in line with us</h2>
+    <div class="swap rise" style="--d:2">
+      <h3><span>The line</span>for sinners</h3>
+      <h3><span>The holy One</span>without sin</h3>
+      <div class="a"><b>Us</b><small>confessing our sins</small></div>
+      <div class="b"><b>Jesus</b><small>nothing to confess</small></div>
+    </div>
+    <p class="note step swap-go">At the Jordan, He stepped into our place in line. At the cross, He would step into our place all the way.</p>
+    <blockquote class="quote step"><p>“For he hath made him to be sin for us, who knew no sin; that we might be made the righteousness of God in him.”</p><cite>2 Corinthians 5:21</cite></blockquote>
+  </div>
+</section>
+
+<section class="slide verse" data-v="16-17" data-hl="the Spirit of God descending like a dove|This is my beloved Son, in whom I am well pleased"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="16" data-hl="the heavens were opened unto him|the Spirit of God descending like a dove"></blockquote>
+    <div class="split">
+      <div class="stage">
+        <svg viewBox="0 0 400 380" role="img" aria-label="Heaven opens with the Father's voice, the Spirit comes down like a dove, and the Son stands in the Jordan.">
+          <defs>
+            <radialGradient id="mt03-heaven"><stop offset="0" style="stop-color:var(--glow)"/><stop offset=".5" stop-opacity=".35" style="stop-color:var(--accent)"/><stop offset="1" stop-opacity="0" style="stop-color:var(--accent)"/></radialGradient>
+          </defs>
+          <ellipse cx="200" cy="20" rx="190" ry="70" fill="url(#mt03-heaven)"/>
+          <text x="200" y="30" text-anchor="middle" font-size="22" font-weight="700" style="fill:var(--on-glow)">The Father</text>
+          <text x="200" y="56" text-anchor="middle" font-size="16" style="fill:var(--on-glow)">“a voice from heaven” (v. 17)</text>
+          <g class="dove">
+            <path class="wing" d="M-34 0 Q-16 -26 0 0 Q16 -26 34 0" fill="none" stroke-width="4" stroke-linecap="round" style="stroke:var(--ink)"/>
+            <ellipse cx="0" cy="4" rx="9" ry="6" style="fill:var(--ink)"/>
+          </g>
+          <text x="262" y="200" font-size="20" style="fill:var(--accent-hot)">The Spirit</text>
+          <circle cx="200" cy="292" r="14" style="fill:var(--ink)"/>
+          <path d="M182 345 L186 312 Q200 304 214 312 L218 345 Z" style="fill:var(--ink)"/>
+          <g fill="none" stroke-width="3" style="stroke:var(--cool)">
+            <path d="M80 340 q20 -10 40 0 t40 0 t40 0 t40 0 t40 0 t40 0"/>
+            <path d="M60 356 q20 -10 40 0 t40 0 t40 0 t40 0 t40 0 t40 0 t40 0"/>
+          </g>
+          <text x="250" y="300" font-size="20" style="fill:var(--accent-hot)">The Son</text>
+          <text x="200" y="378" text-anchor="middle" font-size="15" style="fill:var(--cool)">the Jordan River</text>
+        </svg>
+      </div>
+      <div>
+        <h2 class="rise" style="--d:1">Father, Son, and Holy Spirit</h2>
+        <p class="note rise" style="--d:2">The Son comes up out of the water. The Spirit comes down like a dove and lights on Him. The Father speaks from heaven.</p>
+        <p class="note step">One God, and all three are here in one scene. The word “Trinity” isn't in the Bible, but this is what it means.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="17" data-hl="This is my beloved Son, in whom I am well pleased"></blockquote>
+    <h2 class="rise" style="--d:1">Pleased before a single miracle</h2>
+    <div class="pair">
+      <div class="scroll rise" style="--d:2"><p class="ref">Psalm 2:7, the King</p><p class="kjv">… the LORD hath said unto me, <mark>Thou art my Son</mark>; this day have I begotten thee.</p></div>
+      <div class="scroll step"><p class="ref">Isaiah 42:1, the Servant</p><p class="kjv">Behold my servant, whom I uphold; mine elect, <mark>in whom my soul delighteth</mark>; I have put my spirit upon him.</p></div>
+    </div>
+    <p class="note step">The Father's words echo both: Jesus is the royal Son <em>and</em> the Servant who would suffer. And He said it before Jesus had preached a sermon or done one miracle.</p>
+    <p class="note step">Everyone who trusts Christ is brought into that love: “he hath made us accepted in the beloved” (Ephesians 1:6). You don't earn your way into the Father's favor. In Christ, you already have it.</p>
+  </div>
+</section>
+
+<!-- ======================= CLOSING ======================= -->
+<section class="slide remember">
+  <div class="inner">
+    <h2 class="rise">Points to remember</h2>
+    <ol class="seeds">
+      <li class="step"><span class="topic">Repentance</span><span class="seed-q">“Repent ye: for the kingdom of heaven is at hand” <cite>3:2</cite></span><span class="take">Turn from sin and toward God. Not just sorry: turned around.</span></li>
+      <li class="step"><span class="topic">Fruit</span><span class="seed-q">“Fruits meet for repentance” <cite>3:8</cite></span><span class="take">A changed life shows a changed heart. Fruit shows the root is alive.</span></li>
+      <li class="step"><span class="topic">Religious pride</span><span class="seed-q">“We have Abraham to our father” <cite>3:9</cite></span><span class="take">No family, title, or ritual can save you. Only a heart turned to God.</span></li>
+      <li class="step"><span class="topic">Who Jesus is</span><span class="seed-q">“He that cometh after me is mightier than I” <cite>3:11</cite></span><span class="take">John gave water. Jesus gives the Holy Ghost.</span></li>
+      <li class="step"><span class="topic">Baptism</span><span class="seed-q">“To fulfil all righteousness” <cite>3:15</cite></span><span class="take">Jesus stood in line with sinners, to take our place.</span></li>
+      <li class="step"><span class="topic">The Father's love</span><span class="seed-q">“My beloved Son, in whom I am well pleased” <cite>3:17</cite></span><span class="take">In Christ, believers are accepted in the Beloved.</span></li>
+    </ol>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+    <p class="counter">Question 1 of 6</p>
+    <span class="topic">Repentance</span>
+    <h2>What does it mean to repent?</h2>
+    <p class="ask-line">What verses tell us about this?</p>
+    <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+    <blockquote class="quote step" data-q="2"></blockquote>
+    <blockquote class="quote step" data-q="3" data-hl="make his paths straight"></blockquote>
+    <blockquote class="quote step" data-q="6"></blockquote>
+    <div class="answer step"><h3>Answer</h3><p>To change your mind in a way that turns your whole life around: away from sin and toward God. It starts with honestly confessing your sins, and it clears the road for Jesus to come in.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+    <p class="counter">Question 2 of 6</p>
+    <span class="topic">Fruit</span>
+    <h2>How can you tell a man has really repented?</h2>
+    <p class="ask-line">What verses tell us about this?</p>
+    <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+    <blockquote class="quote step" data-q="8"></blockquote>
+    <blockquote class="quote step" data-q="10" data-hl="every tree which bringeth not forth good fruit"></blockquote>
+    <div class="answer step"><h3>Answer</h3><p>By the fruit: a life that starts to match the turned heart. Fruit doesn't make you saved, any more than apples make a tree alive. But a living tree bears fruit, and a heart that has really turned to God starts to show it.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+    <p class="counter">Question 3 of 6</p>
+    <span class="topic">Religious pride</span>
+    <h2>Can your family or your religion save you?</h2>
+    <p class="ask-line">What verses tell us about this?</p>
+    <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+    <blockquote class="quote step" data-q="7" data-hl="O generation of vipers"></blockquote>
+    <blockquote class="quote step" data-q="9"></blockquote>
+    <div class="answer step"><h3>Answer</h3><p>No. The Pharisees and Sadducees had the best family line and the top religious jobs, and John called them vipers. God isn't impressed by who your daddy was or what church you grew up in. He looks for a heart that has turned to Him.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+    <p class="counter">Question 4 of 6</p>
+    <span class="topic">Who Jesus is</span>
+    <h2>Who is mightier than John, and why?</h2>
+    <p class="ask-line">What verses tell us about this?</p>
+    <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+    <blockquote class="quote step" data-q="11" data-hl="mightier than I"></blockquote>
+    <blockquote class="quote step" data-q="14"></blockquote>
+    <div class="answer step"><h3>Answer</h3><p>Jesus. John was the greatest preacher of his day, and he said he wasn't fit to carry Jesus' shoes. John could put men in water. Jesus puts God's own Spirit inside every believer, and He is the Judge of all.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+    <p class="counter">Question 5 of 6</p>
+    <span class="topic">Baptism</span>
+    <h2>Why was Jesus baptized if He had no sin?</h2>
+    <p class="ask-line">What verses tell us about this?</p>
+    <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+    <blockquote class="quote step" data-q="15"></blockquote>
+    <blockquote class="quote step"><p>“For he hath made him to be sin for us, who knew no sin; that we might be made the righteousness of God in him.”</p><cite>2 Corinthians 5:21</cite></blockquote>
+    <div class="answer step"><h3>Answer</h3><p>Not for His own sin; He had none. He did it “to fulfil all righteousness”: to do all the Father asked, and to stand in the sinners' place, the first step toward the cross.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+    <p class="counter">Question 6 of 6</p>
+    <span class="topic">The Father's love</span>
+    <h2>What did the Father say about His Son?</h2>
+    <p class="ask-line">What verses tell us about this?</p>
+    <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+    <blockquote class="quote step" data-q="16" data-hl="the heavens were opened unto him"></blockquote>
+    <blockquote class="quote step" data-q="17"></blockquote>
+    <blockquote class="quote step"><p>“To the praise of the glory of his grace, wherein he hath made us accepted in the beloved.”</p><cite>Ephesians 1:6</cite></blockquote>
+    <div class="answer step"><h3>Answer</h3><p>“This is my beloved Son, in whom I am well pleased.” The Father delights in His Son. And everyone who trusts Christ is accepted in Him: loved, not for what we've done, but for whose we are.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide prayer">
+  <div class="inner">
+    <div class="emblem rise"></div>
+    <h2 class="rise" style="--d:1">Prayer requests</h2>
+    <p class="ask-line rise" style="--d:2">What can we pray about for you today?</p>
+    <blockquote class="quote rise" style="--d:4"><p>“Create in me a clean heart, O God; and renew a right spirit within me.”</p><cite>Psalm 51:10</cite></blockquote>
+  </div>
+</section>
+
+</main>
+
+<script>
+// King James Version, Matthew chapter 3
+const V = {
+  1: "In those days came John the Baptist, preaching in the wilderness of Judaea,",
+  2: "And saying, Repent ye: for the kingdom of heaven is at hand.",
+  3: "For this is he that was spoken of by the prophet Esaias, saying, The voice of one crying in the wilderness, Prepare ye the way of the Lord, make his paths straight.",
+  4: "And the same John had his raiment of camel’s hair, and a leathern girdle about his loins; and his meat was locusts and wild honey.",
+  5: "Then went out to him Jerusalem, and all Judaea, and all the region round about Jordan,",
+  6: "And were baptized of him in Jordan, confessing their sins.",
+  7: "But when he saw many of the Pharisees and Sadducees come to his baptism, he said unto them, O generation of vipers, who hath warned you to flee from the wrath to come?",
+  8: "Bring forth therefore fruits meet for repentance:",
+  9: "And think not to say within yourselves, We have Abraham to our father: for I say unto you, that God is able of these stones to raise up children unto Abraham.",
+  10: "And now also the axe is laid unto the root of the trees: therefore every tree which bringeth not forth good fruit is hewn down, and cast into the fire.",
+  11: "I indeed baptize you with water unto repentance: but he that cometh after me is mightier than I, whose shoes I am not worthy to bear: he shall baptize you with the Holy Ghost, and with fire:",
+  12: "Whose fan is in his hand, and he will throughly purge his floor, and gather his wheat into the garner; but he will burn up the chaff with unquenchable fire.",
+  13: "Then cometh Jesus from Galilee to Jordan unto John, to be baptized of him.",
+  14: "But John forbad him, saying, I have need to be baptized of thee, and comest thou to me?",
+  15: "And Jesus answering said unto him, Suffer it to be so now: for thus it becometh us to fulfil all righteousness. Then he suffered him.",
+  16: "And Jesus, when he was baptized, went up straightway out of the water: and, lo, the heavens were opened unto him, and he saw the Spirit of God descending like a dove, and lighting upon him:",
+  17: "And lo a voice from heaven, saying, This is my beloved Son, in whom I am well pleased."
+};
+const BOOK = "Matthew 3";
+</script>
+<script src="../assets/deck.js"></script>
+</body>
+</html>
