@@ -375,7 +375,10 @@ window.GLOSSARY = [
     [ 1 ] ],
    [
     "1 Corinthians", 11,
-    [ 23 ] ] ]
+    [ 23 ] ],
+   [
+    "1 Corinthians", 12,
+    [ 3 ] ] ]
  },
  {
   "id": "john-the-baptist",
@@ -1356,7 +1359,10 @@ window.GLOSSARY = [
     [ 11, 19 ] ],
    [
     "1 Corinthians", 7,
-    [ 40 ] ] ]
+    [ 40 ] ],
+   [
+    "1 Corinthians", 12,
+    [ 3, 4, 7, 8, 9, 11, 13 ] ] ]
  },
  {
   "id": "disciples",
@@ -1890,7 +1896,10 @@ window.GLOSSARY = [
     [ 20 ] ],
    [
     "1 Corinthians", 10,
-    [ 32 ] ] ]
+    [ 32 ] ],
+   [
+    "1 Corinthians", 12,
+    [ 13 ] ] ]
  },
  {
   "id": "servants",
@@ -4400,6 +4409,9 @@ window.GLOSSARY = [
     "1 Corinthians", 5,
     [ 8 ] ],
    [
+    "1 Corinthians", 13,
+    [ 6 ] ],
+   [
     "1 Corinthians", 14,
     [ 25 ] ] ]
  },
@@ -5067,7 +5079,10 @@ window.GLOSSARY = [
     [ 4, 9, 16 ] ],
    [
     "1 Corinthians", 11,
-    [ 1, 3 ] ] ]
+    [ 1, 3 ] ],
+   [
+    "1 Corinthians", 12,
+    [ 12, 27 ] ] ]
  },
  {
   "id": "son-of-god",
@@ -5537,6 +5552,9 @@ window.GLOSSARY = [
     "1 Corinthians", 11,
     [ 18 ] ],
    [
+    "1 Corinthians", 13,
+    [ 7 ] ],
+   [
     "1 Corinthians", 14,
     [ 22, 24 ] ] ]
  },
@@ -5772,7 +5790,10 @@ window.GLOSSARY = [
     [ 13, 14, 15, 16, 17 ] ],
    [
     "1 Corinthians", 10,
-    [ 2 ] ] ]
+    [ 2 ] ],
+   [
+    "1 Corinthians", 12,
+    [ 13 ] ] ]
  },
  {
   "id": "sons-of-god",
@@ -6131,6 +6152,9 @@ window.GLOSSARY = [
     "1 Corinthians", 1,
     [ 22 ] ],
    [
+    "1 Corinthians", 12,
+    [ 10, 28, 29 ] ],
+   [
     "1 Corinthians", 14,
     [ 22 ] ] ]
  },
@@ -6351,7 +6375,10 @@ window.GLOSSARY = [
     [ 1, 4, 5, 6, 7, 13 ] ],
    [
     "1 Corinthians", 3,
-    [ 19 ] ] ]
+    [ 19 ] ],
+   [
+    "1 Corinthians", 12,
+    [ 8 ] ] ]
  },
  {
   "id": "understanding",
@@ -6592,6 +6619,12 @@ window.GLOSSARY = [
    [
     "1 Corinthians", 8,
     [ 1, 7, 10, 11 ] ],
+   [
+    "1 Corinthians", 12,
+    [ 8 ] ],
+   [
+    "1 Corinthians", 13,
+    [ 2, 8 ] ],
    [
     "1 Corinthians", 14,
     [ 6 ] ] ]
@@ -11613,7 +11646,10 @@ window.GLOSSARY = [
     [ 1 ] ],
    [
     "1 Corinthians", 10,
-    [ 20, 32 ] ] ]
+    [ 20, 32 ] ],
+   [
+    "1 Corinthians", 12,
+    [ 2, 13 ] ] ]
  },
  {
   "id": "glorified",
@@ -13029,7 +13065,10 @@ window.GLOSSARY = [
     [ 3 ] ],
    [
     "1 Corinthians", 11,
-    [ 10 ] ] ]
+    [ 10 ] ],
+   [
+    "1 Corinthians", 13,
+    [ 1 ] ] ]
  },
  {
   "id": "sepulchre",
@@ -13560,7 +13599,10 @@ window.GLOSSARY = [
     [ 28 ] ],
    [
     "1 Corinthians", 11,
-    [ 26 ] ] ]
+    [ 26 ] ],
+   [
+    "1 Corinthians", 12,
+    [ 31 ] ] ]
  },
  {
   "id": "fishers-coat",
@@ -14726,6 +14768,9 @@ window.GLOSSARY = [
     "Romans", 16,
     [ 26 ] ],
    [
+    "1 Corinthians", 12,
+    [ 7 ] ],
+   [
     "1 Corinthians", 14,
     [ 25 ] ] ]
  },
@@ -14778,7 +14823,10 @@ window.GLOSSARY = [
     [ 23 ] ],
    [
     "1 Corinthians", 7,
-    [ 8, 20, 24, 40 ] ] ]
+    [ 8, 20, 24, 40 ] ],
+   [
+    "1 Corinthians", 13,
+    [ 13 ] ] ]
  },
  {
   "id": "purge",
@@ -17496,7 +17544,10 @@ window.GLOSSARY = [
     [ 1, 4, 10 ] ],
    [
     "1 Corinthians", 10,
-    [ 19, 28 ] ] ]
+    [ 19, 28 ] ],
+   [
+    "1 Corinthians", 12,
+    [ 2 ] ] ]
  },
  {
   "id": "morning-cloud",
@@ -22839,7 +22890,10 @@ window.GLOSSARY = [
     [ 14 ] ],
    [
     "Acts", 8,
-    [ 32 ] ] ]
+    [ 32 ] ],
+   [
+    "1 Corinthians", 12,
+    [ 2 ] ] ]
  },
  {
   "id": "reproach",
@@ -23469,7 +23523,10 @@ window.GLOSSARY = [
     [ 11 ] ],
    [
     "Acts", 19,
-    [ 9 ] ] ]
+    [ 9 ] ],
+   [
+    "1 Corinthians", 12,
+    [ 10 ] ] ]
  },
  {
   "id": "devils",
@@ -24891,7 +24948,10 @@ window.GLOSSARY = [
     [ 1 ] ],
    [
     "1 Corinthians", 9,
-    [ 1, 2, 5 ] ] ]
+    [ 1, 2, 5 ] ],
+   [
+    "1 Corinthians", 12,
+    [ 28, 29 ] ] ]
  },
  {
   "id": "bartholomew",
@@ -26019,7 +26079,10 @@ window.GLOSSARY = [
     [ 40 ] ],
    [
     "Romans", 12,
-    [ 2 ] ] ]
+    [ 2 ] ],
+   [
+    "1 Corinthians", 13,
+    [ 10 ] ] ]
  },
  {
   "id": "begat",
@@ -27434,6 +27497,9 @@ window.GLOSSARY = [
     "1 Corinthians", 2,
     [ 7 ] ],
    [
+    "1 Corinthians", 13,
+    [ 2 ] ],
+   [
     "1 Corinthians", 14,
     [ 2 ] ] ]
  },
@@ -28609,6 +28675,9 @@ window.GLOSSARY = [
    [
     "1 Corinthians", 11,
     [ 18, 22 ] ],
+   [
+    "1 Corinthians", 12,
+    [ 28 ] ],
    [
     "1 Corinthians", 14,
     [ 4, 5, 12, 19, 23, 28, 35 ] ] ]
@@ -34217,6 +34286,9 @@ window.GLOSSARY = [
     "1 Corinthians", 11,
     [ 4, 5 ] ],
    [
+    "1 Corinthians", 13,
+    [ 9 ] ],
+   [
     "1 Corinthians", 14,
     [ 1, 3, 4, 5, 6, 22, 24, 31, 39 ] ] ]
  },
@@ -34497,7 +34569,10 @@ window.GLOSSARY = [
     [ 7 ] ],
    [
     "Romans", 6,
-    [ 19 ] ] ]
+    [ 19 ] ],
+   [
+    "1 Corinthians", 13,
+    [ 6 ] ] ]
  },
  {
   "id": "barnabas",
@@ -36109,6 +36184,12 @@ window.GLOSSARY = [
    [
     "Acts", 10,
     [ 46 ] ],
+   [
+    "1 Corinthians", 12,
+    [ 10, 28, 30 ] ],
+   [
+    "1 Corinthians", 13,
+    [ 1, 8 ] ],
    [
     "1 Corinthians", 14,
     [ 5, 6, 18, 21, 22, 23, 39 ] ] ]
@@ -38496,7 +38577,10 @@ window.GLOSSARY = [
     [ 12 ] ],
    [
     "Romans", 15,
-    [ 4, 13 ] ] ]
+    [ 4, 13 ] ],
+   [
+    "1 Corinthians", 13,
+    [ 7, 13 ] ] ]
  },
  {
   "id": "experience",
@@ -38730,7 +38814,10 @@ window.GLOSSARY = [
     [ 5, 23 ] ],
    [
     "1 Corinthians", 6,
-    [ 15 ] ] ]
+    [ 15 ] ],
+   [
+    "1 Corinthians", 12,
+    [ 12, 14, 18, 19, 20, 22, 23, 25, 26, 27 ] ] ]
  },
  {
   "id": "instruments",
@@ -39308,6 +39395,9 @@ window.GLOSSARY = [
     "1 Corinthians", 8,
     [ 12 ] ],
    [
+    "1 Corinthians", 12,
+    [ 1 ] ],
+   [
     "1 Corinthians", 14,
     [ 6, 26, 39 ] ] ]
  },
@@ -39852,7 +39942,10 @@ window.GLOSSARY = [
   "refs": [
    [
     "Romans", 12,
-    [ 4, 5 ] ] ]
+    [ 4, 5 ] ],
+   [
+    "1 Corinthians", 12,
+    [ 12, 13, 20 ] ] ]
  },
  {
   "id": "spiritual-gifts",
@@ -39862,6 +39955,12 @@ window.GLOSSARY = [
    [
     "Romans", 12,
     [ 6 ] ],
+   [
+    "1 Corinthians", 12,
+    [ 1, 4, 9, 28, 30, 31 ] ],
+   [
+    "1 Corinthians", 13,
+    [ 2 ] ],
    [
     "1 Corinthians", 14,
     [ 1, 12 ] ] ]
@@ -40317,6 +40416,9 @@ window.GLOSSARY = [
   "refs": [
    [
     "Romans", 9,
+    [ 3 ] ],
+   [
+    "1 Corinthians", 12,
     [ 3 ] ] ]
  },
  {
@@ -40959,7 +41061,10 @@ window.GLOSSARY = [
     [ 6, 18, 19 ] ],
    [
     "1 Corinthians", 5,
-    [ 2 ] ] ]
+    [ 2 ] ],
+   [
+    "1 Corinthians", 13,
+    [ 4 ] ] ]
  },
  {
   "id": "spectacle",
@@ -41430,7 +41535,10 @@ window.GLOSSARY = [
   "refs": [
    [
     "1 Corinthians", 7,
-    [ 35, 36 ] ] ]
+    [ 35, 36 ] ],
+   [
+    "1 Corinthians", 12,
+    [ 23, 24 ] ] ]
  },
  {
   "id": "only-in-the-lord",
@@ -41476,6 +41584,9 @@ window.GLOSSARY = [
    [
     "1 Corinthians", 8,
     [ 1 ] ],
+   [
+    "1 Corinthians", 13,
+    [ 1, 2, 3, 4, 8, 13 ] ],
    [
     "1 Corinthians", 14,
     [ 1 ] ] ]
@@ -41786,6 +41897,9 @@ window.GLOSSARY = [
   "name": "Interpret (put a tongue into words the church can understand)",
   "refs": [
    [
+    "1 Corinthians", 12,
+    [ 10, 30 ] ],
+   [
     "1 Corinthians", 14,
     [ 5, 13, 26, 27, 28 ] ] ]
  },
@@ -41851,5 +41965,209 @@ window.GLOSSARY = [
    [
     "1 Corinthians", 14,
     [ 40 ] ] ]
+ },
+ {
+  "id": "spirit-baptism",
+  "kind": "term",
+  "name": "Baptized by one Spirit into one body (done to every believer at salvation)",
+  "refs": [
+   [
+    "1 Corinthians", 12,
+    [ 13 ] ] ]
+ },
+ {
+  "id": "administrations",
+  "kind": "term",
+  "name": "Administrations (ways of serving)",
+  "refs": [
+   [
+    "1 Corinthians", 12,
+    [ 5 ] ] ]
+ },
+ {
+  "id": "operations",
+  "kind": "term",
+  "name": "Operations (workings: what God gets done)",
+  "refs": [
+   [
+    "1 Corinthians", 12,
+    [ 6 ] ] ]
+ },
+ {
+  "id": "profit-withal",
+  "kind": "term",
+  "name": "To profit withal (to be useful with it, for the good of all)",
+  "refs": [
+   [
+    "1 Corinthians", 12,
+    [ 7 ] ] ]
+ },
+ {
+  "id": "discerning-of-spirits",
+  "kind": "term",
+  "name": "Discerning of spirits (telling what is from God from what is not)",
+  "refs": [
+   [
+    "1 Corinthians", 12,
+    [ 10 ] ] ]
+ },
+ {
+  "id": "gifts-of-healing",
+  "kind": "term",
+  "name": "Gifts of healing",
+  "refs": [
+   [
+    "1 Corinthians", 12,
+    [ 9, 28, 30 ] ] ]
+ },
+ {
+  "id": "severally",
+  "kind": "term",
+  "name": "Severally (one by one, to each his own)",
+  "refs": [
+   [
+    "1 Corinthians", 12,
+    [ 11 ] ] ]
+ },
+ {
+  "id": "more-feeble",
+  "kind": "term",
+  "name": "Members which seem more feeble (no member of the body is useless)",
+  "refs": [
+   [
+    "1 Corinthians", 12,
+    [ 22 ] ] ]
+ },
+ {
+  "id": "tempered",
+  "kind": "term",
+  "name": "Tempered (blended, mixed together)",
+  "refs": [
+   [
+    "1 Corinthians", 12,
+    [ 24 ] ] ]
+ },
+ {
+  "id": "schism",
+  "kind": "term",
+  "name": "Schism (a split, a tear down the middle)",
+  "refs": [
+   [
+    "1 Corinthians", 12,
+    [ 25 ] ] ]
+ },
+ {
+  "id": "body-of-christ",
+  "kind": "term",
+  "name": "The body of Christ (the church, every believer a member)",
+  "refs": [
+   [
+    "Romans", 7,
+    [ 4 ] ],
+   [
+    "1 Corinthians", 10,
+    [ 16 ] ],
+   [
+    "1 Corinthians", 12,
+    [ 27 ] ] ]
+ },
+ {
+  "id": "helps-governments",
+  "kind": "term",
+  "name": "Helps, governments (helping hands; those who steer the church)",
+  "refs": [
+   [
+    "1 Corinthians", 12,
+    [ 28 ] ] ]
+ },
+ {
+  "id": "sounding-brass",
+  "kind": "term",
+  "name": "Sounding brass, tinkling cymbal (loud noise that says nothing)",
+  "refs": [
+   [
+    "1 Corinthians", 13,
+    [ 1 ] ] ]
+ },
+ {
+  "id": "suffereth-long",
+  "kind": "term",
+  "name": "Suffereth long (patient for a long time)",
+  "refs": [
+   [
+    "1 Corinthians", 13,
+    [ 4 ] ] ]
+ },
+ {
+  "id": "vaunteth",
+  "kind": "term",
+  "name": "Vaunteth (brags, shows off)",
+  "refs": [
+   [
+    "1 Corinthians", 13,
+    [ 4 ] ] ]
+ },
+ {
+  "id": "unseemly",
+  "kind": "term",
+  "name": "Unseemly (rude, out of line)",
+  "refs": [
+   [
+    "1 Corinthians", 13,
+    [ 5 ] ] ]
+ },
+ {
+  "id": "easily-provoked",
+  "kind": "term",
+  "name": "Not easily provoked (no short fuse)",
+  "refs": [
+   [
+    "1 Corinthians", 13,
+    [ 5 ] ] ]
+ },
+ {
+  "id": "thinketh-no-evil",
+  "kind": "term",
+  "name": "Thinketh no evil (keeps no tally of wrongs)",
+  "refs": [
+   [
+    "1 Corinthians", 13,
+    [ 5 ] ] ]
+ },
+ {
+  "id": "childish-things",
+  "kind": "term",
+  "name": "Childish things (the ways of a child, put away by a grown man)",
+  "refs": [
+   [
+    "1 Corinthians", 13,
+    [ 11 ] ] ]
+ },
+ {
+  "id": "glass-darkly",
+  "kind": "term",
+  "name": "Through a glass, darkly (a dim metal mirror)",
+  "refs": [
+   [
+    "1 Corinthians", 13,
+    [ 12 ] ] ]
+ },
+ {
+  "id": "face-to-face",
+  "kind": "term",
+  "name": "Face to face (seeing the Lord clearly, one day)",
+  "refs": [
+   [
+    "1 Corinthians", 13,
+    [ 12 ] ] ]
+ },
+ {
+  "id": "faith-hope-charity",
+  "kind": "term",
+  "name": "Faith, hope, charity (the three that abide)",
+  "refs": [
+   [
+    "1 Corinthians", 13,
+    [ 13 ] ] ]
  }
 ];

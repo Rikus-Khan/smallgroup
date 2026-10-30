@@ -12041,6 +12041,94 @@ window.STUDIES = [
     }
   },
   {
+    "id": "1-corinthians-12",
+    "type": "chapter",
+    "book": "1 Corinthians",
+    "ch": 12,
+    "date": "2026-10-31",
+    "title": "1 Corinthians 12",
+    "sub": "One body, many members",
+    "about": "A church that showed off its gifts learns that one Spirit lives in every believer, gives every man a gift for the good of all, and makes even the weakest member necessary.",
+    "tags": [
+      "Spiritual gifts",
+      "The Holy Spirit",
+      "One body",
+      "Every member",
+      "Unity",
+      "Caring for each other"
+    ],
+    "url": "studies/1-corinthians-12.html",
+    "overview": {
+      "where": "Written from Ephesus, in Asia, to the church at Corinth, in Greece",
+      "when": "About AD 55, during Paul's three years at Ephesus",
+      "people": [
+        "paul",
+        "holy-spirit",
+        "jesus",
+        "apostles",
+        "brethren-believers"
+      ],
+      "places": [
+        "corinth",
+        "ephesus"
+      ],
+      "story": [
+        "Now concerning spiritual gifts: once they were carried away to dumb idols, but no man can say that Jesus is the Lord, but by the Holy Ghost (1–3).",
+        "Diversities of gifts, but the same Spirit, the same Lord, the same God. The manifestation of the Spirit is given to every man to profit withal: wisdom, knowledge, faith, healing, miracles, prophecy, discerning of spirits, tongues and their interpretation, divided to every man as the Spirit will (4–11).",
+        "By one Spirit are we all baptized into one body, Jews or Gentiles, bond or free. The foot cannot quit because it is not the hand, nor the ear because it is not the eye; God set every member in the body as it pleased Him (12–20).",
+        "The eye cannot say to the hand, I have no need of thee. The members that seem more feeble are necessary, so there is no schism: when one member suffers, all suffer; when one is honoured, all rejoice (21–27).",
+        "God has set apostles, prophets, teachers, helps and governments in the church, and not all have the same gift. Covet the best gifts, and yet there is a more excellent way (28–31)."
+      ],
+      "key": {
+        "ref": "1 Corinthians 12:27",
+        "text": "Now ye are the body of Christ, and members in particular."
+      },
+      "big": "Every believer has the Spirit from the day he believed, and every believer has a gift for the good of the others. In Christ's body no member is useless and none can say he doesn't need the rest."
+    }
+  },
+  {
+    "id": "1-corinthians-13",
+    "type": "chapter",
+    "book": "1 Corinthians",
+    "ch": 13,
+    "date": "2026-10-31",
+    "title": "1 Corinthians 13",
+    "sub": "The more excellent way",
+    "about": "In the middle of a fight about gifts, Paul describes love: without it every gift is noise, it is what Jesus is, and it is the one thing that never fails.",
+    "tags": [
+      "Love",
+      "Charity",
+      "Spiritual gifts",
+      "Growing up",
+      "Hope of heaven",
+      "Faith, hope, charity"
+    ],
+    "url": "studies/1-corinthians-13.html",
+    "overview": {
+      "where": "Written from Ephesus, in Asia, to the church at Corinth, in Greece",
+      "when": "About AD 55, during Paul's three years at Ephesus",
+      "people": [
+        "paul",
+        "angels"
+      ],
+      "places": [
+        "corinth",
+        "ephesus"
+      ],
+      "story": [
+        "Tongues of men and angels without charity are sounding brass; prophecy, knowledge and faith to move mountains without charity are nothing; giving all to the poor and the body to be burned without charity profits nothing (1–3).",
+        "Charity suffers long and is kind; it envies not, brags not, is not puffed up, rude, selfish or easily provoked, thinks no evil, and rejoices in the truth. It bears, believes, hopes and endures all things (4–7).",
+        "Charity never fails. Prophecies, tongues and knowledge will end, because we know in part; when that which is perfect is come, the partial is done away (8–10).",
+        "When Paul became a man he put away childish things. Now we see through a glass, darkly, but then face to face. Faith, hope and charity abide, and the greatest of these is charity (11–13)."
+      ],
+      "key": {
+        "ref": "1 Corinthians 13:13",
+        "text": "And now abideth faith, hope, charity, these three; but the greatest of these is charity."
+      },
+      "big": "The greatest gifts without love add up to nothing. Love is patient, kind and humble, only Jesus lives it perfectly, and it is the one thing that lasts forever."
+    }
+  },
+  {
     "id": "1-corinthians-14",
     "type": "chapter",
     "book": "1 Corinthians",
