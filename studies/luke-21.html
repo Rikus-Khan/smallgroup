@@ -1,0 +1,575 @@
+<!doctype html>
+<html lang="en" data-theme="stone">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Luke 21</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="../assets/fonts.css">
+<link rel="stylesheet" href="../assets/deck.css">
+<link rel="stylesheet" href="../assets/themes.css">
+<style>
+/* lk21-share: what each giver had (the track) and how much of it went in (the fill). A .lk21-give step fills the bars to --w */
+.lk21-share { display: grid; gap: 1.1rem; margin: .4em 0 1em; max-width: 58rem; }
+.lk21-row small { display: flex; justify-content: space-between; gap: 1em; font: 700 clamp(.85rem, .8rem + .3vw, 1.05rem) var(--sans); color: var(--ink-soft); margin-bottom: .35em; }
+.lk21-row small b { font-family: var(--serif); font-style: italic; font-weight: 400; color: var(--ink); }
+.lk21-track { height: clamp(1.6rem, 4.2vh, 2.5rem); border: 1.5px solid var(--line-strong); border-radius: 6px; background: var(--surface); overflow: hidden; }
+.lk21-track i { display: block; height: 100%; width: 0; background: var(--ink-soft); transition: width 1.6s cubic-bezier(.4,0,.2,1) .3s; }
+.lk21-row.her .lk21-track { width: 14%; min-width: 5.5rem; border-color: var(--accent); }
+.lk21-row.her .lk21-track i { background: var(--accent); transition-delay: 1.4s; }
+.slide:has(.lk21-give.on) .lk21-track i { width: var(--w); }
+.lk21-row p { margin-top: .3em; font-size: clamp(.9rem, .82rem + .35vw, 1.15rem); color: var(--ink-soft); }
+.lk21-row.her p { color: var(--accent-hot); font-weight: 600; }
+
+/* lk21-ring: armies drawn round Jerusalem on the land map */
+.lk21-ring { fill: color-mix(in srgb, var(--danger) 14%, transparent); stroke: var(--danger); stroke-width: 3; stroke-dasharray: 4 5; }
+.lk21-camp { fill: var(--danger); }
+.lk21-tag { fill: var(--danger); font-size: 15px; font-weight: 700; }
+
+/* lk21-snare: a bird walks toward the bait; on a .lk21-snap step the net springs up over it */
+.lk21-ground { stroke: var(--line-strong); stroke-width: 3; }
+.lk21-bait { fill: var(--warm); }
+.lk21-bird { fill: var(--ink-soft); }
+.lk21-beak { fill: var(--warm); }
+.lk21-walk { transform: translateX(-260px); }
+.slide.active .lk21-walk { transform: translateX(0); transition: transform 3.6s cubic-bezier(.3,.1,.4,1) .4s; }
+.lk21-net { transform-box: view-box; transform-origin: 300px 180px; transform: scaleY(.04); }
+.lk21-net path { fill: color-mix(in srgb, var(--danger) 10%, transparent); stroke: var(--danger); stroke-width: 3; }
+.lk21-net line { stroke: var(--danger); stroke-width: 1.5; opacity: .7; }
+.slide:has(.lk21-snap.on) .lk21-net { transform: scaleY(1); transition: transform .35s cubic-bezier(.3,1.6,.5,1); }
+.lk21-word { fill: var(--danger); font: italic 600 22px var(--serif); opacity: 0; }
+.slide:has(.lk21-snap.on) .lk21-word { opacity: 1; transition: opacity .5s ease .4s; }
+@media (max-width: 600px) { .lk21-word { font-size: 28px; } }
+</style>
+</head>
+<body>
+<main class="deck" id="deck">
+
+<!-- ======================= OPENING ======================= -->
+<section class="slide title">
+  <div class="inner">
+    <div class="emblem rise"></div>
+    <h1 class="rise" style="--d:1">Luke 21</h1>
+    <p class="sub rise" style="--d:3">Watch ye therefore, and pray always</p>
+    <p class="tag rise" style="--d:5">A poor widow gives everything. Then Jesus tells His men what is coming, and how to be ready for it.</p>
+  </div>
+</section>
+
+<section class="slide watch">
+  <div class="inner">
+    <h2 class="rise">Things to watch for</h2>
+    <p class="lede rise" style="--d:1">Keep these questions in the back of your mind as we read. We'll come back to every one of them at the end.</p>
+    <ol class="seeds">
+      <li class="step"><span class="topic">Giving</span><span class="seed-q">Why did the poor widow give more than all the rich men?</span></li>
+      <li class="step"><span class="topic">Deceived</span><span class="seed-q">What is the first thing Jesus warns His followers about?</span></li>
+      <li class="step"><span class="topic">Hard times</span><span class="seed-q">What does Jesus promise His people when they are hated for His name?</span></li>
+      <li class="step"><span class="topic">Jerusalem</span><span class="seed-q">What did Jesus say would happen to Jerusalem?</span></li>
+      <li class="step"><span class="topic">Look up</span><span class="seed-q">What should a believer do when the world is shaking?</span></li>
+      <li class="step"><span class="topic">Watch</span><span class="seed-q">How does Jesus tell us to stay ready for His coming?</span></li>
+    </ol>
+  </div>
+</section>
+
+<!-- ======================= PART ONE: THE WIDOW ======================= -->
+<section class="slide part">
+  <div class="inner">
+    <p class="part-n rise">Part one</p>
+    <h2 class="rise" style="--d:1">Two mites</h2>
+    <p class="range rise" style="--d:2">Verses 1–4</p>
+    <div class="rule"></div>
+    <p class="hook rise" style="--d:4">Rich men drop in their gifts. A widow drops in two tiny coins. Jesus says she gave the most.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="1-4" data-hl="a certain poor widow casting in thither two mites|this poor widow hath cast in more than they all|she of her penury hath cast in all the living that she had"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="2"></blockquote>
+    <h2 class="rise" style="--d:1">The smallest coin there was</h2>
+    <div class="math">
+      <div class="rise" style="--d:2"><b>1 mite</b><span>the smallest copper coin in the land</span></div>
+      <div class="rise" style="--d:3"><b>2 mites</b><span>about a sixty-fourth of a day's pay</span></div>
+      <div class="rise" style="--d:4"><b>all</b><span>“all the living that she had”</span></div>
+    </div>
+    <p class="note step">Jesus is still in the temple, in the last days before the cross. The <em>treasury</em> was a row of offering chests in the temple courts. Rich men came by and their gifts rang into the chests where everyone could see.</p>
+    <p class="note step">A <em>widow</em> in that world had no husband's wage and often no one to speak for her. <em>Penury</em> means poverty, real want. She had two coins. She could have kept one. She gave both.</p>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="3"></blockquote>
+    <h2 class="rise" style="--d:1">More than they all</h2>
+    <div class="lk21-share">
+      <div class="lk21-row rise" style="--d:2">
+        <small><span>The rich men</span><b>“of their abundance”</b></small>
+        <div class="lk21-track"><i style="--w:6%"></i></div>
+        <p>A big gift out of a bigger pile. Plenty left over.</p>
+      </div>
+      <div class="lk21-row her rise" style="--d:3">
+        <small><span>The widow</span><b>“all the living that she had”</b></small>
+        <div class="lk21-track"><i style="--w:100%"></i></div>
+        <p>Two coins, and nothing left.</p>
+      </div>
+    </div>
+    <p class="note step lk21-give">God doesn't count the coins. He counts what it cost, and what's left in your hand. Theirs cost them nothing. Hers cost her everything, and she trusted God with tomorrow.</p>
+    <p class="note step">Some of us have nothing much to give but a few dollars, an hour, a broken life. Given to God, that's never small to Him.</p>
+  </div>
+</section>
+
+<!-- ======================= PART TWO: NOT ONE STONE ======================= -->
+<section class="slide part">
+  <div class="inner">
+    <p class="part-n rise">Part two</p>
+    <h2 class="rise" style="--d:1">Not one stone</h2>
+    <p class="range rise" style="--d:2">Verses 5–19</p>
+    <div class="rule"></div>
+    <p class="hook rise" style="--d:4">The men admire the temple. Jesus tells them it's coming down, and what His people will face before the end.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="5-7" data-hl="how it was adorned with goodly stones and gifts|there shall not be left one stone upon another|Master, but when shall these things be?"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="6" data-hl="there shall not be left one stone upon another"></blockquote>
+    <h2 class="rise" style="--d:1">The temple will fall</h2>
+    <ol class="timeline">
+      <li style="--k:0"><b>About 20 B.C.</b><span>Herod the Great begins rebuilding the temple</span></li>
+      <li style="--k:1" class="lit"><b>About A.D. 30</b><span>Jesus: “not one stone upon another”</span></li>
+      <li style="--k:2"><b>A.D. 66</b><span>the Jews rise against Rome</span></li>
+      <li style="--k:3" class="lit"><b>A.D. 70</b><span>Rome takes Jerusalem; the temple is burned and torn down</span></li>
+    </ol>
+    <p class="note step">The temple was one of the great buildings of the world: white stone, gold, and <em>gifts</em>, rich offerings hung on its walls. Some of its stones were bigger than a truck. About forty years after Jesus said this, it was gone, just as He said.</p>
+    <p class="note step">The men ask <em>when</em>, and <em>what sign</em>. Watch how Jesus answers. He tells them a lot, but He never gives them a date.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="8-9" data-hl="Take heed that ye be not deceived|go ye not therefore after them|be not terrified"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="8" data-hl="Take heed that ye be not deceived"></blockquote>
+    <h2 class="rise" style="--d:1">Don't be fooled</h2>
+    <ul class="nots">
+      <li class="step"><span class="k">“I am Christ”</span><span class="why">Men will come using His name, claiming to be Him or to speak for Him.</span></li>
+      <li class="step"><span class="k">“The time draweth near”</span><span class="why">They'll set dates and stir people up. Every one so far has been wrong.</span></li>
+      <li class="step yes"><span class="k">“Go ye not therefore after them”</span><span class="why">Don't follow. Stay with Jesus and His Word.</span></li>
+    </ul>
+    <p class="note step">The first danger Jesus names isn't war or earthquakes. It's being <em>deceived</em>. A man who has been lied to by his own cravings knows how good a lie can sound.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="10-11" data-hl="Nation shall rise against nation|great earthquakes shall be in divers places, and famines, and pestilences"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="9" data-hl="be not terrified|but the end is not by and by"></blockquote>
+    <h2 class="rise" style="--d:1">Be not terrified</h2>
+    <div class="ifthen">
+      <div class="if step"><small>When ye hear of</small>wars, earthquakes, famines and plagues,</div>
+      <span class="arrow step">→</span>
+      <div class="then step"><small>then</small>don't panic. “The end is not by and by.”</div>
+    </div>
+    <p class="note step"><em>Commotions</em> are riots and uprisings. <em>Divers</em> places means many different places. <em>Pestilences</em> are deadly diseases that sweep through a land. <em>By and by</em> means right away.</p>
+    <p class="note step">Every generation since has seen wars and disasters. Jesus didn't tell us to read the news like a calendar. He told us not to be afraid.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="12-15" data-hl="they shall lay their hands on you, and persecute you|it shall turn to you for a testimony|For I will give you a mouth and wisdom"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise">It came true for them</h2>
+    <p class="note rise" style="--d:1"><em>“But before all these”</em>: before the temple fell, Jesus' own men would be dragged into court. Luke wrote the book of Acts too, and there it all is:</p>
+    <ol class="checks">
+      <li class="step"><span class="tick">✓</span><q>they shall lay their hands on you</q><small>Luke 21:12</small><b>Acts 4:3</b></li>
+      <li class="step"><span class="tick">✓</span><q>into prisons</q><small>Luke 21:12</small><b>Acts 5:18</b></li>
+      <li class="step"><span class="tick">✓</span><q>brought before kings and rulers</q><small>Luke 21:12</small><b>Acts 25–26</b></li>
+      <li class="step"><span class="tick">✓</span><q>a mouth and wisdom … not able to gainsay nor resist</q><small>Luke 21:15</small><b>Acts 6:10</b></li>
+    </ol>
+    <blockquote class="quote step"><p>“And they were not able to resist the wisdom and the spirit by which he spake.”</p><cite>Acts 6:10</cite></blockquote>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="14"></blockquote>
+    <h2 class="rise" style="--d:1">Don't rehearse it</h2>
+    <p class="note rise" style="--d:2"><em>Meditate before</em> means to rehearse your defence ahead of time. <em>Gainsay</em> means to answer back, to contradict. Jesus says: don't lie awake practising what you'll say. When the moment comes, I'll give you the words.</p>
+    <p class="note step">That doesn't mean don't study. It means don't worry. Some of us dread the day someone asks, “So what happened to you?” You don't need a speech. Tell the truth about what Jesus did. Nobody can argue with a changed life.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="16-19" data-hl="some of you shall they cause to be put to death|ye shall be hated of all men for my name’s sake|But there shall not an hair of your head perish|In your patience possess ye your souls"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="18"></blockquote>
+    <h2 class="rise" style="--d:1">Not an hair</h2>
+    <div class="columns">
+      <div class="col law step"><p class="who">What men can do</p><h3>Betray, hate, kill</h3><p>Even family and friends may turn on you. <em>“Some of you shall they cause to be put to death”</em> (21:16).</p></div>
+      <div class="col grace step"><p class="who">What they can't touch</p><h3>Your soul</h3><p>The man who belongs to Jesus can't be lost. They can take his life; they can't take him out of God's hand.</p></div>
+    </div>
+    <p class="note step"><em>Patience</em> here means endurance, staying under the load and not quitting. <em>“Possess ye your souls”</em>: by holding on, you keep hold of the life that matters. Some days the only win is that you didn't quit. That counts.</p>
+  </div>
+</section>
+
+<!-- ======================= PART THREE: JERUSALEM ======================= -->
+<section class="slide part">
+  <div class="inner">
+    <p class="part-n rise">Part three</p>
+    <h2 class="rise" style="--d:1">Jerusalem compassed with armies</h2>
+    <p class="range rise" style="--d:2">Verses 20–24</p>
+    <div class="rule"></div>
+    <p class="hook rise" style="--d:4">Jesus tells them the sign to watch for, and what to do when they see it: run.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="20-22" data-hl="when ye shall see Jerusalem compassed with armies|let them which are in Judaea flee to the mountains|these be the days of vengeance"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <div class="split">
+      <div class="stage">
+        <svg class="map" data-land viewBox="100 190 280 250" data-towns="Jerusalem!:l, Jericho:t" role="img" aria-label="Map of Judaea and the land east of the Jordan. A dashed red ring of armies surrounds Jerusalem. On a step, a route runs away from the city, down past Jericho, across the Jordan and north to the town of Pella in the hills.">
+          <circle class="lk21-ring rise" style="--d:2" cx="202" cy="385" r="28"/>
+          <g class="rise" style="--d:3"><path class="lk21-camp" d="M174 383 l6 -10 l6 10 z"/><path class="lk21-camp" d="M218 362 l6 -10 l6 10 z"/><path class="lk21-camp" d="M220 410 l6 -10 l6 10 z"/><path class="lk21-camp" d="M180 412 l6 -10 l6 10 z"/></g>
+          <text class="lk21-tag rise" style="--d:3" x="152" y="428">armies</text>
+          <path class="map-route r1" pathLength="1" d="M206 380 C 222 372, 236 366, 243 363 C 262 340, 268 300, 271 270 C 275 250, 283 238, 290 230"/>
+          <g class="map-town step map-go1"><circle cx="290" cy="230" r="6"/><text x="301" y="235">Pella</text></g>
+        </svg>
+      </div>
+      <div>
+        <h2 class="rise" style="--d:1">When you see the armies, run</h2>
+        <p class="note rise" style="--d:2"><em>Compassed</em> means surrounded. When Roman armies circle the city, don't hide behind its walls. Get out, and don't come back in for your things.</p>
+        <p class="note step map-go1">In A.D. 66 a Roman army surrounded Jerusalem, then pulled back for a while. An old church history says the believers remembered this warning and fled across the Jordan to a town called Pella.</p>
+        <p class="note step">Rome came back in A.D. 70. Jesus' warning saved the lives of those who believed it.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="slide verse" data-v="23-24" data-hl="great distress in the land, and wrath upon this people|Jerusalem shall be trodden down of the Gentiles, until the times of the Gentiles be fulfilled"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="24" data-hl="until the times of the Gentiles be fulfilled"></blockquote>
+    <h2 class="rise" style="--d:1">Trodden down</h2>
+    <p class="note rise" style="--d:2">It happened. Josephus, a Jewish historian who lived through it, describes famine inside the walls, huge numbers killed by the sword, and nearly a hundred thousand carried away as captives. Jesus had wept over the city days before:</p>
+    <blockquote class="quote step"><p>“And shall lay thee even with the ground, and thy children within thee; and they shall not leave in thee one stone upon another; because thou knewest not the time of thy visitation.”</p><cite>Luke 19:44</cite></blockquote>
+    <p class="note step"><em>“Until the times of the Gentiles be fulfilled”</em>: good Bible teachers read this in more than one way, and we don't need to settle it today. What it plainly says is that Jerusalem's trouble has an <em>until</em>. God keeps the end of the story in His hands.</p>
+  </div>
+</section>
+
+<!-- ======================= PART FOUR: WATCH ======================= -->
+<section class="slide part">
+  <div class="inner">
+    <p class="part-n rise">Part four</p>
+    <h2 class="rise" style="--d:1">Watch ye therefore</h2>
+    <p class="range rise" style="--d:2">Verses 25–38</p>
+    <div class="rule"></div>
+    <p class="hook rise" style="--d:4">The whole world shaking, and the Son of man coming. Jesus tells His people to look up, and to stay awake.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="25-26" data-hl="signs in the sun, and in the moon, and in the stars|the sea and the waves roaring|Men’s hearts failing them for fear"></section>
+
+<section class="slide verse" data-v="27-28" data-hl="the Son of man coming in a cloud with power and great glory|then look up, and lift up your heads; for your redemption draweth nigh"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise">Two ways to watch the same storm</h2>
+    <div class="daybreak">
+      <div class="rise" style="--d:1"><i>21:25–26</i><b>Hearts failing</b><p>Signs in the sky, the sea roaring, nations in <em>perplexity</em>, not knowing which way to turn. Men faint with fear.</p></div>
+      <div class="rise" style="--d:2"><i>21:27</i><b>He comes</b><p class="kjv">“the Son of man coming in a cloud with power and great glory.”</p></div>
+      <div class="rise" style="--d:3"><i>21:28</i><b>Look up</b><p>The same news that terrifies the world tells a believer: <em>your redemption draweth nigh</em>. Your rescue is close.</p></div>
+    </div>
+    <p class="note step">We don't have to understand every sign to know what to do. Lift up your head. The One who is coming is the One who died for you.</p>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="27"></blockquote>
+    <h2 class="rise" style="--d:1">This same Jesus</h2>
+    <p class="note rise" style="--d:2"><em>The Son of man</em> was Jesus' favourite name for Himself, taken from Daniel's vision of one who comes <em>“with the clouds of heaven”</em> to receive a kingdom (Daniel 7:13). He wasn't coming as a teacher this time. He was coming as King.</p>
+    <blockquote class="quote step"><p>“Which also said, Ye men of Galilee, why stand ye gazing up into heaven? this same Jesus, which is taken up from you into heaven, shall so come in like manner as ye have seen him go into heaven.”</p><cite>Acts 1:11</cite></blockquote>
+    <blockquote class="quote step"><p>“Looking for that blessed hope, and the glorious appearing of the great God and our Saviour Jesus Christ;”</p><cite>Titus 2:13</cite></blockquote>
+  </div>
+</section>
+
+<section class="slide verse" data-v="29-31" data-hl="Behold the fig tree, and all the trees|summer is now nigh at hand|know ye that the kingdom of God is nigh at hand"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="29"></blockquote>
+    <h2 class="rise" style="--d:1">Read the leaves</h2>
+    <div class="ifthen">
+      <div class="if step"><small>When the trees</small>shoot forth new leaves,</div>
+      <span class="arrow step">→</span>
+      <div class="then step"><small>you know</small>summer is close.</div>
+    </div>
+    <div class="ifthen">
+      <div class="if step"><small>When ye see</small>these things come to pass,</div>
+      <span class="arrow step">→</span>
+      <div class="then step"><small>know</small>the kingdom of God is close.</div>
+    </div>
+    <p class="note step">Leaves don't tell you the date summer starts. They tell you it's coming, so you get ready. That's how Jesus wants us to read the world: not as a puzzle to solve, but as a reminder to be ready.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="32-33" data-hl="This generation shall not pass away, till all be fulfilled|Heaven and earth shall pass away: but my words shall not pass away"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise">“This generation”</h2>
+    <p class="note rise" style="--d:1">A hard verse. Good Bible teachers read it more than one way:</p>
+    <div class="asks">
+      <div class="ask step"><span class="q">The men standing there</span><span class="stamp">A.D. 70</span><span class="ctx">They lived to see the city surrounded and the temple fall.</span></div>
+      <div class="ask step"><span class="q">The ones who see the last signs</span><span class="stamp">the end</span><span class="ctx">Whatever generation sees these things begin will see them finished.</span></div>
+    </div>
+    <p class="note step">We don't have to settle it today. What Jesus says next is the part to hold on to: <em>“my words shall not pass away.”</em></p>
+    <blockquote class="quote step"><p>“The grass withereth, the flower fadeth: but the word of our God shall stand for ever.”</p><cite>Isaiah 40:8</cite></blockquote>
+  </div>
+</section>
+
+<section class="slide verse" data-v="34-36" data-hl="lest at any time your hearts be overcharged with surfeiting, and drunkenness, and cares of this life|For as a snare shall it come|Watch ye therefore, and pray always"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="34" data-hl="overcharged with surfeiting, and drunkenness, and cares of this life"></blockquote>
+    <h2 class="rise" style="--d:1">A heart weighed down</h2>
+    <ul class="signs">
+      <li class="step"><b>Surfeiting</b>Too much of anything: eating, partying, the morning-after fog.</li>
+      <li class="step"><b>Drunkenness</b>The bottle, and anything else a man uses to numb himself.</li>
+      <li class="step"><b>Cares of this life</b>Bills, worry, work. Not sin, just enough to keep his eyes down.</li>
+    </ul>
+    <p class="note step"><em>Overcharged</em> means weighed down, made heavy and dull. After all the talk of earthquakes and armies, the danger Jesus ends on is the one we carry inside. Two of these, every man in recovery knows. The third catches the rest of us.</p>
+    <blockquote class="quote step"><p>“Casting all your care upon him; for he careth for you.”</p><cite>1 Peter 5:7</cite></blockquote>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <div class="stage">
+      <svg style="max-height:30vh" viewBox="0 0 600 220" role="img" aria-label="A small bird walks along the ground toward some seed. On a step, a net trap springs up from the ground and closes over the bird, with the word: unawares.">
+        <line class="lk21-ground" x1="20" y1="180" x2="580" y2="180"/>
+        <circle class="lk21-bait" cx="290" cy="175" r="4"/><circle class="lk21-bait" cx="302" cy="176" r="4"/><circle class="lk21-bait" cx="312" cy="174" r="4"/>
+        <g class="lk21-walk">
+          <ellipse class="lk21-bird" cx="270" cy="160" rx="22" ry="13"/>
+          <circle class="lk21-bird" cx="290" cy="146" r="9"/>
+          <path class="lk21-beak" d="M298 144 l10 3 l-10 3 z"/>
+          <path class="lk21-bird" d="M248 158 l-16 -8 l4 12 z"/>
+          <line class="lk21-ground" x1="266" y1="172" x2="264" y2="180" style="stroke-width:2"/><line class="lk21-ground" x1="276" y1="172" x2="278" y2="180" style="stroke-width:2"/>
+        </g>
+        <g class="lk21-net">
+          <path d="M210 180 A 90 90 0 0 1 390 180 Z"/>
+          <line x1="240" y1="180" x2="244" y2="122"/><line x1="270" y1="180" x2="272" y2="96"/><line x1="300" y1="180" x2="300" y2="90"/><line x1="330" y1="180" x2="328" y2="96"/><line x1="360" y1="180" x2="356" y2="122"/>
+          <path d="M226 140 Q 300 118 374 140" style="fill:none"/><path d="M248 108 Q 300 92 352 108" style="fill:none"/>
+        </g>
+        <text class="lk21-word" x="420" y="110">unawares</text>
+      </svg>
+    </div>
+    <h2 class="rise" style="--d:1">As a snare</h2>
+    <p class="note step lk21-snap">A <em>snare</em> is a bird trap. The bird never sees it. It's busy with the seed, and then it's too late. That day will come on the whole world like that: <em>unawares</em>.</p>
+    <p class="note step">Jesus' answer: <em>“Watch ye therefore, and pray always.”</em> Keep your eyes open, keep talking to God. <em>Accounted worthy</em> isn't earning heaven; that's a gift by faith. It's being found ready, standing unashamed before Him.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="37-38" data-hl="in the day time he was teaching in the temple|at night he went out, and abode in the mount that is called the mount of Olives|all the people came early in the morning to him"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise">His last days of teaching</h2>
+    <ol class="timeline">
+      <li style="--k:0"><b>Into Jerusalem</b><span>on a colt, the crowd shouting</span><small>19:28–40</small></li>
+      <li style="--k:1"><b>The temple cleansed</b><span>“a den of thieves”</span><small>19:45–46</small></li>
+      <li style="--k:2" class="lit"><b>Teaching daily</b><span>in the temple by day, on the mount of Olives by night</span><small>19:47–21:38</small></li>
+      <li style="--k:3"><b>The Passover</b><span>the upper room and the arrest</span><small>22</small></li>
+      <li style="--k:4" class="wait"><b>The cross</b><span>and the empty tomb</span><small>23–24</small></li>
+    </ol>
+    <p class="note step">Jesus knew what was days away. He spent His last days teaching, and the people got up <em>early in the morning</em> to hear Him. We still have His words. The best way to be ready for that day is to start this one with Him.</p>
+  </div>
+</section>
+
+<!-- ======================= CLOSING ======================= -->
+<section class="slide remember">
+  <div class="inner">
+    <h2 class="rise">Points to remember</h2>
+    <ol class="seeds">
+      <li class="step"><span class="topic">Giving</span><span class="seed-q">“Hath cast in more than they all” <cite>21:3</cite></span><span class="take">God counts what it cost, not the amount.</span></li>
+      <li class="step"><span class="topic">Deceived</span><span class="seed-q">“Take heed that ye be not deceived” <cite>21:8</cite></span><span class="take">Don't follow date-setters or anyone claiming His name.</span></li>
+      <li class="step"><span class="topic">Hard times</span><span class="seed-q">“I will give you a mouth and wisdom” <cite>21:15</cite></span><span class="take">He gives the words, and not an hair of your head perishes.</span></li>
+      <li class="step"><span class="topic">Jerusalem</span><span class="seed-q">“Jerusalem compassed with armies” <cite>21:20</cite></span><span class="take">The city fell in A.D. 70, just as He said.</span></li>
+      <li class="step"><span class="topic">Look up</span><span class="seed-q">“Your redemption draweth nigh” <cite>21:28</cite></span><span class="take">What scares the world tells a believer his rescue is close.</span></li>
+      <li class="step"><span class="topic">Watch</span><span class="seed-q">“Watch ye therefore, and pray always” <cite>21:36</cite></span><span class="take">Don't let drink, excess or worry weigh your heart down.</span></li>
+    </ol>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 1 of 6</p>
+      <span class="topic">Giving</span>
+      <h2>Why did the poor widow give more than all the rich men?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="3"></blockquote>
+      <blockquote class="quote step" data-q="4"></blockquote>
+      <blockquote class="quote step"><p>“Every man according as he purposeth in his heart, so let him give; not grudgingly, or of necessity: for God loveth a cheerful giver.”</p><cite>2 Corinthians 9:7</cite></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>Because they gave out of what they had left over, and she gave all she had. God measures a gift by what it costs the giver and the trust behind it, not by the amount.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 2 of 6</p>
+      <span class="topic">Deceived</span>
+      <h2>What is the first thing Jesus warns His followers about?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="8"></blockquote>
+      <blockquote class="quote step"><p>“And he said unto them, It is not for you to know the times or the seasons, which the Father hath put in his own power.”</p><cite>Acts 1:7</cite></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>Being deceived. Men will come in His name and claim the time is near. Don't go after them. The dates belong to the Father; our job is to stay with Jesus and His Word.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 3 of 6</p>
+      <span class="topic">Hard times</span>
+      <h2>What does Jesus promise His people when they are hated for His name?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="15"></blockquote>
+      <blockquote class="quote step" data-q="18-19"></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>That He'll give them the words when they stand before their accusers, that it will become a testimony, and that their souls are safe: not an hair of their head will perish. Our part is to endure.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 4 of 6</p>
+      <span class="topic">Jerusalem</span>
+      <h2>What did Jesus say would happen to Jerusalem?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="20"></blockquote>
+      <blockquote class="quote step" data-q="24"></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>That armies would surround it, the temple would be torn down to the last stone, and the people would be killed or carried away. It happened in A.D. 70, about forty years later. His words came true.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 5 of 6</p>
+      <span class="topic">Look up</span>
+      <h2>What should a believer do when the world is shaking?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="9"></blockquote>
+      <blockquote class="quote step" data-q="28"></blockquote>
+      <blockquote class="quote step"><p>“Looking for that blessed hope, and the glorious appearing of the great God and our Saviour Jesus Christ;”</p><cite>Titus 2:13</cite></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>Not be terrified, but look up. The things that make men's hearts fail are, for a believer, a sign that Jesus is coming and his redemption is near.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 6 of 6</p>
+      <span class="topic">Watch</span>
+      <h2>How does Jesus tell us to stay ready for His coming?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="34"></blockquote>
+      <blockquote class="quote step" data-q="36"></blockquote>
+      <blockquote class="quote step"><p>“And be not drunk with wine, wherein is excess; but be filled with the Spirit;”</p><cite>Ephesians 5:18</cite></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>Watch and pray always. Don't let excess, drink, or the worries of life make your heart heavy and dull. Stay awake, stay close to God, and you won't be caught like a bird in a snare.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide prayer">
+  <div class="inner">
+    <div class="emblem rise"></div>
+    <h2 class="rise" style="--d:1">Prayer requests</h2>
+    <p class="ask-line rise" style="--d:2">What can we pray about for you today?</p>
+    <blockquote class="quote rise" style="--d:4"><p>“Casting all your care upon him; for he careth for you.”</p><cite>1 Peter 5:7</cite></blockquote>
+  </div>
+</section>
+
+</main>
+
+<script>
+// King James Version, Luke chapter 21
+const V = {
+  1: "And he looked up, and saw the rich men casting their gifts into the treasury.",
+  2: "And he saw also a certain poor widow casting in thither two mites.",
+  3: "And he said, Of a truth I say unto you, that this poor widow hath cast in more than they all:",
+  4: "For all these have of their abundance cast in unto the offerings of God: but she of her penury hath cast in all the living that she had.",
+  5: "And as some spake of the temple, how it was adorned with goodly stones and gifts, he said,",
+  6: "As for these things which ye behold, the days will come, in the which there shall not be left one stone upon another, that shall not be thrown down.",
+  7: "And they asked him, saying, Master, but when shall these things be? and what sign will there be when these things shall come to pass?",
+  8: "And he said, Take heed that ye be not deceived: for many shall come in my name, saying, I am Christ; and the time draweth near: go ye not therefore after them.",
+  9: "But when ye shall hear of wars and commotions, be not terrified: for these things must first come to pass; but the end is not by and by.",
+  10: "Then said he unto them, Nation shall rise against nation, and kingdom against kingdom:",
+  11: "And great earthquakes shall be in divers places, and famines, and pestilences; and fearful sights and great signs shall there be from heaven.",
+  12: "But before all these, they shall lay their hands on you, and persecute you, delivering you up to the synagogues, and into prisons, being brought before kings and rulers for my name’s sake.",
+  13: "And it shall turn to you for a testimony.",
+  14: "Settle it therefore in your hearts, not to meditate before what ye shall answer:",
+  15: "For I will give you a mouth and wisdom, which all your adversaries shall not be able to gainsay nor resist.",
+  16: "And ye shall be betrayed both by parents, and brethren, and kinsfolks, and friends; and some of you shall they cause to be put to death.",
+  17: "And ye shall be hated of all men for my name’s sake.",
+  18: "But there shall not an hair of your head perish.",
+  19: "In your patience possess ye your souls.",
+  20: "And when ye shall see Jerusalem compassed with armies, then know that the desolation thereof is nigh.",
+  21: "Then let them which are in Judaea flee to the mountains; and let them which are in the midst of it depart out; and let not them that are in the countries enter thereinto.",
+  22: "For these be the days of vengeance, that all things which are written may be fulfilled.",
+  23: "But woe unto them that are with child, and to them that give suck, in those days! for there shall be great distress in the land, and wrath upon this people.",
+  24: "And they shall fall by the edge of the sword, and shall be led away captive into all nations: and Jerusalem shall be trodden down of the Gentiles, until the times of the Gentiles be fulfilled.",
+  25: "And there shall be signs in the sun, and in the moon, and in the stars; and upon the earth distress of nations, with perplexity; the sea and the waves roaring;",
+  26: "Men’s hearts failing them for fear, and for looking after those things which are coming on the earth: for the powers of heaven shall be shaken.",
+  27: "And then shall they see the Son of man coming in a cloud with power and great glory.",
+  28: "And when these things begin to come to pass, then look up, and lift up your heads; for your redemption draweth nigh.",
+  29: "And he spake to them a parable; Behold the fig tree, and all the trees;",
+  30: "When they now shoot forth, ye see and know of your own selves that summer is now nigh at hand.",
+  31: "So likewise ye, when ye see these things come to pass, know ye that the kingdom of God is nigh at hand.",
+  32: "Verily I say unto you, This generation shall not pass away, till all be fulfilled.",
+  33: "Heaven and earth shall pass away: but my words shall not pass away.",
+  34: "And take heed to yourselves, lest at any time your hearts be overcharged with surfeiting, and drunkenness, and cares of this life, and so that day come upon you unawares.",
+  35: "For as a snare shall it come on all them that dwell on the face of the whole earth.",
+  36: "Watch ye therefore, and pray always, that ye may be accounted worthy to escape all these things that shall come to pass, and to stand before the Son of man.",
+  37: "And in the day time he was teaching in the temple; and at night he went out, and abode in the mount that is called the mount of Olives.",
+  38: "And all the people came early in the morning to him in the temple, for to hear him."
+};
+const BOOK = "Luke 21";
+</script>
+<script src="../assets/deck.js"></script>
+</body>
+</html>

@@ -8998,5 +8998,106 @@ window.STUDIES = [
       },
       "big": "Jesus answers every trap and silences every critic. The Son whom men rejected is God's cornerstone; give Caesar his coin and give God yourself, since you bear His image; and God is the God of the living, so the resurrection is real. Beware of religion that is only a show."
     }
+  },
+  {
+    "id": "luke-21",
+    "type": "chapter",
+    "book": "Luke",
+    "ch": 21,
+    "date": "2026-10-29",
+    "title": "Luke 21",
+    "sub": "Watch ye therefore, and pray always",
+    "about": "A poor widow gives everything. Then Jesus tells His men what is coming, the fall of Jerusalem and His own return, and how to be ready.",
+    "tags": [
+      "Giving",
+      "Deception",
+      "Persecution",
+      "Prophecy fulfilled",
+      "His coming",
+      "Watchfulness"
+    ],
+    "url": "studies/luke-21.html",
+    "overview": {
+      "where": "The temple in Jerusalem by day, and the mount of Olives by night",
+      "when": "Jesus' last days of teaching in the temple, just before the Passover, about A.D. 30",
+      "people": [
+        "jesus",
+        "poor-widow"
+      ],
+      "places": [
+        "temple",
+        "treasury",
+        "jerusalem",
+        "judaea",
+        "mount-of-olives"
+      ],
+      "story": [
+        "Rich men drop gifts into the treasury. A poor widow casts in two mites, all she has, and Jesus says she gave more than they all (1–4).",
+        "The men admire the temple's goodly stones. Jesus says not one will be left on another, and warns them first not to be deceived or terrified (5–11).",
+        "Before the end, His people will be hated and dragged before kings, but He will give them a mouth and wisdom; in patience they possess their souls (12–19).",
+        "When Jerusalem is compassed with armies, flee. The city will be trodden down of the Gentiles, as it was in A.D. 70 (20–24).",
+        "Signs in the heavens, nations in distress, and the Son of man coming in a cloud: look up, for your redemption draweth nigh (25–33).",
+        "Don't let surfeiting, drunkenness and the cares of this life weigh your heart down. Watch, and pray always. By day He teaches in the temple (34–38)."
+      ],
+      "key": {
+        "ref": "Luke 21:36",
+        "text": "Watch ye therefore, and pray always, that ye may be accounted worthy to escape all these things that shall come to pass, and to stand before the Son of man."
+      },
+      "big": "Jesus never gave a date. He gave a warning and a hope: don't be fooled, don't be afraid, and don't let anything make your heart heavy. Look up, watch, and pray always, because He is coming."
+    }
+  },
+  {
+    "id": "luke-22",
+    "type": "chapter",
+    "book": "Luke",
+    "ch": 22,
+    "date": "2026-10-29",
+    "title": "Luke 22",
+    "sub": "The Lord turned, and looked upon Peter",
+    "about": "The last supper, a night of prayer on the mount of Olives, a traitor's kiss, and a friend who falls and is not let go.",
+    "tags": [
+      "Betrayal",
+      "The Lord's Supper",
+      "Servanthood",
+      "Restoration",
+      "Temptation",
+      "Prayer"
+    ],
+    "url": "studies/luke-22.html",
+    "overview": {
+      "where": "An upper room in Jerusalem, the mount of Olives, then the high priest's house and the council",
+      "when": "The Passover night and the next morning, the night before the cross, about A.D. 30",
+      "people": [
+        "jesus",
+        "judas-iscariot",
+        "satan",
+        "simon-peter",
+        "the-twelve",
+        "chief-priests",
+        "scribes",
+        "captains-of-the-temple",
+        "malchus",
+        "maids-of-the-high-priest",
+        "high-priest"
+      ],
+      "places": [
+        "upper-room",
+        "mount-of-olives",
+        "temple"
+      ],
+      "story": [
+        "As the Passover nears, Satan enters Judas, and he agrees to betray Jesus to the chief priests for money (1–6).",
+        "Peter and John follow a man with a pitcher of water to a large upper room. There Jesus gives the bread and the cup: “this do in remembrance of me” (7–23).",
+        "The disciples argue over who is greatest. Jesus: “I am among you as he that serveth.” He warns Simon that Satan will sift him, but “I have prayed for thee” (24–38).",
+        "On the mount of Olives Jesus prays, “not my will, but thine,” in an agony, while the disciples sleep. Judas comes with a kiss; Jesus heals the servant's ear (39–53).",
+        "In the high priest's house Peter denies Him three times. The cock crows, the Lord turns and looks upon Peter, and he weeps bitterly (54–62).",
+        "The guards mock and beat Jesus. At daybreak the council asks, “Art thou the Son of God?” He answers, “Ye say that I am” (63–71)."
+      ],
+      "key": {
+        "ref": "Luke 22:32",
+        "text": "But I have prayed for thee, that thy faith fail not: and when thou art converted, strengthen thy brethren."
+      },
+      "big": "Jesus knew every failure that was coming that night, and He loved His men through all of it. He prays for His own, turns them back when they fall, and gives them work: strengthen thy brethren."
+    }
   }
 ];
