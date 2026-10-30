@@ -7817,5 +7817,127 @@ window.STUDIES = [
       },
       "big": "Jesus is the Christ of God, who went to the cross on purpose. Salvation is His free gift; following Him means saying no to self and taking up the cross one day at a time, listening to Him, and not looking back."
     }
+  },
+  {
+    "id": "luke-10",
+    "type": "chapter",
+    "book": "Luke",
+    "ch": 10,
+    "date": "2026-10-29",
+    "title": "Luke 10",
+    "sub": "Go, and do thou likewise",
+    "about": "Seventy men are sent out two by two, a lawyer asks how to inherit eternal life and hears about a Samaritan on the Jericho road, and Martha learns what one thing is needful.",
+    "tags": [
+      "The harvest",
+      "Real joy",
+      "Revealed",
+      "Eternal life",
+      "Neighbour",
+      "One thing"
+    ],
+    "url": "studies/luke-10.html",
+    "overview": {
+      "where": "On the road toward Jerusalem; the towns ahead of Jesus, the north shore of the Sea of Galilee, the Jerusalem–Jericho road in the story, and Martha's house in Bethany",
+      "when": "About AD 29–30, on Jesus' last journey to Jerusalem (9:51–19:28), in the last months before the cross",
+      "people": [
+        "jesus",
+        "the-seventy",
+        "disciples",
+        "satan",
+        "the-father",
+        "lawyers",
+        "priests",
+        "priests-and-levites",
+        "samaritans",
+        "the-host",
+        "martha",
+        "mary-of-bethany"
+      ],
+      "places": [
+        "jerusalem",
+        "jericho",
+        "chorazin",
+        "bethsaida",
+        "capernaum",
+        "tyre-and-zidon",
+        "sodom-and-gomorrah",
+        "the-inn",
+        "bethany",
+        "heaven"
+      ],
+      "story": [
+        "Jesus sends seventy more men ahead of Him two by two. The harvest is great and the labourers few, so they are to pray for more, travel light, bring peace, heal the sick, and say, “The kingdom of God is come nigh unto you” (1–12).",
+        "He pronounces woe on Chorazin, Bethsaida and Capernaum, towns that saw His mighty works and didn't repent (13–16).",
+        "The seventy return with joy because devils obeyed them. Jesus saw Satan fall like lightning, but tells them to rejoice rather that their names are written in heaven (17–20).",
+        "Jesus rejoices that the Father has hidden these things from the wise and revealed them to babes, and tells His disciples they see what prophets and kings longed to see (21–24).",
+        "A lawyer asks how to inherit eternal life, answers with love for God and neighbour, and then asks, “Who is my neighbour?” Jesus tells of a man beaten on the Jericho road: a priest and a Levite pass by, but a Samaritan has compassion and pays for his care. “Go, and do thou likewise” (25–37).",
+        "In Martha's house, Mary sits at Jesus' feet while Martha is cumbered with serving. Jesus tells her one thing is needful, and Mary has chosen that good part (38–42)."
+      ],
+      "key": {
+        "ref": "Luke 10:27",
+        "text": "And he answering said, Thou shalt love the Lord thy God with all thy heart, and with all thy soul, and with all thy strength, and with all thy mind; and thy neighbour as thyself."
+      },
+      "big": "Jesus sends ordinary men out with His peace and tells them their greatest joy is a name written in heaven. Eternal life can't be earned by keeping the law; it is God's gift. Those who receive His mercy learn to show it to anyone in need, and the one thing needful is time at His feet."
+    }
+  },
+  {
+    "id": "luke-11",
+    "type": "chapter",
+    "book": "Luke",
+    "ch": 11,
+    "date": "2026-10-29",
+    "title": "Luke 11",
+    "sub": "Lord, teach us to pray",
+    "about": "Jesus teaches His men to pray and to keep on asking, drives out a devil and is accused of working for Beelzebub, warns about a house swept clean and left empty, and tells the Pharisees the inside of the cup is what counts.",
+    "tags": [
+      "Prayer",
+      "Keep asking",
+      "A good Father",
+      "The empty house",
+      "Truly blessed",
+      "Inside out"
+    ],
+    "url": "studies/luke-11.html",
+    "overview": {
+      "where": "On the road toward Jerusalem, in “a certain place” where Jesus prayed, among the gathering crowds, and at dinner in a Pharisee's house",
+      "when": "About AD 29–30, on Jesus' last journey to Jerusalem, in the last months before the cross",
+      "people": [
+        "jesus",
+        "disciples",
+        "the-father",
+        "holy-spirit",
+        "beelzebub",
+        "satan",
+        "jonah",
+        "solomon",
+        "queen-of-the-south",
+        "pharisees",
+        "lawyers",
+        "scribes",
+        "abel",
+        "zacharias-slain"
+      ],
+      "places": [
+        "nineveh",
+        "dry-places",
+        "synagogue",
+        "markets",
+        "temple",
+        "altar"
+      ],
+      "story": [
+        "After watching Jesus pray, a disciple asks Him to teach them. He gives them the Lord's prayer: our Father, His name, His kingdom and will, daily bread, forgiveness, and protection from temptation (1–4).",
+        "He tells of a friend knocking at midnight who gets bread because he won't quit, and promises: ask, seek, knock. If evil fathers give good gifts, how much more will the Father give the Holy Spirit to them that ask (5–13).",
+        "Jesus casts out a dumb devil. Some say He does it by Beelzebub; He answers that a divided kingdom falls, that He works by the finger of God, and that a stronger man has come to overpower the strong man (14–23).",
+        "He warns that an unclean spirit returns to a house swept and garnished but empty, bringing seven worse. A woman blesses His mother; He says, rather, blessed are they that hear the word of God and keep it (24–28).",
+        "To a crowd demanding a sign, He offers only the sign of Jonas. The queen of the south and the men of Nineveh will condemn this generation, for a greater than Solomon and Jonas is here. He warns them to let the light in (29–36).",
+        "At a Pharisee's table He exposes clean cups that are filthy inside, tithing herbs while neglecting justice and the love of God, heavy burdens, and the blood of the prophets from Abel to Zacharias. The scribes and Pharisees begin to lie in wait for Him (37–54)."
+      ],
+      "key": {
+        "ref": "Luke 11:9",
+        "text": "And I say unto you, Ask, and it shall be given you; seek, and ye shall find; knock, and it shall be opened unto you."
+      },
+      "big": "Prayer starts with our Father and keeps on asking, because He is good and gives His best gift, the Holy Spirit. Jesus is stronger than the strong man, but a life that is only swept clean and left empty falls back worse; it must be filled. God isn't fooled by a clean outside. He looks at the heart, and blesses whoever hears His word and keeps it."
+    }
   }
 ];
