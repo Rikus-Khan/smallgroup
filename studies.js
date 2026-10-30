@@ -9207,5 +9207,116 @@ window.STUDIES = [
       },
       "big": "Jesus knew every failure that was coming that night, and He loved His men through all of it. He prays for His own, turns them back when they fall, and gives them work: strengthen thy brethren."
     }
+  },
+  {
+    "id": "luke-23",
+    "type": "chapter",
+    "book": "Luke",
+    "ch": 23,
+    "date": "2026-10-29",
+    "title": "Luke 23",
+    "sub": "To day in paradise",
+    "about": "Pilate and Herod both find no fault in Jesus, yet He is crucified in the place of Barabbas. On the cross He prays “Father, forgive them,” promises a dying thief paradise, and is laid in Joseph's new tomb.",
+    "tags": [
+      "The cross",
+      "Substitution",
+      "Forgiveness",
+      "Salvation by faith",
+      "Recovery",
+      "Courage"
+    ],
+    "url": "studies/luke-23.html",
+    "overview": {
+      "where": "Jerusalem: before Pilate, then Herod, then Pilate again; out to Calvary just outside the city; then a new tomb nearby",
+      "when": "Friday of Passover week, about AD 30 (some say 33), from early morning to just before the sabbath began at sundown",
+      "people": [
+        "jesus",
+        "pilate",
+        "herod-antipas",
+        "chief-priests",
+        "scribes",
+        "barabbas",
+        "simon-of-cyrene",
+        "daughters-of-jerusalem",
+        "soldiers",
+        "penitent-thief",
+        "centurion-at-the-cross",
+        "joseph-of-arimathaea"
+      ],
+      "places": [
+        "jerusalem",
+        "galilee",
+        "golgotha",
+        "veil-of-the-temple",
+        "paradise",
+        "sepulchre"
+      ],
+      "story": [
+        "The council brings Jesus to Pilate with three charges. Pilate finds no fault in Him, hears He is from Galilee, and sends Him to Herod, who mocks Him when He won't perform a miracle (1–12).",
+        "Pilate says three times that Jesus has done nothing worthy of death, but the crowd shouts “Crucify him,” and Pilate releases Barabbas, a man in prison for sedition and murder, in His place (13–25).",
+        "Simon of Cyrene carries the cross after Jesus. Jesus tells the weeping women to weep for themselves, and is crucified at Calvary between two criminals, praying “Father, forgive them; for they know not what they do” (26–38).",
+        "One criminal rails on Him. The other confesses his guilt and asks, “Lord, remember me.” Jesus answers, “To day shalt thou be with me in paradise” (39–43).",
+        "Darkness falls from the sixth hour to the ninth, the veil of the temple is torn, and Jesus commends His spirit to the Father and dies. The centurion says, “Certainly this was a righteous man” (44–49).",
+        "Joseph of Arimathaea, a council member who didn't consent to their verdict, asks Pilate for the body and lays it in a new tomb. The women from Galilee see where He is laid and rest on the sabbath (50–56)."
+      ],
+      "key": {
+        "ref": "Luke 23:43",
+        "text": "And Jesus said unto him, Verily I say unto thee, To day shalt thou be with me in paradise."
+      },
+      "big": "The innocent One died in the place of the guilty. Jesus prayed for His enemies, opened the way to God by tearing the veil, and promised paradise to a dying criminal who brought nothing but faith. It's never too late to call on Him."
+    }
+  },
+  {
+    "id": "luke-24",
+    "type": "chapter",
+    "book": "Luke",
+    "ch": 24,
+    "date": "2026-10-29",
+    "title": "Luke 24",
+    "sub": "He is risen",
+    "about": "The women find the tomb empty, two sad disciples meet the risen Jesus on the road to Emmaus, and He shows the eleven His hands and feet, eats with them, opens the Scriptures, and is carried up into heaven.",
+    "tags": [
+      "Resurrection",
+      "Doubt",
+      "The Scriptures",
+      "Restoration",
+      "Hope",
+      "Mission"
+    ],
+    "url": "studies/luke-24.html",
+    "overview": {
+      "where": "The empty tomb outside Jerusalem; the road to Emmaus, about seven miles away, and back; a room in Jerusalem; then out toward Bethany",
+      "when": "Sunday, the third day after the cross, about AD 30, from very early morning into the night; then the ascension, forty days later (Acts 1:3)",
+      "people": [
+        "jesus",
+        "mary-magdalene",
+        "joanna",
+        "mary-mother-of-james",
+        "angels",
+        "simon-peter",
+        "the-eleven",
+        "cleopas"
+      ],
+      "places": [
+        "sepulchre",
+        "jerusalem",
+        "emmaus",
+        "bethany",
+        "heaven"
+      ],
+      "story": [
+        "Very early on the first day of the week the women find the stone rolled away and no body. Two men in shining garments ask, “Why seek ye the living among the dead? He is not here, but is risen” (1–8).",
+        "The women tell the eleven, who think it idle tales. Peter runs to the tomb and sees the linen clothes lying by themselves (9–12).",
+        "On the road to Emmaus, Jesus joins two sad disciples who don't recognize Him. Beginning at Moses and all the prophets, He shows them the things concerning Himself (13–27).",
+        "They urge Him to stay. As He breaks bread their eyes are opened, and He vanishes. They hurry back to Jerusalem: “The Lord is risen indeed, and hath appeared to Simon” (28–35).",
+        "Jesus stands among the disciples and says, “Peace be unto you.” He shows His hands and feet, tells them to handle Him, and eats broiled fish before them (36–43).",
+        "He opens their understanding of the Scriptures, sends them to preach repentance and remission of sins to all nations, promises power from on high, and is carried up into heaven from near Bethany. They return with great joy (44–53)."
+      ],
+      "key": {
+        "ref": "Luke 24:6",
+        "text": "He is not here, but is risen: remember how he spake unto you when he was yet in Galilee,"
+      },
+      "big": "Jesus rose bodily from the dead, just as He and the Scriptures said. He met doubters patiently, restored the man who had denied Him, and sent His followers to tell every nation that sins can be forgiven in His name."
+    }
   }
 ];

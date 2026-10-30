@@ -1,0 +1,611 @@
+<!doctype html>
+<html lang="en" data-theme="stone">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Luke 24</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="../assets/fonts.css">
+<link rel="stylesheet" href="../assets/deck.css">
+<link rel="stylesheet" href="../assets/themes.css">
+<style>
+/* lk24-map: a close-up of the land around Jerusalem (svg.map[data-land] cropped to 96 x 64 units, about 6x), so the towns are
+   drawn here at a small size instead of with data-towns, and the shared lines are thinned to suit. Emmaus isn't in the shared TOWNS list */
+.lk24-map .map-land { stroke-width: .5; }
+.lk24-map .map-town text { font-size: 3.3px; }
+.lk24-map .map-town > circle:not(.map-ping) { r: 1.2px; }
+.lk24-map .map-ping { r: 1.8px; stroke-width: .45; }
+.lk24-map .map-route { stroke-width: .9; }
+.lk24-map .map-route.r2 { stroke: var(--accent-hot); }
+.lk24-map .map-river { stroke-width: .8; }
+.lk24-map .map-lake { stroke-width: .5; }
+.lk24-map .map-region { font-size: 3px; letter-spacing: .14em; }
+.lk24-map .map-water { font-size: 2.7px; }
+.lk24-map .map-soft { font-size: 2.5px; fill: var(--ink-soft); }
+.lk24-tag { font: italic 600 2.9px var(--serif); fill: var(--accent-hot); opacity: 0; transition: opacity .8s ease 1.4s; }
+.slide:has(.map-go1.on) .lk24-tag.t1, .slide:has(.map-go2.on) .lk24-tag.t2 { opacity: 1; }
+@media (max-width: 600px) { .lk24-map .map-town text { font-size: 4.2px; } .lk24-tag { font-size: 3.6px; } }
+
+/* lk24-reach: the message going out in rings from Jerusalem (Luke 24:47, Acts 1:8); each ring is a step */
+.lk24-ring { fill: color-mix(in srgb, var(--accent) 9%, transparent); stroke: var(--accent); stroke-width: 2.5; }
+.lk24-ring.last { stroke-dasharray: 8 7; fill: none; }
+.lk24-core { fill: var(--accent); }
+.lk24-ring-t { font: 600 17px var(--sans); fill: var(--ink); text-anchor: middle; }
+.lk24-ring-t.core { fill: var(--on-accent); font-size: 14px; }
+.lk24-reach g.step { transform-box: fill-box; transform-origin: center; transform: scale(.6); transition: opacity .8s ease, transform .9s cubic-bezier(.3,.7,.3,1); }
+.lk24-reach g.step.on { transform: none; }
+@media (max-width: 600px) { .lk24-ring-t { font-size: 22px; } .lk24-ring-t.core { font-size: 17px; } }
+</style>
+</head>
+<body>
+<main class="deck" id="deck">
+
+<!-- ======================= OPENING ======================= -->
+<section class="slide title">
+  <div class="inner">
+    <div class="emblem rise"></div>
+    <h1 class="rise" style="--d:1">Luke 24</h1>
+    <p class="sub rise" style="--d:3">He is risen</p>
+    <p class="tag rise" style="--d:5">An empty tomb, a stranger on the road to Emmaus, and the risen Lord eating fish with His friends before He sends them out and goes up into heaven.</p>
+  </div>
+</section>
+
+<section class="slide watch">
+  <div class="inner">
+    <h2 class="rise">Things to watch for</h2>
+    <p class="lede rise" style="--d:1">Keep these questions in the back of your mind as we read. We'll come back to every one of them at the end.</p>
+    <ol class="seeds">
+      <li class="step"><span class="topic">The empty tomb</span><span class="seed-q">What did the women find at the tomb?</span></li>
+      <li class="step"><span class="topic">Doubt</span><span class="seed-q">How did the apostles first take the news?</span></li>
+      <li class="step"><span class="topic">The Scriptures</span><span class="seed-q">What did Jesus show the two on the road to Emmaus?</span></li>
+      <li class="step"><span class="topic">Restored</span><span class="seed-q">Which disciple did the risen Lord appear to by name?</span></li>
+      <li class="step"><span class="topic">A real body</span><span class="seed-q">How did Jesus show He wasn't a ghost?</span></li>
+      <li class="step"><span class="topic">The mission</span><span class="seed-q">What did Jesus send His disciples out to preach?</span></li>
+    </ol>
+  </div>
+</section>
+
+<!-- ======================= PART ONE: HE IS NOT HERE ======================= -->
+<section class="slide part">
+  <div class="inner">
+    <p class="part-n rise">Part one</p>
+    <h2 class="rise" style="--d:1">He is not here, but is risen</h2>
+    <p class="range rise" style="--d:2">Verses 1–12</p>
+    <div class="rule"></div>
+    <p class="hook rise" style="--d:4">The women come with spices for a dead man. The stone is already gone.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="1-3" data-hl="upon the first day of the week, very early in the morning|they found the stone rolled away from the sepulchre|found not the body of the Lord Jesus"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="2"></blockquote>
+    <div class="split">
+      <div class="stage">
+        <svg class="tomb now" style="--roll:150px;--turn:190deg" viewBox="0 0 600 330" role="img" aria-label="A tomb cut into a hillside at dawn. The round stone rolls away from the door, the sun comes up, and light shines out of the empty tomb.">
+          <g class="tomb-sun">
+            <defs><radialGradient id="lk24-halo"><stop offset="0" style="stop-color:var(--accent);stop-opacity:.6"/><stop offset="1" style="stop-color:var(--accent);stop-opacity:0"/></radialGradient></defs>
+            <circle cx="470" cy="80" r="115" fill="url(#lk24-halo)"/>
+            <circle cx="470" cy="80" r="38" style="fill:var(--glow)"/>
+          </g>
+          <path d="M0 330 L0 150 Q110 70 250 105 Q400 140 600 120 L600 330 Z" stroke-width="3" style="fill:var(--surface-2);stroke:var(--line-strong)"/>
+          <rect x="0" y="292" width="600" height="38" style="fill:var(--surface-2)"/>
+          <line x1="0" y1="292" x2="600" y2="292" stroke-width="2" style="stroke:var(--line-strong)"/>
+          <path class="tomb-door" d="M150 292 L150 215 Q200 160 250 215 L250 292 Z" stroke-width="3" style="stroke:var(--ink-soft)"/>
+          <g class="tomb-light">
+            <path d="M150 292 L150 215 Q200 160 250 215 L250 292 Z" style="fill:var(--glow)"/>
+            <path d="M250 292 L360 330 L40 330 L150 292 Z" style="fill:color-mix(in srgb, var(--glow) 35%, transparent)"/>
+          </g>
+          <g class="tomb-stone">
+            <circle cx="200" cy="240" r="62" stroke-width="3" style="fill:var(--line-strong);stroke:var(--ink-soft)"/>
+            <circle cx="200" cy="240" r="44" fill="none" stroke-width="2.5" stroke-dasharray="10 8" style="stroke:var(--bg)"/>
+            <circle cx="200" cy="240" r="6" style="fill:var(--bg)"/>
+          </g>
+          <text class="tomb-word" x="200" y="140" text-anchor="middle" font-size="20" font-weight="700" style="fill:var(--accent-hot)">empty</text>
+        </svg>
+      </div>
+      <div>
+        <h2 class="rise" style="--d:1">Very early, the first day</h2>
+        <p class="note rise" style="--d:2">The women who watched Him buried (23:55) rested through the sabbath, then came at first light on Sunday with their spices. They came to care for a body. No one was expecting a resurrection.</p>
+        <p class="note step">The stone was already rolled away. It wasn't moved to let Jesus out. It was moved to let the witnesses in. And the body was gone.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="slide verse" data-v="4-7" data-hl="two men stood by them in shining garments|Why seek ye the living among the dead?|He is not here, but is risen|the third day rise again"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="5" data-hl="Why seek ye the living among the dead?"></blockquote>
+    <h2 class="rise" style="--d:1">Among the dead</h2>
+    <p class="note rise" style="--d:2">The <em>two men in shining garments</em> were angels (v. 23 calls it <em>“a vision of angels”</em>). Their question is almost gentle: <em>why are you looking for a living man in a graveyard?</em></p>
+    <p class="note step">Then: <em>“remember how he spake unto you.”</em> He had told them plainly, more than once, back in Galilee:</p>
+    <blockquote class="quote step"><p>“Saying, The Son of man must suffer many things, and be rejected of the elders and chief priests and scribes, and be slain, and be raised the third day.”</p><cite>Luke 9:22</cite></blockquote>
+    <p class="note step">Some of us spent years looking for life among dead things: the bottle, the old crowd, the old places. There's no life there. He's risen.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="8-10" data-hl="And they remembered his words|Mary Magdalene, and Joanna, and Mary the mother of James"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="10"></blockquote>
+    <h2 class="rise" style="--d:1">The first witnesses</h2>
+    <ol class="signs">
+      <li class="step now"><b>Mary Magdalene</b>likely from Magdala, by the lake. Jesus had cast seven devils out of her (8:2).</li>
+      <li class="step now"><b>Joanna</b>wife of Chuza, the steward of Herod's household (8:3). A woman of some standing.</li>
+      <li class="step now"><b>Mary the mother of James</b>one of the women from Galilee who watched the cross from a distance (Mark 15:40).</li>
+    </ol>
+    <p class="note step">In those days a woman's word didn't count for much in court. If someone were making up a resurrection story, he'd never pick women as the first witnesses. Luke names them because that's what happened.</p>
+    <p class="note step">And notice who got there first: a woman who'd been tormented by devils. The people Jesus rescued were the ones who stayed closest.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="11-12" data-hl="their words seemed to them as idle tales, and they believed them not|Then arose Peter, and ran unto the sepulchre|the linen clothes laid by themselves"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="11"></blockquote>
+    <h2 class="rise" style="--d:1">Idle tales</h2>
+    <p class="note rise" style="--d:2"><em>Idle tales</em> means nonsense, the talk of someone not thinking straight. The apostles didn't believe it. These weren't gullible men waiting for a miracle. They'd seen Him die, and they were sure it was over.</p>
+    <p class="note step">But Peter ran. The man who had denied Him three times only days before ran to the tomb and stooped to look. He saw the <em>linen clothes</em>, the burial wrappings, lying there by themselves. No body. No thief would have stopped to unwrap it.</p>
+    <p class="note step">He went home <em>“wondering.”</em> Not believing yet, but not dismissing it. Honest questions are a fine place to start. Jesus will meet a man there.</p>
+  </div>
+</section>
+
+<!-- ======================= PART TWO: THE ROAD TO EMMAUS ======================= -->
+<section class="slide part">
+  <div class="inner">
+    <p class="part-n rise">Part two</p>
+    <h2 class="rise" style="--d:1">Did not our heart burn?</h2>
+    <p class="range rise" style="--d:2">Verses 13–35</p>
+    <div class="rule"></div>
+    <p class="hook rise" style="--d:4">Two sad men walk home, and a stranger falls in step beside them.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="13-14" data-hl="a village called Emmaus|about threescore furlongs"></section>
+
+<section class="slide verse" data-v="15-16" data-hl="Jesus himself drew near, and went with them|their eyes were holden that they should not know him"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <div class="split">
+      <div class="stage">
+        <svg class="map lk24-map" data-land viewBox="164 350 96 64" role="img" aria-label="A close-up map of the hill country around Jerusalem. Emmaus lies about seven miles west and a little north of Jerusalem. On a step, a road is drawn from Jerusalem to Emmaus. On the next step, the road back to Jerusalem the same night. Bethany is just east of Jerusalem, and Jericho lies farther east toward the Jordan.">
+          <path class="map-route r1" pathLength="1" d="M201 384 C 195 381, 188 378, 182.5 376"/>
+          <path class="map-route r2" pathLength="1" d="M182 378.6 C 188 381.2, 195 384.2, 201 386.6"/>
+          <g class="map-town here"><circle cx="181" cy="377" r="1.2"/><circle class="map-ping" cx="181" cy="377" r="1.8"/><text x="181" y="373.2" text-anchor="middle">Emmaus</text></g>
+          <g class="map-town"><circle cx="202" cy="385" r="1.2"/><text x="200" y="390.6" text-anchor="end">Jerusalem</text></g>
+          <g class="map-town"><circle cx="207" cy="386" r="1.2"/><text x="209" y="387.2">Bethany</text></g>
+          <g class="map-town"><circle cx="243" cy="363" r="1.2"/><text x="243" y="359.4" text-anchor="middle">Jericho</text></g>
+          <text class="lk24-tag t1" x="181" y="369.6" text-anchor="middle">“that same day”</text>
+          <text class="lk24-tag t2" x="178" y="395.5">“the same hour”, back</text>
+          <text class="map-region" x="172" y="408">JUDAEA</text>
+          <path d="M212 407 H227.5 M212 406 V408 M227.5 406 V408" style="stroke:var(--ink-soft);stroke-width:.45;fill:none"/><text class="map-soft" x="219.7" y="411.5" text-anchor="middle">about 5 miles</text>
+          <text class="map-water" x="252" y="404" text-anchor="middle">Dead Sea</text>
+          <text class="map-soft" x="166" y="354.5">The exact site of Emmaus isn't known.</text>
+        </svg>
+      </div>
+      <div>
+        <h2 class="rise" style="--d:1">Seven miles out</h2>
+        <div class="math rise" style="--d:2">
+          <div><b>60</b><span>furlongs (“threescore”)</span></div>
+          <div><b>≈ 7</b><span>miles, about 11 km</span></div>
+          <div><b>2–3</b><span>hours on foot</span></div>
+        </div>
+        <p class="note step map-go1">Two followers of Jesus, not of the eleven, walk home on Sunday afternoon. A <em>furlong</em> was about an eighth of a mile.</p>
+        <p class="note step map-go2">After supper they walk the whole way back, in the dark, that same hour (v. 33).</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="slide verse" data-v="17-19" data-hl="as ye walk, and are sad|whose name was Cleopas|What things?|a prophet mighty in deed and word"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise">What things?</h2>
+    <div class="talk">
+      <p class="rise" style="--d:1"><small>The stranger</small>What manner of communications are these that ye have one to another, as ye walk, and are sad?</p>
+      <p class="reply step"><small>Cleopas</small>Art thou only a stranger in Jerusalem, and hast not known the things which are come to pass there in these days? <span class="flag">the only man who knew</span></p>
+      <p class="step"><small>The stranger</small>What things?</p>
+    </div>
+    <p class="note step"><em>Their eyes were holden</em>: kept from knowing Him. He doesn't announce Himself. He asks, and lets two hurting men tell Him their story. You can tell Him exactly how it looks from where you stand. He isn't offended by a sad man's honesty.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="20-21" data-hl="have crucified him|But we trusted that it had been he which should have redeemed Israel"></section>
+
+<section class="slide verse" data-v="22-24" data-hl="a vision of angels, which said that he was alive|but him they saw not"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="21" data-hl="But we trusted that it had been he which should have redeemed Israel"></blockquote>
+    <h2 class="rise" style="--d:1">“We trusted”</h2>
+    <p class="note rise" style="--d:2">Past tense. They'd hoped He was the One to <em>redeem Israel</em>: to set the nation free, most likely from Rome. Then the cross. Then three days of silence. Even the women's report only confused them more.</p>
+    <p class="note step">They had the right Man and the wrong idea of what He came to do. He did redeem, far deeper than they dreamed, and not with an army:</p>
+    <blockquote class="quote step"><p>“Forasmuch as ye know that ye were not redeemed with corruptible things, as silver and gold, from your vain conversation received by tradition from your fathers; But with the precious blood of Christ, as of a lamb without blemish and without spot:”</p><cite>1 Peter 1:18–19</cite></blockquote>
+  </div>
+</section>
+
+<section class="slide verse" data-v="25-27" data-hl="slow of heart to believe all that the prophets have spoken|Ought not Christ to have suffered these things, and to enter into his glory?|beginning at Moses and all the prophets"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="26"></blockquote>
+    <h2 class="rise" style="--d:1">Beginning at Moses</h2>
+    <p class="note rise" style="--d:2"><em>O fools</em> here means men without understanding, not idiots. Their problem wasn't a lack of evidence. It was <em>slow hearts</em>: they believed the parts of the prophets they liked, about a glorious King, and skipped the parts about a suffering servant.</p>
+    <p class="note step"><em>Ought not</em>: it had to be this way. First the suffering, then the glory. The cross wasn't the plan failing. It was the plan.</p>
+    <blockquote class="quote step"><p>“But he was wounded for our transgressions, he was bruised for our iniquities: the chastisement of our peace was upon him; and with his stripes we are healed.”</p><cite>Isaiah 53:5</cite></blockquote>
+    <p class="note step">Then the best Bible study ever taught, on a dusty road: Jesus going through the whole Old Testament, showing them Himself on every page.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="28-31" data-hl="Abide with us: for it is toward evening, and the day is far spent|he took bread, and blessed it, and brake, and gave to them|their eyes were opened, and they knew him"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="29" data-hl="Abide with us"></blockquote>
+    <h2 class="rise" style="--d:1">Abide with us</h2>
+    <p class="note rise" style="--d:2">At the village He <em>made as though</em> He'd keep walking. He didn't force Himself on them. They <em>constrained</em> Him, urged Him strongly: it's getting dark, stay with us.</p>
+    <blockquote class="quote step"><p>“Behold, I stand at the door, and knock: if any man hear my voice, and open the door, I will come in to him, and will sup with him, and he with me.”</p><cite>Revelation 3:20</cite></blockquote>
+    <p class="note step">The guest took the host's place. He took the bread, blessed it, broke it, and handed it to them, and suddenly they knew Him. Maybe it was the way He did it. Maybe they saw the nail wounds in His hands. Then He was gone.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="32-35" data-hl="Did not our heart burn within us|The Lord is risen indeed, and hath appeared to Simon|how he was known of them in breaking of bread"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise">From sad to burning</h2>
+    <div class="stage">
+      <svg class="curve" viewBox="0 0 620 350" role="img" aria-label="A line starts level with their hope in a mighty prophet, falls at the cross to its lowest point, we trusted, turns where Jesus drew near, and climbs through the Scriptures opened and their eyes opened to the top: The Lord is risen indeed.">
+        <line class="curve-base" x1="10" y1="110" x2="610" y2="110"/>
+        <path class="curve-line" pathLength="1" d="M20 110 C 120 110, 160 170, 205 225 C 240 268, 265 300, 300 300 C 340 300, 360 255, 400 190 C 445 118, 500 58, 590 40"/>
+        <g class="curve-pt" style="--at:.6s"><circle cx="73" cy="117" r="8"/><text x="73" y="92" text-anchor="middle">“a prophet mighty”</text></g>
+        <g class="curve-pt" style="--at:1.2s"><circle cx="171" cy="184" r="8"/><text x="160" y="190" text-anchor="end">crucified</text></g>
+        <g class="curve-pt low" style="--at:1.9s"><circle cx="300" cy="300" r="9"/><text x="300" y="334" text-anchor="middle">“we trusted”</text></g>
+        <g class="curve-pt" style="--at:2.4s"><circle cx="341" cy="280" r="8"/><text class="q" x="356" y="286">Jesus drew near</text></g>
+        <g class="curve-pt" style="--at:2.9s"><circle cx="436" cy="139" r="8"/><text x="450" y="150">eyes opened</text></g>
+        <g class="curve-pt high" style="--at:3.4s"><circle cx="590" cy="40" r="10"/><text class="q" x="572" y="22" text-anchor="end">“The Lord is risen indeed”</text></g>
+      </svg>
+    </div>
+    <p class="note step"><em>“Did not our heart burn within us”</em>: it was already happening on the road, while He opened the Scriptures, before they knew who He was. He still meets men that way.</p>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="34"></blockquote>
+    <h2 class="rise" style="--d:1">He appeared to Simon</h2>
+    <p class="note rise" style="--d:2">Back in Jerusalem the eleven have news of their own. Of all the disciples, the risen Lord made a point of seeing Simon Peter, alone. Remember the last time their eyes met:</p>
+    <blockquote class="quote step"><p>“And the Lord turned, and looked upon Peter. And Peter remembered the word of the Lord, how he had said unto him, Before the cock crow, thou shalt deny me thrice. And Peter went out, and wept bitterly.”</p><cite>Luke 22:61–62</cite></blockquote>
+    <p class="note step">We aren't told what was said. But the man who failed worst got a private visit first (1 Corinthians 15:5). If you've let Him down badly, the risen Jesus isn't avoiding you. He's coming to find you.</p>
+  </div>
+</section>
+
+<!-- ======================= PART THREE: HANDLE ME, AND SEE ======================= -->
+<section class="slide part">
+  <div class="inner">
+    <p class="part-n rise">Part three</p>
+    <h2 class="rise" style="--d:1">Handle me, and see</h2>
+    <p class="range rise" style="--d:2">Verses 36–43</p>
+    <div class="rule"></div>
+    <p class="hook rise" style="--d:4">The room goes quiet. He's standing in the middle of them.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="36-38" data-hl="Jesus himself stood in the midst of them, and saith unto them, Peace be unto you|supposed that they had seen a spirit"></section>
+
+<section class="slide verse" data-v="39-40" data-hl="Behold my hands and my feet, that it is I myself|handle me, and see; for a spirit hath not flesh and bones"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="39" data-hl="handle me, and see"></blockquote>
+    <h2 class="rise" style="--d:1">Flesh and bones</h2>
+    <p class="note rise" style="--d:2">Before anything else He says <em>“Peace be unto you,”</em> to the men who ran away. No rebuke first. Then they panic: a <em>spirit</em>, a ghost. So He holds out the hands and feet with the nail wounds, the ones the psalm foretold: <em>“they pierced my hands and my feet”</em> (Psalm 22:16).</p>
+    <p class="note step">Not a vision. Not a spirit. The same Jesus, in a real body, raised and changed, that could be touched. John was in that room, and spent the rest of his life saying so:</p>
+    <blockquote class="quote step"><p>“That which was from the beginning, which we have heard, which we have seen with our eyes, which we have looked upon, and our hands have handled, of the Word of life;”</p><cite>1 John 1:1</cite></blockquote>
+  </div>
+</section>
+
+<section class="slide verse" data-v="41-43" data-hl="they yet believed not for joy|Have ye here any meat?|a piece of a broiled fish, and of an honeycomb|did eat before them"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="41" data-hl="they yet believed not for joy"></blockquote>
+    <h2 class="rise" style="--d:1">Too good to be true</h2>
+    <p class="note rise" style="--d:2"><em>“Believed not for joy”</em>: it seemed too good to be true. So He asked for <em>meat</em>, which in the KJV means any food, and ate a piece of fish in front of them. Every other way of explaining it away falls flat:</p>
+    <ul class="nots">
+      <li class="step"><span class="k">They went to the wrong tomb</span><span class="why">the women saw where He was laid (23:55)</span></li>
+      <li class="step"><span class="k">Someone stole the body</span><span class="why">the grave clothes were left behind (24:12)</span></li>
+      <li class="step"><span class="k">They saw a ghost</span><span class="why">a ghost hasn't flesh and bones (24:39)</span></li>
+      <li class="step"><span class="k">They wanted to believe it</span><span class="why">they called it idle tales (24:11)</span></li>
+      <li class="step yes"><span class="k">“The Lord is risen indeed”</span><span class="why">24:34</span></li>
+    </ul>
+  </div>
+</section>
+
+<!-- ======================= PART FOUR: YE ARE WITNESSES ======================= -->
+<section class="slide part">
+  <div class="inner">
+    <p class="part-n rise">Part four</p>
+    <h2 class="rise" style="--d:1">Ye are witnesses</h2>
+    <p class="range rise" style="--d:2">Verses 44–53</p>
+    <div class="rule"></div>
+    <p class="hook rise" style="--d:4">He opens their minds, hands them a message for the world, and blesses them as He goes.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="44" data-hl="in the law of Moses, and in the prophets, and in the psalms, concerning me"></section>
+
+<section class="slide verse" data-v="45-46" data-hl="Then opened he their understanding|to rise from the dead the third day"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="44" data-hl="in the law of Moses, and in the prophets, and in the psalms, concerning me"></blockquote>
+    <h2 class="rise" style="--d:1">The whole Old Testament</h2>
+    <p class="note rise" style="--d:2">The Jews divided their Bible into three parts: the Law, the Prophets, and the Writings, which began with the Psalms. Jesus names all three. Every part points to Him:</p>
+    <div class="sort">
+      <div class="step"><h3>The law of Moses</h3><div class="vs"><b>Genesis 3:15</b></div><p>“it shall bruise thy head, and thou shalt bruise his heel”: the first promise of a Saviour.</p></div>
+      <div class="step"><h3>The prophets</h3><div class="vs"><b>Isaiah 53:5</b></div><p>“he was wounded for our transgressions”: the suffering Servant.</p></div>
+      <div class="step"><h3>The psalms</h3><div class="vs"><b>Psalm 16:10</b></div><p>“neither wilt thou suffer thine Holy One to see corruption”: a grave that couldn't hold Him.</p></div>
+    </div>
+    <p class="note step"><em>Then opened he their understanding</em>. We need the same help. Ask Him before you read, and the Book starts to open.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="47-48" data-hl="repentance and remission of sins should be preached in his name among all nations, beginning at Jerusalem|ye are witnesses of these things"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <div class="split">
+      <div class="stage">
+        <svg class="lk24-reach" viewBox="0 0 400 400" role="img" aria-label="Rings spreading out from a center marked Jerusalem: then Judaea, then Samaria, then a dashed ring for the uttermost part of the earth.">
+          <g class="step"><circle class="lk24-ring last" cx="200" cy="200" r="190"/><text class="lk24-ring-t" x="200" y="48">the uttermost part</text></g>
+          <g class="step"><circle class="lk24-ring" cx="200" cy="200" r="140"/><text class="lk24-ring-t" x="200" y="82">Samaria</text></g>
+          <g class="step"><circle class="lk24-ring" cx="200" cy="200" r="92"/><text class="lk24-ring-t" x="200" y="132">all Judaea</text></g>
+          <circle class="lk24-core" cx="200" cy="200" r="48"/><text class="lk24-ring-t core" x="200" y="205">Jerusalem</text>
+        </svg>
+      </div>
+      <div>
+        <blockquote class="quote rise" data-q="47"></blockquote>
+        <p class="note rise" style="--d:2"><em>Repentance</em>: a turning around. <em>Remission</em>: sins sent away, the debt cancelled. In <em>His name</em>, by His authority, to <em>all nations</em>.</p>
+        <p class="note step">And <em>“beginning at Jerusalem,”</em> the city that had just crucified Him. If there was grace for them, there's grace for anyone.</p>
+        <p class="note step">Acts 1:8 traces the same rings: Jerusalem, Judaea, Samaria, the ends of the earth. That's how the news reached us.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="slide verse" data-v="49" data-hl="I send the promise of my Father upon you|until ye be endued with power from on high"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="49"></blockquote>
+    <h2 class="rise" style="--d:1">The promise of the Father</h2>
+    <ol class="timeline" aria-label="Friday: the cross. Sunday, the third day: He rises. Forty days of appearing to them. Then He is taken up into heaven. About ten days later, at Pentecost, the Holy Ghost comes.">
+      <li style="--k:0"><b>Friday</b><span>the cross</span><small>23:33</small></li>
+      <li class="lit" style="--k:1"><b>Sunday</b><span>the third day: risen</span><small>24:6</small></li>
+      <li style="--k:2"><b>40 days</b><span>seen alive, “by many infallible proofs”</span><small>Acts 1:3</small></li>
+      <li style="--k:3"><b>taken up</b><span>from near Bethany</span><small>24:50–51</small></li>
+      <li class="wait" style="--k:4"><b>about 10 days later</b><span>Pentecost: the Spirit comes</span><small>Acts 2:1–4</small></li>
+    </ol>
+    <p class="note step">The <em>promise of my Father</em> is the Holy Spirit. Luke tells the rest in his second book: they waited, and at Pentecost the Spirit came with power. Luke 24 tells it short; Acts 1 tells us the forty days in between.</p>
+    <p class="note step">We don't have to wait like they did. Every believer receives the Spirit the moment he trusts Christ: <em>“after that ye believed, ye were sealed with that holy Spirit of promise”</em> (Ephesians 1:13).</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="50-53" data-hl="he lifted up his hands, and blessed them|carried up into heaven|returned to Jerusalem with great joy"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="51"></blockquote>
+    <h2 class="rise" style="--d:1">With great joy</h2>
+    <p class="note rise" style="--d:2">He led them out toward Bethany, on the Mount of Olives, a couple of miles from the city. The last thing they saw was His hands, with the nail marks, lifted up over them in blessing.</p>
+    <div class="columns">
+      <div class="col law step"><p class="who">Luke 24:17</p><h3>“as ye walk, and are sad”</h3><p>Sunday afternoon, walking away from Jerusalem with dead hopes.</p></div>
+      <div class="col grace step"><p class="who">Luke 24:52</p><h3>“with great joy”</h3><p>Back in Jerusalem, in the temple, praising God. Nothing about their danger had changed. They had.</p></div>
+    </div>
+    <blockquote class="quote step"><p>“…this same Jesus, which is taken up from you into heaven, shall so come in like manner as ye have seen him go into heaven.”</p><cite>Acts 1:11</cite></blockquote>
+  </div>
+</section>
+
+<!-- ======================= CLOSING ======================= -->
+<section class="slide remember">
+  <div class="inner">
+    <h2 class="rise">Points to remember</h2>
+    <ol class="seeds">
+      <li class="step"><span class="topic">The empty tomb</span><span class="seed-q">“He is not here, but is risen” <cite>24:6</cite></span><span class="take">The stone was gone and the body was gone. He rose, as He said.</span></li>
+      <li class="step"><span class="topic">Doubt</span><span class="seed-q">“Their words seemed to them as idle tales” <cite>24:11</cite></span><span class="take">The apostles weren't easy to convince. Jesus was patient with them.</span></li>
+      <li class="step"><span class="topic">The Scriptures</span><span class="seed-q">“Beginning at Moses and all the prophets” <cite>24:27</cite></span><span class="take">The whole Old Testament points to Jesus, who suffered and rose.</span></li>
+      <li class="step"><span class="topic">Restored</span><span class="seed-q">“Hath appeared to Simon” <cite>24:34</cite></span><span class="take">The man who denied Him got a visit from the risen Lord.</span></li>
+      <li class="step"><span class="topic">A real body</span><span class="seed-q">“Handle me, and see” <cite>24:39</cite></span><span class="take">Nail-scarred hands, flesh and bones, and fish eaten in front of them.</span></li>
+      <li class="step"><span class="topic">The mission</span><span class="seed-q">“Repentance and remission of sins … among all nations” <cite>24:47</cite></span><span class="take">The good news goes out to everyone, starting where we are.</span></li>
+    </ol>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 1 of 6</p>
+      <span class="topic">The empty tomb</span>
+      <h2>What did the women find at the tomb?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="2"></blockquote>
+      <blockquote class="quote step" data-q="3"></blockquote>
+      <blockquote class="quote step" data-q="6" data-hl="He is not here, but is risen"></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>The stone rolled away, no body, and two angels asking why they were looking for the living among the dead. He had risen on the third day, just as He'd told them.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 2 of 6</p>
+      <span class="topic">Doubt</span>
+      <h2>How did the apostles first take the news?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="11"></blockquote>
+      <blockquote class="quote step" data-q="41" data-hl="they yet believed not for joy"></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>They called it idle tales and didn't believe it. Even with Him standing in front of them, it seemed too good to be true. Jesus didn't throw them out. He showed them His hands, ate in front of them, and opened the Scriptures until they believed.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 3 of 6</p>
+      <span class="topic">The Scriptures</span>
+      <h2>What did Jesus show the two on the road to Emmaus?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="26"></blockquote>
+      <blockquote class="quote step" data-q="27"></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>Himself, in all the Scriptures. Starting with Moses and going through the prophets, He showed them that the Christ had to suffer and then enter His glory. Their hearts burned while He opened the Bible to them.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 4 of 6</p>
+      <span class="topic">Restored</span>
+      <h2>Which disciple did the risen Lord appear to by name?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="12"></blockquote>
+      <blockquote class="quote step" data-q="34"></blockquote>
+      <blockquote class="quote step"><p>“And that he was seen of Cephas, then of the twelve:”</p><cite>1 Corinthians 15:5</cite></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>Simon Peter, the man who had denied Him three times. Peter ran to the tomb, and then the Lord Himself came to him. Failure isn't the end of a man who belongs to Jesus.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 5 of 6</p>
+      <span class="topic">A real body</span>
+      <h2>How did Jesus show He wasn't a ghost?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="39"></blockquote>
+      <blockquote class="quote step" data-q="42"></blockquote>
+      <blockquote class="quote step" data-q="43"></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>He showed them His hands and feet, told them to touch Him, because a spirit hasn't flesh and bones, and He ate a piece of broiled fish in front of them. He rose in a real body.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 6 of 6</p>
+      <span class="topic">The mission</span>
+      <h2>What did Jesus send His disciples out to preach?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="47"></blockquote>
+      <blockquote class="quote step" data-q="48"></blockquote>
+      <blockquote class="quote step" data-q="49"></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>Repentance and remission of sins in His name, to all nations, starting at Jerusalem. They were His witnesses, and the Holy Spirit would give them the power. Every believer is part of that same mission today.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide prayer">
+  <div class="inner">
+    <div class="emblem rise"></div>
+    <h2 class="rise" style="--d:1">Prayer requests</h2>
+    <p class="ask-line rise" style="--d:2">What can we pray about for you today?</p>
+    <blockquote class="quote rise" style="--d:4"><p>“Blessed be the God and Father of our Lord Jesus Christ, which according to his abundant mercy hath begotten us again unto a lively hope by the resurrection of Jesus Christ from the dead,”</p><cite>1 Peter 1:3</cite></blockquote>
+  </div>
+</section>
+
+</main>
+
+<script>
+// King James Version, Luke chapter 24
+const V = {
+  1: "Now upon the first day of the week, very early in the morning, they came unto the sepulchre, bringing the spices which they had prepared, and certain others with them.",
+  2: "And they found the stone rolled away from the sepulchre.",
+  3: "And they entered in, and found not the body of the Lord Jesus.",
+  4: "And it came to pass, as they were much perplexed thereabout, behold, two men stood by them in shining garments:",
+  5: "And as they were afraid, and bowed down their faces to the earth, they said unto them, Why seek ye the living among the dead?",
+  6: "He is not here, but is risen: remember how he spake unto you when he was yet in Galilee,",
+  7: "Saying, The Son of man must be delivered into the hands of sinful men, and be crucified, and the third day rise again.",
+  8: "And they remembered his words,",
+  9: "And returned from the sepulchre, and told all these things unto the eleven, and to all the rest.",
+  10: "It was Mary Magdalene, and Joanna, and Mary the mother of James, and other women that were with them, which told these things unto the apostles.",
+  11: "And their words seemed to them as idle tales, and they believed them not.",
+  12: "Then arose Peter, and ran unto the sepulchre; and stooping down, he beheld the linen clothes laid by themselves, and departed, wondering in himself at that which was come to pass.",
+  13: "And, behold, two of them went that same day to a village called Emmaus, which was from Jerusalem about threescore furlongs.",
+  14: "And they talked together of all these things which had happened.",
+  15: "And it came to pass, that, while they communed together and reasoned, Jesus himself drew near, and went with them.",
+  16: "But their eyes were holden that they should not know him.",
+  17: "And he said unto them, What manner of communications are these that ye have one to another, as ye walk, and are sad?",
+  18: "And the one of them, whose name was Cleopas, answering said unto him, Art thou only a stranger in Jerusalem, and hast not known the things which are come to pass there in these days?",
+  19: "And he said unto them, What things? And they said unto him, Concerning Jesus of Nazareth, which was a prophet mighty in deed and word before God and all the people:",
+  20: "And how the chief priests and our rulers delivered him to be condemned to death, and have crucified him.",
+  21: "But we trusted that it had been he which should have redeemed Israel: and beside all this, to day is the third day since these things were done.",
+  22: "Yea, and certain women also of our company made us astonished, which were early at the sepulchre;",
+  23: "And when they found not his body, they came, saying, that they had also seen a vision of angels, which said that he was alive.",
+  24: "And certain of them which were with us went to the sepulchre, and found it even so as the women had said: but him they saw not.",
+  25: "Then he said unto them, O fools, and slow of heart to believe all that the prophets have spoken:",
+  26: "Ought not Christ to have suffered these things, and to enter into his glory?",
+  27: "And beginning at Moses and all the prophets, he expounded unto them in all the scriptures the things concerning himself.",
+  28: "And they drew nigh unto the village, whither they went: and he made as though he would have gone further.",
+  29: "But they constrained him, saying, Abide with us: for it is toward evening, and the day is far spent. And he went in to tarry with them.",
+  30: "And it came to pass, as he sat at meat with them, he took bread, and blessed it, and brake, and gave to them.",
+  31: "And their eyes were opened, and they knew him; and he vanished out of their sight.",
+  32: "And they said one to another, Did not our heart burn within us, while he talked with us by the way, and while he opened to us the scriptures?",
+  33: "And they rose up the same hour, and returned to Jerusalem, and found the eleven gathered together, and them that were with them,",
+  34: "Saying, The Lord is risen indeed, and hath appeared to Simon.",
+  35: "And they told what things were done in the way, and how he was known of them in breaking of bread.",
+  36: "And as they thus spake, Jesus himself stood in the midst of them, and saith unto them, Peace be unto you.",
+  37: "But they were terrified and affrighted, and supposed that they had seen a spirit.",
+  38: "And he said unto them, Why are ye troubled? and why do thoughts arise in your hearts?",
+  39: "Behold my hands and my feet, that it is I myself: handle me, and see; for a spirit hath not flesh and bones, as ye see me have.",
+  40: "And when he had thus spoken, he shewed them his hands and his feet.",
+  41: "And while they yet believed not for joy, and wondered, he said unto them, Have ye here any meat?",
+  42: "And they gave him a piece of a broiled fish, and of an honeycomb.",
+  43: "And he took it, and did eat before them.",
+  44: "And he said unto them, These are the words which I spake unto you, while I was yet with you, that all things must be fulfilled, which were written in the law of Moses, and in the prophets, and in the psalms, concerning me.",
+  45: "Then opened he their understanding, that they might understand the scriptures,",
+  46: "And said unto them, Thus it is written, and thus it behoved Christ to suffer, and to rise from the dead the third day:",
+  47: "And that repentance and remission of sins should be preached in his name among all nations, beginning at Jerusalem.",
+  48: "And ye are witnesses of these things.",
+  49: "And, behold, I send the promise of my Father upon you: but tarry ye in the city of Jerusalem, until ye be endued with power from on high.",
+  50: "And he led them out as far as to Bethany, and he lifted up his hands, and blessed them.",
+  51: "And it came to pass, while he blessed them, he was parted from them, and carried up into heaven.",
+  52: "And they worshipped him, and returned to Jerusalem with great joy:",
+  53: "And were continually in the temple, praising and blessing God. Amen."
+};
+const BOOK = "Luke 24";
+</script>
+<script src="../assets/deck.js"></script>
+</body>
+</html>

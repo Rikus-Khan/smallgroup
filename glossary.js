@@ -176,6 +176,12 @@ window.GLOSSARY = [
     "Luke", 22,
     [ 47, 48, 51, 52, 63 ] ],
    [
+    "Luke", 23,
+    [ 8, 20, 25, 26, 28, 34, 42, 43, 46, 52 ] ],
+   [
+    "Luke", 24,
+    [ 3, 15, 19, 36 ] ],
+   [
     "John", 1,
     [ 17, 29, 36, 37, 38, 42, 43, 45, 47, 48, 50 ] ],
    [
@@ -488,6 +494,9 @@ window.GLOSSARY = [
     "Luke", 22,
     [ 8, 31, 34, 54, 55, 58, 60, 61, 62 ] ],
    [
+    "Luke", 24,
+    [ 12, 34 ] ],
+   [
     "John", 1,
     [ 40, 41, 42, 44 ] ],
    [
@@ -604,6 +613,9 @@ window.GLOSSARY = [
    [
     "Luke", 20,
     [ 28, 37 ] ],
+   [
+    "Luke", 24,
+    [ 27, 44 ] ],
    [
     "John", 1,
     [ 17, 45 ] ],
@@ -842,6 +854,12 @@ window.GLOSSARY = [
     "Luke", 22,
     [ 29, 42 ] ],
    [
+    "Luke", 23,
+    [ 34, 46 ] ],
+   [
+    "Luke", 24,
+    [ 49 ] ],
+   [
     "John", 1,
     [ 14, 18 ] ],
    [
@@ -949,6 +967,9 @@ window.GLOSSARY = [
    [
     "Luke", 12,
     [ 10, 12 ] ],
+   [
+    "Luke", 24,
+    [ 49 ] ],
    [
     "John", 1,
     [ 32, 33 ] ],
@@ -2045,6 +2066,12 @@ window.GLOSSARY = [
     "Luke", 21,
     [ 20, 24 ] ],
    [
+    "Luke", 23,
+    [ 7, 28 ] ],
+   [
+    "Luke", 24,
+    [ 13, 18, 33, 47, 49, 52 ] ],
+   [
     "John", 1,
     [ 19 ] ],
    [
@@ -2291,6 +2318,12 @@ window.GLOSSARY = [
     "Luke", 17,
     [ 11 ] ],
    [
+    "Luke", 23,
+    [ 5, 6, 49, 55 ] ],
+   [
+    "Luke", 24,
+    [ 6 ] ],
+   [
     "John", 1,
     [ 43 ] ],
    [
@@ -2380,6 +2413,9 @@ window.GLOSSARY = [
    [
     "Luke", 18,
     [ 37 ] ],
+   [
+    "Luke", 24,
+    [ 19 ] ],
    [
     "John", 1,
     [ 45, 46 ] ],
@@ -2539,6 +2575,12 @@ window.GLOSSARY = [
    [
     "Luke", 22,
     [ 52, 53 ] ],
+   [
+    "Luke", 23,
+    [ 45 ] ],
+   [
+    "Luke", 24,
+    [ 53 ] ],
    [
     "John", 2,
     [ 14, 15, 19, 20, 21 ] ],
@@ -2734,6 +2776,9 @@ window.GLOSSARY = [
    [
     "Luke", 22,
     [ 30 ] ],
+   [
+    "Luke", 24,
+    [ 21 ] ],
    [
     "John", 1,
     [ 31, 49 ] ],
@@ -2932,6 +2977,9 @@ window.GLOSSARY = [
    [
     "Luke", 22,
     [ 43 ] ],
+   [
+    "Luke", 24,
+    [ 51 ] ],
    [
     "John", 1,
     [ 32, 51 ] ],
@@ -3320,6 +3368,9 @@ window.GLOSSARY = [
     "Luke", 22,
     [ 53 ] ],
    [
+    "Luke", 23,
+    [ 44 ] ],
+   [
     "John", 1,
     [ 5 ] ],
    [
@@ -3578,6 +3629,9 @@ window.GLOSSARY = [
     "Luke", 21,
     [ 27 ] ],
    [
+    "Luke", 24,
+    [ 26 ] ],
+   [
     "John", 1,
     [ 14 ] ],
    [
@@ -3691,6 +3745,9 @@ window.GLOSSARY = [
    [
     "Luke", 16,
     [ 16, 17 ] ],
+   [
+    "Luke", 24,
+    [ 44 ] ],
    [
     "John", 1,
     [ 17, 45 ] ],
@@ -3811,6 +3868,12 @@ window.GLOSSARY = [
    [
     "Luke", 22,
     [ 67 ] ],
+   [
+    "Luke", 23,
+    [ 2, 35, 39 ] ],
+   [
+    "Luke", 24,
+    [ 26, 46 ] ],
    [
     "John", 1,
     [ 17, 20, 25, 41 ] ],
@@ -4013,6 +4076,9 @@ window.GLOSSARY = [
     "Luke", 22,
     [ 22, 48, 69 ] ],
    [
+    "Luke", 24,
+    [ 7 ] ],
+   [
     "John", 1,
     [ 51 ] ],
    [
@@ -4135,6 +4201,9 @@ window.GLOSSARY = [
    [
     "Luke", 22,
     [ 67 ] ],
+   [
+    "Luke", 24,
+    [ 11, 25, 41 ] ],
    [
     "John", 1,
     [ 7, 12, 50 ] ],
@@ -4261,6 +4330,9 @@ window.GLOSSARY = [
    [
     "Luke", 22,
     [ 71 ] ],
+   [
+    "Luke", 24,
+    [ 48 ] ],
    [
     "John", 1,
     [ 7, 8, 15, 19, 32, 34 ] ],
@@ -4607,6 +4679,9 @@ window.GLOSSARY = [
     "Luke", 21,
     [ 7, 11, 25 ] ],
    [
+    "Luke", 23,
+    [ 8 ] ],
+   [
     "John", 2,
     [ 11, 18, 23 ] ],
    [
@@ -4702,6 +4777,9 @@ window.GLOSSARY = [
    [
     "Luke", 18,
     [ 33 ] ],
+   [
+    "Luke", 23,
+    [ 16, 22 ] ],
    [
     "John", 2,
     [ 15 ] ],
@@ -4926,7 +5004,10 @@ window.GLOSSARY = [
     [ 3 ] ],
    [
     "Luke", 2,
-    [ 47 ] ] ]
+    [ 47 ] ],
+   [
+    "Luke", 24,
+    [ 45 ] ] ]
  },
  {
   "id": "knowledge",
@@ -5217,7 +5298,10 @@ window.GLOSSARY = [
     [ 40 ] ],
    [
     "Luke", 12,
-    [ 20 ] ] ]
+    [ 20 ] ],
+   [
+    "Luke", 24,
+    [ 25 ] ] ]
  },
  {
   "id": "scorner",
@@ -5497,6 +5581,9 @@ window.GLOSSARY = [
    [
     "Luke", 18,
     [ 9 ] ],
+   [
+    "Luke", 23,
+    [ 47 ] ],
    [
     "John", 7,
     [ 24 ] ],
@@ -5860,6 +5947,9 @@ window.GLOSSARY = [
    [
     "Luke", 12,
     [ 34, 45 ] ],
+   [
+    "Luke", 24,
+    [ 25, 32 ] ],
    [
     "John", 12,
     [ 40 ] ],
@@ -6472,6 +6562,9 @@ window.GLOSSARY = [
    [
     "Luke", 21,
     [ 16 ] ],
+   [
+    "Luke", 23,
+    [ 12 ] ],
    [
     "John", 3,
     [ 29 ] ],
@@ -7404,7 +7497,10 @@ window.GLOSSARY = [
     [ 9 ] ],
    [
     "Luke", 1,
-    [ 22 ] ] ]
+    [ 22 ] ],
+   [
+    "Luke", 24,
+    [ 23 ] ] ]
  },
  {
   "id": "weights-and-balances",
@@ -7525,6 +7621,9 @@ window.GLOSSARY = [
    [
     "Luke", 14,
     [ 1, 3, 5 ] ],
+   [
+    "Luke", 23,
+    [ 54, 56 ] ],
    [
     "John", 5,
     [ 9, 10, 16, 18 ] ],
@@ -7679,6 +7778,9 @@ window.GLOSSARY = [
     "Luke", 20,
     [ 47 ] ],
    [
+    "Luke", 23,
+    [ 40 ] ],
+   [
     "John", 3,
     [ 19 ] ],
    [
@@ -7765,6 +7867,9 @@ window.GLOSSARY = [
    [
     "Luke", 4,
     [ 21 ] ],
+   [
+    "Luke", 24,
+    [ 27, 32, 45 ] ],
    [
     "John", 2,
     [ 22 ] ],
@@ -8108,6 +8213,9 @@ window.GLOSSARY = [
   "name": "Furlong (about 600 feet)",
   "refs": [
    [
+    "Luke", 24,
+    [ 13 ] ],
+   [
     "John", 6,
     [ 19 ] ],
    [
@@ -8182,6 +8290,9 @@ window.GLOSSARY = [
    [
     "Luke", 17,
     [ 7 ] ],
+   [
+    "Luke", 24,
+    [ 30, 41 ] ],
    [
     "John", 4,
     [ 8, 32, 34 ] ],
@@ -8432,6 +8543,9 @@ window.GLOSSARY = [
     "Luke", 20,
     [ 6 ] ],
    [
+    "Luke", 24,
+    [ 19, 25 ] ],
+   [
     "John", 1,
     [ 21, 23, 25 ] ],
    [
@@ -8536,6 +8650,9 @@ window.GLOSSARY = [
    [
     "Luke", 4,
     [ 7, 8 ] ],
+   [
+    "Luke", 24,
+    [ 52 ] ],
    [
     "John", 4,
     [ 20, 21, 22, 23, 24 ] ],
@@ -8882,6 +8999,12 @@ window.GLOSSARY = [
     "Luke", 22,
     [ 2, 4, 52, 66 ] ],
    [
+    "Luke", 23,
+    [ 4, 10, 13, 23 ] ],
+   [
+    "Luke", 24,
+    [ 20 ] ],
+   [
     "John", 7,
     [ 32, 45 ] ],
    [
@@ -8965,6 +9088,9 @@ window.GLOSSARY = [
    [
     "Luke", 21,
     [ 21 ] ],
+   [
+    "Luke", 23,
+    [ 5 ] ],
    [
     "John", 3,
     [ 22 ] ],
@@ -9203,6 +9329,9 @@ window.GLOSSARY = [
     "Luke", 18,
     [ 43 ] ],
    [
+    "Luke", 23,
+    [ 47 ] ],
+   [
     "John", 7,
     [ 39 ] ],
    [
@@ -9334,6 +9463,9 @@ window.GLOSSARY = [
    [
     "Luke", 22,
     [ 2, 66 ] ],
+   [
+    "Luke", 23,
+    [ 10 ] ],
    [
     "John", 8,
     [ 3 ] ] ]
@@ -9505,6 +9637,9 @@ window.GLOSSARY = [
    [
     "Luke", 11,
     [ 31, 32 ] ],
+   [
+    "Luke", 24,
+    [ 20 ] ],
    [
     "John", 3,
     [ 17, 18 ] ],
@@ -9688,6 +9823,9 @@ window.GLOSSARY = [
    [
     "Luke", 22,
     [ 16, 18 ] ],
+   [
+    "Luke", 23,
+    [ 51 ] ],
    [
     "John", 3,
     [ 3, 5 ] ] ]
@@ -10097,6 +10235,9 @@ window.GLOSSARY = [
     "Mark", 15,
     [ 33 ] ],
    [
+    "Luke", 23,
+    [ 44 ] ],
+   [
     "John", 4,
     [ 6 ] ],
    [
@@ -10177,6 +10318,9 @@ window.GLOSSARY = [
    [
     "Luke", 8,
     [ 2 ] ],
+   [
+    "Luke", 24,
+    [ 10 ] ],
    [
     "John", 19,
     [ 25 ] ],
@@ -10307,6 +10451,9 @@ window.GLOSSARY = [
     "Luke", 22,
     [ 43 ] ],
    [
+    "Luke", 24,
+    [ 4, 23 ] ],
+   [
     "John", 1,
     [ 51 ] ],
    [
@@ -10340,6 +10487,12 @@ window.GLOSSARY = [
     "Luke", 11,
     [ 47, 48 ] ],
    [
+    "Luke", 23,
+    [ 53, 55 ] ],
+   [
+    "Luke", 24,
+    [ 1, 2, 9, 12, 22, 24 ] ],
+   [
     "John", 19,
     [ 41, 42 ] ],
    [
@@ -10358,6 +10511,9 @@ window.GLOSSARY = [
     "Mark", 16,
     [ 2, 9 ] ],
    [
+    "Luke", 24,
+    [ 1 ] ],
+   [
     "John", 20,
     [ 1, 19 ] ] ]
  },
@@ -10366,6 +10522,9 @@ window.GLOSSARY = [
   "kind": "term",
   "name": "Linen clothes (grave wrappings)",
   "refs": [
+   [
+    "Luke", 24,
+    [ 12 ] ],
    [
     "John", 19,
     [ 40 ] ],
@@ -10462,6 +10621,9 @@ window.GLOSSARY = [
    [
     "Luke", 19,
     [ 38, 42 ] ],
+   [
+    "Luke", 24,
+    [ 36 ] ],
    [
     "John", 14,
     [ 27 ] ],
@@ -10697,6 +10859,9 @@ window.GLOSSARY = [
     "Luke", 22,
     [ 12 ] ],
    [
+    "Luke", 24,
+    [ 40 ] ],
+   [
     "John", 5,
     [ 20 ] ],
    [
@@ -10837,6 +11002,9 @@ window.GLOSSARY = [
    [
     "Mark", 14,
     [ 34 ] ],
+   [
+    "Luke", 24,
+    [ 29, 49 ] ],
    [
     "John", 4,
     [ 40 ] ],
@@ -10985,6 +11153,9 @@ window.GLOSSARY = [
     "Luke", 19,
     [ 29 ] ],
    [
+    "Luke", 24,
+    [ 50 ] ],
+   [
     "John", 11,
     [ 1, 18 ] ],
    [
@@ -11065,6 +11236,9 @@ window.GLOSSARY = [
    [
     "Luke", 22,
     [ 66 ] ],
+   [
+    "Luke", 23,
+    [ 50 ] ],
    [
     "John", 11,
     [ 47 ] ] ]
@@ -11909,6 +12083,9 @@ window.GLOSSARY = [
     "Luke", 20,
     [ 20 ] ],
    [
+    "Luke", 23,
+    [ 1, 3, 4, 6, 11, 12, 13, 20, 24, 52 ] ],
+   [
     "John", 18,
     [ 29, 31, 33, 35, 37, 38 ] ],
    [
@@ -11926,6 +12103,9 @@ window.GLOSSARY = [
    [
     "Mark", 15,
     [ 7, 11, 15 ] ],
+   [
+    "Luke", 23,
+    [ 18 ] ],
    [
     "John", 18,
     [ 40 ] ] ]
@@ -12014,6 +12194,9 @@ window.GLOSSARY = [
   "name": "Malefactor",
   "refs": [
    [
+    "Luke", 23,
+    [ 32, 33, 39 ] ],
+   [
     "John", 18,
     [ 30 ] ] ]
  },
@@ -12031,6 +12214,9 @@ window.GLOSSARY = [
    [
     "Mark", 15,
     [ 2, 9, 12, 18, 26 ] ],
+   [
+    "Luke", 23,
+    [ 3, 37, 38 ] ],
    [
     "John", 18,
     [ 33, 39 ] ],
@@ -12068,6 +12254,9 @@ window.GLOSSARY = [
     "Luke", 20,
     [ 22, 24, 25 ] ],
    [
+    "Luke", 23,
+    [ 2 ] ],
+   [
     "John", 19,
     [ 12, 15 ] ] ]
  },
@@ -12091,6 +12280,9 @@ window.GLOSSARY = [
    [
     "Luke", 7,
     [ 8 ] ],
+   [
+    "Luke", 23,
+    [ 36 ] ],
    [
     "John", 19,
     [ 2, 23, 24, 32, 34 ] ] ]
@@ -12116,6 +12308,9 @@ window.GLOSSARY = [
     "Mark", 15,
     [ 43, 45 ] ],
    [
+    "Luke", 23,
+    [ 50, 51 ] ],
+   [
     "John", 19,
     [ 38 ] ] ]
  },
@@ -12139,6 +12334,9 @@ window.GLOSSARY = [
    [
     "Mark", 15,
     [ 22 ] ],
+   [
+    "Luke", 23,
+    [ 33 ] ],
    [
     "John", 19,
     [ 17 ] ] ]
@@ -12215,6 +12413,12 @@ window.GLOSSARY = [
     "Luke", 14,
     [ 27 ] ],
    [
+    "Luke", 23,
+    [ 21, 23, 26, 33 ] ],
+   [
+    "Luke", 24,
+    [ 7, 20 ] ],
+   [
     "John", 19,
     [ 6, 10, 15, 16, 17, 18, 19, 20, 23, 25, 31, 32, 41 ] ] ]
  },
@@ -12251,6 +12455,9 @@ window.GLOSSARY = [
     "Mark", 15,
     [ 24 ] ],
    [
+    "Luke", 23,
+    [ 34 ] ],
+   [
     "John", 19,
     [ 24 ] ] ]
  },
@@ -12270,6 +12477,9 @@ window.GLOSSARY = [
     [ 34, 48 ] ],
    [
     "Mark", 15,
+    [ 36 ] ],
+   [
+    "Luke", 23,
     [ 36 ] ],
    [
     "John", 19,
@@ -12305,6 +12515,9 @@ window.GLOSSARY = [
     "Mark", 15,
     [ 37, 39 ] ],
    [
+    "Luke", 23,
+    [ 46 ] ],
+   [
     "John", 19,
     [ 30 ] ] ]
  },
@@ -12322,6 +12535,9 @@ window.GLOSSARY = [
    [
     "Mark", 15,
     [ 42 ] ],
+   [
+    "Luke", 23,
+    [ 54 ] ],
    [
     "John", 19,
     [ 14, 31, 42 ] ] ]
@@ -19305,7 +19521,10 @@ window.GLOSSARY = [
   "refs": [
    [
     "Luke", 1,
-    [ 7, 36 ] ] ]
+    [ 7, 36 ] ],
+   [
+    "Luke", 23,
+    [ 29 ] ] ]
  },
  {
   "id": "stricken-in-years",
@@ -19491,7 +19710,10 @@ window.GLOSSARY = [
     [ 77 ] ],
    [
     "Luke", 3,
-    [ 3 ] ] ]
+    [ 3 ] ],
+   [
+    "Luke", 24,
+    [ 47 ] ] ]
  },
  {
   "id": "dayspring",
@@ -19689,7 +19911,10 @@ window.GLOSSARY = [
     [ 30 ] ],
    [
     "Luke", 17,
-    [ 3, 4 ] ] ]
+    [ 3, 4 ] ],
+   [
+    "Luke", 24,
+    [ 47 ] ] ]
  },
  {
   "id": "camels-hair",
@@ -20220,7 +20445,10 @@ window.GLOSSARY = [
     [ 10 ] ],
    [
     "Luke", 17,
-    [ 3, 4 ] ] ]
+    [ 3, 4 ] ],
+   [
+    "Luke", 23,
+    [ 34 ] ] ]
  },
  {
   "id": "on-this-fashion",
@@ -20679,7 +20907,10 @@ window.GLOSSARY = [
     [ 7, 9 ] ],
    [
     "Luke", 13,
-    [ 31, 32 ] ] ]
+    [ 31, 32 ] ],
+   [
+    "Luke", 23,
+    [ 7, 8, 11, 12, 15 ] ] ]
  },
  {
   "id": "tetrarch",
@@ -21183,7 +21414,10 @@ window.GLOSSARY = [
     [ 5 ] ],
    [
     "Luke", 22,
-    [ 14 ] ] ]
+    [ 14 ] ],
+   [
+    "Luke", 24,
+    [ 10 ] ] ]
  },
  {
   "id": "bartholomew",
@@ -21588,7 +21822,10 @@ window.GLOSSARY = [
     [ 41 ] ],
    [
     "Luke", 6,
-    [ 23, 35 ] ] ]
+    [ 23, 35 ] ],
+   [
+    "Luke", 23,
+    [ 41 ] ] ]
  },
  {
   "id": "little-ones",
@@ -21849,7 +22086,10 @@ window.GLOSSARY = [
     [ 35 ] ],
    [
     "Luke", 14,
-    [ 15 ] ] ]
+    [ 15 ] ],
+   [
+    "Luke", 23,
+    [ 29 ] ] ]
  },
  {
   "id": "poor-in-spirit",
@@ -21973,6 +22213,9 @@ window.GLOSSARY = [
    [
     "Luke", 16,
     [ 16, 29, 31 ] ],
+   [
+    "Luke", 24,
+    [ 27, 44 ] ],
    [
     "John", 1,
     [ 45 ] ] ]
@@ -22662,7 +22905,10 @@ window.GLOSSARY = [
     [ 20 ] ],
    [
     "Mark", 16,
-    [ 20 ] ] ]
+    [ 20 ] ],
+   [
+    "Luke", 24,
+    [ 53 ] ] ]
  },
  {
   "id": "treasure-in-heaven",
@@ -22779,7 +23025,10 @@ window.GLOSSARY = [
     [ 30 ] ],
    [
     "Luke", 12,
-    [ 23 ] ] ]
+    [ 23 ] ],
+   [
+    "Luke", 23,
+    [ 34 ] ] ]
  },
  {
   "id": "fowls-of-the-air",
@@ -23616,7 +23865,10 @@ window.GLOSSARY = [
   "refs": [
    [
     "Mark", 4,
-    [ 34 ] ] ]
+    [ 34 ] ],
+   [
+    "Luke", 24,
+    [ 27 ] ] ]
  },
  {
   "id": "hinder-part",
@@ -24357,7 +24609,10 @@ window.GLOSSARY = [
     [ 22 ] ],
    [
     "Mark", 6,
-    [ 45 ] ] ]
+    [ 45 ] ],
+   [
+    "Luke", 24,
+    [ 29 ] ] ]
  },
  {
   "id": "fourth-watch",
@@ -25041,7 +25296,10 @@ window.GLOSSARY = [
     [ 32 ] ],
    [
     "Luke", 18,
-    [ 33 ] ] ]
+    [ 33 ] ],
+   [
+    "Luke", 24,
+    [ 7, 21, 46 ] ] ]
  },
  {
   "id": "get-thee-behind-me",
@@ -25236,7 +25494,10 @@ window.GLOSSARY = [
     [ 14 ] ],
    [
     "Luke", 20,
-    [ 22 ] ] ]
+    [ 22 ] ],
+   [
+    "Luke", 23,
+    [ 2 ] ] ]
  },
  {
   "id": "prevented",
@@ -25548,7 +25809,10 @@ window.GLOSSARY = [
     [ 25 ] ],
    [
     "Mark", 9,
-    [ 12 ] ] ]
+    [ 12 ] ],
+   [
+    "Luke", 23,
+    [ 11 ] ] ]
  },
  {
   "id": "pineth-away",
@@ -25788,7 +26052,10 @@ window.GLOSSARY = [
     [ 27 ] ],
    [
     "Luke", 8,
-    [ 3 ] ] ]
+    [ 3 ] ],
+   [
+    "Luke", 24,
+    [ 10 ] ] ]
  },
  {
   "id": "chuza",
@@ -25926,6 +26193,9 @@ window.GLOSSARY = [
     [ 19 ] ],
    [
     "Luke", 9,
+    [ 51 ] ],
+   [
+    "Luke", 24,
     [ 51 ] ] ]
  },
  {
@@ -26412,7 +26682,10 @@ window.GLOSSARY = [
   "refs": [
    [
     "Luke", 11,
-    [ 27 ] ] ]
+    [ 27 ] ],
+   [
+    "Luke", 23,
+    [ 29 ] ] ]
  },
  {
   "id": "washed-before-dinner",
@@ -27420,7 +27693,10 @@ window.GLOSSARY = [
   "refs": [
    [
     "Luke", 16,
-    [ 14 ] ] ]
+    [ 14 ] ],
+   [
+    "Luke", 23,
+    [ 35 ] ] ]
  },
  {
   "id": "everlasting-habitations",
@@ -28704,7 +28980,10 @@ window.GLOSSARY = [
     [ 32 ] ],
    [
     "Mark", 15,
-    [ 21 ] ] ]
+    [ 21 ] ],
+   [
+    "Luke", 23,
+    [ 26 ] ] ]
  },
  {
   "id": "alexander-and-rufus",
@@ -28743,7 +29022,10 @@ window.GLOSSARY = [
     [ 40, 47 ] ],
    [
     "Mark", 16,
-    [ 1 ] ] ]
+    [ 1 ] ],
+   [
+    "Luke", 24,
+    [ 10 ] ] ]
  },
  {
   "id": "centurion-at-the-cross",
@@ -28755,7 +29037,10 @@ window.GLOSSARY = [
     [ 54 ] ],
    [
     "Mark", 15,
-    [ 39, 44, 45 ] ] ]
+    [ 39, 44, 45 ] ],
+   [
+    "Luke", 23,
+    [ 47 ] ] ]
  },
  {
   "id": "insurrection",
@@ -28764,7 +29049,10 @@ window.GLOSSARY = [
   "refs": [
    [
     "Mark", 15,
-    [ 7 ] ] ]
+    [ 7 ] ],
+   [
+    "Luke", 23,
+    [ 19, 25 ] ] ]
  },
  {
   "id": "envy",
@@ -28821,7 +29109,10 @@ window.GLOSSARY = [
     [ 45, 46 ] ],
    [
     "Mark", 15,
-    [ 33, 34 ] ] ]
+    [ 33, 34 ] ],
+   [
+    "Luke", 23,
+    [ 44 ] ] ]
  },
  {
   "id": "superscription-of-his-accusation",
@@ -28833,7 +29124,10 @@ window.GLOSSARY = [
     [ 37 ] ],
    [
     "Mark", 15,
-    [ 26 ] ] ]
+    [ 26 ] ],
+   [
+    "Luke", 23,
+    [ 38 ] ] ]
  },
  {
   "id": "two-thieves",
@@ -28881,7 +29175,10 @@ window.GLOSSARY = [
     [ 51 ] ],
    [
     "Mark", 15,
-    [ 38 ] ] ]
+    [ 38 ] ],
+   [
+    "Luke", 23,
+    [ 45 ] ] ]
  },
  {
   "id": "the-stone",
@@ -28899,7 +29196,10 @@ window.GLOSSARY = [
     [ 46 ] ],
    [
     "Mark", 16,
-    [ 3, 4 ] ] ]
+    [ 3, 4 ] ],
+   [
+    "Luke", 24,
+    [ 2 ] ] ]
  },
  {
   "id": "sweet-spices",
@@ -28908,6 +29208,12 @@ window.GLOSSARY = [
   "refs": [
    [
     "Mark", 16,
+    [ 1 ] ],
+   [
+    "Luke", 23,
+    [ 56 ] ],
+   [
+    "Luke", 24,
     [ 1 ] ] ]
  },
  {
@@ -28929,7 +29235,10 @@ window.GLOSSARY = [
     [ 16 ] ],
    [
     "Mark", 16,
-    [ 14 ] ] ]
+    [ 14 ] ],
+   [
+    "Luke", 24,
+    [ 9, 33 ] ] ]
  },
  {
   "id": "every-creature",
@@ -29380,5 +29689,149 @@ window.GLOSSARY = [
    [
     "Matthew", 28,
     [ 20 ] ] ]
+ },
+ {
+  "id": "paradise",
+  "kind": "place",
+  "name": "Paradise (the presence of God, where the believing thief went that day)",
+  "refs": [
+   [
+    "Luke", 23,
+    [ 43 ] ] ]
+ },
+ {
+  "id": "penitent-thief",
+  "kind": "person",
+  "name": "The thief on the cross who believed",
+  "refs": [
+   [
+    "Luke", 23,
+    [ 40, 41, 42, 43 ] ] ]
+ },
+ {
+  "id": "daughters-of-jerusalem",
+  "kind": "person",
+  "name": "The daughters of Jerusalem (the women who wept on the way to the cross)",
+  "refs": [
+   [
+    "Luke", 23,
+    [ 28 ] ] ]
+ },
+ {
+  "id": "green-tree-and-dry",
+  "kind": "term",
+  "name": "A green tree and the dry (if they do this to the innocent, what of the guilty?)",
+  "refs": [
+   [
+    "Luke", 23,
+    [ 31 ] ] ]
+ },
+ {
+  "id": "gorgeous-robe",
+  "kind": "term",
+  "name": "A gorgeous robe (a bright robe, put on Jesus to mock Him)",
+  "refs": [
+   [
+    "Luke", 23,
+    [ 11 ] ] ]
+ },
+ {
+  "id": "into-thy-hands",
+  "kind": "term",
+  "name": "Father, into thy hands I commend my spirit",
+  "refs": [
+   [
+    "Luke", 23,
+    [ 46 ] ] ]
+ },
+ {
+  "id": "emmaus",
+  "kind": "place",
+  "name": "Emmaus (a village about seven miles from Jerusalem)",
+  "refs": [
+   [
+    "Luke", 24,
+    [ 13 ] ] ]
+ },
+ {
+  "id": "cleopas",
+  "kind": "person",
+  "name": "Cleopas, one of the two on the road to Emmaus",
+  "refs": [
+   [
+    "Luke", 24,
+    [ 18 ] ] ]
+ },
+ {
+  "id": "living-among-the-dead",
+  "kind": "term",
+  "name": "Why seek ye the living among the dead?",
+  "refs": [
+   [
+    "Luke", 24,
+    [ 5 ] ] ]
+ },
+ {
+  "id": "idle-tales",
+  "kind": "term",
+  "name": "Idle tales (nonsense)",
+  "refs": [
+   [
+    "Luke", 24,
+    [ 11 ] ] ]
+ },
+ {
+  "id": "holden",
+  "kind": "term",
+  "name": "Holden (held back, kept from seeing)",
+  "refs": [
+   [
+    "Luke", 24,
+    [ 16 ] ] ]
+ },
+ {
+  "id": "heart-burn",
+  "kind": "term",
+  "name": "Did not our heart burn within us?",
+  "refs": [
+   [
+    "Luke", 24,
+    [ 32 ] ] ]
+ },
+ {
+  "id": "breaking-of-bread",
+  "kind": "term",
+  "name": "Known in breaking of bread",
+  "refs": [
+   [
+    "Luke", 24,
+    [ 30, 35 ] ] ]
+ },
+ {
+  "id": "flesh-and-bones",
+  "kind": "term",
+  "name": "Flesh and bones (the risen Jesus' real body)",
+  "refs": [
+   [
+    "Luke", 24,
+    [ 39 ] ] ]
+ },
+ {
+  "id": "broiled-fish",
+  "kind": "term",
+  "name": "A piece of a broiled fish, and of an honeycomb",
+  "refs": [
+   [
+    "Luke", 24,
+    [ 42 ] ] ]
+ },
+ {
+  "id": "promise-of-the-father",
+  "kind": "term",
+  "name": "The promise of the Father (the Holy Spirit; power from on high)",
+  "refs": [
+   [
+    "Luke", 24,
+    [ 49 ] ] ]
  }
 ];

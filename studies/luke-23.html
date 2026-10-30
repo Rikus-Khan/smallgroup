@@ -1,0 +1,717 @@
+<!doctype html>
+<html lang="en" data-theme="night">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Luke 23</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="../assets/fonts.css">
+<link rel="stylesheet" href="../assets/deck.css">
+<link rel="stylesheet" href="../assets/themes.css">
+<style>
+/* lk23-rule: who ruled where, laid over the whole land (svg.map[data-land]). Pilate's Judaea and Samaria show on open;
+   a .lk23-go step lights Herod's Galilee and Perea */
+.lk23-pilate { fill: color-mix(in srgb, var(--wine) 38%, transparent); stroke: var(--wine); stroke-width: 1.5; }
+.lk23-herod { fill: color-mix(in srgb, var(--accent) 30%, transparent); stroke: var(--accent); stroke-width: 1.5; opacity: 0; transition: opacity 1s ease; }
+.slide:has(.lk23-go.on) .lk23-herod { opacity: 1; }
+.lk23-who { font: 700 17px var(--sans); fill: var(--ink); paint-order: stroke; stroke: var(--bg); stroke-width: 4px; }
+.lk23-who.h { opacity: 0; transition: opacity 1s ease .4s; }
+.slide:has(.lk23-go.on) .lk23-who.h { opacity: 1; }
+
+/* lk23-three: three crosses; steps light the words of the man on each side, then a line from the middle cross to the one who asked */
+.lk23-ground { fill: var(--surface-2); }
+.lk23-wood { stroke: var(--leather-light); stroke-width: 9; stroke-linecap: round; }
+.lk23-wood.mid { stroke: var(--accent); filter: drop-shadow(0 0 8px color-mix(in srgb, var(--accent) 60%, transparent)); }
+.lk23-say { font: italic 600 20px var(--serif); opacity: 0; transition: opacity .9s ease; }
+.lk23-say.no { fill: var(--danger); }
+.lk23-say.yes { fill: var(--accent-hot); }
+.lk23-soft { fill: var(--ink-soft); font-size: 16px; }
+.lk23-arc { fill: none; stroke: var(--accent); stroke-width: 3; stroke-dasharray: 1; stroke-dashoffset: 1; transition: stroke-dashoffset 1.8s ease; }
+.slide:has(.lk23-s1.on) .lk23-say.no, .slide:has(.lk23-s2.on) .lk23-say.yes.ask, .slide:has(.lk23-s3.on) .lk23-say.yes.today { opacity: 1; }
+.slide:has(.lk23-s3.on) .lk23-arc { stroke-dashoffset: 0; }
+@media (max-width: 600px) { .lk23-say { font-size: 26px; } .lk23-soft { font-size: 22px; } }
+
+/* lk23-veil: the temple veil, torn in the midst on a .lk23-rend step; the light of the holiest place shows through
+   (--glow behind, --on-glow text: daylight in every theme) */
+.lk23-holy { fill: var(--glow); }
+.lk23-holy-t { fill: var(--on-glow); font: 600 22px var(--serif); text-anchor: middle; }
+.lk23-holy-t.small { font: 16px var(--sans); }
+.lk23-cloth { fill: var(--wine); }
+.lk23-fold { stroke: color-mix(in srgb, var(--ink) 22%, transparent); stroke-width: 2; }
+.lk23-half { transition: transform 2.4s cubic-bezier(.5,0,.3,1); }
+.slide:has(.lk23-rend.on) .lk23-half.l { transform: translateX(-215px); }
+.slide:has(.lk23-rend.on) .lk23-half.r { transform: translateX(215px); }
+.lk23-frame { fill: none; stroke: var(--line-strong); stroke-width: 4; }
+@media (max-width: 600px) { .lk23-holy-t { font-size: 28px; } .lk23-holy-t.small { font-size: 21px; } }
+</style>
+</head>
+<body>
+<main class="deck" id="deck">
+
+<!-- ======================= OPENING ======================= -->
+<section class="slide title">
+  <div class="inner">
+    <div class="emblem rise"></div>
+    <h1 class="rise" style="--d:1">Luke 23</h1>
+    <p class="sub rise" style="--d:3">To day in paradise</p>
+    <p class="tag rise" style="--d:5">Found innocent again and again, Jesus is crucified anyway. He prays for the men nailing Him there, and promises a dying thief paradise.</p>
+  </div>
+</section>
+
+<section class="slide watch">
+  <div class="inner">
+    <h2 class="rise">Things to watch for</h2>
+    <p class="lede rise" style="--d:1">Keep these questions in the back of your mind as we read. We'll come back to every one of them at the end.</p>
+    <ol class="seeds">
+      <li class="step"><span class="topic">Innocent</span><span class="seed-q">How many times is Jesus called innocent in this chapter?</span></li>
+      <li class="step"><span class="topic">In our place</span><span class="seed-q">Who walked free when Jesus was condemned?</span></li>
+      <li class="step"><span class="topic">Forgiveness</span><span class="seed-q">Who did Jesus pray for from the cross?</span></li>
+      <li class="step"><span class="topic">Empty hands</span><span class="seed-q">What did the dying thief bring to Jesus?</span></li>
+      <li class="step"><span class="topic">The way in</span><span class="seed-q">What happened to the veil of the temple?</span></li>
+      <li class="step"><span class="topic">Faithful</span><span class="seed-q">Who cared for Jesus' body when it was over?</span></li>
+    </ol>
+  </div>
+</section>
+
+<!-- ======================= PART ONE: NO FAULT IN THIS MAN ======================= -->
+<section class="slide part">
+  <div class="inner">
+    <p class="part-n rise">Part one</p>
+    <h2 class="rise" style="--d:1">I find no fault in this man</h2>
+    <p class="range rise" style="--d:2">Verses 1–25</p>
+    <div class="rule"></div>
+    <p class="hook rise" style="--d:4">Two rulers look Him over. Neither can find a crime. The crowd shouts louder.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="1-3" data-hl="led him unto Pilate|perverting the nation|forbidding to give tribute to Caesar|Art thou the King of the Jews?"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="2"></blockquote>
+    <h2 class="rise" style="--d:1">Three charges</h2>
+    <div class="asks">
+      <div class="ask step"><span class="q">“Perverting the nation”?</span><span class="stamp">False</span><span class="ctx">He taught men to love God and their neighbour. He healed their sick and fed their hungry.</span></div>
+      <div class="ask step"><span class="q">“Forbidding to give tribute to Caesar”?</span><span class="stamp">False</span><span class="ctx">A few days earlier He'd said the opposite, in the temple: <em>“Render therefore unto Caesar the things which be Caesar’s”</em> (Luke 20:25).</span></div>
+      <div class="ask step"><span class="q">“He himself is Christ a King”?</span><span class="stamp">True</span><span class="ctx">But not a rebel against Rome. <em>“Thou sayest it”</em> means <em>yes, it is as you say</em>.</span></div>
+    </div>
+    <p class="note step">The night before, the council condemned Him for saying He was the Son of God (22:70–71). Rome didn't care about that, so in front of the Roman governor they turned it into politics: a tax rebel and a rival king.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="4-5" data-hl="I find no fault in this man|beginning from Galilee to this place"></section>
+
+<section class="slide verse" data-v="6-7" data-hl="he asked whether the man were a Galilaean|he sent him to Herod"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <div class="split">
+      <div class="stage">
+        <svg class="map" data-land viewBox="40 60 320 440" data-towns="Nazareth:l, Caesarea:r, Jerusalem!:l" role="img" aria-label="A map of the land. Judaea and Samaria, in the south and middle, are shaded as Pilate's. On a step, Galilee in the north and Perea, east of the Jordan, are shaded as Herod's. Jerusalem, where both men were that day, is marked.">
+          <path class="lk23-pilate" d="M136 219 L127 258 L107 322 L86 380 L72 409 L49 444 L10 494 L0 513 V560 H244 L234 430 C 234 400, 240 388, 258 387 S 272 350, 264 285 C 274 245, 260 210, 266 214 C 230 222, 180 212, 136 219 Z"/>
+          <path class="lk23-herod" d="M136 219 C 180 212, 230 222, 266 214 L 262 175 L 258 128 L 280 40 L 209 0 L 195 41 L 176 83 L 170 122 L 168 145 L 148 143 L 144 175 L 140 193 Z"/>
+          <path class="lk23-herod" d="M266 280 L 340 276 L 340 450 L 270 450 L 268 420 C 266 400, 262 392, 258 387 S 272 350, 264 285 Z"/>
+          <text class="lk23-who" x="120" y="350">Pilate's</text>
+          <text class="lk23-who h" x="196" y="136">Herod's</text>
+          <text class="lk23-who h" x="282" y="342">Herod's</text>
+        </svg>
+      </div>
+      <div>
+        <h2 class="rise" style="--d:1">Two rulers, one city</h2>
+        <p class="note rise" style="--d:2"><em>Pilate</em> was the Roman governor of Judaea and Samaria, from about AD 26 to 36. He lived on the coast at Caesarea and came up to Jerusalem for the feasts, to keep order.</p>
+        <p class="note step lk23-go"><em>Herod</em> Antipas, a son of Herod the Great, ruled Galilee and Perea for Rome. He was in Jerusalem for the Passover too. When Pilate heard <em>“Galilee,”</em> he saw a way out: send the problem to someone else.</p>
+        <p class="note step">Herod was the man who had beheaded John the Baptist (Luke 9:9).</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="slide verse" data-v="8-10" data-hl="he hoped to have seen some miracle done by him|he answered him nothing"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="9" data-hl="he answered him nothing"></blockquote>
+    <h2 class="rise" style="--d:1">He answered him nothing</h2>
+    <p class="note rise" style="--d:2">Herod was <em>“exceeding glad.”</em> He'd wanted to see Jesus for a long time, the way a man wants to see a magic act. He asked question after question. Jesus didn't say one word.</p>
+    <blockquote class="quote step"><p>“He was oppressed, and he was afflicted, yet he opened not his mouth: he is brought as a lamb to the slaughter, and as a sheep before her shearers is dumb, so he openeth not his mouth.”</p><cite>Isaiah 53:7</cite></blockquote>
+    <p class="note step">Herod had already heard God's word from John, and he silenced the messenger. Jesus doesn't perform for a man who wants a show and not a Saviour. Anyone who honestly comes to Him for help gets an answer. Herod only wanted to be entertained.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="11-12" data-hl="set him at nought, and mocked him|arrayed him in a gorgeous robe|Pilate and Herod were made friends together"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="12"></blockquote>
+    <h2 class="rise" style="--d:1">Friends that same day</h2>
+    <div class="columns">
+      <div class="col law step"><p class="who">Before</p><h3>At enmity</h3><p>Pilate had once killed Galilaeans, Herod's own people, at the temple (Luke 13:1). That may be part of the bad blood.</p></div>
+      <div class="col law step"><p class="who">After</p><h3>Made friends</h3><p>Two proud men found something to agree on: making fun of Jesus. A <em>gorgeous robe</em> was a bright, shining one, dressing Him up as a joke king.</p></div>
+    </div>
+    <p class="note step">To <em>set at nought</em> is to treat as nothing. Herod and his soldiers treated the King of kings as a nobody. Men still bond over mocking Him. It's a cheap kind of friendship.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="13-15" data-hl="have found no fault in this man|nor yet Herod|nothing worthy of death is done unto him"></section>
+
+<section class="slide verse" data-v="16-17" data-hl="I will therefore chastise him, and release him"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="16"></blockquote>
+    <h2 class="rise" style="--d:1">Punish Him anyway</h2>
+    <p class="note rise" style="--d:2">Listen to Pilate's reasoning: <em>No fault. Nothing worthy of death. Therefore I'll whip Him.</em> To <em>chastise</em> here meant a beating with a Roman whip, cruel enough on its own. He hoped a bloody prisoner would satisfy the crowd.</p>
+    <p class="note step">Verse 17 tells of a custom: at the Passover feast the governor let one prisoner go free. Pilate hoped they'd ask for Jesus.</p>
+    <p class="note step">Pilate knew what was right, said it out loud three times, and didn't do it. A man who knows the truth and won't stand on it ends up going wherever the loudest voices push him.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="18-19" data-hl="Away with this man, and release unto us Barabbas|for murder, was cast into prison"></section>
+
+<section class="slide verse" data-v="20-22" data-hl="Crucify him, crucify him|the third time, Why, what evil hath he done?"></section>
+
+<section class="slide verse" data-v="23-25" data-hl="the voices of them and of the chief priests prevailed|he delivered Jesus to their will"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="25"></blockquote>
+    <h2 class="rise" style="--d:1">Barabbas walks free</h2>
+    <p class="note rise" style="--d:2">Luke tells us twice what Barabbas had done: <em>sedition</em>, a violent uprising in the city, <em>and murder</em> (19, 25). He was exactly what they'd falsely accused Jesus of being.</p>
+    <div class="swap rise" style="--d:3">
+      <h3><span>The cross</span>condemned</h3>
+      <h3><span>The door out</span>released</h3>
+      <div class="a"><b>Barabbas</b><small>guilty: sedition and murder</small></div>
+      <div class="b"><b>Jesus</b><small>“no cause of death in him”</small></div>
+    </div>
+    <p class="note step swap-go">Then they trade places. The guilty man walks out the prison door. The innocent One goes to the cross. Every one of us is Barabbas.</p>
+  </div>
+</section>
+
+<!-- ======================= PART TWO: THE PLACE CALLED CALVARY ======================= -->
+<section class="slide part">
+  <div class="inner">
+    <p class="part-n rise">Part two</p>
+    <h2 class="rise" style="--d:1">The place called Calvary</h2>
+    <p class="range rise" style="--d:2">Verses 26–38</p>
+    <div class="rule"></div>
+    <p class="hook rise" style="--d:4">A stranger carries the cross. Jesus prays for the men who drive the nails.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="26-27" data-hl="one Simon, a Cyrenian|on him they laid the cross, that he might bear it after Jesus"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="26" data-hl="that he might bear it after Jesus"></blockquote>
+    <h2 class="rise" style="--d:1">A man from Cyrene</h2>
+    <p class="note rise" style="--d:2">Jesus had been beaten all night and couldn't carry the beam any farther. The soldiers grabbed a man coming in from the country. <em>Cyrene</em> was a city in North Africa, in today's Libya, with a large Jewish community. Simon had likely come a long way for the Passover.</p>
+    <p class="note step">He didn't choose it, but Luke chooses his words: he carried it <em>“after Jesus,”</em> walking behind Him. Mark names his sons, Alexander and Rufus (Mark 15:21), as if the church knew them. It seems that day changed the family.</p>
+    <blockquote class="quote step"><p>“And he said to them all, If any man will come after me, let him deny himself, and take up his cross daily, and follow me.”</p><cite>Luke 9:23</cite></blockquote>
+  </div>
+</section>
+
+<section class="slide verse" data-v="28-31" data-hl="Daughters of Jerusalem, weep not for me, but weep for yourselves|if they do these things in a green tree, what shall be done in the dry?"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="31"></blockquote>
+    <h2 class="rise" style="--d:1">Green wood and dry</h2>
+    <p class="note rise" style="--d:2">Even on the road to His death, Jesus is thinking about others. He tells the weeping women to save their tears for the trouble coming on their city.</p>
+    <p class="note step">Green wood doesn't burn easily. Dry wood goes up at once. If Rome does this to an innocent man, what will happen when the nation that rejected Him rebels? About forty years later, in AD 70, Roman armies destroyed Jerusalem and the temple.</p>
+    <blockquote class="quote step"><p>“…and they shall say to the mountains, Cover us; and to the hills, Fall on us.”</p><cite>Hosea 10:8</cite></blockquote>
+    <p class="note step">Verse 30 picks up the words of Hosea: people so desperate they'd rather be buried than face what's coming. Jesus wept over this city once already (19:41). He's still grieving for it on the way to His own cross.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="32-33" data-hl="two other, malefactors|the place, which is called Calvary|one on the right hand, and the other on the left"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="33" data-hl="there they crucified him"></blockquote>
+    <h2 class="rise" style="--d:1">Among the transgressors</h2>
+    <p class="note rise" style="--d:2"><em>Calvary</em> comes from the Latin word for a skull. It's the same place the other gospels call Golgotha, <em>“the place of a skull”</em>: just outside the city wall, by a road, where everyone passing could see.</p>
+    <p class="note step">Luke says only <em>“there they crucified him.”</em> It was Rome's slowest, most shameful death. The gospels don't dwell on the pain. They want us to see who was on the cross, and why.</p>
+    <p class="note step">A <em>malefactor</em> is a criminal. They put Jesus in the middle, as if He were the worst of the three, just as Isaiah wrote:</p>
+    <blockquote class="quote step"><p>“…and he was numbered with the transgressors; and he bare the sin of many, and made intercession for the transgressors.”</p><cite>Isaiah 53:12</cite></blockquote>
+  </div>
+</section>
+
+<section class="slide verse" data-v="34" data-hl="Father, forgive them; for they know not what they do"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise">Father, forgive them</h2>
+    <p class="saying rise" style="--d:1">“Father, <em>forgive them</em>; for they know not what they do.”</p>
+    <p class="note rise" style="--d:2">The first thing Jesus says from the cross is a prayer, and it's for the men hurting Him: the soldiers with the hammer, the leaders who planned it, the crowd that shouted. That's the <em>intercession for the transgressors</em> Isaiah wrote about.</p>
+    <p class="note step"><em>“They know not”</em> doesn't mean they were innocent. They had no idea Whom they were killing. Seven weeks later, thousands in this city repented and were forgiven (Acts 2).</p>
+    <p class="note step">Some of us carry what was done to us. Some of us carry what we did. Jesus prayed this for both kinds of men. If He could forgive the men with the nails, there's no one He can't forgive, and no one He can't help us forgive.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="35-36" data-hl="He saved others; let him save himself|offering him vinegar"></section>
+
+<section class="slide verse" data-v="37-38" data-hl="If thou be the king of the Jews, save thyself|THIS IS THE KING OF THE JEWS"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="35" data-hl="He saved others; let him save himself"></blockquote>
+    <h2 class="rise" style="--d:1">Save thyself</h2>
+    <p class="note rise" style="--d:2">Three times they throw the same words at Him:</p>
+    <ul class="nots">
+      <li class="step"><span class="k">“let him save himself”</span><span class="why">the rulers, v. 35</span></li>
+      <li class="step"><span class="k">“save thyself”</span><span class="why">the soldiers, v. 37</span></li>
+      <li class="step"><span class="k">“save thyself and us”</span><span class="why">one of the criminals, v. 39</span></li>
+    </ul>
+    <p class="note step">They were right about one thing: <em>He saved others.</em> And He could have saved Himself. Twelve legions of angels were a word away (Matthew 26:53). But He couldn't save Himself <em>and</em> save us. So He stayed.</p>
+    <p class="note step">The <em>vinegar</em> was the soldiers' cheap sour wine, offered here as part of the mocking.</p>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="38"></blockquote>
+    <h2 class="rise" style="--d:1">In three languages</h2>
+    <p class="note rise" style="--d:2">A <em>superscription</em> is the notice nailed above the condemned, naming his crime. Pilate wrote Jesus' crime this way, in every language of the crowd:</p>
+    <div class="tongues">
+      <div class="rise" style="--d:3"><div class="w" lang="el">Βασιλεύς</div><div class="t">Basileus, king</div><div class="l">Greek: the trade and the street</div></div>
+      <div class="rise" style="--d:4"><div class="w" lang="la">Rex</div><div class="t">king</div><div class="l">Latin: Rome and the soldiers</div></div>
+      <div class="rise" style="--d:5"><div class="w" lang="he">מֶלֶךְ</div><div class="t">Melek, king</div><div class="l">Hebrew: the temple and the Jews</div></div>
+    </div>
+    <p class="note step">They meant it as a joke and a warning. It was the plain truth, announced to the whole world. The King was on His throne, and it was a cross.</p>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise">Written long before</h2>
+    <p class="note rise" style="--d:1">Nobody at the cross was trying to fulfil prophecy. Soldiers gambled, rulers sneered, and every word came true anyway:</p>
+    <ol class="checks">
+      <li class="step"><span class="tick">✓</span><q>he was numbered with the transgressors</q><small>Isaiah 53:12</small><b>23:32–33</b></li>
+      <li class="step"><span class="tick">✓</span><q>and made intercession for the transgressors</q><small>Isaiah 53:12</small><b>23:34</b></li>
+      <li class="step"><span class="tick">✓</span><q>They part my garments among them, and cast lots upon my vesture.</q><small>Psalm 22:18</small><b>23:34</b></li>
+      <li class="step"><span class="tick">✓</span><q>All they that see me laugh me to scorn</q><small>Psalm 22:7</small><b>23:35–37</b></li>
+      <li class="step"><span class="tick">✓</span><q>in my thirst they gave me vinegar to drink</q><small>Psalm 69:21</small><b>23:36</b></li>
+    </ol>
+    <p class="note step">The cross wasn't a plan that went wrong. It was God's plan, kept to the letter.</p>
+  </div>
+</section>
+
+<!-- ======================= PART THREE: TO DAY IN PARADISE ======================= -->
+<section class="slide part">
+  <div class="inner">
+    <p class="part-n rise">Part three</p>
+    <h2 class="rise" style="--d:1">Lord, remember me</h2>
+    <p class="range rise" style="--d:2">Verses 39–49</p>
+    <div class="rule"></div>
+    <p class="hook rise" style="--d:4">A dying criminal asks for one thing, and gets everything. Then the sun goes dark.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="39-41" data-hl="If thou be Christ, save thyself and us|Dost not thou fear God|we receive the due reward of our deeds: but this man hath done nothing amiss"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <div class="stage">
+      <svg viewBox="0 0 600 300" role="img" aria-label="Three crosses on a hill, the middle one lit. On a step, words appear over the cross on one side: save thyself and us. On the next, over the other side: Lord, remember me. Then a line runs from the middle cross to the man who asked, with the words: To day shalt thou be with me.">
+        <path class="lk23-ground" d="M0 268 Q300 236 600 268 V300 H0 Z"/>
+        <line class="lk23-wood" x1="130" y1="120" x2="130" y2="262"/><line class="lk23-wood" x1="96" y1="146" x2="164" y2="146"/>
+        <line class="lk23-wood mid" x1="300" y1="66" x2="300" y2="248"/><line class="lk23-wood mid" x1="256" y1="104" x2="344" y2="104"/>
+        <line class="lk23-wood" x1="470" y1="120" x2="470" y2="262"/><line class="lk23-wood" x1="436" y1="146" x2="504" y2="146"/>
+        <path class="lk23-arc" pathLength="1" d="M330 124 Q 395 178, 456 160"/>
+        <text class="lk23-say no" x="130" y="100" text-anchor="middle">“save thyself and us”</text>
+        <text class="lk23-say yes ask" x="470" y="100" text-anchor="middle">“Lord, remember me”</text>
+        <text class="lk23-say yes today" x="300" y="34" text-anchor="middle">“To day shalt thou be with me”</text>
+        <text class="lk23-soft" x="130" y="292" text-anchor="middle">railed on him</text>
+        <text class="lk23-soft" x="470" y="292" text-anchor="middle">rebuked him</text>
+      </svg>
+    </div>
+    <h2 class="rise" style="--d:1">Two men, the same distance from Jesus</h2>
+    <p class="note step lk23-s1">At first both criminals mocked Him (Matthew 27:44). One kept on <em>railing</em>: cursing and insulting.</p>
+    <p class="note step lk23-s2">The other changed his mind, there on the cross. He feared God, owned his guilt (<em>“we indeed justly”</em>), and saw Jesus was innocent.</p>
+    <p class="note step lk23-s3">Same hill, same sentence. One died cursing Him. The other went with Him to paradise.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="42-43" data-hl="Lord, remember me when thou comest into thy kingdom|To day shalt thou be with me in paradise"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="42"></blockquote>
+    <h2 class="rise" style="--d:1">What did he bring?</h2>
+    <ul class="nots">
+      <li class="step"><span class="k">A clean record</span><span class="why">he said himself he deserved to die</span></li>
+      <li class="step"><span class="k">Good works</span><span class="why">his hands were nailed down</span></li>
+      <li class="step"><span class="k">Baptism, church, a changed life first</span><span class="why">he had a few hours left</span></li>
+      <li class="step"><span class="k">Time to make it all right</span><span class="why">there wasn't any</span></li>
+      <li class="step yes"><span class="k">“Lord, remember me”</span><span class="why">faith in Jesus, and nothing else</span></li>
+    </ul>
+    <p class="note step">He called a dying man <em>Lord</em>, and believed He'd come into a kingdom. That was all. It was enough.</p>
+    <blockquote class="quote step"><p>“For by grace are ye saved through faith; and that not of yourselves: it is the gift of God: Not of works, lest any man should boast.”</p><cite>Ephesians 2:8–9</cite></blockquote>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="43"></blockquote>
+    <h2 class="rise" style="--d:1">To day, with me, in paradise</h2>
+    <ol class="signs">
+      <li class="step now"><b>“To day”</b>not some day, after he'd earned it. Before the sun went down.</li>
+      <li class="step now"><b>“with me”</b>not just a place. In the company of Jesus Himself.</li>
+      <li class="step now"><b>“in paradise”</b>the word means a garden or park. The presence of God.</li>
+    </ol>
+    <blockquote class="quote step"><p>“We are confident, I say, and willing rather to be absent from the body, and to be present with the Lord.”</p><cite>2 Corinthians 5:8</cite></blockquote>
+    <p class="note step">He asked to be <em>remembered</em> someday. Jesus gave him more than he asked. Some of us think we've waited too long, or done too much. This man was a convicted criminal with hours to live. It isn't too late for anyone still breathing.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="44-45" data-hl="there was a darkness over all the earth until the ninth hour|the veil of the temple was rent in the midst"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="44"></blockquote>
+    <h2 class="rise" style="--d:1">Darkness at noon</h2>
+    <ol class="timeline" aria-label="The day of the cross. The third hour, about nine in the morning: crucified. The sixth hour, about noon: darkness falls. The ninth hour, about three in the afternoon: Jesus dies. Before sundown: laid in the tomb.">
+      <li style="--k:0"><b>the third hour</b><span>about 9 a.m.: crucified</span><small>Mark 15:25</small></li>
+      <li style="--k:1"><b>“Father, forgive them”</b><span>the soldiers cast lots</span><small>23:34</small></li>
+      <li class="lit" style="--k:2"><b>the sixth hour</b><span>about noon: darkness</span><small>23:44</small></li>
+      <li style="--k:3"><b>the ninth hour</b><span>about 3 p.m.: He dies</span><small>23:44–46</small></li>
+      <li style="--k:4"><b>before sundown</b><span>laid in the tomb</span><small>23:53–54</small></li>
+    </ol>
+    <p class="note step">The Jews counted hours from sunrise, about 6 a.m. So for three hours in the middle of the day, the land went dark. It wasn't an eclipse: Passover always fell at the full moon, when the moon is on the far side of the earth and can't block the sun.</p>
+    <p class="note step">In the Bible, darkness at noon is a sign of God's judgment (Amos 8:9). On the cross, Jesus was carrying the judgment for our sin.</p>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <div class="split">
+    <div class="stage">
+      <svg viewBox="0 0 600 270" role="img" aria-label="The great curtain of the temple hangs closed before the holiest place. On a step, it tears down the middle and the two halves pull apart, showing the light of the holiest place behind it.">
+        <rect class="lk23-holy" x="40" y="16" width="520" height="238"/>
+        <text class="lk23-holy-t" x="300" y="128">the holiest place</text>
+        <text class="lk23-holy-t small" x="300" y="158">where God's presence dwelt</text>
+        <defs><clipPath id="lk23-veilclip"><rect x="40" y="16" width="520" height="238"/></clipPath></defs>
+        <g clip-path="url(#lk23-veilclip)">
+        <g class="lk23-half l">
+          <rect class="lk23-cloth" x="40" y="16" width="261" height="238"/>
+          <line class="lk23-fold" x1="90" y1="16" x2="90" y2="254"/><line class="lk23-fold" x1="150" y1="16" x2="150" y2="254"/><line class="lk23-fold" x1="210" y1="16" x2="210" y2="254"/><line class="lk23-fold" x1="262" y1="16" x2="262" y2="254"/>
+        </g>
+        <g class="lk23-half r">
+          <rect class="lk23-cloth" x="299" y="16" width="261" height="238"/>
+          <line class="lk23-fold" x1="338" y1="16" x2="338" y2="254"/><line class="lk23-fold" x1="390" y1="16" x2="390" y2="254"/><line class="lk23-fold" x1="450" y1="16" x2="450" y2="254"/><line class="lk23-fold" x1="510" y1="16" x2="510" y2="254"/>
+        </g>
+        </g>
+        <rect class="lk23-frame" x="40" y="16" width="520" height="238"/>
+      </svg>
+    </div>
+    <div>
+    <h2 class="rise" style="--d:1">The veil was rent</h2>
+    <p class="note rise" style="--d:2">The <em>veil</em> was a huge, heavy curtain in the temple. Behind it was the holiest place, where only the high priest could go, once a year, with blood (Hebrews 9:7). It said to everyone else: <em>keep out</em>.</p>
+    <p class="note step lk23-rend">When Jesus died, God tore it in two. The way to God is open, for any man who comes through Jesus.</p>
+    </div>
+    </div>
+    <blockquote class="quote step"><p>“Having therefore, brethren, boldness to enter into the holiest by the blood of Jesus, By a new and living way, which he hath consecrated for us, through the veil, that is to say, his flesh;”</p><cite>Hebrews 10:19–20</cite></blockquote>
+  </div>
+</section>
+
+<section class="slide verse" data-v="46" data-hl="Father, into thy hands I commend my spirit"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="46"></blockquote>
+    <h2 class="rise" style="--d:1">Into thy hands</h2>
+    <p class="note rise" style="--d:2">Luke gives us three things Jesus said on the cross. Two begin with <em>Father</em>.</p>
+    <ol class="signs">
+      <li class="step now"><b>“Father, forgive them”</b>for His enemies (23:34)</li>
+      <li class="step now"><b>“To day … with me in paradise”</b>for a sinner who believed (23:43)</li>
+      <li class="step now"><b>“Father, into thy hands”</b>for Himself, trusting His Father (23:46)</li>
+    </ol>
+    <blockquote class="quote step"><p>“Into thine hand I commit my spirit: thou hast redeemed me…”</p><cite>Psalm 31:5</cite></blockquote>
+    <p class="note step">He prayed a psalm, with a loud voice, not the whisper of a man who's given out. He gave up His life on purpose, when He chose (John 10:18). And He shows us how a believer can face death: in the Father's hands.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="47-49" data-hl="Certainly this was a righteous man|smote their breasts|stood afar off, beholding these things"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="47"></blockquote>
+    <h2 class="rise" style="--d:1">Not guilty</h2>
+    <p class="note rise" style="--d:2">A <em>centurion</em> was a Roman officer over about a hundred men. He'd seen many men die. He'd never seen one die like this. Count how often Luke has had someone say it:</p>
+    <ol class="signs">
+      <li class="step now"><b>Pilate</b>“I find no fault in this man” (23:4)</li>
+      <li class="step now"><b>Pilate</b>“have found no fault in this man” (23:14)</li>
+      <li class="step now"><b>Herod</b>“nothing worthy of death” (23:15)</li>
+      <li class="step now"><b>Pilate</b>“I have found no cause of death in him” (23:22)</li>
+      <li class="step now"><b>The thief</b>“this man hath done nothing amiss” (23:41)</li>
+      <li class="step now"><b>The centurion</b>“Certainly this was a righteous man” (23:47)</li>
+    </ol>
+    <p class="note step">Six times. He didn't die for anything He'd done. He died for what we've done. The crowd went home beating their chests, grieving. His friends stood at a distance and watched it all.</p>
+  </div>
+</section>
+
+<!-- ======================= PART FOUR: LAID IN A SEPULCHRE ======================= -->
+<section class="slide part">
+  <div class="inner">
+    <p class="part-n rise">Part four</p>
+    <h2 class="rise" style="--d:1">Laid in a sepulchre</h2>
+    <p class="range rise" style="--d:2">Verses 50–56</p>
+    <div class="rule"></div>
+    <p class="hook rise" style="--d:4">A council member steps out of the crowd, and the women stay to the end.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="50-53" data-hl="a man named Joseph, a counsellor; and he was a good man, and a just|begged the body of Jesus|wherein never man before was laid"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="52"></blockquote>
+    <div class="split">
+      <div class="stage">
+        <svg class="tomb" style="--roll:150px;--turn:190deg" viewBox="0 0 600 330" role="img" aria-label="A new tomb cut into a hillside, its doorway closed by a large round stone.">
+          <path d="M0 330 L0 150 Q110 70 250 105 Q400 140 600 120 L600 330 Z" stroke-width="3" style="fill:var(--surface-2);stroke:var(--line-strong)"/>
+          <rect x="0" y="292" width="600" height="38" style="fill:var(--surface-2)"/>
+          <line x1="0" y1="292" x2="600" y2="292" stroke-width="2" style="stroke:var(--line-strong)"/>
+          <path class="tomb-door" d="M150 292 L150 215 Q200 160 250 215 L250 292 Z" stroke-width="3" style="stroke:var(--ink-soft)"/>
+          <g class="tomb-stone">
+            <circle cx="200" cy="240" r="62" stroke-width="3" style="fill:var(--line-strong);stroke:var(--ink-soft)"/>
+            <circle cx="200" cy="240" r="44" fill="none" stroke-width="2.5" stroke-dasharray="10 8" style="stroke:var(--bg)"/>
+            <circle cx="200" cy="240" r="6" style="fill:var(--bg)"/>
+          </g>
+          <text x="420" y="230" text-anchor="middle" font-size="20" style="fill:var(--ink-soft)">hewn in stone</text>
+          <text x="420" y="256" text-anchor="middle" font-size="20" style="fill:var(--ink-soft)">never used</text>
+        </svg>
+      </div>
+      <div>
+        <h2 class="rise" style="--d:1">Joseph steps out</h2>
+        <p class="note rise" style="--d:2">A <em>counsellor</em> was a member of the council, the same council that condemned Jesus. Joseph hadn't gone along with it. <em>Arimathaea</em> was his home town in Judaea; nobody knows exactly where it stood.</p>
+        <p class="note step">Going to Pilate and asking for the body of a man just executed as a rebel was a risk. Joseph put his name and his place on the line, and laid Him in his own new tomb (Matthew 27:60).</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="slide verse" data-v="54-56" data-hl="that day was the preparation, and the sabbath drew on|beheld the sepulchre, and how his body was laid|rested the sabbath day according to the commandment"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="55"></blockquote>
+    <h2 class="rise" style="--d:1">The women saw where</h2>
+    <ol class="timeline" aria-label="Friday afternoon, Jesus dies and is buried before sundown. Friday at sundown, the sabbath begins and the women rest. Sunday very early, they come back to the tomb.">
+      <li style="--k:0"><b>Friday, 3 p.m.</b><span>He dies</span><small>23:46</small></li>
+      <li style="--k:1"><b>before sundown</b><span>buried; the women watch</span><small>23:53–55</small></li>
+      <li style="--k:2"><b>Friday sundown</b><span>the sabbath begins</span><small>23:54</small></li>
+      <li style="--k:3"><b>Saturday</b><span>they rest, by the commandment</span><small>23:56</small></li>
+      <li class="lit wait" style="--k:4"><b>Sunday, very early</b><span>back with the spices</span><small>24:1</small></li>
+    </ol>
+    <p class="note step">The <em>preparation</em> was Friday, the day to get ready for the sabbath, which began at sundown. There was just time to wrap the body and lay it in the tomb.</p>
+    <p class="note step">The disciples had scattered. These women from Galilee stayed: at the cross, at the tomb, and back again on Sunday. They saw exactly which tomb, and how He was laid. Nobody went to the wrong grave on Sunday morning.</p>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise">Friday isn't the end</h2>
+    <p class="note rise" style="--d:2">Luke 23 ends with a stone in front of a tomb and the women resting through a sad sabbath. Every one of His friends thought it was over.</p>
+    <p class="note step">But look at what the cross did. The guilty went free. A criminal went to paradise. The curtain that kept men out came down. All because the innocent One took the place of the guilty.</p>
+    <p class="note step">And Jesus had told them more than once: the Son of man would be killed, <em>“and the third day he shall rise again”</em> (18:33). Sunday is coming.</p>
+  </div>
+</section>
+
+<!-- ======================= CLOSING ======================= -->
+<section class="slide remember">
+  <div class="inner">
+    <h2 class="rise">Points to remember</h2>
+    <ol class="seeds">
+      <li class="step"><span class="topic">Innocent</span><span class="seed-q">“I find no fault in this man” <cite>23:4</cite></span><span class="take">Six times He's called innocent. He died for our sins, not His.</span></li>
+      <li class="step"><span class="topic">In our place</span><span class="seed-q">“Release unto us Barabbas” <cite>23:18</cite></span><span class="take">A guilty man walked free while Jesus took his cross. So do we.</span></li>
+      <li class="step"><span class="topic">Forgiveness</span><span class="seed-q">“Father, forgive them” <cite>23:34</cite></span><span class="take">He prayed for the men driving the nails. No one is beyond His forgiveness.</span></li>
+      <li class="step"><span class="topic">Empty hands</span><span class="seed-q">“Lord, remember me” <cite>23:42</cite></span><span class="take">The thief brought nothing but faith, and was promised paradise that day.</span></li>
+      <li class="step"><span class="topic">The way in</span><span class="seed-q">“The veil of the temple was rent” <cite>23:45</cite></span><span class="take">The way to God is open to any man who comes through Jesus.</span></li>
+      <li class="step"><span class="topic">Faithful</span><span class="seed-q">“Beheld the sepulchre, and how his body was laid” <cite>23:55</cite></span><span class="take">Joseph stepped out, and the women stayed to the end.</span></li>
+    </ol>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 1 of 6</p>
+      <span class="topic">Innocent</span>
+      <h2>How many times is Jesus called innocent in this chapter?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="4"></blockquote>
+      <blockquote class="quote step" data-q="41" data-hl="this man hath done nothing amiss"></blockquote>
+      <blockquote class="quote step" data-q="47"></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>Six times: Pilate three times (4, 14, 22), Herod through Pilate (15), the thief (41), and the centurion (47). Jesus had no sin of His own to die for. He died for ours.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 2 of 6</p>
+      <span class="topic">In our place</span>
+      <h2>Who walked free when Jesus was condemned?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="18"></blockquote>
+      <blockquote class="quote step" data-q="25"></blockquote>
+      <blockquote class="quote step"><p>“For Christ also hath once suffered for sins, the just for the unjust, that he might bring us to God, being put to death in the flesh, but quickened by the Spirit:”</p><cite>1 Peter 3:18</cite></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>Barabbas, a man in prison for sedition and murder. The guilty man went free and the innocent One died. That's the gospel: the just for the unjust, Jesus in our place.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 3 of 6</p>
+      <span class="topic">Forgiveness</span>
+      <h2>Who did Jesus pray for from the cross?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="34"></blockquote>
+      <blockquote class="quote step"><p>“…and he bare the sin of many, and made intercession for the transgressors.”</p><cite>Isaiah 53:12</cite></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>The very men who put Him there: the soldiers, the rulers, the crowd. They didn't know Whom they were killing. If He prayed for them, there's no man He won't forgive, and He can help us forgive too.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 4 of 6</p>
+      <span class="topic">Empty hands</span>
+      <h2>What did the dying thief bring to Jesus?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="41"></blockquote>
+      <blockquote class="quote step" data-q="42"></blockquote>
+      <blockquote class="quote step" data-q="43"></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>Nothing but an honest confession and faith. No good works, no time to fix his life. He owned his guilt, called Jesus Lord, and asked to be remembered. Jesus promised him paradise that same day. That's how every man is saved: by grace, through faith.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 5 of 6</p>
+      <span class="topic">The way in</span>
+      <h2>What happened to the veil of the temple?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="45"></blockquote>
+      <blockquote class="quote step"><p>“Having therefore, brethren, boldness to enter into the holiest by the blood of Jesus, By a new and living way, which he hath consecrated for us, through the veil, that is to say, his flesh;”</p><cite>Hebrews 10:19–20</cite></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>It was torn in the middle when Jesus died. The curtain that kept sinners out of God's presence came down. Now any man can come to God through Jesus' blood, with boldness.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 6 of 6</p>
+      <span class="topic">Faithful</span>
+      <h2>Who cared for Jesus' body when it was over?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="53"></blockquote>
+      <blockquote class="quote step" data-q="55"></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>Joseph of Arimathaea, a council member who hadn't agreed with their verdict, risked going to Pilate and laid Jesus in his own new tomb. And the women from Galilee watched where He was laid, then prepared spices for Him.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide prayer">
+  <div class="inner">
+    <div class="emblem rise"></div>
+    <h2 class="rise" style="--d:1">Prayer requests</h2>
+    <p class="ask-line rise" style="--d:2">What can we pray about for you today?</p>
+    <blockquote class="quote rise" style="--d:4"><p>“Wherefore he is able also to save them to the uttermost that come unto God by him, seeing he ever liveth to make intercession for them.”</p><cite>Hebrews 7:25</cite></blockquote>
+  </div>
+</section>
+
+</main>
+
+<script>
+// King James Version, Luke chapter 23
+const V = {
+  1: "And the whole multitude of them arose, and led him unto Pilate.",
+  2: "And they began to accuse him, saying, We found this fellow perverting the nation, and forbidding to give tribute to Caesar, saying that he himself is Christ a King.",
+  3: "And Pilate asked him, saying, Art thou the King of the Jews? And he answered him and said, Thou sayest it.",
+  4: "Then said Pilate to the chief priests and to the people, I find no fault in this man.",
+  5: "And they were the more fierce, saying, He stirreth up the people, teaching throughout all Jewry, beginning from Galilee to this place.",
+  6: "When Pilate heard of Galilee, he asked whether the man were a Galilaean.",
+  7: "And as soon as he knew that he belonged unto Herod’s jurisdiction, he sent him to Herod, who himself also was at Jerusalem at that time.",
+  8: "And when Herod saw Jesus, he was exceeding glad: for he was desirous to see him of a long season, because he had heard many things of him; and he hoped to have seen some miracle done by him.",
+  9: "Then he questioned with him in many words; but he answered him nothing.",
+  10: "And the chief priests and scribes stood and vehemently accused him.",
+  11: "And Herod with his men of war set him at nought, and mocked him, and arrayed him in a gorgeous robe, and sent him again to Pilate.",
+  12: "And the same day Pilate and Herod were made friends together: for before they were at enmity between themselves.",
+  13: "And Pilate, when he had called together the chief priests and the rulers and the people,",
+  14: "Said unto them, Ye have brought this man unto me, as one that perverteth the people: and, behold, I, having examined him before you, have found no fault in this man touching those things whereof ye accuse him:",
+  15: "No, nor yet Herod: for I sent you to him; and, lo, nothing worthy of death is done unto him.",
+  16: "I will therefore chastise him, and release him.",
+  17: "(For of necessity he must release one unto them at the feast.)",
+  18: "And they cried out all at once, saying, Away with this man, and release unto us Barabbas:",
+  19: "(Who for a certain sedition made in the city, and for murder, was cast into prison.)",
+  20: "Pilate therefore, willing to release Jesus, spake again to them.",
+  21: "But they cried, saying, Crucify him, crucify him.",
+  22: "And he said unto them the third time, Why, what evil hath he done? I have found no cause of death in him: I will therefore chastise him, and let him go.",
+  23: "And they were instant with loud voices, requiring that he might be crucified. And the voices of them and of the chief priests prevailed.",
+  24: "And Pilate gave sentence that it should be as they required.",
+  25: "And he released unto them him that for sedition and murder was cast into prison, whom they had desired; but he delivered Jesus to their will.",
+  26: "And as they led him away, they laid hold upon one Simon, a Cyrenian, coming out of the country, and on him they laid the cross, that he might bear it after Jesus.",
+  27: "And there followed him a great company of people, and of women, which also bewailed and lamented him.",
+  28: "But Jesus turning unto them said, Daughters of Jerusalem, weep not for me, but weep for yourselves, and for your children.",
+  29: "For, behold, the days are coming, in the which they shall say, Blessed are the barren, and the wombs that never bare, and the paps which never gave suck.",
+  30: "Then shall they begin to say to the mountains, Fall on us; and to the hills, Cover us.",
+  31: "For if they do these things in a green tree, what shall be done in the dry?",
+  32: "And there were also two other, malefactors, led with him to be put to death.",
+  33: "And when they were come to the place, which is called Calvary, there they crucified him, and the malefactors, one on the right hand, and the other on the left.",
+  34: "Then said Jesus, Father, forgive them; for they know not what they do. And they parted his raiment, and cast lots.",
+  35: "And the people stood beholding. And the rulers also with them derided him, saying, He saved others; let him save himself, if he be Christ, the chosen of God.",
+  36: "And the soldiers also mocked him, coming to him, and offering him vinegar,",
+  37: "And saying, If thou be the king of the Jews, save thyself.",
+  38: "And a superscription also was written over him in letters of Greek, and Latin, and Hebrew, THIS IS THE KING OF THE JEWS.",
+  39: "And one of the malefactors which were hanged railed on him, saying, If thou be Christ, save thyself and us.",
+  40: "But the other answering rebuked him, saying, Dost not thou fear God, seeing thou art in the same condemnation?",
+  41: "And we indeed justly; for we receive the due reward of our deeds: but this man hath done nothing amiss.",
+  42: "And he said unto Jesus, Lord, remember me when thou comest into thy kingdom.",
+  43: "And Jesus said unto him, Verily I say unto thee, To day shalt thou be with me in paradise.",
+  44: "And it was about the sixth hour, and there was a darkness over all the earth until the ninth hour.",
+  45: "And the sun was darkened, and the veil of the temple was rent in the midst.",
+  46: "And when Jesus had cried with a loud voice, he said, Father, into thy hands I commend my spirit: and having said thus, he gave up the ghost.",
+  47: "Now when the centurion saw what was done, he glorified God, saying, Certainly this was a righteous man.",
+  48: "And all the people that came together to that sight, beholding the things which were done, smote their breasts, and returned.",
+  49: "And all his acquaintance, and the women that followed him from Galilee, stood afar off, beholding these things.",
+  50: "And, behold, there was a man named Joseph, a counsellor; and he was a good man, and a just:",
+  51: "(The same had not consented to the counsel and deed of them;) he was of Arimathaea, a city of the Jews: who also himself waited for the kingdom of God.",
+  52: "This man went unto Pilate, and begged the body of Jesus.",
+  53: "And he took it down, and wrapped it in linen, and laid it in a sepulchre that was hewn in stone, wherein never man before was laid.",
+  54: "And that day was the preparation, and the sabbath drew on.",
+  55: "And the women also, which came with him from Galilee, followed after, and beheld the sepulchre, and how his body was laid.",
+  56: "And they returned, and prepared spices and ointments; and rested the sabbath day according to the commandment."
+};
+const BOOK = "Luke 23";
+</script>
+<script src="../assets/deck.js"></script>
+</body>
+</html>
