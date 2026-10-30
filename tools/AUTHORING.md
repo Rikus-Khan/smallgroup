@@ -16,6 +16,7 @@ How it looks comes from the shared files in `assets/`, so it works in every them
 
 1. **Title**: `slide title`, with a short title, a subtitle, and one sentence.
 2. **Things to watch for**: `slide watch`, with 5 or 6 numbered questions, each under a topic label. These are seeds planted for later. Pick what a pastor would want the men to remember: who God is, salvation, God's promises and commands, and the struggles these men face.
+   - **The first chapter of every book** also gets a **setting** at the start, just before or after "Things to watch for": a `slide ex` with a map of where the book happens (`svg.map` or `svg.map[data-land]`) beside who wrote it, when, and to whom, then a `slide ex` with an `ol.timeline` that places the book among the events around it. Hosea 1 and Haggai 1 show the pattern. Later chapters add their own map or timeline whenever the place or time moves.
 3. **The reading**: split into 2–4 parts, each opening with a `slide part` divider.
    - **Every verse of the chapter** is read on screen, in order, on `slide verse` slides of 1–5 verses each. A verse appears on exactly one verse slide.
    - After the verses they explain, add **explanation slides** (`slide ex`). Explain old words, customs, places, and hard ideas, using the building blocks below or a new graphic. Aim for roughly one explanation per 2–4 verses where there's something worth explaining, and vary the kinds of graphics.
