@@ -354,7 +354,13 @@ window.GLOSSARY = [
     [ 1, 2, 3, 4, 7, 8, 9, 10, 30 ] ],
    [
     "1 Corinthians", 2,
-    [ 2 ] ] ]
+    [ 2 ] ],
+   [
+    "1 Corinthians", 3,
+    [ 11 ] ],
+   [
+    "1 Corinthians", 4,
+    [ 15 ] ] ]
  },
  {
   "id": "john-the-baptist",
@@ -681,7 +687,10 @@ window.GLOSSARY = [
     [ 7, 14 ] ],
    [
     "1 Corinthians", 1,
-    [ 12 ] ] ]
+    [ 12 ] ],
+   [
+    "1 Corinthians", 3,
+    [ 22 ] ] ]
  },
  {
   "id": "philip",
@@ -1311,7 +1320,10 @@ window.GLOSSARY = [
     [ 13, 16, 19, 30 ] ],
    [
     "1 Corinthians", 2,
-    [ 4, 10, 11, 12, 13, 14 ] ] ]
+    [ 4, 10, 11, 12, 13, 14 ] ],
+   [
+    "1 Corinthians", 3,
+    [ 16 ] ] ]
  },
  {
   "id": "disciples",
@@ -3213,7 +3225,10 @@ window.GLOSSARY = [
     [ 8 ] ],
    [
     "Acts", 26,
-    [ 21 ] ] ]
+    [ 21 ] ],
+   [
+    "1 Corinthians", 3,
+    [ 16, 17 ] ] ]
  },
  {
   "id": "israel",
@@ -4020,7 +4035,10 @@ window.GLOSSARY = [
     [ 19 ] ],
    [
     "Romans", 13,
-    [ 12 ] ] ]
+    [ 12 ] ],
+   [
+    "1 Corinthians", 4,
+    [ 5 ] ] ]
  },
  {
   "id": "darkness",
@@ -4119,7 +4137,10 @@ window.GLOSSARY = [
     [ 19 ] ],
    [
     "Romans", 13,
-    [ 12 ] ] ]
+    [ 12 ] ],
+   [
+    "1 Corinthians", 4,
+    [ 5 ] ] ]
  },
  {
   "id": "grace",
@@ -4200,7 +4221,10 @@ window.GLOSSARY = [
     [ 20, 24 ] ],
    [
     "1 Corinthians", 1,
-    [ 4 ] ] ]
+    [ 4 ] ],
+   [
+    "1 Corinthians", 3,
+    [ 10 ] ] ]
  },
  {
   "id": "truth",
@@ -4512,7 +4536,13 @@ window.GLOSSARY = [
     [ 29, 31 ] ],
    [
     "1 Corinthians", 2,
-    [ 7, 8 ] ] ]
+    [ 7, 8 ] ],
+   [
+    "1 Corinthians", 3,
+    [ 21 ] ],
+   [
+    "1 Corinthians", 4,
+    [ 7 ] ] ]
  },
  {
   "id": "the-law",
@@ -4935,7 +4965,13 @@ window.GLOSSARY = [
     [ 1, 2, 3, 4, 6, 7, 8, 9, 10, 12, 13, 17, 23, 24, 30 ] ],
    [
     "1 Corinthians", 2,
-    [ 2, 16 ] ] ]
+    [ 2, 16 ] ],
+   [
+    "1 Corinthians", 3,
+    [ 1, 11, 23 ] ],
+   [
+    "1 Corinthians", 4,
+    [ 1, 10, 15, 17 ] ] ]
  },
  {
   "id": "son-of-god",
@@ -5391,7 +5427,10 @@ window.GLOSSARY = [
     [ 13, 31 ] ],
    [
     "1 Corinthians", 1,
-    [ 21 ] ] ]
+    [ 21 ] ],
+   [
+    "1 Corinthians", 3,
+    [ 5 ] ] ]
  },
  {
   "id": "witness",
@@ -6192,7 +6231,10 @@ window.GLOSSARY = [
     [ 17, 19, 20, 21, 22, 24, 30 ] ],
    [
     "1 Corinthians", 2,
-    [ 1, 4, 5, 6, 7, 13 ] ] ]
+    [ 1, 4, 5, 6, 7, 13 ] ],
+   [
+    "1 Corinthians", 3,
+    [ 19 ] ] ]
  },
  {
   "id": "understanding",
@@ -6645,7 +6687,13 @@ window.GLOSSARY = [
     [ 18, 20, 21, 23, 25, 27 ] ],
    [
     "1 Corinthians", 2,
-    [ 14 ] ] ]
+    [ 14 ] ],
+   [
+    "1 Corinthians", 3,
+    [ 18, 19 ] ],
+   [
+    "1 Corinthians", 4,
+    [ 10 ] ] ]
  },
  {
   "id": "scorner",
@@ -8415,7 +8463,10 @@ window.GLOSSARY = [
     [ 42 ] ],
    [
     "Romans", 11,
-    [ 34 ] ] ]
+    [ 34 ] ],
+   [
+    "1 Corinthians", 4,
+    [ 5 ] ] ]
  },
  {
   "id": "discretion",
@@ -8757,7 +8808,10 @@ window.GLOSSARY = [
     [ 9 ] ],
    [
     "Micah", 7,
-    [ 14 ] ] ]
+    [ 14 ] ],
+   [
+    "1 Corinthians", 4,
+    [ 21 ] ] ]
  },
  {
   "id": "snare",
@@ -8889,7 +8943,10 @@ window.GLOSSARY = [
     [ 13 ] ],
    [
     "1 Corinthians", 1,
-    [ 11 ] ] ]
+    [ 11 ] ],
+   [
+    "1 Corinthians", 3,
+    [ 3 ] ] ]
  },
  {
   "id": "subtilty",
@@ -10419,7 +10476,10 @@ window.GLOSSARY = [
     [ 28 ] ],
    [
     "Acts", 23,
-    [ 4 ] ] ]
+    [ 4 ] ],
+   [
+    "1 Corinthians", 4,
+    [ 12 ] ] ]
  },
  {
   "id": "worship",
@@ -12000,7 +12060,10 @@ window.GLOSSARY = [
     [ 23, 31 ] ],
    [
     "Romans", 14,
-    [ 17 ] ] ]
+    [ 17 ] ],
+   [
+    "1 Corinthians", 4,
+    [ 20 ] ] ]
  },
  {
   "id": "wind",
@@ -20616,7 +20679,10 @@ window.GLOSSARY = [
     [ 29 ] ],
    [
     "Matthew", 21,
-    [ 5 ] ] ]
+    [ 5 ] ],
+   [
+    "1 Corinthians", 4,
+    [ 21 ] ] ]
  },
  {
   "id": "cherethites",
@@ -24978,7 +25044,10 @@ window.GLOSSARY = [
     [ 23, 35 ] ],
    [
     "Luke", 23,
-    [ 41 ] ] ]
+    [ 41 ] ],
+   [
+    "1 Corinthians", 3,
+    [ 8, 14 ] ] ]
  },
  {
   "id": "little-ones",
@@ -28209,7 +28278,10 @@ window.GLOSSARY = [
     [ 1, 5, 23 ] ],
    [
     "1 Corinthians", 1,
-    [ 2 ] ] ]
+    [ 2 ] ],
+   [
+    "1 Corinthians", 4,
+    [ 17 ] ] ]
  },
  {
   "id": "bind-and-loose",
@@ -29484,7 +29556,10 @@ window.GLOSSARY = [
     [ 42 ] ],
    [
     "Luke", 16,
-    [ 1, 2, 3, 8 ] ] ]
+    [ 1, 2, 3, 8 ] ],
+   [
+    "1 Corinthians", 4,
+    [ 1, 2 ] ] ]
  },
  {
   "id": "the-deep",
@@ -31767,7 +31842,10 @@ window.GLOSSARY = [
   "refs": [
    [
     "Matthew", 26,
-    [ 67 ] ] ]
+    [ 67 ] ],
+   [
+    "1 Corinthians", 4,
+    [ 11 ] ] ]
  },
  {
   "id": "peters-denial",
@@ -32472,7 +32550,10 @@ window.GLOSSARY = [
   "refs": [
    [
     "Luke", 20,
-    [ 23 ] ] ]
+    [ 23 ] ],
+   [
+    "1 Corinthians", 3,
+    [ 19 ] ] ]
  },
  {
   "id": "children-of-the-resurrection",
@@ -34920,7 +35001,10 @@ window.GLOSSARY = [
     [ 1 ] ],
    [
     "1 Corinthians", 1,
-    [ 1, 12, 13 ] ] ]
+    [ 1, 12, 13 ] ],
+   [
+    "1 Corinthians", 3,
+    [ 4, 5, 22 ] ] ]
  },
  {
   "id": "silas",
@@ -35082,7 +35166,10 @@ window.GLOSSARY = [
     [ 4 ] ],
    [
     "Romans", 16,
-    [ 21 ] ] ]
+    [ 21 ] ],
+   [
+    "1 Corinthians", 4,
+    [ 17 ] ] ]
  },
  {
   "id": "lydia",
@@ -36630,7 +36717,10 @@ window.GLOSSARY = [
     [ 1 ] ],
    [
     "1 Corinthians", 1,
-    [ 12 ] ] ]
+    [ 12 ] ],
+   [
+    "1 Corinthians", 3,
+    [ 4, 5, 6, 22 ] ] ]
  },
  {
   "id": "tentmakers",
@@ -39264,7 +39354,10 @@ window.GLOSSARY = [
     [ 17 ] ],
    [
     "1 Corinthians", 1,
-    [ 10 ] ] ]
+    [ 10 ] ],
+   [
+    "1 Corinthians", 4,
+    [ 16 ] ] ]
  },
  {
   "id": "living-sacrifice",
@@ -39450,7 +39543,10 @@ window.GLOSSARY = [
     [ 14 ] ],
    [
     "Romans", 8,
-    [ 6, 7 ] ] ]
+    [ 6, 7 ] ],
+   [
+    "1 Corinthians", 3,
+    [ 1, 3, 4 ] ] ]
  },
  {
   "id": "sold-under-sin",
@@ -40321,5 +40417,131 @@ window.GLOSSARY = [
    [
     "Romans", 16,
     [ 25 ] ] ]
+ },
+ {
+  "id": "milk-and-meat",
+  "kind": "term",
+  "name": "Milk, not meat (simple teaching for a new believer, and solid food for the grown)",
+  "refs": [
+   [
+    "1 Corinthians", 3,
+    [ 2 ] ] ]
+ },
+ {
+  "id": "babes-in-christ",
+  "kind": "term",
+  "name": "Babes in Christ (believers who are saved but have not grown up)",
+  "refs": [
+   [
+    "1 Corinthians", 3,
+    [ 1 ] ] ]
+ },
+ {
+  "id": "husbandry",
+  "kind": "term",
+  "name": "God's husbandry (God's farm, His field)",
+  "refs": [
+   [
+    "1 Corinthians", 3,
+    [ 9 ] ] ]
+ },
+ {
+  "id": "masterbuilder",
+  "kind": "term",
+  "name": "A wise masterbuilder (the head builder, who lays the foundation)",
+  "refs": [
+   [
+    "1 Corinthians", 3,
+    [ 10 ] ] ]
+ },
+ {
+  "id": "foundation",
+  "kind": "term",
+  "name": "The foundation (Jesus Christ, the one foundation of the church)",
+  "refs": [
+   [
+    "1 Corinthians", 3,
+    [ 10, 11, 12 ] ] ]
+ },
+ {
+  "id": "gold-silver-stones",
+  "kind": "term",
+  "name": "Gold, silver, precious stones, wood, hay, stubble (work that lasts, and work that burns)",
+  "refs": [
+   [
+    "1 Corinthians", 3,
+    [ 12 ] ] ]
+ },
+ {
+  "id": "tried-by-fire",
+  "kind": "term",
+  "name": "Tried by fire (a believer's work tested; he himself is saved)",
+  "refs": [
+   [
+    "1 Corinthians", 3,
+    [ 13, 15 ] ] ]
+ },
+ {
+  "id": "mysteries-of-god",
+  "kind": "term",
+  "name": "The mysteries of God (the truths once hidden and now shown in Christ)",
+  "refs": [
+   [
+    "1 Corinthians", 4,
+    [ 1 ] ] ]
+ },
+ {
+  "id": "judge-nothing-before-the-time",
+  "kind": "term",
+  "name": "Judge nothing before the time (leave the last verdict to the Lord)",
+  "refs": [
+   [
+    "1 Corinthians", 4,
+    [ 5 ] ] ]
+ },
+ {
+  "id": "puffed-up",
+  "kind": "term",
+  "name": "Puffed up (swollen with pride)",
+  "refs": [
+   [
+    "1 Corinthians", 4,
+    [ 6, 18, 19 ] ] ]
+ },
+ {
+  "id": "spectacle",
+  "kind": "term",
+  "name": "A spectacle (a show in the theatre, with the whole crowd watching)",
+  "refs": [
+   [
+    "1 Corinthians", 4,
+    [ 9 ] ] ]
+ },
+ {
+  "id": "offscouring",
+  "kind": "term",
+  "name": "The filth of the world, the offscouring (what is scraped off and thrown away)",
+  "refs": [
+   [
+    "1 Corinthians", 4,
+    [ 13 ] ] ]
+ },
+ {
+  "id": "instructers",
+  "kind": "term",
+  "name": "Instructers and fathers (a tutor teaches; a father stays)",
+  "refs": [
+   [
+    "1 Corinthians", 4,
+    [ 15 ] ] ]
+ },
+ {
+  "id": "begotten-through-the-gospel",
+  "kind": "term",
+  "name": "Begotten through the gospel (Paul, spiritual father of the Corinthians)",
+  "refs": [
+   [
+    "1 Corinthians", 4,
+    [ 15 ] ] ]
  }
 ];

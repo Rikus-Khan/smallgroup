@@ -1,0 +1,738 @@
+<!doctype html>
+<html lang="en" data-theme="scribe">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>1 Corinthians 4</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="../assets/fonts.css">
+<link rel="stylesheet" href="../assets/deck.css">
+<link rel="stylesheet" href="../assets/themes.css">
+<style>
+/* c104-where: where we are in 1 Corinthians (the same marker as 1 Corinthians 3). Sixteen chapter cells (i), .done and .here, over seven parts (span, --s) */
+.c104-where { display: grid; grid-template-columns: repeat(16, 1fr); gap: 4px; margin: .3em 0 1em; }
+.c104-where i { font: 600 clamp(.75rem, .65rem + .4vw, 1.05rem)/1 var(--sans); font-style: normal; text-align: center; padding: .45em 0; border-radius: 6px; background: var(--surface); border: 1px solid var(--line); color: var(--ink-soft); }
+.c104-where i.done { background: color-mix(in srgb, var(--accent) 16%, var(--surface)); color: var(--ink); }
+.c104-where i.here { background: var(--accent); border-color: var(--accent); color: var(--on-accent); box-shadow: 0 0 0 4px color-mix(in srgb, var(--accent) 25%, transparent); }
+.slide.active .c104-where i.here { animation: c104-here 2.4s 1s ease-in-out infinite; }
+@keyframes c104-here { 50% { box-shadow: 0 0 0 8px color-mix(in srgb, var(--accent) 10%, transparent); } }
+.c104-where span { grid-column: span var(--s, 1); border-top: 3px solid var(--line-strong); padding-top: .35em; text-align: center; font-size: clamp(.68rem, .62rem + .3vw, .98rem); line-height: 1.2; color: var(--ink-soft); overflow: hidden; }
+.c104-where span.now { border-top-color: var(--accent); color: var(--ink); font-weight: 700; }
+@media (max-width: 600px) { .c104-where span.sm { visibility: hidden; } }
+
+/* c104-in: things that come in one by one when the slide opens */
+.c104-p { opacity: 0; }
+.slide.active .c104-p { animation: c104-in .9s ease-out forwards; animation-delay: calc(var(--k) * .9s + .3s); }
+@keyframes c104-in { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: none; } }
+
+/* c104-keys: a steward holds keys that belong to the master */
+.c104-ring { fill: none; stroke: var(--accent-hot); stroke-width: 8; }
+.c104-cord { stroke: var(--line-strong); stroke-width: 3; fill: none; }
+.c104-tag rect { fill: var(--surface); stroke: var(--accent); stroke-width: 2.5; }
+.c104-tag text { fill: var(--ink); font: 700 17px var(--sans); text-anchor: middle; }
+.c104-tag circle { fill: var(--accent); }
+.c104-keytop { fill: var(--ink-soft); font: italic 19px var(--serif); text-anchor: middle; }
+.c104-swing { transform-box: fill-box; transform-origin: 50% 0%; }
+.slide.active .c104-swing { animation: c104-swing 3.2s ease-in-out infinite alternate; animation-delay: calc(var(--k) * -.7s); }
+@keyframes c104-swing { from { transform: rotate(-2.5deg); } to { transform: rotate(2.5deg); } }
+@media (max-width: 600px) { .c104-tag text { font-size: 23px; } .c104-keytop { font-size: 25px; } }
+
+/* c104-courts: three courts weighed; man's verdict is a small thing, the Lord's is the one that counts */
+.c104-courts { display: grid; gap: .7em; margin: .5em 0 1em; }
+.c104-courts > div { display: grid; grid-template-columns: minmax(8rem, 15rem) 1fr; gap: .4em 1em; align-items: center; }
+.c104-courts b { font: 700 clamp(.9rem, .8rem + .4vw, 1.2rem) var(--serif); color: var(--ink); }
+.c104-courts b small { display: block; font: 400 .8em var(--sans); color: var(--ink-soft); }
+.c104-courts .track { height: 2.4em; border-radius: 8px; background: var(--surface); border: 1px solid var(--line); overflow: hidden; position: relative; }
+.c104-courts .fill { position: absolute; inset: 0 auto 0 0; width: 0; display: flex; align-items: center; padding: 0 .8em; white-space: nowrap; font: 600 clamp(.82rem, .75rem + .35vw, 1.05rem) var(--sans); background: color-mix(in srgb, var(--ink-soft) 28%, var(--surface)); color: var(--ink); }
+.slide.active .c104-courts .fill { animation: c104-fill 1.4s ease-out forwards; animation-delay: calc(var(--k) * 1s + .5s); }
+@keyframes c104-fill { to { width: max(var(--w), 9.5rem); } }
+.c104-courts .final .fill { background: var(--accent); color: var(--on-accent); }
+@media (max-width: 600px) { .c104-courts > div { grid-template-columns: 1fr; } .c104-courts .fill { white-space: normal; font-size: .85rem; } .c104-courts .track { height: 3.2em; } }
+
+/* c104-vs: how Corinth saw itself (left, shown) against how the apostles lived (right, on a step) */
+.c104-vs { display: grid; grid-template-columns: 1fr 1fr; gap: 6px 14px; margin: .3em 0 1em; font-size: clamp(.95rem, .85rem + .45vw, 1.25rem); }
+.c104-vs .h { font: 700 .78em var(--sans); color: var(--ink-soft); text-transform: uppercase; letter-spacing: .06em; }
+.c104-vs .h.r { color: var(--accent); }
+.c104-vs .a { padding: .35em .8em; border-left: 3px solid var(--line-strong); background: var(--surface); border-radius: 0 8px 8px 0; color: var(--ink-soft); }
+.c104-vs .b { padding: .35em .8em; border-left: 3px solid var(--accent); background: color-mix(in srgb, var(--accent) 13%, transparent); border-radius: 0 8px 8px 0; color: var(--ink); }
+.c104-vs .a i, .c104-vs .b i { font-style: normal; font-weight: 700; }
+@media (max-width: 600px) { .c104-vs { grid-template-columns: 1fr; } .c104-vs .h.r { margin-top: .6em; } }
+
+/* c104-stage: the apostles on the stage of the world; the world, angels and men watching in rings */
+.c104-seat { fill: var(--ink-soft); opacity: 0; }
+.slide.active .c104-seat { animation: c104-seat .5s ease-out forwards; animation-delay: calc(var(--k) * 1.1s + .3s + var(--j) * .012s); }
+@keyframes c104-seat { to { opacity: .55; } }
+.c104-seat.m { fill: var(--accent); }
+.c104-lab { fill: var(--ink); font: 700 17px var(--sans); text-anchor: middle; opacity: 0; paint-order: stroke; stroke: var(--bg); stroke-width: 5px; }
+.slide.active .c104-lab { animation: c104-in .6s ease-out forwards; animation-delay: calc(var(--k) * 1.1s + .3s); }
+.c104-floor { fill: color-mix(in srgb, var(--accent) 22%, var(--surface)); stroke: var(--accent); stroke-width: 2.5; }
+.c104-ap { fill: var(--ink); }
+.c104-spot { fill: var(--glow); opacity: 0; }
+.slide.active .c104-spot { animation: c104-spot 1.5s ease-out forwards 3.9s; }
+@keyframes c104-spot { to { opacity: .35; } }
+.c104-cap { fill: var(--ink); font: italic 19px var(--serif); text-anchor: middle; }
+@media (max-width: 600px) { .c104-lab { font-size: 23px; } .c104-cap { font-size: 25px; } }
+
+/* c104-crowd: ten thousand instructers against one father */
+.c104-fig { fill: var(--ink-soft); opacity: 0; }
+.slide.active .c104-fig { animation: c104-figin .4s ease-out forwards; animation-delay: calc(var(--k) * .25s + .3s); }
+@keyframes c104-figin { to { opacity: .5; } }
+.c104-big { fill: var(--ink); }
+.c104-boy { fill: var(--accent-hot); }
+.c104-halo { fill: var(--accent); opacity: 0; }
+.slide.active .c104-halo { animation: c104-halo 1.6s ease-out forwards 2.6s; }
+@keyframes c104-halo { to { opacity: .2; } }
+.c104-father { opacity: 0; }
+.slide.active .c104-father { animation: c104-in 1s ease-out forwards 2.4s; }
+.c104-t { fill: var(--ink-soft); font: italic 20px var(--serif); text-anchor: middle; }
+.c104-t.hot { fill: var(--accent-hot); font: 700 20px var(--sans); }
+.c104-s { fill: var(--ink); font: 700 16px var(--sans); text-anchor: middle; }
+@media (max-width: 600px) { .c104-t, .c104-t.hot { font-size: 27px; } .c104-s { font-size: 22px; } }
+</style>
+</head>
+<body>
+<main class="deck" id="deck">
+
+<!-- ======================= OPENING ======================= -->
+<section class="slide title">
+  <div class="inner">
+    <div class="emblem rise"></div>
+    <h1 class="rise" style="--d:1">1 Corinthians 4</h1>
+    <p class="sub rise" style="--d:3">Faithful stewards, and the fathers they never had</p>
+    <p class="tag rise" style="--d:5">Paul finishes his answer to a church of show-offs. God hands out the jobs; the only thing required is faithfulness. And then he speaks like a father, not like a judge.</p>
+  </div>
+</section>
+
+<section class="slide watch">
+  <div class="inner">
+    <h2 class="rise">Things to watch for</h2>
+    <p class="lede rise" style="--d:1">Keep these questions in the back of your mind as we read. We'll come back to every one of them at the end.</p>
+    <ol class="seeds">
+      <li class="step"><span class="topic">Stewards</span><span class="seed-q">What is required in a steward?</span></li>
+      <li class="step"><span class="topic">Judging</span><span class="seed-q">Why should we judge nothing before the time?</span></li>
+      <li class="step"><span class="topic">Pride</span><span class="seed-q">What do you have that you did not receive?</span></li>
+      <li class="step"><span class="topic">The apostles</span><span class="seed-q">How did the world treat the apostles?</span></li>
+      <li class="step"><span class="topic">Fathers</span><span class="seed-q">What did the Corinthians lack, though they had ten thousand instructers?</span></li>
+      <li class="step"><span class="topic">Power</span><span class="seed-q">Where is the kingdom of God?</span></li>
+    </ol>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise">Where we are in 1 Corinthians</h2>
+    <div class="c104-where rise" style="--d:1" role="img" aria-label="First Corinthians has sixteen chapters. Chapters 1 to 4: a church that picked sides. Chapters 5 and 6: sin inside the church. Chapter 7: marriage. Chapters 8 to 10: food offered to idols. Chapters 11 to 14: gatherings and gifts. Chapter 15: the resurrection. Chapter 16: the collection. We are in chapter 4, the last chapter about picking sides.">
+      <i class="done">1</i><i class="done">2</i><i class="done">3</i><i class="here">4</i><i>5</i><i>6</i><i>7</i><i>8</i><i>9</i><i>10</i><i>11</i><i>12</i><i>13</i><i>14</i><i>15</i><i>16</i>
+      <span class="now" style="--s:4">Picking sides</span><span style="--s:2">Sin inside</span><span class="sm" style="--s:1">Marry</span><span style="--s:3">Idol food</span><span style="--s:4">Gatherings, gifts</span><span class="sm" style="--s:1">Risen</span><span class="sm" style="--s:1">Gift</span>
+    </div>
+    <p class="note rise" style="--d:2">The Corinthians had picked favorite teachers: <em>“I am of Paul; and I of Apollos.”</em> In chapter 3 Paul said God does the growing. Now he gets personal: how a servant of God should be seen, how proud they've become, and what he wants for them.</p>
+    <p class="note step">Read this chapter alone and it still stands: be faithful, leave the final verdict to the Lord, stay humble, and find a father in the faith.</p>
+  </div>
+</section>
+
+<!-- ======================= PART ONE: STEWARDS ======================= -->
+<section class="slide part">
+  <div class="inner">
+    <p class="part-n rise">Part one</p>
+    <h2 class="rise" style="--d:1">Stewards, and the Judge</h2>
+    <p class="range rise" style="--d:2">Verses 1–5</p>
+    <div class="rule"></div>
+    <p class="hook rise" style="--d:4">You were handed something that isn't yours. Be faithful with it, and let the Lord have the last word on how you did.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="1-2" data-hl="stewards of the mysteries of God|it is required in stewards, that a man be found faithful"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise">A steward holds another man's keys</h2>
+    <div class="stage">
+      <svg viewBox="0 0 720 300" style="max-height:42vh" role="img" aria-label="A steward's key ring with four tags hanging from it: the gospel, your hours, your money, and the men beside you. The keys belong to the master; they are handed to the steward.">
+        <text class="c104-keytop c104-p" style="--k:0" x="360" y="26">the Master's keys, handed to you</text>
+        <circle class="c104-ring c104-p" style="--k:0" cx="360" cy="84" r="40"/>
+        <g class="c104-p" style="--k:1"><path class="c104-cord" d="M335 116 L140 176"/><g class="c104-tag c104-swing" style="--k:0"><circle cx="140" cy="176" r="7"/><rect x="82" y="190" width="116" height="62" rx="10"/><text x="140" y="217">the</text><text x="140" y="239">gospel</text></g></g>
+        <g class="c104-p" style="--k:2"><path class="c104-cord" d="M352 120 L290 176"/><g class="c104-tag c104-swing" style="--k:1"><circle cx="290" cy="176" r="7"/><rect x="232" y="190" width="116" height="62" rx="10"/><text x="290" y="217">your</text><text x="290" y="239">hours</text></g></g>
+        <g class="c104-p" style="--k:3"><path class="c104-cord" d="M368 120 L430 176"/><g class="c104-tag c104-swing" style="--k:2"><circle cx="430" cy="176" r="7"/><rect x="372" y="190" width="116" height="62" rx="10"/><text x="430" y="217">your</text><text x="430" y="239">money</text></g></g>
+        <g class="c104-p" style="--k:4"><path class="c104-cord" d="M385 116 L580 176"/><g class="c104-tag c104-swing" style="--k:3"><circle cx="580" cy="176" r="7"/><rect x="518" y="190" width="124" height="62" rx="10"/><text x="580" y="217">the men</text><text x="580" y="239">beside you</text></g></g>
+        <text class="c104-keytop c104-p" style="--k:5" x="360" y="286">none of it is yours to keep. All of it is yours to manage.</text>
+      </svg>
+    </div>
+    <p class="note step">A <em>steward</em> ran a rich man's household: the money, the food, the staff. He owned none of it. His whole job was to handle another man's goods the way the owner would want. The <em>mysteries of God</em> are the truths once hidden and now shown in Christ: the gospel.</p>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="2" data-hl="it is required in stewards, that a man be found faithful"></blockquote>
+    <h2 class="rise" style="--d:1">What is required</h2>
+    <ul class="nots">
+      <li class="step"><span class="k">talented</span><span class="why">God never asked for a gifted steward</span></li>
+      <li class="step"><span class="k">successful, or well known</span><span class="why">nobody gets graded on the size of the crowd</span></li>
+      <li class="step"><span class="k">never failed</span><span class="why">the faithful man gets up again</span></li>
+      <li class="step yes"><span class="k">found faithful</span><span class="why">there, doing the job, and doing it straight</span></li>
+    </ul>
+    <p class="note step">That is a standard a man with a rough past can meet by tomorrow morning. Show up. Do what you said. Be the same man when nobody is checking.</p>
+    <blockquote class="quote step"><p>“He that is faithful in that which is least is faithful also in much: and he that is unjust in the least is unjust also in much.”</p><cite>Luke 16:10</cite></blockquote>
+  </div>
+</section>
+
+<section class="slide verse" data-v="3-5" data-hl="it is a very small thing that I should be judged of you|he that judgeth me is the Lord|judge nothing before the time|will bring to light the hidden things of darkness|then shall every man have praise of God"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise">Three courts</h2>
+    <div class="c104-courts">
+      <div><b>Other people<small>“judged of you, or of man's judgment”</small></b><span class="track"><span class="fill" style="--w:22%;--k:0">a very small thing</span></span></div>
+      <div><b>My own conscience<small>“I know nothing by myself”</small></b><span class="track"><span class="fill" style="--w:52%;--k:1">clear, yet “not hereby justified”</span></span></div>
+      <div class="final"><b>The Lord<small>“he that judgeth me is the Lord”</small></b><span class="track"><span class="fill" style="--w:100%;--k:2">the verdict that counts</span></span></div>
+    </div>
+    <p class="note step">Paul isn't saying nobody can ever say a hard word to him. He is saying that other men's opinion of him isn't the final word. For a man trying to live down his record, that is freedom: the people who wrote you off don't get the last say.</p>
+    <p class="note step">He doesn't trust his own verdict either. A clear conscience feels good, but <em>I know nothing by myself; yet am I not hereby justified</em>. A man can be wrong about himself in both directions. Only the Lord sees all of it.</p>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise" style="--d:1">Wait for the One who sees it all</h2>
+    <div class="daybreak">
+      <div class="rise" style="--d:2"><i>now</i><b>Hidden</b><p>Motives, secrets, what's really in a man's heart. We can't see it in each other.</p></div>
+      <div class="step"><i>when the Lord comes</i><b>Brought to light</b><p>The <em>hidden things of darkness</em> and the <em>counsels of the hearts</em> come out. Nothing is lost on Him.</p></div>
+      <div class="step"><i>then</i><b>Praise of God</b><p><em>Then shall every man have praise of God.</em> Every man who belongs to Him, for whatever was done right.</p></div>
+    </div>
+    <p class="note step"><em>Judge nothing</em> doesn't mean call wrong right. It means don't pass the final verdict on a man's heart; that isn't your job. And don't carry your own secrets in the dark waiting for judgment day. Bring them out now.</p>
+    <blockquote class="quote step"><p>“If we confess our sins, he is faithful and just to forgive us our sins, and to cleanse us from all unrighteousness.”</p><cite>1 John 1:9</cite></blockquote>
+  </div>
+</section>
+
+<!-- ======================= PART TWO: THE PRIDE OF CORINTH ======================= -->
+<section class="slide part">
+  <div class="inner">
+    <p class="part-n rise">Part two</p>
+    <h2 class="rise" style="--d:1">Puffed up</h2>
+    <p class="range rise" style="--d:2">Verses 6–13</p>
+    <div class="rule"></div>
+    <p class="hook rise" style="--d:4">The Corinthians thought they had arrived. The men who brought them the gospel were living on the edge of ruin.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="6-7" data-hl="that no one of you be puffed up for one against another|who maketh thee to differ from another|what hast thou that thou didst not receive"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="7" data-hl="what hast thou that thou didst not receive"></blockquote>
+    <h2 class="rise" style="--d:1">Everything was a gift</h2>
+    <div class="asks">
+      <div class="ask step"><span class="q">“Your mind, your skill, your strength?”</span><span class="stamp">received</span><span class="ctx">You didn't pick the head you were born with, or the people who taught you a trade.</span></div>
+      <div class="ask step"><span class="q">“Your second chance?”</span><span class="stamp">received</span><span class="ctx">Nobody earned it. Someone gave it, and so did God.</span></div>
+      <div class="ask step"><span class="q">“Your days clean?”</span><span class="stamp">received</span><span class="ctx">You did the work of getting up each day, and God held you up while you did it. Say thank you before you say “look at me.”</span></div>
+    </div>
+    <p class="note step"><em>Puffed up</em> is like a balloon: full of air, no weight. Pride says <em>I made myself</em>. The truth cuts two ways. You can't boast, because it was all given. And you can't be crushed by what you've lost, because what's been given can be given again.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="8-10" data-hl="Now ye are full, now ye are rich, ye have reigned as kings without us|we are made a spectacle unto the world, and to angels, and to men|We are fools for Christ’s sake, but ye are wise in Christ"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise">Paul turns up the sarcasm</h2>
+    <div class="c104-vs">
+      <span class="h rise" style="--d:1">the Corinthians, in their own eyes</span><span class="h r rise" style="--d:1">the apostles, in plain fact</span>
+      <span class="a rise" style="--d:2"><i>full</i>, <i>rich</i>, reigning like kings</span><span class="b step"><i>last in line</i>, appointed to death</span>
+      <span class="a rise" style="--d:3"><i>wise</i> in Christ</span><span class="b step"><i>fools</i> for Christ's sake</span>
+      <span class="a rise" style="--d:4"><i>strong</i></span><span class="b step"><i>weak</i></span>
+      <span class="a rise" style="--d:5"><i>honourable</i></span><span class="b step"><i>despised</i></span>
+    </div>
+    <p class="note step">He is being sharp on purpose. They talked like men who had already won. <em>I would to God ye did reign</em>, he says: if you really had, we could share it. But the people who brought you Jesus are still on the road, hungry.</p>
+    <p class="note step">Notice what he does <em>not</em> do. He isn't bitter about it, and he doesn't ask them to pity him. He wants them back down on the ground with the rest of us.</p>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise">A spectacle</h2>
+    <div class="stage">
+      <svg viewBox="0 0 720 320" style="max-height:44vh" role="img" aria-label="Four apostles stand on a small stage at the bottom. Around them rise three rings of seats: first men, then angels, then the world, all watching. A spectacle unto the world, and to angels, and to men.">
+        <circle class="c104-spot" cx="360" cy="290" r="60"/>
+        <circle class="c104-seat m" style="--k:0;--j:0" cx="212.3" cy="274.0" r="5.5"/>
+        <circle class="c104-seat m" style="--k:0;--j:1" cx="216.1" cy="257.6" r="5.5"/>
+        <circle class="c104-seat m" style="--k:0;--j:2" cx="221.7" cy="241.9" r="5.5"/>
+        <circle class="c104-seat m" style="--k:0;--j:3" cx="229.1" cy="226.8" r="5.5"/>
+        <circle class="c104-seat m" style="--k:0;--j:4" cx="238.0" cy="212.7" r="5.5"/>
+        <circle class="c104-seat m" style="--k:0;--j:5" cx="248.5" cy="199.6" r="5.5"/>
+        <circle class="c104-seat m" style="--k:0;--j:6" cx="260.4" cy="187.8" r="5.5"/>
+        <circle class="c104-seat m" style="--k:0;--j:7" cx="273.5" cy="177.4" r="5.5"/>
+        <circle class="c104-seat m" style="--k:0;--j:8" cx="287.7" cy="168.6" r="5.5"/>
+        <circle class="c104-seat m" style="--k:0;--j:9" cx="302.8" cy="161.3" r="5.5"/>
+        <circle class="c104-seat m" style="--k:0;--j:10" cx="318.7" cy="155.8" r="5.5"/>
+        <circle class="c104-seat m" style="--k:0;--j:11" cx="335.0" cy="152.1" r="5.5"/>
+        <circle class="c104-seat m" style="--k:0;--j:12" cx="351.6" cy="150.2" r="5.5"/>
+        <circle class="c104-seat m" style="--k:0;--j:13" cx="368.4" cy="150.2" r="5.5"/>
+        <circle class="c104-seat m" style="--k:0;--j:14" cx="385.0" cy="152.1" r="5.5"/>
+        <circle class="c104-seat m" style="--k:0;--j:15" cx="401.3" cy="155.8" r="5.5"/>
+        <circle class="c104-seat m" style="--k:0;--j:16" cx="417.2" cy="161.3" r="5.5"/>
+        <circle class="c104-seat m" style="--k:0;--j:17" cx="432.3" cy="168.6" r="5.5"/>
+        <circle class="c104-seat m" style="--k:0;--j:18" cx="446.5" cy="177.4" r="5.5"/>
+        <circle class="c104-seat m" style="--k:0;--j:19" cx="459.6" cy="187.8" r="5.5"/>
+        <circle class="c104-seat m" style="--k:0;--j:20" cx="471.5" cy="199.6" r="5.5"/>
+        <circle class="c104-seat m" style="--k:0;--j:21" cx="482.0" cy="212.7" r="5.5"/>
+        <circle class="c104-seat m" style="--k:0;--j:22" cx="490.9" cy="226.8" r="5.5"/>
+        <circle class="c104-seat m" style="--k:0;--j:23" cx="498.3" cy="241.9" r="5.5"/>
+        <circle class="c104-seat m" style="--k:0;--j:24" cx="503.9" cy="257.6" r="5.5"/>
+        <circle class="c104-seat m" style="--k:0;--j:25" cx="507.7" cy="274.0" r="5.5"/>
+        <circle class="c104-seat" style="--k:1;--j:0" cx="158.1" cy="264.4" r="5.5"/>
+        <circle class="c104-seat" style="--k:1;--j:1" cx="161.6" cy="248.4" r="5.5"/>
+        <circle class="c104-seat" style="--k:1;--j:2" cx="166.3" cy="232.8" r="5.5"/>
+        <circle class="c104-seat" style="--k:1;--j:3" cx="172.3" cy="217.6" r="5.5"/>
+        <circle class="c104-seat" style="--k:1;--j:4" cx="179.5" cy="202.9" r="5.5"/>
+        <circle class="c104-seat" style="--k:1;--j:5" cx="187.8" cy="188.8" r="5.5"/>
+        <circle class="c104-seat" style="--k:1;--j:6" cx="197.2" cy="175.4" r="5.5"/>
+        <circle class="c104-seat" style="--k:1;--j:7" cx="207.7" cy="162.8" r="5.5"/>
+        <circle class="c104-seat" style="--k:1;--j:8" cx="219.1" cy="151.1" r="5.5"/>
+        <circle class="c104-seat" style="--k:1;--j:9" cx="231.4" cy="140.4" r="5.5"/>
+        <circle class="c104-seat" style="--k:1;--j:10" cx="244.5" cy="130.6" r="5.5"/>
+        <circle class="c104-seat" style="--k:1;--j:11" cx="258.4" cy="122.0" r="5.5"/>
+        <circle class="c104-seat" style="--k:1;--j:12" cx="272.9" cy="114.4" r="5.5"/>
+        <circle class="c104-seat" style="--k:1;--j:13" cx="288.0" cy="108.1" r="5.5"/>
+        <circle class="c104-seat" style="--k:1;--j:14" cx="303.5" cy="102.9" r="5.5"/>
+        <circle class="c104-seat" style="--k:1;--j:15" cx="319.4" cy="99.1" r="5.5"/>
+        <circle class="c104-seat" style="--k:1;--j:16" cx="335.5" cy="96.5" r="5.5"/>
+        <circle class="c104-seat" style="--k:1;--j:17" cx="351.8" cy="95.2" r="5.5"/>
+        <circle class="c104-seat" style="--k:1;--j:18" cx="368.2" cy="95.2" r="5.5"/>
+        <circle class="c104-seat" style="--k:1;--j:19" cx="384.5" cy="96.5" r="5.5"/>
+        <circle class="c104-seat" style="--k:1;--j:20" cx="400.6" cy="99.1" r="5.5"/>
+        <circle class="c104-seat" style="--k:1;--j:21" cx="416.5" cy="102.9" r="5.5"/>
+        <circle class="c104-seat" style="--k:1;--j:22" cx="432.0" cy="108.1" r="5.5"/>
+        <circle class="c104-seat" style="--k:1;--j:23" cx="447.1" cy="114.4" r="5.5"/>
+        <circle class="c104-seat" style="--k:1;--j:24" cx="461.6" cy="122.0" r="5.5"/>
+        <circle class="c104-seat" style="--k:1;--j:25" cx="475.5" cy="130.6" r="5.5"/>
+        <circle class="c104-seat" style="--k:1;--j:26" cx="488.6" cy="140.4" r="5.5"/>
+        <circle class="c104-seat" style="--k:1;--j:27" cx="500.9" cy="151.1" r="5.5"/>
+        <circle class="c104-seat" style="--k:1;--j:28" cx="512.3" cy="162.8" r="5.5"/>
+        <circle class="c104-seat" style="--k:1;--j:29" cx="522.8" cy="175.4" r="5.5"/>
+        <circle class="c104-seat" style="--k:1;--j:30" cx="532.2" cy="188.8" r="5.5"/>
+        <circle class="c104-seat" style="--k:1;--j:31" cx="540.5" cy="202.9" r="5.5"/>
+        <circle class="c104-seat" style="--k:1;--j:32" cx="547.7" cy="217.6" r="5.5"/>
+        <circle class="c104-seat" style="--k:1;--j:33" cx="553.7" cy="232.8" r="5.5"/>
+        <circle class="c104-seat" style="--k:1;--j:34" cx="558.4" cy="248.4" r="5.5"/>
+        <circle class="c104-seat" style="--k:1;--j:35" cx="561.9" cy="264.4" r="5.5"/>
+        <circle class="c104-seat" style="--k:2;--j:0" cx="103.9" cy="254.9" r="5.5"/>
+        <circle class="c104-seat" style="--k:2;--j:1" cx="107.3" cy="238.7" r="5.5"/>
+        <circle class="c104-seat" style="--k:2;--j:2" cx="111.7" cy="222.8" r="5.5"/>
+        <circle class="c104-seat" style="--k:2;--j:3" cx="117.1" cy="207.2" r="5.5"/>
+        <circle class="c104-seat" style="--k:2;--j:4" cx="123.5" cy="192.0" r="5.5"/>
+        <circle class="c104-seat" style="--k:2;--j:5" cx="130.8" cy="177.2" r="5.5"/>
+        <circle class="c104-seat" style="--k:2;--j:6" cx="139.1" cy="162.9" r="5.5"/>
+        <circle class="c104-seat" style="--k:2;--j:7" cx="148.2" cy="149.2" r="5.5"/>
+        <circle class="c104-seat" style="--k:2;--j:8" cx="158.2" cy="136.1" r="5.5"/>
+        <circle class="c104-seat" style="--k:2;--j:9" cx="169.0" cy="123.6" r="5.5"/>
+        <circle class="c104-seat" style="--k:2;--j:10" cx="180.6" cy="111.8" r="5.5"/>
+        <circle class="c104-seat" style="--k:2;--j:11" cx="192.9" cy="100.8" r="5.5"/>
+        <circle class="c104-seat" style="--k:2;--j:12" cx="205.8" cy="90.6" r="5.5"/>
+        <circle class="c104-seat" style="--k:2;--j:13" cx="219.4" cy="81.3" r="5.5"/>
+        <circle class="c104-seat" style="--k:2;--j:14" cx="233.6" cy="72.8" r="5.5"/>
+        <circle class="c104-seat" style="--k:2;--j:15" cx="248.3" cy="65.2" r="5.5"/>
+        <circle class="c104-seat" style="--k:2;--j:16" cx="263.4" cy="58.6" r="5.5"/>
+        <circle class="c104-seat" style="--k:2;--j:17" cx="278.9" cy="53.0" r="5.5"/>
+        <circle class="c104-seat" style="--k:2;--j:18" cx="294.7" cy="48.3" r="5.5"/>
+        <circle class="c104-seat" style="--k:2;--j:19" cx="310.8" cy="44.7" r="5.5"/>
+        <circle class="c104-seat" style="--k:2;--j:20" cx="327.1" cy="42.1" r="5.5"/>
+        <circle class="c104-seat" style="--k:2;--j:21" cx="343.5" cy="40.5" r="5.5"/>
+        <circle class="c104-seat" style="--k:2;--j:22" cx="360.0" cy="40.0" r="5.5"/>
+        <circle class="c104-seat" style="--k:2;--j:23" cx="376.5" cy="40.5" r="5.5"/>
+        <circle class="c104-seat" style="--k:2;--j:24" cx="392.9" cy="42.1" r="5.5"/>
+        <circle class="c104-seat" style="--k:2;--j:25" cx="409.2" cy="44.7" r="5.5"/>
+        <circle class="c104-seat" style="--k:2;--j:26" cx="425.3" cy="48.3" r="5.5"/>
+        <circle class="c104-seat" style="--k:2;--j:27" cx="441.1" cy="53.0" r="5.5"/>
+        <circle class="c104-seat" style="--k:2;--j:28" cx="456.6" cy="58.6" r="5.5"/>
+        <circle class="c104-seat" style="--k:2;--j:29" cx="471.7" cy="65.2" r="5.5"/>
+        <circle class="c104-seat" style="--k:2;--j:30" cx="486.4" cy="72.8" r="5.5"/>
+        <circle class="c104-seat" style="--k:2;--j:31" cx="500.6" cy="81.3" r="5.5"/>
+        <circle class="c104-seat" style="--k:2;--j:32" cx="514.2" cy="90.6" r="5.5"/>
+        <circle class="c104-seat" style="--k:2;--j:33" cx="527.1" cy="100.8" r="5.5"/>
+        <circle class="c104-seat" style="--k:2;--j:34" cx="539.4" cy="111.8" r="5.5"/>
+        <circle class="c104-seat" style="--k:2;--j:35" cx="551.0" cy="123.6" r="5.5"/>
+        <circle class="c104-seat" style="--k:2;--j:36" cx="561.8" cy="136.1" r="5.5"/>
+        <circle class="c104-seat" style="--k:2;--j:37" cx="571.8" cy="149.2" r="5.5"/>
+        <circle class="c104-seat" style="--k:2;--j:38" cx="580.9" cy="162.9" r="5.5"/>
+        <circle class="c104-seat" style="--k:2;--j:39" cx="589.2" cy="177.2" r="5.5"/>
+        <circle class="c104-seat" style="--k:2;--j:40" cx="596.5" cy="192.0" r="5.5"/>
+        <circle class="c104-seat" style="--k:2;--j:41" cx="602.9" cy="207.2" r="5.5"/>
+        <circle class="c104-seat" style="--k:2;--j:42" cx="608.3" cy="222.8" r="5.5"/>
+        <circle class="c104-seat" style="--k:2;--j:43" cx="612.7" cy="238.7" r="5.5"/>
+        <circle class="c104-seat" style="--k:2;--j:44" cx="616.1" cy="254.9" r="5.5"/>
+        <rect class="c104-floor" x="290" y="288" width="140" height="22" rx="4"/>
+        <g class="c104-ap">
+          <circle cx="318" cy="262" r="8"/><path d="M308 272 h20 l3 16 h-26 z"/>
+          <circle cx="345" cy="262" r="8"/><path d="M335 272 h20 l3 16 h-26 z"/>
+          <circle cx="375" cy="262" r="8"/><path d="M365 272 h20 l3 16 h-26 z"/>
+          <circle cx="402" cy="262" r="8"/><path d="M392 272 h20 l3 16 h-26 z"/>
+        </g>
+        <text class="c104-lab" style="--k:2" x="360" y="72">the world</text>
+        <text class="c104-lab" style="--k:1" x="360" y="127">angels</text>
+        <text class="c104-lab" style="--k:0" x="360" y="182">men</text>
+      </svg>
+    </div>
+    <p class="note step"><em>Spectacle</em> is the Greek word for the theatre: a show with the whole crowd watching. Paul seems to mean the parade in the Roman arena, where men <em>appointed to death</em> came out last, to be looked at. That's how he describes serving Jesus: a life exposed, in front of everybody, and not a glamorous one.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="11-13" data-hl="we both hunger, and thirst, and are naked, and are buffeted|working with our own hands|being reviled, we bless|the filth of the world, and are the offscouring of all things"></section>
+
+<section class="slide ex ex-name">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="13" data-hl="the offscouring of all things"></blockquote>
+    <h2 class="rise" style="--d:1">What the world called them</h2>
+    <div class="rename">
+      <span class="old rise" style="--d:2">the offscouring of all things</span>
+      <span class="arrow step">→</span>
+      <span class="new step">a son of God</span>
+      <span class="gloss step"><em>Filth</em> and <em>offscouring</em> are what you scrape off a dirty dish. Paul says the world treated him like that: beaten, hungry, no certain home, and still working with his own hands. If you've ever been treated like garbage, because of your record or your last name, he has been where you are. And God's name for you is not the world's.</span>
+    </div>
+    <blockquote class="quote step"><p>“Behold, what manner of love the Father hath bestowed upon us, that we should be called the sons of God: therefore the world knoweth us not, because it knew him not.”</p><cite>1 John 3:1</cite></blockquote>
+    <p class="note step">And watch how he answers the abuse: <em>being reviled, we bless; being persecuted, we suffer it; being defamed, we intreat.</em> Not payback. That's meat, not milk.</p>
+  </div>
+</section>
+
+<!-- ======================= PART THREE: A FATHER'S WORD ======================= -->
+<section class="slide part">
+  <div class="inner">
+    <p class="part-n rise">Part three</p>
+    <h2 class="rise" style="--d:1">Fathers</h2>
+    <p class="range rise" style="--d:2">Verses 14–21</p>
+    <div class="rule"></div>
+    <p class="hook rise" style="--d:4">A church can have all the teachers in the world and still be short of one thing: a father.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="14-17" data-hl="I write not these things to shame you, but as my beloved sons I warn you|though ye have ten thousand instructers in Christ, yet have ye not many fathers|in Christ Jesus I have begotten you through the gospel|be ye followers of me|Timotheus, who is my beloved son, and faithful in the Lord"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise">Ten thousand instructers, few fathers</h2>
+    <div class="stage">
+      <svg viewBox="0 0 720 300" style="max-height:44vh" role="img" aria-label="On the left, a big crowd of grey figures: ten thousand instructers. On the right, one man standing beside a boy, glowing warm: a father. For though ye have ten thousand instructers in Christ, yet have ye not many fathers.">
+        <text class="c104-t" x="215" y="30">ten thousand instructers</text>
+        <g class="c104-fig" style="--k:0.0"><circle cx="34" cy="58" r="5.5"/><path d="M27 67 h14 l2 22 h-18 z"/></g>
+        <g class="c104-fig" style="--k:0.2"><circle cx="69" cy="58" r="5.5"/><path d="M62 67 h14 l2 22 h-18 z"/></g>
+        <g class="c104-fig" style="--k:0.4"><circle cx="104" cy="58" r="5.5"/><path d="M97 67 h14 l2 22 h-18 z"/></g>
+        <g class="c104-fig" style="--k:0.6"><circle cx="139" cy="58" r="5.5"/><path d="M132 67 h14 l2 22 h-18 z"/></g>
+        <g class="c104-fig" style="--k:0.8"><circle cx="174" cy="58" r="5.5"/><path d="M167 67 h14 l2 22 h-18 z"/></g>
+        <g class="c104-fig" style="--k:1.0"><circle cx="209" cy="58" r="5.5"/><path d="M202 67 h14 l2 22 h-18 z"/></g>
+        <g class="c104-fig" style="--k:1.2"><circle cx="244" cy="58" r="5.5"/><path d="M237 67 h14 l2 22 h-18 z"/></g>
+        <g class="c104-fig" style="--k:1.4"><circle cx="279" cy="58" r="5.5"/><path d="M272 67 h14 l2 22 h-18 z"/></g>
+        <g class="c104-fig" style="--k:1.6"><circle cx="314" cy="58" r="5.5"/><path d="M307 67 h14 l2 22 h-18 z"/></g>
+        <g class="c104-fig" style="--k:1.8"><circle cx="349" cy="58" r="5.5"/><path d="M342 67 h14 l2 22 h-18 z"/></g>
+        <g class="c104-fig" style="--k:2.0"><circle cx="384" cy="58" r="5.5"/><path d="M377 67 h14 l2 22 h-18 z"/></g>
+        <g class="c104-fig" style="--k:2.2"><circle cx="419" cy="58" r="5.5"/><path d="M412 67 h14 l2 22 h-18 z"/></g>
+        <g class="c104-fig" style="--k:1.2"><circle cx="34" cy="102" r="5.5"/><path d="M27 111 h14 l2 22 h-18 z"/></g>
+        <g class="c104-fig" style="--k:1.4"><circle cx="69" cy="102" r="5.5"/><path d="M62 111 h14 l2 22 h-18 z"/></g>
+        <g class="c104-fig" style="--k:1.6"><circle cx="104" cy="102" r="5.5"/><path d="M97 111 h14 l2 22 h-18 z"/></g>
+        <g class="c104-fig" style="--k:1.8"><circle cx="139" cy="102" r="5.5"/><path d="M132 111 h14 l2 22 h-18 z"/></g>
+        <g class="c104-fig" style="--k:2.0"><circle cx="174" cy="102" r="5.5"/><path d="M167 111 h14 l2 22 h-18 z"/></g>
+        <g class="c104-fig" style="--k:2.2"><circle cx="209" cy="102" r="5.5"/><path d="M202 111 h14 l2 22 h-18 z"/></g>
+        <g class="c104-fig" style="--k:2.4"><circle cx="244" cy="102" r="5.5"/><path d="M237 111 h14 l2 22 h-18 z"/></g>
+        <g class="c104-fig" style="--k:2.6"><circle cx="279" cy="102" r="5.5"/><path d="M272 111 h14 l2 22 h-18 z"/></g>
+        <g class="c104-fig" style="--k:2.8"><circle cx="314" cy="102" r="5.5"/><path d="M307 111 h14 l2 22 h-18 z"/></g>
+        <g class="c104-fig" style="--k:3.0"><circle cx="349" cy="102" r="5.5"/><path d="M342 111 h14 l2 22 h-18 z"/></g>
+        <g class="c104-fig" style="--k:3.2"><circle cx="384" cy="102" r="5.5"/><path d="M377 111 h14 l2 22 h-18 z"/></g>
+        <g class="c104-fig" style="--k:3.4"><circle cx="419" cy="102" r="5.5"/><path d="M412 111 h14 l2 22 h-18 z"/></g>
+        <g class="c104-fig" style="--k:2.4"><circle cx="34" cy="146" r="5.5"/><path d="M27 155 h14 l2 22 h-18 z"/></g>
+        <g class="c104-fig" style="--k:2.6"><circle cx="69" cy="146" r="5.5"/><path d="M62 155 h14 l2 22 h-18 z"/></g>
+        <g class="c104-fig" style="--k:2.8"><circle cx="104" cy="146" r="5.5"/><path d="M97 155 h14 l2 22 h-18 z"/></g>
+        <g class="c104-fig" style="--k:3.0"><circle cx="139" cy="146" r="5.5"/><path d="M132 155 h14 l2 22 h-18 z"/></g>
+        <g class="c104-fig" style="--k:3.2"><circle cx="174" cy="146" r="5.5"/><path d="M167 155 h14 l2 22 h-18 z"/></g>
+        <g class="c104-fig" style="--k:3.4"><circle cx="209" cy="146" r="5.5"/><path d="M202 155 h14 l2 22 h-18 z"/></g>
+        <g class="c104-fig" style="--k:3.6"><circle cx="244" cy="146" r="5.5"/><path d="M237 155 h14 l2 22 h-18 z"/></g>
+        <g class="c104-fig" style="--k:3.8"><circle cx="279" cy="146" r="5.5"/><path d="M272 155 h14 l2 22 h-18 z"/></g>
+        <g class="c104-fig" style="--k:4.0"><circle cx="314" cy="146" r="5.5"/><path d="M307 155 h14 l2 22 h-18 z"/></g>
+        <g class="c104-fig" style="--k:4.2"><circle cx="349" cy="146" r="5.5"/><path d="M342 155 h14 l2 22 h-18 z"/></g>
+        <g class="c104-fig" style="--k:4.4"><circle cx="384" cy="146" r="5.5"/><path d="M377 155 h14 l2 22 h-18 z"/></g>
+        <g class="c104-fig" style="--k:4.6"><circle cx="419" cy="146" r="5.5"/><path d="M412 155 h14 l2 22 h-18 z"/></g>
+        <g class="c104-fig" style="--k:3.6"><circle cx="34" cy="190" r="5.5"/><path d="M27 199 h14 l2 22 h-18 z"/></g>
+        <g class="c104-fig" style="--k:3.8"><circle cx="69" cy="190" r="5.5"/><path d="M62 199 h14 l2 22 h-18 z"/></g>
+        <g class="c104-fig" style="--k:4.0"><circle cx="104" cy="190" r="5.5"/><path d="M97 199 h14 l2 22 h-18 z"/></g>
+        <g class="c104-fig" style="--k:4.2"><circle cx="139" cy="190" r="5.5"/><path d="M132 199 h14 l2 22 h-18 z"/></g>
+        <g class="c104-fig" style="--k:4.4"><circle cx="174" cy="190" r="5.5"/><path d="M167 199 h14 l2 22 h-18 z"/></g>
+        <g class="c104-fig" style="--k:4.6"><circle cx="209" cy="190" r="5.5"/><path d="M202 199 h14 l2 22 h-18 z"/></g>
+        <g class="c104-fig" style="--k:4.8"><circle cx="244" cy="190" r="5.5"/><path d="M237 199 h14 l2 22 h-18 z"/></g>
+        <g class="c104-fig" style="--k:5.0"><circle cx="279" cy="190" r="5.5"/><path d="M272 199 h14 l2 22 h-18 z"/></g>
+        <g class="c104-fig" style="--k:5.2"><circle cx="314" cy="190" r="5.5"/><path d="M307 199 h14 l2 22 h-18 z"/></g>
+        <g class="c104-fig" style="--k:5.4"><circle cx="349" cy="190" r="5.5"/><path d="M342 199 h14 l2 22 h-18 z"/></g>
+        <g class="c104-fig" style="--k:5.6"><circle cx="384" cy="190" r="5.5"/><path d="M377 199 h14 l2 22 h-18 z"/></g>
+        <g class="c104-fig" style="--k:5.8"><circle cx="419" cy="190" r="5.5"/><path d="M412 199 h14 l2 22 h-18 z"/></g>
+        <g class="c104-fig" style="--k:4.8"><circle cx="34" cy="234" r="5.5"/><path d="M27 243 h14 l2 22 h-18 z"/></g>
+        <g class="c104-fig" style="--k:5.0"><circle cx="69" cy="234" r="5.5"/><path d="M62 243 h14 l2 22 h-18 z"/></g>
+        <g class="c104-fig" style="--k:5.2"><circle cx="104" cy="234" r="5.5"/><path d="M97 243 h14 l2 22 h-18 z"/></g>
+        <g class="c104-fig" style="--k:5.4"><circle cx="139" cy="234" r="5.5"/><path d="M132 243 h14 l2 22 h-18 z"/></g>
+        <g class="c104-fig" style="--k:5.6"><circle cx="174" cy="234" r="5.5"/><path d="M167 243 h14 l2 22 h-18 z"/></g>
+        <g class="c104-fig" style="--k:5.8"><circle cx="209" cy="234" r="5.5"/><path d="M202 243 h14 l2 22 h-18 z"/></g>
+        <g class="c104-fig" style="--k:6.0"><circle cx="244" cy="234" r="5.5"/><path d="M237 243 h14 l2 22 h-18 z"/></g>
+        <g class="c104-fig" style="--k:6.2"><circle cx="279" cy="234" r="5.5"/><path d="M272 243 h14 l2 22 h-18 z"/></g>
+        <g class="c104-fig" style="--k:6.4"><circle cx="314" cy="234" r="5.5"/><path d="M307 243 h14 l2 22 h-18 z"/></g>
+        <g class="c104-fig" style="--k:6.6"><circle cx="349" cy="234" r="5.5"/><path d="M342 243 h14 l2 22 h-18 z"/></g>
+        <g class="c104-fig" style="--k:6.8"><circle cx="384" cy="234" r="5.5"/><path d="M377 243 h14 l2 22 h-18 z"/></g>
+        <g class="c104-fig" style="--k:7.0"><circle cx="419" cy="234" r="5.5"/><path d="M412 243 h14 l2 22 h-18 z"/></g>
+        <text class="c104-s" x="215" y="288">they know the lesson</text>
+        <g class="c104-father">
+          <text class="c104-t hot" x="590" y="30">not many fathers</text>
+          <circle class="c104-halo" cx="590" cy="150" r="96"/>
+          <circle class="c104-big" cx="570" cy="104" r="17"/><path class="c104-big" d="M547 126 h46 l10 120 h-66 z"/>
+          <circle class="c104-boy" cx="628" cy="156" r="11"/><path class="c104-boy" d="M614 170 h28 l6 76 h-40 z"/>
+          <path d="M594 152 L612 166" fill="none" stroke-width="8" stroke-linecap="round" style="stroke:var(--ink)"/>
+          <text class="c104-s" x="590" y="288" style="fill:var(--accent-hot)">he knows you</text>
+        </g>
+      </svg>
+    </div>
+    <p class="note step"><em>Instructers</em> is the Greek <span class="gk">paidagogos</span>: the household slave who walked a boy to school and kept him in line. A needed job, but it was discipline and delivery, not fathering. Teachers can fill your head. A <em>father</em> is the one who stays.</p>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise">If you never had one</h2>
+    <p class="note rise" style="--d:1">A lot of men in this room never had a dad who stayed, or taught them how to be a man. Paul says a spiritual father can be that, and that he was one: <em>in Christ Jesus I have begotten you through the gospel.</em> He brought them to Jesus, and he didn't leave.</p>
+    <div class="columns">
+      <div class="col law step"><p class="who">An instructor gives</p><h3>Information</h3><p>What to read, what to avoid, what the verse means.</p></div>
+      <div class="col grace step"><p class="who">A father gives</p><h3>Himself</h3><p>His time, his phone number, his example. Correction without shame: <em>I write not these things to shame you, but as my beloved sons I warn you.</em></p></div>
+    </div>
+    <blockquote class="quote step"><p>“As ye know how we exhorted and comforted and charged every one of you, as a father doth his children,”</p><cite>1 Thessalonians 2:11</cite></blockquote>
+    <p class="note step">Jesus said <em>“call no man your father upon the earth”</em> (Matthew 23:9). That's about grabbing a religious title for status. Paul's meaning is the opposite: a man who earns the word by walking with you.</p>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <div class="split">
+      <div class="stage">
+        <svg data-world viewBox="425 170 210 170" data-towns="Ephesus*:l, Corinth!:r, Philippi, Thessalonica, Athens" role="img" aria-label="A map of the Aegean. Timothy's road runs from Ephesus on the coast of Asia, by way of Macedonia, down to Corinth in Greece.">
+          <path class="map-route" data-via="Ephesus, @27.5 38.5, @27.0 39.4, Troas, @26.0 39.7, @25.6 40.05, @25.2 40.75, @24.5 40.84, Neapolis, Philippi, Thessalonica, Berea, Corinth"/>
+        </svg>
+      </div>
+      <div>
+        <h2 class="rise" style="--d:1">Timothy: a son sent ahead</h2>
+        <p class="note rise" style="--d:2">Paul was writing from Ephesus. He had already sent <em>Timotheus</em> ahead by way of Macedonia (Acts 19:22), and Timothy would remind them of Paul's ways.</p>
+        <blockquote class="quote step"><p>“But ye know the proof of him, that, as a son with the father, he hath served with me in the gospel.”</p><cite>Philippians 2:22</cite></blockquote>
+        <p class="note step">Timothy had a father in the faith, and he became one himself. That's how the chain works. <em>Be ye followers of me</em> means: watch how I live and copy it, as I copy Christ.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise">Find one. Then be one.</h2>
+    <ol class="timeline" aria-label="Three steps: find a man a few steps ahead of you, ask him to walk with you honestly, then turn around and help the man behind you.">
+      <li class="lit" style="--k:0"><b>Look</b><span>Who is a few steps ahead of me?</span><small>a man who's still faithful</small></li>
+      <li class="lit" style="--k:1"><b>Ask</b><span>Walk with me, and I'll be honest</span><small>say the true thing</small></li>
+      <li class="lit" style="--k:2"><b>Turn around</b><span>Help the man behind you</span><small>Timothy did</small></li>
+    </ol>
+    <p class="note step">Don't wait until you feel ready. A man a year clean is a father to the man who's a week clean. The church is full of men who needed this and never asked. Ask today.</p>
+    <blockquote class="quote step"><p>“Unto Timothy, my own son in the faith: Grace, mercy, and peace, from God our Father and Jesus Christ our Lord.”</p><cite>1 Timothy 1:2</cite></blockquote>
+  </div>
+</section>
+
+<section class="slide verse" data-v="18-21" data-hl="Now some are puffed up|the kingdom of God is not in word, but in power|shall I come unto you with a rod, or in love, and in the spirit of meekness"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="20" data-hl="the kingdom of God is not in word, but in power"></blockquote>
+    <h2 class="rise" style="--d:1">Talk, or power?</h2>
+    <div class="columns">
+      <div class="col law step"><p class="who">The puffed-up</p><h3>Word</h3><p><em>The speech of them which are puffed up</em>: big claims, big plans, big talk, and a life that hasn't moved.</p></div>
+      <div class="col grace step"><p class="who">The kingdom</p><h3>Power</h3><p>What God actually does in a man: a temper that cools, a hand that stops, a husband who stays. It shows up on an ordinary Tuesday.</p></div>
+    </div>
+    <blockquote class="quote step"><p>“For our gospel came not unto you in word only, but also in power, and in the Holy Ghost, and in much assurance; as ye know what manner of men we were among you for your sake.”</p><cite>1 Thessalonians 1:5</cite></blockquote>
+    <p class="note step">Paul will judge them by the power, not the speeches. It's a good rule for a man to use on himself. Talking a good recovery isn't the same as living one. Don't be impressed by words, yours or anyone's. Look at the life.</p>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise">“What will ye?”</h2>
+    <div class="columns">
+      <div class="col law rise" style="--d:1"><p class="who">One choice</p><h3>A rod</h3><p>A father's discipline. If they stay puffed up and divided, Paul will come and deal with it plainly.</p></div>
+      <div class="col grace rise" style="--d:2"><p class="who">The other</p><h3>Love, and meekness</h3><p><em>In love, and in the spirit of meekness.</em> That is what he wants. The choice is theirs.</p></div>
+    </div>
+    <p class="note step">Notice who gets to pick: <em>what will ye?</em> A good father doesn't enjoy the rod. He lays it down the moment he can. God works with us the same way, and He does it as a Father, not a judge.</p>
+    <p class="note step">Next, 1 Corinthians 5: a hard case of sin inside the church, and what to do about it.</p>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise">1 Corinthians 4, on a work day</h2>
+    <ol class="checks">
+      <li class="step"><span class="tick">1</span><q>it is required in stewards, that a man be found faithful</q><small>Do the job in front of you today the way the Owner would want it done. Be on time, and be honest.</small><b>4:2</b></li>
+      <li class="step"><span class="tick">2</span><q>he that judgeth me is the Lord</q><small>If someone's opinion of your past is crushing you, hand it to the Lord. He has the last word.</small><b>4:4</b></li>
+      <li class="step"><span class="tick">3</span><q>what hast thou that thou didst not receive?</q><small>Say thank you once today, out loud, before you take credit.</small><b>4:7</b></li>
+      <li class="step"><span class="tick">4</span><q>in Christ Jesus I have begotten you through the gospel</q><small>Ask one older believer to walk with you. Look for one younger man you can help.</small><b>4:15</b></li>
+    </ol>
+    <blockquote class="quote step"><p>“Well done, thou good and faithful servant: thou hast been faithful over a few things, I will make thee ruler over many things: enter thou into the joy of thy lord.”</p><cite>Matthew 25:21</cite></blockquote>
+  </div>
+</section>
+
+<!-- ======================= CLOSING ======================= -->
+<section class="slide remember">
+  <div class="inner">
+    <h2 class="rise">Points to remember</h2>
+    <ol class="seeds">
+      <li class="step"><span class="topic">Stewards</span><span class="seed-q">“A man be found faithful” <cite>4:2</cite></span><span class="take">We handle what belongs to God. He doesn't ask for talent or a clean record, only faithfulness.</span></li>
+      <li class="step"><span class="topic">Judging</span><span class="seed-q">“Judge nothing before the time” <cite>4:5</cite></span><span class="take">The Lord sees the heart and gives the last verdict. Don't carry others' opinions, or your own secrets, in the dark.</span></li>
+      <li class="step"><span class="topic">Pride</span><span class="seed-q">“What hast thou that thou didst not receive?” <cite>4:7</cite></span><span class="take">Everything we have is a gift. There's no room to boast, and no reason to despair.</span></li>
+      <li class="step"><span class="topic">The apostles</span><span class="seed-q">“The filth of the world… the offscouring of all things” <cite>4:13</cite></span><span class="take">The world treated them like garbage. They answered with a blessing, and God called them His.</span></li>
+      <li class="step"><span class="topic">Fathers</span><span class="seed-q">“Ten thousand instructers… not many fathers” <cite>4:15</cite></span><span class="take">Teachers give information; a father gives himself. Find one, and become one.</span></li>
+      <li class="step"><span class="topic">Power</span><span class="seed-q">“The kingdom of God is not in word, but in power” <cite>4:20</cite></span><span class="take">Look for the changed life, not the big talk.</span></li>
+    </ol>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 1 of 6</p>
+      <span class="topic">Stewards</span>
+      <h2>What is required in a steward?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="1"></blockquote>
+      <blockquote class="quote step" data-q="2"></blockquote>
+      <blockquote class="quote step"><p>“He that is faithful in that which is least is faithful also in much: and he that is unjust in the least is unjust also in much.”</p><cite>Luke 16:10</cite></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>That he be found faithful. A steward handles what belongs to another, so the question is whether he does it the way the owner wants. Not how gifted he is, but how faithful.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 2 of 6</p>
+      <span class="topic">Judging</span>
+      <h2>Why should we judge nothing before the time?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="4"></blockquote>
+      <blockquote class="quote step" data-q="5"></blockquote>
+      <blockquote class="quote step"><p>“So then every one of us shall give account of himself to God.”</p><cite>Romans 14:12</cite></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>Because the Lord is the judge, and only He sees the hidden things and the counsels of the heart. When He comes, He will bring it all to light, and every man who is His will have praise from God.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 3 of 6</p>
+      <span class="topic">Pride</span>
+      <h2>What do you have that you did not receive?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="6"></blockquote>
+      <blockquote class="quote step" data-q="7"></blockquote>
+      <blockquote class="quote step"><p>“For by grace are ye saved through faith; and that not of yourselves: it is the gift of God: Not of works, lest any man should boast.”</p><cite>Ephesians 2:8–9</cite></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>Nothing. Everything we have was given to us, so there's nothing to boast about, and no reason to be puffed up against another man.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 4 of 6</p>
+      <span class="topic">The apostles</span>
+      <h2>How did the world treat the apostles?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="9"></blockquote>
+      <blockquote class="quote step" data-q="11"></blockquote>
+      <blockquote class="quote step" data-q="13"></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>Like a spectacle, and like garbage: hungry, beaten, with no certain home. And they answered with blessing. In Christ they were still God's beloved sons.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 5 of 6</p>
+      <span class="topic">Fathers</span>
+      <h2>What did the Corinthians lack, though they had ten thousand instructers?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="14"></blockquote>
+      <blockquote class="quote step" data-q="15"></blockquote>
+      <blockquote class="quote step" data-q="17"></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>Fathers. Plenty of people could teach them. Paul had begotten them in Christ through the gospel, and he stayed. A spiritual father walks with you, warns you out of love, and shows you how to live.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 6 of 6</p>
+      <span class="topic">Power</span>
+      <h2>Where is the kingdom of God?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="19"></blockquote>
+      <blockquote class="quote step" data-q="20"></blockquote>
+      <blockquote class="quote step" data-q="21"></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>Not in word, but in power. The proof of God's kingdom in a man is not his talk but his changed life.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide prayer">
+  <div class="inner">
+    <div class="emblem rise"></div>
+    <h2 class="rise" style="--d:1">Prayer requests</h2>
+    <p class="ask-line rise" style="--d:2">What can we pray about for you today?</p>
+    <blockquote class="quote rise" style="--d:4"><p>“Being confident of this very thing, that he which hath begun a good work in you will perform it until the day of Jesus Christ:”</p><cite>Philippians 1:6</cite></blockquote>
+  </div>
+</section>
+
+</main>
+
+<script>
+// King James Version, 1 Corinthians chapter 4
+const V = {
+  1: "Let a man so account of us, as of the ministers of Christ, and stewards of the mysteries of God.",
+  2: "Moreover it is required in stewards, that a man be found faithful.",
+  3: "But with me it is a very small thing that I should be judged of you, or of man’s judgment: yea, I judge not mine own self.",
+  4: "For I know nothing by myself; yet am I not hereby justified: but he that judgeth me is the Lord.",
+  5: "Therefore judge nothing before the time, until the Lord come, who both will bring to light the hidden things of darkness, and will make manifest the counsels of the hearts: and then shall every man have praise of God.",
+  6: "And these things, brethren, I have in a figure transferred to myself and to Apollos for your sakes; that ye might learn in us not to think of men above that which is written, that no one of you be puffed up for one against another.",
+  7: "For who maketh thee to differ from another? and what hast thou that thou didst not receive? now if thou didst receive it, why dost thou glory, as if thou hadst not received it?",
+  8: "Now ye are full, now ye are rich, ye have reigned as kings without us: and I would to God ye did reign, that we also might reign with you.",
+  9: "For I think that God hath set forth us the apostles last, as it were appointed to death: for we are made a spectacle unto the world, and to angels, and to men.",
+  10: "We are fools for Christ’s sake, but ye are wise in Christ; we are weak, but ye are strong; ye are honourable, but we are despised.",
+  11: "Even unto this present hour we both hunger, and thirst, and are naked, and are buffeted, and have no certain dwellingplace;",
+  12: "And labour, working with our own hands: being reviled, we bless; being persecuted, we suffer it:",
+  13: "Being defamed, we intreat: we are made as the filth of the world, and are the offscouring of all things unto this day.",
+  14: "I write not these things to shame you, but as my beloved sons I warn you.",
+  15: "For though ye have ten thousand instructers in Christ, yet have ye not many fathers: for in Christ Jesus I have begotten you through the gospel.",
+  16: "Wherefore I beseech you, be ye followers of me.",
+  17: "For this cause have I sent unto you Timotheus, who is my beloved son, and faithful in the Lord, who shall bring you into remembrance of my ways which be in Christ, as I teach every where in every church.",
+  18: "Now some are puffed up, as though I would not come to you.",
+  19: "But I will come to you shortly, if the Lord will, and will know, not the speech of them which are puffed up, but the power.",
+  20: "For the kingdom of God is not in word, but in power.",
+  21: "What will ye? shall I come unto you with a rod, or in love, and in the spirit of meekness?"
+};
+const BOOK = "1 Corinthians 4";
+</script>
+<script src="../assets/deck.js"></script>
+</body>
+</html>

@@ -11636,5 +11636,97 @@ window.STUDIES = [
       },
       "big": "Paul preached only Christ crucified, in weakness, so that faith would stand on God's power. Every believer has the Spirit who teaches the things of God."
     }
+  },
+  {
+    "id": "1-corinthians-03",
+    "type": "chapter",
+    "book": "1 Corinthians",
+    "ch": 3,
+    "date": "2026-10-31",
+    "title": "1 Corinthians 3",
+    "sub": "God gives the growth, and the fire tests the work",
+    "about": "Paul answers a church that picked favorite teachers: God makes things grow, Jesus is the only foundation, and every believer's work will be tried by fire.",
+    "tags": [
+      "Spiritual growth",
+      "Foundation",
+      "Rewards",
+      "Church unity",
+      "The Holy Spirit",
+      "Humility"
+    ],
+    "url": "studies/1-corinthians-03.html",
+    "overview": {
+      "where": "Corinth, the church Paul planted, written from Ephesus",
+      "when": "About AD 55, about three years after Paul left Corinth",
+      "people": [
+        "paul",
+        "apollos",
+        "simon-peter",
+        "jesus",
+        "holy-spirit"
+      ],
+      "places": [
+        "corinth",
+        "ephesus",
+        "alexandria",
+        "temple"
+      ],
+      "story": [
+        "The Corinthians are saved but still carnal, babes in Christ fed with milk, and full of envy and strife over who to follow (1–4).",
+        "Paul planted, Apollos watered, but God gave the increase. They are labourers together with God, and each will receive his own reward (5–9).",
+        "Jesus Christ is the only foundation. Whatever a man builds on it, gold or stubble, the fire will try; a burned work means loss, but the man himself is saved (10–15).",
+        "Ye are the temple of God, with the Spirit living in you; whoever wrecks the church answers to God (16–17).",
+        "Let no man glory in men: all things are yours, and ye are Christ's, and Christ is God's (18–23)."
+      ],
+      "key": {
+        "ref": "1 Corinthians 3:11",
+        "text": "For other foundation can no man lay than that is laid, which is Jesus Christ."
+      },
+      "big": "God does the growing, Jesus is the only foundation, and a believer's work will be tried by fire. What burns is lost, but the man stays saved. So build with care, and glory in no man."
+    }
+  },
+  {
+    "id": "1-corinthians-04",
+    "type": "chapter",
+    "book": "1 Corinthians",
+    "ch": 4,
+    "date": "2026-10-31",
+    "title": "1 Corinthians 4",
+    "sub": "Faithful stewards, and the fathers they never had",
+    "about": "Paul finishes his answer to a proud church: be a faithful steward, leave the final verdict to the Lord, and find a spiritual father.",
+    "tags": [
+      "Faithfulness",
+      "Humility",
+      "Pride",
+      "Spiritual fathers",
+      "Judging",
+      "Power"
+    ],
+    "url": "studies/1-corinthians-04.html",
+    "overview": {
+      "where": "Corinth, the church Paul planted, written from Ephesus",
+      "when": "About AD 55",
+      "people": [
+        "paul",
+        "apollos",
+        "timothy",
+        "jesus"
+      ],
+      "places": [
+        "corinth",
+        "ephesus"
+      ],
+      "story": [
+        "Paul and Apollos are stewards of God's mysteries, and the one thing required is faithfulness. Men's verdicts, and even his own, are small; the Lord is the judge (1–5).",
+        "What do you have that you did not receive? The Corinthians boast like kings while the apostles are hungry, beaten and treated as the offscouring of all things (6–13).",
+        "Paul writes as a father, not to shame but to warn. They have ten thousand instructers but not many fathers; he sends Timothy to remind them of his ways (14–17).",
+        "The kingdom of God is not in word, but in power. Will he come with a rod, or in love and meekness? (18–21)."
+      ],
+      "key": {
+        "ref": "1 Corinthians 4:2",
+        "text": "Moreover it is required in stewards, that a man be found faithful."
+      },
+      "big": "God asks His servants for faithfulness, not show. The Lord alone judges, everything we have is a gift, and the church needs fathers, men who walk with others and live the power, not just the talk."
+    }
   }
 ];

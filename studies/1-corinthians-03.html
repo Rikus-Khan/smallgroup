@@ -1,0 +1,647 @@
+<!doctype html>
+<html lang="en" data-theme="stone">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>1 Corinthians 3</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="../assets/fonts.css">
+<link rel="stylesheet" href="../assets/deck.css">
+<link rel="stylesheet" href="../assets/themes.css">
+<style>
+/* c103-where: where we are in 1 Corinthians. Sixteen chapter cells (i), .done and .here, over seven parts (span, --s) */
+.c103-where { display: grid; grid-template-columns: repeat(16, 1fr); gap: 4px; margin: .3em 0 1em; }
+.c103-where i { font: 600 clamp(.75rem, .65rem + .4vw, 1.05rem)/1 var(--sans); font-style: normal; text-align: center; padding: .45em 0; border-radius: 6px; background: var(--surface); border: 1px solid var(--line); color: var(--ink-soft); }
+.c103-where i.done { background: color-mix(in srgb, var(--accent) 16%, var(--surface)); color: var(--ink); }
+.c103-where i.here { background: var(--accent); border-color: var(--accent); color: var(--on-accent); box-shadow: 0 0 0 4px color-mix(in srgb, var(--accent) 25%, transparent); }
+.slide.active .c103-where i.here { animation: c103-here 2.4s 1s ease-in-out infinite; }
+@keyframes c103-here { 50% { box-shadow: 0 0 0 8px color-mix(in srgb, var(--accent) 10%, transparent); } }
+.c103-where span { grid-column: span var(--s, 1); border-top: 3px solid var(--line-strong); padding-top: .35em; text-align: center; font-size: clamp(.68rem, .62rem + .3vw, .98rem); line-height: 1.2; color: var(--ink-soft); overflow: hidden; }
+.c103-where span.now { border-top-color: var(--accent); color: var(--ink); font-weight: 700; }
+@media (max-width: 600px) { .c103-where span.sm { visibility: hidden; } }
+
+/* c103-grow: planted, watered, and God gave the increase */
+.c103-p { opacity: 0; }
+.slide.active .c103-p { animation: c103-in .9s ease-out forwards; animation-delay: calc(var(--k) * 1.3s + .4s); }
+@keyframes c103-in { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: none; } }
+.c103-soil { fill: var(--surface-2); stroke: var(--line-strong); stroke-width: 2; }
+.c103-man { fill: var(--ink); }
+.c103-seed { fill: var(--accent-hot); }
+.c103-stem { fill: none; stroke: var(--accent); stroke-width: 6; stroke-linecap: round; }
+.c103-leaf { fill: var(--accent); }
+.c103-ear { fill: var(--accent-hot); }
+.c103-can { fill: var(--cool); }
+.c103-drop { fill: var(--cool); opacity: 0; }
+.slide.active .c103-drop { animation: c103-drip 1.2s ease-in infinite; animation-delay: calc(2s + var(--w, 0s)); }
+@keyframes c103-drip { 0% { opacity: 1; transform: translateY(0); } 100% { opacity: 0; transform: translateY(70px); } }
+.c103-halo { fill: var(--accent); opacity: .16; }
+.slide.active .c103-halo { animation: c103-pulse 2.6s ease-in-out infinite 3.4s; }
+@keyframes c103-pulse { 50% { opacity: .34; } }
+.c103-grew { transform-box: fill-box; transform-origin: 50% 100%; transform: scaleY(.15); }
+.slide.active .c103-grew { animation: c103-grow 2.4s ease-out forwards; animation-delay: 3.1s; }
+@keyframes c103-grow { to { transform: scaleY(1); } }
+.c103-name { fill: var(--ink-soft); font: italic 20px var(--serif); text-anchor: middle; }
+.c103-name.hot { fill: var(--accent-hot); font: 700 20px var(--sans); }
+.c103-sub { fill: var(--ink); font: 700 17px var(--sans); text-anchor: middle; }
+@media (max-width: 600px) { .c103-name { font-size: 27px; } .c103-name.hot { font-size: 27px; } .c103-sub { font-size: 24px; } }
+
+/* c103-fire: two builders on one foundation; the fire tries both. On .c103-go the right tower burns, the left one comes through, and the builder stands clear, saved, yet so as by fire */
+.c103-found { fill: var(--surface-2); stroke: var(--line-strong); stroke-width: 3; }
+.c103-ftxt { fill: var(--ink); font: 700 22px var(--serif); text-anchor: middle; }
+.c103-fsub { fill: var(--ink-soft); font: 15px var(--sans); text-anchor: middle; }
+.c103-blk { stroke-width: 2.5; }
+.c103-blk.gold { fill: var(--glow); stroke: var(--accent-hot); }
+.c103-blk.silver { fill: var(--line-strong); stroke: var(--ink-soft); }
+.c103-blk.gem { fill: var(--cool); stroke: var(--ink-soft); }
+.c103-blk.wood { fill: var(--leather); stroke: var(--leather-light); }
+.c103-blk.hay { fill: var(--warm); stroke: var(--line-strong); stroke-dasharray: 8 5; opacity: .85; }
+.c103-blk.stubble { fill: var(--line); stroke: var(--ink-soft); stroke-dasharray: 3 5; opacity: .85; }
+.c103-bt { font: 700 18px var(--sans); text-anchor: middle; pointer-events: none; }
+.c103-bt.on-gold { fill: var(--on-glow); }
+.c103-bt.dark { fill: var(--ink); }
+.c103-bt.light { fill: var(--bg); }
+.c103-burn { transform-box: fill-box; transform-origin: 50% 100%; transition: transform 1.2s ease-in, opacity 1.2s ease-in; transition-delay: calc(2s + var(--b, 0) * .55s); }
+.slide:has(.c103-go.on) .c103-burn { transform: translateY(18px) scaleY(.05); opacity: 0; }
+.c103-ash { fill: var(--line-strong); opacity: 0; transition: opacity 1s ease; }
+.slide:has(.c103-go.on) .c103-ash { opacity: .9; transition-delay: 4.2s; }
+.c103-flame { fill: var(--accent-hot); opacity: 0; transform-box: fill-box; transform-origin: 50% 100%; }
+.c103-flame.b { fill: var(--danger); }
+.slide:has(.c103-go.on) .c103-flame { animation: c103-lick .7s ease-in-out infinite alternate, c103-fade 5.5s linear forwards; animation-delay: var(--w, 0s), 0s; }
+@keyframes c103-lick { from { transform: scale(1, 1); } to { transform: scale(.82, 1.28); } }
+@keyframes c103-fade { 0% { opacity: 0; } 10% { opacity: .95; } 78% { opacity: .95; } 100% { opacity: 0; } }
+.c103-tower-l { transition: filter .8s ease; }
+.c103-ok { opacity: 0; transition: opacity 1s ease; }
+.slide:has(.c103-go.on) .c103-ok { opacity: 1; transition-delay: 4.8s; }
+.c103-ok-l { fill: var(--accent-hot); font: 700 19px var(--sans); text-anchor: middle; }
+.c103-loss-l { fill: var(--danger); font: 700 19px var(--sans); text-anchor: middle; }
+.c103-glow-l { fill: var(--glow); opacity: 0; transition: opacity 1s ease; }
+.slide:has(.c103-go.on) .c103-glow-l { opacity: .32; transition-delay: 4.5s; }
+.c103-who { fill: var(--ink); }
+.c103-saved { fill: var(--accent); opacity: .22; }
+.c103-tag { fill: var(--ink-soft); font: 700 17px var(--sans); text-anchor: middle; letter-spacing: .04em; }
+.c103-cap { fill: var(--accent-hot); font: italic 22px var(--serif); text-anchor: middle; }
+@media (max-width: 600px) { .c103-bt { font-size: 22px; } .c103-ftxt { font-size: 26px; } .c103-fsub { font-size: 19px; } .c103-ok-l, .c103-loss-l, .c103-tag { font-size: 22px; } .c103-cap { font-size: 27px; } }
+
+/* c103-rings: you, in Christ, in God; and all things are yours */
+.c103-ring { fill: none; stroke-width: 3; opacity: 0; }
+.slide.active .c103-ring { animation: c103-ringin 1s ease-out forwards; animation-delay: calc(var(--k) * 1.2s + .3s); }
+@keyframes c103-ringin { from { opacity: 0; transform: scale(.8); } to { opacity: 1; transform: none; } }
+.c103-ring { transform-box: fill-box; transform-origin: 50% 50%; }
+.c103-ring.r1 { stroke: var(--accent-hot); fill: color-mix(in srgb, var(--accent) 22%, transparent); }
+.c103-ring.r2 { stroke: var(--accent); fill: color-mix(in srgb, var(--accent) 9%, transparent); }
+.c103-ring.r3 { stroke: var(--line-strong); }
+.c103-rt { font: 700 20px var(--sans); text-anchor: middle; opacity: 0; }
+.slide.active .c103-rt { animation: c103-in .8s ease-out forwards; animation-delay: calc(var(--k) * 1.2s + .8s); }
+.c103-rt.you { fill: var(--ink); }
+.c103-rt.chr { fill: var(--accent-hot); }
+.c103-rt.god { fill: var(--ink-soft); }
+.c103-chip { opacity: 0; }
+.slide.active .c103-chip { animation: c103-in .7s ease-out forwards; animation-delay: calc(3.8s + var(--k) * .25s); }
+.c103-chip rect { fill: var(--surface); stroke: var(--line-strong); stroke-width: 1.5; }
+.c103-chip text { fill: var(--ink); font: 17px var(--sans); text-anchor: middle; }
+.c103-tie { stroke: var(--line-strong); stroke-width: 1.5; stroke-dasharray: 4 4; fill: none; opacity: 0; }
+.slide.active .c103-tie { animation: c103-ringin .6s ease-out forwards; animation-delay: calc(3.8s + var(--k) * .25s); }
+@media (max-width: 600px) { .c103-rt { font-size: 24px; } .c103-chip text { font-size: 21px; } }
+</style>
+</head>
+<body>
+<main class="deck" id="deck">
+
+<!-- ======================= OPENING ======================= -->
+<section class="slide title">
+  <div class="inner">
+    <div class="emblem rise"></div>
+    <h1 class="rise" style="--d:1">1 Corinthians 3</h1>
+    <p class="sub rise" style="--d:3">God gives the growth, and the fire tests the work</p>
+    <p class="tag rise" style="--d:5">Two preachers, one church that picked sides. Paul's answer: neither of us is the point. Build on Jesus, build with care, and remember the building is God's.</p>
+  </div>
+</section>
+
+<section class="slide watch">
+  <div class="inner">
+    <h2 class="rise">Things to watch for</h2>
+    <p class="lede rise" style="--d:1">Keep these questions in the back of your mind as we read. We'll come back to every one of them at the end.</p>
+    <ol class="seeds">
+      <li class="step"><span class="topic">Milk and meat</span><span class="seed-q">Why couldn't Paul feed these believers solid food?</span></li>
+      <li class="step"><span class="topic">Growth</span><span class="seed-q">Who makes a believer grow?</span></li>
+      <li class="step"><span class="topic">Foundation</span><span class="seed-q">What is the one foundation?</span></li>
+      <li class="step"><span class="topic">The fire</span><span class="seed-q">What happens to a believer's work when the fire tries it?</span></li>
+      <li class="step"><span class="topic">The temple</span><span class="seed-q">Whose temple are we?</span></li>
+      <li class="step"><span class="topic">Boasting</span><span class="seed-q">Why should no man glory in men?</span></li>
+    </ol>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise">Where we are in 1 Corinthians</h2>
+    <div class="c103-where rise" style="--d:1" role="img" aria-label="First Corinthians has sixteen chapters. Chapters 1 to 4: a church that picked sides. Chapters 5 and 6: sin inside the church. Chapter 7: marriage. Chapters 8 to 10: food offered to idols. Chapters 11 to 14: gatherings and gifts. Chapter 15: the resurrection. Chapter 16: the collection. We are in chapter 3.">
+      <i class="done">1</i><i class="done">2</i><i class="here">3</i><i>4</i><i>5</i><i>6</i><i>7</i><i>8</i><i>9</i><i>10</i><i>11</i><i>12</i><i>13</i><i>14</i><i>15</i><i>16</i>
+      <span class="now" style="--s:4">Picking sides</span><span style="--s:2">Sin inside</span><span class="sm" style="--s:1">Marry</span><span style="--s:3">Idol food</span><span style="--s:4">Gatherings, gifts</span><span class="sm" style="--s:1">Risen</span><span class="sm" style="--s:1">Gift</span>
+    </div>
+    <p class="note rise" style="--d:2">Corinth was a rough, rich port, and its church was a mess. Chapters 1 to 4 deal with the first problem: believers lining up behind their favorite teacher. <em>“I am of Paul; and I of Apollos.”</em> Chapter 3 is Paul's answer.</p>
+    <p class="note step">Read this chapter alone and it still stands: God does the growing, Jesus is the only foundation, and the fire tests what we build. Chapter 4 finishes the thought.</p>
+  </div>
+</section>
+
+<!-- ======================= PART ONE: MILK ======================= -->
+<section class="slide part">
+  <div class="inner">
+    <p class="part-n rise">Part one</p>
+    <h2 class="rise" style="--d:1">Babes, still</h2>
+    <p class="range rise" style="--d:2">Verses 1–4</p>
+    <div class="rule"></div>
+    <p class="hook rise" style="--d:4">A newborn on milk is a joy. A grown man still on a bottle has stopped growing.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="1-4" data-hl="babes in Christ|I have fed you with milk, and not with meat|there is among you envying, and strife, and divisions|I am of Paul; and another, I am of Apollos"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise">Three years and still milk</h2>
+    <ol class="timeline" aria-label="About AD 50, Paul reaches Corinth and stays a year and a half. About AD 52, he leaves. About AD 55, he writes this letter from Ephesus, and they are still on milk.">
+      <li style="--k:0"><b>about AD 50</b><span>Paul comes to Corinth</span><small>Acts 18</small></li>
+      <li style="--k:1"><b>a year and six months</b><span>He teaches them daily</span><small>Acts 18:11</small></li>
+      <li style="--k:2"><b>about AD 52</b><span>He leaves; Apollos follows</span><small>Acts 18:24–19:1</small></li>
+      <li class="lit" style="--k:3"><b>about AD 55</b><span>This letter: still babes</span><small>“ye are yet carnal”</small></li>
+    </ol>
+    <blockquote class="quote step"><p>“As newborn babes, desire the sincere milk of the word, that ye may grow thereby:”</p><cite>1 Peter 2:2</cite></blockquote>
+    <p class="note step">Milk is not a bad thing. Every new believer starts there, and God is glad to feed him. The trouble is <em>staying</em> there.</p>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise">“Carnal” does not mean “lost”</h2>
+    <div class="columns">
+      <div class="col law rise" style="--d:1"><p class="who">Walking as men</p><h3>Carnal</h3><p>Living by the old appetite: <em>envying, strife, divisions</em>. Jealous of the next man's gift, keeping score, picking a side.</p></div>
+      <div class="col grace step"><p class="who">Still true of them</p><h3>Brethren, in Christ</h3><p>Paul calls them <em>brethren</em> and <em>babes in Christ</em>. They are saved. They are just acting like they aren't.</p></div>
+    </div>
+    <p class="note step">That is good news for a man who fell yesterday. Acting like the old man does not turn you back into him. God still says <em>in Christ</em>. But it does cost you: it keeps you on milk, and it keeps the church fighting.</p>
+    <blockquote class="quote step"><p>“For every one that useth milk is unskilful in the word of righteousness: for he is a babe. But strong meat belongeth to them that are of full age, even those who by reason of use have their senses exercised to discern both good and evil.”</p><cite>Hebrews 5:13–14</cite></blockquote>
+    <p class="note step"><em>Meat</em> comes by <em>use</em>: you grow by doing, a day at a time. Not by a feeling, and not by one big night.</p>
+  </div>
+</section>
+
+<!-- ======================= PART TWO: PLANTED ======================= -->
+<section class="slide part">
+  <div class="inner">
+    <p class="part-n rise">Part two</p>
+    <h2 class="rise" style="--d:1">God gave the increase</h2>
+    <p class="range rise" style="--d:2">Verses 5–9</p>
+    <div class="rule"></div>
+    <p class="hook rise" style="--d:4">Paul and Apollos are not rival teams. They are two hands on the same field.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="5-6" data-hl="ministers by whom ye believed|I have planted, Apollos watered; but God gave the increase"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise">Planted, watered, grown</h2>
+    <div class="stage">
+      <svg viewBox="0 0 720 300" style="max-height:44vh" role="img" aria-label="Three pictures in a field. First, a man drops a seed into the ground: Paul planted. Second, a man tips a watering can over the small sprout: Apollos watered. Third, a tall plant with an ear of grain stands in the light: God gave the increase.">
+        <rect class="c103-soil" x="0" y="240" width="720" height="60"/>
+        <g class="c103-p" style="--k:0">
+          <text class="c103-name" x="120" y="34">Paul planted</text>
+          <circle class="c103-man" cx="90" cy="112" r="14"/>
+          <path class="c103-man" d="M74 130 h32 l6 74 h-44 z"/>
+          <path d="M104 140 L146 190" fill="none" stroke-width="9" stroke-linecap="round" style="stroke:var(--ink)"/>
+          <ellipse class="c103-seed" cx="152" cy="238" rx="9" ry="6"/>
+          <text class="c103-sub" x="120" y="278" style="fill:var(--ink)">the seed goes in</text>
+        </g>
+        <g class="c103-p" style="--k:1">
+          <text class="c103-name" x="360" y="34">Apollos watered</text>
+          <path class="c103-stem" d="M360 240 v-40"/>
+          <ellipse class="c103-leaf" cx="346" cy="214" rx="14" ry="6" transform="rotate(-25 346 214)"/>
+          <ellipse class="c103-leaf" cx="376" cy="208" rx="14" ry="6" transform="rotate(25 376 208)"/>
+          <path class="c103-can" d="M270 96 h56 l8 36 h-72 z"/>
+          <path class="c103-can" d="M334 104 L366 88 L370 96 L336 118 z"/>
+          <path d="M270 100 q-26 4 -14 34" fill="none" stroke-width="6" style="stroke:var(--cool)"/>
+          <circle class="c103-drop" style="--w:0s" cx="366" cy="124" r="4"/>
+          <circle class="c103-drop" style="--w:.4s" cx="378" cy="118" r="4"/>
+          <circle class="c103-drop" style="--w:.8s" cx="358" cy="130" r="4"/>
+          <text class="c103-sub" x="360" y="278">the sprout drinks</text>
+        </g>
+        <g class="c103-p" style="--k:2">
+          <text class="c103-name hot" x="600" y="34">but God gave the increase</text>
+          <circle class="c103-halo" cx="600" cy="120" r="84"/>
+          <g class="c103-grew">
+            <path class="c103-stem" d="M600 240 v-140"/>
+            <ellipse class="c103-leaf" cx="574" cy="200" rx="26" ry="9" transform="rotate(-30 574 200)"/>
+            <ellipse class="c103-leaf" cx="626" cy="176" rx="26" ry="9" transform="rotate(30 626 176)"/>
+            <ellipse class="c103-leaf" cx="576" cy="150" rx="22" ry="8" transform="rotate(-30 576 150)"/>
+            <ellipse class="c103-ear" cx="600" cy="84" rx="11" ry="26"/>
+          </g>
+          <text class="c103-sub" x="600" y="278" style="fill:var(--accent-hot)">the life is His</text>
+        </g>
+      </svg>
+    </div>
+    <p class="note step">Paul planted the church in Corinth (Acts 18). Apollos came after and taught it more (Acts 18:24–28). Both mattered. Neither could make one thing grow.</p>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <div class="split">
+      <div class="stage">
+        <svg data-world viewBox="415 250 290 270" data-towns="Alexandria*:l, Ephesus:r, Corinth!:l, Athens:t" role="img" aria-label="A map of the eastern Mediterranean. Apollos' road runs from Alexandria in Egypt by sea to Ephesus, and then across the Aegean to Corinth in Greece, where Paul had planted the church.">
+          <path class="map-route" data-via="Alexandria, @29.5 33.8, @28.8 35.3, @27.4 35.8, @26.8 36.6, @26.0 37.45, @26.45 37.72, @26.6 37.95, @27.15 37.9, Ephesus"/>
+          <path class="map-route j2" data-via="Ephesus, @27.15 37.9, @26.6 37.95, @26.45 37.72, @26.0 37.45, @25.35 37.3, @24.3 37.4, Cenchrea, Corinth"/>
+        </svg>
+      </div>
+      <div>
+        <h2 class="rise" style="--d:1">Where Apollos came from</h2>
+        <p class="note rise" style="--d:2"><em>Apollos</em> was a Jew from Alexandria in Egypt, a great city of books and learning. A gifted speaker, “mighty in the scriptures” (Acts 18:24). He crossed the sea to Ephesus, and from there on to Corinth.</p>
+        <p class="note step">Paul had planted. Apollos came to water. Some in Corinth liked Paul's plain way better; some were dazzled by Apollos. Paul and Apollos were friends, and neither one asked for a fan club.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="slide verse" data-v="7-9" data-hl="neither is he that planteth any thing|every man shall receive his own reward according to his own labour|we are labourers together with God|ye are God’s husbandry, ye are God’s building"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise">One crew, one boss</h2>
+    <ul class="nots">
+      <li class="step"><span class="k">“Paul is better”</span><span class="why">Paul would be the first to say: I only planted</span></li>
+      <li class="step"><span class="k">“Apollos is better”</span><span class="why">he only watered</span></li>
+      <li class="step yes"><span class="k">God, who gives the increase</span><span class="why">the One who makes anything grow at all</span></li>
+    </ul>
+    <p class="note step"><em>Labourers together with God</em>, and <em>God's husbandry</em> (His farm), <em>God's building</em>. You are not the owner of your growth, and you do not have to be. You do your part: show up, plant, water. He does what only He can.</p>
+    <p class="note step">And <em>every man shall receive his own reward according to his own labour</em>. God sees the quiet work: the man who gets up and goes to the job, the man who sat with a hurting friend. Nobody's labor goes missing.</p>
+  </div>
+</section>
+
+<!-- ======================= PART THREE: FOUNDATION AND FIRE ======================= -->
+<section class="slide part">
+  <div class="inner">
+    <p class="part-n rise">Part three</p>
+    <h2 class="rise" style="--d:1">The foundation and the fire</h2>
+    <p class="range rise" style="--d:2">Verses 10–17</p>
+    <div class="rule"></div>
+    <p class="hook rise" style="--d:4">One foundation, already laid. And every man gets to choose what he builds on it.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="10-11" data-hl="as a wise masterbuilder, I have laid the foundation|let every man take heed how he buildeth thereupon|other foundation can no man lay than that is laid, which is Jesus Christ"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="11" data-hl="other foundation can no man lay than that is laid, which is Jesus Christ"></blockquote>
+    <h2 class="rise" style="--d:1">One foundation</h2>
+    <ul class="nots">
+      <li class="step"><span class="k">my clean days</span><span class="why">they are a good thing to build, but they are not what holds the house up</span></li>
+      <li class="step"><span class="k">my church record</span><span class="why">it can't hold a man up</span></li>
+      <li class="step"><span class="k">how bad I was, or how good</span><span class="why">neither one is the foundation</span></li>
+      <li class="step yes"><span class="k">Jesus Christ</span><span class="why">already laid: His death and rising for you</span></li>
+    </ul>
+    <p class="note step">A <em>masterbuilder</em> is the head builder. The foundation goes in first, and it has to be right, because everything stands on it. Paul laid it in Corinth by preaching Jesus. It was never something the Corinthians could improve.</p>
+    <blockquote class="quote step"><p>“Therefore thus saith the Lord God, Behold, I lay in Zion for a foundation a stone, a tried stone, a precious corner stone, a sure foundation: he that believeth shall not make haste.”</p><cite>Isaiah 28:16</cite></blockquote>
+  </div>
+</section>
+
+<section class="slide verse" data-v="12-15" data-hl="gold, silver, precious stones, wood, hay, stubble|the fire shall try every man’s work of what sort it is|he shall receive a reward|he shall suffer loss: but he himself shall be saved; yet so as by fire"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise">Tried by fire</h2>
+    <div class="stage">
+      <svg viewBox="64 130 592 260" style="max-height:50vh" role="img" aria-label="Two builders have built on the same foundation, Jesus Christ. The left tower is gold, silver and precious stones. The right tower is wood, hay and stubble. When the fire comes, the right tower burns down to ash and the left tower comes through shining. The builder of the burned tower walks out alive, saved, yet so as by fire.">
+        <ellipse class="c103-glow-l" cx="195" cy="225" rx="140" ry="88"/>
+        <g class="c103-tower-l">
+          <rect class="c103-blk gem" x="90" y="252" width="210" height="44" rx="4"/><text class="c103-bt dark" x="195" y="280" style="fill:var(--on-accent)">precious stones</text>
+          <rect class="c103-blk silver" x="90" y="208" width="210" height="44" rx="4"/><text class="c103-bt on-gold" x="195" y="236">silver</text>
+          <rect class="c103-blk gold" x="90" y="164" width="210" height="44" rx="4"/><text class="c103-bt on-gold" x="195" y="192">gold</text>
+        </g>
+        <g>
+          <rect class="c103-blk wood c103-burn" style="--b:0" x="420" y="252" width="210" height="44" rx="4"/><text class="c103-bt c103-burn" style="--b:0;fill:var(--bg)" x="525" y="280">wood</text>
+          <rect class="c103-blk hay c103-burn" style="--b:1" x="420" y="208" width="210" height="44" rx="4"/><text class="c103-bt c103-burn" style="--b:1;fill:var(--ink)" x="525" y="236">hay</text>
+          <rect class="c103-blk stubble c103-burn" style="--b:2" x="420" y="164" width="210" height="44" rx="4"/><text class="c103-bt c103-burn" style="--b:2;fill:var(--ink)" x="525" y="192">stubble</text>
+        </g>
+        <path class="c103-ash" d="M420 296 q20 -22 52 -10 q34 -22 66 -6 q34 -14 56 2 q20 -4 36 14 z"/>
+        <g class="c103-ok">
+          <text class="c103-ok-l" x="195" y="140">it abides: a reward</text>
+          <text class="c103-loss-l" x="525" y="270">loss</text>
+        </g>
+
+        <g class="c103-ok">
+          <circle class="c103-saved" cx="360" cy="236" r="40"/>
+          <circle class="c103-who" cx="360" cy="212" r="12"/>
+          <path class="c103-who" d="M346 228 h28 l6 48 h-40 z"/>
+          <path d="M346 232 L330 254 M374 232 L392 252" fill="none" stroke-width="7" stroke-linecap="round" style="stroke:var(--ink)"/>
+        </g>
+        <g>
+          <g transform="translate(118 302) scale(1 1.25)"><path class="c103-flame" style="--w:0s" d="M0 0 C-28 -30 -18 -62 0 -104 C18 -62 28 -30 0 0z"/></g>
+          <g transform="translate(160 302) scale(1 1)"><path class="c103-flame b" style="--w:0.15s" d="M0 0 C-28 -30 -18 -62 0 -104 C18 -62 28 -30 0 0z"/></g>
+          <g transform="translate(205 302) scale(1 1.25)"><path class="c103-flame" style="--w:0.3s" d="M0 0 C-28 -30 -18 -62 0 -104 C18 -62 28 -30 0 0z"/></g>
+          <g transform="translate(250 302) scale(1 1)"><path class="c103-flame b" style="--w:0.1s" d="M0 0 C-28 -30 -18 -62 0 -104 C18 -62 28 -30 0 0z"/></g>
+          <g transform="translate(285 302) scale(1 1.25)"><path class="c103-flame" style="--w:0.2s" d="M0 0 C-28 -30 -18 -62 0 -104 C18 -62 28 -30 0 0z"/></g>
+          <g transform="translate(440 302) scale(1 1)"><path class="c103-flame" style="--w:0.2s" d="M0 0 C-28 -30 -18 -62 0 -104 C18 -62 28 -30 0 0z"/></g>
+          <g transform="translate(480 302) scale(1 1.25)"><path class="c103-flame b" style="--w:0.05s" d="M0 0 C-28 -30 -18 -62 0 -104 C18 -62 28 -30 0 0z"/></g>
+          <g transform="translate(525 302) scale(1 1)"><path class="c103-flame" style="--w:0.25s" d="M0 0 C-28 -30 -18 -62 0 -104 C18 -62 28 -30 0 0z"/></g>
+          <g transform="translate(570 302) scale(1 1.25)"><path class="c103-flame b" style="--w:0.12s" d="M0 0 C-28 -30 -18 -62 0 -104 C18 -62 28 -30 0 0z"/></g>
+          <g transform="translate(612 302) scale(1 1)"><path class="c103-flame" style="--w:0.3s" d="M0 0 C-28 -30 -18 -62 0 -104 C18 -62 28 -30 0 0z"/></g>
+        </g>
+        <rect class="c103-found" x="70" y="296" width="580" height="38" rx="4"/>
+        <text class="c103-ftxt" x="360" y="322">the foundation: Jesus Christ</text>
+        <text class="c103-cap c103-ok" x="360" y="368">“he himself shall be saved; yet so as by fire”</text>
+      </svg>
+    </div>
+    <p class="note step c103-go">Click, and let the fire come. Both builders used the same foundation. Only one tower stays standing.</p>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise">What does that mean?</h2>
+    <div class="columns">
+      <div class="col grace rise" style="--d:1"><p class="who">The foundation</p><h3>Settled</h3><p>Salvation. A gift, laid by Christ. <em>He himself shall be saved.</em> The fire does not touch it, and it cannot be tested away.</p></div>
+      <div class="col law step"><p class="who">The building</p><h3>Judged</h3><p>What you built on it: your work, your service, how you treated people. <em>Gold or stubble</em>, and God sees which.</p></div>
+    </div>
+    <blockquote class="quote step"><p>“There is therefore now no condemnation to them which are in Christ Jesus, who walk not after the flesh, but after the Spirit.”</p><cite>Romans 8:1</cite></blockquote>
+    <p class="note step">So this is a day of <em>reward</em>, not a day of <em>rescue</em>. Paul says plainly that a man can have a lot burn and still be saved. Your salvation can't burn. Your work can, and it matters, which is why it's worth building well.</p>
+    <blockquote class="quote step"><p>“For we must all appear before the judgment seat of Christ; that every one may receive the things done in his body, according to that he hath done, whether it be good or bad.”</p><cite>2 Corinthians 5:10</cite></blockquote>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise">Gold, or stubble?</h2>
+    <p class="note rise" style="--d:1">Paul is mostly talking about men who teach and lead, but the test reaches anyone building a life on Jesus. Here is a plain way to ask it.</p>
+    <div class="columns">
+      <div class="col law step"><p class="who">Burns up</p><h3>Wood, hay, stubble</h3><p>Done to be seen. Done to win a side. Done to look big, or to get paid back. Quick, cheap, and for me.</p></div>
+      <div class="col grace step"><p class="who">Comes through</p><h3>Gold, silver, stones</h3><p>Done for Christ, and for the person in front of you. The honest day's work. The call you made when no one was watching.</p></div>
+    </div>
+    <p class="note step">If you look at your past and see a lot of stubble, you are in good company. Everyone does. The foundation is still there, and so is today's course of bricks. <em>You can lay gold on top of a bad year.</em></p>
+    <p class="note step">What is the next brick you're laying? A phone call you owe. A day at work done right. A man you're helping stay clean.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="16-17" data-hl="ye are the temple of God|the Spirit of God dwelleth in you|If any man defile the temple of God, him shall God destroy"></section>
+
+<section class="slide ex ex-name">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="16" data-hl="ye are the temple of God"></blockquote>
+    <h2 class="rise" style="--d:1">God's address</h2>
+    <div class="rename">
+      <span class="old rise" style="--d:2">a building of stone</span>
+      <span class="arrow step">→</span>
+      <span class="new step">you</span>
+      <span class="gloss step">The Corinthians knew temples: Corinth was full of them, built for idols. God's own house is no longer a building. His Spirit lives in <em>His people</em>, from the day each one believes. Nobody has to earn it, or wait for a second experience.</span>
+    </div>
+    <blockquote class="quote step"><p>“What? know ye not that your body is the temple of the Holy Ghost which is in you, which ye have of God, and ye are not your own?”</p><cite>1 Corinthians 6:19</cite></blockquote>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise">A hard verse, honestly</h2>
+    <p class="note rise" style="--d:1"><em>“If any man defile the temple of God, him shall God destroy.”</em> It sounds like a trapdoor under every man who has slipped. Look at who Paul has in view.</p>
+    <div class="columns">
+      <div class="col grace step"><p class="who">Not this verse</p><h3>The man who fell yesterday</h3><p>If you hate what you did and you're back on your knees, that's the Spirit at work in you. Confess it. <em>He is faithful and just to forgive.</em></p></div>
+      <div class="col law step"><p class="who">This verse</p><h3>The man who tears up the church</h3><p>The <em>ye</em> is plural: the church together is the temple. Paul is warning the men who split it into camps for their own pride.</p></div>
+    </div>
+    <p class="note step">God takes His church seriously, and the man who wrecks it answers for it. Good teachers differ on exactly what <em>destroy</em> means. What is plain is the target, the man ruining the church, and that the rest of the Bible says His own are held fast (John 10:28).</p>
+    <blockquote class="quote step"><p>“And are built upon the foundation of the apostles and prophets, Jesus Christ himself being the chief corner stone; In whom all the building fitly framed together groweth unto an holy temple in the Lord: In whom ye also are builded together for an habitation of God through the Spirit.”</p><cite>Ephesians 2:20–22</cite></blockquote>
+  </div>
+</section>
+
+<!-- ======================= PART FOUR: NO GLORYING ======================= -->
+<section class="slide part">
+  <div class="inner">
+    <p class="part-n rise">Part four</p>
+    <h2 class="rise" style="--d:1">Glory in no man</h2>
+    <p class="range rise" style="--d:2">Verses 18–23</p>
+    <div class="rule"></div>
+    <p class="hook rise" style="--d:4">The smartest-looking man in the room is not the point. Everything is yours, and you are Christ's.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="18-20" data-hl="let him become a fool, that he may be wise|the wisdom of this world is foolishness with God|He taketh the wise in their own craftiness"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise">Street smart, God smart</h2>
+    <div class="talk">
+      <p class="rise" style="--d:1"><small>The old voice</small>Never let anyone see you don't know. Never admit you were wrong. Be the sharpest guy in the room.</p>
+      <p class="reply step"><small>Paul</small>Let no man deceive himself. If any man among you seemeth to be wise in this world, let him become a fool, that he may be wise. <span class="flag">teachable</span></p>
+    </div>
+    <p class="note step"><em>Become a fool</em> doesn't mean act stupid. It means drop the act: admit what you don't know, and let God teach you. The man who thinks he has it all worked out is the easiest man to <em>deceive</em>, and most often the one doing the deceiving is himself.</p>
+    <p class="note step"><em>Craftiness</em> is cunning. Paul quotes Job: God catches the clever in their own tricks (Job 5:13). Anyone who has tried to talk his way out of a corner knows how that goes.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="21-23" data-hl="let no man glory in men|all are yours|ye are Christ’s; and Christ is God’s"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise">All are yours, and you are Christ's</h2>
+    <div class="stage">
+      <svg viewBox="22 0 676 350" style="max-height:37vh" role="img" aria-label="Three rings. In the middle, you. Around you, Christ's. Around that, God's: ye are Christ's, and Christ is God's. Around the rings, everything that is yours: Paul, Apollos, Cephas, the world, life, death, things present, things to come.">
+        <circle class="c103-ring r3" style="--k:2" cx="360" cy="175" r="158"/>
+        <circle class="c103-ring r2" style="--k:1" cx="360" cy="175" r="112"/>
+        <circle class="c103-ring r1" style="--k:0" cx="360" cy="175" r="62"/>
+        <text class="c103-rt you" style="--k:0" x="360" y="182">you</text>
+        <text class="c103-rt chr" style="--k:1" x="360" y="98">Christ's</text>
+        <text class="c103-rt god" style="--k:2" x="360" y="40">God's</text>
+        <path class="c103-tie" style="--k:0" d="M148 60 L240 120"/><path class="c103-tie" style="--k:1" d="M148 130 L228 150"/><path class="c103-tie" style="--k:2" d="M148 200 L228 190"/><path class="c103-tie" style="--k:3" d="M148 270 L240 235"/>
+        <path class="c103-tie" style="--k:0" d="M572 60 L480 120"/><path class="c103-tie" style="--k:1" d="M572 130 L492 150"/><path class="c103-tie" style="--k:2" d="M572 200 L492 190"/><path class="c103-tie" style="--k:3" d="M572 270 L480 235"/>
+        <g class="c103-chip" style="--k:0"><rect x="30" y="44" width="124" height="32" rx="16"/><text x="92" y="66">Paul</text></g>
+        <g class="c103-chip" style="--k:1"><rect x="30" y="114" width="124" height="32" rx="16"/><text x="92" y="136">Apollos</text></g>
+        <g class="c103-chip" style="--k:2"><rect x="30" y="184" width="124" height="32" rx="16"/><text x="92" y="206">Cephas</text></g>
+        <g class="c103-chip" style="--k:3"><rect x="30" y="254" width="124" height="32" rx="16"/><text x="92" y="276">the world</text></g>
+        <g class="c103-chip" style="--k:4"><rect x="566" y="44" width="124" height="32" rx="16"/><text x="628" y="66">life</text></g>
+        <g class="c103-chip" style="--k:5"><rect x="566" y="114" width="124" height="32" rx="16"/><text x="628" y="136">death</text></g>
+        <g class="c103-chip" style="--k:6"><rect x="566" y="184" width="124" height="32" rx="16"/><text x="628" y="206">things present</text></g>
+        <g class="c103-chip" style="--k:7"><rect x="566" y="254" width="124" height="32" rx="16"/><text x="628" y="276">things to come</text></g>
+      </svg>
+    </div>
+    <p class="note step">Why pick a favorite teacher when <em>all are yours</em>? Paul, Apollos and <em>Cephas</em> (that is Peter) are gifts to you, not rivals for your loyalty. Even <em>death</em> is on the list: it can't take you out of Christ's hand.</p>
+    <p class="note step">The ring that matters most: <em>ye are Christ's; and Christ is God's.</em> You don't belong to a teacher, a gang, or your old habit. You belong to Christ, and that is a safe place to be.</p>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise">1 Corinthians 3, on a work day</h2>
+    <ol class="checks">
+      <li class="step"><span class="tick">1</span><q>I have planted, Apollos watered; but God gave the increase</q><small>Do your part today, plant and water, and let God do the growing. Don't measure your worth by how fast it shows.</small><b>3:6</b></li>
+      <li class="step"><span class="tick">2</span><q>other foundation can no man lay</q><small>If you fell, you are still on the same foundation. Confess it, get up, and start laying bricks again.</small><b>3:11</b></li>
+      <li class="step"><span class="tick">3</span><q>gold, silver, precious stones</q><small>Pick one thing today to do right when nobody's looking: the work, the call, the honest word.</small><b>3:12</b></li>
+      <li class="step"><span class="tick">4</span><q>ye are the temple of God</q><small>The Spirit lives in you. Take Him to work, and to the places you used to go without Him.</small><b>3:16</b></li>
+    </ol>
+    <blockquote class="quote step"><p>“Therefore, my beloved brethren, be ye stedfast, unmoveable, always abounding in the work of the Lord, forasmuch as ye know that your labour is not in vain in the Lord.”</p><cite>1 Corinthians 15:58</cite></blockquote>
+    <p class="note step">Next, 1 Corinthians 4: Paul as a steward, the apostles treated like trash, and the father these men never had.</p>
+  </div>
+</section>
+
+<!-- ======================= CLOSING ======================= -->
+<section class="slide remember">
+  <div class="inner">
+    <h2 class="rise">Points to remember</h2>
+    <ol class="seeds">
+      <li class="step"><span class="topic">Milk and meat</span><span class="seed-q">“I have fed you with milk, and not with meat” <cite>3:2</cite></span><span class="take">They were saved, but still living like the old man. New believers start on milk; the trouble is never leaving it.</span></li>
+      <li class="step"><span class="topic">Growth</span><span class="seed-q">“God gave the increase” <cite>3:6</cite></span><span class="take">We plant and water. God makes it grow, and the credit is His.</span></li>
+      <li class="step"><span class="topic">Foundation</span><span class="seed-q">“Which is Jesus Christ” <cite>3:11</cite></span><span class="take">The only foundation, already laid. It's not our record, good or bad.</span></li>
+      <li class="step"><span class="topic">The fire</span><span class="seed-q">“He himself shall be saved; yet so as by fire” <cite>3:15</cite></span><span class="take">Our work will be tested. Some may burn, but the man stays saved. Build with gold.</span></li>
+      <li class="step"><span class="topic">The temple</span><span class="seed-q">“Ye are the temple of God” <cite>3:16</cite></span><span class="take">God's Spirit lives in His people, and in His church together. Handle both with care.</span></li>
+      <li class="step"><span class="topic">Boasting</span><span class="seed-q">“Let no man glory in men” <cite>3:21</cite></span><span class="take">All things are ours, and we are Christ's. No teacher is worth a split.</span></li>
+    </ol>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 1 of 6</p>
+      <span class="topic">Milk and meat</span>
+      <h2>Why couldn't Paul feed these believers solid food?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="1"></blockquote>
+      <blockquote class="quote step" data-q="2"></blockquote>
+      <blockquote class="quote step" data-q="3"></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>They were still carnal: babes in Christ, full of envy, strife and divisions. They were saved, but they weren't growing. Milk is right for a new believer. Staying on it is the trouble.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 2 of 6</p>
+      <span class="topic">Growth</span>
+      <h2>Who makes a believer grow?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="6"></blockquote>
+      <blockquote class="quote step" data-q="7"></blockquote>
+      <blockquote class="quote step" data-q="9"></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>God does. Paul planted, Apollos watered, and God gave the increase. We are labourers together with Him, and each gets his own reward, but the growing is God's.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 3 of 6</p>
+      <span class="topic">Foundation</span>
+      <h2>What is the one foundation?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="10"></blockquote>
+      <blockquote class="quote step" data-q="11"></blockquote>
+      <blockquote class="quote step"><p>“And are built upon the foundation of the apostles and prophets, Jesus Christ himself being the chief corner stone;”</p><cite>Ephesians 2:20</cite></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>Jesus Christ. Nobody can lay another. It has already been laid for every man who will trust Him, and we only choose what to build on top of it.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 4 of 6</p>
+      <span class="topic">The fire</span>
+      <h2>What happens to a believer's work when the fire tries it?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="13" ></blockquote>
+      <blockquote class="quote step" data-q="14"></blockquote>
+      <blockquote class="quote step" data-q="15"></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>The fire shows what sort it is. Work that lasts gets a reward. Work that burns is lost, but the man himself is saved. A believer's works are judged, and his salvation stays secure.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 5 of 6</p>
+      <span class="topic">The temple</span>
+      <h2>Whose temple are we?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="16"></blockquote>
+      <blockquote class="quote step" data-q="17"></blockquote>
+      <blockquote class="quote step"><p>“What? know ye not that your body is the temple of the Holy Ghost which is in you, which ye have of God, and ye are not your own?”</p><cite>1 Corinthians 6:19</cite></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>God's. His Spirit lives in every believer, and in His church together. That makes the church holy ground, and a thing to guard, not to split.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 6 of 6</p>
+      <span class="topic">Boasting</span>
+      <h2>Why should no man glory in men?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="21"></blockquote>
+      <blockquote class="quote step" data-q="22"></blockquote>
+      <blockquote class="quote step" data-q="23"></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>Because all things are already ours, and we belong to Christ, who belongs to God. Teachers are gifts, not teams to join. Only God deserves the glory.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide prayer">
+  <div class="inner">
+    <div class="emblem rise"></div>
+    <h2 class="rise" style="--d:1">Prayer requests</h2>
+    <p class="ask-line rise" style="--d:2">What can we pray about for you today?</p>
+    <blockquote class="quote rise" style="--d:4"><p>“Being confident of this very thing, that he which hath begun a good work in you will perform it until the day of Jesus Christ:”</p><cite>Philippians 1:6</cite></blockquote>
+  </div>
+</section>
+
+</main>
+
+<script>
+// King James Version, 1 Corinthians chapter 3
+const V = {
+  1: "And I, brethren, could not speak unto you as unto spiritual, but as unto carnal, even as unto babes in Christ.",
+  2: "I have fed you with milk, and not with meat: for hitherto ye were not able to bear it, neither yet now are ye able.",
+  3: "For ye are yet carnal: for whereas there is among you envying, and strife, and divisions, are ye not carnal, and walk as men?",
+  4: "For while one saith, I am of Paul; and another, I am of Apollos; are ye not carnal?",
+  5: "Who then is Paul, and who is Apollos, but ministers by whom ye believed, even as the Lord gave to every man?",
+  6: "I have planted, Apollos watered; but God gave the increase.",
+  7: "So then neither is he that planteth any thing, neither he that watereth; but God that giveth the increase.",
+  8: "Now he that planteth and he that watereth are one: and every man shall receive his own reward according to his own labour.",
+  9: "For we are labourers together with God: ye are God’s husbandry, ye are God’s building.",
+  10: "According to the grace of God which is given unto me, as a wise masterbuilder, I have laid the foundation, and another buildeth thereon. But let every man take heed how he buildeth thereupon.",
+  11: "For other foundation can no man lay than that is laid, which is Jesus Christ.",
+  12: "Now if any man build upon this foundation gold, silver, precious stones, wood, hay, stubble;",
+  13: "Every man’s work shall be made manifest: for the day shall declare it, because it shall be revealed by fire; and the fire shall try every man’s work of what sort it is.",
+  14: "If any man’s work abide which he hath built thereupon, he shall receive a reward.",
+  15: "If any man’s work shall be burned, he shall suffer loss: but he himself shall be saved; yet so as by fire.",
+  16: "Know ye not that ye are the temple of God, and that the Spirit of God dwelleth in you?",
+  17: "If any man defile the temple of God, him shall God destroy; for the temple of God is holy, which temple ye are.",
+  18: "Let no man deceive himself. If any man among you seemeth to be wise in this world, let him become a fool, that he may be wise.",
+  19: "For the wisdom of this world is foolishness with God. For it is written, He taketh the wise in their own craftiness.",
+  20: "And again, The Lord knoweth the thoughts of the wise, that they are vain.",
+  21: "Therefore let no man glory in men. For all things are yours;",
+  22: "Whether Paul, or Apollos, or Cephas, or the world, or life, or death, or things present, or things to come; all are yours;",
+  23: "And ye are Christ’s; and Christ is God’s."
+};
+const BOOK = "1 Corinthians 3";
+</script>
+<script src="../assets/deck.js"></script>
+</body>
+</html>
