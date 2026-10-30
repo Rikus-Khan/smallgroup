@@ -7097,6 +7097,109 @@ window.STUDIES = [
     }
   },
   {
+    "id": "mark-09",
+    "type": "chapter",
+    "book": "Mark",
+    "ch": 9,
+    "date": "2026-10-29",
+    "title": "Mark 9",
+    "sub": "Hear him",
+    "about": "Three men see Jesus shining in glory on a mountain. At the bottom, a desperate father prays, “Lord, I believe; help thou mine unbelief,” and Jesus teaches that the way up is down.",
+    "tags": [
+      "Transfiguration",
+      "Weak faith",
+      "Prayer",
+      "Humility",
+      "Temptation",
+      "Hell"
+    ],
+    "url": "studies/mark-09.html",
+    "overview": {
+      "where": "A high mountain (perhaps Hermon), then down through Galilee to Capernaum",
+      "when": "In the last year of Jesus' ministry, six days after Peter's confession near Caesarea Philippi",
+      "people": [
+        "jesus",
+        "simon-peter",
+        "sons-of-zebedee",
+        "moses",
+        "elijah",
+        "scribes",
+        "disciples",
+        "the-twelve"
+      ],
+      "places": [
+        "high-mountain",
+        "galilee",
+        "capernaum"
+      ],
+      "story": [
+        "Jesus takes Peter, James and John up a high mountain and is transfigured. Moses and Elias talk with Him, and the Father says, “This is my beloved Son: hear him” (1–8).",
+        "Coming down, Jesus tells them Elias has already come (John the Baptist), and that the Son of man must suffer (9–13).",
+        "At the bottom the disciples can't help a boy with a dumb spirit. His father cries, “Lord, I believe; help thou mine unbelief,” and Jesus casts it out: “This kind can come forth by nothing, but by prayer and fasting” (14–29).",
+        "Jesus again foretells His death and rising. The twelve argue about who is greatest, and He sets a child among them: the first must be servant of all (30–41).",
+        "Cut off whatever causes you to stumble: better to enter life maimed than be cast into hell. “Have salt in yourselves, and have peace one with another” (42–50)."
+      ],
+      "key": {
+        "ref": "Mark 9:24",
+        "text": "And straightway the father of the child cried out, and said with tears, Lord, I believe; help thou mine unbelief."
+      },
+      "big": "Jesus is God's beloved Son, and the Father tells us to hear Him. He doesn't turn away weak faith that's honest; He helps it. In His kingdom the greatest is the servant, and sin is to be dealt with ruthlessly."
+    }
+  },
+  {
+    "id": "mark-10",
+    "type": "chapter",
+    "book": "Mark",
+    "ch": 10,
+    "date": "2026-10-29",
+    "title": "Mark 10",
+    "sub": "The road up to Jerusalem",
+    "about": "On the way to the cross, Jesus teaches about marriage, blesses little children, loves a rich man who walks away, gives His life a ransom, and stops for a blind beggar who won't keep quiet.",
+    "tags": [
+      "Marriage",
+      "Childlike faith",
+      "Riches",
+      "Servanthood",
+      "Ransom",
+      "Mercy"
+    ],
+    "url": "studies/mark-10.html",
+    "overview": {
+      "where": "Beyond the Jordan in Perea, then Jericho, on the road up to Jerusalem",
+      "when": "The last journey to Jerusalem, shortly before Jesus' final Passover",
+      "people": [
+        "jesus",
+        "pharisees",
+        "moses",
+        "disciples",
+        "rich-young-ruler",
+        "simon-peter",
+        "the-twelve",
+        "sons-of-zebedee",
+        "bartimaeus"
+      ],
+      "places": [
+        "beyond-jordan",
+        "judaea",
+        "jordan",
+        "jerusalem",
+        "jericho"
+      ],
+      "story": [
+        "Pharisees test Jesus about divorce. He goes back to the beginning: God made them male and female, the two become one flesh, and “What therefore God hath joined together, let not man put asunder” (1–12).",
+        "Jesus is displeased when the disciples turn children away: “Whosoever shall not receive the kingdom of God as a little child, he shall not enter therein” (13–16).",
+        "A rich man asks how to inherit eternal life. Jesus loves him and says, “One thing thou lackest,” but he goes away grieved. It is easier for a camel to go through the eye of a needle, but with God all things are possible (17–31).",
+        "Going up to Jerusalem, Jesus tells the twelve a third time that He will die and rise. James and John ask for the best seats; Jesus came “to give his life a ransom for many” (32–45).",
+        "At Jericho blind Bartimaeus cries, “Jesus, thou Son of David, have mercy on me,” receives his sight, and follows Jesus in the way (46–52)."
+      ],
+      "key": {
+        "ref": "Mark 10:45",
+        "text": "For even the Son of man came not to be ministered unto, but to minister, and to give his life a ransom for many."
+      },
+      "big": "Jesus walked toward the cross on purpose, to serve and to pay the ransom for our freedom. Nobody can save himself, but with God all things are possible. Whoever comes to Him as a child, or cries out to Him like a blind beggar, is received."
+    }
+  },
+  {
     "id": "luke-01",
     "type": "chapter",
     "book": "Luke",
