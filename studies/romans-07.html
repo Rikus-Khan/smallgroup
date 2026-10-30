@@ -1,0 +1,614 @@
+<!doctype html>
+<html lang="en" data-theme="night">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Romans 7</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="../assets/fonts.css">
+<link rel="stylesheet" href="../assets/deck.css">
+<link rel="stylesheet" href="../assets/themes.css">
+<style>
+/* ro07-where: where we are in Romans. Sixteen chapter cells (i, --k) over five movements (b, spanning their chapters).
+   The current chapter is i.now, its movement's chapters i.band and its label b.here. */
+.ro07-where { display: grid; grid-template-columns: repeat(16, 1fr); gap: 4px; margin: .3em 0 1em; max-width: 52rem; }
+.ro07-where i { font: normal 700 clamp(.72rem, .66rem + .3vw, 1rem)/1 var(--sans); text-align: center; padding: .55em 0; border-radius: 5px; border: 1.5px solid var(--line); background: var(--surface); color: var(--ink-soft);
+  opacity: 0; transform: translateY(6px); transition: opacity .4s ease, transform .4s ease; transition-delay: calc(var(--k, 0) * 45ms + 250ms); }
+.slide.active .ro07-where i { opacity: 1; transform: none; }
+.ro07-where i.band { border-color: color-mix(in srgb, var(--accent) 60%, transparent); color: var(--ink); }
+.ro07-where i.now { background: var(--accent); border-color: var(--accent); color: var(--on-accent); box-shadow: 0 0 0 5px color-mix(in srgb, var(--accent) 20%, transparent); }
+.ro07-where b { grid-row: 2; padding-top: .35em; border-top: 2px solid var(--line-strong); text-align: center; font: 700 clamp(.66rem, .6rem + .3vw, .95rem)/1.2 var(--sans); color: var(--ink-soft); }
+.ro07-where b.here { border-top-color: var(--accent); color: var(--accent-hot); }
+
+/* ro07-wed: the marriage picture of 7:1-4. A bond (two halves) ties a man to the law; a .ro07-go1 step breaks it at the cross,
+   and a .ro07-go2 step draws a new bond to the risen Christ. */
+.ro07-tab { fill: var(--surface-2); stroke: var(--line-strong); stroke-width: 3; }
+.ro07-tabline { stroke: var(--ink-soft); stroke-width: 2.5; stroke-linecap: round; }
+.ro07-man { fill: var(--ink); }
+.ro07-bond { fill: none; stroke: var(--ink-soft); stroke-width: 5; stroke-linecap: round; }
+.ro07-ring { fill: none; stroke: var(--warm); stroke-width: 3.5; }
+.ro07-half { transform-box: fill-box; transition: transform 1.2s cubic-bezier(.5,0,.7,1), opacity 1.2s ease; }
+.ro07-half.a { transform-origin: 0% 50%; }
+.ro07-half.b { transform-origin: 100% 50%; }
+.slide:has(.ro07-go1.on) .ro07-half.a { transform: rotate(32deg); opacity: .3; }
+.slide:has(.ro07-go1.on) .ro07-half.b { transform: rotate(-32deg); opacity: .3; }
+.ro07-cross { fill: var(--accent); opacity: 0; transition: opacity 1s ease .7s; }
+.slide:has(.ro07-go1.on) .ro07-cross { opacity: 1; }
+.ro07-new { fill: none; stroke: var(--accent); stroke-width: 5; stroke-linecap: round; stroke-dasharray: 1; stroke-dashoffset: 1; transition: stroke-dashoffset 1.4s ease; }
+.slide:has(.ro07-go2.on) .ro07-new { stroke-dashoffset: 0; }
+.ro07-risen, .ro07-newring { opacity: .18; transition: opacity 1.2s ease .5s; }
+.ro07-newring { opacity: 0; }
+.slide:has(.ro07-go2.on) :is(.ro07-risen, .ro07-newring) { opacity: 1; }
+.ro07-risen .ro07-man { fill: var(--accent-hot); }
+
+/* ro07-reveal: the commandment as a light in a dark room. A .ro07-lit step turns on the beam and shows what was there all along. */
+.ro07-dark { fill: var(--on-glow); stroke: var(--line-strong); stroke-width: 2; }
+.ro07-beam { fill: var(--glow); opacity: 0; transition: opacity 1.2s ease; }
+.ro07-hid { fill: var(--glow); font-family: var(--serif); font-style: italic; opacity: 0; transition: opacity .9s ease; transition-delay: calc(var(--k, 0) * 220ms + .5s); }
+.slide:has(.ro07-lit.on) .ro07-beam { opacity: .16; }
+.slide:has(.ro07-lit.on) .ro07-hid { opacity: 1; }
+.ro07-cap { opacity: 0; transition: opacity 1s ease 2s; }
+.slide:has(.ro07-lit.on) .ro07-cap { opacity: 1; }
+
+/* ro07-tug: a tug-of-war that never settles. The whole .ro07-pull group sways across a fixed center line. */
+.ro07-mid { stroke: var(--line-strong); stroke-width: 2; stroke-dasharray: 6 6; }
+.ro07-rope { stroke: var(--leather-light); stroke-width: 6; stroke-linecap: round; }
+.ro07-flag { fill: var(--danger); }
+.ro07-good { fill: var(--accent-hot); stroke: var(--accent-hot); }
+.ro07-bad { fill: var(--ink-soft); stroke: var(--ink-soft); }
+.ro07-limb { fill: none; stroke-width: 7; stroke-linecap: round; stroke-linejoin: round; }
+.slide.active .ro07-pull { animation: ro07-sway 7s ease-in-out infinite; }
+@keyframes ro07-sway { 0%, 100% { transform: translateX(-30px); } 22% { transform: translateX(26px); } 45% { transform: translateX(-14px); } 70% { transform: translateX(40px); } 85% { transform: translateX(6px); } }
+
+/* ro07-fall: "a law" that works every time, like gravity. Each .ro07-stone (--k) drops, lands, and drops again. */
+.ro07-ground { stroke: var(--line-strong); stroke-width: 3; }
+.ro07-ledge { fill: var(--surface-2); stroke: var(--line-strong); stroke-width: 2; }
+.ro07-stone { fill: var(--ink-soft); }
+.slide.active .ro07-stone { animation: ro07-drop 2.6s cubic-bezier(.55,0,1,.45) infinite; animation-delay: calc(var(--k, 0) * .6s + .4s); }
+@keyframes ro07-drop { 0% { transform: translateY(0); opacity: 0; } 8% { opacity: 1; } 45% { transform: translateY(176px); } 52% { transform: translateY(160px); } 58%, 85% { transform: translateY(176px); opacity: 1; } 100% { transform: translateY(176px); opacity: 0; } }
+.ro07-arrow { fill: none; stroke: var(--danger); stroke-width: 4; stroke-linecap: round; stroke-linejoin: round; }
+.ro07-next { fill: var(--accent-hot); opacity: 0; transition: opacity 1s ease; }
+.slide:has(.ro07-hint.on) .ro07-next { opacity: 1; }
+</style>
+</head>
+<body>
+<main class="deck" id="deck">
+
+<!-- ======================= OPENING ======================= -->
+<section class="slide title">
+  <div class="inner">
+    <div class="emblem rise"></div>
+    <h1 class="rise" style="--d:1">Romans 7</h1>
+    <p class="sub rise" style="--d:3">O wretched man</p>
+    <p class="tag rise" style="--d:5">The law shows us our sin but can't set us free. Then Paul tells the truth about the war inside every believer, and where the rescue comes from.</p>
+  </div>
+</section>
+
+<section class="slide watch">
+  <div class="inner">
+    <h2 class="rise">Things to watch for</h2>
+    <p class="lede rise" style="--d:1">Keep these questions in the back of your mind as we read. We'll come back to every one of them at the end.</p>
+    <ol class="seeds">
+      <li class="step"><span class="topic">The law</span><span class="seed-q">What can God's law do, and what can't it do?</span></li>
+      <li class="step"><span class="topic">Freedom</span><span class="seed-q">What does the marriage picture in verses 1–4 teach us?</span></li>
+      <li class="step"><span class="topic">Sin</span><span class="seed-q">How does sin use even a good commandment against us?</span></li>
+      <li class="step"><span class="topic">The struggle</span><span class="seed-q">Why does a saved man still do the things he hates?</span></li>
+      <li class="step"><span class="topic">Honesty</span><span class="seed-q">What should a believer do with his failures?</span></li>
+      <li class="step"><span class="topic">Deliverance</span><span class="seed-q">Who will deliver us from the body of this death?</span></li>
+    </ol>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise">Where we are in Romans</h2>
+    <div class="ro07-where" role="img" aria-label="The sixteen chapters of Romans in five parts: sin, chapters 1 to 3; faith, 4 to 5; new life, 6 to 8; Israel, 9 to 11; living it out, 12 to 16. Chapter 7 is marked.">
+      <i style="--k:0">1</i><i style="--k:1">2</i><i style="--k:2">3</i><i style="--k:3">4</i><i style="--k:4">5</i><i class="band" style="--k:5">6</i><i class="now" style="--k:6">7</i><i class="band" style="--k:7">8</i>
+      <i style="--k:8">9</i><i style="--k:9">10</i><i style="--k:10">11</i><i style="--k:11">12</i><i style="--k:12">13</i><i style="--k:13">14</i><i style="--k:14">15</i><i style="--k:15">16</i>
+      <b style="grid-column:1/4">Sin</b><b style="grid-column:4/6">Faith</b><b class="here" style="grid-column:6/9">New life</b><b style="grid-column:9/12">Israel</b><b style="grid-column:12/17">Living it out</b>
+    </div>
+    <p class="note rise" style="--d:2">Paul wrote this letter from Corinth, about AD 57, to the believers in Rome. Chapters 1–3: all have sinned. Chapters 4–5: God makes a man right with Himself by faith. Chapters 6–8: how a saved man lives free.</p>
+    <ol class="timeline">
+      <li data-n="6" style="--k:1"><b>Dead to sin</b><span>sin is no longer your master</span></li>
+      <li data-n="7" class="lit" style="--k:2"><b>Dead to the law</b><span>rules can't change you, and the war inside is real</span></li>
+      <li data-n="8" style="--k:3"><b>Alive in the Spirit</b><span>no condemnation, no separation</span></li>
+    </ol>
+    <p class="note step">A new believer asks two honest questions. If I'm not under the law, what's the law for? And if I'm free, why do I still fall? Chapter 7 answers both.</p>
+  </div>
+</section>
+
+<!-- ======================= PART ONE: DEAD TO THE LAW ======================= -->
+<section class="slide part">
+  <div class="inner">
+    <p class="part-n rise">Part one</p>
+    <h2 class="rise" style="--d:1">Dead to the law</h2>
+    <p class="range rise" style="--d:2">Verses 1–6</p>
+    <div class="rule"></div>
+    <p class="hook rise" style="--d:4">A marriage only death can end, and a new Husband.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="1-3" data-hl="the law hath dominion over a man as long as he liveth|if the husband be dead, she is loosed from the law"></section>
+<section class="slide verse" data-v="4" data-hl="ye also are become dead to the law by the body of Christ|married to another, even to him who is raised from the dead"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="4" data-hl="ye also are become dead to the law by the body of Christ|married to another, even to him who is raised from the dead"></blockquote>
+    <div class="split">
+      <div class="stage">
+        <svg viewBox="0 0 600 300" role="img" aria-label="A man is tied to the law, pictured as two stone tablets, by a bond with two rings. The cross breaks the bond. Then a new bond ties him to the risen Christ.">
+          <defs>
+            <radialGradient id="ro07-halo"><stop offset="0" stop-opacity=".9" style="stop-color:var(--glow)"/><stop offset=".5" stop-opacity=".35" style="stop-color:var(--accent)"/><stop offset="1" stop-opacity="0" style="stop-color:var(--accent)"/></radialGradient>
+          </defs>
+          <!-- the law: two tablets -->
+          <g class="rise" style="--d:2">
+            <path class="ro07-tab" d="M44 96 Q44 70 70 70 Q96 70 96 96 V196 H44 Z"/>
+            <path class="ro07-tab" d="M100 96 Q100 70 126 70 Q152 70 152 96 V196 H100 Z"/>
+            <g class="ro07-tabline"><line x1="56" y1="104" x2="84" y2="104"/><line x1="56" y1="124" x2="84" y2="124"/><line x1="56" y1="144" x2="84" y2="144"/><line x1="56" y1="164" x2="84" y2="164"/><line x1="112" y1="104" x2="140" y2="104"/><line x1="112" y1="124" x2="140" y2="124"/><line x1="112" y1="144" x2="140" y2="144"/><line x1="112" y1="164" x2="140" y2="164"/></g>
+            <text x="98" y="232" text-anchor="middle" font-size="20" font-weight="700">the law</text>
+          </g>
+          <!-- the old bond -->
+          <g class="rise" style="--d:3">
+            <g class="ro07-half a"><line class="ro07-bond" x1="156" y1="140" x2="214" y2="140"/><circle class="ro07-ring" cx="204" cy="140" r="11"/></g>
+            <g class="ro07-half b"><line class="ro07-bond" x1="214" y1="140" x2="272" y2="140"/><circle class="ro07-ring" cx="222" cy="140" r="11"/></g>
+            <text x="214" y="98" text-anchor="middle" font-size="16" style="fill:var(--ink-soft)">“bound by</text>
+            <text x="214" y="118" text-anchor="middle" font-size="16" style="fill:var(--ink-soft)">the law”</text>
+          </g>
+          <path class="ro07-cross" d="M208 150 H220 V172 H236 V184 H220 V236 H208 V184 H192 V172 H208 Z"/>
+          <!-- you -->
+          <g class="rise" style="--d:2">
+            <circle class="ro07-man" cx="300" cy="96" r="20"/>
+            <path class="ro07-man" d="M272 196 L278 136 Q300 120 322 136 L328 196 Z"/>
+            <text x="300" y="232" text-anchor="middle" font-size="20" font-weight="700">you</text>
+          </g>
+          <!-- the new bond -->
+          <path class="ro07-new" pathLength="1" d="M330 140 L444 140"/>
+          <g class="ro07-newring"><circle class="ro07-ring" cx="378" cy="140" r="11"/><circle class="ro07-ring" cx="396" cy="140" r="11"/></g>
+          <!-- the risen Christ -->
+          <g class="ro07-risen">
+            <circle cx="500" cy="130" r="82" fill="url(#ro07-halo)"/>
+            <circle class="ro07-man" cx="500" cy="96" r="20"/>
+            <path class="ro07-man" d="M472 196 L478 136 Q500 120 522 136 L528 196 Z"/>
+            <text x="500" y="232" text-anchor="middle" font-size="20" font-weight="700" style="fill:var(--accent-hot)">“him who is</text>
+            <text x="500" y="256" text-anchor="middle" font-size="20" font-weight="700" style="fill:var(--accent-hot)">raised from the dead”</text>
+          </g>
+        </svg>
+      </div>
+      <div>
+        <h2 class="rise" style="--d:1">Till death do us part</h2>
+        <p class="note rise" style="--d:2">Everyone knew this much: a marriage is for life, and only a death ends it. <em>“Dominion”</em> means rule.</p>
+        <p class="note step ro07-go1">You <em>“are become dead to the law by the body of Christ.”</em> When Jesus died, you died with Him (6:6). The law's claim on you ended at the cross.</p>
+        <p class="note step ro07-go2">And you're <em>“married to another,”</em> the risen Christ. You don't belong to a rulebook now. You belong to a living Person.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="slide verse" data-v="5-6" data-hl="the motions of sins|to bring forth fruit unto death|that we should serve in newness of spirit, and not in the oldness of the letter"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="6" data-hl="that we should serve in newness of spirit, and not in the oldness of the letter"></blockquote>
+    <h2 class="rise" style="--d:1">Old fruit, new fruit</h2>
+    <div class="columns">
+      <div class="col law step"><span class="who">Married to the law · v. 5</span><h3>“fruit unto death”</h3><p><em>“The motions of sins”</em> are sin's urges and cravings, at work in <em>“our members,”</em> our bodies. The law said no, and the cravings only got louder.</p></div>
+      <div class="col grace step"><span class="who">Married to Christ · vv. 4, 6</span><h3>“fruit unto God”</h3><p>A new life working from the inside: <em>“newness of spirit,”</em> not <em>“the oldness of the letter,”</em> rules written on a page.</p></div>
+    </div>
+    <p class="note step">Rules alone never kept any of us sober. A list of don'ts can't change a heart. A relationship can. You serve God now, not out of fear of the rulebook, but because you belong to Him.</p>
+    <blockquote class="quote step"><p>“Therefore if any man be in Christ, he is a new creature: old things are passed away; behold, all things are become new.”</p><cite>2 Corinthians 5:17</cite></blockquote>
+  </div>
+</section>
+
+<!-- ======================= PART TWO: IS THE LAW SIN? ======================= -->
+<section class="slide part">
+  <div class="inner">
+    <p class="part-n rise">Part two</p>
+    <h2 class="rise" style="--d:1">Is the law sin?</h2>
+    <p class="range rise" style="--d:2">Verses 7–13</p>
+    <div class="rule"></div>
+    <p class="hook rise" style="--d:4">A good law, and what sin did with it.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="7-9" data-hl="Is the law sin? God forbid|I had not known sin, but by the law|Thou shalt not covet|sin revived, and I died"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="7" data-hl="I had not known sin, but by the law"></blockquote>
+    <div class="split">
+      <div class="stage">
+        <svg viewBox="0 0 600 340" role="img" aria-label="A dark room. A tablet at the top reads Thou shalt not covet. A beam of light shines down and shows words that were hidden in the dark all along: envy, lust, greed, just one more, resentment, pride.">
+          <rect class="ro07-dark" x="30" y="78" width="540" height="214" rx="12"/>
+          <path class="ro07-beam" d="M262 66 L338 66 L560 290 L40 290 Z"/>
+          <rect x="196" y="20" width="208" height="48" rx="8" style="fill:var(--surface-2);stroke:var(--line-strong)" stroke-width="2"/>
+          <text x="300" y="51" text-anchor="middle" font-size="19" class="serif" style="font-style:italic">Thou shalt not covet</text>
+          <g font-size="24">
+            <text class="ro07-hid" style="--k:0" x="120" y="140" text-anchor="middle">envy</text>
+            <text class="ro07-hid" style="--k:1" x="300" y="128" text-anchor="middle">lust</text>
+            <text class="ro07-hid" style="--k:2" x="470" y="150" text-anchor="middle">greed</text>
+            <text class="ro07-hid" style="--k:3" x="190" y="214" text-anchor="middle">“just one more”</text>
+            <text class="ro07-hid" style="--k:4" x="420" y="222" text-anchor="middle">resentment</text>
+            <text class="ro07-hid" style="--k:5" x="300" y="270" text-anchor="middle">pride</text>
+          </g>
+          <text class="ro07-cap" x="300" y="322" text-anchor="middle" font-size="18" style="fill:var(--ink-soft)">The light didn't put it there. It showed what was there.</text>
+        </svg>
+      </div>
+      <div>
+        <h2 class="rise" style="--d:1">A light in a dark room</h2>
+        <p class="note rise" style="--d:2">So is the law the problem? <em>“God forbid”</em>: never.</p>
+        <p class="note step ro07-lit">The law is a light switched on in a dark room. The mess was there all along. Paul thought he was fine until he met <em>“Thou shalt not covet.”</em> You can keep your hands clean. You can't keep your wanting clean.</p>
+        <p class="note step"><em>“Covet”</em> is wanting what isn't yours. <em>“Concupiscence”</em> is that wanting running wild. Until the commandment came, sin lay quiet, <em>“dead.”</em></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="slide verse" data-v="10-11" data-hl="sin, taking occasion by the commandment, deceived me, and by it slew me"></section>
+<section class="slide verse" data-v="12-13" data-hl="the law is holy, and the commandment holy, and just, and good|exceeding sinful"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="11"></blockquote>
+    <h2 class="rise" style="--d:1">How sin uses a good rule</h2>
+    <ol class="stairs down" style="--n:6">
+      <li style="--k:0"><b>The commandment came</b>v. 9</li>
+      <li style="--k:1"><b>Sin took occasion</b>used it to attack, v. 8</li>
+      <li style="--k:2"><b>The wanting grew</b>“all manner of concupiscence,” v. 8</li>
+      <li style="--k:3"><b>Sin revived</b>it woke up, v. 9</li>
+      <li style="--k:4"><b>It deceived me</b>promised life, v. 11</li>
+      <li style="--k:5"><b>It slew me</b>delivered death, v. 11</li>
+    </ol>
+    <p class="note step"><em>“Taking occasion”</em> is a soldier's word: a base to launch an attack from. Sin grabbed the commandment and turned it against him. Tell a man he can't, and something in him wants it more. Every addict knows that pull.</p>
+    <p class="note step">So whose fault is it? Not the law's: it <em>“is holy… and just, and good”</em> (v. 12). The law did its job. It showed sin to be <em>“exceeding sinful,”</em> as bad as it really is. The problem isn't God's rules. It's the sin in us.</p>
+  </div>
+</section>
+
+<!-- ======================= PART THREE: THE WAR INSIDE ======================= -->
+<section class="slide part">
+  <div class="inner">
+    <p class="part-n rise">Part three</p>
+    <h2 class="rise" style="--d:1">The war inside</h2>
+    <p class="range rise" style="--d:2">Verses 14–20</p>
+    <div class="rule"></div>
+    <p class="hook rise" style="--d:4">“What I would, that do I not.”</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="14-16" data-hl="I am carnal, sold under sin|for what I would, that do I not; but what I hate, that do I"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="14" data-hl="I am carnal, sold under sin"></blockquote>
+    <h2 class="rise" style="--d:1">Whose struggle is this?</h2>
+    <p class="note rise" style="--d:2">Watch the verbs. Verses 7–13 look back: <em>“I was alive… I died.”</em> From verse 14 on, it's right now: <em>“I am… I do… I find.”</em></p>
+    <div class="tally rise" style="--d:3" aria-label="Verses 7 to 13 speak of the past. Verses 14 to 25 speak in the present tense.">
+      <span><i>7</i>had</span><span><i>8</i>did</span><span><i>9</i>died</span><span><i>10</i>found</span><span><i>11</i>slew</span><span><i>12</i>—</span><span><i>13</i>made</span>
+      <span class="hit" style="--k:0"><i>14</i>am</span><span class="hit" style="--k:1"><i>15</i>do</span><span class="hit" style="--k:2"><i>16</i>do</span><span class="hit" style="--k:3"><i>17</i>dwells</span><span class="hit" style="--k:4"><i>18</i>know</span><span class="hit" style="--k:5"><i>19</i>do</span>
+      <span class="hit" style="--k:6"><i>20</i>do</span><span class="hit" style="--k:7"><i>21</i>find</span><span class="hit" style="--k:8"><i>22</i>delight</span><span class="hit" style="--k:9"><i>23</i>see</span><span class="hit" style="--k:10"><i>24</i>am</span><span class="hit" style="--k:11"><i>25</i>serve</span>
+    </div>
+    <p class="note step">So most Bible teachers, Baptist pastors among them, hear Paul the believer here, telling the truth about himself. A lost man doesn't <em>“delight in the law of God”</em> (v. 22). And late in life Paul still wrote of sinners, <em>“of whom I am chief”</em> (1 Timothy 1:15). Present tense.</p>
+    <p class="note step"><em>“Carnal”</em>: fleshly. <em>“Sold under sin”</em>: like a slave at market. <em>“I allow not”</em>: I don't approve of what I do. No excuses. Just honesty.</p>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="15" data-hl="what I would, that do I not; but what I hate, that do I"></blockquote>
+    <div class="split">
+      <div class="stage">
+        <svg viewBox="0 0 600 270" role="img" aria-label="A tug-of-war. On the left, what I would, the inward man. On the right, sin that dwelleth in me. The rope keeps swaying back and forth across the center line and never settles.">
+          <text x="110" y="30" text-anchor="middle" font-size="20" font-weight="700" style="fill:var(--accent-hot)">what I would</text>
+          <text x="110" y="52" text-anchor="middle" font-size="15" style="fill:var(--ink-soft)">the inward man, v. 22</text>
+          <text x="490" y="30" text-anchor="middle" font-size="20" font-weight="700" style="fill:var(--ink-soft)">sin that dwelleth in me</text>
+          <text x="490" y="52" text-anchor="middle" font-size="15" style="fill:var(--ink-soft)">vv. 17, 20</text>
+          <line class="ro07-mid" x1="300" y1="70" x2="300" y2="250"/>
+          <line class="ro07-ground" x1="20" y1="232" x2="580" y2="232"/>
+          <g class="ro07-pull">
+            <line class="ro07-rope" x1="120" y1="150" x2="480" y2="150"/>
+            <path class="ro07-flag" d="M300 150 L290 182 L310 182 Z"/>
+            <g class="ro07-good">
+              <circle cx="82" cy="104" r="15"/>
+              <path class="ro07-limb" d="M88 118 L104 186 M104 186 L84 230 M104 186 L122 228 M94 140 L124 150"/>
+            </g>
+            <g class="ro07-bad">
+              <circle cx="518" cy="104" r="15"/>
+              <path class="ro07-limb" d="M512 118 L496 186 M496 186 L516 230 M496 186 L478 228 M506 140 L476 150"/>
+            </g>
+          </g>
+        </svg>
+      </div>
+      <div>
+        <h2 class="rise" style="--d:1">A war every believer knows</h2>
+        <p class="note rise" style="--d:2">You wake up meaning to do right, and by night you've done the thing you swore you wouldn't. Paul knew that feeling.</p>
+        <p class="note step">But you <em>hate</em> it. Before Christ you didn't fight. The fight is a sign of new life.</p>
+        <blockquote class="quote step"><p>“For the flesh lusteth against the Spirit, and the Spirit against the flesh: and these are contrary the one to the other: so that ye cannot do the things that ye would.”</p><cite>Galatians 5:17</cite></blockquote>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="slide verse" data-v="17-20" data-hl="sin that dwelleth in me|in me (that is, in my flesh,) dwelleth no good thing|to will is present with me; but how to perform that which is good I find not"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="18" data-hl="to will is present with me; but how to perform that which is good I find not"></blockquote>
+    <div class="split">
+      <div class="stage">
+        <svg class="cycle" style="--at:320px 200px; --lap:6s" viewBox="0 0 640 400" role="img" aria-label="A circle with four stops: I swear off it, I try harder, I fall, I hate myself. A dot keeps running around. Then a bright path leads out of the circle: Jesus Christ our Lord.">
+          <circle class="cycle-ring" cx="320" cy="200" r="140"/>
+          <g class="rise" style="--d:1"><circle class="cycle-stop" cx="320" cy="60" r="15"/><text x="320" y="30" text-anchor="middle" font-size="20">1. I swear off it</text></g>
+          <g class="rise" style="--d:2"><circle class="cycle-stop" cx="460" cy="200" r="15"/><text x="484" y="206" font-size="20">2. I try harder</text></g>
+          <g class="rise" style="--d:3"><circle class="cycle-stop" cx="320" cy="340" r="15"/><text x="320" y="382" text-anchor="middle" font-size="20">3. I fall</text></g>
+          <g class="rise" style="--d:4"><circle class="cycle-stop" cx="180" cy="200" r="15"/><text x="156" y="206" text-anchor="end" font-size="20">4. I hate myself</text></g>
+          <g class="cycle-spin"><circle cx="320" cy="60" r="8" style="fill:var(--accent-hot);stroke:var(--bg)" stroke-width="2"/></g>
+          <text x="320" y="196" text-anchor="middle" font-size="24" class="serif" style="fill:var(--ink-soft)">willpower</text>
+          <text x="320" y="226" text-anchor="middle" font-size="18" style="fill:var(--ink-soft)">alone</text>
+          <g class="cycle-out">
+            <path class="cycle-way" d="M440 128 C 470 90, 520 60, 590 52"/>
+            <path class="cycle-way" d="M572 36 L594 52 L572 68"/>
+            <text x="630" y="104" text-anchor="end" font-size="20" font-weight="700" style="fill:var(--accent-hot)">Jesus Christ</text>
+            <text x="630" y="128" text-anchor="end" font-size="20" font-weight="700" style="fill:var(--accent-hot)">our Lord</text>
+          </g>
+        </svg>
+      </div>
+      <div>
+        <h2 class="rise" style="--d:1">Willpower goes round in circles</h2>
+        <p class="note rise" style="--d:2"><em>“Flesh”</em> here is the old sinful self still in you, still pulling the wrong way. In it <em>“dwelleth no good thing.”</em></p>
+        <p class="note step"><em>“To will is present”</em>: I want to. <em>“How to perform… I find not”</em>: I can't pull it off. Willpower is real. It just isn't enough.</p>
+        <p class="note step cycle-go"><em>“No more I that do it”</em> isn't blaming someone else; the new man in you doesn't want this. And the way out isn't a better promise. It's a Person (v. 25).</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ======================= PART FOUR: O WRETCHED MAN ======================= -->
+<section class="slide part">
+  <div class="inner">
+    <p class="part-n rise">Part four</p>
+    <h2 class="rise" style="--d:1">O wretched man</h2>
+    <p class="range rise" style="--d:2">Verses 21–25</p>
+    <div class="rule"></div>
+    <p class="hook rise" style="--d:4">“Who shall deliver me?”</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="21-23" data-hl="when I would do good, evil is present with me|I delight in the law of God after the inward man|bringing me into captivity to the law of sin which is in my members"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="23" data-hl="warring against the law of my mind"></blockquote>
+    <div class="split">
+      <div class="stage">
+        <svg viewBox="0 0 600 320" role="img" aria-label="Three stones drop from a ledge, one after another, land on the ground, and drop again. Every time. A caption says: when I would do good, evil is present with me. In the corner: Romans 8:2 names a stronger law.">
+          <rect class="ro07-ledge" x="60" y="48" width="400" height="16" rx="4"/>
+          <text x="260" y="34" text-anchor="middle" font-size="18" style="fill:var(--accent-hot)">“when I would do good”</text>
+          <circle class="ro07-stone" style="--k:0" cx="130" cy="84" r="16"/>
+          <circle class="ro07-stone" style="--k:1" cx="260" cy="84" r="16"/>
+          <circle class="ro07-stone" style="--k:2" cx="390" cy="84" r="16"/>
+          <line class="ro07-ground" x1="40" y1="278" x2="480" y2="278"/>
+          <text x="260" y="308" text-anchor="middle" font-size="18" style="fill:var(--ink-soft)">“evil is present with me”</text>
+          <path class="ro07-arrow" d="M540 90 V230 M524 212 L540 232 L556 212"/>
+          <text x="540" y="262" text-anchor="middle" font-size="15" font-weight="700" style="fill:var(--danger)">every</text>
+          <text x="540" y="280" text-anchor="middle" font-size="15" font-weight="700" style="fill:var(--danger)">time</text>
+          <text class="ro07-next" x="590" y="34" text-anchor="end" font-size="15" font-weight="700">8:2 → a stronger law</text>
+        </svg>
+      </div>
+      <div>
+        <h2 class="rise" style="--d:1">A law that pulls every time</h2>
+        <p class="note rise" style="--d:2"><em>“A law”</em> here is a rule that always works, like gravity. Drop a stone, and it falls. Every time.</p>
+        <p class="note step"><em>“The law of my mind”</em> loves God's law. <em>“The law of sin… in my members”</em> pulls the other way, to drag him into <em>“captivity,”</em> like a prisoner of war.</p>
+        <p class="note step ro07-hint">Gravity never takes a day off, and neither does the flesh. But chapter 8 names a stronger law (8:2).</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="slide verse" data-v="24-25" data-hl="O wretched man that I am!|who shall deliver me from the body of this death?|I thank God through Jesus Christ our Lord"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise">From the cry to the thanks</h2>
+    <div class="daybreak climb">
+      <div class="step"><i>verse 24</i><b>The cry</b><p class="kjv">“O wretched man that I am!”</p><p>Honest. No excuses left.</p></div>
+      <div class="step"><i>verse 24</i><b>The question</b><p class="kjv">“Who shall deliver me…?”</p><p>Not <em>what</em>. <em>Who</em>.</p></div>
+      <div class="step"><i>verse 25</i><b>The answer</b><p class="kjv">“I thank God through Jesus Christ our Lord.”</p><p>The rescue is a Person.</p></div>
+    </div>
+    <p class="note step"><em>“Wretched”</em> means worn out, miserable, at the end of yourself. <em>“The body of this death”</em> is this body, where sin still lives, the body that will one day die. Paul is tired of the fight, and he says so.</p>
+    <p class="note step">He doesn't ask what will deliver him: a new program, a better plan, more willpower. He asks <em>who</em>. And he knows the answer before he finishes the sentence.</p>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="25" data-hl="with the mind I myself serve the law of God; but with the flesh the law of sin"></blockquote>
+    <h2 class="rise" style="--d:1">Still fighting, already free</h2>
+    <div class="mirror">
+      <div class="step"><span>Romans 7:25</span><span class="arrow">→</span><span class="word">the fight goes on</span><small>Until the day our bodies are made new (8:23), the flesh will keep pulling.</small></div>
+      <div class="step"><span>Romans 8:1</span><span class="arrow">→</span><span class="word">the verdict is already in</span><small>“There is therefore now no condemnation to them which are in Christ Jesus.”</small></div>
+    </div>
+    <p class="note step">Both are true at once. You'll fight sin as long as you live in this body. But a man in Christ fights <em>from</em> “no condemnation,” not <em>toward</em> it. That's chapter 8.</p>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise">When you fall today</h2>
+    <div class="columns">
+      <div class="col law step"><span class="who">2 Corinthians 7:10</span><h3>the sorrow of the world</h3><p>“I'm no good. I never will be. Why try?” It hides, it quits, and it <em>“worketh death.”</em></p></div>
+      <div class="col grace step"><span class="who">2 Corinthians 7:10</span><h3>godly sorrow</h3><p>“I did it. I hate it. Lord, I need You.” It turns back to God and <em>“worketh repentance.”</em></p></div>
+    </div>
+    <ol class="signs step">
+      <li><b>Own it</b>no excuses, like Paul in v. 24</li>
+      <li><b>Bring it to Him</b>confess it, 1 John 1:9</li>
+      <li class="now"><b>Get up and walk</b>forgetting what's behind, Philippians 3:13–14</li>
+    </ol>
+    <blockquote class="quote step"><p>“If we confess our sins, he is faithful and just to forgive us our sins, and to cleanse us from all unrighteousness.”</p><cite>1 John 1:9</cite></blockquote>
+  </div>
+</section>
+
+<!-- ======================= CLOSING ======================= -->
+<section class="slide remember">
+  <div class="inner">
+    <h2 class="rise">Points to remember</h2>
+    <ol class="seeds">
+      <li class="step"><span class="topic">The law</span><span class="seed-q">“The law is holy… and just, and good” <cite>7:12</cite></span><span class="take">The law shows sin like a light in a dark room. It can't wash it away.</span></li>
+      <li class="step"><span class="topic">Freedom</span><span class="seed-q">“Married to another, even to him who is raised from the dead” <cite>7:4</cite></span><span class="take">Your old bond to the law ended at the cross. Now you belong to the risen Christ.</span></li>
+      <li class="step"><span class="topic">Sin</span><span class="seed-q">“Sin, taking occasion by the commandment, deceived me” <cite>7:11</cite></span><span class="take">Sin twists a good “no” into a “want.” The problem isn't the rule. It's the sin in us.</span></li>
+      <li class="step"><span class="topic">The struggle</span><span class="seed-q">“What I would, that do I not; but what I hate, that do I” <cite>7:15</cite></span><span class="take">The war is real in every believer. Hating your sin is a sign of new life, not proof you're lost.</span></li>
+      <li class="step"><span class="topic">Honesty</span><span class="seed-q">“O wretched man that I am!” <cite>7:24</cite></span><span class="take">Own it. No excuses, no hiding, no giving up. Bring it to God.</span></li>
+      <li class="step"><span class="topic">Deliverance</span><span class="seed-q">“I thank God through Jesus Christ our Lord” <cite>7:25</cite></span><span class="take">The rescue is a Person, not a program. And the next words are “no condemnation.”</span></li>
+    </ol>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 1 of 6</p>
+      <span class="topic">The law</span>
+      <h2>What can God's law do, and what can't it do?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="7" data-hl="I had not known sin, but by the law"></blockquote>
+      <blockquote class="quote step" data-q="12"></blockquote>
+      <blockquote class="quote step"><p>“Therefore by the deeds of the law there shall no flesh be justified in his sight: for by the law is the knowledge of sin.”</p><cite>Romans 3:20</cite></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>The law is holy, just and good. It shows us right from wrong, and it shows sin for what it really is, like a light switched on in a dark room. But it can't make a man good, and it can't set him free. It can show you the mess. Only Christ can clean it up.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 2 of 6</p>
+      <span class="topic">Freedom</span>
+      <h2>What does the marriage picture in verses 1–4 teach us?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="2"></blockquote>
+      <blockquote class="quote step" data-q="4"></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>Only a death ends a marriage. When Christ died, we died with Him, and the law's claim on us ended. Now we belong to the risen Christ, and we serve Him out of love, not fear of a rulebook.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 3 of 6</p>
+      <span class="topic">Sin</span>
+      <h2>How does sin use even a good commandment against us?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="8"></blockquote>
+      <blockquote class="quote step" data-q="11"></blockquote>
+      <blockquote class="quote step" data-q="13" data-hl="that sin by the commandment might become exceeding sinful"></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>Sin uses the commandment as a launch pad. Tell a man “thou shalt not,” and the sin in him wants it more. Then it lies, promising life and paying out death. The fault isn't God's law. It's the sin in us.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 4 of 6</p>
+      <span class="topic">The struggle</span>
+      <h2>Why does a saved man still do the things he hates?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="15"></blockquote>
+      <blockquote class="quote step" data-q="22-23"></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>Because the flesh, the old sinful self, still lives in him and pulls the other way, and willpower alone can't win. But his “inward man” delights in God's law. Hating the sin is a sign of new life. It isn't an excuse to keep sinning, and it isn't proof you were never saved.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 5 of 6</p>
+      <span class="topic">Honesty</span>
+      <h2>What should a believer do with his failures?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="24"></blockquote>
+      <blockquote class="quote step"><p>“If we confess our sins, he is faithful and just to forgive us our sins, and to cleanse us from all unrighteousness.”</p><cite>1 John 1:9</cite></blockquote>
+      <blockquote class="quote step"><p>“For godly sorrow worketh repentance to salvation not to be repented of: but the sorrow of the world worketh death.”</p><cite>2 Corinthians 7:10</cite></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>Tell the truth about them, like Paul did: no excuses and no hiding. Bring them to God, who forgives and cleanses. The world's kind of sorrow says, “I'm hopeless, why try,” and it leads to death. Godly sorrow turns back to God, gets up, and keeps walking.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 6 of 6</p>
+      <span class="topic">Deliverance</span>
+      <h2>Who will deliver us from the body of this death?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="24-25" data-hl="I thank God through Jesus Christ our Lord"></blockquote>
+      <blockquote class="quote step"><p>“There is therefore now no condemnation to them which are in Christ Jesus, who walk not after the flesh, but after the Spirit.”</p><cite>Romans 8:1</cite></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>Jesus Christ our Lord: a Person, not a program. He has set us free from condemnation, His Spirit lives in us to fight the flesh, and one day He'll give us bodies with no sin in them. What He started in you, He will finish.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide prayer">
+  <div class="inner">
+    <div class="emblem rise"></div>
+    <h2 class="rise" style="--d:1">Prayer requests</h2>
+    <p class="ask-line rise" style="--d:2">What can we pray about for you today?</p>
+    <blockquote class="quote rise" style="--d:4"><p>“There hath no temptation taken you but such as is common to man: but God is faithful, who will not suffer you to be tempted above that ye are able; but will with the temptation also make a way to escape, that ye may be able to bear it.”</p><cite>1 Corinthians 10:13</cite></blockquote>
+  </div>
+</section>
+
+</main>
+
+<script>
+// King James Version, Romans chapter 7
+const V = {
+  1: "Know ye not, brethren, (for I speak to them that know the law,) how that the law hath dominion over a man as long as he liveth?",
+  2: "For the woman which hath an husband is bound by the law to her husband so long as he liveth; but if the husband be dead, she is loosed from the law of her husband.",
+  3: "So then if, while her husband liveth, she be married to another man, she shall be called an adulteress: but if her husband be dead, she is free from that law; so that she is no adulteress, though she be married to another man.",
+  4: "Wherefore, my brethren, ye also are become dead to the law by the body of Christ; that ye should be married to another, even to him who is raised from the dead, that we should bring forth fruit unto God.",
+  5: "For when we were in the flesh, the motions of sins, which were by the law, did work in our members to bring forth fruit unto death.",
+  6: "But now we are delivered from the law, that being dead wherein we were held; that we should serve in newness of spirit, and not in the oldness of the letter.",
+  7: "What shall we say then? Is the law sin? God forbid. Nay, I had not known sin, but by the law: for I had not known lust, except the law had said, Thou shalt not covet.",
+  8: "But sin, taking occasion by the commandment, wrought in me all manner of concupiscence. For without the law sin was dead.",
+  9: "For I was alive without the law once: but when the commandment came, sin revived, and I died.",
+  10: "And the commandment, which was ordained to life, I found to be unto death.",
+  11: "For sin, taking occasion by the commandment, deceived me, and by it slew me.",
+  12: "Wherefore the law is holy, and the commandment holy, and just, and good.",
+  13: "Was then that which is good made death unto me? God forbid. But sin, that it might appear sin, working death in me by that which is good; that sin by the commandment might become exceeding sinful.",
+  14: "For we know that the law is spiritual: but I am carnal, sold under sin.",
+  15: "For that which I do I allow not: for what I would, that do I not; but what I hate, that do I.",
+  16: "If then I do that which I would not, I consent unto the law that it is good.",
+  17: "Now then it is no more I that do it, but sin that dwelleth in me.",
+  18: "For I know that in me (that is, in my flesh,) dwelleth no good thing: for to will is present with me; but how to perform that which is good I find not.",
+  19: "For the good that I would I do not: but the evil which I would not, that I do.",
+  20: "Now if I do that I would not, it is no more I that do it, but sin that dwelleth in me.",
+  21: "I find then a law, that, when I would do good, evil is present with me.",
+  22: "For I delight in the law of God after the inward man:",
+  23: "But I see another law in my members, warring against the law of my mind, and bringing me into captivity to the law of sin which is in my members.",
+  24: "O wretched man that I am! who shall deliver me from the body of this death?",
+  25: "I thank God through Jesus Christ our Lord. So then with the mind I myself serve the law of God; but with the flesh the law of sin."
+};
+const BOOK = "Romans 7";
+</script>
+<script src="../assets/deck.js"></script>
+</body>
+</html>

@@ -1,0 +1,512 @@
+<!doctype html>
+<html lang="en" data-theme="scribe">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Romans 10</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="../assets/fonts.css">
+<link rel="stylesheet" href="../assets/deck.css">
+<link rel="stylesheet" href="../assets/themes.css">
+<style>
+/* ro09-where: "where we are in Romans" (same block as Romans 9): the sixteen chapters under the letter's five sections; .in tints a section, .now lights today's chapter */
+.ro09-where { display: grid; grid-template-columns: repeat(16, 1fr); gap: 4px; margin: .6em 0 1.1em; }
+.ro09-where .ro09-part { grid-row: 1; grid-column: var(--s) / var(--e); align-self: end; text-align: center; padding: 0 .15em .35em; border-bottom: 2px solid var(--line-strong); color: var(--ink-soft); font-size: clamp(.7rem, .55rem + .55vw, 1rem); line-height: 1.15; }
+.ro09-where .ro09-part.on { color: var(--accent-hot); border-color: var(--accent); font-weight: 700; }
+.ro09-where i { grid-row: 2; font-style: normal; text-align: center; padding: .5em 0; border-radius: 6px; background: var(--surface); border: 1px solid var(--line); color: var(--ink-soft); font: 600 clamp(.75rem, .55rem + .7vw, 1.15rem)/1 var(--sans); opacity: 0; transform: translateY(8px); }
+.slide.active .ro09-where i { animation: ro09-pop .5s ease forwards; animation-delay: calc(var(--k) * 70ms + .4s); }
+@keyframes ro09-pop { to { opacity: 1; transform: none; } }
+.ro09-where i.in { background: color-mix(in srgb, var(--accent) 20%, var(--surface)); color: var(--ink); border-color: var(--accent); }
+.ro09-where i.now { background: var(--accent); color: var(--on-accent); box-shadow: 0 0 14px var(--accent); }
+.ro09-where .ro09-here { grid-row: 3; grid-column: var(--c); text-align: center; color: var(--accent-hot); font-size: clamp(.7rem, .6rem + .4vw, .95rem); white-space: nowrap; }
+
+/* ro10-near: heaven above, the deep below, and a man in the middle; .ro10-done fades the long trips (Christ already came down, already rose), .ro10-nigh lights his mouth and heart */
+.ro10-sky { fill: color-mix(in srgb, var(--glow) 45%, transparent); stroke: var(--line); }
+.ro10-deep { fill: var(--on-glow); }
+.ro10-q { fill: var(--ink); font: italic 600 19px var(--serif); }
+.ro10-deep-q { fill: var(--glow); font: italic 600 19px var(--serif); }
+.ro10-trip { stroke: var(--ink-soft); stroke-width: 3; stroke-dasharray: 8 7; fill: none; transition: opacity .8s ease; }
+.ro10-head { fill: var(--ink-soft); }
+.ro10-tip { fill: var(--ink-soft); transition: opacity .8s ease; }
+.ro10-lab { fill: var(--ink-soft); font-size: 15px; transition: opacity .8s ease; }
+.ro10-done-lab { fill: var(--accent-hot); font: 600 16px var(--sans); opacity: 0; transition: opacity .8s ease .3s; }
+.slide:has(.ro10-done.on) .ro10-trip, .slide:has(.ro10-done.on) .ro10-tip, .slide:has(.ro10-done.on) .ro10-lab { opacity: .18; }
+.slide:has(.ro10-done.on) .ro10-done-lab { opacity: 1; }
+.ro10-man { fill: color-mix(in srgb, var(--ink-soft) 45%, transparent); transition: fill .8s ease; }
+.ro10-spot { fill: var(--accent-hot); stroke: var(--glow); stroke-width: 3; opacity: 0; transition: opacity .8s ease .2s; filter: drop-shadow(0 0 8px var(--accent)); }
+.ro10-nigh-lab { fill: var(--accent-hot); font: italic 600 19px var(--serif); opacity: 0; transition: opacity .8s ease .5s; }
+.slide:has(.ro10-nigh.on) .ro10-spot, .slide:has(.ro10-nigh.on) .ro10-nigh-lab { opacity: 1; }
+.slide:has(.ro10-nigh.on) .ro10-man { fill: color-mix(in srgb, var(--ink-soft) 70%, transparent); }
+@media (max-width: 600px) { .ro10-q, .ro10-deep-q, .ro10-nigh-lab { font-size: 24px; } .ro10-lab, .ro10-done-lab { font-size: 20px; } }
+
+/* ro10-links: Paul's chain of sending; the links appear from the end backward, as Paul asks them, then a .ro10-flow step lights them forward */
+.ro10-links { list-style: none; padding: 0; margin: .6em 0 1em; display: grid; grid-template-columns: repeat(6, 1fr); gap: 1.5rem; }
+.ro10-links li { position: relative; text-align: center; padding: .7em .35em; border-radius: 10px; border: 2px solid var(--line-strong); background: var(--surface); opacity: 0; transform: translateY(10px); transition: background .5s ease, border-color .5s ease, box-shadow .5s ease; transition-delay: calc(var(--i) * 320ms); }
+.slide.active .ro10-links li { animation: ro10-in .6s ease forwards; animation-delay: calc((5 - var(--i)) * 280ms + .3s); }
+@keyframes ro10-in { to { opacity: 1; transform: none; } }
+.ro10-links li + li::before { content: "→"; position: absolute; left: -1.3rem; top: 50%; transform: translateY(-50%); color: var(--accent); font-weight: 700; }
+.ro10-links li { color: var(--ink); }
+.ro10-links b { display: block; font: 600 clamp(1.05rem, .8rem + .9vw, 1.5rem) var(--serif); }
+.ro10-links small { display: block; margin-top: .25em; opacity: .75; font-size: clamp(.72rem, .62rem + .35vw, .95rem); line-height: 1.25; }
+.slide:has(.ro10-flow.on) .ro10-links li { border-color: var(--accent); background: color-mix(in srgb, var(--accent) 14%, var(--surface)); }
+.slide:has(.ro10-flow.on) .ro10-links li:last-child { background: var(--accent); color: var(--on-accent); box-shadow: 0 0 14px var(--accent); }
+@media (max-width: 640px) { .ro10-links { grid-template-columns: repeat(3, 1fr); gap: .8rem 1.3rem; } .ro10-links li:nth-child(4)::before { content: none; } }
+</style>
+</head>
+<body>
+<main class="deck" id="deck">
+
+<!-- ======================= OPENING ======================= -->
+<section class="slide title">
+  <div class="inner">
+    <div class="emblem rise"></div>
+    <h1 class="rise" style="--d:1">Romans 10</h1>
+    <p class="sub rise" style="--d:3">Whosoever shall call</p>
+    <p class="tag rise" style="--d:5">Paul prays for his people, and shows how near salvation really is: as near as your own mouth and your own heart.</p>
+  </div>
+</section>
+
+<section class="slide watch">
+  <div class="inner">
+    <h2 class="rise">Things to watch for</h2>
+    <p class="lede rise" style="--d:1">Keep these questions in the back of your mind as we read. We'll come back to every one of them at the end.</p>
+    <ol class="seeds">
+      <li class="step"><span class="topic">Prayer</span><span class="seed-q">What was Paul's heart's desire for Israel?</span></li>
+      <li class="step"><span class="topic">Zeal</span><span class="seed-q">What was wrong with Israel's zeal?</span></li>
+      <li class="step"><span class="topic">Near</span><span class="seed-q">How near is the word of faith?</span></li>
+      <li class="step"><span class="topic">Saved</span><span class="seed-q">What must a man do to be saved?</span></li>
+      <li class="step"><span class="topic">Whosoever</span><span class="seed-q">Who can call upon the name of the Lord?</span></li>
+      <li class="step"><span class="topic">Sent</span><span class="seed-q">How does a man come to faith?</span></li>
+    </ol>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise">Where we are in Romans</h2>
+    <div class="ro09-where" aria-label="The sixteen chapters of Romans in a row, under five headings: all have sinned, chapters 1 to 3; justified by faith, 4 and 5; new life, 6 to 8; Israel and the nations, 9 to 11, lit; living it out, 12 to 16. Chapter 10 is marked: we are here.">
+      <span class="ro09-part" style="--s:1;--e:4">All have sinned</span>
+      <span class="ro09-part" style="--s:4;--e:6">Justified by faith</span>
+      <span class="ro09-part" style="--s:6;--e:9">New life</span>
+      <span class="ro09-part on" style="--s:9;--e:12">Israel and the nations</span>
+      <span class="ro09-part" style="--s:12;--e:17">Living it out</span>
+      <i style="--k:0">1</i><i style="--k:1">2</i><i style="--k:2">3</i><i style="--k:3">4</i><i style="--k:4">5</i><i style="--k:5">6</i><i style="--k:6">7</i><i style="--k:7">8</i>
+      <i class="in" style="--k:8">9</i><i class="now" style="--k:9">10</i><i class="in" style="--k:10">11</i>
+      <i style="--k:11">12</i><i style="--k:12">13</i><i style="--k:13">14</i><i style="--k:14">15</i><i style="--k:15">16</i>
+      <span class="ro09-here" style="--c:10">▲ here</span>
+    </div>
+    <p class="note rise" style="--d:2">Chapter 9 showed God's right to give mercy on His own terms. It ended with the reason Israel missed it: they <em>“sought it not by faith, but as it were by the works of the law”</em> (9:32).</p>
+    <p class="note step">Chapter 10 keeps going from there. If God's terms are faith, what does faith look like? How close is it? Who can have it? And how does anyone ever hear about it? This is one of the plainest chapters in the Bible on how a man is saved.</p>
+  </div>
+</section>
+
+<!-- ======================= PART ONE ======================= -->
+<section class="slide part">
+  <div class="inner">
+    <p class="part-n rise">Part one</p>
+    <h2 class="rise" style="--d:1">My heart's desire</h2>
+    <p class="range rise" style="--d:2">Verses 1–5</p>
+    <div class="rule"></div>
+    <p class="hook rise" style="--d:4">Paul prays for people who want him dead, and names the mistake he once made himself.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="1-3" data-hl="my heart’s desire and prayer to God for Israel is, that they might be saved|they have a zeal of God, but not according to knowledge|going about to establish their own righteousness"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="1"></blockquote>
+    <h2 class="rise" style="--d:1">He kept praying</h2>
+    <p class="note rise" style="--d:2">Paul had just spent a chapter on God's choosing. It didn't make him stop praying for the lost. It made him pray harder. He wanted every one of them <em>saved</em>, and he told God so.</p>
+    <p class="note step">And who was he praying for? The same people who had run him out of town after town, stoned him, and plotted to kill him. <em>Brethren</em>, he still calls the church, and he still calls Israel his own.</p>
+    <p class="note step">Is there someone you've given up on? A brother, your father, the man who got you started? Say his name to God today. Paul's prayer for Israel is still being answered.</p>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise">Zeal, but not according to knowledge</h2>
+    <p class="note rise" style="--d:1"><em>Zeal</em> is burning energy for a cause. Israel had plenty of it for God. Paul knew exactly what that looked like, because he'd been the most zealous man of all:</p>
+    <blockquote class="quote rise" style="--d:2"><p>“Concerning zeal, persecuting the church; touching the righteousness which is in the law, blameless.”</p><cite>Philippians 3:6</cite></blockquote>
+    <div class="columns">
+      <div class="col law step"><p class="who">Verse 3</p><h3>Their own righteousness</h3><p>“Going about to establish” it: building it, brick by brick, out of rules kept and good deeds done. It's never finished, and it's never enough.</p></div>
+      <div class="col grace step"><p class="who">Verse 3</p><h3>The righteousness of God</h3><p>Not built, but <em>submitted to</em>: a right standing God gives as a gift. Paul gave up his own <em>“to be found in him”</em> (Philippians 3:9).</p></div>
+    </div>
+    <p class="note step">You can be sincere and still be sincerely wrong. Israel didn't fail because they didn't try hard enough. They failed because they were trying to earn what can only be received.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="4-5" data-hl="For Christ is the end of the law for righteousness to every one that believeth|the man which doeth those things shall live by them"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise">The end of the law</h2>
+    <p class="note rise" style="--d:1">Here are two ways to be right with God. Verse 5 gives the first, from Leviticus 18:5:</p>
+    <div class="ifthen step">
+      <div class="if"><small>If</small>a man does <em>all</em> those things, every day of his life,</div>
+      <span class="arrow" aria-hidden="true">→</span>
+      <div class="then"><small>then</small>he shall live by them.</div>
+    </div>
+    <p class="note step">Nobody has ever done it, except one Man. <em>“For all have sinned, and come short of the glory of God”</em> (3:23). Jesus kept the law perfectly, and then died for the men who didn't.</p>
+    <blockquote class="quote step" data-q="4" data-hl="Christ is the end of the law"></blockquote>
+    <p class="note step"><em>End</em> here is the Greek <span class="gk">telos</span>: the goal and the finish line. The law was always pointing to Him. Once you trust Him, the race to earn your standing with God is over. He ran it.</p>
+  </div>
+</section>
+
+<!-- ======================= PART TWO ======================= -->
+<section class="slide part">
+  <div class="inner">
+    <p class="part-n rise">Part two</p>
+    <h2 class="rise" style="--d:1">The word is nigh thee</h2>
+    <p class="range rise" style="--d:2">Verses 6–13</p>
+    <div class="rule"></div>
+    <p class="hook rise" style="--d:4">You don't have to climb to heaven or dig into the grave. It's as close as your own mouth.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="6-8" data-hl="Who shall ascend into heaven|Who shall descend into the deep|The word is nigh thee, even in thy mouth, and in thy heart"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <div class="stage">
+      <svg viewBox="-60 0 760 340" role="img" aria-label="Heaven is a bright band at the top; the deep is a dark band at the bottom. A man stands in the middle. A long dashed line climbs from him to heaven, to bring Christ down, and another goes down to the deep, to bring Christ up. On a step both trips fade: He came down; He rose. On the next step the man's mouth and heart light up: in thy mouth, in thy heart.">
+        <rect class="ro10-sky" x="-60" y="0" width="760" height="58" rx="12"/>
+        <text class="ro10-q" x="320" y="36" text-anchor="middle">“Who shall ascend into heaven?”</text>
+        <rect class="ro10-deep" x="-60" y="282" width="760" height="58" rx="12"/>
+        <text class="ro10-deep-q" x="320" y="318" text-anchor="middle">“Who shall descend into the deep?”</text>
+        <path class="ro10-trip" d="M150 250 V 72"/><path class="ro10-tip" d="M140 84 L150 66 L160 84 Z"/>
+        <text class="ro10-lab" x="136" y="150" text-anchor="end">to bring Christ down</text>
+        <text class="ro10-done-lab" x="136" y="176" text-anchor="end">He already came</text>
+        <path class="ro10-trip" d="M490 72 V 266"/><path class="ro10-tip" d="M480 256 L490 274 L500 256 Z"/>
+        <text class="ro10-lab" x="504" y="150">to bring Christ up</text>
+        <text class="ro10-done-lab" x="504" y="176">He already rose</text>
+        <circle class="ro10-man" cx="320" cy="130" r="18"/>
+        <path class="ro10-man" d="M300 156 h40 l10 96 h-60 z"/>
+        <circle class="ro10-spot" cx="320" cy="138" r="6"/>
+        <circle class="ro10-spot" cx="320" cy="186" r="9"/>
+        <text class="ro10-nigh-lab" x="296" y="122" text-anchor="end">in thy mouth</text>
+        <text class="ro10-nigh-lab" x="346" y="214">in thy heart</text>
+      </svg>
+    </div>
+    <p class="note step ro10-done">Paul borrows Moses' words. Nobody has to climb up to heaven to fetch Christ: He already came down. Nobody has to go down into the grave to raise Him: He already rose.</p>
+    <p class="note step ro10-nigh">The hard part is done. What's left is close enough to touch: <em>“the word is nigh thee, even in thy mouth, and in thy heart.”</em></p>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise"><p>“But the word is very nigh unto thee, in thy mouth, and in thy heart, that thou mayest do it.”</p><cite>Deuteronomy 30:14</cite></blockquote>
+    <h2 class="rise" style="--d:1">Nigh thee</h2>
+    <p class="note rise" style="--d:2"><em>Nigh</em> means near. Moses said it about God's word to Israel at the edge of the promised land. Paul says it's even truer of the gospel: <em>“the word of faith, which we preach.”</em></p>
+    <p class="note step">There's no pilgrimage to make, no program to finish first, no level of clean you have to reach. You don't have to get your life together to come. Salvation isn't far away from the man in a cell, a rehab bed, or a truck at a job site at five in the morning. It's right where he is.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="9-10" data-hl="if thou shalt confess with thy mouth the Lord Jesus|shalt believe in thine heart that God hath raised him from the dead, thou shalt be saved"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise">Mouth and heart</h2>
+    <div class="columns">
+      <div class="col grace step"><p class="who">In thine heart</p><h3>Believe</h3><p>“that God hath raised him from the dead.” Trust that Jesus died for your sins and rose again, and put your whole weight on Him.</p></div>
+      <div class="col grace step"><p class="who">With thy mouth</p><h3>Confess</h3><p>“the Lord Jesus”: say it and mean it. <em>Jesus is Lord.</em> Own Him out loud as your Lord and Saviour.</p></div>
+    </div>
+    <p class="note step">These aren't two hoops to jump through. They're one faith, inside and out. The heart trusts Him, and the mouth says so. Verse 10 even turns the order around. Nothing else is added: not a ceremony, not a fee, not a cleanup period.</p>
+    <blockquote class="quote step"><p>“For I delivered unto you first of all that which I also received, how that Christ died for our sins according to the scriptures; And that he was buried, and that he rose again the third day according to the scriptures:”</p><cite>1 Corinthians 15:3–4</cite></blockquote>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise">Thou shalt be saved</h2>
+    <p class="note rise" style="--d:1">Paul doesn't say <em>might</em> be saved, or <em>could</em> be, if you hold out long enough. <em>“Thou shalt be saved.”</em> That's a promise from God, and it's said to “thou”: one man at a time.</p>
+    <div class="talk">
+      <p class="step"><small>The jailor at Philippi, Acts 16:30</small>Sirs, what must I do to be saved?</p>
+      <p class="reply step"><small>Paul and Silas, 16:31</small>Believe on the Lord Jesus Christ, and thou shalt be saved, and thy house.</p>
+    </div>
+    <p class="note step">Baptism comes after, as the first step of obeying the Lord you've confessed. It pictures what has already happened. But the saving happens when a man believes and calls on Him. A man who did that years ago can stop wondering. A man who never has can do it today.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="11-13" data-hl="Whosoever believeth on him shall not be ashamed|there is no difference between the Jew and the Greek|For whosoever shall call upon the name of the Lord shall be saved"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise">No difference</h2>
+    <p class="note rise" style="--d:1">Paul uses the same two words twice in this letter, and they cut both ways:</p>
+    <div class="columns">
+      <div class="col law step"><p class="who">Romans 3:22–23</p><h3>No difference in the problem</h3><p>“for there is no difference: For all have sinned, and come short of the glory of God”</p></div>
+      <div class="col grace step"><p class="who">Romans 10:12</p><h3>No difference in the offer</h3><p>“for the same Lord over all is rich unto all that call upon him.”</p></div>
+    </div>
+    <p class="note step">The religious man and the addict, the Jew and the Greek, stand in the same line. Nobody's too good to need Him, and nobody's too far gone for Him. He's <em>rich</em> toward everyone who calls: there's no shortage of mercy.</p>
+    <p class="note step">And <em>“shall not be ashamed”</em>: a lot of us know shame better than our own names. Trust Him, and He will never leave you standing there embarrassed that you did.</p>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <p class="saying rise">“For <em>whosoever</em> shall call upon the name of the Lord shall be saved.”</p>
+    <p class="note rise" style="--d:1">Paul is quoting Joel 2:32, and Peter preached the same verse at Pentecost (Acts 2:21). Look at some of the men who called:</p>
+    <ol class="signs">
+      <li class="step"><b>A dying thief</b>“Lord, remember me when thou comest into thy kingdom.” (Luke 23:42)</li>
+      <li class="step"><b>A crooked tax man</b>“God be merciful to me a sinner.” (Luke 18:13)</li>
+      <li class="step"><b>A jailor at midnight</b>“Sirs, what must I do to be saved?” (Acts 16:30)</li>
+      <li class="step"><b>A persecutor</b>“Lord, what wilt thou have me to do?” (Acts 9:6)</li>
+      <li class="step now"><b>You</b>today, in your own words. <em>Whosoever</em> has your name in it.</li>
+    </ol>
+    <p class="note step">No one in this room is outside that word. Not the worst thing you've done, not the time you went back, not the family you hurt. If you call on Him, He saves. That's His promise.</p>
+  </div>
+</section>
+
+<!-- ======================= PART THREE ======================= -->
+<section class="slide part">
+  <div class="inner">
+    <p class="part-n rise">Part three</p>
+    <h2 class="rise" style="--d:1">How beautiful are the feet</h2>
+    <p class="range rise" style="--d:2">Verses 14–21</p>
+    <div class="rule"></div>
+    <p class="hook rise" style="--d:4">If calling saves, somebody has to tell them who to call. And God's hands stay open all day long.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="14-15" data-hl="how shall they believe in him of whom they have not heard|how shall they hear without a preacher|How beautiful are the feet of them that preach the gospel of peace"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise">The chain</h2>
+    <p class="note rise" style="--d:1">Paul asks it backward, one link at a time: call, believe, hear, preacher, sent. Watch the chain build from the end.</p>
+    <ol class="ro10-links" aria-label="Six links: sent, preach, hear, believe, call, saved. They appear from the last link back to the first, as Paul asks. On a step, they light up from first to last, ending at saved.">
+      <li style="--i:0"><b>Sent</b><small>“except they be sent”</small></li>
+      <li style="--i:1"><b>Preach</b><small>“without a preacher”</small></li>
+      <li style="--i:2"><b>Hear</b><small>“of whom they have not heard”</small></li>
+      <li style="--i:3"><b>Believe</b><small>“in whom they have not believed”</small></li>
+      <li style="--i:4"><b>Call</b><small>“call on him”</small></li>
+      <li style="--i:5"><b>Saved</b><small>“shall be saved” (10:13)</small></li>
+    </ol>
+    <p class="note step ro10-flow">Now run it forward. God sends someone. He tells it. A man hears it, believes it, calls on the Lord, and is saved. Every man who has ever been saved got there by this chain.</p>
+    <p class="note step">A <em>preacher</em> here isn't only a man in a pulpit. The Greek word means a herald, anyone who announces news. If one link is missing, the chain breaks. Some of us are that link for somebody.</p>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise"><p>“How beautiful upon the mountains are the feet of him that bringeth good tidings, that publisheth peace; that bringeth good tidings of good, that publisheth salvation; that saith unto Zion, Thy God reigneth!”</p><cite>Isaiah 52:7</cite></blockquote>
+    <h2 class="rise" style="--d:1">Beautiful feet</h2>
+    <p class="note rise" style="--d:2">Isaiah pictured a runner coming over the hills to a city under siege, carrying news that the war was won. His feet were cut and dusty. To the people on the wall, they were beautiful, because of the news they carried.</p>
+    <div class="chains">
+      <div class="chain step"><span class="who-chip jesus">Jesus</span><span class="said">“Go ye into all the world”</span><span class="who-chip">the apostles</span><span class="said">“every where preaching”</span><span class="who-chip">the scattered believers</span></div>
+      <div class="chain step"><span class="who-chip">somebody</span><span class="said">told you</span><span class="who-chip">you</span><span class="said">tell it</span><span class="who-chip">the next man</span></div>
+    </div>
+    <p class="note step">Whose feet brought it to you? A chaplain, a sponsor, a grandmother, a man at a meeting. Today, your feet can be the beautiful ones. Tell one man what Jesus did for you.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="16-17" data-hl="they have not all obeyed the gospel|So then faith cometh by hearing, and hearing by the word of God"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <p class="saying rise">“So then faith cometh by <em>hearing</em>, and hearing by the <em>word of God</em>.”</p>
+    <p class="note rise" style="--d:1">Not everyone who hears believes. Isaiah grieved the same thing seven hundred years earlier: <em>“Lord, who hath believed our report?”</em> (Isaiah 53:1). The word doesn't force anyone. It can be refused.</p>
+    <p class="note step">But faith doesn't come from feelings, or from trying to work it up. It comes from hearing what God has said. Faith grows the way it started: by hearing the word.</p>
+    <p class="note step">So if your faith feels thin, don't go looking inside yourself for more. Get under the word. That's why we meet every day. Read a chapter today, even if it's only one. Faith comes that way.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="18-19" data-hl="their sound went into all the earth, and their words unto the ends of the world|I will provoke you to jealousy by them that are no people"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <div class="split">
+      <div class="stage">
+        <svg data-world viewBox="170 130 715 425" style="max-height:52vh" data-towns="Jerusalem!, Rome*, Antioch, Ephesus, Corinth, Alexandria, Cyrene" role="img" aria-label="A map of the Roman world. From Jerusalem, lines spread out to Antioch, Ephesus, Corinth, Rome, Alexandria and Cyrene: the gospel going out from Pentecost into the whole known world. Rome is lit: a church was there before Paul ever came.">
+          <path class="map-route" data-via="Jerusalem, Sidon, Antioch"/>
+          <path class="map-route" data-via="Jerusalem, Caesarea, @33 34.3, @29.5 35.9, @27.8 36.9, Ephesus"/>
+          <path class="map-route" data-via="Jerusalem, Caesarea, @30 34.5, @25 34.6, @23.4 36.2, Cenchrea, Corinth"/>
+          <path class="map-route" data-via="Jerusalem, Caesarea, @30 34.4, @24 34.4, @20 36.5, @16 37.6, Rhegium, Puteoli, Rome"/>
+          <path class="map-route" data-via="Jerusalem, Gaza, @32.5 31.6, Alexandria"/>
+          <path class="map-route" data-via="Alexandria, @27 32.2, @24 33.2, Cyrene"/>
+        </svg>
+      </div>
+      <div>
+        <h2 class="rise">Into all the earth</h2>
+        <p class="note rise" style="--d:1">Has Israel not heard? They have. Paul borrows Psalm 19:4, where the sky preaches God's glory everywhere, and says the gospel has gone just as far.</p>
+        <p class="note step">At Pentecost, about AD 30, Jews from all over the empire heard Peter, <em>“strangers of Rome”</em> among them (Acts 2:10). They carried it home. By about AD 57, when Paul wrote this letter, there was a church in Rome he had never even visited.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="slide verse" data-v="20-21" data-hl="I was found of them that sought me not|All day long I have stretched forth my hands"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise">Hands stretched out all day long</h2>
+    <div class="columns">
+      <div class="col grace step"><p class="who">Verse 20, the Gentiles</p><h3>Found by men who weren't looking</h3><p>“I was found of them that sought me not.” That's most of us. We weren't seeking God. He came looking for us.</p></div>
+      <div class="col grace step"><p class="who">Verse 21, Israel</p><h3>Hands held out to men who wouldn't come</h3><p>“All day long I have stretched forth my hands unto a disobedient and gainsaying people.” <em>Gainsaying</em> means talking back.</p></div>
+    </div>
+    <p class="note step">Look at the last picture Paul leaves us. God isn't turning His back. He's standing with His arms open, all day, to people who keep saying no. When they're lost, the fault is not on His side.</p>
+    <p class="note step">And chapter 11 opens: <em>“Hath God cast away his people? God forbid.”</em> His hands are still open, to Israel, and to you, today.</p>
+  </div>
+</section>
+
+<!-- ======================= CLOSING ======================= -->
+<section class="slide remember">
+  <div class="inner">
+    <h2 class="rise">Points to remember</h2>
+    <ol class="seeds">
+      <li class="step"><span class="topic">Prayer</span><span class="seed-q">“My heart’s desire and prayer … that they might be saved” <cite>10:1</cite></span><span class="take">Keep praying for the lost, even the ones who hurt you.</span></li>
+      <li class="step"><span class="topic">Zeal</span><span class="seed-q">“A zeal of God, but not according to knowledge” <cite>10:2</cite></span><span class="take">They tried to build their own righteousness instead of receiving God's.</span></li>
+      <li class="step"><span class="topic">Near</span><span class="seed-q">“The word is nigh thee” <cite>10:8</cite></span><span class="take">Christ already came and rose. Salvation is as close as your mouth and heart.</span></li>
+      <li class="step"><span class="topic">Saved</span><span class="seed-q">“Confess with thy mouth … believe in thine heart” <cite>10:9</cite></span><span class="take">Trust that God raised Jesus, own Him as Lord, and you shall be saved.</span></li>
+      <li class="step"><span class="topic">Whosoever</span><span class="seed-q">“Whosoever shall call upon the name of the Lord” <cite>10:13</cite></span><span class="take">No difference: the offer has every man's name in it.</span></li>
+      <li class="step"><span class="topic">Sent</span><span class="seed-q">“Faith cometh by hearing” <cite>10:17</cite></span><span class="take">Someone is sent, the word is told and heard, and faith is born.</span></li>
+    </ol>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 1 of 6</p>
+      <span class="topic">Prayer</span>
+      <h2>What was Paul's heart's desire for Israel?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="1"></blockquote>
+      <blockquote class="quote step"><p>“Who will have all men to be saved, and to come unto the knowledge of the truth.”</p><cite>1 Timothy 2:4</cite></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>That they might be saved. He prayed for it, for the very people who persecuted him. God wants all men saved, and so should we. Keep praying for the ones you love who don't know Him yet.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 2 of 6</p>
+      <span class="topic">Zeal</span>
+      <h2>What was wrong with Israel's zeal?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="2"></blockquote>
+      <blockquote class="quote step" data-q="3"></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>It was real, but it wasn't according to knowledge. They didn't know God's way of making a man right, so they tried to build their own righteousness and wouldn't submit to the one God gives. Paul had done the same thing, until he met Christ.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 3 of 6</p>
+      <span class="topic">Near</span>
+      <h2>How near is the word of faith?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="6"></blockquote>
+      <blockquote class="quote step" data-q="8"></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>As near as your own mouth and heart. Nobody has to climb to heaven or go down to the dead. Christ already came down, died and rose. All that's left is to believe it and say so, right where you are.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 4 of 6</p>
+      <span class="topic">Saved</span>
+      <h2>What must a man do to be saved?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="9"></blockquote>
+      <blockquote class="quote step" data-q="10"></blockquote>
+      <blockquote class="quote step"><p>“And they said, Believe on the Lord Jesus Christ, and thou shalt be saved, and thy house.”</p><cite>Acts 16:31</cite></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>Believe in your heart that God raised Jesus from the dead, and confess with your mouth that Jesus is Lord. It's one faith, inside and out. Nothing else is added to it, and God promises: thou shalt be saved.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 5 of 6</p>
+      <span class="topic">Whosoever</span>
+      <h2>Who can call upon the name of the Lord?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="12"></blockquote>
+      <blockquote class="quote step" data-q="13"></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>Whosoever. Jew or Greek, religious or not, clean or still struggling. There's no difference: the same Lord is rich to everyone who calls. That includes every man in this room, today.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 6 of 6</p>
+      <span class="topic">Sent</span>
+      <h2>How does a man come to faith?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="14"></blockquote>
+      <blockquote class="quote step" data-q="17"></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>By hearing the word of God. Someone is sent, the gospel is told, a man hears it, believes, and calls on the Lord. Faith comes, and grows, by hearing God's word. And somebody has to be the feet that bring it.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide prayer">
+  <div class="inner">
+    <div class="emblem rise"></div>
+    <h2 class="rise" style="--d:1">Prayer requests</h2>
+    <p class="ask-line rise" style="--d:2">What can we pray about for you today?</p>
+    <blockquote class="quote rise" style="--d:4" data-q="13"></blockquote>
+  </div>
+</section>
+
+</main>
+
+<script>
+// King James Version, Romans chapter 10
+const V = {
+  1: "Brethren, my heart’s desire and prayer to God for Israel is, that they might be saved.",
+  2: "For I bear them record that they have a zeal of God, but not according to knowledge.",
+  3: "For they being ignorant of God’s righteousness, and going about to establish their own righteousness, have not submitted themselves unto the righteousness of God.",
+  4: "For Christ is the end of the law for righteousness to every one that believeth.",
+  5: "For Moses describeth the righteousness which is of the law, That the man which doeth those things shall live by them.",
+  6: "But the righteousness which is of faith speaketh on this wise, Say not in thine heart, Who shall ascend into heaven? (that is, to bring Christ down from above:)",
+  7: "Or, Who shall descend into the deep? (that is, to bring up Christ again from the dead.)",
+  8: "But what saith it? The word is nigh thee, even in thy mouth, and in thy heart: that is, the word of faith, which we preach;",
+  9: "That if thou shalt confess with thy mouth the Lord Jesus, and shalt believe in thine heart that God hath raised him from the dead, thou shalt be saved.",
+  10: "For with the heart man believeth unto righteousness; and with the mouth confession is made unto salvation.",
+  11: "For the scripture saith, Whosoever believeth on him shall not be ashamed.",
+  12: "For there is no difference between the Jew and the Greek: for the same Lord over all is rich unto all that call upon him.",
+  13: "For whosoever shall call upon the name of the Lord shall be saved.",
+  14: "How then shall they call on him in whom they have not believed? and how shall they believe in him of whom they have not heard? and how shall they hear without a preacher?",
+  15: "And how shall they preach, except they be sent? as it is written, How beautiful are the feet of them that preach the gospel of peace, and bring glad tidings of good things!",
+  16: "But they have not all obeyed the gospel. For Esaias saith, Lord, who hath believed our report?",
+  17: "So then faith cometh by hearing, and hearing by the word of God.",
+  18: "But I say, Have they not heard? Yes verily, their sound went into all the earth, and their words unto the ends of the world.",
+  19: "But I say, Did not Israel know? First Moses saith, I will provoke you to jealousy by them that are no people, and by a foolish nation I will anger you.",
+  20: "But Esaias is very bold, and saith, I was found of them that sought me not; I was made manifest unto them that asked not after me.",
+  21: "But to Israel he saith, All day long I have stretched forth my hands unto a disobedient and gainsaying people."
+};
+const BOOK = "Romans 10";
+</script>
+<script src="../assets/deck.js"></script>
+</body>
+</html>

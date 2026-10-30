@@ -11072,6 +11072,195 @@ window.STUDIES = [
     }
   },
   {
+    "id": "romans-07",
+    "type": "chapter",
+    "book": "Romans",
+    "ch": 7,
+    "date": "2026-10-30",
+    "title": "Romans 7",
+    "sub": "O wretched man",
+    "about": "The law shows us our sin but can't set us free. Paul tells the truth about the war inside every believer, and where the rescue comes from.",
+    "tags": [
+      "The law",
+      "Sin",
+      "The struggle",
+      "Temptation",
+      "Honesty",
+      "Deliverance"
+    ],
+    "url": "studies/romans-07.html",
+    "overview": {
+      "where": "A letter written from Corinth to the believers in Rome",
+      "when": "About AD 57, near the end of Paul's third journey",
+      "people": [
+        "paul",
+        "jesus"
+      ],
+      "places": [
+        "corinth",
+        "rome"
+      ],
+      "story": [
+        "A marriage lasts until death. When Christ died, we died to the law, and now we belong to Him who was raised from the dead (1–6).",
+        "Is the law sin? God forbid. The commandment “Thou shalt not covet” showed Paul his sin, and sin used that good commandment to deceive him and kill him (7–13).",
+        "The war inside: “what I would, that do I not; but what I hate, that do I.” In the flesh dwells no good thing, and willpower alone can't win (14–20).",
+        "Two laws fight in one man: the law of his mind, which delights in God's law, and the law of sin in his members (21–23).",
+        "“O wretched man that I am! who shall deliver me?” And the answer: “I thank God through Jesus Christ our Lord” (24–25)."
+      ],
+      "key": {
+        "ref": "Romans 7:24",
+        "text": "O wretched man that I am! who shall deliver me from the body of this death?"
+      },
+      "big": "God's law is good, but it can only show sin, not free us from it. Every believer still fights the flesh, and the honest cry of the struggle is answered by a Person: Jesus Christ our Lord."
+    }
+  },
+  {
+    "id": "romans-08",
+    "type": "chapter",
+    "book": "Romans",
+    "ch": 8,
+    "date": "2026-10-30",
+    "title": "Romans 8",
+    "sub": "No condemnation",
+    "about": "It opens with “no condemnation” and closes with nothing that can separate us. In between, the Spirit moves in, calls you son, prays for you, and holds you to the end.",
+    "tags": [
+      "No condemnation",
+      "The Holy Spirit",
+      "Adoption",
+      "Suffering",
+      "Hope",
+      "Assurance"
+    ],
+    "url": "studies/romans-08.html",
+    "overview": {
+      "where": "A letter written from Corinth to the believers in Rome",
+      "when": "About AD 57, near the end of Paul's third journey",
+      "people": [
+        "paul",
+        "jesus",
+        "holy-spirit",
+        "the-father"
+      ],
+      "places": [
+        "corinth",
+        "rome"
+      ],
+      "story": [
+        "No condemnation for those in Christ Jesus. The law of the Spirit of life has set us free, and God condemned sin in the flesh of His own Son (1–4).",
+        "The mind set on the flesh is death; the mind set on the Spirit is life and peace. Every man who belongs to Christ has His Spirit living in him (5–11).",
+        "We owe the flesh nothing. Led by the Spirit, we are sons of God, not slaves; we cry “Abba, Father,” and we are heirs with Christ (12–17).",
+        "Today's sufferings are nothing next to the glory coming. All creation groans like a woman in labor, we groan too, and the Spirit prays for us when we have no words (18–27).",
+        "God works all things together for good for those who love Him. If God be for us, who can be against us? Nothing can separate us from the love of God in Christ Jesus our Lord (28–39)."
+      ],
+      "key": {
+        "ref": "Romans 8:1",
+        "text": "There is therefore now no condemnation to them which are in Christ Jesus, who walk not after the flesh, but after the Spirit."
+      },
+      "big": "For the man in Christ there is no condemnation, now or ever. The Spirit lives in him, makes him a son, helps him in his weakness, and nothing in all creation can separate him from God's love."
+    }
+  },
+  {
+    "id": "romans-09",
+    "type": "chapter",
+    "book": "Romans",
+    "ch": 9,
+    "date": "2026-10-30",
+    "title": "Romans 9",
+    "sub": "Mercy on His own terms",
+    "about": "Paul grieves for Israel, and shows that God has always given mercy His way: not by birth, not by works, but by faith.",
+    "tags": [
+      "Israel",
+      "Mercy",
+      "God's promise",
+      "Hard hearts",
+      "The potter",
+      "Faith"
+    ],
+    "url": "studies/romans-09.html",
+    "overview": {
+      "where": "Written from Corinth to the church at Rome",
+      "when": "About AD 57, near the end of Paul's third journey",
+      "people": [
+        "paul",
+        "abraham",
+        "sarah",
+        "isaac",
+        "rebecca",
+        "jacob",
+        "esau",
+        "moses",
+        "pharaoh",
+        "hosea",
+        "isaiah"
+      ],
+      "places": [
+        "israel",
+        "sion",
+        "sodom-and-gomorrah"
+      ],
+      "story": [
+        "Paul grieves for his own people, the Israelites. He could wish himself accursed from Christ for them (1–5).",
+        "God's word hasn't failed: they are not all Israel, which are of Israel. The children of the promise, like Isaac, are counted for the seed (6–9).",
+        "Before the twins were born, God said, “The elder shall serve the younger.” He chose which nation would carry the promise, by His call and not by works (10–13).",
+        "God shows mercy on His own terms, as He told Moses after the golden calf. He hardened Pharaoh, who had first hardened his own heart (14–18).",
+        "The potter has power over the clay. God endured the vessels of wrath with much longsuffering, and called vessels of mercy from Jews and Gentiles (19–29).",
+        "The Gentiles found righteousness by faith. Israel missed it, because they sought it not by faith but by works, and stumbled at the stumblingstone (30–33)."
+      ],
+      "key": {
+        "ref": "Romans 9:33",
+        "text": "As it is written, Behold, I lay in Sion a stumblingstone and rock of offence: and whosoever believeth on him shall not be ashamed."
+      },
+      "big": "God has every right to show mercy on His own terms, and His terms are faith. Israel missed righteousness by trying to earn it. Whosoever believes on Christ shall not be ashamed."
+    }
+  },
+  {
+    "id": "romans-10",
+    "type": "chapter",
+    "book": "Romans",
+    "ch": 10,
+    "date": "2026-10-30",
+    "title": "Romans 10",
+    "sub": "Whosoever shall call",
+    "about": "Paul prays for Israel, and shows how near salvation is: believe in your heart, confess with your mouth, and call on the Lord.",
+    "tags": [
+      "Prayer",
+      "Salvation",
+      "Faith",
+      "Whosoever",
+      "Witness",
+      "God's word"
+    ],
+    "url": "studies/romans-10.html",
+    "overview": {
+      "where": "Written from Corinth to the church at Rome",
+      "when": "About AD 57, near the end of Paul's third journey",
+      "people": [
+        "paul",
+        "moses",
+        "isaiah",
+        "jesus",
+        "the-greek"
+      ],
+      "places": [
+        "israel"
+      ],
+      "story": [
+        "Paul's heart's desire and prayer is that Israel might be saved. They have a zeal of God, but not according to knowledge (1–3).",
+        "Christ is the end of the law for righteousness to every one that believeth (4–5).",
+        "No one has to bring Christ down from heaven or up from the dead: the word is nigh thee, in thy mouth and in thy heart (6–8).",
+        "Confess with thy mouth the Lord Jesus, believe in thine heart that God raised Him from the dead, and thou shalt be saved (9–10).",
+        "There is no difference between the Jew and the Greek: whosoever shall call upon the name of the Lord shall be saved (11–13).",
+        "How shall they call, believe, hear or preach unless someone is sent? Faith cometh by hearing, and hearing by the word of God (14–17).",
+        "Israel has heard. God was found by Gentiles who sought Him not, and all day long He stretches out His hands to Israel (18–21)."
+      ],
+      "key": {
+        "ref": "Romans 10:13",
+        "text": "For whosoever shall call upon the name of the Lord shall be saved."
+      },
+      "big": "Salvation isn't far away, and it isn't earned. Whosoever believes in his heart that God raised Jesus, and calls on Him as Lord, shall be saved. And somebody has to be sent to tell him."
+    }
+  },
+  {
     "id": "romans-11",
     "type": "chapter",
     "book": "Romans",
@@ -11247,6 +11436,94 @@ window.STUDIES = [
         "text": "It is good neither to eat flesh, nor to drink wine, nor any thing whereby thy brother stumbleth, or is offended, or is made weak."
       },
       "big": "In things God hasn't commanded, believers welcome one another instead of judging, because each of us answers to the Lord. Love gives up any freedom, wine included, that could make a brother for whom Christ died fall."
+    }
+  },
+  {
+    "id": "1-corinthians-01",
+    "type": "chapter",
+    "book": "1 Corinthians",
+    "ch": 1,
+    "date": "2026-10-31",
+    "title": "1 Corinthians 1",
+    "sub": "The foolishness of God",
+    "about": "Paul writes to a gifted, divided church in a wild port city, and starts with grace and the cross: God picks the ones the world wrote off.",
+    "tags": [
+      "Grace",
+      "Unity",
+      "The cross",
+      "God's wisdom",
+      "Who God chooses",
+      "Boasting"
+    ],
+    "url": "studies/1-corinthians-01.html",
+    "overview": {
+      "where": "Written from Ephesus, in Asia; sent to the church at Corinth, on the isthmus of Greece",
+      "when": "About AD 55, a few years after Paul started the church (Acts 18)",
+      "people": [
+        "paul",
+        "sosthenes",
+        "apollos",
+        "simon-peter",
+        "chloe",
+        "crispus",
+        "gaius",
+        "stephanas",
+        "jesus"
+      ],
+      "places": [
+        "corinth"
+      ],
+      "story": [
+        "Paul and Sosthenes greet the church at Corinth as saints, and thank God for the grace and gifts He has given them (1–9).",
+        "Chloe's household has told Paul the church is splitting into teams: Paul, Apollos, Cephas, Christ. “Is Christ divided?” (10–17).",
+        "The message of the cross is foolishness to those who perish but the power of God to those who are saved. Jews want signs and Greeks want wisdom; Paul preaches Christ crucified (18–25).",
+        "God has chosen the foolish, the weak, the base and the despised, so that no flesh should glory. Christ is made unto us wisdom, righteousness, sanctification and redemption (26–31)."
+      ],
+      "key": {
+        "ref": "1 Corinthians 1:18",
+        "text": "For the preaching of the cross is to them that perish foolishness; but unto us which are saved it is the power of God."
+      },
+      "big": "The cross looks foolish to proud men, but it is God's power to save. God picks the ones the world wrote off, so nobody can boast. Christ is everything we need."
+    }
+  },
+  {
+    "id": "1-corinthians-02",
+    "type": "chapter",
+    "book": "1 Corinthians",
+    "ch": 2,
+    "date": "2026-10-31",
+    "title": "1 Corinthians 2",
+    "sub": "Weakness, and the Spirit",
+    "about": "Paul came to Corinth scared and plain, preaching only Jesus Christ crucified. The Spirit, not clever speech, shows us the things of God.",
+    "tags": [
+      "The cross",
+      "Weakness",
+      "God's wisdom",
+      "The Holy Spirit",
+      "Natural and spiritual",
+      "Hope"
+    ],
+    "url": "studies/1-corinthians-02.html",
+    "overview": {
+      "where": "Written from Ephesus to the church at Corinth, looking back on Paul's first visit",
+      "when": "About AD 55, looking back on about AD 50 to 52",
+      "people": [
+        "jesus",
+        "holy-spirit"
+      ],
+      "places": [],
+      "story": [
+        "Paul came to Corinth without fancy speech or clever wisdom, determined to know only Jesus Christ and him crucified (1–2).",
+        "He came in weakness, in fear and in much trembling, so that their faith would rest on God's power, not on a man's skill (3–5).",
+        "The hidden wisdom of God, planned before the world, was missed by the rulers who crucified the Lord of glory (6–8).",
+        "“Eye hath not seen, nor ear heard.” God has revealed what He has prepared by His Spirit, who knows the deep things of God (9–11).",
+        "Every believer has received the Spirit. The natural man can't take in the things of God, but the spiritual man can. “We have the mind of Christ” (12–16)."
+      ],
+      "key": {
+        "ref": "1 Corinthians 2:2",
+        "text": "For I determined not to know any thing among you, save Jesus Christ, and him crucified."
+      },
+      "big": "Paul preached only Christ crucified, in weakness, so that faith would stand on God's power. Every believer has the Spirit who teaches the things of God."
     }
   }
 ];

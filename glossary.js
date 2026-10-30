@@ -329,11 +329,26 @@ window.GLOSSARY = [
     "Romans", 6,
     [ 3, 11, 23 ] ],
    [
+    "Romans", 7,
+    [ 25 ] ],
+   [
+    "Romans", 8,
+    [ 1, 2, 11, 39 ] ],
+   [
+    "Romans", 10,
+    [ 9 ] ],
+   [
     "Romans", 13,
     [ 14 ] ],
    [
     "Romans", 14,
-    [ 14 ] ] ]
+    [ 14 ] ],
+   [
+    "1 Corinthians", 1,
+    [ 1, 2, 3, 4, 7, 8, 9, 10, 30 ] ],
+   [
+    "1 Corinthians", 2,
+    [ 2 ] ] ]
  },
  {
   "id": "john-the-baptist",
@@ -657,7 +672,10 @@ window.GLOSSARY = [
     [ 3, 5, 6, 7, 11, 13, 14, 16, 18 ] ],
    [
     "Acts", 15,
-    [ 7, 14 ] ] ]
+    [ 7, 14 ] ],
+   [
+    "1 Corinthians", 1,
+    [ 12 ] ] ]
  },
  {
   "id": "philip",
@@ -822,7 +840,13 @@ window.GLOSSARY = [
     [ 23 ] ],
    [
     "Romans", 5,
-    [ 14 ] ] ]
+    [ 14 ] ],
+   [
+    "Romans", 9,
+    [ 15 ] ],
+   [
+    "Romans", 10,
+    [ 5, 19 ] ] ]
  },
  {
   "id": "elijah",
@@ -915,7 +939,13 @@ window.GLOSSARY = [
     [ 28, 30 ] ],
    [
     "Acts", 28,
-    [ 25 ] ] ]
+    [ 25 ] ],
+   [
+    "Romans", 9,
+    [ 27, 29 ] ],
+   [
+    "Romans", 10,
+    [ 16, 20 ] ] ]
  },
  {
   "id": "joseph",
@@ -1116,7 +1146,10 @@ window.GLOSSARY = [
     [ 7 ] ],
    [
     "Romans", 6,
-    [ 4 ] ] ]
+    [ 4 ] ],
+   [
+    "Romans", 8,
+    [ 15 ] ] ]
  },
  {
   "id": "holy-spirit",
@@ -1253,8 +1286,17 @@ window.GLOSSARY = [
     "Romans", 5,
     [ 5 ] ],
    [
+    "Romans", 8,
+    [ 1, 2, 4, 5, 9, 10, 11, 13, 14, 15, 16, 23, 26, 27 ] ],
+   [
+    "Romans", 9,
+    [ 1 ] ],
+   [
     "Romans", 14,
-    [ 17 ] ] ]
+    [ 17 ] ],
+   [
+    "1 Corinthians", 2,
+    [ 4, 10, 11, 12, 13, 14 ] ] ]
  },
  {
   "id": "disciples",
@@ -1770,7 +1812,16 @@ window.GLOSSARY = [
     [ 9, 10, 17, 28, 29 ] ],
    [
     "Romans", 3,
-    [ 1, 9, 29 ] ] ]
+    [ 1, 9, 29 ] ],
+   [
+    "Romans", 9,
+    [ 24 ] ],
+   [
+    "Romans", 10,
+    [ 12 ] ],
+   [
+    "1 Corinthians", 1,
+    [ 22, 23, 24 ] ] ]
  },
  {
   "id": "servants",
@@ -3365,6 +3416,12 @@ window.GLOSSARY = [
     "Acts", 28,
     [ 20 ] ],
    [
+    "Romans", 9,
+    [ 6, 27, 31 ] ],
+   [
+    "Romans", 10,
+    [ 1, 19, 21 ] ],
+   [
     "Romans", 11,
     [ 2, 7, 25, 26 ] ] ]
  },
@@ -3612,7 +3669,10 @@ window.GLOSSARY = [
     [ 13 ] ],
    [
     "Romans", 1,
-    [ 18 ] ] ]
+    [ 18 ] ],
+   [
+    "Romans", 10,
+    [ 6 ] ] ]
  },
  {
   "id": "hell",
@@ -4113,7 +4173,10 @@ window.GLOSSARY = [
     [ 5, 6 ] ],
    [
     "Romans", 12,
-    [ 3, 6 ] ] ]
+    [ 3, 6 ] ],
+   [
+    "1 Corinthians", 1,
+    [ 4 ] ] ]
  },
  {
   "id": "truth",
@@ -4227,7 +4290,10 @@ window.GLOSSARY = [
     [ 2, 8, 20 ] ],
    [
     "Romans", 3,
-    [ 7 ] ] ]
+    [ 7 ] ],
+   [
+    "Romans", 9,
+    [ 1 ] ] ]
  },
  {
   "id": "glory",
@@ -4400,8 +4466,20 @@ window.GLOSSARY = [
     "Romans", 6,
     [ 4 ] ],
    [
+    "Romans", 8,
+    [ 18 ] ],
+   [
+    "Romans", 9,
+    [ 4, 23 ] ],
+   [
     "Romans", 11,
-    [ 36 ] ] ]
+    [ 36 ] ],
+   [
+    "1 Corinthians", 1,
+    [ 29, 31 ] ],
+   [
+    "1 Corinthians", 2,
+    [ 7, 8 ] ] ]
  },
  {
   "id": "the-law",
@@ -4576,6 +4654,18 @@ window.GLOSSARY = [
    [
     "Romans", 6,
     [ 14, 15 ] ],
+   [
+    "Romans", 7,
+    [ 1, 2, 3, 4, 5, 6, 7, 8, 9, 12, 14, 16, 21, 22, 23, 25 ] ],
+   [
+    "Romans", 8,
+    [ 2, 3, 4, 7 ] ],
+   [
+    "Romans", 9,
+    [ 4, 31, 32 ] ],
+   [
+    "Romans", 10,
+    [ 4, 5 ] ],
    [
     "Romans", 13,
     [ 8, 10 ] ] ]
@@ -4781,6 +4871,18 @@ window.GLOSSARY = [
     "Romans", 6,
     [ 3, 4, 8, 9, 11, 23 ] ],
    [
+    "Romans", 7,
+    [ 4, 25 ] ],
+   [
+    "Romans", 8,
+    [ 1, 2, 9, 10, 11, 17, 34, 35, 39 ] ],
+   [
+    "Romans", 9,
+    [ 1, 3, 5 ] ],
+   [
+    "Romans", 10,
+    [ 4, 6, 7 ] ],
+   [
     "Romans", 12,
     [ 5 ] ],
    [
@@ -4788,7 +4890,13 @@ window.GLOSSARY = [
     [ 14 ] ],
    [
     "Romans", 14,
-    [ 9, 10, 15, 18 ] ] ]
+    [ 9, 10, 15, 18 ] ],
+   [
+    "1 Corinthians", 1,
+    [ 1, 2, 3, 4, 6, 7, 8, 9, 10, 12, 13, 17, 23, 24, 30 ] ],
+   [
+    "1 Corinthians", 2,
+    [ 2, 16 ] ] ]
  },
  {
   "id": "son-of-god",
@@ -5225,6 +5333,12 @@ window.GLOSSARY = [
     "Romans", 6,
     [ 8 ] ],
    [
+    "Romans", 9,
+    [ 33 ] ],
+   [
+    "Romans", 10,
+    [ 4, 9, 10, 11, 14, 16 ] ],
+   [
     "Romans", 11,
     [ 30, 31 ] ],
    [
@@ -5232,7 +5346,10 @@ window.GLOSSARY = [
     [ 11 ] ],
    [
     "Romans", 14,
-    [ 2 ] ] ]
+    [ 2 ] ],
+   [
+    "1 Corinthians", 1,
+    [ 21 ] ] ]
  },
  {
   "id": "witness",
@@ -5372,6 +5489,15 @@ window.GLOSSARY = [
     "Romans", 2,
     [ 15 ] ],
    [
+    "Romans", 8,
+    [ 16 ] ],
+   [
+    "Romans", 9,
+    [ 1 ] ],
+   [
+    "Romans", 10,
+    [ 2 ] ],
+   [
     "Romans", 13,
     [ 9 ] ] ]
  },
@@ -5451,7 +5577,10 @@ window.GLOSSARY = [
     [ 16 ] ],
    [
     "Romans", 6,
-    [ 3 ] ] ]
+    [ 3 ] ],
+   [
+    "1 Corinthians", 1,
+    [ 13, 14, 15, 16, 17 ] ] ]
  },
  {
   "id": "sons-of-god",
@@ -5460,7 +5589,10 @@ window.GLOSSARY = [
   "refs": [
    [
     "John", 1,
-    [ 12 ] ] ]
+    [ 12 ] ],
+   [
+    "Romans", 8,
+    [ 14, 19 ] ] ]
  },
  {
   "id": "verily",
@@ -5799,7 +5931,10 @@ window.GLOSSARY = [
     [ 11 ] ],
    [
     "Acts", 28,
-    [ 11 ] ] ]
+    [ 11 ] ],
+   [
+    "1 Corinthians", 1,
+    [ 22 ] ] ]
  },
  {
   "id": "passover",
@@ -5886,7 +6021,10 @@ window.GLOSSARY = [
   "refs": [
    [
     "John", 2,
-    [ 17 ] ] ]
+    [ 17 ] ],
+   [
+    "Romans", 10,
+    [ 2 ] ] ]
  },
  {
   "id": "wisdom",
@@ -6003,7 +6141,13 @@ window.GLOSSARY = [
     [ 10, 22 ] ],
    [
     "Romans", 11,
-    [ 33 ] ] ]
+    [ 33 ] ],
+   [
+    "1 Corinthians", 1,
+    [ 17, 19, 20, 21, 22, 24, 30 ] ],
+   [
+    "1 Corinthians", 2,
+    [ 1, 4, 5, 6, 7, 13 ] ] ]
  },
  {
   "id": "understanding",
@@ -6111,7 +6255,10 @@ window.GLOSSARY = [
     [ 45 ] ],
    [
     "Romans", 1,
-    [ 31 ] ] ]
+    [ 31 ] ],
+   [
+    "1 Corinthians", 1,
+    [ 19 ] ] ]
  },
  {
   "id": "knowledge",
@@ -6224,8 +6371,14 @@ window.GLOSSARY = [
     "Romans", 3,
     [ 20 ] ],
    [
+    "Romans", 10,
+    [ 2 ] ],
+   [
     "Romans", 11,
-    [ 33 ] ] ]
+    [ 33 ] ],
+   [
+    "1 Corinthians", 1,
+    [ 5 ] ] ]
  },
  {
   "id": "instruction",
@@ -6435,7 +6588,16 @@ window.GLOSSARY = [
     [ 21, 22 ] ],
    [
     "Romans", 2,
-    [ 20 ] ] ]
+    [ 20 ] ],
+   [
+    "Romans", 10,
+    [ 19 ] ],
+   [
+    "1 Corinthians", 1,
+    [ 18, 20, 21, 23, 25, 27 ] ],
+   [
+    "1 Corinthians", 2,
+    [ 14 ] ] ]
  },
  {
   "id": "scorner",
@@ -6761,8 +6923,20 @@ window.GLOSSARY = [
     "Romans", 6,
     [ 13, 16, 18, 19, 20 ] ],
    [
+    "Romans", 8,
+    [ 4, 10 ] ],
+   [
+    "Romans", 9,
+    [ 28, 30, 31 ] ],
+   [
+    "Romans", 10,
+    [ 3, 4, 5, 6, 10 ] ],
+   [
     "Romans", 14,
-    [ 17 ] ] ]
+    [ 17 ] ],
+   [
+    "1 Corinthians", 1,
+    [ 30 ] ] ]
  },
  {
   "id": "wicked",
@@ -7185,7 +7359,16 @@ window.GLOSSARY = [
     [ 5, 29 ] ],
    [
     "Romans", 6,
-    [ 17 ] ] ]
+    [ 17 ] ],
+   [
+    "Romans", 9,
+    [ 2 ] ],
+   [
+    "Romans", 10,
+    [ 1, 6, 8, 9, 10 ] ],
+   [
+    "1 Corinthians", 2,
+    [ 9 ] ] ]
  },
  {
   "id": "tongue",
@@ -7489,6 +7672,12 @@ window.GLOSSARY = [
    [
     "Romans", 5,
     [ 9 ] ],
+   [
+    "Romans", 9,
+    [ 22 ] ],
+   [
+    "Romans", 10,
+    [ 19 ] ],
    [
     "Romans", 12,
     [ 19 ] ],
@@ -7985,6 +8174,9 @@ window.GLOSSARY = [
     "Romans", 2,
     [ 22 ] ],
    [
+    "Romans", 7,
+    [ 3 ] ],
+   [
     "Romans", 13,
     [ 9 ] ] ]
  },
@@ -8229,7 +8421,10 @@ window.GLOSSARY = [
   "refs": [
    [
     "Proverbs", 3,
-    [ 9 ] ] ]
+    [ 9 ] ],
+   [
+    "Romans", 8,
+    [ 23 ] ] ]
  },
  {
   "id": "flattery",
@@ -8433,7 +8628,10 @@ window.GLOSSARY = [
     [ 21 ] ],
    [
     "Acts", 13,
-    [ 7 ] ] ]
+    [ 7 ] ],
+   [
+    "1 Corinthians", 1,
+    [ 19 ] ] ]
  },
  {
   "id": "redeemer",
@@ -8634,7 +8832,10 @@ window.GLOSSARY = [
     [ 8 ] ],
    [
     "Romans", 13,
-    [ 13 ] ] ]
+    [ 13 ] ],
+   [
+    "1 Corinthians", 1,
+    [ 11 ] ] ]
  },
  {
   "id": "subtilty",
@@ -9138,7 +9339,10 @@ window.GLOSSARY = [
     [ 63 ] ],
    [
     "Romans", 4,
-    [ 17 ] ] ]
+    [ 17 ] ],
+   [
+    "Romans", 8,
+    [ 11 ] ] ]
  },
  {
   "id": "everlasting-life",
@@ -9226,6 +9430,9 @@ window.GLOSSARY = [
    [
     "Romans", 5,
     [ 16, 18 ] ],
+   [
+    "Romans", 8,
+    [ 1 ] ],
    [
     "Romans", 13,
     [ 2 ] ] ]
@@ -9364,6 +9571,12 @@ window.GLOSSARY = [
    [
     "Romans", 4,
     [ 3 ] ],
+   [
+    "Romans", 9,
+    [ 17 ] ],
+   [
+    "Romans", 10,
+    [ 11 ] ],
    [
     "Romans", 11,
     [ 2 ] ] ]
@@ -10530,7 +10743,10 @@ window.GLOSSARY = [
     [ 32 ] ],
    [
     "Acts", 26,
-    [ 18 ] ] ]
+    [ 18 ] ],
+   [
+    "1 Corinthians", 1,
+    [ 2, 30 ] ] ]
  },
  {
   "id": "stoning",
@@ -11063,6 +11279,9 @@ window.GLOSSARY = [
     "Romans", 3,
     [ 9, 29 ] ],
    [
+    "Romans", 9,
+    [ 24, 30 ] ],
+   [
     "Romans", 11,
     [ 11, 12, 13, 25 ] ] ]
  },
@@ -11130,7 +11349,10 @@ window.GLOSSARY = [
     [ 19 ] ],
    [
     "Romans", 1,
-    [ 21 ] ] ]
+    [ 21 ] ],
+   [
+    "Romans", 8,
+    [ 17, 30 ] ] ]
  },
  {
   "id": "scribes",
@@ -11247,7 +11469,10 @@ window.GLOSSARY = [
     [ 5 ] ],
    [
     "Acts", 6,
-    [ 12 ] ] ]
+    [ 12 ] ],
+   [
+    "1 Corinthians", 1,
+    [ 20 ] ] ]
  },
  {
   "id": "woman-taken-in-adultery",
@@ -11314,6 +11539,9 @@ window.GLOSSARY = [
    [
     "Romans", 4,
     [ 1, 2, 3, 9, 12, 13, 16 ] ],
+   [
+    "Romans", 9,
+    [ 7 ] ],
    [
     "Romans", 11,
     [ 1 ] ] ]
@@ -11450,6 +11678,9 @@ window.GLOSSARY = [
     "Romans", 2,
     [ 1 ] ],
    [
+    "Romans", 8,
+    [ 3, 34 ] ],
+   [
     "Romans", 14,
     [ 22 ] ] ]
  },
@@ -11470,6 +11701,9 @@ window.GLOSSARY = [
    [
     "Romans", 2,
     [ 15 ] ],
+   [
+    "Romans", 9,
+    [ 1 ] ],
    [
     "Romans", 13,
     [ 5 ] ] ]
@@ -11520,7 +11754,13 @@ window.GLOSSARY = [
     [ 32, 33, 36 ] ],
    [
     "Romans", 6,
-    [ 18, 22 ] ] ]
+    [ 18, 22 ] ],
+   [
+    "Romans", 7,
+    [ 3 ] ],
+   [
+    "Romans", 8,
+    [ 2 ] ] ]
  },
  {
   "id": "bondage",
@@ -11532,7 +11772,10 @@ window.GLOSSARY = [
     [ 33 ] ],
    [
     "Acts", 7,
-    [ 6, 7 ] ] ]
+    [ 6, 7 ] ],
+   [
+    "Romans", 8,
+    [ 15, 21 ] ] ]
  },
  {
   "id": "servant-of-sin",
@@ -11826,7 +12069,13 @@ window.GLOSSARY = [
     [ 12 ] ],
    [
     "Acts", 10,
-    [ 43 ] ] ]
+    [ 43 ] ],
+   [
+    "Romans", 9,
+    [ 33 ] ],
+   [
+    "Romans", 10,
+    [ 11, 13 ] ] ]
  },
  {
   "id": "friend-of-the-bridegroom",
@@ -11947,6 +12196,9 @@ window.GLOSSARY = [
    [
     "Acts", 7,
     [ 8, 12, 14, 15, 32, 46 ] ],
+   [
+    "Romans", 9,
+    [ 13 ] ],
    [
     "Romans", 11,
     [ 26 ] ] ]
@@ -12115,6 +12367,9 @@ window.GLOSSARY = [
    [
     "Romans", 1,
     [ 16 ] ],
+   [
+    "Romans", 10,
+    [ 10 ] ],
    [
     "Romans", 11,
     [ 11 ] ],
@@ -12408,7 +12663,10 @@ window.GLOSSARY = [
     [ 8, 9 ] ],
    [
     "Acts", 27,
-    [ 23 ] ] ]
+    [ 23 ] ],
+   [
+    "Romans", 8,
+    [ 38 ] ] ]
  },
  {
   "id": "sepulchre",
@@ -12597,7 +12855,13 @@ window.GLOSSARY = [
     [ 7 ] ],
    [
     "Romans", 5,
-    [ 1 ] ] ]
+    [ 1 ] ],
+   [
+    "Romans", 8,
+    [ 6 ] ],
+   [
+    "Romans", 10,
+    [ 15 ] ] ]
  },
  {
   "id": "remit",
@@ -12711,7 +12975,10 @@ window.GLOSSARY = [
     [ 6 ] ],
    [
     "Acts", 13,
-    [ 34 ] ] ]
+    [ 34 ] ],
+   [
+    "Romans", 10,
+    [ 6 ] ] ]
  },
  {
   "id": "shew",
@@ -12910,6 +13177,9 @@ window.GLOSSARY = [
    [
     "Romans", 2,
     [ 15 ] ],
+   [
+    "Romans", 9,
+    [ 16, 17, 22 ] ],
    [
     "Romans", 12,
     [ 8 ] ] ]
@@ -13470,7 +13740,10 @@ window.GLOSSARY = [
     [ 28 ] ],
    [
     "Romans", 1,
-    [ 14 ] ] ]
+    [ 14 ] ],
+   [
+    "1 Corinthians", 1,
+    [ 22, 23, 24 ] ] ]
  },
  {
   "id": "sion",
@@ -13522,6 +13795,9 @@ window.GLOSSARY = [
    [
     "John", 12,
     [ 15 ] ],
+   [
+    "Romans", 9,
+    [ 33 ] ],
    [
     "Romans", 11,
     [ 26 ] ] ]
@@ -14043,7 +14319,13 @@ window.GLOSSARY = [
     [ 19 ] ],
    [
     "Romans", 3,
-    [ 21 ] ] ]
+    [ 21 ] ],
+   [
+    "Romans", 8,
+    [ 19 ] ],
+   [
+    "Romans", 10,
+    [ 20 ] ] ]
  },
  {
   "id": "vine",
@@ -14209,6 +14491,9 @@ window.GLOSSARY = [
    [
     "Romans", 5,
     [ 3 ] ],
+   [
+    "Romans", 8,
+    [ 35 ] ],
    [
     "Romans", 12,
     [ 12 ] ] ]
@@ -14658,7 +14943,13 @@ window.GLOSSARY = [
     [ 10 ] ],
    [
     "Romans", 6,
-    [ 6 ] ] ]
+    [ 6 ] ],
+   [
+    "1 Corinthians", 1,
+    [ 13, 17, 18, 23 ] ],
+   [
+    "1 Corinthians", 2,
+    [ 2, 8 ] ] ]
  },
  {
   "id": "title-on-the-cross",
@@ -15423,7 +15714,10 @@ window.GLOSSARY = [
     [ 32 ] ],
    [
     "Acts", 2,
-    [ 21 ] ] ]
+    [ 21 ] ],
+   [
+    "Romans", 10,
+    [ 13 ] ] ]
  },
  {
   "id": "remnant",
@@ -15472,6 +15766,9 @@ window.GLOSSARY = [
    [
     "Zechariah", 8,
     [ 6, 12 ] ],
+   [
+    "Romans", 9,
+    [ 27 ] ],
    [
     "Romans", 11,
     [ 5 ] ] ]
@@ -15756,7 +16053,10 @@ window.GLOSSARY = [
   "refs": [
    [
     "Hosea", 1,
-    [ 1, 2 ] ] ]
+    [ 1, 2 ] ],
+   [
+    "Romans", 9,
+    [ 25 ] ] ]
  },
  {
   "id": "beeri",
@@ -15924,7 +16224,10 @@ window.GLOSSARY = [
     [ 69 ] ],
    [
     "Acts", 14,
-    [ 15 ] ] ]
+    [ 15 ] ],
+   [
+    "Romans", 9,
+    [ 26 ] ] ]
  },
  {
   "id": "whoredom",
@@ -16066,6 +16369,9 @@ window.GLOSSARY = [
    [
     "Acts", 13,
     [ 34 ] ],
+   [
+    "Romans", 9,
+    [ 15, 16, 18, 23 ] ],
    [
     "Romans", 11,
     [ 30, 31, 32 ] ],
@@ -16671,7 +16977,10 @@ window.GLOSSARY = [
     [ 13 ] ],
    [
     "Zechariah", 10,
-    [ 2 ] ] ]
+    [ 2 ] ],
+   [
+    "Romans", 8,
+    [ 20 ] ] ]
  },
  {
   "id": "gilead",
@@ -17541,7 +17850,10 @@ window.GLOSSARY = [
     [ 2 ] ],
    [
     "Luke", 21,
-    [ 24 ] ] ]
+    [ 24 ] ],
+   [
+    "Romans", 7,
+    [ 23 ] ] ]
  },
  {
   "id": "calneh",
@@ -17682,7 +17994,10 @@ window.GLOSSARY = [
     [ 13 ] ],
    [
     "Acts", 7,
-    [ 8, 32 ] ] ]
+    [ 8, 32 ] ],
+   [
+    "Romans", 9,
+    [ 7, 10 ] ] ]
  },
  {
   "id": "plumbline",
@@ -18237,6 +18552,9 @@ window.GLOSSARY = [
     [ 12 ] ],
    [
     "Luke", 17,
+    [ 29 ] ],
+   [
+    "Romans", 9,
     [ 29 ] ] ]
  },
  {
@@ -18736,6 +19054,9 @@ window.GLOSSARY = [
    [
     "Acts", 20,
     [ 33 ] ],
+   [
+    "Romans", 7,
+    [ 7 ] ],
    [
     "Romans", 13,
     [ 9 ] ] ]
@@ -19932,7 +20253,10 @@ window.GLOSSARY = [
     [ 6, 8, 9, 18, 19, 21 ] ],
    [
     "Malachi", 1,
-    [ 2, 3 ] ] ]
+    [ 2, 3 ] ],
+   [
+    "Romans", 9,
+    [ 13 ] ] ]
  },
  {
   "id": "mount-esau",
@@ -22317,7 +22641,10 @@ window.GLOSSARY = [
     [ 1 ] ],
    [
     "Acts", 13,
-    [ 32 ] ] ]
+    [ 32 ] ],
+   [
+    "Romans", 10,
+    [ 15 ] ] ]
  },
  {
   "id": "deserts",
@@ -22421,8 +22748,14 @@ window.GLOSSARY = [
     "Romans", 2,
     [ 16 ] ],
    [
+    "Romans", 10,
+    [ 15, 16 ] ],
+   [
     "Romans", 11,
-    [ 28 ] ] ]
+    [ 28 ] ],
+   [
+    "1 Corinthians", 1,
+    [ 17 ] ] ]
  },
  {
   "id": "repent",
@@ -22803,7 +23136,10 @@ window.GLOSSARY = [
     [ 33 ] ],
    [
     "Luke", 15,
-    [ 20 ] ] ]
+    [ 20 ] ],
+   [
+    "Romans", 9,
+    [ 15 ] ] ]
  },
  {
   "id": "leprosy",
@@ -23433,7 +23769,13 @@ window.GLOSSARY = [
     [ 28 ] ],
    [
     "Romans", 3,
-    [ 24 ] ] ]
+    [ 24 ] ],
+   [
+    "Romans", 8,
+    [ 23 ] ],
+   [
+    "1 Corinthians", 1,
+    [ 30 ] ] ]
  },
  {
   "id": "waxed",
@@ -24093,7 +24435,10 @@ window.GLOSSARY = [
     [ 4 ] ],
    [
     "Romans", 1,
-    [ 1, 5 ] ] ]
+    [ 1, 5 ] ],
+   [
+    "1 Corinthians", 1,
+    [ 1 ] ] ]
  },
  {
   "id": "bartholomew",
@@ -24441,7 +24786,10 @@ window.GLOSSARY = [
     [ 22 ] ],
    [
     "John", 12,
-    [ 42 ] ] ]
+    [ 42 ] ],
+   [
+    "Romans", 10,
+    [ 9, 10 ] ] ]
  },
  {
   "id": "not-peace-but-a-sword",
@@ -24857,6 +25205,9 @@ window.GLOSSARY = [
     "Acts", 8,
     [ 1 ] ],
    [
+    "Romans", 8,
+    [ 35 ] ],
+   [
     "Romans", 12,
     [ 14 ] ] ]
  },
@@ -25018,6 +25369,9 @@ window.GLOSSARY = [
    [
     "Romans", 6,
     [ 12 ] ],
+   [
+    "Romans", 7,
+    [ 7 ] ],
    [
     "Romans", 13,
     [ 14 ] ] ]
@@ -25682,6 +26036,9 @@ window.GLOSSARY = [
     "Romans", 1,
     [ 25 ] ],
    [
+    "Romans", 9,
+    [ 5 ] ],
+   [
     "Romans", 11,
     [ 36 ] ] ]
  },
@@ -26142,7 +26499,10 @@ window.GLOSSARY = [
     [ 21 ] ],
    [
     "Luke", 8,
-    [ 2 ] ] ]
+    [ 2 ] ],
+   [
+    "Romans", 8,
+    [ 26 ] ] ]
  },
  {
   "id": "dead-bury-their-dead",
@@ -26358,7 +26718,10 @@ window.GLOSSARY = [
     [ 48 ] ],
    [
     "Acts", 14,
-    [ 23 ] ] ]
+    [ 23 ] ],
+   [
+    "Romans", 7,
+    [ 10 ] ] ]
  },
  {
   "id": "surnamed",
@@ -26556,7 +26919,10 @@ window.GLOSSARY = [
     [ 10 ] ],
    [
     "Romans", 11,
-    [ 25 ] ] ]
+    [ 25 ] ],
+   [
+    "1 Corinthians", 2,
+    [ 7 ] ] ]
  },
  {
   "id": "converted",
@@ -27708,7 +28074,10 @@ window.GLOSSARY = [
     [ 22 ] ],
    [
     "Acts", 20,
-    [ 17, 28 ] ] ]
+    [ 17, 28 ] ],
+   [
+    "1 Corinthians", 1,
+    [ 2 ] ] ]
  },
  {
   "id": "bind-and-loose",
@@ -28989,7 +29358,10 @@ window.GLOSSARY = [
   "refs": [
    [
     "Luke", 8,
-    [ 31 ] ] ]
+    [ 31 ] ],
+   [
+    "Romans", 10,
+    [ 7 ] ] ]
  },
  {
   "id": "jairus-daughter",
@@ -29904,7 +30276,10 @@ window.GLOSSARY = [
     [ 12, 15, 16 ] ],
    [
     "Luke", 19,
-    [ 30, 31, 33 ] ] ]
+    [ 30, 31, 33 ] ],
+   [
+    "Romans", 7,
+    [ 2 ] ] ]
  },
  {
   "id": "ruler-of-the-synagogue",
@@ -30709,6 +31084,9 @@ window.GLOSSARY = [
    [
     "Luke", 18,
     [ 7 ] ],
+   [
+    "Romans", 8,
+    [ 33 ] ],
    [
     "Romans", 11,
     [ 5, 7, 28 ] ] ]
@@ -31656,7 +32034,10 @@ window.GLOSSARY = [
     [ 2 ] ],
    [
     "Romans", 5,
-    [ 1, 9, 16, 18 ] ] ]
+    [ 1, 9, 16, 18 ] ],
+   [
+    "Romans", 8,
+    [ 30, 33 ] ] ]
  },
  {
   "id": "beginnings-of-sorrows",
@@ -31701,7 +32082,10 @@ window.GLOSSARY = [
   "refs": [
    [
     "Mark", 14,
-    [ 36 ] ] ]
+    [ 36 ] ],
+   [
+    "Romans", 8,
+    [ 15 ] ] ]
  },
  {
   "id": "judas-kiss",
@@ -31903,6 +32287,12 @@ window.GLOSSARY = [
    [
     "Romans", 6,
     [ 2, 15 ] ],
+   [
+    "Romans", 7,
+    [ 7, 13 ] ],
+   [
+    "Romans", 9,
+    [ 14 ] ],
    [
     "Romans", 11,
     [ 1, 11 ] ] ]
@@ -32328,7 +32718,10 @@ window.GLOSSARY = [
     [ 33 ] ],
    [
     "Acts", 7,
-    [ 55, 56 ] ] ]
+    [ 55, 56 ] ],
+   [
+    "Romans", 8,
+    [ 34 ] ] ]
  },
  {
   "id": "penury",
@@ -32382,7 +32775,10 @@ window.GLOSSARY = [
     [ 15 ] ],
    [
     "Acts", 10,
-    [ 29 ] ] ]
+    [ 29 ] ],
+   [
+    "Romans", 10,
+    [ 21 ] ] ]
  },
  {
   "id": "patience",
@@ -32394,7 +32790,10 @@ window.GLOSSARY = [
     [ 19 ] ],
    [
     "Romans", 5,
-    [ 3, 4 ] ] ]
+    [ 3, 4 ] ],
+   [
+    "Romans", 8,
+    [ 25 ] ] ]
  },
  {
   "id": "jerusalem-compassed",
@@ -34377,7 +34776,10 @@ window.GLOSSARY = [
     [ 3, 8, 15, 16, 17, 25, 30 ] ],
    [
     "Romans", 1,
-    [ 1 ] ] ]
+    [ 1 ] ],
+   [
+    "1 Corinthians", 1,
+    [ 1, 12, 13 ] ] ]
  },
  {
   "id": "silas",
@@ -34964,8 +35366,14 @@ window.GLOSSARY = [
     "Romans", 1,
     [ 7 ] ],
    [
+    "Romans", 8,
+    [ 27 ] ],
+   [
     "Romans", 12,
-    [ 13 ] ] ]
+    [ 13 ] ],
+   [
+    "1 Corinthians", 1,
+    [ 2 ] ] ]
  },
  {
   "id": "upper-chamber",
@@ -35043,7 +35451,10 @@ window.GLOSSARY = [
   "refs": [
    [
     "Acts", 10,
-    [ 24 ] ] ]
+    [ 24 ] ],
+   [
+    "Romans", 9,
+    [ 3 ] ] ]
  },
  {
   "id": "quick-and-dead",
@@ -35331,7 +35742,10 @@ window.GLOSSARY = [
   "refs": [
    [
     "Acts", 7,
-    [ 10, 13, 21 ] ] ]
+    [ 10, 13, 21 ] ],
+   [
+    "Romans", 9,
+    [ 17 ] ] ]
  },
  {
   "id": "sina",
@@ -35892,7 +36306,10 @@ window.GLOSSARY = [
     [ 1 ] ],
    [
     "Acts", 19,
-    [ 1 ] ] ]
+    [ 1 ] ],
+   [
+    "1 Corinthians", 1,
+    [ 2 ] ] ]
  },
  {
   "id": "corinthians",
@@ -36000,7 +36417,10 @@ window.GLOSSARY = [
   "refs": [
    [
     "Acts", 18,
-    [ 8 ] ] ]
+    [ 8 ] ],
+   [
+    "1 Corinthians", 1,
+    [ 14 ] ] ]
  },
  {
   "id": "sosthenes",
@@ -36009,7 +36429,10 @@ window.GLOSSARY = [
   "refs": [
    [
     "Acts", 18,
-    [ 17 ] ] ]
+    [ 17 ] ],
+   [
+    "1 Corinthians", 1,
+    [ 1 ] ] ]
  },
  {
   "id": "gallio",
@@ -36030,7 +36453,10 @@ window.GLOSSARY = [
     [ 24 ] ],
    [
     "Acts", 19,
-    [ 1 ] ] ]
+    [ 1 ] ],
+   [
+    "1 Corinthians", 1,
+    [ 12 ] ] ]
  },
  {
   "id": "tentmakers",
@@ -36732,7 +37158,10 @@ window.GLOSSARY = [
     [ 29 ] ],
    [
     "Acts", 20,
-    [ 4 ] ] ]
+    [ 4 ] ],
+   [
+    "1 Corinthians", 1,
+    [ 14 ] ] ]
  },
  {
   "id": "aristarchus",
@@ -37335,7 +37764,10 @@ window.GLOSSARY = [
   "refs": [
    [
     "Romans", 2,
-    [ 4 ] ] ]
+    [ 4 ] ],
+   [
+    "Romans", 9,
+    [ 22 ] ] ]
  },
  {
   "id": "impenitent",
@@ -37384,6 +37816,9 @@ window.GLOSSARY = [
    [
     "Romans", 5,
     [ 2, 4, 5 ] ],
+   [
+    "Romans", 8,
+    [ 20, 24, 25 ] ],
    [
     "Romans", 12,
     [ 12 ] ] ]
@@ -37569,7 +38004,10 @@ window.GLOSSARY = [
   "refs": [
    [
     "Romans", 6,
-    [ 9, 14 ] ] ]
+    [ 9, 14 ] ],
+   [
+    "Romans", 7,
+    [ 1 ] ] ]
  },
  {
   "id": "reckon",
@@ -37578,7 +38016,10 @@ window.GLOSSARY = [
   "refs": [
    [
     "Romans", 6,
-    [ 11 ] ] ]
+    [ 11 ] ],
+   [
+    "Romans", 8,
+    [ 18 ] ] ]
  },
  {
   "id": "mortal",
@@ -37587,7 +38028,10 @@ window.GLOSSARY = [
   "refs": [
    [
     "Romans", 6,
-    [ 12 ] ] ]
+    [ 12 ] ],
+   [
+    "Romans", 8,
+    [ 11 ] ] ]
  },
  {
   "id": "members",
@@ -37596,7 +38040,10 @@ window.GLOSSARY = [
   "refs": [
    [
     "Romans", 6,
-    [ 13, 19 ] ] ]
+    [ 13, 19 ] ],
+   [
+    "Romans", 7,
+    [ 5, 23 ] ] ]
  },
  {
   "id": "instruments",
@@ -37734,7 +38181,10 @@ window.GLOSSARY = [
   "refs": [
    [
     "Romans", 4,
-    [ 19 ] ] ]
+    [ 19 ] ],
+   [
+    "Romans", 9,
+    [ 9 ] ] ]
  },
  {
   "id": "impute",
@@ -37749,7 +38199,10 @@ window.GLOSSARY = [
     [ 3, 4, 5, 6, 8, 9, 10, 11, 22, 23, 24 ] ],
    [
     "Romans", 5,
-    [ 13 ] ] ]
+    [ 13 ] ],
+   [
+    "Romans", 9,
+    [ 8 ] ] ]
  },
  {
   "id": "seal",
@@ -38145,7 +38598,13 @@ window.GLOSSARY = [
   "refs": [
    [
     "Acts", 28,
-    [ 14, 15, 17, 21 ] ] ]
+    [ 14, 15, 17, 21 ] ],
+   [
+    "Romans", 7,
+    [ 1, 4 ] ],
+   [
+    "Romans", 8,
+    [ 12, 29 ] ] ]
  },
  {
   "id": "captain-of-the-guard",
@@ -38366,6 +38825,9 @@ window.GLOSSARY = [
   "name": "Revived (lived again)",
   "refs": [
    [
+    "Romans", 7,
+    [ 9 ] ],
+   [
     "Romans", 14,
     [ 9 ] ] ]
  },
@@ -38397,7 +38859,10 @@ window.GLOSSARY = [
     [ 9 ] ],
    [
     "Romans", 14,
-    [ 13 ] ] ]
+    [ 13 ] ],
+   [
+    "1 Corinthians", 1,
+    [ 23 ] ] ]
  },
  {
   "id": "charitably",
@@ -38598,7 +39063,10 @@ window.GLOSSARY = [
   "refs": [
    [
     "Romans", 12,
-    [ 1 ] ] ]
+    [ 1 ] ],
+   [
+    "1 Corinthians", 1,
+    [ 10 ] ] ]
  },
  {
   "id": "living-sacrifice",
@@ -38755,5 +39223,491 @@ window.GLOSSARY = [
    [
     "Romans", 12,
     [ 21 ] ] ]
+ },
+ {
+  "id": "concupiscence",
+  "kind": "term",
+  "name": "Concupiscence (strong desire for what is forbidden)",
+  "refs": [
+   [
+    "Romans", 7,
+    [ 8 ] ] ]
+ },
+ {
+  "id": "taking-occasion",
+  "kind": "term",
+  "name": "Taking occasion (using something as a base to attack from)",
+  "refs": [
+   [
+    "Romans", 7,
+    [ 8, 11 ] ] ]
+ },
+ {
+  "id": "carnal",
+  "kind": "term",
+  "name": "Carnal, carnally minded (fleshly, ruled by the flesh)",
+  "refs": [
+   [
+    "Romans", 7,
+    [ 14 ] ],
+   [
+    "Romans", 8,
+    [ 6, 7 ] ] ]
+ },
+ {
+  "id": "sold-under-sin",
+  "kind": "term",
+  "name": "Sold under sin (like a slave sold at market)",
+  "refs": [
+   [
+    "Romans", 7,
+    [ 14 ] ] ]
+ },
+ {
+  "id": "allow-not",
+  "kind": "term",
+  "name": "I allow not (I don't approve of it)",
+  "refs": [
+   [
+    "Romans", 7,
+    [ 15 ] ] ]
+ },
+ {
+  "id": "the-flesh",
+  "kind": "term",
+  "name": "The flesh (the old sinful self still in a man)",
+  "refs": [
+   [
+    "Romans", 7,
+    [ 5, 18, 25 ] ],
+   [
+    "Romans", 8,
+    [ 1, 4, 5, 8, 9, 12, 13 ] ] ]
+ },
+ {
+  "id": "motions-of-sins",
+  "kind": "term",
+  "name": "The motions of sins (sin's urges and cravings)",
+  "refs": [
+   [
+    "Romans", 7,
+    [ 5 ] ] ]
+ },
+ {
+  "id": "oldness-of-the-letter",
+  "kind": "term",
+  "name": "Newness of spirit, oldness of the letter (new life inside, not rules on a page)",
+  "refs": [
+   [
+    "Romans", 7,
+    [ 6 ] ] ]
+ },
+ {
+  "id": "inward-man",
+  "kind": "term",
+  "name": "The inward man (the new man inside a believer)",
+  "refs": [
+   [
+    "Romans", 7,
+    [ 22 ] ] ]
+ },
+ {
+  "id": "wretched",
+  "kind": "term",
+  "name": "Wretched (worn out, miserable, at the end of yourself)",
+  "refs": [
+   [
+    "Romans", 7,
+    [ 24 ] ] ]
+ },
+ {
+  "id": "body-of-this-death",
+  "kind": "term",
+  "name": "The body of this death (this body, where sin still lives, and which will die)",
+  "refs": [
+   [
+    "Romans", 7,
+    [ 24 ] ] ]
+ },
+ {
+  "id": "adoption",
+  "kind": "term",
+  "name": "Adoption (made a son and heir, with the father's name)",
+  "refs": [
+   [
+    "Romans", 8,
+    [ 15, 23 ] ],
+   [
+    "Romans", 9,
+    [ 4 ] ] ]
+ },
+ {
+  "id": "joint-heirs",
+  "kind": "term",
+  "name": "Heirs of God, joint-heirs with Christ",
+  "refs": [
+   [
+    "Romans", 8,
+    [ 17 ] ] ]
+ },
+ {
+  "id": "debtors",
+  "kind": "term",
+  "name": "Debtors (owing a debt; we owe the flesh nothing)",
+  "refs": [
+   [
+    "Romans", 8,
+    [ 12 ] ] ]
+ },
+ {
+  "id": "mortify",
+  "kind": "term",
+  "name": "Mortify (put to death)",
+  "refs": [
+   [
+    "Romans", 8,
+    [ 13 ] ] ]
+ },
+ {
+  "id": "enmity",
+  "kind": "term",
+  "name": "Enmity (hostility, open war)",
+  "refs": [
+   [
+    "Luke", 23,
+    [ 12 ] ],
+   [
+    "Romans", 8,
+    [ 7 ] ] ]
+ },
+ {
+  "id": "creation-groaning",
+  "kind": "term",
+  "name": "The creature, the whole creation (all that God made, waiting to be set free)",
+  "refs": [
+   [
+    "Romans", 8,
+    [ 19, 20, 21, 22 ] ] ]
+ },
+ {
+  "id": "bondage-of-corruption",
+  "kind": "term",
+  "name": "The bondage of corruption (slavery to decay and death)",
+  "refs": [
+   [
+    "Romans", 8,
+    [ 21 ] ] ]
+ },
+ {
+  "id": "travaileth",
+  "kind": "term",
+  "name": "Travaileth in pain (labor pains that end in a birth)",
+  "refs": [
+   [
+    "Romans", 8,
+    [ 22 ] ] ]
+ },
+ {
+  "id": "groanings",
+  "kind": "term",
+  "name": "Groan, groanings (deep cries too heavy for words)",
+  "refs": [
+   [
+    "Romans", 8,
+    [ 22, 23, 26 ] ] ]
+ },
+ {
+  "id": "to-wit",
+  "kind": "term",
+  "name": "To wit (that is to say)",
+  "refs": [
+   [
+    "Romans", 8,
+    [ 23 ] ] ]
+ },
+ {
+  "id": "intercession",
+  "kind": "term",
+  "name": "Intercession (pleading for someone before God)",
+  "refs": [
+   [
+    "Romans", 8,
+    [ 26, 27, 34 ] ] ]
+ },
+ {
+  "id": "the-called",
+  "kind": "person",
+  "name": "The called (those who answered God's call in the gospel)",
+  "refs": [
+   [
+    "Romans", 8,
+    [ 28, 30 ] ] ]
+ },
+ {
+  "id": "foreknow",
+  "kind": "term",
+  "name": "Foreknow (know beforehand)",
+  "refs": [
+   [
+    "Romans", 8,
+    [ 29 ] ] ]
+ },
+ {
+  "id": "predestinate",
+  "kind": "term",
+  "name": "Predestinate (set the destination beforehand: to be made like Christ)",
+  "refs": [
+   [
+    "Romans", 8,
+    [ 29, 30 ] ] ]
+ },
+ {
+  "id": "conformed-to-the-image",
+  "kind": "term",
+  "name": "Conformed to the image of his Son (made like Jesus)",
+  "refs": [
+   [
+    "Romans", 8,
+    [ 29 ] ] ]
+ },
+ {
+  "id": "firstborn-among-many-brethren",
+  "kind": "term",
+  "name": "The firstborn among many brethren (Christ, the first of a great family)",
+  "refs": [
+   [
+    "Romans", 8,
+    [ 29 ] ] ]
+ },
+ {
+  "id": "sheep-for-the-slaughter",
+  "kind": "term",
+  "name": "Sheep for the slaughter (Psalm 44:22)",
+  "refs": [
+   [
+    "Romans", 8,
+    [ 36 ] ] ]
+ },
+ {
+  "id": "more-than-conquerors",
+  "kind": "term",
+  "name": "More than conquerors (winning, not just surviving)",
+  "refs": [
+   [
+    "Romans", 8,
+    [ 37 ] ] ]
+ },
+ {
+  "id": "principalities-and-powers",
+  "kind": "person",
+  "name": "Principalities and powers (rulers and forces, seen and unseen)",
+  "refs": [
+   [
+    "Romans", 8,
+    [ 38 ] ] ]
+ },
+ {
+  "id": "chloe",
+  "kind": "person",
+  "name": "Chloe's household (the people who told Paul about the quarrels)",
+  "refs": [
+   [
+    "1 Corinthians", 1,
+    [ 11 ] ] ]
+ },
+ {
+  "id": "stephanas",
+  "kind": "person",
+  "name": "Stephanas (one of the first believers in Achaia, whose household Paul baptized)",
+  "refs": [
+   [
+    "1 Corinthians", 1,
+    [ 16 ] ] ]
+ },
+ {
+  "id": "stumblingblock-cross",
+  "kind": "term",
+  "name": "A stumblingblock (the cross that trips up those who want a sign)",
+  "refs": [
+   [
+    "1 Corinthians", 1,
+    [ 23 ] ] ]
+ },
+ {
+  "id": "natural-man",
+  "kind": "term",
+  "name": "The natural man (a man without God's Spirit)",
+  "refs": [
+   [
+    "1 Corinthians", 2,
+    [ 14 ] ] ]
+ },
+ {
+  "id": "princes-of-this-world",
+  "kind": "person",
+  "name": "The princes of this world (the rulers who crucified Jesus)",
+  "refs": [
+   [
+    "1 Corinthians", 2,
+    [ 6, 8 ] ] ]
+ },
+ {
+  "id": "mind-of-christ",
+  "kind": "term",
+  "name": "The mind of Christ (seeing as He sees)",
+  "refs": [
+   [
+    "1 Corinthians", 2,
+    [ 16 ] ] ]
+ },
+ {
+  "id": "lord-of-glory",
+  "kind": "term",
+  "name": "The Lord of glory (Jesus, crucified by the world's rulers)",
+  "refs": [
+   [
+    "1 Corinthians", 2,
+    [ 8 ] ] ]
+ },
+ {
+  "id": "rebecca",
+  "kind": "person",
+  "name": "Rebecca (Rebekah), Isaac's wife, mother of Jacob and Esau",
+  "refs": [
+   [
+    "Romans", 9,
+    [ 10 ] ] ]
+ },
+ {
+  "id": "accursed",
+  "kind": "term",
+  "name": "Accursed (cut off and handed over to destruction)",
+  "refs": [
+   [
+    "Romans", 9,
+    [ 3 ] ] ]
+ },
+ {
+  "id": "children-of-the-promise",
+  "kind": "person",
+  "name": "The children of the promise (those born by God's promise, who take Him at His word)",
+  "refs": [
+   [
+    "Romans", 9,
+    [ 8, 9 ] ] ]
+ },
+ {
+  "id": "election",
+  "kind": "term",
+  "name": "Election (God's choosing, by His call and not by works)",
+  "refs": [
+   [
+    "Romans", 9,
+    [ 11 ] ],
+   [
+    "Romans", 11,
+    [ 5, 7, 28 ] ] ]
+ },
+ {
+  "id": "harden",
+  "kind": "term",
+  "name": "Harden (make a heart stubborn; Pharaoh hardened his own heart first)",
+  "refs": [
+   [
+    "Romans", 9,
+    [ 18 ] ] ]
+ },
+ {
+  "id": "potter-and-clay",
+  "kind": "term",
+  "name": "The potter and the clay (God's right over the nations, Jeremiah 18)",
+  "refs": [
+   [
+    "Romans", 9,
+    [ 21 ] ] ]
+ },
+ {
+  "id": "vessels",
+  "kind": "term",
+  "name": "Vessels unto honour and dishonour, of wrath and of mercy",
+  "refs": [
+   [
+    "Romans", 9,
+    [ 21, 22, 23 ] ] ]
+ },
+ {
+  "id": "sabaoth",
+  "kind": "term",
+  "name": "The Lord of Sabaoth (the Lord of hosts, of heaven's armies)",
+  "refs": [
+   [
+    "Romans", 9,
+    [ 29 ] ] ]
+ },
+ {
+  "id": "stumblingstone",
+  "kind": "term",
+  "name": "The stumblingstone, the rock of offence (Christ, the stone men trip over)",
+  "refs": [
+   [
+    "Romans", 9,
+    [ 32, 33 ] ] ]
+ },
+ {
+  "id": "end-of-the-law",
+  "kind": "term",
+  "name": "The end of the law (its goal and finish line: Christ)",
+  "refs": [
+   [
+    "Romans", 10,
+    [ 4 ] ] ]
+ },
+ {
+  "id": "word-is-nigh",
+  "kind": "term",
+  "name": "“The word is nigh thee” (salvation as near as your mouth and heart)",
+  "refs": [
+   [
+    "Romans", 10,
+    [ 8 ] ] ]
+ },
+ {
+  "id": "the-greek",
+  "kind": "person",
+  "name": "The Greek (a Gentile, anyone not a Jew)",
+  "refs": [
+   [
+    "Romans", 1,
+    [ 16 ] ],
+   [
+    "Romans", 10,
+    [ 12 ] ] ]
+ },
+ {
+  "id": "preacher",
+  "kind": "person",
+  "name": "A preacher (a herald who announces news)",
+  "refs": [
+   [
+    "Romans", 10,
+    [ 8, 14, 15 ] ] ]
+ },
+ {
+  "id": "beautiful-feet",
+  "kind": "term",
+  "name": "“How beautiful are the feet” (the messenger who brings good news)",
+  "refs": [
+   [
+    "Romans", 10,
+    [ 15 ] ] ]
+ },
+ {
+  "id": "faith-cometh-by-hearing",
+  "kind": "term",
+  "name": "Faith cometh by hearing",
+  "refs": [
+   [
+    "Romans", 10,
+    [ 17 ] ] ]
  }
 ];

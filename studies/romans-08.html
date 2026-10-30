@@ -1,0 +1,867 @@
+<!doctype html>
+<html lang="en" data-theme="slate">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Romans 8</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="../assets/fonts.css">
+<link rel="stylesheet" href="../assets/deck.css">
+<link rel="stylesheet" href="../assets/themes.css">
+<style>
+/* ro07-where: where we are in Romans (the same marker as Romans 7). Sixteen chapter cells (i, --k) over five movements
+   (b, spanning their chapters). The current chapter is i.now, its movement's chapters i.band and its label b.here. */
+.ro07-where { display: grid; grid-template-columns: repeat(16, 1fr); gap: 4px; margin: .3em 0 1em; max-width: 52rem; }
+.ro07-where i { font: normal 700 clamp(.72rem, .66rem + .3vw, 1rem)/1 var(--sans); text-align: center; padding: .55em 0; border-radius: 5px; border: 1.5px solid var(--line); background: var(--surface); color: var(--ink-soft);
+  opacity: 0; transform: translateY(6px); transition: opacity .4s ease, transform .4s ease; transition-delay: calc(var(--k, 0) * 45ms + 250ms); }
+.slide.active .ro07-where i { opacity: 1; transform: none; }
+.ro07-where i.band { border-color: color-mix(in srgb, var(--accent) 60%, transparent); color: var(--ink); }
+.ro07-where i.now { background: var(--accent); border-color: var(--accent); color: var(--on-accent); box-shadow: 0 0 0 5px color-mix(in srgb, var(--accent) 20%, transparent); }
+.ro07-where b { grid-row: 2; padding-top: .35em; border-top: 2px solid var(--line-strong); text-align: center; font: 700 clamp(.66rem, .6rem + .3vw, .95rem)/1.2 var(--sans); color: var(--ink-soft); }
+.ro07-where b.here { border-top-color: var(--accent); color: var(--accent-hot); }
+
+/* ro08-words: a verse read word by word, each word (b) over what it means (small). .ro08-big marks the word to lean on. */
+.ro08-words { display: flex; flex-wrap: wrap; gap: .5rem .55rem; margin: .2em 0 1em; }
+.ro08-words > div { padding: .35em .7em .45em; border-radius: 10px; border: 1.5px solid var(--line-strong); background: var(--surface); }
+.ro08-words b { display: block; font: 400 clamp(1.3rem, .95rem + 1.5vw, 2.2rem)/1.1 var(--serif); color: var(--ink); }
+.ro08-words small { display: block; max-width: 13em; margin-top: .2em; font-size: clamp(.8rem, .74rem + .3vw, 1.02rem); line-height: 1.3; color: var(--ink-soft); }
+.ro08-words .ro08-big { border: 2px solid var(--accent); background: color-mix(in srgb, var(--accent) 14%, transparent); }
+.ro08-words .ro08-big b { color: var(--accent-hot); }
+.slide.active .ro08-words .ro08-big.on b { animation: glow-text 2.2s ease-in-out infinite alternate; }
+
+/* ro08-lift: the stronger law of 8:2. A stone keeps falling (the law of sin and death); on a .ro08-fly step a bird rises above it. */
+.ro08-ground { stroke: var(--line-strong); stroke-width: 3; }
+.ro08-stone { fill: var(--ink-soft); }
+.slide.active .ro08-stone { animation: ro08-drop 2.4s cubic-bezier(.55,0,1,.45) .4s infinite; }
+@keyframes ro08-drop { 0% { transform: translateY(0); opacity: 0; } 8% { opacity: 1; } 45% { transform: translateY(186px); } 52% { transform: translateY(170px); } 58%, 85% { transform: translateY(186px); opacity: 1; } 100% { transform: translateY(186px); opacity: 0; } }
+.ro08-bird { opacity: 0; }
+.slide:has(.ro08-fly.on) .ro08-bird { animation: ro08-rise 3.4s cubic-bezier(.3,.6,.3,1) forwards; }
+@keyframes ro08-rise { 0% { opacity: 0; transform: translate(0, 0); } 15% { opacity: 1; } 100% { opacity: 1; transform: translate(130px, -196px); } }
+.ro08-wing { fill: none; stroke: var(--accent-hot); stroke-width: 5; stroke-linecap: round; stroke-linejoin: round; transform-box: fill-box; transform-origin: 50% 100%; }
+.slide.active .ro08-wing { animation: ro08-flap .42s ease-in-out infinite alternate; }
+@keyframes ro08-flap { to { transform: scaleY(-.45); } }
+.ro08-trail { fill: none; stroke: var(--accent); stroke-width: 3; stroke-linecap: round; stroke-dasharray: 2 9; opacity: 0; transition: opacity 1s ease 1.6s; }
+.ro08-flylab { opacity: 0; transition: opacity 1s ease 2s; }
+.slide:has(.ro08-fly.on) :is(.ro08-trail, .ro08-flylab) { opacity: 1; }
+
+/* ro08-bad: an .ifthen whose result is bad news */
+.ro08-bad .then { border-color: var(--danger); background: color-mix(in srgb, var(--danger) 10%, transparent); color: var(--ink); }
+
+/* ro08-deed: an adoption paper. Rows (dt/dd, --k) fill in, then a .ro08-seal stamps it. */
+.ro08-deed { position: relative; margin: .3em 0 1.6rem; padding: 1rem 1.3rem 1.3rem; border: 1.5px solid var(--line-strong); border-radius: 6px;
+  background: linear-gradient(color-mix(in srgb, var(--accent) 8%, var(--surface)), var(--surface)); box-shadow: 0 10px 26px -14px var(--ink); }
+.ro08-deed h3 { font: 400 clamp(1.4rem, 1.1rem + 1.4vw, 2.3rem)/1 var(--serif); letter-spacing: .12em; text-transform: uppercase; color: var(--accent-hot); text-align: center; }
+.ro08-deed .ro08-sub { display: block; text-align: center; color: var(--ink-soft); font-size: .9rem; margin: .35em 0 .7em; padding-bottom: .6em; border-bottom: 1px solid var(--line-strong); }
+.ro08-deed dl { display: grid; grid-template-columns: auto 1fr; gap: .45rem 1rem; margin: 0; padding-right: 3.5rem; }
+.ro08-deed dt { color: var(--accent); font-weight: 700; font-size: .9rem; padding-top: .2em; }
+.ro08-deed dd { margin: 0; font-family: var(--serif); font-size: clamp(1rem, .9rem + .5vw, 1.3rem); line-height: 1.3; }
+.ro08-deed dt, .ro08-deed dd { opacity: 0; transition: opacity .5s ease; transition-delay: calc(var(--k, 0) * 350ms + 400ms); }
+.slide.active .ro08-deed :is(dt, dd) { opacity: 1; }
+.ro08-seal { position: absolute; right: 1rem; bottom: -1.3rem; width: 4.8rem; height: 4.8rem; border-radius: 50%; display: grid; place-items: center; text-align: center;
+  font: italic 700 1.05rem/1 var(--serif); color: var(--glow); background: radial-gradient(circle at 38% 35%, color-mix(in srgb, var(--wine) 65%, var(--glow)), var(--wine) 62%);
+  box-shadow: inset 0 0 0 4px color-mix(in srgb, var(--wine) 75%, var(--on-glow)), 0 3px 8px color-mix(in srgb, var(--on-glow) 40%, transparent);
+  transform: scale(0) rotate(-40deg); transition: transform .5s cubic-bezier(.3,1.6,.5,1) 2.4s; }
+.slide.active .ro08-seal { transform: rotate(-8deg); }
+
+/* ro08-labor: creation's groaning as labor pains, coming closer and stronger, until a birth (.ro08-born). */
+.ro08-base { stroke: var(--line-strong); stroke-width: 2; stroke-dasharray: 6 6; }
+.ro08-wave { fill: none; stroke: var(--danger); stroke-width: 4; stroke-linecap: round; stroke-linejoin: round; stroke-dasharray: 1; stroke-dashoffset: 1; transition: stroke-dashoffset 4.5s linear .4s; }
+.slide.active .ro08-wave { stroke-dashoffset: 0; }
+.ro08-born { opacity: 0; transform: scale(.3); transform-box: fill-box; transform-origin: center; transition: opacity 1s ease 4.7s, transform 1.2s cubic-bezier(.3,1.6,.5,1) 4.7s; }
+.slide.active .ro08-born { opacity: 1; transform: none; }
+.ro08-sun { fill: var(--warm); }
+.ro08-ray { stroke: var(--warm); stroke-width: 3; stroke-linecap: round; }
+
+/* ro08-carry: the Spirit taking the other end of the load (8:26). The beam lifts onto both shoulders when the slide opens. */
+.ro08-beam { fill: var(--leather); stroke: var(--leather-light); stroke-width: 2; }
+.ro08-you { fill: var(--ink); stroke: var(--ink); }
+.ro08-helper { fill: var(--accent-hot); stroke: var(--accent-hot); }
+.ro08-limb { fill: none; stroke-width: 7; stroke-linecap: round; stroke-linejoin: round; }
+.slide.active .ro08-heave { animation: ro08-heave 1.8s .5s cubic-bezier(.3,.7,.3,1) both; }
+@keyframes ro08-heave { from { transform: translateY(74px); } to { transform: none; } }
+.ro08-helper-all { opacity: 0; transition: opacity 1.2s ease .2s; }
+.slide.active .ro08-helper-all { opacity: 1; }
+
+/* ro08-gears: hard things meshed together, turning one good end (8:28). Each .ro08-gear turns about --o, one lap per --t; .ccw turns back. */
+.ro08-gear { transform-box: view-box; transform-origin: var(--o); }
+.slide.active .ro08-gear { animation: orbit var(--t) linear infinite; }
+.slide.active .ro08-gear.ccw { animation-direction: reverse; }
+.ro08-gear path { fill: var(--surface-2); stroke: var(--line-strong); stroke-width: 2.5; stroke-linejoin: round; }
+.ro08-gear.good path { fill: color-mix(in srgb, var(--accent) 28%, var(--surface-2)); stroke: var(--accent); }
+.ro08-hub { fill: var(--bg); stroke: var(--accent); stroke-width: 3; }
+.ro08-axle { fill: var(--line-strong); }
+
+/* ro08-road: the destination set beforehand (8:29). A walker travels the road toward the image of the Son on the horizon. */
+.ro08-road { fill: var(--surface-2); stroke: var(--line-strong); stroke-width: 2; }
+.ro08-dash { stroke: var(--accent); stroke-width: 4; stroke-dasharray: 14 12; }
+.ro08-horizon { stroke: var(--line-strong); stroke-width: 2; }
+.ro08-son { fill: var(--accent-hot); }
+.ro08-walker { fill: var(--ink); transform-box: fill-box; transform-origin: 50% 100%; }
+.slide.active .ro08-walker { animation: ro08-walk 7s .8s ease-in-out both; }
+@keyframes ro08-walk { from { transform: none; } to { transform: translateY(-176px) scale(.42); } }
+
+/* ro08-none: everything that might separate us, each tile struck through on a .ro08-nogo step, and the love that holds (.ro08-love). */
+.ro08-ask { font: italic clamp(1.05rem, .9rem + .7vw, 1.5rem)/1.3 var(--serif); color: var(--ink-soft); margin: 0 0 .45em; }
+.ro08-none { display: grid; grid-template-columns: repeat(5, 1fr); gap: 6px; margin: 0 0 .8em; }
+@media (max-width: 640px) { .ro08-none { grid-template-columns: repeat(2, 1fr); } }
+.ro08-none > div { position: relative; overflow: hidden; padding: .45em .6em .5em; border-radius: 8px; border: 1.5px solid var(--line-strong); background: var(--surface); transition: opacity .5s ease; transition-delay: calc(var(--k, 0) * 160ms + .2s); }
+.ro08-none b { display: block; font: 400 clamp(1.05rem, .9rem + .7vw, 1.5rem)/1.15 var(--serif); }
+.ro08-none small { display: block; margin-top: .15em; color: var(--ink-soft); font-size: clamp(.75rem, .7rem + .3vw, .95rem); line-height: 1.25; }
+.ro08-none > div::after { content: ""; position: absolute; left: 5%; right: 5%; top: 50%; height: 3px; border-radius: 2px; background: var(--danger); transform: rotate(-12deg) scaleX(0); transform-origin: left;
+  transition: transform .45s ease; transition-delay: calc(var(--k, 0) * 160ms + .2s); }
+.slide:has(.ro08-nogo.on) .ro08-none > div::after { transform: rotate(-12deg) scaleX(1); }
+.slide:has(.ro08-nogo.on) .ro08-none > div { opacity: .6; }
+.ro08-love { margin: 0 0 .9em; padding: .6em 1em; border-radius: 10px; border: 2px solid var(--accent); background: color-mix(in srgb, var(--accent) 14%, transparent); text-align: center;
+  font: clamp(1.15rem, .95rem + 1vw, 1.8rem)/1.3 var(--serif); color: var(--accent-hot); }
+.slide.active .ro08-love.on { animation: ro08-glow 2.4s ease-in-out 2s infinite alternate; }
+@keyframes ro08-glow { to { box-shadow: 0 0 28px color-mix(in srgb, var(--accent) 55%, transparent); } }
+</style>
+</head>
+<body>
+<main class="deck" id="deck">
+
+<!-- ======================= OPENING ======================= -->
+<section class="slide title">
+  <div class="inner">
+    <div class="emblem rise"></div>
+    <h1 class="rise" style="--d:1">Romans 8</h1>
+    <p class="sub rise" style="--d:3">No condemnation</p>
+    <p class="tag rise" style="--d:5">It opens with “no condemnation” and closes with nothing that can separate us. In between, the Spirit of God moves in, calls you son, prays for you, and holds you to the end.</p>
+  </div>
+</section>
+
+<section class="slide watch">
+  <div class="inner">
+    <h2 class="rise">Things to watch for</h2>
+    <p class="lede rise" style="--d:1">Keep these questions in the back of your mind as we read. We'll come back to every one of them at the end.</p>
+    <ol class="seeds">
+      <li class="step"><span class="topic">Condemnation</span><span class="seed-q">What does God say to the man who is in Christ Jesus?</span></li>
+      <li class="step"><span class="topic">The Spirit</span><span class="seed-q">What does the Holy Spirit do for a believer?</span></li>
+      <li class="step"><span class="topic">Sons</span><span class="seed-q">What does it mean to cry “Abba, Father”?</span></li>
+      <li class="step"><span class="topic">Suffering</span><span class="seed-q">How should a believer weigh the hard things he goes through?</span></li>
+      <li class="step"><span class="topic">All things</span><span class="seed-q">What does Romans 8:28 promise, and what doesn't it?</span></li>
+      <li class="step"><span class="topic">Security</span><span class="seed-q">What can separate a believer from the love of God?</span></li>
+    </ol>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise">Where we are in Romans</h2>
+    <div class="ro07-where" role="img" aria-label="The sixteen chapters of Romans in five parts: sin, chapters 1 to 3; faith, 4 to 5; new life, 6 to 8; Israel, 9 to 11; living it out, 12 to 16. Chapter 8 is marked.">
+      <i style="--k:0">1</i><i style="--k:1">2</i><i style="--k:2">3</i><i style="--k:3">4</i><i style="--k:4">5</i><i class="band" style="--k:5">6</i><i class="band" style="--k:6">7</i><i class="now" style="--k:7">8</i>
+      <i style="--k:8">9</i><i style="--k:9">10</i><i style="--k:10">11</i><i style="--k:11">12</i><i style="--k:12">13</i><i style="--k:13">14</i><i style="--k:14">15</i><i style="--k:15">16</i>
+      <b style="grid-column:1/4">Sin</b><b style="grid-column:4/6">Faith</b><b class="here" style="grid-column:6/9">New life</b><b style="grid-column:9/12">Israel</b><b style="grid-column:12/17">Living it out</b>
+    </div>
+    <ol class="timeline">
+      <li data-n="6" style="--k:1"><b>Dead to sin</b><span>sin is no longer your master</span></li>
+      <li data-n="7" style="--k:2"><b>Dead to the law</b><span>“O wretched man that I am!”</span></li>
+      <li data-n="8" class="lit" style="--k:3"><b>Alive in the Spirit</b><span>no condemnation, no separation</span></li>
+    </ol>
+    <p class="note step">Chapter 7 ended with a cry and a thank-you. Chapter 8 is the answer to that cry. It begins with “no condemnation” and ends with nothing that “shall be able to separate us from the love of God.” Many believers count it the greatest chapter in the Bible.</p>
+  </div>
+</section>
+
+<!-- ======================= PART ONE: NO CONDEMNATION ======================= -->
+<section class="slide part">
+  <div class="inner">
+    <p class="part-n rise">Part one</p>
+    <h2 class="rise" style="--d:1">No condemnation</h2>
+    <p class="range rise" style="--d:2">Verses 1–11</p>
+    <div class="rule"></div>
+    <p class="hook rise" style="--d:4">From “O wretched man” to “no condemnation” in one breath.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="1" data-hl="There is therefore now no condemnation to them which are in Christ Jesus"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise">Read it slowly</h2>
+    <div class="ro08-words">
+      <div class="step"><b>There is</b><small>not “there might be.” A fact.</small></div>
+      <div class="step"><b>therefore</b><small>because of the cross, chapters 3–7</small></div>
+      <div class="step ro08-big"><b>now</b><small>today. Not after you clean up.</small></div>
+      <div class="step ro08-big"><b>no</b><small>not less. None.</small></div>
+      <div class="step"><b>condemnation</b><small>a guilty verdict and its sentence</small></div>
+      <div class="step"><b>to them which are in Christ Jesus</b><small>everyone who has trusted Him</small></div>
+    </div>
+    <blockquote class="quote step"><p>“Verily, verily, I say unto you, He that heareth my word, and believeth on him that sent me, hath everlasting life, and shall not come into condemnation; but is passed from death unto life.”</p><cite>John 5:24</cite></blockquote>
+    <p class="note step">The man who fell yesterday and confessed it this morning is in Christ Jesus. The end of the verse describes men like him: they <em>“walk not after the flesh, but after the Spirit.”</em> That's the direction of a life, not a perfect record. The verdict rests on being in Christ.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="2-4" data-hl="the law of the Spirit of life in Christ Jesus hath made me free from the law of sin and death|For what the law could not do|condemned sin in the flesh"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="2"></blockquote>
+    <div class="split">
+      <div class="stage">
+        <svg viewBox="0 0 600 320" role="img" aria-label="A stone keeps dropping to the ground: the law of sin and death. Then a bird rises from the ground and flies up and away: the law of the Spirit of life.">
+          <text x="150" y="30" text-anchor="middle" font-size="18" font-weight="700" style="fill:var(--ink-soft)">the law of sin and death</text>
+          <circle class="ro08-stone" cx="150" cy="70" r="16"/>
+          <line class="ro08-ground" x1="30" y1="272" x2="570" y2="272"/>
+          <path class="ro08-trail" d="M360 262 C 400 220, 420 150, 492 72"/>
+          <g class="ro08-bird"><g transform="translate(360 252)"><path class="ro08-wing" d="M-28 0 Q-14 -18 0 0 Q14 -18 28 0"/></g></g>
+          <g class="ro08-flylab">
+            <text x="580" y="30" text-anchor="end" font-size="18" font-weight="700" style="fill:var(--accent-hot)">the law of the Spirit of life</text>
+          </g>
+          <text x="300" y="304" text-anchor="middle" font-size="16" style="fill:var(--ink-soft)">gravity still pulls; life rises above it</text>
+        </svg>
+      </div>
+      <div>
+        <h2 class="rise" style="--d:1">A stronger law</h2>
+        <p class="note rise" style="--d:2">Chapter 7's <em>“law of sin”</em> pulls every time, like gravity. Here Paul names a stronger law.</p>
+        <p class="note step ro08-fly">Gravity never switches off; a stone still falls. But a living bird rises above it every morning, by the law of life. That's the Spirit in you. The pull is still there. It's no longer the strongest thing in you.</p>
+        <p class="note step"><em>“Hath made me free”</em>: already done.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="3" data-hl="condemned sin in the flesh"></blockquote>
+    <h2 class="rise" style="--d:1">The sin condemned, the sinner set free</h2>
+    <div class="ledger rise" style="--d:2">
+      <h3>The charges against you</h3>
+      <ul>
+        <li style="--k:0"><span>What you did yesterday</span><span>guilty</span></li>
+        <li style="--k:1"><span>The years you wasted</span><span>guilty</span></li>
+        <li style="--k:2"><span>The people you hurt</span><span>guilty</span></li>
+        <li style="--k:3"><span>The habit you still fight</span><span>guilty</span></li>
+      </ul>
+      <div class="total"><span>Sentence</span><b>condemned</b></div>
+      <div class="ledger-stamp">NO CONDEMNATION<small>Romans 8:1</small></div>
+    </div>
+    <p class="note step ledger-paid">What the law could not do, God did. He sent His Son <em>“in the likeness of sinful flesh,”</em> a real man without sin, <em>“and for sin,”</em> as an offering for it. On the cross God <em>“condemned sin in the flesh,”</em> in Jesus' own body.</p>
+    <p class="note step">The sentence was carried out. Just not on you. And God never collects the same debt twice.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="5-8" data-hl="to be carnally minded is death; but to be spiritually minded is life and peace|they that are in the flesh cannot please God"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="6"></blockquote>
+    <h2 class="rise" style="--d:1">What you set your mind on</h2>
+    <div class="columns">
+      <div class="col law step"><span class="who">After the flesh · vv. 5–8</span><h3>death</h3><p>Minds <em>“the things of the flesh”</em>: what it wants, right now. It's <em>“enmity,”</em> open war, against God, and it <em>“cannot please God.”</em></p></div>
+      <div class="col grace step"><span class="who">After the Spirit · vv. 5–6</span><h3>life and peace</h3><p>Minds <em>“the things of the Spirit”</em>: what God wants. Its road leads to <em>“life and peace.”</em></p></div>
+    </div>
+    <p class="note step">What you feed your mind, you'll walk in: what you watch, who you call, where you go after work.</p>
+    <blockquote class="quote step"><p>“This I say then, Walk in the Spirit, and ye shall not fulfil the lust of the flesh.”</p><cite>Galatians 5:16</cite></blockquote>
+  </div>
+</section>
+
+<section class="slide verse" data-v="9-11" data-hl="if so be that the Spirit of God dwell in you|if any man have not the Spirit of Christ, he is none of his|shall also quicken your mortal bodies by his Spirit that dwelleth in you"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="9" data-hl="if any man have not the Spirit of Christ, he is none of his"></blockquote>
+    <h2 class="rise" style="--d:1">Every believer has the Spirit</h2>
+    <div class="temples">
+      <div class="stone-t rise" style="--d:2"><h3>Romans 1–7</h3><div class="big">1</div><p>the Holy Ghost named once (5:5)</p></div>
+      <div class="body-t rise" style="--d:3"><h3>Romans 8</h3><div class="big">19</div><p>“the Spirit,” 19 times in 27 verses</p></div>
+    </div>
+    <p class="note step">So every man who belongs to Christ has the Spirit, living in him from the moment he believed. No second blessing to chase. And the Spirit who raised Jesus will <em>“quicken,”</em> make alive, your body too (v. 11).</p>
+    <blockquote class="quote step"><p>“In whom ye also trusted, after that ye heard the word of truth, the gospel of your salvation: in whom also after that ye believed, ye were sealed with that holy Spirit of promise,”</p><cite>Ephesians 1:13</cite></blockquote>
+  </div>
+</section>
+
+<!-- ======================= PART TWO: SONS, NOT SLAVES ======================= -->
+<section class="slide part">
+  <div class="inner">
+    <p class="part-n rise">Part two</p>
+    <h2 class="rise" style="--d:1">Sons, not slaves</h2>
+    <p class="range rise" style="--d:2">Verses 12–17</p>
+    <div class="rule"></div>
+    <p class="hook rise" style="--d:4">The Spirit of adoption, and a Father who never walks out.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="12-14" data-hl="we are debtors, not to the flesh|if ye through the Spirit do mortify the deeds of the body, ye shall live|as many as are led by the Spirit of God, they are the sons of God"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="12"></blockquote>
+    <h2 class="rise" style="--d:1">We owe the flesh nothing</h2>
+    <div class="ifthen ro08-bad step">
+      <div class="if"><small>If</small>ye live after the flesh,</div>
+      <span class="arrow" aria-hidden="true">→</span>
+      <div class="then"><small>then</small>ye shall die.</div>
+    </div>
+    <div class="ifthen step">
+      <div class="if"><small>If</small>ye through the Spirit do mortify the deeds of the body,</div>
+      <span class="arrow" aria-hidden="true">→</span>
+      <div class="then"><small>then</small>ye shall live.</div>
+    </div>
+    <p class="note step"><em>“Mortify”</em> means put to death. Not manage it: kill it. And <em>“through the Spirit,”</em> not on willpower alone. Starve the flesh: the old numbers, the old places, the apps. Feed the Spirit: the Word, prayer, church, an honest friend.</p>
+    <p class="note step">Paul isn't saying a believer can lose his salvation (vv. 1, 39). He's saying the flesh's road always ends in death: dead marriages, dead dreams, early graves.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="15-17" data-hl="the Spirit of adoption, whereby we cry, Abba, Father|The Spirit itself beareth witness with our spirit, that we are the children of God|heirs of God, and joint-heirs with Christ"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="15" data-hl="the Spirit of adoption, whereby we cry, Abba, Father"></blockquote>
+    <h2 class="rise" style="--d:1">Abba, Father</h2>
+    <div class="morph">
+      <span class="big rise" style="--d:2">אַבָּא</span>
+      <span class="say step">said <em class="gk">ab-bah</em></span>
+      <span class="means step">“Father,” the word a child says at home</span>
+    </div>
+    <p class="note step">A slave lives in <em>“fear”</em> of the master. A son lives at home. Jesus Himself prayed <em>“Abba, Father”</em> the night before the cross (Mark 14:36). Now the Spirit puts that same word in your mouth.</p>
+    <p class="note step">Some of us never had a father worth the name. Some had one who left, or one we were afraid of. God isn't that father. He's the Father you never had, and He never walks out.</p>
+    <blockquote class="quote step"><p>“When my father and my mother forsake me, then the LORD will take me up.”</p><cite>Psalm 27:10</cite></blockquote>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="16-17" data-hl="beareth witness|heirs of God, and joint-heirs with Christ"></blockquote>
+    <div class="split">
+      <div class="stage">
+        <div class="ro08-deed rise" style="--d:2" role="img" aria-label="An adoption paper. Son: you, by faith in Christ. Father: God. Witness: the Spirit itself. Heir: of God, with Christ. Old record: no condemnation. A wax seal reads Abba.">
+          <h3>Adoption</h3>
+          <span class="ro08-sub">Romans 8:15–17</span>
+          <dl>
+            <dt style="--k:0">Son</dt><dd style="--k:0">you, by faith in Christ</dd>
+            <dt style="--k:1">Father</dt><dd style="--k:1">God: “Abba, Father”</dd>
+            <dt style="--k:2">Witness</dt><dd style="--k:2">“The Spirit itself”</dd>
+            <dt style="--k:3">Heir</dt><dd style="--k:3">“of God,” with Christ</dd>
+            <dt style="--k:4">Old record</dt><dd style="--k:4">“no condemnation”</dd>
+          </dl>
+          <span class="ro08-seal">Abba</span>
+        </div>
+      </div>
+      <div>
+        <h2 class="rise" style="--d:1">Signed and witnessed</h2>
+        <p class="note rise" style="--d:2">Under Roman law, an adopted son took his new father's name and became his full heir. It was done before witnesses.</p>
+        <p class="note step">Your witness is the Spirit Himself. That quiet knowing, deep down, that God is your Father? That's Him.</p>
+        <p class="note step">Whatever belongs to Jesus, you share. And sons share His hard road too, on the way to the glory.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ======================= PART THREE: GROANING AND GLORY ======================= -->
+<section class="slide part">
+  <div class="inner">
+    <p class="part-n rise">Part three</p>
+    <h2 class="rise" style="--d:1">Groaning and glory</h2>
+    <p class="range rise" style="--d:2">Verses 18–27</p>
+    <div class="rule"></div>
+    <p class="hook rise" style="--d:4">Hard days now, a glory coming, and help in between.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="18-20" data-hl="the sufferings of this present time are not worthy to be compared with the glory which shall be revealed in us|the creature was made subject to vanity"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="18"></blockquote>
+    <div class="split">
+      <div class="stage">
+        <svg class="scale" style="--tip:16deg; --wait:.2s" viewBox="0 0 600 330" role="img" aria-label="A balance scale. On one side, the sufferings of this present time. On the other, the glory to come. The glory side drops hard.">
+          <path d="M270 320 L330 320 L312 300 L288 300 Z" style="fill:var(--line-strong)"/>
+          <line x1="300" y1="300" x2="300" y2="70" stroke-width="8" style="stroke:var(--line-strong)"/>
+          <g class="scale-beam">
+            <line x1="80" y1="70" x2="520" y2="70" stroke-width="8" stroke-linecap="round" style="stroke:var(--ink-soft)"/>
+            <circle cx="300" cy="70" r="11" style="fill:var(--accent)"/>
+          </g>
+          <g class="scale-pan l">
+            <g stroke-width="2" style="stroke:var(--ink-soft)"><line x1="80" y1="70" x2="30" y2="190"/><line x1="80" y1="70" x2="130" y2="190"/></g>
+            <path d="M20 190 L140 190 Q130 220 80 220 Q30 220 20 190 Z" style="fill:var(--surface-2);stroke:var(--ink-soft)" stroke-width="2"/>
+            <g style="fill:var(--ink-soft)"><circle cx="60" cy="180" r="10"/><circle cx="84" cy="176" r="13"/><circle cx="106" cy="182" r="8"/></g>
+            <text x="80" y="250" text-anchor="middle" font-size="18" style="fill:var(--ink-soft)">the sufferings of</text>
+            <text x="80" y="272" text-anchor="middle" font-size="18" style="fill:var(--ink-soft)">this present time</text>
+          </g>
+          <g class="scale-pan r">
+            <g stroke-width="2" style="stroke:var(--ink-soft)"><line x1="520" y1="70" x2="470" y2="190"/><line x1="520" y1="70" x2="570" y2="190"/></g>
+            <path d="M460 190 L580 190 Q570 220 520 220 Q470 220 460 190 Z" style="fill:var(--surface-2);stroke:var(--accent)" stroke-width="2"/>
+            <circle cx="520" cy="166" r="34" style="fill:color-mix(in srgb, var(--accent) 25%, transparent)"/>
+            <circle cx="520" cy="166" r="20" style="fill:var(--accent-hot)"/>
+            <text x="520" y="250" text-anchor="middle" font-size="18" font-weight="700" style="fill:var(--accent-hot)">the glory which shall</text>
+            <text x="520" y="272" text-anchor="middle" font-size="18" font-weight="700" style="fill:var(--accent-hot)">be revealed in us</text>
+          </g>
+        </svg>
+      </div>
+      <div>
+        <h2 class="rise" style="--d:1">Not worth comparing</h2>
+        <p class="note rise" style="--d:2"><em>“I reckon”</em>: I've done the math. Paul had been beaten, jailed and shipwrecked, and he weighed it all.</p>
+        <p class="note step scale-go">Put it on the scale: the lost years, the prison time, the cravings, the people who won't forgive you. Then put what God has coming for His children on the other side. It isn't close.</p>
+      </div>
+    </div>
+    <blockquote class="quote step"><p>“For our light affliction, which is but for a moment, worketh for us a far more exceeding and eternal weight of glory;”</p><cite>2 Corinthians 4:17</cite></blockquote>
+  </div>
+</section>
+
+<section class="slide verse" data-v="21-23" data-hl="the glorious liberty of the children of God|the whole creation groaneth and travaileth in pain together until now|the redemption of our body"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="22"></blockquote>
+    <h2 class="rise" style="--d:1">Birth pains, not death pains</h2>
+    <div class="stage">
+      <svg viewBox="0 0 600 220" style="max-height:30vh" role="img" aria-label="A line of pains, like labor contractions, coming closer together and stronger, until a bright sun rises at the end: the glorious liberty of the children of God.">
+        <line class="ro08-base" x1="20" y1="160" x2="540" y2="160"/>
+        <path class="ro08-wave" pathLength="1" d="M20 160 L40 160 L85.0 160 C101.5 160 98.8 138.0 112.5 138.0 C126.3 138.0 151.0 160 167.5 160 L203.5 160 C216.7 160 214.5 131.0 225.5 131.0 C236.5 131.0 256.3 160 269.5 160 L298.3 160 C308.9 160 307.1 121.7 315.9 121.7 C324.7 121.7 340.5 160 351.1 160 L374.1 160 C382.6 160 381.2 109.4 388.2 109.4 C395.3 109.4 407.9 160 416.4 160 L434.8 160 C441.6 160 440.4 93.2 446.1 93.2 C451.7 93.2 461.8 160 468.6 160 L483.3 160 C488.8 160 487.9 71.8 492.4 71.8 C496.9 71.8 505.0 160 510.4 160 L540 160"/>
+        <g class="ro08-born">
+          <g class="ro08-ray"><line x1="572" y1="58" x2="572" y2="40"/><line x1="572" y1="114" x2="572" y2="132"/><line x1="544" y1="86" x2="528" y2="86"/><line x1="592" y1="66" x2="598" y2="60"/><line x1="552" y1="66" x2="546" y2="60"/><line x1="552" y1="106" x2="546" y2="112"/><line x1="592" y1="106" x2="598" y2="112"/></g>
+          <circle class="ro08-sun" cx="572" cy="86" r="20"/>
+        </g>
+        <text x="20" y="194" font-size="16" style="fill:var(--ink-soft)">the fall: “subject to vanity”</text>
+        <text x="470" y="194" text-anchor="end" font-size="16" style="fill:var(--danger)">“groaneth… until now”</text>
+        <text x="596" y="160" text-anchor="end" font-size="15" font-weight="700" style="fill:var(--accent-hot)">liberty</text>
+      </svg>
+    </div>
+    <p class="note step">Since Adam's sin, all creation has been <em>“subject to vanity,”</em> never quite what it was made to be, and in <em>“the bondage of corruption”</em>: rust, sickness, death.</p>
+    <p class="note step">But <em>“travail”</em> is labor pain. It comes closer and harder, and it ends in a birth. We groan too, waiting for <em>“the redemption of our body”</em>: a new body with no craving in it.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="24-25" data-hl="For we are saved by hope|then do we with patience wait for it"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="25"></blockquote>
+    <h2 class="rise" style="--d:1">Hope you can't see yet</h2>
+    <div class="mirror">
+      <div class="step"><span>The world's hope</span><span class="arrow">→</span><span class="word">“I hope it works out”</span><small>a wish: maybe yes, maybe no</small></div>
+      <div class="step"><span>Bible hope</span><span class="arrow">→</span><span class="word">sure, just not here yet</span><small>“hope that is seen is not hope” (v. 24)</small></div>
+    </div>
+    <p class="note step">Think of a man who's been told his release date. He can't see it yet, but it's coming, so he does his time with his head up. <em>“Patience”</em> here means endurance: staying under the load without quitting.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="26-27" data-hl="the Spirit also helpeth our infirmities|we know not what we should pray for as we ought|maketh intercession for us with groanings which cannot be uttered"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="26" data-hl="the Spirit also helpeth our infirmities"></blockquote>
+    <div class="split">
+      <div class="stage">
+        <svg viewBox="0 0 600 300" role="img" aria-label="Two figures carry a heavy beam labeled our infirmities. One is you. The other, glowing, is the Spirit, taking the other end.">
+          <defs>
+            <radialGradient id="ro08-halo"><stop offset="0" stop-opacity=".85" style="stop-color:var(--glow)"/><stop offset=".5" stop-opacity=".3" style="stop-color:var(--accent)"/><stop offset="1" stop-opacity="0" style="stop-color:var(--accent)"/></radialGradient>
+          </defs>
+          <line x1="20" y1="262" x2="580" y2="262" stroke-width="3" style="stroke:var(--line-strong)"/>
+          <g class="ro08-helper-all"><circle cx="470" cy="170" r="96" fill="url(#ro08-halo)"/></g>
+          <g class="ro08-heave">
+            <g class="ro08-you">
+              <circle cx="130" cy="96" r="15"/>
+              <path class="ro08-limb" d="M133 114 L146 196 M146 196 L126 260 M146 196 L164 258 M136 150 L116 140 L114 124"/>
+            </g>
+            <g class="ro08-helper-all"><g class="ro08-helper">
+              <circle cx="470" cy="96" r="15"/>
+              <path class="ro08-limb" d="M467 114 L454 196 M454 196 L474 260 M454 196 L436 258 M464 150 L484 140 L486 124"/>
+            </g></g>
+            <rect class="ro08-beam" x="80" y="116" width="440" height="26" rx="12"/>
+            <text x="300" y="135" text-anchor="middle" font-size="17" font-weight="700" style="fill:var(--glow)">our infirmities</text>
+          </g>
+          <text x="140" y="290" text-anchor="middle" font-size="18" font-weight="700">you</text>
+          <text x="460" y="290" text-anchor="middle" font-size="18" font-weight="700" style="fill:var(--accent-hot)">the Spirit</text>
+        </svg>
+      </div>
+      <div>
+        <h2 class="rise" style="--d:1">Help on the other end</h2>
+        <p class="note rise" style="--d:2"><em>“Infirmities”</em> are weaknesses. <em>“Helpeth”</em> is a word for taking hold of a load together with someone. Martha used it: <em>“bid her therefore that she help me”</em> (Luke 10:40).</p>
+        <p class="note step">Some days you don't even know what to pray. You've got nothing but a groan. The Spirit carries that groan to the Father, <em>“according to the will of God.”</em></p>
+        <p class="note step">And Jesus prays for you too (v. 34). One prays in you; One prays for you.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ======================= PART FOUR: MORE THAN CONQUERORS ======================= -->
+<section class="slide part">
+  <div class="inner">
+    <p class="part-n rise">Part four</p>
+    <h2 class="rise" style="--d:1">More than conquerors</h2>
+    <p class="range rise" style="--d:2">Verses 28–39</p>
+    <div class="rule"></div>
+    <p class="hook rise" style="--d:4">“If God be for us, who can be against us?”</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="28" data-hl="all things work together for good to them that love God"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="28" data-hl="all things work together for good"></blockquote>
+    <div class="split">
+      <div class="stage">
+        <svg viewBox="40 40 520 300" role="img" aria-label="Gears turning together. The small ones are Joseph's hard years: sold by his brothers, a false charge, prison, forgotten. They all drive one large gear in the center: God meant it unto good.">
+          <g class="ro08-gear ccw" style="--o:184px 135.9px; --t:12s"><path d="M224.7 140.7 L223.8 145.5 L236.5 152.1 L233.4 160.2 L219.6 156.3 L216.9 160.4 L213.7 164.2 L221.4 176.2 L214.6 181.6 L204.6 171.3 L200.2 173.6 L195.6 175.2 L196.2 189.5 L187.7 190.8 L184.2 176.9 L179.2 176.6 L174.4 175.8 L167.8 188.5 L159.7 185.3 L163.6 171.5 L159.5 168.8 L155.7 165.6 L143.7 173.3 L138.3 166.5 L148.6 156.5 L146.3 152.1 L144.7 147.5 L130.4 148.1 L129.1 139.6 L143.0 136.1 L143.3 131.1 L144.1 126.3 L131.4 119.7 L134.6 111.7 L148.4 115.5 L151.1 111.4 L154.3 107.6 L146.6 95.6 L153.4 90.2 L163.3 100.5 L167.8 98.3 L172.4 96.6 L171.8 82.3 L180.3 81.0 L183.8 94.9 L188.8 95.2 L193.6 96.0 L200.2 83.4 L208.2 86.5 L204.3 100.3 L208.5 103.0 L212.2 106.2 L224.3 98.5 L229.7 105.3 L219.4 115.3 L221.6 119.7 L223.3 124.3 L237.6 123.7 L238.9 132.2 L225.0 135.7 Z"/><circle class="ro08-axle" cx="184" cy="135.9" r="7"/></g>
+          <g class="ro08-gear" style="--o:146.4px 206.5px; --t:8s"><path d="M143.2 181.8 L147.7 181.6 L152.0 167.9 L160.9 170.3 L157.8 184.3 L161.7 186.7 L165.0 189.8 L177.7 183.2 L182.3 191.1 L170.2 198.9 L171.2 203.3 L171.4 207.8 L185.0 212.1 L182.7 221.0 L168.7 217.9 L166.3 221.8 L163.2 225.1 L169.8 237.8 L161.8 242.4 L154.1 230.3 L149.7 231.3 L145.2 231.5 L140.8 245.1 L132.0 242.8 L135.0 228.8 L131.2 226.4 L127.9 223.3 L115.2 229.9 L110.6 221.9 L122.6 214.2 L121.6 209.8 L121.5 205.3 L107.8 200.9 L110.2 192.1 L124.2 195.1 L126.6 191.3 L129.7 188.0 L123.1 175.3 L131.0 170.7 L138.8 182.7 Z"/><circle class="ro08-axle" cx="146.4" cy="206.5" r="6"/></g>
+          <g class="ro08-gear ccw" style="--o:411.3px 235px; --t:10s"><path d="M378.4 238.4 L378.3 233.6 L364.6 229.6 L366.4 220.9 L380.6 222.7 L382.7 218.5 L385.4 214.5 L376.7 203.1 L383.2 197.2 L393.6 207.1 L397.8 204.8 L402.3 203.2 L402.0 188.9 L410.8 188.0 L413.4 202.0 L418.1 202.7 L422.7 204.0 L430.8 192.2 L438.5 196.6 L432.4 209.6 L435.8 212.9 L438.7 216.6 L452.2 211.9 L455.8 220.0 L443.2 226.8 L444.1 231.5 L444.2 236.3 L458.0 240.4 L456.1 249.0 L441.9 247.2 L439.8 251.5 L437.2 255.4 L445.9 266.8 L439.3 272.7 L428.9 262.9 L424.7 265.1 L420.2 266.7 L420.6 281.0 L411.8 282.0 L409.1 267.9 L404.4 267.2 L399.8 265.9 L391.7 277.7 L384.0 273.3 L390.2 260.3 L386.7 257.0 L383.8 253.3 L370.3 258.0 L366.7 249.9 L379.3 243.1 Z"/><circle class="ro08-axle" cx="411.3" cy="235" r="6"/></g>
+          <g class="ro08-gear" style="--o:446.9px 167.8px; --t:9s"><path d="M434.3 194.0 L430.3 191.6 L419.4 200.9 L413.2 194.5 L422.7 183.8 L420.5 179.7 L418.9 175.4 L404.6 175.5 L404.0 166.5 L418.1 164.5 L419.0 160.0 L420.7 155.6 L409.6 146.5 L414.9 139.2 L427.0 146.8 L430.6 143.9 L434.7 141.6 L432.1 127.5 L440.8 125.3 L445.2 138.9 L449.9 139.0 L454.4 139.8 L461.5 127.4 L469.6 131.3 L464.2 144.6 L467.7 147.6 L470.7 151.2 L484.1 146.2 L487.8 154.4 L475.1 161.1 L475.9 165.7 L475.8 170.4 L489.3 175.2 L486.9 183.8 L472.9 180.8 L470.5 184.8 L467.5 188.3 L474.7 200.7 L467.3 205.7 L458.5 194.5 L454.1 196.0 L449.5 196.7 L447.1 210.8 L438.2 209.9 L438.7 195.6 Z"/><circle class="ro08-axle" cx="446.9" cy="167.8" r="6"/></g>
+          <g class="ro08-gear good" style="--o:300px 190px; --t:20s"><path d="M372.1 178.6 L372.7 183.8 L386.9 185.9 L386.9 194.1 L372.7 196.2 L372.1 201.4 L371.1 206.6 L383.9 213.0 L381.4 220.8 L367.3 218.4 L365.0 223.1 L362.5 227.8 L372.7 237.8 L367.9 244.4 L355.2 237.8 L351.6 241.6 L347.8 245.2 L354.4 257.9 L347.8 262.7 L337.8 252.5 L333.1 255.0 L328.4 257.3 L330.8 271.4 L323.0 273.9 L316.6 261.1 L311.4 262.1 L306.2 262.7 L304.1 276.9 L295.9 276.9 L293.8 262.7 L288.6 262.1 L283.4 261.1 L277.0 273.9 L269.2 271.4 L271.6 257.3 L266.9 255.0 L262.2 252.5 L252.2 262.7 L245.6 257.9 L252.2 245.2 L248.4 241.6 L244.8 237.8 L232.1 244.4 L227.3 237.8 L237.5 227.8 L235.0 223.1 L232.7 218.4 L218.6 220.8 L216.1 213.0 L228.9 206.6 L227.9 201.4 L227.3 196.2 L213.1 194.1 L213.1 185.9 L227.3 183.8 L227.9 178.6 L228.9 173.4 L216.1 167.0 L218.6 159.2 L232.7 161.6 L235.0 156.9 L237.5 152.2 L227.3 142.2 L232.1 135.6 L244.8 142.2 L248.4 138.4 L252.2 134.8 L245.6 122.1 L252.2 117.3 L262.2 127.5 L266.9 125.0 L271.6 122.7 L269.2 108.6 L277.0 106.1 L283.4 118.9 L288.6 117.9 L293.8 117.3 L295.9 103.1 L304.1 103.1 L306.2 117.3 L311.4 117.9 L316.6 118.9 L323.0 106.1 L330.8 108.6 L328.4 122.7 L333.1 125.0 L337.8 127.5 L347.8 117.3 L354.4 122.1 L347.8 134.8 L351.6 138.4 L355.2 142.2 L367.9 135.6 L372.7 142.2 L362.5 152.2 L365.0 156.9 L367.3 161.6 L381.4 159.2 L383.9 167.0 L371.1 173.4 Z"/></g>
+          <circle class="ro08-hub" cx="300" cy="190" r="58"/>
+          <text x="300" y="186" text-anchor="middle" font-size="15" font-weight="700" style="fill:var(--accent-hot)">God meant it</text>
+          <text x="300" y="206" text-anchor="middle" font-size="15" font-weight="700" style="fill:var(--accent-hot)">unto good</text>
+          <text x="184" y="70" text-anchor="middle" font-size="16" style="fill:var(--ink-soft)">sold by his brothers</text>
+          <text x="104" y="268" text-anchor="middle" font-size="16" style="fill:var(--ink-soft)">a false charge</text>
+          <text x="411" y="304" text-anchor="middle" font-size="16" style="fill:var(--ink-soft)">prison</text>
+          <text x="470" y="110" text-anchor="middle" font-size="16" style="fill:var(--ink-soft)">forgotten</text>
+        </svg>
+      </div>
+      <div>
+        <h2 class="rise" style="--d:1">Together for good</h2>
+        <ul class="nots">
+          <li class="step"><span class="k">“Everything that happens is good”</span><span class="why">some things are just evil</span></li>
+          <li class="step"><span class="k">“It'll all feel good”</span><span class="why">some of it hurts for a long time</span></li>
+          <li class="step yes"><span class="k">God works it all together for good</span><span class="why">for His children</span></li>
+        </ul>
+        <blockquote class="quote step"><p>“But as for you, ye thought evil against me; but God meant it unto good, to bring to pass, as it is this day, to save much people alive.”</p><cite>Genesis 50:20</cite></blockquote>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="slide verse" data-v="29-30" data-hl="whom he did foreknow, he also did predestinate to be conformed to the image of his Son|them he also glorified"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="29" data-hl="to be conformed to the image of his Son"></blockquote>
+    <div class="split">
+      <div class="stage">
+        <svg viewBox="0 0 600 360" role="img" aria-label="A road runs to the horizon. At the far end stands a shining figure: the image of His Son. A man walks up the road toward Him, growing smaller with distance.">
+          <defs>
+            <radialGradient id="ro08-glow"><stop offset="0" stop-opacity=".9" style="stop-color:var(--glow)"/><stop offset=".5" stop-opacity=".35" style="stop-color:var(--accent)"/><stop offset="1" stop-opacity="0" style="stop-color:var(--accent)"/></radialGradient>
+          </defs>
+          <circle cx="300" cy="84" r="80" fill="url(#ro08-glow)"/>
+          <line class="ro08-horizon" x1="20" y1="112" x2="580" y2="112"/>
+          <path class="ro08-road" d="M190 360 L410 360 L306 112 L294 112 Z"/>
+          <line class="ro08-dash" x1="300" y1="356" x2="300" y2="120"/>
+          <g class="ro08-son"><circle cx="300" cy="66" r="10"/><path d="M288 108 L291 82 Q300 76 309 82 L312 108 Z"/></g>
+          <text x="300" y="26" text-anchor="middle" font-size="18" font-weight="700" style="fill:var(--accent-hot)">“the image of his Son”</text>
+          <g class="ro08-walker"><circle cx="300" cy="286" r="11"/><path d="M286 336 L289 304 Q300 296 311 304 L314 336 Z"/></g>
+          <text x="30" y="250" font-size="17" font-weight="700">“foreknow”</text>
+          <text x="30" y="272" font-size="15" style="fill:var(--ink-soft)">knew beforehand</text>
+          <text x="30" y="292" font-size="15" style="fill:var(--ink-soft)">who would believe</text>
+          <text x="570" y="180" text-anchor="end" font-size="17" font-weight="700">“predestinate”</text>
+          <text x="570" y="202" text-anchor="end" font-size="15" style="fill:var(--ink-soft)">the destination</text>
+          <text x="570" y="222" text-anchor="end" font-size="15" style="fill:var(--ink-soft)">set ahead of time</text>
+        </svg>
+      </div>
+      <div>
+        <h2 class="rise" style="--d:1">Where God is taking you</h2>
+        <p class="note rise" style="--d:2"><em>“Foreknow”</em> means to know beforehand. Before the world began, God knew who would believe on His Son (1 Peter 1:2).</p>
+        <p class="note step"><em>“Predestinate”</em> is about the destination: every believer will be made like Jesus. The offer is to all; God is <em>“not willing that any should perish”</em> (2 Peter 3:9).</p>
+        <p class="note step">Paul even writes <em>“glorified”</em> as if it's already done. That's how sure your finish is.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="slide verse" data-v="31-32" data-hl="If God be for us, who can be against us?|He that spared not his own Son, but delivered him up for us all"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="31"></blockquote>
+    <h2 class="rise" style="--d:1">He already gave the biggest gift</h2>
+    <div class="ifthen step">
+      <div class="if"><small>He</small>spared not his own Son,</div>
+      <span class="arrow" aria-hidden="true">→</span>
+      <div class="then"><small>so</small>how shall he not with him also freely give us all things?</div>
+    </div>
+    <p class="note step">If God already gave His own Son for you, the costliest gift heaven had, He won't hold back anything you truly need. And He gave Him <em>“for us all,”</em> not for a chosen few.</p>
+    <p class="note step"><em>“If God be for us”</em> doesn't mean “maybe He is.” It means <em>since</em> He is. The odds against you don't matter when God is on your side.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="33-34" data-hl="Who shall lay any thing to the charge of God’s elect? It is God that justifieth|Who is he that condemneth? It is Christ that died|who also maketh intercession for us"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise">Court is in session</h2>
+    <div class="asks">
+      <div class="ask step"><span class="q">“Who shall lay any thing to the charge of God's elect?”</span><span class="stamp">God justifies</span><span class="ctx">The devil is <em>“the accuser of our brethren”</em> (Revelation 12:10). He can bring charges. But the Judge has already declared you righteous. <em>“God's elect”</em> are His chosen people: all who are in Christ.</span></div>
+      <div class="ask step"><span class="q">“Who is he that condemneth?”</span><span class="stamp">Christ died</span><span class="ctx">The only One with the right to condemn you died for you, rose again, and sits at God's right hand, praying for you.</span></div>
+      <div class="ask step"><span class="q">“Who shall separate us from the love of Christ?”</span><span class="stamp">Nothing</span><span class="ctx">Verses 35–39 answer this one.</span></div>
+    </div>
+    <blockquote class="quote step"><p>“Wherefore he is able also to save them to the uttermost that come unto God by him, seeing he ever liveth to make intercession for them.”</p><cite>Hebrews 7:25</cite></blockquote>
+  </div>
+</section>
+
+<section class="slide verse" data-v="35-36" data-hl="Who shall separate us from the love of Christ?|we are accounted as sheep for the slaughter"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="35"></blockquote>
+    <div class="split">
+      <div class="stage">
+        <svg class="kept" viewBox="0 0 600 460" role="img" aria-label="A man inside a circle marked the love of Christ. Seven things push in from every side and are pushed back: tribulation, distress, persecution, famine, nakedness, peril, and sword.">
+          <circle class="kept-wall" cx="300" cy="235" r="140"/>
+          <circle class="kept-wall inner" cx="300" cy="258" r="66"/>
+          <text class="kept-tag" x="300" y="150" text-anchor="middle" font-size="19" font-weight="700">the love of Christ</text>
+          <g class="kept-in"><circle cx="300" cy="236" r="13"/><path d="M286 286 L289 256 Q300 248 311 256 L314 286 Z"/></g>
+          <text x="300" y="306" text-anchor="middle" font-size="16" style="fill:var(--ink)">you</text>
+          <g class="kept-foe" style="--dx:14px;--dy:0px">
+            <text x="8" y="218" font-size="18">tribulation</text>
+            <line x1="20" y1="235" x2="134" y2="235"/><path d="M150 235 L134 226 L134 244 Z"/>
+          </g>
+          <g class="kept-foe" style="--dx:-14px;--dy:0px;--w:.7s">
+            <text x="592" y="218" text-anchor="end" font-size="18">distress</text>
+            <line x1="580" y1="235" x2="466" y2="235"/><path d="M450 235 L466 226 L466 244 Z"/>
+          </g>
+          <g class="kept-foe" style="--dx:11px;--dy:7px;--w:1.4s">
+            <text x="20" y="40" font-size="18">famine</text>
+            <line x1="70" y1="52" x2="178.4" y2="118.6"/><path d="M192 127 L173.7 126.3 L183.1 110.9 Z"/>
+          </g>
+          <g class="kept-foe" style="--dx:-11px;--dy:7px;--w:.35s">
+            <text x="580" y="40" text-anchor="end" font-size="18">nakedness</text>
+            <line x1="530" y1="52" x2="421.6" y2="118.6"/><path d="M408 127 L426.3 126.3 L416.9 110.9 Z"/>
+          </g>
+          <g class="kept-foe" style="--dx:11px;--dy:-7px;--w:1.05s">
+            <text x="10" y="446" font-size="18">persecution</text>
+            <line x1="70" y1="418" x2="178.4" y2="351.4"/><path d="M192 343 L183.1 359.1 L173.7 343.7 Z"/>
+          </g>
+          <g class="kept-foe" style="--dx:-11px;--dy:-7px;--w:1.75s">
+            <text x="590" y="446" text-anchor="end" font-size="18">peril</text>
+            <line x1="530" y1="418" x2="421.6" y2="351.4"/><path d="M408 343 L426.3 343.7 L416.9 359.1 Z"/>
+          </g>
+          <g class="kept-foe" style="--dx:0px;--dy:12px;--w:2.1s">
+            <text x="300" y="28" text-anchor="middle" font-size="18">sword</text>
+            <line x1="300" y1="40" x2="300" y2="79"/><path d="M300 95 L291 79 L309 79 Z"/>
+          </g>
+        </svg>
+      </div>
+      <div>
+        <h2 class="rise" style="--d:1">Seven things that couldn't</h2>
+        <p class="note rise" style="--d:2">Paul lived this whole list. <em>“Tribulation”</em> is pressure; <em>“distress,”</em> being hemmed in; <em>“nakedness,”</em> having nothing.</p>
+        <p class="note step">Verse 36 quotes Psalm 44:22. God's people have always suffered. Hard times don't mean He stopped loving you.</p>
+        <p class="note step">Trouble can take your job, your health, your freedom, even your life. It can't get between you and the love of Christ.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="slide verse" data-v="37-39" data-hl="we are more than conquerors through him that loved us|For I am persuaded|shall be able to separate us from the love of God, which is in Christ Jesus our Lord"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise">Nothing. Not one thing.</h2>
+    <p class="ro08-ask rise" style="--d:1">Which of these “shall be able to separate us”?</p>
+    <div class="ro08-none rise" style="--d:2">
+      <div style="--k:0"><b>death</b><small>not the grave</small></div>
+      <div style="--k:1"><b>life</b><small>nothing it throws at you</small></div>
+      <div style="--k:2"><b>angels</b><small>no spirit</small></div>
+      <div style="--k:3"><b>principalities</b><small>no ruler, seen or unseen</small></div>
+      <div style="--k:4"><b>powers</b><small>no force</small></div>
+      <div style="--k:5"><b>things present</b><small>not today</small></div>
+      <div style="--k:6"><b>things to come</b><small>not tomorrow</small></div>
+      <div style="--k:7"><b>height</b><small>nothing above</small></div>
+      <div style="--k:8"><b>depth</b><small>nothing below</small></div>
+      <div style="--k:9"><b>any other creature</b><small>nothing made, not even you</small></div>
+    </div>
+    <p class="ro08-love step ro08-nogo">“the love of God, which is in Christ Jesus our Lord”</p>
+    <p class="note step"><em>“More than conquerors”</em> is one word in Greek, something like <em>super-conquerors</em>. Not just surviving: winning, <em>“through him that loved us.”</em> And <em>“any other creature”</em> includes you. You can't even separate yourself. That's eternal security: you're kept by His love, not by your grip.</p>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise">From the cry to the song</h2>
+    <div class="stage">
+      <svg class="curve" viewBox="0 0 600 340" style="max-height:40vh" role="img" aria-label="A line starts at Romans 7:15, falls to its lowest point at 7:24, O wretched man, then climbs through 8:1, no condemnation, and 8:15, Abba, Father, to its highest point at 8:39: nothing shall be able to separate us.">
+        <line class="curve-base" x1="10" y1="150" x2="590" y2="150"/>
+        <path class="curve-line" pathLength="1" d="M24 120 C 80 130, 130 270, 190 276 C 240 280, 260 190, 300 150 C 340 112, 370 96, 410 92 C 470 86, 520 60, 575 40"/>
+        <g class="curve-pt" style="--at:.4s"><circle cx="24" cy="120" r="8"/><text class="ref" x="20" y="74">7:15</text><text class="q" x="20" y="98">“what I hate, that do I”</text></g>
+        <g class="curve-pt low" style="--at:1.5s"><circle cx="190" cy="276" r="9"/><text class="q" x="190" y="312" text-anchor="middle">“O wretched man”</text><text class="ref" x="190" y="332" text-anchor="middle">7:24</text></g>
+        <g class="curve-pt" style="--at:2.2s"><circle cx="300" cy="150" r="9"/><text class="q" x="316" y="180">“no condemnation”</text><text class="ref" x="316" y="198">8:1</text></g>
+        <g class="curve-pt" style="--at:2.7s"><circle cx="410" cy="92" r="9"/><text class="q" x="424" y="124">“Abba, Father”</text><text class="ref" x="424" y="142">8:15</text></g>
+        <g class="curve-pt high" style="--at:3.4s"><circle cx="575" cy="40" r="10"/><text class="q" x="556" y="22" text-anchor="end">“nothing… shall be able to separate us”</text><text class="ref" x="590" y="78" text-anchor="end">8:39</text></g>
+      </svg>
+    </div>
+    <p class="note step">Same man, same struggle, one chapter apart. The fight of chapter 7 doesn't vanish. But now he fights it as a son: the Spirit in him, no condemnation over him, and nothing able to pull him out of God's love.</p>
+    <p class="note step">Today, when the old pull comes, say out loud what's true: <em>“There is therefore now no condemnation.”</em> Then take the next right step, through the Spirit.</p>
+  </div>
+</section>
+
+<!-- ======================= CLOSING ======================= -->
+<section class="slide remember">
+  <div class="inner">
+    <h2 class="rise">Points to remember</h2>
+    <ol class="seeds">
+      <li class="step"><span class="topic">Condemnation</span><span class="seed-q">“There is therefore now no condemnation” <cite>8:1</cite></span><span class="take">For the man in Christ, the verdict is in: not guilty, today, for good.</span></li>
+      <li class="step"><span class="topic">The Spirit</span><span class="seed-q">“The Spirit also helpeth our infirmities” <cite>8:26</cite></span><span class="take">He lives in every believer, leads him, assures him, and prays for him.</span></li>
+      <li class="step"><span class="topic">Sons</span><span class="seed-q">“Whereby we cry, Abba, Father” <cite>8:15</cite></span><span class="take">You're not a slave in fear. You're an adopted son and heir, with a Father who stays.</span></li>
+      <li class="step"><span class="topic">Suffering</span><span class="seed-q">“Not worthy to be compared with the glory” <cite>8:18</cite></span><span class="take">Weigh today's pain against the glory coming. It isn't close.</span></li>
+      <li class="step"><span class="topic">All things</span><span class="seed-q">“All things work together for good” <cite>8:28</cite></span><span class="take">Not everything is good, but God works all of it together for good for His children.</span></li>
+      <li class="step"><span class="topic">Security</span><span class="seed-q">“Nor any other creature, shall be able to separate us” <cite>8:39</cite></span><span class="take">Nothing, not even you, can pull you out of God's love in Christ.</span></li>
+    </ol>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 1 of 6</p>
+      <span class="topic">Condemnation</span>
+      <h2>What does God say to the man who is in Christ Jesus?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="1"></blockquote>
+      <blockquote class="quote step" data-q="34" data-hl="It is Christ that died"></blockquote>
+      <blockquote class="quote step"><p>“Verily, verily, I say unto you, He that heareth my word, and believeth on him that sent me, hath everlasting life, and shall not come into condemnation; but is passed from death unto life.”</p><cite>John 5:24</cite></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>“No condemnation,” not later but now. God condemned our sin in Jesus' body, so no sentence is left for us. God declares us righteous, and Christ, who died for us, prays for us.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 2 of 6</p>
+      <span class="topic">The Spirit</span>
+      <h2>What does the Holy Spirit do for a believer?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="9" data-hl="if any man have not the Spirit of Christ, he is none of his"></blockquote>
+      <blockquote class="quote step" data-q="16"></blockquote>
+      <blockquote class="quote step" data-q="26" data-hl="the Spirit itself maketh intercession for us"></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>He lives in every believer from the moment he's saved. He frees us from sin's pull, leads us, tells our hearts we're God's children, helps us in our weakness, and prays for us when we have no words.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 3 of 6</p>
+      <span class="topic">Sons</span>
+      <h2>What does it mean to cry “Abba, Father”?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="15"></blockquote>
+      <blockquote class="quote step" data-q="17" data-hl="heirs of God, and joint-heirs with Christ"></blockquote>
+      <blockquote class="quote step"><p>“When my father and my mother forsake me, then the LORD will take me up.”</p><cite>Psalm 27:10</cite></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>It means we're adopted sons, not frightened slaves. “Abba” is the word a child calls his father at home, the word Jesus used. God gave us His name, made us His heirs with Christ, and He will never walk out on us.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 4 of 6</p>
+      <span class="topic">Suffering</span>
+      <h2>How should a believer weigh the hard things he goes through?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="18"></blockquote>
+      <blockquote class="quote step" data-q="23" data-hl="waiting for the adoption, to wit, the redemption of our body"></blockquote>
+      <blockquote class="quote step"><p>“For our light affliction, which is but for a moment, worketh for us a far more exceeding and eternal weight of glory;”</p><cite>2 Corinthians 4:17</cite></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>Put them on the scale against the glory to come. The pain is real, and we groan. But it's labor pain, not death pain, and it ends in new bodies and a new creation. Next to that glory, today's troubles are light and short.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 5 of 6</p>
+      <span class="topic">All things</span>
+      <h2>What does Romans 8:28 promise, and what doesn't it?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="28"></blockquote>
+      <blockquote class="quote step" data-q="29" data-hl="to be conformed to the image of his Son"></blockquote>
+      <blockquote class="quote step"><p>“But as for you, ye thought evil against me; but God meant it unto good, to bring to pass, as it is this day, to save much people alive.”</p><cite>Genesis 50:20</cite></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>It doesn't promise that everything is good, or that it will all feel good. It promises that God works all of it together for good for those who love Him. And the “good” is this: making us like Jesus.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 6 of 6</p>
+      <span class="topic">Security</span>
+      <h2>What can separate a believer from the love of God?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="37"></blockquote>
+      <blockquote class="quote step" data-q="38-39"></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>Nothing. Not trouble, not death, not any power, not anything today or tomorrow, not even ourselves. We're held by His love, not by our grip. That's eternal security, and it's the last word of the chapter.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide prayer">
+  <div class="inner">
+    <div class="emblem rise"></div>
+    <h2 class="rise" style="--d:1">Prayer requests</h2>
+    <p class="ask-line rise" style="--d:2">What can we pray about for you today?</p>
+    <blockquote class="quote rise" style="--d:4" data-q="26"></blockquote>
+  </div>
+</section>
+
+</main>
+
+<script>
+// King James Version, Romans chapter 8
+const V = {
+  1: "There is therefore now no condemnation to them which are in Christ Jesus, who walk not after the flesh, but after the Spirit.",
+  2: "For the law of the Spirit of life in Christ Jesus hath made me free from the law of sin and death.",
+  3: "For what the law could not do, in that it was weak through the flesh, God sending his own Son in the likeness of sinful flesh, and for sin, condemned sin in the flesh:",
+  4: "That the righteousness of the law might be fulfilled in us, who walk not after the flesh, but after the Spirit.",
+  5: "For they that are after the flesh do mind the things of the flesh; but they that are after the Spirit the things of the Spirit.",
+  6: "For to be carnally minded is death; but to be spiritually minded is life and peace.",
+  7: "Because the carnal mind is enmity against God: for it is not subject to the law of God, neither indeed can be.",
+  8: "So then they that are in the flesh cannot please God.",
+  9: "But ye are not in the flesh, but in the Spirit, if so be that the Spirit of God dwell in you. Now if any man have not the Spirit of Christ, he is none of his.",
+  10: "And if Christ be in you, the body is dead because of sin; but the Spirit is life because of righteousness.",
+  11: "But if the Spirit of him that raised up Jesus from the dead dwell in you, he that raised up Christ from the dead shall also quicken your mortal bodies by his Spirit that dwelleth in you.",
+  12: "Therefore, brethren, we are debtors, not to the flesh, to live after the flesh.",
+  13: "For if ye live after the flesh, ye shall die: but if ye through the Spirit do mortify the deeds of the body, ye shall live.",
+  14: "For as many as are led by the Spirit of God, they are the sons of God.",
+  15: "For ye have not received the spirit of bondage again to fear; but ye have received the Spirit of adoption, whereby we cry, Abba, Father.",
+  16: "The Spirit itself beareth witness with our spirit, that we are the children of God:",
+  17: "And if children, then heirs; heirs of God, and joint-heirs with Christ; if so be that we suffer with him, that we may be also glorified together.",
+  18: "For I reckon that the sufferings of this present time are not worthy to be compared with the glory which shall be revealed in us.",
+  19: "For the earnest expectation of the creature waiteth for the manifestation of the sons of God.",
+  20: "For the creature was made subject to vanity, not willingly, but by reason of him who hath subjected the same in hope,",
+  21: "Because the creature itself also shall be delivered from the bondage of corruption into the glorious liberty of the children of God.",
+  22: "For we know that the whole creation groaneth and travaileth in pain together until now.",
+  23: "And not only they, but ourselves also, which have the firstfruits of the Spirit, even we ourselves groan within ourselves, waiting for the adoption, to wit, the redemption of our body.",
+  24: "For we are saved by hope: but hope that is seen is not hope: for what a man seeth, why doth he yet hope for?",
+  25: "But if we hope for that we see not, then do we with patience wait for it.",
+  26: "Likewise the Spirit also helpeth our infirmities: for we know not what we should pray for as we ought: but the Spirit itself maketh intercession for us with groanings which cannot be uttered.",
+  27: "And he that searcheth the hearts knoweth what is the mind of the Spirit, because he maketh intercession for the saints according to the will of God.",
+  28: "And we know that all things work together for good to them that love God, to them who are the called according to his purpose.",
+  29: "For whom he did foreknow, he also did predestinate to be conformed to the image of his Son, that he might be the firstborn among many brethren.",
+  30: "Moreover whom he did predestinate, them he also called: and whom he called, them he also justified: and whom he justified, them he also glorified.",
+  31: "What shall we then say to these things? If God be for us, who can be against us?",
+  32: "He that spared not his own Son, but delivered him up for us all, how shall he not with him also freely give us all things?",
+  33: "Who shall lay any thing to the charge of God’s elect? It is God that justifieth.",
+  34: "Who is he that condemneth? It is Christ that died, yea rather, that is risen again, who is even at the right hand of God, who also maketh intercession for us.",
+  35: "Who shall separate us from the love of Christ? shall tribulation, or distress, or persecution, or famine, or nakedness, or peril, or sword?",
+  36: "As it is written, For thy sake we are killed all the day long; we are accounted as sheep for the slaughter.",
+  37: "Nay, in all these things we are more than conquerors through him that loved us.",
+  38: "For I am persuaded, that neither death, nor life, nor angels, nor principalities, nor powers, nor things present, nor things to come,",
+  39: "Nor height, nor depth, nor any other creature, shall be able to separate us from the love of God, which is in Christ Jesus our Lord."
+};
+const BOOK = "Romans 8";
+</script>
+<script src="../assets/deck.js"></script>
+</body>
+</html>
