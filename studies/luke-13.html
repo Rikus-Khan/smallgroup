@@ -1,0 +1,646 @@
+<!doctype html>
+<html lang="en" data-theme="stone">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Luke 13</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="../assets/fonts.css">
+<link rel="stylesheet" href="../assets/deck.css">
+<link rel="stylesheet" href="../assets/themes.css">
+<style>
+/* lk13-tower: a sketch of Jerusalem; the tower near the pool of Siloam tips over when the slide opens */
+.lk13-wall { fill: color-mix(in srgb, var(--leather-light) 22%, var(--surface)); stroke: var(--leather); stroke-width: 3; stroke-linejoin: round; }
+.lk13-court { fill: color-mix(in srgb, var(--accent) 16%, var(--surface)); stroke: var(--accent); stroke-width: 2.5; }
+.lk13-pool { fill: color-mix(in srgb, var(--cool) 40%, var(--surface)); stroke: var(--cool); stroke-width: 2; }
+.lk13-tower { fill: var(--ink-soft); transform-box: fill-box; transform-origin: 100% 100%; transition: transform 1.2s cubic-bezier(.6,0,.9,.6) 1s; }
+.slide.active .lk13-tower { transform: rotate(78deg); }
+.lk13-dust { fill: var(--ink-soft); opacity: 0; transition: opacity .8s ease 2s; }
+.slide.active .lk13-dust { opacity: .35; }
+.lk13-cap { font-size: 15px; fill: var(--ink-soft); }
+.lk13-hot { font-size: 16px; font-weight: 700; fill: var(--danger); }
+
+/* lk13-bent: a woman bent double for eighteen years; on a step she straightens up */
+.lk13-ground { stroke: var(--line-strong); stroke-width: 2; }
+.lk13-jesus { fill: var(--accent); }
+.lk13-her { fill: var(--ink-soft); transition: fill 1s ease; }
+.lk13-torso { transform-box: view-box; transform-origin: 300px 210px; transform: rotate(-68deg); transition: transform 2s cubic-bezier(.3,.7,.3,1); }
+.slide:has(.lk13-go.on) .lk13-torso { transform: none; }
+.slide:has(.lk13-go.on) .lk13-her { fill: var(--cool); }
+.lk13-yrs { font-size: 18px; font-weight: 700; fill: var(--ink-soft); transition: opacity .6s ease; }
+.lk13-free { font-size: 20px; font-weight: 700; fill: var(--accent-hot); opacity: 0; transition: opacity .8s ease 1.4s; }
+.slide:has(.lk13-go.on) .lk13-yrs { opacity: 0; }
+.slide:has(.lk13-go.on) .lk13-free { opacity: 1; }
+
+/* lk13-tree: a seed too small to see grows into a tree, and the birds come to its branches */
+.lk13-soil { fill: color-mix(in srgb, var(--leather) 60%, var(--bg)); }
+.lk13-seed { fill: var(--warm); }
+.lk13-grow { transform-box: view-box; transform-origin: 260px 262px; transform: scale(.04); transition: transform 3s cubic-bezier(.3,.6,.3,1) .6s; }
+.slide.active .lk13-grow { transform: none; }
+.lk13-trunk { fill: var(--leather); }
+.lk13-leaf { fill: color-mix(in srgb, var(--accent) 55%, var(--surface)); }
+.lk13-bird { fill: none; stroke: var(--ink); stroke-width: 3; stroke-linecap: round; stroke-linejoin: round; opacity: 0; transform: translate(var(--fx), -60px); transition: opacity .6s ease, transform 1.6s ease-out; transition-delay: calc(3.4s + var(--k) * .3s); }
+.slide.active .lk13-bird { opacity: 1; transform: none; }
+
+/* lk13-hen: a hen with her wings spread wide; the chicks wander and never come under them */
+.lk13-body { fill: var(--leather-light); stroke: var(--leather); stroke-width: 2.5; }
+.lk13-wing { fill: color-mix(in srgb, var(--leather-light) 75%, var(--surface)); stroke: var(--leather); stroke-width: 2.5; transform-box: fill-box; transition: transform 1.4s cubic-bezier(.3,.7,.3,1) .5s; }
+.lk13-wing.l { transform-origin: 100% 30%; }
+.lk13-wing.r { transform-origin: 0% 30%; }
+.slide.active .lk13-wing.l { transform: rotate(28deg); }
+.slide.active .lk13-wing.r { transform: rotate(-28deg); }
+.lk13-comb { fill: var(--danger); }
+.lk13-beak { fill: var(--warm); }
+.lk13-chick { fill: var(--warm); stroke: var(--leather); stroke-width: 1.5; animation: lk13-peck 1.8s ease-in-out infinite; animation-delay: calc(var(--k) * -.4s); }
+@keyframes lk13-peck { 0%, 100% { transform: translate(0, 0); } 50% { transform: translate(var(--wx), 3px); } }
+.lk13-say { font-size: 18px; font-weight: 700; fill: var(--accent-hot); }
+.lk13-no { font-size: 18px; font-weight: 700; fill: var(--danger); opacity: 0; transition: opacity .6s ease; }
+.slide:has(.lk13-go2.on) .lk13-no { opacity: 1; }
+</style>
+</head>
+<body>
+<main class="deck" id="deck">
+
+<!-- ======================= OPENING ======================= -->
+<section class="slide title">
+  <div class="inner">
+    <div class="emblem rise"></div>
+    <h1 class="rise" style="--d:1">Luke 13</h1>
+    <p class="sub rise" style="--d:3">This year also</p>
+    <p class="tag rise" style="--d:5">Bad news from Jerusalem, a fig tree given one more year, a woman bent for eighteen years set free, and Jesus weeping over a city that would not come.</p>
+  </div>
+</section>
+
+<section class="slide watch">
+  <div class="inner">
+    <h2 class="rise">Things to watch for</h2>
+    <p class="lede rise" style="--d:1">Keep these questions in the back of your mind as we read. We'll come back to every one of them at the end.</p>
+    <ol class="seeds">
+      <li class="step"><span class="topic">Repentance</span><span class="seed-q">When people brought Jesus bad news, what did He say they needed to do?</span></li>
+      <li class="step"><span class="topic">Another year</span><span class="seed-q">What did the dresser ask for the fig tree that bore no fruit?</span></li>
+      <li class="step"><span class="topic">Set free</span><span class="seed-q">What did Jesus say to the woman who had been bound for eighteen years?</span></li>
+      <li class="step"><span class="topic">Small beginnings</span><span class="seed-q">What do the mustard seed and the leaven teach about the kingdom of God?</span></li>
+      <li class="step"><span class="topic">The door</span><span class="seed-q">When a man asked if few would be saved, what did Jesus tell him to do?</span></li>
+      <li class="step"><span class="topic">Love refused</span><span class="seed-q">How did Jesus want to gather Jerusalem, and what stopped Him?</span></li>
+    </ol>
+  </div>
+</section>
+
+<!-- ======================= PART ONE: REPENT ======================= -->
+<section class="slide part">
+  <div class="inner">
+    <p class="part-n rise">Part one</p>
+    <h2 class="rise" style="--d:1">Except ye repent</h2>
+    <p class="range rise" style="--d:2">Verses 1–9</p>
+    <div class="rule"></div>
+    <p class="hook rise" style="--d:4">Two pieces of bad news, and a tree that has had three years to bear fruit.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="1-3" data-hl="the Galilaeans, whose blood Pilate had mingled with their sacrifices|Suppose ye that these Galilaeans were sinners above all the Galilaeans|except ye repent, ye shall all likewise perish"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="1"></blockquote>
+    <h2 class="rise" style="--d:1">“Sinners above all”?</h2>
+    <p class="note rise" style="--d:2"><em>Pilate</em> was the Roman governor of Judaea, from about AD 26 to 36, known for being harsh. Some men from Galilee had come to the temple to offer sacrifices, and his soldiers cut them down right there. Everybody was asking the same question: what did they do to deserve that?</p>
+    <ul class="nots">
+      <li class="step"><span class="k">they must have been worse sinners</span><span class="why">“I tell you, Nay”</span></li>
+      <li class="step"><span class="k">God was paying them back</span><span class="why">disaster isn't a scorecard</span></li>
+      <li class="step yes"><span class="k">except ye repent</span><span class="why">the question is about you</span></li>
+    </ul>
+  </div>
+</section>
+
+<section class="slide verse" data-v="4-5" data-hl="those eighteen, upon whom the tower in Siloam fell|except ye repent, ye shall all likewise perish"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <div class="split">
+      <div class="stage">
+        <svg class="map" viewBox="0 0 420 330" role="img" aria-label="A sketch of Jerusalem in Jesus' day. The temple courts sit at the north-east of the city; the pool of Siloam is at the southern tip. A tower near the pool tips over and falls.">
+          <rect class="map-land" x="0" y="0" width="420" height="330" rx="6"/>
+          <path class="map-river" d="M340 20 C 330 110, 300 230, 250 320"/>
+          <text class="map-water" x="350" y="150" transform="rotate(72 350 150)">Kidron valley</text>
+          <path class="lk13-wall" d="M60 60 L 300 50 L 312 150 L 262 238 L 214 290 L 186 280 L 150 200 L 70 170 Z"/>
+          <rect class="lk13-court" x="220" y="64" width="80" height="78" rx="4"/>
+          <text class="lk13-cap" x="260" y="108" text-anchor="middle">temple</text>
+          <ellipse class="lk13-pool" cx="196" cy="270" rx="18" ry="9"/>
+          <text class="lk13-cap" x="150" y="300" text-anchor="end">pool of Siloam</text>
+          <rect class="lk13-tower" x="214" y="232" width="14" height="40"/>
+          <ellipse class="lk13-dust" cx="250" cy="270" rx="34" ry="10"/>
+          <text class="lk13-hot" x="246" y="34" text-anchor="middle">Galilaeans slain (13:1)</text>
+          <text class="lk13-hot" x="300" y="300" text-anchor="middle">eighteen (13:4)</text>
+          <text class="map-region" x="110" y="120">JERUSALEM</text>
+        </svg>
+      </div>
+      <div>
+        <h2 class="rise" style="--d:1">The tower in Siloam</h2>
+        <p class="note rise" style="--d:2">Then Jesus brings up a second disaster everyone knew about. A tower near the pool of <em>Siloam</em>, at the south end of Jerusalem, fell and killed eighteen people. No soldiers this time. Just an accident.</p>
+        <p class="note step">One cruelty, one accident, the same answer: they weren't worse than anybody else. And nobody is safe just because nothing has fallen on him yet.</p>
+        <p class="note step">When trouble hits, we ask, “What did he do?” or “Why me?” Jesus turns it into a call to turn to God, while there's time.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <p class="saying rise" style="--d:1">Except ye <em>repent</em>, ye shall all likewise perish.</p>
+    <p class="note rise" style="--d:3">Jesus says it twice, word for word (verses 3 and 5). To <em>repent</em> is to change your mind about sin and about God, and turn around: away from going your own way, toward Him. It isn't cleaning yourself up first. It's turning to the One who can.</p>
+    <p class="note step">That's a hard word, but it's said in love. God isn't eager to judge. He's waiting for men to come home:</p>
+    <blockquote class="quote step"><p>“The Lord is not slack concerning his promise, as some men count slackness; but is longsuffering to us-ward, not willing that any should perish, but that all should come to repentance.”</p><cite>2 Peter 3:9</cite></blockquote>
+  </div>
+</section>
+
+<section class="slide verse" data-v="6-9" data-hl="A certain man had a fig tree planted in his vineyard|these three years I come seeking fruit on this fig tree, and find none|let it alone this year also, till I shall dig about it, and dung it"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="8" data-hl="let it alone this year also"></blockquote>
+    <h2 class="rise" style="--d:1">One more year</h2>
+    <ol class="timeline" aria-label="Year one, no fruit. Year two, no fruit. Year three, no fruit: cut it down. Then, lit: this year also, dig about it and dung it. Last, still waiting: if not, cut it down.">
+      <li style="--k:0"><b>year one</b><span>no fruit</span></li>
+      <li style="--k:1"><b>year two</b><span>no fruit</span></li>
+      <li style="--k:2"><b>year three</b><span>“cut it down”</span></li>
+      <li class="lit" style="--k:3"><b>this year also</b><span>dig about it, and dung it</span><small>mercy</small></li>
+      <li class="wait" style="--k:4"><b>after that</b><span>fruit, or the axe</span></li>
+    </ol>
+    <p class="note step">Three years was plenty of time to expect figs. This one just took up space: <em>why cumbereth it the ground?</em> It was using up soil and water a good tree could have had. Then the man who tended the vineyard steps in and pleads for it.</p>
+    <p class="note step">He doesn't just ask for time. He gets to work: loosen the hard ground around the roots, and pack in manure. That's what grace looks like. It's not God shrugging at a barren life. It's God working on it.</p>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="9"></blockquote>
+    <h2 class="rise" style="--d:1">Don't waste the year</h2>
+    <p class="note rise" style="--d:2">Some of us have had a lot of years with nothing to show for them. If you're here today, the Lord has given you <em>this year also</em>. He's been digging around your roots: the hard times, the people He's put in your life, this very study.</p>
+    <p class="note step">Grace gives time, and time has a purpose: fruit. The tree isn't saved by its figs. The figs show it's alive. Turn to Jesus, and let Him grow something in you.</p>
+    <blockquote class="quote step"><p>“Seek ye the LORD while he may be found, call ye upon him while he is near:”</p><cite>Isaiah 55:6</cite></blockquote>
+  </div>
+</section>
+
+<!-- ======================= PART TWO: LOOSED ======================= -->
+<section class="slide part">
+  <div class="inner">
+    <p class="part-n rise">Part two</p>
+    <h2 class="rise" style="--d:1">Thou art loosed</h2>
+    <p class="range rise" style="--d:2">Verses 10–17</p>
+    <div class="rule"></div>
+    <p class="hook rise" style="--d:4">A woman who hadn't stood up straight in eighteen years, and a ruler who was angry she did.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="10-11" data-hl="a woman which had a spirit of infirmity eighteen years, and was bowed together"></section>
+
+<section class="slide verse" data-v="12-13" data-hl="Woman, thou art loosed from thine infirmity|immediately she was made straight, and glorified God"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <div class="split">
+      <div class="stage">
+        <svg viewBox="0 0 460 300" role="img" aria-label="A woman bent almost double, looking only at the ground, with Jesus standing near her. On a step she straightens up and stands tall.">
+          <line class="lk13-ground" x1="20" y1="282" x2="440" y2="282"/>
+          <g class="lk13-jesus"><circle cx="130" cy="96" r="18"/><path d="M104 282 L110 128 Q130 114 150 128 L156 282 Z"/><path d="M146 140 Q176 142 198 154" fill="none" stroke-width="9" stroke-linecap="round" style="stroke:var(--accent)"/></g>
+          <path class="lk13-her" d="M290 282 L296 212 L304 212 L310 282 Z"/>
+          <g class="lk13-torso">
+            <path class="lk13-her" d="M284 214 Q286 150 300 140 Q314 150 316 214 Z"/>
+            <circle class="lk13-her" cx="300" cy="122" r="16"/>
+          </g>
+          <text class="lk13-yrs" x="330" y="160">bowed together</text>
+          <text class="lk13-yrs" x="330" y="184">18 years</text>
+          <text class="lk13-free" x="340" y="120">made straight</text>
+          <text class="lk13-free" x="340" y="146">glorified God</text>
+        </svg>
+      </div>
+      <div>
+        <h2 class="rise" style="--d:1">Eighteen years bent over</h2>
+        <p class="note rise" style="--d:2"><em>Bowed together</em>: bent double, unable to straighten up. For eighteen years she'd seen the ground and other people's feet. A <em>spirit of infirmity</em> was behind it: <em>Satan</em> had bound her (verse 16).</p>
+        <p class="note step lk13-go">She didn't ask for anything. Jesus saw her, called her over, and said, <em>“Woman, thou art loosed.”</em> He laid His hands on her, and she stood up straight, praising God.</p>
+        <p class="note step">Some of us have been bent over by something that long or longer. Jesus still sees the one in the back of the room.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="slide verse" data-v="14-15" data-hl="There are six days in which men ought to work|Thou hypocrite|loose his ox or his ass from the stall"></section>
+
+<section class="slide verse" data-v="16-17" data-hl="a daughter of Abraham, whom Satan hath bound, lo, these eighteen years|all the people rejoiced"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise">An ox, or a daughter of Abraham</h2>
+    <p class="note rise" style="--d:1">The <em>ruler of the synagogue</em> ran its services. He wouldn't face Jesus, so he scolded the crowd: come be healed on a workday. Jesus answers with what that man did himself every <em>sabbath</em>:</p>
+    <div class="match" style="--n:3" aria-label="Every sabbath you loose your ox or your ass, which has been tied in its stall overnight, and lead it to water. Shouldn't this daughter of Abraham, whom Satan has bound for eighteen years, be loosed from her bond on the sabbath?">
+      <div class="a rise" style="--d:2"><span class="tag">you</span><span class="w">loose his ox or his ass</span><span class="w">from the stall</span><span class="w">to watering</span></div>
+      <div class="step"><span></span><span class="link">a beast, or a daughter</span><span class="link">one night, or 18 years</span><span class="link">a drink, or freedom</span></div>
+      <div class="b step"><span class="but">Jesus</span><span class="w">this woman, a daughter of Abraham</span><span class="w">whom Satan hath bound</span><span class="w">be loosed from this bond</span></div>
+    </div>
+    <p class="note step">He'd untie a donkey without thinking twice. Was she worth less than his donkey? The sabbath was God's gift of rest. What better day to set a prisoner free? The crowd saw it, and <em>all the people rejoiced</em>.</p>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="16" data-hl="a daughter of Abraham"></blockquote>
+    <h2 class="rise" style="--d:1">“A daughter of Abraham”</h2>
+    <p class="note rise" style="--d:2">Nobody else in Scripture is called that. To the ruler she was a problem on his schedule. To Jesus she was family, an heir of God's promise to Abraham, and she had a right to be free.</p>
+    <p class="note step">Notice the word Jesus keeps using: <em>loose</em>, <em>loosed</em>, <em>bound</em>, <em>bond</em>. He doesn't just ease what hurts. He breaks what binds. Whatever has had you tied in a stall for years, He calls you over, and He can loose you.</p>
+    <blockquote class="quote step"><p>“If the Son therefore shall make you free, ye shall be free indeed.”</p><cite>John 8:36</cite></blockquote>
+  </div>
+</section>
+
+<!-- ======================= PART THREE: THE KINGDOM AND THE DOOR ======================= -->
+<section class="slide part">
+  <div class="inner">
+    <p class="part-n rise">Part three</p>
+    <h2 class="rise" style="--d:1">The strait gate</h2>
+    <p class="range rise" style="--d:2">Verses 18–30</p>
+    <div class="rule"></div>
+    <p class="hook rise" style="--d:4">A tiny seed, a pinch of yeast, and a door that will not stay open forever.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="18-21" data-hl="It is like a grain of mustard seed|it grew, and waxed a great tree; and the fowls of the air lodged in the branches of it|It is like leaven|till the whole was leavened"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <div class="split">
+      <div class="stage">
+        <svg viewBox="0 0 520 320" role="img" aria-label="A single tiny seed in the ground. It grows into a great tree, and birds fly in and settle in its branches.">
+          <rect class="lk13-soil" x="0" y="262" width="520" height="58"/>
+          <circle class="lk13-seed" cx="260" cy="266" r="3"/>
+          <g class="lk13-grow">
+            <path class="lk13-trunk" d="M250 262 L254 170 Q230 140 196 128 L202 120 Q236 130 256 152 L258 100 L264 100 L266 152 Q290 128 326 116 L330 124 Q296 140 270 170 L272 262 Z"/>
+            <g class="lk13-leaf">
+              <circle cx="260" cy="86" r="52"/><circle cx="196" cy="118" r="42"/><circle cx="326" cy="110" r="44"/>
+              <circle cx="228" cy="62" r="36"/><circle cx="296" cy="60" r="38"/><circle cx="160" cy="140" r="26"/><circle cx="362" cy="134" r="28"/>
+            </g>
+          </g>
+          <path class="lk13-bird" style="--k:0;--fx:-80px" d="M180 108 q8 -8 14 0 q6 -8 14 0"/>
+          <path class="lk13-bird" style="--k:1;--fx:90px" d="M300 52 q8 -8 14 0 q6 -8 14 0"/>
+          <path class="lk13-bird" style="--k:2;--fx:-60px" d="M236 40 q8 -8 14 0 q6 -8 14 0"/>
+          <path class="lk13-bird" style="--k:3;--fx:70px" d="M346 112 q8 -8 14 0 q6 -8 14 0"/>
+          <text x="260" y="300" text-anchor="middle" font-size="16" style="fill:var(--glow)">one seed</text>
+        </svg>
+      </div>
+      <div>
+        <h2 class="rise" style="--d:1">From almost nothing</h2>
+        <p class="note rise" style="--d:2">A <em>mustard seed</em> was about the size of a pinhead, the smallest seed a Galilee farmer sowed. In one season the plant could grow taller than a man, big enough for birds to perch in.</p>
+        <p class="note step">The kingdom of God started like that: one Man and a few fishermen and tax collectors in a corner of the Roman world. Look at it now, with people from every nation resting in its branches.</p>
+        <p class="note step">What God starts small in a man's life can grow the same way. Don't despise the small beginning.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="21"></blockquote>
+    <h2 class="rise" style="--d:1">A pinch of leaven</h2>
+    <div class="math">
+      <div class="step"><b>3 measures</b><span>of meal: about 20 quarts of flour</span></div>
+      <div class="step"><b>1 pinch</b><span>of leaven, hidden inside</span></div>
+      <div class="step"><b>the whole</b><span>was leavened</span></div>
+    </div>
+    <p class="note step">That's a huge batch, enough bread to feed a crowd. Abraham told Sarah to bake that much for three visitors:</p>
+    <blockquote class="quote step"><p>“And Abraham hastened into the tent unto Sarah, and said, Make ready quickly three measures of fine meal, knead it, and make cakes upon the hearth.”</p><cite>Genesis 18:6</cite></blockquote>
+    <p class="note step">In chapter 12, leaven was hypocrisy spreading. Here it's the kingdom spreading: quiet, out of sight, working from the inside until the whole lump is changed. God works in a man like that too.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="22-24" data-hl="journeying toward Jerusalem|Lord, are there few that be saved?|Strive to enter in at the strait gate"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <div class="split">
+      <div class="stage">
+        <svg data-land viewBox="110 80 250 360" data-towns="Capernaum:r, Nazareth, Jericho, Jerusalem!" role="img" aria-label="A map of the land. Jesus' route runs from Galilee down the Jordan valley on the Perea side, past Jericho, and up to Jerusalem. Galilee and Perea are Herod's; Samaria and Judaea are under Pilate.">
+          <path class="map-route" pathLength="1" style="--wait:.8s;--draw:3s" d="M268 131 C 282 180, 292 250, 286 300 S 262 352, 243 363 L 202 385"/>
+          <text class="map-soft" x="178" y="118" font-size="14">Herod's</text>
+          <text class="map-soft" x="296" y="300" font-size="14">Herod's</text>
+          <text class="map-soft" x="296" y="316" font-size="14">Perea</text>
+          <text class="map-soft" x="126" y="262" font-size="14">Pilate's</text>
+          <text class="map-soft" x="126" y="420" font-size="14">Pilate's Judaea</text>
+        </svg>
+      </div>
+      <div>
+        <h2 class="rise" style="--d:1">On the road to Jerusalem</h2>
+        <p class="note rise" style="--d:2">Since 9:51, Jesus has <em>stedfastly set his face to go to Jerusalem</em>. Luke follows Him town by town, likely through Herod's lands of Galilee and Perea, toward the city where He would die.</p>
+        <p class="note step">On the way, a man asks a head-count question: <em>are there few that be saved?</em> It's the kind of thing men like to argue about. Jesus doesn't give a number. He turns it back on the man: <em>you</em> make sure you get in.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="24"></blockquote>
+    <div class="morph">
+      <span class="big step">ἀγωνίζεσθε</span>
+      <span class="say step">said <em class="gk">agōnizesthe</em></span>
+      <span class="means step">“strain, like a man in a contest”</span>
+    </div>
+    <p class="note step">It's where we get <em>agony</em>. The <em>strait gate</em> is the narrow door. Striving here isn't earning your way in: nobody works his way through this door. It's the effort of a man who quits making excuses, lays down his pride, and goes in, now.</p>
+    <p class="note step">The door is narrow because there's only one, and it's a Person. But it's open to whosoever will:</p>
+    <blockquote class="quote step"><p>“I am the door: by me if any man enter in, he shall be saved, and shall go in and out, and find pasture.”</p><cite>John 10:9</cite></blockquote>
+  </div>
+</section>
+
+<section class="slide verse" data-v="25-27" data-hl="hath shut to the door|Lord, Lord, open unto us|I know you not whence ye are|We have eaten and drunk in thy presence|depart from me, all ye workers of iniquity"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise">When the door is shut</h2>
+    <div class="talk">
+      <p class="rise" style="--d:1"><small>Outside</small>Lord, Lord, open unto us.</p>
+      <p class="reply step"><small>The master of the house</small>I know you not whence ye are.</p>
+      <p class="step"><small>Outside</small>We have eaten and drunk in thy presence, and thou hast taught in our streets.</p>
+      <p class="reply step"><small>The master of the house</small>Depart from me, all ye workers of iniquity. <span class="flag">near Him, never known</span></p>
+    </div>
+    <p class="note step">Why could many seek and <em>not be able</em>? They came after the door was shut. Being near Jesus isn't coming to Him. Today the door is open.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="28-30" data-hl="weeping and gnashing of teeth|they shall come from the east, and from the west, and from the north, and from the south|there are last which shall be first"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <div class="split">
+      <div class="stage">
+        <svg class="map" viewBox="0 0 400 360" role="img" aria-label="Four roads come in from the east, the west, the north and the south, all meeting at one table in the middle: the feast in the kingdom of God.">
+          <rect class="map-land" x="0" y="0" width="400" height="360" rx="6"/>
+          <path class="map-way" d="M200 20 L200 340 M20 180 L380 180"/>
+          <path class="map-route" pathLength="1" style="--wait:.5s" d="M200 24 L200 150"/>
+          <path class="map-route" pathLength="1" style="--wait:.9s" d="M376 180 L232 180"/>
+          <path class="map-route" pathLength="1" style="--wait:1.3s" d="M200 336 L200 210"/>
+          <path class="map-route" pathLength="1" style="--wait:1.7s" d="M24 180 L168 180"/>
+          <g class="map-town here"><circle cx="200" cy="180" r="18"/><circle class="map-ping" cx="200" cy="180" r="22"/></g>
+          <text class="map-region" x="212" y="40">NORTH</text>
+          <text class="map-region" x="300" y="166">EAST</text>
+          <text class="map-region" x="212" y="330">SOUTH</text>
+          <text class="map-region" x="30" y="166">WEST</text>
+          <text class="map-soft" x="214" y="222" font-size="15">sit down in the kingdom</text>
+        </svg>
+      </div>
+      <div>
+        <h2 class="rise" style="--d:1">From every direction</h2>
+        <p class="note rise" style="--d:2">The feast in the kingdom, with <em>Abraham, and Isaac, and Jacob</em> at the table. The listeners assumed they had reserved seats. Jesus says some will be outside, while people from every corner of the world come in.</p>
+        <p class="note step"><em>Weeping and gnashing of teeth</em> is grief and bitter anger at being shut out: a sober warning.</p>
+        <p class="note step">And hope for the man who feels last in line. Nobody gets in on his family name, and nobody is kept out by his past.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ======================= PART FOUR: O JERUSALEM ======================= -->
+<section class="slide part">
+  <div class="inner">
+    <p class="part-n rise">Part four</p>
+    <h2 class="rise" style="--d:1">O Jerusalem, Jerusalem</h2>
+    <p class="range rise" style="--d:2">Verses 31–35</p>
+    <div class="rule"></div>
+    <p class="hook rise" style="--d:4">A threat from Herod, and Jesus' answer: He's going to Jerusalem anyway.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="31-33" data-hl="Herod will kill thee|Go ye, and tell that fox|the third day I shall be perfected|it cannot be that a prophet perish out of Jerusalem"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="32" data-hl="tell that fox"></blockquote>
+    <h2 class="rise" style="--d:1">“Tell that fox”</h2>
+    <p class="note rise" style="--d:2">This is <em>Herod</em> Antipas, son of Herod the Great, who ruled Galilee and Perea for Rome. He had already beheaded John the Baptist (9:9). A <em>fox</em> is sly and destructive, a small-time killer that sneaks around at night. Jesus isn't afraid of him.</p>
+    <ol class="timeline" aria-label="Jesus' answer: to day, I cast out devils and do cures; to morrow, the same; the third day, I shall be perfected. He walks on to Jerusalem on God's schedule, not Herod's.">
+      <li style="--k:0"><b>to day</b><span>cast out devils, do cures</span></li>
+      <li style="--k:1"><b>to morrow</b><span>keep on walking</span></li>
+      <li class="lit" style="--k:2"><b>the third day</b><span>“I shall be perfected”</span><small>His work finished</small></li>
+    </ol>
+    <p class="note step">Herod doesn't set Jesus' calendar. God does. <em>Perfected</em> means brought to the finish line: His work done at the cross and the empty tomb. And it would happen in Jerusalem, the city that had a long record of killing the prophets God sent it.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="34-35" data-hl="O Jerusalem, Jerusalem|how often would I have gathered thy children together, as a hen doth gather her brood under her wings, and ye would not!|Blessed is he that cometh in the name of the Lord"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <div class="split">
+      <div class="stage">
+        <svg viewBox="0 0 480 300" role="img" aria-label="A mother hen with her wings spread wide open, ready to gather her chicks. The chicks wander around outside her wings and do not come.">
+          <line class="lk13-ground" x1="20" y1="250" x2="460" y2="250"/>
+          <path class="lk13-wing l" d="M246 176 Q150 140 112 222 Q186 226 246 214 Z"/>
+          <path class="lk13-wing r" d="M234 176 Q330 140 368 222 Q294 226 234 214 Z"/>
+          <ellipse class="lk13-body" cx="240" cy="200" rx="58" ry="46"/>
+          <circle class="lk13-body" cx="240" cy="132" r="26"/>
+          <path class="lk13-comb" d="M226 110 q6 -16 12 -4 q6 -14 12 0 q6 -10 6 6 Z"/>
+          <path class="lk13-beak" d="M262 130 L278 136 L262 142 Z"/>
+          <circle cx="248" cy="126" r="3.5" style="fill:var(--ink)"/>
+          <path d="M226 246 L222 262 M254 246 L258 262" stroke-width="4" stroke-linecap="round" style="stroke:var(--warm)"/>
+          <circle class="lk13-chick" style="--k:0;--wx:-6px" cx="70" cy="240" r="11"/>
+          <circle class="lk13-chick" style="--k:1;--wx:5px" cx="110" cy="244" r="10"/>
+          <circle class="lk13-chick" style="--k:2;--wx:-4px" cx="372" cy="242" r="11"/>
+          <circle class="lk13-chick" style="--k:3;--wx:6px" cx="412" cy="238" r="10"/>
+          <circle class="lk13-chick" style="--k:4;--wx:-5px" cx="440" cy="246" r="9"/>
+          <text class="lk13-say" x="240" y="40" text-anchor="middle">“how often would I have gathered…”</text>
+          <text class="lk13-no" x="240" y="290" text-anchor="middle">“and ye would not!”</text>
+        </svg>
+      </div>
+      <div>
+        <h2 class="rise" style="--d:1">As a hen gathers her brood</h2>
+        <p class="note rise" style="--d:2">When danger comes, a hen spreads her wings and calls, and her chicks run underneath. She'd take the hit herself to keep them safe. That's His heart toward the city that would crucify Him.</p>
+        <p class="note step lk13-go2"><em>How often would I … and ye would not!</em> They weren't kept out by His unwillingness, only by theirs.</p>
+        <blockquote class="quote step"><p>“He shall cover thee with his feathers, and under his wings shalt thou trust: his truth shall be thy shield and buckler.”</p><cite>Psalm 91:4</cite></blockquote>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="35" data-hl="Blessed is he that cometh in the name of the Lord"></blockquote>
+    <h2 class="rise" style="--d:1">A house left desolate</h2>
+    <p class="note rise" style="--d:2"><em>Desolate</em> means emptied and abandoned. About forty years later, Roman armies destroyed Jerusalem and its temple. Turning the Lord away has a cost.</p>
+    <p class="note step">But He ends with a line from the Psalms, the words pilgrims sang as they came up to the temple:</p>
+    <blockquote class="quote step"><p>“Blessed be he that cometh in the name of the LORD: we have blessed you out of the house of the LORD.”</p><cite>Psalm 118:26</cite></blockquote>
+    <p class="note step">The crowds sang it to Him when He rode into Jerusalem (19:38), and He still wept over the city (19:41). One day every knee will bow to Him. For you, today, the wings are still open. Whosoever will may come.</p>
+  </div>
+</section>
+
+<!-- ======================= CLOSING ======================= -->
+<section class="slide remember">
+  <div class="inner">
+    <h2 class="rise">Points to remember</h2>
+    <ol class="seeds">
+      <li class="step"><span class="topic">Repentance</span><span class="seed-q">“Except ye repent, ye shall all likewise perish” <cite>13:3</cite></span><span class="take">Trouble isn't a scorecard. Every one of us needs to turn to God.</span></li>
+      <li class="step"><span class="topic">Another year</span><span class="seed-q">“Let it alone this year also” <cite>13:8</cite></span><span class="take">Grace gives time and works the soil. Don't waste the year.</span></li>
+      <li class="step"><span class="topic">Set free</span><span class="seed-q">“Woman, thou art loosed from thine infirmity” <cite>13:12</cite></span><span class="take">No bondage is too old for Jesus to break.</span></li>
+      <li class="step"><span class="topic">Small beginnings</span><span class="seed-q">“It grew, and waxed a great tree” <cite>13:19</cite></span><span class="take">God's kingdom starts small and hidden, and it spreads.</span></li>
+      <li class="step"><span class="topic">The door</span><span class="seed-q">“Strive to enter in at the strait gate” <cite>13:24</cite></span><span class="take">Don't argue about how many. Go in yourself while the door is open.</span></li>
+      <li class="step"><span class="topic">Love refused</span><span class="seed-q">“How often would I have gathered thy children” <cite>13:34</cite></span><span class="take">His wings are open. The only thing that keeps a man out is “ye would not.”</span></li>
+    </ol>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 1 of 6</p>
+      <span class="topic">Repentance</span>
+      <h2>When people brought Jesus bad news, what did He say they needed to do?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="2-3"></blockquote>
+      <blockquote class="quote step"><p>“The Lord is not slack concerning his promise, as some men count slackness; but is longsuffering to us-ward, not willing that any should perish, but that all should come to repentance.”</p><cite>2 Peter 3:9</cite></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>Repent. The people who died weren't worse sinners than anyone else. Jesus told the listeners to turn to God themselves, and God is patient, not willing that any should perish.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 2 of 6</p>
+      <span class="topic">Another year</span>
+      <h2>What did the dresser ask for the fig tree that bore no fruit?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="7"></blockquote>
+      <blockquote class="quote step" data-q="8"></blockquote>
+      <blockquote class="quote step" data-q="9"></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>One more year: “let it alone this year also.” And he promised to dig around it and feed it. That's grace: more time, and God working on a barren life so it can bear fruit. But the year isn't forever.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 3 of 6</p>
+      <span class="topic">Set free</span>
+      <h2>What did Jesus say to the woman who had been bound for eighteen years?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="12"></blockquote>
+      <blockquote class="quote step" data-q="13"></blockquote>
+      <blockquote class="quote step" data-q="16"></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>“Woman, thou art loosed from thine infirmity.” He called her to Him, laid His hands on her, and she stood up straight and glorified God. She was a daughter of Abraham, worth far more than an ox, and He set her free.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 4 of 6</p>
+      <span class="topic">Small beginnings</span>
+      <h2>What do the mustard seed and the leaven teach about the kingdom of God?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="18"></blockquote>
+      <blockquote class="quote step" data-q="19"></blockquote>
+      <blockquote class="quote step" data-q="21"></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>The kingdom starts small and hidden, and it grows. A tiny seed becomes a tree birds can rest in. A little leaven works through the whole batch of dough. God's work in the world, and in a man, can start almost unseen.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 5 of 6</p>
+      <span class="topic">The door</span>
+      <h2>When a man asked if few would be saved, what did Jesus tell him to do?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="23"></blockquote>
+      <blockquote class="quote step" data-q="24"></blockquote>
+      <blockquote class="quote step"><p>“I am the door: by me if any man enter in, he shall be saved, and shall go in and out, and find pasture.”</p><cite>John 10:9</cite></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>Strive to enter in at the strait gate. Jesus didn't give a number. He told the man to make sure he went in himself, now, before the door is shut. Jesus is the door, and any man who enters by Him shall be saved.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 6 of 6</p>
+      <span class="topic">Love refused</span>
+      <h2>How did Jesus want to gather Jerusalem, and what stopped Him?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="34"></blockquote>
+      <blockquote class="quote step"><p>“And when he was come near, he beheld the city, and wept over it,”</p><cite>Luke 19:41</cite></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>As a hen gathers her chicks under her wings, and often. What stopped Him was their own refusal: “ye would not.” He didn't shut them out, and He wept over them.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide prayer">
+  <div class="inner">
+    <div class="emblem rise"></div>
+    <h2 class="rise" style="--d:1">Prayer requests</h2>
+    <p class="ask-line rise" style="--d:2">What can we pray about for you today?</p>
+    <blockquote class="quote rise" style="--d:4"><p>“If the Son therefore shall make you free, ye shall be free indeed.”</p><cite>John 8:36</cite></blockquote>
+  </div>
+</section>
+
+</main>
+
+<script>
+// King James Version, Luke chapter 13
+const V = {
+  1: "There were present at that season some that told him of the Galilaeans, whose blood Pilate had mingled with their sacrifices.",
+  2: "And Jesus answering said unto them, Suppose ye that these Galilaeans were sinners above all the Galilaeans, because they suffered such things?",
+  3: "I tell you, Nay: but, except ye repent, ye shall all likewise perish.",
+  4: "Or those eighteen, upon whom the tower in Siloam fell, and slew them, think ye that they were sinners above all men that dwelt in Jerusalem?",
+  5: "I tell you, Nay: but, except ye repent, ye shall all likewise perish.",
+  6: "He spake also this parable; A certain man had a fig tree planted in his vineyard; and he came and sought fruit thereon, and found none.",
+  7: "Then said he unto the dresser of his vineyard, Behold, these three years I come seeking fruit on this fig tree, and find none: cut it down; why cumbereth it the ground?",
+  8: "And he answering said unto him, Lord, let it alone this year also, till I shall dig about it, and dung it:",
+  9: "And if it bear fruit, well: and if not, then after that thou shalt cut it down.",
+  10: "And he was teaching in one of the synagogues on the sabbath.",
+  11: "And, behold, there was a woman which had a spirit of infirmity eighteen years, and was bowed together, and could in no wise lift up herself.",
+  12: "And when Jesus saw her, he called her to him, and said unto her, Woman, thou art loosed from thine infirmity.",
+  13: "And he laid his hands on her: and immediately she was made straight, and glorified God.",
+  14: "And the ruler of the synagogue answered with indignation, because that Jesus had healed on the sabbath day, and said unto the people, There are six days in which men ought to work: in them therefore come and be healed, and not on the sabbath day.",
+  15: "The Lord then answered him, and said, Thou hypocrite, doth not each one of you on the sabbath loose his ox or his ass from the stall, and lead him away to watering?",
+  16: "And ought not this woman, being a daughter of Abraham, whom Satan hath bound, lo, these eighteen years, be loosed from this bond on the sabbath day?",
+  17: "And when he had said these things, all his adversaries were ashamed: and all the people rejoiced for all the glorious things that were done by him.",
+  18: "Then said he, Unto what is the kingdom of God like? and whereunto shall I resemble it?",
+  19: "It is like a grain of mustard seed, which a man took, and cast into his garden; and it grew, and waxed a great tree; and the fowls of the air lodged in the branches of it.",
+  20: "And again he said, Whereunto shall I liken the kingdom of God?",
+  21: "It is like leaven, which a woman took and hid in three measures of meal, till the whole was leavened.",
+  22: "And he went through the cities and villages, teaching, and journeying toward Jerusalem.",
+  23: "Then said one unto him, Lord, are there few that be saved? And he said unto them,",
+  24: "Strive to enter in at the strait gate: for many, I say unto you, will seek to enter in, and shall not be able.",
+  25: "When once the master of the house is risen up, and hath shut to the door, and ye begin to stand without, and to knock at the door, saying, Lord, Lord, open unto us; and he shall answer and say unto you, I know you not whence ye are:",
+  26: "Then shall ye begin to say, We have eaten and drunk in thy presence, and thou hast taught in our streets.",
+  27: "But he shall say, I tell you, I know you not whence ye are; depart from me, all ye workers of iniquity.",
+  28: "There shall be weeping and gnashing of teeth, when ye shall see Abraham, and Isaac, and Jacob, and all the prophets, in the kingdom of God, and you yourselves thrust out.",
+  29: "And they shall come from the east, and from the west, and from the north, and from the south, and shall sit down in the kingdom of God.",
+  30: "And, behold, there are last which shall be first, and there are first which shall be last.",
+  31: "The same day there came certain of the Pharisees, saying unto him, Get thee out, and depart hence: for Herod will kill thee.",
+  32: "And he said unto them, Go ye, and tell that fox, Behold, I cast out devils, and I do cures to day and to morrow, and the third day I shall be perfected.",
+  33: "Nevertheless I must walk to day, and to morrow, and the day following: for it cannot be that a prophet perish out of Jerusalem.",
+  34: "O Jerusalem, Jerusalem, which killest the prophets, and stonest them that are sent unto thee; how often would I have gathered thy children together, as a hen doth gather her brood under her wings, and ye would not!",
+  35: "Behold, your house is left unto you desolate: and verily I say unto you, Ye shall not see me, until the time come when ye shall say, Blessed is he that cometh in the name of the Lord."
+};
+const BOOK = "Luke 13";
+</script>
+<script src="../assets/deck.js"></script>
+</body>
+</html>

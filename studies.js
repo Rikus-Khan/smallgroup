@@ -7939,5 +7939,110 @@ window.STUDIES = [
       },
       "big": "Prayer starts with our Father and keeps on asking, because He is good and gives His best gift, the Holy Spirit. Jesus is stronger than the strong man, but a life that is only swept clean and left empty falls back worse; it must be filled. God isn't fooled by a clean outside. He looks at the heart, and blesses whoever hears His word and keeps it."
     }
+  },
+  {
+    "id": "luke-12",
+    "type": "chapter",
+    "book": "Luke",
+    "ch": 12,
+    "date": "2026-10-29",
+    "title": "Luke 12",
+    "sub": "Rich toward God",
+    "about": "Before a crowd of thousands, Jesus warns against masks and greed, tells worried men to look at the ravens, and calls His servants to be ready when He comes.",
+    "tags": [
+      "Hypocrisy",
+      "Worth",
+      "Greed",
+      "Worry",
+      "Readiness",
+      "Today"
+    ],
+    "url": "studies/luke-12.html",
+    "overview": {
+      "where": "Somewhere on the road toward Jerusalem, before a crowd of many thousands",
+      "when": "On Jesus' last journey to Jerusalem (Luke 9:51 onward), some months before the cross",
+      "people": [
+        "jesus",
+        "disciples",
+        "pharisees",
+        "simon-peter",
+        "the-father",
+        "holy-spirit",
+        "rich-fool",
+        "solomon",
+        "magistrates",
+        "adversary"
+      ],
+      "places": [
+        "synagogue",
+        "hell"
+      ],
+      "story": [
+        "With thousands pressing in, Jesus warns His disciples about the leaven of the Pharisees, which is hypocrisy: nothing covered will stay hidden. Fear God, not men, because God doesn't forget even a sparrow, and the hairs of your head are numbered (1–12).",
+        "A man wants Jesus to make his brother split the inheritance. Jesus warns against covetousness and tells of a rich man who built bigger barns and planned for many years, but God said, “Thou fool, this night thy soul shall be required of thee” (13–21).",
+        "Don't be eaten up with worry. God feeds the ravens and clothes the lilies, and your Father knows what you need. Seek His kingdom, give, and keep your treasure in heaven, for where your treasure is, there will your heart be (22–34).",
+        "Be ready, like servants waiting up for their lord with lamps lit. He will gird himself and serve them. The faithful steward is blessed; the one who says “My lord delayeth” and turns cruel and drunken is judged. To whom much is given, much is required (35–48).",
+        "Jesus has a baptism of suffering ahead of Him, and He will divide even families. People can read the weather but not the time they're living in. Settle with your adversary while you're still on the way (49–59)."
+      ],
+      "key": {
+        "ref": "Luke 12:34",
+        "text": "For where your treasure is, there will your heart be also."
+      },
+      "big": "A man's life isn't in what he owns. The Father who feeds the ravens knows what we need, so we can stop worrying, be rich toward God, and live ready for the Lord who comes to serve His servants."
+    }
+  },
+  {
+    "id": "luke-13",
+    "type": "chapter",
+    "book": "Luke",
+    "ch": 13,
+    "date": "2026-10-29",
+    "title": "Luke 13",
+    "sub": "This year also",
+    "about": "Bad news from Jerusalem, a fig tree given one more year, a woman bent for eighteen years set free, and Jesus weeping over a city that would not come.",
+    "tags": [
+      "Repentance",
+      "Grace",
+      "Freedom",
+      "The kingdom",
+      "Salvation",
+      "Jesus' compassion"
+    ],
+    "url": "studies/luke-13.html",
+    "overview": {
+      "where": "A synagogue on the sabbath, and the towns and villages along the road toward Jerusalem, likely in Herod's lands",
+      "when": "On Jesus' last journey to Jerusalem, while Pilate governed Judaea and Herod Antipas ruled Galilee and Perea (about AD 30)",
+      "people": [
+        "jesus",
+        "galilaeans",
+        "pilate",
+        "ruler-of-the-synagogue",
+        "daughter-of-abraham",
+        "satan",
+        "pharisees",
+        "herod-antipas",
+        "abraham",
+        "isaac",
+        "jacob"
+      ],
+      "places": [
+        "jerusalem",
+        "siloam",
+        "tower-in-siloam",
+        "synagogue"
+      ],
+      "story": [
+        "People tell Jesus about Galilaeans Pilate killed at their sacrifices. Jesus says they weren't worse sinners than anyone, nor were the eighteen killed by the tower in Siloam: “except ye repent, ye shall all likewise perish” (1–5).",
+        "A fig tree has borne nothing for three years. The dresser pleads, “Let it alone this year also,” and promises to dig about it and dung it. If it bears fruit, well; if not, it will be cut down (6–9).",
+        "On the sabbath Jesus sees a woman bowed together for eighteen years and says, “Woman, thou art loosed.” She stands straight and glorifies God. To the angry synagogue ruler He says this daughter of Abraham deserves more than an ox led to water (10–17).",
+        "The kingdom of God is like a mustard seed that grows into a tree, and like leaven that works through the whole batch. Asked if few are saved, Jesus says, “Strive to enter in at the strait gate,” before the door is shut. Many will come from every direction and sit down in the kingdom (18–30).",
+        "Warned that Herod wants to kill Him, Jesus calls him “that fox” and keeps walking toward Jerusalem. He grieves over the city: “how often would I have gathered thy children together, as a hen doth gather her brood under her wings, and ye would not!” (31–35)."
+      ],
+      "key": {
+        "ref": "Luke 13:3",
+        "text": "I tell you, Nay: but, except ye repent, ye shall all likewise perish."
+      },
+      "big": "Disaster is not a scorecard; everyone needs to repent. God gives time and works the soil, Jesus looses those Satan has bound, and His arms are open. The only thing that keeps a man out is that he would not come."
+    }
   }
 ];
