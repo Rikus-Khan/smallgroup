@@ -1,0 +1,681 @@
+<!doctype html>
+<html lang="en" data-theme="stone">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Mark 3</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="../assets/fonts.css">
+<link rel="stylesheet" href="../assets/deck.css">
+<link rel="stylesheet" href="../assets/themes.css">
+<style>
+/* mk03-allies: two old enemies close ranks against one man */
+.mk03-allies { display: grid; grid-template-columns: 1fr auto 1fr; gap: .6rem 1rem; align-items: stretch; margin: .4em 0 1em; }
+.mk03-allies > div { padding: .6em .9em; border: 1.5px solid var(--line-strong); border-radius: 10px; background: var(--surface); transition: transform 1.2s cubic-bezier(.3,.7,.3,1), border-color 1s ease; }
+.mk03-allies h3 { font: 700 clamp(1.05rem, .95rem + .5vw, 1.4rem) var(--sans); margin-bottom: .2em; }
+.mk03-allies p { font-size: clamp(.9rem, .82rem + .4vw, 1.15rem); line-height: 1.35; color: var(--ink-soft); }
+.mk03-allies .mk03-vs { align-self: center; font: 700 clamp(1.2rem, 1rem + 1vw, 1.8rem) var(--serif); color: var(--ink-soft); transition: opacity .6s ease; }
+.mk03-allies .mk03-against { grid-column: 1 / -1; padding: .3em; border: 0; background: none; text-align: center; font: 700 clamp(1rem, .9rem + .5vw, 1.35rem) var(--sans); color: var(--danger); opacity: 0; transition: opacity .8s ease .9s; }
+.slide:has(.mk03-join.on) .mk03-allies > div:first-child { transform: translateX(.9rem); border-color: var(--danger); }
+.slide:has(.mk03-join.on) .mk03-allies > div:nth-child(3) { transform: translateX(-.9rem); border-color: var(--danger); }
+.slide:has(.mk03-join.on) .mk03-vs { opacity: 0; }
+.slide:has(.mk03-join.on) .mk03-against { opacity: 1; }
+@media (max-width: 640px) {
+  .mk03-allies { grid-template-columns: 1fr; }
+  .mk03-allies .mk03-vs { display: none; }
+  .slide:has(.mk03-join.on) .mk03-allies > div:first-child, .slide:has(.mk03-join.on) .mk03-allies > div:nth-child(3) { transform: none; }
+}
+
+/* mk03-roster: the twelve as cards (a shared .signs grid); the betrayer marked */
+.mk03-roster li { font-size: clamp(.8rem, .74rem + .3vw, 1rem); }
+.mk03-roster li.mk03-judas { border-color: var(--danger); border-style: solid; }
+.mk03-roster li.mk03-judas b { color: var(--danger); }
+
+/* mk03-bind: a stronger man comes in, binds the strong man, and carries out his goods */
+.mk03-ground { stroke: var(--line-strong); stroke-width: 3; }
+.mk03-room { fill: var(--surface); }
+.mk03-roof { fill: var(--surface-2); stroke: var(--line-strong); stroke-width: 3; stroke-linejoin: round; }
+.mk03-wall { fill: none; stroke: var(--ink-soft); stroke-width: 5; stroke-linejoin: round; }
+.mk03-strong { fill: var(--ink-soft); }
+.mk03-stronger { fill: var(--accent-hot); opacity: 0; transform: translateX(-70px); transition: transform 1.4s cubic-bezier(.3,.7,.3,1), opacity 1s ease; }
+.mk03-halo { fill: color-mix(in srgb, var(--accent) 20%, transparent); }
+.slide:has(.mk03-bindgo.on) .mk03-stronger { opacity: 1; transform: none; }
+.mk03-rope { fill: none; stroke: var(--accent); stroke-width: 5; stroke-linecap: round; stroke-dasharray: 1; stroke-dashoffset: 1; transition: stroke-dashoffset 1.3s ease 1.3s; }
+.slide:has(.mk03-bindgo.on) .mk03-rope { stroke-dashoffset: 0; }
+.mk03-good { fill: color-mix(in srgb, var(--ink-soft) 45%, var(--bg)); transition: transform 2s cubic-bezier(.4,0,.2,1), fill 1s ease; transition-delay: calc(var(--k) * 220ms); }
+.slide:has(.mk03-freego.on) .mk03-good { transform: translateX(150px); fill: var(--accent-hot); }
+.mk03-label { font-size: 17px; font-weight: 700; fill: var(--ink-soft); }
+.mk03-free { font-size: 19px; font-weight: 700; fill: var(--accent-hot); opacity: 0; transition: opacity 1s ease 1.8s; }
+.slide:has(.mk03-freego.on) .mk03-free { opacity: 1; }
+
+/* mk03-circle: family outside the door, a circle sat about Him, His look going round, and the door open */
+.mk03-floor { fill: var(--surface); }
+.mk03-walls { fill: none; stroke: var(--line-strong); stroke-width: 4; stroke-linecap: round; }
+.mk03-sat { fill: var(--ink-soft); transition: fill 1s ease; transition-delay: calc(var(--k) * 70ms); }
+.slide:has(.mk03-famgo.on) .mk03-sat { fill: var(--accent-hot); }
+.mk03-jesus { fill: var(--accent-hot); }
+.mk03-glow { fill: color-mix(in srgb, var(--accent) 22%, transparent); }
+.mk03-gaze { fill: color-mix(in srgb, var(--accent) 24%, transparent); transform-box: view-box; transform-origin: 365px 150px; opacity: 0; }
+.slide.active .mk03-gaze { animation: mk03-look 3.4s 1s ease-in-out forwards; }
+@keyframes mk03-look { 0% { opacity: 0; transform: rotate(0); } 12% { opacity: 1; } 85% { opacity: 1; } 100% { opacity: 0; transform: rotate(360deg); } }
+.mk03-out { fill: var(--ink-soft); transition: transform 2s cubic-bezier(.4,0,.2,1), fill 1s ease 1s; }
+.slide:has(.mk03-ingo.on) .mk03-out { transform: translate(var(--dx), var(--dy)); fill: var(--accent-hot); }
+.mk03-cap { font-size: 16px; font-weight: 700; fill: var(--ink-soft); transition: opacity .8s ease; }
+.mk03-cap.mk03-fam { fill: var(--accent-hot); opacity: 0; }
+.slide:has(.mk03-famgo.on) .mk03-cap.mk03-sitting { opacity: 0; }
+.slide:has(.mk03-famgo.on) .mk03-cap.mk03-fam { opacity: 1; }
+.slide:has(.mk03-ingo.on) .mk03-cap.mk03-without { opacity: 0; }
+</style>
+</head>
+<body>
+<main class="deck" id="deck">
+
+<!-- ======================= OPENING ======================= -->
+<section class="slide title">
+  <div class="inner">
+    <div class="emblem rise"></div>
+    <h1 class="rise" style="--d:1">Mark 3</h1>
+    <p class="sub rise" style="--d:3">Stronger than the strong man</p>
+    <p class="tag rise" style="--d:5">A withered hand made whole, crowds from every corner of the land, twelve men chosen, a slander answered, and a new family for whosoever will.</p>
+  </div>
+</section>
+
+<section class="slide watch">
+  <div class="inner">
+    <h2 class="rise">Things to watch for</h2>
+    <p class="lede rise" style="--d:1">Keep these questions in the back of your mind as we read. We'll come back to every one of them at the end.</p>
+    <ol class="seeds">
+      <li class="step"><span class="topic">Mercy</span><span class="seed-q">What does Jesus say is lawful on the sabbath?</span></li>
+      <li class="step"><span class="topic">Obeying</span><span class="seed-q">What did the man with the withered hand have to do?</span></li>
+      <li class="step"><span class="topic">Called</span><span class="seed-q">Why did Jesus choose the twelve?</span></li>
+      <li class="step"><span class="topic">Power</span><span class="seed-q">Who is the strong man, and who binds him?</span></li>
+      <li class="step"><span class="topic">Forgiveness</span><span class="seed-q">Is there any sin God won't forgive?</span></li>
+      <li class="step"><span class="topic">Family</span><span class="seed-q">Who does Jesus call His family?</span></li>
+    </ol>
+  </div>
+</section>
+
+<!-- ======================= PART ONE: THE WITHERED HAND ======================= -->
+<section class="slide part">
+  <div class="inner">
+    <p class="part-n rise">Part one</p>
+    <h2 class="rise" style="--d:1">Stretch forth thine hand</h2>
+    <p class="range rise" style="--d:2">Verses 1–6</p>
+    <div class="rule"></div>
+    <p class="hook rise" style="--d:4">A man with a dead hand, a room full of watching eyes, and the question nobody would answer.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="1-2" data-hl="a man there which had a withered hand|they watched him|that they might accuse him"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="2" data-hl="they watched him"></blockquote>
+    <h2 class="rise" style="--d:1">A trap set in church</h2>
+    <p class="note rise" style="--d:2">“Again” takes us back to the synagogue at Capernaum (1:21), Jesus' home base by the lake. In the last chapter the Pharisees had already caught His disciples picking grain on the sabbath (2:23–24). Now they come to watch Him.</p>
+    <div class="ifthen step">
+      <div class="if"><small>if</small>He heals him on the sabbath</div>
+      <span class="arrow">→</span>
+      <div class="then"><small>then</small>“they might accuse him”</div>
+    </div>
+    <p class="note step">God's law said to rest on the seventh day (Exodus 20:10). The teachers had piled their own rules on top, and by those rules healing was work, allowed only if a life was in danger. A withered hand could wait until tomorrow.</p>
+    <p class="note step">Notice what they came for. Not to worship, not to learn, not to see a man helped. They came to catch Jesus doing something they could use.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="3-5" data-hl="Stand forth|to save life, or to kill?|with anger, being grieved for the hardness of their hearts|Stretch forth thine hand|his hand was restored whole as the other"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="4" data-hl="to save life, or to kill?"></blockquote>
+    <h2 class="rise" style="--d:1">Two different questions</h2>
+    <div class="columns">
+      <div class="col law step">
+        <p class="who">They asked</p>
+        <h3>Is it allowed?</h3>
+        <p>Which rule might He break? They had a list, and the man in front of them was only a test case.</p>
+      </div>
+      <div class="col grace step">
+        <p class="who">Jesus asked</p>
+        <h3>Is it good?</h3>
+        <p>“To do good… or to do evil? to save life, or to kill?” Doing nothing for this man was not neutral.</p>
+      </div>
+    </div>
+    <p class="note step"><em>“They held their peace.”</em> They went quiet because any honest answer would have sunk them.</p>
+    <p class="note step">Mark is the one who tells us Jesus looked at them <em>“with anger, being grieved.”</em> His anger came mixed with grief. It wasn't wounded pride. It was sorrow over hard hearts that cared more about a rule than a man. Most of our anger is about us. His was about them.</p>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="5" data-hl="Stretch forth thine hand|restored whole as the other"></blockquote>
+    <h2 class="rise" style="--d:1">He did the thing he couldn't do</h2>
+    <div class="chains">
+      <div class="chain step"><span class="who-chip">“Stand forth”</span><span class="said">in front of everyone</span><span class="who-chip">“Stretch forth thine hand”</span><span class="said">the one thing he couldn't do</span><span class="who-chip jesus">“whole as the other”</span></div>
+    </div>
+    <p class="note step">First, <em>“Stand forth.”</em> Step out in front of the whole room, with the hand he'd probably kept hidden for years. Admitting where we're broken, out loud, in front of other men, is where a lot of healing starts.</p>
+    <p class="note step">Then, <em>“Stretch forth thine hand.”</em> That was the very thing his hand couldn't do. But Jesus never gives a command without giving the power to obey it. The man didn't wait until he felt healed. He obeyed, and the healing came while he did.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="6" data-hl="took counsel with the Herodians against him, how they might destroy him"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="6" data-hl="took counsel with the Herodians"></blockquote>
+    <h2 class="rise" style="--d:1">Strange allies</h2>
+    <div class="mk03-allies rise" style="--d:2">
+      <div><h3>The Pharisees</h3><p>Strict keepers of the law and their traditions. They hated Roman rule and anyone who cozied up to it.</p></div>
+      <span class="mk03-vs">vs</span>
+      <div><h3>The Herodians</h3><p>Men who backed Herod Antipas, the ruler Rome had set over Galilee. Politics, not Scripture, was their concern.</p></div>
+      <p class="mk03-against">“against him”</p>
+    </div>
+    <p class="note step mk03-join">Normally these two groups couldn't stand each other. Jesus gave them something in common.</p>
+    <p class="note step">And see what they did with their sabbath. Healing a man was a sin to them, but a plot to kill the healer was fine. When a man's religion is about control, it can make room for almost anything.</p>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise">Where the plot was headed</h2>
+    <p class="note rise" style="--d:1">Mark 3:6 is the first time Mark tells us anyone wanted Jesus dead. The same plan runs all the way through the book:</p>
+    <ol class="timeline" aria-label="Mark 3, the Pharisees and Herodians plot to destroy him. Mark 11, the scribes and chief priests seek to destroy him. Mark 14, they seek to take him by craft. Mark 15, they bind him and hand him to Pilate.">
+      <li class="lit" style="--k:0"><b>Mark 3:6</b><span>Galilee</span><small>“how they might destroy him”</small></li>
+      <li class="step" style="--k:1"><b>Mark 11:18</b><span>Jerusalem</span><small>“sought how they might destroy him”</small></li>
+      <li class="step" style="--k:2"><b>Mark 14:1</b><span>two days before the passover</span><small>“take him by craft”</small></li>
+      <li class="step" style="--k:3"><b>Mark 15:1</b><span>the morning of the cross</span><small>“delivered him to Pilate”</small></li>
+    </ol>
+    <p class="note step">Jesus knew it from this day on. He kept healing, kept teaching, and kept walking toward Jerusalem anyway. Nobody took His life from Him by surprise. He laid it down for us.</p>
+  </div>
+</section>
+
+<!-- ======================= PART TWO: CROWDS AND THE TWELVE ======================= -->
+<section class="slide part">
+  <div class="inner">
+    <p class="part-n rise">Part two</p>
+    <h2 class="rise" style="--d:1">That they should be with him</h2>
+    <p class="range rise" style="--d:2">Verses 7–19</p>
+    <div class="rule"></div>
+    <p class="hook rise" style="--d:4">People pour in from every direction. Jesus goes up a mountain and calls twelve men.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="7-8" data-hl="a great multitude from Galilee followed him|from Idumaea|from beyond Jordan|they about Tyre and Sidon"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="8" data-hl="when they had heard what great things he did, came unto him"></blockquote>
+    <div class="split">
+      <div class="stage">
+        <svg class="map" data-land data-towns="Jerusalem, Capernaum!" role="img" aria-label="Map of the land. Lines run toward the Sea of Galilee from every direction: down from Tyre and Sidon on the northwest coast, up from Judaea and Jerusalem and from Idumaea far to the south, and up from Perea beyond the Jordan.">
+          <path class="map-border" d="M40 492 C 100 484, 170 500, 236 490"/>
+          <text class="map-region" x="122" y="530">IDUMAEA</text>
+          <text class="map-soft" x="282" y="438" font-size="13">(beyond Jordan)</text>
+          <g class="map-town"><circle cx="198" cy="56" r="6"/><text x="209" y="61">Tyre</text></g>
+          <text class="map-soft" x="218" y="18" font-size="13">from Sidon</text>
+          <path class="map-route" pathLength="1" style="--wait:.8s" d="M212 2 C 206 28, 198 44, 198 56 C 220 90, 240 116, 258 140"/>
+          <path class="map-route" pathLength="1" style="--wait:1.4s;--draw:3s" d="M150 520 C 170 470, 190 430, 200 392 C 206 330, 214 260, 230 210 C 240 186, 250 172, 260 164"/>
+          <path class="map-route" pathLength="1" style="--wait:2s" d="M300 412 C 296 340, 292 262, 286 212 C 282 190, 278 178, 274 170"/>
+        </svg>
+      </div>
+      <div>
+        <h2 class="rise" style="--d:1">From every direction</h2>
+        <p class="note rise" style="--d:2">Judaea and Jerusalem, days to the south. <em>Idumaea</em>, old Edom, past Judaea, over a hundred miles away. The land <em>beyond Jordan</em>. Tyre and Sidon, Gentile ports up the coast.</p>
+        <p class="note step">They came on foot, many of them sick, because they had <em>“heard what great things he did.”</em> Word about Jesus still travels that way: one man telling another what He did.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="slide verse" data-v="9-12" data-hl="lest they should throng him|as many as had plagues|Thou art the Son of God|he straitly charged them"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="11" data-hl="Thou art the Son of God"></blockquote>
+    <h2 class="rise" style="--d:1">The devils knew Him</h2>
+    <p class="note rise" style="--d:2">Jesus kept a <em>small ship</em> ready so the crowd wouldn't <em>throng</em>, crush, Him. <em>“Plagues”</em> are painful diseases; the Greek word means <em>a whip</em>.</p>
+    <div class="columns">
+      <div class="col grace step"><p class="who">The unclean spirits</p><h3>knew exactly who He was</h3><p>They fell down and cried, “Thou art the Son of God.”</p></div>
+      <div class="col law step"><p class="who">The religious leaders</p><h3>wanted Him dead</h3><p>They had the Scriptures, and missed Him completely (v. 6).</p></div>
+    </div>
+    <blockquote class="quote step"><p>“Thou believest that there is one God; thou doest well: the devils also believe, and tremble.”</p><cite>James 2:19</cite></blockquote>
+    <p class="note step">Knowing facts about Jesus isn't saving faith. The devils know them and tremble. Faith is trusting Him. And Jesus <em>“straitly charged”</em> them, strictly ordered them, to keep quiet. He would not take His introduction from devils.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="13-15" data-hl="calleth unto him whom he would: and they came unto him|he ordained twelve, that they should be with him"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="14" data-hl="that they should be with him"></blockquote>
+    <h2 class="rise" style="--d:1">What the twelve were for</h2>
+    <p class="note rise" style="--d:2"><em>“Ordained”</em> here means <em>appointed, made</em>. No ceremony, just Jesus naming twelve men for a job. Twelve, like the twelve tribes of Israel. He was building something new.</p>
+    <ol class="signs">
+      <li class="now step"><b>“be with him”</b>first</li>
+      <li class="step"><b>“send them forth to preach”</b>then go</li>
+      <li class="step"><b>“power to heal… and to cast out devils”</b>in His strength, not theirs</li>
+    </ol>
+    <p class="note step">Look at the order. Before they preached a word or healed anybody, they were just to <em>be with Him</em>. Walk with Him, eat with Him, listen to Him. You can't give away what you haven't got. Time with Jesus comes first, and everything else grows out of it.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="16-19" data-hl="Simon he surnamed Peter|Boanerges, which is, The sons of thunder|Judas Iscariot, which also betrayed him"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise">The twelve</h2>
+    <ol class="signs mk03-roster rise" style="--d:1">
+      <li class="now"><b>Simon</b>renamed Peter, “a stone”</li>
+      <li class="now"><b>James</b>son of Zebedee, a fisherman</li>
+      <li class="now"><b>John</b>his brother, also a fisherman</li>
+      <li><b>Andrew</b>Peter's brother, a fisherman</li>
+      <li><b>Philip</b>from Bethsaida (John 1:44)</li>
+      <li><b>Bartholomew</b>probably the Nathanael of John 1</li>
+      <li><b>Matthew</b>a tax collector, called Levi in 2:14</li>
+      <li><b>Thomas</b>the one who doubted, then worshipped</li>
+      <li><b>James</b>son of Alphaeus</li>
+      <li><b>Thaddaeus</b>also called Judas, not Iscariot</li>
+      <li><b>Simon</b>“the Canaanite,” the Zealot (Luke 6:15)</li>
+      <li class="mk03-judas"><b>Judas Iscariot</b>“which also betrayed him”</li>
+    </ol>
+    <p class="note step">Fishermen, a tax collector who worked for Rome, and a Zealot from the movement that wanted Rome thrown out by force. Matthew and Simon would once have been enemies. Jesus put them at the same table.</p>
+    <p class="note step">These weren't polished men. Most of them would run the night He was arrested. He chose them anyway, and He shaped them by keeping them close.</p>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="17" data-hl="Boanerges, which is, The sons of thunder"></blockquote>
+    <h2 class="rise" style="--d:1">Sons of thunder</h2>
+    <div class="rename">
+      <span class="old rise" style="--d:2">James and John</span>
+      <span class="arrow step n2">→</span>
+      <span class="new step">Boanerges</span>
+      <span class="gloss step">an Aramaic nickname: <em>“The sons of thunder”</em></span>
+    </div>
+    <blockquote class="quote step"><p>“And when his disciples James and John saw this, they said, Lord, wilt thou that we command fire to come down from heaven, and consume them, even as Elias did?”</p><cite>Luke 9:54</cite></blockquote>
+    <p class="note step">That's the kind of men they were: loud, quick-tempered, ready to burn a village down. Jesus named them honestly and kept them anyway. Years later, John wrote more about love than any other writer in the Bible. Jesus doesn't throw a hot-tempered man away. He changes him.</p>
+  </div>
+</section>
+
+<!-- ======================= PART THREE: A HOUSE DIVIDED ======================= -->
+<section class="slide part">
+  <div class="inner">
+    <p class="part-n rise">Part three</p>
+    <h2 class="rise" style="--d:1">A house divided</h2>
+    <p class="range rise" style="--d:2">Verses 20–30</p>
+    <div class="rule"></div>
+    <p class="hook rise" style="--d:4">His family says He's lost His mind. The scribes say He's working for the devil.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="20-21" data-hl="they could not so much as eat bread|He is beside himself"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="21" data-hl="He is beside himself"></blockquote>
+    <h2 class="rise" style="--d:1">“He's lost His mind”</h2>
+    <p class="note rise" style="--d:2"><em>“His friends”</em> means His own people, His family. We'll meet them at the door in verse 31. <em>“Beside himself”</em> means <em>out of his mind</em>. They came to take Him home by force.</p>
+    <div class="talk">
+      <p class="step"><small>His family</small>He is beside himself.</p>
+      <p class="reply step"><small>The scribes (v. 22)</small>He hath Beelzebub.</p>
+    </div>
+    <p class="note step">Even His brothers didn't believe in Him yet (John 7:5). When a man gets saved and gets serious, the people who knew him before don't always cheer either. Some think he's gone off the deep end. Some liked him better the old way. Jesus knows exactly how that feels. His own family thought He was crazy, and He loved them anyway.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="22" data-hl="the scribes which came down from Jerusalem|He hath Beelzebub"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="22" data-hl="by the prince of the devils casteth he out devils"></blockquote>
+    <h2 class="rise" style="--d:1">Beelzebub</h2>
+    <div class="morph">
+      <span class="big rise" style="--d:2">Beelzebub</span>
+      <span class="say step">from <em>Baal-zebub</em>, the god of Ekron (2 Kings 1:2)</span>
+      <span class="means step">“lord of the flies”</span>
+    </div>
+    <p class="note step">By Jesus' day it had become a name for the prince of the devils, Satan himself. These <em>scribes</em>, the experts in the law, had come all the way <em>“down from Jerusalem”</em> to look Him over. They couldn't deny the devils were being cast out. Everyone had seen it. So they gave it the worst explanation they could think of.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="23-27" data-hl="How can Satan cast out Satan?|if a house be divided against itself, that house cannot stand|except he will first bind the strong man"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="23" data-hl="How can Satan cast out Satan?"></blockquote>
+    <h2 class="rise" style="--d:1">It doesn't add up</h2>
+    <p class="note rise" style="--d:2">A <em>parable</em> is a picture story with a point. Jesus answers the slander with plain common sense:</p>
+    <div class="ifthen step">
+      <div class="if"><small>if</small>a kingdom fights itself</div>
+      <span class="arrow">→</span>
+      <div class="then"><small>then</small>“that kingdom cannot stand”</div>
+    </div>
+    <div class="ifthen step">
+      <div class="if"><small>if</small>Satan casts out his own</div>
+      <span class="arrow">→</span>
+      <div class="then"><small>then</small>he “hath an end”</div>
+    </div>
+    <p class="note step">Satan isn't dumb enough to tear down his own work. If the devils are being driven out, Someone stronger than the devil is doing it.</p>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="27" data-hl="except he will first bind the strong man"></blockquote>
+    <div class="split">
+      <div class="stage">
+        <svg viewBox="0 0 600 330" role="img" aria-label="A house. Inside stands a strong man, and beside him the people he holds. A stronger man comes in and ties him up. Then the people walk out the door, free.">
+          <line class="mk03-ground" x1="0" y1="290" x2="600" y2="290"/>
+          <rect class="mk03-room" x="150" y="110" width="300" height="180"/>
+          <polygon class="mk03-roof" points="128,112 300,36 472,112"/>
+          <path class="mk03-wall" d="M450 214 V110 H150 V290 H450"/>
+          <g class="mk03-strong">
+            <circle cx="250" cy="178" r="16"/>
+            <path d="M222 290 L226 208 Q250 192 274 208 L278 290 Z"/>
+          </g>
+          <path class="mk03-rope" pathLength="1" d="M218 226 H282 M218 248 H282 M220 270 H280"/>
+          <g class="mk03-stronger">
+            <circle class="mk03-halo" cx="186" cy="214" r="54"/>
+            <circle cx="186" cy="172" r="16"/>
+            <path d="M158 290 L162 202 Q186 186 210 202 L214 290 Z"/>
+            <text x="186" y="80" text-anchor="middle" font-size="17" font-weight="700">a stronger than he</text>
+          </g>
+          <g class="mk03-good" style="--k:0"><circle cx="330" cy="240" r="10"/><path d="M318 290 L321 258 Q330 250 339 258 L342 290 Z"/></g>
+          <g class="mk03-good" style="--k:1"><circle cx="362" cy="240" r="10"/><path d="M350 290 L353 258 Q362 250 371 258 L374 290 Z"/></g>
+          <g class="mk03-good" style="--k:2"><circle cx="394" cy="240" r="10"/><path d="M382 290 L385 258 Q394 250 403 258 L406 290 Z"/></g>
+          <g class="mk03-good" style="--k:3"><circle cx="426" cy="240" r="10"/><path d="M414 290 L417 258 Q426 250 435 258 L438 290 Z"/></g>
+          <text class="mk03-label" x="250" y="318" text-anchor="middle">the strong man</text>
+          <text class="mk03-label" x="380" y="318" text-anchor="middle">his goods</text>
+          <text class="mk03-free" x="530" y="214" text-anchor="middle">set free</text>
+        </svg>
+      </div>
+      <div>
+        <h2 class="rise" style="--d:1">Stronger than the strong man</h2>
+        <p class="note rise" style="--d:2">The <em>strong man</em> is Satan. His <em>goods</em> are the people he holds. To <em>spoil</em> is to plunder.</p>
+        <p class="note step mk03-bindgo">Every devil Jesus cast out was proof that <em>“a stronger than he”</em> had come and tied him up (Luke 11:22).</p>
+        <p class="note step mk03-freego">Then He carries off the goods. Whatever has had you by the throat, a bottle, a pipe, a rage, is not stronger than Jesus.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="slide verse" data-v="28-30" data-hl="All sins shall be forgiven unto the sons of men|he that shall blaspheme against the Holy Ghost hath never forgiveness|Because they said, He hath an unclean spirit"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="28" data-hl="All sins shall be forgiven unto the sons of men"></blockquote>
+    <h2 class="rise" style="--d:1">All sins</h2>
+    <p class="note rise" style="--d:2">Before the warning comes the promise. <em>“Verily”</em> means <em>truly</em>, and what Jesus says is truly true: <em>all</em> sins can be forgiven.</p>
+    <div class="ledger rise" style="--d:3">
+      <h3>Every sin of the sons of men</h3>
+      <ul>
+        <li style="--k:0"><span>What I did drunk or high</span><span>owed</span></li>
+        <li style="--k:1"><span>What I did to my family</span><span>owed</span></li>
+        <li style="--k:2"><span>Every time I cursed God</span><span>owed</span></li>
+        <li style="--k:3"><span>The thing I've never told anyone</span><span>owed</span></li>
+      </ul>
+      <div class="total"><span>Can it be forgiven?</span><b>“All sins”</b></div>
+      <div class="ledger-stamp">FORGIVEN<small>in Christ</small></div>
+    </div>
+    <p class="note step ledger-paid">Even <em>“blasphemies wherewith soever they shall blaspheme.”</em> Even the words you said against God at your worst. There is nothing you've done that the blood of Jesus can't cover.</p>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="30"></blockquote>
+    <h2 class="rise" style="--d:1">The one sin that has no forgiveness</h2>
+    <ul class="nots">
+      <li class="step"><span class="k">a sin of the flesh, however bad</span><span class="why">“all sins shall be forgiven”</span></li>
+      <li class="step"><span class="k">words said against God in anger</span><span class="why">blasphemies are forgiven too (v. 28)</span></li>
+      <li class="step"><span class="k">doubting, struggling, falling back</span><span class="why">that's a man still in the fight</span></li>
+      <li class="step yes"><span class="k">calling the Spirit's work the devil's, and turning Him away for good</span><span class="why">“because they said, He hath an unclean spirit”</span></li>
+    </ul>
+    <p class="note step">The Holy Ghost is the One who brings men to Jesus. These scribes saw His work in plain sight and called it Satan's. Shut Him out for good, and you've shut the only door there is. It isn't that God won't forgive. It's that the man won't come.</p>
+    <p class="note step">If you're afraid you've done it, you haven't. A hard heart doesn't worry about God. That worry is the Spirit still drawing you. Come: <em>“him that cometh to me I will in no wise cast out”</em> (John 6:37).</p>
+  </div>
+</section>
+
+<!-- ======================= PART FOUR: MY MOTHER AND MY BRETHREN ======================= -->
+<section class="slide part">
+  <div class="inner">
+    <p class="part-n rise">Part four</p>
+    <h2 class="rise" style="--d:1">Behold my mother and my brethren</h2>
+    <p class="range rise" style="--d:2">Verses 31–35</p>
+    <div class="rule"></div>
+    <p class="hook rise" style="--d:4">His family stands outside. Jesus looks around the room and names a new one.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="31-32" data-hl="standing without, sent unto him, calling him|thy mother and thy brethren without seek for thee"></section>
+<section class="slide verse" data-v="33-35" data-hl="Who is my mother, or my brethren?|he looked round about on them which sat about him|whosoever shall do the will of God, the same is my brother, and my sister, and mother"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="34" data-hl="he looked round about on them which sat about him"></blockquote>
+    <div class="split">
+      <div class="stage">
+        <svg viewBox="0 0 600 300" role="img" aria-label="A room. Fourteen people sit in a circle around Jesus, and His look sweeps all the way around them. Outside the door stand His mother and brothers. Then the circle lights up as His family, and the three outside come in through the open door.">
+          <rect class="mk03-floor" x="150" y="20" width="430" height="260" rx="18"/>
+          <path class="mk03-walls" d="M150 118 V38 Q150 20 168 20 H562 Q580 20 580 38 V262 Q580 280 562 280 H168 Q150 280 150 262 V192"/>
+          <path class="mk03-gaze" d="M365 150 L365 36 A114 114 0 0 1 446 69 Z"/>
+          <circle class="mk03-glow" cx="365" cy="150" r="40"/>
+          <circle class="mk03-jesus" cx="365" cy="150" r="16"/>
+          <g>
+            <circle class="mk03-sat" style="--k:0" cx="365" cy="58" r="10"/><circle class="mk03-sat" style="--k:1" cx="405" cy="67" r="10"/>
+            <circle class="mk03-sat" style="--k:2" cx="437" cy="93" r="10"/><circle class="mk03-sat" style="--k:3" cx="455" cy="130" r="10"/>
+            <circle class="mk03-sat" style="--k:4" cx="455" cy="170" r="10"/><circle class="mk03-sat" style="--k:5" cx="437" cy="207" r="10"/>
+            <circle class="mk03-sat" style="--k:6" cx="405" cy="233" r="10"/><circle class="mk03-sat" style="--k:7" cx="365" cy="242" r="10"/>
+            <circle class="mk03-sat" style="--k:8" cx="325" cy="233" r="10"/><circle class="mk03-sat" style="--k:9" cx="293" cy="207" r="10"/>
+            <circle class="mk03-sat" style="--k:10" cx="275" cy="170" r="10"/><circle class="mk03-sat" style="--k:11" cx="275" cy="130" r="10"/>
+            <circle class="mk03-sat" style="--k:12" cx="293" cy="93" r="10"/><circle class="mk03-sat" style="--k:13" cx="325" cy="67" r="10"/>
+          </g>
+          <circle class="mk03-out" style="--dx:175px;--dy:0px" cx="40" cy="155" r="10"/>
+          <circle class="mk03-out" style="--dx:162px;--dy:-48px" cx="74" cy="140" r="10"/>
+          <circle class="mk03-out" style="--dx:128px;--dy:22px" cx="106" cy="155" r="10"/>
+          <text class="mk03-cap mk03-without" x="74" y="196" text-anchor="middle">standing</text>
+          <text class="mk03-cap mk03-without" x="74" y="216" text-anchor="middle">without</text>
+          <text class="mk03-cap mk03-sitting" x="365" y="272" text-anchor="middle">“them which sat about him”</text>
+          <text class="mk03-cap mk03-fam" x="365" y="272" text-anchor="middle">“my brother, and my sister, and mother”</text>
+        </svg>
+      </div>
+      <div>
+        <h2 class="rise" style="--d:1">A new family</h2>
+        <p class="note rise" style="--d:2">His mother and brothers stood outside. Inside, Jesus <em>looked round about</em> at the faces sitting at His feet.</p>
+        <p class="note step mk03-famgo">He wasn't rejecting His mother. On the cross He saw she was cared for (John 19:26–27). But there's a family deeper than blood: <em>“whosoever shall do the will of God.”</em></p>
+        <p class="note step mk03-ingo">And the door stayed open. After He rose, His mother and brothers were praying with the disciples (Acts 1:14).</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="35"></blockquote>
+    <h2 class="rise" style="--d:1">Whosoever</h2>
+    <p class="saying rise" style="--d:2">Not blood. <em>Whosoever.</em></p>
+    <p class="note rise" style="--d:3">What is the will of God, to start with? Jesus said it Himself: <em>“that every one which seeth the Son, and believeth on him, may have everlasting life”</em> (John 6:40). It starts with trusting Him. Then the man who has trusted Him begins to walk in His ways.</p>
+    <p class="note step">Some of us burned the bridges to our own families. Some families burned them for us. Jesus doesn't leave a believer without one. The men in this group are your brothers, by His word.</p>
+    <blockquote class="quote step"><p>“For both he that sanctifieth and they who are sanctified are all of one: for which cause he is not ashamed to call them brethren,”</p><cite>Hebrews 2:11</cite></blockquote>
+  </div>
+</section>
+
+<!-- ======================= CLOSING ======================= -->
+<section class="slide remember">
+  <div class="inner">
+    <h2 class="rise">Points to remember</h2>
+    <ol class="seeds">
+      <li class="step"><span class="topic">Mercy</span><span class="seed-q">“Is it lawful to do good on the sabbath days” <cite>3:4</cite></span><span class="take">Doing good is never against God's law. A rule that won't help a hurting man has missed God's heart.</span></li>
+      <li class="step"><span class="topic">Obeying</span><span class="seed-q">“Stretch forth thine hand” <cite>3:5</cite></span><span class="take">He asked him to do what he couldn't do. The power came as he obeyed.</span></li>
+      <li class="step"><span class="topic">Called</span><span class="seed-q">“That they should be with him” <cite>3:14</cite></span><span class="take">Being with Jesus comes before working for Him.</span></li>
+      <li class="step"><span class="topic">Power</span><span class="seed-q">“Except he will first bind the strong man” <cite>3:27</cite></span><span class="take">Jesus is stronger than whatever has held you, and He sets the captives free.</span></li>
+      <li class="step"><span class="topic">Forgiveness</span><span class="seed-q">“All sins shall be forgiven unto the sons of men” <cite>3:28</cite></span><span class="take">Any sin can be forgiven. Only turning away the Spirit who brings us to Christ shuts the door.</span></li>
+      <li class="step"><span class="topic">Family</span><span class="seed-q">“Whosoever shall do the will of God, the same is my brother” <cite>3:35</cite></span><span class="take">Whosoever trusts Him and follows Him is family. No believer is left without one.</span></li>
+    </ol>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 1 of 6</p>
+      <span class="topic">Mercy</span>
+      <h2>What does Jesus say is lawful on the sabbath?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="2"></blockquote>
+      <blockquote class="quote step" data-q="4"></blockquote>
+      <blockquote class="quote step" data-q="5" data-hl="being grieved for the hardness of their hearts"></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>To do good and to save life. The sabbath was God's gift of rest, not a reason to leave a man suffering. The Pharisees cared more about their rules than the man in front of them. Jesus was grieved by their hard hearts, and healed him.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 2 of 6</p>
+      <span class="topic">Obeying</span>
+      <h2>What did the man with the withered hand have to do?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="3"></blockquote>
+      <blockquote class="quote step" data-q="5" data-hl="Stretch forth thine hand|his hand was restored whole as the other"></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>Stand up in front of everyone, and stretch out the hand he couldn't move. He didn't heal himself. Jesus did that. But he trusted Jesus enough to obey, and the healing came as he did.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 3 of 6</p>
+      <span class="topic">Called</span>
+      <h2>Why did Jesus choose the twelve?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="13"></blockquote>
+      <blockquote class="quote step" data-q="14"></blockquote>
+      <blockquote class="quote step" data-q="15"></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>First, to be with Him. Then to be sent out to preach, with His power to heal and cast out devils. They were ordinary, rough men, fishermen, a tax collector, a Zealot. Jesus made them His by keeping them close.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 4 of 6</p>
+      <span class="topic">Power</span>
+      <h2>Who is the strong man, and who binds him?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="23"></blockquote>
+      <blockquote class="quote step" data-q="27"></blockquote>
+      <blockquote class="quote step"><p>“But when a stronger than he shall come upon him, and overcome him, he taketh from him all his armour wherein he trusted, and divideth his spoils.”</p><cite>Luke 11:22</cite></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>The strong man is Satan, and his goods are the people he holds. Jesus is the stronger One. He binds the devil and carries off the captives. Nothing that has a grip on you is stronger than Him.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 5 of 6</p>
+      <span class="topic">Forgiveness</span>
+      <h2>Is there any sin God won't forgive?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="28"></blockquote>
+      <blockquote class="quote step" data-q="29-30"></blockquote>
+      <blockquote class="quote step"><p>“All that the Father giveth me shall come to me; and him that cometh to me I will in no wise cast out.”</p><cite>John 6:37</cite></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>All sins can be forgiven, even blasphemies. The one sin without forgiveness is setting yourself against the Holy Ghost, calling His work in Jesus the devil's, and refusing the only One who can bring you to Christ. Any man who comes to Jesus will be received.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 6 of 6</p>
+      <span class="topic">Family</span>
+      <h2>Who does Jesus call His family?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="34"></blockquote>
+      <blockquote class="quote step" data-q="35"></blockquote>
+      <blockquote class="quote step"><p>“These all continued with one accord in prayer and supplication, with the women, and Mary the mother of Jesus, and with his brethren.”</p><cite>Acts 1:14</cite></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>Whosoever does the will of God, and that starts with believing on His Son. Jesus didn't reject His mother. He opened His family to everyone. Later His mother and brothers were in that circle too.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide prayer">
+  <div class="inner">
+    <div class="emblem rise"></div>
+    <h2 class="rise" style="--d:1">Prayer requests</h2>
+    <p class="ask-line rise" style="--d:2">What can we pray about for you today?</p>
+    <blockquote class="quote rise" style="--d:4"><p>“God setteth the solitary in families: he bringeth out those which are bound with chains: but the rebellious dwell in a dry land.”</p><cite>Psalm 68:6</cite></blockquote>
+  </div>
+</section>
+
+</main>
+
+<script>
+// King James Version, Mark chapter 3
+const V = {
+  1: "And he entered again into the synagogue; and there was a man there which had a withered hand.",
+  2: "And they watched him, whether he would heal him on the sabbath day; that they might accuse him.",
+  3: "And he saith unto the man which had the withered hand, Stand forth.",
+  4: "And he saith unto them, Is it lawful to do good on the sabbath days, or to do evil? to save life, or to kill? But they held their peace.",
+  5: "And when he had looked round about on them with anger, being grieved for the hardness of their hearts, he saith unto the man, Stretch forth thine hand. And he stretched it out: and his hand was restored whole as the other.",
+  6: "And the Pharisees went forth, and straightway took counsel with the Herodians against him, how they might destroy him.",
+  7: "But Jesus withdrew himself with his disciples to the sea: and a great multitude from Galilee followed him, and from Judaea,",
+  8: "And from Jerusalem, and from Idumaea, and from beyond Jordan; and they about Tyre and Sidon, a great multitude, when they had heard what great things he did, came unto him.",
+  9: "And he spake to his disciples, that a small ship should wait on him because of the multitude, lest they should throng him.",
+  10: "For he had healed many; insomuch that they pressed upon him for to touch him, as many as had plagues.",
+  11: "And unclean spirits, when they saw him, fell down before him, and cried, saying, Thou art the Son of God.",
+  12: "And he straitly charged them that they should not make him known.",
+  13: "And he goeth up into a mountain, and calleth unto him whom he would: and they came unto him.",
+  14: "And he ordained twelve, that they should be with him, and that he might send them forth to preach,",
+  15: "And to have power to heal sicknesses, and to cast out devils:",
+  16: "And Simon he surnamed Peter;",
+  17: "And James the son of Zebedee, and John the brother of James; and he surnamed them Boanerges, which is, The sons of thunder:",
+  18: "And Andrew, and Philip, and Bartholomew, and Matthew, and Thomas, and James the son of Alphaeus, and Thaddaeus, and Simon the Canaanite,",
+  19: "And Judas Iscariot, which also betrayed him: and they went into an house.",
+  20: "And the multitude cometh together again, so that they could not so much as eat bread.",
+  21: "And when his friends heard of it, they went out to lay hold on him: for they said, He is beside himself.",
+  22: "And the scribes which came down from Jerusalem said, He hath Beelzebub, and by the prince of the devils casteth he out devils.",
+  23: "And he called them unto him, and said unto them in parables, How can Satan cast out Satan?",
+  24: "And if a kingdom be divided against itself, that kingdom cannot stand.",
+  25: "And if a house be divided against itself, that house cannot stand.",
+  26: "And if Satan rise up against himself, and be divided, he cannot stand, but hath an end.",
+  27: "No man can enter into a strong man’s house, and spoil his goods, except he will first bind the strong man; and then he will spoil his house.",
+  28: "Verily I say unto you, All sins shall be forgiven unto the sons of men, and blasphemies wherewith soever they shall blaspheme:",
+  29: "But he that shall blaspheme against the Holy Ghost hath never forgiveness, but is in danger of eternal damnation:",
+  30: "Because they said, He hath an unclean spirit.",
+  31: "There came then his brethren and his mother, and, standing without, sent unto him, calling him.",
+  32: "And the multitude sat about him, and they said unto him, Behold, thy mother and thy brethren without seek for thee.",
+  33: "And he answered them, saying, Who is my mother, or my brethren?",
+  34: "And he looked round about on them which sat about him, and said, Behold my mother and my brethren!",
+  35: "For whosoever shall do the will of God, the same is my brother, and my sister, and mother."
+};
+const BOOK = "Mark 3";
+</script>
+<script src="../assets/deck.js"></script>
+</body>
+</html>

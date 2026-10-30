@@ -38,6 +38,9 @@ window.GLOSSARY = [
     "Mark", 2,
     [ 5, 8, 15, 17, 19 ] ],
    [
+    "Mark", 3,
+    [ 7 ] ],
+   [
     "Luke", 2,
     [ 27, 43, 52 ] ],
    [
@@ -158,6 +161,9 @@ window.GLOSSARY = [
     "Matthew", 2,
     [ 11, 13, 14, 20, 21 ] ],
    [
+    "Mark", 3,
+    [ 31, 32, 33, 34 ] ],
+   [
     "Luke", 1,
     [ 27, 30, 34, 38, 39, 41, 43, 46, 56 ] ],
    [
@@ -188,6 +194,9 @@ window.GLOSSARY = [
     "Mark", 1,
     [ 16, 29 ] ],
    [
+    "Mark", 3,
+    [ 18 ] ],
+   [
     "John", 1,
     [ 40, 44 ] ],
    [
@@ -214,6 +223,9 @@ window.GLOSSARY = [
    [
     "Mark", 1,
     [ 16, 29, 30, 36 ] ],
+   [
+    "Mark", 3,
+    [ 16 ] ],
    [
     "John", 1,
     [ 40, 41, 42, 44 ] ],
@@ -244,6 +256,9 @@ window.GLOSSARY = [
    [
     "Matthew", 10,
     [ 3 ] ],
+   [
+    "Mark", 3,
+    [ 18 ] ],
    [
     "John", 1,
     [ 43, 44, 45, 46, 48 ] ],
@@ -482,6 +497,9 @@ window.GLOSSARY = [
     "Mark", 1,
     [ 8, 10, 12 ] ],
    [
+    "Mark", 3,
+    [ 29 ] ],
+   [
     "Luke", 1,
     [ 15, 35, 41, 67 ] ],
    [
@@ -532,6 +550,12 @@ window.GLOSSARY = [
    [
     "Mark", 2,
     [ 15, 16, 18, 23 ] ],
+   [
+    "Mark", 3,
+    [ 7, 9 ] ],
+   [
+    "Mark", 4,
+    [ 34 ] ],
    [
     "John", 1,
     [ 35, 37 ] ],
@@ -587,6 +611,9 @@ window.GLOSSARY = [
   "name": "The brothers of Jesus",
   "refs": [
    [
+    "Mark", 3,
+    [ 31, 32, 33, 34 ] ],
+   [
     "John", 2,
     [ 12 ] ],
    [
@@ -616,6 +643,9 @@ window.GLOSSARY = [
    [
     "Mark", 2,
     [ 16, 18, 24 ] ],
+   [
+    "Mark", 3,
+    [ 6 ] ],
    [
     "John", 1,
     [ 24 ] ],
@@ -1241,6 +1271,9 @@ window.GLOSSARY = [
     "Mark", 1,
     [ 5 ] ],
    [
+    "Mark", 3,
+    [ 8, 22 ] ],
+   [
     "Luke", 2,
     [ 22, 25, 38, 41, 42, 43, 45 ] ],
    [
@@ -1294,6 +1327,9 @@ window.GLOSSARY = [
    [
     "Mark", 1,
     [ 5, 9 ] ],
+   [
+    "Mark", 3,
+    [ 8 ] ],
    [
     "Luke", 3,
     [ 3 ] ],
@@ -1390,6 +1426,9 @@ window.GLOSSARY = [
    [
     "Mark", 1,
     [ 9, 14, 16, 28, 39 ] ],
+   [
+    "Mark", 3,
+    [ 7 ] ],
    [
     "Luke", 1,
     [ 26 ] ],
@@ -2527,6 +2566,9 @@ window.GLOSSARY = [
    [
     "Mark", 1,
     [ 1 ] ],
+   [
+    "Mark", 3,
+    [ 11 ] ],
    [
     "Luke", 1,
     [ 35 ] ],
@@ -4340,6 +4382,9 @@ window.GLOSSARY = [
     "Matthew", 5,
     [ 22 ] ],
    [
+    "Mark", 3,
+    [ 5 ] ],
+   [
     "Luke", 3,
     [ 7 ] ],
    [
@@ -4619,6 +4664,9 @@ window.GLOSSARY = [
     "Zechariah", 13,
     [ 6 ] ],
    [
+    "Mark", 3,
+    [ 21 ] ],
+   [
     "John", 3,
     [ 29 ] ],
    [
@@ -4852,6 +4900,9 @@ window.GLOSSARY = [
    [
     "Zechariah", 6,
     [ 13 ] ],
+   [
+    "Mark", 3,
+    [ 6 ] ],
    [
     "John", 11,
     [ 53 ] ],
@@ -5561,6 +5612,9 @@ window.GLOSSARY = [
     "Mark", 2,
     [ 23, 24, 27, 28 ] ],
    [
+    "Mark", 3,
+    [ 2, 4 ] ],
+   [
     "John", 5,
     [ 9, 10, 16, 18 ] ],
    [
@@ -5660,6 +5714,9 @@ window.GLOSSARY = [
   "name": "Condemnation, damnation",
   "refs": [
    [
+    "Mark", 3,
+    [ 29 ] ],
+   [
     "John", 3,
     [ 19 ] ],
    [
@@ -5753,6 +5810,12 @@ window.GLOSSARY = [
     "Matthew", 10,
     [ 1, 2, 5 ] ],
    [
+    "Mark", 3,
+    [ 14 ] ],
+   [
+    "Mark", 4,
+    [ 10 ] ],
+   [
     "John", 6,
     [ 67, 71 ] ],
    [
@@ -5767,6 +5830,9 @@ window.GLOSSARY = [
    [
     "Matthew", 10,
     [ 4 ] ],
+   [
+    "Mark", 3,
+    [ 19 ] ],
    [
     "John", 6,
     [ 71 ] ],
@@ -5791,6 +5857,12 @@ window.GLOSSARY = [
    [
     "Mark", 1,
     [ 16 ] ],
+   [
+    "Mark", 3,
+    [ 7 ] ],
+   [
+    "Mark", 4,
+    [ 1, 39, 41 ] ],
    [
     "John", 6,
     [ 1 ] ],
@@ -5830,6 +5902,9 @@ window.GLOSSARY = [
    [
     "Mark", 1,
     [ 21, 23, 29, 39 ] ],
+   [
+    "Mark", 3,
+    [ 1 ] ],
    [
     "John", 6,
     [ 59 ] ],
@@ -6248,6 +6323,12 @@ window.GLOSSARY = [
   "name": "Parable",
   "refs": [
    [
+    "Mark", 3,
+    [ 23 ] ],
+   [
+    "Mark", 4,
+    [ 2, 10, 11, 13, 33, 34 ] ],
+   [
     "John", 10,
     [ 6 ] ] ]
  },
@@ -6280,6 +6361,9 @@ window.GLOSSARY = [
    [
     "Mark", 2,
     [ 7 ] ],
+   [
+    "Mark", 3,
+    [ 28, 29 ] ],
    [
     "John", 10,
     [ 33, 36 ] ] ]
@@ -6395,6 +6479,9 @@ window.GLOSSARY = [
     "Mark", 1,
     [ 5 ] ],
    [
+    "Mark", 3,
+    [ 7 ] ],
+   [
     "Luke", 1,
     [ 5, 65 ] ],
    [
@@ -6505,6 +6592,9 @@ window.GLOSSARY = [
    [
     "Mark", 1,
     [ 22, 27 ] ],
+   [
+    "Mark", 4,
+    [ 2 ] ],
    [
     "John", 7,
     [ 16, 17 ] ],
@@ -6640,6 +6730,9 @@ window.GLOSSARY = [
    [
     "Mark", 2,
     [ 6, 16 ] ],
+   [
+    "Mark", 3,
+    [ 22 ] ],
    [
     "John", 8,
     [ 3 ] ] ]
@@ -6836,6 +6929,9 @@ window.GLOSSARY = [
     "Mark", 1,
     [ 14, 15 ] ],
    [
+    "Mark", 4,
+    [ 11, 26, 30 ] ],
+   [
     "John", 3,
     [ 3, 5 ] ] ]
  },
@@ -6886,6 +6982,9 @@ window.GLOSSARY = [
    [
     "Matthew", 10,
     [ 14, 32, 33, 42 ] ],
+   [
+    "Mark", 3,
+    [ 35 ] ],
    [
     "John", 3,
     [ 15, 16 ] ],
@@ -7208,6 +7307,9 @@ window.GLOSSARY = [
     "Matthew", 10,
     [ 3 ] ],
    [
+    "Mark", 3,
+    [ 18 ] ],
+   [
     "John", 11,
     [ 16 ] ],
    [
@@ -7370,6 +7472,9 @@ window.GLOSSARY = [
     "Matthew", 10,
     [ 13, 34 ] ],
    [
+    "Mark", 4,
+    [ 39 ] ],
+   [
     "Luke", 1,
     [ 79 ] ],
    [
@@ -7426,6 +7531,9 @@ window.GLOSSARY = [
    [
     "Mark", 1,
     [ 19, 20, 29 ] ],
+   [
+    "Mark", 3,
+    [ 17 ] ],
    [
     "John", 21,
     [ 2 ] ] ]
@@ -7994,6 +8102,12 @@ window.GLOSSARY = [
     "Mark", 1,
     [ 13 ] ],
    [
+    "Mark", 3,
+    [ 23, 26 ] ],
+   [
+    "Mark", 4,
+    [ 15 ] ],
+   [
     "John", 13,
     [ 27 ] ] ]
  },
@@ -8329,6 +8443,9 @@ window.GLOSSARY = [
   "kind": "term",
   "name": "Offended (tripped up, made to stumble)",
   "refs": [
+   [
+    "Mark", 4,
+    [ 17 ] ],
    [
     "John", 16,
     [ 1 ] ] ]
@@ -9237,7 +9354,10 @@ window.GLOSSARY = [
     [ 9, 10 ] ],
    [
     "Zechariah", 9,
-    [ 2, 3 ] ] ]
+    [ 2, 3 ] ],
+   [
+    "Mark", 3,
+    [ 8 ] ] ]
  },
  {
   "id": "palestine",
@@ -9306,7 +9426,10 @@ window.GLOSSARY = [
   "refs": [
    [
     "Joel", 3,
-    [ 13 ] ] ]
+    [ 13 ] ],
+   [
+    "Mark", 4,
+    [ 29 ] ] ]
  },
  {
   "id": "valley-of-decision",
@@ -13977,7 +14100,10 @@ window.GLOSSARY = [
     [ 2, 11 ] ],
    [
     "Matthew", 5,
-    [ 15 ] ] ]
+    [ 15 ] ],
+   [
+    "Mark", 4,
+    [ 21 ] ] ]
  },
  {
   "id": "olive-trees",
@@ -14604,7 +14730,10 @@ window.GLOSSARY = [
     [ 1 ] ],
    [
     "Mark", 1,
-    [ 23, 26, 27 ] ] ]
+    [ 23, 26, 27 ] ],
+   [
+    "Mark", 3,
+    [ 11, 30 ] ] ]
  },
  {
   "id": "false-prophets",
@@ -15552,7 +15681,13 @@ window.GLOSSARY = [
     [ 10, 12, 18, 20, 21, 28, 29, 30, 31, 42, 43 ] ],
    [
     "Mark", 2,
-    [ 2, 8, 12 ] ] ]
+    [ 2, 8, 12 ] ],
+   [
+    "Mark", 3,
+    [ 6 ] ],
+   [
+    "Mark", 4,
+    [ 5, 15, 16, 17, 29 ] ] ]
  },
  {
   "id": "fever",
@@ -15606,7 +15741,10 @@ window.GLOSSARY = [
     [ 8 ] ],
    [
     "Mark", 1,
-    [ 32, 34, 39 ] ] ]
+    [ 32, 34, 39 ] ],
+   [
+    "Mark", 3,
+    [ 15, 22 ] ] ]
  },
  {
   "id": "compassion",
@@ -15657,7 +15795,10 @@ window.GLOSSARY = [
     [ 3 ] ],
    [
     "Mark", 2,
-    [ 14 ] ] ]
+    [ 14 ] ],
+   [
+    "Mark", 3,
+    [ 18 ] ] ]
  },
  {
   "id": "publicans",
@@ -15750,7 +15891,13 @@ window.GLOSSARY = [
     [ 2, 5, 6 ] ],
    [
     "Mark", 2,
-    [ 5, 7, 9, 10 ] ] ]
+    [ 5, 7, 9, 10 ] ],
+   [
+    "Mark", 3,
+    [ 28 ] ],
+   [
+    "Mark", 4,
+    [ 12 ] ] ]
  },
  {
   "id": "on-this-fashion",
@@ -15840,7 +15987,10 @@ window.GLOSSARY = [
   "refs": [
    [
     "Mark", 2,
-    [ 23 ] ] ]
+    [ 23 ] ],
+   [
+    "Mark", 4,
+    [ 28 ] ] ]
  },
  {
   "id": "hungred",
@@ -16434,7 +16584,10 @@ window.GLOSSARY = [
     [ 30 ] ],
    [
     "Mark", 1,
-    [ 43 ] ] ]
+    [ 43 ] ],
+   [
+    "Mark", 3,
+    [ 12 ] ] ]
  },
  {
   "id": "prince-of-the-devils",
@@ -16443,7 +16596,10 @@ window.GLOSSARY = [
   "refs": [
    [
     "Matthew", 9,
-    [ 34 ] ] ]
+    [ 34 ] ],
+   [
+    "Mark", 3,
+    [ 22 ] ] ]
  },
  {
   "id": "sheep-without-a-shepherd",
@@ -16479,7 +16635,10 @@ window.GLOSSARY = [
   "refs": [
    [
     "Matthew", 10,
-    [ 3 ] ] ]
+    [ 3 ] ],
+   [
+    "Mark", 3,
+    [ 18 ] ] ]
  },
  {
   "id": "james-son-of-alphaeus",
@@ -16488,7 +16647,10 @@ window.GLOSSARY = [
   "refs": [
    [
     "Matthew", 10,
-    [ 3 ] ] ]
+    [ 3 ] ],
+   [
+    "Mark", 3,
+    [ 18 ] ] ]
  },
  {
   "id": "simon-the-zealot",
@@ -16497,7 +16659,10 @@ window.GLOSSARY = [
   "refs": [
    [
     "Matthew", 10,
-    [ 4 ] ] ]
+    [ 4 ] ],
+   [
+    "Mark", 3,
+    [ 18 ] ] ]
  },
  {
   "id": "lost-sheep",
@@ -16605,7 +16770,10 @@ window.GLOSSARY = [
   "refs": [
    [
     "Matthew", 10,
-    [ 25 ] ] ]
+    [ 25 ] ],
+   [
+    "Mark", 3,
+    [ 22 ] ] ]
  },
  {
   "id": "housetop",
@@ -16845,7 +17013,10 @@ window.GLOSSARY = [
   "refs": [
    [
     "Matthew", 4,
-    [ 15, 25 ] ] ]
+    [ 15, 25 ] ],
+   [
+    "Mark", 3,
+    [ 8 ] ] ]
  },
  {
   "id": "the-mountain",
@@ -16908,7 +17079,10 @@ window.GLOSSARY = [
     [ 10, 11, 12, 44 ] ],
    [
     "Matthew", 10,
-    [ 23 ] ] ]
+    [ 23 ] ],
+   [
+    "Mark", 4,
+    [ 17 ] ] ]
  },
  {
   "id": "salt",
@@ -16935,7 +17109,10 @@ window.GLOSSARY = [
   "refs": [
    [
     "Matthew", 5,
-    [ 15 ] ] ]
+    [ 15 ] ],
+   [
+    "Mark", 4,
+    [ 21 ] ] ]
  },
  {
   "id": "the-law-and-the-prophets",
@@ -17007,7 +17184,10 @@ window.GLOSSARY = [
   "refs": [
    [
     "Matthew", 5,
-    [ 28 ] ] ]
+    [ 28 ] ],
+   [
+    "Mark", 4,
+    [ 19 ] ] ]
  },
  {
   "id": "divorcement",
@@ -17505,7 +17685,10 @@ window.GLOSSARY = [
   "refs": [
    [
     "Matthew", 6,
-    [ 26 ] ] ]
+    [ 26 ] ],
+   [
+    "Mark", 4,
+    [ 4, 32 ] ] ]
  },
  {
   "id": "little-faith",
@@ -17730,7 +17913,10 @@ window.GLOSSARY = [
   "refs": [
    [
     "Matthew", 8,
-    [ 26 ] ] ]
+    [ 26 ] ],
+   [
+    "Mark", 4,
+    [ 39 ] ] ]
  },
  {
   "id": "what-manner-of-man",
@@ -17739,7 +17925,10 @@ window.GLOSSARY = [
   "refs": [
    [
     "Matthew", 8,
-    [ 27 ] ] ]
+    [ 27 ] ],
+   [
+    "Mark", 4,
+    [ 41 ] ] ]
  },
  {
   "id": "gergesenes",
@@ -17779,5 +17968,269 @@ window.GLOSSARY = [
    [
     "Matthew", 8,
     [ 30, 31, 32 ] ] ]
+ },
+ {
+  "id": "herodians",
+  "kind": "person",
+  "name": "The Herodians (Herod's party)",
+  "refs": [
+   [
+    "Mark", 3,
+    [ 6 ] ] ]
+ },
+ {
+  "id": "idumaea",
+  "kind": "place",
+  "name": "Idumaea (old Edom, south of Judaea)",
+  "refs": [
+   [
+    "Mark", 3,
+    [ 8 ] ] ]
+ },
+ {
+  "id": "withered-hand",
+  "kind": "person",
+  "name": "The man with the withered hand",
+  "refs": [
+   [
+    "Mark", 3,
+    [ 1, 3 ] ] ]
+ },
+ {
+  "id": "hardness-of-heart",
+  "kind": "term",
+  "name": "Hardness of heart",
+  "refs": [
+   [
+    "Mark", 3,
+    [ 5 ] ] ]
+ },
+ {
+  "id": "throng",
+  "kind": "term",
+  "name": "Throng (crowd in on, crush)",
+  "refs": [
+   [
+    "Mark", 3,
+    [ 9 ] ] ]
+ },
+ {
+  "id": "plagues",
+  "kind": "term",
+  "name": "Plagues (painful diseases; the word means a whip)",
+  "refs": [
+   [
+    "Mark", 3,
+    [ 10 ] ] ]
+ },
+ {
+  "id": "ordained",
+  "kind": "term",
+  "name": "Ordained (appointed)",
+  "refs": [
+   [
+    "Mark", 3,
+    [ 14 ] ] ]
+ },
+ {
+  "id": "surnamed",
+  "kind": "term",
+  "name": "Surnamed (given another name)",
+  "refs": [
+   [
+    "Mark", 3,
+    [ 16, 17 ] ] ]
+ },
+ {
+  "id": "boanerges",
+  "kind": "term",
+  "name": "Boanerges (the sons of thunder)",
+  "refs": [
+   [
+    "Mark", 3,
+    [ 17 ] ] ]
+ },
+ {
+  "id": "thaddaeus",
+  "kind": "person",
+  "name": "Thaddaeus (Lebbaeus; Judas, not Iscariot)",
+  "refs": [
+   [
+    "Matthew", 10,
+    [ 3 ] ],
+   [
+    "Mark", 3,
+    [ 18 ] ] ]
+ },
+ {
+  "id": "beside-himself",
+  "kind": "term",
+  "name": "Beside himself (out of his mind)",
+  "refs": [
+   [
+    "Mark", 3,
+    [ 21 ] ] ]
+ },
+ {
+  "id": "strong-man",
+  "kind": "term",
+  "name": "The strong man (Satan) and his house",
+  "refs": [
+   [
+    "Mark", 3,
+    [ 27 ] ] ]
+ },
+ {
+  "id": "blasphemy-against-the-holy-ghost",
+  "kind": "term",
+  "name": "Blasphemy against the Holy Ghost",
+  "refs": [
+   [
+    "Mark", 3,
+    [ 29 ] ] ]
+ },
+ {
+  "id": "sower",
+  "kind": "term",
+  "name": "The sower",
+  "refs": [
+   [
+    "Mark", 4,
+    [ 3, 4, 14 ] ] ]
+ },
+ {
+  "id": "way-side",
+  "kind": "place",
+  "name": "The way side (a hard-packed path)",
+  "refs": [
+   [
+    "Mark", 4,
+    [ 4, 15 ] ] ]
+ },
+ {
+  "id": "stony-ground",
+  "kind": "place",
+  "name": "Stony ground (thin soil over rock)",
+  "refs": [
+   [
+    "Mark", 4,
+    [ 5, 16 ] ] ]
+ },
+ {
+  "id": "thorns",
+  "kind": "term",
+  "name": "Thorns (cares, riches and lusts that choke the word)",
+  "refs": [
+   [
+    "Matthew", 7,
+    [ 16 ] ],
+   [
+    "Mark", 4,
+    [ 7, 18 ] ] ]
+ },
+ {
+  "id": "good-ground",
+  "kind": "place",
+  "name": "Good ground",
+  "refs": [
+   [
+    "Mark", 4,
+    [ 8, 20 ] ] ]
+ },
+ {
+  "id": "ears-to-hear",
+  "kind": "term",
+  "name": "He that hath ears to hear",
+  "refs": [
+   [
+    "Mark", 4,
+    [ 9, 23 ] ] ]
+ },
+ {
+  "id": "mystery",
+  "kind": "term",
+  "name": "Mystery (a secret God now makes known)",
+  "refs": [
+   [
+    "Mark", 4,
+    [ 11 ] ] ]
+ },
+ {
+  "id": "converted",
+  "kind": "term",
+  "name": "Converted (turned around)",
+  "refs": [
+   [
+    "Mark", 4,
+    [ 12 ] ] ]
+ },
+ {
+  "id": "deceitfulness-of-riches",
+  "kind": "term",
+  "name": "The deceitfulness of riches",
+  "refs": [
+   [
+    "Mark", 4,
+    [ 19 ] ] ]
+ },
+ {
+  "id": "candle",
+  "kind": "term",
+  "name": "Candle (a small clay oil lamp)",
+  "refs": [
+   [
+    "Matthew", 5,
+    [ 15 ] ],
+   [
+    "Mark", 4,
+    [ 21 ] ] ]
+ },
+ {
+  "id": "mete",
+  "kind": "term",
+  "name": "Mete (measure out)",
+  "refs": [
+   [
+    "Matthew", 7,
+    [ 2 ] ],
+   [
+    "Mark", 4,
+    [ 24 ] ] ]
+ },
+ {
+  "id": "blade-ear-corn",
+  "kind": "term",
+  "name": "The blade, the ear, the full corn (grain growing)",
+  "refs": [
+   [
+    "Mark", 4,
+    [ 28 ] ] ]
+ },
+ {
+  "id": "mustard-seed",
+  "kind": "term",
+  "name": "A grain of mustard seed",
+  "refs": [
+   [
+    "Mark", 4,
+    [ 31 ] ] ]
+ },
+ {
+  "id": "expounded",
+  "kind": "term",
+  "name": "Expounded (explained)",
+  "refs": [
+   [
+    "Mark", 4,
+    [ 34 ] ] ]
+ },
+ {
+  "id": "hinder-part",
+  "kind": "term",
+  "name": "The hinder part (the stern of a boat)",
+  "refs": [
+   [
+    "Mark", 4,
+    [ 38 ] ] ]
  }
 ];

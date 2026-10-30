@@ -6303,6 +6303,120 @@ window.STUDIES = [
     }
   },
   {
+    "id": "mark-03",
+    "type": "chapter",
+    "book": "Mark",
+    "ch": 3,
+    "date": "2026-10-29",
+    "title": "Mark 3",
+    "sub": "Stronger than the strong man",
+    "about": "A withered hand made whole on the sabbath, twelve men chosen, a slander answered, and a new family for whosoever will.",
+    "tags": [
+      "Mercy",
+      "Obedience",
+      "Called",
+      "Spiritual battle",
+      "Forgiveness",
+      "Family of God"
+    ],
+    "url": "studies/mark-03.html",
+    "overview": {
+      "where": "A synagogue in Galilee, the shore of the Sea of Galilee, a mountain, and a crowded house",
+      "when": "Early in Jesus' ministry in Galilee, about A.D. 28",
+      "people": [
+        "jesus",
+        "withered-hand",
+        "pharisees",
+        "herodians",
+        "disciples",
+        "the-twelve",
+        "simon-peter",
+        "sons-of-zebedee",
+        "andrew",
+        "philip",
+        "bartholomew",
+        "levi-matthew",
+        "thomas",
+        "james-son-of-alphaeus",
+        "thaddaeus",
+        "simon-the-zealot",
+        "judas-iscariot",
+        "scribes",
+        "beelzebub",
+        "satan",
+        "mary",
+        "brethren"
+      ],
+      "places": [
+        "synagogue",
+        "sea-of-galilee",
+        "galilee",
+        "judaea",
+        "jerusalem",
+        "idumaea",
+        "beyond-jordan",
+        "tyre-and-zidon"
+      ],
+      "story": [
+        "On the sabbath the Pharisees watch to see if Jesus will heal a man with a withered hand. He asks whether it is lawful to do good or evil, then tells the man, “Stretch forth thine hand,” and it is made whole (1–5).",
+        "The Pharisees and the Herodians begin to plot how they might destroy Him (6).",
+        "Crowds come from Galilee, Judaea, Jerusalem, Idumaea, beyond Jordan, and Tyre and Sidon. Unclean spirits cry out that He is the Son of God, and He orders them silent (7–12).",
+        "On a mountain Jesus ordains twelve, that they should be with Him and be sent to preach. He names Simon Peter, and James and John Boanerges (13–19).",
+        "His family says He is beside Himself. Scribes from Jerusalem say He casts out devils by Beelzebub. Jesus answers that Satan can't cast out Satan, that the strong man must first be bound, and that all sins can be forgiven except blasphemy against the Holy Ghost (20–30).",
+        "His mother and brethren call for Him from outside. Looking at those around Him, He says whosoever does the will of God is His brother, sister and mother (31–35)."
+      ],
+      "key": {
+        "ref": "Mark 3:35",
+        "text": "For whosoever shall do the will of God, the same is my brother, and my sister, and mother."
+      },
+      "big": "Jesus is stronger than the strong man. He heals, He calls ordinary men to be with Him, He forgives every sin of the man who comes, and He makes whosoever trusts Him part of His family."
+    }
+  },
+  {
+    "id": "mark-04",
+    "type": "chapter",
+    "book": "Mark",
+    "ch": 4,
+    "date": "2026-10-29",
+    "title": "Mark 4",
+    "sub": "Seed, soil, and a storm",
+    "about": "Jesus teaches from a boat about a sower and his seed, then sleeps through a storm that only He can stop.",
+    "tags": [
+      "Hearing the word",
+      "Temptation",
+      "Witness",
+      "Spiritual growth",
+      "Small beginnings",
+      "Fear and faith"
+    ],
+    "url": "studies/mark-04.html",
+    "overview": {
+      "where": "On and beside the Sea of Galilee: Jesus teaches from a boat, then crosses to the other side",
+      "when": "During Jesus' ministry in Galilee, about A.D. 28. The storm comes that same evening",
+      "people": [
+        "jesus",
+        "disciples",
+        "the-twelve",
+        "satan"
+      ],
+      "places": [
+        "sea-of-galilee"
+      ],
+      "story": [
+        "The crowd is so large that Jesus teaches from a boat. He tells of a sower whose seed falls by the way side, on stony ground, among thorns, and on good ground (1–9).",
+        "Alone with those about Him, He explains: the seed is the word. Satan takes it from some, some have no root, some are choked by cares, riches and lusts, and some bear fruit thirty, sixty and a hundredfold (10–20).",
+        "A candle is set on a candlestick, not hidden under a bushel. With what measure ye mete, it shall be measured to you (21–25).",
+        "The kingdom of God is like seed that grows while the farmer sleeps, “he knoweth not how,” and like a mustard seed that grows greater than all herbs (26–34).",
+        "Crossing the lake at evening, a great storm fills the boat while Jesus sleeps. They wake Him: “carest thou not that we perish?” He says to the sea, “Peace, be still,” and there is a great calm (35–41)."
+      ],
+      "key": {
+        "ref": "Mark 4:39",
+        "text": "And he arose, and rebuked the wind, and said unto the sea, Peace, be still. And the wind ceased, and there was a great calm."
+      },
+      "big": "God's word is good seed, and it bears fruit in a heart that hears, receives and keeps it. The kingdom starts small and grows by God's power, and the One in our boat is Lord of the wind and the sea."
+    }
+  },
+  {
     "id": "luke-01",
     "type": "chapter",
     "book": "Luke",

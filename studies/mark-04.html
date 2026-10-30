@@ -1,0 +1,810 @@
+<!doctype html>
+<html lang="en" data-theme="night">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Mark 4</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="../assets/fonts.css">
+<link rel="stylesheet" href="../assets/deck.css">
+<link rel="stylesheet" href="../assets/themes.css">
+<style>
+/* mk04-soils: one seed, four kinds of ground. Each panel is a step and plays its own story when it comes on. */
+.mk04-soils { display: grid; grid-template-columns: repeat(4, 1fr); gap: .8rem; margin: .3em 0 .9em; }
+@media (max-width: 760px) { .mk04-soils { grid-template-columns: 1fr 1fr; } }
+.mk04-soils > div { text-align: center; }
+.mk04-soils svg { display: block; width: 100%; height: auto; max-height: 30vh; margin: 0 auto .3em; overflow: hidden; border-radius: 8px; background: color-mix(in srgb, var(--surface) 70%, transparent); }
+.mk04-soils h3 { font: 700 clamp(.95rem, .86rem + .4vw, 1.2rem) var(--sans); color: var(--accent-hot); }
+.mk04-soils p { font-size: clamp(.82rem, .76rem + .3vw, 1rem); color: var(--ink-soft); line-height: 1.3; }
+.mk04-earth { fill: color-mix(in srgb, var(--leather) 65%, var(--bg)); }
+.mk04-path { fill: color-mix(in srgb, var(--ink-soft) 38%, var(--bg)); }
+.mk04-rock { fill: var(--surface-2); stroke: var(--ink-soft); stroke-width: 2; }
+.mk04-seed { fill: var(--warm); }
+.mk04-plant { color: var(--accent); }
+.mk04-stem { fill: none; stroke: currentColor; stroke-width: 3.5; stroke-linecap: round; }
+.mk04-leaf { fill: currentColor; }
+.mk04-bird { fill: none; stroke: var(--ink); stroke-width: 3; stroke-linecap: round; stroke-linejoin: round; transform: translate(230px, 10px); }
+.mk04-soils .on .mk04-bird { animation: mk04-swoop 3s .3s ease-in-out forwards; }
+@keyframes mk04-swoop { 0% { transform: translate(230px, 10px); } 45%, 60% { transform: translate(100px, 112px); } 100% { transform: translate(-40px, 0); } }
+.mk04-soils .on .mk04-gone { animation: mk04-eat 3s .3s forwards; }
+@keyframes mk04-eat { 0%, 55% { opacity: 1; } 62%, 100% { opacity: 0; } }
+.mk04-quick, .mk04-choked, .mk04-tall, .mk04-thorn { transform-box: fill-box; transform-origin: 50% 100%; transform: scaleY(0); }
+.mk04-soils .on .mk04-quick { animation: mk04-wilt 3.6s .3s ease forwards; }
+@keyframes mk04-wilt { 0% { transform: scaleY(0); } 25%, 55% { transform: scaleY(1); color: var(--accent); } 100% { transform: scaleY(.85) rotate(38deg); color: var(--line-strong); } }
+.mk04-sun { fill: var(--warm); opacity: 0; }
+.mk04-soils .on .mk04-sun { animation: mk04-sunup 3.6s .3s forwards; }
+@keyframes mk04-sunup { 0%, 35% { opacity: 0; } 50%, 100% { opacity: 1; } }
+.mk04-soils .on .mk04-choked { animation: mk04-choke 4s .3s ease forwards; }
+@keyframes mk04-choke { 0% { transform: scaleY(0); } 28%, 70% { transform: scaleY(1); color: var(--accent); } 100% { transform: scaleY(.9); color: var(--line-strong); } }
+.mk04-thorn { fill: var(--ink-soft); }
+.mk04-soils .on .mk04-thorn { animation: mk04-up 2s 1.5s cubic-bezier(.3,.7,.3,1) forwards; }
+.mk04-soils .on .mk04-tall { animation: mk04-up 1.8s cubic-bezier(.3,.7,.3,1) forwards; animation-delay: calc(var(--w) + .3s); }
+@keyframes mk04-up { to { transform: scaleY(1); } }
+.mk04-head { fill: var(--warm); }
+.mk04-num { font: 700 17px var(--sans); fill: var(--ink); opacity: 0; }
+.mk04-soils .on .mk04-num { animation: mk04-show .6s forwards; animation-delay: calc(var(--w) + 1.8s); }
+@keyframes mk04-show { to { opacity: 1; } }
+
+/* mk04-bushel: a lit lamp hidden under a measuring basket, then set up on a lampstand */
+.mk04-floor { stroke: var(--line-strong); stroke-width: 3; }
+.mk04-body { fill: var(--leather-light); stroke: var(--leather); stroke-width: 2; }
+.mk04-flame { fill: var(--warm); }
+.mk04-lamp { transition: transform 1.6s cubic-bezier(.3,.7,.3,1); }
+.mk04-halo { opacity: .7; transform-box: fill-box; transform-origin: center; transition: opacity 1s ease, transform 1.6s ease; }
+.mk04-basket { fill: var(--leather); stroke: var(--leather-light); stroke-width: 3; stroke-linejoin: round; opacity: 0; transform: translateY(-50px); transition: transform 1.2s cubic-bezier(.3,.7,.3,1), opacity .8s ease; }
+.mk04-band { fill: none; stroke: var(--leather-light); stroke-width: 2; }
+.mk04-stand { fill: none; stroke: var(--leather-light); stroke-width: 6; stroke-linecap: round; opacity: 0; transition: opacity 1s ease; }
+.mk04-say { font: 700 20px var(--sans); fill: var(--ink-soft); transition: opacity .8s ease; }
+.mk04-say.c, .mk04-say.s { opacity: 0; }
+.mk04-say.s { fill: var(--accent-hot); }
+.slide:has(.mk04-cover.on) .mk04-basket { opacity: 1; transform: none; }
+.slide:has(.mk04-cover.on) .mk04-halo { opacity: .06; }
+.slide:has(.mk04-cover.on) .mk04-say.a { opacity: 0; }
+.slide:has(.mk04-cover.on) .mk04-say.c { opacity: 1; }
+.slide:has(.mk04-stand.on) .mk04-basket { opacity: .55; transform: translateX(-150px); }
+.slide:has(.mk04-stand.on) .mk04-stand { opacity: 1; }
+.slide:has(.mk04-stand.on) .mk04-lamp { transform: translateY(-100px); }
+.slide:has(.mk04-stand.on) .mk04-halo { opacity: 1; transform: scale(1.6); }
+.slide:has(.mk04-stand.on) .mk04-say.c { opacity: 0; }
+.slide:has(.mk04-stand.on) .mk04-say.s { opacity: 1; }
+
+/* mk04-mustard: the smallest seed grows into a tree the birds can nest in, with a man beside it for scale */
+.mk04-tree, .mk04-man, .mk04-big { opacity: 0; }
+.mk04-tree { transform-box: fill-box; transform-origin: 50% 100%; transform: scale(.02); transition: transform 2.6s cubic-bezier(.3,.7,.3,1), opacity .4s ease; }
+.mk04-man, .mk04-big { transition: opacity 1s ease 2.2s; }
+.mk04-trunk { fill: var(--leather); }
+.mk04-limb { fill: none; stroke: var(--leather); stroke-width: 6; stroke-linecap: round; }
+.mk04-leafy { fill: color-mix(in srgb, var(--warm) 42%, var(--bg)); }
+.mk04-flower { fill: var(--warm); }
+.mk04-man { fill: var(--ink-soft); }
+.mk04-tag { font-size: 15px; fill: var(--ink-soft); }
+.mk04-big { font: 700 19px var(--sans); fill: var(--accent-hot); }
+.mk04-mlabel { transition: opacity .8s ease; }
+.mk04-fowl { fill: none; stroke: var(--ink); stroke-width: 3; stroke-linecap: round; stroke-linejoin: round; opacity: 0; transform: translate(170px, -90px); transition: transform 1.6s ease, opacity .6s ease; transition-delay: calc(2.4s + var(--k) * .35s); }
+.slide:has(.mk04-grow.on) .mk04-tree { opacity: 1; transform: none; }
+.slide:has(.mk04-grow.on) .mk04-man, .slide:has(.mk04-grow.on) .mk04-big { opacity: 1; }
+.slide:has(.mk04-grow.on) .mk04-mlabel { opacity: 0; }
+.slide:has(.mk04-grow.on) .mk04-fowl { opacity: 1; transform: none; }
+
+/* mk04-storm: a boat filling with water in the wind, and Jesus asleep in the stern */
+.mk04-night { fill: color-mix(in srgb, var(--ink) 10%, var(--bg)); }
+.mk04-wave { fill: color-mix(in srgb, var(--cool) 40%, var(--bg)); }
+.mk04-wave2 { fill: color-mix(in srgb, var(--cool) 65%, var(--bg)); }
+.slide.active .mk04-wave { animation: mk04-roll 2.6s linear infinite; }
+.slide.active .mk04-wave2 { animation: mk04-roll 1.8s linear infinite reverse; }
+@keyframes mk04-roll { to { transform: translateX(-150px); } }
+.mk04-boat { transform-box: fill-box; transform-origin: 50% 90%; }
+.slide.active .mk04-boat { animation: mk04-rock 1.9s ease-in-out infinite alternate; }
+@keyframes mk04-rock { from { transform: rotate(-8deg) translateY(-6px); } to { transform: rotate(7deg) translateY(6px); } }
+.mk04-hull { fill: var(--leather); stroke: var(--leather-light); stroke-width: 3; }
+.mk04-water { fill: var(--cool); opacity: .85; transform-box: fill-box; transform-origin: 50% 100%; transform: scaleY(0); }
+.slide.active .mk04-water { animation: mk04-flood 7s 1s ease-in forwards; }
+@keyframes mk04-flood { to { transform: scaleY(.8); } }
+.mk04-gust { stroke: var(--ink-soft); stroke-width: 2.5; stroke-linecap: round; opacity: 0; }
+.slide.active .mk04-gust { animation: mk04-gust 1.5s linear infinite; animation-delay: calc(var(--k) * .4s); }
+@keyframes mk04-gust { 0% { opacity: 0; transform: translateX(80px); } 30% { opacity: .8; } 100% { opacity: 0; transform: translateX(-180px); } }
+.mk04-sleeper { fill: var(--accent-hot); }
+.mk04-pillow { fill: var(--surface-2); }
+.mk04-zz { font: italic 700 16px var(--serif); fill: var(--accent-hot); }
+.slide.active .mk04-zz { animation: mk04-zz 2.4s ease-in-out infinite; }
+@keyframes mk04-zz { 0% { opacity: 0; transform: translateY(6px); } 40% { opacity: 1; } 100% { opacity: 0; transform: translateY(-14px); } }
+</style>
+</head>
+<body>
+<main class="deck" id="deck">
+
+<!-- ======================= OPENING ======================= -->
+<section class="slide title">
+  <div class="inner">
+    <div class="emblem rise"></div>
+    <h1 class="rise" style="--d:1">Mark 4</h1>
+    <p class="sub rise" style="--d:3">Seed, soil, and a storm</p>
+    <p class="tag rise" style="--d:5">Jesus teaches from a boat about a sower and his seed, then sleeps through a storm that only He can stop.</p>
+  </div>
+</section>
+
+<section class="slide watch">
+  <div class="inner">
+    <h2 class="rise">Things to watch for</h2>
+    <p class="lede rise" style="--d:1">Keep these questions in the back of your mind as we read. We'll come back to every one of them at the end.</p>
+    <ol class="seeds">
+      <li class="step"><span class="topic">Hearing</span><span class="seed-q">What happens to the word in four kinds of hearts?</span></li>
+      <li class="step"><span class="topic">Thorns</span><span class="seed-q">What chokes the word in a man's life?</span></li>
+      <li class="step"><span class="topic">Light</span><span class="seed-q">What is a candle for?</span></li>
+      <li class="step"><span class="topic">Growth</span><span class="seed-q">Who makes the seed grow?</span></li>
+      <li class="step"><span class="topic">Small beginnings</span><span class="seed-q">What does the mustard seed teach us?</span></li>
+      <li class="step"><span class="topic">Storms</span><span class="seed-q">Does Jesus care when we feel like we're going under?</span></li>
+    </ol>
+  </div>
+</section>
+
+<!-- ======================= PART ONE: A SOWER WENT OUT ======================= -->
+<section class="slide part">
+  <div class="inner">
+    <p class="part-n rise">Part one</p>
+    <h2 class="rise" style="--d:1">There went out a sower</h2>
+    <p class="range rise" style="--d:2">Verses 1–9</p>
+    <div class="rule"></div>
+    <p class="hook rise" style="--d:4">A boat for a pulpit, a hillside for a church, and a story every farmer knew.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="1-2" data-hl="he entered into a ship, and sat in the sea|he taught them many things by parables"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="1" data-hl="he entered into a ship, and sat in the sea"></blockquote>
+    <div class="split">
+      <div class="stage">
+        <svg class="map" viewBox="0 0 420 470" role="img" aria-label="Map of the Sea of Galilee. On the north shore near Capernaum, a crowd stands on the land and Jesus sits in a boat just off the shore, teaching.">
+          <path class="map-river rise" style="--d:2" d="M238 0 C228 20 248 34 236 62"/>
+          <path class="map-river rise" style="--d:2" d="M206 420 C214 436 198 450 210 470"/>
+          <path class="map-lake rise" style="--d:2" d="M195 58 C250 52 292 82 306 132 C320 188 314 262 294 322 C274 382 240 420 205 424 C168 420 142 382 122 332 C102 278 96 202 110 142 C124 92 150 62 195 58 Z"/>
+          <text class="map-water" x="210" y="250" text-anchor="middle" font-size="18">Sea of Galilee</text>
+          <g class="map-town rise" style="--d:3">
+            <circle cx="146" cy="78" r="7"/><text x="134" y="70" text-anchor="end" font-weight="700">Capernaum</text>
+            <circle cx="256" cy="58" r="7"/><text x="268" y="52" font-weight="700">Bethsaida</text>
+            <circle cx="104" cy="250" r="7"/><text x="92" y="256" text-anchor="end" font-weight="700">Tiberias</text>
+          </g>
+          <g class="rise" style="--d:4">
+            <g style="fill:var(--ink-soft)">
+              <circle cx="104" cy="104" r="4"/><circle cx="114" cy="96" r="4"/><circle cx="96" cy="116" r="4"/><circle cx="108" cy="116" r="4"/>
+              <circle cx="92" cy="104" r="4"/><circle cx="122" cy="88" r="4"/><circle cx="100" cy="128" r="4"/><circle cx="88" cy="122" r="4"/>
+            </g>
+            <path d="M126 116 L150 116 L144 124 L132 124 Z" style="fill:var(--accent-hot)"/>
+            <line x1="138" y1="116" x2="138" y2="102" stroke-width="2" style="stroke:var(--accent-hot)"/>
+          </g>
+          <g class="map-town here rise" style="--d:5">
+            <circle class="map-ping" cx="138" cy="118" r="10"/>
+            <text x="166" y="130" font-size="15">Jesus in a boat,</text>
+            <text x="166" y="148" font-size="15">the crowd on the shore</text>
+          </g>
+        </svg>
+      </div>
+      <div>
+        <h2 class="rise" style="--d:1">A boat for a pulpit</h2>
+        <p class="note rise" style="--d:2">The crowd was so big that Jesus pushed off in a boat and sat down to teach, the way teachers did then. The water carried His voice up to the people on the slope.</p>
+        <p class="note step">Tradition puts this at a cove near Capernaum, where the hillside curves around the water like a natural theater.</p>
+        <p class="note step">A <em>parable</em> is a story from everyday life that carries a spiritual truth. It's simple enough for anyone to remember, and it rewards the man who keeps thinking about it.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="slide verse" data-v="3-5" data-hl="Hearken; Behold, there went out a sower to sow|some fell by the way side|some fell on stony ground"></section>
+<section class="slide verse" data-v="6-9" data-hl="because it had no root, it withered away|some fell among thorns|other fell on good ground|He that hath ears to hear, let him hear"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise">One seed, four kinds of ground</h2>
+    <p class="note rise" style="--d:1">A farmer walked his field throwing seed by the handful. Some always landed where it couldn't grow. Watch what happens to each:</p>
+    <div class="mk04-soils">
+      <div class="step">
+        <svg viewBox="0 0 200 170" role="img" aria-label="Seeds lie on a hard path. A bird swoops down and eats them.">
+          <rect class="mk04-path" x="0" y="120" width="200" height="50"/>
+          <g class="mk04-seed mk04-gone"><ellipse cx="70" cy="117" rx="4" ry="2.6"/><ellipse cx="92" cy="118" rx="4" ry="2.6"/><ellipse cx="114" cy="116" rx="4" ry="2.6"/><ellipse cx="134" cy="118" rx="4" ry="2.6"/></g>
+          <path class="mk04-bird" d="M-14 -4 Q-7 -12 0 -2 Q7 -12 14 -4"/>
+        </svg>
+        <h3>By the way side</h3>
+        <p>packed hard, the birds take it (v. 4)</p>
+      </div>
+      <div class="step">
+        <svg viewBox="0 0 200 170" role="img" aria-label="A thin layer of soil over rock. A sprout shoots up fast, then the sun comes out and it wilts.">
+          <rect class="mk04-earth" x="0" y="120" width="200" height="14"/>
+          <rect class="mk04-rock" x="-4" y="134" width="208" height="40"/>
+          <circle class="mk04-rock" cx="40" cy="132" r="9"/><circle class="mk04-rock" cx="156" cy="131" r="10"/>
+          <circle class="mk04-sun" cx="164" cy="30" r="15"/>
+          <g class="mk04-plant mk04-quick"><path class="mk04-stem" d="M100 120 Q98 104 100 86"/><path class="mk04-leaf" d="M100 100 Q112 90 122 95 Q110 106 100 100 Z"/><path class="mk04-leaf" d="M100 108 Q88 98 78 103 Q90 114 100 108 Z"/></g>
+        </svg>
+        <h3>Stony ground</h3>
+        <p>quick to sprout, no root, scorched (vv. 5–6)</p>
+      </div>
+      <div class="step">
+        <svg viewBox="0 0 200 170" role="img" aria-label="A sprout comes up in good soil, but thorn bushes grow up around it and choke it.">
+          <rect class="mk04-earth" x="0" y="120" width="200" height="50"/>
+          <g class="mk04-plant mk04-choked"><path class="mk04-stem" d="M100 120 Q98 100 100 80"/><path class="mk04-leaf" d="M100 96 Q112 86 122 91 Q110 102 100 96 Z"/><path class="mk04-leaf" d="M100 106 Q88 96 78 101 Q90 112 100 106 Z"/></g>
+          <path class="mk04-thorn" d="M58 120 L64 98 L54 92 L68 86 L62 64 L76 74 L82 50 L88 78 L98 70 L92 94 L102 102 L90 106 L92 120 Z"/>
+          <path class="mk04-thorn" d="M142 120 L136 96 L148 90 L134 84 L140 60 L126 70 L120 46 L114 76 L104 68 L108 92 L98 100 L110 104 L108 120 Z"/>
+        </svg>
+        <h3>Among thorns</h3>
+        <p>it grows, but gets choked (v. 7)</p>
+      </div>
+      <div class="step">
+        <svg viewBox="0 0 200 170" role="img" aria-label="Deep good soil. Three stalks grow tall with full heads of grain, marked thirty, sixty and a hundred.">
+          <rect class="mk04-earth" x="0" y="120" width="200" height="50"/>
+          <g class="mk04-plant mk04-tall" style="--w:0s"><path class="mk04-stem" d="M56 120 Q58 100 56 80"/><g class="mk04-head"><ellipse cx="52" cy="82" rx="4" ry="7"/><ellipse cx="60" cy="82" rx="4" ry="7"/><ellipse cx="56" cy="70" rx="3.5" ry="6"/></g></g>
+          <g class="mk04-plant mk04-tall" style="--w:.3s"><path class="mk04-stem" d="M100 120 Q102 90 100 56"/><g class="mk04-head"><ellipse cx="96" cy="60" rx="4" ry="7"/><ellipse cx="104" cy="60" rx="4" ry="7"/><ellipse cx="96" cy="72" rx="4" ry="7"/><ellipse cx="104" cy="72" rx="4" ry="7"/><ellipse cx="100" cy="48" rx="3.5" ry="6"/></g></g>
+          <g class="mk04-plant mk04-tall" style="--w:.6s"><path class="mk04-stem" d="M144 120 Q142 80 144 32"/><g class="mk04-head"><ellipse cx="140" cy="36" rx="4" ry="7"/><ellipse cx="148" cy="36" rx="4" ry="7"/><ellipse cx="140" cy="48" rx="4" ry="7"/><ellipse cx="148" cy="48" rx="4" ry="7"/><ellipse cx="140" cy="60" rx="4" ry="7"/><ellipse cx="148" cy="60" rx="4" ry="7"/><ellipse cx="144" cy="24" rx="3.5" ry="6"/></g></g>
+          <text class="mk04-num" style="--w:0s" x="56" y="150" text-anchor="middle">30</text>
+          <text class="mk04-num" style="--w:.3s" x="100" y="150" text-anchor="middle">60</text>
+          <text class="mk04-num" style="--w:.6s" x="144" y="150" text-anchor="middle">100</text>
+        </svg>
+        <h3>Good ground</h3>
+        <p>it grows and bears fruit (v. 8)</p>
+      </div>
+    </div>
+    <p class="note step">Same sower, same seed, every time. The only thing that changes is the ground. A thirtyfold harvest was a good year. A hundredfold was more than any farmer dared hope for.</p>
+  </div>
+</section>
+
+<!-- ======================= PART TWO: EARS TO HEAR ======================= -->
+<section class="slide part">
+  <div class="inner">
+    <p class="part-n rise">Part two</p>
+    <h2 class="rise" style="--d:1">He that hath ears to hear</h2>
+    <p class="range rise" style="--d:2">Verses 10–25</p>
+    <div class="rule"></div>
+    <p class="hook rise" style="--d:4">The men who stayed and asked got the meaning. Jesus explains the seed, the soil, and the light.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="10-12" data-hl="they that were about him with the twelve asked of him the parable|Unto you it is given to know the mystery of the kingdom of God"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="10" data-hl="they that were about him with the twelve"></blockquote>
+    <h2 class="rise" style="--d:1">Inside and outside</h2>
+    <div class="columns">
+      <div class="col grace step"><p class="who">“about him”</p><h3>stayed and asked</h3><p>Not only the twelve. Anyone who came close and wanted to know got the meaning.</p></div>
+      <div class="col law step"><p class="who">“them that are without”</p><h3>heard a story and left</h3><p>The same words, but no hunger to understand them.</p></div>
+    </div>
+    <p class="note step">A <em>mystery</em> in the Bible isn't a puzzle. It's something God had kept hidden and now makes known. Verse 12 quotes Isaiah 6:9–10, words about people who had already hardened their hearts against God. Parables open the truth to the hungry and hide it from the man who has made up his mind not to hear.</p>
+    <blockquote class="quote step"><p>“The Lord is not slack concerning his promise, as some men count slackness; but is longsuffering to us-ward, not willing that any should perish, but that all should come to repentance.”</p><cite>2 Peter 3:9</cite></blockquote>
+  </div>
+</section>
+
+<section class="slide verse" data-v="13-14" data-hl="The sower soweth the word"></section>
+<section class="slide verse" data-v="15-17" data-hl="Satan cometh immediately, and taketh away the word|immediately receive it with gladness|have no root in themselves, and so endure but for a time"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="17" data-hl="have no root in themselves, and so endure but for a time"></blockquote>
+    <h2 class="rise" style="--d:1">Fast up, fast down</h2>
+    <p class="note rise" style="--d:2"><em>The way side</em>: the word bounces off a hard heart, and <em>Satan cometh immediately</em> to snatch it before it can sink in. He knows what the word can do.</p>
+    <div class="ifthen step">
+      <div class="if"><small>stony ground</small>“receive it with gladness”</div>
+      <span class="arrow">→</span>
+      <div class="if"><small>but</small>“no root”</div>
+      <span class="arrow">→</span>
+      <div class="then"><small>so</small>“endure but for a time”</div>
+    </div>
+    <p class="note step">Many of us have seen this man, or been him: fired up after a meeting, a sermon, a scare, and gone the first time trouble comes. <em>Offended</em> here means <em>tripped up</em>. Roots grow underground where nobody sees, in time in the Word, in prayer, with other believers. That's what holds a man when the sun gets hot.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="18-20" data-hl="the cares of this world, and the deceitfulness of riches, and the lusts of other things entering in|some thirtyfold, some sixty, and some an hundred"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="19" data-hl="choke the word, and it becometh unfruitful"></blockquote>
+    <h2 class="rise" style="--d:1">What chokes the word</h2>
+    <ol class="signs">
+      <li class="step"><b>“the cares of this world”</b>worry: bills, court dates, the job, the family</li>
+      <li class="step"><b>“the deceitfulness of riches”</b>money promises it will fix things, and lies</li>
+      <li class="step now"><b>“the lusts of other things”</b>any craving that wants first place: a drink, a drug, a woman, a screen</li>
+    </ol>
+    <p class="note step">Thorns don't kill a plant in a day. They grow up slowly beside it, taking the light and the water, until there's nothing left for the good seed. Notice they come <em>“entering in.”</em> They have to be let in, and they're easiest to pull while they're small.</p>
+    <p class="note step">This man heard the word. It just never got room to bear fruit. Ask yourself what's growing up next to it in your life.</p>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="20" data-hl="hear the word, and receive it, and bring forth fruit"></blockquote>
+    <h2 class="rise" style="--d:1">The four hearers</h2>
+    <div class="sort">
+      <div class="step"><h3>By the way side</h3><div class="vs"><b>4</b><b>15</b></div><p>Hears, but it never gets in. Satan takes it away.</p></div>
+      <div class="step"><h3>Stony ground</h3><div class="vs"><b>5</b><b>6</b><b>16</b><b>17</b></div><p>Glad at first, no root. Quits when trouble comes.</p></div>
+      <div class="step"><h3>Among thorns</h3><div class="vs"><b>7</b><b>18</b><b>19</b></div><p>Hears, but cares, money and cravings choke it.</p></div>
+      <div class="step"><h3>Good ground</h3><div class="vs"><b>8</b><b>20</b></div><p>Hears, receives it, and bears fruit.</p></div>
+    </div>
+    <p class="note step">Good ground does three things: it <em>hears</em>, it <em>receives</em>, and it <em>brings forth fruit</em>. The amount differs, thirty, sixty, a hundred, and Jesus is pleased with all three. You don't have to be the hundredfold man. Just let the word in, and let it stay.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="21-23" data-hl="Is a candle brought to be put under a bushel|to be set on a candlestick"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="21" data-hl="put under a bushel|to be set on a candlestick"></blockquote>
+    <div class="split">
+      <div class="stage">
+        <svg viewBox="0 0 400 270" role="img" aria-label="A small clay oil lamp burns on the floor. A measuring basket comes down over it and hides the light. Then the basket is moved aside, and the lamp is set up on a stand where its light fills the room.">
+          <defs><radialGradient id="mk04-glowgrad"><stop offset="0" style="stop-color:var(--glow)"/><stop offset=".4" stop-opacity=".5" style="stop-color:var(--accent)"/><stop offset="1" stop-opacity="0" style="stop-color:var(--accent)"/></radialGradient></defs>
+          <line class="mk04-floor" x1="0" y1="250" x2="400" y2="250"/>
+          <path class="mk04-stand" d="M170 250 H250 M210 250 V150 M180 150 H240"/>
+          <g class="mk04-lamp">
+            <circle class="mk04-halo" cx="248" cy="212" r="90" fill="url(#mk04-glowgrad)"/>
+            <path class="mk04-body" d="M168 242 Q170 224 200 222 Q226 222 236 230 L252 226 Q250 236 238 238 Q228 250 200 250 Q174 250 168 242 Z"/>
+            <path class="mk04-flame" d="M246 224 Q240 210 248 196 Q256 212 250 224 Z"/>
+          </g>
+          <g class="mk04-basket">
+            <path d="M150 252 L162 176 L258 176 L270 252 Z"/>
+            <path class="mk04-band" d="M157 214 H263 M160 194 H260"/>
+          </g>
+          <text class="mk04-say a" x="200" y="40" text-anchor="middle">a candle is lit</text>
+          <text class="mk04-say c" x="200" y="40" text-anchor="middle">under a bushel?</text>
+          <text class="mk04-say s" x="200" y="40" text-anchor="middle">on a candlestick</text>
+        </svg>
+      </div>
+      <div>
+        <h2 class="rise" style="--d:1">Nobody hides a light</h2>
+        <p class="note rise" style="--d:2">The <em>candle</em> was a small clay oil lamp, the <em>bushel</em> a basket for measuring grain, and the <em>candlestick</em> a stand that held the lamp up high.</p>
+        <p class="note step mk04-cover">Who lights a lamp and then puts a basket over it? It would be pointless.</p>
+        <p class="note step mk04-stand">God doesn't light up a man's life so he can hide it. What He's done in you is meant to be seen, for <em>“there is nothing hid, which shall not be manifested.”</em></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="slide verse" data-v="24-25" data-hl="Take heed what ye hear|with what measure ye mete, it shall be measured to you"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="24" data-hl="Take heed what ye hear|unto you that hear shall more be given"></blockquote>
+    <h2 class="rise" style="--d:1">The measure you use</h2>
+    <p class="note rise" style="--d:2"><em>“Mete”</em> means <em>measure out</em>. Picture a man buying grain with his own basket. Bring a thimble, and you go home with a thimble. Bring a barrel, and it gets filled.</p>
+    <div class="ifthen step">
+      <div class="if"><small>if</small>you take the word in, and use it</div>
+      <span class="arrow">→</span>
+      <div class="then"><small>then</small>“shall more be given”</div>
+    </div>
+    <div class="ifthen step">
+      <div class="if"><small>if</small>you let it sit, unused</div>
+      <span class="arrow">→</span>
+      <div class="then"><small>then</small>“taken even that which he hath”</div>
+    </div>
+    <p class="note step">Recovery works the same way. The tools you use grow stronger. The ones you leave on the shelf slip away. Keep coming, keep listening, keep doing what you hear.</p>
+  </div>
+</section>
+
+<!-- ======================= PART THREE: HOW THE KINGDOM GROWS ======================= -->
+<section class="slide part">
+  <div class="inner">
+    <p class="part-n rise">Part three</p>
+    <h2 class="rise" style="--d:1">He knoweth not how</h2>
+    <p class="range rise" style="--d:2">Verses 26–34</p>
+    <div class="rule"></div>
+    <p class="hook rise" style="--d:4">Two more seeds: one that grows while the farmer sleeps, and one so small you can barely see it.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="26-29" data-hl="should sleep, and rise night and day|he knoweth not how|first the blade, then the ear, after that the full corn in the ear"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="27" data-hl="he knoweth not how"></blockquote>
+    <div class="split">
+      <div class="stage">
+        <svg class="seed" viewBox="0 0 600 330" role="img" aria-label="A seed falls into the ground, puts down roots, and comes up as stalks full of grain.">
+          <rect x="0" y="190" width="600" height="140" style="fill:color-mix(in srgb, var(--leather) 70%, var(--bg))"/>
+          <line x1="0" y1="190" x2="600" y2="190" stroke-width="3" style="stroke:var(--leather)"/>
+          <g class="seed-fall">
+            <ellipse class="seed-husk" cx="300" cy="250" rx="13" ry="19" style="fill:var(--warm)"/>
+          </g>
+          <text class="seed-alone" x="330" y="256" font-size="18" font-style="italic" style="fill:var(--bg)">cast into the ground</text>
+          <path class="seed-roots" pathLength="1" d="M300 268 Q292 290 280 312 M300 268 Q306 292 322 314 M300 268 Q300 296 300 322" fill="none" stroke-width="3" stroke-linecap="round" style="stroke:var(--warm)"/>
+          <g class="seed-stalk" style="--w:0s">
+            <path d="M300 240 Q302 150 300 60" fill="none" stroke-width="5" stroke-linecap="round" style="stroke:var(--accent)"/>
+          </g>
+          <g class="seed-stalk" style="--w:.3s">
+            <path d="M296 240 Q240 160 214 92" fill="none" stroke-width="4" stroke-linecap="round" style="stroke:var(--accent)"/>
+          </g>
+          <g class="seed-stalk" style="--w:.5s">
+            <path d="M304 240 Q360 160 388 92" fill="none" stroke-width="4" stroke-linecap="round" style="stroke:var(--accent)"/>
+          </g>
+          <g style="fill:var(--warm)">
+            <g class="seed-head" style="--w:0s"><ellipse cx="292" cy="40" rx="7" ry="11"/><ellipse cx="308" cy="40" rx="7" ry="11"/><ellipse cx="292" cy="62" rx="7" ry="11"/><ellipse cx="308" cy="62" rx="7" ry="11"/><ellipse cx="292" cy="84" rx="7" ry="11"/><ellipse cx="308" cy="84" rx="7" ry="11"/><ellipse cx="300" cy="22" rx="6" ry="10"/></g>
+            <g class="seed-head" style="--w:.3s"><ellipse cx="206" cy="72" rx="7" ry="11"/><ellipse cx="222" cy="72" rx="7" ry="11"/><ellipse cx="206" cy="94" rx="7" ry="11"/><ellipse cx="222" cy="94" rx="7" ry="11"/><ellipse cx="214" cy="54" rx="6" ry="10"/></g>
+            <g class="seed-head" style="--w:.5s"><ellipse cx="380" cy="72" rx="7" ry="11"/><ellipse cx="396" cy="72" rx="7" ry="11"/><ellipse cx="380" cy="94" rx="7" ry="11"/><ellipse cx="396" cy="94" rx="7" ry="11"/><ellipse cx="388" cy="54" rx="6" ry="10"/></g>
+          </g>
+          <text class="seed-head" style="--w:.6s" x="490" y="80" text-anchor="middle" font-size="22" font-weight="700" fill="currentColor">the harvest</text>
+        </svg>
+      </div>
+      <div>
+        <h2 class="rise" style="--d:1">Growing while he sleeps</h2>
+        <p class="note rise" style="--d:2">The farmer's part is small: put the seed in the ground. Then he goes to bed, gets up, goes to bed again.</p>
+        <p class="note step seed-die">Down in the dark, where he can't see, the seed is already at work.</p>
+        <p class="note step seed-grow">One day there's a field of grain, and <em>“he knoweth not how.”</em> God's word works like that in a man. You can't force it, and you can't always see it. But it's growing.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="28"></blockquote>
+    <h2 class="rise" style="--d:1">First the blade</h2>
+    <ol class="timeline" aria-label="First the blade, then the ear, then the full corn in the ear, then the harvest.">
+      <li class="lit" style="--k:0"><b>the blade</b><span>a green shoot</span><small>new faith</small></li>
+      <li class="step" style="--k:1"><b>the ear</b><span>the head forms</span><small>growing</small></li>
+      <li class="step" style="--k:2"><b>the full corn</b><span>grain fills the head</span><small>fruit</small></li>
+      <li class="step" style="--k:3"><b>the sickle</b><span>“the harvest is come”</span><small>v. 29</small></li>
+    </ol>
+    <p class="note step"><em>“Corn”</em> in the King James means grain, like wheat or barley. Growth comes in order, one stage after another, and it takes a season. No farmer yells at a green blade for not being a full head of wheat yet.</p>
+    <p class="note step">Be patient with yourself, and with the new man next to you. If you've trusted Christ, God isn't finished with you:</p>
+    <blockquote class="quote step"><p>“Being confident of this very thing, that he which hath begun a good work in you will perform it until the day of Jesus Christ:”</p><cite>Philippians 1:6</cite></blockquote>
+  </div>
+</section>
+
+<section class="slide verse" data-v="30-32" data-hl="a grain of mustard seed|less than all the seeds that be in the earth|becometh greater than all herbs"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="32" data-hl="becometh greater than all herbs"></blockquote>
+    <div class="split">
+      <div class="stage">
+        <svg viewBox="0 0 400 280" role="img" aria-label="A tiny mustard seed in the ground. Then it grows into a tree twice as tall as a man, with birds settling in its branches.">
+          <rect class="mk04-earth" x="0" y="240" width="400" height="40"/>
+          <circle class="mk04-seed" cx="200" cy="238" r="2.5"/>
+          <g class="mk04-mlabel">
+            <line x1="204" y1="234" x2="252" y2="196" stroke-width="2" style="stroke:var(--ink-soft)"/>
+            <text class="mk04-tag" x="256" y="194">a mustard seed,</text>
+            <text class="mk04-tag" x="256" y="212">about a pinhead</text>
+          </g>
+          <g class="mk04-tree">
+            <path class="mk04-limb" d="M199 196 Q170 176 140 152 M201 180 Q232 156 262 140 M199 164 Q186 134 176 110 M201 164 Q216 132 230 106"/>
+            <path class="mk04-trunk" d="M194 240 Q190 200 197 160 L203 160 Q210 200 206 240 Z"/>
+            <g class="mk04-leafy"><circle cx="140" cy="142" r="34"/><circle cx="262" cy="130" r="36"/><circle cx="176" cy="100" r="34"/><circle cx="230" cy="94" r="36"/><circle cx="202" cy="78" r="36"/><circle cx="204" cy="124" r="38"/></g>
+            <g class="mk04-flower"><circle cx="150" cy="122" r="4"/><circle cx="250" cy="110" r="4"/><circle cx="190" cy="66" r="4"/><circle cx="222" cy="80" r="4"/><circle cx="276" cy="140" r="4"/><circle cx="128" cy="150" r="4"/><circle cx="208" cy="104" r="4"/></g>
+          </g>
+          <path class="mk04-fowl" style="--k:0" d="M134 112 Q141 104 148 114 Q155 104 162 112"/>
+          <path class="mk04-fowl" style="--k:1" d="M246 100 Q253 92 260 102 Q267 92 274 100"/>
+          <path class="mk04-fowl" style="--k:2" d="M194 54 Q201 46 208 56 Q215 46 222 54"/>
+          <g class="mk04-man"><circle cx="336" cy="142" r="11"/><path d="M322 240 L325 158 Q336 150 347 158 L350 240 Z"/><text class="mk04-tag" x="336" y="124" text-anchor="middle">a man</text></g>
+          <text class="mk04-big" x="200" y="24" text-anchor="middle">“greater than all herbs”</text>
+        </svg>
+      </div>
+      <div>
+        <h2 class="rise" style="--d:1">A speck to a tree</h2>
+        <p class="note rise" style="--d:2">The mustard seed was the smallest seed a Galilean farmer sowed.</p>
+        <p class="note step mk04-grow">Yet it can grow ten feet tall, with birds in its branches. That's the kingdom: twelve men in a boat, and now believers in every nation.</p>
+        <p class="note step">It works that way in a man too. One day sober. One honest prayer. <em>“For who hath despised the day of small things?”</em> (Zechariah 4:10).</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="slide verse" data-v="33-34" data-hl="as they were able to hear it|he expounded all things to his disciples"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="33" data-hl="as they were able to hear it"></blockquote>
+    <h2 class="rise" style="--d:1">As they were able</h2>
+    <p class="saying rise" style="--d:2">He teaches at the pace <em>you can take.</em></p>
+    <p class="note rise" style="--d:3">Jesus didn't dump everything on the crowd at once. He gave them what they could carry. Then, alone with His disciples, He <em>“expounded,”</em> explained, all of it.</p>
+    <p class="note step">You don't need to understand the whole Bible all at once. Come close, keep asking, and He'll keep opening it up to you, one day at a time.</p>
+  </div>
+</section>
+
+<!-- ======================= PART FOUR: PEACE, BE STILL ======================= -->
+<section class="slide part">
+  <div class="inner">
+    <p class="part-n rise">Part four</p>
+    <h2 class="rise" style="--d:1">Peace, be still</h2>
+    <p class="range rise" style="--d:2">Verses 35–41</p>
+    <div class="rule"></div>
+    <p class="hook rise" style="--d:4">Evening on the lake, a storm out of nowhere, and the Teacher sound asleep.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="35-36" data-hl="Let us pass over unto the other side|they took him even as he was in the ship"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="35" data-hl="Let us pass over unto the other side"></blockquote>
+    <div class="split">
+      <div class="stage">
+        <svg class="map" viewBox="0 0 420 470" role="img" aria-label="Map of the Sea of Galilee. The boat sets out from the north shore near Capernaum and crosses toward the east shore, the country of the Gadarenes. A storm hits in the middle of the lake.">
+          <path class="map-river" d="M238 0 C228 20 248 34 236 62"/>
+          <path class="map-river" d="M206 420 C214 436 198 450 210 470"/>
+          <path class="map-lake" d="M195 58 C250 52 292 82 306 132 C320 188 314 262 294 322 C274 382 240 420 205 424 C168 420 142 382 122 332 C102 278 96 202 110 142 C124 92 150 62 195 58 Z"/>
+          <g class="map-town">
+            <circle cx="146" cy="78" r="7"/><text x="134" y="70" text-anchor="end" font-weight="700">Capernaum</text>
+            <circle cx="104" cy="250" r="7"/><text x="92" y="256" text-anchor="end" font-weight="700">Tiberias</text>
+          </g>
+          <path class="map-route" pathLength="1" d="M140 116 C 180 150, 214 168, 236 196"/>
+          <g class="step map-go1">
+            <path class="map-route r1" pathLength="1" d="M236 196 C 256 220, 276 236, 300 250"/>
+            <text x="318" y="252" font-size="15" font-weight="700" style="fill:var(--accent-hot)">the other side</text>
+            <text class="map-soft" x="318" y="270" font-size="13">the country of</text>
+            <text class="map-soft" x="318" y="286" font-size="13">the Gadarenes (5:1)</text>
+          </g>
+          <g class="map-town here">
+            <circle class="map-ping" cx="236" cy="196" r="10"/>
+            <text x="226" y="226" text-anchor="end" font-size="15">a great storm</text>
+          </g>
+        </svg>
+      </div>
+      <div>
+        <h2 class="rise" style="--d:1">Crossing at evening</h2>
+        <p class="note rise" style="--d:2">After a whole day of teaching: <em>“Let us pass over unto the other side.”</em> They took Him <em>“even as he was,”</em> worn out, in the same boat.</p>
+        <p class="note step map-go1">On the east shore, in Gentile country, a man full of devils was waiting (5:1–20). Jesus crossed the lake for him.</p>
+        <p class="note step">These fishermen knew this water, and Jesus was the one who said go. Obeying Him doesn't keep the storm away.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="slide verse" data-v="37-38" data-hl="there arose a great storm of wind|asleep on a pillow|Master, carest thou not that we perish?"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="38" data-hl="Master, carest thou not that we perish?"></blockquote>
+    <div class="split">
+      <div class="stage">
+        <svg viewBox="0 0 600 320" role="img" aria-label="A small boat rocks in a storm while water fills it. In the back of the boat, Jesus lies asleep on a pillow.">
+          <defs>
+            <clipPath id="mk04-frame"><rect x="0" y="0" width="600" height="320" rx="6"/></clipPath>
+            <clipPath id="mk04-inhull"><path d="M150 200 L450 200 L415 250 L185 250 Z"/></clipPath>
+          </defs>
+          <g clip-path="url(#mk04-frame)">
+            <rect class="mk04-night" x="0" y="0" width="600" height="320"/>
+            <line class="mk04-gust" style="--k:0" x1="420" y1="50" x2="530" y2="50"/>
+            <line class="mk04-gust" style="--k:1" x1="380" y1="94" x2="500" y2="94"/>
+            <line class="mk04-gust" style="--k:2" x1="440" y1="132" x2="540" y2="132"/>
+            <line class="mk04-gust" style="--k:3" x1="350" y1="30" x2="440" y2="30"/>
+            <path class="mk04-wave" d="M0 238 q37.5 -24 75 0 t75 0 t75 0 t75 0 t75 0 t75 0 t75 0 t75 0 t75 0 t75 0 t75 0 t75 0 t75 0 t75 0 t75 0 t75 0 V320 H0 Z"/>
+            <g class="mk04-boat">
+              <path class="mk04-hull" d="M150 200 L450 200 L415 250 L185 250 Z"/>
+              <g clip-path="url(#mk04-inhull)"><rect class="mk04-water" x="150" y="200" width="300" height="50"/></g>
+              <line x1="290" y1="200" x2="290" y2="96" stroke-width="4" style="stroke:var(--leather-light)"/>
+              <g style="fill:var(--ink)"><circle cx="196" cy="190" r="8"/><circle cx="222" cy="188" r="8"/><circle cx="250" cy="191" r="8"/></g>
+              <ellipse class="mk04-pillow" cx="424" cy="194" rx="14" ry="6"/>
+              <circle class="mk04-sleeper" cx="420" cy="186" r="8"/>
+              <path class="mk04-sleeper" d="M410 192 L362 192 Q356 196 362 200 L410 200 Z"/>
+              <text class="mk04-zz" x="428" y="168">z</text>
+            </g>
+            <path class="mk04-wave2" d="M0 264 q37.5 -20 75 0 t75 0 t75 0 t75 0 t75 0 t75 0 t75 0 t75 0 t75 0 t75 0 t75 0 t75 0 t75 0 t75 0 t75 0 t75 0 V320 H0 Z"/>
+          </g>
+        </svg>
+      </div>
+      <div>
+        <h2 class="rise" style="--d:1">Asleep in the storm</h2>
+        <p class="note rise" style="--d:2">The lake sits about 700 feet below sea level, ringed by hills. Wind pours down the valleys and can whip it up in minutes.</p>
+        <p class="note step">Jesus was asleep in the <em>hinder part</em>, the stern, on a cushion: tired as any man, and at perfect peace with His Father.</p>
+        <p class="note step"><em>“Carest thou not?”</em> Every man has prayed that one at 3 a.m. But Jesus was in the same boat, in the same storm. He never left it.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="slide verse" data-v="39-41" data-hl="Peace, be still|there was a great calm|What manner of man is this, that even the wind and the sea obey him?"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="39" data-hl="Peace, be still"></blockquote>
+    <h2 class="rise" style="--d:1">Three words</h2>
+    <div class="stage rise" style="--d:2">
+      <svg class="still" style="max-height:24vh" viewBox="0 0 600 170" role="img" aria-label="Wild, choppy water settles into a calm, still line.">
+        <defs><clipPath id="mk04-clip"><rect x="0" y="0" width="600" height="170"/></clipPath></defs>
+        <g clip-path="url(#mk04-clip)">
+          <g class="still-roll"><path class="still-chop" d="M0 95 Q25 40 50 95 T100 95 T150 95 T200 95 T250 95 T300 95 T350 95 T400 95 T450 95 T500 95 T550 95 T600 95 T650 95 T700 95"/></g>
+          <g class="still-roll b"><path class="still-chop b" d="M0 100 Q25 140 50 100 T100 100 T150 100 T200 100 T250 100 T300 100 T350 100 T400 100 T450 100 T500 100 T550 100 T600 100 T650 100 T700 100"/></g>
+          <path class="still-calm" d="M0 98 Q150 94 300 98 T600 98"/>
+        </g>
+        <text class="before" x="300" y="28" text-anchor="middle" style="fill:var(--cool)">“a great storm of wind”</text>
+        <text class="after" x="300" y="28" text-anchor="middle" style="fill:var(--accent-hot)">“a great calm”</text>
+      </svg>
+    </div>
+    <p class="note rise" style="--d:3">He <em>rebuked</em> the wind the way He rebuked unclean spirits (1:25). <em>“Be still”</em> is literally <em>“be muzzled.”</em></p>
+    <p class="note step still-go">Storms die down slowly. This one stopped at once, and even the waves lay flat. The same voice can speak to the storm in you: the craving, the panic, the rage.</p>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="41" data-hl="What manner of man is this"></blockquote>
+    <h2 class="rise" style="--d:1">What manner of man is this?</h2>
+    <div class="columns">
+      <div class="col law step"><p class="who">A real man</p><h3>tired, asleep on a cushion</h3><p>He got worn out like any of us.</p></div>
+      <div class="col grace step"><p class="who">God with us</p><h3>the wind and the sea obey Him</h3><p>Only the One who made the sea can tell it to sit down.</p></div>
+    </div>
+    <blockquote class="quote step"><p>“He maketh the storm a calm, so that the waves thereof are still.”</p><cite>Psalm 107:29</cite></blockquote>
+    <p class="note step"><em>“Why are ye so fearful?”</em> They were afraid of the storm. After the calm they <em>“feared exceedingly,”</em> but now it was the right kind of fear: awe at who was in their boat. When you know who He is, the storm gets smaller.</p>
+  </div>
+</section>
+
+<!-- ======================= CLOSING ======================= -->
+<section class="slide remember">
+  <div class="inner">
+    <h2 class="rise">Points to remember</h2>
+    <ol class="seeds">
+      <li class="step"><span class="topic">Hearing</span><span class="seed-q">“The sower soweth the word” <cite>4:14</cite></span><span class="take">The seed is always good. What changes is the ground. Let the word in, and let it stay.</span></li>
+      <li class="step"><span class="topic">Thorns</span><span class="seed-q">“Choke the word, and it becometh unfruitful” <cite>4:19</cite></span><span class="take">Worry, money, and cravings crowd out the word. Pull them while they're small.</span></li>
+      <li class="step"><span class="topic">Light</span><span class="seed-q">“To be set on a candlestick” <cite>4:21</cite></span><span class="take">What God has done in you is meant to be seen, not hidden.</span></li>
+      <li class="step"><span class="topic">Growth</span><span class="seed-q">“He knoweth not how” <cite>4:27</cite></span><span class="take">God makes the seed grow, in its season. Be patient with yourself and others.</span></li>
+      <li class="step"><span class="topic">Small beginnings</span><span class="seed-q">“Less than all the seeds that be in the earth” <cite>4:31</cite></span><span class="take">God starts big things small. Don't despise one day, one prayer, one step.</span></li>
+      <li class="step"><span class="topic">Storms</span><span class="seed-q">“Peace, be still” <cite>4:39</cite></span><span class="take">He is in the boat with you, and the wind and the sea obey Him.</span></li>
+    </ol>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 1 of 6</p>
+      <span class="topic">Hearing</span>
+      <h2>What happens to the word in four kinds of hearts?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="15"></blockquote>
+      <blockquote class="quote step" data-q="17" data-hl="endure but for a time"></blockquote>
+      <blockquote class="quote step" data-q="20"></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>On a hard heart, Satan snatches it away. On a shallow heart, it springs up and dies when trouble comes. In a crowded heart, worry, money and cravings choke it. In good ground, it is heard, received, and bears fruit.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 2 of 6</p>
+      <span class="topic">Thorns</span>
+      <h2>What chokes the word in a man's life?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="7"></blockquote>
+      <blockquote class="quote step" data-q="18-19"></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>The cares of this world, the deceitfulness of riches, and the lusts of other things. They grow up slowly beside the word until there's no room for fruit. They come in when we let them, and they're easiest to pull up early.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 3 of 6</p>
+      <span class="topic">Light</span>
+      <h2>What is a candle for?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="21"></blockquote>
+      <blockquote class="quote step" data-q="22"></blockquote>
+      <blockquote class="quote step"><p>“Let your light so shine before men, that they may see your good works, and glorify your Father which is in heaven.”</p><cite>Matthew 5:16</cite></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>To be set up where it gives light. Nobody lights a lamp to hide it. What God has done in your life is meant to be seen, so that others see it and give glory to God.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 4 of 6</p>
+      <span class="topic">Growth</span>
+      <h2>Who makes the seed grow?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="27"></blockquote>
+      <blockquote class="quote step" data-q="28"></blockquote>
+      <blockquote class="quote step"><p>“Being confident of this very thing, that he which hath begun a good work in you will perform it until the day of Jesus Christ:”</p><cite>Philippians 1:6</cite></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>God does. The farmer sows and sleeps, and the seed grows, he knows not how. Growth comes in stages, the blade, the ear, the full corn. God finishes what He starts in a believer.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 5 of 6</p>
+      <span class="topic">Small beginnings</span>
+      <h2>What does the mustard seed teach us?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="31"></blockquote>
+      <blockquote class="quote step" data-q="32"></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>God's kingdom starts small and grows big. Twelve men became believers in every nation. In a man's life, too, God can take a tiny start and grow it into something others find shelter in.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 6 of 6</p>
+      <span class="topic">Storms</span>
+      <h2>Does Jesus care when we feel like we're going under?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="38"></blockquote>
+      <blockquote class="quote step" data-q="39"></blockquote>
+      <blockquote class="quote step" data-q="40"></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>Yes. He was in the same boat, in the same storm. One word from Him and there was a great calm. He doesn't promise we'll never face storms, but He never leaves the boat, and the wind and the sea obey Him.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide prayer">
+  <div class="inner">
+    <div class="emblem rise"></div>
+    <h2 class="rise" style="--d:1">Prayer requests</h2>
+    <p class="ask-line rise" style="--d:2">What can we pray about for you today?</p>
+    <blockquote class="quote rise" style="--d:4"><p>“Thou wilt keep him in perfect peace, whose mind is stayed on thee: because he trusteth in thee.”</p><cite>Isaiah 26:3</cite></blockquote>
+  </div>
+</section>
+
+</main>
+
+<script>
+// King James Version, Mark chapter 4
+const V = {
+  1: "And he began again to teach by the sea side: and there was gathered unto him a great multitude, so that he entered into a ship, and sat in the sea; and the whole multitude was by the sea on the land.",
+  2: "And he taught them many things by parables, and said unto them in his doctrine,",
+  3: "Hearken; Behold, there went out a sower to sow:",
+  4: "And it came to pass, as he sowed, some fell by the way side, and the fowls of the air came and devoured it up.",
+  5: "And some fell on stony ground, where it had not much earth; and immediately it sprang up, because it had no depth of earth:",
+  6: "But when the sun was up, it was scorched; and because it had no root, it withered away.",
+  7: "And some fell among thorns, and the thorns grew up, and choked it, and it yielded no fruit.",
+  8: "And other fell on good ground, and did yield fruit that sprang up and increased; and brought forth, some thirty, and some sixty, and some an hundred.",
+  9: "And he said unto them, He that hath ears to hear, let him hear.",
+  10: "And when he was alone, they that were about him with the twelve asked of him the parable.",
+  11: "And he said unto them, Unto you it is given to know the mystery of the kingdom of God: but unto them that are without, all these things are done in parables:",
+  12: "That seeing they may see, and not perceive; and hearing they may hear, and not understand; lest at any time they should be converted, and their sins should be forgiven them.",
+  13: "And he said unto them, Know ye not this parable? and how then will ye know all parables?",
+  14: "The sower soweth the word.",
+  15: "And these are they by the way side, where the word is sown; but when they have heard, Satan cometh immediately, and taketh away the word that was sown in their hearts.",
+  16: "And these are they likewise which are sown on stony ground; who, when they have heard the word, immediately receive it with gladness;",
+  17: "And have no root in themselves, and so endure but for a time: afterward, when affliction or persecution ariseth for the word’s sake, immediately they are offended.",
+  18: "And these are they which are sown among thorns; such as hear the word,",
+  19: "And the cares of this world, and the deceitfulness of riches, and the lusts of other things entering in, choke the word, and it becometh unfruitful.",
+  20: "And these are they which are sown on good ground; such as hear the word, and receive it, and bring forth fruit, some thirtyfold, some sixty, and some an hundred.",
+  21: "And he said unto them, Is a candle brought to be put under a bushel, or under a bed? and not to be set on a candlestick?",
+  22: "For there is nothing hid, which shall not be manifested; neither was any thing kept secret, but that it should come abroad.",
+  23: "If any man have ears to hear, let him hear.",
+  24: "And he said unto them, Take heed what ye hear: with what measure ye mete, it shall be measured to you: and unto you that hear shall more be given.",
+  25: "For he that hath, to him shall be given: and he that hath not, from him shall be taken even that which he hath.",
+  26: "And he said, So is the kingdom of God, as if a man should cast seed into the ground;",
+  27: "And should sleep, and rise night and day, and the seed should spring and grow up, he knoweth not how.",
+  28: "For the earth bringeth forth fruit of herself; first the blade, then the ear, after that the full corn in the ear.",
+  29: "But when the fruit is brought forth, immediately he putteth in the sickle, because the harvest is come.",
+  30: "And he said, Whereunto shall we liken the kingdom of God? or with what comparison shall we compare it?",
+  31: "It is like a grain of mustard seed, which, when it is sown in the earth, is less than all the seeds that be in the earth:",
+  32: "But when it is sown, it groweth up, and becometh greater than all herbs, and shooteth out great branches; so that the fowls of the air may lodge under the shadow of it.",
+  33: "And with many such parables spake he the word unto them, as they were able to hear it.",
+  34: "But without a parable spake he not unto them: and when they were alone, he expounded all things to his disciples.",
+  35: "And the same day, when the even was come, he saith unto them, Let us pass over unto the other side.",
+  36: "And when they had sent away the multitude, they took him even as he was in the ship. And there were also with him other little ships.",
+  37: "And there arose a great storm of wind, and the waves beat into the ship, so that it was now full.",
+  38: "And he was in the hinder part of the ship, asleep on a pillow: and they awake him, and say unto him, Master, carest thou not that we perish?",
+  39: "And he arose, and rebuked the wind, and said unto the sea, Peace, be still. And the wind ceased, and there was a great calm.",
+  40: "And he said unto them, Why are ye so fearful? how is it that ye have no faith?",
+  41: "And they feared exceedingly, and said one to another, What manner of man is this, that even the wind and the sea obey him?"
+};
+const BOOK = "Mark 4";
+</script>
+<script src="../assets/deck.js"></script>
+</body>
+</html>
