@@ -7010,6 +7010,114 @@ window.STUDIES = [
     }
   },
   {
+    "id": "matthew-27",
+    "type": "chapter",
+    "book": "Matthew",
+    "ch": 27,
+    "date": "2026-10-29",
+    "title": "Matthew 27",
+    "sub": "Truly this was the Son of God",
+    "about": "Judas comes to a dark end, Barabbas walks free, and Jesus is crucified. The sky goes dark, the veil tears, and a Roman soldier confesses who He is.",
+    "tags": [
+      "The cross",
+      "Substitution",
+      "Regret and repentance",
+      "Prophecy fulfilled",
+      "Access to God",
+      "Hope"
+    ],
+    "url": "studies/matthew-27.html",
+    "overview": {
+      "where": "Jerusalem: the temple, Pilate's hall, Golgotha outside the city, and Joseph's tomb in the rock",
+      "when": "The Friday of Passover week, about A.D. 30, from dawn to evening, and the sabbath after",
+      "people": [
+        "jesus",
+        "judas-iscariot",
+        "chief-priests",
+        "elders",
+        "pilate",
+        "pilates-wife",
+        "barabbas",
+        "simon-of-cyrene",
+        "two-thieves",
+        "centurion-at-the-cross",
+        "mary-magdalene",
+        "mary-mother-of-james",
+        "joseph-of-arimathaea"
+      ],
+      "places": [
+        "temple",
+        "field-of-blood",
+        "hall-of-judgment",
+        "golgotha",
+        "holy-city",
+        "sepulchre"
+      ],
+      "story": [
+        "At dawn the council sends Jesus bound to Pilate. Judas, sick with regret, throws the silver into the temple and hangs himself; the priests buy the potter's field (1–10).",
+        "Jesus stays silent before Pilate. Pilate's wife warns him, but the crowd chooses Barabbas. Pilate washes his hands and hands Jesus over (11–26).",
+        "The soldiers mock Him with a scarlet robe and a crown of thorns. Simon of Cyrene carries the cross to Golgotha, where Jesus is crucified between two thieves and mocked: “He saved others; himself he cannot save” (27–44).",
+        "Darkness covers the land from the sixth hour to the ninth. Jesus cries, “My God, my God, why hast thou forsaken me?” and yields up the ghost. The veil tears from top to bottom, and the centurion says, “Truly this was the Son of God” (45–56).",
+        "Joseph of Arimathaea lays Him in his own new tomb. The chief priests have the stone sealed and a watch set (57–66)."
+      ],
+      "key": {
+        "ref": "Matthew 27:54",
+        "text": "Now when the centurion, and they that were with him, watching Jesus, saw the earthquake, and those things that were done, they feared greatly, saying, Truly this was the Son of God."
+      },
+      "big": "The innocent One died in the place of the guilty. He stayed on the cross and was forsaken so that whosoever comes to God through Him is never forsaken, and the torn veil says the way in is open."
+    }
+  },
+  {
+    "id": "matthew-28",
+    "type": "chapter",
+    "book": "Matthew",
+    "ch": 28,
+    "date": "2026-10-29",
+    "title": "Matthew 28",
+    "sub": "He is risen, as he said",
+    "about": "The stone rolls away, the risen Jesus calls His runaway disciples “my brethren,” and He sends them to all nations with a promise: I am with you alway.",
+    "tags": [
+      "Resurrection",
+      "God keeps His word",
+      "Restoration",
+      "Doubt",
+      "The Great Commission",
+      "Baptism"
+    ],
+    "url": "studies/matthew-28.html",
+    "overview": {
+      "where": "The tomb outside Jerusalem, then a mountain in Galilee",
+      "when": "The first day of the week, at dawn, after the crucifixion (about A.D. 30), and some days later in Galilee",
+      "people": [
+        "jesus",
+        "mary-magdalene",
+        "mary-mother-of-james",
+        "angels",
+        "the-watch-at-the-tomb",
+        "chief-priests",
+        "elders",
+        "the-eleven",
+        "disciples"
+      ],
+      "places": [
+        "sepulchre",
+        "galilee",
+        "mountain-in-galilee"
+      ],
+      "story": [
+        "At dawn on the first day of the week, two Marys come to the tomb. An earthquake, an angel rolls back the stone and sits on it, and the guards become as dead men (1–4).",
+        "“Fear not … He is not here: for he is risen, as he said.” The women run with fear and great joy, and Jesus meets them: “go tell my brethren” (5–10).",
+        "The guards report to the chief priests, who pay them large money to say the disciples stole the body while they slept (11–15).",
+        "On a mountain in Galilee the eleven worship Him, though some doubt. Jesus says all power is His: go, teach all nations, baptizing and teaching them, “and, lo, I am with you alway” (16–20)."
+      ],
+      "key": {
+        "ref": "Matthew 28:6",
+        "text": "He is not here: for he is risen, as he said. Come, see the place where the Lord lay."
+      },
+      "big": "Jesus rose, just as He said. He welcomes back the men who ran, comes toward those who doubt, and sends every believer out to make disciples, with His promise to be with us every day."
+    }
+  },
+  {
     "id": "mark-01",
     "type": "chapter",
     "book": "Mark",

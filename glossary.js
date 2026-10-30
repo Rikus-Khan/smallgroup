@@ -77,6 +77,12 @@ window.GLOSSARY = [
     "Matthew", 26,
     [ 1, 4, 6, 10, 17, 19, 26, 31, 34, 36, 49, 50, 51, 52, 55, 57, 59, 63, 64, 69, 71, 75 ] ],
    [
+    "Matthew", 27,
+    [ 1, 11, 17, 20, 22, 26, 27, 46, 50, 54, 55, 57, 58 ] ],
+   [
+    "Matthew", 28,
+    [ 5, 9, 10, 16, 18 ] ],
+   [
     "Mark", 1,
     [ 1, 9, 14, 17, 24, 25, 41, 45 ] ],
    [
@@ -638,6 +644,9 @@ window.GLOSSARY = [
     "Matthew", 17,
     [ 3, 4, 10, 11, 12 ] ],
    [
+    "Matthew", 27,
+    [ 47, 49 ] ],
+   [
     "Mark", 6,
     [ 15 ] ],
    [
@@ -797,6 +806,9 @@ window.GLOSSARY = [
     "Matthew", 26,
     [ 29, 39, 42, 53 ] ],
    [
+    "Matthew", 28,
+    [ 19 ] ],
+   [
     "Mark", 8,
     [ 38 ] ],
    [
@@ -904,6 +916,9 @@ window.GLOSSARY = [
    [
     "Matthew", 22,
     [ 43 ] ],
+   [
+    "Matthew", 28,
+    [ 19 ] ],
    [
     "Mark", 1,
     [ 8, 10, 12 ] ],
@@ -1015,6 +1030,12 @@ window.GLOSSARY = [
    [
     "Matthew", 26,
     [ 1, 8, 17, 18, 19, 26, 35, 36, 40, 45, 56 ] ],
+   [
+    "Matthew", 27,
+    [ 64 ] ],
+   [
+    "Matthew", 28,
+    [ 7, 8, 9, 13, 16 ] ],
    [
     "Mark", 2,
     [ 15, 16, 18, 23 ] ],
@@ -1213,6 +1234,9 @@ window.GLOSSARY = [
    [
     "Matthew", 23,
     [ 2, 13, 14, 15, 23, 25, 26, 27, 29 ] ],
+   [
+    "Matthew", 27,
+    [ 62 ] ],
    [
     "Mark", 2,
     [ 16, 18, 24 ] ],
@@ -2216,6 +2240,12 @@ window.GLOSSARY = [
     "Matthew", 26,
     [ 32, 69 ] ],
    [
+    "Matthew", 27,
+    [ 55 ] ],
+   [
+    "Matthew", 28,
+    [ 7, 10, 16 ] ],
+   [
     "Mark", 1,
     [ 9, 14, 16, 28, 39 ] ],
    [
@@ -2465,6 +2495,9 @@ window.GLOSSARY = [
     "Matthew", 26,
     [ 55, 61 ] ],
    [
+    "Matthew", 27,
+    [ 5, 40, 51 ] ],
+   [
     "Mark", 11,
     [ 11, 15, 16, 27 ] ],
    [
@@ -2678,6 +2711,9 @@ window.GLOSSARY = [
     "Matthew", 19,
     [ 28 ] ],
    [
+    "Matthew", 27,
+    [ 9, 42 ] ],
+   [
     "Mark", 12,
     [ 29 ] ],
    [
@@ -2818,6 +2854,9 @@ window.GLOSSARY = [
    [
     "Matthew", 26,
     [ 64 ] ],
+   [
+    "Matthew", 28,
+    [ 2, 18 ] ],
    [
     "Mark", 1,
     [ 11 ] ],
@@ -3262,6 +3301,9 @@ window.GLOSSARY = [
    [
     "Matthew", 25,
     [ 30 ] ],
+   [
+    "Matthew", 27,
+    [ 45 ] ],
    [
     "Mark", 15,
     [ 33 ] ],
@@ -3725,6 +3767,9 @@ window.GLOSSARY = [
     "Matthew", 26,
     [ 63, 68 ] ],
    [
+    "Matthew", 27,
+    [ 17, 22 ] ],
+   [
     "Mark", 1,
     [ 1 ] ],
    [
@@ -3817,6 +3862,9 @@ window.GLOSSARY = [
    [
     "Matthew", 26,
     [ 63 ] ],
+   [
+    "Matthew", 27,
+    [ 40, 43, 54 ] ],
    [
     "Mark", 1,
     [ 1 ] ],
@@ -3992,6 +4040,9 @@ window.GLOSSARY = [
   "name": "King of Israel",
   "refs": [
    [
+    "Matthew", 27,
+    [ 42 ] ],
+   [
     "Mark", 15,
     [ 32 ] ],
    [
@@ -4048,6 +4099,9 @@ window.GLOSSARY = [
    [
     "Matthew", 24,
     [ 23, 26 ] ],
+   [
+    "Matthew", 27,
+    [ 42 ] ],
    [
     "Mark", 1,
     [ 15 ] ],
@@ -4184,6 +4238,9 @@ window.GLOSSARY = [
     "Matthew", 26,
     [ 59, 62 ] ],
    [
+    "Matthew", 27,
+    [ 13 ] ],
+   [
     "Mark", 10,
     [ 19 ] ],
    [
@@ -4243,6 +4300,9 @@ window.GLOSSARY = [
    [
     "Matthew", 20,
     [ 22, 23 ] ],
+   [
+    "Matthew", 28,
+    [ 19 ] ],
    [
     "Mark", 1,
     [ 4, 5, 8, 9 ] ],
@@ -4630,6 +4690,9 @@ window.GLOSSARY = [
    [
     "Matthew", 23,
     [ 34 ] ],
+   [
+    "Matthew", 27,
+    [ 26 ] ],
    [
     "Mark", 10,
     [ 34 ] ],
@@ -6680,6 +6743,12 @@ window.GLOSSARY = [
     "Matthew", 22,
     [ 15 ] ],
    [
+    "Matthew", 27,
+    [ 1, 7 ] ],
+   [
+    "Matthew", 28,
+    [ 12 ] ],
+   [
     "Mark", 3,
     [ 6 ] ],
    [
@@ -7424,6 +7493,9 @@ window.GLOSSARY = [
     "Matthew", 24,
     [ 20 ] ],
    [
+    "Matthew", 28,
+    [ 1 ] ],
+   [
     "Mark", 1,
     [ 21 ] ],
    [
@@ -7795,6 +7867,9 @@ window.GLOSSARY = [
    [
     "Matthew", 26,
     [ 14, 25, 47 ] ],
+   [
+    "Matthew", 27,
+    [ 3 ] ],
    [
     "Mark", 3,
     [ 19 ] ],
@@ -8396,6 +8471,9 @@ window.GLOSSARY = [
     "Matthew", 5,
     [ 11 ] ],
    [
+    "Matthew", 27,
+    [ 39 ] ],
+   [
     "Mark", 15,
     [ 32 ] ],
    [
@@ -8443,6 +8521,9 @@ window.GLOSSARY = [
    [
     "Matthew", 20,
     [ 20 ] ],
+   [
+    "Matthew", 28,
+    [ 9, 17 ] ],
    [
     "Mark", 5,
     [ 6 ] ],
@@ -8767,6 +8848,12 @@ window.GLOSSARY = [
    [
     "Matthew", 26,
     [ 3, 14, 47, 59 ] ],
+   [
+    "Matthew", 27,
+    [ 1, 3, 6, 12, 20, 41, 62 ] ],
+   [
+    "Matthew", 28,
+    [ 11 ] ],
    [
     "Mark", 8,
     [ 31 ] ],
@@ -9188,6 +9275,9 @@ window.GLOSSARY = [
     "Matthew", 26,
     [ 3, 57 ] ],
    [
+    "Matthew", 27,
+    [ 41 ] ],
+   [
     "Mark", 1,
     [ 22 ] ],
    [
@@ -9400,6 +9490,9 @@ window.GLOSSARY = [
    [
     "Matthew", 20,
     [ 18 ] ],
+   [
+    "Matthew", 27,
+    [ 3 ] ],
    [
     "Mark", 10,
     [ 33 ] ],
@@ -9998,6 +10091,9 @@ window.GLOSSARY = [
   "name": "The sixth hour",
   "refs": [
    [
+    "Matthew", 27,
+    [ 45 ] ],
+   [
     "Mark", 15,
     [ 33 ] ],
    [
@@ -10066,6 +10162,12 @@ window.GLOSSARY = [
   "kind": "person",
   "name": "Mary Magdalene",
   "refs": [
+   [
+    "Matthew", 27,
+    [ 56, 61 ] ],
+   [
+    "Matthew", 28,
+    [ 1 ] ],
    [
     "Mark", 15,
     [ 40, 47 ] ],
@@ -10163,6 +10265,9 @@ window.GLOSSARY = [
     "Matthew", 26,
     [ 53 ] ],
    [
+    "Matthew", 28,
+    [ 2, 5 ] ],
+   [
     "Mark", 1,
     [ 13 ] ],
    [
@@ -10220,6 +10325,12 @@ window.GLOSSARY = [
   "name": "The sepulchre (the tomb)",
   "refs": [
    [
+    "Matthew", 27,
+    [ 60, 61, 64, 66 ] ],
+   [
+    "Matthew", 28,
+    [ 1, 8 ] ],
+   [
     "Mark", 15,
     [ 46 ] ],
    [
@@ -10240,6 +10351,9 @@ window.GLOSSARY = [
   "kind": "term",
   "name": "The first day of the week (Sunday)",
   "refs": [
+   [
+    "Matthew", 28,
+    [ 1 ] ],
    [
     "Mark", 16,
     [ 2, 9 ] ],
@@ -10415,6 +10529,9 @@ window.GLOSSARY = [
     "Matthew", 26,
     [ 37 ] ],
    [
+    "Matthew", 27,
+    [ 56 ] ],
+   [
     "Mark", 1,
     [ 19, 20, 29 ] ],
    [
@@ -10531,6 +10648,9 @@ window.GLOSSARY = [
    [
     "Matthew", 24,
     [ 1, 24 ] ],
+   [
+    "Matthew", 28,
+    [ 11 ] ],
    [
     "Mark", 1,
     [ 44 ] ],
@@ -10888,6 +11008,12 @@ window.GLOSSARY = [
    [
     "Matthew", 22,
     [ 23, 28, 30, 31 ] ],
+   [
+    "Matthew", 27,
+    [ 53, 64 ] ],
+   [
+    "Matthew", 28,
+    [ 6, 7 ] ],
    [
     "Mark", 12,
     [ 18, 23 ] ],
@@ -11290,6 +11416,9 @@ window.GLOSSARY = [
    [
     "Matthew", 26,
     [ 2, 16, 21, 23, 24, 25, 45, 46, 48 ] ],
+   [
+    "Matthew", 27,
+    [ 3, 4 ] ],
    [
     "Mark", 13,
     [ 12 ] ],
@@ -11762,6 +11891,12 @@ window.GLOSSARY = [
   "name": "Pontius Pilate",
   "refs": [
    [
+    "Matthew", 27,
+    [ 2, 11, 13, 14, 15, 17, 21, 22, 23, 24, 27, 58, 62, 65 ] ],
+   [
+    "Matthew", 28,
+    [ 14 ] ],
+   [
     "Mark", 15,
     [ 1, 2, 4, 5, 9, 12, 14, 15, 43, 44 ] ],
    [
@@ -11785,6 +11920,9 @@ window.GLOSSARY = [
   "kind": "person",
   "name": "Barabbas",
   "refs": [
+   [
+    "Matthew", 27,
+    [ 16, 17, 20, 21, 26 ] ],
    [
     "Mark", 15,
     [ 7, 11, 15 ] ],
@@ -11819,6 +11957,9 @@ window.GLOSSARY = [
   "name": "The hall of judgment (Praetorium)",
   "refs": [
    [
+    "Matthew", 27,
+    [ 27 ] ],
+   [
     "Mark", 15,
     [ 16 ] ],
    [
@@ -11833,6 +11974,9 @@ window.GLOSSARY = [
   "kind": "term",
   "name": "Band (a Roman cohort)",
   "refs": [
+   [
+    "Matthew", 27,
+    [ 27 ] ],
    [
     "Mark", 15,
     [ 16 ] ],
@@ -11881,6 +12025,9 @@ window.GLOSSARY = [
    [
     "Matthew", 2,
     [ 2 ] ],
+   [
+    "Matthew", 27,
+    [ 11, 29, 37 ] ],
    [
     "Mark", 15,
     [ 2, 9, 12, 18, 26 ] ],
@@ -11933,6 +12080,12 @@ window.GLOSSARY = [
     "Matthew", 8,
     [ 9 ] ],
    [
+    "Matthew", 27,
+    [ 27 ] ],
+   [
+    "Matthew", 28,
+    [ 12 ] ],
+   [
     "Mark", 15,
     [ 16 ] ],
    [
@@ -11957,6 +12110,9 @@ window.GLOSSARY = [
   "name": "Joseph of Arimathaea",
   "refs": [
    [
+    "Matthew", 27,
+    [ 57 ] ],
+   [
     "Mark", 15,
     [ 43, 45 ] ],
    [
@@ -11978,6 +12134,9 @@ window.GLOSSARY = [
   "name": "Golgotha (the place of a skull)",
   "refs": [
    [
+    "Matthew", 27,
+    [ 33 ] ],
+   [
     "Mark", 15,
     [ 22 ] ],
    [
@@ -11989,6 +12148,9 @@ window.GLOSSARY = [
   "kind": "term",
   "name": "Crown of thorns",
   "refs": [
+   [
+    "Matthew", 27,
+    [ 29 ] ],
    [
     "Mark", 15,
     [ 17 ] ],
@@ -12028,6 +12190,12 @@ window.GLOSSARY = [
    [
     "Matthew", 26,
     [ 2 ] ],
+   [
+    "Matthew", 27,
+    [ 22, 23, 26, 31, 32, 35, 38, 40, 42, 44 ] ],
+   [
+    "Matthew", 28,
+    [ 5 ] ],
    [
     "Mark", 8,
     [ 34 ] ],
@@ -12077,6 +12245,9 @@ window.GLOSSARY = [
     "Nahum", 3,
     [ 10 ] ],
    [
+    "Matthew", 27,
+    [ 35 ] ],
+   [
     "Mark", 15,
     [ 24 ] ],
    [
@@ -12094,6 +12265,9 @@ window.GLOSSARY = [
    [
     "Proverbs", 25,
     [ 20 ] ],
+   [
+    "Matthew", 27,
+    [ 34, 48 ] ],
    [
     "Mark", 15,
     [ 36 ] ],
@@ -12125,6 +12299,9 @@ window.GLOSSARY = [
   "name": "Gave up the ghost",
   "refs": [
    [
+    "Matthew", 27,
+    [ 50 ] ],
+   [
     "Mark", 15,
     [ 37, 39 ] ],
    [
@@ -12139,6 +12316,9 @@ window.GLOSSARY = [
    [
     "Nahum", 2,
     [ 3 ] ],
+   [
+    "Matthew", 27,
+    [ 62 ] ],
    [
     "Mark", 15,
     [ 42 ] ],
@@ -12286,6 +12466,12 @@ window.GLOSSARY = [
    [
     "Matthew", 26,
     [ 3, 47, 57, 59 ] ],
+   [
+    "Matthew", 27,
+    [ 1, 3, 12, 20, 41 ] ],
+   [
+    "Matthew", 28,
+    [ 12 ] ],
    [
     "Mark", 8,
     [ 31 ] ],
@@ -14535,7 +14721,10 @@ window.GLOSSARY = [
     [ 7 ] ],
    [
     "Amos", 6,
-    [ 12 ] ] ]
+    [ 12 ] ],
+   [
+    "Matthew", 27,
+    [ 34 ] ] ]
  },
  {
   "id": "seven-stars-and-orion",
@@ -18279,7 +18468,10 @@ window.GLOSSARY = [
     [ 12, 13 ] ],
    [
     "Matthew", 26,
-    [ 15 ] ] ]
+    [ 15 ] ],
+   [
+    "Matthew", 27,
+    [ 3, 9 ] ] ]
  },
  {
   "id": "potter",
@@ -18288,7 +18480,10 @@ window.GLOSSARY = [
   "refs": [
    [
     "Zechariah", 11,
-    [ 13 ] ] ]
+    [ 13 ] ],
+   [
+    "Matthew", 27,
+    [ 7, 10 ] ] ]
  },
  {
   "id": "prised",
@@ -19459,6 +19654,9 @@ window.GLOSSARY = [
    [
     "Matthew", 21,
     [ 29, 32 ] ],
+   [
+    "Matthew", 27,
+    [ 3 ] ],
    [
     "Mark", 1,
     [ 4, 15 ] ],
@@ -21486,7 +21684,10 @@ window.GLOSSARY = [
   "refs": [
    [
     "Matthew", 4,
-    [ 5 ] ] ]
+    [ 5 ] ],
+   [
+    "Matthew", 27,
+    [ 53 ] ] ]
  },
  {
   "id": "pinnacle-of-the-temple",
@@ -21956,6 +22157,9 @@ window.GLOSSARY = [
     "Matthew", 21,
     [ 31 ] ],
    [
+    "Matthew", 27,
+    [ 21, 51 ] ],
+   [
     "Mark", 10,
     [ 8 ] ],
    [
@@ -22116,7 +22320,10 @@ window.GLOSSARY = [
     [ 15, 17, 23 ] ],
    [
     "Matthew", 21,
-    [ 4 ] ] ]
+    [ 4 ] ],
+   [
+    "Matthew", 27,
+    [ 9, 35 ] ] ]
  },
  {
   "id": "firstborn-son",
@@ -22167,7 +22374,10 @@ window.GLOSSARY = [
     [ 17 ] ],
    [
     "Matthew", 16,
-    [ 14 ] ] ]
+    [ 14 ] ],
+   [
+    "Matthew", 27,
+    [ 9 ] ] ]
  },
  {
   "id": "star",
@@ -22448,6 +22658,9 @@ window.GLOSSARY = [
     "Matthew", 6,
     [ 13 ] ],
    [
+    "Matthew", 28,
+    [ 20 ] ],
+   [
     "Mark", 16,
     [ 20 ] ] ]
  },
@@ -22546,6 +22759,12 @@ window.GLOSSARY = [
    [
     "Matthew", 17,
     [ 2 ] ],
+   [
+    "Matthew", 27,
+    [ 31 ] ],
+   [
+    "Matthew", 28,
+    [ 3 ] ],
    [
     "Mark", 9,
     [ 3 ] ],
@@ -23826,7 +24045,10 @@ window.GLOSSARY = [
     [ 39, 40, 49 ] ],
    [
     "Matthew", 24,
-    [ 3 ] ] ]
+    [ 3 ] ],
+   [
+    "Matthew", 28,
+    [ 20 ] ] ]
  },
  {
   "id": "furnace-of-fire",
@@ -24799,6 +25021,9 @@ window.GLOSSARY = [
    [
     "Matthew", 20,
     [ 19 ] ],
+   [
+    "Matthew", 27,
+    [ 64 ] ],
    [
     "Mark", 8,
     [ 31 ] ],
@@ -25851,7 +26076,10 @@ window.GLOSSARY = [
   "refs": [
    [
     "Matthew", 20,
-    [ 20 ] ] ]
+    [ 20 ] ],
+   [
+    "Matthew", 27,
+    [ 56 ] ] ]
  },
  {
   "id": "princes-of-the-gentiles",
@@ -28472,6 +28700,9 @@ window.GLOSSARY = [
   "name": "Simon of Cyrene, who carried the cross",
   "refs": [
    [
+    "Matthew", 27,
+    [ 32 ] ],
+   [
     "Mark", 15,
     [ 21 ] ] ]
  },
@@ -28502,6 +28733,12 @@ window.GLOSSARY = [
   "name": "Mary the mother of James the less and of Joses",
   "refs": [
    [
+    "Matthew", 27,
+    [ 56, 61 ] ],
+   [
+    "Matthew", 28,
+    [ 1 ] ],
+   [
     "Mark", 15,
     [ 40, 47 ] ],
    [
@@ -28513,6 +28750,9 @@ window.GLOSSARY = [
   "kind": "person",
   "name": "The centurion at the cross",
   "refs": [
+   [
+    "Matthew", 27,
+    [ 54 ] ],
    [
     "Mark", 15,
     [ 39, 44, 45 ] ] ]
@@ -28540,6 +28780,9 @@ window.GLOSSARY = [
    [
     "Proverbs", 27,
     [ 4 ] ],
+   [
+    "Matthew", 27,
+    [ 18 ] ],
    [
     "Mark", 15,
     [ 10 ] ] ]
@@ -28574,6 +28817,9 @@ window.GLOSSARY = [
     "Matthew", 20,
     [ 5 ] ],
    [
+    "Matthew", 27,
+    [ 45, 46 ] ],
+   [
     "Mark", 15,
     [ 33, 34 ] ] ]
  },
@@ -28582,6 +28828,9 @@ window.GLOSSARY = [
   "kind": "term",
   "name": "The superscription of His accusation (the charge over the cross)",
   "refs": [
+   [
+    "Matthew", 27,
+    [ 37 ] ],
    [
     "Mark", 15,
     [ 26 ] ] ]
@@ -28592,6 +28841,9 @@ window.GLOSSARY = [
   "name": "The two thieves crucified with Jesus",
   "refs": [
    [
+    "Matthew", 27,
+    [ 38, 44 ] ],
+   [
     "Mark", 15,
     [ 27, 32 ] ] ]
  },
@@ -28600,6 +28852,9 @@ window.GLOSSARY = [
   "kind": "term",
   "name": "Wagging their heads (scorn, as in Psalm 22:7)",
   "refs": [
+   [
+    "Matthew", 27,
+    [ 39 ] ],
    [
     "Mark", 15,
     [ 29 ] ] ]
@@ -28610,6 +28865,9 @@ window.GLOSSARY = [
   "name": "Eloi, Eloi, lama sabachthani (My God, my God, why hast thou forsaken me?)",
   "refs": [
    [
+    "Matthew", 27,
+    [ 46 ] ],
+   [
     "Mark", 15,
     [ 34 ] ] ]
  },
@@ -28619,6 +28877,9 @@ window.GLOSSARY = [
   "name": "The veil of the temple",
   "refs": [
    [
+    "Matthew", 27,
+    [ 51 ] ],
+   [
     "Mark", 15,
     [ 38 ] ] ]
  },
@@ -28627,6 +28888,12 @@ window.GLOSSARY = [
   "kind": "term",
   "name": "The stone at the door of the tomb",
   "refs": [
+   [
+    "Matthew", 27,
+    [ 60, 66 ] ],
+   [
+    "Matthew", 28,
+    [ 2 ] ],
    [
     "Mark", 15,
     [ 46 ] ],
@@ -28657,6 +28924,9 @@ window.GLOSSARY = [
   "kind": "person",
   "name": "The eleven (the apostles, after Judas)",
   "refs": [
+   [
+    "Matthew", 28,
+    [ 16 ] ],
    [
     "Mark", 16,
     [ 14 ] ] ]
@@ -28927,5 +29197,188 @@ window.GLOSSARY = [
    [
     "Luke", 22,
     [ 39 ] ] ]
+ },
+ {
+  "id": "pilates-wife",
+  "kind": "person",
+  "name": "Pilate's wife (“Have thou nothing to do with that just man”)",
+  "refs": [
+   [
+    "Matthew", 27,
+    [ 19 ] ] ]
+ },
+ {
+  "id": "field-of-blood",
+  "kind": "place",
+  "name": "The field of blood (the potter's field, bought with Judas' silver)",
+  "refs": [
+   [
+    "Matthew", 27,
+    [ 6, 8 ] ] ]
+ },
+ {
+  "id": "judgment-seat",
+  "kind": "term",
+  "name": "The judgment seat (where a Roman governor gave sentence)",
+  "refs": [
+   [
+    "Matthew", 27,
+    [ 19 ] ] ]
+ },
+ {
+  "id": "washed-his-hands",
+  "kind": "term",
+  "name": "Pilate washed his hands (“I am innocent of the blood of this just person”)",
+  "refs": [
+   [
+    "Matthew", 27,
+    [ 24 ] ] ]
+ },
+ {
+  "id": "scarlet-robe",
+  "kind": "term",
+  "name": "The scarlet robe (a soldier's cloak, put on Him to mock a king)",
+  "refs": [
+   [
+    "Matthew", 27,
+    [ 28 ] ] ]
+ },
+ {
+  "id": "earthquake-cross-and-tomb",
+  "kind": "term",
+  "name": "The earthquake (when Jesus died, and at the empty tomb)",
+  "refs": [
+   [
+    "Matthew", 27,
+    [ 51, 54 ] ],
+   [
+    "Matthew", 28,
+    [ 2 ] ] ]
+ },
+ {
+  "id": "saints-which-slept",
+  "kind": "person",
+  "name": "The saints which slept (raised and seen in the holy city after His resurrection)",
+  "refs": [
+   [
+    "Matthew", 27,
+    [ 52 ] ] ]
+ },
+ {
+  "id": "women-from-galilee",
+  "kind": "person",
+  "name": "The women who followed Jesus from Galilee",
+  "refs": [
+   [
+    "Matthew", 27,
+    [ 55 ] ],
+   [
+    "Matthew", 28,
+    [ 5 ] ] ]
+ },
+ {
+  "id": "the-watch-at-the-tomb",
+  "kind": "person",
+  "name": "The watch (the soldiers guarding the tomb), the keepers",
+  "refs": [
+   [
+    "Matthew", 27,
+    [ 65, 66 ] ],
+   [
+    "Matthew", 28,
+    [ 4, 11 ] ] ]
+ },
+ {
+  "id": "sealing-the-stone",
+  "kind": "term",
+  "name": "Sealing the stone (a seal on the tomb that no one could break without answering for it)",
+  "refs": [
+   [
+    "Matthew", 27,
+    [ 66 ] ] ]
+ },
+ {
+  "id": "stolen-body",
+  "kind": "term",
+  "name": "“His disciples came by night, and stole him away” (the priests' cover story)",
+  "refs": [
+   [
+    "Matthew", 27,
+    [ 64 ] ],
+   [
+    "Matthew", 28,
+    [ 13 ] ] ]
+ },
+ {
+  "id": "all-hail",
+  "kind": "term",
+  "name": "All hail (a greeting: “Rejoice!”)",
+  "refs": [
+   [
+    "Matthew", 28,
+    [ 9 ] ] ]
+ },
+ {
+  "id": "my-brethren",
+  "kind": "person",
+  "name": "My brethren (the risen Jesus' name for the disciples who ran)",
+  "refs": [
+   [
+    "Matthew", 28,
+    [ 10 ] ] ]
+ },
+ {
+  "id": "large-money",
+  "kind": "term",
+  "name": "Large money (the bribe paid to the guards)",
+  "refs": [
+   [
+    "Matthew", 28,
+    [ 12 ] ] ]
+ },
+ {
+  "id": "mountain-in-galilee",
+  "kind": "place",
+  "name": "The mountain in Galilee where the risen Jesus met the eleven",
+  "refs": [
+   [
+    "Matthew", 28,
+    [ 16 ] ] ]
+ },
+ {
+  "id": "all-power",
+  "kind": "term",
+  "name": "All power (all authority) in heaven and in earth",
+  "refs": [
+   [
+    "Matthew", 28,
+    [ 18 ] ] ]
+ },
+ {
+  "id": "teach-all-nations",
+  "kind": "term",
+  "name": "Teach all nations (make disciples: the Great Commission)",
+  "refs": [
+   [
+    "Matthew", 28,
+    [ 19 ] ] ]
+ },
+ {
+  "id": "name-of-the-father-son-holy-ghost",
+  "kind": "term",
+  "name": "In the name of the Father, and of the Son, and of the Holy Ghost (one name, one God in three persons)",
+  "refs": [
+   [
+    "Matthew", 28,
+    [ 19 ] ] ]
+ },
+ {
+  "id": "i-am-with-you-alway",
+  "kind": "term",
+  "name": "Lo, I am with you alway (all the days, to the end)",
+  "refs": [
+   [
+    "Matthew", 28,
+    [ 20 ] ] ]
  }
 ];
