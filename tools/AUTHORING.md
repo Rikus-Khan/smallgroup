@@ -24,7 +24,7 @@ How it looks comes from the shared files in `assets/`, so it works in every them
 
 1. **Title**: `slide title`, with a short title, a subtitle, and one sentence.
 2. **Things to watch for**: `slide watch`, with 5 or 6 numbered questions, each under a topic label. These are seeds planted for later. Pick what a pastor would want the men to remember: who God is, salvation, God's promises and commands, and the struggles these men face.
-   - **The first chapter of every book** also gets a **setting** at the start, just before or after "Things to watch for": a `slide ex` with a map of where the book happens (`svg.map` or `svg.map[data-land]`) beside who wrote it, when, and to whom, then a `slide ex` with an `ol.timeline` that places the book among the events around it. Hosea 1 and Haggai 1 show the pattern. Later chapters add their own map or timeline whenever the place or time moves.
+   - **The first chapter of every book** also gets a **setting** at the start, just before or after "Things to watch for": a `slide ex` with a map of where the book happens (`svg.map` or `svg.map[data-land]`) beside who wrote it, when, and to whom, then a `slide ex` with an `ol.timeline` that places the book among the events around it. Hosea 1 and Haggai 1 show the pattern. For a **letter**, the first setting slide is a `div.letter` beside an `svg.map[data-world]` (where it was written, where it was sent), and its timeline places the letter in Paul's life or the church's story, using the New Testament dates below. Later chapters add their own map or timeline whenever the place or time moves.
 3. **The reading**: split into 2–4 parts, each opening with a `slide part` divider.
    - **Every verse of the chapter** is read on screen, in order, on `slide verse` slides of 1–5 verses each. A verse appears on exactly one verse slide.
    - After the verses they explain, add **explanation slides** (`slide ex`). Explain old words, customs, places, and hard ideas, using the building blocks below or a new graphic. Aim for roughly one explanation per 2–4 verses where there's something worth explaining, and vary the kinds of graphics.
@@ -121,6 +121,8 @@ Copy patterns from `studies/john-01.html` and `studies/john-02.html`. These are 
 | `.daybreak > div` ×3 (`i`, `b`, `p`, `p.kjv`; `.climb`) | three stages from dark to light: night, dawn, day (Nicodemus coming out of the dark). `.climb` raises them like steps | John 3 slide 5, John 7 slide 34, John 19 slide 33 (climb) |
 | `svg.map` (`.map-land`, `.map-sea`, `.map-lake`, `.map-river`, `.map-border`, `.map-region`, `.map-water`, `.map-soft`, `.map-town(.here)`, `.map-ping`, `.map-way`, `.map-route`) | any hand-drawn map. A `.map-route` (with `pathLength="1"`) draws itself when the slide opens; `.map-route.r1`–`.r4` wait for a `.map-go1`–`.map-go4` step | John 6 slide 5 (on a step), John 10 slide 36 (on open), John 18 slide 5 (three legs) |
 | `svg.map[data-land]` + `data-towns="Jerusalem, Sychar*, Bethlehem!:b"` | the whole land (Galilee, Samaria, Judaea, Perea, the lake, the Jordan, the Dead Sea), drawn by deck.js in a 400 × 560 box. Towns come from the list in deck.js: `*` lights one, `!` adds a pulse, `:l :r :t :b` places its name. Draw your routes inside the svg using those town positions. Give the svg its own `viewBox` to show part of the land, larger | John 4 slide 5 (whole land, a route on a step), John 7 slide 33 (cropped) |
+| `svg.map[data-world]` + `data-towns="Rome!, Corinth*, Ephesus:l"` | the Roman world of Acts and the letters (Italy to the Euphrates, the Black Sea to Egypt), with a real coastline, drawn by deck.js in a 908 × 576 box. Places come from PLACES in deck.js (Rome, Corinth, Ephesus, Philippi, Troas, the seven churches, Patmos, Melita, Antioch, Tarsus, Jerusalem, and more). A `<path class="map-route" data-journey="1">` draws Paul's first journey (also `"2"`, `"3"`, `"rome"`); add class `j1`–`j4` to color several on one map. `data-via="Troas, Neapolis, Philippi"` draws your own route; put `@lon lat` waypoints in it to keep a sea route off the land. Crop with your own `viewBox` (`"425 170 210 170"` the Aegean, `"540 225 140 105"` the seven churches): text and dots stay the same size on screen | new for the New Testament letters; no study uses it yet |
+| `div.letter` (`p.from`, then `dl` of `dt`/`dd`) | the opening of a letter: a sealed page with who wrote it ("Paul … to the saints which are at Ephesus", KJV from the letter's first verses), then Written from / When / To whom / Why, appearing in turn (`dd class="step"` holds one for a click). Put it in a `.split` beside an `svg.map[data-world]` on the first chapter's setting slide | new for the letters |
 | `svg.wells` (`.wells-pit`, `.wells-water.wells-drain`, `.wells-crack`, `.wells-drip`, `.wells-rock`, `.wells-spring`, `.wells-bubble`) | a broken cistern that leaks dry beside a spring that never stops (Jeremiah 2:13). Clip the drain to the pit with a study-prefixed clip id | John 4 slide 12, John 7 slide 26 |
 | `.walls > div` (`b`, `i`, `b`, `small`) | walls coming down between two kinds of people, one row per step | John 4 slide 10 |
 | `[data-dots="38"].dots` (`.rows` + `--cols`, `.fill`, `.fish`, `--dot`, `--pace`, `--wait`; `data-keep` + `.dots-go`) and `.dots-num` (`--to`), `.dots-cap` | a dot counter: dots that pop in, fill, or fade until a few are left, and a number that counts up | John 5 slide 8 (fill, count up), John 6 slide 9 (on a step), John 6 slide 47 (kept few), John 21 slide 15 (fish), John 4 slide 31 (rows) |
@@ -152,6 +154,38 @@ You're encouraged to invent new ways to show an idea. A new graphic is another s
 - Give SVG gradient and clip ids a study prefix (`prv03-glow`), so they're unique.
 - Check it in all four themes.
 - List it in your report so it can be moved into `deck.css` for everyone.
+
+## New Testament dates
+
+Use these, always with "about", so every study agrees. They are the common conservative dates.
+
+| Event | About |
+|---|---|
+| Jesus crucified, risen, ascended; Pentecost (Acts 1–2) | AD 30 to 33 |
+| Saul converted on the Damascus road (Acts 9) | AD 34 to 35 |
+| First missionary journey: Cyprus and Galatia (Acts 13–14) | AD 46 to 48 |
+| Galatians written, to the churches of that first journey | AD 48 to 49 |
+| The Jerusalem council (Acts 15) | AD 49 |
+| Second journey: Philippi, Thessalonica, Athens, Corinth (Acts 15:36–18:22) | AD 49 to 52 |
+| 1 and 2 Thessalonians written, from Corinth | AD 50 to 51 |
+| James written (the earliest letter, by some counts) | AD 45 to 50 |
+| Third journey: three years at Ephesus, then Macedonia and Greece (Acts 18:23–21:16) | AD 53 to 57 |
+| 1 Corinthians, from Ephesus | AD 55 |
+| 2 Corinthians, from Macedonia | AD 56 |
+| Romans, from Corinth | AD 57 |
+| Paul arrested in Jerusalem; two years in prison at Caesarea (Acts 21–26) | AD 57 to 59 |
+| The voyage and shipwreck; Rome (Acts 27–28) | AD 59 to 60 |
+| Under house arrest in Rome: Ephesians, Philippians, Colossians, Philemon | AD 60 to 62 |
+| Acts finished by Luke | AD 62 |
+| 1 Peter, from "Babylon" (Rome) | AD 62 to 64 |
+| Paul released: 1 Timothy and Titus | AD 62 to 64 |
+| Rome burns; Nero turns on the Christians | AD 64 |
+| 2 Peter; Hebrews; Jude | AD 64 to 68 |
+| 2 Timothy, Paul's last letter, from a Roman prison | AD 66 to 67 |
+| Paul and Peter put to death in Rome, by tradition | AD 67 to 68 |
+| Rome destroys Jerusalem and the temple | AD 70 |
+| John's letters, from Ephesus | AD 85 to 95 |
+| Revelation, from Patmos, under Domitian | AD 95 |
 
 ## Proverbs notes
 
