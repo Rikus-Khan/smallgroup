@@ -6752,6 +6752,105 @@ window.STUDIES = [
     }
   },
   {
+    "id": "matthew-24",
+    "type": "chapter",
+    "book": "Matthew",
+    "ch": 24,
+    "date": "2026-10-29",
+    "title": "Matthew 24",
+    "sub": "Watch therefore",
+    "about": "On the Mount of Olives, Jesus foretells the fall of the temple, warns His disciples not to be deceived, promises He will come again in the clouds with power and great glory, and tells them that since no man knows the day or hour, they must watch and be ready.",
+    "tags": [
+      "Deception",
+      "Troubles",
+      "Endurance",
+      "His coming",
+      "The hour",
+      "Ready"
+    ],
+    "url": "studies/matthew-24.html",
+    "overview": {
+      "where": "The temple in Jerusalem, then the Mount of Olives across the Kidron valley, looking back at the temple",
+      "when": "About AD 30, in the last week before the cross, two days before the Passover",
+      "people": [
+        "jesus",
+        "disciples",
+        "daniel",
+        "noah",
+        "angels",
+        "the-father"
+      ],
+      "places": [
+        "temple",
+        "mount-of-olives",
+        "judaea",
+        "heaven"
+      ],
+      "story": [
+        "As Jesus leaves the temple, He tells His disciples that not one stone will be left upon another. On the Mount of Olives they ask when, and what will be the sign of His coming and of the end of the world (1–3).",
+        "He warns them first: let no man deceive you. Wars, famines and earthquakes are only the beginning of sorrows. Many will be offended and love will wax cold, but he that endures to the end will be saved, and the gospel will be preached in all the world (4–14).",
+        "When they see the abomination of desolation spoken of by Daniel, those in Judaea must flee to the mountains. Great tribulation will come, but for the elect's sake those days will be shortened. False Christs will show signs; believe them not (15–28).",
+        "After that tribulation the sun will be darkened, and all shall see the Son of man coming in the clouds of heaven with power and great glory. He will send His angels to gather His elect. Learn from the fig tree: His words shall not pass away (29–35).",
+        "No man knows the day and hour, but the Father only. As in the days of Noe, people will go on with life until it is too late; one shall be taken and the other left. Watch therefore, and be ready (36–44).",
+        "The faithful and wise servant is found feeding his lord's household when he comes. The evil servant who says, “My lord delayeth his coming,” and turns to cruelty and drink is caught unready (45–51)."
+      ],
+      "key": {
+        "ref": "Matthew 24:42",
+        "text": "Watch therefore: for ye know not what hour your Lord doth come."
+      },
+      "big": "Jesus is coming back, in person and in glory, and every eye will see Him. Good teachers differ on the details of this chapter, but He told us plainly not to be deceived, not to panic, and not to set dates, because no man knows the hour. Our job is to stay faithful and be found doing His work when He comes."
+    }
+  },
+  {
+    "id": "matthew-25",
+    "type": "chapter",
+    "book": "Matthew",
+    "ch": 25,
+    "date": "2026-10-29",
+    "title": "Matthew 25",
+    "sub": "Well done",
+    "about": "Three stories from the Mount of Olives about being ready for the King's return: ten virgins waiting for the bridegroom, servants trusted with their lord's talents, and the Son of man dividing the sheep from the goats.",
+    "tags": [
+      "Ready",
+      "Borrowed oil",
+      "Faithful",
+      "Fear",
+      "The least",
+      "Forever"
+    ],
+    "url": "studies/matthew-25.html",
+    "overview": {
+      "where": "The Mount of Olives, across from the temple in Jerusalem, the same evening as chapter 24",
+      "when": "About AD 30, in the last week before the cross, two days before the Passover",
+      "people": [
+        "ten-virgins",
+        "bridegroom",
+        "the-king",
+        "the-father",
+        "angels",
+        "devil"
+      ],
+      "places": [
+        "mount-of-olives",
+        "outer-darkness",
+        "heaven"
+      ],
+      "story": [
+        "Ten virgins take their lamps to meet the bridegroom. Five wise ones take oil; five foolish ones take none. While he tarries, they all sleep (1–5).",
+        "At midnight the cry goes up: the bridegroom cometh. The foolish find their lamps going out, and the wise cannot share their oil. While the foolish go to buy, the bridegroom comes, the ready go in, and the door is shut. Watch therefore (6–13).",
+        "A man travelling into a far country gives his servants five talents, two, and one, each according to his ability. Two trade and double their money; the third digs in the earth and hides his (14–18).",
+        "After a long time the lord returns. To both faithful servants he says the same: “Well done, good and faithful servant… enter thou into the joy of thy lord” (19–23).",
+        "The third, afraid of a “hard man,” gives back only what he hid. Called wicked and slothful, he loses his talent and is cast into outer darkness (24–30).",
+        "The Son of man sits on the throne of His glory and divides all nations as a shepherd divides sheep from goats. Whatever was done for the hungry, the stranger, the sick and the prisoner, the least of His brethren, was done to Him. The righteous go into life eternal, the others into everlasting punishment (31–46)."
+      ],
+      "key": {
+        "ref": "Matthew 25:40",
+        "text": "And the King shall answer and say unto them, Verily I say unto you, Inasmuch as ye have done it unto one of the least of these my brethren, ye have done it unto me."
+      },
+      "big": "Be ready, because readiness can't be borrowed at the last minute. Be faithful with what God has put in your hands, however small, and don't let fear make you bury it. And love the least, because Jesus counts it as done to Him. Hell was prepared for the devil, not for men, and the door to the feast is open today to whosoever will come."
+    }
+  },
+  {
     "id": "mark-01",
     "type": "chapter",
     "book": "Mark",
