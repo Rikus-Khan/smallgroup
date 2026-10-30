@@ -11070,5 +11070,92 @@ window.STUDIES = [
       },
       "big": "A believer died with Christ and rose with Him. Sin no longer owns him. He counts that true, hands himself to God each day, and holds a gift of eternal life he could never earn and will never lose."
     }
+  },
+  {
+    "id": "romans-13",
+    "type": "chapter",
+    "book": "Romans",
+    "ch": 13,
+    "date": "2026-10-30",
+    "title": "Romans 13",
+    "sub": "The night is far spent",
+    "about": "Do right under the law of the land, pay what you owe, love your neighbour, and wake up: the day is almost here.",
+    "tags": [
+      "Authority",
+      "Conscience",
+      "Debts and amends",
+      "Love",
+      "Christ's return",
+      "Recovery"
+    ],
+    "url": "studies/romans-13.html",
+    "overview": {
+      "where": "A letter from Corinth to the believers in Rome, the emperor's own city",
+      "when": "About AD 57, early in Nero's reign",
+      "people": [
+        "paul",
+        "jesus"
+      ],
+      "places": [
+        "rome",
+        "corinth"
+      ],
+      "story": [
+        "Every soul should be subject to the higher powers. God ordained government, and the ruler is “the minister of God to thee for good” (1–4).",
+        "Be subject not only for fear of punishment but for conscience' sake. Pay taxes, tolls, respect, and honour to whom they are due (5–7).",
+        "“Owe no man any thing, but to love one another.” Every commandment about our neighbour is summed up in loving him as ourselves (8–10).",
+        "It is high time to wake up: the night is far spent and the day is at hand. Cast off the works of darkness and put on the armour of light (11–12).",
+        "Walk honestly, not in rioting and drunkenness, chambering and wantonness, strife and envying. Put on the Lord Jesus Christ, and make no provision for the flesh (13–14)."
+      ],
+      "key": {
+        "ref": "Romans 13:14",
+        "text": "But put ye on the Lord Jesus Christ, and make not provision for the flesh, to fulfil the lusts thereof."
+      },
+      "big": "A new life shows up in the real world: doing right under authority with a clean conscience, paying what we owe, and loving our neighbour. The day of Christ is near, so we put on Christ and cut off every plan the flesh makes."
+    }
+  },
+  {
+    "id": "romans-14",
+    "type": "chapter",
+    "book": "Romans",
+    "ch": 14,
+    "date": "2026-10-30",
+    "title": "Romans 14",
+    "sub": "Don't trip your brother",
+    "about": "Believers who disagree about food and holy days learn to stop judging each other, and to give up anything that would make a brother fall.",
+    "tags": [
+      "Judging",
+      "Conscience",
+      "Christian liberty",
+      "Stumbling",
+      "Alcohol",
+      "Judgment seat of Christ"
+    ],
+    "url": "studies/romans-14.html",
+    "overview": {
+      "where": "A letter from Corinth to the believers in Rome, a church of Jewish and Gentile believers",
+      "when": "About AD 57",
+      "people": [
+        "paul",
+        "jesus",
+        "holy-spirit"
+      ],
+      "places": [
+        "rome",
+        "corinth"
+      ],
+      "story": [
+        "Receive the brother who is weak in the faith. One eats anything, another only herbs; neither should despise or judge the other, for God has received him (1–4).",
+        "One man keeps certain days, another counts every day alike. Each should be fully persuaded, and do it unto the Lord with thanks (5–6).",
+        "None of us lives to himself. Living or dying, we are the Lord's, and we shall all stand before the judgment seat of Christ to give account of ourselves (7–12).",
+        "Judge this instead: never put a stumblingblock in a brother's way. Don't destroy with your meat a man for whom Christ died; the kingdom is righteousness, peace, and joy in the Holy Ghost (13–18).",
+        "It is good not to eat meat or drink wine or do anything that makes a brother stumble. Keep a clear conscience: whatsoever is not of faith is sin (19–23)."
+      ],
+      "key": {
+        "ref": "Romans 14:21",
+        "text": "It is good neither to eat flesh, nor to drink wine, nor any thing whereby thy brother stumbleth, or is offended, or is made weak."
+      },
+      "big": "In things God hasn't commanded, believers welcome one another instead of judging, because each of us answers to the Lord. Love gives up any freedom, wine included, that could make a brother for whom Christ died fall."
+    }
   }
 ];

@@ -327,7 +327,13 @@ window.GLOSSARY = [
     [ 1, 11, 15, 17, 21 ] ],
    [
     "Romans", 6,
-    [ 3, 11, 23 ] ] ]
+    [ 3, 11, 23 ] ],
+   [
+    "Romans", 13,
+    [ 14 ] ],
+   [
+    "Romans", 14,
+    [ 14 ] ] ]
  },
  {
   "id": "john-the-baptist",
@@ -1242,7 +1248,10 @@ window.GLOSSARY = [
     [ 25 ] ],
    [
     "Romans", 5,
-    [ 5 ] ] ]
+    [ 5 ] ],
+   [
+    "Romans", 14,
+    [ 17 ] ] ]
  },
  {
   "id": "disciples",
@@ -3921,7 +3930,10 @@ window.GLOSSARY = [
     [ 13, 18, 23 ] ],
    [
     "Romans", 2,
-    [ 19 ] ] ]
+    [ 19 ] ],
+   [
+    "Romans", 13,
+    [ 12 ] ] ]
  },
  {
   "id": "darkness",
@@ -4017,7 +4029,10 @@ window.GLOSSARY = [
     [ 18 ] ],
    [
     "Romans", 2,
-    [ 19 ] ] ]
+    [ 19 ] ],
+   [
+    "Romans", 13,
+    [ 12 ] ] ]
  },
  {
   "id": "grace",
@@ -4542,7 +4557,10 @@ window.GLOSSARY = [
     [ 13, 20 ] ],
    [
     "Romans", 6,
-    [ 14, 15 ] ] ]
+    [ 14, 15 ] ],
+   [
+    "Romans", 13,
+    [ 8, 10 ] ] ]
  },
  {
   "id": "only-begotten",
@@ -4743,7 +4761,13 @@ window.GLOSSARY = [
     [ 1, 6, 8, 11, 15, 17, 21 ] ],
    [
     "Romans", 6,
-    [ 3, 4, 8, 9, 11, 23 ] ] ]
+    [ 3, 4, 8, 9, 11, 23 ] ],
+   [
+    "Romans", 13,
+    [ 14 ] ],
+   [
+    "Romans", 14,
+    [ 9, 10, 15, 18 ] ] ]
  },
  {
   "id": "son-of-god",
@@ -5178,7 +5202,13 @@ window.GLOSSARY = [
     [ 3, 5, 11, 17, 18, 24 ] ],
    [
     "Romans", 6,
-    [ 8 ] ] ]
+    [ 8 ] ],
+   [
+    "Romans", 13,
+    [ 11 ] ],
+   [
+    "Romans", 14,
+    [ 2 ] ] ]
  },
  {
   "id": "witness",
@@ -5316,7 +5346,10 @@ window.GLOSSARY = [
     [ 9 ] ],
    [
     "Romans", 2,
-    [ 15 ] ] ]
+    [ 15 ] ],
+   [
+    "Romans", 13,
+    [ 9 ] ] ]
  },
  {
   "id": "baptize",
@@ -5601,7 +5634,10 @@ window.GLOSSARY = [
     [ 46 ] ],
    [
     "Acts", 2,
-    [ 13 ] ] ]
+    [ 13 ] ],
+   [
+    "Romans", 14,
+    [ 21 ] ] ]
  },
  {
   "id": "waterpots",
@@ -6690,7 +6726,10 @@ window.GLOSSARY = [
     [ 7, 17, 18, 19, 21 ] ],
    [
     "Romans", 6,
-    [ 13, 16, 18, 19, 20 ] ] ]
+    [ 13, 16, 18, 19, 20 ] ],
+   [
+    "Romans", 14,
+    [ 17 ] ] ]
  },
  {
   "id": "wicked",
@@ -7251,7 +7290,10 @@ window.GLOSSARY = [
     [ 14 ] ],
    [
     "Romans", 3,
-    [ 13 ] ] ]
+    [ 13 ] ],
+   [
+    "Romans", 14,
+    [ 11 ] ] ]
  },
  {
   "id": "anger",
@@ -7413,7 +7455,10 @@ window.GLOSSARY = [
     [ 15 ] ],
    [
     "Romans", 5,
-    [ 9 ] ] ]
+    [ 9 ] ],
+   [
+    "Romans", 13,
+    [ 4, 5 ] ] ]
  },
  {
   "id": "pride",
@@ -7602,7 +7647,10 @@ window.GLOSSARY = [
     [ 34 ] ],
    [
     "Acts", 2,
-    [ 15 ] ] ]
+    [ 15 ] ],
+   [
+    "Romans", 13,
+    [ 13 ] ] ]
  },
  {
   "id": "reproof",
@@ -7899,7 +7947,10 @@ window.GLOSSARY = [
     [ 3, 4 ] ],
    [
     "Romans", 2,
-    [ 22 ] ] ]
+    [ 22 ] ],
+   [
+    "Romans", 13,
+    [ 9 ] ] ]
  },
  {
   "id": "apple-of-the-eye",
@@ -8529,7 +8580,10 @@ window.GLOSSARY = [
     [ 39 ] ],
    [
     "Romans", 2,
-    [ 8 ] ] ]
+    [ 8 ] ],
+   [
+    "Romans", 13,
+    [ 13 ] ] ]
  },
  {
   "id": "subtilty",
@@ -9120,7 +9174,10 @@ window.GLOSSARY = [
     [ 8 ] ],
    [
     "Romans", 5,
-    [ 16, 18 ] ] ]
+    [ 16, 18 ] ],
+   [
+    "Romans", 13,
+    [ 2 ] ] ]
  },
  {
   "id": "judgment",
@@ -9714,7 +9771,10 @@ window.GLOSSARY = [
     [ 19 ] ],
    [
     "Acts", 27,
-    [ 33, 34, 36 ] ] ]
+    [ 33, 34, 36 ] ],
+   [
+    "Romans", 14,
+    [ 15, 17, 20 ] ] ]
  },
  {
   "id": "sealed",
@@ -11328,7 +11388,10 @@ window.GLOSSARY = [
     [ 10, 11 ] ],
    [
     "Romans", 2,
-    [ 1 ] ] ]
+    [ 1 ] ],
+   [
+    "Romans", 14,
+    [ 22 ] ] ]
  },
  {
   "id": "conscience",
@@ -11346,7 +11409,10 @@ window.GLOSSARY = [
     [ 16 ] ],
    [
     "Romans", 2,
-    [ 15 ] ] ]
+    [ 15 ] ],
+   [
+    "Romans", 13,
+    [ 5 ] ] ]
  },
  {
   "id": "i-am",
@@ -11547,7 +11613,10 @@ window.GLOSSARY = [
     [ 25 ] ],
    [
     "Acts", 28,
-    [ 23, 31 ] ] ]
+    [ 23, 31 ] ],
+   [
+    "Romans", 14,
+    [ 17 ] ] ]
  },
  {
   "id": "wind",
@@ -11982,7 +12051,10 @@ window.GLOSSARY = [
     [ 28 ] ],
    [
     "Romans", 1,
-    [ 16 ] ] ]
+    [ 16 ] ],
+   [
+    "Romans", 13,
+    [ 11 ] ] ]
  },
  {
   "id": "sixth-hour",
@@ -18564,7 +18636,10 @@ window.GLOSSARY = [
     [ 14 ] ],
    [
     "Acts", 20,
-    [ 33 ] ] ]
+    [ 33 ] ],
+   [
+    "Romans", 13,
+    [ 9 ] ] ]
  },
  {
   "id": "heritage",
@@ -24828,7 +24903,10 @@ window.GLOSSARY = [
     [ 24, 27 ] ],
    [
     "Romans", 6,
-    [ 12 ] ] ]
+    [ 12 ] ],
+   [
+    "Romans", 13,
+    [ 14 ] ] ]
  },
  {
   "id": "divorcement",
@@ -27678,7 +27756,10 @@ window.GLOSSARY = [
     [ 39 ] ],
    [
     "Mark", 12,
-    [ 31 ] ] ]
+    [ 31 ] ],
+   [
+    "Romans", 13,
+    [ 9 ] ] ]
  },
  {
   "id": "eye-of-a-needle",
@@ -28158,7 +28239,10 @@ window.GLOSSARY = [
     [ 22 ] ],
    [
     "Luke", 23,
-    [ 2 ] ] ]
+    [ 2 ] ],
+   [
+    "Romans", 13,
+    [ 6, 7 ] ] ]
  },
  {
   "id": "prevented",
@@ -28482,7 +28566,10 @@ window.GLOSSARY = [
     [ 11 ] ],
    [
     "Acts", 19,
-    [ 27 ] ] ]
+    [ 27 ] ],
+   [
+    "Romans", 14,
+    [ 10 ] ] ]
  },
  {
   "id": "pineth-away",
@@ -28710,7 +28797,10 @@ window.GLOSSARY = [
     [ 41 ] ],
    [
     "Luke", 8,
-    [ 3 ] ] ]
+    [ 3 ] ],
+   [
+    "Romans", 13,
+    [ 4, 6 ] ] ]
  },
  {
   "id": "joanna",
@@ -31851,7 +31941,10 @@ window.GLOSSARY = [
     [ 5 ] ],
    [
     "Romans", 1,
-    [ 29 ] ] ]
+    [ 29 ] ],
+   [
+    "Romans", 13,
+    [ 13 ] ] ]
  },
  {
   "id": "wine-mingled-with-myrrh",
@@ -32052,7 +32145,10 @@ window.GLOSSARY = [
   "refs": [
    [
     "Mark", 16,
-    [ 16 ] ] ]
+    [ 16 ] ],
+   [
+    "Romans", 14,
+    [ 23 ] ] ]
  },
  {
   "id": "new-tongues",
@@ -32349,7 +32445,10 @@ window.GLOSSARY = [
     [ 12, 16, 17 ] ],
    [
     "Acts", 25,
-    [ 6, 10, 17 ] ] ]
+    [ 6, 10, 17 ] ],
+   [
+    "Romans", 14,
+    [ 10 ] ] ]
  },
  {
   "id": "washed-his-hands",
@@ -34785,7 +34884,10 @@ window.GLOSSARY = [
   "refs": [
    [
     "Acts", 10,
-    [ 14, 15, 28 ] ] ]
+    [ 14, 15, 28 ] ],
+   [
+    "Romans", 14,
+    [ 14 ] ] ]
  },
  {
   "id": "kinsmen",
@@ -37924,5 +38026,251 @@ window.GLOSSARY = [
    [
     "Acts", 28,
     [ 30 ] ] ]
+ },
+ {
+  "id": "higher-powers",
+  "kind": "term",
+  "name": "The higher powers (the people who govern)",
+  "refs": [
+   [
+    "Romans", 13,
+    [ 1, 2 ] ] ]
+ },
+ {
+  "id": "sword-in-vain",
+  "kind": "term",
+  "name": "He beareth not the sword in vain (the ruler's power to punish)",
+  "refs": [
+   [
+    "Romans", 13,
+    [ 4 ] ] ]
+ },
+ {
+  "id": "custom-toll",
+  "kind": "term",
+  "name": "Custom (a toll or duty on goods)",
+  "refs": [
+   [
+    "Romans", 13,
+    [ 7 ] ] ]
+ },
+ {
+  "id": "owe-no-man",
+  "kind": "term",
+  "name": "Owe no man any thing, but to love one another",
+  "refs": [
+   [
+    "Romans", 13,
+    [ 8 ] ] ]
+ },
+ {
+  "id": "love-fulfils-the-law",
+  "kind": "term",
+  "name": "Love is the fulfilling of the law",
+  "refs": [
+   [
+    "Romans", 13,
+    [ 8, 10 ] ] ]
+ },
+ {
+  "id": "high-time-to-awake",
+  "kind": "term",
+  "name": "High time to awake out of sleep",
+  "refs": [
+   [
+    "Romans", 13,
+    [ 11 ] ] ]
+ },
+ {
+  "id": "night-far-spent",
+  "kind": "term",
+  "name": "The night is far spent, the day is at hand",
+  "refs": [
+   [
+    "Romans", 13,
+    [ 12 ] ] ]
+ },
+ {
+  "id": "armour-of-light",
+  "kind": "term",
+  "name": "The armour of light",
+  "refs": [
+   [
+    "Romans", 13,
+    [ 12 ] ] ]
+ },
+ {
+  "id": "rioting",
+  "kind": "term",
+  "name": "Rioting (wild, all-night partying)",
+  "refs": [
+   [
+    "Romans", 13,
+    [ 13 ] ] ]
+ },
+ {
+  "id": "chambering",
+  "kind": "term",
+  "name": "Chambering (sexual sin; the word means beds)",
+  "refs": [
+   [
+    "Romans", 13,
+    [ 13 ] ] ]
+ },
+ {
+  "id": "wantonness",
+  "kind": "term",
+  "name": "Wantonness (lust with no brakes and no shame)",
+  "refs": [
+   [
+    "Romans", 13,
+    [ 13 ] ] ]
+ },
+ {
+  "id": "put-on-christ",
+  "kind": "term",
+  "name": "Put ye on the Lord Jesus Christ",
+  "refs": [
+   [
+    "Romans", 13,
+    [ 14 ] ] ]
+ },
+ {
+  "id": "make-not-provision",
+  "kind": "term",
+  "name": "Make not provision for the flesh (make no plans for sin)",
+  "refs": [
+   [
+    "Romans", 13,
+    [ 14 ] ] ]
+ },
+ {
+  "id": "weak-in-the-faith",
+  "kind": "person",
+  "name": "The weak in the faith (a brother with a tender conscience)",
+  "refs": [
+   [
+    "Romans", 14,
+    [ 1, 2 ] ] ]
+ },
+ {
+  "id": "doubtful-disputations",
+  "kind": "term",
+  "name": "Doubtful disputations (arguments over opinions)",
+  "refs": [
+   [
+    "Romans", 14,
+    [ 1 ] ] ]
+ },
+ {
+  "id": "herbs",
+  "kind": "term",
+  "name": "Herbs (vegetables only, no meat)",
+  "refs": [
+   [
+    "Romans", 14,
+    [ 2 ] ] ]
+ },
+ {
+  "id": "holden-up",
+  "kind": "term",
+  "name": "Holden up (held up, kept standing)",
+  "refs": [
+   [
+    "Romans", 14,
+    [ 4 ] ] ]
+ },
+ {
+  "id": "esteemeth",
+  "kind": "term",
+  "name": "Esteemeth (counts, regards as)",
+  "refs": [
+   [
+    "Romans", 14,
+    [ 5, 14 ] ] ]
+ },
+ {
+  "id": "fully-persuaded",
+  "kind": "term",
+  "name": "Fully persuaded (settled in his own mind)",
+  "refs": [
+   [
+    "Romans", 4,
+    [ 21 ] ],
+   [
+    "Romans", 14,
+    [ 5 ] ] ]
+ },
+ {
+  "id": "revived",
+  "kind": "term",
+  "name": "Revived (lived again)",
+  "refs": [
+   [
+    "Romans", 14,
+    [ 9 ] ] ]
+ },
+ {
+  "id": "every-knee-shall-bow",
+  "kind": "term",
+  "name": "Every knee shall bow",
+  "refs": [
+   [
+    "Romans", 14,
+    [ 11 ] ] ]
+ },
+ {
+  "id": "give-account",
+  "kind": "term",
+  "name": "Give account of himself to God",
+  "refs": [
+   [
+    "Romans", 14,
+    [ 12 ] ] ]
+ },
+ {
+  "id": "stumblingblock",
+  "kind": "term",
+  "name": "Stumblingblock (something in the road that makes a man fall)",
+  "refs": [
+   [
+    "Romans", 14,
+    [ 13 ] ] ]
+ },
+ {
+  "id": "charitably",
+  "kind": "term",
+  "name": "Charitably (in love)",
+  "refs": [
+   [
+    "Romans", 14,
+    [ 15 ] ] ]
+ },
+ {
+  "id": "edify",
+  "kind": "term",
+  "name": "Edify (build up)",
+  "refs": [
+   [
+    "Romans", 14,
+    [ 19 ] ] ]
+ },
+ {
+  "id": "damned-by-conscience",
+  "kind": "term",
+  "name": "Damned (condemned; here, by his own conscience)",
+  "refs": [
+   [
+    "Romans", 14,
+    [ 23 ] ] ]
+ },
+ {
+  "id": "not-of-faith-is-sin",
+  "kind": "term",
+  "name": "Whatsoever is not of faith is sin",
+  "refs": [
+   [
+    "Romans", 14,
+    [ 23 ] ] ]
  }
 ];

@@ -1,0 +1,574 @@
+<!doctype html>
+<html lang="en" data-theme="slate">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Romans 14</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="../assets/fonts.css">
+<link rel="stylesheet" href="../assets/deck.css">
+<link rel="stylesheet" href="../assets/themes.css">
+<style>
+/* ro13-where: where this chapter sits in the whole letter (the same marker as Romans 13). The 16 chapters in five groups, the current one lit (.now) */
+.ro13-where { display: flex; gap: 6px; margin: .3em 0 1em; }
+.ro13-where > div { flex: var(--n) 1 0; min-width: 0; display: flex; flex-direction: column; gap: 4px; }
+.ro13-where small { font: 700 clamp(.62rem, .55rem + .3vw, .85rem)/1.15 var(--sans); color: var(--ink-soft); min-height: 2.3em; display: flex; align-items: flex-end; }
+.ro13-where p { display: flex; gap: 3px; margin: 0; }
+.ro13-where span { flex: 1 1 0; min-width: 0; display: grid; place-items: center; height: clamp(1.6rem, 1.3rem + 1vw, 2.3rem); border-radius: 5px; border: 1.5px solid var(--line-strong); background: var(--surface); font: 600 clamp(.7rem, .6rem + .35vw, .95rem) var(--sans); color: var(--ink-soft); }
+.ro13-where > div.on small { color: var(--accent); }
+.ro13-where > div.on span { border-color: var(--accent); }
+.ro13-where span.now { background: var(--accent); border-color: var(--accent); color: var(--on-accent); box-shadow: 0 0 0 5px color-mix(in srgb, var(--accent) 22%, transparent); }
+.slide.active .ro13-where span.now { animation: ro13-pulse 2.4s ease-in-out .8s 2; }
+@keyframes ro13-pulse { 50% { box-shadow: 0 0 0 10px color-mix(in srgb, var(--accent) 8%, transparent); } }
+
+/* ro14-stand: a man falling, then held up and set on his feet (14:4) */
+.ro14-ground { stroke: var(--line-strong); stroke-width: 3; stroke-linecap: round; }
+.ro14-man { stroke: var(--ink); stroke-width: 11; stroke-linecap: round; fill: none; transform-box: view-box; transform-origin: 200px 300px; transform: rotate(-34deg); transition: transform 1.5s cubic-bezier(.3,1.35,.5,1) 1.1s; }
+.ro14-man circle { fill: var(--ink); stroke: none; }
+.ro14-arm { fill: none; stroke: var(--accent); stroke-width: 13; stroke-linecap: round; stroke-dasharray: 1; stroke-dashoffset: 1; transition: stroke-dashoffset 1.1s ease; }
+.ro14-halo { fill: color-mix(in srgb, var(--accent) 16%, transparent); opacity: 0; transition: opacity 1.2s ease 2s; }
+.ro14-said { fill: var(--accent-hot); font-weight: 700; opacity: 0; transition: opacity 1s ease 2.2s; }
+.ro14-fall { fill: var(--ink-soft); transition: opacity .6s ease; }
+.split:has(.ro14-up.on) .ro14-man { transform: none; }
+.split:has(.ro14-up.on) .ro14-arm { stroke-dashoffset: 0; }
+.split:has(.ro14-up.on) .ro14-halo, .split:has(.ro14-up.on) .ro14-said { opacity: 1; }
+.split:has(.ro14-up.on) .ro14-fall { opacity: 0; }
+
+/* ro14-road: a brother walking, a stumblingblock dropped in his way, then taken out of the way (14:13) */
+.ro14-road { fill: none; stroke: var(--surface-2); stroke-width: 54; stroke-linecap: round; }
+.ro14-lane { fill: none; stroke: var(--line-strong); stroke-width: 3; stroke-dasharray: 16 14; }
+.ro14-walker { transition: transform 2.4s ease-in-out .5s; }
+.ro14-walker g { stroke: var(--accent-hot); stroke-width: 9; stroke-linecap: round; fill: none; }
+.ro14-walker circle { fill: var(--accent-hot); stroke: none; }
+.slide.active .ro14-walker g { animation: ro14-bob .9s ease-in-out infinite alternate; }
+@keyframes ro14-bob { to { transform: translateY(-4px); } }
+.ro14-block { transform: translateY(-190px); opacity: 0; transition: transform .7s cubic-bezier(.5,0,.8,.5), opacity .3s ease; }
+.ro14-block rect { fill: var(--danger); }
+.ro14-block text { fill: var(--danger); font-weight: 700; }
+.split:has(.ro14-drop.on) .ro14-block { transform: none; opacity: 1; }
+.split:has(.ro14-lift.on) .ro14-block { transform: translate(90px, -230px) rotate(25deg); opacity: 0; transition: transform 1s ease, opacity 1s ease .2s; }
+.split:has(.ro14-lift.on) .ro14-walker { transform: translateX(300px); }
+
+/* ro14-glass: a glass on the table between two men, set aside for the brother's sake (14:21) */
+.ro14-table { fill: var(--leather); }
+.ro14-leg { stroke: var(--leather-light); stroke-width: 8; stroke-linecap: round; }
+.ro14-who { fill: var(--ink-soft); }
+.ro14-who.bro { fill: var(--cool); }
+.ro14-cap { fill: var(--ink-soft); }
+.ro14-glass { transition: transform 1.4s ease, opacity 1.2s ease .3s; }
+.ro14-glass .bowl { fill: none; stroke: var(--ink-soft); stroke-width: 3; }
+.ro14-glass .wine { fill: var(--wine); }
+.ro14-cup { opacity: 0; transition: opacity 1s ease 1.4s; }
+.ro14-cup path { fill: color-mix(in srgb, var(--cool) 35%, transparent); stroke: var(--cool); stroke-width: 3; }
+.ro14-cup text { fill: var(--accent-hot); font-weight: 700; }
+.split:has(.ro14-away.on) .ro14-glass { transform: translateY(150px); opacity: 0; }
+.split:has(.ro14-away.on) .ro14-cup { opacity: 1; }
+</style>
+</head>
+<body>
+<main class="deck" id="deck">
+
+<!-- ======================= OPENING ======================= -->
+<section class="slide title">
+  <div class="inner">
+    <div class="emblem rise"></div>
+    <h1 class="rise" style="--d:1">Romans 14</h1>
+    <p class="sub rise" style="--d:3">Don't trip your brother</p>
+    <p class="tag rise" style="--d:5">Believers who disagree about food and holy days learn to stop judging each other, and to give up anything that would make a brother fall.</p>
+  </div>
+</section>
+
+<section class="slide watch">
+  <div class="inner">
+    <h2 class="rise">Things to watch for</h2>
+    <p class="lede rise" style="--d:1">Keep these questions in the back of your mind as we read. We'll come back to every one of them at the end.</p>
+    <ol class="seeds">
+      <li class="step"><span class="topic">Disagreements</span><span class="seed-q">How should believers treat each other over things God hasn't commanded?</span></li>
+      <li class="step"><span class="topic">Judging</span><span class="seed-q">Why shouldn't I judge another believer?</span></li>
+      <li class="step"><span class="topic">Belonging</span><span class="seed-q">Who do we live for?</span></li>
+      <li class="step"><span class="topic">Giving account</span><span class="seed-q">What will happen at the judgment seat of Christ?</span></li>
+      <li class="step"><span class="topic">Stumbling</span><span class="seed-q">Why would I give something up for my brother's sake?</span></li>
+      <li class="step"><span class="topic">Conscience</span><span class="seed-q">What does “whatsoever is not of faith is sin” mean?</span></li>
+    </ol>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise">Where we are in Romans</h2>
+    <div class="ro13-where rise" style="--d:1" role="img" aria-label="The sixteen chapters of Romans in five groups: sin, chapters 1 to 3; grace through faith, 4 and 5; new life, 6 to 8; Israel and the nations, 9 to 11; living it out, 12 to 16. Chapter 14 is lit.">
+      <div style="--n:3"><small>All have sinned</small><p><span>1</span><span>2</span><span>3</span></p></div>
+      <div style="--n:2"><small>Saved by faith</small><p><span>4</span><span>5</span></p></div>
+      <div style="--n:3"><small>A new life</small><p><span>6</span><span>7</span><span>8</span></p></div>
+      <div style="--n:3"><small>Israel and the nations</small><p><span>9</span><span>10</span><span>11</span></p></div>
+      <div class="on" style="--n:5"><small>Living it out</small><p><span>12</span><span>13</span><span class="now">14</span><span>15</span><span>16</span></p></div>
+    </div>
+    <p class="note rise" style="--d:2">Chapter 13 was about living right with the government and our neighbours. Chapter 14 comes back inside the church: how believers who see things differently can live together.</p>
+    <p class="note step">The church at Rome was a mix. Jewish believers, raised on the law of Moses, with its clean and unclean foods and its holy days. And Gentile believers, raised in a city where most meat in the market had been offered to an idol first. They didn't eat the same, and they didn't keep the same days.</p>
+    <p class="note step">Any group like ours is a mix too: different churches, different pasts, different weak spots. This chapter is for us.</p>
+  </div>
+</section>
+
+<!-- ======================= PART ONE: RECEIVE HIM ======================= -->
+<section class="slide part">
+  <div class="inner">
+    <p class="part-n rise">Part one</p>
+    <h2 class="rise" style="--d:1">God hath received him</h2>
+    <p class="range rise" style="--d:2">Verses 1–6</p>
+    <div class="rule"></div>
+    <p class="hook rise" style="--d:4">One man eats anything. Another eats only vegetables. God took them both in.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="1-2" data-hl="Him that is weak in the faith receive ye|another, who is weak, eateth herbs"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="1"></blockquote>
+    <h2 class="rise" style="--d:1">The weak and the strong</h2>
+    <div class="columns">
+      <div class="col law rise" style="--d:2">
+        <p class="who">Weak in the faith</p>
+        <h3>eats only herbs</h3>
+        <p>A tender conscience. Maybe still careful about the old food laws, or afraid the meat had been offered to an idol. Vegetables were safe.</p>
+      </div>
+      <div class="col grace step">
+        <p class="who">Strong</p>
+        <h3>eats all things</h3>
+        <p>Knows that food can't make a man clean or unclean before God (v. 14). He is free to eat.</p>
+      </div>
+    </div>
+    <p class="note step">“Doubtful disputations” means <em>arguments over opinions</em>. Welcome the weaker brother, but not so you can set him straight.</p>
+    <p class="note step">This chapter is about things God hasn't commanded or forbidden. Drunkenness and sexual sin aren't opinions. Paul called them sin just a few verses back (13:13).</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="3-4" data-hl="Let not him that eateth despise him that eateth not|for God hath received him|for God is able to make him stand"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <div class="split">
+      <div class="stage">
+        <svg viewBox="0 0 400 330" role="img" aria-label="A man is falling over. A long arm reaches in and holds him up, and he stands upright again.">
+          <circle class="ro14-halo" cx="200" cy="200" r="110"/>
+          <line class="ro14-ground" x1="60" y1="302" x2="340" y2="302"/>
+          <path class="ro14-arm" pathLength="1" d="M380 40 C360 130 300 178 214 188"/>
+          <g class="ro14-man">
+            <circle cx="200" cy="142" r="19"/>
+            <path d="M200 170 L200 236 M200 236 L184 298 M200 236 L216 298 M200 184 L176 222 M200 184 L224 222"/>
+          </g>
+          <text class="ro14-fall" x="70" y="40" font-size="20">falling</text>
+          <text class="ro14-said" x="200" y="34" text-anchor="middle" font-size="22">“he shall be holden up”</text>
+        </svg>
+      </div>
+      <div>
+        <h2 class="rise" style="--d:1">Not your servant</h2>
+        <p class="note rise" style="--d:2">The strong were tempted to <em>despise</em>, to look down on the weak as narrow. The weak were tempted to <em>judge</em>, to call the strong worldly.</p>
+        <p class="note step">Paul tells both: he isn't your servant. He answers to his own Master. And <em>“God hath received him.”</em> If God took him in, who are you to shut him out?</p>
+        <p class="note step ro14-up"><em>“Holden up”</em> means <em>held up</em>. If you fell yesterday, hear this: God is able to make you stand. Your footing doesn't rest on how strong you are. It rests on Him.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="slide verse" data-v="5-6" data-hl="Let every man be fully persuaded in his own mind|he giveth God thanks"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="5" data-hl="Let every man be fully persuaded in his own mind"></blockquote>
+    <h2 class="rise" style="--d:1">One day above another</h2>
+    <p class="note rise" style="--d:2">Some believers still kept the Sabbath and the feasts of the law. Others treated every day alike. Paul doesn't settle it. Each man should be <em>“fully persuaded”</em>, settled before God.</p>
+    <div class="mirror">
+      <div class="step"><span>One man</span><span class="arrow">→</span><span class="word">keeps the day, “unto the Lord”</span><small>and gives God thanks</small></div>
+      <div class="step"><span>Another</span><span class="arrow">→</span><span class="word">doesn't, “to the Lord”</span><small>and gives God thanks</small></div>
+    </div>
+    <p class="note step">Today it might be the brother who won't watch certain movies, or won't eat at a restaurant with a bar. Don't mock him. He may know something about his own weak spots that you don't.</p>
+  </div>
+</section>
+
+<!-- ======================= PART TWO: WE ARE THE LORD'S ======================= -->
+<section class="slide part">
+  <div class="inner">
+    <p class="part-n rise">Part two</p>
+    <h2 class="rise" style="--d:1">We are the Lord's</h2>
+    <p class="range rise" style="--d:2">Verses 7–12</p>
+    <div class="rule"></div>
+    <p class="hook rise" style="--d:4">Every man belongs to one Master, and every man will give account to Him.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="7-9" data-hl="none of us liveth to himself|we are the Lord’s|Christ both died, and rose, and revived"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="8" data-hl="whether we live therefore, or die, we are the Lord’s"></blockquote>
+    <p class="saying rise" style="--d:1">Living or dying, <em>we are the Lord's.</em></p>
+    <p class="note rise" style="--d:2">The old life said, “It's my life. I'm only hurting myself.” It was never true. Our choices always landed on somebody: a mother, a child, a friend. <em>“None of us liveth to himself.”</em></p>
+    <p class="note step"><em>“Revived”</em> means <em>lived again</em>. Christ died and rose to be Lord of everyone, the living and the dead. You belong to Him now. That isn't a chain. It's the safest place a man can be.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="10-12" data-hl="why dost thou judge thy brother?|we shall all stand before the judgment seat of Christ|every one of us shall give account of himself to God"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="10" data-hl="we shall all stand before the judgment seat of Christ"></blockquote>
+    <div class="split">
+      <div class="stage">
+        <svg class="map" data-world viewBox="420 232 160 110" data-towns="Corinth!:t, Athens" role="img" aria-label="Map of southern Greece. Corinth, where Paul wrote this letter, sits on the narrow neck of land between the two seas. Athens is just to the east.">
+          <text x="477" y="318" text-anchor="middle" font-size="5.5" style="fill:var(--accent-hot);font-weight:700">the bēma stood</text>
+          <text x="477" y="325" text-anchor="middle" font-size="5.5" style="fill:var(--accent-hot);font-weight:700">in the marketplace</text>
+        </svg>
+      </div>
+      <div>
+        <h2 class="rise" style="--d:1">The judgment seat</h2>
+        <p class="note rise" style="--d:2">The Greek word is <span class="gk">bēma</span>, a raised stone platform where a judge sat. Paul wrote this letter in Corinth, and Corinth had one in its marketplace. He had stood before it himself, dragged before Gallio (Acts 18:12). It still stands in the ruins.</p>
+        <p class="note step">Every believer will stand before Christ's judgment seat. Not to find out if he's saved: that was settled at the cross. It's where a servant gives account of how he lived, and receives his reward.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="12"></blockquote>
+    <h2 class="rise" style="--d:1">Account of <em>himself</em></h2>
+    <p class="note rise" style="--d:2">Not of his brother. You won't answer for what the other man ate, or how he kept his Sundays. You'll answer for you. Verse 11 quotes Isaiah:</p>
+    <blockquote class="quote step"><p>“I have sworn by myself, the word is gone out of my mouth in righteousness, and shall not return, That unto me every knee shall bow, every tongue shall swear.”</p><cite>Isaiah 45:23</cite></blockquote>
+    <blockquote class="quote step"><p>“Verily, verily, I say unto you, He that heareth my word, and believeth on him that sent me, hath everlasting life, and shall not come into condemnation; but is passed from death unto life.”</p><cite>John 5:24</cite></blockquote>
+    <p class="note step">That's why we can stop keeping score on other men. A believer's sin was judged at the cross. Our part is to keep short accounts with God: own today's sin, confess it, and walk on in grace.</p>
+  </div>
+</section>
+
+<!-- ======================= PART THREE: NO STUMBLINGBLOCK ======================= -->
+<section class="slide part">
+  <div class="inner">
+    <p class="part-n rise">Part three</p>
+    <h2 class="rise" style="--d:1">No stumblingblock</h2>
+    <p class="range rise" style="--d:2">Verses 13–23</p>
+    <div class="rule"></div>
+    <p class="hook rise" style="--d:4">Freedom that trips up a brother isn't love.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="13-14" data-hl="that no man put a stumblingblock or an occasion to fall in his brother’s way|there is nothing unclean of itself"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="13" data-hl="judge this rather"></blockquote>
+    <div class="split">
+      <div class="stage">
+        <svg viewBox="0 80 600 200" role="img" aria-label="A man walks along a road. A block drops into the road in front of him. Then the block is lifted away, and he walks on.">
+          <path class="ro14-road" d="M20 250 L580 214"/>
+          <path class="ro14-lane" d="M20 250 L580 214"/>
+          <g class="ro14-walker">
+            <g>
+              <circle cx="150" cy="128" r="15"/>
+              <path d="M150 150 L150 200 M150 200 L136 240 M150 200 L166 238 M150 162 L134 188 M150 162 L168 184"/>
+            </g>
+          </g>
+          <g class="ro14-block">
+            <rect x="318" y="176" width="64" height="54" rx="6"/>
+            <text x="350" y="160" text-anchor="middle" font-size="20">a stumblingblock</text>
+          </g>
+        </svg>
+      </div>
+      <div>
+        <h2 class="rise" style="--d:1">Judge this rather</h2>
+        <p class="note rise" style="--d:2">Paul turns the word around. Stop judging your brother. Judge <em>yourself</em>: am I putting something in his way?</p>
+        <p class="note step ro14-drop">A <span class="gk">skandalon</span> was the trigger of a trap, or a stone in the road. Something that makes a man go down.</p>
+        <p class="note step ro14-lift">Verse 14: no food is unclean in itself. But if a brother's conscience says it's wrong, then for him it is. Love clears the road for him.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="slide verse" data-v="15-16" data-hl="Destroy not him with thy meat, for whom Christ died"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="15" data-hl="Destroy not him with thy meat, for whom Christ died"></blockquote>
+    <div class="split">
+      <div class="stage">
+        <svg class="scale" viewBox="0 0 600 330" role="img" aria-label="A balance scale. On one side, a plate of food: my meat. On the other, a man: my brother, for whom Christ died. The brother outweighs the plate.">
+          <path d="M270 320 L330 320 L312 300 L288 300 Z" style="fill:var(--line-strong)"/>
+          <line x1="300" y1="300" x2="300" y2="70" stroke-width="8" style="stroke:var(--line-strong)"/>
+          <g class="scale-beam">
+            <line x1="80" y1="70" x2="520" y2="70" stroke-width="8" stroke-linecap="round" style="stroke:var(--ink-soft)"/>
+            <circle cx="300" cy="70" r="11" style="fill:var(--accent)"/>
+          </g>
+          <g class="scale-pan l">
+            <g stroke-width="2" style="stroke:var(--ink-soft)"><line x1="80" y1="70" x2="30" y2="190"/><line x1="80" y1="70" x2="130" y2="190"/></g>
+            <path d="M20 190 L140 190 Q130 220 80 220 Q30 220 20 190 Z" style="fill:var(--surface-2);stroke:var(--ink-soft)" stroke-width="2"/>
+            <ellipse cx="80" cy="184" rx="40" ry="7" style="fill:var(--line-strong)"/>
+            <ellipse cx="80" cy="176" rx="20" ry="9" style="fill:var(--warm)"/>
+            <text x="80" y="252" text-anchor="middle" font-size="20" style="fill:var(--ink-soft)">my meat</text>
+          </g>
+          <g class="scale-pan r">
+            <g stroke-width="2" style="stroke:var(--ink-soft)"><line x1="520" y1="70" x2="470" y2="190"/><line x1="520" y1="70" x2="570" y2="190"/></g>
+            <path d="M460 190 L580 190 Q570 220 520 220 Q470 220 460 190 Z" style="fill:var(--surface-2);stroke:var(--accent)" stroke-width="2"/>
+            <circle cx="520" cy="134" r="12" style="fill:var(--accent-hot)"/>
+            <path d="M502 188 Q502 150 520 150 Q538 150 538 188 Z" style="fill:var(--accent-hot)"/>
+            <text x="520" y="252" text-anchor="middle" font-size="20" font-weight="700" style="fill:var(--accent-hot)">my brother,</text>
+            <text x="520" y="276" text-anchor="middle" font-size="17" style="fill:var(--accent-hot)">for whom Christ died</text>
+          </g>
+        </svg>
+      </div>
+      <div>
+        <h2 class="rise" style="--d:1">For whom Christ died</h2>
+        <p class="note rise" style="--d:2">“Destroy” is a strong word: a man pushed by my example back into what nearly wrecked him.</p>
+        <p class="note step scale-go">Put them on the scale. On one side, my plate, my freedom, my right. On the other, a man Jesus thought was worth dying for. It isn't close.</p>
+        <p class="note step"><em>“Let not then your good be evil spoken of”</em>: your freedom is good. Don't let it give the faith a bad name.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="slide verse" data-v="17-18" data-hl="the kingdom of God is not meat and drink; but righteousness, and peace, and joy in the Holy Ghost"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="17"></blockquote>
+    <h2 class="rise" style="--d:1">What the kingdom is made of</h2>
+    <ul class="nots">
+      <li class="step"><span class="k">meat</span><span class="why">what's on the plate</span></li>
+      <li class="step"><span class="k">drink</span><span class="why">what's in the glass</span></li>
+      <li class="step yes"><span class="k">righteousness, and peace, and joy in the Holy Ghost</span><span class="why">what the Spirit grows in a man</span></li>
+    </ul>
+    <p class="note step">A church can fight for years over food rules and miss the whole thing. The kingdom shows up in a man who does right, lives at peace with God and his brothers, and is glad. That man is <em>“acceptable to God, and approved of men.”</em></p>
+    <p class="note step">Good news for a man whose whole life used to be about the next drink: the kingdom isn't about what's in the glass.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="19-21" data-hl="follow after the things which make for peace|It is good neither to eat flesh, nor to drink wine, nor any thing whereby thy brother stumbleth"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="21"></blockquote>
+    <div class="split">
+      <div class="stage">
+        <svg viewBox="0 0 600 300" role="img" aria-label="Two men sit at a table with a glass of wine between them. The glass is taken away, and a cup of water is set there instead.">
+          <circle class="ro14-who" cx="110" cy="108" r="24"/>
+          <path class="ro14-who" d="M66 196 Q66 140 110 140 Q154 140 154 196 Z"/>
+          <circle class="ro14-who bro" cx="490" cy="108" r="24"/>
+          <path class="ro14-who bro" d="M446 196 Q446 140 490 140 Q534 140 534 196 Z"/>
+          <rect class="ro14-table" x="50" y="196" width="500" height="16" rx="5"/>
+          <line class="ro14-leg" x1="64" y1="212" x2="64" y2="276"/><line class="ro14-leg" x1="536" y1="212" x2="536" y2="276"/>
+          <text class="ro14-cap" x="110" y="244" text-anchor="middle" font-size="19">me</text>
+          <text class="ro14-cap" x="490" y="244" text-anchor="middle" font-size="19">my brother</text>
+          <g class="ro14-glass">
+            <path class="wine" d="M281 140 Q283 170 300 172 Q317 170 319 140 Z"/>
+            <path class="bowl" d="M276 112 Q276 172 300 174 Q324 172 324 112 Z"/>
+            <line class="bowl" x1="300" y1="174" x2="300" y2="194"/>
+            <ellipse class="bowl" cx="300" cy="194" rx="16" ry="3"/>
+          </g>
+          <g class="ro14-cup">
+            <path d="M284 140 L316 140 L312 194 L288 194 Z"/>
+            <text x="300" y="118" text-anchor="middle" font-size="19">for his sake</text>
+          </g>
+        </svg>
+      </div>
+      <div>
+        <h2 class="rise" style="--d:1">Nor to drink wine</h2>
+        <p class="note rise" style="--d:2">This verse speaks straight to us. Many men in this room know what one drink can start.</p>
+        <p class="note step ro14-away">If you're the strong brother, a man who never had a problem: don't order a beer at dinner with a man fighting for his sobriety. Don't keep it in the fridge when he comes over. Love sets the glass down.</p>
+        <p class="note step">Paul says it's <em>good</em> to give up anything that makes a brother stumble, even something you could have.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise">Wine is a mocker</h2>
+    <blockquote class="quote rise" style="--d:1"><p>“Wine is a mocker, strong drink is raging: and whosoever is deceived thereby is not wise.”</p><cite>Proverbs 20:1</cite></blockquote>
+    <p class="note rise" style="--d:2">If you're the man in recovery, there's no “strong” version of you that can handle a little. Southern Baptists have long urged believers to leave alcohol alone altogether. For a man it has ruled, it's the only safe one.</p>
+    <p class="note step">That isn't weakness, and it isn't legalism. It's a man who knows the road and chooses not to walk it.</p>
+    <blockquote class="quote step"><p>“And be not drunk with wine, wherein is excess; but be filled with the Spirit;”</p><cite>Ephesians 5:18</cite></blockquote>
+    <p class="note step">The bottle promised what only God can give: peace, courage, joy. Now the Holy Spirit lives in you. Be filled with Him instead.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="22-23" data-hl="Happy is he that condemneth not himself in that thing which he alloweth|whatsoever is not of faith is sin"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="23" data-hl="whatsoever is not of faith is sin"></blockquote>
+    <h2 class="rise" style="--d:1">Whatsoever is not of faith</h2>
+    <div class="ifthen rise" style="--d:2">
+      <div class="if"><small>If you</small>think it's wrong, and do it anyway,</div>
+      <span class="arrow" aria-hidden="true">→</span>
+      <div class="then"><small>then</small>for you, it's sin.</div>
+    </div>
+    <p class="note step"><em>“Damned”</em> here means <em>condemned</em>: his own conscience convicts him, and he stands guilty. Paul isn't saying a believer loses his salvation over a meal. He's saying don't go against your conscience.</p>
+    <p class="note step">If you have to talk yourself into it, don't. And verse 22 holds the other side: <em>“Happy is he that condemneth not himself.”</em> A man who walks with God by faith doesn't have to live looking over his shoulder.</p>
+  </div>
+</section>
+
+<!-- ======================= CLOSING ======================= -->
+<section class="slide remember">
+  <div class="inner">
+    <h2 class="rise">Points to remember</h2>
+    <ol class="seeds">
+      <li class="step"><span class="topic">Disagreements</span><span class="seed-q">“Him that is weak in the faith receive ye” <cite>14:1</cite></span><span class="take">Welcome the brother who sees it differently. Don't despise him, and don't judge him.</span></li>
+      <li class="step"><span class="topic">Judging</span><span class="seed-q">“God is able to make him stand” <cite>14:4</cite></span><span class="take">He answers to his own Master, and God holds him up. He holds you up too.</span></li>
+      <li class="step"><span class="topic">Belonging</span><span class="seed-q">“We are the Lord's” <cite>14:8</cite></span><span class="take">No man lives to himself. Living or dying, we belong to Christ.</span></li>
+      <li class="step"><span class="topic">Giving account</span><span class="seed-q">“Every one of us shall give account of himself” <cite>14:12</cite></span><span class="take">Saved by grace, we'll still answer for how we lived. Keep short accounts with God.</span></li>
+      <li class="step"><span class="topic">Stumbling</span><span class="seed-q">“Nor to drink wine, nor any thing whereby thy brother stumbleth” <cite>14:21</cite></span><span class="take">A brother for whom Christ died is worth more than any freedom of mine.</span></li>
+      <li class="step"><span class="topic">Conscience</span><span class="seed-q">“Whatsoever is not of faith is sin” <cite>14:23</cite></span><span class="take">Don't act against your conscience. If you have to talk yourself into it, don't.</span></li>
+    </ol>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 1 of 6</p>
+      <span class="topic">Disagreements</span>
+      <h2>How should believers treat each other over things God hasn't commanded?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="1"></blockquote>
+      <blockquote class="quote step" data-q="3"></blockquote>
+      <blockquote class="quote step" data-q="5" data-hl="Let every man be fully persuaded in his own mind"></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>Receive each other. The strong shouldn't look down on the weak, and the weak shouldn't judge the strong, because God has received them both. Each man settles it in his own mind before the Lord, and gives thanks.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 2 of 6</p>
+      <span class="topic">Judging</span>
+      <h2>Why shouldn't I judge another believer?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="4"></blockquote>
+      <blockquote class="quote step" data-q="10" data-hl="why dost thou judge thy brother?"></blockquote>
+      <blockquote class="quote step" data-q="13" data-hl="judge this rather"></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>He isn't my servant. He answers to the Lord, who is able to make him stand, and I'll stand before Christ's judgment seat myself. The judging I'm told to do is of me: am I tripping my brother?</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 3 of 6</p>
+      <span class="topic">Belonging</span>
+      <h2>Who do we live for?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="7"></blockquote>
+      <blockquote class="quote step" data-q="8"></blockquote>
+      <blockquote class="quote step" data-q="9"></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>For the Lord. No man lives only to himself; our choices always touch other people. Christ died and rose to be our Lord, so whether we live or die, we are His. That's where a man is safest.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 4 of 6</p>
+      <span class="topic">Giving account</span>
+      <h2>What will happen at the judgment seat of Christ?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="10" data-hl="we shall all stand before the judgment seat of Christ"></blockquote>
+      <blockquote class="quote step" data-q="12"></blockquote>
+      <blockquote class="quote step"><p>“For we must all appear before the judgment seat of Christ; that every one may receive the things done in his body, according to that he hath done, whether it be good or bad.”</p><cite>2 Corinthians 5:10</cite></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>Every believer will give account of himself to God. It isn't to decide whether we're saved; whoever believes “shall not come into condemnation” (John 5:24). It's where we answer for how we lived and receive our reward.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 5 of 6</p>
+      <span class="topic">Stumbling</span>
+      <h2>Why would I give something up for my brother's sake?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="15" data-hl="for whom Christ died"></blockquote>
+      <blockquote class="quote step" data-q="21"></blockquote>
+      <blockquote class="quote step"><p>“Wherefore, if meat make my brother to offend, I will eat no flesh while the world standeth, lest I make my brother to offend.”</p><cite>1 Corinthians 8:13</cite></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>Because Christ died for him. My freedom is worth less than a brother's soul. Love sets down the glass, or anything else, that could make him fall.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 6 of 6</p>
+      <span class="topic">Conscience</span>
+      <h2>What does “whatsoever is not of faith is sin” mean?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="22"></blockquote>
+      <blockquote class="quote step" data-q="23"></blockquote>
+      <blockquote class="quote step"><p>“But without faith it is impossible to please him: for he that cometh to God must believe that he is, and that he is a rewarder of them that diligently seek him.”</p><cite>Hebrews 11:6</cite></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>If I believe something is wrong and do it anyway, it's sin for me, even if the thing itself isn't. Don't go against your conscience. Live by faith, with a clear conscience before God.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide prayer">
+  <div class="inner">
+    <div class="emblem rise"></div>
+    <h2 class="rise" style="--d:1">Prayer requests</h2>
+    <p class="ask-line rise" style="--d:2">What can we pray about for you today?</p>
+    <blockquote class="quote rise" style="--d:4"><p>“Now the God of hope fill you with all joy and peace in believing, that ye may abound in hope, through the power of the Holy Ghost.”</p><cite>Romans 15:13</cite></blockquote>
+  </div>
+</section>
+
+</main>
+
+<script>
+// King James Version, Romans chapter 14
+const V = {
+  1: "Him that is weak in the faith receive ye, but not to doubtful disputations.",
+  2: "For one believeth that he may eat all things: another, who is weak, eateth herbs.",
+  3: "Let not him that eateth despise him that eateth not; and let not him which eateth not judge him that eateth: for God hath received him.",
+  4: "Who art thou that judgest another man’s servant? to his own master he standeth or falleth. Yea, he shall be holden up: for God is able to make him stand.",
+  5: "One man esteemeth one day above another: another esteemeth every day alike. Let every man be fully persuaded in his own mind.",
+  6: "He that regardeth the day, regardeth it unto the Lord; and he that regardeth not the day, to the Lord he doth not regard it. He that eateth, eateth to the Lord, for he giveth God thanks; and he that eateth not, to the Lord he eateth not, and giveth God thanks.",
+  7: "For none of us liveth to himself, and no man dieth to himself.",
+  8: "For whether we live, we live unto the Lord; and whether we die, we die unto the Lord: whether we live therefore, or die, we are the Lord’s.",
+  9: "For to this end Christ both died, and rose, and revived, that he might be Lord both of the dead and living.",
+  10: "But why dost thou judge thy brother? or why dost thou set at nought thy brother? for we shall all stand before the judgment seat of Christ.",
+  11: "For it is written, As I live, saith the Lord, every knee shall bow to me, and every tongue shall confess to God.",
+  12: "So then every one of us shall give account of himself to God.",
+  13: "Let us not therefore judge one another any more: but judge this rather, that no man put a stumblingblock or an occasion to fall in his brother’s way.",
+  14: "I know, and am persuaded by the Lord Jesus, that there is nothing unclean of itself: but to him that esteemeth any thing to be unclean, to him it is unclean.",
+  15: "But if thy brother be grieved with thy meat, now walkest thou not charitably. Destroy not him with thy meat, for whom Christ died.",
+  16: "Let not then your good be evil spoken of:",
+  17: "For the kingdom of God is not meat and drink; but righteousness, and peace, and joy in the Holy Ghost.",
+  18: "For he that in these things serveth Christ is acceptable to God, and approved of men.",
+  19: "Let us therefore follow after the things which make for peace, and things wherewith one may edify another.",
+  20: "For meat destroy not the work of God. All things indeed are pure; but it is evil for that man who eateth with offence.",
+  21: "It is good neither to eat flesh, nor to drink wine, nor any thing whereby thy brother stumbleth, or is offended, or is made weak.",
+  22: "Hast thou faith? have it to thyself before God. Happy is he that condemneth not himself in that thing which he alloweth.",
+  23: "And he that doubteth is damned if he eat, because he eateth not of faith: for whatsoever is not of faith is sin."
+};
+const BOOK = "Romans 14";
+</script>
+<script src="../assets/deck.js"></script>
+</body>
+</html>

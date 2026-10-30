@@ -1,0 +1,481 @@
+<!doctype html>
+<html lang="en" data-theme="night">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Romans 13</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="../assets/fonts.css">
+<link rel="stylesheet" href="../assets/deck.css">
+<link rel="stylesheet" href="../assets/themes.css">
+<style>
+/* ro13-where: where this chapter sits in the whole letter. The letter's 16 chapters in five groups, the current one lit (.now) */
+.ro13-where { display: flex; gap: 6px; margin: .3em 0 1em; }
+.ro13-where > div { flex: var(--n) 1 0; min-width: 0; display: flex; flex-direction: column; gap: 4px; }
+.ro13-where small { font: 700 clamp(.62rem, .55rem + .3vw, .85rem)/1.15 var(--sans); color: var(--ink-soft); min-height: 2.3em; display: flex; align-items: flex-end; }
+.ro13-where p { display: flex; gap: 3px; margin: 0; }
+.ro13-where span { flex: 1 1 0; min-width: 0; display: grid; place-items: center; height: clamp(1.6rem, 1.3rem + 1vw, 2.3rem); border-radius: 5px; border: 1.5px solid var(--line-strong); background: var(--surface); font: 600 clamp(.7rem, .6rem + .35vw, .95rem) var(--sans); color: var(--ink-soft); }
+.ro13-where > div.on small { color: var(--accent); }
+.ro13-where > div.on span { border-color: var(--accent); }
+.ro13-where span.now { background: var(--accent); border-color: var(--accent); color: var(--on-accent); box-shadow: 0 0 0 5px color-mix(in srgb, var(--accent) 22%, transparent); }
+.slide.active .ro13-where span.now { animation: ro13-pulse 2.4s ease-in-out .8s 2; }
+@keyframes ro13-pulse { 50% { box-shadow: 0 0 0 10px color-mix(in srgb, var(--accent) 8%, transparent); } }
+
+/* ro13-sum: many commandments gathered up into one */
+.ro13-sum ul { list-style: none; padding: 0; margin: .3em 0 .2em; display: grid; grid-template-columns: repeat(5, 1fr); gap: 8px; }
+@media (max-width: 760px) { .ro13-sum ul { grid-template-columns: repeat(2, 1fr); } .ro13-sum svg { display: none; } .ro13-into { margin-top: .6em; } }
+.ro13-sum li { padding: .5em .6em; border: 1.5px dashed var(--line-strong); border-radius: 8px; background: var(--surface); text-align: center; font: italic clamp(.88rem, .8rem + .4vw, 1.15rem)/1.25 var(--serif); transition: transform .8s cubic-bezier(.4,0,.2,1), opacity .8s ease, border-color .8s ease; transition-delay: calc(var(--k) * 90ms); }
+.ro13-sum svg { display: block; width: 100%; height: 2.6rem; overflow: visible; }
+.ro13-sum svg path { fill: none; stroke: var(--line-strong); stroke-width: 2; stroke-dasharray: 1; stroke-dashoffset: 1; transition: stroke-dashoffset 1s ease .3s, stroke .6s ease; }
+.ro13-into { margin: 0 auto .9em; max-width: 42rem; text-align: center; padding: .6em 1em; border: 2px solid var(--accent); border-radius: 12px; background: color-mix(in srgb, var(--accent) 12%, transparent); }
+.ro13-into small { display: block; font: 700 clamp(.78rem, .72rem + .3vw, .98rem) var(--sans); color: var(--ink-soft); }
+.ro13-into b { display: block; font: 400 clamp(1.25rem, 1rem + 1.1vw, 2rem)/1.2 var(--serif); color: var(--accent-hot); }
+.ro13-sum:has(.ro13-into.on) li { transform: translateY(6px) scale(.96); opacity: .6; border-color: var(--accent); }
+.ro13-sum:has(.ro13-into.on) svg path { stroke-dashoffset: 0; stroke: var(--accent); }
+
+/* ro13-words: old words in pairs, each with its plain meaning */
+.ro13-words { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin: .4em 0 1em; }
+@media (max-width: 760px) { .ro13-words { grid-template-columns: 1fr; } }
+.ro13-words > div { padding: .6em .85em .7em; border-radius: 10px; background: var(--surface); border: 1px solid var(--line-strong); }
+.ro13-words h3 { font: 700 clamp(.78rem, .72rem + .3vw, .98rem) var(--sans); color: var(--accent); text-transform: uppercase; letter-spacing: .06em; margin-bottom: .35em; }
+.ro13-words p { margin: 0 0 .35em; font-size: clamp(.92rem, .84rem + .38vw, 1.15rem); line-height: 1.3; color: var(--ink-soft); }
+.ro13-words p:last-child { margin-bottom: 0; }
+.ro13-words b { display: block; font: italic 600 clamp(1.05rem, .92rem + .55vw, 1.4rem) var(--serif); color: var(--ink); }
+
+/* ro13-plan: the ticked checklist, in plain words (no quote marks) */
+.ro13-plan q { quotes: none; font-style: normal; font-family: var(--sans); font-weight: 600; }
+</style>
+</head>
+<body>
+<main class="deck" id="deck">
+
+<!-- ======================= OPENING ======================= -->
+<section class="slide title">
+  <div class="inner">
+    <div class="emblem rise"></div>
+    <h1 class="rise" style="--d:1">Romans 13</h1>
+    <p class="sub rise" style="--d:3">The night is far spent</p>
+    <p class="tag rise" style="--d:5">Do right under the law of the land, pay what you owe, love your neighbour, and wake up: the day is almost here.</p>
+  </div>
+</section>
+
+<section class="slide watch">
+  <div class="inner">
+    <h2 class="rise">Things to watch for</h2>
+    <p class="lede rise" style="--d:1">Keep these questions in the back of your mind as we read. We'll come back to every one of them at the end.</p>
+    <ol class="seeds">
+      <li class="step"><span class="topic">Authority</span><span class="seed-q">Why should a believer obey the law and the people over him?</span></li>
+      <li class="step"><span class="topic">Debts</span><span class="seed-q">What is the one debt we never finish paying?</span></li>
+      <li class="step"><span class="topic">The law</span><span class="seed-q">How does love fulfil the law?</span></li>
+      <li class="step"><span class="topic">Waking up</span><span class="seed-q">Why is it “high time to awake out of sleep”?</span></li>
+      <li class="step"><span class="topic">Recovery</span><span class="seed-q">What does it mean to “make not provision for the flesh”?</span></li>
+    </ol>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise">Where we are in Romans</h2>
+    <div class="ro13-where rise" style="--d:1" role="img" aria-label="The sixteen chapters of Romans in five groups: sin, chapters 1 to 3; grace through faith, 4 and 5; new life, 6 to 8; Israel and the nations, 9 to 11; living it out, 12 to 16. Chapter 13 is lit.">
+      <div style="--n:3"><small>All have sinned</small><p><span>1</span><span>2</span><span>3</span></p></div>
+      <div style="--n:2"><small>Saved by faith</small><p><span>4</span><span>5</span></p></div>
+      <div style="--n:3"><small>A new life</small><p><span>6</span><span>7</span><span>8</span></p></div>
+      <div style="--n:3"><small>Israel and the nations</small><p><span>9</span><span>10</span><span>11</span></p></div>
+      <div class="on" style="--n:5"><small>Living it out</small><p><span>12</span><span class="now">13</span><span>14</span><span>15</span><span>16</span></p></div>
+    </div>
+    <div class="split">
+      <div class="stage">
+        <svg class="map" data-world viewBox="150 100 600 380" data-towns="Rome!, Corinth*" role="img" aria-label="Map of the Roman world. Paul's letter goes from Corinth in Greece, around the toe of Italy, up to Rome, the capital.">
+          <path class="map-route" data-via="Corinth, @21 36.5, @16 37.5, Rhegium, Puteoli, Rome"/>
+        </svg>
+      </div>
+      <div>
+        <p class="note rise" style="--d:2">Chapters 1–11 told us what God has done: all have sinned, Christ died for us, and believers are made new.</p>
+        <p class="note step">From chapter 12 on, Paul shows what that looks like on an ordinary weekday. Chapter 12 was life in the church. Chapter 13 takes us out onto the street: the courthouse, the tax man, the neighbour next door.</p>
+        <p class="note step">And this letter was going to Rome, the emperor's own city.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ======================= PART ONE: UNDER AUTHORITY ======================= -->
+<section class="slide part">
+  <div class="inner">
+    <p class="part-n rise">Part one</p>
+    <h2 class="rise" style="--d:1">The higher powers</h2>
+    <p class="range rise" style="--d:2">Verses 1–7</p>
+    <div class="rule"></div>
+    <p class="hook rise" style="--d:4">Believers in Nero's capital are told to honour the government, the courts, and the tax man.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="1-2" data-hl="Let every soul be subject unto the higher powers|the powers that be are ordained of God"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="1" data-hl="Let every soul be subject unto the higher powers"></blockquote>
+    <h2 class="rise" style="--d:1">Written under Nero</h2>
+    <ol class="timeline" aria-label="AD 54, Nero becomes emperor. About AD 57, Paul writes Romans. About AD 59 to 60, Paul reaches Rome as a prisoner. AD 64, Rome burns and Nero turns on the Christians. About AD 67 to 68, Paul is put to death in Rome.">
+      <li style="--k:0"><b>AD 54</b><span>Nero becomes emperor, at 16</span></li>
+      <li class="lit" style="--k:1"><b>about AD 57</b><span>Paul writes Romans</span><small>“be subject”</small></li>
+      <li style="--k:2"><b>about AD 59–60</b><span>Paul reaches Rome, a prisoner</span><small>Acts 28</small></li>
+      <li style="--k:3"><b>AD 64</b><span>Rome burns; Nero turns on the Christians</span></li>
+      <li class="wait" style="--k:4"><b>about AD 67–68</b><span>Paul put to death in Rome, by tradition</span></li>
+    </ol>
+    <p class="note step">“The higher powers” are the people who govern. When Paul wrote this, the man at the top was Nero, not a good man. Paul isn't saying every ruler is godly. God set up government itself, to keep order in a fallen world, and no ruler is outside His reach.</p>
+    <p class="note step">It isn't a blank check. When a ruler orders you to sin, <em>“We ought to obey God rather than men”</em> (Acts 5:29). But most days, obeying God means obeying the law.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="3-4" data-hl="do that which is good, and thou shalt have praise of the same|he is the minister of God to thee for good|he beareth not the sword in vain"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise">The judge, the officer, the probation officer</h2>
+    <div class="ifthen rise" style="--d:2">
+      <div class="if"><small>If you</small>do that which is good,</div>
+      <span class="arrow" aria-hidden="true">→</span>
+      <div class="then"><small>then</small>thou shalt have praise.</div>
+    </div>
+    <div class="ifthen step">
+      <div class="if"><small>If you</small>do that which is evil,</div>
+      <span class="arrow" aria-hidden="true">→</span>
+      <div class="then"><small>then</small>be afraid.</div>
+    </div>
+    <p class="note step">A lot of us have a record, a court date, or a probation officer. It's easy to see them as the enemy. Paul calls the man in authority God's <em>“minister,”</em> His servant, set there <em>for your good</em>. Showing up, telling the truth, and keeping your appointments isn't giving in. It's part of your new life.</p>
+    <p class="note step">“The sword” was Rome's power to punish. Paul doesn't pretend consequences aren't real. Some of what you're facing, you earned. Face it honestly. You won't face it alone.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="5" data-hl="not only for wrath, but also for conscience sake"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="5" data-hl="not only for wrath, but also for conscience sake"></blockquote>
+    <h2 class="rise" style="--d:1">Two reasons to keep the law</h2>
+    <div class="columns">
+      <div class="col law rise" style="--d:2">
+        <p class="who">Only for wrath</p>
+        <h3>So I don't get caught</h3>
+        <p>Careful while somebody's watching, anything goes when they're not. That's how the old life worked.</p>
+      </div>
+      <div class="col grace step">
+        <p class="who">For conscience sake</p>
+        <h3>Because it's right</h3>
+        <p>Does right when nobody's watching, because God is. A clean conscience lets a man sleep at night.</p>
+      </div>
+    </div>
+    <p class="note step">Your probation will end someday. Doing right shouldn't end with it. A changed man pays the fine, finishes the classes, and keeps doing right after the paperwork is closed, because his heart has changed, not just his situation.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="6-7" data-hl="for they are God’s ministers|Render therefore to all their dues"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="7"></blockquote>
+    <div class="split">
+      <div class="ledger rise" style="--d:2">
+        <h3>Render therefore to all their dues</h3>
+        <ul>
+          <li style="--k:0"><span>tribute</span><span>taxes on people and land</span></li>
+          <li style="--k:1"><span>custom</span><span>tolls on goods</span></li>
+          <li style="--k:2"><span>fear</span><span>respect for authority</span></li>
+          <li style="--k:3"><span>honour</span><span>to whom it's due</span></li>
+        </ul>
+        <div class="total"><span>Owed by</span><b>every soul</b></div>
+      </div>
+      <div>
+        <h2 class="rise" style="--d:1">Pay what you owe</h2>
+        <p class="note rise" style="--d:3">Rome's taxes paid for Nero's government. Paul says pay them anyway, with respect.</p>
+        <blockquote class="quote step"><p>“Render therefore unto Caesar the things which are Caesar’s; and unto God the things that are God’s.”</p><cite>Matthew 22:21</cite></blockquote>
+        <p class="note step">Taxes, tickets, child support: paying honestly is part of following Jesus, not just staying out of trouble.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ======================= PART TWO: THE DEBT OF LOVE ======================= -->
+<section class="slide part">
+  <div class="inner">
+    <p class="part-n rise">Part two</p>
+    <h2 class="rise" style="--d:1">The debt of love</h2>
+    <p class="range rise" style="--d:2">Verses 8–10</p>
+    <div class="rule"></div>
+    <p class="hook rise" style="--d:4">Pay off every debt you can. One debt you'll be paying for the rest of your life.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="8" data-hl="Owe no man any thing, but to love one another"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <div class="split">
+      <div class="ledger rise" style="--d:2">
+        <h3>What I still owe</h3>
+        <ul>
+          <li style="--k:0"><span>Court fines and fees</span><span>owed</span></li>
+          <li style="--k:1"><span>Back child support</span><span>owed</span></li>
+          <li style="--k:2"><span>The money I borrowed from my brother</span><span>owed</span></li>
+          <li style="--k:3"><span>An apology to my mother</span><span>owed</span></li>
+        </ul>
+        <div class="total"><span>Start</span><b>today</b></div>
+      </div>
+      <div>
+        <h2 class="rise" style="--d:1">Owe no man any thing</h2>
+        <p class="note rise" style="--d:3">Old debts don't disappear because we stop thinking about them. Make the list, and start paying, one call and one payment at a time.</p>
+        <blockquote class="quote step"><p>“Behold, Lord, the half of my goods I give to the poor; and if I have taken any thing from any man by false accusation, I restore him fourfold.”</p><cite>Luke 19:8</cite></blockquote>
+        <p class="note step">Zacchaeus made amends <em>after</em> Jesus saved him, not to earn it. What you owed God, Christ already paid on the cross. That frees you to face what you owe people.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="slide verse" data-v="9-10" data-hl="it is briefly comprehended in this saying|Thou shalt love thy neighbour as thyself|love is the fulfilling of the law"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="10"></blockquote>
+    <h2 class="rise" style="--d:1">All of it in one line</h2>
+    <div class="ro13-sum">
+      <ul class="rise" style="--d:2">
+        <li style="--k:0">Thou shalt not commit adultery</li>
+        <li style="--k:1">Thou shalt not kill</li>
+        <li style="--k:2">Thou shalt not steal</li>
+        <li style="--k:3">Thou shalt not bear false witness</li>
+        <li style="--k:4">Thou shalt not covet</li>
+      </ul>
+      <svg viewBox="0 0 1000 40" preserveAspectRatio="none" aria-hidden="true"><path pathLength="1" d="M100 0 Q100 22 500 26 M300 0 Q300 20 500 26 M500 0 L500 40 M700 0 Q700 20 500 26 M900 0 Q900 22 500 26"/></svg>
+      <div class="ro13-into step"><small>“briefly comprehended in this saying”</small><b>Thou shalt love thy neighbour as thyself</b></div>
+    </div>
+    <p class="note step">Love doesn't take a man's wife, his life, or his things, lie about him, or want what's his. <em>“Love worketh no ill to his neighbour.”</em></p>
+    <p class="note step">That's the one debt you never finish paying. Your other debts have an end. This one you pay on today, and owe again tomorrow.</p>
+  </div>
+</section>
+
+<!-- ======================= PART THREE: WAKE UP ======================= -->
+<section class="slide part">
+  <div class="inner">
+    <p class="part-n rise">Part three</p>
+    <h2 class="rise" style="--d:1">The day is at hand</h2>
+    <p class="range rise" style="--d:2">Verses 11–14</p>
+    <div class="rule"></div>
+    <p class="hook rise" style="--d:4">Wake up. Take off the night. Put on Christ.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="11-12" data-hl="it is high time to awake out of sleep|The night is far spent, the day is at hand|put on the armour of light"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="12" data-hl="The night is far spent, the day is at hand"></blockquote>
+    <h2 class="rise" style="--d:1">Almost morning</h2>
+    <div class="daybreak">
+      <div class="rise" style="--d:2"><i>verse 11</i><b>Wake up</b><p class="kjv">“high time to awake out of sleep”</p></div>
+      <div class="step"><i>verse 12</i><b>The night is far spent</b><p>The dark won't last. Christ is coming back, and every day brings it nearer.</p></div>
+      <div class="step"><i>verse 11</i><b>The day is at hand</b><p class="kjv">“now is our salvation nearer than when we believed”</p></div>
+    </div>
+    <p class="note step">“Salvation” here is the finish line: the day Christ returns and makes us completely new. It's closer now than the day you believed.</p>
+    <p class="note step">A man who knows the sun is about to come up doesn't start a party at 5 a.m. He gets up and gets dressed.</p>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="12" data-hl="let us therefore cast off the works of darkness, and let us put on the armour of light"></blockquote>
+    <h2 class="rise" style="--d:1">Take it off. Put it on.</h2>
+    <div class="columns">
+      <div class="col law rise" style="--d:2">
+        <p class="who">Cast off</p>
+        <h3>the works of darkness</h3>
+        <p>Like clothes you slept in. The things done at night that you'd hide in the morning.</p>
+      </div>
+      <div class="col grace step">
+        <p class="who">Put on</p>
+        <h3>the armour of light</h3>
+        <p>A soldier's gear, for a man who expects a fight. Made to be seen in daylight.</p>
+      </div>
+    </div>
+    <p class="note step">Notice the words <em>“let us.”</em> Paul puts himself in with us. Nobody stays dressed from yesterday. Every morning we take off the old and put on what God has given.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="13" data-hl="Let us walk honestly, as in the day"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise">Six old words, plainly</h2>
+    <div class="ro13-words">
+      <div class="rise" style="--d:1"><h3>The party</h3><p><b>rioting</b>wild parties that run all night</p><p><b>drunkenness</b>getting drunk, or high</p></div>
+      <div class="rise" style="--d:2"><h3>The bed</h3><p><b>chambering</b>sex outside of marriage (the word means “beds”)</p><p><b>wantonness</b>no brakes, and no shame about it</p></div>
+      <div class="rise" style="--d:3"><h3>The fight</h3><p><b>strife</b>quarreling, always ready to fight</p><p><b>envying</b>jealousy of what the other man has</p></div>
+    </div>
+    <p class="note step">They come in pairs, and they travel together. The drink leads to the bed, and both of them lead to the fight. Paul names them plainly because the men in Rome knew them well. So do we. Naming it is the first step out of it.</p>
+    <p class="note step"><em>“Walk honestly, as in the day”</em>: live a life you wouldn't mind being seen. No second phone. No stories to keep straight.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="14" data-hl="But put ye on the Lord Jesus Christ|make not provision for the flesh, to fulfil the lusts thereof"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="14" data-hl="make not provision for the flesh"></blockquote>
+    <h2 class="rise" style="--d:1">Make no plans for the flesh</h2>
+    <p class="note rise" style="--d:2">“Provision” is <span class="gk">pronoia</span>: <em>planning ahead</em>. A fall rarely comes out of nowhere. Cut off the flesh's plans before the craving comes.</p>
+    <ol class="checks ro13-plan">
+      <li class="step"><span class="tick">✓</span><q>Get rid of the stash</q><small>all of it, even the bottle you'd “never touch”</small></li>
+      <li class="step"><span class="tick">✓</span><q>Delete the number</q><small>the dealer, the old flame, the old crowd's group chat</small></li>
+      <li class="step"><span class="tick">✓</span><q>Change the route</q><small>drive home the long way, the way that doesn't pass the bar</small></li>
+      <li class="step"><span class="tick">✓</span><q>Tell a brother your plan</q><small>a plan kept secret is easy to break</small></li>
+    </ol>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise">Put on the Lord Jesus Christ</h2>
+    <p class="note rise" style="--d:2">You don't only take things off. You put Someone on. Clothes go everywhere you go: to work, to court, into the hard hour at 2 a.m. So does He.</p>
+    <p class="note step">About AD 386, a young man named Augustine sat weeping in a garden in Milan. For years he had lived for lust and pleasure, and he couldn't break free. He picked up Paul's letter, and his eyes fell on verses 13 and 14. He later wrote that all the darkness of doubt fled away. He is still one of the best-known Christians in history.</p>
+    <blockquote class="quote step"><p>“Enter not into the path of the wicked, and go not in the way of evil men. Avoid it, pass not by it, turn from it, and pass away.”</p><cite>Proverbs 4:14–15</cite></blockquote>
+    <p class="note step">The fight is won by not going that way at all, not by walking past the door every day and holding on. And when temptation comes anyway, God promises <em>“a way to escape”</em> (1 Corinthians 10:13).</p>
+  </div>
+</section>
+
+<!-- ======================= CLOSING ======================= -->
+<section class="slide remember">
+  <div class="inner">
+    <h2 class="rise">Points to remember</h2>
+    <ol class="seeds">
+      <li class="step"><span class="topic">Authority</span><span class="seed-q">“The powers that be are ordained of God” <cite>13:1</cite></span><span class="take">God set up government. Doing right under it, with a clean conscience, is part of a new life.</span></li>
+      <li class="step"><span class="topic">Debts</span><span class="seed-q">“Owe no man any thing, but to love one another” <cite>13:8</cite></span><span class="take">Pay down every debt you can, starting today. Love is the debt you keep paying.</span></li>
+      <li class="step"><span class="topic">The law</span><span class="seed-q">“Love is the fulfilling of the law” <cite>13:10</cite></span><span class="take">Love does no harm to a neighbour, so it keeps every commandment about him.</span></li>
+      <li class="step"><span class="topic">Waking up</span><span class="seed-q">“The night is far spent, the day is at hand” <cite>13:12</cite></span><span class="take">Christ's return is nearer every day. Get up, take off the dark, and put on the light.</span></li>
+      <li class="step"><span class="topic">Recovery</span><span class="seed-q">“Make not provision for the flesh” <cite>13:14</cite></span><span class="take">Put on Christ, and cut off the flesh's plans: the stash, the number, the route.</span></li>
+    </ol>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 1 of 5</p>
+      <span class="topic">Authority</span>
+      <h2>Why should a believer obey the law and the people over him?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="1"></blockquote>
+      <blockquote class="quote step" data-q="4" data-hl="he is the minister of God to thee for good"></blockquote>
+      <blockquote class="quote step"><p>“Honour all men. Love the brotherhood. Fear God. Honour the king.”</p><cite>1 Peter 2:17</cite></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>God set up government, and the man in authority is His servant for our good. We obey for conscience' sake, not just to stay out of trouble, unless a ruler commands sin.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 2 of 5</p>
+      <span class="topic">Debts</span>
+      <h2>What is the one debt we never finish paying?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="7"></blockquote>
+      <blockquote class="quote step" data-q="8"></blockquote>
+      <blockquote class="quote step"><p>“Behold, Lord, the half of my goods I give to the poor; and if I have taken any thing from any man by false accusation, I restore him fourfold.”</p><cite>Luke 19:8</cite></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>Love. Every other debt (taxes, fines, money borrowed, an apology) we work to pay off, starting today. Love for one another we pay every day and still owe tomorrow.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 3 of 5</p>
+      <span class="topic">The law</span>
+      <h2>How does love fulfil the law?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="8" data-hl="he that loveth another hath fulfilled the law"></blockquote>
+      <blockquote class="quote step" data-q="10"></blockquote>
+      <blockquote class="quote step"><p>“For all the law is fulfilled in one word, even in this; Thou shalt love thy neighbour as thyself.”</p><cite>Galatians 5:14</cite></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>The commandments about other people are all summed up in “love thy neighbour as thyself.” A man who truly loves his neighbour won't do him the harm the law forbids.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 4 of 5</p>
+      <span class="topic">Waking up</span>
+      <h2>Why is it “high time to awake out of sleep”?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="11"></blockquote>
+      <blockquote class="quote step" data-q="12"></blockquote>
+      <blockquote class="quote step" data-q="13" data-hl="Let us walk honestly, as in the day"></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>Because the night is almost over, and Christ's return is nearer every day. It's no time to live like it's 2 a.m. Cast off the works of darkness and put on the armour of light.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 5 of 5</p>
+      <span class="topic">Recovery</span>
+      <h2>What does it mean to “make not provision for the flesh”?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="14"></blockquote>
+      <blockquote class="quote step"><p>“Enter not into the path of the wicked, and go not in the way of evil men. Avoid it, pass not by it, turn from it, and pass away.”</p><cite>Proverbs 4:14–15</cite></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>Don't plan ahead for sin. Get rid of the stash, delete the number, change the route, and tell a brother. Don't leave the door open “just in case.” Put on the Lord Jesus Christ instead.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide prayer">
+  <div class="inner">
+    <div class="emblem rise"></div>
+    <h2 class="rise" style="--d:1">Prayer requests</h2>
+    <p class="ask-line rise" style="--d:2">What can we pray about for you today? A court date, a fine, a debt, a hard boss?</p>
+    <blockquote class="quote rise" style="--d:4"><p>“I exhort therefore, that, first of all, supplications, prayers, intercessions, and giving of thanks, be made for all men; For kings, and for all that are in authority; that we may lead a quiet and peaceable life in all godliness and honesty.”</p><cite>1 Timothy 2:1–2</cite></blockquote>
+  </div>
+</section>
+
+</main>
+
+<script>
+// King James Version, Romans chapter 13
+const V = {
+  1: "Let every soul be subject unto the higher powers. For there is no power but of God: the powers that be are ordained of God.",
+  2: "Whosoever therefore resisteth the power, resisteth the ordinance of God: and they that resist shall receive to themselves damnation.",
+  3: "For rulers are not a terror to good works, but to the evil. Wilt thou then not be afraid of the power? do that which is good, and thou shalt have praise of the same:",
+  4: "For he is the minister of God to thee for good. But if thou do that which is evil, be afraid; for he beareth not the sword in vain: for he is the minister of God, a revenger to execute wrath upon him that doeth evil.",
+  5: "Wherefore ye must needs be subject, not only for wrath, but also for conscience sake.",
+  6: "For for this cause pay ye tribute also: for they are God’s ministers, attending continually upon this very thing.",
+  7: "Render therefore to all their dues: tribute to whom tribute is due; custom to whom custom; fear to whom fear; honour to whom honour.",
+  8: "Owe no man any thing, but to love one another: for he that loveth another hath fulfilled the law.",
+  9: "For this, Thou shalt not commit adultery, Thou shalt not kill, Thou shalt not steal, Thou shalt not bear false witness, Thou shalt not covet; and if there be any other commandment, it is briefly comprehended in this saying, namely, Thou shalt love thy neighbour as thyself.",
+  10: "Love worketh no ill to his neighbour: therefore love is the fulfilling of the law.",
+  11: "And that, knowing the time, that now it is high time to awake out of sleep: for now is our salvation nearer than when we believed.",
+  12: "The night is far spent, the day is at hand: let us therefore cast off the works of darkness, and let us put on the armour of light.",
+  13: "Let us walk honestly, as in the day; not in rioting and drunkenness, not in chambering and wantonness, not in strife and envying.",
+  14: "But put ye on the Lord Jesus Christ, and make not provision for the flesh, to fulfil the lusts thereof."
+};
+const BOOK = "Romans 13";
+</script>
+<script src="../assets/deck.js"></script>
+</body>
+</html>
