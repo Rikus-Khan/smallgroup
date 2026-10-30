@@ -11,6 +11,14 @@ How it looks comes from the shared files in `assets/`, so it works in every them
 - Theology: non-reformed Southern Baptist. Salvation is offered to everyone and received by faith in Jesus. Believers are secure, and the Holy Spirit lives in every believer from salvation on. Avoid Calvinist framing, and avoid prosperity-gospel readings.
 - Scripture is **always the King James Version, word for word**. That includes cross-references: download every verse you quote from bible-api.com and copy it exactly.
 - Be accurate. If a fact is uncertain (a date, a custom), say "about," or leave it out.
+- Write every study for one man: a new Christian who may have fallen yesterday, who carries regret, and who has to go to work today. Every chapter should leave him with:
+  - **Sin**: named honestly, without shaming him.
+  - **Regret**: what to do with it.
+  - **Grace**: what God has already done about it.
+  - **Hope**: why today is not the end of his story.
+  - **The real world**: one concrete thing to do with this chapter today.
+
+  Not every slide carries all five, but the study as a whole must. Find them in the chapter itself; don't bolt them on.
 
 ## The shape of every study
 
@@ -23,6 +31,12 @@ How it looks comes from the shared files in `assets/`, so it works in every them
 4. **Points to remember**: `slide remember`, one item per "Things to watch for" question, in the same order, each with a short quote and its reference.
 5. **Questions**: one `slide qa` per "Things to watch for" question. The `h2` repeats that question **word for word**. 2–4 verses step in one at a time (`blockquote class="quote step"`), then the answer (`div class="answer step"`).
 6. **Prayer requests**: `slide prayer`, asking "What can we pray about for you today?" with one KJV verse. The group meets **daily**, so never say "this week" or "tonight."
+
+### Exceptions to the shape
+
+- **Short psalms (8 verses or fewer)** are just shorter studies. Skip "Things to watch for", "Points to remember" and the question slides. After the title come the verses with their explanation slides. Then add one or two slides on how the psalm speaks to these men: sin, regret, grace, hope and the real world. Close with the prayer slide.
+- **Genealogy and census chapters** (Genesis 5, 10 and 36; Numbers 1–4 and 26; 1 Chronicles 1–9; Ezra 2; Nehemiah 7, and the like) still read every verse, but keep the study short. Build it around a family-tree or tally graphic. Bring out the one or two bright spots in it, such as Enoch who "walked with God" or Jabez's prayer, and why a list of names matters: God knows every man by name.
+- **Song of Solomon**: do the full study. Rick reads it as his pastor taught him, as wisdom for women, the way Proverbs is wisdom for a son. Teach it that way, through the bride's own counsel to the daughters of Jerusalem: "that ye stir not up, nor awake my love, till he please." Keep it modest: explain the images plainly and never dwell on them. Rick may hold this book back until the men are further along.
 
 ## File template (chapter study)
 
