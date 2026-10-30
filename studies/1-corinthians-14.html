@@ -1,0 +1,724 @@
+<!doctype html>
+<html lang="en" data-theme="slate">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>1 Corinthians 14</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="../assets/fonts.css">
+<link rel="stylesheet" href="../assets/deck.css">
+<link rel="stylesheet" href="../assets/themes.css">
+<style>
+/* c114-map: every problem in the letter, one card each (copied from c101-map in 1 Corinthians 1). Mark the chapter you're in with .now; --c sets the card's color */
+.c114-map { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; margin: .6em 0 .8em; }
+.c114-card { --c: var(--accent); position: relative; padding: .5em .7em .6em; border-top: 6px solid var(--c); border-radius: 0 0 10px 10px;
+  background: color-mix(in srgb, var(--c) 9%, transparent); opacity: 0; transform: translateY(10px);
+  transition: opacity .6s ease, transform .6s ease; transition-delay: calc(var(--k, 0) * 260ms + 300ms); }
+.slide.active .c114-card { opacity: 1; transform: none; }
+.c114-card small { display: block; font: 700 clamp(.78rem, .72rem + .26vw, 1rem) var(--sans); letter-spacing: .04em; color: var(--ink-soft); }
+.c114-card b { display: block; margin: .1em 0 .25em; font: 600 clamp(1.05rem, .9rem + .7vw, 1.5rem)/1.1 var(--serif); color: var(--ink); }
+.c114-card q { display: block; font: italic clamp(.86rem, .78rem + .34vw, 1.08rem)/1.3 var(--serif); quotes: "\201C" "\201D"; }
+.c114-card.now { background: color-mix(in srgb, var(--c) 22%, transparent); box-shadow: inset 0 0 0 2px var(--c); }
+.slide.active .c114-card.now { animation: c114-here 2.4s ease-in-out 2.6s infinite; }
+@keyframes c114-here { 50% { box-shadow: inset 0 0 0 2px var(--c), 0 0 0 6px color-mix(in srgb, var(--c) 26%, transparent); } }
+.c114-card.k1 { --c: var(--danger); } .c114-card.k2 { --c: var(--wine); } .c114-card.k3 { --c: var(--cool); } .c114-card.k4 { --c: var(--leather-light); }
+.c114-card.k5 { --c: var(--warm); } .c114-card.k6 { --c: var(--accent); } .c114-card.k7 { --c: var(--cool); } .c114-card.k8 { --c: var(--accent-hot); }
+@media (max-width: 900px) { .c114-map { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 480px) { .c114-map { grid-template-columns: 1fr; } }
+
+/* c114-room: who gets built up. Left room: a man speaks in a tongue nobody knows; it goes up to God and back to himself, and the room is left asking.
+   Right room: a man speaks plainly; on .c114-speak, a line runs to every man in the room and each one lights up */
+.c114-wall { fill: color-mix(in srgb, var(--accent) 6%, var(--surface)); stroke: var(--line-strong); stroke-width: 2; }
+.c114-title { fill: var(--ink); font: 600 26px var(--serif); text-anchor: middle; }
+.c114-lab { fill: var(--ink-soft); font: italic 21px var(--serif); text-anchor: middle; }
+.c114-lab.hot { fill: var(--accent-hot); font-style: normal; font-weight: 700; }
+.c114-who { fill: var(--ink-soft); transition: fill .6s ease; }
+.c114-me { fill: var(--ink); }
+.c114-q { fill: var(--ink-soft); font: 700 22px var(--sans); text-anchor: middle; }
+.c114-up, .c114-self { fill: none; stroke: var(--ink-soft); stroke-width: 3; stroke-dasharray: 7 6; }
+.c114-ray { fill: none; stroke: var(--accent); stroke-width: 4; stroke-linecap: round; stroke-dasharray: 1; stroke-dashoffset: 1; transition: stroke-dashoffset .9s ease; }
+.slide:has(.c114-speak.on) .c114-ray { stroke-dashoffset: 0; }
+.slide:has(.c114-speak.on) .c114-lit { fill: var(--accent-hot); transition-delay: .7s; }
+.c114-cap { opacity: 0; transition: opacity .6s ease .9s; }
+.slide:has(.c114-speak.on) .c114-cap { opacity: 1; }
+@media (max-width: 600px) { .c114-title { font-size: 32px; } .c114-lab { font-size: 27px; } }
+
+/* c114-bricks: "edify" is house-building. Bricks drop in row by row (--k), with a roof: God's building */
+.c114-bricks { display: grid; gap: 6px; max-width: 40rem; margin: .4em auto 1em; }
+.c114-roof { height: 2.4rem; margin: 0 6%; clip-path: polygon(50% 0, 100% 100%, 0 100%); background: color-mix(in srgb, var(--accent) 55%, var(--surface));
+  display: grid; place-items: end center; padding-bottom: .2rem; font: italic 600 clamp(.85rem, .78rem + .3vw, 1.05rem) var(--serif); color: var(--on-accent); }
+.c114-row { display: grid; grid-template-columns: repeat(var(--n, 3), 1fr); gap: 6px; }
+.c114-row.half { padding: 0 9%; }
+.c114-row span { padding: .45em .3em; border-radius: 4px; border: 1px solid var(--line-strong); background: var(--surface-2); color: var(--ink); text-align: center;
+  font: clamp(.82rem, .74rem + .32vw, 1.02rem)/1.2 var(--sans); opacity: 0; transform: translateY(-26px); transition: opacity .5s ease, transform .5s cubic-bezier(.3,1.5,.6,1); transition-delay: calc(var(--k, 0) * 220ms + 400ms); }
+.c114-row span b { display: block; font: 600 clamp(.95rem, .85rem + .4vw, 1.2rem)/1.15 var(--serif); color: var(--accent-hot); }
+.slide.active .c114-row span { opacity: 1; transform: none; }
+.c114-roof { opacity: 0; transition: opacity .7s ease 2.4s; }
+.slide.active .c114-roof { opacity: 1; }
+
+/* c114-calls: trumpet calls an army knew by heart, and one nobody can read (.c114-mess wobbles) */
+.c114-calls { display: grid; gap: .55rem; max-width: 40rem; margin: .5em 0 1em; }
+.c114-call { display: grid; grid-template-columns: 9.5rem 1fr; align-items: center; gap: .8rem; padding: .45em .8em; border-radius: 10px; background: var(--surface); border: 1px solid var(--line); }
+.c114-call b { font: 600 clamp(.95rem, .86rem + .4vw, 1.2rem)/1.15 var(--serif); color: var(--ink); }
+.c114-beat { display: flex; align-items: center; gap: 8px; min-height: 1.2rem; }
+.c114-beat i { width: 16px; height: 16px; border-radius: 50%; background: var(--accent); flex: none; }
+.c114-beat i.l { width: 52px; border-radius: 9px; }
+.c114-mess { border-color: var(--danger); background: color-mix(in srgb, var(--danger) 8%, var(--surface)); }
+.c114-mess b { color: var(--danger); }
+.c114-mess i { background: var(--danger); opacity: .75; }
+.slide.active .c114-mess.on i { animation: c114-wob 1.1s ease-in-out infinite alternate; }
+.c114-mess i:nth-child(2n) { animation-delay: -.4s !important; } .c114-mess i:nth-child(3n) { animation-duration: .8s !important; }
+@keyframes c114-wob { 0% { transform: translate(0, -7px) scaleX(.6); opacity: .35; } 100% { transform: translate(3px, 7px) scaleX(1.3); opacity: .9; } }
+@media (max-width: 600px) { .c114-call { grid-template-columns: 1fr; gap: .3rem; } }
+
+/* c114-amen: a prayer the room can't follow (?) and then one it can (on .c114-plain each man lights and says Amen, in turn by --k) */
+.c114-bub { fill: var(--surface-2); stroke: var(--line-strong); stroke-width: 2; }
+.c114-say { fill: var(--ink); font: italic 22px var(--serif); }
+.c114-say.blur { fill: var(--ink-soft); font: 700 24px var(--sans); letter-spacing: 2px; }
+.c114-say.plain { opacity: 0; }
+.slide:has(.c114-plain.on) .c114-say.blur { opacity: 0; transition: opacity .4s ease; }
+.slide:has(.c114-plain.on) .c114-say.plain { opacity: 1; transition: opacity .6s ease .3s; }
+.c114-sit { fill: var(--ink-soft); transition: fill .5s ease; transition-delay: calc(var(--k, 0) * 180ms + 600ms); }
+.slide:has(.c114-plain.on) .c114-sit { fill: var(--accent-hot); }
+.c114-ask { transition: opacity .4s ease; }
+.slide:has(.c114-plain.on) .c114-ask { opacity: 0; }
+.c114-amen { fill: var(--accent-hot); font: 700 22px var(--sans); text-anchor: middle; opacity: 0; transition: opacity .5s ease; transition-delay: calc(var(--k, 0) * 180ms + 800ms); }
+.slide:has(.c114-plain.on) .c114-amen { opacity: 1; }
+@media (max-width: 600px) { .c114-say { font-size: 27px; } .c114-amen { font-size: 26px; } }
+
+/* c114-five: five plain words, one at a time */
+.c114-five { display: flex; flex-wrap: wrap; justify-content: center; gap: .5rem; margin: .2em 0 .8em; }
+.c114-five span { padding: .25em .7em; border-radius: 8px; background: var(--accent); color: var(--on-accent); font: 600 clamp(1.2rem, 1rem + 1vw, 1.9rem)/1.2 var(--serif);
+  opacity: 0; transform: scale(.7); transition: opacity .4s ease, transform .4s ease; transition-delay: calc(var(--k, 0) * 380ms + 200ms); }
+.c114-five.on span { opacity: 1; transform: none; }
+
+/* c114-turns: six men in a circle. On open every one talks at once (bubbles jostle); on .c114-order the noise stops and one bubble at a time goes round */
+.c114-man { fill: var(--ink-soft); }
+.c114-b rect { fill: var(--surface-2); stroke: var(--line-strong); stroke-width: 2; }
+.c114-b path { fill: none; stroke: var(--ink-soft); stroke-width: 3; stroke-linecap: round; }
+.slide.active .c114-b { animation: c114-jostle .5s ease-in-out infinite alternate; animation-delay: calc(var(--k, 0) * -170ms); }
+@keyframes c114-jostle { to { transform: translate(4px, -5px); } }
+.c114-noise { fill: var(--danger); font: 700 24px var(--sans); text-anchor: middle; letter-spacing: 3px; transition: opacity .4s ease; }
+.c114-calm { fill: var(--accent-hot); font: 700 24px var(--sans); text-anchor: middle; letter-spacing: 3px; opacity: 0; transition: opacity .6s ease .6s; }
+.slide:has(.c114-order.on) .c114-noise { opacity: 0; }
+.slide:has(.c114-order.on) .c114-calm { opacity: 1; }
+.slide.active:has(.c114-order.on) .c114-b { opacity: 0; animation: c114-turn 9s linear infinite; animation-delay: calc(var(--k, 0) * 1.5s + .6s); }
+.slide.active:has(.c114-order.on) .c114-b rect { stroke: var(--accent); stroke-width: 3; }
+.slide.active:has(.c114-order.on) .c114-b path { stroke: var(--accent-hot); }
+@keyframes c114-turn { 0% { opacity: 0; } 2% { opacity: 1; } 15% { opacity: 1; } 17% { opacity: 0; } 100% { opacity: 0; } }
+.slide:has(.c114-order.on) .c114-man { fill: var(--ink); }
+@media (max-width: 600px) { .c114-noise, .c114-calm { font-size: 30px; } }
+@media (prefers-reduced-motion: reduce) { .slide.active .c114-b, .slide.active .c114-mess.on i { animation: none; } .slide.active:has(.c114-order.on) .c114-b { animation: none; opacity: 1; } }
+
+/* the Pentecost lines (as in Acts 2) */
+.map.world .c114-line { stroke-width: calc(3px * var(--u, 1)); }
+@media (min-width: 900px) { .c114-split { grid-template-columns: 1.5fr 1fr; } }
+.c114-east { fill: var(--ink-soft); font-size: calc(22px * var(--u, 1)); font-weight: 600; }
+</style>
+</head>
+<body>
+<main class="deck" id="deck">
+
+<!-- ======================= OPENING ======================= -->
+<section class="slide title">
+  <div class="inner">
+    <div class="emblem rise"></div>
+    <h1 class="rise" style="--d:1">1 Corinthians 14</h1>
+    <p class="sub rise" style="--d:3">Words easy to be understood</p>
+    <p class="tag rise" style="--d:5">A church loved the showy gifts, and its meetings had turned to noise. Paul gives one test for everything we do together: does it build the others up?</p>
+  </div>
+</section>
+
+<section class="slide watch">
+  <div class="inner">
+    <h2 class="rise">Things to watch for</h2>
+    <p class="lede rise" style="--d:1">Keep these questions in the back of your mind as we read. We'll come back to every one of them at the end.</p>
+    <ol class="seeds">
+      <li class="step"><span class="topic">Edify</span><span class="seed-q">What test does Paul give for everything we do when we come together?</span></li>
+      <li class="step"><span class="topic">Prophecy</span><span class="seed-q">Why does Paul say prophecy is greater than tongues?</span></li>
+      <li class="step"><span class="topic">Understood</span><span class="seed-q">What good is a word that nobody understands?</span></li>
+      <li class="step"><span class="topic">Be men</span><span class="seed-q">In what are we to be children, and in what are we to be men?</span></li>
+      <li class="step"><span class="topic">The outsider</span><span class="seed-q">What happens when an unbeliever walks in and understands what is said?</span></li>
+      <li class="step"><span class="topic">Order</span><span class="seed-q">What is God the author of, and what is He not?</span></li>
+    </ol>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise">Where we are in 1 Corinthians</h2>
+    <p class="note rise" style="--d:1">About AD 55, Paul writes from Ephesus to the church he started in Corinth. The letter answers their problems one by one. We are at the end of the three chapters on spiritual gifts.</p>
+    <div class="c114-map" role="img" aria-label="The problems of 1 Corinthians, and the chapters that answer them. Chapters 1 to 4, divisions. Chapter 5, immorality in the church. Chapter 6, lawsuits and the body. Chapter 7, marriage. Chapters 8 to 10, food offered to idols. Chapter 11, worship and the Lord's Supper. Chapters 12 to 14, spiritual gifts, and love: we are in chapter 14. Chapter 15, the resurrection.">
+      <div class="c114-card k1" style="--k:0"><small>chapters 1–4</small><b>Divisions</b><q>Is Christ divided?</q></div>
+      <div class="c114-card k2" style="--k:1"><small>chapter 5</small><b>Immorality</b><q>sin the church let slide</q></div>
+      <div class="c114-card k3" style="--k:2"><small>chapter 6</small><b>Lawsuits, and the body</b><q>brother against brother</q></div>
+      <div class="c114-card k4" style="--k:3"><small>chapter 7</small><b>Marriage</b><q>and staying as you are</q></div>
+      <div class="c114-card k5" style="--k:4"><small>chapters 8–10</small><b>Idol meat</b><q>freedom, and your brother</q></div>
+      <div class="c114-card k6" style="--k:5"><small>chapter 11</small><b>Worship</b><q>and the Lord's Supper</q></div>
+      <div class="c114-card k7 now" style="--k:6"><small>chapters 12–14</small><b>Gifts</b><q>and the way of love</q></div>
+      <div class="c114-card k8" style="--k:7"><small>chapter 15</small><b>Resurrection</b><q>Christ is risen</q></div>
+    </div>
+    <p class="note step">Their meetings had become a contest. The gift that looked most spiritual, speaking in a tongue, was the one everybody wanted, and several men would speak at once. Paul's answer runs through three chapters.</p>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise">One argument, three chapters</h2>
+    <div class="ifthen">
+      <div class="if rise" style="--d:1"><small>Chapter 12</small>Every believer has the Spirit, and a gift, for the good of the body</div>
+      <span class="arrow rise" style="--d:2">→</span>
+      <div class="if step"><small>Chapter 13</small>Without love, any gift is only noise</div>
+      <span class="arrow step">→</span>
+      <div class="then step"><small>Chapter 14</small>So, when you meet, build each other up</div>
+    </div>
+    <blockquote class="quote step"><p>“But the manifestation of the Spirit is given to every man to profit withal.”</p><cite>1 Corinthians 12:7</cite></blockquote>
+    <blockquote class="quote step"><p>“Though I speak with the tongues of men and of angels, and have not charity, I am become as sounding brass, or a tinkling cymbal.”</p><cite>1 Corinthians 13:1</cite></blockquote>
+    <p class="note step">Chapter 12 ended by pointing to <em>“a more excellent way,”</em> and chapter 13 showed it: love. Chapter 14 opens with <em>“Follow after charity.”</em> This chapter is love, put to work in a room full of people.</p>
+  </div>
+</section>
+
+<!-- ======================= PART ONE ======================= -->
+<section class="slide part">
+  <div class="inner">
+    <p class="part-n rise">Part one</p>
+    <h2 class="rise" style="--d:1">Build the church up</h2>
+    <p class="range rise" style="--d:2">Verses 1–12</p>
+    <div class="rule"></div>
+    <p class="hook rise" style="--d:4">The best gift in the room is the one that helps the man next to you.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="1-5" data-hl="Follow after charity|no man understandeth him|to edification, and exhortation, and comfort|edifieth himself; but he that prophesieth edifieth the church"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise">Who gets built up?</h2>
+    <div class="stage">
+      <svg viewBox="0 0 760 330" style="max-height:38vh" role="img" aria-label="Two rooms. In the first, a man speaks in a tongue no one knows: a dotted line goes up to God and curls back to himself, and every listener has a question mark. In the second, a man prophesies: on a click, lines run from him to every listener, and each one lights up. Edifieth the church.">
+        <rect class="c114-wall" x="10" y="50" width="360" height="270" rx="20"/>
+        <rect class="c114-wall" x="390" y="50" width="360" height="270" rx="20"/>
+        <text class="c114-title" x="190" y="36">an unknown tongue</text>
+        <text class="c114-title" x="570" y="36">prophecy</text>
+        <!-- left room -->
+        <path class="c114-up" d="M190 235 V 82"/>
+        <text class="c114-lab" x="190" y="76">unto God</text>
+        <path class="c114-self" d="M210 268 C 268 272 262 214 214 236"/>
+        <text class="c114-lab" x="292" y="300">edifieth himself</text>
+        <g class="c114-who"><circle cx="62" cy="188" r="12"/><circle cx="105" cy="152" r="12"/><circle cx="148" cy="134" r="12"/><circle cx="232" cy="134" r="12"/><circle cx="275" cy="152" r="12"/><circle cx="318" cy="188" r="12"/></g>
+        <g class="c114-q"><text x="62" y="170">?</text><text x="105" y="134">?</text><text x="148" y="116">?</text><text x="232" y="116">?</text><text x="275" y="134">?</text><text x="318" y="170">?</text></g>
+        <g class="c114-me"><circle cx="190" cy="250" r="14"/><path d="M174 270 h32 l7 40 h-46 z"/></g>
+        <!-- right room -->
+        <path class="c114-ray" pathLength="1" d="M570 240 L442 196"/><path class="c114-ray" pathLength="1" d="M570 240 L485 160"/><path class="c114-ray" pathLength="1" d="M570 240 L528 142"/>
+        <path class="c114-ray" pathLength="1" d="M570 240 L612 142"/><path class="c114-ray" pathLength="1" d="M570 240 L655 160"/><path class="c114-ray" pathLength="1" d="M570 240 L698 196"/>
+        <g class="c114-who c114-lit"><circle cx="442" cy="188" r="12"/><circle cx="485" cy="152" r="12"/><circle cx="528" cy="134" r="12"/><circle cx="612" cy="134" r="12"/><circle cx="655" cy="152" r="12"/><circle cx="698" cy="188" r="12"/></g>
+        <g class="c114-me"><circle cx="570" cy="250" r="14"/><path d="M554 270 h32 l7 40 h-46 z"/></g>
+        <text class="c114-lab hot c114-cap" x="570" y="90">edifieth the church</text>
+      </svg>
+    </div>
+    <p class="note step c114-speak">A tongue nobody knows <em>“speaketh not unto men, but unto God.”</em> It may do the speaker some good, but the room is left out. Prophecy <em>“speaketh unto men”</em>: every man in the room is built up, urged on, and comforted.</p>
+    <p class="note step">That is the whole chapter in one picture. Paul isn't ranking gifts by how spiritual they look. He ranks them by <em>who gets helped</em>.</p>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise">What Paul means by “prophesy”</h2>
+    <p class="note rise" style="--d:1">Prophecy here is not mainly telling the future. It is speaking God's word to people so they can understand it, and be built up, urged on, and comforted (v. 3).</p>
+    <div class="columns">
+      <div class="col law rise" style="--d:2"><p class="who">Then, in Corinth</p><h3>Before the New Testament</h3><p>The New Testament wasn't written yet. God gave some believers a message to speak, and the church weighed it (v. 29).</p></div>
+      <div class="col grace step"><p class="who">Now, in our group</p><h3>An open Bible, made plain</h3><p>We have God's whole written word. Many Bible teachers say the nearest thing for us is opening it and speaking it plainly, so the man beside you gets it.</p></div>
+    </div>
+    <blockquote class="quote step"><p>“So they read in the book in the law of God distinctly, and gave the sense, and caused them to understand the reading.”</p><cite>Nehemiah 8:8</cite></blockquote>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <div class="split c114-split">
+      <div class="stage">
+        <svg data-world viewBox="380 140 528 436" style="max-height:56vh" data-towns="Jerusalem!:b" role="img" aria-label="The Roman world with lines running into Jerusalem from the lands named at Pentecost in Acts 2: Mesopotamia and Arabia in the east; Cappadocia, Pontus, Asia, Phrygia and Pamphylia in the north; Egypt and Cyrene in the south; Crete and Rome in the west. Each man heard the apostles in his own language.">
+          <path class="map-route c114-line j1" pathLength="1" d="M882 339 Q 872 430 787 487"/>
+          <path class="map-route c114-line j1" pathLength="1" d="M845 528 Q 830 505 787 487"/>
+          <path class="map-route c114-line j1" pathLength="1" d="M905 430 Q 860 470 800 484"/>
+          <path class="map-route c114-line j2" pathLength="1" d="M781 272 Q 800 380 787 487"/>
+          <path class="map-route c114-line j2" pathLength="1" d="M819 198 Q 850 350 787 487"/>
+          <path class="map-route c114-line j2" pathLength="1" d="M605 275 Q 640 420 787 487"/>
+          <path class="map-route c114-line j2" pathLength="1" d="M655 262 Q 700 400 787 487"/>
+          <path class="map-route c114-line j2" pathLength="1" d="M680 326 Q 720 430 787 487"/>
+          <path class="map-route c114-line j3" pathLength="1" d="M680 534 Q 760 540 787 487"/>
+          <path class="map-route c114-line j3" pathLength="1" d="M451 454 Q 600 530 787 487"/>
+          <path class="map-route c114-line j4" pathLength="1" d="M527 376 Q 640 440 787 487"/>
+          <path class="map-route c114-line j4" pathLength="1" d="M214 163 Q 420 250 590 330 T 787 487"/>
+          <text class="c114-east" x="388" y="198">← Rome</text>
+          <text class="c114-east" x="895" y="425" text-anchor="end">Parthians, Medes, Elamites →</text>
+          <g class="map-town"><circle cx="882" cy="339" r="6"/><text x="871" y="345" text-anchor="end">Mesopotamia</text></g>
+          <g class="map-town"><circle cx="845" cy="528" r="6"/><text x="834" y="534" text-anchor="end">Arabians</text></g>
+          <g class="map-town"><circle cx="781" cy="272" r="6"/><text x="770" y="278" text-anchor="end">Cappadocia</text></g>
+          <g class="map-town"><circle cx="819" cy="198" r="6"/><text x="808" y="204" text-anchor="end">Pontus</text></g>
+          <g class="map-town"><circle cx="605" cy="275" r="6"/><text x="594" y="281" text-anchor="end">Asia</text></g>
+          <g class="map-town"><circle cx="655" cy="262" r="6"/><text x="666" y="258">Phrygia</text></g>
+          <g class="map-town"><circle cx="680" cy="326" r="6"/><text x="691" y="332">Pamphylia</text></g>
+          <g class="map-town"><circle cx="680" cy="534" r="6"/><text x="669" y="540" text-anchor="end">Egypt</text></g>
+          <g class="map-town"><circle cx="451" cy="454" r="6"/><text x="451" y="480" text-anchor="middle">Cyrene</text></g>
+          <g class="map-town"><circle cx="527" cy="376" r="6"/><text x="527" y="402" text-anchor="middle">Crete</text></g>
+        </svg>
+      </div>
+      <div>
+        <h2 class="rise" style="--d:1">What were tongues?</h2>
+        <p class="note rise" style="--d:2">The first time, at Pentecost, they were real languages the apostles had never learned. Men from all these lands heard God praised in their own.</p>
+        <blockquote class="quote step"><p>“And how hear we every man in our own tongue, wherein we were born?”</p><cite>Acts 2:8</cite></blockquote>
+        <p class="note step">Christians differ on whether this gift goes on today. Many Baptists believe the sign gifts belonged to the apostles' day; other believers think they continue. Either way, Paul's rule here is plain: in church, if nobody understands it, keep quiet.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise">“Edify”: build a house</h2>
+    <div class="morph rise" style="--d:1">
+      <span class="big">οἰκοδομή</span>
+      <span class="say"><span class="gk">oikodomē</span></span>
+      <span class="means"><span class="gk">oikos</span> = house &nbsp;+&nbsp; <span class="gk">domē</span> = building</span>
+    </div>
+    <div class="c114-bricks" role="img" aria-label="A wall going up brick by brick: a psalm, a teaching, a prayer, a word of comfort; then edification, built up; exhortation, urged on; comfort, held up. A roof goes on top: God's building.">
+      <div class="c114-roof">ye are God's building (3:9)</div>
+      <div class="c114-row half" style="--n:3"><span style="--k:4"><b>edification</b>built up</span><span style="--k:5"><b>exhortation</b>urged on</span><span style="--k:6"><b>comfort</b>held up</span></div>
+      <div class="c114-row" style="--n:4"><span style="--k:0">a psalm</span><span style="--k:1">a teaching</span><span style="--k:2">a prayer</span><span style="--k:3">a plain word</span></div>
+    </div>
+    <p class="note step">Every time we meet, something is being built, one brick at a time: a man's faith, his hope, his nerve to face tomorrow. Paul's question for any word, song, or prayer is simple: <em>does it build?</em></p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="6-9" data-hl="if the trumpet give an uncertain sound, who shall prepare himself to the battle|words easy to be understood|ye shall speak into the air"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise">An uncertain sound</h2>
+    <p class="note rise" style="--d:1">Armies sent orders by trumpet. Every soldier knew the calls by heart, and his life could depend on hearing them right.</p>
+    <div class="c114-calls" role="img" aria-label="Trumpet calls drawn as short and long notes. A call to march, a call to fall back, a call to gather, each a clear pattern. Then an uncertain sound: the notes wobble and blur, and nobody knows what to do.">
+      <div class="c114-call rise" style="--d:2"><b>March</b><span class="c114-beat"><i></i><i></i><i class="l"></i><i></i><i></i><i class="l"></i></span></div>
+      <div class="c114-call rise" style="--d:3"><b>Fall back</b><span class="c114-beat"><i class="l"></i><i class="l"></i><i class="l"></i></span></div>
+      <div class="c114-call rise" style="--d:4"><b>Gather</b><span class="c114-beat"><i></i><i></i><i></i><i></i><i></i><i></i></span></div>
+      <div class="c114-call c114-mess step"><b>Uncertain sound</b><span class="c114-beat"><i></i><i class="l"></i><i></i><i></i><i class="l"></i><i></i><i></i></span></div>
+    </div>
+    <p class="note step">A trumpet blown beautifully but unclearly gets men killed. Words nobody understands are the same: you <em>“speak into the air.”</em></p>
+    <p class="note step">Your life gives a sound too. Men at work are listening for whether your faith is real. Say it plainly, and live it plainly.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="10-12" data-hl="none of them is without signification|I shall be unto him that speaketh a barbarian|seek that ye may excel to the edifying of the church"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise">A barbarian to each other</h2>
+    <p class="note rise" style="--d:1">To a Greek, a <em>barbarian</em> was any man whose language he couldn't follow; the word itself sounds like babble. Here is the same blessing three ways. Only one of them does you any good.</p>
+    <div class="tongues">
+      <div class="rise" style="--d:2"><div class="w" lang="el" style="font-size:clamp(1.4rem, .9rem + 2.2vw, 2.8rem)">Χάρις ὑμῖν</div><div class="t">Charis hymin</div><div class="l">Greek</div></div>
+      <div class="rise" style="--d:4"><div class="w" lang="la" style="font-size:clamp(1.4rem, .9rem + 2.2vw, 2.8rem)">Gratia vobis</div><div class="t">&nbsp;</div><div class="l">Latin</div></div>
+      <div class="rise" style="--d:6"><div class="w" style="font-size:clamp(1.4rem, .9rem + 2.2vw, 2.8rem)">Grace be unto you</div><div class="t">&nbsp;</div><div class="l">English</div></div>
+    </div>
+    <blockquote class="quote step"><p>“Grace be unto you, and peace, from God our Father, and from the Lord Jesus Christ.”</p><cite>1 Corinthians 1:3</cite></blockquote>
+    <p class="note step">Church talk can do this too. Words like <em>sanctified</em> or <em>washed in the blood</em> are true, but a new man may hear only noise. Say what they mean. <em>“Seek that ye may excel to the edifying of the church.”</em></p>
+  </div>
+</section>
+
+<!-- ======================= PART TWO ======================= -->
+<section class="slide part">
+  <div class="inner">
+    <p class="part-n rise">Part two</p>
+    <h2 class="rise" style="--d:1">With the understanding also</h2>
+    <p class="range rise" style="--d:2">Verses 13–25</p>
+    <div class="rule"></div>
+    <p class="hook rise" style="--d:4">Paul could out-tongue all of them, and he would rather say five words a man can understand.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="13-17" data-hl="my understanding is unfruitful|I will pray with the understanding also|say Amen at thy giving of thanks|the other is not edified"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise">How can he say Amen?</h2>
+    <p class="note rise" style="--d:1"><em>Amen</em> means “so be it.” When one man prays aloud, the rest join in by saying it at the end. You can't say “so be it” to words you didn't understand.</p>
+    <div class="stage">
+      <svg viewBox="0 0 760 250" style="max-height:30vh" role="img" aria-label="A man stands and prays; seven men sit and listen. At first his prayer bubble is gibberish and each listener has a question mark. On a click his prayer is plain words, and one by one the men light up and say Amen.">
+        <g class="c114-me"><circle cx="60" cy="140" r="16"/><path d="M42 162 h36 l8 70 h-52 z"/></g>
+        <rect class="c114-bub" x="90" y="12" width="560" height="58" rx="18"/>
+        <path class="c114-bub" d="M110 68 L84 104 L140 68 z"/>
+        <text class="c114-say blur" x="370" y="50" text-anchor="middle">~ ~~ ~~~ ~ ~~~~ ~~ ~</text>
+        <text class="c114-say plain" x="370" y="50" text-anchor="middle">Lord, thank You for keeping us one more day…</text>
+        <g class="c114-ask"><text class="c114-q" x="190" y="150">?</text><text class="c114-q" x="270" y="150">?</text><text class="c114-q" x="350" y="150">?</text><text class="c114-q" x="430" y="150">?</text><text class="c114-q" x="510" y="150">?</text><text class="c114-q" x="590" y="150">?</text><text class="c114-q" x="670" y="150">?</text></g>
+        <text class="c114-amen" style="--k:0" x="190" y="150">Amen</text><text class="c114-amen" style="--k:1" x="270" y="150">Amen</text><text class="c114-amen" style="--k:2" x="350" y="150">Amen</text><text class="c114-amen" style="--k:3" x="430" y="150">Amen</text><text class="c114-amen" style="--k:4" x="510" y="150">Amen</text><text class="c114-amen" style="--k:5" x="590" y="150">Amen</text><text class="c114-amen" style="--k:6" x="670" y="150">Amen</text>
+        <g class="c114-sit" style="--k:0"><circle cx="190" cy="178" r="13"/><path d="M174 196 h32 l4 38 h-40 z"/></g>
+        <g class="c114-sit" style="--k:1"><circle cx="270" cy="178" r="13"/><path d="M254 196 h32 l4 38 h-40 z"/></g>
+        <g class="c114-sit" style="--k:2"><circle cx="350" cy="178" r="13"/><path d="M334 196 h32 l4 38 h-40 z"/></g>
+        <g class="c114-sit" style="--k:3"><circle cx="430" cy="178" r="13"/><path d="M414 196 h32 l4 38 h-40 z"/></g>
+        <g class="c114-sit" style="--k:4"><circle cx="510" cy="178" r="13"/><path d="M494 196 h32 l4 38 h-40 z"/></g>
+        <g class="c114-sit" style="--k:5"><circle cx="590" cy="178" r="13"/><path d="M574 196 h32 l4 38 h-40 z"/></g>
+        <g class="c114-sit" style="--k:6"><circle cx="670" cy="178" r="13"/><path d="M654 196 h32 l4 38 h-40 z"/></g>
+      </svg>
+    </div>
+    <p class="note step c114-plain">Pray with your heart, <em>“with the spirit,”</em> and with your head, <em>“with the understanding also.”</em> When you pray out loud in our group, pray so the newest man can say Amen. Plain words are not second-class prayers.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="18-19" data-hl="I speak with tongues more than ye all|I had rather speak five words with my understanding|than ten thousand words in an unknown tongue"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise">Five words, or ten thousand</h2>
+    <div class="temples">
+      <div class="stone-t rise" style="--d:1"><h3>In an unknown tongue</h3><div class="big">10,000</div><p>Impressive. Nobody is helped.</p></div>
+      <div class="body-t rise" style="--d:2"><h3>With my understanding</h3><div class="big">5</div><p>Plain. A man can take them home.</p></div>
+    </div>
+    <p class="note step">The man who could have shown off the most chose not to. Here are five words that changed every man in this room:</p>
+    <div class="c114-five step" aria-label="Christ died for our sins.">
+      <span style="--k:0">Christ</span><span style="--k:1">died</span><span style="--k:2">for</span><span style="--k:3">our</span><span style="--k:4">sins</span>
+    </div>
+    <blockquote class="quote step"><p>“For I delivered unto you first of all that which I also received, how that Christ died for our sins according to the scriptures;”</p><cite>1 Corinthians 15:3</cite></blockquote>
+  </div>
+</section>
+
+<section class="slide verse" data-v="20" data-hl="be not children in understanding|in malice be ye children|in understanding be men"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise">Be children in one thing, and men in another</h2>
+    <p class="note rise" style="--d:1">The Corinthians had it backwards. They were childish about gifts, wanting the shiny one, and all too grown-up in their grudges.</p>
+    <div class="columns">
+      <div class="col grace rise" style="--d:2"><p class="who">“In malice be ye children”</p><h3>Like a little child</h3><p>No scheming, no keeping score, no plotting to get even. A small child forgets yesterday's fight by lunch.</p></div>
+      <div class="col law step"><p class="who">“In understanding be men”</p><h3>Like a grown man</h3><p>Think. Read. Ask questions. Don't chase whatever feels most spiritual. Grow up in what you know about God.</p></div>
+    </div>
+    <blockquote class="quote step"><p>“When I was a child, I spake as a child, I understood as a child, I thought as a child: but when I became a man, I put away childish things.”</p><cite>1 Corinthians 13:11</cite></blockquote>
+    <p class="note step">Some of us carry malice like a pro: years of grudges and plans. Lay it down. And some of us have never read the Bible for ourselves. Start. A chapter a day makes a man.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="21-22" data-hl="With men of other tongues and other lips will I speak unto this people|tongues are for a sign, not to them that believe, but to them that believe not"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise">A sign to them that believe not</h2>
+    <p class="note rise" style="--d:1">In verse 21 Paul quotes Isaiah. Israel would not listen to God's plain words, so God warned that He would speak to them through the strange languages of foreign invaders.</p>
+    <blockquote class="quote rise" style="--d:2"><p>“For with stammering lips and another tongue will he speak to this people. To whom he said, This is the rest wherewith ye may cause the weary to rest; and this is the refreshing: yet they would not hear.”</p><cite>Isaiah 28:11–12</cite></blockquote>
+    <ol class="timeline step" aria-label="About 700 BC, Isaiah warns that God will speak through foreign tongues to a people who would not hear. About AD 30 to 33, at Pentecost, tongues are a sign to Jews from every nation, and about three thousand believe. About AD 55, in Corinth, tongues nobody understands make outsiders say, ye are mad.">
+      <li style="--k:0"><b>about 700 BC</b><span>Isaiah: foreign tongues, a warning to men who would not hear</span></li>
+      <li style="--k:1"><b>about AD 30–33</b><span>Pentecost: a sign to Jews from every land; about 3,000 believe</span></li>
+      <li class="lit" style="--k:2"><b>about AD 55</b><span>Corinth: tongues nobody understands</span><small>this chapter</small></li>
+    </ol>
+    <p class="note step">Tongues were a sign pointed at unbelievers. But in Corinth they were being used to impress believers, with no one to explain them. A sign nobody can read points nowhere.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="23-25" data-hl="will they not say that ye are mad|he is convinced of all, he is judged of all|thus are the secrets of his heart made manifest|report that God is in you of a truth"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise">A stranger walks in</h2>
+    <p class="note rise" style="--d:1">Picture a man off the street, an <em>“unlearned”</em> outsider, walking into the meeting. What happens to him depends on what he hears.</p>
+    <div class="columns">
+      <div class="col law rise" style="--d:2"><p class="who">Everyone speaking in tongues</p><h3>“Ye are mad”</h3><p>He hears noise, decides these people are crazy, and walks out the way he came in.</p></div>
+      <div class="col grace step"><p class="who">God's word, spoken plainly</p><h3>“God is in you of a truth”</h3><p>He understands. His own heart is laid open, the secrets he never told anyone. He falls on his face and worships God.</p></div>
+    </div>
+    <p class="note step">Being found out by the word of God is not the end of a man. It is how God brings him home. Many of us were that man once, walking in with secrets, and the word met us there.</p>
+    <blockquote class="quote step"><p>“So then faith cometh by hearing, and hearing by the word of God.”</p><cite>Romans 10:17</cite></blockquote>
+  </div>
+</section>
+
+<!-- ======================= PART THREE ======================= -->
+<section class="slide part">
+  <div class="inner">
+    <p class="part-n rise">Part three</p>
+    <h2 class="rise" style="--d:1">Decently and in order</h2>
+    <p class="range rise" style="--d:2">Verses 26–40</p>
+    <div class="rule"></div>
+    <p class="hook rise" style="--d:4">Everyone brings something. Here is how to make room for it all, without the chaos.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="26-28" data-hl="every one of you hath a psalm|Let all things be done unto edifying|by two, or at the most by three, and that by course|let him keep silence in the church"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise">The test: “Let all things be done unto <em>edifying</em>”</h2>
+    <p class="note rise" style="--d:1">Every man in Corinth came with something. Good. Paul doesn't shut them down. He gives one test. Try it on our group:</p>
+    <div class="asks">
+      <div class="ask step"><span class="q">A psalm, a song, a verse you found?</span><span class="stamp">Builds</span><span class="ctx">Bring it. That's what verse 26 pictures.</span></div>
+      <div class="ask step"><span class="q">What God has done for you lately, told straight?</span><span class="stamp">Builds</span><span class="ctx">Your story may be the one the new man needs.</span></div>
+      <div class="ask step"><span class="q">War stories about the old life, told for laughs?</span><span class="stamp">Tears down</span><span class="ctx">It makes the old life sound good to a man still fighting it.</span></div>
+      <div class="ask step"><span class="q">A long speech so everyone knows how much you know?</span><span class="stamp">Tears down</span><span class="ctx">That's ten thousand words in an unknown tongue.</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide verse" data-v="29-33" data-hl="let the other judge|ye may all prophesy one by one, that all may learn, and all may be comforted|the spirits of the prophets are subject to the prophets|God is not the author of confusion, but of peace"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise">One at a time</h2>
+    <div class="stage">
+      <svg viewBox="0 0 760 300" style="max-height:34vh" role="img" aria-label="Six men sit in a half circle. At first every man has a speech bubble at once, jostling: confusion. On a click the noise stops, and the speech bubble goes round the circle, one man at a time, while the others listen: by course.">
+        <text class="c114-noise" x="380" y="40">CONFUSION</text>
+        <text class="c114-calm" x="380" y="40">ONE BY ONE</text>
+        <g class="c114-b" style="--k:0"><rect x="30" y="140" width="110" height="52" rx="16"/><path d="M50 158 h70 M50 174 h50"/></g>
+        <g class="c114-b" style="--k:1"><rect x="150" y="95" width="110" height="52" rx="16"/><path d="M170 113 h70 M170 129 h50"/></g>
+        <g class="c114-b" style="--k:2"><rect x="270" y="70" width="110" height="52" rx="16"/><path d="M290 88 h70 M290 104 h50"/></g>
+        <g class="c114-b" style="--k:3"><rect x="390" y="70" width="110" height="52" rx="16"/><path d="M410 88 h70 M410 104 h50"/></g>
+        <g class="c114-b" style="--k:4"><rect x="510" y="95" width="110" height="52" rx="16"/><path d="M530 113 h70 M530 129 h50"/></g>
+        <g class="c114-b" style="--k:5"><rect x="630" y="140" width="110" height="52" rx="16"/><path d="M650 158 h70 M650 174 h50"/></g>
+        <g class="c114-man"><circle cx="85" cy="222" r="15"/><path d="M68 242 h34 l6 48 h-46 z"/></g>
+        <g class="c114-man"><circle cx="205" cy="178" r="15"/><path d="M188 198 h34 l6 48 h-46 z"/></g>
+        <g class="c114-man"><circle cx="325" cy="152" r="15"/><path d="M308 172 h34 l6 48 h-46 z"/></g>
+        <g class="c114-man"><circle cx="445" cy="152" r="15"/><path d="M428 172 h34 l6 48 h-46 z"/></g>
+        <g class="c114-man"><circle cx="565" cy="178" r="15"/><path d="M548 198 h34 l6 48 h-46 z"/></g>
+        <g class="c114-man"><circle cx="685" cy="222" r="15"/><path d="M668 242 h34 l6 48 h-46 z"/></g>
+      </svg>
+    </div>
+    <ol class="checks">
+      <li class="step c114-order"><span class="tick">1</span><q>by course</q><small>Two or three at most, one after another, and someone to make it plain. No one to interpret? Then keep quiet, and talk to God.</small><b>14:27–28</b></li>
+      <li class="step"><span class="tick">2</span><q>let the other judge</q><small>What is said gets weighed against God's word. And if someone else has something, let him speak.</small><b>14:29–30</b></li>
+      <li class="step"><span class="tick">3</span><q>subject to the prophets</q><small>Nobody gets to say “the Spirit made me do it.” The Spirit doesn't take over a man. He gives him self-control.</small><b>14:32</b></li>
+    </ol>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise">Not the author of confusion</h2>
+    <p class="saying rise" style="--d:1">God is not the author of <em>confusion</em>, but of <em>peace</em>.</p>
+    <p class="note rise" style="--d:2">This is about a church meeting, but it tells you what God is like. He doesn't work in chaos. Where there's shouting over each other, nobody listening, and everybody wanting the spotlight, that's not the Spirit at work.</p>
+    <blockquote class="quote step"><p>“But the fruit of the Spirit is love, joy, peace, longsuffering, gentleness, goodness, faith, Meekness, temperance: against such there is no law.”</p><cite>Galatians 5:22–23</cite></blockquote>
+    <p class="note step">If your life has felt like confusion, the drinking, the lies, the mess you can't keep straight, hear this: God is not the author of that. He is the author of peace, and He is not finished writing your story.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="34-35" data-hl="Let your women keep silence in the churches|let them ask their husbands at home"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise">A hard text, read humbly</h2>
+    <p class="note rise" style="--d:1">Good Baptist teachers read these two verses a little differently. Here is the setting, and what is plain.</p>
+    <ul class="signs">
+      <li class="rise" style="--d:2"><b>The setting</b>Paul is still putting order in the meeting. He has just told a tongue-speaker to <em>keep silence</em> (v. 28) and a prophet to <em>hold his peace</em> (v. 30).</li>
+      <li class="rise" style="--d:3"><b>How far it goes</b>In 11:5 Paul speaks of a woman praying and prophesying. So many teachers think he means something narrower here: calling out questions in the meeting, or the weighing of what was said (v. 29).</li>
+      <li class="step now"><b>What is plain</b>The goal is the same as the whole chapter: a meeting where people learn in peace, and homes where the things of God get talked about.</li>
+    </ul>
+    <p class="note step">Notice who this puts a job on: <em>“let them ask their husbands at home.”</em> That assumes a husband who knows his Bible and will talk about it at the kitchen table. Men, be the man she can ask.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="36-38" data-hl="came the word of God out from you? or came it unto you only|the things that I write unto you are the commandments of the Lord"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise">Where the word comes from</h2>
+    <p class="note rise" style="--d:1">The Corinthians acted as if they could do church any way they liked. Paul asks: did God's word start with <em>you</em>?</p>
+    <div class="chains">
+      <div class="chain step"><span class="who-chip jesus">The Lord</span><span class="said">gave His commandments</span><span class="who-chip">His apostles</span><span class="said">wrote them down</span><span class="who-chip">Corinth</span><span class="said">and on to</span><span class="who-chip">us</span></div>
+    </div>
+    <p class="note step">The word came <em>to</em> us. It didn't come <em>from</em> us. That's humbling, and it's a relief: we don't have to invent the Christian life. We get to receive it and do it.</p>
+    <p class="note step">And <em>“if any man be ignorant, let him be ignorant”</em>: Paul won't chase an argument forever. Say it plainly, then leave the man with God.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="39-40" data-hl="covet to prophesy|Let all things be done decently and in order"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise">Decently and in order, on a work day</h2>
+    <ol class="checks">
+      <li class="step"><span class="tick">1</span><q>unto edifying</q><small>Before you speak today, at work or at home, ask: will this build him up? If not, let it go.</small><b>14:26</b></li>
+      <li class="step"><span class="tick">2</span><q>five words with my understanding</q><small>Tell one person, in plain words, one thing God has done for you.</small><b>14:19</b></li>
+      <li class="step"><span class="tick">3</span><q>in understanding be men</q><small>Read one chapter today. Bring a question to the group tomorrow.</small><b>14:20</b></li>
+      <li class="step"><span class="tick">4</span><q>one by one, that all may learn</q><small>In our group: one at a time. Listen to the man talking. Leave room for the quiet one.</small><b>14:31</b></li>
+    </ol>
+    <blockquote class="quote step"><p>“Let no corrupt communication proceed out of your mouth, but that which is good to the use of edifying, that it may minister grace unto the hearers.”</p><cite>Ephesians 4:29</cite></blockquote>
+    <p class="note step">Next, 1 Corinthians 15: the resurrection, the hope under everything else in this letter.</p>
+  </div>
+</section>
+
+<!-- ======================= CLOSING ======================= -->
+<section class="slide remember">
+  <div class="inner">
+    <h2 class="rise">Points to remember</h2>
+    <ol class="seeds">
+      <li class="step"><span class="topic">Edify</span><span class="seed-q">“Let all things be done unto edifying” <cite>14:26</cite></span><span class="take">Everything we do together has one test: does it build the others up?</span></li>
+      <li class="step"><span class="topic">Prophecy</span><span class="seed-q">“He that prophesieth edifieth the church” <cite>14:4</cite></span><span class="take">God's word, spoken so others understand, helps the whole room. A tongue nobody knows helps only the speaker.</span></li>
+      <li class="step"><span class="topic">Understood</span><span class="seed-q">“Ye shall speak into the air” <cite>14:9</cite></span><span class="take">Words nobody understands are an uncertain trumpet. Five plain words beat ten thousand.</span></li>
+      <li class="step"><span class="topic">Be men</span><span class="seed-q">“In malice be ye children, but in understanding be men” <cite>14:20</cite></span><span class="take">Hold no grudges, like a child. Grow up in what you know about God, like a man.</span></li>
+      <li class="step"><span class="topic">The outsider</span><span class="seed-q">“God is in you of a truth” <cite>14:25</cite></span><span class="take">When he understands, his heart is laid open and he worships God. Being found out by the word is how God brings a man home.</span></li>
+      <li class="step"><span class="topic">Order</span><span class="seed-q">“God is not the author of confusion, but of peace” <cite>14:33</cite></span><span class="take">God works in peace, not chaos. So let all things be done decently and in order.</span></li>
+    </ol>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 1 of 6</p>
+      <span class="topic">Edify</span>
+      <h2>What test does Paul give for everything we do when we come together?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="26"></blockquote>
+      <blockquote class="quote step" data-q="12"></blockquote>
+      <blockquote class="quote step"><p>“Wherefore comfort yourselves together, and edify one another, even as also ye do.”</p><cite>1 Thessalonians 5:11</cite></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>Let all things be done unto edifying. Every song, word, and prayer should build the others up, not show off the one speaking.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 2 of 6</p>
+      <span class="topic">Prophecy</span>
+      <h2>Why does Paul say prophecy is greater than tongues?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="3"></blockquote>
+      <blockquote class="quote step" data-q="4"></blockquote>
+      <blockquote class="quote step" data-q="5"></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>Because the church understands it and is built up, urged on, and comforted. A tongue nobody understands edifies only the speaker, unless someone interprets.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 3 of 6</p>
+      <span class="topic">Understood</span>
+      <h2>What good is a word that nobody understands?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="8-9"></blockquote>
+      <blockquote class="quote step" data-q="16-17"></blockquote>
+      <blockquote class="quote step" data-q="19"></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>None to the hearer. It is an uncertain trumpet, spoken into the air, and no one can say Amen to it. Five plain words do more than ten thousand.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 4 of 6</p>
+      <span class="topic">Be men</span>
+      <h2>In what are we to be children, and in what are we to be men?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="20"></blockquote>
+      <blockquote class="quote step"><p>“When I was a child, I spake as a child, I understood as a child, I thought as a child: but when I became a man, I put away childish things.”</p><cite>1 Corinthians 13:11</cite></blockquote>
+      <blockquote class="quote step"><p>“The entrance of thy words giveth light; it giveth understanding unto the simple.”</p><cite>Psalm 119:130</cite></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>Children in malice: no grudges, no scheming. Men in understanding: grown up in what we know of God, through His word.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 5 of 6</p>
+      <span class="topic">The outsider</span>
+      <h2>What happens when an unbeliever walks in and understands what is said?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="23"></blockquote>
+      <blockquote class="quote step" data-q="24-25"></blockquote>
+      <blockquote class="quote step"><p>“So then faith cometh by hearing, and hearing by the word of God.”</p><cite>Romans 10:17</cite></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>He is convinced. The secrets of his heart are laid open, he falls on his face and worships God, and he says God is really among them.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 6 of 6</p>
+      <span class="topic">Order</span>
+      <h2>What is God the author of, and what is He not?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="33"></blockquote>
+      <blockquote class="quote step" data-q="32"></blockquote>
+      <blockquote class="quote step" data-q="40"></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>He is the author of peace, not of confusion. So His people take turns, keep self-control, and do all things decently and in order.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide prayer">
+  <div class="inner">
+    <div class="emblem rise"></div>
+    <h2 class="rise" style="--d:1">Prayer requests</h2>
+    <p class="ask-line rise" style="--d:2">What can we pray about for you today?</p>
+    <blockquote class="quote rise" style="--d:4"><p>“Wherefore comfort yourselves together, and edify one another, even as also ye do.”</p><cite>1 Thessalonians 5:11</cite></blockquote>
+  </div>
+</section>
+
+</main>
+
+<script>
+// King James Version, 1 Corinthians chapter 14
+const V = {
+  1: "Follow after charity, and desire spiritual gifts, but rather that ye may prophesy.",
+  2: "For he that speaketh in an unknown tongue speaketh not unto men, but unto God: for no man understandeth him; howbeit in the spirit he speaketh mysteries.",
+  3: "But he that prophesieth speaketh unto men to edification, and exhortation, and comfort.",
+  4: "He that speaketh in an unknown tongue edifieth himself; but he that prophesieth edifieth the church.",
+  5: "I would that ye all spake with tongues, but rather that ye prophesied: for greater is he that prophesieth than he that speaketh with tongues, except he interpret, that the church may receive edifying.",
+  6: "Now, brethren, if I come unto you speaking with tongues, what shall I profit you, except I shall speak to you either by revelation, or by knowledge, or by prophesying, or by doctrine?",
+  7: "And even things without life giving sound, whether pipe or harp, except they give a distinction in the sounds, how shall it be known what is piped or harped?",
+  8: "For if the trumpet give an uncertain sound, who shall prepare himself to the battle?",
+  9: "So likewise ye, except ye utter by the tongue words easy to be understood, how shall it be known what is spoken? for ye shall speak into the air.",
+  10: "There are, it may be, so many kinds of voices in the world, and none of them is without signification.",
+  11: "Therefore if I know not the meaning of the voice, I shall be unto him that speaketh a barbarian, and he that speaketh shall be a barbarian unto me.",
+  12: "Even so ye, forasmuch as ye are zealous of spiritual gifts, seek that ye may excel to the edifying of the church.",
+  13: "Wherefore let him that speaketh in an unknown tongue pray that he may interpret.",
+  14: "For if I pray in an unknown tongue, my spirit prayeth, but my understanding is unfruitful.",
+  15: "What is it then? I will pray with the spirit, and I will pray with the understanding also: I will sing with the spirit, and I will sing with the understanding also.",
+  16: "Else when thou shalt bless with the spirit, how shall he that occupieth the room of the unlearned say Amen at thy giving of thanks, seeing he understandeth not what thou sayest?",
+  17: "For thou verily givest thanks well, but the other is not edified.",
+  18: "I thank my God, I speak with tongues more than ye all:",
+  19: "Yet in the church I had rather speak five words with my understanding, that by my voice I might teach others also, than ten thousand words in an unknown tongue.",
+  20: "Brethren, be not children in understanding: howbeit in malice be ye children, but in understanding be men.",
+  21: "In the law it is written, With men of other tongues and other lips will I speak unto this people; and yet for all that will they not hear me, saith the Lord.",
+  22: "Wherefore tongues are for a sign, not to them that believe, but to them that believe not: but prophesying serveth not for them that believe not, but for them which believe.",
+  23: "If therefore the whole church be come together into one place, and all speak with tongues, and there come in those that are unlearned, or unbelievers, will they not say that ye are mad?",
+  24: "But if all prophesy, and there come in one that believeth not, or one unlearned, he is convinced of all, he is judged of all:",
+  25: "And thus are the secrets of his heart made manifest; and so falling down on his face he will worship God, and report that God is in you of a truth.",
+  26: "How is it then, brethren? when ye come together, every one of you hath a psalm, hath a doctrine, hath a tongue, hath a revelation, hath an interpretation. Let all things be done unto edifying.",
+  27: "If any man speak in an unknown tongue, let it be by two, or at the most by three, and that by course; and let one interpret.",
+  28: "But if there be no interpreter, let him keep silence in the church; and let him speak to himself, and to God.",
+  29: "Let the prophets speak two or three, and let the other judge.",
+  30: "If any thing be revealed to another that sitteth by, let the first hold his peace.",
+  31: "For ye may all prophesy one by one, that all may learn, and all may be comforted.",
+  32: "And the spirits of the prophets are subject to the prophets.",
+  33: "For God is not the author of confusion, but of peace, as in all churches of the saints.",
+  34: "Let your women keep silence in the churches: for it is not permitted unto them to speak; but they are commanded to be under obedience, as also saith the law.",
+  35: "And if they will learn any thing, let them ask their husbands at home: for it is a shame for women to speak in the church.",
+  36: "What? came the word of God out from you? or came it unto you only?",
+  37: "If any man think himself to be a prophet, or spiritual, let him acknowledge that the things that I write unto you are the commandments of the Lord.",
+  38: "But if any man be ignorant, let him be ignorant.",
+  39: "Wherefore, brethren, covet to prophesy, and forbid not to speak with tongues.",
+  40: "Let all things be done decently and in order."
+};
+const BOOK = "1 Corinthians 14";
+</script>
+<script src="../assets/deck.js"></script>
+</body>
+</html>

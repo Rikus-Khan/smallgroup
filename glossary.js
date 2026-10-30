@@ -4398,7 +4398,10 @@ window.GLOSSARY = [
     [ 8 ] ],
    [
     "1 Corinthians", 5,
-    [ 8 ] ] ]
+    [ 8 ] ],
+   [
+    "1 Corinthians", 14,
+    [ 25 ] ] ]
  },
  {
   "id": "glory",
@@ -4800,7 +4803,10 @@ window.GLOSSARY = [
     [ 39 ] ],
    [
     "1 Corinthians", 9,
-    [ 8, 9, 20, 21 ] ] ]
+    [ 8, 9, 20, 21 ] ],
+   [
+    "1 Corinthians", 14,
+    [ 21, 34 ] ] ]
  },
  {
   "id": "only-begotten",
@@ -5529,7 +5535,10 @@ window.GLOSSARY = [
     [ 27 ] ],
    [
     "1 Corinthians", 11,
-    [ 18 ] ] ]
+    [ 18 ] ],
+   [
+    "1 Corinthians", 14,
+    [ 22, 24 ] ] ]
  },
  {
   "id": "witness",
@@ -6120,6 +6129,9 @@ window.GLOSSARY = [
     [ 19 ] ],
    [
     "1 Corinthians", 1,
+    [ 22 ] ],
+   [
+    "1 Corinthians", 14,
     [ 22 ] ] ]
  },
  {
@@ -6450,7 +6462,10 @@ window.GLOSSARY = [
     [ 31 ] ],
    [
     "1 Corinthians", 1,
-    [ 19 ] ] ]
+    [ 19 ] ],
+   [
+    "1 Corinthians", 14,
+    [ 14, 15, 19, 20 ] ] ]
  },
  {
   "id": "knowledge",
@@ -6576,7 +6591,10 @@ window.GLOSSARY = [
     [ 5 ] ],
    [
     "1 Corinthians", 8,
-    [ 1, 7, 10, 11 ] ] ]
+    [ 1, 7, 10, 11 ] ],
+   [
+    "1 Corinthians", 14,
+    [ 6 ] ] ]
  },
  {
   "id": "instruction",
@@ -7581,7 +7599,10 @@ window.GLOSSARY = [
     [ 9 ] ],
    [
     "1 Corinthians", 7,
-    [ 37 ] ] ]
+    [ 37 ] ],
+   [
+    "1 Corinthians", 14,
+    [ 25 ] ] ]
  },
  {
   "id": "tongue",
@@ -7722,7 +7743,10 @@ window.GLOSSARY = [
     [ 13 ] ],
    [
     "Romans", 14,
-    [ 11 ] ] ]
+    [ 11 ] ],
+   [
+    "1 Corinthians", 14,
+    [ 2, 4, 9, 13, 14, 19, 21, 26, 27 ] ] ]
  },
  {
   "id": "anger",
@@ -10584,7 +10608,10 @@ window.GLOSSARY = [
     [ 25 ] ],
    [
     "Romans", 1,
-    [ 2 ] ] ]
+    [ 2 ] ],
+   [
+    "1 Corinthians", 14,
+    [ 29, 32, 37 ] ] ]
  },
  {
   "id": "of-age",
@@ -10716,6 +10743,9 @@ window.GLOSSARY = [
     [ 11, 14 ] ],
    [
     "Romans", 1,
+    [ 25 ] ],
+   [
+    "1 Corinthians", 14,
     [ 25 ] ] ]
  },
  {
@@ -11433,7 +11463,10 @@ window.GLOSSARY = [
     [ 17 ] ],
    [
     "Romans", 16,
-    [ 17 ] ] ]
+    [ 17 ] ],
+   [
+    "1 Corinthians", 14,
+    [ 6, 26 ] ] ]
  },
  {
   "id": "letters",
@@ -13197,7 +13230,10 @@ window.GLOSSARY = [
     [ 13, 33 ] ],
    [
     "Romans", 16,
-    [ 20 ] ] ]
+    [ 20 ] ],
+   [
+    "1 Corinthians", 14,
+    [ 33 ] ] ]
  },
  {
   "id": "remit",
@@ -14688,7 +14724,10 @@ window.GLOSSARY = [
     [ 20 ] ],
    [
     "Romans", 16,
-    [ 26 ] ] ]
+    [ 26 ] ],
+   [
+    "1 Corinthians", 14,
+    [ 25 ] ] ]
  },
  {
   "id": "vine",
@@ -15894,7 +15933,10 @@ window.GLOSSARY = [
     [ 2 ] ],
    [
     "Matthew", 24,
-    [ 31 ] ] ]
+    [ 31 ] ],
+   [
+    "1 Corinthians", 14,
+    [ 8 ] ] ]
  },
  {
   "id": "rend-your-heart",
@@ -26499,7 +26541,10 @@ window.GLOSSARY = [
     [ 33 ] ],
    [
     "Romans", 16,
-    [ 20, 24, 27 ] ] ]
+    [ 20, 24, 27 ] ],
+   [
+    "1 Corinthians", 14,
+    [ 16 ] ] ]
  },
  {
   "id": "treasure-in-heaven",
@@ -27387,7 +27432,10 @@ window.GLOSSARY = [
     [ 25 ] ],
    [
     "1 Corinthians", 2,
-    [ 7 ] ] ]
+    [ 7 ] ],
+   [
+    "1 Corinthians", 14,
+    [ 2 ] ] ]
  },
  {
   "id": "converted",
@@ -27681,7 +27729,10 @@ window.GLOSSARY = [
     [ 17 ] ],
    [
     "Luke", 7,
-    [ 32 ] ] ]
+    [ 32 ] ],
+   [
+    "1 Corinthians", 14,
+    [ 7 ] ] ]
  },
  {
   "id": "gluttonous",
@@ -28557,7 +28608,10 @@ window.GLOSSARY = [
     [ 32 ] ],
    [
     "1 Corinthians", 11,
-    [ 18, 22 ] ] ]
+    [ 18, 22 ] ],
+   [
+    "1 Corinthians", 14,
+    [ 4, 5, 12, 19, 23, 28, 35 ] ] ]
  },
  {
   "id": "bind-and-loose",
@@ -33948,7 +34002,10 @@ window.GLOSSARY = [
   "refs": [
    [
     "Acts", 2,
-    [ 3, 4, 6, 8, 11 ] ] ]
+    [ 3, 4, 6, 8, 11 ] ],
+   [
+    "1 Corinthians", 14,
+    [ 21 ] ] ]
  },
  {
   "id": "devout",
@@ -34158,7 +34215,10 @@ window.GLOSSARY = [
     [ 6 ] ],
    [
     "1 Corinthians", 11,
-    [ 4, 5 ] ] ]
+    [ 4, 5 ] ],
+   [
+    "1 Corinthians", 14,
+    [ 1, 3, 4, 5, 6, 22, 24, 31, 39 ] ] ]
  },
  {
   "id": "determinate-counsel",
@@ -35943,7 +36003,10 @@ window.GLOSSARY = [
     [ 2 ] ],
    [
     "1 Corinthians", 6,
-    [ 1, 2 ] ] ]
+    [ 1, 2 ] ],
+   [
+    "1 Corinthians", 14,
+    [ 33 ] ] ]
  },
  {
   "id": "upper-chamber",
@@ -36045,7 +36108,10 @@ window.GLOSSARY = [
   "refs": [
    [
     "Acts", 10,
-    [ 46 ] ] ]
+    [ 46 ] ],
+   [
+    "1 Corinthians", 14,
+    [ 5, 6, 18, 21, 22, 23, 39 ] ] ]
  },
  {
   "id": "elymas",
@@ -37965,7 +38031,10 @@ window.GLOSSARY = [
     [ 2 ] ],
    [
     "Romans", 12,
-    [ 8 ] ] ]
+    [ 8 ] ],
+   [
+    "1 Corinthians", 14,
+    [ 3 ] ] ]
  },
  {
   "id": "afoot",
@@ -38247,7 +38316,10 @@ window.GLOSSARY = [
     [ 4 ] ],
    [
     "Romans", 1,
-    [ 14 ] ] ]
+    [ 14 ] ],
+   [
+    "1 Corinthians", 14,
+    [ 11 ] ] ]
  },
  {
   "id": "let-hindered",
@@ -39234,7 +39306,10 @@ window.GLOSSARY = [
     [ 29 ] ],
    [
     "1 Corinthians", 8,
-    [ 12 ] ] ]
+    [ 12 ] ],
+   [
+    "1 Corinthians", 14,
+    [ 6, 26, 39 ] ] ]
  },
  {
   "id": "captain-of-the-guard",
@@ -39516,7 +39591,10 @@ window.GLOSSARY = [
     [ 19 ] ],
    [
     "1 Corinthians", 10,
-    [ 23 ] ] ]
+    [ 23 ] ],
+   [
+    "1 Corinthians", 14,
+    [ 3, 4, 5, 12, 17, 26 ] ] ]
  },
  {
   "id": "damned-by-conscience",
@@ -39783,7 +39861,10 @@ window.GLOSSARY = [
   "refs": [
    [
     "Romans", 12,
-    [ 6 ] ] ]
+    [ 6 ] ],
+   [
+    "1 Corinthians", 14,
+    [ 1, 12 ] ] ]
  },
  {
   "id": "simplicity",
@@ -40386,7 +40467,10 @@ window.GLOSSARY = [
   "refs": [
    [
     "Romans", 15,
-    [ 2 ] ] ]
+    [ 2 ] ],
+   [
+    "1 Corinthians", 14,
+    [ 3 ] ] ]
  },
  {
   "id": "aforetime",
@@ -41391,6 +41475,9 @@ window.GLOSSARY = [
   "refs": [
    [
     "1 Corinthians", 8,
+    [ 1 ] ],
+   [
+    "1 Corinthians", 14,
     [ 1 ] ] ]
  },
  {
@@ -41400,7 +41487,10 @@ window.GLOSSARY = [
   "refs": [
    [
     "1 Corinthians", 8,
-    [ 1 ] ] ]
+    [ 1 ] ],
+   [
+    "1 Corinthians", 14,
+    [ 4 ] ] ]
  },
  {
   "id": "known-of-him",
@@ -41680,5 +41770,86 @@ window.GLOSSARY = [
    [
     "1 Corinthians", 10,
     [ 32 ] ] ]
+ },
+ {
+  "id": "unknown-tongue",
+  "kind": "term",
+  "name": "An unknown tongue (a language the hearers don't know)",
+  "refs": [
+   [
+    "1 Corinthians", 14,
+    [ 2, 4, 13, 14, 19, 27 ] ] ]
+ },
+ {
+  "id": "interpret-tongues",
+  "kind": "term",
+  "name": "Interpret (put a tongue into words the church can understand)",
+  "refs": [
+   [
+    "1 Corinthians", 14,
+    [ 5, 13, 26, 27, 28 ] ] ]
+ },
+ {
+  "id": "unlearned",
+  "kind": "person",
+  "name": "The unlearned (an outsider who doesn't yet know the faith)",
+  "refs": [
+   [
+    "1 Corinthians", 14,
+    [ 16, 23, 24 ] ] ]
+ },
+ {
+  "id": "occupieth-the-room",
+  "kind": "term",
+  "name": "Occupieth the room of (sits in the place of)",
+  "refs": [
+   [
+    "1 Corinthians", 14,
+    [ 16 ] ] ]
+ },
+ {
+  "id": "signification",
+  "kind": "term",
+  "name": "Signification (meaning)",
+  "refs": [
+   [
+    "1 Corinthians", 14,
+    [ 10 ] ] ]
+ },
+ {
+  "id": "by-course",
+  "kind": "term",
+  "name": "By course (one at a time, in turn)",
+  "refs": [
+   [
+    "1 Corinthians", 14,
+    [ 27 ] ] ]
+ },
+ {
+  "id": "author-of-confusion",
+  "kind": "term",
+  "name": "Not the author of confusion, but of peace",
+  "refs": [
+   [
+    "1 Corinthians", 14,
+    [ 33 ] ] ]
+ },
+ {
+  "id": "women-keep-silence",
+  "kind": "term",
+  "name": "“Let your women keep silence” (a hard text, 14:34–35)",
+  "refs": [
+   [
+    "1 Corinthians", 14,
+    [ 34, 35 ] ] ]
+ },
+ {
+  "id": "decently-and-in-order",
+  "kind": "term",
+  "name": "Decently and in order",
+  "refs": [
+   [
+    "1 Corinthians", 14,
+    [ 40 ] ] ]
  }
 ];

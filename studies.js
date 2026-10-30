@@ -12039,5 +12039,50 @@ window.STUDIES = [
       },
       "big": "The Lord's table is a memorial of Christ's death for forgiven sinners, not a prize for the worthy. Come honestly, remember Him, and make room for the brother beside you."
     }
+  },
+  {
+    "id": "1-corinthians-14",
+    "type": "chapter",
+    "book": "1 Corinthians",
+    "ch": 14,
+    "date": "2026-10-31",
+    "title": "1 Corinthians 14",
+    "sub": "Words easy to be understood",
+    "about": "A church loved the showy gifts, and its meetings had turned to noise. Paul gives one test for everything we do together: does it build the others up?",
+    "tags": [
+      "Spiritual gifts",
+      "Edifying",
+      "Church meetings",
+      "Plain words",
+      "Order",
+      "Peace"
+    ],
+    "url": "studies/1-corinthians-14.html",
+    "overview": {
+      "where": "Written from Ephesus, in Asia, to the church at Corinth, in Greece",
+      "when": "About AD 55, during Paul's three years at Ephesus",
+      "people": [
+        "paul",
+        "brethren-believers",
+        "unlearned"
+      ],
+      "places": [
+        "corinth",
+        "ephesus"
+      ],
+      "story": [
+        "Follow after love, and desire spiritual gifts, but rather prophesy: a tongue nobody understands builds up only the speaker, but prophecy builds up the church (1–5).",
+        "A trumpet with an uncertain sound calls no one to battle. Unless words are easy to be understood, you speak into the air; seek to excel in edifying the church (6–12).",
+        "Pray and sing with the understanding too, so others can say Amen. Paul would rather speak five words with his understanding than ten thousand in an unknown tongue. Be children in malice, but men in understanding (13–20).",
+        "Tongues are a sign to unbelievers, but an outsider who walks in on noise will say “ye are mad.” If he hears God's word plainly, his heart is laid open and he worships God (21–25).",
+        "Let all things be done unto edifying: two or three, one at a time, with an interpreter or silence, for God is not the author of confusion, but of peace (26–33).",
+        "Women are to keep silence in the churches and ask their husbands at home; what Paul writes is the Lord's commandment. Covet to prophesy, and let all things be done decently and in order (34–40)."
+      ],
+      "key": {
+        "ref": "1 Corinthians 14:40",
+        "text": "Let all things be done decently and in order."
+      },
+      "big": "Love turns gifts outward. When believers meet, everything is tested by one question, does it build the others up, so God's word is spoken plainly, one at a time, in peace."
+    }
   }
 ];
