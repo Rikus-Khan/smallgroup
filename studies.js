@@ -10397,6 +10397,113 @@ window.STUDIES = [
     }
   },
   {
+    "id": "acts-21",
+    "type": "chapter",
+    "book": "Acts",
+    "ch": 21,
+    "date": "2026-10-30",
+    "title": "Acts 21",
+    "sub": "Bound for Jerusalem",
+    "about": "Paul sails for Jerusalem, warned at every port that chains are waiting. He says he is ready to die for Jesus, and a riot in the temple proves the warnings true.",
+    "tags": [
+      "Being ready",
+      "Friends and prayer",
+      "Law and grace",
+      "Winning people",
+      "Rumors",
+      "God's rescue"
+    ],
+    "url": "studies/acts-21.html",
+    "overview": {
+      "where": "The end of the third journey by sea (Miletus, Coos, Rhodes, Patara, Tyre, Ptolemais, Caesarea), then Jerusalem and the temple",
+      "when": "About AD 57, at the time of Pentecost, the end of Paul's third journey",
+      "people": [
+        "paul",
+        "philip-the-evangelist",
+        "agabus",
+        "mnason",
+        "james-the-lords-brother",
+        "elders",
+        "trophimus",
+        "chief-captain",
+        "egyptian-rebel"
+      ],
+      "places": [
+        "coos",
+        "rhodes",
+        "patara",
+        "tyre-and-zidon",
+        "ptolemais",
+        "caesarea",
+        "jerusalem",
+        "temple",
+        "the-castle"
+      ],
+      "story": [
+        "Paul sails from Miletus past Coos, Rhodes and Patara to Tyre. Believers there say through the Spirit that he should not go up to Jerusalem, and the families kneel and pray with him on the shore (1–6).",
+        "At Caesarea he stays with Philip the evangelist. The prophet Agabus binds his own hands and feet with Paul's girdle: the Jews will bind the owner and hand him to the Gentiles (7–11).",
+        "His friends beg him not to go. Paul answers, “I am ready not to be bound only, but also to die at Jerusalem for the name of the Lord Jesus.” They stop arguing: “The will of the Lord be done” (12–16).",
+        "James and the elders welcome him, but warn of a rumor that he teaches Jews to forsake Moses. They ask him to join four men in a vow and pay their costs, to show he keeps the law. The Gentiles' freedom stays as the council settled it (17–26).",
+        "Jews from Asia see him in the temple, falsely say he brought a Gentile in, and drag him out. Roman soldiers from the fortress run down the stairs and rescue him. Paul asks leave to speak, and addresses the crowd in Hebrew (27–40)."
+      ],
+      "key": {
+        "ref": "Acts 21:13",
+        "text": "Then Paul answered, What mean ye to weep and to break mine heart? for I am ready not to be bound only, but also to die at Jerusalem for the name of the Lord Jesus."
+      },
+      "big": "Paul had settled it ahead of time: he would go where God sent him, whatever it cost. A man who decides in daylight is ready when the pressure comes. And God rescued him through the Roman soldiers, and was not finished with him."
+    }
+  },
+  {
+    "id": "acts-22",
+    "type": "chapter",
+    "book": "Acts",
+    "ch": 22,
+    "date": "2026-10-30",
+    "title": "Acts 22",
+    "sub": "Paul tells his own story",
+    "about": "From the castle stairs Paul tells the crowd what he was, how Jesus met him on the Damascus road, and what he is now. His Roman citizenship stops the whip.",
+    "tags": [
+      "Your story",
+      "Honesty about sin",
+      "Calling on the Lord",
+      "Baptism",
+      "Sent out",
+      "Citizenship"
+    ],
+    "url": "studies/acts-22.html",
+    "overview": {
+      "where": "The stairs of the Roman fortress beside the temple in Jerusalem, and in his story, the road to Damascus",
+      "when": "About AD 57, right after the temple riot of Acts 21; Paul's conversion was about AD 34 to 35",
+      "people": [
+        "paul",
+        "jesus",
+        "ananias-of-damascus",
+        "gamaliel",
+        "stephen",
+        "chief-captain",
+        "centurion-in-jerusalem"
+      ],
+      "places": [
+        "tarsus",
+        "damascus",
+        "jerusalem",
+        "the-castle"
+      ],
+      "story": [
+        "Paul speaks to the crowd in Hebrew, and they fall silent. He tells what he was: born in Tarsus, taught by Gamaliel, zealous toward God, and a persecutor of this way unto the death (1–5).",
+        "He tells what happened: near Damascus at noon a great light, and a voice, “Saul, Saul, why persecutest thou me?” Jesus of Nazareth sends him on to Damascus, where Ananias says, “Brother Saul, receive thy sight” (6–16).",
+        "Ananias tells him to be baptized, calling on the name of the Lord. Back in Jerusalem, praying in the temple, Paul is told to leave, for the Lord will send him far away to the Gentiles. He mentions Stephen's blood and his own part in it (17–21).",
+        "At the word Gentiles the crowd erupts. The chief captain orders Paul scourged. Paul asks if it is lawful to scourge a Roman uncondemned, and the soldiers back away in fear (22–29).",
+        "The next day the captain sets Paul before the chief priests and all their council, to find out what he is accused of (30)."
+      ],
+      "key": {
+        "ref": "Acts 22:15",
+        "text": "For thou shalt be his witness unto all men of what thou hast seen and heard."
+      },
+      "big": "Paul's testimony has three parts: what I was, what happened, what I am now. Told plainly and honestly, with the worst of his past left in, it is the most powerful thing a believer has. Sins are washed away by calling on the Lord Jesus, and being born into God's family can never be bought or taken away."
+    }
+  },
+  {
     "id": "acts-23",
     "type": "chapter",
     "book": "Acts",
