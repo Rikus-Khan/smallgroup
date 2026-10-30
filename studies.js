@@ -6627,6 +6627,116 @@ window.STUDIES = [
     }
   },
   {
+    "id": "mark-05",
+    "type": "chapter",
+    "book": "Mark",
+    "ch": 5,
+    "date": "2026-10-29",
+    "title": "Mark 5",
+    "sub": "Clothed, and in his right mind",
+    "about": "A man no chains could hold, a woman no doctor could heal, and a girl it was already too late for. Jesus meets all three.",
+    "tags": [
+      "Freedom",
+      "Bondage",
+      "Witness",
+      "Faith",
+      "Fear and faith",
+      "Resurrection"
+    ],
+    "url": "studies/mark-05.html",
+    "overview": {
+      "where": "The country of the Gadarenes on the east shore of the Sea of Galilee, then back across the lake to the crowd, the road, and Jairus' house",
+      "when": "About AD 28, in Jesus' ministry in Galilee, right after He stilled the storm (4:35–41)",
+      "people": [
+        "jesus",
+        "legion",
+        "jairus",
+        "woman-with-issue",
+        "simon-peter",
+        "sons-of-zebedee",
+        "disciples"
+      ],
+      "places": [
+        "gergesenes",
+        "tombs",
+        "decapolis",
+        "sea-of-galilee",
+        "synagogue"
+      ],
+      "story": [
+        "Across the lake, a man with an unclean spirit lives among the tombs. No chains can hold him; night and day he cries and cuts himself (1–5).",
+        "He runs to Jesus. The spirits call themselves Legion, “for we are many,” and beg to go into a herd of about two thousand swine, which rush into the sea (6–13).",
+        "The town finds the man “sitting, and clothed, and in his right mind,” and begs Jesus to leave. Jesus sends the man home to tell what the Lord has done for him, and he preaches in Decapolis (14–20).",
+        "Back across the lake, Jairus, a ruler of the synagogue, falls at Jesus' feet: his little daughter is dying (21–24).",
+        "On the way, a woman who has bled for twelve years and spent all she had touches His clothes and is healed. Jesus calls her “Daughter” and sends her away in peace (25–34).",
+        "News comes that the girl is dead. Jesus says, “Be not afraid, only believe,” takes her by the hand, says “Talitha cumi,” and she gets up and walks (35–43)."
+      ],
+      "key": {
+        "ref": "Mark 5:36",
+        "text": "As soon as Jesus heard the word that was spoken, he saith unto the ruler of the synagogue, Be not afraid, only believe."
+      },
+      "big": "No bondage is too strong, no trouble too long, and no case too late for Jesus. He sets the captive free, makes the outcast whole, and speaks life over death, and He sends the ones He frees to tell what He has done."
+    }
+  },
+  {
+    "id": "mark-06",
+    "type": "chapter",
+    "book": "Mark",
+    "ch": 6,
+    "date": "2026-10-29",
+    "title": "Mark 6",
+    "sub": "It is I; be not afraid",
+    "about": "His hometown won't believe, the twelve are sent out, a king kills a prophet to save face, five thousand eat, and Jesus walks out to His men on a stormy sea.",
+    "tags": [
+      "Unbelief",
+      "Conscience",
+      "Fear of man",
+      "Compassion",
+      "Provision",
+      "Storms"
+    ],
+    "url": "studies/mark-06.html",
+    "overview": {
+      "where": "Nazareth, the villages of Galilee, Herod's court and prison, a lonely place near Bethsaida, the Sea of Galilee at night, and the plain of Gennesaret",
+      "when": "About AD 29, near Passover, in Jesus' ministry in Galilee, while Herod Antipas ruled Galilee and Perea for Rome",
+      "people": [
+        "jesus",
+        "mary",
+        "brothers-of-jesus",
+        "the-twelve",
+        "apostles",
+        "herod-antipas",
+        "john-the-baptist",
+        "herodias",
+        "daughter-of-herodias",
+        "philip-herodias-husband",
+        "elijah",
+        "disciples"
+      ],
+      "places": [
+        "nazareth",
+        "synagogue",
+        "desert-place",
+        "bethsaida",
+        "sea-of-galilee",
+        "gennesaret"
+      ],
+      "story": [
+        "In Nazareth, His hometown asks, “Is not this the carpenter?” and stumbles over Him. He does few mighty works there and marvels at their unbelief (1–6).",
+        "He sends the twelve out two by two with nothing but a staff, sandals, and power over unclean spirits. They preach that men should repent (7–13).",
+        "Herod hears of Jesus and says, “It is John, whom I beheaded.” Mark tells how John rebuked Herod's marriage to Herodias, and how a rash oath at a birthday feast cost John his head (14–29).",
+        "The apostles come back, and Jesus takes them apart to rest. The crowd gets there first, and He has compassion on them “as sheep not having a shepherd” (30–34).",
+        "With five loaves and two fishes He feeds about five thousand men. Twelve baskets of pieces are left over (35–44).",
+        "That night He comes to His men walking on the sea in the fourth watch: “Be of good cheer: it is I; be not afraid.” The wind stops. At Gennesaret all who touch Him are made whole (45–56)."
+      ],
+      "key": {
+        "ref": "Mark 6:50",
+        "text": "For they all saw him, and were troubled. And immediately he talked with them, and saith unto them, Be of good cheer: it is I; be not afraid."
+      },
+      "big": "People who knew Jesus best missed Him, and a king who heard the truth gladly still chose his pride. But to all who come, Jesus is the compassionate Shepherd who feeds the hungry with little, sees His men rowing in the dark, and comes to them saying, “It is I; be not afraid.”"
+    }
+  },
+  {
     "id": "luke-01",
     "type": "chapter",
     "book": "Luke",
