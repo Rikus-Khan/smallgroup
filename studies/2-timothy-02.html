@@ -1,0 +1,578 @@
+<!doctype html>
+<html lang="en" data-theme="slate">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>2 Timothy 2</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="../assets/fonts.css">
+<link rel="stylesheet" href="../assets/deck.css">
+<link rel="stylesheet" href="../assets/themes.css">
+<style>
+/* t2t01-where: where we are in 2 Timothy (a deck.css candidate; the 2 Timothy 3 and 4 studies can copy it as is).
+   Four cards, one per chapter (.t2t01-ch: .n, b, q, cite; --k). The chapter we are in is .now (and pulses). Colors: --c on each card. */
+.t2t01-where { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; margin: .5em 0 1em; }
+.t2t01-ch { --c: var(--accent); padding: .55em .75em .65em; border-radius: 10px; border: 1.5px solid color-mix(in srgb, var(--c) 55%, transparent);
+  background: color-mix(in srgb, var(--c) 6%, transparent);
+  opacity: 0; transform: translateY(10px); transition: opacity .6s ease, transform .6s ease; transition-delay: calc(var(--k, 0) * 300ms + 300ms); }
+.slide.active .t2t01-ch { opacity: 1; transform: none; }
+.t2t01-ch .n { display: grid; place-items: center; width: 2.1rem; height: 2.1rem; margin-bottom: .35em; border-radius: 50%; border: 2px solid var(--c);
+  font: 700 1.05rem var(--sans); color: var(--c); }
+.t2t01-ch b { display: block; font: 600 clamp(1.05rem, .88rem + .7vw, 1.5rem)/1.15 var(--serif); color: var(--ink); }
+.t2t01-ch q { display: block; margin-top: .3em; font: italic clamp(.82rem, .76rem + .3vw, 1.05rem)/1.3 var(--serif); quotes: "\201C" "\201D"; color: var(--ink-soft); }
+.t2t01-ch cite { display: block; margin-top: .2em; font-style: normal; font-size: clamp(.7rem, .66rem + .2vw, .88rem); color: var(--ink-soft); }
+.t2t01-ch.two { --c: var(--cool); }
+.t2t01-ch.three { --c: var(--warm); }
+.t2t01-ch.four { --c: var(--wine); }
+.t2t01-ch.now { background: color-mix(in srgb, var(--c) 20%, transparent); box-shadow: inset 0 0 0 2px var(--c); }
+.t2t01-ch.now .n { background: var(--c); color: var(--on-accent); }
+.slide.active .t2t01-ch.now { animation: t2t01-here 2.4s ease-in-out 1.6s infinite; }
+@keyframes t2t01-here { 50% { box-shadow: inset 0 0 0 2px var(--c), 0 0 0 6px color-mix(in srgb, var(--c) 28%, transparent); } }
+@media (max-width: 640px) { .t2t01-where { grid-template-columns: 1fr 1fr; } }
+
+/* t2t02-links: a chain of four generations (Paul, Timothy, faithful men, others also), links locking in one by one,
+   then a dashed fifth link for the next man. Each .t2t02-link is a g (rect + label) with --k. */
+.t2t02-link rect { fill: none; stroke: var(--accent); stroke-width: 9; }
+.t2t02-link { opacity: 0; transform: translateY(14px); transition: opacity .6s ease, transform .6s ease; transition-delay: calc(var(--k, 0) * 600ms + 400ms); }
+.slide.active .t2t02-link { opacity: 1; transform: none; }
+.t2t02-link.next rect { stroke: var(--accent-hot); stroke-dasharray: 14 10; stroke-width: 7; }
+.t2t02-link.next { opacity: 0; transition-delay: 0s; transition-duration: .8s; }
+.slide:has(.t2t02-pass.on) .t2t02-link.next { opacity: 1; transform: none; transition-delay: .3s; }
+.t2t02-link.alt rect { stroke: var(--cool); }
+.t2t02-name { fill: var(--ink); font-family: var(--serif); font-size: 21px; font-weight: 600; }
+.t2t02-sub { fill: var(--ink-soft); font-size: 15px; }
+.t2t02-gen { fill: var(--accent-hot); font-size: 14px; font-weight: 700; letter-spacing: .08em; }
+
+/* t2t02-three: three workers, three kinds of staying power (.t2t02-card: svg icon, h3, small, p; --k) */
+.t2t02-cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: clamp(.6rem, 1.6vw, 1.2rem); margin: .6em 0 1em; }
+.t2t02-card { --c: var(--accent); padding: .7em .9em .9em; border-radius: 12px; border: 1.5px solid color-mix(in srgb, var(--c) 55%, transparent);
+  border-top: 6px solid var(--c); background: color-mix(in srgb, var(--c) 7%, transparent);
+  opacity: 0; transform: translateY(14px); transition: opacity .6s ease, transform .6s ease; transition-delay: calc(var(--k, 0) * 450ms + 300ms); }
+.slide.active .t2t02-card { opacity: 1; transform: none; }
+.t2t02-card.ath { --c: var(--cool); }
+.t2t02-card.far { --c: var(--warm); }
+.t2t02-card svg { display: block; width: 3.6rem; height: 3.6rem; margin-bottom: .2em; }
+.t2t02-card svg * { fill: none; stroke: var(--c); stroke-width: 5; stroke-linecap: round; stroke-linejoin: round; }
+.t2t02-card svg .solid { fill: color-mix(in srgb, var(--c) 30%, transparent); }
+.t2t02-card h3 { margin: 0; font: 600 clamp(1.1rem, .92rem + .7vw, 1.55rem)/1.15 var(--serif); color: var(--ink); }
+.t2t02-card small { display: block; margin: .1em 0 .4em; font: 700 clamp(.72rem, .68rem + .22vw, .92rem) var(--sans); letter-spacing: .04em; color: var(--c); }
+.t2t02-card p { margin: 0; font-size: clamp(.85rem, .78rem + .32vw, 1.08rem); line-height: 1.35; color: var(--ink-soft); }
+.t2t02-card p b { color: var(--ink); }
+@media (max-width: 640px) { .t2t02-cards { grid-template-columns: 1fr; } }
+
+/* t2t02-vessels: four vessels in a great house, each caked with dirt that washes off (a .t2t02-purge step),
+   leaving it clean and lit for the Master's use */
+.t2t02-shelf { stroke: var(--line-strong); stroke-width: 5; stroke-linecap: round; }
+.t2t02-v { fill: color-mix(in srgb, var(--c) 50%, transparent); stroke: var(--c); stroke-width: 4; transition: stroke .8s ease, fill .8s ease, filter .8s ease; }
+.t2t02-v.gold { --c: var(--warm); } .t2t02-v.silver { --c: var(--ink-soft); } .t2t02-v.wood { --c: var(--leather-light); } .t2t02-v.earth { --c: var(--leather); }
+.t2t02-dirt { fill: var(--bg); opacity: .8; transition: opacity 1.4s ease; }
+.slide:has(.t2t02-purge.on) .t2t02-dirt { opacity: 0; }
+.slide:has(.t2t02-purge.on) .t2t02-v { stroke: var(--accent-hot); fill: color-mix(in srgb, var(--accent) 38%, transparent); }
+.t2t02-lbl { fill: var(--ink-soft); font-size: 17px; }
+.t2t02-use { fill: var(--accent-hot); font-size: 20px; font-weight: 700; opacity: 0; transition: opacity .8s ease .9s; }
+.slide:has(.t2t02-purge.on) .t2t02-use { opacity: 1; }
+.t2t02-before { transition: opacity .6s ease; fill: var(--danger); font-size: 18px; font-weight: 700; }
+.slide:has(.t2t02-purge.on) .t2t02-before { opacity: 0; }
+
+/* t2t02-flee: a man runs from the flames of youthful lusts toward a few men standing together */
+.t2t02-fl { fill: var(--danger); transform-box: fill-box; transform-origin: 50% 100%; animation: t2t02-lick 1.1s ease-in-out infinite; animation-delay: calc(var(--k, 0) * -.3s); }
+@keyframes t2t02-lick { 50% { transform: scale(.88, 1.12); } }
+.t2t02-run { transform: translateX(0); transition: transform 3.4s cubic-bezier(.45,.05,.4,1) .8s; }
+.slide.active .t2t02-run { transform: translateX(150px); }
+.t2t02-men circle, .t2t02-men path, .t2t02-run circle, .t2t02-run path { fill: var(--accent-hot); }
+.t2t02-men .m circle, .t2t02-men .m path { fill: var(--accent); }
+.t2t02-big { font-size: 22px; font-weight: 700; letter-spacing: .12em; }
+.t2t02-note { fill: var(--ink); font-size: 17px; }
+.t2t02-arrow { fill: none; stroke-width: 4; stroke-linecap: round; }
+
+/* t2t02-cut: a careless cut wanders; a workman's cut runs straight ("rightly dividing") */
+.t2t02-line { fill: none; stroke-width: 6; stroke-linecap: round; stroke-linejoin: round; stroke-dasharray: 1; stroke-dashoffset: 1; transition: stroke-dashoffset 2.6s ease-in-out .4s; }
+.slide.active .t2t02-line { stroke-dashoffset: 0; }
+.t2t02-line.bad { stroke: var(--danger); }
+.t2t02-line.good { stroke: var(--accent-hot); transition-delay: 1.2s; }
+.t2t02-cut-lbl { fill: var(--ink); font-size: 19px; }
+.t2t02-cut-lbl.soft { fill: var(--ink-soft); font-size: 16px; }
+</style>
+</head>
+<body>
+<main class="deck" id="deck">
+
+<!-- ======================= OPENING ======================= -->
+<section class="slide title">
+  <div class="inner">
+    <div class="emblem rise"></div>
+    <h1 class="rise" style="--d:1">2 Timothy 2</h1>
+    <p class="sub rise" style="--d:3">Pass it on</p>
+    <p class="tag rise" style="--d:5">A dying apostle tells a young man how to last: hand the truth to faithful men, keep working like a soldier, an athlete and a farmer, and stay clean for the Master's use.</p>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise" style="--d:1">Where we are in 2 Timothy</h2>
+    <div class="t2t02-ctx" role="img" aria-label="Four chapters, four last words. Chapter 1, fan the flame. Chapter 2, pass it on: the same commit thou to faithful men, 2:2. Chapter 3, hold to the Book. Chapter 4, finish well. We are in chapter 2.">
+      <div class="t2t01-where">
+        <div class="t2t01-ch one" style="--k:0"><span class="n">1</span><b>Fan the flame</b><q>stir up the gift of God, which is in thee</q><cite>1:6</cite></div>
+        <div class="t2t01-ch two now" style="--k:1"><span class="n">2</span><b>Pass it on</b><q>the same commit thou to faithful men</q><cite>2:2</cite></div>
+        <div class="t2t01-ch three" style="--k:2"><span class="n">3</span><b>Hold to the Book</b><q>All scripture is given by inspiration of God</q><cite>3:16</cite></div>
+        <div class="t2t01-ch four" style="--k:3"><span class="n">4</span><b>Finish well</b><q>I have finished my course, I have kept the faith</q><cite>4:7</cite></div>
+      </div>
+    </div>
+    <p class="note rise" style="--d:2">Paul is in a Roman prison, about AD 66 to 67, near the end of his life. In chapter 1 he told Timothy to stop being afraid. Now he says what Timothy should do with his strength: give it away.</p>
+    <p class="note step">Everything in this chapter is a picture of lasting: a soldier, an athlete, a farmer, a workman, a clean vessel. Paul wants Timothy to still be standing, and still useful, long after Paul is gone.</p>
+  </div>
+</section>
+
+<section class="slide watch">
+  <div class="inner">
+    <h2 class="rise">Things to watch for</h2>
+    <p class="lede rise" style="--d:1">Keep these questions in the back of your mind as we read. We'll come back to every one of them at the end.</p>
+    <ol class="seeds">
+      <li class="step"><span class="topic">Passed on</span><span class="seed-q">Who is Timothy to teach, and who are they to teach after that?</span></li>
+      <li class="step"><span class="topic">Staying power</span><span class="seed-q">What three workers does Paul say a believer should be like?</span></li>
+      <li class="step"><span class="topic">He stays faithful</span><span class="seed-q">When we believe not, what does the Lord do, and why?</span></li>
+      <li class="step"><span class="topic">Approved</span><span class="seed-q">How does a workman handle God's word so he need not be ashamed?</span></li>
+      <li class="step"><span class="topic">A vessel for use</span><span class="seed-q">What makes a man a vessel unto honour, fit for the Master's use?</span></li>
+      <li class="step"><span class="topic">Flee and follow</span><span class="seed-q">What should a man flee, what should he follow, and who should he do it with?</span></li>
+    </ol>
+  </div>
+</section>
+
+<!-- ======================= PART ONE ======================= -->
+<section class="slide part">
+  <div class="inner">
+    <p class="part-n rise">Part one</p>
+    <h2 class="rise" style="--d:1">Hand it on, and last</h2>
+    <p class="range rise" style="--d:2">Verses 1–7</p>
+    <div class="rule"></div>
+    <p class="hook rise" style="--d:4">Be strong, give it away, and keep going like a man with a job to finish.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="1" data-hl="be strong in the grace that is in Christ Jesus"></section>
+
+<section class="slide verse" data-v="2" data-hl="the same commit thou to faithful men, who shall be able to teach others also"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="2" data-hl="the same commit thou to faithful men, who shall be able to teach others also"></blockquote>
+    <h2 class="rise" style="--d:1">Four generations</h2>
+    <svg viewBox="0 0 800 230" role="img" aria-label="A chain of four links: Paul, Timothy, faithful men, and others also. A dashed fifth link follows: the next man.">
+      <g class="t2t02-link" style="--k:0"><rect x="10" y="50" width="180" height="90" rx="45"/><text class="t2t02-gen" x="100" y="30" text-anchor="middle">1</text><text class="t2t02-name" x="100" y="102" text-anchor="middle">Paul</text><text class="t2t02-sub" x="100" y="172" text-anchor="middle">taught</text></g>
+      <g class="t2t02-link alt" style="--k:1"><rect x="160" y="50" width="180" height="90" rx="45"/><text class="t2t02-gen" x="250" y="30" text-anchor="middle">2</text><text class="t2t02-name" x="250" y="102" text-anchor="middle">Timothy</text><text class="t2t02-sub" x="250" y="172" text-anchor="middle">many witnesses</text></g>
+      <g class="t2t02-link" style="--k:2"><rect x="310" y="50" width="180" height="90" rx="45"/><text class="t2t02-gen" x="400" y="30" text-anchor="middle">3</text><text class="t2t02-name" x="400" y="102" text-anchor="middle">faithful men</text><text class="t2t02-sub" x="400" y="172" text-anchor="middle">trustworthy</text></g>
+      <g class="t2t02-link alt" style="--k:3"><rect x="460" y="50" width="180" height="90" rx="45"/><text class="t2t02-gen" x="550" y="30" text-anchor="middle">4</text><text class="t2t02-name" x="550" y="102" text-anchor="middle">others also</text><text class="t2t02-sub" x="550" y="172" text-anchor="middle">taught in turn</text></g>
+      <g class="t2t02-link next" style="--k:4"><rect x="610" y="50" width="180" height="90" rx="45"/><text class="t2t02-gen" x="700" y="30" text-anchor="middle">5</text><text class="t2t02-name" x="700" y="102" text-anchor="middle">the next man</text><text class="t2t02-sub" x="700" y="172" text-anchor="middle">who is that?</text></g>
+    </svg>
+    <p class="note step t2t02-pass">Count the generations in one verse: Paul, Timothy, <em>“faithful men,”</em> and <em>“others also.”</em> Paul isn't asking Timothy to be a star. He's asking him to be a link. <em>“Faithful”</em> means reliable: not the most gifted, but the ones who show up and can be trusted with the truth.</p>
+    <p class="note step">Somebody taught you. Somebody got the gospel to the man who got it to you. And the chain doesn't stop at you. This group is a link: the man sitting next to you, a younger man, your own son. Who will you tell what you heard?</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="3-4" data-hl="endure hardness, as a good soldier of Jesus Christ|entangleth himself with the affairs of this life"></section>
+
+<section class="slide verse" data-v="5-7" data-hl="strive for masteries|except he strive lawfully|must be first partaker of the fruits"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="3-6" data-hl="good soldier of Jesus Christ|except he strive lawfully|The husbandman that laboureth must be first partaker of the fruits"></blockquote>
+    <h2 class="rise" style="--d:1">Three pictures of staying power</h2>
+    <div class="t2t02-cards">
+      <div class="t2t02-card" style="--k:0">
+        <svg viewBox="0 0 80 80" aria-hidden="true"><path class="solid" d="M40 8 L68 18 V42 C68 60 54 70 40 76 C26 70 12 60 12 42 V18 Z"/><path d="M40 22 V58 M26 36 H54"/></svg>
+        <h3>The soldier</h3><small>VERSES 3–4</small>
+        <p><b>One mission.</b> A soldier doesn't tangle himself in <em>“the affairs of this life”</em>: the debts, old crowds and old habits that pull a man off duty. He wants to please his commander.</p>
+      </div>
+      <div class="t2t02-card ath" style="--k:1">
+        <svg viewBox="0 0 80 80" aria-hidden="true"><circle cx="40" cy="40" r="24" stroke-dasharray="9 6" stroke-width="10"/><path d="M40 4 V12 M40 68 V76"/></svg>
+        <h3>The athlete</h3><small>VERSE 5</small>
+        <p><b>Play by the rules.</b> A runner who cuts the course loses the crown. <em>“Strive lawfully”</em> means no shortcuts and no cheating, including cheating yourself about how you're doing.</p>
+      </div>
+      <div class="t2t02-card far" style="--k:2">
+        <svg viewBox="0 0 80 80" aria-hidden="true"><path d="M8 70 H72"/><path d="M40 70 V36"/><path class="solid" d="M40 54 C26 54 20 44 20 34 C32 34 40 42 40 54 Z"/><path class="solid" d="M40 44 C54 44 62 34 62 22 C48 22 40 32 40 44 Z"/></svg>
+        <h3>The farmer</h3><small>VERSE 6</small>
+        <p><b>Work first, harvest later.</b> The one who labours eats first from his own crop, but the crop takes months. Real change is slow, and one day at a time is how a farm works.</p>
+      </div>
+    </div>
+    <p class="note step">Three hard jobs, and each one rewards patience: the soldier is rewarded by his commander, the athlete by the judge, the farmer by the harvest. Notice Paul doesn't say <em>“try harder.”</em> He says <em>“Consider what I say; and the Lord give thee understanding in all things”</em> (v. 7). Think it over, and ask for help.</p>
+    <p class="note step">For today: what is the one thing from your old life still tangled around your ankle? A debt, a number in your phone, a place on your drive home? The soldier cuts it loose.</p>
+  </div>
+</section>
+
+<!-- ======================= PART TWO ======================= -->
+<section class="slide part">
+  <div class="inner">
+    <p class="part-n rise">Part two</p>
+    <h2 class="rise" style="--d:1">He abideth faithful</h2>
+    <p class="range rise" style="--d:2">Verses 8–13</p>
+    <div class="rule"></div>
+    <p class="hook rise" style="--d:4">Paul is chained, but he is sure of two things: the word is free, and Christ doesn't let go.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="8-10" data-hl="the word of God is not bound|Remember that Jesus Christ"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="8-9" data-hl="the word of God is not bound"></blockquote>
+    <h2 class="rise" style="--d:1">Paul is bound. The word is not.</h2>
+    <p class="saying rise" style="--d:2"><em>Paul</em> is in chains. <em>The word</em> is not.</p>
+    <p class="note step">Paul is <em>“bound”</em> in a cell, treated <em>“as an evil doer,”</em> and still he writes to a friend across the sea. The letter you're reading is the proof: a prisoner's words are still reaching men nearly two thousand years later.</p>
+    <p class="note step">He starts the whole thing with <em>“Remember that Jesus Christ… was raised from the dead”</em> (v. 8). Look at the order: first the risen Christ, then the chains. Your circumstances may be bad. Your Saviour is alive, and no cell, record, or past can bind Him.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="11-13" data-hl="if we be dead with him, we shall also live with him|If we believe not, yet he abideth faithful: he cannot deny himself"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="11-12" data-hl="It is a faithful saying"></blockquote>
+    <h2 class="rise" style="--d:1">A faithful saying</h2>
+    <div class="ifthen rise" style="--d:2">
+      <div class="if"><small>If</small>we be dead with him,</div>
+      <span class="arrow" aria-hidden="true">→</span>
+      <div class="then"><small>then</small>we shall also live with him.</div>
+    </div>
+    <div class="ifthen step">
+      <div class="if"><small>If</small>we suffer,</div>
+      <span class="arrow" aria-hidden="true">→</span>
+      <div class="then"><small>then</small>we shall also reign with him.</div>
+    </div>
+    <div class="ifthen step">
+      <div class="if"><small>If</small>we deny him,</div>
+      <span class="arrow" aria-hidden="true">→</span>
+      <div class="then"><small>then</small>he also will deny us.</div>
+    </div>
+    <p class="note step">Most of this is good news: dying with Christ means living with Him, and suffering for Him means reigning with Him. The third <em>if</em> is hard, and good Bible teachers explain it a little differently. Here is what's plain: it's about a man who flatly turns his back on Christ and stays that way. It's not about the man who stumbles. Peter denied Jesus three times in one night, and Jesus went and found him (John 21).</p>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="13" data-hl="If we believe not, yet he abideth faithful: he cannot deny himself"></blockquote>
+    <div class="split">
+      <div class="stage">
+        <svg class="curve" viewBox="0 0 680 320" role="img" aria-label="Two lines across the page. Ours wobbles and sinks: on a good day, then when we doubt. His stays high and level: He abideth faithful.">
+          <path class="curve-line" pathLength="1" style="stroke:var(--cool)" d="M30 70 L680 70"/>
+          <path class="curve-line" pathLength="1" d="M30 110 C110 100 150 150 230 205 C300 255 360 270 440 250 C520 235 590 215 650 215"/>
+          <g class="curve-pt" style="--k:1"><circle cx="30" cy="110" r="9"/><text x="30" y="196">me on a good day</text></g>
+          <g class="curve-pt low" style="--k:3"><circle cx="360" cy="268" r="9"/><text x="360" y="302" text-anchor="middle">me when I believe not</text></g>
+          <g class="curve-pt high" style="--k:2"><circle cx="30" cy="70" r="9"/><text class="q" x="42" y="40">He abideth faithful</text><text class="ref" x="42" y="60">2 Timothy 2:13</text></g>
+        </svg>
+      </div>
+      <div>
+        <h2 class="rise" style="--d:1">He cannot deny himself</h2>
+        <p class="note rise" style="--d:2">Our faith wobbles. It runs high one morning and sinks the next. Verse 13 says that when we <em>“believe not,”</em> Christ <em>“abideth faithful.”</em> He stays the same.</p>
+        <p class="note step">Why? <em>“He cannot deny himself.”</em> Everyone who trusts Him belongs to Him, and He can't go against His own word or His own body. That's why Baptists say a believer is secure: your hold on Him slips, and His hold on you doesn't.</p>
+        <p class="note step">That isn't a license to drift. It's a safety net under a man who just fell. Doubting yesterday didn't change who He is. Get up and walk with Him today.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ======================= PART THREE ======================= -->
+<section class="slide part">
+  <div class="inner">
+    <p class="part-n rise">Part three</p>
+    <h2 class="rise" style="--d:1">A workman not ashamed</h2>
+    <p class="range rise" style="--d:2">Verses 14–19</p>
+    <div class="rule"></div>
+    <p class="hook rise" style="--d:4">Handle God's word with care. Some men play with it, and it ruins them.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="14-15" data-hl="strive not about words to no profit|Study to shew thyself approved unto God|rightly dividing the word of truth"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="15" data-hl="a workman that needeth not to be ashamed, rightly dividing the word of truth"></blockquote>
+    <h2 class="rise" style="--d:1">Rightly dividing the word</h2>
+    <svg viewBox="0 0 640 200" role="img" aria-label="Two cuts through a board. The top one wanders and is ragged. The bottom one runs straight. Rightly dividing means cutting straight.">
+      <path class="t2t02-line bad" pathLength="1" d="M30 50 L110 70 L170 38 L260 76 L330 44 L420 80 L500 52 L610 74"/>
+      <text class="t2t02-cut-lbl soft" x="30" y="108">careless: hacked and crooked</text>
+      <path class="t2t02-line good" pathLength="1" d="M30 150 L610 150"/>
+      <text class="t2t02-cut-lbl" x="30" y="188">cut straight: “rightly dividing”</text>
+    </svg>
+    <p class="note step"><em>Study</em> in the KJV means <em>be diligent, make every effort.</em> <em>Rightly dividing</em> is a picture of cutting straight, the way a workman cuts a board or lays a straight road. Treat the Bible with care, in its context, so the line comes out straight.</p>
+    <p class="note step"><em>“Approved”</em> means tested and passed, and <em>“a workman that needeth not to be ashamed”</em> is the opposite of what Paul feared for Timothy in chapter 1. A man who knows his Bible has less to be ashamed of, and more to say to a brother who's struggling. A little time in this book each day is how it's done, and you're doing it right now.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="16-19" data-hl="profane and vain babblings|canker|The Lord knoweth them that are his|depart from iniquity"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="16-18" data-hl="their word will eat as doth a canker"></blockquote>
+    <h2 class="rise" style="--d:1">A word that spreads</h2>
+    <div class="rename">
+      <span class="old rise" style="--d:2">“just a clever idea”</span>
+      <span class="arrow step n2">→</span>
+      <span class="new step">canker</span>
+      <span class="gloss step"><em>Canker</em> is the Greek word for gangrene, a rot that creeps from one place into the whole body.</span>
+    </div>
+    <p class="note step">Hymenaeus and Philetus said <em>“the resurrection is past already.”</em> They treated Jesus' rising as a symbol only, and it <em>“overthrew the faith of some.”</em> Paul calls it a gangrene because a small lie in the truth keeps spreading.</p>
+    <p class="note step">Notice verse 14 and verse 16: don't <em>“strive about words,”</em> and <em>“shun profane and vain babblings.”</em> Not every argument deserves your day. A man new in the faith can waste a month arguing online. Stay with the plain gospel.</p>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="19" data-hl="Nevertheless the foundation of God standeth sure, having this seal"></blockquote>
+    <h2 class="rise" style="--d:1">A foundation stone with a seal</h2>
+    <div class="columns">
+      <div class="col law rise" style="--d:2">
+        <p class="who">One side of the seal</p>
+        <h3>God's side</h3>
+        <p><em>“The Lord knoweth them that are his.”</em> Even when false teaching shakes some men, God isn't confused about who is His. The foundation <em>“standeth sure.”</em></p>
+      </div>
+      <div class="col grace step">
+        <p class="who">The other side</p>
+        <h3>Our side</h3>
+        <p><em>“Let every one that nameth the name of Christ depart from iniquity.”</em> Whoever calls himself Christ's turns away from wrong. A seal marks ownership, and the owner expects his name to be on a clean life.</p>
+      </div>
+    </div>
+    <p class="note step">Both sides are on the same stone. God holds you, and you turn from sin because you are held, not so that you will be held. A man who's afraid he's lost it all can lean on the first side and live by the second.</p>
+  </div>
+</section>
+
+<!-- ======================= PART FOUR ======================= -->
+<section class="slide part">
+  <div class="inner">
+    <p class="part-n rise">Part four</p>
+    <h2 class="rise" style="--d:1">A vessel for the Master's use</h2>
+    <p class="range rise" style="--d:2">Verses 20–26</p>
+    <div class="rule"></div>
+    <p class="hook rise" style="--d:4">Any man can be cleaned up and put to use, if he will clear the old things out and run toward the right ones.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="20-21" data-hl="some to honour, and some to dishonour|he shall be a vessel unto honour|meet for the master’s use"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="21" data-hl="a vessel unto honour, sanctified, and meet for the master’s use"></blockquote>
+    <h2 class="rise" style="--d:1">A vessel, cleaned</h2>
+    <svg viewBox="0 30 640 235" role="img" aria-label="A shelf in a great house with four vessels: gold, silver, wood and earth, all covered in dirt. When a man purges himself, the dirt washes away and every vessel is clean and meet for the Master's use.">
+      <line class="t2t02-shelf" x1="30" y1="222" x2="610" y2="222"/>
+      <g><path class="t2t02-v gold" d="M60 110 H120 L112 176 Q90 192 68 176 Z"/><path class="t2t02-v gold" d="M90 188 V220 M68 220 H112"/><ellipse class="t2t02-dirt" cx="92" cy="140" rx="20" ry="10"/><ellipse class="t2t02-dirt" cx="78" cy="168" rx="9" ry="6"/></g>
+      <g><path class="t2t02-v silver" d="M208 100 H256 L264 218 H200 Z"/><path class="t2t02-v silver" d="M262 120 C292 118 292 170 262 170" fill="none"/><ellipse class="t2t02-dirt" cx="232" cy="150" rx="18" ry="22"/><ellipse class="t2t02-dirt" cx="244" cy="196" rx="12" ry="8"/></g>
+      <g><path class="t2t02-v wood" d="M340 120 H410 L400 218 H350 Z"/><path class="t2t02-v wood" d="M343 150 H407 M346 184 H404" fill="none"/><ellipse class="t2t02-dirt" cx="372" cy="168" rx="20" ry="16"/><ellipse class="t2t02-dirt" cx="396" cy="135" rx="9" ry="6"/></g>
+      <g><path class="t2t02-v earth" d="M492 100 H524 V118 C548 128 552 160 546 190 C542 214 530 220 508 220 C486 220 474 214 470 190 C464 160 468 128 492 118 Z"/><ellipse class="t2t02-dirt" cx="504" cy="170" rx="22" ry="26"/><ellipse class="t2t02-dirt" cx="526" cy="136" rx="9" ry="6"/></g>
+      <text class="t2t02-lbl" x="90" y="250" text-anchor="middle">gold</text><text class="t2t02-lbl" x="232" y="250" text-anchor="middle">silver</text>
+      <text class="t2t02-lbl" x="375" y="250" text-anchor="middle">wood</text><text class="t2t02-lbl" x="508" y="250" text-anchor="middle">earth</text>
+      <text class="t2t02-before" x="320" y="58" text-anchor="middle">covered in dirt</text>
+      <text class="t2t02-use" x="320" y="58" text-anchor="middle">clean, and meet for the Master's use</text>
+    </svg>
+    <p class="note step t2t02-purge">A great house holds gold and silver for the table, and wood and earth for daily work. What matters isn't the material. It's whether the vessel is <em>clean</em>. <em>“Purge himself from these”</em> means the dishonourable things of verses 16 to 18.</p>
+    <p class="note step">This is about usefulness, not about getting saved: the vessels are already in the house. God sets a man apart (<em>“sanctified”</em>), and the man clears out the dirt. A clean wooden bucket is used every day. No man here is too far gone to be put to work.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="22" data-hl="Flee also youthful lusts|follow righteousness, faith, charity, peace|with them that call on the Lord out of a pure heart"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="22" data-hl="Flee also youthful lusts|with them that call on the Lord out of a pure heart"></blockquote>
+    <h2 class="rise" style="--d:1">Flee. Follow. With them.</h2>
+    <svg viewBox="0 70 720 200" role="img" aria-label="On the left, flames labeled youthful lusts. A man runs away from them toward the right, where three men stand together. Above the flames: flee. Above the men: follow righteousness, faith, love and peace, with them that call on the Lord out of a pure heart.">
+      <text class="t2t02-big" x="70" y="96" style="fill:var(--danger)">FLEE</text>
+      <text class="t2t02-big" x="490" y="96" style="fill:var(--accent-hot)">FOLLOW</text>
+      <path class="t2t02-fl" style="--k:0" d="M40 200 C20 170 34 140 54 108 C62 140 92 150 86 184 C84 196 70 200 40 200 Z"/>
+      <path class="t2t02-fl" style="--k:1" d="M84 202 C72 176 84 154 102 130 C108 156 130 164 126 188 C124 198 112 202 84 202 Z"/>
+      <path class="t2t02-fl" style="--k:2" d="M8 202 C0 184 10 168 22 150 C28 168 44 174 40 192 C38 200 28 202 8 202 Z"/>
+      <text class="t2t02-note" x="70" y="232" text-anchor="middle">youthful lusts</text>
+      <g class="t2t02-run"><g transform="translate(200 168) rotate(14)"><circle cx="0" cy="-30" r="13"/><path d="M-17 38 L-17 4 Q-17 -12 0 -12 Q17 -12 17 4 L17 38 Z"/></g></g>
+      <g class="t2t02-men"><g class="m" transform="translate(520 168)"><circle cx="0" cy="-30" r="13"/><path d="M-17 38 L-17 4 Q-17 -12 0 -12 Q17 -12 17 4 L17 38 Z"/></g>
+        <g class="m" transform="translate(576 168)"><circle cx="0" cy="-30" r="13"/><path d="M-17 38 L-17 4 Q-17 -12 0 -12 Q17 -12 17 4 L17 38 Z"/></g>
+        <g class="m" transform="translate(632 168)"><circle cx="0" cy="-30" r="13"/><path d="M-17 38 L-17 4 Q-17 -12 0 -12 Q17 -12 17 4 L17 38 Z"/></g></g>
+      <text class="t2t02-note" x="576" y="226" text-anchor="middle">righteousness, faith, love, peace</text>
+      <text class="t2t02-note" x="576" y="252" text-anchor="middle" style="fill:var(--ink-soft)">with them that call on the Lord</text>
+    </svg>
+    <p class="note step">Paul says <em>flee</em>, not <em>fight</em>. Joseph, with a woman grabbing his coat, didn't stand and argue:</p>
+    <blockquote class="quote step"><p>“And she caught him by his garment, saying, Lie with me: and he left his garment in her hand, and fled, and got him out.”</p><cite>Genesis 39:12</cite></blockquote>
+    <p class="note step"><em>“Youthful lusts”</em> are the hot, fast wants of any man: sex, anger, drink, pride, the thrill. Don't test your strength. Run, and run <em>toward</em> something: <em>righteousness, faith, charity</em> (love), <em>peace</em>, <em>“with them that call on the Lord.”</em> That's what this group is for. Call one of these men the next time you feel the pull.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="23-26" data-hl="the servant of the Lord must not strive; but be gentle unto all men|if God peradventure will give them repentance|recover themselves out of the snare of the devil"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="24-25" data-hl="must not strive; but be gentle unto all men, apt to teach, patient, In meekness instructing"></blockquote>
+    <h2 class="rise" style="--d:1">How to help a man who's stuck</h2>
+    <ul class="nots">
+      <li class="step"><span class="k">win the argument</span><span class="why">“foolish and unlearned questions avoid”</span></li>
+      <li class="step"><span class="k">shout, shame, or lecture him</span><span class="why">“the servant of the Lord must not strive”</span></li>
+      <li class="step"><span class="k">write him off</span><span class="why">“if God peradventure will give them repentance”</span></li>
+      <li class="step yes"><span class="k">gentle, patient, teaching in meekness</span><span class="why">“gentle unto all men, apt to teach, patient”</span></li>
+    </ul>
+    <p class="note step"><em>Peradventure</em> means <em>perhaps.</em> Only God can give a man repentance, so a helper's job is to be kind and be there. The goal is that they <em>“recover themselves out of the snare of the devil, who are taken captive by him at his will.”</em> The word <em>recover</em> carries the idea of coming back to your senses, like a man sobering up.</p>
+    <p class="note step">You know that snare from the inside, and you know who was gentle with you. Be that man for the next one. Say less than you want to, listen more, and keep showing up.</p>
+  </div>
+</section>
+
+<!-- ======================= REVIEW ======================= -->
+<section class="slide remember">
+  <div class="inner">
+    <h2 class="rise">Points to remember</h2>
+    <ol class="seeds">
+      <li class="step"><span class="topic">Passed on</span><span class="seed-q">“The same commit thou to faithful men, who shall be able to teach others also” <cite>2:2</cite></span><span class="take">You are a link in a chain. Hand on what you were given.</span></li>
+      <li class="step"><span class="topic">Staying power</span><span class="seed-q">“Endure hardness, as a good soldier of Jesus Christ” <cite>2:3</cite></span><span class="take">Soldier, athlete, farmer: one mission, honest rules, and patience for the harvest.</span></li>
+      <li class="step"><span class="topic">He stays faithful</span><span class="seed-q">“If we believe not, yet he abideth faithful: he cannot deny himself” <cite>2:13</cite></span><span class="take">Your faith wobbles. His doesn't, and He won't let go of His own.</span></li>
+      <li class="step"><span class="topic">Approved</span><span class="seed-q">“Study to shew thyself approved unto God, a workman that needeth not to be ashamed” <cite>2:15</cite></span><span class="take">Handle the Bible with care and cut it straight, a little every day.</span></li>
+      <li class="step"><span class="topic">A vessel for use</span><span class="seed-q">“He shall be a vessel unto honour, sanctified, and meet for the master’s use” <cite>2:21</cite></span><span class="take">Clear out the dirt and God will use you. No man is too far gone.</span></li>
+      <li class="step"><span class="topic">Flee and follow</span><span class="seed-q">“Flee also youthful lusts: but follow righteousness, faith, charity, peace, with them that call on the Lord” <cite>2:22</cite></span><span class="take">Run from the old pull, toward the right things, and with other men.</span></li>
+    </ol>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 1 of 6</p>
+      <span class="topic">Passed on</span>
+      <h2>Who is Timothy to teach, and who are they to teach after that?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="2" data-hl="the same commit thou to faithful men, who shall be able to teach others also"></blockquote>
+      <blockquote class="quote step"><p>“Go ye therefore, and teach all nations, baptizing them in the name of the Father, and of the Son, and of the Holy Ghost: Teaching them to observe all things whatsoever I have commanded you: and, lo, I am with you alway, even unto the end of the world. Amen.”</p><cite>Matthew 28:19–20</cite></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>Faithful, reliable men, who will teach others also. Four generations in one verse: Paul, Timothy, faithful men, others. The gospel is meant to be handed on, and you are a link.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 2 of 6</p>
+      <span class="topic">Staying power</span>
+      <h2>What three workers does Paul say a believer should be like?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="3-4" data-hl="good soldier of Jesus Christ"></blockquote>
+      <blockquote class="quote step" data-q="5" data-hl="except he strive lawfully"></blockquote>
+      <blockquote class="quote step" data-q="6" data-hl="must be first partaker of the fruits"></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>A soldier (one mission, no entanglements), an athlete (play by the rules), and a farmer (work first, harvest later). Each one asks for patience.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 3 of 6</p>
+      <span class="topic">He stays faithful</span>
+      <h2>When we believe not, what does the Lord do, and why?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="13" data-hl="If we believe not, yet he abideth faithful: he cannot deny himself"></blockquote>
+      <blockquote class="quote step"><p>“For I am persuaded, that neither death, nor life, nor angels, nor principalities, nor powers, nor things present, nor things to come, Nor height, nor depth, nor any other creature, shall be able to separate us from the love of God, which is in Christ Jesus our Lord.”</p><cite>Romans 8:38–39</cite></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>He abides faithful. He can't deny Himself, His own word, or the people who belong to Him. A believer's hold on Christ slips, but Christ's hold doesn't. So get up and keep walking.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 4 of 6</p>
+      <span class="topic">Approved</span>
+      <h2>How does a workman handle God's word so he need not be ashamed?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="15" data-hl="Study to shew thyself approved unto God|rightly dividing the word of truth"></blockquote>
+      <blockquote class="quote step"><p>“All scripture is given by inspiration of God, and is profitable for doctrine, for reproof, for correction, for instruction in righteousness:”</p><cite>2 Timothy 3:16</cite></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>By being diligent and by <em>rightly dividing</em> it: cutting it straight, in its context. Make every effort, a little every day, and you won't be ashamed.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 5 of 6</p>
+      <span class="topic">A vessel for use</span>
+      <h2>What makes a man a vessel unto honour, fit for the Master's use?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="20-21" data-hl="he shall be a vessel unto honour, sanctified, and meet for the master’s use"></blockquote>
+      <blockquote class="quote step"><p>“And such were some of you: but ye are washed, but ye are sanctified, but ye are justified in the name of the Lord Jesus, and by the Spirit of our God.”</p><cite>1 Corinthians 6:11</cite></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>Being clean: purging the dishonourable things and letting God set him apart. It isn't about gold or wood. A clean vessel of any kind is used. No man here is too far gone to be put to work.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 6 of 6</p>
+      <span class="topic">Flee and follow</span>
+      <h2>What should a man flee, what should he follow, and who should he do it with?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="22" data-hl="Flee also youthful lusts|follow righteousness, faith, charity, peace|with them that call on the Lord out of a pure heart"></blockquote>
+      <blockquote class="quote step"><p>“And she caught him by his garment, saying, Lie with me: and he left his garment in her hand, and fled, and got him out.”</p><cite>Genesis 39:12</cite></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>Flee youthful lusts. Follow righteousness, faith, love and peace. Do it with other believers, with a pure heart. Don't stand and argue with temptation: run, and run toward something. And don't run alone.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide prayer">
+  <div class="inner">
+    <div class="emblem rise"></div>
+    <h2 class="rise" style="--d:1">Prayer requests</h2>
+    <p class="ask-line rise" style="--d:2">What can we pray about for you today?</p>
+    <blockquote class="quote rise" style="--d:4"><p>“Thou therefore, my son, be strong in the grace that is in Christ Jesus.”</p><cite>2 Timothy 2:1</cite></blockquote>
+  </div>
+</section>
+
+</main>
+
+<script>
+// King James Version, 2 Timothy chapter 2
+const V = {
+  1: "Thou therefore, my son, be strong in the grace that is in Christ Jesus.",
+  2: "And the things that thou hast heard of me among many witnesses, the same commit thou to faithful men, who shall be able to teach others also.",
+  3: "Thou therefore endure hardness, as a good soldier of Jesus Christ.",
+  4: "No man that warreth entangleth himself with the affairs of this life; that he may please him who hath chosen him to be a soldier.",
+  5: "And if a man also strive for masteries, yet is he not crowned, except he strive lawfully.",
+  6: "The husbandman that laboureth must be first partaker of the fruits.",
+  7: "Consider what I say; and the Lord give thee understanding in all things.",
+  8: "Remember that Jesus Christ of the seed of David was raised from the dead according to my gospel:",
+  9: "Wherein I suffer trouble, as an evil doer, even unto bonds; but the word of God is not bound.",
+  10: "Therefore I endure all things for the elect’s sakes, that they may also obtain the salvation which is in Christ Jesus with eternal glory.",
+  11: "It is a faithful saying: For if we be dead with him, we shall also live with him:",
+  12: "If we suffer, we shall also reign with him: if we deny him, he also will deny us:",
+  13: "If we believe not, yet he abideth faithful: he cannot deny himself.",
+  14: "Of these things put them in remembrance, charging them before the Lord that they strive not about words to no profit, but to the subverting of the hearers.",
+  15: "Study to shew thyself approved unto God, a workman that needeth not to be ashamed, rightly dividing the word of truth.",
+  16: "But shun profane and vain babblings: for they will increase unto more ungodliness.",
+  17: "And their word will eat as doth a canker: of whom is Hymenaeus and Philetus;",
+  18: "Who concerning the truth have erred, saying that the resurrection is past already; and overthrow the faith of some.",
+  19: "Nevertheless the foundation of God standeth sure, having this seal, The Lord knoweth them that are his. And, Let every one that nameth the name of Christ depart from iniquity.",
+  20: "But in a great house there are not only vessels of gold and of silver, but also of wood and of earth; and some to honour, and some to dishonour.",
+  21: "If a man therefore purge himself from these, he shall be a vessel unto honour, sanctified, and meet for the master’s use, and prepared unto every good work.",
+  22: "Flee also youthful lusts: but follow righteousness, faith, charity, peace, with them that call on the Lord out of a pure heart.",
+  23: "But foolish and unlearned questions avoid, knowing that they do gender strifes.",
+  24: "And the servant of the Lord must not strive; but be gentle unto all men, apt to teach, patient,",
+  25: "In meekness instructing those that oppose themselves; if God peradventure will give them repentance to the acknowledging of the truth;",
+  26: "And that they may recover themselves out of the snare of the devil, who are taken captive by him at his will."
+};
+const BOOK = "2 Timothy 2";
+</script>
+<script src="../assets/deck.js"></script>
+</body>
+</html>

@@ -14157,5 +14157,99 @@ window.STUDIES = [
       },
       "big": "Waiting for Jesus means getting up and working, not sitting down. Honest work is part of a rebuilt life, and the rule is aimed at the man who won't work, not the man who can't yet. Don't quit doing good, treat a straying man as a brother, and lean on the Lord who is faithful."
     }
+  },
+  {
+    "id": "2-timothy-01",
+    "type": "chapter",
+    "book": "2 Timothy",
+    "ch": 1,
+    "date": "2026-10-31",
+    "title": "2 Timothy 1",
+    "sub": "A father's last words",
+    "about": "Paul, in a Roman prison and expecting to die, tells the young man he loves like a son: don't be afraid, don't be ashamed, and trust the One who keeps what you give Him.",
+    "tags": [
+      "Fear and shame",
+      "Faith handed down",
+      "Eternal security",
+      "Spiritual gifts",
+      "Friendship",
+      "Courage"
+    ],
+    "url": "studies/2-timothy-01.html",
+    "overview": {
+      "where": "A prison in Rome, with the letter going to Timothy, most likely at Ephesus",
+      "when": "About AD 66 to 67, under Nero; Paul's last letter",
+      "people": [
+        "paul",
+        "timothy",
+        "lois",
+        "eunice",
+        "jesus",
+        "holy-spirit",
+        "phygellus-and-hermogenes",
+        "onesiphorus"
+      ],
+      "places": [
+        "rome",
+        "ephesus",
+        "asia"
+      ],
+      "story": [
+        "Paul, an apostle, writes to Timothy, his dearly beloved son. He prays for him night and day and remembers his tears (1–4).",
+        "He recalls the unfeigned faith that dwelt first in Timothy's grandmother Lois and mother Eunice, and tells him to stir up the gift of God that is in him (5–6).",
+        "God has not given a spirit of fear, but of power, love and a sound mind. Timothy is not to be ashamed of the Lord or of Paul his prisoner (7–8).",
+        "God saved us by His own purpose and grace, not our works. Paul is not ashamed, for he knows whom he has believed and is sure He can keep what he has committed to Him (9–12).",
+        "Hold fast the sound words and guard the good thing by the Holy Spirit. Everyone in Asia turned from Paul, but Onesiphorus often refreshed him, was not ashamed of his chain, and searched Rome until he found him (13–18)."
+      ],
+      "key": {
+        "ref": "2 Timothy 1:7",
+        "text": "For God hath not given us the spirit of fear; but of power, and of love, and of a sound mind."
+      },
+      "big": "Fear and shame are not from God. He gives power, love and a sound mind, and He keeps everything a man hands over to Him. A believer is held by Christ, not by his own grip."
+    }
+  },
+  {
+    "id": "2-timothy-02",
+    "type": "chapter",
+    "book": "2 Timothy",
+    "ch": 2,
+    "date": "2026-10-31",
+    "title": "2 Timothy 2",
+    "sub": "Pass it on",
+    "about": "Paul tells Timothy how to last: hand the truth to faithful men, work like a soldier, an athlete and a farmer, stay clean for the Master's use, and run from the old pull with other men.",
+    "tags": [
+      "Discipleship",
+      "Endurance",
+      "God's faithfulness",
+      "God's word",
+      "Usefulness",
+      "Temptation",
+      "Gentleness"
+    ],
+    "url": "studies/2-timothy-02.html",
+    "overview": {
+      "where": "Paul's prison cell in Rome, with the letter going to Timothy, most likely at Ephesus",
+      "when": "About AD 66 to 67, under Nero; Paul's last letter",
+      "people": [
+        "paul",
+        "timothy",
+        "jesus",
+        "david",
+        "hymenaeus-and-philetus"
+      ],
+      "places": [],
+      "story": [
+        "Paul tells Timothy to be strong in grace and to commit what he heard to faithful men who will teach others also (1–2).",
+        "Three pictures of staying power: a soldier who stays free of entanglements, an athlete who competes by the rules, and a farmer who works before he eats (3–7).",
+        "Paul is chained like an evildoer, but the word of God is not bound. A faithful saying: if we die with Him we live, if we suffer we reign, and if we believe not, He abideth faithful (8–13).",
+        "Study to shew thyself approved, a workman rightly dividing the word of truth. Hymenaeus and Philetus spread error like a canker, but the foundation of God stands sure (14–19).",
+        "In a great house are vessels to honour and dishonour; a man who purges himself becomes fit for the Master's use. Flee youthful lusts, follow righteousness with others who call on the Lord, and teach the stubborn gently (20–26)."
+      ],
+      "key": {
+        "ref": "2 Timothy 2:2",
+        "text": "And the things that thou hast heard of me among many witnesses, the same commit thou to faithful men, who shall be able to teach others also."
+      },
+      "big": "Faith is meant to be handed on, man to man. Stay clean and keep working, because any man can become useful to the Master, and He stays faithful even when we don't."
+    }
   }
 ];

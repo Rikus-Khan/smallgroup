@@ -1,0 +1,573 @@
+<!doctype html>
+<html lang="en" data-theme="night">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>2 Timothy 1</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="../assets/fonts.css">
+<link rel="stylesheet" href="../assets/deck.css">
+<link rel="stylesheet" href="../assets/themes.css">
+<style>
+/* t2t01-where: where we are in 2 Timothy (a deck.css candidate; the 2 Timothy 3 and 4 studies can copy it as is).
+   Four cards, one per chapter (.t2t01-ch: .n, b, q, cite; --k). The chapter we are in is .now (and pulses). Colors: --c on each card. */
+.t2t01-where { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; margin: .5em 0 1em; }
+.t2t01-ch { --c: var(--accent); padding: .55em .75em .65em; border-radius: 10px; border: 1.5px solid color-mix(in srgb, var(--c) 55%, transparent);
+  background: color-mix(in srgb, var(--c) 6%, transparent);
+  opacity: 0; transform: translateY(10px); transition: opacity .6s ease, transform .6s ease; transition-delay: calc(var(--k, 0) * 300ms + 300ms); }
+.slide.active .t2t01-ch { opacity: 1; transform: none; }
+.t2t01-ch .n { display: grid; place-items: center; width: 2.1rem; height: 2.1rem; margin-bottom: .35em; border-radius: 50%; border: 2px solid var(--c);
+  font: 700 1.05rem var(--sans); color: var(--c); }
+.t2t01-ch b { display: block; font: 600 clamp(1.05rem, .88rem + .7vw, 1.5rem)/1.15 var(--serif); color: var(--ink); }
+.t2t01-ch q { display: block; margin-top: .3em; font: italic clamp(.82rem, .76rem + .3vw, 1.05rem)/1.3 var(--serif); quotes: "\201C" "\201D"; color: var(--ink-soft); }
+.t2t01-ch cite { display: block; margin-top: .2em; font-style: normal; font-size: clamp(.7rem, .66rem + .2vw, .88rem); color: var(--ink-soft); }
+.t2t01-ch.two { --c: var(--cool); }
+.t2t01-ch.three { --c: var(--warm); }
+.t2t01-ch.four { --c: var(--wine); }
+.t2t01-ch.now { background: color-mix(in srgb, var(--c) 20%, transparent); box-shadow: inset 0 0 0 2px var(--c); }
+.t2t01-ch.now .n { background: var(--c); color: var(--on-accent); }
+.slide.active .t2t01-ch.now { animation: t2t01-here 2.4s ease-in-out 1.6s infinite; }
+@keyframes t2t01-here { 50% { box-shadow: inset 0 0 0 2px var(--c), 0 0 0 6px color-mix(in srgb, var(--c) 28%, transparent); } }
+@media (max-width: 640px) { .t2t01-where { grid-template-columns: 1fr 1fr; } }
+
+/* t2t01-fire: banked coals (the gift already in him), then a flame when stirred (a .t2t01-stir step) */
+.t2t01-log { fill: var(--leather); stroke: var(--leather-light); stroke-width: 2; }
+.t2t01-coal { fill: var(--warm); animation: t2t01-glow 2.6s ease-in-out infinite; animation-delay: calc(var(--k, 0) * .5s); }
+@keyframes t2t01-glow { 50% { opacity: .45; } }
+.t2t01-blaze { transform-box: fill-box; transform-origin: 50% 100%; transform: scale(.1); opacity: 0; transition: transform 1.6s cubic-bezier(.3,.7,.3,1), opacity .8s ease; }
+.slide:has(.t2t01-stir.on) .t2t01-blaze { transform: none; opacity: 1; }
+.t2t01-flick { transform-box: fill-box; transform-origin: 50% 100%; animation: t2t01-flick 1.7s ease-in-out infinite; }
+@keyframes t2t01-flick { 50% { transform: scale(.95, 1.07) skewX(2deg); } }
+.t2t01-flame-out { fill: var(--accent-hot); }
+.t2t01-flame-in { fill: var(--glow); }
+.t2t01-fire-lbl { transition: opacity .6s ease; }
+.t2t01-fire-lbl.after { opacity: 0; }
+.slide:has(.t2t01-stir.on) .t2t01-fire-lbl.before { opacity: 0; }
+.slide:has(.t2t01-stir.on) .t2t01-fire-lbl.after { opacity: 1; }
+
+/* t2t01-fear: a cloud of fears that shake, then settle and fade as three gifts stand up in their place (a .t2t01-calm step) */
+.t2t01-fear { display: grid; grid-template-columns: 1fr 1.25fr; gap: clamp(.8rem, 2vw, 1.6rem); align-items: center; margin: .5em 0 1em; min-height: 11rem; }
+.t2t01-cloud { position: relative; display: flex; flex-wrap: wrap; gap: .35em .5em; justify-content: center; padding: 1em .8em; border-radius: 40px;
+  background: color-mix(in srgb, var(--danger) 16%, transparent); border: 2px dashed color-mix(in srgb, var(--danger) 60%, transparent);
+  transition: opacity 1.2s ease, transform 1.2s ease, filter 1.2s ease; }
+.t2t01-cloud span { font: italic clamp(.85rem, .78rem + .35vw, 1.1rem) var(--serif); color: var(--ink);
+  animation: t2t01-shake .9s ease-in-out infinite; animation-delay: calc(var(--k, 0) * -.23s); }
+.t2t01-cloud b { flex-basis: 100%; text-align: center; font: 700 clamp(1.1rem, .9rem + .8vw, 1.6rem) var(--sans); letter-spacing: .12em; text-transform: uppercase; color: var(--danger); }
+@keyframes t2t01-shake { 0%, 100% { transform: translate(0, 0); } 25% { transform: translate(2px, -2px); } 50% { transform: translate(-2px, 1px); } 75% { transform: translate(1px, 2px); } }
+.slide:has(.t2t01-calm.on) .t2t01-cloud { opacity: .18; transform: scale(.82); filter: blur(1px); }
+.slide:has(.t2t01-calm.on) .t2t01-cloud span { animation-play-state: paused; }
+.t2t01-three { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; align-items: end; }
+.t2t01-three div { --h: 8rem; min-height: var(--h); padding: .6em .6em .7em; border-radius: 10px 10px 0 0; border-bottom: 4px solid var(--accent);
+  background: color-mix(in srgb, var(--accent) 14%, transparent); transform: translateY(24px) scaleY(.2); transform-origin: 50% 100%; opacity: 0;
+  transition: transform 1s cubic-bezier(.3,.7,.3,1), opacity .6s ease; transition-delay: calc(var(--k, 0) * 350ms); }
+.t2t01-three div:nth-child(2) { --h: 9.5rem; }
+.t2t01-three div:nth-child(3) { --h: 7rem; }
+.slide:has(.t2t01-calm.on) .t2t01-three div { transform: none; opacity: 1; }
+.t2t01-three b { display: block; font: 600 clamp(1.15rem, .95rem + .9vw, 1.8rem)/1.1 var(--serif); color: var(--accent-hot); }
+.t2t01-three small { display: block; margin-top: .3em; font-size: clamp(.78rem, .72rem + .28vw, 1rem); line-height: 1.3; color: var(--ink-soft); }
+@media (max-width: 640px) { .t2t01-fear { grid-template-columns: 1fr; } .t2t01-three div { --h: auto !important; } }
+
+/* t2t01-left: the crowd from Asia drifts away from Paul's cell; a step brings one man toward it (.t2t01-come) */
+.t2t01-fig { transition: transform 2.4s ease-in-out, opacity 2.4s ease; transition-delay: calc(var(--k, 0) * 260ms + 800ms); }
+.slide.active .t2t01-fig.crowd { transform: translateX(var(--go, -60px)); opacity: .22; }
+.t2t01-fig circle, .t2t01-fig path { fill: var(--ink-soft); }
+.t2t01-fig.friend { transition-delay: 0s; transition-duration: 2.6s; }
+.t2t01-fig.friend circle, .t2t01-fig.friend path { fill: var(--accent-hot); }
+.slide:has(.t2t01-come.on) .t2t01-fig.friend { transform: translateX(120px); }
+.t2t01-bar { stroke: var(--ink-soft); stroke-width: 5; stroke-linecap: round; }
+.t2t01-cell { fill: color-mix(in srgb, var(--ink) 10%, transparent); stroke: var(--line-strong); stroke-width: 3; }
+.t2t01-link { fill: none; stroke: var(--ink-soft); stroke-width: 5; }
+.t2t01-tag { fill: var(--ink); font-size: 19px; }
+.t2t01-tag.soft { fill: var(--ink-soft); font-size: 17px; }
+.t2t01-said { opacity: 0; transition: opacity .7s ease; }
+.slide:has(.t2t01-come.on) .t2t01-said { opacity: 1; transition-delay: 2.2s; }
+</style>
+</head>
+<body>
+<main class="deck" id="deck">
+
+<!-- ======================= OPENING ======================= -->
+<section class="slide title">
+  <div class="inner">
+    <div class="emblem rise"></div>
+    <h1 class="rise" style="--d:1">2 Timothy 1</h1>
+    <p class="sub rise" style="--d:3">A father's last words</p>
+    <p class="tag rise" style="--d:5">Paul sits in a Roman prison, sure he will die. He writes to the young man he loves like a son: don't be afraid, don't be ashamed, don't quit.</p>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <div class="split">
+      <div class="stage">
+        <svg data-world viewBox="170 110 500 280" data-towns="Rome!:t, Puteoli:r, Corinth:t, Ephesus*:r" role="img" aria-label="A map of Italy, Greece and the west of what is now Turkey. A line runs by sea from Rome, down the coast of Italy, around the south of Greece, and across the Aegean Sea to Ephesus, where Timothy was.">
+          <path class="map-route" data-via="Rome, Puteoli, Rhegium, @16 37.6, @18.5 37.2, @21.6 36.6, @22.6 36.2, @23.5 36.25, @25.0 37.0, @26.0 37.45, @26.45 37.72, @26.6 37.95, @27.15 37.9, Ephesus"/>
+        </svg>
+      </div>
+      <div>
+        <h2 class="rise" style="--d:1">The second letter to Timothy</h2>
+        <div class="letter">
+          <p class="from">“Paul, an apostle of Jesus Christ by the will of God… To Timothy, my dearly beloved son”</p>
+          <dl>
+            <dt>Written from</dt><dd>a prison in Rome. This time it is no house arrest. Paul suffers <em>“as an evil doer, even unto bonds”</em> (2:9), in a chain (1:16).</dd>
+            <dt>When</dt><dd>about AD 66 to 67, under the emperor Nero. This is Paul's last letter.</dd>
+            <dt>To whom</dt><dd>Timothy, his young helper, most likely at Ephesus (1:18)</dd>
+            <dt>Why</dt><dd class="step">Paul knows he is dying: <em>“the time of my departure is at hand”</em> (4:6). He wants his son in the faith to stand firm, and to hand the work on.</dd>
+          </dl>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise" style="--d:1">Where 2 Timothy fits in Paul's life</h2>
+    <ol class="timeline" aria-label="About AD 49 to 50, young Timothy joins Paul at Lystra. About 62 to 64, Paul is released and writes 1 Timothy. About AD 64, Rome burns and Nero turns on the Christians. After that, Paul is arrested again. About AD 66 to 67, he writes 2 Timothy from a Roman prison. About 67 to 68, by tradition, he is put to death.">
+      <li style="--k:0"><b>about AD 49 to 50</b><span>Timothy joins Paul at Lystra</span><small>Acts 16</small></li>
+      <li style="--k:1"><b>about 62 to 64</b><span>Paul freed; writes 1 Timothy</span><small>Timothy at Ephesus</small></li>
+      <li style="--k:2"><b>about AD 64</b><span>Rome burns; Nero blames the Christians</span><small>a dangerous time to be one</small></li>
+      <li style="--k:3"><b>soon after</b><span>Paul is arrested again</span><small>and chained</small></li>
+      <li class="lit" style="--k:4"><b>about 66 to 67</b><span>2 Timothy, from a Roman prison</span><small>Paul's last letter</small></li>
+      <li class="wait" style="--k:5"><b>about 67 to 68</b><span>Paul put to death in Rome</span><small>by tradition</small></li>
+    </ol>
+    <p class="note rise" style="--d:3">Seventeen years sit between the first meeting and this letter. Paul met Timothy as a teenager or young man at Lystra (Acts 16:1–3). <em>“Timotheus”</em> is the same name as Timothy. Now Timothy is the man Paul trusts most, and Paul is the one in chains.</p>
+    <p class="note step">Read the whole letter as a dying father's last words to his son. A man who knows he has little time says only what matters.</p>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise" style="--d:1">2 Timothy in one picture</h2>
+    <div class="t2t01-where" role="img" aria-label="Four chapters, four last words. Chapter 1, fan the flame: stir up the gift of God, which is in thee, 1:6. Chapter 2, pass it on: the same commit thou to faithful men, 2:2. Chapter 3, hold to the Book: all scripture is given by inspiration of God, 3:16. Chapter 4, finish well: I have finished my course, I have kept the faith, 4:7. We are in chapter 1.">
+      <div class="t2t01-ch one now" style="--k:0"><span class="n">1</span><b>Fan the flame</b><q>stir up the gift of God, which is in thee</q><cite>1:6</cite></div>
+      <div class="t2t01-ch two" style="--k:1"><span class="n">2</span><b>Pass it on</b><q>the same commit thou to faithful men</q><cite>2:2</cite></div>
+      <div class="t2t01-ch three" style="--k:2"><span class="n">3</span><b>Hold to the Book</b><q>All scripture is given by inspiration of God</q><cite>3:16</cite></div>
+      <div class="t2t01-ch four" style="--k:3"><span class="n">4</span><b>Finish well</b><q>I have finished my course, I have kept the faith</q><cite>4:7</cite></div>
+    </div>
+    <p class="note step">Four chapters, four last words: <em>don't be afraid, pass it on, hold to the Book, finish well.</em> Today we are in chapter 1: Paul tells a nervous young man to stir up what God has already put in him.</p>
+  </div>
+</section>
+
+<section class="slide watch">
+  <div class="inner">
+    <h2 class="rise">Things to watch for</h2>
+    <p class="lede rise" style="--d:1">Keep these questions in the back of your mind as we read. We'll come back to every one of them at the end.</p>
+    <ol class="seeds">
+      <li class="step"><span class="topic">Passed down</span><span class="seed-q">Whose faith does Paul remember in Timothy, and who had it first?</span></li>
+      <li class="step"><span class="topic">Stir it up</span><span class="seed-q">What did Paul tell Timothy to do with the gift of God that was in him?</span></li>
+      <li class="step"><span class="topic">Not fear</span><span class="seed-q">What has God not given us, and what has He given us instead?</span></li>
+      <li class="step"><span class="topic">Not ashamed</span><span class="seed-q">Why was Paul not ashamed, even in a prison chain?</span></li>
+      <li class="step"><span class="topic">Kept safe</span><span class="seed-q">What is Jesus able to keep for us, and until when?</span></li>
+      <li class="step"><span class="topic">A real friend</span><span class="seed-q">What did Onesiphorus do when everyone else turned away?</span></li>
+    </ol>
+  </div>
+</section>
+
+<!-- ======================= PART ONE ======================= -->
+<section class="slide part">
+  <div class="inner">
+    <p class="part-n rise">Part one</p>
+    <h2 class="rise" style="--d:1">A father remembers his son</h2>
+    <p class="range rise" style="--d:2">Verses 1–7</p>
+    <div class="rule"></div>
+    <p class="hook rise" style="--d:4">Paul begins with love, tears and a family's faith. Then comes the word a frightened young man needs.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="1-2" data-hl="To Timothy, my dearly beloved son|Grace, mercy, and peace"></section>
+
+<section class="slide verse" data-v="3-4" data-hl="without ceasing I have remembrance of thee in my prayers night and day|mindful of thy tears"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="4" data-hl="mindful of thy tears"></blockquote>
+    <h2 class="rise" style="--d:1">He remembered his tears</h2>
+    <p class="saying rise" style="--d:2">Paul remembers <em>thy tears</em>.</p>
+    <p class="note step">Paul doesn't say <em>“pull yourself together.”</em> Near the end of his life, in a cold cell, one of the things he holds onto is a young man crying, probably at their last goodbye. A man who prays for you <em>“night and day”</em> isn't embarrassed by your tears.</p>
+    <p class="note step">Some of you were told, as boys, that men don't cry. Paul didn't think so, and he wasn't weak. Real fathers, and the Father in heaven, see tears and remember them: <em>“Thou tellest my wanderings: put thou my tears into thy bottle”</em> (Psalm 56:8).</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="5" data-hl="unfeigned faith|thy grandmother Lois, and thy mother Eunice"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="5" data-hl="dwelt first in thy grandmother Lois"></blockquote>
+    <h2 class="rise" style="--d:1">Faith, handed down</h2>
+    <div class="chains">
+      <div class="chain step"><span class="who-chip">Lois, his grandmother</span><span class="said">“dwelt first”</span><span class="who-chip">Eunice, his mother</span><span class="said">and in</span><span class="who-chip jesus">Timothy</span></div>
+    </div>
+    <p class="note step"><em>Unfeigned</em> means <em>not put on, not an act</em>. Paul isn't saying Timothy's family was perfect. His father was a Greek (Acts 16:1), and no faith of his is mentioned. Two women kept the faith alive, and it reached a boy.</p>
+    <blockquote class="quote step"><p>“Then came he to Derbe and Lystra: and, behold, a certain disciple was there, named Timotheus, the son of a certain woman, which was a Jewess, and believed; but his father was a Greek:”</p><cite>Acts 16:1</cite></blockquote>
+    <p class="note step">Now notice the word <em>“first.”</em> Somebody always has to be first. Some of you had a Lois. Some of you had nobody, or worse than nobody. If that's you, you are the first link: your children and your grandchildren may someday say, <em>“it started with him.”</em></p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="6-7" data-hl="stir up the gift of God|the spirit of fear|power, and of love, and of a sound mind"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="6" data-hl="stir up the gift of God, which is in thee"></blockquote>
+    <div class="split">
+      <div class="stage">
+        <svg viewBox="0 0 360 312" role="img" aria-label="A pile of banked coals on two logs, still glowing. When they are stirred, a flame rises from them. Before: the gift is already in you. After: stirred up into a flame.">
+          <rect class="t2t01-log" x="70" y="238" width="220" height="24" rx="11" transform="rotate(-6 180 250)"/>
+          <rect class="t2t01-log" x="70" y="244" width="220" height="24" rx="11" transform="rotate(6 180 256)"/>
+          <g class="t2t01-blaze"><g class="t2t01-flick">
+            <path class="t2t01-flame-out" d="M180 236 C118 208 140 150 180 70 C190 124 244 150 232 206 C228 222 206 232 180 236 Z"/>
+            <path class="t2t01-flame-in" d="M180 234 C156 216 164 182 180 148 C192 176 208 194 200 214 C196 226 188 232 180 234 Z"/>
+          </g></g>
+          <circle class="t2t01-coal" style="--k:0" cx="140" cy="240" r="9"/><circle class="t2t01-coal" style="--k:1" cx="170" cy="232" r="11"/>
+          <circle class="t2t01-coal" style="--k:2" cx="205" cy="238" r="10"/><circle class="t2t01-coal" style="--k:3" cx="232" cy="246" r="8"/>
+          <text class="t2t01-fire-lbl before" x="180" y="302" text-anchor="middle" font-size="17" style="fill:var(--ink)">glowing, but low: the gift is in you</text>
+          <text class="t2t01-fire-lbl after" x="180" y="302" text-anchor="middle" font-size="17" font-weight="700" style="fill:var(--accent-hot)">stirred up into a flame</text>
+        </svg>
+      </div>
+      <div>
+        <h2 class="rise" style="--d:1">Stir up the gift</h2>
+        <p class="note rise" style="--d:2">The Greek word (<span class="gk">anazōpyreō</span>) means <em>to fan a fire back into flame.</em> Timothy's fire hadn't gone out. It was low, like coals under ash. Paul hadn't told him to light a new one.</p>
+        <p class="note step t2t01-stir">The <em>“gift of God, which is in thee”</em> is whatever God has put in a believer to serve Him with. It was in Timothy when the elders laid hands on him. It's already in you. Fear and shame bank the coals. Reading this chapter, praying, serving, sitting with these men: that's the fanning.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="7" data-hl="the spirit of fear|power, and of love, and of a sound mind"></blockquote>
+    <h2 class="rise" style="--d:1">Not fear, but three gifts</h2>
+    <div class="t2t01-fear" role="img" aria-label="A shaking cloud of fears: what I did, what they will say, I will fail again, they will find out, I am not enough. When God's gifts come, the cloud fades and three stand up in its place: power, love, and a sound mind.">
+      <div class="t2t01-cloud"><b>fear</b>
+        <span style="--k:0">what I did</span><span style="--k:1">what they'll say</span><span style="--k:2">I'll fail again</span><span style="--k:3">they'll find out</span><span style="--k:4">I'm not enough</span></div>
+      <div class="t2t01-three">
+        <div style="--k:0"><b>power</b><small>strength to do the right thing today</small></div>
+        <div style="--k:1"><b>love</b><small>God's love for you, and yours for others</small></div>
+        <div style="--k:2"><b>a sound mind</b><small>a steady, self-controlled head</small></div>
+      </div>
+    </div>
+    <p class="note step t2t01-calm"><em>“Fear”</em> here is timidity: the shrinking back, the hiding, the cowardice. God did not give you that. If it's in you, it came from somewhere else. What He gave: <em>power</em> (the Holy Spirit, who lives in every believer), <em>love</em>, and <em>a sound mind</em>, which means self-control and clear thinking. Think of the man who stays steady when the craving or the memory hits.</p>
+    <p class="note step">For men in recovery this is a whole plan: the shame of the past, the fear of falling again, and the head that spins. Say verse 7 out loud when it hits. And if worry or panic is heavy, tell a brother or a doctor. That is not a lack of faith.</p>
+  </div>
+</section>
+
+<!-- ======================= PART TWO ======================= -->
+<section class="slide part">
+  <div class="inner">
+    <p class="part-n rise">Part two</p>
+    <h2 class="rise" style="--d:1">Not ashamed</h2>
+    <p class="range rise" style="--d:2">Verses 8–14</p>
+    <div class="rule"></div>
+    <p class="hook rise" style="--d:4">A man in a chain says <em>“I am not ashamed.”</em> Then he tells Timothy where his safety comes from.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="8-10" data-hl="Be not thou therefore ashamed|not according to our works|hath abolished death"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="8" data-hl="Be not thou therefore ashamed|nor of me his prisoner"></blockquote>
+    <h2 class="rise" style="--d:1">What shame says</h2>
+    <div class="talk">
+      <p class="rise" style="--d:2"><small>Shame says</small>Everyone knows what you did. Keep your head down, and stay away from people like Paul, who might get you noticed.</p>
+      <p class="reply step"><small>Paul, from a chain</small>Be not thou therefore ashamed of the testimony of our Lord, nor of me his prisoner.</p>
+    </div>
+    <p class="note step">Timothy was tempted to hide. Being tied to a prisoner Nero hated was dangerous, and it was embarrassing too. Paul asks him to stand beside him anyway, and to <em>“be partaker of the afflictions of the gospel.”</em></p>
+    <p class="note step">Paul knew shame better than most. Before he met Jesus he was <em>“a blasphemer, and a persecutor, and injurious”</em> (1 Timothy 1:13), and he stood by while Stephen was killed (Acts 8:1). Yet he says <em>“I am not ashamed”</em> (v. 12). Not because his past was small, but because Christ's grace was bigger. That is where you stand too.</p>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="9" data-hl="not according to our works, but according to his own purpose and grace"></blockquote>
+    <h2 class="rise" style="--d:1">What saved us, and what didn't</h2>
+    <ul class="nots">
+      <li class="step"><span class="k">my good works</span><span class="why">“not according to our works”</span></li>
+      <li class="step"><span class="k">my record: clean days, clean years</span><span class="why">good, but not the reason God saved you</span></li>
+      <li class="step"><span class="k">my past: how bad it was</span><span class="why">it can't un-save you either</span></li>
+      <li class="step yes"><span class="k">his own purpose and grace</span><span class="why">given us in Christ Jesus “before the world began”</span></li>
+    </ul>
+    <p class="note step">God had your name in mind before you had any record at all, good or bad. <em>“Hath saved us, and called us”</em> is already done. And verse 10 says why that's safe: Jesus <em>“hath abolished death, and hath brought life and immortality to light.”</em> The last enemy is already beaten.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="11-12" data-hl="I know whom I have believed|that which I have committed unto him against that day"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="12" data-hl="I know whom I have believed, and am persuaded that he is able to keep that which I have committed unto him against that day"></blockquote>
+    <div class="split">
+      <div class="stage">
+        <svg class="kept" viewBox="0 0 600 420" role="img" aria-label="A life handed over to Christ and held inside His hands. My past, my next fall, and death keep pushing in, and none can get through.">
+          <circle class="kept-wall" cx="300" cy="215" r="150"/>
+          <circle class="kept-wall inner" cx="300" cy="230" r="88"/>
+          <text class="kept-tag" x="300" y="104" text-anchor="middle" font-size="19" font-weight="700">He is able to keep</text>
+          <text class="kept-tag" x="300" y="190" text-anchor="middle" font-size="18" font-weight="700">what I gave Him</text>
+          <rect class="kept-in" x="262" y="222" width="76" height="52" rx="8"/>
+          <rect x="290" y="206" width="20" height="24" rx="10" style="fill:none;stroke:var(--accent-hot);stroke-width:7"/>
+          <circle cx="300" cy="244" r="6" style="fill:var(--bg)"/>
+          <text x="300" y="296" text-anchor="middle" font-size="16" style="fill:var(--ink)">my life, my soul</text>
+          <g class="kept-foe" style="--dx:16px;--dy:0px">
+            <text x="10" y="196" font-size="18" font-weight="700">my past</text>
+            <line x1="20" y1="215" x2="128" y2="215"/><path d="M140 215 L124 206 L124 224 Z"/>
+          </g>
+          <g class="kept-foe" style="--dx:-16px;--dy:0px;--w:.9s">
+            <text x="590" y="196" text-anchor="end" font-size="18" font-weight="700">my next fall</text>
+            <line x1="580" y1="215" x2="472" y2="215"/><path d="M460 215 L476 206 L476 224 Z"/>
+          </g>
+          <g class="kept-foe" style="--dx:11px;--dy:-11px;--w:1.7s">
+            <text x="20" y="404" font-size="18" font-weight="700">death</text>
+            <line x1="70" y1="380" x2="178" y2="330"/><path d="M188 324 L170 324 L178 340 Z"/>
+          </g>
+        </svg>
+      </div>
+      <div>
+        <h2 class="rise" style="--d:1">A deposit that's kept</h2>
+        <p class="note rise" style="--d:2">Paul says <em>“I know <strong>whom</strong> I have believed,”</em> not <em>“what.”</em> His peace rests on a Person. <em>“Committed”</em> is a banking word (Greek <span class="gk">parathēkē</span>): a deposit left in a trusted keeper's hands. Paul handed his whole life to Jesus, and he is <em>“persuaded”</em> He is able to keep it safe <em>“against that day,”</em> the day Jesus returns.</p>
+        <p class="note step">Most Bible teachers read <em>“that which I have committed”</em> as Paul's own soul and life. That's eternal security: you aren't held by your grip, which slips, but by His. <em>“Neither shall any man pluck them out of my hand”</em> (John 10:28). Your past can't pry it open, and neither can your next bad day.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="slide verse" data-v="13-14" data-hl="Hold fast the form of sound words|keep by the Holy Ghost which dwelleth in us"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="14" data-hl="keep by the Holy Ghost which dwelleth in us"></blockquote>
+    <h2 class="rise" style="--d:1">He keeps you. You keep the truth.</h2>
+    <div class="columns">
+      <div class="col law rise" style="--d:2">
+        <p class="who">Verse 12</p>
+        <h3>Christ keeps you</h3>
+        <p>He is able to keep what you gave Him. You are not holding yourself up.</p>
+      </div>
+      <div class="col grace step">
+        <p class="who">Verses 13 and 14</p>
+        <h3>You keep the good thing</h3>
+        <p>You guard what Paul taught you: <em>“the form of sound words,”</em> the gospel. And you don't do it alone. The Holy Spirit <em>“dwelleth in us.”</em></p>
+      </div>
+    </div>
+    <p class="note step">That's the whole Christian life in two sentences. He holds you, and you hold on to His word with His help. The Holy Spirit moved in when you believed. You didn't have to wait for a second blessing to be strong enough.</p>
+  </div>
+</section>
+
+<!-- ======================= PART THREE ======================= -->
+<section class="slide part">
+  <div class="inner">
+    <p class="part-n rise">Part three</p>
+    <h2 class="rise" style="--d:1">The friend who came</h2>
+    <p class="range rise" style="--d:2">Verses 15–18</p>
+    <div class="rule"></div>
+    <p class="hook rise" style="--d:4">When Paul was at his lowest, most of his friends walked away. One man walked toward him.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="15" data-hl="all they which are in Asia be turned away from me"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="15" data-hl="all they which are in Asia be turned away from me"></blockquote>
+    <div class="split">
+      <div class="stage">
+        <svg viewBox="0 0 640 300" role="img" aria-label="A prison cell with Paul behind bars on the right. A crowd of people from Asia turn and drift away from it. One man, Onesiphorus, walks toward the cell and says: I will find him.">
+          <rect class="t2t01-cell" x="470" y="70" width="150" height="170" rx="10"/>
+          <line class="t2t01-bar" x1="500" y1="76" x2="500" y2="234"/><line class="t2t01-bar" x1="530" y1="76" x2="530" y2="234"/>
+          <line class="t2t01-bar" x1="560" y1="76" x2="560" y2="234"/><line class="t2t01-bar" x1="590" y1="76" x2="590" y2="234"/>
+          <g transform="translate(545 160)" class="t2t01-fig"><circle cx="0" cy="-26" r="12"/><path d="M-17 40 L-17 6 Q-17 -8 0 -8 Q17 -8 17 6 L17 40 Z"/></g>
+          <text class="t2t01-tag" x="545" y="266" text-anchor="middle">Paul, in a chain</text>
+          <g transform="translate(60 160)"><g class="t2t01-fig crowd" style="--k:0;--go:-40px"><circle cx="0" cy="-26" r="12"/><path d="M-17 40 L-17 6 Q-17 -8 0 -8 Q17 -8 17 6 L17 40 Z"/></g></g>
+          <g transform="translate(120 160)"><g class="t2t01-fig crowd" style="--k:1;--go:-50px"><circle cx="0" cy="-26" r="12"/><path d="M-17 40 L-17 6 Q-17 -8 0 -8 Q17 -8 17 6 L17 40 Z"/></g></g>
+          <g transform="translate(180 160)"><g class="t2t01-fig crowd" style="--k:2;--go:-60px"><circle cx="0" cy="-26" r="12"/><path d="M-17 40 L-17 6 Q-17 -8 0 -8 Q17 -8 17 6 L17 40 Z"/></g></g>
+          <g transform="translate(240 160)"><g class="t2t01-fig crowd" style="--k:3;--go:-70px"><circle cx="0" cy="-26" r="12"/><path d="M-17 40 L-17 6 Q-17 -8 0 -8 Q17 -8 17 6 L17 40 Z"/></g></g>
+          <text class="t2t01-tag soft" x="150" y="266" text-anchor="middle">“all they which are in Asia”</text>
+          <g transform="translate(300 160)"><g class="t2t01-fig friend"><circle cx="0" cy="-26" r="12"/><path d="M-17 40 L-17 6 Q-17 -8 0 -8 Q17 -8 17 6 L17 40 Z"/></g></g>
+          <text class="t2t01-tag t2t01-said" x="360" y="62" text-anchor="middle">Onesiphorus: “I'll find him.”</text>
+        </svg>
+      </div>
+      <div>
+        <h2 class="rise" style="--d:1">Everyone left</h2>
+        <p class="note rise" style="--d:2"><em>“All they which are in Asia”</em> had turned away from Paul, including two named men, Phygellus and Hermogenes. Probably they weren't giving up Jesus. They were abandoning Paul, a prisoner Nero wanted, because standing with him was dangerous.</p>
+        <p class="note step">Paul doesn't hide it. The great apostle writes it down: <em>people left me.</em> If you know what it is to be dropped by friends, by family, or by the people you used with, you're in good company.</p>
+        <p class="note step t2t01-come">But there is one more name in this story.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="slide verse" data-v="16-18" data-hl="oft refreshed me, and was not ashamed of my chain|sought me out very diligently, and found me"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <div class="split">
+      <div class="stage">
+        <svg data-world viewBox="170 110 500 280" data-towns="Ephesus*:r, Corinth:t, Rome!:t" role="img" aria-label="A map of Italy, Greece and the west of what is now Turkey. A line runs by sea from Ephesus, across the Aegean, around the south of Greece, and up the coast of Italy to Rome. This is the road Onesiphorus travelled to find Paul.">
+          <path class="map-route" data-via="Ephesus, @27.15 37.9, @26.6 37.95, @26.45 37.72, @26.0 37.45, @25.0 37.0, @23.5 36.25, @22.6 36.2, @21.6 36.6, @18.5 37.2, @16 37.6, Rhegium, Puteoli, Rome"/>
+        </svg>
+      </div>
+      <div>
+        <h2 class="rise" style="--d:1">He came looking</h2>
+        <p class="note rise" style="--d:2">Onesiphorus came from Ephesus, across the Aegean and around Greece to Italy. In Rome he <em>“sought me out very diligently, and found me.”</em> Paul was a prisoner the city's rulers wanted forgotten, so finding him took effort.</p>
+        <p class="note step">He <em>“was not ashamed of my chain.”</em> That is the opposite of shame: showing up in person for a man in chains. He did it <em>“oft,”</em> often, not just once.</p>
+        <p class="note step">For today: who is the Onesiphorus in your life? Thank him. And who in this group is in a chain right now? Text him: <em>“I'm not ashamed of you.”</em></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ======================= REVIEW ======================= -->
+<section class="slide remember">
+  <div class="inner">
+    <h2 class="rise">Points to remember</h2>
+    <ol class="seeds">
+      <li class="step"><span class="topic">Passed down</span><span class="seed-q">“The unfeigned faith… which dwelt first in thy grandmother Lois” <cite>1:5</cite></span><span class="take">Faith can be handed down, but somebody is always first, and that can be you.</span></li>
+      <li class="step"><span class="topic">Stir it up</span><span class="seed-q">“Stir up the gift of God, which is in thee” <cite>1:6</cite></span><span class="take">God has already put something in you. Fan it back into flame.</span></li>
+      <li class="step"><span class="topic">Not fear</span><span class="seed-q">“Not given us the spirit of fear; but of power, and of love, and of a sound mind” <cite>1:7</cite></span><span class="take">Fear and shame aren't from God. He gave power, love and a steady mind.</span></li>
+      <li class="step"><span class="topic">Not ashamed</span><span class="seed-q">“I am not ashamed: for I know whom I have believed” <cite>1:12</cite></span><span class="take">Paul's peace rested on a Person, not on a spotless past.</span></li>
+      <li class="step"><span class="topic">Kept safe</span><span class="seed-q">“Able to keep that which I have committed unto him against that day” <cite>1:12</cite></span><span class="take">What you've handed to Jesus, He keeps. You are held, not holding.</span></li>
+      <li class="step"><span class="topic">A real friend</span><span class="seed-q">“He oft refreshed me, and was not ashamed of my chain” <cite>1:16</cite></span><span class="take">Be the man who shows up. And let a brother show up for you.</span></li>
+    </ol>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 1 of 6</p>
+      <span class="topic">Passed down</span>
+      <h2>Whose faith does Paul remember in Timothy, and who had it first?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="5" data-hl="dwelt first in thy grandmother Lois, and thy mother Eunice"></blockquote>
+      <blockquote class="quote step"><p>“Then came he to Derbe and Lystra: and, behold, a certain disciple was there, named Timotheus, the son of a certain woman, which was a Jewess, and believed; but his father was a Greek:”</p><cite>Acts 16:1</cite></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>Timothy's grandmother Lois had it first, then his mother Eunice, then Timothy. His father was a Greek. If nobody in your family had faith before you, you are the first link, and the ones who come after you can say it started with you.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 2 of 6</p>
+      <span class="topic">Stir it up</span>
+      <h2>What did Paul tell Timothy to do with the gift of God that was in him?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="6" data-hl="stir up the gift of God"></blockquote>
+      <blockquote class="quote step" data-q="14" data-hl="keep by the Holy Ghost which dwelleth in us"></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>Stir it up: fan it back into a flame, like coals. The gift was already in him. And he doesn't do it alone: the Holy Spirit lives in every believer.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 3 of 6</p>
+      <span class="topic">Not fear</span>
+      <h2>What has God not given us, and what has He given us instead?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="7"></blockquote>
+      <blockquote class="quote step"><p>“For ye have not received the spirit of bondage again to fear; but ye have received the Spirit of adoption, whereby we cry, Abba, Father.”</p><cite>Romans 8:15</cite></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>Not a spirit of fear. He gave power, love and a sound mind. When shame, fear of falling, or a spinning head grabs you, say verse 7 out loud, and call a brother.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 4 of 6</p>
+      <span class="topic">Not ashamed</span>
+      <h2>Why was Paul not ashamed, even in a prison chain?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="12" data-hl="I am not ashamed: for I know whom I have believed"></blockquote>
+      <blockquote class="quote step"><p>“For I am not ashamed of the gospel of Christ: for it is the power of God unto salvation to every one that believeth; to the Jew first, and also to the Greek.”</p><cite>Romans 1:16</cite></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>Because he knew <em>whom</em> he had believed. His peace didn't come from a clean record: he had once been a persecutor. It came from Christ, whose grace was bigger than his past. It's the same for you.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 5 of 6</p>
+      <span class="topic">Kept safe</span>
+      <h2>What is Jesus able to keep for us, and until when?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="12" data-hl="able to keep that which I have committed unto him against that day"></blockquote>
+      <blockquote class="quote step"><p>“And I give unto them eternal life; and they shall never perish, neither shall any man pluck them out of my hand.”</p><cite>John 10:28</cite></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>Everything we have committed to Him, our whole life and soul, until that day when He returns. A believer is kept by Christ, not by his own grip. A bad day can't undo it.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 6 of 6</p>
+      <span class="topic">A real friend</span>
+      <h2>What did Onesiphorus do when everyone else turned away?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="15" data-hl="all they which are in Asia be turned away from me"></blockquote>
+      <blockquote class="quote step" data-q="16-17" data-hl="oft refreshed me|sought me out very diligently"></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>He showed up. He refreshed Paul often, wasn't ashamed of the chain, and in Rome searched until he found him. Be that man for someone today. When you're the one in chains, let someone find you.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide prayer">
+  <div class="inner">
+    <div class="emblem rise"></div>
+    <h2 class="rise" style="--d:1">Prayer requests</h2>
+    <p class="ask-line rise" style="--d:2">What can we pray about for you today?</p>
+    <blockquote class="quote rise" style="--d:4"><p>“For God hath not given us the spirit of fear; but of power, and of love, and of a sound mind.”</p><cite>2 Timothy 1:7</cite></blockquote>
+  </div>
+</section>
+
+</main>
+
+<script>
+// King James Version, 2 Timothy chapter 1
+const V = {
+  1: "Paul, an apostle of Jesus Christ by the will of God, according to the promise of life which is in Christ Jesus,",
+  2: "To Timothy, my dearly beloved son: Grace, mercy, and peace, from God the Father and Christ Jesus our Lord.",
+  3: "I thank God, whom I serve from my forefathers with pure conscience, that without ceasing I have remembrance of thee in my prayers night and day;",
+  4: "Greatly desiring to see thee, being mindful of thy tears, that I may be filled with joy;",
+  5: "When I call to remembrance the unfeigned faith that is in thee, which dwelt first in thy grandmother Lois, and thy mother Eunice; and I am persuaded that in thee also.",
+  6: "Wherefore I put thee in remembrance that thou stir up the gift of God, which is in thee by the putting on of my hands.",
+  7: "For God hath not given us the spirit of fear; but of power, and of love, and of a sound mind.",
+  8: "Be not thou therefore ashamed of the testimony of our Lord, nor of me his prisoner: but be thou partaker of the afflictions of the gospel according to the power of God;",
+  9: "Who hath saved us, and called us with an holy calling, not according to our works, but according to his own purpose and grace, which was given us in Christ Jesus before the world began,",
+  10: "But is now made manifest by the appearing of our Saviour Jesus Christ, who hath abolished death, and hath brought life and immortality to light through the gospel:",
+  11: "Whereunto I am appointed a preacher, and an apostle, and a teacher of the Gentiles.",
+  12: "For the which cause I also suffer these things: nevertheless I am not ashamed: for I know whom I have believed, and am persuaded that he is able to keep that which I have committed unto him against that day.",
+  13: "Hold fast the form of sound words, which thou hast heard of me, in faith and love which is in Christ Jesus.",
+  14: "That good thing which was committed unto thee keep by the Holy Ghost which dwelleth in us.",
+  15: "This thou knowest, that all they which are in Asia be turned away from me; of whom are Phygellus and Hermogenes.",
+  16: "The Lord give mercy unto the house of Onesiphorus; for he oft refreshed me, and was not ashamed of my chain:",
+  17: "But, when he was in Rome, he sought me out very diligently, and found me.",
+  18: "The Lord grant unto him that he may find mercy of the Lord in that day: and in how many things he ministered unto me at Ephesus, thou knowest very well."
+};
+const BOOK = "2 Timothy 1";
+</script>
+<script src="../assets/deck.js"></script>
+</body>
+</html>

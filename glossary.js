@@ -486,7 +486,13 @@ window.GLOSSARY = [
     [ 1, 14, 16 ] ],
    [
     "2 Thessalonians", 3,
-    [ 6, 12, 18 ] ] ]
+    [ 6, 12, 18 ] ],
+   [
+    "2 Timothy", 1,
+    [ 1, 2, 9, 10, 13 ] ],
+   [
+    "2 Timothy", 2,
+    [ 1, 3, 8, 10 ] ] ]
  },
  {
   "id": "john-the-baptist",
@@ -1377,7 +1383,10 @@ window.GLOSSARY = [
     [ 1, 2 ] ],
    [
     "2 Thessalonians", 2,
-    [ 16 ] ] ]
+    [ 16 ] ],
+   [
+    "2 Timothy", 1,
+    [ 2 ] ] ]
  },
  {
   "id": "holy-spirit",
@@ -1605,7 +1614,10 @@ window.GLOSSARY = [
     [ 19 ] ],
    [
     "2 Thessalonians", 2,
-    [ 13 ] ] ]
+    [ 13 ] ],
+   [
+    "2 Timothy", 1,
+    [ 14 ] ] ]
  },
  {
   "id": "disciples",
@@ -2355,7 +2367,10 @@ window.GLOSSARY = [
     [ 6 ] ],
    [
     "Romans", 11,
-    [ 9 ] ] ]
+    [ 9 ] ],
+   [
+    "2 Timothy", 2,
+    [ 8 ] ] ]
  },
  {
   "id": "hezekiah",
@@ -4440,7 +4455,10 @@ window.GLOSSARY = [
     [ 12 ] ],
    [
     "1 Thessalonians", 5,
-    [ 5 ] ] ]
+    [ 5 ] ],
+   [
+    "2 Timothy", 1,
+    [ 10 ] ] ]
  },
  {
   "id": "darkness",
@@ -4725,7 +4743,13 @@ window.GLOSSARY = [
     [ 16 ] ],
    [
     "2 Thessalonians", 3,
-    [ 18 ] ] ]
+    [ 18 ] ],
+   [
+    "2 Timothy", 1,
+    [ 9 ] ],
+   [
+    "2 Timothy", 2,
+    [ 1 ] ] ]
  },
  {
   "id": "truth",
@@ -4908,7 +4932,10 @@ window.GLOSSARY = [
     [ 13 ] ],
    [
     "2 Thessalonians", 2,
-    [ 10, 12, 13 ] ] ]
+    [ 10, 12, 13 ] ],
+   [
+    "2 Timothy", 2,
+    [ 15, 18, 25 ] ] ]
  },
  {
   "id": "glory",
@@ -5184,7 +5211,10 @@ window.GLOSSARY = [
     [ 4, 9 ] ],
    [
     "2 Thessalonians", 2,
-    [ 14 ] ] ]
+    [ 14 ] ],
+   [
+    "2 Timothy", 2,
+    [ 10 ] ] ]
  },
  {
   "id": "the-law",
@@ -5796,7 +5826,13 @@ window.GLOSSARY = [
     [ 1, 2, 14, 16 ] ],
    [
     "2 Thessalonians", 3,
-    [ 5, 6, 12, 18 ] ] ]
+    [ 5, 6, 12, 18 ] ],
+   [
+    "2 Timothy", 1,
+    [ 1, 2, 9, 10, 13 ] ],
+   [
+    "2 Timothy", 2,
+    [ 1, 3, 8, 10, 19 ] ] ]
  },
  {
   "id": "son-of-god",
@@ -6315,7 +6351,13 @@ window.GLOSSARY = [
     [ 10 ] ],
    [
     "2 Thessalonians", 2,
-    [ 11, 12 ] ] ]
+    [ 11, 12 ] ],
+   [
+    "2 Timothy", 1,
+    [ 12 ] ],
+   [
+    "2 Timothy", 2,
+    [ 13 ] ] ]
  },
  {
   "id": "witness",
@@ -7347,7 +7389,10 @@ window.GLOSSARY = [
     [ 9 ] ],
    [
     "Colossians", 2,
-    [ 2 ] ] ]
+    [ 2 ] ],
+   [
+    "2 Timothy", 2,
+    [ 7 ] ] ]
  },
  {
   "id": "knowledge",
@@ -7767,7 +7812,10 @@ window.GLOSSARY = [
     [ 1, 3 ] ],
    [
     "Ephesians", 5,
-    [ 4, 15 ] ] ]
+    [ 4, 15 ] ],
+   [
+    "2 Timothy", 2,
+    [ 23 ] ] ]
  },
  {
   "id": "scorner",
@@ -8154,7 +8202,10 @@ window.GLOSSARY = [
     [ 6, 9 ] ],
    [
     "2 Thessalonians", 1,
-    [ 5, 6 ] ] ]
+    [ 5, 6 ] ],
+   [
+    "2 Timothy", 2,
+    [ 22 ] ] ]
  },
  {
   "id": "wicked",
@@ -8640,7 +8691,10 @@ window.GLOSSARY = [
     [ 22 ] ],
    [
     "1 Thessalonians", 2,
-    [ 17 ] ] ]
+    [ 17 ] ],
+   [
+    "2 Timothy", 2,
+    [ 22 ] ] ]
  },
  {
   "id": "tongue",
@@ -10125,7 +10179,10 @@ window.GLOSSARY = [
     [ 9 ] ],
    [
     "1 Corinthians", 7,
-    [ 35 ] ] ]
+    [ 35 ] ],
+   [
+    "2 Timothy", 2,
+    [ 26 ] ] ]
  },
  {
   "id": "sound-wisdom",
@@ -11634,7 +11691,10 @@ window.GLOSSARY = [
     [ 27 ] ],
    [
     "Ephesians", 6,
-    [ 11 ] ] ]
+    [ 11 ] ],
+   [
+    "2 Timothy", 2,
+    [ 26 ] ] ]
  },
  {
   "id": "man-born-blind",
@@ -12273,7 +12333,10 @@ window.GLOSSARY = [
     [ 23 ] ],
    [
     "2 Thessalonians", 2,
-    [ 13 ] ] ]
+    [ 13 ] ],
+   [
+    "2 Timothy", 2,
+    [ 21 ] ] ]
  },
  {
   "id": "stoning",
@@ -12903,7 +12966,10 @@ window.GLOSSARY = [
     [ 16 ] ],
    [
     "1 Thessalonians", 4,
-    [ 5 ] ] ]
+    [ 5 ] ],
+   [
+    "2 Timothy", 1,
+    [ 11 ] ] ]
  },
  {
   "id": "glorified",
@@ -13365,7 +13431,10 @@ window.GLOSSARY = [
     [ 12 ] ],
    [
     "2 Corinthians", 4,
-    [ 2 ] ] ]
+    [ 2 ] ],
+   [
+    "2 Timothy", 1,
+    [ 3 ] ] ]
  },
  {
   "id": "i-am",
@@ -14109,7 +14178,10 @@ window.GLOSSARY = [
     [ 8, 9 ] ],
    [
     "2 Thessalonians", 2,
-    [ 13 ] ] ]
+    [ 13 ] ],
+   [
+    "2 Timothy", 2,
+    [ 10 ] ] ]
  },
  {
   "id": "sixth-hour",
@@ -15015,7 +15087,10 @@ window.GLOSSARY = [
     [ 15, 23 ] ],
    [
     "1 Thessalonians", 1,
-    [ 9 ] ] ]
+    [ 9 ] ],
+   [
+    "2 Timothy", 2,
+    [ 15 ] ] ]
  },
  {
   "id": "fishers-coat",
@@ -15414,7 +15489,10 @@ window.GLOSSARY = [
     [ 12, 13, 21, 42 ] ],
    [
     "Philippians", 3,
-    [ 10, 11 ] ] ]
+    [ 10, 11 ] ],
+   [
+    "2 Timothy", 2,
+    [ 18 ] ] ]
  },
  {
   "id": "graveclothes",
@@ -16269,7 +16347,10 @@ window.GLOSSARY = [
   "refs": [
    [
     "John", 15,
-    [ 1 ] ] ]
+    [ 1 ] ],
+   [
+    "2 Timothy", 2,
+    [ 6 ] ] ]
  },
  {
   "id": "abide",
@@ -18450,7 +18531,10 @@ window.GLOSSARY = [
     [ 1, 27 ] ],
    [
     "Colossians", 3,
-    [ 12 ] ] ]
+    [ 12 ] ],
+   [
+    "2 Timothy", 1,
+    [ 2, 16, 18 ] ] ]
  },
  {
   "id": "baal",
@@ -19254,7 +19338,10 @@ window.GLOSSARY = [
     [ 23 ] ],
    [
     "Philippians", 3,
-    [ 20 ] ] ]
+    [ 20 ] ],
+   [
+    "2 Timothy", 1,
+    [ 10 ] ] ]
  },
  {
   "id": "caul",
@@ -19983,7 +20070,10 @@ window.GLOSSARY = [
     [ 5 ] ],
    [
     "Ephesians", 4,
-    [ 8 ] ] ]
+    [ 8 ] ],
+   [
+    "2 Timothy", 2,
+    [ 26 ] ] ]
  },
  {
   "id": "calneh",
@@ -22716,7 +22806,10 @@ window.GLOSSARY = [
     [ 2 ] ],
    [
     "Colossians", 3,
-    [ 12 ] ] ]
+    [ 12 ] ],
+   [
+    "2 Timothy", 2,
+    [ 25 ] ] ]
  },
  {
   "id": "cherethites",
@@ -25035,7 +25128,13 @@ window.GLOSSARY = [
     [ 8 ] ],
    [
     "2 Thessalonians", 2,
-    [ 14 ] ] ]
+    [ 14 ] ],
+   [
+    "2 Timothy", 1,
+    [ 8, 10 ] ],
+   [
+    "2 Timothy", 2,
+    [ 8 ] ] ]
  },
  {
   "id": "repent",
@@ -26805,7 +26904,10 @@ window.GLOSSARY = [
     [ 11 ] ],
    [
     "1 Thessalonians", 2,
-    [ 6 ] ] ]
+    [ 6 ] ],
+   [
+    "2 Timothy", 1,
+    [ 1, 11 ] ] ]
  },
  {
   "id": "bartholomew",
@@ -31284,7 +31386,10 @@ window.GLOSSARY = [
     [ 23 ] ],
    [
     "Luke", 14,
-    [ 27 ] ] ]
+    [ 27 ] ],
+   [
+    "2 Timothy", 2,
+    [ 13 ] ] ]
  },
  {
   "id": "gain-the-whole-world",
@@ -36444,7 +36549,10 @@ window.GLOSSARY = [
     [ 19 ] ],
    [
     "2 Corinthians", 1,
-    [ 8 ] ] ]
+    [ 8 ] ],
+   [
+    "2 Timothy", 1,
+    [ 15 ] ] ]
  },
  {
   "id": "phrygia",
@@ -36516,7 +36624,10 @@ window.GLOSSARY = [
     [ 14, 16 ] ],
    [
     "Romans", 1,
-    [ 7, 15 ] ] ]
+    [ 7, 15 ] ],
+   [
+    "2 Timothy", 1,
+    [ 17 ] ] ]
  },
  {
   "id": "new-wine",
@@ -37830,7 +37941,10 @@ window.GLOSSARY = [
     [ 1 ] ],
    [
     "2 Thessalonians", 3,
-    [ 17 ] ] ]
+    [ 17 ] ],
+   [
+    "2 Timothy", 1,
+    [ 1 ] ] ]
  },
  {
   "id": "silas",
@@ -38025,7 +38139,10 @@ window.GLOSSARY = [
     [ 2, 6 ] ],
    [
     "2 Thessalonians", 1,
-    [ 1 ] ] ]
+    [ 1 ] ],
+   [
+    "2 Timothy", 1,
+    [ 2 ] ] ]
  },
  {
   "id": "lydia",
@@ -39642,7 +39759,10 @@ window.GLOSSARY = [
     [ 8 ] ],
    [
     "Ephesians", 1,
-    [ 1 ] ] ]
+    [ 1 ] ],
+   [
+    "2 Timothy", 1,
+    [ 18 ] ] ]
  },
  {
   "id": "alexandria",
@@ -40560,7 +40680,10 @@ window.GLOSSARY = [
     [ 20 ] ],
    [
     "Romans", 2,
-    [ 4 ] ] ]
+    [ 4 ] ],
+   [
+    "2 Timothy", 2,
+    [ 25 ] ] ]
  },
  {
   "id": "assos",
@@ -41169,7 +41292,10 @@ window.GLOSSARY = [
     [ 7 ] ],
    [
     "1 Corinthians", 15,
-    [ 53, 54 ] ] ]
+    [ 53, 54 ] ],
+   [
+    "2 Timothy", 1,
+    [ 10 ] ] ]
  },
  {
   "id": "sacrilege",
@@ -41280,7 +41406,10 @@ window.GLOSSARY = [
   "refs": [
    [
     "Romans", 5,
-    [ 7 ] ] ]
+    [ 7 ] ],
+   [
+    "2 Timothy", 2,
+    [ 25 ] ] ]
  },
  {
   "id": "commendeth",
@@ -41751,7 +41880,10 @@ window.GLOSSARY = [
     [ 11 ] ],
    [
     "1 Corinthians", 9,
-    [ 2 ] ] ]
+    [ 2 ] ],
+   [
+    "2 Timothy", 2,
+    [ 19 ] ] ]
  },
  {
   "id": "father-of-many-nations",
@@ -43416,7 +43548,10 @@ window.GLOSSARY = [
   "refs": [
    [
     "Romans", 9,
-    [ 21, 22, 23 ] ] ]
+    [ 21, 22, 23 ] ],
+   [
+    "2 Timothy", 2,
+    [ 20, 21 ] ] ]
  },
  {
   "id": "sabaoth",
@@ -44658,7 +44793,10 @@ window.GLOSSARY = [
     [ 6 ] ],
    [
     "2 Thessalonians", 1,
-    [ 3 ] ] ]
+    [ 3 ] ],
+   [
+    "2 Timothy", 2,
+    [ 22 ] ] ]
  },
  {
   "id": "edifieth",
@@ -46947,7 +47085,10 @@ window.GLOSSARY = [
     [ 7, 13, 14, 16 ] ],
    [
     "Colossians", 4,
-    [ 3, 18 ] ] ]
+    [ 3, 18 ] ],
+   [
+    "2 Timothy", 2,
+    [ 9 ] ] ]
  },
  {
   "id": "palace-guard",
@@ -49207,5 +49348,158 @@ window.GLOSSARY = [
    [
     "2 Thessalonians", 3,
     [ 16 ] ] ]
+ },
+ {
+  "id": "lois",
+  "kind": "person",
+  "name": "Lois (Timothy's grandmother)",
+  "refs": [
+   [
+    "2 Timothy", 1,
+    [ 5 ] ] ]
+ },
+ {
+  "id": "eunice",
+  "kind": "person",
+  "name": "Eunice (Timothy's mother)",
+  "refs": [
+   [
+    "2 Timothy", 1,
+    [ 5 ] ] ]
+ },
+ {
+  "id": "onesiphorus",
+  "kind": "person",
+  "name": "Onesiphorus (the friend who found Paul in a Roman prison)",
+  "refs": [
+   [
+    "2 Timothy", 1,
+    [ 16 ] ] ]
+ },
+ {
+  "id": "phygellus-and-hermogenes",
+  "kind": "person",
+  "name": "Phygellus and Hermogenes (two men of Asia who turned away from Paul)",
+  "refs": [
+   [
+    "2 Timothy", 1,
+    [ 15 ] ] ]
+ },
+ {
+  "id": "unfeigned",
+  "kind": "term",
+  "name": "Unfeigned (genuine, not put on)",
+  "refs": [
+   [
+    "2 Timothy", 1,
+    [ 5 ] ] ]
+ },
+ {
+  "id": "stir-up-the-gift",
+  "kind": "term",
+  "name": "Stir up the gift (fan the coals back into flame)",
+  "refs": [
+   [
+    "2 Timothy", 1,
+    [ 6 ] ] ]
+ },
+ {
+  "id": "sound-mind",
+  "kind": "term",
+  "name": "A sound mind (self-control and clear thinking)",
+  "refs": [
+   [
+    "2 Timothy", 1,
+    [ 7 ] ] ]
+ },
+ {
+  "id": "committed-unto-him",
+  "kind": "term",
+  "name": "That which I have committed (a deposit left with a trusted keeper)",
+  "refs": [
+   [
+    "2 Timothy", 1,
+    [ 12 ] ] ]
+ },
+ {
+  "id": "form-of-sound-words",
+  "kind": "term",
+  "name": "The form of sound words (the pattern of true teaching)",
+  "refs": [
+   [
+    "2 Timothy", 1,
+    [ 13 ] ] ]
+ },
+ {
+  "id": "hymenaeus-and-philetus",
+  "kind": "person",
+  "name": "Hymenaeus and Philetus (men who taught that the resurrection was already past)",
+  "refs": [
+   [
+    "2 Timothy", 2,
+    [ 17 ] ] ]
+ },
+ {
+  "id": "good-soldier",
+  "kind": "term",
+  "name": "A good soldier of Jesus Christ (one mission, no entanglements)",
+  "refs": [
+   [
+    "2 Timothy", 2,
+    [ 3, 4 ] ] ]
+ },
+ {
+  "id": "strive-for-masteries",
+  "kind": "term",
+  "name": "Strive for masteries (compete in the games), and strive lawfully (by the rules)",
+  "refs": [
+   [
+    "2 Timothy", 2,
+    [ 5 ] ] ]
+ },
+ {
+  "id": "faithful-saying",
+  "kind": "term",
+  "name": "A faithful saying (a trustworthy saying, perhaps an early hymn)",
+  "refs": [
+   [
+    "2 Timothy", 2,
+    [ 11 ] ] ]
+ },
+ {
+  "id": "rightly-dividing",
+  "kind": "term",
+  "name": "Rightly dividing the word of truth (cutting it straight)",
+  "refs": [
+   [
+    "2 Timothy", 2,
+    [ 15 ] ] ]
+ },
+ {
+  "id": "canker",
+  "kind": "term",
+  "name": "Canker (gangrene, a rot that spreads)",
+  "refs": [
+   [
+    "2 Timothy", 2,
+    [ 17 ] ] ]
+ },
+ {
+  "id": "meet-for-the-masters-use",
+  "kind": "term",
+  "name": "Meet for the master's use (fit, useful to the owner)",
+  "refs": [
+   [
+    "2 Timothy", 2,
+    [ 21 ] ] ]
+ },
+ {
+  "id": "youthful-lusts",
+  "kind": "term",
+  "name": "Youthful lusts (the hot, fast wants of youth)",
+  "refs": [
+   [
+    "2 Timothy", 2,
+    [ 22 ] ] ]
  }
 ];
