@@ -608,6 +608,9 @@ window.GLOSSARY = [
     "Revelation", 1,
     [ 1, 2, 5, 9 ] ],
    [
+    "Revelation", 12,
+    [ 17 ] ],
+   [
     "Revelation", 14,
     [ 12 ] ] ]
  },
@@ -1888,6 +1891,9 @@ window.GLOSSARY = [
    [
     "Revelation", 3,
     [ 6, 13, 22 ] ],
+   [
+    "Revelation", 11,
+    [ 11 ] ],
    [
     "Revelation", 14,
     [ 13 ] ] ]
@@ -3435,7 +3441,10 @@ window.GLOSSARY = [
     [ 26 ] ],
    [
     "Hebrews", 3,
-    [ 8, 17 ] ] ]
+    [ 8, 17 ] ],
+   [
+    "Revelation", 12,
+    [ 6, 14 ] ] ]
  },
  {
   "id": "galilee",
@@ -3874,6 +3883,9 @@ window.GLOSSARY = [
    [
     "Revelation", 7,
     [ 15 ] ],
+   [
+    "Revelation", 11,
+    [ 1, 2, 19 ] ],
    [
     "Revelation", 14,
     [ 15, 17 ] ],
@@ -4477,6 +4489,12 @@ window.GLOSSARY = [
    [
     "Revelation", 10,
     [ 1, 4, 5, 6, 8 ] ],
+   [
+    "Revelation", 11,
+    [ 6, 12, 13, 15, 19 ] ],
+   [
+    "Revelation", 12,
+    [ 1, 3, 4, 7, 8, 10 ] ],
    [
     "Revelation", 13,
     [ 6, 13 ] ],
@@ -5840,6 +5858,9 @@ window.GLOSSARY = [
     "Revelation", 7,
     [ 12 ] ],
    [
+    "Revelation", 11,
+    [ 13 ] ],
+   [
     "Revelation", 14,
     [ 7 ] ],
    [
@@ -6612,7 +6633,13 @@ window.GLOSSARY = [
     [ 1, 4, 17, 21 ] ],
    [
     "Revelation", 1,
-    [ 1, 2, 5, 9 ] ] ]
+    [ 1, 2, 5, 9 ] ],
+   [
+    "Revelation", 11,
+    [ 15 ] ],
+   [
+    "Revelation", 12,
+    [ 10, 17 ] ] ]
  },
  {
   "id": "son-of-god",
@@ -10223,6 +10250,12 @@ window.GLOSSARY = [
     "Revelation", 6,
     [ 16, 17 ] ],
    [
+    "Revelation", 11,
+    [ 18 ] ],
+   [
+    "Revelation", 12,
+    [ 12, 17 ] ],
+   [
     "Revelation", 14,
     [ 8, 10, 19 ] ],
    [
@@ -11418,7 +11451,13 @@ window.GLOSSARY = [
     [ 4 ] ],
    [
     "Revelation", 2,
-    [ 27 ] ] ]
+    [ 27 ] ],
+   [
+    "Revelation", 11,
+    [ 1 ] ],
+   [
+    "Revelation", 12,
+    [ 5 ] ] ]
  },
  {
   "id": "snare",
@@ -13143,7 +13182,10 @@ window.GLOSSARY = [
     [ 9 ] ],
    [
     "Revelation", 2,
-    [ 10 ] ] ]
+    [ 10 ] ],
+   [
+    "Revelation", 12,
+    [ 12 ] ] ]
  },
  {
   "id": "man-born-blind",
@@ -13477,6 +13519,9 @@ window.GLOSSARY = [
    [
     "Revelation", 9,
     [ 20 ] ],
+   [
+    "Revelation", 11,
+    [ 1, 16 ] ],
    [
     "Revelation", 13,
     [ 4, 8, 12, 15 ] ],
@@ -14568,7 +14613,10 @@ window.GLOSSARY = [
     [ 3 ] ],
    [
     "3 John", 1,
-    [ 7 ] ] ]
+    [ 7 ] ],
+   [
+    "Revelation", 11,
+    [ 2 ] ] ]
  },
  {
   "id": "glorified",
@@ -15915,7 +15963,10 @@ window.GLOSSARY = [
     [ 15 ] ],
    [
     "Jude", 1,
-    [ 3 ] ] ]
+    [ 3 ] ],
+   [
+    "Revelation", 12,
+    [ 10 ] ] ]
  },
  {
   "id": "sixth-hour",
@@ -16291,6 +16342,12 @@ window.GLOSSARY = [
    [
     "Revelation", 10,
     [ 1, 5, 7, 8, 9, 10 ] ],
+   [
+    "Revelation", 11,
+    [ 1, 15 ] ],
+   [
+    "Revelation", 12,
+    [ 7, 9 ] ],
    [
     "Revelation", 14,
     [ 6, 8, 9, 10, 15, 17, 18, 19 ] ],
@@ -17246,6 +17303,12 @@ window.GLOSSARY = [
     "Revelation", 6,
     [ 9 ] ],
    [
+    "Revelation", 11,
+    [ 7 ] ],
+   [
+    "Revelation", 12,
+    [ 11, 17 ] ],
+   [
     "Revelation", 15,
     [ 5 ] ] ]
  },
@@ -17934,6 +17997,9 @@ window.GLOSSARY = [
     [ 9, 13, 24 ] ],
    [
     "Revelation", 3,
+    [ 9 ] ],
+   [
+    "Revelation", 12,
     [ 9 ] ] ]
  },
  {
@@ -19119,7 +19185,10 @@ window.GLOSSARY = [
     [ 6 ] ],
    [
     "Hebrews", 12,
-    [ 2 ] ] ]
+    [ 2 ] ],
+   [
+    "Revelation", 11,
+    [ 8 ] ] ]
  },
  {
   "id": "title-on-the-cross",
@@ -19539,7 +19608,10 @@ window.GLOSSARY = [
     [ 13 ] ],
    [
     "Revelation", 6,
-    [ 12 ] ] ]
+    [ 12 ] ],
+   [
+    "Revelation", 11,
+    [ 3 ] ] ]
  },
  {
   "id": "meat-offering",
@@ -20034,7 +20106,13 @@ window.GLOSSARY = [
     [ 27 ] ],
    [
     "Romans", 11,
-    [ 5 ] ] ]
+    [ 5 ] ],
+   [
+    "Revelation", 11,
+    [ 13 ] ],
+   [
+    "Revelation", 12,
+    [ 17 ] ] ]
  },
  {
   "id": "bring-again-the-captivity",
@@ -20313,7 +20391,10 @@ window.GLOSSARY = [
     [ 26, 27 ] ],
    [
     "Jude", 1,
-    [ 5 ] ] ]
+    [ 5 ] ],
+   [
+    "Revelation", 11,
+    [ 8 ] ] ]
  },
  {
   "id": "edom",
@@ -23094,7 +23175,10 @@ window.GLOSSARY = [
     [ 6 ] ],
    [
     "Jude", 1,
-    [ 7 ] ] ]
+    [ 7 ] ],
+   [
+    "Revelation", 11,
+    [ 8 ] ] ]
  },
  {
   "id": "kine",
@@ -23382,6 +23466,12 @@ window.GLOSSARY = [
     [ 13 ] ],
    [
     "Revelation", 9,
+    [ 12 ] ],
+   [
+    "Revelation", 11,
+    [ 14 ] ],
+   [
+    "Revelation", 12,
     [ 12 ] ] ]
  },
  {
@@ -25791,7 +25881,10 @@ window.GLOSSARY = [
     [ 12, 13, 20 ] ],
    [
     "Revelation", 2,
-    [ 1, 5 ] ] ]
+    [ 1, 5 ] ],
+   [
+    "Revelation", 11,
+    [ 4 ] ] ]
  },
  {
   "id": "olive-trees",
@@ -25800,7 +25893,10 @@ window.GLOSSARY = [
   "refs": [
    [
     "Zechariah", 4,
-    [ 3, 11, 12 ] ] ]
+    [ 3, 11, 12 ] ],
+   [
+    "Revelation", 11,
+    [ 4 ] ] ]
  },
  {
   "id": "not-by-might",
@@ -30162,7 +30258,10 @@ window.GLOSSARY = [
     [ 5 ] ],
    [
     "Matthew", 27,
-    [ 53 ] ] ]
+    [ 53 ] ],
+   [
+    "Revelation", 11,
+    [ 2 ] ] ]
  },
  {
   "id": "pinnacle-of-the-temple",
@@ -30444,7 +30543,10 @@ window.GLOSSARY = [
     [ 4 ] ],
    [
     "2 Timothy", 3,
-    [ 11, 12 ] ] ]
+    [ 11, 12 ] ],
+   [
+    "Revelation", 12,
+    [ 13 ] ] ]
  },
  {
   "id": "salt",
@@ -30588,7 +30690,10 @@ window.GLOSSARY = [
     [ 10 ] ],
    [
     "Revelation", 6,
-    [ 9 ] ] ]
+    [ 9 ] ],
+   [
+    "Revelation", 11,
+    [ 1 ] ] ]
  },
  {
   "id": "adversary",
@@ -33976,6 +34081,9 @@ window.GLOSSARY = [
    [
     "Ephesians", 6,
     [ 2 ] ],
+   [
+    "Revelation", 12,
+    [ 17 ] ],
    [
     "Revelation", 14,
     [ 12 ] ] ]
@@ -39834,7 +39942,10 @@ window.GLOSSARY = [
     [ 20 ] ],
    [
     "Revelation", 10,
-    [ 11 ] ] ]
+    [ 11 ] ],
+   [
+    "Revelation", 11,
+    [ 3 ] ] ]
  },
  {
   "id": "determinate-counsel",
@@ -40140,6 +40251,9 @@ window.GLOSSARY = [
     [ 7 ] ],
    [
     "Revelation", 7,
+    [ 9 ] ],
+   [
+    "Revelation", 11,
     [ 9 ] ],
    [
     "Revelation", 13,
@@ -41786,6 +41900,9 @@ window.GLOSSARY = [
     "Revelation", 6,
     [ 12 ] ],
    [
+    "Revelation", 11,
+    [ 13, 19 ] ],
+   [
     "Revelation", 16,
     [ 18 ] ] ]
  },
@@ -41999,6 +42116,9 @@ window.GLOSSARY = [
     "Revelation", 8,
     [ 3, 4 ] ],
    [
+    "Revelation", 11,
+    [ 18 ] ],
+   [
     "Revelation", 13,
     [ 7, 10 ] ],
    [
@@ -42130,6 +42250,9 @@ window.GLOSSARY = [
    [
     "Revelation", 10,
     [ 11 ] ],
+   [
+    "Revelation", 11,
+    [ 9 ] ],
    [
     "Revelation", 13,
     [ 7 ] ] ]
@@ -42550,6 +42673,12 @@ window.GLOSSARY = [
    [
     "1 Timothy", 5,
     [ 9 ] ],
+   [
+    "Revelation", 11,
+    [ 3 ] ],
+   [
+    "Revelation", 12,
+    [ 6 ] ],
    [
     "Revelation", 13,
     [ 18 ] ] ]
@@ -45129,7 +45258,10 @@ window.GLOSSARY = [
     [ 25 ] ],
    [
     "Revelation", 5,
-    [ 10 ] ] ]
+    [ 10 ] ],
+   [
+    "Revelation", 11,
+    [ 15, 17 ] ] ]
  },
  {
   "id": "newness-of-life",
@@ -46029,7 +46161,10 @@ window.GLOSSARY = [
     [ 3, 5, 10 ] ],
    [
     "Revelation", 6,
-    [ 11 ] ] ]
+    [ 11 ] ],
+   [
+    "Revelation", 12,
+    [ 10 ] ] ]
  },
  {
   "id": "captain-of-the-guard",
@@ -50304,7 +50439,10 @@ window.GLOSSARY = [
   "refs": [
    [
     "2 Corinthians", 11,
-    [ 3 ] ] ]
+    [ 3 ] ],
+   [
+    "Revelation", 12,
+    [ 9, 14, 15 ] ] ]
  },
  {
   "id": "beguiled",
@@ -57525,7 +57663,10 @@ window.GLOSSARY = [
   "refs": [
    [
     "Jude", 1,
-    [ 9 ] ] ]
+    [ 9 ] ],
+   [
+    "Revelation", 12,
+    [ 7 ] ] ]
  },
  {
   "id": "core",
@@ -57731,6 +57872,9 @@ window.GLOSSARY = [
     "Revelation", 7,
     [ 9, 10, 14, 17 ] ],
    [
+    "Revelation", 12,
+    [ 11 ] ],
+   [
     "Revelation", 13,
     [ 8 ] ],
    [
@@ -57808,6 +57952,9 @@ window.GLOSSARY = [
    [
     "Revelation", 7,
     [ 11, 13 ] ],
+   [
+    "Revelation", 11,
+    [ 16 ] ],
    [
     "Revelation", 14,
     [ 3 ] ] ]
@@ -58149,7 +58296,10 @@ window.GLOSSARY = [
   "refs": [
    [
     "Revelation", 8,
-    [ 13 ] ] ]
+    [ 13 ] ],
+   [
+    "Revelation", 12,
+    [ 12 ] ] ]
  },
  {
   "id": "sardis",
@@ -58359,7 +58509,10 @@ window.GLOSSARY = [
     [ 7 ] ],
    [
     "Revelation", 4,
-    [ 1 ] ] ]
+    [ 1 ] ],
+   [
+    "Revelation", 11,
+    [ 12 ] ] ]
  },
  {
   "id": "in-the-spirit",
@@ -58381,6 +58534,9 @@ window.GLOSSARY = [
    [
     "Revelation", 4,
     [ 2, 3, 4, 5, 6, 9, 10 ] ],
+   [
+    "Revelation", 12,
+    [ 5 ] ],
    [
     "Revelation", 14,
     [ 3, 5 ] ] ]
@@ -58483,6 +58639,9 @@ window.GLOSSARY = [
    [
     "Revelation", 4,
     [ 8 ] ],
+   [
+    "Revelation", 11,
+    [ 17 ] ],
    [
     "Revelation", 15,
     [ 3 ] ],
@@ -58773,7 +58932,10 @@ window.GLOSSARY = [
   "refs": [
    [
     "Revelation", 2,
-    [ 27 ] ] ]
+    [ 27 ] ],
+   [
+    "Revelation", 12,
+    [ 5 ] ] ]
  },
  {
   "id": "shivers",
@@ -58800,7 +58962,10 @@ window.GLOSSARY = [
   "refs": [
    [
     "Revelation", 9,
-    [ 1, 2, 11 ] ] ]
+    [ 1, 2, 11 ] ],
+   [
+    "Revelation", 11,
+    [ 7 ] ] ]
  },
  {
   "id": "abaddon",
@@ -58952,6 +59117,9 @@ window.GLOSSARY = [
   "name": "The dragon (Satan, “that old serpent, called the Devil”)",
   "refs": [
    [
+    "Revelation", 12,
+    [ 3, 4, 7, 9, 13, 16, 17 ] ],
+   [
     "Revelation", 13,
     [ 2, 4, 11 ] ],
    [
@@ -58963,6 +59131,9 @@ window.GLOSSARY = [
   "kind": "person",
   "name": "The beast (the beast out of the sea, who rules by the dragon's power)",
   "refs": [
+   [
+    "Revelation", 11,
+    [ 7 ] ],
    [
     "Revelation", 13,
     [ 1, 2, 3, 4, 12, 14, 15, 17, 18 ] ],
@@ -58994,6 +59165,9 @@ window.GLOSSARY = [
   "name": "Seven heads and ten horns (great worldly power; horns are kings, Daniel 7:24)",
   "refs": [
    [
+    "Revelation", 12,
+    [ 3 ] ],
+   [
     "Revelation", 13,
     [ 1 ] ] ]
  },
@@ -59020,6 +59194,9 @@ window.GLOSSARY = [
   "kind": "term",
   "name": "Forty and two months (three and a half years: a set, limited time)",
   "refs": [
+   [
+    "Revelation", 11,
+    [ 2 ] ],
    [
     "Revelation", 13,
     [ 5 ] ] ]
@@ -59341,5 +59518,161 @@ window.GLOSSARY = [
    [
     "Revelation", 16,
     [ 21 ] ] ]
+ },
+ {
+  "id": "two-witnesses",
+  "kind": "person",
+  "name": "The two witnesses (God's two prophets in sackcloth; teachers differ on who they are)",
+  "refs": [
+   [
+    "Revelation", 11,
+    [ 3, 10 ] ] ]
+ },
+ {
+  "id": "reed-like-a-rod",
+  "kind": "term",
+  "name": "A reed like unto a rod (a measuring rod, as in Ezekiel 40 and Zechariah 2)",
+  "refs": [
+   [
+    "Revelation", 11,
+    [ 1 ] ] ]
+ },
+ {
+  "id": "sodom-and-egypt",
+  "kind": "place",
+  "name": "Sodom and Egypt, spiritually (the great city, named for what it is like: sin and slavery)",
+  "refs": [
+   [
+    "Revelation", 11,
+    [ 8 ] ] ]
+ },
+ {
+  "id": "three-days-and-an-half",
+  "kind": "term",
+  "name": "Three days and an half (the world's short party over the witnesses)",
+  "refs": [
+   [
+    "Revelation", 11,
+    [ 9, 11 ] ] ]
+ },
+ {
+  "id": "seventh-trumpet",
+  "kind": "term",
+  "name": "The seventh trumpet (the last trumpet: the kingdom announced)",
+  "refs": [
+   [
+    "Revelation", 11,
+    [ 15 ] ] ]
+ },
+ {
+  "id": "kingdoms-of-our-lord",
+  "kind": "term",
+  "name": "The kingdoms of our Lord, and of his Christ (every kingdom of this world handed to Christ)",
+  "refs": [
+   [
+    "Revelation", 11,
+    [ 15 ] ] ]
+ },
+ {
+  "id": "ark-of-his-testament",
+  "kind": "term",
+  "name": "The ark of his testament (the true ark in heaven, with the mercy seat)",
+  "refs": [
+   [
+    "Revelation", 11,
+    [ 19 ] ] ]
+ },
+ {
+  "id": "woman-clothed-with-the-sun",
+  "kind": "person",
+  "name": "The woman clothed with the sun (God's people, from whom Christ came; teachers differ on the details)",
+  "refs": [
+   [
+    "Revelation", 12,
+    [ 1, 4, 6, 13, 14, 15, 16, 17 ] ] ]
+ },
+ {
+  "id": "travailing-in-birth",
+  "kind": "term",
+  "name": "Travailing in birth (in labor, about to give birth)",
+  "refs": [
+   [
+    "Revelation", 12,
+    [ 2 ] ] ]
+ },
+ {
+  "id": "man-child",
+  "kind": "person",
+  "name": "The man child (Christ, who will rule the nations, Psalm 2)",
+  "refs": [
+   [
+    "Revelation", 12,
+    [ 5, 13 ] ] ]
+ },
+ {
+  "id": "war-in-heaven",
+  "kind": "term",
+  "name": "War in heaven (Michael and his angels against the dragon)",
+  "refs": [
+   [
+    "Revelation", 12,
+    [ 7 ] ] ]
+ },
+ {
+  "id": "accuser-of-the-brethren",
+  "kind": "person",
+  "name": "The accuser of our brethren (Satan, who accuses believers day and night)",
+  "refs": [
+   [
+    "Revelation", 12,
+    [ 10 ] ] ]
+ },
+ {
+  "id": "blood-of-the-lamb",
+  "kind": "term",
+  "name": "The blood of the Lamb (Christ's death, which washes and answers every charge)",
+  "refs": [
+   [
+    "Revelation", 7,
+    [ 14 ] ],
+   [
+    "Revelation", 12,
+    [ 11 ] ] ]
+ },
+ {
+  "id": "word-of-their-testimony",
+  "kind": "term",
+  "name": "The word of their testimony (telling what Christ has done)",
+  "refs": [
+   [
+    "Revelation", 12,
+    [ 11 ] ] ]
+ },
+ {
+  "id": "but-a-short-time",
+  "kind": "term",
+  "name": "But a short time (the devil knows his time is nearly up)",
+  "refs": [
+   [
+    "Revelation", 12,
+    [ 12 ] ] ]
+ },
+ {
+  "id": "wings-of-a-great-eagle",
+  "kind": "term",
+  "name": "Two wings of a great eagle (God carrying His people to safety, Exodus 19:4)",
+  "refs": [
+   [
+    "Revelation", 12,
+    [ 14 ] ] ]
+ },
+ {
+  "id": "time-times-half",
+  "kind": "term",
+  "name": "A time, and times, and half a time (three and a half years, the same as 1,260 days)",
+  "refs": [
+   [
+    "Revelation", 12,
+    [ 14 ] ] ]
  }
 ];

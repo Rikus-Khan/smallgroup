@@ -16783,6 +16783,102 @@ window.STUDIES = [
     }
   },
   {
+    "id": "revelation-11",
+    "type": "chapter",
+    "book": "Revelation",
+    "ch": 11,
+    "date": "2026-10-31",
+    "title": "Revelation 11",
+    "sub": "He shall reign for ever",
+    "about": "God measures what is His. Two witnesses preach, are killed, lie in the street while the world celebrates, and are raised and called up to heaven. Then the seventh trumpet sounds: the kingdoms of this world are become the kingdoms of our Lord.",
+    "tags": [
+      "Witness",
+      "The Spirit's power",
+      "Resurrection",
+      "The kingdom",
+      "Mercy",
+      "Hope"
+    ],
+    "url": "studies/revelation-11.html",
+    "overview": {
+      "where": "Patmos, where John sees the temple measured, \"the great city\" where the witnesses fall, and the temple of God opened in heaven",
+      "when": "About AD 95, under Domitian; the seventh trumpet looks ahead to Christ's reign",
+      "people": [
+        "two-witnesses",
+        "the-beast",
+        "angels",
+        "twenty-four-elders"
+      ],
+      "places": [
+        "temple",
+        "holy-city",
+        "sodom-and-egypt",
+        "bottomless-pit",
+        "heaven"
+      ],
+      "story": [
+        "John is given a reed to measure the temple of God, the altar and the worshippers. The outer court is left out, given to the Gentiles to tread down forty and two months (1–2).",
+        "God's two witnesses prophesy 1,260 days in sackcloth. They are the two olive trees and two candlesticks, and like Elijah and Moses they can shut heaven and turn waters to blood (3–6).",
+        "When they have finished their testimony, the beast from the bottomless pit kills them. Their bodies lie in the street of the great city for three and a half days while the world celebrates and sends gifts (7–10).",
+        "The Spirit of life from God enters them; they stand up, hear \"Come up hither\", and rise to heaven in a cloud while their enemies watch. An earthquake follows, and the rest give glory to God (11–14).",
+        "The seventh trumpet sounds: \"The kingdoms of this world are become the kingdoms of our Lord, and of his Christ.\" The elders worship, the dead are judged, and God's temple opens in heaven to show the ark of his testament (15–19)."
+      ],
+      "key": {
+        "ref": "Revelation 11:15",
+        "text": "And the seventh angel sounded; and there were great voices in heaven, saying, The kingdoms of this world are become the kingdoms of our Lord, and of his Christ; and he shall reign for ever and ever."
+      },
+      "big": "God keeps what He has measured, and nothing can touch His witnesses until their work is done. The world may celebrate when they fall, but God stands them up and calls them home. Every kingdom of this world is coming down; Christ will reign for ever, and at the center of heaven is the mercy seat."
+    }
+  },
+  {
+    "id": "revelation-12",
+    "type": "chapter",
+    "book": "Revelation",
+    "ch": 12,
+    "date": "2026-10-31",
+    "title": "Revelation 12",
+    "sub": "Overcome by the blood",
+    "about": "The war behind every war: a woman, a great red dragon, and a child caught up to God's throne. The accuser is cast out of heaven, and believers overcome him by the blood of the Lamb and the word of their testimony.",
+    "tags": [
+      "Spiritual warfare",
+      "Christ's birth",
+      "Accusation and guilt",
+      "Testimony",
+      "Protection",
+      "Hope"
+    ],
+    "url": "studies/revelation-12.html",
+    "overview": {
+      "where": "Patmos, where John sees signs in heaven, a war there, and the woman kept in the wilderness",
+      "when": "About AD 95, under Domitian; the vision reaches back to Christ's birth and ascension",
+      "people": [
+        "woman-clothed-with-the-sun",
+        "the-dragon",
+        "man-child",
+        "michael",
+        "angels",
+        "accuser-of-the-brethren"
+      ],
+      "places": [
+        "heaven",
+        "wilderness"
+      ],
+      "story": [
+        "A great wonder in heaven: a woman clothed with the sun, the moon under her feet and a crown of twelve stars, crying out in labor (1–2).",
+        "A great red dragon with seven heads, ten horns and seven crowns sweeps down a third of the stars and waits to devour her child (3–4).",
+        "She bears a man child who will rule all nations with a rod of iron, and he is caught up to God and His throne. She flees to a place God prepared in the wilderness (5–6).",
+        "War in heaven: Michael and his angels fight the dragon, that old serpent, the Devil and Satan. He loses and is cast out to the earth with his angels (7–9).",
+        "Heaven rejoices: the accuser of the brethren is cast down, and they overcame him by the blood of the Lamb and the word of their testimony. The devil comes down in great wrath, knowing his time is short (10–12).",
+        "The dragon persecutes the woman, but she is given eagle's wings and nourished in the wilderness. The earth swallows his flood, and he goes to make war on the rest of her children, who keep God's commandments and have the testimony of Jesus Christ (13–17)."
+      ],
+      "key": {
+        "ref": "Revelation 12:11",
+        "text": "And they overcame him by the blood of the Lamb, and by the word of their testimony; and they loved not their lives unto the death."
+      },
+      "big": "Behind every battle is one old war between the serpent and the woman's Seed, and Christ has already won it. Satan accuses believers day and night, but the blood of the Lamb answers every charge, and a believer's own story, told out loud, takes away his power. The devil is angry because his time is short, and God carries His people through."
+    }
+  },
+  {
     "id": "revelation-13",
     "type": "chapter",
     "book": "Revelation",

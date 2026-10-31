@@ -1,0 +1,712 @@
+<!doctype html>
+<html lang="en" data-theme="stone">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Revelation 11</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="../assets/fonts.css">
+<link rel="stylesheet" href="../assets/deck.css">
+<link rel="stylesheet" href="../assets/themes.css">
+<style>
+/* rv11-where: the 22 chapters of Revelation in their seven sections, this chapter lit (a deck.css candidate for every Revelation study). */
+.rv11-where { display: grid; grid-template-columns: repeat(22, minmax(0, 1fr)); gap: 4px 2px; margin: .2em 0 .9em; }
+.rv11-where i { grid-row: 1; display: grid; place-items: center; height: 1.9em; font: 700 clamp(.62rem, .55rem + .3vw, .86rem) var(--sans); font-style: normal; color: var(--ink-soft); background: var(--surface); border: 1px solid var(--line); border-radius: 4px; }
+.rv11-where i.in { border-color: color-mix(in srgb, var(--accent) 50%, var(--line)); }
+.rv11-where i.now { background: var(--accent); color: var(--on-accent); border-color: var(--accent); }
+.slide.active .rv11-where i.now { animation: rv11-beat 1.8s ease-in-out infinite; }
+@keyframes rv11-beat { 50% { box-shadow: 0 0 0 5px color-mix(in srgb, var(--accent) 35%, transparent); } }
+.rv11-where b { grid-row: 2; padding-top: .3em; border-top: 2px solid var(--line-strong); text-align: center; font: 600 clamp(.6rem, .52rem + .3vw, .85rem)/1.15 var(--sans); color: var(--ink-soft); }
+.rv11-where b.here { border-color: var(--accent); color: var(--accent-hot); }
+@media (max-width: 700px) {
+  .rv11-where i { height: 1.6em; font-size: .58rem; border-radius: 3px; }
+  .rv11-where b:not(.here) { visibility: hidden; height: 0; padding: 0; }
+}
+
+/* rv11-trumps: seven trumpets in a row, six sounded, a pause, then the seventh (a deck.css candidate, paired with rv07-seals). */
+.rv11-trumps svg { max-height: 22vh; }
+.rv11-horn { fill: var(--warm); stroke: color-mix(in srgb, var(--warm) 60%, var(--ink)); stroke-width: 1.5; stroke-linejoin: round; }
+.rv11-horn.done { fill: color-mix(in srgb, var(--warm) 40%, var(--surface-2)); stroke: var(--line-strong); }
+.rv11-wave { fill: none; stroke: var(--ink-soft); stroke-width: 2.5; stroke-linecap: round; opacity: .55; }
+.rv11-trumps text { fill: var(--ink-soft); font-size: 15px; font-weight: 700; }
+.rv11-trumps .rv11-woe { fill: var(--danger); font-size: 13px; font-weight: 600; font-style: italic; }
+.rv11-gap { fill: color-mix(in srgb, var(--accent) 10%, transparent); stroke: var(--line-strong); stroke-width: 2; stroke-dasharray: 6 5; }
+.rv11-trumps .rv11-lbl { fill: var(--ink); font-family: var(--serif); font-style: italic; font-weight: 400; font-size: 16px; }
+.rv11-loud { opacity: 0; transition: opacity .6s ease; }
+.slide:has(.rv11-sound.on) .rv11-loud { opacity: 1; }
+.slide:has(.rv11-sound.on) .rv11-loud .rv11-wave { animation: rv11-blast 1.1s ease-out infinite; animation-delay: calc(var(--k) * .25s); stroke: var(--accent-hot); opacity: 1; }
+@keyframes rv11-blast { from { opacity: 1; transform: translateX(0); } to { opacity: 0; transform: translateX(12px); } }
+.rv11-seventh { transform-box: fill-box; transform-origin: 50% 50%; transition: transform .8s cubic-bezier(.3,1.6,.5,1); }
+.slide:has(.rv11-sound.on) .rv11-seventh { transform: scale(1.25) rotate(-8deg); }
+
+/* rv11-measure: the temple measured with a reed, the outer court left out (a deck.css candidate: "what God marks off as His"). */
+.rv11-measure svg { max-height: 50vh; }
+.rv11-outer { fill: color-mix(in srgb, var(--ink-soft) 8%, transparent); stroke: var(--line-strong); stroke-width: 2; stroke-dasharray: 8 7; }
+.rv11-inner { fill: color-mix(in srgb, var(--accent) 16%, var(--surface)); stroke: var(--line); stroke-width: 1.5; }
+.rv11-line { fill: none; stroke: var(--accent-hot); stroke-width: 5; stroke-linejoin: round; stroke-dasharray: 1; stroke-dashoffset: 1; }
+.slide.active .rv11-line { transition: stroke-dashoffset 5s linear .6s; stroke-dashoffset: 0; }
+.rv11-house { fill: var(--surface-2); stroke: var(--line-strong); stroke-width: 2; }
+.rv11-holiest { fill: color-mix(in srgb, var(--accent) 40%, var(--surface-2)); stroke: var(--line-strong); stroke-width: 2; }
+.rv11-altar { fill: var(--leather); stroke: var(--line-strong); stroke-width: 2; }
+.rv11-flame { fill: var(--accent-hot); }
+.rv11-who { fill: var(--glow); stroke: var(--ink-soft); stroke-width: 1.2; }
+.rv11-reed { offset-path: path("M110 60 H310 V290 H110 Z"); offset-rotate: auto; offset-distance: 0%; }
+.slide.active .rv11-reed { transition: offset-distance 5s linear .6s; offset-distance: 100%; }
+.rv11-reed rect { fill: var(--leather-light); stroke: var(--leather); stroke-width: 1.5; }
+.rv11-step { fill: var(--ink-soft); opacity: .35; }
+.rv11-measure text { fill: var(--ink-soft); font-size: 15px; }
+.rv11-measure .rv11-lbl { fill: var(--accent-hot); font-weight: 700; }
+
+/* rv11-olive: two olive trees feed oil to two lampstands that never go out (Zechariah 4; a deck.css candidate). */
+.rv11-olive svg { max-height: 46vh; }
+.rv11-trunk { fill: var(--leather); }
+.rv11-leaves { fill: color-mix(in srgb, var(--cool) 60%, var(--ink-soft)); }
+.rv11-berry { fill: color-mix(in srgb, var(--accent) 70%, var(--on-glow)); }
+.rv11-stand { fill: var(--warm); stroke: color-mix(in srgb, var(--warm) 60%, var(--ink)); stroke-width: 1.5; }
+.rv11-fire { fill: color-mix(in srgb, var(--warm) 60%, var(--glow)); transform-box: fill-box; transform-origin: 50% 100%; }
+.slide.active .rv11-fire { animation: rv11-flicker 1.4s ease-in-out infinite alternate; }
+@keyframes rv11-flicker { from { transform: scale(1, 1); } to { transform: scale(.85, 1.15); } }
+.rv11-halo { fill: var(--glow); opacity: .3; }
+.rv11-pipe { fill: none; stroke: color-mix(in srgb, var(--accent) 35%, var(--line)); stroke-width: 8; stroke-linecap: round; }
+.rv11-oil { fill: none; stroke: var(--warm); stroke-width: 4; stroke-linecap: round; stroke-dasharray: 6 12; }
+.slide.active .rv11-oil { animation: rv11-flow 1.2s linear infinite; }
+@keyframes rv11-flow { to { stroke-dashoffset: -36; } }
+.rv11-olive text { fill: var(--ink-soft); font-size: 15px; }
+.rv11-olive .rv11-lbl { fill: var(--accent-hot); font-weight: 700; }
+
+/* rv11-rise: two dead witnesses in the street, three and a half days, then breath, standing, and "Come up hither" (a deck.css candidate: "the world never gets the last word"). */
+.rv11-rise svg { max-height: 50vh; border-radius: 12px; }
+.rv11-night { fill: var(--on-glow); }
+.rv11-city { fill: color-mix(in srgb, var(--glow) 16%, var(--on-glow)); }
+.rv11-win { fill: color-mix(in srgb, var(--accent) 60%, var(--on-glow)); }
+.rv11-street { fill: color-mix(in srgb, var(--glow) 26%, var(--on-glow)); }
+.rv11-man { fill: var(--glow); }
+.rv11-crowd { fill: color-mix(in srgb, var(--glow) 45%, var(--on-glow)); }
+.rv11-rise text { fill: var(--glow); font-size: 15px; }
+.rv11-rise .rv11-lbl { fill: var(--accent); font-weight: 700; }
+.rv11-day { opacity: .25; }
+.slide.active .rv11-day { animation: rv11-dawn .5s ease forwards; animation-delay: calc(var(--k) * .7s + .5s); }
+@keyframes rv11-dawn { to { opacity: 1; } }
+.rv11-daydot { fill: var(--glow); }
+.rv11-body { transform-box: fill-box; transform-origin: 50% 100%; transform: rotate(-90deg); transition: transform 1.6s cubic-bezier(.3,1.3,.5,1) 1.4s; }
+.slide:has(.rv11-breathe.on) .rv11-body { transform: none; }
+.rv11-breath { fill: none; stroke: var(--glow); stroke-width: 3; stroke-linecap: round; stroke-dasharray: 1; stroke-dashoffset: 1; opacity: .9; }
+.slide:has(.rv11-breathe.on) .rv11-breath { transition: stroke-dashoffset 1.4s ease; stroke-dashoffset: 0; }
+.rv11-lift { transition: transform 3s cubic-bezier(.5,0,.3,1) .5s; }
+.slide:has(.rv11-up.on) .rv11-lift { transform: translateY(-150px); }
+.rv11-cloud { fill: var(--glow); opacity: 0; transition: opacity 1.4s ease .4s; }
+.slide:has(.rv11-up.on) .rv11-cloud { opacity: .85; }
+.rv11-beam { fill: var(--glow); opacity: 0; transition: opacity 1.2s ease; }
+.slide:has(.rv11-up.on) .rv11-beam { opacity: .18; }
+.slide:has(.rv11-up.on) .rv11-breath { opacity: 0; transition: opacity .6s ease; }
+.rv11-call { opacity: 0; transition: opacity 1s ease .3s; }
+.slide:has(.rv11-up.on) .rv11-call { opacity: 1; }
+.rv11-rise .rv11-call text { fill: var(--accent); font-family: var(--serif); font-style: italic; font-size: 24px; }
+
+/* rv11-statue: Daniel 2's statue of kingdoms struck by the stone cut without hands, which becomes a mountain (a deck.css candidate). */
+.rv11-statue svg { max-height: 50vh; }
+.rv11-gold { fill: var(--warm); stroke: var(--line-strong); stroke-width: 1.5; }
+.rv11-silver { fill: color-mix(in srgb, var(--glow) 70%, var(--ink-soft)); stroke: var(--line-strong); stroke-width: 1.5; }
+.rv11-brass { fill: color-mix(in srgb, var(--warm) 55%, var(--danger)); stroke: var(--line-strong); stroke-width: 1.5; }
+.rv11-iron { fill: color-mix(in srgb, var(--ink-soft) 70%, var(--on-glow)); stroke: var(--line-strong); stroke-width: 1.5; }
+.rv11-clay { fill: var(--leather-light); stroke: var(--line-strong); stroke-width: 1.5; }
+.rv11-statue text { fill: var(--ink-soft); font-size: 15px; }
+.rv11-statue .rv11-lbl { fill: var(--accent-hot); font-weight: 700; font-size: 17px; }
+.rv11-piece { transform-box: fill-box; transform-origin: 50% 50%; transition: transform 1.6s cubic-bezier(.5,0,.8,.6), opacity 1.4s ease; transition-delay: calc(var(--k) * .12s + 1.1s); }
+.slide:has(.rv11-strike.on) .rv11-piece { transform: translate(var(--x), 230px) rotate(var(--r)); opacity: 0; }
+.rv11-tags { transition: opacity .8s ease .9s; }
+.slide:has(.rv11-strike.on) .rv11-tags { opacity: 0; }
+.rv11-stone { fill: color-mix(in srgb, var(--ink-soft) 55%, var(--surface-2)); stroke: var(--ink); stroke-width: 2; transition: transform 1.1s cubic-bezier(.6,0,.9,.5); }
+.slide:has(.rv11-strike.on) .rv11-stone { transform: translate(-140px, 330px); }
+.rv11-mount { fill: color-mix(in srgb, var(--accent) 35%, var(--surface-2)); stroke: var(--accent); stroke-width: 2.5; transform-box: fill-box; transform-origin: 50% 100%; transform: scale(.04); opacity: 0; transition: transform 2.4s cubic-bezier(.2,.8,.3,1) 2.2s, opacity .3s ease 2.2s; }
+.slide:has(.rv11-strike.on) .rv11-mount { transform: none; opacity: 1; }
+.rv11-banner { opacity: 0; transition: opacity 1.4s ease 4.2s; }
+.slide:has(.rv11-strike.on) .rv11-banner { opacity: 1; }
+.rv11-statue .rv11-banner text { fill: var(--ink); font-family: var(--serif); font-style: italic; font-size: 21px; }
+.rv11-statue .rv11-banner .rv11-big { fill: var(--accent-hot); font-family: var(--sans); font-style: normal; font-weight: 800; font-size: 26px; }
+
+/* rv11-ark: heaven's temple doors swing open on the ark, with the mercy seat on top (a deck.css candidate). */
+.rv11-ark svg { max-height: 48vh; }
+.rv11-frame { fill: none; stroke: var(--line-strong); stroke-width: 4; }
+.rv11-shine { fill: var(--glow); }
+.rv11-door { fill: var(--leather); stroke: var(--line-strong); stroke-width: 2; transition: transform 2.2s cubic-bezier(.5,0,.3,1) .6s; }
+.slide.active .rv11-door.l { transform: translateX(-118px) scaleX(.12); }
+.slide.active .rv11-door.r { transform: translateX(118px) scaleX(.12); }
+.rv11-door.l { transform-box: fill-box; transform-origin: 0 50%; }
+.rv11-door.r { transform-box: fill-box; transform-origin: 100% 50%; }
+.rv11-box { fill: var(--warm); stroke: color-mix(in srgb, var(--warm) 60%, var(--on-glow)); stroke-width: 2; }
+.rv11-pole { stroke: var(--leather); stroke-width: 6; stroke-linecap: round; }
+.rv11-seat { fill: color-mix(in srgb, var(--warm) 70%, var(--glow)); stroke: color-mix(in srgb, var(--warm) 60%, var(--on-glow)); stroke-width: 1.5; }
+.rv11-wingk { fill: color-mix(in srgb, var(--warm) 75%, var(--glow)); stroke: color-mix(in srgb, var(--warm) 60%, var(--on-glow)); stroke-width: 1.5; }
+.rv11-blood { fill: var(--wine); }
+.rv11-bolt { fill: none; stroke: var(--accent); stroke-width: 4; stroke-linejoin: round; opacity: 0; }
+.slide.active .rv11-bolt { animation: rv11-flash 3.2s ease-in-out infinite; animation-delay: calc(var(--k) * 1.1s + 2.6s); }
+@keyframes rv11-flash { 0%, 100% { opacity: 0; } 4% { opacity: 1; } 8% { opacity: .2; } 12% { opacity: .9; } 20% { opacity: 0; } }
+.rv11-ark text { fill: var(--ink-soft); font-size: 15px; }
+.rv11-ark .rv11-lbl { fill: var(--accent-hot); font-weight: 700; }
+.rv11-ark .rv11-dark { fill: var(--on-glow); font-weight: 700; }
+
+@media (prefers-reduced-motion: reduce) {
+  .rv11-where i.now, .rv11-fire, .rv11-oil, .rv11-bolt, .rv11-loud .rv11-wave { animation: none !important; }
+  .rv11-day { animation: none !important; opacity: 1; }
+  .rv11-bolt { opacity: .7; }
+}
+</style>
+</head>
+<body>
+<main class="deck" id="deck">
+
+<section class="slide title">
+  <div class="inner">
+    <div class="emblem rise"></div>
+    <h1 class="rise" style="--d:1">Revelation 11</h1>
+    <p class="sub rise" style="--d:3">He shall reign for ever</p>
+    <p class="tag rise" style="--d:5">God measures what is His. Two witnesses preach in sackcloth, are killed, lie in the street while the world throws a party, and then stand up and go home to God. Then the seventh trumpet sounds, and heaven announces the end of every kingdom but one.</p>
+  </div>
+</section>
+
+<section class="slide watch">
+  <div class="inner">
+    <h2 class="rise">Things to watch for</h2>
+    <p class="lede rise" style="--d:1">Keep these questions in the back of your mind as we read. We'll come back to every one of them at the end.</p>
+    <ol class="seeds">
+      <li class="step"><span class="topic">Measured</span><span class="seed-q">Why does God measure the temple and the people who worship there?</span></li>
+      <li class="step"><span class="topic">Witnesses</span><span class="seed-q">What gives the two witnesses their power, and how long can no one touch them?</span></li>
+      <li class="step"><span class="topic">The street</span><span class="seed-q">Why does the world celebrate when God's witnesses fall?</span></li>
+      <li class="step"><span class="topic">Come up hither</span><span class="seed-q">Who gets the last word over God's servants?</span></li>
+      <li class="step"><span class="topic">The kingdom</span><span class="seed-q">What happens when the seventh trumpet sounds?</span></li>
+      <li class="step"><span class="topic">The ark</span><span class="seed-q">What does John see when the temple in heaven is opened?</span></li>
+    </ol>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise">Where we are in Revelation</h2>
+    <div class="rv11-where rise" style="--d:1" role="img" aria-label="The 22 chapters of Revelation in seven sections: chapter 1, a vision of Christ; 2 and 3, seven churches; 4 and 5, the throne and the Lamb; 6 to 16, seals, trumpets and bowls; 17 and 18, Babylon falls; 19 and 20, Christ returns and reigns; 21 and 22, all things new. Chapter 11 is lit.">
+      <i>1</i><i>2</i><i>3</i><i>4</i><i>5</i><i class="in">6</i><i class="in">7</i><i class="in">8</i><i class="in">9</i><i class="in">10</i><i class="now">11</i><i class="in">12</i><i class="in">13</i><i class="in">14</i><i class="in">15</i><i class="in">16</i><i>17</i><i>18</i><i>19</i><i>20</i><i>21</i><i>22</i>
+      <b style="grid-column:1 / span 1">Christ</b>
+      <b style="grid-column:2 / span 2">Seven churches</b>
+      <b style="grid-column:4 / span 2">Throne and Lamb</b>
+      <b class="here" style="grid-column:6 / span 11">Seals, trumpets, bowls</b>
+      <b style="grid-column:17 / span 2">Babylon falls</b>
+      <b style="grid-column:19 / span 2">Christ returns, reigns</b>
+      <b style="grid-column:21 / span 2">All things new</b>
+    </div>
+    <div class="stage rv11-trumps rise" style="--d:2">
+      <svg viewBox="0 0 660 124" role="img" aria-label="Seven trumpets in a row. Trumpets one to six have sounded; five and six are the first two woes. Then a dashed space marked chapters 10 and 11, a pause. Then the seventh trumpet, the third woe, which sounds at 11:15.">
+        <g transform="translate(40 58)"><path class="rv11-horn done" d="M-26 2 L8 -1 L24 -14 L24 18 L8 5 L-26 4 Z"/><text y="44" text-anchor="middle">1</text></g>
+        <g transform="translate(112 58)"><path class="rv11-horn done" d="M-26 2 L8 -1 L24 -14 L24 18 L8 5 L-26 4 Z"/><text y="44" text-anchor="middle">2</text></g>
+        <g transform="translate(184 58)"><path class="rv11-horn done" d="M-26 2 L8 -1 L24 -14 L24 18 L8 5 L-26 4 Z"/><text y="44" text-anchor="middle">3</text></g>
+        <g transform="translate(256 58)"><path class="rv11-horn done" d="M-26 2 L8 -1 L24 -14 L24 18 L8 5 L-26 4 Z"/><text y="44" text-anchor="middle">4</text></g>
+        <g transform="translate(328 58)"><path class="rv11-horn done" d="M-26 2 L8 -1 L24 -14 L24 18 L8 5 L-26 4 Z"/><text y="44" text-anchor="middle">5</text><text class="rv11-woe" y="-24" text-anchor="middle">woe 1</text></g>
+        <g transform="translate(400 58)"><path class="rv11-horn done" d="M-26 2 L8 -1 L24 -14 L24 18 L8 5 L-26 4 Z"/><text y="44" text-anchor="middle">6</text><text class="rv11-woe" y="-24" text-anchor="middle">woe 2</text></g>
+        <rect class="rv11-gap" x="440" y="26" width="120" height="62" rx="10"/>
+        <text class="rv11-lbl" x="500" y="52" text-anchor="middle">chapters 10–11:</text>
+        <text class="rv11-lbl" x="500" y="74" text-anchor="middle">a pause</text>
+        <g transform="translate(606 58)">
+          <path class="rv11-horn rv11-seventh" d="M-26 2 L8 -1 L24 -14 L24 18 L8 5 L-26 4 Z"/>
+          <g class="rv11-loud"><path class="rv11-wave" style="--k:0" d="M30 -10 q8 12 0 24"/><path class="rv11-wave" style="--k:1" d="M38 -18 q12 20 0 40"/></g>
+          <text y="44" text-anchor="middle">7</text><text class="rv11-woe" y="-24" text-anchor="middle">woe 3</text>
+        </g>
+      </svg>
+    </div>
+    <p class="note step">Six trumpets have blown. The last three were called woes (8:13). Chapter 10 paused before the seventh, and this chapter keeps that pause going a little longer, with a temple measured and two witnesses. Then, at verse 15, the seventh trumpet sounds.</p>
+    <p class="note step rv11-sound">When it does, it's no new disaster. It's an announcement: the world now belongs to Christ. This is the turning point of the book.</p>
+  </div>
+</section>
+
+<section class="slide part">
+  <div class="inner">
+    <p class="part-n rise">Part one</p>
+    <h2 class="rise" style="--d:1">Measured</h2>
+    <p class="range rise" style="--d:2">Verses 1–2</p>
+    <div class="rule"></div>
+    <p class="hook rise" style="--d:4">Before trouble comes, God takes a measuring rod to what is His.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="1-2" data-hl="Rise, and measure the temple of God, and the altar, and them that worship therein|leave out, and measure it not|forty and two months"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <div class="split">
+      <div class="stage rv11-measure">
+        <svg viewBox="0 0 420 390" role="img" aria-label="A temple seen from above. In the middle, the temple house and the altar with worshippers around it, inside an inner court. A measuring reed travels all the way round the inner court and leaves a bright line behind it. The outer court around it is dashed and left out, with footprints in it.">
+          <rect class="rv11-outer" x="20" y="16" width="380" height="350" rx="6"/>
+          <g class="rv11-step"><ellipse cx="54" cy="96" rx="6" ry="10"/><ellipse cx="68" cy="112" rx="6" ry="10"/><ellipse cx="356" cy="200" rx="6" ry="10"/><ellipse cx="370" cy="216" rx="6" ry="10"/><ellipse cx="60" cy="300" rx="6" ry="10"/><ellipse cx="74" cy="316" rx="6" ry="10"/></g>
+          <rect class="rv11-inner" x="110" y="60" width="200" height="230"/>
+          <rect class="rv11-house" x="170" y="76" width="80" height="112" rx="3"/>
+          <rect class="rv11-holiest" x="170" y="76" width="80" height="36" rx="3"/>
+          <rect class="rv11-altar" x="193" y="214" width="34" height="34" rx="3"/>
+          <path class="rv11-flame" d="M210 206 q-8 6 -4 12 q4 4 8 0 q4 -6 -4 -12 Z"/>
+          <circle class="rv11-who" cx="148" cy="226" r="7"/><circle class="rv11-who" cx="272" cy="226" r="7"/>
+          <circle class="rv11-who" cx="150" cy="262" r="7"/><circle class="rv11-who" cx="270" cy="262" r="7"/>
+          <circle class="rv11-who" cx="182" cy="272" r="7"/><circle class="rv11-who" cx="238" cy="272" r="7"/>
+          <path class="rv11-line" pathLength="1" d="M110 60 H310 V290 H110 Z"/>
+          <g class="rv11-reed"><rect x="-34" y="-5" width="68" height="10" rx="3"/></g>
+          <text x="210" y="134" text-anchor="middle">temple</text>
+          <text x="210" y="102" text-anchor="middle" style="font-size:12px">holiest</text>
+          <text x="210" y="232" text-anchor="middle" style="fill:var(--on-accent);font-size:12px">altar</text>
+          <text class="rv11-lbl" x="210" y="48" text-anchor="middle">measured: His</text>
+          <text x="210" y="320" text-anchor="middle">outer court: “leave out”</text>
+          <text x="210" y="340" text-anchor="middle">trodden “forty and two months”</text>
+        </svg>
+      </div>
+      <div>
+        <h2 class="rise" style="--d:1">A rod for what is His</h2>
+        <p class="note rise" style="--d:2">Ezekiel saw a temple measured (Ezekiel 40–43). Zechariah saw <em>“a man with a measuring line in his hand”</em>, and God said:</p>
+        <blockquote class="quote step"><p>“For I, saith the LORD, will be unto her a wall of fire round about, and will be the glory in the midst of her.”</p><cite>Zechariah 2:5</cite></blockquote>
+        <p class="note step">To measure is to mark off and keep. The outer court is trampled for a set time, but God counts the altar and every worshipper. If you belong to Christ, you are inside the line.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise">One span of time, said three ways</h2>
+    <div class="math rise" style="--d:1"><div><b>42 months</b><span>the holy city trodden (11:2)</span></div><div><b>1,260 days</b><span>the witnesses preach (11:3)</span></div><div><b>3½ years</b><span>“a time, and times, and half a time” (12:14)</span></div></div>
+    <p class="note step">Revelation names the same length of time over and over, in months, in days and in “times”. It comes from Daniel, who saw an evil king given power over the saints <em>“until a time and times and the dividing of time”</em> (Daniel 7:25).</p>
+    <p class="note step">Good Bible teachers read it two ways. Many take it as three and a half literal years of trouble at the end. Others see a picture of the whole stretch of history between Christ's first and second coming. We won't draw charts or set dates.</p>
+    <p class="note step">What is plain either way: evil gets a short lease, and God wrote the end date on it before it began. Three and a half is half of seven. It never gets to finish.</p>
+  </div>
+</section>
+
+<section class="slide part">
+  <div class="inner">
+    <p class="part-n rise">Part two</p>
+    <h2 class="rise" style="--d:1">The two witnesses</h2>
+    <p class="range rise" style="--d:2">Verses 3–14</p>
+    <div class="rule"></div>
+    <p class="hook rise" style="--d:4">They preach, they fall, and the world throws a party. Then God speaks.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="3-4" data-hl="my two witnesses|clothed in sackcloth|the two olive trees, and the two candlesticks"></section>
+
+<section class="slide verse" data-v="5-6" data-hl="fire proceedeth out of their mouth|power to shut heaven, that it rain not|turn them to blood"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <div class="split">
+      <div class="stage rv11-olive">
+        <svg viewBox="0 0 440 330" role="img" aria-label="Two olive trees, one on each side. Golden oil flows from each tree through a pipe into a lampstand, and both lampstands burn without going out.">
+          <rect class="rv11-trunk" x="66" y="150" width="20" height="140" rx="6"/>
+          <circle class="rv11-leaves" cx="76" cy="122" r="52"/><circle class="rv11-leaves" cx="46" cy="150" r="30"/><circle class="rv11-leaves" cx="108" cy="148" r="32"/>
+          <circle class="rv11-berry" cx="60" cy="110" r="5"/><circle class="rv11-berry" cx="92" cy="130" r="5"/><circle class="rv11-berry" cx="74" cy="150" r="5"/>
+          <rect class="rv11-trunk" x="354" y="150" width="20" height="140" rx="6"/>
+          <circle class="rv11-leaves" cx="364" cy="122" r="52"/><circle class="rv11-leaves" cx="332" cy="148" r="32"/><circle class="rv11-leaves" cx="394" cy="150" r="30"/>
+          <circle class="rv11-berry" cx="348" cy="130" r="5"/><circle class="rv11-berry" cx="380" cy="110" r="5"/><circle class="rv11-berry" cx="366" cy="150" r="5"/>
+          <path class="rv11-pipe" d="M118 156 C150 160 160 120 176 112"/>
+          <path class="rv11-oil" d="M118 156 C150 160 160 120 176 112"/>
+          <path class="rv11-pipe" d="M322 156 C290 160 280 120 264 112"/>
+          <path class="rv11-oil" d="M322 156 C290 160 280 120 264 112"/>
+          <circle class="rv11-halo" cx="184" cy="84" r="26"/><circle class="rv11-halo" cx="256" cy="84" r="26"/>
+          <path class="rv11-stand" d="M170 104 h28 l-6 12 h-16 Z M181 116 h6 v150 h-6 Z M164 266 h40 l6 18 h-52 Z"/>
+          <path class="rv11-stand" d="M242 104 h28 l-6 12 h-16 Z M253 116 h6 v150 h-6 Z M236 266 h40 l6 18 h-52 Z"/>
+          <path class="rv11-fire" d="M184 102 q-12 -14 0 -34 q12 20 0 34 Z"/>
+          <path class="rv11-fire" d="M256 102 q-12 -14 0 -34 q12 20 0 34 Z"/>
+          <text x="76" y="312" text-anchor="middle">olive tree</text>
+          <text x="364" y="312" text-anchor="middle">olive tree</text>
+          <text x="220" y="312" text-anchor="middle">two candlesticks</text>
+          <text class="rv11-lbl" x="220" y="30" text-anchor="middle">the oil: God's Spirit</text>
+        </svg>
+      </div>
+      <div>
+        <h2 class="rise" style="--d:1">Lamps that run on someone else's oil</h2>
+        <p class="note rise" style="--d:2">In Zechariah 4, two olive trees pour oil straight into a golden lampstand. No one refills it. The angel said why:</p>
+        <blockquote class="quote step"><p>“Then he answered and spake unto me, saying, This is the word of the LORD unto Zerubbabel, saying, Not by might, nor by power, but by my spirit, saith the LORD of hosts.”</p><cite>Zechariah 4:6</cite></blockquote>
+        <p class="note step">The witnesses don't shine on willpower, and neither do you. The oil is God's Spirit, and He lives in every believer.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="6" data-hl="power to shut heaven, that it rain not|power over waters to turn them to blood"></blockquote>
+    <div class="columns">
+      <div class="col grace rise" style="--d:1">
+        <p class="who">Like Elijah</p>
+        <h3>Heaven shut</h3>
+        <p>Elijah told King Ahab there would be no rain, and there was none (1 Kings 17:1). James even gives the length: <em>“by the space of three years and six months”</em> (James 5:17). The same three and a half years.</p>
+      </div>
+      <div class="col grace rise" style="--d:2">
+        <p class="who">Like Moses</p>
+        <h3>Water to blood</h3>
+        <p>Moses struck the Nile and it turned to blood, the first of the plagues on Egypt (Exodus 7:20). God used him to break a slave master's grip on His people.</p>
+      </div>
+    </div>
+    <p class="note step">Who are the two witnesses? Teachers differ. Some read them as two real prophets God will send at the end; others as a picture of the church's witness to the world. Good Baptist teachers hold both, and we won't guess names.</p>
+    <p class="note step">What is plain: God never leaves the world without a witness. Two was the number the law needed to settle a matter (Deuteronomy 19:15), and Jesus sent His men out <em>“two and two”</em> (Luke 10:1). A witness doesn't work alone.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="7-8" data-hl="when they shall have finished their testimony|their dead bodies shall lie in the street of the great city|where also our Lord was crucified"></section>
+
+<section class="slide verse" data-v="9-10" data-hl="three days and an half|make merry, and shall send gifts one to another"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="7" data-hl="when they shall have finished their testimony"></blockquote>
+    <h2 class="rise" style="--d:1">Not one day early</h2>
+    <p class="note rise" style="--d:2">Read verse 5 and verse 7 together. While they are preaching, nothing can touch them. Only <em>“when they shall have finished”</em> is the beast allowed near them. The enemy did not end their work. He only showed up after God said it was done.</p>
+    <blockquote class="quote step"><p>“I have fought a good fight, I have finished my course, I have kept the faith:”</p><cite>2 Timothy 4:7</cite></blockquote>
+    <p class="note step">The beast <em>“that ascendeth out of the bottomless pit”</em> comes up from the pit of 9:1–2. We'll meet him properly in chapter 13. Here, the thing to see is that he has to wait his turn.</p>
+    <p class="note step">If you belong to Christ, you are not done until God says you're done. Not the addiction, not the judge, not the man who hates you gets to decide that.</p>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="8" data-hl="which spiritually is called Sodom and Egypt, where also our Lord was crucified"></blockquote>
+    <h2 class="rise" style="--d:1">Three names for one city</h2>
+    <ol class="signs rise" style="--d:2">
+      <li class="now"><b>Sodom</b>a city known for its sin and its contempt for God (Genesis 19)</li>
+      <li><b>Egypt</b>the house of slavery that would not let God's people go</li>
+      <li><b>where our Lord was crucified</b>the city that killed its own King</li>
+    </ol>
+    <p class="note step"><em>“Spiritually”</em> tells us what the city is like, not just where it is. Many teachers say Jerusalem; others, the whole world that rejects God. Either way, it is where God's messengers get killed.</p>
+    <p class="note step">Verse 10 is the only holiday in Revelation: people <em>“make merry, and shall send gifts one to another”</em> because two preachers are dead. When you slip, some will cheer. Remember who throws that party, and how long it lasts.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="11-12" data-hl="the Spirit of life from God entered into them, and they stood upon their feet|Come up hither|they ascended up to heaven in a cloud"></section>
+
+<section class="slide verse" data-v="13-14" data-hl="gave glory to the God of heaven|the third woe cometh quickly"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <div class="split">
+      <div class="stage rv11-rise">
+        <svg viewBox="0 0 520 360" role="img" aria-label="A city street at night. Two bodies lie in the street. Three and a half days are counted off above them. Then breath comes down from above, and the two men stand up. Then a voice says, Come up hither, and they rise in a cloud while the crowd at the side watches.">
+          <rect class="rv11-night" x="0" y="0" width="520" height="360"/>
+          <path class="rv11-beam" d="M200 0 H320 L300 300 H220 Z"/>
+          <path class="rv11-city" d="M0 300 V210 H40 V180 H80 V230 H110 V160 H150 V220 H190 V250 H330 V200 H370 V150 H410 V230 H450 V190 H490 V240 H520 V300 Z"/>
+          <rect class="rv11-win" x="120" y="176" width="8" height="10"/><rect class="rv11-win" x="132" y="196" width="8" height="10"/><rect class="rv11-win" x="380" y="170" width="8" height="10"/><rect class="rv11-win" x="56" y="196" width="8" height="10"/><rect class="rv11-win" x="460" y="206" width="8" height="10"/>
+          <rect class="rv11-street" x="0" y="300" width="520" height="60"/>
+          <g class="rv11-day" style="--k:0"><circle class="rv11-daydot" cx="30" cy="34" r="10"/><text x="30" y="62" text-anchor="middle">day 1</text></g>
+          <g class="rv11-day" style="--k:1"><circle class="rv11-daydot" cx="78" cy="34" r="10"/><text x="78" y="62" text-anchor="middle">day 2</text></g>
+          <g class="rv11-day" style="--k:2"><circle class="rv11-daydot" cx="126" cy="34" r="10"/><text x="126" y="62" text-anchor="middle">day 3</text></g>
+          <g class="rv11-day" style="--k:3"><path class="rv11-daydot" d="M174 24 A10 10 0 0 1 174 44 Z"/><text x="174" y="62" text-anchor="middle">½</text></g>
+          <path class="rv11-breath" pathLength="1" d="M236 70 q-14 40 6 80 q20 40 -2 90"/>
+          <path class="rv11-breath" pathLength="1" d="M284 70 q14 40 -6 80 q-20 40 2 90"/>
+          <g class="rv11-lift">
+            <ellipse class="rv11-cloud" cx="260" cy="304" rx="100" ry="22"/>
+            <g class="rv11-body"><circle class="rv11-man" cx="236" cy="236" r="10"/><rect class="rv11-man" x="226" y="248" width="20" height="52" rx="8"/></g>
+            <g class="rv11-body"><circle class="rv11-man" cx="284" cy="236" r="10"/><rect class="rv11-man" x="274" y="248" width="20" height="52" rx="8"/></g>
+          </g>
+          <g class="rv11-crowd"><circle cx="420" cy="286" r="7"/><rect x="413" y="294" width="14" height="22" rx="5"/><circle cx="446" cy="282" r="7"/><rect x="439" y="290" width="14" height="24" rx="5"/><circle cx="472" cy="288" r="7"/><rect x="465" y="296" width="14" height="20" rx="5"/></g>
+          <g class="rv11-call"><text x="420" y="60" text-anchor="middle">“Come up hither.”</text></g>
+          <text x="446" y="340" text-anchor="middle">“their enemies beheld”</text>
+        </svg>
+      </div>
+      <div>
+        <h2 class="rise" style="--d:1">Day three and a half</h2>
+        <p class="note step rv11-breathe">Ezekiel saw dry bones do the same: <em>“the breath came into them, and they lived, and stood up upon their feet”</em> (Ezekiel 37:10).</p>
+        <p class="note step rv11-up">Then heaven calls, <em>“Come up hither”</em>, the words John heard in 4:1, and they rise in a cloud as their Lord did (Acts 1:9).</p>
+        <p class="note step">The world never gets the last word over God's servants. Laid out in the street, for real or inside? The same Spirit of life can stand you up.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="13" data-hl="the remnant were affrighted, and gave glory to the God of heaven"></blockquote>
+    <h2 class="rise" style="--d:1">At last, someone looks up</h2>
+    <p class="note rise" style="--d:2">After the sixth trumpet, the survivors <em>“repented not”</em> (9:20). This time the rest <em>“gave glory to the God of heaven.”</em> Teachers differ on whether that was true repentance or only fear. Either way, something moved.</p>
+    <p class="note step">Notice what did it. Not the plagues. It was two dead men standing up. Nothing preaches like a life God has raised. Your changed life is a sermon the people who knew you before can't argue with.</p>
+    <p class="note step"><em>“The second woe is past; and, behold, the third woe cometh quickly”</em> (v. 14). The seventh trumpet is next.</p>
+  </div>
+</section>
+
+<section class="slide part">
+  <div class="inner">
+    <p class="part-n rise">Part three</p>
+    <h2 class="rise" style="--d:1">The seventh trumpet</h2>
+    <p class="range rise" style="--d:2">Verses 15–19</p>
+    <div class="rule"></div>
+    <p class="hook rise" style="--d:4">Everyone braced for the last blast. What came was a coronation.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="15-17" data-hl="The kingdoms of this world are become the kingdoms of our Lord, and of his Christ; and he shall reign for ever and ever|which art, and wast, and art to come"></section>
+
+<section class="slide verse" data-v="18" data-hl="give reward unto thy servants the prophets, and to the saints, and them that fear thy name, small and great"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <div class="split">
+      <div class="stage rv11-statue">
+        <svg viewBox="0 0 360 470" role="img" aria-label="Daniel's statue: a head of gold, chest of silver, belly of brass, legs of iron, and feet of iron mixed with clay. A stone flies down and strikes the feet. The whole statue breaks and falls away, and the stone grows into a great mountain that fills the ground. Over it appear the words: the kingdoms of our Lord, and of his Christ.">
+          <path class="rv11-mount" d="M0 470 L0 440 C60 380 120 250 180 230 C240 250 300 380 360 440 L360 470 Z"/>
+          <g class="rv11-piece" style="--k:0;--x:-30px;--r:-40deg"><circle class="rv11-gold" cx="180" cy="62" r="26"/></g>
+          <g class="rv11-piece" style="--k:1;--x:30px;--r:30deg"><path class="rv11-silver" d="M140 92 H220 L232 140 L214 160 H146 L128 140 Z"/></g>
+          <g class="rv11-piece" style="--k:2;--x:-60px;--r:-60deg"><path class="rv11-silver" d="M128 96 L110 160 L120 164 L140 104 Z"/></g>
+          <g class="rv11-piece" style="--k:3;--x:60px;--r:60deg"><path class="rv11-silver" d="M232 96 L250 160 L240 164 L220 104 Z"/></g>
+          <g class="rv11-piece" style="--k:4;--x:-20px;--r:20deg"><path class="rv11-brass" d="M146 160 H214 L218 232 H142 Z"/></g>
+          <g class="rv11-piece" style="--k:5;--x:-40px;--r:-25deg"><rect class="rv11-iron" x="146" y="232" width="30" height="132" rx="6"/></g>
+          <g class="rv11-piece" style="--k:6;--x:40px;--r:25deg"><rect class="rv11-iron" x="184" y="232" width="30" height="132" rx="6"/></g>
+          <g class="rv11-piece" style="--k:7;--x:-50px;--r:-80deg"><rect class="rv11-iron" x="136" y="364" width="22" height="26" rx="3"/><rect class="rv11-clay" x="158" y="364" width="20" height="26" rx="3"/></g>
+          <g class="rv11-piece" style="--k:8;--x:50px;--r:80deg"><rect class="rv11-clay" x="182" y="364" width="20" height="26" rx="3"/><rect class="rv11-iron" x="202" y="364" width="22" height="26" rx="3"/></g>
+          <g class="rv11-tags">
+            <text x="96" y="68" text-anchor="end">gold</text>
+            <text x="96" y="132" text-anchor="end">silver</text>
+            <text x="96" y="200" text-anchor="end">brass</text>
+            <text x="96" y="300" text-anchor="end">iron</text>
+            <text x="110" y="382" text-anchor="end">iron, clay</text>
+            <text class="rv11-lbl" x="282" y="240" text-anchor="middle">the kingdoms</text>
+            <text class="rv11-lbl" x="282" y="262" text-anchor="middle">of this world</text>
+          </g>
+          <path class="rv11-stone" d="M310 18 l18 6 l8 16 l-8 16 l-20 4 l-14 -12 l0 -18 Z"/>
+          <g class="rv11-banner">
+            <text x="180" y="110" text-anchor="middle">“are become the kingdoms</text>
+            <text x="180" y="138" text-anchor="middle">of our Lord, and of his Christ”</text>
+            <text class="rv11-big" x="180" y="186" text-anchor="middle">for ever and ever</text>
+          </g>
+        </svg>
+      </div>
+      <div>
+        <blockquote class="quote rise" data-q="15" data-hl="The kingdoms of this world are become the kingdoms of our Lord, and of his Christ; and he shall reign for ever and ever"></blockquote>
+        <p class="note rise" style="--d:2">Daniel saw a statue of kingdom after kingdom, smashed by a stone <em>“cut out without hands”</em> that grew into a mountain and filled the earth (Daniel 2:34–35).</p>
+        <blockquote class="quote step rv11-strike"><p>“And in the days of these kings shall the God of heaven set up a kingdom, which shall never be destroyed: and the kingdom shall not be left to other people, but it shall break in pieces and consume all these kingdoms, and it shall stand for ever.”</p><cite>Daniel 2:44</cite></blockquote>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise">“Are become”</h2>
+    <p class="saying rise" style="--d:1">He <em>shall reign</em> for ever and ever.</p>
+    <p class="note rise" style="--d:2">Heaven speaks as if it has already happened. Christ's open reign on earth comes later in the book (chapters 19–20), but in heaven the matter is settled. The elders already give thanks that <em>“thou hast taken to thee thy great power, and hast reigned.”</em></p>
+    <p class="note step">Every kingdom that has ever pushed you around is on that statue: the bottle, the street, the gang, the pill, the old man you used to be. Every one of them is <em>“of this world”</em>, and every one of them is coming down.</p>
+    <p class="note step">So whose kingdom are you living in this morning? You can bow the knee to Christ now, gladly, ahead of everyone else (Philippians 2:10–11).</p>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="18" data-hl="thy wrath is come|give reward unto thy servants the prophets, and to the saints, and them that fear thy name, small and great"></blockquote>
+    <div class="columns">
+      <div class="col law rise" style="--d:1">
+        <p class="who">For the angry nations</p>
+        <h3>Wrath and judgment</h3>
+        <p>The dead are judged, and God <em>“shouldest destroy them which destroy the earth.”</em> Those who wreck what God made, and the people in it, answer for it.</p>
+      </div>
+      <div class="col grace rise" style="--d:2">
+        <p class="who">For His servants</p>
+        <h3>Reward, small and great</h3>
+        <p>Prophets, saints, anyone who fears His name. <em>“Small”</em> is in the list on purpose: the man nobody noticed, who stayed sober one day at a time, is not forgotten.</p>
+      </div>
+    </div>
+    <p class="note step">The same trumpet means two different things depending on whose side you're on. For a believer, the end of the world is not a threat. It is payday.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="19" data-hl="the temple of God was opened in heaven|the ark of his testament"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <div class="split">
+      <div class="stage rv11-ark">
+        <svg viewBox="0 0 460 330" role="img" aria-label="Temple doors swing open onto bright light. Inside stands the ark, a golden chest with carrying poles. On its lid, the mercy seat, two golden cherubim face each other with their wings over it, and a drop of blood lies between them. Lightning flashes at the corners.">
+          <rect class="rv11-shine" x="110" y="30" width="240" height="270"/>
+          <rect class="rv11-box" x="166" y="206" width="128" height="66" rx="3"/>
+          <line class="rv11-pole" x1="132" y1="252" x2="328" y2="252"/>
+          <rect class="rv11-seat" x="158" y="194" width="144" height="13" rx="3"/>
+          <path class="rv11-wingk" d="M166 194 L170 166 H186 L190 194 Z"/><circle class="rv11-wingk" cx="178" cy="156" r="9"/>
+          <path class="rv11-wingk" d="M184 170 C190 128 220 122 228 150 C214 140 198 150 188 178 Z"/>
+          <path class="rv11-wingk" d="M294 194 L290 166 H274 L270 194 Z"/><circle class="rv11-wingk" cx="282" cy="156" r="9"/>
+          <path class="rv11-wingk" d="M276 170 C270 128 240 122 232 150 C246 140 262 150 272 178 Z"/>
+          <ellipse class="rv11-blood" cx="230" cy="199" rx="9" ry="3.5"/>
+          <text class="rv11-dark" x="230" y="292" text-anchor="middle">the ark of his testament</text>
+          <text class="rv11-dark" x="230" y="122" text-anchor="middle">the mercy seat</text>
+          <path class="rv11-door l" d="M110 30 H230 V300 H110 Z"/>
+          <path class="rv11-door r" d="M230 30 H350 V300 H230 Z"/>
+          <rect class="rv11-frame" x="110" y="30" width="240" height="270"/>
+          <path class="rv11-bolt" style="--k:0" d="M60 20 L44 70 L64 70 L40 130"/>
+          <path class="rv11-bolt" style="--k:1" d="M410 30 L392 84 L414 84 L388 150"/>
+          <text x="66" y="318" text-anchor="middle">thunderings</text>
+          <text x="398" y="318" text-anchor="middle">great hail</text>
+        </svg>
+      </div>
+      <div>
+        <h2 class="rise" style="--d:1">At the center: the mercy seat</h2>
+        <p class="note rise" style="--d:2">The ark was a gold-covered chest holding God's law. On its lid, the mercy seat, the high priest sprinkled blood once a year for the people's sins (Leviticus 16). It vanished when Babylon burned the temple.</p>
+        <p class="note step">John sees the real one, which the earthly ark copied (Hebrews 9:24). With lightning and hail all around, heaven shows first the place where blood covers sin. Judgment does not cancel mercy.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise">Today, between the trumpets</h2>
+    <div class="daybreak">
+      <div class="rise" style="--d:2"><i>The night</i><b>Laid out in the street</b><p>You fell, and someone cheered. Name the sin honestly; don't pretend it didn't happen.</p><p class="kjv">“they that dwell upon the earth shall rejoice over them”</p></div>
+      <div class="step"><i>This morning</i><b>The Spirit of life</b><p>God doesn't leave His own lying there. Confess it, get up, and run on His oil, not yours.</p><p class="kjv">“they stood upon their feet”</p></div>
+      <div class="step"><i>That day</i><b>He shall reign</b><p>Every kingdom that ever owned you comes down. The last word is His, and it is “Come up hither.”</p><p class="kjv">“he shall reign for ever and ever”</p></div>
+    </div>
+    <p class="note step">Today: witnesses go two by two. Call or text one brother from this group before noon, and tell him one thing God did for you yesterday. Be each other's second witness.</p>
+  </div>
+</section>
+
+<section class="slide remember">
+  <div class="inner">
+    <h2 class="rise">Points to remember</h2>
+    <ol class="seeds">
+      <li class="step"><span class="topic">Measured</span><span class="seed-q">“measure the temple of God, and the altar, and them that worship therein” <cite>11:1</cite></span><span class="take">To measure is to mark off and keep. God counts His people, and the trampling only lasts as long as He allows.</span></li>
+      <li class="step"><span class="topic">Witnesses</span><span class="seed-q">“when they shall have finished their testimony” <cite>11:7</cite></span><span class="take">Their power is God's Spirit, like oil from the olive trees, and nothing can touch them till their work is done.</span></li>
+      <li class="step"><span class="topic">The street</span><span class="seed-q">“make merry, and shall send gifts one to another” <cite>11:10</cite></span><span class="take">The world hates being told the truth and cheers when a witness falls. Its party lasts three and a half days.</span></li>
+      <li class="step"><span class="topic">Come up hither</span><span class="seed-q">“the Spirit of life from God entered into them” <cite>11:11</cite></span><span class="take">God does. He stands His servants up and calls them home while their enemies watch.</span></li>
+      <li class="step"><span class="topic">The kingdom</span><span class="seed-q">“he shall reign for ever and ever” <cite>11:15</cite></span><span class="take">Every kingdom of this world becomes Christ's. Heaven calls it done, and for His servants it means reward.</span></li>
+      <li class="step"><span class="topic">The ark</span><span class="seed-q">“there was seen in his temple the ark of his testament” <cite>11:19</cite></span><span class="take">At the center of heaven, in the middle of the storm, is the mercy seat. God keeps His covenant.</span></li>
+    </ol>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 1 of 6</p>
+      <span class="topic">Measured</span>
+      <h2>Why does God measure the temple and the people who worship there?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="1" data-hl="measure the temple of God, and the altar, and them that worship therein"></blockquote>
+      <blockquote class="quote step"><p>“For I, saith the LORD, will be unto her a wall of fire round about, and will be the glory in the midst of her.”</p><cite>Zechariah 2:5</cite></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>Measuring marks something off as God's and keeps it, the way Zechariah saw Jerusalem measured and walled with fire. The outer court is trampled, but only for forty-two months. If you belong to Christ, you're inside the line.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 2 of 6</p>
+      <span class="topic">Witnesses</span>
+      <h2>What gives the two witnesses their power, and how long can no one touch them?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step"><p>“Then he answered and spake unto me, saying, This is the word of the LORD unto Zerubbabel, saying, Not by might, nor by power, but by my spirit, saith the LORD of hosts.”</p><cite>Zechariah 4:6</cite></blockquote>
+      <blockquote class="quote step" data-q="7" data-hl="when they shall have finished their testimony"></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>God's Spirit, pictured as oil flowing from olive trees into lamps that never go out. They act like Moses and Elijah, but not on their own strength, and no one can touch them until they have finished the work God gave them.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 3 of 6</p>
+      <span class="topic">The street</span>
+      <h2>Why does the world celebrate when God's witnesses fall?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="8" data-hl="which spiritually is called Sodom and Egypt, where also our Lord was crucified"></blockquote>
+      <blockquote class="quote step" data-q="10" data-hl="because these two prophets tormented them that dwelt on the earth"></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>Because the truth torments people who don't want it. A city that is spiritually Sodom and Egypt killed its own Lord, and it is glad to see His witnesses silenced. When you fall, some will cheer. But their party only lasts three and a half days.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 4 of 6</p>
+      <span class="topic">Come up hither</span>
+      <h2>Who gets the last word over God's servants?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="11" data-hl="the Spirit of life from God entered into them, and they stood upon their feet"></blockquote>
+      <blockquote class="quote step" data-q="12" data-hl="Come up hither"></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>God does. The beast killed them and the world partied, but God breathed life into them, stood them up and called them home in a cloud while their enemies watched. Death is not the end of the story for anyone who belongs to Him, and neither is yesterday.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 5 of 6</p>
+      <span class="topic">The kingdom</span>
+      <h2>What happens when the seventh trumpet sounds?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="15" data-hl="The kingdoms of this world are become the kingdoms of our Lord, and of his Christ; and he shall reign for ever and ever"></blockquote>
+      <blockquote class="quote step"><p>“And he shall reign over the house of Jacob for ever; and of his kingdom there shall be no end.”</p><cite>Luke 1:33</cite></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>Heaven announces that every kingdom of this world now belongs to Christ, and He will reign for ever: Daniel's stone becomes a mountain. For those who reject Him it means wrath; for His servants, small and great, reward.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 6 of 6</p>
+      <span class="topic">The ark</span>
+      <h2>What does John see when the temple in heaven is opened?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="19" data-hl="there was seen in his temple the ark of his testament"></blockquote>
+      <blockquote class="quote step"><p>“For Christ is not entered into the holy places made with hands, which are the figures of the true; but into heaven itself, now to appear in the presence of God for us:”</p><cite>Hebrews 9:24</cite></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>The ark of His testament, the real one the earthly ark was copied from. Its lid is the mercy seat, where blood covered sin. Even with thunder and hail all around, the center of heaven is where God meets sinners in mercy.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide prayer">
+  <div class="inner">
+    <div class="emblem rise"></div>
+    <h2 class="rise" style="--d:1">Prayer requests</h2>
+    <p class="ask-line rise" style="--d:2">What can we pray about for you today?</p>
+    <blockquote class="quote rise" style="--d:4" data-q="15"></blockquote>
+  </div>
+</section>
+
+</main>
+
+<script>
+// King James Version, Revelation chapter 11
+const V = {
+  1: "And there was given me a reed like unto a rod: and the angel stood, saying, Rise, and measure the temple of God, and the altar, and them that worship therein.",
+  2: "But the court which is without the temple leave out, and measure it not; for it is given unto the Gentiles: and the holy city shall they tread under foot forty and two months.",
+  3: "And I will give power unto my two witnesses, and they shall prophesy a thousand two hundred and threescore days, clothed in sackcloth.",
+  4: "These are the two olive trees, and the two candlesticks standing before the God of the earth.",
+  5: "And if any man will hurt them, fire proceedeth out of their mouth, and devoureth their enemies: and if any man will hurt them, he must in this manner be killed.",
+  6: "These have power to shut heaven, that it rain not in the days of their prophecy: and have power over waters to turn them to blood, and to smite the earth with all plagues, as often as they will.",
+  7: "And when they shall have finished their testimony, the beast that ascendeth out of the bottomless pit shall make war against them, and shall overcome them, and kill them.",
+  8: "And their dead bodies shall lie in the street of the great city, which spiritually is called Sodom and Egypt, where also our Lord was crucified.",
+  9: "And they of the people and kindreds and tongues and nations shall see their dead bodies three days and an half, and shall not suffer their dead bodies to be put in graves.",
+  10: "And they that dwell upon the earth shall rejoice over them, and make merry, and shall send gifts one to another; because these two prophets tormented them that dwelt on the earth.",
+  11: "And after three days and an half the Spirit of life from God entered into them, and they stood upon their feet; and great fear fell upon them which saw them.",
+  12: "And they heard a great voice from heaven saying unto them, Come up hither. And they ascended up to heaven in a cloud; and their enemies beheld them.",
+  13: "And the same hour was there a great earthquake, and the tenth part of the city fell, and in the earthquake were slain of men seven thousand: and the remnant were affrighted, and gave glory to the God of heaven.",
+  14: "The second woe is past; and, behold, the third woe cometh quickly.",
+  15: "And the seventh angel sounded; and there were great voices in heaven, saying, The kingdoms of this world are become the kingdoms of our Lord, and of his Christ; and he shall reign for ever and ever.",
+  16: "And the four and twenty elders, which sat before God on their seats, fell upon their faces, and worshipped God,",
+  17: "Saying, We give thee thanks, O Lord God Almighty, which art, and wast, and art to come; because thou hast taken to thee thy great power, and hast reigned.",
+  18: "And the nations were angry, and thy wrath is come, and the time of the dead, that they should be judged, and that thou shouldest give reward unto thy servants the prophets, and to the saints, and them that fear thy name, small and great; and shouldest destroy them which destroy the earth.",
+  19: "And the temple of God was opened in heaven, and there was seen in his temple the ark of his testament: and there were lightnings, and voices, and thunderings, and an earthquake, and great hail."
+};
+const BOOK = "Revelation 11";
+</script>
+<script src="../assets/deck.js"></script>
+</body>
+</html>

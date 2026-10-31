@@ -1,0 +1,739 @@
+<!doctype html>
+<html lang="en" data-theme="night">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Revelation 12</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="../assets/fonts.css">
+<link rel="stylesheet" href="../assets/deck.css">
+<link rel="stylesheet" href="../assets/themes.css">
+<style>
+/* rv11-where: the 22 chapters of Revelation in their seven sections, this chapter lit (a deck.css candidate for every Revelation study; same as Revelation 11). */
+.rv11-where { display: grid; grid-template-columns: repeat(22, minmax(0, 1fr)); gap: 4px 2px; margin: .2em 0 .9em; }
+.rv11-where i { grid-row: 1; display: grid; place-items: center; height: 1.9em; font: 700 clamp(.62rem, .55rem + .3vw, .86rem) var(--sans); font-style: normal; color: var(--ink-soft); background: var(--surface); border: 1px solid var(--line); border-radius: 4px; }
+.rv11-where i.in { border-color: color-mix(in srgb, var(--accent) 50%, var(--line)); }
+.rv11-where i.now { background: var(--accent); color: var(--on-accent); border-color: var(--accent); }
+.slide.active .rv11-where i.now { animation: rv11-beat 1.8s ease-in-out infinite; }
+@keyframes rv11-beat { 50% { box-shadow: 0 0 0 5px color-mix(in srgb, var(--accent) 35%, transparent); } }
+.rv11-where b { grid-row: 2; padding-top: .3em; border-top: 2px solid var(--line-strong); text-align: center; font: 600 clamp(.6rem, .52rem + .3vw, .85rem)/1.15 var(--sans); color: var(--ink-soft); }
+.rv11-where b.here { border-color: var(--accent); color: var(--accent-hot); }
+@media (max-width: 700px) {
+  .rv11-where i { height: 1.6em; font-size: .58rem; border-radius: 3px; }
+  .rv11-where b:not(.here) { visibility: hidden; height: 0; padding: 0; }
+}
+
+/* rv12-sign: the woman clothed with the sun, the moon under her feet, a crown of twelve stars, on a night sky (a deck.css candidate). */
+.rv12-sign svg { max-height: 50vh; }
+.rv12-sky { fill: var(--on-glow); }
+.rv12-sun { fill: var(--warm); }
+.rv12-beams { fill: none; stroke: var(--warm); stroke-width: 4; stroke-linecap: round; }
+.rv12-robe { fill: var(--glow); stroke: var(--warm); stroke-width: 3; }
+.rv12-face { fill: var(--glow); }
+.rv12-moon { fill: var(--glow); }
+.rv12-star { fill: var(--glow); transform-box: fill-box; transform-origin: 50% 50%; }
+.slide.active .rv12-star { animation: rv12-twinkle 2.4s ease-in-out infinite; animation-delay: calc(var(--k) * -.2s); }
+@keyframes rv12-twinkle { 50% { transform: scale(.6); opacity: .6; } }
+.rv12-ray { transform-box: fill-box; transform-origin: 50% 50%; }
+.slide.active .rv12-ray { animation: rv12-pulse 4s ease-in-out infinite; }
+@keyframes rv12-pulse { 50% { transform: scale(1.1) rotate(8deg); opacity: .6; } }
+.rv12-sign text { fill: var(--glow); font-size: 15px; }
+.rv12-sign .rv12-lbl { fill: var(--warm); font-weight: 700; }
+
+/* rv12-dragon: seven heads, ten horns, seven crowns; the tail sweeps a third of the stars down (a deck.css candidate). */
+.rv12-dragon svg { max-height: 52vh; }
+.rv12-skin { fill: var(--wine); stroke: color-mix(in srgb, var(--wine) 60%, var(--on-glow)); stroke-width: 2; }
+.rv12-neck { fill: none; stroke: var(--wine); stroke-width: 12; stroke-linecap: round; }
+.rv12-tail { fill: none; stroke: var(--wine); stroke-width: 12; stroke-linecap: round; transform-box: view-box; transform-origin: 215px 300px; }
+.slide.active .rv12-tail { animation: rv12-sweep 3s ease-in-out infinite alternate; }
+@keyframes rv12-sweep { from { transform: rotate(-4deg); } to { transform: rotate(5deg); } }
+.rv12-eye { fill: var(--warm); }
+.rv12-crown { fill: var(--warm); stroke: color-mix(in srgb, var(--warm) 60%, var(--on-glow)); stroke-width: 1; }
+.rv12-horn { fill: none; stroke: var(--ink-soft); stroke-width: 3.5; stroke-linecap: round; }
+.rv12-st { fill: var(--ink-soft); }
+.rv12-fall { transform-box: fill-box; transform-origin: 50% 50%; }
+.slide.active .rv12-fall { animation: rv12-drop 2.6s cubic-bezier(.5,0,.8,.6) forwards; animation-delay: calc(var(--k) * .35s + 1s); }
+@keyframes rv12-drop { to { transform: translate(var(--dx), 300px) rotate(200deg); opacity: 0; } }
+.rv12-dragon text { fill: var(--ink-soft); font-size: 15px; }
+.rv12-dragon .rv12-lbl { fill: var(--accent-hot); font-weight: 700; }
+
+/* rv12-christmas: the night in Bethlehem seen from below and from heaven, then the child caught up to the throne (a deck.css candidate). */
+.rv12-christmas svg { max-height: 50vh; border-radius: 12px; }
+.rv12-heaven { fill: var(--on-glow); }
+.rv12-earth { fill: var(--surface-2); }
+.rv12-beam { fill: none; stroke: var(--line-strong); stroke-width: 6; stroke-linecap: round; }
+.rv12-manger { fill: var(--leather); }
+.rv12-baby { fill: var(--glow); stroke: var(--warm); stroke-width: 1.5; }
+.rv12-bstar { fill: var(--warm); }
+.rv12-head { fill: var(--wine); stroke: color-mix(in srgb, var(--wine) 60%, var(--on-glow)); stroke-width: 2; }
+.rv12-christmas .rv12-neck { stroke-width: 10; }
+.rv12-throne { fill: var(--warm); }
+.rv12-glow { fill: var(--glow); opacity: .25; }
+.rv12-up { fill: none; stroke: var(--warm); stroke-width: 4; stroke-dasharray: 1; stroke-dashoffset: 1; stroke-linecap: round; }
+.slide:has(.rv12-caught.on) .rv12-up { transition: stroke-dashoffset 2.2s ease .2s; stroke-dashoffset: 0; }
+.rv12-lift { opacity: 0; transition: opacity 1s ease 2s; }
+.slide:has(.rv12-caught.on) .rv12-lift { opacity: 1; }
+.rv12-christmas text { font-size: 15px; }
+.rv12-christmas .rv12-onnight { fill: var(--glow); }
+.rv12-christmas .rv12-onday { fill: var(--ink); }
+.rv12-christmas .rv12-lbl { fill: var(--warm); font-weight: 700; }
+
+/* rv12-court: the accuser reads charges "day and night"; the blood covers every one, he is cast down, and the brother speaks (a deck.css candidate: accusation and the answer). */
+.rv12-court svg { max-height: 46vh; }
+.rv12-seat { fill: var(--warm); }
+.rv12-halo { fill: var(--glow); opacity: .22; }
+.rv12-sunmoon { fill: var(--warm); }
+.slide.active .rv12-sun { animation: rv12-day 4s ease-in-out infinite; }
+.slide.active .rv12-moonx { animation: rv12-day 4s ease-in-out infinite -2s; }
+@keyframes rv12-day { 0%, 40% { opacity: 1; } 50%, 90% { opacity: 0; } 100% { opacity: 1; } }
+.rv12-accuser { fill: color-mix(in srgb, var(--wine) 75%, var(--on-glow)); stroke: var(--wine); stroke-width: 2; }
+.rv12-point { stroke: color-mix(in srgb, var(--wine) 75%, var(--on-glow)); stroke-width: 8; stroke-linecap: round; }
+.rv12-down { transform-box: view-box; transform-origin: 110px 330px; transition: transform 1.6s cubic-bezier(.6,0,.9,.4) 2.8s, opacity 1.2s ease 3.2s; }
+.slide:has(.rv12-blood.on) .rv12-down { transform: translateY(150px) rotate(-30deg); opacity: 0; }
+.rv12-castlbl { opacity: 0; transition: opacity .8s ease 4s; }
+.slide:has(.rv12-blood.on) .rv12-castlbl { opacity: 1; }
+.rv12-slip { opacity: 0; }
+.slide.active .rv12-slip { animation: rv12-in .6s ease forwards; animation-delay: calc(var(--k) * .7s + .6s); }
+@keyframes rv12-in { from { opacity: 0; transform: translateX(-20px); } to { opacity: 1; transform: none; } }
+.rv12-paper { fill: var(--surface-2); stroke: var(--line-strong); stroke-width: 1.5; }
+.rv12-court .rv12-charge { fill: var(--ink); font-size: 15px; font-family: var(--serif); font-style: italic; }
+.rv12-cover { fill: var(--wine); transform-box: fill-box; transform-origin: 0 50%; transform: scaleX(0); transition: transform .7s ease; transition-delay: calc(var(--k) * .35s + .3s); }
+.slide:has(.rv12-blood.on) .rv12-cover { transform: none; }
+.rv12-paid { opacity: 0; transition: opacity .5s ease; transition-delay: calc(var(--k) * .35s + .9s); }
+.slide:has(.rv12-blood.on) .rv12-paid { opacity: 1; }
+.rv12-court .rv12-paid text { fill: var(--glow); font-weight: 800; font-size: 14px; letter-spacing: .12em; }
+.rv12-man { fill: var(--cool); }
+.rv12-bow { transform: translate(10px, 12px); transition: transform 1s ease; }
+.slide:has(.rv12-speak.on) .rv12-bow { transform: none; }
+.rv12-say { opacity: 0; transition: opacity .8s ease .6s; }
+.slide:has(.rv12-speak.on) .rv12-say { opacity: 1; }
+.rv12-bubble { fill: var(--glow); stroke: var(--cool); stroke-width: 2; }
+.rv12-court .rv12-say text { fill: var(--on-glow); font-size: 15px; font-weight: 600; }
+.rv12-court text { fill: var(--ink-soft); font-size: 14px; }
+.rv12-court .rv12-lbl { fill: var(--accent-hot); font-weight: 700; font-size: 15px; }
+
+/* rv12-wings: the woman carried on eagle's wings to a place prepared; the serpent's flood swallowed by the earth (a deck.css candidate). */
+.rv12-wings svg { max-height: 46vh; }
+.rv12-ground { fill: var(--surface-2); stroke: var(--line-strong); stroke-width: 2; }
+.rv12-wing { fill: color-mix(in srgb, var(--warm) 55%, var(--leather)); stroke: var(--leather); stroke-width: 1.5; }
+.rv12-rider { fill: var(--glow); stroke: var(--ink-soft); stroke-width: 1; }
+.slide.active .rv12-fly { animation: rv12-bob 2.4s ease-in-out infinite alternate; }
+@keyframes rv12-bob { from { transform: translateY(-5px); } to { transform: translateY(6px); } }
+.rv12-snake { fill: none; stroke: var(--wine); stroke-width: 12; stroke-linecap: round; }
+.rv12-snakehead { fill: var(--wine); }
+.rv12-flood { fill: none; stroke: var(--cool); stroke-width: 16; stroke-linecap: round; stroke-dasharray: 18 10; transition: opacity 1s ease 1.4s; }
+.slide.active .rv12-flood { animation: rv12-flow 1s linear infinite; }
+@keyframes rv12-flow { to { stroke-dashoffset: -56; } }
+.slide:has(.rv12-swallow.on) .rv12-flood { opacity: 0; }
+.rv12-mouth { fill: var(--on-glow); transform-box: fill-box; transform-origin: 50% 50%; transform: scale(0, 0); transition: transform 1s cubic-bezier(.3,1.4,.5,1) .3s; }
+.slide:has(.rv12-swallow.on) .rv12-mouth { transform: none; }
+.rv12-help { opacity: 0; transition: opacity 1s ease 2s; }
+.slide:has(.rv12-swallow.on) .rv12-help { opacity: 1; }
+.rv12-palm { fill: none; stroke: var(--cool); stroke-width: 3; stroke-linecap: round; }
+.rv12-tent { fill: var(--leather-light); stroke: var(--leather); stroke-width: 1.5; }
+.rv12-wings text { fill: var(--ink-soft); font-size: 15px; }
+.rv12-wings .rv12-lbl { fill: var(--accent-hot); font-weight: 700; }
+
+@media (prefers-reduced-motion: reduce) {
+  .rv11-where i.now, .rv12-star, .rv12-ray, .rv12-tail, .rv12-sun, .rv12-moonx, .rv12-fly, .rv12-flood { animation: none !important; }
+  .rv12-fall { animation: none !important; opacity: .3; }
+  .rv12-slip { animation: none !important; opacity: 1; }
+}
+</style>
+</head>
+<body>
+<main class="deck" id="deck">
+
+<section class="slide title">
+  <div class="inner">
+    <div class="emblem rise"></div>
+    <h1 class="rise" style="--d:1">Revelation 12</h1>
+    <p class="sub rise" style="--d:3">Overcome by the blood</p>
+    <p class="tag rise" style="--d:5">The curtain pulls back on the war behind every other war. A woman, a dragon and a child; Christmas seen from heaven's side. Then the accuser is thrown out of heaven, and ordinary believers beat him with two weapons: the blood of the Lamb and the word of their testimony.</p>
+  </div>
+</section>
+
+<section class="slide watch">
+  <div class="inner">
+    <h2 class="rise">Things to watch for</h2>
+    <p class="lede rise" style="--d:1">Keep these questions in the back of your mind as we read. We'll come back to every one of them at the end.</p>
+    <ol class="seeds">
+      <li class="step"><span class="topic">The woman</span><span class="seed-q">Who is the woman clothed with the sun?</span></li>
+      <li class="step"><span class="topic">The dragon</span><span class="seed-q">Who is the great red dragon, and what does he want?</span></li>
+      <li class="step"><span class="topic">The child</span><span class="seed-q">Who is the man child caught up to God?</span></li>
+      <li class="step"><span class="topic">War in heaven</span><span class="seed-q">Who won the war in heaven?</span></li>
+      <li class="step"><span class="topic">The accuser</span><span class="seed-q">How do believers overcome the accuser?</span></li>
+      <li class="step"><span class="topic">A short time</span><span class="seed-q">Why is the devil so angry, and how does God keep His people?</span></li>
+    </ol>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise">Where we are in Revelation</h2>
+    <div class="rv11-where rise" style="--d:1" role="img" aria-label="The 22 chapters of Revelation in seven sections: chapter 1, a vision of Christ; 2 and 3, seven churches; 4 and 5, the throne and the Lamb; 6 to 16, seals, trumpets and bowls; 17 and 18, Babylon falls; 19 and 20, Christ returns and reigns; 21 and 22, all things new. Chapter 12 is lit.">
+      <i>1</i><i>2</i><i>3</i><i>4</i><i>5</i><i class="in">6</i><i class="in">7</i><i class="in">8</i><i class="in">9</i><i class="in">10</i><i class="in">11</i><i class="now">12</i><i class="in">13</i><i class="in">14</i><i class="in">15</i><i class="in">16</i><i>17</i><i>18</i><i>19</i><i>20</i><i>21</i><i>22</i>
+      <b style="grid-column:1 / span 1">Christ</b>
+      <b style="grid-column:2 / span 2">Seven churches</b>
+      <b style="grid-column:4 / span 2">Throne and Lamb</b>
+      <b class="here" style="grid-column:6 / span 11">Seals, trumpets, bowls</b>
+      <b style="grid-column:17 / span 2">Babylon falls</b>
+      <b style="grid-column:19 / span 2">Christ returns, reigns</b>
+      <b style="grid-column:21 / span 2">All things new</b>
+    </div>
+    <p class="note rise" style="--d:2">The seventh trumpet has just sounded: <em>“The kingdoms of this world are become the kingdoms of our Lord”</em> (11:15). Before the last judgments pour out, John is shown <em>why</em> the world is at war with God and with His people.</p>
+    <p class="note step">Chapters 12 to 14 are the story behind the story. They go back to Bethlehem, and behind that to Eden. Every war in Revelation, and every war inside a believer, is part of one old war between the serpent and the woman's Seed.</p>
+    <p class="note step">Revelation tells us how to read it: these are <em>“wonders”</em> (12:1, 3), that is, signs. Pictures that point to real things. Scripture itself tells us what most of them mean, so we'll let it.</p>
+  </div>
+</section>
+
+<section class="slide part">
+  <div class="inner">
+    <p class="part-n rise">Part one</p>
+    <h2 class="rise" style="--d:1">Two wonders</h2>
+    <p class="range rise" style="--d:2">Verses 1–6</p>
+    <div class="rule"></div>
+    <p class="hook rise" style="--d:4">A woman about to give birth, and a dragon waiting to devour her child.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="1-2" data-hl="a woman clothed with the sun, and the moon under her feet, and upon her head a crown of twelve stars|travailing in birth"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <div class="split">
+      <div class="stage rv12-sign">
+        <svg viewBox="0 0 400 380" role="img" aria-label="A night sky. A woman stands in the light of a great sun, robed in its glow, with a crescent moon under her feet and a crown of twelve twinkling stars around her head.">
+          <rect class="rv12-sky" x="0" y="0" width="400" height="380" rx="14"/>
+          <g transform="translate(200 196)"><g class="rv12-ray">
+            <path class="rv12-beams" d="M0 -70 V-104 M0 70 V104 M-70 0 H-104 M70 0 H104 M49 -49 L74 -74 M-49 -49 L-74 -74 M49 49 L74 74 M-49 49 L-74 74 M27 -65 L40 -96 M-27 -65 L-40 -96 M27 65 L40 96 M-27 65 L-40 96 M65 -27 L96 -40 M-65 -27 L-96 -40 M65 27 L96 40 M-65 27 L-96 40"/>
+          </g></g>
+          <circle class="rv12-sun" cx="200" cy="196" r="62"/>
+          <path class="rv12-robe" d="M187 126 Q168 200 148 300 Q200 316 252 300 Q232 200 213 126 Z"/>
+          <circle class="rv12-face" cx="200" cy="112" r="13"/>
+          <path class="rv12-moon" d="M140 306 Q200 352 260 306 Q200 330 140 306 Z"/>
+          <g>
+            <g transform="translate(151 100)"><path class="rv12-star" style="--k:0" d="M0 -7 L2 -2 L7 -2 L3 1 L4.5 6.5 L0 3 L-4.5 6.5 L-3 1 L-7 -2 L-2 -2 Z"/></g>
+            <g transform="translate(156 90)"><path class="rv12-star" style="--k:1" d="M0 -7 L2 -2 L7 -2 L3 1 L4.5 6.5 L0 3 L-4.5 6.5 L-3 1 L-7 -2 L-2 -2 Z"/></g>
+            <g transform="translate(164 81)"><path class="rv12-star" style="--k:2" d="M0 -7 L2 -2 L7 -2 L3 1 L4.5 6.5 L0 3 L-4.5 6.5 L-3 1 L-7 -2 L-2 -2 Z"/></g>
+            <g transform="translate(173 74)"><path class="rv12-star" style="--k:3" d="M0 -7 L2 -2 L7 -2 L3 1 L4.5 6.5 L0 3 L-4.5 6.5 L-3 1 L-7 -2 L-2 -2 Z"/></g>
+            <g transform="translate(183 69)"><path class="rv12-star" style="--k:4" d="M0 -7 L2 -2 L7 -2 L3 1 L4.5 6.5 L0 3 L-4.5 6.5 L-3 1 L-7 -2 L-2 -2 Z"/></g>
+            <g transform="translate(194 66)"><path class="rv12-star" style="--k:5" d="M0 -7 L2 -2 L7 -2 L3 1 L4.5 6.5 L0 3 L-4.5 6.5 L-3 1 L-7 -2 L-2 -2 Z"/></g>
+            <g transform="translate(206 66)"><path class="rv12-star" style="--k:6" d="M0 -7 L2 -2 L7 -2 L3 1 L4.5 6.5 L0 3 L-4.5 6.5 L-3 1 L-7 -2 L-2 -2 Z"/></g>
+            <g transform="translate(217 69)"><path class="rv12-star" style="--k:7" d="M0 -7 L2 -2 L7 -2 L3 1 L4.5 6.5 L0 3 L-4.5 6.5 L-3 1 L-7 -2 L-2 -2 Z"/></g>
+            <g transform="translate(227 74)"><path class="rv12-star" style="--k:8" d="M0 -7 L2 -2 L7 -2 L3 1 L4.5 6.5 L0 3 L-4.5 6.5 L-3 1 L-7 -2 L-2 -2 Z"/></g>
+            <g transform="translate(236 81)"><path class="rv12-star" style="--k:9" d="M0 -7 L2 -2 L7 -2 L3 1 L4.5 6.5 L0 3 L-4.5 6.5 L-3 1 L-7 -2 L-2 -2 Z"/></g>
+            <g transform="translate(244 90)"><path class="rv12-star" style="--k:10" d="M0 -7 L2 -2 L7 -2 L3 1 L4.5 6.5 L0 3 L-4.5 6.5 L-3 1 L-7 -2 L-2 -2 Z"/></g>
+            <g transform="translate(249 100)"><path class="rv12-star" style="--k:11" d="M0 -7 L2 -2 L7 -2 L3 1 L4.5 6.5 L0 3 L-4.5 6.5 L-3 1 L-7 -2 L-2 -2 Z"/></g>
+          </g>
+          <text class="rv12-lbl" x="200" y="40" text-anchor="middle">twelve stars</text>
+          <text x="336" y="110" text-anchor="middle">clothed with the sun</text>
+          <text x="200" y="364" text-anchor="middle">the moon under her feet</text>
+        </svg>
+      </div>
+      <div>
+        <h2 class="rise" style="--d:1">We've seen this picture before</h2>
+        <p class="note rise" style="--d:2">Jacob's son Joseph once dreamed it:</p>
+        <blockquote class="quote step"><p>“And he dreamed yet another dream, and told it his brethren, and said, Behold, I have dreamed a dream more; and, behold, the sun and the moon and the eleven stars made obeisance to me.”</p><cite>Genesis 37:9</cite></blockquote>
+        <p class="note step">Sun, moon and stars were Jacob, his wife and their twelve sons: Israel. Teachers differ on the woman: many say Israel, the nation Christ came from; others, all God's people. Either way, she is God's people, and God protects her.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="slide verse" data-v="3-4" data-hl="a great red dragon, having seven heads and ten horns, and seven crowns upon his heads|his tail drew the third part of the stars of heaven|for to devour her child as soon as it was born"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <div class="split">
+      <div class="stage rv12-dragon">
+        <svg viewBox="0 0 480 360" role="img" aria-label="A great red dragon with seven heads on seven necks, ten horns among them, and a small crown on every head. His long tail sweeps through the sky, and a third of the stars fall to the earth.">
+          <g>
+            <g transform="translate(24 30)"><path class="rv12-st rv12-fall" style="--k:0;--dx:-10px" d="M0 -6 L1.8 -1.8 L6 -1.8 L2.6 1 L4 5.6 L0 2.6 L-4 5.6 L-2.6 1 L-6 -1.8 L-1.8 -1.8 Z"/></g>
+            <g transform="translate(58 52)"><path class="rv12-st rv12-fall" style="--k:1;--dx:20px" d="M0 -6 L1.8 -1.8 L6 -1.8 L2.6 1 L4 5.6 L0 2.6 L-4 5.6 L-2.6 1 L-6 -1.8 L-1.8 -1.8 Z"/></g>
+            <g transform="translate(90 24)"><path class="rv12-st rv12-fall" style="--k:2;--dx:-20px" d="M0 -6 L1.8 -1.8 L6 -1.8 L2.6 1 L4 5.6 L0 2.6 L-4 5.6 L-2.6 1 L-6 -1.8 L-1.8 -1.8 Z"/></g>
+            <g transform="translate(122 48)"><path class="rv12-st rv12-fall" style="--k:3;--dx:10px" d="M0 -6 L1.8 -1.8 L6 -1.8 L2.6 1 L4 5.6 L0 2.6 L-4 5.6 L-2.6 1 L-6 -1.8 L-1.8 -1.8 Z"/></g>
+            <g transform="translate(150 20)"><path class="rv12-st rv12-fall" style="--k:4;--dx:-30px" d="M0 -6 L1.8 -1.8 L6 -1.8 L2.6 1 L4 5.6 L0 2.6 L-4 5.6 L-2.6 1 L-6 -1.8 L-1.8 -1.8 Z"/></g>
+            <g transform="translate(176 56)"><path class="rv12-st rv12-fall" style="--k:5;--dx:15px" d="M0 -6 L1.8 -1.8 L6 -1.8 L2.6 1 L4 5.6 L0 2.6 L-4 5.6 L-2.6 1 L-6 -1.8 L-1.8 -1.8 Z"/></g>
+            <path class="rv12-st" transform="translate(206 26)" d="M0 -6 L1.8 -1.8 L6 -1.8 L2.6 1 L4 5.6 L0 2.6 L-4 5.6 L-2.6 1 L-6 -1.8 L-1.8 -1.8 Z"/>
+            <path class="rv12-st" transform="translate(236 50)" d="M0 -6 L1.8 -1.8 L6 -1.8 L2.6 1 L4 5.6 L0 2.6 L-4 5.6 L-2.6 1 L-6 -1.8 L-1.8 -1.8 Z"/>
+            <path class="rv12-st" transform="translate(262 18)" d="M0 -6 L1.8 -1.8 L6 -1.8 L2.6 1 L4 5.6 L0 2.6 L-4 5.6 L-2.6 1 L-6 -1.8 L-1.8 -1.8 Z"/>
+            <path class="rv12-st" transform="translate(292 44)" d="M0 -6 L1.8 -1.8 L6 -1.8 L2.6 1 L4 5.6 L0 2.6 L-4 5.6 L-2.6 1 L-6 -1.8 L-1.8 -1.8 Z"/>
+            <path class="rv12-st" transform="translate(322 20)" d="M0 -6 L1.8 -1.8 L6 -1.8 L2.6 1 L4 5.6 L0 2.6 L-4 5.6 L-2.6 1 L-6 -1.8 L-1.8 -1.8 Z"/>
+            <path class="rv12-st" transform="translate(352 50)" d="M0 -6 L1.8 -1.8 L6 -1.8 L2.6 1 L4 5.6 L0 2.6 L-4 5.6 L-2.6 1 L-6 -1.8 L-1.8 -1.8 Z"/>
+            <path class="rv12-st" transform="translate(384 26)" d="M0 -6 L1.8 -1.8 L6 -1.8 L2.6 1 L4 5.6 L0 2.6 L-4 5.6 L-2.6 1 L-6 -1.8 L-1.8 -1.8 Z"/>
+            <path class="rv12-st" transform="translate(414 54)" d="M0 -6 L1.8 -1.8 L6 -1.8 L2.6 1 L4 5.6 L0 2.6 L-4 5.6 L-2.6 1 L-6 -1.8 L-1.8 -1.8 Z"/>
+            <path class="rv12-st" transform="translate(444 22)" d="M0 -6 L1.8 -1.8 L6 -1.8 L2.6 1 L4 5.6 L0 2.6 L-4 5.6 L-2.6 1 L-6 -1.8 L-1.8 -1.8 Z"/>
+            <path class="rv12-st" transform="translate(466 48)" d="M0 -6 L1.8 -1.8 L6 -1.8 L2.6 1 L4 5.6 L0 2.6 L-4 5.6 L-2.6 1 L-6 -1.8 L-1.8 -1.8 Z"/>
+          </g>
+          <path class="rv12-tail" d="M215 300 C160 330 100 320 80 280 C60 240 90 200 70 160 C60 140 44 126 30 112"/>
+          <path class="rv12-neck" d="M255 240 Q220 200 190 150"/>
+          <path class="rv12-neck" d="M270 236 Q240 170 222 116"/>
+          <path class="rv12-neck" d="M285 232 Q268 150 262 96"/>
+          <path class="rv12-neck" d="M300 230 Q302 150 305 88"/>
+          <path class="rv12-neck" d="M315 232 Q340 150 348 96"/>
+          <path class="rv12-neck" d="M330 236 Q370 170 388 116"/>
+          <path class="rv12-neck" d="M345 240 Q395 200 420 150"/>
+          <path class="rv12-skin" d="M200 300 C200 240 260 225 300 228 C360 230 410 250 410 290 C410 330 330 340 290 336 C240 334 200 330 200 300 Z"/>
+          <g transform="translate(190 150)"><path class="rv12-horn" d="M-8 -6 l-10 -14 M8 -6 l10 -14"/><circle class="rv12-skin" r="14"/><circle class="rv12-eye" cx="-4" cy="-2" r="3"/><path class="rv12-crown" d="M-9 -11 l3 -8 l3 5 l3 -7 l3 7 l3 -5 l3 8 Z"/></g>
+          <g transform="translate(222 116)"><path class="rv12-horn" d="M-10 -4 l-13 -10"/><circle class="rv12-skin" r="14"/><circle class="rv12-eye" cx="-4" cy="-2" r="3"/><path class="rv12-crown" d="M-9 -11 l3 -8 l3 5 l3 -7 l3 7 l3 -5 l3 8 Z"/></g>
+          <g transform="translate(262 96)"><path class="rv12-horn" d="M-10 -4 l-13 -10"/><circle class="rv12-skin" r="14"/><circle class="rv12-eye" cx="-4" cy="-2" r="3"/><path class="rv12-crown" d="M-9 -11 l3 -8 l3 5 l3 -7 l3 7 l3 -5 l3 8 Z"/></g>
+          <g transform="translate(305 88)"><path class="rv12-horn" d="M-8 -6 l-10 -14 M8 -6 l10 -14"/><circle class="rv12-skin" r="14"/><circle class="rv12-eye" cx="0" cy="-2" r="3"/><path class="rv12-crown" d="M-9 -11 l3 -8 l3 5 l3 -7 l3 7 l3 -5 l3 8 Z"/></g>
+          <g transform="translate(348 96)"><path class="rv12-horn" d="M10 -4 l13 -10"/><circle class="rv12-skin" r="14"/><circle class="rv12-eye" cx="4" cy="-2" r="3"/><path class="rv12-crown" d="M-9 -11 l3 -8 l3 5 l3 -7 l3 7 l3 -5 l3 8 Z"/></g>
+          <g transform="translate(388 116)"><path class="rv12-horn" d="M10 -4 l13 -10"/><circle class="rv12-skin" r="14"/><circle class="rv12-eye" cx="4" cy="-2" r="3"/><path class="rv12-crown" d="M-9 -11 l3 -8 l3 5 l3 -7 l3 7 l3 -5 l3 8 Z"/></g>
+          <g transform="translate(420 150)"><path class="rv12-horn" d="M-8 -6 l-10 -14 M8 -6 l10 -14"/><circle class="rv12-skin" r="14"/><circle class="rv12-eye" cx="4" cy="-2" r="3"/><path class="rv12-crown" d="M-9 -11 l3 -8 l3 5 l3 -7 l3 7 l3 -5 l3 8 Z"/></g>
+          <text class="rv12-lbl" x="305" y="350" text-anchor="middle">seven heads, ten horns, seven crowns</text>
+          <text x="96" y="84" text-anchor="middle">“the third part</text>
+          <text x="96" y="102" text-anchor="middle">of the stars”</text>
+        </svg>
+      </div>
+      <div>
+        <h2 class="rise" style="--d:1">The dragon, named</h2>
+        <p class="note rise" style="--d:2">We don't have to guess who he is. Verse 9 says it plainly: <em>“that old serpent, called the Devil, and Satan.”</em></p>
+        <p class="note step"><em>Red</em>: <em>“a murderer from the beginning”</em> (John 8:44). <em>Crowns</em>: he claims to rule. <em>Horns</em> mean power, like Daniel's ten-horned beast (Daniel 7:7). The fallen stars, many teachers say, are the angels who fell with him (v. 9).</p>
+        <p class="note step">What does he want? To <em>“devour her child.”</em> His oldest goal is to destroy Christ, and all that belongs to Him.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="slide verse" data-v="5-6" data-hl="a man child, who was to rule all nations with a rod of iron|her child was caught up unto God, and to his throne|a place prepared of God"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <div class="split">
+      <div class="stage rv12-christmas">
+        <svg viewBox="0 0 480 380" role="img" aria-label="Two panels. Below, what Bethlehem saw: a stable, a manger with a baby, and a star. Above, what heaven saw: the dragon's head with open jaws, leaning down toward the child. Then a golden path rises from the manger to the throne of God: caught up unto God.">
+          <rect class="rv12-heaven" x="0" y="0" width="480" height="180"/>
+          <rect class="rv12-earth" x="0" y="180" width="480" height="200"/>
+          <text class="rv12-onnight" x="466" y="170" text-anchor="end">what heaven saw</text>
+          <text class="rv12-onday" x="16" y="368">what Bethlehem saw</text>
+          <g class="rv12-jaw" transform="translate(-40 -36) scale(.62)">
+            <path class="rv12-neck" d="M255 240 Q220 200 190 150"/><path class="rv12-neck" d="M270 236 Q240 170 222 116"/><path class="rv12-neck" d="M285 232 Q268 150 262 96"/><path class="rv12-neck" d="M300 230 Q302 150 305 88"/><path class="rv12-neck" d="M315 232 Q340 150 348 96"/><path class="rv12-neck" d="M330 236 Q370 170 388 116"/><path class="rv12-neck" d="M345 240 Q395 200 420 150"/>
+            <path class="rv12-skin" d="M200 300 C200 240 260 225 300 228 C360 230 410 250 410 290 C410 330 330 340 290 336 C240 334 200 330 200 300 Z"/>
+            <circle class="rv12-skin" cx="190" cy="150" r="14"/><circle class="rv12-skin" cx="222" cy="116" r="14"/><circle class="rv12-skin" cx="262" cy="96" r="14"/><circle class="rv12-skin" cx="305" cy="88" r="14"/><circle class="rv12-skin" cx="348" cy="96" r="14"/><circle class="rv12-skin" cx="388" cy="116" r="14"/><circle class="rv12-skin" cx="420" cy="150" r="14"/>
+            <circle class="rv12-eye" cx="186" cy="148" r="3"/><circle class="rv12-eye" cx="218" cy="114" r="3"/><circle class="rv12-eye" cx="262" cy="94" r="3"/><circle class="rv12-eye" cx="305" cy="86" r="3"/><circle class="rv12-eye" cx="352" cy="94" r="3"/><circle class="rv12-eye" cx="392" cy="114" r="3"/><circle class="rv12-eye" cx="424" cy="148" r="3"/>
+          </g>
+          <text class="rv12-onnight" x="160" y="166" text-anchor="middle">“for to devour her child”</text>
+          <path class="rv12-bstar" transform="translate(330 214) scale(1.6)" d="M0 -7 L2 -2 L7 -2 L3 1 L4.5 6.5 L0 3 L-4.5 6.5 L-3 1 L-7 -2 L-2 -2 Z"/>
+          <path class="rv12-beam" d="M146 262 L220 210 L294 262"/>
+          <line class="rv12-beam" x1="160" y1="252" x2="160" y2="330"/>
+          <line class="rv12-beam" x1="280" y1="252" x2="280" y2="330"/>
+          <path class="rv12-manger" d="M190 300 H250 L240 324 H200 Z"/>
+          <ellipse class="rv12-baby" cx="216" cy="296" rx="18" ry="8"/>
+          <circle class="rv12-baby" cx="234" cy="292" r="7"/>
+          <path class="rv12-up" pathLength="1" d="M224 284 C300 230 340 130 404 72"/>
+          <g class="rv12-lift">
+            <circle class="rv12-glow" cx="420" cy="52" r="34"/>
+            <rect class="rv12-throne" x="404" y="34" width="32" height="34" rx="4"/>
+            <text class="rv12-lbl" x="380" y="40" text-anchor="end">“caught up unto God,</text>
+            <text class="rv12-lbl" x="380" y="60" text-anchor="end">and to his throne”</text>
+          </g>
+        </svg>
+      </div>
+      <div>
+        <h2 class="rise" style="--d:1">Christmas, from heaven's side</h2>
+        <p class="note rise" style="--d:2">The child is Christ, plainly: the King of Psalm 2.</p>
+        <blockquote class="quote step"><p>“Thou shalt break them with a rod of iron; thou shalt dash them in pieces like a potter’s vessel.”</p><cite>Psalm 2:9</cite></blockquote>
+        <p class="note step">On earth, a quiet night with shepherds. In heaven, war: the dragon used Herod to kill Bethlehem's baby boys (Matthew 2:16).</p>
+        <p class="note step rv12-caught">Verse 5 jumps from manger to throne in one breath: life, cross, empty tomb, and He was <em>“caught up unto God”</em> (Acts 1:9). The dragon lost.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise">The oldest war in the world</h2>
+    <ol class="timeline" aria-label="Six points in one long war: in Eden, the promise that the woman's seed would crush the serpent's head; at Bethlehem, Herod tries to kill the child; at the cross, the serpent bruises His heel; the child caught up to the throne; the dragon cast out of heaven; and at the end, the devil cast into the lake of fire.">
+      <li style="--k:0" data-n="1"><b>Eden</b><span>“it shall bruise thy head”</span><small>Genesis 3:15</small></li>
+      <li style="--k:1" data-n="2"><b>Bethlehem</b><span>Herod's soldiers</span><small>Matthew 2:16</small></li>
+      <li style="--k:2" data-n="3"><b>The cross</b><span>a bruised heel, a crushed head</span><small>John 12:31</small></li>
+      <li style="--k:3" data-n="4"><b>Caught up</b><span>to God's throne</span><small>12:5; Acts 1:9</small></li>
+      <li class="lit" style="--k:4" data-n="5"><b>Cast out</b><span>the accuser thrown down</span><small>12:9–10</small></li>
+      <li class="wait" style="--k:5" data-n="6"><b>The end</b><span>the lake of fire</span><small>20:10</small></li>
+    </ol>
+    <blockquote class="quote step"><p>“And I will put enmity between thee and the woman, and between thy seed and her seed; it shall bruise thy head, and thou shalt bruise his heel.”</p><cite>Genesis 3:15</cite></blockquote>
+    <p class="note step">The first promise of a Saviour, given the day man fell. The serpent would wound the woman's Seed, but the Seed would crush his head. Revelation 12 is that promise playing out.</p>
+    <p class="note step">Verse 6: the woman flees to <em>“a place prepared of God”</em> for 1,260 days, the same three and a half years as chapter 11. God feeds her there, as He fed Israel with manna and Elijah by the brook.</p>
+  </div>
+</section>
+
+<section class="slide part">
+  <div class="inner">
+    <p class="part-n rise">Part two</p>
+    <h2 class="rise" style="--d:1">War in heaven</h2>
+    <p class="range rise" style="--d:2">Verses 7–12</p>
+    <div class="rule"></div>
+    <p class="hook rise" style="--d:4">The accuser loses his place, and ordinary believers beat him.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="7-9" data-hl="Michael and his angels fought against the dragon|prevailed not|that old serpent, called the Devil, and Satan, which deceiveth the whole world|he was cast out into the earth"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="9" data-hl="that old serpent, called the Devil, and Satan, which deceiveth the whole world"></blockquote>
+    <h2 class="rise" style="--d:1">Five names, one enemy</h2>
+    <ol class="signs rise" style="--d:2">
+      <li class="now"><b>The great dragon</b>fierce, and out to devour</li>
+      <li><b>That old serpent</b>the same one from Eden (Genesis 3)</li>
+      <li><b>The Devil</b>Greek <span class="gk">diabolos</span>: the slanderer</li>
+      <li><b>Satan</b>Hebrew for the adversary, the accuser</li>
+      <li><b>The deceiver</b>he <em>“deceiveth the whole world”</em></li>
+    </ol>
+    <p class="note step">Notice who beats him: Michael, an angel. Daniel calls him <em>“the great prince which standeth for the children of thy people”</em> (Daniel 12:1). Satan is not God's equal opposite. He is a creature, and one of God's servants throws him out. <em>“Prevailed not”</em>: that is his story.</p>
+    <p class="note step">Jesus said it too: <em>“I beheld Satan as lightning fall from heaven”</em> (Luke 10:18). Whatever he whispers to you, remember he is the one who lost.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="10-11" data-hl="the accuser of our brethren is cast down, which accused them before our God day and night|they overcame him by the blood of the Lamb, and by the word of their testimony|they loved not their lives unto the death"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise">The accuser of our brethren</h2>
+    <div class="stage rv12-court rise" style="--d:1">
+      <svg viewBox="0 0 640 360" role="img" aria-label="A courtroom before God's throne. On the left the accuser points at a brother on the right whose head is bowed. Charges appear one after another, day and night: You did it again. You'll never change. Look what you did to your family. Some Christian you are. God is done with you. Then red covers every charge and stamps it PAID; the accuser falls away, cast down. Then the brother lifts his head and says, Let me tell you what the Lord did for me.">
+        <circle class="rv12-halo" cx="320" cy="58" r="50"/>
+        <rect class="rv12-seat" x="298" y="34" width="44" height="42" rx="6"/>
+        <text x="320" y="102" text-anchor="middle">“before our God”</text>
+        <circle class="rv12-sunmoon rv12-sun" cx="60" cy="46" r="15"/>
+        <path class="rv12-sunmoon rv12-moonx" d="M54 30 A16 16 0 1 0 72 58 A12 12 0 1 1 54 30 Z"/>
+        <text x="60" y="88" text-anchor="middle">“day and night”</text>
+        <g class="rv12-down">
+          <path class="rv12-accuser" d="M80 330 L94 222 Q110 186 126 222 L140 330 Z"/>
+          <line class="rv12-point" x1="122" y1="240" x2="186" y2="214"/>
+          <text class="rv12-lbl" x="110" y="350" text-anchor="middle">the accuser</text>
+        </g>
+        <text class="rv12-lbl rv12-castlbl" x="110" y="300" text-anchor="middle">“cast down”</text>
+        <g class="rv12-slip" style="--k:0"><rect class="rv12-paper" x="196" y="122" width="244" height="32" rx="4"/><text class="rv12-charge" x="318" y="143" text-anchor="middle">You did it again.</text><rect class="rv12-cover" style="--k:0" x="196" y="122" width="244" height="32" rx="4"/><g class="rv12-paid" style="--k:0"><text x="318" y="143" text-anchor="middle">PAID</text></g></g>
+        <g class="rv12-slip" style="--k:1"><rect class="rv12-paper" x="196" y="160" width="244" height="32" rx="4"/><text class="rv12-charge" x="318" y="181" text-anchor="middle">You'll never change.</text><rect class="rv12-cover" style="--k:1" x="196" y="160" width="244" height="32" rx="4"/><g class="rv12-paid" style="--k:1"><text x="318" y="181" text-anchor="middle">PAID</text></g></g>
+        <g class="rv12-slip" style="--k:2"><rect class="rv12-paper" x="196" y="198" width="244" height="32" rx="4"/><text class="rv12-charge" x="318" y="219" text-anchor="middle">Look what you did to your family.</text><rect class="rv12-cover" style="--k:2" x="196" y="198" width="244" height="32" rx="4"/><g class="rv12-paid" style="--k:2"><text x="318" y="219" text-anchor="middle">PAID</text></g></g>
+        <g class="rv12-slip" style="--k:3"><rect class="rv12-paper" x="196" y="236" width="244" height="32" rx="4"/><text class="rv12-charge" x="318" y="257" text-anchor="middle">Some Christian you are.</text><rect class="rv12-cover" style="--k:3" x="196" y="236" width="244" height="32" rx="4"/><g class="rv12-paid" style="--k:3"><text x="318" y="257" text-anchor="middle">PAID</text></g></g>
+        <g class="rv12-slip" style="--k:4"><rect class="rv12-paper" x="196" y="274" width="244" height="32" rx="4"/><text class="rv12-charge" x="318" y="295" text-anchor="middle">God is done with you.</text><rect class="rv12-cover" style="--k:4" x="196" y="274" width="244" height="32" rx="4"/><g class="rv12-paid" style="--k:4"><text x="318" y="295" text-anchor="middle">PAID</text></g></g>
+        <g class="rv12-bow"><circle class="rv12-man" cx="540" cy="236" r="12"/></g>
+        <rect class="rv12-man" x="528" y="252" width="24" height="76" rx="9"/>
+        <text x="540" y="350" text-anchor="middle">the brother</text>
+        <g class="rv12-say">
+          <path class="rv12-bubble" d="M462 140 H630 Q638 140 638 148 V192 Q638 200 630 200 H560 L544 218 L548 200 H462 Q454 200 454 192 V148 Q454 140 462 140 Z"/>
+          <text x="546" y="164" text-anchor="middle">Let me tell you what</text>
+          <text x="546" y="186" text-anchor="middle">the Lord did for me.</text>
+        </g>
+      </svg>
+    </div>
+    <p class="note step rv12-blood"><em>Satan</em> means accuser, and he works <em>“day and night.”</em> Some of it is even true. But every charge against a believer is paid by <em>“the blood of the Lamb,”</em> and heaven threw the prosecutor out.</p>
+    <p class="note step rv12-speak">Then the brother speaks, <em>“the word of their testimony.”</em> He doesn't argue he's not so bad. He tells what Christ did.</p>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise">The voice at three in the morning</h2>
+    <p class="note rise" style="--d:1">Some of you know this voice. It lists your failures in the middle of the night. It sounds like your own mind, and it never runs out of material. Zechariah saw it in a vision of Joshua, the high priest:</p>
+    <div class="pair">
+      <blockquote class="quote step"><p>“And he shewed me Joshua the high priest standing before the angel of the LORD, and Satan standing at his right hand to resist him.”</p><cite>Zechariah 3:1</cite></blockquote>
+      <blockquote class="quote step"><p>“And he answered and spake unto those that stood before him, saying, Take away the filthy garments from him. And unto him he said, Behold, I have caused thine iniquity to pass from thee, and I will clothe thee with change of raiment.”</p><cite>Zechariah 3:4</cite></blockquote>
+    </div>
+    <p class="note step">Joshua's clothes really were filthy. God didn't deny it. He took them off him and dressed him clean. When the accuser reads your list, don't argue the facts. Point to the blood: <em>“There is therefore now no condemnation to them which are in Christ Jesus”</em> (Romans 8:1).</p>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="11" data-hl="they overcame him by the blood of the Lamb, and by the word of their testimony; and they loved not their lives unto the death"></blockquote>
+    <div class="columns">
+      <div class="col grace rise" style="--d:1">
+        <p class="who">What He did</p>
+        <h3>The blood of the Lamb</h3>
+        <p>The answer to every charge. Not your good week, not your promise to do better. Jesus is our <em>“advocate with the Father”</em> (1 John 2:1), and His blood has already paid.</p>
+      </div>
+      <div class="col grace rise" style="--d:2">
+        <p class="who">What you say</p>
+        <h3>The word of their testimony</h3>
+        <p>Saying out loud what Christ has done for you. Secrets give the accuser power; a story told in the light takes it away. This is why telling your story in this group matters.</p>
+      </div>
+    </div>
+    <blockquote class="quote step"><p>“Who shall lay any thing to the charge of God’s elect? It is God that justifieth.”</p><cite>Romans 8:33</cite></blockquote>
+    <p class="note step"><em>“They loved not their lives unto the death”</em>: they held nothing back from Christ, not even their lives. The devil can't buy a man who has already given himself away.</p>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise">Your testimony has three parts</h2>
+    <div class="daybreak climb">
+      <div class="rise" style="--d:2"><i>Before</i><b>What I was</b><p>Honest, short, no bragging about the old days. One or two sentences.</p><p class="kjv">“such were some of you”</p></div>
+      <div class="step"><i>The turn</i><b>How Christ found me</b><p>When and how you trusted Him. Paul told his own story this way (Acts 26).</p></div>
+      <div class="step"><i>Since</i><b>What He's doing now</b><p>Not that you're perfect. What He changed, and what He's still working on.</p><p class="kjv">“all things are become new”</p></div>
+    </div>
+    <blockquote class="quote step"><p>“Howbeit Jesus suffered him not, but saith unto him, Go home to thy friends, and tell them how great things the Lord hath done for thee, and hath had compassion on thee.”</p><cite>Mark 5:19</cite></blockquote>
+  </div>
+</section>
+
+<section class="slide verse" data-v="12" data-hl="Therefore rejoice, ye heavens|the devil is come down unto you, having great wrath, because he knoweth that he hath but a short time"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <div class="split">
+      <div class="stage">
+        <svg class="clock" viewBox="0 -44 320 364" style="--stop:-14deg" role="img" aria-label="A clock hand sweeps around and stops just short of the hour: the devil's time is nearly up.">
+          <circle class="clock-face" cx="160" cy="160" r="140"/>
+          <g>
+            <line class="clock-tick" x1="160" y1="38" x2="160" y2="58" transform="rotate(30 160 160)"/>
+            <line class="clock-tick" x1="160" y1="38" x2="160" y2="58" transform="rotate(60 160 160)"/>
+            <line class="clock-tick" x1="160" y1="38" x2="160" y2="58" transform="rotate(90 160 160)"/>
+            <line class="clock-tick" x1="160" y1="38" x2="160" y2="58" transform="rotate(120 160 160)"/>
+            <line class="clock-tick" x1="160" y1="38" x2="160" y2="58" transform="rotate(150 160 160)"/>
+            <line class="clock-tick" x1="160" y1="38" x2="160" y2="58" transform="rotate(180 160 160)"/>
+            <line class="clock-tick" x1="160" y1="38" x2="160" y2="58" transform="rotate(210 160 160)"/>
+            <line class="clock-tick" x1="160" y1="38" x2="160" y2="58" transform="rotate(240 160 160)"/>
+            <line class="clock-tick" x1="160" y1="38" x2="160" y2="58" transform="rotate(270 160 160)"/>
+            <line class="clock-tick" x1="160" y1="38" x2="160" y2="58" transform="rotate(300 160 160)"/>
+            <line class="clock-tick" x1="160" y1="38" x2="160" y2="58" transform="rotate(330 160 160)"/>
+          </g>
+          <circle class="clock-hour" cx="160" cy="44" r="12"/>
+          <text x="160" y="-14" text-anchor="middle" font-size="20" font-weight="700" style="fill:var(--accent-hot)">his time is up</text>
+          <line class="clock-hand" x1="160" y1="160" x2="160" y2="68"/>
+          <circle cx="160" cy="160" r="10" style="fill:var(--ink)"/>
+          <text x="160" y="232" text-anchor="middle" font-size="22" class="serif" font-style="italic" style="fill:var(--ink-soft)">but a short time</text>
+        </svg>
+      </div>
+      <div>
+        <h2 class="rise" style="--d:1">The rage of a loser on a clock</h2>
+        <p class="note rise" style="--d:2">Heaven rejoices; earth gets a warning. The devil has <em>“great wrath,”</em> and the reason is good news: <em>“he hath but a short time.”</em></p>
+        <p class="note step">A cornered animal fights hardest. If the fight feels fierce right now, that's not a sign you're losing. It's a sign he is. <em>“Resist the devil, and he will flee from you”</em> (James 4:7).</p>
+        <p class="note step">And his end is already written: <em>“the God of peace shall bruise Satan under your feet shortly”</em> (Romans 16:20). Under <em>your</em> feet.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="slide part">
+  <div class="inner">
+    <p class="part-n rise">Part three</p>
+    <h2 class="rise" style="--d:1">On eagles' wings</h2>
+    <p class="range rise" style="--d:2">Verses 13–17</p>
+    <div class="rule"></div>
+    <p class="hook rise" style="--d:4">The dragon can't reach the child, so he goes after the child's family. God carries them.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="13-14" data-hl="he persecuted the woman which brought forth the man child|two wings of a great eagle|a time, and times, and half a time"></section>
+
+<section class="slide verse" data-v="15-17" data-hl="the earth helped the woman|the remnant of her seed, which keep the commandments of God, and have the testimony of Jesus Christ"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <div class="split">
+      <div class="stage rv12-wings">
+        <svg viewBox="0 0 520 340" role="img" aria-label="On the left, the serpent pours a flood of water from his mouth along the ground. Above, the woman is carried away on two great eagle's wings toward a place prepared in the wilderness, with a tent and a palm tree. Then the earth opens its mouth and swallows the flood.">
+          <path class="rv12-ground" d="M0 250 Q130 240 260 252 T520 248 V340 H0 Z"/>
+          <path class="rv12-snake" d="M20 300 C30 250 70 270 66 226 C62 196 92 180 108 186"/>
+          <path class="rv12-snakehead" d="M100 176 L132 180 L120 190 L134 198 L102 198 Z"/>
+          <circle class="rv12-eye" cx="112" cy="184" r="3"/>
+          <path class="rv12-flood" d="M134 192 C170 200 180 240 220 254 S330 262 380 258"/>
+          <ellipse class="rv12-mouth" cx="310" cy="262" rx="48" ry="12"/>
+          <g class="rv12-help"><text x="290" y="306" text-anchor="middle" style="fill:var(--ink)">“the earth helped the woman”</text></g>
+          <line class="rv12-palm" x1="470" y1="250" x2="466" y2="196"/>
+          <path class="rv12-palm" d="M466 196 q-20 -8 -32 6 M466 196 q18 -10 32 2 M466 196 q-8 -18 -24 -20 M466 196 q10 -18 26 -18"/>
+          <path class="rv12-tent" d="M400 250 L424 216 L448 250 Z"/>
+          <text x="456" y="172" text-anchor="middle">“a place prepared”</text>
+          <g transform="translate(330 110)">
+            <g class="rv12-fly">
+              <path class="rv12-wing" d="M0 0 C-30 -46 -90 -44 -130 -20 C-96 -18 -60 -6 -26 14 Z"/>
+              <path class="rv12-wing" d="M0 0 C30 -46 90 -44 130 -20 C96 -18 60 -6 26 14 Z"/>
+              <ellipse class="rv12-wing" cx="0" cy="8" rx="16" ry="10"/>
+              <circle class="rv12-rider" cx="0" cy="-14" r="7"/>
+              <path class="rv12-rider" d="M-6 -7 H6 L9 8 H-9 Z"/>
+            </g>
+          </g>
+          <text class="rv12-lbl" x="330" y="36" text-anchor="middle">“two wings of a great eagle”</text>
+          <text x="60" y="326" text-anchor="middle" style="fill:var(--ink)">the serpent</text>
+        </svg>
+      </div>
+      <div>
+        <h2 class="rise" style="--d:1">Carried, fed and kept</h2>
+        <p class="note rise" style="--d:2">God used the same words when He brought Israel out of slavery:</p>
+        <blockquote class="quote step"><p>“Ye have seen what I did unto the Egyptians, and how I bare you on eagles’ wings, and brought you unto myself.”</p><cite>Exodus 19:4</cite></blockquote>
+        <p class="note step rv12-swallow">The serpent sends a flood to sweep her away, and God makes the ground itself swallow it, as it once swallowed Pharaoh's army (Exodus 15:12). <em>“A time, and times, and half a time”</em> is the same 1,260 days again: a set time, and she is nourished all through it.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="17" data-hl="went to make war with the remnant of her seed, which keep the commandments of God, and have the testimony of Jesus Christ"></blockquote>
+    <h2 class="rise" style="--d:1">Why the fight feels personal</h2>
+    <p class="note rise" style="--d:2">The dragon couldn't touch the Child, who is on the throne. He couldn't drown the woman. So he goes after her other children: people who keep God's commandments and <em>“have the testimony of Jesus Christ.”</em> That is you.</p>
+    <p class="note step">If following Jesus has made your life feel more like a war, not less, this verse explains it. You are not imagining it. You are now on the side the dragon hates.</p>
+    <p class="note step">But look at the whole chapter: he loses to the Child, loses in heaven, loses to the woman, and is beaten by believers with a story and the blood. He is <em>“wroth”</em>, but he is not winning.</p>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise">Today, under the blood</h2>
+    <ol class="signs rise" style="--d:1">
+      <li class="now"><b>When the accuser speaks</b>Don't argue the facts. Confess the sin to God (1 John 1:9), then point to the blood: it is paid.</li>
+      <li><b>Tell your story</b>Before, the turn, since. Tell it to one person today, even if it's only three sentences.</li>
+      <li><b>Remember the clock</b>His rage is loud because his time is short. Christ is on the throne, and you are carried.</li>
+    </ol>
+    <p class="note step">Regret is real, and the accuser will use it. But the man who has been forgiven much has the best story in the room. Today, tell somebody what the Lord has done for you.</p>
+  </div>
+</section>
+
+<section class="slide remember">
+  <div class="inner">
+    <h2 class="rise">Points to remember</h2>
+    <ol class="seeds">
+      <li class="step"><span class="topic">The woman</span><span class="seed-q">“a woman clothed with the sun … a crown of twelve stars” <cite>12:1</cite></span><span class="take">Joseph's dream explains the picture: God's people, from whom Christ came. Teachers differ on the details; God protects her.</span></li>
+      <li class="step"><span class="topic">The dragon</span><span class="seed-q">“that old serpent, called the Devil, and Satan” <cite>12:9</cite></span><span class="take">Scripture names him. He wants to devour Christ and everything that belongs to Him.</span></li>
+      <li class="step"><span class="topic">The child</span><span class="seed-q">“her child was caught up unto God, and to his throne” <cite>12:5</cite></span><span class="take">The child is Christ, the King of Psalm 2. Christmas was war, and the dragon lost.</span></li>
+      <li class="step"><span class="topic">War in heaven</span><span class="seed-q">“And prevailed not” <cite>12:8</cite></span><span class="take">Michael and his angels won. Satan is a creature, cast out, not God's equal.</span></li>
+      <li class="step"><span class="topic">The accuser</span><span class="seed-q">“they overcame him by the blood of the Lamb, and by the word of their testimony” <cite>12:11</cite></span><span class="take">The blood answers every charge. Your story, told out loud, takes away his power.</span></li>
+      <li class="step"><span class="topic">A short time</span><span class="seed-q">“he knoweth that he hath but a short time” <cite>12:12</cite></span><span class="take">His rage is the rage of a loser on a clock. God carries and feeds His people through it.</span></li>
+    </ol>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 1 of 6</p>
+      <span class="topic">The woman</span>
+      <h2>Who is the woman clothed with the sun?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="1" data-hl="a woman clothed with the sun, and the moon under her feet, and upon her head a crown of twelve stars"></blockquote>
+      <blockquote class="quote step"><p>“And he dreamed yet another dream, and told it his brethren, and said, Behold, I have dreamed a dream more; and, behold, the sun and the moon and the eleven stars made obeisance to me.”</p><cite>Genesis 37:9</cite></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>Joseph's dream tells us how to read the picture: sun, moon and twelve stars are Jacob's family, the people of Israel. Many teachers say she is Israel, from whom Christ was born; others say all God's people. Either way, she is God's people, and He protects her.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 2 of 6</p>
+      <span class="topic">The dragon</span>
+      <h2>Who is the great red dragon, and what does he want?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="4" data-hl="for to devour her child as soon as it was born"></blockquote>
+      <blockquote class="quote step" data-q="9" data-hl="that old serpent, called the Devil, and Satan, which deceiveth the whole world"></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>The Bible names him: the old serpent of Eden, the Devil, Satan, the deceiver. His crowns claim to rule and his horns show his power. He wants to destroy Christ, and when he can't, he goes after Christ's people.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 3 of 6</p>
+      <span class="topic">The child</span>
+      <h2>Who is the man child caught up to God?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="5" data-hl="a man child, who was to rule all nations with a rod of iron|caught up unto God, and to his throne"></blockquote>
+      <blockquote class="quote step"><p>“Thou shalt break them with a rod of iron; thou shalt dash them in pieces like a potter’s vessel.”</p><cite>Psalm 2:9</cite></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>Jesus Christ, the King of Psalm 2 who rules the nations with a rod of iron. The dragon tried to kill Him at His birth through Herod, but He lived, died, rose and was caught up to God's throne. It is Christmas told from heaven's side.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 4 of 6</p>
+      <span class="topic">War in heaven</span>
+      <h2>Who won the war in heaven?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="7-8" data-hl="Michael and his angels fought against the dragon|And prevailed not"></blockquote>
+      <blockquote class="quote step"><p>“And he said unto them, I beheld Satan as lightning fall from heaven.”</p><cite>Luke 10:18</cite></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>Michael and God's angels. The dragon <em>“prevailed not”</em> and was thrown out with his angels. Satan is not God's equal; he is a creature, beaten by one of God's servants. Whatever he whispers, he is the one who lost.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 5 of 6</p>
+      <span class="topic">The accuser</span>
+      <h2>How do believers overcome the accuser?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="11" data-hl="they overcame him by the blood of the Lamb, and by the word of their testimony"></blockquote>
+      <blockquote class="quote step"><p>“My little children, these things write I unto you, that ye sin not. And if any man sin, we have an advocate with the Father, Jesus Christ the righteous:”</p><cite>1 John 2:1</cite></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>By the blood of the Lamb, which has paid every charge, and by the word of their testimony: telling out loud what Christ has done. Don't argue the facts with the accuser. Confess, point to the blood, and tell your story.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 6 of 6</p>
+      <span class="topic">A short time</span>
+      <h2>Why is the devil so angry, and how does God keep His people?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="12" data-hl="having great wrath, because he knoweth that he hath but a short time"></blockquote>
+      <blockquote class="quote step" data-q="14" data-hl="two wings of a great eagle"></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>He has lost in heaven and knows his time is short, so he attacks God's people. But God carries them on eagles' wings, as He carried Israel out of Egypt, feeds them in a place prepared, and makes the earth swallow the flood.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide prayer">
+  <div class="inner">
+    <div class="emblem rise"></div>
+    <h2 class="rise" style="--d:1">Prayer requests</h2>
+    <p class="ask-line rise" style="--d:2">What can we pray about for you today?</p>
+    <blockquote class="quote rise" style="--d:4" data-q="11"></blockquote>
+  </div>
+</section>
+
+</main>
+
+<script>
+// King James Version, Revelation chapter 12
+const V = {
+  1: "And there appeared a great wonder in heaven; a woman clothed with the sun, and the moon under her feet, and upon her head a crown of twelve stars:",
+  2: "And she being with child cried, travailing in birth, and pained to be delivered.",
+  3: "And there appeared another wonder in heaven; and behold a great red dragon, having seven heads and ten horns, and seven crowns upon his heads.",
+  4: "And his tail drew the third part of the stars of heaven, and did cast them to the earth: and the dragon stood before the woman which was ready to be delivered, for to devour her child as soon as it was born.",
+  5: "And she brought forth a man child, who was to rule all nations with a rod of iron: and her child was caught up unto God, and to his throne.",
+  6: "And the woman fled into the wilderness, where she hath a place prepared of God, that they should feed her there a thousand two hundred and threescore days.",
+  7: "And there was war in heaven: Michael and his angels fought against the dragon; and the dragon fought and his angels,",
+  8: "And prevailed not; neither was their place found any more in heaven.",
+  9: "And the great dragon was cast out, that old serpent, called the Devil, and Satan, which deceiveth the whole world: he was cast out into the earth, and his angels were cast out with him.",
+  10: "And I heard a loud voice saying in heaven, Now is come salvation, and strength, and the kingdom of our God, and the power of his Christ: for the accuser of our brethren is cast down, which accused them before our God day and night.",
+  11: "And they overcame him by the blood of the Lamb, and by the word of their testimony; and they loved not their lives unto the death.",
+  12: "Therefore rejoice, ye heavens, and ye that dwell in them. Woe to the inhabiters of the earth and of the sea! for the devil is come down unto you, having great wrath, because he knoweth that he hath but a short time.",
+  13: "And when the dragon saw that he was cast unto the earth, he persecuted the woman which brought forth the man child.",
+  14: "And to the woman were given two wings of a great eagle, that she might fly into the wilderness, into her place, where she is nourished for a time, and times, and half a time, from the face of the serpent.",
+  15: "And the serpent cast out of his mouth water as a flood after the woman, that he might cause her to be carried away of the flood.",
+  16: "And the earth helped the woman, and the earth opened her mouth, and swallowed up the flood which the dragon cast out of his mouth.",
+  17: "And the dragon was wroth with the woman, and went to make war with the remnant of her seed, which keep the commandments of God, and have the testimony of Jesus Christ."
+};
+const BOOK = "Revelation 12";
+</script>
+<script src="../assets/deck.js"></script>
+</body>
+</html>
