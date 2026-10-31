@@ -14508,5 +14508,105 @@ window.STUDIES = [
       },
       "big": "Faith is meant to be handed on, man to man. Stay clean and keep working, because any man can become useful to the Master, and He stays faithful even when we don't."
     }
+  },
+  {
+    "id": "2-timothy-03",
+    "type": "chapter",
+    "book": "2 Timothy",
+    "ch": 3,
+    "date": "2026-10-31",
+    "title": "2 Timothy 3",
+    "sub": "Hard times, and the Book that holds",
+    "about": "Paul sees the pressure coming and tells Timothy what to hold on to: a life people can watch, and the Scriptures, which God breathed and which make a man ready for every good work.",
+    "tags": [
+      "Hard times",
+      "Pretending",
+      "The cost",
+      "Roots",
+      "Salvation",
+      "The Word"
+    ],
+    "url": "studies/2-timothy-03.html",
+    "overview": {
+      "where": "Written from a Roman prison, to Timothy at Ephesus; Paul's old trouble spots, Antioch in Pisidia, Iconium and Lystra, are remembered",
+      "when": "About AD 66 to 67, near the end of Paul's life; Paul recalls his first journey, about AD 46 to 48",
+      "people": [
+        "paul",
+        "timothy",
+        "jesus",
+        "moses",
+        "jannes-and-jambres"
+      ],
+      "places": [
+        "antioch-in-pisidia",
+        "iconium",
+        "lystra"
+      ],
+      "story": [
+        "“In the last days perilous times shall come.” Paul lists eighteen ways love goes wrong, from lovers of their own selves to lovers of pleasures more than lovers of God, and warns of a form of godliness that denies the power (1–5).",
+        "False teachers prey on the burdened, always learning and never coming to the truth. Like Jannes and Jambres, who copied Moses for a while, they shall proceed no further (6–9).",
+        "Paul points Timothy to a life he has watched up close, and to the persecutions at Antioch, Iconium and Lystra: “out of them all the Lord delivered me.” All who live godly in Christ Jesus will meet pushback (10–13).",
+        "Timothy is to continue in what he learned from a child. All scripture is God-breathed, good for doctrine, reproof, correction and instruction in righteousness, so the man of God is complete and ready for every good work (14–17)."
+      ],
+      "key": {
+        "ref": "2 Timothy 3:16–17",
+        "text": "All scripture is given by inspiration of God, and is profitable for doctrine, for reproof, for correction, for instruction in righteousness: That the man of God may be perfect, throughly furnished unto all good works."
+      },
+      "big": "The last days are hard, and the list of what goes wrong starts with love turned inward, which describes us too. What holds a man is a life others can watch and the God-breathed Book, which shows what is true, where he is off, how to come back, and how to stay on the road."
+    }
+  },
+  {
+    "id": "2-timothy-04",
+    "type": "chapter",
+    "book": "2 Timothy",
+    "ch": 4,
+    "date": "2026-10-31",
+    "title": "2 Timothy 4",
+    "sub": "Finishing well",
+    "about": "Paul's last chapter: a charge to preach the word, a finish line and a crown, a roll call of friends who left and one who came back, and the Lord who stood with him when everyone else was gone.",
+    "tags": [
+      "The charge",
+      "Itching ears",
+      "Finishing",
+      "Demas",
+      "Mark",
+      "Not alone"
+    ],
+    "url": "studies/2-timothy-04.html",
+    "overview": {
+      "where": "Written from a prison in Rome to Timothy at Ephesus, with friends named in Thessalonica, Galatia, Dalmatia, Troas and Corinth",
+      "when": "About AD 66 to 67; by tradition Paul was put to death in Rome about AD 67 to 68",
+      "people": [
+        "paul",
+        "timothy",
+        "jesus",
+        "demas",
+        "john-mark",
+        "luke-the-physician",
+        "tychicus",
+        "alexander-the-coppersmith",
+        "crescens",
+        "titus"
+      ],
+      "places": [
+        "rome",
+        "thessalonica",
+        "ephesus",
+        "troas",
+        "galatia",
+        "dalmatia"
+      ],
+      "story": [
+        "Paul charges Timothy before God and Christ: preach the word, in season and out. A time will come when people heap up teachers with itching ears, so Timothy is to watch, endure, and do the work of an evangelist (1–5).",
+        "Paul is ready to be poured out and his departure is at hand: “I have fought a good fight, I have finished my course, I have kept the faith.” A crown of righteousness waits for him and for all who love Christ's appearing (6–8).",
+        "He asks Timothy to come before winter. Demas has left, loving this present world; only Luke is with him. “Take Mark… for he is profitable to me.” He wants his cloak, his books and especially the parchments, and warns about Alexander the coppersmith (9–15).",
+        "At his first answer no man stood with him, “notwithstanding the Lord stood with me, and strengthened me.” The Lord will deliver him from every evil work and preserve him to his heavenly kingdom. Paul sends greetings and ends: “Grace be with you” (16–22)."
+      ],
+      "key": {
+        "ref": "2 Timothy 4:7",
+        "text": "I have fought a good fight, I have finished my course, I have kept the faith:"
+      },
+      "big": "A man can finish well, and a finish is made of ordinary days. People will fail you, some will quit and some will come back, but the Lord stands with you, brings you through, and gives the crown to everyone who loves His appearing."
+    }
   }
 ];

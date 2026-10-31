@@ -1,0 +1,679 @@
+<!doctype html>
+<html lang="en" data-theme="scribe">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>2 Timothy 3</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="../assets/fonts.css">
+<link rel="stylesheet" href="../assets/deck.css">
+<link rel="stylesheet" href="../assets/themes.css">
+<style>
+/* t2t03-where: where we are in 2 Timothy. Four chapter cards (.t2t03-ch), the one we are in is lit (.here); earlier ones are ticked (.done). */
+.t2t03-where { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; margin: .5em 0 1em; }
+.t2t03-ch { padding: .5em .7em .6em; border-radius: 10px; border: 1.5px dashed var(--line-strong); border-top: 5px solid var(--line-strong); color: var(--ink-soft); }
+.t2t03-ch i { display: grid; place-items: center; width: 1.9rem; height: 1.9rem; border-radius: 50%; border: 2px solid var(--line-strong); font: 700 .95rem var(--sans); font-style: normal; margin-bottom: .3em; }
+.t2t03-ch b { display: block; font: 600 clamp(1rem, .9rem + .5vw, 1.35rem)/1.15 var(--serif); color: var(--ink); }
+.t2t03-ch small { display: block; margin-top: .2em; font: italic clamp(.78rem, .72rem + .3vw, 1rem)/1.3 var(--serif); }
+.t2t03-ch q { display: block; margin-top: .35em; font: clamp(.78rem, .72rem + .28vw, .98rem)/1.3 var(--serif); quotes: none; color: var(--ink-soft); }
+.t2t03-ch cite { font: 700 .72rem var(--sans); font-style: normal; color: var(--accent-hot); }
+.t2t03-ch.done { border-top-color: var(--accent); }
+.t2t03-ch.done i { background: var(--accent); border-color: var(--accent); color: var(--on-accent); }
+.t2t03-ch.here { border: 2px solid var(--accent); border-top-width: 5px; background: color-mix(in srgb, var(--accent) 14%, transparent); }
+.t2t03-ch.here i { background: var(--accent-hot); border-color: var(--accent-hot); color: var(--on-accent); }
+@media (max-width: 640px) { .t2t03-where { grid-template-columns: 1fr 1fr; gap: 8px; } .t2t03-ch q, .t2t03-ch cite { display: none; } }
+
+/* t2t03-tree: the list of verses 2-4 sorted into three roots: me first, people hurt, God last. Three columns step in. */
+.t2t03-root { text-align: center; padding: .4em .8em; margin: .3em 0 .5em; border-radius: 10px; background: color-mix(in srgb, var(--danger) 14%, transparent); border: 1.5px solid var(--danger); font: italic 600 clamp(1rem, .9rem + .55vw, 1.4rem) var(--serif); color: var(--ink); }
+.t2t03-tree { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin: 0 0 .8em; }
+.t2t03-tree > div { padding: .5em .7em .6em; border-radius: 12px; background: var(--surface); border: 1px solid var(--line-strong); border-top: 5px solid var(--danger); }
+.t2t03-tree h3 { font: 600 clamp(1.05rem, .92rem + .55vw, 1.4rem)/1.15 var(--serif); color: var(--ink); margin: 0 0 .25em; }
+.t2t03-tree ul { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: .3em .35em; }
+.t2t03-tree li { padding: .1em .55em .14em; border-radius: 999px; border: 1px solid var(--line-strong); font: 600 clamp(.78rem, .72rem + .3vw, 1rem) var(--sans); color: var(--ink-soft); }
+@media (max-width: 760px) { .t2t03-tree { grid-template-columns: 1fr; } }
+
+/* t2t03-words: old KJV words in plain English, small cards in a grid */
+.t2t03-words { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px 12px; margin: .4em 0 .8em; }
+.t2t03-words > div { padding: .35em .65em .45em; border-left: 4px solid var(--accent); border-radius: 0 8px 8px 0; background: var(--surface); }
+.t2t03-words b { display: block; font: 600 clamp(.95rem, .86rem + .45vw, 1.25rem) var(--serif); color: var(--ink); }
+.t2t03-words span { display: block; font: italic clamp(.8rem, .74rem + .3vw, 1.02rem)/1.3 var(--serif); color: var(--ink-soft); }
+@media (max-width: 760px) { .t2t03-words { grid-template-columns: 1fr 1fr; } }
+
+/* t2t03-form: a hollow outline of a man beside a man with a light inside. The light comes on at a click (.t2t03-go). */
+.t2t03-hollow { fill: none; stroke: var(--ink-soft); stroke-width: 4; stroke-dasharray: 9 8; }
+.t2t03-solid { fill: color-mix(in srgb, var(--accent) 22%, transparent); stroke: var(--accent); stroke-width: 4; }
+.t2t03-core { fill: var(--glow); opacity: 0; transform-box: fill-box; transform-origin: center; transform: scale(.3); transition: opacity .7s ease, transform .9s ease; }
+.slide:has(.t2t03-go.on) .t2t03-core { opacity: 1; transform: none; }
+.t2t03-halo { fill: color-mix(in srgb, var(--glow) 40%, transparent); opacity: 0; transition: opacity 1.2s ease .3s; }
+.slide:has(.t2t03-go.on) .t2t03-halo { opacity: 1; }
+.t2t03-cap { font: italic 600 21px var(--serif); fill: var(--ink); }
+.t2t03-cap2 { font: 600 15px var(--sans); fill: var(--ink-soft); }
+
+/* t2t03-copy: Moses' signs and what the magicians could copy. A row each; the last (lice) is a miss, on a click. */
+.t2t03-copy { display: grid; grid-template-columns: 1fr 5.5rem 1fr; gap: 6px 10px; align-items: center; margin: .4em 0 1em; }
+.t2t03-copy small { font: 700 clamp(.78rem, .72rem + .3vw, 1rem) var(--sans); color: var(--ink-soft); text-align: center; }
+.t2t03-copy .sign { padding: .3em .7em; border-radius: 8px; background: var(--surface); border: 1px solid var(--line-strong); font: 600 clamp(.95rem, .85rem + .45vw, 1.25rem) var(--serif); }
+.t2t03-copy .sign span { display: block; font: italic .78em var(--serif); color: var(--ink-soft); }
+.t2t03-copy .yes, .t2t03-copy .no { justify-self: center; display: grid; place-items: center; width: 2.1rem; height: 2.1rem; border-radius: 50%; font: 700 1.1rem var(--sans); }
+.t2t03-copy .yes { background: var(--accent); color: var(--on-accent); }
+.t2t03-copy .no { border: 2.5px solid var(--danger); color: var(--danger); }
+.t2t03-copy .say { font: italic clamp(.82rem, .76rem + .3vw, 1.02rem)/1.25 var(--serif); color: var(--ink-soft); }
+.t2t03-copy .lost { opacity: 0; transform: translateY(6px); transition: opacity .6s ease, transform .6s ease; }
+.slide:has(.t2t03-lice.on) .t2t03-copy .lost { opacity: 1; transform: none; }
+@media (max-width: 640px) { .t2t03-copy { grid-template-columns: 1fr 2.4rem 1fr; } .t2t03-copy .say { display: none; } }
+
+/* t2t03-seven: the seven things Timothy watched at close range, as pills that step in */
+.t2t03-seven { list-style: none; margin: .4em 0 .8em; padding: 0; display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; }
+.t2t03-seven li { padding: .45em .7em .55em; border-radius: 12px; background: var(--surface); border: 1px solid var(--line-strong); border-top: 5px solid var(--accent); }
+.t2t03-seven b { display: block; font: 600 clamp(1rem, .9rem + .5vw, 1.35rem) var(--serif); color: var(--ink); }
+.t2t03-seven span { display: block; margin-top: .1em; font: italic clamp(.8rem, .74rem + .3vw, 1.02rem)/1.3 var(--serif); color: var(--ink-soft); }
+.t2t03-seven .n { font: 700 .72rem var(--sans); font-style: normal; color: var(--accent-hot); text-transform: uppercase; letter-spacing: .05em; }
+@media (max-width: 760px) { .t2t03-seven { grid-template-columns: 1fr 1fr; } }
+
+/* t2t03-road: what the Word does in a man. A road, with four things that happen on it, one per click (.t2t03-s1 … .t2t03-s4). */
+.t2t03-roadbed { fill: var(--surface-2); stroke: var(--line-strong); stroke-width: 2; }
+.t2t03-line { stroke: var(--ink-soft); stroke-width: 3; stroke-dasharray: 14 12; }
+.t2t03-pole { stroke: var(--ink); stroke-width: 5; stroke-linecap: round; }
+.t2t03-board { fill: var(--accent); }
+.t2t03-boardtxt { font: 700 16px var(--sans); fill: var(--on-accent); }
+.t2t03-ditch { fill: color-mix(in srgb, var(--danger) 20%, transparent); stroke: var(--danger); stroke-width: 2.5; stroke-dasharray: 6 6; }
+.t2t03-off { fill: none; stroke: var(--danger); stroke-width: 5; stroke-linecap: round; stroke-dasharray: 10 9; }
+.t2t03-back { fill: none; stroke: var(--accent); stroke-width: 6; stroke-linecap: round; }
+.t2t03-step { fill: var(--accent); }
+.t2t03-flag { fill: var(--accent-hot); }
+.t2t03-lab { font: 700 17px var(--sans); fill: var(--ink-soft); }
+.t2t03-bang { fill: var(--danger); }
+.t2t03-bangtxt { font: 700 20px var(--sans); fill: var(--on-accent); }
+.t2t03-g { opacity: 0; transition: opacity .7s ease, transform .7s ease; }
+.t2t03-g1 { transform: translateY(-14px); } .t2t03-g2 { transform: translateX(-14px); } .t2t03-g3 { transform: translateY(14px); } .t2t03-g4 { transform: translateX(-14px); }
+.slide:has(.t2t03-s1.on) .t2t03-g1, .slide:has(.t2t03-s2.on) .t2t03-g2, .slide:has(.t2t03-s3.on) .t2t03-g3, .slide:has(.t2t03-s4.on) .t2t03-g4 { opacity: 1; transform: none; }
+.t2t03-four { list-style: none; margin: .3em 0 0; padding: 0; display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; }
+.t2t03-four li { padding: .4em .65em .5em; border-radius: 10px; background: var(--surface); border: 1px solid var(--line-strong); border-top: 5px solid var(--line-strong); }
+.t2t03-four li.on { border-top-color: var(--accent); }
+.t2t03-four .n { font: 700 .72rem var(--sans); color: var(--accent-hot); text-transform: uppercase; letter-spacing: .05em; }
+.t2t03-four b { display: block; font: 600 clamp(1.05rem, .92rem + .55vw, 1.4rem) var(--serif); color: var(--ink); }
+.t2t03-four i { display: block; font: italic clamp(.82rem, .76rem + .3vw, 1.02rem)/1.25 var(--serif); color: var(--ink-soft); }
+.t2t03-four p { margin: .25em 0 0; font-size: clamp(.8rem, .74rem + .3vw, 1rem); line-height: 1.3; color: var(--ink); }
+@media (max-width: 760px) { .t2t03-four { grid-template-columns: 1fr 1fr; } }
+
+/* t2t03-ask: four questions to put to any chapter */
+.t2t03-ask { list-style: none; margin: .4em 0 .8em; padding: 0; display: grid; gap: .45rem; counter-reset: ask; }
+.t2t03-ask li { counter-increment: ask; display: grid; grid-template-columns: 2.2rem 1fr; gap: .1rem .8rem; align-items: center; padding: .4em .7em; border-radius: 10px; background: var(--surface); border: 1px solid var(--line-strong); }
+.t2t03-ask li::before { content: counter(ask); grid-row: 1 / span 2; display: grid; place-items: center; width: 2rem; height: 2rem; border-radius: 50%; background: var(--accent); color: var(--on-accent); font: 700 1rem var(--sans); }
+.t2t03-ask b { font: 600 clamp(1rem, .9rem + .5vw, 1.3rem) var(--serif); color: var(--ink); }
+.t2t03-ask span { font: italic clamp(.82rem, .76rem + .3vw, 1.02rem) var(--serif); color: var(--ink-soft); }
+</style>
+</head>
+<body>
+<main class="deck" id="deck">
+
+<!-- ======================= OPENING ======================= -->
+<section class="slide title">
+  <div class="inner">
+    <div class="emblem rise"></div>
+    <h1 class="rise" style="--d:1">2 Timothy 3</h1>
+    <p class="sub rise" style="--d:3">Hard times, and the Book that holds</p>
+    <p class="tag rise" style="--d:5">Paul sees the pressure coming and tells Timothy what to hold on to: a life people can watch, and the Scriptures.</p>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise" style="--d:1">Where we are in 2 Timothy</h2>
+    <div class="t2t03-where rise" style="--d:2" role="img" aria-label="2 Timothy in four chapters. Chapter 1, done: don't be ashamed. Chapter 2, done: be strong, like a soldier. Chapter 3, where we are: hard times, hold to the Scriptures. Chapter 4: finish well.">
+      <div class="t2t03-ch done"><i>1</i><b>Don't be ashamed</b><small>fan the gift into flame</small><q>I am not ashamed</q> <cite>1:12</cite></div>
+      <div class="t2t03-ch done"><i>2</i><b>Be strong</b><small>soldier, athlete, farmer</small><q>be strong in the grace</q> <cite>2:1</cite></div>
+      <div class="t2t03-ch here"><i>3</i><b>Hard times</b><small>hold to what you learned</small><q>continue thou in the things</q> <cite>3:14</cite></div>
+      <div class="t2t03-ch"><i>4</i><b>Finish well</b><small>Paul's last words</small><q>I have kept the faith</q> <cite>4:7</cite></div>
+    </div>
+    <p class="note rise" style="--d:3">This is the last letter Paul ever wrote, about AD 66 to 67, from a cold Roman prison, and he knows the end is close. He is writing to Timothy, the younger man he trained, who is leading a church in Ephesus.</p>
+    <p class="note step">Read alone, chapter 3 still stands. An old man tells a younger one what the pressure will look like and what will hold him up when it comes. Every man in this room can use both.</p>
+  </div>
+</section>
+
+<section class="slide watch">
+  <div class="inner">
+    <h2 class="rise">Things to watch for</h2>
+    <p class="lede rise" style="--d:1">Keep these questions in the back of your mind as we read. We'll come back to every one of them at the end.</p>
+    <ol class="seeds">
+      <li class="step"><span class="topic">Hard times</span><span class="seed-q">What will men be like in the last days?</span></li>
+      <li class="step"><span class="topic">Pretending</span><span class="seed-q">What is missing in a form of godliness?</span></li>
+      <li class="step"><span class="topic">The cost</span><span class="seed-q">What will happen to all that will live godly in Christ Jesus?</span></li>
+      <li class="step"><span class="topic">Roots</span><span class="seed-q">How far back did Timothy know the holy scriptures?</span></li>
+      <li class="step"><span class="topic">Salvation</span><span class="seed-q">What are the holy scriptures able to do?</span></li>
+      <li class="step"><span class="topic">The Word</span><span class="seed-q">What is all scripture good for?</span></li>
+    </ol>
+  </div>
+</section>
+
+<!-- ======================= PART ONE: HARD TIMES ======================= -->
+<section class="slide part">
+  <div class="inner">
+    <p class="part-n rise">Part one</p>
+    <h2 class="rise" style="--d:1">Perilous times</h2>
+    <p class="range rise" style="--d:2">Verses 1–9</p>
+    <div class="rule"></div>
+    <p class="hook rise" style="--d:4">Paul gives Timothy a list. Read it slowly, and don't point it at anybody else.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="1-2" data-hl="in the last days perilous times shall come|lovers of their own selves, covetous, boasters, proud"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="1" data-hl="in the last days perilous times shall come"></blockquote>
+    <h2 class="rise" style="--d:1">The last days are now</h2>
+    <p class="note rise" style="--d:2">“The last days” does not mean some far-off year. In the Bible it means the whole stretch between Jesus' first coming and His return. Paul says <em>“perilous”</em>, which means hard to live through and dangerous, and he says it to a man who is already in the middle of it.</p>
+    <ol class="timeline" style="margin-top:.8em" aria-label="A timeline of the last days. Jesus is crucified and risen, about AD 30 to 33. Paul writes this letter, about AD 66 to 67. Today. Jesus returns. The last days are everything from the first to the last.">
+      <li class="lit" style="--k:0"><b>The cross</b><span>about AD 30 to 33</span></li>
+      <li style="--k:1"><b>Paul writes</b><span>about AD 66 to 67</span></li>
+      <li class="lit" style="--k:2"><b>Today</b><span>you are here</span></li>
+      <li class="wait" style="--k:3"><b>He returns</b><span>no one knows the day</span></li>
+    </ol>
+    <p class="note step">So this isn't a puzzle about the future. It's a description of the world a man has to get up and walk through this morning, and of what to stand on while he does.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="3-4" data-hl="Without natural affection, trucebreakers|despisers of those that are good|lovers of pleasures more than lovers of God"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise">Eighteen ways love goes wrong</h2>
+    <div class="t2t03-root rise" style="--d:1">It starts with love pointed the wrong way: at <em>self</em>.</div>
+    <div class="t2t03-tree">
+      <div class="step"><h3>Me first</h3><ul><li>lovers of their own selves</li><li>covetous</li><li>boasters</li><li>proud</li><li>highminded</li><li>heady</li><li>incontinent</li></ul></div>
+      <div class="step"><h3>Other people pay</h3><ul><li>blasphemers</li><li>disobedient to parents</li><li>unthankful</li><li>without natural affection</li><li>trucebreakers</li><li>false accusers</li><li>fierce</li><li>despisers of those that are good</li><li>traitors</li></ul></div>
+      <div class="step"><h3>God comes last</h3><ul><li>unholy</li><li>lovers of pleasures more than lovers of God</li></ul></div>
+    </div>
+    <p class="note step">Look where the list begins and where it ends. It begins with <em>“lovers of their own selves”</em> and ends with <em>“lovers of pleasures more than lovers of God.”</em> Between them, every ugly thing grows out of the same root: me, and what I want right now.</p>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise">The old words, in plain English</h2>
+    <div class="t2t03-words">
+      <div class="rise" style="--d:1"><b>heady</b><span>rash and reckless: acts first, thinks later</span></div>
+      <div class="rise" style="--d:2"><b>highminded</b><span>swollen up with his own importance</span></div>
+      <div class="rise" style="--d:3"><b>incontinent</b><span>no self-control: can't say no to himself</span></div>
+      <div class="rise" style="--d:4"><b>trucebreakers</b><span>won't keep a deal or a promise</span></div>
+      <div class="rise" style="--d:5"><b>false accusers</b><span>slanderers: spread lies about people</span></div>
+      <div class="rise" style="--d:6"><b>without natural affection</b><span>cold toward his own family</span></div>
+      <div class="rise" style="--d:7"><b>fierce</b><span>savage, with no gentleness in him</span></div>
+      <div class="rise" style="--d:8"><b>blasphemers</b><span>abusive: curses and mocks God and people</span></div>
+      <div class="rise" style="--d:9"><b>unholy</b><span>nothing is sacred to him</span></div>
+    </div>
+    <p class="note step">Several of those hit close for a man coming out of addiction: <em>no self-control</em>, <em>broken promises</em>, <em>cold toward family</em>. That is not an insult. It is an honest picture of where a life ends up when self runs it.</p>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise">That list was us, too</h2>
+    <p class="note rise" style="--d:1">It would be easy to read verses 2 to 4 and think of the news, or the people at the next table. Don't. Paul wrote the same sort of list about himself and his friends:</p>
+    <blockquote class="quote rise" style="--d:2"><p>“For we ourselves also were sometimes foolish, disobedient, deceived, serving divers lusts and pleasures, living in malice and envy, hateful, and hating one another.”</p><cite>Titus 3:3</cite></blockquote>
+    <p class="note step">Notice the word <em>were</em>. Most of us could tick several boxes on Paul's list, and some of us ticked them last week. Name them to God, plainly, without making excuses and without whipping yourself.</p>
+    <blockquote class="quote step"><p>“But after that the kindness and love of God our Saviour toward man appeared, Not by works of righteousness which we have done, but according to his mercy he saved us, by the washing of regeneration, and renewing of the Holy Ghost;”</p><cite>Titus 3:4–5</cite></blockquote>
+    <p class="note step">The list is not there to shame you. It's there so you know exactly what Jesus came to rescue you <em>from</em>, and what He is working out of you now.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="5" data-hl="Having a form of godliness, but denying the power thereof|from such turn away"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <div class="split">
+      <div class="stage">
+        <svg viewBox="0 0 620 380" role="img" aria-label="Two men. The one on the left is only a dashed outline, empty inside, with a tidy suit: the form of godliness. The one on the right is solid, and a light comes on in his chest at a click: the power.">
+          <g>
+            <circle class="t2t03-hollow" cx="150" cy="95" r="32"/>
+            <path class="t2t03-hollow" d="M90 300 L90 175 Q90 150 120 150 L180 150 Q210 150 210 175 L210 300 Z"/>
+            <path class="t2t03-hollow" d="M150 150 L150 205 M130 150 L150 180 L170 150"/>
+            <text class="t2t03-cap" x="150" y="338" text-anchor="middle">the form</text>
+            <text class="t2t03-cap2" x="150" y="362" text-anchor="middle">right words, nobody home</text>
+          </g>
+          <g>
+            <circle class="t2t03-solid" cx="470" cy="95" r="32"/>
+            <path class="t2t03-solid" d="M410 300 L410 175 Q410 150 440 150 L500 150 Q530 150 530 175 L530 300 Z"/>
+            <circle class="t2t03-halo" cx="470" cy="215" r="62"/>
+            <circle class="t2t03-core" cx="470" cy="215" r="26"/>
+            <text class="t2t03-cap" x="470" y="338" text-anchor="middle">the power</text>
+            <text class="t2t03-cap2" x="470" y="362" text-anchor="middle">Christ alive in him</text>
+          </g>
+        </svg>
+      </div>
+      <div>
+        <h2 class="rise">Church clothes, nobody home</h2>
+        <p class="note rise" style="--d:1">A <em>“form of godliness”</em> is the look: the words, the habits, the face you wear at the meeting. <em>“Denying the power”</em> means none of it connects to anything real.</p>
+        <p class="note step t2t03-go">The cure isn't trying harder to look better. The power is Christ Himself, and He lives in anyone who trusts Him. The honest start is the opposite of a show: <em>“I can't do this on my own.”</em></p>
+        <p class="note step">Hiding something behind the right words? Tell one brother the truth today.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="slide verse" data-v="6-7" data-hl="creep into houses|lead captive silly women laden with sins|Ever learning, and never able to come to the knowledge of the truth"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise">Who they go after</h2>
+    <p class="note rise" style="--d:1">Verse 6 is a hard one, so let's take it straight. Paul is describing <em>predators</em>, smooth teachers who slip into homes and go after people who are already weighed down. The old word <em>“silly”</em> means little and easily led, and these women were <em>“laden with sins”</em>: carrying guilt nobody had told them how to put down.</p>
+    <p class="note step">He is not insulting women, and he is not saying they were stupid. He is saying the con man always hunts the same way: <em>find the guilty, the lonely and the hungry, and sell them an answer.</em></p>
+    <p class="note step">Men in recovery get hunted like this too: the slick preacher, the new group that wants all your time and money, the guy with a secret system. A quick test: does he point you to Jesus and His finished work and the open Bible, or to himself and your wallet?</p>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <div class="split">
+      <div class="stage">
+        <svg class="cycle" style="--at:320px 200px; --lap:7s" viewBox="0 0 640 400" role="img" aria-label="A circle with six stops: a new book, a new speaker, a new idea, one more question, act on none of it, start over. A dot keeps running round. Then a way out opens at a click, labelled the truth.">
+          <circle class="cycle-ring" cx="320" cy="200" r="140"/>
+          <g class="rise" style="--d:1"><circle class="cycle-stop" cx="320" cy="60" r="15"/><text x="320" y="30" text-anchor="middle" font-size="19">a new book</text></g>
+          <g class="rise" style="--d:2"><circle class="cycle-stop" cx="441" cy="130" r="15"/><text x="464" y="136" font-size="19">a new speaker</text></g>
+          <g class="rise" style="--d:3"><circle class="cycle-stop" cx="441" cy="270" r="15"/><text x="464" y="276" font-size="19">a new idea</text></g>
+          <g class="rise" style="--d:4"><circle class="cycle-stop" cx="320" cy="340" r="15"/><text x="320" y="382" text-anchor="middle" font-size="19">one more question</text></g>
+          <g class="rise" style="--d:5"><circle class="cycle-stop" cx="199" cy="270" r="15"/><text x="176" y="276" text-anchor="end" font-size="19">act on none</text></g>
+          <g class="rise" style="--d:6"><circle class="cycle-stop" cx="199" cy="130" r="15"/><text x="176" y="136" text-anchor="end" font-size="19" style="fill:var(--accent-hot)">start over</text></g>
+          <g class="cycle-spin"><circle cx="320" cy="60" r="8" style="fill:var(--accent-hot);stroke:var(--bg)" stroke-width="2"/></g>
+          <text x="320" y="196" text-anchor="middle" font-size="24" class="serif" style="fill:var(--ink-soft)">ever learning</text>
+          <g class="step">
+            <path class="cycle-way draw" pathLength="1" d="M210 120 C230 95 230 60 160 40 L60 30"/>
+            <path class="cycle-way" d="M78 14 L58 30 L80 46"/>
+            <text x="30" y="84" font-size="20" font-weight="700" style="fill:var(--accent-hot)">the truth</text>
+          </g>
+        </svg>
+      </div>
+      <div>
+        <h2 class="rise" style="--d:1">Ever learning, never arriving</h2>
+        <p class="note rise" style="--d:2">“Ever learning” is not praise. Some people collect ideas and never settle on one. They read it all and obey none of it. Another book, another speaker, another question, and the circle never opens.</p>
+        <p class="note step">Knowing <em>about</em> the truth is not the same as coming to it. Jesus said it plainly:</p>
+        <blockquote class="quote step"><p>“I am the way, the truth, and the life: no man cometh unto the Father, but by me.”</p><cite>John 14:6</cite></blockquote>
+        <p class="note step">Pick one truth you already know, and do it today.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="slide verse" data-v="8-9" data-hl="Jannes and Jambres withstood Moses|they shall proceed no further"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise">Jannes and Jambres: a copy only goes so far</h2>
+    <p class="note rise" style="--d:1">The Old Testament never names them. Jewish tradition says <em>Jannes and Jambres</em> were Egyptian magicians who stood against Moses before Pharaoh (Exodus 7–8). For a while they matched him:</p>
+    <div class="t2t03-copy rise" style="--d:2" role="img" aria-label="Four signs of Moses and whether the magicians could copy them. The staff turned to a snake: copied. Water turned to blood: copied. Frogs: copied. Lice: they could not, shown on a click.">
+      <small>Moses</small><span></span><small>The magicians</small>
+      <div class="sign">Staff turned to a snake<span>Exodus 7</span></div><span class="yes">✓</span><span class="say">did the same</span>
+      <div class="sign">Water turned to blood<span>Exodus 7</span></div><span class="yes">✓</span><span class="say">did the same</span>
+      <div class="sign">Frogs on the land<span>Exodus 8</span></div><span class="yes">✓</span><span class="say">did the same</span>
+      <div class="sign lost">Lice from the dust<span>Exodus 8</span></div><span class="no lost">✗</span><span class="say lost">“could not”</span>
+    </div>
+    <p class="note step t2t03-lice">With the lice they ran out. A copy can look real until it meets the real thing. <em>“They shall proceed no further: for their folly shall be manifest unto all men.”</em></p>
+    <p class="note step">The fakes don't win in the end. You don't have to be impressed by them.</p>
+  </div>
+</section>
+
+<!-- ======================= PART TWO: PAUL'S EXAMPLE ======================= -->
+<section class="slide part">
+  <div class="inner">
+    <p class="part-n rise">Part two</p>
+    <h2 class="rise" style="--d:1">A life Timothy could watch</h2>
+    <p class="range rise" style="--d:2">Verses 10–13</p>
+    <div class="rule"></div>
+    <p class="hook rise" style="--d:4">Against the list, Paul puts a man you can watch up close.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="10-11" data-hl="thou hast fully known my doctrine, manner of life, purpose, faith, longsuffering, charity, patience|at Antioch, at Iconium, at Lystra|out of them all the Lord delivered me"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise">What Timothy saw up close</h2>
+    <p class="note rise" style="--d:1">“Thou hast fully known” means <em>you've followed me closely and watched</em>. Seven things, and every one is something a man can see:</p>
+    <ol class="t2t03-seven">
+      <li class="step"><span class="n">1</span><b>Doctrine</b><span>what I taught</span></li>
+      <li class="step"><span class="n">2</span><b>Manner of life</b><span>how I lived, day to day</span></li>
+      <li class="step"><span class="n">3</span><b>Purpose</b><span>what I was aiming at</span></li>
+      <li class="step"><span class="n">4</span><b>Faith</b><span>how I trusted God</span></li>
+      <li class="step"><span class="n">5</span><b>Longsuffering</b><span>how I put up with difficult people</span></li>
+      <li class="step"><span class="n">6</span><b>Charity</b><span>love that does something</span></li>
+      <li class="step"><span class="n">7</span><b>Patience</b><span>how I held on when it dragged</span></li>
+    </ol>
+    <p class="note step">Teaching is cheap. The proof that it works is a life someone can watch up close. Somewhere a younger man is watching you: a nephew, a coworker, the guy two weeks behind you in the program. Live today like he is.</p>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <div class="split">
+      <div class="stage">
+        <svg class="map" data-world viewBox="625 245 150 100" data-towns="Antioch in Pisidia*:t, Iconium*:r, Lystra!:l, Derbe:r" role="img" aria-label="A map of the highlands of Asia Minor. Paul's road runs from Antioch in Pisidia to Iconium to Lystra and on to Derbe. At each of the first three he was attacked; at Lystra he was stoned.">
+          <path class="map-route r1" data-via="Antioch in Pisidia, Iconium"/>
+          <path class="map-route r2" data-via="Iconium, Lystra"/>
+          <path class="map-route r3" data-via="Lystra, Derbe"/>
+        </svg>
+      </div>
+      <div>
+        <h2 class="rise" style="--d:1">Three towns, three beatings</h2>
+        <p class="note rise" style="--d:2">Verse 11 lists places Timothy knew, from the first journey (about AD 46 to 48).</p>
+        <p class="note step map-go1"><b>Antioch</b> (in Pisidia): <em>“expelled them out of their coasts”</em> (Acts 13:50).</p>
+        <p class="note step map-go2"><b>Iconium</b>: a plot <em>“to stone them”</em>, and they fled (Acts 14:5–6).</p>
+        <p class="note step map-go3"><b>Lystra</b>, Timothy's own town: Paul was stoned and dragged out for dead, and <em>“as the disciples stood round about him, he rose up”</em> (Acts 14:19–20). Timothy may well have stood in that circle.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <p class="saying rise" style="--d:1">Not spared. <em>Delivered.</em></p>
+    <p class="note rise" style="--d:2">Look at the verse again: <em>“out of them all the Lord delivered me.”</em> Delivered <em>out of</em> them, not kept <em>away from</em> them. Paul still got stoned. God did not prevent the trouble. He brought him through it, and he got up and walked back into the city.</p>
+    <p class="note step">That's the promise a man in a hard spot can lean on. It doesn't say the pain won't come. It says the Lord will be there on the other side of it. He got Paul up, and He can get you up.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="12-13" data-hl="all that will live godly in Christ Jesus shall suffer persecution|evil men and seducers shall wax worse and worse"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="12" data-hl="all that will live godly in Christ Jesus shall suffer persecution"></blockquote>
+    <h2 class="rise" style="--d:1">When doing right costs you</h2>
+    <div class="ifthen rise" style="--d:2">
+      <div class="if"><small>If</small>you start to live godly <em>in Christ</em>,</div>
+      <span class="arrow" aria-hidden="true">→</span>
+      <div class="then"><small>then</small>expect some pushback.</div>
+    </div>
+    <p class="note step">Most of us will never be stoned. Persecution looks smaller where we live: old friends who drop you or mock you, a family member who rolls their eyes and waits for you to fail, the guys at work who say <em>“you're no fun now.”</em></p>
+    <p class="note step">One honest warning. Being treated badly because you are acting like a jerk is not persecution. Pushback for doing right is. It does not mean you did something wrong, and it does not mean God is gone. It's a sign you've turned a corner.</p>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="13" data-hl="evil men and seducers shall wax worse and worse"></blockquote>
+    <h2 class="rise" style="--d:1">Down the other way</h2>
+    <ol class="stairs down" style="--n:4" aria-label="Four steps down: evil men; seducers; worse and worse; deceiving, and being deceived.">
+      <li style="--k:0"><b>evil men</b>and seducers</li>
+      <li style="--k:1"><b>wax</b>(grow) worse and worse</li>
+      <li style="--k:2"><b>deceiving</b>other people</li>
+      <li style="--k:3"><b>being deceived</b>by their own lies</li>
+    </ol>
+    <p class="note step">The same road that costs the godly man something does something worse to the other man. The word <em>“wax”</em> means <em>grow</em>. Nobody stands still. A man who deceives others ends up believing his own story, and then he can't see the way out.</p>
+    <p class="note step">Everyone in this room knows some of that. The way off the stairs is simple and hard: <em>stop telling yourself the story</em>, and say the true thing out loud to God and one brother.</p>
+  </div>
+</section>
+
+<!-- ======================= PART THREE: THE BOOK ======================= -->
+<section class="slide part">
+  <div class="inner">
+    <p class="part-n rise">Part three</p>
+    <h2 class="rise" style="--d:1">Continue in the Book</h2>
+    <p class="range rise" style="--d:2">Verses 14–17</p>
+    <div class="rule"></div>
+    <p class="hook rise" style="--d:4">With the world getting worse, here is what holds.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="14-15" data-hl="continue thou in the things which thou hast learned|from a child thou hast known the holy scriptures|wise unto salvation through faith which is in Christ Jesus"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise">From a child</h2>
+    <p class="note rise" style="--d:1">“Knowing of whom thou hast learned them,” Paul says. Timothy learned the Scriptures at home. His father was a Greek, but his mother was a Jewish believer, and his grandmother was too (Acts 16:1; 2 Timothy 1:5).</p>
+    <blockquote class="quote rise" style="--d:2"><p>“When I call to remembrance the unfeigned faith that is in thee, which dwelt first in thy grandmother Lois, and thy mother Eunice; and I am persuaded that in thee also.”</p><cite>2 Timothy 1:5</cite></blockquote>
+    <div class="chains">
+      <div class="chain step"><span class="who-chip">Lois</span><span class="said">taught</span><span class="who-chip">Eunice</span><span class="said">taught</span><span class="who-chip">Timothy</span><span class="said">Paul: “commit thou to faithful men” (2:2)</span><span class="who-chip jesus">the next man</span></div>
+    </div>
+    <p class="note step">If you had no Lois, this is for you: <em>you</em> can be the first link. The man sitting beside you may be the one who never had anyone. Somebody has to start the chain, and you've already got more to pass on than you think.</p>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="15" data-hl="able to make thee wise unto salvation through faith which is in Christ Jesus"></blockquote>
+    <h2 class="rise" style="--d:1">The Book points to a Person</h2>
+    <p class="note rise" style="--d:2">“The holy scriptures” here means the Old Testament, the only Bible Timothy had as a boy. And the Old Testament was already aimed at one man. After His resurrection, Jesus walked two disciples through it:</p>
+    <blockquote class="quote step"><p>“And beginning at Moses and all the prophets, he expounded unto them in all the scriptures the things concerning himself.”</p><cite>Luke 24:27</cite></blockquote>
+    <p class="note step">It makes you <em>“wise unto salvation”</em>, and notice how: <em>“through faith which is in Christ Jesus.”</em> The Book does not save anyone by being read. It points you to the Saviour, and He saves anyone who trusts Him.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="16-17" data-hl="All scripture is given by inspiration of God|profitable for doctrine, for reproof, for correction, for instruction in righteousness|throughly furnished unto all good works"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <p class="saying rise" style="--d:1">Not Paul's opinion. <em>God's breath.</em></p>
+    <p class="note rise" style="--d:2">“Given by inspiration of God” is one Greek word, <span class="gk">theopneustos</span>: <em>God-breathed</em>. Men wrote it, with their own voices and their own lives, and God's breath was behind every word.</p>
+    <p class="note step">That is why you can put your weight on it. When you are shaky, you want to stand on something that doesn't depend on how you feel today.</p>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise">What the Word does in a man</h2>
+    <div class="stage">
+      <svg viewBox="0 0 760 270" style="max-height:34vh" role="img" aria-label="A road with four things happening on it, one at a time. A signpost shows the way: doctrine. A footprint trail wanders off the road into a ditch: reproof. The trail curves back onto the road: correction. Steady steps run along the road to a flag: instruction in righteousness.">
+        <rect class="t2t03-roadbed" x="10" y="115" width="740" height="60" rx="6"/>
+        <line class="t2t03-line" x1="20" y1="145" x2="740" y2="145"/>
+        <g class="t2t03-g t2t03-g1">
+          <line class="t2t03-pole" x1="95" y1="115" x2="95" y2="40"/>
+          <path class="t2t03-board" d="M95 42 L170 42 L190 58 L170 74 L95 74 Z"/>
+          <text class="t2t03-boardtxt" x="104" y="64">THE WAY</text>
+          <text class="t2t03-lab" x="95" y="25" text-anchor="middle">1  Doctrine</text>
+        </g>
+        <g class="t2t03-g t2t03-g2">
+          <path class="t2t03-ditch" d="M290 190 Q340 260 410 205 Q380 180 330 175 Z"/>
+          <path class="t2t03-off" d="M240 145 L295 145 Q330 150 350 218"/>
+          <circle class="t2t03-bang" cx="352" cy="226" r="16"/><text class="t2t03-bangtxt" x="352" y="233" text-anchor="middle">!</text>
+          <text class="t2t03-lab" x="290" y="25" text-anchor="middle">2  Reproof</text>
+          <text class="t2t03-lab" x="290" y="262" text-anchor="middle" style="fill:var(--danger)">off the road</text>
+        </g>
+        <g class="t2t03-g t2t03-g3">
+          <path class="t2t03-back" d="M366 214 Q400 150 470 146"/>
+          <path class="t2t03-back" d="M452 130 L472 146 L452 160"/>
+          <text class="t2t03-lab" x="440" y="25" text-anchor="middle">3  Correction</text>
+          <text class="t2t03-lab" x="440" y="262" text-anchor="middle" style="fill:var(--accent-hot)">back on it</text>
+        </g>
+        <g class="t2t03-g t2t03-g4">
+          <circle class="t2t03-step" cx="515" cy="145" r="7"/><circle class="t2t03-step" cx="555" cy="145" r="7"/><circle class="t2t03-step" cx="595" cy="145" r="7"/><circle class="t2t03-step" cx="635" cy="145" r="7"/><circle class="t2t03-step" cx="675" cy="145" r="7"/>
+          <line class="t2t03-pole" x1="715" y1="115" x2="715" y2="62"/>
+          <path class="t2t03-flag" d="M715 62 L745 72 L715 84 Z"/>
+          <text class="t2t03-lab" x="620" y="25" text-anchor="middle">4  Instruction in righteousness</text>
+          <text class="t2t03-lab" x="620" y="190" text-anchor="middle" style="fill:var(--accent-hot)">step by step, day by day</text>
+        </g>
+      </svg>
+    </div>
+    <ol class="t2t03-four">
+      <li class="step t2t03-s1"><span class="n">Doctrine</span><b>What's true</b><i>teaching: the road itself</i><p>Who God is, what Jesus did, how I'm meant to live.</p></li>
+      <li class="step t2t03-s2"><span class="n">Reproof</span><b>Where I'm off</b><i>shows me the ditch</i><p>It tells me when my life has left the road, and it does it honestly.</p></li>
+      <li class="step t2t03-s3"><span class="n">Correction</span><b>How to get back</b><i>sets me upright again</i><p>It doesn't leave me in the ditch. It points the way back to the road.</p></li>
+      <li class="step t2t03-s4"><span class="n">Instruction</span><b>How to stay on it</b><i>training in doing right</i><p>Day by day, coaching me into a new way of living.</p></li>
+    </ol>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <p class="saying rise" style="--d:1">Not perfect. <em>Equipped.</em></p>
+    <p class="note rise" style="--d:2">Verse 17 says <em>“perfect”</em>, and it does not mean <em>never makes a mistake.</em> It means complete, fitted out, like a ship with everything it needs for the sea or a workman with a full toolbox. And <em>“throughly furnished unto all good works”</em> means ready for whatever the day throws at you.</p>
+    <p class="note step">Jesus Himself used the Book that way when He was tempted and hungry, in a wilderness, and the enemy came for Him:</p>
+    <blockquote class="quote step"><p>“But he answered and said, It is written, Man shall not live by bread alone, but by every word that proceedeth out of the mouth of God.”</p><cite>Matthew 4:4</cite></blockquote>
+    <p class="note step">A craving is a hunger. Feed on something that lasts. When the pull comes, reach for the Word before you reach for the phone.</p>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise">Four questions for any chapter</h2>
+    <p class="note rise" style="--d:1">You don't need to be a scholar. Open the Bible to one chapter today, and ask Paul's four things in order:</p>
+    <ol class="t2t03-ask">
+      <li class="step"><b>What's true here?</b><span>Doctrine: what does this say about God and about me?</span></li>
+      <li class="step"><b>Where am I off?</b><span>Reproof: what do I see in this that I don't like in me?</span></li>
+      <li class="step"><b>What do I change?</b><span>Correction: what's the way back, in plain steps?</span></li>
+      <li class="step"><b>What do I practice today?</b><span>Instruction: one small thing, done today.</span></li>
+    </ol>
+    <p class="note step">If you miss a day, you haven't failed. Open it tomorrow and start again.</p>
+  </div>
+</section>
+
+<!-- ======================= CLOSING ======================= -->
+<section class="slide remember">
+  <div class="inner">
+    <h2 class="rise">Points to remember</h2>
+    <ol class="seeds">
+      <li class="step"><span class="topic">Hard times</span><span class="seed-q">“In the last days perilous times shall come” <cite>3:1</cite></span><span class="take">It all grows from love turned inward. Read the list as your own, then take it to Jesus.</span></li>
+      <li class="step"><span class="topic">Pretending</span><span class="seed-q">“Having a form of godliness, but denying the power thereof” <cite>3:5</cite></span><span class="take">A show has no power. Be honest with God and one brother, and the real thing gets in.</span></li>
+      <li class="step"><span class="topic">The cost</span><span class="seed-q">“All that will live godly in Christ Jesus shall suffer persecution” <cite>3:12</cite></span><span class="take">Pushback doesn't mean you're wrong. The Lord delivers, and He'll get you up.</span></li>
+      <li class="step"><span class="topic">Roots</span><span class="seed-q">“From a child thou hast known the holy scriptures” <cite>3:15</cite></span><span class="take">Be the first link if nobody was yours. Pass it on.</span></li>
+      <li class="step"><span class="topic">Salvation</span><span class="seed-q">“Wise unto salvation through faith which is in Christ Jesus” <cite>3:15</cite></span><span class="take">The Book points to the Saviour. Trust Him, and it all comes together.</span></li>
+      <li class="step"><span class="topic">The Word</span><span class="seed-q">“All scripture is given by inspiration of God” <cite>3:16</cite></span><span class="take">Open it today and ask the four questions. You will be equipped.</span></li>
+    </ol>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 1 of 6</p>
+      <span class="topic">Hard times</span>
+      <h2>What will men be like in the last days?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="1"></blockquote>
+      <blockquote class="quote step" data-q="2"></blockquote>
+      <blockquote class="quote step" data-q="4"></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>Lovers of their own selves, lovers of money, proud and unthankful, with no self-control, and lovers of pleasure more than lovers of God. It all grows from love pointed at self, and we were part of it. The cure is Jesus.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 2 of 6</p>
+      <span class="topic">Pretending</span>
+      <h2>What is missing in a form of godliness?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="5"></blockquote>
+      <blockquote class="quote step" data-q="7"></blockquote>
+      <blockquote class="quote step" data-q="9"></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>The power. It has the look and the words, but nothing real behind them. Honesty with God and with one brother is where the real thing starts, and a copy never gets far.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 3 of 6</p>
+      <span class="topic">The cost</span>
+      <h2>What will happen to all that will live godly in Christ Jesus?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="11"></blockquote>
+      <blockquote class="quote step" data-q="12"></blockquote>
+      <blockquote class="quote step" data-q="13"></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>They will suffer persecution, some pushback from a world that doesn't like it. But the Lord delivered Paul out of every one of his, and he does the same for us. The deceivers only get worse.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 4 of 6</p>
+      <span class="topic">Roots</span>
+      <h2>How far back did Timothy know the holy scriptures?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="14"></blockquote>
+      <blockquote class="quote step" data-q="15"></blockquote>
+      <blockquote class="quote step"><p>“When I call to remembrance the unfeigned faith that is in thee, which dwelt first in thy grandmother Lois, and thy mother Eunice; and I am persuaded that in thee also.”</p><cite>2 Timothy 1:5</cite></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>From a child. His grandmother Lois and his mother Eunice taught him. If no one taught you, you can be the first link, and pass it on.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 5 of 6</p>
+      <span class="topic">Salvation</span>
+      <h2>What are the holy scriptures able to do?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="15"></blockquote>
+      <blockquote class="quote step"><p>“And beginning at Moses and all the prophets, he expounded unto them in all the scriptures the things concerning himself.”</p><cite>Luke 24:27</cite></blockquote>
+      <blockquote class="quote step"><p>“But these are written, that ye might believe that Jesus is the Christ, the Son of God; and that believing ye might have life through his name.”</p><cite>John 20:31</cite></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>Make us wise unto salvation through faith in Christ Jesus. The Book points to the Saviour, and anyone who believes in Him has life.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 6 of 6</p>
+      <span class="topic">The Word</span>
+      <h2>What is all scripture good for?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="16"></blockquote>
+      <blockquote class="quote step" data-q="17"></blockquote>
+      <blockquote class="quote step"><p>“Study to shew thyself approved unto God, a workman that needeth not to be ashamed, rightly dividing the word of truth.”</p><cite>2 Timothy 2:15</cite></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>Doctrine, reproof, correction and instruction in righteousness: what's true, where I'm off, how to get back, and how to stay on the road. It leaves the man of God complete and ready for every good work.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide prayer">
+  <div class="inner">
+    <div class="emblem rise"></div>
+    <h2 class="rise" style="--d:1">Prayer requests</h2>
+    <p class="ask-line rise" style="--d:2">What can we pray about for you today? A place where you're feeling the pressure, or a chapter you want to start reading?</p>
+    <blockquote class="quote rise" style="--d:4"><p>“All scripture is given by inspiration of God, and is profitable for doctrine, for reproof, for correction, for instruction in righteousness: That the man of God may be perfect, throughly furnished unto all good works.”</p><cite>2 Timothy 3:16–17</cite></blockquote>
+  </div>
+</section>
+
+</main>
+
+<script>
+// King James Version, 2 Timothy chapter 3
+const V = {
+  1: "This know also, that in the last days perilous times shall come.",
+  2: "For men shall be lovers of their own selves, covetous, boasters, proud, blasphemers, disobedient to parents, unthankful, unholy,",
+  3: "Without natural affection, trucebreakers, false accusers, incontinent, fierce, despisers of those that are good,",
+  4: "Traitors, heady, highminded, lovers of pleasures more than lovers of God;",
+  5: "Having a form of godliness, but denying the power thereof: from such turn away.",
+  6: "For of this sort are they which creep into houses, and lead captive silly women laden with sins, led away with divers lusts,",
+  7: "Ever learning, and never able to come to the knowledge of the truth.",
+  8: "Now as Jannes and Jambres withstood Moses, so do these also resist the truth: men of corrupt minds, reprobate concerning the faith.",
+  9: "But they shall proceed no further: for their folly shall be manifest unto all men, as theirs also was.",
+  10: "But thou hast fully known my doctrine, manner of life, purpose, faith, longsuffering, charity, patience,",
+  11: "Persecutions, afflictions, which came unto me at Antioch, at Iconium, at Lystra; what persecutions I endured: but out of them all the Lord delivered me.",
+  12: "Yea, and all that will live godly in Christ Jesus shall suffer persecution.",
+  13: "But evil men and seducers shall wax worse and worse, deceiving, and being deceived.",
+  14: "But continue thou in the things which thou hast learned and hast been assured of, knowing of whom thou hast learned them;",
+  15: "And that from a child thou hast known the holy scriptures, which are able to make thee wise unto salvation through faith which is in Christ Jesus.",
+  16: "All scripture is given by inspiration of God, and is profitable for doctrine, for reproof, for correction, for instruction in righteousness:",
+  17: "That the man of God may be perfect, throughly furnished unto all good works."
+};
+const BOOK = "2 Timothy 3";
+</script>
+<script src="../assets/deck.js"></script>
+</body>
+</html>

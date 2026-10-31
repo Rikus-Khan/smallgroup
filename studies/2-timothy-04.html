@@ -1,0 +1,793 @@
+<!doctype html>
+<html lang="en" data-theme="night">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>2 Timothy 4</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="../assets/fonts.css">
+<link rel="stylesheet" href="../assets/deck.css">
+<link rel="stylesheet" href="../assets/themes.css">
+<style>
+/* t2t04-where: where we are in 2 Timothy. Four chapter cards, earlier ones ticked (.done), the last chapter lit (.here). */
+.t2t04-where { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; margin: .5em 0 1em; }
+.t2t04-ch { padding: .5em .7em .6em; border-radius: 10px; border: 1.5px dashed var(--line-strong); border-top: 5px solid var(--line-strong); color: var(--ink-soft); }
+.t2t04-ch i { display: grid; place-items: center; width: 1.9rem; height: 1.9rem; border-radius: 50%; border: 2px solid var(--line-strong); font: 700 .95rem var(--sans); font-style: normal; margin-bottom: .3em; }
+.t2t04-ch b { display: block; font: 600 clamp(1rem, .9rem + .5vw, 1.35rem)/1.15 var(--serif); color: var(--ink); }
+.t2t04-ch small { display: block; margin-top: .2em; font: italic clamp(.78rem, .72rem + .3vw, 1rem)/1.3 var(--serif); }
+.t2t04-ch q { display: block; margin-top: .35em; font: clamp(.78rem, .72rem + .28vw, .98rem)/1.3 var(--serif); quotes: none; color: var(--ink-soft); }
+.t2t04-ch cite { font: 700 .72rem var(--sans); font-style: normal; color: var(--accent-hot); }
+.t2t04-ch.done { border-top-color: var(--accent); }
+.t2t04-ch.done i { background: var(--accent); border-color: var(--accent); color: var(--on-accent); }
+.t2t04-ch.here { border: 2px solid var(--accent); border-top-width: 5px; background: color-mix(in srgb, var(--accent) 14%, transparent); }
+.t2t04-ch.here i { background: var(--accent-hot); border-color: var(--accent-hot); color: var(--on-accent); }
+@media (max-width: 640px) { .t2t04-where { grid-template-columns: 1fr 1fr; gap: 8px; } .t2t04-ch q, .t2t04-ch cite { display: none; } }
+
+/* t2t04-heap: itching ears. Teachers pile up, one per click, each saying what the ear wants to hear. */
+.t2t04-heap { display: grid; grid-template-columns: 1.2fr 1fr; gap: 14px; align-items: start; margin: .3em 0 .8em; }
+.t2t04-pile { display: grid; gap: 7px; }
+.t2t04-pile div { padding: .35em .8em .45em; border-radius: 10px; background: color-mix(in srgb, var(--danger) 9%, var(--surface)); border: 1.5px dashed var(--danger); font: italic 600 clamp(.95rem, .85rem + .5vw, 1.3rem) var(--serif); color: var(--ink); }
+.t2t04-pile small { display: block; font: 700 clamp(.7rem, .65rem + .25vw, .86rem) var(--sans); font-style: normal; color: var(--ink-soft); text-transform: uppercase; letter-spacing: .05em; }
+.t2t04-pile div:nth-child(2) { margin-left: 1.2em; } .t2t04-pile div:nth-child(3) { margin-left: .4em; } .t2t04-pile div:nth-child(4) { margin-left: 1.6em; }
+.t2t04-med { padding: .6em .9em .7em; border-radius: 12px; background: var(--surface); border: 1px solid var(--line-strong); border-top: 6px solid var(--accent); }
+.t2t04-med h3 { font: 600 clamp(1.1rem, .95rem + .6vw, 1.5rem)/1.15 var(--serif); color: var(--ink); margin: 0 0 .2em; }
+.t2t04-med p { margin: .2em 0 0; font-size: clamp(.85rem, .78rem + .32vw, 1.05rem); line-height: 1.35; color: var(--ink-soft); }
+@media (max-width: 760px) { .t2t04-heap { grid-template-columns: 1fr; } }
+
+/* t2t04-ship: "the time of my departure". A ship tied at the pier; on a click the ropes drop and it sails off (.t2t04-go). */
+.t2t04-sea { fill: color-mix(in srgb, var(--cool) 28%, transparent); }
+.t2t04-pier { fill: var(--surface-2); stroke: var(--line-strong); stroke-width: 2; }
+.t2t04-hull { fill: color-mix(in srgb, var(--accent) 40%, var(--surface-2)); stroke: var(--accent); stroke-width: 4; stroke-linejoin: round; }
+.t2t04-mast { stroke: var(--ink); stroke-width: 5; stroke-linecap: round; }
+.t2t04-sail { fill: var(--surface); stroke: var(--ink-soft); stroke-width: 3; stroke-linejoin: round; }
+.t2t04-rope { fill: none; stroke: var(--ink); stroke-width: 4; stroke-linecap: round; transition: opacity .5s ease, transform .8s ease; }
+.t2t04-boat { transition: transform 3.2s ease-in-out .5s; }
+.slide:has(.t2t04-go.on) .t2t04-boat { transform: translateX(180px); }
+.slide:has(.t2t04-go.on) .t2t04-rope { opacity: 0; transform: translateY(22px); }
+.t2t04-tag { font: italic 600 21px var(--serif); fill: var(--ink); }
+.t2t04-tag.b { fill: var(--accent-hot); opacity: 0; transition: opacity .8s ease 1s; }
+.slide:has(.t2t04-go.on) .t2t04-tag.a { opacity: 0; transition: opacity .4s ease; }
+.slide:has(.t2t04-go.on) .t2t04-tag.b { opacity: 1; }
+
+/* t2t04-race: the race Paul ran. A runner with a baton moves along a track as five steps are read; a crown appears, then more runners (.t2t04-s1 … .t2t04-s5). */
+.t2t04-trackbed { fill: var(--surface-2); stroke: var(--line-strong); stroke-width: 2; }
+.t2t04-lane { stroke: var(--ink-soft); stroke-width: 2; stroke-dasharray: 12 10; }
+.t2t04-finish { stroke: var(--ink); stroke-width: 6; stroke-dasharray: 10 10; }
+.t2t04-runner { transform: translateX(60px); transition: transform 1.8s ease-in-out; }
+.slide:has(.t2t04-s1.on) .t2t04-runner { transform: translateX(210px); }
+.slide:has(.t2t04-s2.on) .t2t04-runner { transform: translateX(500px); }
+.t2t04-limb { fill: none; stroke: var(--ink); stroke-width: 6; stroke-linecap: round; stroke-linejoin: round; }
+.t2t04-head { fill: var(--ink); }
+.t2t04-baton { fill: var(--glow); stroke: var(--accent-hot); stroke-width: 2.5; transition: filter .8s ease; }
+.slide:has(.t2t04-s3.on) .t2t04-baton { filter: drop-shadow(0 0 7px var(--accent-hot)); }
+.t2t04-crown { opacity: 0; transform: translateY(-16px); transition: opacity .8s ease, transform .8s ease; }
+.slide:has(.t2t04-s4.on) .t2t04-crown { opacity: 1; transform: none; }
+.t2t04-ring { fill: none; stroke: var(--accent-hot); stroke-width: 8; stroke-dasharray: 5 5; stroke-linecap: round; }
+.t2t04-podium { fill: color-mix(in srgb, var(--accent) 30%, var(--surface-2)); stroke: var(--accent); stroke-width: 3; }
+.t2t04-more { opacity: 0; transition: opacity .9s ease; }
+.slide:has(.t2t04-s5.on) .t2t04-more { opacity: 1; }
+.t2t04-more .t2t04-limb { stroke: var(--accent-hot); stroke-width: 5; }
+.t2t04-more .t2t04-head { fill: var(--accent-hot); }
+.t2t04-flag { font: 700 17px var(--sans); fill: var(--ink-soft); opacity: 0; transition: opacity .6s ease .6s; }
+.slide:has(.t2t04-s1.on) .t2t04-f1, .slide:has(.t2t04-s2.on) .t2t04-f2, .slide:has(.t2t04-s3.on) .t2t04-f3 { opacity: 1; fill: var(--accent-hot); }
+.t2t04-five { list-style: none; margin: .3em 0 0; padding: 0; display: grid; grid-template-columns: repeat(5, 1fr); gap: 9px; }
+.t2t04-five li { padding: .35em .6em .45em; border-radius: 10px; background: var(--surface); border: 1px solid var(--line-strong); border-top: 5px solid var(--line-strong); }
+.t2t04-five li.on { border-top-color: var(--accent); }
+.t2t04-five .n { font: 700 .7rem var(--sans); color: var(--accent-hot); text-transform: uppercase; letter-spacing: .05em; }
+.t2t04-five b { display: block; font: 600 clamp(.95rem, .85rem + .45vw, 1.25rem)/1.15 var(--serif); color: var(--ink); }
+.t2t04-five p { margin: .2em 0 0; font-size: clamp(.76rem, .7rem + .28vw, .95rem); line-height: 1.3; color: var(--ink-soft); }
+@media (max-width: 760px) { .t2t04-five { grid-template-columns: 1fr 1fr; } }
+
+/* t2t04-legs: Mark's four legs under the map, each lit as its route draws (.map-go1 … .map-go4) */
+.t2t04-legs { list-style: none; margin: .4em 0 0; padding: 0; display: grid; grid-template-columns: repeat(4, 1fr); gap: 9px; }
+.t2t04-legs li { padding: .35em .65em .45em; border-radius: 10px; background: var(--surface); border: 1px solid var(--line-strong); border-top: 5px solid var(--c, var(--accent)); }
+.t2t04-legs li:nth-child(2) { --c: var(--wine); } .t2t04-legs li:nth-child(3) { --c: var(--cool); } .t2t04-legs li:nth-child(4) { --c: var(--warm); }
+.t2t04-legs b { display: block; font: 600 clamp(.95rem, .85rem + .45vw, 1.25rem)/1.15 var(--serif); color: var(--ink); }
+.t2t04-legs span { display: block; font: italic clamp(.78rem, .72rem + .3vw, 1rem)/1.3 var(--serif); color: var(--ink-soft); }
+.t2t04-legs i { font: 700 .7rem var(--sans); font-style: normal; color: var(--accent-hot); text-transform: uppercase; letter-spacing: .05em; }
+@media (max-width: 760px) { .t2t04-legs { grid-template-columns: 1fr 1fr; } }
+
+/* t2t04-kit: the three things Paul asked for: a cloak, books, parchments */
+.t2t04-kit { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; margin: .4em 0 .8em; }
+.t2t04-kit > div { padding: .6em .8em .8em; border-radius: 14px; background: var(--surface); border: 1px solid var(--line-strong); text-align: center; }
+.t2t04-kit svg { display: block; margin: 0 auto .1em; width: clamp(3.6rem, 2.6rem + 4vw, 6rem); height: auto; }
+.t2t04-kit .ic { fill: color-mix(in srgb, var(--accent) 22%, transparent); stroke: var(--accent); stroke-width: 4; stroke-linejoin: round; stroke-linecap: round; }
+.t2t04-kit .ln { fill: none; stroke: var(--accent-hot); stroke-width: 3; stroke-linecap: round; }
+.t2t04-kit h3 { font: 600 clamp(1.1rem, .95rem + .6vw, 1.5rem)/1.15 var(--serif); color: var(--ink); margin: .2em 0 0; }
+.t2t04-kit .for { font: 700 clamp(.7rem, .65rem + .25vw, .86rem) var(--sans); color: var(--accent-hot); text-transform: uppercase; letter-spacing: .05em; }
+.t2t04-kit p { margin: .25em 0 0; font-size: clamp(.8rem, .74rem + .3vw, 1rem); line-height: 1.3; color: var(--ink-soft); }
+@media (max-width: 640px) { .t2t04-kit { grid-template-columns: 1fr; } .t2t04-kit > div { display: grid; grid-template-columns: 4rem 1fr; gap: 0 .8em; text-align: left; align-items: center; } .t2t04-kit svg { grid-row: 1 / span 3; width: 4rem; } }
+
+/* t2t04-court: "my first answer". Empty seats, a man at the stand, and at a click the Lord standing beside him (.t2t04-go). */
+.t2t04-bench { fill: var(--surface-2); stroke: var(--line-strong); stroke-width: 2; }
+.t2t04-seat { fill: none; stroke: var(--ink-soft); stroke-width: 2.5; stroke-dasharray: 5 5; opacity: .7; }
+.t2t04-paul { fill: var(--ink-soft); }
+.t2t04-lord { opacity: 0; transform: translateX(26px); transition: opacity .9s ease, transform .9s ease; }
+.slide:has(.t2t04-go.on) .t2t04-lord { opacity: 1; transform: none; }
+.t2t04-halo { fill: color-mix(in srgb, var(--glow) 45%, transparent); }
+.t2t04-lordbody { fill: var(--glow); stroke: var(--accent-hot); stroke-width: 3; }
+.t2t04-note { font: italic 600 20px var(--serif); fill: var(--ink-soft); }
+.t2t04-note.b { fill: var(--accent-hot); opacity: 0; transition: opacity .8s ease .6s; }
+.slide:has(.t2t04-go.on) .t2t04-note.b { opacity: 1; }
+
+/* t2t04-names: the last greetings, one chip each */
+.t2t04-names { display: grid; grid-template-columns: repeat(3, 1fr); gap: 9px; margin: .4em 0 .8em; }
+.t2t04-names > div { padding: .35em .65em .45em; border-left: 4px solid var(--accent); border-radius: 0 8px 8px 0; background: var(--surface); }
+.t2t04-names b { display: block; font: 600 clamp(1rem, .9rem + .45vw, 1.3rem) var(--serif); color: var(--ink); }
+.t2t04-names span { display: block; font: italic clamp(.78rem, .72rem + .3vw, 1rem)/1.3 var(--serif); color: var(--ink-soft); }
+@media (max-width: 760px) { .t2t04-names { grid-template-columns: 1fr 1fr; } }
+
+/* t2t04-back: the whole letter, four cards, all ticked */
+.t2t04-back { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; margin: .4em 0 .8em; }
+.t2t04-back > div { padding: .5em .7em .65em; border-radius: 12px; background: var(--surface); border: 1px solid var(--line-strong); border-top: 5px solid var(--accent); }
+.t2t04-back i { display: grid; place-items: center; width: 1.8rem; height: 1.8rem; border-radius: 50%; background: var(--accent); color: var(--on-accent); font: 700 .9rem var(--sans); font-style: normal; margin-bottom: .25em; }
+.t2t04-back b { display: block; font: 600 clamp(1.05rem, .92rem + .55vw, 1.4rem)/1.15 var(--serif); color: var(--ink); }
+.t2t04-back q { display: block; margin-top: .3em; font: italic clamp(.82rem, .76rem + .3vw, 1.02rem)/1.3 var(--serif); quotes: "\201C" "\201D"; color: var(--ink-soft); }
+.t2t04-back cite { font: 700 .72rem var(--sans); font-style: normal; color: var(--accent-hot); }
+.t2t04-back p { margin: .3em 0 0; font-size: clamp(.8rem, .74rem + .3vw, 1rem); line-height: 1.3; color: var(--ink); }
+@media (max-width: 760px) { .t2t04-back { grid-template-columns: 1fr 1fr; } }
+</style>
+</head>
+<body>
+<main class="deck" id="deck">
+
+<!-- ======================= OPENING ======================= -->
+<section class="slide title">
+  <div class="inner">
+    <div class="emblem rise"></div>
+    <h1 class="rise" style="--d:1">2 Timothy 4</h1>
+    <p class="sub rise" style="--d:3">Finishing well</p>
+    <p class="tag rise" style="--d:5">Paul's last chapter: a charge, a finish line, a crown, and a lot of empty chairs.</p>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise" style="--d:1">Where we are in 2 Timothy</h2>
+    <div class="t2t04-where rise" style="--d:2" role="img" aria-label="2 Timothy in four chapters. Chapter 1, done: don't be ashamed. Chapter 2, done: be strong. Chapter 3, done: hard times, hold to the Scriptures. Chapter 4, where we are, the last chapter: finish well.">
+      <div class="t2t04-ch done"><i>1</i><b>Don't be ashamed</b><small>fan the gift into flame</small><q>I am not ashamed</q> <cite>1:12</cite></div>
+      <div class="t2t04-ch done"><i>2</i><b>Be strong</b><small>soldier, athlete, farmer</small><q>be strong in the grace</q> <cite>2:1</cite></div>
+      <div class="t2t04-ch done"><i>3</i><b>Hold to the Book</b><small>hard times are coming</small><q>continue thou in the things</q> <cite>3:14</cite></div>
+      <div class="t2t04-ch here"><i>4</i><b>Finish well</b><small>Paul's last words</small><q>I have kept the faith</q> <cite>4:7</cite></div>
+    </div>
+    <p class="note rise" style="--d:3">This is the last chapter Paul ever wrote. He is in a Roman prison, about AD 66 to 67, near the end of his life, and he writes to Timothy, the young man he trained, who is leading the church at Ephesus.</p>
+    <p class="note step">Read alone, this chapter still stands. A man near the end tells the one he's leaving behind how to finish, who let him down, who didn't, and what he's looking forward to. It's the best answer in the Bible to <em>how do I not quit?</em></p>
+  </div>
+</section>
+
+<section class="slide watch">
+  <div class="inner">
+    <h2 class="rise">Things to watch for</h2>
+    <p class="lede rise" style="--d:1">Keep these questions in the back of your mind as we read. We'll come back to every one of them at the end.</p>
+    <ol class="seeds">
+      <li class="step"><span class="topic">The charge</span><span class="seed-q">What did Paul charge Timothy to do?</span></li>
+      <li class="step"><span class="topic">Itching ears</span><span class="seed-q">What will people want instead of sound doctrine?</span></li>
+      <li class="step"><span class="topic">Finishing</span><span class="seed-q">What had Paul done, and what was waiting for him?</span></li>
+      <li class="step"><span class="topic">Demas</span><span class="seed-q">Why did Demas leave Paul?</span></li>
+      <li class="step"><span class="topic">Mark</span><span class="seed-q">Who did Paul say was profitable to him for the ministry?</span></li>
+      <li class="step"><span class="topic">Not alone</span><span class="seed-q">Who stood with Paul when everyone else left?</span></li>
+    </ol>
+  </div>
+</section>
+
+<!-- ======================= PART ONE: THE CHARGE ======================= -->
+<section class="slide part">
+  <div class="inner">
+    <p class="part-n rise">Part one</p>
+    <h2 class="rise" style="--d:1">The charge</h2>
+    <p class="range rise" style="--d:2">Verses 1–5</p>
+    <div class="rule"></div>
+    <p class="hook rise" style="--d:4">Paul's last orders to the man who'll carry on.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="1-2" data-hl="I charge thee therefore before God|Preach the word; be instant in season, out of season|reprove, rebuke, exhort with all longsuffering and doctrine"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="2" data-hl="Preach the word; be instant in season, out of season"></blockquote>
+    <h2 class="rise" style="--d:1">Preach the word: in plain words</h2>
+    <p class="note rise" style="--d:2">Paul begins with weight: <em>“I charge thee… before God, and the Lord Jesus Christ, who shall judge the quick and the dead.”</em> (The <em>quick</em> are the living.) Timothy is answering to the Lord, not to the crowd.</p>
+    <p class="note step">“Preach” isn't only for a pulpit. It means <em>tell it out</em>. “Instant” means ready on the spot, and “in season, out of season” means <em>when it's easy and when it's not.</em> And do it <em>“with all longsuffering”</em>: patiently, never like a bully.</p>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise">Twenty seconds at work</h2>
+    <div class="talk">
+      <p class="rise" style="--d:1"><small>Guy at work</small>You've been different lately. What happened?</p>
+      <p class="reply step"><small>You</small>I was in a bad place. Jesus got hold of me. I'm not perfect, but I'm not who I was.</p>
+    </div>
+    <p class="note step">That's the whole sermon: twenty seconds, true, and no speech. Who around you has noticed that something has changed? Be ready, today, to say it plainly.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="3-4" data-hl="they will not endure sound doctrine|heap to themselves teachers, having itching ears|shall be turned unto fables"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise">Itching ears</h2>
+    <div class="t2t04-heap">
+      <div class="t2t04-pile" role="img" aria-label="A pile of teachers that tell people what they want to hear: you deserve it, nothing is really a sin, just feel good about yourself, and send money and God will bless you.">
+        <div class="step"><small>Teacher 1</small>“You deserve it. Go ahead.”</div>
+        <div class="step"><small>Teacher 2</small>“Nothing's really a sin.”</div>
+        <div class="step"><small>Teacher 3</small>“Just feel good about yourself.”</div>
+        <div class="step"><small>Teacher 4</small>“Send me money and God will bless you.”</div>
+      </div>
+      <div class="t2t04-med rise" style="--d:2">
+        <h3>Sound doctrine</h3>
+        <p>The word means <em>healthy</em>: teaching that makes you well. Like medicine it doesn't always taste good, but it's the thing that heals.</p>
+      </div>
+    </div>
+    <p class="note step">Notice <em>“heap to themselves.”</em> People <em>pile up</em> teachers who scratch where it itches. Nobody forces them. And the stories they end up on, <em>“fables”</em>, sound good and go nowhere.</p>
+    <p class="note step">For a man trying to stay clean, this one is personal. You'll always find someone who'll tell you what you want to hear. Find the man who tells you what you <em>need</em> to hear, and keep him close.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="5" data-hl="watch thou in all things, endure afflictions, do the work of an evangelist, make full proof of thy ministry"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise">But you: four things</h2>
+    <ol class="checks">
+      <li class="step"><span class="tick">1</span><q>Watch thou in all things</q><small>keep a clear head, stay awake and sober-minded</small></li>
+      <li class="step"><span class="tick">2</span><q>Endure afflictions</q><small>take the hard parts without quitting</small></li>
+      <li class="step"><span class="tick">3</span><q>Do the work of an evangelist</q><small>tell the good news to the man in front of you</small></li>
+      <li class="step"><span class="tick">4</span><q>Make full proof of thy ministry</q><small>carry out in full the job you were given</small></li>
+    </ol>
+    <p class="note step">The ears are itching, so Paul says <em>but you</em>. Everyone else may drift. You don't have to. Pick one of the four for today and do it.</p>
+  </div>
+</section>
+
+<!-- ======================= PART TWO: FINISHING WELL ======================= -->
+<section class="slide part">
+  <div class="inner">
+    <p class="part-n rise">Part two</p>
+    <h2 class="rise" style="--d:1">I have finished my course</h2>
+    <p class="range rise" style="--d:2">Verses 6–8</p>
+    <div class="rule"></div>
+    <p class="hook rise" style="--d:4">The goal for every man in the room.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="6" data-hl="I am now ready to be offered|the time of my departure is at hand"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <div class="split">
+      <div class="stage">
+        <svg viewBox="0 0 640 300" role="img" aria-label="A ship tied to a pier. On a click the ropes drop away and the ship sails out to sea. The word departure means untying, casting off.">
+          <rect class="t2t04-sea" x="0" y="205" width="640" height="95"/>
+          <rect class="t2t04-pier" x="0" y="182" width="165" height="26" rx="3"/>
+          <rect class="t2t04-pier" x="130" y="158" width="16" height="26" rx="3"/>
+          <g class="t2t04-boat">
+            <path class="t2t04-hull" d="M205 190 L420 190 Q412 236 378 244 L250 244 Q216 232 205 190 Z"/>
+            <line class="t2t04-mast" x1="312" y1="190" x2="312" y2="62"/>
+            <path class="t2t04-sail" d="M318 70 Q372 118 366 180 L318 180 Z"/>
+          </g>
+          <path class="t2t04-rope" d="M207 196 Q178 214 146 166"/>
+          <text class="t2t04-tag a" x="320" y="276" text-anchor="middle">tied up</text>
+          <text class="t2t04-tag b" x="320" y="276" text-anchor="middle">untied: ready for the open sea</text>
+        </svg>
+      </div>
+      <div>
+        <h2 class="rise">Departure is untying</h2>
+        <p class="note rise" style="--d:1">Paul uses two pictures for his coming death. <em>“Ready to be offered”</em> means being poured out, like the wine poured on an altar at the end of a sacrifice. <em>“Departure”</em> is a ship's word: <span class="gk">analusis</span>, the untying of the ropes so it can sail.</p>
+        <p class="note step t2t04-go">So Paul is not talking about getting <em>caught</em> by death. He sees a ship, loaded and ready, with the ropes coming off, headed home.</p>
+        <p class="note step">A man who has made peace with Jesus has nothing to be afraid of at the dock. If that's not you yet, it can be today.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="slide verse" data-v="7-8" data-hl="I have fought a good fight, I have finished my course, I have kept the faith|a crown of righteousness|unto all them also that love his appearing"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise">The finish line</h2>
+    <div class="stage">
+      <svg viewBox="0 60 800 210" style="max-height:36vh" role="img" aria-label="A running track. A runner carrying a baton starts at the left. On the first step he reaches the first mark: I have fought a good fight. On the second step he crosses the finish line: I have finished my course. On the third the baton glows: I have kept the faith. On the fourth a crown appears on a podium: the Lord, the righteous judge, shall give it. On the fifth, many more runners come up behind him: all who love his appearing.">
+        <rect class="t2t04-trackbed" x="20" y="150" width="760" height="76" rx="8"/>
+        <line class="t2t04-lane" x1="30" y1="188" x2="770" y2="188"/>
+        <line class="t2t04-finish" x1="600" y1="150" x2="600" y2="226"/>
+        <g class="t2t04-podium-g">
+          <rect class="t2t04-podium" x="660" y="168" width="90" height="58" rx="4"/>
+        </g>
+        <g class="t2t04-crown">
+          <circle class="t2t04-ring" cx="705" cy="120" r="30"/>
+          <text x="705" y="128" text-anchor="middle" font-size="22" font-weight="700" style="fill:var(--accent-hot);font-family:var(--serif)">crown</text>
+        </g>
+        <g class="t2t04-runner">
+          <g transform="translate(0,176)">
+            <circle class="t2t04-head" cx="0" cy="-52" r="10"/>
+            <path class="t2t04-limb" d="M0 -40 L2 -14 M2 -34 L-14 -22 M2 -34 L16 -44 M2 -14 L-12 6 M2 -14 L16 4"/>
+            <rect class="t2t04-baton" x="12" y="-56" width="22" height="7" rx="3" transform="rotate(-22 14 -44)"/>
+          </g>
+        </g>
+        <g class="t2t04-more">
+          <g transform="translate(300,206)"><circle class="t2t04-head" cx="0" cy="-44" r="8"/><path class="t2t04-limb" d="M0 -34 L2 -12 M2 -28 L-11 -18 M2 -28 L13 -36 M2 -12 L-10 4 M2 -12 L13 2"/></g>
+          <g transform="translate(380,206)"><circle class="t2t04-head" cx="0" cy="-44" r="8"/><path class="t2t04-limb" d="M0 -34 L2 -12 M2 -28 L-11 -18 M2 -28 L13 -36 M2 -12 L-10 4 M2 -12 L13 2"/></g>
+          <g transform="translate(460,206)"><circle class="t2t04-head" cx="0" cy="-44" r="8"/><path class="t2t04-limb" d="M0 -34 L2 -12 M2 -28 L-11 -18 M2 -28 L13 -36 M2 -12 L-10 4 M2 -12 L13 2"/></g>
+          <g transform="translate(540,206)"><circle class="t2t04-head" cx="0" cy="-44" r="8"/><path class="t2t04-limb" d="M0 -34 L2 -12 M2 -28 L-11 -18 M2 -28 L13 -36 M2 -12 L-10 4 M2 -12 L13 2"/></g>
+          <text x="420" y="256" text-anchor="middle" font-size="19" font-weight="700" style="fill:var(--accent-hot)">all who love His appearing</text>
+        </g>
+        <text class="t2t04-flag t2t04-f1" x="40" y="74">fought a good fight</text>
+        <text class="t2t04-flag t2t04-f2" x="500" y="98" text-anchor="middle">finished my course</text>
+        <text class="t2t04-flag t2t04-f3" x="300" y="74">kept the faith</text>
+      </svg>
+    </div>
+    <ol class="t2t04-five">
+      <li class="step t2t04-s1"><span class="n">The fight</span><b>A good fight</b><p>Not a perfect one. Paul stumbled and got up, and the fight went on.</p></li>
+      <li class="step t2t04-s2"><span class="n">The course</span><b>Finished</b><p>The race track. He didn't quit at the hard turn, and he finished.</p></li>
+      <li class="step t2t04-s3"><span class="n">The faith</span><b>Kept</b><p>The trust he was handed (1:14). He guarded it and passed it on.</p></li>
+      <li class="step t2t04-s4"><span class="n">The crown</span><b>Given</b><p>By the righteous judge, as the winner's wreath is handed over.</p></li>
+      <li class="step t2t04-s5"><span class="n">Not me only</span><b>All who love Him</b><p>Everyone who is longing for Him to come.</p></li>
+    </ol>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise">The man who held the coats</h2>
+    <p class="note rise" style="--d:1">Remember who is saying this. Years earlier, Paul stood by while a mob killed Stephen, and kept their coats:</p>
+    <blockquote class="quote rise" style="--d:2"><p>“And cast him out of the city, and stoned him: and the witnesses laid down their clothes at a young man’s feet, whose name was Saul.”</p><cite>Acts 7:58</cite></blockquote>
+    <p class="note step">“And Saul was consenting unto his death” (Acts 8:1). He carried that, and he never pretended otherwise. He called himself the chief of sinners. And how did he run, with a past like that?</p>
+    <blockquote class="quote step"><p>“Brethren, I count not myself to have apprehended: but this one thing I do, forgetting those things which are behind, and reaching forth unto those things which are before, I press toward the mark for the prize of the high calling of God in Christ Jesus.”</p><cite>Philippians 3:13–14</cite></blockquote>
+    <p class="note step">Forgetting doesn't mean pretending it didn't happen. It means <em>not letting it be the thing you run toward.</em> Your worst day is behind you. Face forward.</p>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <p class="saying rise" style="--d:1">Not to me only. <em>To you.</em></p>
+    <p class="note rise" style="--d:2">This isn't about how a man <em>gets saved</em>. That is by grace, a gift (Ephesians 2:8–9). It's about what a saved man does with the rest of the race, and the Lord has a prize for every runner who is looking for Him, not just apostles.</p>
+    <blockquote class="quote step"><p>“And every man that striveth for the mastery is temperate in all things. Now they do it to obtain a corruptible crown; but we an incorruptible.”</p><cite>1 Corinthians 9:25</cite></blockquote>
+    <p class="note step">A man six days sober is in the same race as Paul. You don't have to run the whole thing today, only this stretch. <em>Finishing well is made of ordinary days.</em></p>
+  </div>
+</section>
+
+<!-- ======================= PART THREE: WHO IS LEFT ======================= -->
+<section class="slide part">
+  <div class="inner">
+    <p class="part-n rise">Part three</p>
+    <h2 class="rise" style="--d:1">Who is left</h2>
+    <p class="range rise" style="--d:2">Verses 9–15</p>
+    <div class="rule"></div>
+    <p class="hook rise" style="--d:4">A lonely old man, a cold cell, and a list of names.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="9-10" data-hl="Do thy diligence to come shortly unto me|Demas hath forsaken me, having loved this present world"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise">One by one they went</h2>
+    <div class="stage">
+      <svg class="map" data-world viewBox="150 40 700 330" data-towns="Rome!:t, Thessalonica:t, Ephesus:b" role="img" aria-label="A map. Paul sits in Rome. Lines run out from Rome to Thessalonica, where Demas went; to Galatia, where Crescens went; to Dalmatia, where Titus went; and to Ephesus, where Paul sent Tychicus.">
+        <path class="map-route r1 j1" data-via="Rome, @16.8 40.9, @19.5 40.4, Thessalonica"/>
+        <path class="map-route r2 j3" data-via="Rome, @16.5 40.2, @20 38.2, @24.5 37.0, @28 37.3, @32.2 39.6"/>
+        <path class="map-route r3 j2" data-via="Rome, @14.5 43, @16.8 43.4"/>
+        <path class="map-route r4 j4" data-via="Rome, @15 41.0, @18 37.3, @22 36.2, @24.8 36.6, Ephesus"/>
+        <g class="map-town"><circle cx="322.6" cy="115.2" r="5.4"/><text x="322.6" y="102" text-anchor="middle">Dalmatia</text></g>
+        <g class="map-town"><circle cx="710.6" cy="236.8" r="5.4"/><text x="710.6" y="224" text-anchor="middle">Galatia</text></g>
+      </svg>
+    </div>
+    <p class="note rise" style="--d:1">Paul asks Timothy to come soon (v. 9). Look at who has gone:</p>
+    <ol class="t2t04-legs">
+      <li class="step map-go1"><i>Demas</i><b>To Thessalonica</b><span>“loved this present world”: he walked out</span></li>
+      <li class="step map-go2"><i>Crescens</i><b>To Galatia</b><span>not called a deserter</span></li>
+      <li class="step map-go3"><i>Titus</i><b>To Dalmatia</b><span>most likely on the Lord's work</span></li>
+      <li class="step map-go4"><i>Tychicus</i><b>To Ephesus</b><span>“have I sent” (v. 12)</span></li>
+    </ol>
+    <p class="note step">Paul even gives his helpers away. <em>“Only Luke is with me.”</em></p>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise">Demas</h2>
+    <ol class="stairs down" style="--n:3" aria-label="Three steps down for Demas. Paul's fellowlabourer; just 'Demas', no title; he loved this present world and went away.">
+      <li style="--k:0"><b>“my fellowlabourers”</b>Philemon 1:24</li>
+      <li style="--k:1"><b>just “Demas”</b>no title now (Colossians 4:14)</li>
+      <li style="--k:2"><b>“loved this present world”</b>and departed (2 Timothy 4:10)</li>
+    </ol>
+    <blockquote class="quote step"><p>“Luke, the beloved physician, and Demas, greet you.”</p><cite>Colossians 4:14</cite></blockquote>
+    <p class="note step">He drifted in stages. Years earlier he was Paul's <em>fellowlabourer</em>. Then just a name. Then he was gone. Paul doesn't say he hated Jesus. He says he <em>loved this present world</em>: the comfort, the freedom, a life without chains.</p>
+    <p class="note step">We aren't told how Demas's story ended, and we shouldn't guess. The same Lord who got Mark back can get Demas back. And if the old world is pulling at you today, <em>call a brother before you go, not after.</em></p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="11-12" data-hl="Only Luke is with me|Take Mark, and bring him with thee: for he is profitable to me for the ministry|Tychicus have I sent to Ephesus"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise">Mark: the long way round</h2>
+    <div class="stage">
+      <svg class="map" data-world viewBox="150 95 700 400" style="max-height:42vh" data-towns="Rome!:t, Ephesus:t, Perga:t, Jerusalem*:r, Antioch:r, Salamis:b" role="img" aria-label="A map of Mark's road in four legs. First, from Antioch with Paul and Barnabas, across Cyprus to Perga. Second, he leaves them at Perga and goes home to Jerusalem. Third, years later, he sails to Cyprus with Barnabas. Fourth, Paul asks Timothy to bring him from Ephesus to Rome.">
+        <path class="map-route r1 j1" data-via="Antioch, Salamis, Paphos, @31.3 36.3, Perga"/>
+        <path class="map-route r2 j3" data-via="Perga, Attalia, @31.5 35.0, @33.5 34.2, Caesarea, Jerusalem"/>
+        <path class="map-route r3 j2" data-via="Antioch, Salamis"/>
+        <path class="map-route r4 j4" data-via="Ephesus, @26.6 37.6, @24.8 36.5, @22 36.2, @18 37, Rhegium, Puteoli, Rome"/>
+      </svg>
+    </div>
+    <ol class="t2t04-legs">
+      <li class="step map-go1"><i>Leg 1</i><b>Joins the team</b><span>with Paul and Barnabas (Acts 13)</span></li>
+      <li class="step map-go2"><i>Leg 2</i><b>Quits at Perga</b><span>goes home (Acts 13:13)</span></li>
+      <li class="step map-go3"><i>Leg 3</i><b>Barnabas takes him</b><span>to Cyprus (Acts 15:39)</span></li>
+      <li class="step map-go4"><i>Leg 4</i><b>“Bring him”</b><span>to Rome (2 Timothy 4:11)</span></li>
+    </ol>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="11" data-hl="Take Mark, and bring him with thee: for he is profitable to me for the ministry"></blockquote>
+    <h2 class="rise" style="--d:1">Paul remembers a man who quit</h2>
+    <blockquote class="quote rise" style="--d:2"><p>“But Paul thought not good to take him with them, who departed from them from Pamphylia, and went not with them to the work.”</p><cite>Acts 15:38</cite></blockquote>
+    <p class="note step">Paul wrote that man off, and the quarrel was bad enough that Paul and Barnabas split up (Acts 15:39). Now, near the end, Paul says <em>“he is profitable to me.”</em> Useful. The man he refused is the one he asks for.</p>
+    <p class="note step">How did that happen? Someone gave Mark a second chance, and Mark took it and proved himself. If you've quit on a job, a program or a person, this is the most hopeful verse in the chapter for you.</p>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise">Barnabas did it twice</h2>
+    <blockquote class="quote rise" style="--d:1"><p>“But Barnabas took him, and brought him to the apostles, and declared unto them how he had seen the Lord in the way, and that he had spoken to him, and how he had preached boldly at Damascus in the name of Jesus.”</p><cite>Acts 9:27</cite></blockquote>
+    <div class="chains">
+      <div class="chain step"><span class="who-chip">Barnabas</span><span class="said">“took him”</span><span class="who-chip">Saul, the man the church feared</span><span class="said">became</span><span class="who-chip jesus">Paul</span></div>
+      <div class="chain step"><span class="who-chip">Barnabas</span><span class="said">“took Mark”</span><span class="who-chip">Mark, who'd quit</span><span class="said">became</span><span class="who-chip jesus">“profitable”</span></div>
+      <div class="chain step"><span class="who-chip">You</span><span class="said">take</span><span class="who-chip">the new guy, the one who failed</span><span class="said">and he becomes</span><span class="who-chip jesus">?</span></div>
+    </div>
+    <p class="note step">Paul was a Barnabas project too. When no one in Jerusalem would trust him, Barnabas did. So when Paul asks for Mark, he is giving someone else what he once got himself. Be the Barnabas for somebody today.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="13" data-hl="The cloke that I left at Troas with Carpus|the books, but especially the parchments"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise">A cloak, books and parchments</h2>
+    <div class="t2t04-kit">
+      <div class="step">
+        <svg viewBox="0 0 100 100" aria-hidden="true"><path class="ic" d="M50 12 C30 12 18 24 18 40 L10 88 L90 88 L82 40 C82 24 70 12 50 12 Z"/><path class="ln" d="M50 16 L50 88 M36 36 Q50 48 64 36"/></svg>
+        <span class="for">for the body</span><h3>The cloak</h3><p>A heavy outer wrap. He's cold in a damp cell, and winter is coming (v. 21).</p>
+      </div>
+      <div class="step">
+        <svg viewBox="0 0 100 100" aria-hidden="true"><rect class="ic" x="22" y="14" width="56" height="72" rx="6"/><path class="ln" d="M32 30 L68 30 M32 44 L68 44 M32 58 L60 58"/><rect class="ic" x="14" y="20" width="12" height="60" rx="5"/></svg>
+        <span class="for">for the mind</span><h3>The books</h3><p>Scrolls of papyrus. Paul, near the end, still wants something to read.</p>
+      </div>
+      <div class="step">
+        <svg viewBox="0 0 100 100" aria-hidden="true"><path class="ic" d="M20 20 L74 20 Q84 20 84 30 L84 76 Q84 84 74 84 L26 84 Q16 84 16 74 L16 30 Q16 20 26 20 Z"/><path class="ln" d="M28 38 L72 38 M28 52 L72 52 M28 66 L56 66"/></svg>
+        <span class="for">for the soul</span><h3>The parchments</h3><p>Animal-skin scrolls, perhaps Scripture or his own papers. “Especially,” he says.</p>
+      </div>
+    </div>
+    <p class="note step">Warmth, something to read, and the Word. A man about to die asks for these three, and every one is a plain need. Paul was not too spiritual to be cold.</p>
+    <p class="note step">He asked for help, and a man who asks is not a weak man. What do you need today? Say it to one person.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="14-15" data-hl="Alexander the coppersmith did me much evil|the Lord reward him according to his works"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise">Alexander, and a grudge</h2>
+    <p class="note rise" style="--d:1">We don't know which Alexander this is, or exactly what he did. <em>“Did me much evil”</em> and <em>“greatly withstood our words”</em> sounds like he turned on Paul, possibly at the trial. What matters is what Paul <em>does</em> with it:</p>
+    <div class="columns">
+      <div class="col law rise" style="--d:2">
+        <p class="who">Carry it</p>
+        <h3>“I'll never forget what he did”</h3>
+        <p>Resentment. It feels like strength and it eats the man who carries it. It has pulled many a man back to the bottle.</p>
+      </div>
+      <div class="col grace step">
+        <p class="who">Hand it over</p>
+        <h3>“The Lord reward him”</h3>
+        <p>Be careful of him (<em>“be thou ware”</em>), but leave the payback to God, who sees everything.</p>
+      </div>
+    </div>
+    <blockquote class="quote step"><p>“Dearly beloved, avenge not yourselves, but rather give place unto wrath: for it is written, Vengeance is mine; I will repay, saith the Lord.”</p><cite>Romans 12:19</cite></blockquote>
+    <p class="note step">Who is your Alexander? Say his name to God today, and hand it over.</p>
+  </div>
+</section>
+
+<!-- ======================= PART FOUR: NOT ALONE ======================= -->
+<section class="slide part">
+  <div class="inner">
+    <p class="part-n rise">Part four</p>
+    <h2 class="rise" style="--d:1">Alone, but not abandoned</h2>
+    <p class="range rise" style="--d:2">Verses 16–22</p>
+    <div class="rule"></div>
+    <p class="hook rise" style="--d:4">The room empties out. Someone is still standing there.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="16-17" data-hl="At my first answer no man stood with me, but all men forsook me|Notwithstanding the Lord stood with me, and strengthened me|I was delivered out of the mouth of the lion"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <div class="split">
+      <div class="stage">
+        <svg viewBox="0 0 640 340" role="img" aria-label="A courtroom. Rows of empty seats, and Paul standing alone at the stand. On a click a bright figure appears beside him: the Lord stood with me.">
+          <rect class="t2t04-bench" x="170" y="22" width="300" height="36" rx="8"/>
+          <text class="t2t04-note" x="320" y="47" text-anchor="middle" font-size="16" style="font-size:16px">the court</text>
+          <g>
+            <rect class="t2t04-seat" x="30" y="170" width="34" height="24" rx="5"/><rect class="t2t04-seat" x="80" y="170" width="34" height="24" rx="5"/><rect class="t2t04-seat" x="130" y="170" width="34" height="24" rx="5"/><rect class="t2t04-seat" x="180" y="170" width="34" height="24" rx="5"/>
+            <rect class="t2t04-seat" x="30" y="210" width="34" height="24" rx="5"/><rect class="t2t04-seat" x="80" y="210" width="34" height="24" rx="5"/><rect class="t2t04-seat" x="130" y="210" width="34" height="24" rx="5"/><rect class="t2t04-seat" x="180" y="210" width="34" height="24" rx="5"/>
+            <rect class="t2t04-seat" x="30" y="250" width="34" height="24" rx="5"/><rect class="t2t04-seat" x="80" y="250" width="34" height="24" rx="5"/><rect class="t2t04-seat" x="130" y="250" width="34" height="24" rx="5"/><rect class="t2t04-seat" x="180" y="250" width="34" height="24" rx="5"/>
+          </g>
+          <text class="t2t04-note" x="125" y="312" text-anchor="middle">“all men forsook me”</text>
+          <g>
+            <rect class="t2t04-bench" x="300" y="215" width="70" height="58" rx="4"/>
+            <circle class="t2t04-paul" cx="335" cy="150" r="17"/>
+            <path class="t2t04-paul" d="M310 215 L312 175 Q335 165 358 175 L360 215 Z"/>
+            <text class="t2t04-note" x="335" y="312" text-anchor="middle">Paul, alone</text>
+          </g>
+          <g class="t2t04-lord">
+            <circle class="t2t04-halo" cx="445" cy="170" r="92"/>
+            <circle class="t2t04-lordbody" cx="445" cy="108" r="22"/>
+            <path class="t2t04-lordbody" d="M410 262 L416 140 Q445 126 474 140 L480 262 Z"/>
+            <text class="t2t04-note b" x="480" y="312" text-anchor="middle">“the Lord stood with me”</text>
+          </g>
+        </svg>
+      </div>
+      <div>
+        <h2 class="rise">“My first answer”</h2>
+        <p class="note rise" style="--d:1">The <em>first answer</em> was Paul's first defense at his trial in Rome. Friends who had promised to be there weren't. <em>“All men forsook me.”</em> It must have been the loneliest day of his life.</p>
+        <p class="note step t2t04-go"><em>“Notwithstanding the Lord stood with me, and strengthened me.”</em> He had done the same thing once before, in the army barracks at Jerusalem:</p>
+        <blockquote class="quote step"><p>“And the night following the Lord stood by him, and said, Be of good cheer, Paul: for as thou hast testified of me in Jerusalem, so must thou bear witness also at Rome.”</p><cite>Acts 23:11</cite></blockquote>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <p class="saying rise" style="--d:1">Alone. <em>Not abandoned.</em></p>
+    <p class="note rise" style="--d:2">Some of you know that empty room: everybody gone when you needed them. The promise here is not that people never fail you. It's that <em>He doesn't.</em></p>
+    <blockquote class="quote step"><p>“for he hath said, I will never leave thee, nor forsake thee.”</p><cite>Hebrews 13:5</cite></blockquote>
+    <p class="note step">And look at what Paul says about the people who left him: <em>“I pray God that it may not be laid to their charge.”</em> He is saying Stephen's last words, the ones he heard while holding the coats:</p>
+    <blockquote class="quote step"><p>“And he kneeled down, and cried with a loud voice, Lord, lay not this sin to their charge.”</p><cite>Acts 7:60</cite></blockquote>
+    <p class="note step">Paul heard that prayer at the worst moment of his old life. It followed him for thirty years, and now he is praying it for his own friends. Forgiveness is learned, and it can be handed on.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="18" data-hl="the Lord shall deliver me from every evil work, and will preserve me unto his heavenly kingdom"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise">Through, not around</h2>
+    <div class="stage">
+      <svg class="curve" viewBox="0 0 680 290" style="max-height:34vh" role="img" aria-label="A line that starts low and climbs. Left alone at the trial. The Lord stood with me. Out of the mouth of the lion. Delivered from every evil work. Safe in his heavenly kingdom.">
+        <line class="curve-base" x1="20" y1="170" x2="660" y2="170"/>
+        <path class="curve-line" pathLength="1" d="M40 230 L170 200 L300 150 L430 100 L600 40"/>
+        <g class="curve-pt low" style="--k:0"><circle cx="40" cy="230" r="9"/><text x="26" y="262">left alone</text><text class="ref" x="26" y="280">4:16</text></g>
+        <g class="curve-pt" style="--k:1"><circle cx="170" cy="200" r="9"/><text x="170" y="236" text-anchor="middle">the Lord stood with me</text><text class="ref" x="170" y="254" text-anchor="middle">4:17</text></g>
+        <g class="curve-pt" style="--k:2"><circle cx="300" cy="150" r="9"/><text x="300" y="190" text-anchor="middle">out of the lion's mouth</text><text class="ref" x="300" y="208" text-anchor="middle">4:17</text></g>
+        <g class="curve-pt" style="--k:3"><circle cx="430" cy="100" r="9"/><text x="430" y="138" text-anchor="middle">from every evil work</text><text class="ref" x="430" y="156" text-anchor="middle">4:18</text></g>
+        <g class="curve-pt high" style="--k:4"><circle cx="600" cy="40" r="10"/><text x="640" y="82" text-anchor="end" font-weight="700" style="fill:var(--accent-hot)">his heavenly kingdom</text><text class="ref" x="640" y="100" text-anchor="end">4:18</text></g>
+      </svg>
+    </div>
+    <p class="note rise" style="--d:2">“Out of the mouth of the lion” is probably a picture of deadly danger, whether the emperor, the court, or the enemy behind them. Paul knew he'd probably die soon (v. 6). So <em>“deliver me from every evil work”</em> isn't <em>“keep me from dying.”</em></p>
+    <p class="note step">It's the same word as chapter 3: <em>“out of them all the Lord delivered me.”</em> Here the Lord brings him <em>through</em>, all the way, <em>“unto his heavenly kingdom.”</em> For a believer, death is the last road home, not the end. And a man who belongs to Jesus can't be lost.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="19-22" data-hl="Salute Prisca and Aquila, and the household of Onesiphorus|Trophimus have I left at Miletum sick|Do thy diligence to come before winter|The Lord Jesus Christ be with thy spirit. Grace be with you."></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise">The last names</h2>
+    <div class="t2t04-names">
+      <div class="rise" style="--d:1"><b>Prisca and Aquila</b><span>the tentmakers who took Paul in at Corinth (Acts 18)</span></div>
+      <div class="rise" style="--d:2"><b>The house of Onesiphorus</b><span>he “oft refreshed me, and was not ashamed of my chain” (1:16)</span></div>
+      <div class="rise" style="--d:3"><b>Erastus</b><span>stayed on at Corinth</span></div>
+      <div class="rise" style="--d:4"><b>Trophimus</b><span>left at Miletum, sick</span></div>
+      <div class="rise" style="--d:5"><b>Eubulus, Pudens, Linus, Claudia</b><span>and “all the brethren”: the Christians in Rome</span></div>
+      <div class="rise" style="--d:6"><b>Timothy</b><span>“Come before winter.”</span></div>
+    </div>
+    <p class="note step"><b>Trophimus, left sick.</b> Paul, who had seen God do remarkable things, didn't heal everyone, and he left a friend ill. Sickness isn't always a sign of sin or of weak faith, and prayer is not a vending machine. It's also why <em>“Do thy diligence to come before winter”</em> is so human: <em>I need you, and time is short.</em></p>
+    <p class="note step">Notice the ending: <em>“Grace be with you.”</em> The last words in Paul's last letter are about grace. He needed it every day, and so do we.</p>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise">The whole letter, in four lines</h2>
+    <div class="t2t04-back">
+      <div class="rise" style="--d:1"><i>1</i><b>Don't be ashamed</b><q>I am not ashamed: for I know whom I have believed</q> <cite>1:12</cite><p>Fan the flame. Don't hide.</p></div>
+      <div class="rise" style="--d:2"><i>2</i><b>Be strong</b><q>be strong in the grace that is in Christ Jesus</q> <cite>2:1</cite><p>Strength is a gift. Take it daily.</p></div>
+      <div class="rise" style="--d:3"><i>3</i><b>Hold to the Book</b><q>continue thou in the things which thou hast learned</q> <cite>3:14</cite><p>The Word keeps you through hard times.</p></div>
+      <div class="rise" style="--d:4"><i>4</i><b>Finish well</b><q>I have kept the faith</q> <cite>4:7</cite><p>One ordinary day at a time.</p></div>
+    </div>
+    <p class="note step">If you wanted the whole letter in one sentence: <em>Don't quit. Hold on to Jesus and His Word, and keep going until the end.</em></p>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise">A life in one line</h2>
+    <ol class="timeline" aria-label="Paul's life. Damascus road, about AD 34 to 35. Three journeys, about AD 46 to 57. Prison and Rome, about AD 57 to 62. This last letter, about AD 66 to 67. And the crown, at that day.">
+      <li style="--k:0"><b>Damascus road</b><span>about AD 34 to 35</span><small>the persecutor stopped</small></li>
+      <li style="--k:1"><b>Three journeys</b><span>about AD 46 to 57</span><small>stoned, shipwrecked</small></li>
+      <li style="--k:2"><b>Prison and Rome</b><span>about AD 57 to 62</span><small>then free again</small></li>
+      <li class="lit" style="--k:3"><b>This letter</b><span>about AD 66 to 67</span><small>“I have finished”</small></li>
+      <li class="wait" style="--k:4"><b>That day</b><span>the crown</span><small>“at that day”</small></li>
+    </ol>
+    <p class="note step">By tradition Paul was put to death in Rome not long after this, about AD 67 to 68. Thirty-odd years from the Damascus road to the finish line, and he never turned back.</p>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <p class="saying rise" style="--d:1">He held the coats. <em>He kept the faith.</em></p>
+    <p class="note rise" style="--d:2">That's the whole story of Paul in one line, and it is open to every man in this room. It wasn't talent or a clean start. He took the second chance Jesus gave him, and kept taking it, one day at a time, to the end.</p>
+    <p class="note step">Two things to do today. First: name one man who could be your <em>Barnabas</em>, someone who'd take a chance on you. Second: name one man you could be a Barnabas to. Then reach out to one of them.</p>
+    <p class="note step">You don't have to be ready for the whole race. You only have to run the next stretch.</p>
+  </div>
+</section>
+
+<!-- ======================= CLOSING ======================= -->
+<section class="slide remember">
+  <div class="inner">
+    <h2 class="rise">Points to remember</h2>
+    <ol class="seeds">
+      <li class="step"><span class="topic">The charge</span><span class="seed-q">“Preach the word; be instant in season, out of season” <cite>4:2</cite></span><span class="take">Be ready to say plainly what Jesus did for you, patiently, to the man in front of you.</span></li>
+      <li class="step"><span class="topic">Itching ears</span><span class="seed-q">“After their own lusts shall they heap to themselves teachers, having itching ears” <cite>4:3</cite></span><span class="take">Find the man who tells you what you need to hear, and keep him close.</span></li>
+      <li class="step"><span class="topic">Finishing</span><span class="seed-q">“I have finished my course, I have kept the faith” <cite>4:7</cite></span><span class="take">The crown is for everyone who loves His appearing. Run the next stretch.</span></li>
+      <li class="step"><span class="topic">Demas</span><span class="seed-q">“Demas hath forsaken me, having loved this present world” <cite>4:10</cite></span><span class="take">Drift happens in stages. Call a brother before you go, not after.</span></li>
+      <li class="step"><span class="topic">Mark</span><span class="seed-q">“Take Mark, and bring him with thee: for he is profitable to me” <cite>4:11</cite></span><span class="take">A man who quit can be useful again. Be a Barnabas for someone.</span></li>
+      <li class="step"><span class="topic">Not alone</span><span class="seed-q">“Notwithstanding the Lord stood with me, and strengthened me” <cite>4:17</cite></span><span class="take">People fail. He doesn't. Forgive, and let Him bring you through.</span></li>
+    </ol>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 1 of 6</p>
+      <span class="topic">The charge</span>
+      <h2>What did Paul charge Timothy to do?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="1"></blockquote>
+      <blockquote class="quote step" data-q="2"></blockquote>
+      <blockquote class="quote step" data-q="5"></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>Preach the word, in season and out, patiently. Keep a clear head, endure the hard parts, tell the good news, and fully do the work he was given.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 2 of 6</p>
+      <span class="topic">Itching ears</span>
+      <h2>What will people want instead of sound doctrine?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="3"></blockquote>
+      <blockquote class="quote step" data-q="4"></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>Teachers who tell them what they want to hear, and fables. Sound doctrine is the healthy teaching they need, even when it doesn't taste good.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 3 of 6</p>
+      <span class="topic">Finishing</span>
+      <h2>What had Paul done, and what was waiting for him?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="6"></blockquote>
+      <blockquote class="quote step" data-q="7"></blockquote>
+      <blockquote class="quote step" data-q="8"></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>He had fought a good fight, finished his course and kept the faith. A crown of righteousness was laid up for him, from the Lord the righteous judge, and not for him only but for all who love His appearing.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 4 of 6</p>
+      <span class="topic">Demas</span>
+      <h2>Why did Demas leave Paul?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="10"></blockquote>
+      <blockquote class="quote step"><p>“Luke, the beloved physician, and Demas, greet you.”</p><cite>Colossians 4:14</cite></blockquote>
+      <blockquote class="quote step"><p>“Marcus, Aristarchus, Demas, Lucas, my fellowlabourers.”</p><cite>Philemon 1:24</cite></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>He loved this present world. He started as Paul's fellowlabourer and drifted in stages. Call a brother before you go back, not after.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 5 of 6</p>
+      <span class="topic">Mark</span>
+      <h2>Who did Paul say was profitable to him for the ministry?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step"><p>“Now when Paul and his company loosed from Paphos, they came to Perga in Pamphylia: and John departing from them returned to Jerusalem.”</p><cite>Acts 13:13</cite></blockquote>
+      <blockquote class="quote step"><p>“But Paul thought not good to take him with them, who departed from them from Pamphylia, and went not with them to the work.”</p><cite>Acts 15:38</cite></blockquote>
+      <blockquote class="quote step" data-q="11"></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>Mark, the man who quit at Perga and was refused a second trip. Restored, he became useful, and Paul asked for him by name. A man who quit can be useful again.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 6 of 6</p>
+      <span class="topic">Not alone</span>
+      <h2>Who stood with Paul when everyone else left?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="16"></blockquote>
+      <blockquote class="quote step" data-q="17"></blockquote>
+      <blockquote class="quote step" data-q="18"></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>The Lord. When all men forsook him, He stood with Paul and strengthened him, delivered him, and will preserve him to His heavenly kingdom. People fail, and He doesn't.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide prayer">
+  <div class="inner">
+    <div class="emblem rise"></div>
+    <h2 class="rise" style="--d:1">Prayer requests</h2>
+    <p class="ask-line rise" style="--d:2">What can we pray about for you today? A place where you feel alone, or someone you need to forgive or call?</p>
+    <blockquote class="quote rise" style="--d:4"><p>“I have fought a good fight, I have finished my course, I have kept the faith: Henceforth there is laid up for me a crown of righteousness, which the Lord, the righteous judge, shall give me at that day: and not to me only, but unto all them also that love his appearing.”</p><cite>2 Timothy 4:7–8</cite></blockquote>
+  </div>
+</section>
+
+</main>
+
+<script>
+// King James Version, 2 Timothy chapter 4
+const V = {
+  1: "I charge thee therefore before God, and the Lord Jesus Christ, who shall judge the quick and the dead at his appearing and his kingdom;",
+  2: "Preach the word; be instant in season, out of season; reprove, rebuke, exhort with all longsuffering and doctrine.",
+  3: "For the time will come when they will not endure sound doctrine; but after their own lusts shall they heap to themselves teachers, having itching ears;",
+  4: "And they shall turn away their ears from the truth, and shall be turned unto fables.",
+  5: "But watch thou in all things, endure afflictions, do the work of an evangelist, make full proof of thy ministry.",
+  6: "For I am now ready to be offered, and the time of my departure is at hand.",
+  7: "I have fought a good fight, I have finished my course, I have kept the faith:",
+  8: "Henceforth there is laid up for me a crown of righteousness, which the Lord, the righteous judge, shall give me at that day: and not to me only, but unto all them also that love his appearing.",
+  9: "Do thy diligence to come shortly unto me:",
+  10: "For Demas hath forsaken me, having loved this present world, and is departed unto Thessalonica; Crescens to Galatia, Titus unto Dalmatia.",
+  11: "Only Luke is with me. Take Mark, and bring him with thee: for he is profitable to me for the ministry.",
+  12: "And Tychicus have I sent to Ephesus.",
+  13: "The cloke that I left at Troas with Carpus, when thou comest, bring with thee, and the books, but especially the parchments.",
+  14: "Alexander the coppersmith did me much evil: the Lord reward him according to his works:",
+  15: "Of whom be thou ware also; for he hath greatly withstood our words.",
+  16: "At my first answer no man stood with me, but all men forsook me: I pray God that it may not be laid to their charge.",
+  17: "Notwithstanding the Lord stood with me, and strengthened me; that by me the preaching might be fully known, and that all the Gentiles might hear: and I was delivered out of the mouth of the lion.",
+  18: "And the Lord shall deliver me from every evil work, and will preserve me unto his heavenly kingdom: to whom be glory for ever and ever. Amen.",
+  19: "Salute Prisca and Aquila, and the household of Onesiphorus.",
+  20: "Erastus abode at Corinth: but Trophimus have I left at Miletum sick.",
+  21: "Do thy diligence to come before winter. Eubulus greeteth thee, and Pudens, and Linus, and Claudia, and all the brethren.",
+  22: "The Lord Jesus Christ be with thy spirit. Grace be with you. Amen."
+};
+const BOOK = "2 Timothy 4";
+</script>
+<script src="../assets/deck.js"></script>
+</body>
+</html>
