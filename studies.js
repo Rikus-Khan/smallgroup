@@ -13687,5 +13687,101 @@ window.STUDIES = [
       },
       "big": "Christ is enough. The debt we owed was cancelled on the cross, and no rule list can add to that or cure a man's heart. Only Christ can."
     }
+  },
+  {
+    "id": "colossians-03",
+    "type": "chapter",
+    "book": "Colossians",
+    "ch": 3,
+    "date": "2026-10-31",
+    "title": "Colossians 3",
+    "sub": "Put off, put on",
+    "about": "You've been raised with Christ, so look up, take off the old clothes, put on mercy and love, and wear them at home and on the job.",
+    "tags": [
+      "New life",
+      "Putting off sin",
+      "Forgiveness",
+      "Peace and the Word",
+      "Family",
+      "Work"
+    ],
+    "url": "studies/colossians-03.html",
+    "overview": {
+      "where": "Paul writes from a house in Rome, to the church at Colosse in Asia (now Turkey)",
+      "when": "About AD 60 to 62, while Paul was under house arrest in Rome",
+      "people": [
+        "jesus",
+        "the-father"
+      ],
+      "places": [],
+      "story": [
+        "You have been raised with Christ, so seek things above. Your old self is dead, and your life is hid with Christ in God (1–4).",
+        "Put to death what belongs to the old life: sexual sin, uncleanness, evil desire and covetousness, which is idolatry. God's wrath is coming on disobedience (5–7).",
+        "Take off anger, malice, filthy talk and lies, like old clothes. Put on the new man, where Christ is all and in all (8–11).",
+        "Put on mercy, kindness, humility, meekness and patience. Forgive as Christ forgave you, and let love bind it all together (12–14).",
+        "Let Christ's peace rule, let His word dwell in you richly, and do everything in the name of the Lord Jesus (15–17).",
+        "In the home and at work: wives, husbands, children, fathers, servants. Whatever you do, do it heartily, as to the Lord (18–25)."
+      ],
+      "key": {
+        "ref": "Colossians 3:13",
+        "text": "Forbearing one another, and forgiving one another, if any man have a quarrel against any: even as Christ forgave you, so also do ye."
+      },
+      "big": "In Christ the old man is already off and the new man already on. So look up, put off the old clothes, put on mercy and love, and wear them at home and on the job as if the Lord is watching, because He is."
+    }
+  },
+  {
+    "id": "colossians-04",
+    "type": "chapter",
+    "book": "Colossians",
+    "ch": 4,
+    "date": "2026-10-31",
+    "title": "Colossians 4",
+    "sub": "Pray, speak, and know your people",
+    "about": "Paul ends with how to pray and how to talk, then names the men who stood by him: a runaway slave made a brother, a quitter made useful, and one who later left.",
+    "tags": [
+      "Prayer",
+      "Words",
+      "A second chance",
+      "Faithful friends",
+      "Warning",
+      "Finishing well"
+    ],
+    "url": "studies/colossians-04.html",
+    "overview": {
+      "where": "Paul in Rome, writing to Colosse, with greetings from his friends and a note about Laodicea and Hierapolis nearby",
+      "when": "About AD 60 to 62, in Paul's first Roman imprisonment",
+      "people": [
+        "tychicus",
+        "onesimus",
+        "aristarchus",
+        "barnabas",
+        "john-mark",
+        "jesus-justus",
+        "epaphras",
+        "luke-the-physician",
+        "demas",
+        "nymphas",
+        "archippus",
+        "paul"
+      ],
+      "places": [
+        "laodicea",
+        "hierapolis",
+        "heaven"
+      ],
+      "story": [
+        "Masters, be fair; you have a Master in heaven. Continue in prayer, watch, and give thanks; pray for a door to speak about Christ (1–4).",
+        "Walk in wisdom toward outsiders and buy up the time. Let your speech be gracious and seasoned with salt (5–6).",
+        "Tychicus and Onesimus, a faithful brother who is one of you, bring all the news (7–9).",
+        "Aristarchus, Marcus (Barnabas' cousin, once a quitter, now to be welcomed) and Jesus Justus send greetings (10–11).",
+        "Epaphras labours in prayer for them; Luke the beloved physician and Demas greet them (12–14).",
+        "Greet Nymphas and the church in his house, swap letters with Laodicea, and tell Archippus to fulfil his ministry. Remember my bonds. Grace be with you (15–18)."
+      ],
+      "key": {
+        "ref": "Colossians 4:6",
+        "text": "Let your speech be alway with grace, seasoned with salt, that ye may know how ye ought to answer every man."
+      },
+      "big": "The new life is lived in prayer, in gracious words, and among real people. Onesimus came home a brother, Mark became useful again, Luke stayed, and Demas is a gentle warning. Finish what God gave you, and rest on grace."
+    }
   }
 ];

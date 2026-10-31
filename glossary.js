@@ -456,7 +456,13 @@ window.GLOSSARY = [
     [ 1, 2, 3, 4, 28 ] ],
    [
     "Colossians", 2,
-    [ 6 ] ] ]
+    [ 6 ] ],
+   [
+    "Colossians", 3,
+    [ 17 ] ],
+   [
+    "Colossians", 4,
+    [ 11 ] ] ]
  },
  {
   "id": "john-the-baptist",
@@ -1332,7 +1338,10 @@ window.GLOSSARY = [
     [ 2, 3, 12, 19 ] ],
    [
     "Colossians", 2,
-    [ 2 ] ] ]
+    [ 2 ] ],
+   [
+    "Colossians", 3,
+    [ 17 ] ] ]
  },
  {
   "id": "holy-spirit",
@@ -4017,7 +4026,10 @@ window.GLOSSARY = [
     [ 20 ] ],
    [
     "Colossians", 1,
-    [ 5, 16, 20, 23 ] ] ]
+    [ 5, 16, 20, 23 ] ],
+   [
+    "Colossians", 4,
+    [ 1 ] ] ]
  },
  {
   "id": "hell",
@@ -4629,6 +4641,12 @@ window.GLOSSARY = [
     [ 23 ] ],
    [
     "Colossians", 1,
+    [ 6 ] ],
+   [
+    "Colossians", 3,
+    [ 16 ] ],
+   [
+    "Colossians", 4,
     [ 6 ] ] ]
  },
  {
@@ -5070,7 +5088,10 @@ window.GLOSSARY = [
     [ 19, 20 ] ],
    [
     "Colossians", 1,
-    [ 27 ] ] ]
+    [ 27 ] ],
+   [
+    "Colossians", 3,
+    [ 4 ] ] ]
  },
  {
   "id": "the-law",
@@ -5652,7 +5673,13 @@ window.GLOSSARY = [
     [ 1, 2, 3, 4, 7, 24, 27, 28 ] ],
    [
     "Colossians", 2,
-    [ 2, 5, 6, 8, 11, 17, 20 ] ] ]
+    [ 2, 5, 6, 8, 11, 17, 20 ] ],
+   [
+    "Colossians", 3,
+    [ 1, 3, 4, 11, 13, 16, 24 ] ],
+   [
+    "Colossians", 4,
+    [ 3, 12 ] ] ]
  },
  {
   "id": "son-of-god",
@@ -6318,7 +6345,10 @@ window.GLOSSARY = [
     [ 15 ] ],
    [
     "Philippians", 1,
-    [ 8 ] ] ]
+    [ 8 ] ],
+   [
+    "Colossians", 4,
+    [ 13 ] ] ]
  },
  {
   "id": "baptize",
@@ -6891,7 +6921,10 @@ window.GLOSSARY = [
     [ 2 ] ],
    [
     "Philippians", 3,
-    [ 6 ] ] ]
+    [ 6 ] ],
+   [
+    "Colossians", 4,
+    [ 13 ] ] ]
  },
  {
   "id": "wisdom",
@@ -7035,7 +7068,13 @@ window.GLOSSARY = [
     [ 9, 28 ] ],
    [
     "Colossians", 2,
-    [ 3, 23 ] ] ]
+    [ 3, 23 ] ],
+   [
+    "Colossians", 3,
+    [ 16 ] ],
+   [
+    "Colossians", 4,
+    [ 5 ] ] ]
  },
  {
   "id": "understanding",
@@ -7344,7 +7383,10 @@ window.GLOSSARY = [
     [ 9, 10 ] ],
    [
     "Colossians", 2,
-    [ 3 ] ] ]
+    [ 3 ] ],
+   [
+    "Colossians", 3,
+    [ 10 ] ] ]
  },
  {
   "id": "instruction",
@@ -8445,7 +8487,10 @@ window.GLOSSARY = [
     [ 5, 6 ] ],
    [
     "Philippians", 1,
-    [ 7 ] ] ]
+    [ 7 ] ],
+   [
+    "Colossians", 3,
+    [ 22 ] ] ]
  },
  {
   "id": "tongue",
@@ -8781,7 +8826,10 @@ window.GLOSSARY = [
     [ 6 ] ],
    [
     "Ephesians", 6,
-    [ 4 ] ] ]
+    [ 4 ] ],
+   [
+    "Colossians", 3,
+    [ 6, 8, 21 ] ] ]
  },
  {
   "id": "pride",
@@ -9819,7 +9867,10 @@ window.GLOSSARY = [
     [ 11 ] ],
    [
     "Ephesians", 6,
-    [ 9 ] ] ]
+    [ 9 ] ],
+   [
+    "Colossians", 3,
+    [ 25 ] ] ]
  },
  {
   "id": "rod",
@@ -11979,7 +12030,10 @@ window.GLOSSARY = [
     [ 11 ] ],
    [
     "Romans", 2,
-    [ 24 ] ] ]
+    [ 24 ] ],
+   [
+    "Colossians", 3,
+    [ 8 ] ] ]
  },
  {
   "id": "ye-are-gods",
@@ -12381,6 +12435,12 @@ window.GLOSSARY = [
     [ 3 ] ],
    [
     "Colossians", 2,
+    [ 11 ] ],
+   [
+    "Colossians", 3,
+    [ 11 ] ],
+   [
+    "Colossians", 4,
     [ 11 ] ] ]
  },
  {
@@ -13356,7 +13416,10 @@ window.GLOSSARY = [
     [ 50 ] ],
    [
     "Galatians", 5,
-    [ 21 ] ] ]
+    [ 21 ] ],
+   [
+    "Colossians", 4,
+    [ 11 ] ] ]
  },
  {
   "id": "wind",
@@ -14376,7 +14439,10 @@ window.GLOSSARY = [
     [ 7, 9 ] ],
    [
     "Colossians", 1,
-    [ 2 ] ] ]
+    [ 2 ] ],
+   [
+    "Colossians", 3,
+    [ 15 ] ] ]
  },
  {
   "id": "remit",
@@ -15939,7 +16005,10 @@ window.GLOSSARY = [
     [ 13 ] ],
    [
     "Colossians", 1,
-    [ 26 ] ] ]
+    [ 26 ] ],
+   [
+    "Colossians", 4,
+    [ 4 ] ] ]
  },
  {
   "id": "vine",
@@ -18102,7 +18171,10 @@ window.GLOSSARY = [
     [ 4 ] ],
    [
     "Philippians", 2,
-    [ 1, 27 ] ] ]
+    [ 1, 27 ] ],
+   [
+    "Colossians", 3,
+    [ 12 ] ] ]
  },
  {
   "id": "baal",
@@ -20853,7 +20925,10 @@ window.GLOSSARY = [
     [ 7 ] ],
    [
     "Romans", 13,
-    [ 9 ] ] ]
+    [ 9 ] ],
+   [
+    "Colossians", 3,
+    [ 5 ] ] ]
  },
  {
   "id": "heritage",
@@ -22353,7 +22428,10 @@ window.GLOSSARY = [
     [ 1 ] ],
    [
     "Ephesians", 4,
-    [ 2 ] ] ]
+    [ 2 ] ],
+   [
+    "Colossians", 3,
+    [ 12 ] ] ]
  },
  {
   "id": "cherethites",
@@ -25407,7 +25485,10 @@ window.GLOSSARY = [
     [ 31 ] ],
    [
     "Luke", 8,
-    [ 43 ] ] ]
+    [ 43 ] ],
+   [
+    "Colossians", 4,
+    [ 14 ] ] ]
  },
  {
   "id": "children-of-the-bridechamber",
@@ -26586,7 +26667,10 @@ window.GLOSSARY = [
     [ 19 ] ],
    [
     "Philippians", 4,
-    [ 21, 22 ] ] ]
+    [ 21, 22 ] ],
+   [
+    "Colossians", 4,
+    [ 10, 12, 15 ] ] ]
  },
  {
   "id": "shake-off-the-dust",
@@ -26865,7 +26949,10 @@ window.GLOSSARY = [
     [ 17, 18 ] ],
    [
     "Colossians", 2,
-    [ 18 ] ] ]
+    [ 18 ] ],
+   [
+    "Colossians", 3,
+    [ 24 ] ] ]
  },
  {
   "id": "little-ones",
@@ -27255,7 +27342,10 @@ window.GLOSSARY = [
     [ 49, 50 ] ],
    [
     "Luke", 14,
-    [ 34 ] ] ]
+    [ 34 ] ],
+   [
+    "Colossians", 4,
+    [ 6 ] ] ]
  },
  {
   "id": "savour",
@@ -27477,7 +27567,10 @@ window.GLOSSARY = [
     [ 19 ] ],
    [
     "Ephesians", 5,
-    [ 3 ] ] ]
+    [ 3 ] ],
+   [
+    "Colossians", 3,
+    [ 5 ] ] ]
  },
  {
   "id": "forswear",
@@ -27615,7 +27708,10 @@ window.GLOSSARY = [
     [ 12, 15 ] ],
    [
     "Colossians", 1,
-    [ 28 ] ] ]
+    [ 28 ] ],
+   [
+    "Colossians", 4,
+    [ 12 ] ] ]
  },
  {
   "id": "begat",
@@ -28170,7 +28266,10 @@ window.GLOSSARY = [
     [ 24 ] ],
    [
     "Philippians", 4,
-    [ 20, 23 ] ] ]
+    [ 20, 23 ] ],
+   [
+    "Colossians", 4,
+    [ 18 ] ] ]
  },
  {
   "id": "treasure-in-heaven",
@@ -29097,7 +29196,10 @@ window.GLOSSARY = [
     [ 26, 27 ] ],
    [
     "Colossians", 2,
-    [ 2 ] ] ]
+    [ 2 ] ],
+   [
+    "Colossians", 4,
+    [ 3 ] ] ]
  },
  {
   "id": "converted",
@@ -30312,7 +30414,10 @@ window.GLOSSARY = [
     [ 15 ] ],
    [
     "Colossians", 1,
-    [ 18, 24 ] ] ]
+    [ 18, 24 ] ],
+   [
+    "Colossians", 4,
+    [ 15, 16 ] ] ]
  },
  {
   "id": "bind-and-loose",
@@ -30369,6 +30474,9 @@ window.GLOSSARY = [
     [ 49 ] ],
    [
     "Colossians", 1,
+    [ 7 ] ],
+   [
+    "Colossians", 4,
     [ 7 ] ] ]
  },
  {
@@ -31587,7 +31695,10 @@ window.GLOSSARY = [
     [ 21 ] ],
    [
     "Colossians", 1,
-    [ 7, 23, 25 ] ] ]
+    [ 7, 23, 25 ] ],
+   [
+    "Colossians", 4,
+    [ 7 ] ] ]
  },
  {
   "id": "joanna",
@@ -32388,7 +32499,10 @@ window.GLOSSARY = [
     [ 11, 14, 18 ] ],
    [
     "Colossians", 1,
-    [ 12 ] ] ]
+    [ 12 ] ],
+   [
+    "Colossians", 3,
+    [ 24 ] ] ]
  },
  {
   "id": "rich-fool",
@@ -33432,7 +33546,10 @@ window.GLOSSARY = [
     [ 5, 7, 28 ] ],
    [
     "Ephesians", 1,
-    [ 4 ] ] ]
+    [ 4 ] ],
+   [
+    "Colossians", 3,
+    [ 12 ] ] ]
  },
  {
   "id": "false-christs",
@@ -35142,7 +35259,10 @@ window.GLOSSARY = [
     [ 55, 56 ] ],
    [
     "Romans", 8,
-    [ 34 ] ] ]
+    [ 34 ] ],
+   [
+    "Colossians", 3,
+    [ 1 ] ] ]
  },
  {
   "id": "penury",
@@ -36222,7 +36342,10 @@ window.GLOSSARY = [
     [ 46 ] ],
    [
     "Ephesians", 6,
-    [ 5 ] ] ]
+    [ 5 ] ],
+   [
+    "Colossians", 3,
+    [ 22 ] ] ]
  },
  {
   "id": "john-the-apostle",
@@ -36408,7 +36531,10 @@ window.GLOSSARY = [
     [ 6 ] ],
    [
     "Galatians", 2,
-    [ 1, 9, 13 ] ] ]
+    [ 1, 9, 13 ] ],
+   [
+    "Colossians", 4,
+    [ 10 ] ] ]
  },
  {
   "id": "son-of-consolation",
@@ -37158,7 +37284,10 @@ window.GLOSSARY = [
     [ 5, 13 ] ],
    [
     "Acts", 15,
-    [ 37 ] ] ]
+    [ 37 ] ],
+   [
+    "Colossians", 4,
+    [ 10 ] ] ]
  },
  {
   "id": "rhoda",
@@ -37320,7 +37449,10 @@ window.GLOSSARY = [
     [ 1 ] ],
    [
     "Colossians", 1,
-    [ 1, 23 ] ] ]
+    [ 1, 23 ] ],
+   [
+    "Colossians", 4,
+    [ 18 ] ] ]
  },
  {
   "id": "silas",
@@ -38919,7 +39051,10 @@ window.GLOSSARY = [
     [ 14 ] ],
    [
     "Galatians", 5,
-    [ 20 ] ] ]
+    [ 20 ] ],
+   [
+    "Colossians", 3,
+    [ 5 ] ] ]
  },
  {
   "id": "consorted",
@@ -39942,7 +40077,10 @@ window.GLOSSARY = [
     [ 4 ] ],
    [
     "Acts", 27,
-    [ 2 ] ] ]
+    [ 2 ] ],
+   [
+    "Colossians", 4,
+    [ 10 ] ] ]
  },
  {
   "id": "alexander-of-ephesus",
@@ -40080,7 +40218,10 @@ window.GLOSSARY = [
     [ 4 ] ],
    [
     "Ephesians", 6,
-    [ 21 ] ] ]
+    [ 21 ] ],
+   [
+    "Colossians", 4,
+    [ 7 ] ] ]
  },
  {
   "id": "trophimus",
@@ -40428,6 +40569,9 @@ window.GLOSSARY = [
     [ 14 ] ],
    [
     "1 Corinthians", 14,
+    [ 11 ] ],
+   [
+    "Colossians", 3,
     [ 11 ] ] ]
  },
  {
@@ -40572,7 +40716,10 @@ window.GLOSSARY = [
     [ 2 ] ],
    [
     "Colossians", 1,
-    [ 11 ] ] ]
+    [ 11 ] ],
+   [
+    "Colossians", 3,
+    [ 12 ] ] ]
  },
  {
   "id": "impenitent",
@@ -40863,7 +41010,10 @@ window.GLOSSARY = [
     [ 6 ] ],
    [
     "Ephesians", 4,
-    [ 22 ] ] ]
+    [ 22 ] ],
+   [
+    "Colossians", 3,
+    [ 9 ] ] ]
  },
  {
   "id": "body-of-sin",
@@ -40938,7 +41088,10 @@ window.GLOSSARY = [
     [ 25 ] ],
    [
     "Ephesians", 5,
-    [ 30 ] ] ]
+    [ 30 ] ],
+   [
+    "Colossians", 3,
+    [ 5 ] ] ]
  },
  {
   "id": "instruments",
@@ -41013,7 +41166,10 @@ window.GLOSSARY = [
     [ 19 ] ],
    [
     "Ephesians", 5,
-    [ 3 ] ] ]
+    [ 3 ] ],
+   [
+    "Colossians", 3,
+    [ 5 ] ] ]
  },
  {
   "id": "holiness",
@@ -41577,7 +41733,10 @@ window.GLOSSARY = [
     [ 1, 8, 21 ] ],
    [
     "Colossians", 1,
-    [ 2 ] ] ]
+    [ 2 ] ],
+   [
+    "Colossians", 4,
+    [ 15 ] ] ]
  },
  {
   "id": "captain-of-the-guard",
@@ -42147,7 +42306,10 @@ window.GLOSSARY = [
     [ 16 ] ],
    [
     "Ephesians", 4,
-    [ 4 ] ] ]
+    [ 4 ] ],
+   [
+    "Colossians", 3,
+    [ 15 ] ] ]
  },
  {
   "id": "spiritual-gifts",
@@ -42264,7 +42426,10 @@ window.GLOSSARY = [
   "refs": [
    [
     "Romans", 7,
-    [ 8 ] ] ]
+    [ 8 ] ],
+   [
+    "Colossians", 3,
+    [ 5 ] ] ]
  },
  {
   "id": "taking-occasion",
@@ -42429,7 +42594,10 @@ window.GLOSSARY = [
   "refs": [
    [
     "Romans", 8,
-    [ 13 ] ] ]
+    [ 13 ] ],
+   [
+    "Colossians", 3,
+    [ 5 ] ] ]
  },
  {
   "id": "enmity",
@@ -43062,7 +43230,10 @@ window.GLOSSARY = [
   "refs": [
    [
     "Romans", 16,
-    [ 7 ] ] ]
+    [ 7 ] ],
+   [
+    "Colossians", 4,
+    [ 10 ] ] ]
  },
  {
   "id": "amplias",
@@ -43947,6 +44118,9 @@ window.GLOSSARY = [
     [ 1 ] ],
    [
     "1 Corinthians", 16,
+    [ 14 ] ],
+   [
+    "Colossians", 3,
     [ 14 ] ] ]
  },
  {
@@ -44820,7 +44994,10 @@ window.GLOSSARY = [
     [ 22 ] ],
    [
     "Colossians", 2,
-    [ 2 ] ] ]
+    [ 2 ] ],
+   [
+    "Colossians", 4,
+    [ 8, 11 ] ] ]
  },
  {
   "id": "pressed-out-of-measure",
@@ -45036,7 +45213,10 @@ window.GLOSSARY = [
   "refs": [
    [
     "2 Corinthians", 3,
-    [ 1, 2, 3 ] ] ]
+    [ 1, 2, 3 ] ],
+   [
+    "Colossians", 4,
+    [ 16 ] ] ]
  },
  {
   "id": "commendation",
@@ -46164,7 +46344,10 @@ window.GLOSSARY = [
     [ 8 ] ],
    [
     "Philippians", 2,
-    [ 1 ] ] ]
+    [ 1 ] ],
+   [
+    "Colossians", 3,
+    [ 12 ] ] ]
  },
  {
   "id": "bonds",
@@ -46176,7 +46359,10 @@ window.GLOSSARY = [
     [ 20 ] ],
    [
     "Philippians", 1,
-    [ 7, 13, 14, 16 ] ] ]
+    [ 7, 13, 14, 16 ] ],
+   [
+    "Colossians", 4,
+    [ 3, 18 ] ] ]
  },
  {
   "id": "palace-guard",
@@ -46449,7 +46635,10 @@ window.GLOSSARY = [
   "refs": [
    [
     "Ephesians", 4,
-    [ 2 ] ] ]
+    [ 2 ] ],
+   [
+    "Colossians", 3,
+    [ 13 ] ] ]
  },
  {
   "id": "led-captivity-captive",
@@ -46560,7 +46749,10 @@ window.GLOSSARY = [
   "refs": [
    [
     "Ephesians", 4,
-    [ 24 ] ] ]
+    [ 24 ] ],
+   [
+    "Colossians", 3,
+    [ 10 ] ] ]
  },
  {
   "id": "renewed-in-mind",
@@ -46656,7 +46848,10 @@ window.GLOSSARY = [
     [ 20 ] ],
    [
     "Ephesians", 4,
-    [ 31 ] ] ]
+    [ 31 ] ],
+   [
+    "Colossians", 3,
+    [ 8 ] ] ]
  },
  {
   "id": "tenderhearted",
@@ -46683,7 +46878,10 @@ window.GLOSSARY = [
   "refs": [
    [
     "Colossians", 1,
-    [ 7 ] ] ]
+    [ 7 ] ],
+   [
+    "Colossians", 4,
+    [ 12 ] ] ]
  },
  {
   "id": "meet-fit",
@@ -46767,7 +46965,10 @@ window.GLOSSARY = [
   "refs": [
    [
     "Colossians", 2,
-    [ 1 ] ] ]
+    [ 1 ] ],
+   [
+    "Colossians", 4,
+    [ 13, 15, 16 ] ] ]
  },
  {
   "id": "beguile",
@@ -46911,6 +47112,9 @@ window.GLOSSARY = [
     [ 2 ] ],
    [
     "Ephesians", 5,
+    [ 6 ] ],
+   [
+    "Colossians", 3,
     [ 6 ] ] ]
  },
  {
@@ -47400,7 +47604,10 @@ window.GLOSSARY = [
   "refs": [
    [
     "Ephesians", 5,
-    [ 16 ] ] ]
+    [ 16 ] ],
+   [
+    "Colossians", 4,
+    [ 5 ] ] ]
  },
  {
   "id": "excess",
@@ -47427,7 +47634,10 @@ window.GLOSSARY = [
   "refs": [
    [
     "Ephesians", 5,
-    [ 19 ] ] ]
+    [ 19 ] ],
+   [
+    "Colossians", 3,
+    [ 16 ] ] ]
  },
  {
   "id": "making-melody",
@@ -47517,7 +47727,10 @@ window.GLOSSARY = [
   "refs": [
    [
     "Ephesians", 6,
-    [ 5 ] ] ]
+    [ 5 ] ],
+   [
+    "Colossians", 3,
+    [ 22 ] ] ]
  },
  {
   "id": "eyeservice",
@@ -47526,7 +47739,10 @@ window.GLOSSARY = [
   "refs": [
    [
     "Ephesians", 6,
-    [ 6 ] ] ]
+    [ 6 ] ],
+   [
+    "Colossians", 3,
+    [ 22 ] ] ]
  },
  {
   "id": "menpleasers",
@@ -47535,7 +47751,10 @@ window.GLOSSARY = [
   "refs": [
    [
     "Ephesians", 6,
-    [ 6 ] ] ]
+    [ 6 ] ],
+   [
+    "Colossians", 3,
+    [ 22 ] ] ]
  },
  {
   "id": "bond-or-free",
@@ -47709,7 +47928,10 @@ window.GLOSSARY = [
     [ 7 ] ],
    [
     "Ephesians", 6,
-    [ 19 ] ] ]
+    [ 19 ] ],
+   [
+    "Colossians", 4,
+    [ 3 ] ] ]
  },
  {
   "id": "ambassador-in-bonds",
@@ -47719,5 +47941,131 @@ window.GLOSSARY = [
    [
     "Ephesians", 6,
     [ 20 ] ] ]
+ },
+ {
+  "id": "affection",
+  "kind": "term",
+  "name": "Affection (old word for the mind and its passions; “inordinate affection” is passion with no brakes)",
+  "refs": [
+   [
+    "Colossians", 3,
+    [ 2, 5 ] ] ]
+ },
+ {
+  "id": "filthy-communication",
+  "kind": "term",
+  "name": "Filthy communication (dirty talk: “communication” is the old word for speech)",
+  "refs": [
+   [
+    "Colossians", 3,
+    [ 8 ] ] ]
+ },
+ {
+  "id": "humbleness-of-mind",
+  "kind": "term",
+  "name": "Humbleness of mind (humility, not thinking too highly of yourself)",
+  "refs": [
+   [
+    "Colossians", 3,
+    [ 12 ] ] ]
+ },
+ {
+  "id": "bond-of-perfectness",
+  "kind": "term",
+  "name": "The bond of perfectness (love, the band that holds every other virtue together)",
+  "refs": [
+   [
+    "Colossians", 3,
+    [ 14 ] ] ]
+ },
+ {
+  "id": "scythian",
+  "kind": "person",
+  "name": "Scythians (wild horsemen from beyond the Black Sea, thought the lowest of the barbarians)",
+  "refs": [
+   [
+    "Colossians", 3,
+    [ 11 ] ] ]
+ },
+ {
+  "id": "heartily",
+  "kind": "term",
+  "name": "Heartily (with your whole heart, as for the Lord)",
+  "refs": [
+   [
+    "Colossians", 3,
+    [ 23 ] ] ]
+ },
+ {
+  "id": "discouraged",
+  "kind": "term",
+  "name": "Discouraged (lose heart and give up trying)",
+  "refs": [
+   [
+    "Colossians", 3,
+    [ 21 ] ] ]
+ },
+ {
+  "id": "onesimus",
+  "kind": "person",
+  "name": "Onesimus (Philemon's runaway slave who became a brother in Christ; the name means “useful”)",
+  "refs": [
+   [
+    "Colossians", 4,
+    [ 9 ] ] ]
+ },
+ {
+  "id": "luke-the-physician",
+  "kind": "person",
+  "name": "Luke, the beloved physician (Paul's doctor and travelling companion, who wrote the Gospel and Acts)",
+  "refs": [
+   [
+    "Colossians", 4,
+    [ 14 ] ] ]
+ },
+ {
+  "id": "demas",
+  "kind": "person",
+  "name": "Demas (a fellow worker of Paul who later left, loving this present world)",
+  "refs": [
+   [
+    "Colossians", 4,
+    [ 14 ] ] ]
+ },
+ {
+  "id": "nymphas",
+  "kind": "person",
+  "name": "Nymphas (a believer in Laodicea whose house was a church)",
+  "refs": [
+   [
+    "Colossians", 4,
+    [ 15 ] ] ]
+ },
+ {
+  "id": "archippus",
+  "kind": "person",
+  "name": "Archippus (Paul's “fellowsoldier,” told to fulfil his ministry)",
+  "refs": [
+   [
+    "Colossians", 4,
+    [ 17 ] ] ]
+ },
+ {
+  "id": "jesus-justus",
+  "kind": "person",
+  "name": "Jesus, called Justus (a Jewish believer who worked beside Paul in Rome)",
+  "refs": [
+   [
+    "Colossians", 4,
+    [ 11 ] ] ]
+ },
+ {
+  "id": "hierapolis",
+  "kind": "place",
+  "name": "Hierapolis (a hot-springs city in the Lycus valley, near Colosse and Laodicea)",
+  "refs": [
+   [
+    "Colossians", 4,
+    [ 13 ] ] ]
  }
 ];

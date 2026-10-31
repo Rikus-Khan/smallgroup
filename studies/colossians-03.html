@@ -1,0 +1,765 @@
+<!doctype html>
+<html lang="en" data-theme="stone">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Colossians 3</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="../assets/fonts.css">
+<link rel="stylesheet" href="../assets/deck.css">
+<link rel="stylesheet" href="../assets/themes.css">
+<style>
+/* co03-where: where we are in Colossians. Four chapters (div, --k): its number (p > i; read ones .done, ours .here),
+   its name (b), what it says (small) and a key phrase (q + cite). The chapter we're in is .now. */
+.co03-where { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; margin: .5em 0 1em; }
+.co03-where > div { --c: var(--line-strong); padding: .55em .8em .65em; border-top: 6px solid var(--c); border-radius: 0 0 10px 10px;
+  background: color-mix(in srgb, var(--surface) 70%, transparent); opacity: 0; transform: translateY(10px);
+  transition: opacity .6s ease, transform .6s ease; transition-delay: calc(var(--k, 0) * 350ms + 300ms); }
+.slide.active .co03-where > div { opacity: 1; transform: none; }
+.co03-where > div.now { --c: var(--accent); background: color-mix(in srgb, var(--accent) 15%, transparent); box-shadow: inset 0 0 0 2px var(--accent); }
+.co03-where p { display: flex; gap: 6px; margin: 0 0 .4em; }
+.co03-where i { display: grid; place-items: center; width: 1.7em; height: 1.7em; border-radius: 50%; border: 2px solid var(--line-strong); font: 700 .8rem var(--sans); font-style: normal; color: var(--ink-soft); }
+.co03-where i.done { background: color-mix(in srgb, var(--ink-soft) 25%, transparent); border-color: transparent; }
+.co03-where i.here { background: var(--accent); border-color: var(--accent); color: var(--on-accent); }
+.co03-where b { display: block; font: 600 clamp(1rem, .9rem + .5vw, 1.35rem)/1.15 var(--serif); }
+.co03-where small { display: block; margin: .2em 0 .35em; font-size: clamp(.78rem, .72rem + .26vw, 1rem); line-height: 1.3; color: var(--ink-soft); }
+.co03-where q { display: block; font: italic clamp(.86rem, .78rem + .34vw, 1.08rem)/1.3 var(--serif); quotes: "\201C" "\201D"; }
+.co03-where cite { display: block; margin-top: .2em; font-style: normal; font-size: clamp(.72rem, .68rem + .22vw, .92rem); color: var(--ink-soft); }
+@media (max-width: 760px) {
+  .co03-where { grid-template-columns: 1fr; gap: 6px; }
+  .co03-where > div { border-top: 0; border-left: 6px solid var(--c); border-radius: 0 10px 10px 0; }
+}
+
+/* A stick figure used in several graphics. */
+.co03-man { fill: none; stroke: var(--ink); stroke-width: 6; stroke-linecap: round; stroke-linejoin: round; }
+.co03-man circle { fill: var(--ink); stroke: none; }
+
+/* co03-look: "seek those things which are above" (3:1-2). A man's gaze (dashed line) climbs from the ground to Christ at God's
+   right hand; the sight line draws itself when the slide opens and the things on the earth fall back (.co03-fix step). */
+.co03-sight { fill: none; stroke: var(--accent-hot); stroke-width: 4; stroke-linecap: round; stroke-dasharray: 1; stroke-dashoffset: 1; transition: stroke-dashoffset 2s ease .5s; }
+.slide.active .co03-sight { stroke-dashoffset: 0; }
+.co03-orb { transform-box: fill-box; transform-origin: center; }
+.slide.active .co03-orb { animation: co03-pulse 2.8s ease-in-out infinite alternate; }
+@keyframes co03-pulse { to { transform: scale(1.1); } }
+.co03-seat { fill: var(--glow); stroke: var(--on-glow); stroke-width: 2; }
+.co03-thing { fill: var(--surface-2); stroke: var(--line-strong); stroke-width: 2; transition: opacity .8s ease; }
+.co03-thing-t { font: 600 14px var(--sans); fill: var(--ink-soft); transition: opacity .8s ease; }
+.slide:has(.co03-fix.on) :is(.co03-thing, .co03-thing-t) { opacity: .25; }
+
+/* co03-hid: "your life is hid with Christ in God" (3:3-4). Three boxes inside each other: God, Christ, you. On a .co03-show step
+   the hidden life glows and shines out ("then shall ye also appear with him in glory"). */
+.co03-box { fill: color-mix(in srgb, var(--surface) 60%, transparent); stroke: var(--line-strong); stroke-width: 3; }
+.co03-box.god { stroke-dasharray: 10 7; stroke: var(--accent); }
+.co03-box.christ { stroke: var(--accent-hot); }
+.co03-core { fill: color-mix(in srgb, var(--accent) 18%, var(--surface)); stroke: var(--accent-hot); stroke-width: 3; transition: fill .9s ease; }
+.co03-shine { fill: var(--glow); opacity: 0; transform-box: fill-box; transform-origin: center; scale: .4; transition: opacity 1s ease .2s, scale 1.2s ease .2s; }
+.slide:has(.co03-show.on) .co03-shine { opacity: .4; scale: 1; }
+.slide:has(.co03-show.on) .co03-core { fill: var(--accent); }
+.slide:has(.co03-show.on) .co03-core-t { fill: var(--on-accent); }
+.co03-core-t { fill: var(--ink); transition: fill .9s ease; }
+.co03-core-t.sm { fill: var(--ink-soft); }
+.slide:has(.co03-show.on) .co03-core-t.sm { fill: var(--on-accent); }
+.co03-hid-t { font: 600 16px var(--sans); fill: var(--ink-soft); letter-spacing: .05em; }
+.co03-appear { font: italic 600 19px var(--serif); fill: var(--accent-hot); opacity: 0; transition: opacity .8s ease 1s; }
+.slide:has(.co03-show.on) .co03-appear { opacity: 1; }
+
+/* co03-root: five sins from the list in 3:5 as stalks above ground, with their roots. On a .co03-cut step the stalks are cut down
+   and the roots go dry (put to death, starved). Each stalk (--k) has a name (b) and a plain meaning (small). */
+.co03-stalk { stroke: var(--danger); stroke-width: 6; stroke-linecap: round; fill: none; transform-box: fill-box; transform-origin: 50% 100%; transition: transform 1s cubic-bezier(.5,0,.7,.4); transition-delay: calc(var(--k, 0) * 140ms); }
+.co03-bud { fill: var(--danger); transform-box: fill-box; transform-origin: 50% 100%; transition: transform 1s cubic-bezier(.5,0,.7,.4), opacity 1s ease; transition-delay: calc(var(--k, 0) * 140ms); }
+.co03-rootline { stroke: var(--leather-light); stroke-width: 5; stroke-linecap: round; fill: none; transition: opacity 1.2s ease 1s, stroke-dasharray 1.2s ease 1s; }
+.co03-ground { stroke: var(--line-strong); stroke-width: 3; }
+.co03-sn { font: 700 17px var(--serif); fill: var(--ink); }
+.co03-sm { font: 500 13px var(--sans); fill: var(--ink-soft); }
+.co03-rt { font: 600 15px var(--sans); fill: var(--ink-soft); }
+.slide:has(.co03-cut.on) .co03-stalk { transform: scaleY(.04); }
+.slide:has(.co03-cut.on) .co03-bud { transform: scaleY(.04); opacity: 0; }
+.slide:has(.co03-cut.on) .co03-rootline { opacity: .35; stroke-dasharray: 5 9; }
+
+/* co03-wear: old clothes off, new clothes on (3:8-14). A man stands in the old tunic (.co03-old). On a .co03-strip step it slides off to the
+   pile; on a .co03-dress step the new tunic (.co03-new) goes on and the new tags light up. */
+.co03-old { fill: color-mix(in srgb, var(--danger) 30%, var(--surface)); stroke: var(--danger); stroke-width: 3; transform-box: fill-box; transform-origin: center; transition: transform 1.3s cubic-bezier(.5,0,.6,1), opacity 1.2s ease .3s; }
+.slide:has(.co03-strip.on) .co03-old { transform: translate(-100px, 96px) rotate(-75deg) scale(.8); opacity: .5; }
+.co03-new { fill: color-mix(in srgb, var(--cool) 45%, var(--surface)); stroke: var(--cool); stroke-width: 3; opacity: 0; transform-box: fill-box; transform-origin: 50% 0; scale: .6 .2; transition: opacity .9s ease .1s, scale 1s cubic-bezier(.3,1.4,.5,1) .1s; }
+.slide:has(.co03-dress.on) .co03-new { opacity: 1; scale: 1; }
+.co03-tag { rx: 8; }
+.co03-tag.off { fill: color-mix(in srgb, var(--danger) 12%, var(--surface)); stroke: var(--danger); stroke-width: 2; }
+.co03-tag.on { fill: color-mix(in srgb, var(--cool) 16%, var(--surface)); stroke: var(--cool); stroke-width: 2; opacity: .3; transition: opacity .6s ease; transition-delay: calc(var(--k, 0) * 180ms + .5s); }
+.co03-tagt { font: 600 15px var(--sans); fill: var(--ink); text-anchor: middle; }
+.co03-tagt.on { opacity: .35; transition: opacity .6s ease; transition-delay: calc(var(--k, 0) * 180ms + .5s); }
+.slide:has(.co03-dress.on) :is(.co03-tag.on, .co03-tagt.on) { opacity: 1; }
+.slide:has(.co03-strip.on) .co03-tag.off, .slide:has(.co03-strip.on) .co03-tagt.offt { transition: opacity 1s ease; opacity: .55; }
+.co03-wear-h { font: 700 14px var(--sans); letter-spacing: .1em; text-transform: uppercase; text-anchor: middle; }
+
+/* co03-bundle: the virtues as separate sticks that fall apart (.co03-bar) until love, "the bond of perfectness", ties them into one
+   bundle. On a .co03-tie step the bars straighten and the band goes round. */
+.co03-bar rect { fill: color-mix(in srgb, var(--accent) 16%, var(--surface)); stroke: var(--accent); stroke-width: 2; }
+.co03-bar text { font: 600 16px var(--serif); fill: var(--ink); text-anchor: middle; dominant-baseline: central; }
+.co03-bar { transform-box: fill-box; transform-origin: center; transform: translate(var(--dx), var(--dy)) rotate(var(--rot)); transition: transform 1.1s cubic-bezier(.4,1.3,.6,1); transition-delay: calc(var(--k, 0) * 90ms); }
+.slide:has(.co03-tie.on) .co03-bar { transform: none; }
+.co03-band { fill: var(--accent); stroke: var(--accent-hot); stroke-width: 2; transform-box: fill-box; transform-origin: center; scale: 1 0; opacity: 0; transition: scale .8s ease 1s, opacity .5s ease 1s; }
+.slide:has(.co03-tie.on) .co03-band { scale: 1 1; opacity: 1; }
+.co03-bandt { font: 700 17px var(--sans); fill: var(--on-accent); text-anchor: middle; letter-spacing: .12em; opacity: 0; transition: opacity .6s ease 1.6s; }
+.slide:has(.co03-tie.on) .co03-bandt { opacity: 1; }
+
+/* co03-calls: the umpire (3:15). Three situations (div, .step) each with a call from the peace of God: foul (.no) or fair (.yes). */
+.co03-calls { display: grid; gap: 10px; margin: .4em 0 .9em; }
+.co03-calls > div { display: grid; grid-template-columns: 1fr auto; align-items: center; gap: .3rem 1rem; padding: .55em .9em; border-left: 6px solid var(--line-strong); border-radius: 0 10px 10px 0; background: color-mix(in srgb, var(--surface) 70%, transparent); }
+.co03-calls b { font: 600 clamp(1.05rem, .9rem + .7vw, 1.5rem)/1.2 var(--serif); }
+.co03-calls small { grid-column: 1; font-size: clamp(.82rem, .76rem + .3vw, 1.05rem); color: var(--ink-soft); line-height: 1.3; }
+.co03-calls .call { grid-column: 2; grid-row: 1 / span 2; font: 800 clamp(.85rem, .8rem + .4vw, 1.15rem) var(--sans); letter-spacing: .12em; text-transform: uppercase; padding: .35em .8em; border: 3px solid currentColor; border-radius: 6px; transform: rotate(-5deg); }
+.co03-calls .no { border-left-color: var(--danger); } .co03-calls .no .call { color: var(--danger); }
+.co03-calls .yes { border-left-color: var(--accent); } .co03-calls .yes .call { color: var(--accent-hot); }
+
+/* co03-pairs: the household as a two-way street (3:18-4:1). Three rows: the one under authority (.lo), arrows both ways, the one with the power (.hi). */
+.co03-pairs { display: grid; gap: 10px; margin: .4em 0 .8em; }
+.co03-pairs > div { display: grid; grid-template-columns: 1fr auto 1fr; align-items: stretch; gap: .5rem; }
+.co03-pairs .lo, .co03-pairs .hi { padding: .5em .8em .6em; border-radius: 10px; border: 1.5px solid var(--line-strong); background: var(--surface); }
+.co03-pairs .hi { border-color: var(--accent); background: color-mix(in srgb, var(--accent) 10%, var(--surface)); }
+.co03-pairs h3 { font: 700 clamp(.78rem, .72rem + .3vw, .98rem) var(--sans); letter-spacing: .1em; text-transform: uppercase; color: var(--ink-soft); margin-bottom: .15em; }
+.co03-pairs .hi h3 { color: var(--accent-hot); }
+.co03-pairs q { font: italic clamp(.92rem, .82rem + .5vw, 1.3rem)/1.25 var(--serif); quotes: none; }
+.co03-pairs .both { align-self: center; font-size: 1.9rem; color: var(--accent); line-height: 1; }
+
+/* co03-eyes: "not with eyeservice" (3:22-23). A worker with two watchers: the boss's eye (.co03-boss), and the Lord's. On a .co03-gone
+   step the boss leaves and his eye closes, but the other eye never does, and the work stays the same. */
+.co03-eye-w { fill: var(--surface); stroke: var(--ink); stroke-width: 3; }
+.co03-eye-i { fill: var(--ink); }
+.co03-lid { fill: var(--surface-2); stroke: var(--ink); stroke-width: 3; transform-box: fill-box; transform-origin: 50% 0; scale: 1 0; transition: scale .6s ease .3s; }
+.co03-boss { transition: opacity .8s ease 1s; }
+.slide:has(.co03-gone.on) .co03-lid { scale: 1 1; }
+.slide:has(.co03-gone.on) .co03-boss-man { opacity: .15; transition: opacity .8s ease 1s; }
+.co03-boss-man { transition: opacity .8s ease 1s; }
+.co03-lord .co03-eye-i { fill: var(--accent-hot); }
+.co03-lord .co03-eye-w { stroke: var(--accent-hot); }
+.co03-ray { stroke: var(--accent); stroke-width: 3; stroke-linecap: round; opacity: .6; }
+.co03-brick { fill: var(--surface-2); stroke: var(--line-strong); stroke-width: 2; opacity: 0; transition: opacity .5s ease; transition-delay: calc(var(--k, 0) * 700ms + .5s); }
+.slide.active .co03-brick { opacity: 1; }
+.co03-cap { font: 600 15px var(--sans); fill: var(--ink-soft); text-anchor: middle; }
+.co03-capb { font: 700 16px var(--sans); fill: var(--accent-hot); text-anchor: middle; }
+</style>
+</head>
+<body>
+<main class="deck" id="deck">
+
+<!-- ======================= OPENING ======================= -->
+<section class="slide title">
+  <div class="inner">
+    <div class="emblem rise"></div>
+    <h1 class="rise" style="--d:1">Colossians 3</h1>
+    <p class="sub rise" style="--d:3">Put off, put on</p>
+    <p class="tag rise" style="--d:5">You've been raised with Christ. So look up, take off the old clothes, put on the new, and wear them at home and on the job.</p>
+  </div>
+</section>
+
+<section class="slide watch">
+  <div class="inner">
+    <h2 class="rise">Things to watch for</h2>
+    <p class="lede rise" style="--d:1">Keep these questions in the back of your mind as we read. We'll come back to every one of them at the end.</p>
+    <ol class="seeds">
+      <li class="step"><span class="topic">Look up</span><span class="seed-q">What does Paul mean by “set your affection on things above”?</span></li>
+      <li class="step"><span class="topic">Put to death</span><span class="seed-q">What does a believer do with the sins of his old life?</span></li>
+      <li class="step"><span class="topic">New clothes</span><span class="seed-q">How does a man take off the old life and put on the new?</span></li>
+      <li class="step"><span class="topic">Forgiveness</span><span class="seed-q">Why should a believer forgive, and how far?</span></li>
+      <li class="step"><span class="topic">Peace and the Word</span><span class="seed-q">What keeps a believer steady from day to day?</span></li>
+      <li class="step"><span class="topic">Home and work</span><span class="seed-q">How does Christ change the way a man treats his family and his boss?</span></li>
+    </ol>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise">Where we are in Colossians</h2>
+    <div class="co03-where" role="img" aria-label="Colossians in four chapters. Chapter 1: Christ is over everything. Chapter 2: you are complete in him, so don't be robbed. Chapter 3, where we are: the new life, put off the old and put on the new. Chapter 4: prayer, words, and the people Paul names.">
+      <div style="--k:0"><p><i class="done">1</i></p><b>Christ over all</b><small>Who He is, and what He did on the cross</small><q>in all things he might have the preeminence</q><cite>1:18</cite></div>
+      <div style="--k:1"><p><i class="done">2</i></p><b>Complete in Him</b><small>Don't let anyone rob you with rules and clever talk</small><q>ye are complete in him</q><cite>2:10</cite></div>
+      <div class="now" style="--k:2"><p><i class="here">3</i></p><b>The new life</b><small>Look up, put off the old, put on the new</small><q>seek those things which are above</q><cite>3:1</cite></div>
+      <div style="--k:3"><p><i>4</i></p><b>Prayer and people</b><small>How to pray, how to talk, and who Paul names</small><q>Continue in prayer</q><cite>4:2</cite></div>
+    </div>
+    <p class="note rise" style="--d:3">Paul wrote this letter from a house in Rome, where he was chained to a soldier, about AD 60 to 62. Tychicus carried it to the church at Colosse. Two chapters told the Colossians <em>who Christ is</em> and warned them not to trade Him for rules and clever ideas.</p>
+    <p class="note step">Now comes the <em>“if ye then.”</em> If you've been raised with Christ, how does a man live on Monday morning? Chapter 3 is the answer, and it's very practical: your thoughts, your temper, your mouth, your marriage, your boss.</p>
+  </div>
+</section>
+
+<!-- ======================= PART ONE: LOOK UP ======================= -->
+<section class="slide part">
+  <div class="inner">
+    <p class="part-n rise">Part one</p>
+    <h2 class="rise" style="--d:1">Look up</h2>
+    <p class="range rise" style="--d:2">Verses 1–4</p>
+    <div class="rule"></div>
+    <p class="hook rise" style="--d:4">You've been raised with Christ. Start looking like it.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="1-2" data-hl="If ye then be risen with Christ|seek those things which are above|Set your affection on things above"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <div class="split">
+      <div class="stage">
+        <svg viewBox="0 0 600 320" role="img" aria-label="A man stands on the ground, surrounded by small boxes labeled with the things on the earth: bills, the old crowd, the old habits. A dashed line runs from his eyes up to a bright seat at the top of the picture, labeled where Christ sitteth at the right hand of God. The things on the earth grow faint.">
+          <defs><radialGradient id="co03-glow"><stop offset="0" stop-opacity=".95" style="stop-color:var(--glow)"/><stop offset=".5" stop-opacity=".35" style="stop-color:var(--accent)"/><stop offset="1" stop-opacity="0" style="stop-color:var(--accent)"/></radialGradient></defs>
+          <circle class="co03-orb" cx="450" cy="70" r="85" fill="url(#co03-glow)"/>
+          <rect class="co03-seat" x="425" y="52" width="50" height="40" rx="6"/>
+          <text x="450" y="30" text-anchor="middle" font-size="16" font-weight="700" style="fill:var(--accent-hot)">where Christ sitteth</text>
+          <text x="450" y="122" text-anchor="middle" font-size="14" style="fill:var(--ink-soft)">at the right hand of God</text>
+          <line x1="20" y1="290" x2="580" y2="290" stroke-width="3" style="stroke:var(--line-strong)"/>
+          <g class="co03-man">
+            <circle cx="150" cy="190" r="14"/>
+            <path d="M150 204 L150 252 M150 252 L134 288 M150 252 L166 288 M150 218 L128 246 M150 218 L172 246"/>
+          </g>
+          <path class="co03-sight" pathLength="1" d="M166 180 Q300 150 410 80"/>
+          <rect class="co03-thing" x="230" y="248" width="86" height="42" rx="5"/><text class="co03-thing-t" x="273" y="274" text-anchor="middle">the bills</text>
+          <rect class="co03-thing" x="330" y="248" width="110" height="42" rx="5"/><text class="co03-thing-t" x="385" y="274" text-anchor="middle">the old crowd</text>
+          <rect class="co03-thing" x="454" y="248" width="120" height="42" rx="5"/><text class="co03-thing-t" x="514" y="274" text-anchor="middle">the old habits</text>
+          <text class="co03-thing-t" x="400" y="236" text-anchor="middle">things on the earth</text>
+        </svg>
+      </div>
+      <div>
+        <h2 class="rise" style="--d:1">Where you point your mind</h2>
+        <p class="note rise" style="--d:2"><em>“If ye then be risen”</em> means <em>since</em> you have been. When Christ rose, everyone who trusts Him rose with Him, into a life that can't be buried again.</p>
+        <p class="note step co03-fix"><em>“Affection”</em> is an old word for <em>mind</em>. Set your mind on Christ, where He is. That isn't daydreaming past your real life (the rest of this chapter is about work and temper). It's where your thinking <em>aims.</em></p>
+        <p class="note step">The bills and the old crowd are still there. They just lose the vote.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="slide verse" data-v="3-4" data-hl="ye are dead|your life is hid with Christ in God|then shall ye also appear with him in glory"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <div class="split">
+      <div class="stage">
+        <svg viewBox="0 0 600 320" role="img" aria-label="Three boxes, one inside the next. The biggest is labeled God, the next Christ, and in the middle your life, hidden. Then the middle one begins to glow and light shines out of it: then shall ye also appear with him in glory.">
+          <defs><radialGradient id="co03-shine"><stop offset="0" stop-opacity=".9" style="stop-color:var(--glow)"/><stop offset="1" stop-opacity="0" style="stop-color:var(--glow)"/></radialGradient></defs>
+          <rect class="co03-box god" x="10" y="10" width="580" height="300" rx="26"/>
+          <text class="co03-hid-t" x="34" y="40">GOD</text>
+          <rect class="co03-box christ" x="80" y="66" width="440" height="210" rx="22"/>
+          <text class="co03-hid-t" x="104" y="94">CHRIST</text>
+          <circle class="co03-shine" cx="300" cy="180" r="120" fill="url(#co03-shine)"/>
+          <rect class="co03-core" x="170" y="120" width="260" height="110" rx="18"/>
+          <text class="co03-core-t" x="300" y="170" text-anchor="middle" font-size="22" font-weight="700">your life</text>
+          <text class="co03-core-t sm" x="300" y="198" text-anchor="middle" font-size="15">hid</text>
+          <text class="co03-appear" x="300" y="262" text-anchor="middle">“appear with him in glory”</text>
+        </svg>
+      </div>
+      <div>
+        <h2 class="rise" style="--d:1">Dead, and hidden</h2>
+        <p class="note rise" style="--d:2"><em>“Ye are dead.”</em> The old you, who ran your life and did all that damage, died with Christ.</p>
+        <p class="note step"><em>“Hid”</em> means kept safe, locked away where no thief can reach it. Your life is in Christ, and Christ is in God.</p>
+        <p class="note step co03-show">And it won't stay hidden: <em>“then shall ye also appear with him in glory.”</em> Where you are now is not where your story ends. If you fell yesterday, your hidden life didn't move.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ======================= PART TWO: OFF WITH THE OLD ======================= -->
+<section class="slide part">
+  <div class="inner">
+    <p class="part-n rise">Part two</p>
+    <h2 class="rise" style="--d:1">Off with the old</h2>
+    <p class="range rise" style="--d:2">Verses 5–11</p>
+    <div class="rule"></div>
+    <p class="hook rise" style="--d:4">Some things have to go. Paul names them plainly.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="5-7" data-hl="Mortify therefore your members which are upon the earth|covetousness, which is idolatry|the wrath of God cometh on the children of disobedience"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="5" data-hl="Mortify therefore your members which are upon the earth"></blockquote>
+    <div class="stage rise" style="--d:1">
+      <svg viewBox="0 0 640 330" style="max-height:44vh" role="img" aria-label="Five weeds stand above the ground: fornication, which is sex outside of marriage; uncleanness, anything filthy; inordinate affection, passion with no brakes; evil concupiscence, wanting what is forbidden; and covetousness, always wanting more, which Paul calls idolatry. Their roots run under the ground. Then the weeds are cut down and the roots dry up.">
+        <line class="co03-ground" x1="10" y1="190" x2="630" y2="190"/><text class="co03-sn" x="64" y="44">fornication</text><text class="co03-sm" x="64" y="62">sex outside</text><text class="co03-sm" x="64" y="77">marriage</text><text class="co03-sn" x="192" y="44">uncleanness</text><text class="co03-sm" x="192" y="62">anything</text><text class="co03-sm" x="192" y="77">filthy</text><text class="co03-sn" x="320" y="24">inordinate</text><text class="co03-sn" x="320" y="44">affection</text><text class="co03-sm" x="320" y="62">passion with</text><text class="co03-sm" x="320" y="77">no brakes</text><text class="co03-sn" x="448" y="24">evil</text><text class="co03-sn" x="448" y="44">concupiscence</text><text class="co03-sm" x="448" y="62">wanting what</text><text class="co03-sm" x="448" y="77">is forbidden</text><text class="co03-sn" x="576" y="44">covetousness</text><text class="co03-sm" x="576" y="62">always wanting</text><text class="co03-sm" x="576" y="77">more</text>
+        <g text-anchor="middle">
+          <g style="--k:0"><path class="co03-stalk" style="--k:0" d="M64 190 Q56 150 66 114"/><circle class="co03-bud" style="--k:0" cx="66" cy="108" r="9"/>
+            </g>
+          <g><path class="co03-stalk" style="--k:1" d="M192 190 Q200 150 190 114"/><circle class="co03-bud" style="--k:1" cx="190" cy="108" r="9"/>
+            </g>
+          <g><path class="co03-stalk" style="--k:2" d="M320 190 Q312 150 322 114"/><circle class="co03-bud" style="--k:2" cx="322" cy="108" r="9"/>
+            </g>
+          <g><path class="co03-stalk" style="--k:3" d="M448 190 Q456 150 446 114"/><circle class="co03-bud" style="--k:3" cx="446" cy="108" r="9"/>
+            </g>
+          <g><path class="co03-stalk" style="--k:4" d="M576 190 Q568 150 578 114"/><circle class="co03-bud" style="--k:4" cx="578" cy="108" r="9"/>
+            </g>
+        </g>
+        <path class="co03-rootline" stroke-dasharray="1 0" d="M64 190 Q70 250 150 282 M192 190 Q190 245 190 282 M320 190 Q320 245 320 282 M448 190 Q450 245 450 282 M576 190 Q570 250 490 282 M150 282 L490 282"/>
+        <text class="co03-rt" x="320" y="314" text-anchor="middle">“covetousness, which is idolatry”: the thing you want becomes your god</text>
+      </svg>
+    </div>
+    <p class="note rise" style="--d:2">This is what a man in his old life lived on. Nobody here needs it explained twice, so Paul's list stands plain.</p>
+    <p class="note step co03-cut"><em>“Mortify”</em> means <em>put to death.</em> Not hate yourself: that never worked. Stop feeding it, cut it down, and keep cutting. Roots dry up when nothing waters them.</p>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise"><p>“For if ye live after the flesh, ye shall die: but if ye through the Spirit do mortify the deeds of the body, ye shall live.”</p><cite>Romans 8:13</cite></blockquote>
+    <p class="saying rise" style="--d:1">You don't cut it down <em>alone.</em></p>
+    <p class="note rise" style="--d:2">Notice who does the killing: <em>“through the Spirit.”</em> The Spirit already lives in every believer. You're not doing this to earn anything, and you're not doing it with willpower alone.</p>
+    <p class="note step">And notice <em>“shall live.”</em> The goal isn't a man who is only holding himself back. It's a man who is alive.</p>
+    <p class="note step">One thing for today: name the one on that list that gets you most, and tell it to one brother today.</p>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="6-7"></blockquote>
+    <h2 class="rise" style="--d:1">That was then</h2>
+    <div class="columns">
+      <div class="col law step"><span class="who">The old road · v. 6</span><h3>“the wrath of God”</h3><p>God's settled anger at what wrecks people and the people made in His image. It <em>“cometh on the children of disobedience.”</em> Paul isn't hiding it, and he isn't pointing it at you.</p></div>
+      <div class="col grace step"><span class="who">The new road · v. 7</span><h3>“ye also walked some time”</h3><p><em>“Some time”</em> means once, in the past. <em>“When ye lived in them.”</em> Paul says <em>lived,</em> not <em>live.</em> That was your address. It isn't any more.</p></div>
+    </div>
+    <blockquote class="quote step"><p>“Much more then, being now justified by his blood, we shall be saved from wrath through him.”</p><cite>Romans 5:9</cite></blockquote>
+    <p class="note step">The wrath Paul warns about is the wrath Christ took on the cross. Any man who trusts Him is saved from it. So we put these things to death out of thanks, not out of fear.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="8-10" data-hl="put off all these|Lie not one to another|ye have put off the old man with his deeds|put on the new man"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <div class="split">
+      <div class="stage">
+        <svg viewBox="0 0 640 380" role="img" aria-label="A man stands in an old tunic, with the old things listed on the left: anger, wrath, malice, blasphemy, filthy talk, lies. The old tunic slides off onto the ground. Then a new tunic goes on, with the new things listed on the right: mercy, kindness, humility, meekness, patience, forgiving, love.">
+          <line x1="10" y1="356" x2="630" y2="356" stroke-width="3" style="stroke:var(--line-strong)"/>
+          <text class="co03-wear-h" x="86" y="26" style="fill:var(--danger)">put off</text>
+          <text class="co03-wear-h" x="554" y="26" style="fill:var(--cool)">put on</text>
+          <g>
+            <rect class="co03-tag off" x="16" y="42" width="140" height="34"/><text class="co03-tagt offt" x="86" y="65">anger</text>
+            <rect class="co03-tag off" x="16" y="84" width="140" height="34"/><text class="co03-tagt offt" x="86" y="107">wrath</text>
+            <rect class="co03-tag off" x="16" y="126" width="140" height="34"/><text class="co03-tagt offt" x="86" y="149">malice</text>
+            <rect class="co03-tag off" x="16" y="168" width="140" height="34"/><text class="co03-tagt offt" x="86" y="191">blasphemy</text>
+            <rect class="co03-tag off" x="16" y="210" width="140" height="34"/><text class="co03-tagt offt" x="86" y="233">filthy talk</text>
+            <rect class="co03-tag off" x="16" y="252" width="140" height="34"/><text class="co03-tagt offt" x="86" y="275">lying</text>
+          </g>
+          <g>
+            <rect class="co03-tag on" style="--k:0" x="484" y="42" width="140" height="34"/><text class="co03-tagt on" style="--k:0" x="554" y="65">mercy</text>
+            <rect class="co03-tag on" style="--k:1" x="484" y="84" width="140" height="34"/><text class="co03-tagt on" style="--k:1" x="554" y="107">kindness</text>
+            <rect class="co03-tag on" style="--k:2" x="484" y="126" width="140" height="34"/><text class="co03-tagt on" style="--k:2" x="554" y="149">humility</text>
+            <rect class="co03-tag on" style="--k:3" x="484" y="168" width="140" height="34"/><text class="co03-tagt on" style="--k:3" x="554" y="191">meekness</text>
+            <rect class="co03-tag on" style="--k:4" x="484" y="210" width="140" height="34"/><text class="co03-tagt on" style="--k:4" x="554" y="233">patience</text>
+            <rect class="co03-tag on" style="--k:5" x="484" y="252" width="140" height="34"/><text class="co03-tagt on" style="--k:5" x="554" y="275">forgiving</text>
+            <rect class="co03-tag on" style="--k:6" x="484" y="294" width="140" height="34"/><text class="co03-tagt on" style="--k:6" x="554" y="317">love</text>
+          </g>
+          <g class="co03-man">
+            <circle cx="320" cy="120" r="17"/>
+            <path d="M320 137 L320 240 M320 240 L296 346 M320 240 L344 346 M320 160 L268 244 M320 160 L372 244"/>
+          </g>
+          <path class="co03-old" d="M284 150 L356 150 L376 262 L264 262 Z"/>
+          <path class="co03-new" d="M284 150 L356 150 L376 262 L264 262 Z"/>
+        </svg>
+      </div>
+      <div>
+        <h2 class="rise" style="--d:1">A change of clothes</h2>
+        <p class="note rise" style="--d:2">Paul's picture is plain: <em>put off,</em> like taking off a filthy work shirt, and <em>put on,</em> like a clean one. The list on the left is the old wardrobe: temper, rage, hate, curses, dirty talk, lies.</p>
+        <p class="note step co03-strip">Off it comes. <em>“Ye have put off the old man with his deeds”</em> is already done in Christ. So put off in practice what is already off in fact.</p>
+        <p class="note step co03-dress">Then dress. <em>“Have put on the new man, … renewed in knowledge after the image of him that created him.”</em> You don't have to build a new man. You put on the one God made.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="9" data-hl="Lie not one to another"></blockquote>
+    <p class="saying rise" style="--d:1">The old life ran on <em>lies.</em></p>
+    <p class="note rise" style="--d:2">Every man here knows it. You lie to cover the using, the money, where you were, how you feel. A lie is the first thing an old life needs to survive, and honesty is the first thing a new one needs.</p>
+    <p class="note step">Notice <em>“one to another.”</em> Paul is talking about the people in the church, the men in this group. A group where nobody tells the truth is just a room.</p>
+    <p class="note step">One thing for today: tell one true thing you've been hiding to one man you trust. It will be smaller out loud than it is in your head.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="11" data-hl="neither Greek nor Jew|Barbarian, Scythian, bond nor free|Christ is all, and in all"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="11" data-hl="Christ is all, and in all"></blockquote>
+    <h2 class="rise" style="--d:1">No walls in the new man</h2>
+    <div class="walls">
+      <div class="step"><b>Greek</b><i aria-hidden="true"></i><b>Jew</b><small>Country and culture.</small></div>
+      <div class="step"><b>circumcision</b><i aria-hidden="true"></i><b>uncircumcision</b><small>The religious insider and the outsider.</small></div>
+      <div class="step"><b>Barbarian</b><i aria-hidden="true"></i><b>Scythian</b><small>Barbarians didn't speak Greek. Scythians, wild horsemen beyond the Black Sea, were thought the worst.</small></div>
+      <div class="step"><b>bond</b><i aria-hidden="true"></i><b>free</b><small>The slave and the free man.</small></div>
+    </div>
+    <p class="note step">None of those is the headline now: <em>“Christ is all, and in all.”</em> For us: the record, the tattoos, the years inside, the money. None of it is a wall at the Lord's table.</p>
+  </div>
+</section>
+
+<!-- ======================= PART THREE: ON WITH THE NEW ======================= -->
+<section class="slide part">
+  <div class="inner">
+    <p class="part-n rise">Part three</p>
+    <h2 class="rise" style="--d:1">On with the new</h2>
+    <p class="range rise" style="--d:2">Verses 12–17</p>
+    <div class="rule"></div>
+    <p class="hook rise" style="--d:4">Mercy, patience, forgiveness, and love to hold it together.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="12-14" data-hl="as the elect of God, holy and beloved|bowels of mercies|above all these things put on charity, which is the bond of perfectness"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <div class="split">
+      <div class="stage">
+        <svg viewBox="0 0 640 330" role="img" aria-label="Seven bars lie scattered and tilted, each one a part of the new clothes: mercy, kindness, humility, meekness, patience, bearing with each other, and forgiving. Then they straighten into one neat bundle and a band labeled love goes around them: the bond of perfectness.">
+          <g class="co03-bar" style="--k:0;--dx:-30px;--dy:10px;--rot:-6deg"><rect x="100" y="14" width="440" height="34" rx="8"/><text x="246" y="31">mercy</text></g>
+          <g class="co03-bar" style="--k:1;--dx:30px;--dy:8px;--rot:5deg"><rect x="100" y="56" width="440" height="34" rx="8"/><text x="246" y="73">kindness</text></g>
+          <g class="co03-bar" style="--k:2;--dx:-24px;--dy:6px;--rot:-4deg"><rect x="100" y="98" width="440" height="34" rx="8"/><text x="246" y="115">humility</text></g>
+          <g class="co03-bar" style="--k:3;--dx:36px;--dy:0px;--rot:7deg"><rect x="100" y="140" width="440" height="34" rx="8"/><text x="246" y="157">meekness</text></g>
+          <g class="co03-bar" style="--k:4;--dx:-36px;--dy:-4px;--rot:-6deg"><rect x="100" y="182" width="440" height="34" rx="8"/><text x="246" y="199">patience</text></g>
+          <g class="co03-bar" style="--k:5;--dx:24px;--dy:-8px;--rot:4deg"><rect x="100" y="224" width="440" height="34" rx="8"/><text x="246" y="241">bearing with each other</text></g>
+          <g class="co03-bar" style="--k:6;--dx:-20px;--dy:-10px;--rot:-5deg"><rect x="100" y="266" width="440" height="34" rx="8"/><text x="246" y="283">forgiving</text></g>
+          <rect class="co03-band" x="392" y="6" width="64" height="302" rx="10"/>
+          <text class="co03-bandt" x="424" y="326">LOVE</text>
+        </svg>
+      </div>
+      <div>
+        <h2 class="rise" style="--d:1">The bond of perfectness</h2>
+        <p class="note rise" style="--d:2">First, who you are: <em>“the elect of God, holy and beloved.”</em> You put these on because you already belong to Him. <em>“Bowels of mercies”</em> is an old way of saying gut-level compassion.</p>
+        <p class="note step">Left alone, these scatter. A man can be patient on Tuesday and cruel on Wednesday.</p>
+        <p class="note step co03-tie"><em>“Above all these things put on charity.”</em> Love is the band that ties the rest together so they hold. <em>“Bond”</em> is the word for a ligament, what keeps a body in one piece.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <div class="split">
+      <div class="stage">
+        <div class="ledger rise" style="--d:1">
+          <h3>What he owes me</h3>
+          <ul>
+            <li style="--k:0"><span>The lie he told</span><span>owed</span></li>
+            <li style="--k:1"><span>The money</span><span>owed</span></li>
+            <li style="--k:2"><span>The years he wasn't there</span><span>owed</span></li>
+          </ul>
+          <div class="total"><span>Balance due</span><b>real, and it hurt</b></div>
+          <div class="ledger-stamp">FORGIVEN<small>as Christ forgave you</small></div>
+        </div>
+      </div>
+      <div>
+        <h2 class="rise" style="--d:1">Forgiving, as you were</h2>
+        <p class="note rise" style="--d:2">Paul expects a quarrel: <em>“if any man have a quarrel against any.”</em> Somebody has done you wrong. Forgiving doesn't say it didn't hurt, and it doesn't hand him your trust back. It means you let go of collecting.</p>
+        <p class="note step ledger-paid">Why? <em>“Even as Christ forgave you.”</em> He cancelled a bigger bill than anyone owes you.</p>
+      </div>
+    </div>
+    <blockquote class="quote step"><p>“And you, being dead in your sins and the uncircumcision of your flesh, hath he quickened together with him, having forgiven you all trespasses;”</p><cite>Colossians 2:13</cite></blockquote>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise">What forgiving is not</h2>
+    <ul class="nots">
+      <li class="step"><span class="k">“It didn't hurt.”</span><span class="why">it did, and Paul never pretends otherwise</span></li>
+      <li class="step"><span class="k">“I trust him again.”</span><span class="why">trust is earned back slowly; forgiveness is a gift</span></li>
+      <li class="step"><span class="k">“I'll stay where I'm being hurt.”</span><span class="why">if you're in danger, get out and get help</span></li>
+      <li class="step yes"><span class="k">“I'm done collecting.”</span><span class="why">I hand the debt to God, the way Christ handed mine to the cross</span></li>
+    </ul>
+    <p class="note step">And if you're the man who owes someone an apology, the same grace that covers you tells you to go and make it right.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="15-17" data-hl="let the peace of God rule in your hearts|Let the word of Christ dwell in you richly|do all in the name of the Lord Jesus"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="15" data-hl="let the peace of God rule in your hearts"></blockquote>
+    <h2 class="rise" style="--d:1">Let peace be the umpire</h2>
+    <p class="note rise" style="--d:2"><em>“Rule”</em> was the word for an umpire at the games, the man who makes the call. Let Christ's peace make yours.</p>
+    <div class="co03-calls">
+      <div class="no step"><b>A text from the old dealer: “just once, for old times.”</b><small>Your gut knots up before you read the second line.</small><span class="call">Foul</span></div>
+      <div class="yes step"><b>Telling your sponsor what happened last night.</b><small>Scary to say, and quiet once it's said.</small><span class="call">Fair</span></div>
+      <div class="yes step"><b>Going to the man you wronged and saying sorry.</b><small>Your hands shake going in. You sleep better after.</small><span class="call">Fair</span></div>
+    </div>
+    <p class="note step">An umpire works from the rulebook, and Paul's next line is <em>“let the word of Christ dwell in you.”</em> Peace never overrules Scripture. And fear isn't a foul: the call is the peace that settles in after the right choice.</p>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="16" data-hl="Let the word of Christ dwell in you richly"></blockquote>
+    <h2 class="rise" style="--d:1">Let it move in</h2>
+    <p class="note rise" style="--d:2"><em>“Dwell”</em> means <em>live here,</em> not <em>visit on Sunday.</em> A man can't take a week's worth of Word on Sunday and live on it until Saturday. Give it a room in the day:</p>
+    <ol class="timeline" style="margin-top:1em">
+      <li data-n="1" class="step"><b>Morning</b><span>One verse before the phone. Say it out loud.</span></li>
+      <li data-n="2" class="step"><b>At work</b><span>The same verse on a card in your pocket.</span></li>
+      <li data-n="3" class="step"><b>Evening</b><span>Sing it, or text it to one of the guys.</span></li>
+      <li data-n="4" class="step lit"><b>Night</b><span>Say thank you for three things, out loud.</span></li>
+    </ol>
+    <p class="note step"><em>“Teaching and admonishing one another.”</em> The Word moves in faster when brothers help. <em>“Admonish”</em> means warn and set straight, in love. It's what this group is for.</p>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="17" data-hl="whatsoever ye do in word or deed, do all in the name of the Lord Jesus"></blockquote>
+    <p class="saying rise" style="--d:1">Whatever you do, <em>sign it</em> with His name.</p>
+    <p class="note rise" style="--d:2">A man's <em>name</em> is his word and his reputation. <em>“In the name of the Lord Jesus”</em> means: the way He would, and with His name attached. <em>“Word or deed”</em> covers the mouth and the hands: the shift, the parking lot, the group text.</p>
+    <p class="note step">That's why Paul now moves straight to the kitchen and the job site. He doesn't ask for church-only faith.</p>
+  </div>
+</section>
+
+<!-- ======================= PART FOUR: HOME AND WORK ======================= -->
+<section class="slide part">
+  <div class="inner">
+    <p class="part-n rise">Part four</p>
+    <h2 class="rise" style="--d:1">Home and work</h2>
+    <p class="range rise" style="--d:2">Verses 18–25</p>
+    <div class="rule"></div>
+    <p class="hook rise" style="--d:4">Christ goes where you go: the kitchen table and the job site.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="18-21" data-hl="Husbands, love your wives, and be not bitter against them|Fathers, provoke not your children to anger, lest they be discouraged"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise">A two-way street</h2>
+    <div class="co03-pairs">
+      <div class="step"><div class="lo"><h3>Wives</h3><q>submit yourselves unto your own husbands, as it is fit in the Lord</q></div><span class="both" aria-hidden="true">⇄</span><div class="hi"><h3>Husbands</h3><q>love your wives, and be not bitter against them</q></div></div>
+      <div class="step"><div class="lo"><h3>Children</h3><q>obey your parents in all things</q></div><span class="both" aria-hidden="true">⇄</span><div class="hi"><h3>Fathers</h3><q>provoke not your children to anger, lest they be discouraged</q></div></div>
+      <div class="step"><div class="lo"><h3>Servants</h3><q>obey in all things … not with eyeservice</q></div><span class="both" aria-hidden="true">⇄</span><div class="hi"><h3>Masters</h3><q>give unto your servants that which is just and equal</q></div></div>
+    </div>
+    <p class="note step">In a Roman house, the head of the home held nearly all the power. Paul gives <em>the one with the power</em> the heavier orders: love, don't be harsh, don't wind them up, be fair. Nobody gets a free pass.</p>
+    <p class="note step">On wives: <em>“as it is fit in the Lord”</em> makes it a willing yielding, not a doormat and never an excuse for harshness. Good Bible teachers differ on how far it reaches, but this is plain: the man's side is the harder one, and it is measured by Christ.</p>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="21"></blockquote>
+    <div class="ifthen rise" style="--d:1">
+      <div class="if"><small>If a father</small>keeps provoking his children,</div>
+      <span class="arrow" aria-hidden="true">→</span>
+      <div class="then"><small>then</small>they lose heart.</div>
+    </div>
+    <p class="note rise" style="--d:2"><em>“Discouraged”</em> means they give up trying: nothing they do will ever be good enough. And <em>“not bitter”</em> for husbands means sharp and sour: the harsh word, the cold shoulder.</p>
+    <p class="note step">Some of you grew up on the wrong end of that, and some of you were that father. Both are in this room. If you blew it, the road back is short: <em>“I was wrong, and I'm sorry,”</em> said to the child, without an excuse after it.</p>
+    <p class="note step">If you're not married, or you've lost the marriage, these verses still tell you what a man is for, and what God can teach you for whoever He puts in front of you next. It's never too late to start being that man today.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="22-25" data-hl="not with eyeservice, as menpleasers|whatsoever ye do, do it heartily, as to the Lord, and not unto men|ye serve the Lord Christ"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <div class="split">
+      <div class="stage">
+        <svg viewBox="0 0 600 320" role="img" aria-label="A man lays bricks with two watchers. On the left, the boss's eye, wide open. On the right, an eye in the sky, the Lord's. Then the boss leaves and his eye closes, but the eye above stays open, and the wall keeps rising just the same.">
+          <g class="co03-boss-man">
+            <rect x="24" y="64" width="110" height="64" rx="32" class="co03-eye-w" style="fill:none;stroke:none"/>
+            <ellipse class="co03-eye-w" cx="79" cy="96" rx="48" ry="30"/>
+            <circle class="co03-eye-i" cx="79" cy="96" r="14"/>
+            <path class="co03-lid" d="M31 96 Q79 66 127 96 L127 126 L31 126 Z"/>
+          </g>
+          <text class="co03-cap" x="79" y="150">the boss</text>
+          <g class="co03-lord">
+            <path class="co03-ray" d="M470 38 L470 18 M500 46 L514 30 M440 46 L426 30 M520 74 L540 66 M420 74 L400 66"/>
+            <ellipse class="co03-eye-w" cx="470" cy="80" rx="52" ry="32"/>
+            <circle class="co03-eye-i" cx="470" cy="80" r="15"/>
+          </g>
+          <text class="co03-capb" x="470" y="138">the Lord</text>
+          <line x1="20" y1="296" x2="580" y2="296" stroke-width="3" style="stroke:var(--line-strong)"/>
+          <rect class="co03-brick" style="--k:0" x="170" y="262" width="60" height="34" rx="3"/><rect class="co03-brick" style="--k:0" x="234" y="262" width="60" height="34" rx="3"/><rect class="co03-brick" style="--k:0" x="298" y="262" width="60" height="34" rx="3"/>
+          <rect class="co03-brick" style="--k:1" x="202" y="226" width="60" height="34" rx="3"/><rect class="co03-brick" style="--k:1" x="266" y="226" width="60" height="34" rx="3"/>
+          <rect class="co03-brick" style="--k:2" x="234" y="190" width="60" height="34" rx="3"/>
+          <g class="co03-man" style="stroke-width:5">
+            <circle cx="420" cy="214" r="12"/>
+            <path d="M420 226 L420 268 M420 268 L406 294 M420 268 L434 294 M420 240 L386 256 M420 240 L444 258"/>
+          </g>
+          <text class="co03-cap" x="300" y="318">the same wall, whoever's watching</text>
+        </svg>
+      </div>
+      <div>
+        <h2 class="rise" style="--d:1">Whoever's watching</h2>
+        <p class="note rise" style="--d:2"><em>“Eyeservice”</em> is work done only while the boss's eye is on you. <em>“Menpleasers”</em> work for the look of it.</p>
+        <p class="note step co03-gone">So what do you do when the boss walks out? <em>“Whatsoever ye do, do it heartily, as to the Lord.”</em> Same speed, same care, same honesty with the clock. The One who is really your boss never leaves the site.</p>
+        <p class="note step">For us: the first honest job after a bad stretch is how a man gets a name back. Be early, do what you said, don't take what isn't yours, and don't quit on the hard Tuesday.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="24" data-hl="of the Lord ye shall receive the reward of the inheritance"></blockquote>
+    <p class="saying rise" style="--d:1">A slave who <em>inherits.</em></p>
+    <p class="note rise" style="--d:2">Slavery was part of the Roman world, and a slave owned nothing, least of all an inheritance. Paul never says the system was good. But look at what he does: he tells the slave that <em>he</em> will be an heir, that his real Master is Christ, and (4:1) that every earthly master has a Master in heaven. Within a few years he would send a runaway slave back with a letter that said “a brother beloved.” We'll meet him in chapter 4.</p>
+    <p class="note step">Then v. 25: <em>“he that doeth wrong shall receive for the wrong which he hath done: and there is no respect of persons.”</em> God plays no favorites. Not for the boss, not for the worker, not for the friend, not for the stranger. Wrong has real results here, even for forgiven men: records, debts, trust that has to be earned back. But the cross already covers the judgment.</p>
+  </div>
+</section>
+
+<!-- ======================= REMEMBER + QUESTIONS ======================= -->
+<section class="slide remember">
+  <div class="inner">
+    <h2 class="rise">Points to remember</h2>
+    <ol class="seeds">
+      <li class="step"><span class="topic">Look up</span><span class="seed-q">“Set your affection on things above” <cite>3:2</cite></span><span class="take">You've been raised with Christ. Point your mind at Him, and the earthly stuff loses its vote.</span></li>
+      <li class="step"><span class="topic">Put to death</span><span class="seed-q">“Mortify therefore your members which are upon the earth” <cite>3:5</cite></span><span class="take">Name the old sins plainly, starve them, and let the Spirit do the killing.</span></li>
+      <li class="step"><span class="topic">New clothes</span><span class="seed-q">“Ye have put off the old man … and have put on the new man” <cite>3:9–10</cite></span><span class="take">A change of clothes: it's already done in Christ, so wear it.</span></li>
+      <li class="step"><span class="topic">Forgiveness</span><span class="seed-q">“Even as Christ forgave you, so also do ye” <cite>3:13</cite></span><span class="take">Cancel the debt the way yours was cancelled, and let love tie the rest together.</span></li>
+      <li class="step"><span class="topic">Peace and the Word</span><span class="seed-q">“Let the word of Christ dwell in you richly” <cite>3:16</cite></span><span class="take">Give the Word a room in your day and let Christ's peace make the calls.</span></li>
+      <li class="step"><span class="topic">Home and work</span><span class="seed-q">“Whatsoever ye do, do it heartily, as to the Lord” <cite>3:23</cite></span><span class="take">The same man at home and at work: honest, fair, steady, whoever is watching.</span></li>
+    </ol>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 1 of 6</p>
+      <span class="topic">Look up</span>
+      <h2>What does Paul mean by “set your affection on things above”?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="1"></blockquote>
+      <blockquote class="quote step" data-q="2"></blockquote>
+      <blockquote class="quote step" data-q="3-4"></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>Point your mind at Christ, where He is, and not at the things on the earth. It isn't ignoring real life. It's choosing what steers it. You've been raised with Christ, and your life is safe with Him.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 2 of 6</p>
+      <span class="topic">Put to death</span>
+      <h2>What does a believer do with the sins of his old life?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="5"></blockquote>
+      <blockquote class="quote step" data-q="8"></blockquote>
+      <blockquote class="quote step"><p>“For if ye live after the flesh, ye shall die: but if ye through the Spirit do mortify the deeds of the body, ye shall live.”</p><cite>Romans 8:13</cite></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>He puts them to death: names them honestly, stops feeding them, and cuts them down each time they grow back. He does it through the Spirit who lives in him. A fall is not the end: get up and keep cutting.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 3 of 6</p>
+      <span class="topic">New clothes</span>
+      <h2>How does a man take off the old life and put on the new?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="9-10"></blockquote>
+      <blockquote class="quote step"><p>“But the father said to his servants, Bring forth the best robe, and put it on him; and put a ring on his hand, and shoes on his feet:”</p><cite>Luke 15:22</cite></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>Like a change of clothes. In Christ the old man is already off and the new man already on, so he puts off the temper, the lies and the filth, and puts on mercy, kindness and patience. The Father even brings out the best robe for a man coming home.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 4 of 6</p>
+      <span class="topic">Forgiveness</span>
+      <h2>Why should a believer forgive, and how far?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="13"></blockquote>
+      <blockquote class="quote step"><p>“Then came Peter to him, and said, Lord, how oft shall my brother sin against me, and I forgive him? till seven times? Jesus saith unto him, I say not unto thee, Until seven times: but, Until seventy times seven.”</p><cite>Matthew 18:21–22</cite></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>Because Christ forgave us a bigger debt than anyone owes us, and He sets the pattern: <em>“even as Christ forgave you.”</em> It goes as far as His forgiveness went. It doesn't mean trusting him again, or staying where you're being hurt.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 5 of 6</p>
+      <span class="topic">Peace and the Word</span>
+      <h2>What keeps a believer steady from day to day?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="15"></blockquote>
+      <blockquote class="quote step" data-q="16"></blockquote>
+      <blockquote class="quote step" data-q="17"></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>Christ's peace to make the calls, His Word living in him richly, brothers who teach and warn each other, and a thankful heart, with everything done in the Lord Jesus' name.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 6 of 6</p>
+      <span class="topic">Home and work</span>
+      <h2>How does Christ change the way a man treats his family and his boss?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="19"></blockquote>
+      <blockquote class="quote step" data-q="21"></blockquote>
+      <blockquote class="quote step" data-q="23"></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>He loves his wife and isn't harsh, he doesn't wind his kids up until they quit, and he works as if the Lord is his boss, because He is. If he's failed at any of it, today is a good day to start.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide prayer">
+  <div class="inner">
+    <div class="emblem rise"></div>
+    <h2 class="rise" style="--d:1">Prayer requests</h2>
+    <p class="ask-line rise" style="--d:2">What can we pray about for you today?</p>
+    <blockquote class="quote rise" style="--d:4" data-q="17"></blockquote>
+  </div>
+</section>
+
+</main>
+
+<script>
+// King James Version, Colossians chapter 3
+const V = {
+  1: "If ye then be risen with Christ, seek those things which are above, where Christ sitteth on the right hand of God.",
+  2: "Set your affection on things above, not on things on the earth.",
+  3: "For ye are dead, and your life is hid with Christ in God.",
+  4: "When Christ, who is our life, shall appear, then shall ye also appear with him in glory.",
+  5: "Mortify therefore your members which are upon the earth; fornication, uncleanness, inordinate affection, evil concupiscence, and covetousness, which is idolatry:",
+  6: "For which things’ sake the wrath of God cometh on the children of disobedience:",
+  7: "In the which ye also walked some time, when ye lived in them.",
+  8: "But now ye also put off all these; anger, wrath, malice, blasphemy, filthy communication out of your mouth.",
+  9: "Lie not one to another, seeing that ye have put off the old man with his deeds;",
+  10: "And have put on the new man, which is renewed in knowledge after the image of him that created him:",
+  11: "Where there is neither Greek nor Jew, circumcision nor uncircumcision, Barbarian, Scythian, bond nor free: but Christ is all, and in all.",
+  12: "Put on therefore, as the elect of God, holy and beloved, bowels of mercies, kindness, humbleness of mind, meekness, longsuffering;",
+  13: "Forbearing one another, and forgiving one another, if any man have a quarrel against any: even as Christ forgave you, so also do ye.",
+  14: "And above all these things put on charity, which is the bond of perfectness.",
+  15: "And let the peace of God rule in your hearts, to the which also ye are called in one body; and be ye thankful.",
+  16: "Let the word of Christ dwell in you richly in all wisdom; teaching and admonishing one another in psalms and hymns and spiritual songs, singing with grace in your hearts to the Lord.",
+  17: "And whatsoever ye do in word or deed, do all in the name of the Lord Jesus, giving thanks to God and the Father by him.",
+  18: "Wives, submit yourselves unto your own husbands, as it is fit in the Lord.",
+  19: "Husbands, love your wives, and be not bitter against them.",
+  20: "Children, obey your parents in all things: for this is well pleasing unto the Lord.",
+  21: "Fathers, provoke not your children to anger, lest they be discouraged.",
+  22: "Servants, obey in all things your masters according to the flesh; not with eyeservice, as menpleasers; but in singleness of heart, fearing God:",
+  23: "And whatsoever ye do, do it heartily, as to the Lord, and not unto men;",
+  24: "Knowing that of the Lord ye shall receive the reward of the inheritance: for ye serve the Lord Christ.",
+  25: "But he that doeth wrong shall receive for the wrong which he hath done: and there is no respect of persons."
+};
+const BOOK = "Colossians 3";
+</script>
+<script src="../assets/deck.js"></script>
+</body>
+</html>

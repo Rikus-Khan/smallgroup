@@ -1,0 +1,669 @@
+<!doctype html>
+<html lang="en" data-theme="scribe">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Colossians 4</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="../assets/fonts.css">
+<link rel="stylesheet" href="../assets/deck.css">
+<link rel="stylesheet" href="../assets/themes.css">
+<style>
+/* co04-where: where we are in Colossians (the same marker as Colossians 3's co03-where). Four chapters (div, --k): its number
+   (p > i; read ones .done, ours .here), its name (b), what it says (small) and a key phrase (q + cite). The one we're in is .now. */
+.co04-where { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; margin: .5em 0 1em; }
+.co04-where > div { --c: var(--line-strong); padding: .55em .8em .65em; border-top: 6px solid var(--c); border-radius: 0 0 10px 10px;
+  background: color-mix(in srgb, var(--surface) 70%, transparent); opacity: 0; transform: translateY(10px);
+  transition: opacity .6s ease, transform .6s ease; transition-delay: calc(var(--k, 0) * 350ms + 300ms); }
+.slide.active .co04-where > div { opacity: 1; transform: none; }
+.co04-where > div.now { --c: var(--accent); background: color-mix(in srgb, var(--accent) 15%, transparent); box-shadow: inset 0 0 0 2px var(--accent); }
+.co04-where p { display: flex; gap: 6px; margin: 0 0 .4em; }
+.co04-where i { display: grid; place-items: center; width: 1.7em; height: 1.7em; border-radius: 50%; border: 2px solid var(--line-strong); font: 700 .8rem var(--sans); font-style: normal; color: var(--ink-soft); }
+.co04-where i.done { background: color-mix(in srgb, var(--ink-soft) 25%, transparent); border-color: transparent; }
+.co04-where i.here { background: var(--accent); border-color: var(--accent); color: var(--on-accent); }
+.co04-where b { display: block; font: 600 clamp(1rem, .9rem + .5vw, 1.35rem)/1.15 var(--serif); }
+.co04-where small { display: block; margin: .2em 0 .35em; font-size: clamp(.78rem, .72rem + .26vw, 1rem); line-height: 1.3; color: var(--ink-soft); }
+.co04-where q { display: block; font: italic clamp(.86rem, .78rem + .34vw, 1.08rem)/1.3 var(--serif); quotes: "\201C" "\201D"; }
+.co04-where cite { display: block; margin-top: .2em; font-style: normal; font-size: clamp(.72rem, .68rem + .22vw, .92rem); color: var(--ink-soft); }
+@media (max-width: 760px) {
+  .co04-where { grid-template-columns: 1fr; gap: 6px; }
+  .co04-where > div { border-top: 0; border-left: 6px solid var(--c); border-radius: 0 10px 10px 0; }
+}
+
+.co04-man { fill: none; stroke: var(--ink); stroke-width: 6; stroke-linecap: round; stroke-linejoin: round; }
+.co04-man circle { fill: var(--ink); stroke: none; }
+
+/* co04-watch: "watch in the same" (4:2). A night panel (--on-glow with --glow stars; real night in every theme): a watchman on a tower,
+   a lantern, and a beam that sweeps the dark. Three words (.co04-w, --k) come up one after another. */
+.co04-sky { fill: var(--on-glow); }
+.co04-star { fill: var(--glow); opacity: .7; }
+.slide.active .co04-star { animation: co04-tw 3s ease-in-out infinite alternate; }
+.co04-star:nth-of-type(2n) { animation-delay: .8s !important; }
+@keyframes co04-tw { to { opacity: .2; } }
+.co04-tower { fill: var(--leather); stroke: var(--leather-light); stroke-width: 2; }
+.co04-beam { fill: var(--glow); opacity: .35; transform-box: view-box; transform-origin: 150px 112px; }
+.slide.active .co04-beam { animation: co04-sweep 6s ease-in-out infinite alternate; }
+@keyframes co04-sweep { from { transform: rotate(-14deg); } to { transform: rotate(10deg); } }
+.co04-watchman { fill: none; stroke: var(--glow); stroke-width: 5; stroke-linecap: round; }
+.co04-watchman circle { fill: var(--glow); stroke: none; }
+.co04-w { font: 700 24px var(--serif); fill: var(--glow); opacity: 0; transform: translateY(8px); transition: opacity .7s ease, transform .7s ease; transition-delay: calc(var(--k, 0) * 900ms + 700ms); }
+.slide.active .co04-w { opacity: 1; transform: none; }
+.co04-ws { font: 500 15px var(--sans); fill: var(--glow); opacity: 0; transition: opacity .7s ease; transition-delay: calc(var(--k, 0) * 900ms + 1s); }
+.slide.active .co04-ws { opacity: .8; }
+
+/* co04-door: "a door of utterance" (4:3). Paul is in chains and asks for an open door, not an open cell. A closed door with a chain at its foot;
+   on a .co04-open step the door swings back (it narrows as it turns) and light spills through. */
+.co04-wall { fill: var(--surface-2); stroke: var(--line-strong); stroke-width: 3; }
+.co04-light { fill: var(--glow); opacity: 0; transition: opacity 1s ease .3s; }
+.slide:has(.co04-open.on) .co04-light { opacity: .9; }
+.co04-door { fill: var(--leather); stroke: var(--leather-light); stroke-width: 3; transform-box: fill-box; transform-origin: 0 50%; transition: transform 1.3s cubic-bezier(.5,0,.3,1); }
+.slide:has(.co04-open.on) .co04-door { transform: scaleX(.18); }
+.co04-knob { fill: var(--glow); }
+.co04-link { fill: none; stroke: var(--ink-soft); stroke-width: 6; }
+.co04-ray { stroke: var(--glow); stroke-width: 4; stroke-linecap: round; opacity: 0; transition: opacity .8s ease 1s; }
+.slide:has(.co04-open.on) .co04-ray { opacity: .9; }
+.co04-dl { font: 700 17px var(--sans); fill: var(--ink-soft); }
+
+/* co04-salt: what salt does (4:6). Four cards (div, .step), each with an icon letter (i), a heading (b) and a line (small). */
+.co04-salt { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; margin: .4em 0 .9em; }
+@media (max-width: 760px) { .co04-salt { grid-template-columns: 1fr 1fr; } }
+.co04-salt > div { padding: .6em .8em .7em; border-radius: 10px; border: 1.5px solid var(--line-strong); background: color-mix(in srgb, var(--surface) 75%, transparent); }
+.co04-salt i { display: block; font: 400 2.2rem/1 var(--serif); font-style: normal; color: var(--accent-hot); margin-bottom: .1em; }
+.co04-salt b { display: block; font: 600 clamp(1.05rem, .9rem + .6vw, 1.4rem)/1.15 var(--serif); }
+.co04-salt small { display: block; margin-top: .25em; font-size: clamp(.82rem, .76rem + .3vw, 1.02rem); line-height: 1.3; color: var(--ink-soft); }
+
+/* co04-day: "redeeming the time" (4:5). A waking day as 16 blocks (i, --k); on a .co04-buy step four are bought back (.b) and light up. */
+.co04-day { display: grid; grid-template-columns: repeat(16, 1fr); gap: 5px; margin: .5em 0 .4em; max-width: 46rem; }
+.co04-day i { height: 2.4rem; border-radius: 5px; background: color-mix(in srgb, var(--ink-soft) 22%, transparent); border: 1.5px solid var(--line-strong); transition: background .6s ease, border-color .6s ease, transform .6s ease; transition-delay: calc(var(--k, 0) * 60ms); }
+.slide:has(.co04-buy.on) .co04-day i.b { background: var(--accent); border-color: var(--accent-hot); transform: translateY(-6px); }
+.co04-chips { display: flex; flex-wrap: wrap; gap: 8px; margin: .4em 0 1em; }
+.co04-chips span { padding: .25em .75em; border-radius: 999px; border: 1.5px solid var(--accent); color: var(--accent-hot); font: 600 clamp(.82rem, .76rem + .3vw, 1.05rem) var(--sans); }
+
+/* co04-pray: Epaphras in Rome, praying for three towns (4:12-13). A kneeling man; three dashed lines that draw out to the towns (--k). */
+.co04-pline { fill: none; stroke: var(--accent-hot); stroke-width: 3; stroke-linecap: round; stroke-dasharray: 1; stroke-dashoffset: 1; transition: stroke-dashoffset 1.4s ease; transition-delay: calc(var(--k, 0) * 500ms + .6s); }
+.slide.active .co04-pline { stroke-dashoffset: 0; }
+.co04-town { fill: var(--surface); stroke: var(--accent); stroke-width: 2.5; }
+.co04-tn { font: 700 19px var(--serif); fill: var(--ink); text-anchor: middle; }
+.co04-pn { font: 600 15px var(--sans); fill: var(--ink-soft); text-anchor: middle; }
+.co04-glow { transform-box: fill-box; transform-origin: center; }
+.slide.active .co04-glow { animation: co04-pulse 2.6s ease-in-out infinite alternate; }
+@keyframes co04-pulse { to { transform: scale(1.12); } }
+
+/* co04-sign: the last lines of the letter (4:18). A page; "Paul" is signed by drawing through a clip, and a chain hangs below it. */
+.co04-page { fill: var(--surface); stroke: var(--line-strong); stroke-width: 2; }
+.co04-sig { font: italic 700 60px var(--serif); fill: var(--ink); }
+.co04-reveal { transform-box: fill-box; transform-origin: 0 50%; scale: 0 1; transition: scale 2s ease .6s; }
+.slide.active .co04-reveal { scale: 1 1; }
+.co04-chain ellipse { fill: none; stroke: var(--ink-soft); stroke-width: 6; }
+.co04-line { font: 500 19px var(--serif); font-style: italic; fill: var(--ink-soft); }
+.co04-grace { font: 700 24px var(--serif); fill: var(--accent-hot); opacity: 0; transition: opacity 1s ease; }
+.slide:has(.co04-end.on) .co04-grace { opacity: 1; }
+
+/* co04-carry: five things to take out the door (sin, regret, grace, hope, today). Rows (div, .step): a label (b) and a line (p). */
+.co04-carry { display: grid; gap: 8px; margin: .4em 0 .8em; }
+.co04-carry > div { display: grid; grid-template-columns: 8.5rem 1fr; gap: .2rem 1rem; align-items: center; padding: .4em .8em; border-left: 6px solid var(--accent); border-radius: 0 10px 10px 0; background: color-mix(in srgb, var(--surface) 70%, transparent); }
+.co04-carry b { font: 700 clamp(.8rem, .74rem + .3vw, 1rem) var(--sans); letter-spacing: .1em; text-transform: uppercase; color: var(--accent-hot); }
+.co04-carry p { font: 400 clamp(.95rem, .85rem + .5vw, 1.3rem)/1.3 var(--serif); }
+@media (max-width: 640px) { .co04-carry > div { grid-template-columns: 1fr; } }
+</style>
+</head>
+<body>
+<main class="deck" id="deck">
+
+<!-- ======================= OPENING ======================= -->
+<section class="slide title">
+  <div class="inner">
+    <div class="emblem rise"></div>
+    <h1 class="rise" style="--d:1">Colossians 4</h1>
+    <p class="sub rise" style="--d:3">Pray, speak, and know your people</p>
+    <p class="tag rise" style="--d:5">Paul closes with how to pray and how to talk, and then a roll call: a runaway slave, a man who quit, a doctor, and one who would walk away. Every name is a story about grace.</p>
+  </div>
+</section>
+
+<section class="slide watch">
+  <div class="inner">
+    <h2 class="rise">Things to watch for</h2>
+    <p class="lede rise" style="--d:1">Keep these questions in the back of your mind as we read. We'll come back to every one of them at the end.</p>
+    <ol class="seeds">
+      <li class="step"><span class="topic">Prayer</span><span class="seed-q">How does Paul tell believers to pray?</span></li>
+      <li class="step"><span class="topic">Words</span><span class="seed-q">How should a believer talk to people outside the church?</span></li>
+      <li class="step"><span class="topic">Onesimus</span><span class="seed-q">What happened to the runaway slave Onesimus?</span></li>
+      <li class="step"><span class="topic">Marcus</span><span class="seed-q">Can a man who quit get a second chance?</span></li>
+      <li class="step"><span class="topic">Faithful friends</span><span class="seed-q">Who stood by Paul, and who walked away?</span></li>
+      <li class="step"><span class="topic">The last word</span><span class="seed-q">What does Paul ask of the church as he closes?</span></li>
+    </ol>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise">Where we are in Colossians</h2>
+    <div class="co04-where" role="img" aria-label="Colossians in four chapters. Chapter 1: Christ is over everything. Chapter 2: you are complete in him. Chapter 3: the new life. Chapter 4, where we are, the last chapter: prayer, words, and the people Paul names.">
+      <div style="--k:0"><p><i class="done">1</i></p><b>Christ over all</b><small>Who He is, and what He did on the cross</small><q>in all things he might have the preeminence</q><cite>1:18</cite></div>
+      <div style="--k:1"><p><i class="done">2</i></p><b>Complete in Him</b><small>Don't let anyone rob you with rules and clever talk</small><q>ye are complete in him</q><cite>2:10</cite></div>
+      <div style="--k:2"><p><i class="done">3</i></p><b>The new life</b><small>Look up, put off the old, put on the new</small><q>seek those things which are above</q><cite>3:1</cite></div>
+      <div class="now" style="--k:3"><p><i class="here">4</i></p><b>Prayer and people</b><small>How to pray, how to talk, and who Paul names</small><q>Continue in prayer</q><cite>4:2</cite></div>
+    </div>
+    <p class="note rise" style="--d:3">This is the last chapter. Paul wrote the letter from Rome, about AD 60 to 62, chained to a soldier in a rented house (Acts 28:16, 30). Chapter 3 showed what the new life looks like. Chapter 4 shows it in real people.</p>
+    <p class="note step">It starts with one more line for the boss, then prayer and speech, then ten names. Don't skip the names. They are the best part: each one is a man God did something with.</p>
+  </div>
+</section>
+
+<!-- ======================= PART ONE: PRAY AND SPEAK ======================= -->
+<section class="slide part">
+  <div class="inner">
+    <p class="part-n rise">Part one</p>
+    <h2 class="rise" style="--d:1">Pray and speak</h2>
+    <p class="range rise" style="--d:2">Verses 1–6</p>
+    <div class="rule"></div>
+    <p class="hook rise" style="--d:4">What you say to God, and what you say to everybody else.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="1" data-hl="Masters, give unto your servants that which is just and equal|ye also have a Master in heaven"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="1" data-hl="ye also have a Master in heaven"></blockquote>
+    <p class="saying rise" style="--d:1">The boss has <em>a Boss.</em></p>
+    <p class="note rise" style="--d:2">This finishes chapter 3's household. <em>“Just and equal”</em> means fair pay, fair treatment, and fair play. Paul told the slave to work as for the Lord. Now he tells the owner that <em>he</em> answers to the Lord too.</p>
+    <p class="note step">If any of you supervise a crew, a team, or a couple of guys on a job, this is your verse. Pay what you promised, say thanks, and don't lean on a man because you can.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="2-4" data-hl="Continue in prayer, and watch in the same with thanksgiving|a door of utterance|for which I am also in bonds"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <div class="split">
+      <div class="stage">
+        <svg viewBox="0 0 600 340" role="img" aria-label="A night sky with stars. A watchman stands on top of a tower holding a lantern, and a beam of light sweeps across the dark. Three words appear one after the other: continue, watch, give thanks.">
+          <rect class="co04-sky" x="0" y="0" width="600" height="340" rx="18"/>
+          <circle class="co04-star" cx="60" cy="50" r="2.5"/><circle class="co04-star" cx="130" cy="30" r="2"/><circle class="co04-star" cx="260" cy="64" r="3"/><circle class="co04-star" cx="330" cy="26" r="2"/>
+          <circle class="co04-star" cx="420" cy="52" r="2.5"/><circle class="co04-star" cx="540" cy="38" r="3"/><circle class="co04-star" cx="500" cy="100" r="2"/><circle class="co04-star" cx="40" cy="120" r="2"/>
+          <path class="co04-beam" d="M150 112 L600 40 L600 190 Z"/>
+          <rect class="co04-tower" x="110" y="130" width="80" height="210"/>
+          <rect class="co04-tower" x="100" y="122" width="100" height="14" rx="3"/>
+          <g class="co04-watchman">
+            <circle cx="132" cy="84" r="9"/>
+            <path d="M132 93 L132 120 M132 100 L150 108 M132 120 L126 122"/>
+          </g>
+          <circle cx="152" cy="110" r="6" style="fill:var(--glow)"/>
+          <g text-anchor="start">
+            <text class="co04-w" style="--k:0" x="260" y="236">continue</text><text class="co04-ws" style="--k:0" x="262" y="258">don't quit on it</text>
+            <text class="co04-w" style="--k:1" x="260" y="288">watch</text><text class="co04-ws" style="--k:1" x="262" y="310">stay awake and alert</text>
+            <text class="co04-w" style="--k:2" x="430" y="288">give thanks</text><text class="co04-ws" style="--k:2" x="432" y="310">out loud</text>
+          </g>
+        </svg>
+      </div>
+      <div>
+        <h2 class="rise" style="--d:1">Pray like a sentry</h2>
+        <p class="note rise" style="--d:2">Three words. <em>“Continue”</em>: keep at it, don't pray once and quit. <em>“Watch”</em>: a sentry's word for staying awake on the wall. And <em>“with thanksgiving.”</em></p>
+        <p class="note step">A watchman is looking for what's coming at him. For us that means seeing the pull before it arrives: the dark hour, the old route home, the text you know is coming. Pray about it <em>before</em>, not after.</p>
+        <p class="note step">And thank God out loud for what He has already done. A thankful man is hard to knock over.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <div class="split">
+      <div class="stage">
+        <svg viewBox="0 0 600 330" role="img" aria-label="A wall with a closed wooden door. At the foot of the door lie chain links. Then the door swings open and bright light pours through: a door of utterance, a way to speak the gospel.">
+          <rect class="co04-wall" x="30" y="20" width="540" height="270" rx="10"/>
+          <rect class="co04-light" x="200" y="50" width="200" height="240" rx="6"/>
+          <g class="co04-ray"><path d="M300 170 L300 28 M300 170 L190 40 M300 170 L410 40 M300 170 L170 130 M300 170 L430 130" stroke="currentColor" style="stroke:var(--glow)"/></g>
+          <rect class="co04-door" x="200" y="50" width="200" height="240" rx="6"/>
+          <circle class="co04-knob" cx="372" cy="175" r="8"/>
+          <g transform="translate(50 250)">
+            <ellipse class="co04-link" cx="16" cy="12" rx="22" ry="11"/><ellipse class="co04-link" cx="52" cy="12" rx="22" ry="11"/><ellipse class="co04-link" cx="88" cy="12" rx="22" ry="11"/>
+          </g>
+          <text class="co04-dl" x="62" y="244">in bonds</text>
+          <text class="co04-dl" x="300" y="318" text-anchor="middle" style="fill:var(--accent-hot)">“a door of utterance”</text>
+        </svg>
+      </div>
+      <div>
+        <h2 class="rise" style="--d:1">Pray for the door</h2>
+        <p class="note rise" style="--d:2">Look at what Paul asks for. He's in chains, and he doesn't say <em>“pray that I get out.”</em> He says <em>“pray … that God would open unto us a door of utterance.”</em> He wants a way to speak about Christ.</p>
+        <p class="note step co04-open">That's a prayer worth stealing. Don't only pray for the chains to come off. Pray for a door: one honest conversation, one man at work who's ready to hear it. A man in a bad spot can still be useful.</p>
+      </div>
+    </div>
+    <blockquote class="quote step"><p>“And for me, that utterance may be given unto me, that I may open my mouth boldly, to make known the mystery of the gospel, For which I am an ambassador in bonds: that therein I may speak boldly, as I ought to speak.”</p><cite>Ephesians 6:19–20</cite></blockquote>
+  </div>
+</section>
+
+<section class="slide verse" data-v="5-6" data-hl="Walk in wisdom toward them that are without, redeeming the time|Let your speech be alway with grace, seasoned with salt"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="6" data-hl="seasoned with salt"></blockquote>
+    <h2 class="rise" style="--d:1">Salt on your words</h2>
+    <p class="note rise" style="--d:2"><em>“Them that are without”</em> means people outside the church: the neighbor, the boss, the old friend who is watching how you've changed. Salt was in every kitchen, and Paul counts on that:</p>
+    <div class="co04-salt">
+      <div class="step"><i>1</i><b>It flavors</b><small>Plain, true talk beats bland talk.</small></div>
+      <div class="step"><i>2</i><b>It keeps</b><small>It stops words from going bad.</small></div>
+      <div class="step"><i>3</i><b>It stings</b><small>A little truth, on the right spot, hurts and helps.</small></div>
+      <div class="step"><i>4</i><b>Not too much</b><small>Salt, not the whole shaker.</small></div>
+    </div>
+    <blockquote class="quote step"><p>“A soft answer turneth away wrath: but grievous words stir up anger.”</p><cite>Proverbs 15:1</cite></blockquote>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise">Buying back the time</h2>
+    <p class="note rise" style="--d:1"><em>“Redeeming”</em> is a market word: to buy up, to snap up a bargain. Time here means <em>an opportunity.</em> Paul sees a day full of hours and says, <em>buy up the good ones.</em></p>
+    <div class="co04-day rise" style="--d:2" role="img" aria-label="Sixteen waking hours in a row. Four of them light up: the hours bought back for good.">
+      <i style="--k:0"></i><i style="--k:1" class="b"></i><i style="--k:2"></i><i style="--k:3"></i><i style="--k:4" class="b"></i><i style="--k:5"></i><i style="--k:6"></i><i style="--k:7"></i>
+      <i style="--k:8"></i><i style="--k:9" class="b"></i><i style="--k:10"></i><i style="--k:11"></i><i style="--k:12"></i><i style="--k:13" class="b"></i><i style="--k:14"></i><i style="--k:15"></i>
+    </div>
+    <p class="note step co04-buy">Sixteen waking hours. Most go to the clock and the couch. Four, bought back on purpose, change the day.</p>
+    <div class="co04-chips step"><span>five minutes of prayer first thing</span><span>a kind word on the job</span><span>a call to a brother</span><span>walking away from the old route</span></div>
+    <p class="note step">Paul was in prison, and he still counted his hours. Every man here has time he used to burn. It can be bought back, one hour at a time.</p>
+  </div>
+</section>
+
+<!-- ======================= PART TWO: THE FAITHFUL BAND ======================= -->
+<section class="slide part">
+  <div class="inner">
+    <p class="part-n rise">Part two</p>
+    <h2 class="rise" style="--d:1">The faithful band</h2>
+    <p class="range rise" style="--d:2">Verses 7–14</p>
+    <div class="rule"></div>
+    <p class="hook rise" style="--d:4">Eight men, and every one a story about grace.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="7-9" data-hl="Tychicus|Onesimus, a faithful and beloved brother, who is one of you"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <div class="split">
+      <div class="stage">
+        <svg data-world viewBox="170 120 520 330" data-towns="Rome*:r, Puteoli, Ephesus:l, Colosse!:b" role="img" aria-label="A map of the Mediterranean. A line runs by sea from Rome in Italy, round the south of Greece, to Ephesus on the coast of Asia, and then inland to Colosse: the road the letter and its two carriers travelled.">
+          <path class="map-route" data-via="Rome, Puteoli, Rhegium, @16 37.5, @21 36.5, @23.4 36.25, @24.3 37.3, @25.5 37.2, @26.2 37.55, Ephesus, Colosse"/>
+        </svg>
+      </div>
+      <div>
+        <h2 class="rise" style="--d:1">Two men and a letter</h2>
+        <p class="note rise" style="--d:2">Tychicus carried the letter from Rome to Colosse, more than a thousand miles. He carried the letter we call Ephesians too, and he came to <em>“comfort your hearts.”</em> A mailman who is also a pastor.</p>
+        <p class="note step">He didn't travel alone. <em>“With Onesimus,”</em> says verse 9. We'll meet him in a moment.</p>
+      </div>
+    </div>
+    <blockquote class="quote step"><p>“But that ye also may know my affairs, and how I do, Tychicus, a beloved brother and faithful minister in the Lord, shall make known to you all things: Whom I have sent unto you for the same purpose, that ye might know our affairs, and that he might comfort your hearts.”</p><cite>Ephesians 6:21–22</cite></blockquote>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="9" data-hl="a faithful and beloved brother, who is one of you"></blockquote>
+    <h2 class="rise" style="--d:1">A runaway, now a brother</h2>
+    <div class="rename">
+      <span class="old rise" style="--d:2">a runaway slave</span>
+      <span class="arrow step n2">→</span>
+      <span class="new step">a faithful and beloved brother</span>
+      <span class="gloss step">“who is one of you.” He had run from Colosse, and Colosse is now told he belongs to them again.</span>
+    </div>
+    <p class="note step">Onesimus belonged to Philemon, probably a believer in Colosse. He ran off, maybe with money, and ended up in Rome. There he met Paul, and there he met Christ. His name means <em>useful</em> (Philemon 11).</p>
+    <blockquote class="quote step"><p>“For perhaps he therefore departed for a season, that thou shouldest receive him for ever; Not now as a servant, but above a servant, a brother beloved, specially to me, but how much more unto thee, both in the flesh, and in the Lord?”</p><cite>Philemon 15–16</cite></blockquote>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise">Paul steps in</h2>
+    <p class="note rise" style="--d:1">A runaway could be punished hard under Roman law. Paul sends Onesimus home carrying a letter, and Paul puts his own name on the debt:</p>
+    <div class="swap rise" style="--d:2">
+      <h3><span>Onesimus</span>owes</h3>
+      <h3><span>Paul</span>pays</h3>
+      <div class="a"><b>Onesimus</b><small>lost time, maybe lost money, a broken trust</small></div>
+      <div class="b"><b>Paul</b><small>“put that on mine account”</small></div>
+    </div>
+    <p class="note step swap-go">Philemon 18–19: <em>“If he hath wronged thee, or oweth thee ought, put that on mine account … I will repay it.”</em> The guilty man's debt lands on the one who didn't owe it.</p>
+    <p class="note step">That is the gospel in small. Christ didn't owe it either, and He wrote our names on His account. And a man who once stole from his boss gets to go home as a brother.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="10-11" data-hl="Aristarchus my fellowprisoner|sister’s son to Barnabas|These only are my fellow workers unto the kingdom of God"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise">The man who quit</h2>
+    <div class="stage">
+      <svg class="curve" viewBox="0 0 680 310" role="img" aria-label="A line showing Mark's road. It starts high when he joins Barnabas and Paul, rises as their helper, drops when he leaves them at Perga, drops lower when Paul refuses to take him on the next trip, then climbs when Paul says to receive him, and ends high when Paul writes that he is profitable for the ministry.">
+        <line class="curve-base" x1="20" y1="150" x2="660" y2="150"/>
+        <path class="curve-line" pathLength="1" d="M40 120 L150 70 L270 210 L380 260 L500 170 L630 50"/>
+        <g class="curve-pt" style="--k:0"><circle cx="40" cy="120" r="9"/><text x="26" y="172">joins the team</text><text class="ref" x="26" y="190">Acts 12:25</text></g>
+        <g class="curve-pt" style="--k:1"><circle cx="150" cy="70" r="9"/><text x="150" y="44" text-anchor="middle">their helper</text><text class="ref" x="150" y="26" text-anchor="middle">Acts 13:5</text></g>
+        <g class="curve-pt low" style="--k:2"><circle cx="270" cy="210" r="9"/><text x="270" y="240" text-anchor="middle">leaves at Perga</text><text class="ref" x="270" y="258" text-anchor="middle">Acts 13:13</text></g>
+        <g class="curve-pt low" style="--k:3"><circle cx="380" cy="260" r="9"/><text x="380" y="288" text-anchor="middle">Paul says no</text><text class="ref" x="380" y="306" text-anchor="middle">Acts 15:38</text></g>
+        <g class="curve-pt" style="--k:4"><circle cx="500" cy="170" r="9"/><text x="512" y="196">“receive him”</text><text class="ref" x="512" y="214">Col. 4:10</text></g>
+        <g class="curve-pt high" style="--k:5"><circle cx="630" cy="50" r="10"/><text x="606" y="40" text-anchor="end" font-weight="700" style="fill:var(--accent-hot)">“profitable”</text><text class="ref" x="606" y="58" text-anchor="end">2 Tim. 4:11</text></g>
+      </svg>
+    </div>
+    <p class="note rise" style="--d:2"><em>Marcus</em> is Mark, John Mark, the cousin of Barnabas (the KJV says <em>“sister's son”</em>). Early on he quit in the middle of the first missionary trip. When Barnabas wanted to give him another chance, Paul said no, and the two friends split over it.</p>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <p class="saying rise" style="--d:1">Quit once. <em>Useful again.</em></p>
+    <p class="note rise" style="--d:2">Paul had every reason to keep Mark on the bench. Years later he tells the whole church at Colosse: <em>“if he come unto you, receive him.”</em> Near the end of his life he asked for him by name:</p>
+    <blockquote class="quote step"><p>“Only Luke is with me. Take Mark, and bring him with thee: for he is profitable to me for the ministry.”</p><cite>2 Timothy 4:11</cite></blockquote>
+    <p class="note step">Early Christians held that this same Mark wrote the Gospel that carries his name. If you've quit on a job, a program or a person, that is not your last chapter.</p>
+    <p class="note step">Verse 11: of the Jewish believers, only Aristarchus, Marcus and Jesus Justus (a common name) were working beside Paul, <em>“a comfort unto me.”</em> Three men, and they mattered more than a crowd.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="12-14" data-hl="Epaphras, who is one of you, a servant of Christ|always labouring fervently for you in prayers|Luke, the beloved physician, and Demas, greet you"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <div class="split">
+      <div class="stage">
+        <svg viewBox="0 0 600 300" role="img" aria-label="A man kneels at the left, labeled Epaphras, in Rome. Three dashed lines run from him to three towns: Colosse, Laodicea and Hierapolis, each with a glowing dot.">
+          <g class="co04-man" style="stroke-width:5">
+            <circle cx="70" cy="134" r="13"/>
+            <path d="M70 147 L72 196 M72 196 L112 212 L98 252 M72 196 L56 252 M72 164 L100 160"/>
+          </g>
+          <text class="co04-tn" x="70" y="286">Epaphras</text>
+          <text class="co04-pn" x="70" y="108">in Rome</text>
+          <path class="co04-pline" style="--k:0" pathLength="1" d="M108 150 Q240 40 442 50"/>
+          <path class="co04-pline" style="--k:1" pathLength="1" d="M110 160 Q300 150 442 150"/>
+          <path class="co04-pline" style="--k:2" pathLength="1" d="M108 172 Q240 270 442 250"/>
+          <circle class="co04-town co04-glow" cx="470" cy="50" r="16"/><text class="co04-tn" x="496" y="52" style="text-anchor:start;font-size:19px">Hierapolis</text>
+          <circle class="co04-town co04-glow" cx="470" cy="150" r="16"/><text class="co04-tn" x="496" y="152" style="text-anchor:start;font-size:19px">Colosse</text>
+          <circle class="co04-town co04-glow" cx="470" cy="250" r="16"/><text class="co04-tn" x="496" y="252" style="text-anchor:start;font-size:19px">Laodicea</text>
+        </svg>
+      </div>
+      <div>
+        <h2 class="rise" style="--d:1">Fighting on his knees</h2>
+        <p class="note rise" style="--d:2">Epaphras was from Colosse (<em>“one of you”</em>). He started the church there and then came to Rome, and he's in prison with Paul (Philemon 23). He can't walk home, so he <em>prays</em> his way home.</p>
+        <p class="note step"><em>“Labouring fervently”</em> is the word for an athlete's struggle, the root of our word <em>agony.</em> He prays for three towns, by name, always, so that they <em>“stand perfect and complete in all the will of God.”</em></p>
+        <p class="note step">Somebody prayed for you like that. Be that man for somebody today.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="14" data-hl="Luke, the beloved physician"></blockquote>
+    <p class="saying rise" style="--d:1">A doctor who <em>stayed.</em></p>
+    <p class="note rise" style="--d:2">Luke, <em>“the beloved physician,”</em> a doctor, a Gentile and a careful writer. By Christian tradition he wrote the Gospel of Luke and Acts. The “we” in Acts 27 and 28 includes him: he was on the ship in the storm with Paul and he came to Rome with him.</p>
+    <p class="note step">He is still there at the end. In Paul's last letter, written from a cold Roman prison, he says: <em>“Only Luke is with me.”</em> A man who stays when it's easy to go is worth more than gold.</p>
+    <p class="note step">Be Luke for someone: the one who shows up on the bad day, doesn't say much, and is still there next month.</p>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise">And Demas</h2>
+    <ol class="timeline rise" style="--d:1">
+      <li class="lit" data-n="1"><b>About AD 60 to 62</b><span>Paul writes Colossians: “Luke, the beloved physician, and Demas, greet you.”</span><small>Col. 4:14</small></li>
+      <li class="lit" data-n="2"><b>The same years</b><span>Philemon lists Demas among Paul's “fellowlabourers.”</span><small>Philemon 24</small></li>
+      <li class="wait" data-n="3"><b>About AD 66 to 67</b><span>Paul's last letter: “Demas hath forsaken me, having loved this present world.”</span><small>2 Tim. 4:10</small></li>
+    </ol>
+    <p class="note step">Here's the sad one. Demas worked beside Paul and was counted a co-worker, and later he drifted back to the world he'd left. It doesn't say he lost his salvation, and it doesn't tell us how his story ended. Only that he went.</p>
+    <p class="note step">It's a gentle warning. Nobody falls all at once. It starts with loving the present world a little more than the people who pray for you. If you feel that pull, tell a brother <em>before</em> you've gone, not after.</p>
+  </div>
+</section>
+
+<!-- ======================= PART THREE: PASS IT ON ======================= -->
+<section class="slide part">
+  <div class="inner">
+    <p class="part-n rise">Part three</p>
+    <h2 class="rise" style="--d:1">Pass it on</h2>
+    <p class="range rise" style="--d:2">Verses 15–18</p>
+    <div class="rule"></div>
+    <p class="hook rise" style="--d:4">Share the letter, finish the job, and remember who is in chains.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="15-17" data-hl="Nymphas, and the church which is in his house|cause that it be read also in the church of the Laodiceans|Take heed to the ministry which thou hast received in the Lord, that thou fulfil it"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <div class="split">
+      <div class="stage">
+        <svg data-world viewBox="606 270 62 42" data-towns="Hierapolis:t, Laodicea:l, Colosse*:r" role="img" aria-label="A close map of the Lycus valley in Asia: Hierapolis, Laodicea and Colosse close together. One line runs from Colosse to Laodicea, and another back: the two letters were swapped and read in both churches.">
+          <path class="map-route" data-via="Colosse, Laodicea"/>
+          <path class="map-route r1" data-via="Laodicea, Colosse" style="transform:translateY(1.2px)"/>
+        </svg>
+      </div>
+      <div>
+        <h2 class="rise" style="--d:1">A church in a house</h2>
+        <p class="note rise" style="--d:2">Three towns in one valley, within a day's walk of each other. <em>“Nymphas, and the church which is in his house”:</em> the church met in somebody's living room. A church doesn't need a building. It needs people who show up.</p>
+        <p class="note step">Verse 16 is the first time a letter of Paul's was told to be passed round. Colosse reads Laodicea's letter, and Laodicea reads this one. We don't know what that other letter was. Many think Ephesians, but nobody knows.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="17"></blockquote>
+    <div class="dots rows fill rise" data-dots="40" style="--d:1;--cols:20;--pace:50ms;--wait:700ms;--dot:var(--accent);max-width:40rem" aria-label="Forty dots, empty at first, filling in one after another until every one is full: fulfil, fill it to the full."></div>
+    <h2 class="rise" style="--d:2">Take heed. Fulfil it.</h2>
+    <p class="note rise" style="--d:3"><em>Archippus</em> is named in Philemon 2 as <em>“our fellowsoldier,”</em> probably a leader in that church (some think Philemon's son). Nobody knows what exactly his “ministry” was, only that God handed him a job and he had to finish it.</p>
+    <p class="note step"><em>“Fulfil”</em> means fill to the full, like those dots. Starting is easy. The word is for men who finish. Whatever God has put in your hands (a job, a family, a few men to look after), take heed to it, and do it all the way.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="18" data-hl="Remember my bonds|Grace be with you"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <div class="split">
+      <div class="stage">
+        <svg viewBox="0 0 600 320" role="img" aria-label="A page of a letter. The name Paul is signed across it, and a chain hangs beneath the signature. Below the chain, the words: Grace be with you.">
+          <rect class="co04-page" x="30" y="20" width="540" height="280" rx="10"/>
+          <defs><clipPath id="co04-clip"><rect x="140" y="40" width="360" height="110"/></clipPath></defs>
+          <g clip-path="url(#co04-clip)"><g class="co04-reveal"><text class="co04-sig" x="170" y="116">Paul</text></g></g>
+          <text class="co04-line" x="170" y="146">“by the hand of me Paul”</text>
+          <g class="co04-chain" transform="translate(172 176)">
+            <ellipse cx="20" cy="14" rx="26" ry="12"/><ellipse cx="62" cy="14" rx="26" ry="12"/><ellipse cx="104" cy="14" rx="26" ry="12"/><ellipse cx="146" cy="14" rx="26" ry="12"/><ellipse cx="188" cy="14" rx="26" ry="12"/>
+          </g>
+          <text class="co04-line" x="300" y="236" text-anchor="middle">“Remember my bonds.”</text>
+          <text class="co04-grace" x="300" y="278" text-anchor="middle">Grace be with you.</text>
+        </svg>
+      </div>
+      <div>
+        <h2 class="rise" style="--d:1">In his own hand</h2>
+        <p class="note rise" style="--d:2">Paul dictated most of his letters, and here he takes the pen himself. His hand was chained to a soldier's when he signed.</p>
+        <p class="note step"><em>“Remember my bonds”</em> isn't a plea for pity. It's: <em>keep praying, keep standing with me.</em> The man in chains wrote the most joyful letters in the New Testament.</p>
+        <p class="note step co04-end">And the last word is <em>“Grace.”</em> The letter began with it and ends with it. Everything in between rests on that word.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ======================= LOOKING BACK ======================= -->
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise">The whole letter, in four stops</h2>
+    <ol class="timeline" style="margin-top:.8em">
+      <li data-n="1" class="step lit"><b>Christ over all</b><span>The image of the invisible God, who made peace by His cross.</span><small>“Christ in you, the hope of glory”</small></li>
+      <li data-n="2" class="step lit"><b>Complete in Him</b><span>Don't trade Him for rules and clever ideas.</span><small>“ye are complete in him”</small></li>
+      <li data-n="3" class="step lit"><b>New clothes</b><span>Look up, put off the old, put on the new, with love around it.</span><small>“put on charity”</small></li>
+      <li data-n="4" class="step lit"><b>Prayer and people</b><span>Pray for the door, salt your words, know your people.</span><small>“Continue in prayer”</small></li>
+    </ol>
+    <p class="note step">Notice the order. Colossians never says <em>“try harder.”</em> It begins with who Christ is and what He finished, and only then tells you how to live. Doctrine first, clothes second. The man in chains and the runaway slave both got that order right.</p>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise">Five things to carry out the door</h2>
+    <div class="co04-carry">
+      <div class="step"><b>Sin</b><p>Named plainly in chapter 3: the temper, the lust, the lies. Not hidden, and not final.</p></div>
+      <div class="step"><b>Regret</b><p>Mark quit, and Paul said no. Years later: “profitable to me for the ministry.”</p></div>
+      <div class="step"><b>Grace</b><p>“Complete in him,” and “having forgiven you all trespasses.” Paul's last word is Grace.</p></div>
+      <div class="step"><b>Hope</b><p>“Your life is hid with Christ in God.” It will show.</p></div>
+      <div class="step"><b>Today</b><p>Pray for one door. Say one gracious thing. Tell one man the truth.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ======================= REMEMBER + QUESTIONS ======================= -->
+<section class="slide remember">
+  <div class="inner">
+    <h2 class="rise">Points to remember</h2>
+    <ol class="seeds">
+      <li class="step"><span class="topic">Prayer</span><span class="seed-q">“Continue in prayer, and watch in the same with thanksgiving” <cite>4:2</cite></span><span class="take">Keep at it, stay alert for what's coming, and thank God out loud. Pray for a door, not only for the chains to come off.</span></li>
+      <li class="step"><span class="topic">Words</span><span class="seed-q">“Let your speech be alway with grace, seasoned with salt” <cite>4:6</cite></span><span class="take">Honest talk with grace in it, for the people outside who are watching how you've changed.</span></li>
+      <li class="step"><span class="topic">Onesimus</span><span class="seed-q">“A faithful and beloved brother, who is one of you” <cite>4:9</cite></span><span class="take">The runaway comes home a brother, because Paul put the debt on his own account.</span></li>
+      <li class="step"><span class="topic">Marcus</span><span class="seed-q">“If he come unto you, receive him” <cite>4:10</cite></span><span class="take">A man who quit gets another chance, and ends up useful.</span></li>
+      <li class="step"><span class="topic">Faithful friends</span><span class="seed-q">“Epaphras … always labouring fervently for you in prayers” <cite>4:12</cite></span><span class="take">Be Epaphras and be Luke. Take Demas as a gentle warning: stay close to the people who pray for you.</span></li>
+      <li class="step"><span class="topic">The last word</span><span class="seed-q">“Take heed to the ministry which thou hast received in the Lord, that thou fulfil it” <cite>4:17</cite></span><span class="take">Finish what God gave you, remember those in chains, and rest on grace.</span></li>
+    </ol>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 1 of 6</p>
+      <span class="topic">Prayer</span>
+      <h2>How does Paul tell believers to pray?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="2"></blockquote>
+      <blockquote class="quote step" data-q="3"></blockquote>
+      <blockquote class="quote step" data-q="12" data-hl="always labouring fervently for you in prayers"></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>Keep at it, stay alert, and give thanks. Pray for open doors to speak about Christ, even from a bad spot, and pray hard for other people by name, the way Epaphras did.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 2 of 6</p>
+      <span class="topic">Words</span>
+      <h2>How should a believer talk to people outside the church?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="5"></blockquote>
+      <blockquote class="quote step" data-q="6"></blockquote>
+      <blockquote class="quote step"><p>“A soft answer turneth away wrath: but grievous words stir up anger.”</p><cite>Proverbs 15:1</cite></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>With wisdom and with grace: honest, seasoned talk, the kind that makes a man curious instead of defensive. Buy up the opportunities you're given, and be ready to answer.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 3 of 6</p>
+      <span class="topic">Onesimus</span>
+      <h2>What happened to the runaway slave Onesimus?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="9"></blockquote>
+      <blockquote class="quote step"><p>“For perhaps he therefore departed for a season, that thou shouldest receive him for ever; Not now as a servant, but above a servant, a brother beloved, specially to me, but how much more unto thee, both in the flesh, and in the Lord?”</p><cite>Philemon 15–16</cite></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>He met Christ in Paul's prison, and Paul sent him home with a letter and an offer to pay what he owed (Philemon 18). The runaway returned as “a brother beloved,” one of them.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 4 of 6</p>
+      <span class="topic">Marcus</span>
+      <h2>Can a man who quit get a second chance?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="10" data-hl="Marcus, sister’s son to Barnabas"></blockquote>
+      <blockquote class="quote step"><p>“But Paul thought not good to take him with them, who departed from them from Pamphylia, and went not with them to the work.”</p><cite>Acts 15:38</cite></blockquote>
+      <blockquote class="quote step"><p>“Only Luke is with me. Take Mark, and bring him with thee: for he is profitable to me for the ministry.”</p><cite>2 Timothy 4:11</cite></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>Yes. Mark quit, and Paul refused to take him. Years later Paul told a church to receive him, and asked for him by name: “profitable to me for the ministry.” A failure is not a verdict.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 5 of 6</p>
+      <span class="topic">Faithful friends</span>
+      <h2>Who stood by Paul, and who walked away?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="14"></blockquote>
+      <blockquote class="quote step"><p>“For Demas hath forsaken me, having loved this present world, and is departed unto Thessalonica; Crescens to Galatia, Titus unto Dalmatia.”</p><cite>2 Timothy 4:10</cite></blockquote>
+      <blockquote class="quote step"><p>“Only Luke is with me. Take Mark, and bring him with thee: for he is profitable to me for the ministry.”</p><cite>2 Timothy 4:11</cite></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>Luke stayed to the end, and Mark came back. Demas, who greeted the Colossians beside Luke, later “loved this present world” and left. We aren't told his end, only to take heed and keep close to the brothers.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 6 of 6</p>
+      <span class="topic">The last word</span>
+      <h2>What does Paul ask of the church as he closes?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="16"></blockquote>
+      <blockquote class="quote step" data-q="17"></blockquote>
+      <blockquote class="quote step" data-q="18"></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>Pass the letter on, finish the work God gave you, and remember those in chains, which means keep praying. The last word is grace, the word the letter began with.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide prayer">
+  <div class="inner">
+    <div class="emblem rise"></div>
+    <h2 class="rise" style="--d:1">Prayer requests</h2>
+    <p class="ask-line rise" style="--d:2">What can we pray about for you today?</p>
+    <blockquote class="quote rise" style="--d:4" data-q="2"></blockquote>
+  </div>
+</section>
+
+</main>
+
+<script>
+// King James Version, Colossians chapter 4
+const V = {
+  1: "Masters, give unto your servants that which is just and equal; knowing that ye also have a Master in heaven.",
+  2: "Continue in prayer, and watch in the same with thanksgiving;",
+  3: "Withal praying also for us, that God would open unto us a door of utterance, to speak the mystery of Christ, for which I am also in bonds:",
+  4: "That I may make it manifest, as I ought to speak.",
+  5: "Walk in wisdom toward them that are without, redeeming the time.",
+  6: "Let your speech be alway with grace, seasoned with salt, that ye may know how ye ought to answer every man.",
+  7: "All my state shall Tychicus declare unto you, who is a beloved brother, and a faithful minister and fellowservant in the Lord:",
+  8: "Whom I have sent unto you for the same purpose, that he might know your estate, and comfort your hearts;",
+  9: "With Onesimus, a faithful and beloved brother, who is one of you. They shall make known unto you all things which are done here.",
+  10: "Aristarchus my fellowprisoner saluteth you, and Marcus, sister’s son to Barnabas, (touching whom ye received commandments: if he come unto you, receive him;)",
+  11: "And Jesus, which is called Justus, who are of the circumcision. These only are my fellow workers unto the kingdom of God, which have been a comfort unto me.",
+  12: "Epaphras, who is one of you, a servant of Christ, saluteth you, always labouring fervently for you in prayers, that ye may stand perfect and complete in all the will of God.",
+  13: "For I bear him record, that he hath a great zeal for you, and them that are in Laodicea, and them in Hierapolis.",
+  14: "Luke, the beloved physician, and Demas, greet you.",
+  15: "Salute the brethren which are in Laodicea, and Nymphas, and the church which is in his house.",
+  16: "And when this epistle is read among you, cause that it be read also in the church of the Laodiceans; and that ye likewise read the epistle from Laodicea.",
+  17: "And say to Archippus, Take heed to the ministry which thou hast received in the Lord, that thou fulfil it.",
+  18: "The salutation by the hand of me Paul. Remember my bonds. Grace be with you. Amen."
+};
+const BOOK = "Colossians 4";
+</script>
+<script src="../assets/deck.js"></script>
+</body>
+</html>
