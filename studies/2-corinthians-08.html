@@ -1,0 +1,510 @@
+<!doctype html>
+<html lang="en" data-theme="stone">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>2 Corinthians 8</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="../assets/fonts.css">
+<link rel="stylesheet" href="../assets/deck.css">
+<link rel="stylesheet" href="../assets/themes.css">
+<style>
+/* c208-where: where we are in 2 Corinthians. Seven chips (.done, .here), each a run of chapters (i) and what Paul deals with (b) */
+.c208-where { display: grid; grid-template-columns: repeat(auto-fit, minmax(8.2rem, 1fr)); gap: 6px; margin: .3em 0 1em; }
+.c208-where div { padding: .5em .6em .55em; border-radius: 8px; background: var(--surface); border: 1px solid var(--line); color: var(--ink-soft); line-height: 1.2; }
+.c208-where i { display: block; font: 700 clamp(.8rem, .72rem + .35vw, 1rem)/1.1 var(--sans); font-style: normal; letter-spacing: .04em; margin-bottom: .2em; }
+.c208-where b { font: 400 clamp(.9rem, .82rem + .4vw, 1.15rem)/1.2 var(--serif); }
+.c208-where .done { background: color-mix(in srgb, var(--accent) 14%, var(--surface)); color: var(--ink); }
+.c208-where .here { background: var(--accent); border-color: var(--accent); color: var(--on-accent); box-shadow: 0 0 0 4px color-mix(in srgb, var(--accent) 25%, transparent); }
+.slide.active .c208-where .here { animation: c208-here 2.4s 1s ease-in-out infinite; }
+@keyframes c208-here { 50% { box-shadow: 0 0 0 8px color-mix(in srgb, var(--accent) 10%, transparent); } }
+
+/* c208-sum: what a poor church was made of: three things added up to riches of liberality */
+.c208-sum { display: flex; flex-wrap: wrap; align-items: stretch; gap: .5rem; margin: .5em 0 1em; }
+.c208-sum > div { flex: 1 1 9rem; padding: .6em .8em .7em; border-radius: 10px; background: var(--surface); border: 1.5px solid var(--line-strong); }
+.c208-sum i { display: block; font: 700 clamp(.72rem, .66rem + .3vw, .92rem) var(--sans); font-style: normal; text-transform: uppercase; letter-spacing: .08em; color: var(--accent); margin-bottom: .2em; }
+.c208-sum b { display: block; font: italic 400 clamp(1.1rem, .95rem + .7vw, 1.6rem)/1.15 var(--serif); }
+.c208-sum span { display: block; font: clamp(.85rem, .78rem + .35vw, 1.05rem)/1.28 var(--sans); color: var(--ink-soft); margin-top: .2em; }
+.c208-sum .op { flex: 0 0 auto; align-self: center; padding: 0; border: 0; background: none; font: 300 2rem var(--serif); color: var(--ink-soft); }
+.c208-sum .res { background: var(--accent); border-color: var(--accent); }
+.c208-sum .res i, .c208-sum .res b, .c208-sum .res span { color: var(--on-accent); }
+@media (max-width: 760px) { .c208-sum .op { flex-basis: 100%; text-align: center; line-height: 1; } }
+
+/* c208-rings: the gift sits inside the giver, and the giver inside the Lord. Rings fade in from the outside */
+.c208-ring { stroke: var(--line-strong); stroke-width: 3; opacity: 0; transition: opacity .9s ease; }
+.c208-ring.a { fill: color-mix(in srgb, var(--cool) 12%, var(--surface)); }
+.c208-ring.b { fill: color-mix(in srgb, var(--accent) 14%, var(--surface)); stroke: var(--accent); }
+.c208-coin { fill: var(--glow); stroke: var(--accent); stroke-width: 4; opacity: 0; transition: opacity .9s ease; }
+.c208-lab { fill: var(--ink); font: italic 26px var(--serif); text-anchor: middle; opacity: 0; transition: opacity .9s ease; }
+.c208-lab.s { font-size: 20px; fill: var(--ink-soft); font-style: normal; font-family: var(--sans); }
+.c208-lab.k { fill: var(--on-glow); font: 700 18px var(--sans); }
+.slide.active .c208-ring.a, .slide.active .c208-lab.a { opacity: 1; transition-delay: .4s; }
+.slide.active .c208-ring.b, .slide.active .c208-lab.b { opacity: 1; transition-delay: 1.5s; }
+.slide.active .c208-coin, .slide.active .c208-lab.c, .slide.active .c208-lab.k { opacity: 1; transition-delay: 2.6s; }
+
+/* c208-bars: what a gift weighs. Each bar is what the giver had; the fill is what was given. Fills rise on open */
+.c208-bar { fill: color-mix(in srgb, var(--ink) 8%, var(--surface)); stroke: var(--line-strong); stroke-width: 3; }
+.c208-fill { fill: var(--accent); transform-box: fill-box; transform-origin: bottom; transform: scaleY(0); transition: transform 1.6s ease; }
+.slide.active .c208-fill { transform: scaleY(1); transition-delay: var(--at, .6s); }
+.c208-t { fill: var(--ink); font: italic 24px var(--serif); text-anchor: middle; }
+.c208-s { fill: var(--ink-soft); font: 18px var(--sans); text-anchor: middle; }
+.c208-s.hot { fill: var(--accent-hot); font-weight: 700; }
+
+@media (max-width: 600px) { .c208-s { font-size: 27px; } .c208-t { font-size: 32px; } .c208-lab { font-size: 30px; } .c208-lab.b { font-size: 27px !important; } .c208-lab.k { font-size: 22px; } }
+/* c208-cards: small cards in a row, each with a label, a line set large, and a plain explanation */
+.c208-cards { display: grid; grid-template-columns: repeat(var(--n, 3), 1fr); gap: 10px; margin: .4em 0 1em; }
+@media (max-width: 760px) { .c208-cards { grid-template-columns: 1fr 1fr; } }
+.c208-cards > div { padding: .6em .85em .7em; border-radius: 10px; background: var(--surface); border: 1px solid var(--line-strong); }
+.c208-cards h3 { font: 700 clamp(.78rem, .72rem + .3vw, .98rem) var(--sans); color: var(--accent); text-transform: uppercase; letter-spacing: .06em; margin-bottom: .3em; }
+.c208-cards b { display: block; font: italic 600 clamp(1.05rem, .92rem + .55vw, 1.4rem)/1.2 var(--serif); color: var(--ink); margin-bottom: .2em; }
+.c208-cards p { margin: 0; font-size: clamp(.88rem, .8rem + .36vw, 1.08rem); line-height: 1.3; color: var(--ink-soft); }
+.c208-cards .all { border: 2px solid var(--accent); background: color-mix(in srgb, var(--accent) 12%, var(--surface)); }
+.c208-cards .all p { color: var(--ink); }
+</style>
+</head>
+<body>
+<main class="deck" id="deck">
+
+<!-- ======================= OPENING ======================= -->
+<section class="slide title">
+  <div class="inner">
+    <div class="emblem rise"></div>
+    <h1 class="rise" style="--d:1">2 Corinthians 8</h1>
+    <p class="sub rise" style="--d:3">The grace of giving</p>
+    <p class="tag rise" style="--d:5">A church with almost nothing begs for the chance to give. Paul shows us why: Jesus gave Himself first.</p>
+  </div>
+</section>
+
+<section class="slide watch">
+  <div class="inner">
+    <h2 class="rise">Things to watch for</h2>
+    <p class="lede rise" style="--d:1">Keep these questions in the back of your mind as we read. We'll come back to every one of them at the end.</p>
+    <ol class="seeds">
+      <li class="step"><span class="topic">Deep poverty</span><span class="seed-q">How could people in deep poverty give so generously?</span></li>
+      <li class="step"><span class="topic">Themselves</span><span class="seed-q">What did the Macedonians give before they gave any money?</span></li>
+      <li class="step"><span class="topic">Grace</span><span class="seed-q">What did Jesus give up for us, and what do we get?</span></li>
+      <li class="step"><span class="topic">A willing mind</span><span class="seed-q">What counts with God when you have little to give?</span></li>
+      <li class="step"><span class="topic">Sharing</span><span class="seed-q">What does Paul mean by “equality” in giving?</span></li>
+      <li class="step"><span class="topic">Honesty</span><span class="seed-q">How did Paul keep the money honest?</span></li>
+    </ol>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise">Where we are in 2 Corinthians</h2>
+    <p class="note rise" style="--d:1">About AD 56, Paul writes from Macedonia. The hard letter has worked, and Corinth has turned around. Now he turns to a job they had started a year before and left half done: a gift for the poor believers in Jerusalem.</p>
+    <div class="c208-where rise" style="--d:2" role="img" aria-label="2 Corinthians in seven parts. Chapters 1 and 2: comfort in trouble. Chapters 3 and 4: the new covenant. Chapter 5: reconciled to God. Chapter 6: open hearts. Chapter 7: Titus brings news. Chapters 8 and 9: the collection, and we are here. Chapters 10 to 13: Paul answers his critics.">
+      <div class="done"><i>1–2</i><b>Comfort in trouble</b></div>
+      <div class="done"><i>3–4</i><b>The new covenant</b></div>
+      <div class="done"><i>5</i><b>Reconciled to God</b></div>
+      <div class="done"><i>6</i><b>Open hearts</b></div>
+      <div class="done"><i>7</i><b>Titus brings news</b></div>
+      <div class="here"><i>8–9</i><b>The collection</b></div>
+      <div><i>10–13</i><b>Paul answers his critics</b></div>
+    </div>
+    <p class="note step">Two chapters on money, but not a fundraising letter. Paul never says “give or else.” He talks about grace, joy, and Jesus. Read alone, this chapter still makes sense: here is a church giving more than it can afford, and here is why.</p>
+  </div>
+</section>
+
+<!-- ======================= PART ONE: OUT OF DEEP POVERTY ======================= -->
+<section class="slide part">
+  <div class="inner">
+    <p class="part-n rise">Part one</p>
+    <h2 class="rise" style="--d:1">Out of deep poverty</h2>
+    <p class="range rise" style="--d:2">Verses 1–7</p>
+    <div class="rule"></div>
+    <p class="hook rise" style="--d:4">The poorest churches begged for the chance to give.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="1-2" data-hl="deep poverty abounded unto the riches of their liberality"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise">A gift for Jerusalem</h2>
+    <div class="split">
+      <div class="stage">
+        <svg data-world viewBox="385 160 465 350" data-towns="Philippi:t, Thessalonica:l, Corinth*:l, Jerusalem!:r" role="img" aria-label="Map of the eastern Mediterranean. Two lines run to Jerusalem: one from the churches of Macedonia in the north, Philippi and Thessalonica, and one from Corinth in Achaia in the south.">
+          <path class="map-route j3" data-via="Philippi, Neapolis, @24.5 40.84, @25.2 40.75, @25.6 40.05, @26.0 39.7, Troas, Assos, Mitylene, @26.2 38.4, @26.6 37.95, @27.0 37.6, Miletus, Coos, @27.5 36.55, @27.9 36.6, Rhodes, Patara, @31 35.0, @33.5 34.3, Tyre, Ptolemais, Caesarea, Jerusalem" style="--wait:.5s;--draw:3.2s"/>
+          <path class="map-route j4 r1" data-via="Corinth, Cenchrea, @24.3 37.4, @25.35 37.3, @26.0 37.45, @26.8 36.6, @27.4 35.8, @29 35.3, @32.5 34.2, Caesarea, Jerusalem" style="--draw:2.4s"/>
+        </svg>
+      </div>
+      <div>
+        <p class="note rise" style="--d:1">Many believers in Jerusalem were poor, and Paul asked the Gentile churches to send help: <em>“it hath pleased them of Macedonia and Achaia to make a certain contribution for the poor saints which are at Jerusalem”</em> (Romans 15:26).</p>
+        <p class="note step map-go1">Philippi and Thessalonica are in Macedonia, in the north. Corinth is Achaia, in the south. It's a gift of thanks: the gospel came to the Gentiles through Jewish believers.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise">What a poor church was made of</h2>
+    <div class="c208-sum">
+      <div class="rise" style="--d:1"><i>A great trial</i><b>affliction</b><span>These churches were being pressed hard for believing (Acts 16–17).</span></div>
+      <div class="op rise" style="--d:2">+</div>
+      <div class="rise" style="--d:3"><i>Their</i><b>joy</b><span>“The abundance of their joy.” They were glad, not grim.</span></div>
+      <div class="op rise" style="--d:4">+</div>
+      <div class="rise" style="--d:5"><i>Their</i><b>deep poverty</b><span>Not a little short. Down to the bottom.</span></div>
+      <div class="op rise" style="--d:6">=</div>
+      <div class="res rise" style="--d:7"><i>Added up to</i><b>riches of liberality</b><span>An overflowing, generous gift.</span></div>
+    </div>
+    <p class="note step">Notice the arithmetic doesn't work. Poverty plus trouble should add up to “we can't.” Paul says grace is the thing that changes the sum. They gave because of what God had done for them, not because they had cash to spare.</p>
+    <p class="note step">That's good news if you're broke. Nobody has to wait until he's comfortable to become a giver. The poorest church in the Bible was the most generous.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="3-5" data-hl="beyond their power they were willing of themselves|first gave their own selves to the Lord"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise">“First gave their own selves”</h2>
+    <div class="stage">
+      <svg viewBox="0 0 520 340" style="max-height:42vh" role="img" aria-label="Three circles, one inside another. The outer circle is the Lord. Inside it, the giver: their own selves. At the center, small, the gift.">
+        <circle class="c208-ring a" cx="260" cy="170" r="160"/>
+        <circle class="c208-ring b" cx="260" cy="182" r="112"/>
+        <circle class="c208-coin" cx="260" cy="198" r="44"/>
+        <text class="c208-lab a" x="260" y="52">first, to the Lord</text>
+        <text class="c208-lab b" x="260" y="132" style="font-size:23px">their own selves</text>
+        <text class="c208-lab k c" x="260" y="203">the gift</text>
+      </svg>
+    </div>
+    <p class="note step">Paul had hoped for a donation. He got more: <em>“not as we hoped, but first gave their own selves to the Lord.”</em> The money was the smallest circle. It followed the person, and the person followed the Lord.</p>
+    <p class="note step">If you're out of money, this verse is for you. You can still do the first part: give yourself. An hour. A ride. A hand with a move. Listening to a man who's struggling. Next to the Macedonians, that is real giving, and nobody is too poor for it.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="6-7" data-hl="see that ye abound in this grace also"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise">“In this grace also”</h2>
+    <p class="note rise" style="--d:1">Corinth was gifted: <em>faith, utterance, knowledge, diligence, love</em> (v. 7). They were the church that loved to talk and to know things. Paul adds one more to the list.</p>
+    <div class="c208-where rise" style="--d:2" role="img" aria-label="Five things the Corinthians already had, in faith, utterance, knowledge, diligence and love. A sixth, giving, is added: this grace also.">
+      <div class="done"><i>1</i><b>Faith</b></div>
+      <div class="done"><i>2</i><b>Words</b></div>
+      <div class="done"><i>3</i><b>Knowledge</b></div>
+      <div class="done"><i>4</i><b>Diligence</b></div>
+      <div class="done"><i>5</i><b>Love for Paul</b></div>
+      <div class="here"><i>and</i><b>this grace also</b></div>
+    </div>
+    <p class="note step">Giving isn't an extra for the rich. Paul counts it as one of the marks of a healthy believer, right next to faith and knowledge. And he calls it <em>grace</em>: a thing God gives you to do, not a bill He sends you.</p>
+    <p class="note step">Verse 8 says it plainly: <em>“I speak not by commandment.”</em> Paul won't squeeze. He wants it to come from love, and love can't be forced.</p>
+  </div>
+</section>
+
+<!-- ======================= PART TWO: THE GRACE OF OUR LORD ======================= -->
+<section class="slide part">
+  <div class="inner">
+    <p class="part-n rise">Part two</p>
+    <h2 class="rise" style="--d:1">The grace of our Lord Jesus</h2>
+    <p class="range rise" style="--d:2">Verses 8–15</p>
+    <div class="rule"></div>
+    <p class="hook rise" style="--d:4">Why a man gives: because of what Jesus did for him.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="8-9" data-hl="though he was rich, yet for your sakes he became poor, that ye through his poverty might be rich"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise">He who had everything, down to nothing</h2>
+    <ol class="stairs down" style="--n:4" aria-label="Four steps down. Rich: the glory He had with the Father before the world was. A manger: laid in a manger because there was no room. Nowhere to lay his head. The cross: obedient unto death.">
+      <li style="--k:0"><b>rich</b>“the glory which I had with thee before the world was” (John 17:5)</li>
+      <li style="--k:1"><b>a manger</b>“no room for them in the inn” (Luke 2:7)</li>
+      <li style="--k:2"><b>no home</b>“hath not where to lay his head” (Matthew 8:20)</li>
+      <li style="--k:3"><b>the cross</b>“obedient unto death, even the death of the cross” (Philippians 2:8)</li>
+    </ol>
+    <p class="note step">That's the “grace of our Lord Jesus Christ.” He didn't give out of leftovers. He gave up heaven's side of the table and went down every step, to a cross for sins He never committed.</p>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise">The trade</h2>
+    <div class="swap">
+      <h3 class="rise" style="--d:1"><span>Christ</span>holds</h3>
+      <h3 class="rise" style="--d:1"><span>You</span>hold</h3>
+      <div class="a"><b>Heaven's riches</b><small>glory, life, the Father's side</small></div>
+      <div class="b"><b>Our poverty</b><small>sin, guilt, a debt we couldn't pay</small></div>
+    </div>
+    <p class="note step swap-go">He took our poverty on Himself. And what we get is His riches: forgiven, a child of God, the Spirit in you, a home that's coming.</p>
+    <p class="note step">What kind of riches? <em>Not money.</em> Paul writes this to a church whose very next job is to give money away, and the Macedonians stayed poor. This isn't a promise that Jesus will make you wealthy. It's the best deal ever made, and it's not in dollars. A man with nothing in his pocket can be fully rich in Christ.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="10-12" data-hl="if there be first a willing mind, it is accepted according to that a man hath, and not according to that he hath not"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise">What a gift is worth</h2>
+    <div class="stage">
+      <svg viewBox="0 0 760 320" style="max-height:40vh" role="img" aria-label="Two bars show what each person had, with a fill showing what each gave. The rich men: a tall bar, a small slice given. The widow: a short bar, filled to the top, because she gave all she had.">
+        <rect class="c208-bar" x="120" y="40" width="140" height="220" rx="6"/>
+        <rect class="c208-fill" x="120" y="238" width="140" height="22" style="--at:.6s"/>
+        <text class="c208-t" x="190" y="292">Rich men</text>
+        <text class="c208-s" x="190" y="26">had a lot</text>
+        <text class="c208-s" x="190" y="312">gave a little</text>
+        <rect class="c208-bar" x="500" y="232" width="140" height="28" rx="6"/>
+        <rect class="c208-fill" x="500" y="232" width="140" height="28" style="--at:1.4s"/>
+        <text class="c208-t" x="570" y="292">The widow</text>
+        <text class="c208-s" x="570" y="218">had two mites</text>
+        <text class="c208-s hot" x="570" y="312">gave all of it</text>
+      </svg>
+    </div>
+    <blockquote class="quote step"><p>“For all they did cast in of their abundance; but she of her want did cast in all that she had, even all her living.”</p><cite>Mark 12:44</cite></blockquote>
+    <p class="note step">That's verse 12: <em>“it is accepted according to that a man hath, and not according to that he hath not.”</em> God never asks you for what you don't have. He weighs the heart. A willing mind counts, and so does a small gift from a poor man.</p>
+    <p class="note step">Verse 11 adds a hard push. A year ago they <em>wanted</em> to give, and nothing happened. Good intentions that never get done are a thing every man knows. Paul says: finish it, with what you have.</p>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise">What you have to give</h2>
+    <p class="note rise" style="--d:1">“According to that a man hath.” Most of us don't have money. Here's what many men in this room do have.</p>
+    <div class="c208-cards" style="--n:3">
+      <div class="rise" style="--d:2"><h3>Time</h3><b>an hour</b><p>Sit with a brother who's struggling. Show up when you said you would.</p></div>
+      <div class="rise" style="--d:3"><h3>Hands</h3><b>a strong back</b><p>Help someone move, fix a thing, carry the groceries.</p></div>
+      <div class="rise" style="--d:4"><h3>Wheels</h3><b>a ride</b><p>To a meeting, a job interview, church. A ride has saved people.</p></div>
+      <div class="rise" style="--d:5"><h3>Ears</h3><b>listening</b><p>A man who's been there can hear what a newcomer can't say.</p></div>
+      <div class="rise" style="--d:6"><h3>Story</h3><b>what God did</b><p>Your story, told plainly, is a gift to someone about to quit.</p></div>
+      <div class="rise" style="--d:7"><h3>Prayer</h3><b>by name</b><p>Pray for one man by name today. Then tell him you did.</p></div>
+    </div>
+    <blockquote class="quote step"><p>“I have shewed you all things, how that so labouring ye ought to support the weak, and to remember the words of the Lord Jesus, how he said, It is more blessed to give than to receive.”</p><cite>Acts 20:35</cite></blockquote>
+  </div>
+</section>
+
+<section class="slide verse" data-v="13-15" data-hl="He that had gathered much had nothing over; and he that had gathered little had no lack"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise">Equality: a level scale</h2>
+    <div class="split">
+      <div class="stage">
+        <svg class="scale now" style="--at:300px 70px; --arm:220; --from:11deg; --tip:0deg; --wait:.9s" viewBox="0 0 600 330" role="img" aria-label="A balance scale starts tipped, with Jerusalem's need heavy, and settles level as Corinth's plenty meets it: equality.">
+          <path d="M270 320 L330 320 L312 300 L288 300 Z" style="fill:var(--line-strong)"/>
+          <line x1="300" y1="300" x2="300" y2="70" stroke-width="8" style="stroke:var(--line-strong)"/>
+          <g class="scale-beam">
+            <line x1="80" y1="70" x2="520" y2="70" stroke-width="8" stroke-linecap="round" style="stroke:var(--ink-soft)"/>
+            <circle cx="300" cy="70" r="11" style="fill:var(--accent)"/>
+          </g>
+          <g class="scale-pan l">
+            <g stroke-width="2" style="stroke:var(--ink-soft)"><line x1="80" y1="70" x2="30" y2="190"/><line x1="80" y1="70" x2="130" y2="190"/></g>
+            <path d="M20 190 L140 190 Q130 220 80 220 Q30 220 20 190 Z" style="fill:var(--surface-2);stroke:var(--ink-soft)" stroke-width="2"/>
+            <path d="M42 188 Q44 160 80 156 Q116 160 118 188 Z" style="fill:var(--warm)"/>
+            <text x="80" y="252" text-anchor="middle" font-size="19" style="fill:var(--ink-soft)">Corinth's plenty</text>
+          </g>
+          <g class="scale-pan r">
+            <g stroke-width="2" style="stroke:var(--ink-soft)"><line x1="520" y1="70" x2="470" y2="190"/><line x1="520" y1="70" x2="570" y2="190"/></g>
+            <path d="M460 190 L580 190 Q570 220 520 220 Q470 220 460 190 Z" style="fill:var(--surface-2);stroke:var(--accent)" stroke-width="2"/>
+            <path d="M482 188 Q484 160 520 156 Q556 160 558 188 Z" style="fill:var(--warm)"/>
+            <text x="520" y="252" text-anchor="middle" font-size="19" style="fill:var(--ink-soft)">Jerusalem's need</text>
+          </g>
+        </svg>
+      </div>
+      <div>
+        <blockquote class="quote rise" style="--d:1"><p>“He that had gathered much had nothing over; and he that had gathered little had no lack.”</p><cite>2 Corinthians 8:15</cite></blockquote>
+        <p class="note step">Paul is quoting the manna in the wilderness (Exodus 16): everybody gathered what he needed. The point of the gift isn't to take from you to make you poor. It's that <em>“at this time”</em> your plenty meets their need, and one day it may go the other way.</p>
+        <p class="note step">And it did go both ways. Jerusalem gave the Gentiles the gospel. Now Gentiles gave back the bread. Nobody in the family is on the take.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ======================= PART THREE: HONEST HANDS ======================= -->
+<section class="slide part">
+  <div class="inner">
+    <p class="part-n rise">Part three</p>
+    <h2 class="rise" style="--d:1">Honest hands</h2>
+    <p class="range rise" style="--d:2">Verses 16–24</p>
+    <div class="rule"></div>
+    <p class="hook rise" style="--d:4">Who carries the money, and why it's done in the open.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="16-19" data-hl="chosen of the churches to travel with us with this grace"></section>
+
+<section class="slide verse" data-v="20-24" data-hl="Providing for honest things, not only in the sight of the Lord, but also in the sight of men"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="21" data-hl="Providing for honest things, not only in the sight of the Lord, but also in the sight of men"></blockquote>
+    <h2 class="rise" style="--d:1">Three men, and nothing hidden</h2>
+    <div class="c208-cards" style="--n:3">
+      <div class="rise" style="--d:2"><h3>Titus</h3><b>“earnest care”</b><p>Paul's partner. He went of his own accord, not because he was told.</p></div>
+      <div class="rise" style="--d:3"><h3>The brother</h3><b>chosen by the churches</b><p>Well known in all the churches. The churches picked him; Paul didn't.</p></div>
+      <div class="rise" style="--d:4"><h3>Our brother</h3><b>proved diligent</b><p>Tested “oftentimes” in many things, and found faithful.</p></div>
+    </div>
+    <p class="note step">Paul could have carried the money himself. He didn't, because someone might say he skimmed it (v. 20). So he put three men on it, picked by others, so everyone could see it was honest. If you have a reputation, even a good one, nobody should have to just take your word.</p>
+    <p class="note step">For a man in recovery that's gold. If you handle money, a bank card, or a key, let somebody see it. Not because you're a crook. <em>Because nothing hidden is safe.</em> Hiding is where relapse starts.</p>
+  </div>
+</section>
+
+<!-- ======================= CLOSING ======================= -->
+<section class="slide remember">
+  <div class="inner">
+    <h2 class="rise">Points to remember</h2>
+    <ol class="seeds">
+      <li class="step"><span class="topic">Deep poverty</span><span class="seed-q">“Their deep poverty abounded unto the riches of their liberality” <cite>8:2</cite></span><span class="take">Grace and joy, not money, made them generous. You don't have to wait until you're comfortable.</span></li>
+      <li class="step"><span class="topic">Themselves</span><span class="seed-q">“First gave their own selves to the Lord” <cite>8:5</cite></span><span class="take">The person comes first and the gift follows. You can give time and help even with an empty wallet.</span></li>
+      <li class="step"><span class="topic">Grace</span><span class="seed-q">“Though he was rich, yet for your sakes he became poor, that ye through his poverty might be rich” <cite>8:9</cite></span><span class="take">Jesus gave up everything to give you a Father and forgiveness. That's the riches, and not a promise of money.</span></li>
+      <li class="step"><span class="topic">A willing mind</span><span class="seed-q">“If there be first a willing mind, it is accepted according to that a man hath” <cite>8:12</cite></span><span class="take">God never asks for what you don't have. Finish what you start, with what's in your hand.</span></li>
+      <li class="step"><span class="topic">Sharing</span><span class="seed-q">“He that had gathered much had nothing over; and he that had gathered little had no lack” <cite>8:15</cite></span><span class="take">Family shares. Today your plenty meets someone's need, and one day it'll be the other way round.</span></li>
+      <li class="step"><span class="topic">Honesty</span><span class="seed-q">“Providing for honest things, not only in the sight of the Lord, but also in the sight of men” <cite>8:21</cite></span><span class="take">Handle money in the open, with others watching. Nothing hidden is safe.</span></li>
+    </ol>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 1 of 6</p>
+      <span class="topic">Deep poverty</span>
+      <h2>How could people in deep poverty give so generously?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="1"></blockquote>
+      <blockquote class="quote step" data-q="2" data-hl="the abundance of their joy and their deep poverty abounded unto the riches of their liberality"></blockquote>
+      <blockquote class="quote step" data-q="4"></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>By the grace of God. Trouble and poverty didn't stop them, because their joy was deeper than their need. They didn't have to be asked twice: they begged for the chance to give. A poor man can be generous too.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 2 of 6</p>
+      <span class="topic">Themselves</span>
+      <h2>What did the Macedonians give before they gave any money?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="5"></blockquote>
+      <blockquote class="quote step"><p>“I have shewed you all things, how that so labouring ye ought to support the weak, and to remember the words of the Lord Jesus, how he said, It is more blessed to give than to receive.”</p><cite>Acts 20:35</cite></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>Themselves. They gave their own selves to the Lord first, and then the gift followed. If you have no money, you can still give yourself today: your time, your hands, your help.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 3 of 6</p>
+      <span class="topic">Grace</span>
+      <h2>What did Jesus give up for us, and what do we get?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="9"></blockquote>
+      <blockquote class="quote step"><p>“Let this mind be in you, which was also in Christ Jesus: Who, being in the form of God, thought it not robbery to be equal with God: But made himself of no reputation, and took upon him the form of a servant, and was made in the likeness of men: And being found in fashion as a man, he humbled himself, and became obedient unto death, even the death of the cross.”</p><cite>Philippians 2:5–8</cite></blockquote>
+      <blockquote class="quote step"><p>“He that spared not his own Son, but delivered him up for us all, how shall he not with him also freely give us all things?”</p><cite>Romans 8:32</cite></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>He gave up heaven's glory, a home, and His life. In exchange, we get forgiveness, a Father, and everything that comes with being His. That is the riches of verse 9: not money, but Him.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 4 of 6</p>
+      <span class="topic">A willing mind</span>
+      <h2>What counts with God when you have little to give?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="12"></blockquote>
+      <blockquote class="quote step" data-q="11" data-hl="Now therefore perform the doing of it"></blockquote>
+      <blockquote class="quote step"><p>“For all they did cast in of their abundance; but she of her want did cast in all that she had, even all her living.”</p><cite>Mark 12:44</cite></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>A willing mind. God accepts a gift by what a man has, not by what he doesn't. A widow's two mites counted for more than a rich man's pile. Don't wait for plenty: do the doing of it, with what you have.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 5 of 6</p>
+      <span class="topic">Sharing</span>
+      <h2>What does Paul mean by “equality” in giving?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="14"></blockquote>
+      <blockquote class="quote step" data-q="15"></blockquote>
+      <blockquote class="quote step"><p>“For if the Gentiles have been made partakers of their spiritual things, their duty is also to minister unto them in carnal things.”</p><cite>Romans 15:27</cite></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>Not that everyone ends up with the same pile. It's that nobody in the family goes without: this time your plenty meets their need, and next time it may be the other way round. The Gentiles owed the Jewish church for the gospel, and this was a way to give some of it back.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 6 of 6</p>
+      <span class="topic">Honesty</span>
+      <h2>How did Paul keep the money honest?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="20"></blockquote>
+      <blockquote class="quote step" data-q="21"></blockquote>
+      <blockquote class="quote step" data-q="19" data-hl="who was also chosen of the churches to travel with us with this grace"></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>He didn't carry it alone. The churches chose men to travel with it, so everything was in the open and nobody could say he took a cut. Whatever you handle, let someone see it. That's how a man stays clean.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide prayer">
+  <div class="inner">
+    <div class="emblem rise"></div>
+    <h2 class="rise" style="--d:1">Prayer requests</h2>
+    <p class="ask-line rise" style="--d:2">What can we pray about for you today? Money you're short on, someone you could help, something you started and haven't finished?</p>
+    <blockquote class="quote rise" style="--d:4"><p>“But to do good and to communicate forget not: for with such sacrifices God is well pleased.”</p><cite>Hebrews 13:16</cite></blockquote>
+  </div>
+</section>
+
+</main>
+
+<script>
+// King James Version, 2 Corinthians chapter 8
+const V = {
+  1: "Moreover, brethren, we do you to wit of the grace of God bestowed on the churches of Macedonia;",
+  2: "How that in a great trial of affliction the abundance of their joy and their deep poverty abounded unto the riches of their liberality.",
+  3: "For to their power, I bear record, yea, and beyond their power they were willing of themselves;",
+  4: "Praying us with much intreaty that we would receive the gift, and take upon us the fellowship of the ministering to the saints.",
+  5: "And this they did, not as we hoped, but first gave their own selves to the Lord, and unto us by the will of God.",
+  6: "Insomuch that we desired Titus, that as he had begun, so he would also finish in you the same grace also.",
+  7: "Therefore, as ye abound in every thing, in faith, and utterance, and knowledge, and in all diligence, and in your love to us, see that ye abound in this grace also.",
+  8: "I speak not by commandment, but by occasion of the forwardness of others, and to prove the sincerity of your love.",
+  9: "For ye know the grace of our Lord Jesus Christ, that, though he was rich, yet for your sakes he became poor, that ye through his poverty might be rich.",
+  10: "And herein I give my advice: for this is expedient for you, who have begun before, not only to do, but also to be forward a year ago.",
+  11: "Now therefore perform the doing of it; that as there was a readiness to will, so there may be a performance also out of that which ye have.",
+  12: "For if there be first a willing mind, it is accepted according to that a man hath, and not according to that he hath not.",
+  13: "For I mean not that other men be eased, and ye burdened:",
+  14: "But by an equality, that now at this time your abundance may be a supply for their want, that their abundance also may be a supply for your want: that there may be equality:",
+  15: "As it is written, He that had gathered much had nothing over; and he that had gathered little had no lack.",
+  16: "But thanks be to God, which put the same earnest care into the heart of Titus for you.",
+  17: "For indeed he accepted the exhortation; but being more forward, of his own accord he went unto you.",
+  18: "And we have sent with him the brother, whose praise is in the gospel throughout all the churches;",
+  19: "And not that only, but who was also chosen of the churches to travel with us with this grace, which is administered by us to the glory of the same Lord, and declaration of your ready mind:",
+  20: "Avoiding this, that no man should blame us in this abundance which is administered by us:",
+  21: "Providing for honest things, not only in the sight of the Lord, but also in the sight of men.",
+  22: "And we have sent with them our brother, whom we have oftentimes proved diligent in many things, but now much more diligent, upon the great confidence which I have in you.",
+  23: "Whether any do enquire of Titus, he is my partner and fellowhelper concerning you: or our brethren be enquired of, they are the messengers of the churches, and the glory of Christ.",
+  24: "Wherefore shew ye to them, and before the churches, the proof of your love, and of our boasting on your behalf."
+};
+const BOOK = "2 Corinthians 8";
+</script>
+<script src="../assets/deck.js"></script>
+</body>
+</html>

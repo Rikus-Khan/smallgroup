@@ -395,6 +395,9 @@ window.GLOSSARY = [
     "2 Corinthians", 5,
     [ 18 ] ],
    [
+    "2 Corinthians", 8,
+    [ 9 ] ],
+   [
     "2 Corinthians", 11,
     [ 4, 31 ] ],
    [
@@ -4379,6 +4382,12 @@ window.GLOSSARY = [
     "2 Corinthians", 6,
     [ 1 ] ],
    [
+    "2 Corinthians", 8,
+    [ 1, 6, 7, 9, 19 ] ],
+   [
+    "2 Corinthians", 9,
+    [ 8, 14 ] ],
+   [
     "2 Corinthians", 12,
     [ 9 ] ],
    [
@@ -4519,6 +4528,9 @@ window.GLOSSARY = [
    [
     "2 Corinthians", 6,
     [ 7 ] ],
+   [
+    "2 Corinthians", 7,
+    [ 14 ] ],
    [
     "2 Corinthians", 11,
     [ 10 ] ],
@@ -4750,6 +4762,9 @@ window.GLOSSARY = [
    [
     "2 Corinthians", 5,
     [ 12 ] ],
+   [
+    "2 Corinthians", 8,
+    [ 19, 23 ] ],
    [
     "2 Corinthians", 10,
     [ 17 ] ],
@@ -5248,6 +5263,12 @@ window.GLOSSARY = [
    [
     "2 Corinthians", 6,
     [ 15 ] ],
+   [
+    "2 Corinthians", 8,
+    [ 9, 23 ] ],
+   [
+    "2 Corinthians", 9,
+    [ 13 ] ],
    [
     "2 Corinthians", 10,
     [ 1, 5, 7, 14 ] ],
@@ -5898,7 +5919,10 @@ window.GLOSSARY = [
     [ 9 ] ],
    [
     "2 Corinthians", 1,
-    [ 23 ] ] ]
+    [ 23 ] ],
+   [
+    "2 Corinthians", 8,
+    [ 3 ] ] ]
  },
  {
   "id": "baptize",
@@ -6450,6 +6474,12 @@ window.GLOSSARY = [
     [ 17 ] ],
    [
     "Romans", 10,
+    [ 2 ] ],
+   [
+    "2 Corinthians", 7,
+    [ 11 ] ],
+   [
+    "2 Corinthians", 9,
     [ 2 ] ] ]
  },
  {
@@ -6844,6 +6874,9 @@ window.GLOSSARY = [
    [
     "2 Corinthians", 6,
     [ 6 ] ],
+   [
+    "2 Corinthians", 8,
+    [ 7 ] ],
    [
     "2 Corinthians", 10,
     [ 5 ] ],
@@ -7439,6 +7472,9 @@ window.GLOSSARY = [
     "2 Corinthians", 6,
     [ 7, 14 ] ],
    [
+    "2 Corinthians", 9,
+    [ 9, 10 ] ],
+   [
     "2 Corinthians", 11,
     [ 15 ] ] ]
  },
@@ -7893,7 +7929,13 @@ window.GLOSSARY = [
     [ 12 ] ],
    [
     "2 Corinthians", 6,
-    [ 11 ] ] ]
+    [ 11 ] ],
+   [
+    "2 Corinthians", 8,
+    [ 16 ] ],
+   [
+    "2 Corinthians", 9,
+    [ 7 ] ] ]
  },
  {
   "id": "tongue",
@@ -8355,7 +8397,10 @@ window.GLOSSARY = [
     [ 29 ] ],
    [
     "Proverbs", 27,
-    [ 23 ] ] ]
+    [ 23 ] ],
+   [
+    "2 Corinthians", 8,
+    [ 22 ] ] ]
  },
  {
   "id": "strong-drink",
@@ -11835,7 +11880,10 @@ window.GLOSSARY = [
     [ 35 ] ],
    [
     "Acts", 5,
-    [ 37 ] ] ]
+    [ 37 ] ],
+   [
+    "2 Corinthians", 9,
+    [ 9 ] ] ]
  },
  {
   "id": "gentiles",
@@ -12366,7 +12414,10 @@ window.GLOSSARY = [
     [ 22 ] ],
    [
     "1 Corinthians", 11,
-    [ 32 ] ] ]
+    [ 32 ] ],
+   [
+    "2 Corinthians", 7,
+    [ 3 ] ] ]
  },
  {
   "id": "conscience",
@@ -13095,7 +13146,10 @@ window.GLOSSARY = [
     [ 6 ] ],
    [
     "2 Corinthians", 6,
-    [ 2 ] ] ]
+    [ 2 ] ],
+   [
+    "2 Corinthians", 7,
+    [ 10 ] ] ]
  },
  {
   "id": "sixth-hour",
@@ -13938,7 +13992,10 @@ window.GLOSSARY = [
     [ 31 ] ],
    [
     "1 Corinthians", 15,
-    [ 51 ] ] ]
+    [ 51 ] ],
+   [
+    "2 Corinthians", 8,
+    [ 24 ] ] ]
  },
  {
   "id": "fishers-coat",
@@ -14461,6 +14518,9 @@ window.GLOSSARY = [
    [
     "1 Corinthians", 10,
     [ 23 ] ],
+   [
+    "2 Corinthians", 8,
+    [ 10 ] ],
    [
     "2 Corinthians", 12,
     [ 1 ] ] ]
@@ -15315,6 +15375,9 @@ window.GLOSSARY = [
     [ 12 ] ],
    [
     "2 Corinthians", 1,
+    [ 4 ] ],
+   [
+    "2 Corinthians", 7,
     [ 4 ] ] ]
  },
  {
@@ -17673,7 +17736,10 @@ window.GLOSSARY = [
     [ 7 ] ],
    [
     "Hosea", 10,
-    [ 12, 13 ] ] ]
+    [ 12, 13 ] ],
+   [
+    "2 Corinthians", 9,
+    [ 6, 10 ] ] ]
  },
  {
   "id": "chastise",
@@ -20814,7 +20880,10 @@ window.GLOSSARY = [
     [ 4 ] ],
    [
     "Romans", 2,
-    [ 8 ] ] ]
+    [ 8 ] ],
+   [
+    "2 Corinthians", 7,
+    [ 11 ] ] ]
  },
  {
   "id": "the-decree",
@@ -23758,6 +23827,9 @@ window.GLOSSARY = [
    [
     "Acts", 26,
     [ 20 ] ],
+   [
+    "2 Corinthians", 7,
+    [ 8, 9, 10 ] ],
    [
     "2 Corinthians", 12,
     [ 21 ] ] ]
@@ -31572,7 +31644,10 @@ window.GLOSSARY = [
     [ 39 ] ],
    [
     "Acts", 17,
-    [ 27 ] ] ]
+    [ 27 ] ],
+   [
+    "2 Corinthians", 9,
+    [ 4 ] ] ]
  },
  {
   "id": "faith-in-god",
@@ -36284,6 +36359,15 @@ window.GLOSSARY = [
     "2 Corinthians", 2,
     [ 13 ] ],
    [
+    "2 Corinthians", 7,
+    [ 5 ] ],
+   [
+    "2 Corinthians", 8,
+    [ 1 ] ],
+   [
+    "2 Corinthians", 9,
+    [ 2, 4 ] ],
+   [
     "2 Corinthians", 11,
     [ 9 ] ] ]
  },
@@ -37660,6 +37744,9 @@ window.GLOSSARY = [
    [
     "2 Corinthians", 1,
     [ 1 ] ],
+   [
+    "2 Corinthians", 9,
+    [ 2 ] ],
    [
     "2 Corinthians", 11,
     [ 10 ] ] ]
@@ -40677,7 +40764,10 @@ window.GLOSSARY = [
     [ 25 ] ],
    [
     "Romans", 12,
-    [ 11 ] ] ]
+    [ 11 ] ],
+   [
+    "2 Corinthians", 7,
+    [ 7 ] ] ]
  },
  {
   "id": "instant-in-prayer",
@@ -42228,7 +42318,10 @@ window.GLOSSARY = [
   "refs": [
    [
     "1 Corinthians", 7,
-    [ 32 ] ] ]
+    [ 32 ] ],
+   [
+    "2 Corinthians", 7,
+    [ 11 ] ] ]
  },
  {
   "id": "comely",
@@ -43241,6 +43334,12 @@ window.GLOSSARY = [
     "2 Corinthians", 2,
     [ 13 ] ],
    [
+    "2 Corinthians", 7,
+    [ 6, 13, 14 ] ],
+   [
+    "2 Corinthians", 8,
+    [ 6, 16, 23 ] ],
+   [
     "2 Corinthians", 12,
     [ 18 ] ] ]
  },
@@ -43816,5 +43915,122 @@ window.GLOSSARY = [
    [
     "2 Corinthians", 11,
     [ 28 ] ] ]
+ },
+ {
+  "id": "godly-sorrow",
+  "kind": "term",
+  "name": "Godly sorrow (sorrow that turns a man to God, against the sorrow of the world that ends in death)",
+  "refs": [
+   [
+    "2 Corinthians", 7,
+    [ 10 ] ] ]
+ },
+ {
+  "id": "filthiness",
+  "kind": "term",
+  "name": "Filthiness (whatever dirties a man, in body or in spirit)",
+  "refs": [
+   [
+    "2 Corinthians", 7,
+    [ 1 ] ] ]
+ },
+ {
+  "id": "revenge",
+  "kind": "term",
+  "name": "Revenge (here, seeing wrong put right, not getting even)",
+  "refs": [
+   [
+    "2 Corinthians", 7,
+    [ 11 ] ] ]
+ },
+ {
+  "id": "liberality",
+  "kind": "term",
+  "name": "Liberality (open-handed giving)",
+  "refs": [
+   [
+    "2 Corinthians", 8,
+    [ 2 ] ],
+   [
+    "2 Corinthians", 9,
+    [ 13 ] ] ]
+ },
+ {
+  "id": "forwardness",
+  "kind": "term",
+  "name": "Forwardness (eagerness, a readiness to go ahead)",
+  "refs": [
+   [
+    "2 Corinthians", 8,
+    [ 8 ] ],
+   [
+    "2 Corinthians", 9,
+    [ 2 ] ] ]
+ },
+ {
+  "id": "equality",
+  "kind": "term",
+  "name": "Equality (fair sharing, so that nobody in the family goes without)",
+  "refs": [
+   [
+    "2 Corinthians", 8,
+    [ 14 ] ] ]
+ },
+ {
+  "id": "willing-mind",
+  "kind": "term",
+  "name": "A willing mind (God counts the heart, and what a man has)",
+  "refs": [
+   [
+    "2 Corinthians", 8,
+    [ 12 ] ] ]
+ },
+ {
+  "id": "saints-of-jerusalem",
+  "kind": "person",
+  "name": "The saints (the poor believers in Jerusalem the gift was for)",
+  "refs": [
+   [
+    "2 Corinthians", 8,
+    [ 4 ] ],
+   [
+    "2 Corinthians", 9,
+    [ 1, 12 ] ] ]
+ },
+ {
+  "id": "do-you-to-wit",
+  "kind": "term",
+  "name": "\"We do you to wit\" (we let you know)",
+  "refs": [
+   [
+    "2 Corinthians", 8,
+    [ 1 ] ] ]
+ },
+ {
+  "id": "bounty",
+  "kind": "term",
+  "name": "Bounty, bountifully (a generous gift, given freely)",
+  "refs": [
+   [
+    "2 Corinthians", 9,
+    [ 5, 6, 11 ] ] ]
+ },
+ {
+  "id": "cheerful-giver",
+  "kind": "term",
+  "name": "A cheerful giver (glad, and decided in his own heart)",
+  "refs": [
+   [
+    "2 Corinthians", 9,
+    [ 7 ] ] ]
+ },
+ {
+  "id": "unspeakable-gift",
+  "kind": "term",
+  "name": "God's unspeakable gift (Jesus, too great for words)",
+  "refs": [
+   [
+    "2 Corinthians", 9,
+    [ 15 ] ] ]
  }
 ];

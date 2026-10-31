@@ -1,0 +1,464 @@
+<!doctype html>
+<html lang="en" data-theme="scribe">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>2 Corinthians 9</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="../assets/fonts.css">
+<link rel="stylesheet" href="../assets/deck.css">
+<link rel="stylesheet" href="../assets/themes.css">
+<style>
+/* c209-where: where we are in 2 Corinthians. Seven chips (.done, .here), each a run of chapters (i) and what Paul deals with (b) */
+.c209-where { display: grid; grid-template-columns: repeat(auto-fit, minmax(8.2rem, 1fr)); gap: 6px; margin: .3em 0 1em; }
+.c209-where div { padding: .5em .6em .55em; border-radius: 8px; background: var(--surface); border: 1px solid var(--line); color: var(--ink-soft); line-height: 1.2; }
+.c209-where i { display: block; font: 700 clamp(.8rem, .72rem + .35vw, 1rem)/1.1 var(--sans); font-style: normal; letter-spacing: .04em; margin-bottom: .2em; }
+.c209-where b { font: 400 clamp(.9rem, .82rem + .4vw, 1.15rem)/1.2 var(--serif); }
+.c209-where .done { background: color-mix(in srgb, var(--accent) 14%, var(--surface)); color: var(--ink); }
+.c209-where .here { background: var(--accent); border-color: var(--accent); color: var(--on-accent); box-shadow: 0 0 0 4px color-mix(in srgb, var(--accent) 25%, transparent); }
+.slide.active .c209-where .here { animation: c209-here 2.4s 1s ease-in-out infinite; }
+@keyframes c209-here { 50% { box-shadow: 0 0 0 8px color-mix(in srgb, var(--accent) 10%, transparent); } }
+
+/* c209-field: two fields, one sown sparingly and one bountifully. The stalks grow on open, one after another (--k) */
+.c209-soil { fill: color-mix(in srgb, var(--leather) 30%, var(--surface)); stroke: var(--line-strong); stroke-width: 3; }
+.c209-seed { fill: var(--leather); }
+.c209-stalk { transform-box: fill-box; transform-origin: bottom; transform: scaleY(0); transition: transform 1.2s ease; transition-delay: calc(var(--k) * 140ms + .5s); }
+.slide.active .c209-stalk { transform: scaleY(1); }
+.c209-stalk line { stroke: var(--cool); stroke-width: 4; stroke-linecap: round; }
+.c209-stalk ellipse { fill: var(--accent); }
+.c209-fl { fill: var(--ink); font: italic 26px var(--serif); text-anchor: middle; }
+.c209-fs { fill: var(--ink-soft); font: 19px var(--sans); text-anchor: middle; }
+.c209-fs.hot { fill: var(--accent-hot); font-weight: 700; }
+.c209-gap { stroke: var(--line-strong); stroke-width: 2; stroke-dasharray: 5 8; }
+
+/* c209-ways: three ways to give; .all is the one God loves */
+.c209-ways { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin: .4em 0 1em; }
+@media (max-width: 760px) { .c209-ways { grid-template-columns: 1fr; } }
+.c209-ways > div { padding: .6em .85em .7em; border-radius: 10px; background: var(--surface); border: 1px solid var(--line-strong); }
+.c209-ways h3 { font: 700 clamp(.78rem, .72rem + .3vw, .98rem) var(--sans); color: var(--ink-soft); text-transform: uppercase; letter-spacing: .06em; margin-bottom: .3em; }
+.c209-ways b { display: block; font: italic 600 clamp(1.1rem, .95rem + .6vw, 1.5rem)/1.2 var(--serif); color: var(--ink); margin-bottom: .2em; }
+.c209-ways p { margin: 0; font-size: clamp(.9rem, .82rem + .36vw, 1.1rem); line-height: 1.3; color: var(--ink-soft); }
+.c209-ways .all { border: 2px solid var(--accent); background: color-mix(in srgb, var(--accent) 12%, var(--surface)); }
+.c209-ways .all h3 { color: var(--accent); }
+.c209-ways .all p { color: var(--ink); }
+
+/* c209-flow: seed to sower, bread to eat, more seed, then harvest. One link after another, arrows between */
+.c209-flow { list-style: none; padding: 0; margin: .4em 0 1em; display: grid; grid-template-columns: repeat(4, 1fr); gap: 0; counter-reset: fl; }
+.c209-flow li { position: relative; padding: .65em .85em .75em; border: 1.5px solid var(--line-strong); background: var(--surface); }
+.c209-flow li:first-child { border-radius: 12px 0 0 12px; } .c209-flow li:last-child { border-radius: 0 12px 12px 0; background: color-mix(in srgb, var(--accent) 14%, var(--surface)); border-color: var(--accent); }
+.c209-flow li + li { border-left-width: 0; }
+.c209-flow li:not(:last-child)::after { content: "\2192"; position: absolute; right: -.62em; top: 50%; transform: translateY(-50%); z-index: 1; width: 1.2em; height: 1.2em; display: grid; place-items: center; border-radius: 50%; background: var(--bg); border: 1.5px solid var(--line-strong); font-size: 1rem; color: var(--ink-soft); }
+.c209-flow i { display: block; font: 700 clamp(.72rem, .66rem + .3vw, .92rem) var(--sans); font-style: normal; text-transform: uppercase; letter-spacing: .08em; color: var(--accent); margin-bottom: .25em; }
+.c209-flow b { display: block; font: italic 400 clamp(1.05rem, .92rem + .6vw, 1.5rem)/1.2 var(--serif); margin-bottom: .25em; }
+.c209-flow p { margin: 0; font-size: clamp(.86rem, .8rem + .32vw, 1.04rem); line-height: 1.3; color: var(--ink-soft); }
+@media (max-width: 760px) { .c209-flow { grid-template-columns: 1fr; gap: .5rem; } .c209-flow li, .c209-flow li:first-child, .c209-flow li:last-child { border-radius: 12px; border-left-width: 1.5px; } .c209-flow li:not(:last-child)::after { display: none; } }
+
+/* c209-ripple: a gift sent out ripples outward. The core shows on open; each ring comes on with its step (.c209-n1 to .c209-n3) */
+.c209-ring { fill: none; stroke: var(--accent); stroke-width: 3; opacity: 0; transition: opacity .9s ease; }
+.c209-band { fill: color-mix(in srgb, var(--accent) 9%, transparent); opacity: 0; transition: opacity .9s ease; }
+.c209-core { fill: var(--accent); }
+.c209-core-t { fill: var(--on-accent); font: 700 17px var(--sans); text-anchor: middle; }
+.c209-rt { fill: var(--ink); font: 700 17px var(--sans); text-anchor: middle; opacity: 0; transition: opacity .9s ease; }
+.slide:has(.c209-n1.on) .c209-r1, .slide:has(.c209-n2.on) .c209-r2, .slide:has(.c209-n3.on) .c209-r3 { opacity: 1; }
+.c209-pulse { fill: none; stroke: var(--accent); stroke-width: 2; opacity: 0; transform-box: fill-box; transform-origin: center; }
+.slide.active .c209-pulse { animation: c209-pulse 3.6s ease-out infinite; }
+.slide.active .c209-pulse.b { animation-delay: 1.8s; }
+@keyframes c209-pulse { 0% { transform: scale(1); opacity: .6; } 100% { transform: scale(4); opacity: 0; } }
+.c209-legend { list-style: none; margin: 0; padding: 0; display: grid; gap: .6rem; }
+.c209-legend li { display: grid; grid-template-columns: 2rem 1fr; gap: .6rem; align-items: start; font-size: clamp(1rem, .9rem + .5vw, 1.35rem); line-height: 1.3; }
+.c209-legend li > b { display: grid; place-items: center; width: 1.7rem; height: 1.7rem; border-radius: 50%; background: var(--accent); color: var(--on-accent); font: 700 .95rem var(--sans); }
+.c209-legend small { display: block; color: var(--ink-soft); font-size: .8em; }
+@media (max-width: 600px) { .c209-fl { font-size: 32px; } .c209-fs { font-size: 25px; } .c209-rt { font-size: 22px; } .c209-core-t { font-size: 22px; } }
+</style>
+</head>
+<body>
+<main class="deck" id="deck">
+
+<!-- ======================= OPENING ======================= -->
+<section class="slide title">
+  <div class="inner">
+    <div class="emblem rise"></div>
+    <h1 class="rise" style="--d:1">2 Corinthians 9</h1>
+    <p class="sub rise" style="--d:3">A cheerful giver</p>
+    <p class="tag rise" style="--d:5">Sowing, reaping, and the gift that is bigger than anything we can give. Giving is a response to grace. It isn't a way to get rich.</p>
+  </div>
+</section>
+
+<section class="slide watch">
+  <div class="inner">
+    <h2 class="rise">Things to watch for</h2>
+    <p class="lede rise" style="--d:1">Keep these questions in the back of your mind as we read. We'll come back to every one of them at the end.</p>
+    <ol class="seeds">
+      <li class="step"><span class="topic">Ready</span><span class="seed-q">Why did Paul send the brothers ahead to Corinth?</span></li>
+      <li class="step"><span class="topic">Sowing</span><span class="seed-q">What happens to the man who sows sparingly, and the man who sows bountifully?</span></li>
+      <li class="step"><span class="topic">The heart</span><span class="seed-q">How does God want a man to give?</span></li>
+      <li class="step"><span class="topic">The seed</span><span class="seed-q">Who supplies the seed, and what is it for?</span></li>
+      <li class="step"><span class="topic">Thanks</span><span class="seed-q">What does a gift do besides meet a need?</span></li>
+      <li class="step"><span class="topic">The gift</span><span class="seed-q">What is God's “unspeakable gift”?</span></li>
+    </ol>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise">Where we are in 2 Corinthians</h2>
+    <p class="note rise" style="--d:1">About AD 56, from Macedonia. Paul has just spent chapter 8 on why a believer gives. Now he gets practical: the gift for Jerusalem is nearly ready, and he wants it done properly.</p>
+    <div class="c209-where rise" style="--d:2" role="img" aria-label="2 Corinthians in seven parts. Chapters 1 and 2: comfort in trouble. Chapters 3 and 4: the new covenant. Chapter 5: reconciled to God. Chapter 6: open hearts. Chapter 7: Titus brings news. Chapters 8 and 9: the collection, and we are here. Chapters 10 to 13: Paul answers his critics.">
+      <div class="done"><i>1–2</i><b>Comfort in trouble</b></div>
+      <div class="done"><i>3–4</i><b>The new covenant</b></div>
+      <div class="done"><i>5</i><b>Reconciled to God</b></div>
+      <div class="done"><i>6</i><b>Open hearts</b></div>
+      <div class="done"><i>7</i><b>Titus brings news</b></div>
+      <div class="here"><i>8–9</i><b>The collection</b></div>
+      <div><i>10–13</i><b>Paul answers his critics</b></div>
+    </div>
+    <p class="note step">Chapter 8 was <em>why</em>, and chapter 9 is <em>how</em>: finish what you promised, give from the heart, and say thank you to God. Read alone, it still makes sense: a church is about to send help to people in need, and Paul tells them how to do it well.</p>
+  </div>
+</section>
+
+<!-- ======================= PART ONE: BE READY ======================= -->
+<section class="slide part">
+  <div class="inner">
+    <p class="part-n rise">Part one</p>
+    <h2 class="rise" style="--d:1">Be ready</h2>
+    <p class="range rise" style="--d:2">Verses 1–5</p>
+    <div class="rule"></div>
+    <p class="hook rise" style="--d:4">A promise made in public, and a friend who helps you keep it.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="1-2" data-hl="I know the forwardness of your mind"></section>
+
+<section class="slide verse" data-v="3-5" data-hl="lest our boasting of you should be in vain|as a matter of bounty, and not as of covetousness"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise">A gift a year in the making</h2>
+    <ol class="timeline" aria-label="About AD 55, Paul tells Corinth to set money aside. About AD 55 to 56, Corinth starts, a year ago. About AD 56, Paul writes from Macedonia and sends Titus and two brothers ahead. About AD 57, Paul carries the gift to Jerusalem.">
+      <li style="--k:0"><b>about AD 55</b><span>Paul tells Corinth to set money aside</span><small>“lay by him in store” (1 Cor. 16:2)</small></li>
+      <li style="--k:1"><b>about AD 55–56</b><span>Corinth starts, then stalls</span><small>“ready a year ago” (9:2)</small></li>
+      <li class="lit" style="--k:2"><b>about AD 56</b><span>Paul writes, and sends Titus and two brothers ahead</span><small>“go before unto you” (9:5)</small></li>
+      <li style="--k:3"><b>about AD 57</b><span>Paul carries the gift to Jerusalem</span><small>“to bring alms to my nation” (Acts 24:17)</small></li>
+    </ol>
+    <p class="note step">The brothers aren't checking up on Corinth. They're there so the gift is ready when Paul arrives. The word he uses, <em>“bounty,”</em> means a blessing, and he wants it a real blessing, <em>“and not as of covetousness”</em>: not squeezed out of people.</p>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise">A promise out loud</h2>
+    <div class="talk">
+      <p class="rise" style="--d:1"><small>Paul, to the Macedonians</small>“Achaia was ready a year ago.” (v. 2)</p>
+      <p class="reply step"><small>Paul, to Corinth</small>“Lest haply if they of Macedonia come with me, and find you unprepared, we (that we say not, ye) should be ashamed in this same confident boasting.” (v. 4)</p>
+      <p class="step"><small>The fix</small>“I thought it necessary to exhort the brethren, that they would go before unto you.” (v. 5)</p>
+    </div>
+    <p class="note step">Paul had bragged about Corinth in public. Now he needs them to finish, and he does it gently: a friend goes ahead to help, and nobody is humiliated.</p>
+    <p class="note step">Everyone has said <em>“I'll do it”</em> and then let it slide. Pick one thing you told somebody you'd do, and finish it today. A kept promise is a gift too.</p>
+  </div>
+</section>
+
+<!-- ======================= PART TWO: SOWING AND REAPING ======================= -->
+<section class="slide part">
+  <div class="inner">
+    <p class="part-n rise">Part two</p>
+    <h2 class="rise" style="--d:1">Sowing and reaping</h2>
+    <p class="range rise" style="--d:2">Verses 6–11</p>
+    <div class="rule"></div>
+    <p class="hook rise" style="--d:4">What a farmer knows about giving, and what Paul does not promise.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="6-7" data-hl="He which soweth sparingly shall reap also sparingly; and he which soweth bountifully shall reap also bountifully|God loveth a cheerful giver"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise">A farmer's arithmetic</h2>
+    <div class="stage">
+      <svg viewBox="0 0 800 330" style="max-height:40vh" role="img" aria-label="Two fields. On the left, a farmer sows a few seeds and gets a few stalks. On the right, he sows many and gets many.">
+        <rect class="c209-soil" x="20" y="170" width="360" height="90" rx="8"/>
+        <rect class="c209-soil" x="420" y="170" width="360" height="90" rx="8"/>
+        <line class="c209-gap" x1="400" y1="40" x2="400" y2="300"/>
+        <g class="c209-seed"><circle cx="90" cy="232" r="6"/><circle cx="190" cy="232" r="6"/><circle cx="290" cy="232" r="6"/></g>
+        <g class="c209-stalk" style="--k:0"><line x1="90" y1="232" x2="90" y2="110"/><ellipse cx="90" cy="104" rx="9" ry="18"/></g>
+        <g class="c209-stalk" style="--k:1"><line x1="190" y1="232" x2="190" y2="110"/><ellipse cx="190" cy="104" rx="9" ry="18"/></g>
+        <g class="c209-stalk" style="--k:2"><line x1="290" y1="232" x2="290" y2="110"/><ellipse cx="290" cy="104" rx="9" ry="18"/></g>
+        <g class="c209-seed"><circle cx="450" cy="232" r="6"/><circle cx="490" cy="232" r="6"/><circle cx="530" cy="232" r="6"/><circle cx="570" cy="232" r="6"/><circle cx="610" cy="232" r="6"/><circle cx="650" cy="232" r="6"/><circle cx="690" cy="232" r="6"/><circle cx="730" cy="232" r="6"/></g>
+        <g class="c209-stalk" style="--k:3"><line x1="450" y1="232" x2="450" y2="104"/><ellipse cx="450" cy="98" rx="9" ry="18"/></g>
+        <g class="c209-stalk" style="--k:4"><line x1="490" y1="232" x2="490" y2="104"/><ellipse cx="490" cy="98" rx="9" ry="18"/></g>
+        <g class="c209-stalk" style="--k:5"><line x1="530" y1="232" x2="530" y2="104"/><ellipse cx="530" cy="98" rx="9" ry="18"/></g>
+        <g class="c209-stalk" style="--k:6"><line x1="570" y1="232" x2="570" y2="104"/><ellipse cx="570" cy="98" rx="9" ry="18"/></g>
+        <g class="c209-stalk" style="--k:7"><line x1="610" y1="232" x2="610" y2="104"/><ellipse cx="610" cy="98" rx="9" ry="18"/></g>
+        <g class="c209-stalk" style="--k:8"><line x1="650" y1="232" x2="650" y2="104"/><ellipse cx="650" cy="98" rx="9" ry="18"/></g>
+        <g class="c209-stalk" style="--k:9"><line x1="690" y1="232" x2="690" y2="104"/><ellipse cx="690" cy="98" rx="9" ry="18"/></g>
+        <g class="c209-stalk" style="--k:10"><line x1="730" y1="232" x2="730" y2="104"/><ellipse cx="730" cy="98" rx="9" ry="18"/></g>
+        <text class="c209-fl" x="200" y="296">sows sparingly</text>
+        <text class="c209-fs" x="200" y="322">reaps sparingly</text>
+        <text class="c209-fl" x="600" y="296">sows bountifully</text>
+        <text class="c209-fs hot" x="600" y="322">reaps bountifully</text>
+      </svg>
+    </div>
+    <p class="note step">Any farmer knows it: you can't eat what you didn't plant. Paul uses a plain picture. A man who plants a few seeds gets a small harvest, and a man who plants freely gets a big one.</p>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise">So what's the harvest?</h2>
+    <ul class="nots">
+      <li class="step"><span class="k">a fatter bank account</span><span class="why">Paul never says the harvest is money</span></li>
+      <li class="step"><span class="k">a deal: “give to get”</span><span class="why">that's a trade, not a gift, and not grace</span></li>
+      <li class="step"><span class="k">God owing you</span><span class="why">He owes no man a thing</span></li>
+      <li class="step yes"><span class="k">more grace, and more to give</span><span class="why">“the fruits of your righteousness,” and “thanksgiving to God” (vv. 10–11)</span></li>
+    </ul>
+    <p class="note step">Some preachers read this chapter as “send money and God will make you rich.” That's not what's here. Look at who's giving: Macedonians in deep poverty, for poor believers far away. Paul's harvest is righteous living and thanks to God.</p>
+    <p class="note step">Paul even says what you get back: <em>“all sufficiency in all things,”</em> enough, so that you may <em>“abound to every good work.”</em> God supplies the seed so you can sow more. You aren't paid back in cash. You're made able to give again.</p>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise">Three ways to give</h2>
+    <div class="c209-ways">
+      <div class="rise" style="--d:1"><h3>Grudgingly</h3><b>“Fine, here.”</b><p>The gift comes with a sour face. It may be right, but the heart isn't in it.</p></div>
+      <div class="rise" style="--d:2"><h3>Of necessity</h3><b>“I have to.”</b><p>Pushed by guilt, pressure, or somebody watching. Paul says no to this as well.</p></div>
+      <div class="all rise" style="--d:3"><h3>Cheerfully</h3><b>“I decided, and I'm glad.”</b><p>Decided ahead, <em>“as he purposeth in his heart,”</em> and given with joy. The Greek word is where we get <em>hilarious</em>.</p></div>
+    </div>
+    <p class="note step">“God loveth a cheerful giver” doesn't mean put on a smile. It means decide ahead what you can honestly give, in a quiet moment, before anybody asks. A small gift decided on in advance beats a big one squeezed out.</p>
+    <p class="note step">That works for time and help, not just money. If you can only give twenty minutes, give twenty good ones, and be glad you did.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="8-11" data-hl="God is able to make all grace abound toward you|multiply your seed sown, and increase the fruits of your righteousness"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise">Where the seed comes from</h2>
+    <ol class="c209-flow" aria-label="Four links: God gives seed to the sower; the sower sows it; God gives bread for food and multiplies the seed; the harvest is the fruits of your righteousness.">
+      <li class="step"><i>God</i><b>supplies the seed</b><p>“ministereth seed to the sower”</p></li>
+      <li class="step"><i>You</i><b>sow it</b><p>to “every good work”</p></li>
+      <li class="step"><i>God</i><b>bread, and more seed</b><p>“bread for your food, and multiply your seed sown”</p></li>
+      <li class="step"><i>The harvest</i><b>righteousness, thanks</b><p>“the fruits of your righteousness”</p></li>
+    </ol>
+    <blockquote class="quote step"><p>“He hath dispersed, he hath given to the poor; his righteousness endureth for ever; his horn shall be exalted with honour.”</p><cite>Psalm 112:9</cite></blockquote>
+    <p class="note step">Notice who owns the seed. It was never yours: <em>God</em> supplies it. All you do is decide whether it sits in a jar or goes in the ground. A man with nothing in his hands this morning may still have time, strength and a story to sow.</p>
+  </div>
+</section>
+
+<!-- ======================= PART THREE: THANKS ======================= -->
+<section class="slide part">
+  <div class="inner">
+    <p class="part-n rise">Part three</p>
+    <h2 class="rise" style="--d:1">Thanks to God</h2>
+    <p class="range rise" style="--d:2">Verses 12–15</p>
+    <div class="rule"></div>
+    <p class="hook rise" style="--d:4">What one gift sets in motion, and the gift behind it.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="12-14" data-hl="many thanksgivings unto God|your professed subjection unto the gospel of Christ"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise">One gift, four ripples</h2>
+    <div class="split">
+      <div class="stage">
+        <svg viewBox="0 0 400 400" style="max-height:52vh" role="img" aria-label="Ripples spreading from a gift. At the center, a need met. Then many thanksgivings to God. Then God glorified for obedience to the gospel. Then the saints pray for you and long for you.">
+          <circle class="c209-band c209-r3" cx="200" cy="200" r="196"/>
+          <circle class="c209-ring c209-r3" cx="200" cy="200" r="196"/>
+          <circle class="c209-band c209-r2" cx="200" cy="200" r="150"/>
+          <circle class="c209-ring c209-r2" cx="200" cy="200" r="150"/>
+          <circle class="c209-band c209-r1" cx="200" cy="200" r="104"/>
+          <circle class="c209-ring c209-r1" cx="200" cy="200" r="104"/>
+          <circle class="c209-pulse" cx="200" cy="200" r="50"/>
+          <circle class="c209-pulse b" cx="200" cy="200" r="50"/>
+          <circle class="c209-core" cx="200" cy="200" r="54"/>
+          <text class="c209-core-t" x="200" y="196">a need</text>
+          <text class="c209-core-t" x="200" y="217">met</text>
+          <text class="c209-rt c209-r1" x="200" y="124">thanks to God</text>
+          <text class="c209-rt c209-r2" x="200" y="80">God glorified</text>
+          <text class="c209-rt c209-r3" x="200" y="34">prayer and love</text>
+        </svg>
+      </div>
+      <div>
+        <ol class="c209-legend">
+          <li class="rise" style="--d:1"><b>1</b><span>The need is met. <small>The gift “supplieth the want of the saints.”</small></span></li>
+          <li class="step c209-n1"><b>2</b><span>Thanks to God. <small>“Many thanksgivings unto God.”</small></span></li>
+          <li class="step c209-n2"><b>3</b><span>God is glorified. <small>They see the gospel at work in Gentiles.</small></span></li>
+          <li class="step c209-n3"><b>4</b><span>They pray for you, and long for you. <small>Jews and Gentiles, one family.</small></span></li>
+        </ol>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="slide verse" data-v="15" data-hl="Thanks be unto God for his unspeakable gift"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <p class="saying rise">Thanks be to God for his <em>unspeakable gift.</em></p>
+    <p class="note rise" style="--d:2">Two chapters on money end here, with the gift no money can pay for: <em>Jesus.</em> Everything we give is a thank-you for that one. <em>“Unspeakable”</em> means beyond words, too big to describe.</p>
+    <blockquote class="quote step"><p>“For the wages of sin is death; but the gift of God is eternal life through Jesus Christ our Lord.”</p><cite>Romans 6:23</cite></blockquote>
+    <p class="note step">It's a gift: you couldn't earn it, and you can't pay it back. That's good news if you're carrying regret. You can't make up for last week by being generous. You also don't have to. You're already forgiven, and you give out of thanks, not out of guilt.</p>
+    <p class="note step"><b>Today:</b> decide one thing to give, before anyone asks. A little money, an hour, a ride, a kind word, a call to a man who's struggling. Decide it now, give it gladly, and say <em>“thank You”</em> for the gift you can't repay.</p>
+  </div>
+</section>
+
+<!-- ======================= CLOSING ======================= -->
+<section class="slide remember">
+  <div class="inner">
+    <h2 class="rise">Points to remember</h2>
+    <ol class="seeds">
+      <li class="step"><span class="topic">Ready</span><span class="seed-q">“I thought it necessary to exhort the brethren, that they would go before unto you” <cite>9:5</cite></span><span class="take">Finish what you promised. Let a friend help you do it.</span></li>
+      <li class="step"><span class="topic">Sowing</span><span class="seed-q">“He which soweth sparingly shall reap also sparingly” <cite>9:6</cite></span><span class="take">Plant freely. The harvest is righteousness and thanks to God, and not a promise of cash.</span></li>
+      <li class="step"><span class="topic">The heart</span><span class="seed-q">“Not grudgingly, or of necessity: for God loveth a cheerful giver” <cite>9:7</cite></span><span class="take">Decide ahead, give gladly. Time and help count too.</span></li>
+      <li class="step"><span class="topic">The seed</span><span class="seed-q">“Now he that ministereth seed to the sower” <cite>9:10</cite></span><span class="take">God supplies the seed. You decide whether it sits in a jar or goes in the ground.</span></li>
+      <li class="step"><span class="topic">Thanks</span><span class="seed-q">“Abundant also by many thanksgivings unto God” <cite>9:12</cite></span><span class="take">A gift meets a need, and also sets off thanks, prayer, and love between believers.</span></li>
+      <li class="step"><span class="topic">The gift</span><span class="seed-q">“Thanks be unto God for his unspeakable gift” <cite>9:15</cite></span><span class="take">Jesus. You can't earn it or repay it, so you give out of thanks.</span></li>
+    </ol>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 1 of 6</p>
+      <span class="topic">Ready</span>
+      <h2>Why did Paul send the brothers ahead to Corinth?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="2" data-hl="Achaia was ready a year ago"></blockquote>
+      <blockquote class="quote step" data-q="3"></blockquote>
+      <blockquote class="quote step" data-q="5"></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>So the gift would be ready when Paul came, and nobody would be embarrassed. He had bragged about Corinth. A friend going ahead helped them finish what they'd promised.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 2 of 6</p>
+      <span class="topic">Sowing</span>
+      <h2>What happens to the man who sows sparingly, and the man who sows bountifully?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="6"></blockquote>
+      <blockquote class="quote step" data-q="10" data-hl="multiply your seed sown, and increase the fruits of your righteousness"></blockquote>
+      <blockquote class="quote step"><p>“They that sow in tears shall reap in joy. He that goeth forth and weepeth, bearing precious seed, shall doubtless come again with rejoicing, bringing his sheaves with him.”</p><cite>Psalm 126:5–6</cite></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>A small sower gets a small harvest, and a generous one gets a big one. The harvest Paul names is righteousness and thanks to God, and not a bigger bank balance. Giving is not a way to get rich.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 3 of 6</p>
+      <span class="topic">The heart</span>
+      <h2>How does God want a man to give?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="7"></blockquote>
+      <blockquote class="quote step" data-q="5" data-hl="as a matter of bounty, and not as of covetousness"></blockquote>
+      <blockquote class="quote step"><p>“For if there be first a willing mind, it is accepted according to that a man hath, and not according to that he hath not.”</p><cite>2 Corinthians 8:12</cite></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>Gladly, and by his own decision: not grudgingly, and not out of pressure. Decide ahead what you honestly can, and give it cheerfully. God never asks for what you don't have.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 4 of 6</p>
+      <span class="topic">The seed</span>
+      <h2>Who supplies the seed, and what is it for?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="8"></blockquote>
+      <blockquote class="quote step" data-q="9"></blockquote>
+      <blockquote class="quote step" data-q="10"></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>God supplies it, and it's for sowing: for every good work, and so there's bread for you and seed to give again. It was never ours to hoard.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 5 of 6</p>
+      <span class="topic">Thanks</span>
+      <h2>What does a gift do besides meet a need?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="12"></blockquote>
+      <blockquote class="quote step" data-q="13"></blockquote>
+      <blockquote class="quote step" data-q="14"></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>It sets off thanks to God, glory to Him, and prayer and love between believers who've never met. One gift ties the family together.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 6 of 6</p>
+      <span class="topic">The gift</span>
+      <h2>What is God's “unspeakable gift”?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="15"></blockquote>
+      <blockquote class="quote step"><p>“For the wages of sin is death; but the gift of God is eternal life through Jesus Christ our Lord.”</p><cite>Romans 6:23</cite></blockquote>
+      <blockquote class="quote step"><p>“He that spared not his own Son, but delivered him up for us all, how shall he not with him also freely give us all things?”</p><cite>Romans 8:32</cite></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>Jesus Himself, and the eternal life He gives. Nobody can earn it or repay it. We give because we've been given so much.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide prayer">
+  <div class="inner">
+    <div class="emblem rise"></div>
+    <h2 class="rise" style="--d:1">Prayer requests</h2>
+    <p class="ask-line rise" style="--d:2">What can we pray about for you today? A promise you haven't kept, a need you're carrying, someone you want to help?</p>
+    <blockquote class="quote rise" style="--d:4"><p>“Thanks be unto God for his unspeakable gift.”</p><cite>2 Corinthians 9:15</cite></blockquote>
+  </div>
+</section>
+
+</main>
+
+<script>
+// King James Version, 2 Corinthians chapter 9
+const V = {
+  1: "For as touching the ministering to the saints, it is superfluous for me to write to you:",
+  2: "For I know the forwardness of your mind, for which I boast of you to them of Macedonia, that Achaia was ready a year ago; and your zeal hath provoked very many.",
+  3: "Yet have I sent the brethren, lest our boasting of you should be in vain in this behalf; that, as I said, ye may be ready:",
+  4: "Lest haply if they of Macedonia come with me, and find you unprepared, we (that we say not, ye) should be ashamed in this same confident boasting.",
+  5: "Therefore I thought it necessary to exhort the brethren, that they would go before unto you, and make up beforehand your bounty, whereof ye had notice before, that the same might be ready, as a matter of bounty, and not as of covetousness.",
+  6: "But this I say, He which soweth sparingly shall reap also sparingly; and he which soweth bountifully shall reap also bountifully.",
+  7: "Every man according as he purposeth in his heart, so let him give; not grudgingly, or of necessity: for God loveth a cheerful giver.",
+  8: "And God is able to make all grace abound toward you; that ye, always having all sufficiency in all things, may abound to every good work:",
+  9: "(As it is written, He hath dispersed abroad; he hath given to the poor: his righteousness remaineth for ever.",
+  10: "Now he that ministereth seed to the sower both minister bread for your food, and multiply your seed sown, and increase the fruits of your righteousness;)",
+  11: "Being enriched in every thing to all bountifulness, which causeth through us thanksgiving to God.",
+  12: "For the administration of this service not only supplieth the want of the saints, but is abundant also by many thanksgivings unto God;",
+  13: "Whiles by the experiment of this ministration they glorify God for your professed subjection unto the gospel of Christ, and for your liberal distribution unto them, and unto all men;",
+  14: "And by their prayer for you, which long after you for the exceeding grace of God in you.",
+  15: "Thanks be unto God for his unspeakable gift."
+};
+const BOOK = "2 Corinthians 9";
+</script>
+<script src="../assets/deck.js"></script>
+</body>
+</html>

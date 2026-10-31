@@ -12539,6 +12539,130 @@ window.STUDIES = [
     }
   },
   {
+    "id": "2-corinthians-07",
+    "type": "chapter",
+    "book": "2 Corinthians",
+    "url": "studies/2-corinthians-07.html",
+    "ch": 7,
+    "date": "2026-10-31",
+    "title": "2 Corinthians 7",
+    "sub": "Two kinds of sorrow",
+    "about": "Paul is comforted by the coming of Titus, and shows the difference between the sorrow that turns a man to God and the regret that kills.",
+    "tags": [
+      "Clean living",
+      "Comfort",
+      "Godly sorrow",
+      "Repentance",
+      "Hard words",
+      "Joy"
+    ],
+    "overview": {
+      "where": "Macedonia, where Paul waits for news from Corinth",
+      "when": "About AD 56, on Paul's third journey",
+      "people": [
+        "titus"
+      ],
+      "places": [
+        "macedonia"
+      ],
+      "story": [
+        "Having God's promises, Paul urges believers to cleanse themselves of all that dirties flesh and spirit (1–4).",
+        "In Macedonia he had no rest, with fightings outside and fears within, until God comforted him by the coming of Titus (5–7).",
+        "His hard letter made Corinth sorry, and Paul explains that godly sorrow leads to repentance and life, while the sorrow of the world leads to death (8–11).",
+        "He wrote so that his care for them would show, and he ends in joy and confidence (12–16)."
+      ],
+      "key": {
+        "ref": "2 Corinthians 7:10",
+        "text": "For godly sorrow worketh repentance to salvation not to be repented of: but the sorrow of the world worketh death."
+      },
+      "big": "Sorrow can be a road to God or a road into hiding. Godly sorrow turns a man around, and the turning is one he will never regret."
+    }
+  },
+  {
+    "id": "2-corinthians-08",
+    "type": "chapter",
+    "book": "2 Corinthians",
+    "url": "studies/2-corinthians-08.html",
+    "ch": 8,
+    "date": "2026-10-31",
+    "title": "2 Corinthians 8",
+    "sub": "The grace of giving",
+    "about": "Poor churches in Macedonia beg for the chance to give to the believers in Jerusalem, and Paul points to Jesus, who became poor for us.",
+    "tags": [
+      "Deep poverty",
+      "Giving ourselves",
+      "Grace",
+      "A willing mind",
+      "Sharing",
+      "Honesty"
+    ],
+    "overview": {
+      "where": "Macedonia, with the gift bound for Jerusalem",
+      "when": "About AD 56",
+      "people": [
+        "titus",
+        "saints-of-jerusalem"
+      ],
+      "places": [
+        "macedonia"
+      ],
+      "story": [
+        "The churches of Macedonia, in deep poverty and great trouble, gave beyond their power and first gave themselves to the Lord (1–5).",
+        "Paul sends Titus to finish the work in Corinth and asks them to abound in this grace also (6–8).",
+        "“Though he was rich, yet for your sakes he became poor.” God accepts a willing mind according to what a man has (9–12).",
+        "Giving is a fair sharing in the family of God, as with the manna (13–15).",
+        "Titus and two brothers chosen by the churches carry the gift, so everything is honest in the sight of God and men (16–24)."
+      ],
+      "key": {
+        "ref": "2 Corinthians 8:9",
+        "text": "For ye know the grace of our Lord Jesus Christ, that, though he was rich, yet for your sakes he became poor, that ye through his poverty might be rich."
+      },
+      "big": "Giving flows from grace: Jesus gave up everything for us. A man with little can still give himself, his time, and his help."
+    }
+  },
+  {
+    "id": "2-corinthians-09",
+    "type": "chapter",
+    "book": "2 Corinthians",
+    "url": "studies/2-corinthians-09.html",
+    "ch": 9,
+    "date": "2026-10-31",
+    "title": "2 Corinthians 9",
+    "sub": "A cheerful giver",
+    "about": "Paul tells Corinth to have the gift ready and to give gladly from the heart, and ends with thanks for God's unspeakable gift.",
+    "tags": [
+      "Ready",
+      "Sowing",
+      "The heart",
+      "The seed",
+      "Thanks",
+      "The gift"
+    ],
+    "overview": {
+      "where": "Macedonia, with the gift bound for Jerusalem",
+      "when": "About AD 56",
+      "people": [
+        "saints-of-jerusalem"
+      ],
+      "places": [
+        "macedonia",
+        "achaia"
+      ],
+      "story": [
+        "Paul sends brothers ahead so the gift Corinth promised a year ago will be ready (1–5).",
+        "He who sows sparingly reaps sparingly, and God loves a cheerful giver who gives as he has decided in his heart (6–7).",
+        "God supplies the seed and the bread, and makes the harvest of righteousness grow (8–11).",
+        "The gift meets need and sets off many thanksgivings and prayers (12–14).",
+        "“Thanks be unto God for his unspeakable gift” (15)."
+      ],
+      "key": {
+        "ref": "2 Corinthians 9:7",
+        "text": "Every man according as he purposeth in his heart, so let him give; not grudgingly, or of necessity: for God loveth a cheerful giver."
+      },
+      "big": "Giving is a glad response to grace, and not a deal to get rich. God supplies the seed, and the gift that matters most is Jesus."
+    }
+  },
+  {
     "id": "2-corinthians-10",
     "type": "chapter",
     "book": "2 Corinthians",

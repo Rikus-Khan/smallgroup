@@ -1,0 +1,428 @@
+<!doctype html>
+<html lang="en" data-theme="night">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>2 Corinthians 7</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="../assets/fonts.css">
+<link rel="stylesheet" href="../assets/deck.css">
+<link rel="stylesheet" href="../assets/themes.css">
+<style>
+/* c207-where: where we are in 2 Corinthians. Seven chips (.done, .here), each a run of chapters (i) and what Paul deals with (b) */
+.c207-where { display: grid; grid-template-columns: repeat(auto-fit, minmax(8.2rem, 1fr)); gap: 6px; margin: .3em 0 1em; }
+.c207-where div { padding: .5em .6em .55em; border-radius: 8px; background: var(--surface); border: 1px solid var(--line); color: var(--ink-soft); line-height: 1.2; }
+.c207-where i { display: block; font: 700 clamp(.8rem, .72rem + .35vw, 1rem)/1.1 var(--sans); font-style: normal; letter-spacing: .04em; margin-bottom: .2em; }
+.c207-where b { font: 400 clamp(.9rem, .82rem + .4vw, 1.15rem)/1.2 var(--serif); }
+.c207-where .done { background: color-mix(in srgb, var(--accent) 14%, var(--surface)); color: var(--ink); }
+.c207-where .here { background: var(--accent); border-color: var(--accent); color: var(--on-accent); box-shadow: 0 0 0 4px color-mix(in srgb, var(--accent) 25%, transparent); }
+.slide.active .c207-where .here { animation: c207-here 2.4s 1s ease-in-out infinite; }
+@keyframes c207-here { 50% { box-shadow: 0 0 0 8px color-mix(in srgb, var(--accent) 10%, transparent); } }
+
+/* c207-roads: two roads out of the same sorrow. The stem draws on open, the dark road on the first step (.c207-n1), the bright one on the second (.c207-n2) */
+.c207-dot { fill: var(--surface); stroke: var(--line-strong); stroke-width: 4; }
+.c207-big { fill: var(--ink); font: 400 34px var(--serif); text-anchor: middle; }
+.c207-sm { fill: var(--ink-soft); font: 18px var(--sans); text-anchor: middle; }
+.c207-road { fill: none; stroke-width: 7; stroke-linecap: round; stroke-dasharray: 1; stroke-dashoffset: 1; }
+.c207-road.w { stroke: var(--danger); }
+.c207-road.g { stroke: var(--accent); }
+.c207-road.s { stroke: var(--line-strong); }
+.slide.active .c207-road.s { animation: c207-draw 1.2s ease .5s forwards; }
+.slide:has(.c207-n1.on) .c207-road.w { animation: c207-draw 2.2s ease forwards; }
+.slide:has(.c207-n2.on) .c207-road.g { animation: c207-draw 2.2s ease forwards; }
+@keyframes c207-draw { to { stroke-dashoffset: 0; } }
+.c207-sign { opacity: 0; transition: opacity .7s ease; }
+.c207-sign text { font: italic 20px var(--serif); text-anchor: middle; fill: var(--ink); }
+.c207-sign circle { stroke-width: 4; fill: var(--bg); }
+.c207-sign.w circle { stroke: var(--danger); }
+.c207-sign.g circle { stroke: var(--accent); }
+.c207-sign.w text.t { fill: var(--ink-soft); }
+.slide:has(.c207-n1.on) .c207-sign.w { opacity: 1; transition-delay: calc(var(--k) * .55s + .4s); }
+.slide:has(.c207-n2.on) .c207-sign.g { opacity: 1; transition-delay: calc(var(--k) * .55s + .4s); }
+.c207-wall { fill: color-mix(in srgb, var(--danger) 30%, var(--surface)); stroke: var(--danger); stroke-width: 4; }
+.c207-end { opacity: 0; transition: opacity .8s ease 2s; }
+.c207-end text { font: 700 22px var(--sans); text-anchor: middle; letter-spacing: .04em; }
+.c207-end.w text { fill: var(--danger); }
+.c207-end.g text { fill: var(--accent-hot); }
+.slide:has(.c207-n1.on) .c207-end.w, .slide:has(.c207-n2.on) .c207-end.g { opacity: 1; }
+.c207-sun { fill: var(--glow); stroke: var(--accent); stroke-width: 4; }
+.c207-ray { stroke: var(--accent); stroke-width: 4; stroke-linecap: round; }
+@media (max-width: 600px) { .c207-sign text { font-size: 34px; } .c207-sm { display: none; } .c207-big { font-size: 40px; } .c207-end text { font-size: 30px; } }
+.c207-pair { display: grid; grid-template-columns: 1fr 1fr; gap: 0 1.4rem; align-items: start; }
+.c207-pair .note { margin-top: .3em; }
+@media (max-width: 760px) { .c207-pair { grid-template-columns: 1fr; } }
+
+/* c207-fruit: the seven things godly sorrow made in Corinth (7:11), each a word, then what it means in plain talk */
+.c207-fruit { list-style: none; margin: .3em 0 1em; padding: 0; display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; counter-reset: fr; }
+@media (max-width: 760px) { .c207-fruit { grid-template-columns: 1fr 1fr; } }
+.c207-fruit li { counter-increment: fr; position: relative; padding: .55em .7em .65em 2.3em; border-radius: 10px; background: var(--surface); border: 1px solid var(--line-strong); }
+.c207-fruit li::before { content: counter(fr); position: absolute; left: .55em; top: .55em; width: 1.4em; height: 1.4em; border-radius: 50%; display: grid; place-items: center; background: var(--accent); color: var(--on-accent); font: 700 .85rem var(--sans); }
+.c207-fruit b { display: block; font: italic 600 clamp(1.05rem, .92rem + .55vw, 1.4rem)/1.15 var(--serif); color: var(--ink); }
+.c207-fruit span { display: block; font: clamp(.88rem, .8rem + .36vw, 1.08rem)/1.28 var(--sans); color: var(--ink-soft); margin-top: .15em; }
+
+/* c207-ask: the checklist, in plain words */
+.c207-pair2 { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin: .4em 0 1em; }
+@media (max-width: 760px) { .c207-pair2 { grid-template-columns: 1fr; } }
+</style>
+</head>
+<body>
+<main class="deck" id="deck">
+
+<!-- ======================= OPENING ======================= -->
+<section class="slide title">
+  <div class="inner">
+    <div class="emblem rise"></div>
+    <h1 class="rise" style="--d:1">2 Corinthians 7</h1>
+    <p class="sub rise" style="--d:3">Two kinds of sorrow</p>
+    <p class="tag rise" style="--d:5">Paul is worn out, and comforted by a friend. Then he shows the difference between the regret that eats a man alive and the sorrow that turns him around.</p>
+  </div>
+</section>
+
+<section class="slide watch">
+  <div class="inner">
+    <h2 class="rise">Things to watch for</h2>
+    <p class="lede rise" style="--d:1">Keep these questions in the back of your mind as we read. We'll come back to every one of them at the end.</p>
+    <ol class="seeds">
+      <li class="step"><span class="topic">Clean</span><span class="seed-q">What does Paul ask us to clean up, and what comes first?</span></li>
+      <li class="step"><span class="topic">Comfort</span><span class="seed-q">Where did Paul find comfort when he was worn out?</span></li>
+      <li class="step"><span class="topic">Two sorrows</span><span class="seed-q">What is the difference between godly sorrow and the sorrow of the world?</span></li>
+      <li class="step"><span class="topic">Turning</span><span class="seed-q">What did godly sorrow produce in the Corinthians?</span></li>
+      <li class="step"><span class="topic">Hard words</span><span class="seed-q">Why did Paul write his hard letter?</span></li>
+      <li class="step"><span class="topic">Joy</span><span class="seed-q">What gave Paul joy and confidence at the end?</span></li>
+    </ol>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise">Where we are in 2 Corinthians</h2>
+    <p class="note rise" style="--d:1">About AD 56, Paul writes from Macedonia to the church he started in Corinth. It had been a rough year. He sent one letter, then a harder one, and then waited for news.</p>
+    <div class="c207-where rise" style="--d:2" role="img" aria-label="2 Corinthians in seven parts. Chapters 1 and 2: comfort in trouble. Chapters 3 and 4: the ministry of the new covenant. Chapter 5: reconciled to God. Chapter 6: open hearts. Chapter 7: Titus brings news, and we are here. Chapters 8 and 9: the collection. Chapters 10 to 13: Paul answers his critics.">
+      <div class="done"><i>1–2</i><b>Comfort in trouble</b></div>
+      <div class="done"><i>3–4</i><b>The new covenant</b></div>
+      <div class="done"><i>5</i><b>Reconciled to God</b></div>
+      <div class="done"><i>6</i><b>Open hearts</b></div>
+      <div class="here"><i>7</i><b>Titus brings news</b></div>
+      <div><i>8–9</i><b>The collection</b></div>
+      <div><i>10–13</i><b>Paul answers his critics</b></div>
+    </div>
+    <p class="note step">This chapter is the turning point. Paul has been sick with worry that his hard letter had hurt the church for good. Then Titus arrives with news. Read alone, it still makes sense: a man is sorry, a friend brings good news, and Paul explains what real sorrow looks like.</p>
+  </div>
+</section>
+
+<!-- ======================= PART ONE: CLEAN, AND COMFORTED ======================= -->
+<section class="slide part">
+  <div class="inner">
+    <p class="part-n rise">Part one</p>
+    <h2 class="rise" style="--d:1">Clean, and comforted</h2>
+    <p class="range rise" style="--d:2">Verses 1–7</p>
+    <div class="rule"></div>
+    <p class="hook rise" style="--d:4">The promises come first. Then, a worn-out man and a friend at the door.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="1-2" data-hl="let us cleanse ourselves from all filthiness of the flesh and spirit"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise" style="--d:1">The promises come first</h2>
+    <div class="ifthen step">
+      <div class="if"><small>Having</small>these promises: “I will receive you”</div>
+      <span class="arrow" aria-hidden="true">→</span>
+      <div class="then"><small>therefore</small>let us cleanse ourselves</div>
+    </div>
+    <blockquote class="quote step"><p>“Wherefore come out from among them, and be ye separate, saith the Lord, and touch not the unclean thing; and I will receive you, And will be a Father unto you, and ye shall be my sons and daughters, saith the Lord Almighty.”</p><cite>2 Corinthians 6:17–18</cite></blockquote>
+    <p class="note step">Look at the order. God has already said, <em>“I will receive you.”</em> The cleaning isn't the price of getting in. It's what a son does once he knows he's in. You aren't scrubbing yourself to earn a Father. You have one, so you clean house.</p>
+    <p class="note step">“Flesh and spirit” covers both what you do and what you hold on to inside: the habit, and the resentment. Real life today might mean getting rid of a number in your phone, a stash, a site, a grudge. And <em>“perfecting”</em> means finishing a job that's still being done. You are not behind.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="3-4" data-hl="I am filled with comfort, I am exceeding joyful in all our tribulation"></section>
+
+<section class="slide verse" data-v="5-7" data-hl="without were fightings, within were fears|God, that comforteth those that are cast down, comforted us by the coming of Titus"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise">No rest in Macedonia</h2>
+    <div class="split">
+      <div class="stage">
+        <svg data-world viewBox="380 160 260 180" data-towns="Ephesus:l, Troas:r, Philippi!, Corinth*:l" role="img" aria-label="Map of the Aegean. Paul travels from Ephesus up to Troas, across the sea to Macedonia and Philippi, waiting for news. Titus, in a second line, comes up from Corinth to meet him.">
+          <path class="map-route j3" data-via="Ephesus, @27.5 38.5, @27.0 39.4, Troas, @26.0 39.7, @25.6 40.05, @25.2 40.75, @24.5 40.84, Neapolis, Philippi" style="--wait:.4s;--draw:2.2s"/>
+          <path class="map-route j2 r1" data-via="Corinth, Berea, Thessalonica, Philippi" style="--draw:2.2s"/>
+        </svg>
+      </div>
+      <div>
+        <p class="note rise" style="--d:1">Paul left Ephesus for Troas, where a door for the gospel stood open, and he still “had no rest in my spirit, because I found not Titus my brother” (2:13). So he crossed into Macedonia, where Titus was to meet him with news from Corinth.</p>
+        <p class="note step map-go1">And Titus came, up the road from Corinth. <em>“Without were fightings, within were fears.”</em> Paul doesn't dress it up: enemies outside, panic inside. A man of God, and he was a wreck.</p>
+        <p class="note step">Where did the comfort come from? <em>“God, that comforteth those that are cast down”</em>, and He did it through a friend walking in the door. If you're alone and afraid right now, call somebody. God often does His comforting with a man's voice.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ======================= PART TWO: TWO KINDS OF SORROW ======================= -->
+<section class="slide part">
+  <div class="inner">
+    <p class="part-n rise">Part two</p>
+    <h2 class="rise" style="--d:1">Two kinds of sorrow</h2>
+    <p class="range rise" style="--d:2">Verses 8–11</p>
+    <div class="rule"></div>
+    <p class="hook rise" style="--d:4">The same pain can lead to life or to death. What decides it?</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="8-9" data-hl="ye sorrowed to repentance"></section>
+
+<section class="slide verse" data-v="10-11" data-hl="godly sorrow worketh repentance to salvation not to be repented of|the sorrow of the world worketh death"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise" style="--d:1">Two roads out of the same sorrow</h2>
+    <div class="stage"><svg class="c207-roads" viewBox="0 -10 900 410" style="max-height:50vh" role="img" aria-label="Two roads leave the same place, a man who has done wrong and is sorry. The road down is the sorrow of the world: I am the problem, hide it, numb it, and it ends at a wall marked death. The road up is godly sorrow: I did this, tell God and someone, turn and make it right, and it ends in sunlight marked salvation.">
+      <path class="c207-road s" pathLength="1" d="M128 200 L180 200"/>
+      <circle class="c207-dot" cx="80" cy="200" r="50"/>
+      <text class="c207-big" x="80" y="211">Sorry</text>
+      <text class="c207-sm" x="80" y="274">I did wrong</text>
+      <path class="c207-road w" pathLength="1" d="M180 200 C 290 200, 300 310, 430 322 S 640 340, 770 346"/>
+      <path class="c207-road g" pathLength="1" d="M180 200 C 290 200, 300 92, 430 80 S 640 62, 770 54"/>
+      <g class="c207-sign w" style="--k:0"><circle cx="300" cy="266" r="9"/><text x="282" y="300" class="t" style="text-anchor:end">“I'm the problem”</text></g>
+      <g class="c207-sign w" style="--k:1"><circle cx="470" cy="325" r="9"/><text x="470" y="366" class="t">hide it</text></g>
+      <g class="c207-sign w" style="--k:2"><circle cx="622" cy="333" r="9"/><text x="622" y="374" class="t">numb it</text></g>
+      <g class="c207-end w"><rect class="c207-wall" x="770" y="300" width="46" height="90" rx="4"/><text x="793" y="288">death</text></g>
+      <g class="c207-sign g" style="--k:0"><circle cx="300" cy="134" r="9"/><text x="300" y="104" style="text-anchor:end" dx="-14">“I did this”</text></g>
+      <g class="c207-sign g" style="--k:1"><circle cx="470" cy="78" r="9"/><text x="470" y="48">tell God, tell someone</text></g>
+      <g class="c207-sign g" style="--k:2"><circle cx="622" cy="64" r="9"/><text x="622" y="114">turn it around</text></g>
+      <g class="c207-end g"><g><line class="c207-ray" x1="840" y1="54" x2="858" y2="54"/><line class="c207-ray" x1="816" y1="22" x2="826" y2="12"/><line class="c207-ray" x1="816" y1="86" x2="826" y2="96"/><line class="c207-ray" x1="793" y1="8" x2="793" y2="-2"/></g><circle class="c207-sun" cx="798" cy="54" r="26"/><text x="798" y="118">salvation</text></g>
+    </svg></div>
+    <div class="c207-pair">
+      <p class="note step c207-n1"><b>The sorrow of the world.</b> It's about me: what a loser, what will people think. It ends in hiding and numbing, and the numbing is the next drink. Verse 10 calls the end of that road <em>“death.”</em></p>
+      <p class="note step c207-n2"><b>Godly sorrow.</b> It's about what I did, to God and to people, and it runs <em>toward</em> Him. It ends in <em>“salvation,”</em> and in a turning you'll never have to take back.</p>
+    </div>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise">Same night, same failure, two men</h2>
+    <div class="columns">
+      <div class="col law step"><p class="who">Judas</p><h3>Sorry, and alone</h3><p><em>“I have sinned in that I have betrayed the innocent blood.”</em> He even confessed, to the wrong people. “See thou to that,” they said. He took his sorrow to men who had nothing for him, and it ended in the dark (Matthew 27:3–5).</p></div>
+      <div class="col grace step"><p class="who">Peter</p><h3>Sorry, and turned</h3><p><em>“And Peter went out, and wept bitterly.”</em> He'd denied Jesus three times. But he stayed among the disciples, and on the shore Jesus asked him three times, <em>“lovest thou me?”</em>, once for each denial, and handed him his work back (John 21:15–17).</p></div>
+    </div>
+    <p class="note step">Both men were truly sorry. Being sorry isn't the test, because feeling bad is cheap. The test is where the sorrow goes. Judas carried his to the people who couldn't help him and never to the One who could. Peter carried his back to Jesus.</p>
+    <p class="note step">If your thoughts have gone to Judas's end, don't carry that alone. Tell your sponsor or pastor today, or call a crisis line (988 in the US). That voice saying you're finished is the sorrow of the world. It isn't God's.</p>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise">What godly sorrow made in Corinth</h2>
+    <p class="note rise" style="--d:1">Paul lists seven things (7:11). That's how you know it was the real kind: it did something.</p>
+    <ol class="c207-fruit">
+      <li class="rise" style="--d:2"><b>Carefulness</b><span>Taking it seriously, not shrugging it off</span></li>
+      <li class="rise" style="--d:3"><b>Clearing of yourselves</b><span>Setting the record straight, honestly</span></li>
+      <li class="rise" style="--d:4"><b>Indignation</b><span>Anger at the sin, not at yourself</span></li>
+      <li class="rise" style="--d:5"><b>Fear</b><span>Respect for God, enough to stay away from it</span></li>
+      <li class="rise" style="--d:6"><b>Vehement desire</b><span>A longing to be right with them again</span></li>
+      <li class="rise" style="--d:7"><b>Zeal</b><span>Energy to do the right thing now</span></li>
+      <li class="rise" style="--d:8"><b>Revenge</b><span>Seeing it put right. Not getting even</span></li>
+    </ol>
+    <p class="note step">Notice what's <em>not</em> on the list: beating yourself up for a month. Self-hatred feels like repentance, but it changes nothing. These seven are all <em>things you do</em>. Pick one to do today.</p>
+  </div>
+</section>
+
+<!-- ======================= PART THREE: WHY HE WROTE ======================= -->
+<section class="slide part">
+  <div class="inner">
+    <p class="part-n rise">Part three</p>
+    <h2 class="rise" style="--d:1">Why the hard letter</h2>
+    <p class="range rise" style="--d:2">Verses 12–16</p>
+    <div class="rule"></div>
+    <p class="hook rise" style="--d:4">Hard words, written in love, and the joy that followed.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="12-13" data-hl="our care for you in the sight of God might appear unto you"></section>
+
+<section class="slide verse" data-v="14-16" data-hl="I rejoice therefore that I have confidence in you in all things"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <p class="saying rise">Hard words, <em>soft heart.</em></p>
+    <p class="note rise" style="--d:2">Paul wasn't settling a score. He says why he wrote: <em>“that our care for you in the sight of God might appear unto you”</em> (v. 12). The letter that made them sorry for a while was love in a hard form. He even admits he nearly regretted sending it (v. 8).</p>
+    <p class="note step">So when a brother tells you the truth, and it stings, ask whether he's against you or <em>for</em> you. The man who only says what you want to hear is no friend. And if you're the one who has to say a hard thing, do it the way Paul did, so that the care shows.</p>
+    <p class="note step">And the ending is joy. <em>“I rejoice therefore that I have confidence in you in all things.”</em> The same Paul who wrote the hard letter now says, I trust you. That is where godly sorrow goes: back into the family, trusted again.</p>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise">Something to do with your sorrow today</h2>
+    <ol class="timeline" aria-label="Four steps. Name it: say plainly what you did. Tell Him: confess it to God, who has already promised to receive you. Tell a brother: say it out loud to one man you trust. Make it right: do the one thing you can do about it today.">
+      <li class="lit" style="--k:0"><b>1. Name it</b><span>Say plainly what you did</span><small>no excuses, no “but”</small></li>
+      <li style="--k:1"><b>2. Tell Him</b><span>Confess it to God</span><small>He said “I will receive you”</small></li>
+      <li style="--k:2"><b>3. Tell a brother</b><span>Say it to one man you trust</span><small>out loud, today</small></li>
+      <li style="--k:3"><b>4. Make it right</b><span>One thing you can do about it</span><small>a call, a repayment, an apology</small></li>
+    </ol>
+    <p class="note step">That's the whole road up. None of it is you paying. It's you turning, with God already facing you. And a repentance like that <em>“not to be repented of”</em> means you'll never look back and wish you hadn't.</p>
+  </div>
+</section>
+
+<!-- ======================= CLOSING ======================= -->
+<section class="slide remember">
+  <div class="inner">
+    <h2 class="rise">Points to remember</h2>
+    <ol class="seeds">
+      <li class="step"><span class="topic">Clean</span><span class="seed-q">“Having therefore these promises… let us cleanse ourselves” <cite>7:1</cite></span><span class="take">God receives you first. Cleaning up is what a son does, not what buys the door.</span></li>
+      <li class="step"><span class="topic">Comfort</span><span class="seed-q">“God, that comforteth those that are cast down, comforted us by the coming of Titus” <cite>7:6</cite></span><span class="take">God comforted a worn-out Paul with a friend. Let someone in.</span></li>
+      <li class="step"><span class="topic">Two sorrows</span><span class="seed-q">“Godly sorrow worketh repentance… but the sorrow of the world worketh death” <cite>7:10</cite></span><span class="take">Same pain, two roads. One runs to Jesus and life. One runs inward, to hiding.</span></li>
+      <li class="step"><span class="topic">Turning</span><span class="seed-q">“What carefulness it wrought in you” <cite>7:11</cite></span><span class="take">Real sorrow does something: sets it right, wants to be restored, goes to work.</span></li>
+      <li class="step"><span class="topic">Hard words</span><span class="seed-q">“That our care for you in the sight of God might appear unto you” <cite>7:12</cite></span><span class="take">A hard word from a friend is love. Hear it, and speak it that way.</span></li>
+      <li class="step"><span class="topic">Joy</span><span class="seed-q">“I rejoice therefore that I have confidence in you in all things” <cite>7:16</cite></span><span class="take">A turned-around man gets trusted again. Today isn't the end of your story.</span></li>
+    </ol>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 1 of 6</p>
+      <span class="topic">Clean</span>
+      <h2>What does Paul ask us to clean up, and what comes first?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="1"></blockquote>
+      <blockquote class="quote step"><p>“I will receive you, And will be a Father unto you, and ye shall be my sons and daughters, saith the Lord Almighty.”</p><cite>2 Corinthians 6:17–18</cite></blockquote>
+      <blockquote class="quote step"><p>“For the wages of sin is death; but the gift of God is eternal life through Jesus Christ our Lord.”</p><cite>Romans 6:23</cite></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>Everything that dirties the flesh and the spirit: what you do and what you hold inside. But the promise comes first: God has already said He will receive you and be your Father. So you clean house as a son, not to earn the door.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 2 of 6</p>
+      <span class="topic">Comfort</span>
+      <h2>Where did Paul find comfort when he was worn out?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="5"></blockquote>
+      <blockquote class="quote step" data-q="6"></blockquote>
+      <blockquote class="quote step"><p>“I had no rest in my spirit, because I found not Titus my brother.”</p><cite>2 Corinthians 2:13</cite></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>From God, and God sent it by a friend: Titus walked in with good news. When you're cast down, don't sit alone with it. Call somebody today.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 3 of 6</p>
+      <span class="topic">Two sorrows</span>
+      <h2>What is the difference between godly sorrow and the sorrow of the world?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="10"></blockquote>
+      <blockquote class="quote step"><p>“I have sinned in that I have betrayed the innocent blood.”</p><cite>Matthew 27:4</cite></blockquote>
+      <blockquote class="quote step"><p>“And Peter went out, and wept bitterly.”</p><cite>Luke 22:62</cite></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>Both hurt. Godly sorrow turns toward God and ends in repentance and life. Worldly sorrow is all about me, turns inward to shame and hiding, and ends in death. Judas and Peter were both sorry. Peter took it to Jesus.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 4 of 6</p>
+      <span class="topic">Turning</span>
+      <h2>What did godly sorrow produce in the Corinthians?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="11" data-hl="what carefulness it wrought in you|what clearing of yourselves|what indignation|what vehement desire|what zeal"></blockquote>
+      <blockquote class="quote step" data-q="9" data-hl="ye sorrowed to repentance"></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>Seven things, and all of them were actions: carefulness, clearing themselves, indignation at the sin, fear, longing to be restored, zeal, and putting it right. Real sorrow makes a man do something.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 5 of 6</p>
+      <span class="topic">Hard words</span>
+      <h2>Why did Paul write his hard letter?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="12"></blockquote>
+      <blockquote class="quote step" data-q="8" data-hl="though I made you sorry with a letter"></blockquote>
+      <blockquote class="quote step"><p>“Faithful are the wounds of a friend; but the kisses of an enemy are deceitful.”</p><cite>Proverbs 27:6</cite></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>So that his care for them would show. It wasn't to win an argument or punish anyone. A hard truth from a man who loves you is a gift, and it's how Paul loved them.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 6 of 6</p>
+      <span class="topic">Joy</span>
+      <h2>What gave Paul joy and confidence at the end?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="9" data-hl="Now I rejoice"></blockquote>
+      <blockquote class="quote step" data-q="16"></blockquote>
+      <blockquote class="quote step" data-q="4" data-hl="I am filled with comfort, I am exceeding joyful in all our tribulation"></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>Seeing the Corinthians turn around. A church that took its sorrow to God was back, and Paul could trust them again. If you fell yesterday, this is where a turned-around man ends up: back in the family, and trusted.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide prayer">
+  <div class="inner">
+    <div class="emblem rise"></div>
+    <h2 class="rise" style="--d:1">Prayer requests</h2>
+    <p class="ask-line rise" style="--d:2">What can we pray about for you today? A thing you're sorry about, someone you need to make right with, a hard evening ahead?</p>
+    <blockquote class="quote rise" style="--d:4"><p>“The LORD is nigh unto them that are of a broken heart; and saveth such as be of a contrite spirit.”</p><cite>Psalm 34:18</cite></blockquote>
+  </div>
+</section>
+
+</main>
+
+<script>
+// King James Version, 2 Corinthians chapter 7
+const V = {
+  1: "Having therefore these promises, dearly beloved, let us cleanse ourselves from all filthiness of the flesh and spirit, perfecting holiness in the fear of God.",
+  2: "Receive us; we have wronged no man, we have corrupted no man, we have defrauded no man.",
+  3: "I speak not this to condemn you: for I have said before, that ye are in our hearts to die and live with you.",
+  4: "Great is my boldness of speech toward you, great is my glorying of you: I am filled with comfort, I am exceeding joyful in all our tribulation.",
+  5: "For, when we were come into Macedonia, our flesh had no rest, but we were troubled on every side; without were fightings, within were fears.",
+  6: "Nevertheless God, that comforteth those that are cast down, comforted us by the coming of Titus;",
+  7: "And not by his coming only, but by the consolation wherewith he was comforted in you, when he told us your earnest desire, your mourning, your fervent mind toward me; so that I rejoiced the more.",
+  8: "For though I made you sorry with a letter, I do not repent, though I did repent: for I perceive that the same epistle hath made you sorry, though it were but for a season.",
+  9: "Now I rejoice, not that ye were made sorry, but that ye sorrowed to repentance: for ye were made sorry after a godly manner, that ye might receive damage by us in nothing.",
+  10: "For godly sorrow worketh repentance to salvation not to be repented of: but the sorrow of the world worketh death.",
+  11: "For behold this selfsame thing, that ye sorrowed after a godly sort, what carefulness it wrought in you, yea, what clearing of yourselves, yea, what indignation, yea, what fear, yea, what vehement desire, yea, what zeal, yea, what revenge! In all things ye have approved yourselves to be clear in this matter.",
+  12: "Wherefore, though I wrote unto you, I did it not for his cause that had done the wrong, nor for his cause that suffered wrong, but that our care for you in the sight of God might appear unto you.",
+  13: "Therefore we were comforted in your comfort: yea, and exceedingly the more joyed we for the joy of Titus, because his spirit was refreshed by you all.",
+  14: "For if I have boasted any thing to him of you, I am not ashamed; but as we spake all things to you in truth, even so our boasting, which I made before Titus, is found a truth.",
+  15: "And his inward affection is more abundant toward you, whilst he remembereth the obedience of you all, how with fear and trembling ye received him.",
+  16: "I rejoice therefore that I have confidence in you in all things."
+};
+const BOOK = "2 Corinthians 7";
+</script>
+<script src="../assets/deck.js"></script>
+</body>
+</html>
