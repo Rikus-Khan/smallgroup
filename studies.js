@@ -14880,5 +14880,90 @@ window.STUDIES = [
       "big": "Don't drift from a salvation this great. The Son of God stepped down below the angels, died for every man, broke the devil's hold and the fear of death, and now stands by us as a brother who isn't ashamed of us and a priest who knows temptation from the inside."
     },
     "url": "studies/hebrews-02.html"
+  },
+  {
+    "id": "hebrews-05",
+    "type": "chapter",
+    "book": "Hebrews",
+    "ch": 5,
+    "date": "2026-10-31",
+    "title": "Hebrews 5",
+    "sub": "A priest who knows",
+    "about": "Jesus is a high priest who prayed with strong crying and tears and is gentle with men who have wandered off the road. Then a hard question: why are you still on milk?",
+    "tags": [
+      "High priest",
+      "Compassion",
+      "Prayer",
+      "Obedience",
+      "Spiritual growth",
+      "Discernment"
+    ],
+    "url": "studies/hebrews-05.html",
+    "overview": {
+      "where": "A letter to Hebrew believers; the writer and the place are not named",
+      "when": "About AD 64 to 68, before the temple fell",
+      "people": [
+        "jesus",
+        "aaron",
+        "melchisedec"
+      ],
+      "places": [
+        "gethsemane"
+      ],
+      "story": [
+        "Every high priest is taken from among men to offer gifts and sacrifices, and can have compassion on the ignorant and on them that are out of the way (1–3).",
+        "No man takes the honour to himself. Christ was called by the Father: “Thou art a priest for ever after the order of Melchisedec” (4–6).",
+        "In the days of His flesh He prayed with strong crying and tears and was heard. He learned obedience by suffering and became the author of eternal salvation (7–10).",
+        "The writer has hard things to say, but his readers are dull of hearing. They ought to be teachers and still need milk (11–12).",
+        "Milk is for babes; strong meat is for the full-grown, whose senses are exercised by use to discern good and evil (13–14)."
+      ],
+      "key": {
+        "ref": "Hebrews 5:9",
+        "text": "And being made perfect, he became the author of eternal salvation unto all them that obey him;"
+      },
+      "big": "Jesus is the high priest every man needs: called by God, tempted like us, and heard in His tears. He is the source of a salvation that lasts for ever. And He means for His people to grow up by using what they hear."
+    }
+  },
+  {
+    "id": "hebrews-06",
+    "type": "chapter",
+    "book": "Hebrews",
+    "ch": 6,
+    "date": "2026-10-31",
+    "title": "Hebrews 6",
+    "sub": "An anchor of the soul",
+    "about": "The hardest warning in Hebrews, then the surest comfort: God has promised and sworn, and our hope is anchored where Jesus has already gone.",
+    "tags": [
+      "Assurance",
+      "Warning",
+      "Spiritual growth",
+      "God's promises",
+      "Hope",
+      "Eternal security"
+    ],
+    "url": "studies/hebrews-06.html",
+    "overview": {
+      "where": "A letter to Hebrew believers; the writer and the place are not named",
+      "when": "About AD 64 to 68, before the temple fell",
+      "people": [
+        "jesus",
+        "holy-spirit",
+        "abraham",
+        "melchisedec"
+      ],
+      "places": [],
+      "story": [
+        "Leave the first principles and go on to maturity, not laying the foundation again (1–3).",
+        "It is impossible, if those once enlightened fall away, to renew them to repentance, for they would crucify the Son of God afresh. Real believers are kept; the warning shakes loose those who only came near (4–6).",
+        "The same rain falls on two fields: one brings forth herbs and is blessed, the other thorns and briers (7–8).",
+        "“But, beloved, we are persuaded better things of you.” God will not forget their labour of love. Be diligent, with faith and patience (9–12).",
+        "God promised Abraham and swore by Himself. By two immutable things we have strong consolation: a hope that is an anchor of the soul, fastened within the veil, where Jesus our forerunner has entered (13–20)."
+      ],
+      "key": {
+        "ref": "Hebrews 6:19",
+        "text": "Which hope we have as an anchor of the soul, both sure and stedfast, and which entereth into that within the veil;"
+      },
+      "big": "The warning is real, but so is the comfort: a man truly saved is kept, because Christ died once for all. God's promise and oath cannot fail, and our hope is anchored in heaven, where Jesus has gone for us."
+    }
   }
 ];

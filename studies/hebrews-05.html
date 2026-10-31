@@ -1,0 +1,516 @@
+<!doctype html>
+<html lang="en" data-theme="scribe">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Hebrews 5</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="../assets/fonts.css">
+<link rel="stylesheet" href="../assets/deck.css">
+<link rel="stylesheet" href="../assets/themes.css">
+<style>
+/* he05-where: where we are in Hebrews (a deck.css candidate; Hebrews 6 copies it as is).
+   A strip of 13 chapter cells (.he05-c, the current one .now), the book's six stretches under them (.he05-g, grid-column spans),
+   and the five warning passages over them (.he05-w, grid-column spans; the one we are reading .now). */
+.he05-where { display: grid; grid-template-columns: repeat(13, 1fr); gap: 6px 4px; margin: .4em 0 1.4em; }
+.he05-w { grid-row: 1; align-self: end; position: relative; height: 1.5rem; border: 2px solid color-mix(in srgb, var(--danger) 55%, transparent); border-bottom: 0; border-radius: 8px 8px 0 0;
+  font: 700 clamp(.6rem, .55rem + .2vw, .78rem)/1 var(--sans); letter-spacing: .06em; color: var(--danger); text-align: center; padding-top: .25em; white-space: nowrap; overflow: hidden;
+  opacity: 0; transition: opacity .6s ease 1.6s; }
+.slide.active .he05-w { opacity: .8; }
+.he05-w.now { border-color: var(--danger); background: color-mix(in srgb, var(--danger) 12%, transparent); opacity: 0; }
+.slide.active .he05-w.now { opacity: 1; }
+.he05-c { grid-row: 2; display: grid; place-items: center; height: clamp(2rem, 1.5rem + 2vw, 3rem); border-radius: 6px; border: 1.5px solid var(--line-strong); background: var(--surface);
+  font: 700 clamp(.85rem, .75rem + .5vw, 1.3rem) var(--sans); color: var(--ink-soft);
+  opacity: 0; transform: translateY(8px); transition: opacity .5s ease, transform .5s ease; transition-delay: calc(var(--k, 0) * 70ms + 200ms); }
+.slide.active .he05-c { opacity: 1; transform: none; }
+.he05-c.now { background: var(--accent); border-color: var(--accent); color: var(--on-accent); }
+.slide.active .he05-c.now { animation: he05-here 2.4s ease-in-out 1.8s infinite; }
+@keyframes he05-here { 50% { box-shadow: 0 0 0 6px color-mix(in srgb, var(--accent) 30%, transparent); } }
+.he05-g { grid-row: 3; padding: .35em .2em 0; border-top: 3px solid var(--line-strong); text-align: center;
+  font: 600 clamp(.66rem, .58rem + .4vw, 1.02rem)/1.15 var(--serif); color: var(--ink-soft);
+  opacity: 0; transition: opacity .6s ease 1.1s; }
+.slide.active .he05-g { opacity: 1; }
+.he05-g.now { border-top-color: var(--accent); color: var(--accent-hot); }
+.he05-g small { display: block; font: 400 .8em var(--sans); color: var(--ink-soft); }
+@media (max-width: 640px) { .he05-g small { display: none; } .he05-w { font-size: 0; } .he05-w::after { content: "!"; font-size: .8rem; } }
+
+/* he05-between: a priest standing between God and men, a hand toward each; one man has wandered off the road */
+.he05-sky { fill: color-mix(in srgb, var(--glow) 55%, transparent); }
+.he05-road { fill: none; stroke: var(--line-strong); stroke-width: 4; stroke-linecap: round; }
+.he05-man { fill: var(--ink-soft); }
+.he05-lost { fill: var(--wine); opacity: 0; transition: opacity .8s ease 1.4s; }
+.slide.active .he05-lost { opacity: 1; }
+.he05-priest { fill: var(--accent); }
+.he05-arm { fill: none; stroke: var(--accent); stroke-width: 7; stroke-linecap: round; }
+.he05-arrow { fill: none; stroke-width: 3.5; stroke-dasharray: 1; stroke-dashoffset: 1; transition: stroke-dashoffset 1.4s ease; }
+.he05-arrow.up { stroke: var(--accent-hot); transition-delay: .8s; }
+.he05-arrow.down { stroke: var(--wine); transition-delay: 1.8s; }
+.slide.active .he05-arrow { stroke-dashoffset: 0; }
+.he05-lbl { font-size: 17px; }
+.he05-lbl.soft { fill: var(--ink-soft); font-size: 15px; }
+.he05-lbl.hot { fill: var(--accent-hot); font-weight: 700; }
+.he05-lbl.wine { fill: var(--wine); font-weight: 700; }
+
+/* he05-garden: Gethsemane at night. A man kneels under the olive trees, drops fall, the disciples sleep,
+   and the city sits dark across the valley. Lines of verse 7 appear in turn (.he05-say, --k). */
+.he05-night { fill: var(--on-glow); }
+.he05-star { fill: var(--glow); opacity: .55; }
+.he05-moon { fill: var(--glow); }
+.he05-city { fill: color-mix(in srgb, var(--glow) 16%, var(--on-glow)); }
+.he05-ground { fill: color-mix(in srgb, var(--glow) 9%, var(--on-glow)); }
+.he05-trunk { fill: color-mix(in srgb, var(--glow) 30%, var(--on-glow)); }
+.he05-leaf { fill: color-mix(in srgb, var(--cool) 40%, var(--on-glow)); }
+.he05-kneel { fill: var(--glow); }
+.he05-rock { fill: color-mix(in srgb, var(--glow) 24%, var(--on-glow)); }
+.he05-lit { fill: var(--warm); opacity: .75; }
+.he05-sleep { fill: color-mix(in srgb, var(--glow) 40%, var(--on-glow)); }
+.he05-drop { fill: var(--danger); opacity: 0; }
+.slide.active .he05-drop { animation: he05-fall 2.6s ease-in infinite; animation-delay: calc(var(--k, 0) * .7s + 1s); }
+@keyframes he05-fall { 0% { opacity: 0; transform: translateY(0); } 15% { opacity: .9; } 100% { opacity: 0; transform: translateY(34px); } }
+.he05-say { fill: var(--glow); font-family: var(--serif); font-size: 21px; font-style: italic; opacity: 0; transition: opacity .9s ease; transition-delay: calc(var(--k, 0) * 1.1s + .8s); }
+.slide.active .he05-say { opacity: 1; }
+.he05-tag { fill: color-mix(in srgb, var(--glow) 65%, var(--on-glow)); font-size: 14px; }
+
+/* he05-grow: a growth chart. The line they should have climbed (dashed), the line they are on (flat, at milk),
+   and on a .he05-use step, the line that climbs "by reason of use" */
+.he05-axis { stroke: var(--line-strong); stroke-width: 2.5; fill: none; }
+.he05-band { fill: color-mix(in srgb, var(--accent) 6%, transparent); }
+.he05-ought { fill: none; stroke: var(--ink-soft); stroke-width: 3; stroke-dasharray: 8 8; opacity: 0; transition: opacity 1s ease .4s; }
+.slide.active .he05-ought { opacity: .8; }
+.he05-flat, .he05-climb { fill: none; stroke-width: 6; stroke-linecap: round; stroke-dasharray: 1; stroke-dashoffset: 1; }
+.he05-flat { stroke: var(--danger); transition: stroke-dashoffset 2.2s ease 1.2s; }
+.slide.active .he05-flat { stroke-dashoffset: 0; }
+.he05-climb { stroke: var(--accent-hot); transition: stroke-dashoffset 2.4s ease .2s; }
+.slide:has(.he05-use.on) .he05-climb { stroke-dashoffset: 0; }
+.he05-climb-lbl { opacity: 0; transition: opacity .8s ease 2s; }
+.slide:has(.he05-use.on) .he05-climb-lbl { opacity: 1; }
+.he05-g-lbl { font-size: 17px; font-weight: 700; }
+.he05-g-sub { font-size: 14px; fill: var(--ink-soft); }
+.he05-icon { fill: none; stroke: var(--accent); stroke-width: 3; stroke-linecap: round; stroke-linejoin: round; }
+</style>
+</head>
+<body>
+<main class="deck" id="deck">
+
+<!-- ======================= OPENING ======================= -->
+<section class="slide title">
+  <div class="inner">
+    <div class="emblem rise"></div>
+    <h1 class="rise" style="--d:1">Hebrews 5</h1>
+    <p class="sub rise" style="--d:3">A priest who knows</p>
+    <p class="tag rise" style="--d:5">Jesus is a high priest who prayed with strong crying and tears, and He can be gentle with men who have wandered off the road. Then the writer asks a hard question: why are you still on milk?</p>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise" style="--d:1">Where we are in Hebrews</h2>
+    <div class="he05-where" role="img" aria-label="Thirteen chapters in six stretches: better than the angels, chapters 1 and 2; better than Moses, 3 and 4; a better priest, 5 to 7; a better covenant and sacrifice, 8 to 10; by faith, 11; run and hold fast, 12 and 13. Five warning passages sit over chapters 2, 3 and 4, 5 and 6, 10 and 12. We are in chapter 5, at the start of a better priest.">
+      <span class="he05-w" style="grid-column:2">WARNING</span>
+      <span class="he05-w" style="grid-column:3 / span 2">WARNING</span>
+      <span class="he05-w now" style="grid-column:5 / span 2">WARNING</span>
+      <span class="he05-w" style="grid-column:10">WARNING</span>
+      <span class="he05-w" style="grid-column:12">WARNING</span>
+      <span class="he05-c" style="--k:0">1</span><span class="he05-c" style="--k:1">2</span><span class="he05-c" style="--k:2">3</span><span class="he05-c" style="--k:3">4</span>
+      <span class="he05-c now" style="--k:4">5</span><span class="he05-c" style="--k:5">6</span><span class="he05-c" style="--k:6">7</span><span class="he05-c" style="--k:7">8</span>
+      <span class="he05-c" style="--k:8">9</span><span class="he05-c" style="--k:9">10</span><span class="he05-c" style="--k:10">11</span><span class="he05-c" style="--k:11">12</span><span class="he05-c" style="--k:12">13</span>
+      <span class="he05-g" style="grid-column:1 / span 2">Better than angels<small>1–2</small></span>
+      <span class="he05-g" style="grid-column:3 / span 2">Better than Moses<small>3–4</small></span>
+      <span class="he05-g now" style="grid-column:5 / span 3">A better priest<small>5–7</small></span>
+      <span class="he05-g" style="grid-column:8 / span 3">A better covenant<small>8–10</small></span>
+      <span class="he05-g" style="grid-column:11">By faith<small>11</small></span>
+      <span class="he05-g" style="grid-column:12 / span 2">Hold fast<small>12–13</small></span>
+    </div>
+    <p class="note rise" style="--d:2">Chapter 4 ended with <em>“we have not an high priest which cannot be touched with the feeling of our infirmities.”</em> Now the writer slows down and explains what a high priest is, and why Jesus is the one we need.</p>
+    <p class="note step">Halfway through, he stops to warn his readers. They have been believers long enough to teach others, and they are still babies. That warning runs into chapter 6.</p>
+  </div>
+</section>
+
+<section class="slide watch">
+  <div class="inner">
+    <h2 class="rise">Things to watch for</h2>
+    <p class="lede rise" style="--d:1">Keep these questions in the back of your mind as we read. We'll come back to every one of them at the end.</p>
+    <ol class="seeds">
+      <li class="step"><span class="topic">A priest who understands</span><span class="seed-q">Why can a high priest have compassion on men who have gone astray?</span></li>
+      <li class="step"><span class="topic">Called of God</span><span class="seed-q">Who made Jesus a high priest, and after what order?</span></li>
+      <li class="step"><span class="topic">Strong crying and tears</span><span class="seed-q">What did Jesus do in the days of His flesh, when death was in front of Him?</span></li>
+      <li class="step"><span class="topic">Eternal salvation</span><span class="seed-q">What did Jesus become for all them that obey Him?</span></li>
+      <li class="step"><span class="topic">Milk and meat</span><span class="seed-q">Why were these believers still on milk when they ought to have been teachers?</span></li>
+      <li class="step"><span class="topic">Growing up</span><span class="seed-q">How does a man get his senses exercised to discern good and evil?</span></li>
+    </ol>
+  </div>
+</section>
+
+<!-- ======================= PART ONE ======================= -->
+<section class="slide part">
+  <div class="inner">
+    <p class="part-n rise">Part one</p>
+    <h2 class="rise" style="--d:1">Taken from among men</h2>
+    <p class="range rise" style="--d:2">Verses 1–6</p>
+    <div class="rule"></div>
+    <p class="hook rise" style="--d:4">A priest stands between God and men. The best one knows what it is to be a man.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="1-3" data-hl="taken from among men is ordained for men in things pertaining to God|Who can have compassion on the ignorant, and on them that are out of the way|he himself also is compassed with infirmity"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise" style="--d:1">A man in the middle</h2>
+    <div class="stage">
+      <svg viewBox="0 4 680 266" style="max-height:38vh" role="img" aria-label="Light at the top: in things pertaining to God. A high priest stands in the middle, one arm raised to God and one reaching down to a row of men on a road. An arrow goes up: gifts and sacrifices for sins. An arrow comes down: compassion. One man has wandered off the road: out of the way.">
+        <rect class="he05-sky" x="120" y="8" width="440" height="44" rx="22"/>
+        <text class="he05-lbl" x="340" y="37" text-anchor="middle">in things pertaining to God</text>
+        <path class="he05-arrow up" pathLength="1" d="M270 150 C256 120 262 90 282 60"/>
+        <path class="he05-arrow up" pathLength="1" d="M270 72 L282 58 L288 76"/>
+        <text class="he05-lbl hot" x="252" y="112" text-anchor="end">gifts and sacrifices</text>
+        <circle class="he05-priest" cx="340" cy="112" r="15"/>
+        <path class="he05-priest" d="M318 186 L322 140 Q340 128 358 140 L362 186 Z"/>
+        <path class="he05-arm" d="M326 146 L306 112 L300 84"/>
+        <path class="he05-arm" d="M354 150 L376 176 L392 196"/>
+        <text class="he05-lbl" x="340" y="212" text-anchor="middle" font-weight="700">the high priest</text>
+        <path class="he05-arrow down" pathLength="1" d="M400 168 C430 190 450 214 470 232"/>
+        <text class="he05-lbl wine" x="420" y="172">compassion</text>
+        <path class="he05-road" d="M30 262 L650 262"/>
+        <g class="he05-man"><circle cx="70" cy="226" r="9"/><path d="M60 258 L62 238 Q70 232 78 238 L80 258 Z"/></g>
+        <g class="he05-man"><circle cx="130" cy="226" r="9"/><path d="M120 258 L122 238 Q130 232 138 238 L140 258 Z"/></g>
+        <g class="he05-man"><circle cx="190" cy="226" r="9"/><path d="M180 258 L182 238 Q190 232 198 238 L200 258 Z"/></g>
+        <g class="he05-man"><circle cx="250" cy="226" r="9"/><path d="M240 258 L242 238 Q250 232 258 238 L260 258 Z"/></g>
+        <g class="he05-lost"><circle cx="520" cy="228" r="9"/><path d="M510 260 L512 240 Q520 234 528 240 L530 260 Z"/></g>
+        <path class="he05-road" style="stroke-dasharray:6 8;stroke-width:3" d="M470 262 C490 252 500 246 512 252"/>
+        <text class="he05-lbl wine" x="545" y="236">out of the way</text>
+        <text class="he05-lbl soft" x="160" y="200" text-anchor="middle">men</text>
+      </svg>
+    </div>
+    <p class="note step">A high priest was <em>“taken from among men”</em> to carry their sacrifices to God and to deal gently with them: <em>“the ignorant,”</em> who sin without fully knowing it, and men <em>“out of the way,”</em> wandered off the road. He was weak too, and offered for his own sins first (v. 3).</p>
+    <p class="note step">Jesus had no sin of His own (4:15), but He was a real man, tired, tempted and hurting. He isn't harsh with the man who wandered off yesterday. He comes down the road to get him.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="4-6" data-hl="no man taketh this honour unto himself, but he that is called of God, as was Aaron|Christ glorified not himself|Thou art a priest for ever after the order of Melchisedec"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="4-5" data-hl="called of God, as was Aaron|Christ glorified not himself"></blockquote>
+    <h2 class="rise" style="--d:1">Called, not self-made</h2>
+    <div class="columns">
+      <div class="col law step"><span class="who">The old priesthood</span><h3>Aaron</h3><p>Chosen by God, not by a vote (Exodus 28:1). A sinner like the men he served, offering for himself first. He died, and his sons took over.</p></div>
+      <div class="col grace step"><span class="who">The new priesthood</span><h3>Jesus</h3><p>Called by the Father: <em>“Thou art my Son”</em> (Psalm 2:7) and <em>“Thou art a priest for ever”</em> (Psalm 110:4). Tempted, yet without sin. He never dies, so He never hands the job to anyone else.</p></div>
+    </div>
+    <p class="note step">Nobody could grab the high priest's job. Even Jesus <em>“glorified not himself.”</em> He didn't promote Himself; the Father put Him there. That means the man standing up for you before God is there by God's own appointment. The Father wants Him to help you.</p>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="6" data-hl="after the order of Melchisedec"></blockquote>
+    <h2 class="rise" style="--d:1">Who was Melchisedec?</h2>
+    <ol class="timeline" aria-label="About 2000 BC, Melchizedek, king of Salem and priest of the most high God, meets Abram, Genesis 14. About 1440 BC, Aaron is made the first high priest at Sinai, Exodus 28. About 1000 BC, David writes Psalm 110: a priest for ever after the order of Melchizedek. About AD 30 to 33, Jesus dies, rises and ascends. About AD 64 to 68, Hebrews is written.">
+      <li style="--k:0"><b>about 2000 BC</b><span>Melchizedek, king of Salem, blesses Abram</span><small>Genesis 14:18–20</small></li>
+      <li style="--k:1"><b>about 1440 BC</b><span>Aaron made high priest at Sinai</span><small>Exodus 28</small></li>
+      <li style="--k:2"><b>about 1000 BC</b><span>David: “a priest for ever after the order of Melchizedek”</span><small>Psalm 110:4</small></li>
+      <li class="lit" style="--k:3"><b>about AD 30 to 33</b><span>Jesus dies, rises, and enters heaven</span><small>Hebrews 4:14</small></li>
+      <li class="wait" style="--k:4"><b>about AD 64 to 68</b><span>Hebrews written</span><small>Hebrews 5:6</small></li>
+    </ol>
+    <blockquote class="quote step"><p>“And Melchizedek king of Salem brought forth bread and wine: and he was the priest of the most high God.”</p><cite>Genesis 14:18</cite></blockquote>
+    <p class="note step">Melchisedec (the Old Testament spells it Melchizedek) was a king and a priest in Salem, the old name of Jerusalem, centuries <em>before</em> Aaron. Jesus wasn't from the priestly tribe of Levi; He was from Judah. So God made Him a priest of an older, higher order. Chapter 7 tells the whole story.</p>
+  </div>
+</section>
+
+<!-- ======================= PART TWO ======================= -->
+<section class="slide part">
+  <div class="inner">
+    <p class="part-n rise">Part two</p>
+    <h2 class="rise" style="--d:1">In the days of his flesh</h2>
+    <p class="range rise" style="--d:2">Verses 7–10</p>
+    <div class="rule"></div>
+    <p class="hook rise" style="--d:4">Our high priest knows the worst night of a man's life from the inside.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="7-8" data-hl="with strong crying and tears|was heard in that he feared|learned he obedience by the things which he suffered"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="7" data-hl="with strong crying and tears"></blockquote>
+    <h2 class="rise" style="--d:1">Gethsemane</h2>
+    <div class="stage">
+      <svg viewBox="0 0 680 300" role="img" aria-label="Night in the garden of Gethsemane. A full moon over the dark city of Jerusalem across the valley. Under the olive trees a man kneels with his face to the ground, and drops fall from him to the earth. Further off, the disciples lie asleep. Words appear in the sky: prayers and supplications, strong crying and tears, and was heard.">
+        <rect class="he05-night" x="0" y="0" width="680" height="300" rx="16"/>
+        <circle class="he05-star" cx="60" cy="30" r="2"/><circle class="he05-star" cx="150" cy="58" r="1.6"/><circle class="he05-star" cx="250" cy="24" r="2"/>
+        <circle class="he05-star" cx="380" cy="46" r="1.6"/><circle class="he05-star" cx="470" cy="20" r="2"/><circle class="he05-star" cx="640" cy="90" r="1.6"/>
+        <circle class="he05-moon" cx="590" cy="48" r="24"/>
+        <path class="he05-city" d="M0 176 L0 132 L22 132 L22 118 L38 118 L38 132 L76 132 L76 112 L88 112 L88 132 L104 132 L104 96 L120 96 L120 84 L176 84 L176 96 L192 96 L192 130 L232 130 L232 116 L246 116 L246 130 L280 130 L280 120 L292 120 L292 134 L320 134 L320 176 Z"/>
+        <rect class="he05-lit" x="140" y="100" width="7" height="10"/><rect class="he05-lit" x="152" y="100" width="7" height="10"/><rect class="he05-lit" x="28" y="138" width="5" height="7"/><rect class="he05-lit" x="238" y="138" width="5" height="7"/>
+        <text class="he05-tag" x="160" y="166" text-anchor="middle">Jerusalem and the temple, across the valley</text>
+        <path class="he05-ground" d="M0 300 L0 190 C120 170 260 180 360 196 C470 212 580 190 680 176 L680 300 Z"/>
+        <path class="he05-trunk" d="M402 248 C398 222 412 204 404 180 L414 180 C420 204 410 224 418 248 Z"/>
+        <path class="he05-leaf" d="M360 188 C346 160 376 136 410 142 C440 126 478 148 466 176 C474 196 440 206 418 196 C398 206 368 206 360 188 Z"/>
+        <path class="he05-trunk" d="M598 236 C594 214 606 196 600 174 L610 174 C616 196 606 216 612 236 Z"/>
+        <path class="he05-leaf" d="M560 180 C548 156 576 134 606 140 C632 128 664 148 654 172 C660 190 632 198 612 190 C594 198 566 198 560 180 Z"/>
+        <g transform="translate(0 26)"><path class="he05-trunk" d="M58 266 C54 240 66 222 60 198 L70 198 C76 222 66 242 72 266 Z"/>
+        <path class="he05-leaf" d="M20 206 C8 180 36 158 66 164 C92 152 122 172 112 196 C118 214 92 222 72 214 C54 222 26 222 20 206 Z"/></g>
+        <path class="he05-rock" d="M222 266 C220 246 236 234 258 236 C276 236 288 246 288 266 Z"/>
+        <g class="he05-kneel">
+          <circle cx="282" cy="228" r="9.5"/>
+          <path d="M290 222 C304 216 320 222 326 238 L330 252 L346 252 C352 252 354 266 346 266 L312 266 C306 266 304 258 308 252 L304 244 C298 240 292 236 290 230 Z"/>
+          <path d="M296 232 L280 244 L266 240" style="fill:none;stroke:var(--glow);stroke-width:6.5;stroke-linecap:round;stroke-linejoin:round"/>
+        </g>
+        <ellipse class="he05-drop" style="--k:0" cx="278" cy="244" rx="2.4" ry="3.6"/>
+        <ellipse class="he05-drop" style="--k:1" cx="290" cy="248" rx="2.4" ry="3.6"/>
+        <ellipse class="he05-drop" style="--k:2" cx="300" cy="250" rx="2.4" ry="3.6"/>
+        <g class="he05-sleep"><ellipse cx="500" cy="262" rx="26" ry="7"/><circle cx="470" cy="258" r="7"/><ellipse cx="560" cy="268" rx="24" ry="6.5"/><circle cx="532" cy="264" r="6.5"/><ellipse cx="620" cy="262" rx="24" ry="6.5"/><circle cx="592" cy="258" r="6.5"/></g>
+        <text class="he05-tag" x="560" y="290" text-anchor="middle">the disciples, asleep</text>
+        <text class="he05-say" style="--k:0" x="340" y="80" text-anchor="middle">prayers and supplications</text>
+        <text class="he05-say" style="--k:1" x="340" y="110" text-anchor="middle">with strong crying and tears</text>
+        <text class="he05-say" style="--k:2" x="340" y="140" text-anchor="middle">and was heard</text>
+      </svg>
+    </div>
+    <p class="note step">This is Gethsemane, the night before the cross. Jesus fell on His face. Luke says His sweat fell <em>“as it were great drops of blood”</em> (Luke 22:44). His closest friends slept through it.</p>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="8" data-hl="learned he obedience by the things which he suffered"></blockquote>
+    <h2 class="rise" style="--d:1">Heard, and obedient</h2>
+    <blockquote class="quote rise" style="--d:2"><p>“And he went a little further, and fell on his face, and prayed, saying, O my Father, if it be possible, let this cup pass from me: nevertheless not as I will, but as thou wilt.”</p><cite>Matthew 26:39</cite></blockquote>
+    <p class="note step"><em>“Heard in that he feared”</em> (v. 7): <em>feared</em> means holy reverence, a Son's trust in His Father. God heard Him. He didn't skip the cross, but He was brought out of death: three days later the tomb was empty.</p>
+    <p class="note step"><em>“Learned he obedience”</em> doesn't mean He was ever disobedient. He learned, by doing it, what obeying costs when everything in a man wants out.</p>
+    <p class="note step">When you are on your face at night with nothing left but crying, you are praying to Someone who has been there. Strong crying and tears are a real prayer.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="9-10" data-hl="he became the author of eternal salvation unto all them that obey him|Called of God an high priest"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="9" data-hl="the author of eternal salvation"></blockquote>
+    <h2 class="rise" style="--d:1">The author of eternal salvation</h2>
+    <div class="morph">
+      <span class="big rise" style="--d:3">αἴτιος</span>
+      <span class="say step">said <em class="gk">aitios</em></span>
+      <span class="means step">the cause, the source: the one it all comes from</span>
+    </div>
+    <p class="note step"><em>“Being made perfect”</em> means made complete for the job, not fixed from a flaw. Through the cross He became the source of a salvation that is <em>eternal</em>: it doesn't run out, and it doesn't wear off when you have a bad week.</p>
+    <p class="note step"><em>“Unto all them that obey him.”</em> The first thing He asks is to trust Him: <em>“This is the work of God, that ye believe on him whom he hath sent”</em> (John 6:29). Saving faith then shows itself in following Him, one day at a time.</p>
+  </div>
+</section>
+
+<!-- ======================= PART THREE ======================= -->
+<section class="slide part">
+  <div class="inner">
+    <p class="part-n rise">Part three</p>
+    <h2 class="rise" style="--d:1">Milk and strong meat</h2>
+    <p class="range rise" style="--d:2">Verses 11–14</p>
+    <div class="rule"></div>
+    <p class="hook rise" style="--d:4">A baby on milk is fine. A grown man still on the bottle has a problem.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="11-12" data-hl="ye are dull of hearing|when for the time ye ought to be teachers|have need of milk, and not of strong meat"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="11-12" data-hl="dull of hearing|ye ought to be teachers"></blockquote>
+    <h2 class="rise" style="--d:1">Dull of hearing</h2>
+    <p class="saying rise" style="--d:2">Not <em>slow to learn.</em> Slow to <em>listen.</em></p>
+    <p class="note step">The writer wants to say <em>“many things”</em> about Melchisedec, but he can't yet. The problem isn't the subject; it's the hearers. <em>Dull</em> means sluggish, lazy in the ears. They weren't new: <em>“for the time,”</em> as long as they had been believers, they should have been teaching others. Instead they needed the ABCs again.</p>
+    <p class="note step">Nobody here should feel bad for being new. But a man can sit in church for years and stay a baby, because he hears and never does anything with it. The cure starts with your ears: open the Book, listen, and act on one thing.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="13-14" data-hl="for he is a babe|strong meat belongeth to them that are of full age|by reason of use have their senses exercised to discern both good and evil"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise" style="--d:1">A growth chart</h2>
+    <div class="stage">
+      <svg viewBox="0 0 680 290" role="img" aria-label="A growth chart. Up the side: babe, on milk; growing; full age, on strong meat. Across the bottom: time in the faith. A dashed line climbs: where they ought to be by now, teachers. A red line stays flat at the bottom: dull of hearing, still on milk. On the next step a bright line climbs from it to full age: by reason of use.">
+        <rect class="he05-band" x="150" y="36" width="510" height="60" rx="6"/>
+        <path class="he05-axis" d="M150 20 L150 250 L660 250"/>
+        <text class="he05-g-lbl" x="138" y="60" text-anchor="end">full age</text><text class="he05-g-sub" x="138" y="80" text-anchor="end">strong meat</text>
+        <text class="he05-g-lbl" x="138" y="146" text-anchor="end">growing</text>
+        <text class="he05-g-lbl" x="138" y="222" text-anchor="end">babe</text><text class="he05-g-sub" x="138" y="242" text-anchor="end">milk</text>
+        <path class="he05-icon" d="M30 210 h18 v8 l4 6 v26 h-26 v-26 l4 -6 z M34 202 h10 v8 h-10 z"/>
+        <circle class="he05-icon" cx="20" cy="66" r="17"/><circle class="he05-icon" cx="20" cy="66" r="9"/><path class="he05-icon" d="M50 50 V82 M45 50 V60 Q50 66 55 60 V50"/>
+        <text class="he05-g-sub" x="660" y="276" text-anchor="end">time in the faith →</text>
+        <path class="he05-ought" d="M160 236 C300 220 420 140 650 52"/>
+        <text class="he05-g-sub" x="656" y="26" text-anchor="end" style="fill:var(--ink)">where they ought to be: “teachers”</text>
+        <path class="he05-flat" pathLength="1" d="M160 236 C220 230 260 240 320 234 C380 228 420 238 470 232"/>
+        <text class="he05-g-lbl" x="320" y="270" text-anchor="middle" style="fill:var(--danger)">dull of hearing: still on milk</text>
+        <path class="he05-climb" pathLength="1" d="M470 232 C520 220 560 150 600 100 C620 76 640 64 656 58"/>
+        <text class="he05-g-lbl he05-climb-lbl" x="560" y="200" style="fill:var(--accent-hot)">by reason of use</text>
+      </svg>
+    </div>
+    <p class="note step he05-use">Milk is <em>“the first principles,”</em> the basics of the gospel; strong meat is the deeper teaching of chapter 7. A babe needs milk. But a man who never moves past it stays a babe, however many years go by.</p>
+    <p class="note step">See where the bright line starts: at the bottom, today. It isn't too late. The red line turns the day you start using what you hear.</p>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="14" data-hl="have their senses exercised to discern both good and evil"></blockquote>
+    <h2 class="rise" style="--d:1">Senses exercised</h2>
+    <div class="morph">
+      <span class="big rise" style="--d:3">γυμνάζω</span>
+      <span class="say step">said <em class="gk">gumnazō</em></span>
+      <span class="means step">to train, like an athlete. Our word <em>gymnasium</em> comes from it.</span>
+    </div>
+    <p class="note step">Discernment is a muscle. Nobody gets strong by reading about push-ups. A bank teller learns to spot a fake bill by handling real ones all day. A man learns to spot a lie, a setup, or a bad friend by handling God's word and then using it in real decisions, again and again: <em>“by reason of use.”</em></p>
+    <p class="note step">Many of these men have had their senses trained the wrong way: to find the next drink, the next hustle. The same training can run the other way. Today, take one verse and use it in one real choice. That is a rep.</p>
+  </div>
+</section>
+
+<!-- ======================= REVIEW ======================= -->
+<section class="slide remember">
+  <div class="inner">
+    <h2 class="rise">Points to remember</h2>
+    <ol class="seeds">
+      <li class="step"><span class="topic">A priest who understands</span><span class="seed-q">“Who can have compassion on the ignorant, and on them that are out of the way” <cite>5:2</cite></span><span class="take">He is gentle with the man who wandered off. He knows what it is to be a man.</span></li>
+      <li class="step"><span class="topic">Called of God</span><span class="seed-q">“Thou art a priest for ever after the order of Melchisedec” <cite>5:6</cite></span><span class="take">The Father put Jesus there, for ever, to stand for you.</span></li>
+      <li class="step"><span class="topic">Strong crying and tears</span><span class="seed-q">“He had offered up prayers and supplications with strong crying and tears” <cite>5:7</cite></span><span class="take">Jesus has been on His face at night. Your hardest prayers are real prayers.</span></li>
+      <li class="step"><span class="topic">Eternal salvation</span><span class="seed-q">“He became the author of eternal salvation unto all them that obey him” <cite>5:9</cite></span><span class="take">He is the source, and what He gives doesn't wear off.</span></li>
+      <li class="step"><span class="topic">Milk and meat</span><span class="seed-q">“Ye are dull of hearing” <cite>5:11</cite></span><span class="take">Time alone doesn't grow a man. Listening and doing does.</span></li>
+      <li class="step"><span class="topic">Growing up</span><span class="seed-q">“By reason of use have their senses exercised to discern both good and evil” <cite>5:14</cite></span><span class="take">Discernment is a muscle. Use the word in real choices, one rep at a time.</span></li>
+    </ol>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 1 of 6</p>
+      <span class="topic">A priest who understands</span>
+      <h2>Why can a high priest have compassion on men who have gone astray?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="1-2" data-hl="taken from among men|for that he himself also is compassed with infirmity"></blockquote>
+      <blockquote class="quote step"><p>“For we have not an high priest which cannot be touched with the feeling of our infirmities; but was in all points tempted like as we are, yet without sin.”</p><cite>Hebrews 4:15</cite></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>Because he is taken from among men and knows weakness himself. Jesus never sinned, but He was a real man and was tempted in every way. He is gentle with the ignorant and with men who wander off the road.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 2 of 6</p>
+      <span class="topic">Called of God</span>
+      <h2>Who made Jesus a high priest, and after what order?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="5-6" data-hl="Christ glorified not himself|Thou art a priest for ever after the order of Melchisedec"></blockquote>
+      <blockquote class="quote step" data-q="10"></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>God the Father called Him, as He called Aaron; Jesus didn't promote Himself. He is a priest for ever after the order of Melchisedec, the king-priest of Salem who came before Aaron.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 3 of 6</p>
+      <span class="topic">Strong crying and tears</span>
+      <h2>What did Jesus do in the days of His flesh, when death was in front of Him?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="7" data-hl="with strong crying and tears"></blockquote>
+      <blockquote class="quote step"><p>“And being in an agony he prayed more earnestly: and his sweat was as it were great drops of blood falling down to the ground.”</p><cite>Luke 22:44</cite></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>He prayed, with strong crying and tears, to the Father who could save Him from death, and He was heard. Then He obeyed all the way to the cross. He knows the worst night of a man's life.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 4 of 6</p>
+      <span class="topic">Eternal salvation</span>
+      <h2>What did Jesus become for all them that obey Him?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="9" data-hl="the author of eternal salvation"></blockquote>
+      <blockquote class="quote step"><p>“Jesus answered and said unto them, This is the work of God, that ye believe on him whom he hath sent.”</p><cite>John 6:29</cite></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>The author, the source, of eternal salvation. It comes from Him, not from us, and it is eternal. The first obedience He asks is to believe on Him; then faith follows Him day by day.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 5 of 6</p>
+      <span class="topic">Milk and meat</span>
+      <h2>Why were these believers still on milk when they ought to have been teachers?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="11-12" data-hl="ye are dull of hearing|have need of milk, and not of strong meat"></blockquote>
+      <blockquote class="quote step"><p>“As newborn babes, desire the sincere milk of the word, that ye may grow thereby:”</p><cite>1 Peter 2:2</cite></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>They had become dull of hearing: lazy in listening. Time had passed, but they hadn't grown, because they heard and didn't use it. Milk is good for a babe; it's meant to grow him.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 6 of 6</p>
+      <span class="topic">Growing up</span>
+      <h2>How does a man get his senses exercised to discern good and evil?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="14" data-hl="by reason of use have their senses exercised to discern both good and evil"></blockquote>
+      <blockquote class="quote step"><p>“But grow in grace, and in the knowledge of our Lord and Saviour Jesus Christ. To him be glory both now and for ever. Amen.”</p><cite>2 Peter 3:18</cite></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>By reason of use: training, like an athlete. He takes in the word and uses it in real choices, again and again, until he can tell good from evil quickly. Anyone can start today, from wherever he is.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide prayer">
+  <div class="inner">
+    <div class="emblem rise"></div>
+    <h2 class="rise" style="--d:1">Prayer requests</h2>
+    <p class="ask-line rise" style="--d:2">What can we pray about for you today?</p>
+    <blockquote class="quote rise" style="--d:4"><p>“Let us therefore come boldly unto the throne of grace, that we may obtain mercy, and find grace to help in time of need.”</p><cite>Hebrews 4:16</cite></blockquote>
+  </div>
+</section>
+
+</main>
+
+<script>
+// King James Version, Hebrews chapter 5
+const V = {
+  1: "For every high priest taken from among men is ordained for men in things pertaining to God, that he may offer both gifts and sacrifices for sins:",
+  2: "Who can have compassion on the ignorant, and on them that are out of the way; for that he himself also is compassed with infirmity.",
+  3: "And by reason hereof he ought, as for the people, so also for himself, to offer for sins.",
+  4: "And no man taketh this honour unto himself, but he that is called of God, as was Aaron.",
+  5: "So also Christ glorified not himself to be made an high priest; but he that said unto him, Thou art my Son, to day have I begotten thee.",
+  6: "As he saith also in another place, Thou art a priest for ever after the order of Melchisedec.",
+  7: "Who in the days of his flesh, when he had offered up prayers and supplications with strong crying and tears unto him that was able to save him from death, and was heard in that he feared;",
+  8: "Though he were a Son, yet learned he obedience by the things which he suffered;",
+  9: "And being made perfect, he became the author of eternal salvation unto all them that obey him;",
+  10: "Called of God an high priest after the order of Melchisedec.",
+  11: "Of whom we have many things to say, and hard to be uttered, seeing ye are dull of hearing.",
+  12: "For when for the time ye ought to be teachers, ye have need that one teach you again which be the first principles of the oracles of God; and are become such as have need of milk, and not of strong meat.",
+  13: "For every one that useth milk is unskilful in the word of righteousness: for he is a babe.",
+  14: "But strong meat belongeth to them that are of full age, even those who by reason of use have their senses exercised to discern both good and evil."
+};
+const BOOK = "Hebrews 5";
+</script>
+<script src="../assets/deck.js"></script>
+</body>
+</html>

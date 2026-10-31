@@ -1,0 +1,681 @@
+<!doctype html>
+<html lang="en" data-theme="night">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Hebrews 6</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="../assets/fonts.css">
+<link rel="stylesheet" href="../assets/deck.css">
+<link rel="stylesheet" href="../assets/themes.css">
+<style>
+/* he05-where: where we are in Hebrews (copied as is from Hebrews 5; a deck.css candidate).
+   A strip of 13 chapter cells (.he05-c, the current one .now), the book's six stretches under them (.he05-g, grid-column spans),
+   and the five warning passages over them (.he05-w, grid-column spans; the one we are reading .now). */
+.he05-where { display: grid; grid-template-columns: repeat(13, 1fr); gap: 6px 4px; margin: .4em 0 1.4em; }
+.he05-w { grid-row: 1; align-self: end; position: relative; height: 1.5rem; border: 2px solid color-mix(in srgb, var(--danger) 55%, transparent); border-bottom: 0; border-radius: 8px 8px 0 0;
+  font: 700 clamp(.6rem, .55rem + .2vw, .78rem)/1 var(--sans); letter-spacing: .06em; color: var(--danger); text-align: center; padding-top: .25em; white-space: nowrap; overflow: hidden;
+  opacity: 0; transition: opacity .6s ease 1.6s; }
+.slide.active .he05-w { opacity: .8; }
+.he05-w.now { border-color: var(--danger); background: color-mix(in srgb, var(--danger) 12%, transparent); opacity: 0; }
+.slide.active .he05-w.now { opacity: 1; }
+.he05-c { grid-row: 2; display: grid; place-items: center; height: clamp(2rem, 1.5rem + 2vw, 3rem); border-radius: 6px; border: 1.5px solid var(--line-strong); background: var(--surface);
+  font: 700 clamp(.85rem, .75rem + .5vw, 1.3rem) var(--sans); color: var(--ink-soft);
+  opacity: 0; transform: translateY(8px); transition: opacity .5s ease, transform .5s ease; transition-delay: calc(var(--k, 0) * 70ms + 200ms); }
+.slide.active .he05-c { opacity: 1; transform: none; }
+.he05-c.now { background: var(--accent); border-color: var(--accent); color: var(--on-accent); }
+.slide.active .he05-c.now { animation: he05-here 2.4s ease-in-out 1.8s infinite; }
+@keyframes he05-here { 50% { box-shadow: 0 0 0 6px color-mix(in srgb, var(--accent) 30%, transparent); } }
+.he05-g { grid-row: 3; padding: .35em .2em 0; border-top: 3px solid var(--line-strong); text-align: center;
+  font: 600 clamp(.66rem, .58rem + .4vw, 1.02rem)/1.15 var(--serif); color: var(--ink-soft);
+  opacity: 0; transition: opacity .6s ease 1.1s; }
+.slide.active .he05-g { opacity: 1; }
+.he05-g.now { border-top-color: var(--accent); color: var(--accent-hot); }
+.he05-g small { display: block; font: 400 .8em var(--sans); color: var(--ink-soft); }
+@media (max-width: 640px) { .he05-g small { display: none; } .he05-w { font-size: 0; } .he05-w::after { content: "!"; font-size: .8rem; } }
+
+/* he06-found: six foundation stones laid once (--k), then on a .he06-up step the walls and roof rise on them */
+.he06-stone rect { fill: color-mix(in srgb, var(--leather-light) 30%, var(--surface)); stroke: var(--line-strong); stroke-width: 2; }
+.he06-stone text { font-size: 15px; fill: var(--ink); }
+.he06-stone { opacity: 0; transform: translateY(12px); transition: opacity .5s ease, transform .5s ease; transition-delay: calc(var(--k, 0) * 250ms + 300ms); }
+.slide.active .he06-stone { opacity: 1; transform: none; }
+.he06-wall { fill: none; stroke: var(--accent-hot); stroke-width: 5; stroke-linejoin: round; stroke-dasharray: 1; stroke-dashoffset: 1; transition: stroke-dashoffset 2s ease .2s; }
+.slide:has(.he06-up.on) .he06-wall { stroke-dashoffset: 0; }
+.he06-up-lbl { fill: var(--accent-hot); font-size: 19px; font-weight: 700; opacity: 0; transition: opacity .8s ease 1.6s; }
+.slide:has(.he06-up.on) .he06-up-lbl { opacity: 1; }
+.he06-found-lbl { fill: var(--ink-soft); font-size: 15px; }
+
+/* he06-once: one cross, once for all; a second, ghost cross is struck out on a .he06-strike step */
+.he06-hill { fill: color-mix(in srgb, var(--ink) 10%, transparent); }
+.he06-cross { fill: var(--accent); }
+.he06-ghost { fill: none; stroke: var(--ink-soft); stroke-width: 3; stroke-dasharray: 8 7; }
+.he06-x { fill: none; stroke: var(--danger); stroke-width: 9; stroke-linecap: round; stroke-dasharray: 1; stroke-dashoffset: 1; transition: stroke-dashoffset .7s ease .3s; }
+.he06-x.b { transition-delay: .9s; }
+.slide:has(.he06-strike.on) .he06-x { stroke-dashoffset: 0; }
+.he06-once-lbl { font-size: 19px; font-weight: 700; }
+
+/* he06-fields: one cloud, the same rain on two fields. Herbs come up in one, thorns in the other; on a .he06-burn step the thorns burn */
+.he06-cloud { fill: color-mix(in srgb, var(--ink-soft) 45%, var(--surface)); }
+.he06-rain { stroke: var(--cool); stroke-width: 3; stroke-linecap: round; opacity: 0; }
+.slide.active .he06-rain { animation: he06-fall 1.4s linear infinite; animation-delay: calc(var(--k, 0) * -.23s); }
+@keyframes he06-fall { 0% { opacity: 0; transform: translateY(-10px); } 20% { opacity: .9; } 100% { opacity: 0; transform: translateY(60px); } }
+.he06-soil { fill: color-mix(in srgb, var(--leather) 70%, var(--surface)); }
+.he06-herb { fill: none; stroke: var(--accent); stroke-width: 4; stroke-linecap: round; transform-box: fill-box; transform-origin: 50% 100%; transform: scaleY(0); transition: transform 1.2s ease; transition-delay: calc(var(--k, 0) * 150ms + 1s); }
+.he06-thorn { fill: none; stroke: var(--ink-soft); stroke-width: 3.5; stroke-linecap: round; stroke-linejoin: round; transform-box: fill-box; transform-origin: 50% 100%; transform: scaleY(0); transition: transform 1.2s ease; transition-delay: calc(var(--k, 0) * 150ms + 1s); }
+.slide.active .he06-herb, .slide.active .he06-thorn { transform: none; }
+.he06-flame { fill: var(--danger); opacity: 0; transform-box: fill-box; transform-origin: 50% 100%; transition: opacity .8s ease; }
+.slide:has(.he06-burn.on) .he06-flame { opacity: .9; animation: he06-lick 1s ease-in-out infinite; animation-delay: calc(var(--k, 0) * -.3s); }
+@keyframes he06-lick { 50% { transform: scale(.85, 1.15); } }
+.he06-field-lbl { font-size: 17px; }
+
+/* he06-gate: two pillars (the promise and the oath) holding a lintel; a man runs in through the gate for refuge */
+.he06-pillar { fill: color-mix(in srgb, var(--accent) 22%, var(--surface)); stroke: var(--accent); stroke-width: 3; }
+.he06-lintel { fill: var(--accent); }
+.he06-wallc { fill: color-mix(in srgb, var(--ink) 12%, transparent); stroke: var(--line-strong); stroke-width: 2; }
+.he06-safe { fill: color-mix(in srgb, var(--glow) 45%, transparent); }
+.he06-runner { fill: var(--accent-hot); transform: translateX(-210px); transition: transform 3.2s cubic-bezier(.4,.05,.3,1) .8s; }
+.slide.active .he06-runner { transform: none; }
+.he06-chaser { fill: var(--danger); opacity: .6; transform: translateX(-60px); transition: transform 3.2s cubic-bezier(.4,.05,.3,1) .8s; }
+.slide.active .he06-chaser { transform: none; }
+.he06-gate-lbl { font-size: 17px; }
+.he06-on-accent { fill: var(--on-accent); font-weight: 700; font-size: 17px; }
+
+/* he06-anchor: a ship in a storm at night. The rain and waves never stop; the ship rocks but holds,
+   because its anchor line runs up and through the veil, into the light where the forerunner has gone.
+   On a .he06-hold step the slack line draws tight and "sure and stedfast" appears. */
+.he06-sky { fill: var(--on-glow); }
+.he06-flash { fill: var(--glow); opacity: 0; }
+.slide.active .he06-flash { animation: he06-flash 6s linear infinite 1.5s; }
+@keyframes he06-flash { 0%, 90%, 100% { opacity: 0; } 91% { opacity: .35; } 92% { opacity: 0; } 93.5% { opacity: .22; } 95% { opacity: 0; } }
+.he06-bolt { fill: var(--glow); opacity: 0; }
+.slide.active .he06-bolt { animation: he06-flash 6s linear infinite 1.5s; }
+.he06-drops line { stroke: color-mix(in srgb, var(--glow) 45%, var(--on-glow)); stroke-width: 2; stroke-linecap: round; }
+.slide.active .he06-drops { animation: he06-pour .9s linear infinite; }
+@keyframes he06-pour { from { transform: translate(0, -40px); } to { transform: translate(-16px, 0); } }
+.he06-wave { fill: color-mix(in srgb, var(--cool) 50%, var(--on-glow)); }
+.he06-wave.back { fill: color-mix(in srgb, var(--cool) 30%, var(--on-glow)); }
+.slide.active .he06-wave { animation: he06-roll 3.2s linear infinite; }
+.slide.active .he06-wave.back { animation-duration: 4.6s; animation-direction: reverse; }
+@keyframes he06-roll { from { transform: translateX(0); } to { transform: translateX(-120px); } }
+.he06-ship { transform-box: fill-box; transform-origin: 50% 90%; }
+.slide.active .he06-ship { animation: he06-rock 2.8s ease-in-out infinite; }
+@keyframes he06-rock { 0%, 100% { transform: rotate(-7deg) translateY(0); } 50% { transform: rotate(6deg) translateY(6px); } }
+.he06-hull { fill: var(--leather-light); }
+.he06-sail { fill: color-mix(in srgb, var(--glow) 80%, var(--on-glow)); }
+.he06-mast { stroke: var(--leather-light); stroke-width: 4; }
+.he06-veil { fill: var(--wine); }
+.he06-fold { fill: none; stroke: color-mix(in srgb, var(--on-glow) 45%, var(--wine)); stroke-width: 3; }
+.he06-holy { fill: var(--glow); opacity: .9; }
+.he06-line { fill: none; stroke: color-mix(in srgb, var(--glow) 60%, var(--on-glow)); stroke-width: 4; stroke-linecap: round; }
+.he06-line.slack { stroke-dasharray: 1; stroke-dashoffset: 1; transition: stroke-dashoffset 2.2s ease .8s, opacity .8s ease; }
+.slide.active .he06-line.slack { stroke-dashoffset: 0; }
+.slide:has(.he06-hold.on) .he06-line.slack { opacity: 0; }
+.he06-line.taut { stroke: var(--glow); stroke-width: 5; opacity: 0; transition: opacity .9s ease .3s; }
+.slide:has(.he06-hold.on) .he06-line.taut { opacity: 1; }
+.he06-anc { fill: none; stroke: var(--on-glow); stroke-width: 5; stroke-linecap: round; stroke-linejoin: round; }
+.he06-say { font-family: var(--serif); font-size: 21px; font-style: italic; fill: var(--glow); }
+.he06-say.dark { fill: var(--on-glow); font-style: normal; font-weight: 700; font-family: var(--sans); font-size: 15px; }
+.he06-sure { opacity: 0; transition: opacity 1s ease 1s; }
+.slide:has(.he06-hold.on) .he06-sure { opacity: 1; }
+.he06-tag { fill: color-mix(in srgb, var(--glow) 70%, var(--on-glow)); font-size: 15px; }
+
+/* he06-plan: the tabernacle seen from above: court, holy place, the veil, and the holiest of all.
+   The high priest's once-a-year path stops at the veil (dashed); on a .he06-in step Jesus' path goes through, and stays */
+.he06-court { fill: color-mix(in srgb, var(--ink) 6%, transparent); stroke: var(--line-strong); stroke-width: 2; }
+.he06-tent { fill: color-mix(in srgb, var(--surface-2) 80%, transparent); stroke: var(--line-strong); stroke-width: 2; }
+.he06-hol { fill: color-mix(in srgb, var(--glow) 55%, transparent); stroke: var(--accent); stroke-width: 2; }
+.he06-veil2 { stroke: var(--wine); stroke-width: 7; }
+.he06-ark { fill: var(--warm); }
+.he06-path { fill: none; stroke: var(--ink-soft); stroke-width: 3.5; stroke-dasharray: 9 7; }
+.he06-jpath { fill: none; stroke: var(--accent-hot); stroke-width: 5; stroke-linecap: round; stroke-dasharray: 1; stroke-dashoffset: 1; transition: stroke-dashoffset 2s ease .2s; }
+.slide:has(.he06-in.on) .he06-jpath { stroke-dashoffset: 0; }
+.he06-plan-lbl { font-size: 16px; }
+.he06-plan-lbl.soft { fill: var(--ink-soft); font-size: 14px; }
+.he06-jlbl { opacity: 0; transition: opacity .8s ease 1.8s; }
+.slide:has(.he06-in.on) .he06-jlbl { opacity: 1; }
+</style>
+</head>
+<body>
+<main class="deck" id="deck">
+
+<!-- ======================= OPENING ======================= -->
+<section class="slide title">
+  <div class="inner">
+    <div class="emblem rise"></div>
+    <h1 class="rise" style="--d:1">Hebrews 6</h1>
+    <p class="sub rise" style="--d:3">An anchor of the soul</p>
+    <p class="tag rise" style="--d:5">The hardest warning in the book, and then the surest comfort: God has promised, God has sworn, and our hope is tied fast where Jesus has already gone.</p>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise" style="--d:1">Where we are in Hebrews</h2>
+    <div class="he05-where" role="img" aria-label="Thirteen chapters in six stretches: better than the angels, chapters 1 and 2; better than Moses, 3 and 4; a better priest, 5 to 7; a better covenant and sacrifice, 8 to 10; by faith, 11; run and hold fast, 12 and 13. Five warning passages sit over chapters 2, 3 and 4, 5 and 6, 10 and 12. We are in chapter 6, inside the third warning.">
+      <span class="he05-w" style="grid-column:2">WARNING</span>
+      <span class="he05-w" style="grid-column:3 / span 2">WARNING</span>
+      <span class="he05-w now" style="grid-column:5 / span 2">WARNING</span>
+      <span class="he05-w" style="grid-column:10">WARNING</span>
+      <span class="he05-w" style="grid-column:12">WARNING</span>
+      <span class="he05-c" style="--k:0">1</span><span class="he05-c" style="--k:1">2</span><span class="he05-c" style="--k:2">3</span><span class="he05-c" style="--k:3">4</span>
+      <span class="he05-c" style="--k:4">5</span><span class="he05-c now" style="--k:5">6</span><span class="he05-c" style="--k:6">7</span><span class="he05-c" style="--k:7">8</span>
+      <span class="he05-c" style="--k:8">9</span><span class="he05-c" style="--k:9">10</span><span class="he05-c" style="--k:10">11</span><span class="he05-c" style="--k:11">12</span><span class="he05-c" style="--k:12">13</span>
+      <span class="he05-g" style="grid-column:1 / span 2">Better than angels<small>1–2</small></span>
+      <span class="he05-g" style="grid-column:3 / span 2">Better than Moses<small>3–4</small></span>
+      <span class="he05-g now" style="grid-column:5 / span 3">A better priest<small>5–7</small></span>
+      <span class="he05-g" style="grid-column:8 / span 3">A better covenant<small>8–10</small></span>
+      <span class="he05-g" style="grid-column:11">By faith<small>11</small></span>
+      <span class="he05-g" style="grid-column:12 / span 2">Hold fast<small>12–13</small></span>
+    </div>
+    <p class="note rise" style="--d:2">Chapter 5 ended with a rebuke: you should be teachers by now, and you're still on milk. Chapter 6 says: then let's grow up. It holds the hardest warning in Hebrews, and right after it, one of the warmest promises in the Bible.</p>
+    <p class="note step">Every warning in this book has the same aim: to shake loose the man who only sat near the faith, and to make the real believer hold on tighter. None of them is meant to make a struggling believer think God has thrown him away.</p>
+  </div>
+</section>
+
+<section class="slide watch">
+  <div class="inner">
+    <h2 class="rise">Things to watch for</h2>
+    <p class="lede rise" style="--d:1">Keep these questions in the back of your mind as we read. We'll come back to every one of them at the end.</p>
+    <ol class="seeds">
+      <li class="step"><span class="topic">Go on</span><span class="seed-q">What does the writer want us to leave behind, and where should we go?</span></li>
+      <li class="step"><span class="topic">The hard warning</span><span class="seed-q">What do verses 4 to 6 say is impossible, and why?</span></li>
+      <li class="step"><span class="topic">Two fields</span><span class="seed-q">What shows the difference between two fields that drink the same rain?</span></li>
+      <li class="step"><span class="topic">Better things</span><span class="seed-q">What is the writer persuaded of, and what will God not forget?</span></li>
+      <li class="step"><span class="topic">God's oath</span><span class="seed-q">What two unchangeable things did God give so we could be sure?</span></li>
+      <li class="step"><span class="topic">The anchor</span><span class="seed-q">What is our anchor, and where is it fastened?</span></li>
+    </ol>
+  </div>
+</section>
+
+<!-- ======================= PART ONE ======================= -->
+<section class="slide part">
+  <div class="inner">
+    <p class="part-n rise">Part one</p>
+    <h2 class="rise" style="--d:1">Let us go on</h2>
+    <p class="range rise" style="--d:2">Verses 1–3</p>
+    <div class="rule"></div>
+    <p class="hook rise" style="--d:4">You lay a foundation once. Then you build on it.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="1-3" data-hl="let us go on unto perfection|not laying again the foundation|And this will we do, if God permit."></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise" style="--d:1">Build on the foundation</h2>
+    <div class="stage">
+      <svg viewBox="0 0 680 300" style="max-height:40vh" role="img" aria-label="Six foundation stones laid in two rows: repentance from dead works, faith toward God, baptisms or washings, laying on of hands, resurrection of the dead, eternal judgment. Then walls and a roof rise on top of them: go on unto perfection, full-grown.">
+        <path class="he06-wall" pathLength="1" d="M40 196 L40 92 L340 18 L640 92 L640 196 M40 92 L640 92 M290 196 L290 130 L390 130 L390 196"/>
+        <text class="he06-up-lbl" x="340" y="74" text-anchor="middle">go on unto perfection: full-grown</text>
+        <g class="he06-stone" style="--k:0"><rect x="30" y="200" width="200" height="44" rx="4"/><text x="130" y="227" text-anchor="middle">repentance from dead works</text></g>
+        <g class="he06-stone" style="--k:1"><rect x="240" y="200" width="200" height="44" rx="4"/><text x="340" y="227" text-anchor="middle">faith toward God</text></g>
+        <g class="he06-stone" style="--k:2"><rect x="450" y="200" width="200" height="44" rx="4"/><text x="550" y="227" text-anchor="middle">baptisms (washings)</text></g>
+        <g class="he06-stone" style="--k:3"><rect x="30" y="248" width="200" height="44" rx="4"/><text x="130" y="275" text-anchor="middle">laying on of hands</text></g>
+        <g class="he06-stone" style="--k:4"><rect x="240" y="248" width="200" height="44" rx="4"/><text x="340" y="275" text-anchor="middle">resurrection of the dead</text></g>
+        <g class="he06-stone" style="--k:5"><rect x="450" y="248" width="200" height="44" rx="4"/><text x="550" y="275" text-anchor="middle">eternal judgment</text></g>
+      </svg>
+    </div>
+    <p class="note step he06-up">These six are the ABCs: turn from the dead works of your old life, trust God, the washings and the laying on of hands the Jewish believers already knew, and the coming resurrection and judgment. All true, all needed. But nobody lives in a foundation.</p>
+    <p class="note step"><em>Perfection</em> here means maturity, a full-grown faith, not a sinless one. You don't need to get saved again every time you fail. Stand on what Christ already did, and build: <em>“And this will we do, if God permit.”</em></p>
+  </div>
+</section>
+
+<!-- ======================= PART TWO ======================= -->
+<section class="slide part">
+  <div class="inner">
+    <p class="part-n rise">Part two</p>
+    <h2 class="rise" style="--d:1">The hardest warning</h2>
+    <p class="range rise" style="--d:2">Verses 4–8</p>
+    <div class="rule"></div>
+    <p class="hook rise" style="--d:4">Read it slowly, read it whole, and read the verse right after it.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="4-6" data-hl="it is impossible|If they shall fall away, to renew them again unto repentance|seeing they crucify to themselves the Son of God afresh"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="6" data-hl="If they shall fall away|crucify to themselves the Son of God afresh"></blockquote>
+    <h2 class="rise" style="--d:1">What the verses say</h2>
+    <p class="note rise" style="--d:2">The men in view had come very close. They were <em>“once enlightened,”</em> had <em>“tasted of the heavenly gift,”</em> were <em>“partakers of the Holy Ghost,”</em> and had <em>“tasted the good word of God, and the powers of the world to come.”</em></p>
+    <div class="ifthen step">
+      <div class="if"><small>If</small>they shall fall away,</div>
+      <span class="arrow" aria-hidden="true">→</span>
+      <div class="then"><small>then</small>it is impossible to renew them again unto repentance,</div>
+    </div>
+    <div class="ifthen step">
+      <div class="if"><small>because</small>they would crucify the Son of God afresh,</div>
+      <span class="arrow" aria-hidden="true">→</span>
+      <div class="then"><small>and</small>put him to an open shame.</div>
+    </div>
+    <p class="note step"><em>Fall away</em> here doesn't mean a stumble or a relapse. It means turning your back on Christ for good, siding with the people who crucified Him and treating Him as a fraud.</p>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise" style="--d:1">Two ways good teachers read it</h2>
+    <div class="columns">
+      <div class="col law step"><span class="who">Reading one</span><h3>Near, but never in</h3><p>Men who saw it all, sat in it, and had a share in the Spirit's work around them, but never truly trusted Christ. Like Israel in the wilderness: they saw the sea part and ate the manna, yet <em>“could not enter in because of unbelief”</em> (3:19).</p></div>
+      <div class="col grace step"><span class="who">Reading two</span><h3>IF, and it can't</h3><p>The writer reasons: IF a true believer could fall away, there would be no way back, because Christ would have to be crucified a second time. There will never be a second cross. So a true believer can't be lost.</p></div>
+    </div>
+    <p class="note step">Baptists hold both readings, and they land in the same place: <strong>a man truly saved is kept.</strong> Jesus said, <em>“they shall never perish, neither shall any man pluck them out of my hand”</em> (John 10:28). The warning shakes loose the man who only sat near, and it makes the real believer hold on.</p>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <div class="split">
+      <div class="stage">
+        <svg viewBox="0 0 560 300" role="img" aria-label="On a hill, one solid cross: once, for all. Beside it the dashed outline of a second cross. On the next step it is struck through with a red X: there will never be a second cross.">
+          <path class="he06-hill" d="M0 300 C80 230 200 220 280 236 C380 256 480 230 560 250 L560 300 Z"/>
+          <path class="he06-cross" d="M150 236 L150 104 L118 104 L118 88 L150 88 L150 52 L166 52 L166 88 L198 88 L198 104 L166 104 L166 236 Z"/>
+          <text class="he06-once-lbl" x="158" y="282" text-anchor="middle" style="fill:var(--accent-hot)">once, for all</text>
+          <path class="he06-ghost" d="M392 240 L392 108 L360 108 L360 92 L392 92 L392 56 L408 56 L408 92 L440 92 L440 108 L408 108 L408 240 Z"/>
+          <path class="he06-x" pathLength="1" d="M340 60 L460 220"/>
+          <path class="he06-x b" pathLength="1" d="M460 60 L340 220"/>
+          <text class="he06-once-lbl" x="400" y="282" text-anchor="middle" style="fill:var(--danger)">no second cross</text>
+        </svg>
+      </div>
+      <div>
+        <h2 class="rise" style="--d:1">Once is enough</h2>
+        <blockquote class="quote rise" style="--d:2"><p>“For by one offering he hath perfected for ever them that are sanctified.”</p><cite>Hebrews 10:14</cite></blockquote>
+        <p class="note step he06-strike">Look at the reason the writer gives: <em>“they crucify to themselves the Son of God afresh.”</em> A second rescue would need a second cross. God will never do that, because the first one was enough.</p>
+        <p class="note step">That is good news. The one sacrifice that saved you is the same one that keeps you. It doesn't run out, and it doesn't need doing over.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise" style="--d:1">Afraid you've fallen away?</h2>
+    <p class="saying rise" style="--d:2">The man this passage warns <em>doesn't care.</em></p>
+    <p class="note step">He has turned on Christ and holds Him in contempt. A man who is worried that he has fallen away is showing the very concern this passage says such men don't have. That ache to get right with God is the Spirit at work in you. So don't run from Him. Come back.</p>
+    <ul class="nots">
+      <li class="step"><span class="k">“I've sinned too much”</span><span class="why">His one offering perfected you “for ever”</span></li>
+      <li class="step"><span class="k">“I need to get saved all over again”</span><span class="why">you don't; there is no second cross, and no need of one</span></li>
+      <li class="step yes"><span class="k">Come back and confess</span><span class="why">“If we confess our sins, he is faithful and just to forgive us our sins” (1 John 1:9)</span></li>
+    </ul>
+  </div>
+</section>
+
+<section class="slide verse" data-v="7-8" data-hl="drinketh in the rain that cometh oft upon it|receiveth blessing from God|that which beareth thorns and briers is rejected"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise" style="--d:1">Same rain, two fields</h2>
+    <div class="stage">
+      <svg viewBox="0 0 680 270" style="max-height:38vh" role="img" aria-label="One dark cloud rains on two fields. In the left field green herbs come up: receiveth blessing from God. In the right field thorns and briers come up: nigh unto cursing. On the next step the thorn field burns.">
+        <path class="he06-cloud" d="M120 70 C110 30 170 10 210 30 C240 0 320 0 340 30 C370 6 440 10 450 40 C500 30 560 50 540 84 C560 100 520 116 490 106 L160 106 C110 112 90 86 120 70 Z"/>
+        <g>
+          <line class="he06-rain" style="--k:0" x1="160" y1="116" x2="154" y2="136"/><line class="he06-rain" style="--k:1" x1="200" y1="116" x2="194" y2="136"/><line class="he06-rain" style="--k:2" x1="240" y1="116" x2="234" y2="136"/>
+          <line class="he06-rain" style="--k:3" x1="280" y1="116" x2="274" y2="136"/><line class="he06-rain" style="--k:4" x1="320" y1="116" x2="314" y2="136"/><line class="he06-rain" style="--k:5" x1="360" y1="116" x2="354" y2="136"/>
+          <line class="he06-rain" style="--k:1" x1="400" y1="116" x2="394" y2="136"/><line class="he06-rain" style="--k:3" x1="440" y1="116" x2="434" y2="136"/><line class="he06-rain" style="--k:0" x1="480" y1="116" x2="474" y2="136"/>
+          <line class="he06-rain" style="--k:4" x1="520" y1="116" x2="514" y2="136"/><line class="he06-rain" style="--k:2" x1="130" y1="116" x2="124" y2="136"/><line class="he06-rain" style="--k:5" x1="550" y1="116" x2="544" y2="136"/>
+        </g>
+        <rect class="he06-soil" x="40" y="214" width="280" height="22" rx="4"/>
+        <rect class="he06-soil" x="360" y="214" width="280" height="22" rx="4"/>
+        <path class="he06-herb" style="--k:0" d="M80 214 V180 M80 192 C70 186 66 178 68 170 M80 186 C90 180 94 172 92 164"/>
+        <path class="he06-herb" style="--k:1" d="M130 214 V174 M130 188 C118 182 114 172 118 164 M130 180 C142 176 146 166 142 158"/>
+        <path class="he06-herb" style="--k:2" d="M180 214 V178 M180 190 C170 184 166 176 168 168 M180 184 C190 178 194 170 192 162"/>
+        <path class="he06-herb" style="--k:3" d="M230 214 V172 M230 186 C218 180 214 170 218 162 M230 178 C242 174 246 164 242 156"/>
+        <path class="he06-herb" style="--k:4" d="M280 214 V180 M280 192 C270 186 266 178 268 170 M280 186 C290 180 294 172 292 164"/>
+        <path class="he06-thorn" style="--k:0" d="M390 214 L400 170 L408 196 L420 160 L428 214 M396 190 L388 184 M414 178 L424 172"/>
+        <path class="he06-thorn" style="--k:1" d="M450 214 L458 176 L468 200 L476 164 L486 214 M462 188 L472 184 M472 180 L464 172"/>
+        <path class="he06-thorn" style="--k:2" d="M510 214 L520 168 L528 194 L540 162 L548 214 M516 188 L506 182 M536 176 L546 170"/>
+        <path class="he06-thorn" style="--k:3" d="M570 214 L578 176 L588 198 L598 166 L608 214 M584 186 L594 182"/>
+        <path class="he06-flame" style="--k:0" d="M380 214 C370 196 382 180 396 160 C402 182 422 186 418 204 C416 212 404 214 380 214 Z"/>
+        <path class="he06-flame" style="--k:1" d="M450 214 C440 192 452 172 468 150 C476 174 494 182 490 202 C488 212 476 214 450 214 Z"/>
+        <path class="he06-flame" style="--k:2" d="M514 214 C504 194 518 178 532 156 C538 178 556 184 552 204 C550 212 538 214 514 214 Z"/>
+        <path class="he06-flame" style="--k:3" d="M572 214 C564 196 576 182 590 164 C596 182 612 188 608 206 C606 212 596 214 572 214 Z"/>
+        <text class="he06-field-lbl" x="180" y="258" text-anchor="middle" style="fill:var(--accent-hot);font-weight:700">herbs: “receiveth blessing”</text>
+        <text class="he06-field-lbl" x="500" y="258" text-anchor="middle" style="fill:var(--danger);font-weight:700">thorns: “nigh unto cursing”</text>
+      </svg>
+    </div>
+    <p class="note step he06-burn">Both fields got the same rain, over and over. The rain is God's goodness: the light, the word, the taste of verses 4 and 5. What comes up shows what was in the ground. A field that only ever grows thorns gets burned off.</p>
+    <p class="note step">The fruit doesn't save a man; it shows what's growing in him. Ask yourself honestly what is coming up. Even a few green shoots count, and the next verses say God sees every one.</p>
+  </div>
+</section>
+
+<!-- ======================= PART THREE ======================= -->
+<section class="slide part">
+  <div class="inner">
+    <p class="part-n rise">Part three</p>
+    <h2 class="rise" style="--d:1">But, beloved</h2>
+    <p class="range rise" style="--d:2">Verses 9–12</p>
+    <div class="rule"></div>
+    <p class="hook rise" style="--d:4">The warning was for shaking. Now comes the arm around the shoulder.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="9-10" data-hl="But, beloved, we are persuaded better things of you, and things that accompany salvation|God is not unrighteous to forget your work and labour of love"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise" style="--d:1">Better things of you</h2>
+    <p class="saying rise" style="--d:2">The warning was real. So is <em>“beloved.”</em></p>
+    <p class="note step">Right after the hardest words in the book, the writer calls his readers <em>“beloved”</em> and says he is sure of <em>“better things”</em>: <em>“things that accompany salvation.”</em> He isn't talking to them as if they were lost. He wants them awake.</p>
+    <p class="note step">And God keeps a record. The ride you gave a brother to a meeting, the call you took at midnight, the meal, the honest word: <em>“God is not unrighteous to forget your work and labour of love.”</em> Nobody else may remember it. He does.</p>
+    <blockquote class="quote step"><p>“And whosoever shall give to drink unto one of these little ones a cup of cold water only in the name of a disciple, verily I say unto you, he shall in no wise lose his reward.”</p><cite>Matthew 10:42</cite></blockquote>
+  </div>
+</section>
+
+<section class="slide verse" data-v="11-12" data-hl="the full assurance of hope unto the end|That ye be not slothful|through faith and patience inherit the promises"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="11-12" data-hl="full assurance of hope|faith and patience"></blockquote>
+    <h2 class="rise" style="--d:1">Full assurance, and keep going</h2>
+    <ul class="nots">
+      <li class="step"><span class="k">slothful</span><span class="why">the same word as “dull” in 5:11: lazy, drifting</span></li>
+      <li class="step"><span class="k">anxious and unsure</span><span class="why">God wants you to have “the full assurance of hope”</span></li>
+      <li class="step yes"><span class="k">diligent, with faith and patience</span><span class="why">“followers of them who through faith and patience inherit the promises”</span></li>
+    </ul>
+    <p class="note step">God doesn't want you guessing whether you belong to Him. He wants you sure, and the sure man is the one who keeps going. Faith takes hold of the promise; patience waits for it. The next verses show one man who did both, and failed along the way too.</p>
+  </div>
+</section>
+
+<!-- ======================= PART FOUR ======================= -->
+<section class="slide part">
+  <div class="inner">
+    <p class="part-n rise">Part four</p>
+    <h2 class="rise" style="--d:1">An anchor of the soul</h2>
+    <p class="range rise" style="--d:2">Verses 13–20</p>
+    <div class="rule"></div>
+    <p class="hook rise" style="--d:4">God gave His word, and then He swore an oath on top of it.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="13-15" data-hl="he could swear by no greater, he sware by himself|Surely blessing I will bless thee|after he had patiently endured, he obtained the promise"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <div class="split">
+      <div class="stage">
+        <svg data-world viewBox="730 300 178 215" data-towns="Damascus:r, Jerusalem!:l" role="img" aria-label="Map of the land from Haran in the north down to Canaan. Abraham's road runs from Haran, past Damascus, to Shechem, and on to mount Moriah, where Jerusalem would later stand.">
+          <path class="map-route" data-via="@39.03 36.87, @37.6 35.9, @36.9 34.5, Damascus, @35.6 32.9, @35.28 32.21, Jerusalem"/>
+          <g class="map-town"><circle cx="882.8" cy="324.2" r="1.4"/><text x="880" y="317" text-anchor="end">Haran</text></g>
+          <g class="map-town"><circle cx="788.3" cy="473.3" r="1.4"/><text x="785.5" y="474.5" text-anchor="end">Shechem</text></g>
+          <text class="map-soft" x="790" y="502" text-anchor="middle" style="font-size:3.6px">mount Moriah</text>
+        </svg>
+      </div>
+      <div>
+        <h2 class="rise" style="--d:1">He patiently endured</h2>
+        <ol class="timeline" aria-label="Abraham at 75 leaves Haran with God's promise, Genesis 12:4. At 86, tired of waiting, he has Ishmael by Hagar, Genesis 16. At 100, Isaac is born, Genesis 21:5. Later, on mount Moriah, God swears by himself, Genesis 22:16.">
+          <li style="--k:0"><b>75</b><span>leaves Haran with a promise</span><small>Gen. 12:4</small></li>
+          <li style="--k:1"><b>86</b><span>tired of waiting: Ishmael</span><small>Gen. 16</small></li>
+          <li style="--k:2"><b>100</b><span>Isaac is born</span><small>Gen. 21:5</small></li>
+          <li class="lit" style="--k:3"><b>later</b><span>Moriah: God swears</span><small>Gen. 22:16</small></li>
+        </ol>
+        <p class="note step">Twenty-five years between the promise and the son. Abraham didn't wait perfectly: he took a shortcut with Hagar, and it cost him. But God didn't take the promise back. <em>“After he had patiently endured, he obtained the promise.”</em></p>
+      </div>
+    </div>
+    <blockquote class="quote step"><p>“And said, By myself have I sworn, saith the LORD, for because thou hast done this thing, and hast not withheld thy son, thine only son: That in blessing I will bless thee, and in multiplying I will multiply thy seed as the stars of the heaven…”</p><cite>Genesis 22:16–17</cite></blockquote>
+  </div>
+</section>
+
+<section class="slide verse" data-v="16-18" data-hl="an oath for confirmation is to them an end of all strife|by two immutable things, in which it was impossible for God to lie|who have fled for refuge to lay hold upon the hope set before us"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise" style="--d:1">Two pillars, and a place to run</h2>
+    <div class="stage">
+      <svg viewBox="0 0 680 250" style="max-height:36vh" role="img" aria-label="A city gate made of two pillars. One is labeled his promise, the other his oath. The beam across them reads: impossible for God to lie. A man runs in through the gate to safety, with danger behind him: fled for refuge.">
+        <path class="he06-wallc" d="M268 230 L268 96 L280 96 L280 86 L292 86 L292 96 L306 96 L306 86 L318 86 L318 96 L332 96 L332 230 Z"/>
+        <path class="he06-wallc" d="M568 230 L568 96 L582 96 L582 86 L594 86 L594 96 L608 96 L608 86 L620 86 L620 96 L632 96 L632 230 Z"/>
+        <rect class="he06-safe" x="372" y="70" width="156" height="160" rx="4"/>
+        <rect class="he06-pillar" x="330" y="70" width="44" height="160" rx="3"/>
+        <rect class="he06-pillar" x="526" y="70" width="44" height="160" rx="3"/>
+        <rect class="he06-lintel" x="310" y="52" width="280" height="30" rx="3"/>
+        <text class="he06-on-accent" x="450" y="73" text-anchor="middle">impossible for God to lie</text>
+        <text class="he06-gate-lbl" x="352" y="250" text-anchor="middle" style="font-weight:700">his promise</text>
+        <text class="he06-gate-lbl" x="548" y="250" text-anchor="middle" style="font-weight:700">his oath</text>
+        <g class="he06-chaser"><circle cx="150" cy="168" r="12"/><path d="M135 230 L136 196 Q150 184 164 196 L165 230 Z"/></g>
+        <g class="he06-runner"><g transform="translate(450 190) rotate(10)"><circle cx="0" cy="-26" r="12"/><path d="M-15 38 L-15 4 Q-15 -10 0 -10 Q15 -10 15 4 L15 38 Z"/></g></g>
+        <text class="he06-gate-lbl" x="150" y="140" text-anchor="middle" style="fill:var(--danger)">guilt, the past, the accuser</text>
+        <text class="he06-gate-lbl" x="450" y="120" text-anchor="middle" style="fill:var(--accent-hot);font-weight:700">refuge</text>
+      </svg>
+    </div>
+    <p class="note step">People swear by something greater to end an argument. God has no one greater, so He swore by Himself. His promise can't change, and His oath can't change: <em>“two immutable things.”</em> He did it, verse 17 says, to show the heirs, <em>us</em>, that He will not change His mind.</p>
+    <p class="note step"><em>“Fled for refuge”</em> recalls the cities of refuge, where a man who had killed someone by accident could run and be safe from the avenger (Numbers 35:11). Every man here has something behind him. Run to Christ. Inside the gate, you are safe.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="19-20" data-hl="Which hope we have as an anchor of the soul, both sure and stedfast|entereth into that within the veil|Whither the forerunner is for us entered, even Jesus"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="19" data-hl="as an anchor of the soul, both sure and stedfast"></blockquote>
+    <div class="stage">
+      <svg viewBox="0 0 720 330" role="img" aria-label="A small ship in a storm at night, rocking on rolling waves in driving rain, with lightning. Its anchor line does not go down into the sea. It runs up and across to a dark red curtain, the veil, and through it into a bright room beyond, where the anchor is fixed: within the veil, where the forerunner, Jesus, has entered for us. On the next step the line pulls tight: sure and stedfast.">
+        <defs><clipPath id="he06-frame"><rect x="0" y="0" width="720" height="330" rx="16"/></clipPath><clipPath id="he06-sea"><rect x="0" y="0" width="560" height="330"/></clipPath></defs>
+        <g clip-path="url(#he06-frame)">
+          <rect class="he06-sky" x="0" y="0" width="720" height="330"/>
+          <rect class="he06-flash" x="0" y="0" width="720" height="330"/>
+          <path class="he06-bolt" d="M250 0 L226 62 L244 62 L222 120 L262 52 L242 52 L262 0 Z"/>
+          <g class="he06-drops">
+            <line x1="40" y1="20" x2="30" y2="44"/><line x1="100" y1="60" x2="90" y2="84"/><line x1="160" y1="10" x2="150" y2="34"/><line x1="210" y1="90" x2="200" y2="114"/>
+            <line x1="280" y1="30" x2="270" y2="54"/><line x1="330" y1="110" x2="320" y2="134"/><line x1="380" y1="20" x2="370" y2="44"/><line x1="420" y1="80" x2="410" y2="104"/>
+            <line x1="60" y1="130" x2="50" y2="154"/><line x1="130" y1="170" x2="120" y2="194"/><line x1="250" y1="150" x2="240" y2="174"/><line x1="460" y1="150" x2="450" y2="174"/>
+            <line x1="20" y1="90" x2="10" y2="114"/><line x1="190" y1="200" x2="180" y2="224"/><line x1="300" y1="200" x2="290" y2="224"/><line x1="400" y1="190" x2="390" y2="214"/>
+            <line x1="470" y1="40" x2="460" y2="64"/><line x1="80" y1="220" x2="70" y2="244"/><line x1="360" y1="60" x2="350" y2="84"/><line x1="440" y1="230" x2="430" y2="254"/>
+          </g>
+          <rect class="he06-holy" x="566" y="0" width="154" height="330"/>
+          <g clip-path="url(#he06-sea)"><path class="he06-wave back" d="M-20 262 Q10 242 40 262 T100 262 T160 262 T220 262 T280 262 T340 262 T400 262 T460 262 T520 262 T580 262 T640 262 T700 262 T760 262 T820 262 L820 330 L-20 330 Z"/>
+          <g class="he06-ship">
+            <path class="he06-mast" d="M150 254 L150 150"/>
+            <path class="he06-sail" d="M154 156 L154 238 L210 238 Z"/>
+            <path class="he06-sail" d="M146 166 L146 238 L104 238 Z"/>
+            <path class="he06-hull" d="M84 244 L226 244 L208 274 L102 274 Z"/>
+          </g>
+          <path class="he06-wave" d="M-20 286 Q20 262 60 286 T140 286 T220 286 T300 286 T380 286 T460 286 T540 286 T620 286 T700 286 T780 286 T860 286 L860 330 L-20 330 Z"/></g>
+          <path class="he06-line slack" pathLength="1" d="M222 246 C300 280 380 250 440 200 C500 150 540 160 600 150"/>
+          <path class="he06-line taut" d="M222 246 L600 150"/>
+          <path class="he06-veil" d="M548 0 L584 0 L584 330 L548 330 Z"/>
+          <path class="he06-fold" d="M556 0 Q560 165 556 330 M566 0 Q570 165 566 330 M576 0 Q580 165 576 330"/>
+          <g transform="translate(640 150)"><path class="he06-anc" d="M-26 -38 L-26 38 M-44 -24 L-8 -24 M-52 18 Q-44 48 -26 48 Q-8 48 0 18 M-56 22 L-52 14 L-44 20 M4 22 L0 14 L-8 20"/><circle class="he06-anc" cx="-26" cy="-46" r="8"/></g>
+          <path class="he06-line taut" d="M584 150 L614 106"/>
+          <path class="he06-line slack" d="M584 150 L614 106" style="stroke-dashoffset:0"/>
+          <text class="he06-say" x="24" y="34">the storm</text>
+          <text class="he06-say dark" x="643" y="40" text-anchor="middle">within the veil</text>
+          <text class="he06-say dark" x="643" y="232" text-anchor="middle">the forerunner,</text>
+          <text class="he06-say dark" x="643" y="252" text-anchor="middle">even Jesus</text>
+          <text class="he06-tag" x="566" y="320" text-anchor="end">the veil</text>
+          <text class="he06-say he06-sure" x="360" y="166" text-anchor="middle" style="font-style:normal;font-weight:700">sure and stedfast</text>
+        </g>
+      </svg>
+    </div>
+    <p class="note step he06-hold">A sailor drops his anchor <em>down</em>, into the mud he can't see. Ours goes <em>up</em>: it <em>“entereth into that within the veil,”</em> into the presence of God. The storm doesn't stop. The waves still throw the ship around. But the ship holds, because the anchor isn't fastened to anything in the storm.</p>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="20" data-hl="Whither the forerunner is for us entered, even Jesus"></blockquote>
+    <div class="split">
+      <div class="stage">
+        <svg viewBox="0 0 520 300" role="img" aria-label="The tabernacle seen from above: an outer court, then a tent with the holy place and, behind the veil, the holiest of all with the ark. The high priest's dashed path stopped at the veil except once a year. On the next step a bright path goes through the veil and stays: Jesus, entered for us.">
+          <rect class="he06-court" x="10" y="20" width="500" height="260" rx="6"/>
+          <rect class="he06-tent" x="190" y="80" width="300" height="140" rx="3"/>
+          <rect class="he06-hol" x="390" y="80" width="100" height="140" rx="3"/>
+          <line class="he06-veil2" x1="390" y1="80" x2="390" y2="220"/>
+          <rect class="he06-ark" x="425" y="136" width="30" height="28" rx="3"/>
+          <text class="he06-plan-lbl soft" x="90" y="50" text-anchor="middle">the court</text>
+          <text class="he06-plan-lbl soft" x="290" y="104" text-anchor="middle">the holy place</text>
+          <text class="he06-plan-lbl" x="440" y="104" text-anchor="middle">holiest</text>
+          <text class="he06-plan-lbl" x="390" y="244" text-anchor="middle" style="fill:var(--wine);font-weight:700">the veil</text>
+          <path class="he06-path" d="M30 150 L376 150"/>
+          <text class="he06-plan-lbl soft" x="200" y="270" text-anchor="middle">the high priest: once a year, then out again</text>
+          <path class="he06-jpath" pathLength="1" d="M30 186 L300 186 C360 186 380 160 440 160"/>
+          <text class="he06-plan-lbl he06-jlbl" x="140" y="210" text-anchor="middle" style="fill:var(--accent-hot);font-weight:700">Jesus: entered for us, and stays</text>
+        </svg>
+      </div>
+      <div>
+        <h2 class="rise" style="--d:1">The forerunner</h2>
+        <p class="note rise" style="--d:2">Behind the veil was the holiest place, where God's presence was. Only the high priest went in, once a year, never without blood (Hebrews 9:7). Then he came back out.</p>
+        <p class="note step he06-in">Jesus went in and stays. A <em>forerunner</em> goes ahead so others can follow. He is there <em>“for us,”</em> a priest <em>“for ever,”</em> and your anchor line is tied to Him.</p>
+        <p class="note step">In today's storm, hold the line, not the waves. Chapter 7 picks up where this one ends: Melchisedec.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ======================= REVIEW ======================= -->
+<section class="slide remember">
+  <div class="inner">
+    <h2 class="rise">Points to remember</h2>
+    <ol class="seeds">
+      <li class="step"><span class="topic">Go on</span><span class="seed-q">“Let us go on unto perfection; not laying again the foundation” <cite>6:1</cite></span><span class="take">Stand on the foundation Christ laid, and build. Grow up.</span></li>
+      <li class="step"><span class="topic">The hard warning</span><span class="seed-q">“Seeing they crucify to themselves the Son of God afresh” <cite>6:6</cite></span><span class="take">There is no second cross, and no need of one. A man truly saved is kept.</span></li>
+      <li class="step"><span class="topic">Two fields</span><span class="seed-q">“The earth which drinketh in the rain… receiveth blessing from God” <cite>6:7</cite></span><span class="take">The same rain falls on all. What comes up shows what's in the ground.</span></li>
+      <li class="step"><span class="topic">Better things</span><span class="seed-q">“God is not unrighteous to forget your work and labour of love” <cite>6:10</cite></span><span class="take">“Beloved.” God remembers every small kindness done in His name.</span></li>
+      <li class="step"><span class="topic">God's oath</span><span class="seed-q">“By two immutable things, in which it was impossible for God to lie” <cite>6:18</cite></span><span class="take">His promise and His oath. He will not change His mind about you.</span></li>
+      <li class="step"><span class="topic">The anchor</span><span class="seed-q">“Which hope we have as an anchor of the soul, both sure and stedfast” <cite>6:19</cite></span><span class="take">Your anchor is fastened in heaven, where Jesus went for you.</span></li>
+    </ol>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 1 of 6</p>
+      <span class="topic">Go on</span>
+      <h2>What does the writer want us to leave behind, and where should we go?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="1" data-hl="let us go on unto perfection"></blockquote>
+      <blockquote class="quote step"><p>“But grow in grace, and in the knowledge of our Lord and Saviour Jesus Christ. To him be glory both now and for ever. Amen.”</p><cite>2 Peter 3:18</cite></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>Leave the first principles, not by forgetting them but by building on them. Don't keep laying the foundation again. Go on to maturity, a full-grown faith.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 2 of 6</p>
+      <span class="topic">The hard warning</span>
+      <h2>What do verses 4 to 6 say is impossible, and why?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="6" data-hl="If they shall fall away, to renew them again unto repentance|crucify to themselves the Son of God afresh"></blockquote>
+      <blockquote class="quote step"><p>“And I give unto them eternal life; and they shall never perish, neither shall any man pluck them out of my hand.”</p><cite>John 10:28</cite></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>To renew a man to repentance if he falls away, because it would take crucifying Christ again. He died once, and that was enough. Either these men only came near and never believed, or the writer is showing that a true believer can't be lost. A worried man isn't the man in this verse: come back.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 3 of 6</p>
+      <span class="topic">Two fields</span>
+      <h2>What shows the difference between two fields that drink the same rain?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="7-8" data-hl="bringeth forth herbs|beareth thorns and briers"></blockquote>
+      <blockquote class="quote step"><p>“They went out from us, but they were not of us; for if they had been of us, they would no doubt have continued with us: but they went out, that they might be made manifest that they were not all of us.”</p><cite>1 John 2:19</cite></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>What grows. Both get the same rain, God's goodness and His word. One brings forth useful herbs and is blessed; the other only thorns. Fruit doesn't save, but it shows what is in the ground.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 4 of 6</p>
+      <span class="topic">Better things</span>
+      <h2>What is the writer persuaded of, and what will God not forget?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="9-10" data-hl="we are persuaded better things of you|God is not unrighteous to forget your work and labour of love"></blockquote>
+      <blockquote class="quote step"><p>“Being confident of this very thing, that he which hath begun a good work in you will perform it until the day of Jesus Christ:”</p><cite>Philippians 1:6</cite></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>He is persuaded of better things: things that go with salvation. And God won't forget their work and labour of love toward His people. The warning was to wake them up, not to tell them they were lost.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 5 of 6</p>
+      <span class="topic">God's oath</span>
+      <h2>What two unchangeable things did God give so we could be sure?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="17-18" data-hl="confirmed it by an oath|two immutable things, in which it was impossible for God to lie"></blockquote>
+      <blockquote class="quote step"><p>“And said, By myself have I sworn, saith the LORD, for because thou hast done this thing, and hast not withheld thy son, thine only son:”</p><cite>Genesis 22:16</cite></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>His promise and His oath. God can't lie, and He swore by Himself because there is no one greater. He did it so that men who have fled to Him for refuge could have strong comfort.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 6 of 6</p>
+      <span class="topic">The anchor</span>
+      <h2>What is our anchor, and where is it fastened?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="19-20" data-hl="an anchor of the soul, both sure and stedfast|within the veil|the forerunner is for us entered, even Jesus"></blockquote>
+      <blockquote class="quote step"><p>“Wherefore he is able also to save them to the uttermost that come unto God by him, seeing he ever liveth to make intercession for them.”</p><cite>Hebrews 7:25</cite></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>Our hope in Christ is the anchor. It isn't fastened in the storm but within the veil, in God's presence, where Jesus has gone ahead of us and lives for ever as our high priest. That is why it holds.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide prayer">
+  <div class="inner">
+    <div class="emblem rise"></div>
+    <h2 class="rise" style="--d:1">Prayer requests</h2>
+    <p class="ask-line rise" style="--d:2">What can we pray about for you today?</p>
+    <blockquote class="quote rise" style="--d:4"><p>“Which hope we have as an anchor of the soul, both sure and stedfast, and which entereth into that within the veil;”</p><cite>Hebrews 6:19</cite></blockquote>
+  </div>
+</section>
+
+</main>
+
+<script>
+// King James Version, Hebrews chapter 6
+const V = {
+  1: "Therefore leaving the principles of the doctrine of Christ, let us go on unto perfection; not laying again the foundation of repentance from dead works, and of faith toward God,",
+  2: "Of the doctrine of baptisms, and of laying on of hands, and of resurrection of the dead, and of eternal judgment.",
+  3: "And this will we do, if God permit.",
+  4: "For it is impossible for those who were once enlightened, and have tasted of the heavenly gift, and were made partakers of the Holy Ghost,",
+  5: "And have tasted the good word of God, and the powers of the world to come,",
+  6: "If they shall fall away, to renew them again unto repentance; seeing they crucify to themselves the Son of God afresh, and put him to an open shame.",
+  7: "For the earth which drinketh in the rain that cometh oft upon it, and bringeth forth herbs meet for them by whom it is dressed, receiveth blessing from God:",
+  8: "But that which beareth thorns and briers is rejected, and is nigh unto cursing; whose end is to be burned.",
+  9: "But, beloved, we are persuaded better things of you, and things that accompany salvation, though we thus speak.",
+  10: "For God is not unrighteous to forget your work and labour of love, which ye have shewed toward his name, in that ye have ministered to the saints, and do minister.",
+  11: "And we desire that every one of you do shew the same diligence to the full assurance of hope unto the end:",
+  12: "That ye be not slothful, but followers of them who through faith and patience inherit the promises.",
+  13: "For when God made promise to Abraham, because he could swear by no greater, he sware by himself,",
+  14: "Saying, Surely blessing I will bless thee, and multiplying I will multiply thee.",
+  15: "And so, after he had patiently endured, he obtained the promise.",
+  16: "For men verily swear by the greater: and an oath for confirmation is to them an end of all strife.",
+  17: "Wherein God, willing more abundantly to shew unto the heirs of promise the immutability of his counsel, confirmed it by an oath:",
+  18: "That by two immutable things, in which it was impossible for God to lie, we might have a strong consolation, who have fled for refuge to lay hold upon the hope set before us:",
+  19: "Which hope we have as an anchor of the soul, both sure and stedfast, and which entereth into that within the veil;",
+  20: "Whither the forerunner is for us entered, even Jesus, made an high priest for ever after the order of Melchisedec."
+};
+const BOOK = "Hebrews 6";
+</script>
+<script src="../assets/deck.js"></script>
+</body>
+</html>
