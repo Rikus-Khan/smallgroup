@@ -528,7 +528,10 @@ window.GLOSSARY = [
     [ 6 ] ],
    [
     "Philemon", 1,
-    [ 1, 3, 5, 6, 9, 23, 25 ] ] ]
+    [ 1, 3, 5, 6, 9, 23, 25 ] ],
+   [
+    "Hebrews", 2,
+    [ 9 ] ] ]
  },
  {
   "id": "john-the-baptist",
@@ -1434,7 +1437,10 @@ window.GLOSSARY = [
     [ 4 ] ],
    [
     "Philemon", 1,
-    [ 3 ] ] ]
+    [ 3 ] ],
+   [
+    "Hebrews", 1,
+    [ 5 ] ] ]
  },
  {
   "id": "holy-spirit",
@@ -1671,7 +1677,10 @@ window.GLOSSARY = [
     [ 14 ] ],
    [
     "Titus", 3,
-    [ 5 ] ] ]
+    [ 5 ] ],
+   [
+    "Hebrews", 2,
+    [ 4 ] ] ]
  },
  {
   "id": "disciples",
@@ -4818,7 +4827,10 @@ window.GLOSSARY = [
     [ 7 ] ],
    [
     "Philemon", 1,
-    [ 25 ] ] ]
+    [ 25 ] ],
+   [
+    "Hebrews", 2,
+    [ 9 ] ] ]
  },
  {
   "id": "truth",
@@ -5313,7 +5325,13 @@ window.GLOSSARY = [
     [ 10 ] ],
    [
     "2 Timothy", 4,
-    [ 18 ] ] ]
+    [ 18 ] ],
+   [
+    "Hebrews", 1,
+    [ 3 ] ],
+   [
+    "Hebrews", 2,
+    [ 7, 9, 10 ] ] ]
  },
  {
   "id": "the-law",
@@ -6687,7 +6705,10 @@ window.GLOSSARY = [
     [ 5 ] ],
    [
     "Titus", 1,
-    [ 13 ] ] ]
+    [ 13 ] ],
+   [
+    "Hebrews", 2,
+    [ 4 ] ] ]
  },
  {
   "id": "baptize",
@@ -7176,7 +7197,10 @@ window.GLOSSARY = [
     [ 5 ] ],
    [
     "2 Thessalonians", 2,
-    [ 9 ] ] ]
+    [ 9 ] ],
+   [
+    "Hebrews", 2,
+    [ 4 ] ] ]
  },
  {
   "id": "passover",
@@ -8415,7 +8439,10 @@ window.GLOSSARY = [
     [ 8 ] ],
    [
     "Titus", 3,
-    [ 5 ] ] ]
+    [ 5 ] ],
+   [
+    "Hebrews", 1,
+    [ 8, 9 ] ] ]
  },
  {
   "id": "wicked",
@@ -11976,7 +12003,10 @@ window.GLOSSARY = [
     [ 6, 7 ] ],
    [
     "2 Timothy", 2,
-    [ 26 ] ] ]
+    [ 26 ] ],
+   [
+    "Hebrews", 2,
+    [ 14 ] ] ]
  },
  {
   "id": "man-born-blind",
@@ -12279,7 +12309,10 @@ window.GLOSSARY = [
     [ 18, 23 ] ],
    [
     "2 Thessalonians", 2,
-    [ 4 ] ] ]
+    [ 4 ] ],
+   [
+    "Hebrews", 1,
+    [ 6 ] ] ]
  },
  {
   "id": "good-shepherd",
@@ -12633,7 +12666,10 @@ window.GLOSSARY = [
     [ 5 ] ],
    [
     "2 Timothy", 2,
-    [ 21 ] ] ]
+    [ 21 ] ],
+   [
+    "Hebrews", 2,
+    [ 11 ] ] ]
  },
  {
   "id": "stoning",
@@ -13584,7 +13620,10 @@ window.GLOSSARY = [
     [ 6, 7, 8, 9, 14, 16, 18, 29 ] ],
    [
     "Galatians", 4,
-    [ 22 ] ] ]
+    [ 22 ] ],
+   [
+    "Hebrews", 2,
+    [ 16 ] ] ]
  },
  {
   "id": "samaritans",
@@ -13884,7 +13923,10 @@ window.GLOSSARY = [
     [ 3, 9, 24, 25 ] ],
    [
     "Galatians", 5,
-    [ 1 ] ] ]
+    [ 1 ] ],
+   [
+    "Hebrews", 2,
+    [ 15 ] ] ]
  },
  {
   "id": "servant-of-sin",
@@ -14538,7 +14580,13 @@ window.GLOSSARY = [
     [ 15 ] ],
    [
     "Titus", 2,
-    [ 11 ] ] ]
+    [ 11 ] ],
+   [
+    "Hebrews", 1,
+    [ 14 ] ],
+   [
+    "Hebrews", 2,
+    [ 3, 10 ] ] ]
  },
  {
   "id": "sixth-hour",
@@ -14631,7 +14679,10 @@ window.GLOSSARY = [
     [ 3 ] ],
    [
     "Romans", 15,
-    [ 19 ] ] ]
+    [ 19 ] ],
+   [
+    "Hebrews", 2,
+    [ 4 ] ] ]
  },
  {
   "id": "mary-magdalene",
@@ -14859,7 +14910,13 @@ window.GLOSSARY = [
     [ 7 ] ],
    [
     "1 Timothy", 3,
-    [ 16 ] ] ]
+    [ 16 ] ],
+   [
+    "Hebrews", 1,
+    [ 4, 5, 6, 7, 13 ] ],
+   [
+    "Hebrews", 2,
+    [ 2, 5, 7, 9, 16 ] ] ]
  },
  {
   "id": "sepulchre",
@@ -15699,6 +15756,9 @@ window.GLOSSARY = [
     [ 10 ] ],
    [
     "1 Timothy", 2,
+    [ 6 ] ],
+   [
+    "Hebrews", 2,
     [ 6 ] ] ]
  },
  {
@@ -15987,7 +16047,10 @@ window.GLOSSARY = [
     [ 1 ] ],
    [
     "Acts", 25,
-    [ 2 ] ] ]
+    [ 2 ] ],
+   [
+    "Hebrews", 2,
+    [ 17 ] ] ]
  },
  {
   "id": "expedient",
@@ -16794,7 +16857,10 @@ window.GLOSSARY = [
     [ 17 ] ],
    [
     "John", 15,
-    [ 2 ] ] ]
+    [ 2 ] ],
+   [
+    "Hebrews", 1,
+    [ 3 ] ] ]
  },
  {
   "id": "cloke",
@@ -18429,7 +18495,10 @@ window.GLOSSARY = [
     [ 13 ] ],
    [
     "2 Thessalonians", 1,
-    [ 6 ] ] ]
+    [ 6 ] ],
+   [
+    "Hebrews", 2,
+    [ 2 ] ] ]
  },
  {
   "id": "plowshares",
@@ -21579,7 +21648,10 @@ window.GLOSSARY = [
     [ 13 ] ],
    [
     "Acts", 4,
-    [ 27 ] ] ]
+    [ 27 ] ],
+   [
+    "Hebrews", 1,
+    [ 9 ] ] ]
  },
  {
   "id": "hinds-feet",
@@ -21849,7 +21921,10 @@ window.GLOSSARY = [
     [ 17 ] ],
    [
     "2 Timothy", 3,
-    [ 1 ] ] ]
+    [ 1 ] ],
+   [
+    "Hebrews", 1,
+    [ 2 ] ] ]
  },
  {
   "id": "vine-and-fig-tree",
@@ -25896,7 +25971,13 @@ window.GLOSSARY = [
     [ 6 ] ],
    [
     "Titus", 3,
-    [ 3 ] ] ]
+    [ 3 ] ],
+   [
+    "Hebrews", 1,
+    [ 1 ] ],
+   [
+    "Hebrews", 2,
+    [ 4 ] ] ]
  },
  {
   "id": "devils",
@@ -27939,7 +28020,10 @@ window.GLOSSARY = [
     [ 1 ] ],
    [
     "1 Thessalonians", 3,
-    [ 5 ] ] ]
+    [ 5 ] ],
+   [
+    "Hebrews", 2,
+    [ 18 ] ] ]
  },
  {
   "id": "an-hungred",
@@ -28635,7 +28719,10 @@ window.GLOSSARY = [
     [ 12 ] ],
    [
     "2 Timothy", 3,
-    [ 17 ] ] ]
+    [ 17 ] ],
+   [
+    "Hebrews", 2,
+    [ 10 ] ] ]
  },
  {
   "id": "begat",
@@ -31398,7 +31485,10 @@ window.GLOSSARY = [
     [ 16 ] ],
    [
     "Philemon", 1,
-    [ 2 ] ] ]
+    [ 2 ] ],
+   [
+    "Hebrews", 2,
+    [ 12 ] ] ]
  },
  {
   "id": "bind-and-loose",
@@ -32619,7 +32709,10 @@ window.GLOSSARY = [
     [ 30 ] ],
    [
     "Luke", 18,
-    [ 30 ] ] ]
+    [ 30 ] ],
+   [
+    "Hebrews", 2,
+    [ 5 ] ] ]
  },
  {
   "id": "right-hand-and-left",
@@ -32691,7 +32784,10 @@ window.GLOSSARY = [
     [ 7 ] ],
    [
     "1 Thessalonians", 3,
-    [ 2 ] ] ]
+    [ 2 ] ],
+   [
+    "Hebrews", 1,
+    [ 7, 14 ] ] ]
  },
  {
   "id": "joanna",
@@ -37302,7 +37398,10 @@ window.GLOSSARY = [
     [ 35 ] ],
    [
     "Acts", 7,
-    [ 49 ] ] ]
+    [ 49 ] ],
+   [
+    "Hebrews", 1,
+    [ 13 ] ] ]
  },
  {
   "id": "pricked-in-the-heart",
@@ -37545,7 +37644,10 @@ window.GLOSSARY = [
     [ 6 ] ],
    [
     "2 Thessalonians", 2,
-    [ 7 ] ] ]
+    [ 7 ] ],
+   [
+    "Hebrews", 1,
+    [ 9 ] ] ]
  },
  {
   "id": "barnabas",
@@ -42156,7 +42258,10 @@ window.GLOSSARY = [
     [ 16 ] ],
    [
     "Colossians", 1,
-    [ 20, 21 ] ] ]
+    [ 20, 21 ] ],
+   [
+    "Hebrews", 2,
+    [ 17 ] ] ]
  },
  {
   "id": "atonement",
@@ -43077,7 +43182,10 @@ window.GLOSSARY = [
     [ 2 ] ],
    [
     "2 Timothy", 4,
-    [ 21 ] ] ]
+    [ 21 ] ],
+   [
+    "Hebrews", 2,
+    [ 11, 12, 17 ] ] ]
  },
  {
   "id": "captain-of-the-guard",
@@ -44541,7 +44649,10 @@ window.GLOSSARY = [
     [ 12 ] ],
    [
     "1 Timothy", 6,
-    [ 2 ] ] ]
+    [ 2 ] ],
+   [
+    "Hebrews", 2,
+    [ 14 ] ] ]
  },
  {
   "id": "strive",
@@ -47481,7 +47592,10 @@ window.GLOSSARY = [
   "refs": [
    [
     "Galatians", 3,
-    [ 16, 19, 29 ] ] ]
+    [ 16, 19, 29 ] ],
+   [
+    "Hebrews", 2,
+    [ 16 ] ] ]
  },
  {
   "id": "mediator",
@@ -47517,7 +47631,10 @@ window.GLOSSARY = [
     [ 1, 7, 30 ] ],
    [
     "Titus", 3,
-    [ 7 ] ] ]
+    [ 7 ] ],
+   [
+    "Hebrews", 1,
+    [ 2, 14 ] ] ]
  },
  {
   "id": "tutors-and-governors",
@@ -49395,7 +49512,10 @@ window.GLOSSARY = [
   "refs": [
    [
     "Ephesians", 6,
-    [ 12 ] ] ]
+    [ 12 ] ],
+   [
+    "Hebrews", 2,
+    [ 14 ] ] ]
  },
  {
   "id": "rulers-of-the-darkness",
@@ -50913,7 +51033,10 @@ window.GLOSSARY = [
   "refs": [
    [
     "2 Timothy", 3,
-    [ 13 ] ] ]
+    [ 13 ] ],
+   [
+    "Hebrews", 1,
+    [ 11 ] ] ]
  },
  {
   "id": "inspiration-of-god",
@@ -51442,5 +51565,236 @@ window.GLOSSARY = [
    [
     "Titus", 3,
     [ 13 ] ] ]
+ },
+ {
+  "id": "sundry-times",
+  "kind": "term",
+  "name": "At sundry times (in many parts, a piece at a time)",
+  "refs": [
+   [
+    "Hebrews", 1,
+    [ 1 ] ] ]
+ },
+ {
+  "id": "brightness-of-his-glory",
+  "kind": "term",
+  "name": "The brightness of his glory (the shining that streams from God's glory: the Son)",
+  "refs": [
+   [
+    "Hebrews", 1,
+    [ 3 ] ] ]
+ },
+ {
+  "id": "express-image",
+  "kind": "term",
+  "name": "The express image of his person (the exact stamp of who God is, like a seal in wax)",
+  "refs": [
+   [
+    "Hebrews", 1,
+    [ 3 ] ] ]
+ },
+ {
+  "id": "right-hand-of-the-majesty",
+  "kind": "place",
+  "name": "The right hand of the Majesty on high (the seat of honour and power beside God)",
+  "refs": [
+   [
+    "Hebrews", 1,
+    [ 3, 13 ] ] ]
+ },
+ {
+  "id": "firstbegotten",
+  "kind": "term",
+  "name": "The firstbegotten (the firstborn Son: first in rank and honour)",
+  "refs": [
+   [
+    "Hebrews", 1,
+    [ 6 ] ] ]
+ },
+ {
+  "id": "sceptre",
+  "kind": "term",
+  "name": "Sceptre (a king's rod, the sign of his rule)",
+  "refs": [
+   [
+    "Amos", 1,
+    [ 5, 8 ] ],
+   [
+    "Zechariah", 10,
+    [ 11 ] ],
+   [
+    "Hebrews", 1,
+    [ 8 ] ] ]
+ },
+ {
+  "id": "oil-of-gladness",
+  "kind": "term",
+  "name": "The oil of gladness (the joyful anointing poured on the King, the Messiah)",
+  "refs": [
+   [
+    "Hebrews", 1,
+    [ 9 ] ] ]
+ },
+ {
+  "id": "vesture",
+  "kind": "term",
+  "name": "Vesture (a garment, a coat)",
+  "refs": [
+   [
+    "Matthew", 27,
+    [ 35 ] ],
+   [
+    "John", 19,
+    [ 24 ] ],
+   [
+    "Hebrews", 1,
+    [ 12 ] ] ]
+ },
+ {
+  "id": "ministering-spirits",
+  "kind": "person",
+  "name": "Ministering spirits (angels, sent out to serve God's people)",
+  "refs": [
+   [
+    "Hebrews", 1,
+    [ 14 ] ] ]
+ },
+ {
+  "id": "let-them-slip",
+  "kind": "term",
+  "name": "Let them slip (drift away, like a boat slipping past its mooring)",
+  "refs": [
+   [
+    "Hebrews", 2,
+    [ 1 ] ] ]
+ },
+ {
+  "id": "earnest-heed",
+  "kind": "term",
+  "name": "Give the more earnest heed (pay close, careful attention)",
+  "refs": [
+   [
+    "Hebrews", 2,
+    [ 1 ] ] ]
+ },
+ {
+  "id": "neglect",
+  "kind": "term",
+  "name": "Neglect (make light of, not care about)",
+  "refs": [
+   [
+    "Hebrews", 2,
+    [ 3 ] ] ]
+ },
+ {
+  "id": "so-great-salvation",
+  "kind": "term",
+  "name": "So great salvation",
+  "refs": [
+   [
+    "Hebrews", 2,
+    [ 3 ] ] ]
+ },
+ {
+  "id": "what-is-man",
+  "kind": "term",
+  "name": "What is man? (Psalm 8: God's care for frail men, and the Man who fulfils it)",
+  "refs": [
+   [
+    "Hebrews", 2,
+    [ 6 ] ] ]
+ },
+ {
+  "id": "lower-than-the-angels",
+  "kind": "term",
+  "name": "A little lower than the angels (made a man; the Son stepping down)",
+  "refs": [
+   [
+    "Hebrews", 2,
+    [ 7, 9 ] ] ]
+ },
+ {
+  "id": "taste-death",
+  "kind": "term",
+  "name": "Taste death (go through death fully)",
+  "refs": [
+   [
+    "Hebrews", 2,
+    [ 9 ] ] ]
+ },
+ {
+  "id": "for-every-man",
+  "kind": "term",
+  "name": "For every man (Christ's death offered for all)",
+  "refs": [
+   [
+    "Hebrews", 2,
+    [ 9 ] ] ]
+ },
+ {
+  "id": "it-became-him",
+  "kind": "term",
+  "name": "It became him (it was fitting, right for God)",
+  "refs": [
+   [
+    "Hebrews", 2,
+    [ 10 ] ] ]
+ },
+ {
+  "id": "captain-of-salvation",
+  "kind": "person",
+  "name": "The captain of their salvation (the leader who goes first: Jesus)",
+  "refs": [
+   [
+    "Hebrews", 2,
+    [ 10 ] ] ]
+ },
+ {
+  "id": "not-ashamed-brethren",
+  "kind": "term",
+  "name": "Not ashamed to call them brethren (Jesus owns believers as His brothers)",
+  "refs": [
+   [
+    "Hebrews", 2,
+    [ 11 ] ] ]
+ },
+ {
+  "id": "power-of-death",
+  "kind": "person",
+  "name": "Him that had the power of death (the devil, whose hold Jesus broke)",
+  "refs": [
+   [
+    "Hebrews", 2,
+    [ 14 ] ] ]
+ },
+ {
+  "id": "fear-of-death",
+  "kind": "term",
+  "name": "The fear of death (a lifelong bondage)",
+  "refs": [
+   [
+    "Hebrews", 2,
+    [ 15 ] ] ]
+ },
+ {
+  "id": "behoved",
+  "kind": "term",
+  "name": "It behoved him (it was right, it had to be)",
+  "refs": [
+   [
+    "Luke", 24,
+    [ 46 ] ],
+   [
+    "Hebrews", 2,
+    [ 17 ] ] ]
+ },
+ {
+  "id": "succour",
+  "kind": "term",
+  "name": "Succour (to run to help someone who cries out)",
+  "refs": [
+   [
+    "Hebrews", 2,
+    [ 18 ] ] ]
  }
 ];

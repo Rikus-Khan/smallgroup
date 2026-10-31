@@ -1,0 +1,627 @@
+<!doctype html>
+<html lang="en" data-theme="night">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Hebrews 1</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="../assets/fonts.css">
+<link rel="stylesheet" href="../assets/deck.css">
+<link rel="stylesheet" href="../assets/themes.css">
+<style>
+/* he01-where: where we are in Hebrews (a deck.css candidate; every Hebrews study can copy it as is).
+   A heading line (p.he01-better) and six cards (div, --k). Each card holds its chapters (p > i; read ones .done, the one we are in .here),
+   what Jesus is better than (small + b), and where it is argued (cite). The cards we're in are .now; the last card (.so) is the "so hold on" part. */
+.he01-better { margin: .2em 0 .5em; font: 700 clamp(.82rem, .74rem + .35vw, 1.05rem) var(--sans); letter-spacing: .12em; text-transform: uppercase; color: var(--ink-soft); }
+.he01-better b { color: var(--accent-hot); font-size: 1.25em; letter-spacing: .16em; }
+.he01-where { display: grid; grid-template-columns: repeat(6, 1fr); gap: 10px; margin: .2em 0 1em; }
+.he01-where > div { --c: var(--line-strong); position: relative; padding: .5em .65em .6em; border-top: 6px solid var(--c); border-radius: 0 0 10px 10px;
+  background: color-mix(in srgb, var(--surface) 70%, transparent); opacity: 0; transform: translateY(10px);
+  transition: opacity .6s ease, transform .6s ease; transition-delay: calc(var(--k, 0) * 300ms + 300ms); }
+.slide.active .he01-where > div { opacity: 1; transform: none; }
+.he01-where > div.now { --c: var(--accent); background: color-mix(in srgb, var(--accent) 15%, transparent); box-shadow: inset 0 0 0 2px var(--accent); }
+.he01-where > div.so { --c: var(--accent-hot); border-top-style: double; }
+.he01-where p { display: flex; flex-wrap: wrap; gap: 4px; margin: 0 0 .4em; }
+.he01-where i { min-width: 1.9em; padding: .18em .25em; text-align: center; border-radius: 6px; border: 1.5px solid var(--line-strong);
+  font: 700 clamp(.76rem, .7rem + .3vw, 1rem) var(--sans); font-style: normal; color: var(--ink-soft); }
+.he01-where i.done { background: color-mix(in srgb, var(--accent) 14%, transparent); color: var(--ink); }
+.he01-where i.here { background: var(--accent); border-color: var(--accent); color: var(--on-accent); }
+.slide.active .he01-where i.here { animation: he01-here 2.4s ease-in-out 1.8s infinite; }
+@keyframes he01-here { 50% { box-shadow: 0 0 0 6px color-mix(in srgb, var(--accent) 28%, transparent); } }
+.he01-where small { display: block; font: 700 clamp(.66rem, .62rem + .2vw, .82rem) var(--sans); letter-spacing: .08em; text-transform: uppercase; color: var(--ink-soft); }
+.he01-where b { display: block; margin: .1em 0 .3em; font: 600 clamp(1rem, .84rem + .6vw, 1.4rem)/1.1 var(--serif); color: var(--ink); }
+.he01-where cite { display: block; font-style: normal; font-size: clamp(.7rem, .66rem + .2vw, .88rem); line-height: 1.3; color: var(--ink-soft); }
+@media (max-width: 760px) { .he01-where { grid-template-columns: repeat(3, 1fr); gap: 6px; } }
+@media (max-width: 480px) { .he01-where { grid-template-columns: repeat(2, 1fr); } }
+
+/* he01-spoke: many pieces over many centuries, then one whole Word. Tiles (.he01-bit, --k) rise in turn; the gap of silence;
+   then the Son's tile (.he01-son) on a step. */
+.he01-spoke { display: grid; grid-template-columns: repeat(8, 1fr) .55fr 2.3fr; gap: 6px; align-items: stretch; margin: .4em 0 .9em; }
+.he01-bit { padding: .4em .35em; border-radius: 8px; border: 1.5px dashed var(--line-strong); text-align: center;
+  background: color-mix(in srgb, var(--surface) 60%, transparent); opacity: 0; transform: translateY(8px);
+  transition: opacity .5s ease, transform .5s ease; transition-delay: calc(var(--k, 0) * 220ms + 400ms); }
+.slide.active .he01-bit { opacity: 1; transform: none; }
+.he01-bit b { display: block; font: 600 clamp(.78rem, .7rem + .3vw, 1.02rem)/1.1 var(--serif); color: var(--ink); }
+.he01-bit small { display: block; margin-top: .25em; font-size: clamp(.64rem, .6rem + .18vw, .8rem); line-height: 1.2; color: var(--ink-soft); }
+.he01-gap { display: grid; place-items: center; border-left: 2px dotted var(--line-strong); border-right: 2px dotted var(--line-strong);
+  font: italic clamp(.64rem, .6rem + .18vw, .8rem)/1.2 var(--serif); color: var(--ink-soft); text-align: center; writing-mode: vertical-rl; transform: rotate(180deg); }
+.he01-son { display: grid; align-content: center; padding: .5em .8em; border-radius: 10px; background: var(--accent); color: var(--on-accent); text-align: center;
+  box-shadow: 0 0 0 0 color-mix(in srgb, var(--accent) 40%, transparent); }
+.he01-son.on { animation: he01-son 2.6s ease-in-out .6s infinite; }
+@keyframes he01-son { 50% { box-shadow: 0 0 0 10px color-mix(in srgb, var(--accent) 22%, transparent); } }
+.he01-son b { font: 700 clamp(1.15rem, .95rem + .8vw, 1.8rem)/1.05 var(--serif); }
+.he01-son small { display: block; margin-top: .3em; font-size: clamp(.72rem, .66rem + .26vw, .95rem); line-height: 1.25; }
+.he01-spoke-cap { display: grid; grid-template-columns: 1fr auto; gap: 1em; margin: -.4em 0 .6em; font: 700 clamp(.68rem, .62rem + .22vw, .86rem) var(--sans); letter-spacing: .08em; text-transform: uppercase; color: var(--ink-soft); }
+@media (max-width: 640px) {
+  .he01-spoke { grid-template-columns: repeat(4, 1fr); }
+  .he01-gap { grid-column: 1 / -1; writing-mode: horizontal-tb; transform: none; border: 0; border-top: 2px dotted var(--line-strong); border-bottom: 2px dotted var(--line-strong); padding: .2em; }
+  .he01-son { grid-column: 1 / -1; }
+}
+
+/* he01-seven: the Son at the center, and the seven things verses 2-3 say about Him as rays that come out in turn (.he01-ray, --k). */
+@media (min-width: 900px) { .split.he01-wide { grid-template-columns: 1.65fr 1fr; gap: 1.2rem 1.8rem; } }
+.he01-seven { display: block; width: 100%; max-height: 64vh; overflow: visible; }
+.he01-seven .beams line { stroke: var(--glow); stroke-width: 10; stroke-linecap: round; opacity: 0; transition: opacity 1.4s ease .3s; }
+.slide.active .he01-seven .beams line { opacity: .1; }
+.he01-seven .core { fill: var(--glow); }
+.he01-seven .halo { fill: color-mix(in srgb, var(--glow) 25%, transparent); transform-box: fill-box; transform-origin: center; }
+.slide.active .he01-seven .halo { animation: he01-halo 3.2s ease-in-out infinite; }
+@keyframes he01-halo { 50% { transform: scale(1.12); opacity: .55; } }
+.he01-seven .core-t { fill: var(--on-glow); font: 700 27px var(--sans); letter-spacing: .1em; }
+.he01-seven .core-s { fill: var(--on-glow); font: italic 18px var(--serif); }
+.he01-ray { opacity: 0; transition: opacity .6s ease; transition-delay: calc(var(--k, 0) * 450ms + 700ms); }
+.slide.active .he01-ray { opacity: 1; }
+.he01-ray line { stroke: var(--accent); stroke-width: 5; stroke-linecap: round; }
+.he01-ray circle { fill: var(--accent); }
+.he01-ray .n { fill: var(--on-accent); font: 700 18px var(--sans); }
+.he01-ray .t { fill: var(--ink); font: 600 26px var(--serif); }
+.he01-ray.last line, .he01-ray.last circle { stroke: var(--accent-hot); fill: var(--accent-hot); }
+.he01-ray.last .t { fill: var(--accent-hot); font-weight: 700; }
+@media (max-width: 600px) { .he01-ray .t { font-size: 29px; } }
+
+/* he01-seal: the sun and its shining (never one without the other), and a seal that presses its exact picture into wax.
+   Both run when the slide opens. */
+.he01-seal { display: block; width: 100%; max-height: 30vh; margin: .2em 0 .5em; overflow: visible; }
+.he01-seal text { fill: var(--ink); font-family: var(--sans); font-size: 17px; }
+.he01-seal .gk { font-family: var(--serif); font-style: italic; font-size: 24px; fill: var(--accent-hot); }
+.he01-seal .sun { fill: var(--glow); }
+.he01-seal .beam { stroke: var(--glow); stroke-width: 5; stroke-linecap: round; stroke-dasharray: 1; stroke-dashoffset: 1; transition: stroke-dashoffset 1s ease .6s; }
+.slide.active .he01-seal .beam { stroke-dashoffset: 0; }
+.he01-seal .wax { fill: var(--wine); }
+.he01-seal .ring { fill: var(--leather-light); stroke: var(--leather); stroke-width: 3; }
+.he01-seal .face { fill: var(--leather); }
+.he01-seal .mark { fill: color-mix(in srgb, var(--wine) 55%, var(--on-glow)); opacity: 0; }
+.he01-seal .press { transform-box: view-box; }
+.slide.active .he01-seal .press { animation: he01-press 2.6s ease-in-out 1s both; }
+.slide.active .he01-seal .mark { animation: he01-mark .4s ease 2.2s both; }
+@keyframes he01-press { 0%, 100% { transform: translateY(0); } 40%, 55% { transform: translateY(78px); } }
+@keyframes he01-mark { to { opacity: 1; } }
+
+/* he01-src: the seven Old Testament quotes in Hebrews 1, in order, each with where it comes from and whom it is about.
+   Rows (li, --k) rise in turn; .ang marks the one about the angels. */
+.he01-src { list-style: none; margin: .3em 0 .7em; padding: 0; display: grid; gap: 5px; }
+.he01-src li { display: grid; grid-template-columns: 2.2em 4.2em 1fr 9.5em 7.4em; gap: .7em; align-items: center; padding: .28em .6em; border-radius: 8px;
+  background: color-mix(in srgb, var(--surface) 65%, transparent); border-left: 5px solid var(--accent);
+  opacity: 0; transform: translateX(-10px); transition: opacity .5s ease, transform .5s ease; transition-delay: calc(var(--k, 0) * 280ms + 300ms); }
+.slide.active .he01-src li { opacity: 1; transform: none; }
+.he01-src li.ang { border-left-color: var(--cool); }
+.he01-src i { font: 700 clamp(.8rem, .74rem + .3vw, 1.05rem) var(--sans); font-style: normal; display: grid; place-items: center; width: 1.8em; height: 1.8em; border-radius: 50%; background: var(--accent); color: var(--on-accent); }
+.he01-src li.ang i { background: var(--cool); color: var(--bg); }
+.he01-src cite { font-style: normal; font-weight: 700; font-size: clamp(.74rem, .68rem + .24vw, .95rem); color: var(--ink-soft); }
+.he01-src q { font: italic clamp(.86rem, .76rem + .4vw, 1.12rem)/1.25 var(--serif); color: var(--ink); quotes: "\201C" "\201D"; }
+.he01-src span { font: 700 clamp(.68rem, .62rem + .22vw, .86rem) var(--sans); letter-spacing: .06em; text-transform: uppercase; color: var(--accent-hot); }
+.he01-src li.ang span { color: var(--cool); }
+.he01-src b { justify-self: end; padding: .15em .55em; border-radius: 999px; border: 1.5px solid var(--line-strong); font: 600 clamp(.72rem, .66rem + .24vw, .92rem) var(--sans); color: var(--ink); white-space: nowrap; }
+@media (max-width: 760px) {
+  .he01-src li { grid-template-columns: 2em 1fr auto; gap: .2em .5em; }
+  .he01-src li q { grid-column: 2 / -1; grid-row: 2; }
+  .he01-src li span { grid-column: 2; grid-row: 1; }
+  .he01-src li cite { display: none; }
+}
+
+/* he01-shelf: the 39 books of the Old Testament as spines (i, --h for height), the ones a chapter quotes lit (.lit, with b for how many
+   quotes and small for the name). The lit ones light up in turn. */
+.he01-shelf { display: flex; align-items: flex-end; gap: 2px; height: 11.5rem; margin: 2.2em 0 .5em; padding: 0 0 4px; border-bottom: 5px solid var(--leather); }
+.he01-shelf i { position: relative; flex: 1 1 0; min-width: 5px; height: calc(var(--h) * .075rem); border-radius: 3px 3px 0 0;
+  background: color-mix(in srgb, var(--ink-soft) 35%, transparent); font-style: normal; }
+.he01-shelf i.lit { background: color-mix(in srgb, var(--accent) 30%, transparent); transition: background .6s ease; transition-delay: var(--at, 1s); }
+.slide.active .he01-shelf i.lit { background: var(--accent); }
+.he01-shelf i b { position: absolute; bottom: calc(100% + 4px); left: 50%; transform: translateX(-50%) scale(.5); opacity: 0; display: grid; place-items: center;
+  width: 2em; height: 2em; border-radius: 50%; background: var(--accent-hot); color: var(--on-accent); font: 700 clamp(.8rem, .74rem + .3vw, 1.05rem) var(--sans);
+  transition: opacity .5s ease, transform .5s ease; transition-delay: var(--at, 1s); }
+.slide.active .he01-shelf i b { opacity: 1; transform: translateX(-50%); }
+.he01-shelf i small { position: absolute; top: calc(100% + 10px); left: 50%; transform: translateX(-50%); white-space: nowrap;
+  font: 700 clamp(.7rem, .64rem + .24vw, .9rem) var(--sans); color: var(--accent-hot); }
+.he01-shelf-cap { display: flex; justify-content: space-between; margin: 1.9em 0 .6em; font-size: clamp(.72rem, .66rem + .22vw, .9rem); color: var(--ink-soft); }
+
+/* he01-fold: three worn garments (the earth, the heavens, all things) that wear thin when the slide opens and fold up on a step
+   (.he01-fold-go), above a bar that stays: "thou remainest". */
+.he01-fold { display: block; width: 100%; max-height: 34vh; margin: .2em 0 .6em; overflow: visible; }
+.he01-fold text { fill: var(--ink); font-family: var(--sans); font-size: 18px; }
+.he01-fold .coat { fill: var(--leather-light); stroke: var(--leather); stroke-width: 3; transform-box: fill-box; transform-origin: 50% 100%; transition: transform 1.2s ease, opacity 1.2s ease; }
+.slide:has(.he01-fold-go.on) .he01-fold .coat { transform: scaleY(.22); opacity: .5; }
+.he01-fold .hole { fill: var(--bg); opacity: 0; transition: opacity .6s ease; transition-delay: calc(var(--k, 0) * 300ms + 900ms); }
+.slide.active .he01-fold .hole { opacity: .9; }
+.slide:has(.he01-fold-go.on) .he01-fold .hole { opacity: 0; transition-delay: 0s; }
+.he01-fold .lbl { fill: var(--ink-soft); font-weight: 700; letter-spacing: .06em; }
+.he01-fold .folded { fill: var(--ink-soft); font-style: italic; font-family: var(--serif); opacity: 0; transition: opacity .6s ease .9s; }
+.slide:has(.he01-fold-go.on) .he01-fold .folded { opacity: 1; }
+.he01-fold .stay { fill: var(--accent); }
+.slide.active .he01-fold .stay { animation: he01-stay 3s ease-in-out infinite; }
+@keyframes he01-stay { 50% { opacity: .82; } }
+.he01-fold .stay-t { fill: var(--on-accent); font: 700 22px var(--serif); }
+</style>
+</head>
+<body>
+<main class="deck" id="deck">
+
+<section class="slide title">
+  <div class="inner">
+    <div class="emblem rise"></div>
+    <h1 class="rise" style="--d:1">Hebrews 1</h1>
+    <p class="sub rise" style="--d:3">God Has Spoken by His Son</p>
+    <p class="tag rise" style="--d:5">No greeting, no name, just God speaking. A letter to tired, pressured believers opens with the biggest picture of Jesus in the Bible: the Maker of the worlds, the shining of God's glory, who washed away our sins Himself and then sat down.</p>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <div class="split">
+      <div class="stage">
+        <svg data-world viewBox="150 105 760 430" style="max-height:62vh" data-towns="Rome!:t, Jerusalem*:r" role="img" aria-label="A map of the Roman world from Italy to Judaea. Rome, in Italy, pulses; Jerusalem, with its temple, is lit. A sea route draws between them, south of Greece and Crete to Joppa and up to Jerusalem. On the sea: They of Italy salute you, Hebrews 13:24.">
+          <path class="map-route" data-via="Rome, Puteoli, @14.6 40.2, @15.4 39.3, @15.55 38.4, Rhegium, @17.2 37.4, @21 36.3, @24.2 34.6, @28.5 34.2, @32.5 33.2, Joppa, Jerusalem"/>
+          <text class="map-water" x="178" y="236">“They of Italy</text><text class="map-water" x="178" y="256">salute you”</text><text class="map-water" x="178" y="276">13:24</text>
+        </svg>
+      </div>
+      <div>
+        <h2 class="rise" style="--d:1">The letter to the Hebrews</h2>
+        <div class="letter">
+          <p class="from">No name, no greeting. It opens with God: “God, who at sundry times and in divers manners spake in time past unto the fathers by the prophets, Hath in these last days spoken unto us by his Son”</p>
+          <dl>
+            <dt>Written by</dt><dd>the writer of Hebrews; he never gives his name. Many think Paul; others, Apollos or Barnabas.</dd>
+            <dt>When</dt><dd>about AD 64 to 68. The temple in Jerusalem is still standing, and the priests still offer “daily” (10:11).</dd>
+            <dt>To whom</dt><dd>Jewish believers in Jesus. Near the end he writes, “They of Italy salute you” (13:24), so the letter has friends in Italy.</dd>
+            <dt>Why</dt><dd class="step">They were under pressure, and some were tempted to drift back to the old system: the temple, the priests, the sacrifices. The writer shows them that Jesus is better than all of it, and begs them to hold on.</dd>
+          </dl>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise" style="--d:1">Where Hebrews fits</h2>
+    <ol class="timeline" aria-label="About AD 30 to 33, the cross, the empty tomb and Pentecost: the Lord first speaks this salvation. About AD 34 and after, persecution: Stephen is killed and believers are scattered; these readers lose goods and friends. About AD 64, Rome burns and Nero turns on the Christians. About AD 64 to 68, the letter to the Hebrews. About AD 70, Rome destroys Jerusalem and the temple.">
+      <li style="--k:0"><b>about AD 30 to 33</b><span>The cross, the empty tomb, Pentecost</span><small>“spoken by the Lord” 2:3</small></li>
+      <li style="--k:1"><b>about AD 34 on</b><span>Persecution: Stephen killed, believers scattered</span><small>Acts 8:1; Hebrews 10:32–34</small></li>
+      <li style="--k:2"><b>about AD 64</b><span>Rome burns; Nero turns on the Christians</span><small>pressure everywhere</small></li>
+      <li class="lit" style="--k:3"><b>about AD 64 to 68</b><span>Hebrews</span><small>“hold fast”</small></li>
+      <li class="wait" style="--k:4"><b>about AD 70</b><span>Rome destroys Jerusalem and the temple</span><small>the old system gone</small></li>
+    </ol>
+    <blockquote class="quote rise" style="--d:3"><p>“But call to remembrance the former days, in which, after ye were illuminated, ye endured a great fight of afflictions;”</p><cite>Hebrews 10:32</cite></blockquote>
+    <p class="note step">They had already paid a price: insults, jail visits, their goods taken (10:33–34). Now the pressure was rising, and the old way looked safe and familiar. Within a few years the temple they longed for would be rubble. Only Jesus would still be standing.</p>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise" style="--d:1">Hebrews in one picture: Jesus is better</h2>
+    <p class="he01-better rise" style="--d:1">Jesus is <b>better</b> than …</p>
+    <div class="he01-where" role="img" aria-label="Hebrews in six parts. Jesus is better than the prophets, chapter 1. Better than the angels, chapters 1 and 2. Better than Moses, chapters 3 and 4. Better than Aaron's priests, chapters 5 to 7. Better than the old covenant and its sacrifices, chapters 8 to 10. So hold on: faith, endurance and love, chapters 11 to 13. We are in chapter 1, the prophets and the angels.">
+      <div class="now" style="--k:0"><p><i class="here">1</i></p><small>better than</small><b>the prophets</b><cite>God's last word is His Son. 1:1–3</cite></div>
+      <div class="now" style="--k:1"><p><i class="here">1</i><i>2</i></p><small>better than</small><b>the angels</b><cite>the Son on the throne. 1:4–2:18</cite></div>
+      <div style="--k:2"><p><i>3</i><i>4</i></p><small>better than</small><b>Moses</b><cite>a Son over the house, and a rest. 3–4</cite></div>
+      <div style="--k:3"><p><i>5</i><i>6</i><i>7</i></p><small>better than</small><b>Aaron's priests</b><cite>a priest for ever. 5–7</cite></div>
+      <div style="--k:4"><p><i>8</i><i>9</i><i>10</i></p><small>better than</small><b>the old sacrifices</b><cite>one offering, a new covenant. 8–10</cite></div>
+      <div class="so" style="--k:5"><p><i>11</i><i>12</i><i>13</i></p><small>so</small><b>hold on</b><cite>faith, endurance, love. 11–13</cite></div>
+    </div>
+    <p class="note rise" style="--d:3">The word <em>better</em> shows up 13 times in this letter, as many times as it has chapters. Everything the readers were tempted to go back to was good, and given by God. But it pointed to Someone. Now He has come.</p>
+    <p class="note step">Today is chapter 1: better than the prophets, and better than the angels.</p>
+  </div>
+</section>
+
+<section class="slide watch">
+  <div class="inner">
+    <h2 class="rise">Things to watch for</h2>
+    <p class="lede rise" style="--d:1">Keep these questions in the back of your mind as we read. We'll come back to every one of them at the end.</p>
+    <ol class="seeds">
+      <li class="step"><span class="topic">God speaks</span><span class="seed-q">How has God spoken to us “in these last days”?</span></li>
+      <li class="step"><span class="topic">Who Jesus is</span><span class="seed-q">What does verse 3 say the Son is, and what does He do?</span></li>
+      <li class="step"><span class="topic">Sins dealt with</span><span class="seed-q">What did the Son do “by himself,” and what did He do next?</span></li>
+      <li class="step"><span class="topic">Better than angels</span><span class="seed-q">Why is the Son better than the angels?</span></li>
+      <li class="step"><span class="topic">He never changes</span><span class="seed-q">What will wear out, and who remains?</span></li>
+      <li class="step"><span class="topic">Help sent</span><span class="seed-q">Whom are the angels sent to serve?</span></li>
+    </ol>
+  </div>
+</section>
+
+<section class="slide part">
+  <div class="inner">
+    <p class="part-n rise">Part one</p>
+    <h2 class="rise" style="--d:1">God has spoken</h2>
+    <p class="range rise" style="--d:2">Verses 1–3</p>
+    <div class="rule"></div>
+    <p class="hook rise" style="--d:4">One long sentence that may be the greatest description of Jesus ever written.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="1-2" data-hl="at sundry times and in divers manners|Hath in these last days spoken unto us by|his Son|heir of all things|by whom also he made the worlds"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="1" data-hl="at sundry times and in divers manners"></blockquote>
+    <h2 class="rise" style="--d:1">Many pieces, then the whole</h2>
+    <div class="he01-spoke" role="img" aria-label="Eight small tiles, God speaking in pieces over many centuries: Moses at a burning bush, Samuel a voice in the night, David in songs, Elijah a still small voice, Isaiah in a vision, Jeremiah with tears, Hosea through his own marriage, Malachi the last. Then about four hundred years of silence. Then one large tile: His Son, the last and full Word.">
+      <div class="he01-bit" style="--k:0"><b>Moses</b><small>a burning bush</small></div>
+      <div class="he01-bit" style="--k:1"><b>Samuel</b><small>a voice in the night</small></div>
+      <div class="he01-bit" style="--k:2"><b>David</b><small>songs</small></div>
+      <div class="he01-bit" style="--k:3"><b>Elijah</b><small>a still small voice</small></div>
+      <div class="he01-bit" style="--k:4"><b>Isaiah</b><small>a vision</small></div>
+      <div class="he01-bit" style="--k:5"><b>Jeremiah</b><small>tears</small></div>
+      <div class="he01-bit" style="--k:6"><b>Hosea</b><small>his own marriage</small></div>
+      <div class="he01-bit" style="--k:7"><b>Malachi</b><small>the last</small></div>
+      <div class="he01-gap rise" style="--d:9">about 400 years of silence</div>
+      <div class="he01-son step"><b>His Son</b><small>“in these last days”: the last word, and the whole word</small></div>
+    </div>
+    <div class="he01-spoke-cap rise" style="--d:3"><span>“sundry times”: many pieces · “divers manners”: many ways</span><span>“by his Son”</span></div>
+    <p class="note step"><em>Sundry times</em> means in many parts, a piece here and a piece there, over about a thousand years. <em>Divers manners</em> means in many different ways. Every piece was true. None of it was the whole.</p>
+    <p class="note step">Then God stopped sending messages and came Himself. If you want to know what God is like, what He thinks of you, and what He wants from you, you don't have to guess. Look at Jesus.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="3" data-hl="the brightness of his glory, and the express image of his person|upholding all things by the word of his power|when he had by himself purged our sins|sat down on the right hand of the Majesty on high"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <div class="split he01-wide">
+      <div class="stage">
+        <svg class="he01-seven" viewBox="-30 36 760 414" style="max-height:70vh" role="img" aria-label="The Son at the center, shining. Seven rays come out of Him in turn, one for each thing verses 2 and 3 say: heir of all things; by whom he made the worlds; the brightness of his glory; the express image of his person; upholding all things by the word of his power; by himself purged our sins; sat down on the right hand of the Majesty on high.">
+          <g class="beams"><line x1="372" y1="143" x2="423" y2="-82"/><line x1="412" y1="162" x2="556" y2="-18"/><line x1="440" y1="197" x2="647" y2="97"/><line x1="450" y1="240" x2="680" y2="240"/><line x1="440" y1="283" x2="647" y2="383"/><line x1="412" y1="318" x2="556" y2="498"/><line x1="372" y1="337" x2="423" y2="562"/><line x1="328" y1="337" x2="277" y2="562"/><line x1="288" y1="318" x2="144" y2="498"/><line x1="260" y1="283" x2="53" y2="383"/><line x1="250" y1="240" x2="20" y2="240"/><line x1="260" y1="197" x2="53" y2="97"/><line x1="288" y1="162" x2="144" y2="-18"/><line x1="328" y1="143" x2="277" y2="-82"/></g>
+          <circle class="halo" cx="350" cy="240" r="94"/>
+          <circle class="core" cx="350" cy="240" r="76"/>
+          <text class="core-t" x="350" y="242" text-anchor="middle">THE SON</text>
+          <text class="core-s" x="350" y="270" text-anchor="middle">verses 2–3</text>
+          <g class="he01-ray" style="--k:0"><line x1="350" y1="144" x2="350" y2="104"/><circle cx="350" cy="88" r="17"/><text class="n" x="350" y="94" text-anchor="middle">1</text><text class="t" x="350" y="67" text-anchor="middle">heir of all things</text></g>
+          <g class="he01-ray" style="--k:1"><line x1="425" y1="180" x2="456" y2="155"/><circle cx="469" cy="145" r="17"/><text class="n" x="469" y="151" text-anchor="middle">2</text><text class="t" x="506" y="138">made the worlds</text></g>
+          <g class="he01-ray" style="--k:2"><line x1="444" y1="261" x2="483" y2="270"/><circle cx="498" cy="274" r="17"/><text class="n" x="498" y="280" text-anchor="middle">3</text><text class="t" x="522" y="276">the brightness</text><text class="t" x="522" y="304">of his glory</text></g>
+          <g class="he01-ray" style="--k:3"><line x1="392" y1="326" x2="409" y2="363"/><circle cx="416" cy="377" r="17"/><text class="n" x="416" y="383" text-anchor="middle">4</text><text class="t" x="436" y="406">the express image</text><text class="t" x="436" y="434">of his person</text></g>
+          <g class="he01-ray" style="--k:4"><line x1="308" y1="326" x2="291" y2="363"/><circle cx="284" cy="377" r="17"/><text class="n" x="284" y="383" text-anchor="middle">5</text><text class="t" x="264" y="406" text-anchor="end">upholding</text><text class="t" x="264" y="434" text-anchor="end">all things</text></g>
+          <g class="he01-ray" style="--k:5"><line x1="256" y1="261" x2="217" y2="270"/><circle cx="202" cy="274" r="17"/><text class="n" x="202" y="280" text-anchor="middle">6</text><text class="t" x="178" y="276" text-anchor="end">by himself</text><text class="t" x="178" y="304" text-anchor="end">purged our sins</text></g>
+          <g class="he01-ray last" style="--k:6"><line x1="275" y1="180" x2="244" y2="155"/><circle cx="231" cy="145" r="17"/><text class="n" x="231" y="151" text-anchor="middle">7</text><text class="t" x="194" y="138" text-anchor="end">sat down</text></g>
+        </svg>
+      </div>
+      <div>
+        <h2 class="rise" style="--d:1">Seven things about the Son</h2>
+        <p class="note rise" style="--d:2"><em>Before time:</em> the <em>heir</em> of everything, and the One <em>by whom</em> God made the worlds (1, 2).</p>
+        <p class="note step"><em>Who He is:</em> the <em>brightness</em> of God's glory and the <em>express image</em> of His person (3, 4). Not a copy. God Himself, shown.</p>
+        <p class="note step"><em>Right now:</em> <em>upholding all things</em> by His word (5). The sun came up today because He said so.</p>
+        <p class="note step"><em>At the cross:</em> He <em>by himself purged our sins</em> (6). Then He <em>sat down</em> (7), because the job was done.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="3" data-hl="the brightness of his glory, and the express image of his person"></blockquote>
+    <h2 class="rise" style="--d:1">The shining and the stamp</h2>
+    <svg class="he01-seal" viewBox="0 0 640 230" role="img" aria-label="Left: the sun with its rays drawing out. You never have the sun without its shining. Right: a seal ring presses down into red wax and lifts, leaving the exact picture of its face.">
+      <circle class="sun" cx="150" cy="100" r="40"/>
+      <g><path class="beam" pathLength="1" d="M150 48 V18"/><path class="beam" pathLength="1" d="M150 152 V182"/><path class="beam" pathLength="1" d="M98 100 H68"/><path class="beam" pathLength="1" d="M202 100 H232"/><path class="beam" pathLength="1" d="M113 63 L92 42"/><path class="beam" pathLength="1" d="M187 63 L208 42"/><path class="beam" pathLength="1" d="M113 137 L92 158"/><path class="beam" pathLength="1" d="M187 137 L208 158"/></g>
+      <text class="gk" x="150" y="216" text-anchor="middle">apaugasma: the shining</text>
+      <ellipse class="wax" cx="470" cy="166" rx="62" ry="22"/>
+      <path class="mark" d="M470 152 l5 9 h10 l-8 6 l3 10 l-10 -6 l-10 6 l3 -10 l-8 -6 h10 z"/>
+      <g class="press">
+        <rect class="ring" x="456" y="10" width="28" height="52" rx="8"/>
+        <rect class="ring" x="436" y="58" width="68" height="16" rx="4"/>
+        <path class="face" d="M470 76 l5 9 h10 l-8 6 l3 10 l-10 -6 l-10 6 l3 -10 l-8 -6 h10 z" transform="translate(0 -2)"/>
+      </g>
+      <text class="gk" x="470" y="216" text-anchor="middle">charaktēr: the stamp</text>
+    </svg>
+    <p class="note step"><em>Brightness</em> is the light that streams off the sun. Nobody has ever seen the sun without its shining. The Son has always been with the Father, and He is how God's glory reaches us.</p>
+    <p class="note step"><em>Express image</em> is the mark a seal leaves in wax: every line of the seal, exactly. Jesus said, <em>“he that hath seen me hath seen the Father”</em> (John 14:9). Whatever you see in Jesus, His patience with failures, His welcome to sinners, that is what God is like.</p>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="3" data-hl="when he had by himself purged our sins, sat down"></blockquote>
+    <h2 class="rise" style="--d:1">He sat down</h2>
+    <div class="columns">
+      <div class="col law step">
+        <p class="who">The priests in the temple</p>
+        <h3>Always standing</h3>
+        <p>There were no chairs in the holy place. Every day, more sacrifices. The work was never finished.</p>
+      </div>
+      <div class="col grace step">
+        <p class="who">The Son</p>
+        <h3>Sat down</h3>
+        <p><em>By himself</em>, with no help from us, He <em>purged</em> (washed clean) our sins. Then He sat down. Finished.</p>
+      </div>
+    </div>
+    <blockquote class="quote step"><p>“And every priest standeth daily ministering and offering oftentimes the same sacrifices, which can never take away sins: But this man, after he had offered one sacrifice for sins for ever, sat down on the right hand of God;”</p><cite>Hebrews 10:11–12</cite></blockquote>
+    <p class="note step">If yesterday's failure is still sitting on your chest, look at where Jesus is: seated. He isn't still working on your sins, waiting to see if you'll earn the rest. Confess it (1 John 1:9) and rest in a finished job.</p>
+  </div>
+</section>
+
+<section class="slide part">
+  <div class="inner">
+    <p class="part-n rise">Part two</p>
+    <h2 class="rise" style="--d:1">Better than the angels</h2>
+    <p class="range rise" style="--d:2">Verses 4–14</p>
+    <div class="rule"></div>
+    <p class="hook rise" style="--d:4">Seven quotes from the Old Testament, one after another, and every one of them points to the Son.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="4-5" data-hl="so much better than the angels|a more excellent name|Thou art my Son, this day have I begotten thee|I will be to him a Father, and he shall be to me a Son"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="4" data-hl="so much better than the angels"></blockquote>
+    <h2 class="rise" style="--d:1">Why bring up angels?</h2>
+    <p class="note rise" style="--d:2">The Jews held angels in high honor. The law itself came at Sinai with angels present: <em>“Who have received the law by the disposition of angels”</em> (Acts 7:53). If the old system came through angels, was it the highest thing there is? No.</p>
+    <div class="columns">
+      <div class="col law step">
+        <p class="who">The angels</p>
+        <h3>Servants</h3>
+        <p>Made. Sent. They <em>worship</em> Him (v. 6). They are <em>ministering spirits</em> (v. 14), standing ready.</p>
+      </div>
+      <div class="col grace step">
+        <p class="who">Jesus</p>
+        <h3>The Son</h3>
+        <p>Heir. Maker of the worlds. Worshipped. On a throne <em>for ever and ever</em> (v. 8). Seated at God's right hand (v. 13).</p>
+      </div>
+    </div>
+    <p class="note step">To which angel did God ever say <em>“Thou art my Son”</em>? To none. That name, <em>Son</em>, is the <em>more excellent name</em>.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="6-7" data-hl="let all the angels of God worship him|Who maketh his angels spirits, and his ministers a flame of fire"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise" style="--d:1">Seven quotes, and where they come from</h2>
+    <ol class="he01-src" aria-label="The seven Old Testament quotes in Hebrews 1. One: verse 5, Thou art my Son, this day have I begotten thee, to the Son, from Psalm 2:7. Two: verse 5, I will be to him a Father, to the Son, from 2 Samuel 7:14. Three: verse 6, let all the angels of God worship him, about the Son, from Psalm 97:7. Four: verse 7, Who maketh his angels spirits, about the angels, from Psalm 104:4. Five: verses 8 and 9, Thy throne, O God, is for ever and ever, to the Son, from Psalm 45:6 and 7. Six: verses 10 to 12, Thou, Lord, in the beginning hast laid the foundation of the earth, to the Son, from Psalm 102:25 to 27. Seven: verse 13, Sit on my right hand, to the Son, from Psalm 110:1.">
+      <li style="--k:0"><i>1</i><cite>1:5</cite><q>Thou art my Son, this day have I begotten thee</q><span>to the Son</span><b>Psalm 2:7</b></li>
+      <li style="--k:1"><i>2</i><cite>1:5</cite><q>I will be to him a Father, and he shall be to me a Son</q><span>to the Son</span><b>2 Samuel 7:14</b></li>
+      <li style="--k:2"><i>3</i><cite>1:6</cite><q>let all the angels of God worship him</q><span>the Son, worshipped</span><b>Psalm 97:7</b></li>
+      <li class="ang" style="--k:3"><i>4</i><cite>1:7</cite><q>Who maketh his angels spirits, and his ministers a flame of fire</q><span>the angels: servants</span><b>Psalm 104:4</b></li>
+      <li style="--k:4"><i>5</i><cite>1:8–9</cite><q>Thy throne, O God, is for ever and ever</q><span>to the Son</span><b>Psalm 45:6–7</b></li>
+      <li style="--k:5"><i>6</i><cite>1:10–12</cite><q>Thou, Lord, in the beginning hast laid the foundation of the earth</q><span>to the Son</span><b>Psalm 102:25–27</b></li>
+      <li style="--k:6"><i>7</i><cite>1:13</cite><q>Sit on my right hand, until I make thine enemies thy footstool</q><span>to the Son</span><b>Psalm 110:1</b></li>
+    </ol>
+    <p class="note step">Six of the seven speak to or about the Son. The one about angels (v. 7) calls them <em>ministers</em>: servants, quick as wind and fire. The score isn't close.</p>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise" style="--d:1">He opened the Bible they already trusted</h2>
+    <div class="he01-shelf" role="img" aria-label="The thirty-nine books of the Old Testament as book spines on a shelf, Genesis to Malachi. Two light up: 2 Samuel, with one quote, and Psalms, the tallest, with six.">
+      <i style="--h:94"></i><i style="--h:87"></i><i style="--h:77"></i><i style="--h:84"></i><i style="--h:82"></i><i style="--h:74"></i><i style="--h:71"></i><i style="--h:48"></i><i style="--h:80"></i><i class="lit" style="--h:74;--at:1.2s"><b>1</b><small>2 Samuel</small></i><i style="--h:72"></i><i style="--h:75"></i><i style="--h:78"></i><i style="--h:84"></i><i style="--h:58"></i><i style="--h:62"></i><i style="--h:58"></i><i style="--h:88"></i><i class="lit" style="--h:140;--at:2s"><b>6</b><small>Psalms</small></i><i style="--h:80"></i><i style="--h:61"></i><i style="--h:55"></i><i style="--h:103"></i><i style="--h:95"></i><i style="--h:50"></i><i style="--h:92"></i><i style="--h:61"></i><i style="--h:64"></i><i style="--h:45"></i><i style="--h:57"></i><i style="--h:39"></i><i style="--h:48"></i><i style="--h:53"></i><i style="--h:45"></i><i style="--h:45"></i><i style="--h:45"></i><i style="--h:43"></i><i style="--h:64"></i><i style="--h:48"></i>
+    </div>
+    <div class="he01-shelf-cap"><span>Genesis</span><span>Malachi</span></div>
+    <p class="note rise" style="--d:3">The writer doesn't invent anything new. His readers loved the Psalms; they sang them. He opens that same book and shows them the Son on page after page.</p>
+    <blockquote class="quote step"><p>“For unto which of the angels said he at any time, Thou art my Son, this day have I begotten thee?”</p><cite>Hebrews 1:5</cite></blockquote>
+    <p class="note step">This is still how to read the Old Testament: look for Jesus. He is the One it was all pointing to.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="8-9" data-hl="Thy throne, O God,|for ever and ever|Thou hast loved righteousness, and hated iniquity|the oil of gladness above thy fellows"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="8" data-hl="Thy throne, O God,"></blockquote>
+    <p class="saying rise" style="--d:1">God the Father calls the Son <em>“O God.”</em></p>
+    <p class="note rise" style="--d:2">Read it slowly: <em>“But unto the Son he saith, Thy throne, O God.”</em> Jesus isn't the highest angel or a good teacher. He is God, with a throne that lasts <em>for ever and ever</em>.</p>
+    <p class="note step"><em>Anointed … with the oil of gladness</em>: kings were anointed with oil. In Hebrew, the Anointed One is <em>Messiah</em>; in Greek, <em>Christ</em>. And look why: He <em>loved righteousness, and hated iniquity</em>. Every other king in history did some wrong. This King never once did.</p>
+    <p class="note step">There's gladness in Him, too: joy above everyone around Him. Following Jesus isn't joining a gloomy club. It's coming under the happiest King there is.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="10-12" data-hl="in the beginning hast laid the foundation of the earth|They shall perish; but thou remainest|wax old as doth a garment|thou art the same, and thy years shall not fail"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="11" data-hl="They shall perish; but thou remainest"></blockquote>
+    <h2 class="rise" style="--d:1">Everything wears out but Him</h2>
+    <svg class="he01-fold" viewBox="0 0 640 290" role="img" aria-label="Three garments, labelled the earth, the heavens, and all things. Holes wear through them. On a step they fold up small. Below them a bright bar stays: thou remainest, thou art the same.">
+      <g transform="translate(120 40)"><path class="coat" d="M-60 0 L-24 -12 Q0 2 24 -12 L60 0 L48 34 L30 28 L30 120 L-30 120 L-30 28 L-48 34 Z"/><circle class="hole" style="--k:0" cx="-10" cy="60" r="6"/><circle class="hole" style="--k:3" cx="14" cy="96" r="5"/><text class="lbl" x="0" y="148" text-anchor="middle">the earth</text></g>
+      <g transform="translate(320 40)"><path class="coat" d="M-60 0 L-24 -12 Q0 2 24 -12 L60 0 L48 34 L30 28 L30 120 L-30 120 L-30 28 L-48 34 Z"/><circle class="hole" style="--k:1" cx="12" cy="50" r="7"/><circle class="hole" style="--k:4" cx="-14" cy="100" r="5"/><text class="lbl" x="0" y="148" text-anchor="middle">the heavens</text></g>
+      <g transform="translate(520 40)"><path class="coat" d="M-60 0 L-24 -12 Q0 2 24 -12 L60 0 L48 34 L30 28 L30 120 L-30 120 L-30 28 L-48 34 Z"/><circle class="hole" style="--k:2" cx="-6" cy="76" r="7"/><circle class="hole" style="--k:5" cx="-44" cy="20" r="4"/><text class="lbl" x="0" y="148" text-anchor="middle">all things</text></g>
+      <text class="folded" x="320" y="214" text-anchor="middle">“as a vesture shalt thou fold them up”</text>
+      <rect class="stay" x="40" y="232" width="560" height="50" rx="12"/>
+      <text class="stay-t" x="320" y="265" text-anchor="middle">“but thou remainest … thou art the same”</text>
+    </svg>
+    <p class="note step he01-fold-go">God calls the Son <em>“Lord”</em> and the Maker of earth and sky. One day He'll fold up the whole universe like an old coat and put it away.</p>
+    <p class="note step">Your health, your job, your reputation, your plans: all of it wears thin. He doesn't. <em>“Jesus Christ the same yesterday, and to day, and for ever”</em> (13:8). The Jesus who forgave you last year hasn't changed His mind since.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="13-14" data-hl="Sit on my right hand, until I make thine enemies thy footstool|ministering spirits, sent forth to minister for them who shall be heirs of salvation"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="14" data-hl="sent forth to minister for them who shall be heirs of salvation"></blockquote>
+    <h2 class="rise" style="--d:1">Sent for you</h2>
+    <div class="columns">
+      <div class="col grace step">
+        <p class="who">The Son</p>
+        <h3>Sits</h3>
+        <p>At God's right hand, <em>until</em> every enemy is under His feet (v. 13). The war's outcome is settled.</p>
+      </div>
+      <div class="col law step">
+        <p class="who">The angels</p>
+        <h3>Are sent</h3>
+        <p>Out on errands. And for whom? For <em>them who shall be heirs of salvation</em>. For believers. For you.</p>
+      </div>
+    </div>
+    <blockquote class="quote step"><p>“The angel of the LORD encampeth round about them that fear him, and delivereth them.”</p><cite>Psalm 34:7</cite></blockquote>
+    <p class="note step">You'll walk into work today feeling alone. You're not. The Son is on the throne, and heaven has servants on duty for His people. We don't pray to angels or chase them; we trust the One who sends them.</p>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <p class="saying rise">God has spoken <em>by his Son</em>.</p>
+    <p class="note rise" style="--d:2">Prophets, angels, the law, the temple: every one of them was a voice from God. The Son is the last and best Word. The next chapter asks the obvious question: if God has spoken like this, are we listening?</p>
+    <p class="note step">Something to do today: read one chapter of a Gospel, and as you read, ask, <em>“What does this show me about what God is like?”</em> Then tell one man what you saw.</p>
+  </div>
+</section>
+
+<section class="slide remember">
+  <div class="inner">
+    <h2 class="rise">Points to remember</h2>
+    <ol class="seeds">
+      <li class="step"><span class="topic">God speaks</span><span class="seed-q">“Hath in these last days spoken unto us by his Son” <cite>1:2</cite></span><span class="take">The prophets gave pieces. Jesus is God's last and full Word.</span></li>
+      <li class="step"><span class="topic">Who Jesus is</span><span class="seed-q">“the brightness of his glory, and the express image of his person” <cite>1:3</cite></span><span class="take">To see Jesus is to see exactly what God is like, and He holds everything up.</span></li>
+      <li class="step"><span class="topic">Sins dealt with</span><span class="seed-q">“when he had by himself purged our sins, sat down” <cite>1:3</cite></span><span class="take">He washed our sins away Himself, and sat down: the work is finished.</span></li>
+      <li class="step"><span class="topic">Better than angels</span><span class="seed-q">“Being made so much better than the angels” <cite>1:4</cite></span><span class="take">Angels serve and worship. The Son is God, on the throne for ever.</span></li>
+      <li class="step"><span class="topic">He never changes</span><span class="seed-q">“They shall perish; but thou remainest” <cite>1:11</cite></span><span class="take">Everything wears out. Jesus is the same, and so is His grace.</span></li>
+      <li class="step"><span class="topic">Help sent</span><span class="seed-q">“sent forth to minister for them who shall be heirs of salvation” <cite>1:14</cite></span><span class="take">Heaven's servants are sent for believers. You're not alone today.</span></li>
+    </ol>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 1 of 6</p>
+      <span class="topic">God speaks</span>
+      <h2>How has God spoken to us “in these last days”?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="1"></blockquote>
+      <blockquote class="quote step" data-q="2"></blockquote>
+      <blockquote class="quote step"><p>“No man hath seen God at any time; the only begotten Son, which is in the bosom of the Father, he hath declared him.”</p><cite>John 1:18</cite></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>By His Son. In the past God spoke through the prophets, a piece at a time and in many ways. Now He has spoken through Jesus, who shows us the Father fully.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 2 of 6</p>
+      <span class="topic">Who Jesus is</span>
+      <h2>What does verse 3 say the Son is, and what does He do?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="3" data-hl="the brightness of his glory, and the express image of his person, and upholding all things by the word of his power"></blockquote>
+      <blockquote class="quote step"><p>“And he is before all things, and by him all things consist.”</p><cite>Colossians 1:17</cite></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>He is the brightness of God's glory and the exact image of who God is. And He holds everything together by His word, today and every day.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 3 of 6</p>
+      <span class="topic">Sins dealt with</span>
+      <h2>What did the Son do “by himself,” and what did He do next?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="3" data-hl="when he had by himself purged our sins, sat down on the right hand of the Majesty on high"></blockquote>
+      <blockquote class="quote step"><p>“And every priest standeth daily ministering and offering oftentimes the same sacrifices, which can never take away sins: But this man, after he had offered one sacrifice for sins for ever, sat down on the right hand of God;”</p><cite>Hebrews 10:11–12</cite></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>By Himself He purged, washed clean, our sins. Then He sat down at God's right hand, because nothing was left to do. We rest in a finished work.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 4 of 6</p>
+      <span class="topic">Better than angels</span>
+      <h2>Why is the Son better than the angels?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="5"></blockquote>
+      <blockquote class="quote step" data-q="6"></blockquote>
+      <blockquote class="quote step" data-q="8"></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>God never called an angel His Son. The angels worship Him and serve. The Son is called God, with a throne for ever, and He sits at God's right hand.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 5 of 6</p>
+      <span class="topic">He never changes</span>
+      <h2>What will wear out, and who remains?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="11"></blockquote>
+      <blockquote class="quote step" data-q="12"></blockquote>
+      <blockquote class="quote step"><p>“Jesus Christ the same yesterday, and to day, and for ever.”</p><cite>Hebrews 13:8</cite></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>The earth and the heavens will wear out like an old coat and be folded up. The Son remains, the same for ever. His promises to you don't wear out either.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 6 of 6</p>
+      <span class="topic">Help sent</span>
+      <h2>Whom are the angels sent to serve?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="14"></blockquote>
+      <blockquote class="quote step"><p>“The angel of the LORD encampeth round about them that fear him, and delivereth them.”</p><cite>Psalm 34:7</cite></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>Them who shall be heirs of salvation: everyone who belongs to Jesus. The Son sits on the throne, and His servants are sent out for His people.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide prayer">
+  <div class="inner">
+    <div class="emblem rise"></div>
+    <h2 class="rise" style="--d:1">Prayer requests</h2>
+    <p class="ask-line rise" style="--d:2">What can we pray about for you today?</p>
+    <blockquote class="quote rise" style="--d:4"><p>“Let us therefore come boldly unto the throne of grace, that we may obtain mercy, and find grace to help in time of need.”</p><cite>Hebrews 4:16</cite></blockquote>
+  </div>
+</section>
+
+</main>
+
+<script>
+// King James Version, Hebrews chapter 1
+const V = {
+  1: "God, who at sundry times and in divers manners spake in time past unto the fathers by the prophets,",
+  2: "Hath in these last days spoken unto us by his Son, whom he hath appointed heir of all things, by whom also he made the worlds;",
+  3: "Who being the brightness of his glory, and the express image of his person, and upholding all things by the word of his power, when he had by himself purged our sins, sat down on the right hand of the Majesty on high;",
+  4: "Being made so much better than the angels, as he hath by inheritance obtained a more excellent name than they.",
+  5: "For unto which of the angels said he at any time, Thou art my Son, this day have I begotten thee? And again, I will be to him a Father, and he shall be to me a Son?",
+  6: "And again, when he bringeth in the firstbegotten into the world, he saith, And let all the angels of God worship him.",
+  7: "And of the angels he saith, Who maketh his angels spirits, and his ministers a flame of fire.",
+  8: "But unto the Son he saith, Thy throne, O God, is for ever and ever: a sceptre of righteousness is the sceptre of thy kingdom.",
+  9: "Thou hast loved righteousness, and hated iniquity; therefore God, even thy God, hath anointed thee with the oil of gladness above thy fellows.",
+  10: "And, Thou, Lord, in the beginning hast laid the foundation of the earth; and the heavens are the works of thine hands:",
+  11: "They shall perish; but thou remainest; and they all shall wax old as doth a garment;",
+  12: "And as a vesture shalt thou fold them up, and they shall be changed: but thou art the same, and thy years shall not fail.",
+  13: "But to which of the angels said he at any time, Sit on my right hand, until I make thine enemies thy footstool?",
+  14: "Are they not all ministering spirits, sent forth to minister for them who shall be heirs of salvation?"
+};
+const BOOK = "Hebrews 1";
+</script>
+<script src="../assets/deck.js"></script>
+</body>
+</html>

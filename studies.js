@@ -14788,5 +14788,97 @@ window.STUDIES = [
       },
       "big": "Onesimus owed a debt he could not pay. Paul put it on his own account and gave Onesimus his own place. That is what Jesus did for us, and it is why a man can go back and make things right."
     }
+  },
+  {
+    "id": "hebrews-01",
+    "type": "chapter",
+    "book": "Hebrews",
+    "ch": 1,
+    "date": "2026-10-31",
+    "title": "Hebrews 1",
+    "sub": "God Has Spoken by His Son",
+    "about": "No greeting and no name, just God speaking. The letter opens with the biggest picture of Jesus in the Bible: the Maker of the worlds and the shining of God's glory, who washed away our sins Himself, then sat down, far above the angels.",
+    "tags": [
+      "God speaks",
+      "Who Jesus is",
+      "Sins dealt with",
+      "Better than angels",
+      "He never changes",
+      "Help sent"
+    ],
+    "overview": {
+      "where": "Sent to Jewish believers in Jesus; the letter has friends in Italy (“They of Italy salute you,” 13:24), and the temple in Jerusalem still stands",
+      "when": "About AD 64 to 68, after Rome burned and before Rome destroyed Jerusalem and the temple in AD 70",
+      "people": [
+        "jesus",
+        "the-father",
+        "angels"
+      ],
+      "places": [
+        "italy",
+        "jerusalem",
+        "temple"
+      ],
+      "story": [
+        "God spoke in the past through the prophets, a piece at a time and in many ways; in these last days He has spoken by His Son (1–2).",
+        "The Son is heir of all things and Maker of the worlds, the brightness of God's glory and the express image of His person. He upholds all things, purged our sins by Himself, and sat down at the right hand of the Majesty on high (2–3).",
+        "He is better than the angels: God never called an angel His Son, and the angels worship Him (4–6).",
+        "The angels are servants, quick as wind and fire; but the Son is called God, with a throne for ever and the oil of gladness (7–9).",
+        "He laid the foundation of the earth; the heavens will wear out like a coat, but He remains the same (10–12).",
+        "He sits at God's right hand till His enemies are His footstool, while the angels are sent to serve the heirs of salvation (13–14)."
+      ],
+      "key": {
+        "ref": "Hebrews 1:3",
+        "text": "Who being the brightness of his glory, and the express image of his person, and upholding all things by the word of his power, when he had by himself purged our sins, sat down on the right hand of the Majesty on high;"
+      },
+      "big": "Everything God said before was true but partial. Jesus is God's last and full Word: God Himself shown to us, the One who holds the world together, who washed our sins away by Himself and sat down because the work was finished. Nothing, not even angels, comes close."
+    },
+    "url": "studies/hebrews-01.html"
+  },
+  {
+    "id": "hebrews-02",
+    "type": "chapter",
+    "book": "Hebrews",
+    "ch": 2,
+    "date": "2026-10-31",
+    "title": "Hebrews 2",
+    "sub": "So Great Salvation",
+    "about": "A warning not to drift, and the reason to hold on: the Son came down lower than the angels, tasted death for every man, broke the devil's grip, and now calls us brothers. He knows temptation from the inside.",
+    "tags": [
+      "Drifting",
+      "So great salvation",
+      "For every man",
+      "Brothers",
+      "Set free",
+      "Help when tempted"
+    ],
+    "overview": {
+      "where": "Sent to Jewish believers in Jesus who were tempted to drift back to the old system; the letter has friends in Italy (13:24)",
+      "when": "About AD 64 to 68, while the temple in Jerusalem was still standing",
+      "people": [
+        "jesus",
+        "angels",
+        "holy-spirit",
+        "abraham"
+      ],
+      "places": [
+        "jerusalem",
+        "temple"
+      ],
+      "story": [
+        "So hold on tight to what we have heard, or we will drift away from it like a boat slipping its mooring (1).",
+        "If the law spoken by angels held firm, how shall we escape if we neglect a salvation spoken by the Lord, passed on by those who heard Him, and confirmed by God with signs and gifts of the Holy Ghost? (2–4)",
+        "God made man to rule His world (Psalm 8), but we do not see that yet. But we see Jesus, made a little lower than the angels to suffer death, now crowned with glory and honour; by God's grace He tasted death for every man (5–9).",
+        "God brings many sons to glory through the Captain of their salvation, made perfect through sufferings. He is not ashamed to call them brethren (10–13).",
+        "He took on flesh and blood so that through death He might destroy the devil, who had the power of death, and set free those who lived all their lives in fear of death (14–15).",
+        "He became like His brethren in all things, to be a merciful and faithful high priest who makes reconciliation for sins; because He was tempted, He is able to help those who are tempted (16–18)."
+      ],
+      "key": {
+        "ref": "Hebrews 2:18",
+        "text": "For in that he himself hath suffered being tempted, he is able to succour them that are tempted."
+      },
+      "big": "Don't drift from a salvation this great. The Son of God stepped down below the angels, died for every man, broke the devil's hold and the fear of death, and now stands by us as a brother who isn't ashamed of us and a priest who knows temptation from the inside."
+    },
+    "url": "studies/hebrews-02.html"
   }
 ];

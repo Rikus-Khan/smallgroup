@@ -1,0 +1,633 @@
+<!doctype html>
+<html lang="en" data-theme="scribe">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Hebrews 2</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="../assets/fonts.css">
+<link rel="stylesheet" href="../assets/deck.css">
+<link rel="stylesheet" href="../assets/themes.css">
+<style>
+/* he01-where: where we are in Hebrews (copied as is from Hebrews 1; a deck.css candidate).
+   A heading line (p.he01-better) and six cards (div, --k). Each card holds its chapters (p > i; read ones .done, the one we are in .here),
+   what Jesus is better than (small + b), and where it is argued (cite). The cards we're in are .now; the last card (.so) is the "so hold on" part. */
+.he01-better { margin: .2em 0 .5em; font: 700 clamp(.82rem, .74rem + .35vw, 1.05rem) var(--sans); letter-spacing: .12em; text-transform: uppercase; color: var(--ink-soft); }
+.he01-better b { color: var(--accent-hot); font-size: 1.25em; letter-spacing: .16em; }
+.he01-where { display: grid; grid-template-columns: repeat(6, 1fr); gap: 10px; margin: .2em 0 1em; }
+.he01-where > div { --c: var(--line-strong); position: relative; padding: .5em .65em .6em; border-top: 6px solid var(--c); border-radius: 0 0 10px 10px;
+  background: color-mix(in srgb, var(--surface) 70%, transparent); opacity: 0; transform: translateY(10px);
+  transition: opacity .6s ease, transform .6s ease; transition-delay: calc(var(--k, 0) * 300ms + 300ms); }
+.slide.active .he01-where > div { opacity: 1; transform: none; }
+.he01-where > div.now { --c: var(--accent); background: color-mix(in srgb, var(--accent) 15%, transparent); box-shadow: inset 0 0 0 2px var(--accent); }
+.he01-where > div.so { --c: var(--accent-hot); border-top-style: double; }
+.he01-where p { display: flex; flex-wrap: wrap; gap: 4px; margin: 0 0 .4em; }
+.he01-where i { min-width: 1.9em; padding: .18em .25em; text-align: center; border-radius: 6px; border: 1.5px solid var(--line-strong);
+  font: 700 clamp(.76rem, .7rem + .3vw, 1rem) var(--sans); font-style: normal; color: var(--ink-soft); }
+.he01-where i.done { background: color-mix(in srgb, var(--accent) 14%, transparent); color: var(--ink); }
+.he01-where i.here { background: var(--accent); border-color: var(--accent); color: var(--on-accent); }
+.slide.active .he01-where i.here { animation: he01-here 2.4s ease-in-out 1.8s infinite; }
+@keyframes he01-here { 50% { box-shadow: 0 0 0 6px color-mix(in srgb, var(--accent) 28%, transparent); } }
+.he01-where small { display: block; font: 700 clamp(.66rem, .62rem + .2vw, .82rem) var(--sans); letter-spacing: .08em; text-transform: uppercase; color: var(--ink-soft); }
+.he01-where b { display: block; margin: .1em 0 .3em; font: 600 clamp(1rem, .84rem + .6vw, 1.4rem)/1.1 var(--serif); color: var(--ink); }
+.he01-where cite { display: block; font-style: normal; font-size: clamp(.7rem, .66rem + .2vw, .88rem); line-height: 1.3; color: var(--ink-soft); }
+@media (max-width: 760px) { .he01-where { grid-template-columns: repeat(3, 1fr); gap: 6px; } }
+@media (max-width: 480px) { .he01-where { grid-template-columns: repeat(2, 1fr); } }
+
+/* he02-drift: a boat tied to a post (what we have heard). On a step (.he02-go) the rope slips and the boat drifts off on the current:
+   no storm, no decision. The waves keep moving the whole time. */
+.he02-drift { display: block; width: 100%; max-height: 30vh; margin: .2em 0 .6em; overflow: visible; }
+.he02-drift text { fill: var(--ink); font-family: var(--sans); font-size: 18px; }
+.he02-drift .lbl { fill: var(--ink-soft); font-weight: 700; letter-spacing: .05em; }
+.he02-drift .sea { fill: color-mix(in srgb, var(--cool) 22%, transparent); }
+.he02-drift .wave { fill: none; stroke: var(--cool); stroke-width: 3; stroke-linecap: round; stroke-dasharray: 34 26; opacity: .7; }
+.slide.active .he02-drift .wave { animation: he02-flow 2.4s linear infinite; }
+.slide.active .he02-drift .wave.b { animation-duration: 3.1s; }
+@keyframes he02-flow { to { stroke-dashoffset: -60; } }
+.he02-drift .dock { fill: var(--leather); }
+.he02-drift .post { fill: var(--leather-light); stroke: var(--leather); stroke-width: 3; }
+.he02-drift .hull { fill: var(--leather-light); stroke: var(--leather); stroke-width: 3; }
+.he02-drift .mast { stroke: var(--ink); stroke-width: 4; }
+.he02-drift .sail { fill: var(--surface-2); stroke: var(--line-strong); stroke-width: 2; }
+.he02-drift .rope { fill: none; stroke: var(--ink-soft); stroke-width: 3; stroke-linecap: round; transition: opacity .4s ease; }
+.he02-drift .rope.loose { opacity: 0; }
+.slide:has(.he02-go.on) .he02-drift .rope.tight { opacity: 0; }
+.slide:has(.he02-go.on) .he02-drift .rope.loose { opacity: 1; }
+.he02-drift .boat { transition: transform 7s cubic-bezier(.45, 0, .55, 1) .3s; }
+.slide:has(.he02-go.on) .he02-drift .boat { transform: translateX(390px) rotate(3deg); }
+.slide.active .he02-drift .bob { animation: he02-bob 2.6s ease-in-out infinite; }
+@keyframes he02-bob { 50% { transform: translateY(4px); } }
+.he02-drift .then { fill: var(--danger); font-weight: 700; opacity: 0; transition: opacity .8s ease 2.4s; }
+.slide:has(.he02-go.on) .he02-drift .then { opacity: 1; }
+
+/* he02-trail: the captain who goes first. A rough trail (.he02-trail-line) draws itself from the many sons, down through sufferings
+   (the cross), up to glory. The captain stands near the top; the followers (g, --k) come in along the trail behind Him. */
+.he02-trail { display: block; width: 100%; max-height: 31vh; margin: .2em 0 .6em; overflow: visible; }
+.he02-trail text { fill: var(--ink); font-family: var(--sans); font-size: 18px; }
+.he02-trail .lbl { fill: var(--ink-soft); font-weight: 700; letter-spacing: .05em; }
+.he02-trail .way { fill: none; stroke: var(--line); stroke-width: 16; stroke-linecap: round; }
+.he02-trail .he02-trail-line { fill: none; stroke: var(--accent); stroke-width: 5; stroke-linecap: round; stroke-dasharray: 1; stroke-dashoffset: 1; transition: stroke-dashoffset 2.6s ease-in-out .3s; }
+.slide.active .he02-trail .he02-trail-line { stroke-dashoffset: 0; }
+.he02-trail .cross { stroke: var(--danger); stroke-width: 6; stroke-linecap: round; }
+.he02-trail .glory { fill: var(--glow); stroke: var(--accent); stroke-width: 3; }
+.he02-trail .glory-ring { fill: none; stroke: var(--accent); stroke-width: 3; opacity: .6; transform-box: fill-box; transform-origin: center; }
+.slide.active .he02-trail .glory-ring { animation: he02-ring 2.8s ease-out infinite; }
+@keyframes he02-ring { from { transform: scale(.8); opacity: .8; } to { transform: scale(1.7); opacity: 0; } }
+.he02-trail .lead { fill: var(--accent-hot); opacity: 0; transition: opacity .6s ease 2.4s; }
+.slide.active .he02-trail .lead { opacity: 1; }
+.he02-trail .sons { fill: var(--ink-soft); opacity: 0; transition: opacity .5s ease; transition-delay: calc(var(--k, 0) * 200ms + 2.8s); }
+.slide.active .he02-trail .sons { opacity: 1; }
+
+/* he02-free: him that had the power of death, a chain, and a man bound by the fear of death. On a step (.he02-go) the block cracks
+   and tips, the links fall away (--k), and the man stands up: delivered. */
+.he02-free { display: block; width: 100%; max-height: 34vh; margin: .2em 0 .6em; overflow: visible; }
+.he02-free text { font-family: var(--sans); font-size: 18px; fill: var(--ink); }
+.he02-free .block { fill: var(--on-glow); stroke: var(--line-strong); stroke-width: 3; transform-box: fill-box; transform-origin: 50% 100%; transition: transform 1.2s ease .5s, opacity 1.2s ease .5s; }
+.he02-free .block-t { fill: var(--glow); font: 700 21px var(--serif); transition: opacity 1s ease .5s; }
+.he02-free .crack { fill: none; stroke: var(--glow); stroke-width: 4; stroke-linejoin: round; stroke-dasharray: 1; stroke-dashoffset: 1; transition: stroke-dashoffset .6s ease; }
+.slide:has(.he02-go.on) .he02-free .crack { stroke-dashoffset: 0; }
+.slide:has(.he02-go.on) .he02-free .block { transform: rotate(-8deg) translateY(6px); opacity: .45; }
+.slide:has(.he02-go.on) .he02-free .block-t { opacity: .5; }
+.he02-free .link { fill: none; stroke: var(--ink-soft); stroke-width: 5; transform-box: fill-box; transform-origin: center; transition: transform .9s ease, opacity .9s ease; transition-delay: calc(var(--k, 0) * 90ms + .3s); }
+.slide:has(.he02-go.on) .he02-free .link { transform: translateY(46px) rotate(50deg); opacity: 0; }
+.he02-free .man { fill: var(--ink); }
+.he02-free .bent, .he02-free .up { transition: opacity .6s ease .9s; }
+.he02-free .up { opacity: 0; }
+.slide:has(.he02-go.on) .he02-free .bent { opacity: 0; }
+.slide:has(.he02-go.on) .he02-free .up { opacity: 1; }
+.he02-free .up .man { fill: var(--accent-hot); }
+.he02-free .fear { fill: var(--danger); font-weight: 700; transition: opacity .6s ease; }
+.slide:has(.he02-go.on) .he02-free .fear { opacity: 0; }
+.he02-free .free { fill: var(--accent-hot); font: 700 34px var(--serif); opacity: 0; transition: opacity .8s ease 1.4s; }
+.slide:has(.he02-go.on) .he02-free .free { opacity: 1; }
+</style>
+</head>
+<body>
+<main class="deck" id="deck">
+
+<section class="slide title">
+  <div class="inner">
+    <div class="emblem rise"></div>
+    <h1 class="rise" style="--d:1">Hebrews 2</h1>
+    <p class="sub rise" style="--d:3">So Great Salvation</p>
+    <p class="tag rise" style="--d:5">A warning not to drift, and then the reason to hold on: the Son of God came down lower than the angels, tasted death for every man, broke the devil's grip, and now calls us brothers. He knows temptation from the inside.</p>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise" style="--d:1">Where we are in Hebrews</h2>
+    <p class="he01-better rise" style="--d:1">Jesus is <b>better</b> than …</p>
+    <div class="he01-where" role="img" aria-label="Hebrews in six parts. Jesus is better than the prophets, chapter 1. Better than the angels, chapters 1 and 2. Better than Moses, chapters 3 and 4. Better than Aaron's priests, chapters 5 to 7. Better than the old covenant and its sacrifices, chapters 8 to 10. So hold on: faith, endurance and love, chapters 11 to 13. Chapter 1 is done; we are in chapter 2, still on the angels.">
+      <div style="--k:0"><p><i class="done">1</i></p><small>better than</small><b>the prophets</b><cite>God's last word is His Son. 1:1–3</cite></div>
+      <div class="now" style="--k:1"><p><i class="done">1</i><i class="here">2</i></p><small>better than</small><b>the angels</b><cite>the Son on the throne. 1:4–2:18</cite></div>
+      <div style="--k:2"><p><i>3</i><i>4</i></p><small>better than</small><b>Moses</b><cite>a Son over the house, and a rest. 3–4</cite></div>
+      <div style="--k:3"><p><i>5</i><i>6</i><i>7</i></p><small>better than</small><b>Aaron's priests</b><cite>a priest for ever. 5–7</cite></div>
+      <div style="--k:4"><p><i>8</i><i>9</i><i>10</i></p><small>better than</small><b>the old sacrifices</b><cite>one offering, a new covenant. 8–10</cite></div>
+      <div class="so" style="--k:5"><p><i>11</i><i>12</i><i>13</i></p><small>so</small><b>hold on</b><cite>faith, endurance, love. 11–13</cite></div>
+    </div>
+    <p class="note rise" style="--d:3">Chapter 1 set the Son high above the angels: on the throne, called God. Chapter 2 asks: then why did He come down <em>lower</em> than the angels? The answer is the gospel.</p>
+    <p class="note step">But first comes the letter's first warning. There are five of them, and this is the shortest.</p>
+  </div>
+</section>
+
+<section class="slide watch">
+  <div class="inner">
+    <h2 class="rise">Things to watch for</h2>
+    <p class="lede rise" style="--d:1">Keep these questions in the back of your mind as we read. We'll come back to every one of them at the end.</p>
+    <ol class="seeds">
+      <li class="step"><span class="topic">Drifting</span><span class="seed-q">What does verse 1 tell us to do, and what happens if we don't?</span></li>
+      <li class="step"><span class="topic">So great salvation</span><span class="seed-q">Who first spoke this salvation, and how was it confirmed?</span></li>
+      <li class="step"><span class="topic">For every man</span><span class="seed-q">For whom did Jesus taste death?</span></li>
+      <li class="step"><span class="topic">Brothers</span><span class="seed-q">What is Jesus not ashamed to call us?</span></li>
+      <li class="step"><span class="topic">Set free</span><span class="seed-q">What did Jesus destroy through His death, and whom did He deliver?</span></li>
+      <li class="step"><span class="topic">Help when tempted</span><span class="seed-q">Why is Jesus able to help us when we're tempted?</span></li>
+    </ol>
+  </div>
+</section>
+
+<section class="slide part">
+  <div class="inner">
+    <p class="part-n rise">Part one</p>
+    <h2 class="rise" style="--d:1">Don't drift</h2>
+    <p class="range rise" style="--d:2">Verses 1–4</p>
+    <div class="rule"></div>
+    <p class="hook rise" style="--d:4">Most men don't walk away from God in one big decision. They drift.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="1-2" data-hl="give the more earnest heed to the things which we have heard|lest at any time we should let them slip|received a just recompence of reward"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="1" data-hl="lest at any time we should let them slip"></blockquote>
+    <h2 class="rise" style="--d:1">Slipping the mooring</h2>
+    <svg class="he02-drift" viewBox="0 0 760 300" role="img" aria-label="A small boat is tied by a rope to a post on a dock. The post is labelled what we have heard. Waves flow past. On a step the rope slips off, and the boat drifts slowly away to the right on the current. Then: no storm, no decision, just the current.">
+      <rect class="sea" x="0" y="172" width="760" height="128"/>
+      <path class="wave" d="M0 196 H760"/><path class="wave b" d="M0 236 H760"/><path class="wave" d="M0 276 H760"/>
+      <rect class="dock" x="0" y="150" width="150" height="14"/><rect class="dock" x="22" y="164" width="10" height="120"/><rect class="dock" x="104" y="164" width="10" height="120"/>
+      <rect class="post" x="128" y="116" width="18" height="36" rx="4"/>
+      <text class="lbl" x="137" y="96" text-anchor="middle">what we have heard</text>
+      <path class="rope tight" d="M140 124 Q 170 152 196 172"/>
+      <path class="rope loose" d="M140 124 Q 150 178 172 204"/>
+      <g class="boat"><g class="bob">
+        <path class="hull" d="M190 168 L330 168 L310 198 L210 198 Z"/>
+        <line class="mast" x1="262" y1="168" x2="262" y2="84"/>
+        <path class="sail" d="M268 90 L268 160 L318 160 Z"/>
+        <text class="lbl" x="230" y="150" text-anchor="middle">us</text>
+      </g></g>
+      <text class="then" x="740" y="60" text-anchor="end">no storm, no decision:</text>
+      <text class="then" x="740" y="84" text-anchor="end">just the current</text>
+    </svg>
+    <p class="note step he02-go"><em>Let them slip</em> is a sailor's word: to drift past, to float away. A boat that isn't tied up doesn't have to do anything to be lost. The current does it for it.</p>
+    <p class="note step">Skip the Bible a few days. Skip the group. Stop calling the brother who checks on you. Nobody decides to go back. They just stop holding on, and one day they wake up a long way from the dock.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="3-4" data-hl="How shall we escape, if we neglect so great salvation|began to be spoken by the Lord|confirmed unto us by them that heard|signs and wonders|gifts of the Holy Ghost"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="3" data-hl="How shall we escape, if we neglect so great salvation"></blockquote>
+    <h2 class="rise" style="--d:1">If that, then how much more this</h2>
+    <div class="ifthen step">
+      <div class="if"><small>If</small>the law, <em>spoken by angels</em> at Sinai, held firm, and every sin got its just pay,</div>
+      <span class="arrow" aria-hidden="true">→</span>
+      <div class="then"><small>then</small>how shall we escape if we neglect the salvation <em>spoken by the Lord</em> Himself?</div>
+    </div>
+    <div class="chains">
+      <div class="chain step"><span class="who-chip jesus">the Lord</span><span class="said">spoke it first</span><span class="who-chip">them that heard him</span><span class="said">passed it on</span><span class="who-chip">us</span><span class="said">and God bore witness: signs, wonders, miracles, gifts of the Holy Ghost</span></div>
+    </div>
+    <p class="note step"><em>Neglect</em> is the same word Jesus used for the men invited to the king's feast: <em>“they made light of it, and went their ways, one to his farm, another to his merchandise”</em> (Matthew 22:5). They didn't fight the invitation. They were just busy.</p>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise" style="--d:1">Who is this warning for?</h2>
+    <div class="columns">
+      <div class="col law step">
+        <p class="who">The man who only sat near</p>
+        <h3>Heard it, never took it</h3>
+        <p>He's been around church, liked the people, saw lives change, but never trusted Jesus for himself. For him there is no other way out. <em>“How shall we escape?”</em> We won't. Come to Jesus today.</p>
+      </div>
+      <div class="col grace step">
+        <p class="who">The man who belongs to Jesus</p>
+        <h3>Held, but told to hold on</h3>
+        <p>He can't be lost. But he can drift in how he lives: cold, careless, miserable. For him the warning says: <em>give the more earnest heed</em>. Tie up again.</p>
+      </div>
+    </div>
+    <p class="note step">The warnings in Hebrews shake loose the man who has only been sitting near the faith, and they drive the true believer to hold on tighter. They are never meant to make a struggling believer fear he has lost his salvation.</p>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <div class="split">
+      <div class="stage">
+        <svg class="kept" viewBox="0 0 600 420" role="img" aria-label="A believer held inside Jesus' hand, which is held inside the Father's hand. A bad day, old guilt and the accuser keep pushing in, and none can get through.">
+          <circle class="kept-wall" cx="300" cy="215" r="150"/>
+          <circle class="kept-wall inner" cx="300" cy="230" r="88"/>
+          <text class="kept-tag" x="300" y="104" text-anchor="middle" font-size="19" font-weight="700">My Father's hand</text>
+          <text class="kept-tag" x="300" y="190" text-anchor="middle" font-size="18" font-weight="700">My hand</text>
+          <circle class="kept-in" cx="300" cy="226" r="14"/>
+          <rect class="kept-in" x="286" y="242" width="28" height="30" rx="9"/>
+          <text x="300" y="296" text-anchor="middle" font-size="16" style="fill:var(--ink)">a believer</text>
+          <g class="kept-foe" style="--dx:16px;--dy:0px">
+            <text x="10" y="196" font-size="18" font-weight="700">a bad day</text>
+            <line x1="20" y1="215" x2="128" y2="215"/><path d="M140 215 L124 206 L124 224 Z"/>
+          </g>
+          <g class="kept-foe" style="--dx:-16px;--dy:0px;--w:.9s">
+            <text x="590" y="196" text-anchor="end" font-size="18" font-weight="700">old guilt</text>
+            <line x1="580" y1="215" x2="472" y2="215"/><path d="M460 215 L476 206 L476 224 Z"/>
+          </g>
+          <g class="kept-foe" style="--dx:11px;--dy:-11px;--w:1.7s">
+            <text x="20" y="404" font-size="18" font-weight="700">the accuser</text>
+            <line x1="70" y1="380" x2="178" y2="330"/><path d="M188 324 L170 324 L178 340 Z"/>
+          </g>
+        </svg>
+      </div>
+      <div>
+        <h2 class="rise" style="--d:1">Held, so hold on</h2>
+        <blockquote class="quote rise" style="--d:2"><p>“And I give unto them eternal life; and they shall never perish, neither shall any man pluck them out of my hand.”</p><cite>John 10:28</cite></blockquote>
+        <blockquote class="quote step"><p>“Wherefore he is able also to save them to the uttermost that come unto God by him, seeing he ever liveth to make intercession for them.”</p><cite>Hebrews 7:25</cite></blockquote>
+        <p class="note step">Your hold on Jesus may slip; His hold on you won't. That's exactly why you can tie up again today without fear: open the Word, show up, call your brother.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="slide part">
+  <div class="inner">
+    <p class="part-n rise">Part two</p>
+    <h2 class="rise" style="--d:1">But we see Jesus</h2>
+    <p class="range rise" style="--d:2">Verses 5–9</p>
+    <div class="rule"></div>
+    <p class="hook rise" style="--d:4">Man was made to rule the world. Look around: he doesn't. But look again.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="5-6" data-hl="the world to come|What is man, that thou art mindful of him|that thou visitest him"></section>
+
+<section class="slide verse" data-v="7-8" data-hl="a little lower than the angels|crownedst him with glory and honour|put all things in subjection under his feet|But now we see not yet all things put under him"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="8" data-hl="But now we see not yet all things put under him"></blockquote>
+    <h2 class="rise" style="--d:1">Made to rule, ruled instead</h2>
+    <div class="pair">
+      <div class="scroll rise" style="--d:2"><p class="ref">What God made man for: Psalm 8:4–6</p><p class="kjv">“What is man, that thou art mindful of him? … thou hast made him a little lower than the angels, and hast crowned him with glory and honour. Thou madest him to have dominion over the works of thy hands; <mark>thou hast put all things under his feet</mark>”</p></div>
+      <div class="scroll step"><p class="ref">What we see now: Hebrews 2:8</p><p class="kjv">“<mark>But now we see not yet all things put under him.</mark>”</p></div>
+    </div>
+    <p class="note step">David sang that God made man to rule His world. But sin turned it upside down. A man meant to rule ends up ruled: by a bottle, a pill, a temper, a screen. If that's you, the writer doesn't pretend otherwise. <em>“We see not yet.”</em></p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="9" data-hl="But we see Jesus|a little lower than the angels for the suffering of death|crowned with glory and honour|by the grace of God should taste death for every man"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <div class="split">
+      <div class="stage">
+        <svg class="curve" viewBox="0 0 600 340" role="img" aria-label="A line starts high, in glory with the Father, drops below the dashed line of the angels when the Son becomes a man, falls to its lowest point at the suffering of death, then climbs past everything to crowned with glory and honour.">
+          <line class="curve-base" x1="10" y1="110" x2="590" y2="110"/>
+          <text class="ref" x="590" y="102" text-anchor="end">the angels</text>
+          <path class="curve-line" pathLength="1" d="M30 40 C 100 40, 130 110, 180 160 C 220 205, 250 290, 300 290 C 360 290, 420 70, 575 36"/>
+          <g class="curve-pt high" style="--at:.6s"><circle cx="30" cy="40" r="9"/><text x="48" y="30">glory with the Father</text></g>
+          <g class="curve-pt" style="--at:1.5s"><circle cx="180" cy="160" r="9"/><text class="q" x="166" y="196" text-anchor="end">“a little lower”</text><text class="ref" x="166" y="216" text-anchor="end">made a man</text></g>
+          <g class="curve-pt low" style="--at:2.4s"><circle cx="300" cy="290" r="9"/><text class="q" x="300" y="328" text-anchor="middle">“the suffering of death”</text></g>
+          <g class="curve-pt high" style="--at:3.4s"><circle cx="575" cy="36" r="10"/><text class="q" x="590" y="160" text-anchor="end">“crowned with</text><text class="q" x="590" y="184" text-anchor="end">glory and honour”</text></g>
+        </svg>
+      </div>
+      <div>
+        <h2 class="rise" style="--d:1">But we see Jesus</h2>
+        <p class="note rise" style="--d:2">We don't see man ruling yet. <em>But we see Jesus</em>: the Son, who stepped down below the angels, became a real man, and went all the way down into death.</p>
+        <p class="note step">Then God raised Him and <em>crowned</em> Him. The man Psalm 8 sang about finally showed up, and He's the first of many.</p>
+        <p class="note step">Where He went, He's bringing us. Your story has a low point too. It doesn't have to be the end of the line.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="9" data-hl="by the grace of God should taste death for every man"></blockquote>
+    <h2 class="rise" style="--d:1">For every man</h2>
+    <div class="dots rows fill rise" data-dots="300" style="--d:2;--cols:50;--dot:var(--accent);--pace:7ms;--wait:500ms;max-width:52rem" aria-label="Three hundred dots fill in, every one of them. No one is left out."></div>
+    <p class="dots-cap rise" style="--d:3;max-width:52rem"><span>not some of them: every one</span><span><em>“for every man”</em></span></p>
+    <p class="note step"><em>Taste death</em> means He went through death fully, every bitter bit of it. And He did it <em>by the grace of God</em>, a gift, <em>for every man</em>. Not for a few already on the list. For every man, which means for you, whatever you've done.</p>
+    <blockquote class="quote step"><p>“And he is the propitiation for our sins: and not for ours only, but also for the sins of the whole world.”</p><cite>1 John 2:2</cite></blockquote>
+  </div>
+</section>
+
+<section class="slide part">
+  <div class="inner">
+    <p class="part-n rise">Part three</p>
+    <h2 class="rise" style="--d:1">Not ashamed</h2>
+    <p class="range rise" style="--d:2">Verses 10–13</p>
+    <div class="rule"></div>
+    <p class="hook rise" style="--d:4">The Captain goes first, and He calls the men behind Him brothers.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="10" data-hl="in bringing many sons unto glory|the captain of their salvation perfect through sufferings"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="10" data-hl="the captain of their salvation perfect through sufferings"></blockquote>
+    <h2 class="rise" style="--d:1">The Captain goes first</h2>
+    <svg class="he02-trail" viewBox="0 0 760 300" role="img" aria-label="A rough trail draws itself from the lower left, down through a low place marked with a cross, sufferings, and up to a shining light, glory, at the upper right. The captain stands near the top, ahead. Behind Him, along the trail, come the many sons.">
+      <path class="way" d="M30 250 C 110 250, 150 200, 220 192 S 320 255, 390 258 S 470 170, 540 130 S 640 60, 700 58"/>
+      <path class="he02-trail-line" pathLength="1" d="M30 250 C 110 250, 150 200, 220 192 S 320 255, 390 258 S 470 170, 540 130 S 640 60, 700 58"/>
+      <path class="cross" d="M390 214 V250 M378 226 H402"/>
+      <text class="lbl" x="390" y="292" text-anchor="middle">sufferings</text>
+      <circle class="glory-ring" cx="712" cy="52" r="26"/>
+      <circle class="glory" cx="712" cy="52" r="24"/>
+      <text class="lbl" x="712" y="108" text-anchor="middle">glory</text>
+      <g class="lead"><circle cx="612" cy="58" r="11"/><rect x="603" y="70" width="18" height="24" rx="6"/><text x="592" y="44" text-anchor="end" style="fill:var(--accent-hot);font-weight:700">the captain</text></g>
+      <g class="sons" style="--k:4"><circle cx="70" cy="226" r="8"/><rect x="63" y="235" width="14" height="16" rx="5"/></g>
+      <g class="sons" style="--k:3"><circle cx="112" cy="220" r="8"/><rect x="105" y="229" width="14" height="16" rx="5"/></g>
+      <g class="sons" style="--k:2"><circle cx="152" cy="204" r="8"/><rect x="145" y="213" width="14" height="16" rx="5"/></g>
+      <g class="sons" style="--k:1"><circle cx="192" cy="178" r="8"/><rect x="185" y="187" width="14" height="16" rx="5"/></g>
+      <g class="sons" style="--k:0"><circle cx="236" cy="174" r="8"/><rect x="229" y="183" width="14" height="16" rx="5"/></g>
+      <text class="lbl" x="150" y="292" text-anchor="middle">many sons</text>
+    </svg>
+    <p class="note step"><em>Captain</em> means the leader who goes first and cuts the trail for everyone behind him. The same word comes back in 12:2: <em>“the author and finisher of our faith.”</em></p>
+    <p class="note step"><em>Perfect through sufferings</em> doesn't mean He was ever flawed. It means He was made fully fit for the job by going through it. He doesn't shout directions from the top. He walked every hard mile Himself, and the trail He cut ends in <em>glory</em>.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="11-13" data-hl="he is not ashamed to call them brethren|I will declare thy name unto my brethren|I will put my trust in him|Behold I and the children which God hath given me"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="11" data-hl="he is not ashamed to call them brethren"></blockquote>
+    <h2 class="rise" style="--d:1">Not ashamed of you</h2>
+    <div class="rename">
+      <span class="old rise" style="--d:2">what you call yourself</span>
+      <span class="arrow step">→</span>
+      <span class="new step">brother</span>
+      <span class="gloss step">what Jesus calls you</span>
+    </div>
+    <p class="note step">Some of you carry a lot of shame: what you did, where you've been, the names people called you. Jesus knows all of it. And He is <em>not ashamed</em> to stand up in front of heaven and say, “This is My brother.”</p>
+    <p class="note step"><em>He that sanctifieth</em> (Jesus, who makes us holy) and <em>they who are sanctified</em> (us, set apart for God) are <em>all of one</em>: one Father, one family. You didn't earn a seat at that table. You were given it.</p>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise" style="--d:1">From the cross to “my brethren”</h2>
+    <div class="pair">
+      <div class="scroll rise" style="--d:2"><p class="ref">Psalm 22:1</p><p class="kjv">“<mark>My God, my God, why hast thou forsaken me?</mark> why art thou so far from helping me, and from the words of my roaring?”</p></div>
+      <div class="scroll step"><p class="ref">Psalm 22:22, quoted in Hebrews 2:12</p><p class="kjv">“<mark>I will declare thy name unto my brethren:</mark> in the midst of the congregation will I praise thee.”</p></div>
+    </div>
+    <p class="note step">Jesus cried the first line of Psalm 22 from the cross. The same psalm, after the suffering, turns to praise among <em>my brethren</em>. That's the order: He went through the cross first, and came out the other side calling us brothers.</p>
+    <p class="note step">Verse 13 quotes Isaiah 8:17–18: <em>“I will put my trust in him … Behold I and the children.”</em> Jesus trusted His Father as a man, and He stands with the family God gave Him. You're in that line.</p>
+  </div>
+</section>
+
+<section class="slide part">
+  <div class="inner">
+    <p class="part-n rise">Part four</p>
+    <h2 class="rise" style="--d:1">Made like his brethren</h2>
+    <p class="range rise" style="--d:2">Verses 14–18</p>
+    <div class="rule"></div>
+    <p class="hook rise" style="--d:4">Why the Son became a man: to break the devil's grip, to be our priest, and to help us when we're tempted.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="14-15" data-hl="he also himself likewise took part of the same|that through death he might destroy him that had the power of death, that is, the devil|through fear of death were all their lifetime subject to bondage"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="15" data-hl="through fear of death were all their lifetime subject to bondage"></blockquote>
+    <h2 class="rise" style="--d:1">The chain is broken</h2>
+    <svg class="he02-free" viewBox="0 0 760 280" role="img" aria-label="On the left, a dark block: him that had the power of death. A chain runs from it to a man who is bent over, bound by the fear of death. On a step the block cracks and tips over, the chain links fall away, and the man stands up straight with his arms raised: delivered.">
+      <rect class="block" x="40" y="70" width="180" height="180" rx="8"/>
+      <text class="block-t" x="130" y="134" text-anchor="middle">him that had</text>
+      <text class="block-t" x="130" y="162" text-anchor="middle">the power</text>
+      <text class="block-t" x="130" y="190" text-anchor="middle">of death</text>
+      <path class="crack" pathLength="1" d="M112 70 L136 116 L114 150 L146 196 L124 250"/>
+      <ellipse class="link" style="--k:0" cx="244" cy="226" rx="22" ry="11"/>
+      <ellipse class="link" style="--k:1" cx="284" cy="226" rx="22" ry="11"/>
+      <ellipse class="link" style="--k:2" cx="324" cy="226" rx="22" ry="11"/>
+      <ellipse class="link" style="--k:3" cx="364" cy="226" rx="22" ry="11"/>
+      <ellipse class="link" style="--k:4" cx="404" cy="226" rx="22" ry="11"/>
+      <ellipse class="link" style="--k:5" cx="444" cy="226" rx="22" ry="11"/>
+      <ellipse class="link" style="--k:6" cx="484" cy="226" rx="22" ry="11"/>
+      <text class="fear" x="364" y="186" text-anchor="middle">fear of death, all their lifetime</text>
+      <g class="bent"><circle class="man" cx="584" cy="190" r="16"/><path class="man" d="M520 252 C 516 214, 532 186, 566 194 L 580 210 L 574 252 Z"/></g>
+      <g class="up"><circle class="man" cx="560" cy="120" r="18"/><path class="man" d="M542 142 H578 L582 252 H538 Z M542 146 L512 88 L522 82 L552 140 Z M578 146 L608 88 L598 82 L568 140 Z"/></g>
+      <text class="free" x="680" y="80" text-anchor="middle">delivered</text>
+    </svg>
+    <p class="note step he02-go">Jesus took on <em>flesh and blood</em> so He could die, and by dying He broke the power of the one who held death over us. The devil's best weapon was death and the guilt behind it. At the cross, Jesus paid the guilt and took the weapon away.</p>
+    <p class="note step">Fear of death is a lifelong chain. A lot of what drove us, the using, the running, the anger, was fear underneath. A man who knows death can't hold him anymore can face today.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="16-17" data-hl="he took on him the seed of Abraham|made like unto his brethren|a merciful and faithful high priest|to make reconciliation for the sins of the people"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="17" data-hl="a merciful and faithful high priest"></blockquote>
+    <h2 class="rise" style="--d:1">A priest who is one of us</h2>
+    <p class="note rise" style="--d:2">Verse 16: He didn't come to rescue angels. He came for people, <em>the seed of Abraham</em>. So He became one of us <em>in all things</em>.</p>
+    <div class="columns">
+      <div class="col grace step">
+        <p class="who">Toward us</p>
+        <h3>Merciful</h3>
+        <p>He knows what it is to be tired, hungry, betrayed and grieving. He doesn't look down on weak men.</p>
+      </div>
+      <div class="col law step">
+        <p class="who">Toward God</p>
+        <h3>Faithful</h3>
+        <p>He did everything God required, all the way to the cross, <em>to make reconciliation for the sins of the people</em>.</p>
+      </div>
+    </div>
+    <p class="note step">This is the first time Hebrews calls Jesus our <em>high priest</em>, the man who stands between God and the people. Chapters 4 to 10 will open this up. For now: there's Someone standing up for you before God right now.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="18" data-hl="he himself hath suffered being tempted|he is able to succour them that are tempted"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="18" data-hl="he is able to succour them that are tempted"></blockquote>
+    <h2 class="rise" style="--d:1">He knows it from the inside</h2>
+    <div class="morph">
+      <span class="big rise" style="--d:2">βοηθῆσαι</span>
+      <span class="say step">said <em class="gk">boēthēsai</em></span>
+      <span class="means step">to succour: to run to someone who cries out for help</span>
+    </div>
+    <blockquote class="quote step"><p>“For we have not an high priest which cannot be touched with the feeling of our infirmities; but was in all points tempted like as we are, yet without sin.”</p><cite>Hebrews 4:15</cite></blockquote>
+    <p class="note step">Jesus felt the pull of temptation. He never gave in, so He felt its full weight longer than any man who folds. He isn't shocked by your craving. When it hits today, cry out to Him right then, in the moment. He runs toward that cry.</p>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <p class="saying rise">He is not ashamed to call them <em>brethren</em>.</p>
+    <p class="note rise" style="--d:2">Here's the chapter in one breath: don't drift from a salvation this great. The Son came down lower than the angels, tasted death for every man, broke the chain, and stands by you as a brother and a priest who knows temptation from the inside.</p>
+    <p class="note step">Something to do today: tie up. Pick one rope (ten minutes in the Word, the group, a call to a brother) and hold it. And the next time temptation hits, pray one sentence on the spot: <em>“Jesus, help me now.”</em></p>
+  </div>
+</section>
+
+<section class="slide remember">
+  <div class="inner">
+    <h2 class="rise">Points to remember</h2>
+    <ol class="seeds">
+      <li class="step"><span class="topic">Drifting</span><span class="seed-q">“give the more earnest heed … lest at any time we should let them slip” <cite>2:1</cite></span><span class="take">Men don't usually walk away; they drift. Hold on to what you've heard.</span></li>
+      <li class="step"><span class="topic">So great salvation</span><span class="seed-q">“which at the first began to be spoken by the Lord” <cite>2:3</cite></span><span class="take">The Lord spoke it, witnesses passed it on, and God confirmed it.</span></li>
+      <li class="step"><span class="topic">For every man</span><span class="seed-q">“should taste death for every man” <cite>2:9</cite></span><span class="take">By God's grace Jesus died for everyone, which means for you.</span></li>
+      <li class="step"><span class="topic">Brothers</span><span class="seed-q">“he is not ashamed to call them brethren” <cite>2:11</cite></span><span class="take">Jesus isn't ashamed of you. He calls you brother.</span></li>
+      <li class="step"><span class="topic">Set free</span><span class="seed-q">“that through death he might destroy him that had the power of death” <cite>2:14</cite></span><span class="take">Jesus broke the devil's grip and freed us from the fear of death.</span></li>
+      <li class="step"><span class="topic">Help when tempted</span><span class="seed-q">“he is able to succour them that are tempted” <cite>2:18</cite></span><span class="take">He was tempted too, so He runs to help when you call.</span></li>
+    </ol>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 1 of 6</p>
+      <span class="topic">Drifting</span>
+      <h2>What does verse 1 tell us to do, and what happens if we don't?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="1"></blockquote>
+      <blockquote class="quote step"><p>“But exhort one another daily, while it is called To day; lest any of you be hardened through the deceitfulness of sin.”</p><cite>Hebrews 3:13</cite></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>Give the more earnest heed to what we have heard. If we don't, we slowly slip away, like a boat drifting off its mooring. The answer is daily: the Word, and brothers who encourage us.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 2 of 6</p>
+      <span class="topic">So great salvation</span>
+      <h2>Who first spoke this salvation, and how was it confirmed?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="3"></blockquote>
+      <blockquote class="quote step" data-q="4"></blockquote>
+      <blockquote class="quote step"><p>“And they went forth, and preached every where, the Lord working with them, and confirming the word with signs following. Amen.”</p><cite>Mark 16:20</cite></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>The Lord Jesus spoke it first. The men who heard Him passed it on, and God backed it up with signs, wonders, miracles and gifts of the Holy Ghost.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 3 of 6</p>
+      <span class="topic">For every man</span>
+      <h2>For whom did Jesus taste death?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="9"></blockquote>
+      <blockquote class="quote step"><p>“For God so loved the world, that he gave his only begotten Son, that whosoever believeth in him should not perish, but have everlasting life.”</p><cite>John 3:16</cite></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>For every man. By the grace of God, Jesus died for the whole world, and whosoever believes in Him has everlasting life. No one is outside His reach.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 4 of 6</p>
+      <span class="topic">Brothers</span>
+      <h2>What is Jesus not ashamed to call us?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="11"></blockquote>
+      <blockquote class="quote step" data-q="12"></blockquote>
+      <blockquote class="quote step"><p>“But God commendeth his love toward us, in that, while we were yet sinners, Christ died for us.”</p><cite>Romans 5:8</cite></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>Brethren: His brothers. He loved us while we were still sinners, and now He makes us one family with Himself and is not ashamed of us.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 5 of 6</p>
+      <span class="topic">Set free</span>
+      <h2>What did Jesus destroy through His death, and whom did He deliver?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="14"></blockquote>
+      <blockquote class="quote step" data-q="15"></blockquote>
+      <blockquote class="quote step"><p>“O death, where is thy sting? O grave, where is thy victory? The sting of death is sin; and the strength of sin is the law. But thanks be to God, which giveth us the victory through our Lord Jesus Christ.”</p><cite>1 Corinthians 15:55–57</cite></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>He destroyed the power of the devil, who held death over us, and He delivered everyone who had lived their whole life chained by the fear of death.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 6 of 6</p>
+      <span class="topic">Help when tempted</span>
+      <h2>Why is Jesus able to help us when we're tempted?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="18"></blockquote>
+      <blockquote class="quote step"><p>“For we have not an high priest which cannot be touched with the feeling of our infirmities; but was in all points tempted like as we are, yet without sin.”</p><cite>Hebrews 4:15</cite></blockquote>
+      <blockquote class="quote step"><p>“There hath no temptation taken you but such as is common to man: but God is faithful, who will not suffer you to be tempted above that ye are able; but will with the temptation also make a way to escape, that ye may be able to bear it.”</p><cite>1 Corinthians 10:13</cite></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>Because He Himself suffered being tempted. He was tempted in every way we are, yet without sin, so He understands, and He runs to help everyone who calls on Him.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide prayer">
+  <div class="inner">
+    <div class="emblem rise"></div>
+    <h2 class="rise" style="--d:1">Prayer requests</h2>
+    <p class="ask-line rise" style="--d:2">What can we pray about for you today?</p>
+    <blockquote class="quote rise" style="--d:4"><p>“For in that he himself hath suffered being tempted, he is able to succour them that are tempted.”</p><cite>Hebrews 2:18</cite></blockquote>
+  </div>
+</section>
+
+</main>
+
+<script>
+// King James Version, Hebrews chapter 2
+const V = {
+  1: "Therefore we ought to give the more earnest heed to the things which we have heard, lest at any time we should let them slip.",
+  2: "For if the word spoken by angels was stedfast, and every transgression and disobedience received a just recompence of reward;",
+  3: "How shall we escape, if we neglect so great salvation; which at the first began to be spoken by the Lord, and was confirmed unto us by them that heard him;",
+  4: "God also bearing them witness, both with signs and wonders, and with divers miracles, and gifts of the Holy Ghost, according to his own will?",
+  5: "For unto the angels hath he not put in subjection the world to come, whereof we speak.",
+  6: "But one in a certain place testified, saying, What is man, that thou art mindful of him? or the son of man, that thou visitest him?",
+  7: "Thou madest him a little lower than the angels; thou crownedst him with glory and honour, and didst set him over the works of thy hands:",
+  8: "Thou hast put all things in subjection under his feet. For in that he put all in subjection under him, he left nothing that is not put under him. But now we see not yet all things put under him.",
+  9: "But we see Jesus, who was made a little lower than the angels for the suffering of death, crowned with glory and honour; that he by the grace of God should taste death for every man.",
+  10: "For it became him, for whom are all things, and by whom are all things, in bringing many sons unto glory, to make the captain of their salvation perfect through sufferings.",
+  11: "For both he that sanctifieth and they who are sanctified are all of one: for which cause he is not ashamed to call them brethren,",
+  12: "Saying, I will declare thy name unto my brethren, in the midst of the church will I sing praise unto thee.",
+  13: "And again, I will put my trust in him. And again, Behold I and the children which God hath given me.",
+  14: "Forasmuch then as the children are partakers of flesh and blood, he also himself likewise took part of the same; that through death he might destroy him that had the power of death, that is, the devil;",
+  15: "And deliver them who through fear of death were all their lifetime subject to bondage.",
+  16: "For verily he took not on him the nature of angels; but he took on him the seed of Abraham.",
+  17: "Wherefore in all things it behoved him to be made like unto his brethren, that he might be a merciful and faithful high priest in things pertaining to God, to make reconciliation for the sins of the people.",
+  18: "For in that he himself hath suffered being tempted, he is able to succour them that are tempted."
+};
+const BOOK = "Hebrews 2";
+</script>
+<script src="../assets/deck.js"></script>
+</body>
+</html>
