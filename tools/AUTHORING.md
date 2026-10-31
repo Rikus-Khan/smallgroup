@@ -18,7 +18,8 @@ How it looks comes from the shared files in `assets/`, so it works in every them
   - **Hope**: why today is not the end of his story.
   - **The real world**: one concrete thing to do with this chapter today.
 
-  Not every slide carries all five, but the study as a whole must. Find them in the chapter itself; don't bolt them on.
+  Not every slide carries all five, but the study as a whole must.
+- **When a passage touches despair, suicide or a man at the end of himself** (Judas, the jailor, Jonah, "men shall seek death"), point him to his **brothers in Christ and his church leaders**: "call or text your brothers in Christ, and your pastor." Never give a hotline number (Rick's rule). Giving a man both a refuge and a purpose makes him part of a larger company of men fighting the same enemy, and that belonging lifts him up. Find them in the chapter itself; don't bolt them on.
 
 ## The shape of every study
 
