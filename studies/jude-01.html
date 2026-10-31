@@ -1,0 +1,698 @@
+<!doctype html>
+<html lang="en" data-theme="night">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Jude 1</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="../assets/fonts.css">
+<link rel="stylesheet" href="../assets/deck.css">
+<link rel="stylesheet" href="../assets/themes.css">
+<style>
+/* jd01-six: six warnings from the past, as cards (a deck.css candidate for any "list of examples") */
+.jd01-six { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin: .4em 0 1em; }
+.jd01-card { padding: .6em .8em .8em; border-radius: 12px; border: 2px solid var(--danger); background: color-mix(in srgb, var(--danger) 8%, var(--surface));
+  opacity: 0; transform: translateY(12px); transition: opacity .5s ease, transform .5s ease; transition-delay: calc(var(--k, 0) * 260ms + 300ms); }
+.slide.active .jd01-card { opacity: 1; transform: none; }
+.jd01-card small { display: block; font: 700 clamp(.72rem, .68rem + .22vw, .9rem) var(--sans); letter-spacing: .05em; color: var(--ink-soft); }
+.jd01-card b { display: block; margin: .1em 0; font: 600 clamp(1.1rem, .95rem + .8vw, 1.7rem)/1.1 var(--serif); color: var(--ink); }
+.jd01-card i { display: block; margin-bottom: .25em; font: normal 700 clamp(.82rem, .76rem + .3vw, 1.05rem) var(--sans); color: var(--danger); }
+.jd01-card p { margin: 0; font: clamp(.88rem, .8rem + .36vw, 1.1rem)/1.3 var(--serif); }
+@media (max-width: 640px) { .jd01-six { grid-template-columns: 1fr; } }
+
+/* jd01-nature: four pictures of a promise that doesn't deliver */
+.jd01-drop { opacity: 0; }
+.slide.active .jd01-drop { animation: jd01-fall 2.4s ease-in infinite; animation-delay: calc(var(--k, 0) * .5s); }
+@keyframes jd01-fall { 0% { opacity: 0; transform: translateY(0); } 20% { opacity: .9; } 65% { opacity: 0; transform: translateY(46px); } 100% { opacity: 0; transform: translateY(46px); } }
+.slide.active .jd01-wave { animation: jd01-roll 2.2s ease-in-out infinite alternate; }
+@keyframes jd01-roll { to { transform: translateX(-22px); } }
+.slide.active .jd01-streak { animation: jd01-streak 2.8s ease-in infinite; }
+@keyframes jd01-streak { 0% { transform: translate(0,0); opacity: 1; } 80% { transform: translate(36px,64px); opacity: .2; } 100% { transform: translate(36px,64px); opacity: 0; } }
+
+/* jd01-sun: God's love shines the same on everyone; a man can step behind a wall and still be in the same sun */
+.slide.active .jd01-ray { animation: jd01-pulse 3s ease-in-out infinite; transform-box: fill-box; transform-origin: 0 50%; }
+@keyframes jd01-pulse { 50% { opacity: .45; } }
+.jd01-back { opacity: 0; transition: opacity .8s ease; }
+.slide:has(.jd01-stepback.on) .jd01-back { opacity: 1; }
+
+/* jd01-fire: a man at the edge of the fire; a rescuer tied to a post pulls him out */
+.slide.active .jd01-flame { animation: jd01-flick 1.1s ease-in-out infinite alternate; transform-box: fill-box; transform-origin: 50% 100%; }
+@keyframes jd01-flick { to { transform: scale(.88, 1.1); } }
+.jd01-man { transition: transform 1.6s cubic-bezier(.3,.7,.3,1); }
+.slide:has(.jd01-pull.on) .jd01-man { transform: translateX(170px); }
+.jd01-rope2 { opacity: 0; transition: opacity .6s ease .8s; }
+.jd01-rope1 { transition: opacity .6s ease .8s; }
+.slide:has(.jd01-pull.on) .jd01-rope2 { opacity: 1; }
+.slide:has(.jd01-pull.on) .jd01-rope1 { opacity: 0; }
+.jd01-safe { opacity: 0; transition: opacity .6s ease 1.4s; }
+.slide:has(.jd01-pull.on) .jd01-safe { opacity: 1; }
+
+/* jd01-keep: a man crosses the gaps held by a hand from above, to the gate of glory (a deck.css candidate: "kept all the way home") */
+.jd01-walk { transition: transform 6s cubic-bezier(.4,.1,.3,1); }
+.slide:has(.jd01-go.on) .jd01-walk { transform: translateX(500px); }
+.slide.active .jd01-sway { animation: jd01-sway 1.3s ease-in-out infinite alternate; transform-box: fill-box; transform-origin: 50% 100%; }
+@keyframes jd01-sway { from { transform: rotate(-5deg); } to { transform: rotate(5deg); } }
+.jd01-gate { transition: opacity 1.6s ease 3s; opacity: .45; }
+.slide:has(.jd01-go.on) .jd01-gate { opacity: 1; }
+.jd01-joy { opacity: 0; transition: opacity 1s ease 5.4s; }
+.slide:has(.jd01-go.on) .jd01-joy { opacity: 1; }
+.slide.active .jd01-glow { animation: jd01-pulse 3.2s ease-in-out infinite; }
+
+</style>
+</head>
+<body>
+<main class="deck" id="deck">
+
+<section class="slide title">
+  <div class="inner">
+    <div class="emblem rise"></div>
+    <h1 class="rise" style="--d:1">Jude 1</h1>
+    <p class="sub rise" style="--d:3">Contend, and be kept</p>
+    <p class="tag rise" style="--d:5">A short, fierce letter from the Lord's own brother: false teachers have slipped in, so hold on, build up, rescue the ones who are slipping. And it ends with the best promise in the Bible: He is able to keep you from falling.</p>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <div class="split">
+      <div class="stage">
+        <svg data-world viewBox="150 95 758 481" data-towns="Jerusalem!, Antioch, Alexandria, Ephesus, Rome, Corinth" role="img" aria-label="A map of the Roman world. Jerusalem is marked, because Jude's brother James led the church there. The letter does not say where it was sent: believers lived in cities all round the Mediterranean.">
+        </svg>
+      </div>
+      <div>
+        <h2 class="rise" style="--d:1">The letter of Jude</h2>
+        <div class="letter">
+          <p class="from">“Jude, the servant of Jesus Christ, and brother of James, to them that are sanctified by God the Father, and preserved in Jesus Christ, and called”</p>
+          <dl>
+            <dt>Who</dt><dd>Jude (the same name as Judas): the Lord's half-brother, and brother of James</dd>
+            <dt>Written from</dt><dd>not said. James led the church in Jerusalem, so many think from that region.</dd>
+            <dt>When</dt><dd>about AD 64 to 68</dd>
+            <dt>To whom</dt><dd>believers who were “called”, “beloved”: no town is named</dd>
+            <dt>Why</dt><dd class="step">He had meant to write about “the common salvation”, but false teachers had slipped in, so he wrote a battle cry instead (verse 3).</dd>
+          </dl>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise" style="--d:1">Where Jude fits</h2>
+    <ol class="timeline" aria-label="About AD 30 to 33, Jesus is crucified and risen. About 45 to 50, James writes the earliest letter, by some counts. About AD 64, Rome burns and Nero turns on the Christians. About AD 64 to 68, Jude writes, near the time of 2 Peter. About 67 to 68, Paul and Peter are put to death in Rome by tradition. About AD 70, Rome destroys Jerusalem.">
+      <li style="--k:0"><b>about AD 30 to 33</b><span>Jesus risen</span><small>His brothers believe</small></li>
+      <li style="--k:1"><b>about 45 to 50</b><span>James writes his letter</span><small>Jude's brother</small></li>
+      <li style="--k:2"><b>about 64</b><span>Rome burns; Nero turns on the church</span><small>hard years begin</small></li>
+      <li class="lit" style="--k:3"><b>about 64 to 68</b><span>Jude, alongside 2 Peter</span><small>“contend for the faith”</small></li>
+      <li style="--k:4"><b>about 67 to 68</b><span>Paul and Peter put to death</span><small>by tradition</small></li>
+      <li class="wait" style="--k:5"><b>about 70</b><span>Jerusalem and the temple destroyed</span><small>the Jerusalem Jude knew</small></li>
+    </ol>
+    <p class="note rise" style="--d:3">Much of Jude is close to 2 Peter 2. Two men, one warning. The apostles were leaving the stage, and false teachers saw an opening. Jude's answer is not panic. It's: <em>hold on to what you were given, build, pray, and remember who keeps you.</em></p>
+  </div>
+</section>
+
+<section class="slide watch">
+  <div class="inner">
+    <h2 class="rise">Things to watch for</h2>
+    <p class="lede rise" style="--d:1">Keep these questions in the back of your mind as we read. We'll come back to every one of them at the end.</p>
+    <ol class="seeds">
+      <li class="step"><span class="topic">Jude</span><span class="seed-q">Who was Jude, and what had changed him?</span></li>
+      <li class="step"><span class="topic">Contend</span><span class="seed-q">What are we told to contend for, and how?</span></li>
+      <li class="step"><span class="topic">Grace</span><span class="seed-q">Is grace a licence to sin?</span></li>
+      <li class="step"><span class="topic">Warnings</span><span class="seed-q">What do Israel, Sodom, Cain, Balaam and Core have in common?</span></li>
+      <li class="step"><span class="topic">Rescue</span><span class="seed-q">What do we do for a brother who is slipping?</span></li>
+      <li class="step"><span class="topic">Kept</span><span class="seed-q">Who is able to keep you from falling?</span></li>
+    </ol>
+  </div>
+</section>
+
+<section class="slide part">
+  <div class="inner">
+    <p class="part-n rise">Part one</p>
+    <h2 class="rise" style="--d:1">Contend for the faith</h2>
+    <p class="range rise" style="--d:2">Verses 1–4</p>
+    <div class="rule"></div>
+    <p class="hook rise" style="--d:4">A man who didn't believe in his brother, writing as His servant.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="1-2" data-hl="Jude, the servant of Jesus Christ, and brother of James|sanctified by God the Father, and preserved in Jesus Christ|Mercy unto you, and peace, and love, be multiplied"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="1" data-hl="Jude, the servant of Jesus Christ, and brother of James"></blockquote>
+    <h2 class="rise" style="--d:1">The brother who didn't believe</h2>
+    <div class="rename">
+      <span class="old rise" style="--d:2">Jude, His brother, who didn't believe</span>
+      <span class="arrow step n2">→</span>
+      <span class="new step">Jude, a servant</span>
+      <span class="gloss step">“Servant” is <span class="gk">doulos</span>: a slave. He doesn't say “brother of the Lord.”</span>
+    </div>
+    <blockquote class="quote step"><p>“For neither did his brethren believe in him.”</p><cite>John 7:5</cite></blockquote>
+    <blockquote class="quote step"><p>“These all continued with one accord in prayer and supplication, with the women, and Mary the mother of Jesus, and with his brethren.”</p><cite>Acts 1:14</cite></blockquote>
+    <p class="note step">Jude grew up in the same house as Jesus (his name appears as “Judas” in Matthew 13:55) and for a while did not believe Him. After the resurrection he is in the upper room, praying. Nobody is too close to Jesus to need Him, and nobody is too far from Him to be won.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="3-4" data-hl="earnestly contend for the faith which was once delivered unto the saints|crept in unawares|turning the grace of our God into lasciviousness|denying the only Lord God"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="3" data-hl="earnestly contend for the faith which was once delivered unto the saints"></blockquote>
+    <h2 class="rise" style="--d:1">Contend: an athlete's word</h2>
+    <div class="morph">
+      <span class="big rise" style="--d:2">ἐπαγωνίζεσθαι</span>
+      <span class="say step">said <em class="gk">epagōnizesthai</em></span>
+      <span class="means step">“to struggle hard for”</span>
+    </div>
+    <p class="note step">It's where we get <em>agony</em>: the wrestler's strain. <em>“The faith”</em> is what Christians believe: who Jesus is, what He did, and how He saves. It was <em>“once delivered”</em>, once for all, so nobody gets to improve on it.</p>
+    <p class="note step">And contend how? Jude doesn't say fight people. Verse 22 says <em>have compassion</em>. You contend for the truth and for the people caught up in the lie. The <em>“common salvation”</em> in verse 3 is the one shared by every believer: the same Savior, the same grace, for whosoever will.</p>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="4" data-hl="turning the grace of our God into lasciviousness"></blockquote>
+    <h2 class="rise" style="--d:1">Grace is not a licence</h2>
+    <div class="columns">
+      <div class="col law rise" style="--d:2">
+        <p class="who">What the false teachers did</p>
+        <h3>Grace as a licence</h3>
+        <p>“God forgives everything, so it doesn't matter what I do.” <em>Lasciviousness</em> is lust with no brakes.</p>
+      </div>
+      <div class="col grace step">
+        <p class="who">What grace actually does</p>
+        <h3>Grace as a teacher</h3>
+        <p>“Teaching us that, denying ungodliness and worldly lusts, we should live soberly, righteously, and godly” (Titus 2:12).</p>
+      </div>
+    </div>
+    <blockquote class="quote step"><p>“What shall we say then? Shall we continue in sin, that grace may abound? God forbid. How shall we, that are dead to sin, live any longer therein?”</p><cite>Romans 6:1–2</cite></blockquote>
+    <p class="note step">If you've ever said “I'll do it now and ask forgiveness later,” you know this trap. Grace is real when you fall (1 John 1:9), and it never runs out. But grace is a rescue, not a plan to fall.</p>
+  </div>
+</section>
+
+<section class="slide part">
+  <div class="inner">
+    <p class="part-n rise">Part two</p>
+    <h2 class="rise" style="--d:1">Six warnings</h2>
+    <p class="range rise" style="--d:2">Verses 5–16</p>
+    <div class="rule"></div>
+    <p class="hook rise" style="--d:4">Men who were close to God, and walked away.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="5-7" data-hl="having saved the people out of the land of Egypt, afterward destroyed them that believed not|angels which kept not their first estate|Sodom and Gomorrha"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="5" data-hl="afterward destroyed them that believed not"></blockquote>
+    <h2 class="rise" style="--d:1">Rescued, but never trusted</h2>
+    <ol class="timeline" aria-label="Egypt: slaves. The Red Sea: saved. Sinai: God speaks. Kadesh: they refuse to go in. The wilderness: forty years, that generation falls. The Jordan: their children go in.">
+      <li style="--k:0"><b>Egypt</b><span>slaves</span><small>Exodus 1–12</small></li>
+      <li style="--k:1"><b>Red Sea</b><span>saved</span><small>Exodus 14</small></li>
+      <li style="--k:2"><b>Sinai</b><span>God speaks</span><small>Exodus 19–20</small></li>
+      <li class="lit" style="--k:3"><b>Kadesh</b><span>“We can't.” They refuse.</span><small>Numbers 14</small></li>
+      <li style="--k:4"><b>Wilderness</b><span>forty years: that generation falls</span><small>Numbers 14</small></li>
+      <li class="wait" style="--k:5"><b>Jordan</b><span>their children go in</span><small>Joshua 3</small></li>
+    </ol>
+    <blockquote class="quote step"><p>“So we see that they could not enter in because of unbelief.”</p><cite>Hebrews 3:19</cite></blockquote>
+    <p class="note step">The whole crowd walked out of Egypt, but most never trusted the God who led them. Standing near the rescue is not the same as trusting the Rescuer. Jude says the same of the angels who left their place and of Sodom: appetite with no limits. Next, six pictures.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="8-10" data-hl="filthy dreamers defile the flesh|Michael the archangel|The Lord rebuke thee|speak evil of those things which they know not"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="9" data-hl="Michael the archangel|The Lord rebuke thee"></blockquote>
+    <p class="saying rise" style="--d:1">“The Lord <em>rebuke</em> thee.”</p>
+    <p class="note rise" style="--d:2">A hard text, so plainly: Jude refers to a story about Michael and the body of Moses that his readers knew. The Old Testament doesn't tell it (it says only that God buried Moses and no one knows where). Jude doesn't build a teaching on the details. He uses it for one point.</p>
+    <p class="note step">The point: even the archangel, arguing with the devil himself, didn't throw insults on his own authority. He said, <em>“The Lord rebuke thee,”</em> and left the judging to God. The very same words appear in Zechariah:</p>
+    <blockquote class="quote step"><p>“And the LORD said unto Satan, The LORD rebuke thee, O Satan; even the LORD that hath chosen Jerusalem rebuke thee: is not this a brand plucked out of the fire?”</p><cite>Zechariah 3:2</cite></blockquote>
+    <p class="note step">If Michael leaves it to the Lord, we should too. And the false teachers <em>“speak evil of those things which they know not.”</em> Be slow to mock what you don't understand.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="11" data-hl="the way of Cain|the error of Balaam for reward|gainsaying of Core"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise" style="--d:1">Six who turned away</h2>
+    <div class="jd01-six">
+      <div class="jd01-card" style="--k:0"><small>verse 5</small><b>Israel</b><i>Unbelief</i><p>Rescued from Egypt, yet most never trusted God.</p></div>
+      <div class="jd01-card" style="--k:1"><small>verse 6</small><b>The angels</b><i>Pride</i><p>Left the place God gave them.</p></div>
+      <div class="jd01-card" style="--k:2"><small>verse 7</small><b>Sodom and Gomorrha</b><i>Appetite</i><p>Lust with no brakes. Judged by fire.</p></div>
+      <div class="jd01-card" style="--k:3"><small>verse 11</small><b>Cain</b><i>Envy and rage</i><p>Killed his own brother (Genesis 4:8).</p></div>
+      <div class="jd01-card" style="--k:4"><small>verse 11</small><b>Balaam</b><i>Greed</i><p>Sold his gift for pay (Numbers 22:7).</p></div>
+      <div class="jd01-card" style="--k:5"><small>verse 11</small><b>Core (Korah)</b><i>Rebellion</i><p>Rose against the leaders God set up (Numbers 16).</p></div>
+    </div>
+    <p class="note step">Six examples, one thing in common: every one of them knew God, or was close to Him, and chose their own way. And every one was met with judgment. Jude says it in a few words: <em>“woe unto them.”</em></p>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise" style="--d:1">“But I've done some of these”</h2>
+    <div class="talk">
+      <p class="rise" style="--d:1"><small>You</small>I've been Cain: angry enough to hurt the people nearest me.</p>
+      <p class="reply step"><small>You</small>I've chased money like Balaam, and told myself it was fine.</p>
+      <p class="step"><small>You</small>I've lived like Sodom: appetite, no brakes.</p>
+      <p class="reply step"><small>Jude</small>The ones in these verses dug in. You're “beloved” (verses 17 and 20), and I'm telling you how to stay.<br><span class="flag">the door is open</span></p>
+    </div>
+    <blockquote class="quote step"><p>“If we confess our sins, he is faithful and just to forgive us our sins, and to cleanse us from all unrighteousness.”</p><cite>1 John 1:9</cite></blockquote>
+    <p class="note step">The warning isn't aimed at a man who fell and wants out. It's aimed at the man who digs in, won't turn, and tells others it's fine. If the fall is behind you and you're turning, the verses to read next are 20 and 21.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="12-13" data-hl="spots in your feasts of charity|clouds they are without water|trees whose fruit withereth|Raging waves of the sea|wandering stars"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="12-13" data-hl="clouds they are without water|trees whose fruit withereth, without fruit|Raging waves of the sea, foaming out their own shame|wandering stars"></blockquote>
+    <div class="stage"><svg viewBox="0 0 760 270" role="img" aria-label="Four small pictures. A cloud whose rain fades away before it reaches the ground: clouds without water. A bare tree with no fruit: trees without fruit. Wild waves with foam: raging waves. A star falling out of its place into darkness: wandering stars.">
+  <g>
+    <rect x="6" y="6" width="176" height="200" rx="10" style="fill:var(--surface-2);stroke:var(--line-strong)" stroke-width="2"/>
+    <path d="M40 90 q-14 0 -14 -14 q0 -14 16 -14 q6 -20 30 -20 q22 0 28 16 q22 -2 24 18 q0 14 -16 14 z" style="fill:var(--ink-soft)"/>
+    <g style="fill:var(--cool)"><ellipse class="jd01-drop" style="--k:0" cx="56" cy="104" rx="3" ry="6"/><ellipse class="jd01-drop" style="--k:1" cx="82" cy="104" rx="3" ry="6"/><ellipse class="jd01-drop" style="--k:2" cx="108" cy="104" rx="3" ry="6"/><ellipse class="jd01-drop" style="--k:3" cx="134" cy="104" rx="3" ry="6"/></g>
+    <path d="M12 190 h164" stroke-width="3" stroke-dasharray="3 9" style="stroke:var(--warm)"/>
+    <text x="94" y="228" text-anchor="middle" font-size="16" font-weight="700" style="fill:var(--ink)">clouds without water</text>
+    <text x="94" y="250" text-anchor="middle" font-size="14" style="fill:var(--ink-soft)">promises, no rain</text>
+  </g>
+  <g>
+    <rect x="194" y="6" width="176" height="200" rx="10" style="fill:var(--surface-2);stroke:var(--line-strong)" stroke-width="2"/>
+    <path d="M282 190 v-70 M282 150 l-30 -34 M282 138 l32 -40 M282 122 l-18 -22 M282 112 l22 -18" stroke-width="7" stroke-linecap="round" fill="none" style="stroke:var(--leather-light)"/>
+    <g style="fill:var(--ink-soft)"><circle cx="252" cy="112" r="4"/><circle cx="314" cy="94" r="4"/><circle cx="264" cy="96" r="3"/><circle cx="304" cy="90" r="3"/></g>
+    <path d="M214 190 h136" stroke-width="3" style="stroke:var(--line-strong)"/>
+    <path d="M270 192 l-12 10 M282 192 v14 M294 192 l12 10" stroke-width="3" fill="none" style="stroke:var(--leather-light)"/>
+    <text x="282" y="228" text-anchor="middle" font-size="16" font-weight="700" style="fill:var(--ink)">trees without fruit</text>
+    <text x="282" y="250" text-anchor="middle" font-size="14" style="fill:var(--ink-soft)">leaves, no fruit</text>
+  </g>
+  <g>
+    <rect x="382" y="6" width="176" height="200" rx="10" style="fill:var(--surface-2);stroke:var(--line-strong)" stroke-width="2"/>
+    <clipPath id="jd01-c3"><rect x="386" y="10" width="168" height="192"/></clipPath><g clip-path="url(#jd01-c3)" style="fill:none;stroke:var(--cool)" stroke-width="6" stroke-linecap="round"><path class="jd01-wave" d="M384 150 q20 -34 40 0 t40 0 t40 0 t40 0 t40 0"/><path class="jd01-wave" d="M384 178 q20 -26 40 0 t40 0 t40 0 t40 0 t40 0" style="opacity:.6"/></g>
+    <g style="fill:var(--ink)"><circle cx="434" cy="118" r="5"/><circle cx="474" cy="112" r="4"/><circle cx="514" cy="120" r="5"/><circle cx="454" cy="104" r="3"/><circle cx="494" cy="100" r="3"/></g>
+    <text x="470" y="228" text-anchor="middle" font-size="16" font-weight="700" style="fill:var(--ink)">raging waves</text>
+    <text x="470" y="250" text-anchor="middle" font-size="14" style="fill:var(--ink-soft)">loud foam, no direction</text>
+  </g>
+  <g>
+    <rect x="570" y="6" width="176" height="200" rx="10" style="fill:var(--on-glow)"/>
+    <g style="fill:var(--glow)"><circle cx="596" cy="40" r="2"/><circle cx="720" cy="60" r="2"/><circle cx="610" cy="170" r="2"/><circle cx="700" cy="150" r="2"/></g>
+    <g class="jd01-streak"><path d="M628 50 l-8 -22 l-8 22 l-22 2 l18 14 l-6 22 l18 -12 l18 12 l-6 -22 l18 -14 z" transform="translate(30 12)" style="fill:var(--glow)"/><path d="M648 74 l-56 -50" stroke-width="3" style="stroke:var(--glow);opacity:.45"/></g>
+    <text x="658" y="228" text-anchor="middle" font-size="16" font-weight="700" style="fill:var(--ink)">wandering stars</text>
+    <text x="658" y="250" text-anchor="middle" font-size="14" style="fill:var(--ink-soft)">bright, then lost in the dark</text>
+  </g>
+</svg></div>
+    <p class="note step"><em>“Feasts of charity”</em> were the shared meals the early churches held (<em>charity</em> is love). These men sat at the table with everybody and fed only themselves. They look like the real thing, but a cloud with no rain, a tree with no fruit and a star with no fixed place can't be counted on. Jesus said how to tell: <em>“Ye shall know them by their fruits.”</em></p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="14-16" data-hl="Enoch also, the seventh from Adam, prophesied|the Lord cometh with ten thousands of his saints|murmurers, complainers"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise" style="--d:1">“Ungodly”, six times</h2>
+    <p class="note rise" style="--d:2">The word <em>ungodly</em> means <em>without reverence for God</em>. Jude uses it six times in 25 verses, four of them in one verse.</p>
+    <div class="tally rise" style="--d:3" aria-label="Verses 1 to 25. The word ungodly is in verse 4 once, verse 15 four times, and verse 18 once.">
+      <span><i>1</i>&nbsp;</span><span><i>2</i>&nbsp;</span><span><i>3</i>&nbsp;</span><span class="hit" style="--k:0"><i>4</i>×1</span><span><i>5</i>&nbsp;</span><span><i>6</i>&nbsp;</span><span><i>7</i>&nbsp;</span><span><i>8</i>&nbsp;</span><span><i>9</i>&nbsp;</span><span><i>10</i>&nbsp;</span><span><i>11</i>&nbsp;</span><span><i>12</i>&nbsp;</span><span><i>13</i>&nbsp;</span><span><i>14</i>&nbsp;</span><span class="hit" style="--k:2"><i>15</i>×4</span><span><i>16</i>&nbsp;</span><span><i>17</i>&nbsp;</span><span class="hit" style="--k:4"><i>18</i>×1</span><span><i>19</i>&nbsp;</span><span><i>20</i>&nbsp;</span><span><i>21</i>&nbsp;</span><span><i>22</i>&nbsp;</span><span><i>23</i>&nbsp;</span><span><i>24</i>&nbsp;</span><span><i>25</i>&nbsp;</span>
+    </div>
+    <p class="note step">Verse 15 piles it up: ungodly <em>among them</em>, ungodly <em>deeds</em>, <em>ungodly</em> committed, ungodly <em>sinners</em>. Jude wants it to land. Then look at verse 16: <em>murmurers, complainers</em>, men who flatter the powerful <em>“because of advantage.”</em> Grumbling and flattery are where ungodliness starts.</p>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="14" data-hl="Enoch also, the seventh from Adam, prophesied"></blockquote>
+    <h2 class="rise" style="--d:1">Enoch, the seventh from Adam</h2>
+    <ol class="timeline" aria-label="Seven men from Adam: Adam, Seth, Enos, Cainan, Mahalaleel, Jared, and Enoch, the seventh, who walked with God.">
+      <li style="--k:0"><b>1</b><span>Adam</span><small></small></li>
+      <li style="--k:1"><b>2</b><span>Seth</span><small></small></li>
+      <li style="--k:2"><b>3</b><span>Enos</span><small></small></li>
+      <li style="--k:3"><b>4</b><span>Cainan</span><small></small></li>
+      <li style="--k:4"><b>5</b><span>Mahalaleel</span><small></small></li>
+      <li style="--k:5"><b>6</b><span>Jared</span><small></small></li>
+      <li class="lit" style="--k:6"><b>7</b><span>Enoch</span><small>walked with God</small></li>
+    </ol>
+    <p class="note step">A second hard text, plainly: Jude quotes a saying of Enoch that his readers knew. The Old Testament doesn't record it. Because Jude's letter is Scripture, the saying he quotes is true; that doesn't make every old book about Enoch Scripture. The message is simple: <em>the Lord is coming, with His holy ones, to judge.</em></p>
+    <blockquote class="quote step"><p>“And Enoch walked with God: and he was not; for God took him.”</p><cite>Genesis 5:24</cite></blockquote>
+    <p class="note step">Notice who gives the warning: the man who <em>walked with God</em>. The best warnings come from someone who's close to Him. Nobody can warn others about a road he won't walk himself.</p>
+  </div>
+</section>
+
+<section class="slide part">
+  <div class="inner">
+    <p class="part-n rise">Part three</p>
+    <h2 class="rise" style="--d:1">Keep yourselves</h2>
+    <p class="range rise" style="--d:2">Verses 17–23</p>
+    <div class="rule"></div>
+    <p class="hook rise" style="--d:4">Not just what to avoid: what to build, and who to pull out.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="17-19" data-hl="remember ye the words which were spoken before of the apostles|mockers in the last time|sensual, having not the Spirit"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="19" data-hl="sensual, having not the Spirit"></blockquote>
+    <h2 class="rise" style="--d:1">The Spirit marks a believer</h2>
+    <div class="ifthen rise" style="--d:2">
+      <div class="if"><small>if any man</small>have not the Spirit of Christ</div>
+      <span class="arrow" aria-hidden="true">→</span>
+      <div class="then"><small>then</small>he is none of his</div>
+    </div>
+    <blockquote class="quote step"><p>“But ye are not in the flesh, but in the Spirit, if so be that the Spirit of God dwell in you. Now if any man have not the Spirit of Christ, he is none of his.”</p><cite>Romans 8:9</cite></blockquote>
+    <p class="note step"><em>Sensual</em> means ruled by appetite. These men split the church and followed their urges, and Jude says they don't have the Spirit. Every real believer has Him, from the moment he trusts Jesus. There's no second step to earn.</p>
+    <p class="note step">That means if you feel sorry after you fall, that's the Spirit at work in you. A man without Him doesn't care. The apostles said mockers would come in the last time, and the <em>last time</em> began when Jesus rose.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="20-21" data-hl="building up yourselves on your most holy faith|praying in the Holy Ghost|Keep yourselves in the love of God|looking for the mercy of our Lord Jesus Christ unto eternal life"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="20-21" data-hl="building up yourselves on your most holy faith|praying in the Holy Ghost|Keep yourselves in the love of God|looking for the mercy"></blockquote>
+    <h2 class="rise" style="--d:1">Four things to do, with all three persons</h2>
+    <ol class="signs rise" style="--d:2">
+      <li><b>Build</b>on “your most holy faith”: what God has said, not how you feel</li>
+      <li><b>Pray</b>“in the Holy Ghost”: led by the Spirit who lives in you</li>
+      <li class="now"><b>Keep</b>yourselves “in the love of God”</li>
+      <li><b>Look</b>for the mercy of our Lord Jesus Christ</li>
+    </ol>
+    <p class="note step">Notice the Father, the Son and the Spirit in two verses: the Spirit helps you pray, the Father's love is where you stay, and the Lord Jesus is the one you're looking for. You aren't alone in this.</p>
+    <p class="note step">Today, do the small, daily version: open the Bible, pray out loud, tell a brother how you're doing, and remember Jesus is coming.</p>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <div class="split">
+      <div class="stage"><svg viewBox="0 0 640 322" role="img" aria-label="A sun on the left shines on a man standing in its light. A wall casts a shadow, and a second man sits in the shadow, but the same sun is still shining over the wall. An arrow shows him stepping back into the light.">
+  <polygon points="96,80 330,150 330,300 96,300" style="fill:color-mix(in srgb, var(--glow) 24%, transparent)"/>
+  <polygon points="330,150 640,210 640,300 330,300" style="fill:color-mix(in srgb, var(--on-glow) 32%, transparent)"/>
+  <circle cx="86" cy="70" r="38" class="jd01-glow" style="fill:var(--accent)"/>
+  <g stroke-width="5" stroke-linecap="round" style="stroke:var(--accent)">
+    <path class="jd01-ray" d="M86 14 v-14"/><path class="jd01-ray" d="M30 70 h-22"/><path class="jd01-ray" d="M126 108 l26 26"/><path class="jd01-ray" d="M126 30 l24 -22"/><path class="jd01-ray" d="M44 112 l-22 22"/>
+  </g>
+  <text x="140" y="42" font-size="17" font-weight="700" style="fill:var(--accent-hot)">the love of God: it never moves</text>
+  <rect x="318" y="120" width="26" height="170" rx="3" style="fill:var(--leather)"/>
+  <circle cx="214" cy="226" r="14" style="fill:var(--ink-soft)"/><path d="M190 290 q0 -44 24 -44 q24 0 24 44 z" style="fill:var(--ink-soft)"/>
+  <text x="214" y="116" text-anchor="middle" font-size="16" font-weight="700" style="fill:var(--ink)">keep yourselves in it</text>
+  <circle cx="480" cy="244" r="14" style="fill:var(--ink-soft);opacity:.7"/><path d="M456 290 q0 -40 24 -40 q24 0 24 40 z" style="fill:var(--ink-soft);opacity:.7"/>
+  <text x="480" y="196" text-anchor="middle" font-size="16" font-weight="700" style="fill:var(--ink)">stepped behind a wall</text>
+  <g class="jd01-back"><path d="M440 262 q-60 36 -96 -2" fill="none" stroke-width="4" stroke-linecap="round" style="stroke:var(--accent-hot)"/><path d="M350 262 l-4 14 l-14 -8" fill="none" stroke-width="4" stroke-linecap="round" style="stroke:var(--accent-hot)"/>
+  <text x="400" y="316" text-anchor="middle" font-size="15" font-weight="700" style="fill:var(--accent-hot)">the light is still on</text></g>
+</svg></div>
+      <div>
+        <h2 class="rise" style="--d:1">Stay in the sun</h2>
+        <p class="note rise" style="--d:2"><em>“Keep yourselves in the love of God”</em> doesn't mean keep yourself loved. His love never changes. It means stay where it shines on you: trusting Him, obeying Him, close to His people.</p>
+        <p class="note step">A man can step behind a wall: a bad crowd, a secret, a shame. He's still in the same sun, just in the shadow.</p>
+        <p class="note step jd01-stepback">If you've stepped away, the light didn't go out. Step back. Say it to God and to a brother. It's the same sun you left.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="slide verse" data-v="22-23" data-hl="of some have compassion, making a difference|others save with fear, pulling them out of the fire|hating even the garment spotted by the flesh"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <div class="split">
+      <div class="stage"><svg viewBox="0 0 640 300" role="img" aria-label="Flames on the left. A man stands at the edge of them. A rescuer on the right, tied by a rope to a post, reaches out and pulls him away from the fire.">
+  <g style="fill:var(--danger)">
+    <path class="jd01-flame" d="M20 290 q-10 -60 24 -96 q4 40 26 40 q-6 -40 28 -76 q30 50 8 132 z"/>
+    <path class="jd01-flame" d="M96 290 q-6 -50 22 -80 q6 30 24 28 q-4 -30 22 -56 q30 44 8 108 z" style="fill:var(--warm)"/>
+  </g>
+  <line x1="470" y1="270" x2="470" y2="130" stroke-width="10" stroke-linecap="round" style="stroke:var(--leather)"/>
+  <text x="470" y="296" text-anchor="middle" font-size="15" font-weight="700" style="fill:var(--ink-soft)">a firm post</text>
+  <path d="M470 168 L560 168" stroke-width="3" fill="none" style="stroke:var(--accent)"/>
+  <g class="jd01-man"><circle cx="190" cy="196" r="14" style="fill:var(--ink-soft)"/><path d="M166 270 q0 -44 24 -44 q24 0 24 44 z" style="fill:var(--ink-soft)"/><path d="M206 232 L232 222" stroke-width="7" stroke-linecap="round" style="stroke:var(--ink-soft)"/><text x="190" y="170" text-anchor="middle" font-size="15" font-weight="700" style="fill:var(--ink)">your brother</text></g>
+  <path class="jd01-rope1" d="M222 222 Q330 244 470 176" fill="none" stroke-width="4" style="stroke:var(--accent)"/>
+  <path class="jd01-rope2" d="M392 222 Q430 214 470 176" fill="none" stroke-width="4" style="stroke:var(--accent)"/>
+  <g><circle cx="560" cy="196" r="14" style="fill:var(--accent)"/><path d="M536 270 q0 -44 24 -44 q24 0 24 44 z" style="fill:var(--accent)"/><path d="M538 232 L480 176" stroke-width="7" stroke-linecap="round" style="stroke:var(--accent)"/></g>
+  <text x="560" y="150" text-anchor="middle" font-size="15" font-weight="700" style="fill:var(--accent-hot)">you</text>
+  <text class="jd01-safe" x="400" y="40" text-anchor="middle" font-size="22" font-weight="700" style="fill:var(--accent-hot)">out of the fire</text>
+</svg></div>
+      <div>
+        <h2 class="rise" style="--d:1">Pulling a brother out</h2>
+        <p class="note rise" style="--d:2">Jude's picture comes from Zechariah 3:2, <em>“a brand plucked out of the fire.”</em> You were one too. Now he says it's your turn, for the man who's slipping.</p>
+        <p class="note step jd01-pull">He says to pull <em>“with fear”</em>: urgency, and respect for how dangerous the fire is. Notice the rope: you're tied to a firm post. A rescuer who's not anchored goes in with him.</p>
+        <p class="note step"><em>“Hating even the garment spotted by the flesh”</em>: hate the stain of sin, and keep yourself clear of it. Pull him out, but don't go back into the fire with him.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise" style="--d:1">Three ways to help</h2>
+    <div class="sort">
+      <div class="rise" style="--d:2"><h3>Some: have compassion</h3><div class="vs"><b>22</b></div><p>For those who are unsure or struggling: listen, be gentle, and be patient.</p></div>
+      <div class="rise" style="--d:3"><h3>Others: pull them out</h3><div class="vs"><b>23</b></div><p>For those already in the fire: act now, firmly, and don't wait for a better time.</p></div>
+      <div class="rise" style="--d:4"><h3>All: stay clean</h3><div class="vs"><b>23</b></div><p>Hate what sin does, and don't wade in. Keep your own footing.</p></div>
+    </div>
+    <blockquote class="quote step"><p>“Brethren, if a man be overtaken in a fault, ye which are spiritual, restore such an one in the spirit of meekness; considering thyself, lest thou also be tempted.”</p><cite>Galatians 6:1</cite></blockquote>
+    <p class="note step">This is what men in recovery do for each other. A brother calls at two in the morning: pick up. If you can't be there, tell him who can. Don't meet him at the old place. And remember, <em>considering thyself.</em> You could be next, and one day somebody will pull you.</p>
+  </div>
+</section>
+
+<section class="slide part">
+  <div class="inner">
+    <p class="part-n rise">Part four</p>
+    <h2 class="rise" style="--d:1">Able to keep you</h2>
+    <p class="range rise" style="--d:2">Verses 24–25</p>
+    <div class="rule"></div>
+    <p class="hook rise" style="--d:4">The last two verses of Jude, and the best promise in the letter.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="24-25" data-hl="able to keep you from falling|present you faultless before the presence of his glory with exceeding joy|the only wise God our Saviour"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="24" data-hl="able to keep you from falling"></blockquote>
+    <div class="stage"><svg viewBox="0 0 760 340" role="img" aria-label="A man walks across a path with three gaps in it: failure, doubt, and temptation. A great hand above him holds him by a line, and he never falls. At the end is a bright gate: before the presence of his glory, faultless, with exceeding joy.">
+  <g style="fill:var(--surface-2);stroke:var(--line-strong)" stroke-width="2">
+    <rect x="30" y="270" width="132" height="40" rx="6"/><rect x="198" y="270" width="132" height="40" rx="6"/><rect x="366" y="270" width="132" height="40" rx="6"/><rect x="534" y="270" width="110" height="40" rx="6"/>
+  </g>
+  <g font-size="15" font-weight="700" text-anchor="middle" style="fill:var(--danger)">
+    <text x="180" y="334">failure</text><text x="348" y="334">doubt</text><text x="516" y="334">temptation</text>
+  </g>
+  <g style="fill:color-mix(in srgb, var(--danger) 30%, transparent)"><rect x="164" y="272" width="32" height="50"/><rect x="332" y="272" width="32" height="50"/><rect x="500" y="272" width="32" height="50"/></g>
+  <g class="jd01-gate">
+    <path d="M630 270 V150 q0 -80 62 -80 q62 0 62 80 V270 z" class="jd01-glow" style="fill:var(--glow)"/>
+    <path d="M642 270 V154 q0 -64 50 -64 q50 0 50 64 V270 z" style="fill:var(--on-glow)"/>
+  </g>
+  <g class="jd01-joy" font-size="15" font-weight="700" text-anchor="middle" style="fill:var(--accent-hot)">
+    <text x="692" y="46">before the presence of his glory</text>
+    <text x="692" y="216" style="fill:var(--glow)">faultless</text>
+    <text x="692" y="240" style="fill:var(--glow)">with exceeding joy</text>
+  </g>
+  <g class="jd01-walk">
+    <path d="M70 -20 h44 v62 q0 18 -22 18 q-22 0 -22 -18z" transform="translate(0 24)" style="fill:var(--accent)"/>
+    <line x1="92" y1="78" x2="92" y2="214" stroke-width="3" style="stroke:var(--accent)"/>
+    <text x="92" y="22" text-anchor="middle" font-size="15" font-weight="700" style="fill:var(--accent-hot)">able to keep you</text>
+    <g class="jd01-sway"><circle cx="92" cy="226" r="13" style="fill:var(--ink)"/><path d="M70 270 q0 -38 22 -38 q22 0 22 38 z" style="fill:var(--ink)"/></g>
+  </g>
+</svg></div>
+    <p class="note step jd01-go">Jude has spent 23 verses on men who fell. He's honest: falling is real. And then he turns to the One who is <em>able to keep you from falling</em>, and who will <em>present you faultless</em> before His glory <em>with exceeding joy</em>.</p>
+    <p class="note step">Faultless isn't because you finally got it right. It's because the One who keeps you finishes what He started. Not a nervous “made it,” but joy.</p>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise" style="--d:1">Kept at both ends</h2>
+    <ol class="signs rise" style="--d:2">
+      <li><b>Preserved in Jesus Christ</b>verse 1</li>
+      <li><b>Keep yourselves in the love of God</b>verse 21</li>
+      <li class="now"><b>Able to keep you from falling</b>verse 24</li>
+    </ol>
+    <p class="note step">Jude opens with <em>“preserved”</em> and closes with <em>“able to keep.”</em> In the middle, <em>“keep yourselves.”</em> Both are true. You stay close, and He is the one holding you. The second doesn't make the first optional, and the first doesn't carry the second.</p>
+    <blockquote class="quote step"><p>“And I give unto them eternal life; and they shall never perish, neither shall any man pluck them out of my hand. My Father, which gave them me, is greater than all; and no man is able to pluck them out of my Father’s hand.”</p><cite>John 10:28–29</cite></blockquote>
+    <blockquote class="quote step"><p>“Being confident of this very thing, that he which hath begun a good work in you will perform it until the day of Jesus Christ:”</p><cite>Philippians 1:6</cite></blockquote>
+    <p class="note step">And the letter ends in worship, not warning: <em>“To the only wise God our Saviour, be glory and majesty, dominion and power, both now and ever. Amen.”</em> If you fell yesterday, this is the verse for today: He is able.</p>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise" style="--d:1">Jude in six steps</h2>
+    <ol class="timeline" aria-label="Verses 1 to 4, contend. Verses 5 to 16, beware: six warnings. Verses 17 to 19, remember what the apostles said. Verses 20 and 21, build, pray, keep, look. Verses 22 and 23, rescue. Verses 24 and 25, he is able.">
+      <li style="--k:0"><b>1–4</b><span>Contend</span><small>for the faith</small></li>
+      <li style="--k:1"><b>5–16</b><span>Beware</span><small>six warnings</small></li>
+      <li style="--k:2"><b>17–19</b><span>Remember</span><small>what the apostles said</small></li>
+      <li style="--k:3"><b>20–21</b><span>Build and keep</span><small>your own footing</small></li>
+      <li style="--k:4"><b>22–23</b><span>Rescue</span><small>pull them out</small></li>
+      <li class="lit" style="--k:5"><b>24–25</b><span>He is able</span><small>to keep you from falling</small></li>
+    </ol>
+    <p class="note rise" style="--d:3">Look back over the whole letter. It's honest about sin (six men who turned away). It speaks to regret (verse 22: compassion, not shame). It points to grace (verse 2, <em>mercy, peace, and love be multiplied</em>), to hope (the mercy of Jesus <em>unto eternal life</em>) and to the real world (build, pray, rescue). The best of it comes last: the Lord is <em>able</em>.</p>
+  </div>
+</section>
+
+<section class="slide remember">
+  <div class="inner">
+    <h2 class="rise">Points to remember</h2>
+    <ol class="seeds">
+      <li class="step"><span class="topic">Jude</span><span class="seed-q">“Jude, the servant of Jesus Christ, and brother of James” <cite>verse 1</cite></span><span class="take">Jesus' own brother didn't believe at first, then served Him. Nobody is too close or too far.</span></li>
+      <li class="step"><span class="topic">Contend</span><span class="seed-q">“earnestly contend for the faith which was once delivered unto the saints” <cite>verse 3</cite></span><span class="take">Hold on to what the apostles handed down, and defend it with compassion, not with fists.</span></li>
+      <li class="step"><span class="topic">Grace</span><span class="seed-q">“turning the grace of our God into lasciviousness” <cite>verse 4</cite></span><span class="take">Grace is for rescue, not a licence. It teaches us to say no to sin.</span></li>
+      <li class="step"><span class="topic">Warnings</span><span class="seed-q">“the way of Cain... the error of Balaam... the gainsaying of Core” <cite>verse 11</cite></span><span class="take">Unbelief, pride, appetite, envy, greed and rebellion all end in ruin. Turn while you can.</span></li>
+      <li class="step"><span class="topic">Rescue</span><span class="seed-q">“others save with fear, pulling them out of the fire” <cite>verse 23</cite></span><span class="take">Help the one who's slipping: with compassion, urgency, and your own feet planted.</span></li>
+      <li class="step"><span class="topic">Kept</span><span class="seed-q">“him that is able to keep you from falling” <cite>verse 24</cite></span><span class="take">He keeps you, and He'll bring you home faultless with exceeding joy.</span></li>
+    </ol>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 1 of 6</p>
+      <span class="topic">Jude</span>
+      <h2>Who was Jude, and what had changed him?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="1" data-hl="Jude, the servant of Jesus Christ, and brother of James"></blockquote>
+      <blockquote class="quote step"><p>“For neither did his brethren believe in him.”</p><cite>John 7:5</cite></blockquote>
+      <blockquote class="quote step"><p>“These all continued with one accord in prayer and supplication, with the women, and Mary the mother of Jesus, and with his brethren.”</p><cite>Acts 1:14</cite></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>Jude was the half-brother of Jesus. He didn't believe in Him during His ministry, but after the resurrection he was praying with the believers, and he ends up calling himself a servant of Jesus Christ.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 2 of 6</p>
+      <span class="topic">Contend</span>
+      <h2>What are we told to contend for, and how?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="3"></blockquote>
+      <blockquote class="quote step" data-q="17"></blockquote>
+      <blockquote class="quote step" data-q="22"></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>For the faith once delivered to the saints: what the apostles taught about Jesus. We hold to it, and we contend with compassion for the people caught in the lie.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 3 of 6</p>
+      <span class="topic">Grace</span>
+      <h2>Is grace a licence to sin?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="4" data-hl="turning the grace of our God into lasciviousness"></blockquote>
+      <blockquote class="quote step"><p>“What shall we say then? Shall we continue in sin, that grace may abound? God forbid. How shall we, that are dead to sin, live any longer therein?”</p><cite>Romans 6:1–2</cite></blockquote>
+      <blockquote class="quote step"><p>“For the grace of God that bringeth salvation hath appeared to all men, Teaching us that, denying ungodliness and worldly lusts, we should live soberly, righteously, and godly, in this present world;”</p><cite>Titus 2:11–12</cite></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>No. Grace forgives the man who falls, but it also teaches him to say no to sin. Using grace as an excuse to sin is exactly what Jude warns about.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 4 of 6</p>
+      <span class="topic">Warnings</span>
+      <h2>What do Israel, Sodom, Cain, Balaam and Core have in common?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="5"></blockquote>
+      <blockquote class="quote step" data-q="7" data-hl="Sodom and Gomorrha"></blockquote>
+      <blockquote class="quote step" data-q="11"></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>Each knew God or was close to Him, and chose their own way: unbelief, pride, appetite, envy, greed, rebellion. Each ended in judgment. They are warnings to turn, not to give up: the door is open to the man who turns.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 5 of 6</p>
+      <span class="topic">Rescue</span>
+      <h2>What do we do for a brother who is slipping?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="22-23" data-hl="of some have compassion, making a difference|others save with fear, pulling them out of the fire"></blockquote>
+      <blockquote class="quote step"><p>“Brethren, if any of you do err from the truth, and one convert him; Let him know, that he which converteth the sinner from the error of his way shall save a soul from death, and shall hide a multitude of sins.”</p><cite>James 5:19–20</cite></blockquote>
+      <blockquote class="quote step"><p>“Brethren, if a man be overtaken in a fault, ye which are spiritual, restore such an one in the spirit of meekness; considering thyself, lest thou also be tempted.”</p><cite>Galatians 6:1</cite></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>Have compassion on the doubter, pull the man in the fire out with urgency, and keep your own feet planted. Be gentle, and remember you could be next.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 6 of 6</p>
+      <span class="topic">Kept</span>
+      <h2>Who is able to keep you from falling?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="24"></blockquote>
+      <blockquote class="quote step"><p>“And I give unto them eternal life; and they shall never perish, neither shall any man pluck them out of my hand.”</p><cite>John 10:28</cite></blockquote>
+      <blockquote class="quote step"><p>“Who are kept by the power of God through faith unto salvation ready to be revealed in the last time.”</p><cite>1 Peter 1:5</cite></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>God. He is able to keep you from falling and to present you faultless before His glory with exceeding joy. You stay close, but He is the one who holds you, and He doesn't let go.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide prayer">
+  <div class="inner">
+    <div class="emblem rise"></div>
+    <h2 class="rise" style="--d:1">Prayer requests</h2>
+    <p class="ask-line rise" style="--d:2">What can we pray about for you today?</p>
+    <blockquote class="quote rise" style="--d:4"><p>“Now unto him that is able to keep you from falling, and to present you faultless before the presence of his glory with exceeding joy,”</p><cite>Jude 24</cite></blockquote>
+  </div>
+</section>
+
+</main>
+
+<script>
+// King James Version, Jude 1
+const V = {
+  1: "Jude, the servant of Jesus Christ, and brother of James, to them that are sanctified by God the Father, and preserved in Jesus Christ, and called:",
+  2: "Mercy unto you, and peace, and love, be multiplied.",
+  3: "Beloved, when I gave all diligence to write unto you of the common salvation, it was needful for me to write unto you, and exhort you that ye should earnestly contend for the faith which was once delivered unto the saints.",
+  4: "For there are certain men crept in unawares, who were before of old ordained to this condemnation, ungodly men, turning the grace of our God into lasciviousness, and denying the only Lord God, and our Lord Jesus Christ.",
+  5: "I will therefore put you in remembrance, though ye once knew this, how that the Lord, having saved the people out of the land of Egypt, afterward destroyed them that believed not.",
+  6: "And the angels which kept not their first estate, but left their own habitation, he hath reserved in everlasting chains under darkness unto the judgment of the great day.",
+  7: "Even as Sodom and Gomorrha, and the cities about them in like manner, giving themselves over to fornication, and going after strange flesh, are set forth for an example, suffering the vengeance of eternal fire.",
+  8: "Likewise also these filthy dreamers defile the flesh, despise dominion, and speak evil of dignities.",
+  9: "Yet Michael the archangel, when contending with the devil he disputed about the body of Moses, durst not bring against him a railing accusation, but said, The Lord rebuke thee.",
+  10: "But these speak evil of those things which they know not: but what they know naturally, as brute beasts, in those things they corrupt themselves.",
+  11: "Woe unto them! for they have gone in the way of Cain, and ran greedily after the error of Balaam for reward, and perished in the gainsaying of Core.",
+  12: "These are spots in your feasts of charity, when they feast with you, feeding themselves without fear: clouds they are without water, carried about of winds; trees whose fruit withereth, without fruit, twice dead, plucked up by the roots;",
+  13: "Raging waves of the sea, foaming out their own shame; wandering stars, to whom is reserved the blackness of darkness for ever.",
+  14: "And Enoch also, the seventh from Adam, prophesied of these, saying, Behold, the Lord cometh with ten thousands of his saints,",
+  15: "To execute judgment upon all, and to convince all that are ungodly among them of all their ungodly deeds which they have ungodly committed, and of all their hard speeches which ungodly sinners have spoken against him.",
+  16: "These are murmurers, complainers, walking after their own lusts; and their mouth speaketh great swelling words, having men’s persons in admiration because of advantage.",
+  17: "But, beloved, remember ye the words which were spoken before of the apostles of our Lord Jesus Christ;",
+  18: "How that they told you there should be mockers in the last time, who should walk after their own ungodly lusts.",
+  19: "These be they who separate themselves, sensual, having not the Spirit.",
+  20: "But ye, beloved, building up yourselves on your most holy faith, praying in the Holy Ghost,",
+  21: "Keep yourselves in the love of God, looking for the mercy of our Lord Jesus Christ unto eternal life.",
+  22: "And of some have compassion, making a difference:",
+  23: "And others save with fear, pulling them out of the fire; hating even the garment spotted by the flesh.",
+  24: "Now unto him that is able to keep you from falling, and to present you faultless before the presence of his glory with exceeding joy,",
+  25: "To the only wise God our Saviour, be glory and majesty, dominion and power, both now and ever. Amen."
+};
+const BOOK = "Jude 1";
+</script>
+<script src="../assets/deck.js"></script>
+</body>
+</html>

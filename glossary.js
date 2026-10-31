@@ -588,7 +588,13 @@ window.GLOSSARY = [
     [ 2, 3, 15 ] ],
    [
     "1 John", 5,
-    [ 1, 5, 6, 20 ] ] ]
+    [ 1, 5, 6, 20 ] ],
+   [
+    "2 John", 1,
+    [ 3, 7 ] ],
+   [
+    "Jude", 1,
+    [ 1, 4, 17, 21 ] ] ]
  },
  {
   "id": "john-the-baptist",
@@ -1140,7 +1146,10 @@ window.GLOSSARY = [
     [ 23, 24 ] ],
    [
     "Hebrews", 12,
-    [ 21 ] ] ]
+    [ 21 ] ],
+   [
+    "Jude", 1,
+    [ 9 ] ] ]
  },
  {
   "id": "elijah",
@@ -4851,7 +4860,10 @@ window.GLOSSARY = [
     [ 9 ] ],
    [
     "2 Peter", 2,
-    [ 4, 17 ] ] ]
+    [ 4, 17 ] ],
+   [
+    "Jude", 1,
+    [ 6, 13 ] ] ]
  },
  {
   "id": "grace",
@@ -5070,7 +5082,10 @@ window.GLOSSARY = [
     [ 5, 10, 12 ] ],
    [
     "2 Peter", 3,
-    [ 18 ] ] ]
+    [ 18 ] ],
+   [
+    "Jude", 1,
+    [ 4 ] ] ]
  },
  {
   "id": "truth",
@@ -5304,7 +5319,13 @@ window.GLOSSARY = [
     [ 6 ] ],
    [
     "1 John", 5,
-    [ 6 ] ] ]
+    [ 6 ] ],
+   [
+    "2 John", 1,
+    [ 1, 2, 3, 4 ] ],
+   [
+    "3 John", 1,
+    [ 1, 3, 4, 8, 12 ] ] ]
  },
  {
   "id": "glory",
@@ -5631,7 +5652,10 @@ window.GLOSSARY = [
     [ 3, 17 ] ],
    [
     "2 Peter", 3,
-    [ 18 ] ] ]
+    [ 18 ] ],
+   [
+    "Jude", 1,
+    [ 24, 25 ] ] ]
  },
  {
   "id": "the-law",
@@ -6375,7 +6399,13 @@ window.GLOSSARY = [
     [ 2, 3 ] ],
    [
     "1 John", 5,
-    [ 1, 6, 20 ] ] ]
+    [ 1, 6, 20 ] ],
+   [
+    "2 John", 1,
+    [ 3, 7, 9 ] ],
+   [
+    "Jude", 1,
+    [ 1, 4, 17, 21 ] ] ]
  },
  {
   "id": "son-of-god",
@@ -6963,7 +6993,10 @@ window.GLOSSARY = [
     [ 1, 16 ] ],
    [
     "1 John", 5,
-    [ 1, 5, 10, 13 ] ] ]
+    [ 1, 5, 10, 13 ] ],
+   [
+    "Jude", 1,
+    [ 5 ] ] ]
  },
  {
   "id": "witness",
@@ -7152,7 +7185,10 @@ window.GLOSSARY = [
     [ 1 ] ],
    [
     "1 John", 5,
-    [ 6, 7, 8, 9, 10, 11 ] ] ]
+    [ 6, 7, 8, 9, 10, 11 ] ],
+   [
+    "3 John", 1,
+    [ 6, 12 ] ] ]
  },
  {
   "id": "baptize",
@@ -10227,7 +10263,10 @@ window.GLOSSARY = [
     [ 13 ] ],
    [
     "Titus", 2,
-    [ 15 ] ] ]
+    [ 15 ] ],
+   [
+    "Jude", 1,
+    [ 9 ] ] ]
  },
  {
   "id": "friend",
@@ -10326,7 +10365,10 @@ window.GLOSSARY = [
     [ 3 ] ],
    [
     "James", 4,
-    [ 4 ] ] ]
+    [ 4 ] ],
+   [
+    "3 John", 1,
+    [ 14 ] ] ]
  },
  {
   "id": "abomination",
@@ -11817,7 +11859,10 @@ window.GLOSSARY = [
     [ 7 ] ],
    [
     "1 John", 5,
-    [ 11, 13, 20 ] ] ]
+    [ 11, 13, 20 ] ],
+   [
+    "Jude", 1,
+    [ 21 ] ] ]
  },
  {
   "id": "condemnation",
@@ -11877,7 +11922,10 @@ window.GLOSSARY = [
     [ 12 ] ],
    [
     "2 Peter", 2,
-    [ 3 ] ] ]
+    [ 3 ] ],
+   [
+    "Jude", 1,
+    [ 4 ] ] ]
  },
  {
   "id": "judgment",
@@ -12597,7 +12645,10 @@ window.GLOSSARY = [
     [ 10 ] ],
    [
     "Philippians", 2,
-    [ 14 ] ] ]
+    [ 14 ] ],
+   [
+    "Jude", 1,
+    [ 16 ] ] ]
  },
  {
   "id": "last-day",
@@ -12708,7 +12759,10 @@ window.GLOSSARY = [
     [ 7 ] ],
    [
     "1 Peter", 5,
-    [ 8 ] ] ]
+    [ 8 ] ],
+   [
+    "Jude", 1,
+    [ 9 ] ] ]
  },
  {
   "id": "man-born-blind",
@@ -13404,7 +13458,10 @@ window.GLOSSARY = [
     [ 2 ] ],
    [
     "1 Peter", 3,
-    [ 15 ] ] ]
+    [ 15 ] ],
+   [
+    "Jude", 1,
+    [ 1 ] ] ]
  },
  {
   "id": "stoning",
@@ -13887,7 +13944,10 @@ window.GLOSSARY = [
     [ 1, 7, 10 ] ],
    [
     "Hebrews", 6,
-    [ 1, 2 ] ] ]
+    [ 1, 2 ] ],
+   [
+    "2 John", 1,
+    [ 9, 10 ] ] ]
  },
  {
   "id": "letters",
@@ -14082,7 +14142,10 @@ window.GLOSSARY = [
     [ 12 ] ],
    [
     "1 Peter", 4,
-    [ 3 ] ] ]
+    [ 3 ] ],
+   [
+    "3 John", 1,
+    [ 7 ] ] ]
  },
  {
   "id": "glorified",
@@ -15408,7 +15471,10 @@ window.GLOSSARY = [
     [ 5, 9, 10 ] ],
    [
     "2 Peter", 3,
-    [ 15 ] ] ]
+    [ 15 ] ],
+   [
+    "Jude", 1,
+    [ 3 ] ] ]
  },
  {
   "id": "sixth-hour",
@@ -17499,7 +17565,10 @@ window.GLOSSARY = [
   "refs": [
    [
     "John", 13,
-    [ 34 ] ] ]
+    [ 34 ] ],
+   [
+    "2 John", 1,
+    [ 5 ] ] ]
  },
  {
   "id": "cock-crow",
@@ -19653,7 +19722,10 @@ window.GLOSSARY = [
     [ 9 ] ],
    [
     "Hebrews", 11,
-    [ 26, 27 ] ] ]
+    [ 26, 27 ] ],
+   [
+    "Jude", 1,
+    [ 5 ] ] ]
  },
  {
   "id": "edom",
@@ -20094,7 +20166,13 @@ window.GLOSSARY = [
     [ 3 ] ],
    [
     "1 Peter", 2,
-    [ 10 ] ] ]
+    [ 10 ] ],
+   [
+    "2 John", 1,
+    [ 3 ] ],
+   [
+    "Jude", 1,
+    [ 21 ] ] ]
  },
  {
   "id": "baal",
@@ -22404,7 +22482,10 @@ window.GLOSSARY = [
     [ 29 ] ],
    [
     "2 Peter", 2,
-    [ 6 ] ] ]
+    [ 6 ] ],
+   [
+    "Jude", 1,
+    [ 7 ] ] ]
  },
  {
   "id": "kine",
@@ -23175,7 +23256,10 @@ window.GLOSSARY = [
     [ 19 ] ],
    [
     "2 Thessalonians", 1,
-    [ 8 ] ] ]
+    [ 8 ] ],
+   [
+    "Jude", 1,
+    [ 7 ] ] ]
  },
  {
   "id": "slow-to-anger",
@@ -23667,7 +23751,10 @@ window.GLOSSARY = [
     [ 5 ] ],
    [
     "2 Peter", 2,
-    [ 15 ] ] ]
+    [ 15 ] ],
+   [
+    "Jude", 1,
+    [ 11 ] ] ]
  },
  {
   "id": "shittim",
@@ -28437,7 +28524,10 @@ window.GLOSSARY = [
     [ 37 ] ],
    [
     "Hebrews", 11,
-    [ 5 ] ] ]
+    [ 5 ] ],
+   [
+    "Jude", 1,
+    [ 14 ] ] ]
  },
  {
   "id": "methuselah",
@@ -28473,7 +28563,10 @@ window.GLOSSARY = [
     [ 22, 45 ] ],
    [
     "1 Timothy", 2,
-    [ 13, 14 ] ] ]
+    [ 13, 14 ] ],
+   [
+    "Jude", 1,
+    [ 14 ] ] ]
  },
  {
   "id": "jairus",
@@ -29886,7 +29979,10 @@ window.GLOSSARY = [
     [ 5 ] ],
    [
     "1 Thessalonians", 4,
-    [ 3 ] ] ]
+    [ 3 ] ],
+   [
+    "Jude", 1,
+    [ 7 ] ] ]
  },
  {
   "id": "forswear",
@@ -32901,7 +32997,10 @@ window.GLOSSARY = [
     [ 14 ] ],
    [
     "1 Peter", 5,
-    [ 13 ] ] ]
+    [ 13 ] ],
+   [
+    "3 John", 1,
+    [ 6, 9, 10 ] ] ]
  },
  {
   "id": "bind-and-loose",
@@ -33672,7 +33771,10 @@ window.GLOSSARY = [
     [ 19 ] ],
    [
     "1 Peter", 4,
-    [ 3 ] ] ]
+    [ 3 ] ],
+   [
+    "Jude", 1,
+    [ 4 ] ] ]
  },
  {
   "id": "not-meet",
@@ -35646,7 +35748,10 @@ window.GLOSSARY = [
     [ 13 ] ],
    [
     "Acts", 7,
-    [ 32 ] ] ]
+    [ 32 ] ],
+   [
+    "Jude", 1,
+    [ 9 ] ] ]
  },
  {
   "id": "lord-said-to-my-lord",
@@ -47544,7 +47649,13 @@ window.GLOSSARY = [
     [ 14 ] ],
    [
     "2 Peter", 1,
-    [ 7 ] ] ]
+    [ 7 ] ],
+   [
+    "3 John", 1,
+    [ 6 ] ],
+   [
+    "Jude", 1,
+    [ 12 ] ] ]
  },
  {
   "id": "edifieth",
@@ -52083,7 +52194,10 @@ window.GLOSSARY = [
   "refs": [
    [
     "1 Thessalonians", 4,
-    [ 16 ] ] ]
+    [ 16 ] ],
+   [
+    "Jude", 1,
+    [ 9 ] ] ]
  },
  {
   "id": "trump-of-god",
@@ -54735,7 +54849,10 @@ window.GLOSSARY = [
   "refs": [
    [
     "Hebrews", 11,
-    [ 4 ] ] ]
+    [ 4 ] ],
+   [
+    "Jude", 1,
+    [ 11 ] ] ]
  },
  {
   "id": "pharaohs-daughter",
@@ -55428,7 +55545,10 @@ window.GLOSSARY = [
   "refs": [
    [
     "1 John", 4,
-    [ 3 ] ] ]
+    [ 3 ] ],
+   [
+    "2 John", 1,
+    [ 7 ] ] ]
  },
  {
   "id": "try-the-spirits",
@@ -56191,5 +56311,170 @@ window.GLOSSARY = [
    [
     "2 Peter", 3,
     [ 17 ] ] ]
+ },
+ {
+  "id": "the-elder",
+  "kind": "person",
+  "name": "The elder (John, the old apostle, who signs his letters only with this title)",
+  "refs": [
+   [
+    "2 John", 1,
+    [ 1 ] ],
+   [
+    "3 John", 1,
+    [ 1 ] ] ]
+ },
+ {
+  "id": "elect-lady",
+  "kind": "person",
+  "name": "The elect lady (a church, or a believing woman, and her children)",
+  "refs": [
+   [
+    "2 John", 1,
+    [ 1, 13 ] ] ]
+ },
+ {
+  "id": "god-speed",
+  "kind": "term",
+  "name": "God speed (a blessing on a man's work)",
+  "refs": [
+   [
+    "2 John", 1,
+    [ 10, 11 ] ] ]
+ },
+ {
+  "id": "gaius-of-3-john",
+  "kind": "person",
+  "name": "Gaius (the friend John writes to, who took in travelling believers)",
+  "refs": [
+   [
+    "3 John", 1,
+    [ 1 ] ] ]
+ },
+ {
+  "id": "diotrephes",
+  "kind": "person",
+  "name": "Diotrephes (the church member who loved to be first)",
+  "refs": [
+   [
+    "3 John", 1,
+    [ 9 ] ] ]
+ },
+ {
+  "id": "demetrius-of-3-john",
+  "kind": "person",
+  "name": "Demetrius (the man of good report, probably carrying the letter)",
+  "refs": [
+   [
+    "3 John", 1,
+    [ 12 ] ] ]
+ },
+ {
+  "id": "prosper",
+  "kind": "term",
+  "name": "Prosper (in 3 John 2: to go well, as on a good journey)",
+  "refs": [
+   [
+    "3 John", 1,
+    [ 2 ] ] ]
+ },
+ {
+  "id": "prating",
+  "kind": "term",
+  "name": "Prating (talking against someone with idle, spiteful words)",
+  "refs": [
+   [
+    "Proverbs", 10,
+    [ 8, 10 ] ],
+   [
+    "3 John", 1,
+    [ 10 ] ] ]
+ },
+ {
+  "id": "jude",
+  "kind": "person",
+  "name": "Jude (Judas), the Lord's half-brother and brother of James",
+  "refs": [
+   [
+    "Jude", 1,
+    [ 1 ] ] ]
+ },
+ {
+  "id": "michael",
+  "kind": "person",
+  "name": "Michael the archangel",
+  "refs": [
+   [
+    "Jude", 1,
+    [ 9 ] ] ]
+ },
+ {
+  "id": "core",
+  "kind": "person",
+  "name": "Core (Korah), who rose against Moses and Aaron",
+  "refs": [
+   [
+    "Jude", 1,
+    [ 11 ] ] ]
+ },
+ {
+  "id": "contend",
+  "kind": "term",
+  "name": "Contend (to struggle hard, like an athlete)",
+  "refs": [
+   [
+    "Jude", 1,
+    [ 3 ] ] ]
+ },
+ {
+  "id": "common-salvation",
+  "kind": "term",
+  "name": "The common salvation (shared by every believer)",
+  "refs": [
+   [
+    "Jude", 1,
+    [ 3 ] ] ]
+ },
+ {
+  "id": "feasts-of-charity",
+  "kind": "term",
+  "name": "Feasts of charity (the shared love-meals of the early churches)",
+  "refs": [
+   [
+    "Jude", 1,
+    [ 12 ] ] ]
+ },
+ {
+  "id": "gainsaying",
+  "kind": "term",
+  "name": "Gainsaying (speaking against, rebelling in words)",
+  "refs": [
+   [
+    "Acts", 10,
+    [ 29 ] ],
+   [
+    "Romans", 10,
+    [ 21 ] ],
+   [
+    "Jude", 1,
+    [ 11 ] ] ]
+ },
+ {
+  "id": "mockers",
+  "kind": "term",
+  "name": "Mockers",
+  "refs": [
+   [
+    "Jude", 1,
+    [ 18 ] ] ]
+ },
+ {
+  "id": "faultless",
+  "kind": "term",
+  "name": "Faultless (without blame, in Christ)",
+  "refs": [
+   [
+    "Jude", 1,
+    [ 24 ] ] ]
  }
 ];

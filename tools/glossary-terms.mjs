@@ -3287,5 +3287,22 @@ export default [
   { id: "hasting", kind: "term", name: "Hasting unto (hurrying toward it, eager for it)", match: /\bhasting\b/, books: ["2 Peter 3"] },
   { id: "new-heavens-new-earth", kind: "term", name: "New heavens and a new earth (where righteousness lives at home)", match: /\bnew heavens and a new earth\b/, books: ["2 Peter 3"] },
   { id: "wrest", kind: "term", name: "Wrest (twist and wrench until it says what the reader wants)", match: /\bwrest\b/, books: ["2 Peter 3"] },
-  { id: "stedfastness", kind: "term", name: "Stedfastness (a firm footing)", match: /\bstedfastness\b/, books: ["2 Peter 3"] }
+  { id: "stedfastness", kind: "term", name: "Stedfastness (a firm footing)", match: /\bstedfastness\b/, books: ["2 Peter 3"] },
+  { id: "the-elder", kind: "person", name: "The elder (John, the old apostle, who signs his letters only with this title)", match: /^The elder\b/, books: ["2 John", "3 John"] },
+  { id: "elect-lady", kind: "person", name: "The elect lady (a church, or a believing woman, and her children)", match: /\belect (lady|sister)\b/, books: ["2 John"] },
+  { id: "god-speed", kind: "term", name: "God speed (a blessing on a man's work)", match: /\bGod speed\b/ },
+  { id: "gaius-of-3-john", kind: "person", name: "Gaius (the friend John writes to, who took in travelling believers)", match: /\bGaius\b/, books: ["3 John"] },
+  { id: "diotrephes", kind: "person", name: "Diotrephes (the church member who loved to be first)", match: /\bDiotrephes\b/ },
+  { id: "demetrius-of-3-john", kind: "person", name: "Demetrius (the man of good report, probably carrying the letter)", match: /\bDemetrius\b/, books: ["3 John"] },
+  { id: "prosper", kind: "term", name: "Prosper (in 3 John 2: to go well, as on a good journey)", match: /\bprosper\b/, books: ["3 John"] },
+  { id: "prating", kind: "term", name: "Prating (talking against someone with idle, spiteful words)", match: /\bprating\b/ },
+  { id: "jude", kind: "person", name: "Jude (Judas), the Lord's half-brother and brother of James", match: /^Jude\b/, books: ["Jude"] },
+  { id: "michael", kind: "person", name: "Michael the archangel", match: /\bMichael\b/, books: ["Jude"] },
+  { id: "core", kind: "person", name: "Core (Korah), who rose against Moses and Aaron", match: /\bCore\b/, books: ["Jude"] },
+  { id: "contend", kind: "term", name: "Contend (to struggle hard, like an athlete)", match: /\bcontend\b/, books: ["Jude"] },
+  { id: "common-salvation", kind: "term", name: "The common salvation (shared by every believer)", match: /\bcommon salvation\b/ },
+  { id: "feasts-of-charity", kind: "term", name: "Feasts of charity (the shared love-meals of the early churches)", match: /\bfeasts of charity\b/ },
+  { id: "gainsaying", kind: "term", name: "Gainsaying (speaking against, rebelling in words)", match: /\bgainsaying\b/ },
+  { id: "mockers", kind: "term", name: "Mockers", match: /\bmockers\b/, books: ["Jude"] },
+  { id: "faultless", kind: "term", name: "Faultless (without blame, in Christ)", match: /\bfaultless\b/, books: ["Jude"] }
 ];

@@ -16042,5 +16042,137 @@ window.STUDIES = [
       },
       "big": "A man who believes on the Son of God can know, not just hope, that he has eternal life, because it rests on God's record, not on his feelings. So guard God's place in your life: keep yourselves from idols."
     }
+  },
+  {
+    "id": "2-john-01",
+    "type": "chapter",
+    "book": "2 John",
+    "ch": 1,
+    "date": "2026-10-31",
+    "title": "2 John 1",
+    "sub": "Truth and love, together",
+    "about": "An old apostle's short note: love one another, hold to the truth, and don't open the door to men who twist who Jesus is.",
+    "tags": [
+      "Truth and love",
+      "Love",
+      "Jesus came in the flesh",
+      "False teachers",
+      "Face to face"
+    ],
+    "url": "studies/2-john-01.html",
+    "overview": {
+      "where": "A church or household in Asia, written from Ephesus by tradition",
+      "when": "About AD 85 to 95",
+      "people": [
+        "the-elder",
+        "elect-lady",
+        "jesus",
+        "the-father"
+      ],
+      "places": [],
+      "story": [
+        "John, \"the elder\", greets \"the elect lady and her children\": a church, or a believing woman and her family. He loves them in the truth (1–3).",
+        "He is glad they walk in truth and urges the old commandment: love one another, and walk after Christ's commandments (4–6).",
+        "Many deceivers deny that Jesus Christ came in the flesh. Look to yourselves, and abide in the doctrine of Christ (7–9).",
+        "Don't take such a teacher into your house or back his work (10–11).",
+        "John would rather come and speak face to face, that their joy may be full (12–13)."
+      ],
+      "key": {
+        "ref": "2 John 1:6",
+        "text": "And this is love, that we walk after his commandments. This is the commandment, That, as ye have heard from the beginning, ye should walk in it."
+      },
+      "big": "Love and truth belong together. Love is walking in what Christ commanded, and a true teacher says Jesus is God's Son come in the flesh. Some things need a face, not a page."
+    }
+  },
+  {
+    "id": "3-john-01",
+    "type": "chapter",
+    "book": "3 John",
+    "ch": 1,
+    "date": "2026-10-31",
+    "title": "3 John 1",
+    "sub": "Three men",
+    "about": "A friendly note to Gaius, and three portraits: one who welcomes, one who bosses, and one everybody trusts.",
+    "tags": [
+      "Soul and body",
+      "Walking in truth",
+      "Hospitality",
+      "Pride",
+      "Following good"
+    ],
+    "url": "studies/3-john-01.html",
+    "overview": {
+      "where": "A church in Asia, written from Ephesus by tradition",
+      "when": "About AD 85 to 95",
+      "people": [
+        "the-elder",
+        "gaius-of-3-john",
+        "diotrephes",
+        "demetrius-of-3-john"
+      ],
+      "places": [],
+      "story": [
+        "John writes to \"the wellbeloved Gaius\" and wishes him good health, even as his soul prospers: a greeting, not a promise of wealth (1–2).",
+        "His greatest joy is to hear that his children walk in truth (3–4).",
+        "Gaius welcomes travelling believers, even strangers, and John asks him to send them on well (5–8).",
+        "Diotrephes loves to be first, refuses John's messengers and throws out those who would help (9–10).",
+        "Follow what is good. Demetrius has a good report of all men and of the truth itself (11–12). John hopes to see Gaius face to face (13–14)."
+      ],
+      "key": {
+        "ref": "3 John 1:11",
+        "text": "Beloved, follow not that which is evil, but that which is good. He that doeth good is of God: but he that doeth evil hath not seen God."
+      },
+      "big": "Real faith shows in how we treat people. Open the door like Gaius, don't take first place like Diotrephes, and earn a good name like Demetrius. The soul doing well matters most."
+    }
+  },
+  {
+    "id": "jude-01",
+    "type": "chapter",
+    "book": "Jude",
+    "ch": 1,
+    "date": "2026-10-31",
+    "title": "Jude 1",
+    "sub": "Contend, and be kept",
+    "about": "The Lord's own brother writes a fierce warning against false teachers, and ends with the promise that He is able to keep you from falling.",
+    "tags": [
+      "Jude the servant",
+      "Contend",
+      "Grace",
+      "Warnings",
+      "Rescue",
+      "Kept"
+    ],
+    "url": "studies/jude-01.html",
+    "overview": {
+      "where": "Not said. Probably the region of Jerusalem, where his brother James led the church",
+      "when": "About AD 64 to 68",
+      "people": [
+        "jude",
+        "james-the-lords-brother",
+        "michael",
+        "moses",
+        "enoch",
+        "cain",
+        "balaam",
+        "core"
+      ],
+      "places": [
+        "egypt",
+        "sodom-and-gomorrah"
+      ],
+      "story": [
+        "Jude, a servant of Jesus Christ and brother of James, greets the called, sanctified and preserved (1–2).",
+        "He urges them to earnestly contend for the faith once delivered, because ungodly men have crept in and turn grace into lasciviousness (3–4).",
+        "Six warnings: Israel in the wilderness, the angels, Sodom and Gomorrha, Cain, Balaam and Core. Michael and the body of Moses, and Enoch's prophecy (5–16).",
+        "Remember what the apostles said, and build up yourselves, pray, keep yourselves in the love of God and look for His mercy (17–21).",
+        "Have compassion on some, pull others from the fire (22–23).",
+        "He is able to keep you from falling and present you faultless with exceeding joy (24–25)."
+      ],
+      "key": {
+        "ref": "Jude 1:24",
+        "text": "Now unto him that is able to keep you from falling, and to present you faultless before the presence of his glory with exceeding joy,"
+      },
+      "big": "Hold on to the faith, build yourself up, and pull a slipping brother out of the fire. And remember who holds you: He is able to keep you from falling and to present you faultless with exceeding joy."
+    }
   }
 ];
