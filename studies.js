@@ -16691,5 +16691,95 @@ window.STUDIES = [
       },
       "big": "Heaven goes silent before God acts, and the first thing it hears is His people's prayers, kept like incense and answered from the same altar. The trumpets are warnings with limits: a third struck, two thirds spared, so men will turn while there is time."
     }
+  },
+  {
+    "id": "revelation-09",
+    "type": "chapter",
+    "book": "Revelation",
+    "ch": 9,
+    "date": "2026-10-31",
+    "title": "Revelation 9",
+    "sub": "The pit is opened, and still they would not turn",
+    "about": "The fifth and sixth trumpets: smoke from the bottomless pit, locusts that cannot touch God's sealed people, and an army from the Euphrates. And men who keep running back to what is killing them, while the door to repent stands open.",
+    "tags": [
+      "Trumpets",
+      "Kept",
+      "Despair",
+      "God's control",
+      "Addiction",
+      "Repentance"
+    ],
+    "url": "studies/revelation-09.html",
+    "overview": {
+      "where": "Patmos, where John sees heaven opened, writing to the seven churches of Asia; the vision reaches the bottomless pit and the river Euphrates",
+      "when": "About AD 95, under Domitian; teachers read the trumpets as past, all through history, or still to come",
+      "people": [
+        "angels",
+        "abaddon",
+        "four-angels-euphrates",
+        "john-the-apostle"
+      ],
+      "places": [
+        "bottomless-pit",
+        "euphrates",
+        "golden-altar",
+        "heaven"
+      ],
+      "story": [
+        "The fifth angel sounds. A star fallen from heaven is given the key of the bottomless pit, and its smoke darkens the sun (1–2).",
+        "Locusts come out of the smoke, told to hurt only the men without God's seal, and only for five months. Men seek death and cannot find it (3–6).",
+        "The locusts are like horses for battle, with faces of men and stings like scorpions. Their king is the angel of the pit, Abaddon, Apollyon: the Destroyer. One woe is past (7–12).",
+        "The sixth angel sounds. A voice from the golden altar looses four angels bound at the great river Euphrates, prepared for an exact hour, and an army of two hundred million kills a third of men (13–19).",
+        "The rest of men still do not repent of their idols, nor of their murders, sorceries, fornication and thefts (20–21)."
+      ],
+      "key": {
+        "ref": "Revelation 9:20",
+        "text": "And the rest of the men which were not killed by these plagues yet repented not of the works of their hands, that they should not worship devils, and idols of gold, and silver, and brass, and stone, and of wood: which neither can see, nor hear, nor walk:"
+      },
+      "big": "Evil is real, but it is on God's leash: the key is given, the time is set, and His sealed people are kept. Pain alone does not change a heart; men can run back to the very things that are killing them. The trumpets are warnings, and the door to turn to Jesus is open today."
+    }
+  },
+  {
+    "id": "revelation-10",
+    "type": "chapter",
+    "book": "Revelation",
+    "ch": 10,
+    "date": "2026-10-31",
+    "title": "Revelation 10",
+    "sub": "Sweet in the mouth, bitter in the belly",
+    "about": "Between the sixth and seventh trumpets, a mighty angel with a rainbow on his head swears there will be no more delay, and John eats a little book that is sweet as honey and bitter in the belly.",
+    "tags": [
+      "God's promise",
+      "Secrets",
+      "No more delay",
+      "God's word",
+      "Calling",
+      "Hope"
+    ],
+    "url": "studies/revelation-10.html",
+    "overview": {
+      "where": "Patmos, where John sees heaven opened, writing to the seven churches of Asia; the angel stands on the sea and the earth",
+      "when": "About AD 95, under Domitian; a pause between the sixth and seventh trumpets",
+      "people": [
+        "mighty-angel",
+        "angels",
+        "john-the-apostle"
+      ],
+      "places": [
+        "heaven"
+      ],
+      "story": [
+        "A mighty angel comes down clothed with a cloud, a rainbow on his head, his face like the sun, his feet like pillars of fire. He holds a little book open, with one foot on the sea and one on the earth (1–2).",
+        "He cries like a roaring lion and seven thunders speak. John is about to write, but a voice says, “Seal up those things … and write them not” (3–4).",
+        "The angel lifts his hand to heaven and swears by the Creator that there will be no more delay: when the seventh angel sounds, the mystery of God will be finished (5–7).",
+        "John is told to take the little book and eat it. It is sweet as honey in his mouth and bitter in his belly (8–10).",
+        "“Thou must prophesy again before many peoples, and nations, and tongues, and kings” (11)."
+      ],
+      "key": {
+        "ref": "Revelation 10:10",
+        "text": "And I took the little book out of the angel’s hand, and ate it up; and it was in my mouth sweet as honey: and as soon as I had eaten it, my belly was bitter."
+      },
+      "big": "God keeps His promises even in judgment, and He will not be late. Some things are His alone to know, but He has given us His word to take in whole: sweet because it is His, and hard to carry because it is true. And He is not finished with His servants, however old or far gone they feel."
+    }
   }
 ];

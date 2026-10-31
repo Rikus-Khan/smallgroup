@@ -1,0 +1,548 @@
+<!doctype html>
+<html lang="en" data-theme="scribe">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Revelation 10</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="../assets/fonts.css">
+<link rel="stylesheet" href="../assets/deck.css">
+<link rel="stylesheet" href="../assets/themes.css">
+<style>
+/* rv10-where: where we are in Revelation, seven stops with this chapter's stop lit */
+.rv10-cap { margin: 1.2em 0 .5em; font: 700 .72rem var(--sans); letter-spacing: .12em; text-transform: uppercase; color: var(--ink-soft); }
+.rv10-where { list-style: none; display: flex; justify-content: center; gap: .3rem; padding: 0; margin: 0 auto; max-width: 46em; }
+.rv10-where li { flex: 1; position: relative; text-align: center; font-size: clamp(.66rem, .62rem + .25vw, .86rem); line-height: 1.2; color: var(--ink-soft); }
+.rv10-where li i { position: relative; z-index: 1; display: grid; width: max-content; place-items: center; min-width: 1.9rem; height: 1.9rem; padding: 0 .45em; margin: 0 auto .3rem; border-radius: 1rem; border: 2px solid var(--line-strong); background: var(--bg); font: 700 .8rem var(--sans); font-style: normal; white-space: nowrap; }
+.rv10-where li + li::before { content: ""; position: absolute; top: .95rem; right: 50%; width: calc(100% + .3rem); height: 2px; background: var(--line-strong); }
+.rv10-where li.done i { border-color: var(--accent); background: color-mix(in srgb, var(--accent) 22%, var(--bg)); }
+.rv10-where li.here { color: var(--accent-hot); font-weight: 700; }
+.rv10-where li.here i { background: var(--accent); border-color: var(--accent); color: var(--on-accent); box-shadow: 0 0 0 5px color-mix(in srgb, var(--accent) 20%, transparent); }
+
+/* rv10-horns: the seven trumpets; six have sounded, and the pause before the seventh (a deck.css candidate, shared with rv09-horns) */
+.rv10-horns { list-style: none; padding: 0; margin: .6em 0 1em; display: grid; grid-template-columns: repeat(6, 1fr) 1.4fr 1fr; gap: .5rem; align-items: stretch; }
+.rv10-horns li { text-align: center; padding: .55em .2em .5em; border-radius: 10px; border: 1.5px solid var(--line); color: var(--ink-soft); font-size: clamp(.7rem, .64rem + .3vw, .95rem); line-height: 1.25; }
+.rv10-horns svg { display: block; width: 78%; max-width: 4.4rem; height: auto; margin: 0 auto .25em; fill: currentColor; }
+.rv10-horns b { display: block; font: 700 clamp(1.1rem, .9rem + .8vw, 1.7rem)/1.1 var(--serif); }
+.rv10-horns li.done { opacity: .6; }
+.rv10-horns li.pause { display: grid; place-items: center; border: 2px solid var(--accent); background: color-mix(in srgb, var(--accent) 14%, transparent); color: var(--accent-hot); font-weight: 700; }
+.rv10-horns li.pause b { font-size: clamp(.95rem, .8rem + .5vw, 1.25rem); }
+.rv10-horns li.next { border-style: dashed; border-color: var(--accent); color: var(--ink); }
+.slide.active .rv10-horns li.next svg { animation: rv10-ready 1.6s ease-in-out infinite; }
+@keyframes rv10-ready { 0%, 100% { opacity: .45; } 50% { opacity: 1; } }
+@media (max-width: 700px) { .rv10-horns { grid-template-columns: repeat(3, 1fr); } .rv10-horns li.pause { grid-column: span 2; } }
+@media (prefers-reduced-motion: reduce) { .rv10-horns li.next svg { animation: none !important; } }
+
+/* rv10-stride: the mighty angel, one foot on the sea and one on the earth, a rainbow over him (a deck.css candidate) */
+.rv10-stride { width: 100%; height: auto; display: block; }
+.rv10-stride .sea { fill: color-mix(in srgb, var(--cool) 35%, var(--bg)); stroke: var(--cool); stroke-width: 2; }
+.rv10-stride .land { fill: var(--surface-2); stroke: var(--line-strong); stroke-width: 2; }
+.rv10-stride .bow { fill: none; stroke-width: 9; stroke-linecap: round; stroke-dasharray: 1; stroke-dashoffset: 1; transition: stroke-dashoffset 1.6s ease; transition-delay: calc(.3s + var(--k) * .2s); }
+.slide.active .rv10-stride .bow { stroke-dashoffset: 0; }
+.rv10-stride .cloud { fill: var(--surface); stroke: var(--line-strong); stroke-width: 2; }
+.rv10-stride .sun { fill: var(--warm); }
+.rv10-stride .rays { stroke: var(--warm); stroke-width: 3; stroke-linecap: round; opacity: .7; }
+.rv10-stride .pillar { fill: color-mix(in srgb, var(--danger) 70%, var(--warm)); }
+.rv10-stride .flame { fill: var(--warm); transform-box: fill-box; transform-origin: 50% 100%; }
+.slide.active .rv10-stride .flame { animation: rv10-flicker 1.1s ease-in-out infinite alternate; }
+@keyframes rv10-flicker { to { transform: scaleY(.75); opacity: .75; } }
+.rv10-stride .book { fill: var(--glow); stroke: var(--accent-hot); stroke-width: 2.5; }
+.rv10-stride text { font: 700 16px var(--sans); fill: var(--ink); }
+.rv10-stride text.soft { font-weight: 400; fill: var(--ink-soft); }
+@media (prefers-reduced-motion: reduce) { .rv10-stride .flame { animation: none !important; } }
+
+/* rv10-thunders: seven thunders flash in turn, then a seal closes over what they said (a deck.css candidate) */
+.rv10-thunders { width: 100%; height: auto; display: block; }
+.rv10-thunders .bolt { fill: var(--warm); stroke: var(--accent-hot); stroke-width: 1.5; stroke-linejoin: round; opacity: .25; }
+.slide.active .rv10-thunders .bolt { animation: rv10-flash 2.8s ease-out infinite; animation-delay: calc(var(--k) * .4s); }
+@keyframes rv10-flash { 0%, 100% { opacity: .25; } 6% { opacity: 1; } 22% { opacity: .35; } }
+.slide:has(.rv10-sealit.on) .rv10-thunders .bolt { animation: none; opacity: .15; }
+.rv10-thunders .page { fill: var(--surface); stroke: var(--line-strong); stroke-width: 2; }
+.rv10-thunders .roll { fill: var(--surface-2); stroke: var(--line-strong); stroke-width: 2; }
+.rv10-thunders .line { stroke: var(--line-strong); stroke-width: 3; stroke-linecap: round; stroke-dasharray: 4 7; }
+.rv10-thunders .wax { fill: var(--danger); stroke: var(--wine); stroke-width: 3; }
+.rv10-thunders .wax-t { font: 700 15px var(--sans); fill: var(--on-accent); letter-spacing: .08em; }
+.rv10-sealit { transform-box: fill-box; transform-origin: center; }
+.rv10-sealit.on { animation: rv10-stamp .5s ease-out; }
+@keyframes rv10-stamp { from { transform: scale(1.8); } to { transform: none; } }
+.rv10-thunders text { font: 700 16px var(--sans); fill: var(--ink); }
+.rv10-thunders text.soft { font-weight: 400; fill: var(--ink-soft); }
+@media (prefers-reduced-motion: reduce) { .rv10-thunders .bolt { animation: none !important; opacity: .7; } }
+
+/* rv10-taste: the little book, sweet as honey in the mouth, then bitter in the belly (a deck.css candidate) */
+.rv10-taste { width: 100%; height: auto; display: block; }
+.rv10-taste .book { fill: var(--glow); stroke: var(--accent-hot); stroke-width: 2.5; }
+.rv10-taste .box { stroke-width: 3; }
+.rv10-taste .sweet { fill: color-mix(in srgb, var(--warm) 22%, var(--surface)); stroke: var(--warm); }
+.rv10-taste .bitter { fill: color-mix(in srgb, var(--wine) 14%, var(--surface)); stroke: var(--wine); }
+.rv10-taste .drop { fill: var(--warm); opacity: 0; }
+.slide.active .rv10-taste .drop { animation: rv10-drip 2.4s ease-in infinite; animation-delay: calc(.6s + var(--k) * .6s); }
+@keyframes rv10-drip { 0% { opacity: 0; transform: translateY(-6px); } 20% { opacity: 1; } 100% { opacity: 0; transform: translateY(60px); } }
+.rv10-taste .comb { fill: none; stroke: var(--warm); stroke-width: 3; }
+.rv10-taste .gall { fill: color-mix(in srgb, var(--wine) 55%, transparent); transform-box: fill-box; transform-origin: 50% 100%; transform: scaleY(.05); transition: transform 2.4s ease-out .4s; }
+.slide:has(.rv10-bitter.on) .rv10-taste .gall { transform: none; }
+.rv10-taste .arrow { fill: none; stroke: var(--ink-soft); stroke-width: 3; stroke-linecap: round; stroke-linejoin: round; }
+.rv10-taste text { font: 700 19px var(--sans); fill: var(--ink); }
+.rv10-taste text.big { font: 600 26px var(--serif); }
+.rv10-taste text.soft { font: 400 16px var(--sans); fill: var(--ink-soft); }
+@media (prefers-reduced-motion: reduce) { .rv10-taste .drop { animation: none !important; opacity: .8; } }
+</style>
+</head>
+<body>
+<main class="deck" id="deck">
+
+<section class="slide title">
+  <div class="inner">
+    <div class="emblem rise"></div>
+    <h1 class="rise" style="--d:1">Revelation 10</h1>
+    <p class="sub rise" style="--d:3">Sweet in the mouth, bitter in the belly</p>
+    <p class="tag rise" style="--d:5">Between the sixth trumpet and the seventh, heaven stops to promise that God will not delay, and hands John a little book to eat. It is sweet, and it is hard to carry. So is the word God gives us.</p>
+    <p class="rv10-cap rise" style="--d:6">Where we are in Revelation</p>
+    <ol class="rv10-where rise" style="--d:7" aria-label="Revelation in seven parts. Chapters 6 to 16, the seals, trumpets and bowls, are lit.">
+      <li class="done"><i>1</i>Christ</li>
+      <li class="done"><i>2–3</i>Seven churches</li>
+      <li class="done"><i>4–5</i>Throne and Lamb</li>
+      <li class="here"><i>6–16</i>Seals, trumpets, bowls</li>
+      <li><i>17–18</i>Babylon falls</li>
+      <li><i>19–20</i>Christ reigns</li>
+      <li><i>21–22</i>All things new</li>
+    </ol>
+  </div>
+</section>
+
+<section class="slide watch">
+  <div class="inner">
+    <h2 class="rise">Things to watch for</h2>
+    <p class="lede rise" style="--d:1">Keep these questions in the back of your mind as we read. We'll come back to every one of them at the end.</p>
+    <ol class="seeds">
+      <li class="step"><span class="topic">God's promise</span><span class="seed-q">What does the rainbow on the angel's head remind us of?</span></li>
+      <li class="step"><span class="topic">Secrets</span><span class="seed-q">Why was John told not to write what the seven thunders said?</span></li>
+      <li class="step"><span class="topic">No more delay</span><span class="seed-q">What did the angel swear?</span></li>
+      <li class="step"><span class="topic">Finished</span><span class="seed-q">What will be finished when the seventh angel sounds?</span></li>
+      <li class="step"><span class="topic">Sweet and bitter</span><span class="seed-q">Why was the little book sweet in the mouth but bitter in the belly?</span></li>
+      <li class="step"><span class="topic">Again</span><span class="seed-q">What was John told to do after he ate the book?</span></li>
+    </ol>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise" style="--d:1">Where we are: a pause before the last trumpet</h2>
+    <ol class="rv10-horns" aria-label="Seven trumpets. One to six have sounded. Then a pause, chapter 10 to 11 verse 14. Then the seventh trumpet, ready to sound.">
+      <li class="done"><svg viewBox="0 0 60 30" aria-hidden="true"><circle cx="5" cy="15" r="4"/><path d="M8 13 H34 L54 3 V27 L34 17 H8 Z"/></svg><b>1</b></li>
+      <li class="done"><svg viewBox="0 0 60 30" aria-hidden="true"><circle cx="5" cy="15" r="4"/><path d="M8 13 H34 L54 3 V27 L34 17 H8 Z"/></svg><b>2</b></li>
+      <li class="done"><svg viewBox="0 0 60 30" aria-hidden="true"><circle cx="5" cy="15" r="4"/><path d="M8 13 H34 L54 3 V27 L34 17 H8 Z"/></svg><b>3</b></li>
+      <li class="done"><svg viewBox="0 0 60 30" aria-hidden="true"><circle cx="5" cy="15" r="4"/><path d="M8 13 H34 L54 3 V27 L34 17 H8 Z"/></svg><b>4</b></li>
+      <li class="done"><svg viewBox="0 0 60 30" aria-hidden="true"><circle cx="5" cy="15" r="4"/><path d="M8 13 H34 L54 3 V27 L34 17 H8 Z"/></svg><b>5</b></li>
+      <li class="done"><svg viewBox="0 0 60 30" aria-hidden="true"><circle cx="5" cy="15" r="4"/><path d="M8 13 H34 L54 3 V27 L34 17 H8 Z"/></svg><b>6</b></li>
+      <li class="pause"><div><b>the pause</b>10:1–11:14</div></li>
+      <li class="next"><svg viewBox="0 0 60 30" aria-hidden="true"><circle cx="5" cy="15" r="4"/><path d="M8 13 H34 L54 3 V27 L34 17 H8 Z"/></svg><b>7</b>ready</li>
+    </ol>
+    <p class="note step">Revelation does this more than once. Between the sixth seal and the seventh there was a pause (chapter 7), when God sealed His servants. Now, between the sixth trumpet and the seventh, there is another. The storm stops, and God speaks to His own.</p>
+    <p class="note step">After all the darkness of chapter 9, the pause is a mercy. Before the last trumpet, God makes sure His people know two things: <em>He is not late</em>, and <em>they still have work to do.</em></p>
+  </div>
+</section>
+
+<section class="slide part">
+  <div class="inner">
+    <p class="part-n rise">Part one</p>
+    <h2 class="rise" style="--d:1">The mighty angel</h2>
+    <p class="range rise" style="--d:2">Verses 1–4</p>
+    <div class="rule"></div>
+    <p class="hook rise" style="--d:4">A messenger big enough to stand on land and sea, with a promise over his head, and a voice like a lion.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="1-2" data-hl="a rainbow was upon his head|a little book open|he set his right foot upon the sea, and his left foot on the earth"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <div class="split">
+      <div class="stage">
+        <svg class="rv10-stride" viewBox="0 0 480 380" role="img" aria-label="A great figure clothed in cloud, his face shining like the sun, a rainbow over his head. His legs are pillars of fire: the right foot stands in the sea, the left on the land. He holds a little open book.">
+          <path class="bow" pathLength="1" style="stroke:var(--danger);--k:0" d="M110 170 A130 130 0 0 1 370 170"/>
+          <path class="bow" pathLength="1" style="stroke:var(--warm);--k:1" d="M121 170 A119 119 0 0 1 359 170"/>
+          <path class="bow" pathLength="1" style="stroke:var(--accent);--k:2" d="M132 170 A108 108 0 0 1 348 170"/>
+          <path class="bow" pathLength="1" style="stroke:var(--cool);--k:3" d="M143 170 A97 97 0 0 1 337 170"/>
+          <g class="rays"><path d="M240 76 V60 M276 88 l10 -12 M204 88 l-10 -12 M290 118 h16 M190 118 h-16"/></g>
+          <circle class="sun" cx="240" cy="118" r="32"/>
+          <path class="cloud" d="M175 240 C150 238 148 205 172 200 C170 175 200 165 215 178 C225 158 258 158 266 178 C285 166 312 178 306 200 C330 204 330 238 305 240 Z"/>
+          <rect class="pillar" x="196" y="236" width="24" height="84"/>
+          <rect class="pillar" x="262" y="236" width="24" height="84"/>
+          <path class="flame" d="M196 320 C196 300 206 296 208 282 C212 296 220 300 220 320 Z"/>
+          <path class="flame" d="M262 320 C262 300 272 296 274 282 C278 296 286 300 286 320 Z"/>
+          <g class="book"><path d="M318 196 L348 188 L378 196 L378 222 L348 214 L318 222 Z"/><path d="M348 188 V214"/></g>
+          <text x="384" y="214" class="soft">“a little</text><text x="384" y="232" class="soft">book open”</text>
+          <path class="sea" d="M0 322 C30 312 60 332 90 322 C120 312 150 332 180 322 C200 316 220 322 240 322 L240 380 L0 380 Z"/>
+          <path class="land" d="M240 322 C300 316 380 318 480 312 L480 380 L240 380 Z"/>
+          <text x="20" y="364">right foot: the sea</text>
+          <text x="300" y="364">left foot: the earth</text>
+          <text x="240" y="24" text-anchor="middle" class="soft">“a rainbow was upon his head”</text>
+        </svg>
+      </div>
+      <div>
+        <h2 class="rise" style="--d:1">One foot on the sea, one on the land</h2>
+        <p class="note rise" style="--d:2">Everything about him is big: clothed in cloud, face like the sun, legs like pillars of fire. Standing on sea and land says this message is for the <em>whole</em> world. Nothing is outside it.</p>
+        <div class="columns">
+          <div class="col law step"><p class="who">Some teachers say</p><h3>It is Christ</h3><p>The face like the sun and feet of fire match Jesus in 1:15–16.</p></div>
+          <div class="col grace step"><p class="who">Most say</p><h3>A great angel</h3><p>John calls him <em>“another”</em> angel, like the strong angel of 5:2, and he swears by God, as a servant would.</p></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="1" data-hl="a rainbow was upon his head"></blockquote>
+    <h2 class="rise" style="--d:1">A promise worn on his head</h2>
+    <div class="pair">
+      <div class="scroll step"><p class="ref">Genesis 9:13</p><p class="kjv">I do set <mark>my bow in the cloud</mark>, and it shall be for a token of a covenant between me and the earth.</p></div>
+      <div class="scroll step"><p class="ref">Revelation 4:3</p><p class="kjv">… and there was <mark>a rainbow round about the throne</mark>, in sight like unto an emerald.</p></div>
+    </div>
+    <p class="note step">After the flood God hung His bow in the cloud as a promise. Then John saw a rainbow around God's own throne. Now, in the middle of the trumpets, the messenger comes wrapped in a cloud with a rainbow on his head.</p>
+    <p class="note step">The message: even in judgment, God keeps His word. He has not forgotten His promises to you, even on a day when everything around you is shaking.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="3-4" data-hl="as when a lion roareth|seven thunders uttered their voices|Seal up those things which the seven thunders uttered, and write them not"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <div class="split">
+      <div class="stage">
+        <svg class="rv10-thunders" viewBox="0 0 480 330" role="img" aria-label="Seven bolts of lightning flash one after another over an open scroll. Then a red wax seal is pressed onto the scroll, and the thunders go quiet.">
+          <path class="bolt" style="--k:0" d="M40 10 L22 58 L38 58 L26 100 L58 46 L42 46 L54 10 Z"/>
+          <path class="bolt" style="--k:1" d="M104 10 L86 58 L102 58 L90 100 L122 46 L106 46 L118 10 Z"/>
+          <path class="bolt" style="--k:2" d="M168 10 L150 58 L166 58 L154 100 L186 46 L170 46 L182 10 Z"/>
+          <path class="bolt" style="--k:3" d="M232 10 L214 58 L230 58 L218 100 L250 46 L234 46 L246 10 Z"/>
+          <path class="bolt" style="--k:4" d="M296 10 L278 58 L294 58 L282 100 L314 46 L298 46 L310 10 Z"/>
+          <path class="bolt" style="--k:5" d="M360 10 L342 58 L358 58 L346 100 L378 46 L362 46 L374 10 Z"/>
+          <path class="bolt" style="--k:6" d="M424 10 L406 58 L422 58 L410 100 L442 46 L426 46 L438 10 Z"/>
+          <rect class="page" x="80" y="140" width="320" height="140"/>
+          <rect class="roll" x="62" y="132" width="22" height="156" rx="11"/>
+          <rect class="roll" x="396" y="132" width="22" height="156" rx="11"/>
+          <path class="line" d="M110 175 H370 M110 205 H370 M110 235 H370 M110 262 H300"/>
+          <g class="rv10-sealit step"><circle class="wax" cx="240" cy="210" r="44"/><text class="wax-t" x="240" y="216" text-anchor="middle">SEALED</text></g>
+          <text x="240" y="318" text-anchor="middle" class="soft">“Seal up those things … and write them not.”</text>
+        </svg>
+      </div>
+      <div>
+        <h2 class="rise" style="--d:1">Some things are not ours to know</h2>
+        <p class="note rise" style="--d:2">John had his pen ready, and heaven said no. Nobody knows what the thunders said; anyone who claims to is guessing.</p>
+        <blockquote class="quote step"><p>“The secret things belong unto the LORD our God: but those things which are revealed belong unto us and to our children for ever, that we may do all the words of this law.”</p><cite>Deuteronomy 29:29</cite></blockquote>
+        <p class="note step">God hasn't told us everything: why that happened to you, or when He will come. He has told us more than enough to live on today.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="3" data-hl="cried with a loud voice, as when a lion roareth"></blockquote>
+    <h2 class="rise" style="--d:1">When the lion roars</h2>
+    <blockquote class="quote step"><p>“The lion hath roared, who will not fear? the Lord GOD hath spoken, who can but prophesy?”</p><cite>Amos 3:8</cite></blockquote>
+    <p class="note step">In the Bible a lion's roar is the sound of God speaking, and it gets a man's attention. Amos says that when God has spoken, His servant can't keep quiet. Keep that verse in mind: this chapter ends with John being told to <em>prophesy</em> again.</p>
+    <p class="note step">And remember who the Lion is. In chapter 5, the only one worthy to open God's book was <em>“the Lion of the tribe of Juda,”</em> who turned out to be a Lamb that had been slain (5:5–6).</p>
+  </div>
+</section>
+
+<section class="slide part">
+  <div class="inner">
+    <p class="part-n rise">Part two</p>
+    <h2 class="rise" style="--d:1">No more delay</h2>
+    <p class="range rise" style="--d:2">Verses 5–7</p>
+    <div class="rule"></div>
+    <p class="hook rise" style="--d:4">An oath sworn by the Maker of everything: the waiting is almost over.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="5-7" data-hl="lifted up his hand to heaven|that there should be time no longer|the mystery of God should be finished"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise" style="--d:1">Daniel heard the first half of this oath</h2>
+    <div class="pair">
+      <div class="scroll rise" style="--d:2"><p class="ref">Daniel 12:7</p><p class="kjv">And I heard the man clothed in linen, which was upon the waters of the river, when <mark>he held up his right hand and his left hand unto heaven, and sware by him that liveth for ever</mark> that it shall be for a time, times, and an half; and when he shall have accomplished to scatter the power of the holy people, all these things shall be finished.</p></div>
+      <blockquote class="quote step" data-q="5-6" data-hl="lifted up his hand to heaven|sware by him that liveth for ever and ever|that there should be time no longer"></blockquote>
+    </div>
+    <p class="note step">About six hundred years earlier, Daniel heard an oath that the end would come after a set time. Now the angel swears: <em>“time no longer.”</em> The clocks don't stop; it means <em>no more delay.</em> What Daniel waited for is about to happen.</p>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <div class="split">
+      <div class="stage">
+        <svg class="clock" style="--stop:0deg" viewBox="0 -44 320 364" role="img" aria-label="A clock hand sweeps around and stops right on the hour: no more delay.">
+          <circle class="clock-face" cx="160" cy="160" r="140"/>
+          <g>
+            <line class="clock-tick" x1="160" y1="38" x2="160" y2="58" transform="rotate(30 160 160)"/>
+            <line class="clock-tick" x1="160" y1="38" x2="160" y2="58" transform="rotate(60 160 160)"/>
+            <line class="clock-tick" x1="160" y1="38" x2="160" y2="58" transform="rotate(90 160 160)"/>
+            <line class="clock-tick" x1="160" y1="38" x2="160" y2="58" transform="rotate(120 160 160)"/>
+            <line class="clock-tick" x1="160" y1="38" x2="160" y2="58" transform="rotate(150 160 160)"/>
+            <line class="clock-tick" x1="160" y1="38" x2="160" y2="58" transform="rotate(180 160 160)"/>
+            <line class="clock-tick" x1="160" y1="38" x2="160" y2="58" transform="rotate(210 160 160)"/>
+            <line class="clock-tick" x1="160" y1="38" x2="160" y2="58" transform="rotate(240 160 160)"/>
+            <line class="clock-tick" x1="160" y1="38" x2="160" y2="58" transform="rotate(270 160 160)"/>
+            <line class="clock-tick" x1="160" y1="38" x2="160" y2="58" transform="rotate(300 160 160)"/>
+            <line class="clock-tick" x1="160" y1="38" x2="160" y2="58" transform="rotate(330 160 160)"/>
+          </g>
+          <circle class="clock-hour" cx="160" cy="44" r="12"/>
+          <text x="160" y="-14" text-anchor="middle" font-size="20" font-weight="700" style="fill:var(--accent-hot)">the seventh trumpet</text>
+          <line class="clock-hand" x1="160" y1="160" x2="160" y2="68"/>
+          <circle cx="160" cy="160" r="10" style="fill:var(--ink)"/>
+          <text x="160" y="232" text-anchor="middle" font-size="22" class="serif" font-style="italic" style="fill:var(--ink-soft)">no more delay</text>
+        </svg>
+      </div>
+      <div>
+        <h2 class="rise" style="--d:1">The mystery of God, finished</h2>
+        <p class="note rise" style="--d:2">A <em>mystery</em> in the Bible is God's plan, once hidden and now told to <em>“his servants the prophets.”</em> At the seventh trumpet, heaven shouts where it ends:</p>
+        <blockquote class="quote step"><p>“And the seventh angel sounded; and there were great voices in heaven, saying, The kingdoms of this world are become the kingdoms of our Lord, and of his Christ; and he shall reign for ever and ever.”</p><cite>Revelation 11:15</cite></blockquote>
+        <p class="note step">God finishes what He starts, in the world and in you (Philippians 1:6).</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="slide part">
+  <div class="inner">
+    <p class="part-n rise">Part three</p>
+    <h2 class="rise" style="--d:1">Sweet and bitter</h2>
+    <p class="range rise" style="--d:2">Verses 8–11</p>
+    <div class="rule"></div>
+    <p class="hook rise" style="--d:4">John has to take the book himself, eat it, and then go tell it.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="8-10" data-hl="Take it, and eat it up|it shall make thy belly bitter|it was in my mouth sweet as honey|my belly was bitter"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <div class="split">
+      <div class="stage">
+        <svg class="rv10-taste" viewBox="0 0 480 360" role="img" aria-label="A little open book at the top. An arrow leads down to a box marked in the mouth, sweet as honey, with honey dripping. A second arrow leads across to a box marked in the belly, bitter, which slowly fills with something dark.">
+          <g class="book"><path d="M200 22 L240 12 L280 22 L280 58 L240 48 L200 58 Z"/><path d="M240 12 V48"/></g>
+          <text x="240" y="84" text-anchor="middle" class="soft">“the little book”</text>
+          <path class="arrow" d="M210 92 C170 110 130 120 120 140 M110 128 L120 142 L134 132"/>
+          <rect class="box sweet" x="20" y="148" width="200" height="170" rx="16"/>
+          <text x="120" y="182" text-anchor="middle">In the mouth</text>
+          <text x="120" y="214" text-anchor="middle" class="big">sweet as honey</text>
+          <path class="comb" d="M90 250 l12 -7 l12 7 v14 l-12 7 l-12 -7 Z M114 250 l12 -7 l12 7 v14 l-12 7 l-12 -7 Z M102 271 l12 -7 l12 7 v14 l-12 7 l-12 -7 Z"/>
+          <g aria-hidden="true"><circle class="drop" style="--k:0" cx="70" cy="232" r="5"/><circle class="drop" style="--k:1" cx="168" cy="236" r="5"/><circle class="drop" style="--k:2" cx="150" cy="226" r="5"/></g>
+          <g class="rv10-bitter step">
+            <path class="arrow" d="M226 232 H252 M242 222 L254 232 L242 242"/>
+            <rect class="box bitter" x="260" y="148" width="200" height="170" rx="16"/>
+            <rect class="gall" x="262" y="226" width="196" height="90" rx="14"/>
+            <text x="360" y="182" text-anchor="middle">In the belly</text>
+            <text x="360" y="214" text-anchor="middle" class="big">bitter</text>
+          </g>
+          <text x="360" y="346" text-anchor="middle" class="soft">“as soon as I had eaten it”</text>
+        </svg>
+      </div>
+      <div>
+        <h2 class="rise" style="--d:1">Sweet, then bitter</h2>
+        <p class="note rise" style="--d:2">Nobody hands John the book. He has to go and ask for it, and then take it all in: <em>“eat it up.”</em> God's word isn't only for looking at. It's for taking inside.</p>
+        <p class="note step"><em>Sweet</em>, because it is God speaking: the Lamb wins, evil is judged, His people are kept. <em>Bitter</em>, because the same book tells of judgment on men who will not turn, and John will have to carry that and say it out loud.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise" style="--d:1">Ezekiel ate a scroll too</h2>
+    <div class="pair">
+      <div class="scroll rise" style="--d:2"><p class="ref">Ezekiel 3:3</p><p class="kjv">And he said unto me, Son of man, cause thy belly to eat, and fill thy bowels with this roll that I give thee. Then did I eat it; and <mark>it was in my mouth as honey for sweetness.</mark></p></div>
+      <div class="scroll step"><p class="ref">Ezekiel 2:10</p><p class="kjv">And he spread it before me; and it was written within and without: and there was written therein <mark>lamentations, and mourning, and woe.</mark></p></div>
+    </div>
+    <p class="note step">Ezekiel's scroll was full of <em>“lamentations, and mourning, and woe,”</em> and it still tasted like honey. That is the secret of this picture. Even a hard word from God is good, because it is <em>His</em>, and it is true. David said the same:</p>
+    <blockquote class="quote step"><p>“How sweet are thy words unto my taste! yea, sweeter than honey to my mouth!”</p><cite>Psalm 119:103</cite></blockquote>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="10" data-hl="it was in my mouth sweet as honey: and as soon as I had eaten it, my belly was bitter"></blockquote>
+    <h2 class="rise" style="--d:1">The same Book, both ways</h2>
+    <div class="columns">
+      <div class="col grace step"><p class="who">Sweet</p><h3>When it lands on me as grace</h3><p>“Thy sins are forgiven.” “I will never leave thee.” My name is written down. The first weeks with a Bible can taste like that.</p></div>
+      <div class="col law step"><p class="who">Bitter</p><h3>When it asks something hard</h3><p>Make it right with the man I robbed. Let go of the thing. Tell the truth in court. Watch someone I love keep refusing God.</p></div>
+    </div>
+    <p class="note step">If the Bible has gotten hard to swallow lately, that doesn't mean something is wrong with you. John and Ezekiel felt it too. Keep eating. Today: read one chapter slowly, and do the one hard thing it asks.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="11" data-hl="Thou must prophesy again"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <div class="split">
+      <div class="stage">
+        <svg data-world viewBox="160 110 700 440" data-towns="Patmos!:b, Rome:t, Corinth:l, Alexandria, Jerusalem:l, Antioch:t, Ephesus:t" role="img" aria-label="Map of the Roman world. From the little island of Patmos, lines reach out to Rome, Corinth, Ephesus, Antioch, Jerusalem and Alexandria: many peoples, nations, tongues and kings.">
+          <path class="map-route j1" style="--wait:.4s" data-via="Patmos, Rome"/>
+          <path class="map-route j1" style="--wait:.8s" data-via="Patmos, Corinth"/>
+          <path class="map-route j1" style="--wait:1.2s" data-via="Patmos, Ephesus"/>
+          <path class="map-route j1" style="--wait:1.6s" data-via="Patmos, Antioch"/>
+          <path class="map-route j1" style="--wait:2s" data-via="Patmos, Jerusalem"/>
+          <path class="map-route j1" style="--wait:2.4s" data-via="Patmos, Alexandria"/>
+        </svg>
+      </div>
+      <div>
+        <h2 class="rise" style="--d:1">“Thou must prophesy again”</h2>
+        <p class="note rise" style="--d:2">John is an old man, a prisoner on a rocky island, about AD 95. Most of his friends are dead. You might think his work was done. God says it isn't: <em>“before many peoples, and nations, and tongues, and kings.”</em> From that little island, this book went out to the whole world, and it is still going.</p>
+        <p class="note step">Maybe you think your past disqualified you, or that you're too far gone or too late. God isn't finished with you either. Tell one person today what He has done for you. That's prophesying, in plain words.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="slide remember">
+  <div class="inner">
+    <h2 class="rise">Points to remember</h2>
+    <ol class="seeds">
+      <li class="step"><span class="topic">God's promise</span><span class="seed-q">“A rainbow was upon his head.” <cite>10:1</cite></span><span class="take">Even in judgment, God keeps His word, to the world and to you.</span></li>
+      <li class="step"><span class="topic">Secrets</span><span class="seed-q">“Seal up those things which the seven thunders uttered, and write them not.” <cite>10:4</cite></span><span class="take">Some things belong to God alone. He has told us enough to live on today.</span></li>
+      <li class="step"><span class="topic">No more delay</span><span class="seed-q">“That there should be time no longer.” <cite>10:6</cite></span><span class="take">The Maker of everything swore it: He will not be late.</span></li>
+      <li class="step"><span class="topic">Finished</span><span class="seed-q">“The mystery of God should be finished.” <cite>10:7</cite></span><span class="take">God's plan ends with Christ reigning. He finishes what He starts, in you too.</span></li>
+      <li class="step"><span class="topic">Sweet and bitter</span><span class="seed-q">“It was in my mouth sweet as honey: and as soon as I had eaten it, my belly was bitter.” <cite>10:10</cite></span><span class="take">God's word is sweet, and hard to carry. Take it all in anyway.</span></li>
+      <li class="step"><span class="topic">Again</span><span class="seed-q">“Thou must prophesy again.” <cite>10:11</cite></span><span class="take">God wasn't done with an old prisoner, and He isn't done with you.</span></li>
+    </ol>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 1 of 6</p>
+      <span class="topic">God's promise</span>
+      <h2>What does the rainbow on the angel's head remind us of?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="1" data-hl="clothed with a cloud: and a rainbow was upon his head"></blockquote>
+      <blockquote class="quote step"><p>“I do set my bow in the cloud, and it shall be for a token of a covenant between me and the earth.”</p><cite>Genesis 9:13</cite></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>God's promise to Noah, and the rainbow around His throne in chapter 4. Even in the middle of judgment, God remembers His covenant and keeps His word.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 2 of 6</p>
+      <span class="topic">Secrets</span>
+      <h2>Why was John told not to write what the seven thunders said?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="4" data-hl="Seal up those things which the seven thunders uttered, and write them not"></blockquote>
+      <blockquote class="quote step"><p>“The secret things belong unto the LORD our God: but those things which are revealed belong unto us and to our children for ever, that we may do all the words of this law.”</p><cite>Deuteronomy 29:29</cite></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>God didn't say why, and that is the point: some things belong to Him alone. What He has revealed is ours to believe and do, and it is more than enough for today.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 3 of 6</p>
+      <span class="topic">No more delay</span>
+      <h2>What did the angel swear?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="5" data-hl="lifted up his hand to heaven"></blockquote>
+      <blockquote class="quote step" data-q="6" data-hl="sware by him that liveth for ever and ever|that there should be time no longer"></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>By the living God, the Maker of heaven, earth and sea, he swore that there would be no more delay. The end Daniel was promised is coming, right on God's time.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 4 of 6</p>
+      <span class="topic">Finished</span>
+      <h2>What will be finished when the seventh angel sounds?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="7" data-hl="the mystery of God should be finished, as he hath declared to his servants the prophets"></blockquote>
+      <blockquote class="quote step"><p>“And the seventh angel sounded; and there were great voices in heaven, saying, The kingdoms of this world are become the kingdoms of our Lord, and of his Christ; and he shall reign for ever and ever.”</p><cite>Revelation 11:15</cite></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>The mystery of God: His plan, told to the prophets, that ends with the kingdoms of this world becoming Christ's. God finishes what He starts.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 5 of 6</p>
+      <span class="topic">Sweet and bitter</span>
+      <h2>Why was the little book sweet in the mouth but bitter in the belly?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="10" data-hl="it was in my mouth sweet as honey: and as soon as I had eaten it, my belly was bitter"></blockquote>
+      <blockquote class="quote step"><p>“And he said unto me, Son of man, cause thy belly to eat, and fill thy bowels with this roll that I give thee. Then did I eat it; and it was in my mouth as honey for sweetness.”</p><cite>Ezekiel 3:3</cite></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>God's word is sweet because it is His, and it tells us the Lamb wins. It is bitter because it also tells of judgment, and it asks hard things of the man who carries it. We take in both.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 6 of 6</p>
+      <span class="topic">Again</span>
+      <h2>What was John told to do after he ate the book?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="11" data-hl="Thou must prophesy again before many peoples, and nations, and tongues, and kings"></blockquote>
+      <blockquote class="quote step"><p>“The lion hath roared, who will not fear? the Lord GOD hath spoken, who can but prophesy?”</p><cite>Amos 3:8</cite></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>Prophesy again: speak God's word to the whole world. An old prisoner on an island still had work to do. So do you: tell one person today what God has done for you.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide prayer">
+  <div class="inner">
+    <div class="emblem rise"></div>
+    <h2 class="rise" style="--d:1">Prayer requests</h2>
+    <p class="ask-line rise" style="--d:2">What can we pray about for you today?</p>
+    <blockquote class="quote rise" style="--d:4"><p>“Being confident of this very thing, that he which hath begun a good work in you will perform it until the day of Jesus Christ:”</p><cite>Philippians 1:6</cite></blockquote>
+  </div>
+</section>
+
+</main>
+
+<script>
+// King James Version, Revelation chapter 10
+const V = {
+  1: "And I saw another mighty angel come down from heaven, clothed with a cloud: and a rainbow was upon his head, and his face was as it were the sun, and his feet as pillars of fire:",
+  2: "And he had in his hand a little book open: and he set his right foot upon the sea, and his left foot on the earth,",
+  3: "And cried with a loud voice, as when a lion roareth: and when he had cried, seven thunders uttered their voices.",
+  4: "And when the seven thunders had uttered their voices, I was about to write: and I heard a voice from heaven saying unto me, Seal up those things which the seven thunders uttered, and write them not.",
+  5: "And the angel which I saw stand upon the sea and upon the earth lifted up his hand to heaven,",
+  6: "And sware by him that liveth for ever and ever, who created heaven, and the things that therein are, and the earth, and the things that therein are, and the sea, and the things which are therein, that there should be time no longer:",
+  7: "But in the days of the voice of the seventh angel, when he shall begin to sound, the mystery of God should be finished, as he hath declared to his servants the prophets.",
+  8: "And the voice which I heard from heaven spake unto me again, and said, Go and take the little book which is open in the hand of the angel which standeth upon the sea and upon the earth.",
+  9: "And I went unto the angel, and said unto him, Give me the little book. And he said unto me, Take it, and eat it up; and it shall make thy belly bitter, but it shall be in thy mouth sweet as honey.",
+  10: "And I took the little book out of the angel’s hand, and ate it up; and it was in my mouth sweet as honey: and as soon as I had eaten it, my belly was bitter.",
+  11: "And he said unto me, Thou must prophesy again before many peoples, and nations, and tongues, and kings.",
+};
+const BOOK = "Revelation 10";
+</script>
+<script src="../assets/deck.js"></script>
+</body>
+</html>

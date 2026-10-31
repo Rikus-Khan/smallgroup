@@ -1,0 +1,582 @@
+<!doctype html>
+<html lang="en" data-theme="night">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Revelation 9</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="../assets/fonts.css">
+<link rel="stylesheet" href="../assets/deck.css">
+<link rel="stylesheet" href="../assets/themes.css">
+<style>
+/* rv09-where: where we are in Revelation, seven stops with this chapter's stop lit */
+.rv09-cap { margin: 1.2em 0 .5em; font: 700 .72rem var(--sans); letter-spacing: .12em; text-transform: uppercase; color: var(--ink-soft); }
+.rv09-where { list-style: none; display: flex; justify-content: center; gap: .3rem; padding: 0; margin: 0 auto; max-width: 46em; }
+.rv09-where li { flex: 1; position: relative; text-align: center; font-size: clamp(.66rem, .62rem + .25vw, .86rem); line-height: 1.2; color: var(--ink-soft); }
+.rv09-where li i { position: relative; z-index: 1; display: grid; width: max-content; place-items: center; min-width: 1.9rem; height: 1.9rem; padding: 0 .45em; margin: 0 auto .3rem; border-radius: 1rem; border: 2px solid var(--line-strong); background: var(--bg); font: 700 .8rem var(--sans); font-style: normal; white-space: nowrap; }
+.rv09-where li + li::before { content: ""; position: absolute; top: .95rem; right: 50%; width: calc(100% + .3rem); height: 2px; background: var(--line-strong); }
+.rv09-where li.done i { border-color: var(--accent); background: color-mix(in srgb, var(--accent) 22%, var(--bg)); }
+.rv09-where li.here { color: var(--accent-hot); font-weight: 700; }
+.rv09-where li.here i { background: var(--accent); border-color: var(--accent); color: var(--on-accent); box-shadow: 0 0 0 5px color-mix(in srgb, var(--accent) 20%, transparent); }
+
+/* rv09-horns: the seven trumpets, the ones already sounded, the ones sounding now, and the one still to come (a deck.css candidate) */
+.rv09-horns { list-style: none; padding: 0; margin: .6em 0 1em; display: grid; grid-template-columns: repeat(7, 1fr); gap: .5rem; }
+.rv09-horns li { text-align: center; padding: .55em .2em .5em; border-radius: 10px; border: 1.5px solid var(--line); color: var(--ink-soft); font-size: clamp(.7rem, .64rem + .3vw, .95rem); line-height: 1.25; }
+.rv09-horns svg { display: block; width: 78%; max-width: 4.4rem; height: auto; margin: 0 auto .25em; fill: currentColor; }
+.rv09-horns b { display: block; font: 700 clamp(1.1rem, .9rem + .8vw, 1.7rem)/1.1 var(--serif); }
+.rv09-horns small { display: block; margin-top: .2em; font: 700 .68rem var(--sans); letter-spacing: .08em; text-transform: uppercase; }
+.rv09-horns li.done { opacity: .6; }
+.rv09-horns li.here { color: var(--accent-hot); border-color: var(--accent); background: color-mix(in srgb, var(--accent) 14%, transparent); }
+.slide.active .rv09-horns li.here svg { animation: rv09-blow 1.8s ease-in-out infinite; }
+.rv09-horns li.wait { border-style: dashed; }
+.rv09-horns .woe { color: var(--danger); }
+@keyframes rv09-blow { 0%, 100% { transform: none; } 50% { transform: scale(1.12) rotate(-6deg); } }
+@media (max-width: 700px) { .rv09-horns { grid-template-columns: repeat(4, 1fr); } }
+@media (prefers-reduced-motion: reduce) { .rv09-horns li.here svg { animation: none !important; } }
+
+/* rv09-pit: smoke rises from the opened pit and darkens the sun (a deck.css candidate) */
+.rv09-pit { width: 100%; height: auto; display: block; }
+.rv09-pit .sky { fill: color-mix(in srgb, var(--glow) 30%, var(--surface)); }
+.rv09-pit .sun { fill: var(--warm); }
+.rv09-pit .dim { fill: var(--on-glow); opacity: 0; transition: opacity 5s ease 1.2s; }
+.slide.active .rv09-pit .dim { opacity: .62; }
+.rv09-pit .ground { fill: var(--surface-2); stroke: var(--line-strong); stroke-width: 2; }
+.rv09-pit .hole { fill: var(--on-glow); stroke: var(--line-strong); stroke-width: 2; }
+.rv09-pit .puff { fill: var(--ink-soft); opacity: 0; transform-box: fill-box; transform-origin: center; }
+.slide.active .rv09-pit .puff { animation: rv09-smoke 4.2s ease-out infinite; animation-delay: calc(var(--k) * .7s); }
+@keyframes rv09-smoke { 0% { opacity: 0; transform: translate(0, 0) scale(.5); } 20% { opacity: .55; } 100% { opacity: 0; transform: translate(var(--dx, 0px), -190px) scale(2.4); } }
+.rv09-pit .key { fill: none; stroke: var(--accent-hot); stroke-width: 5; stroke-linecap: round; }
+.rv09-pit text { font: 700 19px var(--sans); fill: var(--ink); }
+.rv09-pit text.soft { font-weight: 400; fill: var(--ink-soft); }
+@media (prefers-reduced-motion: reduce) { .rv09-pit .puff { animation: none !important; opacity: .3; } }
+</style>
+</head>
+<body>
+<main class="deck" id="deck">
+
+<section class="slide title">
+  <div class="inner">
+    <div class="emblem rise"></div>
+    <h1 class="rise" style="--d:1">Revelation 9</h1>
+    <p class="sub rise" style="--d:3">The pit is opened, and still they would not turn</p>
+    <p class="tag rise" style="--d:5">Two trumpets sound, and the darkness gets loose for a while. God's people are kept safe through it. And the chapter ends with men who keep running back to the very things that are killing them, while the door to come home stands open.</p>
+    <p class="rv09-cap rise" style="--d:6">Where we are in Revelation</p>
+    <ol class="rv09-where rise" style="--d:7" aria-label="Revelation in seven parts. Chapters 6 to 16, the seals, trumpets and bowls, are lit.">
+      <li class="done"><i>1</i>Christ</li>
+      <li class="done"><i>2–3</i>Seven churches</li>
+      <li class="done"><i>4–5</i>Throne and Lamb</li>
+      <li class="here"><i>6–16</i>Seals, trumpets, bowls</li>
+      <li><i>17–18</i>Babylon falls</li>
+      <li><i>19–20</i>Christ reigns</li>
+      <li><i>21–22</i>All things new</li>
+    </ol>
+  </div>
+</section>
+
+<section class="slide watch">
+  <div class="inner">
+    <h2 class="rise">Things to watch for</h2>
+    <p class="lede rise" style="--d:1">Keep these questions in the back of your mind as we read. We'll come back to every one of them at the end.</p>
+    <ol class="seeds">
+      <li class="step"><span class="topic">Kept</span><span class="seed-q">Who were the locusts not allowed to hurt?</span></li>
+      <li class="step"><span class="topic">Despair</span><span class="seed-q">What does verse 6 say about men who want to die, and who offers life?</span></li>
+      <li class="step"><span class="topic">Two kings</span><span class="seed-q">Who is the king of the bottomless pit, and who is stronger?</span></li>
+      <li class="step"><span class="topic">God's clock</span><span class="seed-q">What does “prepared for an hour” tell us about who is in control?</span></li>
+      <li class="step"><span class="topic">Hard hearts</span><span class="seed-q">What did the rest of men refuse to repent of?</span></li>
+      <li class="step"><span class="topic">The open door</span><span class="seed-q">Why does God send warnings, and is the door still open?</span></li>
+    </ol>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise" style="--d:1">Where we are: the seven trumpets</h2>
+    <ol class="rv09-horns" aria-label="Seven trumpets. One to four sounded in chapter 8. Five and six sound here, the first and second woes. Seven waits for chapter 11, the third woe.">
+      <li class="done"><svg viewBox="0 0 60 30" aria-hidden="true"><circle cx="5" cy="15" r="4"/><path d="M8 13 H34 L54 3 V27 L34 17 H8 Z"/></svg><b>1</b>ch. 8</li>
+      <li class="done"><svg viewBox="0 0 60 30" aria-hidden="true"><circle cx="5" cy="15" r="4"/><path d="M8 13 H34 L54 3 V27 L34 17 H8 Z"/></svg><b>2</b>ch. 8</li>
+      <li class="done"><svg viewBox="0 0 60 30" aria-hidden="true"><circle cx="5" cy="15" r="4"/><path d="M8 13 H34 L54 3 V27 L34 17 H8 Z"/></svg><b>3</b>ch. 8</li>
+      <li class="done"><svg viewBox="0 0 60 30" aria-hidden="true"><circle cx="5" cy="15" r="4"/><path d="M8 13 H34 L54 3 V27 L34 17 H8 Z"/></svg><b>4</b>ch. 8</li>
+      <li class="here"><svg viewBox="0 0 60 30" aria-hidden="true"><circle cx="5" cy="15" r="4"/><path d="M8 13 H34 L54 3 V27 L34 17 H8 Z"/></svg><b>5</b>the pit<small class="woe">1st woe</small></li>
+      <li class="here"><svg viewBox="0 0 60 30" aria-hidden="true"><circle cx="5" cy="15" r="4"/><path d="M8 13 H34 L54 3 V27 L34 17 H8 Z"/></svg><b>6</b>Euphrates<small class="woe">2nd woe</small></li>
+      <li class="wait"><svg viewBox="0 0 60 30" aria-hidden="true"><circle cx="5" cy="15" r="4"/><path d="M8 13 H34 L54 3 V27 L34 17 H8 Z"/></svg><b>7</b>ch. 11<small class="woe">3rd woe</small></li>
+    </ol>
+    <p class="note step">In chapter 8 the first four trumpets struck the land, the sea, the rivers and the sky, each only <em>“the third part.”</em> Like the plagues of Egypt, they are warnings with a limit on them, not the end. Then an angel cried out that the last three would be worse:</p>
+    <blockquote class="quote step"><p>“And I beheld, and heard an angel flying through the midst of heaven, saying with a loud voice, Woe, woe, woe, to the inhabiters of the earth by reason of the other voices of the trumpet of the three angels, which are yet to sound!”</p><cite>Revelation 8:13</cite></blockquote>
+  </div>
+</section>
+
+<section class="slide part">
+  <div class="inner">
+    <p class="part-n rise">Part one</p>
+    <h2 class="rise" style="--d:1">The fifth trumpet: the pit is opened</h2>
+    <p class="range rise" style="--d:2">Verses 1–12</p>
+    <div class="rule"></div>
+    <p class="hook rise" style="--d:4">Darkness gets loose for a season. Watch who holds the key, who sets the limits, and who is kept safe.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="1-2" data-hl="to him was given the key of the bottomless pit|the sun and the air were darkened"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <div class="split">
+      <div class="stage">
+        <svg class="rv09-pit" viewBox="0 0 420 330" role="img" aria-label="A sun in the sky over open ground. A dark pit opens in the ground, smoke rises out of it, and the sky slowly grows dark. A key lies beside the pit.">
+          <rect class="sky" x="0" y="0" width="420" height="240"/>
+          <circle class="sun" cx="320" cy="70" r="38"/>
+          <rect class="dim" x="0" y="0" width="420" height="240"/>
+          <path class="ground" d="M0 230 C90 220 330 222 420 232 L420 330 L0 330 Z"/>
+          <ellipse class="hole" cx="190" cy="262" rx="92" ry="26"/>
+          <g aria-hidden="true">
+            <circle class="puff" style="--k:0;--dx:-30px" cx="170" cy="250" r="22"/>
+            <circle class="puff" style="--k:1;--dx:25px" cx="200" cy="250" r="22"/>
+            <circle class="puff" style="--k:2;--dx:-10px" cx="185" cy="250" r="22"/>
+            <circle class="puff" style="--k:3;--dx:40px" cx="210" cy="252" r="22"/>
+            <circle class="puff" style="--k:4;--dx:-45px" cx="165" cy="252" r="22"/>
+          </g>
+          <g class="key"><circle cx="330" cy="285" r="13"/><path d="M343 285 H392 M380 285 V298 M368 285 V296"/></g>
+          <text x="300" y="320" class="soft">“was given”</text>
+        </svg>
+      </div>
+      <div>
+        <h2 class="rise" style="--d:1">A star with a key</h2>
+        <p class="note rise" style="--d:2">In Revelation a star can stand for an angel (1:20). Some teachers see a fallen angel here (Luke 10:18); others a good angel sent by God, as in 20:1. The <em>bottomless pit</em> is the abyss, where evil spirits are locked up (Luke 8:31).</p>
+        <p class="note step">Either way: <em>“to him was given.”</em> He didn't take the key. Nothing gets out of that pit unless God allows it. The keys that matter are in Jesus' hand:</p>
+        <blockquote class="quote step"><p>“I am he that liveth, and was dead; and, behold, I am alive for evermore, Amen; and have the keys of hell and of death.”</p><cite>Revelation 1:18</cite></blockquote>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="slide verse" data-v="3-6" data-hl="only those men which have not the seal of God in their foreheads|they should not kill them|in those days shall men seek death, and shall not find it"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <div class="split">
+      <div class="stage">
+        <svg class="kept" viewBox="0 0 600 360" role="img" aria-label="God's people inside a guarding circle marked the seal of God. Stings fly at the circle from every side and fall away without touching them.">
+          <circle class="kept-wall" cx="300" cy="185" r="130"/>
+          <text class="kept-tag" font-size="18" x="300" y="93" text-anchor="middle">the seal of God</text>
+          <g class="kept-in"><circle cx="300" cy="135" r="9"/><circle cx="335" cy="145" r="9"/><circle cx="357" cy="173" r="9"/><circle cx="357" cy="207" r="9"/><circle cx="335" cy="235" r="9"/><circle cx="300" cy="245" r="9"/><circle cx="265" cy="235" r="9"/><circle cx="243" cy="207" r="9"/><circle cx="243" cy="173" r="9"/><circle cx="265" cy="145" r="9"/><circle cx="300" cy="190" r="9"/></g>
+          <path class="kept-dart" style="--dx:60px;--dy:30px;--w:0s" d="M70 60 l40 20 m-12 -14 l12 14 l-18 2"/>
+          <path class="kept-dart" style="--dx:-60px;--dy:20px;--w:.9s" d="M560 110 l-40 14 m10 -14 l-10 14 l16 6"/>
+          <path class="kept-dart" style="--dx:50px;--dy:-30px;--w:1.7s" d="M80 320 l40 -22 m-18 -2 l18 2 l-8 16"/>
+          <path class="kept-dart" style="--dx:-50px;--dy:-40px;--w:2.3s" d="M520 330 l-36 -26 m4 16 l-4 -16 l16 2"/>
+          <text x="300" y="352" text-anchor="middle" font-size="17" style="fill:var(--ink-soft)">“they should not hurt … but only those men which have not the seal”</text>
+        </svg>
+      </div>
+      <div>
+        <h2 class="rise" style="--d:1">Not one of His</h2>
+        <p class="note rise" style="--d:2">Real locusts eat everything green. These must leave it alone and touch only men <em>without</em> God's seal. In chapter 7, God marked His servants first:</p>
+        <blockquote class="quote step"><p>“Saying, Hurt not the earth, neither the sea, nor the trees, till we have sealed the servants of our God in their foreheads.”</p><cite>Revelation 7:3</cite></blockquote>
+        <p class="note step">He did the same in Egypt:</p>
+        <blockquote class="quote step"><p>“They saw not one another, neither rose any from his place for three days: but all the children of Israel had light in their dwellings.”</p><cite>Exodus 10:23</cite></blockquote>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <p class="saying rise" style="--d:1">“Men shall seek death, <em>and shall not find it.</em>”</p>
+    <p class="note rise" style="--d:2">Pain with no way out: hurting so badly a man wants to die, and not even that comes. Some of us know that place, in a cell or at the end of a run. If that's you today, say it out loud to a brother here, or call or text 988. You don't have to sit in it alone.</p>
+    <p class="note step">And the torment has a limit: <em>“five months,”</em> about one locust season. God sets the edges even on judgment. This is not how His story ends for His people:</p>
+    <blockquote class="quote step"><p>“And God shall wipe away all tears from their eyes; and there shall be no more death, neither sorrow, nor crying, neither shall there be any more pain: for the former things are passed away.”</p><cite>Revelation 21:4</cite></blockquote>
+  </div>
+</section>
+
+<section class="slide verse" data-v="7-10" data-hl="the shapes of the locusts were like unto horses prepared unto battle|their power was to hurt men five months"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise" style="--d:1">“Like … as it were …”</h2>
+    <div class="tally rise" style="--d:2" aria-label="Verses 2 to 10, counting the words as and like: verse 2 once, 3 once, 5 once, 7 four times, 8 twice, 9 twice, 10 once.">
+      <span class="hit" style="--k:0"><i>2</i>×1</span>
+      <span class="hit" style="--k:1"><i>3</i>×1</span>
+      <span><i>4</i>&nbsp;</span>
+      <span class="hit" style="--k:2"><i>5</i>×1</span>
+      <span><i>6</i>&nbsp;</span>
+      <span class="hit" style="--k:3"><i>7</i>×4</span>
+      <span class="hit" style="--k:4"><i>8</i>×2</span>
+      <span class="hit" style="--k:5"><i>9</i>×2</span>
+      <span class="hit" style="--k:6"><i>10</i>×1</span>
+    </div>
+    <p class="note step"><em>“As”</em> and <em>“like”</em> twelve times in nine verses. John is reaching for words for something he has never seen. Joel saw a locust army the same way: <em>“The appearance of them is as the appearance of horses”</em> (Joel 2:4).</p>
+    <div class="columns">
+      <div class="col law step"><p class="who">Some teachers say</p><h3>Real creatures</h3><p>Demons let out of the pit, taking a shape men can see, in a time still to come.</p></div>
+      <div class="col grace step"><p class="who">Others say</p><h3>A picture</h3><p>Evil spiritual forces, drawn with Joel's locusts and Egypt's plague, that torment those who belong to darkness.</p></div>
+    </div>
+    <p class="note step">Both agree on what matters: it is real evil, it is on a leash, and it cannot touch God's sealed people.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="11-12" data-hl="Abaddon|Apollyon|One woe is past"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="11" data-hl="whose name in the Hebrew tongue is Abaddon, but in the Greek tongue hath his name Apollyon"></blockquote>
+    <h2 class="rise" style="--d:1">Abaddon, Apollyon: the Destroyer</h2>
+    <div class="tongues">
+      <div class="rise" style="--d:2"><div class="w" lang="he">אֲבַדּוֹן</div><div class="t">Abaddon</div><div class="l">Hebrew</div></div>
+      <div class="rise" style="--d:4"><div class="w" lang="el">Ἀπολλύων</div><div class="t">Apollyon</div><div class="l">Greek</div></div>
+      <div class="rise" style="--d:6"><div class="w">Destroyer</div><div class="t">&nbsp;</div><div class="l">English</div></div>
+    </div>
+    <div class="columns">
+      <div class="col law step"><p class="who">Their king</p><h3>The Destroyer</h3><p>That's his whole name and his whole job. He has nothing to give. Every man who has served him knows it: he takes the money, the family, the years, the health.</p></div>
+      <div class="col grace step"><p class="who">Our King</p><h3>The Giver of life</h3><p>Jesus put the two side by side Himself: <em>“The thief cometh not, but for to steal, and to kill, and to destroy: I am come that they might have life, and that they might have it more abundantly”</em> (John 10:10).</p></div>
+    </div>
+    <p class="note step"><em>“One woe is past.”</em> Even this woe ends. The Destroyer's season always has an edge on it.</p>
+  </div>
+</section>
+
+<section class="slide part">
+  <div class="inner">
+    <p class="part-n rise">Part two</p>
+    <h2 class="rise" style="--d:1">The sixth trumpet: the Euphrates</h2>
+    <p class="range rise" style="--d:2">Verses 13–19</p>
+    <div class="rule"></div>
+    <p class="hook rise" style="--d:4">An answer that starts at the altar of prayer, and an hour that God had already set.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="13-15" data-hl="the four horns of the golden altar which is before God|Loose the four angels which are bound in the great river Euphrates|prepared for an hour, and a day, and a month, and a year"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="13" data-hl="a voice from the four horns of the golden altar which is before God"></blockquote>
+    <h2 class="rise" style="--d:1">It starts at the altar of prayer</h2>
+    <p class="note rise" style="--d:2">The <em>golden altar</em> stood just outside the holy of holies. It was the altar of incense, the place of prayer, and its four corners had <em>horns</em>. In the last chapter we saw what was offered on it:</p>
+    <blockquote class="quote step"><p>“And another angel came and stood at the altar, having a golden censer; and there was given unto him much incense, that he should offer it with the prayers of all saints upon the golden altar which was before the throne.”</p><cite>Revelation 8:3</cite></blockquote>
+    <p class="note step">So this order comes from the place where His people's prayers are kept. They had cried, <em>“How long?”</em> (6:10), and God heard every one. And these four were <em>“bound”</em> until He said <em>“Loose.”</em> Evil doesn't run on its own clock.</p>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <div class="split">
+      <div class="stage">
+        <svg data-world viewBox="520 190 388 310" data-towns="Patmos!:l, Ephesus:l, Antioch:l, Damascus:r, Jerusalem:l" role="img" aria-label="Map from the Aegean Sea east to the Euphrates. A line runs from Patmos, where John was, east about six hundred miles to the great river Euphrates on the eastern edge of the map.">
+          <path class="map-route" data-via="Patmos, @38.2 36.8"/>
+          <g class="map-town here"><circle cx="861.8" cy="326.4" r="3"/><circle class="map-ping" cx="861.8" cy="326.4" r="3.9"/><text x="903" y="296" text-anchor="end">the great river</text><text x="903" y="308" text-anchor="end">Euphrates</text></g>
+        </svg>
+      </div>
+      <div>
+        <h2 class="rise" style="--d:1">The great river Euphrates</h2>
+        <p class="note rise" style="--d:2">The Euphrates was the far edge of John's world, about six hundred miles east of Patmos. Beyond it lay Rome's feared enemy, the Parthians. Long before, Assyria and Babylon came from beyond it to carry God's people away.</p>
+        <p class="note step">So <em>“the Euphrates”</em> meant the place invasion comes from. Some teachers take it as the real river and a real army still to come; others as a picture of judgment pouring in from that frontier.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <div class="split">
+      <div class="stage">
+        <svg class="clock" style="--stop:0deg" viewBox="0 -44 320 364" role="img" aria-label="A clock hand sweeps around and stops exactly on the hour.">
+          <circle class="clock-face" cx="160" cy="160" r="140"/>
+          <g>
+            <line class="clock-tick" x1="160" y1="38" x2="160" y2="58" transform="rotate(30 160 160)"/>
+            <line class="clock-tick" x1="160" y1="38" x2="160" y2="58" transform="rotate(60 160 160)"/>
+            <line class="clock-tick" x1="160" y1="38" x2="160" y2="58" transform="rotate(90 160 160)"/>
+            <line class="clock-tick" x1="160" y1="38" x2="160" y2="58" transform="rotate(120 160 160)"/>
+            <line class="clock-tick" x1="160" y1="38" x2="160" y2="58" transform="rotate(150 160 160)"/>
+            <line class="clock-tick" x1="160" y1="38" x2="160" y2="58" transform="rotate(180 160 160)"/>
+            <line class="clock-tick" x1="160" y1="38" x2="160" y2="58" transform="rotate(210 160 160)"/>
+            <line class="clock-tick" x1="160" y1="38" x2="160" y2="58" transform="rotate(240 160 160)"/>
+            <line class="clock-tick" x1="160" y1="38" x2="160" y2="58" transform="rotate(270 160 160)"/>
+            <line class="clock-tick" x1="160" y1="38" x2="160" y2="58" transform="rotate(300 160 160)"/>
+            <line class="clock-tick" x1="160" y1="38" x2="160" y2="58" transform="rotate(330 160 160)"/>
+          </g>
+          <circle class="clock-hour" cx="160" cy="44" r="12"/>
+          <text x="160" y="-14" text-anchor="middle" font-size="20" font-weight="700" style="fill:var(--accent-hot)">“an hour”</text>
+          <line class="clock-hand" x1="160" y1="160" x2="160" y2="68"/>
+          <circle cx="160" cy="160" r="10" style="fill:var(--ink)"/>
+          <text x="160" y="232" text-anchor="middle" font-size="22" class="serif" font-style="italic" style="fill:var(--ink-soft)">set by God</text>
+        </svg>
+      </div>
+      <div>
+        <h2 class="rise" style="--d:1">To the very hour</h2>
+        <blockquote class="quote rise" style="--d:2" data-q="15" data-hl="prepared for an hour, and a day, and a month, and a year"></blockquote>
+        <p class="note step">Not just a year, or a month. A year, a month, a day, and an <em>hour</em>. These angels were kept waiting for one exact moment that God had marked. Revelation can look like chaos. It is not. Nothing in it is early or late.</p>
+        <p class="note step">That is good news for a man whose life has felt out of control. The same God holds your hours too: the court date, the release, the day the craving finally lets go. He is never late.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="slide verse" data-v="16-19" data-hl="two hundred thousand thousand|I heard the number of them|the third part of men killed"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="16" data-hl="two hundred thousand thousand: and I heard the number of them"></blockquote>
+    <h2 class="rise" style="--d:1">An army too big to count</h2>
+    <div class="math rise" style="--d:2">
+      <div><b>200,000</b><span>“two hundred thousand”</span></div>
+      <div><b>× 1,000</b><span>“thousand”</span></div>
+      <div><b>200,000,000</b><span>two hundred million</span></div>
+    </div>
+    <p class="note step">The whole Roman army was a few hundred thousand men. John couldn't count this host; he <em>heard</em> the number. Fire and brimstone (burning sulphur) mark God's judgment from Sodom on.</p>
+    <div class="columns">
+      <div class="col law step"><p class="who">Some teachers say</p><h3>A real host</h3><p>A vast army, demonic or driven by demons, at the end of the age.</p></div>
+      <div class="col grace step"><p class="who">Others say</p><h3>A huge number</h3><p>“More than anyone can count”: judgment no one can stand against.</p></div>
+    </div>
+    <p class="note step">Still only <em>“the third part.”</em> God is holding judgment back and giving time.</p>
+  </div>
+</section>
+
+<section class="slide part">
+  <div class="inner">
+    <p class="part-n rise">Part three</p>
+    <h2 class="rise" style="--d:1">Yet they repented not</h2>
+    <p class="range rise" style="--d:2">Verses 20–21</p>
+    <div class="rule"></div>
+    <p class="hook rise" style="--d:4">The saddest two verses in the chapter, and the ones that speak most plainly to anyone who has fought an addiction.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="20-21" data-hl="yet repented not of the works of their hands|which neither can see, nor hear, nor walk|nor of their sorceries"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="20" data-hl="idols of gold, and silver, and brass, and stone, and of wood: which neither can see, nor hear, nor walk"></blockquote>
+    <h2 class="rise" style="--d:1">You become like what you worship</h2>
+    <div class="pair">
+      <div class="scroll step"><p class="ref">Psalm 115:4</p><p class="kjv">Their idols are silver and gold, <mark>the work of men’s hands.</mark></p></div>
+      <div class="scroll step"><p class="ref">Psalm 115:8</p><p class="kjv"><mark>They that make them are like unto them;</mark> so is every one that trusteth in them.</p></div>
+    </div>
+    <p class="note step">An idol is anything a man runs to instead of God, the thing he trusts to fix how he feels. It can't see you, hear you, or walk with you. And the longer a man serves it, the more he becomes like it: blind to what it's costing, deaf to the people who love him, stuck in one place. <em>“The works of their hands”</em> is what we build our lives around. Behind every idol, verse 20 says, stand <em>“devils.”</em></p>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="21" data-hl="Neither repented they of their murders, nor of their sorceries, nor of their fornication, nor of their thefts"></blockquote>
+    <h2 class="rise" style="--d:1">“Sorceries”</h2>
+    <div class="morph">
+      <span class="big rise" style="--d:3">φαρμακεία</span>
+      <span class="say step">said <em class="gk">pharmakeia</em></span>
+      <span class="means step">drugs, potions, spells: the word our <em>pharmacy</em> comes from</span>
+    </div>
+    <p class="note step">In John's world, drugs and magic went together: potions to get high, to curse, to control. Paul uses the same word in his list of the works of the flesh, where the KJV reads <em>“witchcraft”</em> (Galatians 5:20). This is not the medicine a doctor gives you. It is a man reaching for a substance or a spell to escape, to control, or to feel like a god.</p>
+    <p class="note step">Read the whole list: murder, drugs, sexual sin, stealing. For many of us it reads like our own record. That's honest, and it's not the end of the sentence.</p>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <div class="split">
+      <div class="stage">
+        <svg class="cycle" style="--at:320px 200px; --lap:7s" viewBox="0 0 640 400" role="img" aria-label="A circle with six stops: it hurts, I know it's killing me, I go back anyway, it costs more, it hurts worse, still I won't turn. A dot keeps running around the circle without stopping.">
+          <circle class="cycle-ring" cx="320" cy="200" r="140"/>
+          <g class="rise" style="--d:1"><circle class="cycle-stop" cx="320" cy="60" r="15"/><text x="320" y="30" text-anchor="middle" font-size="19">1. It hurts <tspan style="fill:var(--ink-soft)">(v. 5)</tspan></text></g>
+          <g class="rise" style="--d:2"><circle class="cycle-stop" cx="441" cy="130" r="15"/><text x="464" y="136" font-size="19">2. It's killing me</text></g>
+          <g class="rise" style="--d:3"><circle class="cycle-stop" cx="441" cy="270" r="15"/><text x="464" y="276" font-size="19">3. I go back</text></g>
+          <g class="rise" style="--d:4"><circle class="cycle-stop" cx="320" cy="340" r="15"/><text x="320" y="382" text-anchor="middle" font-size="19">4. It costs more</text></g>
+          <g class="rise" style="--d:5"><circle class="cycle-stop" cx="199" cy="270" r="15"/><text x="176" y="276" text-anchor="end" font-size="19">5. It hurts worse</text></g>
+          <g class="rise" style="--d:6"><circle class="cycle-stop" cx="199" cy="130" r="15"/><text x="176" y="136" text-anchor="end" font-size="19" style="fill:var(--accent-hot)">6. Still won't turn</text></g>
+          <g class="cycle-spin"><circle cx="320" cy="60" r="8" style="fill:var(--accent-hot);stroke:var(--bg)" stroke-width="2"/></g>
+          <text x="320" y="196" text-anchor="middle" font-size="24" class="serif" style="fill:var(--ink-soft)">“yet repented</text>
+          <text x="320" y="226" text-anchor="middle" font-size="24" class="serif" style="fill:var(--ink-soft)">not”</text>
+        </svg>
+      </div>
+      <div>
+        <h2 class="rise" style="--d:1">Through all the pain</h2>
+        <p class="note rise" style="--d:2">These men watched a third of the world die. They were tormented for months. And they went straight back to the same things. Pain alone doesn't change a heart.</p>
+        <p class="note step">Every man who has fought an addiction knows this circle. The thing is killing you, you know it's killing you, and you go back anyway. Rock bottom has a basement. That's not a lecture; it's what verses 20 and 21 describe, and some of us have lived it.</p>
+        <p class="note step">But this is the circle for men who <em>refuse</em> to turn. Turning is still possible.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <div class="split">
+      <div class="stage">
+        <svg class="cycle" viewBox="0 0 640 400" role="img" aria-label="The same circle, but broken open at one spot, with a bright path leading out of it labelled repent: turn around.">
+          <path class="cycle-ring" d="M320 60 A140 140 0 1 1 199 130"/>
+          <circle class="cycle-stop" cx="320" cy="60" r="15"/>
+          <circle class="cycle-stop" cx="441" cy="130" r="15"/>
+          <circle class="cycle-stop" cx="441" cy="270" r="15"/>
+          <circle class="cycle-stop" cx="320" cy="340" r="15"/>
+          <circle class="cycle-stop" cx="199" cy="270" r="15"/>
+          <circle class="cycle-stop" cx="199" cy="130" r="15"/>
+          <g class="step">
+            <path class="cycle-way draw" pathLength="1" d="M210 120 C230 95 230 60 160 40 L60 30"/>
+            <path class="cycle-way" d="M78 14 L58 30 L80 46"/>
+            <text x="30" y="84" font-size="20" font-weight="700" style="fill:var(--accent-hot)">repent: turn around</text>
+            <text x="30" y="108" font-size="16" style="fill:var(--ink-soft)">2 Peter 3:9</text>
+          </g>
+          <text x="320" y="196" text-anchor="middle" font-size="24" class="serif" style="fill:var(--ink-soft)">the door</text>
+          <text x="320" y="226" text-anchor="middle" font-size="24" class="serif" style="fill:var(--ink-soft)">is still open</text>
+        </svg>
+      </div>
+      <div>
+        <h2 class="rise" style="--d:1">The door is still open</h2>
+        <p class="note rise" style="--d:2">Why trumpets, and only a third at a time? Because God wants men to turn. The men of verse 20 could have, and wouldn't.</p>
+        <blockquote class="quote step"><p>“The Lord is not slack concerning his promise, as some men count slackness; but is longsuffering to us-ward, not willing that any should perish, but that all should come to repentance.”</p><cite>2 Peter 3:9</cite></blockquote>
+        <p class="note step">Today, name the thing you keep going back to, out loud, to one brother. Then get rid of what feeds it: the number, the stash, the app, the route home. That's turning around on a workday.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="slide remember">
+  <div class="inner">
+    <h2 class="rise">Points to remember</h2>
+    <ol class="seeds">
+      <li class="step"><span class="topic">Kept</span><span class="seed-q">“Only those men which have not the seal of God in their foreheads.” <cite>9:4</cite></span><span class="take">God marks His own, and the darkness is not allowed to touch them.</span></li>
+      <li class="step"><span class="topic">Despair</span><span class="seed-q">“In those days shall men seek death, and shall not find it.” <cite>9:6</cite></span><span class="take">Pain with no way out is real. Jesus came to give life, and no one has to sit in that place alone.</span></li>
+      <li class="step"><span class="topic">Two kings</span><span class="seed-q">“In the Greek tongue hath his name Apollyon.” <cite>9:11</cite></span><span class="take">Their king is the Destroyer. Ours is the One who holds the keys and gives life.</span></li>
+      <li class="step"><span class="topic">God's clock</span><span class="seed-q">“Prepared for an hour, and a day, and a month, and a year.” <cite>9:15</cite></span><span class="take">Nothing is early or late. Evil is bound until God says loose.</span></li>
+      <li class="step"><span class="topic">Hard hearts</span><span class="seed-q">“Neither repented they of their murders, nor of their sorceries, nor of their fornication, nor of their thefts.” <cite>9:21</cite></span><span class="take">Pain alone doesn't change a heart. Men can run back to what is killing them.</span></li>
+      <li class="step"><span class="topic">The open door</span><span class="seed-q">“Yet repented not of the works of their hands.” <cite>9:20</cite></span><span class="take">The warnings are mercy. God wants every man to turn, and today the door is open.</span></li>
+    </ol>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 1 of 6</p>
+      <span class="topic">Kept</span>
+      <h2>Who were the locusts not allowed to hurt?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="4" data-hl="only those men which have not the seal of God in their foreheads"></blockquote>
+      <blockquote class="quote step"><p>“Saying, Hurt not the earth, neither the sea, nor the trees, till we have sealed the servants of our God in their foreheads.”</p><cite>Revelation 7:3</cite></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>God's own people, the ones with His seal. The locusts could hurt only those without it. He marks His own, and He keeps them.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 2 of 6</p>
+      <span class="topic">Despair</span>
+      <h2>What does verse 6 say about men who want to die, and who offers life?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="6" data-hl="in those days shall men seek death, and shall not find it"></blockquote>
+      <blockquote class="quote step"><p>“The thief cometh not, but for to steal, and to kill, and to destroy: I am come that they might have life, and that they might have it more abundantly.”</p><cite>John 10:10</cite></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>The pain can get so deep that men want to die and can't. Jesus is the opposite of the Destroyer: He came to give life, more than enough. If you're in that dark place, tell someone today.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 3 of 6</p>
+      <span class="topic">Two kings</span>
+      <h2>Who is the king of the bottomless pit, and who is stronger?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="11" data-hl="whose name in the Hebrew tongue is Abaddon, but in the Greek tongue hath his name Apollyon"></blockquote>
+      <blockquote class="quote step"><p>“I am he that liveth, and was dead; and, behold, I am alive for evermore, Amen; and have the keys of hell and of death.”</p><cite>Revelation 1:18</cite></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>Abaddon, Apollyon: the Destroyer. But the key to his pit was <em>given</em>, and only for a season. Jesus, who died and rose again, holds the keys of hell and of death.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 4 of 6</p>
+      <span class="topic">God's clock</span>
+      <h2>What does “prepared for an hour” tell us about who is in control?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="14" data-hl="Loose the four angels which are bound in the great river Euphrates"></blockquote>
+      <blockquote class="quote step" data-q="15" data-hl="prepared for an hour, and a day, and a month, and a year"></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>God is. The angels were bound until He said “Loose,” and held for an exact hour He had set. Nothing in Revelation is out of His hands, and nothing in your life is either.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 5 of 6</p>
+      <span class="topic">Hard hearts</span>
+      <h2>What did the rest of men refuse to repent of?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="20" data-hl="yet repented not of the works of their hands, that they should not worship devils, and idols"></blockquote>
+      <blockquote class="quote step" data-q="21" data-hl="Neither repented they of their murders, nor of their sorceries, nor of their fornication, nor of their thefts"></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>Idols and the devils behind them; murder, sorceries (drugs and magic), sexual sin and stealing. They kept going back to what was killing them, even through the pain.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 6 of 6</p>
+      <span class="topic">The open door</span>
+      <h2>Why does God send warnings, and is the door still open?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step"><p>“The Lord is not slack concerning his promise, as some men count slackness; but is longsuffering to us-ward, not willing that any should perish, but that all should come to repentance.”</p><cite>2 Peter 3:9</cite></blockquote>
+      <blockquote class="quote step"><p>“And such were some of you: but ye are washed, but ye are sanctified, but ye are justified in the name of the Lord Jesus, and by the Spirit of our God.”</p><cite>1 Corinthians 6:11</cite></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>Because He wants men to turn. He held judgment back to “the third part” and gave time. The men of verse 20 refused, but the door is open today to anyone who turns to Jesus.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide prayer">
+  <div class="inner">
+    <div class="emblem rise"></div>
+    <h2 class="rise" style="--d:1">Prayer requests</h2>
+    <p class="ask-line rise" style="--d:2">What can we pray about for you today?</p>
+    <blockquote class="quote rise" style="--d:4"><p>“I am come that they might have life, and that they might have it more abundantly.”</p><cite>John 10:10</cite></blockquote>
+  </div>
+</section>
+
+</main>
+
+<script>
+// King James Version, Revelation chapter 9
+const V = {
+  1: "And the fifth angel sounded, and I saw a star fall from heaven unto the earth: and to him was given the key of the bottomless pit.",
+  2: "And he opened the bottomless pit; and there arose a smoke out of the pit, as the smoke of a great furnace; and the sun and the air were darkened by reason of the smoke of the pit.",
+  3: "And there came out of the smoke locusts upon the earth: and unto them was given power, as the scorpions of the earth have power.",
+  4: "And it was commanded them that they should not hurt the grass of the earth, neither any green thing, neither any tree; but only those men which have not the seal of God in their foreheads.",
+  5: "And to them it was given that they should not kill them, but that they should be tormented five months: and their torment was as the torment of a scorpion, when he striketh a man.",
+  6: "And in those days shall men seek death, and shall not find it; and shall desire to die, and death shall flee from them.",
+  7: "And the shapes of the locusts were like unto horses prepared unto battle; and on their heads were as it were crowns like gold, and their faces were as the faces of men.",
+  8: "And they had hair as the hair of women, and their teeth were as the teeth of lions.",
+  9: "And they had breastplates, as it were breastplates of iron; and the sound of their wings was as the sound of chariots of many horses running to battle.",
+  10: "And they had tails like unto scorpions, and there were stings in their tails: and their power was to hurt men five months.",
+  11: "And they had a king over them, which is the angel of the bottomless pit, whose name in the Hebrew tongue is Abaddon, but in the Greek tongue hath his name Apollyon.",
+  12: "One woe is past; and, behold, there come two woes more hereafter.",
+  13: "And the sixth angel sounded, and I heard a voice from the four horns of the golden altar which is before God,",
+  14: "Saying to the sixth angel which had the trumpet, Loose the four angels which are bound in the great river Euphrates.",
+  15: "And the four angels were loosed, which were prepared for an hour, and a day, and a month, and a year, for to slay the third part of men.",
+  16: "And the number of the army of the horsemen were two hundred thousand thousand: and I heard the number of them.",
+  17: "And thus I saw the horses in the vision, and them that sat on them, having breastplates of fire, and of jacinth, and brimstone: and the heads of the horses were as the heads of lions; and out of their mouths issued fire and smoke and brimstone.",
+  18: "By these three was the third part of men killed, by the fire, and by the smoke, and by the brimstone, which issued out of their mouths.",
+  19: "For their power is in their mouth, and in their tails: for their tails were like unto serpents, and had heads, and with them they do hurt.",
+  20: "And the rest of the men which were not killed by these plagues yet repented not of the works of their hands, that they should not worship devils, and idols of gold, and silver, and brass, and stone, and of wood: which neither can see, nor hear, nor walk:",
+  21: "Neither repented they of their murders, nor of their sorceries, nor of their fornication, nor of their thefts.",
+};
+const BOOK = "Revelation 9";
+</script>
+<script src="../assets/deck.js"></script>
+</body>
+</html>

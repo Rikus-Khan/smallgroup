@@ -4449,7 +4449,13 @@ window.GLOSSARY = [
     [ 13, 14 ] ],
    [
     "Revelation", 8,
-    [ 1, 10, 13 ] ] ]
+    [ 1, 10, 13 ] ],
+   [
+    "Revelation", 9,
+    [ 1 ] ],
+   [
+    "Revelation", 10,
+    [ 1, 4, 5, 6, 8 ] ] ]
  },
  {
   "id": "hell",
@@ -9909,7 +9915,10 @@ window.GLOSSARY = [
     [ 18 ] ],
    [
     "Revelation", 5,
-    [ 9 ] ] ]
+    [ 9 ] ],
+   [
+    "Revelation", 9,
+    [ 11 ] ] ]
  },
  {
   "id": "anger",
@@ -11757,7 +11766,10 @@ window.GLOSSARY = [
     [ 9 ] ],
    [
     "Acts", 26,
-    [ 19 ] ] ]
+    [ 19 ] ],
+   [
+    "Revelation", 9,
+    [ 17 ] ] ]
  },
  {
   "id": "weights-and-balances",
@@ -13362,7 +13374,10 @@ window.GLOSSARY = [
     [ 14 ] ],
    [
     "Revelation", 7,
-    [ 11 ] ] ]
+    [ 11 ] ],
+   [
+    "Revelation", 9,
+    [ 20 ] ] ]
  },
  {
   "id": "good-shepherd",
@@ -16143,7 +16158,13 @@ window.GLOSSARY = [
     [ 1, 2, 11 ] ],
    [
     "Revelation", 8,
-    [ 2, 3, 4, 5, 6, 7, 8, 10, 12, 13 ] ] ]
+    [ 2, 3, 4, 5, 6, 7, 8, 10, 12, 13 ] ],
+   [
+    "Revelation", 9,
+    [ 1, 11, 13, 14, 15 ] ],
+   [
+    "Revelation", 10,
+    [ 1, 5, 7, 8, 9, 10 ] ] ]
  },
  {
   "id": "sepulchre",
@@ -19602,7 +19623,10 @@ window.GLOSSARY = [
     [ 1 ] ],
    [
     "Revelation", 8,
-    [ 13 ] ] ]
+    [ 13 ] ],
+   [
+    "Revelation", 9,
+    [ 14 ] ] ]
  },
  {
   "id": "rend-your-heart",
@@ -21333,7 +21357,10 @@ window.GLOSSARY = [
     [ 21 ] ],
    [
     "Revelation", 2,
-    [ 14, 20 ] ] ]
+    [ 14, 20 ] ],
+   [
+    "Revelation", 9,
+    [ 20 ] ] ]
  },
  {
   "id": "morning-cloud",
@@ -23196,7 +23223,10 @@ window.GLOSSARY = [
     [ 11 ] ],
    [
     "Revelation", 8,
-    [ 13 ] ] ]
+    [ 13 ] ],
+   [
+    "Revelation", 9,
+    [ 12 ] ] ]
  },
  {
   "id": "thick-clay",
@@ -24534,7 +24564,10 @@ window.GLOSSARY = [
     [ 22 ] ],
    [
     "Philippians", 3,
-    [ 5 ] ] ]
+    [ 5 ] ],
+   [
+    "Revelation", 9,
+    [ 11 ] ] ]
  },
  {
   "id": "tarshish",
@@ -25353,7 +25386,10 @@ window.GLOSSARY = [
     [ 15, 20 ] ],
    [
     "Revelation", 6,
-    [ 2, 4, 5, 8 ] ] ]
+    [ 2, 4, 5, 8 ] ],
+   [
+    "Revelation", 9,
+    [ 7, 9, 17 ] ] ]
  },
  {
   "id": "myrtle-trees",
@@ -27519,7 +27555,10 @@ window.GLOSSARY = [
     [ 5, 16, 21, 22 ] ],
    [
     "Revelation", 3,
-    [ 3, 19 ] ] ]
+    [ 3, 19 ] ],
+   [
+    "Revelation", 9,
+    [ 20, 21 ] ] ]
  },
  {
   "id": "camels-hair",
@@ -27807,7 +27846,10 @@ window.GLOSSARY = [
     [ 32 ] ],
    [
     "1 Corinthians", 10,
-    [ 20, 21 ] ] ]
+    [ 20, 21 ] ],
+   [
+    "Revelation", 9,
+    [ 20 ] ] ]
  },
  {
   "id": "compassion",
@@ -30507,7 +30549,10 @@ window.GLOSSARY = [
     [ 7 ] ],
    [
     "Revelation", 2,
-    [ 14, 20, 21 ] ] ]
+    [ 14, 20, 21 ] ],
+   [
+    "Revelation", 9,
+    [ 21 ] ] ]
  },
  {
   "id": "forswear",
@@ -32280,7 +32325,10 @@ window.GLOSSARY = [
     [ 9, 16 ] ],
    [
     "Revelation", 1,
-    [ 20 ] ] ]
+    [ 20 ] ],
+   [
+    "Revelation", 10,
+    [ 7 ] ] ]
  },
  {
   "id": "converted",
@@ -35970,7 +36018,10 @@ window.GLOSSARY = [
     [ 27 ] ],
    [
     "Revelation", 5,
-    [ 2, 5 ] ] ]
+    [ 2, 5 ] ],
+   [
+    "Revelation", 9,
+    [ 15 ] ] ]
  },
  {
   "id": "ruler-of-the-synagogue",
@@ -39576,7 +39627,10 @@ window.GLOSSARY = [
     [ 1, 3, 4, 5, 6, 22, 24, 31, 39 ] ],
    [
     "1 Thessalonians", 5,
-    [ 20 ] ] ]
+    [ 20 ] ],
+   [
+    "Revelation", 10,
+    [ 11 ] ] ]
  },
  {
   "id": "determinate-counsel",
@@ -41850,7 +41904,10 @@ window.GLOSSARY = [
     [ 5, 6, 18, 21, 22, 23, 39 ] ],
    [
     "Revelation", 7,
-    [ 9 ] ] ]
+    [ 9 ] ],
+   [
+    "Revelation", 10,
+    [ 11 ] ] ]
  },
  {
   "id": "elymas",
@@ -42411,7 +42468,10 @@ window.GLOSSARY = [
     [ 9, 11 ] ],
    [
     "Galatians", 3,
-    [ 1 ] ] ]
+    [ 1 ] ],
+   [
+    "Revelation", 9,
+    [ 21 ] ] ]
  },
  {
   "id": "gall-of-bitterness",
@@ -44223,7 +44283,10 @@ window.GLOSSARY = [
   "refs": [
    [
     "Acts", 21,
-    [ 37 ] ] ]
+    [ 37 ] ],
+   [
+    "Revelation", 9,
+    [ 11 ] ] ]
  },
  {
   "id": "defence",
@@ -45198,7 +45261,10 @@ window.GLOSSARY = [
     [ 19 ] ],
    [
     "Revelation", 7,
-    [ 2 ] ] ]
+    [ 2 ] ],
+   [
+    "Revelation", 9,
+    [ 4 ] ] ]
  },
  {
   "id": "father-of-many-nations",
@@ -55095,7 +55161,10 @@ window.GLOSSARY = [
     [ 13 ] ],
    [
     "Hebrews", 7,
-    [ 21 ] ] ]
+    [ 21 ] ],
+   [
+    "Revelation", 10,
+    [ 6 ] ] ]
  },
  {
   "id": "gods-rest",
@@ -57735,7 +57804,13 @@ window.GLOSSARY = [
   "refs": [
    [
     "Revelation", 8,
-    [ 2, 6, 13 ] ] ]
+    [ 2, 6, 13 ] ],
+   [
+    "Revelation", 9,
+    [ 14 ] ],
+   [
+    "Revelation", 10,
+    [ 7 ] ] ]
  },
  {
   "id": "golden-altar",
@@ -57744,7 +57819,10 @@ window.GLOSSARY = [
   "refs": [
    [
     "Revelation", 8,
-    [ 3, 5 ] ] ]
+    [ 3, 5 ] ],
+   [
+    "Revelation", 9,
+    [ 13 ] ] ]
  },
  {
   "id": "prayers-of-the-saints",
@@ -57765,7 +57843,10 @@ window.GLOSSARY = [
   "refs": [
    [
     "Revelation", 8,
-    [ 7, 8, 9, 10, 11, 12 ] ] ]
+    [ 7, 8, 9, 10, 11, 12 ] ],
+   [
+    "Revelation", 9,
+    [ 15, 18 ] ] ]
  },
  {
   "id": "burning-mountain",
@@ -58050,7 +58131,10 @@ window.GLOSSARY = [
   "refs": [
    [
     "Revelation", 4,
-    [ 3 ] ] ]
+    [ 3 ] ],
+   [
+    "Revelation", 10,
+    [ 1 ] ] ]
  },
  {
   "id": "crowns-of-gold",
@@ -58408,5 +58492,152 @@ window.GLOSSARY = [
    [
     "Revelation", 2,
     [ 28 ] ] ]
+ },
+ {
+  "id": "bottomless-pit",
+  "kind": "place",
+  "name": "The bottomless pit (the abyss, where evil spirits are locked up until God allows)",
+  "refs": [
+   [
+    "Revelation", 9,
+    [ 1, 2, 11 ] ] ]
+ },
+ {
+  "id": "abaddon",
+  "kind": "person",
+  "name": "Abaddon, Apollyon (the Destroyer, king over the locusts of the pit)",
+  "refs": [
+   [
+    "Revelation", 9,
+    [ 11 ] ] ]
+ },
+ {
+  "id": "locusts-of-the-pit",
+  "kind": "term",
+  "name": "Locusts out of the pit (a plague of torment that could not touch God's sealed people)",
+  "refs": [
+   [
+    "Revelation", 9,
+    [ 3, 7 ] ] ]
+ },
+ {
+  "id": "scorpions",
+  "kind": "term",
+  "name": "Scorpion (a creature whose sting is agony but seldom kills)",
+  "refs": [
+   [
+    "Revelation", 9,
+    [ 3, 5, 10 ] ] ]
+ },
+ {
+  "id": "euphrates",
+  "kind": "place",
+  "name": "The great river Euphrates (the far eastern edge of the Roman world, where invaders came from)",
+  "refs": [
+   [
+    "Revelation", 9,
+    [ 14 ] ] ]
+ },
+ {
+  "id": "four-angels-euphrates",
+  "kind": "person",
+  "name": "The four angels bound at the Euphrates (held until God's exact hour)",
+  "refs": [
+   [
+    "Revelation", 9,
+    [ 14, 15 ] ] ]
+ },
+ {
+  "id": "two-hundred-million",
+  "kind": "term",
+  "name": "Two hundred thousand thousand (200 million: an army past counting)",
+  "refs": [
+   [
+    "Revelation", 9,
+    [ 16 ] ] ]
+ },
+ {
+  "id": "jacinth",
+  "kind": "term",
+  "name": "Jacinth (a precious stone, deep blue or violet)",
+  "refs": [
+   [
+    "Revelation", 9,
+    [ 17 ] ] ]
+ },
+ {
+  "id": "brimstone",
+  "kind": "term",
+  "name": "Brimstone (burning sulphur, the mark of God's judgment since Sodom)",
+  "refs": [
+   [
+    "Luke", 17,
+    [ 29 ] ],
+   [
+    "Revelation", 9,
+    [ 17, 18 ] ] ]
+ },
+ {
+  "id": "works-of-their-hands",
+  "kind": "term",
+  "name": "The works of their hands (idols men make and then serve)",
+  "refs": [
+   [
+    "Revelation", 9,
+    [ 20 ] ] ]
+ },
+ {
+  "id": "mighty-angel",
+  "kind": "person",
+  "name": "The mighty angel with the little book (one foot on the sea, one on the earth)",
+  "refs": [
+   [
+    "Revelation", 10,
+    [ 1 ] ] ]
+ },
+ {
+  "id": "pillars-of-fire",
+  "kind": "term",
+  "name": "Feet as pillars of fire (strength and holiness, like the pillar of fire that led Israel)",
+  "refs": [
+   [
+    "Revelation", 10,
+    [ 1 ] ] ]
+ },
+ {
+  "id": "little-book",
+  "kind": "term",
+  "name": "The little book (the open scroll John was told to eat)",
+  "refs": [
+   [
+    "Revelation", 10,
+    [ 2, 8, 9, 10 ] ] ]
+ },
+ {
+  "id": "seven-thunders",
+  "kind": "term",
+  "name": "The seven thunders (words John heard and was told to seal up)",
+  "refs": [
+   [
+    "Revelation", 10,
+    [ 3, 4 ] ] ]
+ },
+ {
+  "id": "time-no-longer",
+  "kind": "term",
+  "name": "Time no longer (no more delay)",
+  "refs": [
+   [
+    "Revelation", 10,
+    [ 6 ] ] ]
+ },
+ {
+  "id": "sweet-and-bitter",
+  "kind": "term",
+  "name": "Sweet as honey, bitter in the belly (God's word: sweet to take in, hard to carry)",
+  "refs": [
+   [
+    "Revelation", 10,
+    [ 9, 10 ] ] ]
  }
 ];
