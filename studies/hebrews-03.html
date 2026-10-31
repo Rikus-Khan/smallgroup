@@ -1,0 +1,623 @@
+<!doctype html>
+<html lang="en" data-theme="scribe">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Hebrews 3</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="../assets/fonts.css">
+<link rel="stylesheet" href="../assets/deck.css">
+<link rel="stylesheet" href="../assets/themes.css">
+<style>
+/* he03-where: where we are in Hebrews. Five parts, each showing how Jesus is better. Each part (div, --k) holds its
+   chapters (p > i; read ones .done, ours .here), its name (b), what it says (small) and a key phrase (q + cite).
+   The part we're in is .now. */
+.he03-where { display: grid; grid-template-columns: repeat(5, 1fr); gap: 10px; margin: .5em 0 1em; }
+.he03-where > div { --c: var(--line-strong); padding: .5em .7em .6em; border-top: 6px solid var(--c); border-radius: 0 0 10px 10px;
+  background: color-mix(in srgb, var(--surface) 70%, transparent); opacity: 0; transform: translateY(10px);
+  transition: opacity .6s ease, transform .6s ease; transition-delay: calc(var(--k, 0) * 300ms + 300ms); }
+.slide.active .he03-where > div { opacity: 1; transform: none; }
+.he03-where > div.now { --c: var(--accent); background: color-mix(in srgb, var(--accent) 15%, transparent); box-shadow: inset 0 0 0 2px var(--accent); }
+.he03-where p { display: flex; flex-wrap: wrap; gap: 5px; margin: 0 0 .4em; }
+.he03-where i { min-width: 2em; padding: .2em .25em; text-align: center; border-radius: 6px; border: 1.5px solid var(--line-strong);
+  font: 700 clamp(.78rem, .72rem + .3vw, 1rem) var(--sans); font-style: normal; color: var(--ink-soft); }
+.he03-where i.done { background: color-mix(in srgb, var(--accent) 14%, transparent); color: var(--ink); }
+.he03-where i.here { background: var(--accent); border-color: var(--accent); color: var(--on-accent); }
+.slide.active .he03-where i.here { animation: he03-here 2.4s ease-in-out 1.8s infinite; }
+@keyframes he03-here { 50% { box-shadow: 0 0 0 6px color-mix(in srgb, var(--accent) 28%, transparent); } }
+.he03-where b { display: block; font: 600 clamp(1rem, .85rem + .6vw, 1.4rem)/1.1 var(--serif); color: var(--ink); }
+.he03-where small { display: block; margin: .2em 0 .35em; font-size: clamp(.76rem, .7rem + .24vw, .95rem); line-height: 1.3; color: var(--ink-soft); }
+.he03-where q { display: block; font: italic clamp(.82rem, .75rem + .3vw, 1.02rem)/1.3 var(--serif); quotes: "\201C" "\201D"; }
+.he03-where cite { display: block; margin-top: .2em; font-style: normal; font-size: clamp(.7rem, .66rem + .2vw, .9rem); color: var(--ink-soft); }
+@media (max-width: 760px) {
+  .he03-where { grid-template-columns: 1fr; gap: 6px; }
+  .he03-where > div { border-top: 0; border-left: 6px solid var(--c); border-radius: 0 10px 10px 0; padding: .35em .7em .4em; }
+  .he03-where q, .he03-where cite { display: none; }
+}
+
+/* Stick figures: strokes in .he03-man, a filled head (circle). */
+.he03-man { fill: none; stroke: var(--ink); stroke-width: 6; stroke-linecap: round; stroke-linejoin: round; }
+.he03-man circle { fill: var(--ink); stroke: none; }
+
+/* he03-sent: the Apostle and High Priest (3:1). God above, us below, Christ between. One arrow draws down
+   (the Apostle, sent from God to us), then one draws up (the High Priest, who goes to God for us). */
+.he03-arc { fill: none; stroke-width: 6; stroke-linecap: round; stroke-dasharray: 1; stroke-dashoffset: 1; transition: stroke-dashoffset 1.6s ease; }
+.he03-arc.down { stroke: var(--accent); transition-delay: .8s; }
+.he03-arc.up { stroke: var(--cool); transition-delay: 2.6s; }
+.slide.active .he03-arc { stroke-dashoffset: 0; }
+.he03-tip { opacity: 0; transition: opacity .5s ease; }
+.he03-tip.down { fill: var(--accent); transition-delay: 2.2s; }
+.he03-tip.up { fill: var(--cool); transition-delay: 4s; }
+.he03-say { opacity: 0; transition: opacity .8s ease; }
+.he03-say.down { transition-delay: 1.4s; }
+.he03-say.up { transition-delay: 3.2s; }
+.slide.active :is(.he03-tip, .he03-say) { opacity: 1; }
+
+/* he03-house: a servant in the house, a Son over it (3:3-6). The house draws itself; Moses stands inside as a servant;
+   the Son shines over it as its builder; on a .he03-us step the house fills with people: "whose house are we". */
+.he03-wall { fill: color-mix(in srgb, var(--surface) 60%, transparent); stroke: var(--leather-light); stroke-width: 5; stroke-linejoin: round;
+  stroke-dasharray: 1; stroke-dashoffset: 1; transition: stroke-dashoffset 1.8s ease .3s; }
+.slide.active .he03-wall { stroke-dashoffset: 0; }
+.he03-moses { opacity: 0; transition: opacity .8s ease 1.6s; }
+.he03-son { opacity: 0; transition: opacity 1s ease 2.6s; }
+.slide.active :is(.he03-moses, .he03-son) { opacity: 1; }
+.he03-son-ray { stroke: var(--accent-hot); stroke-width: 3; stroke-linecap: round; }
+.he03-kid { opacity: 0; transform: translateY(8px); transition: opacity .5s ease, transform .5s ease; transition-delay: calc(var(--k, 0) * 160ms + .2s); }
+.slide:has(.he03-us.on) .he03-kid { opacity: 1; transform: none; }
+.he03-kid .he03-man { stroke: var(--accent-hot); stroke-width: 5; }
+.he03-kid .he03-man circle { fill: var(--accent-hot); }
+
+/* he03-wild: the wilderness map, cropped from the world map with its own region names and dots; below the map's southern
+   edge the svg's own background shows as sea in the two gulfs. Route 1 draws on open, .r1 (the wandering) and .r2 (the
+   next generation goes in) on steps. */
+.he03-wild { background: color-mix(in srgb, var(--cool) 32%, var(--bg)); }
+.he03-wild .map-region:not(.he03-reg) { display: none; }
+.he03-wild .he03-lab { font-size: calc(18px * var(--u, 1)); font-style: italic; fill: var(--ink-soft); }
+.he03-wild .he03-n { font-size: calc(22px * var(--u, 1)); font-weight: 700; }
+.he03-wild .he03-yrs { opacity: 0; transition: opacity .8s ease 1.2s; }
+.slide:has(.map-go1.on) .he03-wild .he03-yrs { opacity: 1; }
+
+/* he03-hard: hardened through the deceitfulness of sin (3:13). One lie at a time (.he03-lie, --k) appears, and a crust
+   (.he03-crust, --k) grows round the heart while it goes grey. On a .he03-soft step the crust cracks and falls away. */
+.he03-heart { fill: var(--danger); transition: fill 3s ease 1.5s; }
+.slide.active .he03-heart { fill: color-mix(in srgb, var(--ink-soft) 70%, var(--surface-2)); transition: fill 6s ease 1.5s; }
+.slide:has(.he03-soft.on) .he03-heart { fill: var(--danger); transition: fill 1.5s ease .8s; }
+.he03-crust { fill: none; stroke: color-mix(in srgb, var(--ink-soft) var(--m, 60%), var(--bg)); stroke-linejoin: round; opacity: 0;
+  transform-box: fill-box; transform-origin: center; transition: opacity .8s ease, transform 1.2s ease; transition-delay: calc(var(--k, 0) * 1.3s + 1s); }
+.slide.active .he03-crust { opacity: 1; }
+.slide:has(.he03-soft.on) .he03-crust { opacity: 0; transform: translateY(60px) scale(1.1); transition-delay: calc(var(--k, 0) * 120ms); }
+.he03-lie { font: italic 600 19px var(--serif); fill: var(--ink-soft); opacity: 0; transition: opacity .7s ease; transition-delay: calc(var(--k, 0) * 1.3s + .7s); }
+.slide.active .he03-lie { opacity: 1; }
+.slide:has(.he03-soft.on) .he03-lie { opacity: .15; text-decoration: line-through; transition-delay: 0s; }
+.he03-truth { opacity: 0; transition: opacity 1s ease 1.4s; }
+.slide:has(.he03-soft.on) .he03-truth { opacity: 1; }
+
+/* he03-ring: "exhort one another daily … lest any of you be hardened" (3:13). Six men round a table. One (.he03-away)
+   slowly drifts off and greys. On a .he03-reach step the others call out to him (.he03-call, --k) and he comes back in. */
+.he03-table { fill: color-mix(in srgb, var(--leather) 45%, var(--surface-2)); stroke: var(--leather-light); stroke-width: 3; }
+.he03-away { transition: transform 5s ease 1.2s, opacity 5s ease 1.2s; }
+.slide.active .he03-away { transform: translate(120px, -40px); opacity: .4; }
+.slide:has(.he03-reach.on) .he03-away { transform: none; opacity: 1; transition: transform 1.8s ease 1.8s, opacity 1.4s ease 1.8s; }
+.slide:has(.he03-reach.on) .he03-away .he03-man { stroke: var(--accent-hot); }
+.slide:has(.he03-reach.on) .he03-away .he03-man circle { fill: var(--accent-hot); }
+.he03-away .he03-man { transition: stroke 1s ease 3s; }
+.he03-anyof { opacity: 0; transition: opacity 1s ease 4.5s; }
+.slide.active .he03-anyof { opacity: 1; }
+.slide:has(.he03-reach.on) .he03-anyof { opacity: 0; transition-delay: 0s; }
+.he03-call { opacity: 0; transform: translateY(6px); transition: opacity .5s ease, transform .5s ease; transition-delay: calc(var(--k, 0) * 350ms + .2s); }
+.slide:has(.he03-reach.on) .he03-call { opacity: 1; transform: none; }
+.he03-bub { fill: var(--surface); stroke: var(--accent); stroke-width: 2; }
+</style>
+</head>
+<body>
+<main class="deck" id="deck">
+
+<!-- ======================= OPENING ======================= -->
+<section class="slide title">
+  <div class="inner">
+    <div class="emblem rise"></div>
+    <h1 class="rise" style="--d:1">Hebrews 3</h1>
+    <p class="sub rise" style="--d:3">To day, harden not your hearts</p>
+    <p class="tag rise" style="--d:5">Jesus is greater than Moses. A whole generation walked out of Egypt and never walked into the land. Don't let it happen to you, and don't let it happen to the man next to you.</p>
+  </div>
+</section>
+
+<section class="slide watch">
+  <div class="inner">
+    <h2 class="rise">Things to watch for</h2>
+    <p class="lede rise" style="--d:1">Keep these questions in the back of your mind as we read. We'll come back to every one of them at the end.</p>
+    <ol class="seeds">
+      <li class="step"><span class="topic">Consider Jesus</span><span class="seed-q">Why are we told to “consider” Jesus as Apostle and High Priest?</span></li>
+      <li class="step"><span class="topic">Better than Moses</span><span class="seed-q">How is Jesus greater than Moses?</span></li>
+      <li class="step"><span class="topic">The wilderness</span><span class="seed-q">Why couldn't Israel enter into God's rest?</span></li>
+      <li class="step"><span class="topic">The warning</span><span class="seed-q">If a believer is secure, who is this warning for?</span></li>
+      <li class="step"><span class="topic">One another</span><span class="seed-q">What does God want us to do for each other every day?</span></li>
+      <li class="step"><span class="topic">To day</span><span class="seed-q">Why does the writer keep saying “To day”?</span></li>
+    </ol>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise">Where we are in Hebrews</h2>
+    <div class="he03-where" role="img" aria-label="Hebrews in five parts, each showing that Jesus is better. Chapters 1 and 2: better than the angels. Chapters 3 and 4: better than Moses, with a better rest. Chapters 5 to 7: a better priest. Chapters 8 to 10: a better covenant and sacrifice. Chapters 11 to 13: a better way to live, by faith. We are in chapter 3, the start of the second part.">
+      <div style="--k:0"><p><i class="done">1</i><i class="done">2</i></p><b>Better than angels</b><small>The Son is God's last word</small><q>spoken unto us by his Son</q><cite>1:2</cite></div>
+      <div class="now" style="--k:1"><p><i class="here">3</i><i>4</i></p><b>Better than Moses</b><small>A better rest, open To day</small><q>consider the Apostle and High Priest</q><cite>3:1</cite></div>
+      <div style="--k:2"><p><i>5</i><i>6</i><i>7</i></p><b>A better priest</b><small>After the order of Melchisedec</small><q>Thou art a priest for ever</q><cite>5:6</cite></div>
+      <div style="--k:3"><p><i>8</i><i>9</i><i>10</i></p><b>A better covenant</b><small>One sacrifice, once for all</small><q>by one offering he hath perfected for ever</q><cite>10:14</cite></div>
+      <div style="--k:4"><p><i>11</i><i>12</i><i>13</i></p><b>A better way</b><small>Faith that keeps going</small><q>Looking unto Jesus</q><cite>12:2</cite></div>
+    </div>
+    <p class="note rise" style="--d:3">The first readers were Jewish believers. Things had gotten hard, and some were tempted to slip back into the old religion they grew up in. So the writer of Hebrews keeps showing them one thing: whatever you'd go back to, Jesus is better.</p>
+    <p class="note step">Chapter 2 ended with Jesus as <em>“a merciful and faithful high priest”</em> who was tempted Himself and <em>“is able to succour them that are tempted”</em> (2:17–18). Chapter 3 opens with <em>“Wherefore”</em>: so then, look at Him.</p>
+  </div>
+</section>
+
+<!-- ======================= PART ONE: CONSIDER JESUS ======================= -->
+<section class="slide part">
+  <div class="inner">
+    <p class="part-n rise">Part one</p>
+    <h2 class="rise" style="--d:1">Consider Jesus</h2>
+    <p class="range rise" style="--d:2">Verses 1–6</p>
+    <div class="rule"></div>
+    <p class="hook rise" style="--d:4">Moses was a faithful servant. Jesus is the Son.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="1-2" data-hl="holy brethren, partakers of the heavenly calling|consider the Apostle and High Priest of our profession, Christ Jesus"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <div class="split">
+      <div class="stage">
+        <svg viewBox="0 0 600 340" role="img" aria-label="God at the top, a group of men at the bottom, and Christ Jesus between them. An arrow comes down from God to the men: the Apostle, sent from God to us. Then an arrow goes up from the men to God: the High Priest, who goes to God for us.">
+          <defs><radialGradient id="he03-sun"><stop offset="0" style="stop-color:var(--glow)"/><stop offset=".6" stop-opacity=".7" style="stop-color:var(--accent)"/><stop offset="1" stop-opacity="0" style="stop-color:var(--accent)"/></radialGradient></defs>
+          <circle cx="300" cy="52" r="56" fill="url(#he03-sun)"/>
+          <text x="300" y="60" text-anchor="middle" font-size="22" font-weight="700" style="fill:var(--on-glow)">God</text>
+          <g style="fill:var(--accent-hot)"><rect x="293" y="138" width="14" height="66" rx="3"/><rect x="274" y="154" width="52" height="13" rx="3"/></g>
+          <text x="300" y="228" text-anchor="middle" font-size="17" font-weight="700" style="fill:var(--ink)">Christ Jesus</text>
+          <path class="he03-arc down" pathLength="1" d="M262 98 Q160 180 250 278"/>
+          <path class="he03-tip down" d="M238 274 L254 290 L258 266 Z"/>
+          <path class="he03-arc up" pathLength="1" d="M350 278 Q440 180 338 98"/>
+          <path class="he03-tip up" d="M330 110 L334 88 L352 104 Z"/>
+          <g class="he03-say down" text-anchor="middle"><text x="95" y="170" font-size="21" font-weight="700" style="fill:var(--accent-hot)">Apostle</text><text x="95" y="194" font-size="15" style="fill:var(--ink-soft)">sent from God</text><text x="95" y="212" font-size="15" style="fill:var(--ink-soft)">to us</text></g>
+          <g class="he03-say up" text-anchor="middle"><text x="505" y="170" font-size="21" font-weight="700" style="fill:var(--cool)">High Priest</text><text x="505" y="194" font-size="15" style="fill:var(--ink-soft)">goes to God</text><text x="505" y="212" font-size="15" style="fill:var(--ink-soft)">for us</text></g>
+          <g class="he03-man" style="stroke-width:5">
+            <circle cx="240" cy="296" r="8"/><path d="M240 304 L240 326 M240 312 L230 322 M240 312 L250 322"/>
+            <circle cx="270" cy="300" r="8"/><path d="M270 308 L270 330 M270 316 L260 326 M270 316 L280 326"/>
+            <circle cx="300" cy="296" r="8"/><path d="M300 304 L300 326 M300 312 L290 322 M300 312 L310 322"/>
+            <circle cx="330" cy="300" r="8"/><path d="M330 308 L330 330 M330 316 L320 326 M330 316 L340 326"/>
+            <circle cx="360" cy="296" r="8"/><path d="M360 304 L360 326 M360 312 L350 322 M360 312 L370 322"/>
+          </g>
+          <text x="420" y="322" font-size="16" style="fill:var(--ink-soft)">us</text>
+        </svg>
+      </div>
+      <div>
+        <h2 class="rise" style="--d:1">Fix your eyes on Him</h2>
+        <p class="note rise" style="--d:2"><em>“Consider”</em> means look hard and keep looking, the way a man studies something until he understands it. Not a glance on Sunday.</p>
+        <p class="note step">An <em>apostle</em> is one who is sent: Jesus came from God to us. A <em>high priest</em> stood before God for the people: Jesus goes to God for us. He is both ends of the bridge.</p>
+        <p class="note step">And look what He calls these struggling men: <em>“holy brethren.”</em> Holy, because God set them apart for Himself, not because they had it all together. <em>“Our profession”</em> is what we say we believe: Jesus is Lord.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="slide verse" data-v="3-6" data-hl="he who hath builded the house hath more honour than the house|he that built all things is God|as a servant|But Christ as a son over his own house; whose house are we"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <div class="split">
+      <div class="stage">
+        <svg viewBox="0 -10 600 330" role="img" aria-label="A house draws itself. Inside stands Moses, labeled a servant in the house. Above the roof shines a light labeled the Son, over the house, its builder. Then the house fills with people: whose house are we.">
+          <line x1="40" y1="300" x2="560" y2="300" stroke-width="3" style="stroke:var(--line-strong)"/>
+          <path class="he03-wall" pathLength="1" d="M140 300 L140 150 L300 70 L460 150 L460 300 Z"/>
+          <g class="he03-moses">
+            <g class="he03-man"><circle cx="205" cy="208" r="11"/><path d="M205 220 L205 258 M205 258 L194 292 M205 258 L216 292 M205 232 L188 250 M205 232 L224 222"/></g>
+            <rect x="222" y="200" width="18" height="26" rx="4" style="fill:var(--surface-2);stroke:var(--ink-soft);stroke-width:2"/>
+            <text x="205" y="180" text-anchor="middle" font-size="17" font-weight="700" style="fill:var(--ink)">Moses</text>
+            <text x="205" y="320" text-anchor="middle" font-size="15" style="fill:var(--ink-soft)">a servant, in the house</text>
+          </g>
+          <g class="he03-son">
+            <g class="he03-son-ray"><path d="M300 0 L300 -6 M318 8 L324 3 M282 8 L276 3 M326 26 L333 26 M274 26 L267 26"/></g>
+            <circle cx="300" cy="26" r="14" style="fill:var(--accent-hot)"/>
+            <text x="345" y="22" font-size="19" font-weight="700" style="fill:var(--accent-hot)">the Son, over the house</text>
+            <text x="345" y="44" font-size="15" style="fill:var(--ink-soft)">the One who built it (v. 3)</text>
+          </g>
+          <g>
+            <g class="he03-kid" style="--k:0"><g class="he03-man"><circle cx="300" cy="226" r="8"/><path d="M300 234 L300 262 M300 262 L292 288 M300 262 L308 288 M300 244 L290 256 M300 244 L310 256"/></g></g>
+            <g class="he03-kid" style="--k:1"><g class="he03-man"><circle cx="335" cy="220" r="8"/><path d="M335 228 L335 258 M335 258 L327 288 M335 258 L343 288 M335 238 L325 250 M335 238 L345 250"/></g></g>
+            <g class="he03-kid" style="--k:2"><g class="he03-man"><circle cx="370" cy="226" r="8"/><path d="M370 234 L370 262 M370 262 L362 288 M370 262 L378 288 M370 244 L360 256 M370 244 L380 256"/></g></g>
+            <g class="he03-kid" style="--k:3"><g class="he03-man"><circle cx="405" cy="220" r="8"/><path d="M405 228 L405 258 M405 258 L397 288 M405 258 L413 288 M405 238 L395 250 M405 238 L415 250"/></g></g>
+            <g class="he03-kid" style="--k:4"><g class="he03-man"><circle cx="435" cy="226" r="8"/><path d="M435 234 L435 262 M435 262 L427 288 M435 262 L443 288 M435 244 L425 256 M435 244 L445 256"/></g></g>
+            <g class="he03-kid" style="--k:5"><text x="370" y="185" text-anchor="middle" font-size="18" font-weight="700" style="fill:var(--accent-hot);stroke:none">“whose house are we”</text></g>
+          </g>
+        </svg>
+      </div>
+      <div>
+        <h2 class="rise" style="--d:1">A servant, and the Son</h2>
+        <p class="note rise" style="--d:2">To a Jewish believer, nobody stood higher than Moses, and God Himself called him faithful (Numbers 12:7). The writer doesn't knock Moses down.</p>
+        <p class="note step">Moses served <em>in</em> God's house. Christ is <em>over</em> it, as the Son, and He built it. The builder gets more honor than the building.</p>
+        <p class="note step he03-us">And the house is people: <em>“whose house are we.”</em> A forgiven drunk, an ex-con, a man with a past: all family.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ======================= PART TWO: TO DAY ======================= -->
+<section class="slide part">
+  <div class="inner">
+    <p class="part-n rise">Part two</p>
+    <h2 class="rise" style="--d:1">To day</h2>
+    <p class="range rise" style="--d:2">Verses 7–11</p>
+    <div class="rule"></div>
+    <p class="hook rise" style="--d:4">The second warning: they heard Him, and hardened their hearts.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="7-9" data-hl="To day if ye will hear his voice|Harden not your hearts|saw my works forty years"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="7" data-hl="To day if ye will hear his voice"></blockquote>
+    <h2 class="rise" style="--d:1">“To day” keeps moving</h2>
+    <ol class="timeline rise" style="--d:2">
+      <li style="--k:0"><b>about 1440 BC</b><span>Israel in the wilderness hears God, and hardens its heart</span></li>
+      <li style="--k:1"><b>about 1000 BC</b><span>David writes Psalm 95: <em>“To day if ye will hear his voice”</em></span></li>
+      <li style="--k:2"><b>about AD 64 to 68</b><span>Hebrews quotes it to struggling believers: still <em>“To day”</em></span></li>
+      <li class="lit" style="--k:3"><b>This morning</b><span>The same voice, the same word: <em>To day</em></span></li>
+    </ol>
+    <p class="note step">These lines come from Psalm 95. Notice who the writer says is speaking: <em>“as the Holy Ghost saith.”</em> Not “said,” long ago. <em>Saith.</em> The Spirit of God is still saying it, right now, to you.</p>
+    <p class="note step">David wrote it centuries after the wilderness, and Hebrews quoted it a thousand years after David, and every time it says <em>“To day.”</em> Today is the only day you can answer God in. Yesterday is gone, and tomorrow isn't promised.</p>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <div class="split">
+      <div class="stage">
+        <svg class="he03-wild" data-world viewBox="668 440 162 162" role="img" aria-label="A map of the wilderness, from Egypt across the Sinai peninsula. A route runs from Rameses in Egypt, across the head of the Red sea, south to Mount Sinai, then north to Kadesh-barnea: about eleven days' journey. Then a looping path wanders around the wilderness for forty years. Then a last route runs from Kadesh-barnea down to Ezion-geber, around Edom and Moab, to the Jordan across from Jericho.">
+          <text class="map-region he03-reg" x="690" y="548" text-anchor="middle">EGYPT</text>
+          <text class="map-region he03-reg" x="752" y="567" text-anchor="middle">SINAI</text>
+          <text class="map-region he03-reg" x="745" y="508" text-anchor="middle">PARAN</text>
+          <text class="map-region he03-reg" x="812" y="468" text-anchor="middle">CANAAN</text>
+          <text class="map-region he03-reg" x="817" y="545" text-anchor="middle">EDOM</text>
+          <text class="map-region he03-reg" x="818" y="500" text-anchor="middle">MOAB</text>
+          <text class="map-water" x="720" y="470" text-anchor="middle">the Great Sea</text>
+          <path class="map-river" d="M793.8 488 C794.5 475 795 465 795.8 453.4"/>
+          <ellipse class="map-lake" cx="793.2" cy="499" rx="1.8" ry="11" style="stroke-width:.4"/>
+          <path class="map-route" pathLength="1" d="M701.8 518.4 L708.1 526.4 L716 546 L724 553 L729.5 556.8 L738 575 L746 588 L755.2 590.7 L766.6 577 L770 552 L766.6 523.8"/>
+          <path class="map-route r1 j3" pathLength="1" d="M766.6 523.8 C750 515 738 528 744 540 C750 552 762 540 758 552 C754 566 738 560 742 550 C748 538 772 546 779.9 558.4 C786 568 768 562 772 548 C776 536 760 532 766.6 523.8"/>
+          <path class="map-route r2 j2" pathLength="1" d="M766.6 523.8 L778 532 L783 548 L779.9 558.4 L792 556 L808 535 L810 510 L805 495 L799.6 487.4 L795 485.5"/>
+          <g class="map-town here"><circle cx="701.8" cy="518.4" r="1.25"/><text x="699.5" y="519.5" text-anchor="end">Rameses</text></g>
+          <g class="map-town here"><circle cx="755.2" cy="590.7" r="1.25"/><text x="757.5" y="591.8" text-anchor="start">Mount Sinai</text></g>
+          <g class="map-town here"><circle cx="766.6" cy="523.8" r="1.25"/><circle class="map-ping" cx="766.6" cy="523.8" r="1.6"/><text x="764.3" y="524.9" text-anchor="end">Kadesh-barnea</text></g>
+          <g class="map-town"><circle cx="779.9" cy="558.4" r="1.25"/><text x="782.2" y="559.5" text-anchor="start">Ezion-geber</text></g>
+          <g class="map-town"><circle cx="792.3" cy="484.2" r="1.25"/><text x="792.3" y="481" text-anchor="middle">Jericho</text></g>
+          <text class="he03-lab" x="712" y="575" text-anchor="middle">Red sea</text>
+          <text class="he03-n" x="771" y="579" style="fill:var(--accent-hot)">≈ 11 days</text>
+          <text class="he03-n he03-yrs" x="730" y="536" text-anchor="middle" style="fill:var(--wine)">40 years</text>
+        </svg>
+      </div>
+      <div>
+        <h2 class="rise" style="--d:1">The provocation</h2>
+        <p class="note rise" style="--d:2">God brought Israel out of Egypt, through the Red sea, to Mount Sinai, then north to Kadesh-barnea, on the edge of the promised land. The map traces the route as it's commonly drawn.</p>
+        <p class="note step map-go1">At Kadesh they sent spies, heard the report of giants, and refused to go in (Numbers 13–14). They even said, <em>“Let us make a captain, and let us return into Egypt”</em> (Numbers 14:4). So they wandered for forty years, until that generation died.</p>
+        <p class="note step map-go2">Their children went in, led by Joshua, across the Jordan at Jericho.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="slide verse" data-v="10-11" data-hl="They do alway err in their heart|They shall not enter into my rest"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise"><p>“(There are eleven days’ journey from Horeb by the way of mount Seir unto Kadesh-barnea.)”</p><cite>Deuteronomy 1:2</cite></blockquote>
+    <div class="temples">
+      <div class="body-t rise" style="--d:2"><h3>The trip God planned</h3><div class="big">11 days</div><p>From Mount Sinai (Horeb) to the edge of the land</p></div>
+      <div class="stone-t step"><h3>The trip unbelief made</h3><div class="big">40 years</div><p>Round and round, in sight of what God had promised</p></div>
+    </div>
+    <p class="note step">They <em>“saw my works forty years”</em>: the plagues, the sea split open, manna every morning, water from a rock. They saw it all, and still didn't trust Him. <em>“They do alway err in their heart”</em>: the problem was never their feet. It was their hearts.</p>
+    <p class="note step">Some of us know this kind of trip. Years spent circling the same ground, the same bottle, the same mess, when God had a way through. That time is not wasted if you learn from it. You don't have to take one more lap.</p>
+  </div>
+</section>
+
+<!-- ======================= PART THREE: TAKE HEED, BRETHREN ======================= -->
+<section class="slide part">
+  <div class="inner">
+    <p class="part-n rise">Part three</p>
+    <h2 class="rise" style="--d:1">Take heed, brethren</h2>
+    <p class="range rise" style="--d:2">Verses 12–19</p>
+    <div class="rule"></div>
+    <p class="hook rise" style="--d:4">Watch your own heart, and watch out for each other.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="12-13" data-hl="an evil heart of unbelief|exhort one another daily, while it is called To day|hardened through the deceitfulness of sin"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise">Five warnings in Hebrews</h2>
+    <ol class="signs rise" style="--d:1">
+      <li><b>Don't drift</b>2:1–4</li>
+      <li class="now"><b>Don't harden your heart</b>3:7–4:13</li>
+      <li><b>Don't stay a baby</b>5:11–6:12</li>
+      <li><b>Don't throw it away</b>10:26–39</li>
+      <li><b>Don't refuse Him</b>12:25–29</li>
+    </ol>
+    <p class="note step">Hebrews has five warnings spread through it, and this is the second, the longest. They're strong words, and they should be. But read them the way the whole book reads them.</p>
+    <p class="note step">The same letter says Jesus <em>“is able also to save them to the uttermost that come unto God by him”</em> (7:25), and God has said, <em>“I will never leave thee, nor forsake thee”</em> (13:5). The warnings don't cancel those promises. So who are they for?</p>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="12"></blockquote>
+    <h2 class="rise" style="--d:1">Who the warning is for</h2>
+    <div class="columns">
+      <div class="col law step"><span class="who">It shakes loose</span><h3>The man who only sat near the faith</h3><p>He came out of Egypt with the crowd and saw it all, but never trusted God himself. Being near it isn't the same as being in it.</p></div>
+      <div class="col grace step"><span class="who">It drives home</span><h3>The man who truly belongs to Christ</h3><p>He can't be lost. He hears the warning as a hand on his shoulder: hold on, don't harden. God uses warnings to keep His own.</p></div>
+    </div>
+    <blockquote class="quote step"><p>“And I give unto them eternal life; and they shall never perish, neither shall any man pluck them out of my hand.”</p><cite>John 10:28</cite></blockquote>
+    <p class="note step">If you're afraid you've lost your salvation, that very fear shows a heart that hasn't hardened. A hard heart doesn't worry about God at all.</p>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="13" data-hl="hardened through the deceitfulness of sin"></blockquote>
+    <div class="split">
+      <div class="stage">
+        <svg viewBox="0 0 600 300" role="img" aria-label="A red heart. One by one, lies appear around it: just this once, you've earned it, nobody will know, you already blew it, you don't need those guys. With each lie a grey crust grows around the heart, and the heart turns grey. Then the crust cracks and falls away, and the heart is red again.">
+          <path class="he03-crust" style="--k:4;--m:45%;stroke-width:58" d="M300 236 C230 186 196 142 218 104 C238 70 284 74 300 104 C316 74 362 70 382 104 C404 142 370 186 300 236 Z"/>
+          <path class="he03-crust" style="--k:3;--m:75%;stroke-width:46" d="M300 236 C230 186 196 142 218 104 C238 70 284 74 300 104 C316 74 362 70 382 104 C404 142 370 186 300 236 Z"/>
+          <path class="he03-crust" style="--k:2;--m:50%;stroke-width:34" d="M300 236 C230 186 196 142 218 104 C238 70 284 74 300 104 C316 74 362 70 382 104 C404 142 370 186 300 236 Z"/>
+          <path class="he03-crust" style="--k:1;--m:80%;stroke-width:22" d="M300 236 C230 186 196 142 218 104 C238 70 284 74 300 104 C316 74 362 70 382 104 C404 142 370 186 300 236 Z"/>
+          <path class="he03-crust" style="--k:0;--m:55%;stroke-width:10" d="M300 236 C230 186 196 142 218 104 C238 70 284 74 300 104 C316 74 362 70 382 104 C404 142 370 186 300 236 Z"/>
+          <path class="he03-heart" d="M300 236 C230 186 196 142 218 104 C238 70 284 74 300 104 C316 74 362 70 382 104 C404 142 370 186 300 236 Z"/>
+          <text class="he03-lie" style="--k:0" x="100" y="60" text-anchor="middle">“Just this once.”</text>
+          <text class="he03-lie" style="--k:1" x="500" y="60" text-anchor="middle">“You've earned it.”</text>
+          <text class="he03-lie" style="--k:2" x="95" y="190" text-anchor="middle">“Nobody will know.”</text>
+          <text class="he03-lie" style="--k:3" x="505" y="190" text-anchor="middle">“You already blew it.”</text>
+          <text class="he03-lie" style="--k:4" x="300" y="292" text-anchor="middle">“You don't need those guys.”</text>
+          <text class="he03-truth" x="300" y="160" text-anchor="middle" font-size="20" font-weight="700" style="fill:var(--glow)">soft again</text>
+        </svg>
+      </div>
+      <div>
+        <h2 class="rise" style="--d:1">How a heart goes hard</h2>
+        <p class="note rise" style="--d:2">Nobody wakes up hard. Sin <em>deceives</em>: it lies, one small lie at a time, and each one you believe lays down another layer. Then one day God speaks and you don't feel a thing.</p>
+        <p class="note step he03-soft">God's answer isn't “try harder alone.” It's <em>“exhort one another daily.”</em> Brothers who hear your lies out loud and call them lies. That's how the crust breaks.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="13" data-hl="exhort one another daily, while it is called To day|lest any of you"></blockquote>
+    <div class="stage rise" style="--d:1">
+      <svg viewBox="0 0 640 260" style="max-height:34vh" role="img" aria-label="Six men sit around a table. One of them slowly drifts away from the circle and turns grey: any of you. Then the others call out to him, “Where you been?”, “Call me today.”, “We need you here.”, and he comes back to his place at the table.">
+        <ellipse class="he03-table" cx="300" cy="160" rx="150" ry="46"/>
+        <text x="300" y="166" text-anchor="middle" font-size="17" font-weight="700" style="fill:var(--glow)">every day</text>
+        <g class="he03-man">
+          <circle cx="300" cy="68" r="10"/><path d="M300 78 L300 106 M300 88 L286 100 M300 88 L314 100"/>
+          <circle cx="150" cy="100" r="10"/><path d="M150 110 L150 138 M150 120 L136 132 M150 120 L164 132"/>
+          <circle cx="160" cy="200" r="10"/><path d="M160 210 L160 238 M160 220 L146 232 M160 220 L174 232"/>
+          <circle cx="300" cy="216" r="10"/><path d="M300 226 L300 254 M300 236 L286 248 M300 236 L314 248"/>
+          <circle cx="440" cy="200" r="10"/><path d="M440 210 L440 238 M440 220 L426 232 M440 220 L454 232"/>
+        </g>
+        <g class="he03-away"><g class="he03-man"><circle cx="450" cy="100" r="10"/><path d="M450 110 L450 138 M450 120 L436 132 M450 120 L464 132"/></g></g>
+        <text class="he03-anyof" x="570" y="30" text-anchor="middle" font-size="17" font-style="italic" style="fill:var(--danger)">“any of you”</text>
+        <g class="he03-call" style="--k:0"><rect class="he03-bub" x="320" y="12" width="140" height="32" rx="14"/><text x="390" y="34" text-anchor="middle" font-size="16" style="fill:var(--ink)">Where you been?</text></g>
+        <g class="he03-call" style="--k:1"><rect class="he03-bub" x="470" y="158" width="150" height="32" rx="14"/><text x="545" y="180" text-anchor="middle" font-size="16" style="fill:var(--ink)">Call me today.</text></g>
+        <g class="he03-call" style="--k:2"><rect class="he03-bub" x="10" y="44" width="150" height="32" rx="14"/><text x="85" y="66" text-anchor="middle" font-size="16" style="fill:var(--ink)">We need you here.</text></g>
+      </svg>
+    </div>
+    <p class="note rise" style="--d:2"><em>“Exhort”</em> means call alongside: encourage, urge, sometimes warn. And notice <em>“daily.”</em> Not once a week. That's what this group is. Every day we meet, we're doing exactly what this verse says.</p>
+    <p class="note step he03-reach">The man drifting rarely announces it. He just stops showing up, stops answering. <em>“Lest any of you”</em>: we watch for the one. Today, call or text one man here by name, and if someone calls you, pick up.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="14-15" data-hl="we are made partakers of Christ|if we hold the beginning of our confidence stedfast unto the end"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="14"></blockquote>
+    <h2 class="rise" style="--d:1">What the “if” means</h2>
+    <ul class="nots">
+      <li class="step"><span class="k">“Hold on, or you'll lose it”</span><span class="why">Christ holds His own (John 10:28)</span></li>
+      <li class="step"><span class="k">“Hold on long enough to earn it”</span><span class="why">salvation is a gift, never wages</span></li>
+      <li class="step yes"><span class="k">Holding on shows you have it</span><span class="why">real faith keeps going</span></li>
+    </ul>
+    <p class="note step">Look at the tense: <em>“we are made partakers”</em>, we already have become sharers in Christ. Holding fast to the end is the proof of it, not the price of it. A man who finishes the race shows he was really in it.</p>
+    <blockquote class="quote step"><p>“Being confident of this very thing, that he which hath begun a good work in you will perform it until the day of Jesus Christ:”</p><cite>Philippians 1:6</cite></blockquote>
+  </div>
+</section>
+
+<section class="slide verse" data-v="16-19" data-hl="not all that came out of Egypt by Moses|whose carcases fell in the wilderness|they could not enter in because of unbelief"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise">Three questions, one answer</h2>
+    <div class="asks">
+      <div class="ask step"><span class="q">Who heard, and provoked God? (v. 16)</span><span class="stamp">Egypt's crowd</span><span class="ctx">The very people who came out of Egypt by Moses. They'd been rescued, and they still rebelled.</span></div>
+      <div class="ask step"><span class="q">Who grieved Him forty years? (v. 17)</span><span class="stamp">Those who sinned</span><span class="ctx">Their <em>“carcases”</em>, their dead bodies, fell one by one in the wilderness, short of the land.</span></div>
+      <div class="ask step"><span class="q">Who did He swear would not enter? (v. 18)</span><span class="stamp">Those who believed not</span><span class="ctx">Not the weak, not the ones with the worst record. The ones who wouldn't trust Him.</span></div>
+    </div>
+    <p class="saying step">They <em>could not</em> enter, because of unbelief.</p>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="16" data-hl="not all"></blockquote>
+    <h2 class="rise" style="--d:1">“Not all”</h2>
+    <div class="columns">
+      <div class="col grace step"><span class="who">Two men who believed</span><h3>Caleb and Joshua</h3><p>Same desert, same giants, same report. But they trusted God, and they walked into the land forty years later.</p></div>
+      <div class="col grace step"><span class="who">And the next generation</span><h3>“Your little ones”</h3><p>The fathers said their kids would be a prey. God said He'd bring the kids in, and He did.</p></div>
+    </div>
+    <blockquote class="quote step"><p>“But your little ones, which ye said should be a prey, them will I bring in, and they shall know the land which ye have despised.”</p><cite>Numbers 14:31</cite></blockquote>
+    <p class="note step">Some of you are afraid your past has ruined your kids' future. A father's failure didn't stop God's promise to those children. Trust Him today, and your story isn't the only one God is writing in your house.</p>
+  </div>
+</section>
+
+<!-- ======================= CLOSING ======================= -->
+<section class="slide remember">
+  <div class="inner">
+    <h2 class="rise">Points to remember</h2>
+    <ol class="seeds">
+      <li class="step"><span class="topic">Consider Jesus</span><span class="seed-q">“Consider the Apostle and High Priest of our profession” <cite>3:1</cite></span><span class="take">He came from God to us, and He goes to God for us. Keep your eyes on Him.</span></li>
+      <li class="step"><span class="topic">Better than Moses</span><span class="seed-q">“But Christ as a son over his own house; whose house are we” <cite>3:6</cite></span><span class="take">Moses was a faithful servant in the house. Jesus is the Son who built it, and we are His household.</span></li>
+      <li class="step"><span class="topic">The wilderness</span><span class="seed-q">“They could not enter in because of unbelief” <cite>3:19</cite></span><span class="take">Not their record, not the giants: unbelief. They saw God work and still wouldn't trust Him.</span></li>
+      <li class="step"><span class="topic">The warning</span><span class="seed-q">“Take heed, brethren, lest there be in any of you an evil heart of unbelief” <cite>3:12</cite></span><span class="take">It shakes loose the man who only sat near the faith, and it keeps the true believer holding on.</span></li>
+      <li class="step"><span class="topic">One another</span><span class="seed-q">“But exhort one another daily” <cite>3:13</cite></span><span class="take">Call alongside each other every day, and watch for the man who's drifting.</span></li>
+      <li class="step"><span class="topic">To day</span><span class="seed-q">“To day if ye will hear his voice, harden not your hearts” <cite>3:15</cite></span><span class="take">Today is the only day you can answer God. Answer Him now.</span></li>
+    </ol>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 1 of 6</p>
+      <span class="topic">Consider Jesus</span>
+      <h2>Why are we told to “consider” Jesus as Apostle and High Priest?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="1"></blockquote>
+      <blockquote class="quote step"><p>“For in that he himself hath suffered being tempted, he is able to succour them that are tempted.”</p><cite>Hebrews 2:18</cite></blockquote>
+      <blockquote class="quote step"><p>“Wherefore he is able also to save them to the uttermost that come unto God by him, seeing he ever liveth to make intercession for them.”</p><cite>Hebrews 7:25</cite></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>Because everything we need is in Him. As Apostle, He brought God's word to us. As High Priest, He stands before God for us. A man who keeps looking at Jesus, not at his past or his problems, keeps going.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 2 of 6</p>
+      <span class="topic">Better than Moses</span>
+      <h2>How is Jesus greater than Moses?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="3"></blockquote>
+      <blockquote class="quote step" data-q="6"></blockquote>
+      <blockquote class="quote step"><p>“My servant Moses is not so, who is faithful in all mine house.”</p><cite>Numbers 12:7</cite></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>Moses was a faithful servant inside God's house. Jesus is the Son over the house, and the One who built it. And the house is us: every believer belongs to His household.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 3 of 6</p>
+      <span class="topic">The wilderness</span>
+      <h2>Why couldn't Israel enter into God's rest?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="19"></blockquote>
+      <blockquote class="quote step"><p>“And the LORD said unto Moses, How long will this people provoke me? and how long will it be ere they believe me, for all the signs which I have shewed among them?”</p><cite>Numbers 14:11</cite></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>Unbelief. They saw God's works for forty years and still wouldn't trust Him to do what He promised. An eleven-day trip became forty years in the desert. The way in has always been faith.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 4 of 6</p>
+      <span class="topic">The warning</span>
+      <h2>If a believer is secure, who is this warning for?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step"><p>“They went out from us, but they were not of us; for if they had been of us, they would no doubt have continued with us: but they went out, that they might be made manifest that they were not all of us.”</p><cite>1 John 2:19</cite></blockquote>
+      <blockquote class="quote step"><p>“And I give unto them eternal life; and they shall never perish, neither shall any man pluck them out of my hand.”</p><cite>John 10:28</cite></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>For the man who has been near the faith but never trusted Christ: stop standing at the edge and believe. And for the true believer: not to scare him into thinking he's lost, but to keep him holding fast. God keeps His own, and He uses warnings to do it.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 5 of 6</p>
+      <span class="topic">One another</span>
+      <h2>What does God want us to do for each other every day?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="13"></blockquote>
+      <blockquote class="quote step"><p>“For if they fall, the one will lift up his fellow: but woe to him that is alone when he falleth; for he hath not another to help him up.”</p><cite>Ecclesiastes 4:10</cite></blockquote>
+      <blockquote class="quote step"><p>“Not forsaking the assembling of ourselves together, as the manner of some is; but exhorting one another: and so much the more, as ye see the day approaching.”</p><cite>Hebrews 10:25</cite></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>Exhort one another: encourage, urge, and when needed, warn. Every day, because sin works every day. Notice who's missing, call the man who's drifting, and let your brothers call your lies what they are.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 6 of 6</p>
+      <span class="topic">To day</span>
+      <h2>Why does the writer keep saying “To day”?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="15"></blockquote>
+      <blockquote class="quote step"><p>“(For he saith, I have heard thee in a time accepted, and in the day of salvation have I succoured thee: behold, now is the accepted time; behold, now is the day of salvation.)”</p><cite>2 Corinthians 6:2</cite></blockquote>
+      <blockquote class="quote step"><p>“It is of the LORD’S mercies that we are not consumed, because his compassions fail not. They are new every morning: great is thy faithfulness.”</p><cite>Lamentations 3:22–23</cite></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>Because today is the only day we can answer God. Hearts harden by putting Him off. But “To day” is also good news: whatever happened yesterday, God's mercy is new this morning, and the door is still open now.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide prayer">
+  <div class="inner">
+    <div class="emblem rise"></div>
+    <h2 class="rise" style="--d:1">Prayer requests</h2>
+    <p class="ask-line rise" style="--d:2">What can we pray about for you today?</p>
+    <blockquote class="quote rise" style="--d:4" data-q="13"></blockquote>
+  </div>
+</section>
+
+</main>
+
+<script>
+// King James Version, Hebrews chapter 3
+const V = {
+  1: "Wherefore, holy brethren, partakers of the heavenly calling, consider the Apostle and High Priest of our profession, Christ Jesus;",
+  2: "Who was faithful to him that appointed him, as also Moses was faithful in all his house.",
+  3: "For this man was counted worthy of more glory than Moses, inasmuch as he who hath builded the house hath more honour than the house.",
+  4: "For every house is builded by some man; but he that built all things is God.",
+  5: "And Moses verily was faithful in all his house, as a servant, for a testimony of those things which were to be spoken after;",
+  6: "But Christ as a son over his own house; whose house are we, if we hold fast the confidence and the rejoicing of the hope firm unto the end.",
+  7: "Wherefore (as the Holy Ghost saith, To day if ye will hear his voice,",
+  8: "Harden not your hearts, as in the provocation, in the day of temptation in the wilderness:",
+  9: "When your fathers tempted me, proved me, and saw my works forty years.",
+  10: "Wherefore I was grieved with that generation, and said, They do alway err in their heart; and they have not known my ways.",
+  11: "So I sware in my wrath, They shall not enter into my rest.)",
+  12: "Take heed, brethren, lest there be in any of you an evil heart of unbelief, in departing from the living God.",
+  13: "But exhort one another daily, while it is called To day; lest any of you be hardened through the deceitfulness of sin.",
+  14: "For we are made partakers of Christ, if we hold the beginning of our confidence stedfast unto the end;",
+  15: "While it is said, To day if ye will hear his voice, harden not your hearts, as in the provocation.",
+  16: "For some, when they had heard, did provoke: howbeit not all that came out of Egypt by Moses.",
+  17: "But with whom was he grieved forty years? was it not with them that had sinned, whose carcases fell in the wilderness?",
+  18: "And to whom sware he that they should not enter into his rest, but to them that believed not?",
+  19: "So we see that they could not enter in because of unbelief."
+};
+const BOOK = "Hebrews 3";
+</script>
+<script src="../assets/deck.js"></script>
+</body>
+</html>

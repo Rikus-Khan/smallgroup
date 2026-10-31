@@ -14882,6 +14882,96 @@ window.STUDIES = [
     "url": "studies/hebrews-02.html"
   },
   {
+    "id": "hebrews-03",
+    "type": "chapter",
+    "book": "Hebrews",
+    "ch": 3,
+    "date": "2026-10-31",
+    "title": "Hebrews 3",
+    "sub": "To day, harden not your hearts",
+    "about": "Jesus is greater than Moses. A whole generation left Egypt and never entered the land because of unbelief. So exhort one another daily, while it is called To day.",
+    "tags": [
+      "Jesus our High Priest",
+      "Better than Moses",
+      "Unbelief",
+      "Warning",
+      "One another",
+      "Today"
+    ],
+    "url": "studies/hebrews-03.html",
+    "overview": {
+      "where": "A letter to Jewish believers tempted to slip back into the old religion; the chapter looks back to Israel's forty years in the wilderness between Egypt and Canaan",
+      "when": "Written about AD 64 to 68; the wilderness years were about 1440 BC, and David wrote Psalm 95 about 1000 BC",
+      "people": [
+        "jesus",
+        "moses",
+        "holy-spirit",
+        "brethren-believers"
+      ],
+      "places": [
+        "egypt",
+        "wilderness",
+        "mount-sinai",
+        "canaan"
+      ],
+      "story": [
+        "“Holy brethren … consider the Apostle and High Priest of our profession, Christ Jesus.” Moses was faithful in God's house as a servant; Christ is a Son over His own house, and He built it: “whose house are we” (1–6).",
+        "The Holy Ghost still says, “To day if ye will hear his voice, harden not your hearts,” as Israel did in the wilderness, where they saw God's works forty years and He swore they would not enter His rest (7–11).",
+        "“Take heed, brethren,” against an evil heart of unbelief. “Exhort one another daily, while it is called To day; lest any of you be hardened through the deceitfulness of sin.” We are partakers of Christ if we hold fast to the end (12–15).",
+        "Who provoked God? Those He brought out of Egypt. Whose carcases fell in the wilderness? Those who sinned. Who could not enter? Those who believed not. “They could not enter in because of unbelief” (16–19)."
+      ],
+      "key": {
+        "ref": "Hebrews 3:13",
+        "text": "But exhort one another daily, while it is called To day; lest any of you be hardened through the deceitfulness of sin."
+      },
+      "big": "Keep your eyes on Jesus, who is greater than Moses. Unbelief kept a rescued generation out of the land, and sin hardens a heart one lie at a time. God's answer is today: hear His voice now, and keep each other close, every day."
+    }
+  },
+  {
+    "id": "hebrews-04",
+    "type": "chapter",
+    "book": "Hebrews",
+    "ch": 4,
+    "date": "2026-10-31",
+    "title": "Hebrews 4",
+    "sub": "Come boldly",
+    "about": "There is still a rest for God's people, and it isn't earned. The word of God sees right through us, and our High Priest, tempted like us, says: come boldly to the throne of grace.",
+    "tags": [
+      "Rest",
+      "Faith",
+      "Grace",
+      "The word of God",
+      "Jesus our High Priest",
+      "Prayer"
+    ],
+    "url": "studies/hebrews-04.html",
+    "overview": {
+      "where": "A letter to Jewish believers; the chapter moves from the wilderness and Canaan to the throne of God in heaven",
+      "when": "Written about AD 64 to 68, looking back to creation's seventh day, Joshua, and David's Psalm 95",
+      "people": [
+        "jesus",
+        "joshua-called-jesus",
+        "david"
+      ],
+      "places": [
+        "canaan",
+        "wilderness",
+        "heaven"
+      ],
+      "story": [
+        "A promise of entering God's rest is still left. Israel heard the good news too, but it did not profit them, “not being mixed with faith.” “We which have believed do enter into rest,” the rest of God's finished work on the seventh day (1–5).",
+        "Joshua (“Jesus” in the Greek) brought them into Canaan, yet long after, David still said “To day.” So “there remaineth therefore a rest to the people of God”: he that enters it has ceased from his own works. Let us labour to enter it (6–11).",
+        "“The word of God is quick, and powerful, and sharper than any twoedged sword,” a discerner of the thoughts and intents of the heart. All things are naked and opened to Him (12–13).",
+        "We have a great high priest, Jesus the Son of God, “touched with the feeling of our infirmities,” tempted in all points like us, yet without sin. “Let us therefore come boldly unto the throne of grace” (14–16)."
+      ],
+      "key": {
+        "ref": "Hebrews 4:16",
+        "text": "Let us therefore come boldly unto the throne of grace, that we may obtain mercy, and find grace to help in time of need."
+      },
+      "big": "God's rest is entered by faith, not earned by works. His word sees everything in us, and the One who sees it all is a High Priest who understands. So the man who fell yesterday doesn't stay away: he comes boldly today and finds mercy and grace."
+    }
+  },
+  {
     "id": "hebrews-05",
     "type": "chapter",
     "book": "Hebrews",

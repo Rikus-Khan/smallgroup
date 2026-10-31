@@ -533,6 +533,12 @@ window.GLOSSARY = [
     "Hebrews", 2,
     [ 9 ] ],
    [
+    "Hebrews", 3,
+    [ 1 ] ],
+   [
+    "Hebrews", 4,
+    [ 14 ] ],
+   [
     "Hebrews", 6,
     [ 20 ] ],
    [
@@ -1063,6 +1069,9 @@ window.GLOSSARY = [
    [
     "2 Timothy", 3,
     [ 8 ] ],
+   [
+    "Hebrews", 3,
+    [ 2, 3, 5, 16 ] ],
    [
     "Hebrews", 7,
     [ 14 ] ],
@@ -1693,6 +1702,9 @@ window.GLOSSARY = [
    [
     "Hebrews", 2,
     [ 4 ] ],
+   [
+    "Hebrews", 3,
+    [ 7 ] ],
    [
     "Hebrews", 6,
     [ 4 ] ] ]
@@ -2448,7 +2460,10 @@ window.GLOSSARY = [
     [ 9 ] ],
    [
     "2 Timothy", 2,
-    [ 8 ] ] ]
+    [ 8 ] ],
+   [
+    "Hebrews", 4,
+    [ 7 ] ] ]
  },
  {
   "id": "hezekiah",
@@ -3213,7 +3228,10 @@ window.GLOSSARY = [
     [ 5 ] ],
    [
     "2 Corinthians", 11,
-    [ 26 ] ] ]
+    [ 26 ] ],
+   [
+    "Hebrews", 3,
+    [ 8, 17 ] ] ]
  },
  {
   "id": "galilee",
@@ -4854,7 +4872,10 @@ window.GLOSSARY = [
     [ 25 ] ],
    [
     "Hebrews", 2,
-    [ 9 ] ] ]
+    [ 9 ] ],
+   [
+    "Hebrews", 4,
+    [ 16 ] ] ]
  },
  {
   "id": "truth",
@@ -5355,7 +5376,10 @@ window.GLOSSARY = [
     [ 3 ] ],
    [
     "Hebrews", 2,
-    [ 7, 9, 10 ] ] ]
+    [ 7, 9, 10 ] ],
+   [
+    "Hebrews", 3,
+    [ 3 ] ] ]
  },
  {
   "id": "the-law",
@@ -6023,6 +6047,9 @@ window.GLOSSARY = [
     "Philemon", 1,
     [ 1, 3, 6, 8, 9, 23, 25 ] ],
    [
+    "Hebrews", 3,
+    [ 1, 6, 14 ] ],
+   [
     "Hebrews", 5,
     [ 5 ] ],
    [
@@ -6115,6 +6142,9 @@ window.GLOSSARY = [
    [
     "Ephesians", 4,
     [ 13 ] ],
+   [
+    "Hebrews", 4,
+    [ 14 ] ],
    [
     "Hebrews", 6,
     [ 6 ] ],
@@ -6576,7 +6606,13 @@ window.GLOSSARY = [
     [ 13 ] ],
    [
     "Titus", 3,
-    [ 8 ] ] ]
+    [ 8 ] ],
+   [
+    "Hebrews", 3,
+    [ 18 ] ],
+   [
+    "Hebrews", 4,
+    [ 3 ] ] ]
  },
  {
   "id": "witness",
@@ -8985,7 +9021,13 @@ window.GLOSSARY = [
     [ 5 ] ],
    [
     "2 Timothy", 2,
-    [ 22 ] ] ]
+    [ 22 ] ],
+   [
+    "Hebrews", 3,
+    [ 10, 12 ] ],
+   [
+    "Hebrews", 4,
+    [ 12 ] ] ]
  },
  {
   "id": "tongue",
@@ -9339,7 +9381,13 @@ window.GLOSSARY = [
     [ 8 ] ],
    [
     "Titus", 1,
-    [ 7 ] ] ]
+    [ 7 ] ],
+   [
+    "Hebrews", 3,
+    [ 11 ] ],
+   [
+    "Hebrews", 4,
+    [ 3 ] ] ]
  },
  {
   "id": "pride",
@@ -15357,7 +15405,10 @@ window.GLOSSARY = [
     [ 34 ] ],
    [
     "Romans", 10,
-    [ 6 ] ] ]
+    [ 6 ] ],
+   [
+    "Hebrews", 4,
+    [ 4 ] ] ]
  },
  {
   "id": "shew",
@@ -15851,6 +15902,9 @@ window.GLOSSARY = [
     "Hebrews", 2,
     [ 6 ] ],
    [
+    "Hebrews", 3,
+    [ 5 ] ],
+   [
     "Hebrews", 7,
     [ 17 ] ] ]
  },
@@ -16147,6 +16201,12 @@ window.GLOSSARY = [
    [
     "Hebrews", 2,
     [ 17 ] ],
+   [
+    "Hebrews", 3,
+    [ 1 ] ],
+   [
+    "Hebrews", 4,
+    [ 14, 15 ] ],
    [
     "Hebrews", 5,
     [ 1, 5, 10 ] ],
@@ -16890,7 +16950,10 @@ window.GLOSSARY = [
     [ 16 ] ],
    [
     "2 Timothy", 3,
-    [ 9 ] ] ]
+    [ 9 ] ],
+   [
+    "Hebrews", 4,
+    [ 13 ] ] ]
  },
  {
   "id": "vine",
@@ -18740,6 +18803,9 @@ window.GLOSSARY = [
     "Acts", 13,
     [ 17 ] ],
    [
+    "Hebrews", 3,
+    [ 16 ] ],
+   [
     "Hebrews", 8,
     [ 9 ] ] ]
  },
@@ -18963,7 +19029,10 @@ window.GLOSSARY = [
     [ 10 ] ],
    [
     "1 Timothy", 6,
-    [ 17 ] ] ]
+    [ 17 ] ],
+   [
+    "Hebrews", 3,
+    [ 12 ] ] ]
  },
  {
   "id": "whoredom",
@@ -19149,7 +19218,10 @@ window.GLOSSARY = [
     [ 4 ] ],
    [
     "Titus", 3,
-    [ 5 ] ] ]
+    [ 5 ] ],
+   [
+    "Hebrews", 4,
+    [ 16 ] ] ]
  },
  {
   "id": "baal",
@@ -25815,7 +25887,10 @@ window.GLOSSARY = [
     [ 8, 10 ] ],
    [
     "2 Timothy", 2,
-    [ 8 ] ] ]
+    [ 8 ] ],
+   [
+    "Hebrews", 4,
+    [ 2 ] ] ]
  },
  {
   "id": "repent",
@@ -28164,7 +28239,13 @@ window.GLOSSARY = [
     [ 5 ] ],
    [
     "Hebrews", 2,
-    [ 18 ] ] ]
+    [ 18 ] ],
+   [
+    "Hebrews", 3,
+    [ 9 ] ],
+   [
+    "Hebrews", 4,
+    [ 15 ] ] ]
  },
  {
   "id": "an-hungred",
@@ -29376,7 +29457,10 @@ window.GLOSSARY = [
     [ 13 ] ],
    [
     "Galatians", 4,
-    [ 14 ] ] ]
+    [ 14 ] ],
+   [
+    "Hebrews", 3,
+    [ 8 ] ] ]
  },
  {
   "id": "amen",
@@ -29931,7 +30015,10 @@ window.GLOSSARY = [
     [ 5, 9, 10 ] ],
    [
     "1 Timothy", 5,
-    [ 23 ] ] ]
+    [ 23 ] ],
+   [
+    "Hebrews", 4,
+    [ 15 ] ] ]
  },
  {
   "id": "dead-bury-their-dead",
@@ -30960,7 +31047,10 @@ window.GLOSSARY = [
     [ 24 ] ],
    [
     "Ephesians", 1,
-    [ 4 ] ] ]
+    [ 4 ] ],
+   [
+    "Hebrews", 4,
+    [ 3 ] ] ]
  },
  {
   "id": "end-of-the-world",
@@ -31119,7 +31209,13 @@ window.GLOSSARY = [
     [ 20, 23, 30, 32 ] ],
    [
     "1 Timothy", 1,
-    [ 13 ] ] ]
+    [ 13 ] ],
+   [
+    "Hebrews", 3,
+    [ 12, 19 ] ],
+   [
+    "Hebrews", 4,
+    [ 6, 11 ] ] ]
  },
  {
   "id": "dureth",
@@ -37935,7 +38031,10 @@ window.GLOSSARY = [
     [ 12 ] ],
    [
     "1 Timothy", 3,
-    [ 13 ] ] ]
+    [ 13 ] ],
+   [
+    "Hebrews", 4,
+    [ 16 ] ] ]
  },
  {
   "id": "straitly",
@@ -40017,7 +40116,10 @@ window.GLOSSARY = [
   "refs": [
    [
     "Acts", 7,
-    [ 45 ] ] ]
+    [ 45 ] ],
+   [
+    "Hebrews", 4,
+    [ 8 ] ] ]
  },
  {
   "id": "remphan",
@@ -41802,6 +41904,9 @@ window.GLOSSARY = [
     [ 3 ] ],
    [
     "1 Timothy", 4,
+    [ 13 ] ],
+   [
+    "Hebrews", 3,
     [ 13 ] ] ]
  },
  {
@@ -42382,6 +42487,9 @@ window.GLOSSARY = [
    [
     "Titus", 3,
     [ 7 ] ],
+   [
+    "Hebrews", 3,
+    [ 6 ] ],
    [
     "Hebrews", 6,
     [ 11, 18, 19 ] ],
@@ -43398,7 +43506,10 @@ window.GLOSSARY = [
     [ 21 ] ],
    [
     "Hebrews", 2,
-    [ 11, 12, 17 ] ] ]
+    [ 11, 12, 17 ] ],
+   [
+    "Hebrews", 3,
+    [ 1, 12 ] ] ]
  },
  {
   "id": "captain-of-the-guard",
@@ -44592,7 +44703,13 @@ window.GLOSSARY = [
   "refs": [
    [
     "Romans", 9,
-    [ 18 ] ] ]
+    [ 18 ] ],
+   [
+    "Hebrews", 3,
+    [ 8, 13, 15 ] ],
+   [
+    "Hebrews", 4,
+    [ 7 ] ] ]
  },
  {
   "id": "potter-and-clay",
@@ -44706,7 +44823,10 @@ window.GLOSSARY = [
     [ 16 ] ],
    [
     "2 Timothy", 4,
-    [ 17 ] ] ]
+    [ 17 ] ],
+   [
+    "Hebrews", 4,
+    [ 2, 6 ] ] ]
  },
  {
   "id": "beautiful-feet",
@@ -44869,6 +44989,9 @@ window.GLOSSARY = [
    [
     "Hebrews", 2,
     [ 14 ] ],
+   [
+    "Hebrews", 3,
+    [ 1, 14 ] ],
    [
     "Hebrews", 6,
     [ 4 ] ] ]
@@ -52309,5 +52432,185 @@ window.GLOSSARY = [
    [
     "Hebrews", 8,
     [ 12 ] ] ]
+ },
+ {
+  "id": "heavenly-calling",
+  "kind": "term",
+  "name": "The heavenly calling (God's call from heaven to be His)",
+  "refs": [
+   [
+    "Hebrews", 3,
+    [ 1 ] ] ]
+ },
+ {
+  "id": "profession",
+  "kind": "term",
+  "name": "Profession (what we confess and hold to: Jesus is Lord)",
+  "refs": [
+   [
+    "Hebrews", 3,
+    [ 1 ] ],
+   [
+    "Hebrews", 4,
+    [ 14 ] ] ]
+ },
+ {
+  "id": "the-provocation",
+  "kind": "term",
+  "name": "The provocation (Israel's rebellion against God in the wilderness)",
+  "refs": [
+   [
+    "Hebrews", 3,
+    [ 8, 15, 16 ] ] ]
+ },
+ {
+  "id": "alway",
+  "kind": "term",
+  "name": "Alway (always)",
+  "refs": [
+   [
+    "Hebrews", 3,
+    [ 10 ] ] ]
+ },
+ {
+  "id": "sware",
+  "kind": "term",
+  "name": "Sware, sworn (swore an oath)",
+  "refs": [
+   [
+    "Amos", 4,
+    [ 2 ] ],
+   [
+    "Amos", 6,
+    [ 8 ] ],
+   [
+    "Amos", 8,
+    [ 7 ] ],
+   [
+    "Micah", 7,
+    [ 20 ] ],
+   [
+    "Mark", 6,
+    [ 23 ] ],
+   [
+    "Luke", 1,
+    [ 73 ] ],
+   [
+    "Acts", 2,
+    [ 30 ] ],
+   [
+    "Acts", 7,
+    [ 17 ] ],
+   [
+    "Hebrews", 3,
+    [ 11, 18 ] ],
+   [
+    "Hebrews", 4,
+    [ 3 ] ],
+   [
+    "Hebrews", 6,
+    [ 13 ] ],
+   [
+    "Hebrews", 7,
+    [ 21 ] ] ]
+ },
+ {
+  "id": "gods-rest",
+  "kind": "term",
+  "name": "God's rest (the rest God gives, pictured by the sabbath and Canaan, found in Christ)",
+  "refs": [
+   [
+    "Hebrews", 3,
+    [ 11, 18 ] ],
+   [
+    "Hebrews", 4,
+    [ 1, 3, 4, 5, 8, 9, 10, 11 ] ] ]
+ },
+ {
+  "id": "deceitfulness-of-sin",
+  "kind": "term",
+  "name": "The deceitfulness of sin (sin's lies, which harden the heart)",
+  "refs": [
+   [
+    "Hebrews", 3,
+    [ 13 ] ] ]
+ },
+ {
+  "id": "carcases",
+  "kind": "term",
+  "name": "Carcases (dead bodies)",
+  "refs": [
+   [
+    "Nahum", 3,
+    [ 3 ] ],
+   [
+    "Hebrews", 3,
+    [ 17 ] ] ]
+ },
+ {
+  "id": "seventh-day",
+  "kind": "term",
+  "name": "The seventh day (the day God rested from His finished work)",
+  "refs": [
+   [
+    "Hebrews", 4,
+    [ 4 ] ] ]
+ },
+ {
+  "id": "limiteth",
+  "kind": "term",
+  "name": "Limiteth (marks out, sets a time)",
+  "refs": [
+   [
+    "Hebrews", 4,
+    [ 7 ] ] ]
+ },
+ {
+  "id": "quick-alive",
+  "kind": "term",
+  "name": "Quick (alive, living)",
+  "refs": [
+   [
+    "Hebrews", 4,
+    [ 12 ] ] ]
+ },
+ {
+  "id": "twoedged-sword",
+  "kind": "term",
+  "name": "A twoedged sword (a blade sharp on both edges)",
+  "refs": [
+   [
+    "Proverbs", 5,
+    [ 4 ] ],
+   [
+    "Hebrews", 4,
+    [ 12 ] ] ]
+ },
+ {
+  "id": "discerner",
+  "kind": "term",
+  "name": "Discerner (a judge who sorts out what is true)",
+  "refs": [
+   [
+    "Hebrews", 4,
+    [ 12 ] ] ]
+ },
+ {
+  "id": "touched-with-the-feeling",
+  "kind": "term",
+  "name": "Touched with the feeling (to suffer along with, to sympathize)",
+  "refs": [
+   [
+    "Hebrews", 4,
+    [ 15 ] ] ]
+ },
+ {
+  "id": "throne-of-grace",
+  "kind": "term",
+  "name": "The throne of grace (God's throne, open to every believer through Jesus)",
+  "refs": [
+   [
+    "Hebrews", 4,
+    [ 16 ] ] ]
  }
 ];

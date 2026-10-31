@@ -1,0 +1,622 @@
+<!doctype html>
+<html lang="en" data-theme="night">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Hebrews 4</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="../assets/fonts.css">
+<link rel="stylesheet" href="../assets/deck.css">
+<link rel="stylesheet" href="../assets/themes.css">
+<style>
+/* he04-where: where we are in Hebrews (the same marker as Hebrews 3's he03-where). Five parts, each showing how Jesus
+   is better. Each part (div, --k) holds its chapters (p > i; read ones .done, ours .here), its name (b), what it says
+   (small) and a key phrase (q + cite). The part we're in is .now. */
+.he04-where { display: grid; grid-template-columns: repeat(5, 1fr); gap: 10px; margin: .5em 0 1em; }
+.he04-where > div { --c: var(--line-strong); padding: .5em .7em .6em; border-top: 6px solid var(--c); border-radius: 0 0 10px 10px;
+  background: color-mix(in srgb, var(--surface) 70%, transparent); opacity: 0; transform: translateY(10px);
+  transition: opacity .6s ease, transform .6s ease; transition-delay: calc(var(--k, 0) * 300ms + 300ms); }
+.slide.active .he04-where > div { opacity: 1; transform: none; }
+.he04-where > div.now { --c: var(--accent); background: color-mix(in srgb, var(--accent) 15%, transparent); box-shadow: inset 0 0 0 2px var(--accent); }
+.he04-where p { display: flex; flex-wrap: wrap; gap: 5px; margin: 0 0 .4em; }
+.he04-where i { min-width: 2em; padding: .2em .25em; text-align: center; border-radius: 6px; border: 1.5px solid var(--line-strong);
+  font: 700 clamp(.78rem, .72rem + .3vw, 1rem) var(--sans); font-style: normal; color: var(--ink-soft); }
+.he04-where i.done { background: color-mix(in srgb, var(--accent) 14%, transparent); color: var(--ink); }
+.he04-where i.here { background: var(--accent); border-color: var(--accent); color: var(--on-accent); }
+.slide.active .he04-where i.here { animation: he04-here 2.4s ease-in-out 1.8s infinite; }
+@keyframes he04-here { 50% { box-shadow: 0 0 0 6px color-mix(in srgb, var(--accent) 28%, transparent); } }
+.he04-where b { display: block; font: 600 clamp(1rem, .85rem + .6vw, 1.4rem)/1.1 var(--serif); color: var(--ink); }
+.he04-where small { display: block; margin: .2em 0 .35em; font-size: clamp(.76rem, .7rem + .24vw, .95rem); line-height: 1.3; color: var(--ink-soft); }
+.he04-where q { display: block; font: italic clamp(.82rem, .75rem + .3vw, 1.02rem)/1.3 var(--serif); quotes: "\201C" "\201D"; }
+.he04-where cite { display: block; margin-top: .2em; font-style: normal; font-size: clamp(.7rem, .66rem + .2vw, .9rem); color: var(--ink-soft); }
+@media (max-width: 760px) {
+  .he04-where { grid-template-columns: 1fr; gap: 6px; }
+  .he04-where > div { border-top: 0; border-left: 6px solid var(--c); border-radius: 0 10px 10px 0; padding: .35em .7em .4em; }
+  .he04-where q, .he04-where cite { display: none; }
+}
+
+/* Stick figures: strokes in .he04-man, a filled head (circle). */
+.he04-man { fill: none; stroke: var(--ink); stroke-width: 6; stroke-linecap: round; stroke-linejoin: round; }
+.he04-man circle { fill: var(--ink); stroke: none; }
+
+/* he04-cease: ceasing from your own works (4:10). A man pushes a boulder ("my own works") up a slope; it keeps slipping
+   back (.he04-grind). On a .he04-stop step the slope scene rolls away and fades, and the man sits at rest by the cross. */
+.he04-slope { stroke: var(--line-strong); stroke-width: 4; stroke-linecap: round; }
+.he04-rock { fill: color-mix(in srgb, var(--ink-soft) 55%, var(--surface-2)); stroke: var(--ink-soft); stroke-width: 2; }
+.slide.active .he04-grind { animation: he04-grind 3.6s ease-in-out infinite; }
+@keyframes he04-grind { 0% { transform: none; } 65% { transform: translate(66px, -22px); } 75% { transform: translate(66px, -22px); } 100% { transform: none; } }
+.he04-roll { transition: transform 1.6s cubic-bezier(.5,0,.8,.6), opacity 1.4s ease; }
+.slide:has(.he04-stop.on) .he04-roll { transform: translate(-120px, 40px); opacity: 0; }
+.he04-sat { opacity: 0; transition: opacity 1.2s ease 1.2s; }
+.slide:has(.he04-stop.on) .he04-sat { opacity: 1; }
+.he04-sat .he04-man { stroke: var(--accent-hot); }
+.he04-sat .he04-man circle { fill: var(--accent-hot); }
+
+/* he04-sword: the word of God, sharper than any twoedged sword (4:12). Four layers of a man (.he04-band, two halves
+   .l/.r, --k) stack over his heart. The sword (.he04-blade) comes down through them; each layer parts as it passes
+   ("dividing asunder"), and the heart (.he04-core) is laid open. The sword's four words (.he04-word, --k) appear beside it. */
+.he04-band { fill: color-mix(in srgb, var(--surface-2) 85%, var(--ink-soft)); stroke: var(--line-strong); stroke-width: 1.5;
+  transition: transform 1s cubic-bezier(.3,.7,.3,1); transition-delay: calc(var(--k, 0) * 380ms + .75s); }
+.slide.active .he04-band.l { transform: translateX(-26px); }
+.slide.active .he04-band.r { transform: translateX(26px); }
+.he04-blade { transform: translateY(-150px); transition: transform 2s cubic-bezier(.4,0,.6,1) .5s; }
+.slide.active .he04-blade { transform: none; }
+.he04-steel { fill: color-mix(in srgb, var(--glow) 55%, var(--surface-2)); stroke: var(--ink); stroke-width: 2; }
+.he04-edge { fill: none; stroke: var(--accent-hot); stroke-width: 2.5; }
+.he04-core { opacity: .25; transition: opacity 1s ease 2.6s; }
+.slide.active .he04-core { opacity: 1; }
+.he04-word { opacity: 0; transition: opacity .6s ease; transition-delay: calc(var(--k, 0) * 450ms + 2.8s); }
+.slide.active .he04-word { opacity: 1; }
+
+/* he04-press: tempted like as we are, yet without sin (4:15). Pressure rising over time. Our line (.he04-ours) stops where
+   we give in; His (.he04-his) keeps rising to the very top: He felt the whole weight of it. Lines draw on open. */
+.he04-axis { stroke: var(--line-strong); stroke-width: 2.5; fill: none; }
+.he04-ours, .he04-his { fill: none; stroke-width: 6; stroke-linecap: round; stroke-dasharray: 1; stroke-dashoffset: 1; }
+.he04-ours { stroke: var(--danger); transition: stroke-dashoffset 1.6s ease .6s; }
+.he04-his { stroke: var(--accent-hot); transition: stroke-dashoffset 3s ease 2.4s; }
+.slide.active :is(.he04-ours, .he04-his) { stroke-dashoffset: 0; }
+.he04-lab1 { opacity: 0; transition: opacity .6s ease 2.2s; }
+.he04-lab2 { opacity: 0; transition: opacity .6s ease 5.2s; }
+.slide.active :is(.he04-lab1, .he04-lab2) { opacity: 1; }
+
+/* he04-throne: come boldly unto the throne of grace (4:16). A night panel (filled --on-glow, so it is night in every theme).
+   A stooped man stands at the left; a veil hides the throne's light. On .he04-tear the veil tears top to bottom and its
+   halves draw back; on .he04-come the man walks up to the throne and stands up straight; on .he04-gifts mercy and grace
+   come down to him. */
+.he04-sky { fill: var(--on-glow); }
+.he04-txt { fill: var(--glow); }
+.he04-soft { fill: color-mix(in srgb, var(--glow) 65%, var(--on-glow)); }
+.he04-light { opacity: .25; transition: opacity 1.4s ease .8s; }
+.slide:has(.he04-tear.on) .he04-light { opacity: 1; }
+.slide.active .he04-light { animation: he04-breathe 3.6s ease-in-out infinite alternate; }
+@keyframes he04-breathe { to { transform: scale(1.06); } }
+.he04-light { transform-box: fill-box; transform-origin: center; }
+.he04-veil { fill: color-mix(in srgb, var(--wine) 75%, var(--on-glow)); stroke: color-mix(in srgb, var(--accent) 60%, var(--wine)); stroke-width: 2; transition: transform 1.4s ease .9s, opacity 1.4s ease .9s; }
+.he04-fold { stroke: color-mix(in srgb, var(--wine) 50%, var(--on-glow)); stroke-width: 3; }
+.he04-rip { fill: none; stroke: var(--glow); stroke-width: 3; stroke-dasharray: 1; stroke-dashoffset: 1; transition: stroke-dashoffset .8s ease, opacity .6s ease 1.4s; }
+.slide:has(.he04-tear.on) .he04-rip { stroke-dashoffset: 0; opacity: 0; }
+.slide:has(.he04-tear.on) .he04-half.l { transform: translateX(-70px) skewY(-4deg); opacity: .25; }
+.slide:has(.he04-tear.on) .he04-half.r { transform: translateX(70px) skewY(4deg); opacity: .25; }
+.he04-half { transition: transform 1.4s ease .9s, opacity 1.4s ease .9s; transform-box: fill-box; }
+.he04-oldway { transition: opacity .8s ease; }
+.slide:has(.he04-tear.on) .he04-oldway { opacity: 0; }
+.he04-walker { transition: transform 2.6s ease-in-out .3s; }
+.slide:has(.he04-come.on) .he04-walker { transform: translateX(360px); }
+.he04-walker .he04-man { stroke: var(--glow); }
+.he04-walker .he04-man circle { fill: var(--glow); }
+.he04-bent { transition: opacity .6s ease 2.4s; }
+.he04-tall { opacity: 0; transition: opacity .6s ease 2.4s; }
+.slide:has(.he04-come.on) .he04-bent { opacity: 0; }
+.slide:has(.he04-come.on) .he04-tall { opacity: 1; }
+.he04-bold { opacity: 0; transition: opacity .8s ease 2.6s; }
+.slide:has(.he04-come.on) .he04-bold { opacity: 1; }
+.he04-gift { opacity: 0; transform: translateY(-14px); transition: opacity .8s ease, transform .8s ease; transition-delay: calc(var(--k, 0) * 700ms + .3s); }
+.slide:has(.he04-gifts.on) .he04-gift { opacity: 1; transform: none; }
+</style>
+</head>
+<body>
+<main class="deck" id="deck">
+
+<!-- ======================= OPENING ======================= -->
+<section class="slide title">
+  <div class="inner">
+    <div class="emblem rise"></div>
+    <h1 class="rise" style="--d:1">Hebrews 4</h1>
+    <p class="sub rise" style="--d:3">Come boldly</p>
+    <p class="tag rise" style="--d:5">There is a rest God still offers, and it isn't earned. A word that sees right through you. And a High Priest who knows what temptation feels like, and says: come on in.</p>
+  </div>
+</section>
+
+<section class="slide watch">
+  <div class="inner">
+    <h2 class="rise">Things to watch for</h2>
+    <p class="lede rise" style="--d:1">Keep these questions in the back of your mind as we read. We'll come back to every one of them at the end.</p>
+    <ol class="seeds">
+      <li class="step"><span class="topic">Rest</span><span class="seed-q">What is the rest that still remains for God's people?</span></li>
+      <li class="step"><span class="topic">Faith</span><span class="seed-q">Why did the word preached not profit Israel?</span></li>
+      <li class="step"><span class="topic">Works</span><span class="seed-q">What does it mean to cease from your own works?</span></li>
+      <li class="step"><span class="topic">The word of God</span><span class="seed-q">What does God's word do in a man's heart?</span></li>
+      <li class="step"><span class="topic">Our High Priest</span><span class="seed-q">Why does it matter that Jesus was tempted?</span></li>
+      <li class="step"><span class="topic">The throne of grace</span><span class="seed-q">How should a man who fell yesterday come to God?</span></li>
+    </ol>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise">Where we are in Hebrews</h2>
+    <div class="he04-where" role="img" aria-label="Hebrews in five parts, each showing that Jesus is better. Chapters 1 and 2: better than the angels. Chapters 3 and 4: better than Moses, with a better rest. Chapters 5 to 7: a better priest. Chapters 8 to 10: a better covenant and sacrifice. Chapters 11 to 13: a better way to live, by faith. We are in chapter 4, the end of the second part.">
+      <div style="--k:0"><p><i class="done">1</i><i class="done">2</i></p><b>Better than angels</b><small>The Son is God's last word</small><q>spoken unto us by his Son</q><cite>1:2</cite></div>
+      <div class="now" style="--k:1"><p><i class="done">3</i><i class="here">4</i></p><b>Better than Moses</b><small>A better rest, open To day</small><q>There remaineth therefore a rest</q><cite>4:9</cite></div>
+      <div style="--k:2"><p><i>5</i><i>6</i><i>7</i></p><b>A better priest</b><small>After the order of Melchisedec</small><q>Thou art a priest for ever</q><cite>5:6</cite></div>
+      <div style="--k:3"><p><i>8</i><i>9</i><i>10</i></p><b>A better covenant</b><small>One sacrifice, once for all</small><q>by one offering he hath perfected for ever</q><cite>10:14</cite></div>
+      <div style="--k:4"><p><i>11</i><i>12</i><i>13</i></p><b>A better way</b><small>Faith that keeps going</small><q>Looking unto Jesus</q><cite>12:2</cite></div>
+    </div>
+    <p class="note rise" style="--d:3">Chapter 3 ended in the desert: a whole generation <em>“could not enter in because of unbelief.”</em> God had sworn, <em>“They shall not enter into my rest.”</em></p>
+    <p class="note step">Chapter 4 asks the next question: is that rest closed for good? No. It's still open, and the writer spends the chapter showing what it is, how a man gets in, and Who is waiting for him.</p>
+  </div>
+</section>
+
+<!-- ======================= PART ONE: A PROMISE LEFT US ======================= -->
+<section class="slide part">
+  <div class="inner">
+    <p class="part-n rise">Part one</p>
+    <h2 class="rise" style="--d:1">A promise left us</h2>
+    <p class="range rise" style="--d:2">Verses 1–5</p>
+    <div class="rule"></div>
+    <p class="hook rise" style="--d:4">The same good news they heard. This time, mix it with faith.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="1-2" data-hl="a promise being left us of entering into his rest|not being mixed with faith in them that heard it"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="2"></blockquote>
+    <h2 class="rise" style="--d:1">Heard, but not mixed with faith</h2>
+    <div class="columns">
+      <div class="col law step"><span class="who">Unto them</span><h3>“The land is yours”</h3><p>Israel heard good news: God would give them Canaan. They heard it, nodded, and didn't trust Him. The word sat in them like seed on concrete.</p></div>
+      <div class="col grace step"><span class="who">Unto us</span><h3>“The rest is yours”</h3><p>We've heard better news: Christ has done it all. Hearing isn't enough. Faith takes what God says and leans the whole weight of your life on it.</p></div>
+    </div>
+    <p class="note step"><em>“Let us therefore fear”</em> isn't fear of losing your salvation. It's the fear of a man standing at the border, hearing the good news, and never going in. <em>“Come short”</em> means fall behind, arrive too late. Don't stop short of what God has already given.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="3-5" data-hl="For we which have believed do enter into rest|the works were finished from the foundation of the world|And God did rest the seventh day from all his works"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="3" data-hl="we which have believed do enter into rest"></blockquote>
+    <h2 class="rise" style="--d:1">One rest, many pictures</h2>
+    <ol class="timeline rise" style="--d:2">
+      <li style="--k:0"><b>The seventh day</b><span>God rests from finished work</span><small>Genesis 2:2</small></li>
+      <li style="--k:1"><b>The sabbath</b><span>a day off every week, a reminder</span><small>Exodus 20</small></li>
+      <li style="--k:2"><b>Canaan</b><span>a land at rest from war</span><small>Joshua</small></li>
+      <li style="--k:3"><b>“To day”</b><span>still offered, long after</span><small>Psalm 95, David</small></li>
+      <li class="lit" style="--k:4"><b>Christ</b><span>the rest itself: “I will give you rest”</span><small>Matthew 11:28</small></li>
+      <li class="wait" style="--k:5"><b>Glory</b><span>the rest that remains, for ever</span><small>4:9</small></li>
+    </ol>
+    <p class="note step">God's rest began on the seventh day, when His work was <em>“finished.”</em> He wasn't tired. He was done. Every rest after that, the weekly sabbath, the land of Canaan, was a picture pointing ahead.</p>
+    <p class="note step">Look at the tense in verse 3: <em>“we which have believed do enter.”</em> Not someday. A man who trusts Christ steps into God's rest now, and he'll have it in full in glory.</p>
+  </div>
+</section>
+
+<!-- ======================= PART TWO: THERE REMAINETH A REST ======================= -->
+<section class="slide part">
+  <div class="inner">
+    <p class="part-n rise">Part two</p>
+    <h2 class="rise" style="--d:1">There remaineth a rest</h2>
+    <p class="range rise" style="--d:2">Verses 6–11</p>
+    <div class="rule"></div>
+    <p class="hook rise" style="--d:4">Stop working for it. It's finished.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="6-8" data-hl="To day, after so long a time|For if Jesus had given them rest"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="8"></blockquote>
+    <h2 class="rise" style="--d:1">Which Jesus?</h2>
+    <div class="tongues">
+      <div class="rise" style="--d:2"><div class="w" lang="he">יְהוֹשֻׁעַ</div><div class="t">Yehoshua</div><div class="l">Hebrew</div></div>
+      <div class="rise" style="--d:4"><div class="w" lang="el">Ἰησοῦς</div><div class="t">Iēsous</div><div class="l">Greek</div></div>
+      <div class="rise" style="--d:6"><div class="w">Joshua</div><div class="t">Jesus</div><div class="l">English</div></div>
+    </div>
+    <p class="note step">Here <em>“Jesus”</em> means Joshua, who led Israel into Canaan. It's the same name in Greek, and it means <em>the LORD saves.</em></p>
+    <p class="note step">Here's the argument. Joshua brought them into the land. But hundreds of years later, David was still saying, <em>“To day … harden not your hearts.”</em> So Canaan wasn't the real rest. If Joshua had given it, God wouldn't still be offering another day. The first Joshua gave them land. The greater Jesus gives the rest itself.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="9-11" data-hl="There remaineth therefore a rest to the people of God|he also hath ceased from his own works, as God did from his|Let us labour therefore to enter into that rest"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <div class="split">
+      <div class="stage">
+        <svg viewBox="0 50 600 240" role="img" aria-label="A man pushes a heavy boulder labeled my own works up a slope. He gets it a little way, and it slides back, again and again. Then the slope and the boulder roll away, and the man sits at rest at the foot of a cross, under the words It is finished.">
+          <line x1="20" y1="280" x2="580" y2="280" stroke-width="3" style="stroke:var(--line-strong)"/>
+          <g class="he04-roll">
+            <line class="he04-slope" x1="30" y1="280" x2="380" y2="161"/>
+            <g class="he04-grind">
+              <circle class="he04-rock" cx="176" cy="196" r="40"/>
+              <text x="176" y="192" text-anchor="middle" font-size="14" font-weight="700" style="fill:var(--ink)">my own</text>
+              <text x="176" y="210" text-anchor="middle" font-size="14" font-weight="700" style="fill:var(--ink)">works</text>
+              <g class="he04-man"><circle cx="104" cy="196" r="10"/><path d="M108 206 L96 240 M96 240 L82 262 M96 240 L106 258 M106 212 L138 206 M104 220 L136 222"/></g>
+            </g>
+            <text x="90" y="110" text-anchor="middle" font-size="16" font-style="italic" style="fill:var(--ink-soft)">staying clean</text>
+            <text x="230" y="80" text-anchor="middle" font-size="16" font-style="italic" style="fill:var(--ink-soft)">making it up to people</text>
+            <text x="370" y="120" text-anchor="middle" font-size="16" font-style="italic" style="fill:var(--ink-soft)">being good enough</text>
+          </g>
+          <g class="he04-sat">
+            <g style="fill:var(--accent)"><rect x="392" y="110" width="16" height="170" rx="3"/><rect x="360" y="140" width="80" height="14" rx="3"/></g>
+            <g class="he04-man"><circle cx="470" cy="214" r="10"/><path d="M470 224 L470 254 M470 254 L500 254 M500 254 L500 280 M470 234 L488 248"/></g>
+            <text x="400" y="80" text-anchor="middle" font-size="22" font-weight="700" style="fill:var(--accent-hot)">“It is finished”</text>
+            <text x="520" y="206" text-anchor="middle" font-size="18" font-weight="700" style="fill:var(--accent-hot)">rest</text>
+          </g>
+        </svg>
+      </div>
+      <div>
+        <h2 class="rise" style="--d:1">Put the rock down</h2>
+        <p class="note rise" style="--d:2">A lot of us came to Christ and kept pushing the same rock: if I stay clean long enough, if I make it up to everybody, maybe God will finally accept me. It slides back every time.</p>
+        <p class="note step he04-stop">Entering God's rest means you <em>“ceased from”</em> your own works, the way God rested when creation was done. Jesus said <em>“It is finished”</em> on the cross. You don't finish it. You rest in it.</p>
+        <p class="note step"><em>“Let us labour to enter”</em> sounds backwards. It means be in earnest, make haste. Work hard at one thing: trusting the One who did the work.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise">Rest is not quitting</h2>
+    <blockquote class="quote rise" style="--d:1"><p>“Come unto me, all ye that labour and are heavy laden, and I will give you rest.”</p><cite>Matthew 11:28</cite></blockquote>
+    <blockquote class="quote step"><p>“For by grace are ye saved through faith; and that not of yourselves: it is the gift of God: Not of works, lest any man should boast.”</p><cite>Ephesians 2:8–9</cite></blockquote>
+    <p class="note step">Resting from your works for salvation doesn't mean you stop working at life. You still go to your job, still stay away from the old places, still make amends where you can. The difference is <em>why.</em> Not to get God to love you, but because He already does.</p>
+    <p class="note step">Today, when the voice says, “You haven't done enough to be forgiven,” answer it: “No, I haven't. Jesus has.”</p>
+  </div>
+</section>
+
+<!-- ======================= PART THREE: NAKED AND OPENED ======================= -->
+<section class="slide part">
+  <div class="inner">
+    <p class="part-n rise">Part three</p>
+    <h2 class="rise" style="--d:1">Naked and opened</h2>
+    <p class="range rise" style="--d:2">Verses 12–13</p>
+    <div class="rule"></div>
+    <p class="hook rise" style="--d:4">A word that cuts to the heart, so it can heal it.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="12-13" data-hl="the word of God is quick, and powerful, and sharper than any twoedged sword|a discerner of the thoughts and intents of the heart|all things are naked and opened unto the eyes of him with whom we have to do"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <div class="split">
+      <div class="stage">
+        <svg viewBox="0 -100 600 400" role="img" aria-label="Four layers stack over a man's heart: what people see, what I tell myself, my thoughts, my intents. A two-edged sword comes down through them. Each layer splits apart as it passes, and the heart underneath is laid open and glows. Beside the sword appear its four words: quick, alive; powerful, at work; sharper, two edges; discerner, it judges the heart.">
+          <defs><radialGradient id="he04-heartglow"><stop offset="0" style="stop-color:var(--glow)"/><stop offset=".55" stop-opacity=".6" style="stop-color:var(--accent)"/><stop offset="1" stop-opacity="0" style="stop-color:var(--accent)"/></radialGradient></defs>
+          <g text-anchor="end" font-size="16" style="fill:var(--ink-soft)">
+            <text x="190" y="35">what people see</text>
+            <text x="190" y="85">what I tell myself</text>
+            <text x="190" y="135">my thoughts</text>
+            <text x="190" y="185">my intents</text>
+          </g>
+          <rect class="he04-band l" style="--k:0" x="230" y="12" width="70" height="40" rx="4"/><rect class="he04-band r" style="--k:0" x="300" y="12" width="70" height="40" rx="4"/>
+          <rect class="he04-band l" style="--k:1" x="230" y="62" width="70" height="40" rx="4"/><rect class="he04-band r" style="--k:1" x="300" y="62" width="70" height="40" rx="4"/>
+          <rect class="he04-band l" style="--k:2" x="230" y="112" width="70" height="40" rx="4"/><rect class="he04-band r" style="--k:2" x="300" y="112" width="70" height="40" rx="4"/>
+          <rect class="he04-band l" style="--k:3" x="230" y="162" width="70" height="40" rx="4"/><rect class="he04-band r" style="--k:3" x="300" y="162" width="70" height="40" rx="4"/>
+          <g class="he04-core">
+            <circle cx="300" cy="250" r="48" fill="url(#he04-heartglow)"/>
+            <path d="M300 272 C276 256 266 242 273 230 C280 219 294 221 300 231 C306 221 320 219 327 230 C334 242 324 256 300 272 Z" style="fill:var(--danger)"/>
+            <text x="370" y="262" font-size="16" font-weight="700" style="fill:var(--accent-hot)">the heart, laid open</text>
+          </g>
+          <g class="he04-blade">
+            <circle cx="300" cy="-92" r="7" style="fill:var(--leather-light)"/>
+            <rect x="294" y="-86" width="12" height="32" rx="3" style="fill:var(--leather)"/>
+            <rect x="262" y="-56" width="76" height="10" rx="3" style="fill:var(--leather-light)"/>
+            <path class="he04-steel" d="M289 -46 L311 -46 L311 170 L300 212 L289 170 Z"/>
+            <path class="he04-edge" d="M289 -44 L289 170 L300 210 M311 -44 L311 170 L300 210"/>
+            <line x1="300" y1="-44" x2="300" y2="196" stroke-width="1.5" style="stroke:var(--ink-soft)"/>
+          </g>
+          <g font-size="16">
+            <g class="he04-word" style="--k:0"><text x="424" y="-40" font-weight="700" style="fill:var(--accent-hot)">quick</text><text x="424" y="-20" style="fill:var(--ink-soft)">alive</text></g>
+            <g class="he04-word" style="--k:1"><text x="424" y="20" font-weight="700" style="fill:var(--accent-hot)">powerful</text><text x="424" y="40" style="fill:var(--ink-soft)">at work in you</text></g>
+            <g class="he04-word" style="--k:2"><text x="424" y="80" font-weight="700" style="fill:var(--accent-hot)">sharper</text><text x="424" y="100" style="fill:var(--ink-soft)">two edges, both cut</text></g>
+            <g class="he04-word" style="--k:3"><text x="424" y="140" font-weight="700" style="fill:var(--accent-hot)">discerner</text><text x="424" y="160" style="fill:var(--ink-soft)">it judges the heart</text></g>
+          </g>
+        </svg>
+      </div>
+      <div>
+        <h2 class="rise" style="--d:1">Sharper than any sword</h2>
+        <p class="note rise" style="--d:2">The Bible isn't an old book lying still on a shelf. It's <em>“quick,”</em> alive. You read it, and it reads you.</p>
+        <p class="note step">It cuts past the layers: past the face we show people, past the story we tell ourselves, down to <em>why</em> we really do what we do. <em>“Discerner”</em> is a judge's word. It sorts out what's true in us.</p>
+        <p class="note step">A surgeon's knife cuts too, but it cuts to heal. When a verse lands hard on you, that isn't God against you. That's God operating.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <div class="split">
+      <div class="stage">
+        <svg class="lid" viewBox="0 0 600 300" role="img" aria-label="A pile hidden under a heavy cover, with a dark cloud above, labeled what I hide. The cover is lifted: He sees it anyway. Then the pile is carried away, and light shines where it was: mercy.">
+          <line x1="20" y1="252" x2="580" y2="252" stroke-width="2" style="stroke:var(--line-strong)"/>
+          <g class="lid-light">
+            <g stroke-width="5" stroke-linecap="round" style="stroke:var(--warm)">
+              <path d="M300 150 L300 70 M300 150 L360 92 M300 150 L240 92 M300 150 L392 150 M300 150 L208 150"/>
+            </g>
+            <circle cx="300" cy="150" r="34" style="fill:var(--warm)"/>
+            <text x="300" y="215" text-anchor="middle" font-size="30" font-weight="700" style="fill:var(--accent)">mercy</text>
+          </g>
+          <g class="lid-pile">
+            <rect x="236" y="204" width="56" height="48" rx="8" style="fill:color-mix(in srgb, var(--danger) 55%, var(--surface-2))"/>
+            <rect x="296" y="190" width="64" height="62" rx="8" style="fill:color-mix(in srgb, var(--ink-soft) 70%, var(--surface-2))"/>
+            <rect x="268" y="168" width="48" height="40" rx="8" style="fill:color-mix(in srgb, var(--danger) 35%, var(--surface-2))"/>
+          </g>
+          <path class="lid-cover" d="M200 252 Q206 150 300 146 Q394 150 400 252 Z" stroke-width="3" style="fill:color-mix(in srgb, var(--ink-soft) 55%, var(--surface-2));stroke:var(--ink-soft)"/>
+          <g class="lid-cloud">
+            <g style="fill:var(--ink-soft)"><ellipse cx="270" cy="60" rx="50" ry="26"/><ellipse cx="320" cy="50" rx="44" ry="30"/><ellipse cx="350" cy="66" rx="40" ry="22"/></g>
+            <path d="M260 96 l-6 18 M300 96 l-6 18 M340 96 l-6 18" stroke-width="3" stroke-linecap="round" style="stroke:var(--ink-soft)"/>
+            <text x="480" y="62" text-anchor="middle" font-size="19" style="fill:var(--ink-soft)">what I hide</text>
+          </g>
+        </svg>
+      </div>
+      <div>
+        <h2 class="rise" style="--d:1">Naked and opened</h2>
+        <p class="note rise" style="--d:2">Ever since Adam hid in the garden, men have hidden: <em>“I was afraid, because I was naked; and I hid myself”</em> (Genesis 3:10). <em>“Opened”</em> pictures a neck bent back, face up, nowhere to look away.</p>
+        <p class="note step lid-off">That sounds terrifying, until you realize it means you can stop hiding. He already knows all of it, and He hasn't left.</p>
+        <p class="note step lid-gone">Say it to Him plainly. <em>“If we confess our sins, he is faithful and just to forgive us”</em> (1 John 1:9). Where the hidden thing was, there is mercy.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ======================= PART FOUR: COME BOLDLY ======================= -->
+<section class="slide part">
+  <div class="inner">
+    <p class="part-n rise">Part four</p>
+    <h2 class="rise" style="--d:1">Come boldly</h2>
+    <p class="range rise" style="--d:2">Verses 14–16</p>
+    <div class="rule"></div>
+    <p class="hook rise" style="--d:4">The One who sees everything is the One who understands.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="14-15" data-hl="we have a great high priest, that is passed into the heavens|touched with the feeling of our infirmities|in all points tempted like as we are, yet without sin"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <div class="split">
+      <div class="stage">
+        <svg viewBox="0 0 600 300" role="img" aria-label="A chart of temptation's pressure over time. A red line, ours, rises and stops partway up, where we give in and the pressure lets go. A gold line, His, keeps rising all the way to the top: He never gave in, so He felt the full weight of it.">
+          <path class="he04-axis" d="M60 30 L60 260 L570 260"/>
+          <text x="40" y="150" text-anchor="middle" font-size="16" transform="rotate(-90 40 150)" style="fill:var(--ink-soft)">pressure</text>
+          <text x="315" y="290" text-anchor="middle" font-size="16" style="fill:var(--ink-soft)">time under temptation</text>
+          <path class="he04-his" pathLength="1" d="M60 250 C200 240 300 180 380 120 C450 70 510 50 560 40"/>
+          <path class="he04-ours" pathLength="1" d="M60 250 C130 245 190 220 240 180"/>
+          <g class="he04-lab1"><path d="M232 172 l16 16 M248 172 l-16 16" stroke-width="4" stroke-linecap="round" style="stroke:var(--danger)"/><text x="250" y="216" font-size="16" font-weight="700" style="fill:var(--danger)">we give in here</text><text x="250" y="236" font-size="15" style="fill:var(--ink-soft)">and the pressure stops</text></g>
+          <g class="he04-lab2"><circle cx="560" cy="40" r="7" style="fill:var(--accent-hot)"/><text x="570" y="128" text-anchor="end" font-size="16" font-weight="700" style="fill:var(--accent-hot)">He never gave in</text><text x="570" y="148" text-anchor="end" font-size="15" style="fill:var(--ink-soft)">He felt the full weight</text></g>
+        </svg>
+      </div>
+      <div>
+        <h2 class="rise" style="--d:1">He knows how it feels</h2>
+        <p class="note rise" style="--d:2"><em>“Touched with the feeling”</em> means He suffers along with us. Jesus was hungry, tired, lonely, betrayed, and tempted by the devil himself (Matthew 4:1).</p>
+        <p class="note step">Being sinless didn't make it easier. The man who gives in never feels the last of the pressure. Jesus never gave in, so He felt every bit of it. Nobody knows temptation better.</p>
+        <p class="note step">So He isn't shocked by you, and He isn't disgusted. He's the one Person who knows exactly what you're up against.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="slide verse" data-v="16" data-hl="Let us therefore come boldly unto the throne of grace|that we may obtain mercy, and find grace to help in time of need"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <div class="stage rise">
+      <svg viewBox="0 0 680 330" style="max-height:38vh" role="img" aria-label="A night scene. On the left a man stands bent over. In the middle hangs a heavy veil, labeled the old way: the high priest only, once a year, that he die not. Behind it shines the throne of grace. The veil tears from top to bottom and its halves draw back, and light floods out. The man walks up to the throne and stands up straight: boldly. Then two gifts come down to him: mercy, for yesterday, and grace to help, for today.">
+        <defs><radialGradient id="he04-shine"><stop offset="0" style="stop-color:var(--glow)"/><stop offset=".35" stop-opacity=".75" style="stop-color:var(--accent)"/><stop offset="1" stop-opacity="0" style="stop-color:var(--accent)"/></radialGradient></defs>
+        <rect class="he04-sky" x="0" y="0" width="680" height="330" rx="14"/>
+        <line x1="20" y1="296" x2="660" y2="296" stroke-width="2" style="stroke:color-mix(in srgb, var(--glow) 30%, var(--on-glow))"/>
+        <circle class="he04-light" cx="540" cy="170" r="150" fill="url(#he04-shine)"/>
+        <g style="fill:color-mix(in srgb, var(--accent) 60%, var(--glow))">
+          <rect x="490" y="268" width="100" height="14" rx="3"/><rect x="500" y="254" width="80" height="14" rx="3"/>
+          <rect x="512" y="150" width="56" height="104" rx="6"/><rect x="504" y="200" width="72" height="16" rx="4"/>
+        </g>
+        <text class="he04-txt" x="540" y="40" text-anchor="middle" font-size="20" font-weight="700">the throne of grace</text>
+        <g class="he04-half l"><rect class="he04-veil" x="250" y="20" width="44" height="276"/><path class="he04-fold" d="M262 24 V292 M280 24 V292"/></g>
+        <g class="he04-half r"><rect class="he04-veil" x="294" y="20" width="44" height="276"/><path class="he04-fold" d="M308 24 V292 M326 24 V292"/></g>
+        <path class="he04-rip" pathLength="1" d="M294 20 L290 70 L298 120 L291 170 L297 220 L293 296"/>
+        <g class="he04-oldway" text-anchor="middle">
+          <text class="he04-txt" x="140" y="44" font-size="17" font-weight="700">the old way</text>
+          <text class="he04-soft" x="140" y="68" font-size="15">the high priest only,</text>
+          <text class="he04-soft" x="140" y="88" font-size="15">once a year,</text>
+          <text class="he04-soft" x="140" y="108" font-size="15">“that he die not”</text>
+        </g>
+        <g class="he04-walker">
+          <g class="he04-bent he04-man"><circle cx="96" cy="216" r="11"/><path d="M98 228 Q90 248 96 262 M96 262 L86 294 M96 262 L108 294 M96 238 L84 258 M96 238 L106 258"/></g>
+          <g class="he04-tall he04-man"><circle cx="100" cy="196" r="11"/><path d="M100 208 L100 258 M100 258 L90 294 M100 258 L110 294 M100 220 L82 238 M100 220 L124 206"/></g>
+          <text class="he04-bold he04-txt" x="100" y="170" text-anchor="middle" font-size="18" font-weight="700" font-style="italic">boldly</text>
+        </g>
+        <g class="he04-gift" style="--k:0"><rect x="229" y="70" width="130" height="56" rx="12" style="fill:color-mix(in srgb, var(--accent) 30%, var(--on-glow));stroke:var(--accent)"/><text class="he04-txt" x="294" y="94" text-anchor="middle" font-size="18" font-weight="700">mercy</text><text class="he04-soft" x="294" y="114" text-anchor="middle" font-size="14">for yesterday</text></g>
+        <g class="he04-gift" style="--k:1"><rect x="229" y="140" width="130" height="56" rx="12" style="fill:color-mix(in srgb, var(--cool) 35%, var(--on-glow));stroke:var(--cool)"/><text class="he04-txt" x="294" y="164" text-anchor="middle" font-size="18" font-weight="700">grace to help</text><text class="he04-soft" x="294" y="184" text-anchor="middle" font-size="14">for today's need</text></g>
+      </svg>
+    </div>
+    <p class="note rise" style="--d:1">Under the old law, only the high priest went behind the veil to God's mercy seat, once a year, <em>“that he die not”</em> (Leviticus 16:2).</p>
+    <p class="note step he04-tear">When Jesus died, the veil was <em>“rent in twain from the top to the bottom”</em> (Matthew 27:51). God tore it. The way is open.</p>
+    <p class="note step he04-come"><em>“Boldly”</em> means freely, plainly, without hiding. Not cocky, not cleaned up first. Your High Priest is already there.</p>
+    <p class="note step he04-gifts">And you don't walk out empty: <em>mercy</em> for what you did, and <em>grace to help</em> with what you face.</p>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="16"></blockquote>
+    <h2 class="rise" style="--d:1">If you fell yesterday</h2>
+    <div class="columns">
+      <div class="col law step"><span class="who">What shame says</span><h3>“Stay away a while”</h3><p>Clean up first. Give it a few days. Go back once you've earned the right to show your face.</p></div>
+      <div class="col grace step"><span class="who">What God says</span><h3>“Come boldly”</h3><p>Today. Now. To a throne of <em>grace</em>, not a judge's bench, where a High Priest who was tempted Himself is waiting for you.</p></div>
+    </div>
+    <blockquote class="quote step"><p>“There is therefore now no condemnation to them which are in Christ Jesus, who walk not after the flesh, but after the Spirit.”</p><cite>Romans 8:1</cite></blockquote>
+    <p class="note step"><em>“In time of need”</em> means help that comes right on time. Today, the moment the pull hits, at work, in the truck, at 2 a.m., pray right then, one line: “Lord, I need help now.” That's coming to the throne.</p>
+  </div>
+</section>
+
+<!-- ======================= CLOSING ======================= -->
+<section class="slide remember">
+  <div class="inner">
+    <h2 class="rise">Points to remember</h2>
+    <ol class="seeds">
+      <li class="step"><span class="topic">Rest</span><span class="seed-q">“There remaineth therefore a rest to the people of God” <cite>4:9</cite></span><span class="take">Not just a day or a land: rest with God in Christ, begun now by faith, and full in glory.</span></li>
+      <li class="step"><span class="topic">Faith</span><span class="seed-q">“Not being mixed with faith in them that heard it” <cite>4:2</cite></span><span class="take">Hearing isn't enough. The good news has to be trusted.</span></li>
+      <li class="step"><span class="topic">Works</span><span class="seed-q">“He also hath ceased from his own works” <cite>4:10</cite></span><span class="take">Stop pushing the rock to earn God's love. It is finished. Rest in it.</span></li>
+      <li class="step"><span class="topic">The word of God</span><span class="seed-q">“A discerner of the thoughts and intents of the heart” <cite>4:12</cite></span><span class="take">It's alive. It cuts past every layer to the heart, and it cuts to heal.</span></li>
+      <li class="step"><span class="topic">Our High Priest</span><span class="seed-q">“In all points tempted like as we are, yet without sin” <cite>4:15</cite></span><span class="take">He felt the full weight of temptation. He understands you, and He's not ashamed of you.</span></li>
+      <li class="step"><span class="topic">The throne of grace</span><span class="seed-q">“Let us therefore come boldly unto the throne of grace” <cite>4:16</cite></span><span class="take">Don't stay away. Come today: mercy for yesterday, grace for today.</span></li>
+    </ol>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 1 of 6</p>
+      <span class="topic">Rest</span>
+      <h2>What is the rest that still remains for God's people?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="9"></blockquote>
+      <blockquote class="quote step" data-q="3" data-hl="For we which have believed do enter into rest"></blockquote>
+      <blockquote class="quote step"><p>“Come unto me, all ye that labour and are heavy laden, and I will give you rest.”</p><cite>Matthew 11:28</cite></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>God's own rest: the peace of a finished work. The sabbath and Canaan were pictures of it. A man who trusts Christ enters it now, and he'll have it in full in glory.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 2 of 6</p>
+      <span class="topic">Faith</span>
+      <h2>Why did the word preached not profit Israel?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="2"></blockquote>
+      <blockquote class="quote step" data-q="6"></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>They heard it but didn't trust it. Good news only helps the man who believes it. The same is true of us: hearing sermons doesn't save; trusting Christ does.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 3 of 6</p>
+      <span class="topic">Works</span>
+      <h2>What does it mean to cease from your own works?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="10"></blockquote>
+      <blockquote class="quote step"><p>“But to him that worketh not, but believeth on him that justifieth the ungodly, his faith is counted for righteousness.”</p><cite>Romans 4:5</cite></blockquote>
+      <blockquote class="quote step"><p>“When Jesus therefore had received the vinegar, he said, It is finished: and he bowed his head, and gave up the ghost.”</p><cite>John 19:30</cite></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>To stop trying to earn God's acceptance. Jesus finished the work on the cross. We still work hard at life, but out of thanks, not to pay for our salvation.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 4 of 6</p>
+      <span class="topic">The word of God</span>
+      <h2>What does God's word do in a man's heart?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="12"></blockquote>
+      <blockquote class="quote step"><p>“Search me, O God, and know my heart: try me, and know my thoughts: And see if there be any wicked way in me, and lead me in the way everlasting.”</p><cite>Psalm 139:23–24</cite></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>It's alive and at work. It cuts past our excuses to our real thoughts and motives, and shows us the truth about ourselves, not to destroy us but to heal us and lead us.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 5 of 6</p>
+      <span class="topic">Our High Priest</span>
+      <h2>Why does it matter that Jesus was tempted?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="15"></blockquote>
+      <blockquote class="quote step"><p>“For in that he himself hath suffered being tempted, he is able to succour them that are tempted.”</p><cite>Hebrews 2:18</cite></blockquote>
+      <blockquote class="quote step"><p>“He is despised and rejected of men; a man of sorrows, and acquainted with grief: and we hid as it were our faces from him; he was despised, and we esteemed him not.”</p><cite>Isaiah 53:3</cite></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>Because He understands. He felt the full force of temptation and never gave in, so He knows what we face and is able to help us in it, not stand far off.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 6 of 6</p>
+      <span class="topic">The throne of grace</span>
+      <h2>How should a man who fell yesterday come to God?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="16"></blockquote>
+      <blockquote class="quote step"><p>“If we confess our sins, he is faithful and just to forgive us our sins, and to cleanse us from all unrighteousness.”</p><cite>1 John 1:9</cite></blockquote>
+      <blockquote class="quote step"><p>“There is therefore now no condemnation to them which are in Christ Jesus, who walk not after the flesh, but after the Spirit.”</p><cite>Romans 8:1</cite></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>Boldly, and today. Not hiding, not waiting until he's cleaned himself up. He comes honestly to a throne of grace, through Jesus, and finds mercy for yesterday and help for today.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide prayer">
+  <div class="inner">
+    <div class="emblem rise"></div>
+    <h2 class="rise" style="--d:1">Prayer requests</h2>
+    <p class="ask-line rise" style="--d:2">What can we pray about for you today?</p>
+    <blockquote class="quote rise" style="--d:4" data-q="16"></blockquote>
+  </div>
+</section>
+
+</main>
+
+<script>
+// King James Version, Hebrews chapter 4
+const V = {
+  1: "Let us therefore fear, lest, a promise being left us of entering into his rest, any of you should seem to come short of it.",
+  2: "For unto us was the gospel preached, as well as unto them: but the word preached did not profit them, not being mixed with faith in them that heard it.",
+  3: "For we which have believed do enter into rest, as he said, As I have sworn in my wrath, if they shall enter into my rest: although the works were finished from the foundation of the world.",
+  4: "For he spake in a certain place of the seventh day on this wise, And God did rest the seventh day from all his works.",
+  5: "And in this place again, If they shall enter into my rest.",
+  6: "Seeing therefore it remaineth that some must enter therein, and they to whom it was first preached entered not in because of unbelief:",
+  7: "Again, he limiteth a certain day, saying in David, To day, after so long a time; as it is said, To day if ye will hear his voice, harden not your hearts.",
+  8: "For if Jesus had given them rest, then would he not afterward have spoken of another day.",
+  9: "There remaineth therefore a rest to the people of God.",
+  10: "For he that is entered into his rest, he also hath ceased from his own works, as God did from his.",
+  11: "Let us labour therefore to enter into that rest, lest any man fall after the same example of unbelief.",
+  12: "For the word of God is quick, and powerful, and sharper than any twoedged sword, piercing even to the dividing asunder of soul and spirit, and of the joints and marrow, and is a discerner of the thoughts and intents of the heart.",
+  13: "Neither is there any creature that is not manifest in his sight: but all things are naked and opened unto the eyes of him with whom we have to do.",
+  14: "Seeing then that we have a great high priest, that is passed into the heavens, Jesus the Son of God, let us hold fast our profession.",
+  15: "For we have not an high priest which cannot be touched with the feeling of our infirmities; but was in all points tempted like as we are, yet without sin.",
+  16: "Let us therefore come boldly unto the throne of grace, that we may obtain mercy, and find grace to help in time of need."
+};
+const BOOK = "Hebrews 4";
+</script>
+<script src="../assets/deck.js"></script>
+</body>
+</html>
