@@ -17279,5 +17279,100 @@ window.STUDIES = [
       },
       "big": "Good teachers read the thousand years differently, but this is plain: Satan loses, Christ reigns, and every man will stand before God. The only thing that matters on that day is the Lamb's book of life, and a man's name is written there by faith in Jesus, today."
     }
+  },
+  {
+    "id": "revelation-21",
+    "type": "chapter",
+    "book": "Revelation",
+    "ch": 21,
+    "date": "2026-10-31",
+    "title": "Revelation 21",
+    "sub": "All things new",
+    "about": "A new heaven, a new earth, and a city coming down from God. No more tears, no more death, and God Himself living with His people.",
+    "tags": [
+      "Heaven",
+      "Hope",
+      "Grief",
+      "Grace",
+      "New creation",
+      "The Lamb"
+    ],
+    "url": "studies/revelation-21.html",
+    "overview": {
+      "where": "The new heaven and new earth, and the holy city, new Jerusalem, in John's vision on Patmos",
+      "when": "About AD 95; the vision looks ahead to the end, after the last judgment",
+      "people": [
+        "the-lamb",
+        "john-the-apostle",
+        "the-bride",
+        "angels",
+        "lord-god-almighty"
+      ],
+      "places": [
+        "new-jerusalem",
+        "heaven"
+      ],
+      "story": [
+        "John sees a new heaven and a new earth, with no more sea, and the holy city, new Jerusalem, coming down from God, prepared as a bride (1–2).",
+        "A great voice: the tabernacle of God is with men. God will wipe away all tears; there will be no more death, sorrow, crying or pain (3–4).",
+        "He on the throne says, “Behold, I make all things new.” He gives the water of life freely to the thirsty; the overcomer will be His son, but the unbelieving and all liars have their part in the second death (5–8).",
+        "An angel carries John to a high mountain to see the bride, the Lamb's wife: a city with twelve gates named for Israel's tribes and twelve foundations named for the apostles (9–14).",
+        "The city is measured: foursquare, twelve thousand furlongs, its wall jasper, its foundations twelve precious stones, its gates pearls, its street pure gold like glass (15–21).",
+        "There is no temple, for God and the Lamb are its temple, and no sun, for the Lamb is its light. Its gates never shut, and only those written in the Lamb's book of life enter (22–27)."
+      ],
+      "key": {
+        "ref": "Revelation 21:4",
+        "text": "And God shall wipe away all tears from their eyes; and there shall be no more death, neither sorrow, nor crying, neither shall there be any more pain: for the former things are passed away."
+      },
+      "big": "God will make all things new and live with His people for ever. He will wipe away every tear, and the water of life is free to anyone who is thirsty. The way into His city isn't being clean; it's being written in the Lamb's book of life."
+    }
+  },
+  {
+    "id": "revelation-22",
+    "type": "chapter",
+    "book": "Revelation",
+    "ch": 22,
+    "date": "2026-10-31",
+    "title": "Revelation 22",
+    "sub": "Whosoever will, come",
+    "about": "The river of life, the tree of life, the face of God, and the last invitation in the Bible. Then its last words: grace.",
+    "tags": [
+      "Invitation",
+      "Eden restored",
+      "Second coming",
+      "Worship",
+      "Grace",
+      "Hope"
+    ],
+    "url": "studies/revelation-22.html",
+    "overview": {
+      "where": "Inside the holy city, new Jerusalem, by the river and the throne, in John's vision on Patmos",
+      "when": "About AD 95; the last chapter of the Bible, looking ahead to Christ's return",
+      "people": [
+        "jesus",
+        "the-lamb",
+        "john-the-apostle",
+        "angels",
+        "the-bride",
+        "david"
+      ],
+      "places": [
+        "new-jerusalem",
+        "throne-in-heaven"
+      ],
+      "story": [
+        "A pure river of water of life flows from the throne of God and of the Lamb, and the tree of life grows on both sides, bearing fruit every month, its leaves for the healing of the nations (1–2).",
+        "There is no more curse. God's servants serve Him, see His face, bear His name, and reign for ever in His light (3–5).",
+        "“Behold, I come quickly.” John falls to worship the angel again and is told, “See thou do it not… worship God.” The book is not to be sealed, for the time is at hand (6–11).",
+        "Jesus will come with His reward. Those who do His commandments have right to the tree of life and enter the city; the dogs, sorcerers, murderers and liars are without (12–15).",
+        "“I Jesus… am the root and the offspring of David, and the bright and morning star.” The Spirit and the bride say, Come; whosoever will, let him take the water of life freely (16–17).",
+        "A warning against adding to or taking from the book; “Surely I come quickly. Amen. Even so, come, Lord Jesus”; and the Bible's last words: grace (18–21)."
+      ],
+      "key": {
+        "ref": "Revelation 22:17",
+        "text": "And the Spirit and the bride say, Come. And let him that heareth say, Come. And let him that is athirst come. And whosoever will, let him take the water of life freely."
+      },
+      "big": "What was lost in Eden is given back: the tree of life, no more curse, and God's face. Jesus is coming quickly, and until He does, the Bible's last invitation stands open to every man: whosoever will, come and take the water of life freely."
+    }
   }
 ];

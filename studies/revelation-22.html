@@ -1,0 +1,780 @@
+<!doctype html>
+<html lang="en" data-theme="stone">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Revelation 22</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="../assets/fonts.css">
+<link rel="stylesheet" href="../assets/deck.css">
+<link rel="stylesheet" href="../assets/themes.css">
+<style>
+/* rv21-where: where this chapter sits in Revelation (copied from rv05-where). Twenty-two chapter boxes (span) in seven groups (div);
+   each group's label (b) sits above (.up) or below the row, across the columns in its --c. The current group is .now,
+   the current chapter span.here. On a phone each group becomes its own row. */
+.rv21-where { display: grid; grid-template-columns: repeat(22, 1fr); gap: 5px 3px; margin: .6em 0 1em; align-items: end; }
+.rv21-where > div { display: contents; }
+.rv21-where span { grid-row: 2; display: grid; place-items: center; height: 2.3rem; border: 1.5px solid var(--line-strong); border-radius: 5px; font: 600 clamp(.75rem, .7rem + .3vw, 1rem) var(--sans); color: var(--ink-soft); }
+.rv21-where span.gap { margin-left: 5px; }
+.rv21-where b { grid-row: 3; grid-column: var(--c); align-self: start; text-align: center; font: 400 clamp(.8rem, .74rem + .32vw, 1.05rem)/1.25 var(--serif); color: var(--ink-soft); padding: 0 2px; }
+.rv21-where b.up { grid-row: 1; align-self: end; }
+.rv21-where b.left { text-align: left; }
+.rv21-where .now span { border-color: var(--accent); color: var(--ink); }
+.rv21-where .now b { color: var(--accent-hot); font-weight: 600; }
+.rv21-where span.here { background: var(--accent); color: var(--on-accent); box-shadow: 0 0 0 5px color-mix(in srgb, var(--accent) 22%, transparent); }
+@media (max-width: 600px) {
+  .rv21-where { grid-template-columns: 1fr; gap: 6px; }
+  .rv21-where > div { display: flex; flex-wrap: wrap; align-items: center; gap: 3px; }
+  .rv21-where span { width: 1.75rem; height: 1.9rem; }
+  .rv21-where span.gap { margin-left: 0; }
+  .rv21-where b, .rv21-where b.up { margin-left: .4em; text-align: left; align-self: center; }
+}
+
+/* shared bits for the rv22 drawings */
+.rv22-lab { fill: var(--ink-soft); font: italic 17px var(--serif); }
+.rv22-lab.hot { fill: var(--accent-hot); font-style: normal; font-weight: 600; }
+.rv22-ref { fill: var(--ink-soft); font: 13px var(--sans); letter-spacing: .04em; }
+.rv22-leafy { fill: color-mix(in srgb, var(--cool) 55%, var(--warm)); stroke: color-mix(in srgb, var(--cool) 55%, var(--on-glow)); stroke-width: 1.5; }
+.rv22-trunk { fill: var(--leather); }
+@media (max-width: 600px) { .rv22-lab { font-size: 21px; } .rv22-ref { font-size: 16px; } }
+
+/* rv22-river: the river of water of life running from the throne down the middle of a gold street, with the tree of life on
+   both banks. Flow lines (.rv22-flow) run for ever; twelve fruits (.rv22-fruit, --k) pop in; leaves (.rv22-leaf, --k) drift down */
+.rv22-street { fill: color-mix(in srgb, var(--warm) 45%, var(--glow)); stroke: color-mix(in srgb, var(--warm) 70%, var(--glow)); stroke-width: 2; }
+.rv22-water { fill: color-mix(in srgb, var(--cool) 75%, var(--glow)); }
+.rv22-flow { fill: none; stroke: var(--glow); stroke-width: 2.5; stroke-linecap: round; stroke-dasharray: 10 22; opacity: .85; }
+.slide.active .rv22-flow { animation: rv22-run 1.6s linear infinite; }
+@keyframes rv22-run { to { stroke-dashoffset: -32; } }
+.rv22-throne { fill: var(--glow); stroke: var(--warm); stroke-width: 3; }
+.rv22-halo { fill: var(--warm); opacity: .22; }
+.slide.active .rv22-halo { animation: rv22-breathe 3s ease-in-out infinite alternate; }
+@keyframes rv22-breathe { to { opacity: .45; } }
+.rv22-fruit { transform-box: fill-box; transform-origin: center; transform: scale(0); }
+.slide.active .rv22-fruit { animation: rv22-pop .45s cubic-bezier(.3,1.6,.5,1) forwards; animation-delay: calc(var(--k) * 140ms + 800ms); }
+@keyframes rv22-pop { to { transform: scale(1); } }
+.rv22-leaf { fill: color-mix(in srgb, var(--cool) 55%, var(--warm)); opacity: 0; }
+.slide.active .rv22-leaf { animation: rv22-drift 6s ease-in-out infinite; animation-delay: calc(var(--k) * 1.1s + 1.5s); }
+@keyframes rv22-drift { 0% { opacity: 0; transform: translate(0, 0) rotate(0deg); } 15% { opacity: .95; } 80% { opacity: .8; } 100% { opacity: 0; transform: translate(var(--dx), 110px) rotate(200deg); } }
+
+/* rv22-trees: three trees. Eden's tree of life behind a flaming sword that turns every way (.rv22-sword); the cross;
+   the tree of life given back. The second and third light up on the .rv22-t2 / .rv22-t3 steps */
+.rv22-ground { stroke: var(--line-strong); stroke-width: 2; }
+.rv22-sword { transform-box: view-box; transform-origin: 130px 150px; }
+.slide.active .rv22-sword { animation: rv22-turn 3.2s linear infinite; }
+@keyframes rv22-turn { to { transform: rotate(360deg); } }
+.rv22-blade { stroke: color-mix(in srgb, var(--ink-soft) 70%, var(--glow)); stroke-width: 6; stroke-linecap: round; }
+.rv22-grip { stroke: var(--leather); stroke-width: 7; stroke-linecap: round; }
+.rv22-flame { fill: var(--danger); }
+.rv22-flame2 { fill: var(--warm); }
+.rv22-lostlab { fill: var(--danger); font: 700 13px var(--sans); letter-spacing: .14em; text-transform: uppercase; }
+.rv22-paidlab { fill: var(--wine); font: 700 13px var(--sans); letter-spacing: .14em; text-transform: uppercase; }
+.rv22-backlab { fill: var(--accent-hot); font: 700 13px var(--sans); letter-spacing: .14em; text-transform: uppercase; }
+.rv22-wood { fill: color-mix(in srgb, var(--leather) 85%, var(--ink)); }
+.rv22-hill { fill: color-mix(in srgb, var(--leather-light) 30%, var(--surface-2)); }
+.rv22-glowc { fill: var(--warm); opacity: .25; }
+.rv22-b, .rv22-c, .rv22-arrow1, .rv22-arrow2 { opacity: .08; transition: opacity 1s ease; }
+.slide:has(.rv22-t2.on) .rv22-b, .slide:has(.rv22-t2.on) .rv22-arrow1 { opacity: 1; }
+.slide:has(.rv22-t3.on) .rv22-c, .slide:has(.rv22-t3.on) .rv22-arrow2 { opacity: 1; }
+.rv22-caps { display: grid; grid-template-columns: repeat(3, 1fr); gap: .8rem 1.6rem; text-align: center; font-size: clamp(1rem, .88rem + .55vw, 1.35rem); line-height: 1.45; max-width: 60rem; margin: 0 auto; }
+.rv22-caps em { font-style: normal; color: var(--accent-hot); }
+@media (max-width: 700px) { .rv22-caps { grid-template-columns: 1fr; text-align: left; } }
+.rv22-arrow1, .rv22-arrow2 { fill: none; stroke: var(--accent); stroke-width: 2.5; stroke-dasharray: 6 6; }
+@media (max-width: 600px) { .rv22-lostlab, .rv22-paidlab, .rv22-backlab { font-size: 16px; } }
+
+/* rv22-undo: Genesis 3 undone, row by row. Each row (div.step) shows the curse (s, struck through after it appears)
+   and what Revelation 21–22 gives back (b, lit) */
+.rv22-undo { display: grid; gap: .35em; margin: .3em 0 .9em; }
+.rv22-undo > div { display: grid; grid-template-columns: 1fr 2rem 1fr; align-items: center; gap: .6em; padding: .35em .6em; border-radius: 8px; background: var(--surface); }
+.rv22-undo s { position: relative; text-decoration: none; font: italic clamp(.95rem, .85rem + .45vw, 1.25rem)/1.3 var(--serif); color: var(--ink-soft); justify-self: start; }
+.rv22-undo s::after { content: ""; position: absolute; left: -2%; right: -2%; top: .7em; height: 2px; background: var(--danger); transform: scaleX(0); transform-origin: left; transition: transform .6s ease .5s; }
+.rv22-undo .on s::after { transform: scaleX(1); }
+.rv22-undo i { font-style: normal; text-align: center; color: var(--accent); font-size: 1.3rem; }
+.rv22-undo b { font: 600 clamp(1rem, .88rem + .5vw, 1.35rem)/1.3 var(--serif); color: var(--accent-hot); }
+.rv22-undo small { display: block; font: 600 clamp(.7rem, .66rem + .2vw, .85rem) var(--sans); font-style: normal; color: var(--ink-soft); margin-top: .1em; }
+@media (max-width: 600px) { .rv22-undo > div { grid-template-columns: 1fr; gap: .2em; } .rv22-undo i { display: none; } }
+
+/* rv22-dawn: the morning star over dark hills, with the day coming up behind them. The star (.rv22-star) shines and pulses;
+   the dawn glow (.rv22-dawnglow) grows; the small stars (.rv22-dot) fade as it does */
+.rv22-dawnglow { opacity: .25; }
+.slide.active .rv22-dawnglow { animation: rv22-dawn 6s ease-in-out .5s forwards; }
+@keyframes rv22-dawn { to { opacity: 1; } }
+.rv22-dot { fill: var(--glow); opacity: .8; }
+.slide.active .rv22-dot { animation: rv22-out 6s ease-in .5s forwards; }
+@keyframes rv22-out { to { opacity: .1; } }
+.rv22-star { fill: var(--glow); transform-box: fill-box; transform-origin: center; }
+.slide.active .rv22-star { animation: rv22-shine 2.4s ease-in-out infinite alternate; }
+@keyframes rv22-shine { from { transform: scale(.85) rotate(0deg); } to { transform: scale(1.12) rotate(8deg); } }
+.rv22-starhalo { opacity: 1; }
+.rv22-hills { fill: color-mix(in srgb, var(--on-glow) 88%, var(--cool)); }
+.rv22-skylab { fill: var(--glow); font: italic 18px var(--serif); }
+.rv22-skylab.hot { fill: color-mix(in srgb, var(--warm) 55%, var(--glow)); font-style: normal; font-weight: 600; }
+@media (max-width: 600px) { .rv22-skylab { font-size: 22px; } }
+
+/* rv22-come: Revelation 22:17, the Bible's last invitation. A night panel with the river of life winding through it
+   (.rv22-come-river, flowing). Four calls (.rv22-calls p, --k) come in one after another; a .rv22-who-go step brings up
+   "whosoever will", and a .rv22-names-go step brings in the men it means (span, --k), ending with "you" (b) */
+.rv22-come { position: relative; overflow: hidden; border-radius: 16px; background: radial-gradient(90% 70% at 50% 0%, color-mix(in srgb, var(--warm) 22%, var(--on-glow)), var(--on-glow) 70%); color: var(--glow); padding: 1.1em 1.5em 1.4em; display: grid; gap: .6em 7rem; min-height: min(62vh, 34rem); align-content: center; }
+@media (min-width: 900px) {
+  .rv22-come { grid-template-columns: .85fr 1.15fr; grid-template-rows: auto auto; align-items: center; }
+  .rv22-eyebrow { grid-area: 1 / 1; text-align: right; align-self: end; }
+  .rv22-calls { grid-area: 2 / 1; text-align: right; align-self: start; }
+  .rv22-who { grid-area: 1 / 2 / 3 / 3; }
+}
+.rv22-come > svg { position: absolute; inset: 0; width: 100%; height: 100%; pointer-events: none; }
+.rv22-come > :not(svg) { position: relative; }
+.rv22-bed { opacity: .2; }
+.rv22-bed.in { opacity: .3; }
+.rv22-riverbed { fill: none; stroke: var(--cool); stroke-width: 96; stroke-linecap: round; }
+.rv22-bed.in .rv22-riverbed { stroke-width: 46; }
+.rv22-riverrun { fill: none; stroke: color-mix(in srgb, var(--cool) 40%, var(--glow)); stroke-width: 2.5; stroke-linecap: round; stroke-dasharray: 2 26; opacity: .8; }
+.rv22-spark { fill: var(--glow); opacity: .5; }
+.slide.active .rv22-spark { animation: rv22-tw 2.2s ease-in-out infinite alternate; animation-delay: calc(var(--k) * -.6s); }
+@keyframes rv22-tw { from { opacity: .15; } to { opacity: .8; } }
+.slide.active .rv22-riverrun { animation: rv22-run2 2.4s linear infinite; }
+@keyframes rv22-run2 { to { stroke-dashoffset: -84; } }
+.rv22-source { opacity: .5; }
+.slide.active .rv22-source { animation: rv22-breathe2 3s ease-in-out infinite alternate; }
+@keyframes rv22-breathe2 { from { opacity: .35; } to { opacity: .7; } }
+.rv22-eyebrow { font: 700 clamp(.75rem, .7rem + .25vw, .95rem) var(--sans); letter-spacing: .14em; text-transform: uppercase; color: color-mix(in srgb, var(--warm) 60%, var(--glow)); }
+.rv22-calls { display: grid; gap: .3em; }
+.rv22-calls p { font: 400 clamp(1.2rem, 1rem + 1vw, 1.9rem)/1.2 var(--serif); opacity: 0; transform: translateX(-12px); }
+.slide.active .rv22-calls p { animation: rv22-in .9s ease forwards; animation-delay: calc(var(--k) * 1s + .6s); }
+@keyframes rv22-in { to { opacity: 1; transform: none; } }
+.rv22-calls small { font: 600 .62em var(--sans); letter-spacing: .06em; text-transform: uppercase; color: color-mix(in srgb, var(--glow) 70%, transparent); margin-right: .35em; }
+.rv22-calls b { font-weight: 600; color: color-mix(in srgb, var(--warm) 55%, var(--glow)); }
+.rv22-who { text-align: center; }
+.rv22-big { font: 300 clamp(2.6rem, 1.6rem + 4.4vw, 5.2rem)/1 var(--serif); color: color-mix(in srgb, var(--warm) 40%, var(--glow)); text-shadow: 0 0 34px color-mix(in srgb, var(--warm) 55%, transparent); }
+.rv22-take { margin-top: .35em; font: italic clamp(1.1rem, .95rem + .75vw, 1.6rem)/1.3 var(--serif); color: var(--glow); }
+.rv22-take em { font-style: normal; font-weight: 600; color: color-mix(in srgb, var(--warm) 55%, var(--glow)); }
+.rv22-names { display: flex; flex-wrap: wrap; justify-content: center; gap: 6px 7px; margin-top: .9em; }
+.rv22-names span, .rv22-names b { padding: .25em .7em; border-radius: 999px; border: 1.5px solid color-mix(in srgb, var(--glow) 35%, transparent); font: italic clamp(.88rem, .8rem + .35vw, 1.12rem) var(--serif); color: color-mix(in srgb, var(--glow) 85%, transparent); opacity: 0; transform: translateY(8px); transition: opacity .5s ease, transform .5s ease; transition-delay: calc(var(--k) * 180ms); }
+.rv22-names b { font: 700 clamp(.95rem, .85rem + .45vw, 1.25rem) var(--sans); font-style: normal; color: var(--on-glow); background: color-mix(in srgb, var(--warm) 70%, var(--glow)); border-color: transparent; }
+.rv22-names.on span, .rv22-names.on b { opacity: 1; transform: none; }
+
+/* rv22-story: the whole Bible as one line that falls and rises: creation, fall, promise, Christ, cross, resurrection, church,
+   return, all things new. The line (.rv22-line) draws itself; the points (.rv22-pt, --k) come up along it. A tree of life
+   stands at each end */
+.rv22-line { fill: none; stroke: var(--accent); stroke-width: 5; stroke-linecap: round; stroke-dasharray: 1; stroke-dashoffset: 1; }
+.slide.active .rv22-line { animation: rv22-draw 4.2s ease-in-out .4s forwards; }
+@keyframes rv22-draw { to { stroke-dashoffset: 0; } }
+.rv22-pt { opacity: 0; }
+.slide.active .rv22-pt { animation: rv22-show .6s ease forwards; animation-delay: calc(var(--k) * 450ms + .6s); }
+@keyframes rv22-show { to { opacity: 1; } }
+.rv22-pt circle { fill: var(--bg); stroke: var(--accent); stroke-width: 3.5; }
+.rv22-pt.low circle { stroke: var(--danger); }
+.rv22-pt.high circle { fill: var(--accent); }
+.rv22-pt text { font: 600 17px var(--serif); fill: var(--ink); }
+.rv22-pt text.r { font: 12.5px var(--sans); fill: var(--ink-soft); }
+@media (max-width: 600px) { .rv22-pt text { font-size: 27px; } .rv22-pt text.r { display: none; } }
+</style>
+</head>
+<body>
+<main class="deck" id="deck">
+
+<!-- ======================= OPENING ======================= -->
+<section class="slide title">
+  <div class="inner">
+    <div class="emblem rise"></div>
+    <h1 class="rise" style="--d:1">Revelation 22</h1>
+    <p class="sub rise" style="--d:3">Whosoever will, come</p>
+    <p class="tag rise" style="--d:5">The river of life, the tree of life, the face of God, and the last invitation in the Bible. Then its last words: grace.</p>
+  </div>
+</section>
+
+<section class="slide watch">
+  <div class="inner">
+    <h2 class="rise">Things to watch for</h2>
+    <p class="lede rise" style="--d:1">Keep these questions in the back of your mind as we read. We'll come back to every one of them at the end.</p>
+    <ol class="seeds">
+      <li class="step"><span class="topic">Eden</span><span class="seed-q">What was lost in Eden that is given back in the city?</span></li>
+      <li class="step"><span class="topic">His face</span><span class="seed-q">What will God's servants do, and what will they see?</span></li>
+      <li class="step"><span class="topic">Quickly</span><span class="seed-q">What does Jesus promise three times in this chapter?</span></li>
+      <li class="step"><span class="topic">Worship</span><span class="seed-q">Why did the angel stop John from worshipping him?</span></li>
+      <li class="step"><span class="topic">Whosoever</span><span class="seed-q">Who is invited to take the water of life?</span></li>
+      <li class="step"><span class="topic">Grace</span><span class="seed-q">What are the last words of the Bible?</span></li>
+    </ol>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise">Where we are in Revelation</h2>
+    <div class="rv21-where rise" style="--d:1" role="img" aria-label="The twenty-two chapters of Revelation in seven groups. Chapter 1: a vision of Christ. 2 and 3: the seven churches. 4 and 5: the throne and the Lamb. 6 to 16: seals, trumpets and bowls. 17 and 18: Babylon falls. 19 and 20: Christ returns and reigns. 21 and 22: all things new, with chapter 22, the last, lit.">
+      <div><span>1</span><b class="up left" style="--c:1 / 4">a vision of Christ</b></div>
+      <div><span class="gap">2</span><span>3</span><b style="--c:1 / 5">the seven churches</b></div>
+      <div><span class="gap">4</span><span>5</span><b class="up left" style="--c:4 / 9">the throne and the Lamb</b></div>
+      <div><span class="gap">6</span><span>7</span><span>8</span><span>9</span><span>10</span><span>11</span><span>12</span><span>13</span><span>14</span><span>15</span><span>16</span><b style="--c:6 / 17">seals, trumpets and bowls</b></div>
+      <div><span class="gap">17</span><span>18</span><b class="up" style="--c:16 / 20">Babylon falls</b></div>
+      <div><span class="gap">19</span><span>20</span><b style="--c:18 / 22">Christ returns and reigns</b></div>
+      <div class="now"><span class="gap">21</span><span class="here">22</span><b class="up" style="--c:20 / 23">all things new</b></div>
+    </div>
+    <p class="note step">In chapter 21 John saw the new Jerusalem come down: no more tears, no more death, God living with His people, and the Lamb as its light.</p>
+    <p class="note step">Now he's taken inside, to the heart of the city. This is the last chapter of the last book of the Bible, and it sounds a lot like the first chapters of the first one.</p>
+  </div>
+</section>
+
+<!-- ======================= PART ONE: THE RIVER AND THE TREE ======================= -->
+<section class="slide part">
+  <div class="inner">
+    <p class="part-n rise">Part one</p>
+    <h2 class="rise" style="--d:1">The river and the tree</h2>
+    <p class="range rise" style="--d:2">Verses 1–5</p>
+    <div class="rule"></div>
+    <p class="hook rise" style="--d:4">A river from the throne, the tree of life on its banks, and no more curse. Eden, given back.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="1-2" data-hl="a pure river of water of life|proceeding out of the throne of God and of the Lamb|the tree of life|the leaves of the tree were for the healing of the nations"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <div class="split">
+      <div class="stage">
+        <svg viewBox="0 0 520 450" role="img" aria-label="Seen from the street, a clear river flows out from the throne of God and of the Lamb and runs down the middle of a golden street toward us. Trees of life stand on both banks. Twelve fruits of different colors appear on the nearest trees, and leaves drift down toward the river.">
+          <circle class="rv22-halo" cx="260" cy="52" r="60"/>
+          <polygon class="rv22-street" points="215,84 305,84 505,425 15,425"/>
+          <polygon class="rv22-water" points="245,84 275,84 345,425 175,425"/>
+          <path class="rv22-flow" d="M255 90 L232 420"/><path class="rv22-flow" d="M260 90 L260 420" style="animation-delay:-.5s"/><path class="rv22-flow" d="M265 90 L290 420" style="animation-delay:-1s"/><path class="rv22-flow" d="M250 90 L205 420" style="animation-delay:-.8s"/><path class="rv22-flow" d="M270 90 L318 420" style="animation-delay:-.3s"/>
+          <circle class="rv22-throne" cx="260" cy="52" r="30"/>
+          <path d="M246 62 L246 44 Q246 38 252 38 L268 38 Q274 38 274 44 L274 62 Z" style="fill:var(--warm)"/>
+          <rect class="rv22-trunk" x="204" y="130" width="5" height="22"/><circle class="rv22-leafy" cx="206" cy="122" r="14"/>
+          <rect class="rv22-trunk" x="311" y="130" width="5" height="22"/><circle class="rv22-leafy" cx="314" cy="122" r="14"/>
+          <rect class="rv22-trunk" x="151" y="200" width="8" height="40"/><circle class="rv22-leafy" cx="155" cy="186" r="26"/>
+          <rect class="rv22-trunk" x="361" y="200" width="8" height="40"/><circle class="rv22-leafy" cx="365" cy="186" r="26"/>
+          <rect class="rv22-trunk" x="80" y="300" width="14" height="80"/><circle class="rv22-leafy" cx="87" cy="280" r="50"/><circle class="rv22-leafy" cx="60" cy="300" r="30"/><circle class="rv22-leafy" cx="116" cy="302" r="30"/>
+          <rect class="rv22-trunk" x="426" y="300" width="14" height="80"/><circle class="rv22-leafy" cx="433" cy="280" r="50"/><circle class="rv22-leafy" cx="406" cy="302" r="30"/><circle class="rv22-leafy" cx="460" cy="302" r="30"/>
+          <circle class="rv22-fruit" style="--k:0;fill:var(--danger)" cx="70" cy="260" r="7"/>
+          <circle class="rv22-fruit" style="--k:1;fill:var(--warm)" cx="100" cy="250" r="7"/>
+          <circle class="rv22-fruit" style="--k:2;fill:var(--wine)" cx="84" cy="290" r="7"/>
+          <circle class="rv22-fruit" style="--k:3;fill:color-mix(in srgb, var(--warm) 50%, var(--glow))" cx="114" cy="285" r="7"/>
+          <circle class="rv22-fruit" style="--k:4;fill:color-mix(in srgb, var(--danger) 50%, var(--warm))" cx="52" cy="295" r="7"/>
+          <circle class="rv22-fruit" style="--k:5;fill:color-mix(in srgb, var(--wine) 60%, var(--cool))" cx="96" cy="316" r="7"/>
+          <circle class="rv22-fruit" style="--k:6;fill:var(--warm)" cx="420" cy="258" r="7"/>
+          <circle class="rv22-fruit" style="--k:7;fill:var(--danger)" cx="450" cy="252" r="7"/>
+          <circle class="rv22-fruit" style="--k:8;fill:color-mix(in srgb, var(--wine) 60%, var(--cool))" cx="436" cy="292" r="7"/>
+          <circle class="rv22-fruit" style="--k:9;fill:var(--wine)" cx="404" cy="290" r="7"/>
+          <circle class="rv22-fruit" style="--k:10;fill:color-mix(in srgb, var(--warm) 50%, var(--glow))" cx="468" cy="296" r="7"/>
+          <circle class="rv22-fruit" style="--k:11;fill:color-mix(in srgb, var(--danger) 50%, var(--warm))" cx="448" cy="318" r="7"/>
+          <ellipse class="rv22-leaf" style="--k:0;--dx:60px" cx="110" cy="320" rx="7" ry="3.5"/>
+          <ellipse class="rv22-leaf" style="--k:1;--dx:-60px" cx="410" cy="322" rx="7" ry="3.5"/>
+          <ellipse class="rv22-leaf" style="--k:2;--dx:45px" cx="168" cy="205" rx="6" ry="3"/>
+          <ellipse class="rv22-leaf" style="--k:3;--dx:-45px" cx="352" cy="205" rx="6" ry="3"/>
+          <text class="rv22-lab" x="260" y="14" text-anchor="middle">“the throne of God and of the Lamb”</text>
+          <text class="rv22-lab hot" x="260" y="446" text-anchor="middle">“for the healing of the nations”</text>
+        </svg>
+      </div>
+      <div>
+        <h2 class="rise" style="--d:1">The river of life</h2>
+        <p class="note rise" style="--d:2">Ezekiel saw a river flow out of God's house, with trees on its banks: <em>“the fruit thereof shall be for meat, and the leaf thereof for medicine”</em> (Ezekiel 47:12). Here it is, fulfilled.</p>
+        <p class="note step">It comes from <em>the throne</em>. Life doesn't come from us; it flows out of God, and it never runs dry.</p>
+        <p class="note step">Fruit every month: never out of season, never short. And leaves to heal the nations: every wound sin opened between peoples, healed.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise">The tree lost, the tree given back</h2>
+    <div class="stage">
+      <svg viewBox="0 0 760 330" role="img" aria-label="Three trees in a row. First, the tree of life in Eden, with a flaming sword turning every way in front of it: lost. On a step, a cross on a hill: paid for. On another step, the tree of life again, glowing beside a river, its way open: given back.">
+        <defs><radialGradient id="rv22-treeg" cx="50%" cy="50%" r="50%"><stop offset="0%" style="stop-color: var(--warm); stop-opacity: .55"/><stop offset="100%" style="stop-color: var(--warm); stop-opacity: 0"/></radialGradient></defs>
+        <line class="rv22-ground" x1="20" y1="270" x2="740" y2="270"/>
+        <g>
+          <text class="rv22-lostlab" x="130" y="24" text-anchor="middle">lost</text>
+          <rect class="rv22-trunk" x="122" y="190" width="16" height="80"/>
+          <circle class="rv22-leafy" cx="130" cy="140" r="58"/><circle class="rv22-leafy" cx="96" cy="170" r="34"/><circle class="rv22-leafy" cx="164" cy="170" r="34"/>
+          <circle style="fill:var(--danger)" cx="110" cy="130" r="6"/><circle style="fill:var(--warm)" cx="150" cy="120" r="6"/><circle style="fill:var(--danger)" cx="140" cy="160" r="6"/>
+          <g class="rv22-sword">
+            <path class="rv22-flame" d="M130 142 C 112 120, 124 96, 118 74 C 126 84, 128 70, 130 52 C 134 70, 136 84, 142 74 C 136 96, 148 120, 130 142 Z"/>
+            <path class="rv22-flame2" d="M130 138 C 120 120, 128 100, 124 84 C 130 92, 130 80, 131 70 C 133 82, 134 92, 137 86 C 134 102, 140 120, 130 138 Z"/>
+            <line class="rv22-blade" x1="130" y1="146" x2="130" y2="66"/>
+            <line class="rv22-grip" x1="114" y1="150" x2="146" y2="150"/>
+            <line class="rv22-grip" x1="130" y1="150" x2="130" y2="174"/>
+          </g>
+          <text class="rv22-lab" x="130" y="296" text-anchor="middle">“to keep the way of the tree of life”</text>
+          <text class="rv22-ref" x="130" y="318" text-anchor="middle">Genesis 3:24</text>
+        </g>
+        <path class="rv22-arrow1" d="M232 150 L282 150"/>
+        <g class="rv22-b">
+          <text class="rv22-paidlab" x="380" y="24" text-anchor="middle">paid for</text>
+          <path class="rv22-hill" d="M290 270 Q380 200 470 270 Z"/>
+          <rect class="rv22-wood" x="372" y="62" width="16" height="180"/>
+          <rect class="rv22-wood" x="330" y="100" width="100" height="14"/>
+          <text class="rv22-lab" x="380" y="296" text-anchor="middle">“on the tree”</text>
+          <text class="rv22-ref" x="380" y="318" text-anchor="middle">1 Peter 2:24</text>
+        </g>
+        <path class="rv22-arrow2" d="M478 150 L528 150"/>
+        <g class="rv22-c">
+          <text class="rv22-backlab" x="630" y="24" text-anchor="middle">given back</text>
+          <circle cx="630" cy="140" r="110" style="fill:url(#rv22-treeg)"/>
+          <path d="M560 270 Q600 250 630 262 Q660 274 700 262" style="fill:none;stroke:var(--cool);stroke-width:8;stroke-linecap:round"/>
+          <rect class="rv22-trunk" x="622" y="190" width="16" height="75"/>
+          <circle class="rv22-leafy" cx="630" cy="140" r="58"/><circle class="rv22-leafy" cx="596" cy="170" r="34"/><circle class="rv22-leafy" cx="664" cy="170" r="34"/>
+          <circle style="fill:var(--danger)" cx="606" cy="124" r="6"/><circle style="fill:var(--warm)" cx="650" cy="116" r="6"/><circle style="fill:var(--wine)" cx="630" cy="150" r="6"/><circle style="fill:var(--warm)" cx="600" cy="168" r="6"/><circle style="fill:var(--danger)" cx="662" cy="160" r="6"/><circle style="fill:color-mix(in srgb, var(--wine) 60%, var(--cool))" cx="628" cy="104" r="6"/>
+          <text class="rv22-lab" x="630" y="296" text-anchor="middle">“right to the tree of life”</text>
+          <text class="rv22-ref" x="630" y="318" text-anchor="middle">Revelation 22:14</text>
+        </g>
+      </svg>
+    </div>
+    <div class="rv22-caps">
+      <p class="rise" style="--d:2">The Bible opens with the tree of life in Eden. Adam sinned, and God shut the way to it with a flaming sword.</p>
+      <p class="step rv22-t2">Between the two trees stands a third. Jesus <em>“bare our sins in his own body on the tree,”</em> and took the curse.</p>
+      <p class="step rv22-t3">The curse is paid, and the sword is gone. What Adam lost, Christ won back.</p>
+    </div>
+  </div>
+</section>
+
+<section class="slide verse" data-v="3-5" data-hl="there shall be no more curse|And they shall see his face|they shall reign for ever and ever"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise">Genesis 3, undone</h2>
+    <div class="rv22-undo">
+      <div class="step"><s>“cursed is the ground for thy sake”<small>Genesis 3:17</small></s><i>→</i><b>“there shall be no more curse”<small>Revelation 22:3</small></b></div>
+      <div class="step"><s>“hid themselves from the presence of the LORD God”<small>Genesis 3:8</small></s><i>→</i><b>“they shall see his face”<small>Revelation 22:4</small></b></div>
+      <div class="step"><s>“in sorrow shalt thou eat of it”<small>Genesis 3:17</small></s><i>→</i><b>“neither sorrow, nor crying”<small>Revelation 21:4</small></b></div>
+      <div class="step"><s>“unto dust shalt thou return”<small>Genesis 3:19</small></s><i>→</i><b>“there shall be no more death”<small>Revelation 21:4</small></b></div>
+      <div class="step"><s>“So he drove out the man”<small>Genesis 3:24</small></s><i>→</i><b>“enter in through the gates into the city”<small>Revelation 22:14</small></b></div>
+    </div>
+    <p class="note step">Everything sin broke in the garden, God puts back, and better. Eden was a garden for two; this is a city for <em>“the nations.”</em></p>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="4"></blockquote>
+    <h2 class="rise" style="--d:1">They shall see his face</h2>
+    <div class="pair">
+      <div class="scroll step"><p class="ref">Exodus 33:20</p><p class="kjv">And he said, <mark>Thou canst not see my face</mark>: for there shall no man see me, and live.</p></div>
+      <div class="scroll step"><p class="ref">1 John 3:2</p><p class="kjv">…but we know that, when he shall appear, we shall be like him; for <mark>we shall see him as he is</mark>.</p></div>
+    </div>
+    <p class="note step">Shame makes a man look at the floor. Adam hid. You know what it is to not be able to look your mother, your wife or your kids in the face. In that city you'll look God in the face, and not be ashamed.</p>
+    <p class="note step">And <em>his name shall be in their foreheads</em>: not the beast's mark (13:16), but His. You belong to Him. And heaven isn't idle: <em>“his servants shall serve him.”</em></p>
+  </div>
+</section>
+
+<!-- ======================= PART TWO: I COME QUICKLY ======================= -->
+<section class="slide part">
+  <div class="inner">
+    <p class="part-n rise">Part two</p>
+    <h2 class="rise" style="--d:1">I come quickly</h2>
+    <p class="range rise" style="--d:2">Verses 6–15</p>
+    <div class="rule"></div>
+    <p class="hook rise" style="--d:4">“These sayings are faithful and true.” Jesus is coming, so live like it.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="6-7" data-hl="These sayings are faithful and true|Behold, I come quickly"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise">“Come,” seven times</h2>
+    <p class="note rise" style="--d:1">Count the word <em>come</em> in this last chapter, verse by verse:</p>
+    <div class="tally rise" style="--d:2" aria-label="Verses 1 through 21, with come in verses 7, 12, 17 and 20: seven times in all">
+      <span><i>1</i>&nbsp;</span><span><i>2</i>&nbsp;</span><span><i>3</i>&nbsp;</span><span><i>4</i>&nbsp;</span><span><i>5</i>&nbsp;</span><span><i>6</i>&nbsp;</span>
+      <span class="hit" style="--k:0"><i>7</i>×1</span>
+      <span><i>8</i>&nbsp;</span><span><i>9</i>&nbsp;</span><span><i>10</i>&nbsp;</span><span><i>11</i>&nbsp;</span>
+      <span class="hit" style="--k:1"><i>12</i>×1</span>
+      <span><i>13</i>&nbsp;</span><span><i>14</i>&nbsp;</span><span><i>15</i>&nbsp;</span><span><i>16</i>&nbsp;</span>
+      <span class="hit" style="--k:2"><i>17</i>×3</span>
+      <span><i>18</i>&nbsp;</span><span><i>19</i>&nbsp;</span>
+      <span class="hit" style="--k:3"><i>20</i>×2</span>
+      <span><i>21</i>&nbsp;</span>
+    </div>
+    <p class="note step">Three times Jesus says, <em>“I come quickly”</em> (7, 12, 20). In verse 17 His people answer, <em>“Come,”</em> and call the thirsty to come. The Bible ends like a conversation: He says <em>I'm coming</em>, and we say <em>come</em>.</p>
+    <p class="note step"><em>Quickly</em> means soon and suddenly, on God's clock: <em>“one day is with the Lord as a thousand years”</em> (2 Peter 3:8). The wait isn't Him being slow. It's mercy: He is <em>“not willing that any should perish”</em> (2 Peter 3:9).</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="8-9" data-hl="I fell down to worship before the feet of the angel|See thou do it not|worship God"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise">Worship God</h2>
+    <p class="note rise" style="--d:1">John did this once before (19:10), and he does it again. An apostle, at the end of his life, overwhelmed, getting it wrong twice. The angel doesn't throw him out. He picks him up and points him the right way.</p>
+    <ul class="nots">
+      <li class="step"><span class="k">not the angel</span><span class="why">“I am thy fellowservant”</span></li>
+      <li class="step"><span class="k">not the preacher</span><span class="why">a fellowservant too, however much he helped you</span></li>
+      <li class="step"><span class="k">not the man who got you sober</span><span class="why">thank him; don't worship him</span></li>
+      <li class="step yes"><span class="k">worship God</span><span class="why">and Jesus, the Lamb, whom heaven worships with Him (5:13)</span></li>
+    </ul>
+  </div>
+</section>
+
+<section class="slide verse" data-v="10-11" data-hl="Seal not the sayings of the prophecy of this book: for the time is at hand"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise">Sealed, then open</h2>
+    <div class="pair">
+      <div class="scroll rise" style="--d:2"><p class="ref">Daniel 12:4</p><p class="kjv">But thou, O Daniel, <mark>shut up the words, and seal the book</mark>, even to the time of the end: many shall run to and fro, and knowledge shall be increased.</p></div>
+      <div class="scroll step"><p class="ref">Revelation 22:10</p><p class="kjv">And he saith unto me, <mark>Seal not</mark> the sayings of the prophecy of this book: <mark>for the time is at hand</mark>.</p></div>
+    </div>
+    <p class="note step">Daniel was told to seal his book: its time was far off. John is told the opposite. Read it, preach it, live by it. It's open.</p>
+    <p class="note step">Verse 11 is a warning, not a shrug. When He comes, every man stays what he is. The unjust stay unjust; the holy stay holy. The time to change sides is now, while the book is open.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="12-13" data-hl="my reward is with me|I am Alpha and Omega, the beginning and the end, the first and the last"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="12" data-hl="to give every man according as his work shall be"></blockquote>
+    <h2 class="rise" style="--d:1">Saved by grace, rewarded for work</h2>
+    <p class="note rise" style="--d:2">This isn't how a man gets in. That's by grace, through faith. This is what the Lord does with the work His people did after they were saved:</p>
+    <blockquote class="quote step"><p>“If any man’s work abide which he hath built thereupon, he shall receive a reward. If any man’s work shall be burned, he shall suffer loss: but he himself shall be saved; yet so as by fire.”</p><cite>1 Corinthians 3:14–15</cite></blockquote>
+    <p class="note step">Nothing you do for Him today is wasted: the shift you worked honestly, the brother you called, the drink you turned down. And He is <em>the first and the last</em>. He was there at the start of your story, and He'll be there at the end of it.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="14-15" data-hl="Blessed are they that do his commandments, that they may have right to the tree of life|whosoever loveth and maketh a lie"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise">Inside and outside</h2>
+    <div class="columns">
+      <div class="col grace step"><p class="who">22:14</p><h3>Inside the gates</h3><p><em>“They that do his commandments.”</em> And what is His commandment? John told us: <em>“That we should believe on the name of his Son Jesus Christ, and love one another”</em> (1 John 3:23). Faith that's real goes on to obey.</p></div>
+      <div class="col law step"><p class="who">22:15</p><h3>Without</h3><p><em>Without</em> means outside. In those days a <em>dog</em> was a scavenger nobody let in the house, a picture of a shameless man. The list is like 21:8, and again it ends with lying.</p></div>
+    </div>
+    <p class="note step">This isn't the clean outside and the dirty inside. Everybody inside was once on that list. The difference is the Lamb.</p>
+  </div>
+</section>
+
+<!-- ======================= PART THREE: COME ======================= -->
+<section class="slide part">
+  <div class="inner">
+    <p class="part-n rise">Part three</p>
+    <h2 class="rise" style="--d:1">Come</h2>
+    <p class="range rise" style="--d:2">Verses 16–21</p>
+    <div class="rule"></div>
+    <p class="hook rise" style="--d:4">Jesus signs His name to the book, the Bible gives its last invitation, and the last word is grace.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="16" data-hl="I Jesus|I am the root and the offspring of David, and the bright and morning star"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <div class="split">
+      <div class="stage">
+        <svg viewBox="0 0 460 340" role="img" aria-label="A night sky over dark hills. Low in the east the morning star shines bright, while the first light of dawn grows behind the hills and the other stars fade.">
+          <defs>
+            <linearGradient id="rv22-skyg" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0%" style="stop-color: var(--on-glow)"/>
+              <stop offset="65%" style="stop-color: color-mix(in srgb, var(--on-glow) 85%, var(--cool))"/>
+              <stop offset="100%" style="stop-color: color-mix(in srgb, var(--on-glow) 55%, var(--warm))"/>
+            </linearGradient>
+            <radialGradient id="rv22-dawng" cx="50%" cy="100%" r="70%">
+              <stop offset="0%" style="stop-color: var(--warm); stop-opacity: .95"/>
+              <stop offset="40%" style="stop-color: var(--warm); stop-opacity: .55"/>
+              <stop offset="100%" style="stop-color: var(--warm); stop-opacity: 0"/>
+            </radialGradient>
+            <radialGradient id="rv22-halog" cx="50%" cy="50%" r="50%"><stop offset="0%" style="stop-color: var(--glow); stop-opacity: .7"/><stop offset="100%" style="stop-color: var(--glow); stop-opacity: 0"/></radialGradient>
+            <clipPath id="rv22-skyclip"><rect x="0" y="0" width="460" height="340" rx="16"/></clipPath>
+          </defs>
+          <g clip-path="url(#rv22-skyclip)">
+            <rect x="0" y="0" width="460" height="340" style="fill:url(#rv22-skyg)"/>
+            <ellipse class="rv22-dawnglow" cx="300" cy="250" rx="340" ry="170" style="fill:url(#rv22-dawng)"/>
+            <circle class="rv22-dot" cx="40" cy="40" r="1.8"/><circle class="rv22-dot" cx="110" cy="80" r="1.4"/><circle class="rv22-dot" cx="180" cy="30" r="2"/><circle class="rv22-dot" cx="60" cy="140" r="1.5"/><circle class="rv22-dot" cx="400" cy="40" r="1.6"/><circle class="rv22-dot" cx="230" cy="90" r="1.3"/><circle class="rv22-dot" cx="140" cy="170" r="1.4"/><circle class="rv22-dot" cx="420" cy="120" r="1.5"/>
+            <circle class="rv22-starhalo" cx="310" cy="150" r="46" style="fill:url(#rv22-halog)"/>
+            <path class="rv22-star" d="M310 120 C 313 140, 320 147, 340 150 C 320 153, 313 160, 310 180 C 307 160, 300 153, 280 150 C 300 147, 307 140, 310 120 Z"/>
+            <path class="rv22-hills" d="M0 272 C 70 250, 130 266, 190 256 C 260 244, 320 266, 380 254 C 420 248, 445 254, 460 258 L460 340 L0 340 Z"/>
+            <text class="rv22-skylab hot" x="230" y="296" text-anchor="middle">“the bright and morning star”</text>
+            <text class="rv22-skylab" x="230" y="322" text-anchor="middle">the last star before the day</text>
+          </g>
+        </svg>
+      </div>
+      <div>
+        <h2 class="rise" style="--d:1">I Jesus</h2>
+        <p class="note rise" style="--d:2">Jesus signs the book Himself. He is David's <em>root</em>, the God who made David, and David's <em>offspring</em>, born of David's line. Jesus once asked, <em>“If David then call him Lord, how is he his son?”</em> (Matthew 22:45). This is the answer.</p>
+        <p class="note step">The <em>morning star</em> rises in the darkest part of the night, just before dawn, and when you see it, the day is certain. If it's dark in your life right now, look up. Morning is coming.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="slide verse" data-v="17" data-hl="And whosoever will, let him take the water of life freely"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <div class="rv22-come">
+      <svg viewBox="0 0 1000 560" preserveAspectRatio="none" aria-hidden="true">
+        <defs><radialGradient id="rv22-srcg" cx="50%" cy="50%" r="50%"><stop offset="0%" style="stop-color: var(--warm); stop-opacity: 1"/><stop offset="100%" style="stop-color: var(--warm); stop-opacity: 0"/></radialGradient></defs>
+        <ellipse class="rv22-source" cx="440" cy="0" rx="260" ry="150" style="fill:url(#rv22-srcg)"/>
+        <g class="rv22-bed"><path class="rv22-riverbed" d="M440 -20 C 400 120, 470 250, 430 360 C 400 440, 250 500, 120 620"/><path class="rv22-riverbed" d="M430 360 C 470 450, 700 480, 900 620"/></g>
+        <g class="rv22-bed in"><path class="rv22-riverbed" d="M440 -20 C 400 120, 470 250, 430 360 C 400 440, 250 500, 120 620"/><path class="rv22-riverbed" d="M430 360 C 470 450, 700 480, 900 620"/></g>
+        <path class="rv22-riverrun" d="M432 -20 C 392 120, 462 250, 422 360 C 392 440, 242 500, 112 620"/>
+        <path class="rv22-riverrun" d="M448 -20 C 408 120, 478 250, 438 360 C 408 440, 258 500, 128 620" style="animation-delay:-1.1s"/>
+        <path class="rv22-riverrun" d="M430 360 C 470 450, 700 480, 900 620" style="animation-delay:-.5s"/>
+        <path class="rv22-riverrun" d="M440 352 C 482 440, 708 470, 912 610" style="animation-delay:-1.6s"/>
+        <circle class="rv22-spark" style="--k:0" cx="60" cy="60" r="2"/><circle class="rv22-spark" style="--k:1" cx="180" cy="30" r="1.6"/><circle class="rv22-spark" style="--k:2" cx="700" cy="40" r="2"/><circle class="rv22-spark" style="--k:3" cx="900" cy="90" r="1.6"/><circle class="rv22-spark" style="--k:4" cx="960" cy="30" r="1.8"/><circle class="rv22-spark" style="--k:5" cx="300" cy="80" r="1.4"/><circle class="rv22-spark" style="--k:6" cx="600" cy="100" r="1.4"/>
+      </svg>
+      <p class="rv22-eyebrow">Revelation 22:17 · the Bible's last invitation</p>
+      <div class="rv22-calls" role="list">
+        <p role="listitem" style="--k:0"><small>the Spirit</small> says, <b>Come.</b></p>
+        <p role="listitem" style="--k:1"><small>the bride</small> says, <b>Come.</b></p>
+        <p role="listitem" style="--k:2"><small>him that heareth</small> says, <b>Come.</b></p>
+        <p role="listitem" style="--k:3"><small>him that is athirst</small> <b>come.</b></p>
+      </div>
+      <div class="rv22-who step">
+        <p class="rv22-big">whosoever will</p>
+        <p class="rv22-take">let him take the water of life <em>freely</em></p>
+        <div class="rv22-names step">
+          <span style="--k:0">the drunk</span><span style="--k:1">the addict</span><span style="--k:2">the convict</span><span style="--k:3">the liar</span><span style="--k:4">the father who wasn't there</span><span style="--k:5">the man who's never prayed</span><span style="--k:6">the man who fell yesterday</span><b style="--k:8">you</b>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise">Three ways to hear 22:17</h2>
+    <ol class="signs">
+      <li class="step now"><b>If you've never come</b>The invitation has your name on it: <em>whosoever</em>. Not after you clean up. Come thirsty, and take it. It's free because Jesus paid for it.</li>
+      <li class="step now"><b>If you came, and fell yesterday</b>The water hasn't dried up and the invitation hasn't been taken back. Come back to the fountain this morning.</li>
+      <li class="step now"><b>If you're drinking from it</b><em>“Let him that heareth say, Come.”</em> You're one of the voices now. Somebody you know is thirsty.</li>
+    </ol>
+    <blockquote class="quote step"><p>“In the last day, that great day of the feast, Jesus stood and cried, saying, If any man thirst, let him come unto me, and drink.”</p><cite>John 7:37</cite></blockquote>
+  </div>
+</section>
+
+<section class="slide verse" data-v="18-19" data-hl="If any man shall add unto these things|if any man shall take away from the words of the book of this prophecy"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise">Don't rewrite the book</h2>
+    <p class="note rise" style="--d:1">Moses said the same thing when he gave the law:</p>
+    <blockquote class="quote step"><p>“Ye shall not add unto the word which I command you, neither shall ye diminish ought from it, that ye may keep the commandments of the LORD your God which I command you.”</p><cite>Deuteronomy 4:2</cite></blockquote>
+    <p class="note step">This warning is aimed at the man who rewrites God's word: who adds his own "new revelation," or cuts out what he doesn't like. That's how false religions get started. Men who do that show they never had a real part in the book.</p>
+    <p class="note step">It is not aimed at a believer who struggles to understand Revelation. Nobody here has all of it figured out. Jesus keeps His own (John 10:28). Read it, believe it, and let it say what it says.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="20-21" data-hl="Surely I come quickly|Even so, come, Lord Jesus|The grace of our Lord Jesus Christ be with you all"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise">The last word</h2>
+    <div class="pair">
+      <div class="scroll rise" style="--d:2"><p class="ref">Malachi 4:6, the last verse of the Old Testament</p><p class="kjv">And he shall turn the heart of the fathers to the children, and the heart of the children to their fathers, lest I come and smite the earth with <mark>a curse</mark>.</p></div>
+      <div class="scroll step"><p class="ref">Revelation 22:21, the last verse of the Bible</p><p class="kjv">The <mark>grace</mark> of our Lord Jesus Christ be with you all. Amen.</p></div>
+    </div>
+    <p class="note step">The Old Testament ends warning of a curse. The New Testament ends with grace, because Jesus took the curse. That's the last word God has for you: not your record, not your worst day. <em>Grace.</em></p>
+    <p class="note step">And the Bible's last prayer is short enough to pray every morning: <em>“Even so, come, Lord Jesus.”</em> The early church had a word for it, <em>Maranatha</em> (1 Corinthians 16:22): our Lord, come.</p>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise">Looking back over Revelation</h2>
+    <ol class="timeline">
+      <li style="--k:0"><b>1</b><span>the risen Christ among His churches</span></li>
+      <li style="--k:1"><b>2–3</b><span>seven letters: He knows, warns and promises</span></li>
+      <li style="--k:2"><b>4–5</b><span>the throne, and the Lamb that was slain</span></li>
+      <li style="--k:3"><b>6–16</b><span>seals, trumpets and bowls: evil judged</span></li>
+      <li style="--k:4"><b>17–18</b><span>Babylon falls</span></li>
+      <li style="--k:5"><b>19–20</b><span>the King returns; the devil is cast out</span></li>
+      <li class="lit" style="--k:6"><b>21–22</b><span>all things new</span></li>
+    </ol>
+    <p class="saying step">The <em>Lamb</em> wins.</p>
+    <p class="note step">Good Bible teachers differ on how the middle chapters fit together. But the book was written to small, struggling churches to keep them faithful, and what it says is plain: Christ is coming, evil is judged, God wipes away every tear.</p>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise">The whole story, in one line</h2>
+    <div class="stage">
+      <svg viewBox="0 30 1000 340" role="img" aria-label="The Bible's story as one line. It starts high at creation, beside the tree of life, falls at the fall, climbs through the promise and the coming of Christ, drops to its lowest at the cross, then rises sharply at the resurrection, through the church and Christ's return, to its highest point, all things new, beside the tree of life again.">
+        <g>
+          <rect class="rv22-trunk" x="26" y="150" width="8" height="34"/><circle class="rv22-leafy" cx="30" cy="138" r="22"/>
+          <rect class="rv22-trunk" x="966" y="62" width="8" height="34"/><circle class="rv22-leafy" cx="970" cy="50" r="22"/>
+        </g>
+        <path class="rv22-line" pathLength="1" d="M70 110 C 120 110, 125 270, 170 270 S 240 215, 285 215 S 360 160, 400 160 S 465 300, 500 300 S 560 120, 605 120 S 670 150, 710 150 S 780 100, 820 100 S 890 70, 930 70"/>
+        <g class="rv22-pt" style="--k:0"><circle cx="70" cy="110" r="9"/><text x="80" y="66" text-anchor="middle">Creation</text><text class="r" x="80" y="86" text-anchor="middle">Genesis 1–2</text></g>
+        <g class="rv22-pt low" style="--k:1"><circle cx="170" cy="270" r="9"/><text x="170" y="306" text-anchor="middle">The fall</text><text class="r" x="170" y="324" text-anchor="middle">Genesis 3</text></g>
+        <g class="rv22-pt" style="--k:2"><circle cx="285" cy="215" r="9"/><text x="275" y="172" text-anchor="middle">The promise</text><text class="r" x="275" y="192" text-anchor="middle">Abraham, David</text></g>
+        <g class="rv22-pt" style="--k:3"><circle cx="400" cy="160" r="9"/><text x="400" y="118" text-anchor="middle">Christ</text><text class="r" x="400" y="138" text-anchor="middle">born in Bethlehem</text></g>
+        <g class="rv22-pt low" style="--k:4"><circle cx="500" cy="300" r="9"/><text x="500" y="338" text-anchor="middle">The cross</text><text class="r" x="500" y="356" text-anchor="middle">“on the tree”</text></g>
+        <g class="rv22-pt high" style="--k:5"><circle cx="605" cy="120" r="9"/><text x="605" y="78" text-anchor="middle">Risen</text><text class="r" x="605" y="98" text-anchor="middle">the third day</text></g>
+        <g class="rv22-pt" style="--k:6"><circle cx="710" cy="150" r="9"/><text x="710" y="186" text-anchor="middle">The church</text><text class="r" x="710" y="204" text-anchor="middle">you are here</text></g>
+        <g class="rv22-pt" style="--k:7"><circle cx="820" cy="100" r="9"/><text x="815" y="142" text-anchor="middle">He returns</text><text class="r" x="815" y="160" text-anchor="middle">Revelation 19</text></g>
+        <g class="rv22-pt high" style="--k:8"><circle cx="930" cy="70" r="9"/><text x="880" y="52" text-anchor="middle">All things new</text><text class="r" x="930" y="100" text-anchor="middle">Revelation 21–22</text></g>
+      </svg>
+    </div>
+    <p class="note step">From a tree of life lost in Genesis to the tree of life given back in Revelation, it's one story, and it's about Jesus. You're in it, somewhere between the empty tomb and His return. Your worst chapter isn't the end of it. <em>This</em> is.</p>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise">Take it to work today</h2>
+    <div class="daybreak climb">
+      <div class="rise" style="--d:1"><i>22:4</i><b>Look up</b><p>You don't have to hide your face from God. Bring Him today what you're ashamed of.</p></div>
+      <div class="step"><i>22:17</i><b>Say “Come”</b><p>Name one thirsty man you know. Pray for him, then invite him: to church, to this group, to Jesus.</p></div>
+      <div class="step"><i>22:20</i><b>Pray it every morning</b><p>“Even so, come, Lord Jesus.” Then go to work like a man who expects Him.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ======================= CLOSING ======================= -->
+<section class="slide remember">
+  <div class="inner">
+    <h2 class="rise">Points to remember</h2>
+    <ol class="seeds">
+      <li class="step"><span class="topic">Eden</span><span class="seed-q">“There shall be no more curse” <cite>22:3</cite></span><span class="take">The tree of life, shut away after Adam's sin, is open again, because Christ took the curse.</span></li>
+      <li class="step"><span class="topic">His face</span><span class="seed-q">“They shall see his face” <cite>22:4</cite></span><span class="take">His servants will serve Him, see His face, carry His name, and reign for ever.</span></li>
+      <li class="step"><span class="topic">Quickly</span><span class="seed-q">“Behold, I come quickly” <cite>22:7</cite></span><span class="take">Jesus says it three times: He is coming soon, and His reward is with Him.</span></li>
+      <li class="step"><span class="topic">Worship</span><span class="seed-q">“See thou do it not… worship God” <cite>22:9</cite></span><span class="take">The angel was a fellowservant. Only God is to be worshipped.</span></li>
+      <li class="step"><span class="topic">Whosoever</span><span class="seed-q">“Whosoever will, let him take the water of life freely” <cite>22:17</cite></span><span class="take">The invitation is open to anyone who is thirsty, and it costs nothing.</span></li>
+      <li class="step"><span class="topic">Grace</span><span class="seed-q">“The grace of our Lord Jesus Christ be with you all” <cite>22:21</cite></span><span class="take">The Bible ends with a prayer for His coming and a word of grace.</span></li>
+    </ol>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 1 of 6</p>
+      <span class="topic">Eden</span>
+      <h2>What was lost in Eden that is given back in the city?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step"><p>“So he drove out the man; and he placed at the east of the garden of Eden Cherubims, and a flaming sword which turned every way, to keep the way of the tree of life.”</p><cite>Genesis 3:24</cite></blockquote>
+      <blockquote class="quote step" data-q="2"></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>The tree of life, and life with God without the curse. Adam was driven out and the way was shut. In the city the tree of life grows by the river, there is no more curse, and God's people see His face. Christ won it back on the cross.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 2 of 6</p>
+      <span class="topic">His face</span>
+      <h2>What will God's servants do, and what will they see?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="3-4"></blockquote>
+      <blockquote class="quote step"><p>“Beloved, now are we the sons of God, and it doth not yet appear what we shall be: but we know that, when he shall appear, we shall be like him; for we shall see him as he is.”</p><cite>1 John 3:2</cite></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>They will serve Him, and they will see His face, with His name on their foreheads. They will reign with Him for ever, in a light that never goes out.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 3 of 6</p>
+      <span class="topic">Quickly</span>
+      <h2>What does Jesus promise three times in this chapter?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="12"></blockquote>
+      <blockquote class="quote step" data-q="20"></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>“I come quickly” (verses 7, 12 and 20). He is coming soon and suddenly, with His reward. The waiting is His mercy, giving more men time to come.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 4 of 6</p>
+      <span class="topic">Worship</span>
+      <h2>Why did the angel stop John from worshipping him?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="9"></blockquote>
+      <blockquote class="quote step"><p>“Then saith Jesus unto him, Get thee hence, Satan: for it is written, Thou shalt worship the Lord thy God, and him only shalt thou serve.”</p><cite>Matthew 4:10</cite></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>Because the angel was only a fellowservant, like John and the prophets. Worship belongs to God alone, and heaven gives it to God and to the Lamb. No angel, preacher or friend should take His place.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 5 of 6</p>
+      <span class="topic">Whosoever</span>
+      <h2>Who is invited to take the water of life?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="17"></blockquote>
+      <blockquote class="quote step"><p>“For whosoever shall call upon the name of the Lord shall be saved.”</p><cite>Romans 10:13</cite></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>Whosoever will: anyone who is thirsty and willing to come. It's free. The Spirit and the bride invite him, and everyone who has heard is to pass the invitation on.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 6 of 6</p>
+      <span class="topic">Grace</span>
+      <h2>What are the last words of the Bible?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="20"></blockquote>
+      <blockquote class="quote step" data-q="21"></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>Jesus' promise, “Surely I come quickly,” John's prayer, “Even so, come, Lord Jesus,” and a blessing: “The grace of our Lord Jesus Christ be with you all. Amen.” The Bible ends with grace.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide prayer">
+  <div class="inner">
+    <div class="emblem rise"></div>
+    <h2 class="rise" style="--d:1">Prayer requests</h2>
+    <p class="ask-line rise" style="--d:2">What can we pray about for you today?</p>
+    <blockquote class="quote rise" style="--d:4" data-q="21"></blockquote>
+  </div>
+</section>
+
+</main>
+
+<script>
+// King James Version, Revelation chapter 22
+const V = {
+  1: "And he shewed me a pure river of water of life, clear as crystal, proceeding out of the throne of God and of the Lamb.",
+  2: "In the midst of the street of it, and on either side of the river, was there the tree of life, which bare twelve manner of fruits, and yielded her fruit every month: and the leaves of the tree were for the healing of the nations.",
+  3: "And there shall be no more curse: but the throne of God and of the Lamb shall be in it; and his servants shall serve him:",
+  4: "And they shall see his face; and his name shall be in their foreheads.",
+  5: "And there shall be no night there; and they need no candle, neither light of the sun; for the Lord God giveth them light: and they shall reign for ever and ever.",
+  6: "And he said unto me, These sayings are faithful and true: and the Lord God of the holy prophets sent his angel to shew unto his servants the things which must shortly be done.",
+  7: "Behold, I come quickly: blessed is he that keepeth the sayings of the prophecy of this book.",
+  8: "And I John saw these things, and heard them. And when I had heard and seen, I fell down to worship before the feet of the angel which shewed me these things.",
+  9: "Then saith he unto me, See thou do it not: for I am thy fellowservant, and of thy brethren the prophets, and of them which keep the sayings of this book: worship God.",
+  10: "And he saith unto me, Seal not the sayings of the prophecy of this book: for the time is at hand.",
+  11: "He that is unjust, let him be unjust still: and he which is filthy, let him be filthy still: and he that is righteous, let him be righteous still: and he that is holy, let him be holy still.",
+  12: "And, behold, I come quickly; and my reward is with me, to give every man according as his work shall be.",
+  13: "I am Alpha and Omega, the beginning and the end, the first and the last.",
+  14: "Blessed are they that do his commandments, that they may have right to the tree of life, and may enter in through the gates into the city.",
+  15: "For without are dogs, and sorcerers, and whoremongers, and murderers, and idolaters, and whosoever loveth and maketh a lie.",
+  16: "I Jesus have sent mine angel to testify unto you these things in the churches. I am the root and the offspring of David, and the bright and morning star.",
+  17: "And the Spirit and the bride say, Come. And let him that heareth say, Come. And let him that is athirst come. And whosoever will, let him take the water of life freely.",
+  18: "For I testify unto every man that heareth the words of the prophecy of this book, If any man shall add unto these things, God shall add unto him the plagues that are written in this book:",
+  19: "And if any man shall take away from the words of the book of this prophecy, God shall take away his part out of the book of life, and out of the holy city, and from the things which are written in this book.",
+  20: "He which testifieth these things saith, Surely I come quickly. Amen. Even so, come, Lord Jesus.",
+  21: "The grace of our Lord Jesus Christ be with you all. Amen."
+};
+const BOOK = "Revelation 22";
+</script>
+<script src="../assets/deck.js"></script>
+</body>
+</html>

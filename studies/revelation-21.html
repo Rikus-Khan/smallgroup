@@ -1,0 +1,908 @@
+<!doctype html>
+<html lang="en" data-theme="slate">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Revelation 21</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="../assets/fonts.css">
+<link rel="stylesheet" href="../assets/deck.css">
+<link rel="stylesheet" href="../assets/themes.css">
+<style>
+/* rv21-where: where this chapter sits in Revelation (copied from rv05-where). Twenty-two chapter boxes (span) in seven groups (div);
+   each group's label (b) sits above (.up) or below the row, across the columns in its --c. The current group is .now,
+   the current chapter span.here. On a phone each group becomes its own row. */
+.rv21-where { display: grid; grid-template-columns: repeat(22, 1fr); gap: 5px 3px; margin: .6em 0 1em; align-items: end; }
+.rv21-where > div { display: contents; }
+.rv21-where span { grid-row: 2; display: grid; place-items: center; height: 2.3rem; border: 1.5px solid var(--line-strong); border-radius: 5px; font: 600 clamp(.75rem, .7rem + .3vw, 1rem) var(--sans); color: var(--ink-soft); }
+.rv21-where span.gap { margin-left: 5px; }
+.rv21-where b { grid-row: 3; grid-column: var(--c); align-self: start; text-align: center; font: 400 clamp(.8rem, .74rem + .32vw, 1.05rem)/1.25 var(--serif); color: var(--ink-soft); padding: 0 2px; }
+.rv21-where b.up { grid-row: 1; align-self: end; }
+.rv21-where b.left { text-align: left; }
+.rv21-where .now span { border-color: var(--accent); color: var(--ink); }
+.rv21-where .now b { color: var(--accent-hot); font-weight: 600; }
+.rv21-where span.here { background: var(--accent); color: var(--on-accent); box-shadow: 0 0 0 5px color-mix(in srgb, var(--accent) 22%, transparent); }
+@media (max-width: 600px) {
+  .rv21-where { grid-template-columns: 1fr; gap: 6px; }
+  .rv21-where > div { display: flex; flex-wrap: wrap; align-items: center; gap: 3px; }
+  .rv21-where span { width: 1.75rem; height: 1.9rem; }
+  .rv21-where span.gap { margin-left: 0; }
+  .rv21-where b, .rv21-where b.up { margin-left: .4em; text-align: left; align-self: center; }
+}
+
+/* rv21-sea: Patmos cut off from Asia by the sea. Waves (.rv21-wave) roll; a .rv21-sea-go step drains the sea away,
+   the gap fills with land (.rv21-join) and "no more sea" (.rv21-nomore) appears */
+.rv21-water { fill: color-mix(in srgb, var(--cool) 38%, transparent); transition: opacity 1.6s ease; }
+.rv21-wave { fill: none; stroke: color-mix(in srgb, var(--cool) 75%, var(--glow)); stroke-width: 2.5; stroke-linecap: round; stroke-dasharray: 18 14; transition: opacity 1.2s ease; }
+.slide.active .rv21-wave { animation: rv21-roll 2.6s linear infinite; }
+@keyframes rv21-roll { to { stroke-dashoffset: -64; } }
+.rv21-land { fill: color-mix(in srgb, var(--warm) 30%, var(--surface-2)); stroke: var(--ink-soft); stroke-width: 2; }
+.rv21-join { fill: color-mix(in srgb, var(--warm) 30%, var(--surface-2)); opacity: 0; transition: opacity 1.6s ease .6s; }
+.rv21-gap { fill: none; stroke: var(--danger); stroke-width: 2.5; stroke-dasharray: 6 6; transition: opacity 1s ease; }
+.rv21-dot { fill: var(--accent-hot); }
+.rv21-lab { fill: var(--ink-soft); font: italic 17px var(--serif); }
+.rv21-lab.hot { fill: var(--accent-hot); font-style: normal; font-weight: 600; }
+.rv21-nomore { opacity: 0; transition: opacity 1s ease 1.4s; }
+.slide:has(.rv21-sea-go.on) .rv21-water, .slide:has(.rv21-sea-go.on) .rv21-wave, .slide:has(.rv21-sea-go.on) .rv21-gap, .slide:has(.rv21-sea-go.on) .rv21-cut { opacity: 0; }
+.slide:has(.rv21-sea-go.on) .rv21-join, .slide:has(.rv21-sea-go.on) .rv21-nomore { opacity: 1; }
+.rv21-cut { transition: opacity 1s ease; }
+@media (max-width: 600px) { .rv21-lab { font-size: 22px; } }
+
+/* rv21-descend: the holy city coming down out of a night sky onto a new earth. The city (.rv21-city) glides down when the
+   slide opens; its halo (.rv21-halo) and the stars (.rv21-star, --k) breathe */
+.rv21-sky { fill: var(--on-glow); }
+.rv21-star { fill: var(--glow); opacity: .3; }
+.slide.active .rv21-star { animation: rv21-twinkle 2.4s ease-in-out infinite alternate; animation-delay: calc(var(--k) * -.7s); }
+@keyframes rv21-twinkle { to { opacity: .95; } }
+.rv21-earth { fill: color-mix(in srgb, var(--cool) 30%, var(--on-glow)); }
+.rv21-earth2 { fill: color-mix(in srgb, var(--cool) 18%, var(--on-glow)); }
+.rv21-halo { opacity: .85; }
+.slide.active .rv21-halo { animation: rv21-breathe 3.2s ease-in-out infinite alternate; }
+@keyframes rv21-breathe { from { opacity: .55; } to { opacity: 1; } }
+.rv21-city { transform: translateY(-150px); opacity: 0; }
+.slide.active .rv21-city { animation: rv21-down 4.2s cubic-bezier(.25,.7,.25,1) .4s forwards; }
+@keyframes rv21-down { 30% { opacity: 1; } to { transform: none; opacity: 1; } }
+.rv21-wallf { fill: color-mix(in srgb, var(--warm) 55%, var(--glow)); stroke: var(--warm); stroke-width: 2; }
+.rv21-tower { fill: color-mix(in srgb, var(--warm) 40%, var(--glow)); stroke: var(--warm); stroke-width: 2; }
+.rv21-win { fill: var(--glow); }
+.rv21-beamd { fill: var(--warm); opacity: .16; }
+.rv21-pearlg { fill: var(--glow); stroke: color-mix(in srgb, var(--warm) 60%, var(--glow)); stroke-width: 2; }
+.rv21-skylab { fill: var(--glow); font: italic 17px var(--serif); }
+.rv21-skylab.hot { fill: color-mix(in srgb, var(--warm) 55%, var(--glow)); font-style: normal; font-weight: 600; }
+@media (max-width: 600px) { .rv21-skylab { font-size: 21px; } }
+
+/* rv21-gone: Revelation 21:4. A night panel with a tear that is wiped away; each step strikes one thing out (li.on), with a
+   "no more" tag (i). The last step (.rv21-gone-end) brings the dawn up behind the panel */
+.rv21-gone { --bs: clamp(1.45rem, 1.05rem + 1.5vw, 2.35rem); position: relative; overflow: hidden; border-radius: 14px; padding: .9em 1.4em 1em; background: var(--on-glow); color: var(--glow); }
+.rv21-gone::before { content: ""; position: absolute; inset: 0; background: radial-gradient(120% 70% at 50% 120%, color-mix(in srgb, var(--warm) 70%, transparent), transparent 70%); opacity: 0; transition: opacity 2s ease; pointer-events: none; }
+.rv21-gone:has(.rv21-gone-end.on)::before { opacity: 1; }
+.rv21-gone > * { position: relative; }
+.rv21-gone-top { display: flex; align-items: center; gap: .6em; font: italic clamp(1.05rem, .9rem + .7vw, 1.5rem)/1.35 var(--serif); }
+.rv21-gone-top svg { flex: none; width: 1.6em; height: 1.6em; overflow: visible; }
+.rv21-tear { fill: color-mix(in srgb, var(--cool) 70%, var(--glow)); }
+.slide.active .rv21-tear { animation: rv21-wipe 2.6s ease-in-out 1s forwards; }
+@keyframes rv21-wipe { 0%, 45% { opacity: 1; transform: none; } 100% { opacity: 0; transform: translate(10px, 4px) scale(.6); } }
+.rv21-hand { fill: none; stroke: var(--warm); stroke-width: 3; stroke-linecap: round; stroke-dasharray: 1; stroke-dashoffset: 1; }
+.slide.active .rv21-hand { animation: rv21-stroke 1.2s ease-in-out 1.9s forwards; }
+@keyframes rv21-stroke { to { stroke-dashoffset: 0; } }
+.rv21-gone ol { list-style: none; margin: .45em 0 .2em; padding: 0; display: grid; gap: .1em; }
+.rv21-gone li.step { opacity: 1; transform: none; display: grid; grid-template-columns: calc(var(--bs) * 4.3) 1fr auto; align-items: center; gap: .9em; padding: .28em 0; border-bottom: 1px solid color-mix(in srgb, var(--glow) 14%, transparent); }
+.rv21-gone b { position: relative; justify-self: start; font: 400 var(--bs)/1.1 var(--serif); transition: opacity .8s ease .5s; }
+.rv21-gone b::after { content: ""; position: absolute; left: -6%; right: -6%; top: 56%; height: 3px; border-radius: 2px; background: var(--danger); transform: scaleX(0); transform-origin: left; transition: transform .6s ease; }
+.rv21-gone li span { font-size: clamp(.9rem, .82rem + .38vw, 1.15rem); line-height: 1.38; color: color-mix(in srgb, var(--glow) 80%, transparent); transition: opacity .8s ease .5s; }
+.rv21-gone li i { justify-self: end; font: normal 700 clamp(.7rem, .65rem + .25vw, .9rem) var(--sans); letter-spacing: .08em; text-transform: uppercase; white-space: nowrap; color: var(--warm); border: 1.5px solid var(--warm); border-radius: 5px; padding: .2em .45em; opacity: 0; transform: scale(1.6) rotate(-6deg); transition: opacity .3s ease .55s, transform .35s cubic-bezier(.3,1.6,.5,1) .55s; }
+.rv21-gone li.on b::after { transform: scaleX(1); }
+.rv21-gone li.on b { opacity: .42; }
+.rv21-gone li.on span { opacity: .6; }
+.rv21-gone li.on i { opacity: 1; transform: rotate(-6deg); }
+.rv21-gone-end { margin-top: .5em; text-align: center; font: italic clamp(1.2rem, 1rem + 1vw, 1.8rem)/1.3 var(--serif); color: color-mix(in srgb, var(--warm) 45%, var(--glow)); }
+@media (max-width: 600px) {
+  .rv21-gone { padding: .8em 1em; }
+  .rv21-gone li.step { grid-template-columns: 1fr auto; gap: .2em .6em; }
+  .rv21-gone li span { grid-column: 1 / -1; }
+  .rv21-gone li i { grid-row: 1; grid-column: 2; }
+}
+
+/* rv21-list: the words of 21:8 as dashed chips (span, --k) that come in on a .rv21-list-go step */
+.rv21-list { display: flex; flex-wrap: wrap; gap: 6px 8px; margin: .2em 0 .9em; }
+.rv21-list span { padding: .28em .7em; border: 1.5px dashed var(--line-strong); border-radius: 999px; font: italic clamp(.95rem, .85rem + .45vw, 1.25rem) var(--serif); color: var(--ink-soft); }
+.rv21-list span.hot { border-style: solid; border-color: var(--danger); color: var(--ink); }
+
+/* rv21-plan: the city seen from above. Gold within (#rv21-goldglass), a wall of jasper, twelve pearl gates (.rv21-pearl),
+   light running from the throne to every gate (.rv21-ray). A .rv21-plan-g step names the gates (.rv21-tribe);
+   a .rv21-plan-f step lights the twelve foundations (.rv21-found rect, --k) round the wall */
+.rv21-goldin { stroke: none; }
+.rv21-wall { fill: none; stroke: color-mix(in srgb, var(--cool) 55%, var(--glow)); stroke-width: 6; }
+.rv21-found rect { fill: none; stroke-width: 2.6; opacity: .22; transition: opacity .6s ease; transition-delay: calc(var(--k) * 90ms); }
+.slide:has(.rv21-plan-f.on) .rv21-found rect { opacity: 1; }
+.rv21-ray { stroke: color-mix(in srgb, var(--glow) 70%, transparent); stroke-width: 2; stroke-dasharray: 3 7; }
+.slide.active .rv21-ray { animation: rv21-flow 1.6s linear infinite; }
+@keyframes rv21-flow { to { stroke-dashoffset: -20; } }
+.rv21-pearl { fill: var(--glow); stroke: color-mix(in srgb, var(--ink-soft) 60%, var(--glow)); stroke-width: 2; }
+.rv21-throne { fill: var(--glow); stroke: var(--warm); stroke-width: 3; }
+.rv21-tribe { fill: var(--ink-soft); font: 16px var(--sans); opacity: 0; transition: opacity .6s ease; }
+.slide:has(.rv21-plan-g.on) .rv21-tribe { opacity: 1; fill: var(--accent-hot); }
+.rv21-side { fill: var(--ink-soft); font: 13px var(--sans); letter-spacing: .14em; text-transform: uppercase; }
+@media (max-width: 600px) { .rv21-tribe { font-size: 17px; } .rv21-side { font-size: 14px; } }
+
+/* rv21-cube: the city as a cube beside the Holy of Holies (1 Kings 6:20), drawn to a guessed scale. The big cube rises
+   (.rv21-grow) when the slide opens */
+.rv21-top { fill: color-mix(in srgb, var(--warm) 35%, var(--glow)); stroke: var(--warm); stroke-width: 2; stroke-linejoin: round; }
+.rv21-left { fill: color-mix(in srgb, var(--warm) 70%, var(--glow)); stroke: var(--warm); stroke-width: 2; stroke-linejoin: round; }
+.rv21-right { fill: color-mix(in srgb, var(--warm) 80%, var(--on-glow)); stroke: var(--warm); stroke-width: 2; stroke-linejoin: round; }
+.rv21-grow { transform-box: view-box; transform-origin: 220px 360px; transform: scale(.06); opacity: 0; }
+.slide.active .rv21-grow { animation: rv21-grow 2.6s cubic-bezier(.3,.8,.3,1) .9s forwards; }
+@keyframes rv21-grow { 10% { opacity: 1; } to { transform: none; opacity: 1; } }
+.rv21-dim { stroke: var(--ink-soft); stroke-width: 1.5; }
+.rv21-small { fill: var(--ink-soft); font: 15px var(--sans); }
+@media (max-width: 600px) { .rv21-small { font-size: 18px; } }
+
+/* rv21-gems: the twelve foundation stones in four rows of three, like the high priest's breastplate (Exodus 28:17).
+   Each gem (div, --gem, --k) is a cut stone that pops in, with its name (small) under it */
+.rv21-gems { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px 14px; padding: 14px 16px; border-radius: 12px; border: 2px solid var(--warm); background: color-mix(in srgb, var(--warm) 10%, var(--surface)); max-width: 27rem; margin: .2em auto .6em; }
+.rv21-gems div { display: grid; justify-items: center; gap: .25em; }
+.rv21-gems i { width: 3.3rem; height: 3.3rem; clip-path: polygon(30% 0, 70% 0, 100% 30%, 100% 70%, 70% 100%, 30% 100%, 0 70%, 0 30%); background: linear-gradient(135deg, color-mix(in srgb, var(--gem) 45%, var(--glow)) 0 30%, var(--gem) 52%, color-mix(in srgb, var(--gem) 70%, var(--on-glow)) 100%); transform: scale(0); }
+.slide.active .rv21-gems i { animation: rv21-pop .5s cubic-bezier(.3,1.6,.5,1) forwards; animation-delay: calc(var(--k) * 150ms + 600ms); }
+@keyframes rv21-pop { to { transform: scale(1); } }
+.rv21-gems small { font: italic clamp(.85rem, .78rem + .3vw, 1.05rem) var(--serif); color: var(--ink); }
+.rv21-gems small b { font: 700 .75em var(--sans); color: var(--ink-soft); margin-right: .3em; }
+
+/* rv21-light: sun and moon (.rv21-sun, .rv21-moon) fade out while the light of the Lamb (.rv21-rays, .rv21-core) fills the city.
+   The lamb (#rv21-lambsym) is rv05's lamb */
+.rv21-sun { fill: var(--warm); }
+.rv21-moon { fill: var(--glow); }
+.slide.active .rv21-sun, .slide.active .rv21-moon { animation: rv21-fade 3.5s ease 1s forwards; }
+@keyframes rv21-fade { to { opacity: .1; } }
+.rv21-rays line { stroke: var(--warm); stroke-width: 3; stroke-linecap: round; opacity: 0; }
+.slide.active .rv21-rays line { animation: rv21-ray 3s ease-out 1.6s forwards; }
+@keyframes rv21-ray { to { opacity: .75; } }
+.rv21-spin { transform-box: view-box; transform-origin: 260px 190px; }
+.slide.active .rv21-spin { animation: rv21-turn 40s linear infinite; }
+@keyframes rv21-turn { to { transform: rotate(360deg); } }
+.rv21-core { opacity: .2; }
+.slide.active .rv21-core { animation: rv21-core 3s ease-out 1.4s forwards; }
+@keyframes rv21-core { to { opacity: 1; } }
+.rv21-skyline { fill: color-mix(in srgb, var(--warm) 45%, var(--glow)); stroke: var(--warm); stroke-width: 2; }
+.rv21-wool-out circle { fill: var(--ink-soft); }
+.rv21-wool circle { fill: var(--glow); }
+.rv21-leg { fill: color-mix(in srgb, var(--glow) 62%, var(--leather)); }
+.rv21-head { fill: color-mix(in srgb, var(--glow) 80%, var(--leather)); stroke: var(--ink-soft); stroke-width: 2.5; }
+.rv21-dark { fill: var(--on-glow); }
+.rv21-wound { fill: none; stroke: var(--wine); stroke-width: 4; stroke-linecap: round; }
+
+/* rv21-gate: a city gate whose doors (.rv21-door.l/.r) swing open when the slide opens and stay open, with light behind */
+.rv21-arch { fill: color-mix(in srgb, var(--warm) 30%, var(--surface-2)); stroke: var(--ink-soft); stroke-width: 2.5; }
+.rv21-through { fill: var(--glow); }
+.rv21-door { fill: color-mix(in srgb, var(--leather) 75%, var(--surface-2)); stroke: var(--leather); stroke-width: 2; transform-box: fill-box; }
+.rv21-door.l { transform-origin: 0% 50%; }
+.rv21-door.r { transform-origin: 100% 50%; }
+.slide.active .rv21-door { animation: rv21-open 2.4s cubic-bezier(.4,0,.2,1) .9s forwards; }
+@keyframes rv21-open { to { transform: scaleX(.12); } }
+.rv21-beam { fill: var(--warm); opacity: 0; }
+.slide.active .rv21-beam { animation: rv21-beam 2.4s ease 1.6s forwards; }
+@keyframes rv21-beam { to { opacity: .28; } }
+.rv21-bolt { fill: none; stroke: var(--ink-soft); stroke-width: 3; stroke-linecap: round; }
+.slide.active .rv21-bolt { animation: rv21-unbolt .8s ease .3s forwards; }
+@keyframes rv21-unbolt { to { opacity: 0; transform: translateY(-14px); } }
+
+/* rv21-book: the Lamb's book of life lying open. Lines of names (.rv21-name); one (.rv21-pen) writes itself in when the slide opens */
+.rv21-page { fill: color-mix(in srgb, var(--warm) 14%, var(--glow)); stroke: var(--leather-light); stroke-width: 2.5; }
+.rv21-cover { fill: var(--wine); }
+.rv21-name { stroke: color-mix(in srgb, var(--on-glow) 32%, transparent); stroke-width: 2.4; stroke-linecap: round; fill: none; }
+.rv21-pen { fill: none; stroke: var(--wine); stroke-width: 3.2; stroke-linecap: round; stroke-linejoin: round; stroke-dasharray: 1; stroke-dashoffset: 1; }
+.slide.active .rv21-pen { animation: rv21-stroke 3s ease-in-out 1s forwards; }
+.rv21-mark { fill: var(--wine); font: italic 600 16px var(--serif); opacity: 0; }
+.slide.active .rv21-mark { animation: rv21-show .8s ease 3.8s forwards; }
+@keyframes rv21-show { to { opacity: 1; } }
+@media (max-width: 600px) { .rv21-mark { font-size: 19px; } }
+</style>
+</head>
+<body>
+<main class="deck" id="deck">
+
+<!-- ======================= OPENING ======================= -->
+<section class="slide title">
+  <div class="inner">
+    <div class="emblem rise"></div>
+    <h1 class="rise" style="--d:1">Revelation 21</h1>
+    <p class="sub rise" style="--d:3">All things new</p>
+    <p class="tag rise" style="--d:5">A new heaven, a new earth, and a city coming down from God. No more tears, no more death, and God Himself living with His people.</p>
+  </div>
+</section>
+
+<section class="slide watch">
+  <div class="inner">
+    <h2 class="rise">Things to watch for</h2>
+    <p class="lede rise" style="--d:1">Keep these questions in the back of your mind as we read. We'll come back to every one of them at the end.</p>
+    <ol class="seeds">
+      <li class="step"><span class="topic">With us</span><span class="seed-q">Where will God live when all things are made new?</span></li>
+      <li class="step"><span class="topic">Tears</span><span class="seed-q">What will God wipe away, and what will be no more?</span></li>
+      <li class="step"><span class="topic">New</span><span class="seed-q">What does He mean when He says, “Behold, I make all things new”?</span></li>
+      <li class="step"><span class="topic">Water</span><span class="seed-q">Who may drink of the water of life, and what does it cost?</span></li>
+      <li class="step"><span class="topic">The city</span><span class="seed-q">What is the holy city like?</span></li>
+      <li class="step"><span class="topic">Written</span><span class="seed-q">Who will enter the city, and who will not?</span></li>
+    </ol>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise">Where we are in Revelation</h2>
+    <div class="rv21-where rise" style="--d:1" role="img" aria-label="The twenty-two chapters of Revelation in seven groups. Chapter 1: a vision of Christ. 2 and 3: the seven churches. 4 and 5: the throne and the Lamb. 6 to 16: seals, trumpets and bowls. 17 and 18: Babylon falls. 19 and 20: Christ returns and reigns. 21 and 22: all things new, with chapter 21 lit.">
+      <div><span>1</span><b class="up left" style="--c:1 / 4">a vision of Christ</b></div>
+      <div><span class="gap">2</span><span>3</span><b style="--c:1 / 5">the seven churches</b></div>
+      <div><span class="gap">4</span><span>5</span><b class="up left" style="--c:4 / 9">the throne and the Lamb</b></div>
+      <div><span class="gap">6</span><span>7</span><span>8</span><span>9</span><span>10</span><span>11</span><span>12</span><span>13</span><span>14</span><span>15</span><span>16</span><b style="--c:6 / 17">seals, trumpets and bowls</b></div>
+      <div><span class="gap">17</span><span>18</span><b class="up" style="--c:16 / 20">Babylon falls</b></div>
+      <div><span class="gap">19</span><span>20</span><b style="--c:18 / 22">Christ returns and reigns</b></div>
+      <div class="now"><span class="gap here">21</span><span>22</span><b class="up" style="--c:20 / 23">all things new</b></div>
+    </div>
+    <p class="note step">In chapters 19 and 20 Christ rode out as <em>King of kings</em>, the devil was thrown into the lake of fire, and the dead stood before a great white throne. Every enemy of God's people is gone.</p>
+    <p class="note step">Now the last two chapters of the Bible. After all the judgment, here is what God was building the whole time: <em>home</em>.</p>
+  </div>
+</section>
+
+<!-- ======================= PART ONE: ALL THINGS NEW ======================= -->
+<section class="slide part">
+  <div class="inner">
+    <p class="part-n rise">Part one</p>
+    <h2 class="rise" style="--d:1">All things new</h2>
+    <p class="range rise" style="--d:2">Verses 1–8</p>
+    <div class="rule"></div>
+    <p class="hook rise" style="--d:4">A new heaven and a new earth, a city coming down, and the voice of God: “Behold, I make all things new.”</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="1-2" data-hl="a new heaven and a new earth|and there was no more sea|new Jerusalem, coming down from God out of heaven, prepared as a bride adorned for her husband"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <div class="split">
+      <div class="stage">
+        <svg viewBox="0 0 600 330" role="img" aria-label="A small island, Patmos, sits in the sea, with the coast of Asia and the church at Ephesus about sixty miles away across the water, a dashed red line between them. On a step the sea drains away, the gap fills with land, and the words no more sea appear.">
+          <rect class="rv21-water" x="0" y="30" width="600" height="270" rx="18"/>
+          <path class="rv21-wave" d="M30 80 Q60 70 90 80 T150 80 T210 80 T270 80 T330 80"/>
+          <path class="rv21-wave" d="M60 250 Q90 240 120 250 T180 250 T240 250 T300 250 T360 250"/>
+          <path class="rv21-wave" d="M220 150 Q250 140 280 150 T340 150 T400 150"/>
+          <path class="rv21-wave" d="M200 205 Q230 195 260 205 T320 205 T380 205"/>
+          <path class="rv21-join" d="M150 140 C 230 120, 330 110, 440 120 L 450 230 C 340 240, 240 235, 150 215 Z"/>
+          <path class="rv21-land" d="M430 30 L600 30 L600 300 L470 300 C 450 270, 470 240, 445 215 C 425 190, 455 160, 440 130 C 425 100, 450 70, 430 30 Z"/>
+          <path class="rv21-land" d="M120 150 C 135 125, 160 140, 170 160 C 182 180, 168 200, 150 205 C 132 212, 110 195, 115 178 C 118 168, 112 160, 120 150 Z"/>
+          <circle class="rv21-dot" cx="146" cy="176" r="5"/>
+          <circle class="rv21-dot" cx="492" cy="120" r="6"/>
+          <path class="rv21-gap" d="M156 172 Q320 120 484 122"/>
+          <text class="rv21-lab hot" x="146" y="238" text-anchor="middle">Patmos</text>
+          <text class="rv21-lab" x="146" y="258" text-anchor="middle">John, in exile</text>
+          <text class="rv21-lab hot" x="492" y="100" text-anchor="middle">Ephesus</text>
+          <text class="rv21-lab" x="525" y="160" text-anchor="middle">the churches</text>
+          <text class="rv21-lab rv21-cut" x="320" y="112" text-anchor="middle">about 60 miles of sea</text>
+          <text class="rv21-lab hot rv21-nomore" x="300" y="322" text-anchor="middle">“and there was no more sea”</text>
+        </svg>
+      </div>
+      <div>
+        <h2 class="rise" style="--d:1">No more sea</h2>
+        <p class="note rise" style="--d:2">God promised it through Isaiah: <em>“I create new heavens and a new earth”</em> (Isaiah 65:17).</p>
+        <p class="note step rv21-sea-go">For John, the sea was what stood between him and everyone he loved. In this book it's also where the beast came from (13:1). <em>No more sea</em>: nothing will ever cut God's people off again.</p>
+        <p class="note step">A sentence, a court order, years of damage: whatever stands between you and someone you love, it won't be there for ever.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <div class="split">
+      <div class="stage">
+        <svg viewBox="0 0 420 360" role="img" aria-label="A night sky full of stars. A shining golden city with pearl gates comes slowly down out of the sky and settles on the hills of a new earth, glowing.">
+          <defs>
+            <radialGradient id="rv21-glowg" cx="50%" cy="50%" r="50%">
+              <stop offset="0%" style="stop-color: var(--warm); stop-opacity: .75"/>
+              <stop offset="100%" style="stop-color: var(--warm); stop-opacity: 0"/>
+            </radialGradient>
+          </defs>
+          <rect class="rv21-sky" x="0" y="0" width="420" height="360" rx="16"/>
+          <circle class="rv21-star" style="--k:0" cx="40" cy="40" r="2"/><circle class="rv21-star" style="--k:1" cx="90" cy="90" r="1.5"/><circle class="rv21-star" style="--k:2" cx="150" cy="30" r="2.2"/><circle class="rv21-star" style="--k:3" cx="300" cy="50" r="1.6"/><circle class="rv21-star" style="--k:4" cx="360" cy="30" r="2"/><circle class="rv21-star" style="--k:5" cx="385" cy="110" r="1.6"/><circle class="rv21-star" style="--k:6" cx="30" cy="140" r="1.8"/><circle class="rv21-star" style="--k:7" cx="250" cy="20" r="1.4"/><circle class="rv21-star" style="--k:8" cx="340" cy="160" r="1.5"/><circle class="rv21-star" style="--k:9" cx="70" cy="200" r="1.4"/>
+          <path class="rv21-earth2" d="M0 300 C 80 270, 150 290, 210 282 C 290 272, 340 262, 420 285 L420 344 Q420 360 404 360 L16 360 Q0 360 0 344 Z"/>
+          <g class="rv21-city">
+            <ellipse class="rv21-halo" cx="210" cy="215" rx="205" ry="135" style="fill:url(#rv21-glowg)"/>
+            <path class="rv21-beamd" d="M90 292 L330 292 L400 360 L20 360 Z"/>
+            <rect class="rv21-wallf" x="78" y="196" width="264" height="84"/>
+            <path class="rv21-tower" d="M66 286 L66 166 L72 166 L72 158 L80 158 L80 166 L88 166 L88 158 L96 158 L96 166 L102 166 L102 286 Z"/>
+            <path class="rv21-tower" d="M318 286 L318 166 L324 166 L324 158 L332 158 L332 166 L340 166 L340 158 L348 158 L348 166 L354 166 L354 286 Z"/>
+            <path class="rv21-tower" d="M188 286 L188 150 L196 150 L196 140 L206 140 L206 150 L214 150 L214 140 L224 140 L224 150 L232 150 L232 286 Z"/>
+            <path class="rv21-tower" d="M126 286 L126 180 L134 180 L134 172 L144 172 L144 180 L152 180 L152 286 Z"/>
+            <path class="rv21-tower" d="M268 286 L268 180 L276 180 L276 172 L286 172 L286 180 L294 180 L294 286 Z"/>
+            <rect class="rv21-win" x="80" y="186" width="8" height="12" rx="4"/><rect class="rv21-win" x="332" y="186" width="8" height="12" rx="4"/><rect class="rv21-win" x="204" y="166" width="12" height="16" rx="6"/><rect class="rv21-win" x="135" y="196" width="8" height="12" rx="4"/><rect class="rv21-win" x="277" y="196" width="8" height="12" rx="4"/>
+            <path class="rv21-pearlg" d="M106 286 L106 250 Q106 232 120 232 Q134 232 134 250 L134 286 Z"/>
+            <path class="rv21-pearlg" d="M156 286 L156 244 Q156 226 172 226 Q188 226 188 244 L188 286 Z" style="opacity:0"/>
+            <path class="rv21-pearlg" d="M194 286 L194 236 Q194 214 210 214 Q226 214 226 236 L226 286 Z"/>
+            <path class="rv21-pearlg" d="M286 286 L286 250 Q286 232 300 232 Q314 232 314 250 L314 286 Z"/>
+            <rect x="62" y="280" width="296" height="4" style="fill:color-mix(in srgb, var(--cool) 60%, var(--glow))"/>
+            <rect x="62" y="284" width="296" height="4" style="fill:color-mix(in srgb, var(--danger) 60%, var(--glow))"/>
+            <rect x="62" y="288" width="296" height="4" style="fill:color-mix(in srgb, var(--wine) 55%, var(--cool))"/>
+          </g>
+          <path class="rv21-earth" d="M0 318 C 90 290, 160 312, 230 300 C 300 290, 360 296, 420 310 L420 344 Q420 360 404 360 L16 360 Q0 360 0 344 Z"/>
+          <text class="rv21-skylab" x="210" y="70" text-anchor="middle">“coming down from God out of heaven”</text>
+          <text class="rv21-skylab hot" x="210" y="342" text-anchor="middle">“prepared as a bride”</text>
+        </svg>
+      </div>
+      <div>
+        <h2 class="rise" style="--d:1">A city coming down</h2>
+        <p class="note rise" style="--d:2">At Babel men tried to build their way up to heaven. Here God brings His city <em>down</em>. Nobody climbs up; God comes.</p>
+        <p class="note step">Jesus said, <em>“I go to prepare a place for you”</em> (John 14:2). Here it is, <em>prepared</em>.</p>
+        <p class="note step">And it comes <em>as a bride</em>: a real place, and the people in it, the church dressed for her wedding day. Verse 9 calls her <em>“the Lamb’s wife.”</em></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="slide verse" data-v="3-4" data-hl="the tabernacle of God is with men, and he will dwell with them|God shall wipe away all tears from their eyes"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="3" data-hl="the tabernacle of God is with men, and he will dwell with them"></blockquote>
+    <h2 class="rise" style="--d:1">God moving in</h2>
+    <ol class="timeline">
+      <li style="--k:0"><b>Genesis 3:8</b><span>“the LORD God walking in the garden in the cool of the day”</span><small>Eden: lost by sin</small></li>
+      <li style="--k:1"><b>Exodus 25:8</b><span>“that I may dwell among them”</span><small>a tent in the camp</small></li>
+      <li style="--k:2"><b>John 1:14</b><span>“the Word was made flesh, and dwelt among us”</span><small>Jesus</small></li>
+      <li style="--k:3"><b>1 Corinthians 6:19</b><span>“the temple of the Holy Ghost which is in you”</span><small>every believer</small></li>
+      <li class="lit" style="--k:4"><b>Revelation 21:3</b><span>“he will dwell with them”</span><small>for ever</small></li>
+    </ol>
+    <p class="note step">A <em>tabernacle</em> was a tent. In the wilderness God's tent stood in the middle of Israel's camp. The word John used for Jesus, <em>“dwelt among us,”</em> means <em>pitched His tent</em>. The whole Bible is God coming closer, until at last He moves in with His people and never leaves.</p>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise">Gone, one by one</h2>
+    <div class="rv21-gone rise" style="--d:1">
+      <p class="rv21-gone-top"><svg viewBox="0 0 40 40" aria-hidden="true"><path class="rv21-tear" d="M20 6 C 26 16, 30 21, 30 26 A 10 10 0 0 1 10 26 C 10 21, 14 16, 20 6 Z"/><path class="rv21-hand" pathLength="1" d="M4 34 Q 20 22 38 30"/></svg><span>“And God shall wipe away all tears from their eyes”</span></p>
+      <ol>
+        <li class="step"><b>tears</b><span>the ones you cried where nobody could see. In a cell, in a truck, in the shower.</span><i>wiped</i></li>
+        <li class="step"><b>death</b><span>the friend who overdosed. The funeral you couldn't go to. The child you buried.</span><i>no more</i></li>
+        <li class="step"><b>sorrow</b><span>the years you can't get back. The grief that sits on your chest in the morning.</span><i>no more</i></li>
+        <li class="step"><b>crying</b><span>a mother on the phone. A kid asking when Daddy's coming home.</span><i>no more</i></li>
+        <li class="step"><b>pain</b><span>the body still paying for the old life. The ache that never quite leaves.</span><i>no more</i></li>
+      </ol>
+      <p class="rv21-gone-end step">“for the former things are passed away.”</p>
+    </div>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise">Who wipes them</h2>
+    <p class="note rise" style="--d:1">Not time. Not a bottle, not a pill. <em>God</em> wipes them, with His own hand, the way a father wipes his boy's face. Isaiah saw it coming:</p>
+    <blockquote class="quote step"><p>“He will swallow up death in victory; and the Lord GOD will wipe away tears from off all faces; and the rebuke of his people shall he take away from off all the earth: for the LORD hath spoken it.”</p><cite>Isaiah 25:8</cite></blockquote>
+    <p class="note step">Until then, it's not weak to grieve. <em>“Jesus wept”</em> at His friend's grave (John 11:35), and He knew He was about to raise him. Believers grieve too, just not like men with nothing to hold on to:</p>
+    <blockquote class="quote step"><p>“But I would not have you to be ignorant, brethren, concerning them which are asleep, that ye sorrow not, even as others which have no hope.”</p><cite>1 Thessalonians 4:13</cite></blockquote>
+  </div>
+</section>
+
+<section class="slide verse" data-v="5-6" data-hl="Behold, I make all things new|It is done|I will give unto him that is athirst of the fountain of the water of life freely"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise">All things new, starting with you</h2>
+    <div class="pair">
+      <div class="scroll rise" style="--d:2"><p class="ref">2 Corinthians 5:17</p><p class="kjv">Therefore if any man be in Christ, he is <mark>a new creature</mark>: <mark>old things are passed away</mark>; behold, <mark>all things are become new</mark>.</p></div>
+      <div class="scroll step"><p class="ref">Revelation 21:4–5</p><p class="kjv">…for <mark>the former things are passed away</mark>. And he that sat upon the throne said, Behold, <mark>I make all things new</mark>.</p></div>
+    </div>
+    <p class="note step">Same words, same God. What He'll do to the whole world one day, He has already started in the man who trusts Christ. You are the first part of the new creation. The rest is coming.</p>
+    <p class="note step">On the cross Jesus said, <em>“It is finished”</em> (John 19:30): the price was paid. Here He says, <em>“It is done”</em>: the work is complete. He is <em>Alpha and Omega</em>, the A and the Z. He doesn't start what He won't finish (Philippians 1:6).</p>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise">Thirsty men drink free</h2>
+    <div class="stage">
+      <svg class="wells" viewBox="0 0 640 300" role="img" aria-label="On the left, a cracked cistern leaks dry. On the right, a spring keeps bubbling up and overflowing.">
+        <defs><clipPath id="rv21-pitclip"><path d="M44 80 L44 258 Q44 276 62 276 L238 276 Q256 276 256 258 L256 80 Z"/></clipPath></defs>
+        <path class="wells-pit" d="M40 70 L40 260 Q40 280 60 280 L240 280 Q260 280 260 260 L260 70"/>
+        <g clip-path="url(#rv21-pitclip)"><rect class="wells-water wells-drain" x="40" y="128" width="222" height="150"/></g>
+        <path class="wells-crack" d="M90 280 L98 262 L90 250 L102 236"/>
+        <path class="wells-crack" d="M200 280 L192 266 L204 254 L196 240"/>
+        <path class="wells-crack" d="M260 200 L246 208 L252 222"/>
+        <circle class="wells-drip" style="--k:0" cx="90" cy="286" r="5"/>
+        <circle class="wells-drip" style="--k:1" cx="200" cy="286" r="5"/>
+        <circle class="wells-drip" style="--k:2" cx="264" cy="214" r="4"/>
+        <text x="150" y="40" text-anchor="middle" font-size="20" font-weight="700">what we dug for ourselves</text>
+        <text x="150" y="60" text-anchor="middle" font-size="15" style="fill:var(--ink-soft)">the bottle, the pipe, the next one</text>
+        <path class="wells-rock" d="M380 280 Q390 200 440 190 L540 190 Q590 200 600 280 Z"/>
+        <path class="wells-spring" d="M490 192 C 470 170, 430 175, 410 210 S 380 270, 360 284"/>
+        <path class="wells-spring" d="M490 192 C 510 170, 560 175, 575 210 S 600 270, 630 284"/>
+        <circle class="wells-bubble" style="--k:0" cx="478" cy="190" r="7"/>
+        <circle class="wells-bubble" style="--k:1" cx="492" cy="190" r="9"/>
+        <circle class="wells-bubble" style="--k:2" cx="504" cy="190" r="6"/>
+        <circle class="wells-bubble" style="--k:3" cx="488" cy="190" r="5"/>
+        <text x="490" y="40" text-anchor="middle" font-size="20" font-weight="700" style="fill:var(--accent-hot)">the fountain of the water of life</text>
+        <text x="490" y="60" text-anchor="middle" font-size="15" style="fill:var(--ink-soft)">it never runs dry, and it's free</text>
+      </svg>
+    </div>
+    <p class="note step">Every addiction is a thirst aimed at the wrong well (Jeremiah 2:13). God asks only one thing of the man who comes: that he's <em>athirst</em>. And the price is <em>freely</em>: <em>“without money and without price”</em> (Isaiah 55:1).</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="7-8" data-hl="He that overcometh shall inherit all things|he shall be my son|all liars|which is the second death"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="7"></blockquote>
+    <h2 class="rise" style="--d:1">Who is the overcomer?</h2>
+    <p class="note rise" style="--d:2">Not a super-Christian who never falls. John tells us exactly who:</p>
+    <blockquote class="quote step"><p>“Who is he that overcometh the world, but he that believeth that Jesus is the Son of God?”</p><cite>1 John 5:5</cite></blockquote>
+    <p class="note step">And look what he gets. <em>“All things”</em>, like an heir. And a Father: <em>“he shall be my son.”</em> Some of you never had a father who stayed. In the new creation God Himself calls you His son, and He stays.</p>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise">The other list</h2>
+    <p class="note rise" style="--d:1">Verse 8 is the hardest verse in the chapter, and God says it plainly, so we will too:</p>
+    <div class="rv21-list rise" style="--d:2">
+      <span>the fearful</span><span>unbelieving</span><span>the abominable</span><span>murderers</span><span>whoremongers</span><span>sorcerers</span><span>idolaters</span><span class="hot">all liars</span>
+    </div>
+    <p class="note step"><em>The fearful</em> are cowards who wouldn't trust Christ, not men who feel afraid. <em>All liars</em> takes in every man here. It's what men are when they turn down the water and stay as they are, and it ends in <em>the second death</em>.</p>
+    <p class="note step">But verse 6, the offer, comes <em>before</em> verse 8. The door is open until the end. Paul wrote a list like this, then said:</p>
+    <blockquote class="quote step"><p>“And such were some of you: but ye are washed, but ye are sanctified, but ye are justified in the name of the Lord Jesus, and by the Spirit of our God.”</p><cite>1 Corinthians 6:11</cite></blockquote>
+  </div>
+</section>
+
+<!-- ======================= PART TWO: THE BRIDE, THE LAMB'S WIFE ======================= -->
+<section class="slide part">
+  <div class="inner">
+    <p class="part-n rise">Part two</p>
+    <h2 class="rise" style="--d:1">The bride, the Lamb's wife</h2>
+    <p class="range rise" style="--d:2">Verses 9–21</p>
+    <div class="rule"></div>
+    <p class="hook rise" style="--d:4">An angel takes John up a high mountain to see the city: its gates, its walls, its foundations, its gold.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="9-11" data-hl="Come hither, I will shew thee the bride, the Lamb’s wife|Having the glory of God"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise">A tale of two cities</h2>
+    <div class="columns">
+      <div class="col law step"><p class="who">Revelation 17</p><h3>Babylon, the harlot</h3><p>One of the seven angels with the vials says, <em>“Come hither; I will shew unto thee”</em>… and carries John <em>“into the wilderness.”</em> She is <em>“decked with gold and precious stones and pearls,”</em> holding a golden cup <em>“full of abominations.”</em> And she falls.</p></div>
+      <div class="col grace step"><p class="who">Revelation 21</p><h3>Jerusalem, the bride</h3><p>One of the same seven angels says, <em>“Come hither, I will shew thee”</em>… and carries John to <em>“a great and high mountain.”</em> She has gold, precious stones and pearls too, and they're real. She has <em>“the glory of God,”</em> and she lasts for ever.</p></div>
+    </div>
+    <p class="note step">The world sells the same things God gives: beauty, riches, a good time. But its cup is poison, and its city burns. Every high you ever chased was a cheap copy of what God is keeping for you.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="12-13" data-hl="twelve gates|the names of the twelve tribes of the children of Israel"></section>
+
+<section class="slide verse" data-v="14" data-hl="the names of the twelve apostles of the Lamb"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <div class="split">
+      <div class="stage">
+        <svg viewBox="-14 0 548 520" role="img" aria-label="The holy city seen from above: a square of gold inside a wall of jasper, with three pearl gates on each side, twelve in all, and the throne at the center with light running out to every gate. On a step the gates are named for the twelve tribes, in Ezekiel's order: north, Reuben, Judah, Levi; east, Joseph, Benjamin, Dan; south, Simeon, Issachar, Zebulun; west, Gad, Asher, Naphtali. On a second step twelve bands of colored foundation stones light up all round the wall.">
+          <defs>
+            <linearGradient id="rv21-goldglass" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0%" style="stop-color: color-mix(in srgb, var(--warm) 60%, var(--glow))"/>
+              <stop offset="45%" style="stop-color: color-mix(in srgb, var(--warm) 25%, var(--glow))"/>
+              <stop offset="55%" style="stop-color: color-mix(in srgb, var(--warm) 25%, var(--glow))"/>
+              <stop offset="100%" style="stop-color: color-mix(in srgb, var(--warm) 70%, var(--glow))"/>
+            </linearGradient>
+          </defs>
+          <g class="rv21-found">
+            <rect style="--k:0;stroke:color-mix(in srgb, var(--cool) 60%, var(--glow))" x="105" y="105" width="310" height="310" rx="3"/>
+            <rect style="--k:1;stroke:color-mix(in srgb, var(--cool) 85%, var(--on-glow))" x="102.4" y="102.4" width="315.2" height="315.2" rx="3"/>
+            <rect style="--k:2;stroke:color-mix(in srgb, var(--cool) 30%, var(--glow))" x="99.8" y="99.8" width="320.4" height="320.4" rx="3"/>
+            <rect style="--k:3;stroke:color-mix(in srgb, var(--cool) 55%, var(--warm))" x="97.2" y="97.2" width="325.6" height="325.6" rx="3"/>
+            <rect style="--k:4;stroke:color-mix(in srgb, var(--danger) 55%, var(--glow))" x="94.6" y="94.6" width="330.8" height="330.8" rx="3"/>
+            <rect style="--k:5;stroke:var(--danger)" x="92" y="92" width="336" height="336" rx="3"/>
+            <rect style="--k:6;stroke:color-mix(in srgb, var(--warm) 70%, var(--glow))" x="89.4" y="89.4" width="341.2" height="341.2" rx="3"/>
+            <rect style="--k:7;stroke:color-mix(in srgb, var(--cool) 50%, var(--glow))" x="86.8" y="86.8" width="346.4" height="346.4" rx="3"/>
+            <rect style="--k:8;stroke:var(--warm)" x="84.2" y="84.2" width="351.6" height="351.6" rx="3"/>
+            <rect style="--k:9;stroke:color-mix(in srgb, var(--cool) 45%, var(--warm))" x="81.6" y="81.6" width="356.8" height="356.8" rx="3"/>
+            <rect style="--k:10;stroke:color-mix(in srgb, var(--wine) 50%, var(--warm))" x="79" y="79" width="362" height="362" rx="3"/>
+            <rect style="--k:11;stroke:color-mix(in srgb, var(--wine) 60%, var(--cool))" x="76.4" y="76.4" width="367.2" height="367.2" rx="3"/>
+          </g>
+          <rect class="rv21-goldin" x="110" y="110" width="300" height="300" style="fill:url(#rv21-goldglass)"/>
+          <g>
+            <line class="rv21-ray" x1="260" y1="260" x2="185" y2="110"/><line class="rv21-ray" x1="260" y1="260" x2="260" y2="110"/><line class="rv21-ray" x1="260" y1="260" x2="335" y2="110"/>
+            <line class="rv21-ray" x1="260" y1="260" x2="410" y2="185"/><line class="rv21-ray" x1="260" y1="260" x2="410" y2="260"/><line class="rv21-ray" x1="260" y1="260" x2="410" y2="335"/>
+            <line class="rv21-ray" x1="260" y1="260" x2="185" y2="410"/><line class="rv21-ray" x1="260" y1="260" x2="260" y2="410"/><line class="rv21-ray" x1="260" y1="260" x2="335" y2="410"/>
+            <line class="rv21-ray" x1="260" y1="260" x2="110" y2="185"/><line class="rv21-ray" x1="260" y1="260" x2="110" y2="260"/><line class="rv21-ray" x1="260" y1="260" x2="110" y2="335"/>
+          </g>
+          <rect class="rv21-wall" x="110" y="110" width="300" height="300"/>
+          <circle class="rv21-throne" cx="260" cy="260" r="24"/>
+          <circle cx="260" cy="260" r="11" style="fill:var(--warm)"/>
+          <g>
+            <circle class="rv21-pearl" cx="185" cy="110" r="12"/><circle class="rv21-pearl" cx="260" cy="110" r="12"/><circle class="rv21-pearl" cx="335" cy="110" r="12"/>
+            <circle class="rv21-pearl" cx="410" cy="185" r="12"/><circle class="rv21-pearl" cx="410" cy="260" r="12"/><circle class="rv21-pearl" cx="410" cy="335" r="12"/>
+            <circle class="rv21-pearl" cx="185" cy="410" r="12"/><circle class="rv21-pearl" cx="260" cy="410" r="12"/><circle class="rv21-pearl" cx="335" cy="410" r="12"/>
+            <circle class="rv21-pearl" cx="110" cy="185" r="12"/><circle class="rv21-pearl" cx="110" cy="260" r="12"/><circle class="rv21-pearl" cx="110" cy="335" r="12"/>
+          </g>
+          <text class="rv21-side" x="260" y="30" text-anchor="middle">north</text>
+          <text class="rv21-side" x="260" y="508" text-anchor="middle">south</text>
+          <text class="rv21-side" x="452" y="158">east</text>
+          <text class="rv21-side" x="68" y="158" text-anchor="end">west</text>
+          <text class="rv21-tribe" x="185" y="58" text-anchor="middle">Reuben</text><text class="rv21-tribe" x="260" y="58" text-anchor="middle">Judah</text><text class="rv21-tribe" x="335" y="58" text-anchor="middle">Levi</text>
+          <text class="rv21-tribe" x="452" y="190">Joseph</text><text class="rv21-tribe" x="452" y="265">Benjamin</text><text class="rv21-tribe" x="452" y="340">Dan</text>
+          <text class="rv21-tribe" x="185" y="472" text-anchor="middle">Simeon</text><text class="rv21-tribe" x="260" y="472" text-anchor="middle">Issachar</text><text class="rv21-tribe" x="335" y="472" text-anchor="middle">Zebulun</text>
+          <text class="rv21-tribe" x="68" y="190" text-anchor="end">Gad</text><text class="rv21-tribe" x="68" y="265" text-anchor="end">Asher</text><text class="rv21-tribe" x="68" y="340" text-anchor="end">Naphtali</text>
+        </svg>
+      </div>
+      <div>
+        <h2 class="rise" style="--d:1">The city plan</h2>
+        <p class="note rise" style="--d:2">Three gates on every side. Whatever direction a man comes from, there's a gate facing him.</p>
+        <p class="note step rv21-plan-g">On the gates, Israel's twelve tribes. Ezekiel saw a city like this and named its gates the same way (Ezekiel 48:31–34). Its name: <em>“The LORD is there.”</em></p>
+        <p class="note step rv21-plan-f">In the foundations, the twelve apostles. Old Testament saints and New Testament believers: one people, one city.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="slide verse" data-v="15-17" data-hl="the city lieth foursquare|twelve thousand furlongs|The length and the breadth and the height of it are equal"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <div class="split">
+      <div class="stage">
+        <svg viewBox="0 0 560 400" role="img" aria-label="A great golden cube rises up, labeled twelve thousand furlongs, about fourteen hundred miles each way. Beside it is a tiny golden cube: the Holy of Holies in Solomon's temple, twenty cubits, about thirty feet each way.">
+          <g class="rv21-grow">
+            <polygon class="rv21-left" points="90,135 220,210 220,360 90,285"/>
+            <polygon class="rv21-right" points="220,210 350,135 350,285 220,360"/>
+            <polygon class="rv21-top" points="220,60 350,135 220,210 90,135"/>
+            <line class="rv21-dim" x1="78" y1="140" x2="78" y2="290"/>
+            <text class="rv21-small" x="66" y="220" text-anchor="middle" transform="rotate(-90 66 220)">height</text>
+            <text class="rv21-small" x="140" y="385" text-anchor="middle">length</text>
+            <text class="rv21-small" x="300" y="385" text-anchor="middle">breadth</text>
+          </g>
+          <text class="rv21-lab hot" x="220" y="30" text-anchor="middle">12,000 furlongs</text>
+          <text class="rv21-lab" x="220" y="50" text-anchor="middle">about 1,400 miles each way</text>
+          <polygon class="rv21-left" points="454,299 470,308 470,326 454,317"/>
+          <polygon class="rv21-right" points="470,308 486,299 486,317 470,326"/>
+          <polygon class="rv21-top" points="470,290 486,299 470,308 454,299"/>
+          <text class="rv21-lab hot" x="470" y="250" text-anchor="middle">the Holy of Holies</text>
+          <text class="rv21-small" x="470" y="270" text-anchor="middle">20 cubits each way</text>
+          <text class="rv21-small" x="470" y="352" text-anchor="middle">(about 30 feet)</text>
+          <text class="rv21-small" x="470" y="372" text-anchor="middle">1 Kings 6:20</text>
+        </svg>
+      </div>
+      <div>
+        <h2 class="rise" style="--d:1">A perfect cube</h2>
+        <p class="note rise" style="--d:2">The other perfect cube in the Bible is the Holy of Holies, where the high priest went <em>“alone once every year, not without blood”</em> (Hebrews 9:7).</p>
+        <p class="note step">Now the whole city is the Holy of Holies. Everyone lives where only the high priest could go, because the Lamb's blood got them in.</p>
+        <p class="note step">Some teachers take the size literally; others see a picture of perfection (12 × 1,000; a wall of 144, 12 × 12). Either way, there's room for you.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="slide verse" data-v="18-19" data-hl="the city was pure gold, like unto clear glass|garnished with all manner of precious stones"></section>
+
+<section class="slide verse" data-v="20-21" data-hl="every several gate was of one pearl|the street of the city was pure gold, as it were transparent glass"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <div class="split">
+      <div>
+        <div class="rv21-gems" role="img" aria-label="Twelve cut gems in four rows of three, like the high priest's breastplate, appearing one by one: jasper, sapphire, chalcedony, emerald, sardonyx, sardius, chrysolite, beryl, topaz, chrysoprasus, jacinth, amethyst.">
+          <div><i style="--k:0;--gem:color-mix(in srgb, var(--cool) 60%, var(--glow))"></i><small><b>1</b>jasper</small></div>
+          <div><i style="--k:1;--gem:color-mix(in srgb, var(--cool) 85%, var(--on-glow))"></i><small><b>2</b>sapphire</small></div>
+          <div><i style="--k:2;--gem:color-mix(in srgb, var(--cool) 30%, var(--glow))"></i><small><b>3</b>chalcedony</small></div>
+          <div><i style="--k:3;--gem:color-mix(in srgb, var(--cool) 55%, var(--warm))"></i><small><b>4</b>emerald</small></div>
+          <div><i style="--k:4;--gem:color-mix(in srgb, var(--danger) 55%, var(--glow))"></i><small><b>5</b>sardonyx</small></div>
+          <div><i style="--k:5;--gem:var(--danger)"></i><small><b>6</b>sardius</small></div>
+          <div><i style="--k:6;--gem:color-mix(in srgb, var(--warm) 70%, var(--glow))"></i><small><b>7</b>chrysolite</small></div>
+          <div><i style="--k:7;--gem:color-mix(in srgb, var(--cool) 50%, var(--glow))"></i><small><b>8</b>beryl</small></div>
+          <div><i style="--k:8;--gem:var(--warm)"></i><small><b>9</b>topaz</small></div>
+          <div><i style="--k:9;--gem:color-mix(in srgb, var(--cool) 45%, var(--warm))"></i><small><b>10</b>chrysoprasus</small></div>
+          <div><i style="--k:10;--gem:color-mix(in srgb, var(--wine) 50%, var(--warm))"></i><small><b>11</b>jacinth</small></div>
+          <div><i style="--k:11;--gem:color-mix(in srgb, var(--wine) 60%, var(--cool))"></i><small><b>12</b>amethyst</small></div>
+        </div>
+      </div>
+      <div>
+        <h2 class="rise" style="--d:1">Twelve stones</h2>
+        <p class="note rise" style="--d:2"><em>Garnished</em> means decorated. Nobody is sure of every stone's color today; picture every color of light.</p>
+        <p class="note step">Israel had seen stones like these. The high priest carried twelve over his heart, in four rows, when he went in to God:</p>
+        <blockquote class="quote step"><p>“And the stones shall be with the names of the children of Israel, twelve, according to their names, like the engravings of a signet; every one with his name shall they be according to the twelve tribes.”</p><cite>Exodus 28:21</cite></blockquote>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise">Pearl gates, gold street</h2>
+    <div class="columns">
+      <div class="col step"><p class="who">21:21</p><h3>Every gate one pearl</h3><p>A pearl is how an oyster deals with a wound. Something gets in and hurts it, and it covers the hurt, layer on layer, until it's beautiful. The way into God's city is through a gate made from a wound, and we know whose wounds they were.</p></div>
+      <div class="col step"><p class="who">21:21</p><h3>A street of gold</h3><p>Gold is what men lie for, steal for, kill for. In God's city they pave the road with it and walk on it. It's so pure it's <em>“as it were transparent glass”</em>: nothing hidden, nothing fake.</p></div>
+    </div>
+    <p class="note step">What the world told you was worth everything is the pavement there. What's worth everything there is <em>the Lamb</em>.</p>
+  </div>
+</section>
+
+<!-- ======================= PART THREE: THE LAMB IS THE LIGHT ======================= -->
+<section class="slide part">
+  <div class="inner">
+    <p class="part-n rise">Part three</p>
+    <h2 class="rise" style="--d:1">The Lamb is the light</h2>
+    <p class="range rise" style="--d:2">Verses 22–27</p>
+    <div class="rule"></div>
+    <p class="hook rise" style="--d:4">No temple, no sun, no night, no locked gates. And only one way in.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="22-23" data-hl="I saw no temple therein|the Lord God Almighty and the Lamb are the temple of it|the Lamb is the light thereof"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <div class="split">
+      <div class="stage">
+        <svg viewBox="0 0 520 380" role="img" aria-label="Above a golden city, the sun and the moon fade away, while from the Lamb at the center of the city a slowly turning ring of golden light spreads out and fills everything.">
+          <defs>
+            <symbol id="rv21-lambsym" viewBox="130 100 180 150">
+              <g class="rv21-leg"><rect x="168" y="200" width="10" height="44" rx="4"/><rect x="188" y="204" width="10" height="42" rx="4"/><rect x="232" y="204" width="10" height="42" rx="4"/><rect x="252" y="200" width="10" height="44" rx="4"/></g>
+              <g class="rv21-wool-out"><circle cx="165" cy="178" r="32.5"/><circle cx="196" cy="156" r="34.5"/><circle cx="232" cy="160" r="32.5"/><circle cx="258" cy="182" r="28.5"/><circle cx="216" cy="194" r="32.5"/><circle cx="182" cy="198" r="28.5"/></g>
+              <g class="rv21-wool"><circle cx="165" cy="178" r="30"/><circle cx="196" cy="156" r="32"/><circle cx="232" cy="160" r="30"/><circle cx="258" cy="182" r="26"/><circle cx="216" cy="194" r="30"/><circle cx="182" cy="198" r="26"/></g>
+              <ellipse class="rv21-head" cx="282" cy="140" rx="19" ry="26" transform="rotate(28 282 140)"/>
+              <ellipse class="rv21-head" cx="266" cy="124" rx="13" ry="6" transform="rotate(-25 266 124)"/>
+              <circle class="rv21-dark" cx="290" cy="135" r="3.5"/>
+              <path class="rv21-wound" d="M250 150 l12 16"/>
+            </symbol>
+            <radialGradient id="rv21-lightg" cx="50%" cy="50%" r="50%">
+              <stop offset="0%" style="stop-color: var(--glow); stop-opacity: 1"/>
+              <stop offset="35%" style="stop-color: var(--warm); stop-opacity: .55"/>
+              <stop offset="100%" style="stop-color: var(--warm); stop-opacity: 0"/>
+            </radialGradient>
+          </defs>
+          <circle class="rv21-sun" cx="60" cy="50" r="30"/>
+          <path class="rv21-moon" d="M470 22 A 30 30 0 1 0 470 82 A 22 22 0 1 1 470 22 Z"/>
+          <circle class="rv21-core" cx="260" cy="190" r="175" style="fill:url(#rv21-lightg)"/>
+          <g class="rv21-spin"><g class="rv21-rays">
+            <line x1="260" y1="100" x2="260" y2="40"/><line x1="324" y1="126" x2="366" y2="84"/><line x1="350" y1="190" x2="410" y2="190"/><line x1="324" y1="254" x2="366" y2="296"/>
+            <line x1="260" y1="280" x2="260" y2="340"/><line x1="196" y1="254" x2="154" y2="296"/><line x1="170" y1="190" x2="110" y2="190"/><line x1="196" y1="126" x2="154" y2="84"/>
+          </g></g>
+          <path class="rv21-skyline" d="M40 380 L40 300 L80 300 L80 280 L110 280 L110 310 L150 310 L150 270 L180 270 L180 300 L340 300 L340 270 L370 270 L370 310 L410 310 L410 280 L440 280 L440 300 L480 300 L480 380 Z"/>
+          <use href="#rv21-lambsym" x="215" y="155" width="90" height="75"/>
+          <text class="rv21-lab hot" x="260" y="372" text-anchor="middle">“the Lamb is the light thereof”</text>
+        </svg>
+      </div>
+      <div>
+        <h2 class="rise" style="--d:1">No temple, no sun</h2>
+        <p class="note rise" style="--d:2">In the old temple a thick curtain kept men out of the holiest place. Here there's no building at all, because there's no distance left. God Himself is the temple.</p>
+        <p class="note step">And no sun. <em>“The LORD shall be unto thee an everlasting light”</em> (Isaiah 60:19). Every bit of light in that city comes from the Lamb who was slain.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="slide verse" data-v="24-26" data-hl="the gates of it shall not be shut at all by day: for there shall be no night there"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <div class="split">
+      <div class="stage">
+        <svg viewBox="0 0 420 360" role="img" aria-label="A stone gateway with heavy wooden doors and an iron bar across them. The bar lifts away and the doors swing open and stay open, with golden light pouring out through the gate.">
+          <path class="rv21-arch" d="M60 340 L60 120 Q60 30 210 30 Q360 30 360 120 L360 340 Z"/>
+          <path class="rv21-through" d="M110 340 L110 140 Q110 80 210 80 Q310 80 310 140 L310 340 Z"/>
+          <path class="rv21-beam" d="M110 340 L310 340 L410 360 L10 360 Z"/>
+          <path class="rv21-door l" d="M110 340 L110 140 Q110 80 210 80 L210 340 Z"/>
+          <path class="rv21-door r" d="M210 340 L210 80 Q310 80 310 140 L310 340 Z"/>
+          <path class="rv21-bolt" d="M120 220 L300 220"/>
+        </svg>
+      </div>
+      <div>
+        <h2 class="rise" style="--d:1">Gates that never shut</h2>
+        <p class="note rise" style="--d:2">Old cities barred their gates at sundown, because the dark was when enemies came. Here there's no night, so no lockdown: nothing to keep out, nobody kept in.</p>
+        <p class="note step">If you've done time, you know the sound of a door slamming at count. You'll never hear it again.</p>
+        <blockquote class="quote step"><p>“Therefore thy gates shall be open continually; they shall not be shut day nor night…”</p><cite>Isaiah 60:11</cite></blockquote>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="slide verse" data-v="27" data-hl="but they which are written in the Lamb’s book of life"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <div class="split">
+      <div class="stage">
+        <svg viewBox="0 0 460 320" role="img" aria-label="A large book lies open, its pages filled with lines of names. On the right-hand page a new name writes itself in red ink, and beside it the words: written in.">
+          <path class="rv21-cover" d="M20 60 L230 76 L440 60 L440 290 L230 306 L20 290 Z"/>
+          <path class="rv21-page" d="M30 50 Q130 40 230 66 L230 294 Q130 270 30 280 Z"/>
+          <path class="rv21-page" d="M430 50 Q330 40 230 66 L230 294 Q330 270 430 280 Z"/>
+          <g class="rv21-name">
+            <path d="M54 84 L130 80 M140 80 L200 84"/><path d="M54 108 L110 104 M122 104 L205 108"/><path d="M54 132 L150 128 M160 128 L204 132"/><path d="M54 156 L100 152 M112 152 L206 156"/><path d="M54 180 L140 176 M152 176 L205 180"/><path d="M54 204 L120 200 M132 200 L206 204"/><path d="M54 228 L160 224 M170 224 L204 228"/><path d="M54 252 L110 248 M124 248 L204 252"/>
+            <path d="M256 84 L330 80 M342 80 L404 84"/><path d="M256 108 L300 104 M312 104 L406 108"/><path d="M256 132 L360 128 M370 128 L404 132"/><path d="M256 156 L320 152 M332 152 L405 156"/><path d="M256 228 L340 224 M350 224 L404 228"/><path d="M256 252 L300 248 M312 248 L405 252"/>
+          </g>
+          <path class="rv21-pen" pathLength="1" d="M258 196 C 262 178, 270 178, 270 192 C 270 204, 262 206, 266 194 C 272 182, 282 186, 280 198 C 279 206, 288 206, 292 194 C 296 182, 304 186, 302 198 C 300 208, 312 204, 316 192 L 322 186 C 326 194, 328 204, 336 198 C 342 192, 344 186, 352 196 C 358 204, 366 200, 372 192 L 404 190"/>
+          <text class="rv21-mark" x="330" y="222" text-anchor="middle">written in</text>
+        </svg>
+      </div>
+      <div>
+        <h2 class="rise" style="--d:1">Whose names are in the book</h2>
+        <p class="note rise" style="--d:2">Nothing that defiles gets in, and every one of us has defiled something. The way in isn't being clean. It's being <em>written</em>.</p>
+        <p class="note step">And it's <em>the Lamb's</em> book. He bought every name in it with His blood, and He doesn't write in pencil:</p>
+        <blockquote class="quote step"><p>“Notwithstanding in this rejoice not, that the spirits are subject unto you; but rather rejoice, because your names are written in heaven.”</p><cite>Luke 10:20</cite></blockquote>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise">Take it to work today</h2>
+    <div class="daybreak climb">
+      <div class="rise" style="--d:1"><i>21:4</i><b>Grieve with hope</b><p>Name the loss you carry. Tell God about it, and tell one brother. It won't have the last word.</p></div>
+      <div class="step"><i>21:6</i><b>Go to the fountain</b><p>When the thirst hits today, and it will, don't go back to the leaking well. Pray before you do anything else. The water is free.</p></div>
+      <div class="step"><i>21:27</i><b>You're written in</b><p>Walk like a citizen of that city. Tell the truth today, even when a lie would be easier.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ======================= CLOSING ======================= -->
+<section class="slide remember">
+  <div class="inner">
+    <h2 class="rise">Points to remember</h2>
+    <ol class="seeds">
+      <li class="step"><span class="topic">With us</span><span class="seed-q">“The tabernacle of God is with men” <cite>21:3</cite></span><span class="take">God Himself will live with His people for ever, and be their God.</span></li>
+      <li class="step"><span class="topic">Tears</span><span class="seed-q">“God shall wipe away all tears” <cite>21:4</cite></span><span class="take">No more death, sorrow, crying or pain: the former things are passed away.</span></li>
+      <li class="step"><span class="topic">New</span><span class="seed-q">“Behold, I make all things new” <cite>21:5</cite></span><span class="take">What He started in every believer, He will finish in the whole world.</span></li>
+      <li class="step"><span class="topic">Water</span><span class="seed-q">“Of the fountain of the water of life freely” <cite>21:6</cite></span><span class="take">Anyone who is thirsty may drink, and it costs nothing.</span></li>
+      <li class="step"><span class="topic">The city</span><span class="seed-q">“The Lamb is the light thereof” <cite>21:23</cite></span><span class="take">Pearl gates, a gold street, no temple, no night, and the Lamb at the center.</span></li>
+      <li class="step"><span class="topic">Written</span><span class="seed-q">“Written in the Lamb’s book of life” <cite>21:27</cite></span><span class="take">The way in isn't being clean; it's being written in by the Lamb.</span></li>
+    </ol>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 1 of 6</p>
+      <span class="topic">With us</span>
+      <h2>Where will God live when all things are made new?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="3"></blockquote>
+      <blockquote class="quote step"><p>“And if I go and prepare a place for you, I will come again, and receive you unto myself; that where I am, there ye may be also.”</p><cite>John 14:3</cite></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>With His people. God will dwell with men, they will be His people, and He will be their God. No temple is needed: God and the Lamb are the temple.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 2 of 6</p>
+      <span class="topic">Tears</span>
+      <h2>What will God wipe away, and what will be no more?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="4"></blockquote>
+      <blockquote class="quote step"><p>“He will swallow up death in victory; and the Lord GOD will wipe away tears from off all faces; and the rebuke of his people shall he take away from off all the earth: for the LORD hath spoken it.”</p><cite>Isaiah 25:8</cite></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>God Himself will wipe away all tears. There will be no more death, sorrow, crying or pain: the former things are passed away. Until then we grieve, but with hope.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 3 of 6</p>
+      <span class="topic">New</span>
+      <h2>What does He mean when He says, “Behold, I make all things new”?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="5"></blockquote>
+      <blockquote class="quote step"><p>“Therefore if any man be in Christ, he is a new creature: old things are passed away; behold, all things are become new.”</p><cite>2 Corinthians 5:17</cite></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>God will make a new heaven and a new earth, with everything sin broke put right. He has already begun it in every man who is in Christ, and He will finish it. His words are true and faithful.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 4 of 6</p>
+      <span class="topic">Water</span>
+      <h2>Who may drink of the water of life, and what does it cost?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="6"></blockquote>
+      <blockquote class="quote step"><p>“Ho, every one that thirsteth, come ye to the waters, and he that hath no money; come ye, buy, and eat; yea, come, buy wine and milk without money and without price.”</p><cite>Isaiah 55:1</cite></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>Anyone who is thirsty. It costs nothing: God gives it freely. Jesus paid for it, so all a man has to do is come and drink.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 5 of 6</p>
+      <span class="topic">The city</span>
+      <h2>What is the holy city like?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="21"></blockquote>
+      <blockquote class="quote step" data-q="23"></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>It shines with the glory of God: twelve gates of pearl, twelve foundations of precious stones, and a street of pure gold like clear glass. God and the Lamb are its temple, the Lamb is its light, and its gates never shut.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 6 of 6</p>
+      <span class="topic">Written</span>
+      <h2>Who will enter the city, and who will not?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="27"></blockquote>
+      <blockquote class="quote step"><p>“And such were some of you: but ye are washed, but ye are sanctified, but ye are justified in the name of the Lord Jesus, and by the Spirit of our God.”</p><cite>1 Corinthians 6:11</cite></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>Those written in the Lamb's book of life. Nothing that defiles will enter, and verse 8 names those who refuse the water. But the offer comes first: any sinner who comes to the Lamb is washed and written in.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide prayer">
+  <div class="inner">
+    <div class="emblem rise"></div>
+    <h2 class="rise" style="--d:1">Prayer requests</h2>
+    <p class="ask-line rise" style="--d:2">What can we pray about for you today?</p>
+    <blockquote class="quote rise" style="--d:4" data-q="4"></blockquote>
+  </div>
+</section>
+
+</main>
+
+<script>
+// King James Version, Revelation chapter 21
+const V = {
+  1: "And I saw a new heaven and a new earth: for the first heaven and the first earth were passed away; and there was no more sea.",
+  2: "And I John saw the holy city, new Jerusalem, coming down from God out of heaven, prepared as a bride adorned for her husband.",
+  3: "And I heard a great voice out of heaven saying, Behold, the tabernacle of God is with men, and he will dwell with them, and they shall be his people, and God himself shall be with them, and be their God.",
+  4: "And God shall wipe away all tears from their eyes; and there shall be no more death, neither sorrow, nor crying, neither shall there be any more pain: for the former things are passed away.",
+  5: "And he that sat upon the throne said, Behold, I make all things new. And he said unto me, Write: for these words are true and faithful.",
+  6: "And he said unto me, It is done. I am Alpha and Omega, the beginning and the end. I will give unto him that is athirst of the fountain of the water of life freely.",
+  7: "He that overcometh shall inherit all things; and I will be his God, and he shall be my son.",
+  8: "But the fearful, and unbelieving, and the abominable, and murderers, and whoremongers, and sorcerers, and idolaters, and all liars, shall have their part in the lake which burneth with fire and brimstone: which is the second death.",
+  9: "And there came unto me one of the seven angels which had the seven vials full of the seven last plagues, and talked with me, saying, Come hither, I will shew thee the bride, the Lamb’s wife.",
+  10: "And he carried me away in the spirit to a great and high mountain, and shewed me that great city, the holy Jerusalem, descending out of heaven from God,",
+  11: "Having the glory of God: and her light was like unto a stone most precious, even like a jasper stone, clear as crystal;",
+  12: "And had a wall great and high, and had twelve gates, and at the gates twelve angels, and names written thereon, which are the names of the twelve tribes of the children of Israel:",
+  13: "On the east three gates; on the north three gates; on the south three gates; and on the west three gates.",
+  14: "And the wall of the city had twelve foundations, and in them the names of the twelve apostles of the Lamb.",
+  15: "And he that talked with me had a golden reed to measure the city, and the gates thereof, and the wall thereof.",
+  16: "And the city lieth foursquare, and the length is as large as the breadth: and he measured the city with the reed, twelve thousand furlongs. The length and the breadth and the height of it are equal.",
+  17: "And he measured the wall thereof, an hundred and forty and four cubits, according to the measure of a man, that is, of the angel.",
+  18: "And the building of the wall of it was of jasper: and the city was pure gold, like unto clear glass.",
+  19: "And the foundations of the wall of the city were garnished with all manner of precious stones. The first foundation was jasper; the second, sapphire; the third, a chalcedony; the fourth, an emerald;",
+  20: "The fifth, sardonyx; the sixth, sardius; the seventh, chrysolite; the eighth, beryl; the ninth, a topaz; the tenth, a chrysoprasus; the eleventh, a jacinth; the twelfth, an amethyst.",
+  21: "And the twelve gates were twelve pearls; every several gate was of one pearl: and the street of the city was pure gold, as it were transparent glass.",
+  22: "And I saw no temple therein: for the Lord God Almighty and the Lamb are the temple of it.",
+  23: "And the city had no need of the sun, neither of the moon, to shine in it: for the glory of God did lighten it, and the Lamb is the light thereof.",
+  24: "And the nations of them which are saved shall walk in the light of it: and the kings of the earth do bring their glory and honour into it.",
+  25: "And the gates of it shall not be shut at all by day: for there shall be no night there.",
+  26: "And they shall bring the glory and honour of the nations into it.",
+  27: "And there shall in no wise enter into it any thing that defileth, neither whatsoever worketh abomination, or maketh a lie: but they which are written in the Lamb’s book of life."
+};
+const BOOK = "Revelation 21";
+</script>
+<script src="../assets/deck.js"></script>
+</body>
+</html>
