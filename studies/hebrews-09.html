@@ -1,0 +1,750 @@
+<!doctype html>
+<html lang="en" data-theme="night">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Hebrews 9</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="../assets/fonts.css">
+<link rel="stylesheet" href="../assets/deck.css">
+<link rel="stylesheet" href="../assets/themes.css">
+<style>
+/* he09-where: where we are in Hebrews. Thirteen chapter cells (i), .done and .here, over five labeled parts (span, --s = cells spanned) */
+.he09-where { display: grid; grid-template-columns: repeat(13, 1fr); gap: 4px; margin: .3em 0 1em; }
+.he09-where i { font: 600 clamp(.75rem, .65rem + .4vw, 1.05rem)/1 var(--sans); font-style: normal; text-align: center; padding: .45em 0; border-radius: 6px; background: var(--surface); border: 1px solid var(--line); color: var(--ink-soft); }
+.he09-where i.done { background: color-mix(in srgb, var(--accent) 16%, var(--surface)); color: var(--ink); }
+.he09-where i.here { background: var(--accent); border-color: var(--accent); color: var(--on-accent); box-shadow: 0 0 0 4px color-mix(in srgb, var(--accent) 25%, transparent); }
+.slide.active .he09-where i.here { animation: he09-here 2.4s 1s ease-in-out infinite; }
+@keyframes he09-here { 50% { box-shadow: 0 0 0 8px color-mix(in srgb, var(--accent) 10%, transparent); } }
+.he09-where span { grid-column: span var(--s, 1); border-top: 3px solid var(--line-strong); padding-top: .35em; text-align: center; font-size: clamp(.68rem, .62rem + .3vw, .95rem); line-height: 1.2; color: var(--ink-soft); }
+.he09-where span.now { border-top-color: var(--accent); color: var(--ink); font-weight: 700; }
+
+/* he09-plan: the tabernacle seen from above. Court, gate, altar, laver, the sanctuary, the veil, the holiest of all.
+   .he09-lab labels fade in by --k. On the walk slide, .he09-priest walks in from the gate on a .he09-go step:
+   he stops at the altar for blood, crosses the sanctuary, passes the veil and stands before the ark; blood lands on the mercy seat. */
+.he09-court { fill: color-mix(in srgb, var(--surface) 70%, transparent); stroke: var(--line-strong); stroke-width: 2; stroke-dasharray: 3 5; }
+.he09-gate { stroke: var(--accent); stroke-width: 7; stroke-linecap: round; }
+.he09-tent { fill: var(--surface-2); stroke: var(--ink-soft); stroke-width: 2.5; }
+.he09-holiest { fill: color-mix(in srgb, var(--accent) 16%, var(--surface-2)); }
+.he09-veil { stroke: var(--wine); stroke-width: 7; }
+.he09-door { stroke: var(--ink-soft); stroke-width: 4; stroke-dasharray: 8 5; }
+.he09-brass { fill: color-mix(in srgb, var(--warm) 45%, var(--surface)); stroke: var(--warm); stroke-width: 2; }
+.he09-gold { fill: color-mix(in srgb, var(--accent) 55%, var(--surface)); stroke: var(--accent-hot); stroke-width: 2; }
+.he09-gold-line { fill: none; stroke: var(--accent-hot); stroke-width: 3; stroke-linecap: round; }
+.he09-flame { fill: var(--warm); }
+.slide.active .he09-flame { animation: he09-flicker 1.6s ease-in-out infinite alternate; transform-box: fill-box; transform-origin: 50% 100%; }
+@keyframes he09-flicker { to { transform: scaleY(.7); opacity: .75; } }
+.he09-room { font: 700 12px var(--sans); letter-spacing: .08em; fill: var(--ink-soft); text-anchor: middle; }
+.he09-room.hot { fill: var(--accent-hot); }
+.he09-lab { font: 16px var(--sans); fill: var(--ink); text-anchor: middle; opacity: 0; transition: opacity .7s ease; }
+.he09-lab.soft { fill: var(--ink-soft); font-size: 14px; }
+.he09-lab.hot { fill: var(--accent-hot); font-weight: 700; }
+.he09-lead { stroke: var(--line-strong); stroke-width: 1.5; opacity: 0; transition: opacity .7s ease; }
+.slide.active :is(.he09-lab, .he09-lead) { opacity: 1; transition-delay: calc(var(--k, 0) * .45s + .5s); }
+.he09-priest { fill: var(--ink); }
+.he09-priest .he09-bowl { fill: var(--danger); opacity: 0; }
+.he09-trail { fill: none; stroke: var(--danger); stroke-width: 2.5; stroke-dasharray: 1; stroke-dashoffset: 1; }
+.he09-drop { fill: var(--danger); opacity: 0; }
+.he09-yr { font: 700 17px var(--sans); fill: var(--danger); text-anchor: middle; opacity: 0; }
+.slide:has(.he09-go.on) .he09-priest { animation: he09-walk 6s ease-in-out forwards; }
+.slide:has(.he09-go.on) .he09-priest .he09-bowl { animation: he09-show .4s 1.6s forwards; }
+.slide:has(.he09-go.on) .he09-trail { animation: he09-draw 4.2s 1.8s ease-in-out forwards; }
+.slide:has(.he09-go.on) .he09-drop { animation: he09-show .4s forwards; animation-delay: calc(6.1s + var(--k, 0) * .25s); }
+.slide:has(.he09-go.on) .he09-yr { animation: he09-show .8s 6.8s forwards; }
+@keyframes he09-walk { 0% { transform: none; } 22%, 34% { transform: translateX(-140px); } 72%, 80% { transform: translateX(-528px); } 100% { transform: translateX(-562px); } }
+@keyframes he09-show { to { opacity: 1; } }
+@keyframes he09-draw { to { stroke-dashoffset: 0; } }
+@media (max-width: 600px) { .he09-lab { font-size: 20px; } .he09-lab.soft { display: none; } .he09-room { font-size: 14px; } }
+
+/* he09-ark: the ark open, its three things showing; the mercy seat drops over them (.he09-ark-go1), then blood lands on it (.he09-ark-go2) */
+.he09-box { fill: color-mix(in srgb, var(--accent) 30%, var(--surface)); stroke: var(--accent-hot); stroke-width: 3; }
+.he09-inside { fill: color-mix(in srgb, var(--bg) 70%, var(--surface)); }
+.he09-thing { fill: var(--ink-soft); }
+.he09-thing.rod { fill: none; stroke: var(--ink-soft); stroke-width: 4; stroke-linecap: round; }
+.he09-bud { fill: var(--accent); }
+.he09-what { font: 15px var(--sans); fill: var(--ink); text-anchor: middle; }
+.he09-what small, .he09-why { font: 12px var(--sans); fill: var(--ink-soft); text-anchor: middle; }
+.he09-lid { transform: translateY(-110px); opacity: 0; transition: transform 1.2s cubic-bezier(.5,0,.3,1), opacity .6s ease; }
+.slide:has(.he09-ark-go1.on) .he09-lid { transform: none; opacity: 1; }
+.he09-seat { fill: var(--accent); stroke: var(--accent-hot); stroke-width: 2; }
+.he09-wing { fill: color-mix(in srgb, var(--accent) 60%, var(--surface)); stroke: var(--accent-hot); stroke-width: 2; }
+.he09-seatlab { font: 700 16px var(--sans); fill: var(--accent-hot); text-anchor: middle; }
+.he09-sprinkle { fill: var(--danger); opacity: 0; transform: translateY(-30px); transition: opacity .4s ease, transform .5s ease-in; transition-delay: calc(var(--k, 0) * .22s + .2s); }
+.slide:has(.he09-ark-go2.on) .he09-sprinkle { opacity: 1; transform: none; }
+.he09-bloodlab { font: 700 14px var(--sans); fill: var(--danger); text-anchor: middle; opacity: 0; transition: opacity .8s 1.6s ease; }
+.slide:has(.he09-ark-go2.on) .he09-bloodlab { opacity: 1; }
+@media (max-width: 600px) { .he09-why { display: none; } }
+
+/* he09-cmp: the old high priest beside Christ, one row per step (b = what, then two cells) */
+.he09-cmp { display: grid; grid-template-columns: auto 1fr 1fr; gap: 6px; margin: .4em 0 1em; font-size: clamp(.95rem, .85rem + .45vw, 1.3rem); line-height: 1.3; }
+.he09-cmp > div { display: contents; }
+.he09-cmp h3 { margin: 0; font: 700 .8em var(--sans); letter-spacing: .06em; text-transform: uppercase; color: var(--ink-soft); padding: .2em .6em; }
+.he09-cmp h3.christ { color: var(--accent-hot); }
+.he09-cmp b { font: 600 .85em var(--sans); color: var(--ink-soft); padding: .55em .6em; align-self: center; }
+.he09-cmp span { padding: .55em .8em; border-radius: 8px; background: var(--surface); border: 1.5px dashed var(--line-strong); color: var(--ink-soft); }
+.he09-cmp span.christ { border: 2px solid var(--accent); background: color-mix(in srgb, var(--accent) 12%, transparent); color: var(--ink); font-family: var(--serif); }
+.he09-cmp > .step > * { opacity: 0; transform: translateY(8px); transition: opacity .6s ease, transform .6s ease; }
+.he09-cmp > .step.on > * { opacity: 1; transform: none; }
+@media (max-width: 600px) { .he09-cmp { grid-template-columns: 1fr 1fr; } .he09-cmp b { grid-column: 1 / -1; padding-bottom: 0; } .he09-cmp h3:first-child { display: none; } }
+
+/* he09-wash: a cloth stained with what haunts a man; on .he09-wash-go a wash sweeps across, the stains go, the cloth comes up clean */
+.he09-cloth { fill: var(--surface-2); stroke: var(--line-strong); stroke-width: 2; transition: fill 1.6s 2.2s ease; }
+.slide:has(.he09-wash-go.on) .he09-cloth { fill: var(--glow); }
+.he09-stain { fill: color-mix(in srgb, var(--danger) 55%, var(--surface-2)); transition: opacity 1s ease; transition-delay: calc(var(--k, 0) * .45s + .5s); }
+.he09-stain-t { font: 600 17px var(--sans); fill: var(--ink); text-anchor: middle; transition: opacity 1s ease; transition-delay: calc(var(--k, 0) * .45s + .5s); }
+.slide:has(.he09-wash-go.on) :is(.he09-stain, .he09-stain-t) { opacity: 0; }
+.he09-sweep { fill: color-mix(in srgb, var(--danger) 40%, transparent); transform: translateX(-120px); opacity: 0; }
+.slide:has(.he09-wash-go.on) .he09-sweep { animation: he09-sweep 2.6s .2s ease-in-out forwards; }
+@keyframes he09-sweep { 0% { opacity: 0; transform: translateX(-120px); } 15% { opacity: 1; } 85% { opacity: 1; } 100% { opacity: 0; transform: translateX(560px); } }
+.he09-clean { font: 400 46px var(--serif); font-style: italic; fill: var(--on-glow); text-anchor: middle; opacity: 0; transition: opacity 1.2s 3.4s ease; }
+.he09-clean-s { font: 600 17px var(--sans); fill: var(--on-glow); text-anchor: middle; opacity: 0; transition: opacity 1.2s 3.8s ease; }
+.slide:has(.he09-wash-go.on) :is(.he09-clean, .he09-clean-s) { opacity: 1; }
+@media (max-width: 600px) { .he09-stain-t { font-size: 20px; } }
+
+/* he09-once: every year, for about 1,500 years (a dot per ten years), beside one offering, once */
+.he09-once { display: grid; gap: 1rem 2rem; align-items: center; margin: .3em 0 .8em; }
+@media (min-width: 760px) { .he09-once { grid-template-columns: 2fr 1fr; } }
+.he09-once h3 { margin: 0 0 .3em; font: 700 clamp(.85rem, .78rem + .35vw, 1.1rem) var(--sans); color: var(--ink-soft); letter-spacing: .04em; }
+.he09-once .dots { margin: 0; }
+.he09-one { display: grid; justify-items: center; gap: .4em; text-align: center; }
+.he09-one i { display: block; width: clamp(4.5rem, 3rem + 5vw, 7.5rem); aspect-ratio: 1; border-radius: 50%; background: var(--accent); box-shadow: 0 0 0 8px color-mix(in srgb, var(--accent) 20%, transparent), 0 0 34px var(--accent); }
+.he09-one b { font: 400 clamp(1.8rem, 1.2rem + 2.4vw, 3rem)/1 var(--serif); color: var(--accent-hot); }
+.he09-one small { color: var(--ink-soft); font-size: clamp(.85rem, .8rem + .3vw, 1.05rem); }
+</style>
+</head>
+<body>
+<main class="deck" id="deck">
+
+<!-- ======================= OPENING ======================= -->
+<section class="slide title">
+  <div class="inner">
+    <div class="emblem rise"></div>
+    <h1 class="rise" style="--d:1">Hebrews 9</h1>
+    <p class="sub rise" style="--d:3">By his own blood</p>
+    <p class="tag rise" style="--d:5">Behind the veil was a room one man could enter, one day a year, never without blood. Jesus went into the real one, once, with His own blood, and came out with a clean conscience for you.</p>
+  </div>
+</section>
+
+<section class="slide watch">
+  <div class="inner">
+    <h2 class="rise">Things to watch for</h2>
+    <p class="lede rise" style="--d:1">Keep these questions in the back of your mind as we read. We'll come back to every one of them at the end.</p>
+    <ol class="seeds">
+      <li class="step"><span class="topic">The tabernacle</span><span class="seed-q">Who could go into the holiest of all, and how often?</span></li>
+      <li class="step"><span class="topic">His blood</span><span class="seed-q">Where did Christ go with His own blood, and what did He get for us?</span></li>
+      <li class="step"><span class="topic">Conscience</span><span class="seed-q">What can the blood of Christ do for a guilty conscience?</span></li>
+      <li class="step"><span class="topic">Remission</span><span class="seed-q">Why is there no remission without the shedding of blood?</span></li>
+      <li class="step"><span class="topic">Once</span><span class="seed-q">How many times did Christ have to offer Himself?</span></li>
+      <li class="step"><span class="topic">He's coming</span><span class="seed-q">What waits for every man after death, and what will Christ bring when He appears the second time?</span></li>
+    </ol>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise">Where we are in Hebrews</h2>
+    <div class="he09-where rise" style="--d:1" role="img" aria-label="Hebrews has thirteen chapters. Chapters 1 and 2: better than the angels. Chapters 3 and 4: better than Moses. Chapters 5 to 7: a better priest. Chapters 8 to 10: a better covenant and a better sacrifice. Chapters 11 to 13: faith that holds on. We are in chapter 9.">
+      <i class="done">1</i><i class="done">2</i><i class="done">3</i><i class="done">4</i><i class="done">5</i><i class="done">6</i><i class="done">7</i><i class="done">8</i><i class="here">9</i><i>10</i><i>11</i><i>12</i><i>13</i>
+      <span style="--s:2">Better than angels</span><span style="--s:2">Better than Moses</span><span style="--s:3">A better priest</span><span class="now" style="--s:3">A better covenant and sacrifice</span><span style="--s:3">Faith that holds on</span>
+    </div>
+    <div class="split">
+      <div class="stage">
+        <svg data-world viewBox="190 120 640 400" style="max-height:40vh" data-towns="Jerusalem!, Rome" role="img" aria-label="Map of the Roman world from Rome in Italy to Jerusalem. Jerusalem, where the temple still stood, is lit.">
+        </svg>
+      </div>
+      <div>
+        <p class="note rise" style="--d:2">The writer of Hebrews isn't named. He is writing, about AD 64 to 68, to Hebrew believers who were tempted to slip back into the old ways. In <em>Jerusalem</em> the temple was still standing, the priests still busy at the altar.</p>
+        <p class="note step">Chapter 7 gave us a better Priest. Chapter 8, a better covenant. Now chapter 9 walks us through the old tent, room by room, to show what Jesus did when He went in.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ======================= PART ONE: THE TENT ======================= -->
+<section class="slide part">
+  <div class="inner">
+    <p class="part-n rise">Part one</p>
+    <h2 class="rise" style="--d:1">A tent with a veil</h2>
+    <p class="range rise" style="--d:2">Verses 1–10</p>
+    <div class="rule"></div>
+    <p class="hook rise" style="--d:4">Two rooms, a curtain between them, and a door to God that stayed shut all year but one day.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="1-3" data-hl="a worldly sanctuary|the candlestick, and the table, and the shewbread|after the second veil|the Holiest of all"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise">The tabernacle, from above</h2>
+    <div class="stage">
+      <svg viewBox="0 0 720 330" style="max-height:46vh" role="img" aria-label="A plan of the tabernacle seen from above. A fenced court with the gate on the east. Inside the gate, the altar of burnt offering and the laver. Then the tent: first the sanctuary, with the table of shewbread on one side, the golden candlestick on the other, and the altar of incense in front of the veil. Behind the veil, the holiest of all, a perfect cube, with the golden censer and the ark of the covenant with the mercy seat.">
+        <rect class="he09-court" x="10" y="10" width="700" height="310" rx="4"/>
+        <line class="he09-gate" x1="710" y1="135" x2="710" y2="195"/>
+        <rect class="he09-tent" x="30" y="105" width="360" height="120"/>
+        <rect class="he09-holiest" x="31" y="106" width="119" height="118"/>
+        <line class="he09-door" x1="390" y1="105" x2="390" y2="225"/>
+        <line class="he09-veil" x1="150" y1="105" x2="150" y2="225"/>
+        <!-- court: altar and laver -->
+        <rect class="he09-brass" x="520" y="140" width="50" height="50" rx="3"/>
+        <circle class="he09-brass" cx="450" cy="165" r="16"/>
+        <!-- sanctuary: table, candlestick, incense altar -->
+        <rect class="he09-gold" x="205" y="122" width="56" height="24" rx="2"/>
+        <g class="he09-gold"><rect x="213" y="127" width="8" height="5" rx="1"/><rect x="225" y="127" width="8" height="5" rx="1"/><rect x="237" y="127" width="8" height="5" rx="1"/><rect x="213" y="136" width="8" height="5" rx="1"/><rect x="225" y="136" width="8" height="5" rx="1"/><rect x="237" y="136" width="8" height="5" rx="1"/></g>
+        <path class="he09-gold-line" d="M233 210 V180 M203 180 Q203 196 233 196 Q263 196 263 180 M213 180 Q213 190 233 190 Q253 190 253 180 M223 180 Q223 185 233 185 Q243 185 243 180"/>
+        <g class="he09-flame"><circle cx="203" cy="176" r="3"/><circle cx="213" cy="176" r="3"/><circle cx="223" cy="176" r="3"/><circle cx="233" cy="176" r="3"/><circle cx="243" cy="176" r="3"/><circle cx="253" cy="176" r="3"/><circle cx="263" cy="176" r="3"/></g>
+        <rect class="he09-gold" x="162" y="156" width="18" height="18" rx="2"/>
+        <!-- holiest: ark with mercy seat, golden censer -->
+        <rect class="he09-gold" x="66" y="152" width="50" height="28" rx="2"/>
+        <rect x="63" y="148" width="56" height="6" rx="2" style="fill:var(--accent-hot)"/>
+        <path class="he09-gold" d="M45 196 a7 7 0 0 0 14 0 Z M52 189 v7"/>
+        <text class="he09-room hot" x="90" y="124">HOLIEST</text>
+        <text class="he09-room hot" x="90" y="215">OF ALL</text>
+        <text class="he09-room" x="330" y="215">THE SANCTUARY</text>
+        <!-- labels -->
+        <line class="he09-lead" style="--k:0" x1="700" y1="128" x2="672" y2="82"/><text class="he09-lab" style="--k:0" x="640" y="72">the gate (east)</text>
+        <line class="he09-lead" style="--k:1" x1="545" y1="140" x2="545" y2="58"/><text class="he09-lab" style="--k:1" x="545" y="48">altar of burnt offering</text>
+        <line class="he09-lead" style="--k:2" x1="450" y1="181" x2="450" y2="262"/><text class="he09-lab" style="--k:2" x="450" y="280">laver</text><text class="he09-lab soft" style="--k:2" x="450" y="300">the priests washed</text>
+        <line class="he09-lead" style="--k:3" x1="233" y1="122" x2="290" y2="62"/><text class="he09-lab" style="--k:3" x="320" y="48">table &amp; shewbread</text>
+        <line class="he09-lead" style="--k:4" x1="233" y1="210" x2="280" y2="262"/><text class="he09-lab" style="--k:4" x="300" y="280">candlestick</text><text class="he09-lab soft" style="--k:4" x="300" y="300">the only light inside</text>
+        <line class="he09-lead" style="--k:5" x1="171" y1="174" x2="180" y2="262"/><text class="he09-lab soft" style="--k:5" x="180" y="280">incense altar</text>
+        <line class="he09-lead" style="--k:6" x1="150" y1="105" x2="150" y2="62"/><text class="he09-lab hot" style="--k:6" x="160" y="48">the veil</text>
+        <line class="he09-lead" style="--k:7" x1="58" y1="148" x2="52" y2="62"/><text class="he09-lab" style="--k:7" x="60" y="30">ark &amp;</text><text class="he09-lab" style="--k:7" x="60" y="50">mercy seat</text>
+        <line class="he09-lead" style="--k:8" x1="52" y1="203" x2="60" y2="262"/><text class="he09-lab" style="--k:8" x="60" y="280">golden</text><text class="he09-lab" style="--k:8" x="60" y="300">censer</text>
+      </svg>
+    </div>
+    <p class="note step">God gave Moses this plan on the mountain (8:5). The first room, <em>the sanctuary</em>, held the bread and the light. Behind a heavy curtain, <em>the veil</em>, was a perfect cube: <em>the Holiest of all</em>, where God met His people (Exodus 25:22).</p>
+    <p class="note step">Notice what's missing: no chair anywhere. Hold on to that for chapter 10.</p>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="2" data-hl="the candlestick, and the table, and the shewbread"></blockquote>
+    <h2 class="rise" style="--d:1">Bread, light, and a curtain</h2>
+    <ol class="signs">
+      <li class="step"><b>The candlestick</b>A golden lampstand with seven lamps burning olive oil. The only light in the room.</li>
+      <li class="step"><b>The table</b>Of wood covered in gold, for the bread.</li>
+      <li class="step"><b>The shewbread</b>Twelve loaves, one for each tribe, set out before God and changed every sabbath.</li>
+      <li class="step now"><b>The veil</b>A thick curtain of blue, purple and scarlet, with cherubims woven in. It said: <em>this far and no farther.</em></li>
+    </ol>
+    <blockquote class="quote step"><p>“And let them make me a sanctuary; that I may dwell among them.”</p><cite>Exodus 25:8</cite></blockquote>
+    <p class="note step">God wanted to live among His people. But a holy God and sinful men can't simply sit down together. The veil stood in between, and every man who saw it knew why.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="4-5" data-hl="the golden censer|the ark of the covenant overlaid round about with gold|the golden pot that had manna|Aaron’s rod that budded|the tables of the covenant|the cherubims of glory shadowing the mercyseat"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise">What was in the ark</h2>
+    <div class="split">
+      <div class="stage">
+        <svg viewBox="135 22 330 312" role="img" aria-label="The ark of the covenant, a gold box, open. Inside: the golden pot of manna, Aaron's rod that budded, and the two tables of the law. Then the mercy seat, a gold lid with two cherubims, comes down and covers them. Then drops of blood fall on the mercy seat.">
+          <g class="he09-lid">
+            <path class="he09-wing" d="M185 126 C200 60 250 50 290 100 L280 110 C250 80 215 90 205 126 Z"/>
+            <path class="he09-wing" d="M415 126 C400 60 350 50 310 100 L320 110 C350 80 385 90 395 126 Z"/>
+            <rect class="he09-seat" x="160" y="122" width="280" height="20" rx="4"/>
+            <text class="he09-seatlab" x="300" y="40">the mercy seat</text>
+          </g>
+          <circle class="he09-sprinkle" style="--k:0" cx="262" cy="118" r="5"/>
+          <circle class="he09-sprinkle" style="--k:1" cx="286" cy="117" r="5"/>
+          <circle class="he09-sprinkle" style="--k:2" cx="300" cy="118" r="5"/>
+          <circle class="he09-sprinkle" style="--k:3" cx="314" cy="117" r="5"/>
+          <circle class="he09-sprinkle" style="--k:4" cx="338" cy="118" r="5"/>
+          <circle class="he09-sprinkle" style="--k:5" cx="300" cy="104" r="4"/>
+          <circle class="he09-sprinkle" style="--k:6" cx="324" cy="104" r="4"/>
+          <rect class="he09-box" x="170" y="142" width="260" height="110" rx="4"/>
+          <rect class="he09-inside" x="184" y="152" width="232" height="90" rx="3"/>
+          <path class="he09-thing" d="M210 236 h36 l-4 -34 q8 -6 0 -12 h-28 q-8 6 0 12 Z"/>
+          <path class="he09-thing rod" d="M300 236 V164"/>
+          <g class="he09-bud"><circle cx="292" cy="178" r="5"/><circle cx="308" cy="190" r="5"/><circle cx="293" cy="204" r="5"/><circle cx="300" cy="162" r="6"/></g>
+          <path class="he09-thing" d="M344 236 V184 a12 12 0 0 1 24 0 V236 Z M372 236 V184 a12 12 0 0 1 24 0 V236 Z"/>
+          <text class="he09-what" x="222" y="274">manna</text>
+          <text class="he09-what" x="300" y="274">the rod</text>
+          <text class="he09-what" x="378" y="274">the law</text>
+          <text class="he09-why" x="222" y="292">He fed them</text>
+          <text class="he09-why" x="300" y="292">He chose</text>
+          <text class="he09-why" x="378" y="292">they broke it</text>
+          <text class="he09-bloodlab" x="300" y="325">God sees the blood, not the broken law</text>
+        </svg>
+      </div>
+      <div>
+        <p class="note rise" style="--d:2">The <em>ark</em> was a gold-covered chest. Inside: a pot of the manna God fed them with in the desert, Aaron's dead stick that sprouted overnight (Numbers 17), and the stone tables of the Ten Commandments.</p>
+        <p class="note step he09-ark-go1">The lid was the <em>mercyseat</em>, with two cherubims of gold above it. Between them God said He would meet with them. Right under it lay the law they had broken.</p>
+        <p class="note step he09-ark-go2">Once a year the high priest sprinkled blood on that lid. God looked down at His broken law and saw blood between it and Him. That is mercy: the sin not ignored, but covered by a death.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="slide verse" data-v="6-7" data-hl="the priests went always into the first tabernacle|into the second went the high priest alone once every year, not without blood|for himself, and for the errors of the people"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise">One man, one day, never without blood</h2>
+    <div class="stage">
+      <svg viewBox="0 0 720 330" style="max-height:44vh" role="img" aria-label="The tabernacle plan again. The high priest comes in at the gate, stops at the altar for a bowl of blood, crosses the sanctuary, passes through the veil, and stands before the ark. Blood is sprinkled on the mercy seat. Once every year.">
+        <rect class="he09-court" x="10" y="10" width="700" height="310" rx="4"/>
+        <line class="he09-gate" x1="710" y1="135" x2="710" y2="195"/>
+        <rect class="he09-tent" x="30" y="105" width="360" height="120"/>
+        <rect class="he09-holiest" x="31" y="106" width="119" height="118"/>
+        <line class="he09-door" x1="390" y1="105" x2="390" y2="225"/>
+        <line class="he09-veil" x1="150" y1="105" x2="150" y2="225"/>
+        <rect class="he09-brass" x="520" y="140" width="50" height="50" rx="3"/>
+        <circle class="he09-brass" cx="450" cy="200" r="16"/>
+        <rect class="he09-gold" x="205" y="118" width="56" height="20" rx="2"/>
+        <path class="he09-gold-line" d="M233 222 V200 M208 200 Q208 212 233 212 Q258 212 258 200"/>
+        <rect class="he09-gold" x="162" y="140" width="16" height="16" rx="2"/>
+        <rect class="he09-gold" x="66" y="152" width="50" height="28" rx="2"/>
+        <rect x="63" y="148" width="56" height="6" rx="2" style="fill:var(--accent-hot)"/>
+        <text class="he09-room hot" x="90" y="124">HOLIEST</text>
+        <text class="he09-room" x="320" y="124">SANCTUARY</text>
+        <path class="he09-trail" pathLength="1" d="M555 168 H130"/>
+        <circle class="he09-drop" style="--k:0" cx="78" cy="146" r="4"/>
+        <circle class="he09-drop" style="--k:1" cx="91" cy="144" r="4"/>
+        <circle class="he09-drop" style="--k:2" cx="104" cy="146" r="4"/>
+        <g class="he09-priest">
+          <circle cx="700" cy="150" r="9"/>
+          <path d="M690 160 h20 l5 30 h-30 Z"/>
+          <circle class="he09-bowl" cx="690" cy="170" r="6"/>
+        </g>
+        <text class="he09-lab" style="--k:0" x="270" y="80">many priests, every day</text>
+        <text class="he09-lab hot" style="--k:1" x="300" y="290">one man, behind the veil: once a year</text>
+        <text class="he09-yr" x="90" y="260">not without blood</text>
+      </svg>
+    </div>
+    <p class="note step he09-go">This was the Day of Atonement. The high priest washed, went in with coals and incense so the smoke hid the mercy seat, and sprinkled blood on it, first for his own sins, then for the people's.</p>
+    <blockquote class="quote step"><p>“For on that day shall the priest make an atonement for you, to cleanse you, that ye may be clean from all your sins before the LORD.”</p><cite>Leviticus 16:30</cite></blockquote>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="7" data-hl="for himself, and for the errors of the people"></blockquote>
+    <h2 class="rise" style="--d:1">Even the best man needed blood</h2>
+    <p class="note rise" style="--d:2">The holiest man in Israel couldn't walk in on his own record. He had to bring blood <em>for himself</em> first. Sin isn't just a problem for the worst of us. It's in all of us.</p>
+    <blockquote class="quote step"><p>“And the LORD said unto Moses, Speak unto Aaron thy brother, that he come not at all times into the holy place within the vail before the mercy seat, which is upon the ark; that he die not: for I will appear in the cloud upon the mercy seat.”</p><cite>Leviticus 16:2</cite></blockquote>
+    <p class="note step"><em>Errors</em> means sins done in ignorance or weakness, the things a man does without fully meaning to. God made a way even for those. He's not looking for a reason to shut you out. He's been building a way in since the beginning.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="8-10" data-hl="the way into the holiest of all was not yet made manifest|while as the first tabernacle was yet standing|could not make him that did the service perfect, as pertaining to the conscience|until the time of reformation"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="8" data-hl="the way into the holiest of all was not yet made manifest"></blockquote>
+    <h2 class="rise" style="--d:1">From the tent to the torn veil</h2>
+    <ol class="timeline" aria-label="Moses at Sinai: the tabernacle built by God's pattern. Temples in stone, Solomon's then Herod's: the same rooms, the same veil. The cross, about AD 30 to 33: the veil rent in two. Hebrews written, about AD 64 to 68: the temple still standing. AD 70: Rome destroys the temple.">
+      <li style="--k:0"><b>Moses at Sinai</b><span>The tabernacle, built to God's pattern</span><small>Exodus 25–40</small></li>
+      <li style="--k:1"><b>Temples in stone</b><span>Solomon's, then Herod's: same rooms, same veil</span><small>1 Kings 6</small></li>
+      <li class="lit" style="--k:2"><b>The cross</b><span>The veil rent from top to bottom</span><small>about AD 30–33</small></li>
+      <li style="--k:3"><b>Hebrews written</b><span>The temple still standing</span><small>about AD 64–68</small></li>
+      <li class="wait" style="--k:4"><b>The temple falls</b><span>No altar, no priest, no veil</span><small>AD 70</small></li>
+    </ol>
+    <blockquote class="quote step"><p>“And, behold, the veil of the temple was rent in twain from the top to the bottom; and the earth did quake, and the rocks rent;”</p><cite>Matthew 27:51</cite></blockquote>
+    <p class="note step">For about fifteen hundred years the curtain preached one sermon: <em>the way in is not open yet.</em> The Holy Ghost was saying it through the furniture. Then Jesus died, and God tore it from the top down.</p>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="9" data-hl="as pertaining to the conscience"></blockquote>
+    <h2 class="rise" style="--d:1">Clean outside, guilty inside</h2>
+    <div class="columns">
+      <div class="col law rise" style="--d:2">
+        <p class="who">What the old way could reach</p>
+        <h3>The outside</h3>
+        <p><em>Meats and drinks, and divers washings</em>: food rules, washing rules, rules for the body. A man could keep every one and walk home clean on paper.</p>
+      </div>
+      <div class="col grace step">
+        <p class="who">What it couldn't reach</p>
+        <h3>The conscience</h3>
+        <p>The voice inside that keeps replaying what you did. No washing could get to it. That was waiting for <em>the time of reformation</em>: the day God would set it all right.</p>
+      </div>
+    </div>
+    <p class="note step">A lot of us know this one. You can get clean, get a job, get your hair cut and your record sealed, and still lie awake hearing the old tapes. Religion can fix the outside. Keep reading: verse 14 goes inside.</p>
+  </div>
+</section>
+
+<!-- ======================= PART TWO: HIS OWN BLOOD ======================= -->
+<section class="slide part">
+  <div class="inner">
+    <p class="part-n rise">Part two</p>
+    <h2 class="rise" style="--d:1">By his own blood</h2>
+    <p class="range rise" style="--d:2">Verses 11–22</p>
+    <div class="rule"></div>
+    <p class="hook rise" style="--d:4">The real High Priest goes into the real holy place, and what He brings out is a clean conscience.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="11-12" data-hl="Christ being come an high priest of good things to come|not made with hands|by his own blood he entered in once into the holy place, having obtained eternal redemption for us"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise">Two high priests</h2>
+    <div class="he09-cmp" aria-label="The high priest of Israel, compared with Christ. Where: a tent made with hands, or a greater and more perfect tabernacle, heaven itself. With what: the blood of goats and calves, or His own blood. How often: every year, or once. What it got: a covering for one more year, or eternal redemption.">
+      <div class="rise" style="--d:1"><h3></h3><h3>The high priest</h3><h3 class="christ">Christ</h3></div>
+      <div class="step"><b>Where</b><span>A tent made with hands</span><span class="christ">A greater tabernacle: heaven itself</span></div>
+      <div class="step"><b>With what</b><span>The blood of goats and calves</span><span class="christ">His own blood</span></div>
+      <div class="step"><b>How often</b><span>Every year, again and again</span><span class="christ">Once</span></div>
+      <div class="step"><b>What it got</b><span>A covering, till next year</span><span class="christ">Eternal redemption</span></div>
+    </div>
+    <blockquote class="quote step"><p>“Forasmuch as ye know that ye were not redeemed with corruptible things, as silver and gold, from your vain conversation received by tradition from your fathers; But with the precious blood of Christ, as of a lamb without blemish and without spot:”</p><cite>1 Peter 1:18–19</cite></blockquote>
+    <p class="note step"><em>Redemption</em> is buying a slave or a prisoner free. <em>Eternal</em> means it doesn't run out at the end of the year. He paid once, and you are free for good.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="13-14" data-hl="the ashes of an heifer sprinkling the unclean|How much more shall the blood of Christ|offered himself without spot to God|purge your conscience from dead works to serve the living God"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="13" data-hl="the ashes of an heifer sprinkling the unclean"></blockquote>
+    <h2 class="rise" style="--d:1">How much more</h2>
+    <p class="note rise" style="--d:2">A red <em>heifer</em> (a young cow) was burned, and its ashes mixed with water. A man who had touched a dead body was sprinkled with it and counted clean again (Numbers 19).</p>
+    <div class="ifthen step">
+      <div class="if"><small>If animal blood and ashes</small>made the body clean on the outside</div>
+      <span class="arrow">→</span>
+      <div class="then"><small>how much more will the blood of Christ</small>make the conscience clean inside</div>
+    </div>
+    <blockquote class="quote step"><p>“And a man that is clean shall gather up the ashes of the heifer, and lay them up without the camp in a clean place, and it shall be kept for the congregation of the children of Israel for a water of separation: it is a purification for sin.”</p><cite>Numbers 19:9</cite></blockquote>
+    <p class="note step">The writer argues from the small to the great. If God honored a cow's ashes, what will He do with the blood of His own Son, who <em>offered himself without spot</em>?</p>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="14" data-hl="purge your conscience from dead works to serve the living God"></blockquote>
+    <h2 class="rise" style="--d:1">A conscience made clean</h2>
+    <div class="stage">
+      <svg viewBox="0 0 600 250" style="max-height:30vh" role="img" aria-label="A cloth covered in dark stains labeled: what I did, who I hurt, the years I wasted, the night I can't forget. A wash sweeps across it, the stains go, and the cloth comes up clean: purged.">
+        <defs><clipPath id="he09-clip"><rect x="40" y="20" width="520" height="210" rx="12"/></clipPath></defs>
+        <rect class="he09-cloth" x="40" y="20" width="520" height="210" rx="12"/>
+        <g clip-path="url(#he09-clip)">
+          <path class="he09-stain" style="--k:0" d="M70 50 q40 -20 90 0 q30 30 0 60 q-50 20 -90 -5 q-20 -30 0 -55 Z"/>
+          <text class="he09-stain-t" style="--k:0" x="118" y="86">what I did</text>
+          <path class="he09-stain" style="--k:1" d="M240 40 q60 -15 110 5 q20 35 -10 60 q-60 15 -100 -5 q-25 -30 0 -60 Z"/>
+          <text class="he09-stain-t" style="--k:1" x="296" y="80">who I hurt</text>
+          <path class="he09-stain" style="--k:3" d="M400 60 q60 -20 130 5 q20 40 -10 65 q-70 20 -120 -10 q-25 -30 0 -60 Z"/>
+          <text class="he09-stain-t" style="--k:3" x="463" y="105">the years I wasted</text>
+          <path class="he09-stain" style="--k:2" d="M110 140 q80 -25 190 0 q25 35 -15 60 q-90 20 -170 -5 q-30 -30 -5 -55 Z"/>
+          <text class="he09-stain-t" style="--k:2" x="205" y="180">the night I can't forget</text>
+          <rect class="he09-sweep" x="0" y="0" width="90" height="250"/>
+        </g>
+        <text class="he09-clean" x="300" y="135">purged</text>
+        <text class="he09-clean-s" x="300" y="170">by the blood of Christ</text>
+      </svg>
+    </div>
+    <p class="note step he09-wash-go"><em>Purge</em> means scrub clean. <em>Dead works</em> are everything a man does to try to make up for it: the promises, the penance, the beating himself up. They can't give life. The blood of Christ goes where nothing else reaches.</p>
+    <p class="note step">And He cleans you <em>to serve the living God</em>. Guilt keeps a man staring at the past. A clean conscience frees him to get up and work for God today.</p>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise">When the old tapes play</h2>
+    <p class="note rise" style="--d:1">Your conscience will bring it up again: at 3 a.m., at work, when you see that face. Don't argue with it using your own good deeds. Point it to the blood.</p>
+    <blockquote class="quote step"><p>“Come now, and let us reason together, saith the LORD: though your sins be as scarlet, they shall be as white as snow; though they be red like crimson, they shall be as wool.”</p><cite>Isaiah 1:18</cite></blockquote>
+    <blockquote class="quote step"><p>“But if we walk in the light, as he is in the light, we have fellowship one with another, and the blood of Jesus Christ his Son cleanseth us from all sin.”</p><cite>1 John 1:7</cite></blockquote>
+    <p class="note step">Regret is honest; you did those things. But a believer's regret goes to the cross, not round and round in his head. If something can be made right with a person, make it right. Then let the blood have the last word.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="15-17" data-hl="he is the mediator of the new testament|they which are called might receive the promise of eternal inheritance|a testament is of force after men are dead"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="16" data-hl="there must also of necessity be the death of the testator"></blockquote>
+    <h2 class="rise" style="--d:1">A will is read after a death</h2>
+    <p class="note rise" style="--d:2">The same word means <em>covenant</em> and <em>testament</em>, like a man's last will and testament. A will does nothing while the man who made it, the <em>testator</em>, is alive. It takes force when he dies.</p>
+    <div class="ifthen step">
+      <div class="if"><small>A will is read</small>only after the testator dies</div>
+      <span class="arrow">→</span>
+      <div class="then"><small>so Jesus died</small>and everything He left is yours</div>
+    </div>
+    <blockquote class="quote step"><p>“Likewise also the cup after supper, saying, This cup is the new testament in my blood, which is shed for you.”</p><cite>Luke 22:20</cite></blockquote>
+    <p class="note step">His death put the will in force, and the inheritance is <em>eternal</em>. And who's named in it? <em>They which are called</em>: everyone who answers the gospel's call. A <em>mediator</em> stands between two sides to make peace. Jesus stands between you and God.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="18-20" data-hl="neither the first testament was dedicated without blood|This is the blood of the testament which God hath enjoined unto you"></section>
+
+<section class="slide verse" data-v="21-22" data-hl="without shedding of blood is no remission"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise">The word that runs through the chapter</h2>
+    <p class="note rise" style="--d:1">Count it. <em>“Blood”</em> in Hebrews 9, verse by verse:</p>
+    <div class="tally rise" style="--d:2" aria-label="Blood appears twelve times in Hebrews 9: in verses 7, 12 twice, 13, 14, 18, 19, 20, 21, 22 twice, and 25.">
+      <span><i>1</i>&nbsp;</span><span><i>2</i>&nbsp;</span><span><i>3</i>&nbsp;</span><span><i>4</i>&nbsp;</span><span><i>5</i>&nbsp;</span><span><i>6</i>&nbsp;</span>
+      <span class="hit" style="--k:0"><i>7</i>×1</span>
+      <span><i>8</i>&nbsp;</span><span><i>9</i>&nbsp;</span><span><i>10</i>&nbsp;</span><span><i>11</i>&nbsp;</span>
+      <span class="hit" style="--k:1"><i>12</i>×2</span>
+      <span class="hit" style="--k:2"><i>13</i>×1</span>
+      <span class="hit" style="--k:3"><i>14</i>×1</span>
+      <span><i>15</i>&nbsp;</span><span><i>16</i>&nbsp;</span><span><i>17</i>&nbsp;</span>
+      <span class="hit" style="--k:4"><i>18</i>×1</span>
+      <span class="hit" style="--k:5"><i>19</i>×1</span>
+      <span class="hit" style="--k:6"><i>20</i>×1</span>
+      <span class="hit" style="--k:7"><i>21</i>×1</span>
+      <span class="hit" style="--k:8"><i>22</i>×2</span>
+      <span><i>23</i>&nbsp;</span><span><i>24</i>&nbsp;</span>
+      <span class="hit" style="--k:9"><i>25</i>×1</span>
+      <span><i>26</i>&nbsp;</span><span><i>27</i>&nbsp;</span><span><i>28</i>&nbsp;</span>
+    </div>
+    <p class="saying step">Without <em>shedding of blood</em> is no remission.</p>
+    <blockquote class="quote step"><p>“For the life of the flesh is in the blood: and I have given it to you upon the altar to make an atonement for your souls: for it is the blood that maketh an atonement for the soul.”</p><cite>Leviticus 17:11</cite></blockquote>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="22" data-hl="without shedding of blood is no remission"></blockquote>
+    <h2 class="rise" style="--d:1">Why blood?</h2>
+    <p class="note rise" style="--d:2"><em>Remission</em> means sent away: a debt cancelled, a charge dropped. The wage of sin is death (Romans 6:23). So sin is never just shrugged off. Either the sinner dies, or a death is given in his place.</p>
+    <blockquote class="quote step"><p>“And Moses took the blood, and sprinkled it on the people, and said, Behold the blood of the covenant, which the LORD hath made with you concerning all these words.”</p><cite>Exodus 24:8</cite></blockquote>
+    <p class="note step">At Sinai Moses sprinkled the book, the people, the tent and every cup and bowl. It looked hard. It was meant to. Sin is that serious, and God's answer to it is that costly.</p>
+    <p class="note step">That's why being sorry, however sincere, can't pay for sin, and neither can doing better. Only a death can. Jesus gave His. Your part is to trust Him for it.</p>
+  </div>
+</section>
+
+<!-- ======================= PART THREE: ONCE ======================= -->
+<section class="slide part">
+  <div class="inner">
+    <p class="part-n rise">Part three</p>
+    <h2 class="rise" style="--d:1">Once</h2>
+    <p class="range rise" style="--d:2">Verses 23–28</p>
+    <div class="rule"></div>
+    <p class="hook rise" style="--d:4">He went into heaven itself, He did it once, and He's coming back.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="23-26" data-hl="into heaven itself, now to appear in the presence of God for us|Nor yet that he should offer himself often|now once in the end of the world hath he appeared to put away sin by the sacrifice of himself"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise">Every year, or once</h2>
+    <div class="he09-once">
+      <div>
+        <h3 class="rise" style="--d:1">EVERY YEAR, FOR ABOUT 1,500 YEARS</h3>
+        <div data-dots="150" class="dots rows" style="--cols:25; --dot:var(--danger); --pace:18ms; --wait:.6s" aria-label="150 dots, each one ten years of the Day of Atonement, year after year"></div>
+        <p class="note rise" style="--d:2; margin:.4em 0 0">Each dot is ten Days of Atonement.</p>
+      </div>
+      <div class="he09-one step">
+        <i></i>
+        <b>Once</b>
+        <small>“by the sacrifice of himself” (9:26)</small>
+      </div>
+    </div>
+    <p class="note step">If His sacrifice worked like theirs, He would have to die over and over, <em>since the foundation of the world</em>. But it doesn't. One death, one time, <em>to put away sin</em>. Not cover it for a year: put it away.</p>
+    <blockquote class="quote step"><p>“The next day John seeth Jesus coming unto him, and saith, Behold the Lamb of God, which taketh away the sin of the world.”</p><cite>John 1:29</cite></blockquote>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise">He appears three times</h2>
+    <ol class="timeline" aria-label="Past, verse 26: once He appeared to put away sin by the sacrifice of Himself. Today, verse 24: He appears in the presence of God for us. Still to come, verse 28: He shall appear the second time unto salvation.">
+      <li class="lit" style="--k:0" data-n="1"><b>He appeared</b><span>To put away sin, at the cross</span><small>9:26 · past</small></li>
+      <li class="lit" style="--k:1" data-n="2"><b>He appears</b><span>In the presence of God for us, right now</span><small>9:24 · today</small></li>
+      <li class="wait" style="--k:2" data-n="3"><b>He shall appear</b><span>The second time, unto salvation</span><small>9:28 · to come</small></li>
+    </ol>
+    <p class="note step">Notice the middle one. Right now, today, while you sit here and while you're at work, Jesus stands before God <em>for us</em>. He's not there to accuse you. He's there to plead for you.</p>
+    <blockquote class="quote step"><p>“Wherefore he is able also to save them to the uttermost that come unto God by him, seeing he ever liveth to make intercession for them.”</p><cite>Hebrews 7:25</cite></blockquote>
+  </div>
+</section>
+
+<section class="slide verse" data-v="27-28" data-hl="it is appointed unto men once to die, but after this the judgment|So Christ was once offered to bear the sins of many|unto them that look for him shall he appear the second time without sin unto salvation"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise">Two appointments</h2>
+    <div class="match" style="--n:2" aria-label="Line one: men once die, and after this the judgment. Line two: Christ was once offered to bear the sins of many, and shall appear the second time unto salvation.">
+      <div class="a rise" style="--d:2"><span class="tag">every man</span><span class="w">once to die</span><span class="w">after this the judgment</span></div>
+      <div class="step"><span></span><span class="link">once for once</span><span class="link">judgment, or salvation</span></div>
+      <div class="b step"><span class="but">so</span><span class="w">Christ was once offered to bear the sins of many</span><span class="w">He shall appear the second time unto salvation</span></div>
+    </div>
+    <p class="note step">Every man has two dates he didn't choose: one death, then the judgment. No second run at life. That's sobering, and it should be.</p>
+    <p class="note step">But look how the sentence turns: <em>so Christ</em>. He bore the sins, and the judgment they deserved, for everyone who trusts Him. For a believer, the next time he sees Jesus isn't a trial. It's a rescue.</p>
+    <blockquote class="quote step"><p>“Verily, verily, I say unto you, He that heareth my word, and believeth on him that sent me, hath everlasting life, and shall not come into condemnation; but is passed from death unto life.”</p><cite>John 5:24</cite></blockquote>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="28" data-hl="unto them that look for him"></blockquote>
+    <h2 class="rise" style="--d:1">Men who look for Him</h2>
+    <p class="note rise" style="--d:2">The first time He came to deal with sin. The second time He comes <em>without sin</em>: that business is finished. He's coming to bring His people home.</p>
+    <blockquote class="quote step"><p>“Looking for that blessed hope, and the glorious appearing of the great God and our Saviour Jesus Christ;”</p><cite>Titus 2:13</cite></blockquote>
+    <p class="note step">A man who is looking for someone keeps his eyes up. Today, when guilt pulls your eyes back to yesterday, lift them. Your sins were borne once. Your Saviour is coming. Go to work like a man who's expecting Him.</p>
+  </div>
+</section>
+
+<!-- ======================= CLOSING ======================= -->
+<section class="slide remember">
+  <div class="inner">
+    <h2 class="rise">Points to remember</h2>
+    <ol class="seeds">
+      <li class="step"><span class="topic">The tabernacle</span><span class="seed-q">“The high priest alone once every year, not without blood” <cite>9:7</cite></span><span class="take">One man, one day a year, with blood. The veil said the way in wasn't open yet.</span></li>
+      <li class="step"><span class="topic">His blood</span><span class="seed-q">“By his own blood he entered in once” <cite>9:12</cite></span><span class="take">Jesus went into heaven itself with His own blood and obtained eternal redemption.</span></li>
+      <li class="step"><span class="topic">Conscience</span><span class="seed-q">“Purge your conscience from dead works to serve the living God” <cite>9:14</cite></span><span class="take">His blood reaches the guilt inside, and frees you to serve God today.</span></li>
+      <li class="step"><span class="topic">Remission</span><span class="seed-q">“Without shedding of blood is no remission” <cite>9:22</cite></span><span class="take">Sin costs a death. Jesus gave His, so your sin can be sent away.</span></li>
+      <li class="step"><span class="topic">Once</span><span class="seed-q">“Now once … to put away sin by the sacrifice of himself” <cite>9:26</cite></span><span class="take">Not every year. Once. It never needs doing again.</span></li>
+      <li class="step"><span class="topic">He's coming</span><span class="seed-q">“Shall he appear the second time without sin unto salvation” <cite>9:28</cite></span><span class="take">Every man dies once, then judgment. Christ bore the sins, and He's coming to bring His people home.</span></li>
+    </ol>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 1 of 6</p>
+      <span class="topic">The tabernacle</span>
+      <h2>Who could go into the holiest of all, and how often?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="7"></blockquote>
+      <blockquote class="quote step" data-q="8"></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>Only the high priest, alone, once a year, and never without blood for himself and the people. The veil showed the way to God wasn't open yet. When Jesus died, God tore it from top to bottom.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 2 of 6</p>
+      <span class="topic">His blood</span>
+      <h2>Where did Christ go with His own blood, and what did He get for us?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="12"></blockquote>
+      <blockquote class="quote step" data-q="24"></blockquote>
+      <blockquote class="quote step"><p>“But with the precious blood of Christ, as of a lamb without blemish and without spot:”</p><cite>1 Peter 1:19</cite></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>Not into a tent made with hands, but into heaven itself, into the presence of God for us. He went once, with His own blood, and obtained eternal redemption: we are bought free for good.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 3 of 6</p>
+      <span class="topic">Conscience</span>
+      <h2>What can the blood of Christ do for a guilty conscience?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="14"></blockquote>
+      <blockquote class="quote step"><p>“But if we walk in the light, as he is in the light, we have fellowship one with another, and the blood of Jesus Christ his Son cleanseth us from all sin.”</p><cite>1 John 1:7</cite></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>What animal sacrifices and washings never could: purge the conscience. It cleans out the guilt and the dead works we tried to pay with, and sets us free to serve the living God.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 4 of 6</p>
+      <span class="topic">Remission</span>
+      <h2>Why is there no remission without the shedding of blood?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="22"></blockquote>
+      <blockquote class="quote step" data-q="16"></blockquote>
+      <blockquote class="quote step"><p>“For the life of the flesh is in the blood: and I have given it to you upon the altar to make an atonement for your souls: for it is the blood that maketh an atonement for the soul.”</p><cite>Leviticus 17:11</cite></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>Because the wage of sin is death, and the life is in the blood. Sin is only sent away when a life is given in the sinner's place. Like a will that takes force at a death, the new testament took force when Jesus died.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 5 of 6</p>
+      <span class="topic">Once</span>
+      <h2>How many times did Christ have to offer Himself?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="25"></blockquote>
+      <blockquote class="quote step" data-q="26"></blockquote>
+      <blockquote class="quote step"><p>“The next day John seeth Jesus coming unto him, and saith, Behold the Lamb of God, which taketh away the sin of the world.”</p><cite>John 1:29</cite></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>Once. The high priest went in every year with the blood of others. Christ appeared once, at the end of the ages, and put sin away by the sacrifice of Himself. It never has to be done again.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 6 of 6</p>
+      <span class="topic">He's coming</span>
+      <h2>What waits for every man after death, and what will Christ bring when He appears the second time?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="27"></blockquote>
+      <blockquote class="quote step" data-q="28"></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>Every man dies once, and after that comes the judgment. But Christ was offered once to bear the sins of many, and to those who look for Him He will appear the second time, not to deal with sin, but to bring salvation.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide prayer">
+  <div class="inner">
+    <div class="emblem rise"></div>
+    <h2 class="rise" style="--d:1">Prayer requests</h2>
+    <p class="ask-line rise" style="--d:2">What can we pray about for you today?</p>
+    <blockquote class="quote rise" style="--d:4"><p>“Let us therefore come boldly unto the throne of grace, that we may obtain mercy, and find grace to help in time of need.”</p><cite>Hebrews 4:16</cite></blockquote>
+  </div>
+</section>
+
+</main>
+
+<script>
+// King James Version, Hebrews chapter 9
+const V = {
+  1: "Then verily the first covenant had also ordinances of divine service, and a worldly sanctuary.",
+  2: "For there was a tabernacle made; the first, wherein was the candlestick, and the table, and the shewbread; which is called the sanctuary.",
+  3: "And after the second veil, the tabernacle which is called the Holiest of all;",
+  4: "Which had the golden censer, and the ark of the covenant overlaid round about with gold, wherein was the golden pot that had manna, and Aaron’s rod that budded, and the tables of the covenant;",
+  5: "And over it the cherubims of glory shadowing the mercyseat; of which we cannot now speak particularly.",
+  6: "Now when these things were thus ordained, the priests went always into the first tabernacle, accomplishing the service of God.",
+  7: "But into the second went the high priest alone once every year, not without blood, which he offered for himself, and for the errors of the people:",
+  8: "The Holy Ghost this signifying, that the way into the holiest of all was not yet made manifest, while as the first tabernacle was yet standing:",
+  9: "Which was a figure for the time then present, in which were offered both gifts and sacrifices, that could not make him that did the service perfect, as pertaining to the conscience;",
+  10: "Which stood only in meats and drinks, and divers washings, and carnal ordinances, imposed on them until the time of reformation.",
+  11: "But Christ being come an high priest of good things to come, by a greater and more perfect tabernacle, not made with hands, that is to say, not of this building;",
+  12: "Neither by the blood of goats and calves, but by his own blood he entered in once into the holy place, having obtained eternal redemption for us.",
+  13: "For if the blood of bulls and of goats, and the ashes of an heifer sprinkling the unclean, sanctifieth to the purifying of the flesh:",
+  14: "How much more shall the blood of Christ, who through the eternal Spirit offered himself without spot to God, purge your conscience from dead works to serve the living God?",
+  15: "And for this cause he is the mediator of the new testament, that by means of death, for the redemption of the transgressions that were under the first testament, they which are called might receive the promise of eternal inheritance.",
+  16: "For where a testament is, there must also of necessity be the death of the testator.",
+  17: "For a testament is of force after men are dead: otherwise it is of no strength at all while the testator liveth.",
+  18: "Whereupon neither the first testament was dedicated without blood.",
+  19: "For when Moses had spoken every precept to all the people according to the law, he took the blood of calves and of goats, with water, and scarlet wool, and hyssop, and sprinkled both the book, and all the people,",
+  20: "Saying, This is the blood of the testament which God hath enjoined unto you.",
+  21: "Moreover he sprinkled with blood both the tabernacle, and all the vessels of the ministry.",
+  22: "And almost all things are by the law purged with blood; and without shedding of blood is no remission.",
+  23: "It was therefore necessary that the patterns of things in the heavens should be purified with these; but the heavenly things themselves with better sacrifices than these.",
+  24: "For Christ is not entered into the holy places made with hands, which are the figures of the true; but into heaven itself, now to appear in the presence of God for us:",
+  25: "Nor yet that he should offer himself often, as the high priest entereth into the holy place every year with blood of others;",
+  26: "For then must he often have suffered since the foundation of the world: but now once in the end of the world hath he appeared to put away sin by the sacrifice of himself.",
+  27: "And as it is appointed unto men once to die, but after this the judgment:",
+  28: "So Christ was once offered to bear the sins of many; and unto them that look for him shall he appear the second time without sin unto salvation."
+};
+const BOOK = "Hebrews 9";
+</script>
+<script src="../assets/deck.js"></script>
+</body>
+</html>

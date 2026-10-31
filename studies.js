@@ -15148,5 +15148,102 @@ window.STUDIES = [
       },
       "big": "The new covenant rests on God's \"I will,\" not on our promises. He writes His law on the heart, and He chooses to remember forgiven sins no more."
     }
+  },
+  {
+    "id": "hebrews-09",
+    "type": "chapter",
+    "book": "Hebrews",
+    "ch": 9,
+    "date": "2026-10-31",
+    "title": "Hebrews 9",
+    "sub": "By his own blood",
+    "about": "A walk through the old tabernacle, room by room, to the veil only the high priest could pass, once a year, with blood. Jesus went into heaven itself with His own blood, once, and cleans the conscience.",
+    "tags": [
+      "The tabernacle",
+      "The blood of Christ",
+      "Conscience",
+      "Forgiveness",
+      "Once for all",
+      "Second coming"
+    ],
+    "url": "studies/hebrews-09.html",
+    "overview": {
+      "where": "The tabernacle of Moses' day, and heaven itself; written to Hebrew believers while the temple in Jerusalem still stood",
+      "when": "Written about AD 64 to 68, before the temple fell in AD 70",
+      "people": [
+        "jesus",
+        "moses",
+        "aaron",
+        "priests",
+        "holy-spirit"
+      ],
+      "places": [
+        "sanctuary",
+        "holiest-of-all",
+        "the-veil",
+        "heaven"
+      ],
+      "story": [
+        "The first tabernacle: the sanctuary with the candlestick, the table and the shewbread; behind the second veil, the holiest of all with the golden censer and the ark under the mercy seat (1–5).",
+        "Priests served daily in the first room, but only the high priest went into the second, once a year, never without blood. The way in was not yet open, and the old gifts could not cleanse the conscience (6–10).",
+        "Christ came as High Priest and entered once into the holy place by His own blood, obtaining eternal redemption. How much more shall His blood purge your conscience from dead works (11–14).",
+        "Like a will, the new testament took force at a death. Moses sprinkled the book, the people and the tabernacle with blood: without shedding of blood is no remission (15–22).",
+        "Christ entered heaven itself to appear before God for us, offered Himself once to put away sin, and will appear the second time unto salvation to those who look for Him (23–28)."
+      ],
+      "key": {
+        "ref": "Hebrews 9:14",
+        "text": "How much more shall the blood of Christ, who through the eternal Spirit offered himself without spot to God, purge your conscience from dead works to serve the living God?"
+      },
+      "big": "The old sacrifices could clean the outside for a year. The blood of Christ, offered once, cleans the guilty conscience for good and frees a man to serve the living God."
+    }
+  },
+  {
+    "id": "hebrews-10",
+    "type": "chapter",
+    "book": "Hebrews",
+    "ch": 10,
+    "date": "2026-10-31",
+    "title": "Hebrews 10",
+    "sub": "Once for all",
+    "about": "The priests stood every day; Christ offered one sacrifice and sat down. So draw near with boldness, keep meeting together, and don't draw back.",
+    "tags": [
+      "Once for all",
+      "Forgiveness",
+      "Assurance",
+      "Fellowship",
+      "Warning",
+      "Perseverance"
+    ],
+    "url": "studies/hebrews-10.html",
+    "overview": {
+      "where": "Written to Hebrew believers tempted to go back to the temple sacrifices",
+      "when": "Written about AD 64 to 68, before the temple fell in AD 70",
+      "people": [
+        "jesus",
+        "holy-spirit",
+        "priests",
+        "moses",
+        "brethren-believers"
+      ],
+      "places": [
+        "holiest-of-all",
+        "the-veil",
+        "right-hand-of-god",
+        "house-of-god",
+        "heaven"
+      ],
+      "story": [
+        "The law was a shadow. Its sacrifices, repeated year by year, only reminded men of their sins; the blood of bulls and goats could never take sins away (1–4).",
+        "Christ came to do God's will in a body prepared for Him. By that will we are sanctified through the offering of His body once for all (5–10).",
+        "Every priest stood daily offering the same sacrifices; Christ offered one sacrifice for sins for ever and sat down. God says, “their sins and iniquities will I remember no more” (11–18).",
+        "So, brethren, enter the holiest boldly by the blood of Jesus, through the veil, His flesh. Draw near, hold fast, stir one another up, and don't forsake meeting together (19–25).",
+        "A solemn warning to anyone who tramples the Son of God: no other sacrifice remains. Remember the former days, cast not away your confidence; we are not of them who draw back (26–39)."
+      ],
+      "key": {
+        "ref": "Hebrews 10:12",
+        "text": "But this man, after he had offered one sacrifice for sins for ever, sat down on the right hand of God;"
+      },
+      "big": "Christ's one sacrifice finished the work, so He sat down. Believers can come to God boldly, need each other to keep going, and are not of them who draw back."
+    }
   }
 ];

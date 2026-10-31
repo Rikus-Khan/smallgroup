@@ -543,7 +543,10 @@ window.GLOSSARY = [
     [ 20 ] ],
    [
     "Hebrews", 7,
-    [ 22 ] ] ]
+    [ 22 ] ],
+   [
+    "Hebrews", 10,
+    [ 10, 19 ] ] ]
  },
  {
   "id": "john-the-baptist",
@@ -1077,7 +1080,13 @@ window.GLOSSARY = [
     [ 14 ] ],
    [
     "Hebrews", 8,
-    [ 5 ] ] ]
+    [ 5 ] ],
+   [
+    "Hebrews", 9,
+    [ 19 ] ],
+   [
+    "Hebrews", 10,
+    [ 28 ] ] ]
  },
  {
   "id": "elijah",
@@ -1707,7 +1716,13 @@ window.GLOSSARY = [
     [ 7 ] ],
    [
     "Hebrews", 6,
-    [ 4 ] ] ]
+    [ 4 ] ],
+   [
+    "Hebrews", 9,
+    [ 8, 14 ] ],
+   [
+    "Hebrews", 10,
+    [ 15, 29 ] ] ]
  },
  {
   "id": "disciples",
@@ -4203,7 +4218,13 @@ window.GLOSSARY = [
     [ 16 ] ],
    [
     "2 Thessalonians", 1,
-    [ 7 ] ] ]
+    [ 7 ] ],
+   [
+    "Hebrews", 9,
+    [ 24 ] ],
+   [
+    "Hebrews", 10,
+    [ 34 ] ] ]
  },
  {
   "id": "hell",
@@ -4875,7 +4896,10 @@ window.GLOSSARY = [
     [ 9 ] ],
    [
     "Hebrews", 4,
-    [ 16 ] ] ]
+    [ 16 ] ],
+   [
+    "Hebrews", 10,
+    [ 29 ] ] ]
  },
  {
   "id": "truth",
@@ -5082,7 +5106,10 @@ window.GLOSSARY = [
     [ 4 ] ],
    [
     "Titus", 1,
-    [ 1, 14 ] ] ]
+    [ 1, 14 ] ],
+   [
+    "Hebrews", 10,
+    [ 26 ] ] ]
  },
  {
   "id": "glory",
@@ -5379,7 +5406,10 @@ window.GLOSSARY = [
     [ 7, 9, 10 ] ],
    [
     "Hebrews", 3,
-    [ 3 ] ] ]
+    [ 3 ] ],
+   [
+    "Hebrews", 9,
+    [ 5 ] ] ]
  },
  {
   "id": "the-law",
@@ -5613,7 +5643,13 @@ window.GLOSSARY = [
     [ 5, 11, 12, 16, 19, 28 ] ],
    [
     "Hebrews", 8,
-    [ 4 ] ] ]
+    [ 4 ] ],
+   [
+    "Hebrews", 9,
+    [ 19, 22 ] ],
+   [
+    "Hebrews", 10,
+    [ 1, 8, 28 ] ] ]
  },
  {
   "id": "only-begotten",
@@ -6054,7 +6090,13 @@ window.GLOSSARY = [
     [ 5 ] ],
    [
     "Hebrews", 6,
-    [ 1 ] ] ]
+    [ 1 ] ],
+   [
+    "Hebrews", 9,
+    [ 11, 14, 24, 28 ] ],
+   [
+    "Hebrews", 10,
+    [ 10 ] ] ]
  },
  {
   "id": "son-of-god",
@@ -6150,7 +6192,10 @@ window.GLOSSARY = [
     [ 6 ] ],
    [
     "Hebrews", 7,
-    [ 3 ] ] ]
+    [ 3 ] ],
+   [
+    "Hebrews", 10,
+    [ 29 ] ] ]
  },
  {
   "id": "son-of-man",
@@ -6612,7 +6657,10 @@ window.GLOSSARY = [
     [ 18 ] ],
    [
     "Hebrews", 4,
-    [ 3 ] ] ]
+    [ 3 ] ],
+   [
+    "Hebrews", 10,
+    [ 39 ] ] ]
  },
  {
   "id": "witness",
@@ -6786,7 +6834,10 @@ window.GLOSSARY = [
     [ 13 ] ],
    [
     "Hebrews", 2,
-    [ 4 ] ] ]
+    [ 4 ] ],
+   [
+    "Hebrews", 10,
+    [ 15 ] ] ]
  },
  {
   "id": "baptize",
@@ -7155,7 +7206,10 @@ window.GLOSSARY = [
     [ 9 ] ],
    [
     "Acts", 21,
-    [ 26 ] ] ]
+    [ 26 ] ],
+   [
+    "Hebrews", 9,
+    [ 13 ] ] ]
  },
  {
   "id": "sign",
@@ -7857,7 +7911,10 @@ window.GLOSSARY = [
     [ 4 ] ],
    [
     "2 Timothy", 3,
-    [ 7 ] ] ]
+    [ 7 ] ],
+   [
+    "Hebrews", 10,
+    [ 26 ] ] ]
  },
  {
   "id": "instruction",
@@ -9027,7 +9084,10 @@ window.GLOSSARY = [
     [ 10, 12 ] ],
    [
     "Hebrews", 4,
-    [ 12 ] ] ]
+    [ 12 ] ],
+   [
+    "Hebrews", 10,
+    [ 22 ] ] ]
  },
  {
   "id": "tongue",
@@ -10503,7 +10563,10 @@ window.GLOSSARY = [
     [ 14 ] ],
    [
     "1 Corinthians", 4,
-    [ 21 ] ] ]
+    [ 21 ] ],
+   [
+    "Hebrews", 9,
+    [ 4 ] ] ]
  },
  {
   "id": "snare",
@@ -11400,7 +11463,13 @@ window.GLOSSARY = [
     [ 5 ] ],
    [
     "Hebrews", 6,
-    [ 2 ] ] ]
+    [ 2 ] ],
+   [
+    "Hebrews", 9,
+    [ 27 ] ],
+   [
+    "Hebrews", 10,
+    [ 27 ] ] ]
  },
  {
   "id": "scriptures",
@@ -11808,7 +11877,10 @@ window.GLOSSARY = [
   "refs": [
    [
     "John", 6,
-    [ 31, 49, 58 ] ] ]
+    [ 31, 49, 58 ] ],
+   [
+    "Hebrews", 9,
+    [ 4 ] ] ]
  },
  {
   "id": "barley",
@@ -12423,7 +12495,10 @@ window.GLOSSARY = [
     [ 4 ] ],
    [
     "Hebrews", 1,
-    [ 6 ] ] ]
+    [ 6 ] ],
+   [
+    "Hebrews", 10,
+    [ 2 ] ] ]
  },
  {
   "id": "good-shepherd",
@@ -12783,7 +12858,13 @@ window.GLOSSARY = [
     [ 21 ] ],
    [
     "Hebrews", 2,
-    [ 11 ] ] ]
+    [ 11 ] ],
+   [
+    "Hebrews", 9,
+    [ 13 ] ],
+   [
+    "Hebrews", 10,
+    [ 10, 14, 29 ] ] ]
  },
  {
   "id": "stoning",
@@ -13947,7 +14028,13 @@ window.GLOSSARY = [
     [ 3 ] ],
    [
     "Titus", 1,
-    [ 15 ] ] ]
+    [ 15 ] ],
+   [
+    "Hebrews", 9,
+    [ 9, 14 ] ],
+   [
+    "Hebrews", 10,
+    [ 2, 22 ] ] ]
  },
  {
   "id": "i-am",
@@ -14715,7 +14802,10 @@ window.GLOSSARY = [
     [ 9 ] ],
    [
     "Hebrews", 6,
-    [ 9 ] ] ]
+    [ 9 ] ],
+   [
+    "Hebrews", 9,
+    [ 28 ] ] ]
  },
  {
   "id": "sixth-hour",
@@ -15813,7 +15903,10 @@ window.GLOSSARY = [
     [ 7, 8 ] ],
    [
     "1 Timothy", 3,
-    [ 15 ] ] ]
+    [ 15 ] ],
+   [
+    "Hebrews", 10,
+    [ 37 ] ] ]
  },
  {
   "id": "testimony",
@@ -16218,7 +16311,13 @@ window.GLOSSARY = [
     [ 26 ] ],
    [
     "Hebrews", 8,
-    [ 1, 3 ] ] ]
+    [ 1, 3 ] ],
+   [
+    "Hebrews", 9,
+    [ 7, 11, 25 ] ],
+   [
+    "Hebrews", 10,
+    [ 21 ] ] ]
  },
  {
   "id": "expedient",
@@ -16812,7 +16911,10 @@ window.GLOSSARY = [
     [ 4, 5, 6 ] ],
    [
     "Acts", 19,
-    [ 9, 23 ] ] ]
+    [ 9, 23 ] ],
+   [
+    "Hebrews", 9,
+    [ 8 ] ] ]
  },
  {
   "id": "sufficeth",
@@ -16953,7 +17055,10 @@ window.GLOSSARY = [
     [ 9 ] ],
    [
     "Hebrews", 4,
-    [ 13 ] ] ]
+    [ 13 ] ],
+   [
+    "Hebrews", 9,
+    [ 8 ] ] ]
  },
  {
   "id": "vine",
@@ -17745,7 +17850,10 @@ window.GLOSSARY = [
   "refs": [
    [
     "John", 19,
-    [ 29 ] ] ]
+    [ 29 ] ],
+   [
+    "Hebrews", 9,
+    [ 19 ] ] ]
  },
  {
   "id": "it-is-finished",
@@ -17934,7 +18042,13 @@ window.GLOSSARY = [
     [ 21, 23, 27, 28 ] ],
    [
     "Hebrews", 8,
-    [ 4 ] ] ]
+    [ 4 ] ],
+   [
+    "Hebrews", 9,
+    [ 6 ] ],
+   [
+    "Hebrews", 10,
+    [ 11 ] ] ]
  },
  {
   "id": "elders",
@@ -18681,7 +18795,10 @@ window.GLOSSARY = [
     [ 6 ] ],
    [
     "Hebrews", 2,
-    [ 2 ] ] ]
+    [ 2 ] ],
+   [
+    "Hebrews", 10,
+    [ 30, 35 ] ] ]
  },
  {
   "id": "plowshares",
@@ -19032,7 +19149,13 @@ window.GLOSSARY = [
     [ 17 ] ],
    [
     "Hebrews", 3,
-    [ 12 ] ] ]
+    [ 12 ] ],
+   [
+    "Hebrews", 9,
+    [ 14 ] ],
+   [
+    "Hebrews", 10,
+    [ 31 ] ] ]
  },
  {
   "id": "whoredom",
@@ -19221,7 +19344,10 @@ window.GLOSSARY = [
     [ 5 ] ],
    [
     "Hebrews", 4,
-    [ 16 ] ] ]
+    [ 16 ] ],
+   [
+    "Hebrews", 10,
+    [ 28 ] ] ]
  },
  {
   "id": "baal",
@@ -19632,7 +19758,10 @@ window.GLOSSARY = [
     [ 16 ] ],
    [
     "Hosea", 10,
-    [ 11 ] ] ]
+    [ 11 ] ],
+   [
+    "Hebrews", 9,
+    [ 13 ] ] ]
  },
  {
   "id": "fallow-ground",
@@ -20337,7 +20466,13 @@ window.GLOSSARY = [
     [ 15, 17 ] ],
    [
     "Hebrews", 8,
-    [ 6, 7, 8, 9, 10, 13 ] ] ]
+    [ 6, 7, 8, 9, 10, 13 ] ],
+   [
+    "Hebrews", 9,
+    [ 1, 4 ] ],
+   [
+    "Hebrews", 10,
+    [ 16, 29 ] ] ]
  },
  {
   "id": "oven",
@@ -21714,7 +21849,10 @@ window.GLOSSARY = [
     [ 17 ] ],
    [
     "Galatians", 3,
-    [ 11 ] ] ]
+    [ 11 ] ],
+   [
+    "Hebrews", 10,
+    [ 38 ] ] ]
  },
  {
   "id": "woe",
@@ -22524,7 +22662,10 @@ window.GLOSSARY = [
   "refs": [
    [
     "Nahum", 3,
-    [ 6 ] ] ]
+    [ 6 ] ],
+   [
+    "Hebrews", 10,
+    [ 33 ] ] ]
  },
  {
   "id": "no-amon",
@@ -22704,7 +22845,10 @@ window.GLOSSARY = [
     [ 4 ] ],
    [
     "Hebrews", 7,
-    [ 11 ] ] ]
+    [ 11 ] ],
+   [
+    "Hebrews", 9,
+    [ 4 ] ] ]
  },
  {
   "id": "miriam",
@@ -22767,7 +22911,10 @@ window.GLOSSARY = [
     [ 6 ] ],
    [
     "Mark", 12,
-    [ 33 ] ] ]
+    [ 33 ] ],
+   [
+    "Hebrews", 10,
+    [ 6, 8 ] ] ]
  },
  {
   "id": "firstborn",
@@ -22920,7 +23067,10 @@ window.GLOSSARY = [
     [ 8 ] ],
    [
     "2 Corinthians", 7,
-    [ 11 ] ] ]
+    [ 11 ] ],
+   [
+    "Hebrews", 10,
+    [ 27 ] ] ]
  },
  {
   "id": "the-decree",
@@ -23334,7 +23484,10 @@ window.GLOSSARY = [
     [ 3 ] ],
    [
     "Luke", 15,
-    [ 13 ] ] ]
+    [ 13 ] ],
+   [
+    "Hebrews", 10,
+    [ 34 ] ] ]
  },
  {
   "id": "saviours",
@@ -24090,7 +24243,10 @@ window.GLOSSARY = [
     [ 16 ] ],
    [
     "Luke", 11,
-    [ 33 ] ] ]
+    [ 33 ] ],
+   [
+    "Hebrews", 9,
+    [ 2 ] ] ]
  },
  {
   "id": "olive-trees",
@@ -25212,7 +25368,10 @@ window.GLOSSARY = [
     [ 6 ] ],
    [
     "Ephesians", 2,
-    [ 15 ] ] ]
+    [ 15 ] ],
+   [
+    "Hebrews", 9,
+    [ 1, 10 ] ] ]
  },
  {
   "id": "return-and-i-will-return",
@@ -25650,7 +25809,13 @@ window.GLOSSARY = [
     [ 43 ] ],
    [
     "Romans", 3,
-    [ 25 ] ] ]
+    [ 25 ] ],
+   [
+    "Hebrews", 9,
+    [ 22 ] ],
+   [
+    "Hebrews", 10,
+    [ 18 ] ] ]
  },
  {
   "id": "dayspring",
@@ -26190,7 +26355,10 @@ window.GLOSSARY = [
     [ 1 ] ],
    [
     "Hebrews", 2,
-    [ 4 ] ] ]
+    [ 4 ] ],
+   [
+    "Hebrews", 9,
+    [ 10 ] ] ]
  },
  {
   "id": "devils",
@@ -26304,7 +26472,10 @@ window.GLOSSARY = [
     [ 15 ] ],
    [
     "Hebrews", 5,
-    [ 2 ] ] ]
+    [ 2 ] ],
+   [
+    "Hebrews", 10,
+    [ 34 ] ] ]
  },
  {
   "id": "leprosy",
@@ -26448,7 +26619,10 @@ window.GLOSSARY = [
     [ 4 ] ],
    [
     "1 Timothy", 3,
-    [ 15 ] ] ]
+    [ 15 ] ],
+   [
+    "Hebrews", 10,
+    [ 21 ] ] ]
  },
  {
   "id": "noised",
@@ -26769,7 +26943,10 @@ window.GLOSSARY = [
     [ 26 ] ],
    [
     "Luke", 6,
-    [ 4 ] ] ]
+    [ 4 ] ],
+   [
+    "Hebrews", 9,
+    [ 2 ] ] ]
  },
  {
   "id": "cyrenius",
@@ -26970,7 +27147,10 @@ window.GLOSSARY = [
     [ 30 ] ],
    [
     "Colossians", 1,
-    [ 14 ] ] ]
+    [ 14 ] ],
+   [
+    "Hebrews", 9,
+    [ 12, 15 ] ] ]
  },
  {
   "id": "waxed",
@@ -28152,7 +28332,10 @@ window.GLOSSARY = [
     [ 24 ] ],
    [
     "2 Timothy", 4,
-    [ 14 ] ] ]
+    [ 14 ] ],
+   [
+    "Hebrews", 10,
+    [ 35 ] ] ]
  },
  {
   "id": "little-ones",
@@ -28962,7 +29145,13 @@ window.GLOSSARY = [
     [ 1 ] ],
    [
     "Hebrews", 7,
-    [ 19 ] ] ]
+    [ 19 ] ],
+   [
+    "Hebrews", 9,
+    [ 9, 11 ] ],
+   [
+    "Hebrews", 10,
+    [ 1 ] ] ]
  },
  {
   "id": "begat",
@@ -31050,7 +31239,10 @@ window.GLOSSARY = [
     [ 4 ] ],
    [
     "Hebrews", 4,
-    [ 3 ] ] ]
+    [ 3 ] ],
+   [
+    "Hebrews", 9,
+    [ 26 ] ] ]
  },
  {
   "id": "end-of-the-world",
@@ -33867,7 +34059,10 @@ window.GLOSSARY = [
     [ 12 ] ],
    [
     "Colossians", 3,
-    [ 24 ] ] ]
+    [ 24 ] ],
+   [
+    "Hebrews", 9,
+    [ 15 ] ] ]
  },
  {
   "id": "rich-fool",
@@ -35382,7 +35577,10 @@ window.GLOSSARY = [
     [ 25 ] ],
    [
     "2 Corinthians", 3,
-    [ 6 ] ] ]
+    [ 6 ] ],
+   [
+    "Hebrews", 9,
+    [ 15 ] ] ]
  },
  {
   "id": "fruit-of-the-vine",
@@ -36648,7 +36846,10 @@ window.GLOSSARY = [
     [ 34 ] ],
    [
     "Colossians", 3,
-    [ 1 ] ] ]
+    [ 1 ] ],
+   [
+    "Hebrews", 10,
+    [ 12 ] ] ]
  },
  {
   "id": "penury",
@@ -36744,7 +36945,10 @@ window.GLOSSARY = [
     [ 10 ] ],
    [
     "Hebrews", 6,
-    [ 12 ] ] ]
+    [ 12 ] ],
+   [
+    "Hebrews", 10,
+    [ 36 ] ] ]
  },
  {
   "id": "jerusalem-compassed",
@@ -37680,6 +37884,9 @@ window.GLOSSARY = [
     [ 49 ] ],
    [
     "Hebrews", 1,
+    [ 13 ] ],
+   [
+    "Hebrews", 10,
     [ 13 ] ] ]
  },
  {
@@ -37929,7 +38136,10 @@ window.GLOSSARY = [
     [ 9 ] ],
    [
     "Hebrews", 8,
-    [ 12 ] ] ]
+    [ 12 ] ],
+   [
+    "Hebrews", 10,
+    [ 17 ] ] ]
  },
  {
   "id": "barnabas",
@@ -38034,7 +38244,10 @@ window.GLOSSARY = [
     [ 13 ] ],
    [
     "Hebrews", 4,
-    [ 16 ] ] ]
+    [ 16 ] ],
+   [
+    "Hebrews", 10,
+    [ 19 ] ] ]
  },
  {
   "id": "straitly",
@@ -40143,7 +40356,10 @@ window.GLOSSARY = [
     [ 1, 4 ] ],
    [
     "Hebrews", 8,
-    [ 2, 5 ] ] ]
+    [ 2, 5 ] ],
+   [
+    "Hebrews", 9,
+    [ 2, 3, 6, 8, 11, 21 ] ] ]
  },
  {
   "id": "stiffnecked",
@@ -43509,7 +43725,10 @@ window.GLOSSARY = [
     [ 11, 12, 17 ] ],
    [
     "Hebrews", 3,
-    [ 1, 12 ] ] ]
+    [ 1, 12 ] ],
+   [
+    "Hebrews", 10,
+    [ 19 ] ] ]
  },
  {
   "id": "captain-of-the-guard",
@@ -44493,7 +44712,10 @@ window.GLOSSARY = [
     [ 7 ] ],
    [
     "2 Thessalonians", 2,
-    [ 14 ] ] ]
+    [ 14 ] ],
+   [
+    "Hebrews", 9,
+    [ 15 ] ] ]
  },
  {
   "id": "foreknow",
@@ -45693,7 +45915,10 @@ window.GLOSSARY = [
   "refs": [
    [
     "1 Corinthians", 6,
-    [ 11 ] ] ]
+    [ 11 ] ],
+   [
+    "Hebrews", 10,
+    [ 22 ] ] ]
  },
  {
   "id": "harlot",
@@ -47556,7 +47781,10 @@ window.GLOSSARY = [
   "refs": [
    [
     "2 Corinthians", 13,
-    [ 1 ] ] ]
+    [ 1 ] ],
+   [
+    "Hebrews", 10,
+    [ 28 ] ] ]
  },
  {
   "id": "examine-yourselves",
@@ -47961,7 +48189,10 @@ window.GLOSSARY = [
     [ 5 ] ],
    [
     "Hebrews", 8,
-    [ 6 ] ] ]
+    [ 6 ] ],
+   [
+    "Hebrews", 9,
+    [ 15 ] ] ]
  },
  {
   "id": "schoolmaster",
@@ -50199,7 +50430,10 @@ window.GLOSSARY = [
     [ 11 ] ],
    [
     "2 Timothy", 4,
-    [ 5 ] ] ]
+    [ 5 ] ],
+   [
+    "Hebrews", 10,
+    [ 32, 33 ] ] ]
  },
  {
   "id": "shamefully-entreated",
@@ -52260,7 +52494,10 @@ window.GLOSSARY = [
   "refs": [
    [
     "Hebrews", 6,
-    [ 1 ] ] ]
+    [ 1 ] ],
+   [
+    "Hebrews", 9,
+    [ 14 ] ] ]
  },
  {
   "id": "baptisms-washings",
@@ -52431,7 +52668,10 @@ window.GLOSSARY = [
   "refs": [
    [
     "Hebrews", 8,
-    [ 12 ] ] ]
+    [ 12 ] ],
+   [
+    "Hebrews", 10,
+    [ 17 ] ] ]
  },
  {
   "id": "heavenly-calling",
@@ -52452,7 +52692,10 @@ window.GLOSSARY = [
     [ 1 ] ],
    [
     "Hebrews", 4,
-    [ 14 ] ] ]
+    [ 14 ] ],
+   [
+    "Hebrews", 10,
+    [ 23 ] ] ]
  },
  {
   "id": "the-provocation",
@@ -52612,5 +52855,227 @@ window.GLOSSARY = [
    [
     "Hebrews", 4,
     [ 16 ] ] ]
+ },
+ {
+  "id": "sanctuary",
+  "kind": "place",
+  "name": "The sanctuary (the first room of the tabernacle; “a worldly sanctuary”: an earthly holy place)",
+  "refs": [
+   [
+    "Hebrews", 9,
+    [ 1, 2 ] ] ]
+ },
+ {
+  "id": "the-veil",
+  "kind": "place",
+  "name": "The veil (the heavy curtain before the holiest of all)",
+  "refs": [
+   [
+    "Hebrews", 9,
+    [ 3 ] ],
+   [
+    "Hebrews", 10,
+    [ 20 ] ] ]
+ },
+ {
+  "id": "holiest-of-all",
+  "kind": "place",
+  "name": "The holiest of all (the holy of holies, the inner room where God met His people)",
+  "refs": [
+   [
+    "Hebrews", 9,
+    [ 3, 8, 12, 25 ] ],
+   [
+    "Hebrews", 10,
+    [ 19 ] ] ]
+ },
+ {
+  "id": "golden-censer",
+  "kind": "term",
+  "name": "The golden censer (a gold pan for burning incense before the LORD)",
+  "refs": [
+   [
+    "Hebrews", 9,
+    [ 4 ] ] ]
+ },
+ {
+  "id": "ark-of-the-covenant",
+  "kind": "term",
+  "name": "The ark of the covenant (the gold-covered chest in the holiest of all)",
+  "refs": [
+   [
+    "Hebrews", 9,
+    [ 4 ] ] ]
+ },
+ {
+  "id": "mercy-seat",
+  "kind": "term",
+  "name": "The mercy seat (the gold lid of the ark, where the blood was sprinkled)",
+  "refs": [
+   [
+    "Hebrews", 9,
+    [ 5 ] ] ]
+ },
+ {
+  "id": "cherubims",
+  "kind": "term",
+  "name": "Cherubims (angels of gold above the mercy seat)",
+  "refs": [
+   [
+    "Hebrews", 9,
+    [ 5 ] ] ]
+ },
+ {
+  "id": "tables-of-the-covenant",
+  "kind": "term",
+  "name": "The tables of the covenant (the stone tablets of the Ten Commandments)",
+  "refs": [
+   [
+    "Hebrews", 9,
+    [ 4 ] ] ]
+ },
+ {
+  "id": "testament-testator",
+  "kind": "term",
+  "name": "Testament, testator (a will, and the man who made it: in force only after his death)",
+  "refs": [
+   [
+    "Hebrews", 9,
+    [ 15, 16, 17, 18, 20 ] ] ]
+ },
+ {
+  "id": "time-of-reformation",
+  "kind": "term",
+  "name": "The time of reformation (when God would set everything right, in Christ)",
+  "refs": [
+   [
+    "Hebrews", 9,
+    [ 10 ] ] ]
+ },
+ {
+  "id": "once-for-all",
+  "kind": "term",
+  "name": "Once, once for all (one offering that never needs repeating)",
+  "refs": [
+   [
+    "Hebrews", 9,
+    [ 12, 26, 28 ] ],
+   [
+    "Hebrews", 10,
+    [ 2, 10 ] ] ]
+ },
+ {
+  "id": "appear-the-second-time",
+  "kind": "term",
+  "name": "Appear the second time (Christ's return, unto salvation)",
+  "refs": [
+   [
+    "Hebrews", 9,
+    [ 28 ] ] ]
+ },
+ {
+  "id": "shadow-of-good-things",
+  "kind": "term",
+  "name": "A shadow of good things to come (the law's sacrifices, pointing to Christ)",
+  "refs": [
+   [
+    "Hebrews", 10,
+    [ 1 ] ] ]
+ },
+ {
+  "id": "volume-of-the-book",
+  "kind": "term",
+  "name": "The volume of the book (the scroll of Scripture)",
+  "refs": [
+   [
+    "Hebrews", 10,
+    [ 7 ] ] ]
+ },
+ {
+  "id": "new-and-living-way",
+  "kind": "term",
+  "name": "A new and living way (the way into God's presence that Christ opened by His death)",
+  "refs": [
+   [
+    "Hebrews", 10,
+    [ 20 ] ] ]
+ },
+ {
+  "id": "full-assurance",
+  "kind": "term",
+  "name": "Full assurance (being fully sure)",
+  "refs": [
+   [
+    "Colossians", 2,
+    [ 2 ] ],
+   [
+    "Hebrews", 6,
+    [ 11 ] ],
+   [
+    "Hebrews", 10,
+    [ 22 ] ] ]
+ },
+ {
+  "id": "assembling-together",
+  "kind": "term",
+  "name": "The assembling of ourselves together (believers meeting together)",
+  "refs": [
+   [
+    "Hebrews", 10,
+    [ 25 ] ] ]
+ },
+ {
+  "id": "sin-wilfully",
+  "kind": "term",
+  "name": "Sin wilfully (here: a settled, deliberate turning from Christ after knowing the truth)",
+  "refs": [
+   [
+    "Hebrews", 10,
+    [ 26 ] ] ]
+ },
+ {
+  "id": "done-despite",
+  "kind": "term",
+  "name": "Done despite (treated with insult and contempt)",
+  "refs": [
+   [
+    "Hebrews", 10,
+    [ 29 ] ] ]
+ },
+ {
+  "id": "illuminated",
+  "kind": "term",
+  "name": "Illuminated (enlightened: when the light of the gospel first came)",
+  "refs": [
+   [
+    "Hebrews", 10,
+    [ 32 ] ] ]
+ },
+ {
+  "id": "spoiling-of-goods",
+  "kind": "term",
+  "name": "The spoiling of your goods (their homes and property plundered)",
+  "refs": [
+   [
+    "Hebrews", 10,
+    [ 34 ] ] ]
+ },
+ {
+  "id": "draw-back",
+  "kind": "term",
+  "name": "Draw back (shrink back from Christ and turn away)",
+  "refs": [
+   [
+    "Hebrews", 10,
+    [ 38, 39 ] ] ]
+ },
+ {
+  "id": "perdition",
+  "kind": "term",
+  "name": "Perdition (ruin, being lost for ever)",
+  "refs": [
+   [
+    "Hebrews", 10,
+    [ 39 ] ] ]
  }
 ];

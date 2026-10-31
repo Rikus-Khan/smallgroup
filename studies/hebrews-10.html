@@ -1,0 +1,684 @@
+<!doctype html>
+<html lang="en" data-theme="slate">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Hebrews 10</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="../assets/fonts.css">
+<link rel="stylesheet" href="../assets/deck.css">
+<link rel="stylesheet" href="../assets/themes.css">
+<style>
+/* he10-where: where we are in Hebrews. Thirteen chapter cells (i), .done and .here, over five labeled parts (span, --s = cells spanned) */
+.he10-where { display: grid; grid-template-columns: repeat(13, 1fr); gap: 4px; margin: .3em 0 1em; }
+.he10-where i { font: 600 clamp(.75rem, .65rem + .4vw, 1.05rem)/1 var(--sans); font-style: normal; text-align: center; padding: .45em 0; border-radius: 6px; background: var(--surface); border: 1px solid var(--line); color: var(--ink-soft); }
+.he10-where i.done { background: color-mix(in srgb, var(--accent) 16%, var(--surface)); color: var(--ink); }
+.he10-where i.here { background: var(--accent); border-color: var(--accent); color: var(--on-accent); box-shadow: 0 0 0 4px color-mix(in srgb, var(--accent) 25%, transparent); }
+.slide.active .he10-where i.here { animation: he10-here 2.4s 1s ease-in-out infinite; }
+@keyframes he10-here { 50% { box-shadow: 0 0 0 8px color-mix(in srgb, var(--accent) 10%, transparent); } }
+.he10-where span { grid-column: span var(--s, 1); border-top: 3px solid var(--line-strong); padding-top: .35em; text-align: center; font-size: clamp(.68rem, .62rem + .3vw, .95rem); line-height: 1.2; color: var(--ink-soft); }
+.he10-where span.now { border-top-color: var(--accent); color: var(--ink); font-weight: 700; }
+
+/* he10-shadow: a light, a long shadow on the ground; on .he10-sh-go the thing that casts it appears (the law a shadow, the body is of Christ) */
+.he10-ground { stroke: var(--line-strong); stroke-width: 2; }
+.he10-sun { fill: var(--warm); }
+.slide.active .he10-sun { animation: he10-pulse 3s ease-in-out infinite; }
+@keyframes he10-pulse { 50% { opacity: .7; } }
+.he10-shade { fill: color-mix(in srgb, var(--ink) 30%, transparent); }
+.he10-real { fill: var(--accent); opacity: 0; transition: opacity 1.4s ease; }
+.slide:has(.he10-sh-go.on) .he10-real { opacity: 1; }
+.he10-shlab { font: 17px var(--sans); fill: var(--ink-soft); text-anchor: middle; }
+.he10-reallab { font: 700 18px var(--sans); fill: var(--accent-hot); text-anchor: middle; opacity: 0; transition: opacity 1s .8s ease; }
+.slide:has(.he10-sh-go.on) .he10-reallab { opacity: 1; }
+@media (max-width: 600px) { .he10-shlab, .he10-reallab { font-size: 22px; } }
+
+/* he10-sit: the priest who stands, his smoke rising day after day, beside Christ seated on the right hand of God (lit on .he10-sit-go) */
+.he10-div { stroke: var(--line-strong); stroke-width: 2; stroke-dasharray: 6 6; }
+.he10-man { fill: var(--ink-soft); }
+.he10-altar { fill: color-mix(in srgb, var(--warm) 40%, var(--surface)); stroke: var(--warm); stroke-width: 2; }
+.he10-smoke { fill: color-mix(in srgb, var(--ink-soft) 45%, transparent); opacity: 0; }
+.slide.active .he10-smoke { animation: he10-rise 3s linear infinite; animation-delay: calc(var(--k) * 1s); }
+@keyframes he10-rise { 0% { opacity: 0; transform: translateY(0) scale(.6); } 20% { opacity: .9; } 100% { opacity: 0; transform: translateY(-110px) scale(1.5); } }
+.he10-smoke { transform-box: fill-box; transform-origin: 50% 50%; }
+.he10-count { font: 700 16px var(--sans); fill: var(--danger); text-anchor: middle; }
+.slide.active .he10-count { animation: he10-blink 3s ease-in-out infinite; animation-delay: calc(var(--k) * 1s); }
+@keyframes he10-blink { 0%, 100% { opacity: .25; } 30% { opacity: 1; } }
+.he10-right { opacity: .25; transition: opacity 1.4s ease; }
+.slide:has(.he10-sit-go.on) .he10-right { opacity: 1; }
+.he10-halo { fill: color-mix(in srgb, var(--accent) 20%, transparent); }
+.slide:has(.he10-sit-go.on) .he10-halo { animation: he10-pulse 3s 1.4s ease-in-out infinite; }
+.he10-throne { fill: color-mix(in srgb, var(--accent) 45%, var(--surface)); stroke: var(--accent-hot); stroke-width: 2; }
+.he10-king { fill: var(--accent-hot); }
+.he10-cap { font: 400 25px var(--serif); text-anchor: middle; fill: var(--ink); }
+.he10-cap.hot { fill: var(--accent-hot); }
+.he10-sub { font: 15px var(--sans); text-anchor: middle; fill: var(--ink-soft); }
+@media (max-width: 600px) { .he10-cap { font-size: 32px; } .he10-sub { display: none; } .he10-count { font-size: 21px; } }
+
+/* he10-veil: light behind a curtain. On .he10-veil-go a tear runs from the top down, the halves part, and a way opens into the light */
+.he10-light { fill: var(--glow); }
+.he10-lighttxt { font: 400 26px var(--serif); font-style: italic; fill: var(--on-glow); text-anchor: middle; }
+.he10-half { fill: var(--wine); transition: transform 1.6s cubic-bezier(.5,0,.3,1) 1.3s; }
+.he10-thread { stroke: color-mix(in srgb, var(--glow) 25%, transparent); stroke-width: 2; }
+.slide:has(.he10-veil-go.on) .he10-half.l { transform: translateX(-118px) skewY(4deg); }
+.slide:has(.he10-veil-go.on) .he10-half.r { transform: translateX(118px) skewY(-4deg); }
+.he10-tear { fill: none; stroke: var(--glow); stroke-width: 4; stroke-dasharray: 1; stroke-dashoffset: 1; transition: stroke-dashoffset 1.2s ease-in, opacity .4s 2.6s; }
+.slide:has(.he10-veil-go.on) .he10-tear { stroke-dashoffset: 0; opacity: 0; }
+.he10-way { fill: none; stroke: var(--accent); stroke-width: 5; stroke-linecap: round; stroke-dasharray: 1; stroke-dashoffset: 1; transition: stroke-dashoffset 1.6s ease 2.9s; }
+.slide:has(.he10-veil-go.on) .he10-way { stroke-dashoffset: 0; }
+.he10-waytxt { font: 700 17px var(--sans); fill: var(--accent-hot); text-anchor: middle; opacity: 0; transition: opacity 1s 3.8s ease; }
+.slide:has(.he10-veil-go.on) .he10-waytxt { opacity: 1; }
+.he10-vlab { font: 700 15px var(--sans); fill: var(--ink-soft); text-anchor: middle; letter-spacing: .06em; }
+@media (max-width: 600px) { .he10-waytxt { font-size: 21px; } }
+
+/* he10-coals: coals burning together; one drifts off and goes cold, and on .he10-coal-go it is brought back and glows again */
+.he10-coal { fill: var(--warm); stroke: var(--danger); stroke-width: 2; }
+.slide.active .he10-pile { animation: he10-burn 2.4s ease-in-out infinite alternate; }
+@keyframes he10-burn { from { filter: drop-shadow(0 0 4px var(--warm)); } to { filter: drop-shadow(0 0 14px var(--danger)); } }
+.he10-lone { fill: var(--warm); stroke: var(--danger); stroke-width: 2; }
+.he10-lone { transition: transform 3s ease-in-out, fill 2s ease, stroke 2s ease; transition-delay: 1.2s, 2.2s, 2.2s; }
+.slide.active .he10-lone { transform: translateX(210px); fill: var(--surface-2); stroke: var(--line-strong); }
+.slide:has(.he10-coal-go.on) .he10-lone { transform: none; fill: var(--warm); stroke: var(--danger); transition-delay: 0s, 1.4s, 1.4s; }
+.he10-clab { font: 17px var(--sans); fill: var(--ink-soft); text-anchor: middle; }
+.he10-clab.cold { opacity: 0; transition: opacity 1s ease 3.6s; }
+.slide.active .he10-clab.cold { opacity: 1; }
+.slide:has(.he10-coal-go.on) .he10-clab.cold { opacity: 0; transition-delay: 0s; }
+@media (max-width: 600px) { .he10-clab { font-size: 22px; } }
+</style>
+</head>
+<body>
+<main class="deck" id="deck">
+
+<!-- ======================= OPENING ======================= -->
+<section class="slide title">
+  <div class="inner">
+    <div class="emblem rise"></div>
+    <h1 class="rise" style="--d:1">Hebrews 10</h1>
+    <p class="sub rise" style="--d:3">Once for all</p>
+    <p class="tag rise" style="--d:5">The priests stood every day and never finished. Jesus offered one sacrifice and sat down. The work is done, the way is open, and God has decided not to bring your sins up again.</p>
+  </div>
+</section>
+
+<section class="slide watch">
+  <div class="inner">
+    <h2 class="rise">Things to watch for</h2>
+    <p class="lede rise" style="--d:1">Keep these questions in the back of your mind as we read. We'll come back to every one of them at the end.</p>
+    <ol class="seeds">
+      <li class="step"><span class="topic">A shadow</span><span class="seed-q">Why could the old sacrifices never take away sins?</span></li>
+      <li class="step"><span class="topic">He sat down</span><span class="seed-q">What did Christ do after He offered one sacrifice for sins, and why does it matter?</span></li>
+      <li class="step"><span class="topic">Forgotten</span><span class="seed-q">What does God promise to do with our sins and iniquities?</span></li>
+      <li class="step"><span class="topic">Draw near</span><span class="seed-q">How can a man come near to God with boldness?</span></li>
+      <li class="step"><span class="topic">Together</span><span class="seed-q">Why must believers not forsake the assembling of themselves together?</span></li>
+      <li class="step"><span class="topic">Hold on</span><span class="seed-q">Who is the warning of verses 26–31 about, and what are believers told to do?</span></li>
+    </ol>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise">Where we are in Hebrews</h2>
+    <div class="he10-where rise" style="--d:1" role="img" aria-label="Hebrews has thirteen chapters. Chapters 1 and 2: better than the angels. Chapters 3 and 4: better than Moses. Chapters 5 to 7: a better priest. Chapters 8 to 10: a better covenant and a better sacrifice. Chapters 11 to 13: faith that holds on. We are in chapter 10, the end of the teaching and the turn to living it.">
+      <i class="done">1</i><i class="done">2</i><i class="done">3</i><i class="done">4</i><i class="done">5</i><i class="done">6</i><i class="done">7</i><i class="done">8</i><i class="done">9</i><i class="here">10</i><i>11</i><i>12</i><i>13</i>
+      <span style="--s:2">Better than angels</span><span style="--s:2">Better than Moses</span><span style="--s:3">A better priest</span><span class="now" style="--s:3">A better covenant and sacrifice</span><span style="--s:3">Faith that holds on</span>
+    </div>
+    <ol class="signs">
+      <li class="step"><b>Chapter 8</b>A new covenant: God writes His law on the heart.</li>
+      <li class="step"><b>Chapter 9</b>Christ entered heaven with His own blood, once.</li>
+      <li class="step now"><b>Chapter 10</b>So it's finished. Now come in, and don't turn back.</li>
+    </ol>
+    <p class="note step">This chapter is a hinge. Verses 1–18 close the writer's long argument. From verse 19 on he tells us what to do about it. The writer of Hebrews never puts doctrine and life in separate boxes, and neither should we.</p>
+  </div>
+</section>
+
+<!-- ======================= PART ONE: ONCE FOR ALL ======================= -->
+<section class="slide part">
+  <div class="inner">
+    <p class="part-n rise">Part one</p>
+    <h2 class="rise" style="--d:1">One sacrifice for ever</h2>
+    <p class="range rise" style="--d:2">Verses 1–18</p>
+    <div class="rule"></div>
+    <p class="hook rise" style="--d:4">A shadow, a body prepared, a Priest who sat down, and sins God will not remember.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="1-4" data-hl="the law having a shadow of good things to come|can never with those sacrifices which they offered year by year continually make the comers thereunto perfect|a remembrance again made of sins every year|it is not possible that the blood of bulls and of goats should take away sins"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise">A shadow, and the real thing</h2>
+    <div class="split">
+      <div class="stage">
+        <svg viewBox="0 0 600 320" role="img" aria-label="A light low on the left. A long shadow of a cross stretches across the ground. Then the cross itself appears, the thing that cast the shadow: the law was a shadow; the body is of Christ.">
+          <circle class="he10-sun" cx="50" cy="60" r="22"/>
+          <line class="he10-ground" x1="20" y1="210" x2="590" y2="210"/>
+          <g class="he10-shade" transform="matrix(1 0 -1.5 -.55 315 325.5)">
+            <rect x="192" y="50" width="16" height="160"/>
+            <rect x="160" y="88" width="80" height="14"/>
+          </g>
+          <g class="he10-real">
+            <rect x="192" y="50" width="16" height="160" rx="2"/>
+            <rect x="160" y="88" width="80" height="14" rx="2"/>
+          </g>
+          <text class="he10-shlab" x="500" y="252">the law: a shadow</text>
+          <text class="he10-reallab" x="200" y="34">the body is of Christ</text>
+        </svg>
+      </div>
+      <div>
+        <p class="note rise" style="--d:2">A shadow is real, and it tells you something is coming: its shape, its size. But you can't shake hands with a shadow. The sacrifices of the law were the shadow of what Christ would do.</p>
+        <blockquote class="quote step he10-sh-go"><p>“Which are a shadow of things to come; but the body is of Christ.”</p><cite>Colossians 2:17</cite></blockquote>
+        <p class="note step">Don't go back to the shadow when the real thing is standing in front of you. That was the danger for these Hebrew believers, and it's ours when we try to fix ourselves with rules instead of Christ.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise">A reminder, not a cure</h2>
+    <div class="ifthen step">
+      <div class="if"><small>If those sacrifices had really cleansed</small>they would have stopped</div>
+      <span class="arrow">→</span>
+      <div class="then"><small>but they came round every year</small>a yearly reminder of sin</div>
+    </div>
+    <p class="note step">Every Day of Atonement said again: <em>you are still guilty.</em> The sacrifice kept the guilt on the books instead of ending it.</p>
+    <p class="saying step">It is not possible that the blood of <em>bulls and goats</em> should take away sins.</p>
+    <p class="note step">Some of us live like that: the same confession, the same shame, round and round, as if Christ's work needed topping up. It doesn't. Keep reading.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="5-7" data-hl="Sacrifice and offering thou wouldest not, but a body hast thou prepared me|Lo, I come (in the volume of the book it is written of me,) to do thy will, O God"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise">“Lo, I come”</h2>
+    <p class="note rise" style="--d:1">These are the words of Psalm 40, and the writer hears Jesus saying them as He came into the world. Watch what God sets aside, and what He takes up.</p>
+    <ul class="nots">
+      <li class="step"><span class="k">sacrifice and offering</span><span class="why">“thou wouldest not”</span></li>
+      <li class="step"><span class="k">burnt offerings and sacrifices for sin</span><span class="why">“thou hast had no pleasure”</span></li>
+      <li class="step yes"><span class="k">a body hast thou prepared me</span><span class="why">the Son comes in a real body, to do God's will all the way to the cross</span></li>
+    </ul>
+    <blockquote class="quote step"><p>“I delight to do thy will, O my God: yea, thy law is within my heart.”</p><cite>Psalm 40:8</cite></blockquote>
+    <p class="note step">God never wanted dead animals for their own sake. He wanted a man who would obey Him perfectly. No man ever did, until Jesus. His obedience is counted for everyone who trusts Him.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="8-10" data-hl="He taketh away the first, that he may establish the second|we are sanctified through the offering of the body of Jesus Christ once for all"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="10" data-hl="we are sanctified through the offering of the body of Jesus Christ once for all"></blockquote>
+    <h2 class="rise" style="--d:1">Set apart, once for all</h2>
+    <div class="rename">
+      <span class="old rise" style="--d:2">The first</span>
+      <span class="arrow step">→</span>
+      <span class="new step">The second</span>
+      <span class="gloss step">He <em>taketh away</em> the old way of animal sacrifice, to <em>establish</em> the new: one offering, His own body.</span>
+    </div>
+    <p class="note step"><em>Sanctified</em> means set apart for God, made His. Notice the tense: <em>we are sanctified</em>. It isn't a prize at the end of a long clean streak. It happened when Christ's body was offered, and it reached you the day you trusted Him.</p>
+    <p class="note step"><em>Once for all</em>: one time, for all time. You will grow (verse 14 says we are being sanctified), but the setting apart was done at the cross.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="11-14" data-hl="every priest standeth daily ministering and offering oftentimes the same sacrifices, which can never take away sins|after he had offered one sacrifice for sins for ever, sat down on the right hand of God|by one offering he hath perfected for ever them that are sanctified"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise">The priests stood. Christ sat down.</h2>
+    <div class="stage">
+      <svg viewBox="0 0 680 290" style="max-height:42vh" role="img" aria-label="On the left, a priest standing beside an altar, smoke rising again and again: daily, oftentimes, the same sacrifices. On the right, Christ seated on a throne, lit: one sacrifice, for ever, sat down on the right hand of God.">
+        <line class="he10-div" x1="340" y1="10" x2="340" y2="280"/>
+        <circle class="he10-man" cx="120" cy="92" r="15"/>
+        <path class="he10-man" d="M102 112 h36 l12 118 h-60 Z"/>
+        <path class="he10-man" d="M138 122 l40 30 l-6 8 l-38 -24 Z"/>
+        <rect class="he10-altar" x="190" y="170" width="70" height="60" rx="3"/>
+        <circle class="he10-smoke" style="--k:0" cx="225" cy="155" r="13"/>
+        <circle class="he10-smoke" style="--k:1" cx="218" cy="155" r="12"/>
+        <circle class="he10-smoke" style="--k:2" cx="232" cy="155" r="12"/>
+        <text class="he10-count" style="--k:0" x="70" y="36">daily</text>
+        <text class="he10-count" style="--k:1" x="170" y="28">oftentimes</text>
+        <text class="he10-count" style="--k:2" x="280" y="36">the same</text>
+        <text class="he10-cap" x="170" y="262">He standeth</text>
+        <text class="he10-sub" x="170" y="284">never finished, never takes away sins</text>
+        <g class="he10-right">
+          <circle class="he10-halo" cx="510" cy="140" r="105"/>
+          <rect class="he10-throne" x="452" y="58" width="18" height="172" rx="3"/>
+          <rect class="he10-throne" x="452" y="158" width="104" height="16" rx="3"/>
+          <rect class="he10-throne" x="540" y="174" width="12" height="56"/>
+          <circle class="he10-king" cx="500" cy="96" r="15"/>
+          <path class="he10-king" d="M483 116 h34 l4 42 h44 l-2 70 h-16 l-2 -54 h-62 Z"/>
+          <text class="he10-cap hot" x="510" y="262">He sat down</text>
+          <text class="he10-sub" x="510" y="284">one sacrifice, for ever</text>
+        </g>
+      </svg>
+    </div>
+    <p class="note step he10-sit-go">Remember the tabernacle from chapter 9: no chair. A priest's work was never done, so he never sat. Jesus offered one sacrifice and <em>sat down</em>. A man sits down when the job is finished.</p>
+    <blockquote class="quote step"><p>“When Jesus therefore had received the vinegar, he said, It is finished: and he bowed his head, and gave up the ghost.”</p><cite>John 19:30</cite></blockquote>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="14" data-hl="by one offering he hath perfected for ever them that are sanctified"></blockquote>
+    <h2 class="rise" style="--d:1">Perfected for ever</h2>
+    <p class="note rise" style="--d:2"><em>Perfected</em> doesn't mean you'll never fail again. It means complete before God: nothing missing from your account, nothing left to pay. And it says <em>for ever</em>.</p>
+    <p class="note step">So when you stumble, the cross doesn't need to be done again. You don't get re-saved every time you repent. You come back to a Father who already calls you His, confess it, and get up.</p>
+    <blockquote class="quote step"><p>“Wherefore he is able also to save them to the uttermost that come unto God by him, seeing he ever liveth to make intercession for them.”</p><cite>Hebrews 7:25</cite></blockquote>
+    <p class="note step">And He sits <em>expecting</em>: waiting until every enemy is under His feet. The fight is still going on in you, but the outcome isn't in doubt.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="15-18" data-hl="I will put my laws into their hearts, and in their minds will I write them|their sins and iniquities will I remember no more|where remission of these is, there is no more offering for sin"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise">Remembered no more</h2>
+    <div class="ledger rise" style="--d:1">
+      <h3>The record (10:17)</h3>
+      <ul>
+        <li style="--k:0"><span>The sins I'm ashamed of</span><span>sins</span></li>
+        <li style="--k:1"><span>The crooked things I did on purpose</span><span>iniquities</span></li>
+        <li style="--k:2"><span>The ones nobody knows about</span><span>sins</span></li>
+        <li style="--k:3"><span>The ones I did after I believed</span><span>sins</span></li>
+      </ul>
+      <div class="total"><span>Still on file</span><b>nothing</b></div>
+      <div class="ledger-stamp">REMEMBERED<small>no more</small></div>
+    </div>
+    <blockquote class="quote step ledger-paid"><p>“I, even I, am he that blotteth out thy transgressions for mine own sake, and will not remember thy sins.”</p><cite>Isaiah 43:25</cite></blockquote>
+    <p class="note step">God knows everything, so this isn't forgetfulness. It's a promise: He will never bring them up against you again. If the Judge has closed the file, don't keep opening it.</p>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="18" data-hl="there is no more offering for sin"></blockquote>
+    <h2 class="rise" style="--d:1">Nothing left to pay</h2>
+    <p class="note rise" style="--d:2">The Holy Ghost Himself witnesses to it, from Jeremiah 31: the new covenant ends with sins forgiven for good. And where sins are forgiven, nobody needs to bring another offering.</p>
+    <blockquote class="quote step"><p>“As far as the east is from the west, so far hath he removed our transgressions from us.”</p><cite>Psalm 103:12</cite></blockquote>
+    <p class="note step">So stop trying to pay. Not with misery, not with overtime at church, not by punishing yourself. Regret can make you humble and careful. It can't pay a bill that's already been paid. Thank Him instead.</p>
+  </div>
+</section>
+
+<!-- ======================= PART TWO: DRAW NEAR ======================= -->
+<section class="slide part">
+  <div class="inner">
+    <p class="part-n rise">Part two</p>
+    <h2 class="rise" style="--d:1">Let us draw near</h2>
+    <p class="range rise" style="--d:2">Verses 19–25</p>
+    <div class="rule"></div>
+    <p class="hook rise" style="--d:4">The veil is open. Come in, hold on, and don't come alone.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="19-22" data-hl="boldness to enter into the holiest by the blood of Jesus|By a new and living way, which he hath consecrated for us, through the veil, that is to say, his flesh|Let us draw near with a true heart in full assurance of faith"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise">A new and living way</h2>
+    <div class="split">
+      <div class="stage">
+        <svg viewBox="0 0 600 300" role="img" aria-label="A heavy curtain hangs in front of a bright light. It tears from the top to the bottom, the two halves part, and a path runs straight in to the light: a new and living way.">
+          <rect class="he10-light" x="150" y="20" width="300" height="240" rx="4"/>
+          <text class="he10-lighttxt" x="300" y="120">the holiest</text>
+          <text class="he10-lighttxt" x="300" y="152" style="font-size:18px">the presence of God</text>
+          <path class="he10-way" pathLength="1" d="M300 296 V200"/>
+          <g class="he10-half l">
+            <rect x="150" y="20" width="150" height="240"/>
+            <path class="he10-thread" d="M175 20 V260 M205 20 V260 M235 20 V260 M265 20 V260"/>
+          </g>
+          <g class="he10-half r">
+            <rect x="300" y="20" width="150" height="240"/>
+            <path class="he10-thread" d="M325 20 V260 M355 20 V260 M385 20 V260 M415 20 V260"/>
+          </g>
+          <path class="he10-tear" pathLength="1" d="M300 20 L292 60 L306 100 L294 140 L307 180 L296 220 L300 260"/>
+          <text class="he10-vlab" x="300" y="12">THE VEIL</text>
+          <text class="he10-waytxt" x="300" y="290">a new and living way</text>
+        </svg>
+      </div>
+      <div>
+        <p class="note rise" style="--d:2">For the high priest it was one day a year, and he went in trembling. For you, the writer says, it's <em>boldness</em>, any day, any hour, <em>by the blood of Jesus</em>.</p>
+        <p class="note step he10-veil-go">The veil was a picture of <em>his flesh</em>. When His body was torn on the cross, the curtain in the temple tore from the top down. The way in was opened from God's side.</p>
+        <p class="note step"><em>New</em>: never there before. <em>Living</em>: not a dead animal's blood, but a living Saviour who walked the way first.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="22" data-hl="having our hearts sprinkled from an evil conscience, and our bodies washed with pure water"></blockquote>
+    <h2 class="rise" style="--d:1">Three “let us”</h2>
+    <ol class="signs">
+      <li class="step now"><b>Let us draw near</b>To God, with a true heart, fully sure He'll have us (10:22).</li>
+      <li class="step now"><b>Let us hold fast</b>What we confess, without wavering, because He is faithful (10:23).</li>
+      <li class="step now"><b>Let us consider one another</b>Think about each other, and stir each other up to love and good works (10:24).</li>
+    </ol>
+    <p class="note step">The priests of old were sprinkled with blood and washed with water before they served. Every believer is now a man made clean inside, <em>an evil conscience</em> sprinkled clean. Many Bible teachers hear baptism in <em>bodies washed</em>: not what saves, but the outward picture of the washing Christ already did.</p>
+    <blockquote class="quote step"><p>“Draw nigh to God, and he will draw nigh to you. Cleanse your hands, ye sinners; and purify your hearts, ye double minded.”</p><cite>James 4:8</cite></blockquote>
+  </div>
+</section>
+
+<section class="slide verse" data-v="23-25" data-hl="Let us hold fast the profession of our faith without wavering|for he is faithful that promised|provoke unto love and to good works|Not forsaking the assembling of ourselves together|exhorting one another"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise">Why this group meets</h2>
+    <div class="split">
+      <div class="stage">
+        <svg viewBox="0 0 600 240" role="img" aria-label="A pile of burning coals glowing together. One coal drifts away from the others and goes cold and gray. Then it is brought back into the pile and glows again.">
+          <g class="he10-pile">
+            <circle class="he10-coal" cx="160" cy="150" r="24"/>
+            <circle class="he10-coal" cx="206" cy="146" r="25"/>
+            <circle class="he10-coal" cx="252" cy="152" r="23"/>
+            <circle class="he10-coal" cx="182" cy="108" r="23"/>
+            <circle class="he10-coal" cx="228" cy="106" r="24"/>
+            <circle class="he10-coal" cx="206" cy="68" r="22"/>
+            <circle class="he10-coal" cx="136" cy="190" r="22"/>
+            <circle class="he10-coal" cx="184" cy="192" r="23"/>
+            <circle class="he10-coal" cx="232" cy="194" r="22"/>
+          </g>
+          <circle class="he10-lone" cx="278" cy="190" r="22"/>
+          <text class="he10-clab" x="200" y="30">together, they keep each other lit</text>
+          <text class="he10-clab cold" x="488" y="150">alone, it goes cold</text>
+        </svg>
+      </div>
+      <div>
+        <p class="note rise" style="--d:2">Pull one coal out of the fire and set it on the hearth. It doesn't go out because it's a bad coal. It goes out because it's alone. Put it back, and it catches again.</p>
+        <p class="note step he10-coal-go">Some had already got into the habit of staying away: <em>as the manner of some is</em>. The writer says the opposite: <em>so much the more</em>, the closer the day of Christ's return gets.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="24" data-hl="consider one another to provoke unto love and to good works"></blockquote>
+    <h2 class="rise" style="--d:1">Provoke each other, the good way</h2>
+    <p class="note rise" style="--d:2">Most of us know how to <em>provoke</em> a man the bad way. Here it means stir him up: to love, to good works. <em>Exhorting</em> means coming alongside with a word that puts courage back in him.</p>
+    <blockquote class="quote step"><p>“Brethren, if a man be overtaken in a fault, ye which are spiritual, restore such an one in the spirit of meekness; considering thyself, lest thou also be tempted. Bear ye one another’s burdens, and so fulfil the law of Christ.”</p><cite>Galatians 6:1–2</cite></blockquote>
+    <p class="note step">The man who skips is usually the man who's struggling, and the enemy likes him best alone. If a brother has gone quiet, call him today. And if you're the one who wants to hide, that's exactly the day to show up.</p>
+  </div>
+</section>
+
+<!-- ======================= PART THREE: DON'T DRAW BACK ======================= -->
+<section class="slide part">
+  <div class="inner">
+    <p class="part-n rise">Part three</p>
+    <h2 class="rise" style="--d:1">Don't draw back</h2>
+    <p class="range rise" style="--d:2">Verses 26–39</p>
+    <div class="rule"></div>
+    <p class="hook rise" style="--d:4">A hard warning for the man who walks away from the only sacrifice, and a strong word for the man who means to keep going.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="26-27" data-hl="if we sin wilfully after that we have received the knowledge of the truth, there remaineth no more sacrifice for sins"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="26" data-hl="there remaineth no more sacrifice for sins"></blockquote>
+    <h2 class="rise" style="--d:1">No other sacrifice</h2>
+    <p class="note rise" style="--d:2">These were Hebrews tempted to go back to the temple. The writer says: if you leave Christ, where will you go?</p>
+    <ul class="nots">
+      <li class="step"><span class="k">the old animal sacrifices</span><span class="why">taken away (10:9); they never took sin away anyway</span></li>
+      <li class="step"><span class="k">your own good works</span><span class="why">dead works (9:14)</span></li>
+      <li class="step"><span class="k">another saviour</span><span class="why">there isn't one</span></li>
+      <li class="step yes"><span class="k">Christ's one sacrifice</span><span class="why">the only one there is, and enough for any sinner who comes</span></li>
+    </ul>
+    <p class="note step">That's what <em>no more sacrifice</em> means. Not that God's patience has a limit for a believer who keeps falling, but that a man who rejects the one sacrifice has nothing left to stand on. Many Bible teachers see here men who sat close to the faith, even went through the motions, but never truly trusted Christ.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="28-29" data-hl="hath trodden under foot the Son of God|counted the blood of the covenant, wherewith he was sanctified, an unholy thing|done despite unto the Spirit of grace"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise">Who is this warning about?</h2>
+    <p class="note rise" style="--d:1">Read it slowly. Look at what this man does: he has <em>trodden under foot the Son of God</em>, counted Christ's blood <em>an unholy thing</em>, and <em>done despite</em> (shown contempt) <em>the Spirit of grace</em>.</p>
+    <div class="columns">
+      <div class="col law rise" style="--d:2">
+        <p class="who">The man it describes</p>
+        <h3>Turns his back on Christ</h3>
+        <p>He has heard the truth plainly, then settles it: he wants nothing to do with Jesus' sacrifice. It isn't one sin. It's walking away from the only Saviour, with contempt.</p>
+      </div>
+      <div class="col grace step">
+        <p class="who">The man it doesn't describe</p>
+        <h3>A believer who stumbled</h3>
+        <p>A man who fell, hates it, and comes back to the cross. He isn't trampling the blood. He's running to it. Every believer sins (1 John 1:8). That isn't what this is.</p>
+      </div>
+    </div>
+    <blockquote class="quote step"><p>“They went out from us, but they were not of us; for if they had been of us, they would no doubt have continued with us: but they went out, that they might be made manifest that they were not all of us.”</p><cite>1 John 2:19</cite></blockquote>
+  </div>
+</section>
+
+<section class="slide verse" data-v="30-31" data-hl="Vengeance belongeth unto me, I will recompense, saith the Lord|It is a fearful thing to fall into the hands of the living God"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise">If you're afraid you've done this</h2>
+    <p class="saying rise" style="--d:1">The man afraid he has done it is <em>not</em> the man described.</p>
+    <p class="note step">The man in verse 29 doesn't lie awake worried about Christ's blood. He despises it. If your heart sinks when you read this, if you want Jesus and hate your sin, that is the Spirit of grace at work in you, not gone from you.</p>
+    <blockquote class="quote step"><p>“And I give unto them eternal life; and they shall never perish, neither shall any man pluck them out of my hand.”</p><cite>John 10:28</cite></blockquote>
+    <p class="note step"><em>A fearful thing to fall into the hands of the living God</em>: for the man who tramples His Son. For the man who has fled to Christ, those same hands are the ones holding him.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="32-34" data-hl="call to remembrance the former days|ye endured a great fight of afflictions|took joyfully the spoiling of your goods|ye have in heaven a better and an enduring substance"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="32" data-hl="call to remembrance the former days"></blockquote>
+    <h2 class="rise" style="--d:1">Remember how far you've come</h2>
+    <ol class="signs">
+      <li class="step"><b>Made a gazingstock</b>A public spectacle, mocked for following Jesus.</li>
+      <li class="step"><b>Stood with the prisoners</b>They visited and helped believers in chains, and were treated the same.</li>
+      <li class="step"><b>Lost their goods</b>Their homes were plundered, and they took it <em>joyfully</em>.</li>
+      <li class="step now"><b>Why?</b>“A better and an enduring substance” in heaven, that no one can take.</li>
+    </ol>
+    <p class="note step">When you're tired, look back. Remember the man you were, the first days after you believed, the things God has already carried you through. The God who brought you this far didn't bring you here to drop you.</p>
+    <blockquote class="quote step"><p>“Being confident of this very thing, that he which hath begun a good work in you will perform it until the day of Jesus Christ:”</p><cite>Philippians 1:6</cite></blockquote>
+  </div>
+</section>
+
+<section class="slide verse" data-v="35-39" data-hl="Cast not away therefore your confidence|ye have need of patience|For yet a little while, and he that shall come will come, and will not tarry|the just shall live by faith|we are not of them who draw back unto perdition; but of them that believe to the saving of the soul"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise">Which kind of men we are</h2>
+    <div class="mirror">
+      <div class="rise" style="--d:2"><span>Draw back</span><span class="arrow">→</span><span class="word">unto perdition</span><small>the man who turns away from Christ for good: ruin</small></div>
+      <div class="step"><span>Believe</span><span class="arrow">→</span><span class="word">to the saving of the soul</span><small>the man who keeps trusting Christ: kept, all the way home</small></div>
+    </div>
+    <p class="note step">Look at the writer's last word: <em>we are not of them</em>. After the hardest warning in the book, he doesn't leave his readers in fear. He puts them, and every true believer, on the side of faith.</p>
+    <blockquote class="quote step"><p>“But, beloved, we are persuaded better things of you, and things that accompany salvation, though we thus speak.”</p><cite>Hebrews 6:9</cite></blockquote>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="35" data-hl="Cast not away therefore your confidence"></blockquote>
+    <h2 class="rise" style="--d:1">Yet a little while</h2>
+    <p class="note rise" style="--d:2">Don't throw your confidence away like a soldier tossing his shield. You need <em>patience</em>, staying power, because the promise comes at the end of the road, not the start.</p>
+    <blockquote class="quote step"><p>“For the vision is yet for an appointed time, but at the end it shall speak, and not lie: though it tarry, wait for it; because it will surely come, it will not tarry.”</p><cite>Habakkuk 2:3</cite></blockquote>
+    <p class="note step"><em>The just shall live by faith</em>: not by feelings, not by a perfect week. By trusting Him one day at a time. <em>Yet a little while</em>, and He will come.</p>
+    <p class="note step">For today: draw near (pray before work), hold fast (say out loud what you believe), and consider one brother (call or text him). Then be back here tomorrow.</p>
+  </div>
+</section>
+
+<!-- ======================= CLOSING ======================= -->
+<section class="slide remember">
+  <div class="inner">
+    <h2 class="rise">Points to remember</h2>
+    <ol class="seeds">
+      <li class="step"><span class="topic">A shadow</span><span class="seed-q">“It is not possible that the blood of bulls and of goats should take away sins” <cite>10:4</cite></span><span class="take">The law was a shadow. Its sacrifices only reminded men of sin, year after year. Christ is the real thing.</span></li>
+      <li class="step"><span class="topic">He sat down</span><span class="seed-q">“After he had offered one sacrifice for sins for ever, sat down” <cite>10:12</cite></span><span class="take">The priests stood because their work was never done. Christ sat down: it is finished.</span></li>
+      <li class="step"><span class="topic">Forgotten</span><span class="seed-q">“Their sins and iniquities will I remember no more” <cite>10:17</cite></span><span class="take">God has promised never to bring them up again. Nothing is left to pay.</span></li>
+      <li class="step"><span class="topic">Draw near</span><span class="seed-q">“Boldness to enter into the holiest by the blood of Jesus” <cite>10:19</cite></span><span class="take">The veil is open. Come to God any day, sure He'll have you, because of the blood.</span></li>
+      <li class="step"><span class="topic">Together</span><span class="seed-q">“Not forsaking the assembling of ourselves together” <cite>10:25</cite></span><span class="take">A coal alone goes cold. We meet to stir each other up, more and more as the day comes.</span></li>
+      <li class="step"><span class="topic">Hold on</span><span class="seed-q">“We are not of them who draw back unto perdition” <cite>10:39</cite></span><span class="take">The warning is for the man who tramples Christ's blood. Believers cast not away their confidence: they believe to the saving of the soul.</span></li>
+    </ol>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 1 of 6</p>
+      <span class="topic">A shadow</span>
+      <h2>Why could the old sacrifices never take away sins?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="1"></blockquote>
+      <blockquote class="quote step" data-q="3-4"></blockquote>
+      <blockquote class="quote step"><p>“Which are a shadow of things to come; but the body is of Christ.”</p><cite>Colossians 2:17</cite></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>Because the law was only a shadow of what was coming, not the real thing. Animal blood could never take away sins, so the sacrifices had to be repeated, and every year they reminded the people of their sins all over again.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 2 of 6</p>
+      <span class="topic">He sat down</span>
+      <h2>What did Christ do after He offered one sacrifice for sins, and why does it matter?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="11-12"></blockquote>
+      <blockquote class="quote step" data-q="14"></blockquote>
+      <blockquote class="quote step"><p>“When Jesus therefore had received the vinegar, he said, It is finished: and he bowed his head, and gave up the ghost.”</p><cite>John 19:30</cite></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>He sat down on the right hand of God. The priests always stood, because their work was never done. Christ sat because His one offering finished it: it has perfected for ever those who are sanctified.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 3 of 6</p>
+      <span class="topic">Forgotten</span>
+      <h2>What does God promise to do with our sins and iniquities?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="17"></blockquote>
+      <blockquote class="quote step" data-q="18"></blockquote>
+      <blockquote class="quote step"><p>“I, even I, am he that blotteth out thy transgressions for mine own sake, and will not remember thy sins.”</p><cite>Isaiah 43:25</cite></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>To remember them no more: never to bring them up against us again. Where sins are forgiven like that, no more offering is needed. There is nothing left to pay.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 4 of 6</p>
+      <span class="topic">Draw near</span>
+      <h2>How can a man come near to God with boldness?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="19-20"></blockquote>
+      <blockquote class="quote step" data-q="22"></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>By the blood of Jesus, through the new and living way He opened when His flesh was torn like the veil. We have a great High Priest, so we can come with a true heart, in full assurance of faith, with a conscience sprinkled clean.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 5 of 6</p>
+      <span class="topic">Together</span>
+      <h2>Why must believers not forsake the assembling of themselves together?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="25"></blockquote>
+      <blockquote class="quote step"><p>“Two are better than one; because they have a good reward for their labour. For if they fall, the one will lift up his fellow: but woe to him that is alone when he falleth; for he hath not another to help him up.”</p><cite>Ecclesiastes 4:9–10</cite></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>Because we need each other to keep going. Together we stir one another up to love and good works and put courage back into each other, and the closer the day of Christ's return, the more we need it. Alone, a man goes cold.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 6 of 6</p>
+      <span class="topic">Hold on</span>
+      <h2>Who is the warning of verses 26–31 about, and what are believers told to do?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="29"></blockquote>
+      <blockquote class="quote step" data-q="39"></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>A man who knew the truth and then turned his back on Christ for good, trampling His Son and despising His blood. For him no other sacrifice remains. Believers are told to keep their confidence and keep believing: we are not of them who draw back.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide prayer">
+  <div class="inner">
+    <div class="emblem rise"></div>
+    <h2 class="rise" style="--d:1">Prayer requests</h2>
+    <p class="ask-line rise" style="--d:2">What can we pray about for you today?</p>
+    <blockquote class="quote rise" style="--d:4"><p>“Casting all your care upon him; for he careth for you.”</p><cite>1 Peter 5:7</cite></blockquote>
+  </div>
+</section>
+
+</main>
+
+<script>
+// King James Version, Hebrews chapter 10
+const V = {
+  1: "For the law having a shadow of good things to come, and not the very image of the things, can never with those sacrifices which they offered year by year continually make the comers thereunto perfect.",
+  2: "For then would they not have ceased to be offered? because that the worshippers once purged should have had no more conscience of sins.",
+  3: "But in those sacrifices there is a remembrance again made of sins every year.",
+  4: "For it is not possible that the blood of bulls and of goats should take away sins.",
+  5: "Wherefore when he cometh into the world, he saith, Sacrifice and offering thou wouldest not, but a body hast thou prepared me:",
+  6: "In burnt offerings and sacrifices for sin thou hast had no pleasure.",
+  7: "Then said I, Lo, I come (in the volume of the book it is written of me,) to do thy will, O God.",
+  8: "Above when he said, Sacrifice and offering and burnt offerings and offering for sin thou wouldest not, neither hadst pleasure therein; which are offered by the law;",
+  9: "Then said he, Lo, I come to do thy will, O God. He taketh away the first, that he may establish the second.",
+  10: "By the which will we are sanctified through the offering of the body of Jesus Christ once for all.",
+  11: "And every priest standeth daily ministering and offering oftentimes the same sacrifices, which can never take away sins:",
+  12: "But this man, after he had offered one sacrifice for sins for ever, sat down on the right hand of God;",
+  13: "From henceforth expecting till his enemies be made his footstool.",
+  14: "For by one offering he hath perfected for ever them that are sanctified.",
+  15: "Whereof the Holy Ghost also is a witness to us: for after that he had said before,",
+  16: "This is the covenant that I will make with them after those days, saith the Lord, I will put my laws into their hearts, and in their minds will I write them;",
+  17: "And their sins and iniquities will I remember no more.",
+  18: "Now where remission of these is, there is no more offering for sin.",
+  19: "Having therefore, brethren, boldness to enter into the holiest by the blood of Jesus,",
+  20: "By a new and living way, which he hath consecrated for us, through the veil, that is to say, his flesh;",
+  21: "And having an high priest over the house of God;",
+  22: "Let us draw near with a true heart in full assurance of faith, having our hearts sprinkled from an evil conscience, and our bodies washed with pure water.",
+  23: "Let us hold fast the profession of our faith without wavering; (for he is faithful that promised;)",
+  24: "And let us consider one another to provoke unto love and to good works:",
+  25: "Not forsaking the assembling of ourselves together, as the manner of some is; but exhorting one another: and so much the more, as ye see the day approaching.",
+  26: "For if we sin wilfully after that we have received the knowledge of the truth, there remaineth no more sacrifice for sins,",
+  27: "But a certain fearful looking for of judgment and fiery indignation, which shall devour the adversaries.",
+  28: "He that despised Moses’ law died without mercy under two or three witnesses:",
+  29: "Of how much sorer punishment, suppose ye, shall he be thought worthy, who hath trodden under foot the Son of God, and hath counted the blood of the covenant, wherewith he was sanctified, an unholy thing, and hath done despite unto the Spirit of grace?",
+  30: "For we know him that hath said, Vengeance belongeth unto me, I will recompense, saith the Lord. And again, The Lord shall judge his people.",
+  31: "It is a fearful thing to fall into the hands of the living God.",
+  32: "But call to remembrance the former days, in which, after ye were illuminated, ye endured a great fight of afflictions;",
+  33: "Partly, whilst ye were made a gazingstock both by reproaches and afflictions; and partly, whilst ye became companions of them that were so used.",
+  34: "For ye had compassion of me in my bonds, and took joyfully the spoiling of your goods, knowing in yourselves that ye have in heaven a better and an enduring substance.",
+  35: "Cast not away therefore your confidence, which hath great recompence of reward.",
+  36: "For ye have need of patience, that, after ye have done the will of God, ye might receive the promise.",
+  37: "For yet a little while, and he that shall come will come, and will not tarry.",
+  38: "Now the just shall live by faith: but if any man draw back, my soul shall have no pleasure in him.",
+  39: "But we are not of them who draw back unto perdition; but of them that believe to the saving of the soul."
+};
+const BOOK = "Hebrews 10";
+</script>
+<script src="../assets/deck.js"></script>
+</body>
+</html>
