@@ -1557,7 +1557,13 @@ window.GLOSSARY = [
     [ 14 ] ],
    [
     "1 John", 5,
-    [ 7 ] ] ]
+    [ 7 ] ],
+   [
+    "2 John", 1,
+    [ 3, 4, 9 ] ],
+   [
+    "Jude", 1,
+    [ 1 ] ] ]
  },
  {
   "id": "holy-spirit",
@@ -1827,7 +1833,10 @@ window.GLOSSARY = [
     [ 2, 13 ] ],
    [
     "1 John", 5,
-    [ 6, 7, 8 ] ] ]
+    [ 6, 7, 8 ] ],
+   [
+    "Jude", 1,
+    [ 19, 20 ] ] ]
  },
  {
   "id": "disciples",
@@ -12015,7 +12024,10 @@ window.GLOSSARY = [
     [ 7 ] ],
    [
     "1 John", 4,
-    [ 17 ] ] ]
+    [ 17 ] ],
+   [
+    "Jude", 1,
+    [ 6, 15 ] ] ]
  },
  {
   "id": "scriptures",
@@ -15111,7 +15123,10 @@ window.GLOSSARY = [
     [ 15 ] ],
    [
     "1 John", 5,
-    [ 1, 18 ] ] ]
+    [ 1, 18 ] ],
+   [
+    "2 John", 1,
+    [ 9 ] ] ]
  },
  {
   "id": "friend-of-the-bridegroom",
@@ -15822,7 +15837,10 @@ window.GLOSSARY = [
     [ 22 ] ],
    [
     "2 Peter", 2,
-    [ 4, 11 ] ] ]
+    [ 4, 11 ] ],
+   [
+    "Jude", 1,
+    [ 6 ] ] ]
  },
  {
   "id": "sepulchre",
@@ -16083,7 +16101,16 @@ window.GLOSSARY = [
     [ 2 ] ],
    [
     "2 Peter", 3,
-    [ 14 ] ] ]
+    [ 14 ] ],
+   [
+    "2 John", 1,
+    [ 3 ] ],
+   [
+    "3 John", 1,
+    [ 14 ] ],
+   [
+    "Jude", 1,
+    [ 2 ] ] ]
  },
  {
   "id": "remit",
@@ -16731,7 +16758,10 @@ window.GLOSSARY = [
     [ 14 ] ],
    [
     "1 John", 5,
-    [ 9 ] ] ]
+    [ 9 ] ],
+   [
+    "3 John", 1,
+    [ 3 ] ] ]
  },
  {
   "id": "lazarus",
@@ -17895,7 +17925,10 @@ window.GLOSSARY = [
     [ 3 ] ],
    [
     "1 Peter", 1,
-    [ 23 ] ] ]
+    [ 23 ] ],
+   [
+    "2 John", 1,
+    [ 9 ] ] ]
  },
  {
   "id": "purge",
@@ -22758,7 +22791,10 @@ window.GLOSSARY = [
     [ 23 ] ],
    [
     "Luke", 22,
-    [ 22 ] ] ]
+    [ 22 ] ],
+   [
+    "Jude", 1,
+    [ 11 ] ] ]
  },
  {
   "id": "thick-clay",
@@ -25959,7 +25995,10 @@ window.GLOSSARY = [
   "refs": [
    [
     "Zechariah", 14,
-    [ 5 ] ] ]
+    [ 5 ] ],
+   [
+    "Jude", 1,
+    [ 14 ] ] ]
  },
  {
   "id": "king-over-all-the-earth",
@@ -27399,7 +27438,10 @@ window.GLOSSARY = [
     [ 34 ] ],
    [
     "1 Peter", 3,
-    [ 8 ] ] ]
+    [ 8 ] ],
+   [
+    "Jude", 1,
+    [ 22 ] ] ]
  },
  {
   "id": "leprosy",
@@ -27747,7 +27789,10 @@ window.GLOSSARY = [
     [ 3 ] ],
    [
     "James", 4,
-    [ 8 ] ] ]
+    [ 8 ] ],
+   [
+    "Jude", 1,
+    [ 15 ] ] ]
  },
  {
   "id": "physician",
@@ -28842,7 +28887,10 @@ window.GLOSSARY = [
     [ 1 ] ],
    [
     "2 Peter", 1,
-    [ 1 ] ] ]
+    [ 1 ] ],
+   [
+    "Jude", 1,
+    [ 17 ] ] ]
  },
  {
   "id": "bartholomew",
@@ -29016,7 +29064,10 @@ window.GLOSSARY = [
     [ 10, 12, 15 ] ],
    [
     "Hebrews", 13,
-    [ 24 ] ] ]
+    [ 24 ] ],
+   [
+    "3 John", 1,
+    [ 14 ] ] ]
  },
  {
   "id": "shake-off-the-dust",
@@ -29214,7 +29265,10 @@ window.GLOSSARY = [
     [ 9 ] ],
    [
     "1 John", 4,
-    [ 2, 3, 15 ] ] ]
+    [ 2, 3, 15 ] ],
+   [
+    "2 John", 1,
+    [ 7 ] ] ]
  },
  {
   "id": "not-peace-but-a-sword",
@@ -29310,7 +29364,13 @@ window.GLOSSARY = [
     [ 35 ] ],
    [
     "Hebrews", 11,
-    [ 6, 26 ] ] ]
+    [ 6, 26 ] ],
+   [
+    "2 John", 1,
+    [ 8 ] ],
+   [
+    "Jude", 1,
+    [ 11 ] ] ]
  },
  {
   "id": "little-ones",
@@ -30753,7 +30813,13 @@ window.GLOSSARY = [
     [ 18 ] ],
    [
     "1 John", 5,
-    [ 21 ] ] ]
+    [ 21 ] ],
+   [
+    "2 John", 1,
+    [ 13 ] ],
+   [
+    "Jude", 1,
+    [ 25 ] ] ]
  },
  {
   "id": "treasure-in-heaven",
@@ -31479,7 +31545,10 @@ window.GLOSSARY = [
     [ 1 ] ],
    [
     "Hebrews", 8,
-    [ 3 ] ] ]
+    [ 3 ] ],
+   [
+    "Jude", 1,
+    [ 4 ] ] ]
  },
  {
   "id": "surnamed",
@@ -33318,7 +33387,10 @@ window.GLOSSARY = [
     [ 10 ] ],
    [
     "Hebrews", 12,
-    [ 15 ] ] ]
+    [ 15 ] ],
+   [
+    "Jude", 1,
+    [ 8 ] ] ]
  },
  {
   "id": "blind-leaders",
@@ -36219,7 +36291,10 @@ window.GLOSSARY = [
     [ 2 ] ],
    [
     "1 Peter", 2,
-    [ 6 ] ] ]
+    [ 6 ] ],
+   [
+    "2 John", 1,
+    [ 1, 13 ] ] ]
  },
  {
   "id": "false-christs",
@@ -40059,7 +40134,10 @@ window.GLOSSARY = [
     [ 19 ] ],
    [
     "Galatians", 2,
-    [ 9, 12 ] ] ]
+    [ 9, 12 ] ],
+   [
+    "Jude", 1,
+    [ 1 ] ] ]
  },
  {
   "id": "herod-agrippa",
@@ -41085,7 +41163,10 @@ window.GLOSSARY = [
     [ 10 ] ],
    [
     "Hebrews", 13,
-    [ 24 ] ] ]
+    [ 24 ] ],
+   [
+    "Jude", 1,
+    [ 3 ] ] ]
  },
  {
   "id": "upper-chamber",
@@ -42075,7 +42156,10 @@ window.GLOSSARY = [
     [ 29 ] ],
    [
     "Acts", 17,
-    [ 17 ] ] ]
+    [ 17 ] ],
+   [
+    "Jude", 1,
+    [ 9 ] ] ]
  },
  {
   "id": "godhead",
@@ -43974,7 +44058,10 @@ window.GLOSSARY = [
     [ 5, 6 ] ],
    [
     "2 Peter", 3,
-    [ 7 ] ] ]
+    [ 7 ] ],
+   [
+    "Jude", 1,
+    [ 4, 15, 18 ] ] ]
  },
  {
   "id": "peradventure",
@@ -44208,7 +44295,10 @@ window.GLOSSARY = [
     [ 1 ] ],
    [
     "Ephesians", 1,
-    [ 21 ] ] ]
+    [ 21 ] ],
+   [
+    "Jude", 1,
+    [ 8, 25 ] ] ]
  },
  {
   "id": "reckon",
@@ -45024,7 +45114,10 @@ window.GLOSSARY = [
     [ 9 ] ],
    [
     "2 Peter", 1,
-    [ 10 ] ] ]
+    [ 10 ] ],
+   [
+    "3 John", 1,
+    [ 3, 5, 10 ] ] ]
  },
  {
   "id": "captain-of-the-guard",
@@ -46047,7 +46140,10 @@ window.GLOSSARY = [
     [ 9, 21 ] ],
    [
     "1 Peter", 3,
-    [ 9 ] ] ]
+    [ 9 ] ],
+   [
+    "Jude", 1,
+    [ 1 ] ] ]
  },
  {
   "id": "foreknow",
@@ -50694,7 +50790,10 @@ window.GLOSSARY = [
   "refs": [
    [
     "Colossians", 1,
-    [ 18 ] ] ]
+    [ 18 ] ],
+   [
+    "3 John", 1,
+    [ 9 ] ] ]
  },
  {
   "id": "fulness",
@@ -55218,7 +55317,10 @@ window.GLOSSARY = [
   "refs": [
    [
     "James", 3,
-    [ 15 ] ] ]
+    [ 15 ] ],
+   [
+    "Jude", 1,
+    [ 19 ] ] ]
  },
  {
   "id": "banquetings",
@@ -55968,6 +56070,9 @@ window.GLOSSARY = [
   "refs": [
    [
     "1 Peter", 3,
+    [ 9 ] ],
+   [
+    "Jude", 1,
     [ 9 ] ] ]
  },
  {
@@ -56211,7 +56316,10 @@ window.GLOSSARY = [
   "refs": [
    [
     "2 Peter", 2,
-    [ 18 ] ] ]
+    [ 18 ] ],
+   [
+    "Jude", 1,
+    [ 16 ] ] ]
  },
  {
   "id": "false-liberty",
