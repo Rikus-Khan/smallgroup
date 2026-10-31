@@ -15245,5 +15245,53 @@ window.STUDIES = [
       },
       "big": "Christ's one sacrifice finished the work, so He sat down. Believers can come to God boldly, need each other to keep going, and are not of them who draw back."
     }
+  },
+  {
+    "id": "hebrews-13",
+    "type": "chapter",
+    "book": "Hebrews",
+    "ch": 13,
+    "date": "2026-10-31",
+    "title": "Hebrews 13",
+    "sub": "Faith with its work boots on",
+    "about": "The last chapter: love that keeps going, prisoners remembered, marriage honoured, and a promise for every man who has been left: “I will never leave thee, nor forsake thee.”",
+    "tags": [
+      "Brotherly love",
+      "Prison",
+      "Marriage",
+      "Contentment",
+      "God never leaves",
+      "Restoration"
+    ],
+    "url": "studies/hebrews-13.html",
+    "overview": {
+      "where": "Written to Jewish believers under pressure; greetings come from “they of Italy”",
+      "when": "About AD 64 to 68, before Rome destroyed the temple",
+      "people": [
+        "jesus",
+        "rulers-over-you",
+        "timothy",
+        "great-shepherd",
+        "saints-believers",
+        "angels"
+      ],
+      "places": [
+        "without-the-camp",
+        "continuing-city",
+        "italy"
+      ],
+      "story": [
+        "Let brotherly love continue. Welcome strangers, remember prisoners as if bound with them, honour marriage, and be content, for God has said, “I will never leave thee, nor forsake thee” (1–6).",
+        "Remember the leaders who taught you and follow their faith. Jesus Christ is the same yesterday, to day, and for ever; let grace, not food rules, steady your heart (7–10).",
+        "The sin offering was burned outside the camp, and Jesus suffered outside the gate. So go out to Him, bearing His reproach, for here we have no continuing city (11–14).",
+        "Offer the sacrifice of praise, do good and share. Obey the leaders who watch for your souls, and pray for the writer (15–19).",
+        "The God of peace, who raised the great Shepherd, mends His people to do His will. Timothy is set free, Italy sends greetings, and “Grace be with you all” (20–25)."
+      ],
+      "key": {
+        "ref": "Hebrews 13:5",
+        "text": "Let your conversation be without covetousness; and be content with such things as ye have: for he hath said, I will never leave thee, nor forsake thee."
+      },
+      "big": "Faith in a better Saviour shows up in ordinary life: love, purity, contentment and praise. The man who has been left, or who did the leaving, has a Lord who will never leave him, and who is the same today as at the cross."
+    }
   }
 ];

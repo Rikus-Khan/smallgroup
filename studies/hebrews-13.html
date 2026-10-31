@@ -1,0 +1,774 @@
+<!doctype html>
+<html lang="en" data-theme="slate">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Hebrews 13</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="../assets/fonts.css">
+<link rel="stylesheet" href="../assets/deck.css">
+<link rel="stylesheet" href="../assets/themes.css">
+<style>
+/* he13-where: where we are in Hebrews. A heading line (p.he13-better) and six cards (div, --k), each with its chapters (p > i; read ones
+   .done, this one .here), what Jesus is better than (small + b), and a line (cite). The card we're in is .now; the last (.so) is "so hold on". */
+.he13-better { margin: .2em 0 .5em; font: 700 clamp(.82rem, .74rem + .35vw, 1.05rem) var(--sans); letter-spacing: .12em; text-transform: uppercase; color: var(--ink-soft); }
+.he13-better b { color: var(--accent-hot); font-size: 1.25em; letter-spacing: .16em; }
+.he13-where { display: grid; grid-template-columns: repeat(6, 1fr); gap: 10px; margin: .2em 0 1em; }
+.he13-where > div { --c: var(--accent); padding: .5em .65em .6em; border-top: 6px solid var(--c); border-radius: 0 0 10px 10px;
+  background: color-mix(in srgb, var(--surface) 70%, transparent); opacity: 0; transform: translateY(10px);
+  transition: opacity .6s ease, transform .6s ease; transition-delay: calc(var(--k, 0) * 300ms + 300ms); }
+.slide.active .he13-where > div { opacity: 1; transform: none; }
+.he13-where > div.now { background: color-mix(in srgb, var(--accent) 15%, transparent); box-shadow: inset 0 0 0 2px var(--accent); }
+.he13-where > div.so { --c: var(--accent-hot); border-top-style: double; }
+.he13-where p { display: flex; flex-wrap: wrap; gap: 4px; margin: 0 0 .4em; }
+.he13-where i { min-width: 1.9em; padding: .18em .25em; text-align: center; border-radius: 6px; border: 1.5px solid var(--line-strong);
+  font: 700 clamp(.76rem, .7rem + .3vw, 1rem) var(--sans); font-style: normal; color: var(--ink); background: color-mix(in srgb, var(--accent) 14%, transparent); }
+.he13-where i.here { background: var(--accent); border-color: var(--accent); color: var(--on-accent); }
+.slide.active .he13-where i.here { animation: he13-here 2.4s ease-in-out 2.2s infinite; }
+@keyframes he13-here { 50% { box-shadow: 0 0 0 6px color-mix(in srgb, var(--accent) 28%, transparent); } }
+.he13-where small { display: block; font: 700 clamp(.66rem, .62rem + .2vw, .82rem) var(--sans); letter-spacing: .08em; text-transform: uppercase; color: var(--ink-soft); }
+.he13-where b { display: block; margin: .1em 0 .3em; font: 600 clamp(1rem, .84rem + .6vw, 1.4rem)/1.1 var(--serif); color: var(--ink); }
+.he13-where cite { display: block; font-style: normal; font-size: clamp(.7rem, .66rem + .2vw, .88rem); line-height: 1.3; color: var(--ink-soft); }
+.he13-where q { display: block; margin-top: .35em; font: italic clamp(.74rem, .68rem + .25vw, .95rem)/1.3 var(--serif); color: var(--ink); quotes: "\201C" "\201D"; }
+@media (max-width: 760px) { .he13-where { grid-template-columns: repeat(3, 1fr); gap: 6px; } }
+@media (max-width: 480px) { .he13-where { grid-template-columns: repeat(2, 1fr); } }
+
+/* he13-cell: "as bound with them". A prisoner behind bars, and a man outside; on a step (.he13-in) the man outside is inside with him. */
+.he13-cell { display: block; width: 100%; max-height: 30vh; margin: .2em 0 .6em; overflow: visible; }
+.he13-cell .room { fill: var(--surface-2); stroke: var(--line-strong); stroke-width: 3; }
+.he13-cell .bar { stroke: var(--ink); stroke-width: 6; stroke-linecap: round; }
+.he13-cell .cross-bar { stroke: var(--ink); stroke-width: 6; }
+.he13-cell .bench { fill: var(--line-strong); }
+.he13-cell .held { fill: var(--ink-soft); }
+.he13-cell .you { fill: var(--accent); transition: transform 1.6s ease-in-out; }
+.slide:has(.he13-in.on) .he13-cell .you { transform: translateX(212px); }
+.he13-cell text { font: 600 19px var(--sans); fill: var(--ink-soft); }
+.he13-cell .you text { fill: var(--accent); font-weight: 700; }
+.he13-cell .said { font: italic 600 26px var(--serif); fill: var(--accent-hot); opacity: 0; transition: opacity .8s ease 1.4s; }
+.slide:has(.he13-in.on) .he13-cell .said { opacity: 1; }
+
+/* he13-never: the promise for a man who has been left and has left others. Six people around a man; on steps the ones who left him
+   walk off (.he13-g1), then the ones he left (.he13-g2); then One stands beside him who never leaves (.he13-g3). */
+.he13-never { display: block; width: 100%; max-height: 34vh; margin: .1em 0 .5em; overflow: visible; }
+.he13-never .ground { stroke: var(--line-strong); stroke-width: 3; stroke-linecap: round; }
+.he13-never .who { fill: var(--ink-soft); }
+.he13-never .lbl { font: 600 16px var(--sans); fill: var(--ink-soft); }
+.he13-never .head { font: 700 15px var(--sans); letter-spacing: .1em; text-transform: uppercase; fill: var(--ink-soft); }
+.he13-never .me { fill: var(--ink); }
+.he13-never .me-l { font: 700 19px var(--sans); fill: var(--ink); }
+.he13-never .gone-l, .he13-never .gone-r { transition: transform 1.8s ease-in-out, opacity 1.8s ease-in-out; }
+.slide:has(.he13-g1.on) .he13-never .gone-l { transform: translateX(-70px); opacity: .14; }
+.slide:has(.he13-g2.on) .he13-never .gone-r { transform: translateX(70px); opacity: .14; }
+.he13-never .stay { opacity: 0; transition: opacity 1.4s ease .3s; }
+.slide:has(.he13-g3.on) .he13-never .stay { opacity: 1; }
+.he13-never .halo { fill: color-mix(in srgb, var(--glow) 40%, transparent); transform-box: fill-box; transform-origin: center; }
+.slide:has(.he13-g3.on) .he13-never .halo { animation: he13-halo 3.4s ease-in-out 1.6s infinite; }
+@keyframes he13-halo { 50% { transform: scale(1.1); opacity: .6; } }
+.he13-never .lord { fill: var(--glow); stroke: var(--accent-hot); stroke-width: 3; }
+.he13-never .vow { font: italic 700 25px var(--serif); fill: var(--accent-hot); }
+
+/* he13-nos: the five "no" words of 13:5 in the Greek, lighting up one by one (--k) when the slide opens */
+.he13-nos { display: flex; flex-wrap: wrap; align-items: baseline; gap: .35em .45em; margin: .3em 0 .7em; font: 600 clamp(1.05rem, .9rem + .7vw, 1.6rem)/1.3 var(--serif); color: var(--ink-soft); }
+.he13-nos b { padding: .05em .45em .12em; border-radius: 8px; border: 2px solid var(--line-strong); color: var(--ink-soft); font-weight: 700;
+  transition: background .5s ease, color .5s ease, border-color .5s ease; transition-delay: calc(var(--k, 0) * 450ms + 600ms); }
+.slide.active .he13-nos b { background: var(--accent); border-color: var(--accent); color: var(--on-accent); }
+
+/* he13-same: "the same yesterday, and to day, and for ever". A time line; everything else rises and falls along it (.wave, drawn on open);
+   on a step (.he13-same-go) one straight line is drawn above it all and stays level: Jesus Christ. */
+.he13-same { display: block; width: 100%; max-height: 40vh; margin: .2em 0 .5em; overflow: visible; }
+.he13-same .axis { fill: none; stroke: var(--line-strong); stroke-width: 3; stroke-linecap: round; }
+.he13-same .tick { stroke: var(--line-strong); stroke-width: 3; }
+.he13-same .era { font: 700 22px var(--sans); letter-spacing: .14em; text-transform: uppercase; fill: var(--ink); }
+.he13-same .era-s { font: italic 16px var(--serif); fill: var(--ink-soft); }
+.he13-same .wave { fill: none; stroke: var(--ink-soft); stroke-width: 4; stroke-linecap: round; stroke-dasharray: 1; stroke-dashoffset: 1; transition: stroke-dashoffset 3s ease .5s; }
+.slide.active .he13-same .wave { stroke-dashoffset: 0; }
+.he13-same .pt circle { fill: var(--ink-soft); }
+.he13-same .pt text { font: 15px var(--sans); fill: var(--ink-soft); }
+.he13-same .pt { opacity: 0; transition: opacity .6s ease; transition-delay: calc(var(--k, 0) * 380ms + 1000ms); }
+.slide.active .he13-same .pt { opacity: 1; }
+.he13-same .beam-glow { fill: none; stroke: color-mix(in srgb, var(--glow) 45%, transparent); stroke-width: 18; stroke-linecap: round; stroke-dasharray: 1; stroke-dashoffset: 1; transition: stroke-dashoffset 2.4s ease; }
+.he13-same .beam { fill: none; stroke: var(--accent); stroke-width: 7; stroke-linecap: round; stroke-dasharray: 1; stroke-dashoffset: 1; transition: stroke-dashoffset 2.4s ease; }
+.slide:has(.he13-same-go.on) .he13-same .beam, .slide:has(.he13-same-go.on) .he13-same .beam-glow { stroke-dashoffset: 0; }
+.he13-same .beam-t { font: 700 23px var(--serif); fill: var(--accent-hot); opacity: 0; transition: opacity .8s ease 1.6s; }
+.slide:has(.he13-same-go.on) .he13-same .beam-t { opacity: 1; }
+.he13-same .now-pin { fill: var(--accent-hot); }
+.slide.active .he13-same .now-ring { animation: he13-ping 2.4s ease-out 2.4s infinite; }
+.he13-same .now-ring { fill: none; stroke: var(--accent-hot); stroke-width: 3; transform-box: fill-box; transform-origin: center; opacity: 0; }
+@keyframes he13-ping { 0% { opacity: .9; transform: scale(.6); } 100% { opacity: 0; transform: scale(2.2); } }
+
+/* he13-camp: a plan of "without the camp". Left, the camp in the wilderness: the sin offering carried out past the edge and burned
+   (drawn on open). Right, Jerusalem: Jesus led out the gate to Golgotha (.he13-c1), then "us", going out to Him (.he13-c2). */
+.he13-camp { display: block; width: 100%; max-height: 36vh; margin: .1em 0 .5em; overflow: visible; }
+.he13-camp .ttl { font: 700 17px var(--sans); letter-spacing: .1em; text-transform: uppercase; fill: var(--ink-soft); }
+.he13-camp .edge { fill: color-mix(in srgb, var(--surface) 70%, transparent); stroke: var(--ink-soft); stroke-width: 3; stroke-dasharray: 10 8; }
+.he13-camp .tent { fill: color-mix(in srgb, var(--leather-light) 60%, transparent); stroke: var(--leather); stroke-width: 2; stroke-linejoin: round; }
+.he13-camp .court { fill: color-mix(in srgb, var(--surface-2) 80%, transparent); stroke: var(--line-strong); stroke-width: 2.5; }
+.he13-camp .holy { fill: color-mix(in srgb, var(--accent) 35%, var(--surface-2)); stroke: var(--accent); stroke-width: 2.5; }
+.he13-camp .altar { fill: var(--leather); }
+.he13-camp .wall { fill: color-mix(in srgb, var(--surface) 70%, transparent); stroke: var(--ink); stroke-width: 7; stroke-linejoin: round; stroke-linecap: round; }
+.he13-camp .wall-in { fill: color-mix(in srgb, var(--surface) 70%, transparent); stroke: none; }
+.he13-camp .post { fill: var(--ink); }
+.he13-camp .hill { fill: color-mix(in srgb, var(--leather-light) 55%, transparent); stroke: var(--leather); stroke-width: 2.5; }
+.he13-camp .rood { stroke: var(--ink); stroke-width: 6; stroke-linecap: round; }
+.he13-camp .fire { fill: var(--danger); }
+.he13-camp .fire-in { fill: var(--accent-hot); }
+.he13-camp .sm { font: 15px var(--sans); fill: var(--ink-soft); }
+.he13-camp .md { font: 600 17px var(--sans); fill: var(--ink); }
+.he13-camp .way { fill: none; stroke-width: 5; stroke-linecap: round; stroke-linejoin: round; stroke-dasharray: 1; stroke-dashoffset: 1; }
+.he13-camp .way.w0 { stroke: var(--danger); transition: stroke-dashoffset 2.2s ease 1s; }
+.slide.active .he13-camp .way.w0 { stroke-dashoffset: 0; }
+.he13-camp .way.w1 { stroke: var(--accent); stroke-width: 6; transition: stroke-dashoffset 2.2s ease; }
+.slide:has(.he13-c1.on) .he13-camp .way.w1 { stroke-dashoffset: 0; }
+.he13-camp .way.w2 { stroke: var(--accent-hot); stroke-width: 5; transition: stroke-dashoffset 2.2s ease; }
+.slide:has(.he13-c2.on) .he13-camp .way.w2 { stroke-dashoffset: 0; }
+.he13-camp .t1, .he13-camp .t2 { opacity: 0; transition: opacity .7s ease 1.6s; }
+.slide:has(.he13-c1.on) .he13-camp .t1, .slide:has(.he13-c2.on) .he13-camp .t2 { opacity: 1; }
+.he13-camp .t1 { fill: var(--accent); font-weight: 700; }
+.he13-camp .t2 { fill: var(--accent-hot); font-weight: 700; }
+.he13-camp .us { fill: var(--accent-hot); }
+
+/* he13-net: "make you perfect", the word for mending a torn net (Matthew 4:21). A net with a hole torn in it; on a step (.he13-mend)
+   new cords are drawn across the hole until it is whole. */
+.he13-net { display: block; width: 100%; max-height: 40vh; margin: 0 auto; overflow: visible; }
+.he13-net .mesh { fill: none; stroke: var(--ink-soft); stroke-width: 3; }
+.he13-net .knot { fill: var(--ink-soft); }
+.he13-net .rim { fill: none; stroke: var(--leather); stroke-width: 7; stroke-linecap: round; }
+.he13-net .fray { fill: none; stroke: var(--ink-soft); stroke-width: 3; stroke-linecap: round; stroke-dasharray: 4 5; }
+.he13-net .patch { fill: none; stroke: var(--accent-hot); stroke-width: 4; stroke-dasharray: 1; stroke-dashoffset: 1; transition: stroke-dashoffset 3.2s ease-in-out; }
+.slide:has(.he13-mend.on) .he13-net .patch { stroke-dashoffset: 0; }
+.he13-net .tag { font: italic 600 22px var(--serif); fill: var(--ink-soft); transition: opacity .6s ease; }
+.he13-net .tag.b { fill: var(--accent-hot); opacity: 0; transition: opacity .8s ease 2.6s; }
+.slide:has(.he13-mend.on) .he13-net .tag.a { opacity: 0; transition-delay: 0s; }
+.slide:has(.he13-mend.on) .he13-net .tag.b { opacity: 1; }
+</style>
+</head>
+<body>
+<main class="deck" id="deck">
+
+<!-- ======================= OPENING ======================= -->
+<section class="slide title">
+  <div class="inner">
+    <div class="emblem rise"></div>
+    <h1 class="rise" style="--d:1">Hebrews 13</h1>
+    <p class="sub rise" style="--d:3">Faith with its work boots on</p>
+    <p class="tag rise" style="--d:5">The last chapter. After twelve chapters on how much better Jesus is, the writer turns to Monday morning: love, prison visits, marriage, money, leaders, and a promise for every man who has ever been left.</p>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise" style="--d:1">Where we are in Hebrews</h2>
+    <p class="he13-better rise" style="--d:1">Jesus is <b>better</b> than …</p>
+    <div class="he13-where" role="img" aria-label="Hebrews in six parts, all read now. Jesus is better than the prophets, chapter 1; the angels, chapters 1 and 2; Moses, chapters 3 and 4; Aaron's priests, chapters 5 to 7; the old covenant and its sacrifices, chapters 8 to 10. So hold on: chapters 11 to 13. We are in chapter 13, the last chapter.">
+      <div style="--k:0"><p><i>1</i></p><small>better than</small><b>the prophets</b><cite>God's last word is His Son</cite></div>
+      <div style="--k:1"><p><i>1</i><i>2</i></p><small>better than</small><b>the angels</b><cite>the Son on the throne</cite></div>
+      <div style="--k:2"><p><i>3</i><i>4</i></p><small>better than</small><b>Moses</b><cite>a Son over the house, and a rest</cite></div>
+      <div style="--k:3"><p><i>5</i><i>6</i><i>7</i></p><small>better than</small><b>Aaron's priests</b><cite>a priest for ever</cite></div>
+      <div style="--k:4"><p><i>8</i><i>9</i><i>10</i></p><small>better than</small><b>the old sacrifices</b><cite>one offering, a new covenant</cite></div>
+      <div class="so now" style="--k:5"><p><i>11</i><i>12</i><i class="here">13</i></p><small>so</small><b>hold on</b><cite>faith, endurance, love</cite></div>
+    </div>
+    <p class="note rise" style="--d:3">Chapter 11 was faith, and chapter 12 was running the race without quitting. Chapter 13 is what faith looks like on an ordinary day: how you treat a brother, a stranger, a prisoner, your wife and your money.</p>
+    <p class="note step">The writer of Hebrews never gives his name. Many think Paul; others think Apollos or Barnabas. Whoever he was, he ends the way a pastor ends: with plain duties, a great blessing, and news of friends.</p>
+  </div>
+</section>
+
+<section class="slide watch">
+  <div class="inner">
+    <h2 class="rise">Things to watch for</h2>
+    <p class="lede rise" style="--d:1">Keep these questions in the back of your mind as we read. We'll come back to every one of them at the end.</p>
+    <ol class="seeds">
+      <li class="step"><span class="topic">Brothers in chains</span><span class="seed-q">Whom are we told to remember, and how?</span></li>
+      <li class="step"><span class="topic">Marriage</span><span class="seed-q">What does God say about marriage, and about the men who break it?</span></li>
+      <li class="step"><span class="topic">Never forsaken</span><span class="seed-q">Why can a man be content with what he has?</span></li>
+      <li class="step"><span class="topic">Never changing</span><span class="seed-q">Who is the same yesterday, and to day, and for ever?</span></li>
+      <li class="step"><span class="topic">Outside the camp</span><span class="seed-q">Where did Jesus suffer, and where are we called to go?</span></li>
+      <li class="step"><span class="topic">Made whole</span><span class="seed-q">What does the God of peace do in us?</span></li>
+    </ol>
+  </div>
+</section>
+
+<!-- ======================= PART ONE ======================= -->
+<section class="slide part">
+  <div class="inner">
+    <p class="part-n rise">Part one</p>
+    <h2 class="rise" style="--d:1">Love that keeps going</h2>
+    <p class="range rise" style="--d:2">Verses 1–6</p>
+    <div class="rule"></div>
+    <p class="hook rise" style="--d:4">Brothers, strangers, prisoners, a wife, and a wallet.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="1-3" data-hl="Let brotherly love continue|entertained angels unawares|Remember them that are in bonds, as bound with them"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise" style="--d:1">Keep it going</h2>
+    <p class="note rise" style="--d:2">He doesn't say <em>start</em> loving each other. They already did. He says <em>“continue”</em>: don't let it cool off. Love in a group of men usually doesn't end in a fight. It ends when men stop calling and stop showing up.</p>
+    <p class="note step"><em>“Entertain strangers”</em> means open your door to people you don't know. A travelling believer often had nowhere safe to sleep but a Christian's house. <em>“Some have entertained angels unawares”</em> is Abraham, who ran out to three travellers in the heat of the day:</p>
+    <blockquote class="quote step"><p>“And he lift up his eyes and looked, and, lo, three men stood by him: and when he saw them, he ran to meet them from the tent door, and bowed himself toward the ground,”</p><cite>Genesis 18:2</cite></blockquote>
+    <p class="note step">The new man in the group is a stranger. Be the one who walks over to him first.</p>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise">“As bound with them”</h2>
+    <svg class="he13-cell rise" style="--d:1" viewBox="0 0 640 300" role="img" aria-label="A prison cell with bars, and a man sitting inside on a bench: them that are in bonds. Outside, another man: you. On a click he is inside the cell, sitting beside the prisoner: as bound with them.">
+      <rect class="room" x="330" y="40" width="290" height="220" rx="6"/>
+      <rect class="bench" x="420" y="214" width="170" height="14" rx="4"/>
+      <g class="held" transform="translate(490,146)"><circle cx="20" cy="12" r="11"/><path d="M3 80 L6 36 Q20 26 34 36 L37 80 Z"/></g>
+      <g class="you" transform="translate(0,0)">
+        <g transform="translate(220,146)"><circle cx="20" cy="12" r="11"/><path d="M3 80 L6 36 Q20 26 34 36 L37 80 Z"/></g>
+        <text x="240" y="252" text-anchor="middle">you</text>
+      </g>
+      <g>
+        <line class="bar" x1="344" y1="40" x2="344" y2="260"/><line class="bar" x1="378" y1="40" x2="378" y2="260"/><line class="bar" x1="412" y1="40" x2="412" y2="260"/>
+        <line class="bar" x1="446" y1="40" x2="446" y2="260"/><line class="bar" x1="480" y1="40" x2="480" y2="260"/><line class="bar" x1="514" y1="40" x2="514" y2="260"/>
+        <line class="bar" x1="548" y1="40" x2="548" y2="260"/><line class="bar" x1="582" y1="40" x2="582" y2="260"/><line class="bar" x1="614" y1="40" x2="614" y2="260"/>
+        <line class="cross-bar" x1="330" y1="70" x2="620" y2="70"/><line class="cross-bar" x1="330" y1="232" x2="620" y2="232"/>
+      </g>
+      <text x="475" y="290" text-anchor="middle">“them that are in bonds”</text>
+      <text class="said" x="150" y="110" text-anchor="middle">“as bound</text>
+      <text class="said" x="150" y="142" text-anchor="middle">with them”</text>
+    </svg>
+    <p class="note rise" style="--d:2">Some of you have done time. Some of you have a brother, a son or a friend inside right now. The writer says: don't forget them. Think of them <em>as if you were in there with them</em>. You know that cell: the count, the noise, mail call when nothing comes.</p>
+    <p class="note step he13-in">These readers had done it before: <em>“ye had compassion of me in my bonds”</em> (10:34). And Jesus counts it as done to Him: <em>“I was in prison, and ye came unto me”</em> (Matthew 25:36).</p>
+    <p class="note step">Today: write the letter, put a little on his books, or take the call. <em>“Them which suffer adversity”</em> counts too: the man in the hospital, or out of work.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="4" data-hl="Marriage is honourable in all, and the bed undefiled|whoremongers and adulterers God will judge"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise">Marriage, said plainly</h2>
+    <p class="note rise" style="--d:1">God made marriage, and He calls it <em>“honourable”</em>: worth honoring, for every man. <em>“The bed undefiled”</em> means sex is good and clean inside a marriage, between a husband and his wife. The world laughs at that. God doesn't.</p>
+    <div class="columns">
+      <div class="col law rise" style="--d:2">
+        <p class="who">The warning</p>
+        <h3>“God will judge”</h3>
+        <p>A <em>whoremonger</em> is a man who lives in sexual sin; an <em>adulterer</em> breaks his marriage vow. Nobody else may know. God does, and He takes it seriously.</p>
+      </div>
+      <div class="col grace step">
+        <p class="who">The way back</p>
+        <h3>“But ye are washed”</h3>
+        <p>Paul wrote to men who had lived exactly that way, and then he wrote the word <em>“but”</em>.</p>
+      </div>
+    </div>
+    <blockquote class="quote step"><p>“And such were some of you: but ye are washed, but ye are sanctified, but ye are justified in the name of the Lord Jesus, and by the Spirit of our God.”</p><cite>1 Corinthians 6:11</cite></blockquote>
+    <p class="note step">If this is your past, it can be washed. If it's your present, it has to stop. Today, cut off one thing that feeds it: the app, the number, the late-night drive.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="5-6" data-hl="be content with such things as ye have|I will never leave thee, nor forsake thee|The Lord is my helper, and I will not fear what man shall do unto me"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise">For the man who has been left</h2>
+    <svg class="he13-never rise" style="--d:1" viewBox="-20 0 860 320" role="img" aria-label="A man stands in the middle. On the left, the ones who left him: a father, a wife, the old friends. On the right, the ones he left: his kids, his mother, a brother. On a click the ones who left him walk away and fade. On the next click the ones he left fade too, and he stands alone. On the last click a shining figure stands beside him: I will never leave thee, nor forsake thee.">
+      <line class="ground" x1="10" y1="268" x2="810" y2="268"/>
+      <text class="head" x="140" y="40" text-anchor="middle">the ones who left you</text>
+      <text class="head" x="680" y="40" text-anchor="middle">the ones you left</text>
+      <g class="gone-l">
+        <g class="who" transform="translate(30,188)"><circle cx="20" cy="12" r="11"/><path d="M3 80 L6 36 Q20 26 34 36 L37 80 Z"/></g>
+        <g class="who" transform="translate(120,188)"><circle cx="20" cy="12" r="11"/><path d="M3 80 L6 36 Q20 26 34 36 L37 80 Z"/></g>
+        <g class="who" transform="translate(210,188)"><circle cx="20" cy="12" r="11"/><path d="M3 80 L6 36 Q20 26 34 36 L37 80 Z"/></g>
+        <text class="lbl" x="50" y="294" text-anchor="middle">a father</text>
+        <text class="lbl" x="140" y="294" text-anchor="middle">a wife</text>
+        <text class="lbl" x="230" y="294" text-anchor="middle">old friends</text>
+      </g>
+      <g class="gone-r">
+        <g class="who" transform="translate(570,188)"><circle cx="20" cy="12" r="11"/><path d="M3 80 L6 36 Q20 26 34 36 L37 80 Z"/></g>
+        <g class="who" transform="translate(660,188)"><circle cx="20" cy="12" r="11"/><path d="M3 80 L6 36 Q20 26 34 36 L37 80 Z"/></g>
+        <g class="who" transform="translate(750,188)"><circle cx="20" cy="12" r="11"/><path d="M3 80 L6 36 Q20 26 34 36 L37 80 Z"/></g>
+        <text class="lbl" x="590" y="294" text-anchor="middle">your kids</text>
+        <text class="lbl" x="680" y="294" text-anchor="middle">your mother</text>
+        <text class="lbl" x="770" y="294" text-anchor="middle">a brother</text>
+      </g>
+      <g class="stay">
+        <circle class="halo" cx="447" cy="205" r="70"/>
+        <g transform="translate(425,160) scale(1.35)"><circle class="lord" cx="20" cy="12" r="11"/><path class="lord" d="M3 80 L6 36 Q20 26 34 36 L37 80 Z"/></g>
+        <text class="vow" x="410" y="84" text-anchor="middle">“I will never leave thee,</text>
+        <text class="vow" x="410" y="116" text-anchor="middle">nor forsake thee.”</text>
+      </g>
+      <g class="me" transform="translate(366,180) scale(1.1)"><circle cx="20" cy="12" r="11"/><path d="M3 80 L6 36 Q20 26 34 36 L37 80 Z"/></g>
+      <text class="me-l" x="388" y="294" text-anchor="middle">you</text>
+    </svg>
+    <p class="note step he13-g1">Some of you were left: by a father who never came back, a wife who had enough, friends who vanished when you got locked up.</p>
+    <p class="note step he13-g2">And some of you did the leaving. Kids who grew up without you. A mother you didn't call. That one hurts worse, because it was you.</p>
+    <p class="note step he13-g3">To <em>that</em> man, both of them, God says: <em>I will never leave you.</em> Not because you never left anyone. Because of who He is.</p>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise">Five times “no”</h2>
+    <p class="note rise" style="--d:1">In the Greek, this one short promise stacks up five words for <em>no</em>. English can't hold it all, so the old hymn tried: <em>“I'll never, no never, no never forsake.”</em></p>
+    <p class="he13-nos rise" style="--d:2" aria-label="I will not, no, leave thee; not, no, no, forsake thee: five negatives.">I will <b style="--k:0">not</b> <b style="--k:1">no</b> leave thee, <b style="--k:2">nor</b> <b style="--k:3">not</b> <b style="--k:4">no</b> forsake thee</p>
+    <p class="note step">It's an old promise. God said it to Joshua, the day Moses died and Joshua had to lead alone:</p>
+    <blockquote class="quote step"><p>“There shall not any man be able to stand before thee all the days of thy life: as I was with Moses, so I will be with thee: I will not fail thee, nor forsake thee.”</p><cite>Joshua 1:5</cite></blockquote>
+    <p class="note step">Here it is handed to every believer. That is why a saved man is safe: not because he holds on so well, but because <em>He will not let go</em> (John 10:28). On your worst day, He is still there. Go home with that.</p>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise" style="--d:1">Content, and not afraid</h2>
+    <p class="note rise" style="--d:2"><em>“Conversation”</em> is the old word for your whole way of life. <em>Covetousness</em> is always wanting more: more money, more stuff, what the other guy has. It keeps a man restless, and restless men use.</p>
+    <p class="note step">Look at the reason he gives for being content. It isn't <em>you have enough money</em>. It's <em>you have Him.</em> A man who has God beside him has the one thing he can't lose. Then he can say, with a psalm:</p>
+    <blockquote class="quote step"><p>“The LORD is on my side; I will not fear: what can man do unto me?”</p><cite>Psalm 118:6</cite></blockquote>
+    <p class="note step">The parole officer, the boss, the man you owe: they matter, but they don't own you. Today, thank God for three things you already have before you ask for one more.</p>
+  </div>
+</section>
+
+<!-- ======================= PART TWO ======================= -->
+<section class="slide part">
+  <div class="inner">
+    <p class="part-n rise">Part two</p>
+    <h2 class="rise" style="--d:1">The same, and outside the camp</h2>
+    <p class="range rise" style="--d:2">Verses 7–14</p>
+    <div class="rule"></div>
+    <p class="hook rise" style="--d:4">Leaders come and go. One doesn't. And He's waiting outside.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="7-8" data-hl="Remember them which have the rule over you|whose faith follow|Jesus Christ the same yesterday, and to day, and for ever"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="7" data-hl="whose faith follow, considering the end of their conversation"></blockquote>
+    <h2 class="rise" style="--d:1">Look how they finished</h2>
+    <p class="note rise" style="--d:2"><em>“Them which have the rule over you”</em> are the church's leaders, the men who first <em>“spoken unto you the word of God.”</em> Some of them had likely died by now. <em>“Considering the end of their conversation”</em> means: look at how their lives turned out, and how they finished.</p>
+    <p class="note step">Think of the man who first told you about Jesus, or sat with you at your lowest. Don't copy his haircut. Copy his <em>faith</em>. And then the writer turns, right away, to the one Leader who never dies.</p>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise">Yesterday, to day, and for ever</h2>
+    <svg class="he13-same" viewBox="0 0 900 370" role="img" aria-label="A time line from yesterday, through to day, on into for ever. Along it a line rises and falls: the prophets speak, priests and leaders die, the temple stands, the temple falls about AD 70, your best day and your worst day. On a click one straight line is drawn above it all, perfectly level from end to end: Jesus Christ the same.">
+      <line class="axis" x1="30" y1="300" x2="880" y2="300"/>
+      <path class="axis" d="M864 290 L882 300 L864 310"/>
+      <line class="tick" x1="300" y1="290" x2="300" y2="310"/><line class="tick" x1="620" y1="290" x2="620" y2="310"/>
+      <text class="era" x="160" y="336" text-anchor="middle">Yesterday</text>
+      <text class="era" x="460" y="336" text-anchor="middle">To day</text>
+      <text class="era" x="760" y="336" text-anchor="middle">For ever</text>
+      <text class="era-s" x="160" y="360" text-anchor="middle">Moses, the cross, this letter</text>
+      <text class="era-s" x="460" y="360" text-anchor="middle">this morning, where you are</text>
+      <text class="era-s" x="760" y="360" text-anchor="middle">no end</text>
+      <path class="wave" pathLength="1" d="M40 190 C70 190, 80 150, 110 150 C140 150, 175 225, 205 225 C235 225, 270 150, 300 150 C330 150, 365 225, 395 225 C425 225, 470 150, 500 150 C530 150, 560 225, 590 225 C620 225, 660 170, 700 170 C740 170, 790 200, 860 190"/>
+      <g class="pt" style="--k:0"><circle cx="110" cy="150" r="6"/><text x="110" y="134" text-anchor="middle">the prophets speak</text></g>
+      <g class="pt" style="--k:1"><circle cx="205" cy="225" r="6"/><text x="205" y="250" text-anchor="middle">priests and</text><text x="205" y="268" text-anchor="middle">leaders die</text></g>
+      <g class="pt" style="--k:2"><circle cx="300" cy="150" r="6"/><text x="300" y="134" text-anchor="middle">the temple stands</text></g>
+      <g class="pt" style="--k:3"><circle cx="395" cy="225" r="6"/><text x="395" y="250" text-anchor="middle">the temple falls</text><text x="395" y="268" text-anchor="middle">about AD 70</text></g>
+      <g class="pt" style="--k:4"><circle cx="500" cy="150" r="6"/><text x="500" y="134" text-anchor="middle">your best day</text></g>
+      <g class="pt" style="--k:5"><circle cx="590" cy="225" r="6"/><text x="590" y="250" text-anchor="middle">your worst day</text></g>
+      <circle class="now-ring" cx="460" cy="300" r="12"/><circle class="now-pin" cx="460" cy="300" r="8"/>
+      <path class="beam-glow" pathLength="1" d="M40 70 L860 70"/>
+      <path class="beam" pathLength="1" d="M40 70 L860 70"/>
+      <text class="beam-t" x="450" y="46" text-anchor="middle">Jesus Christ the same</text>
+    </svg>
+    <p class="note step he13-same-go">Everything on the lower line moves. Prophets, priests and leaders all die; the temple these readers loved would be rubble within a few years; and your own life goes up and down. <em>He doesn't.</em></p>
+    <p class="note step">The Jesus who forgave the thief on the cross <em>yesterday</em> is the same Jesus <em>to day</em>, this morning, in your kitchen. What He did for them He'll do for you, <em>for ever</em>.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="9-10" data-hl="Be not carried about with divers and strange doctrines|the heart be established with grace|We have an altar"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise">Anchored by grace, not by food rules</h2>
+    <p class="note rise" style="--d:1"><em>“Carried about”</em> is a boat with no anchor, pushed wherever the wind goes. <em>“Divers and strange doctrines”</em> are all kinds of odd teachings. Here it was <em>“meats”</em>: food rules and holy meals, as if eating the right things made a man right with God. The writer says they never <em>“profited”</em> the people who were busy with them.</p>
+    <p class="note step">What steadies a heart is <em>“grace”</em>, what God gives free in Jesus. A man who keeps adding rules to feel clean is always restless. A man who rests in grace can finally stand still.</p>
+    <p class="note step"><em>“We have an altar”</em>: the cross, where Jesus was offered once. The men who still served the old tent had <em>“no right to eat”</em> from it: you can't keep the old system and have Christ too. The Lord's Supper is not this altar; it's a memorial that points back to it.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="11-13" data-hl="are burned without the camp|that he might sanctify the people with his own blood, suffered without the gate|Let us go forth therefore unto him without the camp, bearing his reproach"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise">Without the camp</h2>
+    <svg class="he13-camp" viewBox="0 0 940 350" role="img" aria-label="Two plans side by side. Left, the camp of Israel in the wilderness: rows of tents around the court of the tabernacle. A line carries the sin offering from the tabernacle out past the edge of the camp, to a fire outside: burned without the camp. Right, Jerusalem: a city wall with the temple inside. On a click, a line goes from the city out through the gate to a hill with a cross: Jesus suffered without the gate. On the next click a second line goes from inside the city out to the cross: let us go forth unto him.">
+      <g transform="translate(-20,0)">
+      <text class="ttl" x="195" y="26" text-anchor="middle">In the wilderness: the camp</text>
+      <rect class="edge" x="30" y="44" width="330" height="250" rx="16"/>
+      <g class="tents">
+        <path class="tent" d="M60 84 l13 -18 l13 18 z"/><path class="tent" d="M110 84 l13 -18 l13 18 z"/><path class="tent" d="M160 84 l13 -18 l13 18 z"/><path class="tent" d="M210 84 l13 -18 l13 18 z"/><path class="tent" d="M260 84 l13 -18 l13 18 z"/><path class="tent" d="M310 84 l13 -18 l13 18 z"/>
+        <path class="tent" d="M60 280 l13 -18 l13 18 z"/><path class="tent" d="M110 280 l13 -18 l13 18 z"/><path class="tent" d="M160 280 l13 -18 l13 18 z"/><path class="tent" d="M210 280 l13 -18 l13 18 z"/><path class="tent" d="M260 280 l13 -18 l13 18 z"/><path class="tent" d="M310 280 l13 -18 l13 18 z"/>
+        <path class="tent" d="M44 132 l13 -18 l13 18 z"/><path class="tent" d="M44 180 l13 -18 l13 18 z"/><path class="tent" d="M44 228 l13 -18 l13 18 z"/>
+        <path class="tent" d="M320 132 l13 -18 l13 18 z"/><path class="tent" d="M320 240 l13 -18 l13 18 z"/>
+      </g>
+      <rect class="court" x="110" y="118" width="170" height="110" rx="4"/>
+      <rect class="holy" x="200" y="146" width="62" height="54" rx="3"/>
+      <rect class="altar" x="134" y="160" width="24" height="24" rx="3"/>
+      <text class="sm" x="195" y="248" text-anchor="middle">the tabernacle</text>
+      <path class="way w0" pathLength="1" d="M231 173 L300 173 L440 173"/>
+      </g>
+      <g transform="translate(17,0)"><path class="fire" d="M405 196 Q386 180 396 160 Q400 172 407 168 Q402 150 414 138 Q414 156 424 162 Q430 176 418 196 Z"/>
+      <path class="fire-in" d="M407 196 Q400 186 405 176 Q409 184 413 180 Q418 190 413 196 Z"/></g>
+      <text class="md" x="425" y="226" text-anchor="middle">burned</text>
+      <text class="md" x="425" y="246" text-anchor="middle">without the camp</text>
+      <text class="sm" x="425" y="266" text-anchor="middle">Leviticus 16:27</text>
+
+      <text class="ttl" x="690" y="26" text-anchor="middle">At Jerusalem: the city</text>
+      <path class="wall-in" d="M795 180 L800 140 L760 56 L530 64 L500 196 L556 296 L778 290 L786 226 Z"/>
+      <path class="wall" d="M786 226 L778 290 L556 296 L500 196 L530 64 L760 56 L800 140 L795 180"/>
+      <rect class="post" x="784" y="172" width="16" height="12" rx="2"/><rect class="post" x="778" y="222" width="16" height="12" rx="2"/>
+      <rect class="holy" x="600" y="100" width="76" height="52" rx="3"/>
+      <text class="sm" x="638" y="174" text-anchor="middle">the temple</text>
+      <text class="sm" x="812" y="206" text-anchor="start">gate</text>
+      <path class="hill" d="M820 300 Q862 214 898 300 Z"/>
+      <line class="rood" x1="860" y1="200" x2="860" y2="256"/><line class="rood" x1="846" y1="216" x2="874" y2="216"/>
+      <text class="md" x="868" y="322" text-anchor="middle">Golgotha</text>
+      <text class="sm" x="868" y="342" text-anchor="middle">“nigh to the city”</text>
+      <path class="way w1" pathLength="1" d="M680 205 L789 202 L846 236"/>
+      <text class="sm t1" x="868" y="150" text-anchor="middle">He “suffered</text>
+      <text class="sm t1" x="868" y="170" text-anchor="middle">without the gate”</text>
+      <path class="way w2" pathLength="1" d="M560 268 Q690 270 789 210 L838 246"/>
+      <circle class="us t2" cx="560" cy="268" r="8"/>
+      <text class="sm t2" x="520" y="330" text-anchor="start">“Let us go forth therefore unto him”</text>
+    </svg>
+    <p class="note rise" style="--d:2">On the Day of Atonement the high priest carried the blood into the holiest place. The bodies were taken <em>outside</em> the camp and burned, where the unclean were sent.</p>
+    <p class="note step he13-c1">So Jesus, the real sin offering, died <em>outside</em> Jerusalem's gate: <em>“the place where Jesus was crucified was nigh to the city”</em> (John 19:20). Thrown out.</p>
+    <p class="note step he13-c2">And the call is: <em>go out to Him there.</em> Leave the safe, approved place, and stand with the outcast Christ, even if it costs you some respect.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="14" data-hl="here have we no continuing city, but we seek one to come"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <p class="saying rise" style="--d:1">He went <em>outside</em>. That's where we were.</p>
+    <p class="note rise" style="--d:2">Many of you have lived on the outside: outside the family, outside the job market, outside the respectable crowd, outside the law. Jesus didn't die in the temple court. He died out there, with criminals, under shame, <em>“that he might sanctify the people with his own blood”</em>: to make them clean and set them apart as God's own.</p>
+    <p class="note step"><em>“Bearing his reproach”</em> means taking a little of His shame: being called a Jesus freak at work, losing the old crowd. That's a fair trade for a Saviour who took all of yours.</p>
+    <p class="note step"><em>“Here have we no continuing city.”</em> If you've lost an apartment, a house, a hometown: nothing here was going to last anyway. <em>“We seek one to come,”</em> the city God is building (11:10, 16). You have a home waiting.</p>
+  </div>
+</section>
+
+<!-- ======================= PART THREE ======================= -->
+<section class="slide part">
+  <div class="inner">
+    <p class="part-n rise">Part three</p>
+    <h2 class="rise" style="--d:1">Sacrifices that please God</h2>
+    <p class="range rise" style="--d:2">Verses 15–19</p>
+    <div class="rule"></div>
+    <p class="hook rise" style="--d:4">No more blood on the altar. So what do we bring?</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="15-16" data-hl="the sacrifice of praise to God continually|the fruit of our lips giving thanks to his name|to do good and to communicate forget not"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise">What we bring now</h2>
+    <div class="columns">
+      <div class="col law rise" style="--d:1">
+        <p class="who">The old altar</p>
+        <h3>Bulls, goats, blood</h3>
+        <p>Brought again and again, year after year, and never finished (10:11). Jesus ended all of that with <em>“one sacrifice for sins for ever”</em> (10:12).</p>
+      </div>
+      <div class="col grace rise" style="--d:2">
+        <p class="who">Our sacrifices</p>
+        <h3>Praise, good, sharing</h3>
+        <p>Not to pay for sin, which is paid. These are a thank-you: <em>“with such sacrifices God is well pleased.”</em></p>
+      </div>
+    </div>
+    <p class="note step"><em>“The fruit of our lips”</em> is praise said out loud. The prophet Hosea told a guilty people what to bring back to God: <em>“Take with you words… so will we render the calves of our lips”</em> (Hosea 14:2). Words are the offering.</p>
+    <p class="note step"><em>“To communicate”</em> means to share what you have. A sacrifice costs something: a ride, a meal, an hour, twenty dollars. <em>“Continually”</em> means not only Sunday. Today, say thank you to God out loud, and do one good thing for somebody who can't pay you back.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="17" data-hl="Obey them that have the rule over you|they watch for your souls|with joy, and not with grief"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="17" data-hl="they watch for your souls, as they that must give account"></blockquote>
+    <h2 class="rise" style="--d:1">Men who lose sleep over you</h2>
+    <p class="note rise" style="--d:2"><em>“Watch”</em> is a word for staying awake, like a shepherd up at night with the flock. A good pastor loses sleep over his men. And he will <em>“give account”</em> to God for how he cared for you, so he answers to Someone too. This is no permission for a leader to bully anyone.</p>
+    <p class="note step">Many of you have spent years resisting every man in charge, and some had good reason. A godly leader is different. Let him help you. Don't make him chase you. A man who is easy to lead makes his pastor's job a <em>joy</em>, and the writer says that is better <em>for you</em>.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="18-19" data-hl="Pray for us|in all things willing to live honestly|that I may be restored to you the sooner"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise">“Pray for us”</h2>
+    <p class="note rise" style="--d:1">The man who wrote the greatest letter about Jesus' priesthood asks ordinary believers to pray for him. Leaders need it. Something was keeping him away from them for now, and he asks them to pray that he might be <em>“restored to you the sooner.”</em></p>
+    <p class="note step">Look at his goal: <em>“a good conscience… willing to live honestly”</em> in all things. Not a perfect record. A clean conscience and a will to be honest, at work, on the time sheet, with your PO, with your wife.</p>
+    <p class="note step">Before you leave today, pray by name for the man who leads this group and for your pastor. It takes one minute, and he'll feel it.</p>
+  </div>
+</section>
+
+<!-- ======================= PART FOUR ======================= -->
+<section class="slide part">
+  <div class="inner">
+    <p class="part-n rise">Part four</p>
+    <h2 class="rise" style="--d:1">The God of peace</h2>
+    <p class="range rise" style="--d:2">Verses 20–25</p>
+    <div class="rule"></div>
+    <p class="hook rise" style="--d:4">A blessing big enough for a torn-up life, and a few last words.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="20-21" data-hl="the God of peace|that great shepherd of the sheep|through the blood of the everlasting covenant|Make you perfect in every good work to do his will"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <div class="split">
+      <div class="stage">
+        <svg class="he13-net" viewBox="0 0 400 290" role="img" aria-label="A fishing net held in a frame, with a big hole torn in the middle and frayed ends. On a click new cords are drawn across the hole, knot by knot, until the net is whole: mended.">
+          <defs>
+            <clipPath id="he13-netbox"><rect x="20" y="20" width="360" height="220"/></clipPath>
+            <clipPath id="he13-hole"><path clip-rule="evenodd" d="M0 0 H400 V290 H0 Z M132 128 A78 54 0 1 0 288 128 A78 54 0 1 0 132 128 Z"/></clipPath>
+            <clipPath id="he13-patchclip"><ellipse cx="210" cy="128" rx="80" ry="56"/></clipPath>
+          </defs>
+          <g clip-path="url(#he13-netbox)">
+            <path class="mesh" clip-path="url(#he13-hole)" d="M-220 20L0 240M-192 20L28 240M-164 20L56 240M-136 20L84 240M-108 20L112 240M-80 20L140 240M-52 20L168 240M-24 20L196 240M4 20L224 240M32 20L252 240M60 20L280 240M88 20L308 240M116 20L336 240M144 20L364 240M172 20L392 240M200 20L420 240M228 20L448 240M256 20L476 240M284 20L504 240M312 20L532 240M340 20L560 240M368 20L588 240M20 20L-200 240M48 20L-172 240M76 20L-144 240M104 20L-116 240M132 20L-88 240M160 20L-60 240M188 20L-32 240M216 20L-4 240M244 20L24 240M272 20L52 240M300 20L80 240M328 20L108 240M356 20L136 240M384 20L164 240M412 20L192 240M440 20L220 240M468 20L248 240M496 20L276 240M524 20L304 240M552 20L332 240M580 20L360 240M608 20L388 240"/>
+            <g clip-path="url(#he13-patchclip)">
+              <path class="patch" pathLength="1" d="M88 20L308 240M116 20L336 240M144 20L364 240M172 20L392 240M200 20L420 240M60 20L280 240M32 20L252 240M4 20L224 240M-24 20L196 240M300 20L80 240M328 20L108 240M356 20L136 240M384 20L164 240M272 20L52 240M244 20L24 240M412 20L192 240M440 20L220 240M216 20L-4 240"/>
+            </g>
+          </g>
+          <ellipse class="fray" cx="210" cy="128" rx="78" ry="54"/>
+          <path class="rim" d="M20 20 L380 20 M20 240 L380 240"/>
+          <text class="tag a" x="200" y="278" text-anchor="middle">torn</text>
+          <text class="tag b" x="200" y="278" text-anchor="middle">mended: “make you perfect”</text>
+        </svg>
+      </div>
+      <div>
+        <h2 class="rise">“Make you perfect”</h2>
+        <p class="note rise" style="--d:1">This word does not mean <em>flawless</em>. It's <span class="gk">katartizō</span>: to mend, to fit back together. It's the word for James and John in their boat, <em>“mending their nets”</em> (Matthew 4:21).</p>
+        <p class="note step he13-mend">That's what the God of peace does with a torn-up life. He doesn't throw the net away. He mends it, knot by knot, until it can hold fish again.</p>
+        <p class="note step">And see whose work it is: <em>“working in you that which is wellpleasing in his sight.”</em> He does the mending from the inside. Your part is to stay in His hands.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise">One Shepherd, three titles</h2>
+    <ol class="timeline" aria-label="Three titles for Jesus as shepherd. The good shepherd, at the cross: he gives his life for the sheep, John 10:11. That great shepherd, risen: brought again from the dead, Hebrews 13:20. The chief Shepherd, coming: he shall appear, 1 Peter 5:4.">
+      <li style="--k:0"><b>The good shepherd</b><span>at the cross</span><small>“giveth his life for the sheep” John 10:11</small></li>
+      <li class="lit" style="--k:1"><b>That great shepherd</b><span>risen, alive now</span><small>“brought again from the dead” Hebrews 13:20</small></li>
+      <li class="wait" style="--k:2"><b>The chief Shepherd</b><span>coming again</span><small>“shall appear” 1 Peter 5:4</small></li>
+    </ol>
+    <p class="note rise" style="--d:3">This is the only place in Hebrews that names Jesus' resurrection outright. The God of peace raised the Shepherd <em>“through the blood of the everlasting covenant”</em>: the new covenant, sealed in Jesus' own blood, which never runs out and never has to be signed again.</p>
+    <p class="note step">He died for the sheep, He lives for the sheep, and He's coming for the sheep. The God who did all that is called <em>the God of peace</em>, peace with Him, bought and paid for. A man who has that can face anything today.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="22-25" data-hl="suffer the word of exhortation|our brother Timothy is set at liberty|They of Italy salute you|Grace be with you all"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <div class="split">
+      <div class="stage">
+        <svg class="map" data-world viewBox="150 105 760 430" style="max-height:44vh" data-towns="Rome!:t, Jerusalem*:r" role="img" aria-label="A map of the Roman world from Italy to Judaea. Rome, in Italy, pulses; Jerusalem is lit. A sea route draws between them: they of Italy salute you.">
+          <path class="map-route" data-via="Rome, Puteoli, @14.6 40.2, @15.4 39.3, @15.55 38.4, Rhegium, @17.2 37.4, @21 36.3, @24.2 34.6, @28.5 34.2, @32.5 33.2, Joppa, Jerusalem"/>
+          <text class="map-water" x="178" y="236">“They of Italy</text><text class="map-water" x="178" y="256">salute you”</text>
+        </svg>
+      </div>
+      <div>
+        <h2 class="rise">Last words</h2>
+        <p class="note rise" style="--d:1"><em>“Suffer the word of exhortation”</em>: bear with what I've said, even the hard parts. He calls thirteen chapters <em>“few words”</em>: few, next to the subject.</p>
+        <p class="note step"><em>“Our brother Timothy is set at liberty.”</em> Most take this to mean that Paul's young helper had been locked up, and now he was out. Some of you will be that good news for somebody.</p>
+        <p class="note step"><em>“They of Italy salute you”</em>: believers from Italy send their love. We aren't told where the writer was, but God's family stretched across the sea.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise" style="--d:1">The whole letter, looking back</h2>
+    <p class="he13-better rise" style="--d:1">Jesus is <b>better</b> than …</p>
+    <div class="he13-where" role="img" aria-label="The whole letter. Jesus is better than the prophets: God hath spoken unto us by his Son. Better than the angels: so much better than the angels. Better than Moses: counted worthy of more glory than Moses. Better than Aaron's priests: he ever liveth to make intercession. Better than the old sacrifices: one sacrifice for sins for ever. So hold fast: let us hold fast the profession of our faith.">
+      <div style="--k:0"><small>better than</small><b>the prophets</b><q>spoken unto us by his Son</q><cite>1:2</cite></div>
+      <div style="--k:1"><small>better than</small><b>the angels</b><q>so much better than the angels</q><cite>1:4</cite></div>
+      <div style="--k:2"><small>better than</small><b>Moses</b><q>more glory than Moses</q><cite>3:3</cite></div>
+      <div style="--k:3"><small>better than</small><b>Aaron</b><q>he ever liveth to make intercession</q><cite>7:25</cite></div>
+      <div style="--k:4"><small>better than</small><b>the old covenant</b><q>one sacrifice for sins for ever</q><cite>10:12</cite></div>
+      <div class="so now" style="--k:5"><small>so</small><b>hold fast</b><q>Let us hold fast the profession of our faith</q><cite>10:23</cite></div>
+    </div>
+    <p class="note rise" style="--d:3">These readers were tempted to go back to what felt safe: the temple, the priests, the sacrifices. The whole letter says <em>don't</em>. Everything you'd go back to was only a shadow. Jesus is the real thing, and He is better than all of it.</p>
+    <p class="note step">You have your own old system to go back to: the old crowd, the old habit, the old way of fixing pain. Don't go back. You'd be trading the Shepherd for a shadow. <em>Hold fast.</em></p>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <p class="saying rise" style="--d:1">He will never leave. <em>So hold on.</em></p>
+    <p class="note rise" style="--d:2">The letter that warned so hard about drifting ends with the safest promise in the Bible. The warnings shake loose the man who only sat near the faith. To the man who really belongs to Jesus they say: hold on, because He is holding you.</p>
+    <blockquote class="quote rise" style="--d:3"><p>“Wherefore he is able also to save them to the uttermost that come unto God by him, seeing he ever liveth to make intercession for them.”</p><cite>Hebrews 7:25</cite></blockquote>
+    <p class="note step">One thing for today, from this chapter: remember one man who's locked up, or one man who is new. Write him, call him, or sit by him. That is brotherly love that keeps going.</p>
+    <p class="note step">And the last word of the letter is the first thing you need every morning: <em>“Grace be with you all.”</em></p>
+  </div>
+</section>
+
+<!-- ======================= CLOSING ======================= -->
+<section class="slide remember">
+  <div class="inner">
+    <h2 class="rise">Points to remember</h2>
+    <ol class="seeds">
+      <li class="step"><span class="topic">Brothers in chains</span><span class="seed-q">“Remember them that are in bonds, as bound with them” <cite>13:3</cite></span><span class="take">Don't forget the man inside. Write, call, visit, as if you were in there with him.</span></li>
+      <li class="step"><span class="topic">Marriage</span><span class="seed-q">“Marriage is honourable in all, and the bed undefiled” <cite>13:4</cite></span><span class="take">God made sex for marriage and will judge what breaks it. But any man can be washed.</span></li>
+      <li class="step"><span class="topic">Never forsaken</span><span class="seed-q">“I will never leave thee, nor forsake thee” <cite>13:5</cite></span><span class="take">You have Him, so you have enough. He never leaves, even the man who left.</span></li>
+      <li class="step"><span class="topic">Never changing</span><span class="seed-q">“Jesus Christ the same yesterday, and to day, and for ever” <cite>13:8</cite></span><span class="take">Everything else moves. He is the same this morning as at the cross.</span></li>
+      <li class="step"><span class="topic">Outside the camp</span><span class="seed-q">“Let us go forth therefore unto him without the camp” <cite>13:13</cite></span><span class="take">He died outside, where the outcasts are. Go out to Him, and carry a little of His shame.</span></li>
+      <li class="step"><span class="topic">Made whole</span><span class="seed-q">“Make you perfect in every good work to do his will” <cite>13:21</cite></span><span class="take">The God of peace mends torn men, working in you from the inside.</span></li>
+    </ol>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 1 of 6</p>
+      <span class="topic">Brothers in chains</span>
+      <h2>Whom are we told to remember, and how?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="1"></blockquote>
+      <blockquote class="quote step" data-q="3"></blockquote>
+      <blockquote class="quote step"><p>“Naked, and ye clothed me: I was sick, and ye visited me: I was in prison, and ye came unto me.”</p><cite>Matthew 25:36</cite></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>Them that are in bonds, and those who suffer hard times. We remember them as if we were bound with them, and as if their hurt were in our own body, because it could be.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 2 of 6</p>
+      <span class="topic">Marriage</span>
+      <h2>What does God say about marriage, and about the men who break it?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="4"></blockquote>
+      <blockquote class="quote step"><p>“And such were some of you: but ye are washed, but ye are sanctified, but ye are justified in the name of the Lord Jesus, and by the Spirit of our God.”</p><cite>1 Corinthians 6:11</cite></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>Marriage is honourable and the marriage bed is clean. God will judge sexual sin. But a man who turns to Jesus can be washed, and start living clean today.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 3 of 6</p>
+      <span class="topic">Never forsaken</span>
+      <h2>Why can a man be content with what he has?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="5"></blockquote>
+      <blockquote class="quote step" data-q="6"></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>Because God has said, “I will never leave thee, nor forsake thee.” A man who has the Lord as his helper has what he can't lose, and he doesn't have to fear what any man can do.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 4 of 6</p>
+      <span class="topic">Never changing</span>
+      <h2>Who is the same yesterday, and to day, and for ever?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="7"></blockquote>
+      <blockquote class="quote step" data-q="8"></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>Jesus Christ. Leaders die and the temple fell, and our lives go up and down, but He never changes. What He did for sinners then, He does now.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 5 of 6</p>
+      <span class="topic">Outside the camp</span>
+      <h2>Where did Jesus suffer, and where are we called to go?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="11"></blockquote>
+      <blockquote class="quote step" data-q="12"></blockquote>
+      <blockquote class="quote step" data-q="13"></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>Outside the gate of Jerusalem, like the sin offering burned outside the camp. We are called to go out to Him there, bearing His reproach, because our lasting city is still to come.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 6 of 6</p>
+      <span class="topic">Made whole</span>
+      <h2>What does the God of peace do in us?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="20"></blockquote>
+      <blockquote class="quote step" data-q="21"></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>He makes us “perfect,” mending us like a torn net, so we can do His will. He works in us what pleases Him, through Jesus Christ, the great Shepherd He raised from the dead.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide prayer">
+  <div class="inner">
+    <div class="emblem rise"></div>
+    <h2 class="rise" style="--d:1">Prayer requests</h2>
+    <p class="ask-line rise" style="--d:2">What can we pray about for you today? Someone you've lost or left, a brother who's locked up, or a place where you need mending?</p>
+    <blockquote class="quote rise" style="--d:4"><p>“Now the God of peace, that brought again from the dead our Lord Jesus, that great shepherd of the sheep, through the blood of the everlasting covenant, Make you perfect in every good work to do his will, working in you that which is wellpleasing in his sight, through Jesus Christ; to whom be glory for ever and ever. Amen.”</p><cite>Hebrews 13:20–21</cite></blockquote>
+  </div>
+</section>
+
+</main>
+
+<script>
+// King James Version, Hebrews chapter 13
+const V = {
+  1: "Let brotherly love continue.",
+  2: "Be not forgetful to entertain strangers: for thereby some have entertained angels unawares.",
+  3: "Remember them that are in bonds, as bound with them; and them which suffer adversity, as being yourselves also in the body.",
+  4: "Marriage is honourable in all, and the bed undefiled: but whoremongers and adulterers God will judge.",
+  5: "Let your conversation be without covetousness; and be content with such things as ye have: for he hath said, I will never leave thee, nor forsake thee.",
+  6: "So that we may boldly say, The Lord is my helper, and I will not fear what man shall do unto me.",
+  7: "Remember them which have the rule over you, who have spoken unto you the word of God: whose faith follow, considering the end of their conversation.",
+  8: "Jesus Christ the same yesterday, and to day, and for ever.",
+  9: "Be not carried about with divers and strange doctrines. For it is a good thing that the heart be established with grace; not with meats, which have not profited them that have been occupied therein.",
+  10: "We have an altar, whereof they have no right to eat which serve the tabernacle.",
+  11: "For the bodies of those beasts, whose blood is brought into the sanctuary by the high priest for sin, are burned without the camp.",
+  12: "Wherefore Jesus also, that he might sanctify the people with his own blood, suffered without the gate.",
+  13: "Let us go forth therefore unto him without the camp, bearing his reproach.",
+  14: "For here have we no continuing city, but we seek one to come.",
+  15: "By him therefore let us offer the sacrifice of praise to God continually, that is, the fruit of our lips giving thanks to his name.",
+  16: "But to do good and to communicate forget not: for with such sacrifices God is well pleased.",
+  17: "Obey them that have the rule over you, and submit yourselves: for they watch for your souls, as they that must give account, that they may do it with joy, and not with grief: for that is unprofitable for you.",
+  18: "Pray for us: for we trust we have a good conscience, in all things willing to live honestly.",
+  19: "But I beseech you the rather to do this, that I may be restored to you the sooner.",
+  20: "Now the God of peace, that brought again from the dead our Lord Jesus, that great shepherd of the sheep, through the blood of the everlasting covenant,",
+  21: "Make you perfect in every good work to do his will, working in you that which is wellpleasing in his sight, through Jesus Christ; to whom be glory for ever and ever. Amen.",
+  22: "And I beseech you, brethren, suffer the word of exhortation: for I have written a letter unto you in few words.",
+  23: "Know ye that our brother Timothy is set at liberty; with whom, if he come shortly, I will see you.",
+  24: "Salute all them that have the rule over you, and all the saints. They of Italy salute you.",
+  25: "Grace be with you all. Amen."
+};
+const BOOK = "Hebrews 13";
+</script>
+<script src="../assets/deck.js"></script>
+</body>
+</html>

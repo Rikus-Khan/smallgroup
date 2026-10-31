@@ -546,7 +546,10 @@ window.GLOSSARY = [
     [ 22 ] ],
    [
     "Hebrews", 10,
-    [ 10, 19 ] ] ]
+    [ 10, 19 ] ],
+   [
+    "Hebrews", 13,
+    [ 8, 12, 20, 21 ] ] ]
  },
  {
   "id": "john-the-baptist",
@@ -4899,7 +4902,10 @@ window.GLOSSARY = [
     [ 16 ] ],
    [
     "Hebrews", 10,
-    [ 29 ] ] ]
+    [ 29 ] ],
+   [
+    "Hebrews", 13,
+    [ 9 ] ] ]
  },
  {
   "id": "truth",
@@ -5409,7 +5415,10 @@ window.GLOSSARY = [
     [ 3 ] ],
    [
     "Hebrews", 9,
-    [ 5 ] ] ]
+    [ 5 ] ],
+   [
+    "Hebrews", 13,
+    [ 21 ] ] ]
  },
  {
   "id": "the-law",
@@ -6096,7 +6105,10 @@ window.GLOSSARY = [
     [ 11, 14, 24, 28 ] ],
    [
     "Hebrews", 10,
-    [ 10 ] ] ]
+    [ 10 ] ],
+   [
+    "Hebrews", 13,
+    [ 8, 21 ] ] ]
  },
  {
   "id": "son-of-god",
@@ -9087,7 +9099,10 @@ window.GLOSSARY = [
     [ 12 ] ],
    [
     "Hebrews", 10,
-    [ 22 ] ] ]
+    [ 22 ] ],
+   [
+    "Hebrews", 13,
+    [ 9 ] ] ]
  },
  {
   "id": "tongue",
@@ -9234,7 +9249,10 @@ window.GLOSSARY = [
     [ 2, 4, 9, 13, 14, 19, 21, 26, 27 ] ],
    [
     "Philippians", 2,
-    [ 11 ] ] ]
+    [ 11 ] ],
+   [
+    "Hebrews", 13,
+    [ 15 ] ] ]
  },
  {
   "id": "anger",
@@ -12864,7 +12882,10 @@ window.GLOSSARY = [
     [ 13 ] ],
    [
     "Hebrews", 10,
-    [ 10, 14, 29 ] ] ]
+    [ 10, 14, 29 ] ],
+   [
+    "Hebrews", 13,
+    [ 12 ] ] ]
  },
  {
   "id": "stoning",
@@ -14034,7 +14055,10 @@ window.GLOSSARY = [
     [ 9, 14 ] ],
    [
     "Hebrews", 10,
-    [ 2, 22 ] ] ]
+    [ 2, 22 ] ],
+   [
+    "Hebrews", 13,
+    [ 18 ] ] ]
  },
  {
   "id": "i-am",
@@ -15135,7 +15159,10 @@ window.GLOSSARY = [
     [ 4, 5, 6, 7, 13 ] ],
    [
     "Hebrews", 2,
-    [ 2, 5, 7, 9, 16 ] ] ]
+    [ 2, 5, 7, 9, 16 ] ],
+   [
+    "Hebrews", 13,
+    [ 2 ] ] ]
  },
  {
   "id": "sepulchre",
@@ -15378,7 +15405,10 @@ window.GLOSSARY = [
     [ 16 ] ],
    [
     "Hebrews", 7,
-    [ 2 ] ] ]
+    [ 2 ] ],
+   [
+    "Hebrews", 13,
+    [ 20 ] ] ]
  },
  {
   "id": "remit",
@@ -16317,7 +16347,10 @@ window.GLOSSARY = [
     [ 7, 11, 25 ] ],
    [
     "Hebrews", 10,
-    [ 21 ] ] ]
+    [ 21 ] ],
+   [
+    "Hebrews", 13,
+    [ 11 ] ] ]
  },
  {
   "id": "expedient",
@@ -20472,7 +20505,10 @@ window.GLOSSARY = [
     [ 1, 4 ] ],
    [
     "Hebrews", 10,
-    [ 16, 29 ] ] ]
+    [ 16, 29 ] ],
+   [
+    "Hebrews", 13,
+    [ 20 ] ] ]
  },
  {
   "id": "oven",
@@ -25641,7 +25677,10 @@ window.GLOSSARY = [
     [ 22 ] ],
    [
     "1 Timothy", 3,
-    [ 7 ] ] ]
+    [ 7 ] ],
+   [
+    "Hebrews", 13,
+    [ 13 ] ] ]
  },
  {
   "id": "espoused",
@@ -26358,7 +26397,10 @@ window.GLOSSARY = [
     [ 4 ] ],
    [
     "Hebrews", 9,
-    [ 10 ] ] ]
+    [ 10 ] ],
+   [
+    "Hebrews", 13,
+    [ 9 ] ] ]
  },
  {
   "id": "devils",
@@ -28047,7 +28089,10 @@ window.GLOSSARY = [
     [ 21, 22 ] ],
    [
     "Colossians", 4,
-    [ 10, 12, 15 ] ] ]
+    [ 10, 12, 15 ] ],
+   [
+    "Hebrews", 13,
+    [ 24 ] ] ]
  },
  {
   "id": "shake-off-the-dust",
@@ -28869,7 +28914,10 @@ window.GLOSSARY = [
     [ 18 ] ],
    [
     "Hebrews", 7,
-    [ 13 ] ] ]
+    [ 13 ] ],
+   [
+    "Hebrews", 13,
+    [ 10 ] ] ]
  },
  {
   "id": "adversary",
@@ -29724,7 +29772,10 @@ window.GLOSSARY = [
     [ 17 ] ],
    [
     "2 Timothy", 4,
-    [ 18, 22 ] ] ]
+    [ 18, 22 ] ],
+   [
+    "Hebrews", 13,
+    [ 21, 25 ] ] ]
  },
  {
   "id": "treasure-in-heaven",
@@ -35616,7 +35667,10 @@ window.GLOSSARY = [
     [ 6 ] ],
    [
     "2 Timothy", 4,
-    [ 5 ] ] ]
+    [ 5 ] ],
+   [
+    "Hebrews", 13,
+    [ 17 ] ] ]
  },
  {
   "id": "swords-and-staves",
@@ -39345,7 +39399,10 @@ window.GLOSSARY = [
     [ 2 ] ],
    [
     "Philemon", 1,
-    [ 1 ] ] ]
+    [ 1 ] ],
+   [
+    "Hebrews", 13,
+    [ 23 ] ] ]
  },
  {
   "id": "lydia",
@@ -39909,7 +39966,10 @@ window.GLOSSARY = [
     [ 10 ] ],
    [
     "Hebrews", 6,
-    [ 10 ] ] ]
+    [ 10 ] ],
+   [
+    "Hebrews", 13,
+    [ 24 ] ] ]
  },
  {
   "id": "upper-chamber",
@@ -40359,7 +40419,10 @@ window.GLOSSARY = [
     [ 2, 5 ] ],
    [
     "Hebrews", 9,
-    [ 2, 3, 6, 8, 11, 21 ] ] ]
+    [ 2, 3, 6, 8, 11, 21 ] ],
+   [
+    "Hebrews", 13,
+    [ 10 ] ] ]
  },
  {
   "id": "stiffnecked",
@@ -41046,7 +41109,10 @@ window.GLOSSARY = [
     [ 2 ] ],
    [
     "Acts", 27,
-    [ 1, 6 ] ] ]
+    [ 1, 6 ] ],
+   [
+    "Hebrews", 13,
+    [ 24 ] ] ]
  },
  {
   "id": "aquila",
@@ -42123,7 +42189,10 @@ window.GLOSSARY = [
     [ 13 ] ],
    [
     "Hebrews", 3,
-    [ 13 ] ] ]
+    [ 13 ] ],
+   [
+    "Hebrews", 13,
+    [ 22 ] ] ]
  },
  {
   "id": "afoot",
@@ -43728,7 +43797,10 @@ window.GLOSSARY = [
     [ 1, 12 ] ],
    [
     "Hebrews", 10,
-    [ 19 ] ] ]
+    [ 19 ] ],
+   [
+    "Hebrews", 13,
+    [ 22 ] ] ]
  },
  {
   "id": "captain-of-the-guard",
@@ -44238,7 +44310,10 @@ window.GLOSSARY = [
     [ 12 ] ],
    [
     "Philemon", 1,
-    [ 9, 10 ] ] ]
+    [ 9, 10 ] ],
+   [
+    "Hebrews", 13,
+    [ 19, 22 ] ] ]
  },
  {
   "id": "living-sacrifice",
@@ -45888,7 +45963,10 @@ window.GLOSSARY = [
   "refs": [
    [
     "1 Corinthians", 6,
-    [ 9 ] ] ]
+    [ 9 ] ],
+   [
+    "Hebrews", 13,
+    [ 4 ] ] ]
  },
  {
   "id": "effeminate-and-abusers",
@@ -48075,7 +48153,10 @@ window.GLOSSARY = [
     [ 27 ] ],
    [
     "1 Timothy", 4,
-    [ 12 ] ] ]
+    [ 12 ] ],
+   [
+    "Hebrews", 13,
+    [ 5, 7 ] ] ]
  },
  {
   "id": "certify",
@@ -48525,7 +48606,10 @@ window.GLOSSARY = [
     [ 6 ] ],
    [
     "Philippians", 4,
-    [ 14, 15 ] ] ]
+    [ 14, 15 ] ],
+   [
+    "Hebrews", 13,
+    [ 16 ] ] ]
  },
  {
   "id": "odour-of-a-sweet-smell",
@@ -49779,7 +49863,10 @@ window.GLOSSARY = [
     [ 5 ] ],
    [
     "1 Timothy", 1,
-    [ 10 ] ] ]
+    [ 10 ] ],
+   [
+    "Hebrews", 13,
+    [ 4 ] ] ]
  },
  {
   "id": "jesting",
@@ -49932,7 +50019,10 @@ window.GLOSSARY = [
   "refs": [
    [
     "Ephesians", 5,
-    [ 21, 22 ] ] ]
+    [ 21, 22 ] ],
+   [
+    "Hebrews", 13,
+    [ 17 ] ] ]
  },
  {
   "id": "head-of-the-wife",
@@ -50580,7 +50670,10 @@ window.GLOSSARY = [
   "refs": [
    [
     "1 Thessalonians", 3,
-    [ 10 ] ] ]
+    [ 10 ] ],
+   [
+    "Hebrews", 13,
+    [ 21 ] ] ]
  },
  {
   "id": "brotherly-love",
@@ -50592,7 +50685,10 @@ window.GLOSSARY = [
     [ 10 ] ],
    [
     "1 Thessalonians", 4,
-    [ 9 ] ] ]
+    [ 9 ] ],
+   [
+    "Hebrews", 13,
+    [ 1 ] ] ]
  },
  {
   "id": "possess-his-vessel",
@@ -53077,5 +53173,170 @@ window.GLOSSARY = [
    [
     "Hebrews", 10,
     [ 39 ] ] ]
+ },
+ {
+  "id": "entertain-strangers",
+  "kind": "term",
+  "name": "Entertain strangers (open your home to travellers you don't know)",
+  "refs": [
+   [
+    "Hebrews", 13,
+    [ 2 ] ] ]
+ },
+ {
+  "id": "in-bonds",
+  "kind": "term",
+  "name": "Them that are in bonds (prisoners, remembered as if you were bound with them)",
+  "refs": [
+   [
+    "Hebrews", 13,
+    [ 3 ] ] ]
+ },
+ {
+  "id": "bed-undefiled",
+  "kind": "term",
+  "name": "The bed undefiled (sex kept clean, inside marriage)",
+  "refs": [
+   [
+    "Hebrews", 13,
+    [ 4 ] ] ]
+ },
+ {
+  "id": "without-covetousness",
+  "kind": "term",
+  "name": "Without covetousness (free from always wanting more)",
+  "refs": [
+   [
+    "Hebrews", 13,
+    [ 5 ] ] ]
+ },
+ {
+  "id": "never-leave-thee",
+  "kind": "term",
+  "name": "I will never leave thee, nor forsake thee (God's promise to stay)",
+  "refs": [
+   [
+    "Hebrews", 13,
+    [ 5 ] ] ]
+ },
+ {
+  "id": "lord-is-my-helper",
+  "kind": "term",
+  "name": "The Lord is my helper",
+  "refs": [
+   [
+    "Hebrews", 13,
+    [ 6 ] ] ]
+ },
+ {
+  "id": "rulers-over-you",
+  "kind": "person",
+  "name": "Them that have the rule over you (the church's leaders)",
+  "refs": [
+   [
+    "Hebrews", 13,
+    [ 7, 17, 24 ] ] ]
+ },
+ {
+  "id": "the-same-for-ever",
+  "kind": "term",
+  "name": "Jesus Christ the same yesterday, and to day, and for ever",
+  "refs": [
+   [
+    "Hebrews", 13,
+    [ 8 ] ] ]
+ },
+ {
+  "id": "strange-doctrines",
+  "kind": "term",
+  "name": "Divers and strange doctrines (odd teachings that pull a man off course)",
+  "refs": [
+   [
+    "Hebrews", 13,
+    [ 9 ] ] ]
+ },
+ {
+  "id": "meats-food-rules",
+  "kind": "term",
+  "name": "Meats (food rules and holy meals, which cannot make a heart right)",
+  "refs": [
+   [
+    "Hebrews", 13,
+    [ 9 ] ] ]
+ },
+ {
+  "id": "without-the-camp",
+  "kind": "place",
+  "name": "Without the camp, without the gate (outside, where the sin offering was burned and Jesus died)",
+  "refs": [
+   [
+    "Hebrews", 13,
+    [ 11, 12, 13 ] ] ]
+ },
+ {
+  "id": "continuing-city",
+  "kind": "place",
+  "name": "No continuing city (no lasting home here; the city to come)",
+  "refs": [
+   [
+    "Hebrews", 13,
+    [ 14 ] ] ]
+ },
+ {
+  "id": "sacrifice-of-praise",
+  "kind": "term",
+  "name": "The sacrifice of praise (the fruit of our lips, giving thanks)",
+  "refs": [
+   [
+    "Hebrews", 13,
+    [ 15 ] ] ]
+ },
+ {
+  "id": "god-of-peace",
+  "kind": "term",
+  "name": "The God of peace",
+  "refs": [
+   [
+    "Romans", 15,
+    [ 33 ] ],
+   [
+    "Romans", 16,
+    [ 20 ] ],
+   [
+    "Philippians", 4,
+    [ 9 ] ],
+   [
+    "1 Thessalonians", 5,
+    [ 23 ] ],
+   [
+    "Hebrews", 13,
+    [ 20 ] ] ]
+ },
+ {
+  "id": "great-shepherd",
+  "kind": "person",
+  "name": "That great shepherd of the sheep (Jesus, raised from the dead)",
+  "refs": [
+   [
+    "Hebrews", 13,
+    [ 20 ] ] ]
+ },
+ {
+  "id": "everlasting-covenant",
+  "kind": "term",
+  "name": "The everlasting covenant (the new covenant, sealed in Jesus' blood)",
+  "refs": [
+   [
+    "Hebrews", 13,
+    [ 20 ] ] ]
+ },
+ {
+  "id": "set-at-liberty",
+  "kind": "term",
+  "name": "Set at liberty (let out, released from prison)",
+  "refs": [
+   [
+    "Hebrews", 13,
+    [ 23 ] ] ]
  }
 ];
