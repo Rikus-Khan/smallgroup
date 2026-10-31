@@ -1,0 +1,662 @@
+<!doctype html>
+<html lang="en" data-theme="slate">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Revelation 19</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="../assets/fonts.css">
+<link rel="stylesheet" href="../assets/deck.css">
+<link rel="stylesheet" href="../assets/themes.css">
+<style>
+/* rv19-where: where this chapter sits in Revelation (copied from rv05-where). Twenty-two chapter boxes (span) in seven groups (div);
+   each group's label (b) sits above (.up) or below the row, across the columns in its --c. The current group is .now, the current
+   chapter span.here. On a phone each group becomes its own row. */
+.rv19-where { display: grid; grid-template-columns: repeat(22, 1fr); gap: 5px 3px; margin: .6em 0 1em; align-items: end; }
+.rv19-where > div { display: contents; }
+.rv19-where span { grid-row: 2; display: grid; place-items: center; height: 2.3rem; border: 1.5px solid var(--line-strong); border-radius: 5px; font: 600 clamp(.75rem, .7rem + .3vw, 1rem) var(--sans); color: var(--ink-soft); }
+.rv19-where span.gap { margin-left: 5px; }
+.rv19-where b { grid-row: 3; grid-column: var(--c); align-self: start; text-align: center; font: 400 clamp(.8rem, .74rem + .32vw, 1.05rem)/1.25 var(--serif); color: var(--ink-soft); padding: 0 2px; }
+.rv19-where b.up { grid-row: 1; align-self: end; }
+.rv19-where b.left { text-align: left; }
+.rv19-where .now span { border-color: var(--accent); color: var(--ink); }
+.rv19-where .now b { color: var(--accent-hot); font-weight: 600; }
+.rv19-where span.here { background: var(--accent); color: var(--on-accent); box-shadow: 0 0 0 5px color-mix(in srgb, var(--accent) 22%, transparent); }
+@media (max-width: 600px) {
+  .rv19-where { grid-template-columns: 1fr; gap: 6px; }
+  .rv19-where > div { display: flex; flex-wrap: wrap; align-items: center; gap: 3px; }
+  .rv19-where span { width: 1.75rem; height: 1.9rem; }
+  .rv19-where span.gap { margin-left: 0; }
+  .rv19-where b, .rv19-where b.up { margin-left: .4em; text-align: left; align-self: center; }
+}
+
+/* rv19-robe: a robe marked with the stains of a man's past (.rv19-stain, with words in .rv19-word). A .rv19-wash step fades
+   the stains one by one and the robe turns white and shining (.rv19-cloth), with the word "granted" (.rv19-granted) */
+.rv19-cloth { fill: color-mix(in srgb, var(--leather-light) 45%, var(--surface-2)); stroke: var(--ink-soft); stroke-width: 2.5; stroke-linejoin: round; transition: fill 1.6s ease 1.4s, stroke 1.6s ease 1.4s, filter 1.6s ease 1.4s; }
+.rv19-fold { fill: none; stroke: color-mix(in srgb, var(--ink-soft) 55%, transparent); stroke-width: 2; stroke-linecap: round; }
+.rv19-stain { fill: color-mix(in srgb, var(--on-glow) 70%, var(--leather)); opacity: .85; transition: opacity .8s ease; transition-delay: calc(var(--k) * 260ms + 200ms); }
+.rv19-word { fill: var(--danger); font: italic 600 16px var(--serif); transition: opacity .8s ease; transition-delay: calc(var(--k) * 260ms + 200ms); }
+.rv19-granted { fill: var(--accent-hot); font: 700 24px var(--sans); letter-spacing: .14em; text-transform: uppercase; opacity: 0; transition: opacity .8s ease 2.6s; }
+.rv19-lab { fill: var(--ink-soft); font: italic 17px var(--serif); }
+.slide:has(.rv19-wash.on) .rv19-stain, .slide:has(.rv19-wash.on) .rv19-word { opacity: 0; }
+.slide:has(.rv19-wash.on) .rv19-cloth { fill: var(--glow); stroke: var(--accent); filter: drop-shadow(0 0 14px color-mix(in srgb, var(--accent) 45%, transparent)); }
+.slide:has(.rv19-wash.on) .rv19-granted { opacity: 1; }
+@media (max-width: 600px) { .rv19-word { font-size: 20px; } .rv19-lab { font-size: 21px; } }
+
+/* rv19-invite: a wedding invitation card. Its lines (div > b + span) appear in turn; the last (.rv19-paid) gets a stamp */
+.rv19-invite { position: relative; max-width: 32rem; margin: .3em 0 1em; padding: 1.1em 1.4em 1em; border: 1.5px solid var(--line-strong); outline: 1px solid var(--line); outline-offset: -8px; border-radius: 6px; background: var(--surface); box-shadow: 0 12px 26px -16px var(--ink); text-align: center; }
+.rv19-invite h3 { font: 400 clamp(1.3rem, 1rem + 1.3vw, 2rem)/1.15 var(--serif); color: var(--accent-hot); margin: .1em 0 .5em; }
+.rv19-invite .top { font: 700 clamp(.72rem, .68rem + .25vw, .9rem) var(--sans); letter-spacing: .16em; text-transform: uppercase; color: var(--ink-soft); }
+.rv19-invite dl { display: grid; grid-template-columns: auto 1fr; gap: .35em 1em; margin: 0; text-align: left; }
+.rv19-invite dt { font: 700 clamp(.75rem, .7rem + .25vw, .95rem) var(--sans); letter-spacing: .08em; text-transform: uppercase; color: var(--ink-soft); padding-top: .25em; }
+.rv19-invite dd { margin: 0; font: italic clamp(1rem, .9rem + .5vw, 1.35rem)/1.3 var(--serif); }
+.rv19-invite dd small { font: normal .75em var(--sans); color: var(--ink-soft); }
+
+/* rv19-ride: the Rider on the white horse (19:11–16), built up a step at a time. A night panel (.rv19-ride) holds the scene (svg):
+   heaven opening (.rv19-rift) and the white horse riding in (.rv19-come); the armies (.rv19-army) appear with the .rv19-army-go step.
+   Beside it, his marks (ol.rv19-marks > li.step: an icon svg, the KJV words in q, the verse in small). The name (.rv19-name)
+   comes last, across the whole panel */
+.rv19-ride { --rv19-gold: color-mix(in srgb, var(--warm) 62%, var(--glow)); display: grid; gap: .6rem 1.4rem; padding: 1rem 1.2rem 1.1rem; border-radius: 14px; background: var(--on-glow); color: var(--glow); margin: .3em 0 .6em; }
+@media (min-width: 760px) { .rv19-ride { grid-template-columns: minmax(0, 36%) 1fr; align-items: center; } }
+.rv19-ride svg { display: block; width: 100%; height: auto; max-height: 40vh; overflow: visible; }
+.rv19-star { fill: var(--glow); opacity: .5; }
+.rv19-rift { fill: color-mix(in srgb, var(--warm) 55%, var(--glow)); opacity: .9; transform-box: fill-box; transform-origin: center; transform: scaleY(0); }
+.slide.active .rv19-rift { animation: rv19-open 1.4s ease .2s both; }
+@keyframes rv19-open { to { transform: scaleY(1); } }
+.rv19-beam { fill: color-mix(in srgb, var(--warm) 30%, var(--glow)); opacity: 0; }
+.slide.active .rv19-beam { animation: rv19-shine 1.6s ease .9s both; }
+@keyframes rv19-shine { to { opacity: .16; } }
+.rv19-hb { fill: var(--glow); stroke: var(--on-glow); stroke-width: 1.1; stroke-linejoin: round; }
+.rv19-mane { fill: color-mix(in srgb, var(--glow) 72%, var(--on-glow)); stroke: var(--on-glow); stroke-width: 1.1; }
+.rv19-eye { fill: var(--on-glow); }
+.slide.active .rv19-come { animation: rv19-in 1.4s cubic-bezier(.2,.7,.2,1) .7s both; }
+@keyframes rv19-in { from { opacity: 0; transform: translateY(-60px); } to { opacity: 1; transform: none; } }
+.rv19-army { opacity: 0; transition: opacity .8s ease; transition-delay: calc(var(--k) * 220ms); }
+.rv19-ride:has(.rv19-army-go.on) .rv19-army { opacity: .55; }
+.rv19-tag { fill: color-mix(in srgb, var(--glow) 82%, var(--on-glow)); font: italic 15px var(--serif); }
+.rv19-tag.hot { fill: var(--rv19-gold); font: 600 19px var(--serif); font-style: normal; }
+.rv19-marks { list-style: none; padding: 0; margin: 0; display: grid; gap: .45rem 1rem; }
+@media (min-width: 760px) { .rv19-marks { grid-template-columns: 1fr 1fr; } }
+.rv19-marks li { display: grid; grid-template-columns: 2.4rem 1fr; gap: 0 .6rem; align-items: center; }
+.rv19-marks li svg { grid-row: 1 / span 2; width: 2.4rem; height: 2.4rem; }
+.rv19-marks q { font: italic clamp(.95rem, .85rem + .45vw, 1.25rem)/1.25 var(--serif); quotes: "\201C" "\201D"; color: var(--glow); }
+.rv19-marks small { font: 600 clamp(.72rem, .68rem + .2vw, .88rem) var(--sans); letter-spacing: .06em; color: var(--rv19-gold); }
+.rv19-i { fill: none; stroke: var(--glow); stroke-width: 2.4; stroke-linecap: round; stroke-linejoin: round; }
+.rv19-if { fill: var(--glow); }
+.rv19-iw { fill: var(--rv19-gold); }
+.rv19-ir { fill: var(--wine); }
+.rv19-is { fill: color-mix(in srgb, var(--glow) 55%, var(--cool)); }
+.rv19-name { grid-column: 1 / -1; text-align: center; padding: .35em .5em .3em; border-top: 2px solid var(--rv19-gold); border-bottom: 2px solid var(--rv19-gold); font: 700 clamp(1.3rem, .9rem + 2.2vw, 2.6rem)/1.1 var(--serif); letter-spacing: .06em; color: var(--rv19-gold); text-shadow: 0 0 22px color-mix(in srgb, var(--warm) 55%, transparent); }
+.rv19-name small { display: block; font: italic 400 clamp(.75rem, .7rem + .25vw, .95rem) var(--serif); letter-spacing: 0; color: color-mix(in srgb, var(--glow) 80%, var(--on-glow)); text-shadow: none; margin-top: .2em; }
+@media (max-width: 600px) { .rv19-tag { font-size: 19px; } .rv19-tag.hot { font-size: 23px; } }
+
+/* rv19-vs: two riders compared row by row (6:2 and 19:11). The header row is .head; each row is a div with a label (b)
+   and two cells (span); the right-hand cell is the King's */
+.rv19-vs { display: grid; gap: 6px; margin: .3em 0 1em; }
+.rv19-vs > div { display: grid; grid-template-columns: 9.5rem 1fr 1fr; gap: 6px; }
+.rv19-vs b, .rv19-vs span { padding: .45em .7em; border-radius: 6px; font-size: clamp(.88rem, .8rem + .38vw, 1.15rem); line-height: 1.3; }
+.rv19-vs b { font: 700 clamp(.72rem, .68rem + .22vw, .9rem) var(--sans); letter-spacing: .08em; text-transform: uppercase; color: var(--ink-soft); align-self: center; }
+.rv19-vs span { border: 1.5px dashed var(--line-strong); color: var(--ink-soft); font-family: var(--serif); font-style: italic; }
+.rv19-vs span + span { border: 2px solid var(--accent); background: color-mix(in srgb, var(--accent) 10%, transparent); color: var(--ink); font-style: normal; }
+.rv19-vs .head span { border: 0; background: none; font: 700 clamp(.85rem, .8rem + .3vw, 1.05rem) var(--sans); font-style: normal; color: var(--ink-soft); }
+.rv19-vs .head span + span { color: var(--accent-hot); }
+@media (max-width: 600px) { .rv19-vs > div { grid-template-columns: 1fr 1fr; } .rv19-vs b { grid-column: 1 / -1; padding-bottom: 0; } }
+
+/* rv19-suppers: two suppers side by side: the marriage supper of the Lamb and the supper of the great God */
+.rv19-suppers { display: grid; gap: 1rem 1.6rem; margin: .3em 0 1em; }
+@media (min-width: 760px) { .rv19-suppers { grid-template-columns: 1fr 1fr; } }
+.rv19-suppers > div { padding: .8em 1em; border-radius: 10px; border: 1.5px solid var(--line-strong); background: var(--surface); }
+.rv19-suppers > div:first-child { border: 2px solid var(--accent); background: color-mix(in srgb, var(--accent) 9%, var(--surface)); }
+.rv19-suppers h3 { font: 400 clamp(1.15rem, 1rem + .8vw, 1.7rem) var(--serif); margin-bottom: .25em; }
+.rv19-suppers > div:first-child h3 { color: var(--accent-hot); }
+.rv19-suppers small { display: block; font: 700 .8rem var(--sans); letter-spacing: .08em; text-transform: uppercase; color: var(--ink-soft); margin-bottom: .2em; }
+.rv19-suppers p { font-size: clamp(.95rem, .88rem + .4vw, 1.25rem); line-height: 1.45; color: var(--ink-soft); }
+</style>
+</head>
+<body>
+<main class="deck" id="deck">
+
+<!-- ======================= OPENING ======================= -->
+<section class="slide title">
+  <div class="inner">
+    <div class="emblem rise"></div>
+    <h1 class="rise" style="--d:1">Revelation 19</h1>
+    <p class="sub rise" style="--d:3">King of kings</p>
+    <p class="tag rise" style="--d:5">Heaven shouts Alleluia, a wedding is ready, and the door of heaven opens on a Rider whose name is Faithful and True.</p>
+  </div>
+</section>
+
+<section class="slide watch">
+  <div class="inner">
+    <h2 class="rise">Things to watch for</h2>
+    <p class="lede rise" style="--d:1">Keep these questions in the back of your mind as we read. We'll come back to every one of them at the end.</p>
+    <ol class="seeds">
+      <li class="step"><span class="topic">Alleluia</span><span class="seed-q">Why does heaven shout Alleluia?</span></li>
+      <li class="step"><span class="topic">Fine linen</span><span class="seed-q">What is the bride's fine linen, and where does she get it?</span></li>
+      <li class="step"><span class="topic">Invited</span><span class="seed-q">Who is blessed, according to verse 9?</span></li>
+      <li class="step"><span class="topic">Worship</span><span class="seed-q">Why did the angel tell John not to worship him?</span></li>
+      <li class="step"><span class="topic">The Rider</span><span class="seed-q">Who is the Rider on the white horse?</span></li>
+      <li class="step"><span class="topic">The end of evil</span><span class="seed-q">How does the war against the Rider end?</span></li>
+    </ol>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise">Where we are in Revelation</h2>
+    <div class="rv19-where rise" style="--d:1" role="img" aria-label="The twenty-two chapters of Revelation in seven groups. Chapter 1: a vision of Christ. 2 and 3: the seven churches. 4 and 5: the throne and the Lamb. 6 to 16: seals, trumpets and bowls. 17 and 18: Babylon falls. 19 and 20: Christ returns and reigns, with chapter 19 lit. 21 and 22: all things new.">
+      <div><span>1</span><b class="up left" style="--c:1 / 4">a vision of Christ</b></div>
+      <div><span class="gap">2</span><span>3</span><b style="--c:1 / 5">the seven churches</b></div>
+      <div><span class="gap">4</span><span>5</span><b class="up left" style="--c:4 / 9">the throne and the Lamb</b></div>
+      <div><span class="gap">6</span><span>7</span><span>8</span><span>9</span><span>10</span><span>11</span><span>12</span><span>13</span><span>14</span><span>15</span><span>16</span><b style="--c:6 / 17">seals, trumpets and bowls</b></div>
+      <div><span class="gap">17</span><span>18</span><b class="up" style="--c:16 / 20">Babylon falls</b></div>
+      <div class="now"><span class="gap here">19</span><span>20</span><b style="--c:18 / 22">Christ returns and reigns</b></div>
+      <div><span class="gap">21</span><span>22</span><b class="up" style="--c:20 / 23">all things new</b></div>
+    </div>
+    <p class="note step">In chapters 17 and 18 John watched Babylon fall: the great city of the world that sold pleasure, money and power, and even bought and sold <em>“slaves, and souls of men”</em> (18:13). On earth, the merchants wept.</p>
+    <p class="note step">Now we hear what heaven says about it. Then the door of heaven swings all the way open, and the King Himself rides out. This is the chapter the whole book has been waiting for.</p>
+  </div>
+</section>
+
+<!-- ======================= PART ONE: ALLELUIA ======================= -->
+<section class="slide part">
+  <div class="inner">
+    <p class="part-n rise">Part one</p>
+    <h2 class="rise" style="--d:1">Alleluia</h2>
+    <p class="range rise" style="--d:2">Verses 1–6</p>
+    <div class="rule"></div>
+    <p class="hook rise" style="--d:4">Babylon is gone. Heaven doesn't weep. It shouts, four times over.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="1-3" data-hl="Alleluia|true and righteous are his judgments|hath avenged the blood of his servants"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <div class="morph rise" style="--d:1">
+      <span class="big">Alleluia</span>
+      <span class="say">hal-leh-LOO-yah</span>
+      <span class="means">“Praise ye the LORD”</span>
+    </div>
+    <p class="note rise" style="--d:2">It's a Hebrew word: <span class="gk">hallelu</span>, <em>praise ye</em>, and <span class="gk">Yah</span>, short for the LORD's own name. The Psalms are full of it; in our King James it's printed <em>“Praise ye the LORD.”</em> The last psalm ends:</p>
+    <blockquote class="quote rise" style="--d:3"><p>“Let every thing that hath breath praise the LORD. Praise ye the LORD.”</p><cite>Psalm 150:6</cite></blockquote>
+    <p class="note step">In the whole New Testament the word <em>Alleluia</em> turns up only four times, and all four are right here, in six verses:</p>
+    <div class="tally step" aria-label="Verses 1 to 6, with Alleluia in verses 1, 3, 4 and 6">
+      <span class="hit" style="--k:0"><i>1</i>Alleluia</span>
+      <span><i>2</i>&nbsp;</span>
+      <span class="hit" style="--k:1"><i>3</i>Alleluia</span>
+      <span class="hit" style="--k:2"><i>4</i>Alleluia</span>
+      <span><i>5</i>&nbsp;</span>
+      <span class="hit" style="--k:3"><i>6</i>Alleluia</span>
+    </div>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="2" data-hl="hath avenged the blood of his servants at her hand"></blockquote>
+    <h2 class="rise" style="--d:1">God settles the account</h2>
+    <p class="note rise" style="--d:2">Babylon <em>“did corrupt the earth”</em>: it made men drunk on what it sold and chewed up people, God's people too. Heaven isn't cheering cruelty. It's glad the wrong is finally put right, by God, not by men.</p>
+    <p class="note step">Maybe somebody did you wrong, and you've replayed the payback in your head for years. God says: hand it over.</p>
+    <blockquote class="quote step"><p>“Dearly beloved, avenge not yourselves, but rather give place unto wrath: for it is written, Vengeance is mine; I will repay, saith the Lord.”</p><cite>Romans 12:19</cite></blockquote>
+    <p class="note step">And the wrong <em>you</em> did? The same God forgives every man who comes to Him and confesses it (1 John 1:9). Babylon never asked.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="4-6" data-hl="Amen; Alleluia|both small and great|Alleluia: for the Lord God omnipotent reigneth"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <p class="saying rise" style="--d:1">The Lord God <em>omnipotent</em> reigneth.</p>
+    <p class="note rise" style="--d:2"><em>Omnipotent</em> means all-powerful: there is nothing He can't do. John hears it like the roar of a stadium, like Niagara Falls, like thunder right overhead. One sound, from <em>“a great multitude.”</em></p>
+    <p class="note step">Look at the invitation in verse 5: <em>“all ye his servants… both small and great.”</em> In heaven's choir there's no back row for the small. The man who was somebody and the man who was nobody sing the same song.</p>
+    <p class="note step">And notice the tense. Not <em>will reign</em> some day: <em>reigneth</em>. Babylon looked like it was in charge. It never was. On your worst day, at your job, in your house, the Lord God omnipotent still reigns.</p>
+  </div>
+</section>
+
+<!-- ======================= PART TWO: THE MARRIAGE OF THE LAMB ======================= -->
+<section class="slide part">
+  <div class="inner">
+    <p class="part-n rise">Part two</p>
+    <h2 class="rise" style="--d:1">The marriage of the Lamb</h2>
+    <p class="range rise" style="--d:2">Verses 7–10</p>
+    <div class="rule"></div>
+    <p class="hook rise" style="--d:4">The great city was a harlot. The Lamb has a bride, dressed in white.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="7-8" data-hl="the marriage of the Lamb is come, and his wife hath made herself ready|arrayed in fine linen, clean and white: for the fine linen is the righteousness of saints"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <div class="split">
+      <div class="stage">
+        <svg viewBox="0 0 400 330" role="img" aria-label="A long robe, stained in dark patches marked shame, the bottle, a lie, the old life, a record. On a step the stains fade one by one and the robe turns shining white, with the word granted.">
+          <path class="rv19-cloth" d="M172 36 Q200 52 228 36 L270 46 L340 176 L310 192 L262 108 L298 312 Q200 326 102 312 L138 108 L90 192 L60 176 L130 46 Z"/>
+          <path class="rv19-fold" d="M172 36 Q200 70 228 36 M200 116 L200 316 M170 126 L152 310 M230 126 L248 310"/>
+          <ellipse class="rv19-stain" style="--k:0" cx="182" cy="96" rx="26" ry="15"/>
+          <ellipse class="rv19-stain" style="--k:1" cx="234" cy="162" rx="26" ry="18"/>
+          <ellipse class="rv19-stain" style="--k:2" cx="166" cy="222" rx="24" ry="17"/>
+          <ellipse class="rv19-stain" style="--k:3" cx="236" cy="272" rx="28" ry="16"/>
+          <ellipse class="rv19-stain" style="--k:4" cx="314" cy="170" rx="13" ry="10"/>
+          <text class="rv19-word" style="--k:0" x="70" y="78">shame</text>
+          <text class="rv19-word" style="--k:1" x="292" y="232">the bottle</text>
+          <text class="rv19-word" style="--k:2" x="70" y="240">a lie</text>
+          <text class="rv19-word" style="--k:3" x="292" y="300">the old life</text>
+          <text class="rv19-word" style="--k:4" x="330" y="146">a record</text>
+          <text class="rv19-granted" x="200" y="22" text-anchor="middle">granted</text>
+        </svg>
+      </div>
+      <div>
+        <h2 class="rise" style="--d:1">Clean and white</h2>
+        <p class="note rise" style="--d:2">The bride is the church (Ephesians 5:25). The key word in verse 8 is <em>“granted”</em>: she doesn't sew her own dress. It's given to her.</p>
+        <p class="note step rv19-wash">Our own righteousnesses are <em>“as filthy rags”</em> (Isaiah 64:6). But the Lamb's people <em>“have washed their robes, and made them white in the blood of the Lamb”</em> (7:14).</p>
+        <p class="note step">Then a saved man starts living clean, one right thing at a time, with the Spirit's help. Many teachers say that's <em>“the righteousness of saints,”</em> and even that is His gift.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise">A wedding, the old way</h2>
+    <p class="note rise" style="--d:1">A Jewish wedding then came in stages. Many Bible teachers see Christ and His church in it:</p>
+    <ol class="timeline">
+      <li style="--k:0" data-n="1"><b>The promise</b><span>the couple pledged, the price paid</span><small>the cross</small></li>
+      <li style="--k:1" data-n="2"><b>The wait</b><span>he goes to get a place ready</span><small>John 14:2</small></li>
+      <li style="--k:2" data-n="3"><b>He comes</b><span>the groom comes for his bride</span><small>John 14:3</small></li>
+      <li class="lit" style="--k:3" data-n="4"><b>The supper</b><span>the wedding feast</span><small>Revelation 19:9</small></li>
+    </ol>
+    <blockquote class="quote step"><p>“I go to prepare a place for you. And if I go and prepare a place for you, I will come again, and receive you unto myself; that where I am, there ye may be also.”</p><cite>John 14:2–3</cite></blockquote>
+    <p class="note step">We live in stage two: the price paid, the Groom coming back. <em>“His wife hath made herself ready”</em>: a bride who knows he's coming lives like it.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="9-10" data-hl="Blessed are they which are called unto the marriage supper of the Lamb|See thou do it not|worship God"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <div class="split">
+      <div class="rv19-invite rise" style="--d:1">
+        <p class="top">You are invited</p>
+        <h3>The marriage supper of the Lamb</h3>
+        <dl>
+          <dt class="step">Who</dt><dd class="step">“Whosoever will” <small>(22:17)</small></dd>
+          <dt class="step">From</dt><dd class="step">“the highways” <small>(Matthew 22:9)</small></dd>
+          <dt class="step">Dress</dt><dd class="step">provided: fine linen <small>(19:8)</small></dd>
+          <dt class="step">Cost</dt><dd class="step">paid by the Groom <small>(5:9)</small></dd>
+        </dl>
+      </div>
+      <div>
+        <h2 class="rise" style="--d:1">Blessed are the called</h2>
+        <p class="note rise" style="--d:2"><em>Called</em> here means invited. And Jesus told a story about who gets the invitation:</p>
+        <blockquote class="quote step"><p>“Go ye therefore into the highways, and as many as ye shall find, bid to the marriage.”</p><cite>Matthew 22:9</cite></blockquote>
+        <p class="note step">Men off the street, men out of the cell block, men out of rehab. The invitation has your name on it, and the angel says, <em>“These are the true sayings of God.”</em> You can take it to the bank.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="10" data-hl="See thou do it not|worship God"></blockquote>
+    <h2 class="rise" style="--d:1">Even John got it wrong</h2>
+    <p class="note rise" style="--d:2">The beloved apostle, an old man who had walked with Jesus, falls at the feet of an angel. And he does it again in 22:8–9. Peter had to stop Cornelius the same way: <em>“Stand up; I myself also am a man”</em> (Acts 10:26).</p>
+    <ul class="nots">
+      <li class="step"><span class="k">the messenger</span><span class="why">the preacher, the sponsor, the man who got you clean</span></li>
+      <li class="step"><span class="k">the experience</span><span class="why">the feeling, the miracle, the vision</span></li>
+      <li class="step yes"><span class="k">“worship God”</span></li>
+    </ul>
+    <p class="note step">Thank the people God used, but don't put any of them on the throne. And look how the angel corrects John: no shame, no lecture. <em>“I am thy fellowservant.”</em> Get up off the floor and point your worship the right way. That's all.</p>
+  </div>
+</section>
+
+<!-- ======================= PART THREE: THE RIDER ON THE WHITE HORSE ======================= -->
+<section class="slide part">
+  <div class="inner">
+    <p class="part-n rise">Part three</p>
+    <h2 class="rise" style="--d:1">The Rider on the white horse</h2>
+    <p class="range rise" style="--d:2">Verses 11–16</p>
+    <div class="rule"></div>
+    <p class="hook rise" style="--d:4">In chapter 4 a door opened in heaven. Now heaven itself opens, and Jesus comes back.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="11-13" data-hl="I saw heaven opened, and behold a white horse|Faithful and True|a vesture dipped in blood|The Word of God"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="11" data-hl="Faithful and True"></blockquote>
+    <h2 class="rise" style="--d:1">Faithful and True</h2>
+    <p class="note rise" style="--d:2">His first name in this chapter is a promise kept. Forty days after He rose, the angels told the disciples:</p>
+    <blockquote class="quote rise" style="--d:3"><p>“Ye men of Galilee, why stand ye gazing up into heaven? this same Jesus, which is taken up from you into heaven, shall so come in like manner as ye have seen him go into heaven.”</p><cite>Acts 1:11</cite></blockquote>
+    <p class="note step">You've known men who weren't faithful or true. Maybe you've been one: a promise to your kids you didn't keep. He has never once broken His word. He said He'd come back, and He does. And He makes war only <em>“in righteousness”</em>: never for pride, never wrong.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="14-16" data-hl="clothed in fine linen, white and clean|a sharp sword|a rod of iron|KING OF KINGS, AND LORD OF LORDS"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise">The King comes</h2>
+    <div class="rv19-ride">
+      <svg viewBox="0 0 420 380" role="img" aria-label="A night sky. Heaven splits open in light at the top, and a white horse comes down through it. On a step, the armies of heaven appear behind it on white horses.">
+        <defs>
+          <symbol id="rv19-horse" viewBox="0 0 100 100">
+            <path class="rv19-hb" d="M28 98 L32 72 C 28 62, 24 54, 26 44 L 14 50 C 6 53, 1 46, 5 40 L 26 20 C 30 14, 36 10, 42 10 L 45 0 L 52 9 C 66 12, 78 26, 80 42 C 82 60, 78 80, 74 98 Z"/>
+            <path class="rv19-mane" d="M52 9 C 68 14, 82 30, 84 50 C 86 70, 82 86, 80 98 L 88 98 C 92 80, 94 58, 90 40 C 86 24, 72 10, 54 6 Z"/>
+            <circle class="rv19-eye" cx="40" cy="26" r="3"/>
+            <circle class="rv19-eye" cx="9" cy="44" r="1.6"/>
+          </symbol>
+        </defs>
+        <circle class="rv19-star" cx="30" cy="90" r="1.6"/><circle class="rv19-star" cx="390" cy="120" r="1.4"/><circle class="rv19-star" cx="60" cy="250" r="1.2"/><circle class="rv19-star" cx="20" cy="330" r="1.5"/><circle class="rv19-star" cx="400" cy="300" r="1.2"/>
+        <path class="rv19-beam" d="M150 40 L270 40 L400 380 L20 380 Z"/>
+        <ellipse class="rv19-rift" cx="210" cy="40" rx="170" ry="22"/>
+        <text class="rv19-tag" x="210" y="12" text-anchor="middle">“I saw heaven opened” (11)</text>
+        <use class="rv19-army" style="--k:0" href="#rv19-horse" x="250" y="110" width="120" height="120"/>
+        <use class="rv19-army" style="--k:1" href="#rv19-horse" x="300" y="180" width="110" height="110"/>
+        <use class="rv19-army" style="--k:2" href="#rv19-horse" x="10" y="150" width="105" height="105"/>
+        <use class="rv19-army" style="--k:3" href="#rv19-horse" x="40" y="230" width="95" height="95"/>
+        <g class="rv19-come"><use href="#rv19-horse" x="95" y="80" width="250" height="250"/></g>
+        <text class="rv19-tag hot" x="210" y="364" text-anchor="middle">a white horse</text>
+      </svg>
+      <ol class="rv19-marks" aria-label="The marks of the Rider, one at a time">
+        <li class="step">
+          <svg viewBox="0 0 48 48" aria-hidden="true"><path class="rv19-i" d="M24 6 V40 M10 14 H38 M10 14 L4 28 H16 Z M38 14 L32 28 H44 Z M16 42 H32"/></svg>
+          <q>Faithful and True… in righteousness he doth judge</q><small>VERSE 11</small>
+        </li>
+        <li class="step">
+          <svg viewBox="0 0 48 48" aria-hidden="true"><path class="rv19-iw" d="M14 44 C 4 36, 8 24, 14 18 C 14 26, 18 28, 20 26 C 16 18, 20 8, 28 4 C 26 14, 40 20, 38 32 C 37 40, 30 44, 24 44 Z"/><path class="rv19-ir" d="M20 44 C 16 38, 20 32, 24 30 C 24 36, 30 36, 30 40 C 30 43, 26 44, 24 44 Z"/></svg>
+          <q>his eyes were as a flame of fire</q><small>VERSE 12</small>
+        </li>
+        <li class="step">
+          <svg viewBox="0 0 48 48" aria-hidden="true"><path class="rv19-iw" d="M4 34 L6 20 L12 27 L16 16 L20 27 L24 16 L28 27 L32 16 L36 27 L42 20 L44 34 Z"/><rect class="rv19-iw" x="4" y="36" width="40" height="6" rx="2"/><circle class="rv19-ir" cx="24" cy="39" r="2"/></svg>
+          <q>on his head were many crowns</q><small>VERSE 12</small>
+        </li>
+        <li class="step">
+          <svg viewBox="0 0 48 48" aria-hidden="true"><rect class="rv19-is" x="8" y="10" width="32" height="28" rx="4"/><circle class="rv19-ir" cx="24" cy="38" r="7"/><text x="24" y="31" text-anchor="middle" style="fill:var(--on-glow);font:700 18px var(--serif)">?</text></svg>
+          <q>a name written, that no man knew, but he himself</q><small>VERSE 12</small>
+        </li>
+        <li class="step">
+          <svg viewBox="0 0 48 48" aria-hidden="true"><path class="rv19-if" d="M16 4 Q24 9 32 4 L42 12 L38 18 L34 15 L36 44 H12 L14 15 L10 18 L6 12 Z"/><path class="rv19-ir" d="M13 32 Q24 35 35 32 L36 44 H12 Z"/></svg>
+          <q>a vesture dipped in blood</q><small>VERSE 13</small>
+        </li>
+        <li class="step">
+          <svg viewBox="0 0 48 48" aria-hidden="true"><path class="rv19-i" d="M24 12 C 18 8, 10 8, 4 10 V40 C 10 38, 18 38, 24 42 C 30 38, 38 38, 44 40 V10 C 38 8, 30 8, 24 12 Z M24 12 V42"/></svg>
+          <q>his name is called The Word of God</q><small>VERSE 13</small>
+        </li>
+        <li class="step rv19-army-go">
+          <svg viewBox="0 0 48 48" aria-hidden="true"><circle class="rv19-if" cx="10" cy="30" r="6"/><circle class="rv19-if" cx="24" cy="24" r="6"/><circle class="rv19-if" cx="38" cy="30" r="6"/><path class="rv19-if" d="M2 44 Q10 34 18 44 Z M16 40 Q24 30 32 40 Z M30 44 Q38 34 46 44 Z"/></svg>
+          <q>the armies… followed him upon white horses</q><small>VERSE 14</small>
+        </li>
+        <li class="step">
+          <svg viewBox="0 0 48 48" aria-hidden="true"><path class="rv19-is" d="M14 24 L40 21 L46 24 L40 27 Z"/><rect class="rv19-iw" x="10" y="15" width="4" height="18" rx="1.5"/><rect class="rv19-iw" x="2" y="22" width="9" height="4" rx="2"/></svg>
+          <q>out of his mouth goeth a sharp sword</q><small>VERSE 15</small>
+        </li>
+        <li class="step">
+          <svg viewBox="0 0 48 48" aria-hidden="true"><rect class="rv19-is" x="4" y="21" width="40" height="6" rx="3"/><circle class="rv19-is" cx="44" cy="24" r="4"/></svg>
+          <q>he shall rule them with a rod of iron</q><small>VERSE 15</small>
+        </li>
+      </ol>
+      <p class="rv19-name step">KING OF KINGS, AND LORD OF LORDS<small>on his vesture and on his thigh (16)</small></p>
+    </div>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise">Two riders on white horses</h2>
+    <p class="note rise" style="--d:1">Back in 6:2, when the first seal opened, another rider came out on a white horse. Put the two side by side:</p>
+    <div class="rv19-vs">
+      <div class="head rise" style="--d:2"><b></b><span>The first seal (6:2)</span><span>The King (19:11–16)</span></div>
+      <div class="step"><b>He comes</b><span>called out by a beast: “Come”</span><span>out of heaven opened</span></div>
+      <div class="step"><b>He holds</b><span>a bow</span><span>a sword out of his mouth: his word</span></div>
+      <div class="step"><b>His crown</b><span>one, and “given unto him”</span><span>many crowns, His own</span></div>
+      <div class="step"><b>His name</b><span>none given</span><span>Faithful and True, The Word of God, KING OF KINGS</span></div>
+      <div class="step"><b>He goes</b><span>“conquering, and to conquer”</span><span>“in righteousness he doth judge”</span></div>
+    </div>
+    <p class="note step">Many teachers see the first rider as conquest, or a false christ who looks like the real thing. Either way, the world has had a lot of men on white horses promising to fix everything. Only one of them is Faithful and True.</p>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise">His names and His marks</h2>
+    <div class="pair">
+      <div class="scroll rise" style="--d:1"><p class="ref">John 1:1</p><p class="kjv">In the beginning was <mark>the Word</mark>, and the Word was with God, and the Word was God.</p></div>
+      <div class="scroll step"><p class="ref">Isaiah 63:2–3</p><p class="kjv">Wherefore art thou <mark>red in thine apparel</mark>, and thy garments like him that treadeth in the winefat? I have trodden the winepress alone;</p></div>
+    </div>
+    <p class="note step"><em>The Word of God</em>: John gives Him the same name as in his Gospel. God's last word to the world is a Person. The <em>vesture dipped in blood</em> is Isaiah's Warrior, stained like a man treading grapes: the winepress of verse 15, judgment on those who fight Him to the end.</p>
+    <p class="note step">The <em>sword</em> is His word (1:16): He speaks, and it's done. The <em>rod of iron</em> is from Psalm 2:9, a rule nobody breaks. And <em>a name… that no man knew</em>: there's always more to Him than we can know.</p>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="14" data-hl="clothed in fine linen, white and clean"></blockquote>
+    <h2 class="rise" style="--d:1">Who rides behind Him?</h2>
+    <p class="note rise" style="--d:2">Their clothes are <em>fine linen, white and clean</em>, like the bride's in verse 8. Many teachers say these are the saints, with the angels (Matthew 25:31). John already told us who rides with the Lamb:</p>
+    <blockquote class="quote step"><p>“These shall make war with the Lamb, and the Lamb shall overcome them: for he is Lord of lords, and King of kings: and they that are with him are called, and chosen, and faithful.”</p><cite>Revelation 17:14</cite></blockquote>
+    <p class="note step">And the armies never lift a hand. Their robes stay white; His is the one dipped in blood. He fights, and they follow. That's the gospel: He does the work, and we share His victory.</p>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <p class="saying rise" style="--d:1">KING OF KINGS, AND LORD OF LORDS.</p>
+    <p class="note rise" style="--d:2">Written <em>“on his vesture and on his thigh”</em>, where a rider's robe falls across his leg, where everyone can read it as He comes.</p>
+    <p class="note step">Every king, president, warden and judge answers to Him. So does every king you served yourself: the bottle, the pipe, the money, your temper.</p>
+    <blockquote class="quote step"><p>“That at the name of Jesus every knee should bow, of things in heaven, and things in earth, and things under the earth; And that every tongue should confess that Jesus Christ is Lord, to the glory of God the Father.”</p><cite>Philippians 2:10–11</cite></blockquote>
+    <p class="note step">One day every knee bows. A man who bows today isn't a loser; he's on the winning side early.</p>
+  </div>
+</section>
+
+<!-- ======================= PART FOUR: THE END OF THE BEAST ======================= -->
+<section class="slide part">
+  <div class="inner">
+    <p class="part-n rise">Part four</p>
+    <h2 class="rise" style="--d:1">The end of the beast</h2>
+    <p class="range rise" style="--d:2">Verses 17–21</p>
+    <div class="rule"></div>
+    <p class="hook rise" style="--d:4">The armies of the world gather against Him. The battle is over before it starts.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="17-18" data-hl="the supper of the great God"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise">Two suppers</h2>
+    <p class="note rise" style="--d:1">This chapter has two suppers in it. The picture of birds called to a battlefield comes from the prophet Ezekiel (Ezekiel 39:17). It's meant to be sober, not to be enjoyed.</p>
+    <div class="rv19-suppers">
+      <div class="step"><small>Verse 9</small><h3>The marriage supper of the Lamb</h3><p>For everyone who answers the invitation. Dress provided, cost paid, a seat with your name on it.</p></div>
+      <div class="step"><small>Verse 17</small><h3>The supper of the great God</h3><p>The end of those who gather to fight the Lamb to the last: <em>“both free and bond, both small and great.”</em></p></div>
+    </div>
+    <p class="note step">Both lists say <em>“small and great”</em> (19:5, 19:18). Rank doesn't decide where a man ends up. What he does with the Lamb does. And the invitation to the first supper is still open today.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="19-20" data-hl="And the beast was taken, and with him the false prophet|These both were cast alive into a lake of fire burning with brimstone"></section>
+
+<section class="slide verse" data-v="21" data-hl="the sword of him that sat upon the horse"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="20" data-hl="And the beast was taken"></blockquote>
+    <h2 class="rise" style="--d:1">No battle at all</h2>
+    <p class="note rise" style="--d:2">The world's armies gather, and John doesn't describe a fight. The beast <em>“was taken.”</em> One word from the mouth of the King, and it's finished.</p>
+    <p class="note step">The beast and the false prophet are the great deceivers of chapter 13: power that demanded worship, and religion that sold the lie with miracles. They are the first ones into the lake of fire. Every lie that ever told a man <em>“you'll never be free”</em> ends here.</p>
+    <p class="note step">This is sober, and it's meant to be. But for a believer it's hope: evil doesn't get the last word. <em>“For this purpose the Son of God was manifested, that he might destroy the works of the devil”</em> (1 John 3:8).</p>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise">Take it to work today</h2>
+    <div class="daybreak climb">
+      <div class="rise" style="--d:1"><i>19:6</i><b>He reigns</b><p>Say it once out loud today, when things go wrong: the Lord God omnipotent reigneth.</p></div>
+      <div class="step"><i>19:2</i><b>Hand over the score</b><p>Name the man you want to pay back, and give him to God. Vengeance is His job, not yours.</p></div>
+      <div class="step"><i>19:8</i><b>Wear the linen</b><p>You've been given a clean robe. Do one right thing today that fits it.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ======================= CLOSING ======================= -->
+<section class="slide remember">
+  <div class="inner">
+    <h2 class="rise">Points to remember</h2>
+    <ol class="seeds">
+      <li class="step"><span class="topic">Alleluia</span><span class="seed-q">“True and righteous are his judgments” <cite>19:2</cite></span><span class="take">God has judged Babylon and put the wrong right. The Lord God omnipotent reigns.</span></li>
+      <li class="step"><span class="topic">Fine linen</span><span class="seed-q">“To her was granted that she should be arrayed in fine linen” <cite>19:8</cite></span><span class="take">The bride's clean white robe is given to her, washed in the blood of the Lamb.</span></li>
+      <li class="step"><span class="topic">Invited</span><span class="seed-q">“Blessed are they which are called unto the marriage supper of the Lamb” <cite>19:9</cite></span><span class="take">Everyone who answers the Lamb's invitation is blessed, and the invitation is open to whosoever will.</span></li>
+      <li class="step"><span class="topic">Worship</span><span class="seed-q">“See thou do it not… worship God” <cite>19:10</cite></span><span class="take">Even the best messenger is only a fellowservant. Worship belongs to God alone.</span></li>
+      <li class="step"><span class="topic">The Rider</span><span class="seed-q">“KING OF KINGS, AND LORD OF LORDS” <cite>19:16</cite></span><span class="take">Jesus, Faithful and True, the Word of God, comes back as King over every king.</span></li>
+      <li class="step"><span class="topic">The end of evil</span><span class="seed-q">“These both were cast alive into a lake of fire” <cite>19:20</cite></span><span class="take">The beast is simply taken. The great deceivers are judged, and the King wins by His word.</span></li>
+    </ol>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 1 of 6</p>
+      <span class="topic">Alleluia</span>
+      <h2>Why does heaven shout Alleluia?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="2"></blockquote>
+      <blockquote class="quote step" data-q="6"></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>Because God has judged Babylon, the great city that corrupted the earth and killed His servants. His judgments are true and righteous, and the wrong is finally put right. Above all, they praise Him because the Lord God omnipotent reigns.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 2 of 6</p>
+      <span class="topic">Fine linen</span>
+      <h2>What is the bride's fine linen, and where does she get it?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="8"></blockquote>
+      <blockquote class="quote step"><p>“For he hath made him to be sin for us, who knew no sin; that we might be made the righteousness of God in him.”</p><cite>2 Corinthians 5:21</cite></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>It's “the righteousness of saints,” clean and white, and it is “granted” to her: a gift. Our own goodness is filthy rags, but Christ gives His righteousness to every believer, washes us in His blood, and then helps us live right. Even the good we do is His gift.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 3 of 6</p>
+      <span class="topic">Invited</span>
+      <h2>Who is blessed, according to verse 9?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="9"></blockquote>
+      <blockquote class="quote step"><p>“And the Spirit and the bride say, Come. And let him that heareth say, Come. And let him that is athirst come. And whosoever will, let him take the water of life freely.”</p><cite>Revelation 22:17</cite></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>Those who are called, that is, invited, to the marriage supper of the Lamb, and who come. The invitation goes out to the highways, to whosoever will. The dress is provided and the cost is paid.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 4 of 6</p>
+      <span class="topic">Worship</span>
+      <h2>Why did the angel tell John not to worship him?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="10"></blockquote>
+      <blockquote class="quote step"><p>“Then saith Jesus unto him, Get thee hence, Satan: for it is written, Thou shalt worship the Lord thy God, and him only shalt thou serve.”</p><cite>Matthew 4:10</cite></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>Because the angel was only a fellowservant, one of God's servants like John. Worship belongs to God alone. The angel corrected John gently and pointed him back to God, and to Jesus, who is what all prophecy is about.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 5 of 6</p>
+      <span class="topic">The Rider</span>
+      <h2>Who is the Rider on the white horse?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="13"></blockquote>
+      <blockquote class="quote step" data-q="16"></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>Jesus Christ, coming back as He promised. He is called Faithful and True and The Word of God. His eyes are a flame of fire, He wears many crowns, His robe is dipped in blood, and His name is KING OF KINGS, AND LORD OF LORDS.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 6 of 6</p>
+      <span class="topic">The end of evil</span>
+      <h2>How does the war against the Rider end?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="20"></blockquote>
+      <blockquote class="quote step" data-q="21"></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>There is hardly a battle. The beast and the false prophet are taken and cast alive into the lake of fire, and the rest fall by the sword from the King's mouth: His word. Evil doesn't get the last word. Jesus does.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide prayer">
+  <div class="inner">
+    <div class="emblem rise"></div>
+    <h2 class="rise" style="--d:1">Prayer requests</h2>
+    <p class="ask-line rise" style="--d:2">What can we pray about for you today?</p>
+    <blockquote class="quote rise" style="--d:4" data-q="6"></blockquote>
+  </div>
+</section>
+
+</main>
+
+<script>
+// King James Version, Revelation chapter 19
+const V = {
+  1: "And after these things I heard a great voice of much people in heaven, saying, Alleluia; Salvation, and glory, and honour, and power, unto the Lord our God:",
+  2: "For true and righteous are his judgments: for he hath judged the great whore, which did corrupt the earth with her fornication, and hath avenged the blood of his servants at her hand.",
+  3: "And again they said, Alleluia. And her smoke rose up for ever and ever.",
+  4: "And the four and twenty elders and the four beasts fell down and worshipped God that sat on the throne, saying, Amen; Alleluia.",
+  5: "And a voice came out of the throne, saying, Praise our God, all ye his servants, and ye that fear him, both small and great.",
+  6: "And I heard as it were the voice of a great multitude, and as the voice of many waters, and as the voice of mighty thunderings, saying, Alleluia: for the Lord God omnipotent reigneth.",
+  7: "Let us be glad and rejoice, and give honour to him: for the marriage of the Lamb is come, and his wife hath made herself ready.",
+  8: "And to her was granted that she should be arrayed in fine linen, clean and white: for the fine linen is the righteousness of saints.",
+  9: "And he saith unto me, Write, Blessed are they which are called unto the marriage supper of the Lamb. And he saith unto me, These are the true sayings of God.",
+  10: "And I fell at his feet to worship him. And he said unto me, See thou do it not: I am thy fellowservant, and of thy brethren that have the testimony of Jesus: worship God: for the testimony of Jesus is the spirit of prophecy.",
+  11: "And I saw heaven opened, and behold a white horse; and he that sat upon him was called Faithful and True, and in righteousness he doth judge and make war.",
+  12: "His eyes were as a flame of fire, and on his head were many crowns; and he had a name written, that no man knew, but he himself.",
+  13: "And he was clothed with a vesture dipped in blood: and his name is called The Word of God.",
+  14: "And the armies which were in heaven followed him upon white horses, clothed in fine linen, white and clean.",
+  15: "And out of his mouth goeth a sharp sword, that with it he should smite the nations: and he shall rule them with a rod of iron: and he treadeth the winepress of the fierceness and wrath of Almighty God.",
+  16: "And he hath on his vesture and on his thigh a name written, KING OF KINGS, AND LORD OF LORDS.",
+  17: "And I saw an angel standing in the sun; and he cried with a loud voice, saying to all the fowls that fly in the midst of heaven, Come and gather yourselves together unto the supper of the great God;",
+  18: "That ye may eat the flesh of kings, and the flesh of captains, and the flesh of mighty men, and the flesh of horses, and of them that sit on them, and the flesh of all men, both free and bond, both small and great.",
+  19: "And I saw the beast, and the kings of the earth, and their armies, gathered together to make war against him that sat on the horse, and against his army.",
+  20: "And the beast was taken, and with him the false prophet that wrought miracles before him, with which he deceived them that had received the mark of the beast, and them that worshipped his image. These both were cast alive into a lake of fire burning with brimstone.",
+  21: "And the remnant were slain with the sword of him that sat upon the horse, which sword proceeded out of his mouth: and all the fowls were filled with their flesh."
+};
+const BOOK = "Revelation 19";
+</script>
+<script src="../assets/deck.js"></script>
+</body>
+</html>

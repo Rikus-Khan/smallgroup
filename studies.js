@@ -17173,5 +17173,111 @@ window.STUDIES = [
       },
       "big": "Everything the world sells, even people, is gone in one hour, and those who got rich off it weep for what they lost, not for what they did. God calls His people to come out of her now, and the One who bought us with His blood promises a city with no more tears."
     }
+  },
+  {
+    "id": "revelation-19",
+    "type": "chapter",
+    "book": "Revelation",
+    "ch": 19,
+    "date": "2026-10-31",
+    "title": "Revelation 19",
+    "sub": "King of kings",
+    "about": "Heaven shouts Alleluia, a wedding is ready, and the door of heaven opens on a Rider whose name is Faithful and True.",
+    "tags": [
+      "Second coming",
+      "Worship",
+      "Grace",
+      "The church",
+      "Victory",
+      "Judgment"
+    ],
+    "url": "studies/revelation-19.html",
+    "overview": {
+      "where": "Heaven, then heaven opened over the earth, in John's vision on Patmos",
+      "when": "About AD 95; in the vision, after Babylon's fall (chapters 17–18)",
+      "people": [
+        "jesus",
+        "the-lamb",
+        "faithful-and-true",
+        "king-of-kings",
+        "john-the-apostle",
+        "twenty-four-elders",
+        "four-beasts",
+        "angels",
+        "the-beast",
+        "the-false-prophet"
+      ],
+      "places": [
+        "heaven",
+        "lake-of-fire"
+      ],
+      "story": [
+        "A great multitude in heaven cries “Alleluia”: God's judgments are true and righteous, and He has judged the great whore (1–3).",
+        "The elders and beasts worship, a voice from the throne calls all His servants, small and great, to praise, and the multitude roars, “Alleluia: for the Lord God omnipotent reigneth” (4–6).",
+        "The marriage of the Lamb is come. His wife is granted fine linen, clean and white, the righteousness of saints, and blessed are they which are called to the marriage supper (7–9).",
+        "John falls at the angel's feet, and the angel stops him: “See thou do it not… worship God” (10).",
+        "Heaven opens on a white horse. Its Rider is Faithful and True, the Word of God, with eyes as fire, many crowns, a vesture dipped in blood, the armies of heaven behind Him, and the name KING OF KINGS, AND LORD OF LORDS (11–16).",
+        "An angel calls the birds to the supper of the great God. The beast and the kings of the earth gather to war, but the beast and the false prophet are taken and cast alive into the lake of fire, and the rest fall by the sword of His mouth (17–21)."
+      ],
+      "key": {
+        "ref": "Revelation 19:16",
+        "text": "And he hath on his vesture and on his thigh a name written, KING OF KINGS, AND LORD OF LORDS."
+      },
+      "big": "Jesus is coming back, Faithful and True, as King of kings. His bride is dressed in a robe she was given, the invitation to His wedding supper is open to whosoever will, and evil is finished by one word from His mouth."
+    }
+  },
+  {
+    "id": "revelation-20",
+    "type": "chapter",
+    "book": "Revelation",
+    "ch": 20,
+    "date": "2026-10-31",
+    "title": "Revelation 20",
+    "sub": "The book of life",
+    "about": "The devil on a chain, then finished for good. A great white throne. And the one book that matters.",
+    "tags": [
+      "Satan defeated",
+      "The thousand years",
+      "Judgment",
+      "The book of life",
+      "Salvation",
+      "Assurance"
+    ],
+    "url": "studies/revelation-20.html",
+    "overview": {
+      "where": "The bottomless pit, the earth, and the great white throne, in John's vision on Patmos",
+      "when": "About AD 95; in the vision, after Christ's return in chapter 19",
+      "people": [
+        "satan",
+        "the-dragon",
+        "jesus",
+        "angels",
+        "john-the-apostle",
+        "the-beast",
+        "the-false-prophet"
+      ],
+      "places": [
+        "bottomless-pit",
+        "heaven",
+        "gog-and-magog",
+        "camp-of-the-saints",
+        "great-white-throne",
+        "lake-of-fire",
+        "hell"
+      ],
+      "story": [
+        "An angel with the key of the bottomless pit and a great chain binds the dragon, that old serpent, the Devil and Satan, for a thousand years, so he can deceive the nations no more (1–3).",
+        "John sees thrones, and the souls of those beheaded for the witness of Jesus. They live and reign with Christ a thousand years: the first resurrection, over which the second death has no power (4–6).",
+        "Satan is loosed and deceives the nations, Gog and Magog, as the sand of the sea. They surround the camp of the saints, and fire from God devours them (7–9).",
+        "The devil is cast into the lake of fire and brimstone, where the beast and the false prophet are, for ever and ever (10).",
+        "At a great white throne the dead, small and great, stand before God. The books are opened, and the book of life, and every man is judged according to his works (11–13).",
+        "Death and hell are cast into the lake of fire, the second death, and whosoever was not found written in the book of life was cast into the lake of fire (14–15)."
+      ],
+      "key": {
+        "ref": "Revelation 20:12",
+        "text": "And I saw the dead, small and great, stand before God; and the books were opened: and another book was opened, which is the book of life: and the dead were judged out of those things which were written in the books, according to their works."
+      },
+      "big": "Good teachers read the thousand years differently, but this is plain: Satan loses, Christ reigns, and every man will stand before God. The only thing that matters on that day is the Lamb's book of life, and a man's name is written there by faith in Jesus, today."
+    }
   }
 ];

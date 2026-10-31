@@ -1,0 +1,573 @@
+<!doctype html>
+<html lang="en" data-theme="stone">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Revelation 20</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="../assets/fonts.css">
+<link rel="stylesheet" href="../assets/deck.css">
+<link rel="stylesheet" href="../assets/themes.css">
+<style>
+/* rv20-where: where this chapter sits in Revelation (copied from rv05-where). Twenty-two chapter boxes (span) in seven groups (div);
+   each group's label (b) sits above (.up) or below the row, across the columns in its --c. The current group is .now, the current
+   chapter span.here. On a phone each group becomes its own row. */
+.rv20-where { display: grid; grid-template-columns: repeat(22, 1fr); gap: 5px 3px; margin: .6em 0 1em; align-items: end; }
+.rv20-where > div { display: contents; }
+.rv20-where span { grid-row: 2; display: grid; place-items: center; height: 2.3rem; border: 1.5px solid var(--line-strong); border-radius: 5px; font: 600 clamp(.75rem, .7rem + .3vw, 1rem) var(--sans); color: var(--ink-soft); }
+.rv20-where span.gap { margin-left: 5px; }
+.rv20-where b { grid-row: 3; grid-column: var(--c); align-self: start; text-align: center; font: 400 clamp(.8rem, .74rem + .32vw, 1.05rem)/1.25 var(--serif); color: var(--ink-soft); padding: 0 2px; }
+.rv20-where b.up { grid-row: 1; align-self: end; }
+.rv20-where b.left { text-align: left; }
+.rv20-where .now span { border-color: var(--accent); color: var(--ink); }
+.rv20-where .now b { color: var(--accent-hot); font-weight: 600; }
+.rv20-where span.here { background: var(--accent); color: var(--on-accent); box-shadow: 0 0 0 5px color-mix(in srgb, var(--accent) 22%, transparent); }
+@media (max-width: 600px) {
+  .rv20-where { grid-template-columns: 1fr; gap: 6px; }
+  .rv20-where > div { display: flex; flex-wrap: wrap; align-items: center; gap: 3px; }
+  .rv20-where span { width: 1.75rem; height: 1.9rem; }
+  .rv20-where span.gap { margin-left: 0; }
+  .rv20-where b, .rv20-where b.up { margin-left: .4em; text-align: left; align-self: center; }
+}
+
+/* rv20-pit: the bottomless pit shut. When the slide opens a stone lid (.rv20-lid) slides over the pit's mouth (.rv20-mouth),
+   the chain (.rv20-chain) wraps it, and a wax seal (.rv20-seal) pops on. The key (.rv20-key) hangs above */
+.rv20-ground { fill: var(--surface-2); }
+.rv20-mouth { fill: var(--on-glow); }
+.rv20-shaft { fill: color-mix(in srgb, var(--on-glow) 80%, var(--surface-2)); }
+.rv20-lid { fill: color-mix(in srgb, var(--leather-light) 55%, var(--surface-2)); stroke: var(--leather); stroke-width: 2.5; transform: translateX(-300px); opacity: 0; }
+.slide.active .rv20-lid { animation: rv20-slide 1.2s cubic-bezier(.3,.8,.3,1) .5s both; }
+@keyframes rv20-slide { to { transform: none; opacity: 1; } }
+.rv20-chain { fill: none; stroke: var(--ink-soft); stroke-width: 7; stroke-dasharray: 11 5; stroke-linecap: round; opacity: 0; }
+.slide.active .rv20-chain { animation: rv20-fade .6s ease 1.7s both; }
+@keyframes rv20-fade { to { opacity: 1; } }
+.rv20-seal { transform-box: fill-box; transform-origin: center; transform: scale(0); }
+.rv20-seal circle { fill: var(--wine); }
+.rv20-seal circle + circle { fill: none; stroke: color-mix(in srgb, var(--glow) 45%, var(--wine)); stroke-width: 2; }
+.slide.active .rv20-seal { animation: rv20-pop .5s cubic-bezier(.3,1.6,.5,1) 2.3s both; }
+@keyframes rv20-pop { to { transform: scale(1); } }
+.rv20-key { fill: none; stroke: var(--warm); stroke-width: 6; stroke-linecap: round; stroke-linejoin: round; }
+.rv20-lab { fill: var(--ink-soft); font: italic 17px var(--serif); }
+.rv20-lab.hot { fill: var(--accent-hot); font: 600 21px var(--serif); font-style: normal; }
+@media (max-width: 600px) { .rv20-lab { font-size: 21px; } .rv20-lab.hot { font-size: 25px; } }
+
+/* rv20-twice: "born once, die twice; born twice, die once". Two rows (div) of stages (span) joined by arrows; the first row's last
+   stage is .dark, the second row's is .lit. The second row comes in on a step */
+.rv20-twice { display: grid; gap: .8rem; margin: .4em 0 1em; }
+.rv20-twice > div { display: grid; grid-template-columns: 8.5rem 1fr; gap: .4rem 1rem; align-items: center; }
+.rv20-twice h3 { font: 400 clamp(1.1rem, .95rem + .7vw, 1.6rem)/1.15 var(--serif); color: var(--ink); }
+.rv20-twice ol { list-style: none; padding: 0; margin: 0; display: flex; flex-wrap: wrap; align-items: center; gap: .35rem; }
+.rv20-twice li { padding: .4em .75em; border: 1.5px solid var(--line-strong); border-radius: 999px; background: var(--surface); font-size: clamp(.85rem, .78rem + .35vw, 1.1rem); line-height: 1.25; color: var(--ink); }
+.rv20-twice li + li::before { content: "→"; margin: 0 .5em 0 -.1em; color: var(--ink-soft); }
+.rv20-twice li small { color: var(--ink-soft); }
+.rv20-twice li.dark { background: var(--on-glow); color: var(--glow); border-color: var(--on-glow); }
+.rv20-twice li.new { border: 2px solid var(--accent); color: var(--accent-hot); font-weight: 600; }
+.rv20-twice li.lit { background: var(--accent); color: var(--on-accent); border-color: var(--accent); }
+.rv20-twice li.lit small { color: var(--on-accent); opacity: .85; }
+@media (max-width: 600px) { .rv20-twice > div { grid-template-columns: 1fr; } }
+
+/* rv20-views: the thousand years, how good teachers read it: one simple table (View, What it says, Who holds it), with a last
+   row (.agree) spanning all three. On a phone each row becomes a card */
+.rv20-views { width: 100%; border-collapse: separate; border-spacing: 0 6px; margin: .2em 0 .8em; font-size: clamp(.85rem, .78rem + .35vw, 1.1rem); line-height: 1.35; }
+.rv20-views th { text-align: left; padding: 0 .8em .1em; font: 700 clamp(.72rem, .68rem + .22vw, .9rem) var(--sans); letter-spacing: .08em; text-transform: uppercase; color: var(--ink-soft); }
+.rv20-views td { padding: .55em .8em; background: var(--surface); border-top: 1.5px solid var(--line-strong); border-bottom: 1.5px solid var(--line-strong); color: var(--ink-soft); vertical-align: top; }
+.rv20-views td:first-child { border-left: 1.5px solid var(--line-strong); border-radius: 8px 0 0 8px; color: var(--ink); width: 23%; }
+.rv20-views td:last-child { border-right: 1.5px solid var(--line-strong); border-radius: 0 8px 8px 0; width: 24%; }
+.rv20-views td b { display: block; font: 600 1.12em var(--serif); color: var(--ink); }
+.rv20-views td small { color: var(--ink-soft); font-style: italic; }
+.rv20-views .agree td { border: 2px solid var(--accent); border-radius: 8px; background: color-mix(in srgb, var(--accent) 10%, var(--surface)); color: var(--ink); font: 400 clamp(1rem, .9rem + .5vw, 1.35rem)/1.35 var(--serif); }
+.rv20-views .agree b { display: inline; color: var(--accent-hot); font: inherit; font-weight: 600; }
+@media (max-width: 600px) {
+  .rv20-views, .rv20-views tbody, .rv20-views tr, .rv20-views td { display: block; width: auto !important; }
+  .rv20-views thead { display: none; }
+  .rv20-views tr { margin-bottom: 8px; border: 1.5px solid var(--line-strong); border-radius: 8px; background: var(--surface); }
+  .rv20-views td, .rv20-views td:first-child, .rv20-views td:last-child { border: 0; border-radius: 0; background: none; padding: .3em .8em; }
+  .rv20-views .agree { border: 2px solid var(--accent); }
+  .rv20-views .agree td { border: 0; }
+}
+
+/* rv20-books: the books opened (20:12). A stack of books (.rv20-book, --k) for "what every man did", and the book of life
+   (.rv20-page) open beside them, with lines of names (.rv20-name). A .rv20-write-go step writes one more name (.rv20-ink) */
+.rv20-book { fill: color-mix(in srgb, var(--leather) 70%, var(--surface-2)); stroke: var(--leather); stroke-width: 2; opacity: 0; }
+.slide.active .rv20-book { animation: rv20-fade .5s ease both; animation-delay: calc(var(--k) * 160ms + 300ms); }
+.rv20-spine { stroke: var(--leather-light); stroke-width: 2; }
+.rv20-page { fill: var(--glow); stroke: var(--leather-light); stroke-width: 2.5; }
+.rv20-gutter { stroke: var(--leather-light); stroke-width: 2; }
+.rv20-name { stroke: color-mix(in srgb, var(--on-glow) 45%, transparent); stroke-width: 2.4; stroke-linecap: round; }
+.rv20-ink { fill: none; stroke: var(--wine); stroke-width: 3; stroke-linecap: round; stroke-linejoin: round; stroke-dasharray: 1; stroke-dashoffset: 1; transition: stroke-dashoffset 1.6s ease .3s; }
+.slide:has(.rv20-write-go.on) .rv20-ink { stroke-dashoffset: 0; }
+.rv20-note { fill: var(--wine); font: italic 600 16px var(--serif); opacity: 0; transition: opacity .6s ease 1.6s; }
+.slide:has(.rv20-write-go.on) .rv20-note { opacity: 1; }
+@media (max-width: 600px) { .rv20-note { font-size: 20px; } }
+</style>
+</head>
+<body>
+<main class="deck" id="deck">
+
+<!-- ======================= OPENING ======================= -->
+<section class="slide title">
+  <div class="inner">
+    <div class="emblem rise"></div>
+    <h1 class="rise" style="--d:1">Revelation 20</h1>
+    <p class="sub rise" style="--d:3">The book of life</p>
+    <p class="tag rise" style="--d:5">The devil on a chain, then finished for good. A great white throne. And the one book that matters.</p>
+  </div>
+</section>
+
+<section class="slide watch">
+  <div class="inner">
+    <h2 class="rise">Things to watch for</h2>
+    <p class="lede rise" style="--d:1">Keep these questions in the back of your mind as we read. We'll come back to every one of them at the end.</p>
+    <ol class="seeds">
+      <li class="step"><span class="topic">Satan</span><span class="seed-q">What happens to Satan in this chapter?</span></li>
+      <li class="step"><span class="topic">A thousand years</span><span class="seed-q">What is plain about the thousand years, whatever view a man holds?</span></li>
+      <li class="step"><span class="topic">Blessed</span><span class="seed-q">Why is the man who has part in the first resurrection blessed?</span></li>
+      <li class="step"><span class="topic">The heart</span><span class="seed-q">What do the nations do as soon as Satan is loosed?</span></li>
+      <li class="step"><span class="topic">The throne</span><span class="seed-q">How are the dead judged at the great white throne?</span></li>
+      <li class="step"><span class="topic">The book</span><span class="seed-q">How does a man's name get written in the book of life?</span></li>
+    </ol>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise">Where we are in Revelation</h2>
+    <div class="rv20-where rise" style="--d:1" role="img" aria-label="The twenty-two chapters of Revelation in seven groups. Chapter 1: a vision of Christ. 2 and 3: the seven churches. 4 and 5: the throne and the Lamb. 6 to 16: seals, trumpets and bowls. 17 and 18: Babylon falls. 19 and 20: Christ returns and reigns, with chapter 20 lit. 21 and 22: all things new.">
+      <div><span>1</span><b class="up left" style="--c:1 / 4">a vision of Christ</b></div>
+      <div><span class="gap">2</span><span>3</span><b style="--c:1 / 5">the seven churches</b></div>
+      <div><span class="gap">4</span><span>5</span><b class="up left" style="--c:4 / 9">the throne and the Lamb</b></div>
+      <div><span class="gap">6</span><span>7</span><span>8</span><span>9</span><span>10</span><span>11</span><span>12</span><span>13</span><span>14</span><span>15</span><span>16</span><b style="--c:6 / 17">seals, trumpets and bowls</b></div>
+      <div><span class="gap">17</span><span>18</span><b class="up" style="--c:16 / 20">Babylon falls</b></div>
+      <div class="now"><span class="gap">19</span><span class="here">20</span><b style="--c:18 / 22">Christ returns and reigns</b></div>
+      <div><span class="gap">21</span><span>22</span><b class="up" style="--c:20 / 23">all things new</b></div>
+    </div>
+    <p class="note step">In chapter 19 heaven opened, and the King of kings rode out. The beast and the false prophet were taken and cast into the lake of fire.</p>
+    <p class="note step">One enemy is left: the one behind them all, the dragon. This chapter finishes him. Then every man who ever lived stands before God, and the books are opened.</p>
+  </div>
+</section>
+
+<!-- ======================= PART ONE: THE DRAGON CHAINED ======================= -->
+<section class="slide part">
+  <div class="inner">
+    <p class="part-n rise">Part one</p>
+    <h2 class="rise" style="--d:1">The dragon chained</h2>
+    <p class="range rise" style="--d:2">Verses 1–3</p>
+    <div class="rule"></div>
+    <p class="hook rise" style="--d:4">No great battle. One angel, one key, one chain.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="1-3" data-hl="the key of the bottomless pit and a great chain|that old serpent, which is the Devil, and Satan|that he should deceive the nations no more"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <div class="split">
+      <div class="stage">
+        <svg viewBox="0 0 400 324" role="img" aria-label="The mouth of a deep pit. A stone lid slides over it, a heavy chain wraps across the lid, and a red wax seal is set on it. A golden key hangs above. Underneath: a thousand years.">
+          <rect class="rv20-ground" x="0" y="150" width="400" height="112" rx="10"/>
+          <path class="rv20-shaft" d="M80 186 L106 262 L294 262 L320 186 Z"/>
+          <ellipse class="rv20-mouth" cx="200" cy="186" rx="122" ry="30"/>
+          <ellipse class="rv20-lid" cx="200" cy="180" rx="128" ry="32"/>
+          <path class="rv20-chain" d="M76 172 Q200 236 324 172"/>
+          <path class="rv20-chain" d="M108 208 Q200 140 292 208"/>
+          <g class="rv20-seal"><circle cx="200" cy="186" r="17"/><circle cx="200" cy="186" r="10"/></g>
+          <g class="rv20-key"><circle cx="300" cy="44" r="16"/><path d="M300 60 V128 M300 108 H318 M300 122 H314"/></g>
+          <text class="rv20-lab" x="282" y="32" text-anchor="end">“the key of the bottomless pit”</text>
+          <text class="rv20-lab hot" x="200" y="290" text-anchor="middle">a thousand years</text>
+          <text class="rv20-lab" x="200" y="316" text-anchor="middle">“shut him up, and set a seal upon him”</text>
+        </svg>
+      </div>
+      <div>
+        <h2 class="rise" style="--d:1">One angel, one chain</h2>
+        <p class="note rise" style="--d:2">Look who does it. Not Christ Himself, not an army: <em>“an angel.”</em> The devil is not God's equal, fighting Him for the world. He's a creature, and one of God's servants carries him off like a prisoner.</p>
+        <p class="note step"><em>Shut him up, and set a seal upon him</em>: locked, sealed, under guard. You've seen a cell door slam. This time it's the jailer of men's souls who goes in.</p>
+        <p class="note step">Whatever else the thousand years means (we'll look at that), here's the point: the devil is on God's leash, and God holds the key.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="2" data-hl="the dragon, that old serpent, which is the Devil, and Satan"></blockquote>
+    <h2 class="rise" style="--d:1">Four names, one enemy</h2>
+    <ol class="signs">
+      <li class="step now"><b>the dragon</b>his fury and his power (12:3, 9)</li>
+      <li class="step now"><b>that old serpent</b>the liar in the garden (Genesis 3)</li>
+      <li class="step now"><b>the Devil</b>Greek <span class="gk">diabolos</span>: the slanderer</li>
+      <li class="step now"><b>Satan</b>Hebrew for the adversary, the accuser</li>
+    </ol>
+    <p class="note step">From the first book of the Bible to the last, it's the same enemy. In the garden God promised that the woman's Seed would <em>“bruise thy head”</em> (Genesis 3:15). Here is the promise coming true.</p>
+    <blockquote class="quote step"><p>“And the God of peace shall bruise Satan under your feet shortly. The grace of our Lord Jesus Christ be with you. Amen.”</p><cite>Romans 16:20</cite></blockquote>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="3" data-hl="that he should deceive the nations no more"></blockquote>
+    <h2 class="rise" style="--d:1">His one trick</h2>
+    <p class="note rise" style="--d:2">Chained, he can't do the thing he does best: <em>deceive</em>. Jesus called him <em>“a liar, and the father of it”</em> (John 8:44). You know his voice:</p>
+    <ul class="nots">
+      <li class="step"><span class="k">“One won't hurt.”</span></li>
+      <li class="step"><span class="k">“Nobody will ever know.”</span></li>
+      <li class="step"><span class="k">“You're too far gone. God's done with you.”</span></li>
+      <li class="step yes"><span class="k">“…greater is he that is in you, than he that is in the world.”</span><span class="why">1 John 4:4</span></li>
+    </ul>
+    <p class="note step">A lie only has power while you believe it. Say the truth out loud, and tell a brother. <em>“Resist the devil, and he will flee from you”</em> (James 4:7).</p>
+  </div>
+</section>
+
+<!-- ======================= PART TWO: THEY REIGNED WITH CHRIST ======================= -->
+<section class="slide part">
+  <div class="inner">
+    <p class="part-n rise">Part two</p>
+    <h2 class="rise" style="--d:1">They reigned with Christ</h2>
+    <p class="range rise" style="--d:2">Verses 4–6</p>
+    <div class="rule"></div>
+    <p class="hook rise" style="--d:4">The men the world put to death sit on thrones. The second death can't touch them.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="4-6" data-hl="beheaded for the witness of Jesus|they lived and reigned with Christ a thousand years|This is the first resurrection|on such the second death hath no power"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="4" data-hl="they lived and reigned with Christ"></blockquote>
+    <h2 class="rise" style="--d:1">From the chopping block to a throne</h2>
+    <p class="note rise" style="--d:2">Rome beheaded Christians who wouldn't bow to Caesar. To the world they were criminals and dead men. Look where they are now: on <em>thrones</em>, and <em>“judgment was given unto them.”</em></p>
+    <p class="note step">Some of you have been on the wrong end of a courtroom. You know what it is to have the world say what you are. In God's courtroom, the people who stood for Jesus end up on the bench.</p>
+    <p class="note step">And they <em>“lived.”</em> Death didn't end their story, and it won't end yours. For a believer, the worst thing that can happen to him is not the last thing that happens to him.</p>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="6" data-hl="on such the second death hath no power"></blockquote>
+    <p class="saying rise" style="--d:1">Born once, <em>die twice</em>. Born twice, <em>die once</em>.</p>
+    <div class="rv20-twice">
+      <div class="rise" style="--d:2"><h3>Born once</h3><ol><li>born</li><li>dies</li><li class="dark">the second death <small>(20:14)</small></li></ol></div>
+      <div class="step"><h3>Born twice</h3><ol><li>born</li><li class="new">born again <small>(John 3:3)</small></li><li>dies, or is caught up</li><li class="lit">“the second death hath no power” <small>(20:6)</small></li></ol></div>
+    </div>
+    <p class="note step">That's an old preacher's saying, and it's true. The <em>second death</em> is the lake of fire (20:14). A man who has been born again may still die once, but the second death has no power over him. That's why he's <em>“blessed and holy.”</em></p>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise">The thousand years: how good teachers read it</h2>
+    <p class="note rise" style="--d:1">“A thousand years” comes six times in verses 2–7, and Bible-believing Baptists don't all read it the same way. Here are the main views, side by side:</p>
+    <table class="rv20-views rise" style="--d:2">
+      <thead><tr><th>The view</th><th>What it says</th><th>Who holds it</th></tr></thead>
+      <tbody>
+        <tr><td><b>Christ comes first</b><small>premillennial</small></td><td>Jesus returns (chapter 19), then reigns on the earth for a literal thousand years while Satan is bound. Then comes the last judgment.</td><td>Many Baptists, and many Bible teachers today</td></tr>
+        <tr><td><b>The thousand years is now</b><small>amillennial</small></td><td>The number pictures the whole time between Christ's first and second comings. He reigns now from heaven, and Satan is bound so the gospel can reach the nations.</td><td>Other Baptists, and many teachers through church history</td></tr>
+        <tr><td><b>The gospel wins first</b><small>postmillennial</small></td><td>The gospel spreads until much of the world is won, a long age of blessing, and then Christ returns.</td><td>Some Baptists, more so in past centuries</td></tr>
+        <tr class="agree step"><td colspan="3"><b>All of them agree:</b> Satan loses. Christ reigns. Every man will stand before God. And those written in the Lamb's book are safe.</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise">What is plain</h2>
+    <p class="note rise" style="--d:1">Godly men differ on the order of events. Nobody has to win that argument today. Here is what the chapter makes plain to every reader:</p>
+    <ol class="signs">
+      <li class="step now"><b>Satan loses</b>“cast into the lake of fire” (20:10)</li>
+      <li class="step now"><b>Christ reigns</b>“reigned with Christ” (20:4)</li>
+      <li class="step now"><b>Every man stands</b>“small and great, stand before God” (20:12)</li>
+      <li class="step now"><b>The book is safe</b>“written in the Lamb’s book of life” (21:27)</li>
+    </ol>
+    <blockquote class="quote step"><p>“For he must reign, till he hath put all enemies under his feet. The last enemy that shall be destroyed is death.”</p><cite>1 Corinthians 15:25–26</cite></blockquote>
+  </div>
+</section>
+
+<!-- ======================= PART THREE: LOOSED A LITTLE SEASON ======================= -->
+<section class="slide part">
+  <div class="inner">
+    <p class="part-n rise">Part three</p>
+    <h2 class="rise" style="--d:1">Loosed a little season</h2>
+    <p class="range rise" style="--d:2">Verses 7–10</p>
+    <div class="rule"></div>
+    <p class="hook rise" style="--d:4">The chain comes off for a little while. Then the devil goes where he can never deceive anyone again.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="7-8" data-hl="Satan shall be loosed out of his prison|to deceive the nations|Gog and Magog"></section>
+
+<section class="slide verse" data-v="9-10" data-hl="fire came down from God out of heaven, and devoured them|the devil that deceived them was cast into the lake of fire and brimstone"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="8" data-hl="And shall go out to deceive the nations"></blockquote>
+    <h2 class="rise" style="--d:1">The problem was never the neighborhood</h2>
+    <p class="note rise" style="--d:2"><em>Gog and Magog</em> are Ezekiel's names for nations gathered against God's people (Ezekiel 38:2). Here they stand for the whole rebellious world.</p>
+    <p class="note step">After a long age of Christ's rule, the moment the deceiver is let out, crowds follow him again. A better setting doesn't change a heart. A new address, a new job, even a prison term didn't fix the man inside.</p>
+    <blockquote class="quote step"><p>“A new heart also will I give you, and a new spirit will I put within you: and I will take away the stony heart out of your flesh, and I will give you an heart of flesh.”</p><cite>Ezekiel 36:26</cite></blockquote>
+    <p class="note step">Only God changes a heart. And the war ends without a fight: <em>“fire came down from God.”</em></p>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="10" data-hl="was cast into the lake of fire and brimstone"></blockquote>
+    <h2 class="rise" style="--d:1">The end of the accuser</h2>
+    <ol class="stairs down" style="--n:4" aria-label="Four steps down for the devil: cast out of heaven, bound in the pit, loosed a little season, cast into the lake of fire for ever.">
+      <li class="step" style="--k:0"><b>cast out</b>into the earth (12:9)</li>
+      <li class="step" style="--k:1"><b>bound</b>in the bottomless pit (20:3)</li>
+      <li class="step" style="--k:2"><b>loosed</b>a little season (20:7)</li>
+      <li class="step" style="--k:3"><b>cast into the lake</b>for ever and ever (20:10)</li>
+    </ol>
+    <p class="note step">That's the last we ever hear of him. And notice who that fire was made for: <em>“everlasting fire, prepared for the devil and his angels”</em> (Matthew 25:41). God never built it for men. He sent His Son so no man has to go there.</p>
+    <p class="note step">Jesus died <em>“that through death he might destroy him that had the power of death, that is, the devil”</em> (Hebrews 2:14). The voice that accuses you day and night will one day be silent for ever.</p>
+  </div>
+</section>
+
+<!-- ======================= PART FOUR: THE GREAT WHITE THRONE ======================= -->
+<section class="slide part">
+  <div class="inner">
+    <p class="part-n rise">Part four</p>
+    <h2 class="rise" style="--d:1">The great white throne</h2>
+    <p class="range rise" style="--d:2">Verses 11–15</p>
+    <div class="rule"></div>
+    <p class="hook rise" style="--d:4">Heaven and earth run from His face. Every man stands, and the books are opened.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="11-12" data-hl="a great white throne|the dead, small and great, stand before God|the book of life|according to their works"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <div class="split">
+      <div class="stage">
+        <svg viewBox="0 0 460 300" role="img" aria-label="On the left, a tall stack of closed books: what every man did. On the right, one book lies open with lines of names written in it: the book of life. On a step, one more name is written in.">
+          <rect class="rv20-book" style="--k:0" x="30" y="234" width="160" height="34" rx="4"/>
+          <rect class="rv20-book" style="--k:1" x="40" y="198" width="146" height="34" rx="4"/>
+          <rect class="rv20-book" style="--k:2" x="26" y="162" width="156" height="34" rx="4"/>
+          <rect class="rv20-book" style="--k:3" x="44" y="126" width="140" height="34" rx="4"/>
+          <rect class="rv20-book" style="--k:4" x="34" y="90" width="150" height="34" rx="4"/>
+          <rect class="rv20-book" style="--k:5" x="48" y="54" width="132" height="34" rx="4"/>
+          <g class="rv20-spine"><line x1="46" y1="234" x2="46" y2="268"/><line x1="56" y1="198" x2="56" y2="232"/><line x1="42" y1="162" x2="42" y2="196"/><line x1="60" y1="126" x2="60" y2="160"/><line x1="50" y1="90" x2="50" y2="124"/><line x1="64" y1="54" x2="64" y2="88"/></g>
+          <text class="rv20-lab" x="108" y="34" text-anchor="middle">“the books”</text>
+          <text class="rv20-lab" x="108" y="292" text-anchor="middle">what every man did</text>
+          <path class="rv20-page" d="M330 92 C 300 80, 260 80, 232 88 V 262 C 260 254, 300 254, 330 266 C 360 254, 400 254, 428 262 V 88 C 400 80, 360 80, 330 92 Z"/>
+          <line class="rv20-gutter" x1="330" y1="92" x2="330" y2="266"/>
+          <g class="rv20-name">
+            <line x1="246" y1="112" x2="312" y2="112"/><line x1="246" y1="130" x2="300" y2="130"/><line x1="246" y1="148" x2="316" y2="148"/><line x1="246" y1="166" x2="296" y2="166"/><line x1="246" y1="184" x2="310" y2="184"/><line x1="246" y1="202" x2="290" y2="202"/>
+            <line x1="346" y1="112" x2="410" y2="112"/><line x1="346" y1="130" x2="398" y2="130"/><line x1="346" y1="148" x2="414" y2="148"/><line x1="346" y1="166" x2="392" y2="166"/>
+          </g>
+          <path class="rv20-ink" pathLength="1" d="M348 190 C 352 178, 358 178, 358 190 C 358 198, 364 182, 370 184 C 376 186, 372 196, 380 192 C 386 188, 388 180, 394 186 C 398 190, 402 192, 410 186"/>
+          <text class="rv20-note" x="330" y="292" text-anchor="middle">a name written by faith in the Lamb</text>
+          <text class="rv20-lab hot" x="330" y="56" text-anchor="middle">the book of life</text>
+        </svg>
+      </div>
+      <div>
+        <h2 class="rise" style="--d:1">The books, and the book</h2>
+        <p class="note rise" style="--d:2">Daniel saw this court too (Daniel 7:10). <em>The books</em> hold every man's record, and the judgment is <em>“according to their works”</em>: exact and fair.</p>
+        <p class="note step">But nobody is saved by his record. <em>“For by grace are ye saved through faith… Not of works”</em> (Ephesians 2:8–9).</p>
+        <p class="note step rv20-write-go">So one book decides it: <em>the book of life</em>. A man's name goes in it when he trusts the Lamb, and Jesus promised, <em>“I will not blot out his name”</em> (3:5).</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="11" data-hl="from whose face the earth and the heaven fled away"></blockquote>
+    <h2 class="rise" style="--d:1">Nowhere to run</h2>
+    <p class="note rise" style="--d:2">Even the earth and the sky run from His face, and <em>“there was found no place for them.”</em> There's no lawyer, no plea deal, no back door. <em>“Small and great”</em>: the president and the homeless man stand in the same line.</p>
+    <blockquote class="quote step"><p>“And as it is appointed unto men once to die, but after this the judgment:”</p><cite>Hebrews 9:27</cite></blockquote>
+    <p class="note step">Does a believer stand here to be condemned? Many Bible teachers, Baptists among them, say no: Jesus said a believer <em>“shall not come into condemnation; but is passed from death unto life”</em> (John 5:24). Believers will give account at <em>“the judgment seat of Christ”</em> (2 Corinthians 5:10), for reward, not for hell.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="13-15" data-hl="death and hell were cast into the lake of fire. This is the second death|whosoever was not found written in the book of life was cast into the lake of fire"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="14" data-hl="death and hell were cast into the lake of fire"></blockquote>
+    <h2 class="rise" style="--d:1">The last enemy</h2>
+    <p class="note rise" style="--d:2">Nobody is missed: the sea gives up its dead, and the grave gives up its dead. <em>Hell</em> here is the place of the dead, and it's emptied. Then death itself is thrown away. There will be no more funerals, ever.</p>
+    <p class="note step">This is sober, and Scripture doesn't dress it up. The lake of fire is real, and it is <em>“the second death.”</em> God takes it so seriously that He gave His own Son to keep men out of it:</p>
+    <blockquote class="quote step"><p>“The Lord is not slack concerning his promise, as some men count slackness; but is longsuffering to us-ward, not willing that any should perish, but that all should come to repentance.”</p><cite>2 Peter 3:9</cite></blockquote>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise">Is your name in the book?</h2>
+    <div class="pair">
+      <div class="scroll rise" style="--d:1"><p class="ref">Revelation 20:15</p><p class="kjv">And <mark>whosoever</mark> was not found written in the book of life was cast into the lake of fire.</p></div>
+      <div class="scroll step"><p class="ref">Revelation 22:17</p><p class="kjv">And let him that is athirst come. And <mark>whosoever</mark> will, let him take the water of life freely.</p></div>
+    </div>
+    <p class="note step">The same word, <em>whosoever</em>, stands at both doors. Nobody is written in for being good, and no man is too bad to be written in. A man's name goes in the Lamb's book when he calls on Jesus and trusts Him:</p>
+    <blockquote class="quote step"><p>“For whosoever shall call upon the name of the Lord shall be saved.”</p><cite>Romans 10:13</cite></blockquote>
+    <p class="note step">If you've done that, your name is written, and it stays written: <em>“rejoice, because your names are written in heaven”</em> (Luke 10:20). If you haven't, <em>“behold, now is the day of salvation”</em> (2 Corinthians 6:2). Not tomorrow. Today.</p>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise">Take it to work today</h2>
+    <div class="daybreak climb">
+      <div class="rise" style="--d:1"><i>20:3</i><b>Name the lie</b><p>When the old voice says “one won't hurt” or “you're too far gone,” call it what it is: a lie from a chained enemy.</p></div>
+      <div class="step"><i>20:12</i><b>Settle the book</b><p>If you're not sure your name is written, settle it with God today. Call on Him. Ask a brother to pray with you.</p></div>
+      <div class="step"><i>20:15</i><b>Tell one man</b><p>Somebody at work isn't in the book yet. Pray for him by name, and be ready to tell him about the Lamb.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ======================= CLOSING ======================= -->
+<section class="slide remember">
+  <div class="inner">
+    <h2 class="rise">Points to remember</h2>
+    <ol class="seeds">
+      <li class="step"><span class="topic">Satan</span><span class="seed-q">“The devil that deceived them was cast into the lake of fire” <cite>20:10</cite></span><span class="take">He is bound by one angel, let out for a little season, and then finished for ever.</span></li>
+      <li class="step"><span class="topic">A thousand years</span><span class="seed-q">“They lived and reigned with Christ” <cite>20:4</cite></span><span class="take">Good teachers differ on the order, but it is plain that Satan loses, Christ reigns, every man stands before God, and those in the Lamb's book are safe.</span></li>
+      <li class="step"><span class="topic">Blessed</span><span class="seed-q">“On such the second death hath no power” <cite>20:6</cite></span><span class="take">Born once, die twice; born twice, die once. The lake of fire has no claim on him.</span></li>
+      <li class="step"><span class="topic">The heart</span><span class="seed-q">“And shall go out to deceive the nations” <cite>20:8</cite></span><span class="take">The nations follow the deceiver again: a better world doesn't change a heart. Only God does.</span></li>
+      <li class="step"><span class="topic">The throne</span><span class="seed-q">“Judged every man according to their works” <cite>20:13</cite></span><span class="take">Every man, small and great, is judged fairly by what he did. Nobody is saved by his record.</span></li>
+      <li class="step"><span class="topic">The book</span><span class="seed-q">“Whosoever was not found written in the book of life” <cite>20:15</cite></span><span class="take">The book of life is what matters, and a man's name is written there by faith in the Lamb.</span></li>
+    </ol>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 1 of 6</p>
+      <span class="topic">Satan</span>
+      <h2>What happens to Satan in this chapter?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="2"></blockquote>
+      <blockquote class="quote step" data-q="10"></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>An angel binds him with a great chain and shuts him in the bottomless pit for a thousand years, so he can't deceive the nations. Then he is loosed a little season, deceives the nations again, and is cast into the lake of fire for ever. He loses, completely.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 2 of 6</p>
+      <span class="topic">A thousand years</span>
+      <h2>What is plain about the thousand years, whatever view a man holds?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="4"></blockquote>
+      <blockquote class="quote step"><p>“For he must reign, till he hath put all enemies under his feet.”</p><cite>1 Corinthians 15:25</cite></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>Good Baptists read the order differently. But every view agrees: Satan loses, Christ reigns, every man will stand before God, and those in the Lamb's book of life are safe.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 3 of 6</p>
+      <span class="topic">Blessed</span>
+      <h2>Why is the man who has part in the first resurrection blessed?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="6"></blockquote>
+      <blockquote class="quote step"><p>“Verily, verily, I say unto you, He that heareth my word, and believeth on him that sent me, hath everlasting life, and shall not come into condemnation; but is passed from death unto life.”</p><cite>John 5:24</cite></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>Because the second death, the lake of fire, has no power over him. He will be a priest of God and of Christ and reign with Him. Born once, die twice; born twice, die once.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 4 of 6</p>
+      <span class="topic">The heart</span>
+      <h2>What do the nations do as soon as Satan is loosed?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="8"></blockquote>
+      <blockquote class="quote step"><p>“A new heart also will I give you, and a new spirit will I put within you: and I will take away the stony heart out of your flesh, and I will give you an heart of flesh.”</p><cite>Ezekiel 36:26</cite></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>They follow his lies again and gather, as many as the sand of the sea, to fight God's people. It shows that a better world doesn't change the human heart. Only God gives a new heart. And the rebellion ends with fire from heaven.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 5 of 6</p>
+      <span class="topic">The throne</span>
+      <h2>How are the dead judged at the great white throne?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="12"></blockquote>
+      <blockquote class="quote step"><p>“For by grace are ye saved through faith; and that not of yourselves: it is the gift of God: Not of works, lest any man should boast.”</p><cite>Ephesians 2:8–9</cite></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>Small and great stand before God, and every man is judged by the books, according to his works, exactly and fairly. But no one is saved by works. The book of life decides it, and a name gets there by grace through faith.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 6 of 6</p>
+      <span class="topic">The book</span>
+      <h2>How does a man's name get written in the book of life?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="15"></blockquote>
+      <blockquote class="quote step"><p>“For whosoever shall call upon the name of the Lord shall be saved.”</p><cite>Romans 10:13</cite></blockquote>
+      <blockquote class="quote step"><p>“Notwithstanding in this rejoice not, that the spirits are subject unto you; but rather rejoice, because your names are written in heaven.”</p><cite>Luke 10:20</cite></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>By faith in the Lamb. Whosoever calls on the name of the Lord and trusts Jesus is saved, and his name is written in the Lamb's book of life, never to be blotted out. And now is the day to do it.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide prayer">
+  <div class="inner">
+    <div class="emblem rise"></div>
+    <h2 class="rise" style="--d:1">Prayer requests</h2>
+    <p class="ask-line rise" style="--d:2">What can we pray about for you today?</p>
+    <blockquote class="quote rise" style="--d:4" data-q="6"></blockquote>
+  </div>
+</section>
+
+</main>
+
+<script>
+// King James Version, Revelation chapter 20
+const V = {
+  1: "And I saw an angel come down from heaven, having the key of the bottomless pit and a great chain in his hand.",
+  2: "And he laid hold on the dragon, that old serpent, which is the Devil, and Satan, and bound him a thousand years,",
+  3: "And cast him into the bottomless pit, and shut him up, and set a seal upon him, that he should deceive the nations no more, till the thousand years should be fulfilled: and after that he must be loosed a little season.",
+  4: "And I saw thrones, and they sat upon them, and judgment was given unto them: and I saw the souls of them that were beheaded for the witness of Jesus, and for the word of God, and which had not worshipped the beast, neither his image, neither had received his mark upon their foreheads, or in their hands; and they lived and reigned with Christ a thousand years.",
+  5: "But the rest of the dead lived not again until the thousand years were finished. This is the first resurrection.",
+  6: "Blessed and holy is he that hath part in the first resurrection: on such the second death hath no power, but they shall be priests of God and of Christ, and shall reign with him a thousand years.",
+  7: "And when the thousand years are expired, Satan shall be loosed out of his prison,",
+  8: "And shall go out to deceive the nations which are in the four quarters of the earth, Gog and Magog, to gather them together to battle: the number of whom is as the sand of the sea.",
+  9: "And they went up on the breadth of the earth, and compassed the camp of the saints about, and the beloved city: and fire came down from God out of heaven, and devoured them.",
+  10: "And the devil that deceived them was cast into the lake of fire and brimstone, where the beast and the false prophet are, and shall be tormented day and night for ever and ever.",
+  11: "And I saw a great white throne, and him that sat on it, from whose face the earth and the heaven fled away; and there was found no place for them.",
+  12: "And I saw the dead, small and great, stand before God; and the books were opened: and another book was opened, which is the book of life: and the dead were judged out of those things which were written in the books, according to their works.",
+  13: "And the sea gave up the dead which were in it; and death and hell delivered up the dead which were in them: and they were judged every man according to their works.",
+  14: "And death and hell were cast into the lake of fire. This is the second death.",
+  15: "And whosoever was not found written in the book of life was cast into the lake of fire."
+};
+const BOOK = "Revelation 20";
+</script>
+<script src="../assets/deck.js"></script>
+</body>
+</html>
