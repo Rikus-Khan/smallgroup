@@ -1,0 +1,545 @@
+<!doctype html>
+<html lang="en" data-theme="scribe">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Galatians 4</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="../assets/fonts.css">
+<link rel="stylesheet" href="../assets/deck.css">
+<link rel="stylesheet" href="../assets/themes.css">
+<style>
+/* ga04-where: where we are in Galatians (the same graphic as ga03-where in Galatians 3). Three parts (div), the one we're in .on;
+   chapters (li) already read .done, this one .here (a deck.css candidate for any short letter) */
+.ga04-where { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; margin: .3em 0 1em; }
+.ga04-where > div { padding: .55em .8em .7em; border-radius: 8px; border: 1px solid var(--line); background: var(--surface); color: var(--ink-soft); line-height: 1.25; }
+.ga04-where > div.on { border: 2px solid var(--accent); background: color-mix(in srgb, var(--accent) 10%, var(--surface)); color: var(--ink); }
+.ga04-where b { display: block; font: 600 clamp(1rem, .9rem + .5vw, 1.35rem) var(--serif); }
+.ga04-where small { display: block; font-size: clamp(.8rem, .75rem + .3vw, 1rem); }
+.ga04-where ol { list-style: none; display: flex; gap: 6px; padding: 0; margin: 0 0 .45em; }
+.ga04-where li { width: 2rem; height: 2rem; border-radius: 50%; display: grid; place-items: center; border: 1.5px solid var(--line-strong); font: 700 .9rem var(--sans); color: var(--ink-soft); }
+.ga04-where li.done { background: color-mix(in srgb, var(--accent) 25%, transparent); color: var(--ink); }
+.ga04-where li.here { background: var(--accent); border-color: var(--accent); color: var(--on-accent); box-shadow: 0 0 0 4px color-mix(in srgb, var(--accent) 25%, transparent); }
+.slide.active .ga04-where li.here { animation: ga04-here 2.4s 1s ease-in-out infinite; }
+@keyframes ga04-here { 50% { box-shadow: 0 0 0 9px color-mix(in srgb, var(--accent) 8%, transparent); } }
+@media (max-width: 600px) { .ga04-where { grid-template-columns: 1fr; } }
+
+/* ga04-heir: the heir as a boy, no bigger than the servants over him; on step .ga04-day the years fill to the day his father set, and he stands up a son */
+.ga04-serv { fill: color-mix(in srgb, var(--ink-soft) 75%, var(--surface-2)); }
+.ga04-boy { fill: var(--accent); transform-box: fill-box; transform-origin: 50% 100%; transition: transform 1s cubic-bezier(.3,1.4,.6,1) 1.6s; }
+.slide:has(.ga04-day.on) .ga04-boy { transform: scale(1.5); }
+.ga04-robe { fill: none; stroke: var(--accent-hot); stroke-width: 3; opacity: 0; transition: opacity .8s ease 2.2s; }
+.slide:has(.ga04-day.on) .ga04-robe { opacity: 1; }
+.ga04-ground { stroke: var(--line-strong); stroke-width: 2; }
+.ga04-t { fill: var(--ink-soft); font: 600 15px var(--sans); }
+.ga04-t.hot { fill: var(--accent-hot); font: 600 18px var(--serif); }
+.ga04-bar { fill: none; stroke: var(--line-strong); stroke-width: 2; }
+.ga04-fill { fill: color-mix(in srgb, var(--accent) 45%, transparent); transform-box: fill-box; transform-origin: 0 50%; transform: scaleX(.12); transition: transform 1.6s ease; }
+.slide:has(.ga04-day.on) .ga04-fill { transform: none; }
+.ga04-mark { stroke: var(--wine); stroke-width: 3; }
+.ga04-mt { fill: var(--wine); font: 700 14px var(--sans); }
+.ga04-son { fill: var(--accent-hot); font: italic 600 20px var(--serif); opacity: 0; transition: opacity .8s ease 2.4s; }
+.slide:has(.ga04-day.on) .ga04-son { opacity: 1; }
+@media (max-width: 600px) { .ga04-t, .ga04-mt { font-size: 18px; } .ga04-t.hot, .ga04-son { font-size: 22px; } }
+
+/* ga04-back: a man walks out of an open cell toward the light; on step .ga04-turn he turns and walks back to the chains (4:9) */
+.ga04-cellr { fill: color-mix(in srgb, var(--surface-2) 70%, var(--bg)); stroke: var(--line-strong); stroke-width: 3; }
+.ga04-bars { stroke: var(--ink-soft); stroke-width: 4; }
+.ga04-chain { fill: none; stroke: var(--ink-soft); stroke-width: 3; }
+.ga04-sun { fill: var(--warm); }
+.ga04-ray { stroke: var(--warm); stroke-width: 4; stroke-linecap: round; }
+.ga04-road { stroke: var(--line-strong); stroke-width: 3; }
+.ga04-man { fill: var(--accent); transform: translateX(0); transition: transform 2.6s ease-in-out .4s; }
+.slide.active .ga04-man { transform: translateX(290px); }
+.slide.active:has(.ga04-turn.on) .ga04-man { transform: translateX(30px); fill: var(--danger); transition: transform 2.6s ease-in-out .2s, fill 1s ease 1.8s; }
+.ga04-lab { fill: var(--ink-soft); font: 600 15px var(--sans); }
+.ga04-lab.hot { fill: var(--accent-hot); font: italic 600 19px var(--serif); }
+.ga04-ask { fill: var(--danger); font: italic 600 20px var(--serif); opacity: 0; transition: opacity .8s ease 2.2s; }
+.slide:has(.ga04-turn.on) .ga04-ask { opacity: 1; }
+@media (max-width: 600px) { .ga04-lab { font-size: 18px; } .ga04-lab.hot, .ga04-ask { font-size: 22px; } }
+
+/* ga04-formed: the outline of a man slowly filling with light from the ground up ("until Christ be formed in you"); step .ga04-more fills it further */
+.ga04-out { fill: none; stroke: var(--ink-soft); stroke-width: 3; stroke-dasharray: 6 5; }
+.ga04-light { fill: var(--accent); transform-box: view-box; transform-origin: 50% 300px; transform: scaleY(0); transition: transform 2.4s ease .5s; }
+.slide.active .ga04-light { transform: scaleY(.3); }
+.slide:has(.ga04-more.on) .ga04-light { transform: scaleY(.58); }
+.ga04-glow { fill: color-mix(in srgb, var(--accent) 18%, transparent); }
+.ga04-cap { fill: var(--ink); font: italic 600 17px var(--serif); }
+@media (max-width: 600px) { .ga04-cap { font-size: 21px; } }
+
+/* ga04-two: Paul's allegory as two columns, one row per step. Bondage is a night panel (--on-glow with --glow), freedom a daylight one, in every theme */
+.ga04-two { display: grid; gap: 6px; margin: .3em 0 .9em; }
+.ga04-two > div { display: grid; grid-template-columns: 6.5rem 1fr 1fr; gap: 6px; align-items: stretch; }
+.ga04-two i { font: 700 clamp(.72rem, .68rem + .25vw, .9rem) var(--sans); font-style: normal; letter-spacing: .08em; text-transform: uppercase; color: var(--ink-soft); align-self: center; text-align: right; padding-right: .3em; }
+.ga04-two span { padding: .4em .7em; border-radius: 6px; font-size: clamp(.88rem, .8rem + .4vw, 1.12rem); line-height: 1.3; }
+.ga04-two span:nth-child(2) { background: var(--on-glow); color: var(--glow); border: 1.5px solid var(--line-strong); }
+.ga04-two span:nth-child(3) { background: var(--glow); color: var(--on-glow); border: 1.5px solid var(--accent); }
+.ga04-two .ga04-th span { font: 600 clamp(1.05rem, .95rem + .5vw, 1.4rem) var(--serif); text-align: center; }
+.ga04-two small { opacity: .75; font-size: .85em; }
+@media (max-width: 600px) { .ga04-two > div { grid-template-columns: 1fr 1fr; } .ga04-two i { grid-column: 1 / -1; text-align: left; } .ga04-two .ga04-th i { display: none; } }
+</style>
+</head>
+<body>
+<main class="deck" id="deck">
+
+<!-- ======================= OPENING ======================= -->
+<section class="slide title">
+  <div class="inner">
+    <div class="emblem rise"></div>
+    <h1 class="rise" style="--d:1">Galatians 4</h1>
+    <p class="sub rise" style="--d:3">No more a servant, but a son</p>
+    <p class="tag rise" style="--d:5">God sent His Son to buy us out and sent His Spirit into our hearts to call Him Father. So why would a free son walk back to the old chains?</p>
+  </div>
+</section>
+
+<section class="slide watch">
+  <div class="inner">
+    <h2 class="rise">Things to watch for</h2>
+    <p class="lede rise" style="--d:1">Keep these questions in the back of your mind as we read. We'll come back to every one of them at the end.</p>
+    <ol class="seeds">
+      <li class="step"><span class="topic">The heir</span><span class="seed-q">How is an heir who is still a child like a servant?</span></li>
+      <li class="step"><span class="topic">Sent</span><span class="seed-q">What did God do when the fulness of the time was come?</span></li>
+      <li class="step"><span class="topic">Abba</span><span class="seed-q">What does it mean to call God Abba, Father?</span></li>
+      <li class="step"><span class="topic">Going back</span><span class="seed-q">Why would a free man go back to his chains?</span></li>
+      <li class="step"><span class="topic">Little children</span><span class="seed-q">How did Paul feel about these struggling believers?</span></li>
+      <li class="step"><span class="topic">Two sons</span><span class="seed-q">What do the two sons of Abraham teach us?</span></li>
+    </ol>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise">Where we are in Galatians</h2>
+    <div class="ga04-where rise" style="--d:1" role="img" aria-label="Galatians in three parts. Chapters 1 and 2, already read: Paul's story, his gospel came from God. Chapters 3 and 4: the argument, faith and not the law; chapter 3 is read and we are in chapter 4. Chapters 5 and 6: freedom lived out.">
+      <div><ol><li class="done">1</li><li class="done">2</li></ol><b>Paul's story</b><small>The gospel he preached came from God, not from men</small></div>
+      <div class="on"><ol><li class="done">3</li><li class="here">4</li></ol><b>The argument</b><small>Right with God by faith, not by the law</small></div>
+      <div><ol><li>5</li><li>6</li></ol><b>Freedom lived out</b><small>Walk in the Spirit, and carry each other</small></div>
+    </div>
+    <p class="note step">Teachers had come to the churches of Galatia saying a Gentile believer had to be circumcised and keep the law of Moses to be right with God. In chapter 3 Paul answered: we are children of God by faith, and the law was only the slave who walked us to Christ.</p>
+    <p class="note step">Chapter 4 finishes the argument. First with a picture from family life: a boy who owns everything but isn't grown yet. Then from the heart, as a father to his sons. Then with a story from Genesis: two mothers and two sons.</p>
+  </div>
+</section>
+
+<!-- ======================= PART ONE ======================= -->
+<section class="slide part">
+  <div class="inner">
+    <p class="part-n rise">Part one</p>
+    <h2 class="rise" style="--d:1">No more a servant</h2>
+    <p class="range rise" style="--d:2">Verses 1–7</p>
+    <div class="rule"></div>
+    <p class="hook rise" style="--d:4">A rich man's boy owns it all, but he still takes orders. Until the day his father sets.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="1-3" data-hl="the heir, as long as he is a child, differeth nothing from a servant, though he be lord of all|until the time appointed of the father|in bondage under the elements of the world"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise">Lord of all, and still under orders</h2>
+    <div class="stage">
+      <svg viewBox="0 0 640 250" style="max-height:38vh" role="img" aria-label="A small boy, the heir, stands among three grown servants who are over him: tutors and governors. Below, a bar of years. On a step the bar fills to the day his father appointed, and the boy stands up tall, a son come of age.">
+        <line class="ga04-ground" x1="60" y1="150" x2="580" y2="150"/>
+        <g class="ga04-serv">
+          <circle cx="200" cy="62" r="14"/><path d="M182 150 V90 Q200 74 218 90 V150 Z"/>
+          <circle cx="260" cy="58" r="14"/><path d="M242 150 V86 Q260 70 278 86 V150 Z"/>
+          <circle cx="400" cy="62" r="14"/><path d="M382 150 V90 Q400 74 418 90 V150 Z"/>
+        </g>
+        <g class="ga04-boy"><circle cx="330" cy="106" r="10"/><path d="M317 150 V126 Q330 114 343 126 V150 Z"/><path class="ga04-robe" d="M314 150 V124 Q330 108 346 124 V150"/></g>
+        <text class="ga04-t" x="230" y="30" text-anchor="middle">tutors and governors</text>
+        <text class="ga04-t hot" x="330" y="176" text-anchor="middle">the heir</text>
+        <text class="ga04-son" x="470" y="110" text-anchor="start">a son, come of age</text>
+        <rect class="ga04-fill" x="60" y="200" width="460" height="18" rx="3"/>
+        <rect class="ga04-bar" x="60" y="200" width="520" height="18" rx="3"/>
+        <line class="ga04-mark" x1="520" y1="192" x2="520" y2="226"/>
+        <text class="ga04-mt" x="520" y="244" text-anchor="middle">“the time appointed of the father”</text>
+        <text class="ga04-t" x="60" y="244" text-anchor="start">childhood</text>
+      </svg>
+    </div>
+    <p class="note rise" style="--d:2">In a wealthy home the son owned the estate on paper, but while he was a boy, household servants ran his days. He had no more say than they did. The father chose the day he would come of age.</p>
+    <p class="note step ga04-day">That's where God's people were under the law, Paul says: heirs, but kept like children under the <em>elements</em>, the ABCs of religion, rules about what to touch and which days to keep. Then the Father's day came.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="4-5" data-hl="But when the fulness of the time was come, God sent forth his Son, made of a woman, made under the law|To redeem them that were under the law, that we might receive the adoption of sons"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise">The fulness of the time</h2>
+    <ol class="timeline" aria-label="A timeline: the promise to Abraham, about 2000 BC; the law at Sinai, 430 years later; the last of the prophets, Malachi, about 430 BC, then about four hundred quiet years; Roman roads and the Greek language across the world; God sends His Son, born about 6 to 4 BC.">
+      <li style="--k:0"><b>The promise</b><span>to Abraham</span><small>about 2000 BC</small></li>
+      <li style="--k:1"><b>The law</b><span>at Sinai</span><small>430 years later</small></li>
+      <li style="--k:2" class="wait"><b>Silence</b><span>no prophet after Malachi</span><small>about 400 years</small></li>
+      <li style="--k:3"><b>One world</b><span>Roman roads, Greek spoken everywhere</span><small>Rome rules</small></li>
+      <li style="--k:4" class="lit"><b>God sent forth His Son</b><span>made of a woman</span><small>about 6–4 BC</small></li>
+    </ol>
+    <p class="note step">God wasn't late. He waited until everything was ready: the promise, the law that showed men their need, and a world where the news could travel fast.</p>
+    <p class="note step"><em>“Made of a woman”</em>: truly a man, born like us. <em>“Made under the law”</em>: He lived under it and kept every word of it. He came under the law to buy out the men who were stuck under it, and to make them sons.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="6-7" data-hl="God hath sent forth the Spirit of his Son into your hearts, crying, Abba, Father|Wherefore thou art no more a servant, but a son; and if a son, then an heir of God through Christ"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="6"></blockquote>
+    <h2 class="rise" style="--d:1">A son's word</h2>
+    <div class="morph">
+      <span class="big rise" style="--d:3">Abba</span>
+      <span class="say step">Aramaic, the language of Jesus' home</span>
+      <span class="means step">Father: what a son calls his own dad</span>
+    </div>
+    <p class="note step">It's the word Jesus prayed in the garden the night before the cross:</p>
+    <blockquote class="quote step"><p>“And he said, Abba, Father, all things are possible unto thee; take away this cup from me: nevertheless not what I will, but what thou wilt.”</p><cite>Mark 14:36</cite></blockquote>
+    <p class="note step">God sent His Son for you (4:4), then sent the Spirit of His Son into you (4:6). Now the same word is in your mouth. You get to talk to God the way Jesus did.</p>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise">For the man whose father wasn't there</h2>
+    <div class="columns">
+      <div class="col law step"><p class="who">The father some of us had</p><h3>Gone, or hard</h3><p>Never around. Or around and drunk, angry, quick with his hands. Maybe the only thing he ever said about you was what you'd never be.</p></div>
+      <div class="col grace step"><p class="who">The Father you have now</p><h3>“Abba”</h3><p>He sent His own Son to get you. He put His Spirit in you. He calls you son and heir (4:7), and He's not going anywhere.</p></div>
+    </div>
+    <blockquote class="quote step"><p>“When my father and my mother forsake me, then the LORD will take me up.”</p><cite>Psalm 27:10</cite></blockquote>
+    <blockquote class="quote step"><p>“For ye have not received the spirit of bondage again to fear; but ye have received the Spirit of adoption, whereby we cry, Abba, Father.”</p><cite>Romans 8:15</cite></blockquote>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="7"></blockquote>
+    <h2 class="rise" style="--d:1">Adopted, with everything that comes with it</h2>
+    <div class="rename">
+      <span class="old rise" style="--d:2">servant</span>
+      <span class="arrow step">→</span>
+      <span class="new step">son</span>
+      <span class="gloss step">Many Bible teachers point out that a Roman adopted son took his new father's name, his old debts were wiped away, and he became a full heir, just as if he'd been born into the family. <em>“If a son, then an heir.”</em></span>
+    </div>
+    <p class="note step">A servant works for a wage and can be let go. A son belongs. You don't stay in the family by earning your keep. You're in because the Father brought you in.</p>
+  </div>
+</section>
+
+<!-- ======================= PART TWO ======================= -->
+<section class="slide part">
+  <div class="inner">
+    <p class="part-n rise">Part two</p>
+    <h2 class="rise" style="--d:1">Back to the old chains?</h2>
+    <p class="range rise" style="--d:2">Verses 8–20</p>
+    <div class="rule"></div>
+    <p class="hook rise" style="--d:4">Paul can't understand it: free men walking back to the cell. Then he stops arguing and speaks to them like a mother.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="8-11" data-hl="or rather are known of God|how turn ye again to the weak and beggarly elements, whereunto ye desire again to be in bondage?|Ye observe days, and months, and times, and years"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise">Why walk back in?</h2>
+    <div class="stage">
+      <svg viewBox="0 0 640 210" style="max-height:30vh" role="img" aria-label="An open cell on the left with chains hanging inside, and a road leading out to the sunlight on the right. A man walks out toward the light. On a step he turns and walks back toward the chains: how turn ye again?">
+        <line class="ga04-road" x1="20" y1="170" x2="620" y2="170"/>
+        <rect class="ga04-cellr" x="20" y="40" width="120" height="130" rx="3"/>
+        <path class="ga04-chain" d="M50 40 v14 m0 4 a5 7 0 1 0 0.1 0 m0 16 a5 7 0 1 0 0.1 0 m0 16 a5 7 0 1 0 0.1 0 M100 40 v14 m0 4 a5 7 0 1 0 0.1 0 m0 16 a5 7 0 1 0 0.1 0"/>
+        <path class="ga04-bars" d="M20 40 V170 M44 40 V170 M20 40 H140 M140 40 V80"/>
+        <g class="ga04-ray"><path d="M570 34 v-14 M570 98 v14 M532 66 h-14 M608 66 h14 M543 39 l-10 -10 M597 39 l10 -10 M543 93 l-10 10 M597 93 l10 10"/></g>
+        <circle class="ga04-sun" cx="570" cy="66" r="24"/>
+        <g class="ga04-man"><circle cx="170" cy="112" r="11"/><path d="M156 170 V136 Q170 122 184 136 V170 Z"/></g>
+        <text class="ga04-lab" x="80" y="196" text-anchor="middle">“weak and beggarly”</text>
+        <text class="ga04-lab hot" x="570" y="140" text-anchor="middle">free</text>
+        <text class="ga04-ask" x="330" y="40" text-anchor="middle">“how turn ye again…?”</text>
+      </svg>
+    </div>
+    <p class="note step ga04-turn">For the Galatians, the old chains were religious: special days, months and years, kept to stay right with God. Paul calls them <em>weak</em> (no power to save) and <em>beggarly</em> (nothing to give you).</p>
+    <p class="note step">For us it might be a bottle, a pipe, an old crowd, or rules we keep to feel good enough. A son of God doesn't stop being a son. But he can walk back into a cell he holds the key to.</p>
+    <blockquote class="quote step"><p>“Stand fast therefore in the liberty wherewith Christ hath made us free, and be not entangled again with the yoke of bondage.”</p><cite>Galatians 5:1</cite></blockquote>
+  </div>
+</section>
+
+<section class="slide verse" data-v="12-14" data-hl="through infirmity of the flesh I preached the gospel unto you at the first|received me as an angel of God, even as Christ Jesus"></section>
+
+<section class="slide verse" data-v="15-16" data-hl="ye would have plucked out your own eyes|Am I therefore become your enemy, because I tell you the truth?"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <div class="split">
+      <div class="stage">
+        <svg data-world viewBox="590 215 270 190" data-towns="Antioch in Pisidia*, Iconium*, Lystra!, Derbe*, Perga, Tarsus, Antioch" role="img" aria-label="A close map of southern Asia Minor. Paul's first journey runs from Antioch in Syria across to Cyprus, up from Perga to the Galatian towns of Antioch in Pisidia, Iconium, Lystra and Derbe, and back. Lystra is marked: there Paul was stoned.">
+          <path class="map-route" data-journey="1"/>
+        </svg>
+      </div>
+      <div>
+        <h2 class="rise" style="--d:1">When they first met</h2>
+        <p class="note rise" style="--d:2">On his first journey Paul came to these towns sick, through <em>“infirmity of the flesh.”</em> We aren't told what it was. Many think it was his eyes (4:15). At Lystra he was stoned and left for dead (Acts 14:19).</p>
+        <p class="note step">They didn't turn him away. They took him in <em>“as an angel of God,”</em> and they'd have given him their own eyes.</p>
+        <p class="note step">Now he tells them the truth and they treat him like an enemy. The brother who tells you the truth when you're sliding isn't your enemy. He's the one who loves you.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="slide verse" data-v="17-20" data-hl="they would exclude you, that ye might affect them|My little children, of whom I travail in birth again until Christ be formed in you"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <div class="split">
+      <div class="stage">
+        <svg viewBox="0 0 300 330" style="max-height:50vh" role="img" aria-label="The dotted outline of a man, slowly filling with light from the ground up. On a step it fills higher. Christ formed in you: not finished yet.">
+          <defs><clipPath id="ga04-clip"><circle cx="150" cy="70" r="40"/><path d="M80 300 V170 Q80 120 150 120 Q220 120 220 170 V300 Z"/></clipPath></defs>
+          <ellipse class="ga04-glow" cx="150" cy="300" rx="110" ry="14"/>
+          <g clip-path="url(#ga04-clip)"><rect class="ga04-light" x="60" y="20" width="180" height="280"/></g>
+          <circle class="ga04-out" cx="150" cy="70" r="40"/><path class="ga04-out" d="M80 300 V170 Q80 120 150 120 Q220 120 220 170 V300 Z"/>
+          <text class="ga04-cap" x="150" y="326" text-anchor="middle">“until Christ be formed in you”</text>
+        </svg>
+      </div>
+      <div>
+        <h2 class="rise" style="--d:1">My little children</h2>
+        <p class="note rise" style="--d:2">The false teachers courted the Galatians to cut them off from Paul, so they'd need them instead (4:17). An old crowd does the same: flattery first, then you can't leave.</p>
+        <p class="note step ga04-more">Paul talks like a mother in labour. He went through the pain once to bring them to birth; now he goes through it <em>again</em>, until Christ is <em>formed</em> in them, until they look like Him.</p>
+        <p class="note step">That takes time, and it hurts. If you're not who you want to be yet, you're not finished. You're being formed. <em>“He which hath begun a good work in you will perform it”</em> (Philippians 1:6).</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ======================= PART THREE ======================= -->
+<section class="slide part">
+  <div class="inner">
+    <p class="part-n rise">Part three</p>
+    <h2 class="rise" style="--d:1">Two mothers, two sons</h2>
+    <p class="range rise" style="--d:2">Verses 21–31</p>
+    <div class="rule"></div>
+    <p class="hook rise" style="--d:4">You want to be under the law? Then listen to what the law itself says about Abraham's two sons.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="21-23" data-hl="Abraham had two sons, the one by a bondmaid, the other by a freewoman|born after the flesh|by promise"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise">The story behind it</h2>
+    <p class="note rise" style="--d:1">God promised Abraham a son. Years went by, and Sarah had no children. So they made a plan of their own (Genesis 16):</p>
+    <blockquote class="quote step"><p>“And Sarai said unto Abram, Behold now, the LORD hath restrained me from bearing: I pray thee, go in unto my maid; it may be that I may obtain children by her. And Abram hearkened to the voice of Sarai.”</p><cite>Genesis 16:2</cite></blockquote>
+    <div class="columns">
+      <div class="col law step"><p class="who">Ishmael, Hagar's son</p><h3>After the flesh</h3><p>The natural way, by a man's own plan to help God out. It brought years of trouble into the family.</p></div>
+      <div class="col grace step"><p class="who">Isaac, Sarah's son</p><h3>By promise</h3><p>Born when Abraham was a hundred and Sarah ninety. Only God could do it, so only God got the credit.</p></div>
+    </div>
+    <p class="note step">We know that move: when God seems slow, we fix it ourselves. Paul says that's the difference between the flesh and the promise.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="24-27" data-hl="Which things are an allegory: for these are the two covenants|the one from the mount Sinai, which gendereth to bondage|But Jerusalem which is above is free, which is the mother of us all"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise">Two mothers, two cities</h2>
+    <div class="ga04-two" role="img" aria-label="Two columns. Bondage: Agar the bondmaid; her son Ishmael, born after the flesh; the covenant from mount Sinai, the law; Jerusalem which now is, in bondage; children born into bondage. Freedom: Sarah the freewoman; her son Isaac, born by promise; the covenant of promise; Jerusalem which is above, free; the children of promise, us.">
+      <div class="ga04-th rise" style="--d:1"><i></i><span>Bondage</span><span>Freedom</span></div>
+      <div class="step"><i>Mother</i><span>Agar (Hagar), the bondmaid <small>4:24</small></span><span>Sarah, the freewoman <small>4:22</small></span></div>
+      <div class="step"><i>Son</i><span>Ishmael, born after the flesh <small>4:23</small></span><span>Isaac, born by promise <small>4:23</small></span></div>
+      <div class="step"><i>Covenant</i><span>mount Sinai: the law <small>4:24</small></span><span>the promise to Abraham <small>3:18</small></span></div>
+      <div class="step"><i>City</i><span>Jerusalem which now is, in bondage <small>4:25</small></span><span>Jerusalem which is above, free <small>4:26</small></span></div>
+      <div class="step"><i>Children</i><span>slaves, trying to earn it</span><span>sons: the children of promise <small>4:28</small></span></div>
+    </div>
+    <p class="note step">An <em>allegory</em> uses a true story as a picture. Genesis really happened; Paul shows what it pictures. Mount Sinai, down in Arabia, is where the law was given. Earthly Jerusalem, still under the law, is Hagar's family. Every believer belongs to the free city.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="28-31" data-hl="Now we, brethren, as Isaac was, are the children of promise|Cast out the bondwoman and her son|we are not children of the bondwoman, but of the free"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="29"></blockquote>
+    <h2 class="rise" style="--d:1">Cast it out</h2>
+    <p class="note rise" style="--d:2">At the feast for young Isaac, Ishmael was caught mocking him. Sarah said:</p>
+    <blockquote class="quote step"><p>“Wherefore she said unto Abraham, Cast out this bondwoman and her son: for the son of this bondwoman shall not be heir with my son, even with Isaac.”</p><cite>Genesis 21:10</cite></blockquote>
+    <p class="note step">Bondage and freedom can't share the house. The voice of the law still mocks the son of promise: <em>“You? After what you did? Earn it first.”</em> Don't negotiate with that voice. Cast it out. You're not on probation in God's house. You're a son and an heir.</p>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise">Today</h2>
+    <div class="daybreak climb">
+      <div class="rise" style="--d:1"><i>4:6</i><b>Call Him Father</b><p>Pray today as a son, not a hired hand. Start with “Abba, Father.”</p></div>
+      <div class="step"><i>4:9</i><b>Don't walk back in</b><p>Name the one chain that keeps calling you back. Tell a brother about it today.</p></div>
+      <div class="step"><i>4:19</i><b>Give it time</b><p>You're being formed. Don't quit on yourself because you're not finished.</p></div>
+    </div>
+    <blockquote class="quote step"><p>“A father of the fatherless, and a judge of the widows, is God in his holy habitation.”</p><cite>Psalm 68:5</cite></blockquote>
+  </div>
+</section>
+
+<!-- ======================= CLOSING ======================= -->
+<section class="slide remember">
+  <div class="inner">
+    <h2 class="rise">Points to remember</h2>
+    <ol class="seeds">
+      <li class="step"><span class="topic">The heir</span><span class="seed-q">“Differeth nothing from a servant” <cite>4:1</cite></span><span class="take">Under the law, God's people were heirs kept like children.</span></li>
+      <li class="step"><span class="topic">Sent</span><span class="seed-q">“God sent forth his Son” <cite>4:4</cite></span><span class="take">At the right time He sent His Son to redeem us and make us sons.</span></li>
+      <li class="step"><span class="topic">Abba</span><span class="seed-q">“Crying, Abba, Father” <cite>4:6</cite></span><span class="take">His Spirit in us calls God Father, as Jesus did.</span></li>
+      <li class="step"><span class="topic">Going back</span><span class="seed-q">“How turn ye again” <cite>4:9</cite></span><span class="take">The old chains are weak and beggarly. Don't walk back in.</span></li>
+      <li class="step"><span class="topic">Little children</span><span class="seed-q">“Until Christ be formed in you” <cite>4:19</cite></span><span class="take">Paul loved them like a mother, and kept at it.</span></li>
+      <li class="step"><span class="topic">Two sons</span><span class="seed-q">“Not children of the bondwoman, but of the free” <cite>4:31</cite></span><span class="take">Believers are children of promise, born free.</span></li>
+    </ol>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 1 of 6</p>
+      <span class="topic">The heir</span>
+      <h2>How is an heir who is still a child like a servant?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="1"></blockquote>
+      <blockquote class="quote step" data-q="2"></blockquote>
+      <blockquote class="quote step" data-q="3"></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>He owns everything on paper, but while he's a boy he lives under tutors and governors with no more say than a servant, until the day his father sets. God's people under the law were like that: heirs, but kept in bondage to the basic rules.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 2 of 6</p>
+      <span class="topic">Sent</span>
+      <h2>What did God do when the fulness of the time was come?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="4"></blockquote>
+      <blockquote class="quote step" data-q="5"></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>He sent His Son, born of a woman and born under the law, to buy back those who were under the law, so that we could be adopted as sons. God's timing was exactly right.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 3 of 6</p>
+      <span class="topic">Abba</span>
+      <h2>What does it mean to call God Abba, Father?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="6"></blockquote>
+      <blockquote class="quote step" data-q="7"></blockquote>
+      <blockquote class="quote step"><p>“For ye have not received the spirit of bondage again to fear; but ye have received the Spirit of adoption, whereby we cry, Abba, Father.”</p><cite>Romans 8:15</cite></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>It means we belong to God as sons, not servants. The Spirit of His Son lives in us and calls God by the same close word Jesus used. A son is also an heir: whatever our earthly father was, God is a Father who stays.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 4 of 6</p>
+      <span class="topic">Going back</span>
+      <h2>Why would a free man go back to his chains?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="8"></blockquote>
+      <blockquote class="quote step" data-q="9"></blockquote>
+      <blockquote class="quote step"><p>“Stand fast therefore in the liberty wherewith Christ hath made us free, and be not entangled again with the yoke of bondage.”</p><cite>Galatians 5:1</cite></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>Because the old ways feel familiar and promise something. But they are weak and beggarly: they can't save and they have nothing to give. Paul begs them to stand in the freedom Christ gave, not to be tied up again.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 5 of 6</p>
+      <span class="topic">Little children</span>
+      <h2>How did Paul feel about these struggling believers?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="16"></blockquote>
+      <blockquote class="quote step" data-q="19"></blockquote>
+      <blockquote class="quote step" data-q="20"></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>He loved them like a mother in labour. He told them hard truth, but he called them his little children and was willing to go through the pain again until Christ was formed in them.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 6 of 6</p>
+      <span class="topic">Two sons</span>
+      <h2>What do the two sons of Abraham teach us?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="22"></blockquote>
+      <blockquote class="quote step" data-q="23"></blockquote>
+      <blockquote class="quote step" data-q="31"></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>One son was born of a slave, by Abraham's own plan; the other was born free, by God's promise. They picture the law that brings bondage and the promise that brings freedom. Believers are children of promise, free sons, and the bondage must be cast out.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide prayer">
+  <div class="inner">
+    <div class="emblem rise"></div>
+    <h2 class="rise" style="--d:1">Prayer requests</h2>
+    <p class="ask-line rise" style="--d:2">What can we pray about for you today?</p>
+    <blockquote class="quote rise" style="--d:4" data-q="6-7"></blockquote>
+  </div>
+</section>
+
+</main>
+
+<script>
+// King James Version, Galatians chapter 4
+const V = {
+  1: "Now I say, That the heir, as long as he is a child, differeth nothing from a servant, though he be lord of all;",
+  2: "But is under tutors and governors until the time appointed of the father.",
+  3: "Even so we, when we were children, were in bondage under the elements of the world:",
+  4: "But when the fulness of the time was come, God sent forth his Son, made of a woman, made under the law,",
+  5: "To redeem them that were under the law, that we might receive the adoption of sons.",
+  6: "And because ye are sons, God hath sent forth the Spirit of his Son into your hearts, crying, Abba, Father.",
+  7: "Wherefore thou art no more a servant, but a son; and if a son, then an heir of God through Christ.",
+  8: "Howbeit then, when ye knew not God, ye did service unto them which by nature are no gods.",
+  9: "But now, after that ye have known God, or rather are known of God, how turn ye again to the weak and beggarly elements, whereunto ye desire again to be in bondage?",
+  10: "Ye observe days, and months, and times, and years.",
+  11: "I am afraid of you, lest I have bestowed upon you labour in vain.",
+  12: "Brethren, I beseech you, be as I am; for I am as ye are: ye have not injured me at all.",
+  13: "Ye know how through infirmity of the flesh I preached the gospel unto you at the first.",
+  14: "And my temptation which was in my flesh ye despised not, nor rejected; but received me as an angel of God, even as Christ Jesus.",
+  15: "Where is then the blessedness ye spake of? for I bear you record, that, if it had been possible, ye would have plucked out your own eyes, and have given them to me.",
+  16: "Am I therefore become your enemy, because I tell you the truth?",
+  17: "They zealously affect you, but not well; yea, they would exclude you, that ye might affect them.",
+  18: "But it is good to be zealously affected always in a good thing, and not only when I am present with you.",
+  19: "My little children, of whom I travail in birth again until Christ be formed in you,",
+  20: "I desire to be present with you now, and to change my voice; for I stand in doubt of you.",
+  21: "Tell me, ye that desire to be under the law, do ye not hear the law?",
+  22: "For it is written, that Abraham had two sons, the one by a bondmaid, the other by a freewoman.",
+  23: "But he who was of the bondwoman was born after the flesh; but he of the freewoman was by promise.",
+  24: "Which things are an allegory: for these are the two covenants; the one from the mount Sinai, which gendereth to bondage, which is Agar.",
+  25: "For this Agar is mount Sinai in Arabia, and answereth to Jerusalem which now is, and is in bondage with her children.",
+  26: "But Jerusalem which is above is free, which is the mother of us all.",
+  27: "For it is written, Rejoice, thou barren that bearest not; break forth and cry, thou that travailest not: for the desolate hath many more children than she which hath an husband.",
+  28: "Now we, brethren, as Isaac was, are the children of promise.",
+  29: "But as then he that was born after the flesh persecuted him that was born after the Spirit, even so it is now.",
+  30: "Nevertheless what saith the scripture? Cast out the bondwoman and her son: for the son of the bondwoman shall not be heir with the son of the free woman.",
+  31: "So then, brethren, we are not children of the bondwoman, but of the free."
+};
+const BOOK = "Galatians 4";
+</script>
+<script src="../assets/deck.js"></script>
+</body>
+</html>

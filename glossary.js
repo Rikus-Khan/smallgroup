@@ -408,7 +408,13 @@ window.GLOSSARY = [
     [ 1, 3, 12 ] ],
    [
     "Galatians", 2,
-    [ 4, 16 ] ] ]
+    [ 4, 16 ] ],
+   [
+    "Galatians", 3,
+    [ 1, 14, 22, 26, 28 ] ],
+   [
+    "Galatians", 4,
+    [ 14 ] ] ]
  },
  {
   "id": "john-the-baptist",
@@ -1248,7 +1254,10 @@ window.GLOSSARY = [
     [ 24 ] ],
    [
     "Galatians", 1,
-    [ 1, 3, 4 ] ] ]
+    [ 1, 3, 4 ] ],
+   [
+    "Galatians", 4,
+    [ 6 ] ] ]
  },
  {
   "id": "holy-spirit",
@@ -1425,7 +1434,13 @@ window.GLOSSARY = [
     [ 6 ] ],
    [
     "2 Corinthians", 13,
-    [ 14 ] ] ]
+    [ 14 ] ],
+   [
+    "Galatians", 3,
+    [ 2, 3, 5, 14 ] ],
+   [
+    "Galatians", 4,
+    [ 6, 29 ] ] ]
  },
  {
   "id": "disciples",
@@ -1968,7 +1983,10 @@ window.GLOSSARY = [
     [ 13, 14 ] ],
    [
     "Galatians", 2,
-    [ 13, 14, 15 ] ] ]
+    [ 13, 14, 15 ] ],
+   [
+    "Galatians", 3,
+    [ 28 ] ] ]
  },
  {
   "id": "servants",
@@ -2772,7 +2790,10 @@ window.GLOSSARY = [
     [ 17, 18 ] ],
    [
     "Galatians", 2,
-    [ 1 ] ] ]
+    [ 1 ] ],
+   [
+    "Galatians", 4,
+    [ 25, 26 ] ] ]
  },
  {
   "id": "bethabara",
@@ -4578,7 +4599,13 @@ window.GLOSSARY = [
     [ 8 ] ],
    [
     "Galatians", 2,
-    [ 5, 14 ] ] ]
+    [ 5, 14 ] ],
+   [
+    "Galatians", 3,
+    [ 1 ] ],
+   [
+    "Galatians", 4,
+    [ 16 ] ] ]
  },
  {
   "id": "glory",
@@ -5019,7 +5046,13 @@ window.GLOSSARY = [
     [ 56 ] ],
    [
     "Galatians", 2,
-    [ 16, 19, 21 ] ] ]
+    [ 16, 19, 21 ] ],
+   [
+    "Galatians", 3,
+    [ 2, 5, 10, 11, 12, 13, 17, 18, 19, 21, 23, 24 ] ],
+   [
+    "Galatians", 4,
+    [ 4, 5, 21 ] ] ]
  },
  {
   "id": "only-begotten",
@@ -5331,7 +5364,13 @@ window.GLOSSARY = [
     [ 1, 3, 6, 7, 10, 12, 22 ] ],
    [
     "Galatians", 2,
-    [ 4, 16, 17, 20, 21 ] ] ]
+    [ 4, 16, 17, 20, 21 ] ],
+   [
+    "Galatians", 3,
+    [ 1, 13, 14, 16, 17, 22, 24, 26, 27, 28, 29 ] ],
+   [
+    "Galatians", 4,
+    [ 7, 14, 19 ] ] ]
  },
  {
   "id": "son-of-god",
@@ -5823,7 +5862,10 @@ window.GLOSSARY = [
     [ 15 ] ],
    [
     "Galatians", 2,
-    [ 16 ] ] ]
+    [ 16 ] ],
+   [
+    "Galatians", 3,
+    [ 6, 22 ] ] ]
  },
  {
   "id": "witness",
@@ -5979,7 +6021,10 @@ window.GLOSSARY = [
     [ 23 ] ],
    [
     "2 Corinthians", 8,
-    [ 3 ] ] ]
+    [ 3 ] ],
+   [
+    "Galatians", 4,
+    [ 15 ] ] ]
  },
  {
   "id": "baptize",
@@ -6069,7 +6114,10 @@ window.GLOSSARY = [
     [ 13 ] ],
    [
     "1 Corinthians", 15,
-    [ 29 ] ] ]
+    [ 29 ] ],
+   [
+    "Galatians", 3,
+    [ 27 ] ] ]
  },
  {
   "id": "sons-of-god",
@@ -6438,7 +6486,10 @@ window.GLOSSARY = [
     [ 22 ] ],
    [
     "2 Corinthians", 12,
-    [ 12 ] ] ]
+    [ 12 ] ],
+   [
+    "Galatians", 3,
+    [ 5 ] ] ]
  },
  {
   "id": "passover",
@@ -7173,7 +7224,10 @@ window.GLOSSARY = [
     [ 1, 16, 19, 23 ] ],
    [
     "2 Corinthians", 12,
-    [ 6, 11 ] ] ]
+    [ 6, 11 ] ],
+   [
+    "Galatians", 3,
+    [ 1, 3 ] ] ]
  },
  {
   "id": "scorner",
@@ -7536,7 +7590,10 @@ window.GLOSSARY = [
     [ 15 ] ],
    [
     "Galatians", 2,
-    [ 21 ] ] ]
+    [ 21 ] ],
+   [
+    "Galatians", 3,
+    [ 6, 21 ] ] ]
  },
  {
   "id": "wicked",
@@ -10284,7 +10341,13 @@ window.GLOSSARY = [
     [ 26 ] ],
    [
     "1 Corinthians", 15,
-    [ 3, 4 ] ] ]
+    [ 3, 4 ] ],
+   [
+    "Galatians", 3,
+    [ 8, 22 ] ],
+   [
+    "Galatians", 4,
+    [ 30 ] ] ]
  },
  {
   "id": "the-lad",
@@ -12078,7 +12141,10 @@ window.GLOSSARY = [
     [ 2, 13 ] ],
    [
     "Galatians", 2,
-    [ 2, 8, 12, 14, 15 ] ] ]
+    [ 2, 8, 12, 14, 15 ] ],
+   [
+    "Galatians", 3,
+    [ 14 ] ] ]
  },
  {
   "id": "glorified",
@@ -12348,6 +12414,12 @@ window.GLOSSARY = [
     [ 1 ] ],
    [
     "2 Corinthians", 11,
+    [ 22 ] ],
+   [
+    "Galatians", 3,
+    [ 6, 7, 8, 9, 14, 16, 18, 29 ] ],
+   [
+    "Galatians", 4,
     [ 22 ] ] ]
  },
  {
@@ -12585,7 +12657,13 @@ window.GLOSSARY = [
     [ 2 ] ],
    [
     "1 Corinthians", 7,
-    [ 21, 22 ] ] ]
+    [ 21, 22 ] ],
+   [
+    "Galatians", 3,
+    [ 28 ] ],
+   [
+    "Galatians", 4,
+    [ 26, 30, 31 ] ] ]
  },
  {
   "id": "bondage",
@@ -12609,7 +12687,10 @@ window.GLOSSARY = [
     [ 20 ] ],
    [
     "Galatians", 2,
-    [ 4 ] ] ]
+    [ 4 ] ],
+   [
+    "Galatians", 4,
+    [ 3, 9, 24, 25 ] ] ]
  },
  {
   "id": "servant-of-sin",
@@ -13533,7 +13614,13 @@ window.GLOSSARY = [
     [ 1 ] ],
    [
     "Galatians", 1,
-    [ 8 ] ] ]
+    [ 8 ] ],
+   [
+    "Galatians", 3,
+    [ 19 ] ],
+   [
+    "Galatians", 4,
+    [ 14 ] ] ]
  },
  {
   "id": "sepulchre",
@@ -15423,7 +15510,10 @@ window.GLOSSARY = [
     [ 9, 10 ] ],
    [
     "John", 16,
-    [ 21 ] ] ]
+    [ 21 ] ],
+   [
+    "Galatians", 4,
+    [ 19 ] ] ]
  },
  {
   "id": "tribulation",
@@ -15921,7 +16011,10 @@ window.GLOSSARY = [
     [ 4 ] ],
    [
     "Galatians", 2,
-    [ 20 ] ] ]
+    [ 20 ] ],
+   [
+    "Galatians", 3,
+    [ 1 ] ] ]
  },
  {
   "id": "title-on-the-cross",
@@ -16599,7 +16692,10 @@ window.GLOSSARY = [
     [ 16 ] ],
    [
     "Galatians", 2,
-    [ 9 ] ] ]
+    [ 9 ] ],
+   [
+    "Galatians", 3,
+    [ 8 ] ] ]
  },
  {
   "id": "jealous",
@@ -18219,7 +18315,10 @@ window.GLOSSARY = [
     [ 28 ] ],
    [
     "Mark", 10,
-    [ 45 ] ] ]
+    [ 45 ] ],
+   [
+    "Galatians", 4,
+    [ 5 ] ] ]
  },
  {
   "id": "o-death",
@@ -18459,7 +18558,10 @@ window.GLOSSARY = [
     [ 8 ] ],
    [
     "Romans", 11,
-    [ 27 ] ] ]
+    [ 27 ] ],
+   [
+    "Galatians", 3,
+    [ 15, 17 ] ] ]
  },
  {
   "id": "oven",
@@ -19044,7 +19146,10 @@ window.GLOSSARY = [
     [ 8, 32 ] ],
    [
     "Romans", 9,
-    [ 7, 10 ] ] ]
+    [ 7, 10 ] ],
+   [
+    "Galatians", 4,
+    [ 28 ] ] ]
  },
  {
   "id": "plumbline",
@@ -19812,7 +19917,10 @@ window.GLOSSARY = [
     [ 4 ] ],
    [
     "Romans", 1,
-    [ 17 ] ] ]
+    [ 17 ] ],
+   [
+    "Galatians", 3,
+    [ 11 ] ] ]
  },
  {
   "id": "woe",
@@ -22242,7 +22350,10 @@ window.GLOSSARY = [
   "refs": [
    [
     "Zechariah", 5,
-    [ 3 ] ] ]
+    [ 3 ] ],
+   [
+    "Galatians", 3,
+    [ 10, 13 ] ] ]
  },
  {
   "id": "stealeth",
@@ -23442,7 +23553,10 @@ window.GLOSSARY = [
     [ 7, 36 ] ],
    [
     "Luke", 23,
-    [ 29 ] ] ]
+    [ 29 ] ],
+   [
+    "Galatians", 4,
+    [ 27 ] ] ]
  },
  {
   "id": "stricken-in-years",
@@ -23853,7 +23967,13 @@ window.GLOSSARY = [
     [ 6, 7, 8, 9, 11 ] ],
    [
     "Galatians", 2,
-    [ 2, 5, 7, 14 ] ] ]
+    [ 2, 5, 7, 14 ] ],
+   [
+    "Galatians", 3,
+    [ 8 ] ],
+   [
+    "Galatians", 4,
+    [ 13 ] ] ]
  },
  {
   "id": "repent",
@@ -26385,7 +26505,10 @@ window.GLOSSARY = [
     [ 9 ] ],
    [
     "Galatians", 1,
-    [ 13, 23 ] ] ]
+    [ 13, 23 ] ],
+   [
+    "Galatians", 4,
+    [ 29 ] ] ]
  },
  {
   "id": "salt",
@@ -26736,7 +26859,10 @@ window.GLOSSARY = [
     [ 9 ] ],
    [
     "2 Corinthians", 13,
-    [ 9, 11 ] ] ]
+    [ 9, 11 ] ],
+   [
+    "Galatians", 3,
+    [ 3 ] ] ]
  },
  {
   "id": "begat",
@@ -27228,7 +27354,10 @@ window.GLOSSARY = [
     [ 40, 46 ] ],
    [
     "1 Corinthians", 10,
-    [ 13 ] ] ]
+    [ 13 ] ],
+   [
+    "Galatians", 4,
+    [ 14 ] ] ]
  },
  {
   "id": "amen",
@@ -27966,7 +28095,10 @@ window.GLOSSARY = [
     [ 23 ] ],
    [
     "Romans", 7,
-    [ 10 ] ] ]
+    [ 10 ] ],
+   [
+    "Galatians", 3,
+    [ 19 ] ] ]
  },
  {
   "id": "surnamed",
@@ -31398,7 +31530,10 @@ window.GLOSSARY = [
     [ 14 ] ],
    [
     "Acts", 7,
-    [ 5 ] ] ]
+    [ 5 ] ],
+   [
+    "Galatians", 3,
+    [ 18 ] ] ]
  },
  {
   "id": "rich-fool",
@@ -33411,7 +33546,10 @@ window.GLOSSARY = [
     [ 11 ] ],
    [
     "Galatians", 2,
-    [ 16, 17 ] ] ]
+    [ 16, 17 ] ],
+   [
+    "Galatians", 3,
+    [ 8, 11, 24 ] ] ]
  },
  {
   "id": "beginnings-of-sorrows",
@@ -33459,7 +33597,10 @@ window.GLOSSARY = [
     [ 36 ] ],
    [
     "Romans", 8,
-    [ 15 ] ] ]
+    [ 15 ] ],
+   [
+    "Galatians", 4,
+    [ 6 ] ] ]
  },
  {
   "id": "judas-kiss",
@@ -33675,7 +33816,10 @@ window.GLOSSARY = [
     [ 15 ] ],
    [
     "Galatians", 2,
-    [ 17 ] ] ]
+    [ 17 ] ],
+   [
+    "Galatians", 3,
+    [ 21 ] ] ]
  },
  {
   "id": "broken-or-ground",
@@ -36606,7 +36750,10 @@ window.GLOSSARY = [
     [ 1 ] ],
    [
     "Galatians", 1,
-    [ 2 ] ] ]
+    [ 2 ] ],
+   [
+    "Galatians", 3,
+    [ 1 ] ] ]
  },
  {
   "id": "mysia",
@@ -37149,7 +37296,10 @@ window.GLOSSARY = [
   "refs": [
    [
     "Acts", 13,
-    [ 29 ] ] ]
+    [ 29 ] ],
+   [
+    "Galatians", 3,
+    [ 13 ] ] ]
  },
  {
   "id": "sure-mercies",
@@ -37536,7 +37686,10 @@ window.GLOSSARY = [
   "refs": [
    [
     "Acts", 8,
-    [ 9, 11 ] ] ]
+    [ 9, 11 ] ],
+   [
+    "Galatians", 3,
+    [ 1 ] ] ]
  },
  {
   "id": "gall-of-bitterness",
@@ -39225,7 +39378,10 @@ window.GLOSSARY = [
   "refs": [
    [
     "Acts", 22,
-    [ 16 ] ] ]
+    [ 16 ] ],
+   [
+    "Galatians", 3,
+    [ 27 ] ] ]
  },
  {
   "id": "martyr",
@@ -39861,7 +40017,10 @@ window.GLOSSARY = [
     [ 19 ] ],
    [
     "Romans", 9,
-    [ 9 ] ] ]
+    [ 9 ] ],
+   [
+    "Galatians", 4,
+    [ 22, 23, 30 ] ] ]
  },
  {
   "id": "impute",
@@ -40314,7 +40473,13 @@ window.GLOSSARY = [
     [ 11 ] ],
    [
     "Galatians", 1,
-    [ 2, 11 ] ] ]
+    [ 2, 11 ] ],
+   [
+    "Galatians", 3,
+    [ 15 ] ],
+   [
+    "Galatians", 4,
+    [ 12, 28, 31 ] ] ]
  },
  {
   "id": "captain-of-the-guard",
@@ -40806,7 +40971,10 @@ window.GLOSSARY = [
     [ 8 ] ],
    [
     "2 Corinthians", 10,
-    [ 2 ] ] ]
+    [ 2 ] ],
+   [
+    "Galatians", 4,
+    [ 12 ] ] ]
  },
  {
   "id": "living-sacrifice",
@@ -41043,7 +41211,13 @@ window.GLOSSARY = [
     [ 5, 18, 25 ] ],
    [
     "Romans", 8,
-    [ 1, 4, 5, 8, 9, 12, 13 ] ] ]
+    [ 1, 4, 5, 8, 9, 12, 13 ] ],
+   [
+    "Galatians", 3,
+    [ 3 ] ],
+   [
+    "Galatians", 4,
+    [ 23, 29 ] ] ]
  },
  {
   "id": "motions-of-sins",
@@ -41103,7 +41277,10 @@ window.GLOSSARY = [
     [ 15, 23 ] ],
    [
     "Romans", 9,
-    [ 4 ] ] ]
+    [ 4 ] ],
+   [
+    "Galatians", 4,
+    [ 5 ] ] ]
  },
  {
   "id": "joint-heirs",
@@ -41373,7 +41550,10 @@ window.GLOSSARY = [
   "refs": [
    [
     "Romans", 9,
-    [ 8, 9 ] ] ]
+    [ 8, 9 ] ],
+   [
+    "Galatians", 4,
+    [ 28 ] ] ]
  },
  {
   "id": "election",
@@ -41460,7 +41640,10 @@ window.GLOSSARY = [
     [ 16 ] ],
    [
     "Romans", 10,
-    [ 12 ] ] ]
+    [ 12 ] ],
+   [
+    "Galatians", 3,
+    [ 28 ] ] ]
  },
  {
   "id": "preacher",
@@ -41478,7 +41661,13 @@ window.GLOSSARY = [
     [ 8, 9, 11, 16, 23 ] ],
    [
     "Galatians", 2,
-    [ 2 ] ] ]
+    [ 2 ] ],
+   [
+    "Galatians", 3,
+    [ 8 ] ],
+   [
+    "Galatians", 4,
+    [ 13 ] ] ]
  },
  {
   "id": "beautiful-feet",
@@ -44226,7 +44415,10 @@ window.GLOSSARY = [
   "refs": [
    [
     "Galatians", 1,
-    [ 17 ] ] ]
+    [ 17 ] ],
+   [
+    "Galatians", 4,
+    [ 25 ] ] ]
  },
  {
   "id": "conversation",
@@ -44302,5 +44494,125 @@ window.GLOSSARY = [
    [
     "Galatians", 2,
     [ 21 ] ] ]
+ },
+ {
+  "id": "evidently-set-forth",
+  "kind": "term",
+  "name": "Evidently set forth (posted up in plain view, like a public notice)",
+  "refs": [
+   [
+    "Galatians", 3,
+    [ 1 ] ] ]
+ },
+ {
+  "id": "disannul",
+  "kind": "term",
+  "name": "Disannul (cancel, make void)",
+  "refs": [
+   [
+    "Galatians", 3,
+    [ 15, 17 ] ] ]
+ },
+ {
+  "id": "seed-of-abraham",
+  "kind": "term",
+  "name": "The seed (Abraham's offspring; the one Seed is Christ)",
+  "refs": [
+   [
+    "Galatians", 3,
+    [ 16, 19, 29 ] ] ]
+ },
+ {
+  "id": "mediator",
+  "kind": "term",
+  "name": "Mediator (a go-between who stands between two parties)",
+  "refs": [
+   [
+    "Galatians", 3,
+    [ 19, 20 ] ] ]
+ },
+ {
+  "id": "schoolmaster",
+  "kind": "term",
+  "name": "Schoolmaster (the paidagogos: the household slave who walked a boy to school and kept him in line)",
+  "refs": [
+   [
+    "Galatians", 3,
+    [ 24, 25 ] ] ]
+ },
+ {
+  "id": "heir-of-god",
+  "kind": "term",
+  "name": "Heir (a son who receives his father's estate; in Christ, an heir of God)",
+  "refs": [
+   [
+    "Galatians", 3,
+    [ 29 ] ],
+   [
+    "Galatians", 4,
+    [ 1, 7, 30 ] ] ]
+ },
+ {
+  "id": "tutors-and-governors",
+  "kind": "term",
+  "name": "Tutors and governors (guardians and stewards who ran an underage heir's life and estate)",
+  "refs": [
+   [
+    "Galatians", 4,
+    [ 2 ] ] ]
+ },
+ {
+  "id": "elements-of-the-world",
+  "kind": "term",
+  "name": "Elements (the ABCs: the first rules of religion and the world, before Christ)",
+  "refs": [
+   [
+    "Galatians", 4,
+    [ 3, 9 ] ] ]
+ },
+ {
+  "id": "fulness-of-the-time",
+  "kind": "term",
+  "name": "The fulness of the time (the moment God had set)",
+  "refs": [
+   [
+    "Galatians", 4,
+    [ 4 ] ] ]
+ },
+ {
+  "id": "hagar",
+  "kind": "person",
+  "name": "Agar (Hagar), Sarah's bondmaid and the mother of Ishmael",
+  "refs": [
+   [
+    "Galatians", 4,
+    [ 22, 23, 24, 25, 30, 31 ] ] ]
+ },
+ {
+  "id": "allegory",
+  "kind": "term",
+  "name": "Allegory (a true story used as a picture)",
+  "refs": [
+   [
+    "Galatians", 4,
+    [ 24 ] ] ]
+ },
+ {
+  "id": "mount-sinai",
+  "kind": "place",
+  "name": "Mount Sinai (where God gave the law, in Arabia)",
+  "refs": [
+   [
+    "Galatians", 4,
+    [ 24, 25 ] ] ]
+ },
+ {
+  "id": "jerusalem-above",
+  "kind": "place",
+  "name": "Jerusalem which is above (the heavenly city, mother of all believers)",
+  "refs": [
+   [
+    "Galatians", 4,
+    [ 26 ] ] ]
  }
 ];

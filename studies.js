@@ -12942,5 +12942,100 @@ window.STUDIES = [
       },
       "big": "A man is made right with God by faith in Christ, not by keeping rules, and even a great leader can slip back into fear of men. The believer's old self died with Christ; now Christ lives in him, and he lives by faith in the Son of God who loved him and gave Himself for him."
     }
+  },
+  {
+    "id": "galatians-03",
+    "type": "chapter",
+    "book": "Galatians",
+    "ch": 3,
+    "date": "2026-10-31",
+    "title": "Galatians 3",
+    "sub": "Begun in the Spirit",
+    "about": "You can't finish by your own effort what grace started. Abraham believed God, Christ became a curse for us, the law was the slave who walked us to Christ, and in Him we are all sons of God.",
+    "tags": [
+      "Grace",
+      "Faith",
+      "The law",
+      "Redemption",
+      "Sons of God",
+      "After a fall"
+    ],
+    "url": "studies/galatians-03.html",
+    "overview": {
+      "where": "Paul’s letter to the churches of Galatia, the towns of his first journey",
+      "when": "Written about AD 48 to 49; Abraham lived about 2000 BC, and the law came 430 years after the promise",
+      "people": [
+        "paul",
+        "abraham",
+        "jesus",
+        "holy-spirit"
+      ],
+      "places": [
+        "galatia",
+        "jerusalem"
+      ],
+      "story": [
+        "“O foolish Galatians, who hath bewitched you?” They received the Spirit by hearing with faith, not by keeping the law. Having begun in the Spirit, how can they finish by the flesh? (1–5)",
+        "Abraham believed God and was counted righteous, so those who believe are his children, from every nation. The law curses all who fail to keep all of it, but Christ redeemed us from that curse, being made a curse for us on the tree (6–14).",
+        "God’s promise to Abraham and his Seed, Christ, came first. The law, 430 years later, can’t cancel it. The law was added because of sin and shut everyone up under sin, so the promise could be given to all who believe (15–22).",
+        "The law was our schoolmaster to bring us to Christ. Now we are all children of God by faith, clothed with Christ: neither Jew nor Greek, bond nor free, male nor female, but one in Christ Jesus and heirs of the promise (23–29)."
+      ],
+      "key": {
+        "ref": "Galatians 3:13",
+        "text": "Christ hath redeemed us from the curse of the law, being made a curse for us: for it is written, Cursed is every one that hangeth on a tree:"
+      },
+      "big": "What grace began, grace finishes: Christ took the curse, the law led us to Him, and every believer is a son of God."
+    }
+  },
+  {
+    "id": "galatians-04",
+    "type": "chapter",
+    "book": "Galatians",
+    "ch": 4,
+    "date": "2026-10-31",
+    "title": "Galatians 4",
+    "sub": "No more a servant, but a son",
+    "about": "God sent His Son to redeem us and His Spirit into our hearts to cry “Abba, Father.” Paul pleads with free sons not to go back to the old chains, and pictures bondage and freedom in Hagar and Sarah.",
+    "tags": [
+      "Adoption",
+      "God as Father",
+      "Freedom",
+      "Going back",
+      "Grace",
+      "Promise"
+    ],
+    "url": "studies/galatians-04.html",
+    "overview": {
+      "where": "Paul’s letter to the churches of Galatia, looking back to his first visit and to Abraham’s family",
+      "when": "Written about AD 48 to 49; Christ was born about 6 to 4 BC, “when the fulness of the time was come”",
+      "people": [
+        "paul",
+        "jesus",
+        "holy-spirit",
+        "the-father",
+        "abraham",
+        "hagar",
+        "sarah",
+        "isaac"
+      ],
+      "places": [
+        "galatia",
+        "mount-sinai",
+        "arabia",
+        "jerusalem",
+        "jerusalem-above"
+      ],
+      "story": [
+        "An heir who is still a child is no different from a servant until the day his father sets. When the fulness of the time came, God sent His Son to redeem those under the law, that we might be adopted as sons (1–5).",
+        "God sent the Spirit of His Son into our hearts, crying “Abba, Father.” You are no more a servant, but a son, and an heir of God through Christ (6–7).",
+        "Why turn back to weak and beggarly elements and want to be in bondage again? Paul remembers how they welcomed him when he came sick, asks if he is now their enemy for telling the truth, and calls them his little children, in labour until Christ be formed in them (8–20).",
+        "Abraham had two sons, one by a bondmaid, born after the flesh, one by a freewoman, by promise. They picture two covenants: Sinai and bondage, and the Jerusalem above, which is free. We are children of promise: cast out the bondwoman (21–31)."
+      ],
+      "key": {
+        "ref": "Galatians 4:7",
+        "text": "Wherefore thou art no more a servant, but a son; and if a son, then an heir of God through Christ."
+      },
+      "big": "In Christ you are no more a servant but a son and an heir, so don't walk back into the chains."
+    }
   }
 ];
