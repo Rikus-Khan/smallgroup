@@ -2616,7 +2616,10 @@ window.GLOSSARY = [
     [ 7 ] ],
    [
     "Hebrews", 11,
-    [ 32 ] ] ]
+    [ 32 ] ],
+   [
+    "Revelation", 5,
+    [ 5 ] ] ]
  },
  {
   "id": "hezekiah",
@@ -4386,7 +4389,13 @@ window.GLOSSARY = [
     [ 18 ] ],
    [
     "1 John", 5,
-    [ 7 ] ] ]
+    [ 7 ] ],
+   [
+    "Revelation", 5,
+    [ 3, 13 ] ],
+   [
+    "Revelation", 6,
+    [ 13, 14 ] ] ]
  },
  {
   "id": "hell",
@@ -4563,7 +4572,10 @@ window.GLOSSARY = [
     [ 14 ] ],
    [
     "Hebrews", 8,
-    [ 8 ] ] ]
+    [ 8 ] ],
+   [
+    "Revelation", 5,
+    [ 5 ] ] ]
  },
  {
   "id": "city-gate",
@@ -5709,7 +5721,10 @@ window.GLOSSARY = [
     [ 18 ] ],
    [
     "Jude", 1,
-    [ 24, 25 ] ] ]
+    [ 24, 25 ] ],
+   [
+    "Revelation", 5,
+    [ 12, 13 ] ] ]
  },
  {
   "id": "the-law",
@@ -7605,7 +7620,10 @@ window.GLOSSARY = [
     [ 3 ] ],
    [
     "1 Peter", 4,
-    [ 3 ] ] ]
+    [ 3 ] ],
+   [
+    "Revelation", 6,
+    [ 6 ] ] ]
  },
  {
   "id": "waterpots",
@@ -8037,7 +8055,10 @@ window.GLOSSARY = [
     [ 13, 15, 17 ] ],
    [
     "2 Peter", 3,
-    [ 15 ] ] ]
+    [ 15 ] ],
+   [
+    "Revelation", 5,
+    [ 12 ] ] ]
  },
  {
   "id": "understanding",
@@ -9795,7 +9816,10 @@ window.GLOSSARY = [
     [ 10 ] ],
    [
     "1 John", 3,
-    [ 18 ] ] ]
+    [ 18 ] ],
+   [
+    "Revelation", 5,
+    [ 9 ] ] ]
  },
  {
   "id": "anger",
@@ -10014,7 +10038,10 @@ window.GLOSSARY = [
     [ 27 ] ],
    [
     "James", 1,
-    [ 19, 20 ] ] ]
+    [ 19, 20 ] ],
+   [
+    "Revelation", 6,
+    [ 16, 17 ] ] ]
  },
  {
   "id": "pride",
@@ -11649,7 +11676,10 @@ window.GLOSSARY = [
     [ 8 ] ],
    [
     "John", 19,
-    [ 39 ] ] ]
+    [ 39 ] ],
+   [
+    "Revelation", 6,
+    [ 5 ] ] ]
  },
  {
   "id": "winebibber",
@@ -12564,7 +12594,10 @@ window.GLOSSARY = [
     [ 11 ] ],
    [
     "John", 6,
-    [ 9, 13 ] ] ]
+    [ 9, 13 ] ],
+   [
+    "Revelation", 6,
+    [ 6 ] ] ]
  },
  {
   "id": "pennyworth",
@@ -13194,7 +13227,10 @@ window.GLOSSARY = [
     [ 2 ] ],
    [
     "Hebrews", 11,
-    [ 21 ] ] ]
+    [ 21 ] ],
+   [
+    "Revelation", 5,
+    [ 14 ] ] ]
  },
  {
   "id": "good-shepherd",
@@ -15951,7 +15987,10 @@ window.GLOSSARY = [
     [ 4, 11 ] ],
    [
     "Jude", 1,
-    [ 6 ] ] ]
+    [ 6 ] ],
+   [
+    "Revelation", 5,
+    [ 2, 11 ] ] ]
  },
  {
   "id": "sepulchre",
@@ -16875,7 +16914,10 @@ window.GLOSSARY = [
     [ 9 ] ],
    [
     "3 John", 1,
-    [ 3 ] ] ]
+    [ 3 ] ],
+   [
+    "Revelation", 6,
+    [ 9 ] ] ]
  },
  {
   "id": "lazarus",
@@ -18996,7 +19038,10 @@ window.GLOSSARY = [
     [ 6 ] ],
    [
     "Hebrews", 10,
-    [ 11 ] ] ]
+    [ 11 ] ],
+   [
+    "Revelation", 5,
+    [ 10 ] ] ]
  },
  {
   "id": "elders",
@@ -19137,7 +19182,10 @@ window.GLOSSARY = [
     [ 21 ] ],
    [
     "Luke", 10,
-    [ 13 ] ] ]
+    [ 13 ] ],
+   [
+    "Revelation", 6,
+    [ 12 ] ] ]
  },
  {
   "id": "meat-offering",
@@ -25086,7 +25134,10 @@ window.GLOSSARY = [
     [ 4 ] ],
    [
     "Zechariah", 14,
-    [ 15, 20 ] ] ]
+    [ 15, 20 ] ],
+   [
+    "Revelation", 6,
+    [ 2, 4, 5, 8 ] ] ]
  },
  {
   "id": "myrtle-trees",
@@ -30066,7 +30117,10 @@ window.GLOSSARY = [
     [ 13 ] ],
    [
     "Hebrews", 13,
-    [ 10 ] ] ]
+    [ 10 ] ],
+   [
+    "Revelation", 6,
+    [ 9 ] ] ]
  },
  {
   "id": "adversary",
@@ -30975,7 +31029,10 @@ window.GLOSSARY = [
     [ 13 ] ],
    [
     "Jude", 1,
-    [ 25 ] ] ]
+    [ 25 ] ],
+   [
+    "Revelation", 5,
+    [ 14 ] ] ]
  },
  {
   "id": "treasure-in-heaven",
@@ -33285,7 +33342,10 @@ window.GLOSSARY = [
     [ 7 ] ],
    [
     "Colossians", 4,
-    [ 7 ] ] ]
+    [ 7 ] ],
+   [
+    "Revelation", 6,
+    [ 11 ] ] ]
  },
  {
   "id": "tormentors",
@@ -34782,7 +34842,10 @@ window.GLOSSARY = [
     [ 15 ] ],
    [
     "Luke", 20,
-    [ 24 ] ] ]
+    [ 24 ] ],
+   [
+    "Revelation", 6,
+    [ 6 ] ] ]
  },
  {
   "id": "vineyard",
@@ -34986,7 +35049,10 @@ window.GLOSSARY = [
     [ 6, 7 ] ],
    [
     "Luke", 21,
-    [ 29 ] ] ]
+    [ 29 ] ],
+   [
+    "Revelation", 6,
+    [ 13 ] ] ]
  },
  {
   "id": "harlots",
@@ -35610,7 +35676,10 @@ window.GLOSSARY = [
     [ 2 ] ],
    [
     "1 Corinthians", 7,
-    [ 27 ] ] ]
+    [ 27 ] ],
+   [
+    "Revelation", 5,
+    [ 2, 5 ] ] ]
  },
  {
   "id": "ruler-of-the-synagogue",
@@ -37413,7 +37482,10 @@ window.GLOSSARY = [
     [ 3, 5, 7, 8 ] ],
    [
     "Romans", 12,
-    [ 19 ] ] ]
+    [ 19 ] ],
+   [
+    "Revelation", 6,
+    [ 10 ] ] ]
  },
  {
   "id": "faint",
@@ -41121,7 +41193,10 @@ window.GLOSSARY = [
   "refs": [
    [
     "Acts", 16,
-    [ 26 ] ] ]
+    [ 26 ] ],
+   [
+    "Revelation", 6,
+    [ 12 ] ] ]
  },
  {
   "id": "sirs",
@@ -41325,7 +41400,10 @@ window.GLOSSARY = [
     [ 24 ] ],
    [
     "Jude", 1,
-    [ 3 ] ] ]
+    [ 3 ] ],
+   [
+    "Revelation", 5,
+    [ 8 ] ] ]
  },
  {
   "id": "upper-chamber",
@@ -44400,7 +44478,10 @@ window.GLOSSARY = [
     [ 12 ] ],
    [
     "1 Corinthians", 15,
-    [ 25 ] ] ]
+    [ 25 ] ],
+   [
+    "Revelation", 5,
+    [ 10 ] ] ]
  },
  {
   "id": "newness-of-life",
@@ -45288,7 +45369,10 @@ window.GLOSSARY = [
     [ 13, 14, 16 ] ],
    [
     "3 John", 1,
-    [ 3, 5, 10 ] ] ]
+    [ 3, 5, 10 ] ],
+   [
+    "Revelation", 6,
+    [ 11 ] ] ]
  },
  {
   "id": "captain-of-the-guard",
@@ -56091,7 +56175,10 @@ window.GLOSSARY = [
   "refs": [
    [
     "1 Peter", 1,
-    [ 18 ] ] ]
+    [ 18 ] ],
+   [
+    "Revelation", 5,
+    [ 9 ] ] ]
  },
  {
   "id": "vain-conversation",
@@ -56905,5 +56992,194 @@ window.GLOSSARY = [
    [
     "1 John", 3,
     [ 20 ] ] ]
+ },
+ {
+  "id": "the-lamb",
+  "kind": "person",
+  "name": "The Lamb (Jesus, the Lamb that was slain)",
+  "refs": [
+   [
+    "Revelation", 5,
+    [ 6, 8, 12, 13 ] ],
+   [
+    "Revelation", 6,
+    [ 1, 16 ] ] ]
+ },
+ {
+  "id": "lion-of-juda",
+  "kind": "term",
+  "name": "The Lion of the tribe of Juda (Jesus, the King from Judah)",
+  "refs": [
+   [
+    "Revelation", 5,
+    [ 5 ] ] ]
+ },
+ {
+  "id": "root-of-david",
+  "kind": "term",
+  "name": "The Root of David (Jesus, David's promised Son and Lord)",
+  "refs": [
+   [
+    "Revelation", 5,
+    [ 5 ] ] ]
+ },
+ {
+  "id": "seven-seals",
+  "kind": "term",
+  "name": "The book sealed with seven seals (the scroll only the Lamb can open)",
+  "refs": [
+   [
+    "Revelation", 5,
+    [ 1, 2, 5, 9 ] ],
+   [
+    "Revelation", 6,
+    [ 1, 3, 5, 7, 9, 12 ] ] ]
+ },
+ {
+  "id": "four-beasts",
+  "kind": "person",
+  "name": "The four beasts (the living creatures around God's throne)",
+  "refs": [
+   [
+    "Revelation", 5,
+    [ 6, 8, 11, 14 ] ],
+   [
+    "Revelation", 6,
+    [ 1, 3, 5, 6, 7 ] ] ]
+ },
+ {
+  "id": "twenty-four-elders",
+  "kind": "person",
+  "name": "The four and twenty elders (around God's throne)",
+  "refs": [
+   [
+    "Revelation", 5,
+    [ 5, 6, 8, 11, 14 ] ] ]
+ },
+ {
+  "id": "seven-spirits",
+  "kind": "term",
+  "name": "The seven Spirits of God (the Holy Spirit in His fullness)",
+  "refs": [
+   [
+    "Revelation", 5,
+    [ 6 ] ] ]
+ },
+ {
+  "id": "golden-vials",
+  "kind": "term",
+  "name": "Golden vials full of odours (bowls of incense: the prayers of saints)",
+  "refs": [
+   [
+    "Revelation", 5,
+    [ 8 ] ] ]
+ },
+ {
+  "id": "new-song",
+  "kind": "term",
+  "name": "A new song (praise for something God has newly done)",
+  "refs": [
+   [
+    "Revelation", 5,
+    [ 9 ] ] ]
+ },
+ {
+  "id": "kings-and-priests",
+  "kind": "term",
+  "name": "Kings and priests (what the Lamb has made His people)",
+  "refs": [
+   [
+    "Revelation", 5,
+    [ 10 ] ] ]
+ },
+ {
+  "id": "ten-thousand-times-ten-thousand",
+  "kind": "term",
+  "name": "Ten thousand times ten thousand (a number past counting)",
+  "refs": [
+   [
+    "Revelation", 5,
+    [ 11 ] ] ]
+ },
+ {
+  "id": "four-horsemen",
+  "kind": "term",
+  "name": "The four horsemen (conquest, war, famine, and death)",
+  "refs": [
+   [
+    "Revelation", 6,
+    [ 2, 4, 5, 8 ] ] ]
+ },
+ {
+  "id": "measure-of-wheat",
+  "kind": "term",
+  "name": "A measure of wheat for a penny (a day's wage for one man's bread: famine prices)",
+  "refs": [
+   [
+    "Luke", 16,
+    [ 7 ] ],
+   [
+    "Revelation", 6,
+    [ 6 ] ] ]
+ },
+ {
+  "id": "under-the-altar",
+  "kind": "term",
+  "name": "The souls under the altar (the martyrs, kept close to God)",
+  "refs": [
+   [
+    "Revelation", 6,
+    [ 9 ] ] ]
+ },
+ {
+  "id": "how-long-o-lord",
+  "kind": "term",
+  "name": "How long, O Lord? (the cry of those waiting for God's justice)",
+  "refs": [
+   [
+    "Revelation", 6,
+    [ 10 ] ] ]
+ },
+ {
+  "id": "white-robes",
+  "kind": "term",
+  "name": "White robes (the clean, victorious clothing God gives His people)",
+  "refs": [
+   [
+    "Revelation", 6,
+    [ 11 ] ] ]
+ },
+ {
+  "id": "moon-as-blood",
+  "kind": "term",
+  "name": "Sun darkened, moon as blood (signs of the great day of the LORD)",
+  "refs": [
+   [
+    "Joel", 2,
+    [ 31 ] ],
+   [
+    "Acts", 2,
+    [ 20 ] ],
+   [
+    "Revelation", 6,
+    [ 12 ] ] ]
+ },
+ {
+  "id": "bondman",
+  "kind": "term",
+  "name": "Bondman (a slave)",
+  "refs": [
+   [
+    "Revelation", 6,
+    [ 15 ] ] ]
+ },
+ {
+  "id": "wrath-of-the-lamb",
+  "kind": "term",
+  "name": "The wrath of the Lamb (Jesus as Judge of all who refuse Him)",
+  "refs": [
+   [
+    "Revelation", 6,
+    [ 16, 17 ] ] ]
  }
 ];

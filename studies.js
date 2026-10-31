@@ -16312,5 +16312,96 @@ window.STUDIES = [
       },
       "big": "Hold on to the faith, build yourself up, and pull a slipping brother out of the fire. And remember who holds you: He is able to keep you from falling and to present you faultless with exceeding joy."
     }
+  },
+  {
+    "id": "revelation-05",
+    "type": "chapter",
+    "book": "Revelation",
+    "ch": 5,
+    "date": "2026-10-31",
+    "title": "Revelation 5",
+    "sub": "Worthy is the Lamb",
+    "about": "A sealed book nobody can open, a man in tears, and a Lion who turns out to be a Lamb that was slain.",
+    "tags": [
+      "The Lamb",
+      "Worship",
+      "Redemption",
+      "Prayer",
+      "Hope",
+      "Worthy"
+    ],
+    "url": "studies/revelation-05.html",
+    "overview": {
+      "where": "Heaven, before the throne of God, in John's vision on Patmos",
+      "when": "About AD 95, the same vision as chapter 4",
+      "people": [
+        "the-lamb",
+        "john-the-apostle",
+        "twenty-four-elders",
+        "four-beasts",
+        "angels"
+      ],
+      "places": [
+        "heaven"
+      ],
+      "story": [
+        "In the right hand of Him on the throne John sees a book sealed with seven seals. A strong angel asks, “Who is worthy to open the book?” (1–2).",
+        "No man in heaven, on earth, or under the earth is able to open it, and John weeps much (3–4).",
+        "An elder says, “Weep not”: the Lion of the tribe of Juda has prevailed. John looks and sees a Lamb as it had been slain, and the Lamb takes the book (5–7).",
+        "The beasts and elders fall down with harps and golden vials of prayers and sing a new song: “thou wast slain, and hast redeemed us to God by thy blood” (8–10).",
+        "Angels past counting cry, “Worthy is the Lamb that was slain,” and every creature everywhere joins in, and the elders worship (11–14)."
+      ],
+      "key": {
+        "ref": "Revelation 5:12",
+        "text": "Saying with a loud voice, Worthy is the Lamb that was slain to receive power, and riches, and wisdom, and strength, and honour, and glory, and blessing."
+      },
+      "big": "No man is worthy, but the Lamb is. Jesus conquered by dying for sinners, bought men of every kind back to God with His blood, and all creation will praise Him."
+    }
+  },
+  {
+    "id": "revelation-06",
+    "type": "chapter",
+    "book": "Revelation",
+    "ch": 6,
+    "date": "2026-10-31",
+    "title": "Revelation 6",
+    "sub": "The Lamb opens the seals",
+    "about": "Four horsemen ride, the martyrs cry “How long?”, and men run from the wrath of the Lamb. Every seal is broken by His hand.",
+    "tags": [
+      "Judgment",
+      "God's control",
+      "Suffering",
+      "Justice",
+      "Refuge",
+      "The Lamb"
+    ],
+    "url": "studies/revelation-06.html",
+    "overview": {
+      "where": "Heaven's throne room, and the earth below, in John's vision on Patmos",
+      "when": "About AD 95; teachers read the seals as past, all through history, or still to come",
+      "people": [
+        "the-lamb",
+        "four-beasts",
+        "john-the-apostle"
+      ],
+      "places": [
+        "heaven",
+        "altar",
+        "hell"
+      ],
+      "story": [
+        "The Lamb opens the first seal: a white horse, whose rider has a bow and a crown, goes out conquering (1–2).",
+        "The second seal: a red horse takes peace from the earth with a great sword (3–4).",
+        "The third seal: a black horse with balances, and famine prices: a measure of wheat for a penny (5–6).",
+        "The fourth seal: a pale horse named Death, with Hell following, given power over the fourth part of the earth (7–8).",
+        "The fifth seal: the souls under the altar cry, “How long, O Lord?” and are given white robes and told to rest a little season (9–11).",
+        "The sixth seal: a great earthquake, the sun black and the moon as blood, and men of every rank hide in the rocks from the wrath of the Lamb (12–17)."
+      ],
+      "key": {
+        "ref": "Revelation 6:17",
+        "text": "For the great day of his wrath is come; and who shall be able to stand?"
+      },
+      "big": "Nothing happens outside the Lamb's hand: He opens every seal and limits every rider. He sees and comforts His martyrs, and the only shelter from the wrath of the Lamb is the Lamb Himself."
+    }
   }
 ];

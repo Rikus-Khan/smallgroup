@@ -1,0 +1,652 @@
+<!doctype html>
+<html lang="en" data-theme="scribe">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Revelation 5</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="../assets/fonts.css">
+<link rel="stylesheet" href="../assets/deck.css">
+<link rel="stylesheet" href="../assets/themes.css">
+<style>
+/* rv05-where: where this chapter sits in Revelation. Twenty-two chapter boxes (span) in seven groups (div); each group's label (b)
+   sits above (.up) or below the row, across the columns in its --c. The current group is .now, the current chapter span.here.
+   On a phone each group becomes its own row. */
+.rv05-where { display: grid; grid-template-columns: repeat(22, 1fr); gap: 5px 3px; margin: .6em 0 1em; align-items: end; }
+.rv05-where > div { display: contents; }
+.rv05-where span { grid-row: 2; display: grid; place-items: center; height: 2.3rem; border: 1.5px solid var(--line-strong); border-radius: 5px; font: 600 clamp(.75rem, .7rem + .3vw, 1rem) var(--sans); color: var(--ink-soft); }
+.rv05-where span.gap { margin-left: 5px; }
+.rv05-where b { grid-row: 3; grid-column: var(--c); align-self: start; text-align: center; font: 400 clamp(.8rem, .74rem + .32vw, 1.05rem)/1.25 var(--serif); color: var(--ink-soft); padding: 0 2px; }
+.rv05-where b.up { grid-row: 1; align-self: end; }
+.rv05-where b.left { text-align: left; }
+.rv05-where .now span { border-color: var(--accent); color: var(--ink); }
+.rv05-where .now b { color: var(--accent-hot); font-weight: 600; }
+.rv05-where span.here { background: var(--accent); color: var(--on-accent); box-shadow: 0 0 0 5px color-mix(in srgb, var(--accent) 22%, transparent); }
+@media (max-width: 600px) {
+  .rv05-where { grid-template-columns: 1fr; gap: 6px; }
+  .rv05-where > div { display: flex; flex-wrap: wrap; align-items: center; gap: 3px; }
+  .rv05-where span { width: 1.75rem; height: 1.9rem; }
+  .rv05-where span.gap { margin-left: 0; }
+  .rv05-where b, .rv05-where b.up { margin-left: .4em; text-align: left; align-self: center; }
+}
+
+/* rv05-scroll: the book in God's right hand, rolled up and sealed. Seven wax seals (.rv05-seal, --k) pop in on their cords */
+.rv05-roll { fill: color-mix(in srgb, var(--warm) 22%, var(--glow)); stroke: var(--leather-light); stroke-width: 2.5; }
+.rv05-cap { fill: color-mix(in srgb, var(--warm) 38%, var(--glow)); stroke: var(--leather-light); stroke-width: 2.5; }
+.rv05-ink { stroke: color-mix(in srgb, var(--on-glow) 30%, transparent); stroke-width: 2; stroke-linecap: round; }
+.rv05-cord { stroke: var(--leather); stroke-width: 3; }
+.rv05-seal circle { fill: var(--wine); }
+.rv05-seal circle + circle { fill: none; stroke: color-mix(in srgb, var(--glow) 45%, var(--wine)); stroke-width: 2; }
+.rv05-seal { transform-box: fill-box; transform-origin: center; transform: scale(0); }
+.slide.active .rv05-seal { animation: rv05-pop .5s cubic-bezier(.3,1.6,.5,1) both; animation-delay: calc(var(--k) * 180ms + 700ms); }
+@keyframes rv05-pop { to { transform: scale(1); } }
+.rv05-lab { fill: var(--ink-soft); font: italic 17px var(--serif); }
+.rv05-lab.hot { fill: var(--accent-hot); font-style: normal; font-weight: 600; }
+@media (max-width: 600px) { .rv05-lab { font-size: 22px; } }
+
+/* rv05-turn: John hears "the Lion" and turns to see "a Lamb as it had been slain". The lion (.rv05-lion) shows first;
+   a .rv05-turn-go step turns it edge-on and the Lamb (.rv05-lamb) turns in where it stood. Captions (.rv05-cap1/2) swap with them.
+   The lamb is a <symbol> (#rv05-lambsym), used again at the center of the throne in rv05-rings */
+.rv05-halo { fill: var(--warm); opacity: .16; }
+.slide.active .rv05-halo { animation: rv05-breathe 3s ease-in-out infinite alternate; }
+@keyframes rv05-breathe { to { opacity: .3; } }
+.rv05-mane { fill: var(--warm); stroke: color-mix(in srgb, var(--warm) 55%, var(--on-glow)); stroke-width: 2; stroke-linejoin: round; }
+.rv05-face { fill: color-mix(in srgb, var(--warm) 40%, var(--glow)); stroke: color-mix(in srgb, var(--warm) 55%, var(--on-glow)); stroke-width: 2; }
+.rv05-muzzle { fill: color-mix(in srgb, var(--warm) 12%, var(--glow)); }
+.rv05-dark { fill: var(--on-glow); }
+.rv05-line { fill: none; stroke: var(--on-glow); stroke-width: 2.5; stroke-linecap: round; }
+.rv05-wool-out circle { fill: var(--ink-soft); }
+.rv05-wool circle { fill: var(--glow); }
+.rv05-leg { fill: color-mix(in srgb, var(--glow) 62%, var(--leather)); }
+.rv05-head { fill: color-mix(in srgb, var(--glow) 80%, var(--leather)); stroke: var(--ink-soft); stroke-width: 2.5; }
+.rv05-wound { fill: none; stroke: var(--wine); stroke-width: 4; stroke-linecap: round; }
+.rv05-lion, .rv05-lamb, .rv05-cap1, .rv05-cap2 { transform-box: view-box; transform-origin: 210px 170px; }
+.rv05-lion, .rv05-cap1 { transition: transform .45s ease-in, opacity .45s ease-in; }
+.rv05-lamb, .rv05-cap2 { transform: scaleX(0); opacity: 0; transition: transform .55s ease-out .45s, opacity .55s ease-out .45s; }
+.slide:has(.rv05-turn-go.on) .rv05-lion, .slide:has(.rv05-turn-go.on) .rv05-cap1 { transform: scaleX(0); opacity: 0; }
+.slide:has(.rv05-turn-go.on) .rv05-lamb, .slide:has(.rv05-turn-go.on) .rv05-cap2 { transform: none; opacity: 1; }
+.rv05-say { fill: var(--accent-hot); font: italic 600 21px var(--serif); }
+.rv05-small { fill: var(--ink-soft); font: 15px var(--sans); letter-spacing: .08em; text-transform: uppercase; }
+@media (max-width: 600px) { .rv05-say { font-size: 24px; } .rv05-small { font-size: 18px; } }
+
+/* rv05-incense: a golden bowl (vial) with prayers rising from it as smoke. Smoke paths (.rv05-smoke, --k) drift up for ever;
+   the words of prayers (.rv05-pray, --k) float up through it one after another */
+.rv05-bowl { fill: var(--warm); stroke: color-mix(in srgb, var(--warm) 60%, var(--on-glow)); stroke-width: 2; }
+.rv05-rim { fill: color-mix(in srgb, var(--warm) 60%, var(--glow)); stroke: color-mix(in srgb, var(--warm) 60%, var(--on-glow)); stroke-width: 2; }
+.rv05-smoke { fill: none; stroke: color-mix(in srgb, var(--ink-soft) 45%, transparent); stroke-width: 7; stroke-linecap: round; stroke-dasharray: 60 260; stroke-dashoffset: 320; }
+.slide.active .rv05-smoke { animation: rv05-drift 4.5s linear infinite; animation-delay: calc(var(--k) * -1.5s); }
+@keyframes rv05-drift { to { stroke-dashoffset: 0; } }
+.rv05-pray { fill: var(--accent-hot); font: italic 19px var(--serif); opacity: 0; }
+.slide.active .rv05-pray { animation: rv05-up 7.5s ease-in-out infinite; animation-delay: calc(var(--k) * 1.5s + .6s); }
+@keyframes rv05-up { 0% { opacity: 0; transform: translateY(0); } 15% { opacity: 1; } 55% { opacity: .9; } 75%, 100% { opacity: 0; transform: translateY(-120px); } }
+@media (max-width: 600px) { .rv05-pray { font-size: 23px; } }
+
+/* rv05-every: the four words of 5:9 (.rv05-kind > div, word in b), then a .rv05-past-go step brings in
+   "every kind of past" (.rv05-past span, --k), struck through one by one and stamped redeemed */
+.rv05-kind { display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; margin: .3em 0 .8em; }
+.rv05-kind div { padding: .55em .6em; border: 2px solid var(--accent); border-radius: 8px; background: color-mix(in srgb, var(--accent) 10%, transparent); font-size: clamp(.85rem, .78rem + .35vw, 1.1rem); line-height: 1.3; color: var(--ink-soft); }
+.rv05-kind b { display: block; font: 600 1.25em var(--serif); color: var(--accent-hot); }
+.rv05-past { display: flex; flex-wrap: wrap; gap: 6px 8px; margin: .2em 0 .9em; align-items: center; }
+.rv05-past span { position: relative; padding: .3em .7em; border: 1.5px dashed var(--line-strong); border-radius: 999px; font: italic clamp(.95rem, .85rem + .45vw, 1.25rem) var(--serif); color: var(--ink-soft); opacity: 0; transform: translateY(8px); transition: opacity .5s ease, transform .5s ease; transition-delay: calc(var(--k) * 140ms); }
+.rv05-past span::after { content: ""; position: absolute; left: 8%; right: 8%; top: 52%; height: 2px; background: var(--danger); transform: scaleX(0); transform-origin: left; transition: transform .5s ease; transition-delay: calc(var(--k) * 140ms + 1.5s); }
+.rv05-past b { padding: .25em .7em; border: 2px solid var(--accent); border-radius: 6px; font: 700 clamp(.95rem, .85rem + .45vw, 1.25rem) var(--sans); color: var(--accent-hot); transform: rotate(-4deg) scale(1.8); opacity: 0; transition: transform .35s cubic-bezier(.3,1.6,.5,1) 2.9s, opacity .2s ease 2.9s; }
+.slide:has(.rv05-past-go.on) .rv05-past span { opacity: 1; transform: none; }
+.slide:has(.rv05-past-go.on) .rv05-past span::after { transform: scaleX(1); }
+.slide:has(.rv05-past-go.on) .rv05-past b { opacity: 1; transform: rotate(-4deg); }
+@media (max-width: 600px) { .rv05-kind { grid-template-columns: 1fr 1fr; } }
+
+/* rv05-seven: the seven words of 5:12 as one row of .signs cards */
+@media (min-width: 900px) { .signs.rv05-seven { grid-template-columns: repeat(7, 1fr); } }
+
+/* rv05-rings: the worship around the throne, seen from above. The Lamb on the throne at the center, the four beasts and
+   twenty-four elders round it (lit when the slide opens). A .rv05-r2 step fills the next ring with angels (.rv05-angels circle, --k);
+   a .rv05-r3 step lights the outer ring, every creature, with waves of praise (.rv05-wave) going out from the center */
+.rv05-seat { fill: color-mix(in srgb, var(--accent) 12%, transparent); stroke: var(--accent); stroke-width: 1.5; }
+.rv05-throne { fill: var(--glow); stroke: var(--warm); stroke-width: 3; }
+.rv05-beast { fill: var(--cool); }
+.rv05-elder { fill: var(--warm); stroke: color-mix(in srgb, var(--warm) 55%, var(--on-glow)); stroke-width: 1; }
+.rv05-angels circle { fill: var(--accent); opacity: 0; transition: opacity .5s ease; transition-delay: calc(var(--k) * 40ms); }
+.slide:has(.rv05-r2.on) .rv05-angels circle { opacity: .75; }
+.rv05-all { fill: none; stroke: var(--line-strong); stroke-width: 2; stroke-dasharray: 4 7; transition: stroke 1s ease, stroke-width 1s ease; }
+.slide:has(.rv05-r3.on) .rv05-all { stroke: var(--accent); stroke-width: 3; }
+.rv05-corner { fill: var(--ink-soft); font: italic 17px var(--serif); opacity: .25; transition: opacity 1s ease; }
+.slide:has(.rv05-r3.on) .rv05-corner { opacity: 1; fill: var(--accent-hot); }
+.rv05-ring-lab { fill: var(--ink-soft); font: 13px var(--sans); letter-spacing: .06em; text-transform: uppercase; }
+.rv05-wave { fill: none; stroke: var(--warm); stroke-width: 3; opacity: 0; transform-box: view-box; transform-origin: 300px 220px; }
+.slide:has(.rv05-r3.on) .rv05-wave { animation: rv05-wave 3.6s ease-out infinite; animation-delay: calc(var(--k) * 1.2s); }
+@keyframes rv05-wave { 0% { opacity: .8; transform: scale(.15); } 100% { opacity: 0; transform: scale(1); } }
+@media (max-width: 600px) { .rv05-corner { font-size: 21px; } .rv05-ring-lab { font-size: 16px; } }
+</style>
+</head>
+<body>
+<main class="deck" id="deck">
+
+<!-- ======================= OPENING ======================= -->
+<section class="slide title">
+  <div class="inner">
+    <div class="emblem rise"></div>
+    <h1 class="rise" style="--d:1">Revelation 5</h1>
+    <p class="sub rise" style="--d:3">Worthy is the Lamb</p>
+    <p class="tag rise" style="--d:5">A sealed book nobody can open, a man in tears, and a Lion who turns out to be a Lamb that was slain.</p>
+  </div>
+</section>
+
+<section class="slide watch">
+  <div class="inner">
+    <h2 class="rise">Things to watch for</h2>
+    <p class="lede rise" style="--d:1">Keep these questions in the back of your mind as we read. We'll come back to every one of them at the end.</p>
+    <ol class="seeds">
+      <li class="step"><span class="topic">Worthy</span><span class="seed-q">Why was no man found worthy to open the book?</span></li>
+      <li class="step"><span class="topic">Tears</span><span class="seed-q">What did the elder tell John when he wept?</span></li>
+      <li class="step"><span class="topic">The Lamb</span><span class="seed-q">Why is the Lion of Juda seen as a Lamb that was slain?</span></li>
+      <li class="step"><span class="topic">Redeemed</span><span class="seed-q">Whom has the Lamb redeemed, and how?</span></li>
+      <li class="step"><span class="topic">Prayer</span><span class="seed-q">What happens to the prayers of saints?</span></li>
+      <li class="step"><span class="topic">Worship</span><span class="seed-q">Who joins in worshipping the Lamb?</span></li>
+    </ol>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise">Where we are in Revelation</h2>
+    <div class="rv05-where rise" style="--d:1" role="img" aria-label="The twenty-two chapters of Revelation in seven groups. Chapter 1: a vision of Christ. 2 and 3: the seven churches. 4 and 5: the throne and the Lamb, with chapter 5 lit. 6 to 16: seals, trumpets and bowls. 17 and 18: Babylon falls. 19 and 20: Christ returns and reigns. 21 and 22: all things new.">
+      <div><span>1</span><b class="up left" style="--c:1 / 4">a vision of Christ</b></div>
+      <div><span class="gap">2</span><span>3</span><b style="--c:1 / 5">the seven churches</b></div>
+      <div class="now"><span class="gap">4</span><span class="here">5</span><b class="up left" style="--c:4 / 9">the throne and the Lamb</b></div>
+      <div><span class="gap">6</span><span>7</span><span>8</span><span>9</span><span>10</span><span>11</span><span>12</span><span>13</span><span>14</span><span>15</span><span>16</span><b style="--c:6 / 17">seals, trumpets and bowls</b></div>
+      <div><span class="gap">17</span><span>18</span><b class="up" style="--c:16 / 20">Babylon falls</b></div>
+      <div><span class="gap">19</span><span>20</span><b style="--c:18 / 22">Christ returns and reigns</b></div>
+      <div><span class="gap">21</span><span>22</span><b class="up" style="--c:20 / 23">all things new</b></div>
+    </div>
+    <p class="note step">In chapter 4 John, an old man exiled on Patmos, went up through an open door into heaven and saw the throne. Everything there sang to God: <em>“Thou art worthy, O Lord… for thou hast created all things”</em> (4:11).</p>
+    <p class="note step">Now the same room, the same throne. But the song is about to change: <em>worthy, because thou wast slain.</em></p>
+  </div>
+</section>
+
+<!-- ======================= PART ONE: THE SEALED BOOK ======================= -->
+<section class="slide part">
+  <div class="inner">
+    <p class="part-n rise">Part one</p>
+    <h2 class="rise" style="--d:1">The sealed book</h2>
+    <p class="range rise" style="--d:2">Verses 1–4</p>
+    <div class="rule"></div>
+    <p class="hook rise" style="--d:4">God holds a book sealed seven times. Heaven asks who can open it, and nobody answers.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="1-2" data-hl="sealed with seven seals|Who is worthy to open the book, and to loose the seals thereof?"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <div class="split">
+      <div class="stage">
+        <svg viewBox="0 0 600 300" role="img" aria-label="A rolled-up scroll lying on its side, with writing showing on its outside. Seven cords are tied around it, and seven red wax seals appear on them one by one.">
+          <defs>
+            <symbol id="rv05-lambsym" viewBox="130 100 180 150">
+              <g class="rv05-leg"><rect x="168" y="200" width="10" height="44" rx="4"/><rect x="188" y="204" width="10" height="42" rx="4"/><rect x="232" y="204" width="10" height="42" rx="4"/><rect x="252" y="200" width="10" height="44" rx="4"/></g>
+              <g class="rv05-wool-out"><circle cx="165" cy="178" r="32.5"/><circle cx="196" cy="156" r="34.5"/><circle cx="232" cy="160" r="32.5"/><circle cx="258" cy="182" r="28.5"/><circle cx="216" cy="194" r="32.5"/><circle cx="182" cy="198" r="28.5"/></g>
+              <g class="rv05-wool"><circle cx="165" cy="178" r="30"/><circle cx="196" cy="156" r="32"/><circle cx="232" cy="160" r="30"/><circle cx="258" cy="182" r="26"/><circle cx="216" cy="194" r="30"/><circle cx="182" cy="198" r="26"/></g>
+              <ellipse class="rv05-head" cx="282" cy="140" rx="19" ry="26" transform="rotate(28 282 140)"/>
+              <ellipse class="rv05-head" cx="266" cy="124" rx="13" ry="6" transform="rotate(-25 266 124)"/>
+              <circle class="rv05-dark" cx="290" cy="135" r="3.5"/>
+              <path class="rv05-wound" d="M250 150 l12 16"/>
+            </symbol>
+          </defs>
+          <text class="rv05-lab" x="300" y="40" text-anchor="middle">in the right hand of him that sat on the throne</text>
+          <rect class="rv05-roll" x="70" y="100" width="460" height="100"/>
+          <g class="rv05-ink">
+            <line x1="96" y1="122" x2="290" y2="122"/><line x1="310" y1="122" x2="500" y2="122"/>
+            <line x1="96" y1="140" x2="240" y2="140"/><line x1="262" y1="140" x2="470" y2="140"/>
+            <line x1="96" y1="158" x2="330" y2="158"/><line x1="350" y1="158" x2="505" y2="158"/>
+            <line x1="96" y1="176" x2="210" y2="176"/><line x1="230" y1="176" x2="440" y2="176"/>
+          </g>
+          <ellipse class="rv05-cap" cx="70" cy="150" rx="16" ry="50"/>
+          <ellipse class="rv05-cap" cx="530" cy="150" rx="16" ry="50"/>
+          <g class="rv05-cord"><line x1="125" y1="98" x2="125" y2="204"/><line x1="183" y1="98" x2="183" y2="204"/><line x1="241" y1="98" x2="241" y2="204"/><line x1="300" y1="98" x2="300" y2="204"/><line x1="359" y1="98" x2="359" y2="204"/><line x1="417" y1="98" x2="417" y2="204"/><line x1="475" y1="98" x2="475" y2="204"/></g>
+          <g class="rv05-seal" style="--k:0"><circle cx="125" cy="212" r="17"/><circle cx="125" cy="212" r="10"/></g>
+          <g class="rv05-seal" style="--k:1"><circle cx="183" cy="212" r="17"/><circle cx="183" cy="212" r="10"/></g>
+          <g class="rv05-seal" style="--k:2"><circle cx="241" cy="212" r="17"/><circle cx="241" cy="212" r="10"/></g>
+          <g class="rv05-seal" style="--k:3"><circle cx="300" cy="212" r="17"/><circle cx="300" cy="212" r="10"/></g>
+          <g class="rv05-seal" style="--k:4"><circle cx="359" cy="212" r="17"/><circle cx="359" cy="212" r="10"/></g>
+          <g class="rv05-seal" style="--k:5"><circle cx="417" cy="212" r="17"/><circle cx="417" cy="212" r="10"/></g>
+          <g class="rv05-seal" style="--k:6"><circle cx="475" cy="212" r="17"/><circle cx="475" cy="212" r="10"/></g>
+          <text class="rv05-lab" x="300" y="268" text-anchor="middle">“written within and on the backside”</text>
+          <text class="rv05-lab hot" x="300" y="292" text-anchor="middle">sealed with seven seals</text>
+        </svg>
+      </div>
+      <div>
+        <h2 class="rise" style="--d:1">A book sealed seven times</h2>
+        <p class="note rise" style="--d:2">A <em>book</em> then was a scroll. This one is so full it's written on both sides, and it's tied shut with seven seals. In the Bible, seven is the number of completeness: this book is <em>completely</em> shut.</p>
+        <p class="note step">Many teachers point out that a Roman will was sealed by seven witnesses, and only the rightful heir could open it. Most see in it God's plan to judge the world and set it right. It's in God's own hand, and chapter 6 shows what happens as it opens.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="slide verse" data-v="3-4" data-hl="And I wept much, because no man was found worthy"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise">Who is worthy?</h2>
+    <div class="asks">
+      <div class="ask step"><span class="q">“In heaven”?</span><span class="stamp">No man</span><span class="ctx">Not one of the angels, not one of the saints already home.</span></div>
+      <div class="ask step"><span class="q">“In earth”?</span><span class="stamp">No man</span><span class="ctx">Not a king, not a prophet, not the best man you ever knew.</span></div>
+      <div class="ask step"><span class="q">“Under the earth”?</span><span class="stamp">No man</span><span class="ctx">Not the great men of the past in their graves.</span></div>
+    </div>
+    <p class="note step">Nobody could even <em>look</em> at it. Being worthy isn't about trying hard. It means having the right, the clean record, the standing before God. Every man who ever lived comes up short.</p>
+    <blockquote class="quote step"><p>“This is a faithful saying, and worthy of all acceptation, that Christ Jesus came into the world to save sinners; of whom I am chief.”</p><cite>1 Timothy 1:15</cite></blockquote>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="4" data-hl="I wept much"></blockquote>
+    <h2 class="rise" style="--d:1">A grown man crying</h2>
+    <p class="note rise" style="--d:2">John is an old apostle, in exile, who has seen it all. And he cries hard. If nobody can open the book, nobody can put the world right: the wrong stays wrong for ever.</p>
+    <p class="note step">Maybe you know those tears. You look at what you've done, at what was done to you, at the mess, and nobody you know can fix it. You can't either. John wasn't wrong to weep. He was honest.</p>
+    <p class="note step">But he isn't left there. Watch what heaven does with a man's tears:</p>
+    <blockquote class="quote step"><p>“And God shall wipe away all tears from their eyes; and there shall be no more death, neither sorrow, nor crying, neither shall there be any more pain: for the former things are passed away.”</p><cite>Revelation 21:4</cite></blockquote>
+  </div>
+</section>
+
+<!-- ======================= PART TWO: THE LION IS A LAMB ======================= -->
+<section class="slide part">
+  <div class="inner">
+    <p class="part-n rise">Part two</p>
+    <h2 class="rise" style="--d:1">The Lion is a Lamb</h2>
+    <p class="range rise" style="--d:2">Verses 5–7</p>
+    <div class="rule"></div>
+    <p class="hook rise" style="--d:4">“Weep not.” Somebody has won. John turns to look at Him, and sees the last thing he expected.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="5" data-hl="Weep not|the Lion of the tribe of Juda, the Root of David, hath prevailed"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise">The Lion and the Root</h2>
+    <div class="pair">
+      <div class="scroll rise" style="--d:2"><p class="ref">Genesis 49:9</p><p class="kjv"><mark>Judah is a lion’s whelp</mark>: from the prey, my son, thou art gone up: he stooped down, he couched as a lion, and as an old lion; who shall rouse him up?</p></div>
+      <div class="scroll step"><p class="ref">Isaiah 11:10</p><p class="kjv">And in that day there shall be <mark>a root of Jesse</mark>, which shall stand for an ensign of the people; to it shall the Gentiles seek: and his rest shall be glorious.</p></div>
+    </div>
+    <p class="note step">Jacob, dying, called his son Judah a lion, and said <em>“the sceptre shall not depart from Judah”</em> (Genesis 49:10). King David came from Judah, and Jesse was David's father. The elder is saying: here is the King God promised, from the tribe of kings, David's own Son and David's root.</p>
+    <p class="note step"><em>Prevailed</em> is the Greek word <span class="gk">nikao</span>: to conquer, to overcome. It's the same word as <em>“to him that overcometh”</em> in the letters to the seven churches. He has overcome, so His people can.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="6-7" data-hl="stood a Lamb as it had been slain|And he came and took the book"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <div class="split">
+      <div class="stage">
+        <svg viewBox="0 0 420 340" role="img" aria-label="A lion's head with a golden mane, under the words: I heard, the Lion of the tribe of Juda. On a step the lion turns away edge-on, and in its place a white lamb turns into view, standing in the light, with a red wound on its neck: I beheld a Lamb as it had been slain.">
+          <circle class="rv05-halo" cx="210" cy="165" r="140"/>
+          <g class="rv05-cap1">
+            <text class="rv05-small" x="210" y="22" text-anchor="middle">John heard</text>
+            <text class="rv05-say" x="210" y="322" text-anchor="middle">“the Lion of the tribe of Juda”</text>
+          </g>
+          <g class="rv05-cap2">
+            <text class="rv05-small" x="210" y="22" text-anchor="middle">John turned and saw</text>
+            <text class="rv05-say" x="210" y="322" text-anchor="middle">“a Lamb as it had been slain”</text>
+          </g>
+          <g class="rv05-lion">
+            <polygon class="rv05-mane" points="210.0 62.0 222.8 87.1 243.5 67.9 247.0 95.9 273.0 84.9 266.7 112.4 294.9 111.0 279.5 134.7 306.5 143.0 284.0 160.0 306.5 177.0 279.5 185.3 294.9 209.0 266.7 207.6 273.0 235.1 247.0 224.1 243.5 252.1 222.8 232.9 210.0 258.0 197.2 232.9 176.5 252.1 173.0 224.1 147.0 235.1 153.3 207.6 125.1 209.0 140.5 185.3 113.5 177.0 136.0 160.0 113.5 143.0 140.5 134.7 125.1 111.0 153.3 112.4 147.0 84.9 173.0 95.9 176.5 67.9 197.2 87.1"/>
+            <circle class="rv05-face" cx="172" cy="116" r="14"/><circle class="rv05-face" cx="248" cy="116" r="14"/>
+            <circle class="rv05-face" cx="210" cy="162" r="56"/>
+            <ellipse class="rv05-muzzle" cx="210" cy="190" rx="27" ry="19"/>
+            <ellipse class="rv05-dark" cx="189" cy="152" rx="5.5" ry="6.5"/><ellipse class="rv05-dark" cx="231" cy="152" rx="5.5" ry="6.5"/>
+            <path class="rv05-dark" d="M198 176 L222 176 L210 189 Z"/>
+            <path class="rv05-line" d="M210 189 L210 198 M210 198 Q198 210 188 201 M210 198 Q222 210 232 201"/>
+          </g>
+          <g class="rv05-lamb">
+            <use href="#rv05-lambsym" x="100" y="80" width="220" height="183"/>
+          </g>
+        </svg>
+      </div>
+      <div>
+        <h2 class="rise" style="--d:1">He heard “Lion.” He saw a Lamb.</h2>
+        <p class="note rise" style="--d:2">John is told to look at a conquering Lion. He turns, and there in the middle of the throne stands a <em>Lamb</em>, still marked <em>“as it had been slain.”</em></p>
+        <p class="note step rv05-turn-go">That's how He won. Not by tearing His enemies apart, but by being torn for them. The Lion conquered by dying as a Lamb.</p>
+        <p class="note step">And notice: slain, yet standing. He died, and He is alive. He still carries the wounds, even on the throne (John 20:27). That is the center of this whole book.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="6" data-hl="having seven horns and seven eyes"></blockquote>
+    <h2 class="rise" style="--d:1">Seven horns, seven eyes</h2>
+    <div class="columns">
+      <div class="col step"><p class="who">Horns</p><h3>All the power</h3><p>In the Bible a horn is a picture of strength, like a bull's. Seven horns: complete power. This Lamb isn't weak.</p></div>
+      <div class="col step"><p class="who">Eyes</p><h3>Sees everything</h3><p>The prophet Zechariah saw seven lamps: <em>“they are the eyes of the LORD, which run to and fro through the whole earth”</em> (Zechariah 4:10). Seven eyes: He misses nothing. Many teachers read “the seven Spirits” as the Holy Spirit in His fullness.</p></div>
+    </div>
+    <p class="note step">Then the Lamb walks up and takes the book out of God's right hand (5:7). Nobody hands it to Him reluctantly. It's His by right. The Man who died for sinners now holds the future of the world.</p>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise">The Lamb through the whole Bible</h2>
+    <ol class="timeline">
+      <li style="--k:0"><b>Genesis 22:8</b><span>“God will provide himself a lamb”</span><small>Abraham on the mountain</small></li>
+      <li style="--k:1"><b>Exodus 12:13</b><span>“when I see the blood, I will pass over you”</span><small>Passover in Egypt</small></li>
+      <li style="--k:2"><b>Isaiah 53:7</b><span>“he is brought as a lamb to the slaughter”</span><small>the suffering servant</small></li>
+      <li style="--k:3"><b>John 1:29</b><span>“Behold the Lamb of God, which taketh away the sin of the world”</span><small>John the Baptist</small></li>
+      <li class="lit" style="--k:4"><b>Revelation 5:6</b><span>“a Lamb as it had been slain”</span><small>on the throne</small></li>
+    </ol>
+    <p class="note step">From the first book to the last, God was telling one story: a lamb dies, and the guilty go free. In Revelation He is called the Lamb nearly thirty times. He's the hero of the whole book.</p>
+  </div>
+</section>
+
+<!-- ======================= PART THREE: A NEW SONG ======================= -->
+<section class="slide part">
+  <div class="inner">
+    <p class="part-n rise">Part three</p>
+    <h2 class="rise" style="--d:1">A new song</h2>
+    <p class="range rise" style="--d:2">Verses 8–10</p>
+    <div class="rule"></div>
+    <p class="hook rise" style="--d:4">Heaven falls on its face, and sings about what the Lamb bought with His blood.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="8" data-hl="golden vials full of odours, which are the prayers of saints"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <div class="split">
+      <div class="stage">
+        <svg viewBox="0 0 400 300" role="img" aria-label="A golden bowl. Smoke rises from it, and words drift up through the smoke: help me, forgive me, my son, one more day, keep me clean.">
+          <path class="rv05-smoke" style="--k:0" d="M170 196 C 150 160, 190 140, 170 105 C 150 70, 190 50, 172 10"/>
+          <path class="rv05-smoke" style="--k:1" d="M200 196 C 225 160, 180 135, 205 100 C 228 66, 188 44, 206 6"/>
+          <path class="rv05-smoke" style="--k:2" d="M230 196 C 250 165, 215 140, 238 108 C 258 78, 222 52, 242 14"/>
+          <text class="rv05-pray" style="--k:0" x="120" y="170" text-anchor="middle">help me</text>
+          <text class="rv05-pray" style="--k:1" x="285" y="165" text-anchor="middle">forgive me</text>
+          <text class="rv05-pray" style="--k:2" x="135" y="150" text-anchor="middle">my son</text>
+          <text class="rv05-pray" style="--k:3" x="280" y="150" text-anchor="middle">one more day</text>
+          <text class="rv05-pray" style="--k:4" x="200" y="172" text-anchor="middle">keep me clean</text>
+          <path class="rv05-bowl" d="M100 200 Q200 290 300 200 Z"/>
+          <ellipse class="rv05-rim" cx="200" cy="200" rx="100" ry="15"/>
+          <text class="rv05-lab" x="200" y="290" text-anchor="middle">“the prayers of saints”</text>
+        </svg>
+      </div>
+      <div>
+        <h2 class="rise" style="--d:1">Bowls of prayer</h2>
+        <p class="note rise" style="--d:2"><em>Vials</em> are wide bowls, and <em>odours</em> is incense. In the temple, incense burned every morning and evening as the prayers went up. David prayed:</p>
+        <blockquote class="quote step"><p>“Let my prayer be set forth before thee as incense; and the lifting up of my hands as the evening sacrifice.”</p><cite>Psalm 141:2</cite></blockquote>
+        <p class="note step">The prayer you prayed on a bunk at 2 a.m., the one you weren't sure got past the ceiling: it's kept in gold, before the throne. Not one is lost. <em>Saints</em> means every believer, not just the famous ones.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="slide verse" data-v="9-10" data-hl="Thou art worthy to take the book|for thou wast slain, and hast redeemed us to God by thy blood|kings and priests"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="9" data-hl="hast redeemed us to God by thy blood"></blockquote>
+    <h2 class="rise" style="--d:1">Bought back, every kind of man</h2>
+    <div class="rv05-kind">
+      <div class="step"><b>kindred</b>family line, tribe</div>
+      <div class="step"><b>tongue</b>language</div>
+      <div class="step"><b>people</b>a people group</div>
+      <div class="step"><b>nation</b>a country</div>
+    </div>
+    <p class="note step rv05-past-go"><em>Redeemed</em> means bought out, like a slave bought out of the market and set free. And the Lamb paid with His own blood for every kind of past:</p>
+    <div class="rv05-past">
+      <span style="--k:0">the drunkard</span><span style="--k:1">the addict</span><span style="--k:2">the thief</span><span style="--k:3">the convict</span><span style="--k:4">the liar</span><span style="--k:5">the violent man</span><span style="--k:6">the proud religious man</span>
+      <b>redeemed</b>
+    </div>
+    <blockquote class="quote step"><p>“And such were some of you: but ye are washed, but ye are sanctified, but ye are justified in the name of the Lord Jesus, and by the Spirit of our God.”</p><cite>1 Corinthians 6:11</cite></blockquote>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="10"></blockquote>
+    <h2 class="rise" style="--d:1">Kings and priests</h2>
+    <div class="columns">
+      <div class="col law step"><p class="who">What the world called you</p><h3>A number</h3><p>An inmate number. A case file. A drunk. A disappointment. A man nobody would trust with a key.</p></div>
+      <div class="col grace step"><p class="who">What the Lamb made you</p><h3>Kings and priests</h3><p>A priest goes straight in to God, with nobody in between. A king shares in the reign of the King. That's not a someday promise only: <em>“hast made us.”</em></p></div>
+    </div>
+    <blockquote class="quote step"><p>“But ye are a chosen generation, a royal priesthood, an holy nation, a peculiar people; that ye should shew forth the praises of him who hath called you out of darkness into his marvellous light:”</p><cite>1 Peter 2:9</cite></blockquote>
+  </div>
+</section>
+
+<!-- ======================= PART FOUR: WORTHY IS THE LAMB ======================= -->
+<section class="slide part">
+  <div class="inner">
+    <p class="part-n rise">Part four</p>
+    <h2 class="rise" style="--d:1">Worthy is the Lamb</h2>
+    <p class="range rise" style="--d:2">Verses 11–14</p>
+    <div class="rule"></div>
+    <p class="hook rise" style="--d:4">The song spreads out ring after ring, until every creature everywhere is singing it.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="11-12" data-hl="ten thousand times ten thousand, and thousands of thousands|Worthy is the Lamb that was slain"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <div class="split">
+      <div class="stage">
+        <svg viewBox="0 0 600 440" role="img" aria-label="The throne seen from above, with the Lamb at the center. Around it four living creatures and a ring of twenty-four elders with golden crowns. On a step a wide ring fills with hundreds of angels. On a second step the outer ring lights up, every creature in heaven, on the earth, under the earth and in the sea, and waves of praise go out from the center.">
+          <ellipse class="rv05-all" cx="300" cy="220" rx="215" ry="205"/>
+          <circle class="rv05-wave" style="--k:0" cx="300" cy="220" r="210"/>
+          <circle class="rv05-wave" style="--k:1" cx="300" cy="220" r="210"/>
+          <circle class="rv05-wave" style="--k:2" cx="300" cy="220" r="210"/>
+          <g class="rv05-angels"><circle style="--k:0" cx="422.0" cy="220.0" r="2.4"/><circle style="--k:1" cx="207.8" cy="297.7" r="2.4"/><circle style="--k:2" cx="311.0" cy="104.3" r="2.4"/><circle style="--k:3" cx="377.4" cy="312.9" r="2.4"/><circle style="--k:4" cx="174.0" cy="199.5" r="2.4"/><circle style="--k:5" cx="408.6" cy="156.4" r="2.4"/><circle style="--k:6" cx="266.4" cy="334.9" r="2.4"/><circle style="--k:7" cx="240.1" cy="113.9" r="2.4"/><circle style="--k:8" cx="422.6" cy="261.2" r="2.4"/><circle style="--k:9" cx="178.9" cy="266.0" r="2.4"/><circle style="--k:10" cx="355.7" cy="110.4" r="2.4"/><circle style="--k:11" cx="339.5" cy="335.8" r="2.4"/><circle style="--k:12" cx="185.4" cy="158.9" r="2.4"/><circle style="--k:13" cx="429.7" cy="193.8" r="2.4"/><circle style="--k:14" cx="223.4" cy="320.3" r="2.4"/><circle style="--k:15" cx="282.8" cy="98.1" r="2.4"/><circle style="--k:16" cx="402.5" cy="299.4" r="2.4"/><circle style="--k:17" cx="165.7" cy="225.1" r="2.4"/><circle style="--k:18" cx="395.5" cy="132.6" r="2.4"/><circle style="--k:19" cx="293.8" cy="344.1" r="2.4"/><circle style="--k:20" cx="213.2" cy="124.3" r="2.4"/><circle style="--k:21" cx="434.5" cy="236.6" r="2.4"/><circle style="--k:22" cx="188.3" cy="291.5" r="2.4"/><circle style="--k:23" cx="329.9" cy="97.6" r="2.4"/><circle style="--k:24" cx="368.0" cy="329.1" r="2.4"/><circle style="--k:25" cx="169.5" cy="181.7" r="2.4"/><circle style="--k:26" cx="424.6" cy="167.0" r="2.4"/><circle style="--k:27" cx="246.9" cy="336.8" r="2.4"/><circle style="--k:28" cx="253.3" cy="100.6" r="2.4"/><circle style="--k:29" cx="422.3" cy="279.1" r="2.4"/><circle style="--k:30" cx="166.1" cy="252.5" r="2.4"/><circle style="--k:31" cx="375.0" cy="112.6" r="2.4"/><circle style="--k:32" cx="323.6" cy="346.0" r="2.4"/><circle style="--k:33" cx="189.9" cy="141.6" r="2.4"/><circle style="--k:34" cx="439.0" cy="209.4" r="2.4"/><circle style="--k:35" cx="205.1" cy="314.4" r="2.4"/><circle style="--k:36" cx="300.7" cy="91.2" r="2.4"/><circle style="--k:37" cx="394.3" cy="315.6" r="2.4"/><circle style="--k:38" cx="160.1" cy="208.1" r="2.4"/><circle style="--k:39" cx="412.1" cy="141.7" r="2.4"/><circle style="--k:0" cx="274.8" cy="347.6" r="2.4"/><circle style="--k:1" cx="224.8" cy="110.0" r="2.4"/><circle style="--k:2" cx="436.4" cy="254.4" r="2.4"/><circle style="--k:3" cx="174.0" cy="279.5" r="2.4"/><circle style="--k:4" cx="349.3" cy="97.6" r="2.4"/><circle style="--k:5" cx="353.6" cy="341.1" r="2.4"/><circle style="--k:6" cx="171.3" cy="163.9" r="2.4"/><circle style="--k:7" cx="436.2" cy="181.3" r="2.4"/><circle style="--k:8" cx="227.8" cy="333.4" r="2.4"/><circle style="--k:9" cx="270.0" cy="91.4" r="2.4"/><circle style="--k:10" cx="416.8" cy="296.3" r="2.4"/><circle style="--k:11" cx="157.7" cy="236.3" r="2.4"/><circle style="--k:12" cx="393.1" cy="119.3" r="2.4"/><circle style="--k:13" cx="305.3" cy="352.3" r="2.4"/><circle style="--k:14" cx="198.9" cy="125.6" r="2.4"/><circle style="--k:15" cx="444.1" cy="226.8" r="2.4"/><circle style="--k:16" cx="188.6" cy="304.7" r="2.4"/><circle style="--k:17" cx="320.0" cy="88.2" r="2.4"/><circle style="--k:18" cx="382.2" cy="329.8" r="2.4"/><circle style="--k:19" cx="158.6" cy="190.1" r="2.4"/><circle style="--k:20" cx="426.4" cy="154.1" r="2.4"/><circle style="--k:21" cx="255.1" cy="347.3" r="2.4"/><circle style="--k:22" cx="239.5" cy="98.1" r="2.4"/><circle style="--k:23" cx="434.3" cy="272.4" r="2.4"/><circle style="--k:24" cx="162.4" cy="264.9" r="2.4"/><circle style="--k:25" cx="368.6" cy="101.2" r="2.4"/><circle style="--k:26" cx="336.7" cy="350.4" r="2.4"/><circle style="--k:27" cx="177.1" cy="146.5" r="2.4"/><circle style="--k:28" cx="444.8" cy="197.8" r="2.4"/><circle style="--k:29" cx="209.5" cy="326.5" r="2.4"/><circle style="--k:30" cx="288.5" cy="85.1" r="2.4"/><circle style="--k:31" cx="407.7" cy="312.5" r="2.4"/><circle style="--k:32" cx="152.5" cy="218.7" r="2.4"/><circle style="--k:33" cx="409.8" cy="129.2" r="2.4"/><circle style="--k:34" cx="285.7" cy="355.4" r="2.4"/><circle style="--k:35" cx="211.1" cy="111.2" r="2.4"/><circle style="--k:36" cx="445.7" cy="245.0" r="2.4"/><circle style="--k:37" cx="174.1" cy="292.2" r="2.4"/><circle style="--k:38" cx="339.9" cy="88.4" r="2.4"/><circle style="--k:39" cx="367.3" cy="342.0" r="2.4"/><circle style="--k:0" cx="160.7" cy="171.8" r="2.4"/><circle style="--k:1" cx="438.3" cy="168.9" r="2.4"/><circle style="--k:2" cx="235.5" cy="343.8" r="2.4"/><circle style="--k:3" cx="256.7" cy="88.5" r="2.4"/><circle style="--k:4" cx="428.6" cy="290.1" r="2.4"/><circle style="--k:5" cx="153.5" cy="248.3" r="2.4"/><circle style="--k:6" cx="387.3" cy="108.0" r="2.4"/><circle style="--k:7" cx="317.9" cy="357.0" r="2.4"/><circle style="--k:8" cx="186.1" cy="130.0" r="2.4"/><circle style="--k:9" cx="450.2" cy="215.6" r="2.4"/><circle style="--k:10" cx="192.3" cy="316.7" r="2.4"/><circle style="--k:11" cx="308.4" cy="81.6" r="2.4"/><circle style="--k:12" cx="395.5" cy="327.4" r="2.4"/><circle style="--k:13" cx="150.6" cy="200.2" r="2.4"/><circle style="--k:14" cx="424.8" cy="141.7" r="2.4"/><circle style="--k:15" cx="265.4" cy="355.5" r="2.4"/><circle style="--k:16" cx="226.0" cy="98.5" r="2.4"/><circle style="--k:17" cx="444.0" cy="263.6" r="2.4"/><circle style="--k:18" cx="161.7" cy="277.3" r="2.4"/><circle style="--k:19" cx="360.0" cy="91.6" r="2.4"/><circle style="--k:20" cx="350.1" cy="352.0" r="2.4"/><circle style="--k:21" cx="166.0" cy="153.7" r="2.4"/><circle style="--k:22" cx="447.6" cy="185.6" r="2.4"/><circle style="--k:23" cx="216.3" cy="337.3" r="2.4"/><circle style="--k:24" cx="275.6" cy="81.4" r="2.4"/><circle style="--k:25" cx="419.9" cy="307.1" r="2.4"/><circle style="--k:26" cx="147.5" cy="230.3" r="2.4"/><circle style="--k:27" cx="405.0" cy="117.5" r="2.4"/><circle style="--k:28" cx="297.8" cy="360.9" r="2.4"/><circle style="--k:29" cx="198.0" cy="114.6" r="2.4"/><circle style="--k:30" cx="452.7" cy="234.4" r="2.4"/><circle style="--k:31" cx="176.8" cy="304.4" r="2.4"/><circle style="--k:32" cx="328.9" cy="81.1" r="2.4"/><circle style="--k:33" cx="380.7" cy="340.5" r="2.4"/><circle style="--k:34" cx="151.8" cy="181.3" r="2.4"/><circle style="--k:35" cx="437.8" cy="156.4" r="2.4"/><circle style="--k:36" cx="245.0" cy="352.7" r="2.4"/><circle style="--k:37" cx="243.1" cy="87.9" r="2.4"/><circle style="--k:38" cx="439.1" cy="282.1" r="2.4"/><circle style="--k:39" cx="151.7" cy="260.7" r="2.4"/><circle style="--k:0" cx="379.6" cy="97.7" r="2.4"/><circle style="--k:1" cx="331.1" cy="359.7" r="2.4"/><circle style="--k:2" cx="174.4" cy="136.2" r="2.4"/><circle style="--k:3" cx="454.3" cy="203.7" r="2.4"/><circle style="--k:4" cx="198.2" cy="328.0" r="2.4"/><circle style="--k:5" cx="295.8" cy="76.9" r="2.4"/><circle style="--k:6" cx="408.2" cy="323.0" r="2.4"/><circle style="--k:7" cx="144.5" cy="211.3" r="2.4"/><circle style="--k:8" cx="421.2" cy="129.6" r="2.4"/><circle style="--k:9" cx="277.0" cy="362.0" r="2.4"/><circle style="--k:10" cx="212.6" cy="100.9" r="2.4"/><circle style="--k:11" cx="452.0" cy="253.6" r="2.4"/><circle style="--k:12" cx="163.1" cy="289.8" r="2.4"/><circle style="--k:13" cx="349.7" cy="83.4" r="2.4"/><circle style="--k:14" cx="363.7" cy="351.8" r="2.4"/><circle style="--k:15" cx="156.2" cy="162.4" r="2.4"/><circle style="--k:16" cx="448.5" cy="173.0" r="2.4"/><circle style="--k:17" cx="224.9" cy="347.0" r="2.4"/><circle style="--k:18" cx="262.1" cy="79.6" r="2.4"/><circle style="--k:19" cx="431.2" cy="300.0" r="2.4"/><circle style="--k:20" cx="144.4" cy="242.5" r="2.4"/><circle style="--k:21" cx="398.3" cy="106.6" r="2.4"/><circle style="--k:22" cx="310.8" cy="364.8" r="2.4"/><circle style="--k:23" cx="185.6" cy="119.8" r="2.4"/><circle style="--k:24" cx="458.0" cy="222.8" r="2.4"/><circle style="--k:25" cx="181.4" cy="316.2" r="2.4"/><circle style="--k:26" cx="316.8" cy="75.2" r="2.4"/><circle style="--k:27" cx="394.0" cy="337.3" r="2.4"/><circle style="--k:28" cx="144.5" cy="191.9" r="2.4"/><circle style="--k:29" cx="435.5" cy="144.0" r="2.4"/><circle style="--k:30" cx="255.9" cy="360.3" r="2.4"/><circle style="--k:31" cx="229.5" cy="89.0" r="2.4"/><circle style="--k:32" cx="448.3" cy="272.8" r="2.4"/><circle style="--k:33" cx="151.8" cy="273.3" r="2.4"/><circle style="--k:34" cx="370.2" cy="88.5" r="2.4"/><circle style="--k:35" cx="344.8" cy="360.7" r="2.4"/><circle style="--k:36" cx="163.5" cy="144.0" r="2.4"/><circle style="--k:37" cx="456.5" cy="191.2" r="2.4"/><circle style="--k:38" cx="205.7" cy="338.6" r="2.4"/><circle style="--k:39" cx="282.5" cy="73.8" r="2.4"/><circle style="--k:0" cx="420.3" cy="317.0" r="2.4"/><circle style="--k:1" cx="139.9" cy="223.3" r="2.4"/><circle style="--k:2" cx="415.7" cy="118.0" r="2.4"/><circle style="--k:3" cx="289.6" cy="367.2" r="2.4"/><circle style="--k:4" cx="199.6" cy="104.9" r="2.4"/><circle style="--k:5" cx="458.7" cy="242.5" r="2.4"/><circle style="--k:6" cx="166.4" cy="302.1" r="2.4"/><circle style="--k:7" cx="338.3" cy="76.3" r="2.4"/><circle style="--k:8" cx="377.3" cy="349.8" r="2.4"/><circle style="--k:9" cx="147.5" cy="172.3" r="2.4"/><circle style="--k:10" cx="447.5" cy="160.4" r="2.4"/><circle style="--k:11" cx="234.9" cy="355.7" r="2.4"/><circle style="--k:12" cx="248.3" cy="79.4" r="2.4"/><circle style="--k:13" cx="441.5" cy="291.6" r="2.4"/><circle style="--k:14" cx="143.0" cy="255.2" r="2.4"/><circle style="--k:15" cx="390.0" cy="96.4" r="2.4"/><circle style="--k:16" cx="324.4" cy="367.2" r="2.4"/><circle style="--k:17" cx="173.9" cy="126.6" r="2.4"/><circle style="--k:18" cx="461.7" cy="210.5" r="2.4"/><circle style="--k:19" cx="187.6" cy="327.6" r="2.4"/><circle style="--k:20" cx="303.9" cy="70.7" r="2.4"/><circle style="--k:21" cx="406.8" cy="332.5" r="2.4"/><circle style="--k:22" cx="138.5" cy="203.4" r="2.4"/><circle style="--k:23" cx="431.4" cy="131.8" r="2.4"/><circle style="--k:24" cx="267.9" cy="366.8" r="2.4"/><circle style="--k:25" cx="215.9" cy="91.7" r="2.4"/><circle style="--k:26" cx="456.3" cy="262.3" r="2.4"/><circle style="--k:27" cx="153.6" cy="286.0" r="2.4"/><circle style="--k:28" cx="359.6" cy="80.3" r="2.4"/><circle style="--k:29" cx="358.7" cy="360.2" r="2.4"/><circle style="--k:30" cx="153.7" cy="153.1" r="2.4"/><circle style="--k:31" cx="457.1" cy="178.4" r="2.4"/><circle style="--k:32" cx="214.6" cy="348.4" r="2.4"/><circle style="--k:33" cx="268.7" cy="72.2" r="2.4"/><circle style="--k:34" cx="431.7" cy="309.6" r="2.4"/><circle style="--k:35" cx="137.0" cy="235.8" r="2.4"/><circle style="--k:36" cx="408.7" cy="107.0" r="2.4"/><circle style="--k:37" cx="302.9" cy="371.0" r="2.4"/><circle style="--k:38" cx="186.9" cy="110.4" r="2.4"/><circle style="--k:39" cx="463.9" cy="230.6" r="2.4"/><circle style="--k:0" cx="171.3" cy="314.2" r="2.4"/><circle style="--k:1" cx="325.8" cy="70.5" r="2.4"/><circle style="--k:2" cx="390.8" cy="346.4" r="2.4"/><circle style="--k:3" cx="140.1" cy="183.2" r="2.4"/><circle style="--k:4" cx="445.0" cy="147.7" r="2.4"/><circle style="--k:5" cx="246.1" cy="363.5" r="2.4"/><circle style="--k:6" cx="234.3" cy="80.6" r="2.4"/><circle style="--k:7" cx="450.8" cy="282.0" r="2.4"/><circle style="--k:8" cx="143.2" cy="268.1" r="2.4"/><circle style="--k:9" cx="380.4" cy="87.0" r="2.4"/><circle style="--k:10" cx="338.4" cy="368.1" r="2.4"/><circle style="--k:11" cx="162.9" cy="134.6" r="2.4"/><circle style="--k:12" cx="463.9" cy="197.7" r="2.4"/><circle style="--k:13" cx="195.4" cy="338.4" r="2.4"/><circle style="--k:14" cx="290.2" cy="67.6" r="2.4"/><circle style="--k:15" cx="419.2" cy="326.3" r="2.4"/><circle style="--k:16" cx="133.9" cy="215.6" r="2.4"/><circle style="--k:17" cx="425.7" cy="120.0" r="2.4"/><circle style="--k:18" cx="280.7" cy="372.0" r="2.4"/><circle style="--k:19" cx="202.6" cy="95.9" r="2.4"/><circle style="--k:20" cx="463.1" cy="251.0" r="2.4"/><circle style="--k:21" cx="156.9" cy="298.6" r="2.4"/><circle style="--k:22" cx="347.9" cy="73.1" r="2.4"/><circle style="--k:23" cx="372.6" cy="358.2" r="2.4"/><circle style="--k:24" cx="144.9" cy="163.2" r="2.4"/><circle style="--k:25" cx="456.2" cy="165.4" r="2.4"/><circle style="--k:26" cx="224.9" cy="357.4" r="2.4"/><circle style="--k:27" cx="254.5" cy="71.9" r="2.4"/><circle style="--k:28" cx="442.3" cy="301.0" r="2.4"/><circle style="--k:29" cx="135.5" cy="248.8" r="2.4"/><circle style="--k:30" cx="400.2" cy="96.5" r="2.4"/><circle style="--k:31" cx="316.8" cy="373.4" r="2.4"/><circle style="--k:32" cx="174.9" cy="117.2" r="2.4"/><circle style="--k:33" cx="467.8" cy="218.0" r="2.4"/><circle style="--k:34" cx="177.6" cy="325.8" r="2.4"/><circle style="--k:35" cx="312.5" cy="65.8" r="2.4"/><circle style="--k:36" cx="404.0" cy="341.5" r="2.4"/><circle style="--k:37" cx="134.0" cy="195.0" r="2.4"/><circle style="--k:38" cx="440.8" cy="135.2" r="2.4"/><circle style="--k:39" cx="258.4" cy="370.1" r="2.4"/><circle style="--k:0" cx="220.4" cy="83.3" r="2.4"/><circle style="--k:1" cx="459.1" cy="271.3" r="2.4"/><circle style="--k:2" cx="144.9" cy="281.1" r="2.4"/><circle style="--k:3" cx="369.6" cy="78.5" r="2.4"/><circle style="--k:4" cx="352.6" cy="367.7" r="2.4"/><circle style="--k:5" cx="152.7" cy="143.8" r="2.4"/><circle style="--k:6" cx="464.7" cy="184.6" r="2.4"/><circle style="--k:7" cx="204.5" cy="348.5" r="2.4"/><circle style="--k:8" cx="276.1" cy="65.8" r="2.4"/><circle style="--k:9" cx="430.9" cy="318.9" r="2.4"/><circle style="--k:10" cx="130.8" cy="228.4" r="2.4"/><circle style="--k:11" cx="418.6" cy="108.5" r="2.4"/><circle style="--k:12" cx="294.3" cy="376.0" r="2.4"/><circle style="--k:13" cx="189.6" cy="101.4" r="2.4"/><circle style="--k:14" cx="468.6" cy="238.8" r="2.4"/><circle style="--k:15" cx="161.8" cy="310.9" r="2.4"/><circle style="--k:16" cx="335.2" cy="67.0" r="2.4"/><circle style="--k:17" cx="386.5" cy="354.8" r="2.4"/><circle style="--k:18" cx="137.2" cy="174.3" r="2.4"/><circle style="--k:19" cx="453.7" cy="152.5" r="2.4"/><circle style="--k:20" cx="236.2" cy="365.4" r="2.4"/><circle style="--k:21" cx="240.2" cy="73.1" r="2.4"/><circle style="--k:22" cx="452.0" cy="291.2" r="2.4"/><circle style="--k:23" cx="135.5" cy="262.0" r="2.4"/><circle style="--k:24" cx="390.5" cy="86.8" r="2.4"/><circle style="--k:25" cx="331.1" cy="374.6" r="2.4"/><circle style="--k:26" cx="163.5" cy="125.3" r="2.4"/><circle style="--k:27" cx="470.3" cy="205.0" r="2.4"/><circle style="--k:28" cx="185.4" cy="337.0" r="2.4"/><circle style="--k:29" cx="298.6" cy="62.5" r="2.4"/><circle style="--k:30" cx="416.7" cy="335.4" r="2.4"/><circle style="--k:31" cx="129.1" cy="207.5" r="2.4"/><circle style="--k:32" cx="435.3" cy="123.0" r="2.4"/><circle style="--k:33" cx="271.5" cy="375.7" r="2.4"/><circle style="--k:34" cx="206.7" cy="87.4" r="2.4"/><circle style="--k:35" cx="466.3" cy="259.8" r="2.4"/><circle style="--k:36" cx="148.1" cy="294.0" r="2.4"/><circle style="--k:37" cx="357.7" cy="71.0" r="2.4"/><circle style="--k:38" cx="366.9" cy="365.8" r="2.4"/><circle style="--k:39" cx="143.5" cy="154.0" r="2.4"/><circle style="--k:0" cx="463.9" cy="171.4" r="2.4"/><circle style="--k:1" cx="214.8" cy="357.8" r="2.4"/><circle style="--k:2" cx="261.6" cy="65.4" r="2.4"/><circle style="--k:3" cx="441.9" cy="310.2" r="2.4"/><circle style="--k:4" cx="129.0" cy="241.7" r="2.4"/><circle style="--k:5" cx="410.2" cy="97.7" r="2.4"/><circle style="--k:6" cx="308.5" cy="378.8" r="2.4"/><circle style="--k:7" cx="177.1" cy="108.2" r="2.4"/><circle style="--k:8" cx="472.8" cy="226.1" r="2.4"/><circle style="--k:9" cx="168.0" cy="323.0" r="2.4"/><circle style="--k:10" cx="321.7" cy="62.0" r="2.4"/><circle style="--k:11" cx="400.1" cy="350.1" r="2.4"/><circle style="--k:12" cx="130.6" cy="186.3" r="2.4"/><circle style="--k:13" cx="449.7" cy="139.6" r="2.4"/><circle style="--k:14" cx="248.6" cy="372.4" r="2.4"/><circle style="--k:15" cx="225.9" cy="75.6" r="2.4"/><circle style="--k:16" cx="460.7" cy="280.5" r="2.4"/><circle style="--k:17" cx="137.0" cy="275.3" r="2.4"/><circle style="--k:18" cx="379.6" cy="77.8" r="2.4"/><circle style="--k:19" cx="345.7" cy="374.4" r="2.4"/></g>
+          <circle class="rv05-seat" cx="300" cy="220" r="104"/>
+          <g class="rv05-elders"><circle class="rv05-elder" cx="386.0" cy="220.0" r="6.5"/><circle class="rv05-elder" cx="383.1" cy="242.3" r="6.5"/><circle class="rv05-elder" cx="374.5" cy="263.0" r="6.5"/><circle class="rv05-elder" cx="360.8" cy="280.8" r="6.5"/><circle class="rv05-elder" cx="343.0" cy="294.5" r="6.5"/><circle class="rv05-elder" cx="322.3" cy="303.1" r="6.5"/><circle class="rv05-elder" cx="300.0" cy="306.0" r="6.5"/><circle class="rv05-elder" cx="277.7" cy="303.1" r="6.5"/><circle class="rv05-elder" cx="257.0" cy="294.5" r="6.5"/><circle class="rv05-elder" cx="239.2" cy="280.8" r="6.5"/><circle class="rv05-elder" cx="225.5" cy="263.0" r="6.5"/><circle class="rv05-elder" cx="216.9" cy="242.3" r="6.5"/><circle class="rv05-elder" cx="214.0" cy="220.0" r="6.5"/><circle class="rv05-elder" cx="216.9" cy="197.7" r="6.5"/><circle class="rv05-elder" cx="225.5" cy="177.0" r="6.5"/><circle class="rv05-elder" cx="239.2" cy="159.2" r="6.5"/><circle class="rv05-elder" cx="257.0" cy="145.5" r="6.5"/><circle class="rv05-elder" cx="277.7" cy="136.9" r="6.5"/><circle class="rv05-elder" cx="300.0" cy="134.0" r="6.5"/><circle class="rv05-elder" cx="322.3" cy="136.9" r="6.5"/><circle class="rv05-elder" cx="343.0" cy="145.5" r="6.5"/><circle class="rv05-elder" cx="360.8" cy="159.2" r="6.5"/><circle class="rv05-elder" cx="374.5" cy="177.0" r="6.5"/><circle class="rv05-elder" cx="383.1" cy="197.7" r="6.5"/></g>
+          <circle class="rv05-beast" cx="340" cy="180" r="9"/><circle class="rv05-beast" cx="260" cy="180" r="9"/><circle class="rv05-beast" cx="260" cy="260" r="9"/><circle class="rv05-beast" cx="340" cy="260" r="9"/>
+          <circle class="rv05-throne" cx="300" cy="220" r="36"/>
+          <use href="#rv05-lambsym" x="270" y="196" width="60" height="50"/>
+          <text class="rv05-corner" x="14" y="26">in heaven</text>
+          <text class="rv05-corner" x="586" y="26" text-anchor="end">on the earth</text>
+          <text class="rv05-corner" x="14" y="430">in the sea</text>
+          <text class="rv05-corner" x="586" y="430" text-anchor="end">under the earth</text>
+        </svg>
+      </div>
+      <div>
+        <h2 class="rise" style="--d:1">Ring after ring</h2>
+        <p class="note rise" style="--d:2">Closest to the throne, the four beasts and the twenty-four elders sing first (5:8–10).</p>
+        <p class="note step rv05-r2">Then the angels: <em>“ten thousand times ten thousand.”</em> That's a hundred million, and John adds <em>“thousands of thousands”</em>: more than he could count. Daniel saw the same crowd (Daniel 7:10).</p>
+        <p class="note step rv05-r3">Then <em>every creature</em>, everywhere (5:13). The praise spreads from the Lamb until it fills everything God made.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="12" data-hl="Worthy is the Lamb that was slain"></blockquote>
+    <h2 class="rise" style="--d:1">Seven things He deserves</h2>
+    <ol class="signs rv05-seven">
+      <li class="step now"><b>power</b>the right to rule</li>
+      <li class="step now"><b>riches</b>everything of worth</li>
+      <li class="step now"><b>wisdom</b>the last word on how to live</li>
+      <li class="step now"><b>strength</b>the might to do it</li>
+      <li class="step now"><b>honour</b>the respect of all</li>
+      <li class="step now"><b>glory</b>the shining credit</li>
+      <li class="step now"><b>blessing</b>every good word</li>
+    </ol>
+    <p class="note step">Look at that list: power, money, respect. It's what men lie, steal and fight for. The Lamb got all seven by being slain. The way up in God's kingdom runs through the cross.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="13-14" data-hl="every creature|Blessing, and honour, and glory, and power, be unto him that sitteth upon the throne, and unto the Lamb for ever and ever"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="13" data-hl="unto him that sitteth upon the throne, and unto the Lamb"></blockquote>
+    <h2 class="rise" style="--d:1">Every knee</h2>
+    <p class="note rise" style="--d:2">The same praise goes to the One on the throne <em>and</em> to the Lamb. Heaven never worships a creature. It worships Jesus, because He is God.</p>
+    <blockquote class="quote step"><p>“That at the name of Jesus every knee should bow, of things in heaven, and things in earth, and things under the earth; And that every tongue should confess that Jesus Christ is Lord, to the glory of God the Father.”</p><cite>Philippians 2:10–11</cite></blockquote>
+    <p class="note step">One day every man will bow, some gladly and some too late. You can bow today, by choice. And the four beasts say the last word: <em>“Amen.”</em> So be it.</p>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise">Take it to work today</h2>
+    <div class="daybreak climb">
+      <div class="rise" style="--d:1"><i>5:5</i><b>Weep not</b><p>Bring God the thing you can't fix. You're not worthy, and you don't have to be. The Lamb is.</p></div>
+      <div class="step"><i>5:9</i><b>You were bought</b><p>When the old name comes back at you, answer with the new one: redeemed by His blood.</p></div>
+      <div class="step"><i>5:8</i><b>Pray anyway</b><p>Say one honest prayer at work or on the road. It goes up like incense, and it's kept.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ======================= CLOSING ======================= -->
+<section class="slide remember">
+  <div class="inner">
+    <h2 class="rise">Points to remember</h2>
+    <ol class="seeds">
+      <li class="step"><span class="topic">Worthy</span><span class="seed-q">“No man was found worthy” <cite>5:4</cite></span><span class="take">No one in heaven, earth, or under the earth had the standing to open God's book.</span></li>
+      <li class="step"><span class="topic">Tears</span><span class="seed-q">“Weep not” <cite>5:5</cite></span><span class="take">Stop crying: the Lion of Juda has overcome, and He can open it.</span></li>
+      <li class="step"><span class="topic">The Lamb</span><span class="seed-q">“A Lamb as it had been slain” <cite>5:6</cite></span><span class="take">The Lion conquered by dying as a Lamb, and He stands alive, still bearing the wounds.</span></li>
+      <li class="step"><span class="topic">Redeemed</span><span class="seed-q">“Hast redeemed us to God by thy blood” <cite>5:9</cite></span><span class="take">Bought back by His blood, out of every kindred, tongue, people, and nation.</span></li>
+      <li class="step"><span class="topic">Prayer</span><span class="seed-q">“Golden vials full of odours, which are the prayers of saints” <cite>5:8</cite></span><span class="take">Believers' prayers rise like incense and are kept before the throne.</span></li>
+      <li class="step"><span class="topic">Worship</span><span class="seed-q">“Worthy is the Lamb that was slain” <cite>5:12</cite></span><span class="take">Elders, angels without number, and every creature give Him the glory.</span></li>
+    </ol>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 1 of 6</p>
+      <span class="topic">Worthy</span>
+      <h2>Why was no man found worthy to open the book?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="3"></blockquote>
+      <blockquote class="quote step"><p>“For all have sinned, and come short of the glory of God;”</p><cite>Romans 3:23</cite></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>Because to open it you need the right and a clean record before God, and every man has sinned. No angel, no saint, no king, no dead hero was worthy. Only the Lamb, who was slain for sinners, has earned that right.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 2 of 6</p>
+      <span class="topic">Tears</span>
+      <h2>What did the elder tell John when he wept?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="4"></blockquote>
+      <blockquote class="quote step" data-q="5"></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>“Weep not.” The Lion of the tribe of Juda, the Root of David, has prevailed, has overcome, and can open the book. John's tears were honest, but they weren't the end: someone had already won.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 3 of 6</p>
+      <span class="topic">The Lamb</span>
+      <h2>Why is the Lion of Juda seen as a Lamb that was slain?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="6"></blockquote>
+      <blockquote class="quote step"><p>“The next day John seeth Jesus coming unto him, and saith, Behold the Lamb of God, which taketh away the sin of the world.”</p><cite>John 1:29</cite></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>Because that's how He won. Jesus is the promised King from Judah, but He conquered by dying as the Lamb of God for our sins. He stands alive, still marked by the wounds, and that is why He is worthy.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 4 of 6</p>
+      <span class="topic">Redeemed</span>
+      <h2>Whom has the Lamb redeemed, and how?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="9"></blockquote>
+      <blockquote class="quote step"><p>“And such were some of you: but ye are washed, but ye are sanctified, but ye are justified in the name of the Lord Jesus, and by the Spirit of our God.”</p><cite>1 Corinthians 6:11</cite></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>Men and women out of every kindred, tongue, people, and nation, and every kind of past. He bought them back to God with His own blood, and made them kings and priests.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 5 of 6</p>
+      <span class="topic">Prayer</span>
+      <h2>What happens to the prayers of saints?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="8"></blockquote>
+      <blockquote class="quote step"><p>“Let my prayer be set forth before thee as incense; and the lifting up of my hands as the evening sacrifice.”</p><cite>Psalm 141:2</cite></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>They go up before God like incense and are kept in golden bowls before the throne. None of them is lost or forgotten, even the ones prayed in the dark.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 6 of 6</p>
+      <span class="topic">Worship</span>
+      <h2>Who joins in worshipping the Lamb?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="11"></blockquote>
+      <blockquote class="quote step" data-q="13"></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>First the four beasts and the twenty-four elders, then angels past counting, then every creature in heaven, on earth, under the earth, and in the sea. All of them give the same praise to God on the throne and to the Lamb.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide prayer">
+  <div class="inner">
+    <div class="emblem rise"></div>
+    <h2 class="rise" style="--d:1">Prayer requests</h2>
+    <p class="ask-line rise" style="--d:2">What can we pray about for you today?</p>
+    <blockquote class="quote rise" style="--d:4" data-q="8"></blockquote>
+  </div>
+</section>
+
+</main>
+
+<script>
+// King James Version, Revelation chapter 5
+const V = {
+  1: "And I saw in the right hand of him that sat on the throne a book written within and on the backside, sealed with seven seals.",
+  2: "And I saw a strong angel proclaiming with a loud voice, Who is worthy to open the book, and to loose the seals thereof?",
+  3: "And no man in heaven, nor in earth, neither under the earth, was able to open the book, neither to look thereon.",
+  4: "And I wept much, because no man was found worthy to open and to read the book, neither to look thereon.",
+  5: "And one of the elders saith unto me, Weep not: behold, the Lion of the tribe of Juda, the Root of David, hath prevailed to open the book, and to loose the seven seals thereof.",
+  6: "And I beheld, and, lo, in the midst of the throne and of the four beasts, and in the midst of the elders, stood a Lamb as it had been slain, having seven horns and seven eyes, which are the seven Spirits of God sent forth into all the earth.",
+  7: "And he came and took the book out of the right hand of him that sat upon the throne.",
+  8: "And when he had taken the book, the four beasts and four and twenty elders fell down before the Lamb, having every one of them harps, and golden vials full of odours, which are the prayers of saints.",
+  9: "And they sung a new song, saying, Thou art worthy to take the book, and to open the seals thereof: for thou wast slain, and hast redeemed us to God by thy blood out of every kindred, and tongue, and people, and nation;",
+  10: "And hast made us unto our God kings and priests: and we shall reign on the earth.",
+  11: "And I beheld, and I heard the voice of many angels round about the throne and the beasts and the elders: and the number of them was ten thousand times ten thousand, and thousands of thousands;",
+  12: "Saying with a loud voice, Worthy is the Lamb that was slain to receive power, and riches, and wisdom, and strength, and honour, and glory, and blessing.",
+  13: "And every creature which is in heaven, and on the earth, and under the earth, and such as are in the sea, and all that are in them, heard I saying, Blessing, and honour, and glory, and power, be unto him that sitteth upon the throne, and unto the Lamb for ever and ever.",
+  14: "And the four beasts said, Amen. And the four and twenty elders fell down and worshipped him that liveth for ever and ever."
+};
+const BOOK = "Revelation 5";
+</script>
+<script src="../assets/deck.js"></script>
+</body>
+</html>

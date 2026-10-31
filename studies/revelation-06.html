@@ -1,0 +1,772 @@
+<!doctype html>
+<html lang="en" data-theme="night">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Revelation 6</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="../assets/fonts.css">
+<link rel="stylesheet" href="../assets/deck.css">
+<link rel="stylesheet" href="../assets/themes.css">
+<style>
+/* rv05-where: where this chapter sits in Revelation (the same marker as Revelation 5). Twenty-two chapter boxes (span) in seven
+   groups (div); each group's label (b) sits above (.up) or below the row, across the columns in its --c. The current group is .now,
+   the current chapter span.here. On a phone each group becomes its own row. */
+.rv05-where { display: grid; grid-template-columns: repeat(22, 1fr); gap: 5px 3px; margin: .6em 0 1em; align-items: end; }
+.rv05-where > div { display: contents; }
+.rv05-where span { grid-row: 2; display: grid; place-items: center; height: 2.3rem; border: 1.5px solid var(--line-strong); border-radius: 5px; font: 600 clamp(.75rem, .7rem + .3vw, 1rem) var(--sans); color: var(--ink-soft); }
+.rv05-where span.gap { margin-left: 5px; }
+.rv05-where b { grid-row: 3; grid-column: var(--c); align-self: start; text-align: center; font: 400 clamp(.8rem, .74rem + .32vw, 1.05rem)/1.25 var(--serif); color: var(--ink-soft); padding: 0 2px; }
+.rv05-where b.up { grid-row: 1; align-self: end; }
+.rv05-where b.left { text-align: left; }
+.rv05-where .now span { border-color: var(--accent); color: var(--ink); }
+.rv05-where .now b { color: var(--accent-hot); font-weight: 600; }
+.rv05-where span.here { background: var(--accent); color: var(--on-accent); box-shadow: 0 0 0 5px color-mix(in srgb, var(--accent) 22%, transparent); }
+@media (max-width: 600px) {
+  .rv05-where { grid-template-columns: 1fr; gap: 6px; }
+  .rv05-where > div { display: flex; flex-wrap: wrap; align-items: center; gap: 3px; }
+  .rv05-where span { width: 1.75rem; height: 1.9rem; }
+  .rv05-where span.gap { margin-left: 0; }
+  .rv05-where b, .rv05-where b.up { margin-left: .4em; text-align: left; align-self: center; }
+}
+
+/* rv06-seals: seven wax seals on one cord, opened one by one. Each li holds the seal (i, its number in b) and a label (span).
+   li.open is already broken; li.now breaks when the slide opens (after --wait) and glows; li.later is still to come (dashed).
+   Plain li stay sealed. Built to be echoed for the seven trumpets and the seven bowls. */
+.rv06-seals { list-style: none; padding: 0; margin: 0 0 .9em; display: grid; grid-template-columns: repeat(7, 1fr); gap: 6px; position: relative; }
+.rv06-seals::before { content: ""; position: absolute; left: 7%; right: 7%; top: 1.15rem; height: 3px; border-radius: 2px; background: var(--leather-light); }
+.rv06-seals li { position: relative; text-align: center; }
+.rv06-seals i { position: relative; display: block; width: 2.4rem; height: 2.4rem; margin: 0 auto .3em; }
+.rv06-seals i::before, .rv06-seals i::after {
+  content: ""; position: absolute; inset: 0; border-radius: 50%;
+  background: radial-gradient(circle at 35% 30%, color-mix(in srgb, var(--wine) 60%, var(--glow)), var(--wine) 62%);
+  box-shadow: inset 0 0 0 3px color-mix(in srgb, var(--wine) 65%, var(--on-glow));
+}
+.rv06-seals i::before { clip-path: polygon(0 0, 56% 0, 44% 38%, 60% 58%, 47% 100%, 0 100%); }
+.rv06-seals i::after { clip-path: polygon(56% 0, 100% 0, 100% 100%, 47% 100%, 60% 58%, 44% 38%); }
+.rv06-seals b { position: absolute; inset: 0; z-index: 1; display: grid; place-items: center; font: 700 .95rem var(--sans); color: var(--glow); }
+.rv06-seals span { display: block; font-size: clamp(.72rem, .68rem + .3vw, .95rem); line-height: 1.2; color: var(--ink-soft); }
+.rv06-seals .open i::before { transform: translate(-7px, 5px) rotate(-22deg); opacity: .4; }
+.rv06-seals .open i::after { transform: translate(7px, 5px) rotate(22deg); opacity: .4; }
+.rv06-seals .open b { opacity: 0; }
+.rv06-seals .now span { color: var(--accent-hot); font-weight: 600; }
+.slide.active .rv06-seals .now i { animation: rv06-glow 1s ease var(--wait, .8s) both; }
+.slide.active .rv06-seals .now i::before { animation: rv06-left .9s cubic-bezier(.3,1.5,.5,1) var(--wait, .8s) both; }
+.slide.active .rv06-seals .now i::after { animation: rv06-right .9s cubic-bezier(.3,1.5,.5,1) var(--wait, .8s) both; }
+.slide.active .rv06-seals .now b { animation: rv06-fade .4s ease var(--wait, .8s) both; }
+@keyframes rv06-left { to { transform: translate(-8px, 5px) rotate(-24deg); opacity: .6; } }
+@keyframes rv06-right { to { transform: translate(8px, 5px) rotate(24deg); opacity: .6; } }
+@keyframes rv06-fade { to { opacity: 0; } }
+@keyframes rv06-glow { to { filter: drop-shadow(0 0 10px var(--accent)); } }
+.rv06-seals .later i::after { display: none; }
+.rv06-seals .later i::before { background: none; box-shadow: none; clip-path: none; border: 2px dashed var(--line-strong); }
+.rv06-seals .later b { color: var(--ink-soft); }
+@media (max-width: 600px) { .rv06-seals i { width: 2rem; height: 2rem; } .rv06-seals::before { top: 1rem; } .rv06-seals span { font-size: .68rem; } }
+
+/* rv06-horse: a rider's horse in a night panel (.rv06-sky). The head is one <symbol> (#rv06-horse) colored by --horse on its <use>;
+   it rides in from the left when the slide opens (.rv06-ride). The rider's things are drawn beside it (.rv06-gold, .rv06-steel),
+   with labels (.rv06-tag) and a caption (.rv06-cap) */
+.rv06-sky { fill: var(--on-glow); }
+.rv06-star { fill: var(--glow); opacity: .55; }
+.rv06-hb { fill: var(--horse); stroke: var(--glow); stroke-width: 1.1; stroke-linejoin: round; }
+.rv06-mane { fill: color-mix(in srgb, var(--horse) 62%, var(--on-glow)); stroke: var(--glow); stroke-width: 1.1; }
+.rv06-eye { fill: var(--on-glow); stroke: var(--glow); stroke-width: .8; }
+.slide.active .rv06-ride { animation: rv06-ride 1.3s cubic-bezier(.2,.7,.2,1) .2s both; }
+@keyframes rv06-ride { from { opacity: 0; transform: translateX(-70px); } to { opacity: 1; transform: none; } }
+.rv06-gold { fill: none; stroke: var(--warm); stroke-width: 6; stroke-linecap: round; stroke-linejoin: round; }
+.rv06-goldf { fill: var(--warm); }
+.rv06-steel { fill: color-mix(in srgb, var(--glow) 78%, var(--cool)); }
+.rv06-string { stroke: var(--glow); stroke-width: 1.5; opacity: .8; }
+.rv06-tag { fill: color-mix(in srgb, var(--glow) 80%, var(--on-glow)); font: italic 17px var(--serif); }
+.rv06-cap { fill: var(--glow); font: 600 21px var(--serif); }
+.rv06-hell { fill: color-mix(in srgb, var(--glow) 18%, var(--on-glow)); }
+.rv06-quarter { fill: color-mix(in srgb, var(--glow) 14%, var(--on-glow)); stroke: var(--glow); stroke-width: 1.5; }
+.rv06-quarter-cut { fill: var(--wine); }
+@media (max-width: 600px) { .rv06-tag { font-size: 21px; } .rv06-cap { font-size: 24px; } }
+
+/* rv06-seven: seven .signs cards in one row on a wide screen */
+@media (min-width: 900px) { .signs.rv06-seven { grid-template-columns: repeat(7, 1fr); } }
+
+/* rv06-views: three readings side by side (div: b, then a line) */
+.rv06-views { display: grid; gap: 8px; margin: .3em 0 1em; }
+@media (min-width: 760px) { .rv06-views { grid-template-columns: repeat(3, 1fr); } }
+.rv06-views div { padding: .7em .9em; border: 1.5px dashed var(--line-strong); border-radius: 8px; font-size: clamp(.92rem, .84rem + .4vw, 1.15rem); line-height: 1.4; color: var(--ink-soft); }
+.rv06-views b { display: block; font: 600 1.2em var(--serif); color: var(--ink); margin-bottom: .2em; }
+
+/* rv06-heaven: the sixth seal. When the slide opens the sun (.rv06-sun) goes black and the moon (.rv06-moon) turns to blood.
+   A .rv06-fall step drops the stars (.rv06-drop, --k) like figs; a .rv06-roll step rolls the sky (.rv06-heaven) up like a scroll
+   and moves the mountains (.rv06-mount) out of their places */
+.rv06-void { fill: color-mix(in srgb, var(--on-glow) 88%, var(--wine)); }
+.rv06-skyfill { fill: color-mix(in srgb, var(--on-glow) 82%, var(--cool)); }
+.rv06-sun { fill: var(--warm); stroke: var(--warm); stroke-width: 3; transition: fill 2s ease 1s; }
+.slide.active .rv06-sun { fill: var(--on-glow); }
+.rv06-moon { fill: var(--glow); transition: fill 2s ease 2s; }
+.slide.active .rv06-moon { fill: var(--danger); }
+.rv06-drop { fill: var(--glow); transition: transform 1.3s cubic-bezier(.55,0,.9,.45), opacity 1.3s ease; transition-delay: calc(var(--k) * 90ms); }
+.slide:has(.rv06-fall.on) .rv06-drop { transform: translateY(240px); opacity: 0; }
+.rv06-heaven { transform-box: view-box; transform-origin: 300px 12px; transition: transform 1.8s cubic-bezier(.5,0,.3,1); }
+.slide:has(.rv06-roll.on) .rv06-heaven { transform: scaleY(.04); }
+.rv06-rollbar { fill: color-mix(in srgb, var(--warm) 30%, var(--glow)); stroke: var(--leather-light); stroke-width: 2; opacity: 0; transition: opacity .6s ease 1.4s; }
+.slide:has(.rv06-roll.on) .rv06-rollbar { opacity: 1; }
+.rv06-mount { fill: color-mix(in srgb, var(--glow) 22%, var(--on-glow)); stroke: color-mix(in srgb, var(--glow) 45%, var(--on-glow)); stroke-width: 1.5; transition: transform 1.6s cubic-bezier(.5,0,.3,1) .4s; }
+.slide:has(.rv06-roll.on) .rv06-mount.a { transform: translate(-24px, 12px) rotate(-4deg); }
+.slide:has(.rv06-roll.on) .rv06-mount.b { transform: translate(22px, 16px) rotate(5deg); }
+.slide:has(.rv06-roll.on) .rv06-mount.c { transform: translate(-18px, 30px); }
+.rv06-mount { transform-box: fill-box; transform-origin: 50% 100%; }
+
+/* rv06-refuge: men hide under the rocks; a .rv06-crack step splits the rock (.rv06-rock.l / .r) and leaves them exposed.
+   Across from them a man stands safe inside the circle round the Lamb (deck.css .kept-wall) */
+.rv06-rock { fill: color-mix(in srgb, var(--ink-soft) 45%, var(--surface-2)); stroke: var(--ink-soft); stroke-width: 2; transform-box: fill-box; transition: transform 1.4s cubic-bezier(.5,0,.3,1); }
+.rv06-rock.l { transform-origin: 0% 100%; } .rv06-rock.r { transform-origin: 100% 100%; }
+.slide:has(.rv06-crack.on) .rv06-rock.l { transform: translateX(-26px) rotate(-14deg); }
+.slide:has(.rv06-crack.on) .rv06-rock.r { transform: translateX(26px) rotate(14deg); }
+.rv06-man { fill: var(--ink); }
+.rv06-man.safe { fill: var(--accent-hot); }
+.rv06-lab { fill: var(--ink-soft); font: italic 17px var(--serif); }
+.rv06-lab.hot { fill: var(--accent-hot); font-style: normal; font-weight: 600; }
+.rv06-ground { stroke: var(--line-strong); stroke-width: 2; }
+.rv06-throne { fill: var(--glow); stroke: var(--warm); stroke-width: 3; }
+.rv06-wool-out circle { fill: var(--ink-soft); }
+.rv06-wool circle { fill: var(--glow); }
+.rv06-leg { fill: color-mix(in srgb, var(--glow) 62%, var(--leather)); }
+.rv06-head { fill: color-mix(in srgb, var(--glow) 80%, var(--leather)); stroke: var(--ink-soft); stroke-width: 2.5; }
+.rv06-dark { fill: var(--on-glow); }
+.rv06-wound { fill: none; stroke: var(--wine); stroke-width: 4; stroke-linecap: round; }
+@media (max-width: 600px) { .rv06-lab { font-size: 21px; } }
+</style>
+</head>
+<body>
+<main class="deck" id="deck">
+
+<!-- ======================= OPENING ======================= -->
+<section class="slide title">
+  <div class="inner">
+    <div class="emblem rise"></div>
+    <h1 class="rise" style="--d:1">Revelation 6</h1>
+    <p class="sub rise" style="--d:3">The Lamb opens the seals</p>
+    <p class="tag rise" style="--d:5">Four horsemen ride, the martyrs cry “How long?”, and men run from the wrath of the Lamb. Every seal is broken by His hand.</p>
+  </div>
+</section>
+
+<section class="slide watch">
+  <div class="inner">
+    <h2 class="rise">Things to watch for</h2>
+    <p class="lede rise" style="--d:1">Keep these questions in the back of your mind as we read. We'll come back to every one of them at the end.</p>
+    <ol class="seeds">
+      <li class="step"><span class="topic">The seals</span><span class="seed-q">Who opens the seals, and why does that matter?</span></li>
+      <li class="step"><span class="topic">Horsemen</span><span class="seed-q">What do the four horsemen bring on the earth?</span></li>
+      <li class="step"><span class="topic">Martyrs</span><span class="seed-q">What do the souls under the altar ask for, and what are they given?</span></li>
+      <li class="step"><span class="topic">The sixth seal</span><span class="seed-q">What happens when the sixth seal is opened?</span></li>
+      <li class="step"><span class="topic">Hiding</span><span class="seed-q">Where do men try to hide from the wrath of the Lamb?</span></li>
+      <li class="step"><span class="topic">Standing</span><span class="seed-q">Who shall be able to stand in the great day of His wrath?</span></li>
+    </ol>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise">Where we are in Revelation</h2>
+    <div class="rv05-where rise" style="--d:1" role="img" aria-label="The twenty-two chapters of Revelation in seven groups. Chapter 1: a vision of Christ. 2 and 3: the seven churches. 4 and 5: the throne and the Lamb. 6 to 16: seals, trumpets and bowls, with chapter 6 lit. 17 and 18: Babylon falls. 19 and 20: Christ returns and reigns. 21 and 22: all things new.">
+      <div><span>1</span><b class="up left" style="--c:1 / 4">a vision of Christ</b></div>
+      <div><span class="gap">2</span><span>3</span><b style="--c:1 / 5">the seven churches</b></div>
+      <div><span class="gap">4</span><span>5</span><b class="up left" style="--c:4 / 9">the throne and the Lamb</b></div>
+      <div class="now"><span class="gap here">6</span><span>7</span><span>8</span><span>9</span><span>10</span><span>11</span><span>12</span><span>13</span><span>14</span><span>15</span><span>16</span><b style="--c:6 / 17">seals, trumpets and bowls</b></div>
+      <div><span class="gap">17</span><span>18</span><b class="up" style="--c:16 / 20">Babylon falls</b></div>
+      <div><span class="gap">19</span><span>20</span><b style="--c:18 / 22">Christ returns and reigns</b></div>
+      <div><span class="gap">21</span><span>22</span><b class="up" style="--c:20 / 23">all things new</b></div>
+    </div>
+    <p class="note step">In chapter 5 nobody was worthy to open God's sealed book, until the Lamb that was slain stepped up and took it. All heaven sang: <em>“Worthy is the Lamb.”</em></p>
+    <p class="note step">Now He breaks the seals, one at a time. Before you look at the horses, look at whose hand is on the book.</p>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise">How do we read the seals?</h2>
+    <p class="note rise" style="--d:1">Good Bible teachers read them in different ways:</p>
+    <div class="rv06-views">
+      <div class="step"><b>Already past</b>What the first Christians faced under Rome: war, hunger, plague, and persecution.</div>
+      <div class="step"><b>All through history</b>Patterns that repeat between Christ's first and second coming, as Jesus said: wars, famines, earthquakes (Matthew 24:6–7).</div>
+      <div class="step"><b>Still to come</b>A coming time of tribulation before Christ returns. Many Baptists read it this way, and believe the church is caught up to Christ before it begins.</div>
+    </div>
+    <p class="note step">We won't draw charts or set dates. What is plain is enough: <em>the Lamb opens every seal.</em> Nothing in this chapter happens outside His hand.</p>
+    <blockquote class="quote step"><p>“And ye shall hear of wars and rumours of wars: see that ye be not troubled: for all these things must come to pass, but the end is not yet.”</p><cite>Matthew 24:6</cite></blockquote>
+  </div>
+</section>
+
+<!-- ======================= PART ONE: FOUR HORSEMEN ======================= -->
+<section class="slide part">
+  <div class="inner">
+    <p class="part-n rise">Part one</p>
+    <h2 class="rise" style="--d:1">Four horsemen</h2>
+    <p class="range rise" style="--d:2">Verses 1–8</p>
+    <div class="rule"></div>
+    <p class="hook rise" style="--d:4">Conquest, war, hunger and death ride out. Each one only when the Lamb breaks a seal, and only as far as he is allowed.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="1-2" data-hl="the Lamb opened one of the seals|behold a white horse|he went forth conquering, and to conquer"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <ol class="rv06-seals rise" aria-label="Seven seals on a cord. The first is breaking open: the white horse. The rest are still sealed.">
+      <li class="now"><i><b>1</b></i><span>white horse</span></li>
+      <li><i><b>2</b></i><span>red horse</span></li>
+      <li><i><b>3</b></i><span>black horse</span></li>
+      <li><i><b>4</b></i><span>pale horse</span></li>
+      <li><i><b>5</b></i><span>the martyrs</span></li>
+      <li><i><b>6</b></i><span>the great day</span></li>
+      <li class="later"><i><b>7</b></i><span>chapter 8</span></li>
+    </ol>
+    <div class="split">
+      <div class="stage">
+        <svg viewBox="0 0 400 290" role="img" aria-label="Against a night sky, a white horse's head rides in from the left. Beside it a bow and a victor's crown.">
+          <defs>
+            <symbol id="rv06-horse" viewBox="0 0 100 100">
+              <path class="rv06-hb" d="M28 98 L32 72 C 28 62, 24 54, 26 44 L 14 50 C 6 53, 1 46, 5 40 L 26 20 C 30 14, 36 10, 42 10 L 45 0 L 52 9 C 66 12, 78 26, 80 42 C 82 60, 78 80, 74 98 Z"/>
+              <path class="rv06-mane" d="M52 9 C 68 14, 82 30, 84 50 C 86 70, 82 86, 80 98 L 88 98 C 92 80, 94 58, 90 40 C 86 24, 72 10, 54 6 Z"/>
+              <circle class="rv06-eye" cx="40" cy="26" r="3"/>
+              <circle class="rv06-eye" cx="9" cy="44" r="1.6"/>
+            </symbol>
+          </defs>
+          <rect class="rv06-sky" x="0" y="0" width="400" height="290" rx="14"/>
+          <circle class="rv06-star" cx="40" cy="30" r="1.6"/><circle class="rv06-star" cx="120" cy="22" r="1.2"/><circle class="rv06-star" cx="300" cy="18" r="1.5"/><circle class="rv06-star" cx="370" cy="44" r="1.2"/><circle class="rv06-star" cx="210" cy="36" r="1"/>
+          <g class="rv06-ride"><use href="#rv06-horse" x="20" y="40" width="210" height="210" style="--horse:var(--glow)"/></g>
+          <path class="rv06-gold" d="M300 64 Q 372 150 300 236"/>
+          <line class="rv06-string" x1="300" y1="64" x2="300" y2="236"/>
+          <ellipse cx="330" cy="40" rx="26" ry="10" fill="none" style="stroke:var(--warm);stroke-width:7;stroke-dasharray:7 4"/>
+          <text class="rv06-tag" x="352" y="160">a bow</text>
+          <text class="rv06-tag" x="294" y="46" text-anchor="end">a crown</text>
+          <text class="rv06-cap" x="20" y="276">a white horse</text>
+        </svg>
+      </div>
+      <div>
+        <h2 class="rise" style="--d:1">The white horse: conquest</h2>
+        <p class="note rise" style="--d:2">A rider with a bow, given a crown (the Greek word is a victor's wreath), out to win. Many teachers see conquest: an empire on the march. Others see a false christ who looks like the real one on His white horse in 19:11.</p>
+        <p class="note step">But notice who says <em>“Come”</em>: one of the beasts from around the throne. And the crown was <em>“given unto him.”</em> Even the conqueror rides on permission.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="slide verse" data-v="3-4" data-hl="another horse that was red|to take peace from the earth, and that they should kill one another"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <ol class="rv06-seals rise" aria-label="Seven seals. The first is open; the second is breaking: the red horse.">
+      <li class="open"><i><b>1</b></i><span>white horse</span></li>
+      <li class="now"><i><b>2</b></i><span>red horse</span></li>
+      <li><i><b>3</b></i><span>black horse</span></li>
+      <li><i><b>4</b></i><span>pale horse</span></li>
+      <li><i><b>5</b></i><span>the martyrs</span></li>
+      <li><i><b>6</b></i><span>the great day</span></li>
+      <li class="later"><i><b>7</b></i><span>chapter 8</span></li>
+    </ol>
+    <div class="split">
+      <div class="stage">
+        <svg viewBox="0 0 400 290" role="img" aria-label="Against a night sky, a red horse's head rides in. Beside it a great sword.">
+          <rect class="rv06-sky" x="0" y="0" width="400" height="290" rx="14"/>
+          <circle class="rv06-star" cx="40" cy="30" r="1.6"/><circle class="rv06-star" cx="120" cy="22" r="1.2"/><circle class="rv06-star" cx="300" cy="18" r="1.5"/><circle class="rv06-star" cx="370" cy="44" r="1.2"/>
+          <g class="rv06-ride"><use href="#rv06-horse" x="20" y="40" width="210" height="210" style="--horse:var(--danger)"/></g>
+          <g transform="rotate(18 320 150)">
+            <path class="rv06-steel" d="M312 210 L312 50 L320 30 L328 50 L328 210 Z"/>
+            <rect class="rv06-goldf" x="292" y="208" width="56" height="10" rx="4"/>
+            <rect x="315" y="218" width="10" height="40" rx="3" style="fill:var(--leather-light)"/>
+          </g>
+          <text class="rv06-tag" x="240" y="140" text-anchor="end">a great sword</text>
+          <text class="rv06-cap" x="20" y="276">a red horse</text>
+        </svg>
+      </div>
+      <div>
+        <h2 class="rise" style="--d:1">The red horse: war</h2>
+        <p class="note rise" style="--d:2">Red like blood. He takes peace from the earth, and men <em>“kill one another.”</em> Not an army from outside: neighbor against neighbor.</p>
+        <p class="note step">Every man here has seen what this horse leaves behind: on a street, in a cell, in a house. Sin always ends in somebody bleeding. That's why the world needs more than a better plan. It needs the Lamb.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="slide verse" data-v="5-6" data-hl="lo a black horse|A measure of wheat for a penny|see thou hurt not the oil and the wine"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <ol class="rv06-seals rise" aria-label="Seven seals. Two are open; the third is breaking: the black horse.">
+      <li class="open"><i><b>1</b></i><span>white horse</span></li>
+      <li class="open"><i><b>2</b></i><span>red horse</span></li>
+      <li class="now"><i><b>3</b></i><span>black horse</span></li>
+      <li><i><b>4</b></i><span>pale horse</span></li>
+      <li><i><b>5</b></i><span>the martyrs</span></li>
+      <li><i><b>6</b></i><span>the great day</span></li>
+      <li class="later"><i><b>7</b></i><span>chapter 8</span></li>
+    </ol>
+    <div class="split">
+      <div class="stage">
+        <svg viewBox="0 0 400 290" role="img" aria-label="Against a night sky, a black horse's head, outlined in light, rides in. Beside it a pair of balances.">
+          <rect class="rv06-sky" x="0" y="0" width="400" height="290" rx="14"/>
+          <circle class="rv06-star" cx="40" cy="30" r="1.6"/><circle class="rv06-star" cx="120" cy="22" r="1.2"/><circle class="rv06-star" cx="210" cy="36" r="1"/>
+          <g class="rv06-ride"><use href="#rv06-horse" x="20" y="40" width="210" height="210" style="--horse:color-mix(in srgb, var(--on-glow) 75%, var(--glow))"/></g>
+          <line x1="320" y1="60" x2="320" y2="230" class="rv06-gold"/>
+          <line x1="262" y1="80" x2="378" y2="80" class="rv06-gold"/>
+          <path class="rv06-gold" style="stroke-width:2" d="M262 80 L246 150 M262 80 L278 150 M378 80 L362 150 M378 80 L394 150"/>
+          <path class="rv06-goldf" d="M242 150 L282 150 Q262 172 242 150 Z"/>
+          <path class="rv06-goldf" d="M358 150 L398 150 Q378 172 358 150 Z"/>
+          <path d="M252 150 Q262 136 272 150 Z" style="fill:var(--glow)"/>
+          <rect class="rv06-goldf" x="300" y="228" width="40" height="8" rx="3"/>
+          <text class="rv06-tag" x="320" y="270" text-anchor="middle">a pair of balances</text>
+          <text class="rv06-cap" x="20" y="276">a black horse</text>
+        </svg>
+      </div>
+      <div>
+        <h2 class="rise" style="--d:1">The black horse: hunger</h2>
+        <p class="note rise" style="--d:2">War is followed by famine. The rider holds <em>balances</em>, scales for weighing out food a little at a time, the way you do when there isn't enough.</p>
+        <p class="note step">Then a voice from among the beasts sets the price, and a limit: <em>“hurt not the oil and the wine.”</em> Many teachers read that as God saying <em>this far, and no farther.</em> The famine has a fence around it.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="6" data-hl="A measure of wheat for a penny, and three measures of barley for a penny"></blockquote>
+    <h2 class="rise" style="--d:1">What bread cost</h2>
+    <div class="math">
+      <div class="step"><b>1 penny</b><span>a day's wage for a working man</span></div>
+      <div class="step"><b>1 measure</b><span>about a quart of wheat: bread for one man, one day</span></div>
+      <div class="step"><b>3 measures</b><span>of barley: cheaper, coarser grain</span></div>
+    </div>
+    <blockquote class="quote step"><p>“And when he had agreed with the labourers for a penny a day, he sent them into his vineyard.”</p><cite>Matthew 20:2</cite></blockquote>
+    <p class="note step">A man works all day and it buys bread for himself, and nothing for his wife and kids. Some of you know what it is to work hard and still come up short. God sees that, and in this chapter He is the one who sets the limits.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="7-8" data-hl="behold a pale horse|his name that sat on him was Death, and Hell followed with him|over the fourth part of the earth"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <ol class="rv06-seals rise" aria-label="Seven seals. Three are open; the fourth is breaking: the pale horse.">
+      <li class="open"><i><b>1</b></i><span>white horse</span></li>
+      <li class="open"><i><b>2</b></i><span>red horse</span></li>
+      <li class="open"><i><b>3</b></i><span>black horse</span></li>
+      <li class="now"><i><b>4</b></i><span>pale horse</span></li>
+      <li><i><b>5</b></i><span>the martyrs</span></li>
+      <li><i><b>6</b></i><span>the great day</span></li>
+      <li class="later"><i><b>7</b></i><span>chapter 8</span></li>
+    </ol>
+    <div class="split">
+      <div class="stage">
+        <svg viewBox="0 0 400 290" role="img" aria-label="Against a night sky, a pale, sickly green horse rides in, named Death, with a dark shadow named Hell following behind it. In the corner a circle, the earth, with one quarter of it marked.">
+          <rect class="rv06-sky" x="0" y="0" width="400" height="290" rx="14"/>
+          <path class="rv06-hell" d="M200 250 C 230 180, 250 120, 300 110 C 340 104, 372 140, 380 250 Z"/>
+          <text class="rv06-tag" x="300" y="200" text-anchor="middle">Hell</text>
+          <text class="rv06-tag" x="300" y="222" text-anchor="middle">followed</text>
+          <g class="rv06-ride"><use href="#rv06-horse" x="20" y="40" width="210" height="210" style="--horse:color-mix(in srgb, var(--cool) 30%, color-mix(in srgb, var(--warm) 15%, var(--glow)))"/></g>
+          <text class="rv06-tag" x="120" y="32" text-anchor="middle">Death</text>
+          <circle class="rv06-quarter" cx="350" cy="52" r="30"/>
+          <path class="rv06-quarter-cut" d="M350 52 L350 22 A30 30 0 0 1 380 52 Z"/>
+          <text class="rv06-tag" x="306" y="56" text-anchor="end">¼</text>
+          <text class="rv06-cap" x="20" y="276">a pale horse</text>
+        </svg>
+      </div>
+      <div>
+        <h2 class="rise" style="--d:1">The pale horse: death</h2>
+        <p class="note rise" style="--d:2"><em>Pale</em> is the Greek <span class="gk">chloros</span>: a sick yellow-green, the color of a corpse. His name is Death, and Hell, the grave, follows behind to collect.</p>
+        <p class="note step">Even he gets a <em>fourth part</em>, not the whole earth. And the Man who broke the seal holds the keys:</p>
+        <blockquote class="quote step"><p>“I am he that liveth, and was dead; and, behold, I am alive for evermore, Amen; and have the keys of hell and of death.”</p><cite>Revelation 1:18</cite></blockquote>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise">Four riders, one hand</h2>
+    <ul class="nots">
+      <li class="step yes"><span class="k">“a crown was given unto him”</span><span class="why">6:2, the white horse</span></li>
+      <li class="step yes"><span class="k">“power was given to him… there was given unto him a great sword”</span><span class="why">6:4, the red horse</span></li>
+      <li class="step yes"><span class="k">“see thou hurt not the oil and the wine”</span><span class="why">6:6, the black horse is fenced in</span></li>
+      <li class="step yes"><span class="k">“power was given unto them over the fourth part”</span><span class="why">6:8, the pale horse is limited</span></li>
+    </ul>
+    <p class="note step">Sword, famine, beasts, and death are the same four judgments God named through Ezekiel long before (Ezekiel 14:21). Nothing in this chapter is new to God, and nothing gets loose on its own. When the news is bad, and when your own life feels like the pale horse came through, the Lamb still holds the book.</p>
+  </div>
+</section>
+
+<!-- ======================= PART TWO: HOW LONG? ======================= -->
+<section class="slide part">
+  <div class="inner">
+    <p class="part-n rise">Part two</p>
+    <h2 class="rise" style="--d:1">How long?</h2>
+    <p class="range rise" style="--d:2">Verses 9–11</p>
+    <div class="rule"></div>
+    <p class="hook rise" style="--d:4">Men who died for Jesus ask the question every hurting man asks. God answers with a robe and a promise.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="9-11" data-hl="the souls of them that were slain for the word of God|How long, O Lord, holy and true|And white robes were given unto every one of them"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <ol class="rv06-seals rise" aria-label="Seven seals. Four are open; the fifth is breaking: the martyrs.">
+      <li class="open"><i><b>1</b></i><span>white horse</span></li>
+      <li class="open"><i><b>2</b></i><span>red horse</span></li>
+      <li class="open"><i><b>3</b></i><span>black horse</span></li>
+      <li class="open"><i><b>4</b></i><span>pale horse</span></li>
+      <li class="now"><i><b>5</b></i><span>the martyrs</span></li>
+      <li><i><b>6</b></i><span>the great day</span></li>
+      <li class="later"><i><b>7</b></i><span>chapter 8</span></li>
+    </ol>
+    <h2 class="rise" style="--d:1">Under the altar</h2>
+    <p class="note rise" style="--d:2">At the temple, the blood of a sacrifice was poured out at the bottom of the altar. These men and women poured out their lives the same way, killed <em>“for the word of God, and for the testimony which they held.”</em></p>
+    <p class="note step">John is writing to churches where this was already happening: Antipas had been killed at Pergamos (2:13). Christians still die for Jesus in many countries. Their lives aren't wasted. They are under the altar, close to God, and He knows every name.</p>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <div class="split">
+      <div class="stage">
+        <svg class="clock" viewBox="0 -44 320 364" role="img" aria-label="A clock hand sweeps toward the hour of judgment and stops just short: a little season.">
+          <circle class="clock-face" cx="160" cy="160" r="140"/>
+          <g>
+            <line class="clock-tick" x1="160" y1="38" x2="160" y2="58" transform="rotate(30 160 160)"/>
+            <line class="clock-tick" x1="160" y1="38" x2="160" y2="58" transform="rotate(60 160 160)"/>
+            <line class="clock-tick" x1="160" y1="38" x2="160" y2="58" transform="rotate(90 160 160)"/>
+            <line class="clock-tick" x1="160" y1="38" x2="160" y2="58" transform="rotate(120 160 160)"/>
+            <line class="clock-tick" x1="160" y1="38" x2="160" y2="58" transform="rotate(150 160 160)"/>
+            <line class="clock-tick" x1="160" y1="38" x2="160" y2="58" transform="rotate(180 160 160)"/>
+            <line class="clock-tick" x1="160" y1="38" x2="160" y2="58" transform="rotate(210 160 160)"/>
+            <line class="clock-tick" x1="160" y1="38" x2="160" y2="58" transform="rotate(240 160 160)"/>
+            <line class="clock-tick" x1="160" y1="38" x2="160" y2="58" transform="rotate(270 160 160)"/>
+            <line class="clock-tick" x1="160" y1="38" x2="160" y2="58" transform="rotate(300 160 160)"/>
+            <line class="clock-tick" x1="160" y1="38" x2="160" y2="58" transform="rotate(330 160 160)"/>
+          </g>
+          <circle class="clock-hour" cx="160" cy="44" r="12"/>
+          <text x="160" y="-14" text-anchor="middle" font-size="20" font-weight="700" style="fill:var(--accent-hot)">judgment</text>
+          <line class="clock-hand" x1="160" y1="160" x2="160" y2="68"/>
+          <circle cx="160" cy="160" r="10" style="fill:var(--ink)"/>
+          <text x="160" y="232" text-anchor="middle" font-size="22" class="serif" font-style="italic" style="fill:var(--ink-soft)">“a little season”</text>
+        </svg>
+      </div>
+      <div>
+        <h2 class="rise" style="--d:1">“How long, O Lord?”</h2>
+        <p class="note rise" style="--d:2">It isn't unbelief to ask. These are saints in heaven, and they ask it out loud. David asked it too: <em>“How long wilt thou forget me, O LORD?”</em> (Psalm 13:1).</p>
+        <p class="note step">They don't take revenge. They hand it to the Judge who is <em>“holy and true.”</em> If someone did you wrong, that's your way out of the anger too:</p>
+        <blockquote class="quote step"><p>“Dearly beloved, avenge not yourselves, but rather give place unto wrath: for it is written, Vengeance is mine; I will repay, saith the Lord.”</p><cite>Romans 12:19</cite></blockquote>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="11" data-hl="white robes were given unto every one of them|rest yet for a little season"></blockquote>
+    <h2 class="rise" style="--d:1">A robe and a rest</h2>
+    <div class="columns">
+      <div class="col grace step"><p class="who">What they're given</p><h3>White robes</h3><p>Not earned by dying. Given, <em>“unto every one of them.”</em> White is the color of a clean record and a victory.</p></div>
+      <div class="col grace step"><p class="who">What they're told</p><h3>Rest a little longer</h3><p>God hasn't forgotten. He has a number and a time, and He's keeping track. Their wait is a rest, not a punishment.</p></div>
+    </div>
+    <p class="note step">Where does a white robe come from? The next chapter says:</p>
+    <blockquote class="quote step"><p>“These are they which came out of great tribulation, and have washed their robes, and made them white in the blood of the Lamb.”</p><cite>Revelation 7:14</cite></blockquote>
+  </div>
+</section>
+
+<!-- ======================= PART THREE: THE GREAT DAY ======================= -->
+<section class="slide part">
+  <div class="inner">
+    <p class="part-n rise">Part three</p>
+    <h2 class="rise" style="--d:1">The great day</h2>
+    <p class="range rise" style="--d:2">Verses 12–17</p>
+    <div class="rule"></div>
+    <p class="hook rise" style="--d:4">The sky falls apart, and the most powerful men on earth beg the rocks to hide them. There is only one safe place.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="12-13" data-hl="there was a great earthquake|the sun became black as sackcloth of hair, and the moon became as blood"></section>
+
+<section class="slide verse" data-v="14" data-hl="the heaven departed as a scroll when it is rolled together|every mountain and island were moved out of their places"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <ol class="rv06-seals rise" aria-label="Seven seals. Five are open; the sixth is breaking: the great day. The seventh waits for chapter 8.">
+      <li class="open"><i><b>1</b></i><span>white horse</span></li>
+      <li class="open"><i><b>2</b></i><span>red horse</span></li>
+      <li class="open"><i><b>3</b></i><span>black horse</span></li>
+      <li class="open"><i><b>4</b></i><span>pale horse</span></li>
+      <li class="open"><i><b>5</b></i><span>the martyrs</span></li>
+      <li class="now"><i><b>6</b></i><span>the great day</span></li>
+      <li class="later"><i><b>7</b></i><span>chapter 8</span></li>
+    </ol>
+    <div class="split">
+      <div class="stage">
+        <svg viewBox="0 0 600 330" role="img" aria-label="A night sky over mountains. The sun goes black and the moon turns blood red. On a step the stars fall like figs shaken from a tree. On another step the whole sky rolls up like a scroll and the mountains are moved out of their places.">
+          <defs><clipPath id="rv06-clip"><rect x="0" y="0" width="600" height="330" rx="14"/></clipPath></defs>
+          <rect class="rv06-void" x="0" y="0" width="600" height="330" rx="14"/>
+          <g clip-path="url(#rv06-clip)">
+          <g class="rv06-heaven">
+            <rect class="rv06-skyfill" x="0" y="0" width="600" height="330" rx="14"/>
+            <circle class="rv06-sun" cx="150" cy="90" r="40"/>
+            <circle class="rv06-moon" cx="460" cy="80" r="28"/>
+            <g>
+              <circle class="rv06-drop" style="--k:0" cx="60" cy="40" r="3"/><circle class="rv06-drop" style="--k:3" cx="250" cy="30" r="3.5"/>
+              <circle class="rv06-drop" style="--k:6" cx="330" cy="70" r="2.5"/><circle class="rv06-drop" style="--k:1" cx="380" cy="40" r="3"/>
+              <circle class="rv06-drop" style="--k:8" cx="540" cy="36" r="3.5"/><circle class="rv06-drop" style="--k:4" cx="560" cy="120" r="2.5"/>
+              <circle class="rv06-drop" style="--k:2" cx="230" cy="120" r="3"/><circle class="rv06-drop" style="--k:7" cx="300" cy="150" r="2.5"/>
+              <circle class="rv06-drop" style="--k:5" cx="80" cy="160" r="3"/><circle class="rv06-drop" style="--k:9" cx="400" cy="140" r="3"/>
+              <circle class="rv06-drop" style="--k:10" cx="510" cy="170" r="2.5"/><circle class="rv06-drop" style="--k:11" cx="40" cy="110" r="2.5"/>
+            </g>
+          </g>
+          <rect class="rv06-rollbar" x="10" y="2" width="580" height="18" rx="9"/>
+          <path class="rv06-mount a" d="M-10 330 L120 190 L250 330 Z"/>
+          <path class="rv06-mount b" d="M380 330 L500 200 L620 330 Z"/>
+          <path class="rv06-mount c" d="M180 330 L320 220 L460 330 Z"/>
+          </g>
+        </svg>
+      </div>
+      <div>
+        <h2 class="rise" style="--d:1">The sky comes apart</h2>
+        <p class="note rise" style="--d:2">The prophets used these same words for the day of the LORD: <em>“The sun shall be turned into darkness, and the moon into blood”</em> (Joel 2:31).</p>
+        <p class="note step rv06-fall">The stars fall <em>“as a fig tree casteth her untimely figs”</em>, like the late, unripe figs a storm knocks off a tree.</p>
+        <p class="note step rv06-roll">And the sky rolls up <em>“as a scroll”</em> (Isaiah 34:4). Real signs in the sky, or pictures of the world's powers falling? Teachers differ. Either way, everything men lean on comes loose.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="slide verse" data-v="15-17" data-hl="hid themselves in the dens and in the rocks of the mountains|Fall on us, and hide us|from the wrath of the Lamb|who shall be able to stand?"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="15" data-hl="every bondman, and every free man"></blockquote>
+    <h2 class="rise" style="--d:1">From the king to the slave</h2>
+    <ol class="signs rv06-seven">
+      <li class="step"><b>kings</b>the men at the top</li>
+      <li class="step"><b>great men</b>the famous</li>
+      <li class="step"><b>rich men</b>the ones who could buy anything</li>
+      <li class="step"><b>chief captains</b>the generals</li>
+      <li class="step"><b>mighty men</b>the strong ones</li>
+      <li class="step"><b>bondmen</b>slaves</li>
+      <li class="step"><b>free men</b>everybody else</li>
+    </ol>
+    <p class="note step">Every rank ends up in the same cave. Money, muscle and a title don't help on that day. Men have been hiding from God since the garden:</p>
+    <blockquote class="quote step"><p>“And they heard the voice of the LORD God walking in the garden in the cool of the day: and Adam and his wife hid themselves from the presence of the LORD God amongst the trees of the garden.”</p><cite>Genesis 3:8</cite></blockquote>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <div class="split">
+      <div class="stage">
+        <svg viewBox="0 0 600 300" role="img" aria-label="On the left, three small men hide under a great rock: Fall on us, and hide us. On a step the rock splits apart and falls away, leaving them in the open. On the right, a man stands safe inside a glowing circle beside the Lamb: saved from wrath through Him.">
+          <defs>
+            <symbol id="rv06-lambsym" viewBox="130 100 180 150">
+              <g class="rv06-leg"><rect x="168" y="200" width="10" height="44" rx="4"/><rect x="188" y="204" width="10" height="42" rx="4"/><rect x="232" y="204" width="10" height="42" rx="4"/><rect x="252" y="200" width="10" height="44" rx="4"/></g>
+              <g class="rv06-wool-out"><circle cx="165" cy="178" r="32.5"/><circle cx="196" cy="156" r="34.5"/><circle cx="232" cy="160" r="32.5"/><circle cx="258" cy="182" r="28.5"/><circle cx="216" cy="194" r="32.5"/><circle cx="182" cy="198" r="28.5"/></g>
+              <g class="rv06-wool"><circle cx="165" cy="178" r="30"/><circle cx="196" cy="156" r="32"/><circle cx="232" cy="160" r="30"/><circle cx="258" cy="182" r="26"/><circle cx="216" cy="194" r="30"/><circle cx="182" cy="198" r="26"/></g>
+              <ellipse class="rv06-head" cx="282" cy="140" rx="19" ry="26" transform="rotate(28 282 140)"/>
+              <ellipse class="rv06-head" cx="266" cy="124" rx="13" ry="6" transform="rotate(-25 266 124)"/>
+              <circle class="rv06-dark" cx="290" cy="135" r="3.5"/>
+              <path class="rv06-wound" d="M250 150 l12 16"/>
+            </symbol>
+          </defs>
+          <line class="rv06-ground" x1="10" y1="240" x2="590" y2="240"/>
+          <g class="rv06-man"><circle cx="90" cy="214" r="7"/><path d="M80 240 q10 -24 20 0 z"/><circle cx="120" cy="218" r="7"/><path d="M110 240 q10 -20 20 0 z"/><circle cx="150" cy="214" r="7"/><path d="M140 240 q10 -24 20 0 z"/></g>
+          <path class="rv06-rock l" d="M40 240 L56 150 L110 104 L126 140 L114 190 L122 240 L108 240 L104 196 L70 196 L66 240 Z"/>
+          <path class="rv06-rock r" d="M122 240 L114 190 L126 140 L110 104 L170 110 L210 170 L220 240 L190 240 L184 196 L150 196 L146 240 Z"/>
+          <text class="rv06-lab" x="130" y="272" text-anchor="middle">“Fall on us, and hide us”</text>
+          <circle class="kept-wall" cx="450" cy="160" r="104"/>
+          <circle class="rv06-throne" cx="470" cy="160" r="40"/>
+          <use href="#rv06-lambsym" x="438" y="134" width="64" height="54"/>
+          <g class="rv06-man safe"><circle cx="396" cy="174" r="8"/><path d="M384 214 l4 -26 h16 l4 26 z"/></g>
+          <text class="rv06-lab hot" x="450" y="292" text-anchor="middle">“saved from wrath through him”</text>
+        </svg>
+      </div>
+      <div>
+        <h2 class="rise" style="--d:1">The wrath of the Lamb</h2>
+        <p class="note rise" style="--d:2">An angry Lamb: the Jesus who was slain for sinners will judge those who refuse Him.</p>
+        <p class="note step rv06-crack">Men beg the rocks to hide them, but the mountains were just <em>“moved out of their places”</em> (6:14). No rock can hide a man from God. The only shelter from the wrath of the Lamb is the Lamb Himself.</p>
+        <blockquote class="quote step"><p>“Much more then, being now justified by his blood, we shall be saved from wrath through him.”</p><cite>Romans 5:9</cite></blockquote>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="17"></blockquote>
+    <h2 class="rise" style="--d:1">Who shall be able to stand?</h2>
+    <ul class="nots">
+      <li class="step"><span class="k">the strong</span><span class="why">the mighty men hid in the rocks</span></li>
+      <li class="step"><span class="k">the rich</span><span class="why">money couldn't buy a hiding place</span></li>
+      <li class="step"><span class="k">the good enough</span><span class="why">“no man was found worthy” (5:4)</span></li>
+      <li class="step yes"><span class="k">those washed in the blood of the Lamb</span><span class="why">the very next chapter answers the question</span></li>
+    </ul>
+    <blockquote class="quote step"><p>“After this I beheld, and, lo, a great multitude, which no man could number, of all nations, and kindreds, and people, and tongues, stood before the throne, and before the Lamb, clothed with white robes, and palms in their hands;”</p><cite>Revelation 7:9</cite></blockquote>
+    <blockquote class="quote step"><p>“For God hath not appointed us to wrath, but to obtain salvation by our Lord Jesus Christ,”</p><cite>1 Thessalonians 5:9</cite></blockquote>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise">Take it to work today</h2>
+    <div class="daybreak climb">
+      <div class="rise" style="--d:1"><i>6:1</i><b>Look at the hand</b><p>When the news is bad, or your own week is, remember who is breaking the seals.</p></div>
+      <div class="step"><i>6:10</i><b>Hand it over</b><p>Tell God your “how long.” Then leave the payback to Him, and let the anger go.</p></div>
+      <div class="step"><i>6:16</i><b>Don't hide</b><p>Not from God, not from your brothers. Run to the Lamb. If you've never trusted Him, today is the day.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ======================= CLOSING ======================= -->
+<section class="slide remember">
+  <div class="inner">
+    <h2 class="rise">Points to remember</h2>
+    <ol class="seeds">
+      <li class="step"><span class="topic">The seals</span><span class="seed-q">“The Lamb opened one of the seals” <cite>6:1</cite></span><span class="take">Every seal is broken by the Lamb's hand; nothing happens outside His control.</span></li>
+      <li class="step"><span class="topic">Horsemen</span><span class="seed-q">“Power was given unto them” <cite>6:8</cite></span><span class="take">Conquest, war, famine, and death: real and terrible, but given limits by God.</span></li>
+      <li class="step"><span class="topic">Martyrs</span><span class="seed-q">“How long, O Lord, holy and true” <cite>6:10</cite></span><span class="take">They cry for justice and are given white robes and rest for a little season.</span></li>
+      <li class="step"><span class="topic">The sixth seal</span><span class="seed-q">“There was a great earthquake” <cite>6:12</cite></span><span class="take">The sun goes black, the moon turns to blood, stars fall, and the sky rolls up like a scroll.</span></li>
+      <li class="step"><span class="topic">Hiding</span><span class="seed-q">“Hide us… from the wrath of the Lamb” <cite>6:16</cite></span><span class="take">Men of every rank run to the rocks, but no rock can hide them from God.</span></li>
+      <li class="step"><span class="topic">Standing</span><span class="seed-q">“Who shall be able to stand?” <cite>6:17</cite></span><span class="take">Only those washed in the blood of the Lamb; He is the only shelter from His own wrath.</span></li>
+    </ol>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 1 of 6</p>
+      <span class="topic">The seals</span>
+      <h2>Who opens the seals, and why does that matter?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="1"></blockquote>
+      <blockquote class="quote step"><p>“Are not two sparrows sold for a farthing? and one of them shall not fall on the ground without your Father.”</p><cite>Matthew 10:29</cite></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>The Lamb, Jesus, who was slain for us. That matters because nothing in this chapter breaks loose on its own. The One who loves us most holds the book and decides when each seal opens.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 2 of 6</p>
+      <span class="topic">Horsemen</span>
+      <h2>What do the four horsemen bring on the earth?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="4"></blockquote>
+      <blockquote class="quote step" data-q="8"></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>Conquest (the white horse), war (the red), famine (the black), and death with the grave behind it (the pale). Each rider is "given" his power, and each is limited: a fence around the famine, a fourth part for death.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 3 of 6</p>
+      <span class="topic">Martyrs</span>
+      <h2>What do the souls under the altar ask for, and what are they given?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="10"></blockquote>
+      <blockquote class="quote step" data-q="11"></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>They ask how long until God judges and avenges their blood. They are given white robes and told to rest a little longer. God sees them, comforts them, and has a set time for justice.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 4 of 6</p>
+      <span class="topic">The sixth seal</span>
+      <h2>What happens when the sixth seal is opened?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="12"></blockquote>
+      <blockquote class="quote step"><p>“The sun shall be turned into darkness, and the moon into blood, before the great and the terrible day of the LORD come.”</p><cite>Joel 2:31</cite></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>A great earthquake; the sun goes black and the moon turns to blood; the stars fall like figs; the sky rolls up like a scroll; every mountain and island moves. It is the great day the prophets warned of.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 5 of 6</p>
+      <span class="topic">Hiding</span>
+      <h2>Where do men try to hide from the wrath of the Lamb?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="16"></blockquote>
+      <blockquote class="quote step"><p>“Kiss the Son, lest he be angry, and ye perish from the way, when his wrath is kindled but a little. Blessed are all they that put their trust in him.”</p><cite>Psalm 2:12</cite></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>In the dens and the rocks of the mountains, begging them to fall on them. But no rock can hide a man from God. The only safe place is in the Son Himself: blessed are all who trust in Him.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 6 of 6</p>
+      <span class="topic">Standing</span>
+      <h2>Who shall be able to stand in the great day of His wrath?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="17"></blockquote>
+      <blockquote class="quote step"><p>“Who art thou that judgest another man’s servant? to his own master he standeth or falleth. Yea, he shall be holden up: for God is able to make him stand.”</p><cite>Romans 14:4</cite></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>Not the strong, the rich, or the good enough. Those washed in the blood of the Lamb will stand, because God holds them up. Chapter 7 shows them: a great multitude standing before the throne in white robes.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide prayer">
+  <div class="inner">
+    <div class="emblem rise"></div>
+    <h2 class="rise" style="--d:1">Prayer requests</h2>
+    <p class="ask-line rise" style="--d:2">What can we pray about for you today?</p>
+    <blockquote class="quote rise" style="--d:4"><p>“God is our refuge and strength, a very present help in trouble. Therefore will not we fear, though the earth be removed, and though the mountains be carried into the midst of the sea;”</p><cite>Psalm 46:1–2</cite></blockquote>
+  </div>
+</section>
+
+</main>
+
+<script>
+// King James Version, Revelation chapter 6
+const V = {
+  1: "And I saw when the Lamb opened one of the seals, and I heard, as it were the noise of thunder, one of the four beasts saying, Come and see.",
+  2: "And I saw, and behold a white horse: and he that sat on him had a bow; and a crown was given unto him: and he went forth conquering, and to conquer.",
+  3: "And when he had opened the second seal, I heard the second beast say, Come and see.",
+  4: "And there went out another horse that was red: and power was given to him that sat thereon to take peace from the earth, and that they should kill one another: and there was given unto him a great sword.",
+  5: "And when he had opened the third seal, I heard the third beast say, Come and see. And I beheld, and lo a black horse; and he that sat on him had a pair of balances in his hand.",
+  6: "And I heard a voice in the midst of the four beasts say, A measure of wheat for a penny, and three measures of barley for a penny; and see thou hurt not the oil and the wine.",
+  7: "And when he had opened the fourth seal, I heard the voice of the fourth beast say, Come and see.",
+  8: "And I looked, and behold a pale horse: and his name that sat on him was Death, and Hell followed with him. And power was given unto them over the fourth part of the earth, to kill with sword, and with hunger, and with death, and with the beasts of the earth.",
+  9: "And when he had opened the fifth seal, I saw under the altar the souls of them that were slain for the word of God, and for the testimony which they held:",
+  10: "And they cried with a loud voice, saying, How long, O Lord, holy and true, dost thou not judge and avenge our blood on them that dwell on the earth?",
+  11: "And white robes were given unto every one of them; and it was said unto them, that they should rest yet for a little season, until their fellowservants also and their brethren, that should be killed as they were, should be fulfilled.",
+  12: "And I beheld when he had opened the sixth seal, and, lo, there was a great earthquake; and the sun became black as sackcloth of hair, and the moon became as blood;",
+  13: "And the stars of heaven fell unto the earth, even as a fig tree casteth her untimely figs, when she is shaken of a mighty wind.",
+  14: "And the heaven departed as a scroll when it is rolled together; and every mountain and island were moved out of their places.",
+  15: "And the kings of the earth, and the great men, and the rich men, and the chief captains, and the mighty men, and every bondman, and every free man, hid themselves in the dens and in the rocks of the mountains;",
+  16: "And said to the mountains and rocks, Fall on us, and hide us from the face of him that sitteth on the throne, and from the wrath of the Lamb:",
+  17: "For the great day of his wrath is come; and who shall be able to stand?"
+};
+const BOOK = "Revelation 6";
+</script>
+<script src="../assets/deck.js"></script>
+</body>
+</html>
