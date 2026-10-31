@@ -1,0 +1,589 @@
+<!doctype html>
+<html lang="en" data-theme="scribe">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Hebrews 8</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="../assets/fonts.css">
+<link rel="stylesheet" href="../assets/deck.css">
+<link rel="stylesheet" href="../assets/themes.css">
+<style>
+/* he07-book: the whole letter of Hebrews on one line (copied from Hebrews 7; a deck.css candidate).
+   Row 1: the thirteen chapters (.he07-ch, --n = verses), the one we're in marked .here. Row 2: the six sections (.he07-part,
+   --n = verses), each with its verses (small), its name (b), a key phrase (q) and where it is (cite); the section we're in is .now. */
+.he07-book { margin: .6em 0 1em; }
+.he07-chs, .he07-parts { display: flex; }
+.he07-chs { margin-bottom: 8px; }
+.he07-ch { flex: var(--n) 1 0; margin: 0 2px; padding: .25em 0 .3em; text-align: center; border-radius: 6px 6px 0 0; border-bottom: 3px solid var(--line-strong);
+  font: 700 clamp(.78rem, .7rem + .35vw, 1.05rem) var(--sans); color: var(--ink-soft);
+  opacity: 0; transition: opacity .4s ease; transition-delay: calc(var(--k, 0) * 90ms + 200ms); }
+.slide.active .he07-ch { opacity: 1; }
+.he07-ch.here { background: var(--accent); border-bottom-color: var(--accent); color: var(--on-accent); }
+.slide.active .he07-ch.here { animation: he07-here 2.4s ease-in-out 1.6s infinite; }
+@keyframes he07-here { 50% { box-shadow: 0 0 0 6px color-mix(in srgb, var(--accent) 28%, transparent); } }
+.he07-part { --c: var(--accent); flex: var(--n) 1 0; min-width: 0; margin: 0 3px; padding: .5em .55em .6em; border-top: 6px solid var(--c); border-radius: 0 0 10px 10px;
+  background: color-mix(in srgb, var(--c) 9%, transparent); opacity: 0; transform: translateY(10px);
+  transition: opacity .6s ease, transform .6s ease; transition-delay: calc(var(--k, 0) * 300ms + 900ms); }
+.slide.active .he07-part { opacity: 1; transform: none; }
+.he07-part small { display: block; font: 700 clamp(.66rem, .62rem + .2vw, .86rem) var(--sans); letter-spacing: .03em; color: var(--ink-soft); }
+.he07-part b { display: block; margin: .1em 0 .35em; font: 600 clamp(.9rem, .76rem + .55vw, 1.3rem)/1.1 var(--serif); color: var(--ink); }
+.he07-part q { display: block; font: italic clamp(.76rem, .7rem + .28vw, .98rem)/1.3 var(--serif); quotes: "\201C" "\201D"; }
+.he07-part cite { display: block; margin-top: .25em; font-style: normal; font-size: clamp(.68rem, .64rem + .2vw, .86rem); color: var(--ink-soft); }
+.he07-part.now { background: color-mix(in srgb, var(--c) 20%, transparent); box-shadow: inset 0 0 0 2px var(--c); }
+.he07-p1 { --c: var(--cool); }
+.he07-p2 { --c: var(--leather-light); }
+.he07-p3 { --c: var(--accent); }
+.he07-p4 { --c: var(--wine); }
+.he07-p5 { --c: var(--danger); }
+.he07-p6 { --c: var(--warm); }
+@media (max-width: 700px) {
+  .he07-chs { display: none; }
+  .he07-parts { display: grid; gap: 5px; }
+  .he07-part { margin: 0; padding: .35em .6em .4em; border-top: 0; border-left: 6px solid var(--c); border-radius: 0 10px 10px 0; }
+  .he07-part q, .he07-part cite { display: none; }
+}
+
+/* he08-seat: the old priest always standing at the altar; Christ seated at the right hand. The seated side lights on a .he08-sit step. */
+.he08-fig { fill: var(--ink-soft); }
+.he08-altar { fill: var(--leather); stroke: var(--line-strong); stroke-width: 2; }
+.he08-smoke { fill: none; stroke: var(--ink-soft); stroke-width: 3; stroke-linecap: round; opacity: .6; }
+.slide.active .he08-smoke { animation: he08-rise 3s ease-in-out infinite; }
+.slide.active .he08-smoke.s2 { animation-delay: 1.5s; }
+@keyframes he08-rise { 0% { opacity: 0; transform: translateY(10px); } 40% { opacity: .7; } 100% { opacity: 0; transform: translateY(-24px); } }
+.he08-throne { fill: color-mix(in srgb, var(--accent) 25%, var(--surface)); stroke: var(--accent); stroke-width: 3; }
+.he08-king { fill: var(--accent); opacity: .25; transition: opacity 1s ease; }
+.slide:has(.he08-sit.on) .he08-king { opacity: 1; }
+.he08-rays { stroke: var(--accent-hot); stroke-width: 3; stroke-linecap: round; opacity: 0; transition: opacity 1s ease .4s; }
+.slide:has(.he08-sit.on) .he08-rays { opacity: .8; }
+.he08-cap { fill: var(--ink); font: 700 15px var(--sans); }
+.he08-cap.soft { fill: var(--ink-soft); font: italic 400 14px var(--serif); }
+.he08-floor { stroke: var(--line-strong); stroke-width: 2; }
+
+/* he08-plan: the tabernacle seen from above, to scale (5 units = 1 cubit), and behind it the true tabernacle in heaven.
+   On a .he08-real step the earthly plan goes to a dashed shadow and the heavenly original lights up. */
+.he08-court { fill: color-mix(in srgb, var(--surface) 70%, transparent); stroke: var(--ink); stroke-width: 2.5; transition: stroke-dasharray .1s, opacity 1s ease; }
+.he08-gate { stroke: var(--accent); stroke-width: 6; }
+.he08-tent { fill: color-mix(in srgb, var(--leather-light) 30%, var(--surface)); stroke: var(--ink); stroke-width: 2; }
+.he08-holiest { fill: color-mix(in srgb, var(--accent) 30%, var(--surface)); stroke: var(--ink); stroke-width: 2; }
+.he08-veil { stroke: var(--wine); stroke-width: 4; }
+.he08-item { fill: var(--leather); stroke: var(--ink); stroke-width: 1.5; }
+.he08-ark { fill: var(--accent); stroke: var(--ink); stroke-width: 1.5; }
+.he08-lamp { fill: var(--warm); }
+.he08-lb { fill: var(--ink); font: 600 15px var(--sans); }
+.he08-lb.big { font: 700 17px var(--sans); letter-spacing: .06em; }
+.he08-copy { transition: opacity 1.2s ease; }
+.slide:has(.he08-real.on) .he08-copy { opacity: .45; }
+.slide:has(.he08-real.on) .he08-court, .slide:has(.he08-real.on) .he08-tent, .slide:has(.he08-real.on) .he08-holiest { stroke-dasharray: 6 5; }
+.he08-heaven { fill: color-mix(in srgb, var(--glow) 30%, transparent); stroke: var(--accent-hot); stroke-width: 3; opacity: 0; transition: opacity 1.4s ease; }
+.he08-heaven-t { fill: var(--accent-hot); font: 700 15px var(--sans); opacity: 0; transition: opacity 1.4s ease .4s; }
+.slide:has(.he08-real.on) .he08-heaven, .slide:has(.he08-real.on) .he08-heaven-t { opacity: 1; }
+.he08-beam { fill: color-mix(in srgb, var(--accent) 14%, transparent); opacity: 0; transition: opacity 1.4s ease .2s; }
+.slide:has(.he08-real.on) .he08-beam { opacity: 1; }
+
+/* he08-tablets: the law cut in stone, then the same lines written into a heart (8:10). The lines move on a .he08-write step. */
+.he08-stone { fill: color-mix(in srgb, var(--ink-soft) 30%, var(--surface)); stroke: var(--ink-soft); stroke-width: 3; }
+.he08-cut { stroke: var(--ink-soft); stroke-width: 4; stroke-linecap: round; transition: opacity 1s ease; }
+.slide:has(.he08-write.on) .he08-cut { opacity: .2; }
+.he08-heart { fill: color-mix(in srgb, var(--danger) 14%, transparent); stroke: var(--danger); stroke-width: 3.5; }
+.he08-ink { stroke: var(--wine); stroke-width: 4; stroke-linecap: round; stroke-dasharray: 1; stroke-dashoffset: 1; transition: stroke-dashoffset .8s ease; transition-delay: calc(var(--k, 0) * 300ms + 400ms); }
+.slide:has(.he08-write.on) .he08-ink { stroke-dashoffset: 0; }
+.he08-flow { fill: none; stroke: var(--accent); stroke-width: 3; stroke-dasharray: 6 8; opacity: 0; transition: opacity .6s ease; }
+.slide:has(.he08-write.on) .he08-flow { opacity: 1; }
+.he08-tl { fill: var(--ink); font: 700 15px var(--sans); }
+.he08-tl.soft { fill: var(--ink-soft); font: italic 400 14px var(--serif); }
+
+/* he08-all: "from the least to the greatest" (8:11). Men of every height, and every one of them lit: they all know Him. */
+.he08-all { display: flex; align-items: flex-end; justify-content: space-between; gap: 6px; max-width: 40rem; margin: 2.6rem 0 .2em; height: 7.5rem; }
+.he08-all i::after { content: ""; position: absolute; left: 50%; top: -1.75rem; width: 1.5rem; height: 1.5rem; margin-left: -.75rem; border-radius: 50%; background: inherit; }
+.he08-all i { position: relative; flex: 0 1 2.4rem; height: var(--h); border-radius: 1.1rem 1.1rem 4px 4px; background: color-mix(in srgb, var(--ink-soft) 35%, transparent); transition: background .6s ease; transition-delay: calc(var(--k) * 160ms + 300ms); }
+.he08-all i::before { content: ""; position: absolute; left: 50%; top: -3.1rem; width: 1rem; height: 1rem; margin-left: -.5rem; border-radius: 50%; background: var(--accent); box-shadow: 0 0 0 0 transparent;
+  opacity: 0; transform: scale(.3); transition: opacity .5s ease, transform .5s ease; transition-delay: calc(var(--k) * 160ms + 300ms); }
+.slide:has(.he08-know.on) .he08-all i { background: color-mix(in srgb, var(--accent) 45%, transparent); }
+.slide:has(.he08-know.on) .he08-all i::before { opacity: 1; transform: none; box-shadow: 0 0 12px 3px color-mix(in srgb, var(--accent) 45%, transparent); }
+.he08-ends { display: flex; justify-content: space-between; max-width: 40rem; margin: 0 0 .8em; font: 700 .8rem var(--sans); letter-spacing: .08em; text-transform: uppercase; color: var(--ink-soft); }
+
+/* he08-wipe: the record of a man's sins, wiped line by line on a .he08-gone step, until only the promise is left (8:12). */
+.he08-file { position: relative; max-width: 30rem; padding: .7em 1.1em .9em; border: 1.5px solid var(--line-strong); border-radius: 10px; background: var(--surface); }
+.he08-file h3 { margin: 0 0 .4em; font: 700 .82rem var(--sans); letter-spacing: .12em; text-transform: uppercase; color: var(--ink-soft); }
+.he08-file ul { list-style: none; margin: 0; padding: 0; }
+.he08-file li { position: relative; padding: .28em 0; border-bottom: 1px solid var(--line); font: italic clamp(1rem, .9rem + .45vw, 1.3rem) var(--serif); color: var(--ink);
+  transition: color .4s ease; transition-delay: calc(var(--k, 0) * 380ms + 350ms); }
+.he08-file li::after { content: ""; position: absolute; inset: 3px -4px; border-radius: 4px; background: color-mix(in srgb, var(--accent) 40%, transparent); transform: scaleX(0); transform-origin: left; opacity: 0; }
+.slide:has(.he08-gone.on) .he08-file li { color: transparent; }
+.slide:has(.he08-gone.on) .he08-file li::after { animation: he08-erase 1s cubic-bezier(.6, 0, .3, 1) forwards; animation-delay: calc(var(--k, 0) * 380ms); }
+@keyframes he08-erase { 0% { opacity: 1; transform: scaleX(0); } 45% { opacity: 1; transform: scaleX(1); } 100% { opacity: 0; transform: scaleX(1); } }
+.he08-left { position: absolute; left: 1.1em; right: 1.1em; top: 50%; transform: translateY(-30%); text-align: center; font: 600 clamp(1.2rem, 1rem + 1vw, 1.9rem)/1.2 var(--serif); color: var(--accent-hot);
+  opacity: 0; transition: opacity 1s ease 2.2s; }
+.slide:has(.he08-gone.on) .he08-left { opacity: 1; }
+
+@media (min-width: 900px) and (min-aspect-ratio: 4/3) { .he08-wide { grid-template-columns: 1.3fr 1fr; } }
+</style>
+</head>
+<body>
+<main class="deck" id="deck">
+
+<!-- ======================= OPENING ======================= -->
+<section class="slide title">
+  <div class="inner">
+    <div class="emblem rise"></div>
+    <h1 class="rise" style="--d:1">Hebrews 8</h1>
+    <p class="sub rise" style="--d:3">A better covenant</p>
+    <p class="tag rise" style="--d:5">The tent in the desert was only a copy. Jesus serves in the real one, under a new covenant where God writes His law on the heart and remembers our sins no more.</p>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise" style="--d:1">Where we are in Hebrews</h2>
+    <p class="note rise" style="--d:2">Chapter 7 showed us the better Priest. Now the writer moves to where He serves and on what terms: a better tabernacle and a better covenant.</p>
+    <div class="he07-book" role="img" aria-label="Hebrews in six sections. 1:1 to 2:18, better than the angels. 3:1 to 4:13, better than Moses. 4:14 to 7:28, a better high priest. 8:1 to 10:18, a better covenant and sacrifice. 10:19 to 12:29, hold fast by faith. Chapter 13, last words. Chapter 8 is highlighted, at the start of the covenant section.">
+      <div class="he07-chs">
+        <span class="he07-ch" style="--n:14;--k:0">1</span><span class="he07-ch" style="--n:18;--k:1">2</span><span class="he07-ch" style="--n:19;--k:2">3</span><span class="he07-ch" style="--n:16;--k:3">4</span><span class="he07-ch" style="--n:14;--k:4">5</span><span class="he07-ch" style="--n:20;--k:5">6</span><span class="he07-ch" style="--n:28;--k:6">7</span><span class="he07-ch here" style="--n:13;--k:7">8</span><span class="he07-ch" style="--n:28;--k:8">9</span><span class="he07-ch" style="--n:39;--k:9">10</span><span class="he07-ch" style="--n:40;--k:10">11</span><span class="he07-ch" style="--n:29;--k:11">12</span><span class="he07-ch" style="--n:25;--k:12">13</span>
+      </div>
+      <div class="he07-parts">
+        <div class="he07-part he07-p1" style="--n:32;--k:0"><small>1:1–2:18</small><b>Better than the angels</b><q>so much better than the angels</q><cite>1:4</cite></div>
+        <div class="he07-part he07-p2" style="--n:32;--k:1"><small>3:1–4:13</small><b>Better than Moses</b><q>worthy of more glory than Moses</q><cite>3:3</cite></div>
+        <div class="he07-part he07-p3" style="--n:65;--k:2"><small>4:14–7:28</small><b>A better high priest</b><q>a priest for ever after the order of Melchisedec</q><cite>7:17</cite></div>
+        <div class="he07-part he07-p4 now" style="--n:59;--k:3"><small>8:1–10:18</small><b>A better covenant</b><q>the mediator of a better covenant</q><cite>8:6</cite></div>
+        <div class="he07-part he07-p5" style="--n:90;--k:4"><small>10:19–12:29</small><b>Hold fast, by faith</b><q>Let us hold fast the profession of our faith</q><cite>10:23</cite></div>
+        <div class="he07-part he07-p6" style="--n:25;--k:5"><small>13</small><b>Last words</b><q>I will never leave thee</q><cite>13:5</cite></div>
+      </div>
+    </div>
+    <p class="note step">Chapter 8 is short, and half of it is a quote: one of the longest Old Testament passages quoted anywhere in the New Testament, from Jeremiah 31. God promised this new covenant about 600 years before Jesus came.</p>
+  </div>
+</section>
+
+<section class="slide watch">
+  <div class="inner">
+    <h2 class="rise">Things to watch for</h2>
+    <p class="lede rise" style="--d:1">Keep these questions in the back of your mind as we read. We'll come back to every one of them at the end.</p>
+    <ol class="seeds">
+      <li class="step"><span class="topic">Seated</span><span class="seed-q">Where is our High Priest now, and why is He sitting down?</span></li>
+      <li class="step"><span class="topic">Shadow</span><span class="seed-q">Why does the writer call the earthly tabernacle a shadow?</span></li>
+      <li class="step"><span class="topic">Better</span><span class="seed-q">What makes the new covenant better than the old one?</span></li>
+      <li class="step"><span class="topic">Hearts</span><span class="seed-q">Where does God write His laws under the new covenant?</span></li>
+      <li class="step"><span class="topic">Know me</span><span class="seed-q">Who gets to know the Lord?</span></li>
+      <li class="step"><span class="topic">No more</span><span class="seed-q">What does God do with the sins He forgives?</span></li>
+    </ol>
+  </div>
+</section>
+
+<!-- ======================= PART ONE ======================= -->
+<section class="slide part">
+  <div class="inner">
+    <p class="part-n rise">Part one</p>
+    <h2 class="rise" style="--d:1">The real tabernacle</h2>
+    <p class="range rise" style="--d:2">Verses 1–5</p>
+    <div class="rule"></div>
+    <p class="hook rise" style="--d:4">Our High Priest is seated in heaven, serving in the place the tent in the desert was copied from.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="1-2" data-hl="this is the sum|We have such an high priest, who is set on the right hand of the throne|the true tabernacle, which the Lord pitched, and not man"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <div class="split">
+      <div class="stage">
+        <svg viewBox="0 0 480 300" role="img" aria-label="On the left, a priest standing beside an altar with smoke rising: every priest standeth daily. On the right, a throne with a figure seated on it, glowing: sat down on the right hand of God.">
+          <line class="he08-floor" x1="10" y1="240" x2="470" y2="240"/>
+          <rect class="he08-altar" x="34" y="176" width="74" height="64" rx="4"/>
+          <path class="he08-smoke" d="M60 168 q -8 -14 0 -26 q 8 -12 0 -26"/>
+          <path class="he08-smoke s2" d="M84 168 q 8 -14 0 -26 q -8 -12 0 -26"/>
+          <circle class="he08-fig" cx="152" cy="118" r="15"/>
+          <path class="he08-fig" d="M134 240 L138 146 Q152 136 166 146 L170 240 Z"/>
+          <text class="he08-cap" x="102" y="268" text-anchor="middle">the priest</text>
+          <text class="he08-cap soft" x="102" y="288" text-anchor="middle">“standeth daily”</text>
+          <path class="he08-throne" d="M300 240 V 96 Q 300 74 322 74 H 398 Q 420 74 420 96 V 240 H 400 V 190 H 320 V 240 Z"/>
+          <g class="he08-rays"><path d="M360 40 V 22 M318 54 L306 42 M402 54 L414 42 M290 88 H 272 M430 88 H 448"/></g>
+          <g class="he08-king"><circle cx="360" cy="112" r="16"/><path d="M336 190 L340 140 Q360 128 380 140 L384 172 L412 176 L412 190 Z"/></g>
+          <text class="he08-cap" x="360" y="268" text-anchor="middle">our High Priest</text>
+          <text class="he08-cap soft" x="360" y="288" text-anchor="middle">“sat down”</text>
+        </svg>
+      </div>
+      <div>
+        <h2 class="rise" style="--d:1">A priest who sits down</h2>
+        <p class="note rise" style="--d:2"><em>“This is the sum”</em>: the main point so far. Our High Priest is <em>“set on the right hand of the throne.”</em></p>
+        <blockquote class="quote step"><p>“And every priest standeth daily ministering and offering oftentimes the same sacrifices, which can never take away sins:”</p><cite>Hebrews 10:11</cite></blockquote>
+        <p class="note step he08-sit">There was no chair in the tabernacle: the work was never done. Jesus sat down, because His work for your sins is finished.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="slide verse" data-v="3-5" data-hl="somewhat also to offer|the example and shadow of heavenly things|according to the pattern shewed to thee in the mount"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <div class="split he08-wide">
+      <div class="stage">
+        <svg viewBox="0 0 560 360" role="img" aria-label="The tabernacle from above, drawn to scale: a courtyard a hundred cubits by fifty, with the gate on the east, the brasen altar and the laver, and the tent with the holy place and the most holy place behind the veil. Then the earthly plan fades to a dashed shadow, and a larger glowing outline above it is labelled the true tabernacle, which the Lord pitched.">
+          <rect class="he08-heaven" x="20" y="14" width="520" height="70" rx="14"/>
+          <text class="he08-heaven-t" x="280" y="44" text-anchor="middle">THE TRUE TABERNACLE</text>
+          <text class="he08-heaven-t" x="280" y="66" text-anchor="middle" style="font:italic 400 14px var(--serif)">“which the Lord pitched, and not man”</text>
+          <g class="he08-copy">
+            <rect class="he08-court" x="30" y="100" width="500" height="250"/>
+            <line class="he08-gate" x1="530" y1="175" x2="530" y2="275"/>
+            <rect class="he08-tent" x="105" y="200" width="150" height="50"/>
+            <rect class="he08-holiest" x="105" y="200" width="50" height="50"/>
+            <line class="he08-veil" x1="155" y1="198" x2="155" y2="252"/>
+            <rect class="he08-ark" x="120" y="216" width="20" height="18" rx="2"/>
+            <rect class="he08-item" x="200" y="205" width="16" height="10" rx="2"/>
+            <circle class="he08-lamp" cx="208" cy="242" r="6"/>
+            <rect class="he08-item" x="166" y="219" width="12" height="12" rx="1"/>
+            <circle class="he08-item" cx="330" cy="225" r="11"/>
+            <rect class="he08-item" x="395" y="208" width="34" height="34" rx="2"/>
+            <text class="he08-lb" x="130" y="192" text-anchor="middle">most holy</text>
+            <text class="he08-lb" x="214" y="192" text-anchor="middle">holy place</text>
+            <text class="he08-lb" x="128" y="268" text-anchor="middle">ark</text>
+            <text class="he08-lb" x="160" y="288" text-anchor="middle" style="fill:var(--wine)">the veil</text>
+            <text class="he08-lb" x="214" y="268" text-anchor="middle">lamp, table</text>
+            <text class="he08-lb" x="330" y="258" text-anchor="middle">laver</text>
+            <text class="he08-lb" x="412" y="262" text-anchor="middle">brasen altar</text>
+            <text class="he08-lb" x="512" y="230" text-anchor="end" style="fill:var(--accent-hot)">gate →</text>
+            <text class="he08-lb big" x="280" y="330" text-anchor="middle">THE COPY · “example and shadow”</text>
+            <text class="he08-lb" x="42" y="122">100 × 50 cubits: about 150 × 75 feet</text>
+          </g>
+        </svg>
+      </div>
+      <div>
+        <h2 class="rise" style="--d:1">The copy and the real</h2>
+        <p class="note rise" style="--d:2">On Mount Sinai, God showed Moses a pattern, and Moses built the tabernacle exactly to it.</p>
+        <blockquote class="quote rise" style="--d:3"><p>“And let them make me a sanctuary; that I may dwell among them.”</p><cite>Exodus 25:8</cite></blockquote>
+        <p class="note step he08-real">But the tent was a model of something real: God's own presence in heaven. The priests served in <em>“the example and shadow.”</em> Jesus serves in the original. Once the real thing is here, nobody goes back to hugging the shadow.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ======================= PART TWO ======================= -->
+<section class="slide part">
+  <div class="inner">
+    <p class="part-n rise">Part two</p>
+    <h2 class="rise" style="--d:1">A better covenant</h2>
+    <p class="range rise" style="--d:2">Verses 6–9</p>
+    <div class="rule"></div>
+    <p class="hook rise" style="--d:4">The old agreement broke down. God promised a new one, and this time He would carry it.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="6-7" data-hl="a more excellent ministry|the mediator of a better covenant|established upon better promises"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="6" data-hl="the mediator of a better covenant|better promises"></blockquote>
+    <h2 class="rise" style="--d:1">Better promises: count the “I will”s</h2>
+    <p class="note rise" style="--d:2">A <em>covenant</em> is a binding agreement. A <em>mediator</em> is the go-between who brings two sides together and makes it stick. Now look at who does the promising in God's new covenant, verses 8 to 12:</p>
+    <div class="tally rise" style="--d:3" aria-label="In verses 8 to 12, God says I will: once in verse 8, three times in verse 10, twice in verse 12. None in verses 9 and 11.">
+      <span class="hit" style="--k:0"><i>8</i>×1</span>
+      <span><i>9</i>&nbsp;</span>
+      <span class="hit" style="--k:1"><i>10</i>×3</span>
+      <span><i>11</i>&nbsp;</span>
+      <span class="hit" style="--k:2"><i>12</i>×2</span>
+    </div>
+    <p class="note step"><em>I will make… I will put… I will be… I will be merciful… will I remember no more.</em> Six times, and every one of them is God. You won't find a single <em>“ye shall”</em> holding it up.</p>
+    <p class="note step">That's what makes the promises better. They rest on God's word, not on yours.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="8-9" data-hl="finding fault with them|I will make a new covenant|I took them by the hand|because they continued not in my covenant"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="9" data-hl="I took them by the hand|because they continued not in my covenant"></blockquote>
+    <h2 class="rise" style="--d:1">The fault was with us</h2>
+    <p class="note rise" style="--d:2">God doesn't blame His law. He says <em>“finding fault with them.”</em> At Sinai, Israel answered with a confident promise:</p>
+    <blockquote class="quote step"><p>“And all the people answered together, and said, All that the LORD hath spoken we will do. And Moses returned the words of the people unto the LORD.”</p><cite>Exodus 19:8</cite></blockquote>
+    <p class="note step">Before long they were dancing round a golden calf. <em>“They continued not in my covenant.”</em> And that was after God had led them out of Egypt <em>“by the hand”</em>, like a father with his boy.</p>
+    <p class="note step">You know this story. <em>“I'll never do it again.”</em> <em>“This time I mean it.”</em> The old covenant ran on our promises, and our promises break. The new one runs on God's.</p>
+  </div>
+</section>
+
+<!-- ======================= PART THREE ======================= -->
+<section class="slide part">
+  <div class="inner">
+    <p class="part-n rise">Part three</p>
+    <h2 class="rise" style="--d:1">Written on the heart</h2>
+    <p class="range rise" style="--d:2">Verses 10–13</p>
+    <div class="rule"></div>
+    <p class="hook rise" style="--d:4">What God promised to do inside a man, and the sins He promised to stop bringing up.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="10-11" data-hl="I will put my laws into their mind, and write them in their hearts|I will be to them a God|all shall know me, from the least to the greatest"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <div class="split">
+      <div class="stage">
+        <svg viewBox="0 0 420 300" role="img" aria-label="Two stone tablets with lines cut in them on the left. The lines fade, and the same lines are written inside a heart on the right.">
+          <path class="he08-stone" d="M20 250 V 70 Q20 40 50 40 Q80 40 80 70 V 250 Z"/>
+          <path class="he08-stone" d="M88 250 V 70 Q88 40 118 40 Q148 40 148 70 V 250 Z"/>
+          <g class="he08-cut"><path d="M32 90 H68 M32 120 H68 M32 150 H68 M32 180 H68 M32 210 H68 M100 90 H136 M100 120 H136 M100 150 H136 M100 180 H136 M100 210 H136"/></g>
+          <path class="he08-flow" d="M156 140 C 190 120, 220 120, 246 140"/>
+          <path class="he08-heart" d="M320 262 C 262 218, 226 182, 226 136 C 226 104, 250 82, 278 82 C 298 82, 312 94, 320 110 C 328 94, 342 82, 362 82 C 390 82, 414 104, 414 136 C 414 182, 378 218, 320 262 Z"/>
+          <path class="he08-ink" pathLength="1" style="--k:0" d="M262 132 H 378"/>
+          <path class="he08-ink" pathLength="1" style="--k:1" d="M258 160 H 382"/>
+          <path class="he08-ink" pathLength="1" style="--k:2" d="M272 188 H 368"/>
+          <path class="he08-ink" pathLength="1" style="--k:3" d="M292 216 H 348"/>
+          <text class="he08-tl" x="84" y="278" text-anchor="middle">cut in stone</text>
+          <text class="he08-tl" x="320" y="290" text-anchor="middle">written in the heart</text>
+        </svg>
+      </div>
+      <div>
+        <h2 class="rise" style="--d:1">From stone to heart</h2>
+        <p class="note rise" style="--d:2">The old law was cut into stone tablets: outside a man, telling him what to do, with no power to make him want to.</p>
+        <p class="note step he08-write">The new covenant: <em>“I will put my laws into their mind, and write them in their hearts.”</em> God changes what a man wants. That's the Holy Spirit, living in every believer from the day he's saved.</p>
+        <blockquote class="quote step"><p>“A new heart also will I give you, and a new spirit will I put within you: and I will take away the stony heart out of your flesh, and I will give you an heart of flesh.”</p><cite>Ezekiel 36:26</cite></blockquote>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="11" data-hl="for all shall know me, from the least to the greatest"></blockquote>
+    <h2 class="rise" style="--d:1">From the least to the greatest</h2>
+    <div class="he08-all" role="img" aria-label="A row of figures from small to tall. One by one a light comes on above every one of them: they all know the Lord.">
+      <i style="--h:34%;--k:0"></i><i style="--h:42%;--k:1"></i><i style="--h:50%;--k:2"></i><i style="--h:58%;--k:3"></i><i style="--h:66%;--k:4"></i><i style="--h:74%;--k:5"></i><i style="--h:82%;--k:6"></i><i style="--h:90%;--k:7"></i>
+    </div>
+    <div class="he08-ends"><span>the least</span><span>the greatest</span></div>
+    <p class="note step he08-know">Under the old covenant, a man depended on the priest to stand between him and God. Under the new one, every believer knows the Lord himself. Not just about Him: <em>knows</em> Him.</p>
+    <p class="note step">The man fresh out of prison and the preacher with forty years behind him stand on the same ground. Nobody in this room is too far down the line to know God personally.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="12" data-hl="I will be merciful to their unrighteousness|their sins and their iniquities will I remember no more"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <div class="split">
+      <div class="stage">
+        <div class="he08-file rise" style="--d:2" role="img" aria-label="A record headed: what I have done. Its lines are wiped away one by one, until only the words remain: remember no more.">
+          <h3>What I have done</h3>
+          <ul>
+            <li style="--k:0">the lies I told to cover it</li>
+            <li style="--k:1">the money I took</li>
+            <li style="--k:2">the people I let down</li>
+            <li style="--k:3">the years my kids missed me</li>
+            <li style="--k:4">the night I can't forget</li>
+            <li style="--k:5">the time I fell after I was saved</li>
+          </ul>
+          <p class="he08-left">“remember no more”</p>
+        </div>
+      </div>
+      <div>
+        <h2 class="rise" style="--d:1">God chooses not to remember</h2>
+        <p class="note rise" style="--d:3">This is the last promise of the new covenant, and the one that holds the rest up: <em>“For I will be merciful.”</em></p>
+        <p class="note step he08-gone">God doesn't lose His memory. He knows everything. He <em>chooses</em> not to bring your sins up again: not to hold them against you, not to keep them on file, not to throw them back in your face.</p>
+        <blockquote class="quote step"><p>“I, even I, am he that blotteth out thy transgressions for mine own sake, and will not remember thy sins.”</p><cite>Isaiah 43:25</cite></blockquote>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise" style="--d:1">For the man who can't forget</h2>
+    <p class="note rise" style="--d:2">Some of you replay it every night. You may remember for the rest of your life, and some things you did still have consequences. But your memory isn't God's record.</p>
+    <div class="columns">
+      <div class="col law step">
+        <p class="who">Your memory says</p>
+        <h3>“You'll never get past this.”</h3>
+        <p>It plays the tape again. It says you're still that man, and that God must be keeping score.</p>
+      </div>
+      <div class="col grace step">
+        <p class="who">God's word says</p>
+        <h3>“Will I remember no more.”</h3>
+        <p>If God has chosen not to bring it up, you don't have to keep bringing it to Him. Confess it once, and believe Him.</p>
+      </div>
+    </div>
+    <blockquote class="quote step"><p>“As far as the east is from the west, so far hath he removed our transgressions from us.”</p><cite>Psalm 103:12</cite></blockquote>
+    <blockquote class="quote step"><p>“…forgetting those things which are behind, and reaching forth unto those things which are before,”</p><cite>Philippians 3:13</cite></blockquote>
+  </div>
+</section>
+
+<section class="slide verse" data-v="13" data-hl="A new covenant|ready to vanish away"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="13" data-hl="ready to vanish away"></blockquote>
+    <h2 class="rise" style="--d:1">Ready to vanish away</h2>
+    <ol class="timeline" aria-label="About 1440 BC, Moses builds the tabernacle at Sinai. About 600 BC, Jeremiah promises a new covenant. About AD 30 to 33, Jesus: this cup is the new testament in my blood. About AD 64 to 68, Hebrews: ready to vanish away. AD 70, Rome destroys the temple.">
+      <li style="--k:0"><b>Moses</b><span>the tabernacle at Sinai</span><small>about 1440 BC</small></li>
+      <li style="--k:1"><b>Jeremiah</b><span>promises a new covenant</span><small>about 600 BC</small></li>
+      <li class="lit" style="--k:2"><b>Jesus</b><span>“the new testament in my blood”</span><small>about AD 30–33</small></li>
+      <li style="--k:3"><b>Hebrews</b><span>“ready to vanish away”</span><small>about AD 64–68</small></li>
+      <li class="wait" style="--k:4"><b>The temple falls</b><span>Rome destroys Jerusalem</span><small>AD 70</small></li>
+    </ol>
+    <p class="note step">The moment God said <em>“new”</em> through Jeremiah, the old was on its way out. When Hebrews was written, priests were still offering sacrifices in the temple. A few years later, Rome burned it, and the sacrifices stopped. They have never started again.</p>
+    <blockquote class="quote step"><p>“Likewise also the cup after supper, saying, This cup is the new testament in my blood, which is shed for you.”</p><cite>Luke 22:20</cite></blockquote>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise" style="--d:1">What to do with this today</h2>
+    <ol class="signs rise" style="--d:2">
+      <li><b>Sin</b><em>“They continued not.”</em> Our promises break. Be honest that yours have too.</li>
+      <li><b>Regret</b>God has chosen to remember it no more. Stop replaying what He has stopped bringing up.</li>
+      <li class="now"><b>Grace</b>Six times, <em>“I will.”</em> The new covenant rests on God's promises, not yours.</li>
+      <li><b>Hope</b>He writes His law on your heart. You're being changed from the inside.</li>
+    </ol>
+    <p class="note step"><strong>For the real world:</strong> the next time the old memory plays today, don't argue with it on your own. Say Hebrews 8:12 out loud: <em>“Their sins and their iniquities will I remember no more.”</em> Then get on with the work in front of you.</p>
+  </div>
+</section>
+
+<!-- ======================= CLOSING ======================= -->
+<section class="slide remember">
+  <div class="inner">
+    <h2 class="rise">Points to remember</h2>
+    <ol class="seeds">
+      <li class="step"><span class="topic">Seated</span><span class="seed-q">“Set on the right hand of the throne” <cite>8:1</cite></span><span class="take">Our High Priest is in heaven, seated, because His sacrifice is finished.</span></li>
+      <li class="step"><span class="topic">Shadow</span><span class="seed-q">“The example and shadow of heavenly things” <cite>8:5</cite></span><span class="take">The tabernacle was a copy of the real thing in heaven. Jesus serves in the original.</span></li>
+      <li class="step"><span class="topic">Better</span><span class="seed-q">“Established upon better promises” <cite>8:6</cite></span><span class="take">The old covenant hung on our promises, and we broke them. The new rests on God's “I will.”</span></li>
+      <li class="step"><span class="topic">Hearts</span><span class="seed-q">“Write them in their hearts” <cite>8:10</cite></span><span class="take">God puts His law inside a man and changes what he wants.</span></li>
+      <li class="step"><span class="topic">Know me</span><span class="seed-q">“All shall know me, from the least to the greatest” <cite>8:11</cite></span><span class="take">Every believer knows God personally. Nobody is too far down the line.</span></li>
+      <li class="step"><span class="topic">No more</span><span class="seed-q">“Their sins and their iniquities will I remember no more” <cite>8:12</cite></span><span class="take">God chooses not to bring forgiven sins up again. Ever.</span></li>
+    </ol>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 1 of 6</p>
+      <span class="topic">Seated</span>
+      <h2>Where is our High Priest now, and why is He sitting down?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="1"></blockquote>
+      <blockquote class="quote step"><p>“But this man, after he had offered one sacrifice for sins for ever, sat down on the right hand of God;”</p><cite>Hebrews 10:12</cite></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>At the right hand of God's throne in heaven. He is sitting because His sacrifice is finished. The old priests stood every day because their work was never done. His was done once.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 2 of 6</p>
+      <span class="topic">Shadow</span>
+      <h2>Why does the writer call the earthly tabernacle a shadow?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="2"></blockquote>
+      <blockquote class="quote step" data-q="5"></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>Because it was built from a pattern God showed Moses: a copy of the real place where God is. A shadow points to the real thing. Jesus serves in the true tabernacle, which the Lord pitched, not man.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 3 of 6</p>
+      <span class="topic">Better</span>
+      <h2>What makes the new covenant better than the old one?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="6"></blockquote>
+      <blockquote class="quote step" data-q="9" data-hl="because they continued not in my covenant"></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>It has a better Mediator, Jesus, and better promises. The old covenant broke down because the people didn't keep it. In the new one, God says “I will” again and again: He does the work and He keeps the promises.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 4 of 6</p>
+      <span class="topic">Hearts</span>
+      <h2>Where does God write His laws under the new covenant?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="10"></blockquote>
+      <blockquote class="quote step"><p>“A new heart also will I give you, and a new spirit will I put within you: and I will take away the stony heart out of your flesh, and I will give you an heart of flesh.”</p><cite>Ezekiel 36:26</cite></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>In the mind and the heart. Not on stone outside a man, but inside him. God, by His Spirit, changes what a believer wants, so he begins to love what God loves.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 5 of 6</p>
+      <span class="topic">Know me</span>
+      <h2>Who gets to know the Lord?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="11"></blockquote>
+      <blockquote class="quote step" data-q="10" data-hl="I will be to them a God, and they shall be to me a people"></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>All of God's people, from the least to the greatest. Every believer knows God personally, not through a priest standing in between. The newest believer in the room knows Him as truly as the oldest.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 6 of 6</p>
+      <span class="topic">No more</span>
+      <h2>What does God do with the sins He forgives?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="12"></blockquote>
+      <blockquote class="quote step"><p>“I, even I, am he that blotteth out thy transgressions for mine own sake, and will not remember thy sins.”</p><cite>Isaiah 43:25</cite></blockquote>
+      <blockquote class="quote step"><p>“As far as the east is from the west, so far hath he removed our transgressions from us.”</p><cite>Psalm 103:12</cite></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>He chooses to remember them no more. He blots them out and removes them as far as the east is from the west. He will never hold them against a believer again.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide prayer">
+  <div class="inner">
+    <div class="emblem rise"></div>
+    <h2 class="rise" style="--d:1">Prayer requests</h2>
+    <p class="ask-line rise" style="--d:2">What can we pray about for you today?</p>
+    <blockquote class="quote rise" style="--d:4" data-q="12"></blockquote>
+  </div>
+</section>
+
+</main>
+
+<script>
+// King James Version, Hebrews chapter 8
+const V = {
+  1: "Now of the things which we have spoken this is the sum: We have such an high priest, who is set on the right hand of the throne of the Majesty in the heavens;",
+  2: "A minister of the sanctuary, and of the true tabernacle, which the Lord pitched, and not man.",
+  3: "For every high priest is ordained to offer gifts and sacrifices: wherefore it is of necessity that this man have somewhat also to offer.",
+  4: "For if he were on earth, he should not be a priest, seeing that there are priests that offer gifts according to the law:",
+  5: "Who serve unto the example and shadow of heavenly things, as Moses was admonished of God when he was about to make the tabernacle: for, See, saith he, that thou make all things according to the pattern shewed to thee in the mount.",
+  6: "But now hath he obtained a more excellent ministry, by how much also he is the mediator of a better covenant, which was established upon better promises.",
+  7: "For if that first covenant had been faultless, then should no place have been sought for the second.",
+  8: "For finding fault with them, he saith, Behold, the days come, saith the Lord, when I will make a new covenant with the house of Israel and with the house of Judah:",
+  9: "Not according to the covenant that I made with their fathers in the day when I took them by the hand to lead them out of the land of Egypt; because they continued not in my covenant, and I regarded them not, saith the Lord.",
+  10: "For this is the covenant that I will make with the house of Israel after those days, saith the Lord; I will put my laws into their mind, and write them in their hearts: and I will be to them a God, and they shall be to me a people:",
+  11: "And they shall not teach every man his neighbour, and every man his brother, saying, Know the Lord: for all shall know me, from the least to the greatest.",
+  12: "For I will be merciful to their unrighteousness, and their sins and their iniquities will I remember no more.",
+  13: "In that he saith, A new covenant, he hath made the first old. Now that which decayeth and waxeth old is ready to vanish away.",
+};
+const BOOK = "Hebrews 8";
+</script>
+<script src="../assets/deck.js"></script>
+</body>
+</html>

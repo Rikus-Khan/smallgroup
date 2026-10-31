@@ -14965,5 +14965,98 @@ window.STUDIES = [
       },
       "big": "The warning is real, but so is the comfort: a man truly saved is kept, because Christ died once for all. God's promise and oath cannot fail, and our hope is anchored in heaven, where Jesus has gone for us."
     }
+  },
+  {
+    "id": "hebrews-07",
+    "type": "chapter",
+    "book": "Hebrews",
+    "ch": 7,
+    "date": "2026-10-31",
+    "title": "Hebrews 7",
+    "sub": "A priest for ever",
+    "about": "A mysterious king-priest who met Abraham points to Jesus: the High Priest who never dies, saves to the uttermost, and is praying for you right now.",
+    "tags": [
+      "Melchisedec",
+      "Jesus our High Priest",
+      "Intercession",
+      "Assurance",
+      "Once for all",
+      "God's oath"
+    ],
+    "url": "studies/hebrews-07.html",
+    "overview": {
+      "where": "A letter to Jewish believers tempted to go back to the temple; it looks back to Salem (Jerusalem) in Genesis 14",
+      "when": "Written about AD 64 to 68; Melchisedec met Abraham about 2000 BC",
+      "people": [
+        "melchisedec",
+        "abraham",
+        "levi",
+        "aaron",
+        "moses",
+        "jesus"
+      ],
+      "places": [
+        "salem",
+        "judah"
+      ],
+      "story": [
+        "Melchisedec, king of Salem and priest of the most high God, met Abraham coming back from the slaughter of the kings, blessed him, and received a tenth of the spoils. His name means King of righteousness, and Salem means peace. Scripture gives him no father, mother, birth or death, so he is made like unto the Son of God (1–3).",
+        "He was greater than Abraham, since the less is blessed of the better. Even Levi, still in the loins of Abraham, paid tithes to him through his forefather (4–10).",
+        "If the Levitical priesthood could have made men perfect, God would not have promised another priest after the order of Melchisedec. Jesus came from Judah, not Levi, and is priest by the power of an endless life. The law made nothing perfect, but a better hope brings us near to God (11–19).",
+        "God swore an oath that His Son is a priest for ever, so Jesus is the surety of a better testament (20–22).",
+        "The old priests died and were replaced, but Jesus continueth ever. He is able to save to the uttermost all who come to God by Him, because He ever liveth to make intercession for them (23–25).",
+        "He is holy and undefiled, and needs no daily sacrifice. He offered Himself once, and the Son is consecrated for evermore (26–28)."
+      ],
+      "key": {
+        "ref": "Hebrews 7:25",
+        "text": "Wherefore he is able also to save them to the uttermost that come unto God by him, seeing he ever liveth to make intercession for them."
+      },
+      "big": "Jesus is the Priest who never dies. He saves all the way, He is praying for His people right now, and because He lives for ever, they are kept for ever."
+    }
+  },
+  {
+    "id": "hebrews-08",
+    "type": "chapter",
+    "book": "Hebrews",
+    "ch": 8,
+    "date": "2026-10-31",
+    "title": "Hebrews 8",
+    "sub": "A better covenant",
+    "about": "The tent in the desert was only a copy. Jesus serves in the real one, under a new covenant where God writes His law on the heart and remembers our sins no more.",
+    "tags": [
+      "The new covenant",
+      "Jesus our High Priest",
+      "The tabernacle",
+      "Forgiveness",
+      "A new heart",
+      "Regret"
+    ],
+    "url": "studies/hebrews-08.html",
+    "overview": {
+      "where": "A letter to Jewish believers; it looks back to the tabernacle at Mount Sinai and the promise in Jeremiah 31",
+      "when": "Written about AD 64 to 68, a few years before the temple fell in AD 70",
+      "people": [
+        "jesus",
+        "moses"
+      ],
+      "places": [
+        "true-tabernacle",
+        "israel",
+        "judah",
+        "egypt"
+      ],
+      "story": [
+        "The sum of it all: we have a High Priest seated at the right hand of the throne of the Majesty in the heavens, serving in the true tabernacle, which the Lord pitched, and not man (1–2).",
+        "The earthly priests served in the example and shadow of heavenly things, a tabernacle built to the pattern God showed Moses in the mount (3–5).",
+        "Jesus has a more excellent ministry, as Mediator of a better covenant built on better promises. The first covenant failed because the people did not continue in it (6–9).",
+        "God promised a new covenant: His laws put into their mind and written in their hearts, all knowing Him from the least to the greatest, and their sins and iniquities remembered no more (10–12).",
+        "By calling it new, God made the first old, and what is old is ready to vanish away (13)."
+      ],
+      "key": {
+        "ref": "Hebrews 8:12",
+        "text": "For I will be merciful to their unrighteousness, and their sins and their iniquities will I remember no more."
+      },
+      "big": "The new covenant rests on God's \"I will,\" not on our promises. He writes His law on the heart, and He chooses to remember forgiven sins no more."
+    }
   }
 ];

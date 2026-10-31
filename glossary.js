@@ -534,7 +534,10 @@ window.GLOSSARY = [
     [ 9 ] ],
    [
     "Hebrews", 6,
-    [ 20 ] ] ]
+    [ 20 ] ],
+   [
+    "Hebrews", 7,
+    [ 22 ] ] ]
  },
  {
   "id": "john-the-baptist",
@@ -1059,7 +1062,13 @@ window.GLOSSARY = [
     [ 7, 13, 15 ] ],
    [
     "2 Timothy", 3,
-    [ 8 ] ] ]
+    [ 8 ] ],
+   [
+    "Hebrews", 7,
+    [ 14 ] ],
+   [
+    "Hebrews", 8,
+    [ 5 ] ] ]
  },
  {
   "id": "elijah",
@@ -3879,7 +3888,10 @@ window.GLOSSARY = [
     [ 12 ] ],
    [
     "Philippians", 3,
-    [ 5 ] ] ]
+    [ 5 ] ],
+   [
+    "Hebrews", 8,
+    [ 8, 10 ] ] ]
  },
  {
   "id": "heaven",
@@ -4341,7 +4353,13 @@ window.GLOSSARY = [
     [ 2, 3 ] ],
    [
     "Matthew", 2,
-    [ 6 ] ] ]
+    [ 6 ] ],
+   [
+    "Hebrews", 7,
+    [ 14 ] ],
+   [
+    "Hebrews", 8,
+    [ 8 ] ] ]
  },
  {
   "id": "city-gate",
@@ -5565,7 +5583,13 @@ window.GLOSSARY = [
     [ 7, 8, 9 ] ],
    [
     "Titus", 3,
-    [ 9 ] ] ]
+    [ 9 ] ],
+   [
+    "Hebrews", 7,
+    [ 5, 11, 12, 16, 19, 28 ] ],
+   [
+    "Hebrews", 8,
+    [ 4 ] ] ]
  },
  {
   "id": "only-begotten",
@@ -6093,7 +6117,10 @@ window.GLOSSARY = [
     [ 13 ] ],
    [
     "Hebrews", 6,
-    [ 6 ] ] ]
+    [ 6 ] ],
+   [
+    "Hebrews", 7,
+    [ 3 ] ] ]
  },
  {
   "id": "son-of-man",
@@ -8463,7 +8490,10 @@ window.GLOSSARY = [
     [ 8, 9 ] ],
    [
     "Hebrews", 5,
-    [ 13 ] ] ]
+    [ 13 ] ],
+   [
+    "Hebrews", 7,
+    [ 2 ] ] ]
  },
  {
   "id": "wicked",
@@ -10647,7 +10677,10 @@ window.GLOSSARY = [
     [ 13 ] ],
    [
     "Acts", 12,
-    [ 11 ] ] ]
+    [ 11 ] ],
+   [
+    "Hebrews", 7,
+    [ 22 ] ] ]
  },
  {
   "id": "talebearer",
@@ -13662,7 +13695,10 @@ window.GLOSSARY = [
     [ 16 ] ],
    [
     "Hebrews", 6,
-    [ 13 ] ] ]
+    [ 13 ] ],
+   [
+    "Hebrews", 7,
+    [ 1, 2, 4, 5, 6, 9 ] ] ]
  },
  {
   "id": "samaritans",
@@ -15201,7 +15237,10 @@ window.GLOSSARY = [
     [ 2 ] ],
    [
     "2 Thessalonians", 3,
-    [ 16 ] ] ]
+    [ 16 ] ],
+   [
+    "Hebrews", 7,
+    [ 2 ] ] ]
  },
  {
   "id": "remit",
@@ -15564,7 +15603,10 @@ window.GLOSSARY = [
     [ 15 ] ],
    [
     "Hebrews", 6,
-    [ 10, 11, 17 ] ] ]
+    [ 10, 11, 17 ] ],
+   [
+    "Hebrews", 8,
+    [ 5 ] ] ]
  },
  {
   "id": "fishers-coat",
@@ -15807,7 +15849,10 @@ window.GLOSSARY = [
     [ 6 ] ],
    [
     "Hebrews", 2,
-    [ 6 ] ] ]
+    [ 6 ] ],
+   [
+    "Hebrews", 7,
+    [ 17 ] ] ]
  },
  {
   "id": "lazarus",
@@ -16107,7 +16152,13 @@ window.GLOSSARY = [
     [ 1, 5, 10 ] ],
    [
     "Hebrews", 6,
-    [ 20 ] ] ]
+    [ 20 ] ],
+   [
+    "Hebrews", 7,
+    [ 26 ] ],
+   [
+    "Hebrews", 8,
+    [ 1, 3 ] ] ]
  },
  {
   "id": "expedient",
@@ -16902,6 +16953,9 @@ window.GLOSSARY = [
     [ 6 ] ],
    [
     "1 Timothy", 1,
+    [ 3 ] ],
+   [
+    "Hebrews", 7,
     [ 3 ] ] ]
  },
  {
@@ -17811,7 +17865,13 @@ window.GLOSSARY = [
     [ 7 ] ],
    [
     "Acts", 19,
-    [ 14 ] ] ]
+    [ 14 ] ],
+   [
+    "Hebrews", 7,
+    [ 21, 23, 27, 28 ] ],
+   [
+    "Hebrews", 8,
+    [ 4 ] ] ]
  },
  {
   "id": "elders",
@@ -18678,7 +18738,10 @@ window.GLOSSARY = [
     [ 9, 10, 11, 12, 15, 17, 34, 36, 39, 40 ] ],
    [
     "Acts", 13,
-    [ 17 ] ] ]
+    [ 17 ] ],
+   [
+    "Hebrews", 8,
+    [ 9 ] ] ]
  },
  {
   "id": "edom",
@@ -20199,7 +20262,10 @@ window.GLOSSARY = [
     [ 27 ] ],
    [
     "Galatians", 3,
-    [ 15, 17 ] ] ]
+    [ 15, 17 ] ],
+   [
+    "Hebrews", 8,
+    [ 6, 7, 8, 9, 10, 13 ] ] ]
  },
  {
   "id": "oven",
@@ -21387,7 +21453,10 @@ window.GLOSSARY = [
     [ 42 ] ],
    [
     "Luke", 18,
-    [ 12 ] ] ]
+    [ 12 ] ],
+   [
+    "Hebrews", 7,
+    [ 5, 6, 8, 9 ] ] ]
  },
  {
   "id": "leaven",
@@ -22560,7 +22629,10 @@ window.GLOSSARY = [
     [ 40 ] ],
    [
     "Hebrews", 5,
-    [ 4 ] ] ]
+    [ 4 ] ],
+   [
+    "Hebrews", 7,
+    [ 11 ] ] ]
  },
  {
   "id": "miriam",
@@ -24573,7 +24645,10 @@ window.GLOSSARY = [
     [ 4, 8 ] ],
    [
     "Malachi", 3,
-    [ 3 ] ] ]
+    [ 3 ] ],
+   [
+    "Hebrews", 7,
+    [ 5, 9, 11 ] ] ]
  },
  {
   "id": "shimei",
@@ -28527,7 +28602,10 @@ window.GLOSSARY = [
     [ 13 ] ],
    [
     "1 Corinthians", 10,
-    [ 18 ] ] ]
+    [ 18 ] ],
+   [
+    "Hebrews", 7,
+    [ 13 ] ] ]
  },
  {
   "id": "adversary",
@@ -28683,7 +28761,10 @@ window.GLOSSARY = [
     [ 21 ] ],
    [
     "Hebrews", 6,
-    [ 13, 16, 17 ] ] ]
+    [ 13, 16, 17 ] ],
+   [
+    "Hebrews", 7,
+    [ 20, 21, 28 ] ] ]
  },
  {
   "id": "eye-for-an-eye",
@@ -28797,7 +28878,10 @@ window.GLOSSARY = [
     [ 9 ] ],
    [
     "Hebrews", 6,
-    [ 1 ] ] ]
+    [ 1 ] ],
+   [
+    "Hebrews", 7,
+    [ 19 ] ] ]
  },
  {
   "id": "begat",
@@ -30078,7 +30162,10 @@ window.GLOSSARY = [
     [ 7 ] ],
    [
     "Hebrews", 5,
-    [ 1 ] ] ]
+    [ 1 ] ],
+   [
+    "Hebrews", 8,
+    [ 3 ] ] ]
  },
  {
   "id": "surnamed",
@@ -32871,7 +32958,10 @@ window.GLOSSARY = [
     [ 7, 14 ] ],
    [
     "Hebrews", 6,
-    [ 10 ] ] ]
+    [ 10 ] ],
+   [
+    "Hebrews", 8,
+    [ 2 ] ] ]
  },
  {
   "id": "joanna",
@@ -33450,7 +33540,10 @@ window.GLOSSARY = [
     [ 14 ] ],
    [
     "Ephesians", 4,
-    [ 25 ] ] ]
+    [ 25 ] ],
+   [
+    "Hebrews", 8,
+    [ 11 ] ] ]
  },
  {
   "id": "oil-and-wine",
@@ -37455,7 +37548,10 @@ window.GLOSSARY = [
     [ 29 ] ],
    [
     "Acts", 7,
-    [ 8, 9 ] ] ]
+    [ 8, 9 ] ],
+   [
+    "Hebrews", 7,
+    [ 4 ] ] ]
  },
  {
   "id": "fruit-of-his-loins",
@@ -37734,7 +37830,10 @@ window.GLOSSARY = [
     [ 7 ] ],
    [
     "Hebrews", 1,
-    [ 9 ] ] ]
+    [ 9 ] ],
+   [
+    "Hebrews", 8,
+    [ 12 ] ] ]
  },
  {
   "id": "barnabas",
@@ -39939,7 +40038,10 @@ window.GLOSSARY = [
     [ 43, 44, 46 ] ],
    [
     "2 Corinthians", 5,
-    [ 1, 4 ] ] ]
+    [ 1, 4 ] ],
+   [
+    "Hebrews", 8,
+    [ 2, 5 ] ] ]
  },
  {
   "id": "stiffnecked",
@@ -42282,7 +42384,10 @@ window.GLOSSARY = [
     [ 7 ] ],
    [
     "Hebrews", 6,
-    [ 11, 18, 19 ] ] ]
+    [ 11, 18, 19 ] ],
+   [
+    "Hebrews", 7,
+    [ 19 ] ] ]
  },
  {
   "id": "experience",
@@ -42393,7 +42498,10 @@ window.GLOSSARY = [
   "refs": [
    [
     "Romans", 5,
-    [ 14 ] ] ]
+    [ 14 ] ],
+   [
+    "Hebrews", 7,
+    [ 15 ] ] ]
  },
  {
   "id": "figure-of-him-to-come",
@@ -44241,7 +44349,10 @@ window.GLOSSARY = [
   "refs": [
    [
     "Romans", 8,
-    [ 26, 27, 34 ] ] ]
+    [ 26, 27, 34 ] ],
+   [
+    "Hebrews", 7,
+    [ 25 ] ] ]
  },
  {
   "id": "the-called",
@@ -47697,7 +47808,10 @@ window.GLOSSARY = [
   "refs": [
    [
     "Galatians", 3,
-    [ 15, 17 ] ] ]
+    [ 15, 17 ] ],
+   [
+    "Hebrews", 7,
+    [ 18 ] ] ]
  },
  {
   "id": "seed-of-abraham",
@@ -47721,7 +47835,10 @@ window.GLOSSARY = [
     [ 19, 20 ] ],
    [
     "1 Timothy", 2,
-    [ 5 ] ] ]
+    [ 5 ] ],
+   [
+    "Hebrews", 8,
+    [ 6 ] ] ]
  },
  {
   "id": "schoolmaster",
@@ -51726,7 +51843,10 @@ window.GLOSSARY = [
   "refs": [
    [
     "Hebrews", 1,
-    [ 3, 13 ] ] ]
+    [ 3, 13 ] ],
+   [
+    "Hebrews", 8,
+    [ 1 ] ] ]
  },
  {
   "id": "firstbegotten",
@@ -51933,7 +52053,10 @@ window.GLOSSARY = [
     [ 6, 10 ] ],
    [
     "Hebrews", 6,
-    [ 20 ] ] ]
+    [ 20 ] ],
+   [
+    "Hebrews", 7,
+    [ 1, 10, 11, 15, 17, 21 ] ] ]
  },
  {
   "id": "out-of-the-way",
@@ -52096,5 +52219,95 @@ window.GLOSSARY = [
    [
     "Hebrews", 6,
     [ 20 ] ] ]
+ },
+ {
+  "id": "salem",
+  "kind": "place",
+  "name": "Salem (the old name of Jerusalem; it means “peace”)",
+  "refs": [
+   [
+    "Hebrews", 7,
+    [ 1, 2 ] ] ]
+ },
+ {
+  "id": "carnal-commandment",
+  "kind": "term",
+  "name": "A carnal commandment (a rule about the body: priesthood by birth into Levi)",
+  "refs": [
+   [
+    "Hebrews", 7,
+    [ 16 ] ] ]
+ },
+ {
+  "id": "uttermost",
+  "kind": "term",
+  "name": "To the uttermost (completely, all the way, for ever)",
+  "refs": [
+   [
+    "Hebrews", 7,
+    [ 25 ] ] ]
+ },
+ {
+  "id": "in-the-loins",
+  "kind": "term",
+  "name": "In the loins (not yet born, but already there in his forefather)",
+  "refs": [
+   [
+    "Hebrews", 7,
+    [ 5, 10 ] ] ]
+ },
+ {
+  "id": "majesty-in-the-heavens",
+  "kind": "term",
+  "name": "The Majesty in the heavens (God Himself, on His throne)",
+  "refs": [
+   [
+    "Hebrews", 8,
+    [ 1 ] ] ]
+ },
+ {
+  "id": "true-tabernacle",
+  "kind": "place",
+  "name": "The true tabernacle, the sanctuary (God's own dwelling in heaven, where Christ serves)",
+  "refs": [
+   [
+    "Hebrews", 8,
+    [ 2 ] ] ]
+ },
+ {
+  "id": "example-and-shadow",
+  "kind": "term",
+  "name": "The example and shadow (the earthly tabernacle, a copy of the real one in heaven)",
+  "refs": [
+   [
+    "Hebrews", 8,
+    [ 5 ] ] ]
+ },
+ {
+  "id": "pattern-in-the-mount",
+  "kind": "term",
+  "name": "The pattern shewed in the mount (the plan God showed Moses on Sinai)",
+  "refs": [
+   [
+    "Hebrews", 8,
+    [ 5 ] ] ]
+ },
+ {
+  "id": "new-covenant",
+  "kind": "term",
+  "name": "The new covenant (God's promise in Jeremiah 31: His law written on the heart, sins remembered no more)",
+  "refs": [
+   [
+    "Hebrews", 8,
+    [ 8, 13 ] ] ]
+ },
+ {
+  "id": "remember-no-more",
+  "kind": "term",
+  "name": "Remember no more (God choosing never again to hold forgiven sins against us)",
+  "refs": [
+   [
+    "Hebrews", 8,
+    [ 12 ] ] ]
  }
 ];
