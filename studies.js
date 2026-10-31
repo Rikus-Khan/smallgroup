@@ -13037,5 +13037,98 @@ window.STUDIES = [
       },
       "big": "In Christ you are no more a servant but a son and an heir, so don't walk back into the chains."
     }
+  },
+  {
+    "id": "philippians-03",
+    "type": "chapter",
+    "book": "Philippians",
+    "url": "studies/philippians-03.html",
+    "ch": 3,
+    "date": "2026-10-31",
+    "title": "Philippians 3",
+    "sub": "Everything I counted gain",
+    "about": "Paul had the best résumé in the room and counts it all as loss for Christ, then shows how a man with a past runs forward.",
+    "tags": [
+      "Righteousness by faith",
+      "Regret",
+      "Pressing on",
+      "Appetites",
+      "Citizenship in heaven",
+      "Hope"
+    ],
+    "overview": {
+      "where": "Rome, where Paul is under guard, writing to the church at Philippi in Macedonia",
+      "when": "About AD 60 to 62, during Paul's house arrest in Rome",
+      "people": [
+        "jesus",
+        "pharisees"
+      ],
+      "places": [
+        "israel",
+        "benjamin",
+        "heaven"
+      ],
+      "story": [
+        "Paul warns against teachers who say faith in Jesus is not enough, and says true worshippers have no confidence in the flesh (1–3).",
+        "He lists his résumé: circumcised, of Israel and Benjamin, a Pharisee, a persecutor of the church, blameless by the law (4–6).",
+        "He counts it all as loss for Christ, and wants only the righteousness that comes by faith, not his own (7–11).",
+        "He has not arrived. Forgetting what is behind, he presses toward the mark and the prize, held by the Christ who took hold of him (12–16).",
+        "Some live for their bellies and their shame, and end in destruction. Believers are citizens of heaven, and the Saviour will change our lowly body (17–21)."
+      ],
+      "key": {
+        "ref": "Philippians 3:14",
+        "text": "I press toward the mark for the prize of the high calling of God in Christ Jesus."
+      },
+      "big": "Your record, good or bad, is not what you stand on. In Christ you have a righteousness that is given, so forget what is behind and run."
+    }
+  },
+  {
+    "id": "philippians-04",
+    "type": "chapter",
+    "book": "Philippians",
+    "url": "studies/philippians-04.html",
+    "ch": 4,
+    "date": "2026-10-31",
+    "title": "Philippians 4",
+    "sub": "Peace, and enough",
+    "about": "Two friends at odds, a prayer for the worried, a mind well fed, and a man in chains who has learned to be content.",
+    "tags": [
+      "Anxiety",
+      "Peace",
+      "Prayer",
+      "Contentment",
+      "Unity",
+      "Joy"
+    ],
+    "overview": {
+      "where": "Rome, where Paul is under guard, writing to the church at Philippi in Macedonia",
+      "when": "About AD 60 to 62, during Paul's house arrest in Rome",
+      "people": [
+        "jesus",
+        "euodias",
+        "syntyche",
+        "yokefellow",
+        "clement",
+        "epaphroditus",
+        "caesars-household"
+      ],
+      "places": [
+        "macedonia",
+        "thessalonica"
+      ],
+      "story": [
+        "Paul begs two women, Euodias and Syntyche, to be of the same mind in the Lord, and asks a friend to help them (1–3).",
+        "Rejoice in the Lord alway. Let your gentleness be known, for the Lord is at hand (4–5).",
+        "Be careful for nothing. Pray, ask, give thanks, and the peace of God will stand guard over your heart and mind (6–7).",
+        "Think on what is true, honest, just, pure, lovely and of good report, and do what you have learned (8–9).",
+        "Paul has learned to be content in want and in plenty, through Christ who gives strength. He thanks the Philippians for their gift, and promises that God will supply all their need (10–19).",
+        "Glory to God. Greetings from the saints, chiefly Caesar's household, and the grace of the Lord Jesus (20–23)."
+      ],
+      "key": {
+        "ref": "Philippians 4:6–7",
+        "text": "Be careful for nothing; but in every thing by prayer and supplication with thanksgiving let your requests be made known unto God. And the peace of God, which passeth all understanding, shall keep your hearts and minds through Christ Jesus."
+      },
+      "big": "Worry has an answer: tell God everything, with thanks, and His peace stands guard. Contentment is learned in Christ, who is enough in want and in plenty."
+    }
   }
 ];

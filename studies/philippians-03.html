@@ -1,0 +1,515 @@
+<!doctype html>
+<html lang="en" data-theme="slate">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Philippians 3</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="../assets/fonts.css">
+<link rel="stylesheet" href="../assets/deck.css">
+<link rel="stylesheet" href="../assets/themes.css">
+<style>
+
+/* ph03-where: where we are in Philippians. Four chips (.done, .here), each a run of chapters (i) and what Paul deals with (b) */
+.ph03-where { display: grid; grid-template-columns: repeat(auto-fit, minmax(9rem, 1fr)); gap: 6px; margin: .3em 0 1em; }
+.ph03-where div { padding: .5em .6em .55em; border-radius: 8px; background: var(--surface); border: 1px solid var(--line); color: var(--ink-soft); line-height: 1.2; }
+.ph03-where i { display: block; font: 700 clamp(.8rem, .72rem + .35vw, 1rem)/1.1 var(--sans); font-style: normal; letter-spacing: .04em; margin-bottom: .2em; }
+.ph03-where b { font: 400 clamp(.95rem, .85rem + .45vw, 1.25rem)/1.2 var(--serif); }
+.ph03-where .done { background: color-mix(in srgb, var(--accent) 14%, var(--surface)); color: var(--ink); }
+.ph03-where .here { background: var(--accent); border-color: var(--accent); color: var(--on-accent); box-shadow: 0 0 0 4px color-mix(in srgb, var(--accent) 25%, transparent); }
+.slide.active .ph03-where .here { animation: ph03-here 2.4s 1s ease-in-out infinite; }
+@keyframes ph03-here { 50% { box-shadow: 0 0 0 8px color-mix(in srgb, var(--accent) 10%, transparent); } }
+
+/* ph03-cv: Paul's resume as a page, seven lines stamped in one after another */
+.ph03-cv { max-width: 38rem; margin: .3em 0 1em; padding: .8em 1.2em 1em; background: var(--surface); border: 1.5px solid var(--line-strong); border-radius: 6px; box-shadow: 0 10px 24px -16px var(--ink); }
+.ph03-cv h3 { font: 700 clamp(.85rem, .8rem + .3vw, 1.05rem) var(--sans); letter-spacing: .06em; color: var(--ink-soft); border-bottom: 1px solid var(--line-strong); padding-bottom: .35em; margin-bottom: .4em; }
+.ph03-cv ol { list-style: none; margin: 0; padding: 0; display: grid; gap: .22em; }
+.ph03-cv li { display: grid; grid-template-columns: 1.6em 1fr auto; gap: .5em; align-items: baseline; font: clamp(1rem, .88rem + .6vw, 1.4rem)/1.3 var(--serif); }
+.ph03-cv li::before { content: "\2713"; color: var(--accent-hot); font: 700 1em var(--sans); }
+.ph03-cv li small { font: clamp(.8rem, .74rem + .3vw, 1rem) var(--sans); color: var(--ink-soft); }
+.ph03-cv li em { font-style: italic; color: var(--danger); }
+
+/* ph03-led: the ledger. Seven items sit in the GAIN column; on the step each slides across to LOSS, one after another, and Christ takes their place */
+.ph03-led { margin: .3em 0 .8em; max-width: 46rem; }
+.ph03-heads { display: grid; grid-template-columns: 1fr 1fr; gap: 6%; font: 700 clamp(.9rem, .8rem + .4vw, 1.15rem) var(--sans); letter-spacing: .12em; border-bottom: 2px solid var(--ink-soft); padding-bottom: .25em; margin-bottom: .45em; }
+.ph03-heads span:first-child { color: var(--accent-hot); }
+.ph03-heads span:last-child { color: var(--danger); }
+.ph03-rows { position: relative; display: grid; gap: .3em; }
+.ph03-row { position: relative; height: 2.05rem; }
+.ph03-row span { position: absolute; left: 0; width: 47%; top: 0; bottom: 0; display: flex; align-items: center; padding: 0 .7em; border-radius: 8px; border: 1px solid var(--line-strong); background: var(--surface); font: italic clamp(.88rem, .78rem + .42vw, 1.2rem)/1 var(--serif); color: var(--ink); white-space: nowrap; overflow: hidden; transition: transform 1s ease, background .6s ease, border-color .6s ease, color .6s ease; transition-delay: calc(var(--k, 0) * .3s); }
+.slide:has(.ph03-go.on) .ph03-row span { transform: translateX(113%); background: color-mix(in srgb, var(--danger) 12%, var(--surface)); border-color: var(--danger); color: var(--ink-soft); text-decoration: line-through; text-decoration-color: color-mix(in srgb, var(--danger) 60%, transparent); }
+.ph03-christ { position: absolute; left: 0; width: 47%; top: 0; bottom: 0; display: grid; place-content: center; text-align: center; border-radius: 12px; background: var(--accent); color: var(--on-accent); box-shadow: 0 0 0 5px color-mix(in srgb, var(--accent) 25%, transparent); opacity: 0; transform: scale(.92); transition: opacity .9s ease 2.6s, transform .9s ease 2.6s; z-index: 1; }
+.ph03-christ b { font: 400 clamp(1.3rem, 1rem + 1.4vw, 2.2rem)/1.1 var(--serif); }
+.ph03-christ small { font: clamp(.8rem, .74rem + .3vw, 1rem) var(--sans); letter-spacing: .06em; }
+.slide:has(.ph03-go.on) .ph03-christ { opacity: 1; transform: none; }
+@media (max-width: 600px) { .ph03-row { height: 1.9rem; } .ph03-row span { font-size: .8rem; padding: 0 .4em; } }
+
+/* ph03-run: a runner leaves the old things lying behind and runs for the mark. He starts on the step and stops at the line */
+.ph03-ground { stroke: var(--line-strong); stroke-width: 4; stroke-linecap: round; }
+.ph03-lane { stroke: var(--line-strong); stroke-width: 2; stroke-dasharray: 10 12; }
+.ph03-stone { fill: var(--line-strong); }
+.ph03-back text { fill: var(--ink-soft); font: italic 19px var(--serif); text-anchor: middle; }
+.ph03-lab { fill: var(--ink-soft); font: 700 15px var(--sans); letter-spacing: .12em; text-anchor: middle; }
+.ph03-pole { stroke: var(--ink); stroke-width: 5; stroke-linecap: round; }
+.ph03-flag { fill: var(--accent); }
+.ph03-flagtxt { fill: var(--on-accent); font: 700 20px var(--sans); letter-spacing: .12em; text-anchor: middle; }
+.ph03-prize { fill: var(--accent-hot); font: italic 22px var(--serif); text-anchor: end; }
+.ph03-runner { transform: translateX(380px); transition: transform 3s cubic-bezier(.4, 0, .6, 1); }
+.slide:has(.ph03-go.on) .ph03-runner { transform: translateX(690px); }
+.ph03-body { fill: none; stroke: var(--ink); stroke-width: 9; stroke-linecap: round; stroke-linejoin: round; }
+.ph03-head { fill: var(--ink); }
+.ph03-leg { transform-box: fill-box; transform-origin: 50% 0; }
+.slide:has(.ph03-go.on) .ph03-leg.a { animation: ph03-la .5s linear 6; }
+.slide:has(.ph03-go.on) .ph03-leg.b { animation: ph03-lb .5s linear 6; }
+@keyframes ph03-la { 25% { transform: rotate(-42deg); } 75% { transform: rotate(42deg); } }
+@keyframes ph03-lb { 25% { transform: rotate(42deg); } 75% { transform: rotate(-42deg); } }
+.ph03-back { transition: opacity 3s ease; }
+.slide:has(.ph03-go.on) .ph03-back { opacity: .45; }
+@media (max-width: 600px) { .ph03-prize { font-size: 28px; } .ph03-lab { font-size: 20px; } }
+
+</style>
+</head>
+<body>
+<main class="deck" id="deck">
+
+<section class="slide title">
+  <div class="inner">
+    <div class="emblem rise"></div>
+    <h1 class="rise" style="--d:1">Philippians 3</h1>
+    <p class="sub rise" style="--d:3">Everything I counted gain</p>
+    <p class="tag rise" style="--d:5">Paul had the best résumé in the room, and he calls it rubbish. Then he tells us how a man who has failed, and knows it, keeps running.</p>
+  </div>
+</section>
+
+<section class="slide watch">
+  <div class="inner">
+    <h2 class="rise">Things to watch for</h2>
+    <p class="lede rise" style="--d:1">Keep these questions in the back of your mind as we read. We'll come back to every one of them at the end.</p>
+    <ol class="seeds">
+      <li class="step"><span class="topic">Confidence</span><span class="seed-q">What did Paul once trust in, and what did he count it in the end?</span></li>
+      <li class="step"><span class="topic">Righteousness</span><span class="seed-q">Whose righteousness does Paul want to be found wearing?</span></li>
+      <li class="step"><span class="topic">Behind</span><span class="seed-q">What does Paul do with the things that are behind him?</span></li>
+      <li class="step"><span class="topic">Press on</span><span class="seed-q">What is Paul still running toward?</span></li>
+      <li class="step"><span class="topic">Appetites</span><span class="seed-q">What happens to people whose god is their belly?</span></li>
+      <li class="step"><span class="topic">Home</span><span class="seed-q">Where is our citizenship, and who are we waiting for?</span></li>
+    </ol>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise">Where we are in Philippians</h2>
+    <p class="note rise" style="--d:1">About AD 60 to 62, Paul writes from Rome, chained to a guard in a rented house, to the friends in Philippi, the church he started on his second journey (Acts 16). It's a thank-you letter, and it is full of joy.</p>
+    <div class="ph03-where rise" style="--d:2" role="img" aria-label="Philippians in four parts. Chapter 1: joy in chains. Chapter 2: the mind of Christ. Chapter 3: gain and loss, and the race, and we are here. Chapter 4: peace, and enough.">
+      <div class="done"><i>1</i><b>Joy in chains</b></div>
+      <div class="done"><i>2</i><b>The mind of Christ</b></div>
+      <div class="here"><i>3</i><b>Gain and loss, and the race</b></div>
+      <div><i>4</i><b>Peace, and enough</b></div>
+    </div>
+    <p class="note step">Read alone, this chapter still holds together: a man with every reason to boast says he would trade it all, and then he shows us how he runs.</p>
+  </div>
+</section>
+
+<section class="slide part">
+  <div class="inner">
+    <p class="part-n rise">Part one</p>
+    <h2 class="rise" style="--d:1">The best résumé</h2>
+    <p class="range rise" style="--d:2">Verses 1–6</p>
+    <div class="rule"></div>
+    <p class="hook rise" style="--d:4">Paul lists everything a man could be proud of. Then he turns the page.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="1-3" data-hl="rejoice in the Lord|have no confidence in the flesh"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise">Who Paul is warning against</h2>
+    <div class="columns">
+      <div class="col law step"><p class="who">The pressure</p><h3>“Jesus, and the mark”</h3><p>Some teachers told Gentile believers that faith in Jesus wasn't enough. They had to be circumcised and keep the Jewish rules to be really saved. Paul has no soft words for them: <em>“dogs,”</em> <em>“evil workers,”</em> and <em>“the concision,”</em> a sneer that means <em>“the cutters”</em> (Galatians 5:2–4 is the same fight).</p></div>
+      <div class="col grace step"><p class="who">Paul's answer</p><h3>“We are the circumcision”</h3><p>The ones who belong to God are the ones who <em>“worship God in the spirit, and rejoice in Christ Jesus, and have no confidence in the flesh.”</em> “Flesh” here means what I have and what I've done on my own: my record, my family, my effort.</p></div>
+    </div>
+    <p class="note step">Those hard words are for men leading others away from Jesus. They aren't for you, wrestling with a habit. And the line to carry through the whole chapter is <em>“no confidence in the flesh.”</em> What are you leaning on?</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="4-6" data-hl="Circumcised the eighth day|Hebrew of the Hebrews|a Pharisee|persecuting the church|blameless"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise">Paul's résumé</h2>
+    <p class="note rise" style="--d:1">If anyone could trust his own record, he says, <em>“I more.”</em> Here is the page, in his own order:</p>
+    <div class="ph03-cv rise" style="--d:2">
+      <h3>SAUL OF TARSUS</h3>
+      <ol>
+        <li class="rise" style="--d:3"><span>Circumcised the eighth day</span><small>born into the covenant</small></li>
+        <li class="rise" style="--d:4"><span>Of the stock of Israel</span><small>pure family line</small></li>
+        <li class="rise" style="--d:5"><span>Tribe of Benjamin</span><small>the tribe of Israel's first king</small></li>
+        <li class="rise" style="--d:6"><span>Hebrew of the Hebrews</span><small>Hebrew parents, Hebrew ways</small></li>
+        <li class="rise" style="--d:7"><span>A Pharisee</span><small>the strictest school</small></li>
+        <li class="rise" style="--d:8"><span>Zeal: <em>persecuting the church</em></span><small>he was proud of it</small></li>
+        <li class="rise" style="--d:9"><span>Blameless in the law</span><small>nobody could fault him</small></li>
+      </ol>
+    </div>
+    <p class="note step">The first four he was handed at birth. The next three he worked for. And look at line six. He lists the worst thing he ever did, hunting down Christians, as a <em>credential</em>. That's how wrong a man can be about his own record.</p>
+    <p class="note step">“Blameless” means by the law's outward measure: nobody could name a rule he broke. And still he knew he needed Christ.</p>
+  </div>
+</section>
+
+<section class="slide part">
+  <div class="inner">
+    <p class="part-n rise">Part two</p>
+    <h2 class="rise" style="--d:1">The ledger</h2>
+    <p class="range rise" style="--d:2">Verses 7–11</p>
+    <div class="rule"></div>
+    <p class="hook rise" style="--d:4">Paul does the books on his life, and moves everything to the loss column.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="7-8" data-hl="what things were gain to me, those I counted loss for Christ|do count them but dung"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise">Everything moves to the other column</h2>
+    <div class="ph03-led rise" style="--d:1" role="img" aria-label="A ledger with two columns, gain and loss. The seven things from Paul's resume start under gain. Then each one slides across into the loss column, and Christ takes their place under gain.">
+      <div class="ph03-heads"><span>GAIN</span><span>LOSS</span></div>
+      <div class="ph03-rows">
+        <div class="ph03-christ"><b>Christ Jesus my Lord</b><small>the excellency of knowing Him</small></div>
+        <div class="ph03-row" style="--k:0"><span>Circumcised the eighth day</span></div>
+        <div class="ph03-row" style="--k:1"><span>Stock of Israel</span></div>
+        <div class="ph03-row" style="--k:2"><span>Tribe of Benjamin</span></div>
+        <div class="ph03-row" style="--k:3"><span>Hebrew of the Hebrews</span></div>
+        <div class="ph03-row" style="--k:4"><span>A Pharisee</span></div>
+        <div class="ph03-row" style="--k:5"><span>Persecuting the church</span></div>
+        <div class="ph03-row" style="--k:6"><span>Blameless in the law</span></div>
+      </div>
+    </div>
+    <p class="note step ph03-go"><em>“Count”</em> is a bookkeeper's word. Paul sat down and did the sums, and the answer was plain: all of it, next to knowing Christ, is <em>“dung,”</em> a rough word for rubbish, the scraps you throw away.</p>
+    <p class="note step">He isn't saying his family or his upbringing was bad. He's saying none of it can be what he <em>stands on</em>. The same goes the other way. The good things you have going now, the days clean, the job, the family name, are real gifts. They are not what saves you. And the worst page of your record isn't what defines you either. Both columns go across, and Christ is what's left.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="9-11" data-hl="not having mine own righteousness|the righteousness which is of God by faith|the power of his resurrection"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise">Two kinds of righteousness</h2>
+    <div class="columns">
+      <div class="col law step"><p class="who">Mine own</p><h3>“Which is of the law”</h3><p>Earned. Measured against a rule, and only as good as my last good day. Paul's was as good as any man's, and he still counted it as loss.</p></div>
+      <div class="col grace step"><p class="who">God's</p><h3>“Through the faith of Christ”</h3><p><em>“The righteousness which is of God by faith.”</em> Given, not earned. You receive it by trusting Jesus, and it stays put no matter what yesterday looked like.</p></div>
+    </div>
+    <blockquote class="quote step"><p>“But we are all as an unclean thing, and all our righteousnesses are as filthy rags; and we all do fade as a leaf; and our iniquities, like the wind, have taken us away.”</p><cite>Isaiah 64:6</cite></blockquote>
+    <p class="note step">That's good news for a man who fell yesterday. You were never going to out-good your past, and neither was Paul. Being <em>“found in him”</em> means that when God looks at you, He sees Christ's record in your account.</p>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <p class="saying rise">Not just <em>about</em> Him. <em>Him.</em></p>
+    <p class="note rise" style="--d:2">Verse 10 is what the trading was for: <em>“That I may know him.”</em> Not know about Him, but know Him, the way you know a friend. Three things come with that:</p>
+    <ol class="timeline" aria-label="Three things that come with knowing Christ: the power of his resurrection, the fellowship of his sufferings, and being made like him in his death.">
+      <li class="lit" style="--k:0"><b>His power</b><span>“the power of his resurrection”</span><small>the strength that raised Him, for Monday morning</small></li>
+      <li style="--k:1"><b>His company</b><span>“the fellowship of his sufferings”</span><small>when it costs you to do right, He has been there</small></li>
+      <li style="--k:2"><b>His likeness</b><span>“conformable unto his death”</span><small>the old self dying, day by day</small></li>
+    </ol>
+    <p class="note step">Verse 11, <em>“If by any means I might attain unto the resurrection of the dead,”</em> doesn't mean Paul doubts he'll be saved. He has just said he's found in Christ. It's the cry of a man running hard for the finish line, sure of the One who waits there (Romans 8:1).</p>
+  </div>
+</section>
+
+<section class="slide part">
+  <div class="inner">
+    <p class="part-n rise">Part three</p>
+    <h2 class="rise" style="--d:1">The race</h2>
+    <p class="range rise" style="--d:2">Verses 12–16</p>
+    <div class="rule"></div>
+    <p class="hook rise" style="--d:4">A man who has already failed, and keeps going.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="12" data-hl="Not as though I had already attained|I am apprehended of Christ Jesus"></section>
+
+<section class="slide verse" data-v="13-14" data-hl="forgetting those things which are behind, and reaching forth unto those things which are before|I press toward the mark for the prize of the high calling of God in Christ Jesus"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise">Forgetting what is behind</h2>
+    <div class="stage"><svg class="ph03-run" viewBox="0 0 900 300" role="img" aria-label="A runner on a track. Behind him lie three stones labelled the old resume, my worst day, and yesterday. Ahead, at the finish post, a flag marks the prize of the high calling. He runs from the stones toward the flag.">
+      <line class="ph03-ground" x1="20" y1="236" x2="880" y2="236"/>
+      <line class="ph03-lane" x1="440" y1="262" x2="800" y2="262"/>
+      <g class="ph03-back">
+        <ellipse class="ph03-stone" cx="70" cy="232" rx="22" ry="9"/><text x="70" y="206">old résumé</text>
+        <ellipse class="ph03-stone" cx="190" cy="232" rx="22" ry="9"/><text x="190" y="206">worst day</text>
+        <ellipse class="ph03-stone" cx="300" cy="232" rx="22" ry="9"/><text x="300" y="206">yesterday</text>
+      </g>
+      <text class="ph03-lab" x="150" y="272">BEHIND</text>
+      <line class="ph03-pole" x1="800" y1="236" x2="800" y2="86"/>
+      <path class="ph03-flag" d="M800 86 h74 v44 h-74 z"/>
+      <text class="ph03-flagtxt" x="837" y="116">PRIZE</text>
+      <text class="ph03-prize" x="876" y="62">the high calling</text>
+      <text class="ph03-lab" x="620" y="290">BEFORE</text>
+      <g class="ph03-runner"><g transform="translate(0 236) rotate(9)">
+        <circle class="ph03-head" cx="0" cy="-122" r="15"/>
+        <path class="ph03-body" d="M0 -104 L0 -58"/>
+        <path class="ph03-body" d="M0 -94 L32 -112"/>
+        <path class="ph03-body" d="M0 -94 L-26 -72"/>
+        <path class="ph03-body ph03-leg a" d="M0 -58 L0 -4"/>
+        <path class="ph03-body ph03-leg b" d="M0 -58 L0 -4"/>
+      </g></g>
+    </svg></div>
+    <p class="note step ph03-go">Paul says it two ways: <em>“forgetting”</em> what is behind, <em>“reaching forth”</em> to what's ahead. The word he uses for reaching is a runner stretching for the tape. You can't run a straight line while you stare over your shoulder.</p>
+    <p class="note step">And notice why he can run: <em>“I am apprehended of Christ Jesus.”</em> Jesus grabbed hold of Paul first, on the Damascus road. Paul isn't running to earn Christ's grip. He's running because he has it.</p>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise">What “forgetting” does not mean</h2>
+    <ul class="nots">
+      <li class="step"><span class="k">pretending it never happened</span><span class="why">you can't, and God never asked you to</span></li>
+      <li class="step"><span class="k">acting like it cost nobody anything</span><span class="why">people were hurt. Make right what you can</span></li>
+      <li class="step"><span class="k">keeping it secret from every brother</span><span class="why">hidden things grow heavy</span></li>
+      <li class="step yes"><span class="k">letting it stop steering you</span><span class="why">it was dealt with at the cross, so you stop running by it</span></li>
+    </ul>
+    <p class="note step">Paul never forgot who he'd been. He wrote it down himself:</p>
+    <blockquote class="quote step"><p>“For I am the least of the apostles, that am not meet to be called an apostle, because I persecuted the church of God. But by the grace of God I am what I am”</p><cite>1 Corinthians 15:9–10</cite></blockquote>
+    <p class="note step">He remembers it with a humble heart. But it doesn't drive. <em>“By the grace of God I am what I am.”</em> If you fell yesterday, do the next right thing today: tell a brother, make the call, go to the meeting. Then run.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="15-16" data-hl="God shall reveal even this unto you"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <p class="saying rise">Grown up means <em>still running.</em></p>
+    <p class="note rise" style="--d:2">“As many as be perfect” (verse 15) means <em>full-grown</em>, not flawless. Paul has just said he hasn't arrived. A mature man is one who knows he hasn't, and keeps going.</p>
+    <p class="note step">And verse 15 is kind: if you see something differently from your brothers, <em>“God shall reveal even this unto you.”</em> You don't have to have it all worked out yet. Keep walking <em>“by the same rule”</em> in what you already know, and let God teach you the rest.</p>
+    <blockquote class="quote step"><p>“I have fought a good fight, I have finished my course, I have kept the faith: Henceforth there is laid up for me a crown of righteousness, which the Lord, the righteous judge, shall give me at that day: and not to me only, but unto all them also that love his appearing.”</p><cite>2 Timothy 4:7–8</cite></blockquote>
+    <p class="note step">Years later, Paul wrote this from another prison. The race had an end, and he finished it.</p>
+  </div>
+</section>
+
+<section class="slide part">
+  <div class="inner">
+    <p class="part-n rise">Part four</p>
+    <h2 class="rise" style="--d:1">Citizens of heaven</h2>
+    <p class="range rise" style="--d:2">Verses 17–21</p>
+    <div class="rule"></div>
+    <p class="hook rise" style="--d:4">Two roads, and the home we are walking toward.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="17-19" data-hl="even weeping|whose God is their belly, and whose glory is in their shame"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise">The road that ends in destruction</h2>
+    <ol class="stairs down" style="--n:4" aria-label="Four steps down. An appetite: whose God is their belly. Pride in the wrong thing: whose glory is in their shame. A mind on earthly things only. The end is destruction.">
+      <li style="--k:0"><b>an appetite</b>that gets to rule: <em>“their belly”</em></li>
+      <li style="--k:1"><b>proud of the wrong thing</b><em>“glory in their shame”</em></li>
+      <li style="--k:2"><b>eyes only on this world</b><em>“mind earthly things”</em></li>
+      <li style="--k:3"><b>the end</b><em>“destruction”</em></li>
+    </ol>
+    <p class="note step">Look at how Paul says it: <em>“now tell you even weeping.”</em> He isn't sneering. He's crying over them. And many of us know this road from the inside: the appetite that became the boss, and even the bragging about things we ought to be ashamed of. Paul puts it plainly, and so does the road itself:</p>
+    <blockquote class="quote step"><p>“What fruit had ye then in those things whereof ye are now ashamed? for the end of those things is death.”</p><cite>Romans 6:21</cite></blockquote>
+    <p class="note step">“Enemies of the cross” are people living as if the cross changed nothing. Paul's point is the road, not a label on a man. You can step off it today, and the next slides show where you're headed instead.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="20-21" data-hl="our conversation is in heaven|fashioned like unto his glorious body"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise">A little Rome, far from Rome</h2>
+    <div class="split">
+      <div class="stage">
+        <svg data-world viewBox="170 110 400 190" data-towns="Rome*:r, Philippi!:t" role="img" aria-label="Map from Rome across the Adriatic to Philippi in Macedonia. Philippi was a Roman colony, a little Rome far from the capital.">
+          <path class="map-route" data-via="Rome, @14.2 41.1, @14.8 41.1, @15.8 41.0, @17.93 40.63, @19.45 41.3, @21 41.0, Thessalonica, Amphipolis, Philippi" style="--wait:.4s;--draw:2.4s"/>
+        </svg>
+      </div>
+      <div>
+        <p class="note rise" style="--d:1">The Philippians knew exactly what Paul meant. Their city was a Roman <em>colony</em>: soldiers retired there, and they were citizens of Rome. They dressed Roman, kept Roman law, and spoke the emperor's language, hundreds of miles from the capital (Acts 16:12).</p>
+        <p class="note step">Where Paul writes <em>“conversation”</em>, he means <em>citizenship</em>. For the believer, home is not here. <em>“Our conversation is in heaven.”</em> We live in a rough town, run by other rules, but we belong to a better country, and we keep its ways.</p>
+        <p class="note step">That fits a man starting over. You haven't got to settle for what this town says about you. Your papers say <em>heaven</em>. Today, do one thing the way your country does it.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise">The end of the story</h2>
+    <div class="ifthen step">
+      <div class="if"><small>Now</small>a citizen of heaven, still in this body and this town</div>
+      <span class="arrow" aria-hidden="true">→</span>
+      <div class="then"><small>when He comes</small>the body is changed to be like His</div>
+    </div>
+    <p class="note step">We <em>“look for the Saviour.”</em> He is coming, and it's something to look forward to. In the meantime, the body can feel like a battlefield: cravings, tiredness, old damage. <em>“Vile”</em> here just means <em>lowly</em>, the body of our humbling. The Lord Jesus will change it, <em>“according to the working whereby he is able even to subdue all things unto himself.”</em></p>
+    <p class="note step">He can subdue all things. That includes whatever is bigger than you. Today is not the end of your story. The end of the story is a changed body and a Saviour's face.</p>
+  </div>
+</section>
+
+<section class="slide remember">
+  <div class="inner">
+    <h2 class="rise">Points to remember</h2>
+    <ol class="seeds">
+      <li class="step"><span class="topic">Confidence</span><span class="seed-q">“what things were gain to me, those I counted loss for Christ” <cite>3:7</cite></span><span class="take">Paul put his whole résumé in the loss column. Don't stand on your record, good or bad.</span></li>
+      <li class="step"><span class="topic">Righteousness</span><span class="seed-q">“not having mine own righteousness, which is of the law, but that which is through the faith of Christ” <cite>3:9</cite></span><span class="take">A righteousness you can't earn is given to you in Christ, and it doesn't wobble.</span></li>
+      <li class="step"><span class="topic">Behind</span><span class="seed-q">“forgetting those things which are behind, and reaching forth unto those things which are before” <cite>3:13</cite></span><span class="take">Deal with it honestly, then stop steering by it. Run forward.</span></li>
+      <li class="step"><span class="topic">Press on</span><span class="seed-q">“I press toward the mark for the prize of the high calling of God in Christ Jesus” <cite>3:14</cite></span><span class="take">Still running, still short of perfect, and held by Christ.</span></li>
+      <li class="step"><span class="topic">Appetites</span><span class="seed-q">“whose God is their belly, and whose glory is in their shame” <cite>3:19</cite></span><span class="take">An appetite that rules is a god, and that road ends in ruin. Step off it today.</span></li>
+      <li class="step"><span class="topic">Home</span><span class="seed-q">“our conversation is in heaven; from whence also we look for the Saviour” <cite>3:20</cite></span><span class="take">Our papers say heaven. He is coming, and He'll change the body.</span></li>
+    </ol>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 1 of 6</p>
+      <span class="topic">Confidence</span>
+      <h2>What did Paul once trust in, and what did he count it in the end?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="5" data-hl="Hebrew of the Hebrews|a Pharisee"></blockquote>
+      <blockquote class="quote step" data-q="7"></blockquote>
+      <blockquote class="quote step" data-q="8" data-hl="do count them but dung"></blockquote>
+      <blockquote class="quote step"><p>“For ye have heard of my conversation in time past in the Jews’ religion, how that beyond measure I persecuted the church of God, and wasted it: And profited in the Jews’ religion above many my equals in mine own nation, being more exceedingly zealous of the traditions of my fathers.”</p><cite>Galatians 1:13–14</cite></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>His birth, his strictness and his zeal: the best résumé in Israel, even the persecuting. He counted all of it as loss, and as dung, next to knowing Christ. Don't lean on your record, good or bad.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 2 of 6</p>
+      <span class="topic">Righteousness</span>
+      <h2>Whose righteousness does Paul want to be found wearing?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="9"></blockquote>
+      <blockquote class="quote step"><p>“But we are all as an unclean thing, and all our righteousnesses are as filthy rags; and we all do fade as a leaf; and our iniquities, like the wind, have taken us away.”</p><cite>Isaiah 64:6</cite></blockquote>
+      <blockquote class="quote step"><p>“For by grace are ye saved through faith; and that not of yourselves: it is the gift of God: Not of works, lest any man should boast.”</p><cite>Ephesians 2:8–9</cite></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>God's: the righteousness that comes through faith in Christ. His own, even at its best, couldn't do it. This is a gift, so a fall yesterday doesn't take it away.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 3 of 6</p>
+      <span class="topic">Behind</span>
+      <h2>What does Paul do with the things that are behind him?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="13" data-hl="forgetting those things which are behind"></blockquote>
+      <blockquote class="quote step"><p>“For I am the least of the apostles, that am not meet to be called an apostle, because I persecuted the church of God. But by the grace of God I am what I am”</p><cite>1 Corinthians 15:9–10</cite></blockquote>
+      <blockquote class="quote step"><p>“There is therefore now no condemnation to them which are in Christ Jesus, who walk not after the flesh, but after the Spirit.”</p><cite>Romans 8:1</cite></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>He forgets them, which means he stops steering by them. He doesn't pretend they weren't real: he remembers it humbly. But there is now no condemnation, so he reaches forward and runs.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 4 of 6</p>
+      <span class="topic">Press on</span>
+      <h2>What is Paul still running toward?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="12" data-hl="Not as though I had already attained|I am apprehended of Christ Jesus"></blockquote>
+      <blockquote class="quote step" data-q="14"></blockquote>
+      <blockquote class="quote step"><p>“I have fought a good fight, I have finished my course, I have kept the faith: Henceforth there is laid up for me a crown of righteousness, which the Lord, the righteous judge, shall give me at that day: and not to me only, but unto all them also that love his appearing.”</p><cite>2 Timothy 4:7–8</cite></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>The mark and the prize of the high calling of God in Christ Jesus. He says he hasn't arrived. He runs because Christ took hold of him first.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 5 of 6</p>
+      <span class="topic">Appetites</span>
+      <h2>What happens to people whose god is their belly?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="19" data-hl="Whose end is destruction|whose God is their belly, and whose glory is in their shame|who mind earthly things"></blockquote>
+      <blockquote class="quote step" data-q="18" data-hl="even weeping"></blockquote>
+      <blockquote class="quote step"><p>“What fruit had ye then in those things whereof ye are now ashamed? for the end of those things is death.”</p><cite>Romans 6:21</cite></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>Their end is destruction. An appetite that gets to rule becomes a god, and the road ends in ruin. Paul says it weeping. He cares, and so does Jesus, and there is a way off that road.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 6 of 6</p>
+      <span class="topic">Home</span>
+      <h2>Where is our citizenship, and who are we waiting for?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="20"></blockquote>
+      <blockquote class="quote step" data-q="21" data-hl="change our vile body"></blockquote>
+      <blockquote class="quote step"><p>“If ye then be risen with Christ, seek those things which are above, where Christ sitteth on the right hand of God. Set your affection on things above, not on things on the earth.”</p><cite>Colossians 3:1–2</cite></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>In heaven, and we're waiting for the Saviour, the Lord Jesus Christ, who will change our lowly body to be like His glorious body. Your papers say heaven. Live like it today.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide prayer">
+  <div class="inner">
+    <div class="emblem rise"></div>
+    <h2 class="rise" style="--d:1">Prayer requests</h2>
+    <p class="ask-line rise" style="--d:2">What can we pray about for you today? Something behind you that still has its hand on your collar, or something ahead you're afraid to run toward?</p>
+    <blockquote class="quote rise" style="--d:4"><p>“As far as the east is from the west, so far hath he removed our transgressions from us.”</p><cite>Psalm 103:12</cite></blockquote>
+  </div>
+</section>
+
+</main>
+
+<script>
+// King James Version, Philippians 3 chapter 3
+const V = {
+  1: "Finally, my brethren, rejoice in the Lord. To write the same things to you, to me indeed is not grievous, but for you it is safe.",
+  2: "Beware of dogs, beware of evil workers, beware of the concision.",
+  3: "For we are the circumcision, which worship God in the spirit, and rejoice in Christ Jesus, and have no confidence in the flesh.",
+  4: "Though I might also have confidence in the flesh. If any other man thinketh that he hath whereof he might trust in the flesh, I more:",
+  5: "Circumcised the eighth day, of the stock of Israel, of the tribe of Benjamin, an Hebrew of the Hebrews; as touching the law, a Pharisee;",
+  6: "Concerning zeal, persecuting the church; touching the righteousness which is in the law, blameless.",
+  7: "But what things were gain to me, those I counted loss for Christ.",
+  8: "Yea doubtless, and I count all things but loss for the excellency of the knowledge of Christ Jesus my Lord: for whom I have suffered the loss of all things, and do count them but dung, that I may win Christ,",
+  9: "And be found in him, not having mine own righteousness, which is of the law, but that which is through the faith of Christ, the righteousness which is of God by faith:",
+  10: "That I may know him, and the power of his resurrection, and the fellowship of his sufferings, being made conformable unto his death;",
+  11: "If by any means I might attain unto the resurrection of the dead.",
+  12: "Not as though I had already attained, either were already perfect: but I follow after, if that I may apprehend that for which also I am apprehended of Christ Jesus.",
+  13: "Brethren, I count not myself to have apprehended: but this one thing I do, forgetting those things which are behind, and reaching forth unto those things which are before,",
+  14: "I press toward the mark for the prize of the high calling of God in Christ Jesus.",
+  15: "Let us therefore, as many as be perfect, be thus minded: and if in any thing ye be otherwise minded, God shall reveal even this unto you.",
+  16: "Nevertheless, whereto we have already attained, let us walk by the same rule, let us mind the same thing.",
+  17: "Brethren, be followers together of me, and mark them which walk so as ye have us for an ensample.",
+  18: "(For many walk, of whom I have told you often, and now tell you even weeping, that they are the enemies of the cross of Christ:",
+  19: "Whose end is destruction, whose God is their belly, and whose glory is in their shame, who mind earthly things.)",
+  20: "For our conversation is in heaven; from whence also we look for the Saviour, the Lord Jesus Christ:",
+  21: "Who shall change our vile body, that it may be fashioned like unto his glorious body, according to the working whereby he is able even to subdue all things unto himself."
+};
+const BOOK = "Philippians 3";
+</script>
+<script src="../assets/deck.js"></script>
+</body>
+</html>

@@ -414,7 +414,13 @@ window.GLOSSARY = [
     [ 1, 14, 22, 26, 28 ] ],
    [
     "Galatians", 4,
-    [ 14 ] ] ]
+    [ 14 ] ],
+   [
+    "Philippians", 3,
+    [ 3, 8, 12, 14, 20 ] ],
+   [
+    "Philippians", 4,
+    [ 7, 19, 21, 23 ] ] ]
  },
  {
   "id": "john-the-baptist",
@@ -1257,7 +1263,10 @@ window.GLOSSARY = [
     [ 1, 3, 4 ] ],
    [
     "Galatians", 4,
-    [ 6 ] ] ]
+    [ 6 ] ],
+   [
+    "Philippians", 4,
+    [ 20 ] ] ]
  },
  {
   "id": "holy-spirit",
@@ -1827,6 +1836,9 @@ window.GLOSSARY = [
     [ 6, 7, 8, 9 ] ],
    [
     "Acts", 26,
+    [ 5 ] ],
+   [
+    "Philippians", 3,
     [ 5 ] ] ]
  },
  {
@@ -3615,7 +3627,10 @@ window.GLOSSARY = [
     [ 18 ] ],
    [
     "2 Corinthians", 3,
-    [ 7, 13 ] ] ]
+    [ 7, 13 ] ],
+   [
+    "Philippians", 3,
+    [ 5 ] ] ]
  },
  {
   "id": "heaven",
@@ -3879,7 +3894,10 @@ window.GLOSSARY = [
     [ 2 ] ],
    [
     "Galatians", 1,
-    [ 8 ] ] ]
+    [ 8 ] ],
+   [
+    "Philippians", 3,
+    [ 20 ] ] ]
  },
  {
   "id": "hell",
@@ -4449,7 +4467,10 @@ window.GLOSSARY = [
     [ 6, 15 ] ],
    [
     "Galatians", 2,
-    [ 9, 21 ] ] ]
+    [ 9, 21 ] ],
+   [
+    "Philippians", 4,
+    [ 23 ] ] ]
  },
  {
   "id": "truth",
@@ -4842,7 +4863,13 @@ window.GLOSSARY = [
     [ 1, 5, 6, 9 ] ],
    [
     "Galatians", 1,
-    [ 5 ] ] ]
+    [ 5 ] ],
+   [
+    "Philippians", 3,
+    [ 19 ] ],
+   [
+    "Philippians", 4,
+    [ 19, 20 ] ] ]
  },
  {
   "id": "the-law",
@@ -5052,7 +5079,10 @@ window.GLOSSARY = [
     [ 2, 5, 10, 11, 12, 13, 17, 18, 19, 21, 23, 24 ] ],
    [
     "Galatians", 4,
-    [ 4, 5, 21 ] ] ]
+    [ 4, 5, 21 ] ],
+   [
+    "Philippians", 3,
+    [ 5, 6, 9 ] ] ]
  },
  {
   "id": "only-begotten",
@@ -5370,7 +5400,13 @@ window.GLOSSARY = [
     [ 1, 13, 14, 16, 17, 22, 24, 26, 27, 28, 29 ] ],
    [
     "Galatians", 4,
-    [ 7, 14, 19 ] ] ]
+    [ 7, 14, 19 ] ],
+   [
+    "Philippians", 3,
+    [ 3, 7, 8, 9, 12, 14, 18, 20 ] ],
+   [
+    "Philippians", 4,
+    [ 7, 13, 19, 21, 23 ] ] ]
  },
  {
   "id": "son-of-god",
@@ -6588,7 +6624,10 @@ window.GLOSSARY = [
     [ 11 ] ],
    [
     "2 Corinthians", 9,
-    [ 2 ] ] ]
+    [ 2 ] ],
+   [
+    "Philippians", 3,
+    [ 6 ] ] ]
  },
  {
   "id": "wisdom",
@@ -6834,7 +6873,10 @@ window.GLOSSARY = [
     [ 19 ] ],
    [
     "1 Corinthians", 14,
-    [ 14, 15, 19, 20 ] ] ]
+    [ 14, 15, 19, 20 ] ],
+   [
+    "Philippians", 4,
+    [ 7 ] ] ]
  },
  {
   "id": "knowledge",
@@ -6990,7 +7032,10 @@ window.GLOSSARY = [
     [ 5 ] ],
    [
     "2 Corinthians", 11,
-    [ 6 ] ] ]
+    [ 6 ] ],
+   [
+    "Philippians", 3,
+    [ 8 ] ] ]
  },
  {
   "id": "instruction",
@@ -7593,7 +7638,10 @@ window.GLOSSARY = [
     [ 21 ] ],
    [
     "Galatians", 3,
-    [ 6, 21 ] ] ]
+    [ 6, 21 ] ],
+   [
+    "Philippians", 3,
+    [ 6, 9 ] ] ]
  },
  {
   "id": "wicked",
@@ -11241,7 +11289,10 @@ window.GLOSSARY = [
     [ 25 ] ],
    [
     "1 Corinthians", 14,
-    [ 25 ] ] ]
+    [ 25 ] ],
+   [
+    "Philippians", 3,
+    [ 3 ] ] ]
  },
  {
   "id": "good-shepherd",
@@ -11895,7 +11946,10 @@ window.GLOSSARY = [
     [ 18 ] ],
    [
     "Galatians", 2,
-    [ 3, 7, 8, 9, 12 ] ] ]
+    [ 3, 7, 8, 9, 12 ] ],
+   [
+    "Philippians", 3,
+    [ 3 ] ] ]
  },
  {
   "id": "living-water",
@@ -13830,7 +13884,10 @@ window.GLOSSARY = [
     [ 33 ] ],
    [
     "Galatians", 1,
-    [ 3 ] ] ]
+    [ 3 ] ],
+   [
+    "Philippians", 4,
+    [ 7, 9 ] ] ]
  },
  {
   "id": "remit",
@@ -14547,7 +14604,10 @@ window.GLOSSARY = [
     [ 5 ] ],
    [
     "1 Corinthians", 15,
-    [ 12, 13, 21, 42 ] ] ]
+    [ 12, 13, 21, 42 ] ],
+   [
+    "Philippians", 3,
+    [ 10, 11 ] ] ]
  },
  {
   "id": "graveclothes",
@@ -15819,7 +15879,10 @@ window.GLOSSARY = [
     [ 24 ] ],
    [
     "Acts", 28,
-    [ 19 ] ] ]
+    [ 19 ] ],
+   [
+    "Philippians", 4,
+    [ 22 ] ] ]
  },
  {
   "id": "soldiers",
@@ -16014,7 +16077,10 @@ window.GLOSSARY = [
     [ 20 ] ],
    [
     "Galatians", 3,
-    [ 1 ] ] ]
+    [ 1 ] ],
+   [
+    "Philippians", 3,
+    [ 18 ] ] ]
  },
  {
   "id": "title-on-the-cross",
@@ -18279,7 +18345,10 @@ window.GLOSSARY = [
     [ 47 ] ],
    [
     "Luke", 2,
-    [ 11 ] ] ]
+    [ 11 ] ],
+   [
+    "Philippians", 3,
+    [ 20 ] ] ]
  },
  {
   "id": "caul",
@@ -18423,7 +18492,10 @@ window.GLOSSARY = [
     [ 21 ] ],
    [
     "Romans", 11,
-    [ 1 ] ] ]
+    [ 1 ] ],
+   [
+    "Philippians", 3,
+    [ 5 ] ] ]
  },
  {
   "id": "mizpah",
@@ -21231,7 +21303,10 @@ window.GLOSSARY = [
     [ 2 ] ],
    [
     "2 Corinthians", 11,
-    [ 22 ] ] ]
+    [ 22 ] ],
+   [
+    "Philippians", 3,
+    [ 5 ] ] ]
  },
  {
   "id": "tarshish",
@@ -23727,7 +23802,10 @@ window.GLOSSARY = [
     [ 59 ] ],
    [
     "Acts", 7,
-    [ 8 ] ] ]
+    [ 8 ] ],
+   [
+    "Philippians", 3,
+    [ 5 ] ] ]
  },
  {
   "id": "writing-table",
@@ -23973,7 +24051,10 @@ window.GLOSSARY = [
     [ 8 ] ],
    [
     "Galatians", 4,
-    [ 13 ] ] ]
+    [ 13 ] ],
+   [
+    "Philippians", 4,
+    [ 3, 15 ] ] ]
  },
  {
   "id": "repent",
@@ -25872,7 +25953,10 @@ window.GLOSSARY = [
     [ 5, 7, 9, 10, 11, 12, 13, 14, 15, 16, 21, 22, 23 ] ],
    [
     "1 Corinthians", 16,
-    [ 19 ] ] ]
+    [ 19 ] ],
+   [
+    "Philippians", 4,
+    [ 21, 22 ] ] ]
  },
  {
   "id": "shake-off-the-dust",
@@ -26508,7 +26592,10 @@ window.GLOSSARY = [
     [ 13, 23 ] ],
    [
     "Galatians", 4,
-    [ 29 ] ] ]
+    [ 29 ] ],
+   [
+    "Philippians", 3,
+    [ 6 ] ] ]
  },
  {
   "id": "salt",
@@ -26862,7 +26949,10 @@ window.GLOSSARY = [
     [ 9, 11 ] ],
    [
     "Galatians", 3,
-    [ 3 ] ] ]
+    [ 3 ] ],
+   [
+    "Philippians", 3,
+    [ 12, 15 ] ] ]
  },
  {
   "id": "begat",
@@ -27405,7 +27495,10 @@ window.GLOSSARY = [
     [ 14 ] ],
    [
     "Galatians", 1,
-    [ 5 ] ] ]
+    [ 5 ] ],
+   [
+    "Philippians", 4,
+    [ 20, 23 ] ] ]
  },
  {
   "id": "treasure-in-heaven",
@@ -29502,7 +29595,13 @@ window.GLOSSARY = [
     [ 1 ] ],
    [
     "Galatians", 1,
-    [ 13 ] ] ]
+    [ 13 ] ],
+   [
+    "Philippians", 3,
+    [ 6 ] ],
+   [
+    "Philippians", 4,
+    [ 15 ] ] ]
  },
  {
   "id": "bind-and-loose",
@@ -31353,7 +31452,10 @@ window.GLOSSARY = [
   "refs": [
    [
     "Luke", 10,
-    [ 41 ] ] ]
+    [ 41 ] ],
+   [
+    "Philippians", 4,
+    [ 6, 10 ] ] ]
  },
  {
   "id": "one-thing-needful",
@@ -33270,7 +33372,10 @@ window.GLOSSARY = [
     [ 11 ] ],
    [
     "Luke", 18,
-    [ 14 ] ] ]
+    [ 14 ] ],
+   [
+    "Philippians", 4,
+    [ 12 ] ] ]
  },
  {
   "id": "proselyte",
@@ -35289,7 +35394,10 @@ window.GLOSSARY = [
     [ 42 ] ],
    [
     "Galatians", 2,
-    [ 9 ] ] ]
+    [ 9 ] ],
+   [
+    "Philippians", 3,
+    [ 10 ] ] ]
  },
  {
   "id": "all-things-common",
@@ -36672,7 +36780,10 @@ window.GLOSSARY = [
     [ 2, 4 ] ],
    [
     "2 Corinthians", 11,
-    [ 9 ] ] ]
+    [ 9 ] ],
+   [
+    "Philippians", 4,
+    [ 15 ] ] ]
  },
  {
   "id": "samothracia",
@@ -37056,7 +37167,10 @@ window.GLOSSARY = [
     [ 1 ] ],
    [
     "2 Corinthians", 13,
-    [ 13 ] ] ]
+    [ 13 ] ],
+   [
+    "Philippians", 4,
+    [ 22 ] ] ]
  },
  {
   "id": "upper-chamber",
@@ -37809,7 +37923,10 @@ window.GLOSSARY = [
     [ 1, 11, 13 ] ],
    [
     "Acts", 27,
-    [ 2 ] ] ]
+    [ 2 ] ],
+   [
+    "Philippians", 4,
+    [ 16 ] ] ]
  },
  {
   "id": "amphipolis",
@@ -39762,7 +39879,10 @@ window.GLOSSARY = [
     [ 13 ] ],
    [
     "1 Corinthians", 15,
-    [ 58 ] ] ]
+    [ 58 ] ],
+   [
+    "Philippians", 4,
+    [ 12, 17, 18 ] ] ]
  },
  {
   "id": "reign",
@@ -40479,7 +40599,13 @@ window.GLOSSARY = [
     [ 15 ] ],
    [
     "Galatians", 4,
-    [ 12, 28, 31 ] ] ]
+    [ 12, 28, 31 ] ],
+   [
+    "Philippians", 3,
+    [ 1, 13, 17 ] ],
+   [
+    "Philippians", 4,
+    [ 1, 8, 21 ] ] ]
  },
  {
   "id": "captain-of-the-guard",
@@ -42024,6 +42150,9 @@ window.GLOSSARY = [
   "refs": [
    [
     "Romans", 16,
+    [ 17 ] ],
+   [
+    "Philippians", 3,
     [ 17 ] ] ]
  },
  {
@@ -44614,5 +44743,266 @@ window.GLOSSARY = [
    [
     "Galatians", 4,
     [ 26 ] ] ]
+ },
+ {
+  "id": "concision",
+  "kind": "term",
+  "name": "The concision (\"the cutters\": teachers who said a man must be circumcised to be saved)",
+  "refs": [
+   [
+    "Philippians", 3,
+    [ 2 ] ] ]
+ },
+ {
+  "id": "dogs-in-philippians",
+  "kind": "term",
+  "name": "Dogs (a harsh word for outsiders, turned on the teachers who shut people out)",
+  "refs": [
+   [
+    "Philippians", 3,
+    [ 2 ] ] ]
+ },
+ {
+  "id": "dung-rubbish",
+  "kind": "term",
+  "name": "Dung (rubbish, the scraps thrown away)",
+  "refs": [
+   [
+    "Philippians", 3,
+    [ 8 ] ] ]
+ },
+ {
+  "id": "apprehend",
+  "kind": "term",
+  "name": "Apprehend (take hold of, as Christ took hold of Paul)",
+  "refs": [
+   [
+    "Philippians", 3,
+    [ 12, 13 ] ] ]
+ },
+ {
+  "id": "press-toward-the-mark",
+  "kind": "term",
+  "name": "Press toward the mark (a runner straining for the finish line)",
+  "refs": [
+   [
+    "Philippians", 3,
+    [ 14 ] ] ]
+ },
+ {
+  "id": "conformable",
+  "kind": "term",
+  "name": "Conformable (made to share the shape of Christ's death)",
+  "refs": [
+   [
+    "Philippians", 3,
+    [ 10 ] ] ]
+ },
+ {
+  "id": "ensample-follow",
+  "kind": "term",
+  "name": "Ensample (an example to follow)",
+  "refs": [
+   [
+    "Philippians", 3,
+    [ 17 ] ] ]
+ },
+ {
+  "id": "enemies-of-the-cross",
+  "kind": "term",
+  "name": "Enemies of the cross (people who live as if the cross changed nothing)",
+  "refs": [
+   [
+    "Philippians", 3,
+    [ 18 ] ] ]
+ },
+ {
+  "id": "god-is-their-belly",
+  "kind": "term",
+  "name": "Whose God is their belly (an appetite that has become the boss)",
+  "refs": [
+   [
+    "Philippians", 3,
+    [ 19 ] ] ]
+ },
+ {
+  "id": "conversation-citizenship",
+  "kind": "term",
+  "name": "Conversation (here, citizenship: where a man's real home is)",
+  "refs": [
+   [
+    "Philippians", 3,
+    [ 20 ] ] ]
+ },
+ {
+  "id": "vile-body",
+  "kind": "term",
+  "name": "Our vile body (our lowly body, the body of our humbling)",
+  "refs": [
+   [
+    "Philippians", 3,
+    [ 21 ] ] ]
+ },
+ {
+  "id": "euodias",
+  "kind": "person",
+  "name": "Euodias (a woman of the church in Philippi, at odds with Syntyche)",
+  "refs": [
+   [
+    "Philippians", 4,
+    [ 2 ] ] ]
+ },
+ {
+  "id": "syntyche",
+  "kind": "person",
+  "name": "Syntyche (a woman of the church in Philippi, at odds with Euodias)",
+  "refs": [
+   [
+    "Philippians", 4,
+    [ 2 ] ] ]
+ },
+ {
+  "id": "yokefellow",
+  "kind": "person",
+  "name": "True yokefellow (a partner in the same harness, asked to help the two women)",
+  "refs": [
+   [
+    "Philippians", 4,
+    [ 3 ] ] ]
+ },
+ {
+  "id": "clement",
+  "kind": "person",
+  "name": "Clement (a fellow worker of Paul's, whose name is in the book of life)",
+  "refs": [
+   [
+    "Philippians", 4,
+    [ 3 ] ] ]
+ },
+ {
+  "id": "book-of-life",
+  "kind": "term",
+  "name": "The book of life (the names of God's people)",
+  "refs": [
+   [
+    "Philippians", 4,
+    [ 3 ] ] ]
+ },
+ {
+  "id": "epaphroditus",
+  "kind": "person",
+  "name": "Epaphroditus (the Philippian who brought the gift to Paul in Rome)",
+  "refs": [
+   [
+    "Philippians", 4,
+    [ 18 ] ] ]
+ },
+ {
+  "id": "philippians-people",
+  "kind": "person",
+  "name": "The Philippians (the believers of Philippi, who gave to Paul again and again)",
+  "refs": [
+   [
+    "Philippians", 4,
+    [ 15 ] ] ]
+ },
+ {
+  "id": "moderation",
+  "kind": "term",
+  "name": "Moderation (gentleness, a fair and reasonable spirit)",
+  "refs": [
+   [
+    "Philippians", 4,
+    [ 5 ] ] ]
+ },
+ {
+  "id": "supplication",
+  "kind": "term",
+  "name": "Supplication (asking God for what you need)",
+  "refs": [
+   [
+    "Philippians", 4,
+    [ 6 ] ] ]
+ },
+ {
+  "id": "think-on-these-things",
+  "kind": "term",
+  "name": "Think on these things (weigh them, keep them in view)",
+  "refs": [
+   [
+    "Philippians", 4,
+    [ 8 ] ] ]
+ },
+ {
+  "id": "honest-honourable",
+  "kind": "term",
+  "name": "Honest (honourable, worth respecting)",
+  "refs": [
+   [
+    "Philippians", 4,
+    [ 8 ] ] ]
+ },
+ {
+  "id": "virtue-excellence",
+  "kind": "term",
+  "name": "Virtue (excellence, the kind that takes effort)",
+  "refs": [
+   [
+    "Philippians", 4,
+    [ 8 ] ] ]
+ },
+ {
+  "id": "of-good-report",
+  "kind": "term",
+  "name": "Of good report (well spoken of)",
+  "refs": [
+   [
+    "Philippians", 4,
+    [ 8 ] ] ]
+ },
+ {
+  "id": "communicate",
+  "kind": "term",
+  "name": "Communicate (share in, stand beside)",
+  "refs": [
+   [
+    "Philippians", 4,
+    [ 14, 15 ] ] ]
+ },
+ {
+  "id": "odour-of-a-sweet-smell",
+  "kind": "term",
+  "name": "An odour of a sweet smell (a gift that pleases God like an offering)",
+  "refs": [
+   [
+    "Philippians", 4,
+    [ 18 ] ] ]
+ },
+ {
+  "id": "learned-contentment",
+  "kind": "term",
+  "name": "Therewith to be content (learned contentment, in want and in plenty)",
+  "refs": [
+   [
+    "Philippians", 4,
+    [ 11 ] ] ]
+ },
+ {
+  "id": "riches-in-glory",
+  "kind": "term",
+  "name": "His riches in glory (God's own supply, the measure for every need)",
+  "refs": [
+   [
+    "Philippians", 4,
+    [ 19 ] ] ]
+ },
+ {
+  "id": "caesars-household",
+  "kind": "person",
+  "name": "Caesar's household (the emperor's staff and slaves, some of them believers)",
+  "refs": [
+   [
+    "Philippians", 4,
+    [ 22 ] ] ]
  }
 ];
