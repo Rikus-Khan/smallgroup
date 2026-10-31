@@ -1,0 +1,526 @@
+<!doctype html>
+<html lang="en" data-theme="night">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>2 Corinthians 3</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="../assets/fonts.css">
+<link rel="stylesheet" href="../assets/deck.css">
+<link rel="stylesheet" href="../assets/themes.css">
+<style>
+/* c203-epistle: you as a letter, written by the Spirit, with the people who read it (a deck.css candidate) */
+.c203-epistle { display: grid; grid-template-columns: 1.35fr 1fr; gap: 1.2rem 1.6rem; align-items: center; margin: .5em 0 1em; }
+.c203-page { padding: .9em 1.2em 1em; border: 2px solid var(--line-strong); border-radius: 6px; background: color-mix(in srgb, var(--accent) 9%, var(--surface)); }
+.c203-page h3 { margin: 0 0 .35em; font: italic 600 clamp(1.3rem, 1.05rem + 1vw, 2rem)/1.15 var(--serif); color: var(--accent-hot); }
+.c203-page p { margin: .25em 0; font: clamp(1rem, .9rem + .5vw, 1.35rem)/1.35 var(--serif); }
+.c203-page s { color: var(--ink-soft); text-decoration-color: var(--danger); text-decoration-thickness: 2px; }
+.c203-page b { color: var(--accent-hot); }
+.c203-readers { list-style: none; margin: 0; padding: 0; display: grid; gap: 6px; }
+.c203-readers li { padding: .3em .8em .35em; border: 1.5px solid var(--line-strong); border-radius: 999px; background: var(--surface); font: clamp(.92rem, .84rem + .4vw, 1.18rem) var(--sans);
+  opacity: 0; transform: translateX(14px); transition: opacity .5s ease, transform .5s ease; transition-delay: calc(var(--k, 0) * 380ms + 900ms); }
+.slide.active .c203-readers li { opacity: 1; transform: none; }
+.c203-rh { margin: 0 0 .2em; font: 700 clamp(.8rem, .74rem + .3vw, 1rem) var(--sans); letter-spacing: .06em; text-transform: uppercase; color: var(--ink-soft); }
+@media (max-width: 760px) { .c203-epistle { grid-template-columns: 1fr; } }
+
+/* c203-tables: a cracked stone tablet beside a heart the Spirit writes on (a deck.css candidate). A .c203-write step draws the writing. */
+.c203-stone { fill: var(--surface-2); stroke: var(--line-strong); stroke-width: 3; }
+.c203-cut { stroke: var(--ink-soft); stroke-width: 4; stroke-linecap: round; fill: none; }
+.c203-crack { stroke: var(--danger); stroke-width: 3; fill: none; stroke-linejoin: round; }
+.c203-heart { fill: color-mix(in srgb, var(--accent) 18%, var(--bg)); stroke: var(--accent); stroke-width: 4; stroke-linejoin: round; }
+.c203-ink { stroke: var(--accent-hot); stroke-width: 5; stroke-linecap: round; fill: none; stroke-dasharray: 1; stroke-dashoffset: 1; transition: stroke-dashoffset 1.2s ease; transition-delay: calc(var(--k, 0) * 500ms); }
+.slide:has(.c203-write.on) .c203-ink { stroke-dashoffset: 0; }
+.c203-cap { font-size: 22px; font-weight: 700; text-anchor: middle; fill: var(--ink); }
+.c203-cap.soft { font-weight: 400; fill: var(--ink-soft); font-size: 19px; }
+
+/* c203-glow: a glory that fades beside one that stays, on a night sky (a deck.css candidate) */
+.c203-sky { fill: var(--on-glow); }
+.c203-orb { fill: var(--glow); }
+.c203-ray { stroke: var(--glow); stroke-width: 4; stroke-linecap: round; }
+.slide.active .c203-fading { animation: c203-fade 5s ease-in infinite; }
+@keyframes c203-fade { 0% { opacity: 1; } 85% { opacity: .1; } 100% { opacity: .1; } }
+.c203-stay { opacity: .95; }
+.c203-glowtx { fill: var(--glow); font-size: 21px; font-weight: 700; text-anchor: middle; }
+.c203-glowtx.soft { font-weight: 400; font-style: italic; font-size: 18px; opacity: .85; }
+
+/* c203-veil: a face under a cloth; on a .c203-turn step the cloth lifts away (a deck.css candidate) */
+.c203-face { fill: color-mix(in srgb, var(--glow) 80%, var(--bg)); }
+.c203-eye { fill: var(--on-glow); }
+.c203-cloth { fill: color-mix(in srgb, var(--ink-soft) 70%, var(--bg)); stroke: var(--line-strong); stroke-width: 3; transition: transform 1.4s ease, opacity 1.2s ease; transform-box: fill-box; transform-origin: 0 0; }
+.slide:has(.c203-turn.on) .c203-cloth { transform: translate(120px, -60px) rotate(32deg); opacity: 0; }
+.c203-shine { stroke: var(--glow); stroke-width: 5; stroke-linecap: round; opacity: 0; transition: opacity 1.2s ease .6s; }
+.slide:has(.c203-turn.on) .c203-shine { opacity: .9; }
+
+/* c203-lock: a padlock that springs open on a .c203-free step (a deck.css candidate) */
+.c203-lockbody { fill: var(--accent); }
+.c203-shackle { fill: none; stroke: var(--ink-soft); stroke-width: 16; stroke-linecap: round; transform-box: fill-box; transform-origin: 100% 100%; transition: transform .9s cubic-bezier(.3,1.4,.5,1); }
+.slide:has(.c203-free.on) .c203-shackle { transform: translateY(-22px) rotate(-30deg); }
+.c203-keyhole { fill: var(--on-accent); }
+
+/* c203-grow: the same face coming into focus, step by step, "from glory to glory" (a deck.css candidate) */
+.c203-step { opacity: 0; transform: translateY(10px); transition: opacity .6s ease, transform .6s ease; transition-delay: calc(var(--k, 0) * 420ms + 300ms); }
+.slide.active .c203-step { opacity: 1; transform: none; }
+.c203-pic { fill: var(--surface-2); stroke: var(--accent); stroke-width: 3; }
+.c203-blur { filter: blur(var(--b, 0px)); }
+.c203-dot { fill: var(--ink); }
+.c203-smile { fill: none; stroke: var(--ink); stroke-width: 3.5; stroke-linecap: round; }
+.c203-arrow { fill: none; stroke: var(--accent); stroke-width: 4; stroke-linecap: round; stroke-dasharray: 1; stroke-dashoffset: 1; transition: stroke-dashoffset 3s ease .3s; }
+.slide.active .c203-arrow { stroke-dashoffset: 0; }
+.c203-lbl { fill: var(--ink-soft); font-size: 16px; text-anchor: middle; }
+.c203-lbl.big { fill: var(--accent-hot); font-size: 22px; font-weight: 700; font-style: italic; font-family: var(--serif); }
+.c203-here .c203-pic { stroke-width: 5; stroke: var(--accent-hot); }
+</style>
+</head>
+<body>
+<main class="deck" id="deck">
+
+<!-- ======================= OPENING ======================= -->
+<section class="slide title">
+  <div class="inner">
+    <div class="emblem rise"></div>
+    <h1 class="rise" style="--d:1">2 Corinthians 3</h1>
+    <p class="sub rise" style="--d:3">Ye are our epistle</p>
+    <p class="tag rise" style="--d:5">You are a letter written by the Spirit, and everyone you meet is reading you. And the One who is writing isn't finished with you yet.</p>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise" style="--d:1">Where we are</h2>
+    <ol class="signs rise" style="--d:2">
+      <li><b>End of chapter 2</b>“And who is sufficient for these things?” (2:16)</li>
+      <li class="now"><b>Chapter 3</b>“Our sufficiency is of God” (3:5). The new covenant, and the Spirit who changes us.</li>
+      <li><b>Chapter 4</b>“We have this treasure in earthen vessels” (4:7)</li>
+    </ol>
+    <p class="note step">Paul has just said that he carries the fragrance of Christ everywhere. Now critics are asking who gave him the right. His answer: <em>you</em> are the proof. Then he explains what makes a man able to serve at all.</p>
+    <p class="note step">Some of this chapter is deep, with Moses, a veil and two covenants. It is also some of the most hopeful writing in the Bible for a man who is tired of how slowly he changes.</p>
+  </div>
+</section>
+
+<section class="slide watch">
+  <div class="inner">
+    <h2 class="rise">Things to watch for</h2>
+    <p class="lede rise" style="--d:1">Keep these questions in the back of your mind as we read. We'll come back to every one of them at the end.</p>
+    <ol class="seeds">
+      <li class="step"><span class="topic">The living letter</span><span class="seed-q">Who is “the epistle of Christ”, known and read of all men?</span></li>
+      <li class="step"><span class="topic">Stone and heart</span><span class="seed-q">What is the difference between the old covenant and the new?</span></li>
+      <li class="step"><span class="topic">Sufficiency</span><span class="seed-q">Where does Paul say his ability comes from?</span></li>
+      <li class="step"><span class="topic">The veil</span><span class="seed-q">What is the veil, and what takes it away?</span></li>
+      <li class="step"><span class="topic">Liberty</span><span class="seed-q">What does the Spirit of the Lord bring?</span></li>
+      <li class="step"><span class="topic">Changed</span><span class="seed-q">How are believers changed into the same image as Christ?</span></li>
+    </ol>
+  </div>
+</section>
+
+<!-- ======================= PART ONE ======================= -->
+<section class="slide part">
+  <div class="inner">
+    <p class="part-n rise">Part one</p>
+    <h2 class="rise" style="--d:1">Ye are our epistle</h2>
+    <p class="range rise" style="--d:2">Verses 1–6</p>
+    <div class="rule"></div>
+    <p class="hook rise" style="--d:4">Paul's best reference letter is a changed life.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="1-3" data-hl="epistles of commendation|Ye are our epistle written in our hearts, known and read of all men|written not with ink, but with the Spirit of the living God|in fleshy tables of the heart"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="2" data-hl="known and read of all men"></blockquote>
+    <h2 class="rise" style="--d:1">The letter everyone reads</h2>
+    <div class="c203-epistle rise" style="--d:2">
+      <div class="c203-page">
+        <h3>an epistle of Christ</h3>
+        <p>Written: not with <s>ink</s>, but by <b>the Spirit of the living God</b></p>
+        <p>On: not <s>stone</s>, but a <b>heart</b>, and a changed life</p>
+        <p>Delivered by: <b>us</b> (“ministered by us”)</p>
+      </div>
+      <div>
+        <h4 class="c203-rh">Who reads it</h4>
+        <ul class="c203-readers" aria-label="The people who read your life: your kids, your boss, the guys at work, your old friends, your family.">
+          <li style="--k:0">your kids</li>
+          <li style="--k:1">your boss</li>
+          <li style="--k:2">the guys at work</li>
+          <li style="--k:3">your old friends</li>
+          <li style="--k:4">your family</li>
+        </ul>
+      </div>
+    </div>
+    <p class="note step">A traveling teacher in Paul's day often carried a letter of recommendation. Paul's enemies said he had none. His answer: <em>the Corinthians are his letter</em>. A church full of changed lives is proof enough.</p>
+    <p class="note step">Most people will never open a Bible, but they will read you: how you talk to your kids, whether you show up at work, what you do when someone cuts you off. It's a letter still being written, smudges and all.</p>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="3" data-hl="not in tables of stone, but in fleshy tables of the heart"></blockquote>
+    <h2 class="rise" style="--d:1">Stone, or heart</h2>
+    <svg style="max-width:500px;display:block;margin:.3em auto" viewBox="0 30 640 240" role="img" aria-label="On the left, two stone tablets with carved lines and a crack: the law written on stone. On the right, a heart on which writing appears: the law written on the heart by the Spirit.">
+      <g>
+        <path class="c203-stone" d="M52 200 V84 a46 46 0 0 1 92 0 V200 Z"/>
+        <path class="c203-stone" d="M158 200 V84 a46 46 0 0 1 92 0 V200 Z"/>
+        <path class="c203-cut" d="M70 90 H126 M70 112 H126 M70 134 H126 M70 156 H110 M176 90 H232 M176 112 H232 M176 134 H220 M176 156 H232"/>
+        <path class="c203-crack" d="M198 42 L190 78 L206 100 L192 134 L204 168 L196 200"/>
+        <text class="c203-cap" x="150" y="234">on stone</text>
+        <text class="c203-cap soft" x="150" y="258">shows what's wrong</text>
+      </g>
+      <g>
+        <path class="c203-heart" d="M490 206 C 418 160, 392 112, 416 78 C 440 46, 484 56, 490 90 C 496 56, 540 46, 564 78 C 588 112, 562 160, 490 206 Z"/>
+        <path class="c203-ink" pathLength="1" style="--k:0" d="M446 92 C 462 84, 478 100, 490 112"/>
+        <path class="c203-ink" pathLength="1" style="--k:1" d="M440 122 C 470 112, 510 130, 540 118"/>
+        <path class="c203-ink" pathLength="1" style="--k:2" d="M452 150 C 478 142, 504 154, 530 146"/>
+        <text class="c203-cap" x="490" y="234">on the heart</text>
+        <text class="c203-cap soft" x="490" y="258">changes the man</text>
+      </g>
+    </svg>
+    <p class="note rise" style="--d:2"><em>“Tables of stone”</em> are the Ten Commandments, <em>“written with the finger of God”</em> (Exodus 31:18).</p>
+    <p class="note step c203-write">The law was holy and good. But it stayed outside a man, telling him what to do and showing him he couldn't. God had promised something better, and the next slide has the promise.</p>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise" style="--d:1">God promised a new heart</h2>
+    <blockquote class="quote rise" style="--d:2"><p>“But this shall be the covenant that I will make with the house of Israel; After those days, saith the LORD, I will put my law in their inward parts, and write it in their hearts; and will be their God, and they shall be my people.”</p><cite>Jeremiah 31:33</cite></blockquote>
+    <blockquote class="quote rise" style="--d:3"><p>“A new heart also will I give you, and a new spirit will I put within you: and I will take away the stony heart out of your flesh, and I will give you an heart of flesh.”</p><cite>Ezekiel 36:26</cite></blockquote>
+    <p class="note step">Both prophets spoke hundreds of years before Christ. Paul says the promise has now come true for everyone who trusts Jesus: forgiveness, and God's own Spirit inside.</p>
+    <p class="note step">A new heart isn't a self-improvement project. It's a gift. When the old heart pulls at you today, remember that you were given a new one, and the Spirit is writing on it.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="4-6" data-hl="our sufficiency is of God|able ministers of the new testament|the letter killeth, but the spirit giveth life"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="5-6" data-hl="our sufficiency is of God|the letter killeth, but the spirit giveth life"></blockquote>
+    <h2 class="rise" style="--d:1">Able, but not by ourselves</h2>
+    <div class="columns">
+      <div class="col law step">
+        <p class="who">“the letter killeth”</p>
+        <h3>A rule from outside</h3>
+        <p>“Do this, don't do that.” The rules are right, but they can't give a man the power to keep them. They show him he's failed, and nothing more. Every man who has tried to quit on willpower alone knows it.</p>
+      </div>
+      <div class="col grace step">
+        <p class="who">“the spirit giveth life”</p>
+        <h3>A life from inside</h3>
+        <p>God's own Spirit comes to live in the man, and He gives the want to and the power to. That's the new covenant: not a better list, but a new heart.</p>
+      </div>
+    </div>
+    <p class="note step"><em>“Testament”</em> here means covenant, an agreement God makes. The new one is forgiveness and the Spirit, received by faith in Christ.</p>
+    <p class="note step">And Paul admits he isn't sufficient: <em>“Not that we are sufficient of ourselves.”</em> God later told him why that's fine: <em>“My grace is sufficient for thee”</em> (12:9).</p>
+  </div>
+</section>
+
+<!-- ======================= PART TWO ======================= -->
+<section class="slide part">
+  <div class="inner">
+    <p class="part-n rise">Part two</p>
+    <h2 class="rise" style="--d:1">A glory that fades, and one that stays</h2>
+    <p class="range rise" style="--d:2">Verses 7–11</p>
+    <div class="rule"></div>
+    <p class="hook rise" style="--d:4">The old way was glorious. The new way is much more.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="7-11" data-hl="the ministration of death, written and engraven in stones, was glorious|which glory was to be done away|the ministration of the spirit be rather glorious|much more doth the ministration of righteousness exceed in glory|much more that which remaineth is glorious"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="11" data-hl="much more that which remaineth is glorious"></blockquote>
+    <h2 class="rise" style="--d:1">Fading, and “remaineth”</h2>
+    <svg style="max-width:600px;display:block;margin:.3em auto" viewBox="0 0 640 235" role="img" aria-label="Two lights on a night sky. The one on the left, the old covenant, glorious but fading. The one on the right, the new covenant, shining steadily, and it stays.">
+      <defs><clipPath id="c203-night"><rect x="0" y="0" width="640" height="250" rx="12"/></clipPath></defs>
+      <g clip-path="url(#c203-night)">
+        <rect class="c203-sky" x="0" y="0" width="640" height="250"/>
+        <g class="c203-fading">
+          <circle class="c203-orb" cx="160" cy="100" r="46"/>
+          <g class="c203-ray"><line x1="160" y1="30" x2="160" y2="14"/><line x1="224" y1="100" x2="244" y2="100"/><line x1="96" y1="100" x2="76" y2="100"/><line x1="208" y1="52" x2="222" y2="38"/><line x1="112" y1="52" x2="98" y2="38"/></g>
+        </g>
+        <text class="c203-glowtx" x="160" y="190">the old: glorious,</text>
+        <text class="c203-glowtx soft" x="160" y="216">“done away” (v. 7)</text>
+        <g class="c203-stay">
+          <circle class="c203-orb" cx="480" cy="100" r="56"/>
+          <g class="c203-ray"><line x1="480" y1="20" x2="480" y2="2"/><line x1="560" y1="100" x2="582" y2="100"/><line x1="400" y1="100" x2="378" y2="100"/><line x1="537" y1="43" x2="552" y2="28"/><line x1="423" y1="43" x2="408" y2="28"/><line x1="537" y1="157" x2="552" y2="172"/><line x1="423" y1="157" x2="408" y2="172"/></g>
+        </g>
+        <text class="c203-glowtx" x="480" y="190">the new: “remaineth”</text>
+        <text class="c203-glowtx soft" x="480" y="216">“much more” (vv. 8, 9, 11)</text>
+      </g>
+    </svg>
+    <p class="note step"><em>“Ministration of death”</em> is the law on stone: glorious, but all it could do to a sinner was condemn him. <em>“Ministration of righteousness”</em> is the new covenant, where God declares a man right and then lives in him.</p>
+    <p class="note step">Paul says <em>“much more”</em> three times. The old was never meant to last. The new <em>remains</em>. What God gave you in Christ doesn't wear off by Friday.</p>
+  </div>
+</section>
+
+<!-- ======================= PART THREE ======================= -->
+<section class="slide part">
+  <div class="inner">
+    <p class="part-n rise">Part three</p>
+    <h2 class="rise" style="--d:1">The veil taken away</h2>
+    <p class="range rise" style="--d:2">Verses 12–18</p>
+    <div class="rule"></div>
+    <p class="hook rise" style="--d:4">Open faces, a free heart, and a man being changed.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="12-14" data-hl="we use great plainness of speech|put a vail over his face|their minds were blinded|which vail is done away in Christ"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="13" data-hl="put a vail over his face"></blockquote>
+    <h2 class="rise" style="--d:1">Why Moses wore a veil</h2>
+    <p class="note rise" style="--d:2">When Moses came down from Sinai after meeting with God, his face shone, and he didn't know it (Exodus 34:29).</p>
+    <blockquote class="quote rise" style="--d:3"><p>“And the children of Israel saw the face of Moses, that the skin of Moses’ face shone: and Moses put the vail upon his face again, until he went in to speak with him.”</p><cite>Exodus 34:35</cite></blockquote>
+    <p class="note step">The people were afraid to come near him (34:30). Paul adds what he sees in the veil: the glory on Moses' face was <em>fading</em>, and the veil kept Israel from watching it go out. That glory was a loan meant to run out.</p>
+    <p class="note step">The new covenant has nothing to hide: <em>“we use great plainness of speech.”</em></p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="15-16" data-hl="the vail is upon their heart|when it shall turn to the Lord, the vail shall be taken away"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <div class="split">
+      <div class="stage">
+        <svg viewBox="0 0 400 320" role="img" aria-label="A face covered by a cloth. When the man turns to the Lord, the cloth lifts away and light shines out.">
+          <g class="c203-shine"><line x1="200" y1="14" x2="200" y2="34"/><line x1="326" y1="60" x2="312" y2="76"/><line x1="74" y1="60" x2="88" y2="76"/><line x1="360" y1="160" x2="338" y2="160"/><line x1="40" y1="160" x2="62" y2="160"/></g>
+          <circle class="c203-face" cx="200" cy="160" r="110"/>
+          <circle class="c203-eye" cx="160" cy="146" r="9"/><circle class="c203-eye" cx="240" cy="146" r="9"/>
+          <path d="M162 200 Q200 232 238 200" fill="none" stroke-width="6" stroke-linecap="round" style="stroke:var(--on-glow)"/>
+          <path class="c203-cloth" d="M84 70 H316 V270 Q300 282 284 270 Q268 258 252 270 Q236 282 220 270 Q204 258 188 270 Q172 282 156 270 Q140 258 124 270 Q108 282 84 270 Z"/>
+        </svg>
+      </div>
+      <div>
+        <h2 class="rise" style="--d:1">The veil is taken away</h2>
+        <p class="note rise" style="--d:2">Paul grew up reading Moses. Men can read every word, <em>“when Moses is read”</em>, and miss the One it points to: <em>“the vail is upon their heart.”</em> Paul was one of them until the Damascus road (Acts 9), so he writes with sorrow, not scorn.</p>
+        <p class="note step c203-turn">The cure: <em>“when it shall turn to the Lord, the vail shall be taken away.”</em> Nobody has to figure it out first. He turns, and Christ lifts the veil.</p>
+        <p class="note step">Any man who can't see God clearly, through shame or confusion or a hard heart, gets the same invitation: turn to the Lord.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="slide verse" data-v="17" data-hl="where the Spirit of the Lord is, there is liberty"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="17" data-hl="where the Spirit of the Lord is, there is liberty"></blockquote>
+    <div class="split">
+      <div class="stage">
+        <svg viewBox="0 0 300 280" role="img" aria-label="A padlock. The shackle springs open: liberty.">
+          <path class="c203-shackle" d="M100 120 V84 a50 50 0 0 1 100 0 V120"/>
+          <rect class="c203-lockbody" x="70" y="116" width="160" height="124" rx="16"/>
+          <circle class="c203-keyhole" cx="150" cy="168" r="14"/><rect class="c203-keyhole" x="144" y="172" width="12" height="38" rx="4"/>
+        </svg>
+      </div>
+      <div>
+        <h2 class="rise" style="--d:1">Liberty</h2>
+        <p class="note rise" style="--d:2">The Lord Jesus works in us by His Spirit, and where He is, there is <em>liberty</em>: freedom from guilt, from the law's demands, and from being owned by what used to own us.</p>
+        <p class="note step c203-free">It isn't a promise of no struggle. Chains don't always fall off at once, but the Owner has changed: <em>“If the Son therefore shall make you free, ye shall be free indeed”</em> (John 8:36).</p>
+        <blockquote class="quote step"><p>“For, brethren, ye have been called unto liberty; only use not liberty for an occasion to the flesh, but by love serve one another.”</p><cite>Galatians 5:13</cite></blockquote>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="slide verse" data-v="18" data-hl="with open face beholding as in a glass the glory of the Lord|are changed into the same image from glory to glory|even as by the Spirit of the Lord"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="18" data-hl="with open face beholding as in a glass"></blockquote>
+    <h2 class="rise" style="--d:1">Looking, and becoming</h2>
+    <div class="morph">
+      <span class="big rise" style="--d:2">κατοπτριζόμενοι</span>
+      <span class="say step">said <em class="gk">katoptrizomenoi</em></span>
+      <span class="means step">“looking into a mirror”</span>
+    </div>
+    <p class="note step">Moses went up the mountain, and the glory lit his face for a while. Now every believer, <em>“we all”</em>, looks at Christ with <em>“open face”</em>, no veil. A mirror in Paul's day was polished metal, and it showed a dim reflection.</p>
+    <blockquote class="quote step"><p>“For now we see through a glass, darkly; but then face to face: now I know in part; but then shall I know even as also I am known.”</p><cite>1 Corinthians 13:12</cite></blockquote>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="18" data-hl="are changed into the same image from glory to glory"></blockquote>
+    <h2 class="rise" style="--d:1">From glory to glory</h2>
+    <svg style="max-width:600px;display:block;margin:.3em auto" viewBox="0 66 640 228" role="img" aria-label="Six faces in a row, climbing up and to the right. The first is a blur and each is a little sharper than the last, until the sixth is clear. An arrow beneath them reads from glory to glory.">
+      <g class="c203-step" style="--k:0"><circle class="c203-pic" cx="70" cy="200" r="38"/><g class="c203-blur" style="--b:7px"><circle class="c203-dot" cx="58" cy="194" r="4"/><circle class="c203-dot" cx="82" cy="194" r="4"/><path class="c203-smile" d="M56 212 Q70 222 84 212"/></g></g>
+      <g class="c203-step c203-here" style="--k:1"><circle class="c203-pic" cx="170" cy="182" r="38"/><g class="c203-blur" style="--b:5.5px"><circle class="c203-dot" cx="158" cy="176" r="4"/><circle class="c203-dot" cx="182" cy="176" r="4"/><path class="c203-smile" d="M156 194 Q170 204 184 194"/></g></g>
+      <g class="c203-step" style="--k:2"><circle class="c203-pic" cx="270" cy="164" r="38"/><g class="c203-blur" style="--b:4px"><circle class="c203-dot" cx="258" cy="158" r="4"/><circle class="c203-dot" cx="282" cy="158" r="4"/><path class="c203-smile" d="M256 176 Q270 186 284 176"/></g></g>
+      <g class="c203-step" style="--k:3"><circle class="c203-pic" cx="370" cy="146" r="38"/><g class="c203-blur" style="--b:2.5px"><circle class="c203-dot" cx="358" cy="140" r="4"/><circle class="c203-dot" cx="382" cy="140" r="4"/><path class="c203-smile" d="M356 158 Q370 168 384 158"/></g></g>
+      <g class="c203-step" style="--k:4"><circle class="c203-pic" cx="470" cy="128" r="38"/><g class="c203-blur" style="--b:1.2px"><circle class="c203-dot" cx="458" cy="122" r="4"/><circle class="c203-dot" cx="482" cy="122" r="4"/><path class="c203-smile" d="M456 140 Q470 150 484 140"/></g></g>
+      <g class="c203-step" style="--k:5"><circle class="c203-pic" cx="570" cy="110" r="38"/><g><circle class="c203-dot" cx="558" cy="104" r="4"/><circle class="c203-dot" cx="582" cy="104" r="4"/><path class="c203-smile" d="M556 122 Q570 132 584 122"/></g></g>
+      <path class="c203-arrow" pathLength="1" d="M40 262 H590"/>
+      <path class="c203-arrow" pathLength="1" d="M572 250 L594 262 L572 274"/>
+      <text class="c203-lbl big" x="320" y="248">“from glory to glory”</text>
+      <text class="c203-lbl" x="70" y="286">where it starts</text>
+      <text class="c203-lbl" x="170" y="286">you, today</text>
+      <text class="c203-lbl" x="570" y="286">“the same image”</text>
+    </svg>
+    <p class="note step"><em>“From glory to glory”</em> is a staircase, not a light switch. Each step is a little clearer than the last, and the One doing the changing is <em>“the Spirit of the Lord.”</em> So don't measure yourself against yesterday, especially if yesterday was a fall. Measure against last year.</p>
+    <p class="note step">Today: spend five minutes with Jesus. Read a few verses of a Gospel and look at Him. That's the looking Paul means.</p>
+  </div>
+</section>
+
+<!-- ======================= CLOSING ======================= -->
+<section class="slide remember">
+  <div class="inner">
+    <h2 class="rise">Points to remember</h2>
+    <ol class="seeds">
+      <li class="step"><span class="topic">The living letter</span><span class="seed-q">“Ye are our epistle… known and read of all men” <cite>3:2</cite></span><span class="take">Your life is the letter people read, and the Spirit is the One writing it.</span></li>
+      <li class="step"><span class="topic">Stone and heart</span><span class="seed-q">“Not in tables of stone, but in fleshy tables of the heart” <cite>3:3</cite></span><span class="take">The old covenant told men what to do. The new gives a new heart and the Spirit.</span></li>
+      <li class="step"><span class="topic">Sufficiency</span><span class="seed-q">“Our sufficiency is of God” <cite>3:5</cite></span><span class="take">No man is able by himself. God makes us able.</span></li>
+      <li class="step"><span class="topic">The veil</span><span class="seed-q">“When it shall turn to the Lord, the vail shall be taken away” <cite>3:16</cite></span><span class="take">The veil is the blindness over a heart. Turning to the Lord takes it off.</span></li>
+      <li class="step"><span class="topic">Liberty</span><span class="seed-q">“Where the Spirit of the Lord is, there is liberty” <cite>3:17</cite></span><span class="take">Christ's Spirit brings freedom from guilt, from the law's demands, and from old masters.</span></li>
+      <li class="step"><span class="topic">Changed</span><span class="seed-q">“Changed into the same image from glory to glory” <cite>3:18</cite></span><span class="take">Change is gradual, one step at a time, and the Spirit keeps working.</span></li>
+    </ol>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 1 of 6</p>
+      <span class="topic">The living letter</span>
+      <h2>Who is “the epistle of Christ”, known and read of all men?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="2"></blockquote>
+      <blockquote class="quote step" data-q="3" data-hl="ye are manifestly declared to be the epistle of Christ"></blockquote>
+      <blockquote class="quote step"><p>“Let your light so shine before men, that they may see your good works, and glorify your Father which is in heaven.”</p><cite>Matthew 5:16</cite></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>Believers are. A changed life is a letter written by the Spirit, and everyone who knows you is reading it. Paul didn't need a paper reference, because the Corinthians themselves were the proof.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 2 of 6</p>
+      <span class="topic">Stone and heart</span>
+      <h2>What is the difference between the old covenant and the new?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="3" data-hl="not in tables of stone, but in fleshy tables of the heart"></blockquote>
+      <blockquote class="quote step" data-q="6"></blockquote>
+      <blockquote class="quote step"><p>“A new heart also will I give you, and a new spirit will I put within you: and I will take away the stony heart out of your flesh, and I will give you an heart of flesh.”</p><cite>Ezekiel 36:26</cite></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>The old was a law on stone, outside a man: it showed his sin but couldn't change him. The new is written on the heart by the Spirit, and gives life, by faith in Christ.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 3 of 6</p>
+      <span class="topic">Sufficiency</span>
+      <h2>Where does Paul say his ability comes from?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="4"></blockquote>
+      <blockquote class="quote step" data-q="5"></blockquote>
+      <blockquote class="quote step"><p>“And he said unto me, My grace is sufficient for thee: for my strength is made perfect in weakness. Most gladly therefore will I rather glory in my infirmities, that the power of Christ may rest upon me.”</p><cite>2 Corinthians 12:9</cite></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>From God alone. Paul says he is not sufficient to think anything as of himself. God makes him able, and God's grace is enough, even in weakness.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 4 of 6</p>
+      <span class="topic">The veil</span>
+      <h2>What is the veil, and what takes it away?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="14"></blockquote>
+      <blockquote class="quote step" data-q="15"></blockquote>
+      <blockquote class="quote step" data-q="16"></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>The veil is the blindness over a heart that reads God's Word and can't see Christ in it. It's taken away in Christ, and the way is simple: turn to the Lord.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 5 of 6</p>
+      <span class="topic">Liberty</span>
+      <h2>What does the Spirit of the Lord bring?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="17"></blockquote>
+      <blockquote class="quote step"><p>“If the Son therefore shall make you free, ye shall be free indeed.”</p><cite>John 8:36</cite></blockquote>
+      <blockquote class="quote step"><p>“Stand fast therefore in the liberty wherewith Christ hath made us free, and be not entangled again with the yoke of bondage.”</p><cite>Galatians 5:1</cite></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>Liberty: freedom from guilt, from the law's demands, and from the old masters. He frees us so we can serve by love, not so we can go back to the chains.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 6 of 6</p>
+      <span class="topic">Changed</span>
+      <h2>How are believers changed into the same image as Christ?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="18"></blockquote>
+      <blockquote class="quote step"><p>“Being confident of this very thing, that he which hath begun a good work in you will perform it until the day of Jesus Christ:”</p><cite>Philippians 1:6</cite></blockquote>
+      <blockquote class="quote step"><p>“But the path of the just is as the shining light, that shineth more and more unto the perfect day.”</p><cite>Proverbs 4:18</cite></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>By looking at Jesus with an open face, and by the Spirit of the Lord, a little at a time, from glory to glory. It is gradual, and God keeps going until He finishes what He started.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide prayer">
+  <div class="inner">
+    <div class="emblem rise"></div>
+    <h2 class="rise" style="--d:1">Prayer requests</h2>
+    <p class="ask-line rise" style="--d:2">What can we pray about for you today?</p>
+    <blockquote class="quote rise" style="--d:4"><p>“There is therefore now no condemnation to them which are in Christ Jesus, who walk not after the flesh, but after the Spirit.”</p><cite>Romans 8:1</cite></blockquote>
+  </div>
+</section>
+
+</main>
+
+<script>
+// King James Version, 2 Corinthians chapter 3
+const V = {
+  1: "Do we begin again to commend ourselves? or need we, as some others, epistles of commendation to you, or letters of commendation from you?",
+  2: "Ye are our epistle written in our hearts, known and read of all men:",
+  3: "Forasmuch as ye are manifestly declared to be the epistle of Christ ministered by us, written not with ink, but with the Spirit of the living God; not in tables of stone, but in fleshy tables of the heart.",
+  4: "And such trust have we through Christ to God-ward:",
+  5: "Not that we are sufficient of ourselves to think any thing as of ourselves; but our sufficiency is of God;",
+  6: "Who also hath made us able ministers of the new testament; not of the letter, but of the spirit: for the letter killeth, but the spirit giveth life.",
+  7: "But if the ministration of death, written and engraven in stones, was glorious, so that the children of Israel could not stedfastly behold the face of Moses for the glory of his countenance; which glory was to be done away:",
+  8: "How shall not the ministration of the spirit be rather glorious?",
+  9: "For if the ministration of condemnation be glory, much more doth the ministration of righteousness exceed in glory.",
+  10: "For even that which was made glorious had no glory in this respect, by reason of the glory that excelleth.",
+  11: "For if that which is done away was glorious, much more that which remaineth is glorious.",
+  12: "Seeing then that we have such hope, we use great plainness of speech:",
+  13: "And not as Moses, which put a vail over his face, that the children of Israel could not stedfastly look to the end of that which is abolished:",
+  14: "But their minds were blinded: for until this day remaineth the same vail untaken away in the reading of the old testament; which vail is done away in Christ.",
+  15: "But even unto this day, when Moses is read, the vail is upon their heart.",
+  16: "Nevertheless when it shall turn to the Lord, the vail shall be taken away.",
+  17: "Now the Lord is that Spirit: and where the Spirit of the Lord is, there is liberty.",
+  18: "But we all, with open face beholding as in a glass the glory of the Lord, are changed into the same image from glory to glory, even as by the Spirit of the Lord."
+};
+const BOOK = "2 Corinthians 3";
+</script>
+<script src="../assets/deck.js"></script>
+</body>
+</html>

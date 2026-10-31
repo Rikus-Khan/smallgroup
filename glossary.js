@@ -378,7 +378,25 @@ window.GLOSSARY = [
     [ 23 ] ],
    [
     "1 Corinthians", 12,
-    [ 3 ] ] ]
+    [ 3 ] ],
+   [
+    "1 Corinthians", 15,
+    [ 31, 57 ] ],
+   [
+    "1 Corinthians", 16,
+    [ 22, 23, 24 ] ],
+   [
+    "2 Corinthians", 1,
+    [ 1, 2, 3, 14, 19 ] ],
+   [
+    "2 Corinthians", 4,
+    [ 5, 6, 10, 11, 14 ] ],
+   [
+    "2 Corinthians", 5,
+    [ 18 ] ],
+   [
+    "2 Corinthians", 13,
+    [ 5, 14 ] ] ]
  },
  {
   "id": "john-the-baptist",
@@ -711,6 +729,9 @@ window.GLOSSARY = [
     [ 22 ] ],
    [
     "1 Corinthians", 9,
+    [ 5 ] ],
+   [
+    "1 Corinthians", 15,
     [ 5 ] ] ]
  },
  {
@@ -888,7 +909,10 @@ window.GLOSSARY = [
     [ 9 ] ],
    [
     "1 Corinthians", 10,
-    [ 2 ] ] ]
+    [ 2 ] ],
+   [
+    "2 Corinthians", 3,
+    [ 7, 13, 15 ] ] ]
  },
  {
   "id": "elijah",
@@ -1200,7 +1224,10 @@ window.GLOSSARY = [
     [ 6 ] ],
    [
     "1 Corinthians", 8,
-    [ 6 ] ] ]
+    [ 6 ] ],
+   [
+    "1 Corinthians", 15,
+    [ 24 ] ] ]
  },
  {
   "id": "holy-spirit",
@@ -1362,7 +1389,22 @@ window.GLOSSARY = [
     [ 40 ] ],
    [
     "1 Corinthians", 12,
-    [ 3, 4, 7, 8, 9, 11, 13 ] ] ]
+    [ 3, 4, 7, 8, 9, 11, 13 ] ],
+   [
+    "2 Corinthians", 1,
+    [ 22 ] ],
+   [
+    "2 Corinthians", 3,
+    [ 3, 17, 18 ] ],
+   [
+    "2 Corinthians", 5,
+    [ 5 ] ],
+   [
+    "2 Corinthians", 6,
+    [ 6 ] ],
+   [
+    "2 Corinthians", 13,
+    [ 14 ] ] ]
  },
  {
   "id": "disciples",
@@ -2694,7 +2736,10 @@ window.GLOSSARY = [
     [ 17 ] ],
    [
     "Romans", 15,
-    [ 19, 25, 26, 31 ] ] ]
+    [ 19, 25, 26, 31 ] ],
+   [
+    "1 Corinthians", 16,
+    [ 3 ] ] ]
  },
  {
   "id": "bethabara",
@@ -3510,7 +3555,10 @@ window.GLOSSARY = [
     [ 2, 7, 25, 26 ] ],
    [
     "1 Corinthians", 10,
-    [ 18 ] ] ]
+    [ 18 ] ],
+   [
+    "2 Corinthians", 3,
+    [ 7, 13 ] ] ]
  },
  {
   "id": "heaven",
@@ -3762,7 +3810,16 @@ window.GLOSSARY = [
     [ 6 ] ],
    [
     "1 Corinthians", 8,
-    [ 5 ] ] ]
+    [ 5 ] ],
+   [
+    "1 Corinthians", 15,
+    [ 47 ] ],
+   [
+    "2 Corinthians", 5,
+    [ 2 ] ],
+   [
+    "2 Corinthians", 12,
+    [ 2 ] ] ]
  },
  {
   "id": "hell",
@@ -4095,7 +4152,13 @@ window.GLOSSARY = [
     [ 12 ] ],
    [
     "1 Corinthians", 4,
-    [ 5 ] ] ]
+    [ 5 ] ],
+   [
+    "2 Corinthians", 4,
+    [ 4, 6, 17 ] ],
+   [
+    "2 Corinthians", 6,
+    [ 14 ] ] ]
  },
  {
   "id": "darkness",
@@ -4197,7 +4260,13 @@ window.GLOSSARY = [
     [ 12 ] ],
    [
     "1 Corinthians", 4,
-    [ 5 ] ] ]
+    [ 5 ] ],
+   [
+    "2 Corinthians", 4,
+    [ 6 ] ],
+   [
+    "2 Corinthians", 6,
+    [ 14 ] ] ]
  },
  {
   "id": "grace",
@@ -4284,7 +4353,28 @@ window.GLOSSARY = [
     [ 10 ] ],
    [
     "1 Corinthians", 10,
-    [ 30 ] ] ]
+    [ 30 ] ],
+   [
+    "1 Corinthians", 15,
+    [ 10 ] ],
+   [
+    "1 Corinthians", 16,
+    [ 23 ] ],
+   [
+    "2 Corinthians", 1,
+    [ 12 ] ],
+   [
+    "2 Corinthians", 4,
+    [ 15 ] ],
+   [
+    "2 Corinthians", 6,
+    [ 1 ] ],
+   [
+    "2 Corinthians", 12,
+    [ 9 ] ],
+   [
+    "2 Corinthians", 13,
+    [ 14 ] ] ]
  },
  {
   "id": "truth",
@@ -4413,7 +4503,19 @@ window.GLOSSARY = [
     [ 6 ] ],
    [
     "1 Corinthians", 14,
-    [ 25 ] ] ]
+    [ 25 ] ],
+   [
+    "2 Corinthians", 4,
+    [ 2 ] ],
+   [
+    "2 Corinthians", 6,
+    [ 7 ] ],
+   [
+    "2 Corinthians", 12,
+    [ 6 ] ],
+   [
+    "2 Corinthians", 13,
+    [ 8 ] ] ]
  },
  {
   "id": "glory",
@@ -4620,7 +4722,25 @@ window.GLOSSARY = [
     [ 31 ] ],
    [
     "1 Corinthians", 11,
-    [ 7, 15 ] ] ]
+    [ 7, 15 ] ],
+   [
+    "1 Corinthians", 15,
+    [ 40, 41, 43 ] ],
+   [
+    "2 Corinthians", 1,
+    [ 20 ] ],
+   [
+    "2 Corinthians", 3,
+    [ 7, 9, 10, 18 ] ],
+   [
+    "2 Corinthians", 4,
+    [ 6, 15, 17 ] ],
+   [
+    "2 Corinthians", 5,
+    [ 12 ] ],
+   [
+    "2 Corinthians", 12,
+    [ 1, 5, 6, 9 ] ] ]
  },
  {
   "id": "the-law",
@@ -4818,7 +4938,10 @@ window.GLOSSARY = [
     [ 8, 9, 20, 21 ] ],
    [
     "1 Corinthians", 14,
-    [ 21, 34 ] ] ]
+    [ 21, 34 ] ],
+   [
+    "1 Corinthians", 15,
+    [ 56 ] ] ]
  },
  {
   "id": "only-begotten",
@@ -5082,7 +5205,37 @@ window.GLOSSARY = [
     [ 1, 3 ] ],
    [
     "1 Corinthians", 12,
-    [ 12, 27 ] ] ]
+    [ 12, 27 ] ],
+   [
+    "1 Corinthians", 15,
+    [ 3, 12, 13, 14, 15, 16, 17, 18, 19, 20, 22, 23, 31, 57 ] ],
+   [
+    "1 Corinthians", 16,
+    [ 22, 23, 24 ] ],
+   [
+    "2 Corinthians", 1,
+    [ 1, 2, 3, 5, 19, 21 ] ],
+   [
+    "2 Corinthians", 2,
+    [ 10, 12, 14, 15, 17 ] ],
+   [
+    "2 Corinthians", 3,
+    [ 3, 4, 14 ] ],
+   [
+    "2 Corinthians", 4,
+    [ 4, 5, 6 ] ],
+   [
+    "2 Corinthians", 5,
+    [ 10, 14, 16, 17, 18, 19, 20 ] ],
+   [
+    "2 Corinthians", 6,
+    [ 15 ] ],
+   [
+    "2 Corinthians", 12,
+    [ 2, 9, 10, 19 ] ],
+   [
+    "2 Corinthians", 13,
+    [ 3, 5, 14 ] ] ]
  },
  {
   "id": "son-of-god",
@@ -5160,7 +5313,10 @@ window.GLOSSARY = [
     [ 20 ] ],
    [
     "Romans", 1,
-    [ 4 ] ] ]
+    [ 4 ] ],
+   [
+    "2 Corinthians", 1,
+    [ 19 ] ] ]
  },
  {
   "id": "son-of-man",
@@ -5556,7 +5712,16 @@ window.GLOSSARY = [
     [ 7 ] ],
    [
     "1 Corinthians", 14,
-    [ 22, 24 ] ] ]
+    [ 22, 24 ] ],
+   [
+    "1 Corinthians", 15,
+    [ 2, 11 ] ],
+   [
+    "2 Corinthians", 4,
+    [ 4, 13 ] ],
+   [
+    "2 Corinthians", 6,
+    [ 15 ] ] ]
  },
  {
   "id": "witness",
@@ -5706,7 +5871,10 @@ window.GLOSSARY = [
     [ 2 ] ],
    [
     "Romans", 13,
-    [ 9 ] ] ]
+    [ 9 ] ],
+   [
+    "2 Corinthians", 1,
+    [ 23 ] ] ]
  },
  {
   "id": "baptize",
@@ -5793,7 +5961,10 @@ window.GLOSSARY = [
     [ 2 ] ],
    [
     "1 Corinthians", 12,
-    [ 13 ] ] ]
+    [ 13 ] ],
+   [
+    "1 Corinthians", 15,
+    [ 29 ] ] ]
  },
  {
   "id": "sons-of-god",
@@ -5868,7 +6039,10 @@ window.GLOSSARY = [
   "refs": [
    [
     "John", 1,
-    [ 47 ] ] ]
+    [ 47 ] ],
+   [
+    "2 Corinthians", 12,
+    [ 16 ] ] ]
  },
  {
   "id": "tenth-hour",
@@ -6156,7 +6330,10 @@ window.GLOSSARY = [
     [ 10, 28, 29 ] ],
    [
     "1 Corinthians", 14,
-    [ 22 ] ] ]
+    [ 22 ] ],
+   [
+    "2 Corinthians", 12,
+    [ 12 ] ] ]
  },
  {
   "id": "passover",
@@ -6378,7 +6555,10 @@ window.GLOSSARY = [
     [ 19 ] ],
    [
     "1 Corinthians", 12,
-    [ 8 ] ] ]
+    [ 8 ] ],
+   [
+    "2 Corinthians", 1,
+    [ 12 ] ] ]
  },
  {
   "id": "understanding",
@@ -6627,6 +6807,18 @@ window.GLOSSARY = [
     [ 2, 8 ] ],
    [
     "1 Corinthians", 14,
+    [ 6 ] ],
+   [
+    "1 Corinthians", 15,
+    [ 34 ] ],
+   [
+    "2 Corinthians", 2,
+    [ 14 ] ],
+   [
+    "2 Corinthians", 4,
+    [ 6 ] ],
+   [
+    "2 Corinthians", 6,
     [ 6 ] ] ]
  },
  {
@@ -6852,7 +7044,13 @@ window.GLOSSARY = [
     [ 18, 19 ] ],
    [
     "1 Corinthians", 4,
-    [ 10 ] ] ]
+    [ 10 ] ],
+   [
+    "1 Corinthians", 15,
+    [ 36 ] ],
+   [
+    "2 Corinthians", 12,
+    [ 6, 11 ] ] ]
  },
  {
   "id": "scorner",
@@ -7194,7 +7392,19 @@ window.GLOSSARY = [
     [ 17 ] ],
    [
     "1 Corinthians", 1,
-    [ 30 ] ] ]
+    [ 30 ] ],
+   [
+    "1 Corinthians", 15,
+    [ 34 ] ],
+   [
+    "2 Corinthians", 3,
+    [ 9 ] ],
+   [
+    "2 Corinthians", 5,
+    [ 21 ] ],
+   [
+    "2 Corinthians", 6,
+    [ 7, 14 ] ] ]
  },
  {
   "id": "wicked",
@@ -7635,7 +7845,19 @@ window.GLOSSARY = [
     [ 37 ] ],
    [
     "1 Corinthians", 14,
-    [ 25 ] ] ]
+    [ 25 ] ],
+   [
+    "2 Corinthians", 2,
+    [ 4 ] ],
+   [
+    "2 Corinthians", 3,
+    [ 3, 15 ] ],
+   [
+    "2 Corinthians", 5,
+    [ 12 ] ],
+   [
+    "2 Corinthians", 6,
+    [ 11 ] ] ]
  },
  {
   "id": "tongue",
@@ -8070,7 +8292,10 @@ window.GLOSSARY = [
     [ 11 ] ],
    [
     "Acts", 20,
-    [ 19 ] ] ]
+    [ 19 ] ],
+   [
+    "2 Corinthians", 12,
+    [ 21 ] ] ]
  },
  {
   "id": "diligent",
@@ -8526,7 +8751,10 @@ window.GLOSSARY = [
     [ 24 ] ],
    [
     "1 Corinthians", 11,
-    [ 32 ] ] ]
+    [ 32 ] ],
+   [
+    "2 Corinthians", 6,
+    [ 9 ] ] ]
  },
  {
   "id": "coals-of-fire",
@@ -8712,7 +8940,13 @@ window.GLOSSARY = [
     [ 23 ] ],
    [
     "Romans", 16,
-    [ 5 ] ] ]
+    [ 5 ] ],
+   [
+    "1 Corinthians", 15,
+    [ 20, 23 ] ],
+   [
+    "1 Corinthians", 16,
+    [ 15 ] ] ]
  },
  {
   "id": "flattery",
@@ -9135,7 +9369,10 @@ window.GLOSSARY = [
     [ 3 ] ],
    [
     "1 Corinthians", 11,
-    [ 16 ] ] ]
+    [ 16 ] ],
+   [
+    "2 Corinthians", 12,
+    [ 20 ] ] ]
  },
  {
   "id": "subtilty",
@@ -9417,7 +9654,10 @@ window.GLOSSARY = [
     [ 8 ] ],
    [
     "John", 19,
-    [ 39 ] ] ]
+    [ 39 ] ],
+   [
+    "2 Corinthians", 4,
+    [ 17 ] ] ]
  },
  {
   "id": "winebibber",
@@ -9642,7 +9882,10 @@ window.GLOSSARY = [
     [ 17 ] ],
    [
     "Romans", 8,
-    [ 11 ] ] ]
+    [ 11 ] ],
+   [
+    "1 Corinthians", 15,
+    [ 36, 45 ] ] ]
  },
  {
   "id": "everlasting-life",
@@ -9738,7 +9981,10 @@ window.GLOSSARY = [
     [ 2 ] ],
    [
     "1 Corinthians", 11,
-    [ 29, 34 ] ] ]
+    [ 29, 34 ] ],
+   [
+    "2 Corinthians", 3,
+    [ 9 ] ] ]
  },
  {
   "id": "judgment",
@@ -9888,7 +10134,10 @@ window.GLOSSARY = [
     [ 4 ] ],
    [
     "Romans", 16,
-    [ 26 ] ] ]
+    [ 26 ] ],
+   [
+    "1 Corinthians", 15,
+    [ 3, 4 ] ] ]
  },
  {
   "id": "the-lad",
@@ -9957,7 +10206,10 @@ window.GLOSSARY = [
     [ 24 ] ],
    [
     "Acts", 6,
-    [ 2 ] ] ]
+    [ 2 ] ],
+   [
+    "1 Corinthians", 15,
+    [ 5 ] ] ]
  },
  {
   "id": "judas-iscariot",
@@ -10878,7 +11130,19 @@ window.GLOSSARY = [
   "refs": [
    [
     "John", 10,
-    [ 10 ] ] ]
+    [ 10 ] ],
+   [
+    "1 Corinthians", 15,
+    [ 10 ] ],
+   [
+    "2 Corinthians", 1,
+    [ 12 ] ],
+   [
+    "2 Corinthians", 2,
+    [ 4 ] ],
+   [
+    "2 Corinthians", 12,
+    [ 15 ] ] ]
  },
  {
   "id": "parable",
@@ -11331,7 +11595,10 @@ window.GLOSSARY = [
     [ 21 ] ],
    [
     "Romans", 15,
-    [ 31 ] ] ]
+    [ 31 ] ],
+   [
+    "2 Corinthians", 1,
+    [ 16 ] ] ]
  },
  {
   "id": "bethlehem",
@@ -12084,7 +12351,13 @@ window.GLOSSARY = [
     [ 7, 10, 12 ] ],
    [
     "1 Corinthians", 10,
-    [ 25, 27, 28, 29 ] ] ]
+    [ 25, 27, 28, 29 ] ],
+   [
+    "2 Corinthians", 1,
+    [ 12 ] ],
+   [
+    "2 Corinthians", 4,
+    [ 2 ] ] ]
  },
  {
   "id": "i-am",
@@ -12309,7 +12582,10 @@ window.GLOSSARY = [
     [ 20 ] ],
    [
     "1 Corinthians", 6,
-    [ 9, 10 ] ] ]
+    [ 9, 10 ] ],
+   [
+    "1 Corinthians", 15,
+    [ 50 ] ] ]
  },
  {
   "id": "wind",
@@ -12765,7 +13041,13 @@ window.GLOSSARY = [
     [ 11 ] ],
    [
     "Romans", 13,
-    [ 11 ] ] ]
+    [ 11 ] ],
+   [
+    "2 Corinthians", 1,
+    [ 6 ] ],
+   [
+    "2 Corinthians", 6,
+    [ 2 ] ] ]
  },
  {
   "id": "sixth-hour",
@@ -13128,7 +13410,10 @@ window.GLOSSARY = [
     [ 1, 19 ] ],
    [
     "Acts", 20,
-    [ 7 ] ] ]
+    [ 7 ] ],
+   [
+    "1 Corinthians", 16,
+    [ 2 ] ] ]
  },
  {
   "id": "linen-clothes",
@@ -13602,7 +13887,10 @@ window.GLOSSARY = [
     [ 26 ] ],
    [
     "1 Corinthians", 12,
-    [ 31 ] ] ]
+    [ 31 ] ],
+   [
+    "1 Corinthians", 15,
+    [ 51 ] ] ]
  },
  {
   "id": "fishers-coat",
@@ -13749,7 +14037,10 @@ window.GLOSSARY = [
     [ 14 ] ],
    [
     "1 Corinthians", 11,
-    [ 33 ] ] ]
+    [ 33 ] ],
+   [
+    "1 Corinthians", 16,
+    [ 7, 8 ] ] ]
  },
  {
   "id": "testimony",
@@ -13815,7 +14106,10 @@ window.GLOSSARY = [
     [ 25 ] ],
    [
     "Acts", 10,
-    [ 42 ] ] ]
+    [ 42 ] ],
+   [
+    "1 Corinthians", 15,
+    [ 15 ] ] ]
  },
  {
   "id": "lazarus",
@@ -13974,7 +14268,10 @@ window.GLOSSARY = [
     [ 4 ] ],
    [
     "Romans", 6,
-    [ 5 ] ] ]
+    [ 5 ] ],
+   [
+    "1 Corinthians", 15,
+    [ 12, 13, 21, 42 ] ] ]
  },
  {
   "id": "graveclothes",
@@ -14115,7 +14412,10 @@ window.GLOSSARY = [
     [ 12 ] ],
    [
     "1 Corinthians", 10,
-    [ 23 ] ] ]
+    [ 23 ] ],
+   [
+    "2 Corinthians", 12,
+    [ 1 ] ] ]
  },
  {
   "id": "ointment",
@@ -14403,7 +14703,13 @@ window.GLOSSARY = [
     [ 5 ] ],
    [
     "1 Corinthians", 7,
-    [ 5 ] ] ]
+    [ 5 ] ],
+   [
+    "2 Corinthians", 2,
+    [ 11 ] ],
+   [
+    "2 Corinthians", 12,
+    [ 7 ] ] ]
  },
  {
   "id": "girded",
@@ -14772,7 +15078,10 @@ window.GLOSSARY = [
     [ 7 ] ],
    [
     "1 Corinthians", 14,
-    [ 25 ] ] ]
+    [ 25 ] ],
+   [
+    "1 Corinthians", 15,
+    [ 27 ] ] ]
  },
  {
   "id": "vine",
@@ -14826,7 +15135,10 @@ window.GLOSSARY = [
     [ 8, 20, 24, 40 ] ],
    [
     "1 Corinthians", 13,
-    [ 13 ] ] ]
+    [ 13 ] ],
+   [
+    "1 Corinthians", 16,
+    [ 6 ] ] ]
  },
  {
   "id": "purge",
@@ -14949,7 +15261,10 @@ window.GLOSSARY = [
     [ 35 ] ],
    [
     "Romans", 12,
-    [ 12 ] ] ]
+    [ 12 ] ],
+   [
+    "2 Corinthians", 1,
+    [ 4 ] ] ]
  },
  {
   "id": "son-of-perdition",
@@ -15402,7 +15717,10 @@ window.GLOSSARY = [
     [ 13, 17, 18, 23 ] ],
    [
     "1 Corinthians", 2,
-    [ 2, 8 ] ] ]
+    [ 2, 8 ] ],
+   [
+    "2 Corinthians", 13,
+    [ 4 ] ] ]
  },
  {
   "id": "title-on-the-cross",
@@ -15882,6 +16200,9 @@ window.GLOSSARY = [
     [ 33 ] ],
    [
     "1 Corinthians", 7,
+    [ 5 ] ],
+   [
+    "2 Corinthians", 6,
     [ 5 ] ] ]
  },
  {
@@ -15984,7 +16305,10 @@ window.GLOSSARY = [
     [ 31 ] ],
    [
     "1 Corinthians", 14,
-    [ 8 ] ] ]
+    [ 8 ] ],
+   [
+    "1 Corinthians", 15,
+    [ 52 ] ] ]
  },
  {
   "id": "rend-your-heart",
@@ -16359,7 +16683,10 @@ window.GLOSSARY = [
     [ 27 ] ],
    [
     "Romans", 11,
-    [ 9 ] ] ]
+    [ 9 ] ],
+   [
+    "2 Corinthians", 6,
+    [ 13 ] ] ]
  },
  {
   "id": "plowshares",
@@ -16686,7 +17013,13 @@ window.GLOSSARY = [
     [ 15 ] ],
    [
     "Romans", 9,
-    [ 26 ] ] ]
+    [ 26 ] ],
+   [
+    "2 Corinthians", 3,
+    [ 3 ] ],
+   [
+    "2 Corinthians", 6,
+    [ 16 ] ] ]
  },
  {
   "id": "whoredom",
@@ -16842,7 +17175,13 @@ window.GLOSSARY = [
     [ 9 ] ],
    [
     "1 Corinthians", 7,
-    [ 25 ] ] ]
+    [ 25 ] ],
+   [
+    "2 Corinthians", 1,
+    [ 3 ] ],
+   [
+    "2 Corinthians", 4,
+    [ 1 ] ] ]
  },
  {
   "id": "baal",
@@ -17547,7 +17886,10 @@ window.GLOSSARY = [
     [ 19, 28 ] ],
    [
     "1 Corinthians", 12,
-    [ 2 ] ] ]
+    [ 2 ] ],
+   [
+    "2 Corinthians", 6,
+    [ 16 ] ] ]
  },
  {
   "id": "morning-cloud",
@@ -17667,7 +18009,10 @@ window.GLOSSARY = [
   "refs": [
    [
     "Hosea", 13,
-    [ 14 ] ] ]
+    [ 14 ] ],
+   [
+    "1 Corinthians", 15,
+    [ 55 ] ] ]
  },
  {
   "id": "calves-of-our-lips",
@@ -19572,7 +19917,10 @@ window.GLOSSARY = [
     [ 7 ] ],
    [
     "Luke", 12,
-    [ 50 ] ] ]
+    [ 50 ] ],
+   [
+    "2 Corinthians", 6,
+    [ 12 ] ] ]
  },
  {
   "id": "the-breaker",
@@ -19857,7 +20205,10 @@ window.GLOSSARY = [
     [ 19 ] ],
    [
     "Acts", 15,
-    [ 10 ] ] ]
+    [ 10 ] ],
+   [
+    "2 Corinthians", 6,
+    [ 14 ] ] ]
  },
  {
   "id": "vile",
@@ -23247,7 +23598,13 @@ window.GLOSSARY = [
     [ 17 ] ],
    [
     "1 Corinthians", 9,
-    [ 12, 14, 16, 17, 18, 23 ] ] ]
+    [ 12, 14, 16, 17, 18, 23 ] ],
+   [
+    "1 Corinthians", 15,
+    [ 1 ] ],
+   [
+    "2 Corinthians", 4,
+    [ 3, 4 ] ] ]
  },
  {
   "id": "repent",
@@ -23325,7 +23682,10 @@ window.GLOSSARY = [
     [ 30 ] ],
    [
     "Acts", 26,
-    [ 20 ] ] ]
+    [ 20 ] ],
+   [
+    "2 Corinthians", 12,
+    [ 21 ] ] ]
  },
  {
   "id": "camels-hair",
@@ -24720,7 +25080,10 @@ window.GLOSSARY = [
     [ 38 ] ],
    [
     "Romans", 5,
-    [ 14 ] ] ]
+    [ 14 ] ],
+   [
+    "1 Corinthians", 15,
+    [ 22, 45 ] ] ]
  },
  {
   "id": "jairus",
@@ -24951,7 +25314,16 @@ window.GLOSSARY = [
     [ 1, 2, 5 ] ],
    [
     "1 Corinthians", 12,
-    [ 28, 29 ] ] ]
+    [ 28, 29 ] ],
+   [
+    "1 Corinthians", 15,
+    [ 7, 9 ] ],
+   [
+    "2 Corinthians", 1,
+    [ 1 ] ],
+   [
+    "2 Corinthians", 12,
+    [ 11, 12 ] ] ]
  },
  {
   "id": "bartholomew",
@@ -25113,7 +25485,10 @@ window.GLOSSARY = [
     [ 4 ] ],
    [
     "Romans", 16,
-    [ 5, 7, 9, 10, 11, 12, 13, 14, 15, 16, 21, 22, 23 ] ] ]
+    [ 5, 7, 9, 10, 11, 12, 13, 14, 15, 16, 21, 22, 23 ] ],
+   [
+    "1 Corinthians", 16,
+    [ 19 ] ] ]
  },
  {
   "id": "shake-off-the-dust",
@@ -25740,7 +26115,10 @@ window.GLOSSARY = [
     [ 35 ] ],
    [
     "Romans", 12,
-    [ 14 ] ] ]
+    [ 14 ] ],
+   [
+    "1 Corinthians", 15,
+    [ 9 ] ] ]
  },
  {
   "id": "salt",
@@ -25965,7 +26343,10 @@ window.GLOSSARY = [
     [ 2 ] ],
    [
     "1 Corinthians", 10,
-    [ 8 ] ] ]
+    [ 8 ] ],
+   [
+    "2 Corinthians", 12,
+    [ 21 ] ] ]
  },
  {
   "id": "forswear",
@@ -26082,7 +26463,13 @@ window.GLOSSARY = [
     [ 2 ] ],
    [
     "1 Corinthians", 13,
-    [ 10 ] ] ]
+    [ 10 ] ],
+   [
+    "2 Corinthians", 12,
+    [ 9 ] ],
+   [
+    "2 Corinthians", 13,
+    [ 9, 11 ] ] ]
  },
  {
   "id": "begat",
@@ -26607,7 +26994,16 @@ window.GLOSSARY = [
     [ 20, 24, 27 ] ],
    [
     "1 Corinthians", 14,
-    [ 16 ] ] ]
+    [ 16 ] ],
+   [
+    "1 Corinthians", 16,
+    [ 24 ] ],
+   [
+    "2 Corinthians", 1,
+    [ 20 ] ],
+   [
+    "2 Corinthians", 13,
+    [ 14 ] ] ]
  },
  {
   "id": "treasure-in-heaven",
@@ -26973,7 +27369,10 @@ window.GLOSSARY = [
     [ 25 ] ],
    [
     "Acts", 8,
-    [ 27 ] ] ]
+    [ 27 ] ],
+   [
+    "1 Corinthians", 15,
+    [ 24 ] ] ]
  },
  {
   "id": "centurion",
@@ -27072,7 +27471,10 @@ window.GLOSSARY = [
     [ 26 ] ],
    [
     "Romans", 15,
-    [ 1 ] ] ]
+    [ 1 ] ],
+   [
+    "2 Corinthians", 12,
+    [ 5, 9, 10 ] ] ]
  },
  {
   "id": "dead-bury-their-dead",
@@ -27501,7 +27903,10 @@ window.GLOSSARY = [
     [ 2 ] ],
    [
     "1 Corinthians", 14,
-    [ 2 ] ] ]
+    [ 2 ] ],
+   [
+    "1 Corinthians", 15,
+    [ 51 ] ] ]
  },
  {
   "id": "converted",
@@ -28680,7 +29085,16 @@ window.GLOSSARY = [
     [ 28 ] ],
    [
     "1 Corinthians", 14,
-    [ 4, 5, 12, 19, 23, 28, 35 ] ] ]
+    [ 4, 5, 12, 19, 23, 28, 35 ] ],
+   [
+    "1 Corinthians", 15,
+    [ 9 ] ],
+   [
+    "1 Corinthians", 16,
+    [ 19 ] ],
+   [
+    "2 Corinthians", 1,
+    [ 1 ] ] ]
  },
  {
   "id": "bind-and-loose",
@@ -29148,7 +29562,10 @@ window.GLOSSARY = [
     [ 33 ] ],
    [
     "Luke", 24,
-    [ 7, 21, 46 ] ] ]
+    [ 7, 21, 46 ] ],
+   [
+    "1 Corinthians", 15,
+    [ 4 ] ] ]
  },
  {
   "id": "get-thee-behind-me",
@@ -29406,7 +29823,10 @@ window.GLOSSARY = [
   "refs": [
    [
     "Mark", 7,
-    [ 22 ] ] ]
+    [ 22 ] ],
+   [
+    "2 Corinthians", 12,
+    [ 21 ] ] ]
  },
  {
   "id": "not-meet",
@@ -29418,7 +29838,10 @@ window.GLOSSARY = [
     [ 26 ] ],
    [
     "Mark", 7,
-    [ 27 ] ] ]
+    [ 27 ] ],
+   [
+    "1 Corinthians", 15,
+    [ 9 ] ] ]
  },
  {
   "id": "ephphatha",
@@ -30783,7 +31206,10 @@ window.GLOSSARY = [
     [ 47, 48 ] ],
    [
     "Acts", 16,
-    [ 23, 33 ] ] ]
+    [ 23, 33 ] ],
+   [
+    "2 Corinthians", 6,
+    [ 5 ] ] ]
  },
  {
   "id": "much-required",
@@ -31848,7 +32274,10 @@ window.GLOSSARY = [
     [ 38 ] ],
    [
     "Luke", 21,
-    [ 36 ] ] ]
+    [ 36 ] ],
+   [
+    "1 Corinthians", 16,
+    [ 13 ] ] ]
  },
  {
   "id": "taken-and-left",
@@ -32178,7 +32607,10 @@ window.GLOSSARY = [
     [ 20 ] ],
    [
     "1 Corinthians", 11,
-    [ 25 ] ] ]
+    [ 25 ] ],
+   [
+    "2 Corinthians", 3,
+    [ 6 ] ] ]
  },
  {
   "id": "fruit-of-the-vine",
@@ -33648,6 +34080,9 @@ window.GLOSSARY = [
     [ 6, 10, 17 ] ],
    [
     "Romans", 14,
+    [ 10 ] ],
+   [
+    "2 Corinthians", 5,
     [ 10 ] ] ]
  },
  {
@@ -33813,7 +34248,10 @@ window.GLOSSARY = [
   "refs": [
    [
     "Luke", 23,
-    [ 43 ] ] ]
+    [ 43 ] ],
+   [
+    "2 Corinthians", 12,
+    [ 4 ] ] ]
  },
  {
   "id": "penitent-thief",
@@ -34062,7 +34500,10 @@ window.GLOSSARY = [
     [ 1 ] ],
    [
     "Acts", 20,
-    [ 16 ] ] ]
+    [ 16 ] ],
+   [
+    "1 Corinthians", 16,
+    [ 8 ] ] ]
  },
  {
   "id": "other-tongues",
@@ -34188,7 +34629,13 @@ window.GLOSSARY = [
     [ 18 ] ],
    [
     "Acts", 27,
-    [ 2 ] ] ]
+    [ 2 ] ],
+   [
+    "1 Corinthians", 16,
+    [ 19 ] ],
+   [
+    "2 Corinthians", 1,
+    [ 8 ] ] ]
  },
  {
   "id": "phrygia",
@@ -35061,7 +35508,10 @@ window.GLOSSARY = [
   "refs": [
    [
     "Acts", 6,
-    [ 13 ] ] ]
+    [ 13 ] ],
+   [
+    "1 Corinthians", 15,
+    [ 15 ] ] ]
  },
  {
   "id": "stedfastly",
@@ -35073,7 +35523,10 @@ window.GLOSSARY = [
     [ 15 ] ],
    [
     "Acts", 7,
-    [ 55 ] ] ]
+    [ 55 ] ],
+   [
+    "2 Corinthians", 3,
+    [ 7, 13 ] ] ]
  },
  {
   "id": "face-of-an-angel",
@@ -35295,7 +35748,10 @@ window.GLOSSARY = [
     [ 13 ] ],
    [
     "Acts", 21,
-    [ 18 ] ] ]
+    [ 18 ] ],
+   [
+    "1 Corinthians", 15,
+    [ 7 ] ] ]
  },
  {
   "id": "herod-agrippa",
@@ -35463,7 +35919,13 @@ window.GLOSSARY = [
     [ 1, 12, 13 ] ],
    [
     "1 Corinthians", 3,
-    [ 4, 5, 22 ] ] ]
+    [ 4, 5, 22 ] ],
+   [
+    "1 Corinthians", 16,
+    [ 21 ] ],
+   [
+    "2 Corinthians", 1,
+    [ 1 ] ] ]
  },
  {
   "id": "silas",
@@ -35592,7 +36054,10 @@ window.GLOSSARY = [
     [ 31 ] ],
    [
     "Romans", 15,
-    [ 5 ] ] ]
+    [ 5 ] ],
+   [
+    "2 Corinthians", 1,
+    [ 5, 6, 7 ] ] ]
  },
  {
   "id": "contention",
@@ -35628,7 +36093,13 @@ window.GLOSSARY = [
     [ 21 ] ],
    [
     "1 Corinthians", 4,
-    [ 17 ] ] ]
+    [ 17 ] ],
+   [
+    "1 Corinthians", 16,
+    [ 10 ] ],
+   [
+    "2 Corinthians", 1,
+    [ 1, 19 ] ] ]
  },
  {
   "id": "lydia",
@@ -35694,7 +36165,10 @@ window.GLOSSARY = [
     [ 8, 11 ] ],
    [
     "Acts", 20,
-    [ 5, 6 ] ] ]
+    [ 5, 6 ] ],
+   [
+    "2 Corinthians", 2,
+    [ 12 ] ] ]
  },
  {
   "id": "macedonia",
@@ -35715,7 +36189,16 @@ window.GLOSSARY = [
     [ 1, 3 ] ],
    [
     "Romans", 15,
-    [ 26 ] ] ]
+    [ 26 ] ],
+   [
+    "1 Corinthians", 16,
+    [ 5 ] ],
+   [
+    "2 Corinthians", 1,
+    [ 16 ] ],
+   [
+    "2 Corinthians", 2,
+    [ 13 ] ] ]
  },
  {
   "id": "samothracia",
@@ -35787,7 +36270,10 @@ window.GLOSSARY = [
     [ 6 ] ],
    [
     "Acts", 18,
-    [ 23 ] ] ]
+    [ 23 ] ],
+   [
+    "1 Corinthians", 16,
+    [ 1 ] ] ]
  },
  {
   "id": "mysia",
@@ -36081,7 +36567,16 @@ window.GLOSSARY = [
     [ 1, 2 ] ],
    [
     "1 Corinthians", 14,
-    [ 33 ] ] ]
+    [ 33 ] ],
+   [
+    "1 Corinthians", 16,
+    [ 1, 15 ] ],
+   [
+    "2 Corinthians", 1,
+    [ 1 ] ],
+   [
+    "2 Corinthians", 13,
+    [ 13 ] ] ]
  },
  {
   "id": "upper-chamber",
@@ -36510,7 +37005,10 @@ window.GLOSSARY = [
   "refs": [
    [
     "Acts", 7,
-    [ 43, 44, 46 ] ] ]
+    [ 43, 44, 46 ] ],
+   [
+    "2 Corinthians", 5,
+    [ 1, 4 ] ] ]
  },
  {
   "id": "stiffnecked",
@@ -37032,7 +37530,10 @@ window.GLOSSARY = [
     [ 1 ] ],
    [
     "1 Corinthians", 1,
-    [ 2 ] ] ]
+    [ 2 ] ],
+   [
+    "2 Corinthians", 1,
+    [ 1, 23 ] ] ]
  },
  {
   "id": "corinthians",
@@ -37041,7 +37542,10 @@ window.GLOSSARY = [
   "refs": [
    [
     "Acts", 18,
-    [ 8 ] ] ]
+    [ 8 ] ],
+   [
+    "2 Corinthians", 6,
+    [ 11 ] ] ]
  },
  {
   "id": "achaia",
@@ -37059,7 +37563,13 @@ window.GLOSSARY = [
     [ 26 ] ],
    [
     "Romans", 16,
-    [ 5 ] ] ]
+    [ 5 ] ],
+   [
+    "1 Corinthians", 16,
+    [ 15 ] ],
+   [
+    "2 Corinthians", 1,
+    [ 1 ] ] ]
  },
  {
   "id": "cenchrea",
@@ -37086,7 +37596,13 @@ window.GLOSSARY = [
     [ 1, 17, 26, 35 ] ],
    [
     "Acts", 20,
-    [ 16, 17 ] ] ]
+    [ 16, 17 ] ],
+   [
+    "1 Corinthians", 15,
+    [ 32 ] ],
+   [
+    "1 Corinthians", 16,
+    [ 8 ] ] ]
  },
  {
   "id": "alexandria",
@@ -37125,7 +37641,10 @@ window.GLOSSARY = [
     [ 2, 18, 26 ] ],
    [
     "Romans", 16,
-    [ 3 ] ] ]
+    [ 3 ] ],
+   [
+    "1 Corinthians", 16,
+    [ 19 ] ] ]
  },
  {
   "id": "priscilla",
@@ -37137,7 +37656,10 @@ window.GLOSSARY = [
     [ 2, 18, 26 ] ],
    [
     "Romans", 16,
-    [ 3 ] ] ]
+    [ 3 ] ],
+   [
+    "1 Corinthians", 16,
+    [ 19 ] ] ]
  },
  {
   "id": "justus",
@@ -37197,7 +37719,10 @@ window.GLOSSARY = [
     [ 12 ] ],
    [
     "1 Corinthians", 3,
-    [ 4, 5, 6, 22 ] ] ]
+    [ 4, 5, 6, 22 ] ],
+   [
+    "1 Corinthians", 16,
+    [ 12 ] ] ]
  },
  {
   "id": "tentmakers",
@@ -38418,7 +38943,10 @@ window.GLOSSARY = [
   "refs": [
    [
     "Romans", 1,
-    [ 28 ] ] ]
+    [ 28 ] ],
+   [
+    "2 Corinthians", 13,
+    [ 5, 6, 7 ] ] ]
  },
  {
   "id": "not-convenient",
@@ -38436,7 +38964,10 @@ window.GLOSSARY = [
   "refs": [
    [
     "Romans", 1,
-    [ 29 ] ] ]
+    [ 29 ] ],
+   [
+    "2 Corinthians", 12,
+    [ 20 ] ] ]
  },
  {
   "id": "malignity",
@@ -38457,7 +38988,10 @@ window.GLOSSARY = [
     [ 23 ] ],
    [
     "Romans", 1,
-    [ 30 ] ] ]
+    [ 30 ] ],
+   [
+    "2 Corinthians", 12,
+    [ 20 ] ] ]
  },
  {
   "id": "covenantbreakers",
@@ -38520,7 +39054,10 @@ window.GLOSSARY = [
     [ 4 ] ],
    [
     "Romans", 9,
-    [ 22 ] ] ]
+    [ 22 ] ],
+   [
+    "2 Corinthians", 6,
+    [ 6 ] ] ]
  },
  {
   "id": "impenitent",
@@ -38538,7 +39075,10 @@ window.GLOSSARY = [
   "refs": [
    [
     "Romans", 2,
-    [ 7 ] ] ]
+    [ 7 ] ],
+   [
+    "1 Corinthians", 15,
+    [ 53, 54 ] ] ]
  },
  {
   "id": "sacrilege",
@@ -38580,7 +39120,10 @@ window.GLOSSARY = [
     [ 4, 13 ] ],
    [
     "1 Corinthians", 13,
-    [ 7, 13 ] ] ]
+    [ 7, 13 ] ],
+   [
+    "1 Corinthians", 15,
+    [ 19 ] ] ]
  },
  {
   "id": "experience",
@@ -38643,7 +39186,10 @@ window.GLOSSARY = [
     [ 15 ] ],
    [
     "1 Corinthians", 7,
-    [ 11 ] ] ]
+    [ 11 ] ],
+   [
+    "2 Corinthians", 5,
+    [ 18, 19, 20 ] ] ]
  },
  {
   "id": "atonement",
@@ -38661,7 +39207,10 @@ window.GLOSSARY = [
   "refs": [
    [
     "Romans", 5,
-    [ 13 ] ] ]
+    [ 13 ] ],
+   [
+    "2 Corinthians", 5,
+    [ 19 ] ] ]
  },
  {
   "id": "similitude",
@@ -38712,7 +39261,10 @@ window.GLOSSARY = [
     [ 1 ] ],
    [
     "Romans", 15,
-    [ 13 ] ] ]
+    [ 13 ] ],
+   [
+    "1 Corinthians", 15,
+    [ 58 ] ] ]
  },
  {
   "id": "reign",
@@ -38727,7 +39279,10 @@ window.GLOSSARY = [
     [ 12 ] ],
    [
     "Romans", 15,
-    [ 12 ] ] ]
+    [ 12 ] ],
+   [
+    "1 Corinthians", 15,
+    [ 25 ] ] ]
  },
  {
   "id": "newness-of-life",
@@ -38799,7 +39354,10 @@ window.GLOSSARY = [
     [ 12 ] ],
    [
     "Romans", 8,
-    [ 11 ] ] ]
+    [ 11 ] ],
+   [
+    "1 Corinthians", 15,
+    [ 53, 54 ] ] ]
  },
  {
   "id": "members",
@@ -38880,7 +39438,10 @@ window.GLOSSARY = [
     [ 24 ] ],
    [
     "Romans", 6,
-    [ 19 ] ] ]
+    [ 19 ] ],
+   [
+    "2 Corinthians", 12,
+    [ 21 ] ] ]
  },
  {
   "id": "holiness",
@@ -39399,7 +39960,16 @@ window.GLOSSARY = [
     [ 1 ] ],
    [
     "1 Corinthians", 14,
-    [ 6, 26, 39 ] ] ]
+    [ 6, 26, 39 ] ],
+   [
+    "1 Corinthians", 15,
+    [ 1, 6, 50, 58 ] ],
+   [
+    "1 Corinthians", 16,
+    [ 11, 12, 15, 20 ] ],
+   [
+    "2 Corinthians", 13,
+    [ 11 ] ] ]
  },
  {
   "id": "captain-of-the-guard",
@@ -39879,7 +40449,13 @@ window.GLOSSARY = [
     [ 10 ] ],
    [
     "1 Corinthians", 4,
-    [ 16 ] ] ]
+    [ 16 ] ],
+   [
+    "1 Corinthians", 16,
+    [ 15 ] ],
+   [
+    "2 Corinthians", 2,
+    [ 8 ] ] ]
  },
  {
   "id": "living-sacrifice",
@@ -40137,7 +40713,10 @@ window.GLOSSARY = [
   "refs": [
    [
     "Romans", 7,
-    [ 22 ] ] ]
+    [ 22 ] ],
+   [
+    "2 Corinthians", 4,
+    [ 16 ] ] ]
  },
  {
   "id": "wretched",
@@ -40353,7 +40932,10 @@ window.GLOSSARY = [
   "refs": [
    [
     "1 Corinthians", 1,
-    [ 16 ] ] ]
+    [ 16 ] ],
+   [
+    "1 Corinthians", 16,
+    [ 15, 17 ] ] ]
  },
  {
   "id": "stumblingblock-cross",
@@ -40524,7 +41106,10 @@ window.GLOSSARY = [
   "refs": [
    [
     "Romans", 10,
-    [ 8, 14, 15 ] ] ]
+    [ 8, 14, 15 ] ],
+   [
+    "1 Corinthians", 15,
+    [ 1, 2, 11, 12, 14 ] ] ]
  },
  {
   "id": "beautiful-feet",
@@ -40572,7 +41157,10 @@ window.GLOSSARY = [
     [ 2 ] ],
    [
     "1 Corinthians", 14,
-    [ 3 ] ] ]
+    [ 3 ] ],
+   [
+    "2 Corinthians", 13,
+    [ 10 ] ] ]
  },
  {
   "id": "aforetime",
@@ -40650,7 +41238,10 @@ window.GLOSSARY = [
     [ 12, 13 ] ],
    [
     "1 Corinthians", 10,
-    [ 17, 18, 21 ] ] ]
+    [ 17, 18, 21 ] ],
+   [
+    "2 Corinthians", 1,
+    [ 7 ] ] ]
  },
  {
   "id": "strive",
@@ -40857,7 +41448,13 @@ window.GLOSSARY = [
   "refs": [
    [
     "Romans", 16,
-    [ 16 ] ] ]
+    [ 16 ] ],
+   [
+    "1 Corinthians", 16,
+    [ 20 ] ],
+   [
+    "2 Corinthians", 13,
+    [ 12 ] ] ]
  },
  {
   "id": "mark-them",
@@ -41250,7 +41847,10 @@ window.GLOSSARY = [
   "refs": [
    [
     "1 Corinthians", 6,
-    [ 9, 10 ] ] ]
+    [ 9, 10 ] ],
+   [
+    "1 Corinthians", 15,
+    [ 50 ] ] ]
  },
  {
   "id": "adulterers",
@@ -41589,7 +42189,10 @@ window.GLOSSARY = [
     [ 1, 2, 3, 4, 8, 13 ] ],
    [
     "1 Corinthians", 14,
-    [ 1 ] ] ]
+    [ 1 ] ],
+   [
+    "1 Corinthians", 16,
+    [ 14 ] ] ]
  },
  {
   "id": "edifieth",
@@ -41808,7 +42411,13 @@ window.GLOSSARY = [
   "refs": [
    [
     "1 Corinthians", 10,
-    [ 16 ] ] ]
+    [ 16 ] ],
+   [
+    "2 Corinthians", 6,
+    [ 14 ] ],
+   [
+    "2 Corinthians", 13,
+    [ 14 ] ] ]
  },
  {
   "id": "cup-of-blessing",
@@ -41880,7 +42489,10 @@ window.GLOSSARY = [
   "refs": [
    [
     "1 Corinthians", 10,
-    [ 32 ] ] ]
+    [ 32 ] ],
+   [
+    "2 Corinthians", 6,
+    [ 3 ] ] ]
  },
  {
   "id": "unknown-tongue",
@@ -42169,5 +42781,821 @@ window.GLOSSARY = [
    [
     "1 Corinthians", 13,
     [ 13 ] ] ]
+ },
+ {
+  "id": "christ-died-for-our-sins",
+  "kind": "term",
+  "name": "Christ died for our sins (the gospel in its first line)",
+  "refs": [
+   [
+    "1 Corinthians", 15,
+    [ 3 ] ] ]
+ },
+ {
+  "id": "five-hundred-brethren",
+  "kind": "term",
+  "name": "Above five hundred brethren at once (the crowd who saw the risen Jesus together)",
+  "refs": [
+   [
+    "1 Corinthians", 15,
+    [ 6 ] ] ]
+ },
+ {
+  "id": "born-out-of-due-time",
+  "kind": "term",
+  "name": "Born out of due time (Paul, an apostle who came late, after the rest)",
+  "refs": [
+   [
+    "1 Corinthians", 15,
+    [ 8 ] ] ]
+ },
+ {
+  "id": "i-am-what-i-am",
+  "kind": "term",
+  "name": "“By the grace of God I am what I am”",
+  "refs": [
+   [
+    "1 Corinthians", 15,
+    [ 10 ] ] ]
+ },
+ {
+  "id": "if-christ-be-not-raised",
+  "kind": "term",
+  "name": "If Christ be not raised (everything hangs on the empty tomb)",
+  "refs": [
+   [
+    "1 Corinthians", 15,
+    [ 14, 17 ] ] ]
+ },
+ {
+  "id": "fallen-asleep",
+  "kind": "term",
+  "name": "Fallen asleep (the Bible's gentle word for a believer who has died)",
+  "refs": [
+   [
+    "1 Corinthians", 15,
+    [ 6, 18, 20, 51 ] ] ]
+ },
+ {
+  "id": "baptized-for-the-dead",
+  "kind": "term",
+  "name": "Baptized for the dead (a puzzling practice Paul mentions, and never explains)",
+  "refs": [
+   [
+    "1 Corinthians", 15,
+    [ 29 ] ] ]
+ },
+ {
+  "id": "beasts-at-ephesus",
+  "kind": "term",
+  "name": "Fought with beasts at Ephesus (fierce opposition, most likely)",
+  "refs": [
+   [
+    "1 Corinthians", 15,
+    [ 32 ] ] ]
+ },
+ {
+  "id": "i-die-daily",
+  "kind": "term",
+  "name": "I die daily (Paul in danger every day)",
+  "refs": [
+   [
+    "1 Corinthians", 15,
+    [ 31 ] ] ]
+ },
+ {
+  "id": "eat-and-drink-tomorrow-we-die",
+  "kind": "term",
+  "name": "“Let us eat and drink; for to morrow we die”",
+  "refs": [
+   [
+    "1 Corinthians", 15,
+    [ 32 ] ] ]
+ },
+ {
+  "id": "evil-communications",
+  "kind": "term",
+  "name": "Evil communications corrupt good manners (bad company ruins good habits)",
+  "refs": [
+   [
+    "1 Corinthians", 15,
+    [ 33 ] ] ]
+ },
+ {
+  "id": "incorruption",
+  "kind": "term",
+  "name": "Corruption and incorruption (a body that decays, and one that never will)",
+  "refs": [
+   [
+    "1 Corinthians", 15,
+    [ 42, 50, 52, 53, 54 ] ] ]
+ },
+ {
+  "id": "spiritual-body",
+  "kind": "term",
+  "name": "A spiritual body (a real body, ruled by the Spirit, never to die)",
+  "refs": [
+   [
+    "1 Corinthians", 15,
+    [ 44 ] ] ]
+ },
+ {
+  "id": "last-adam",
+  "kind": "term",
+  "name": "The last Adam, the second man (Christ, who undoes what Adam did)",
+  "refs": [
+   [
+    "1 Corinthians", 15,
+    [ 45, 47 ] ] ]
+ },
+ {
+  "id": "twinkling-of-an-eye",
+  "kind": "term",
+  "name": "In the twinkling of an eye (as fast as a blink)",
+  "refs": [
+   [
+    "1 Corinthians", 15,
+    [ 52 ] ] ]
+ },
+ {
+  "id": "sting-of-death",
+  "kind": "term",
+  "name": "The sting of death (sin, and the guilt behind it)",
+  "refs": [
+   [
+    "1 Corinthians", 15,
+    [ 55, 56 ] ] ]
+ },
+ {
+  "id": "victory",
+  "kind": "term",
+  "name": "Victory over death (given through Jesus Christ)",
+  "refs": [
+   [
+    "1 Corinthians", 15,
+    [ 54, 55, 57 ] ] ]
+ },
+ {
+  "id": "unmoveable",
+  "kind": "term",
+  "name": "Unmoveable (the KJV spelling of “unmovable”: not to be shifted)",
+  "refs": [
+   [
+    "1 Corinthians", 15,
+    [ 58 ] ] ]
+ },
+ {
+  "id": "collection-for-the-saints",
+  "kind": "term",
+  "name": "The collection for the saints (a gift for the poor believers in Jerusalem)",
+  "refs": [
+   [
+    "1 Corinthians", 16,
+    [ 1, 2 ] ] ]
+ },
+ {
+  "id": "great-door",
+  "kind": "term",
+  "name": "A great door and effectual (a real chance to do good, with enemies beside it)",
+  "refs": [
+   [
+    "1 Corinthians", 16,
+    [ 9 ] ] ]
+ },
+ {
+  "id": "fortunatus",
+  "kind": "person",
+  "name": "Fortunatus (with Stephanas and Achaicus, a man who came to Paul from Corinth)",
+  "refs": [
+   [
+    "1 Corinthians", 16,
+    [ 17 ] ] ]
+ },
+ {
+  "id": "achaicus",
+  "kind": "person",
+  "name": "Achaicus (a man of Corinth who refreshed Paul's spirit)",
+  "refs": [
+   [
+    "1 Corinthians", 16,
+    [ 17 ] ] ]
+ },
+ {
+  "id": "quit-you-like-men",
+  "kind": "term",
+  "name": "Quit you like men (act like grown men: brave and steady)",
+  "refs": [
+   [
+    "1 Corinthians", 16,
+    [ 13 ] ] ]
+ },
+ {
+  "id": "addicted",
+  "kind": "term",
+  "name": "Addicted (in 1611: given over to, devoted to)",
+  "refs": [
+   [
+    "1 Corinthians", 16,
+    [ 15 ] ] ]
+ },
+ {
+  "id": "own-hand",
+  "kind": "term",
+  "name": "Mine own hand (Paul takes the pen from his scribe and signs)",
+  "refs": [
+   [
+    "1 Corinthians", 16,
+    [ 21 ] ] ]
+ },
+ {
+  "id": "maranatha",
+  "kind": "term",
+  "name": "Anathema Maranatha (“accursed”, and “Our Lord, come!”)",
+  "refs": [
+   [
+    "1 Corinthians", 16,
+    [ 22 ] ] ]
+ },
+ {
+  "id": "silvanus",
+  "kind": "person",
+  "name": "Silvanus (Silas, who preached at Corinth with Paul and Timothy)",
+  "refs": [
+   [
+    "2 Corinthians", 1,
+    [ 19 ] ] ]
+ },
+ {
+  "id": "comfort",
+  "kind": "term",
+  "name": "Comfort (Greek paraklesis: someone called alongside to help and strengthen)",
+  "refs": [
+   [
+    "2 Corinthians", 1,
+    [ 3, 4, 6 ] ],
+   [
+    "2 Corinthians", 2,
+    [ 7 ] ] ]
+ },
+ {
+  "id": "pressed-out-of-measure",
+  "kind": "term",
+  "name": "Pressed out of measure (crushed far beyond what he could bear)",
+  "refs": [
+   [
+    "2 Corinthians", 1,
+    [ 8 ] ] ]
+ },
+ {
+  "id": "despaired",
+  "kind": "term",
+  "name": "Despaired (gave up all hope)",
+  "refs": [
+   [
+    "2 Corinthians", 1,
+    [ 8 ] ] ]
+ },
+ {
+  "id": "sentence-of-death",
+  "kind": "term",
+  "name": "The sentence of death (he expected to die)",
+  "refs": [
+   [
+    "2 Corinthians", 1,
+    [ 9 ] ] ]
+ },
+ {
+  "id": "conversation-life",
+  "kind": "term",
+  "name": "Conversation (old word for the way a man lives, not just what he says)",
+  "refs": [
+   [
+    "2 Corinthians", 1,
+    [ 12 ] ] ]
+ },
+ {
+  "id": "lightness",
+  "kind": "term",
+  "name": "Lightness (fickleness, changing his mind on a whim)",
+  "refs": [
+   [
+    "2 Corinthians", 1,
+    [ 17 ] ] ]
+ },
+ {
+  "id": "yea",
+  "kind": "term",
+  "name": "Yea and nay (yes and no; God's promises are always yes in Christ)",
+  "refs": [
+   [
+    "2 Corinthians", 1,
+    [ 17, 18, 19, 20 ] ] ]
+ },
+ {
+  "id": "stablisheth",
+  "kind": "term",
+  "name": "Stablisheth (makes firm, makes to stand)",
+  "refs": [
+   [
+    "2 Corinthians", 1,
+    [ 21 ] ] ]
+ },
+ {
+  "id": "anointed-believers",
+  "kind": "term",
+  "name": "Anointed us (set us apart for God, as kings and priests were anointed)",
+  "refs": [
+   [
+    "2 Corinthians", 1,
+    [ 21 ] ] ]
+ },
+ {
+  "id": "sealed-by-spirit",
+  "kind": "term",
+  "name": "Sealed (marked as God's own, kept safe until He comes for us)",
+  "refs": [
+   [
+    "2 Corinthians", 1,
+    [ 22 ] ] ]
+ },
+ {
+  "id": "earnest",
+  "kind": "term",
+  "name": "The earnest of the Spirit (a down payment that guarantees the rest)",
+  "refs": [
+   [
+    "2 Corinthians", 1,
+    [ 22 ] ],
+   [
+    "2 Corinthians", 5,
+    [ 5 ] ] ]
+ },
+ {
+  "id": "titus",
+  "kind": "person",
+  "name": "Titus (Paul's trusted helper, a Greek, sent to Corinth)",
+  "refs": [
+   [
+    "2 Corinthians", 2,
+    [ 13 ] ],
+   [
+    "2 Corinthians", 12,
+    [ 18 ] ] ]
+ },
+ {
+  "id": "heaviness",
+  "kind": "term",
+  "name": "Heaviness (sadness, a heavy heart)",
+  "refs": [
+   [
+    "2 Corinthians", 2,
+    [ 1 ] ] ]
+ },
+ {
+  "id": "anguish",
+  "kind": "term",
+  "name": "Anguish of heart (deep distress)",
+  "refs": [
+   [
+    "2 Corinthians", 2,
+    [ 4 ] ] ]
+ },
+ {
+  "id": "overmuch",
+  "kind": "term",
+  "name": "Overmuch (too much; swallowed up by sorrow)",
+  "refs": [
+   [
+    "2 Corinthians", 2,
+    [ 7 ] ] ]
+ },
+ {
+  "id": "devices",
+  "kind": "term",
+  "name": "Devices (schemes, the enemy's plans of attack)",
+  "refs": [
+   [
+    "2 Corinthians", 2,
+    [ 11 ] ] ]
+ },
+ {
+  "id": "triumph-parade",
+  "kind": "term",
+  "name": "Triumph (a Roman victory parade, with the victor in front and incense along the road)",
+  "refs": [
+   [
+    "2 Corinthians", 2,
+    [ 14 ] ] ]
+ },
+ {
+  "id": "savour-of-christ",
+  "kind": "term",
+  "name": "Savour (smell, fragrance: the scent of Christ)",
+  "refs": [
+   [
+    "2 Corinthians", 2,
+    [ 14, 15, 16 ] ] ]
+ },
+ {
+  "id": "corrupt-the-word",
+  "kind": "term",
+  "name": "Corrupt the word of God (water it down for profit, like a dishonest wine seller)",
+  "refs": [
+   [
+    "2 Corinthians", 2,
+    [ 17 ] ] ]
+ },
+ {
+  "id": "sufficient-able",
+  "kind": "term",
+  "name": "Sufficient (enough, able)",
+  "refs": [
+   [
+    "2 Corinthians", 2,
+    [ 6, 16 ] ],
+   [
+    "2 Corinthians", 3,
+    [ 5 ] ] ]
+ },
+ {
+  "id": "epistle",
+  "kind": "term",
+  "name": "Epistle (a letter)",
+  "refs": [
+   [
+    "2 Corinthians", 3,
+    [ 1, 2, 3 ] ] ]
+ },
+ {
+  "id": "commendation",
+  "kind": "term",
+  "name": "Letters of commendation (a letter of recommendation a traveling teacher carried)",
+  "refs": [
+   [
+    "2 Corinthians", 3,
+    [ 1 ] ] ]
+ },
+ {
+  "id": "tables-of-stone",
+  "kind": "term",
+  "name": "Tables of stone (the Ten Commandments), and tables of the heart",
+  "refs": [
+   [
+    "2 Corinthians", 3,
+    [ 3 ] ] ]
+ },
+ {
+  "id": "letter-killeth",
+  "kind": "term",
+  "name": "The letter killeth, the spirit giveth life (the law as an outside rule, and the Spirit who gives life)",
+  "refs": [
+   [
+    "2 Corinthians", 3,
+    [ 6 ] ] ]
+ },
+ {
+  "id": "ministration",
+  "kind": "term",
+  "name": "Ministration (service, the work God gave: of death and condemnation, or of the Spirit and righteousness)",
+  "refs": [
+   [
+    "2 Corinthians", 3,
+    [ 7, 8, 9 ] ] ]
+ },
+ {
+  "id": "done-away",
+  "kind": "term",
+  "name": "Done away (set aside, brought to an end)",
+  "refs": [
+   [
+    "2 Corinthians", 3,
+    [ 7, 11, 14 ] ] ]
+ },
+ {
+  "id": "vail",
+  "kind": "term",
+  "name": "Vail (a veil, a cloth over the face, and over the heart)",
+  "refs": [
+   [
+    "2 Corinthians", 3,
+    [ 13, 14, 15, 16 ] ] ]
+ },
+ {
+  "id": "old-testament",
+  "kind": "term",
+  "name": "The old testament (the old covenant, the writings of Moses)",
+  "refs": [
+   [
+    "2 Corinthians", 3,
+    [ 14 ] ] ]
+ },
+ {
+  "id": "liberty-spirit",
+  "kind": "term",
+  "name": "Liberty (the freedom the Spirit of the Lord brings)",
+  "refs": [
+   [
+    "2 Corinthians", 3,
+    [ 17 ] ] ]
+ },
+ {
+  "id": "glass-mirror",
+  "kind": "term",
+  "name": "As in a glass (a mirror of polished metal)",
+  "refs": [
+   [
+    "2 Corinthians", 3,
+    [ 18 ] ] ]
+ },
+ {
+  "id": "earthen-vessels",
+  "kind": "term",
+  "name": "Earthen vessels (clay jars: cheap, breakable pots)",
+  "refs": [
+   [
+    "2 Corinthians", 4,
+    [ 7 ] ] ]
+ },
+ {
+  "id": "god-of-this-world",
+  "kind": "term",
+  "name": "The god of this world (Satan, who runs the age that stands against God)",
+  "refs": [
+   [
+    "2 Corinthians", 4,
+    [ 4 ] ] ]
+ },
+ {
+  "id": "outward-man",
+  "kind": "term",
+  "name": "The outward man (the body, which wears out)",
+  "refs": [
+   [
+    "2 Corinthians", 4,
+    [ 16 ] ] ]
+ },
+ {
+  "id": "light-affliction",
+  "kind": "term",
+  "name": "Light affliction, for a moment (trouble weighed against glory)",
+  "refs": [
+   [
+    "2 Corinthians", 4,
+    [ 17 ] ] ]
+ },
+ {
+  "id": "redound",
+  "kind": "term",
+  "name": "Redound (overflow, spill over to)",
+  "refs": [
+   [
+    "2 Corinthians", 4,
+    [ 15 ] ] ]
+ },
+ {
+  "id": "house-not-made-with-hands",
+  "kind": "term",
+  "name": "A house not made with hands (the believer's eternal body and home)",
+  "refs": [
+   [
+    "2 Corinthians", 5,
+    [ 1 ] ] ]
+ },
+ {
+  "id": "absent-from-the-body",
+  "kind": "term",
+  "name": "Absent from the body, present with the Lord",
+  "refs": [
+   [
+    "2 Corinthians", 5,
+    [ 8 ] ] ]
+ },
+ {
+  "id": "constraineth",
+  "kind": "term",
+  "name": "Constraineth (presses us in on every side, drives us)",
+  "refs": [
+   [
+    "2 Corinthians", 5,
+    [ 14 ] ] ]
+ },
+ {
+  "id": "new-creature",
+  "kind": "term",
+  "name": "A new creature (a new creation: the man who is in Christ)",
+  "refs": [
+   [
+    "2 Corinthians", 5,
+    [ 17 ] ] ]
+ },
+ {
+  "id": "ambassadors",
+  "kind": "term",
+  "name": "Ambassadors for Christ (sent to speak for a king in a foreign land)",
+  "refs": [
+   [
+    "2 Corinthians", 5,
+    [ 20 ] ] ]
+ },
+ {
+  "id": "accepted-time",
+  "kind": "term",
+  "name": "The accepted time (the welcome time: God's door is open now)",
+  "refs": [
+   [
+    "2 Corinthians", 6,
+    [ 2 ] ] ]
+ },
+ {
+  "id": "tumults",
+  "kind": "term",
+  "name": "Tumults (riots and mobs)",
+  "refs": [
+   [
+    "2 Corinthians", 6,
+    [ 5 ] ],
+   [
+    "2 Corinthians", 12,
+    [ 20 ] ] ]
+ },
+ {
+  "id": "watchings",
+  "kind": "term",
+  "name": "Watchings (nights without sleep)",
+  "refs": [
+   [
+    "2 Corinthians", 6,
+    [ 5 ] ] ]
+ },
+ {
+  "id": "love-unfeigned",
+  "kind": "term",
+  "name": "Love unfeigned (love with no mask on it)",
+  "refs": [
+   [
+    "2 Corinthians", 6,
+    [ 6 ] ] ]
+ },
+ {
+  "id": "unequally-yoked",
+  "kind": "term",
+  "name": "Unequally yoked (hitched to someone pulling the other way)",
+  "refs": [
+   [
+    "2 Corinthians", 6,
+    [ 14 ] ] ]
+ },
+ {
+  "id": "belial",
+  "kind": "term",
+  "name": "Belial (worthlessness, lawlessness: a name for the evil one)",
+  "refs": [
+   [
+    "2 Corinthians", 6,
+    [ 15 ] ] ]
+ },
+ {
+  "id": "infidel",
+  "kind": "term",
+  "name": "An infidel (an unbeliever)",
+  "refs": [
+   [
+    "2 Corinthians", 6,
+    [ 15 ] ] ]
+ },
+ {
+  "id": "temple-of-the-living-god",
+  "kind": "term",
+  "name": "The temple of the living God (believers, God's own house)",
+  "refs": [
+   [
+    "2 Corinthians", 6,
+    [ 16 ] ] ]
+ },
+ {
+  "id": "come-out-and-be-separate",
+  "kind": "term",
+  "name": "Come out from among them, and be ye separate",
+  "refs": [
+   [
+    "2 Corinthians", 6,
+    [ 17 ] ] ]
+ },
+ {
+  "id": "third-heaven",
+  "kind": "place",
+  "name": "The third heaven (where God dwells; Paul was caught up there)",
+  "refs": [
+   [
+    "2 Corinthians", 12,
+    [ 2 ] ] ]
+ },
+ {
+  "id": "thorn-in-the-flesh",
+  "kind": "term",
+  "name": "A thorn in the flesh (Paul's lasting trouble; the Bible never says what it was)",
+  "refs": [
+   [
+    "2 Corinthians", 12,
+    [ 7 ] ] ]
+ },
+ {
+  "id": "buffet",
+  "kind": "term",
+  "name": "Buffet (to beat with the fist, to batter)",
+  "refs": [
+   [
+    "2 Corinthians", 12,
+    [ 7 ] ] ]
+ },
+ {
+  "id": "thrice",
+  "kind": "term",
+  "name": "Thrice (three times)",
+  "refs": [
+   [
+    "2 Corinthians", 12,
+    [ 8 ] ] ]
+ },
+ {
+  "id": "grace-sufficient",
+  "kind": "term",
+  "name": "My grace is sufficient (enough for today)",
+  "refs": [
+   [
+    "2 Corinthians", 12,
+    [ 9 ] ] ]
+ },
+ {
+  "id": "envyings",
+  "kind": "term",
+  "name": "Envyings (jealousy)",
+  "refs": [
+   [
+    "2 Corinthians", 12,
+    [ 20 ] ] ]
+ },
+ {
+  "id": "wraths",
+  "kind": "term",
+  "name": "Wraths (angry outbursts)",
+  "refs": [
+   [
+    "2 Corinthians", 12,
+    [ 20 ] ] ]
+ },
+ {
+  "id": "whisperings",
+  "kind": "term",
+  "name": "Whisperings (secret gossip)",
+  "refs": [
+   [
+    "2 Corinthians", 12,
+    [ 20 ] ] ]
+ },
+ {
+  "id": "swellings",
+  "kind": "term",
+  "name": "Swellings (pride, being puffed up)",
+  "refs": [
+   [
+    "2 Corinthians", 12,
+    [ 20 ] ] ]
+ },
+ {
+  "id": "edifying",
+  "kind": "term",
+  "name": "Edifying (building up)",
+  "refs": [
+   [
+    "2 Corinthians", 12,
+    [ 19 ] ] ]
+ },
+ {
+  "id": "two-or-three-witnesses",
+  "kind": "term",
+  "name": "Two or three witnesses (the law's rule of fairness, Deuteronomy 19:15)",
+  "refs": [
+   [
+    "2 Corinthians", 13,
+    [ 1 ] ] ]
+ },
+ {
+  "id": "examine-yourselves",
+  "kind": "term",
+  "name": "Examine yourselves (an honest check that Christ is in you)",
+  "refs": [
+   [
+    "2 Corinthians", 13,
+    [ 5 ] ] ]
+ },
+ {
+  "id": "reprobates",
+  "kind": "term",
+  "name": "Reprobates (those who fail the test, like a fake coin)",
+  "refs": [
+   [
+    "2 Corinthians", 13,
+    [ 5, 6, 7 ] ] ]
  }
 ];

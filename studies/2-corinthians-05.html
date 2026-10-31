@@ -1,0 +1,579 @@
+<!doctype html>
+<html lang="en" data-theme="scribe">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>2 Corinthians 5</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="../assets/fonts.css">
+<link rel="stylesheet" href="../assets/deck.css">
+<link rel="stylesheet" href="../assets/themes.css">
+<style>
+
+/* c205-book: where we are in 2 Corinthians. Thirteen chapter chips (.here is this one) over four sections (.now holds this chapter). */
+.c205-chips { display: grid; grid-template-columns: repeat(13, 1fr); gap: 3px; margin: .5em 0 .8em; }
+.c205-chips span { text-align: center; padding: .25em 0; border-radius: 5px; border-bottom: 3px solid var(--line-strong); font: 700 clamp(.7rem, .62rem + .3vw, .95rem) var(--sans); color: var(--ink-soft); opacity: 0; transition: opacity .4s ease; transition-delay: calc(var(--k, 0) * 45ms + 150ms); }
+.slide.active .c205-chips span { opacity: 1; }
+.c205-chips span.here { background: var(--accent); border-bottom-color: var(--accent); color: var(--on-accent); }
+.c205-parts { display: grid; gap: 6px; }
+.c205-part { --c: var(--accent); padding: .4em .7em .5em; border-left: 6px solid var(--c); border-radius: 0 10px 10px 0; background: color-mix(in srgb, var(--c) 8%, transparent); opacity: 0; transform: translateX(-10px); transition: opacity .5s ease, transform .5s ease; transition-delay: calc(var(--k, 0) * 220ms + 600ms); }
+.slide.active .c205-part { opacity: 1; transform: none; }
+.c205-part small { font: 700 clamp(.72rem, .68rem + .22vw, .9rem) var(--sans); color: var(--ink-soft); }
+.c205-part b { display: block; font: 600 clamp(1rem, .88rem + .55vw, 1.4rem)/1.15 var(--serif); color: var(--ink); }
+.c205-part i { display: block; font-style: normal; font-size: clamp(.82rem, .76rem + .3vw, 1rem); color: var(--ink-soft); }
+.c205-part.now { background: color-mix(in srgb, var(--c) 20%, transparent); box-shadow: inset 0 0 0 2px var(--c); }
+.c205-part.p1 { --c: var(--cool); } .c205-part.p2 { --c: var(--accent); } .c205-part.p3 { --c: var(--leather-light); } .c205-part.p4 { --c: var(--wine); }
+
+/* c205-tent: a tent (the body) beside a house not made with hands. On a .c205-go step the tent sags and the house lights up (v. 1). */
+.c205-sky { fill: var(--surface); stroke: var(--line); stroke-width: 2; }
+.c205-ground { stroke: var(--ink-soft); stroke-width: 3; }
+.c205-canvas { fill: var(--surface-2); stroke: var(--ink-soft); stroke-width: 3; stroke-linejoin: round; }
+.c205-flap { fill: var(--leather); }
+.c205-rope { stroke: var(--ink-soft); stroke-width: 2; }
+.c205-tent { transform-box: fill-box; transform-origin: 50% 100%; transition: transform 1.6s ease, opacity 1.6s ease; }
+.slide:has(.c205-go.on) .c205-tent { transform: scale(1, .3) translateY(10px); opacity: .25; }
+.c205-wall { fill: var(--surface-2); stroke: var(--leather-light); stroke-width: 4; }
+.c205-roof { fill: var(--leather); stroke: var(--leather-light); stroke-width: 4; stroke-linejoin: round; }
+.c205-win { fill: var(--surface); stroke: var(--leather-light); stroke-width: 3; transition: fill 1.4s ease .4s; }
+.slide:has(.c205-go.on) .c205-win { fill: var(--glow); }
+.c205-door { fill: var(--leather); }
+.c205-t { font-size: 17px; fill: var(--ink-soft); }
+.c205-tt { font: 700 20px var(--serif); fill: var(--ink); }
+@media (max-width: 600px) { .c205-t { font-size: 22px; } .c205-tt { font-size: 25px; } }
+
+/* c205-pass: from this body to the Lord, in one step (v. 8). A dot crosses on a .c205-go step. */
+.c205-room { fill: var(--surface-2); stroke: var(--line-strong); stroke-width: 3; }
+.c205-room.now { fill: color-mix(in srgb, var(--accent) 14%, var(--surface)); stroke: var(--accent); }
+.c205-way { stroke: var(--ink-soft); stroke-width: 3; stroke-dasharray: 6 8; }
+.c205-dot { fill: var(--accent-hot); transition: transform 1.8s cubic-bezier(.5,0,.3,1); }
+.slide:has(.c205-go.on) .c205-dot { transform: translateX(380px); }
+
+/* c205-tree: before and after (v. 17). A bare winter tree under a night sky becomes a tree in leaf in daylight when a .c205-go step comes on. */
+.c205-night { fill: var(--on-glow); transition: opacity 1.6s ease; }
+.c205-day { fill: var(--glow); opacity: 0; transition: opacity 1.6s ease; }
+.slide:has(.c205-go.on) .c205-night { opacity: 0; }
+.slide:has(.c205-go.on) .c205-day { opacity: 1; }
+.c205-old { transition: opacity 1.2s ease; }
+.c205-new { opacity: 0; transition: opacity 1.4s ease .6s; }
+.slide:has(.c205-go.on) .c205-old { opacity: 0; }
+.slide:has(.c205-go.on) .c205-new { opacity: 1; }
+.c205-trunk { fill: var(--leather); }
+.c205-limb { stroke: var(--leather); fill: none; stroke-linecap: round; }
+.c205-soil { fill: var(--leather); opacity: .8; }
+.c205-moon { fill: var(--glow); opacity: .7; }
+.c205-sun { fill: var(--warm); }
+.c205-leaf { fill: var(--cool); }
+.c205-leaf.b { fill: var(--accent); }
+.c205-grass { stroke: var(--cool); stroke-width: 4; stroke-linecap: round; }
+.c205-cap { font: italic 600 24px var(--serif); }
+.c205-cap.o { fill: var(--glow); }
+.c205-cap.n { fill: var(--on-glow); }
+@media (max-width: 600px) { .c205-cap { font-size: 28px; } }
+
+/* c205-swapped: an old label struck out, a new one in its place (v. 17). One row per step. */
+.c205-swapped { list-style: none; margin: .4em 0 1em; padding: 0; display: grid; gap: .5em; }
+.c205-swapped li { display: grid; grid-template-columns: 1fr auto 1fr; gap: .3em .8em; align-items: center; }
+.c205-swapped .o { padding: .45em .8em; border: 1.5px dashed var(--line-strong); border-radius: 10px; font: italic 400 clamp(1rem, .88rem + .6vw, 1.4rem)/1.25 var(--serif); color: var(--ink-soft); position: relative; }
+.c205-swapped .o::after { content: ""; position: absolute; left: 4%; right: 4%; top: 52%; height: 2px; background: var(--danger); transform: scaleX(0); transform-origin: left; transition: transform .7s ease .4s; }
+.c205-swapped li.on .o::after { transform: scaleX(1); }
+.c205-swapped .ar { color: var(--ink-soft); font-size: 1.4rem; }
+.c205-swapped .n { padding: .45em .8em; border: 2px solid var(--accent); border-radius: 10px; background: color-mix(in srgb, var(--accent) 12%, transparent); font: 600 clamp(1.05rem, .9rem + .7vw, 1.55rem)/1.2 var(--serif); color: var(--accent-hot); }
+.c205-swapped small { display: block; font: 400 .6em var(--sans); color: var(--ink-soft); }
+@media (max-width: 600px) { .c205-swapped li { grid-template-columns: 1fr; } .c205-swapped .ar { display: none; } }
+
+/* c205-gap: a chasm between God and us, and a cross for a bridge (v. 18-19). The bridge draws on a .c205-go step. */
+.c205-bank { fill: var(--leather); stroke: var(--leather-light); stroke-width: 3; }
+.c205-deep { fill: var(--on-glow); }
+.c205-span { fill: none; stroke: var(--accent); stroke-width: 16; stroke-linecap: butt; stroke-dasharray: 1; stroke-dashoffset: 1; transition: stroke-dashoffset 1.6s ease; }
+.c205-cross { fill: none; stroke: var(--accent-hot); stroke-width: 10; stroke-linecap: round; opacity: 0; transition: opacity .8s ease 1.4s; }
+.slide:has(.c205-go.on) .c205-span { stroke-dashoffset: 0; }
+.slide:has(.c205-go.on) .c205-cross { opacity: 1; }
+.c205-gt { font: 600 22px var(--serif); fill: var(--ink); }
+.c205-gs { font-size: 16px; fill: var(--glow); opacity: .85; }
+@media (max-width: 600px) { .c205-gt { font-size: 27px; } .c205-gs { font-size: 20px; } }
+</style>
+</head>
+<body>
+<main class="deck" id="deck">
+
+<!-- ======================= OPENING ======================= -->
+<section class="slide title">
+  <div class="inner">
+    <div class="emblem rise"></div>
+    <h1 class="rise" style="--d:1">2 Corinthians 5</h1>
+    <p class="sub rise" style="--d:3">A new creature</p>
+    <p class="tag rise" style="--d:5">A tent that will come down, a house that will not, and the verse every man in recovery needs to hear: old things are passed away.</p>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <div>
+        <h2 class="rise" style="--d:1">Where we are in 2 Corinthians</h2>
+        <div class="c205-chips" role="img" aria-label="2 Corinthians has thirteen chapters. We are in chapter 5, in the section on what this ministry is (chapters 3 to 7)."><span style="--k:0">1</span><span style="--k:1">2</span><span style="--k:2">3</span><span style="--k:3">4</span><span class="here" style="--k:4">5</span><span style="--k:5">6</span><span style="--k:6">7</span><span style="--k:7">8</span><span style="--k:8">9</span><span style="--k:9">10</span><span style="--k:10">11</span><span style="--k:11">12</span><span style="--k:12">13</span></div>
+        <div class="c205-parts">
+          <div class="c205-part p1" style="--k:0"><small>Chapters 1–2</small><b>Comfort and a changed plan</b><i>Trouble in Asia, why Paul did not come, a man to forgive</i></div>
+          <div class="c205-part p2 now" style="--k:1"><small>Chapters 3–7</small><b>What this ministry is</b><i>The new covenant, clay jars, reconciliation, the good news from Titus</i></div>
+          <div class="c205-part p3" style="--k:2"><small>Chapters 8–9</small><b>The offering</b><i>Money for the poor believers in Jerusalem</i></div>
+          <div class="c205-part p4" style="--k:3"><small>Chapters 10–13</small><b>Paul defends his calling</b><i>Against men who say he is no apostle</i></div>
+        </div>
+        <p class="note rise" style="--d:3">Chapter 4 ended by looking at the things that are not seen. Chapter 5 shows what is waiting there, and what to do with the days while we wait.</p>
+        <p class="note step">Paul wrote this letter from Macedonia in about AD 56, a year after 1 Corinthians. In between came a sharp letter, a painful visit, and a long wait for news. Titus brought good news at last (7:6–7), and this letter is Paul pouring out his heart.</p>
+      </div>
+  </div>
+</section>
+
+<section class="slide watch">
+  <div class="inner">
+    <h2 class="rise">Things to watch for</h2>
+    <p class="lede rise" style="--d:1">Keep these questions in the back of your mind as we read. We'll come back to every one of them at the end.</p>
+    <ol class="seeds">
+      <li class="step"><span class="topic">Our house</span><span class="seed-q">What happens to a believer when his body dies?</span></li>
+      <li class="step"><span class="topic">A down payment</span><span class="seed-q">What has God given a believer as a down payment?</span></li>
+      <li class="step"><span class="topic">The judgment seat</span><span class="seed-q">What is the judgment seat of Christ for?</span></li>
+      <li class="step"><span class="topic">New creature</span><span class="seed-q">What changes when a man is in Christ?</span></li>
+      <li class="step"><span class="topic">Reconciled</span><span class="seed-q">How did God make peace with us?</span></li>
+      <li class="step"><span class="topic">The exchange</span><span class="seed-q">What did Jesus take, and what do we get?</span></li>
+    </ol>
+  </div>
+</section>
+
+<!-- ======================= PART ONE: TENT AND HOUSE ======================= -->
+<section class="slide part">
+  <div class="inner">
+    <p class="part-n rise">Part one</p>
+    <h2 class="rise" style="--d:1">A tent and a house</h2>
+    <p class="range rise" style="--d:2">Verses 1–8</p>
+    <div class="rule"></div>
+    <p class="hook rise" style="--d:4">What waits on the other side of a worn-out body.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="1-4" data-hl="our earthly house of this tabernacle were dissolved|an house not made with hands, eternal in the heavens|mortality might be swallowed up of life"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <div class="split">
+      <div class="stage">
+        <svg viewBox="0 0 640 340" style="max-height:52vh" role="img" aria-label="On the left, a canvas tent: our earthly house of this tabernacle. On a step it sags and fades. On the right, a solid house with its windows lighting up: a building of God, not made with hands, eternal in the heavens.">
+          <rect class="c205-sky" x="0" y="0" width="640" height="340" rx="16"/>
+          <line class="c205-ground" x1="20" y1="270" x2="620" y2="270"/>
+          <g class="c205-tent">
+            <line class="c205-rope" x1="170" y1="120" x2="40" y2="270"/><line class="c205-rope" x1="170" y1="120" x2="300" y2="270"/>
+            <path class="c205-canvas" d="M60 270 L170 120 L280 270 Z"/>
+            <path class="c205-flap" d="M170 120 L142 270 L198 270 Z"/>
+          </g>
+          <path class="c205-roof" d="M370 170 L480 96 L590 170 Z"/>
+          <rect class="c205-wall" x="385" y="170" width="190" height="100"/>
+          <rect class="c205-win" x="402" y="190" width="40" height="42" rx="3"/>
+          <rect class="c205-win" x="518" y="190" width="40" height="42" rx="3"/>
+          <rect class="c205-door" x="458" y="206" width="44" height="64" rx="3"/>
+          <text class="c205-tt" x="170" y="308" text-anchor="middle">this tent</text>
+          <text class="c205-t" x="170" y="331" text-anchor="middle">cloth, rope, and pegs</text>
+          <text class="c205-tt" x="480" y="308" text-anchor="middle">a house from God</text>
+          <text class="c205-t" x="480" y="331" text-anchor="middle">not made with hands</text>
+        </svg>
+      </div>
+      <div>
+        <h2 class="rise" style="--d:1">Camping out</h2>
+        <p class="note rise" style="--d:2">Paul calls the body a <em>tabernacle</em>: a tent. He knew tents, because he made them for a living (Acts 18:3). A tent is good for the road and not for forever.</p>
+        <p class="note step c205-go">When the tent <em>is dissolved</em>, taken down, there's a <em>building of God</em> waiting. Not rented, not temporary, <em>eternal in the heavens</em>.</p>
+        <p class="note step">Paul is honest: <em>we groan</em>. Bad backs, bad lungs, a body some of us wore out young. He doesn't say it doesn't hurt. He says it isn't the end, and he's not looking to be a ghost, but <em>clothed upon</em> with something better. “Mortality swallowed up of life.”</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="slide verse" data-v="5" data-hl="he that hath wrought us for the selfsame thing is God|the earnest of the Spirit"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise">A down payment</h2>
+    <div class="ifthen step">
+      <div class="if"><small>Today</small><em>“The earnest of the Spirit”</em>: God's Spirit living in you.</div>
+      <span class="arrow" aria-hidden="true">→</span>
+      <div class="then"><small>On that day</small>All that He promised, paid in full.</div>
+    </div>
+    <p class="note step"><em>Earnest</em> is an old word for a deposit, the money you put down to say <em>this one is mine</em>. God has put down His Spirit in every believer, as a guarantee that the rest is coming.</p>
+    <blockquote class="quote step"><p>“Which is the earnest of our inheritance until the redemption of the purchased possession, unto the praise of his glory.”</p><cite>Ephesians 1:14</cite></blockquote>
+    <p class="note step">If you were afraid you might lose it all the next time you fall: God doesn't put down a deposit and then walk away from the deal. He finishes what He starts.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="6-8" data-hl="we walk by faith, not by sight|absent from the body, and to be present with the Lord"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise">From this body to the Lord</h2>
+    <svg viewBox="0 0 640 220" style="max-height:34vh;width:100%" role="img" aria-label="Two rooms. On the left, at home in the body, absent from the Lord, walking by faith. On the right, absent from the body, present with the Lord. On a step a dot crosses straight from the first to the second.">
+      <rect class="c205-room" x="10" y="30" width="240" height="150" rx="14"/>
+      <rect class="c205-room now" x="390" y="30" width="240" height="150" rx="14"/>
+      <line class="c205-way" x1="258" y1="105" x2="382" y2="105"/>
+      <circle class="c205-dot" cx="130" cy="120" r="14"/>
+      <text class="c205-tt" x="130" y="70" text-anchor="middle">at home in the body</text>
+      <text class="c205-t" x="130" y="160" text-anchor="middle">walking by faith</text>
+      <text class="c205-tt" x="510" y="70" text-anchor="middle">present with the Lord</text>
+      <text class="c205-t" x="510" y="160" text-anchor="middle">walking by sight</text>
+    </svg>
+    <p class="note step c205-go">Paul says to be <em>absent from the body</em> is to be <em>present with the Lord</em>. One step. No in-between he tells us about.</p>
+    <blockquote class="quote step"><p>“And Jesus said unto him, Verily I say unto thee, To day shalt thou be with me in paradise.”</p><cite>Luke 23:43</cite></blockquote>
+    <p class="note step"><em>We walk by faith, not by sight</em> is how every day goes until then: you can't see Him, but you can trust Him. When you bury a brother who died in Christ, this is what you can say.</p>
+  </div>
+</section>
+
+<!-- ======================= PART TWO: BEFORE THE LORD ======================= -->
+<section class="slide part">
+  <div class="inner">
+    <p class="part-n rise">Part two</p>
+    <h2 class="rise" style="--d:1">Before the Lord</h2>
+    <p class="range rise" style="--d:2">Verses 9–15</p>
+    <div class="rule"></div>
+    <p class="hook rise" style="--d:4">Every one of us will stand before Christ. Here's what that is, and what it is not.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="9-10" data-hl="we may be accepted of him|we must all appear before the judgment seat of Christ|according to that he hath done, whether it be good or bad"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise">The judgment seat of Christ</h2>
+    <div class="columns">
+      <div class="col law step"><p class="who">Not the question</p><h3>“Am I in?”</h3><p>That was settled at the cross. The man who believes “shall not come into condemnation” (John 5:24).</p></div>
+      <div class="col grace step"><p class="who">The question</p><h3>“What did I do with it?”</h3><p>The life He gave back, the years, the gifts. <em>“The things done in his body.”</em></p></div>
+    </div>
+    <p class="note step">The Greek word is <span class="gk">bēma</span>: a raised platform where a judge sat. The Corinthians knew it well. There was a <em>bēma</em> in their own marketplace, where Paul himself had once been dragged (Acts 18:12). It was also where prizes were handed out.</p>
+    <blockquote class="quote step"><p>“If any man's work shall be burned, he shall suffer loss: but he himself shall be saved; yet so as by fire.”</p><cite>1 Corinthians 3:15</cite></blockquote>
+    <p class="note step">Notice the words: <em>he himself shall be saved</em>. A believer can lose reward but not his place. And <em>“now no condemnation”</em> still stands (Romans 8:1). So don't dread it. Do live today knowing the One who will look at it is the One who died for you.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="11-13" data-hl="the terror of the Lord|glory in appearance, and not in heart"></section>
+
+<section class="slide verse" data-v="14-15" data-hl="the love of Christ constraineth us|they which live should not henceforth live unto themselves"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise">What drives a man</h2>
+    <div class="ifthen step">
+      <div class="if"><small>One died for all</small>so all were counted dead in Him.</div>
+      <span class="arrow" aria-hidden="true">→</span>
+      <div class="then"><small>Now those who live</small>live for Him, not for themselves.</div>
+    </div>
+    <p class="note step"><em>The terror of the Lord</em> (verse 11) means a deep, reverent respect for Someone you will answer to. But the engine that drives Paul is verse 14: <em>“the love of Christ constraineth us.”</em> <em>Constrain</em> is to press in from both sides, like a river between banks.</p>
+    <p class="note step">Some of us lived <em>unto ourselves</em> for years, and it cost us everything. Now the One who died for you asks for the rest of your days. Don't do it to pay Him back. Do it because He loved you first.</p>
+    <p class="note step">Notice verse 12 too. Critics in Corinth bragged about <em>appearance</em>, what shows on the outside. God looks at the heart. A man doesn't have to look impressive to be right with God.</p>
+  </div>
+</section>
+
+<!-- ======================= PART THREE: NEW AND RECONCILED ======================= -->
+<section class="slide part">
+  <div class="inner">
+    <p class="part-n rise">Part three</p>
+    <h2 class="rise" style="--d:1">New, and reconciled</h2>
+    <p class="range rise" style="--d:2">Verses 16–21</p>
+    <div class="rule"></div>
+    <p class="hook rise" style="--d:4">The heart of the chapter, maybe the heart of the letter.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="16-17" data-hl="henceforth know we no man after the flesh|if any man be in Christ, he is a new creature: old things are passed away; behold, all things are become new"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <div class="split">
+      <div class="stage">
+        <svg viewBox="0 0 640 340" style="max-height:56vh" role="img" aria-label="A bare winter tree under a night sky with a moon. On a step the sky turns to day, the sun comes out, and the tree is in leaf with grass at its roots: old things are passed away, all things are become new.">
+          <rect class="c205-night" x="0" y="0" width="640" height="340" rx="16"/>
+          <rect class="c205-day" x="0" y="0" width="640" height="340" rx="16"/>
+          <circle class="c205-moon c205-old" cx="540" cy="64" r="26"/>
+          <circle class="c205-sun c205-new" cx="540" cy="64" r="32"/>
+          <rect class="c205-soil" x="0" y="270" width="640" height="70"/>
+          <path class="c205-trunk" d="M296 272 C 302 230, 306 200, 304 150 L 318 150 C 316 200, 322 230, 328 272 Z"/>
+          <g class="c205-limb">
+            <path stroke-width="7" d="M311 180 L246 118 M311 170 L384 108"/>
+            <path stroke-width="5" d="M311 205 L256 160 M311 196 L376 150"/>
+            <path stroke-width="4" d="M246 118 L208 100 M246 118 L232 74 M384 108 L420 82 M384 108 L428 118 M256 160 L216 160 M376 150 L418 158"/>
+          </g>
+          <g class="c205-new">
+            <circle class="c205-leaf" cx="206" cy="98" r="24"/><circle class="c205-leaf b" cx="232" cy="72" r="24"/><circle class="c205-leaf" cx="246" cy="118" r="26"/>
+            <circle class="c205-leaf b" cx="420" cy="80" r="24"/><circle class="c205-leaf" cx="430" cy="118" r="24"/><circle class="c205-leaf b" cx="384" cy="106" r="28"/>
+            <circle class="c205-leaf" cx="214" cy="160" r="22"/><circle class="c205-leaf b" cx="256" cy="158" r="22"/><circle class="c205-leaf" cx="420" cy="158" r="22"/><circle class="c205-leaf b" cx="376" cy="150" r="22"/>
+            <circle class="c205-leaf" cx="312" cy="96" r="30"/><circle class="c205-leaf b" cx="312" cy="136" r="22"/>
+            <path class="c205-grass" d="M120 270 l-6 -22 M132 270 l4 -24 M470 270 l-4 -22 M482 270 l6 -24 M206 270 l0 -18 M420 270 l2 -18"/>
+          </g>
+          <text class="c205-cap o c205-old" x="24" y="44">old things are passed away</text>
+          <text class="c205-cap n c205-new" x="24" y="44">all things are become new</text>
+        </svg>
+      </div>
+      <div>
+        <h2 class="rise" style="--d:1">A new creature</h2>
+        <p class="note rise" style="--d:2">It looks dead in winter. But the same tree comes back in spring, and it was not planted again. The life was in it all along.</p>
+        <p class="note step c205-go"><em>“If any man be in Christ”</em>: anyone, whoever, as soon as he trusts Jesus. <em>He is a new creature.</em> Not a patched-up old one. Something new that was not there yesterday.</p>
+        <p class="note step"><em>Passed away</em> and <em>become new</em> are Paul's words for the moment of trusting Christ: your standing with God changes at once, and your life starts to follow.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise">Old labels, new name</h2>
+    <ol class="c205-swapped">
+      <li class="step"><span class="o">“Addict. Felon. Failure.”</span><span class="ar">→</span><span class="n">In Christ<small>who you are before God</small></span></li>
+      <li class="step"><span class="o">“Guilty of everything.”</span><span class="ar">→</span><span class="n">Forgiven<small>every charge carried by Him</small></span></li>
+      <li class="step"><span class="o">“Belongs to the old crowd.”</span><span class="ar">→</span><span class="n">God's own son<small>adopted, not on trial</small></span></li>
+      <li class="step"><span class="o">“Headed for the same hole.”</span><span class="ar">→</span><span class="n">A new road<small>walked one day at a time</small></span></li>
+    </ol>
+    <p class="note step">That's verse 16: <em>“henceforth know we no man after the flesh.”</em> Paul has stopped sizing people up by their past or their looks, including himself. God does the same with you: He sees a man in Christ.</p>
+    <p class="note step">Be honest, though. <em>New creature</em> doesn't mean no more temptation or no more bad days. It means you start from a new place, with new power, and the old master has no claim. Today, when your head calls you by the old name, answer with the new one.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="18-19" data-hl="God was in Christ, reconciling the world unto himself, not imputing their trespasses unto them|the word of reconciliation"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <div class="split">
+      <div class="stage">
+        <svg viewBox="0 0 640 300" style="max-height:50vh" role="img" aria-label="A chasm between two banks. On the left, God. On the right, us. On a step a bridge draws across, with a cross standing on it: God was in Christ, reconciling the world to Himself.">
+          <path class="c205-bank" d="M0 150 L220 150 L220 300 L0 300 Z"/>
+          <path class="c205-bank" d="M420 150 L640 150 L640 300 L420 300 Z"/>
+          <rect class="c205-deep" x="220" y="150" width="200" height="150"/>
+          <text class="c205-gs" x="320" y="240" text-anchor="middle">our trespasses</text>
+          <text class="c205-gs" x="320" y="262" text-anchor="middle">(sin, no way across)</text>
+          <path class="c205-span" pathLength="1" d="M214 144 L426 144"/>
+          <path class="c205-cross" d="M320 50 V 138 M286 82 H 354"/>
+          <text class="c205-gt" x="110" y="120" text-anchor="middle">God</text>
+          <text class="c205-gt" x="530" y="120" text-anchor="middle">us</text>
+        </svg>
+      </div>
+      <div>
+        <h2 class="rise" style="--d:1">The way across</h2>
+        <p class="note rise" style="--d:2"><em>Reconciled</em> means enemies made friends again. We didn't reach across. We couldn't. The gap was our own sin.</p>
+        <p class="note step c205-go"><em>“God was in Christ.”</em> God did the reaching, in the person of His Son. He came all the way over to us.</p>
+        <blockquote class="quote step"><p>“For if, when we were enemies, we were reconciled to God by the death of his Son, much more, being reconciled, we shall be saved by his life.”</p><cite>Romans 5:10</cite></blockquote>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <div class="split">
+      <div>
+        <div class="ledger rise" style="--d:1">
+          <h3>Counted against us</h3>
+          <ul>
+            <li style="--k:0"><span>Every lie</span><span>owed</span></li>
+            <li style="--k:1"><span>Every drink and every high</span><span>owed</span></li>
+            <li style="--k:2"><span>Every person I hurt</span><span>owed</span></li>
+            <li style="--k:3"><span>Every promise I broke</span><span>owed</span></li>
+          </ul>
+          <div class="total"><span>Balance due</span><b>more than I can pay</b></div>
+          <div class="ledger-stamp">NOT COUNTED<small>not imputing their trespasses</small></div>
+        </div>
+      </div>
+      <div>
+        <h2 class="rise" style="--d:1">Not imputing</h2>
+        <p class="note rise" style="--d:2"><em>Impute</em> means to count to someone's account. The man who is reconciled to God has a ledger with nothing left on it.</p>
+        <p class="note step ledger-paid">God was <em>“not imputing their trespasses unto them.”</em> Not because He looked away, but because they were counted somewhere else: on Christ.</p>
+        <p class="note step">If you're carrying regret about a fall, take this to heart. God isn't keeping the list you are. Confess it, thank Him it's covered, and go make right with people what you can.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="slide verse" data-v="20" data-hl="we are ambassadors for Christ|be ye reconciled to God"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise">An ambassador</h2>
+    <ol class="signs">
+      <li class="rise" style="--d:1"><b>Sent by a king</b>he has no authority of his own</li>
+      <li class="rise" style="--d:2"><b>Living abroad</b>his home is somewhere else</li>
+      <li class="rise" style="--d:3"><b>Speaks the king's words</b>“as though God did beseech you by us”</li>
+      <li class="step now"><b>You</b>at work, at home, in the meeting: Christ's man there</li>
+    </ol>
+    <p class="note step">The message is an appeal, not a threat: <em>“we pray you in Christ's stead, be ye reconciled to God.”</em> You don't have to be a preacher. You tell the simple truth about what He did for you, and say: <em>He'll do it for you too.</em></p>
+    <p class="note step">Today, think of one man who is still at war with God. Tell him, in a sentence, what changed for you.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="21" data-hl="he hath made him to be sin for us, who knew no sin|that we might be made the righteousness of God in him"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise">The great exchange</h2>
+    <div class="swap rise" style="--d:2">
+      <h3><span>Carries the sin</span>made sin</h3>
+      <h3><span>Wears the righteousness</span>made righteous</h3>
+      <div class="a"><b>You</b><small>guilty, with nothing to offer</small></div>
+      <div class="b"><b>Jesus</b><small>“who knew no sin”</small></div>
+    </div>
+    <p class="note step swap-go">Then they trade. Jesus, who never sinned, took your sin on Himself. And you, who sinned, are given <em>the righteousness of God</em>.</p>
+    <p class="note step">Not made to <em>look</em> righteous. <em>Made</em> righteous, “in him”: the perfect record of Jesus, counted as yours. That's why a believer can stand before the judgment seat without fear.</p>
+    <blockquote class="quote step"><p>“But God commendeth his love toward us, in that, while we were yet sinners, Christ died for us.”</p><cite>Romans 5:8</cite></blockquote>
+  </div>
+</section>
+
+<!-- ======================= CLOSING ======================= -->
+<section class="slide remember">
+  <div class="inner">
+    <h2 class="rise">Points to remember</h2>
+    <ol class="seeds">
+      <li class="step"><span class="topic">Our house</span><span class="seed-q">“Absent from the body, and to be present with the Lord” <cite>5:8</cite></span><span class="take">The tent comes down, and the believer goes straight to the Lord.</span></li>
+      <li class="step"><span class="topic">A down payment</span><span class="seed-q">“The earnest of the Spirit” <cite>5:5</cite></span><span class="take">The Spirit in you is God's deposit: the rest is guaranteed.</span></li>
+      <li class="step"><span class="topic">The judgment seat</span><span class="seed-q">“We must all appear before the judgment seat of Christ” <cite>5:10</cite></span><span class="take">It's about what we did with our life, not whether we are saved.</span></li>
+      <li class="step"><span class="topic">New creature</span><span class="seed-q">“If any man be in Christ, he is a new creature” <cite>5:17</cite></span><span class="take">Old things passed away. You start from a new place, in Him.</span></li>
+      <li class="step"><span class="topic">Reconciled</span><span class="seed-q">“God was in Christ, reconciling the world unto himself” <cite>5:19</cite></span><span class="take">God came all the way across to us. And He isn't counting our sins.</span></li>
+      <li class="step"><span class="topic">The exchange</span><span class="seed-q">“Made him to be sin for us, who knew no sin” <cite>5:21</cite></span><span class="take">He took our sin. We get His righteousness.</span></li>
+    </ol>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 1 of 6</p>
+      <span class="topic">Our house</span>
+      <h2>What happens to a believer when his body dies?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="1"></blockquote>
+      <blockquote class="quote step" data-q="8"></blockquote>
+      <blockquote class="quote step"><p>“And Jesus said unto him, Verily I say unto thee, To day shalt thou be with me in paradise.”</p><cite>Luke 23:43</cite></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>The tent comes down, and he goes to be with the Lord. A house not made with hands is waiting. He is absent from the body and present with the Lord, which is far better than anything here.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 2 of 6</p>
+      <span class="topic">A down payment</span>
+      <h2>What has God given a believer as a down payment?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="5"></blockquote>
+      <blockquote class="quote step"><p>“In whom ye also trusted, after that ye heard the word of truth, the gospel of your salvation: in whom also after that ye believed, ye were sealed with that holy Spirit of promise,”</p><cite>Ephesians 1:13</cite></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>His Holy Spirit. The Spirit lives in every believer from the day he trusts Christ, and He is the deposit and guarantee that God will finish the job. A man who has the Spirit is sealed.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 3 of 6</p>
+      <span class="topic">The judgment seat</span>
+      <h2>What is the judgment seat of Christ for?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="10"></blockquote>
+      <blockquote class="quote step"><p>“If any man's work shall be burned, he shall suffer loss: but he himself shall be saved; yet so as by fire.”</p><cite>1 Corinthians 3:15</cite></blockquote>
+      <blockquote class="quote step"><p>“There is therefore now no condemnation to them which are in Christ Jesus, who walk not after the flesh, but after the Spirit.”</p><cite>Romans 8:1</cite></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>It's where a believer's life and works are weighed and rewarded. It isn't where his salvation is decided: that was settled at the cross. He may lose reward, but he himself is saved.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 4 of 6</p>
+      <span class="topic">New creature</span>
+      <h2>What changes when a man is in Christ?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="17"></blockquote>
+      <blockquote class="quote step"><p>“Therefore we are buried with him by baptism into death: that like as Christ was raised up from the dead by the glory of the Father, even so we also should walk in newness of life.”</p><cite>Romans 6:4</cite></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>Everything starts new. The old standing is gone, and he is a new creature in Christ, with new power to walk in a new life. The old labels no longer fit.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 5 of 6</p>
+      <span class="topic">Reconciled</span>
+      <h2>How did God make peace with us?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="18-19"></blockquote>
+      <blockquote class="quote step" data-q="20"></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>He did the reaching. God was in Christ, reconciling the world to Himself and not counting our sins against us. Now He asks us to take the offer: be reconciled to God.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 6 of 6</p>
+      <span class="topic">The exchange</span>
+      <h2>What did Jesus take, and what do we get?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="21"></blockquote>
+      <blockquote class="quote step"><p>“But God commendeth his love toward us, in that, while we were yet sinners, Christ died for us.”</p><cite>Romans 5:8</cite></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>He took our sin, though He never sinned. And in return we are given the righteousness of God, in Him. It is a trade we could never earn, offered to whosoever believes.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide prayer">
+  <div class="inner">
+    <div class="emblem rise"></div>
+    <h2 class="rise" style="--d:1">Prayer requests</h2>
+    <p class="ask-line rise" style="--d:2">What can we pray about for you today?</p>
+    <blockquote class="quote rise" style="--d:4"><p>“Therefore if any man be in Christ, he is a new creature: old things are passed away; behold, all things are become new.”</p><cite>2 Corinthians 5:17</cite></blockquote>
+  </div>
+</section>
+
+</main>
+
+<script>
+// King James Version, 2 Corinthians chapter 5
+const V = {
+  1: "For we know that if our earthly house of this tabernacle were dissolved, we have a building of God, an house not made with hands, eternal in the heavens.",
+  2: "For in this we groan, earnestly desiring to be clothed upon with our house which is from heaven:",
+  3: "If so be that being clothed we shall not be found naked.",
+  4: "For we that are in this tabernacle do groan, being burdened: not for that we would be unclothed, but clothed upon, that mortality might be swallowed up of life.",
+  5: "Now he that hath wrought us for the selfsame thing is God, who also hath given unto us the earnest of the Spirit.",
+  6: "Therefore we are always confident, knowing that, whilst we are at home in the body, we are absent from the Lord:",
+  7: "(For we walk by faith, not by sight:)",
+  8: "We are confident, I say, and willing rather to be absent from the body, and to be present with the Lord.",
+  9: "Wherefore we labour, that, whether present or absent, we may be accepted of him.",
+  10: "For we must all appear before the judgment seat of Christ; that every one may receive the things done in his body, according to that he hath done, whether it be good or bad.",
+  11: "Knowing therefore the terror of the Lord, we persuade men; but we are made manifest unto God; and I trust also are made manifest in your consciences.",
+  12: "For we commend not ourselves again unto you, but give you occasion to glory on our behalf, that ye may have somewhat to answer them which glory in appearance, and not in heart.",
+  13: "For whether we be beside ourselves, it is to God: or whether we be sober, it is for your cause.",
+  14: "For the love of Christ constraineth us; because we thus judge, that if one died for all, then were all dead:",
+  15: "And that he died for all, that they which live should not henceforth live unto themselves, but unto him which died for them, and rose again.",
+  16: "Wherefore henceforth know we no man after the flesh: yea, though we have known Christ after the flesh, yet now henceforth know we him no more.",
+  17: "Therefore if any man be in Christ, he is a new creature: old things are passed away; behold, all things are become new.",
+  18: "And all things are of God, who hath reconciled us to himself by Jesus Christ, and hath given to us the ministry of reconciliation;",
+  19: "To wit, that God was in Christ, reconciling the world unto himself, not imputing their trespasses unto them; and hath committed unto us the word of reconciliation.",
+  20: "Now then we are ambassadors for Christ, as though God did beseech you by us: we pray you in Christ’s stead, be ye reconciled to God.",
+  21: "For he hath made him to be sin for us, who knew no sin; that we might be made the righteousness of God in him."
+};
+const BOOK = "2 Corinthians 5";
+</script>
+<script src="../assets/deck.js"></script>
+</body>
+</html>

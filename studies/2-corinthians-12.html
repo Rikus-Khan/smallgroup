@@ -1,0 +1,520 @@
+<!doctype html>
+<html lang="en" data-theme="night">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>2 Corinthians 12</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="../assets/fonts.css">
+<link rel="stylesheet" href="../assets/deck.css">
+<link rel="stylesheet" href="../assets/themes.css">
+<style>
+/* c212-book: where we are in 2 Corinthians. Thirteen chapter tabs (.c212-ch, --k; .here is this chapter) over the letter's three parts
+   (.c212-part, --k; .now is this part). Each chapter is two grid columns. */
+.c212-book { display: grid; grid-template-columns: repeat(26, 1fr); gap: 8px 0; margin: .6em 0 1em; }
+.c212-ch { grid-column: span 2; margin: 0 2px; padding: .25em 0 .3em; text-align: center; border-radius: 6px 6px 0 0; border-bottom: 3px solid var(--line-strong);
+  font: 700 clamp(.82rem, .74rem + .35vw, 1.08rem) var(--sans); color: var(--ink-soft); opacity: 0; transition: opacity .4s ease; transition-delay: calc(var(--k, 0) * 55ms + 200ms); }
+.slide.active .c212-ch { opacity: 1; }
+.c212-ch.here { background: var(--accent); border-bottom-color: var(--accent); color: var(--on-accent); }
+.c212-part { --c: var(--accent); margin: 0 3px; padding: .5em .65em .6em; border-top: 6px solid var(--c); border-radius: 0 0 10px 10px;
+  background: color-mix(in srgb, var(--c) 9%, transparent); opacity: 0; transform: translateY(10px); transition: opacity .6s ease, transform .6s ease; transition-delay: calc(var(--k, 0) * 300ms + 900ms); }
+.slide.active .c212-part { opacity: 1; transform: none; }
+.c212-part small { display: block; font: 700 clamp(.72rem, .68rem + .22vw, .92rem) var(--sans); color: var(--ink-soft); }
+.c212-part b { display: block; margin-top: .1em; font: 600 clamp(1rem, .86rem + .65vw, 1.5rem)/1.1 var(--serif); color: var(--ink); }
+.c212-part.now { background: color-mix(in srgb, var(--c) 22%, transparent); box-shadow: inset 0 0 0 2px var(--c); }
+.c212-p1 { --c: var(--cool); grid-column: 1 / 15; } .c212-p2 { --c: var(--leather-light); grid-column: 15 / 19; } .c212-p3 { --c: var(--wine); grid-column: 19 / 27; }
+@media (max-width: 640px) {
+  .c212-book { grid-template-columns: 1fr; gap: 6px; }
+  .c212-ch { display: none; }
+  .c212-part { grid-column: 1; margin: 0; border-top: 0; border-left: 6px solid var(--c); border-radius: 0 10px 10px 0; }
+}
+
+/* c212-sky: a man caught up through three heavens. Three bands (the sky, the stars, where God is) and a figure who rises
+   when a .c212-lift step comes on. */
+.c212-b1 { fill: var(--surface-2); } .c212-b2 { fill: var(--on-glow); } .c212-b3 { fill: var(--glow); }
+.c212-t1 { fill: var(--ink); } .c212-t2 { fill: var(--glow); } .c212-t3 { fill: var(--on-glow); }
+.c212-lab { font-size: 19px; font-weight: 700; } .c212-sub { font-size: 16px; }
+.c212-star { fill: var(--glow); } .c212-cloud { fill: var(--surface); stroke: var(--line-strong); stroke-width: 1.5; }
+.c212-man { fill: var(--accent-hot); stroke: var(--on-glow); stroke-width: 2.5; transform: translateY(0); transition: transform 3.2s cubic-bezier(.4,0,.2,1); }
+.slide:has(.c212-lift.on) .c212-man { transform: translateY(-228px); }
+.c212-rail { stroke: var(--line-strong); stroke-width: 2; stroke-dasharray: 5 7; fill: none; }
+.c212-mute { opacity: 0; transition: opacity .8s ease 2.6s; }
+.slide:has(.c212-lift.on) .c212-mute { opacity: 1; }
+
+/* c212-pow: my strength shrinks as His power fills the same bar. The bar is never empty. A .c212-turn step does it. */
+.c212-track { fill: var(--surface-2); stroke: var(--line-strong); stroke-width: 2; }
+.c212-my, .c212-his { transform-box: fill-box; transition: transform 2s cubic-bezier(.4,0,.2,1); }
+.c212-my { fill: var(--ink-soft); transform-origin: 0 50%; transform: scaleX(1); }
+.c212-his { fill: var(--accent); transform-origin: 100% 50%; transform: scaleX(0); }
+.slide:has(.c212-turn.on) .c212-my { transform: scaleX(.18); }
+.slide:has(.c212-turn.on) .c212-his { transform: scaleX(.82); }
+.c212-l1 { fill: var(--bg); font-weight: 700; font-size: 19px; transition: opacity .6s ease; }
+.c212-l2 { fill: var(--on-accent); font-weight: 700; font-size: 19px; opacity: 0; transition: opacity .8s ease 1.2s; }
+.c212-s1 { fill: var(--ink-soft); font: italic 600 26px var(--serif); transition: opacity .6s ease; }
+.c212-s2 { fill: var(--accent-hot); font: italic 600 26px var(--serif); opacity: 0; transition: opacity .8s ease 1.4s; }
+.c212-thorn { fill: var(--danger); }
+.slide:has(.c212-turn.on) .c212-l1, .slide:has(.c212-turn.on) .c212-s1 { opacity: 0; }
+.slide:has(.c212-turn.on) .c212-l2, .slide:has(.c212-turn.on) .c212-s2 { opacity: 1; }
+.c212-h { font-size: 18px; fill: var(--ink-soft); font-weight: 700; }
+@media (max-width: 600px) { .c212-lab { font-size: 22px; } .c212-sub { font-size: 19px; } .c212-h { font-size: 21px; } }
+@media (min-width: 760px) { .c212-sins { grid-template-columns: repeat(4, 1fr); } }
+</style>
+</head>
+<body>
+<main class="deck" id="deck">
+
+<!-- ======================= OPENING ======================= -->
+<section class="slide title">
+  <div class="inner">
+    <div class="emblem rise"></div>
+    <h1 class="rise" style="--d:1">2 Corinthians 12</h1>
+    <p class="sub rise" style="--d:3">Grace enough</p>
+    <p class="tag rise" style="--d:5">Paul was taken up to heaven, then given a thorn he could not get rid of. He asked God three times. The answer was not what he wanted, and it was enough.</p>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise" style="--d:1">Where we are in 2 Corinthians</h2>
+    <div class="c212-book" role="img" aria-label="2 Corinthians in three parts: chapters 1 to 7, Paul's heart; 8 to 9, the offering; 10 to 13, Paul answers the men who attack him. We are in chapter 12, near the end of the third part.">
+      <span class="c212-ch" style="--k:0">1</span><span class="c212-ch" style="--k:1">2</span><span class="c212-ch" style="--k:2">3</span><span class="c212-ch" style="--k:3">4</span>
+      <span class="c212-ch" style="--k:4">5</span><span class="c212-ch" style="--k:5">6</span><span class="c212-ch" style="--k:6">7</span><span class="c212-ch" style="--k:7">8</span>
+      <span class="c212-ch" style="--k:8">9</span><span class="c212-ch" style="--k:9">10</span><span class="c212-ch" style="--k:10">11</span><span class="c212-ch here" style="--k:11">12</span>
+      <span class="c212-ch" style="--k:12">13</span>
+      <div class="c212-part c212-p1" style="--k:0"><small>1–7</small><b>Paul's heart</b></div>
+      <div class="c212-part c212-p2" style="--k:1"><small>8–9</small><b>The offering</b></div>
+      <div class="c212-part c212-p3 now" style="--k:2"><small>10–13</small><b>Paul answers his critics</b></div>
+    </div>
+    <p class="note rise" style="--d:3">Back in Corinth, some men who called themselves apostles had been running Paul down: he is weak, he is not impressive, he is not a real apostle. In chapters 10 and 11 Paul answers them, and in chapter 11 he lists his beatings and shipwrecks.</p>
+    <p class="note step">Now, in chapter 12, he does something odd. He tells them about the greatest thing that ever happened to him, and then about the worst thing he carries. And he says the second one taught him more than the first.</p>
+  </div>
+</section>
+
+<section class="slide watch">
+  <div class="inner">
+    <h2 class="rise">Things to watch for</h2>
+    <p class="lede rise" style="--d:1">Keep these questions in the back of your mind as we read. We'll come back to every one of them at the end.</p>
+    <ol class="seeds">
+      <li class="step"><span class="topic">Humility</span><span class="seed-q">Why doesn't Paul boast about being caught up to heaven?</span></li>
+      <li class="step"><span class="topic">The thorn</span><span class="seed-q">What did Paul do about his thorn in the flesh?</span></li>
+      <li class="step"><span class="topic">Grace</span><span class="seed-q">What did the Lord answer when Paul asked?</span></li>
+      <li class="step"><span class="topic">Weakness</span><span class="seed-q">How can a man be strong when he is weak?</span></li>
+      <li class="step"><span class="topic">Love</span><span class="seed-q">How did Paul show his love for the Corinthians?</span></li>
+      <li class="step"><span class="topic">Repentance</span><span class="seed-q">What did Paul fear he would find in Corinth?</span></li>
+    </ol>
+  </div>
+</section>
+
+<!-- ======================= PART ONE: CAUGHT UP ======================= -->
+<section class="slide part">
+  <div class="inner">
+    <p class="part-n rise">Part one</p>
+    <h2 class="rise" style="--d:1">Caught up to heaven</h2>
+    <p class="range rise" style="--d:2">Verses 1–6</p>
+    <div class="rule"></div>
+    <p class="hook rise" style="--d:4">The best day of his life, and why he almost never mentions it.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="1-4" data-hl="caught up to the third heaven|caught up into paradise|heard unspeakable words"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <div class="split">
+      <div class="stage">
+        <svg viewBox="0 0 620 330" style="max-height:56vh" role="img" aria-label="Three bands of sky, one above the other. The bottom band is the sky with clouds and birds, the first heaven. The middle band is the night sky with stars, the second. The top band, bright, is the third heaven, where God is. On a step, a small figure rises from the ground through all three to the top.">
+          <rect class="c212-b3" x="0" y="0" width="620" height="100"/>
+          <rect class="c212-b2" x="0" y="100" width="620" height="100"/>
+          <rect class="c212-b1" x="0" y="200" width="620" height="100"/>
+          <rect x="0" y="300" width="620" height="30" style="fill:var(--leather)"/>
+          <g class="c212-star"><circle cx="430" cy="124" r="2.5"/><circle cx="520" cy="150" r="3"/><circle cx="580" cy="118" r="2"/><circle cx="470" cy="180" r="2.5"/><circle cx="560" cy="184" r="2"/><circle cx="410" cy="160" r="2"/></g>
+          <ellipse class="c212-cloud" cx="440" cy="250" rx="52" ry="16"/><ellipse class="c212-cloud" cx="500" cy="242" rx="38" ry="14"/><ellipse class="c212-cloud" cx="560" cy="262" rx="40" ry="12"/>
+          <path d="M120 278 q8 -8 16 0 q8 -8 16 0" fill="none" style="stroke:var(--ink-soft)" stroke-width="2"/>
+          <line class="c212-rail" x1="60" y1="300" x2="60" y2="24"/>
+          <text class="c212-lab c212-t3" x="100" y="40">The third heaven</text><text class="c212-sub c212-t3" x="100" y="66">where God is: “paradise”</text>
+          <text class="c212-lab c212-t2" x="100" y="136">The second</text><text class="c212-sub c212-t2" x="100" y="162">the stars and outer space</text>
+          <text class="c212-lab c212-t1" x="100" y="236">The first</text><text class="c212-sub c212-t1" x="100" y="262">the sky: clouds and birds</text>
+          <g class="c212-man"><circle cx="60" cy="270" r="9"/><path d="M60 280 v18 M48 286 h24" style="stroke:var(--on-glow);fill:none" stroke-width="9" stroke-linecap="round"/><path d="M60 280 v18 M48 286 h24" style="stroke:var(--accent-hot);fill:none" stroke-width="5" stroke-linecap="round"/></g>
+          <text class="c212-mute c212-sub c212-t3" x="610" y="86" text-anchor="end">“not lawful to utter”</text>
+        </svg>
+      </div>
+      <div>
+        <h2 class="rise" style="--d:1">The third heaven</h2>
+        <p class="note rise" style="--d:2">Bible teachers of Paul's day often spoke of heaven in layers: the sky above us, the stars beyond it, and the place where God Himself is. <em>The third heaven</em> is the last: God's own presence. Verse 4 calls it <em>paradise</em>.</p>
+        <p class="note step c212-lift">Paul says it happened <em>above fourteen years ago</em>, so about AD 42, years before he ever got to Corinth. He doesn't know if his body went too (<em>God knoweth</em>), and he heard things he was not allowed to repeat. He doesn't tell us what he saw.</p>
+        <blockquote class="quote step"><p>“And Jesus said unto him, Verily I say unto thee, To day shalt thou be with me in paradise.”</p><cite>Luke 23:43</cite></blockquote>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="slide verse" data-v="5-6" data-hl="of myself I will not glory, but in mine infirmities|lest any man should think of me above that which he seeth me to be"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise">Why he kept quiet for fourteen years</h2>
+    <div class="columns">
+      <div class="col law step"><p class="who">What the other men did</p><h3>“Look what I've seen”</h3><p>Visions, credentials, big stories. They wanted the Corinthians to be impressed, and some were.</p></div>
+      <div class="col grace step"><p class="who">What Paul did</p><h3>“Look at my weakness”</h3><p>He wouldn't let a once-in-a-lifetime experience be his reputation. He wanted people to judge him by his life, <em>what he seeth me to be</em>.</p></div>
+    </div>
+    <p class="note step"><em>Of such an one will I glory</em>: Paul talks about himself like a stranger, because the day was God's doing, not his. <em>Infirmities</em> are weaknesses, the things that are plainly wrong with us. That is what he will brag about.</p>
+    <p class="note step">Notice what he does not do. He doesn't say <em>never mind my weak side; look at my heaven.</em> He lets people see both.</p>
+  </div>
+</section>
+
+<!-- ======================= PART TWO: THE THORN ======================= -->
+<section class="slide part">
+  <div class="inner">
+    <p class="part-n rise">Part two</p>
+    <h2 class="rise" style="--d:1">A thorn he couldn't pull out</h2>
+    <p class="range rise" style="--d:2">Verses 7–10</p>
+    <div class="rule"></div>
+    <p class="hook rise" style="--d:4">The most useful verses in this letter for a man who is still fighting something.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="7-8" data-hl="there was given to me a thorn in the flesh, the messenger of Satan to buffet me|I besought the Lord thrice"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise">A thorn in the flesh</h2>
+    <p class="note rise" style="--d:1">A <em>thorn</em> is a sharp stake or splinter, something that stays lodged and hurts every time you move. Paul never says what it was. Bible teachers have guessed for two thousand years: an illness, trouble with his eyes, a man who dogged him from town to town. Nobody knows.</p>
+    <p class="note step">That silence may be on purpose. Because Paul doesn't name it, every man who has a thorn can read himself into it: a body that hurts, a craving that won't quit, a memory, a family that won't speak to you.</p>
+    <div class="columns">
+      <div class="col law step"><p class="who">What the thorn was for</p><h3>“Lest I should be exalted”</h3><p>Paul had seen heaven. A man with a story like that can start to think he is somebody. The thorn kept him leaning on God.</p></div>
+      <div class="col grace step"><p class="who">Where it came from</p><h3>“The messenger of Satan”</h3><p>The thorn came from the enemy's side: it was meant to hurt. But it could only go as far as God allowed, and God turned it to good, as with Job and with Joseph.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise">Three times he asked</h2>
+    <div class="talk">
+      <p class="rise" style="--d:1"><small>Paul, the first time</small>Lord, take this away from me.</p>
+      <p class="step"><small>Paul, the second time</small>Lord, please. Take it away.</p>
+      <p class="step"><small>Paul, the third time</small>Lord, I'm asking again.</p>
+      <p class="reply step"><small>The Lord</small>My grace is sufficient for thee.<br><span class="flag">enough</span></p>
+    </div>
+    <p class="note step"><em>Thrice</em> means three times. Paul prayed, and prayed again, and again. It is not a failure of faith to keep asking God to take something away. Jesus Himself asked three times in the garden.</p>
+    <p class="note step">God said no to the thing Paul asked, and yes to what Paul needed. That is not the same as being ignored.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="9-10" data-hl="My grace is sufficient for thee: for my strength is made perfect in weakness|when I am weak, then am I strong"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise">Weak, then strong</h2>
+    <div class="stage">
+      <svg viewBox="0 0 640 270" style="max-height:44vh" role="img" aria-label="A long bar. At first it is filled with a grey block labelled my own strength. On a step, the grey block shrinks to a small piece and the rest of the bar fills with the brighter colour of Christ's power. The words change from I'm managing on my own to when I am weak, then am I strong. A small thorn at the bottom left stays the same: it is still there.">
+        <text class="c212-h" x="40" y="86">my own strength</text>
+        <text class="c212-h" x="600" y="86" text-anchor="end" style="fill:var(--accent-hot)">the power of Christ</text>
+        <rect class="c212-track" x="40" y="100" width="560" height="60" rx="10"/>
+        <rect class="c212-his" x="42" y="102" width="556" height="56" rx="8"/>
+        <rect class="c212-my" x="42" y="102" width="556" height="56" rx="8"/>
+        <text class="c212-l1" x="70" y="138">I can handle this</text>
+        <text class="c212-l2" x="590" y="138" text-anchor="end">“My grace is sufficient for thee”</text>
+        <text class="c212-s1" x="320" y="212" text-anchor="middle">I'm managing on my own… for now</text>
+        <text class="c212-s2" x="320" y="212" text-anchor="middle">“when I am weak, then am I strong”</text>
+        <path class="c212-thorn" d="M44 236 L58 262 L72 236 Z"/><path class="c212-thorn" d="M70 240 L82 262 L94 240 Z"/>
+        <text class="c212-h" x="108" y="256">the thorn is still there</text>
+      </svg>
+    </div>
+    <p class="note rise" style="--d:2">Most of us run on our own strength as long as we can. Then something breaks, and we find out how little there was.</p>
+    <p class="note step c212-turn"><em>Made perfect</em> means brought to completion. God's power shows up fully where ours has run out. Paul stopped hiding the weak spot. He was <em>most gladly</em> willing to boast about it, because that was where Christ's power came to <em>rest upon</em> him, like a tent pitched over him.</p>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise">Enough for today</h2>
+    <p class="note rise" style="--d:1"><em>Sufficient</em> means enough. Not a pile in the bank to spend over the years. Enough for the day in front of you, and then again tomorrow.</p>
+    <blockquote class="quote step"><p>“It is of the LORD'S mercies that we are not consumed, because his compassions fail not. They are new every morning: great is thy faithfulness.”</p><cite>Lamentations 3:22–23</cite></blockquote>
+    <blockquote class="quote step"><p>“Let us therefore come boldly unto the throne of grace, that we may obtain mercy, and find grace to help in time of need.”</p><cite>Hebrews 4:16</cite></blockquote>
+    <p class="note step">If you fell yesterday, you are not starting from nothing. The grace that was enough for Paul's worst day is the same grace you get this morning. Don't wait until you have it together: <em>boldly</em> means come as you are, in your <em>time of need</em>.</p>
+    <p class="note step"><strong>Today:</strong> name your thorn to God in one plain sentence. Ask Him for what you need to get through today, not for the whole thing to be gone. Then ask one believer to pray with you.</p>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <div class="split">
+      <div>
+        <h2 class="rise" style="--d:1">“I take pleasure”</h2>
+        <p class="note rise" style="--d:2">Verse 10 is not Paul enjoying pain. He is listing what he went through <em>for Christ's sake</em>: <em>reproaches</em> (insults), <em>necessities</em> (going without), <em>persecutions</em>, <em>distresses</em> (being squeezed into a corner).</p>
+        <p class="note step">His point is that none of it was wasted. Every weak place became a place where the power of Christ showed.</p>
+        <p class="note step">That is hope for a man with a record. Your worst chapters don't disqualify you. A man who knows how weak he is makes the best witness there is.</p>
+      </div>
+      <div class="stage">
+        <ol class="signs" style="grid-template-columns:1fr" aria-label="Five weak places, each answered by Christ's power">
+          <li class="rise" style="--d:1"><b>Infirmities</b>what is plainly wrong with me</li>
+          <li class="rise" style="--d:2"><b>Reproaches</b>people running me down</li>
+          <li class="rise" style="--d:3"><b>Necessities</b>doing without</li>
+          <li class="rise" style="--d:4"><b>Persecutions</b>getting hunted</li>
+          <li class="rise now" style="--d:5"><b>Distresses</b>and still, “then am I strong”</li>
+        </ol>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ======================= PART THREE: I SEEK YOU ======================= -->
+<section class="slide part">
+  <div class="inner">
+    <p class="part-n rise">Part three</p>
+    <h2 class="rise" style="--d:1">Not yours, but you</h2>
+    <p class="range rise" style="--d:2">Verses 11–19</p>
+    <div class="rule"></div>
+    <p class="hook rise" style="--d:4">A man who has been accused of being in it for the money tells them how he really feels.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="11-13" data-hl="ye have compelled me|in nothing am I behind the very chiefest apostles, though I be nothing|forgive me this wrong"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise">Sad, and a little sarcastic</h2>
+    <p class="note rise" style="--d:1">Paul hates this boasting. <em>I am become a fool in glorying: ye have compelled me.</em> The Corinthians should have stood up for him. Instead he has to defend himself.</p>
+    <p class="note step"><em>The very chiefest apostles</em> are the ones the Corinthians admired. Paul is no less than they are, and he adds <em>though I be nothing</em>: whatever he is, it is from God.</p>
+    <p class="note step"><em>Forgive me this wrong</em> is a dry little joke. The only way Corinth came off worse than the other churches is that Paul never sent them a bill. He didn't ask them for a penny.</p>
+    <p class="note step">There's a lesson in it for any man who has been hurt by people he helped: you can say plainly that it hurt, without trying to hurt back.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="14-16" data-hl="I seek not yours, but you|I will very gladly spend and be spent for you"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise">Three visits</h2>
+    <ol class="timeline" aria-label="About AD 50 to 52, Paul's first visit to Corinth, when the church began. About 55 to 56, a second, painful visit. About 56 to 57, the third time he is ready to come, the one this letter prepares.">
+      <li style="--k:0"><b>about AD 50 to 52</b><span>First visit</span><small>the church begins (Acts 18)</small></li>
+      <li style="--k:1"><b>about 55 to 56</b><span>Second visit</span><small>a painful one (2:1)</small></li>
+      <li class="lit" style="--k:2"><b>about 56 to 57</b><span>The third time</span><small>“I am ready to come” (12:14)</small></li>
+    </ol>
+    <p class="note rise" style="--d:2">Paul is not coming to take something from them. <em>I seek not yours, but you.</em></p>
+    <p class="note step">Parents lay up for their children, he says, not the other way round. He will <em>spend and be spent</em>: spend his money, and be spent himself, used up, for them.</p>
+    <p class="note step">Then the sad line: <em>the more abundantly I love you, the less I be loved.</em> Some of us have loved people who did not love us back. Paul kept loving. That is how God loved us before we ever turned around.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="17-19" data-hl="Did I make a gain of you by any of them whom I sent unto you|we do all things, dearly beloved, for your edifying"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise">Check the books</h2>
+    <ol class="checks">
+      <li class="step"><span class="tick">✓</span><q>Did I make a gain of you?</q><small>Paul put the question to them himself</small><b>Paul</b></li>
+      <li class="step"><span class="tick">✓</span><q>Did Titus make a gain of you?</q><small>Titus is the man who carried this letter's good news back to Paul</small><b>Titus</b></li>
+      <li class="step"><span class="tick">✓</span><q>walked we not in the same spirit?</q><small>the same heart, the same <em>steps</em></small><b>both</b></li>
+      <li class="step"><span class="tick">✓</span><q>we speak before God in Christ</q><small>and it is <em>all for your edifying</em>: your building up</small><b>the point</b></li>
+    </ol>
+    <p class="note step">A man with a past of lying or taking earns trust slowly, and he earns it by being checkable. Paul invites the questions. <strong>Today:</strong> let one person see something you might be tempted to hide, a receipt, a phone, a schedule. It costs a little pride and buys a lot of trust.</p>
+  </div>
+</section>
+
+<!-- ======================= PART FOUR: HIS FEAR ======================= -->
+<section class="slide part">
+  <div class="inner">
+    <p class="part-n rise">Part four</p>
+    <h2 class="rise" style="--d:1">What Paul is afraid of</h2>
+    <p class="range rise" style="--d:2">Verses 20–21</p>
+    <div class="rule"></div>
+    <p class="hook rise" style="--d:4">Not criticism. Not trouble. That they still haven't turned.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="20-21" data-hl="debates, envyings, wraths, strifes, backbitings, whisperings, swellings, tumults|have not repented"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise">Eight ways a church comes apart</h2>
+    <ol class="signs c212-sins" aria-label="Eight sins in verse 20, each with a plain word">
+      <li class="rise" style="--d:1"><b>Debates</b>quarrels</li>
+      <li class="rise" style="--d:2"><b>Envyings</b>jealousy</li>
+      <li class="rise" style="--d:3"><b>Wraths</b>angry outbursts</li>
+      <li class="rise" style="--d:4"><b>Strifes</b>selfish rivalry</li>
+      <li class="step"><b>Backbitings</b>talking behind a man's back</li>
+      <li class="step"><b>Whisperings</b>secret gossip</li>
+      <li class="step"><b>Swellings</b>pride, puffed up</li>
+      <li class="step"><b>Tumults</b>disorder and uproar</li>
+    </ol>
+    <p class="note step">These are the everyday, quiet kind of sin, and they have broken more churches than almost anything. Most of us can find ourselves in two or three of them.</p>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise">The sin, and the turning</h2>
+    <p class="note rise" style="--d:1">Verse 21 names sexual sin plainly: <em>uncleanness</em> (moral filth), <em>fornication</em> (sex outside marriage) and <em>lasciviousness</em> (lust with no restraint). These were people who had <em>sinned already</em>. Paul isn't shocked; he is heartbroken. <em>Bewail</em> means to grieve over, like a father at a bedside.</p>
+    <p class="note step">Look at what he is actually upset about: not that they fell, but that they <em>have not repented</em>. Repenting is turning around: agreeing with God about it, and walking the other way. A man who falls and turns is on the road home.</p>
+    <div class="columns">
+      <div class="col law step"><p class="who">Sorrow of the world</p><h3>“I'm a failure.”</h3><p>It stares at the mud, sinks further, and goes back to the thing it hates.</p></div>
+      <div class="col grace step"><p class="who">Godly sorrow</p><h3>“Lord, I was wrong.”</h3><p>It sees the sin, and then looks up. It turns, and it is lighter afterward. Nothing left to regret.</p></div>
+    </div>
+    <blockquote class="quote step"><p>“For godly sorrow worketh repentance to salvation not to be repented of: but the sorrow of the world worketh death.”</p><cite>2 Corinthians 7:10</cite></blockquote>
+    <blockquote class="quote step"><p>“If we confess our sins, he is faithful and just to forgive us our sins, and to cleanse us from all unrighteousness.”</p><cite>1 John 1:9</cite></blockquote>
+    <p class="note step"><strong>Today:</strong> if there is something you have not turned from, tell God, and tell one man you trust. That is repentance, and it is the beginning of getting free.</p>
+  </div>
+</section>
+
+<!-- ======================= CLOSING ======================= -->
+<section class="slide remember">
+  <div class="inner">
+    <h2 class="rise">Points to remember</h2>
+    <ol class="seeds">
+      <li class="step"><span class="topic">Humility</span><span class="seed-q">“Of myself I will not glory, but in mine infirmities” <cite>12:5</cite></span><span class="take">The best day of his life was not his reputation. His weakness was.</span></li>
+      <li class="step"><span class="topic">The thorn</span><span class="seed-q">“For this thing I besought the Lord thrice” <cite>12:8</cite></span><span class="take">It is all right to keep asking God to take it away.</span></li>
+      <li class="step"><span class="topic">Grace</span><span class="seed-q">“My grace is sufficient for thee” <cite>12:9</cite></span><span class="take">Sometimes God doesn't remove the thorn. He gives what you need to carry it today.</span></li>
+      <li class="step"><span class="topic">Weakness</span><span class="seed-q">“When I am weak, then am I strong” <cite>12:10</cite></span><span class="take">Christ's power shows up where ours has run out.</span></li>
+      <li class="step"><span class="topic">Love</span><span class="seed-q">“I seek not yours, but you” <cite>12:14</cite></span><span class="take">Real love gives, spends, and keeps loving, even when it isn't returned.</span></li>
+      <li class="step"><span class="topic">Repentance</span><span class="seed-q">“Have not repented” <cite>12:21</cite></span><span class="take">The danger isn't the fall. It is staying down. Turn, and be forgiven.</span></li>
+    </ol>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 1 of 6</p>
+      <span class="topic">Humility</span>
+      <h2>Why doesn't Paul boast about being caught up to heaven?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="5"></blockquote>
+      <blockquote class="quote step" data-q="6" data-hl="lest any man should think of me above that which he seeth me to be"></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>The experience was God's doing, not his, and he doesn't want people to think more of him than what they can see in his life. He keeps it quiet for fourteen years, and will boast only in his weaknesses.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 2 of 6</p>
+      <span class="topic">The thorn</span>
+      <h2>What did Paul do about his thorn in the flesh?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="7"></blockquote>
+      <blockquote class="quote step" data-q="8"></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>He prayed about it, three times, asking the Lord to take it away. Paul never says what it was. It's all right to ask God again and again.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 3 of 6</p>
+      <span class="topic">Grace</span>
+      <h2>What did the Lord answer when Paul asked?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="9" data-hl="My grace is sufficient for thee"></blockquote>
+      <blockquote class="quote step"><p>“Let us therefore come boldly unto the throne of grace, that we may obtain mercy, and find grace to help in time of need.”</p><cite>Hebrews 4:16</cite></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>“My grace is sufficient for thee.” God didn't take the thorn away. He gave Paul grace enough to carry it, today and every day, and that grace is there for us too, in our time of need.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 4 of 6</p>
+      <span class="topic">Weakness</span>
+      <h2>How can a man be strong when he is weak?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="9" data-hl="that the power of Christ may rest upon me"></blockquote>
+      <blockquote class="quote step" data-q="10"></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>When he stops leaning on his own strength, the power of Christ rests on him. Strength that comes from God doesn't run out, so the weak man who leans on Him is the strong one.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 5 of 6</p>
+      <span class="topic">Love</span>
+      <h2>How did Paul show his love for the Corinthians?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="14"></blockquote>
+      <blockquote class="quote step" data-q="15"></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>He wouldn't take their money, and he will gladly spend himself for them, even though the more he loves them the less they love him. He wants them, not what they have.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 6 of 6</p>
+      <span class="topic">Repentance</span>
+      <h2>What did Paul fear he would find in Corinth?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="20"></blockquote>
+      <blockquote class="quote step" data-q="21"></blockquote>
+      <blockquote class="quote step"><p>“If we confess our sins, he is faithful and just to forgive us our sins, and to cleanse us from all unrighteousness.”</p><cite>1 John 1:9</cite></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>Quarrels, jealousy, gossip and pride, and some who had sinned sexually and had not repented. Paul's grief is that they have not turned, and the way back is open: confess, and He is faithful and just to forgive.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide prayer">
+  <div class="inner">
+    <div class="emblem rise"></div>
+    <h2 class="rise" style="--d:1">Prayer requests</h2>
+    <p class="ask-line rise" style="--d:2">What can we pray about for you today?</p>
+    <blockquote class="quote rise" style="--d:4"><p>“And he said unto me, My grace is sufficient for thee: for my strength is made perfect in weakness.”</p><cite>2 Corinthians 12:9</cite></blockquote>
+  </div>
+</section>
+
+</main>
+
+<script>
+// King James Version, 2 Corinthians chapter 12
+const V = {
+  1: "It is not expedient for me doubtless to glory. I will come to visions and revelations of the Lord.",
+  2: "I knew a man in Christ above fourteen years ago, (whether in the body, I cannot tell; or whether out of the body, I cannot tell: God knoweth;) such an one caught up to the third heaven.",
+  3: "And I knew such a man, (whether in the body, or out of the body, I cannot tell: God knoweth;)",
+  4: "How that he was caught up into paradise, and heard unspeakable words, which it is not lawful for a man to utter.",
+  5: "Of such an one will I glory: yet of myself I will not glory, but in mine infirmities.",
+  6: "For though I would desire to glory, I shall not be a fool; for I will say the truth: but now I forbear, lest any man should think of me above that which he seeth me to be, or that he heareth of me.",
+  7: "And lest I should be exalted above measure through the abundance of the revelations, there was given to me a thorn in the flesh, the messenger of Satan to buffet me, lest I should be exalted above measure.",
+  8: "For this thing I besought the Lord thrice, that it might depart from me.",
+  9: "And he said unto me, My grace is sufficient for thee: for my strength is made perfect in weakness. Most gladly therefore will I rather glory in my infirmities, that the power of Christ may rest upon me.",
+  10: "Therefore I take pleasure in infirmities, in reproaches, in necessities, in persecutions, in distresses for Christ’s sake: for when I am weak, then am I strong.",
+  11: "I am become a fool in glorying; ye have compelled me: for I ought to have been commended of you: for in nothing am I behind the very chiefest apostles, though I be nothing.",
+  12: "Truly the signs of an apostle were wrought among you in all patience, in signs, and wonders, and mighty deeds.",
+  13: "For what is it wherein ye were inferior to other churches, except it be that I myself was not burdensome to you? forgive me this wrong.",
+  14: "Behold, the third time I am ready to come to you; and I will not be burdensome to you: for I seek not yours, but you: for the children ought not to lay up for the parents, but the parents for the children.",
+  15: "And I will very gladly spend and be spent for you; though the more abundantly I love you, the less I be loved.",
+  16: "But be it so, I did not burden you: nevertheless, being crafty, I caught you with guile.",
+  17: "Did I make a gain of you by any of them whom I sent unto you?",
+  18: "I desired Titus, and with him I sent a brother. Did Titus make a gain of you? walked we not in the same spirit? walked we not in the same steps?",
+  19: "Again, think ye that we excuse ourselves unto you? we speak before God in Christ: but we do all things, dearly beloved, for your edifying.",
+  20: "For I fear, lest, when I come, I shall not find you such as I would, and that I shall be found unto you such as ye would not: lest there be debates, envyings, wraths, strifes, backbitings, whisperings, swellings, tumults:",
+  21: "And lest, when I come again, my God will humble me among you, and that I shall bewail many which have sinned already, and have not repented of the uncleanness and fornication and lasciviousness which they have committed."
+};
+const BOOK = "2 Corinthians 12";
+</script>
+<script src="../assets/deck.js"></script>
+</body>
+</html>

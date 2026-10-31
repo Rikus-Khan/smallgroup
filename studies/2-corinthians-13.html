@@ -1,0 +1,515 @@
+<!doctype html>
+<html lang="en" data-theme="scribe">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>2 Corinthians 13</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="../assets/fonts.css">
+<link rel="stylesheet" href="../assets/deck.css">
+<link rel="stylesheet" href="../assets/themes.css">
+<style>
+/* c213-book: where we are in 2 Corinthians. Thirteen chapter tabs (.c213-ch, --k; .here is this chapter) over the letter's three parts
+   (.c213-part, --k; .now is this part). Each chapter is two grid columns. */
+.c213-book { display: grid; grid-template-columns: repeat(26, 1fr); gap: 8px 0; margin: .6em 0 1em; }
+.c213-ch { grid-column: span 2; margin: 0 2px; padding: .25em 0 .3em; text-align: center; border-radius: 6px 6px 0 0; border-bottom: 3px solid var(--line-strong);
+  font: 700 clamp(.82rem, .74rem + .35vw, 1.08rem) var(--sans); color: var(--ink-soft); opacity: 0; transition: opacity .4s ease; transition-delay: calc(var(--k, 0) * 55ms + 200ms); }
+.slide.active .c213-ch { opacity: 1; }
+.c213-ch.here { background: var(--accent); border-bottom-color: var(--accent); color: var(--on-accent); }
+.c213-part { --c: var(--accent); margin: 0 3px; padding: .5em .65em .6em; border-top: 6px solid var(--c); border-radius: 0 0 10px 10px;
+  background: color-mix(in srgb, var(--c) 9%, transparent); opacity: 0; transform: translateY(10px); transition: opacity .6s ease, transform .6s ease; transition-delay: calc(var(--k, 0) * 300ms + 900ms); }
+.slide.active .c213-part { opacity: 1; transform: none; }
+.c213-part small { display: block; font: 700 clamp(.72rem, .68rem + .22vw, .92rem) var(--sans); color: var(--ink-soft); }
+.c213-part b { display: block; margin-top: .1em; font: 600 clamp(1rem, .86rem + .65vw, 1.5rem)/1.1 var(--serif); color: var(--ink); }
+.c213-part.now { background: color-mix(in srgb, var(--c) 22%, transparent); box-shadow: inset 0 0 0 2px var(--c); }
+.c213-p1 { --c: var(--cool); grid-column: 1 / 15; } .c213-p2 { --c: var(--leather-light); grid-column: 15 / 19; } .c213-p3 { --c: var(--wine); grid-column: 19 / 27; }
+@media (max-width: 640px) {
+  .c213-book { grid-template-columns: 1fr; gap: 6px; }
+  .c213-ch { display: none; }
+  .c213-part { grid-column: 1; margin: 0; border-top: 0; border-left: 6px solid var(--c); border-radius: 0 10px 10px 0; }
+}
+
+/* c213-venn: three overlapping circles for one blessing (grace, love, communion), and "with you all" in the middle.
+   Each circle appears when its .c213-a / .c213-b / .c213-c step comes on; .c213-d lights the middle. */
+.c213-ring { opacity: 0; transition: opacity .8s ease; stroke-width: 3; }
+.c213-r1 { fill: color-mix(in srgb, var(--accent) 26%, transparent); stroke: var(--accent); }
+.c213-r2 { fill: color-mix(in srgb, var(--cool) 26%, transparent); stroke: var(--cool); }
+.c213-r3 { fill: color-mix(in srgb, var(--warm) 26%, transparent); stroke: var(--warm); }
+.c213-lbl { opacity: 0; transition: opacity .8s ease .3s; }
+.c213-lbl b { font: 700 24px var(--serif); fill: var(--ink); }
+.c213-lbl small { font: 600 16px var(--sans); fill: var(--ink-soft); }
+.c213-mid { opacity: 0; transition: opacity .8s ease; font: italic 600 22px var(--serif); fill: var(--accent-hot); }
+.slide:has(.c213-a.on) .c213-r1, .slide:has(.c213-a.on) .c213-l1 { opacity: 1; }
+.slide:has(.c213-b.on) .c213-r2, .slide:has(.c213-b.on) .c213-l2 { opacity: 1; }
+.slide:has(.c213-c.on) .c213-r3, .slide:has(.c213-c.on) .c213-l3 { opacity: 1; }
+.slide:has(.c213-d.on) .c213-mid { opacity: 1; }
+@media (max-width: 600px) { .c213-lbl b { font-size: 28px; } .c213-lbl small { font-size: 20px; } .c213-mid { font-size: 26px; } }
+@media (min-width: 760px) { .c213-four { grid-template-columns: repeat(4, 1fr); } }
+</style>
+</head>
+<body>
+<main class="deck" id="deck">
+
+<!-- ======================= OPENING ======================= -->
+<section class="slide title">
+  <div class="inner">
+    <div class="emblem rise"></div>
+    <h1 class="rise" style="--d:1">2 Corinthians 13</h1>
+    <p class="sub rise" style="--d:3">Examine yourselves</p>
+    <p class="tag rise" style="--d:5">Paul's last words to a church he nearly lost: a warning, a check-up, and one of the most loved blessings in the Bible.</p>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise" style="--d:1">Where we are in 2 Corinthians</h2>
+    <div class="c213-book" role="img" aria-label="2 Corinthians in three parts: chapters 1 to 7, Paul's heart; 8 to 9, the offering; 10 to 13, Paul answers the men who attack him. We are in chapter 13, the last chapter of the letter.">
+      <span class="c213-ch" style="--k:0">1</span><span class="c213-ch" style="--k:1">2</span><span class="c213-ch" style="--k:2">3</span><span class="c213-ch" style="--k:3">4</span>
+      <span class="c213-ch" style="--k:4">5</span><span class="c213-ch" style="--k:5">6</span><span class="c213-ch" style="--k:6">7</span><span class="c213-ch" style="--k:7">8</span>
+      <span class="c213-ch" style="--k:8">9</span><span class="c213-ch" style="--k:9">10</span><span class="c213-ch" style="--k:10">11</span><span class="c213-ch" style="--k:11">12</span>
+      <span class="c213-ch here" style="--k:12">13</span>
+      <div class="c213-part c213-p1" style="--k:0"><small>1–7</small><b>Paul's heart</b></div>
+      <div class="c213-part c213-p2" style="--k:1"><small>8–9</small><b>The offering</b></div>
+      <div class="c213-part c213-p3 now" style="--k:2"><small>10–13</small><b>Paul answers his critics</b></div>
+    </div>
+    <p class="note rise" style="--d:3">Some men in Corinth had been saying Paul was weak and not a real apostle. In chapter 12 he answered: the Lord told him <em>my strength is made perfect in weakness</em>, and he will not be ashamed of it.</p>
+    <p class="note step">Chapter 13 is the end of the letter. Paul gets ready to come, tells them what he hopes to find, turns the question back on them, and says goodbye. At the end of the study we'll look back over all thirteen chapters.</p>
+  </div>
+</section>
+
+<section class="slide watch">
+  <div class="inner">
+    <h2 class="rise">Things to watch for</h2>
+    <p class="lede rise" style="--d:1">Keep these questions in the back of your mind as we read. We'll come back to every one of them at the end.</p>
+    <ol class="seeds">
+      <li class="step"><span class="topic">Weakness</span><span class="seed-q">How did Christ show power through weakness?</span></li>
+      <li class="step"><span class="topic">Self-check</span><span class="seed-q">How should a believer examine himself?</span></li>
+      <li class="step"><span class="topic">Assurance</span><span class="seed-q">How can a man know that Christ is in him?</span></li>
+      <li class="step"><span class="topic">Security</span><span class="seed-q">Can a believer be plucked out of Christ's hand?</span></li>
+      <li class="step"><span class="topic">Farewell</span><span class="seed-q">What does Paul ask of the Corinthians as he says goodbye?</span></li>
+      <li class="step"><span class="topic">The blessing</span><span class="seed-q">Who is named in Paul's closing blessing?</span></li>
+    </ol>
+  </div>
+</section>
+
+<!-- ======================= PART ONE: THE THIRD VISIT ======================= -->
+<section class="slide part">
+  <div class="inner">
+    <p class="part-n rise">Part one</p>
+    <h2 class="rise" style="--d:1">The third visit</h2>
+    <p class="range rise" style="--d:2">Verses 1–4</p>
+    <div class="rule"></div>
+    <p class="hook rise" style="--d:4">A fair warning, and the strangest kind of power.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="1-4" data-hl="In the mouth of two or three witnesses shall every word be established|crucified through weakness, yet he liveth by the power of God"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <div class="split">
+      <div class="stage">
+        <svg data-world viewBox="425 170 210 170" data-towns="Ephesus:b, Troas:r, Philippi*:t, Corinth!:l" role="img" aria-label="A map of the Aegean Sea. A line runs from Ephesus on the coast of Asia north to Troas, across the sea to Macedonia and Philippi, then south by land to Corinth in Greece, where Paul is heading.">
+          <path class="map-route" data-via="Ephesus, @27.5 38.5, @27.0 39.4, Troas, @26.0 39.7, @25.6 40.05, @25.2 40.75, @24.5 40.84, Neapolis, Philippi, Thessalonica, Berea, Corinth"/>
+        </svg>
+      </div>
+      <div>
+        <h2 class="rise" style="--d:1">On his way</h2>
+        <p class="note rise" style="--d:2">Paul is writing from Macedonia (northern Greece, around Philippi). <em>This is the third time I am coming to you.</em> The way to Corinth is long, and mostly by land.</p>
+        <p class="note step">It is about AD 56. When he gets there, he stays three months in Greece (Acts 20:2–3), and during that time he writes the letter to the Romans.</p>
+        <p class="note step">The letter was sent ahead so the church could put things right <em>before</em> he arrived. He would rather fix it by letter than with a fight.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise">Two or three witnesses</h2>
+    <p class="note rise" style="--d:1">Paul is quoting an old rule of fairness from the law of Moses. A charge could not stand on one man's word.</p>
+    <blockquote class="quote rise" style="--d:2"><p>“One witness shall not rise up against a man for any iniquity, or for any sin, in any sin that he sinneth: at the mouth of two witnesses, or at the mouth of three witnesses, shall the matter be established.”</p><cite>Deuteronomy 19:15</cite></blockquote>
+    <p class="note step">Notice the tone. Paul has told them twice. <em>I told you before, and foretell you</em>: he is not springing anything on them. He warns them, and then <em>I will not spare</em> means he will deal with it if it has not changed.</p>
+    <p class="note step">That is how to confront anyone. Say it plainly, say it ahead of time, and have it settled by facts, not by gossip. And if you are the one being warned, take it as kindness: the man who warns you still wants you.</p>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise">Weak on the cross, alive in power</h2>
+    <div class="stage">
+      <svg class="curve" viewBox="0 0 680 290" role="img" aria-label="A line that falls to a low point, Christ crucified through weakness, then climbs to a high one, He liveth by the power of God, then dips to we also are weak in him and climbs again to we shall live with him by the power of God.">
+        <line class="curve-base" x1="20" y1="140" x2="660" y2="140"/>
+        <path class="curve-line" pathLength="1" d="M40 100 L170 235 L320 55 L450 205 L630 45"/>
+        <g class="curve-pt low" style="--k:1"><circle cx="170" cy="235" r="9"/><text x="170" y="266" text-anchor="middle">crucified through weakness</text><text class="ref" x="170" y="284" text-anchor="middle">13:4</text></g>
+        <g class="curve-pt high" style="--k:2"><circle cx="320" cy="55" r="10"/><text x="320" y="28" text-anchor="middle" font-weight="700" style="fill:var(--accent-hot)">liveth by the power of God</text><text class="ref" x="336" y="80">13:4</text></g>
+        <g class="curve-pt low" style="--k:3"><circle cx="450" cy="205" r="9"/><text x="450" y="236" text-anchor="middle">“we also are weak in him”</text><text class="ref" x="450" y="254" text-anchor="middle">13:4</text></g>
+        <g class="curve-pt high" style="--k:4"><circle cx="630" cy="45" r="9"/><text x="650" y="22" text-anchor="end">“we shall live with him”</text><text class="ref" x="650" y="70" text-anchor="end">13:4</text></g>
+      </svg>
+    </div>
+    <p class="note step">The Corinthians wanted proof of power. Paul says: look at Christ. He was weak enough to be nailed to a cross, and He was raised by the power of God. That is the order, every time.</p>
+    <p class="note step">It is the same pattern as chapter 12. If you are weak today, tired, tempted, behind, you are standing exactly where God's power starts. <em>We shall live with him.</em></p>
+  </div>
+</section>
+
+<!-- ======================= PART TWO: EXAMINE YOURSELVES ======================= -->
+<section class="slide part">
+  <div class="inner">
+    <p class="part-n rise">Part two</p>
+    <h2 class="rise" style="--d:1">Examine yourselves</h2>
+    <p class="range rise" style="--d:2">Verses 5–10</p>
+    <div class="rule"></div>
+    <p class="hook rise" style="--d:4">An honest check, not a nervous breakdown.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="5-6" data-hl="Examine yourselves, whether ye be in the faith; prove your own selves|Jesus Christ is in you"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise">Two ways to look at yourself</h2>
+    <p class="note rise" style="--d:1">Verse 5 has been used to make believers feel sick, so look at it carefully. <em>Examine</em> and <em>prove</em> are tests, like testing metal to see if it is real. And the test question is not <em>was I good enough lately?</em></p>
+    <div class="columns">
+      <div class="col law step"><p class="who">The anxious way</p><h3>“Am I good enough?”</h3><p>You count your failures, check your feelings, and wonder if you have lost it. There is no end to that, and nothing in verse 5 asks for it.</p></div>
+      <div class="col grace step"><p class="who">The honest way</p><h3>“Is Christ in me?”</h3><p>You ask the one question Paul asks: <em>know ye not your own selves, how that Jesus Christ is in you?</em> It has an answer, and you can know it.</p></div>
+    </div>
+    <p class="note step"><em>Reprobate</em> means a man who failed the test, like a coin that turns out to be fake. Paul's point to Corinth is gentle: you wanted proof that Christ speaks through me. You are the proof, if Christ is in you.</p>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise">An honest check-up</h2>
+    <ol class="checks">
+      <li class="step"><span class="tick">✓</span><q>Have I trusted Jesus Himself?</q><small>not just admired Him, or joined something. Trusting Him to save me.</small><b>the faith</b></li>
+      <li class="step"><span class="tick">✓</span><q>Is the Spirit bearing witness?</q><small>the quiet sense, however faint, that I belong to Him</small><b>the witness</b></li>
+      <li class="step"><span class="tick">✓</span><q>Is anything changing?</q><small>slowly, with falls, but turning more toward Him than away</small><b>the fruit</b></li>
+    </ol>
+    <blockquote class="quote step"><p>“The Spirit itself beareth witness with our spirit, that we are the children of God:”</p><cite>Romans 8:16</cite></blockquote>
+    <blockquote class="quote step"><p>“Search me, O God, and know my heart: try me, and know my thoughts: And see if there be any wicked way in me, and lead me in the way everlasting.”</p><cite>Psalm 139:23–24</cite></blockquote>
+    <p class="note step">David asks God to do the searching, and he ends with <em>the way everlasting</em>. That is the right spirit for a self-check: open, not scared. If you find a wicked way, bring it to God today. That is what a check-up is for.</p>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <div class="split">
+      <div class="stage">
+        <svg class="kept" viewBox="0 0 600 420" role="img" aria-label="A man held inside a circle labelled Christ in you, and inside a second circle labelled sealed by the Spirit. Three attacks keep pushing in, doubt, last night's fall, and the accuser's whisper, and none gets through.">
+          <circle class="kept-wall" cx="300" cy="215" r="150"/>
+          <circle class="kept-wall inner" cx="300" cy="230" r="88"/>
+          <text class="kept-tag" x="300" y="104" text-anchor="middle" font-size="19" font-weight="700">Christ is in you</text>
+          <text class="kept-tag" x="300" y="190" text-anchor="middle" font-size="17" font-weight="700">the Spirit's seal</text>
+          <circle cx="300" cy="232" r="13" style="fill:var(--ink)"/><path d="M300 245 v34 M278 258 h44" style="stroke:var(--ink);fill:none" stroke-width="7" stroke-linecap="round"/>
+          <text x="300" y="304" text-anchor="middle" font-size="16" style="fill:var(--ink)">a believer</text>
+          <g class="kept-foe" style="--dx:16px;--dy:0px">
+            <text x="10" y="196" font-size="18" font-weight="700">doubt</text>
+            <line x1="20" y1="215" x2="128" y2="215"/><path d="M140 215 L124 206 L124 224 Z"/>
+          </g>
+          <g class="kept-foe" style="--dx:-16px;--dy:0px;--w:.9s">
+            <text x="590" y="196" text-anchor="end" font-size="18" font-weight="700">the accuser</text>
+            <line x1="580" y1="215" x2="472" y2="215"/><path d="M460 215 L476 206 L476 224 Z"/>
+          </g>
+          <g class="kept-foe" style="--dx:11px;--dy:-11px;--w:1.7s">
+            <text x="20" y="404" font-size="18" font-weight="700">last night's fall</text>
+            <line x1="70" y1="380" x2="178" y2="330"/><path d="M188 324 L170 324 L178 340 Z"/>
+          </g>
+        </svg>
+      </div>
+      <div>
+        <h2 class="rise" style="--d:1">A check-up is not a trial</h2>
+        <p class="note rise" style="--d:2">If Christ is in you, you are held. The check does not put you at risk; it shows you where you stand.</p>
+        <blockquote class="quote step"><p>“And I give unto them eternal life; and they shall never perish, neither shall any man pluck them out of my hand.”</p><cite>John 10:28</cite></blockquote>
+        <blockquote class="quote step"><p>“Being confident of this very thing, that he which hath begun a good work in you will perform it until the day of Jesus Christ:”</p><cite>Philippians 1:6</cite></blockquote>
+        <p class="note step">A bad night does not undo it. Be honest, be sorry, get up and go on.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise">“Know that ye have eternal life”</h2>
+    <blockquote class="quote rise" style="--d:1"><p>“These things have I written unto you that believe on the name of the Son of God; that ye may know that ye have eternal life, and that ye may believe on the name of the Son of God.”</p><cite>1 John 5:13</cite></blockquote>
+    <p class="note step">God wants you to <em>know</em>. Not hope, not guess. If the check-up leaves you unsure that you ever really trusted Jesus, settle it now. It takes one honest prayer:</p>
+    <blockquote class="quote step"><p>“For whosoever shall call upon the name of the Lord shall be saved.”</p><cite>Romans 10:13</cite></blockquote>
+    <p class="note step"><em>Whosoever</em> means you. Tell Him you trust Him, and tell a believer you did. If you are already His, say thank you, and read verse 5 again as a man who is held.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="7-10" data-hl="do that which is honest|even your perfection|according to the power which the Lord hath given me to edification, and not to destruction"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise">What Paul wants for them</h2>
+    <ol class="signs c213-four" aria-label="Four things Paul wants for the Corinthians: that they do no evil, that they do what is honest, that they be made perfect, and that he can build them up instead of tearing down.">
+      <li class="rise" style="--d:1"><b>Do no evil</b>his prayer for them, before anything else (v. 7)</li>
+      <li class="rise" style="--d:2"><b>Be honest</b>do what is right, even if it makes him look bad</li>
+      <li class="rise" style="--d:3"><b>Be perfect</b>his wish: your <em>perfection</em>, being made whole (v. 9)</li>
+      <li class="rise now" style="--d:4"><b>Build up</b>power “to edification, and not to destruction” (v. 10)</li>
+    </ol>
+    <p class="note step">Verse 7 is Paul at his most unselfish. <em>Not that we should appear approved.</em> He would rather they do right and he looks like a failure than that he looks good and they do wrong. Verse 8: <em>we can do nothing against the truth, but for the truth.</em></p>
+    <p class="note step">And verse 10 is for anyone with any authority over other men, a boss, a father, a leader. Power is given to build people up. Paul wrote this chapter so that when he arrived, he would not have to use the other kind.</p>
+  </div>
+</section>
+
+<!-- ======================= PART THREE: FAREWELL ======================= -->
+<section class="slide part">
+  <div class="inner">
+    <p class="part-n rise">Part three</p>
+    <h2 class="rise" style="--d:1">Farewell</h2>
+    <p class="range rise" style="--d:2">Verses 11–14</p>
+    <div class="rule"></div>
+    <p class="hook rise" style="--d:4">Four short commands, and the Father, Son and Spirit in a single sentence.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="11-12" data-hl="Be perfect, be of good comfort, be of one mind, live in peace|the God of love and peace shall be with you"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise">Four things to do today</h2>
+    <ol class="signs c213-four" aria-label="Four commands from verse 11: be perfect, be of good comfort, be of one mind, live in peace.">
+      <li class="rise" style="--d:1"><b>Be perfect</b>be mended, put in order, like a torn net fixed so it can work again</li>
+      <li class="rise" style="--d:2"><b>Be of good comfort</b>take heart, and take comfort from God and from each other</li>
+      <li class="rise" style="--d:3"><b>Be of one mind</b>aim the same way, with the same Lord</li>
+      <li class="rise now" style="--d:4"><b>Live in peace</b>with one another, and with God</li>
+    </ol>
+    <p class="note step">The word <em>perfect</em> here is not “never makes a mistake.” It means mended, in working order: the word used for fixing a net. Paul is not asking for a perfect record. He is asking them to let God put them back together.</p>
+    <p class="note step"><strong>Today:</strong> pick one. Make peace with one person, or ask one man how he is really doing and listen. Then <em>the God of love and peace shall be with you</em>: He promises to go along.</p>
+    <p class="note step"><em>An holy kiss</em> was the warm greeting of the time: a plain way of saying you are welcome and we are family. We would shake a hand and mean it.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="13-14" data-hl="The grace of the Lord Jesus Christ, and the love of God, and the communion of the Holy Ghost, be with you all"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <div class="split">
+      <div class="stage">
+        <svg viewBox="0 0 620 380" style="max-height:56vh" role="img" aria-label="Three overlapping circles. The first is the grace of the Lord Jesus Christ. The second is the love of God. The third is the communion of the Holy Ghost. In the middle where they overlap: with you all.">
+          <circle class="c213-ring c213-r1" cx="310" cy="125" r="108"/>
+          <circle class="c213-ring c213-r2" cx="230" cy="250" r="108"/>
+          <circle class="c213-ring c213-r3" cx="390" cy="250" r="108"/>
+          <g class="c213-lbl c213-l1" text-anchor="middle"><text x="310" y="72"><tspan class="b" font-weight="700" font-size="24" style="font-family:var(--serif)">Grace</tspan></text><text x="310" y="94" font-size="16" style="fill:var(--ink-soft)">of the Lord Jesus Christ</text></g>
+          <g class="c213-lbl c213-l2" text-anchor="middle"><text x="166" y="282" font-weight="700" font-size="24" style="font-family:var(--serif)">Love</text><text x="166" y="304" font-size="16" style="fill:var(--ink-soft)">of God</text></g>
+          <g class="c213-lbl c213-l3" text-anchor="middle"><text x="454" y="282" font-weight="700" font-size="24" style="font-family:var(--serif)">Communion</text><text x="454" y="304" font-size="16" style="fill:var(--ink-soft)">of the Holy Ghost</text></g>
+          <text class="c213-mid" x="310" y="204" text-anchor="middle">with you all</text>
+        </svg>
+      </div>
+      <div>
+        <h2 class="rise" style="--d:1">One blessing, three Persons</h2>
+        <p class="note rise" style="--d:2">The whole letter ends with this. Read it slowly.</p>
+        <p class="note step c213-a"><em>The grace of the Lord Jesus Christ</em>: His undeserved favor, shown on the cross. Every good thing we have starts here.</p>
+        <p class="note step c213-b"><em>The love of God</em>: the Father, who loved us first and sent His Son.</p>
+        <p class="note step c213-c"><em>The communion of the Holy Ghost</em>: <em>communion</em> means sharing, fellowship. The Spirit lives in every believer, and He joins us to God and to one another.</p>
+        <p class="note step c213-d"><em>Be with you all.</em> All. Not just the strong ones, not just the ones who have it together. Even Corinth, with all its trouble.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise">Father, Son and Spirit together</h2>
+    <p class="note rise" style="--d:1">Paul does not stop to explain it. The three are named together as a matter of course, because the early believers knew God that way. They did not think of three gods, but of one God in three Persons.</p>
+    <blockquote class="quote step"><p>“Go ye therefore, and teach all nations, baptizing them in the name of the Father, and of the Son, and of the Holy Ghost:”</p><cite>Matthew 28:19</cite></blockquote>
+    <blockquote class="quote step"><p>“And Jesus, when he was baptized, went up straightway out of the water: and, lo, the heavens were opened unto him, and he saw the Spirit of God descending like a dove, and lighting upon him: And lo a voice from heaven, saying, This is my beloved Son, in whom I am well pleased.”</p><cite>Matthew 3:16–17</cite></blockquote>
+    <p class="note step">At Jesus' baptism all three are there at once: the Son in the water, the Spirit like a dove, the Father speaking from heaven. A man who has been alone a long time can lean on that: you are not facing today alone. The Father loves you, the Son has made peace for you, the Spirit is in you.</p>
+  </div>
+</section>
+
+<!-- ======================= PART FOUR: LOOKING BACK ======================= -->
+<section class="slide part">
+  <div class="inner">
+    <p class="part-n rise">Part four</p>
+    <h2 class="rise" style="--d:1">Looking back</h2>
+    <p class="range rise" style="--d:2">The whole letter</p>
+    <div class="rule"></div>
+    <p class="hook rise" style="--d:4">That was the last chapter. Here is where the letter has taken us.</p>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise">Thirteen chapters in seven steps</h2>
+    <ol class="timeline" aria-label="Seven steps through 2 Corinthians. Chapter 1: the God of all comfort. Chapters 2 and 3: forgiveness, and a new covenant of the Spirit. Chapters 4 and 5: treasure in earthen vessels, and a new creature reconciled to God. Chapters 6 and 7: now is the day of salvation, and godly sorrow. Chapters 8 and 9: giving, and a cheerful giver. Chapters 10 and 11: Paul answers his critics. Chapters 12 and 13: the thorn, and examine yourselves.">
+      <li style="--k:0"><b>1</b><span>The God of all comfort</span><small>and comfort to hand on</small></li>
+      <li style="--k:1"><b>2–3</b><span>Forgive, and the Spirit gives life</span><small>the new covenant</small></li>
+      <li style="--k:2"><b>4–5</b><span>Treasure in earthen vessels</span><small>a new creature; be reconciled</small></li>
+      <li style="--k:3"><b>6–7</b><span>Now is the day of salvation</span><small>godly sorrow</small></li>
+      <li style="--k:4"><b>8–9</b><span>Giving</span><small>God loveth a cheerful giver</small></li>
+      <li style="--k:5"><b>10–11</b><span>Paul answers his critics</span><small>and his long list of sufferings</small></li>
+      <li class="lit" style="--k:6"><b>12–13</b><span>The thorn, and the check-up</span><small>grace enough; examine yourselves</small></li>
+    </ol>
+    <p class="note step">Read it as a man who nearly lost a church, and who is writing it back to health. Everything in the letter points the same way: God works through broken, weak people, and He does not leave them there.</p>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise">What this letter gave us</h2>
+    <ol class="signs rise" style="--d:1" aria-label="Sin, regret, grace, hope, and the real world, each with a line from 2 Corinthians">
+      <li><b>Sin</b>named, never hidden: the quarrels, the gossip, the uncleanness (12:20–21)</li>
+      <li><b>Regret</b>“godly sorrow worketh repentance… not to be repented of” (7:10)</li>
+      <li><b>Grace</b>“My grace is sufficient for thee” (12:9)</li>
+      <li><b>Hope</b>“the inward man is renewed day by day” (4:16)</li>
+      <li class="now"><b>The real world</b>“be ye reconciled to God” (5:20): start there, then be peace to the next man</li>
+    </ol>
+    <p class="note step">If you remember one thing, make it Paul's own summary: <em>for when I am weak, then am I strong.</em> Your weak places are not the end of the story. They are where Christ's power shows up.</p>
+    <p class="note step">And the last word of the letter is a blessing, for all of us: <em>the grace of the Lord Jesus Christ, and the love of God, and the communion of the Holy Ghost, be with you all.</em></p>
+  </div>
+</section>
+
+<!-- ======================= CLOSING ======================= -->
+<section class="slide remember">
+  <div class="inner">
+    <h2 class="rise">Points to remember</h2>
+    <ol class="seeds">
+      <li class="step"><span class="topic">Weakness</span><span class="seed-q">“Crucified through weakness, yet he liveth by the power of God” <cite>13:4</cite></span><span class="take">God's power starts where ours stops. Christ was weak on the cross and alive in power.</span></li>
+      <li class="step"><span class="topic">Self-check</span><span class="seed-q">“Examine yourselves, whether ye be in the faith” <cite>13:5</cite></span><span class="take">An honest check-up, in the open, not an anxious count of failures.</span></li>
+      <li class="step"><span class="topic">Assurance</span><span class="seed-q">“Jesus Christ is in you” <cite>13:5</cite></span><span class="take">The question is whether Christ is in you, and God wants you to know it.</span></li>
+      <li class="step"><span class="topic">Security</span><span class="seed-q">“Neither shall any man pluck them out of my hand” <cite>John 10:28</cite></span><span class="take">A believer is held by Christ, not by his own grip.</span></li>
+      <li class="step"><span class="topic">Farewell</span><span class="seed-q">“Be perfect, be of good comfort, be of one mind, live in peace” <cite>13:11</cite></span><span class="take">Let God mend you, take comfort, aim together, and make peace.</span></li>
+      <li class="step"><span class="topic">The blessing</span><span class="seed-q">“The grace of the Lord Jesus Christ, and the love of God, and the communion of the Holy Ghost” <cite>13:14</cite></span><span class="take">Son, Father and Spirit: all three are with you.</span></li>
+    </ol>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 1 of 6</p>
+      <span class="topic">Weakness</span>
+      <h2>How did Christ show power through weakness?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="4"></blockquote>
+      <blockquote class="quote step"><p>“And he said unto me, My grace is sufficient for thee: for my strength is made perfect in weakness.”</p><cite>2 Corinthians 12:9</cite></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>He was crucified through weakness, and He lives by the power of God. We are weak in Him too, and we shall live with Him by that same power. God's strength shows up where ours has run out.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 2 of 6</p>
+      <span class="topic">Self-check</span>
+      <h2>How should a believer examine himself?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="5" data-hl="Examine yourselves, whether ye be in the faith; prove your own selves"></blockquote>
+      <blockquote class="quote step"><p>“Search me, O God, and know my heart: try me, and know my thoughts: And see if there be any wicked way in me, and lead me in the way everlasting.”</p><cite>Psalm 139:23–24</cite></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>Honestly and openly, asking God to search him. The question is whether he is in the faith and whether Christ is in him, not whether he was perfect lately. If he finds something, he brings it to God today.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 3 of 6</p>
+      <span class="topic">Assurance</span>
+      <h2>How can a man know that Christ is in him?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="5" data-hl="Jesus Christ is in you"></blockquote>
+      <blockquote class="quote step"><p>“The Spirit itself beareth witness with our spirit, that we are the children of God:”</p><cite>Romans 8:16</cite></blockquote>
+      <blockquote class="quote step"><p>“These things have I written unto you that believe on the name of the Son of God; that ye may know that ye have eternal life, and that ye may believe on the name of the Son of God.”</p><cite>1 John 5:13</cite></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>He has trusted Jesus, and the Spirit bears witness with his spirit that he is a child of God. God wrote it down so that believers may know they have eternal life. And if he is not sure, he can call on the Lord today.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 4 of 6</p>
+      <span class="topic">Security</span>
+      <h2>Can a believer be plucked out of Christ's hand?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step"><p>“And I give unto them eternal life; and they shall never perish, neither shall any man pluck them out of my hand.”</p><cite>John 10:28</cite></blockquote>
+      <blockquote class="quote step"><p>“Being confident of this very thing, that he which hath begun a good work in you will perform it until the day of Jesus Christ:”</p><cite>Philippians 1:6</cite></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>No. Christ gives eternal life, and they shall never perish. He who began the good work will finish it. A bad day isn't the end: be honest, get up, and go on.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 5 of 6</p>
+      <span class="topic">Farewell</span>
+      <h2>What does Paul ask of the Corinthians as he says goodbye?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="11"></blockquote>
+      <blockquote class="quote step" data-q="9"></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>Be perfect, be of good comfort, be of one mind, live in peace. Let God mend you, take comfort, aim together, and make peace, and the God of love and peace shall be with you.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 6 of 6</p>
+      <span class="topic">The blessing</span>
+      <h2>Who is named in Paul's closing blessing?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="14"></blockquote>
+      <blockquote class="quote step"><p>“Go ye therefore, and teach all nations, baptizing them in the name of the Father, and of the Son, and of the Holy Ghost:”</p><cite>Matthew 28:19</cite></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>The Lord Jesus Christ, with His grace; God the Father, with His love; and the Holy Ghost, with His communion. The Father, Son and Spirit are all named in one sentence, and the blessing is for you all.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide prayer">
+  <div class="inner">
+    <div class="emblem rise"></div>
+    <h2 class="rise" style="--d:1">Prayer requests</h2>
+    <p class="ask-line rise" style="--d:2">What can we pray about for you today?</p>
+    <blockquote class="quote rise" style="--d:4"><p>“The grace of the Lord Jesus Christ, and the love of God, and the communion of the Holy Ghost, be with you all. Amen.”</p><cite>2 Corinthians 13:14</cite></blockquote>
+  </div>
+</section>
+
+</main>
+
+<script>
+// King James Version, 2 Corinthians chapter 13
+const V = {
+  1: "This is the third time I am coming to you. In the mouth of two or three witnesses shall every word be established.",
+  2: "I told you before, and foretell you, as if I were present, the second time; and being absent now I write to them which heretofore have sinned, and to all other, that, if I come again, I will not spare:",
+  3: "Since ye seek a proof of Christ speaking in me, which to you-ward is not weak, but is mighty in you.",
+  4: "For though he was crucified through weakness, yet he liveth by the power of God. For we also are weak in him, but we shall live with him by the power of God toward you.",
+  5: "Examine yourselves, whether ye be in the faith; prove your own selves. Know ye not your own selves, how that Jesus Christ is in you, except ye be reprobates?",
+  6: "But I trust that ye shall know that we are not reprobates.",
+  7: "Now I pray to God that ye do no evil; not that we should appear approved, but that ye should do that which is honest, though we be as reprobates.",
+  8: "For we can do nothing against the truth, but for the truth.",
+  9: "For we are glad, when we are weak, and ye are strong: and this also we wish, even your perfection.",
+  10: "Therefore I write these things being absent, lest being present I should use sharpness, according to the power which the Lord hath given me to edification, and not to destruction.",
+  11: "Finally, brethren, farewell. Be perfect, be of good comfort, be of one mind, live in peace; and the God of love and peace shall be with you.",
+  12: "Greet one another with an holy kiss.",
+  13: "All the saints salute you.",
+  14: "The grace of the Lord Jesus Christ, and the love of God, and the communion of the Holy Ghost, be with you all. Amen."
+};
+const BOOK = "2 Corinthians 13";
+</script>
+<script src="../assets/deck.js"></script>
+</body>
+</html>

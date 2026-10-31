@@ -1,0 +1,553 @@
+<!doctype html>
+<html lang="en" data-theme="slate">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>2 Corinthians 1</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="../assets/fonts.css">
+<link rel="stylesheet" href="../assets/deck.css">
+<link rel="stylesheet" href="../assets/themes.css">
+<style>
+/* c201-chain: comfort passed down the line, God to Paul to the church, and on a click to the next man in trouble (a deck.css candidate).
+   Nodes and links (--k) appear in turn; dots run along each link. Put .c201-pass on the step that adds the last link. */
+.c201-n { opacity: 0; transition: opacity .6s ease; transition-delay: calc(var(--k, 0) * 600ms + 300ms); }
+.slide.active .c201-n { opacity: 1; }
+.c201-late { opacity: 0; transition: opacity .8s ease; }
+.slide:has(.c201-pass.on) .c201-late { opacity: 1; }
+.c201-node { fill: var(--surface-2); stroke: var(--line-strong); stroke-width: 2.5; }
+.c201-node.god { fill: var(--accent); stroke: var(--accent); }
+.c201-node.next { fill: color-mix(in srgb, var(--accent) 14%, var(--bg)); stroke: var(--accent); stroke-dasharray: 7 6; }
+.c201-flow { fill: none; stroke: var(--accent-hot); stroke-width: 4.5; stroke-dasharray: 2 13; stroke-linecap: round; }
+.slide.active .c201-flow { animation: c201-run 1.1s linear infinite; }
+@keyframes c201-run { to { stroke-dashoffset: -30; } }
+.c201-tx { fill: var(--ink); font-weight: 700; font-size: 20px; text-anchor: middle; }
+.c201-sub { fill: var(--ink-soft); font-size: 15px; text-anchor: middle; }
+
+/* c201-tide: two bars rising together, the suffering and the comfort that grows to match it (a deck.css candidate) */
+.c201-bar { transform: scaleY(0); transform-box: fill-box; transform-origin: 50% 100%; transition: transform 1s cubic-bezier(.3,.7,.3,1); transition-delay: calc(var(--k, 0) * 450ms + 400ms); }
+.slide.active .c201-bar { transform: scaleY(1); }
+
+/* c201-yes: a wall of God's promises, each one stamped YES */
+.c201-yes { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin: .5em 0 .8em; }
+.c201-promise { position: relative; padding: .55em .7em .65em; border: 2px solid var(--line-strong); border-radius: 10px; background: var(--surface); overflow: hidden; }
+.c201-promise b { display: block; font: 600 clamp(1.02rem, .9rem + .6vw, 1.4rem)/1.15 var(--serif); }
+.c201-promise small { display: block; margin-top: .15em; font: clamp(.78rem, .72rem + .28vw, .98rem) var(--sans); color: var(--ink-soft); }
+.c201-stamp { position: absolute; right: .5em; top: .4em; padding: .02em .4em; border: 2.5px solid var(--accent); border-radius: 6px; color: var(--accent-hot);
+  font: 800 clamp(.9rem, .8rem + .45vw, 1.25rem) var(--sans); letter-spacing: .08em; transform: rotate(-8deg) scale(2.2); opacity: 0;
+  transition: transform .35s cubic-bezier(.3,1.4,.5,1), opacity .2s ease; transition-delay: calc(var(--k, 0) * 600ms + 900ms); }
+.slide.active .c201-stamp { transform: rotate(-8deg) scale(1); opacity: 1; }
+@media (max-width: 700px) { .c201-yes { grid-template-columns: 1fr 1fr; } }
+@media (max-width: 440px) { .c201-yes { grid-template-columns: 1fr; } }
+
+/* c201-earn: the whole inheritance as a long bar, the part already paid (the Spirit) filled in now (a deck.css candidate) */
+.c201-all { fill: var(--surface-2); stroke: var(--line-strong); stroke-width: 2.5; stroke-dasharray: 8 6; }
+.c201-paid { fill: var(--accent); transform: scaleX(0); transform-box: fill-box; transform-origin: 0 50%; transition: transform 1.4s ease .6s; }
+.slide.active .c201-paid { transform: scaleX(1); }
+.c201-seal { opacity: 0; transform: scale(2); transform-box: fill-box; transform-origin: 50% 50%; transition: opacity .3s ease 2.2s, transform .4s cubic-bezier(.3,1.4,.5,1) 2.2s; }
+.slide.active .c201-seal { opacity: 1; transform: scale(1); }
+</style>
+</head>
+<body>
+<main class="deck" id="deck">
+
+<!-- ======================= OPENING ======================= -->
+<section class="slide title">
+  <div class="inner">
+    <div class="emblem rise"></div>
+    <h1 class="rise" style="--d:1">2 Corinthians 1</h1>
+    <p class="sub rise" style="--d:3">The God of all comfort</p>
+    <p class="tag rise" style="--d:5">Paul's most personal letter begins with a man who nearly died, and who found that the comfort God gave him was meant to be handed on.</p>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <div class="split">
+      <div class="stage">
+        <svg data-world viewBox="425 170 210 170" data-towns="Ephesus:b, Troas:r, Philippi*:t, Corinth:l" role="img" aria-label="A map of the Aegean Sea. A line runs from Ephesus on the coast of Asia north to Troas, across the sea to Macedonia and Philippi, then south by land to Corinth in Greece.">
+          <path class="map-route" data-via="Ephesus, @27.5 38.5, @27.0 39.4, Troas, @26.0 39.7, @25.6 40.05, @25.2 40.75, @24.5 40.84, Neapolis, Philippi, Thessalonica, Berea, Corinth"/>
+        </svg>
+      </div>
+      <div>
+        <h2 class="rise" style="--d:1">The second letter to the Corinthians</h2>
+        <div class="letter">
+          <p class="from">“Paul, an apostle of Jesus Christ by the will of God, and Timothy our brother, unto the church of God which is at Corinth, with all the saints which are in all Achaia”</p>
+          <dl>
+            <dt>Written from</dt><dd>Macedonia, in northern Greece. Many think Philippi. (2:13; 7:5)</dd>
+            <dt>When</dt><dd>about AD 56</dd>
+            <dt>To whom</dt><dd>the church at Corinth, “with all the saints which are in all Achaia”</dd>
+            <dt>Why</dt><dd class="step">Paul had been worried sick about this church. Titus had just brought good news, and Paul pours out his heart.</dd>
+          </dl>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise" style="--d:1">Where 2 Corinthians fits</h2>
+    <ol class="timeline" aria-label="About AD 50 to 52, Paul starts the church at Corinth. About 55, 1 Corinthians, from Ephesus. About 55 to 56, a painful visit. About 55 to 56, a letter written with many tears. About 56, Paul waits anxiously for Titus, and Titus brings good news. About 56, 2 Corinthians, from Macedonia. About 57, Paul comes to Corinth and writes Romans.">
+      <li style="--k:0"><b>about AD 50 to 52</b><span>Paul starts the church</span><small>Acts 18</small></li>
+      <li style="--k:1"><b>about 55</b><span>1 Corinthians, from Ephesus</span><small>the problems answered</small></li>
+      <li style="--k:2"><b>about 55 to 56</b><span>A painful visit</span><small>“in heaviness” (2:1)</small></li>
+      <li style="--k:3"><b>about 55 to 56</b><span>A letter with many tears</span><small>2:4; many think it is lost</small></li>
+      <li style="--k:4"><b>about 56</b><span>Waiting for Titus</span><small>good news at last (7:6–7)</small></li>
+      <li class="lit" style="--k:5"><b>about 56</b><span>2 Corinthians</span><small>from Macedonia</small></li>
+      <li class="wait" style="--k:6"><b>about 57</b><span>Paul comes to Corinth</span><small>and writes Romans</small></li>
+    </ol>
+    <p class="note rise" style="--d:3">This church has been through a lot with Paul. He wrote them one letter (1 Corinthians), made a visit that many think went badly, then wrote another letter so hard that it cost him tears. Then he waited to hear how they took it.</p>
+    <p class="note step">Good news came back. This letter is a man talking with friends he nearly lost, and it is the most honest Paul ever gets about weakness, suffering and comfort.</p>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise" style="--d:1">The whole letter on one line</h2>
+    <p class="note rise" style="--d:2">2 Corinthians has three parts, and they feel different. We start with the warmest.</p>
+    <ol class="signs rise" style="--d:3">
+      <li class="now"><b>Chapters 1–7</b>Paul's heart: comfort, forgiveness, a new covenant, treasure in jars of clay, being reconciled to God</li>
+      <li><b>Chapters 8–9</b>An offering for poor believers in Jerusalem, and cheerful giving</li>
+      <li><b>Chapters 10–13</b>Paul answers the men who attack him, and boasts about his weaknesses</li>
+    </ol>
+    <p class="note step">Through all three runs one idea: God's power shows up in weak people. If you feel weak today, you are in good company.</p>
+  </div>
+</section>
+
+<section class="slide watch">
+  <div class="inner">
+    <h2 class="rise">Things to watch for</h2>
+    <p class="lede rise" style="--d:1">Keep these questions in the back of your mind as we read. We'll come back to every one of them at the end.</p>
+    <ol class="seeds">
+      <li class="step"><span class="topic">The God of all comfort</span><span class="seed-q">Who is “the God of all comfort”, and what does He do in our troubles?</span></li>
+      <li class="step"><span class="topic">Passing it on</span><span class="seed-q">What are we meant to do with the comfort God gives us?</span></li>
+      <li class="step"><span class="topic">Despair</span><span class="seed-q">What did Paul learn when he “despaired even of life”?</span></li>
+      <li class="step"><span class="topic">God's promises</span><span class="seed-q">What does Paul say about all the promises of God?</span></li>
+      <li class="step"><span class="topic">The Spirit</span><span class="seed-q">What has God given believers as “the earnest”?</span></li>
+      <li class="step"><span class="topic">Not alone</span><span class="seed-q">What part do other believers play when a man is in trouble?</span></li>
+    </ol>
+  </div>
+</section>
+
+<!-- ======================= PART ONE ======================= -->
+<section class="slide part">
+  <div class="inner">
+    <p class="part-n rise">Part one</p>
+    <h2 class="rise" style="--d:1">The God of all comfort</h2>
+    <p class="range rise" style="--d:2">Verses 1–7</p>
+    <div class="rule"></div>
+    <p class="hook rise" style="--d:4">Paul has been through the fire. The first thing he does is bless God.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="1-2" data-hl="an apostle of Jesus Christ by the will of God|Timothy our brother|with all the saints which are in all Achaia|Grace be to you and peace"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <div class="split">
+      <div class="stage">
+        <svg data-world viewBox="440 215 120 110" data-towns="Corinth*:l, Cenchrea:r, Athens:t" role="img" aria-label="A map of southern Greece. Corinth sits on the narrow neck of land in the province of Achaia, with Athens to the north east and the port of Cenchrea beside it.">
+        </svg>
+      </div>
+      <div>
+        <h2 class="rise" style="--d:1">To the church, and to the whole province</h2>
+        <p class="note rise" style="--d:2">It is for one church, but also for <em>“all the saints which are in all Achaia”</em>, the whole province of southern Greece, including Athens and the harbor town of Cenchrea (Romans 16:1).</p>
+        <p class="note step"><em>Saints</em> means <em>holy ones</em>, believers set apart for God. This was the same noisy church with all its problems, and Paul still calls them saints. God names you by what He has made you, not by your worst week.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="slide verse" data-v="3-4" data-hl="the Father of mercies, and the God of all comfort|Who comforteth us in all our tribulation|that we may be able to comfort them which are in any trouble"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="4" data-hl="by the comfort wherewith we ourselves are comforted of God"></blockquote>
+    <h2 class="rise" style="--d:1">Comfort is meant to be passed on</h2>
+    <svg viewBox="0 44 640 162" role="img" aria-label="Comfort passes along a line. It flows from God, to Paul, to the church at Corinth, and then on to any man in trouble.">
+      <g class="c201-n" style="--k:0"><circle class="c201-node god" cx="76" cy="100" r="50"/><text class="c201-tx" x="76" y="107" style="fill:var(--on-accent)">God</text><text class="c201-sub" x="76" y="178">the God of</text><text class="c201-sub" x="76" y="198">all comfort</text></g>
+      <g class="c201-n" style="--k:1"><path class="c201-flow" d="M132 100 H182"/></g>
+      <g class="c201-n" style="--k:2"><circle class="c201-node" cx="240" cy="100" r="50"/><text class="c201-tx" x="240" y="107">Paul</text><text class="c201-sub" x="240" y="178">in all his</text><text class="c201-sub" x="240" y="198">tribulation</text></g>
+      <g class="c201-n" style="--k:3"><path class="c201-flow" d="M296 100 H346"/></g>
+      <g class="c201-n" style="--k:4"><circle class="c201-node" cx="404" cy="100" r="50"/><text class="c201-tx" x="404" y="107">You</text><text class="c201-sub" x="404" y="178">comforted by</text><text class="c201-sub" x="404" y="198">the same God</text></g>
+      <g class="c201-late"><path class="c201-flow" d="M460 100 H510"/></g>
+      <g class="c201-late"><circle class="c201-node next" cx="568" cy="100" r="50"/><text class="c201-tx" x="568" y="94">the next</text><text class="c201-tx" x="568" y="118">man</text><text class="c201-sub" x="568" y="178">in any</text><text class="c201-sub" x="568" y="198">trouble</text></g>
+    </svg>
+    <p class="note step">Think of the man who helped you when you were low. He could, because someone had done it for him. God doesn't comfort you only for you. He builds a line.</p>
+    <p class="note step c201-pass">The next link might be you, today. Paul doesn't say <em>after you're fixed</em>. The worst stretch of your life is what lets you reach the man who's in it now.</p>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="3" data-hl="the Father of mercies, and the God of all comfort"></blockquote>
+    <h2 class="rise" style="--d:1">“Comfort” means more than “there, there”</h2>
+    <div class="morph">
+      <span class="big rise" style="--d:2">παράκλησις</span>
+      <span class="say step">said <em class="gk">paraklesis</em></span>
+      <span class="means step">“called alongside” to help, encourage, strengthen</span>
+    </div>
+    <p class="note step">The word family turns up about ten times in verses 3 to 7. It's not a pat on the shoulder. It's someone coming alongside and taking some of the weight. Jesus used it for the Holy Spirit, <em>the Comforter</em> (John 14:16).</p>
+    <blockquote class="quote step"><p>“In the multitude of my thoughts within me thy comforts delight my soul.”</p><cite>Psalm 94:19</cite></blockquote>
+  </div>
+</section>
+
+<section class="slide verse" data-v="5-7" data-hl="as the sufferings of Christ abound in us|so our consolation also aboundeth by Christ|knowing, that as ye are partakers of the sufferings, so shall ye be also of the consolation"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <div class="split">
+      <div class="stage">
+        <svg viewBox="0 -10 560 345" role="img" aria-label="Three pairs of bars. As the trouble grows, from a hard day to a harder season to the worst, the comfort bar beside it grows too, and is always a little taller.">
+          <line x1="20" y1="290" x2="540" y2="290" stroke-width="2" style="stroke:var(--line-strong)"/>
+          <rect class="c201-bar" style="--k:0;fill:color-mix(in srgb, var(--danger) 55%, var(--bg))" x="42" y="220" width="52" height="70" rx="4"/>
+          <rect class="c201-bar" style="--k:1;fill:var(--accent)" x="102" y="190" width="52" height="100" rx="4"/>
+          <rect class="c201-bar" style="--k:2;fill:color-mix(in srgb, var(--danger) 55%, var(--bg))" x="232" y="150" width="52" height="140" rx="4"/>
+          <rect class="c201-bar" style="--k:3;fill:var(--accent)" x="292" y="110" width="52" height="180" rx="4"/>
+          <rect class="c201-bar" style="--k:4;fill:color-mix(in srgb, var(--danger) 55%, var(--bg))" x="422" y="70" width="52" height="220" rx="4"/>
+          <rect class="c201-bar" style="--k:5;fill:var(--accent)" x="482" y="30" width="52" height="260" rx="4"/>
+          <g font-size="20" text-anchor="middle" style="fill:var(--ink-soft)">
+            <text x="98" y="318">a hard day</text><text x="288" y="318">a harder season</text><text x="478" y="318">the worst</text>
+          </g>
+          <g font-size="20" font-weight="700">
+            <rect x="20" y="-6" width="18" height="18" rx="3" style="fill:color-mix(in srgb, var(--danger) 55%, var(--bg))"/><text x="44" y="10" style="fill:var(--ink)">trouble</text>
+            <rect x="140" y="-6" width="18" height="18" rx="3" style="fill:var(--accent)"/><text x="164" y="10" style="fill:var(--ink)">God's comfort</text>
+          </g>
+        </svg>
+      </div>
+      <div>
+        <h2 class="rise" style="--d:1">As it abounds, so does the comfort</h2>
+        <p class="note rise" style="--d:2">Paul says it twice. <em>“As the sufferings of Christ abound in us, so our consolation also aboundeth by Christ.”</em> The harder it gets, the more comfort there is. God never lets the trouble get bigger than His help.</p>
+        <p class="note step">The <em>“sufferings of Christ”</em> are the troubles that come from belonging to Him. But the principle reaches your trouble too.</p>
+        <p class="note step">It doesn't promise the trouble goes away. It promises you won't carry it alone, and <em>“our hope of you is stedfast”</em> (v. 7): you will come through.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ======================= PART TWO ======================= -->
+<section class="slide part">
+  <div class="inner">
+    <p class="part-n rise">Part two</p>
+    <h2 class="rise" style="--d:1">Despaired even of life</h2>
+    <p class="range rise" style="--d:2">Verses 8–14</p>
+    <div class="rule"></div>
+    <p class="hook rise" style="--d:4">An apostle admits he came to the end of himself, and says what he found there.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="8-11" data-hl="we were pressed out of measure, above strength|we despaired even of life|we should not trust in ourselves, but in God which raiseth the dead|Ye also helping together by prayer for us"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="8-9" data-hl="we despaired even of life|that we should not trust in ourselves, but in God which raiseth the dead"></blockquote>
+    <h2 class="rise" style="--d:1">Why God lets us hit the bottom</h2>
+    <ul class="nots">
+      <li class="step"><span class="k">“in ourselves”: my own strength</span><span class="why">“above strength” (v. 8). It was gone.</span></li>
+      <li class="step"><span class="k">“in ourselves”: my own plan</span><span class="why">He had run out of moves.</span></li>
+      <li class="step"><span class="k">“in ourselves”: my own willpower</span><span class="why">the “sentence of death in ourselves”</span></li>
+      <li class="step yes"><span class="k">“but in God which raiseth the dead”</span><span class="why">the only One left to lean on</span></li>
+    </ul>
+    <p class="note step">Paul doesn't say what the trouble in Asia was (some think the riot at Ephesus, Acts 19). He tells us what it was <em>for</em>: to break his trust in himself so it could rest on God.</p>
+    <p class="note step">Many men in recovery know this. <em>“I can handle it”</em> stops working, and it feels terrible. It is also the first honest step toward the One who raises the dead.</p>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="10" data-hl="delivered us from so great a death, and doth deliver|he will yet deliver us"></blockquote>
+    <h2 class="rise" style="--d:1">Delivered, delivers, will deliver</h2>
+    <ol class="timeline" aria-label="Past: God delivered us from so great a death. Now: and doth deliver. Ahead: in whom we trust that he will yet deliver us.">
+      <li style="--k:0"><b>yesterday</b><span>“delivered us”</span><small>from so great a death</small></li>
+      <li class="lit" style="--k:1"><b>today</b><span>“doth deliver”</span><small>this morning, this hour</small></li>
+      <li class="wait" style="--k:2"><b>ahead</b><span>“will yet deliver us”</span><small>“in whom we trust”</small></li>
+    </ol>
+    <p class="note step">Three tenses in one verse. God saved Paul in the past, saves him now, and he trusts Him for what's coming. Your story can be told the same way. You may have fallen yesterday, and God is still in the delivering business today. Past failure isn't the last tense.</p>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="11" data-hl="Ye also helping together by prayer for us"></blockquote>
+    <h2 class="rise" style="--d:1">Paul asks for help</h2>
+    <p class="note rise" style="--d:2">The great apostle, who has just said he trusts God to raise the dead, adds: <em>“Ye also helping together by prayer for us.”</em> He asks a church he has argued with to pray for him. God uses the prayers of ordinary people in the rescue.</p>
+    <blockquote class="quote step"><p>“Bear ye one another’s burdens, and so fulfil the law of Christ.”</p><cite>Galatians 6:2</cite></blockquote>
+    <p class="note step">Most men who fall again were alone when it happened, and quiet about it. Today, text one man in the group: <em>“I'm having a hard day. Pray for me.”</em> That is trusting God and trusting His people at the same time.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="12-14" data-hl="the testimony of our conscience|in simplicity and godly sincerity|in the day of the Lord Jesus"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="12" data-hl="in simplicity and godly sincerity, not with fleshly wisdom, but by the grace of God"></blockquote>
+    <h2 class="rise" style="--d:1">A clear conscience</h2>
+    <p class="note rise" style="--d:2">Paul has enemies in Corinth who say he is slippery, a man who says one thing and means another. His answer isn't a speech. It's his conscience: <em>“in simplicity and godly sincerity.”</em> <em>Simplicity</em> means nothing hidden. <em>Godly sincerity</em> means pure, with nothing mixed in.</p>
+    <p class="note step">Notice the last part, <em>“by the grace of God.”</em> He doesn't claim he's perfect. He says that whatever clean living he has is grace. A man with a record can still say, <em>“I'm trying to live in the open now, and by God's grace I'm doing better.”</em></p>
+    <p class="note step">Verse 13 sets up the rest of the chapter: <em>“we write none other things unto you, than what ye read.”</em> What Paul says is what he means. Now he has to explain why he changed his travel plans.</p>
+  </div>
+</section>
+
+<!-- ======================= PART THREE ======================= -->
+<section class="slide part">
+  <div class="inner">
+    <p class="part-n rise">Part three</p>
+    <h2 class="rise" style="--d:1">Yea, and Amen</h2>
+    <p class="range rise" style="--d:2">Verses 15–24</p>
+    <div class="rule"></div>
+    <p class="hook rise" style="--d:4">Paul's plans changed. God's promises never do.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="15-17" data-hl="I was minded to come unto you before|did I use lightness|yea yea, and nay nay"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <div class="split">
+      <div class="stage">
+        <svg data-world viewBox="425 170 210 170" data-towns="Ephesus:b, Troas:r, Philippi:t, Corinth*:l" role="img" aria-label="A map of the Aegean Sea. One line shows the plan: from Ephesus by sea straight to Corinth. A second line shows what happened: from Ephesus north to Troas, across to Macedonia, and down to Corinth later.">
+          <path class="map-route r1 j1" data-via="Ephesus, @27.15 37.9, @26.6 37.95, @26.45 37.72, @26.0 37.45, @25.35 37.3, @24.3 37.4, Cenchrea, Corinth"/>
+          <path class="map-route r2 j2" data-via="Ephesus, @27.5 38.5, @27.0 39.4, Troas, @26.0 39.7, @25.6 40.05, @25.2 40.75, @24.5 40.84, Neapolis, Philippi, Thessalonica, Berea, Corinth"/>
+        </svg>
+      </div>
+      <div>
+        <h2 class="rise" style="--d:1">Why Paul changed his plans</h2>
+        <p class="note rise" style="--d:2">His critics said <em>“he says yes and means no”</em>: he promised to visit and didn't. A man can change his route without changing his word.</p>
+        <p class="note step map-go1">The plan (straight across the sea): Corinth, then Macedonia, then Corinth again, then Judaea. Two visits would be a <em>“second benefit”</em>.</p>
+        <p class="note step map-go2">What happened (the long way round): Troas and Macedonia first, and Corinth had to wait. His reason (v. 23): <em>“to spare you I came not as yet unto Corinth.”</em> He didn't want to arrive angry.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="slide verse" data-v="18-20" data-hl="our word toward you was not yea and nay|in him was yea|all the promises of God in him are yea, and in him Amen"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="20" data-hl="all the promises of God in him are yea, and in him Amen"></blockquote>
+    <h2 class="rise" style="--d:1">Every promise of God: YES</h2>
+    <div class="c201-yes rise" style="--d:2" aria-label="Six promises of God, each stamped yes: forgiveness, His presence, a new heart, no condemnation, strength and help, and the gift of the Spirit.">
+      <div class="c201-promise"><b>Forgiveness</b><small>1 John 1:9</small><span class="c201-stamp" style="--k:0">YES</span></div>
+      <div class="c201-promise"><b>He won't leave you</b><small>Hebrews 13:5</small><span class="c201-stamp" style="--k:1">YES</span></div>
+      <div class="c201-promise"><b>A new heart</b><small>Ezekiel 36:26</small><span class="c201-stamp" style="--k:2">YES</span></div>
+      <div class="c201-promise"><b>No condemnation</b><small>Romans 8:1</small><span class="c201-stamp" style="--k:3">YES</span></div>
+      <div class="c201-promise"><b>Strength and help</b><small>Isaiah 41:10</small><span class="c201-stamp" style="--k:4">YES</span></div>
+      <div class="c201-promise"><b>The Spirit in you</b><small>2 Corinthians 1:22</small><span class="c201-stamp" style="--k:5">YES</span></div>
+    </div>
+    <p class="note step">Paul's point: God doesn't say <em>“yes and no.”</em> Everything He promised is answered <em>“in him”</em>, in Jesus. Christ is God's yes. Where He is, the promise stands.</p>
+    <p class="note step"><em>Amen</em> is a Hebrew word that means <em>firm, so be it</em>. God says yes. We say amen: <em>I'm standing on that.</em> These promises are about forgiveness, His presence and a new life. They don't promise an easy life, but they are rock-solid.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="21-22" data-hl="hath anointed us|Who hath also sealed us|the earnest of the Spirit in our hearts"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="22" data-hl="sealed us|the earnest of the Spirit in our hearts"></blockquote>
+    <div class="split">
+      <div class="stage">
+        <svg viewBox="0 0 600 280" role="img" aria-label="A long dashed bar stands for everything God has promised, the whole inheritance. The first small part is filled in. That part, already paid, is the Holy Spirit, given now as a down payment. A seal is stamped on it.">
+          <text x="20" y="40" font-size="28" font-weight="700" style="fill:var(--ink)">the whole inheritance</text>
+          <rect class="c201-all" x="20" y="60" width="560" height="62" rx="8"/>
+          <rect class="c201-paid" x="20" y="60" width="118" height="62" rx="8"/>
+          <text x="20" y="166" font-size="26" font-weight="700" style="fill:var(--accent-hot)">paid now: the Spirit</text>
+          <text x="580" y="166" font-size="24" text-anchor="end" style="fill:var(--ink-soft)">still to come</text>
+          <g class="c201-seal"><circle cx="44" cy="232" r="26" style="fill:var(--accent);stroke:var(--accent-hot);stroke-width:3"/><path d="M31 232 L41 242 L59 221" fill="none" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" style="stroke:var(--on-accent)"/></g>
+          <text x="84" y="241" font-size="26" style="fill:var(--ink)">sealed: His, for good</text>
+        </svg>
+      </div>
+      <div>
+        <h2 class="rise" style="--d:1">Sealed, with a down payment</h2>
+        <p class="note rise" style="--d:2">The Greek word is <span class="gk">arrabon</span>: a down payment, the first money that guarantees the rest. God put the Holy Spirit in every believer from the day he trusts Jesus. He is the first part of the inheritance and the promise of the rest.</p>
+        <p class="note step">A <em>seal</em> was a mark of ownership, and it kept the thing safe until the owner came for it. You belong to Him, and He will finish what He began. Today's failure doesn't cancel the deposit.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="slide verse" data-v="23-24" data-hl="to spare you I came not as yet unto Corinth|helpers of your joy|for by faith ye stand"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="24" data-hl="helpers of your joy|for by faith ye stand"></blockquote>
+    <h2 class="rise" style="--d:1">Helpers, not bosses</h2>
+    <div class="rename">
+      <span class="old rise" style="--d:2">“dominion over your faith”</span>
+      <span class="arrow step n2">→</span>
+      <span class="new step">“helpers of your joy”</span>
+      <span class="gloss step">“Dominion” means to lord it over someone. Paul says that's not his job.</span>
+    </div>
+    <p class="note step">Paul had real authority as an apostle, but he refuses to run their faith for them. <em>“By faith ye stand.”</em> Each man stands on his own trust in Christ. The best a pastor, a sponsor or a friend can do is help him stand, and add to his joy.</p>
+    <p class="note step">That's the kind of help to look for, and the kind to be. Not a man who controls you or does your thinking, but one who stands next to you and helps you stand.</p>
+  </div>
+</section>
+
+<!-- ======================= CLOSING ======================= -->
+<section class="slide remember">
+  <div class="inner">
+    <h2 class="rise">Points to remember</h2>
+    <ol class="seeds">
+      <li class="step"><span class="topic">The God of all comfort</span><span class="seed-q">“The Father of mercies, and the God of all comfort” <cite>1:3</cite></span><span class="take">He comes alongside us in every trouble, and His comfort grows with the trouble.</span></li>
+      <li class="step"><span class="topic">Passing it on</span><span class="seed-q">“That we may be able to comfort them which are in any trouble” <cite>1:4</cite></span><span class="take">The comfort you receive is meant to be handed to the next man.</span></li>
+      <li class="step"><span class="topic">Despair</span><span class="seed-q">“That we should not trust in ourselves, but in God which raiseth the dead” <cite>1:9</cite></span><span class="take">Hitting the bottom ends self-trust and starts God-trust. He delivered, delivers, and will deliver.</span></li>
+      <li class="step"><span class="topic">God's promises</span><span class="seed-q">“All the promises of God in him are yea, and in him Amen” <cite>1:20</cite></span><span class="take">Every promise is answered yes in Jesus.</span></li>
+      <li class="step"><span class="topic">The Spirit</span><span class="seed-q">“Sealed us, and given the earnest of the Spirit in our hearts” <cite>1:22</cite></span><span class="take">The Holy Spirit in you is God's down payment and His seal. You are His.</span></li>
+      <li class="step"><span class="topic">Not alone</span><span class="seed-q">“Ye also helping together by prayer for us” <cite>1:11</cite></span><span class="take">God uses other believers' prayers and company. Don't fight alone.</span></li>
+    </ol>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 1 of 6</p>
+      <span class="topic">The God of all comfort</span>
+      <h2>Who is “the God of all comfort”, and what does He do in our troubles?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="3"></blockquote>
+      <blockquote class="quote step" data-q="5"></blockquote>
+      <blockquote class="quote step"><p>“In the multitude of my thoughts within me thy comforts delight my soul.”</p><cite>Psalm 94:19</cite></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>He is the Father of Jesus, the Father of mercies, and the One who comforts us in all our tribulation. He comes alongside us, and as the trouble grows, His comfort grows with it.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 2 of 6</p>
+      <span class="topic">Passing it on</span>
+      <h2>What are we meant to do with the comfort God gives us?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="4"></blockquote>
+      <blockquote class="quote step" data-q="6" data-hl="it is for your consolation and salvation"></blockquote>
+      <blockquote class="quote step"><p>“Bear ye one another’s burdens, and so fulfil the law of Christ.”</p><cite>Galatians 6:2</cite></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>Pass it on. God comforts us so that we can comfort others in any trouble, with the same comfort we received. What you've been through is what qualifies you to help the man who's going through it now.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 3 of 6</p>
+      <span class="topic">Despair</span>
+      <h2>What did Paul learn when he “despaired even of life”?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="8"></blockquote>
+      <blockquote class="quote step" data-q="9"></blockquote>
+      <blockquote class="quote step" data-q="10"></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>That he could not trust himself, only God, who raises the dead. His despair broke his self-trust and pointed him to the One who had delivered him, delivers him, and will deliver him again.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 4 of 6</p>
+      <span class="topic">God's promises</span>
+      <h2>What does Paul say about all the promises of God?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="19" data-hl="but in him was yea"></blockquote>
+      <blockquote class="quote step" data-q="20"></blockquote>
+      <blockquote class="quote step"><p>“Let your conversation be without covetousness; and be content with such things as ye have: for he hath said, I will never leave thee, nor forsake thee.”</p><cite>Hebrews 13:5</cite></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>Every one of them is yes in Christ. God doesn't say yes and no. Jesus is His yes, so the promises of forgiveness, His presence and a new life stand firm, and we answer with amen.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 5 of 6</p>
+      <span class="topic">The Spirit</span>
+      <h2>What has God given believers as “the earnest”?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="21"></blockquote>
+      <blockquote class="quote step" data-q="22"></blockquote>
+      <blockquote class="quote step"><p>“In whom ye also trusted, after that ye heard the word of truth, the gospel of your salvation: in whom also after that ye believed, ye were sealed with that holy Spirit of promise, Which is the earnest of our inheritance until the redemption of the purchased possession, unto the praise of his glory.”</p><cite>Ephesians 1:13–14</cite></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>The Holy Spirit, in our hearts: a down payment on everything God has promised, and a seal that says we belong to Him.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 6 of 6</p>
+      <span class="topic">Not alone</span>
+      <h2>What part do other believers play when a man is in trouble?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="11"></blockquote>
+      <blockquote class="quote step" data-q="24" data-hl="helpers of your joy"></blockquote>
+      <blockquote class="quote step"><p>“For if they fall, the one will lift up his fellow: but woe to him that is alone when he falleth; for he hath not another to help him up.”</p><cite>Ecclesiastes 4:10</cite></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>They pray, they come alongside, and they help him stand. God uses ordinary believers in the rescue. So don't go through it alone: ask for prayer today, and be that help for someone else.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide prayer">
+  <div class="inner">
+    <div class="emblem rise"></div>
+    <h2 class="rise" style="--d:1">Prayer requests</h2>
+    <p class="ask-line rise" style="--d:2">What can we pray about for you today?</p>
+    <blockquote class="quote rise" style="--d:4"><p>“The LORD is nigh unto them that are of a broken heart; and saveth such as be of a contrite spirit.”</p><cite>Psalm 34:18</cite></blockquote>
+  </div>
+</section>
+
+</main>
+
+<script>
+// King James Version, 2 Corinthians chapter 1
+const V = {
+  1: "Paul, an apostle of Jesus Christ by the will of God, and Timothy our brother, unto the church of God which is at Corinth, with all the saints which are in all Achaia:",
+  2: "Grace be to you and peace from God our Father, and from the Lord Jesus Christ.",
+  3: "Blessed be God, even the Father of our Lord Jesus Christ, the Father of mercies, and the God of all comfort;",
+  4: "Who comforteth us in all our tribulation, that we may be able to comfort them which are in any trouble, by the comfort wherewith we ourselves are comforted of God.",
+  5: "For as the sufferings of Christ abound in us, so our consolation also aboundeth by Christ.",
+  6: "And whether we be afflicted, it is for your consolation and salvation, which is effectual in the enduring of the same sufferings which we also suffer: or whether we be comforted, it is for your consolation and salvation.",
+  7: "And our hope of you is stedfast, knowing, that as ye are partakers of the sufferings, so shall ye be also of the consolation.",
+  8: "For we would not, brethren, have you ignorant of our trouble which came to us in Asia, that we were pressed out of measure, above strength, insomuch that we despaired even of life:",
+  9: "But we had the sentence of death in ourselves, that we should not trust in ourselves, but in God which raiseth the dead:",
+  10: "Who delivered us from so great a death, and doth deliver: in whom we trust that he will yet deliver us;",
+  11: "Ye also helping together by prayer for us, that for the gift bestowed upon us by the means of many persons thanks may be given by many on our behalf.",
+  12: "For our rejoicing is this, the testimony of our conscience, that in simplicity and godly sincerity, not with fleshly wisdom, but by the grace of God, we have had our conversation in the world, and more abundantly to you-ward.",
+  13: "For we write none other things unto you, than what ye read or acknowledge; and I trust ye shall acknowledge even to the end;",
+  14: "As also ye have acknowledged us in part, that we are your rejoicing, even as ye also are ours in the day of the Lord Jesus.",
+  15: "And in this confidence I was minded to come unto you before, that ye might have a second benefit;",
+  16: "And to pass by you into Macedonia, and to come again out of Macedonia unto you, and of you to be brought on my way toward Judaea.",
+  17: "When I therefore was thus minded, did I use lightness? or the things that I purpose, do I purpose according to the flesh, that with me there should be yea yea, and nay nay?",
+  18: "But as God is true, our word toward you was not yea and nay.",
+  19: "For the Son of God, Jesus Christ, who was preached among you by us, even by me and Silvanus and Timotheus, was not yea and nay, but in him was yea.",
+  20: "For all the promises of God in him are yea, and in him Amen, unto the glory of God by us.",
+  21: "Now he which stablisheth us with you in Christ, and hath anointed us, is God;",
+  22: "Who hath also sealed us, and given the earnest of the Spirit in our hearts.",
+  23: "Moreover I call God for a record upon my soul, that to spare you I came not as yet unto Corinth.",
+  24: "Not for that we have dominion over your faith, but are helpers of your joy: for by faith ye stand."
+};
+const BOOK = "2 Corinthians 1";
+</script>
+<script src="../assets/deck.js"></script>
+</body>
+</html>

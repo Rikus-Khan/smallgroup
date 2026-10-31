@@ -12172,5 +12172,462 @@ window.STUDIES = [
       },
       "big": "Love turns gifts outward. When believers meet, everything is tested by one question, does it build the others up, so God's word is spoken plainly, one at a time, in peace."
     }
+  },
+  {
+    "id": "1-corinthians-15",
+    "type": "chapter",
+    "book": "1 Corinthians",
+    "ch": 15,
+    "date": "2026-10-31",
+    "title": "1 Corinthians 15",
+    "sub": "Raised, and so shall we be",
+    "about": "Jesus really rose, so death is not the end, a past can be made new by grace, and nothing done for Him is wasted.",
+    "tags": [
+      "Resurrection",
+      "The gospel",
+      "Grace",
+      "Bad company",
+      "Hope",
+      "Victory over death"
+    ],
+    "url": "studies/1-corinthians-15.html",
+    "overview": {
+      "where": "Ephesus, where Paul wrote to the church in Corinth",
+      "when": "About AD 55, from Paul's third journey",
+      "people": [
+        "jesus",
+        "paul",
+        "simon-peter",
+        "the-twelve",
+        "james-the-lords-brother",
+        "apostles",
+        "adam"
+      ],
+      "places": [
+        "ephesus",
+        "corinth"
+      ],
+      "story": [
+        "Paul reminds them of the gospel in four lines: Christ died for our sins, was buried, rose the third day, and was seen by Peter, the twelve, above five hundred at once, James, and last of all by Paul (1–11).",
+        "Some in Corinth said there is no resurrection. Paul shows what that would mean: preaching and faith empty, sins unforgiven. But Christ is risen, the firstfruits of a harvest (12–28).",
+        "He answers the strange verses about baptism for the dead and dying daily, then warns that bad company corrupts good habits (29–34).",
+        "How are the dead raised? Like a seed that dies and comes up as a plant: sown in corruption, raised in incorruption, bearing the image of the heavenly man (35–49).",
+        "We shall all be changed in a moment. Death is swallowed up in victory, and so, stand fast: your labour is not in vain (50–58)."
+      ],
+      "key": {
+        "ref": "1 Corinthians 15:57",
+        "text": "But thanks be to God, which giveth us the victory through our Lord Jesus Christ."
+      },
+      "big": "Jesus rose, so death has lost its sting, and the sin that was behind it is paid for. Your past is not your last word, and your work for Him is never wasted."
+    }
+  },
+  {
+    "id": "1-corinthians-16",
+    "type": "chapter",
+    "book": "1 Corinthians",
+    "ch": 16,
+    "date": "2026-10-31",
+    "title": "1 Corinthians 16",
+    "sub": "Stand fast, and do it all in love",
+    "about": "The last chapter: money for hungry believers, a great door with many adversaries, a few faithful men, and a goodbye that ends in grace.",
+    "tags": [
+      "Giving",
+      "Open doors",
+      "Stand fast",
+      "Love",
+      "Faithful helpers",
+      "Maranatha"
+    ],
+    "url": "studies/1-corinthians-16.html",
+    "overview": {
+      "where": "Ephesus, where Paul wrote; Corinth, Macedonia and Jerusalem in his plans",
+      "when": "About AD 55, before Pentecost the next spring",
+      "people": [
+        "paul",
+        "timothy",
+        "apollos",
+        "stephanas",
+        "fortunatus",
+        "achaicus",
+        "aquila",
+        "priscilla"
+      ],
+      "places": [
+        "ephesus",
+        "corinth",
+        "macedonia",
+        "jerusalem",
+        "galatia",
+        "achaia",
+        "asia"
+      ],
+      "story": [
+        "Paul tells them how to set money aside on the first day of each week for the poor believers in Jerusalem, handled openly by men the church chooses (1–4).",
+        "His plans: through Macedonia to Corinth, but he stays in Ephesus until Pentecost because a great door is open and there are many adversaries (5–9).",
+        "Timothy is coming: make him feel safe. Apollos chose not to come yet, and Paul leaves it with him (10–12).",
+        "“Watch ye, stand fast in the faith, quit you like men, be strong. Let all your things be done with charity.” Honour the household of Stephanas, who gave themselves to serving (13–18).",
+        "Greetings from Asia and from Aquila and Priscilla, Paul's own signature, “Anathema Maranatha”, and a close with grace and love (19–24)."
+      ],
+      "key": {
+        "ref": "1 Corinthians 16:13–14",
+        "text": "Watch ye, stand fast in the faith, quit you like men, be strong. Let all your things be done with charity."
+      },
+      "big": "Be awake, steady, brave and strong, and do all of it in love. Quiet helpers matter, a church full of problems still gets grace, and the Lord is coming."
+    }
+  },
+  {
+    "id": "2-corinthians-01",
+    "type": "chapter",
+    "book": "2 Corinthians",
+    "ch": 1,
+    "date": "2026-10-31",
+    "title": "2 Corinthians 1",
+    "sub": "The God of all comfort",
+    "about": "Paul opens his most personal letter by blessing the God of all comfort, who comforts us so that we can comfort others, and who answers every promise with yes in Christ.",
+    "tags": [
+      "Comfort",
+      "Suffering",
+      "Hope",
+      "God's promises",
+      "Holy Spirit",
+      "Prayer"
+    ],
+    "url": "studies/2-corinthians-01.html",
+    "overview": {
+      "where": "Written from Macedonia to the church at Corinth, with a look back at trouble in Asia and a changed travel plan",
+      "when": "About AD 56, after 1 Corinthians, a painful visit and a letter written with tears",
+      "people": [
+        "paul",
+        "timothy",
+        "silvanus",
+        "holy-spirit",
+        "jesus"
+      ],
+      "places": [
+        "corinth",
+        "achaia",
+        "macedonia",
+        "asia",
+        "judaea"
+      ],
+      "story": [
+        "Paul and Timothy greet the church at Corinth and all the saints in Achaia. Paul blesses the God of all comfort, who comforts us in all our tribulation so that we can comfort others (1–7).",
+        "Paul admits he was pressed out of measure in Asia and despaired even of life. It taught him not to trust in himself, but in God who raises the dead, and he asks for the Corinthians' prayers (8–14).",
+        "Critics said Paul was fickle because he changed his travel plans. He answers that God's word is not yes and no: all the promises of God are yea in Christ, and God has sealed us and given the earnest of the Spirit (15–22).",
+        "Paul stayed away to spare them, not to rule over their faith, but to be a helper of their joy (23–24)."
+      ],
+      "key": {
+        "ref": "2 Corinthians 1:4",
+        "text": "Who comforteth us in all our tribulation, that we may be able to comfort them which are in any trouble, by the comfort wherewith we ourselves are comforted of God."
+      },
+      "big": "The comfort God gives you is not only for you. He comforts us in every trouble so that we can comfort the next man, and every promise He has made is answered yes in Jesus."
+    }
+  },
+  {
+    "id": "2-corinthians-02",
+    "type": "chapter",
+    "book": "2 Corinthians",
+    "ch": 2,
+    "date": "2026-10-31",
+    "title": "2 Corinthians 2",
+    "sub": "Forgive him, and comfort him",
+    "about": "Paul asks the Corinthians to forgive and comfort a man who has been disciplined and is sorry, so that he is not swallowed up with sorrow, and to remember that Christ always leads us in triumph.",
+    "tags": [
+      "Forgiveness",
+      "Restoration",
+      "Satan",
+      "Anxiety",
+      "Victory",
+      "Witness"
+    ],
+    "url": "studies/2-corinthians-02.html",
+    "overview": {
+      "where": "Written from Macedonia, looking back at Troas and Corinth",
+      "when": "About AD 56; Paul recalls his painful visit and the letter written with many tears",
+      "people": [
+        "paul",
+        "titus",
+        "satan",
+        "jesus"
+      ],
+      "places": [
+        "troas",
+        "macedonia"
+      ],
+      "story": [
+        "Paul explains why he did not come to Corinth in heaviness. He wrote a hard letter out of much affliction and anguish of heart, with many tears, so they would know his love (1–4).",
+        "The church has punished the offender enough. Paul asks them to forgive him, comfort him and confirm their love, lest he be swallowed up with overmuch sorrow and Satan gets an advantage. Many think he is the man of 1 Corinthians 5 (5–11).",
+        "At Troas a door was opened, but Paul had no rest because he could not find Titus, so he went on into Macedonia (12–13).",
+        "Thanks be to God, who always causes us to triumph in Christ. Believers are a sweet savour of Christ, life to some and death to others, and Paul will not water down the word of God (14–17)."
+      ],
+      "key": {
+        "ref": "2 Corinthians 2:7",
+        "text": "So that contrariwise ye ought rather to forgive him, and comfort him, lest perhaps such a one should be swallowed up with overmuch sorrow."
+      },
+      "big": "Discipline is meant to restore, not to crush. When a man is truly sorry, forgive him, comfort him and love him out loud, because shame and too much sorrow are among the enemy's favorite tools."
+    }
+  },
+  {
+    "id": "2-corinthians-03",
+    "type": "chapter",
+    "book": "2 Corinthians",
+    "ch": 3,
+    "date": "2026-10-31",
+    "title": "2 Corinthians 3",
+    "sub": "Ye are our epistle",
+    "about": "The Corinthians are Paul's letter, written by the Spirit on the heart, and the new covenant takes the veil away and changes believers from glory to glory.",
+    "tags": [
+      "Witness",
+      "New covenant",
+      "Holy Spirit",
+      "Freedom",
+      "Spiritual growth",
+      "Grace"
+    ],
+    "url": "studies/2-corinthians-03.html",
+    "overview": {
+      "where": "Written from Macedonia to Corinth, looking back at Moses on Sinai",
+      "when": "About AD 56; Moses and the old covenant about 1,500 years earlier",
+      "people": [
+        "paul",
+        "moses",
+        "holy-spirit",
+        "jesus"
+      ],
+      "places": [
+        "israel"
+      ],
+      "story": [
+        "Paul needs no letters of commendation. The Corinthians themselves are his epistle, known and read of all men, written by the Spirit of the living God on the heart (1–3).",
+        "Paul's sufficiency is of God, who has made him a minister of the new testament: not of the letter, which kills, but of the Spirit, who gives life (4–6).",
+        "The old ministration was glorious but was to be done away. The new ministration of the Spirit and of righteousness is much more glorious, and it remains (7–11).",
+        "Moses put a veil over his face, and a veil still lies on hearts that read Moses without Christ. When one turns to the Lord the veil is taken away (12–16).",
+        "Where the Spirit of the Lord is, there is liberty. With open face we behold the glory of the Lord and are changed into the same image from glory to glory (17–18)."
+      ],
+      "key": {
+        "ref": "2 Corinthians 3:18",
+        "text": "But we all, with open face beholding as in a glass the glory of the Lord, are changed into the same image from glory to glory, even as by the Spirit of the Lord."
+      },
+      "big": "The new covenant is written on the heart by the Spirit, and it sets a man free. He is not changed all at once, but from glory to glory, as he keeps looking at Jesus."
+    }
+  },
+  {
+    "id": "2-corinthians-04",
+    "type": "chapter",
+    "book": "2 Corinthians",
+    "ch": 4,
+    "date": "2026-10-31",
+    "title": "2 Corinthians 4",
+    "sub": "Treasure in clay jars",
+    "about": "Paul is beaten up and worn out, and still standing. He says God keeps His treasure in cracked clay jars on purpose, so the power is plainly God's.",
+    "tags": [
+      "Weakness",
+      "Perseverance",
+      "Hope",
+      "Suffering",
+      "Light",
+      "Eternity"
+    ],
+    "url": "studies/2-corinthians-04.html",
+    "overview": {
+      "where": "Written from Macedonia to the church at Corinth in Greece",
+      "when": "About AD 56, near the end of Paul's third journey",
+      "people": [
+        "jesus"
+      ],
+      "places": [
+        "macedonia",
+        "corinth"
+      ],
+      "story": [
+        "Paul keeps going because he has received mercy. He renounces secrets and tricks, and says the god of this world has blinded unbelievers (1–4).",
+        "He preaches Jesus, not himself. The God who said “Let there be light” has shone in our hearts (5–6).",
+        "The treasure is in clay jars, so the power is God's. Troubled, perplexed, persecuted, cast down: never distressed, in despair, forsaken, or destroyed (7–12).",
+        "Believing, we speak. The God who raised Jesus will raise us too (13–15).",
+        "The outward man perishes, but the inward man is renewed day by day. Light affliction for a moment works an eternal weight of glory. Look at what is not seen (16–18)."
+      ],
+      "key": {
+        "ref": "2 Corinthians 4:7",
+        "text": "But we have this treasure in earthen vessels, that the excellency of the power may be of God, and not of us."
+      },
+      "big": "God puts His light in cracked clay jars on purpose. A man can be knocked down and worn out and still not be destroyed, because the inside is being renewed every day and the glory outweighs the trouble."
+    }
+  },
+  {
+    "id": "2-corinthians-05",
+    "type": "chapter",
+    "book": "2 Corinthians",
+    "ch": 5,
+    "date": "2026-10-31",
+    "title": "2 Corinthians 5",
+    "sub": "A new creature",
+    "about": "A tent comes down and a house waits. Every believer will stand before Christ, and anyone in Christ is a new creature, reconciled, with the great exchange made on his behalf.",
+    "tags": [
+      "New creation",
+      "Reconciliation",
+      "Heaven",
+      "Judgment seat",
+      "Substitution",
+      "Security"
+    ],
+    "url": "studies/2-corinthians-05.html",
+    "overview": {
+      "where": "Written from Macedonia to the church at Corinth in Greece",
+      "when": "About AD 56, near the end of Paul's third journey",
+      "people": [
+        "jesus",
+        "holy-spirit"
+      ],
+      "places": [
+        "corinth"
+      ],
+      "story": [
+        "The body is a tent; if it is taken down, believers have a house not made with hands, eternal in the heavens. The Spirit is God's down payment (1–5).",
+        "To be absent from the body is to be present with the Lord. We walk by faith, not by sight (6–8).",
+        "All believers will appear before the judgment seat of Christ to receive for what they have done. The love of Christ presses Paul on (9–15).",
+        "If any man is in Christ, he is a new creature: old things passed away, all things become new (16–17).",
+        "God was in Christ, reconciling the world, not counting trespasses. We are ambassadors for Christ. God made Jesus to be sin for us, that we might be made the righteousness of God in him (18–21)."
+      ],
+      "key": {
+        "ref": "2 Corinthians 5:17",
+        "text": "Therefore if any man be in Christ, he is a new creature: old things are passed away; behold, all things are become new."
+      },
+      "big": "Anyone who trusts Christ is made new: forgiven, reconciled, and given the righteousness of Jesus in exchange for his sin. The Spirit in him is the guarantee that the rest is coming."
+    }
+  },
+  {
+    "id": "2-corinthians-06",
+    "type": "chapter",
+    "book": "2 Corinthians",
+    "ch": 6,
+    "date": "2026-10-31",
+    "title": "2 Corinthians 6",
+    "sub": "Now is the day",
+    "about": "Now is the accepted time. Paul lists what the ministry cost him, and says he had nothing yet possessed all things. Then a father's plea: don't be yoked with those pulling the other way, and God will be a Father to you.",
+    "tags": [
+      "Salvation today",
+      "Hardship",
+      "Possessions",
+      "Company",
+      "Separation",
+      "Adoption"
+    ],
+    "url": "studies/2-corinthians-06.html",
+    "overview": {
+      "where": "Written from Macedonia to the church at Corinth in Greece",
+      "when": "About AD 56, near the end of Paul's third journey",
+      "people": [
+        "corinthians",
+        "holy-spirit"
+      ],
+      "places": [
+        "corinth"
+      ],
+      "story": [
+        "Paul begs the Corinthians not to receive the grace of God in vain: now is the accepted time, now is the day of salvation (1–2).",
+        "He lists what the ministry cost him: afflictions, stripes, imprisonments, tumults, sleepless nights, hunger, and the power of God that held him up (3–7).",
+        "Deceivers yet true, dying yet living, poor yet making many rich, having nothing yet possessing all things (8–10).",
+        "His heart is open to them, and he asks them to open theirs (11–13).",
+        "Do not be unequally yoked with unbelievers: righteousness and unrighteousness, light and darkness, Christ and Belial have nothing in common, and believers are the temple of the living God (14–16).",
+        "Come out, be separate, and God will receive you and be a Father to you, and you will be His sons and daughters (17–18)."
+      ],
+      "key": {
+        "ref": "2 Corinthians 6:10",
+        "text": "As sorrowful, yet alway rejoicing; as poor, yet making many rich; as having nothing, and yet possessing all things."
+      },
+      "big": "A man with Christ is never poor, and today is the day to take his step. Be careful whom you yoke your life to, and know that when you come out of the old company, the Father receives you."
+    }
+  },
+  {
+    "id": "2-corinthians-12",
+    "type": "chapter",
+    "book": "2 Corinthians",
+    "ch": 12,
+    "date": "2026-10-31",
+    "title": "2 Corinthians 12",
+    "sub": "Grace enough",
+    "about": "Paul was caught up to heaven, then given a thorn he could not pull out. He asked three times, and the Lord answered, My grace is sufficient for thee.",
+    "tags": [
+      "Grace",
+      "Weakness",
+      "Humility",
+      "Prayer",
+      "Repentance",
+      "Love"
+    ],
+    "url": "studies/2-corinthians-12.html",
+    "overview": {
+      "where": "Paul writing from Macedonia, looking back to a heavenly vision and ahead to Corinth",
+      "when": "About AD 56; the vision was about fourteen years earlier",
+      "people": [
+        "paul",
+        "jesus",
+        "satan",
+        "titus",
+        "corinthians"
+      ],
+      "places": [
+        "third-heaven",
+        "paradise",
+        "corinth"
+      ],
+      "story": [
+        "Paul is forced to boast, and tells of a man in Christ caught up to the third heaven and paradise fourteen years before (1–6).",
+        "To keep him from being proud, he was given a thorn in the flesh, the messenger of Satan to buffet him. He asked the Lord three times to take it away (7–8).",
+        "The Lord's answer: My grace is sufficient for thee. Paul learns that when he is weak, then is he strong (9–10).",
+        "Paul refuses to be a burden to the Corinthians. He seeks them, not their money, and will gladly spend and be spent for them (11–19).",
+        "He fears finding quarrels, pride and unrepented sin when he comes (20–21)."
+      ],
+      "key": {
+        "ref": "2 Corinthians 12:9",
+        "text": "And he said unto me, My grace is sufficient for thee: for my strength is made perfect in weakness. Most gladly therefore will I rather glory in my infirmities, that the power of Christ may rest upon me."
+      },
+      "big": "God does not always take the thorn away. He gives grace enough for today, and His power shows up most where ours has run out."
+    }
+  },
+  {
+    "id": "2-corinthians-13",
+    "type": "chapter",
+    "book": "2 Corinthians",
+    "ch": 13,
+    "date": "2026-10-31",
+    "title": "2 Corinthians 13",
+    "sub": "Examine yourselves",
+    "about": "The last chapter of Paul's most personal letter: a warning, an honest check-up for believers, a farewell, and one of the best blessings in the Bible.",
+    "tags": [
+      "Assurance",
+      "Self-examination",
+      "Weakness and power",
+      "Peace",
+      "The Trinity",
+      "Blessing"
+    ],
+    "url": "studies/2-corinthians-13.html",
+    "overview": {
+      "where": "Paul in Macedonia, about to make his third visit to Corinth",
+      "when": "About AD 56",
+      "people": [
+        "paul",
+        "jesus",
+        "corinthians",
+        "holy-spirit"
+      ],
+      "places": [
+        "corinth",
+        "macedonia"
+      ],
+      "story": [
+        "Paul is coming a third time. He warns them first, by the rule of two or three witnesses (1–2).",
+        "Christ was crucified through weakness yet lives by the power of God, and we are weak in Him too (3–4).",
+        "Examine yourselves, whether ye be in the faith. Jesus Christ is in you, unless you fail the test (5–7).",
+        "Paul's prayer is for their good and their perfection, so that he can build up and not tear down (8–10).",
+        "Be perfect, be of good comfort, be of one mind, live in peace. The grace of the Lord Jesus Christ, and the love of God, and the communion of the Holy Ghost, be with you all (11–14)."
+      ],
+      "key": {
+        "ref": "2 Corinthians 13:14",
+        "text": "The grace of the Lord Jesus Christ, and the love of God, and the communion of the Holy Ghost, be with you all. Amen."
+      },
+      "big": "A believer can check himself honestly without fear, because Christ is in him and holds him. The Father, Son and Spirit are with you all."
+    }
   }
 ];

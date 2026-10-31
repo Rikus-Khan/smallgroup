@@ -1,0 +1,496 @@
+<!doctype html>
+<html lang="en" data-theme="slate">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>2 Corinthians 6</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="../assets/fonts.css">
+<link rel="stylesheet" href="../assets/deck.css">
+<link rel="stylesheet" href="../assets/themes.css">
+<style>
+
+/* c206-book: where we are in 2 Corinthians. Thirteen chapter chips (.here is this one) over four sections (.now holds this chapter). */
+.c206-chips { display: grid; grid-template-columns: repeat(13, 1fr); gap: 3px; margin: .5em 0 .8em; }
+.c206-chips span { text-align: center; padding: .25em 0; border-radius: 5px; border-bottom: 3px solid var(--line-strong); font: 700 clamp(.7rem, .62rem + .3vw, .95rem) var(--sans); color: var(--ink-soft); opacity: 0; transition: opacity .4s ease; transition-delay: calc(var(--k, 0) * 45ms + 150ms); }
+.slide.active .c206-chips span { opacity: 1; }
+.c206-chips span.here { background: var(--accent); border-bottom-color: var(--accent); color: var(--on-accent); }
+.c206-parts { display: grid; gap: 6px; }
+.c206-part { --c: var(--accent); padding: .4em .7em .5em; border-left: 6px solid var(--c); border-radius: 0 10px 10px 0; background: color-mix(in srgb, var(--c) 8%, transparent); opacity: 0; transform: translateX(-10px); transition: opacity .5s ease, transform .5s ease; transition-delay: calc(var(--k, 0) * 220ms + 600ms); }
+.slide.active .c206-part { opacity: 1; transform: none; }
+.c206-part small { font: 700 clamp(.72rem, .68rem + .22vw, .9rem) var(--sans); color: var(--ink-soft); }
+.c206-part b { display: block; font: 600 clamp(1rem, .88rem + .55vw, 1.4rem)/1.15 var(--serif); color: var(--ink); }
+.c206-part i { display: block; font-style: normal; font-size: clamp(.82rem, .76rem + .3vw, 1rem); color: var(--ink-soft); }
+.c206-part.now { background: color-mix(in srgb, var(--c) 20%, transparent); box-shadow: inset 0 0 0 2px var(--c); }
+.c206-part.p1 { --c: var(--cool); } .c206-part.p2 { --c: var(--accent); } .c206-part.p3 { --c: var(--leather-light); } .c206-part.p4 { --c: var(--wine); }
+
+/* c206-par: how Paul looked, and what was true (v. 8-10). One pair per step. */
+.c206-par { list-style: none; margin: .3em 0 .8em; padding: 0; display: grid; gap: .4em; }
+.c206-par li { display: grid; grid-template-columns: 1fr auto 1fr; gap: .3em .7em; align-items: center; }
+.c206-par .s { padding: .3em .8em; border-radius: 10px; border: 1.5px dashed var(--line-strong); color: var(--ink-soft); font: italic 400 clamp(1rem, .88rem + .6vw, 1.4rem)/1.25 var(--serif); text-align: right; }
+.c206-par .y { font: 700 clamp(.75rem, .7rem + .25vw, .95rem) var(--sans); color: var(--ink-soft); text-transform: uppercase; letter-spacing: .08em; }
+.c206-par .t { padding: .3em .8em; border-radius: 10px; border: 2px solid var(--accent); background: color-mix(in srgb, var(--accent) 12%, transparent); font: 600 clamp(1.05rem, .9rem + .7vw, 1.5rem)/1.25 var(--serif); color: var(--accent-hot); }
+.c206-par li.last .t { background: color-mix(in srgb, var(--accent) 26%, transparent); }
+@media (max-width: 600px) { .c206-par li { grid-template-columns: 1fr; } .c206-par .s { text-align: left; } .c206-par .y { display: none; } }
+
+/* c206-yoke: two animals in one yoke, seen from above. Matched, they pull straight and leave a straight furrow.
+   Mismatched, they pull apart and the furrow goes round in circles (v. 14). The furrows draw when the slide opens. */
+.c206-beam { fill: var(--leather); stroke: var(--leather-light); stroke-width: 2; }
+.c206-pole { stroke: var(--leather-light); stroke-width: 7; stroke-linecap: round; }
+.c206-ox { fill: var(--cool); }
+.c206-ox.b { fill: var(--danger); }
+.c206-pull { fill: none; stroke: var(--ink); stroke-width: 5; stroke-linecap: round; }
+.c206-furrow { fill: none; stroke-width: 7; stroke-linecap: round; stroke-dasharray: 1; stroke-dashoffset: 1; }
+.c206-furrow.ok { stroke: var(--accent); }
+.c206-furrow.bad { stroke: var(--danger); }
+.slide.active .c206-furrow.ok { animation: c206-draw 2s .5s ease-out forwards; }
+.slide.active .c206-furrow.bad { animation: c206-draw 3s .9s ease-in-out forwards; }
+@keyframes c206-draw { to { stroke-dashoffset: 0; } }
+.c206-split { stroke: var(--line-strong); stroke-width: 2; stroke-dasharray: 6 6; }
+.c206-hd { font: italic 600 22px var(--serif); fill: var(--ink); }
+.c206-cp { font-size: 16px; fill: var(--ink-soft); }
+@media (max-width: 600px) { .c206-hd { font-size: 27px; } .c206-cp { font-size: 21px; } }
+
+/* c206-pairs: five things that don't mix (v. 14-16). One pair per step. */
+.c206-pairs { list-style: none; margin: .3em 0 .8em; padding: 0; display: grid; gap: .4em; }
+.c206-pairs li { display: grid; grid-template-columns: 1fr auto 1fr auto; gap: .3em .7em; align-items: center; }
+.c206-pairs .l { padding: .3em .8em; border-radius: 10px; border: 2px solid var(--accent); background: color-mix(in srgb, var(--accent) 12%, transparent); font: 600 clamp(1rem, .9rem + .6vw, 1.4rem)/1.2 var(--serif); color: var(--accent-hot); text-align: center; }
+.c206-pairs .r { padding: .3em .8em; border-radius: 10px; border: 2px solid var(--line-strong); background: color-mix(in srgb, var(--ink) 8%, transparent); font: 600 clamp(1rem, .9rem + .6vw, 1.4rem)/1.2 var(--serif); color: var(--ink-soft); text-align: center; }
+.c206-pairs .x { font: 700 1.5rem var(--sans); color: var(--danger); }
+.c206-pairs .w { font: 700 clamp(.75rem, .7rem + .25vw, .95rem) var(--sans); color: var(--ink-soft); text-transform: uppercase; letter-spacing: .06em; min-width: 6.5em; }
+@media (max-width: 600px) { .c206-pairs li { grid-template-columns: 1fr 1fr; } .c206-pairs .x, .c206-pairs .w { grid-column: 1 / -1; } .c206-pairs .x { display: none; } }
+</style>
+</head>
+<body>
+<main class="deck" id="deck">
+
+<!-- ======================= OPENING ======================= -->
+<section class="slide title">
+  <div class="inner">
+    <div class="emblem rise"></div>
+    <h1 class="rise" style="--d:1">2 Corinthians 6</h1>
+    <p class="sub rise" style="--d:3">Now is the day</p>
+    <p class="tag rise" style="--d:5">Having nothing, and yet possessing all things. A man who lost everything finds out what he was missing, and who to walk with from here.</p>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <div>
+        <h2 class="rise" style="--d:1">Where we are in 2 Corinthians</h2>
+        <div class="c206-chips" role="img" aria-label="2 Corinthians has thirteen chapters. We are in chapter 6, in the section on what this ministry is (chapters 3 to 7)."><span style="--k:0">1</span><span style="--k:1">2</span><span style="--k:2">3</span><span style="--k:3">4</span><span style="--k:4">5</span><span class="here" style="--k:5">6</span><span style="--k:6">7</span><span style="--k:7">8</span><span style="--k:8">9</span><span style="--k:9">10</span><span style="--k:10">11</span><span style="--k:11">12</span><span style="--k:12">13</span></div>
+        <div class="c206-parts">
+          <div class="c206-part p1" style="--k:0"><small>Chapters 1–2</small><b>Comfort and a changed plan</b><i>Trouble in Asia, why Paul did not come, a man to forgive</i></div>
+          <div class="c206-part p2 now" style="--k:1"><small>Chapters 3–7</small><b>What this ministry is</b><i>The new covenant, clay jars, reconciliation, the good news from Titus</i></div>
+          <div class="c206-part p3" style="--k:2"><small>Chapters 8–9</small><b>The offering</b><i>Money for the poor believers in Jerusalem</i></div>
+          <div class="c206-part p4" style="--k:3"><small>Chapters 10–13</small><b>Paul defends his calling</b><i>Against men who say he is no apostle</i></div>
+        </div>
+        <p class="note rise" style="--d:3">Chapter 5 gave the message: “be ye reconciled to God.” Chapter 6 shows how Paul lived it out, and what a reconciled man does about his company.</p>
+        <p class="note step">Paul wrote this letter from Macedonia in about AD 56, a year after 1 Corinthians. In between came a sharp letter, a painful visit, and a long wait for news. Titus brought good news at last (7:6–7), and this letter is Paul pouring out his heart.</p>
+      </div>
+  </div>
+</section>
+
+<section class="slide watch">
+  <div class="inner">
+    <h2 class="rise">Things to watch for</h2>
+    <p class="lede rise" style="--d:1">Keep these questions in the back of your mind as we read. We'll come back to every one of them at the end.</p>
+    <ol class="seeds">
+      <li class="step"><span class="topic">Today</span><span class="seed-q">What does “now is the accepted time” mean for a man today?</span></li>
+      <li class="step"><span class="topic">Hard times</span><span class="seed-q">How did Paul hold up under beatings, prison, and hunger?</span></li>
+      <li class="step"><span class="topic">Nothing, yet all</span><span class="seed-q">Can a man have nothing and still possess everything?</span></li>
+      <li class="step"><span class="topic">Yoked</span><span class="seed-q">What does it mean to be unequally yoked?</span></li>
+      <li class="step"><span class="topic">Come out</span><span class="seed-q">What is a man supposed to come out of?</span></li>
+      <li class="step"><span class="topic">A Father</span><span class="seed-q">What does God promise the man who comes out?</span></li>
+    </ol>
+  </div>
+</section>
+
+<!-- ======================= PART ONE: NOW ======================= -->
+<section class="slide part">
+  <div class="inner">
+    <p class="part-n rise">Part one</p>
+    <h2 class="rise" style="--d:1">Now is the day</h2>
+    <p class="range rise" style="--d:2">Verses 1–10</p>
+    <div class="rule"></div>
+    <p class="hook rise" style="--d:4">An urgent appeal, and a man who has paid for it with everything.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="1-2" data-hl="receive not the grace of God in vain|now is the accepted time; behold, now is the day of salvation"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <div class="split">
+      <div class="stage">
+        <svg class="clock" style="--stop:0deg" viewBox="0 -44 320 364" role="img" aria-label="A clock hand sweeps round and lands on the hour: now.">
+          <circle class="clock-face" cx="160" cy="160" r="140"/>
+          <g>
+            <line class="clock-tick" x1="160" y1="38" x2="160" y2="58" transform="rotate(30 160 160)"/>
+            <line class="clock-tick" x1="160" y1="38" x2="160" y2="58" transform="rotate(60 160 160)"/>
+            <line class="clock-tick" x1="160" y1="38" x2="160" y2="58" transform="rotate(90 160 160)"/>
+            <line class="clock-tick" x1="160" y1="38" x2="160" y2="58" transform="rotate(120 160 160)"/>
+            <line class="clock-tick" x1="160" y1="38" x2="160" y2="58" transform="rotate(150 160 160)"/>
+            <line class="clock-tick" x1="160" y1="38" x2="160" y2="58" transform="rotate(180 160 160)"/>
+            <line class="clock-tick" x1="160" y1="38" x2="160" y2="58" transform="rotate(210 160 160)"/>
+            <line class="clock-tick" x1="160" y1="38" x2="160" y2="58" transform="rotate(240 160 160)"/>
+            <line class="clock-tick" x1="160" y1="38" x2="160" y2="58" transform="rotate(270 160 160)"/>
+            <line class="clock-tick" x1="160" y1="38" x2="160" y2="58" transform="rotate(300 160 160)"/>
+            <line class="clock-tick" x1="160" y1="38" x2="160" y2="58" transform="rotate(330 160 160)"/>
+          </g>
+          <circle class="clock-hour" cx="160" cy="44" r="12"/>
+          <text x="160" y="-14" text-anchor="middle" font-size="22" font-weight="700" style="fill:var(--accent-hot)">now</text>
+          <line class="clock-hand" x1="160" y1="160" x2="160" y2="68"/>
+          <circle cx="160" cy="160" r="10" style="fill:var(--ink)"/>
+          <text x="160" y="232" text-anchor="middle" font-size="22" class="serif" font-style="italic" style="fill:var(--ink-soft)">the day of salvation</text>
+        </svg>
+      </div>
+      <div>
+        <h2 class="rise" style="--d:1">Behold, now</h2>
+        <p class="note rise" style="--d:2">Paul quotes an old promise God made to His Servant (Isaiah 49:8): <em>“I have heard thee in a time accepted.”</em> Then he points at the clock. That time is here. It is now.</p>
+        <p class="note step"><em>Accepted</em> means welcome: a time when the door is open and God is glad to see you. Not a day He puts up with you, but a day He has been waiting for.</p>
+        <p class="note step"><em>“Receive not the grace of God in vain”</em> means don't take it and leave it empty. Grace you've been given is meant to be lived in, starting today. Not after you get cleaned up first, and not when the weekend is over.</p>
+        <p class="note step">Yesterday is gone, however bad it was. Tomorrow isn't yours yet. If there's a hard call to make, a step to take, a man to ask for help: today.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="slide verse" data-v="3-5" data-hl="in much patience, in afflictions, in necessities, in distresses|In stripes, in imprisonments, in tumults, in labours, in watchings, in fastings"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise">Paul's resume</h2>
+    <ol class="signs">
+      <li class="rise" style="--d:1"><b>Afflictions</b>pressure from every side</li>
+      <li class="rise" style="--d:2"><b>Necessities</b>going without what a man needs</li>
+      <li class="rise" style="--d:3"><b>Distresses</b>tight corners, no way out</li>
+      <li class="rise" style="--d:4"><b>Stripes</b>beatings with rods and whips</li>
+      <li class="rise" style="--d:5"><b>Imprisonments</b>locked up, more than once</li>
+      <li class="rise" style="--d:6"><b>Tumults</b>riots, mobs, men against him</li>
+      <li class="rise" style="--d:7"><b>Labours</b>hard work until he was spent</li>
+      <li class="rise" style="--d:8"><b>Watchings</b>nights without sleep</li>
+      <li class="rise" style="--d:9"><b>Fastings</b>days without a meal</li>
+    </ol>
+    <p class="note step">Three kinds: what the world did to him, what the job cost him, and what he went without. Some of you know a few of these from the inside. Prison, the street, a long hungry stretch.</p>
+    <p class="note step">Notice the first line: <em>“in much patience.”</em> He did not hold up by being tough. And verse 3 is why: <em>“giving no offence in any thing, that the ministry be not blamed.”</em> He wanted his life to match his message, so nobody could say it was a lie.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="6-7" data-hl="by the Holy Ghost, by love unfeigned|by the power of God, by the armour of righteousness on the right hand and on the left"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise">What kept him standing</h2>
+    <ol class="checks">
+      <li class="step"><span class="tick">✓</span><q>pureness, knowledge, longsuffering, kindness</q><small>what he was being made into: clean, wise, patient, gentle</small><b>his character</b></li>
+      <li class="step"><span class="tick">✓</span><q>by the Holy Ghost, by love unfeigned</q><small>the Spirit living in him, and love with no mask on it</small><b>his helper</b></li>
+      <li class="step"><span class="tick">✓</span><q>the word of truth, the power of God</q><small>what he said, and the One who made it work</small><b>his message</b></li>
+      <li class="step"><span class="tick">✓</span><q>the armour of righteousness on the right hand and on the left</q><small>a soldier's sword in the right hand, shield in the left: attack and defence covered</small><b>his armour</b></li>
+    </ol>
+    <p class="note step">Not one thing on that list is willpower. It's a clean life, God's Spirit, God's word, and God's power. That's the kit God gives every believer. Use it today.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="8-10" data-hl="as deceivers, and yet true|as dying, and, behold, we live|as having nothing, and yet possessing all things"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise">How it looked, and what was true</h2>
+    <ol class="c206-par">
+      <li class="step"><span class="s">as deceivers</span><span class="y">and yet</span><span class="t">true</span></li>
+      <li class="step"><span class="s">as unknown</span><span class="y">and yet</span><span class="t">well known</span></li>
+      <li class="step"><span class="s">as dying</span><span class="y">behold</span><span class="t">we live</span></li>
+      <li class="step"><span class="s">as chastened</span><span class="y">and</span><span class="t">not killed</span></li>
+      <li class="step"><span class="s">as sorrowful</span><span class="y">yet</span><span class="t">always rejoicing</span></li>
+      <li class="step"><span class="s">as poor</span><span class="y">yet</span><span class="t">making many rich</span></li>
+      <li class="step last"><span class="s">as having nothing</span><span class="y">and yet</span><span class="t">possessing all things</span></li>
+    </ol>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <p class="saying rise">Having <em>nothing</em>, and yet possessing <em>all things</em>.</p>
+    <p class="note rise" style="--d:2">Look at how Paul describes himself: sneered at, broke, beaten, and he calls himself rich. How? Because the things that matter most, a clean conscience, God as his Father, a place in heaven, nobody could take.</p>
+    <blockquote class="quote step"><p>“He that spared not his own Son, but delivered him up for us all, how shall he not with him also freely give us all things?”</p><cite>Romans 8:32</cite></blockquote>
+    <p class="note step">Many of us have lost the house, the truck, the family, the years. That's real, and it hurts. But a man who has Christ is not poor. Today, name one thing nobody can take from you.</p>
+  </div>
+</section>
+
+<!-- ======================= PART TWO: YOKED AND FREE ======================= -->
+<section class="slide part">
+  <div class="inner">
+    <p class="part-n rise">Part two</p>
+    <h2 class="rise" style="--d:1">Yoked, and free</h2>
+    <p class="range rise" style="--d:2">Verses 11–18</p>
+    <div class="rule"></div>
+    <p class="hook rise" style="--d:4">A father opens his heart, then gives his sons some hard advice about the company they keep.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="11-13" data-hl="our heart is enlarged|be ye also enlarged"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise">An open heart</h2>
+    <div class="columns">
+      <div class="col grace step"><p class="who">Paul's heart: enlarged</p><h3>Wide open</h3><p>“Our mouth is open unto you.” Nothing held back, room for every one of them. He is talking to them like a father to his children.</p></div>
+      <div class="col law step"><p class="who">Their hearts: straitened</p><h3>Cramped</h3><p>“Straitened” means squeezed into a tight space. The Corinthians were holding back, keeping him at arm's length.</p></div>
+    </div>
+    <p class="note step">Paul isn't asking for money or praise. He asks them to open up. <em>“Bowels”</em> is the old word for the deep feelings in the gut. Men like us learned to close up to survive. In God's family, you can open up again.</p>
+    <p class="note step">Today, let one brother in on how you're really doing. Don't just say <em>fine.</em></p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="14-16" data-hl="Be ye not unequally yoked together with unbelievers|what fellowship hath righteousness with unrighteousness|ye are the temple of the living God"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <div class="split">
+      <div class="stage">
+    <svg viewBox="0 0 640 330" style="max-height:52vh;width:100%" role="img" aria-label="Two yokes seen from above. On the left, two matched animals pull the same way and leave a straight furrow. On the right, a mismatched pair pull apart and the furrow wanders in circles.">
+      <line class="c206-split" x1="320" y1="10" x2="320" y2="320"/>
+      <g>
+        <line class="c206-pole" x1="160" y1="96" x2="160" y2="30"/>
+        <ellipse class="c206-ox" cx="115" cy="140" rx="28" ry="46"/><ellipse class="c206-ox" cx="205" cy="140" rx="28" ry="46"/>
+        <rect class="c206-beam" x="85" y="94" width="150" height="12" rx="6"/>
+        <path class="c206-pull" d="M115 70 L115 38 M105 48 L115 38 L125 48 M205 70 L205 38 M195 48 L205 38 L215 48"/>
+        <path class="c206-furrow ok" pathLength="1" d="M160 200 L160 290"/>
+      </g>
+      <g>
+        <g transform="rotate(-12 480 100)">
+          <line class="c206-pole" x1="480" y1="96" x2="480" y2="30"/>
+          <ellipse class="c206-ox" cx="435" cy="140" rx="28" ry="46"/><ellipse class="c206-ox b" cx="525" cy="140" rx="28" ry="46"/>
+          <rect class="c206-beam" x="405" y="94" width="150" height="12" rx="6"/>
+        </g>
+        <path class="c206-pull" d="M430 66 L412 40 M412 56 L412 40 L428 44 M556 108 L600 100 M588 88 L600 100 L586 110"/>
+        <path class="c206-furrow bad" pathLength="1" d="M470 205 C 420 215, 410 260, 450 275 C 500 290, 540 260, 520 235 C 505 215, 470 225, 475 250 C 480 270, 510 270, 512 258"/>
+      </g>
+      <text class="c206-hd" x="160" y="318" text-anchor="middle">matched</text>
+      <text class="c206-hd" x="480" y="318" text-anchor="middle">unequally yoked</text>
+    </svg>
+      </div>
+      <div>
+    <h2 class="rise" style="--d:1">One yoke, two directions</h2>
+    <p class="note rise" style="--d:2">A <em>yoke</em> is the wooden beam that locks two animals together so they pull one plow. Moses' law said not to yoke an ox with a donkey (Deuteronomy 22:10): different strength, different pace, different will.</p>
+    <p class="note step">Put a believer and an unbeliever in the same yoke and one wants to go one way, the other the opposite. The furrow goes crooked. Or round and round.</p>
+    <blockquote class="quote step"><p>“Can two walk together, except they be agreed?”</p><cite>Amos 3:3</cite></blockquote>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise">Five things that don't mix</h2>
+    <ol class="c206-pairs">
+      <li class="step"><span class="l">righteousness</span><span class="x">✕</span><span class="r">unrighteousness</span><span class="w">fellowship?</span></li>
+      <li class="step"><span class="l">light</span><span class="x">✕</span><span class="r">darkness</span><span class="w">communion?</span></li>
+      <li class="step"><span class="l">Christ</span><span class="x">✕</span><span class="r">Belial</span><span class="w">concord?</span></li>
+      <li class="step"><span class="l">he that believeth</span><span class="x">✕</span><span class="r">an infidel</span><span class="w">a share?</span></li>
+      <li class="step"><span class="l">the temple of God</span><span class="x">✕</span><span class="r">idols</span><span class="w">agreement?</span></li>
+    </ol>
+    <p class="note step"><em>Belial</em> is a Hebrew word for worthlessness and lawlessness, a name Jews used for the evil one. An <em>infidel</em> here is simply an unbeliever. And look at the last pair. <em>“Ye are the temple of the living God.”</em> You are God's house, and what you partner with is what you're letting into the house.</p>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise">Where the yoke reaches</h2>
+    <ol class="signs">
+      <li class="rise" style="--d:1"><b>Marriage</b>the biggest yoke of all. For a believer: <em>“only in the Lord”</em> (1 Corinthians 7:39)</li>
+      <li class="rise" style="--d:2"><b>Dating</b>a close tie that pulls you back toward the old life is a bad road, however much you like her</li>
+      <li class="rise" style="--d:3"><b>Business partners</b>your money and your name tied to a man who isn't straight</li>
+      <li class="rise" style="--d:4"><b>The old crowd</b>the man you used with is not a casual friend. He's a yoke</li>
+    </ol>
+    <p class="note step">A yoke is a <em>deep tie</em> where you have to pull together. It isn't your neighbor, your coworker, or the man you're trying to reach for Christ.</p>
+    <blockquote class="quote step"><p>“Yet not altogether with the fornicators of this world, or with the covetous, or extortioners, or with idolaters; for then must ye needs go out of the world.”</p><cite>1 Corinthians 5:10</cite></blockquote>
+    <p class="note step">So Paul isn't telling you to stop talking to unbelievers. He tells you not to hitch your life to them. Be the friend, the good worker, the one who shows up. Just don't let them hold the lines.</p>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise">Already married to an unbeliever?</h2>
+    <p class="note rise" style="--d:1">If that's you, this verse is <em>not</em> a reason to leave. Paul wrote the Corinthians about this exact case:</p>
+    <blockquote class="quote step"><p>“But to the rest speak I, not the Lord: If any brother hath a wife that believeth not, and she be pleased to dwell with him, let him not put her away.”</p><cite>1 Corinthians 7:12</cite></blockquote>
+    <blockquote class="quote step"><p>“For what knowest thou, O wife, whether thou shalt save thy husband? or how knowest thou, O man, whether thou shalt save thy wife?”</p><cite>1 Corinthians 7:16</cite></blockquote>
+    <p class="note step">Stay. Be the light in that house: patient, honest, sober, kind. Pray for her by name. No guilt about the marriage you're in.</p>
+    <p class="note step">And if you've already partnered with the wrong man in business or friendship? Don't make a mess leaving, but pray, and take the first honest step toward getting loose.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="17-18" data-hl="come out from among them, and be ye separate|I will receive you|will be a Father unto you, and ye shall be my sons and daughters"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise">Come out, and be received</h2>
+    <div class="ifthen step">
+      <div class="if"><small>You do</small>Come out. Be separate. Let go of the unclean thing.</div>
+      <span class="arrow" aria-hidden="true">→</span>
+      <div class="then"><small>God does</small>“I will receive you,” and be a Father to you.</div>
+    </div>
+    <p class="note step"><em>Separate</em> doesn't mean hide in a cabin. It means a clean break from what is dragging you down: the people, the places, the habit. Every man in recovery knows that one.</p>
+    <blockquote class="quote step"><p>“And he arose, and came to his father. But when he was yet a great way off, his father saw him, and had compassion, and ran, and fell on his neck, and kissed him.”</p><cite>Luke 15:20</cite></blockquote>
+    <p class="note step">That's the promise: <em>“I will receive you.”</em> A Father who runs to meet you. The first step is yours, but He is already coming. Read what follows in the next verse: <em>“having therefore these promises.”</em> The promises come first, and the clean-up follows from them.</p>
+  </div>
+</section>
+
+<!-- ======================= CLOSING ======================= -->
+<section class="slide remember">
+  <div class="inner">
+    <h2 class="rise">Points to remember</h2>
+    <ol class="seeds">
+      <li class="step"><span class="topic">Today</span><span class="seed-q">“Now is the accepted time; behold, now is the day of salvation” <cite>6:2</cite></span><span class="take">The door is open today. Don't wait for tomorrow.</span></li>
+      <li class="step"><span class="topic">Hard times</span><span class="seed-q">“In much patience, in afflictions, in necessities, in distresses” <cite>6:4</cite></span><span class="take">Paul held up with God's Spirit, word, and power, not his own grit.</span></li>
+      <li class="step"><span class="topic">Nothing, yet all</span><span class="seed-q">“As having nothing, and yet possessing all things” <cite>6:10</cite></span><span class="take">A man in Christ has what nobody can take.</span></li>
+      <li class="step"><span class="topic">Yoked</span><span class="seed-q">“Be ye not unequally yoked together with unbelievers” <cite>6:14</cite></span><span class="take">Don't hitch your life to someone pulling the other way.</span></li>
+      <li class="step"><span class="topic">Come out</span><span class="seed-q">“Come out from among them, and be ye separate” <cite>6:17</cite></span><span class="take">Make a clean break from what pulls you down.</span></li>
+      <li class="step"><span class="topic">A Father</span><span class="seed-q">“I will be a Father unto you, and ye shall be my sons” <cite>6:18</cite></span><span class="take">God receives you, and runs to meet you.</span></li>
+    </ol>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 1 of 6</p>
+      <span class="topic">Today</span>
+      <h2>What does “now is the accepted time” mean for a man today?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="2"></blockquote>
+      <blockquote class="quote step"><p>“For whosoever shall call upon the name of the Lord shall be saved.”</p><cite>Romans 10:13</cite></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>That God's door is open today, and He is glad to receive whosoever calls. Whether it's the first time or the hundredth time he's come back, today is the day to take the step. Yesterday is behind him, and tomorrow isn't promised.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 2 of 6</p>
+      <span class="topic">Hard times</span>
+      <h2>How did Paul hold up under beatings, prison, and hunger?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="4-5"></blockquote>
+      <blockquote class="quote step" data-q="6-7"></blockquote>
+      <blockquote class="quote step"><p>“Therefore I take pleasure in infirmities, in reproaches, in necessities, in persecutions, in distresses for Christ's sake: for when I am weak, then am I strong.”</p><cite>2 Corinthians 12:10</cite></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>Not by being tough. He leaned on the Holy Spirit, the word of truth, and the power of God, and kept his life clean so the message wouldn't be blamed. When he was weak, God was strong.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 3 of 6</p>
+      <span class="topic">Nothing, yet all</span>
+      <h2>Can a man have nothing and still possess everything?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="10"></blockquote>
+      <blockquote class="quote step"><p>“He that spared not his own Son, but delivered him up for us all, how shall he not with him also freely give us all things?”</p><cite>Romans 8:32</cite></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>Yes, if he has Christ. A man can be broke and still own what matters most: forgiveness, God as his Father, and a place in heaven. Nobody can repossess those.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 4 of 6</p>
+      <span class="topic">Yoked</span>
+      <h2>What does it mean to be unequally yoked?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="14"></blockquote>
+      <blockquote class="quote step"><p>“Can two walk together, except they be agreed?”</p><cite>Amos 3:3</cite></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>It means hitching your life, in marriage, partnerships, or the closest friendships, to someone pulling the opposite way. Two animals in one yoke can't go in two directions. A believer should choose close partners who walk with the Lord.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 5 of 6</p>
+      <span class="topic">Come out</span>
+      <h2>What is a man supposed to come out of?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="17"></blockquote>
+      <blockquote class="quote step"><p>“He that walketh with wise men shall be wise: but a companion of fools shall be destroyed.”</p><cite>Proverbs 13:20</cite></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>Out of the partnerships and company that pull him back toward the old life. Not out of the world, but out of the yoke. The wise path is to walk with people who are going where God is going.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 6 of 6</p>
+      <span class="topic">A Father</span>
+      <h2>What does God promise the man who comes out?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="17-18"></blockquote>
+      <blockquote class="quote step"><p>“But as many as received him, to them gave he power to become the sons of God, even to them that believe on his name:”</p><cite>John 1:12</cite></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>That He will receive him, and be a Father to him. He doesn't take a man on probation. He runs to meet him, like the father in Jesus' story, and makes him His own son.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide prayer">
+  <div class="inner">
+    <div class="emblem rise"></div>
+    <h2 class="rise" style="--d:1">Prayer requests</h2>
+    <p class="ask-line rise" style="--d:2">What can we pray about for you today?</p>
+    <blockquote class="quote rise" style="--d:4"><p>“And will be a Father unto you, and ye shall be my sons and daughters, saith the Lord Almighty.”</p><cite>2 Corinthians 6:18</cite></blockquote>
+  </div>
+</section>
+
+</main>
+
+<script>
+// King James Version, 2 Corinthians chapter 6
+const V = {
+  1: "We then, as workers together with him, beseech you also that ye receive not the grace of God in vain.",
+  2: "(For he saith, I have heard thee in a time accepted, and in the day of salvation have I succoured thee: behold, now is the accepted time; behold, now is the day of salvation.)",
+  3: "Giving no offence in any thing, that the ministry be not blamed:",
+  4: "But in all things approving ourselves as the ministers of God, in much patience, in afflictions, in necessities, in distresses,",
+  5: "In stripes, in imprisonments, in tumults, in labours, in watchings, in fastings;",
+  6: "By pureness, by knowledge, by longsuffering, by kindness, by the Holy Ghost, by love unfeigned,",
+  7: "By the word of truth, by the power of God, by the armour of righteousness on the right hand and on the left,",
+  8: "By honour and dishonour, by evil report and good report: as deceivers, and yet true;",
+  9: "As unknown, and yet well known; as dying, and, behold, we live; as chastened, and not killed;",
+  10: "As sorrowful, yet alway rejoicing; as poor, yet making many rich; as having nothing, and yet possessing all things.",
+  11: "O ye Corinthians, our mouth is open unto you, our heart is enlarged.",
+  12: "Ye are not straitened in us, but ye are straitened in your own bowels.",
+  13: "Now for a recompence in the same, (I speak as unto my children,) be ye also enlarged.",
+  14: "Be ye not unequally yoked together with unbelievers: for what fellowship hath righteousness with unrighteousness? and what communion hath light with darkness?",
+  15: "And what concord hath Christ with Belial? or what part hath he that believeth with an infidel?",
+  16: "And what agreement hath the temple of God with idols? for ye are the temple of the living God; as God hath said, I will dwell in them, and walk in them; and I will be their God, and they shall be my people.",
+  17: "Wherefore come out from among them, and be ye separate, saith the Lord, and touch not the unclean thing; and I will receive you,",
+  18: "And will be a Father unto you, and ye shall be my sons and daughters, saith the Lord Almighty."
+};
+const BOOK = "2 Corinthians 6";
+</script>
+<script src="../assets/deck.js"></script>
+</body>
+</html>
