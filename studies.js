@@ -13039,6 +13039,108 @@ window.STUDIES = [
     }
   },
   {
+    "id": "ephesians-03",
+    "type": "chapter",
+    "book": "Ephesians",
+    "ch": 3,
+    "date": "2026-10-31",
+    "title": "Ephesians 3",
+    "sub": "Love that passeth knowledge",
+    "about": "A prisoner in Rome, the man who once hunted Christians, tells the secret God kept for ages: the Gentiles are fellowheirs. Then he prays that we would know a love too big to measure.",
+    "tags": [
+      "God's love",
+      "Grace",
+      "Prayer",
+      "Regret",
+      "Unity",
+      "Hope"
+    ],
+    "url": "studies/ephesians-03.html",
+    "overview": {
+      "where": "Written from Rome, where Paul was under guard, to the church at Ephesus in Asia",
+      "when": "About AD 60 to 62, during Paul's house arrest in Rome",
+      "people": [
+        "paul",
+        "jesus",
+        "the-father",
+        "holy-spirit",
+        "apostles",
+        "saints-believers",
+        "principalities-and-powers"
+      ],
+      "places": [
+        "rome",
+        "ephesus"
+      ],
+      "story": [
+        "Paul, “the prisoner of Jesus Christ for you Gentiles,” starts to pray, then stops to explain the grace given to him (1–4).",
+        "The mystery hidden for ages is now revealed: the Gentiles are fellowheirs, of the same body, and partakers of God's promise in Christ by the gospel (5–7).",
+        "To Paul, “less than the least of all saints,” God gave the grace to preach the unsearchable riches of Christ (8–9).",
+        "Through the church, God shows His manifold wisdom to the powers in heavenly places. In Christ we have boldness and access with confidence (10–13).",
+        "Paul bows his knees and prays: strength by the Spirit in the inner man, Christ dwelling in their hearts, rooted and grounded in love (14–17).",
+        "He prays they would know the breadth, length, depth and height of the love of Christ, which passeth knowledge (18–19).",
+        "Glory to Him who is able to do exceeding abundantly above all that we ask or think (20–21)."
+      ],
+      "key": {
+        "ref": "Ephesians 3:19",
+        "text": "And to know the love of Christ, which passeth knowledge, that ye might be filled with all the fulness of God."
+      },
+      "big": "God's grace reached the worst of men and made outsiders full heirs. His love in Christ is wider, longer, deeper and higher than anyone can measure, and His power at work in believers can do far more than they ask or think."
+    }
+  },
+  {
+    "id": "ephesians-04",
+    "type": "chapter",
+    "book": "Ephesians",
+    "ch": 4,
+    "date": "2026-10-31",
+    "title": "Ephesians 4",
+    "sub": "Walk worthy",
+    "about": "The letter turns from what God has done to how to live it: keep the unity, grow up, take off the old man like old clothes and put on the new, and live it out in your words, your temper, your work and your forgiving.",
+    "tags": [
+      "New life",
+      "Unity",
+      "Anger",
+      "Honesty",
+      "Work",
+      "Forgiveness"
+    ],
+    "url": "studies/ephesians-04.html",
+    "overview": {
+      "where": "Written from Rome, where Paul was under guard, to the church at Ephesus in Asia",
+      "when": "About AD 60 to 62, during Paul's house arrest in Rome",
+      "people": [
+        "paul",
+        "jesus",
+        "the-father",
+        "holy-spirit",
+        "apostles",
+        "pastors",
+        "saints-believers"
+      ],
+      "places": [
+        "rome",
+        "ephesus"
+      ],
+      "story": [
+        "“The prisoner of the Lord” begs them to walk worthy of their calling, with lowliness, meekness and patience, keeping the unity of the Spirit (1–3).",
+        "One body, one Spirit, one hope, one Lord, one faith, one baptism, one God and Father of all (4–6).",
+        "The risen Christ, who first came down to the lower parts of the earth, gives gifts to His people (7–10).",
+        "He gives apostles, prophets, evangelists, pastors and teachers to equip the saints for the work of the ministry, until all grow up to a perfect man (11–13).",
+        "No more children tossed by every wind of doctrine: speaking the truth in love, the whole body grows up into Christ (14–16).",
+        "Walk no more like the Gentiles, darkened, past feeling, given over to greediness (17–19).",
+        "Put off the old man, be renewed in the spirit of your mind, and put on the new man (20–24).",
+        "Speak the truth; be angry and sin not; let the thief work and give; let no rotten word out; grieve not the Spirit who sealed you (25–30).",
+        "Put away bitterness and anger. Be kind, tenderhearted, forgiving, as God for Christ's sake has forgiven you (31–32)."
+      ],
+      "key": {
+        "ref": "Ephesians 4:32",
+        "text": "And be ye kind one to another, tenderhearted, forgiving one another, even as God for Christ’s sake hath forgiven you."
+      },
+      "big": "Saved by grace, a believer now walks in a way that matches his calling: he keeps the peace, grows up, takes off the old life like old clothes, and puts on the new one in the plain things of every day, forgiving others as God forgave him."
+    }
+  },
+  {
     "id": "philippians-01",
     "type": "chapter",
     "book": "Philippians",

@@ -416,6 +416,12 @@ window.GLOSSARY = [
     "Galatians", 4,
     [ 14 ] ],
    [
+    "Ephesians", 3,
+    [ 1, 9, 11, 14, 21 ] ],
+   [
+    "Ephesians", 4,
+    [ 21 ] ],
+   [
     "Philippians", 1,
     [ 1, 2, 6, 8, 11, 19, 26 ] ],
    [
@@ -1271,6 +1277,12 @@ window.GLOSSARY = [
     "Galatians", 4,
     [ 6 ] ],
    [
+    "Ephesians", 3,
+    [ 14 ] ],
+   [
+    "Ephesians", 4,
+    [ 6 ] ],
+   [
     "Philippians", 1,
     [ 2 ] ],
    [
@@ -1462,6 +1474,12 @@ window.GLOSSARY = [
    [
     "Galatians", 4,
     [ 6, 29 ] ],
+   [
+    "Ephesians", 3,
+    [ 5, 16 ] ],
+   [
+    "Ephesians", 4,
+    [ 3, 4, 30 ] ],
    [
     "Philippians", 1,
     [ 19 ] ],
@@ -3914,6 +3932,9 @@ window.GLOSSARY = [
     "Galatians", 1,
     [ 8 ] ],
    [
+    "Ephesians", 3,
+    [ 15 ] ],
+   [
     "Philippians", 2,
     [ 10 ] ],
    [
@@ -4490,6 +4511,12 @@ window.GLOSSARY = [
     "Galatians", 2,
     [ 9, 21 ] ],
    [
+    "Ephesians", 3,
+    [ 2, 7, 8 ] ],
+   [
+    "Ephesians", 4,
+    [ 7, 29 ] ],
+   [
     "Philippians", 1,
     [ 7 ] ],
    [
@@ -4651,6 +4678,9 @@ window.GLOSSARY = [
    [
     "Galatians", 4,
     [ 16 ] ],
+   [
+    "Ephesians", 4,
+    [ 15, 21, 25 ] ],
    [
     "Philippians", 1,
     [ 18 ] ] ]
@@ -4891,6 +4921,9 @@ window.GLOSSARY = [
    [
     "Galatians", 1,
     [ 5 ] ],
+   [
+    "Ephesians", 3,
+    [ 13, 16, 21 ] ],
    [
     "Philippians", 1,
     [ 11 ] ],
@@ -5435,6 +5468,12 @@ window.GLOSSARY = [
     "Galatians", 4,
     [ 7, 14, 19 ] ],
    [
+    "Ephesians", 3,
+    [ 1, 4, 6, 8, 9, 11, 14, 17, 19, 21 ] ],
+   [
+    "Ephesians", 4,
+    [ 7, 12, 13, 15, 20, 32 ] ],
+   [
     "Philippians", 1,
     [ 1, 2, 6, 8, 10, 11, 13, 15, 16, 18, 19, 20, 21, 23, 26, 27, 29 ] ],
    [
@@ -5529,7 +5568,10 @@ window.GLOSSARY = [
     [ 19 ] ],
    [
     "Galatians", 2,
-    [ 20 ] ] ]
+    [ 20 ] ],
+   [
+    "Ephesians", 4,
+    [ 13 ] ] ]
  },
  {
   "id": "son-of-man",
@@ -6807,7 +6849,10 @@ window.GLOSSARY = [
     [ 8 ] ],
    [
     "2 Corinthians", 1,
-    [ 12 ] ] ]
+    [ 12 ] ],
+   [
+    "Ephesians", 3,
+    [ 10 ] ] ]
  },
  {
   "id": "understanding",
@@ -6922,6 +6967,9 @@ window.GLOSSARY = [
    [
     "1 Corinthians", 14,
     [ 14, 15, 19, 20 ] ],
+   [
+    "Ephesians", 4,
+    [ 18 ] ],
    [
     "Philippians", 4,
     [ 7 ] ] ]
@@ -7081,6 +7129,12 @@ window.GLOSSARY = [
    [
     "2 Corinthians", 11,
     [ 6 ] ],
+   [
+    "Ephesians", 3,
+    [ 4, 19 ] ],
+   [
+    "Ephesians", 4,
+    [ 13 ] ],
    [
     "Philippians", 1,
     [ 9 ] ],
@@ -7691,6 +7745,9 @@ window.GLOSSARY = [
     "Galatians", 3,
     [ 6, 21 ] ],
    [
+    "Ephesians", 4,
+    [ 24 ] ],
+   [
     "Philippians", 1,
     [ 11 ] ],
    [
@@ -8156,6 +8213,9 @@ window.GLOSSARY = [
     "2 Corinthians", 9,
     [ 7 ] ],
    [
+    "Ephesians", 4,
+    [ 18 ] ],
+   [
     "Philippians", 1,
     [ 7 ] ] ]
  },
@@ -8478,7 +8538,10 @@ window.GLOSSARY = [
     [ 19 ] ],
    [
     "Romans", 13,
-    [ 4, 5 ] ] ]
+    [ 4, 5 ] ],
+   [
+    "Ephesians", 4,
+    [ 26, 31 ] ] ]
  },
  {
   "id": "pride",
@@ -11067,7 +11130,10 @@ window.GLOSSARY = [
     [ 38 ] ],
    [
     "Acts", 13,
-    [ 10 ] ] ]
+    [ 10 ] ],
+   [
+    "Ephesians", 4,
+    [ 27 ] ] ]
  },
  {
   "id": "man-born-blind",
@@ -12111,7 +12177,10 @@ window.GLOSSARY = [
     [ 17 ] ],
    [
     "1 Corinthians", 14,
-    [ 6, 26 ] ] ]
+    [ 6, 26 ] ],
+   [
+    "Ephesians", 4,
+    [ 14 ] ] ]
  },
  {
   "id": "letters",
@@ -12270,7 +12339,13 @@ window.GLOSSARY = [
     [ 2, 8, 12, 14, 15 ] ],
    [
     "Galatians", 3,
-    [ 14 ] ] ]
+    [ 14 ] ],
+   [
+    "Ephesians", 3,
+    [ 1, 6, 8 ] ],
+   [
+    "Ephesians", 4,
+    [ 17 ] ] ]
  },
  {
   "id": "glorified",
@@ -13884,7 +13959,10 @@ window.GLOSSARY = [
     [ 62 ] ],
    [
     "John", 20,
-    [ 17 ] ] ]
+    [ 17 ] ],
+   [
+    "Ephesians", 4,
+    [ 8, 9, 10 ] ] ]
  },
  {
   "id": "peace",
@@ -13962,6 +14040,9 @@ window.GLOSSARY = [
     [ 33 ] ],
    [
     "Galatians", 1,
+    [ 3 ] ],
+   [
+    "Ephesians", 4,
     [ 3 ] ],
    [
     "Philippians", 4,
@@ -14520,7 +14601,10 @@ window.GLOSSARY = [
     [ 42 ] ],
    [
     "1 Corinthians", 15,
-    [ 15 ] ] ]
+    [ 15 ] ],
+   [
+    "Ephesians", 4,
+    [ 17 ] ] ]
  },
  {
   "id": "lazarus",
@@ -18246,7 +18330,10 @@ window.GLOSSARY = [
     [ 2 ] ],
    [
     "Romans", 8,
-    [ 20 ] ] ]
+    [ 20 ] ],
+   [
+    "Ephesians", 4,
+    [ 17 ] ] ]
  },
  {
   "id": "gilead",
@@ -19158,7 +19245,10 @@ window.GLOSSARY = [
     [ 23 ] ],
    [
     "2 Corinthians", 10,
-    [ 5 ] ] ]
+    [ 5 ] ],
+   [
+    "Ephesians", 4,
+    [ 8 ] ] ]
  },
  {
   "id": "calneh",
@@ -21855,7 +21945,10 @@ window.GLOSSARY = [
     [ 21 ] ],
    [
     "2 Corinthians", 10,
-    [ 1 ] ] ]
+    [ 1 ] ],
+   [
+    "Ephesians", 4,
+    [ 2 ] ] ]
  },
  {
   "id": "cherethites",
@@ -24137,6 +24230,9 @@ window.GLOSSARY = [
     "Galatians", 4,
     [ 13 ] ],
    [
+    "Ephesians", 3,
+    [ 6 ] ],
+   [
     "Philippians", 4,
     [ 3, 15 ] ] ]
  },
@@ -24795,7 +24891,10 @@ window.GLOSSARY = [
     [ 22 ] ],
    [
     "Romans", 4,
-    [ 7 ] ] ]
+    [ 7 ] ],
+   [
+    "Ephesians", 4,
+    [ 32 ] ] ]
  },
  {
   "id": "on-this-fashion",
@@ -25179,6 +25278,9 @@ window.GLOSSARY = [
     [ 23 ] ],
    [
     "1 Corinthians", 1,
+    [ 30 ] ],
+   [
+    "Ephesians", 4,
     [ 30 ] ] ]
  },
  {
@@ -25254,7 +25356,10 @@ window.GLOSSARY = [
     [ 25 ] ],
    [
     "Luke", 19,
-    [ 3 ] ] ]
+    [ 3 ] ],
+   [
+    "Ephesians", 4,
+    [ 13 ] ] ]
  },
  {
   "id": "herod-antipas",
@@ -25872,7 +25977,13 @@ window.GLOSSARY = [
     [ 11, 12 ] ],
    [
     "Galatians", 1,
-    [ 1, 17, 19 ] ] ]
+    [ 1, 17, 19 ] ],
+   [
+    "Ephesians", 3,
+    [ 5 ] ],
+   [
+    "Ephesians", 4,
+    [ 11 ] ] ]
  },
  {
   "id": "bartholomew",
@@ -27035,6 +27146,9 @@ window.GLOSSARY = [
     "Galatians", 3,
     [ 3 ] ],
    [
+    "Ephesians", 4,
+    [ 13 ] ],
+   [
     "Philippians", 3,
     [ 12, 15 ] ] ]
  },
@@ -27580,6 +27694,9 @@ window.GLOSSARY = [
    [
     "Galatians", 1,
     [ 5 ] ],
+   [
+    "Ephesians", 3,
+    [ 21 ] ],
    [
     "Philippians", 4,
     [ 20, 23 ] ] ]
@@ -28488,7 +28605,10 @@ window.GLOSSARY = [
     [ 2 ] ],
    [
     "1 Corinthians", 15,
-    [ 51 ] ] ]
+    [ 51 ] ],
+   [
+    "Ephesians", 3,
+    [ 3, 4, 9 ] ] ]
  },
  {
   "id": "converted",
@@ -29681,6 +29801,9 @@ window.GLOSSARY = [
     "Galatians", 1,
     [ 13 ] ],
    [
+    "Ephesians", 3,
+    [ 10, 21 ] ],
+   [
     "Philippians", 3,
     [ 6 ] ],
    [
@@ -30417,7 +30540,10 @@ window.GLOSSARY = [
     [ 22 ] ],
    [
     "2 Corinthians", 12,
-    [ 21 ] ] ]
+    [ 21 ] ],
+   [
+    "Ephesians", 4,
+    [ 19 ] ] ]
  },
  {
   "id": "not-meet",
@@ -30933,7 +31059,10 @@ window.GLOSSARY = [
     [ 8, 16, 25, 27 ] ],
    [
     "Galatians", 2,
-    [ 17 ] ] ]
+    [ 17 ] ],
+   [
+    "Ephesians", 3,
+    [ 7 ] ] ]
  },
  {
   "id": "joanna",
@@ -31500,7 +31629,10 @@ window.GLOSSARY = [
     [ 27, 29, 36 ] ],
    [
     "Romans", 15,
-    [ 2 ] ] ]
+    [ 2 ] ],
+   [
+    "Ephesians", 4,
+    [ 25 ] ] ]
  },
  {
   "id": "oil-and-wine",
@@ -34053,7 +34185,10 @@ window.GLOSSARY = [
     [ 23 ] ],
    [
     "1 Corinthians", 3,
-    [ 19 ] ] ]
+    [ 19 ] ],
+   [
+    "Ephesians", 4,
+    [ 14 ] ] ]
  },
  {
   "id": "children-of-the-resurrection",
@@ -35486,6 +35621,9 @@ window.GLOSSARY = [
     "Galatians", 2,
     [ 9 ] ],
    [
+    "Ephesians", 3,
+    [ 9 ] ],
+   [
     "Philippians", 3,
     [ 10 ] ] ]
  },
@@ -35754,7 +35892,10 @@ window.GLOSSARY = [
   "refs": [
    [
     "Acts", 4,
-    [ 13, 29, 31 ] ] ]
+    [ 13, 29, 31 ] ],
+   [
+    "Ephesians", 3,
+    [ 12 ] ] ]
  },
  {
   "id": "straitly",
@@ -36590,6 +36731,9 @@ window.GLOSSARY = [
     "Galatians", 1,
     [ 1 ] ],
    [
+    "Ephesians", 3,
+    [ 1 ] ],
+   [
     "Philippians", 1,
     [ 1 ] ] ]
  },
@@ -37273,6 +37417,12 @@ window.GLOSSARY = [
    [
     "2 Corinthians", 13,
     [ 13 ] ],
+   [
+    "Ephesians", 3,
+    [ 8, 18 ] ],
+   [
+    "Ephesians", 4,
+    [ 12 ] ],
    [
     "Philippians", 1,
     [ 1 ] ],
@@ -39522,7 +39672,10 @@ window.GLOSSARY = [
   "refs": [
    [
     "Acts", 21,
-    [ 8 ] ] ]
+    [ 8 ] ],
+   [
+    "Ephesians", 4,
+    [ 11 ] ] ]
  },
  {
   "id": "carriages",
@@ -39780,7 +39933,10 @@ window.GLOSSARY = [
     [ 22 ] ],
    [
     "2 Corinthians", 6,
-    [ 6 ] ] ]
+    [ 6 ] ],
+   [
+    "Ephesians", 4,
+    [ 2 ] ] ]
  },
  {
   "id": "impenitent",
@@ -39819,7 +39975,10 @@ window.GLOSSARY = [
   "refs": [
    [
     "Romans", 5,
-    [ 2 ] ] ]
+    [ 2 ] ],
+   [
+    "Ephesians", 3,
+    [ 12 ] ] ]
  },
  {
   "id": "hope",
@@ -39846,7 +40005,10 @@ window.GLOSSARY = [
     [ 7, 13 ] ],
    [
     "1 Corinthians", 15,
-    [ 19 ] ] ]
+    [ 19 ] ],
+   [
+    "Ephesians", 4,
+    [ 4 ] ] ]
  },
  {
   "id": "experience",
@@ -40035,7 +40197,10 @@ window.GLOSSARY = [
   "refs": [
    [
     "Romans", 6,
-    [ 6 ] ] ]
+    [ 6 ] ],
+   [
+    "Ephesians", 4,
+    [ 22 ] ] ]
  },
  {
   "id": "body-of-sin",
@@ -40101,7 +40266,10 @@ window.GLOSSARY = [
     [ 15 ] ],
    [
     "1 Corinthians", 12,
-    [ 12, 14, 18, 19, 20, 22, 23, 25, 26, 27 ] ] ]
+    [ 12, 14, 18, 19, 20, 22, 23, 25, 26, 27 ] ],
+   [
+    "Ephesians", 4,
+    [ 25 ] ] ]
  },
  {
   "id": "instruments",
@@ -40167,7 +40335,10 @@ window.GLOSSARY = [
     [ 19 ] ],
    [
     "2 Corinthians", 12,
-    [ 21 ] ] ]
+    [ 21 ] ],
+   [
+    "Ephesians", 4,
+    [ 19 ] ] ]
  },
  {
   "id": "holiness",
@@ -40176,7 +40347,10 @@ window.GLOSSARY = [
   "refs": [
    [
     "Romans", 6,
-    [ 19, 22 ] ] ]
+    [ 19, 22 ] ],
+   [
+    "Ephesians", 4,
+    [ 24 ] ] ]
  },
  {
   "id": "wages",
@@ -41277,7 +41451,10 @@ window.GLOSSARY = [
     [ 4, 5 ] ],
    [
     "1 Corinthians", 12,
-    [ 12, 13, 20 ] ] ]
+    [ 12, 13, 20 ] ],
+   [
+    "Ephesians", 4,
+    [ 4 ] ] ]
  },
  {
   "id": "spiritual-gifts",
@@ -41625,7 +41802,10 @@ window.GLOSSARY = [
     [ 15, 17, 18, 20, 21, 22, 24 ] ],
    [
     "Galatians", 1,
-    [ 6, 15 ] ] ]
+    [ 6, 15 ] ],
+   [
+    "Ephesians", 4,
+    [ 1, 4 ] ] ]
  },
  {
   "id": "foreknow",
@@ -41688,7 +41868,10 @@ window.GLOSSARY = [
   "refs": [
    [
     "Romans", 8,
-    [ 38 ] ] ]
+    [ 38 ] ],
+   [
+    "Ephesians", 3,
+    [ 10 ] ] ]
  },
  {
   "id": "chloe",
@@ -41904,7 +42087,10 @@ window.GLOSSARY = [
     [ 8 ] ],
    [
     "Galatians", 4,
-    [ 13 ] ] ]
+    [ 13 ] ],
+   [
+    "Ephesians", 3,
+    [ 8 ] ] ]
  },
  {
   "id": "beautiful-feet",
@@ -42043,6 +42229,9 @@ window.GLOSSARY = [
    [
     "2 Corinthians", 1,
     [ 7 ] ],
+   [
+    "Ephesians", 3,
+    [ 6 ] ],
    [
     "Philippians", 1,
     [ 7 ] ] ]
@@ -43113,7 +43302,10 @@ window.GLOSSARY = [
   "refs": [
    [
     "1 Corinthians", 9,
-    [ 17 ] ] ]
+    [ 17 ] ],
+   [
+    "Ephesians", 3,
+    [ 2 ] ] ]
  },
  {
   "id": "mastery",
@@ -43494,7 +43686,10 @@ window.GLOSSARY = [
     [ 16 ] ],
    [
     "1 Corinthians", 12,
-    [ 27 ] ] ]
+    [ 27 ] ],
+   [
+    "Ephesians", 4,
+    [ 12 ] ] ]
  },
  {
   "id": "helps-governments",
@@ -43884,7 +44079,10 @@ window.GLOSSARY = [
   "refs": [
    [
     "2 Corinthians", 1,
-    [ 12 ] ] ]
+    [ 12 ] ],
+   [
+    "Ephesians", 4,
+    [ 22 ] ] ]
  },
  {
   "id": "lightness",
@@ -43929,7 +44127,10 @@ window.GLOSSARY = [
   "refs": [
    [
     "2 Corinthians", 1,
-    [ 22 ] ] ]
+    [ 22 ] ],
+   [
+    "Ephesians", 4,
+    [ 30 ] ] ]
  },
  {
   "id": "earnest",
@@ -44394,7 +44595,10 @@ window.GLOSSARY = [
   "refs": [
    [
     "2 Corinthians", 12,
-    [ 19 ] ] ]
+    [ 19 ] ],
+   [
+    "Ephesians", 4,
+    [ 12, 16, 29 ] ] ]
  },
  {
   "id": "two-or-three-witnesses",
@@ -44680,6 +44884,9 @@ window.GLOSSARY = [
    [
     "Galatians", 1,
     [ 13 ] ],
+   [
+    "Ephesians", 4,
+    [ 22 ] ],
    [
     "Philippians", 1,
     [ 27 ] ] ]
@@ -45304,5 +45511,344 @@ window.GLOSSARY = [
    [
     "Philippians", 2,
     [ 27, 30 ] ] ]
+ },
+ {
+  "id": "prisoner-of-the-lord",
+  "kind": "term",
+  "name": "The prisoner of Jesus Christ (Paul in chains, and the Lord's man still)",
+  "refs": [
+   [
+    "Ephesians", 3,
+    [ 1 ] ],
+   [
+    "Ephesians", 4,
+    [ 1 ] ] ]
+ },
+ {
+  "id": "youward",
+  "kind": "term",
+  "name": "To youward (toward you, for your sake)",
+  "refs": [
+   [
+    "Ephesians", 3,
+    [ 2 ] ] ]
+ },
+ {
+  "id": "fellowheirs",
+  "kind": "term",
+  "name": "Fellowheirs (Gentiles sharing the same inheritance as the Jews)",
+  "refs": [
+   [
+    "Ephesians", 3,
+    [ 6 ] ] ]
+ },
+ {
+  "id": "unsearchable-riches",
+  "kind": "term",
+  "name": "The unsearchable riches of Christ (riches no one can track to the end)",
+  "refs": [
+   [
+    "Ephesians", 3,
+    [ 8 ] ] ]
+ },
+ {
+  "id": "manifold",
+  "kind": "term",
+  "name": "Manifold (many-sided, many-colored)",
+  "refs": [
+   [
+    "Amos", 5,
+    [ 12 ] ],
+   [
+    "Luke", 18,
+    [ 30 ] ],
+   [
+    "Ephesians", 3,
+    [ 10 ] ] ]
+ },
+ {
+  "id": "inner-man",
+  "kind": "term",
+  "name": "The inner man (the inside of a man, where God's Spirit gives strength)",
+  "refs": [
+   [
+    "Romans", 7,
+    [ 22 ] ],
+   [
+    "2 Corinthians", 4,
+    [ 16 ] ],
+   [
+    "Ephesians", 3,
+    [ 16 ] ] ]
+ },
+ {
+  "id": "rooted-and-grounded",
+  "kind": "term",
+  "name": "Rooted and grounded (deep like a tree's roots, solid like a foundation)",
+  "refs": [
+   [
+    "Ephesians", 3,
+    [ 17 ] ] ]
+ },
+ {
+  "id": "breadth-length-depth-height",
+  "kind": "term",
+  "name": "The breadth, and length, and depth, and height (the love of Christ, too big to measure)",
+  "refs": [
+   [
+    "Ephesians", 3,
+    [ 18 ] ] ]
+ },
+ {
+  "id": "exceeding-abundantly",
+  "kind": "term",
+  "name": "Exceeding abundantly above (far more than we ask or think)",
+  "refs": [
+   [
+    "Ephesians", 3,
+    [ 20 ] ] ]
+ },
+ {
+  "id": "vocation",
+  "kind": "term",
+  "name": "Vocation (calling: what God called you to be)",
+  "refs": [
+   [
+    "Ephesians", 4,
+    [ 1 ] ] ]
+ },
+ {
+  "id": "lowliness",
+  "kind": "term",
+  "name": "Lowliness (humility: not thinking you're bigger than you are)",
+  "refs": [
+   [
+    "Ephesians", 4,
+    [ 2 ] ],
+   [
+    "Philippians", 2,
+    [ 3 ] ] ]
+ },
+ {
+  "id": "forbearing",
+  "kind": "term",
+  "name": "Forbearing one another (putting up with each other in love)",
+  "refs": [
+   [
+    "Ephesians", 4,
+    [ 2 ] ] ]
+ },
+ {
+  "id": "led-captivity-captive",
+  "kind": "term",
+  "name": "Led captivity captive (a conquering king leading his captives home)",
+  "refs": [
+   [
+    "Ephesians", 4,
+    [ 8 ] ] ]
+ },
+ {
+  "id": "lower-parts-of-the-earth",
+  "kind": "term",
+  "name": "The lower parts of the earth (how far down Christ came for us)",
+  "refs": [
+   [
+    "Ephesians", 4,
+    [ 9 ] ] ]
+ },
+ {
+  "id": "pastors",
+  "kind": "person",
+  "name": "Pastors (shepherds of the church)",
+  "refs": [
+   [
+    "Ephesians", 4,
+    [ 11 ] ] ]
+ },
+ {
+  "id": "perfecting",
+  "kind": "term",
+  "name": "Perfecting (equipping, getting believers ready to serve)",
+  "refs": [
+   [
+    "Ephesians", 4,
+    [ 12 ] ] ]
+ },
+ {
+  "id": "wind-of-doctrine",
+  "kind": "term",
+  "name": "Every wind of doctrine (whatever teaching blows by)",
+  "refs": [
+   [
+    "Ephesians", 4,
+    [ 14 ] ] ]
+ },
+ {
+  "id": "sleight",
+  "kind": "term",
+  "name": "Sleight (trickery, like loaded dice)",
+  "refs": [
+   [
+    "Ephesians", 4,
+    [ 14 ] ] ]
+ },
+ {
+  "id": "truth-in-love",
+  "kind": "term",
+  "name": "Speaking the truth in love",
+  "refs": [
+   [
+    "Ephesians", 4,
+    [ 15 ] ] ]
+ },
+ {
+  "id": "fitly-joined",
+  "kind": "term",
+  "name": "Fitly joined together (every part of the body doing its share)",
+  "refs": [
+   [
+    "Ephesians", 4,
+    [ 16 ] ] ]
+ },
+ {
+  "id": "alienated",
+  "kind": "term",
+  "name": "Alienated (cut off, a stranger)",
+  "refs": [
+   [
+    "Ephesians", 4,
+    [ 18 ] ] ]
+ },
+ {
+  "id": "blindness-of-heart",
+  "kind": "term",
+  "name": "Blindness of heart (a heart gone hard, like a callus)",
+  "refs": [
+   [
+    "Ephesians", 4,
+    [ 18 ] ] ]
+ },
+ {
+  "id": "past-feeling",
+  "kind": "term",
+  "name": "Past feeling (numb: the conscience no longer stings)",
+  "refs": [
+   [
+    "Ephesians", 4,
+    [ 19 ] ] ]
+ },
+ {
+  "id": "new-man",
+  "kind": "term",
+  "name": "The new man (the new life God creates in a believer)",
+  "refs": [
+   [
+    "Ephesians", 4,
+    [ 24 ] ] ]
+ },
+ {
+  "id": "renewed-in-mind",
+  "kind": "term",
+  "name": "Renewed in the spirit of your mind (changed from the inside)",
+  "refs": [
+   [
+    "Ephesians", 4,
+    [ 23 ] ] ]
+ },
+ {
+  "id": "sun-go-down-on-wrath",
+  "kind": "term",
+  "name": "Let not the sun go down upon your wrath (settle anger the same day)",
+  "refs": [
+   [
+    "Ephesians", 4,
+    [ 26 ] ] ]
+ },
+ {
+  "id": "give-place-to-the-devil",
+  "kind": "term",
+  "name": "Give place to the devil (give him a foothold, a room)",
+  "refs": [
+   [
+    "Ephesians", 4,
+    [ 27 ] ] ]
+ },
+ {
+  "id": "steal-no-more",
+  "kind": "term",
+  "name": "Steal no more (the thief turned worker and giver)",
+  "refs": [
+   [
+    "Ephesians", 4,
+    [ 28 ] ] ]
+ },
+ {
+  "id": "corrupt-communication",
+  "kind": "term",
+  "name": "Corrupt communication (rotten talk)",
+  "refs": [
+   [
+    "Ephesians", 4,
+    [ 29 ] ] ]
+ },
+ {
+  "id": "grieve-not-the-spirit",
+  "kind": "term",
+  "name": "Grieve not the Holy Spirit (He is a Person who can be hurt)",
+  "refs": [
+   [
+    "Ephesians", 4,
+    [ 30 ] ] ]
+ },
+ {
+  "id": "bitterness",
+  "kind": "term",
+  "name": "Bitterness (a grudge kept and chewed on)",
+  "refs": [
+   [
+    "Ephesians", 4,
+    [ 31 ] ] ]
+ },
+ {
+  "id": "clamour",
+  "kind": "term",
+  "name": "Clamour (shouting, making a scene)",
+  "refs": [
+   [
+    "Ephesians", 4,
+    [ 31 ] ] ]
+ },
+ {
+  "id": "evil-speaking",
+  "kind": "term",
+  "name": "Evil speaking (running people down)",
+  "refs": [
+   [
+    "Ephesians", 4,
+    [ 31 ] ] ]
+ },
+ {
+  "id": "malice",
+  "kind": "term",
+  "name": "Malice (wanting someone to hurt)",
+  "refs": [
+   [
+    "1 Corinthians", 5,
+    [ 8 ] ],
+   [
+    "1 Corinthians", 14,
+    [ 20 ] ],
+   [
+    "Ephesians", 4,
+    [ 31 ] ] ]
+ },
+ {
+  "id": "tenderhearted",
+  "kind": "term",
+  "name": "Tenderhearted (a heart that can feel again)",
+  "refs": [
+   [
+    "Ephesians", 4,
+    [ 32 ] ] ]
  }
 ];

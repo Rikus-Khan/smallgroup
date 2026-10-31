@@ -1,0 +1,692 @@
+<!doctype html>
+<html lang="en" data-theme="scribe">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Ephesians 4</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="../assets/fonts.css">
+<link rel="stylesheet" href="../assets/deck.css">
+<link rel="stylesheet" href="../assets/themes.css">
+<style>
+
+/* ep04-book: where we are in Ephesians. Six chapter chips (.here is this one) over the letter's two halves (.now holds this chapter). */
+.ep04-chips { display: grid; grid-template-columns: repeat(6, 1fr); gap: 4px; margin: .5em 0 .8em; }
+.ep04-chips span { text-align: center; padding: .3em 0; border-radius: 6px; border-bottom: 3px solid var(--line-strong); font: 700 clamp(.8rem, .7rem + .4vw, 1.1rem) var(--sans); color: var(--ink-soft); opacity: 0; transition: opacity .4s ease; transition-delay: calc(var(--k, 0) * 70ms + 150ms); }
+.slide.active .ep04-chips span { opacity: 1; }
+.ep04-chips span.here { background: var(--accent); border-bottom-color: var(--accent); color: var(--on-accent); }
+.ep04-parts { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-bottom: 1em; }
+.ep04-part { --c: var(--accent); padding: .5em .8em .6em; border-top: 6px solid var(--c); border-radius: 0 0 10px 10px; background: color-mix(in srgb, var(--c) 8%, transparent); opacity: 0; transform: translateY(-10px); transition: opacity .5s ease, transform .5s ease; transition-delay: calc(var(--k, 0) * 260ms + 600ms); }
+.slide.active .ep04-part { opacity: 1; transform: none; }
+.ep04-part small { font: 700 clamp(.72rem, .68rem + .22vw, .9rem) var(--sans); color: var(--ink-soft); }
+.ep04-part b { display: block; font: 600 clamp(1.05rem, .9rem + .6vw, 1.5rem)/1.15 var(--serif); color: var(--ink); }
+.ep04-part i { display: block; font-style: normal; font-size: clamp(.82rem, .76rem + .3vw, 1rem); color: var(--ink-soft); }
+.ep04-part.now { background: color-mix(in srgb, var(--c) 20%, transparent); box-shadow: inset 0 0 0 2px var(--c); }
+.ep04-part.p1 { --c: var(--cool); } .ep04-part.p2 { --c: var(--leather-light); }
+@media (max-width: 600px) { .ep04-parts { grid-template-columns: 1fr; } }
+
+/* ep04-ones: the seven "one"s of verses 4-6, in three groups around the Spirit, the Lord, and the Father. Each tile pops in, in turn. */
+.ep04-ones { display: grid; grid-template-columns: 3fr 3fr 2fr; gap: 10px; margin: .6em 0 1em; }
+.ep04-grp { padding: .5em .6em .7em; border-radius: 12px; border: 2px solid var(--line-strong); background: color-mix(in srgb, var(--accent) 6%, transparent); }
+.ep04-grp h3 { margin: 0 0 .4em; font: 700 clamp(.75rem, .7rem + .25vw, .95rem) var(--sans); letter-spacing: .06em; text-transform: uppercase; color: var(--ink-soft); text-align: center; }
+.ep04-grp span { display: block; margin-top: 6px; padding: .45em .4em; border-radius: 8px; text-align: center; background: var(--accent); color: var(--on-accent); font: 600 clamp(1rem, .85rem + .6vw, 1.4rem)/1.15 var(--serif); opacity: 0; transform: scale(.6); transition: opacity .4s ease, transform .5s cubic-bezier(.3,1.6,.5,1); transition-delay: calc(var(--k, 0) * 320ms + 500ms); }
+.slide.active .ep04-grp span { opacity: 1; transform: none; }
+@media (max-width: 600px) { .ep04-ones { grid-template-columns: 1fr; } }
+
+/* ep04-flow: why Christ gives leaders (v. 11-13). Boxes light up left to right: Christ gives, leaders equip, the saints serve, the body grows. */
+.ep04-flow { list-style: none; padding: 0; margin: .6em 0 1em; display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.6em; }
+.ep04-flow li { position: relative; padding: .6em .7em .7em; border-radius: 10px; border: 2px solid var(--accent); background: color-mix(in srgb, var(--accent) 10%, transparent); font-size: clamp(.85rem, .78rem + .3vw, 1.05rem); line-height: 1.3; color: var(--ink-soft); opacity: 0; transform: translateX(-12px); transition: opacity .5s ease, transform .5s ease; transition-delay: calc(var(--k, 0) * 450ms + 400ms); }
+.ep04-flow li b { display: block; font: 600 clamp(1.05rem, .9rem + .6vw, 1.45rem)/1.15 var(--serif); color: var(--ink); margin-bottom: .2em; }
+.ep04-flow li:not(:last-child)::after { content: "→"; position: absolute; right: -1.25em; top: 50%; transform: translateY(-50%); font: 700 1.3rem var(--sans); color: var(--accent-hot); }
+.ep04-flow li:last-child { background: var(--accent); }
+.ep04-flow li:last-child, .ep04-flow li:last-child b { color: var(--on-accent); }
+.slide.active .ep04-flow li { opacity: 1; transform: none; }
+@media (max-width: 640px) { .ep04-flow { grid-template-columns: 1fr; gap: 1.3em; } .ep04-flow li:not(:last-child)::after { content: "↓"; right: auto; left: 50%; top: auto; bottom: -1.25em; transform: translateX(-50%); } }
+
+/* ep04-clothes: put off, be renewed, put on (v. 22-24). An old patched coat comes off into a heap (.ep04-off step), a light comes on in the mind
+   (.ep04-renew), and a new coat comes down onto the man (.ep04-on). */
+.ep04-ground { stroke: var(--line-strong); stroke-width: 3; }
+.ep04-head { fill: var(--leather-light); }
+.ep04-body { fill: var(--surface-2); stroke: var(--line-strong); stroke-width: 2; }
+.ep04-coat { stroke-width: 3; stroke-linejoin: round; }
+.ep04-old .ep04-coat { fill: color-mix(in srgb, var(--on-glow) 82%, var(--leather)); stroke: var(--on-glow); }
+.ep04-patch { fill: var(--leather); stroke: var(--on-glow); stroke-width: 1.5; stroke-dasharray: 3 3; }
+.ep04-old text { font: 600 17px var(--sans); fill: var(--glow); }
+.ep04-new .ep04-coat { fill: var(--accent); stroke: var(--accent-hot); }
+.ep04-new text { font: 700 17px var(--sans); fill: var(--on-accent); }
+.ep04-old { transform-box: fill-box; transform-origin: 50% 100%; transition: transform 1.4s cubic-bezier(.5,0,.4,1), opacity 1.4s ease; }
+.slide:has(.ep04-off.on) .ep04-old { transform: translate(-120px, -10px) rotate(-78deg) scale(.55); opacity: .7; }
+.ep04-mind { fill: var(--glow); opacity: 0; transition: opacity 1.2s ease; }
+.slide:has(.ep04-renew.on) .ep04-mind { opacity: .8; animation: ep04-pulse 2.4s ease-in-out infinite; }
+@keyframes ep04-pulse { 50% { opacity: .35; } }
+.ep04-new { opacity: 0; transform: translateY(-300px); transition: transform 1.3s cubic-bezier(.3,1.25,.5,1), opacity .6s ease; }
+.slide:has(.ep04-on.on) .ep04-new { opacity: 1; transform: none; }
+.ep04-cap { font: italic 600 20px var(--serif); fill: var(--ink-soft); opacity: 0; transition: opacity .8s ease .9s; }
+.slide:has(.ep04-off.on) .ep04-cap.a, .slide:has(.ep04-renew.on) .ep04-cap.b, .slide:has(.ep04-on.on) .ep04-cap.c { opacity: 1; }
+@media (max-width: 600px) { .ep04-old text, .ep04-new text { font-size: 20px; } .ep04-cap { font-size: 24px; } }
+
+/* ep04-sun: "let not the sun go down upon your wrath" (v. 26). The sun swings down to the horizon on a .ep04-go step, and the sky goes dark. */
+.ep04-day { fill: var(--glow); }
+.ep04-dark { fill: var(--on-glow); opacity: 0; transition: opacity 2.2s ease .4s; }
+.slide:has(.ep04-go.on) .ep04-dark { opacity: .92; }
+.ep04-swing { transform-box: view-box; transform-origin: 300px 380px; transform: rotate(-28deg); transition: transform 2.4s cubic-bezier(.5,0,.4,1); }
+.slide:has(.ep04-go.on) .ep04-swing { transform: rotate(52deg); }
+.ep04-sun { fill: var(--warm); }
+.ep04-rays { stroke: var(--warm); stroke-width: 4; stroke-linecap: round; }
+.ep04-land { fill: var(--leather); }
+.ep04-say { font: 700 22px var(--serif); transition: opacity 1s ease; }
+.ep04-say.a { fill: var(--on-glow); }
+.ep04-say.b { fill: var(--glow); opacity: 0; }
+.slide:has(.ep04-go.on) .ep04-say.a { opacity: 0; }
+.slide:has(.ep04-go.on) .ep04-say.b { opacity: 1; transition-delay: 1.6s; }
+@media (max-width: 600px) { .ep04-say { font-size: 27px; } }
+
+/* ep04-turn: the thief turned giver (v. 28). Three rows of money changing hands; the stealing row is struck out when the working row comes on. */
+.ep04-turn { display: grid; gap: .55em; margin: .6em 0 1em; }
+.ep04-r { display: grid; grid-template-columns: 1fr auto 1fr; gap: .2em .8em; align-items: center; position: relative; }
+.ep04-r span { padding: .4em .7em; border-radius: 10px; text-align: center; font: 600 clamp(1rem, .88rem + .55vw, 1.4rem)/1.2 var(--serif); border: 2px solid var(--line-strong); color: var(--ink); background: var(--surface); }
+.ep04-r .ar { border: 0; background: none; font: 700 1.6rem var(--sans); color: var(--accent-hot); padding: 0; }
+.ep04-r small { grid-column: 1 / -1; text-align: center; font: italic 400 clamp(.85rem, .78rem + .3vw, 1.05rem) var(--serif); color: var(--ink-soft); }
+.ep04-r.bad span { border-color: var(--danger); }
+.ep04-r.bad .ar { color: var(--danger); }
+.ep04-r.bad::after { content: ""; position: absolute; left: 0; right: 0; top: 33%; height: 3px; background: var(--danger); transform: scaleX(0); transform-origin: left; transition: transform .8s ease .3s; }
+.slide:has(.ep04-r.work.on) .ep04-r.bad::after { transform: scaleX(1); }
+.slide:has(.ep04-r.work.on) .ep04-r.bad { opacity: .55; }
+.ep04-r.give span:last-of-type { background: var(--accent); border-color: var(--accent); color: var(--on-accent); }
+
+/* ep04-seal: sealed unto the day of redemption (v. 30). A wax seal stamps down onto a letter when the slide opens. */
+.ep04-page { fill: var(--surface-2); stroke: var(--line-strong); stroke-width: 2.5; }
+.ep04-line { stroke: var(--ink-soft); stroke-width: 3; stroke-linecap: round; opacity: .45; }
+.ep04-wax { transform-box: fill-box; transform-origin: center; opacity: 0; transform: scale(2.2); transition: transform .6s cubic-bezier(.5,0,.6,1.4) .8s, opacity .3s ease .8s; }
+.slide.active .ep04-wax { opacity: 1; transform: none; }
+.ep04-blob { fill: var(--wine); }
+.ep04-mark { stroke: var(--glow); stroke-width: 6; stroke-linecap: round; fill: none; }
+.ep04-st { font: italic 600 19px var(--serif); fill: var(--ink-soft); }
+@media (max-width: 600px) { .ep04-st { font-size: 23px; } }
+</style>
+</head>
+<body>
+<main class="deck" id="deck">
+
+<!-- ======================= OPENING ======================= -->
+<section class="slide title">
+  <div class="inner">
+    <div class="emblem rise"></div>
+    <h1 class="rise" style="--d:1">Ephesians 4</h1>
+    <p class="sub rise" style="--d:3">Walk worthy</p>
+    <p class="tag rise" style="--d:5">Take off the old life like old clothes, put on the new, and live it on Monday: the truth, your temper, your hands, your mouth.</p>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <div>
+      <h2 class="rise" style="--d:1">Where we are in Ephesians</h2>
+      <div class="ep04-chips" role="img" aria-label="Ephesians has six chapters. We are in chapter 4, the first chapter of the second half: how to walk in it."><span style="--k:0">1</span><span style="--k:1">2</span><span style="--k:2">3</span><span class="here" style="--k:3">4</span><span style="--k:4">5</span><span style="--k:5">6</span></div>
+      <div class="ep04-parts">
+        <div class="ep04-part p1" style="--k:0"><small>Chapters 1–3</small><b>What God has done</b><i>Chosen in Christ, saved by grace, Jew and Gentile made one</i></div>
+        <div class="ep04-part p2 now" style="--k:1"><small>Chapters 4–6</small><b>How to walk in it</b><i>Unity, the new man, home and work, the armour of God</i></div>
+      </div>
+      <p class="note rise" style="--d:3">For three chapters Paul told us what God has done. He didn't give one command. Now the letter turns on a single word: <em>“I <u>therefore</u>…”</em></p>
+      <p class="note step">That's the order of the Christian life. First God saves you, by grace. Then you live like it. We don't walk right to get saved. We walk right because we are.</p>
+    </div>
+  </div>
+</section>
+
+<section class="slide watch">
+  <div class="inner">
+    <h2 class="rise">Things to watch for</h2>
+    <p class="lede rise" style="--d:1">Keep these questions in the back of your mind as we read. We'll come back to every one of them at the end.</p>
+    <ol class="seeds">
+      <li class="step"><span class="topic">Worthy</span><span class="seed-q">What does it look like to walk worthy of God's call?</span></li>
+      <li class="step"><span class="topic">One</span><span class="seed-q">What do all believers share?</span></li>
+      <li class="step"><span class="topic">Grow up</span><span class="seed-q">Why did Christ give pastors and teachers to the church?</span></li>
+      <li class="step"><span class="topic">Old and new</span><span class="seed-q">What does a believer take off, and what does he put on?</span></li>
+      <li class="step"><span class="topic">Anger</span><span class="seed-q">How should a believer handle his anger?</span></li>
+      <li class="step"><span class="topic">Forgiven</span><span class="seed-q">Why should we forgive one another?</span></li>
+    </ol>
+  </div>
+</section>
+
+<!-- ======================= PART ONE: WALK WORTHY, TOGETHER ======================= -->
+<section class="slide part">
+  <div class="inner">
+    <p class="part-n rise">Part one</p>
+    <h2 class="rise" style="--d:1">Walk worthy, together</h2>
+    <p class="range rise" style="--d:2">Verses 1–6</p>
+    <div class="rule"></div>
+    <p class="hook rise" style="--d:4">A life that matches the call, and a peace worth keeping.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="1-3" data-hl="walk worthy of the vocation wherewith ye are called|With all lowliness and meekness, with longsuffering, forbearing one another in love|keep the unity of the Spirit in the bond of peace"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <div class="split">
+      <div class="stage">
+        <svg class="scale now" style="--at:300px 80px; --from:-12deg; --tip:0deg; --wait:.9s" viewBox="0 0 600 320" role="img" aria-label="A balance scale. On one side, the call of God. On the other, the way a man walks. The scale settles level: a walk that weighs the same as the call.">
+          <path d="M240 300 L360 300 L330 280 L270 280 Z" style="fill:var(--surface-2);stroke:var(--ink-soft)" stroke-width="2.5"/>
+          <rect x="294" y="74" width="12" height="208" style="fill:var(--ink-soft)"/>
+          <g class="scale-beam">
+            <rect x="130" y="74" width="340" height="12" rx="6" style="fill:var(--ink)"/>
+            <circle cx="300" cy="80" r="11" style="fill:var(--accent)"/>
+            <g fill="none" stroke-width="2" style="stroke:var(--ink-soft)"><path d="M140 86 L100 196 M140 86 L180 196"/><path d="M460 86 L420 196 M460 86 L500 196"/></g>
+            <path d="M88 196 L192 196 Q140 236 88 196 Z" stroke-width="2.5" style="fill:var(--surface-2);stroke:var(--ink-soft)"/>
+            <path d="M408 196 L512 196 Q460 236 408 196 Z" stroke-width="2.5" style="fill:var(--surface-2);stroke:var(--ink-soft)"/>
+            <text x="140" y="186" text-anchor="middle" font-size="21" font-weight="700" style="fill:var(--accent-hot)">the call</text>
+            <text x="460" y="186" text-anchor="middle" font-size="21" font-weight="700" style="fill:var(--ink)">the walk</text>
+          </g>
+          <text x="300" y="40" text-anchor="middle" font-size="22" font-weight="700" style="fill:var(--accent-hot)">worthy: the same weight</text>
+        </svg>
+      </div>
+      <div>
+        <h2 class="rise" style="--d:1">Worthy</h2>
+        <p class="note rise" style="--d:2"><em>Worthy</em> is a word from the scales: to weigh as much as. God called you to be His son. Now let the way you walk weigh the same as that call.</p>
+        <p class="note step">Not to earn the call. You already have it. <em>Vocation</em> just means calling. Paul is asking a man to live up to what he already is.</p>
+        <p class="note step">And notice who's asking: <em>“the prisoner of the Lord.”</em> Paul is in chains, and he's still walking worthy. A hard place is no excuse to walk small.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise">What a worthy walk looks like</h2>
+    <ol class="signs">
+      <li class="rise" style="--d:1"><b>Lowliness</b>not thinking you're bigger than you are</li>
+      <li class="rise" style="--d:2"><b>Meekness</b>strength under control, like a strong horse that takes the bridle</li>
+      <li class="rise" style="--d:3"><b>Longsuffering</b>a long fuse</li>
+      <li class="rise" style="--d:4"><b>Forbearing one another</b>putting up with each other, in love</li>
+    </ol>
+    <p class="note step">Notice what's missing: talent, money, a clean record. Every one of these is about how you treat the man next to you. Some of us came up where a short fuse kept you alive. In Christ, a long one is the strong thing.</p>
+    <p class="note step"><em>“Endeavouring to keep the unity of the Spirit.”</em> You don't make the unity. The Spirit already made it. Your job is to keep it: don't be the man who breaks the peace at the meeting or the table.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="4-6" data-hl="There is one body, and one Spirit|One Lord, one faith, one baptism|One God and Father of all"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise">Seven “ones”</h2>
+    <div class="ep04-ones" role="img" aria-label="Seven ones in three groups. Around the Spirit: one body, one Spirit, one hope. Around the Lord: one Lord, one faith, one baptism. And one God and Father of all.">
+      <div class="ep04-grp"><h3>The Spirit</h3><span style="--k:0">one body</span><span style="--k:1">one Spirit</span><span style="--k:2">one hope</span></div>
+      <div class="ep04-grp"><h3>The Lord</h3><span style="--k:3">one Lord</span><span style="--k:4">one faith</span><span style="--k:5">one baptism</span></div>
+      <div class="ep04-grp"><h3>The Father</h3><span style="--k:6">one God and Father of all</span></div>
+    </div>
+    <p class="note step">This is what you share with every true believer on earth, whatever his color, his church, or his record. Father, Son and Spirit, one God, are at the center of it.</p>
+    <p class="note step"><em>One baptism</em>: many Bible teachers take it as the believer's baptism in water; others as the Spirit placing every believer into the one body (1 Corinthians 12:13). Either way, it's one. Baptism doesn't save you. It's a believer's first step of obedience, a picture of being buried and raised with Christ.</p>
+  </div>
+</section>
+
+<!-- ======================= PART TWO: GIFTS TO GROW UP ======================= -->
+<section class="slide part">
+  <div class="inner">
+    <p class="part-n rise">Part two</p>
+    <h2 class="rise" style="--d:1">Gifts to grow up</h2>
+    <p class="range rise" style="--d:2">Verses 7–16</p>
+    <div class="rule"></div>
+    <p class="hook rise" style="--d:4">The risen Christ hands out gifts, so His people can stop being children.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="7-8" data-hl="unto every one of us is given grace|he led captivity captive, and gave gifts unto men"></section>
+
+<section class="slide verse" data-v="9-10" data-hl="descended first into the lower parts of the earth|ascended up far above all heavens, that he might fill all things"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <div class="split">
+      <div class="stage">
+        <svg class="curve" viewBox="0 0 600 330" role="img" aria-label="A line starts high, in glory, falls all the way down to the lower parts of the earth, then climbs higher than it started: far above all heavens.">
+          <line class="curve-base" x1="10" y1="80" x2="590" y2="80"/>
+          <path class="curve-line" pathLength="1" d="M20 80 C 90 80, 130 120, 170 220 C 200 300, 250 300, 280 220 C 330 110, 400 30, 580 22"/>
+          <g class="curve-pt low" style="--at:1.6s"><circle cx="225" cy="280" r="9"/><text x="225" y="318" text-anchor="middle">“the lower parts of the earth”</text></g>
+          <g class="curve-pt high" style="--at:3.4s"><circle cx="575" cy="23" r="10"/><text class="q" x="590" y="130" text-anchor="end">“far above</text><text class="q" x="590" y="154" text-anchor="end">all heavens”</text></g>
+        </svg>
+      </div>
+      <div>
+        <h2 class="rise" style="--d:1">Down, then up</h2>
+        <p class="note rise" style="--d:2">Paul borrows a picture from Psalm 68: a king coming home from war, leading his captives in a parade and handing out gifts.</p>
+        <blockquote class="quote step"><p>“Thou hast ascended on high, thou hast led captivity captive: thou hast received gifts for men; yea, for the rebellious also, that the LORD God might dwell among them.”</p><cite>Psalm 68:18</cite></blockquote>
+        <p class="note step">Before Christ went up, He came all the way down: to earth, to the cross, to the grave. (Teachers differ on the details of verse 9.) He went lower than you ever fell, and came back with gifts, <em>“for the rebellious also.”</em></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="slide verse" data-v="11-13" data-hl="pastors and teachers|For the perfecting of the saints, for the work of the ministry, for the edifying of the body of Christ|unto a perfect man"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise">Who does the work?</h2>
+    <ol class="ep04-flow" aria-label="Four boxes in a row. Christ gives leaders. The leaders equip the saints. The saints do the work of the ministry. The body of Christ is built up.">
+      <li style="--k:0"><b>Christ gives</b>apostles, prophets, evangelists, pastors and teachers</li>
+      <li style="--k:1"><b>They equip</b>“for the perfecting of the saints”</li>
+      <li style="--k:2"><b>The saints serve</b>“for the work of the ministry”</li>
+      <li style="--k:3"><b>The body grows</b>“the edifying of the body of Christ”</li>
+    </ol>
+    <p class="note step"><em>Perfecting</em> is the word for mending nets or setting a broken bone: getting something ready to work. The pastor isn't hired to do the ministry for you. He's there to get you ready to do it. (The apostles and prophets laid the foundation in the first days, 2:20; pastors and teachers keep building on it.)</p>
+    <p class="note step">The goal is <em>“a perfect man”</em>: a full-grown man, measured by Christ Himself. Nobody gets there alone, and nobody gets left out of the work. You have a part.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="14-16" data-hl="no more children, tossed to and fro, and carried about with every wind of doctrine|speaking the truth in love|every joint supplieth"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise">Tossed, or grown</h2>
+    <div class="stage rise" style="--d:2">
+      <svg class="still" viewBox="0 0 600 170" role="img" aria-label="Choppy, tossing water settles into a calm, steady line.">
+        <defs><clipPath id="ep04-clip"><rect x="0" y="0" width="600" height="170"/></clipPath></defs>
+        <g clip-path="url(#ep04-clip)">
+          <g class="still-roll"><path class="still-chop" d="M0 95 Q25 45 50 95 T100 95 T150 95 T200 95 T250 95 T300 95 T350 95 T400 95 T450 95 T500 95 T550 95 T600 95 T650 95 T700 95"/></g>
+          <g class="still-roll b"><path class="still-chop b" d="M0 100 Q25 135 50 100 T100 100 T150 100 T200 100 T250 100 T300 100 T350 100 T400 100 T450 100 T500 100 T550 100 T600 100 T650 100 T700 100"/></g>
+          <path class="still-calm" d="M0 98 Q150 92 300 98 T600 98"/>
+        </g>
+        <text class="before" x="300" y="28" text-anchor="middle" style="fill:var(--cool)">“tossed to and fro”</text>
+        <text class="after" x="300" y="28" text-anchor="middle" style="fill:var(--accent-hot)">“grow up into him”</text>
+      </svg>
+    </div>
+    <p class="note rise" style="--d:3">A child believes whatever the last man told him. Every new teacher, every video, every slick voice blows him somewhere else.</p>
+    <p class="note step still-go"><em>Sleight</em> is the word for playing with dice: loaded dice. Some of us know con men. There are con men with Bibles too. The answer isn't to trust nobody. It's to grow up, rooted in the Word with the church, until the wind doesn't move you.</p>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise">Speaking the truth in love</h2>
+    <ul class="nots">
+      <li class="step"><span class="k">truth without love</span><span class="why">a club: it beats a man down and walks off</span></li>
+      <li class="step"><span class="k">love without truth</span><span class="why">enabling: it leaves him in the ditch and calls it kindness</span></li>
+      <li class="step yes"><span class="k">the truth in love</span><span class="why">says the hard thing, and stays to help</span></li>
+    </ul>
+    <p class="note step">Then verse 16: the body grows <em>“by that which every joint supplieth.”</em> A joint is small, but without it the arm doesn't work. Your phone call to a brother who's slipping, the hard word you say gently: that's you doing your part.</p>
+  </div>
+</section>
+
+<!-- ======================= PART THREE: OLD CLOTHES, NEW CLOTHES ======================= -->
+<section class="slide part">
+  <div class="inner">
+    <p class="part-n rise">Part three</p>
+    <h2 class="rise" style="--d:1">Old clothes, new clothes</h2>
+    <p class="range rise" style="--d:2">Verses 17–24</p>
+    <div class="rule"></div>
+    <p class="hook rise" style="--d:4">Where the old life leads, and how a man changes.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="17-19" data-hl="walk not as other Gentiles walk, in the vanity of their mind|alienated from the life of God|Who being past feeling have given themselves over unto lasciviousness, to work all uncleanness with greediness"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise">The way down</h2>
+    <ol class="stairs down" style="--n:6" aria-label="Six steps down: an empty mind; understanding darkened; cut off from the life of God; a hard heart; past feeling; given over, always wanting more.">
+      <li style="--k:0"><b>vanity</b>an empty, aimless mind</li>
+      <li style="--k:1"><b>darkened</b>can't see straight</li>
+      <li style="--k:2"><b>alienated</b>cut off from the life of God</li>
+      <li style="--k:3"><b>blindness</b>a heart gone hard, like a callus</li>
+      <li style="--k:4"><b>past feeling</b>numb</li>
+      <li style="--k:5"><b>greediness</b>always more, never enough</li>
+    </ol>
+    <p class="note step">Ephesus was a city of idols and magic (Acts 19:19). But this is also the story of every addiction: the heart grows a callus, the conscience goes numb, and then it takes more and more to feel anything at all.</p>
+    <p class="note step">If you know these stairs, you're not shamed here. You're being shown where they lead, by a God who came down them to get you. <em>“But ye have not so learned Christ.”</em></p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="20-21" data-hl="But ye have not so learned Christ|as the truth is in Jesus"></section>
+
+<section class="slide verse" data-v="22-24" data-hl="put off concerning the former conversation the old man|be renewed in the spirit of your mind|put on the new man, which after God is created in righteousness and true holiness"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <div class="split">
+      <div class="stage">
+        <svg viewBox="0 0 460 420" style="max-height:58vh" role="img" aria-label="A man in an old, dark, patched coat marked lying, rage, stealing, rotten talk. On the first step the old coat comes off and falls in a heap. On the second a light comes on in his mind. On the third a new coat comes down onto him, marked truth, kindness, honest work, forgiving.">
+          <line class="ep04-ground" x1="20" y1="392" x2="440" y2="392"/>
+          <circle class="ep04-mind" cx="300" cy="74" r="58"/>
+          <circle class="ep04-head" cx="300" cy="74" r="36"/>
+          <path class="ep04-body" d="M300 112 C 250 112, 232 126, 226 150 L 216 300 L 236 300 L 240 392 L 290 392 L 300 320 L 310 392 L 360 392 L 364 300 L 384 300 L 374 150 C 368 126, 350 112, 300 112 Z"/>
+          <g class="ep04-old">
+            <path class="ep04-coat" d="M300 118 C 252 116, 228 128, 220 152 L 206 318 L 230 326 L 236 352 L 262 344 L 284 360 L 300 160 L 316 360 L 338 344 L 364 352 L 370 326 L 394 318 L 380 152 C 372 128, 348 116, 300 118 Z"/>
+            <rect class="ep04-patch" x="236" y="230" width="34" height="30" transform="rotate(-8 253 245)"/>
+            <rect class="ep04-patch" x="334" y="276" width="30" height="26" transform="rotate(10 349 289)"/>
+            <text x="262" y="196" text-anchor="middle">lying</text>
+            <text x="340" y="196" text-anchor="middle">rage</text>
+            <text x="262" y="300" text-anchor="middle">stealing</text>
+            <text x="340" y="250" text-anchor="middle">rotten</text>
+            <text x="340" y="268" text-anchor="middle">talk</text>
+          </g>
+          <g class="ep04-new">
+            <path class="ep04-coat" d="M300 118 C 252 116, 228 128, 220 152 L 210 340 L 288 340 L 300 160 L 312 340 L 390 340 L 380 152 C 372 128, 348 116, 300 118 Z"/>
+            <text x="258" y="196" text-anchor="middle">truth</text>
+            <text x="342" y="196" text-anchor="middle">kindness</text>
+            <text x="256" y="262" text-anchor="middle">honest</text>
+            <text x="256" y="280" text-anchor="middle">work</text>
+            <text x="344" y="270" text-anchor="middle">forgiving</text>
+          </g>
+          <text class="ep04-cap a" x="105" y="250" text-anchor="middle">put off</text>
+          <text class="ep04-cap b" x="440" y="60" text-anchor="end">renewed</text>
+          <text class="ep04-cap c" x="425" y="300" text-anchor="middle">put on</text>
+        </svg>
+      </div>
+      <div>
+        <h2 class="rise" style="--d:1">Change of clothes</h2>
+        <p class="note rise" style="--d:2"><em>Conversation</em> is the old word for your whole way of life. <em>The old man</em> is who you were before Christ: rotten, run by <em>“deceitful lusts”</em>, wants that lie to you.</p>
+        <p class="note step ep04-off"><strong>Put off</strong> the old man, like a filthy coat you're done wearing.</p>
+        <p class="note step ep04-renew"><strong>Be renewed</strong> in the spirit of your mind. The change starts on the inside, and it keeps going, day by day, as you fill your mind with God's Word.</p>
+        <p class="note step ep04-on"><strong>Put on</strong> the new man, <em>“created in righteousness and true holiness.”</em> God made it. You put it on, every morning.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise">Already, and every day</h2>
+    <div class="ifthen step">
+      <div class="if"><small>Done at the cross</small>“our old man is crucified with him”</div>
+      <span class="arrow" aria-hidden="true">→</span>
+      <div class="then"><small>So, every day</small>quit wearing the dead man's clothes</div>
+    </div>
+    <blockquote class="quote step"><p>“Knowing this, that our old man is crucified with him, that the body of sin might be destroyed, that henceforth we should not serve sin.”</p><cite>Romans 6:6</cite></blockquote>
+    <p class="note step">The old man has no claim on you. But the old coat still hangs in the closet, and it fits easy. When you reach for it, and you will, don't hate yourself. Take it off again, and put on the new one. That's the Christian life: a daily change of clothes.</p>
+  </div>
+</section>
+
+<!-- ======================= PART FOUR: ON MONDAY ======================= -->
+<section class="slide part">
+  <div class="inner">
+    <p class="part-n rise">Part four</p>
+    <h2 class="rise" style="--d:1">What it looks like on Monday</h2>
+    <p class="range rise" style="--d:2">Verses 25–32</p>
+    <div class="rule"></div>
+    <p class="hook rise" style="--d:4">Your mouth, your temper, your hands, and your heart.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="25-27" data-hl="putting away lying, speak every man truth with his neighbour|Be ye angry, and sin not: let not the sun go down upon your wrath|Neither give place to the devil"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise">No more lies</h2>
+    <div class="ifthen step">
+      <div class="if"><small>The reason</small>“we are members one of another”</div>
+      <span class="arrow" aria-hidden="true">→</span>
+      <div class="then"><small>So</small>“speak every man truth with his neighbour”</div>
+    </div>
+    <p class="note step">Every addiction runs on lies: where you were, what you spent, how much you had. Paul's reason to quit isn't a rule. It's that we're one body. If your eye lied to your hand, you'd get burned.</p>
+    <p class="note step">Today, tell one person the plain truth about something you'd usually shade. That's how a man starts to be trusted again.</p>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <div class="split">
+      <div class="stage">
+        <svg viewBox="0 0 600 320" style="max-height:48vh" role="img" aria-label="A daytime sky with the sun high. On a step the sun swings down to the horizon and the sky goes dark: let not the sun go down upon your wrath.">
+          <defs><clipPath id="ep04-sky"><rect x="0" y="0" width="600" height="320" rx="16"/></clipPath></defs>
+          <g clip-path="url(#ep04-sky)">
+            <rect class="ep04-day" x="0" y="0" width="600" height="320"/>
+            <rect class="ep04-dark" x="0" y="0" width="600" height="320"/>
+            <g class="ep04-swing">
+              <circle class="ep04-sun" cx="300" cy="110" r="38"/>
+              <path class="ep04-rays" d="M300 52 V 36 M300 168 V 184 M242 110 H 226 M358 110 H 374 M259 69 L 248 58 M341 151 L 352 162 M341 69 L 352 58 M259 151 L 248 162"/>
+            </g>
+            <rect class="ep04-land" x="0" y="250" width="600" height="70"/>
+          </g>
+          <text class="ep04-say a" x="300" y="300" text-anchor="middle" style="fill:var(--glow)">deal with it while it's still day</text>
+          <text class="ep04-say b" x="300" y="60" text-anchor="middle">don't take it to bed</text>
+        </svg>
+      </div>
+      <div>
+        <h2 class="rise" style="--d:1">Angry, and not sinning</h2>
+        <p class="note rise" style="--d:2">Anger itself isn't sin. Jesus was angry. But anger is the fastest road back to the old man, and some of us have done things in anger we can't take back.</p>
+        <p class="note step ep04-go">So put a clock on it: <em>“let not the sun go down upon your wrath.”</em> Settle it, pray it through, walk away, make it right. Don't sleep on it and let it set.</p>
+        <p class="note step"><em>“Neither give place to the devil.”</em> <em>Place</em> means a foothold, a room. Anger you keep overnight is a room you rent out to the devil.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="slide verse" data-v="28" data-hl="Let him that stole steal no more|working with his hands the thing which is good, that he may have to give to him that needeth"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise">The thief turned giver</h2>
+    <div class="ep04-turn">
+      <div class="ep04-r bad step"><span>his neighbour</span><span class="ar">→</span><span>my pocket</span><small>“Let him that stole steal no more”</small></div>
+      <div class="ep04-r work step"><span>honest work</span><span class="ar">→</span><span>my pocket</span><small>“let him labour, working with his hands the thing which is good”</small></div>
+      <div class="ep04-r give step"><span>my pocket</span><span class="ar">→</span><span>him that needeth</span><small>“that he may have to give”</small></div>
+    </div>
+    <p class="note step">Watch the money turn around. The man who took becomes the man who gives. That's not just quitting a sin. That's the new man. Paul lived it: <em>“these hands have ministered unto my necessities”</em> (Acts 20:34), he told the Ephesian elders.</p>
+    <p class="note step">If you're stocking shelves, swinging a hammer, washing dishes: that's not a step down from the hustle. It's holy work. Then give a little, even a few dollars, to somebody worse off. The giving is the point.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="29-30" data-hl="Let no corrupt communication proceed out of your mouth|minister grace unto the hearers|grieve not the holy Spirit of God, whereby ye are sealed unto the day of redemption"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <div class="split">
+      <div class="stage">
+        <svg viewBox="0 0 420 300" style="max-height:44vh" role="img" aria-label="A folded letter. A red wax seal stamps down onto it: sealed unto the day of redemption.">
+          <rect class="ep04-page" x="40" y="30" width="340" height="220" rx="8"/>
+          <path class="ep04-line" d="M80 80 H 340 M80 112 H 320 M80 144 H 300 M80 176 H 220"/>
+          <g class="ep04-wax">
+            <path class="ep04-blob" d="M300 150 C 330 146, 352 166, 350 196 C 352 226, 328 244, 300 242 C 270 246, 248 224, 250 196 C 246 168, 272 148, 300 150 Z"/>
+            <circle cx="300" cy="196" r="34" fill="none" style="stroke:var(--glow)" stroke-width="2.5" opacity=".55"/>
+            <path class="ep04-mark" d="M300 174 V 220 M284 190 H 316"/>
+          </g>
+          <text class="ep04-st" x="210" y="286" text-anchor="middle">“unto the day of redemption”</text>
+        </svg>
+      </div>
+      <div>
+        <h2 class="rise" style="--d:1">Words, and the Spirit</h2>
+        <p class="note rise" style="--d:2"><em>Corrupt</em> means rotten, like spoiled fruit. Jail talk, street talk, the joke that tears a man down. Instead: words that <em>“minister grace unto the hearers”</em>, that build up.</p>
+        <p class="note step">The Holy Spirit is a Person. Only a person can be <em>grieved</em>. Our rotten words and ways hurt Him, because He lives in us.</p>
+        <p class="note step">But look: grieved, not gone. You <em>“are sealed unto the day of redemption.”</em> A seal says <em>this belongs to me</em>, and nobody breaks it till it gets where it's going.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="slide verse" data-v="31-32" data-hl="Let all bitterness, and wrath, and anger, and clamour, and evil speaking, be put away from you, with all malice|be ye kind one to another, tenderhearted, forgiving one another"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise">Put away, put on</h2>
+    <ul class="nots">
+      <li class="step"><span class="k">bitterness</span><span class="why">the old grudge you keep chewing</span></li>
+      <li class="step"><span class="k">wrath and anger</span><span class="why">the blow-up, and the slow burn</span></li>
+      <li class="step"><span class="k">clamour</span><span class="why">shouting, the scene</span></li>
+      <li class="step"><span class="k">evil speaking and malice</span><span class="why">running a man down, wanting him to hurt</span></li>
+      <li class="step yes"><span class="k">kind, tenderhearted, forgiving</span><span class="why">“even as God for Christ's sake hath forgiven you”</span></li>
+    </ul>
+    <p class="note step">These are the last pockets of the old coat. <em>Tenderhearted</em> is the opposite of the callused heart back in verse 18: a heart that can feel again. That's what the Spirit is growing in you.</p>
+    <p class="note step">You won't scrub these out with willpower. You put them away, again and again, and you put on kindness, at home, at work, today.</p>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise">Forgiven much</h2>
+    <div class="temples">
+      <div class="stone-t rise" style="--d:2"><h3>Talents I owed my lord</h3><div class="big">10,000</div><p>In Jesus' story, more than a man could earn in thousands of lifetimes. Forgiven, all of it (Matthew 18:24–27).</p></div>
+      <div class="body-t step"><h3>Pence my brother owes me</h3><div class="big">100</div><p>A few months' wages. Real money, and a real hurt. But small next to what I was forgiven.</p></div>
+    </div>
+    <blockquote class="quote step"><p>“Shouldest not thou also have had compassion on thy fellowservant, even as I had pity on thee?”</p><cite>Matthew 18:33</cite></blockquote>
+    <p class="note step">Forgiving isn't saying it didn't matter, and it doesn't mean trusting a man who isn't safe. It means you tear up the bill. Name one person you're still holding a bill on, and give it to God today.</p>
+  </div>
+</section>
+
+<!-- ======================= CLOSING ======================= -->
+<section class="slide remember">
+  <div class="inner">
+    <h2 class="rise">Points to remember</h2>
+    <ol class="seeds">
+      <li class="step"><span class="topic">Worthy</span><span class="seed-q">“Walk worthy of the vocation wherewith ye are called” <cite>4:1</cite></span><span class="take">Live up to the call you already have: lowly, meek, patient, putting up with each other.</span></li>
+      <li class="step"><span class="topic">One</span><span class="seed-q">“One Lord, one faith, one baptism” <cite>4:5</cite></span><span class="take">Every believer shares one body, one Spirit, one Lord, one Father. Keep the peace.</span></li>
+      <li class="step"><span class="topic">Grow up</span><span class="seed-q">“For the perfecting of the saints, for the work of the ministry” <cite>4:12</cite></span><span class="take">Leaders equip; every believer serves; the body grows up into Christ.</span></li>
+      <li class="step"><span class="topic">Old and new</span><span class="seed-q">“Put off… the old man… put on the new man” <cite>4:22–24</cite></span><span class="take">Take off the old life like old clothes, be renewed inside, put on the new.</span></li>
+      <li class="step"><span class="topic">Anger</span><span class="seed-q">“Let not the sun go down upon your wrath” <cite>4:26</cite></span><span class="take">Deal with it before sundown, and give the devil no room.</span></li>
+      <li class="step"><span class="topic">Forgiven</span><span class="seed-q">“Even as God for Christ's sake hath forgiven you” <cite>4:32</cite></span><span class="take">We forgive because we have been forgiven so much more.</span></li>
+    </ol>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 1 of 6</p>
+      <span class="topic">Worthy</span>
+      <h2>What does it look like to walk worthy of God's call?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="1"></blockquote>
+      <blockquote class="quote step" data-q="2-3"></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>A life that weighs the same as the call. Not proving yourself, but living like what you already are: humble, gentle, slow to blow up, putting up with each other in love, and keeping the peace the Spirit made.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 2 of 6</p>
+      <span class="topic">One</span>
+      <h2>What do all believers share?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="4-6"></blockquote>
+      <blockquote class="quote step"><p>“For by one Spirit are we all baptized into one body, whether we be Jews or Gentiles, whether we be bond or free; and have been all made to drink into one Spirit.”</p><cite>1 Corinthians 12:13</cite></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>One body, one Spirit, one hope, one Lord, one faith, one baptism, one God and Father of all. Whatever our past or background, every believer belongs to the same family, under the same Lord.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 3 of 6</p>
+      <span class="topic">Grow up</span>
+      <h2>Why did Christ give pastors and teachers to the church?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="11-12"></blockquote>
+      <blockquote class="quote step" data-q="14"></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>To equip the believers to do the work of the ministry, so the whole body is built up. The goal is grown men, steady in the faith, not children blown around by every new teaching.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 4 of 6</p>
+      <span class="topic">Old and new</span>
+      <h2>What does a believer take off, and what does he put on?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="22-24"></blockquote>
+      <blockquote class="quote step"><p>“Therefore if any man be in Christ, he is a new creature: old things are passed away; behold, all things are become new.”</p><cite>2 Corinthians 5:17</cite></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>He takes off the old man, the old way of life run by lies and lusts. He is renewed in his mind, and puts on the new man God created, in righteousness and true holiness. He does it again every day.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 5 of 6</p>
+      <span class="topic">Anger</span>
+      <h2>How should a believer handle his anger?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="26-27"></blockquote>
+      <blockquote class="quote step"><p>“Wherefore, my beloved brethren, let every man be swift to hear, slow to speak, slow to wrath: For the wrath of man worketh not the righteousness of God.”</p><cite>James 1:19–20</cite></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>Being angry is not always sin, but he must not let it turn into sin. He deals with it the same day, before the sun goes down, so the devil gets no foothold. Slow to wrath, quick to make it right.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 6 of 6</p>
+      <span class="topic">Forgiven</span>
+      <h2>Why should we forgive one another?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="32"></blockquote>
+      <blockquote class="quote step"><p>“Forbearing one another, and forgiving one another, if any man have a quarrel against any: even as Christ forgave you, so also do ye.”</p><cite>Colossians 3:13</cite></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>Because God, for Christ's sake, has forgiven us far more than anyone will ever owe us. A forgiven man forgives. It doesn't erase the hurt, but it tears up the bill.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide prayer">
+  <div class="inner">
+    <div class="emblem rise"></div>
+    <h2 class="rise" style="--d:1">Prayer requests</h2>
+    <p class="ask-line rise" style="--d:2">What can we pray about for you today?</p>
+    <blockquote class="quote rise" style="--d:4"><p>“And be ye kind one to another, tenderhearted, forgiving one another, even as God for Christ’s sake hath forgiven you.”</p><cite>Ephesians 4:32</cite></blockquote>
+  </div>
+</section>
+
+</main>
+
+<script>
+// King James Version, Ephesians chapter 4
+const V = {
+  1: "I therefore, the prisoner of the Lord, beseech you that ye walk worthy of the vocation wherewith ye are called,",
+  2: "With all lowliness and meekness, with longsuffering, forbearing one another in love;",
+  3: "Endeavouring to keep the unity of the Spirit in the bond of peace.",
+  4: "There is one body, and one Spirit, even as ye are called in one hope of your calling;",
+  5: "One Lord, one faith, one baptism,",
+  6: "One God and Father of all, who is above all, and through all, and in you all.",
+  7: "But unto every one of us is given grace according to the measure of the gift of Christ.",
+  8: "Wherefore he saith, When he ascended up on high, he led captivity captive, and gave gifts unto men.",
+  9: "(Now that he ascended, what is it but that he also descended first into the lower parts of the earth?",
+  10: "He that descended is the same also that ascended up far above all heavens, that he might fill all things.)",
+  11: "And he gave some, apostles; and some, prophets; and some, evangelists; and some, pastors and teachers;",
+  12: "For the perfecting of the saints, for the work of the ministry, for the edifying of the body of Christ:",
+  13: "Till we all come in the unity of the faith, and of the knowledge of the Son of God, unto a perfect man, unto the measure of the stature of the fulness of Christ:",
+  14: "That we henceforth be no more children, tossed to and fro, and carried about with every wind of doctrine, by the sleight of men, and cunning craftiness, whereby they lie in wait to deceive;",
+  15: "But speaking the truth in love, may grow up into him in all things, which is the head, even Christ:",
+  16: "From whom the whole body fitly joined together and compacted by that which every joint supplieth, according to the effectual working in the measure of every part, maketh increase of the body unto the edifying of itself in love.",
+  17: "This I say therefore, and testify in the Lord, that ye henceforth walk not as other Gentiles walk, in the vanity of their mind,",
+  18: "Having the understanding darkened, being alienated from the life of God through the ignorance that is in them, because of the blindness of their heart:",
+  19: "Who being past feeling have given themselves over unto lasciviousness, to work all uncleanness with greediness.",
+  20: "But ye have not so learned Christ;",
+  21: "If so be that ye have heard him, and have been taught by him, as the truth is in Jesus:",
+  22: "That ye put off concerning the former conversation the old man, which is corrupt according to the deceitful lusts;",
+  23: "And be renewed in the spirit of your mind;",
+  24: "And that ye put on the new man, which after God is created in righteousness and true holiness.",
+  25: "Wherefore putting away lying, speak every man truth with his neighbour: for we are members one of another.",
+  26: "Be ye angry, and sin not: let not the sun go down upon your wrath:",
+  27: "Neither give place to the devil.",
+  28: "Let him that stole steal no more: but rather let him labour, working with his hands the thing which is good, that he may have to give to him that needeth.",
+  29: "Let no corrupt communication proceed out of your mouth, but that which is good to the use of edifying, that it may minister grace unto the hearers.",
+  30: "And grieve not the holy Spirit of God, whereby ye are sealed unto the day of redemption.",
+  31: "Let all bitterness, and wrath, and anger, and clamour, and evil speaking, be put away from you, with all malice:",
+  32: "And be ye kind one to another, tenderhearted, forgiving one another, even as God for Christ’s sake hath forgiven you."
+};
+const BOOK = "Ephesians 4";
+</script>
+<script src="../assets/deck.js"></script>
+</body>
+</html>

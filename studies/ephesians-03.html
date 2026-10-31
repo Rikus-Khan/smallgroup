@@ -1,0 +1,619 @@
+<!doctype html>
+<html lang="en" data-theme="night">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Ephesians 3</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="../assets/fonts.css">
+<link rel="stylesheet" href="../assets/deck.css">
+<link rel="stylesheet" href="../assets/themes.css">
+<style>
+
+/* ep03-narrow, ep03-wide: a .split with a narrower or wider picture column, on wide screens only (phones stack as usual). */
+@media (min-width: 900px) and (min-aspect-ratio: 4/3) { .split.ep03-narrow { grid-template-columns: .8fr 1.2fr; } .split.ep03-wide { grid-template-columns: 1.2fr 1fr; } }
+
+/* ep03-book: where we are in Ephesians. Six chapter chips (.here is this one) over the letter's two halves (.now holds this chapter). */
+.ep03-chips { display: grid; grid-template-columns: repeat(6, 1fr); gap: 4px; margin: .5em 0 .8em; }
+.ep03-chips span { text-align: center; padding: .3em 0; border-radius: 6px; border-bottom: 3px solid var(--line-strong); font: 700 clamp(.8rem, .7rem + .4vw, 1.1rem) var(--sans); color: var(--ink-soft); opacity: 0; transition: opacity .4s ease; transition-delay: calc(var(--k, 0) * 70ms + 150ms); }
+.slide.active .ep03-chips span { opacity: 1; }
+.ep03-chips span.here { background: var(--accent); border-bottom-color: var(--accent); color: var(--on-accent); }
+.ep03-parts { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-bottom: 1em; }
+.ep03-part { --c: var(--accent); padding: .5em .8em .6em; border-top: 6px solid var(--c); border-radius: 0 0 10px 10px; background: color-mix(in srgb, var(--c) 8%, transparent); opacity: 0; transform: translateY(-10px); transition: opacity .5s ease, transform .5s ease; transition-delay: calc(var(--k, 0) * 260ms + 600ms); }
+.slide.active .ep03-part { opacity: 1; transform: none; }
+.ep03-part small { font: 700 clamp(.72rem, .68rem + .22vw, .9rem) var(--sans); color: var(--ink-soft); }
+.ep03-part b { display: block; font: 600 clamp(1.05rem, .9rem + .6vw, 1.5rem)/1.15 var(--serif); color: var(--ink); }
+.ep03-part i { display: block; font-style: normal; font-size: clamp(.82rem, .76rem + .3vw, 1rem); color: var(--ink-soft); }
+.ep03-part.now { background: color-mix(in srgb, var(--c) 20%, transparent); box-shadow: inset 0 0 0 2px var(--c); }
+.ep03-part.p1 { --c: var(--cool); } .ep03-part.p2 { --c: var(--leather-light); }
+@media (max-width: 600px) { .ep03-parts { grid-template-columns: 1fr; } }
+
+/* ep03-share: the mystery of verse 6. Each row is one of Paul's three "same" words, with a Jew bar and a Gentile bar; the Gentile bar grows until the two are equal. */
+.ep03-share { display: grid; gap: .7em; margin: .5em 0 1em; }
+.ep03-row { display: grid; grid-template-columns: minmax(9em, 1fr) 2fr; gap: .3em 1em; align-items: center; }
+.ep03-row h3 { font: 600 clamp(1.05rem, .9rem + .6vw, 1.45rem)/1.15 var(--serif); color: var(--accent-hot); margin: 0; }
+.ep03-row h3 small { display: block; font: 400 .62em var(--sans); color: var(--ink-soft); }
+.ep03-bars { display: grid; gap: 4px; }
+.ep03-bars span { display: block; padding: .25em .6em; border-radius: 6px; font: 700 clamp(.78rem, .72rem + .3vw, 1rem) var(--sans); transform-origin: left; }
+.ep03-bars .j { background: color-mix(in srgb, var(--cool) 30%, transparent); color: var(--ink); }
+.ep03-bars .g { background: color-mix(in srgb, var(--accent) 34%, transparent); color: var(--ink); transform: scaleX(.12); transition: transform 1.3s cubic-bezier(.3,.9,.3,1); transition-delay: calc(var(--k, 0) * 500ms + 700ms); }
+.slide.active .ep03-bars .g { transform: none; }
+@media (max-width: 600px) { .ep03-row { grid-template-columns: 1fr; } }
+
+/* ep03-mine: unsearchable riches (v. 8). A lantern goes down a mine shaft past seams of gold (riches named earlier in the letter); the shaft has no bottom. */
+.ep03-rock { fill: var(--leather); opacity: .55; }
+.ep03-shaft { fill: var(--on-glow); }
+.ep03-grass { stroke: var(--cool); stroke-width: 5; }
+.ep03-frame { fill: none; stroke: var(--leather-light); stroke-width: 5; }
+.ep03-seam { stroke: var(--warm); stroke-width: 7; stroke-linecap: round; opacity: .25; transition: opacity .6s ease; transition-delay: calc(var(--k, 0) * 900ms + 900ms); }
+.ep03-lab { font: 600 20px var(--serif); fill: var(--ink); opacity: 0; transition: opacity .6s ease; transition-delay: calc(var(--k, 0) * 900ms + 900ms); }
+.ep03-ref { font-size: 14px; fill: var(--ink-soft); opacity: 0; transition: opacity .6s ease; transition-delay: calc(var(--k, 0) * 900ms + 900ms); }
+.slide.active .ep03-seam { opacity: 1; }
+.slide.active .ep03-lab, .slide.active .ep03-ref { opacity: 1; }
+.ep03-lamp { transition: transform 5.4s cubic-bezier(.45,.05,.4,1) .6s; }
+.slide.active .ep03-lamp { transform: translateY(330px); }
+.ep03-lampglow { fill: var(--glow); opacity: .35; }
+.ep03-lampbody { fill: var(--glow); }
+.ep03-rope { stroke: var(--ink-soft); stroke-width: 2; stroke-dasharray: 4 4; }
+.ep03-deep { font: italic 600 19px var(--serif); fill: var(--glow); }
+@media (max-width: 600px) { .ep03-lab { font-size: 25px; } .ep03-ref { font-size: 18px; } }
+
+/* ep03-prism: "the manifold wisdom of God" (v. 10). One white beam enters a prism and comes out as many colors, each a kind of person in the church at Ephesus. */
+.ep03-beam { stroke: var(--glow); stroke-width: 10; stroke-linecap: round; }
+.ep03-glass { fill: color-mix(in srgb, var(--glow) 18%, transparent); stroke: var(--ink); stroke-width: 3; stroke-linejoin: round; }
+.ep03-ray { stroke-width: 9; stroke-linecap: round; fill: none; stroke-dasharray: 1; stroke-dashoffset: 1; transition: stroke-dashoffset 1.1s ease; transition-delay: calc(var(--k, 0) * 220ms + 700ms); }
+.slide.active .ep03-ray { stroke-dashoffset: 0; }
+.ep03-ray.a { stroke: var(--accent); } .ep03-ray.b { stroke: var(--cool); } .ep03-ray.c { stroke: var(--warm); } .ep03-ray.d { stroke: var(--wine); } .ep03-ray.e { stroke: var(--leather-light); }
+.ep03-who { font: 600 19px var(--sans); fill: var(--ink); opacity: 0; transition: opacity .6s ease; transition-delay: calc(var(--k, 0) * 220ms + 1500ms); }
+.slide.active .ep03-who { opacity: 1; }
+.ep03-cap { font: italic 600 19px var(--serif); fill: var(--ink-soft); }
+@media (max-width: 600px) { .ep03-who { font-size: 24px; } .ep03-cap { font-size: 23px; } }
+
+/* ep03-roots: rooted and grounded (v. 17). A tree whose roots grow down, and a wall whose foundation stones settle in, both in the soil of love. */
+.ep03-sky { fill: var(--surface); stroke: var(--line); stroke-width: 2; }
+.ep03-soil { fill: color-mix(in srgb, var(--leather) 55%, var(--surface)); }
+.ep03-trunk { fill: var(--leather); }
+.ep03-crown { fill: var(--cool); }
+.ep03-crown.b { fill: color-mix(in srgb, var(--cool) 70%, var(--accent)); }
+.ep03-root { fill: none; stroke: var(--leather); stroke-linecap: round; stroke-dasharray: 1; stroke-dashoffset: 1; transition: stroke-dashoffset 2.4s ease; transition-delay: calc(var(--k, 0) * 250ms + 600ms); }
+.slide.active .ep03-root { stroke-dashoffset: 0; }
+.ep03-stone { fill: var(--surface-2); stroke: var(--ink-soft); stroke-width: 2.5; opacity: 0; transform: translateY(-40px); transition: opacity .5s ease, transform .6s cubic-bezier(.5,1.6,.5,1); transition-delay: calc(var(--k, 0) * 220ms + 900ms); }
+.slide.active .ep03-stone { opacity: 1; transform: none; }
+.ep03-wall { fill: var(--surface-2); stroke: var(--leather-light); stroke-width: 3; }
+.ep03-tt { font: 700 22px var(--serif); fill: var(--ink); }
+.ep03-love { font: italic 600 22px var(--serif); fill: var(--glow); }
+@media (max-width: 600px) { .ep03-tt { font-size: 27px; } .ep03-love { font-size: 26px; } }
+
+/* ep03-four: the breadth, and length, and depth, and height of the love of Christ (v. 18-19). Four arrows reach out from the cross in turn;
+   on a .ep03-go step they run on past the edge of the frame: "which passeth knowledge". */
+.ep03-field { fill: var(--surface); stroke: var(--line-strong); stroke-width: 2; }
+.ep03-cross { stroke: var(--accent-hot); stroke-width: 14; stroke-linecap: round; }
+.ep03-reach { transform-box: view-box; transform-origin: 300px 230px; transition: transform 2.2s cubic-bezier(.5,0,.3,1); }
+.slide:has(.ep03-go.on) .ep03-reach { transform: scale(2.6); }
+.ep03-arm { fill: none; stroke-width: 6; stroke-linecap: round; stroke-dasharray: 1; stroke-dashoffset: 1; transition: stroke-dashoffset 1s ease; transition-delay: calc(var(--k, 0) * 700ms + 700ms); }
+.slide.active .ep03-arm { stroke-dashoffset: 0; }
+.ep03-arm.w { stroke: var(--cool); } .ep03-arm.l { stroke: var(--leather-light); } .ep03-arm.d { stroke: var(--wine); } .ep03-arm.h { stroke: var(--warm); }
+.ep03-head { opacity: 0; transition: opacity .4s ease; transition-delay: calc(var(--k, 0) * 700ms + 1500ms); }
+.slide.active .ep03-head { opacity: 1; }
+.ep03-head.w { fill: var(--cool); } .ep03-head.l { fill: var(--leather-light); } .ep03-head.d { fill: var(--wine); } .ep03-head.h { fill: var(--warm); }
+.ep03-word { font: 700 21px var(--serif); fill: var(--ink); opacity: 0; transition: opacity .5s ease; transition-delay: calc(var(--k, 0) * 700ms + 1200ms); }
+.ep03-sub { font: 400 15px var(--sans); fill: var(--ink-soft); }
+.slide.active .ep03-word { opacity: 1; }
+.ep03-past { font: italic 700 26px var(--serif); fill: var(--accent-hot); paint-order: stroke; stroke: var(--surface); stroke-width: 10px; stroke-linejoin: round; opacity: 0; transition: opacity 1s ease 1.4s; }
+.slide:has(.ep03-go.on) .ep03-past { opacity: 1; }
+.slide:has(.ep03-go.on) .ep03-word { opacity: 0; transition-delay: 0s; }
+@media (max-width: 600px) { .ep03-word { font-size: 26px; } .ep03-past { font-size: 30px; } }
+
+/* ep03-climb: Paul's prayer as a chain of "that"s, climbing like steps (v. 16-19). Built on .stairs, but each step rises instead of falling. */
+.stairs.ep03-climb li { margin-top: calc((var(--n, 6) - 1 - var(--k, 0)) * clamp(10px, 2.6vh, 26px)); }
+@media (max-width: 640px) { .stairs.ep03-climb li { margin: 0 0 0 calc(var(--k, 0) * 5%); } }
+
+/* ep03-above: "exceeding abundantly above all that we ask or think" (v. 20). Bars climb higher and higher; on a .ep03-go step the last one goes through the roof. */
+.ep03-above { display: grid; grid-template-columns: repeat(5, 1fr); gap: 8px; align-items: end; height: clamp(160px, 27vh, 290px); margin: 2.4em 0 1em; border-bottom: 3px solid var(--line-strong); position: relative; }
+.ep03-above div { position: relative; height: var(--h); display: flex; flex-direction: column; justify-content: flex-end; }
+.ep03-above i { display: block; flex: 1; border-radius: 8px 8px 0 0; background: color-mix(in srgb, var(--accent) calc(18% + var(--k, 0) * 12%), transparent); border: 2px solid var(--accent); border-bottom: 0; transform: scaleY(0); transform-origin: bottom; transition: transform .9s cubic-bezier(.3,1.2,.4,1); transition-delay: calc(var(--k, 0) * 380ms + 500ms); }
+.slide.active .ep03-above i { transform: none; }
+.ep03-above b { position: absolute; left: 0; right: 0; bottom: .4em; text-align: center; padding: 0 .2em; font: 600 clamp(.82rem, .7rem + .45vw, 1.15rem)/1.15 var(--serif); color: var(--ink); opacity: 0; transition: opacity .5s ease; transition-delay: calc(var(--k, 0) * 380ms + 1100ms); }
+.slide.active .ep03-above b { opacity: 1; }
+.ep03-above div.top { height: 135%; }
+.slide.active .ep03-above .top i { -webkit-mask-image: linear-gradient(to top, black 65%, transparent); mask-image: linear-gradient(to top, black 65%, transparent); background: var(--accent); transform: scaleY(0); transition-delay: .2s; transition-duration: 1.8s; }
+.slide.active .ep03-above .top b { color: var(--on-accent); opacity: 0; transition-delay: 0s; }
+.slide.active:has(.ep03-go.on) .ep03-above .top i { transform: none; }
+.slide.active:has(.ep03-go.on) .ep03-above .top b { opacity: 1; transition-delay: 1.4s; }
+@media (max-width: 600px) { .ep03-above { gap: 4px; } .ep03-above b { font-size: .72rem; } }
+</style>
+</head>
+<body>
+<main class="deck" id="deck">
+
+<!-- ======================= OPENING ======================= -->
+<section class="slide title">
+  <div class="inner">
+    <div class="emblem rise"></div>
+    <h1 class="rise" style="--d:1">Ephesians 3</h1>
+    <p class="sub rise" style="--d:3">Love that passeth knowledge</p>
+    <p class="tag rise" style="--d:5">A prisoner in Rome, the man who once hunted Christians, prays that men like us would know a love too big to measure.</p>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <div>
+      <h2 class="rise" style="--d:1">Where we are in Ephesians</h2>
+      <div class="ep03-chips" role="img" aria-label="Ephesians has six chapters. We are in chapter 3, the last chapter of the first half: what God has done."><span style="--k:0">1</span><span style="--k:1">2</span><span class="here" style="--k:2">3</span><span style="--k:3">4</span><span style="--k:4">5</span><span style="--k:5">6</span></div>
+      <div class="ep03-parts">
+        <div class="ep03-part p1 now" style="--k:0"><small>Chapters 1–3</small><b>What God has done</b><i>Chosen in Christ, saved by grace, Jew and Gentile made one</i></div>
+        <div class="ep03-part p2" style="--k:1"><small>Chapters 4–6</small><b>How to walk in it</b><i>Unity, the new man, home and work, the armour of God</i></div>
+      </div>
+      <p class="note rise" style="--d:3">Chapter 2 ended with Gentiles, people who were once far off, built into one house with the Jews, <em>“an habitation of God through the Spirit.”</em> Chapter 3 opens <em>“For this cause”</em>, and Paul starts to pray.</p>
+      <p class="note step">But he stops after one verse to explain who he is and why he's in chains (verses 2–13). In verse 14 he says <em>“For this cause”</em> again and finishes the prayer. Then he closes the first half of the letter with praise.</p>
+    </div>
+  </div>
+</section>
+
+<section class="slide watch">
+  <div class="inner">
+    <h2 class="rise">Things to watch for</h2>
+    <p class="lede rise" style="--d:1">Keep these questions in the back of your mind as we read. We'll come back to every one of them at the end.</p>
+    <ol class="seeds">
+      <li class="step"><span class="topic">The prisoner</span><span class="seed-q">Whose prisoner does Paul say he is?</span></li>
+      <li class="step"><span class="topic">The mystery</span><span class="seed-q">What secret did God make known through Paul?</span></li>
+      <li class="step"><span class="topic">Less than the least</span><span class="seed-q">What did Paul think of himself, and what did God give him anyway?</span></li>
+      <li class="step"><span class="topic">The inner man</span><span class="seed-q">Where does a believer's strength come from?</span></li>
+      <li class="step"><span class="topic">Four directions</span><span class="seed-q">How big is the love of Christ?</span></li>
+      <li class="step"><span class="topic">Able</span><span class="seed-q">What is God able to do?</span></li>
+    </ol>
+  </div>
+</section>
+
+<!-- ======================= PART ONE: THE PRISONER AND THE MYSTERY ======================= -->
+<section class="slide part">
+  <div class="inner">
+    <p class="part-n rise">Part one</p>
+    <h2 class="rise" style="--d:1">A prisoner with a secret</h2>
+    <p class="range rise" style="--d:2">Verses 1–7</p>
+    <div class="rule"></div>
+    <p class="hook rise" style="--d:4">A man in chains with the best news the Gentiles ever heard.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="1-4" data-hl="I Paul, the prisoner of Jesus Christ for you Gentiles|the dispensation of the grace of God|by revelation he made known unto me the mystery"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <div class="split">
+      <div class="stage">
+        <svg data-world viewBox="170 110 470 240" style="max-height:52vh" data-towns="Rome!, Puteoli, Ephesus*" role="img" aria-label="A map of the Roman world from Italy to Asia. Paul is under guard in Rome. The letter goes by sea, around the south of Italy and Greece, to Ephesus in Asia.">
+          <path class="map-route" data-via="Rome, Puteoli, Rhegium, @16.4 37.6, @21 36.4, @23.6 36.3, @26.3 37.45, Ephesus"/>
+        </svg>
+      </div>
+      <div>
+        <h2 class="rise" style="--d:1">Whose prisoner?</h2>
+        <p class="note rise" style="--d:2">Paul writes from Rome, about AD 60 to 62, chained to a Roman soldier in a rented house (Acts 28:16, 30). The letter goes to Ephesus, where he had spent three years.</p>
+        <p class="note step">Rome thought he was Caesar's prisoner. Paul calls himself <em>“the prisoner of Jesus Christ.”</em> The chain was real, but Christ held the other end.</p>
+        <p class="note step">And <em>“for you Gentiles”</em>: he was arrested in Jerusalem the day he told a crowd that God had sent him to the Gentiles (Acts 22:21–22).</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise">Locked up, but not shut out</h2>
+    <div class="columns">
+      <div class="col law step"><p class="who">How Rome saw it</p><h3>Caesar's prisoner</h3><p>A Jew under guard, waiting on a trial, <em>“with a soldier that kept him”</em> (Acts 28:16).</p></div>
+      <div class="col grace step"><p class="who">How Paul saw it</p><h3>Christ's prisoner</h3><p>Right where his Lord put him, with a letter to write and a guard to talk to.</p></div>
+    </div>
+    <p class="note step"><em>Dispensation</em> (verse 2) is an old word for a job given to a steward: something put in your hands to manage for the owner. God handed Paul a trust, <em>“to youward”</em>, toward you Gentiles.</p>
+    <p class="note step">Some of us have done time, or are on paper now. A cell, a halfway house, a court date: none of it is outside God's reach. A man can be locked up and still be the Lord's man, with work to do right where he is.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="5-7" data-hl="the Gentiles should be fellowheirs, and of the same body, and partakers of his promise in Christ by the gospel|the effectual working of his power"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise">The mystery: fellowheirs</h2>
+    <p class="note rise" style="--d:1">A <em>mystery</em> in the Bible isn't a puzzle. It's a secret God kept, and now tells. Here it is in three words:</p>
+    <div class="ep03-share" role="img" aria-label="Three rows: fellowheirs, of the same body, partakers of his promise. In each row a Jew bar is full, and a Gentile bar grows until it is exactly the same length.">
+      <div class="ep03-row" style="--k:0"><h3>fellowheirs<small>the same inheritance</small></h3><div class="ep03-bars"><span class="j">Jew</span><span class="g" style="--k:0">Gentile</span></div></div>
+      <div class="ep03-row"><h3>of the same body<small>not a second-class member</small></h3><div class="ep03-bars"><span class="j">Jew</span><span class="g" style="--k:1">Gentile</span></div></div>
+      <div class="ep03-row"><h3>partakers<small>of his promise in Christ</small></h3><div class="ep03-bars"><span class="j">Jew</span><span class="g" style="--k:2">Gentile</span></div></div>
+    </div>
+    <p class="note step">The prophets said the nations would come to God. Nobody saw that they would come in as <em>equals</em>, in one body, with no wall left between them. Not by the law, but <em>“in Christ by the gospel.”</em></p>
+    <blockquote class="quote step"><p>“Now therefore ye are no more strangers and foreigners, but fellowcitizens with the saints, and of the household of God;”</p><cite>Ephesians 2:19</cite></blockquote>
+  </div>
+</section>
+
+<!-- ======================= PART TWO: LESS THAN THE LEAST ======================= -->
+<section class="slide part">
+  <div class="inner">
+    <p class="part-n rise">Part two</p>
+    <h2 class="rise" style="--d:1">The least, and the riches</h2>
+    <p class="range rise" style="--d:2">Verses 8–13</p>
+    <div class="rule"></div>
+    <p class="hook rise" style="--d:4">God sent His riches by way of the man with the worst record.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="8-9" data-hl="Unto me, who am less than the least of all saints, is this grace given|the unsearchable riches of Christ"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise">Less than the least</h2>
+    <p class="note rise" style="--d:1">Paul never forgot the believers he dragged off to prison (Acts 8:3). Watch him over the years:</p>
+    <ol class="stairs" style="--n:3" aria-label="Three steps down, as the years go by. About AD 55: the least of the apostles. About AD 60 to 62: less than the least of all saints. About AD 62 to 64: the chief of sinners.">
+      <li style="--k:0"><b>“the least of the apostles”</b>1 Corinthians 15:9 · about AD 55</li>
+      <li style="--k:1"><b>“less than the least of all saints”</b>Ephesians 3:8 · about AD 60–62</li>
+      <li style="--k:2"><b>“of whom I am chief”</b>of sinners · 1 Timothy 1:15 · about AD 62–64</li>
+    </ol>
+    <p class="note step">The longer he walked with Christ, the smaller he got in his own eyes, and the bigger grace looked.</p>
+    <blockquote class="quote step"><p>“Who was before a blasphemer, and a persecutor, and injurious: but I obtained mercy, because I did it ignorantly in unbelief.”</p><cite>1 Timothy 1:13</cite></blockquote>
+    <p class="note step">That's what to do with regret. Paul didn't pretend his past away, and he didn't drown in it. He let it make him humble and grateful, and then he got up and went to work: <em>“is this grace given.”</em></p>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <div class="split ep03-narrow">
+      <div class="stage">
+        <svg viewBox="0 0 400 520" style="max-height:62vh" role="img" aria-label="A mine shaft going down into the dark. A lantern goes down past seams of gold: forgiven, adopted, sealed, made alive, access to the Father. Below, the shaft keeps going: no bottom.">
+          <defs>
+            <linearGradient id="ep03-fade" x1="0" y1="0" x2="0" y2="1"><stop offset="0" style="stop-color:var(--leather);stop-opacity:0"/><stop offset=".8" style="stop-color:var(--leather);stop-opacity:0"/><stop offset="1" style="stop-color:var(--bg);stop-opacity:1"/></linearGradient>
+          </defs>
+          <rect class="ep03-rock" x="0" y="60" width="400" height="460"/>
+          <line class="ep03-grass" x1="0" y1="60" x2="400" y2="60"/>
+          <rect class="ep03-shaft" x="60" y="60" width="70" height="460"/>
+          <path class="ep03-frame" d="M52 60 V 18 H 138 V 60"/>
+          <g>
+            <line class="ep03-seam" style="--k:0" x1="130" y1="120" x2="390" y2="128"/><text class="ep03-lab" style="--k:0" x="150" y="112">forgiven</text><text class="ep03-ref" style="--k:0" x="268" y="112">1:7</text>
+            <line class="ep03-seam" style="--k:1" x1="130" y1="185" x2="390" y2="178"/><text class="ep03-lab" style="--k:1" x="150" y="170">adopted</text><text class="ep03-ref" style="--k:1" x="268" y="170">1:5</text>
+            <line class="ep03-seam" style="--k:2" x1="130" y1="250" x2="390" y2="258"/><text class="ep03-lab" style="--k:2" x="150" y="242">sealed</text><text class="ep03-ref" style="--k:2" x="268" y="242">1:13</text>
+            <line class="ep03-seam" style="--k:3" x1="130" y1="315" x2="390" y2="308"/><text class="ep03-lab" style="--k:3" x="150" y="300">made alive</text><text class="ep03-ref" style="--k:3" x="268" y="300">2:5</text>
+            <line class="ep03-seam" style="--k:4" x1="130" y1="380" x2="390" y2="388"/><text class="ep03-lab" style="--k:4" x="150" y="372">access</text><text class="ep03-ref" style="--k:4" x="268" y="372">3:12</text>
+          </g>
+          <rect x="0" y="60" width="400" height="460" style="fill:url(#ep03-fade)"/>
+          <text class="ep03-deep" x="95" y="500" text-anchor="middle">no bottom</text>
+          <defs><clipPath id="ep03-mclip"><rect x="0" y="0" width="400" height="520"/></clipPath></defs>
+          <g clip-path="url(#ep03-mclip)"><g class="ep03-lamp">
+            <line class="ep03-rope" x1="95" y1="20" x2="95" y2="-320"/>
+            <line class="ep03-rope" x1="95" y1="20" x2="95" y2="80"/>
+            <circle class="ep03-lampglow" cx="95" cy="98" r="30"/>
+            <rect class="ep03-lampbody" x="85" y="84" width="20" height="28" rx="5"/>
+          </g></g>
+        </svg>
+      </div>
+      <div>
+        <h2 class="rise" style="--d:1">Unsearchable riches</h2>
+        <p class="note rise" style="--d:2"><em>Unsearchable</em> means you can't track it to the end. Think of a gold mine where every shaft finds more, and nobody ever hits bottom.</p>
+        <p class="note step">Paul has already been naming them: forgiven, adopted, sealed with the Spirit, made alive, given a way in to the Father. And there's more under that.</p>
+        <blockquote class="quote step"><p>“In whom we have redemption through his blood, the forgiveness of sins, according to the riches of his grace;”</p><cite>Ephesians 1:7</cite></blockquote>
+        <p class="note step">Maybe you came to Christ broke, with a record and nothing in the bank. In Him you are not poor. You can't spend it, you can't lose it, and you'll never see the end of it.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="slide verse" data-v="10-13" data-hl="the manifold wisdom of God|In whom we have boldness and access with confidence by the faith of him|faint not at my tribulations"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <div class="split">
+      <div class="stage">
+        <svg viewBox="0 0 600 340" style="max-height:50vh" role="img" aria-label="One white beam of light goes into a prism and comes out as five colors: Jews, Gentiles, masters, slaves, and men who once practiced sorcery. The many-colored wisdom of God.">
+          <line class="ep03-beam" x1="10" y1="200" x2="222" y2="178"/>
+          <path class="ep03-glass" d="M180 280 L250 70 L320 280 Z"/>
+          <path class="ep03-ray a" style="--k:0" pathLength="1" d="M280 160 L440 40"/><text class="ep03-who" style="--k:0" x="452" y="47">Jews</text>
+          <path class="ep03-ray b" style="--k:1" pathLength="1" d="M284 172 L440 100"/><text class="ep03-who" style="--k:1" x="452" y="107">Gentiles</text>
+          <path class="ep03-ray c" style="--k:2" pathLength="1" d="M288 184 L440 160"/><text class="ep03-who" style="--k:2" x="452" y="167">masters</text>
+          <path class="ep03-ray d" style="--k:3" pathLength="1" d="M292 196 L440 220"/><text class="ep03-who" style="--k:3" x="452" y="227">slaves</text>
+          <path class="ep03-ray e" style="--k:4" pathLength="1" d="M296 208 L440 280"/><text class="ep03-who" style="--k:4" x="452" y="287">ex-sorcerers</text>
+          <text class="ep03-cap" x="16" y="232">one light</text>
+          <text class="ep03-cap" x="250" y="320" text-anchor="middle">one church</text>
+        </svg>
+      </div>
+      <div>
+        <h2 class="rise" style="--d:1">Many-colored wisdom</h2>
+        <p class="note rise" style="--d:2"><em>Manifold</em> means many-sided, many-colored. The church at Ephesus was Jews and Gentiles, masters and slaves (6:5–9), and men who had burned their books of magic (Acts 19:19), all at one table.</p>
+        <p class="note step">Verse 10 says the whole thing is on display to <em>“principalities and powers in heavenly places”</em>: the angels, and the dark powers too. When a man with your past sits down at the Lord's table with a man who never did a day of trouble, heaven watches and sees how wise God is.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise">A way in</h2>
+    <div class="ifthen step">
+      <div class="if"><small>Not because of you</small><em>“In whom”</em>: in Christ, by faith in Him</div>
+      <span class="arrow" aria-hidden="true">→</span>
+      <div class="then"><small>You have</small>boldness, and access, with confidence</div>
+    </div>
+    <p class="note step"><em>Access</em> is the right to walk into a king's presence. Most people never got past the gate. In Christ, a man who was locked out of everything can walk in and talk to God the Father, today, without an appointment.</p>
+    <blockquote class="quote step"><p>“Let us therefore come boldly unto the throne of grace, that we may obtain mercy, and find grace to help in time of need.”</p><cite>Hebrews 4:16</cite></blockquote>
+    <p class="note step">Verse 13: Paul tells them not to lose heart over his chains. His troubles were for their good. Your hard season isn't proof God has left you either.</p>
+  </div>
+</section>
+
+<!-- ======================= PART THREE: THE PRAYER ======================= -->
+<section class="slide part">
+  <div class="inner">
+    <p class="part-n rise">Part three</p>
+    <h2 class="rise" style="--d:1">On his knees</h2>
+    <p class="range rise" style="--d:2">Verses 14–21</p>
+    <div class="rule"></div>
+    <p class="hook rise" style="--d:4">What Paul prayed for men he loved. You can pray it for yourself.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="14-17" data-hl="I bow my knees unto the Father of our Lord Jesus Christ|to be strengthened with might by his Spirit in the inner man|That Christ may dwell in your hearts by faith|rooted and grounded in love"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <div class="split">
+      <div class="stage">
+        <svg viewBox="0 0 640 400" style="max-height:52vh" role="img" aria-label="Above ground, a tree and a stone wall. Below ground, the tree's roots grow down deep, and the wall's foundation stones settle in. The ground they both stand in is labeled: in love.">
+          <rect class="ep03-sky" x="0" y="0" width="640" height="400" rx="16"/>
+          <path class="ep03-soil" d="M0 210 H640 V384 Q640 400 624 400 H16 Q0 400 0 384 Z"/>
+          <path class="ep03-trunk" d="M150 212 C 156 170, 158 140, 156 110 L 174 110 C 172 140, 176 170, 182 212 Z"/>
+          <circle class="ep03-crown" cx="166" cy="78" r="56"/><circle class="ep03-crown b" cx="120" cy="104" r="38"/><circle class="ep03-crown b" cx="212" cy="104" r="38"/>
+          <path class="ep03-root" style="--k:0" stroke-width="10" pathLength="1" d="M166 210 C 168 260, 160 300, 166 360"/>
+          <path class="ep03-root" style="--k:1" stroke-width="7" pathLength="1" d="M160 214 C 130 240, 100 270, 70 330"/>
+          <path class="ep03-root" style="--k:2" stroke-width="7" pathLength="1" d="M172 214 C 210 240, 236 280, 262 336"/>
+          <path class="ep03-root" style="--k:3" stroke-width="4" pathLength="1" d="M164 260 C 140 290, 128 320, 120 370"/>
+          <path class="ep03-root" style="--k:4" stroke-width="4" pathLength="1" d="M168 270 C 196 300, 206 330, 214 372"/>
+          <rect class="ep03-wall" x="400" y="100" width="190" height="110"/>
+          <path d="M400 136 H590 M400 172 H590 M460 100 V136 M530 100 V136 M430 136 V172 M495 136 V172 M560 136 V172 M460 172 V210 M530 172 V210" fill="none" style="stroke:var(--leather-light)" stroke-width="2"/>
+          <rect class="ep03-stone" style="--k:0" x="384" y="212" width="74" height="44" rx="4"/>
+          <rect class="ep03-stone" style="--k:1" x="460" y="212" width="74" height="44" rx="4"/>
+          <rect class="ep03-stone" style="--k:2" x="536" y="212" width="74" height="44" rx="4"/>
+          <rect class="ep03-stone" style="--k:3" x="420" y="258" width="74" height="44" rx="4"/>
+          <rect class="ep03-stone" style="--k:4" x="496" y="258" width="74" height="44" rx="4"/>
+          <text class="ep03-tt" x="300" y="150" text-anchor="middle">rooted</text>
+          <text class="ep03-tt" x="495" y="80" text-anchor="middle">grounded</text>
+          <text class="ep03-love" x="320" y="380" text-anchor="middle">in love</text>
+        </svg>
+      </div>
+      <div>
+        <h2 class="rise" style="--d:1">Strength on the inside</h2>
+        <p class="note rise" style="--d:2">Paul doesn't pray for an easier life. He prays for strength in <em>“the inner man”</em>, and the strength is <em>“by his Spirit”</em>, who lives in every believer.</p>
+        <p class="note step"><em>Dwell</em> means to settle in and live there, not to visit. Christ isn't a guest in a believer's heart. He moved in.</p>
+        <p class="note step"><em>Rooted</em> like a tree, <em>grounded</em> like a wall on its foundation. A storm doesn't knock down what is rooted. Staying clean today won't come from white knuckles. It comes from a root that goes down into His love.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="slide verse" data-v="18-19" data-hl="the breadth, and length, and depth, and height|the love of Christ, which passeth knowledge|filled with all the fulness of God"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <div class="split ep03-wide">
+      <div class="stage">
+        <svg viewBox="0 0 600 460" style="max-height:60vh" role="img" aria-label="A cross in the middle. Four arrows reach out from it in turn: breadth, out to both sides; length, from far behind to far ahead; depth, down; height, up. On a step all four run on past the edges of the frame: the love of Christ, which passeth knowledge.">
+          <defs><clipPath id="ep03-clip"><rect x="0" y="0" width="600" height="460" rx="16"/></clipPath></defs>
+          <rect class="ep03-field" x="0" y="0" width="600" height="460" rx="16"/>
+          <g clip-path="url(#ep03-clip)">
+            <g class="ep03-reach">
+              <path class="ep03-arm w" style="--k:0" pathLength="1" d="M300 230 H 70"/><path class="ep03-arm w" style="--k:0" pathLength="1" d="M300 230 H 530"/>
+              <polygon class="ep03-head w" style="--k:0" points="50,230 76,216 76,244"/><polygon class="ep03-head w" style="--k:0" points="550,230 524,216 524,244"/>
+              <path class="ep03-arm l" style="--k:1" pathLength="1" d="M300 230 L 150 370"/><path class="ep03-arm l" style="--k:1" pathLength="1" d="M300 230 L 430 108"/>
+              <polygon class="ep03-head l" style="--k:1" points="136,384 146,358 162,374"/><polygon class="ep03-head l" style="--k:1" points="444,94 434,120 418,104"/>
+              <path class="ep03-arm d" style="--k:2" pathLength="1" d="M300 230 V 420"/>
+              <polygon class="ep03-head d" style="--k:2" points="300,442 286,416 314,416"/>
+              <path class="ep03-arm h" style="--k:3" pathLength="1" d="M300 230 V 40"/>
+              <polygon class="ep03-head h" style="--k:3" points="300,18 286,44 314,44"/>
+            </g>
+            <path class="ep03-cross" d="M300 168 V 300 M262 204 H 338"/>
+          </g>
+          <text class="ep03-word" style="--k:0" x="60" y="184">breadth<tspan class="ep03-sub" x="60" dy="22">wide as “whosoever”</tspan></text>
+          <text class="ep03-word" style="--k:1" x="440" y="150">length<tspan class="ep03-sub" x="440" dy="22">everlasting</tspan></text>
+          <text class="ep03-word" style="--k:2" x="318" y="400">depth<tspan class="ep03-sub" x="318" dy="22">low as you fell</tspan></text>
+          <text class="ep03-word" style="--k:3" x="318" y="62">height<tspan class="ep03-sub" x="318" dy="22">high as heaven</tspan></text>
+          <text class="ep03-past" x="300" y="440" text-anchor="middle">“which passeth knowledge”</text>
+        </svg>
+      </div>
+      <div>
+        <h2 class="rise" style="--d:1">Measure it if you can</h2>
+        <p class="note rise" style="--d:2"><em>Breadth:</em> wide enough for the whole world, Jew and Gentile, <em>whosoever</em> (John 3:16). <em>Length:</em> it started before the world and never runs out.</p>
+        <p class="note rise" style="--d:3"><em>Depth:</em> it reaches lower than the lowest place you ever went. <em>Height:</em> it lifts you all the way up to God.</p>
+        <p class="note step ep03-go">Then every line runs off the page. Paul prays that we would <em>know</em> a love <em>“which passeth knowledge.”</em> You can know it for real, and never get to the end of it.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise">One prayer, climbing</h2>
+    <p class="note rise" style="--d:1">Paul's prayer is one long sentence, and each part leads to the next, like steps going up:</p>
+    <ol class="stairs ep03-climb" style="--n:6" aria-label="Six steps going up: strengthened by His Spirit; Christ dwelling in your hearts; rooted and grounded in love; able to comprehend the breadth, length, depth and height; to know the love of Christ; filled with all the fulness of God.">
+      <li style="--k:0"><b>strengthened</b>by his Spirit in the inner man</li>
+      <li style="--k:1"><b>Christ dwell</b>in your hearts by faith</li>
+      <li style="--k:2"><b>rooted and grounded</b>in love</li>
+      <li style="--k:3"><b>comprehend</b>breadth, length, depth, height</li>
+      <li style="--k:4"><b>know the love</b>which passeth knowledge</li>
+      <li style="--k:5"><b>filled</b>with all the fulness of God</li>
+    </ol>
+    <p class="note step">Notice where it ends: not with a man who is strong in himself, but a man <em>filled</em>. That's the opposite of the empty a lot of us tried to fill with a bottle or a pipe.</p>
+    <p class="note step">Today, pray this for yourself, out loud, one step at a time. And pray it for a brother by name.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="20-21" data-hl="Now unto him that is able to do exceeding abundantly above all that we ask or think|according to the power that worketh in us|Unto him be glory in the church by Christ Jesus throughout all ages"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise">Above all you ask or think</h2>
+    <div class="ep03-above" role="img" aria-label="Bars climbing higher and higher: all that we ask; or think; above all; abundantly above. On a step the last bar, exceeding abundantly above, goes right through the top.">
+      <div style="--k:0; --h:22%"><i style="--k:0"></i><b style="--k:0">all that we ask</b></div>
+      <div style="--k:1; --h:40%"><i style="--k:1"></i><b style="--k:1">or think</b></div>
+      <div style="--k:2; --h:60%"><i style="--k:2"></i><b style="--k:2">above all</b></div>
+      <div style="--k:3; --h:80%"><i style="--k:3"></i><b style="--k:3">abundantly above</b></div>
+      <div class="top"><i></i><b>exceeding abundantly above</b></div>
+    </div>
+    <p class="note rise" style="--d:3">Paul runs out of words, so he stacks them up. Whatever you have asked for, and whatever you have only dared to think, God is able to do more than that.</p>
+    <p class="note step ep03-go">Not a promise of a new truck. It's <em>“according to the power that worketh in us”</em>, the same power that raised Jesus from the dead (1:19–20). A changed man, a mended home, years sober: He can do that, and above that.</p>
+    <p class="note step">And it all ends where it should: <em>“Unto him be glory.”</em> That's the end of the first half of the letter. Next, Paul shows how to walk it out.</p>
+  </div>
+</section>
+
+<!-- ======================= CLOSING ======================= -->
+<section class="slide remember">
+  <div class="inner">
+    <h2 class="rise">Points to remember</h2>
+    <ol class="seeds">
+      <li class="step"><span class="topic">The prisoner</span><span class="seed-q">“I Paul, the prisoner of Jesus Christ for you Gentiles” <cite>3:1</cite></span><span class="take">Rome had the chain. Christ held the other end.</span></li>
+      <li class="step"><span class="topic">The mystery</span><span class="seed-q">“That the Gentiles should be fellowheirs, and of the same body” <cite>3:6</cite></span><span class="take">In Christ, outsiders come in as equals, with the same inheritance.</span></li>
+      <li class="step"><span class="topic">Less than the least</span><span class="seed-q">“Unto me, who am less than the least of all saints, is this grace given” <cite>3:8</cite></span><span class="take">The worst record didn't stop grace. It made Paul humble, and it put him to work.</span></li>
+      <li class="step"><span class="topic">The inner man</span><span class="seed-q">“Strengthened with might by his Spirit in the inner man” <cite>3:16</cite></span><span class="take">Strength comes from His Spirit within, and from Christ living in your heart.</span></li>
+      <li class="step"><span class="topic">Four directions</span><span class="seed-q">“The love of Christ, which passeth knowledge” <cite>3:19</cite></span><span class="take">Wide, long, deep, high: you can know it, and never reach the end of it.</span></li>
+      <li class="step"><span class="topic">Able</span><span class="seed-q">“Able to do exceeding abundantly above all that we ask or think” <cite>3:20</cite></span><span class="take">God can do more than you ask, by His power working in you.</span></li>
+    </ol>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 1 of 6</p>
+      <span class="topic">The prisoner</span>
+      <h2>Whose prisoner does Paul say he is?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="1"></blockquote>
+      <blockquote class="quote step"><p>“And Paul dwelt two whole years in his own hired house, and received all that came in unto him,”</p><cite>Acts 28:30</cite></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>The prisoner of Jesus Christ. Rome had him under guard, but Paul knew the Lord had put him there, for the sake of the Gentiles. Wherever you are locked in, you can still be the Lord's man.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 2 of 6</p>
+      <span class="topic">The mystery</span>
+      <h2>What secret did God make known through Paul?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="5"></blockquote>
+      <blockquote class="quote step" data-q="6"></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>That the Gentiles would be fellowheirs with the Jews, members of the same body, sharing the same promise, all in Christ by the gospel. Nobody is let in as a second-class believer.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 3 of 6</p>
+      <span class="topic">Less than the least</span>
+      <h2>What did Paul think of himself, and what did God give him anyway?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="8"></blockquote>
+      <blockquote class="quote step"><p>“This is a faithful saying, and worthy of all acceptation, that Christ Jesus came into the world to save sinners; of whom I am chief.”</p><cite>1 Timothy 1:15</cite></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>He saw himself as less than the least, because he had persecuted the church. God gave him grace anyway, and a job: to preach the riches of Christ. Your past doesn't disqualify you from grace, or from being useful.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 4 of 6</p>
+      <span class="topic">The inner man</span>
+      <h2>Where does a believer's strength come from?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="16"></blockquote>
+      <blockquote class="quote step" data-q="17"></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>From God's Spirit, who lives inside every believer, and from Christ living in his heart by faith. It isn't willpower. It is a root going down deep into the love of God.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 5 of 6</p>
+      <span class="topic">Four directions</span>
+      <h2>How big is the love of Christ?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="18-19"></blockquote>
+      <blockquote class="quote step"><p>“Nor height, nor depth, nor any other creature, shall be able to separate us from the love of God, which is in Christ Jesus our Lord.”</p><cite>Romans 8:39</cite></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>Bigger than anyone can measure: wide enough for whosoever, long enough to be everlasting, deep enough to reach the lowest man, high enough to bring him to God. It passes knowledge.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 6 of 6</p>
+      <span class="topic">Able</span>
+      <h2>What is God able to do?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="20"></blockquote>
+      <blockquote class="quote step"><p>“And what is the exceeding greatness of his power to us-ward who believe, according to the working of his mighty power,”</p><cite>Ephesians 1:19</cite></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>Exceeding abundantly above all that we ask or think. Not by our strength, but by the power that raised Jesus from the dead, now at work in every believer. And the glory goes to Him.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide prayer">
+  <div class="inner">
+    <div class="emblem rise"></div>
+    <h2 class="rise" style="--d:1">Prayer requests</h2>
+    <p class="ask-line rise" style="--d:2">What can we pray about for you today?</p>
+    <blockquote class="quote rise" style="--d:4"><p>“Now unto him that is able to do exceeding abundantly above all that we ask or think, according to the power that worketh in us,”</p><cite>Ephesians 3:20</cite></blockquote>
+  </div>
+</section>
+
+</main>
+
+<script>
+// King James Version, Ephesians chapter 3
+const V = {
+  1: "For this cause I Paul, the prisoner of Jesus Christ for you Gentiles,",
+  2: "If ye have heard of the dispensation of the grace of God which is given me to youward:",
+  3: "How that by revelation he made known unto me the mystery; (as I wrote afore in few words,",
+  4: "Whereby, when ye read, ye may understand my knowledge in the mystery of Christ)",
+  5: "Which in other ages was not made known unto the sons of men, as it is now revealed unto his holy apostles and prophets by the Spirit;",
+  6: "That the Gentiles should be fellowheirs, and of the same body, and partakers of his promise in Christ by the gospel:",
+  7: "Whereof I was made a minister, according to the gift of the grace of God given unto me by the effectual working of his power.",
+  8: "Unto me, who am less than the least of all saints, is this grace given, that I should preach among the Gentiles the unsearchable riches of Christ;",
+  9: "And to make all men see what is the fellowship of the mystery, which from the beginning of the world hath been hid in God, who created all things by Jesus Christ:",
+  10: "To the intent that now unto the principalities and powers in heavenly places might be known by the church the manifold wisdom of God,",
+  11: "According to the eternal purpose which he purposed in Christ Jesus our Lord:",
+  12: "In whom we have boldness and access with confidence by the faith of him.",
+  13: "Wherefore I desire that ye faint not at my tribulations for you, which is your glory.",
+  14: "For this cause I bow my knees unto the Father of our Lord Jesus Christ,",
+  15: "Of whom the whole family in heaven and earth is named,",
+  16: "That he would grant you, according to the riches of his glory, to be strengthened with might by his Spirit in the inner man;",
+  17: "That Christ may dwell in your hearts by faith; that ye, being rooted and grounded in love,",
+  18: "May be able to comprehend with all saints what is the breadth, and length, and depth, and height;",
+  19: "And to know the love of Christ, which passeth knowledge, that ye might be filled with all the fulness of God.",
+  20: "Now unto him that is able to do exceeding abundantly above all that we ask or think, according to the power that worketh in us,",
+  21: "Unto him be glory in the church by Christ Jesus throughout all ages, world without end. Amen."
+};
+const BOOK = "Ephesians 3";
+</script>
+<script src="../assets/deck.js"></script>
+</body>
+</html>
