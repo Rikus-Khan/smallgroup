@@ -50,6 +50,48 @@
     return text;
   }
 
+  // Old KJV words, and what they mean in plain English today. A verse slide lists the ones its verses use
+  // ("Old words: verily = truly, surely"), so no man is left guessing. Forms: "shew|shewed" all share one meaning.
+  const OLD_WORDS = [
+    ["verily", "truly, surely"], ["shew|shewed|sheweth|shewing|shewn", "show"], ["beseech|beseeching|besought", "beg, plead with"],
+    ["howbeit", "but, even so"], ["whence", "from where"], ["whither|whithersoever", "to where"], ["hither", "here, to this place"],
+    ["thither", "there, to that place"], ["nigh", "near"], ["raiment|apparel", "clothing"], ["countenance", "face, look"],
+    ["divers", "various, of many kinds"], ["withal", "also, as well"], ["corn", "grain (wheat or barley)"], ["meat|meats", "food"],
+    ["froward|frowardness", "stubborn, twisted"], ["residue", "the rest"], ["infirmity|infirmities", "weakness, sickness"],
+    ["wax|waxed|waxeth|waxen", "grow, become"], ["travail|travaileth", "hard labour, birth pains"], ["haply", "perhaps, by chance"],
+    ["peradventure", "perhaps"], ["vex|vexed|vexation", "trouble, torment"], ["conversation", "way of life, conduct"],
+    ["straitly", "strictly, sternly"], ["strait", "narrow, hard-pressed"], ["wont", "used to, in the habit of"],
+    ["estate", "condition, standing"], ["abhor|abhorred|abhorreth", "hate, find disgusting"], ["grievous", "heavy, hard to bear"],
+    ["wroth", "very angry"], ["sometime|sometimes", "once, at one time"], ["quick|quicken|quickened|quickeneth", "alive; make alive"],
+    ["whit", "the least bit"], ["husbandman|husbandmen", "farmer, vine-grower"], ["bowels", "the inner man, deep feelings"],
+    ["impotent", "weak, disabled"], ["wot|wotteth|wist|trow", "know, think"], ["instant|instantly", "urgent; urgently"],
+    ["unawares", "without knowing"], ["delicately", "in luxury"], ["letteth", "holds back, hinders"],
+    ["prevent|prevented", "go before, come first"], ["charity", "self-giving love"], ["suffer|suffered|suffereth", "allow (or endure)"],
+    ["abode", "stayed, lived"], ["anon", "at once"], ["holden", "held"],
+    ["publican|publicans", "tax collector"], ["centurion|centurions", "Roman officer over about 100 men"],
+    ["tetrarch", "ruler of part of a land"], ["scrip", "traveller's bag"], ["farthing|farthings|mite|mites", "the smallest coin"],
+    ["penny|pence", "a day's wage (a silver denarius)"], ["cubit|cubits", "about 18 inches"], ["furlong|furlongs", "about an eighth of a mile"],
+    ["kine", "cows"], ["victuals", "food, supplies"], ["ensample|ensamples", "example"], ["lucre", "money, gain"],
+    ["concupiscence", "strong evil desire"], ["lasciviousness", "shameless lust"], ["chambering", "sexual sin"],
+    ["wantonness", "lust without restraint"], ["emulations", "jealous rivalry"], ["revellings", "wild drunken parties"],
+    ["surfeiting", "overindulgence"], ["gainsay|gainsayers|gainsaying", "speak against, contradict"],
+    ["reprobate", "rejected, failing the test"], ["propitiation", "the sacrifice that turns away God's wrath"],
+    ["mammon", "money, riches"], ["unction", "anointing"], ["usury", "interest on a loan"], ["vaunteth", "boasts"],
+    ["vesture", "robe, clothing"], ["tares", "weeds that look like wheat"], ["superfluity", "overflow, excess"],
+    ["succour|succoured", "help, rescue"], ["sundry", "various"], ["stablish|stablished|stablisheth", "make firm"],
+    ["shambles", "meat market"], ["seemly|comely", "fitting, proper; pleasing"], ["leasing", "lies"],
+    ["quaternions", "squads of four soldiers"], ["firkins", "jars of about 9 gallons"], ["tribute", "tax"],
+    ["jot", "the smallest letter"], ["tittle", "the smallest stroke of a letter"], ["outlandish", "foreign"],
+    ["bishoprick", "the office of an overseer"], ["sod|sodden", "boiled"], ["kinsman|kinsmen", "relative"],
+    ["afore|aforetime", "before, in the past"], ["ere", "before"], ["hitherto", "until now"],
+    ["sith", "since"], ["twain", "two"], ["fain", "gladly"],
+    ["brasen", "made of bronze"], ["sackcloth", "rough goat-hair cloth worn in grief"], ["firstfruits", "the first of the harvest, given to God"],
+    ["earnest", "a down payment, a pledge (or: eager)"], ["stripes", "lashes of a whip"], ["scourge|scourged", "whip, whipped"],
+    ["tidings", "news"], ["slothful", "lazy"], ["chasten|chastened|chasteneth|chastening", "discipline, train"], ["mete|meted", "measure out"]
+  ].map(([forms, means]) => ({ re: new RegExp(`\\b(${forms})\\b`, "i"), word: forms.split("|")[0], means }));
+  const oldWords = text => OLD_WORDS.filter(o => o.re.test(text)).slice(0, 4)
+    .map(o => `<span><b>${o.word}</b> = ${o.means}</span>`).join("");
+
   if (verses) {
     // Full-verse slides
     document.querySelectorAll(".slide.verse").forEach(s => {
@@ -59,8 +101,10 @@
       const body = nums.map((n, k) =>
         `<p class="v rise" style="--d:${k * 2 + 1}"><span class="vn">${verseNo(n)}</span>${highlight(verses[n], s.dataset.hl)}</p>`).join("");
       const carved = String(nums[0]).includes(":") ? span(nums) : `${chapter}:${span(nums)}`;
+      const old = oldWords(nums.map(n => verses[n]).join(" "));
       s.innerHTML = `<div class="inner"><p class="carved rise" aria-hidden="true">${carved}</p>` +
-        `<div class="vtext" style="--vs:${vs}">${body}</div><p class="vref rise" style="--d:${nums.length * 2 + 1}">${refText(nums)}</p></div>`;
+        `<div class="vtext" style="--vs:${vs}">${body}</div><p class="vref rise" style="--d:${nums.length * 2 + 1}">${refText(nums)}</p>` +
+        (old ? `<p class="oldwords rise" style="--d:${nums.length * 2 + 2}"><em>Old words</em>${old}</p>` : "") + `</div>`;
     });
     // Verse quotes on explanation and question slides
     document.querySelectorAll("blockquote[data-q]").forEach(q => {
