@@ -516,7 +516,19 @@ window.GLOSSARY = [
     [ 12, 15 ] ],
    [
     "2 Timothy", 4,
-    [ 1, 22 ] ] ]
+    [ 1, 22 ] ],
+   [
+    "Titus", 1,
+    [ 1, 4 ] ],
+   [
+    "Titus", 2,
+    [ 13 ] ],
+   [
+    "Titus", 3,
+    [ 6 ] ],
+   [
+    "Philemon", 1,
+    [ 1, 3, 5, 6, 9, 23, 25 ] ] ]
  },
  {
   "id": "john-the-baptist",
@@ -1416,7 +1428,13 @@ window.GLOSSARY = [
     [ 2 ] ],
    [
     "2 Timothy", 1,
-    [ 2 ] ] ]
+    [ 2 ] ],
+   [
+    "Titus", 1,
+    [ 4 ] ],
+   [
+    "Philemon", 1,
+    [ 3 ] ] ]
  },
  {
   "id": "holy-spirit",
@@ -1650,7 +1668,10 @@ window.GLOSSARY = [
     [ 16 ] ],
    [
     "2 Timothy", 1,
-    [ 14 ] ] ]
+    [ 14 ] ],
+   [
+    "Titus", 3,
+    [ 5 ] ] ]
  },
  {
   "id": "disciples",
@@ -4788,7 +4809,16 @@ window.GLOSSARY = [
     [ 9 ] ],
    [
     "2 Timothy", 2,
-    [ 1 ] ] ]
+    [ 1 ] ],
+   [
+    "Titus", 2,
+    [ 11 ] ],
+   [
+    "Titus", 3,
+    [ 7 ] ],
+   [
+    "Philemon", 1,
+    [ 25 ] ] ]
  },
  {
   "id": "truth",
@@ -4992,7 +5022,10 @@ window.GLOSSARY = [
     [ 7, 8 ] ],
    [
     "2 Timothy", 4,
-    [ 4 ] ] ]
+    [ 4 ] ],
+   [
+    "Titus", 1,
+    [ 1, 14 ] ] ]
  },
  {
   "id": "glory",
@@ -5505,7 +5538,10 @@ window.GLOSSARY = [
     [ 5, 6, 9 ] ],
    [
     "1 Timothy", 1,
-    [ 7, 8, 9 ] ] ]
+    [ 7, 8, 9 ] ],
+   [
+    "Titus", 3,
+    [ 9 ] ] ]
  },
  {
   "id": "only-begotten",
@@ -5925,7 +5961,19 @@ window.GLOSSARY = [
     [ 12, 15 ] ],
    [
     "2 Timothy", 4,
-    [ 1, 22 ] ] ]
+    [ 1, 22 ] ],
+   [
+    "Titus", 1,
+    [ 1, 4 ] ],
+   [
+    "Titus", 2,
+    [ 13 ] ],
+   [
+    "Titus", 3,
+    [ 6 ] ],
+   [
+    "Philemon", 1,
+    [ 1, 3, 6, 8, 9, 23, 25 ] ] ]
  },
  {
   "id": "son-of-god",
@@ -6465,7 +6513,10 @@ window.GLOSSARY = [
     [ 12 ] ],
    [
     "2 Timothy", 2,
-    [ 13 ] ] ]
+    [ 13 ] ],
+   [
+    "Titus", 3,
+    [ 8 ] ] ]
  },
  {
   "id": "witness",
@@ -6633,7 +6684,10 @@ window.GLOSSARY = [
     [ 13 ] ],
    [
     "1 Thessalonians", 2,
-    [ 5 ] ] ]
+    [ 5 ] ],
+   [
+    "Titus", 1,
+    [ 13 ] ] ]
  },
  {
   "id": "baptize",
@@ -6957,7 +7011,13 @@ window.GLOSSARY = [
     [ 3, 8 ] ],
    [
     "1 Timothy", 5,
-    [ 23 ] ] ]
+    [ 23 ] ],
+   [
+    "Titus", 1,
+    [ 7 ] ],
+   [
+    "Titus", 2,
+    [ 3 ] ] ]
  },
  {
   "id": "waterpots",
@@ -7947,7 +8007,10 @@ window.GLOSSARY = [
     [ 23 ] ],
    [
     "2 Timothy", 3,
-    [ 9 ] ] ]
+    [ 9 ] ],
+   [
+    "Titus", 3,
+    [ 3, 9 ] ] ]
  },
  {
   "id": "scorner",
@@ -8349,7 +8412,10 @@ window.GLOSSARY = [
     [ 16 ] ],
    [
     "2 Timothy", 4,
-    [ 8 ] ] ]
+    [ 8 ] ],
+   [
+    "Titus", 3,
+    [ 5 ] ] ]
  },
  {
   "id": "wicked",
@@ -9192,7 +9258,10 @@ window.GLOSSARY = [
     [ 9 ] ],
    [
     "1 Timothy", 2,
-    [ 8 ] ] ]
+    [ 8 ] ],
+   [
+    "Titus", 1,
+    [ 7 ] ] ]
  },
  {
   "id": "pride",
@@ -9351,7 +9420,10 @@ window.GLOSSARY = [
     [ 23 ] ],
    [
     "2 Corinthians", 8,
-    [ 22 ] ] ]
+    [ 22 ] ],
+   [
+    "Titus", 3,
+    [ 12 ] ] ]
  },
  {
   "id": "strong-drink",
@@ -9513,7 +9585,13 @@ window.GLOSSARY = [
     [ 16 ] ],
    [
     "2 Timothy", 4,
-    [ 2 ] ] ]
+    [ 2 ] ],
+   [
+    "Titus", 1,
+    [ 13 ] ],
+   [
+    "Titus", 2,
+    [ 15 ] ] ]
  },
  {
   "id": "friend",
@@ -10464,7 +10542,10 @@ window.GLOSSARY = [
     [ 2 ] ],
    [
     "1 Timothy", 6,
-    [ 4 ] ] ]
+    [ 4 ] ],
+   [
+    "Titus", 3,
+    [ 9 ] ] ]
  },
  {
   "id": "subtilty",
@@ -11052,7 +11133,13 @@ window.GLOSSARY = [
     [ 22, 23 ] ],
    [
     "1 Timothy", 6,
-    [ 12, 19 ] ] ]
+    [ 12, 19 ] ],
+   [
+    "Titus", 1,
+    [ 2 ] ],
+   [
+    "Titus", 3,
+    [ 7 ] ] ]
  },
  {
   "id": "condemnation",
@@ -12477,7 +12564,10 @@ window.GLOSSARY = [
     [ 1 ] ],
    [
     "2 Timothy", 3,
-    [ 2 ] ] ]
+    [ 2 ] ],
+   [
+    "Titus", 2,
+    [ 5 ] ] ]
  },
  {
   "id": "ye-are-gods",
@@ -12903,7 +12993,10 @@ window.GLOSSARY = [
     [ 11 ] ],
    [
     "Colossians", 4,
-    [ 11 ] ] ]
+    [ 11 ] ],
+   [
+    "Titus", 1,
+    [ 10 ] ] ]
  },
  {
   "id": "living-water",
@@ -13014,7 +13107,13 @@ window.GLOSSARY = [
     [ 10, 16 ] ],
    [
     "2 Timothy", 4,
-    [ 2, 3 ] ] ]
+    [ 2, 3 ] ],
+   [
+    "Titus", 1,
+    [ 9 ] ],
+   [
+    "Titus", 2,
+    [ 1, 7, 10 ] ] ]
  },
  {
   "id": "letters",
@@ -13629,7 +13728,13 @@ window.GLOSSARY = [
     [ 32 ] ],
    [
     "2 Corinthians", 7,
-    [ 3 ] ] ]
+    [ 3 ] ],
+   [
+    "Titus", 2,
+    [ 8 ] ],
+   [
+    "Titus", 3,
+    [ 11 ] ] ]
  },
  {
   "id": "conscience",
@@ -13677,7 +13782,10 @@ window.GLOSSARY = [
     [ 2 ] ],
    [
     "2 Timothy", 1,
-    [ 3 ] ] ]
+    [ 3 ] ],
+   [
+    "Titus", 1,
+    [ 15 ] ] ]
  },
  {
   "id": "i-am",
@@ -14427,7 +14535,10 @@ window.GLOSSARY = [
     [ 10 ] ],
    [
     "2 Timothy", 3,
-    [ 15 ] ] ]
+    [ 15 ] ],
+   [
+    "Titus", 2,
+    [ 11 ] ] ]
  },
  {
   "id": "sixth-hour",
@@ -17667,7 +17778,10 @@ window.GLOSSARY = [
     [ 15 ] ],
    [
     "1 Timothy", 5,
-    [ 1, 17, 19 ] ] ]
+    [ 1, 17, 19 ] ],
+   [
+    "Titus", 1,
+    [ 5 ] ] ]
  },
  {
   "id": "locusts",
@@ -18837,7 +18951,13 @@ window.GLOSSARY = [
     [ 2, 13, 16 ] ],
    [
     "2 Timothy", 1,
-    [ 2, 16, 18 ] ] ]
+    [ 2, 16, 18 ] ],
+   [
+    "Titus", 1,
+    [ 4 ] ],
+   [
+    "Titus", 3,
+    [ 5 ] ] ]
  },
  {
   "id": "baal",
@@ -19650,7 +19770,16 @@ window.GLOSSARY = [
     [ 3 ] ],
    [
     "2 Timothy", 1,
-    [ 10 ] ] ]
+    [ 10 ] ],
+   [
+    "Titus", 1,
+    [ 3, 4 ] ],
+   [
+    "Titus", 2,
+    [ 10, 13 ] ],
+   [
+    "Titus", 3,
+    [ 4, 6 ] ] ]
  },
  {
   "id": "caul",
@@ -19692,7 +19821,10 @@ window.GLOSSARY = [
     [ 5 ] ],
    [
     "1 Timothy", 2,
-    [ 6 ] ] ]
+    [ 6 ] ],
+   [
+    "Titus", 2,
+    [ 14 ] ] ]
  },
  {
   "id": "o-death",
@@ -23133,7 +23265,10 @@ window.GLOSSARY = [
     [ 11 ] ],
    [
     "2 Timothy", 2,
-    [ 25 ] ] ]
+    [ 25 ] ],
+   [
+    "Titus", 3,
+    [ 2 ] ] ]
  },
  {
   "id": "cherethites",
@@ -25758,7 +25893,10 @@ window.GLOSSARY = [
     [ 10 ] ],
    [
     "2 Timothy", 3,
-    [ 6 ] ] ]
+    [ 6 ] ],
+   [
+    "Titus", 3,
+    [ 3 ] ] ]
  },
  {
   "id": "devils",
@@ -31257,7 +31395,10 @@ window.GLOSSARY = [
     [ 5, 15 ] ],
    [
     "1 Timothy", 5,
-    [ 16 ] ] ]
+    [ 16 ] ],
+   [
+    "Philemon", 1,
+    [ 2 ] ] ]
  },
  {
   "id": "bind-and-loose",
@@ -33489,7 +33630,10 @@ window.GLOSSARY = [
     [ 11, 58 ] ],
    [
     "Acts", 16,
-    [ 20, 22, 35, 36, 38 ] ] ]
+    [ 20, 22, 35, 36, 38 ] ],
+   [
+    "Titus", 3,
+    [ 1 ] ] ]
  },
  {
   "id": "officer",
@@ -35406,7 +35550,10 @@ window.GLOSSARY = [
     [ 8, 11, 24 ] ],
    [
     "Galatians", 5,
-    [ 4 ] ] ]
+    [ 4 ] ],
+   [
+    "Titus", 3,
+    [ 7 ] ] ]
  },
  {
   "id": "beginnings-of-sorrows",
@@ -35871,7 +36018,10 @@ window.GLOSSARY = [
     [ 15 ] ],
    [
     "1 Timothy", 6,
-    [ 4 ] ] ]
+    [ 4 ] ],
+   [
+    "Titus", 3,
+    [ 3 ] ] ]
  },
  {
   "id": "wine-mingled-with-myrrh",
@@ -36186,7 +36336,10 @@ window.GLOSSARY = [
     [ 29 ] ],
    [
     "Romans", 10,
-    [ 21 ] ] ]
+    [ 21 ] ],
+   [
+    "Titus", 1,
+    [ 9 ] ] ]
  },
  {
   "id": "patience",
@@ -37008,7 +37161,10 @@ window.GLOSSARY = [
     [ 11 ] ],
    [
     "Acts", 27,
-    [ 7, 12, 13, 21 ] ] ]
+    [ 7, 12, 13, 21 ] ],
+   [
+    "Titus", 1,
+    [ 5 ] ] ]
  },
  {
   "id": "arabians",
@@ -38187,7 +38343,10 @@ window.GLOSSARY = [
     [ 10 ] ],
    [
     "2 Timothy", 4,
-    [ 11 ] ] ]
+    [ 11 ] ],
+   [
+    "Philemon", 1,
+    [ 24 ] ] ]
  },
  {
   "id": "rhoda",
@@ -38370,7 +38529,13 @@ window.GLOSSARY = [
     [ 1 ] ],
    [
     "2 Timothy", 1,
-    [ 1 ] ] ]
+    [ 1 ] ],
+   [
+    "Titus", 1,
+    [ 1 ] ],
+   [
+    "Philemon", 1,
+    [ 1, 9, 19 ] ] ]
  },
  {
   "id": "silas",
@@ -38574,7 +38739,10 @@ window.GLOSSARY = [
     [ 20 ] ],
    [
     "2 Timothy", 1,
-    [ 2 ] ] ]
+    [ 2 ] ],
+   [
+    "Philemon", 1,
+    [ 1 ] ] ]
  },
  {
   "id": "lydia",
@@ -40359,7 +40527,10 @@ window.GLOSSARY = [
     [ 4, 5, 6, 22 ] ],
    [
     "1 Corinthians", 16,
-    [ 12 ] ] ]
+    [ 12 ] ],
+   [
+    "Titus", 3,
+    [ 13 ] ] ]
  },
  {
   "id": "tentmakers",
@@ -41106,7 +41277,10 @@ window.GLOSSARY = [
     [ 2 ] ],
    [
     "Colossians", 4,
-    [ 10 ] ] ]
+    [ 10 ] ],
+   [
+    "Philemon", 1,
+    [ 24 ] ] ]
  },
  {
   "id": "alexander-of-ephesus",
@@ -41256,6 +41430,9 @@ window.GLOSSARY = [
     [ 7 ] ],
    [
     "2 Timothy", 4,
+    [ 12 ] ],
+   [
+    "Titus", 3,
     [ 12 ] ] ]
  },
  {
@@ -41643,7 +41820,10 @@ window.GLOSSARY = [
     [ 5, 6, 7 ] ],
    [
     "2 Timothy", 3,
-    [ 8 ] ] ]
+    [ 8 ] ],
+   [
+    "Titus", 1,
+    [ 16 ] ] ]
  },
  {
   "id": "not-convenient",
@@ -41889,7 +42069,16 @@ window.GLOSSARY = [
     [ 16 ] ],
    [
     "1 Timothy", 1,
-    [ 1 ] ] ]
+    [ 1 ] ],
+   [
+    "Titus", 1,
+    [ 2 ] ],
+   [
+    "Titus", 2,
+    [ 13 ] ],
+   [
+    "Titus", 3,
+    [ 7 ] ] ]
  },
  {
   "id": "experience",
@@ -43395,7 +43584,10 @@ window.GLOSSARY = [
     [ 2 ] ],
    [
     "Galatians", 4,
-    [ 12 ] ] ]
+    [ 12 ] ],
+   [
+    "Philemon", 1,
+    [ 9, 10 ] ] ]
  },
  {
   "id": "living-sacrifice",
@@ -43554,7 +43746,10 @@ window.GLOSSARY = [
     [ 13 ] ],
    [
     "1 Timothy", 3,
-    [ 2 ] ] ]
+    [ 2 ] ],
+   [
+    "Titus", 1,
+    [ 8 ] ] ]
  },
  {
   "id": "condescend",
@@ -43944,7 +44139,10 @@ window.GLOSSARY = [
     [ 16 ] ],
    [
     "Colossians", 2,
-    [ 15 ] ] ]
+    [ 15 ] ],
+   [
+    "Titus", 3,
+    [ 1 ] ] ]
  },
  {
   "id": "chloe",
@@ -44436,7 +44634,10 @@ window.GLOSSARY = [
     [ 7 ] ],
    [
     "Colossians", 4,
-    [ 10 ] ] ]
+    [ 10 ] ],
+   [
+    "Philemon", 1,
+    [ 23 ] ] ]
  },
  {
   "id": "amplias",
@@ -45366,7 +45567,10 @@ window.GLOSSARY = [
     [ 22 ] ],
    [
     "2 Timothy", 3,
-    [ 10 ] ] ]
+    [ 10 ] ],
+   [
+    "Titus", 2,
+    [ 2 ] ] ]
  },
  {
   "id": "edifieth",
@@ -45507,7 +45711,13 @@ window.GLOSSARY = [
   "refs": [
    [
     "1 Corinthians", 9,
-    [ 25 ] ] ]
+    [ 25 ] ],
+   [
+    "Titus", 1,
+    [ 8 ] ],
+   [
+    "Titus", 2,
+    [ 2 ] ] ]
  },
  {
   "id": "corruptible-crown",
@@ -45564,7 +45774,10 @@ window.GLOSSARY = [
     [ 11 ] ],
    [
     "Ephesians", 6,
-    [ 4 ] ] ]
+    [ 4 ] ],
+   [
+    "Titus", 3,
+    [ 10 ] ] ]
  },
  {
   "id": "serpents-wilderness",
@@ -46410,7 +46623,10 @@ window.GLOSSARY = [
     [ 1, 3 ] ],
    [
     "2 Timothy", 4,
-    [ 10 ] ] ]
+    [ 10 ] ],
+   [
+    "Titus", 1,
+    [ 4 ] ] ]
  },
  {
   "id": "heaviness",
@@ -47298,7 +47514,10 @@ window.GLOSSARY = [
     [ 29 ] ],
    [
     "Galatians", 4,
-    [ 1, 7, 30 ] ] ]
+    [ 1, 7, 30 ] ],
+   [
+    "Titus", 3,
+    [ 7 ] ] ]
  },
  {
   "id": "tutors-and-governors",
@@ -47661,7 +47880,10 @@ window.GLOSSARY = [
     [ 1 ] ],
    [
     "Colossians", 3,
-    [ 12 ] ] ]
+    [ 12 ] ],
+   [
+    "Philemon", 1,
+    [ 7, 12, 20 ] ] ]
  },
  {
   "id": "bonds",
@@ -47679,7 +47901,10 @@ window.GLOSSARY = [
     [ 3, 18 ] ],
    [
     "2 Timothy", 2,
-    [ 9 ] ] ]
+    [ 9 ] ],
+   [
+    "Philemon", 1,
+    [ 10, 13 ] ] ]
  },
  {
   "id": "palace-guard",
@@ -47841,7 +48066,10 @@ window.GLOSSARY = [
     [ 1 ] ],
    [
     "Ephesians", 4,
-    [ 1 ] ] ]
+    [ 1 ] ],
+   [
+    "Philemon", 1,
+    [ 1, 9 ] ] ]
  },
  {
   "id": "youward",
@@ -48171,7 +48399,10 @@ window.GLOSSARY = [
     [ 31 ] ],
    [
     "Colossians", 3,
-    [ 8 ] ] ]
+    [ 8 ] ],
+   [
+    "Titus", 3,
+    [ 3 ] ] ]
  },
  {
   "id": "tenderhearted",
@@ -48201,7 +48432,10 @@ window.GLOSSARY = [
     [ 7 ] ],
    [
     "Colossians", 4,
-    [ 12 ] ] ]
+    [ 12 ] ],
+   [
+    "Philemon", 1,
+    [ 23 ] ] ]
  },
  {
   "id": "meet-fit",
@@ -48873,7 +49107,10 @@ window.GLOSSARY = [
   "refs": [
    [
     "Ephesians", 5,
-    [ 8 ] ] ]
+    [ 8 ] ],
+   [
+    "Titus", 3,
+    [ 3 ] ] ]
  },
  {
   "id": "children-of-light",
@@ -49050,7 +49287,13 @@ window.GLOSSARY = [
   "refs": [
    [
     "Ephesians", 6,
-    [ 5 ] ] ]
+    [ 5 ] ],
+   [
+    "Titus", 2,
+    [ 9 ] ],
+   [
+    "Philemon", 1,
+    [ 16 ] ] ]
  },
  {
   "id": "masters-according-to-the-flesh",
@@ -49344,7 +49587,10 @@ window.GLOSSARY = [
   "refs": [
    [
     "Colossians", 4,
-    [ 9 ] ] ]
+    [ 9 ] ],
+   [
+    "Philemon", 1,
+    [ 10 ] ] ]
  },
  {
   "id": "luke-the-physician",
@@ -49356,7 +49602,10 @@ window.GLOSSARY = [
     [ 14 ] ],
    [
     "2 Timothy", 4,
-    [ 11 ] ] ]
+    [ 11 ] ],
+   [
+    "Philemon", 1,
+    [ 24 ] ] ]
  },
  {
   "id": "demas",
@@ -49368,7 +49617,10 @@ window.GLOSSARY = [
     [ 14 ] ],
    [
     "2 Timothy", 4,
-    [ 10 ] ] ]
+    [ 10 ] ],
+   [
+    "Philemon", 1,
+    [ 24 ] ] ]
  },
  {
   "id": "nymphas",
@@ -49386,7 +49638,10 @@ window.GLOSSARY = [
   "refs": [
    [
     "Colossians", 4,
-    [ 17 ] ] ]
+    [ 17 ] ],
+   [
+    "Philemon", 1,
+    [ 2 ] ] ]
  },
  {
   "id": "jesus-justus",
@@ -49731,7 +49986,10 @@ window.GLOSSARY = [
   "refs": [
    [
     "1 Thessalonians", 5,
-    [ 14 ] ] ]
+    [ 14 ] ],
+   [
+    "Titus", 1,
+    [ 6, 10 ] ] ]
  },
  {
   "id": "pray-without-ceasing",
@@ -50280,7 +50538,10 @@ window.GLOSSARY = [
   "refs": [
    [
     "1 Timothy", 3,
-    [ 1, 2 ] ] ]
+    [ 1, 2 ] ],
+   [
+    "Titus", 1,
+    [ 7 ] ] ]
  },
  {
   "id": "deacon",
@@ -50307,7 +50568,10 @@ window.GLOSSARY = [
   "refs": [
    [
     "1 Timothy", 3,
-    [ 3, 8 ] ] ]
+    [ 3, 8 ] ],
+   [
+    "Titus", 1,
+    [ 7, 11 ] ] ]
  },
  {
   "id": "striker-brawler",
@@ -50316,7 +50580,13 @@ window.GLOSSARY = [
   "refs": [
    [
     "1 Timothy", 3,
-    [ 3 ] ] ]
+    [ 3 ] ],
+   [
+    "Titus", 1,
+    [ 7 ] ],
+   [
+    "Titus", 3,
+    [ 2 ] ] ]
  },
  {
   "id": "vigilant",
@@ -50334,7 +50604,10 @@ window.GLOSSARY = [
   "refs": [
    [
     "1 Timothy", 3,
-    [ 8, 11 ] ] ]
+    [ 8, 11 ] ],
+   [
+    "Titus", 2,
+    [ 2 ] ] ]
  },
  {
   "id": "doubletongued",
@@ -50830,5 +51103,344 @@ window.GLOSSARY = [
    [
     "2 Timothy", 4,
     [ 17 ] ] ]
+ },
+ {
+  "id": "philemon",
+  "kind": "person",
+  "name": "Philemon (a believer at Colosse with a church in his house; Onesimus's master)",
+  "refs": [
+   [
+    "Philemon", 1,
+    [ 1 ] ] ]
+ },
+ {
+  "id": "apphia",
+  "kind": "person",
+  "name": "Apphia (a believer in Philemon's house, probably his wife)",
+  "refs": [
+   [
+    "Philemon", 1,
+    [ 2 ] ] ]
+ },
+ {
+  "id": "fellowworkers-philemon",
+  "kind": "term",
+  "name": "Fellowlabourer, fellowsoldier (Paul's partners in the work)",
+  "refs": [
+   [
+    "Philemon", 1,
+    [ 1, 2, 24 ] ] ]
+ },
+ {
+  "id": "church-in-thy-house",
+  "kind": "term",
+  "name": "The church in thy house (a congregation that met in a home)",
+  "refs": [
+   [
+    "Philemon", 1,
+    [ 2 ] ] ]
+ },
+ {
+  "id": "enjoin",
+  "kind": "term",
+  "name": "Enjoin (order, command)",
+  "refs": [
+   [
+    "Philemon", 1,
+    [ 8 ] ] ]
+ },
+ {
+  "id": "begotten-in-bonds",
+  "kind": "term",
+  "name": "Begotten in my bonds (led to Christ while Paul was in chains)",
+  "refs": [
+   [
+    "Philemon", 1,
+    [ 10 ] ] ]
+ },
+ {
+  "id": "unprofitable-profitable",
+  "kind": "term",
+  "name": "Unprofitable, profitable (useless, then useful: a play on the name Onesimus)",
+  "refs": [
+   [
+    "Philemon", 1,
+    [ 11 ] ] ]
+ },
+ {
+  "id": "mine-own-bowels",
+  "kind": "term",
+  "name": "Mine own bowels (my own heart: Paul's love for Onesimus)",
+  "refs": [
+   [
+    "Philemon", 1,
+    [ 12 ] ] ]
+ },
+ {
+  "id": "put-on-mine-account",
+  "kind": "term",
+  "name": "Put that on mine account (charge it to me: the gospel in miniature)",
+  "refs": [
+   [
+    "Philemon", 1,
+    [ 18 ] ] ]
+ },
+ {
+  "id": "cretians",
+  "kind": "person",
+  "name": "The Cretians (people of Crete, whom the Greeks called liars)",
+  "refs": [
+   [
+    "Titus", 1,
+    [ 12 ] ] ]
+ },
+ {
+  "id": "blameless",
+  "kind": "term",
+  "name": "Blameless (nothing in his life to bring a charge against)",
+  "refs": [
+   [
+    "Titus", 1,
+    [ 6, 7 ] ] ]
+ },
+ {
+  "id": "selfwilled",
+  "kind": "term",
+  "name": "Selfwilled (stubborn, set on having his own way)",
+  "refs": [
+   [
+    "Titus", 1,
+    [ 7 ] ] ]
+ },
+ {
+  "id": "vain-talkers",
+  "kind": "term",
+  "name": "Vain talkers (people who say a lot and mean nothing, and lead others astray)",
+  "refs": [
+   [
+    "Titus", 1,
+    [ 10 ] ] ]
+ },
+ {
+  "id": "subvert",
+  "kind": "term",
+  "name": "Subvert (overturn, wreck from the inside)",
+  "refs": [
+   [
+    "Titus", 1,
+    [ 11 ] ],
+   [
+    "Titus", 3,
+    [ 11 ] ] ]
+ },
+ {
+  "id": "slow-bellies",
+  "kind": "term",
+  "name": "Slow bellies (lazy, greedy people who live to eat)",
+  "refs": [
+   [
+    "Titus", 1,
+    [ 12 ] ] ]
+ },
+ {
+  "id": "jewish-fables",
+  "kind": "term",
+  "name": "Jewish fables and commandments of men (made-up myths and man-made rules)",
+  "refs": [
+   [
+    "Titus", 1,
+    [ 14 ] ] ]
+ },
+ {
+  "id": "unto-the-pure",
+  "kind": "term",
+  "name": "Unto the pure all things are pure (a clean heart sees things rightly)",
+  "refs": [
+   [
+    "Titus", 1,
+    [ 15 ] ] ]
+ },
+ {
+  "id": "sound-in-the-faith",
+  "kind": "term",
+  "name": "Sound in the faith (healthy, the way a body is healthy)",
+  "refs": [
+   [
+    "Titus", 1,
+    [ 13 ] ] ]
+ },
+ {
+  "id": "sober-soberly",
+  "kind": "term",
+  "name": "Sober, soberly (clear-headed, in charge of yourself)",
+  "refs": [
+   [
+    "Titus", 1,
+    [ 8 ] ],
+   [
+    "Titus", 2,
+    [ 2, 4, 6, 12 ] ] ]
+ },
+ {
+  "id": "discreet-chaste",
+  "kind": "term",
+  "name": "Discreet, chaste (sensible and pure)",
+  "refs": [
+   [
+    "Titus", 2,
+    [ 5 ] ] ]
+ },
+ {
+  "id": "keepers-at-home",
+  "kind": "term",
+  "name": "Keepers at home (looking after the household)",
+  "refs": [
+   [
+    "Titus", 2,
+    [ 5 ] ] ]
+ },
+ {
+  "id": "word-blasphemed",
+  "kind": "term",
+  "name": "The word of God blasphemed (spoken of with contempt because of how believers live)",
+  "refs": [
+   [
+    "Titus", 2,
+    [ 5 ] ] ]
+ },
+ {
+  "id": "purloining",
+  "kind": "term",
+  "name": "Purloining (taking small things that are not yours)",
+  "refs": [
+   [
+    "Titus", 2,
+    [ 10 ] ] ]
+ },
+ {
+  "id": "adorn",
+  "kind": "term",
+  "name": "Adorn (make attractive, the way jewelry does)",
+  "refs": [
+   [
+    "Titus", 2,
+    [ 10 ] ] ]
+ },
+ {
+  "id": "grace-that-bringeth-salvation",
+  "kind": "term",
+  "name": "The grace of God that bringeth salvation (the free gift, offered to all men)",
+  "refs": [
+   [
+    "Titus", 2,
+    [ 11 ] ] ]
+ },
+ {
+  "id": "worldly-lusts",
+  "kind": "term",
+  "name": "Ungodliness and worldly lusts (the cravings of the old way of life)",
+  "refs": [
+   [
+    "Titus", 2,
+    [ 12 ] ] ]
+ },
+ {
+  "id": "blessed-hope",
+  "kind": "term",
+  "name": "The blessed hope (the appearing of Jesus)",
+  "refs": [
+   [
+    "Titus", 2,
+    [ 13 ] ] ]
+ },
+ {
+  "id": "peculiar-people",
+  "kind": "term",
+  "name": "A peculiar people (a people who belong to Him, His own treasure)",
+  "refs": [
+   [
+    "Titus", 2,
+    [ 14 ] ] ]
+ },
+ {
+  "id": "divers-lusts",
+  "kind": "term",
+  "name": "Divers lusts and pleasures (all kinds of cravings a man serves like a slave)",
+  "refs": [
+   [
+    "Titus", 3,
+    [ 3 ] ] ]
+ },
+ {
+  "id": "kindness-and-love",
+  "kind": "term",
+  "name": "The kindness and love of God our Saviour (God's goodness to people who haven't earned it)",
+  "refs": [
+   [
+    "Titus", 3,
+    [ 4 ] ] ]
+ },
+ {
+  "id": "washing-of-regeneration",
+  "kind": "term",
+  "name": "The washing of regeneration (the new birth: cleansed and made new by God, not by baptism)",
+  "refs": [
+   [
+    "Titus", 3,
+    [ 5 ] ] ]
+ },
+ {
+  "id": "renewing-of-the-holy-ghost",
+  "kind": "term",
+  "name": "The renewing of the Holy Ghost (the Spirit makes a man new inside)",
+  "refs": [
+   [
+    "Titus", 3,
+    [ 5 ] ] ]
+ },
+ {
+  "id": "foolish-questions",
+  "kind": "term",
+  "name": "Foolish questions and contentions (arguments where the point is to win)",
+  "refs": [
+   [
+    "Titus", 3,
+    [ 9 ] ] ]
+ },
+ {
+  "id": "heretick",
+  "kind": "term",
+  "name": "A heretick (a divider, a man who forms a faction)",
+  "refs": [
+   [
+    "Titus", 3,
+    [ 10 ] ] ]
+ },
+ {
+  "id": "nicopolis",
+  "kind": "place",
+  "name": "Nicopolis (a city on the west coast of Greece, where Paul planned to spend the winter)",
+  "refs": [
+   [
+    "Titus", 3,
+    [ 12 ] ] ]
+ },
+ {
+  "id": "artemas",
+  "kind": "person",
+  "name": "Artemas (a helper of Paul, who might be sent to Crete)",
+  "refs": [
+   [
+    "Titus", 3,
+    [ 12 ] ] ]
+ },
+ {
+  "id": "zenas",
+  "kind": "person",
+  "name": "Zenas the lawyer (a helper who travelled with Apollos)",
+  "refs": [
+   [
+    "Titus", 3,
+    [ 13 ] ] ]
  }
 ];

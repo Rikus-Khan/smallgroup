@@ -14608,5 +14608,185 @@ window.STUDIES = [
       },
       "big": "A man can finish well, and a finish is made of ordinary days. People will fail you, some will quit and some will come back, but the Lord stands with you, brings you through, and gives the crown to everyone who loves His appearing."
     }
+  },
+  {
+    "id": "titus-01",
+    "type": "chapter",
+    "book": "Titus",
+    "ch": 1,
+    "date": "2026-10-31",
+    "title": "Titus 1",
+    "sub": "Put in order, and put in good hands",
+    "about": "Paul leaves Titus on Crete to find steady men for every town. God does not write off a rough island, or a rough past.",
+    "tags": [
+      "Leaders",
+      "Rough places",
+      "Hope for hard cases",
+      "A clean heart",
+      "Words and works",
+      "Growing up"
+    ],
+    "url": "studies/titus-01.html",
+    "overview": {
+      "where": "The island of Crete, where Paul left Titus; Paul himself is on the road, a free man again",
+      "when": "About AD 62 to 64, after Paul's release from house arrest in Rome",
+      "people": [
+        "paul",
+        "titus",
+        "cretians"
+      ],
+      "places": [
+        "crete"
+      ],
+      "story": [
+        "Paul greets Titus, “mine own son after the common faith,” and says why he left him on Crete: to set things in order and ordain elders in every city (1–5).",
+        "An elder must be a man whose life backs up what he says: a faithful husband and father, not angry, not a drinker or a striker, not greedy, with an open door and a hold on the faithful word (6–9).",
+        "Many unruly talkers are leading whole households astray. One of their own prophets calls the Cretians liars, evil beasts and slow bellies, and Paul says the witness is true (10–13).",
+        "So rebuke them sharply, so that they may be sound. Stop the fables and the made-up rules (13–14).",
+        "“Unto the pure all things are pure.” The trouble is inside. Men who say they know God but deny Him in their works are no use for anything good (15–16)."
+      ],
+      "key": {
+        "ref": "Titus 1:13",
+        "text": "This witness is true. Wherefore rebuke them sharply, that they may be sound in the faith;"
+      },
+      "big": "God does not write off a rough place or a rough past. A leader is a man whose habits are being changed, and a clean heart shows up in good works."
+    }
+  },
+  {
+    "id": "titus-02",
+    "type": "chapter",
+    "book": "Titus",
+    "ch": 2,
+    "date": "2026-10-31",
+    "title": "Titus 2",
+    "sub": "Grace that saves, grace that trains",
+    "about": "What a changed life looks like at every age and in every job, and the grace of God that both saves and teaches.",
+    "tags": [
+      "Sound living",
+      "Older men",
+      "Young men",
+      "Work",
+      "Grace",
+      "The blessed hope"
+    ],
+    "url": "studies/titus-02.html",
+    "overview": {
+      "where": "The churches of Crete, in homes and at work",
+      "when": "About AD 62 to 64",
+      "people": [
+        "jesus"
+      ],
+      "places": [],
+      "story": [
+        "Titus is to teach what fits sound doctrine: older men sober, grave, temperate, sound in faith, love and patience (1–2).",
+        "Older women teach the younger women, and each age has its part. The point is that the word of God is not mocked (3–5).",
+        "Young men are to be sober minded, and Titus himself a pattern of good works, with speech nobody can fault (6–8).",
+        "Servants are to be faithful and honest, so that they adorn the teaching of God our Saviour in all things (9–10).",
+        "“The grace of God that bringeth salvation hath appeared to all men,” and it teaches us to say no to ungodliness and to live soberly, righteously and godly, looking for the blessed hope. Jesus gave Himself to redeem us and make us His own people (11–15)."
+      ],
+      "key": {
+        "ref": "Titus 2:11–12",
+        "text": "For the grace of God that bringeth salvation hath appeared to all men, Teaching us that, denying ungodliness and worldly lusts, we should live soberly, righteously, and godly, in this present world;"
+      },
+      "big": "Grace does not only forgive. The same grace that saves every man who believes also trains him to live right in this present world, and Jesus is the blessed hope."
+    }
+  },
+  {
+    "id": "titus-03",
+    "type": "chapter",
+    "book": "Titus",
+    "ch": 3,
+    "date": "2026-10-31",
+    "title": "Titus 3",
+    "sub": "Saved by mercy, sent to do good",
+    "about": "Paul reminds Crete who they were, what God did by His mercy, and how a saved man treats his neighbours.",
+    "tags": [
+      "Good citizens",
+      "Who we were",
+      "Mercy",
+      "New birth",
+      "Heirs",
+      "Peacemakers"
+    ],
+    "url": "studies/titus-03.html",
+    "overview": {
+      "where": "Crete, with Paul planning to winter at Nicopolis",
+      "when": "About AD 62 to 64",
+      "people": [
+        "jesus",
+        "artemas",
+        "tychicus",
+        "zenas",
+        "apollos"
+      ],
+      "places": [
+        "nicopolis"
+      ],
+      "story": [
+        "Obey rulers, be ready to every good work, speak evil of no man, be gentle with everyone (1–2).",
+        "“We ourselves also were sometimes foolish, disobedient, deceived, serving divers lusts and pleasures” (3).",
+        "“But after that the kindness and love of God our Saviour toward man appeared.” Not by our works but by His mercy He saved us, by the washing of regeneration and the Holy Ghost, so that we are justified and made heirs of eternal life (4–7).",
+        "Those who have believed should be careful to maintain good works. Skip the foolish arguments, and step back from a divider after two warnings (8–11).",
+        "Paul's plans: Titus to join him at Nicopolis, help for Zenas and Apollos, and a last word that our people learn to do good for real needs (12–15)."
+      ],
+      "key": {
+        "ref": "Titus 3:5",
+        "text": "Not by works of righteousness which we have done, but according to his mercy he saved us, by the washing of regeneration, and renewing of the Holy Ghost;"
+      },
+      "big": "Salvation is not earned. We were the men in verse 3, and God saved us by His mercy and the new birth, so we can be kind to everyone and careful to do good."
+    }
+  },
+  {
+    "id": "philemon-01",
+    "type": "chapter",
+    "book": "Philemon",
+    "ch": 1,
+    "date": "2026-10-31",
+    "title": "Philemon 1",
+    "sub": "A letter about one man",
+    "about": "A runaway slave, the man he wronged, and a prisoner in the middle: the gospel in one short letter.",
+    "tags": [
+      "Debt",
+      "Made useful",
+      "Brothers",
+      "Love, not orders",
+      "Making it right",
+      "The gospel in miniature"
+    ],
+    "url": "studies/philemon-01.html",
+    "overview": {
+      "where": "Written from Paul's rented house in Rome, to Philemon's house at Colosse, a small town in Asia",
+      "when": "About AD 60 to 62, the same time as Colossians and Ephesians",
+      "people": [
+        "paul",
+        "timothy",
+        "philemon",
+        "apphia",
+        "archippus",
+        "onesimus",
+        "epaphras",
+        "john-mark",
+        "aristarchus",
+        "demas",
+        "luke-the-physician"
+      ],
+      "places": [
+        "colosse",
+        "rome"
+      ],
+      "story": [
+        "Paul, a prisoner, writes with Timothy to Philemon, his dear friend and fellow worker, and to the church that meets in his house (1–3).",
+        "He thanks God for Philemon's love and faith, and says Philemon has refreshed the hearts of God's people (4–7).",
+        "He could order, but for love's sake he asks: for Onesimus, his son in the faith “begotten in my bonds,” once useless and now truly useful (8–12).",
+        "Paul would have kept him, but will do nothing without Philemon's say. Perhaps this was why he ran: to be received for ever, as a brother beloved (13–16).",
+        "“Receive him as myself.” “If he hath wronged thee, or oweth thee ought, put that on mine account. I Paul have written it with mine own hand, I will repay it” (17–19).",
+        "Paul expects to visit, and sends greetings from Epaphras, Mark, Aristarchus, Demas and Luke (20–25)."
+      ],
+      "key": {
+        "ref": "Philemon 1:18",
+        "text": "If he hath wronged thee, or oweth thee ought, put that on mine account;"
+      },
+      "big": "Onesimus owed a debt he could not pay. Paul put it on his own account and gave Onesimus his own place. That is what Jesus did for us, and it is why a man can go back and make things right."
+    }
   }
 ];
