@@ -12539,6 +12539,95 @@ window.STUDIES = [
     }
   },
   {
+    "id": "2-corinthians-10",
+    "type": "chapter",
+    "book": "2 Corinthians",
+    "url": "studies/2-corinthians-10.html",
+    "ch": 10,
+    "date": "2026-10-31",
+    "title": "2 Corinthians 10",
+    "sub": "The weapons of our warfare",
+    "about": "Paul answers the men who sneer at him: the real fight is in the mind, the weapons are God’s, and the only boast worth making is in the Lord.",
+    "tags": [
+      "Spiritual warfare",
+      "Thoughts and temptation",
+      "Meekness",
+      "Comparing",
+      "Boasting",
+      "Humility"
+    ],
+    "overview": {
+      "where": "Macedonia, where Paul writes to the church at Corinth in Achaia",
+      "when": "About AD 56, a year after 1 Corinthians",
+      "people": [
+        "paul",
+        "christ"
+      ],
+      "places": [
+        "corinth"
+      ],
+      "story": [
+        "Paul begs the Corinthians by the meekness and gentleness of Christ, while critics call him bold only on paper (1–6).",
+        "His weapons are not carnal but mighty through God, pulling down strongholds and bringing every thought captive to Christ (3–6).",
+        "Do ye look on the outward appearance? Paul is Christ’s, and his authority is for building up (7–11).",
+        "Men who measure themselves by themselves are not wise; Paul keeps to the field God gave him and hopes to preach beyond Corinth (12–16).",
+        "He that glorieth, let him glory in the Lord; the one the Lord commends is approved (17–18)."
+      ],
+      "key": {
+        "ref": "2 Corinthians 10:5",
+        "text": "Casting down imaginations, and every high thing that exalteth itself against the knowledge of God, and bringing into captivity every thought to the obedience of Christ;"
+      },
+      "big": "The real fight is in the mind, and the weapons are God’s. Catch the thought early, hand it to Christ, and let the Lord do the measuring."
+    }
+  },
+  {
+    "id": "2-corinthians-11",
+    "type": "chapter",
+    "book": "2 Corinthians",
+    "url": "studies/2-corinthians-11.html",
+    "ch": 11,
+    "date": "2026-10-31",
+    "title": "2 Corinthians 11",
+    "sub": "The fool’s boast",
+    "about": "Paul guards his church from men who look like light, and when he has to boast, he lists his beatings and a basket.",
+    "tags": [
+      "Deception",
+      "False teachers",
+      "Temptation",
+      "Suffering for Christ",
+      "Weakness",
+      "Hope"
+    ],
+    "overview": {
+      "where": "Macedonia, writing to Corinth; Damascus, Philippi and Lystra in his list",
+      "when": "About AD 56",
+      "people": [
+        "paul",
+        "christ",
+        "satan",
+        "abraham"
+      ],
+      "places": [
+        "corinth",
+        "macedonia",
+        "achaia",
+        "damascus"
+      ],
+      "story": [
+        "Paul is jealous with godly jealousy: he promised the Corinthians to one husband, and fears the serpent’s subtilty will lead them from Christ (1–6).",
+        "He preached free of charge, took help from Macedonia, and warns that false apostles and Satan himself come disguised as light (7–15).",
+        "Forced to boast as a fool, he asks who binds, devours and strikes them, and says he is every bit as much a Hebrew (16–22).",
+        "His list: beaten, stoned, shipwrecked, a night and a day in the deep, in perils everywhere, and daily the care of all the churches (23–29).",
+        "He will glory in his infirmities, and tells how he was let down the wall at Damascus in a basket (30–33)."
+      ],
+      "key": {
+        "ref": "2 Corinthians 11:14",
+        "text": "And no marvel; for Satan himself is transformed into an angel of light."
+      },
+      "big": "Evil often comes dressed as good, so test everything by the real Jesus. Real service costs something, and Paul boasts in weakness because the strength was always God’s."
+    }
+  },
+  {
     "id": "2-corinthians-12",
     "type": "chapter",
     "book": "2 Corinthians",

@@ -1,0 +1,562 @@
+<!doctype html>
+<html lang="en" data-theme="night">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>2 Corinthians 10</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="../assets/fonts.css">
+<link rel="stylesheet" href="../assets/deck.css">
+<link rel="stylesheet" href="../assets/themes.css">
+<style>
+/* c210-where: where we are in 2 Corinthians. Five chips (.done, .here), each a run of chapters (i) and what Paul deals with (b) */
+.c210-where { display: grid; grid-template-columns: repeat(auto-fit, minmax(9rem, 1fr)); gap: 6px; margin: .3em 0 1em; }
+.c210-where div { padding: .5em .6em .55em; border-radius: 8px; background: var(--surface); border: 1px solid var(--line); color: var(--ink-soft); line-height: 1.2; }
+.c210-where i { display: block; font: 700 clamp(.8rem, .72rem + .35vw, 1rem)/1.1 var(--sans); font-style: normal; letter-spacing: .04em; margin-bottom: .2em; }
+.c210-where b { font: 400 clamp(.9rem, .82rem + .4vw, 1.15rem)/1.2 var(--serif); }
+.c210-where .done { background: color-mix(in srgb, var(--accent) 14%, var(--surface)); color: var(--ink); }
+.c210-where .here { background: var(--accent); border-color: var(--accent); color: var(--on-accent); box-shadow: 0 0 0 4px color-mix(in srgb, var(--accent) 25%, transparent); }
+.slide.active .c210-where .here { animation: c210-here 2.4s 1s ease-in-out infinite; }
+@keyframes c210-here { 50% { box-shadow: 0 0 0 8px color-mix(in srgb, var(--accent) 10%, transparent); } }
+
+/* c210-fort: a stronghold of lies, built stone by stone. On the step .c210-f1 the stones fall; on .c210-f2 the truth shows where the wall stood */
+.c210-wall { fill: color-mix(in srgb, var(--danger) 18%, var(--surface)); stroke: var(--line-strong); stroke-width: 2.5; }
+.c210-stone { transform-box: fill-box; transform-origin: center; transition: transform 1s cubic-bezier(.5, 0, .9, .6), opacity 1s ease; transition-delay: calc(var(--k) * 110ms); }
+.slide:has(.c210-f1.on) .c210-stone { transform: translateY(var(--fall, 250px)) rotate(var(--r, 12deg)); opacity: 0; }
+.c210-lie { fill: var(--ink); font: 400 21px var(--serif); text-anchor: middle; }
+.c210-flag { fill: var(--danger); }
+.c210-pole { stroke: var(--line-strong); stroke-width: 4; }
+.c210-cap { fill: var(--ink-soft); font: italic 21px var(--serif); text-anchor: middle; }
+.c210-field { fill: color-mix(in srgb, var(--accent) 14%, var(--surface)); stroke: var(--accent); stroke-width: 2.5; opacity: 0; transition: opacity .9s ease; }
+.c210-truth { fill: var(--ink); font: 600 24px var(--serif); text-anchor: middle; opacity: 0; transition: opacity .8s ease; transition-delay: calc(var(--k) * 300ms + 600ms); }
+.slide:has(.c210-f1.on) .c210-field { opacity: 1; }
+.slide:has(.c210-f2.on) .c210-truth { opacity: 1; }
+.c210-fixed { opacity: 1; transition: opacity .6s ease; }
+.slide:has(.c210-f1.on) .c210-fixed { opacity: 0; }
+.c210-after { fill: var(--accent-hot); font: 700 22px var(--sans); text-anchor: middle; opacity: 0; transition: opacity .8s ease .8s; }
+.slide:has(.c210-f1.on) .c210-after { opacity: 1; }
+
+/* c210-flow: a thought runs down the road to a habit. On the step .c210-g1 a gate drops at the first stage and the dot is held there */
+.c210-road { stroke: var(--line-strong); stroke-width: 5; stroke-linecap: round; }
+.c210-node { fill: var(--surface-2); stroke: var(--line-strong); stroke-width: 3; transition: opacity .8s ease; }
+.c210-node.hot { fill: color-mix(in srgb, var(--danger) 45%, var(--surface)); stroke: var(--danger); }
+.c210-st { fill: var(--ink); font: 600 24px var(--serif); text-anchor: middle; transition: opacity .8s ease; }
+.c210-sub { fill: var(--ink-soft); font: italic 18px var(--serif); text-anchor: middle; transition: opacity .8s ease; }
+.c210-dot { fill: var(--accent-hot); }
+.slide.active .c210-dot { animation: c210-run 4.2s 1s ease-in-out forwards; }
+.slide:has(.c210-g1.on) .c210-dot { animation: none; transform: none; }
+@keyframes c210-run { to { transform: translateX(540px); } }
+.slide:has(.c210-g1.on) .c210-late { opacity: .2; }
+.c210-gate { opacity: 0; transform: translateY(-40px); transition: opacity .6s ease, transform .6s ease; }
+.slide:has(.c210-g1.on) .c210-gate { opacity: 1; transform: none; }
+.c210-gate rect { fill: var(--accent); }
+.c210-gate text { fill: var(--accent-hot); font: 700 22px var(--sans); text-anchor: middle; }
+.c210-easy { fill: none; stroke-width: 12; stroke-linecap: round; }
+.c210-bar-t { fill: var(--ink-soft); font: 700 17px var(--sans); letter-spacing: .06em; text-transform: uppercase; }
+
+/* c210-tool: four moves for a thought that pulls. Numbered rows, one per step */
+.c210-tool { list-style: none; padding: 0; margin: .3em 0 .8em; display: grid; gap: .5rem; counter-reset: tl; }
+.c210-tool li { display: grid; grid-template-columns: 2.4rem 1fr; gap: .2rem .9rem; align-items: center; padding: .5em .9em .55em .6em; border-radius: 12px; border: 1.5px solid var(--line-strong); background: var(--surface); counter-increment: tl; }
+.c210-tool li::before { content: counter(tl); grid-row: 1 / span 2; display: grid; place-items: center; width: 2.2rem; height: 2.2rem; border-radius: 50%; background: var(--accent); color: var(--on-accent); font: 700 1.2rem var(--sans); }
+.c210-tool b { font: 600 clamp(1.1rem, .95rem + .7vw, 1.55rem)/1.15 var(--serif); }
+.c210-tool b em { font-style: italic; color: var(--accent-hot); }
+.c210-tool small { grid-column: 2; font: clamp(.9rem, .82rem + .36vw, 1.1rem)/1.3 var(--sans); color: var(--ink-soft); }
+
+/* c210-meas: three men measured against each other, then against the one true line. Steps .c210-m1 (look down), .c210-m2 (look up), .c210-m3 (the true measure) */
+.c210-ground { stroke: var(--line-strong); stroke-width: 3; }
+.c210-man { fill: var(--surface-2); stroke: var(--line-strong); stroke-width: 3; }
+.c210-man.me { fill: color-mix(in srgb, var(--accent) 30%, var(--surface)); stroke: var(--accent); }
+.c210-name { fill: var(--ink); font: 600 22px var(--serif); text-anchor: middle; }
+.c210-arrow { fill: none; stroke: var(--warm); stroke-width: 4; stroke-linecap: round; stroke-dasharray: 1; stroke-dashoffset: 1; transition: stroke-dashoffset 1s ease; }
+.c210-arrow.up { stroke: var(--cool); }
+.slide:has(.c210-m1.on) .c210-arrow.down, .slide:has(.c210-m2.on) .c210-arrow.up { stroke-dashoffset: 0; }
+.c210-q { fill: var(--ink-soft); font: italic 22px var(--serif); text-anchor: middle; opacity: 0; transition: opacity .7s ease; }
+.c210-q.hot { fill: var(--accent-hot); font-style: normal; font-weight: 700; }
+.slide:has(.c210-m1.on) .c210-q.a, .slide:has(.c210-m2.on) .c210-q.b, .slide:has(.c210-m3.on) .c210-q.c { opacity: 1; }
+.slide:has(.c210-m2.on) .c210-q.a, .slide:has(.c210-m3.on) .c210-q.a, .slide:has(.c210-m3.on) .c210-q.b { opacity: 0; }
+.c210-true { stroke: var(--accent); stroke-width: 4; stroke-dasharray: 14 9; opacity: 0; transition: opacity .8s ease; }
+.c210-true-t { fill: var(--accent-hot); font: 700 22px var(--sans); text-anchor: middle; opacity: 0; transition: opacity .8s ease .3s; }
+.slide:has(.c210-m3.on) .c210-true, .slide:has(.c210-m3.on) .c210-true-t { opacity: 1; }
+
+/* c210-pair: two small boxes side by side, a label over a line set large */
+.c210-pair { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin: .4em 0 1em; }
+@media (max-width: 760px) { .c210-pair { grid-template-columns: 1fr; } }
+.c210-pair > div { padding: .7em 1em .8em; border-radius: 12px; background: var(--surface); border: 1.5px solid var(--line-strong); }
+.c210-pair h3 { font: 700 clamp(.78rem, .72rem + .3vw, .98rem) var(--sans); color: var(--accent); text-transform: uppercase; letter-spacing: .06em; margin-bottom: .3em; }
+.c210-pair b { display: block; font: italic 600 clamp(1.1rem, .95rem + .6vw, 1.5rem)/1.2 var(--serif); margin-bottom: .25em; }
+.c210-pair p { margin: 0; font-size: clamp(.9rem, .82rem + .36vw, 1.1rem); line-height: 1.3; color: var(--ink-soft); }
+.c210-pair .all { border-color: var(--accent); background: color-mix(in srgb, var(--accent) 12%, var(--surface)); }
+.c210-pair .all p { color: var(--ink); }
+</style>
+</head>
+<body>
+<main class="deck" id="deck">
+
+<!-- ======================= OPENING ======================= -->
+<section class="slide title">
+  <div class="inner">
+    <div class="emblem rise"></div>
+    <h1 class="rise" style="--d:1">2 Corinthians 10</h1>
+    <p class="sub rise" style="--d:3">The weapons of our warfare</p>
+    <p class="tag rise" style="--d:5">Paul answers the men who sneer at him: the real fight is in the mind, the weapons are God's, and the only boast worth making is in the Lord.</p>
+  </div>
+</section>
+
+<section class="slide watch">
+  <div class="inner">
+    <h2 class="rise">Things to watch for</h2>
+    <p class="lede rise" style="--d:1">Keep these questions in the back of your mind as we read. We'll come back to every one of them at the end.</p>
+    <ol class="seeds">
+      <li class="step"><span class="topic">Meekness</span><span class="seed-q">How does Paul answer people who say he is weak?</span></li>
+      <li class="step"><span class="topic">The war</span><span class="seed-q">What kind of war are we in, and what are our weapons?</span></li>
+      <li class="step"><span class="topic">Strongholds</span><span class="seed-q">What should we do with a thought that pulls us toward sin?</span></li>
+      <li class="step"><span class="topic">Appearances</span><span class="seed-q">Why must we not judge a man by how he looks?</span></li>
+      <li class="step"><span class="topic">Comparing</span><span class="seed-q">Why is comparing ourselves with other men not wise?</span></li>
+      <li class="step"><span class="topic">Glorying</span><span class="seed-q">In whom should a man glory, and whose approval counts?</span></li>
+    </ol>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise">Where we are in 2 Corinthians</h2>
+    <p class="note rise" style="--d:1">About AD 56, Paul is writing from Macedonia to the church he started in Corinth, the same church that got 1 Corinthians a year earlier. The first nine chapters are warm: comfort in trouble, a church set right, and a collection for the poor. Now the tone changes.</p>
+    <div class="c210-where rise" style="--d:2" role="img" aria-label="2 Corinthians in five parts. Chapters 1 to 7: Paul's heart, comfort and a church set right. Chapters 8 and 9: the offering for the poor. Chapter 10: the weapons of our warfare, and we are here. Chapters 11 and 12: the fool's boast. Chapter 13: examine yourselves, and goodbye.">
+      <div class="done"><i>1–7</i><b>Paul's heart, a church set right</b></div>
+      <div class="done"><i>8–9</i><b>The offering for the poor</b></div>
+      <div class="here"><i>10</i><b>The weapons</b></div>
+      <div><i>11–12</i><b>The fool's boast</b></div>
+      <div><i>13</i><b>Examine yourselves; goodbye</b></div>
+    </div>
+    <p class="note step">Most of the church has come round to Paul. But some newcomers have been running him down, and some in the church have listened. Chapters 10 to 13 are his answer. Read alone, this chapter still makes sense: a man under attack decides how he will fight back, and then what he will be proud of.</p>
+  </div>
+</section>
+
+<!-- ======================= PART ONE: THE WEAPONS ======================= -->
+<section class="slide part">
+  <div class="inner">
+    <p class="part-n rise">Part one</p>
+    <h2 class="rise" style="--d:1">The weapons we fight with</h2>
+    <p class="range rise" style="--d:2">Verses 1–6</p>
+    <div class="rule"></div>
+    <p class="hook rise" style="--d:4">A gentle man, a real war, and strongholds that come down.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="1-2" data-hl="the meekness and gentleness of Christ"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise">Meek is not weak</h2>
+    <div class="talk">
+      <p class="rise" style="--d:1"><small>Paul's critics</small>He's tough on paper. In person he's a pushover.</p>
+      <p class="reply step"><small>Paul</small>I beg you, by the gentleness of Christ, don't make me be bold when I get there.</p>
+    </div>
+    <blockquote class="quote step"><p>“Take my yoke upon you, and learn of me; for I am meek and lowly in heart: and ye shall find rest unto your souls.”</p><cite>Matthew 11:29</cite></blockquote>
+    <p class="note step"><em>Meek</em> does not mean weak. It means strength with a leash on: power held back until it is needed. Jesus called Himself meek, and He turned over the tables in the temple. Paul asks them to let him be gentle, because he can be firm.</p>
+    <p class="note step">If you have a past of rage, this is good news. You don't have to be soft to stop being dangerous. A meek man is the strongest man in the room: he can be insulted and still choose his answer.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="3-4" data-hl="we do not war after the flesh|the weapons of our warfare are not carnal, but mighty through God"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="3" data-hl="we do not war after the flesh"></blockquote>
+    <h2 class="rise" style="--d:1">We still live in a body, but we don't fight like it</h2>
+    <p class="note rise" style="--d:2">“Walk in the flesh” just means <em>we live in a human body</em>, with hunger and tiredness. “War after the flesh” means <em>fighting with a man's own methods</em>. Paul is in a war, and he won't use these:</p>
+    <ul class="nots">
+      <li class="step"><span class="k">get even</span><span class="why">answering an insult with a worse one</span></li>
+      <li class="step"><span class="k">a sharp tongue</span><span class="why">winning the argument and losing the man</span></li>
+      <li class="step"><span class="k">the bottle, the pills, the escape</span><span class="why">“carnal” weapons, the old way of fighting a pain</span></li>
+      <li class="step"><span class="k">a clever lie</span><span class="why">a story that makes you look better</span></li>
+      <li class="step yes"><span class="k">weapons “mighty through God”</span><span class="why">the truth, His word, prayer, and the gospel (Ephesians 6:11–17)</span></li>
+    </ul>
+    <p class="note step">Notice who the power belongs to: <em>“mighty through God.”</em> You are not asked to be strong enough. You are asked to use His weapons instead of yours.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="5-6" data-hl="bringing into captivity every thought to the obedience of Christ"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise">A stronghold is a fortress in the mind</h2>
+    <svg viewBox="0 0 720 400" style="width:100%;max-height:60vh;display:block;margin:0 auto" role="img" aria-label="A walled fortress made of nine stones, each a lie: I'm no good, Nobody cares, I'll never change, Just once, I deserve it, No one will know, I can't stop, It's who I am, God is done with me. When the stones are pulled down, open ground shows behind them with three truths: Forgiven, Loved, Not finished.">
+      <rect class="c210-field" x="40" y="60" width="640" height="300" rx="18"/>
+      <text class="c210-truth" style="--k:0" x="190" y="195">Forgiven</text>
+      <text class="c210-truth" style="--k:1" x="360" y="195">Loved</text>
+      <text class="c210-truth" style="--k:2" x="530" y="195">Not finished</text>
+      <text class="c210-after" x="360" y="245">the knowledge of God, where the wall stood</text>
+      <g class="c210-fixed"><line class="c210-pole" x1="360" y1="6" x2="360" y2="52"/><path class="c210-flag" d="M360 8 L420 24 L360 40 Z"/></g>
+      <g>
+        <g class="c210-stone" style="--k:0;--r:-14deg;--fall:310px"><rect class="c210-wall" x="46" y="64" width="204" height="86" rx="6"/><text class="c210-lie" x="148" y="114">I'm no good</text></g>
+        <g class="c210-stone" style="--k:1;--r:9deg;--fall:300px"><rect class="c210-wall" x="258" y="64" width="204" height="86" rx="6"/><text class="c210-lie" x="360" y="114">Nobody cares</text></g>
+        <g class="c210-stone" style="--k:2;--r:16deg;--fall:290px"><rect class="c210-wall" x="470" y="64" width="204" height="86" rx="6"/><text class="c210-lie" x="572" y="114">I'll never change</text></g>
+        <g class="c210-stone" style="--k:3;--r:-8deg;--fall:230px"><rect class="c210-wall" x="46" y="158" width="204" height="86" rx="6"/><text class="c210-lie" x="148" y="208">Just once</text></g>
+        <g class="c210-stone" style="--k:4;--r:11deg;--fall:220px"><rect class="c210-wall" x="258" y="158" width="204" height="86" rx="6"/><text class="c210-lie" x="360" y="208">I deserve it</text></g>
+        <g class="c210-stone" style="--k:5;--r:-12deg;--fall:210px"><rect class="c210-wall" x="470" y="158" width="204" height="86" rx="6"/><text class="c210-lie" x="572" y="208">No one will know</text></g>
+        <g class="c210-stone" style="--k:6;--r:13deg;--fall:150px"><rect class="c210-wall" x="46" y="252" width="204" height="86" rx="6"/><text class="c210-lie" x="148" y="302">I can't stop</text></g>
+        <g class="c210-stone" style="--k:7;--r:-9deg;--fall:140px"><rect class="c210-wall" x="258" y="252" width="204" height="86" rx="6"/><text class="c210-lie" x="360" y="302">It's who I am</text></g>
+        <g class="c210-stone" style="--k:8;--r:7deg;--fall:130px"><rect class="c210-wall" x="470" y="252" width="204" height="86" rx="6"/><text class="c210-lie" x="572" y="302">God is done with me</text></g>
+      </g>
+      <text class="c210-cap c210-fixed" x="360" y="384">a stronghold: thoughts piled up until they feel like walls</text>
+    </svg>
+    <p class="note step c210-f1">“Strong holds” are fortresses. Paul says God's weapons <em>pull them down</em>, and what he means by “imaginations” is <em>reasonings</em>: the arguments a man builds in his head, stone on stone, until they seem like the truth. Not demons in the walls: lies in the mind.</p>
+    <p class="note step c210-f2">Behind every lie is a plain truth God has already said. You are <em>forgiven</em> (1 John 1:9). You are <em>loved</em>. And you are <em>not finished</em>: He who began a good work will carry it on. These come down one stone at a time, usually by telling yourself the truth out loud.</p>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="5" data-hl="bringing into captivity every thought to the obedience of Christ"></blockquote>
+    <h2 class="rise" style="--d:1">Catch the thought before it becomes the act</h2>
+    <svg viewBox="0 0 760 300" style="width:100%;max-height:44vh;display:block;margin:0 auto" role="img" aria-label="A road of five stages: a thought, a pull, a plan, an act, a habit. A dot runs along it from the first stage to the last. Below, a bar goes from easy to stop at the left to hard to stop at the right. On a click, a gate drops at the first stage and holds the dot there: take it captive, here.">
+      <defs><linearGradient id="c210-grad" gradientUnits="userSpaceOnUse" x1="90" y1="0" x2="670" y2="0"><stop offset="0" style="stop-color:var(--accent)"/><stop offset="1" style="stop-color:var(--danger)"/></linearGradient></defs>
+      <line class="c210-road" x1="90" y1="100" x2="670" y2="100"/>
+      <circle class="c210-node" cx="90" cy="100" r="30"/>
+      <g class="c210-late"><circle class="c210-node" cx="235" cy="100" r="30"/><circle class="c210-node hot" cx="380" cy="100" r="30"/><circle class="c210-node hot" cx="525" cy="100" r="30"/><circle class="c210-node hot" cx="670" cy="100" r="30"/></g>
+      <text class="c210-st" x="90" y="164">a thought</text><text class="c210-sub" x="90" y="188">“just once”</text>
+      <g class="c210-late"><text class="c210-st" x="235" y="164">a pull</text><text class="c210-sub" x="235" y="188">I want it</text>
+      <text class="c210-st" x="380" y="164">a plan</text><text class="c210-sub" x="380" y="188">where, when</text>
+      <text class="c210-st" x="525" y="164">an act</text><text class="c210-sub" x="525" y="188">it's done</text>
+      <text class="c210-st" x="670" y="164">a habit</text><text class="c210-sub" x="670" y="188">and the loop</text></g>
+      <circle class="c210-dot" cx="90" cy="100" r="13"/>
+      <g class="c210-gate"><rect x="146" y="40" width="10" height="120" rx="4"/><text x="150" y="30">captive here</text></g>
+      <path class="c210-easy" stroke="url(#c210-grad)" d="M90 250 H670"/>
+      <text class="c210-bar-t" x="90" y="282" text-anchor="start">easy to stop</text>
+      <text class="c210-bar-t" x="670" y="282" text-anchor="end">hard to stop</text>
+    </svg>
+    <p class="note step c210-g1"><em>“Every thought”</em> means you start at the first stone, not the last. A thought is not a sin; it flies in. Jesus Himself “was in all points tempted like as we are, yet without sin” (Hebrews 4:15). What matters is what you do with it in the next ten seconds.</p>
+    <blockquote class="quote step"><p>“But every man is tempted, when he is drawn away of his own lust, and enticed. Then when lust hath conceived, it bringeth forth sin: and sin, when it is finished, bringeth forth death.”</p><cite>James 1:14–15</cite></blockquote>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise">What to do with the thought, today</h2>
+    <ol class="c210-tool">
+      <li class="step"><b>Notice it. <em>“There it is.”</em></b><small>Say it plainly, even out loud. A thought you name loses half its grip.</small></li>
+      <li class="step"><b>Call it what it is. <em>“A craving, not a command.”</em></b><small>It is a voice, not an order. You do not have to obey it.</small></li>
+      <li class="step"><b>Hand it to Christ. <em>“Lord, I'm yours. Take this one.”</em></b><small>One sentence is enough. That is the “obedience of Christ” in practice: you give Him the thought.</small></li>
+      <li class="step"><b>Move your body. <em>Change the room.</em></b><small>Walk, call a brother, start a task, eat, pray. “A way to escape” (1 Corinthians 10:13) is usually a door you can walk through.</small></li>
+    </ol>
+    <blockquote class="quote step"><p>“There hath no temptation taken you but such as is common to man: but God is faithful, who will not suffer you to be tempted above that ye are able; but will with the temptation also make a way to escape, that ye may be able to bear it.”</p><cite>1 Corinthians 10:13</cite></blockquote>
+    <p class="note step">And if you lost this fight yesterday? Then it is not too late, and it is not the end. Say it to God (1 John 1:9), and take the very next thought captive. Today is a new fight, not the end of the war.</p>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="6" data-hl="when your obedience is fulfilled"></blockquote>
+    <h2 class="rise" style="--d:1">Patience first, then discipline</h2>
+    <div class="ifthen rise" style="--d:2">
+      <div class="if"><small>First</small>the church that wants to obey is settled,</div>
+      <span class="arrow" aria-hidden="true">→</span>
+      <div class="then"><small>then</small>Paul deals with those who won't.</div>
+    </div>
+    <p class="note step">“Revenge all disobedience” means <em>to punish</em> it. Paul has the authority, but he waits. He does not swing at the first sign of trouble. He gives the willing time to come round before he deals with the rebels. A good leader (and a good father) fixes the house before he fights the neighbors.</p>
+  </div>
+</section>
+
+<!-- ======================= PART TWO: WHAT YOU SEE ======================= -->
+<section class="slide part">
+  <div class="inner">
+    <p class="part-n rise">Part two</p>
+    <h2 class="rise" style="--d:1">Looking past appearances</h2>
+    <p class="range rise" style="--d:2">Verses 7–11</p>
+    <div class="rule"></div>
+    <p class="hook rise" style="--d:4">They said Paul looked weak. Paul says to look again.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="7-9" data-hl="Do ye look on things after the outward appearance|that, as he is Christ’s, even so are we Christ’s|for edification, and not for your destruction"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="7" data-hl="Do ye look on things after the outward appearance"></blockquote>
+    <h2 class="rise" style="--d:1">What man sees, and what the LORD sees</h2>
+    <div class="columns">
+      <div class="col law rise" style="--d:2">
+        <p class="who">Man looks at</p>
+        <h3>the outward appearance</h3>
+        <p>Looks, a smooth speaker, a good résumé, a clean record. And the other way round: a criminal record, a bad history, a man who stumbles over his words. Paul's critics called his speech “contemptible.”</p>
+      </div>
+      <div class="col grace rise" style="--d:3">
+        <p class="who">The LORD looks at</p>
+        <h3>the heart</h3>
+        <p>Whose you are, and which way you are facing. You are “Christ's,” and nobody can take that from a man because of how he looks, or what is written on his file.</p>
+      </div>
+    </div>
+    <blockquote class="quote step"><p>“But the LORD said unto Samuel, Look not on his countenance, or on the height of his stature; because I have refused him: for the LORD seeth not as man seeth; for man looketh on the outward appearance, but the LORD looketh on the heart.”</p><cite>1 Samuel 16:7</cite></blockquote>
+    <p class="note step">If you have been written off because of what you did, hear this: you are not sorted by your appearance or your record. If you are in Christ, you are <em>His</em>, settled.</p>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="8" data-hl="for edification, and not for your destruction"></blockquote>
+    <p class="saying rise" style="--d:1">To <em>build up</em>, and not to tear down.</p>
+    <p class="note rise" style="--d:3">The same authority that pulls down strongholds in verse 4 is given for <em>edification</em>, which just means <em>building up</em>. God gives a man power to help other people stand, not to push them around.</p>
+    <p class="note step">Test any man with power over you (a boss, a sponsor, a preacher) by this one verse. Is he building you up or wearing you down? And test yourself the same way. When you have a little authority over somebody, which way does it point?</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="10-11" data-hl="his letters, say they, are weighty and powerful; but his bodily presence is weak, and his speech contemptible|such will we be also in deed when we are present"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise">The same man, near and far</h2>
+    <div class="ifthen rise" style="--d:1">
+      <div class="if"><small>What he writes</small>when he is far away,</div>
+      <span class="arrow" aria-hidden="true">→</span>
+      <div class="then"><small>is what he does</small>when he is standing in front of you.</div>
+    </div>
+    <p class="note rise" style="--d:3">His critics made a joke of Paul: <em>brave from a distance, a mouse in the room</em>. Paul's answer is one of the best tests of a man: is he the same man absent as present? That is called <em>integrity</em>: a man all in one piece.</p>
+    <p class="note step">Many of us lived two lives: one for the people at home, one for the street. A new life in Christ is one life. Today, be the same man on the job site that you are in the group. If you promise it here, do it there.</p>
+  </div>
+</section>
+
+<!-- ======================= PART THREE: THE MEASURE ======================= -->
+<section class="slide part">
+  <div class="inner">
+    <p class="part-n rise">Part three</p>
+    <h2 class="rise" style="--d:1">The Lord's measure</h2>
+    <p class="range rise" style="--d:2">Verses 12–18</p>
+    <div class="rule"></div>
+    <p class="hook rise" style="--d:4">Stop comparing. Let the Lord do the measuring.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="12-14" data-hl="comparing themselves among themselves, are not wise|according to the measure of the rule which God hath distributed to us"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="12" data-hl="comparing themselves among themselves, are not wise"></blockquote>
+    <h2 class="rise" style="--d:1">Measuring yourself by yourselves</h2>
+    <svg viewBox="0 0 720 400" style="width:100%;max-height:46vh;display:block;margin:0 auto" role="img" aria-label="Three men stand side by side: a shorter one, the reader, and a taller one. An arrow from the reader down to the shorter man says: at least I'm better than him, which makes a man proud. An arrow up to the taller man says: I'll never match him, which makes a man ashamed. Then a dashed line far above all three says: the true measure is Christ, and every man falls short of it, so every man needs grace.">
+      <line class="c210-true" x1="30" y1="40" x2="690" y2="40"/>
+      <text class="c210-true-t" x="360" y="26">the true measure: Christ</text>
+      <line class="c210-ground" x1="30" y1="340" x2="690" y2="340"/>
+      <g><circle class="c210-man" cx="130" cy="262" r="22"/><rect class="c210-man" x="96" y="290" width="68" height="50" rx="12"/><text class="c210-name" x="130" y="372">“him”</text></g>
+      <g><circle class="c210-man me" cx="360" cy="232" r="22"/><rect class="c210-man me" x="326" y="260" width="68" height="80" rx="12"/><text class="c210-name" x="360" y="372">you</text></g>
+      <g><circle class="c210-man" cx="590" cy="182" r="22"/><rect class="c210-man" x="556" y="210" width="68" height="130" rx="12"/><text class="c210-name" x="590" y="372">“the other guy”</text></g>
+      <path class="c210-arrow down" pathLength="1" d="M345 205 Q 250 150 148 238"/>
+      <path class="c210-arrow up" pathLength="1" d="M375 205 Q 470 120 572 155"/>
+      <text class="c210-q a" x="360" y="110">“At least I'm better than him.” Proud.</text>
+      <text class="c210-q b" x="360" y="110">“I'll never be like that guy.” Ashamed.</text>
+      <text class="c210-q hot c" x="360" y="110">Every one of them falls short. Every man needs grace.</text>
+    </svg>
+    <p class="note step c210-m1">Look down, and you feel tall. It is a cheap feeling, and it is the road to pride. A man in recovery knows this trap: <em>“I was never as bad as that guy.”</em></p>
+    <p class="note step c210-m2">Look up, and you feel small, and you quit before you start. <em>“I'll never be like that guy.”</em> Either way, you chose your own ruler, so you are not wise.</p>
+    <p class="note step c210-m3">Only one measure matters, and none of us reaches it. That is why the gospel is good news: Christ measured up for us, and gives us His standing as a gift. Compare yourself with <em>yourself of last year</em>, and thank Him for the gap.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="15-16" data-hl="the regions beyond you|another man’s line"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise">“The regions beyond you”</h2>
+    <div class="split">
+      <div class="stage">
+        <svg data-world viewBox="150 110 560 360" data-towns="Philippi, Ephesus, Corinth*, Athens:t, Rome!" role="img" aria-label="Map of the Mediterranean. Paul's second journey runs through Macedonia to Corinth in Achaia. From Corinth a dotted line runs west across the sea to Rome, and beyond: the regions beyond you.">
+          <path class="map-route j2" data-journey="2"/>
+          <path class="map-way" data-via="Corinth, @21.6 36.6, @16 37.4, @15.1 38.4, Puteoli, Rome"/>
+        </svg>
+      </div>
+      <div>
+        <p class="note rise" style="--d:1">Paul was the first to bring the gospel to Corinth (about AD 50 to 52). That was his field, <em>“the measure of the rule which God hath distributed to us.”</em> He had no need to boast about other men's work.</p>
+        <p class="note step">His hope is to take the gospel on <em>“in the regions beyond you,”</em> and he does: Romans, written from Corinth a year later, speaks of going to Rome and on to Spain. The dotted line shows where his eyes were turning.</p>
+        <p class="note step">“Another man's line” means <em>work another man has already done</em>. Don't take credit for it. If someone built the road you are walking on, say so. At work, on a team, and in a group, give the credit away.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="slide verse" data-v="17-18" data-hl="he that glorieth, let him glory in the Lord|not he that commendeth himself is approved, but whom the Lord commendeth"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="17" data-hl="But he that glorieth, let him glory in the Lord"></blockquote>
+    <p class="saying rise" style="--d:1">Let him glory in <em>the Lord</em>.</p>
+    <p class="note rise" style="--d:3">“Glory” here is <em>boast</em>, and Paul quotes Jeremiah's old rule for it. Not the wise man in his wisdom, not the strong man in his strength, not the rich man in his riches:</p>
+    <blockquote class="quote step"><p>“But let him that glorieth glory in this, that he understandeth and knoweth me, that I am the LORD which exercise lovingkindness, judgment, and righteousness, in the earth: for in these things I delight, saith the LORD.”</p><cite>Jeremiah 9:24</cite></blockquote>
+    <p class="note step">If you have any good news about yourself, such as days clean, a job, a family that took you back, the honest word is <em>“look what the Lord did.”</em> It is no less yours to be glad about. It just stays true on the bad days, because it never depended on you.</p>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="18" data-hl="not he that commendeth himself is approved, but whom the Lord commendeth"></blockquote>
+    <h2 class="rise" style="--d:1">Whose “well done” counts?</h2>
+    <div class="c210-pair">
+      <div class="rise" style="--d:2"><h3>Self-praise</h3><b>“Look at me.”</b><p>Praise you hand out to yourself, or work for from other people. It never lasts, and it needs feeding every day.</p></div>
+      <div class="rise all" style="--d:3"><h3>The Lord's approval</h3><b>“Well done.”</b><p>The only verdict that stands. Jesus has already commended every man who is in Him, and no failure yesterday cancels it.</p></div>
+    </div>
+    <blockquote class="quote step"><p>“Let another man praise thee, and not thine own mouth; a stranger, and not thine own lips.”</p><cite>Proverbs 27:2</cite></blockquote>
+    <p class="note step">Today: do your work well and don't announce it. If you are going to brag about anything, brag about Jesus. Then thank one person out loud for something they did for you.</p>
+  </div>
+</section>
+
+<!-- ======================= CLOSING ======================= -->
+<section class="slide remember">
+  <div class="inner">
+    <h2 class="rise">Points to remember</h2>
+    <ol class="seeds">
+      <li class="step"><span class="topic">Meekness</span><span class="seed-q">“the meekness and gentleness of Christ” <cite>10:1</cite></span><span class="take">Meek is strength on a leash. You don't have to be soft to stop being dangerous.</span></li>
+      <li class="step"><span class="topic">The war</span><span class="seed-q">“the weapons of our warfare are not carnal, but mighty through God” <cite>10:4</cite></span><span class="take">The fight is real, and the weapons are His: truth, His word, prayer, and the gospel.</span></li>
+      <li class="step"><span class="topic">Strongholds</span><span class="seed-q">“bringing into captivity every thought to the obedience of Christ” <cite>10:5</cite></span><span class="take">Catch the thought at the first stage: notice it, name it, hand it to Christ, and move.</span></li>
+      <li class="step"><span class="topic">Appearances</span><span class="seed-q">“Do ye look on things after the outward appearance?” <cite>10:7</cite></span><span class="take">Men look at the outside. The Lord looks at whose you are, and if you are Christ's, that is settled.</span></li>
+      <li class="step"><span class="topic">Comparing</span><span class="seed-q">“comparing themselves among themselves, are not wise” <cite>10:12</cite></span><span class="take">Look down and you get proud; look up and you quit. Only Christ is the measure, and He measured up for you.</span></li>
+      <li class="step"><span class="topic">Glorying</span><span class="seed-q">“he that glorieth, let him glory in the Lord” <cite>10:17</cite></span><span class="take">Brag about what He did. His “well done” is the only one that stands.</span></li>
+    </ol>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 1 of 6</p>
+      <span class="topic">Meekness</span>
+      <h2>How does Paul answer people who say he is weak?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="1"></blockquote>
+      <blockquote class="quote step"><p>“Take my yoke upon you, and learn of me; for I am meek and lowly in heart: and ye shall find rest unto your souls.”</p><cite>Matthew 11:29</cite></blockquote>
+      <blockquote class="quote step" data-q="11"></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>With the meekness and gentleness of Christ, which is strength under control, not weakness. And he is the same man in a letter as in person.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 2 of 6</p>
+      <span class="topic">The war</span>
+      <h2>What kind of war are we in, and what are our weapons?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="3"></blockquote>
+      <blockquote class="quote step" data-q="4"></blockquote>
+      <blockquote class="quote step"><p>“Put on the whole armour of God, that ye may be able to stand against the wiles of the devil.”</p><cite>Ephesians 6:11</cite></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>A real war, though not fought with our own methods. The weapons are “mighty through God”: His truth, His word, prayer, and the gospel. We use His, not ours.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 3 of 6</p>
+      <span class="topic">Strongholds</span>
+      <h2>What should we do with a thought that pulls us toward sin?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="5"></blockquote>
+      <blockquote class="quote step"><p>“But every man is tempted, when he is drawn away of his own lust, and enticed. Then when lust hath conceived, it bringeth forth sin: and sin, when it is finished, bringeth forth death.”</p><cite>James 1:14–15</cite></blockquote>
+      <blockquote class="quote step"><p>“There hath no temptation taken you but such as is common to man: but God is faithful, who will not suffer you to be tempted above that ye are able; but will with the temptation also make a way to escape, that ye may be able to bear it.”</p><cite>1 Corinthians 10:13</cite></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>Take it captive early, before it becomes a plan or an act. Notice it, name it, hand it to Christ, and move. God always provides a way out.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 4 of 6</p>
+      <span class="topic">Appearances</span>
+      <h2>Why must we not judge a man by how he looks?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="7"></blockquote>
+      <blockquote class="quote step" data-q="10"></blockquote>
+      <blockquote class="quote step"><p>“But the LORD said unto Samuel, Look not on his countenance, or on the height of his stature; because I have refused him: for the LORD seeth not as man seeth; for man looketh on the outward appearance, but the LORD looketh on the heart.”</p><cite>1 Samuel 16:7</cite></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>Because men look at appearances, and the Lord looks at the heart. Paul was called weak and contemptible, and was one of the strongest men alive. A man who is Christ's is not defined by his looks, his speech, or his record.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 5 of 6</p>
+      <span class="topic">Comparing</span>
+      <h2>Why is comparing ourselves with other men not wise?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="12"></blockquote>
+      <blockquote class="quote step" data-q="13"></blockquote>
+      <blockquote class="quote step" data-q="16"></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>Because we pick our own ruler: look down and we get proud, look up and we get ashamed. God hands each of us our own field and measure, and Christ is the only standard. He measured up for us.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 6 of 6</p>
+      <span class="topic">Glorying</span>
+      <h2>In whom should a man glory, and whose approval counts?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="17"></blockquote>
+      <blockquote class="quote step" data-q="18"></blockquote>
+      <blockquote class="quote step"><p>“Let another man praise thee, and not thine own mouth; a stranger, and not thine own lips.”</p><cite>Proverbs 27:2</cite></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>In the Lord. He is the one who commends a man, and His approval does not depend on how we did yesterday.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide prayer">
+  <div class="inner">
+    <div class="emblem rise"></div>
+    <h2 class="rise" style="--d:1">Prayer requests</h2>
+    <p class="ask-line rise" style="--d:2">What can we pray about for you today? A thought that keeps coming back, a fight you are in, or something you are tempted to boast about?</p>
+    <blockquote class="quote rise" style="--d:4"><p>“Thy word have I hid in mine heart, that I might not sin against thee.”</p><cite>Psalm 119:11</cite></blockquote>
+  </div>
+</section>
+
+</main>
+
+<script>
+// King James Version, 2 Corinthians chapter 10
+const V = {
+  1: "Now I Paul myself beseech you by the meekness and gentleness of Christ, who in presence am base among you, but being absent am bold toward you:",
+  2: "But I beseech you, that I may not be bold when I am present with that confidence, wherewith I think to be bold against some, which think of us as if we walked according to the flesh.",
+  3: "For though we walk in the flesh, we do not war after the flesh:",
+  4: "(For the weapons of our warfare are not carnal, but mighty through God to the pulling down of strong holds;)",
+  5: "Casting down imaginations, and every high thing that exalteth itself against the knowledge of God, and bringing into captivity every thought to the obedience of Christ;",
+  6: "And having in a readiness to revenge all disobedience, when your obedience is fulfilled.",
+  7: "Do ye look on things after the outward appearance? If any man trust to himself that he is Christ’s, let him of himself think this again, that, as he is Christ’s, even so are we Christ’s.",
+  8: "For though I should boast somewhat more of our authority, which the Lord hath given us for edification, and not for your destruction, I should not be ashamed:",
+  9: "That I may not seem as if I would terrify you by letters.",
+  10: "For his letters, say they, are weighty and powerful; but his bodily presence is weak, and his speech contemptible.",
+  11: "Let such an one think this, that, such as we are in word by letters when we are absent, such will we be also in deed when we are present.",
+  12: "For we dare not make ourselves of the number, or compare ourselves with some that commend themselves: but they measuring themselves by themselves, and comparing themselves among themselves, are not wise.",
+  13: "But we will not boast of things without our measure, but according to the measure of the rule which God hath distributed to us, a measure to reach even unto you.",
+  14: "For we stretch not ourselves beyond our measure, as though we reached not unto you: for we are come as far as to you also in preaching the gospel of Christ:",
+  15: "Not boasting of things without our measure, that is, of other men’s labours; but having hope, when your faith is increased, that we shall be enlarged by you according to our rule abundantly,",
+  16: "To preach the gospel in the regions beyond you, and not to boast in another man’s line of things made ready to our hand.",
+  17: "But he that glorieth, let him glory in the Lord.",
+  18: "For not he that commendeth himself is approved, but whom the Lord commendeth."
+};
+const BOOK = "2 Corinthians 10";
+</script>
+<script src="../assets/deck.js"></script>
+</body>
+</html>

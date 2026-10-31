@@ -395,6 +395,9 @@ window.GLOSSARY = [
     "2 Corinthians", 5,
     [ 18 ] ],
    [
+    "2 Corinthians", 11,
+    [ 4, 31 ] ],
+   [
     "2 Corinthians", 13,
     [ 5, 14 ] ] ]
  },
@@ -2892,7 +2895,10 @@ window.GLOSSARY = [
     [ 38 ] ],
    [
     "1 Corinthians", 10,
-    [ 5 ] ] ]
+    [ 5 ] ],
+   [
+    "2 Corinthians", 11,
+    [ 26 ] ] ]
  },
  {
   "id": "galilee",
@@ -4158,6 +4164,9 @@ window.GLOSSARY = [
     [ 4, 6, 17 ] ],
    [
     "2 Corinthians", 6,
+    [ 14 ] ],
+   [
+    "2 Corinthians", 11,
     [ 14 ] ] ]
  },
  {
@@ -4511,6 +4520,9 @@ window.GLOSSARY = [
     "2 Corinthians", 6,
     [ 7 ] ],
    [
+    "2 Corinthians", 11,
+    [ 10 ] ],
+   [
     "2 Corinthians", 12,
     [ 6 ] ],
    [
@@ -4738,6 +4750,12 @@ window.GLOSSARY = [
    [
     "2 Corinthians", 5,
     [ 12 ] ],
+   [
+    "2 Corinthians", 10,
+    [ 17 ] ],
+   [
+    "2 Corinthians", 11,
+    [ 12, 18, 30 ] ],
    [
     "2 Corinthians", 12,
     [ 1, 5, 6, 9 ] ] ]
@@ -5230,6 +5248,12 @@ window.GLOSSARY = [
    [
     "2 Corinthians", 6,
     [ 15 ] ],
+   [
+    "2 Corinthians", 10,
+    [ 1, 5, 7, 14 ] ],
+   [
+    "2 Corinthians", 11,
+    [ 2, 3, 10, 13, 23, 31 ] ],
    [
     "2 Corinthians", 12,
     [ 2, 9, 10, 19 ] ],
@@ -6819,6 +6843,12 @@ window.GLOSSARY = [
     [ 6 ] ],
    [
     "2 Corinthians", 6,
+    [ 6 ] ],
+   [
+    "2 Corinthians", 10,
+    [ 5 ] ],
+   [
+    "2 Corinthians", 11,
     [ 6 ] ] ]
  },
  {
@@ -7048,6 +7078,9 @@ window.GLOSSARY = [
    [
     "1 Corinthians", 15,
     [ 36 ] ],
+   [
+    "2 Corinthians", 11,
+    [ 1, 16, 19, 23 ] ],
    [
     "2 Corinthians", 12,
     [ 6, 11 ] ] ]
@@ -7404,7 +7437,10 @@ window.GLOSSARY = [
     [ 21 ] ],
    [
     "2 Corinthians", 6,
-    [ 7, 14 ] ] ]
+    [ 7, 14 ] ],
+   [
+    "2 Corinthians", 11,
+    [ 15 ] ] ]
  },
  {
   "id": "wicked",
@@ -9390,7 +9426,10 @@ window.GLOSSARY = [
     [ 19 ] ],
    [
     "Acts", 13,
-    [ 10 ] ] ]
+    [ 10 ] ],
+   [
+    "2 Corinthians", 11,
+    [ 3 ] ] ]
  },
  {
   "id": "surety",
@@ -11361,7 +11400,10 @@ window.GLOSSARY = [
     [ 8 ] ],
    [
     "Acts", 7,
-    [ 58, 59 ] ] ]
+    [ 58, 59 ] ],
+   [
+    "2 Corinthians", 11,
+    [ 25 ] ] ]
  },
  {
   "id": "nicodemus",
@@ -12180,7 +12222,10 @@ window.GLOSSARY = [
     [ 7 ] ],
    [
     "Romans", 11,
-    [ 1 ] ] ]
+    [ 1 ] ],
+   [
+    "2 Corinthians", 11,
+    [ 22 ] ] ]
  },
  {
   "id": "samaritans",
@@ -12432,7 +12477,10 @@ window.GLOSSARY = [
     [ 15, 21 ] ],
    [
     "1 Corinthians", 7,
-    [ 15 ] ] ]
+    [ 15 ] ],
+   [
+    "2 Corinthians", 11,
+    [ 20 ] ] ]
  },
  {
   "id": "servant-of-sin",
@@ -14708,6 +14756,9 @@ window.GLOSSARY = [
     "2 Corinthians", 2,
     [ 11 ] ],
    [
+    "2 Corinthians", 11,
+    [ 14 ] ],
+   [
     "2 Corinthians", 12,
     [ 7 ] ] ]
  },
@@ -16389,7 +16440,10 @@ window.GLOSSARY = [
     [ 17 ] ],
    [
     "Acts", 4,
-    [ 25 ] ] ]
+    [ 25 ] ],
+   [
+    "2 Corinthians", 11,
+    [ 26 ] ] ]
  },
  {
   "id": "jealous",
@@ -16407,6 +16461,9 @@ window.GLOSSARY = [
     [ 14 ] ],
    [
     "Zechariah", 8,
+    [ 2 ] ],
+   [
+    "2 Corinthians", 11,
     [ 2 ] ] ]
  },
  {
@@ -18450,7 +18507,10 @@ window.GLOSSARY = [
     [ 5, 6, 10, 11 ] ],
    [
     "Acts", 26,
-    [ 12, 20 ] ] ]
+    [ 12, 20 ] ],
+   [
+    "2 Corinthians", 11,
+    [ 32 ] ] ]
  },
  {
   "id": "lamentation",
@@ -18672,7 +18732,10 @@ window.GLOSSARY = [
     [ 24 ] ],
    [
     "Romans", 7,
-    [ 23 ] ] ]
+    [ 23 ] ],
+   [
+    "2 Corinthians", 10,
+    [ 5 ] ] ]
  },
  {
   "id": "calneh",
@@ -20175,7 +20238,10 @@ window.GLOSSARY = [
     [ 10 ] ],
    [
     "Zechariah", 9,
-    [ 3, 12 ] ] ]
+    [ 3, 12 ] ],
+   [
+    "2 Corinthians", 10,
+    [ 4 ] ] ]
  },
  {
   "id": "folden",
@@ -20886,7 +20952,10 @@ window.GLOSSARY = [
     [ 40 ] ],
    [
     "Acts", 22,
-    [ 2 ] ] ]
+    [ 2 ] ],
+   [
+    "2 Corinthians", 11,
+    [ 22 ] ] ]
  },
  {
   "id": "tarshish",
@@ -21348,7 +21417,10 @@ window.GLOSSARY = [
     [ 5 ] ],
    [
     "1 Corinthians", 4,
-    [ 21 ] ] ]
+    [ 21 ] ],
+   [
+    "2 Corinthians", 10,
+    [ 1 ] ] ]
  },
  {
   "id": "cherethites",
@@ -23271,7 +23343,10 @@ window.GLOSSARY = [
     [ 27 ] ],
    [
     "Luke", 2,
-    [ 5 ] ] ]
+    [ 5 ] ],
+   [
+    "2 Corinthians", 11,
+    [ 2 ] ] ]
  },
  {
   "id": "virgin",
@@ -24897,7 +24972,10 @@ window.GLOSSARY = [
     [ 12 ] ],
    [
     "Luke", 3,
-    [ 17 ] ] ]
+    [ 17 ] ],
+   [
+    "2 Corinthians", 11,
+    [ 6 ] ] ]
  },
  {
   "id": "herodias",
@@ -31209,7 +31287,10 @@ window.GLOSSARY = [
     [ 23, 33 ] ],
    [
     "2 Corinthians", 6,
-    [ 5 ] ] ]
+    [ 5 ] ],
+   [
+    "2 Corinthians", 11,
+    [ 23, 24 ] ] ]
  },
  {
   "id": "much-required",
@@ -35925,6 +36006,9 @@ window.GLOSSARY = [
     [ 21 ] ],
    [
     "2 Corinthians", 1,
+    [ 1 ] ],
+   [
+    "2 Corinthians", 10,
     [ 1 ] ] ]
  },
  {
@@ -36198,7 +36282,10 @@ window.GLOSSARY = [
     [ 16 ] ],
    [
     "2 Corinthians", 2,
-    [ 13 ] ] ]
+    [ 13 ] ],
+   [
+    "2 Corinthians", 11,
+    [ 9 ] ] ]
  },
  {
   "id": "samothracia",
@@ -36597,7 +36684,10 @@ window.GLOSSARY = [
   "refs": [
    [
     "Acts", 9,
-    [ 25 ] ] ]
+    [ 25 ] ],
+   [
+    "2 Corinthians", 11,
+    [ 33 ] ] ]
  },
  {
   "id": "cornelius",
@@ -37569,7 +37659,10 @@ window.GLOSSARY = [
     [ 15 ] ],
    [
     "2 Corinthians", 1,
-    [ 1 ] ] ]
+    [ 1 ] ],
+   [
+    "2 Corinthians", 11,
+    [ 10 ] ] ]
  },
  {
   "id": "cenchrea",
@@ -40284,7 +40377,10 @@ window.GLOSSARY = [
     [ 47 ] ],
    [
     "Romans", 11,
-    [ 1 ] ] ]
+    [ 1 ] ],
+   [
+    "2 Corinthians", 11,
+    [ 22 ] ] ]
  },
  {
   "id": "foreknew-his-people",
@@ -40455,7 +40551,10 @@ window.GLOSSARY = [
     [ 15 ] ],
    [
     "2 Corinthians", 2,
-    [ 8 ] ] ]
+    [ 8 ] ],
+   [
+    "2 Corinthians", 10,
+    [ 2 ] ] ]
  },
  {
   "id": "living-sacrifice",
@@ -41158,6 +41257,9 @@ window.GLOSSARY = [
    [
     "1 Corinthians", 14,
     [ 3 ] ],
+   [
+    "2 Corinthians", 10,
+    [ 8 ] ],
    [
     "2 Corinthians", 13,
     [ 10 ] ] ]
@@ -43597,5 +43699,122 @@ window.GLOSSARY = [
    [
     "2 Corinthians", 13,
     [ 5, 6, 7 ] ] ]
+ },
+ {
+  "id": "strong-holds",
+  "kind": "term",
+  "name": "Strong holds (fortresses; lies built up in the mind)",
+  "refs": [
+   [
+    "2 Corinthians", 10,
+    [ 4 ] ] ]
+ },
+ {
+  "id": "imaginations",
+  "kind": "term",
+  "name": "Imaginations (reasonings, schemes of the mind)",
+  "refs": [
+   [
+    "2 Corinthians", 10,
+    [ 5 ] ] ]
+ },
+ {
+  "id": "captive-thought",
+  "kind": "term",
+  "name": "Every thought brought captive to Christ",
+  "refs": [
+   [
+    "2 Corinthians", 10,
+    [ 5 ] ] ]
+ },
+ {
+  "id": "outward-appearance",
+  "kind": "term",
+  "name": "The outward appearance (what men see, as against the heart)",
+  "refs": [
+   [
+    "2 Corinthians", 10,
+    [ 7 ] ] ]
+ },
+ {
+  "id": "serpent-of-eden",
+  "kind": "person",
+  "name": "The serpent of Eden (the deceiver)",
+  "refs": [
+   [
+    "2 Corinthians", 11,
+    [ 3 ] ] ]
+ },
+ {
+  "id": "beguiled",
+  "kind": "term",
+  "name": "Beguiled (deceived)",
+  "refs": [
+   [
+    "2 Corinthians", 11,
+    [ 3 ] ] ]
+ },
+ {
+  "id": "chaste-virgin",
+  "kind": "term",
+  "name": "A chaste virgin to Christ (undivided devotion)",
+  "refs": [
+   [
+    "2 Corinthians", 11,
+    [ 2 ] ] ]
+ },
+ {
+  "id": "false-apostles",
+  "kind": "person",
+  "name": "False apostles (the impostors who rivalled Paul at Corinth)",
+  "refs": [
+   [
+    "2 Corinthians", 11,
+    [ 5, 13 ] ] ]
+ },
+ {
+  "id": "angel-of-light",
+  "kind": "term",
+  "name": "An angel of light (evil in a good disguise)",
+  "refs": [
+   [
+    "2 Corinthians", 11,
+    [ 14 ] ] ]
+ },
+ {
+  "id": "aretas",
+  "kind": "person",
+  "name": "Aretas the king (the Nabataean ruler whose governor guarded Damascus)",
+  "refs": [
+   [
+    "2 Corinthians", 11,
+    [ 32 ] ] ]
+ },
+ {
+  "id": "forty-stripes-save-one",
+  "kind": "term",
+  "name": "Forty stripes save one (the Jewish flogging of thirty-nine)",
+  "refs": [
+   [
+    "2 Corinthians", 11,
+    [ 24 ] ] ]
+ },
+ {
+  "id": "in-the-deep",
+  "kind": "term",
+  "name": "A night and a day in the deep (adrift at sea)",
+  "refs": [
+   [
+    "2 Corinthians", 11,
+    [ 25 ] ] ]
+ },
+ {
+  "id": "care-of-all-the-churches",
+  "kind": "term",
+  "name": "The care of all the churches (Paul's daily burden)",
+  "refs": [
+   [
+    "2 Corinthians", 11,
+    [ 28 ] ] ]
  }
 ];

@@ -1,0 +1,664 @@
+<!doctype html>
+<html lang="en" data-theme="scribe">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>2 Corinthians 11</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="../assets/fonts.css">
+<link rel="stylesheet" href="../assets/deck.css">
+<link rel="stylesheet" href="../assets/themes.css">
+<style>
+/* c211-where: where we are in 2 Corinthians. Five chips (.done, .here), each a run of chapters (i) and what Paul deals with (b) */
+.c211-where { display: grid; grid-template-columns: repeat(auto-fit, minmax(9rem, 1fr)); gap: 6px; margin: .3em 0 1em; }
+.c211-where div { padding: .5em .6em .55em; border-radius: 8px; background: var(--surface); border: 1px solid var(--line); color: var(--ink-soft); line-height: 1.2; }
+.c211-where i { display: block; font: 700 clamp(.8rem, .72rem + .35vw, 1rem)/1.1 var(--sans); font-style: normal; letter-spacing: .04em; margin-bottom: .2em; }
+.c211-where b { font: 400 clamp(.9rem, .82rem + .4vw, 1.15rem)/1.2 var(--serif); }
+.c211-where .done { background: color-mix(in srgb, var(--accent) 14%, var(--surface)); color: var(--ink); }
+.c211-where .here { background: var(--accent); border-color: var(--accent); color: var(--on-accent); box-shadow: 0 0 0 4px color-mix(in srgb, var(--accent) 25%, transparent); }
+.slide.active .c211-where .here { animation: c211-here 2.4s 1s ease-in-out infinite; }
+@keyframes c211-here { 50% { box-shadow: 0 0 0 8px color-mix(in srgb, var(--accent) 10%, transparent); } }
+
+/* c211-cards: small cards in a row, each with a label, a line set large, and a plain explanation. .all lights the one to land on */
+.c211-cards { display: grid; grid-template-columns: repeat(var(--n, 3), 1fr); gap: 10px; margin: .4em 0 1em; }
+@media (max-width: 760px) { .c211-cards { grid-template-columns: 1fr; } }
+.c211-cards > div { padding: .6em .85em .7em; border-radius: 10px; background: var(--surface); border: 1px solid var(--line-strong); }
+.c211-cards h3 { font: 700 clamp(.78rem, .72rem + .3vw, .98rem) var(--sans); color: var(--accent); text-transform: uppercase; letter-spacing: .06em; margin-bottom: .3em; }
+.c211-cards b { display: block; font: italic 600 clamp(1.05rem, .92rem + .55vw, 1.4rem)/1.2 var(--serif); color: var(--ink); margin-bottom: .2em; }
+.c211-cards p { margin: 0; font-size: clamp(.9rem, .82rem + .36vw, 1.1rem); line-height: 1.3; color: var(--ink-soft); }
+.c211-cards .all { border: 2px solid var(--accent); background: color-mix(in srgb, var(--accent) 12%, var(--surface)); }
+.c211-cards .all p { color: var(--ink); }
+
+/* c211-snake: a serpent that draws itself across the top, then three of its lines, one per step (.c211-t1, .c211-t2, .c211-t3 lit in turn) */
+.c211-snk { fill: none; stroke: var(--danger); stroke-width: 12; stroke-linecap: round; stroke-dasharray: 1; stroke-dashoffset: 1; }
+.slide.active .c211-snk { animation: c211-draw 2.6s ease .4s forwards; }
+@keyframes c211-draw { to { stroke-dashoffset: 0; } }
+.c211-head { fill: var(--danger); opacity: 0; transition: opacity .5s ease 2.6s; }
+.slide.active .c211-head { opacity: 1; }
+.c211-eye { fill: var(--bg); }
+.c211-tongue { stroke: var(--danger); stroke-width: 3; fill: none; stroke-linecap: round; }
+.c211-tricks { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin: .3em 0 .8em; }
+@media (max-width: 760px) { .c211-tricks { grid-template-columns: 1fr; } }
+.c211-tricks > div { padding: .6em .85em .7em; border-radius: 10px; background: var(--surface); border: 1.5px solid var(--line-strong); }
+.c211-tricks i { display: block; font: 700 clamp(.75rem, .68rem + .3vw, .95rem) var(--sans); font-style: normal; text-transform: uppercase; letter-spacing: .08em; color: var(--danger); margin-bottom: .2em; }
+.c211-tricks b { display: block; font: italic 400 clamp(1.1rem, .95rem + .6vw, 1.5rem)/1.2 var(--serif); margin-bottom: .25em; }
+.c211-tricks p { margin: 0; font-size: clamp(.9rem, .82rem + .36vw, 1.08rem); line-height: 1.3; color: var(--ink-soft); }
+
+/* c211-lure: a card that shines like light, and on a click turns over to show what it really is. Use .step so the click flips it.
+   Light is --glow with --on-glow text; the night underneath is the reverse, so both work in every theme */
+.c211-lures { display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px; margin: .4em 0 .8em; }
+@media (max-width: 760px) { .c211-lures { grid-template-columns: 1fr; } }
+.c211-lure { display: grid; opacity: 1; transform: none; }
+.c211-lure > div { grid-area: 1 / 1; padding: .65em .95em .75em; border-radius: 12px; transition: opacity .7s ease; }
+.c211-lure h3 { font: 700 clamp(.72rem, .66rem + .3vw, .9rem) var(--sans); text-transform: uppercase; letter-spacing: .08em; margin-bottom: .2em; opacity: .75; }
+.c211-lure b { display: block; font: italic 500 clamp(1.05rem, .92rem + .6vw, 1.45rem)/1.2 var(--serif); }
+.c211-lure p { margin: .25em 0 0; font-size: clamp(.9rem, .82rem + .36vw, 1.08rem); line-height: 1.3; }
+.c211-lure .f { background: var(--glow); color: var(--on-glow); box-shadow: 0 0 22px color-mix(in srgb, var(--glow) 60%, transparent); }
+.c211-lure .b { background: var(--on-glow); color: var(--glow); border: 2px solid var(--danger); opacity: 0; }
+.c211-lure.on .f { opacity: 0; }
+.c211-lure.on .b { opacity: 1; }
+
+/* c211-signs: five things a false leader does to you, one per step, each with the plain word and what it looks like */
+.c211-signs { list-style: none; padding: 0; margin: .3em 0 .8em; display: grid; gap: .45rem; }
+.c211-signs li { display: grid; grid-template-columns: 9.5rem 1fr; gap: .9rem; align-items: baseline; padding: .45em .9em .5em; border-radius: 10px; border: 1.5px solid var(--line-strong); background: var(--surface); }
+@media (max-width: 760px) { .c211-signs li { grid-template-columns: 1fr; gap: .1rem; } }
+.c211-signs b { font: 600 clamp(1.1rem, .95rem + .6vw, 1.5rem)/1.15 var(--serif); color: var(--danger); }
+.c211-signs span { font-size: clamp(.9rem, .82rem + .36vw, 1.1rem); line-height: 1.3; color: var(--ink); }
+.c211-signs small { display: block; font: italic clamp(.82rem, .76rem + .3vw, 1rem) var(--serif); color: var(--ink-soft); }
+
+/* c211-tally: what Paul went through, one row per step. Marks (i) stand for each time; the number sits on the right */
+.c211-tally { display: grid; gap: .4rem; margin: .3em 0 .8em; }
+.c211-tally > div { display: grid; grid-template-columns: 1fr auto 3.2rem; gap: .8rem; align-items: center; padding: .4em .9em; border-radius: 10px; border: 1.5px solid var(--line-strong); background: var(--surface); }
+.c211-tally b { font: 600 clamp(1rem, .9rem + .5vw, 1.35rem)/1.15 var(--serif); }
+.c211-tally small { display: block; font: clamp(.8rem, .74rem + .3vw, .98rem) var(--sans); color: var(--ink-soft); font-weight: 400; }
+.c211-tally .m { display: flex; gap: 5px; }
+.c211-tally i { display: block; width: 1.05rem; height: 1.7rem; border-radius: 4px; background: var(--danger); opacity: .85; }
+.c211-tally em { font: 700 clamp(1.4rem, 1.1rem + 1vw, 2.1rem) var(--serif); font-style: normal; text-align: right; color: var(--accent-hot); }
+.c211-tally .care { border-color: var(--accent); background: color-mix(in srgb, var(--accent) 14%, var(--surface)); }
+.c211-tally .care .m i { width: 100%; background: var(--accent); }
+.c211-tally .care .m { width: 14rem; }
+@media (max-width: 760px) { .c211-tally > div { grid-template-columns: 1fr 3rem; } .c211-tally .m { display: none; } }
+
+/* c211-perils: Paul in the middle, eight kinds of danger round him. The eighth, from false brethren, arrives on a click (.c211-late) */
+.c211-spoke { stroke: var(--line-strong); stroke-width: 2.5; }
+.c211-spoke.hot { stroke: var(--danger); stroke-width: 3.5; }
+.c211-peril { fill: var(--surface); stroke: var(--line-strong); stroke-width: 2.5; }
+.c211-peril.hot { fill: color-mix(in srgb, var(--danger) 22%, var(--surface)); stroke: var(--danger); stroke-width: 3.5; }
+.c211-pt { fill: var(--ink); font: 400 21px var(--serif); text-anchor: middle; }
+.c211-pt.hot { font-weight: 700; }
+.c211-pn { opacity: 0; transition: opacity .6s ease; transition-delay: calc(var(--k) * 250ms + 400ms); }
+.slide.active .c211-pn:not(.c211-late) { opacity: 1; }
+.slide:has(.c211-p8.on) .c211-pn.c211-late { opacity: 1; transition-delay: 0s; }
+.c211-core { fill: var(--accent); }
+.c211-ct { fill: var(--on-accent); font: 700 28px var(--serif); text-anchor: middle; }
+.c211-cs { fill: var(--on-accent); font: italic 16px var(--serif); text-anchor: middle; }
+.c211-body { fill: var(--ink-soft); font: italic 20px var(--serif); text-anchor: middle; }
+
+/* c211-wall: Damascus. The basket goes down the wall on the step .c211-b1 */
+.c211-gr { stroke: var(--line-strong); stroke-width: 3; }
+.c211-wl { fill: color-mix(in srgb, var(--accent) 10%, var(--surface)); stroke: var(--line-strong); stroke-width: 3; }
+.c211-win { fill: var(--bg); stroke: var(--line-strong); stroke-width: 3; }
+.c211-guard { fill: var(--ink-soft); }
+.c211-spear { stroke: var(--ink-soft); stroke-width: 3; stroke-linecap: round; }
+.c211-lt { fill: var(--ink-soft); font: italic 20px var(--serif); text-anchor: middle; }
+.c211-lt.hot { fill: var(--accent-hot); font-style: normal; font-weight: 700; }
+.c211-rope { fill: var(--ink-soft); transform-box: fill-box; transform-origin: top; transform: scaleY(.08); transition: transform 2.6s ease-in-out; }
+.c211-bsk { transition: transform 2.6s ease-in-out; }
+.slide:has(.c211-b1.on) .c211-rope { transform: none; }
+.slide:has(.c211-b1.on) .c211-bsk { transform: translateY(200px); }
+.c211-basket { fill: color-mix(in srgb, var(--warm) 55%, var(--surface)); stroke: var(--line-strong); stroke-width: 3; }
+.c211-man { fill: var(--ink); }
+.c211-free { opacity: 0; transition: opacity .8s ease 2.2s; }
+.slide:has(.c211-b1.on) .c211-free { opacity: 1; }
+.c211-ask { opacity: 1; transition: opacity .5s ease; }
+.slide:has(.c211-b1.on) .c211-ask { opacity: 0; }
+</style>
+</head>
+<body>
+<main class="deck" id="deck">
+
+<!-- ======================= OPENING ======================= -->
+<section class="slide title">
+  <div class="inner">
+    <div class="emblem rise"></div>
+    <h1 class="rise" style="--d:1">2 Corinthians 11</h1>
+    <p class="sub rise" style="--d:3">The fool's boast</p>
+    <p class="tag rise" style="--d:5">Paul guards his church from men who look like light, and when he has to boast, he lists his beatings and a basket.</p>
+  </div>
+</section>
+
+<section class="slide watch">
+  <div class="inner">
+    <h2 class="rise">Things to watch for</h2>
+    <p class="lede rise" style="--d:1">Keep these questions in the back of your mind as we read. We'll come back to every one of them at the end.</p>
+    <ol class="seeds">
+      <li class="step"><span class="topic">The jealousy</span><span class="seed-q">Why is Paul jealous for the Corinthians, and what picture does he use?</span></li>
+      <li class="step"><span class="topic">The serpent</span><span class="seed-q">What does the serpent's trick in Eden teach about how temptation works?</span></li>
+      <li class="step"><span class="topic">Another Jesus</span><span class="seed-q">How can a man tell a false teacher from a true one?</span></li>
+      <li class="step"><span class="topic">The disguise</span><span class="seed-q">Why is it no marvel that evil comes dressed as good?</span></li>
+      <li class="step"><span class="topic">The cost</span><span class="seed-q">What did serving Christ cost Paul?</span></li>
+      <li class="step"><span class="topic">Weakness</span><span class="seed-q">What does Paul boast about instead of his strength?</span></li>
+    </ol>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise">Where we are in 2 Corinthians</h2>
+    <p class="note rise" style="--d:1">About AD 56, Paul is writing from Macedonia to the church he started in Corinth. In chapters 1 to 9 he was warm. From chapter 10 he answers the men who have been running him down. Chapter 10 settled how he will fight: not with the flesh. Now, in the second half of his answer, he does something he hates doing.</p>
+    <div class="c211-where rise" style="--d:2" role="img" aria-label="2 Corinthians in five parts. Chapters 1 to 7: Paul's heart, a church set right. Chapters 8 and 9: the offering for the poor. Chapter 10: the weapons, done. Chapters 11 and 12: the fool's boast, and we are here. Chapter 13: examine yourselves, and goodbye.">
+      <div class="done"><i>1–7</i><b>Paul's heart, a church set right</b></div>
+      <div class="done"><i>8–9</i><b>The offering for the poor</b></div>
+      <div class="done"><i>10</i><b>The weapons</b></div>
+      <div class="here"><i>11–12</i><b>The fool's boast</b></div>
+      <div><i>13</i><b>Examine yourselves; goodbye</b></div>
+    </div>
+    <p class="note step">Newcomers have been bragging about their credentials and mocking Paul. So he plays their game, and calls it <em>foolishness</em> each time, because he knows boasting is not what matters. Read alone, this chapter still makes sense: a pastor guards his people from smooth impostors, then shows them what a real servant of Christ looks like.</p>
+  </div>
+</section>
+
+<!-- ======================= PART ONE: JEALOUS LOVE ======================= -->
+<section class="slide part">
+  <div class="inner">
+    <p class="part-n rise">Part one</p>
+    <h2 class="rise" style="--d:1">A jealous love</h2>
+    <p class="range rise" style="--d:2">Verses 1–6</p>
+    <div class="rule"></div>
+    <p class="hook rise" style="--d:4">Paul is afraid for his people, and he explains why.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="1-2" data-hl="I have espoused you to one husband|a chaste virgin to Christ"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="2" data-hl="I have espoused you to one husband, that I may present you as a chaste virgin to Christ"></blockquote>
+    <h2 class="rise" style="--d:1">Promised to one husband</h2>
+    <ol class="timeline" aria-label="Betrothed: you trusted Christ, and Paul brought you to Him. Waiting: keep your eyes on Him alone. The day: presented to Christ, spotless.">
+      <li style="--k:0"><b>Betrothed</b><span>You came to Christ, and Paul brought you</span><small>“I have espoused you”</small></li>
+      <li class="lit" style="--k:1"><b>Waiting</b><span>Now: keep faith with Him alone</span><small>“godly jealousy”</small></li>
+      <li class="wait" style="--k:2"><b>The day</b><span>Presented to Christ, whole</span><small>“a chaste virgin to Christ”</small></li>
+    </ol>
+    <p class="note step">Paul pictures himself as the father of the bride, who promised her to one husband and now wants her faithful until the wedding. <em>“Espoused”</em> means promised in marriage. His jealousy is the godly kind: the protective love of a father, like God's own (Exodus 34:14).</p>
+    <p class="note step">“A chaste virgin” is not about your past. It is about undivided loyalty from now on. Some of the Corinthians had a rough history, and Paul knew it: <em>“And such were some of you: but ye are washed, but ye are sanctified, but ye are justified in the name of the Lord Jesus”</em> (1 Corinthians 6:11). Washed means washed. Today your eyes go to Him alone.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="3-4" data-hl="as the serpent beguiled Eve through his subtilty|another Jesus"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="3" data-hl="as the serpent beguiled Eve through his subtilty"></blockquote>
+    <h2 class="rise" style="--d:1">The serpent's way, in three moves</h2>
+    <svg viewBox="0 0 720 110" style="width:100%;max-height:16vh;display:block;margin:0 auto" role="img" aria-label="A serpent winding across the page.">
+      <path class="c211-snk" pathLength="1" d="M20 70 C 90 10, 150 10, 200 60 S 300 110, 380 60 S 480 10, 560 60 S 640 90, 676 62"/>
+      <g class="c211-head"><ellipse cx="692" cy="60" rx="22" ry="15"/><circle class="c211-eye" cx="696" cy="54" r="3.5"/><path class="c211-tongue" d="M712 62 L 718 62 M 718 62 L 722 58 M 718 62 L 722 66"/></g>
+    </svg>
+    <div class="c211-tricks">
+      <div class="step c211-t1"><i>1 · Doubt</i><b>“Yea, hath God said…?”</b><p>He starts with a question about what God really meant (Genesis 3:1).</p></div>
+      <div class="step c211-t2"><i>2 · Deny</i><b>“Ye shall not surely die”</b><p>Then he says the price isn't real (Genesis 3:4).</p></div>
+      <div class="step c211-t3"><i>3 · Flatter</i><b>“Ye shall be as gods”</b><p>Then he offers something better than God gave (Genesis 3:5).</p></div>
+    </div>
+    <p class="note step">Notice what he never says: <em>“Come and be bad.”</em> It always sounds clever, reasonable, even kind. “Beguiled” means <em>deceived</em>. Eve said it herself afterwards: <em>“The serpent beguiled me, and I did eat”</em> (Genesis 3:13).</p>
+    <p class="note step">Paul wants the Corinthians to stay in <em>“the simplicity that is in Christ”</em>, which just means trusting Him plainly. Every time that “good reason” for the thing you know is wrong shows up, hear the serpent. It is the same voice, three moves at a time.</p>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="4" data-hl="another Jesus|another spirit|another gospel"></blockquote>
+    <h2 class="rise" style="--d:1">Another Jesus, another spirit, another gospel</h2>
+    <div class="c211-cards" style="--n:3">
+      <div class="rise" style="--d:2"><h3>Another Jesus</h3><b>a Jesus who is less</b><p>A good teacher only, or a Jesus plus a list of rules. The Jesus of the Bible is God come as a man, who died for sinners and rose again.</p></div>
+      <div class="rise" style="--d:3"><h3>Another spirit</h3><b>a spirit you have to chase</b><p>You received the Holy Spirit when you believed. Nobody has to bring you a second blessing, or sell you one.</p></div>
+      <div class="rise" style="--d:4"><h3>Another gospel</h3><b>grace plus something</b><p>Faith in Jesus, <em>plus</em> a ritual, a payment, or good behavior. The true gospel is a gift, received by faith.</p></div>
+    </div>
+    <blockquote class="quote step"><p>“But though we, or an angel from heaven, preach any other gospel unto you than that which we have preached unto you, let him be accursed.”</p><cite>Galatians 1:8</cite></blockquote>
+    <p class="note step">Paul's last line in verse 4 is a bitter joke: <em>“ye might well bear with him.”</em> In other words, you put up with this nonsense far too easily. Don't. If a man changes who Jesus is, or what saves you, stop listening, however nice he is.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="5-6" data-hl="though I be rude in speech, yet not in knowledge"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="6" data-hl="though I be rude in speech, yet not in knowledge"></blockquote>
+    <p class="saying rise" style="--d:1">Rough in speech, <em>sure in knowledge.</em></p>
+    <p class="note rise" style="--d:3">The “very chiefest apostles” is a dig. Most Bible teachers think Paul means the newcomers who gave themselves that grand title (he calls them “false apostles” in verse 13), not Peter and the Twelve. He admits he's no polished speaker. But he knows Christ, and what he teaches is sound.</p>
+    <p class="note step">If you don't talk pretty, don't let a smooth talker tell you what's true. A plain man who knows Jesus and says so is worth ten men with perfect sentences. The test is always what a man says about Christ, and not how he says it.</p>
+  </div>
+</section>
+
+<!-- ======================= PART TWO: FREE OF CHARGE, AND THE DISGUISE ======================= -->
+<section class="slide part">
+  <div class="inner">
+    <p class="part-n rise">Part two</p>
+    <h2 class="rise" style="--d:1">Free of charge, and in disguise</h2>
+    <p class="range rise" style="--d:2">Verses 7–15</p>
+    <div class="rule"></div>
+    <p class="hook rise" style="--d:4">Paul took no pay. The impostors took everything, and looked like angels.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="7-9" data-hl="I robbed other churches, taking wages of them|I was chargeable to no man|the brethren which came from Macedonia supplied"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise">Who paid Paul's bills in Corinth?</h2>
+    <div class="split">
+      <div class="stage">
+        <svg data-world viewBox="425 150 330 280" data-towns="Philippi!, Thessalonica:l, Corinth*, Berea:l" role="img" aria-label="Map of Macedonia and Greece. Arrows run south from the churches at Philippi, Thessalonica and Berea in Macedonia to Corinth in Achaia, carrying the gifts that supported Paul.">
+          <path class="map-route j1" data-via="Philippi, Thessalonica, Berea, @22.85 40.2, @23.2 39.75, @24.0 39.3, @24.2 38.75, @24.72 38.12, @24.45 37.85, Corinth"/>
+        </svg>
+      </div>
+      <div>
+        <p class="note rise" style="--d:1">At Corinth Paul worked with his hands, <em>“for by their occupation they were tentmakers”</em> (Acts 18:3). When that wasn't enough, gifts came down from Macedonia, from the churches at Philippi and Thessalonica.</p>
+        <p class="note step map-go1">That is what he means by <em>“I robbed other churches.”</em> It is a joke with a point: he took support from them so that Corinth wouldn't have to pay. Philippi had helped him from the start (Philippians 4:15–16).</p>
+        <p class="note step">So no one could say he was after their money. He worked, he took from friends, and he preached to them <em>“freely.”</em></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="slide verse" data-v="10-12" data-hl="that I may cut off occasion from them which desire occasion"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="12" data-hl="that I may cut off occasion from them which desire occasion"></blockquote>
+    <h2 class="rise" style="--d:1">Taking nothing, so there is nothing to say</h2>
+    <div class="ifthen rise" style="--d:2">
+      <div class="if"><small>If Paul had taken their money,</small>the impostors could say “we're just the same.”</div>
+      <span class="arrow" aria-hidden="true">→</span>
+      <div class="then"><small>But he took none,</small>so they can't claim to be like him.</div>
+    </div>
+    <p class="note step">“Occasion” just means <em>an opening</em>. Paul closes it. The men who wanted a reason to look as good as him couldn't have one while he took nothing. <em>“Wherefore? because I love you not? God knoweth.”</em> He refuses their money because he loves them.</p>
+    <p class="note step">Real love is sometimes free, and sometimes gives up what it's owed. Watch for the man who has a price on everything about Jesus.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="13-15" data-hl="Satan himself is transformed into an angel of light|transforming themselves into the apostles of Christ"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="14" data-hl="Satan himself is transformed into an angel of light"></blockquote>
+    <h2 class="rise" style="--d:1">It looks good. Look again.</h2>
+    <div class="c211-lures">
+      <div class="c211-lure step"><div class="f"><h3>What it looks like</h3><b>An old friend who just wants to catch up</b><p>Warm, funny, glad to see you.</p></div><div class="b"><h3>What it is</h3><b>The old crowd, the old place</b><p>Back to the life Christ pulled you out of.</p></div></div>
+      <div class="c211-lure step"><div class="f"><h3>What it looks like</h3><b>“You've earned it.”</b><p>After a hard week, only fair.</p></div><div class="b"><h3>What it is</h3><b>The first step of the old loop</b><p>One reward that costs you the rest.</p></div></div>
+      <div class="c211-lure step"><div class="f"><h3>What it looks like</h3><b>“Nobody will ever know.”</b><p>Private, tidy, harmless.</p></div><div class="b"><h3>What it is</h3><b>A secret that grows in the dark</b><p>It never stays small.</p></div></div>
+      <div class="c211-lure step"><div class="f"><h3>What it looks like</h3><b>A teacher who makes you feel special</b><p>Finally someone who gets you.</p></div><div class="b"><h3>What it is</h3><b>A man who needs followers</b><p>Watch what he asks for.</p></div></div>
+    </div>
+    <p class="note step">Paul's words are plain: <em>“no marvel.”</em> Don't be surprised. The enemy does not appear in a red cape. He comes as a friend, a bargain, or a preacher. <em>“Whose end shall be according to their works”</em> (v. 15): what they are headed for catches up with them in the end.</p>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise">Three true things about the enemy</h2>
+    <div class="c211-cards" style="--n:3">
+      <div class="rise" style="--d:1"><h3>He is real</h3><b>a prowling adversary</b><p>“Be sober, be vigilant; because your adversary the devil, as a roaring lion, walketh about, seeking whom he may devour” (1 Peter 5:8).</p></div>
+      <div class="rise" style="--d:2"><h3>He is a liar</h3><b>he deceives</b><p>“That old serpent, called the Devil, and Satan, which deceiveth the whole world” (Revelation 12:9).</p></div>
+      <div class="rise all" style="--d:3"><h3>He is beaten</h3><b>and you're not on your own</b><p>“Ye are of God, little children, and have overcome them: because greater is he that is in you, than he that is in the world” (1 John 4:4).</p></div>
+    </div>
+    <p class="note step">Don't be afraid of him, and don't be careless with him. If you are in Christ, the Holy Spirit lives in you from the day you believed, and He is greater. And a believer cannot lose Christ by being deceived for a day. If you fell for a lie yesterday, say so to God (1 John 1:9) and get up.</p>
+  </div>
+</section>
+
+<!-- ======================= PART THREE: THE FOOL'S BOASTING ======================= -->
+<section class="slide part">
+  <div class="inner">
+    <p class="part-n rise">Part three</p>
+    <h2 class="rise" style="--d:1">Boasting as a fool</h2>
+    <p class="range rise" style="--d:2">Verses 16–22</p>
+    <div class="rule"></div>
+    <p class="hook rise" style="--d:4">Paul answers the braggers, with a smile and a sting.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="16-18" data-hl="Let no man think me a fool|many glory after the flesh"></section>
+
+<section class="slide verse" data-v="19-21" data-hl="if a man bring you into bondage, if a man devour you|if a man smite you on the face"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="20" data-hl="if a man bring you into bondage, if a man devour you, if a man take of you, if a man exalt himself, if a man smite you on the face"></blockquote>
+    <h2 class="rise" style="--d:1">Five things a false leader does to you</h2>
+    <ul class="c211-signs">
+      <li class="step"><b>Binds you</b><span>“bring you into bondage”<small>more rules, more fear, a leash on you</small></span></li>
+      <li class="step"><b>Eats you</b><span>“devour you”<small>lives off your money, your time, your work</small></span></li>
+      <li class="step"><b>Takes</b><span>“take of you”<small>always asking, never giving</small></span></li>
+      <li class="step"><b>Lifts himself</b><span>“exalt himself”<small>it is all about him, not Christ</small></span></li>
+      <li class="step"><b>Hits you</b><span>“smite you on the face”<small>shame, threats, or worse</small></span></li>
+    </ul>
+    <p class="note step">Verse 19 is Paul being sarcastic: <em>“ye suffer fools gladly, seeing ye yourselves are wise.”</em> You pride yourselves on your wisdom, and you let this happen. Many of our men have been under a boss or a preacher who did these five things. If you have, it wasn't Christ's doing, and you can walk away. Jesus does the opposite: He gives, He serves, and He sets free.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="22" data-hl="Are they Hebrews? so am I"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise">Same pedigree, and more</h2>
+    <div class="talk">
+      <p class="rise" style="--d:1"><small>The newcomers</small>We are Hebrews! We are Israelites! We are the seed of Abraham!</p>
+      <p class="reply step"><small>Paul</small>So am I. So am I. So am I.</p>
+    </div>
+    <p class="note step">Paul has the same background they brag about. But he doesn't stop there, because a family tree isn't what makes a man a servant of Christ. The next verses show what does: what a man has been willing to suffer for the sake of others.</p>
+    <p class="note step">A man's papers, his past, his family name or his record is not what Paul counts. In Christ, a man with nothing on his résumé and a man with everything stand in the same place.</p>
+  </div>
+</section>
+
+<!-- ======================= PART FOUR: WHAT IT COST ======================= -->
+<section class="slide part">
+  <div class="inner">
+    <p class="part-n rise">Part four</p>
+    <h2 class="rise" style="--d:1">What it cost</h2>
+    <p class="range rise" style="--d:2">Verses 23–33</p>
+    <div class="rule"></div>
+    <p class="hook rise" style="--d:4">A list no impostor could match, and a basket.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="23-25" data-hl="in stripes above measure|once was I stoned|thrice I suffered shipwreck|a night and a day I have been in the deep"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise">The tally, so far</h2>
+    <div class="c211-tally" role="list">
+      <div class="step"><b>Beaten by the Jews<small>“forty stripes save one”: 39 each time</small></b><span class="m"><i></i><i></i><i></i><i></i><i></i></span><em>5</em></div>
+      <div class="step"><b>Beaten with rods<small>by Roman officers (Philippi, Acts 16:22–23)</small></b><span class="m"><i></i><i></i><i></i></span><em>3</em></div>
+      <div class="step"><b>Stoned, and left for dead<small>at Lystra (Acts 14:19)</small></b><span class="m"><i></i></span><em>1</em></div>
+      <div class="step"><b>Shipwrecked<small>and the one in Acts 27 is still ahead</small></b><span class="m"><i></i><i></i><i></i></span><em>3</em></div>
+      <div class="step"><b>“A night and a day … in the deep”<small>in the open sea, holding on</small></b><span class="m"><i></i></span><em>1</em></div>
+    </div>
+    <p class="note step">Five times thirty-nine lashes is 195 lashes. The Jews kept to thirty-nine so as never to go over the limit of forty set in Deuteronomy 25:3. And Acts tells only two of these stories before this letter: the rods at Philippi, and the stoning at Lystra. Paul has been through far more than anyone knows.</p>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise">Where some of it happened</h2>
+    <div class="split">
+      <div class="stage">
+        <svg data-world viewBox="420 150 430 310" data-towns="Philippi!, Lystra!, Damascus!, Corinth*, Ephesus:l, Antioch:l" role="img" aria-label="Map of the eastern Mediterranean marking places where Paul suffered: Philippi, where he was beaten with rods; Lystra, where he was stoned; and Damascus, where he was let down in a basket. Corinth, where he writes to, and Ephesus and Antioch are also marked."></svg>
+      </div>
+      <div>
+        <p class="note rise" style="--d:1">You can follow the list on a map, because Acts gives us places for some of it.</p>
+        <p class="note step"><b>Philippi</b>: beaten with rods, then jailed. “Commanded to beat them. And when they had laid many stripes upon them, they cast them into prison” (Acts 16:22–23).</p>
+        <p class="note step"><b>Lystra</b>: “having stoned Paul, drew him out of the city, supposing he had been dead” (Acts 14:19).</p>
+        <p class="note step"><b>Damascus</b>: a basket and a wall. That one is at the end of this chapter.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="slide verse" data-v="26-28" data-hl="In journeyings often|the care of all the churches"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise">Danger on every side</h2>
+    <svg viewBox="0 0 720 380" style="width:100%;max-height:52vh;display:block;margin:0 auto" role="img" aria-label="Paul in the middle with eight dangers around him: waters, robbers, his own people, the heathen, the city, the wilderness, the sea, and last, false brethren, the one from inside the church.">
+<g class="c211-pn" style="--k:0"><line class="c211-spoke" x1="360" y1="124" x2="360" y2="61"/><rect class="c211-peril" x="280" y="19" width="160" height="42" rx="21"/><text class="c211-pt" x="360" y="46">waters</text></g>
+<g class="c211-pn" style="--k:1"><line class="c211-spoke" x1="407" y1="143" x2="471" y2="84"/><rect class="c211-peril" x="471" y="63" width="160" height="42" rx="21"/><text class="c211-pt" x="551" y="90">robbers</text></g>
+<g class="c211-pn" style="--k:2"><line class="c211-spoke" x1="426" y1="190" x2="550" y2="190"/><rect class="c211-peril" x="550" y="169" width="160" height="42" rx="21"/><text class="c211-pt" x="630" y="196">my own people</text></g>
+<g class="c211-pn" style="--k:3"><line class="c211-spoke" x1="407" y1="237" x2="471" y2="296"/><rect class="c211-peril" x="471" y="275" width="160" height="42" rx="21"/><text class="c211-pt" x="551" y="302">the heathen</text></g>
+<g class="c211-pn" style="--k:4"><line class="c211-spoke" x1="360" y1="256" x2="360" y2="319"/><rect class="c211-peril" x="280" y="319" width="160" height="42" rx="21"/><text class="c211-pt" x="360" y="346">the city</text></g>
+<g class="c211-pn" style="--k:5"><line class="c211-spoke" x1="313" y1="237" x2="249" y2="296"/><rect class="c211-peril" x="89" y="275" width="160" height="42" rx="21"/><text class="c211-pt" x="169" y="302">the wilderness</text></g>
+<g class="c211-pn" style="--k:6"><line class="c211-spoke" x1="294" y1="190" x2="170" y2="190"/><rect class="c211-peril" x="10" y="169" width="160" height="42" rx="21"/><text class="c211-pt" x="90" y="196">the sea</text></g>
+<g class="c211-pn c211-late" style="--k:7"><line class="c211-spoke hot" x1="313" y1="143" x2="249" y2="84"/><rect class="c211-peril hot" x="89" y="63" width="160" height="42" rx="21"/><text class="c211-pt hot" x="169" y="90">false brethren</text></g>
+
+
+      <circle class="c211-core" cx="360" cy="190" r="64"/>
+      <text class="c211-ct" x="360" y="190">Paul</text><text class="c211-cs" x="360" y="214">in perils from…</text>
+    </svg>
+    <p class="note step c211-p8">The last one is worst: <em>“in perils among false brethren.”</em> The wounds that hurt most come from men who say they're on your side. Paul came through rivers and robbers; what stayed with him was being let down by people he trusted.</p>
+    <p class="note step">And v. 27 adds the body: <em>“weariness and painfulness, watchings often, hunger and thirst, fastings often, cold and nakedness.”</em> Tired, sleepless, hungry, cold, and short of clothes. If you have slept rough or gone hungry, you know a little of this.</p>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="28" data-hl="the care of all the churches"></blockquote>
+    <h2 class="rise" style="--d:1">And then, daily, the care of the churches</h2>
+    <div class="split">
+      <div class="stage">
+        <svg data-world viewBox="420 150 430 310" data-towns="Philippi!, Thessalonica!, Berea!, Corinth!, Athens:t, Ephesus!, Troas, Antioch in Pisidia!, Iconium:t, Lystra:b, Derbe:b, Antioch!:l" role="img" aria-label="Map marking the churches Paul started: Philippi, Thessalonica, Berea, Corinth, Ephesus, Antioch in Pisidia, Iconium, Lystra, Derbe and Antioch. Each one pulses.">
+        </svg>
+      </div>
+      <div>
+        <p class="note rise" style="--d:1">All of these were his. Every church he planted was a family he worried about: <em>“that which cometh upon me daily.”</em> The beatings were over in a day. The care never stopped.</p>
+        <p class="note step">He wasn't made of iron. He leaned on the One who cares for him: <em>“Casting all your care upon him; for he careth for you”</em> (1 Peter 5:7). Whatever you're carrying today (a child, a debt, a brother in trouble), hand it over by name.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="slide verse" data-v="29-31" data-hl="Who is weak, and I am not weak|I will glory of the things which concern mine infirmities"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="29" data-hl="Who is weak, and I am not weak? who is offended, and I burn not?"></blockquote>
+    <h2 class="rise" style="--d:1">A pastor who feels it</h2>
+    <p class="note rise" style="--d:2">“Weak” means <em>struggling</em>. “Offended” means <em>made to stumble</em>, caused to fall. When a believer is struggling, Paul feels it with him. When someone causes one to stumble, he <em>burns</em> with anger and grief.</p>
+    <p class="note step">Think about that if you have fallen. Somewhere there is somebody who is not shaking his head at you. He is hurting for you, and wants you back on your feet. That is a pastor's heart, and it is only a small picture of Christ's.</p>
+    <p class="saying step">I will glory in my <em>weaknesses</em>.</p>
+    <p class="note step">Verse 30 is the turn. After the whole list, what Paul boasts about is not his strength but his weakness. And to prove he is telling the truth, he calls on God Himself (v. 31). One last example follows.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="32-33" data-hl="through a window in a basket was I let down by the wall"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="33" data-hl="through a window in a basket was I let down by the wall"></blockquote>
+    <h2 class="rise" style="--d:1">The great apostle in a basket</h2>
+    <svg viewBox="0 0 720 420" style="width:100%;max-height:50vh;display:block;margin:0 auto" role="img" aria-label="The wall of Damascus. On the city side, soldiers of the governor watch the gate. High up in the wall is a window. On a click, a basket holding Paul is lowered on a rope from the window down the outside of the wall to the ground, and he gets away.">
+      <line class="c211-gr" x1="0" y1="380" x2="720" y2="380"/>
+      <rect class="c211-wl" x="300" y="60" width="52" height="320" rx="4"/>
+      <rect class="c211-win" x="312" y="104" width="28" height="38" rx="4"/>
+      <g><circle class="c211-guard" cx="120" cy="350" r="12"/><line class="c211-spear" x1="136" y1="372" x2="136" y2="300"/><circle class="c211-guard" cx="180" cy="350" r="12"/><line class="c211-spear" x1="196" y1="372" x2="196" y2="300"/><circle class="c211-guard" cx="240" cy="350" r="12"/><line class="c211-spear" x1="256" y1="372" x2="256" y2="300"/></g>
+      <text class="c211-lt" x="170" y="280">the governor's guard</text>
+      <text class="c211-lt" x="180" y="404">inside Damascus</text>
+      <rect class="c211-rope" x="325" y="125" width="3" height="205"/>
+      <g class="c211-bsk"><path class="c211-basket" d="M300 150 L 356 150 L 346 196 L 310 196 Z"/><circle class="c211-man" cx="328" cy="142" r="11"/></g>
+      <text class="c211-lt c211-ask" x="560" y="200">how do you get out?</text>
+      <text class="c211-lt hot c211-free" x="560" y="330">out, and away</text>
+    </svg>
+    <p class="note step c211-b1">Paul had come to Damascus years before to arrest Christians. Now the governor under King Aretas had it watched, and the Jews were watching the gates too, <em>“day and night to kill him”</em> (Acts 9:24). So his friends did the one thing that worked: they put him in a basket and lowered him down the outside of the wall.</p>
+    <p class="note step">The man who has just listed his beatings now tells the one story that makes him look foolish. He is not proud of it. He tells it because it is true, and because his strength was never the point.</p>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise">From the basket to this letter</h2>
+    <ol class="timeline" aria-label="About AD 34 to 35, Saul meets Jesus on the road to Damascus. Soon after, he is let down the wall in a basket. About AD 46 to 48, he is stoned at Lystra. About AD 49 to 52, beaten with rods at Philippi. About AD 56, he writes this letter. About AD 59 to 60, the shipwreck in Acts 27 is still ahead.">
+      <li style="--k:0"><b>about AD 34–35</b><span>Saul meets Jesus on the road to Damascus</span><small>Acts 9</small></li>
+      <li style="--k:1"><b>soon after</b><span>Let down in a basket</span><small>Acts 9:25</small></li>
+      <li style="--k:2"><b>about AD 46–48</b><span>Stoned at Lystra</span><small>Acts 14:19</small></li>
+      <li style="--k:3"><b>about AD 49–52</b><span>Beaten with rods at Philippi</span><small>Acts 16:22</small></li>
+      <li class="lit" style="--k:4"><b>about AD 56</b><span>Writes this letter</span><small>“the care of all the churches”</small></li>
+      <li class="wait" style="--k:5"><b>about AD 59–60</b><span>The shipwreck of Acts 27 is still ahead</span><small>he is not finished</small></li>
+    </ol>
+    <p class="note step">Twenty years of this, and he is still on his feet. That is how grace works over time. The man in the basket is the same man who is still at it. If you ran, if you fell, if you got out of a bad place any way you could, hear this: <em>running away is not the same as failing</em>. Sometimes a basket is the wise move.</p>
+    <p class="note step">Today: if there is a place or a person that is a trap for you, don't argue with it. Make a basket. Pick one door out, tell one brother, and write his number where you'll see it.</p>
+  </div>
+</section>
+
+<!-- ======================= CLOSING ======================= -->
+<section class="slide remember">
+  <div class="inner">
+    <h2 class="rise">Points to remember</h2>
+    <ol class="seeds">
+      <li class="step"><span class="topic">The jealousy</span><span class="seed-q">“I am jealous over you with godly jealousy” <cite>11:2</cite></span><span class="take">Paul loves his church like a father who promised his daughter to one husband. “Washed” means washed.</span></li>
+      <li class="step"><span class="topic">The serpent</span><span class="seed-q">“as the serpent beguiled Eve through his subtilty” <cite>11:3</cite></span><span class="take">Doubt, deny, flatter. Temptation always sounds reasonable, so hold to the simplicity that is in Christ.</span></li>
+      <li class="step"><span class="topic">Another Jesus</span><span class="seed-q">“another Jesus, … another spirit, … another gospel” <cite>11:4</cite></span><span class="take">Test any teacher: does he keep the true Jesus and grace through faith, and does he bind, devour, take, exalt himself, or hit?</span></li>
+      <li class="step"><span class="topic">The disguise</span><span class="seed-q">“Satan himself is transformed into an angel of light” <cite>11:14</cite></span><span class="take">It will look good. Don't be shocked, and don't be afraid: the One in you is greater.</span></li>
+      <li class="step"><span class="topic">The cost</span><span class="seed-q">“the care of all the churches” <cite>11:28</cite></span><span class="take">Beaten, stoned, wrecked, hungry, and carrying the churches daily. Real service costs something. Hand your cares to Him.</span></li>
+      <li class="step"><span class="topic">Weakness</span><span class="seed-q">“If I must needs glory, I will glory of the things which concern mine infirmities” <cite>11:30</cite></span><span class="take">Paul boasts in a basket. The strength was God's, and escaping a trap is not failure.</span></li>
+    </ol>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 1 of 6</p>
+      <span class="topic">The jealousy</span>
+      <h2>Why is Paul jealous for the Corinthians, and what picture does he use?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="2"></blockquote>
+      <blockquote class="quote step" data-q="3"></blockquote>
+      <blockquote class="quote step"><p>“And such were some of you: but ye are washed, but ye are sanctified, but ye are justified in the name of the Lord Jesus, and by the Spirit of our God.”</p><cite>1 Corinthians 6:11</cite></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>He loves them like a father who has promised his daughter to one husband, and wants her faithful to Christ. His jealousy is protective love. And he does not hold their past against them: they are washed.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 2 of 6</p>
+      <span class="topic">The serpent</span>
+      <h2>What does the serpent's trick in Eden teach about how temptation works?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step"><p>“Now the serpent was more subtil than any beast of the field which the LORD God had made. And he said unto the woman, Yea, hath God said, Ye shall not eat of every tree of the garden?”</p><cite>Genesis 3:1</cite></blockquote>
+      <blockquote class="quote step"><p>“And the serpent said unto the woman, Ye shall not surely die: For God doth know that in the day ye eat thereof, then your eyes shall be opened, and ye shall be as gods, knowing good and evil.”</p><cite>Genesis 3:4–5</cite></blockquote>
+      <blockquote class="quote step" data-q="3"></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>It starts by making you doubt God's word, then says the price isn't real, then offers something better than what God gave. It always sounds reasonable. Stay with the plain trust that is in Christ.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 3 of 6</p>
+      <span class="topic">Another Jesus</span>
+      <h2>How can a man tell a false teacher from a true one?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="4"></blockquote>
+      <blockquote class="quote step" data-q="20"></blockquote>
+      <blockquote class="quote step"><p>“But though we, or an angel from heaven, preach any other gospel unto you than that which we have preached unto you, let him be accursed.”</p><cite>Galatians 1:8</cite></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>A true teacher keeps the real Jesus and the gospel of grace, and serves you. A false one changes Jesus or the gospel, and binds, devours, takes from, exalts himself over, or hits the people he leads.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 4 of 6</p>
+      <span class="topic">The disguise</span>
+      <h2>Why is it no marvel that evil comes dressed as good?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="13"></blockquote>
+      <blockquote class="quote step" data-q="14"></blockquote>
+      <blockquote class="quote step"><p>“Ye are of God, little children, and have overcome them: because greater is he that is in you, than he that is in the world.”</p><cite>1 John 4:4</cite></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>Because Satan himself comes as an angel of light, so his servants do too. Expect it, and test what you hear. You are not on your own: the One in you is greater.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 5 of 6</p>
+      <span class="topic">The cost</span>
+      <h2>What did serving Christ cost Paul?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="24-25"></blockquote>
+      <blockquote class="quote step" data-q="27"></blockquote>
+      <blockquote class="quote step" data-q="28"></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>Beatings, a stoning, three shipwrecks, danger on every side, hunger and cold, and the daily care of all the churches. Real service costs something, and he never quit.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 6 of 6</p>
+      <span class="topic">Weakness</span>
+      <h2>What does Paul boast about instead of his strength?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="30"></blockquote>
+      <blockquote class="quote step" data-q="32"></blockquote>
+      <blockquote class="quote step" data-q="33"></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>His weaknesses: his infirmities, and the day he was let down a wall in a basket. The strength was always God's, and a man who has to run is not a man who has failed.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide prayer">
+  <div class="inner">
+    <div class="emblem rise"></div>
+    <h2 class="rise" style="--d:1">Prayer requests</h2>
+    <p class="ask-line rise" style="--d:2">What can we pray about for you today? A voice that sounds like good advice, a load you're carrying, a place you need to get out of?</p>
+    <blockquote class="quote rise" style="--d:4"><p>“Casting all your care upon him; for he careth for you.”</p><cite>1 Peter 5:7</cite></blockquote>
+  </div>
+</section>
+
+</main>
+
+<script>
+// King James Version, 2 Corinthians chapter 11
+const V = {
+  1: "Would to God ye could bear with me a little in my folly: and indeed bear with me.",
+  2: "For I am jealous over you with godly jealousy: for I have espoused you to one husband, that I may present you as a chaste virgin to Christ.",
+  3: "But I fear, lest by any means, as the serpent beguiled Eve through his subtilty, so your minds should be corrupted from the simplicity that is in Christ.",
+  4: "For if he that cometh preacheth another Jesus, whom we have not preached, or if ye receive another spirit, which ye have not received, or another gospel, which ye have not accepted, ye might well bear with him.",
+  5: "For I suppose I was not a whit behind the very chiefest apostles.",
+  6: "But though I be rude in speech, yet not in knowledge; but we have been throughly made manifest among you in all things.",
+  7: "Have I committed an offence in abasing myself that ye might be exalted, because I have preached to you the gospel of God freely?",
+  8: "I robbed other churches, taking wages of them, to do you service.",
+  9: "And when I was present with you, and wanted, I was chargeable to no man: for that which was lacking to me the brethren which came from Macedonia supplied: and in all things I have kept myself from being burdensome unto you, and so will I keep myself.",
+  10: "As the truth of Christ is in me, no man shall stop me of this boasting in the regions of Achaia.",
+  11: "Wherefore? because I love you not? God knoweth.",
+  12: "But what I do, that I will do, that I may cut off occasion from them which desire occasion; that wherein they glory, they may be found even as we.",
+  13: "For such are false apostles, deceitful workers, transforming themselves into the apostles of Christ.",
+  14: "And no marvel; for Satan himself is transformed into an angel of light.",
+  15: "Therefore it is no great thing if his ministers also be transformed as the ministers of righteousness; whose end shall be according to their works.",
+  16: "I say again, Let no man think me a fool; if otherwise, yet as a fool receive me, that I may boast myself a little.",
+  17: "That which I speak, I speak it not after the Lord, but as it were foolishly, in this confidence of boasting.",
+  18: "Seeing that many glory after the flesh, I will glory also.",
+  19: "For ye suffer fools gladly, seeing ye yourselves are wise.",
+  20: "For ye suffer, if a man bring you into bondage, if a man devour you, if a man take of you, if a man exalt himself, if a man smite you on the face.",
+  21: "I speak as concerning reproach, as though we had been weak. Howbeit whereinsoever any is bold, (I speak foolishly,) I am bold also.",
+  22: "Are they Hebrews? so am I. Are they Israelites? so am I. Are they the seed of Abraham? so am I.",
+  23: "Are they ministers of Christ? (I speak as a fool) I am more; in labours more abundant, in stripes above measure, in prisons more frequent, in deaths oft.",
+  24: "Of the Jews five times received I forty stripes save one.",
+  25: "Thrice was I beaten with rods, once was I stoned, thrice I suffered shipwreck, a night and a day I have been in the deep;",
+  26: "In journeyings often, in perils of waters, in perils of robbers, in perils by mine own countrymen, in perils by the heathen, in perils in the city, in perils in the wilderness, in perils in the sea, in perils among false brethren;",
+  27: "In weariness and painfulness, in watchings often, in hunger and thirst, in fastings often, in cold and nakedness.",
+  28: "Beside those things that are without, that which cometh upon me daily, the care of all the churches.",
+  29: "Who is weak, and I am not weak? who is offended, and I burn not?",
+  30: "If I must needs glory, I will glory of the things which concern mine infirmities.",
+  31: "The God and Father of our Lord Jesus Christ, which is blessed for evermore, knoweth that I lie not.",
+  32: "In Damascus the governor under Aretas the king kept the city of the Damascenes with a garrison, desirous to apprehend me:",
+  33: "And through a window in a basket was I let down by the wall, and escaped his hands."
+};
+const BOOK = "2 Corinthians 11";
+</script>
+<script src="../assets/deck.js"></script>
+</body>
+</html>
