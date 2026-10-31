@@ -416,6 +416,12 @@ window.GLOSSARY = [
     "Galatians", 4,
     [ 14 ] ],
    [
+    "Philippians", 1,
+    [ 1, 2, 6, 8, 11, 19, 26 ] ],
+   [
+    "Philippians", 2,
+    [ 5, 10, 11, 19, 21 ] ],
+   [
     "Philippians", 3,
     [ 3, 8, 12, 14, 20 ] ],
    [
@@ -1265,6 +1271,12 @@ window.GLOSSARY = [
     "Galatians", 4,
     [ 6 ] ],
    [
+    "Philippians", 1,
+    [ 2 ] ],
+   [
+    "Philippians", 2,
+    [ 11 ] ],
+   [
     "Philippians", 4,
     [ 20 ] ] ]
  },
@@ -1449,7 +1461,13 @@ window.GLOSSARY = [
     [ 2, 3, 5, 14 ] ],
    [
     "Galatians", 4,
-    [ 6, 29 ] ] ]
+    [ 6, 29 ] ],
+   [
+    "Philippians", 1,
+    [ 19 ] ],
+   [
+    "Philippians", 2,
+    [ 1 ] ] ]
  },
  {
   "id": "disciples",
@@ -3896,6 +3914,9 @@ window.GLOSSARY = [
     "Galatians", 1,
     [ 8 ] ],
    [
+    "Philippians", 2,
+    [ 10 ] ],
+   [
     "Philippians", 3,
     [ 20 ] ] ]
  },
@@ -4469,6 +4490,9 @@ window.GLOSSARY = [
     "Galatians", 2,
     [ 9, 21 ] ],
    [
+    "Philippians", 1,
+    [ 7 ] ],
+   [
     "Philippians", 4,
     [ 23 ] ] ]
  },
@@ -4626,7 +4650,10 @@ window.GLOSSARY = [
     [ 1 ] ],
    [
     "Galatians", 4,
-    [ 16 ] ] ]
+    [ 16 ] ],
+   [
+    "Philippians", 1,
+    [ 18 ] ] ]
  },
  {
   "id": "glory",
@@ -4864,6 +4891,12 @@ window.GLOSSARY = [
    [
     "Galatians", 1,
     [ 5 ] ],
+   [
+    "Philippians", 1,
+    [ 11 ] ],
+   [
+    "Philippians", 2,
+    [ 11 ] ],
    [
     "Philippians", 3,
     [ 19 ] ],
@@ -5402,6 +5435,12 @@ window.GLOSSARY = [
     "Galatians", 4,
     [ 7, 14, 19 ] ],
    [
+    "Philippians", 1,
+    [ 1, 2, 6, 8, 10, 11, 13, 15, 16, 18, 19, 20, 21, 23, 26, 27, 29 ] ],
+   [
+    "Philippians", 2,
+    [ 1, 5, 11, 16, 21, 30 ] ],
+   [
     "Philippians", 3,
     [ 3, 7, 8, 9, 12, 14, 18, 20 ] ],
    [
@@ -5901,7 +5940,10 @@ window.GLOSSARY = [
     [ 16 ] ],
    [
     "Galatians", 3,
-    [ 6, 22 ] ] ]
+    [ 6, 22 ] ],
+   [
+    "Philippians", 1,
+    [ 29 ] ] ]
  },
  {
   "id": "witness",
@@ -6060,7 +6102,10 @@ window.GLOSSARY = [
     [ 3 ] ],
    [
     "Galatians", 4,
-    [ 15 ] ] ]
+    [ 15 ] ],
+   [
+    "Philippians", 1,
+    [ 8 ] ] ]
  },
  {
   "id": "baptize",
@@ -6165,7 +6210,10 @@ window.GLOSSARY = [
     [ 12 ] ],
    [
     "Romans", 8,
-    [ 14, 19 ] ] ]
+    [ 14, 19 ] ],
+   [
+    "Philippians", 2,
+    [ 15 ] ] ]
  },
  {
   "id": "verily",
@@ -7034,6 +7082,9 @@ window.GLOSSARY = [
     "2 Corinthians", 11,
     [ 6 ] ],
    [
+    "Philippians", 1,
+    [ 9 ] ],
+   [
     "Philippians", 3,
     [ 8 ] ] ]
  },
@@ -7640,6 +7691,9 @@ window.GLOSSARY = [
     "Galatians", 3,
     [ 6, 21 ] ],
    [
+    "Philippians", 1,
+    [ 11 ] ],
+   [
     "Philippians", 3,
     [ 6, 9 ] ] ]
  },
@@ -8100,6 +8154,9 @@ window.GLOSSARY = [
     [ 16 ] ],
    [
     "2 Corinthians", 9,
+    [ 7 ] ],
+   [
+    "Philippians", 1,
     [ 7 ] ] ]
  },
  {
@@ -8244,7 +8301,10 @@ window.GLOSSARY = [
     [ 11 ] ],
    [
     "1 Corinthians", 14,
-    [ 2, 4, 9, 13, 14, 19, 21, 26, 27 ] ] ]
+    [ 2, 4, 9, 13, 14, 19, 21, 26, 27 ] ],
+   [
+    "Philippians", 2,
+    [ 11 ] ] ]
  },
  {
   "id": "anger",
@@ -8709,7 +8769,10 @@ window.GLOSSARY = [
     [ 3 ] ],
    [
     "Luke", 19,
-    [ 39 ] ] ]
+    [ 39 ] ],
+   [
+    "Philippians", 2,
+    [ 15 ] ] ]
  },
  {
   "id": "friend",
@@ -9618,7 +9681,13 @@ window.GLOSSARY = [
     [ 16 ] ],
    [
     "2 Corinthians", 12,
-    [ 20 ] ] ]
+    [ 20 ] ],
+   [
+    "Philippians", 1,
+    [ 15, 16 ] ],
+   [
+    "Philippians", 2,
+    [ 3 ] ] ]
  },
  {
   "id": "subtilty",
@@ -10905,7 +10974,10 @@ window.GLOSSARY = [
     [ 1 ] ],
    [
     "1 Corinthians", 10,
-    [ 10 ] ] ]
+    [ 10 ] ],
+   [
+    "Philippians", 2,
+    [ 14 ] ] ]
  },
  {
   "id": "last-day",
@@ -13362,7 +13434,13 @@ window.GLOSSARY = [
     [ 2 ] ],
    [
     "2 Corinthians", 7,
-    [ 10 ] ] ]
+    [ 10 ] ],
+   [
+    "Philippians", 1,
+    [ 19, 28 ] ],
+   [
+    "Philippians", 2,
+    [ 12 ] ] ]
  },
  {
   "id": "sixth-hour",
@@ -16079,6 +16157,9 @@ window.GLOSSARY = [
     "Galatians", 3,
     [ 1 ] ],
    [
+    "Philippians", 2,
+    [ 8 ] ],
+   [
     "Philippians", 3,
     [ 18 ] ] ]
  },
@@ -17556,7 +17637,10 @@ window.GLOSSARY = [
     [ 3 ] ],
    [
     "2 Corinthians", 4,
-    [ 1 ] ] ]
+    [ 1 ] ],
+   [
+    "Philippians", 2,
+    [ 1, 27 ] ] ]
  },
  {
   "id": "baal",
@@ -32286,7 +32370,10 @@ window.GLOSSARY = [
     [ 14 ] ],
    [
     "Mark", 12,
-    [ 40 ] ] ]
+    [ 40 ] ],
+   [
+    "Philippians", 1,
+    [ 18 ] ] ]
  },
  {
   "id": "poor-widow",
@@ -34104,7 +34191,10 @@ window.GLOSSARY = [
     [ 29 ] ],
    [
     "Romans", 13,
-    [ 13 ] ] ]
+    [ 13 ] ],
+   [
+    "Philippians", 1,
+    [ 15 ] ] ]
  },
  {
   "id": "wine-mingled-with-myrrh",
@@ -35487,7 +35577,10 @@ window.GLOSSARY = [
     [ 17 ] ],
    [
     "Romans", 11,
-    [ 2 ] ] ]
+    [ 2 ] ],
+   [
+    "Philippians", 1,
+    [ 22 ] ] ]
  },
  {
   "id": "through-ignorance",
@@ -36495,6 +36588,9 @@ window.GLOSSARY = [
     [ 1 ] ],
    [
     "Galatians", 1,
+    [ 1 ] ],
+   [
+    "Philippians", 1,
     [ 1 ] ] ]
  },
  {
@@ -36669,7 +36765,13 @@ window.GLOSSARY = [
     [ 10 ] ],
    [
     "2 Corinthians", 1,
-    [ 1, 19 ] ] ]
+    [ 1, 19 ] ],
+   [
+    "Philippians", 1,
+    [ 1 ] ],
+   [
+    "Philippians", 2,
+    [ 19 ] ] ]
  },
  {
   "id": "lydia",
@@ -36723,7 +36825,10 @@ window.GLOSSARY = [
     [ 12 ] ],
    [
     "Acts", 20,
-    [ 6 ] ] ]
+    [ 6 ] ],
+   [
+    "Philippians", 1,
+    [ 1 ] ] ]
  },
  {
   "id": "troas",
@@ -37168,6 +37273,9 @@ window.GLOSSARY = [
    [
     "2 Corinthians", 13,
     [ 13 ] ],
+   [
+    "Philippians", 1,
+    [ 1 ] ],
    [
     "Philippians", 4,
     [ 22 ] ] ]
@@ -40839,7 +40947,10 @@ window.GLOSSARY = [
   "refs": [
    [
     "Romans", 14,
-    [ 11 ] ] ]
+    [ 11 ] ],
+   [
+    "Philippians", 2,
+    [ 10 ] ] ]
  },
  {
   "id": "give-account",
@@ -41868,7 +41979,10 @@ window.GLOSSARY = [
   "refs": [
    [
     "Romans", 15,
-    [ 5 ] ] ]
+    [ 5 ] ],
+   [
+    "Philippians", 2,
+    [ 2, 20 ] ] ]
  },
  {
   "id": "admonish",
@@ -41928,6 +42042,9 @@ window.GLOSSARY = [
     [ 17, 18, 21 ] ],
    [
     "2 Corinthians", 1,
+    [ 7 ] ],
+   [
+    "Philippians", 1,
     [ 7 ] ] ]
  },
  {
@@ -43854,7 +43971,10 @@ window.GLOSSARY = [
   "refs": [
    [
     "2 Corinthians", 2,
-    [ 1 ] ] ]
+    [ 1 ] ],
+   [
+    "Philippians", 2,
+    [ 26 ] ] ]
  },
  {
   "id": "anguish",
@@ -44559,7 +44679,10 @@ window.GLOSSARY = [
     [ 12 ] ],
    [
     "Galatians", 1,
-    [ 13 ] ] ]
+    [ 13 ] ],
+   [
+    "Philippians", 1,
+    [ 27 ] ] ]
  },
  {
   "id": "certify",
@@ -44894,6 +45017,9 @@ window.GLOSSARY = [
   "name": "Epaphroditus (the Philippian who brought the gift to Paul in Rome)",
   "refs": [
    [
+    "Philippians", 2,
+    [ 25 ] ],
+   [
     "Philippians", 4,
     [ 18 ] ] ]
  },
@@ -45004,5 +45130,179 @@ window.GLOSSARY = [
    [
     "Philippians", 4,
     [ 22 ] ] ]
+ },
+ {
+  "id": "bishops-and-deacons",
+  "kind": "person",
+  "name": "Bishops and deacons (the overseers and the servants of a church)",
+  "refs": [
+   [
+    "Philippians", 1,
+    [ 1 ] ] ]
+ },
+ {
+  "id": "bowels",
+  "kind": "term",
+  "name": "Bowels (old word for the deep feelings of the heart)",
+  "refs": [
+   [
+    "Philippians", 1,
+    [ 8 ] ],
+   [
+    "Philippians", 2,
+    [ 1 ] ] ]
+ },
+ {
+  "id": "bonds",
+  "kind": "term",
+  "name": "Bonds (Paul's chains, in prison)",
+  "refs": [
+   [
+    "Philippians", 1,
+    [ 7, 13, 14, 16 ] ] ]
+ },
+ {
+  "id": "palace-guard",
+  "kind": "place",
+  "name": "The palace (the emperor's own guard in Rome)",
+  "refs": [
+   [
+    "Philippians", 1,
+    [ 13 ] ] ]
+ },
+ {
+  "id": "furtherance",
+  "kind": "term",
+  "name": "Furtherance (moving forward, progress)",
+  "refs": [
+   [
+    "Philippians", 1,
+    [ 12, 25 ] ] ]
+ },
+ {
+  "id": "to-live-is-christ",
+  "kind": "term",
+  "name": "To live is Christ, and to die is gain",
+  "refs": [
+   [
+    "Philippians", 1,
+    [ 21 ] ] ]
+ },
+ {
+  "id": "strait-betwixt-two",
+  "kind": "term",
+  "name": "A strait betwixt two (pulled both ways)",
+  "refs": [
+   [
+    "Philippians", 1,
+    [ 23 ] ] ]
+ },
+ {
+  "id": "suffer-for-his-sake",
+  "kind": "term",
+  "name": "To suffer for his sake (given to believers along with faith)",
+  "refs": [
+   [
+    "Philippians", 1,
+    [ 29 ] ] ]
+ },
+ {
+  "id": "vainglory",
+  "kind": "term",
+  "name": "Vainglory (empty pride, wanting to be seen as somebody)",
+  "refs": [
+   [
+    "Philippians", 2,
+    [ 3 ] ] ]
+ },
+ {
+  "id": "thought-it-not-robbery",
+  "kind": "term",
+  "name": "Thought it not robbery (did not clutch at equality with God)",
+  "refs": [
+   [
+    "Philippians", 2,
+    [ 6 ] ] ]
+ },
+ {
+  "id": "no-reputation",
+  "kind": "term",
+  "name": "Made himself of no reputation (emptied Himself of His glory and rights)",
+  "refs": [
+   [
+    "Philippians", 2,
+    [ 7 ] ] ]
+ },
+ {
+  "id": "form-of-a-servant",
+  "kind": "term",
+  "name": "The form of God, the form of a servant",
+  "refs": [
+   [
+    "Philippians", 2,
+    [ 6, 7 ] ] ]
+ },
+ {
+  "id": "work-out-your-salvation",
+  "kind": "term",
+  "name": "Work out your own salvation (live out what God has already given)",
+  "refs": [
+   [
+    "Philippians", 2,
+    [ 12 ] ] ]
+ },
+ {
+  "id": "fear-and-trembling",
+  "kind": "term",
+  "name": "Fear and trembling (a serious, humble care, not terror)",
+  "refs": [
+   [
+    "Philippians", 2,
+    [ 12 ] ] ]
+ },
+ {
+  "id": "disputings",
+  "kind": "term",
+  "name": "Disputings (arguing)",
+  "refs": [
+   [
+    "Philippians", 2,
+    [ 14 ] ] ]
+ },
+ {
+  "id": "crooked-and-perverse",
+  "kind": "term",
+  "name": "A crooked and perverse nation (the dark world believers shine in)",
+  "refs": [
+   [
+    "Philippians", 2,
+    [ 15 ] ] ]
+ },
+ {
+  "id": "lights-in-the-world",
+  "kind": "term",
+  "name": "Shine as lights in the world",
+  "refs": [
+   [
+    "Philippians", 2,
+    [ 15 ] ] ]
+ },
+ {
+  "id": "if-i-be-offered",
+  "kind": "term",
+  "name": "If I be offered (poured out, like wine on a sacrifice)",
+  "refs": [
+   [
+    "Philippians", 2,
+    [ 17 ] ] ]
+ },
+ {
+  "id": "nigh-unto-death",
+  "kind": "term",
+  "name": "Nigh unto death (very close to dying)",
+  "refs": [
+   [
+    "Philippians", 2,
+    [ 27, 30 ] ] ]
  }
 ];

@@ -13039,6 +13039,96 @@ window.STUDIES = [
     }
   },
   {
+    "id": "philippians-01",
+    "type": "chapter",
+    "book": "Philippians",
+    "ch": 1,
+    "date": "2026-10-31",
+    "title": "Philippians 1",
+    "sub": "The letter of joy, written in chains",
+    "about": "Paul writes from a Roman house arrest, chained to a guard, and the first thing he says is thank you. God finishes what He starts, and even a prison can spread the gospel.",
+    "tags": [
+      "God finishes the work",
+      "Hard circumstances",
+      "Envy",
+      "To live is Christ",
+      "Living worthy",
+      "Suffering for Christ"
+    ],
+    "url": "studies/philippians-01.html",
+    "overview": {
+      "where": "Rome, where Paul is under house arrest; the letter goes to Philippi in Macedonia",
+      "when": "About AD 60 to 62, in Paul's first Roman imprisonment",
+      "people": [
+        "paul",
+        "timothy",
+        "jesus",
+        "bishops-and-deacons"
+      ],
+      "places": [
+        "philippi",
+        "rome"
+      ],
+      "story": [
+        "Paul and Timothy greet all the saints at Philippi, with the bishops and deacons. Paul thanks God for them and prays that their love will grow (1–11).",
+        "Paul is chained to a soldier in Rome, but his chains have spread the gospel through the palace guard and made the other believers bolder (12–14).",
+        "Some preach Christ out of envy and some out of love. Paul rejoices that Christ is preached either way (15–18).",
+        "Paul expects to be set free through their prayers. For him to live is Christ and to die is gain, but he knows the Philippians still need him (19–26).",
+        "Live as it becometh the gospel, stand fast together, and don't be terrified. It is given to believe, and also to suffer for His sake (27–30)."
+      ],
+      "key": {
+        "ref": "Philippians 1:6",
+        "text": "Being confident of this very thing, that he which hath begun a good work in you will perform it until the day of Jesus Christ:"
+      },
+      "big": "God finishes what He starts. The man who began a good work in you will carry it on until the day of Jesus Christ, whatever your chains, and whatever happened yesterday."
+    }
+  },
+  {
+    "id": "philippians-02",
+    "type": "chapter",
+    "book": "Philippians",
+    "ch": 2,
+    "date": "2026-10-31",
+    "title": "Philippians 2",
+    "sub": "Down, and then up",
+    "about": "Paul asks for one mind and one love, and points to the Lord who came down to a cross and was lifted up. Then two real men show it.",
+    "tags": [
+      "Humility",
+      "The mind of Christ",
+      "Jesus is Lord",
+      "Work out your salvation",
+      "Shining as lights",
+      "Serving"
+    ],
+    "url": "studies/philippians-02.html",
+    "overview": {
+      "where": "Rome, where Paul writes; Philippi, where the letter is read",
+      "when": "About AD 60 to 62",
+      "people": [
+        "paul",
+        "jesus",
+        "timothy",
+        "epaphroditus"
+      ],
+      "places": [
+        "philippi",
+        "rome"
+      ],
+      "story": [
+        "Paul begs the Philippians to be of one mind, to do nothing through strife or vainglory, and to look out for others (1–4).",
+        "Let this mind be in you, which was also in Christ Jesus: God by nature, He emptied Himself, became a servant, and died on a cross (5–8).",
+        "God highly exalted Him, and every knee will bow and every tongue confess that Jesus Christ is Lord (9–11).",
+        "Work out your own salvation, for it is God which worketh in you. Do all things without murmurings, and shine as lights in a crooked world (12–18).",
+        "Paul hopes to send Timothy, who really cares, and sends Epaphroditus, who nearly died for the work of Christ. Receive him with gladness (19–30)."
+      ],
+      "key": {
+        "ref": "Philippians 2:5",
+        "text": "Let this mind be in you, which was also in Christ Jesus:"
+      },
+      "big": "Jesus went all the way down to the cross for us, and God raised Him to the highest place. We follow the same road: humble service now, with God doing the lifting, and God at work in us both to will and to do."
+    }
+  },
+  {
     "id": "philippians-03",
     "type": "chapter",
     "book": "Philippians",

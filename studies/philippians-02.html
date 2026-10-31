@@ -1,0 +1,597 @@
+<!doctype html>
+<html lang="en" data-theme="scribe">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Philippians 2</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="../assets/fonts.css">
+<link rel="stylesheet" href="../assets/deck.css">
+<link rel="stylesheet" href="../assets/themes.css">
+<style>
+/* ph01-where: where we are in Philippians (a deck.css candidate; every Philippians study can copy it as is).
+   Four parts, one per chapter. Each part (div, --k) holds its chapter number (p > i; read ones .done, ours .here),
+   its name (b), what it says (small) and a key phrase (q + cite). The part we're in is .now. */
+.ph01-where { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; margin: .5em 0 1em; }
+.ph01-where > div { --c: var(--line-strong); padding: .55em .8em .65em; border-top: 6px solid var(--c); border-radius: 0 0 10px 10px;
+  background: color-mix(in srgb, var(--surface) 70%, transparent); opacity: 0; transform: translateY(10px);
+  transition: opacity .6s ease, transform .6s ease; transition-delay: calc(var(--k, 0) * 350ms + 300ms); }
+.slide.active .ph01-where > div { opacity: 1; transform: none; }
+.ph01-where > div.now { --c: var(--accent); background: color-mix(in srgb, var(--accent) 15%, transparent); box-shadow: inset 0 0 0 2px var(--accent); }
+.ph01-where p { display: flex; gap: 6px; margin: 0 0 .4em; }
+.ph01-where i { min-width: 2.2em; padding: .22em .3em; text-align: center; border-radius: 6px; border: 1.5px solid var(--line-strong);
+  font: 700 clamp(.82rem, .74rem + .35vw, 1.08rem) var(--sans); font-style: normal; color: var(--ink-soft); }
+.ph01-where i.done { background: color-mix(in srgb, var(--accent) 14%, transparent); color: var(--ink); }
+.ph01-where i.here { background: var(--accent); border-color: var(--accent); color: var(--on-accent); }
+.slide.active .ph01-where i.here { animation: ph01-here 2.4s ease-in-out 1.8s infinite; }
+@keyframes ph01-here { 50% { box-shadow: 0 0 0 6px color-mix(in srgb, var(--accent) 28%, transparent); } }
+.ph01-where b { display: block; font: 600 clamp(1.05rem, .88rem + .7vw, 1.5rem)/1.1 var(--serif); color: var(--ink); }
+.ph01-where small { display: block; margin: .2em 0 .35em; font-size: clamp(.78rem, .72rem + .26vw, 1rem); line-height: 1.3; color: var(--ink-soft); }
+.ph01-where q { display: block; font: italic clamp(.86rem, .78rem + .34vw, 1.08rem)/1.3 var(--serif); quotes: "\201C" "\201D"; }
+.ph01-where cite { display: block; margin-top: .2em; font-style: normal; font-size: clamp(.72rem, .68rem + .22vw, .92rem); color: var(--ink-soft); }
+@media (max-width: 900px) { .ph01-where { grid-template-columns: 1fr 1fr; } }
+@media (max-width: 640px) {
+  .ph01-where { grid-template-columns: 1fr; gap: 6px; }
+  .ph01-where > div { border-top: 0; border-left: 6px solid var(--c); border-radius: 0 10px 10px 0; }
+}
+
+
+/* ph02-hymn: the hymn of Christ as a down-and-up staircase (a deck.css candidate). Ten bars (rect + two text lines + a verse tag, --k) come in
+   one after another when the slide opens: six steps down to the cross (.down, the last one .cross), then four back up, higher than He began (.up). */
+.ph02-hymn { display: block; width: 100%; height: auto; max-height: 50vh; margin: 0 auto; overflow: visible; }
+.ph02-hymn g { opacity: 0; transform: translateY(14px); transition: opacity .6s ease, transform .6s ease; transition-delay: calc(var(--k, 0) * 480ms + .4s); }
+.slide.active .ph02-hymn g { opacity: 1; transform: none; }
+.ph02-hymn rect { stroke-width: 0; }
+.ph02-hymn .down rect { fill: color-mix(in srgb, var(--ink-soft) 30%, transparent); }
+.ph02-hymn .cross rect { fill: var(--danger); }
+.ph02-hymn .up rect { fill: var(--accent); }
+.ph02-hymn text { text-anchor: middle; font-size: 16px; font-weight: 700; fill: var(--ink); }
+.ph02-hymn .up text { fill: var(--on-accent); }
+.ph02-hymn .cross text { fill: var(--bg); }
+.ph02-hymn text.v { font-size: 13px; font-weight: 400; fill: var(--ink-soft); }
+.ph02-hymn .base { stroke: var(--line-strong); stroke-width: 2; }
+.ph02-hymn-list { display: none; list-style: none; padding: 0; margin: .4em 0 1em; }
+.ph02-hymn-list li { margin: 0 0 4px calc(var(--k, 0) * 4%); padding: .3em .6em; border-left: 5px solid var(--line-strong); background: color-mix(in srgb, var(--ink-soft) 14%, transparent); font-size: 1rem; }
+.ph02-hymn-list li.cross { border-color: var(--danger); background: color-mix(in srgb, var(--danger) 16%, transparent); }
+.ph02-hymn-list li.up { border-color: var(--accent); background: color-mix(in srgb, var(--accent) 16%, transparent); }
+.ph02-hymn-list b { font-family: var(--serif); }
+@media (max-width: 600px) { .ph02-hymn { display: none; } .ph02-hymn-list { display: block; } }
+
+/* ph02-flow: work OUT what He worked IN. Three boxes with arrows: the gift (already yours), God working in you, you working it out. */
+.ph02-flow { display: grid; grid-template-columns: 1fr auto 1fr auto 1fr; gap: .6rem; align-items: stretch; margin: .5em 0 1em; }
+.ph02-flow > div { padding: .7em .9em .8em; border-radius: 12px; border: 2px solid var(--line-strong); background: color-mix(in srgb, var(--surface) 75%, transparent); }
+.ph02-flow small { display: block; font: 700 clamp(.76rem, .7rem + .26vw, .98rem) var(--sans); letter-spacing: .05em; text-transform: uppercase; color: var(--ink-soft); margin-bottom: .3em; }
+.ph02-flow b { display: block; font: 600 clamp(1.15rem, .95rem + .9vw, 1.8rem)/1.15 var(--serif); color: var(--ink); }
+.ph02-flow span { display: block; margin-top: .3em; font-size: clamp(.9rem, .82rem + .35vw, 1.12rem); line-height: 1.35; color: var(--ink-soft); }
+.ph02-flow i { align-self: center; font: 700 clamp(1.4rem, 1rem + 1.4vw, 2.4rem) var(--sans); font-style: normal; color: var(--accent); }
+.ph02-flow .gift { border-color: var(--accent); background: color-mix(in srgb, var(--accent) 14%, transparent); }
+.ph02-flow .gift b { color: var(--accent-hot); }
+.ph02-flow .in { border-style: dashed; }
+@media (max-width: 760px) { .ph02-flow { grid-template-columns: 1fr; } .ph02-flow i { transform: rotate(90deg); justify-self: center; } }
+
+/* ph02-sky: believers as lights in a dark, crooked world. A night sky (--on-glow stays dark in every theme) with faint stars; the bright
+   lights (g.lamp, --k) come on one after another; the hill below carries a label. */
+.ph02-sky { display: block; width: 100%; height: auto; max-height: 46vh; margin: 0 auto; overflow: visible; }
+.ph02-sky .night { fill: var(--on-glow); }
+.ph02-sky .hill { fill: var(--leather); transform: none; }
+.ph02-sky .dim { fill: var(--glow); opacity: .5; animation: ph02-twinkle 3.6s ease-in-out infinite; }
+.ph02-sky .dim:nth-child(3n) { animation-delay: -1.2s; } .ph02-sky .dim:nth-child(3n+1) { animation-delay: -2.4s; }
+@keyframes ph02-twinkle { 50% { opacity: .15; } }
+.ph02-sky .lamp { opacity: 0; transform: scale(.2); transform-box: fill-box; transform-origin: center; transition: opacity .8s ease, transform .8s cubic-bezier(.3,1.5,.5,1); transition-delay: calc(var(--k, 0) * 700ms + .6s); }
+.slide.active .ph02-sky .lamp { opacity: 1; transform: none; }
+.ph02-sky .halo { fill: var(--glow); opacity: .22; }
+.ph02-sky .core { fill: var(--glow); }
+.ph02-sky text { fill: var(--glow); font-size: 18px; text-anchor: middle; }
+.ph02-sky .cap { font-style: italic; font-family: var(--serif); font-size: 20px; }
+@media (max-width: 600px) { .ph02-sky text { font-size: 24px; } .ph02-sky .cap { font-size: 26px; } }
+</style>
+</head>
+<body>
+<main class="deck" id="deck">
+
+<!-- ======================= OPENING ======================= -->
+<section class="slide title">
+  <div class="inner">
+    <div class="emblem rise"></div>
+    <h1 class="rise" style="--d:1">Philippians 2</h1>
+    <p class="sub rise" style="--d:3">Down, and then up</p>
+    <p class="tag rise" style="--d:5">Paul asks for one thing, a church that gets along, and gives them the best reason in the Bible: what Jesus did. Then two real men show what it looks like.</p>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise" style="--d:1">Where we are in Philippians</h2>
+    <div class="ph01-where" role="img" aria-label="Philippians in four parts, one for each chapter. Chapter 1, joy in chains: the gospel moves forward, and to live is Christ. Key phrase: For to me to live is Christ, and to die is gain, 1:21. Chapter 2, the mind of Christ: lowliness, and the hymn of Christ coming down and being lifted up. Key phrase: Let this mind be in you, which was also in Christ Jesus, 2:5. Chapter 3, pressing on: leave the past behind and press toward the prize. Key phrase: I press toward the mark for the prize of the high calling of God in Christ Jesus, 3:14. Chapter 4, peace: rejoice, do not worry, and God will supply. Key phrase: Rejoice in the Lord alway: and again I say, Rejoice, 4:4. We are in chapter 2.">
+      <div style="--k:0"><p><i class="done">1</i></p><b>Joy in chains</b><small>The gospel moves on, even from a prison</small><q>For to me to live is Christ, and to die is gain</q><cite>1:21</cite></div>
+      <div class="now" style="--k:1"><p><i class="here">2</i></p><b>The mind of Christ</b><small>Lowliness: down to the cross, then lifted up</small><q>Let this mind be in you, which was also in Christ Jesus</q><cite>2:5</cite></div>
+      <div style="--k:2"><p><i>3</i></p><b>Pressing on</b><small>Leave the past behind and reach for the prize</small><q>I press toward the mark</q><cite>3:14</cite></div>
+      <div style="--k:3"><p><i>4</i></p><b>Peace</b><small>Rejoice, don't worry, and God will supply</small><q>Rejoice in the Lord alway</q><cite>4:4</cite></div>
+    </div>
+    <p class="note rise" style="--d:3">Last time, Paul was in chains in Rome, glad the gospel was spreading, and sure God would finish what He started in them. Now he turns to the church itself. Philippi was a good church with one soft spot: pride and quarreling. We'll meet two of the women later (4:2).</p>
+  </div>
+</section>
+
+<section class="slide watch">
+  <div class="inner">
+    <h2 class="rise">Things to watch for</h2>
+    <p class="lede rise" style="--d:1">Keep these questions in the back of your mind as we read. We'll come back to every one of them at the end.</p>
+    <ol class="seeds">
+      <li class="step"><span class="topic">Lowliness</span><span class="seed-q">What did Paul say should replace strife and vainglory?</span></li>
+      <li class="step"><span class="topic">The mind of Christ</span><span class="seed-q">How far down did Jesus go?</span></li>
+      <li class="step"><span class="topic">Lifted up</span><span class="seed-q">What did God do for Jesus afterward, and what will every knee do?</span></li>
+      <li class="step"><span class="topic">Work out</span><span class="seed-q">What does it mean to work out your salvation, and who is working in you?</span></li>
+      <li class="step"><span class="topic">Lights</span><span class="seed-q">What kind of world do believers shine in, and how?</span></li>
+      <li class="step"><span class="topic">Real men</span><span class="seed-q">What did Paul say about Epaphroditus?</span></li>
+    </ol>
+  </div>
+</section>
+
+<!-- ======================= PART ONE ======================= -->
+<section class="slide part">
+  <div class="inner">
+    <p class="part-n rise">Part one</p>
+    <h2 class="rise" style="--d:1">Of one mind</h2>
+    <p class="range rise" style="--d:2">Verses 1–4</p>
+    <div class="rule"></div>
+    <p class="hook rise" style="--d:4">Paul begs them for one thing, and the way to get it is the opposite of what we'd expect.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="1-2" data-hl="any consolation in Christ|Fulfil ye my joy|of one accord, of one mind"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="1-2" data-hl="Fulfil ye my joy, that ye be likeminded"></blockquote>
+    <h2 class="rise" style="--d:1">Since you have all this</h2>
+    <ul class="signs">
+      <li class="step"><b>Consolation in Christ</b>He has comforted you.</li>
+      <li class="step"><b>Comfort of love</b>His love has held you up.</li>
+      <li class="step"><b>Fellowship of the Spirit</b>The Spirit lives in every one of you.</li>
+      <li class="step"><b>Bowels and mercies</b>Old English for a deep, gut-level kindness.</li>
+      <li class="step now"><b>So</b>“Fulfil ye my joy”: get along.</li>
+    </ul>
+    <p class="note step">Paul isn't saying “try harder to be nice.” He's saying: look at what you've already been given, and let it show. A church that has all the same Christ and the same Spirit has no business splitting over pride.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="3-4" data-hl="Let nothing be done through strife or vainglory|in lowliness of mind let each esteem other better than themselves|every man also on the things of others"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="3-4" data-hl="in lowliness of mind let each esteem other better than themselves"></blockquote>
+    <h2 class="rise" style="--d:1">What lowliness is, and isn't</h2>
+    <ul class="nots">
+      <li class="step"><span class="k">not “I'm worthless”</span><span class="why">Shame keeps your eyes on yourself, just as pride does. Christ died for you, so you're worth something to Him.</span></li>
+      <li class="step"><span class="k">not “be a doormat”</span><span class="why">Paul is about to say we should <em>look</em> at others' needs. He isn't saying let anybody walk on you.</span></li>
+      <li class="step yes"><span class="k">but “I'm not the center”</span><span class="why"><em>Vainglory</em> is empty glory, wanting to be seen as somebody. <em>Lowliness</em> is the other road: seeing people.</span></li>
+    </ul>
+    <p class="note step">One thing to do today: before you talk about your own day, ask another man about his, and listen to the answer. <em>“Look not every man on his own things, but every man also on the things of others.”</em></p>
+  </div>
+</section>
+
+<!-- ======================= PART TWO ======================= -->
+<section class="slide part">
+  <div class="inner">
+    <p class="part-n rise">Part two</p>
+    <h2 class="rise" style="--d:1">The mind of Christ</h2>
+    <p class="range rise" style="--d:2">Verses 5–11</p>
+    <div class="rule"></div>
+    <p class="hook rise" style="--d:4">Many Bible teachers think these verses were an early Christian hymn. Either way, they're the heart of the letter.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="5-8" data-hl="Let this mind be in you, which was also in Christ Jesus|Who, being in the form of God|made himself of no reputation|took upon him the form of a servant|he humbled himself, and became obedient unto death, even the death of the cross"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="7" data-hl="made himself of no reputation|took upon him the form of a servant"></blockquote>
+    <div class="morph">
+      <span class="big rise" style="--d:2">ἐκένωσεν</span>
+      <span class="say step">said <em class="gk">ekenōsen</em></span>
+      <span class="means step">“emptied himself”</span>
+    </div>
+    <p class="note step">The King James has <em>“made himself of no reputation”</em>. The Greek word means He <em>emptied</em> Himself, poured out His privileges. He didn't stop being God. He set aside the glory and the right to be served, and took on a servant's life.</p>
+    <p class="note step"><em>“Thought it not robbery to be equal with God”</em> means He didn't clutch at it, like a thief with something he's grabbed. The one with the most right to be served chose to serve. That's <em>“the mind”</em> Paul wants in us.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="9-11" data-hl="Wherefore God also hath highly exalted him|a name which is above every name|every knee should bow|Jesus Christ is Lord, to the glory of God the Father"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise" style="--d:1">Down, then up</h2>
+    <svg class="ph02-hymn" viewBox="0 0 1000 380" role="img" aria-label="A staircase that goes down and then up. Six steps down: in the form of God, no reputation, a servant, a man, obedient unto death, the cross. Then four steps up, higher than where it began: highly exalted, the name above every name, every knee bows, Jesus Christ is Lord.">
+      <line class="base" x1="10" y1="330" x2="990" y2="330"/>
+      <g class="down" style="--k:0"><rect x="14" y="70" width="88" height="260"/><text x="58" y="96">form of</text><text x="58" y="116">God</text><text class="v" x="58" y="350">v. 6</text></g>
+      <g class="down" style="--k:1"><rect x="110" y="105" width="88" height="225"/><text x="154" y="131">no</text><text x="154" y="151">reputation</text><text class="v" x="154" y="350">v. 7</text></g>
+      <g class="down" style="--k:2"><rect x="206" y="140" width="88" height="190"/><text x="250" y="166">a</text><text x="250" y="186">servant</text><text class="v" x="250" y="350">v. 7</text></g>
+      <g class="down" style="--k:3"><rect x="302" y="175" width="88" height="155"/><text x="346" y="201">a man</text><text class="v" x="346" y="350">v. 7–8</text></g>
+      <g class="down" style="--k:4"><rect x="398" y="210" width="88" height="120"/><text x="442" y="236">obedient</text><text x="442" y="256">to death</text><text class="v" x="442" y="350">v. 8</text></g>
+      <g class="cross" style="--k:5"><rect x="494" y="250" width="88" height="80"/><text x="538" y="276">the</text><text x="538" y="296">cross</text><text class="v" x="538" y="350">v. 8</text></g>
+      <g class="up" style="--k:6"><rect x="590" y="190" width="88" height="140"/><text x="634" y="216">highly</text><text x="634" y="236">exalted</text><text class="v" x="634" y="350">v. 9</text></g>
+      <g class="up" style="--k:7"><rect x="686" y="130" width="88" height="200"/><text x="730" y="156">the name</text><text x="730" y="176">above all</text><text class="v" x="730" y="350">v. 9</text></g>
+      <g class="up" style="--k:8"><rect x="782" y="75" width="88" height="255"/><text x="826" y="101">every</text><text x="826" y="121">knee bows</text><text class="v" x="826" y="350">v. 10</text></g>
+      <g class="up" style="--k:9"><rect x="878" y="22" width="88" height="308"/><text x="922" y="48">Jesus is</text><text x="922" y="68">Lord</text><text class="v" x="922" y="350">v. 11</text></g>
+    </svg>
+    <ol class="ph02-hymn-list" aria-hidden="true">
+      <li style="--k:0"><b>↓ in the form of God</b> (v. 6)</li><li style="--k:1"><b>↓ no reputation</b> (v. 7)</li><li style="--k:2"><b>↓ a servant</b> (v. 7)</li>
+      <li style="--k:3"><b>↓ a man</b> (v. 7–8)</li><li style="--k:4"><b>↓ obedient unto death</b> (v. 8)</li><li class="cross" style="--k:5"><b>✝ the cross</b> (v. 8)</li>
+      <li class="up" style="--k:4"><b>↑ highly exalted</b> (v. 9)</li><li class="up" style="--k:3"><b>↑ the name above every name</b> (v. 9)</li>
+      <li class="up" style="--k:2"><b>↑ every knee shall bow</b> (v. 10)</li><li class="up" style="--k:1"><b>↑ Jesus Christ is Lord</b> (v. 11)</li>
+    </ol>
+    <p class="note rise" style="--d:3">Six steps down, and the bottom one is a cross: the death of a slave and a criminal. Then <em>“Wherefore”</em>, which means <em>because of this</em>, God lifted Him higher than where He started.</p>
+    <p class="note step">This is the shape of the whole gospel, and the shape Paul wants for us: down to serve, and God does the lifting.</p>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="10-11" data-hl="every knee should bow|Jesus Christ is Lord"></blockquote>
+    <h2 class="rise" style="--d:1">Every knee</h2>
+    <blockquote class="quote step"><p>“I have sworn by myself, the word is gone out of my mouth in righteousness, and shall not return, That unto me every knee shall bow, every tongue shall swear.”</p><cite>Isaiah 45:23</cite></blockquote>
+    <p class="note step">In Isaiah, God says that about Himself, and Paul gives it to Jesus. That's a quiet way of saying <em>Jesus is God</em>. One day everyone will bow, those who loved Him and those who didn't. The wonderful thing is that you can bow now, gladly, and be saved:</p>
+    <blockquote class="quote step"><p>“That if thou shalt confess with thy mouth the Lord Jesus, and shalt believe in thine heart that God hath raised him from the dead, thou shalt be saved.”</p><cite>Romans 10:9</cite></blockquote>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise" style="--d:1">Down is the way up</h2>
+    <blockquote class="quote rise" style="--d:2"><p>“For whosoever exalteth himself shall be abased; and he that humbleth himself shall be exalted.”</p><cite>Luke 14:11</cite></blockquote>
+    <p class="note step">Jesus didn't climb to the top by pushing past people. He went down, and God raised Him. You don't have to scrape for position, or prove you're somebody. Your standing doesn't depend on being noticed. It depends on Him.</p>
+    <blockquote class="quote step"><p>“If I then, your Lord and Master, have washed your feet; ye also ought to wash one another’s feet. For I have given you an example, that ye should do as I have done to you.”</p><cite>John 13:14–15</cite></blockquote>
+    <p class="note step">Here's the real-world part for today: do one lowly thing for someone and don't mention it. Carry a load, take out the trash, make the coffee, give a ride. That's what the mind of Christ looks like in clothes.</p>
+  </div>
+</section>
+
+<!-- ======================= PART THREE ======================= -->
+<section class="slide part">
+  <div class="inner">
+    <p class="part-n rise">Part three</p>
+    <h2 class="rise" style="--d:1">Work out, because He works in</h2>
+    <p class="range rise" style="--d:2">Verses 12–18</p>
+    <div class="rule"></div>
+    <p class="hook rise" style="--d:4">The most misunderstood sentence in the letter, and one of the most freeing.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="12-13" data-hl="work out your own salvation with fear and trembling|it is God which worketh in you both to will and to do of his good pleasure"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="12-13" data-hl="work out your own salvation|it is God which worketh in you"></blockquote>
+    <h2 class="rise" style="--d:1">Work out, not work for</h2>
+    <div class="ph02-flow" role="img" aria-label="Three boxes with arrows. First, already yours: salvation, a gift, not wages. Then, God works in you: the want-to and the power to do it. Then, you work it out: show up, say no, make the call.">
+      <div class="gift rise" style="--d:2"><small>Already yours</small><b>Salvation</b><span>A gift, not wages. Nobody earns it (Ephesians 2:8–9).</span></div>
+      <i class="step" aria-hidden="true">→</i>
+      <div class="in step"><small>God works in you</small><b>“to will and to do”</b><span>He gives the want-to, and the power.</span></div>
+      <i class="step" aria-hidden="true">→</i>
+      <div class="step"><small>You work it out</small><b>Show up. Say no. Make the call.</b><span>Living out what's already true.</span></div>
+    </div>
+    <p class="note step"><em>Work out</em> doesn't mean <em>work for</em>. Think of a man handed the deed to a farm. It's his; he didn't earn it. Now he has to farm it. Paul says to the Philippians, <em>“ye have always obeyed”</em>: they're already saved, and now they're to live it.</p>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="13"></blockquote>
+    <h2 class="rise" style="--d:1">He gives the want-to</h2>
+    <p class="note rise" style="--d:2">The sentence has two halves, and God does both: <em>“to will”</em> (the wanting) and <em>“to do”</em> (the doing). Many of us tried the old way: promise, grit our teeth, fail. Paul says God is working inside you, on what you want and on what you can do.</p>
+    <blockquote class="quote step"><p>“For by grace are ye saved through faith; and that not of yourselves: it is the gift of God: Not of works, lest any man should boast. For we are his workmanship, created in Christ Jesus unto good works, which God hath before ordained that we should walk in them.”</p><cite>Ephesians 2:8–10</cite></blockquote>
+    <p class="note step"><em>“Fear and trembling”</em> isn't being scared that God will throw you out. It's the serious, humble care of a man who knows what he's been given. Don't treat it lightly. You've fallen? Take it to Him, and get up and walk again, today.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="14-16" data-hl="Do all things without murmurings and disputings|blameless and harmless, the sons of God|ye shine as lights in the world|Holding forth the word of life"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="14-15" data-hl="without murmurings and disputings|blameless and harmless"></blockquote>
+    <h2 class="rise" style="--d:1">No grumbling</h2>
+    <div class="ifthen step">
+      <div class="if"><small>Do all things</small>without murmurings and disputings,</div>
+      <span class="arrow" aria-hidden="true">→</span>
+      <div class="then"><small>so you'll be</small>blameless and harmless, the sons of God.</div>
+    </div>
+    <p class="note step"><em>Murmurings</em> means grumbling under your breath. <em>Disputings</em> means arguing. Israel did both all through the wilderness. The new man has a job, a boss, a landlord, a probation officer and a family. It's easy to complain about every one.</p>
+    <p class="note step">A man who does his work without the constant moan stands out. <em>Harmless</em> means <em>pure</em>, with no mixture of anger or spite. Try it for one shift, today.</p>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <div class="split">
+      <div class="stage">
+        <svg class="ph02-sky" viewBox="0 0 600 300" role="img" aria-label="A dark night sky with faint stars over a hill. Five bright lights come on, one by one, along the hill: believers shining as lights in the world.">
+          <rect class="night" x="0" y="0" width="600" height="300" rx="14"/>
+          <g>
+            <circle class="dim" cx="40" cy="40" r="2"/><circle class="dim" cx="110" cy="80" r="2.5"/><circle class="dim" cx="180" cy="30" r="2"/><circle class="dim" cx="250" cy="70" r="2"/>
+            <circle class="dim" cx="330" cy="36" r="2.5"/><circle class="dim" cx="410" cy="76" r="2"/><circle class="dim" cx="480" cy="28" r="2"/><circle class="dim" cx="550" cy="64" r="2.5"/>
+            <circle class="dim" cx="75" cy="130" r="2"/><circle class="dim" cx="300" cy="120" r="2"/><circle class="dim" cx="520" cy="130" r="2"/>
+          </g>
+          <path class="hill" d="M0 240 C 100 200, 200 230, 300 215 C 400 200, 500 235, 600 215 L600 286 Q600 300 586 300 L14 300 Q0 300 0 286 Z"/>
+          <g class="lamp" style="--k:0"><circle class="halo" cx="90" cy="198" r="26"/><circle class="core" cx="90" cy="198" r="7"/></g>
+          <g class="lamp" style="--k:1"><circle class="halo" cx="195" cy="205" r="26"/><circle class="core" cx="195" cy="205" r="7"/></g>
+          <g class="lamp" style="--k:2"><circle class="halo" cx="300" cy="188" r="34"/><circle class="core" cx="300" cy="188" r="9"/></g>
+          <g class="lamp" style="--k:3"><circle class="halo" cx="405" cy="198" r="26"/><circle class="core" cx="405" cy="198" r="7"/></g>
+          <g class="lamp" style="--k:4"><circle class="halo" cx="510" cy="195" r="26"/><circle class="core" cx="510" cy="195" r="7"/></g>
+          <text class="cap" x="300" y="268">a crooked and perverse nation</text>
+        </svg>
+      </div>
+      <div>
+        <h2 class="rise" style="--d:1">Lights in the dark</h2>
+        <p class="note rise" style="--d:2">Paul doesn't say go hide from a world that's <em>“crooked and perverse.”</em> He says that's exactly where lights are needed. Stars only show up in the dark.</p>
+        <blockquote class="quote step"><p>“Ye are the light of the world. A city that is set on an hill cannot be hid.”</p><cite>Matthew 5:14</cite></blockquote>
+        <p class="note step"><em>“Holding forth the word of life”</em> can also mean <em>holding it out</em>, offering it to people. Your light isn't a speech. It's an honest day's work, a kept promise, a sober life.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="slide verse" data-v="17-18" data-hl="if I be offered upon the sacrifice and service of your faith|do ye joy, and rejoice with me"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <p class="saying rise">“If I be offered… <em>I joy</em>, and rejoice with you all.”</p>
+    <p class="note rise" style="--d:2">The word <em>offered</em> means <em>poured out</em>, like the wine poured on an altar beside a sacrifice. Paul's picture: your faith is the sacrifice, and if his life gets poured out beside it, he's glad.</p>
+    <p class="note step">He might die in that Roman house, and he writes about joy. And he invites them to <em>“joy, and rejoice with me.”</em> The Christian life isn't a mood, and it isn't an act. It's gladness that can sit in a prison cell.</p>
+  </div>
+</section>
+
+<!-- ======================= PART FOUR ======================= -->
+<section class="slide part">
+  <div class="inner">
+    <p class="part-n rise">Part four</p>
+    <h2 class="rise" style="--d:1">Two men who served</h2>
+    <p class="range rise" style="--d:2">Verses 19–30</p>
+    <div class="rule"></div>
+    <p class="hook rise" style="--d:4">Paul has talked about the mind of Christ. Now he points at two real men who have it.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="19-21" data-hl="I trust in the Lord Jesus to send Timotheus shortly unto you|I have no man likeminded|For all seek their own, not the things which are Jesus Christ’s"></section>
+
+<section class="slide verse" data-v="22-24" data-hl="as a son with the father, he hath served with me in the gospel|Him therefore I hope to send presently|I also myself shall come shortly"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="20-22" data-hl="who will naturally care for your state|as a son with the father"></blockquote>
+    <h2 class="rise" style="--d:1">Timothy</h2>
+    <div class="columns">
+      <div class="col law step">
+        <p class="who">Most people (v. 21)</p>
+        <h3>“All seek their own”</h3>
+        <p>Even among Paul's co-workers, most had their own plans. Paul says it plainly. Self comes first even in good company.</p>
+      </div>
+      <div class="col grace step">
+        <p class="who">Timothy (v. 20, 22)</p>
+        <h3>“Will naturally care for your state”</h3>
+        <p>Tested over years. He joined Paul at Lystra on the trip that planted Philippi (Acts 16:1–3) and stuck with him <em>“as a son with the father.”</em></p>
+      </div>
+    </div>
+    <p class="note step">This is how a man earns trust: not by one big moment, but by years of showing up. If you've burned some trust, the road back is the same: be there, again and again.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="25-27" data-hl="Epaphroditus, my brother, and companion in labour, and fellow soldier|he was sick nigh unto death: but God had mercy on him"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <div class="split">
+      <div class="stage">
+        <svg data-world viewBox="185 125 390 247" data-towns="Rome!:b, Philippi*:t, Thessalonica:b" role="img" aria-label="A map of the Roman world. First line: Epaphroditus travels from Philippi to Rome with the church's gift. Second line: after his illness he travels home from Rome to Philippi, carrying this letter.">
+          <path class="map-route r1 j2" data-via="Philippi, Amphipolis, Thessalonica, @22.3 40.8, @21.0 40.95, @19.45 41.3, @17.9 40.65, @16.8 40.9, @15.0 41.1, Appii forum, Rome"/>
+          <path class="map-route r2 j4" data-via="Rome, @14.3 41.8, @15.0 41.55, @16.8 41.3, @17.9 41.05, @19.45 41.7, @21.0 41.45, @22.3 41.3, @23.5 41.2, Philippi"/>
+        </svg>
+      </div>
+      <div>
+        <h2 class="rise" style="--d:1">Epaphroditus's two trips</h2>
+        <p class="note step map-go1">The church sent him to Paul with their gift, and to stay and help. That's a long road, many weeks, more than 700 miles, with sea in the middle.</p>
+        <p class="note step map-go2">He fell sick in Rome, nearly died, and got better. Now Paul sends him home, carrying this letter.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="slide verse" data-v="28-30" data-hl="Receive him therefore in the Lord with all gladness|hold such in reputation|for the work of Christ he was nigh unto death, not regarding his life"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise" style="--d:1">What Paul calls him</h2>
+    <ul class="signs">
+      <li class="step"><b>My brother</b>family, not staff</li>
+      <li class="step"><b>Companion in labour</b>worked next to Paul</li>
+      <li class="step"><b>Fellow soldier</b>shared the fight</li>
+      <li class="step"><b>Your messenger</b>sent by the church</li>
+      <li class="step now"><b>Ministered to my wants</b>looked after Paul himself</li>
+    </ul>
+    <p class="note step">Five titles in one verse. Paul doesn't brag about his own gifts. He piles up honor on a man who carried a gift and a friend's care across the sea. Real greatness in the church sounds like this.</p>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise" style="--d:1">Real men, real limits</h2>
+    <div class="talk">
+      <p class="rise" style="--d:2"><small>Back in Philippi</small>We heard Epaphroditus is sick.</p>
+      <p class="reply step"><small>Epaphroditus, in Rome</small>…and I'm worried they're worried. <em>“Full of heaviness”</em> (v. 26).</p>
+    </div>
+    <p class="note step">He nearly died. The honest words are <em>“sick nigh unto death”</em>, and <em>“God had mercy on him.”</em> Paul doesn't blame him, or call it weak faith. A man can be worn out, sick, homesick and low, and still be doing the work of Christ.</p>
+    <p class="note step">Then notice what Paul tells the church to do: <em>“Receive him therefore in the Lord with all gladness.”</em> Not a lecture. Gladness. If a man comes back worn down, whether from illness, a rough road or a fall, that's how he should be met. And if you're that man today, that's how Christ meets you.</p>
+  </div>
+</section>
+
+<section class="slide remember">
+  <div class="inner">
+    <h2 class="rise">Points to remember</h2>
+    <ol class="seeds">
+      <li class="step"><span class="topic">Lowliness</span><span class="seed-q">“In lowliness of mind let each esteem other better than themselves” <cite>2:3</cite></span><span class="take">Don't make yourself the center. Look at other men's needs, too.</span></li>
+      <li class="step"><span class="topic">The mind of Christ</span><span class="seed-q">“He humbled himself, and became obedient unto death, even the death of the cross” <cite>2:8</cite></span><span class="take">He went all the way down to the cross for us.</span></li>
+      <li class="step"><span class="topic">Lifted up</span><span class="seed-q">“Every knee should bow … Jesus Christ is Lord” <cite>2:10–11</cite></span><span class="take">God raised Him higher than all. Bow to Him now, gladly.</span></li>
+      <li class="step"><span class="topic">Work out</span><span class="seed-q">“Work out your own salvation … it is God which worketh in you” <cite>2:12–13</cite></span><span class="take">Work out, not work for. God gives the want-to and the power.</span></li>
+      <li class="step"><span class="topic">Lights</span><span class="seed-q">“Ye shine as lights in the world” <cite>2:15</cite></span><span class="take">A crooked world is where lights are needed. Live it, quietly.</span></li>
+      <li class="step"><span class="topic">Real men</span><span class="seed-q">“Receive him therefore in the Lord with all gladness” <cite>2:29</cite></span><span class="take">Worn-out men still serve, and they're welcomed back with gladness.</span></li>
+    </ol>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 1 of 6</p>
+      <span class="topic">Lowliness</span>
+      <h2>What did Paul say should replace strife and vainglory?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="3"></blockquote>
+      <blockquote class="quote step" data-q="4"></blockquote>
+      <blockquote class="quote step"><p>“Likewise, ye younger, submit yourselves unto the elder. Yea, all of you be subject one to another, and be clothed with humility: for God resisteth the proud, and giveth grace to the humble.”</p><cite>1 Peter 5:5</cite></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>Lowliness of mind: counting others as better than ourselves and looking at their needs, not only our own. God gives grace to the humble.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 2 of 6</p>
+      <span class="topic">The mind of Christ</span>
+      <h2>How far down did Jesus go?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="6"></blockquote>
+      <blockquote class="quote step" data-q="7"></blockquote>
+      <blockquote class="quote step" data-q="8"></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>From the form of God to the form of a servant, to a man, and then to death on a cross. He gave up the right to be served, and He did it for us.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 3 of 6</p>
+      <span class="topic">Lifted up</span>
+      <h2>What did God do for Jesus afterward, and what will every knee do?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="9"></blockquote>
+      <blockquote class="quote step" data-q="10-11"></blockquote>
+      <blockquote class="quote step"><p>“That if thou shalt confess with thy mouth the Lord Jesus, and shalt believe in thine heart that God hath raised him from the dead, thou shalt be saved.”</p><cite>Romans 10:9</cite></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>God highly exalted Him and gave Him the name above every name. Every knee will bow and every tongue will confess that Jesus Christ is Lord. Bow now, and be saved.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 4 of 6</p>
+      <span class="topic">Work out</span>
+      <h2>What does it mean to work out your salvation, and who is working in you?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="12"></blockquote>
+      <blockquote class="quote step" data-q="13"></blockquote>
+      <blockquote class="quote step"><p>“For by grace are ye saved through faith; and that not of yourselves: it is the gift of God: Not of works, lest any man should boast.”</p><cite>Ephesians 2:8–9</cite></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>It means living out the salvation you've already been given, not working to earn it. God is the one working in you, giving both the wanting and the doing.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 5 of 6</p>
+      <span class="topic">Lights</span>
+      <h2>What kind of world do believers shine in, and how?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="14"></blockquote>
+      <blockquote class="quote step" data-q="15"></blockquote>
+      <blockquote class="quote step" data-q="16"></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>A crooked and perverse world. Believers shine by doing everything without grumbling or arguing, living blameless and pure, and holding out the word of life.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 6 of 6</p>
+      <span class="topic">Real men</span>
+      <h2>What did Paul say about Epaphroditus?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="25"></blockquote>
+      <blockquote class="quote step" data-q="27"></blockquote>
+      <blockquote class="quote step" data-q="29-30"></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>That he was a brother, a fellow worker and soldier, and the church's messenger. He nearly died for the work of Christ, and God had mercy on him. Paul asks the church to welcome him with gladness and honor.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide prayer">
+  <div class="inner">
+    <div class="emblem rise"></div>
+    <h2 class="rise" style="--d:1">Prayer requests</h2>
+    <p class="ask-line rise" style="--d:2">What can we pray about for you today?</p>
+    <blockquote class="quote rise" style="--d:4"><p>“For it is God which worketh in you both to will and to do of his good pleasure.”</p><cite>Philippians 2:13</cite></blockquote>
+  </div>
+</section>
+
+</main>
+
+<script>
+// King James Version, Philippians chapter 2
+const V = {
+  1: "If there be therefore any consolation in Christ, if any comfort of love, if any fellowship of the Spirit, if any bowels and mercies,",
+  2: "Fulfil ye my joy, that ye be likeminded, having the same love, being of one accord, of one mind.",
+  3: "Let nothing be done through strife or vainglory; but in lowliness of mind let each esteem other better than themselves.",
+  4: "Look not every man on his own things, but every man also on the things of others.",
+  5: "Let this mind be in you, which was also in Christ Jesus:",
+  6: "Who, being in the form of God, thought it not robbery to be equal with God:",
+  7: "But made himself of no reputation, and took upon him the form of a servant, and was made in the likeness of men:",
+  8: "And being found in fashion as a man, he humbled himself, and became obedient unto death, even the death of the cross.",
+  9: "Wherefore God also hath highly exalted him, and given him a name which is above every name:",
+  10: "That at the name of Jesus every knee should bow, of things in heaven, and things in earth, and things under the earth;",
+  11: "And that every tongue should confess that Jesus Christ is Lord, to the glory of God the Father.",
+  12: "Wherefore, my beloved, as ye have always obeyed, not as in my presence only, but now much more in my absence, work out your own salvation with fear and trembling.",
+  13: "For it is God which worketh in you both to will and to do of his good pleasure.",
+  14: "Do all things without murmurings and disputings:",
+  15: "That ye may be blameless and harmless, the sons of God, without rebuke, in the midst of a crooked and perverse nation, among whom ye shine as lights in the world;",
+  16: "Holding forth the word of life; that I may rejoice in the day of Christ, that I have not run in vain, neither laboured in vain.",
+  17: "Yea, and if I be offered upon the sacrifice and service of your faith, I joy, and rejoice with you all.",
+  18: "For the same cause also do ye joy, and rejoice with me.",
+  19: "But I trust in the Lord Jesus to send Timotheus shortly unto you, that I also may be of good comfort, when I know your state.",
+  20: "For I have no man likeminded, who will naturally care for your state.",
+  21: "For all seek their own, not the things which are Jesus Christ’s.",
+  22: "But ye know the proof of him, that, as a son with the father, he hath served with me in the gospel.",
+  23: "Him therefore I hope to send presently, so soon as I shall see how it will go with me.",
+  24: "But I trust in the Lord that I also myself shall come shortly.",
+  25: "Yet I supposed it necessary to send to you Epaphroditus, my brother, and companion in labour, and fellow soldier, but your messenger, and he that ministered to my wants.",
+  26: "For he longed after you all, and was full of heaviness, because that ye had heard that he had been sick.",
+  27: "For indeed he was sick nigh unto death: but God had mercy on him; and not on him only, but on me also, lest I should have sorrow upon sorrow.",
+  28: "I sent him therefore the more carefully, that, when ye see him again, ye may rejoice, and that I may be the less sorrowful.",
+  29: "Receive him therefore in the Lord with all gladness; and hold such in reputation:",
+  30: "Because for the work of Christ he was nigh unto death, not regarding his life, to supply your lack of service toward me."
+};
+const BOOK = "Philippians 2";
+</script>
+<script src="../assets/deck.js"></script>
+</body>
+</html>
