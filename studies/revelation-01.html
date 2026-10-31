@@ -1,0 +1,755 @@
+<!doctype html>
+<html lang="en" data-theme="night">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Revelation 1</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="../assets/fonts.css">
+<link rel="stylesheet" href="../assets/deck.css">
+<link rel="stylesheet" href="../assets/themes.css">
+<style>
+/* rv01-mail: the seven churches lit in turn along the mail route. Put it on an svg.map[data-world] whose data-towns lists
+   Patmos first, then the churches in route order (each g.map-town is lit by its place in that list), with a .map-route
+   data-via in the same order. The route draws evenly (linear), so each town lights as the line reaches it. */
+.rv01-mail .map-route { transition-timing-function: linear; }
+.rv01-mail .map-town { opacity: .2; transition: opacity .5s ease; }
+.slide.active .rv01-mail .map-town { opacity: 1; }
+.slide.active .rv01-mail .map-town:nth-of-type(1) { transition-delay: .2s; }
+.slide.active .rv01-mail .map-town:nth-of-type(2) { transition-delay: 1.8s; }
+.slide.active .rv01-mail .map-town:nth-of-type(3) { transition-delay: 2.55s; }
+.slide.active .rv01-mail .map-town:nth-of-type(4) { transition-delay: 3.4s; }
+.slide.active .rv01-mail .map-town:nth-of-type(5) { transition-delay: 4.05s; }
+.slide.active .rv01-mail .map-town:nth-of-type(6) { transition-delay: 4.6s; }
+.slide.active .rv01-mail .map-town:nth-of-type(7) { transition-delay: 5.05s; }
+.slide.active .rv01-mail .map-town:nth-of-type(8) { transition-delay: 5.8s; }
+
+/* rv01-book: the map of Revelation (a deck.css candidate; every Revelation study can copy it as is).
+   Cards (div, --k) rise in turn. Each holds its chapters (p > i; read ones .done, today's .here), a small label (small),
+   the part's name (b) and a line (cite). The card we're in is .now; the last card (.end) is "all things new".
+   A different set of cards works too (Revelation 1:19 uses three): set grid-template-columns inline. */
+.rv01-book { display: grid; grid-template-columns: 1.05fr 1.35fr 1.35fr 2.6fr 1.35fr 1.35fr 1.35fr; gap: 8px; margin: .3em 0 .9em; }
+.rv01-book > div { --c: var(--line-strong); padding: .5em .6em .6em; border-top: 6px solid var(--c); border-radius: 0 0 10px 10px;
+  background: color-mix(in srgb, var(--surface) 70%, transparent); opacity: 0; transform: translateY(10px);
+  transition: opacity .6s ease, transform .6s ease; transition-delay: calc(var(--k, 0) * 280ms + 300ms); }
+.slide.active .rv01-book > div { opacity: 1; transform: none; }
+.rv01-book > div.now { --c: var(--accent); background: color-mix(in srgb, var(--accent) 15%, transparent); box-shadow: inset 0 0 0 2px var(--accent); }
+.rv01-book > div.end { --c: var(--accent-hot); border-top-style: double; }
+.rv01-book p { display: flex; flex-wrap: wrap; gap: 3px; margin: 0 0 .4em; }
+.rv01-book i { min-width: 1.75em; padding: .14em .2em; text-align: center; border-radius: 6px; border: 1.5px solid var(--line-strong);
+  font: 700 clamp(.7rem, .64rem + .26vw, .92rem) var(--sans); font-style: normal; color: var(--ink-soft); }
+.rv01-book i.done { background: color-mix(in srgb, var(--accent) 14%, transparent); color: var(--ink); }
+.rv01-book i.here { background: var(--accent); border-color: var(--accent); color: var(--on-accent); }
+.slide.active .rv01-book i.here { animation: rv01-here 2.4s ease-in-out 2s infinite; }
+@keyframes rv01-here { 50% { box-shadow: 0 0 0 6px color-mix(in srgb, var(--accent) 28%, transparent); } }
+.rv01-book small { display: block; font: 700 clamp(.64rem, .6rem + .2vw, .8rem) var(--sans); letter-spacing: .08em; text-transform: uppercase; color: var(--ink-soft); }
+.rv01-book b { display: block; margin: .1em 0 .3em; font: 600 clamp(.95rem, .8rem + .55vw, 1.3rem)/1.1 var(--serif); color: var(--ink); }
+.rv01-book > div.end b { color: var(--accent-hot); }
+.rv01-book cite { display: block; font-style: normal; font-size: clamp(.68rem, .64rem + .2vw, .86rem); line-height: 1.3; color: var(--ink-soft); }
+@media (max-width: 760px) { .rv01-book { grid-template-columns: repeat(2, 1fr) !important; gap: 6px; } .rv01-book > div.wide { grid-column: 1 / -1; } }
+
+/* rv01-abc: the Greek alphabet, first to last; Alpha and Omega lit and large. Letters (i, --k) appear in turn. */
+.rv01-abc { display: flex; flex-wrap: wrap; justify-content: center; align-items: baseline; gap: .1em .38em; margin: .3em 0 .2em; font-family: var(--serif); }
+.rv01-abc i { font-style: normal; font-size: clamp(1.1rem, .9rem + 1vw, 1.8rem); color: var(--ink-soft); opacity: 0; transition: opacity .4s ease; transition-delay: calc(var(--k, 0) * 70ms + 300ms); }
+.slide.active .rv01-abc i { opacity: .45; }
+.rv01-abc i.end { font-size: clamp(3rem, 2rem + 4vw, 5.6rem); line-height: 1; color: var(--accent-hot); text-shadow: 0 0 30px color-mix(in srgb, var(--accent) 45%, transparent); }
+.slide.active .rv01-abc i.end { opacity: 1; }
+.rv01-abc-cap { display: flex; justify-content: space-between; max-width: 46rem; margin: 0 auto .8em; font: 700 clamp(.72rem, .66rem + .26vw, .95rem) var(--sans); letter-spacing: .1em; text-transform: uppercase; color: var(--accent); }
+
+/* rv01-wash: a stained garment, washed (on a step, .rv01-wash-go) by a red tide that comes down over it; the stains go and it
+   comes out white; then (on a second step, .rv01-wash-crown) a crown is set above it. */
+.rv01-wash { display: block; width: 100%; max-height: 56vh; margin: .2em 0 .5em; overflow: visible; }
+.rv01-wash text { fill: var(--ink); font: 700 19px var(--sans); letter-spacing: .04em; }
+.rv01-wash .coat { fill: color-mix(in srgb, var(--ink-soft) 30%, var(--bg)); stroke: var(--line-strong); stroke-width: 3; transition: fill 1s ease 1.4s; }
+.rv01-wash .blot { fill: color-mix(in srgb, var(--ink) 70%, var(--bg)); transition: opacity .8s ease; transition-delay: calc(var(--k, 0) * 150ms + 1.1s); }
+.rv01-wash .tide { fill: var(--wine); opacity: .85; transform: translateY(-190px); transition: transform 1.2s ease-in, opacity .8s ease 1.3s; }
+.slide:has(.rv01-wash-go.on) .rv01-wash .tide { transform: translateY(0); opacity: 0; }
+.slide:has(.rv01-wash-go.on) .rv01-wash .blot { opacity: 0; }
+.slide:has(.rv01-wash-go.on) .rv01-wash .coat { fill: var(--glow); }
+.rv01-wash .crown { fill: var(--accent); opacity: 0; transform: translateY(-14px); transition: opacity .7s ease, transform .7s ease; }
+.slide:has(.rv01-wash-crown.on) .rv01-wash .crown { opacity: 1; transform: none; }
+.rv01-wash .lbl { fill: var(--ink-soft); }
+.rv01-wash .lbl.on1, .rv01-wash .lbl.on2 { opacity: .25; transition: opacity .6s ease, fill .6s ease; }
+.slide:has(.rv01-wash-go.on) .rv01-wash .lbl.on1, .slide:has(.rv01-wash-crown.on) .rv01-wash .lbl.on2 { opacity: 1; fill: var(--accent-hot); }
+
+/* rv01-lamps: seven golden lampstands (g.lamp, --k) whose flames light in turn, each named for its church.
+   A .gone lamp (Revelation 2:5) goes dark and drops away on a .rv01-lamps-go step. */
+.rv01-lamps { display: block; width: 100%; max-height: 26vh; margin: .2em 0 .6em; overflow: visible; }
+.rv01-lamps .stand { fill: none; stroke: var(--accent); stroke-width: 5; stroke-linecap: round; stroke-linejoin: round; }
+.rv01-lamps .cup { fill: var(--accent); }
+.rv01-lamps .flame { fill: var(--warm); opacity: 0; transform-box: fill-box; transform-origin: 50% 100%; transition: opacity .5s ease; transition-delay: calc(var(--k, 0) * 350ms + 400ms); }
+.slide.active .rv01-lamps .flame { opacity: 1; animation: rv01-flick 1.8s ease-in-out infinite; animation-delay: calc(var(--k, 0) * -250ms); }
+@keyframes rv01-flick { 50% { transform: scale(.88, 1.08); } }
+.rv01-lamps .halo { fill: color-mix(in srgb, var(--warm) 22%, transparent); opacity: 0; transition: opacity .6s ease; transition-delay: calc(var(--k, 0) * 350ms + 500ms); }
+.slide.active .rv01-lamps .halo { opacity: 1; }
+.rv01-lamps text { fill: var(--ink); font: 700 15px var(--sans); }
+.rv01-lamps .lamp { transition: opacity 1.2s ease, transform 1.2s ease; }
+.slide:has(.rv01-lamps-go.on) .rv01-lamps .lamp.gone { opacity: .18; transform: translateY(18px); }
+.slide:has(.rv01-lamps-go.on) .rv01-lamps .lamp.gone .flame, .slide:has(.rv01-lamps-go.on) .rv01-lamps .lamp.gone .halo { opacity: 0; }
+
+/* rv01-fig: the glorified Christ among the seven lampstands (1:12-16), on a night panel that is dark in every theme.
+   The robe, girdle and lampstands show when the slide opens; each detail lights on its own step (.rv01-d1 ... .rv01-d7),
+   with a numbered marker (.mk.m1 ...) that matches the list beside it (ol.rv01-key). */
+@media (min-width: 900px) { .split.rv01-wide { grid-template-columns: .95fr 1.15fr; gap: 1rem 1.6rem; } }
+.rv01-fig { display: block; width: 100%; max-height: 74vh; margin: 0 auto; overflow: visible; }
+.rv01-fig .sky { fill: var(--on-glow); }
+.rv01-fig .dust { fill: var(--glow); opacity: .35; }
+.rv01-fig .robe { fill: color-mix(in srgb, var(--glow) 16%, var(--on-glow)); stroke: color-mix(in srgb, var(--glow) 55%, var(--on-glow)); stroke-width: 3; }
+.rv01-fig .limb { fill: none; stroke: color-mix(in srgb, var(--glow) 30%, var(--on-glow)); stroke-width: 15; stroke-linecap: round; }
+.rv01-fig .hand { fill: color-mix(in srgb, var(--glow) 40%, var(--on-glow)); }
+.rv01-fig .face { fill: color-mix(in srgb, var(--glow) 22%, var(--on-glow)); stroke: color-mix(in srgb, var(--glow) 55%, var(--on-glow)); stroke-width: 3; transition: fill 1s ease; }
+.rv01-fig .girdle { fill: var(--accent); }
+.rv01-fig .stand { fill: none; stroke: var(--accent); stroke-width: 4; stroke-linecap: round; }
+.rv01-fig .lampfire { fill: var(--warm); transform-box: fill-box; transform-origin: 50% 100%; }
+.slide.active .rv01-fig .lampfire { animation: rv01-flick 1.8s ease-in-out infinite; }
+.rv01-fig .d { opacity: 0; transition: opacity .9s ease; }
+.slide:has(.rv01-d1.on) .rv01-fig .d1, .slide:has(.rv01-d2.on) .rv01-fig .d2, .slide:has(.rv01-d3.on) .rv01-fig .d3,
+.slide:has(.rv01-d4.on) .rv01-fig .d4, .slide:has(.rv01-d5.on) .rv01-fig .d5, .slide:has(.rv01-d6.on) .rv01-fig .d6,
+.slide:has(.rv01-d7.on) .rv01-fig .d7 { opacity: 1; }
+.rv01-fig .hair { fill: var(--glow); }
+.rv01-fig .eye { fill: var(--accent-hot); transform-box: fill-box; transform-origin: 50% 100%; }
+.slide:has(.rv01-d2.on) .rv01-fig .eye { animation: rv01-flick 1.4s ease-in-out infinite; }
+.rv01-fig .brass { fill: var(--warm); stroke: var(--leather-light); stroke-width: 2; }
+.slide:has(.rv01-d3.on) .rv01-fig .brass { animation: rv01-burn 2.2s ease-in-out infinite; }
+@keyframes rv01-burn { 50% { fill: var(--accent-hot); } }
+.rv01-fig .wave { fill: none; stroke: var(--cool); stroke-width: 3; opacity: 0; transform-box: view-box; transform-origin: 230px 172px; }
+.slide:has(.rv01-d4.on) .rv01-fig .wave { animation: rv01-wave 3.6s ease-out infinite; animation-delay: calc(var(--k, 0) * 1.2s); }
+@keyframes rv01-wave { 0% { opacity: .9; transform: scale(.4); } 100% { opacity: 0; transform: scale(3.2); } }
+.rv01-fig .star { fill: var(--glow); }
+.slide:has(.rv01-d5.on) .rv01-fig .star { animation: rv01-twinkle 2s ease-in-out infinite; animation-delay: calc(var(--k, 0) * 280ms); }
+@keyframes rv01-twinkle { 50% { opacity: .55; } }
+.rv01-fig .blade { fill: color-mix(in srgb, var(--glow) 85%, var(--cool)); stroke: var(--cool); stroke-width: 1.5; }
+.rv01-fig .sun { fill: url(#rv01-sun); }
+.rv01-fig .ray { stroke: var(--glow); stroke-width: 5; stroke-linecap: round; }
+.slide:has(.rv01-d7.on) .rv01-fig .face { fill: var(--glow); }
+.rv01-fig .mk { opacity: 0; transition: opacity .6s ease .3s; }
+.rv01-fig .mk circle { fill: var(--accent); stroke: var(--on-glow); stroke-width: 2; }
+.rv01-fig .mk text { fill: var(--on-accent); font: 700 15px var(--sans); }
+.slide:has(.rv01-d1.on) .rv01-fig .m1, .slide:has(.rv01-d2.on) .rv01-fig .m2, .slide:has(.rv01-d3.on) .rv01-fig .m3,
+.slide:has(.rv01-d4.on) .rv01-fig .m4, .slide:has(.rv01-d5.on) .rv01-fig .m5, .slide:has(.rv01-d6.on) .rv01-fig .m6,
+.slide:has(.rv01-d7.on) .rv01-fig .m7 { opacity: 1; }
+.rv01-key { list-style: none; margin: 0; padding: 0; display: grid; gap: .32em; }
+.rv01-key li { display: grid; grid-template-columns: 1.8em 1fr; gap: .55em; align-items: start; padding: .22em .5em; border-radius: 8px;
+  border-left: 4px solid var(--accent); background: color-mix(in srgb, var(--surface) 65%, transparent); }
+.rv01-key li > i { display: grid; place-items: center; width: 1.7em; height: 1.7em; margin-top: .1em; border-radius: 50%; background: var(--accent); color: var(--on-accent); font: 700 clamp(.78rem, .72rem + .26vw, .98rem) var(--sans); font-style: normal; }
+.rv01-key b { display: block; font: 600 clamp(.98rem, .86rem + .45vw, 1.26rem)/1.15 var(--serif); color: var(--accent-hot); }
+.rv01-key small { display: block; font-size: clamp(.8rem, .74rem + .28vw, 1rem); line-height: 1.3; color: var(--ink); }
+
+/* rv01-keys: a ring of two keys, death and hell, held up and swinging gently, with "alive for evermore" above them. */
+.map.world.rv01-zoom .map-town text { font-size: calc(40px * var(--u)); }
+.rv01-keys { display: block; width: 100%; max-height: 40vh; margin: 0 auto; overflow: visible; }
+.rv01-keys .ring { fill: none; stroke: var(--accent); stroke-width: 8; }
+.rv01-keys .key { fill: none; stroke: var(--accent); stroke-width: 9; stroke-linecap: round; stroke-linejoin: round; }
+.rv01-keys .swing { transform-box: view-box; transform-origin: 160px 96px; }
+.slide.active .rv01-keys .swing { animation: rv01-swing 4s ease-in-out infinite; }
+.slide.active .rv01-keys .swing.b { animation-delay: -2s; }
+@keyframes rv01-swing { 0%, 100% { transform: rotate(-5deg); } 50% { transform: rotate(5deg); } }
+.rv01-keys .tag { fill: var(--surface); stroke: var(--line-strong); stroke-width: 2; }
+.rv01-keys .tag-t { fill: var(--ink); font: 700 19px var(--sans); letter-spacing: .08em; }
+.rv01-keys .alive { fill: var(--accent-hot); font: italic 600 21px var(--serif); }
+
+/* rv01-decode: a symbol and what it means, side by side, one row per step. */
+.rv01-decode { display: grid; gap: .5em; margin: .3em 0 .9em; }
+.rv01-decode > div { display: grid; grid-template-columns: 1fr 2.2em 1.3fr; align-items: center; gap: .6em; }
+.rv01-decode span { padding: .45em .7em; border-radius: 10px; font: 600 clamp(1rem, .88rem + .5vw, 1.35rem)/1.2 var(--serif); }
+.rv01-decode span:first-child { border: 1.5px dashed var(--line-strong); color: var(--ink-soft); }
+.rv01-decode span:last-child { background: color-mix(in srgb, var(--accent) 15%, transparent); border: 2px solid var(--accent); color: var(--ink); }
+.rv01-decode i { font-style: normal; font-size: 1.6rem; color: var(--accent); text-align: center; }
+</style>
+</head>
+<body>
+<main class="deck" id="deck">
+
+<section class="slide title">
+  <div class="inner">
+    <div class="emblem rise"></div>
+    <h1 class="rise" style="--d:1">Revelation 1</h1>
+    <p class="sub rise" style="--d:3">Alive for Evermore</p>
+    <p class="tag rise" style="--d:5">An old man in exile sees Jesus as he has never seen Him: shining, strong, walking among His churches. John falls down as dead. Jesus lays His hand on him and says, “Fear not.”</p>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <div class="split">
+      <div class="stage">
+        <svg class="rv01-mail" data-world viewBox="540 225 140 105" style="max-height:62vh" data-towns="Patmos!, Ephesus*, Smyrna*, Pergamos*, Thyatira*, Sardis*, Philadelphia*, Laodicea*" role="img" aria-label="A close map of the coast of Asia, today western Turkey. The island of Patmos pulses offshore. A line draws from Patmos across the sea to Ephesus, then north to Smyrna and Pergamos, and around inland through Thyatira, Sardis, Philadelphia and Laodicea. Each church lights up as the line reaches it, in the order of Revelation 1:11.">
+          <path class="map-route" style="--draw:5s;--wait:.8s" data-via="Patmos, @26.95 37.55, @27.05 37.72, @27.2 37.9, Ephesus, Smyrna, Pergamos, Thyatira, Sardis, Philadelphia, Laodicea"/>
+        </svg>
+      </div>
+      <div>
+        <h2 class="rise" style="--d:1">The Revelation, from Patmos</h2>
+        <div class="letter">
+          <p class="from">“John to the seven churches which are in Asia: Grace be unto you, and peace”</p>
+          <dl>
+            <dt>Written from</dt><dd>“the isle that is called Patmos, for the word of God” (1:9): a rocky island about 60 miles off the coast from Ephesus.</dd>
+            <dt>When</dt><dd>about AD 95, under the emperor Domitian.</dd>
+            <dt>To whom</dt><dd>seven real churches in Asia (today western Turkey), named in the order a messenger would walk them (1:11).</dd>
+            <dt>Why</dt><dd class="step">Small churches under pressure, some growing cold, some giving in. Jesus shows them who He is, what He sees, and how the story ends.</dd>
+          </dl>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise" style="--d:1">Where Revelation fits</h2>
+    <ol class="timeline" aria-label="About AD 30 to 33: the cross, the empty tomb and Pentecost; John stood at the cross. About AD 48 to 67: Paul's letters, one of them to Ephesus. About AD 70: Rome destroys Jerusalem and the temple. About AD 85 to 95: John's letters, from Ephesus. About AD 95: Revelation, from Patmos, under Domitian.">
+      <li style="--k:0"><b>about AD 30 to 33</b><span>The cross, the empty tomb, Pentecost</span><small>John stood at the cross</small></li>
+      <li style="--k:1"><b>about AD 48 to 67</b><span>Paul's letters</span><small>one of them to Ephesus</small></li>
+      <li style="--k:2"><b>about AD 70</b><span>Rome destroys Jerusalem and the temple</span><small>the old order gone</small></li>
+      <li style="--k:3"><b>about AD 85 to 95</b><span>John's letters, from Ephesus</span><small>“little children”</small></li>
+      <li class="lit" style="--k:4"><b>about AD 95</b><span>Revelation, from Patmos</span><small>under Domitian</small></li>
+    </ol>
+    <p class="note rise" style="--d:3">By now Paul and Peter were dead, and by tradition John was the last of the twelve still living: an old man, the disciple <em>“whom Jesus loved”</em> (John 13:23), pastoring the churches around Ephesus.</p>
+    <p class="note step">Domitian liked to be called “Lord and God.” A Christian who would only call Jesus Lord could lose his job, his freedom, or his life. John was sent to Patmos for it. That is where Jesus met him.</p>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise" style="--d:1">Revelation in one picture</h2>
+    <div class="rv01-book" role="img" aria-label="The book of Revelation in seven parts. Chapter 1, the vision of Christ: we are here. Chapters 2 and 3, letters to the seven churches. Chapters 4 and 5, the throne and the Lamb. Chapters 6 to 16, seals, trumpets and bowls: evil judged. Chapters 17 and 18, Babylon falls. Chapters 19 and 20, Christ returns and reigns. Chapters 21 and 22, all things new.">
+      <div class="now" style="--k:0"><p><i class="here">1</i></p><small>a vision of</small><b>Christ</b><cite>the Son of man among His churches</cite></div>
+      <div style="--k:1"><p><i>2</i><i>3</i></p><small>letters to</small><b>the seven churches</b><cite>“I know thy works”</cite></div>
+      <div style="--k:2"><p><i>4</i><i>5</i></p><small>in heaven</small><b>the throne and the Lamb</b><cite>the Lamb alone is worthy</cite></div>
+      <div class="wide" style="--k:3"><p><i>6</i><i>7</i><i>8</i><i>9</i><i>10</i><i>11</i><i>12</i><i>13</i><i>14</i><i>15</i><i>16</i></p><small>judgments</small><b>seals, trumpets, bowls</b><cite>evil judged; God's people kept</cite></div>
+      <div style="--k:4"><p><i>17</i><i>18</i></p><small>the fall of</small><b>Babylon</b><cite>the proud world system falls</cite></div>
+      <div style="--k:5"><p><i>19</i><i>20</i></p><small>Christ</small><b>returns and reigns</b><cite>King of kings</cite></div>
+      <div class="end" style="--k:6"><p><i>21</i><i>22</i></p><small>God makes</small><b>all things new</b><cite>no more tears</cite></div>
+    </div>
+    <p class="note rise" style="--d:3">Good Baptist teachers read the middle chapters in different ways, and many Baptists read most of the book as still future. But the big picture is plain: <em>the Lamb wins</em>.</p>
+    <blockquote class="quote step"><p>“These shall make war with the Lamb, and the Lamb shall overcome them: for he is Lord of lords, and King of kings: and they that are with him are called, and chosen, and faithful.”</p><cite>Revelation 17:14</cite></blockquote>
+  </div>
+</section>
+
+<section class="slide watch">
+  <div class="inner">
+    <h2 class="rise">Things to watch for</h2>
+    <p class="lede rise" style="--d:1">Keep these questions in the back of your mind as we read. We'll come back to every one of them at the end.</p>
+    <ol class="seeds">
+      <li class="step"><span class="topic">The unveiling</span><span class="seed-q">Whose revelation is this book, and who is it about?</span></li>
+      <li class="step"><span class="topic">Loved and washed</span><span class="seed-q">What has Jesus done for us, according to verses 5 and 6?</span></li>
+      <li class="step"><span class="topic">He is coming</span><span class="seed-q">Who will see Jesus when He comes?</span></li>
+      <li class="step"><span class="topic">The Son of man</span><span class="seed-q">What did John see when he turned to see the voice?</span></li>
+      <li class="step"><span class="topic">Fear not</span><span class="seed-q">What did Jesus do when John fell at His feet as dead?</span></li>
+      <li class="step"><span class="topic">The keys</span><span class="seed-q">What does Jesus have the keys of?</span></li>
+    </ol>
+  </div>
+</section>
+
+<section class="slide part">
+  <div class="inner">
+    <p class="part-n rise">Part one</p>
+    <h2 class="rise" style="--d:1">The Revelation of Jesus Christ</h2>
+    <p class="range rise" style="--d:2">Verses 1–8</p>
+    <div class="rule"></div>
+    <p class="hook rise" style="--d:4">Before a single beast or trumpet, the book opens with a Person, a blessing, and a song about what He has done for us.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="1-3" data-hl="The Revelation of Jesus Christ|Blessed is he that readeth|for the time is at hand"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="1" data-hl="The Revelation of Jesus Christ"></blockquote>
+    <h2 class="rise" style="--d:1">An unveiling, not a puzzle</h2>
+    <div class="morph">
+      <span class="big rise" style="--d:3">ἀποκάλυψις</span>
+      <span class="say step">said <em class="gk">apokalypsis</em></span>
+      <span class="means step">an uncovering; the veil pulled back</span>
+    </div>
+    <div class="chains">
+      <div class="chain step"><span class="who-chip">God</span><span class="said">gave it</span><span class="who-chip jesus">Jesus Christ</span><span class="said">sent it by</span><span class="who-chip">His angel</span><span class="said">to</span><span class="who-chip">John</span><span class="said">to</span><span class="who-chip">His servants: us</span></div>
+    </div>
+    <p class="note step">People treat Revelation like a locked box of riddles. The title says the opposite: something hidden is being <em>shown</em>. And above all, it shows a Person. It is the revelation <em>of Jesus Christ</em>: from Him, and about Him.</p>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise" style="--d:1">Seven blessings</h2>
+    <p class="note rise" style="--d:2">The letter was read aloud in church: one man <em>read</em>, the rest <em>heard</em>. This is the only book in the Bible that opens with a blessing on the man who reads it, and it holds seven of them:</p>
+    <ol class="signs rise" style="--d:3;grid-template-columns:repeat(4, 1fr)">
+      <li class="now"><b>“Blessed is he that readeth”</b>1:3</li>
+      <li><b>“Blessed are the dead which die in the Lord”</b>14:13</li>
+      <li><b>“Blessed is he that watcheth”</b>16:15</li>
+      <li><b>“Blessed are they which are called unto the marriage supper of the Lamb”</b>19:9</li>
+      <li><b>“Blessed and holy is he that hath part in the first resurrection”</b>20:6</li>
+      <li><b>“blessed is he that keepeth the sayings of the prophecy of this book”</b>22:7</li>
+      <li><b>“Blessed are they that do his commandments”</b>22:14</li>
+    </ol>
+    <p class="note step">Notice: <em>keep</em> those things. This book is not for arguing over charts. It is for living differently today.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="4-6" data-hl="Grace be unto you, and peace|the faithful witness|the first begotten of the dead|the prince of the kings of the earth|Unto him that loved us, and washed us from our sins in his own blood|kings and priests"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="5" data-hl="the faithful witness, and the first begotten of the dead, and the prince of the kings of the earth"></blockquote>
+    <h2 class="rise" style="--d:1">Three names for hard days</h2>
+    <div class="sort">
+      <div class="step"><h3>The faithful witness</h3><p>He told the truth before Pilate and died for it. These churches were being pushed to deny Him. He went first.</p></div>
+      <div class="step"><h3>The first begotten of the dead</h3><p>The first to rise from death, never to die again. Where He went, His people follow.</p></div>
+      <div class="step"><h3>The prince of the kings of the earth</h3><p>Domitian called himself lord. Jesus outranks him, and every boss, judge and warden on earth.</p></div>
+    </div>
+    <p class="note step">The greeting comes from the Father (“which is, and which was, and which is to come”), from <em>the seven Spirits</em>, and from Jesus. Seven is the Bible's number for <em>complete</em>: the seven Spirits are the Holy Spirit in all His fullness (compare Isaiah 11:2). Father, Spirit, Son: the whole of God sends you grace and peace.</p>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <div class="split">
+      <div class="stage">
+    <svg class="rv01-wash" viewBox="200 -24 240 300" role="img" aria-label="A garment covered in dark stains. On a step a red tide comes down over it; the stains disappear and the garment comes out white. On the next step a crown appears above it. Labels below: loved us; washed us; made us kings and priests.">
+      <defs><clipPath id="rv01-coat"><path d="M260 40 L296 28 Q320 42 344 28 L380 40 L368 74 L350 68 L350 180 L290 180 L290 68 L272 74 Z"/></clipPath></defs>
+      <path class="crown" d="M282 22 L290 -4 L306 12 L320 -10 L334 12 L350 -4 L358 22 Z"/>
+      <path class="coat" d="M260 40 L296 28 Q320 42 344 28 L380 40 L368 74 L350 68 L350 180 L290 180 L290 68 L272 74 Z"/>
+      <g clip-path="url(#rv01-coat)">
+        <circle class="blot" style="--k:0" cx="306" cy="80" r="11"/><circle class="blot" style="--k:1" cx="334" cy="110" r="14"/>
+        <circle class="blot" style="--k:2" cx="312" cy="150" r="10"/><circle class="blot" style="--k:3" cx="282" cy="52" r="8"/>
+        <circle class="blot" style="--k:4" cx="340" cy="160" r="7"/><circle class="blot" style="--k:5" cx="358" cy="50" r="7"/>
+        <rect class="tide" x="250" y="20" width="140" height="170"/>
+      </g>
+      <text class="lbl" x="320" y="214" text-anchor="middle">“loved us”</text>
+      <text class="lbl on1" x="320" y="240" text-anchor="middle">“washed us”</text>
+      <text class="lbl on2" x="320" y="266" text-anchor="middle">“kings and priests”</text>
+    </svg>
+      </div>
+      <div>
+    <p class="saying rise" style="font-size:clamp(1.6rem, 1rem + 2.4vw, 2.8rem)">“Unto him that <em>loved us</em>, and <em>washed us</em>”</p>
+    <p class="note rise" style="--d:2">Before one word about judgment, John breaks into praise.</p>
+    <p class="note step rv01-wash-go">He <em>loved</em> us. He <em>washed us from our sins in his own blood</em>: not covered up, not excused, washed. Whatever you did, and whatever you did yesterday, <em>“the blood of Jesus Christ his Son cleanseth us from all sin”</em> (1 John 1:7).</p>
+    <p class="note step rv01-wash-crown">Then He <em>made us kings and priests</em>: men with a place in His kingdom and open access to God. Not probation. Not the back row. That is who you are now.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="slide verse" data-v="7-8" data-hl="Behold, he cometh with clouds|every eye shall see him|I am Alpha and Omega, the beginning and the ending"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="7" data-hl="Behold, he cometh with clouds; and every eye shall see him, and they also which pierced him"></blockquote>
+    <h2 class="rise" style="--d:1">John puts two prophets together</h2>
+    <div class="pair">
+      <div class="scroll rise" style="--d:2"><p class="ref">Daniel 7:13</p><p class="kjv">I saw in the night visions, and, behold, one like the Son of man <mark>came with the clouds of heaven</mark>, and came to the Ancient of days, and they brought him near before him.</p></div>
+      <div class="scroll step"><p class="ref">Zechariah 12:10</p><p class="kjv">… and <mark>they shall look upon me whom they have pierced</mark>, and they shall mourn for him, as one mourneth for his only son …</p></div>
+    </div>
+    <p class="note step">Jesus is coming back, and it won't be secret: <em>every eye</em>. Some Baptists teach that He first comes for His church and later returns with it; others see one coming at the end. All agree on this: He is coming, everyone will see Him, and He will set things right.</p>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="8" data-hl="I am Alpha and Omega, the beginning and the ending"></blockquote>
+    <h2 class="rise" style="--d:1">The first letter and the last</h2>
+    <div class="rv01-abc" role="img" aria-label="The twenty-four letters of the Greek alphabet in a row. The first, Alpha, and the last, Omega, are large and lit.">
+      <i class="end" style="--k:0">Α</i><i style="--k:1">Β</i><i style="--k:2">Γ</i><i style="--k:3">Δ</i><i style="--k:4">Ε</i><i style="--k:5">Ζ</i><i style="--k:6">Η</i><i style="--k:7">Θ</i><i style="--k:8">Ι</i><i style="--k:9">Κ</i><i style="--k:10">Λ</i><i style="--k:11">Μ</i><i style="--k:12">Ν</i><i style="--k:13">Ξ</i><i style="--k:14">Ο</i><i style="--k:15">Π</i><i style="--k:16">Ρ</i><i style="--k:17">Σ</i><i style="--k:18">Τ</i><i style="--k:19">Υ</i><i style="--k:20">Φ</i><i style="--k:21">Χ</i><i style="--k:22">Ψ</i><i class="end" style="--k:23">Ω</i>
+    </div>
+    <div class="rv01-abc-cap rise" style="--d:6"><span>Alpha: the first</span><span>Omega: the last</span></div>
+    <p class="note step">Alpha and Omega are the first and last letters of the Greek alphabet: our A to Z. God said it long before: <em>“I am the first, and I am the last; and beside me there is no God”</em> (Isaiah 44:6). At the end of this book Jesus takes the same words for Himself (22:13).</p>
+    <p class="note step">He was there before your story started, and He will be there at the end of it. Your worst chapter is not the last letter. He is.</p>
+  </div>
+</section>
+
+<section class="slide part">
+  <div class="inner">
+    <p class="part-n rise">Part two</p>
+    <h2 class="rise" style="--d:1">On Patmos</h2>
+    <p class="range rise" style="--d:2">Verses 9–11</p>
+    <div class="rule"></div>
+    <p class="hook rise" style="--d:4">Exiled, alone, and still worshipping on the Lord's day. Then a voice like a trumpet behind him.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="9-11" data-hl="your brother, and companion in tribulation|the isle that is called Patmos, for the word of God|I was in the Spirit on the Lord’s day|What thou seest, write in a book"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <div class="split">
+      <div class="stage">
+        <svg class="rv01-zoom" data-world viewBox="549 264 58 54" style="max-height:52vh" data-towns="Patmos!:b, Ephesus*:r, Miletus:r" role="img" aria-label="A close map of the sea between Patmos and Ephesus. A line draws about 60 miles across the water from the little island of Patmos to Ephesus on the coast.">
+          <path class="map-route" style="--draw:2.4s" data-via="Patmos, @26.95 37.55, @27.05 37.72, @27.2 37.9, Ephesus"/>
+          <text class="map-water" x="563" y="295" style="font-size:2.6px">about 60 miles</text>
+        </svg>
+      </div>
+      <div>
+        <h2 class="rise" style="--d:1">Your brother, in exile</h2>
+        <p class="note rise" style="--d:2">The last apostle doesn't pull rank. He writes as <em>“your brother”</em>, in the same trouble they're in. He was on Patmos <em>“for the word of God”</em>: banished for preaching Jesus.</p>
+        <p class="note step"><em>“In the Spirit on the Lord's day”</em>: Sunday, the day Jesus rose. No church building, no friends, no freedom. John worshipped anyway, and that is where Jesus met him.</p>
+        <p class="note step">Some of you know what it is to be locked away from everyone. God is not locked out of any place. A cell, a rehab bed, a lonely room: He can meet you there.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="slide part">
+  <div class="inner">
+    <p class="part-n rise">Part three</p>
+    <h2 class="rise" style="--d:1">Among the lampstands</h2>
+    <p class="range rise" style="--d:2">Verses 12–20</p>
+    <div class="rule"></div>
+    <p class="hook rise" style="--d:4">John turns to see the voice, and sees the Jesus he once leaned on, in all His glory.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="12-13" data-hl="seven golden candlesticks|in the midst of the seven candlesticks one like unto the Son of man|a garment down to the foot|a golden girdle"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="13" data-hl="in the midst of the seven candlesticks one like unto the Son of man"></blockquote>
+    <h2 class="rise" style="--d:1">Seven lampstands, and Someone in the middle</h2>
+    <svg class="rv01-lamps" viewBox="0 0 700 170" role="img" aria-label="Seven golden lampstands in a row, their flames lighting one by one, named Ephesus, Smyrna, Pergamos, Thyatira, Sardis, Philadelphia and Laodicea.">
+      <g class="lamp" transform="translate(50 120)" style="--k:0"><circle class="halo" cx="0" cy="-84" r="19"/><path class="stand" d="M-18 0 H18 M0 0 V-52 M-20 -62 Q-20 -50 0 -50 Q20 -50 20 -62"/><path class="flame" d="M0 -96 C8 -84 10 -76 0 -68 C-10 -76 -8 -84 0 -96 Z"/><text x="0" y="32" text-anchor="middle">Ephesus</text></g>
+      <g class="lamp" transform="translate(150 120)" style="--k:1"><circle class="halo" cx="0" cy="-84" r="19"/><path class="stand" d="M-18 0 H18 M0 0 V-52 M-20 -62 Q-20 -50 0 -50 Q20 -50 20 -62"/><path class="flame" d="M0 -96 C8 -84 10 -76 0 -68 C-10 -76 -8 -84 0 -96 Z"/><text x="0" y="32" text-anchor="middle">Smyrna</text></g>
+      <g class="lamp" transform="translate(250 120)" style="--k:2"><circle class="halo" cx="0" cy="-84" r="19"/><path class="stand" d="M-18 0 H18 M0 0 V-52 M-20 -62 Q-20 -50 0 -50 Q20 -50 20 -62"/><path class="flame" d="M0 -96 C8 -84 10 -76 0 -68 C-10 -76 -8 -84 0 -96 Z"/><text x="0" y="32" text-anchor="middle">Pergamos</text></g>
+      <g class="lamp" transform="translate(350 120)" style="--k:3"><circle class="halo" cx="0" cy="-84" r="19"/><path class="stand" d="M-18 0 H18 M0 0 V-52 M-20 -62 Q-20 -50 0 -50 Q20 -50 20 -62"/><path class="flame" d="M0 -96 C8 -84 10 -76 0 -68 C-10 -76 -8 -84 0 -96 Z"/><text x="0" y="32" text-anchor="middle">Thyatira</text></g>
+      <g class="lamp" transform="translate(450 120)" style="--k:4"><circle class="halo" cx="0" cy="-84" r="19"/><path class="stand" d="M-18 0 H18 M0 0 V-52 M-20 -62 Q-20 -50 0 -50 Q20 -50 20 -62"/><path class="flame" d="M0 -96 C8 -84 10 -76 0 -68 C-10 -76 -8 -84 0 -96 Z"/><text x="0" y="32" text-anchor="middle">Sardis</text></g>
+      <g class="lamp" transform="translate(550 120)" style="--k:5"><circle class="halo" cx="0" cy="-84" r="19"/><path class="stand" d="M-18 0 H18 M0 0 V-52 M-20 -62 Q-20 -50 0 -50 Q20 -50 20 -62"/><path class="flame" d="M0 -96 C8 -84 10 -76 0 -68 C-10 -76 -8 -84 0 -96 Z"/><text x="0" y="32" text-anchor="middle">Philadelphia</text></g>
+      <g class="lamp" transform="translate(650 120)" style="--k:6"><circle class="halo" cx="0" cy="-84" r="19"/><path class="stand" d="M-18 0 H18 M0 0 V-52 M-20 -62 Q-20 -50 0 -50 Q20 -50 20 -62"/><path class="flame" d="M0 -96 C8 -84 10 -76 0 -68 C-10 -76 -8 -84 0 -96 Z"/><text x="0" y="32" text-anchor="middle">Laodicea</text></g>
+    </svg>
+    <p class="note step">A <em>candlestick</em> here is a lampstand that holds an oil lamp, like the golden lampstand in the tabernacle. Verse 20 tells us what these are: <em>the seven churches</em>. A church is meant to hold up light in a dark town.</p>
+    <p class="note step">And Jesus is <em>in the midst</em> of them, dressed like the high priest in a long robe and a golden girdle (sash). The priest's job was to tend the lamps and keep them burning. That is what He is doing. Your small group, in a chapel, a halfway house or a cell block, is one of His lampstands, and He walks there.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="14-16" data-hl="white like wool, as white as snow|his eyes were as a flame of fire|his feet like unto fine brass|his voice as the sound of many waters|in his right hand seven stars|a sharp twoedged sword|his countenance was as the sun shineth in his strength"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <div class="split rv01-wide">
+      <div class="stage">
+        <svg class="rv01-fig" viewBox="12 24 436 536" role="img" aria-label="On a night background, a robed figure of light stands among seven golden lampstands, with a golden sash across his chest. One detail lights at a time: 1, hair white as wool; 2, eyes like flames; 3, feet of glowing brass; 4, a voice in rings like many waters; 5, seven stars in his right hand; 6, a sharp two-edged sword from his mouth; 7, his face shining like the sun.">
+          <defs><radialGradient id="rv01-sun"><stop offset="0" style="stop-color:var(--glow)"/><stop offset=".45" stop-opacity=".55" style="stop-color:var(--warm)"/><stop offset="1" stop-opacity="0" style="stop-color:var(--warm)"/></radialGradient></defs>
+          <rect class="sky" x="0" y="0" width="460" height="560" rx="18"/>
+          <circle class="dust" cx="40" cy="40" r="1.6"/><circle class="dust" cx="400" cy="60" r="1.4"/><circle class="dust" cx="350" cy="250" r="1.2"/><circle class="dust" cx="70" cy="300" r="1.5"/><circle class="dust" cx="420" cy="380" r="1.3"/><circle class="dust" cx="110" cy="40" r="1.1"/>
+          <!-- lampstands behind -->
+          <g transform="translate(141 464) scale(.85)"><path class="stand" d="M-14 0 H14 M0 0 V-40 M-15 -48 Q-15 -38 0 -38 Q15 -38 15 -48"/><path class="lampfire" d="M0 -70 C6 -61 8 -55 0 -49 C-8 -55 -6 -61 0 -70 Z"/></g>
+          <g transform="translate(319 464) scale(.85)"><path class="stand" d="M-14 0 H14 M0 0 V-40 M-15 -48 Q-15 -38 0 -38 Q15 -38 15 -48"/><path class="lampfire" d="M0 -70 C6 -61 8 -55 0 -49 C-8 -55 -6 -61 0 -70 Z"/></g>
+          <g transform="translate(30 491) scale(.92)"><path class="stand" d="M-14 0 H14 M0 0 V-40 M-15 -48 Q-15 -38 0 -38 Q15 -38 15 -48"/><path class="lampfire" d="M0 -70 C6 -61 8 -55 0 -49 C-8 -55 -6 -61 0 -70 Z"/></g>
+          <g transform="translate(430 491) scale(.92)"><path class="stand" d="M-14 0 H14 M0 0 V-40 M-15 -48 Q-15 -38 0 -38 Q15 -38 15 -48"/><path class="lampfire" d="M0 -70 C6 -61 8 -55 0 -49 C-8 -55 -6 -61 0 -70 Z"/></g>
+          <!-- 7: countenance as the sun (behind the head) -->
+          <g class="d d7">
+            <circle class="sun" cx="230" cy="152" r="110"/>
+            <g><line class="ray" x1="230" y1="96" x2="230" y2="70"/><line class="ray" x1="258" y1="103.5" x2="271" y2="81"/><line class="ray" x1="278.5" y1="124" x2="301" y2="111"/><line class="ray" x1="181.5" y1="124" x2="159" y2="111"/><line class="ray" x1="202" y1="103.5" x2="189" y2="81"/><line class="ray" x1="286" y1="152" x2="312" y2="152"/><line class="ray" x1="174" y1="152" x2="148" y2="152"/></g>
+          </g>
+          <!-- the figure -->
+          <path class="limb" d="M262 206 Q288 262 282 330"/>
+          <path class="robe" d="M196 194 Q230 184 264 194 L292 468 Q230 478 168 468 Z"/>
+          <rect class="girdle" x="200" y="230" width="60" height="13" rx="3"/>
+          <path class="limb" d="M202 204 Q160 204 128 178"/>
+          <circle class="hand" cx="123" cy="173" r="10"/>
+          <circle class="face" cx="230" cy="152" r="32"/>
+          <!-- 1: hair white like wool -->
+          <g class="d d1"><path class="hair" d="M196 160 Q192 112 230 110 Q268 112 264 160 Q263 184 258 196 L252 166 Q246 140 230 138 Q214 140 208 166 L202 196 Q197 184 196 160 Z"/>
+            <circle class="hair" cx="208" cy="122" r="9"/><circle class="hair" cx="222" cy="114" r="9"/><circle class="hair" cx="238" cy="114" r="9"/><circle class="hair" cx="252" cy="122" r="9"/><circle class="hair" cx="199" cy="140" r="7"/><circle class="hair" cx="261" cy="140" r="7"/></g>
+          <!-- 2: eyes as a flame of fire -->
+          <g class="d d2"><path class="eye" d="M219 146 C223 151 224 154 219 158 C214 154 215 151 219 146 Z"/><path class="eye" d="M241 146 C245 151 246 154 241 158 C236 154 237 151 241 146 Z"/></g>
+          <!-- 3: feet like fine brass -->
+          <g class="d d3"><ellipse class="brass" cx="212" cy="476" rx="16" ry="7"/><ellipse class="brass" cx="248" cy="476" rx="16" ry="7"/></g>
+          <!-- 4: voice as many waters -->
+          <g class="d d4"><circle class="wave" style="--k:0" cx="230" cy="172" r="40"/><circle class="wave" style="--k:1" cx="230" cy="172" r="40"/><circle class="wave" style="--k:2" cx="230" cy="172" r="40"/></g>
+          <!-- 5: seven stars in his right hand -->
+          <g class="d d5">
+            <path class="star" style="--k:0" transform="translate(92 160)" d="M0 -8 L2.4 -2.5 L8 -2.5 L3.6 1.2 L5.2 7.5 L0 3.8 L-5.2 7.5 L-3.6 1.2 L-8 -2.5 L-2.4 -2.5 Z"/>
+            <path class="star" style="--k:1" transform="translate(99 148)" d="M0 -8 L2.4 -2.5 L8 -2.5 L3.6 1.2 L5.2 7.5 L0 3.8 L-5.2 7.5 L-3.6 1.2 L-8 -2.5 L-2.4 -2.5 Z"/>
+            <path class="star" style="--k:2" transform="translate(110 140)" d="M0 -8 L2.4 -2.5 L8 -2.5 L3.6 1.2 L5.2 7.5 L0 3.8 L-5.2 7.5 L-3.6 1.2 L-8 -2.5 L-2.4 -2.5 Z"/>
+            <path class="star" style="--k:3" transform="translate(123 137)" d="M0 -8 L2.4 -2.5 L8 -2.5 L3.6 1.2 L5.2 7.5 L0 3.8 L-5.2 7.5 L-3.6 1.2 L-8 -2.5 L-2.4 -2.5 Z"/>
+            <path class="star" style="--k:4" transform="translate(136 140)" d="M0 -8 L2.4 -2.5 L8 -2.5 L3.6 1.2 L5.2 7.5 L0 3.8 L-5.2 7.5 L-3.6 1.2 L-8 -2.5 L-2.4 -2.5 Z"/>
+            <path class="star" style="--k:5" transform="translate(147 148)" d="M0 -8 L2.4 -2.5 L8 -2.5 L3.6 1.2 L5.2 7.5 L0 3.8 L-5.2 7.5 L-3.6 1.2 L-8 -2.5 L-2.4 -2.5 Z"/>
+            <path class="star" style="--k:6" transform="translate(154 160)" d="M0 -8 L2.4 -2.5 L8 -2.5 L3.6 1.2 L5.2 7.5 L0 3.8 L-5.2 7.5 L-3.6 1.2 L-8 -2.5 L-2.4 -2.5 Z"/>
+          </g>
+          <!-- 6: a sharp twoedged sword out of his mouth -->
+          <g class="d d6"><path class="blade" d="M244 168 L352 168 L378 172 L352 176 L244 176 Z"/></g>
+          <!-- lampstands in front -->
+          <g transform="translate(70 525)"><path class="stand" d="M-14 0 H14 M0 0 V-40 M-15 -48 Q-15 -38 0 -38 Q15 -38 15 -48"/><path class="lampfire" d="M0 -70 C6 -61 8 -55 0 -49 C-8 -55 -6 -61 0 -70 Z"/></g>
+          <g transform="translate(390 525)"><path class="stand" d="M-14 0 H14 M0 0 V-40 M-15 -48 Q-15 -38 0 -38 Q15 -38 15 -48"/><path class="lampfire" d="M0 -70 C6 -61 8 -55 0 -49 C-8 -55 -6 -61 0 -70 Z"/></g>
+          <g transform="translate(230 548) scale(.8)"><path class="stand" d="M-14 0 H14 M0 0 V-40 M-15 -48 Q-15 -38 0 -38 Q15 -38 15 -48"/><path class="lampfire" d="M0 -70 C6 -61 8 -55 0 -49 C-8 -55 -6 -61 0 -70 Z"/></g>
+          <!-- numbered markers -->
+          <g class="mk m1"><circle cx="180" cy="108" r="13"/><text x="180" y="113" text-anchor="middle">1</text></g>
+          <g class="mk m2"><circle cx="278" cy="132" r="13"/><text x="278" y="137" text-anchor="middle">2</text></g>
+          <g class="mk m3"><circle cx="180" cy="498" r="13"/><text x="180" y="503" text-anchor="middle">3</text></g>
+          <g class="mk m4"><circle cx="330" cy="96" r="13"/><text x="330" y="101" text-anchor="middle">4</text></g>
+          <g class="mk m5"><circle cx="74" cy="124" r="13"/><text x="74" y="129" text-anchor="middle">5</text></g>
+          <g class="mk m6"><circle cx="392" cy="150" r="13"/><text x="392" y="155" text-anchor="middle">6</text></g>
+          <g class="mk m7"><circle cx="230" cy="36" r="13"/><text x="230" y="41" text-anchor="middle">7</text></g>
+        </svg>
+      </div>
+      <div>
+        <h2 class="rise" style="--d:1">What John saw</h2>
+        <ol class="rv01-key">
+          <li class="step rv01-d1"><i>1</i><div><b>Hair white like wool, as snow</b><small>Daniel's “Ancient of days” (Daniel 7:9): eternal, pure and wise.</small></div></li>
+          <li class="step rv01-d2"><i>2</i><div><b>Eyes as a flame of fire</b><small>He sees straight through: He “searcheth the reins and hearts” (2:23).</small></div></li>
+          <li class="step rv01-d3"><i>3</i><div><b>Feet like fine brass</b><small>Refined in the furnace: strong, unshaken, treading evil down (Daniel 10:6).</small></div></li>
+          <li class="step rv01-d4"><i>4</i><div><b>A voice as many waters</b><small>God's own voice (Ezekiel 43:2). It drowns out every other voice.</small></div></li>
+          <li class="step rv01-d5"><i>5</i><div><b>Seven stars in His right hand</b><small>The churches' messengers (1:20), held where no one can pluck them out.</small></div></li>
+          <li class="step rv01-d6"><i>6</i><div><b>A sharp twoedged sword</b><small>His word (Hebrews 4:12). He fights with what He says (2:16).</small></div></li>
+          <li class="step rv01-d7"><i>7</i><div><b>A face as the sun</b><small>The glory three disciples saw on the mountain (Matthew 17:2), full strength.</small></div></li>
+        </ol>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise" style="--d:1">John had read this before</h2>
+    <div class="pair">
+      <div class="scroll rise" style="--d:2"><p class="ref">Daniel 7:9</p><p class="kjv">… the Ancient of days did sit, whose garment was <mark>white as snow</mark>, and <mark>the hair of his head like the pure wool</mark>: his throne was like the fiery flame …</p></div>
+      <div class="scroll step"><p class="ref">Daniel 10:5–6</p><p class="kjv">… a certain man clothed in linen, whose loins were girded with fine gold of Uphaz: … <mark>his eyes as lamps of fire</mark>, and his arms and <mark>his feet like in colour to polished brass</mark>, and the voice of his words like the voice of a multitude.</p></div>
+    </div>
+    <p class="note step">Revelation explains itself from the Old Testament. Daniel saw God on His throne with hair like pure wool; John sees the same in Jesus. The Son of man has everything that belongs to God.</p>
+    <p class="note step">And the white He wears, He offers to you: <em>“though your sins be as scarlet, they shall be as white as snow; though they be red like crimson, they shall be as wool”</em> (Isaiah 1:18).</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="17-18" data-hl="I fell at his feet as dead|he laid his right hand upon me|Fear not|I am he that liveth, and was dead; and, behold, I am alive for evermore|the keys of hell and of death"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="17" data-hl="I fell at his feet as dead. And he laid his right hand upon me, saying unto me, Fear not"></blockquote>
+    <h2 class="rise" style="--d:1">The hand that holds the stars</h2>
+    <div class="columns">
+      <div class="col law step">
+        <p class="who">John</p>
+        <h3>Fell down as dead</h3>
+        <p>Sixty years before, he leaned on Jesus' chest at supper (John 13:23). Now, seeing His glory, he can't stand.</p>
+      </div>
+      <div class="col grace step">
+        <p class="who">Jesus</p>
+        <h3>Laid His hand on him</h3>
+        <p>The right hand that holds the seven stars reaches down to a man on the ground. First word: <em>“Fear not.”</em></p>
+      </div>
+    </div>
+    <p class="note step">Some of you are on the floor this morning: you fell, and you're sure that when Jesus looks at you He'll be done with you. Look what He does with a man face down at His feet. He doesn't kick him. He touches him, and tells him not to be afraid.</p>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <div class="split">
+      <div class="stage">
+        <svg class="rv01-keys" viewBox="0 0 320 330" role="img" aria-label="A ring holding two large keys, swinging gently. One key is tagged death, the other hell. Above the ring: alive for evermore.">
+          <text class="alive" x="160" y="30" text-anchor="middle">“alive for evermore”</text>
+          <circle class="ring" cx="160" cy="96" r="34"/>
+          <g class="swing a">
+            <circle class="key" cx="140" cy="150" r="20"/>
+            <path class="key" d="M134 169 L102 284 M108 262 L86 256 M102 284 L80 278"/>
+            <rect class="tag" x="22" y="196" width="90" height="34" rx="8"/><text class="tag-t" x="67" y="219" text-anchor="middle">DEATH</text>
+          </g>
+          <g class="swing b">
+            <circle class="key" cx="180" cy="150" r="20"/>
+            <path class="key" d="M186 169 L218 284 M212 262 L234 256 M218 284 L240 278"/>
+            <rect class="tag" x="208" y="196" width="90" height="34" rx="8"/><text class="tag-t" x="253" y="219" text-anchor="middle">HELL</text>
+          </g>
+        </svg>
+      </div>
+      <div>
+        <blockquote class="quote rise" data-q="18"></blockquote>
+        <h2 class="rise" style="--d:1">Who holds the keys</h2>
+        <p class="note rise" style="--d:2">Whoever holds the keys decides who goes in and who comes out. <em>Hell</em> here is the place of the dead, the grave. Jesus went in, and came out holding the keys.</p>
+        <p class="note step">So death doesn't hold them. The devil doesn't. Your past doesn't. Jesus came to <em>“deliver them who through fear of death were all their lifetime subject to bondage”</em> (Hebrews 2:15).</p>
+        <p class="note step">If you belong to Him, the One who holds the keys has already decided where you are going.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="slide verse" data-v="19-20" data-hl="the things which thou hast seen, and the things which are, and the things which shall be hereafter|The seven stars are the angels of the seven churches|the seven candlesticks which thou sawest are the seven churches"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="20" data-hl="The seven stars are the angels of the seven churches|the seven candlesticks which thou sawest are the seven churches"></blockquote>
+    <h2 class="rise" style="--d:1">Jesus explains His own pictures</h2>
+    <div class="rv01-decode">
+      <div class="step"><span>seven golden candlesticks</span><i>→</i><span>the seven churches</span></div>
+      <div class="step"><span>seven stars in His right hand</span><i>→</i><span>the angels of the seven churches</span></div>
+    </div>
+    <p class="note step"><em>Angel</em> means <em>messenger</em>. Some think each church had an angel set over it; many think it means each church's pastor, the messenger who would read the letter aloud. Either way, Jesus holds them in His right hand.</p>
+    <p class="note step">This is how to read the whole book: let the Bible explain the pictures. When it doesn't tell us, we hold our guesses loosely and hold Jesus tightly.</p>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="19"></blockquote>
+    <h2 class="rise" style="--d:1">The book in one verse</h2>
+    <div class="rv01-book" style="grid-template-columns: 1fr 1.6fr 4fr" role="img" aria-label="Three parts. The things which thou hast seen: chapter 1, the vision, today. The things which are: chapters 2 and 3, the churches. The things which shall be hereafter: chapters 4 to 22.">
+      <div class="now" style="--k:0"><p><i class="here">1</i></p><small>“which thou hast seen”</small><b>the vision</b><cite>Christ among His churches</cite></div>
+      <div style="--k:1"><p><i>2</i><i>3</i></p><small>“which are”</small><b>the churches</b><cite>as they were in John's day</cite></div>
+      <div class="end wide" style="--k:2"><p><i>4</i><i>5</i><i>6</i><i>7</i><i>8</i><i>9</i><i>10</i><i>11</i><i>12</i><i>13</i><i>14</i><i>15</i><i>16</i><i>17</i><i>18</i><i>19</i><i>20</i><i>21</i><i>22</i></p><small>“which shall be hereafter”</small><b>what is coming</b><cite>to the new heaven and new earth</cite></div>
+    </div>
+    <p class="note step">Many Bible teachers see the whole book laid out in this verse. Next come seven letters, from this same Jesus, to seven churches a lot like ours.</p>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <p class="saying rise">“Fear not; <em>I am the first and the last</em>.”</p>
+    <p class="note rise" style="--d:2">Revelation does not start with monsters. It starts with Jesus: loving us, washing us, walking among His churches, holding the stars, holding the keys, and laying His hand on a man who can't get up.</p>
+    <p class="note step">Something to do today: write <em>“Fear not; I am the first and the last”</em> where you'll see it (on your phone, your hand, your lunch box). When fear or shame hits at work, read it, and remember whose hand is on you.</p>
+  </div>
+</section>
+
+<section class="slide remember">
+  <div class="inner">
+    <h2 class="rise">Points to remember</h2>
+    <ol class="seeds">
+      <li class="step"><span class="topic">The unveiling</span><span class="seed-q">“The Revelation of Jesus Christ” <cite>1:1</cite></span><span class="take">The book is an unveiling of a Person, not a puzzle. It shows us Jesus.</span></li>
+      <li class="step"><span class="topic">Loved and washed</span><span class="seed-q">“Unto him that loved us, and washed us from our sins in his own blood” <cite>1:5</cite></span><span class="take">He loved us, washed us clean, and made us kings and priests.</span></li>
+      <li class="step"><span class="topic">He is coming</span><span class="seed-q">“Behold, he cometh with clouds; and every eye shall see him” <cite>1:7</cite></span><span class="take">Jesus is coming back, and no one will miss it.</span></li>
+      <li class="step"><span class="topic">The Son of man</span><span class="seed-q">“in the midst of the seven candlesticks one like unto the Son of man” <cite>1:13</cite></span><span class="take">The glorified Jesus walks among His churches: seeing, speaking, holding.</span></li>
+      <li class="step"><span class="topic">Fear not</span><span class="seed-q">“he laid his right hand upon me, saying unto me, Fear not” <cite>1:17</cite></span><span class="take">When we fall at His feet, He doesn't push us away. He touches and lifts.</span></li>
+      <li class="step"><span class="topic">The keys</span><span class="seed-q">“have the keys of hell and of death” <cite>1:18</cite></span><span class="take">The risen Jesus holds the keys. Death doesn't get the last word.</span></li>
+    </ol>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 1 of 6</p>
+      <span class="topic">The unveiling</span>
+      <h2>Whose revelation is this book, and who is it about?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="1"></blockquote>
+      <blockquote class="quote step" data-q="2"></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>It is “The Revelation of Jesus Christ.” God gave it to Jesus, and Jesus sent it to John for His servants. It comes from Jesus and shows us Jesus.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 2 of 6</p>
+      <span class="topic">Loved and washed</span>
+      <h2>What has Jesus done for us, according to verses 5 and 6?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="5" data-hl="Unto him that loved us, and washed us from our sins in his own blood"></blockquote>
+      <blockquote class="quote step" data-q="6" data-hl="hath made us kings and priests unto God"></blockquote>
+      <blockquote class="quote step"><p>“But if we walk in the light, as he is in the light, we have fellowship one with another, and the blood of Jesus Christ his Son cleanseth us from all sin.”</p><cite>1 John 1:7</cite></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>He loved us, washed us from our sins in His own blood, and made us kings and priests unto God. We are clean, and we belong.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 3 of 6</p>
+      <span class="topic">He is coming</span>
+      <h2>Who will see Jesus when He comes?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="7"></blockquote>
+      <blockquote class="quote step"><p>“I saw in the night visions, and, behold, one like the Son of man came with the clouds of heaven, and came to the Ancient of days, and they brought him near before him.”</p><cite>Daniel 7:13</cite></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>Every eye, even those who pierced Him. His coming will not be hidden; the whole earth will see Him come with clouds.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 4 of 6</p>
+      <span class="topic">The Son of man</span>
+      <h2>What did John see when he turned to see the voice?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="12-13"></blockquote>
+      <blockquote class="quote step" data-q="14-16"></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>Seven golden lampstands, and in the middle of them Jesus in glory: white hair, eyes like fire, feet like brass, a voice like many waters, seven stars in His hand, a sword from His mouth, and a face like the sun.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 5 of 6</p>
+      <span class="topic">Fear not</span>
+      <h2>What did Jesus do when John fell at His feet as dead?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="17"></blockquote>
+      <blockquote class="quote step"><p>“Fear thou not; for I am with thee: be not dismayed; for I am thy God: I will strengthen thee; yea, I will help thee; yea, I will uphold thee with the right hand of my righteousness.”</p><cite>Isaiah 41:10</cite></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>He laid His right hand on him and said, “Fear not; I am the first and the last.” He lifts the man who falls before Him.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 6 of 6</p>
+      <span class="topic">The keys</span>
+      <h2>What does Jesus have the keys of?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="18"></blockquote>
+      <blockquote class="quote step"><p>“O death, where is thy sting? O grave, where is thy victory?”</p><cite>1 Corinthians 15:55</cite></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>The keys of hell and of death. He died, rose, and lives for evermore, so death and the grave answer to Him, not the other way round.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide prayer">
+  <div class="inner">
+    <div class="emblem rise"></div>
+    <h2 class="rise" style="--d:1">Prayer requests</h2>
+    <p class="ask-line rise" style="--d:2">What can we pray about for you today?</p>
+    <blockquote class="quote rise" style="--d:4"><p>“Fear thou not; for I am with thee: be not dismayed; for I am thy God: I will strengthen thee; yea, I will help thee; yea, I will uphold thee with the right hand of my righteousness.”</p><cite>Isaiah 41:10</cite></blockquote>
+  </div>
+</section>
+
+</main>
+
+<script>
+// King James Version, Revelation chapter 1
+const V = {
+  1: "The Revelation of Jesus Christ, which God gave unto him, to shew unto his servants things which must shortly come to pass; and he sent and signified it by his angel unto his servant John:",
+  2: "Who bare record of the word of God, and of the testimony of Jesus Christ, and of all things that he saw.",
+  3: "Blessed is he that readeth, and they that hear the words of this prophecy, and keep those things which are written therein: for the time is at hand.",
+  4: "John to the seven churches which are in Asia: Grace be unto you, and peace, from him which is, and which was, and which is to come; and from the seven Spirits which are before his throne;",
+  5: "And from Jesus Christ, who is the faithful witness, and the first begotten of the dead, and the prince of the kings of the earth. Unto him that loved us, and washed us from our sins in his own blood,",
+  6: "And hath made us kings and priests unto God and his Father; to him be glory and dominion for ever and ever. Amen.",
+  7: "Behold, he cometh with clouds; and every eye shall see him, and they also which pierced him: and all kindreds of the earth shall wail because of him. Even so, Amen.",
+  8: "I am Alpha and Omega, the beginning and the ending, saith the Lord, which is, and which was, and which is to come, the Almighty.",
+  9: "I John, who also am your brother, and companion in tribulation, and in the kingdom and patience of Jesus Christ, was in the isle that is called Patmos, for the word of God, and for the testimony of Jesus Christ.",
+  10: "I was in the Spirit on the Lord’s day, and heard behind me a great voice, as of a trumpet,",
+  11: "Saying, I am Alpha and Omega, the first and the last: and, What thou seest, write in a book, and send it unto the seven churches which are in Asia; unto Ephesus, and unto Smyrna, and unto Pergamos, and unto Thyatira, and unto Sardis, and unto Philadelphia, and unto Laodicea.",
+  12: "And I turned to see the voice that spake with me. And being turned, I saw seven golden candlesticks;",
+  13: "And in the midst of the seven candlesticks one like unto the Son of man, clothed with a garment down to the foot, and girt about the paps with a golden girdle.",
+  14: "His head and his hairs were white like wool, as white as snow; and his eyes were as a flame of fire;",
+  15: "And his feet like unto fine brass, as if they burned in a furnace; and his voice as the sound of many waters.",
+  16: "And he had in his right hand seven stars: and out of his mouth went a sharp twoedged sword: and his countenance was as the sun shineth in his strength.",
+  17: "And when I saw him, I fell at his feet as dead. And he laid his right hand upon me, saying unto me, Fear not; I am the first and the last:",
+  18: "I am he that liveth, and was dead; and, behold, I am alive for evermore, Amen; and have the keys of hell and of death.",
+  19: "Write the things which thou hast seen, and the things which are, and the things which shall be hereafter;",
+  20: "The mystery of the seven stars which thou sawest in my right hand, and the seven golden candlesticks. The seven stars are the angels of the seven churches: and the seven candlesticks which thou sawest are the seven churches."
+};
+const BOOK = "Revelation 1";
+</script>
+<script src="../assets/deck.js"></script>
+</body>
+</html>

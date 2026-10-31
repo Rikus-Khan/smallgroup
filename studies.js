@@ -16314,6 +16314,111 @@ window.STUDIES = [
     }
   },
   {
+    "id": "revelation-01",
+    "type": "chapter",
+    "book": "Revelation",
+    "ch": 1,
+    "date": "2026-10-31",
+    "title": "Revelation 1",
+    "sub": "Alive for Evermore",
+    "about": "An old man in exile on Patmos sees Jesus as he has never seen Him: shining, strong, walking among His churches. John falls down as dead, and Jesus lays His hand on him and says, “Fear not.”",
+    "tags": [
+      "The unveiling",
+      "Loved and washed",
+      "He is coming",
+      "The Son of man",
+      "Fear not",
+      "The keys"
+    ],
+    "overview": {
+      "where": "The island of Patmos, off the coast of Asia, writing to seven churches on the mainland: Ephesus, Smyrna, Pergamos, Thyatira, Sardis, Philadelphia and Laodicea",
+      "when": "About AD 95, under the emperor Domitian, when John was the last of the apostles still living",
+      "people": [
+        "jesus",
+        "john-the-apostle",
+        "angels"
+      ],
+      "places": [
+        "patmos",
+        "asia",
+        "ephesus",
+        "smyrna",
+        "pergamos",
+        "thyatira",
+        "sardis",
+        "philadelphia",
+        "laodicea"
+      ],
+      "story": [
+        "The Revelation of Jesus Christ: God gave it to Jesus, who sent it by His angel to John, with a blessing on all who read, hear and keep it (1–3).",
+        "John greets the seven churches with grace and peace and praises Jesus, who loved us, washed us from our sins in His own blood, and made us kings and priests (4–6).",
+        "Jesus is coming with clouds, and every eye shall see Him. He is Alpha and Omega, the Almighty (7–8).",
+        "John, exiled on Patmos for the word of God, is in the Spirit on the Lord's day and hears a voice like a trumpet: write, and send it to the seven churches (9–11).",
+        "He turns and sees the Son of man among seven golden candlesticks: hair white as snow, eyes as fire, feet like fine brass, a voice as many waters, seven stars in His hand, a sharp twoedged sword, a face like the sun (12–16).",
+        "John falls at His feet as dead. Jesus lays His right hand on him: “Fear not … I am alive for evermore … and have the keys of hell and of death” (17–18).",
+        "Jesus tells John what to write and explains the stars and candlesticks: the angels of the churches, and the churches (19–20)."
+      ],
+      "key": {
+        "ref": "Revelation 1:18",
+        "text": "I am he that liveth, and was dead; and, behold, I am alive for evermore, Amen; and have the keys of hell and of death."
+      },
+      "big": "Revelation is the unveiling of Jesus, not a puzzle. Before any judgment, it shows who He is: the One who loved us and washed us, who is coming again, who walks among His churches in glory, and who holds the keys of death. When we fall at His feet, He lays His hand on us and says, “Fear not.”"
+    },
+    "url": "studies/revelation-01.html"
+  },
+  {
+    "id": "revelation-02",
+    "type": "chapter",
+    "book": "Revelation",
+    "ch": 2,
+    "date": "2026-10-31",
+    "title": "Revelation 2",
+    "sub": "I Know Thy Works",
+    "about": "Four letters from the risen Jesus to four real churches: one that lost its first love, one that was poor and hunted, one that made deals with the world, and one that let a false teacher stay. To each He says, “I know.”",
+    "tags": [
+      "First love",
+      "Poor but rich",
+      "Faithful",
+      "Compromise",
+      "A new name",
+      "Space to repent"
+    ],
+    "overview": {
+      "where": "Letters sent from Patmos to four churches of Asia: Ephesus, Smyrna, Pergamos and Thyatira",
+      "when": "About AD 95, under the emperor Domitian",
+      "people": [
+        "jesus",
+        "angel-of-the-church",
+        "nicolaitanes",
+        "antipas",
+        "balaam",
+        "balac",
+        "jezebel",
+        "satan"
+      ],
+      "places": [
+        "ephesus",
+        "smyrna",
+        "pergamos",
+        "satans-seat",
+        "thyatira"
+      ],
+      "story": [
+        "To Ephesus: Jesus knows their hard work and sound doctrine, but they have left their first love. Remember, repent, and do the first works, or their candlestick will be removed (1–7).",
+        "To Smyrna: poor and slandered, but rich. No rebuke. Some will go to prison; be faithful unto death, and Jesus will give a crown of life (8–11).",
+        "To Pergamos: they hold fast His name where Satan's seat is, even after Antipas was killed, but some hold the doctrine of Balaam and of the Nicolaitanes. Repent. The overcomer gets the hidden manna and a white stone with a new name (12–17).",
+        "To Thyatira: their love and service are growing, but they put up with Jezebel, a false prophetess. Jesus gave her space to repent, and she would not (18–23).",
+        "To the faithful in Thyatira: no other burden; hold fast till I come. The overcomer will rule with Christ and receive the morning star (24–29)."
+      ],
+      "key": {
+        "ref": "Revelation 2:10",
+        "text": "Fear none of those things which thou shalt suffer: behold, the devil shall cast some of you into prison, that ye may be tried; and ye shall have tribulation ten days: be thou faithful unto death, and I will give thee a crown of life."
+      },
+      "big": "Jesus knows every church and every man: the hard work, the suffering, the slow cooling, the compromises. He praises what is right, names what is wrong, and calls us back with a promise. He gives space to repent, a new name to men with a bad one, and Himself, the morning star, to all who hold fast."
+    },
+    "url": "studies/revelation-02.html"
+  },
+  {
     "id": "revelation-03",
     "type": "chapter",
     "book": "Revelation",

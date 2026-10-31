@@ -603,7 +603,10 @@ window.GLOSSARY = [
     [ 3, 7 ] ],
    [
     "Jude", 1,
-    [ 1, 4, 17, 21 ] ] ]
+    [ 1, 4, 17, 21 ] ],
+   [
+    "Revelation", 1,
+    [ 1, 2, 5, 9 ] ] ]
  },
  {
   "id": "john-the-baptist",
@@ -1583,6 +1586,12 @@ window.GLOSSARY = [
     "Jude", 1,
     [ 1 ] ],
    [
+    "Revelation", 1,
+    [ 6 ] ],
+   [
+    "Revelation", 2,
+    [ 27 ] ],
+   [
     "Revelation", 3,
     [ 5, 21 ] ] ]
  },
@@ -1861,6 +1870,12 @@ window.GLOSSARY = [
    [
     "Jude", 1,
     [ 19, 20 ] ],
+   [
+    "Revelation", 1,
+    [ 10 ] ],
+   [
+    "Revelation", 2,
+    [ 7, 11, 17, 29 ] ],
    [
     "Revelation", 3,
     [ 6, 13, 22 ] ] ]
@@ -2416,6 +2431,9 @@ window.GLOSSARY = [
    [
     "1 Thessalonians", 2,
     [ 14 ] ],
+   [
+    "Revelation", 2,
+    [ 9 ] ],
    [
     "Revelation", 3,
     [ 9 ] ] ]
@@ -4094,6 +4112,9 @@ window.GLOSSARY = [
     "Hebrews", 11,
     [ 22 ] ],
    [
+    "Revelation", 2,
+    [ 14 ] ],
+   [
     "Revelation", 7,
     [ 4 ] ] ]
  },
@@ -4494,7 +4515,10 @@ window.GLOSSARY = [
     [ 27, 31 ] ],
    [
     "James", 3,
-    [ 6 ] ] ]
+    [ 6 ] ],
+   [
+    "Revelation", 1,
+    [ 18 ] ] ]
  },
  {
   "id": "judah",
@@ -5762,6 +5786,9 @@ window.GLOSSARY = [
     "Jude", 1,
     [ 24, 25 ] ],
    [
+    "Revelation", 1,
+    [ 6 ] ],
+   [
     "Revelation", 4,
     [ 9, 11 ] ],
    [
@@ -6531,7 +6558,10 @@ window.GLOSSARY = [
     [ 3, 7, 9 ] ],
    [
     "Jude", 1,
-    [ 1, 4, 17, 21 ] ] ]
+    [ 1, 4, 17, 21 ] ],
+   [
+    "Revelation", 1,
+    [ 1, 2, 5, 9 ] ] ]
  },
  {
   "id": "son-of-god",
@@ -6639,7 +6669,10 @@ window.GLOSSARY = [
     [ 15 ] ],
    [
     "1 John", 5,
-    [ 5, 10, 12, 13, 20 ] ] ]
+    [ 5, 10, 12, 13, 20 ] ],
+   [
+    "Revelation", 2,
+    [ 18 ] ] ]
  },
  {
   "id": "son-of-man",
@@ -6765,7 +6798,10 @@ window.GLOSSARY = [
     [ 31 ] ],
    [
     "Acts", 7,
-    [ 56 ] ] ]
+    [ 56 ] ],
+   [
+    "Revelation", 1,
+    [ 13 ] ] ]
  },
  {
   "id": "king-of-israel",
@@ -7324,6 +7360,9 @@ window.GLOSSARY = [
    [
     "3 John", 1,
     [ 6, 12 ] ],
+   [
+    "Revelation", 1,
+    [ 2, 5 ] ],
    [
     "Revelation", 3,
     [ 14 ] ] ]
@@ -10680,7 +10719,10 @@ window.GLOSSARY = [
     [ 11 ] ],
    [
     "2 Peter", 2,
-    [ 14 ] ] ]
+    [ 14 ] ],
+   [
+    "Revelation", 2,
+    [ 22 ] ] ]
  },
  {
   "id": "apple-of-the-eye",
@@ -11196,7 +11238,10 @@ window.GLOSSARY = [
   "refs": [
    [
     "Proverbs", 23,
-    [ 16 ] ] ]
+    [ 16 ] ],
+   [
+    "Revelation", 2,
+    [ 23 ] ] ]
  },
  {
   "id": "respect-of-persons",
@@ -11268,7 +11313,10 @@ window.GLOSSARY = [
     [ 21 ] ],
    [
     "Hebrews", 9,
-    [ 4 ] ] ]
+    [ 4 ] ],
+   [
+    "Revelation", 2,
+    [ 27 ] ] ]
  },
  {
   "id": "snare",
@@ -11562,7 +11610,10 @@ window.GLOSSARY = [
     [ 12 ] ],
    [
     "Proverbs", 15,
-    [ 4 ] ] ]
+    [ 4 ] ],
+   [
+    "Revelation", 2,
+    [ 7 ] ] ]
  },
  {
   "id": "upright",
@@ -12620,6 +12671,9 @@ window.GLOSSARY = [
     "Acts", 26,
     [ 11 ] ],
    [
+    "Revelation", 2,
+    [ 9 ] ],
+   [
     "Revelation", 3,
     [ 9 ] ] ]
  },
@@ -12642,7 +12696,10 @@ window.GLOSSARY = [
     [ 31, 49, 58 ] ],
    [
     "Hebrews", 9,
-    [ 4 ] ] ]
+    [ 4 ] ],
+   [
+    "Revelation", 2,
+    [ 17 ] ] ]
  },
  {
   "id": "barley",
@@ -12972,7 +13029,10 @@ window.GLOSSARY = [
     [ 8, 10 ] ],
    [
     "Jude", 1,
-    [ 9 ] ] ]
+    [ 9 ] ],
+   [
+    "Revelation", 2,
+    [ 10 ] ] ]
  },
  {
   "id": "man-born-blind",
@@ -13599,7 +13659,10 @@ window.GLOSSARY = [
     [ 5 ] ],
    [
     "James", 2,
-    [ 7 ] ] ]
+    [ 7 ] ],
+   [
+    "Revelation", 2,
+    [ 9 ] ] ]
  },
  {
   "id": "ye-are-gods",
@@ -14172,7 +14235,10 @@ window.GLOSSARY = [
     [ 1, 2 ] ],
    [
     "2 John", 1,
-    [ 9, 10 ] ] ]
+    [ 9, 10 ] ],
+   [
+    "Revelation", 2,
+    [ 14, 15, 24 ] ] ]
  },
  {
   "id": "letters",
@@ -16064,6 +16130,9 @@ window.GLOSSARY = [
     "Jude", 1,
     [ 6 ] ],
    [
+    "Revelation", 1,
+    [ 1, 20 ] ],
+   [
     "Revelation", 3,
     [ 5 ] ],
    [
@@ -16344,7 +16413,10 @@ window.GLOSSARY = [
     [ 14 ] ],
    [
     "Jude", 1,
-    [ 2 ] ] ]
+    [ 2 ] ],
+   [
+    "Revelation", 1,
+    [ 4 ] ] ]
  },
  {
   "id": "remit",
@@ -16730,6 +16802,9 @@ window.GLOSSARY = [
     "1 John", 1,
     [ 2 ] ],
    [
+    "Revelation", 1,
+    [ 1 ] ],
+   [
     "Revelation", 4,
     [ 1 ] ] ]
  },
@@ -16839,6 +16914,9 @@ window.GLOSSARY = [
     [ 14 ] ],
    [
     "1 Peter", 1,
+    [ 13 ] ],
+   [
+    "Revelation", 1,
     [ 13 ] ] ]
  },
  {
@@ -17002,6 +17080,9 @@ window.GLOSSARY = [
    [
     "3 John", 1,
     [ 3 ] ],
+   [
+    "Revelation", 1,
+    [ 2, 9 ] ],
    [
     "Revelation", 6,
     [ 9 ] ] ]
@@ -17684,6 +17765,9 @@ window.GLOSSARY = [
     "1 Timothy", 5,
     [ 15 ] ],
    [
+    "Revelation", 2,
+    [ 9, 13, 24 ] ],
+   [
     "Revelation", 3,
     [ 9 ] ] ]
  },
@@ -18364,6 +18448,12 @@ window.GLOSSARY = [
    [
     "2 Thessalonians", 1,
     [ 6 ] ],
+   [
+    "Revelation", 1,
+    [ 9 ] ],
+   [
+    "Revelation", 2,
+    [ 9, 10, 22 ] ],
    [
     "Revelation", 7,
     [ 14 ] ] ]
@@ -19504,6 +19594,9 @@ window.GLOSSARY = [
    [
     "Hebrews", 12,
     [ 19 ] ],
+   [
+    "Revelation", 1,
+    [ 10 ] ],
    [
     "Revelation", 4,
     [ 1 ] ],
@@ -21237,7 +21330,10 @@ window.GLOSSARY = [
     [ 9 ] ],
    [
     "1 John", 5,
-    [ 21 ] ] ]
+    [ 21 ] ],
+   [
+    "Revelation", 2,
+    [ 14, 20 ] ] ]
  },
  {
   "id": "morning-cloud",
@@ -24096,7 +24192,10 @@ window.GLOSSARY = [
     [ 15 ] ],
    [
     "Jude", 1,
-    [ 11 ] ] ]
+    [ 11 ] ],
+   [
+    "Revelation", 2,
+    [ 14 ] ] ]
  },
  {
   "id": "shittim",
@@ -25488,7 +25587,13 @@ window.GLOSSARY = [
     [ 33 ] ],
    [
     "Hebrews", 9,
-    [ 2 ] ] ]
+    [ 2 ] ],
+   [
+    "Revelation", 1,
+    [ 12, 13, 20 ] ],
+   [
+    "Revelation", 2,
+    [ 1, 5 ] ] ]
  },
  {
   "id": "olive-trees",
@@ -27410,6 +27515,9 @@ window.GLOSSARY = [
     "2 Corinthians", 12,
     [ 21 ] ],
    [
+    "Revelation", 2,
+    [ 5, 16, 21, 22 ] ],
+   [
     "Revelation", 3,
     [ 3, 19 ] ] ]
  },
@@ -28413,7 +28521,10 @@ window.GLOSSARY = [
   "refs": [
    [
     "Luke", 2,
-    [ 36 ] ] ]
+    [ 36 ] ],
+   [
+    "Revelation", 2,
+    [ 20 ] ] ]
  },
  {
   "id": "fourscore",
@@ -29220,7 +29331,10 @@ window.GLOSSARY = [
     [ 1 ] ],
    [
     "Jude", 1,
-    [ 17 ] ] ]
+    [ 17 ] ],
+   [
+    "Revelation", 2,
+    [ 2 ] ] ]
  },
  {
   "id": "bartholomew",
@@ -30006,7 +30120,10 @@ window.GLOSSARY = [
     [ 29 ] ],
    [
     "Romans", 4,
-    [ 7, 8 ] ] ]
+    [ 7, 8 ] ],
+   [
+    "Revelation", 1,
+    [ 3 ] ] ]
  },
  {
   "id": "poor-in-spirit",
@@ -30387,7 +30504,10 @@ window.GLOSSARY = [
     [ 3 ] ],
    [
     "Jude", 1,
-    [ 7 ] ] ]
+    [ 7 ] ],
+   [
+    "Revelation", 2,
+    [ 14, 20, 21 ] ] ]
  },
  {
   "id": "forswear",
@@ -31171,6 +31291,9 @@ window.GLOSSARY = [
    [
     "Jude", 1,
     [ 25 ] ],
+   [
+    "Revelation", 1,
+    [ 6, 7, 18 ] ],
    [
     "Revelation", 3,
     [ 14 ] ],
@@ -32154,7 +32277,10 @@ window.GLOSSARY = [
     [ 7 ] ],
    [
     "1 Timothy", 3,
-    [ 9, 16 ] ] ]
+    [ 9, 16 ] ],
+   [
+    "Revelation", 1,
+    [ 20 ] ] ]
  },
  {
   "id": "converted",
@@ -33436,6 +33562,9 @@ window.GLOSSARY = [
    [
     "3 John", 1,
     [ 6, 9, 10 ] ],
+   [
+    "Revelation", 2,
+    [ 1, 8, 12, 18 ] ],
    [
     "Revelation", 3,
     [ 1, 7, 14 ] ] ]
@@ -35469,7 +35598,10 @@ window.GLOSSARY = [
     [ 27 ] ],
    [
     "Luke", 23,
-    [ 29 ] ] ]
+    [ 29 ] ],
+   [
+    "Revelation", 1,
+    [ 13 ] ] ]
  },
  {
   "id": "washed-before-dinner",
@@ -38561,6 +38693,12 @@ window.GLOSSARY = [
     "2 Peter", 1,
     [ 6 ] ],
    [
+    "Revelation", 1,
+    [ 9 ] ],
+   [
+    "Revelation", 2,
+    [ 2, 3, 19 ] ],
+   [
     "Revelation", 3,
     [ 10 ] ] ]
  },
@@ -38925,7 +39063,10 @@ window.GLOSSARY = [
     [ 43 ] ],
    [
     "2 Corinthians", 12,
-    [ 4 ] ] ]
+    [ 4 ] ],
+   [
+    "Revelation", 2,
+    [ 7 ] ] ]
  },
  {
   "id": "penitent-thief",
@@ -39321,7 +39462,10 @@ window.GLOSSARY = [
     [ 15 ] ],
    [
     "1 Peter", 1,
-    [ 1 ] ] ]
+    [ 1 ] ],
+   [
+    "Revelation", 1,
+    [ 4, 11 ] ] ]
  },
  {
   "id": "phrygia",
@@ -39618,7 +39762,10 @@ window.GLOSSARY = [
     [ 14 ] ],
    [
     "Galatians", 2,
-    [ 9 ] ] ]
+    [ 9 ] ],
+   [
+    "Revelation", 1,
+    [ 1, 4, 9 ] ] ]
  },
  {
   "id": "lame-man-healed",
@@ -39730,6 +39877,9 @@ window.GLOSSARY = [
    [
     "Acts", 3,
     [ 25 ] ],
+   [
+    "Revelation", 1,
+    [ 7 ] ],
    [
     "Revelation", 7,
     [ 9 ] ] ]
@@ -41244,7 +41394,13 @@ window.GLOSSARY = [
   "refs": [
    [
     "Acts", 16,
-    [ 14 ] ] ]
+    [ 14 ] ],
+   [
+    "Revelation", 1,
+    [ 11 ] ],
+   [
+    "Revelation", 2,
+    [ 18, 24 ] ] ]
  },
  {
   "id": "colony",
@@ -42720,7 +42876,13 @@ window.GLOSSARY = [
     [ 18 ] ],
    [
     "2 Timothy", 4,
-    [ 12 ] ] ]
+    [ 12 ] ],
+   [
+    "Revelation", 1,
+    [ 11 ] ],
+   [
+    "Revelation", 2,
+    [ 1 ] ] ]
  },
  {
   "id": "alexandria",
@@ -43998,7 +44160,10 @@ window.GLOSSARY = [
   "refs": [
    [
     "Acts", 21,
-    [ 11 ] ] ]
+    [ 11 ] ],
+   [
+    "Revelation", 1,
+    [ 13 ] ] ]
  },
  {
   "id": "evangelist",
@@ -44106,7 +44271,10 @@ window.GLOSSARY = [
   "refs": [
    [
     "Acts", 22,
-    [ 20 ] ] ]
+    [ 20 ] ],
+   [
+    "Revelation", 2,
+    [ 13 ] ] ]
  },
  {
   "id": "thongs",
@@ -44721,7 +44889,10 @@ window.GLOSSARY = [
     [ 21 ] ],
    [
     "Jude", 1,
-    [ 8, 25 ] ] ]
+    [ 8, 25 ] ],
+   [
+    "Revelation", 1,
+    [ 6 ] ] ]
  },
  {
   "id": "reckon",
@@ -45822,7 +45993,10 @@ window.GLOSSARY = [
     [ 23 ] ],
    [
     "1 Corinthians", 8,
-    [ 9 ] ] ]
+    [ 9 ] ],
+   [
+    "Revelation", 2,
+    [ 14 ] ] ]
  },
  {
   "id": "charitably",
@@ -47840,6 +48014,9 @@ window.GLOSSARY = [
     "Hebrews", 10,
     [ 22 ] ],
    [
+    "Revelation", 1,
+    [ 5 ] ],
+   [
     "Revelation", 7,
     [ 14 ] ] ]
  },
@@ -48198,7 +48375,10 @@ window.GLOSSARY = [
     [ 6 ] ],
    [
     "Jude", 1,
-    [ 12 ] ] ]
+    [ 12 ] ],
+   [
+    "Revelation", 2,
+    [ 19 ] ] ]
  },
  {
   "id": "edifieth",
@@ -51286,6 +51466,9 @@ window.GLOSSARY = [
    [
     "Colossians", 4,
     [ 13, 15, 16 ] ],
+   [
+    "Revelation", 1,
+    [ 11 ] ],
    [
     "Revelation", 3,
     [ 14 ] ] ]
@@ -54984,7 +55167,10 @@ window.GLOSSARY = [
     [ 4 ] ],
    [
     "Hebrews", 4,
-    [ 12 ] ] ]
+    [ 12 ] ],
+   [
+    "Revelation", 1,
+    [ 16 ] ] ]
  },
  {
   "id": "discerner",
@@ -55524,7 +55710,10 @@ window.GLOSSARY = [
     [ 5, 7, 9, 21 ] ],
    [
     "2 Peter", 1,
-    [ 1, 5 ] ] ]
+    [ 1, 5 ] ],
+   [
+    "Revelation", 2,
+    [ 13, 19 ] ] ]
  },
  {
   "id": "substance-faith",
@@ -56158,6 +56347,9 @@ window.GLOSSARY = [
    [
     "1 John", 5,
     [ 4, 5 ] ],
+   [
+    "Revelation", 2,
+    [ 7, 11, 17, 26 ] ],
    [
     "Revelation", 3,
     [ 5, 12, 21 ] ] ]
@@ -57284,6 +57476,9 @@ window.GLOSSARY = [
   "name": "The seven Spirits of God (the Holy Spirit in His fullness)",
   "refs": [
    [
+    "Revelation", 1,
+    [ 4 ] ],
+   [
     "Revelation", 3,
     [ 1 ] ],
    [
@@ -57316,6 +57511,9 @@ window.GLOSSARY = [
   "kind": "term",
   "name": "Kings and priests (what the Lamb has made His people)",
   "refs": [
+   [
+    "Revelation", 1,
+    [ 6 ] ],
    [
     "Revelation", 5,
     [ 10 ] ] ]
@@ -57593,6 +57791,9 @@ window.GLOSSARY = [
   "name": "Sardis (an old royal city of Asia on a high, steep hill; one of the seven churches)",
   "refs": [
    [
+    "Revelation", 1,
+    [ 11 ] ],
+   [
     "Revelation", 3,
     [ 1, 4 ] ] ]
  },
@@ -57601,6 +57802,9 @@ window.GLOSSARY = [
   "kind": "place",
   "name": "Philadelphia (a small city of Asia often shaken by earthquakes; one of the seven churches)",
   "refs": [
+   [
+    "Revelation", 1,
+    [ 11 ] ],
    [
     "Revelation", 3,
     [ 7 ] ] ]
@@ -57611,6 +57815,9 @@ window.GLOSSARY = [
   "name": "The angel of the church (the messenger, many think the pastor, who received each letter)",
   "refs": [
    [
+    "Revelation", 2,
+    [ 1, 8, 12, 18 ] ],
+   [
     "Revelation", 3,
     [ 1, 7, 14 ] ] ]
  },
@@ -57620,6 +57827,12 @@ window.GLOSSARY = [
   "name": "The seven stars (the angels of the seven churches, held in Christ's right hand)",
   "refs": [
    [
+    "Revelation", 1,
+    [ 16, 20 ] ],
+   [
+    "Revelation", 2,
+    [ 1 ] ],
+   [
     "Revelation", 3,
     [ 1 ] ] ]
  },
@@ -57628,6 +57841,9 @@ window.GLOSSARY = [
   "kind": "term",
   "name": "He that hath an ear, let him hear (a call to every church, and every man, to listen)",
   "refs": [
+   [
+    "Revelation", 2,
+    [ 7, 11, 17, 29 ] ],
    [
     "Revelation", 3,
     [ 6, 13, 22 ] ] ]
@@ -57655,6 +57871,9 @@ window.GLOSSARY = [
   "kind": "person",
   "name": "The synagogue of Satan (people who claimed God's name while fighting Christ's people)",
   "refs": [
+   [
+    "Revelation", 2,
+    [ 9 ] ],
    [
     "Revelation", 3,
     [ 9 ] ] ]
@@ -57782,6 +58001,9 @@ window.GLOSSARY = [
   "name": "In the spirit (caught up in a vision by the Holy Spirit)",
   "refs": [
    [
+    "Revelation", 1,
+    [ 10 ] ],
+   [
     "Revelation", 4,
     [ 2 ] ] ]
  },
@@ -57907,5 +58129,284 @@ window.GLOSSARY = [
    [
     "Revelation", 4,
     [ 11 ] ] ]
+ },
+ {
+  "id": "patmos",
+  "kind": "place",
+  "name": "Patmos (a small rocky island off the coast of Asia, where John was exiled)",
+  "refs": [
+   [
+    "Revelation", 1,
+    [ 9 ] ] ]
+ },
+ {
+  "id": "smyrna",
+  "kind": "place",
+  "name": "Smyrna (a proud harbour city of Asia, loyal to Rome; one of the seven churches)",
+  "refs": [
+   [
+    "Revelation", 1,
+    [ 11 ] ],
+   [
+    "Revelation", 2,
+    [ 8 ] ] ]
+ },
+ {
+  "id": "pergamos",
+  "kind": "place",
+  "name": "Pergamos (the old capital of Asia, crowded with temples; one of the seven churches)",
+  "refs": [
+   [
+    "Revelation", 1,
+    [ 11 ] ],
+   [
+    "Revelation", 2,
+    [ 12 ] ] ]
+ },
+ {
+  "id": "signified",
+  "kind": "term",
+  "name": "Signified (made known, shown by signs)",
+  "refs": [
+   [
+    "Revelation", 1,
+    [ 1 ] ] ]
+ },
+ {
+  "id": "first-begotten-of-the-dead",
+  "kind": "term",
+  "name": "The first begotten of the dead (the first to rise from death, never to die again)",
+  "refs": [
+   [
+    "Revelation", 1,
+    [ 5 ] ] ]
+ },
+ {
+  "id": "alpha-and-omega",
+  "kind": "term",
+  "name": "Alpha and Omega (the first and last letters of the Greek alphabet: A to Z)",
+  "refs": [
+   [
+    "Revelation", 1,
+    [ 8, 11 ] ] ]
+ },
+ {
+  "id": "first-and-the-last",
+  "kind": "term",
+  "name": "The first and the last (God's own title, Isaiah 44:6, taken by Jesus)",
+  "refs": [
+   [
+    "Revelation", 1,
+    [ 11, 17 ] ],
+   [
+    "Revelation", 2,
+    [ 8 ] ] ]
+ },
+ {
+  "id": "lords-day",
+  "kind": "term",
+  "name": "The Lord’s day (Sunday, the day Jesus rose)",
+  "refs": [
+   [
+    "Revelation", 1,
+    [ 10 ] ] ]
+ },
+ {
+  "id": "fine-brass",
+  "kind": "term",
+  "name": "Fine brass (polished bronze, refined in the furnace)",
+  "refs": [
+   [
+    "Revelation", 1,
+    [ 15 ] ],
+   [
+    "Revelation", 2,
+    [ 18 ] ] ]
+ },
+ {
+  "id": "many-waters",
+  "kind": "term",
+  "name": "The sound of many waters (a roar like the sea: God's own voice, Ezekiel 43:2)",
+  "refs": [
+   [
+    "Revelation", 1,
+    [ 15 ] ] ]
+ },
+ {
+  "id": "keys-of-hell-and-death",
+  "kind": "term",
+  "name": "The keys of hell and of death (Christ's power over the grave)",
+  "refs": [
+   [
+    "Revelation", 1,
+    [ 18 ] ] ]
+ },
+ {
+  "id": "nicolaitanes",
+  "kind": "person",
+  "name": "The Nicolaitanes (a group no one can identify for sure; many think they taught that idol feasts and sexual sin didn't matter)",
+  "refs": [
+   [
+    "Revelation", 2,
+    [ 6, 15 ] ] ]
+ },
+ {
+  "id": "first-love",
+  "kind": "term",
+  "name": "Thy first love (the love for Christ a believer had at the start)",
+  "refs": [
+   [
+    "Revelation", 2,
+    [ 4 ] ] ]
+ },
+ {
+  "id": "first-works",
+  "kind": "term",
+  "name": "The first works (what you did when you first loved Him)",
+  "refs": [
+   [
+    "Revelation", 2,
+    [ 5 ] ] ]
+ },
+ {
+  "id": "crown-of-life",
+  "kind": "term",
+  "name": "A crown of life (the victor's wreath: life itself, given to the faithful)",
+  "refs": [
+   [
+    "James", 1,
+    [ 12 ] ],
+   [
+    "Revelation", 2,
+    [ 10 ] ] ]
+ },
+ {
+  "id": "second-death",
+  "kind": "term",
+  "name": "The second death (the lake of fire, Revelation 20:14)",
+  "refs": [
+   [
+    "Revelation", 2,
+    [ 11 ] ] ]
+ },
+ {
+  "id": "satans-seat",
+  "kind": "place",
+  "name": "Satan’s seat (Satan's throne; Pergamos, full of idol temples and emperor worship)",
+  "refs": [
+   [
+    "Revelation", 2,
+    [ 13 ] ] ]
+ },
+ {
+  "id": "antipas",
+  "kind": "person",
+  "name": "Antipas (a believer killed for Christ at Pergamos)",
+  "refs": [
+   [
+    "Revelation", 2,
+    [ 13 ] ] ]
+ },
+ {
+  "id": "balac",
+  "kind": "person",
+  "name": "Balac (Balak, the king of Moab who hired Balaam)",
+  "refs": [
+   [
+    "Revelation", 2,
+    [ 14 ] ] ]
+ },
+ {
+  "id": "hidden-manna",
+  "kind": "term",
+  "name": "The hidden manna (bread from heaven: Christ Himself, John 6:51)",
+  "refs": [
+   [
+    "Revelation", 2,
+    [ 17 ] ] ]
+ },
+ {
+  "id": "white-stone",
+  "kind": "term",
+  "name": "A white stone (used for a “not guilty” vote, and as a ticket to a feast)",
+  "refs": [
+   [
+    "Revelation", 2,
+    [ 17 ] ] ]
+ },
+ {
+  "id": "new-name",
+  "kind": "term",
+  "name": "A new name (the new identity Christ gives His own)",
+  "refs": [
+   [
+    "Revelation", 2,
+    [ 17 ] ],
+   [
+    "Revelation", 3,
+    [ 12 ] ] ]
+ },
+ {
+  "id": "jezebel",
+  "kind": "person",
+  "name": "Jezebel (a false prophetess at Thyatira, named after Ahab's wicked queen)",
+  "refs": [
+   [
+    "Revelation", 2,
+    [ 20 ] ] ]
+ },
+ {
+  "id": "sufferest",
+  "kind": "term",
+  "name": "Sufferest (allowest, puttest up with)",
+  "refs": [
+   [
+    "Revelation", 2,
+    [ 20 ] ] ]
+ },
+ {
+  "id": "space-to-repent",
+  "kind": "term",
+  "name": "Space to repent (time God gives to turn around)",
+  "refs": [
+   [
+    "Revelation", 2,
+    [ 21 ] ] ]
+ },
+ {
+  "id": "depths-of-satan",
+  "kind": "term",
+  "name": "The depths of Satan (so-called secret knowledge that excused sin)",
+  "refs": [
+   [
+    "Revelation", 2,
+    [ 24 ] ] ]
+ },
+ {
+  "id": "rod-of-iron",
+  "kind": "term",
+  "name": "A rod of iron (an unbreakable rule, Psalm 2:9)",
+  "refs": [
+   [
+    "Revelation", 2,
+    [ 27 ] ] ]
+ },
+ {
+  "id": "shivers",
+  "kind": "term",
+  "name": "Shivers (small broken pieces)",
+  "refs": [
+   [
+    "Revelation", 2,
+    [ 27 ] ] ]
+ },
+ {
+  "id": "morning-star",
+  "kind": "term",
+  "name": "The morning star (Christ Himself, “the bright and morning star,” 22:16)",
+  "refs": [
+   [
+    "Revelation", 2,
+    [ 28 ] ] ]
  }
 ];

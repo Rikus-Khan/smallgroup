@@ -1,0 +1,711 @@
+<!doctype html>
+<html lang="en" data-theme="scribe">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Revelation 2</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="../assets/fonts.css">
+<link rel="stylesheet" href="../assets/deck.css">
+<link rel="stylesheet" href="../assets/themes.css">
+<style>
+/* rv01-book: the map of Revelation (copied as is from Revelation 1; a deck.css candidate).
+   Cards (div, --k) rise in turn: chapters (p > i; .done, .here), a label (small), the part's name (b), a line (cite).
+   The card we're in is .now; the last card is .end. */
+.rv01-book { display: grid; grid-template-columns: 1.05fr 1.35fr 1.35fr 2.6fr 1.35fr 1.35fr 1.35fr; gap: 8px; margin: .3em 0 .9em; }
+.rv01-book > div { --c: var(--line-strong); padding: .5em .6em .6em; border-top: 6px solid var(--c); border-radius: 0 0 10px 10px;
+  background: color-mix(in srgb, var(--surface) 70%, transparent); opacity: 0; transform: translateY(10px);
+  transition: opacity .6s ease, transform .6s ease; transition-delay: calc(var(--k, 0) * 280ms + 300ms); }
+.slide.active .rv01-book > div { opacity: 1; transform: none; }
+.rv01-book > div.now { --c: var(--accent); background: color-mix(in srgb, var(--accent) 15%, transparent); box-shadow: inset 0 0 0 2px var(--accent); }
+.rv01-book > div.end { --c: var(--accent-hot); border-top-style: double; }
+.rv01-book p { display: flex; flex-wrap: wrap; gap: 3px; margin: 0 0 .4em; }
+.rv01-book i { min-width: 1.75em; padding: .14em .2em; text-align: center; border-radius: 6px; border: 1.5px solid var(--line-strong);
+  font: 700 clamp(.7rem, .64rem + .26vw, .92rem) var(--sans); font-style: normal; color: var(--ink-soft); }
+.rv01-book i.done { background: color-mix(in srgb, var(--accent) 14%, transparent); color: var(--ink); }
+.rv01-book i.here { background: var(--accent); border-color: var(--accent); color: var(--on-accent); }
+.slide.active .rv01-book i.here { animation: rv01-here 2.4s ease-in-out 2s infinite; }
+@keyframes rv01-here { 50% { box-shadow: 0 0 0 6px color-mix(in srgb, var(--accent) 28%, transparent); } }
+.rv01-book small { display: block; font: 700 clamp(.64rem, .6rem + .2vw, .8rem) var(--sans); letter-spacing: .08em; text-transform: uppercase; color: var(--ink-soft); }
+.rv01-book b { display: block; margin: .1em 0 .3em; font: 600 clamp(.95rem, .8rem + .55vw, 1.3rem)/1.1 var(--serif); color: var(--ink); }
+.rv01-book > div.end b { color: var(--accent-hot); }
+.rv01-book cite { display: block; font-style: normal; font-size: clamp(.68rem, .64rem + .2vw, .86rem); line-height: 1.3; color: var(--ink-soft); }
+@media (max-width: 760px) { .rv01-book { grid-template-columns: repeat(2, 1fr) !important; gap: 6px; } .rv01-book > div.wide { grid-column: 1 / -1; } }
+
+/* rv02-mail: towns on the world map lit in route order (by their place in data-towns), as the route reaches them. */
+.rv02-mail .map-route { transition-timing-function: linear; }
+.rv02-mail .map-town { opacity: .25; transition: opacity .5s ease; }
+.slide.active .rv02-mail .map-town { opacity: 1; }
+.slide.active .rv02-mail .map-town:nth-of-type(1) { transition-delay: .2s; }
+.slide.active .rv02-mail .map-town:nth-of-type(2) { transition-delay: 1.9s; }
+.slide.active .rv02-mail .map-town:nth-of-type(3) { transition-delay: 2.65s; }
+.slide.active .rv02-mail .map-town:nth-of-type(4) { transition-delay: 3.6s; }
+.slide.active .rv02-mail .map-town:nth-of-type(5) { transition-delay: 4.3s; }
+.slide.active .rv02-mail .map-town:nth-of-type(n+6) { opacity: .45; transition-delay: 4.6s; }
+.map.world.rv02-mini .map-town text { font-size: calc(32px * var(--u)); }
+.rv02-cities { list-style: none; margin: .2em 0 .6em; padding: 0; display: grid; gap: .45em; }
+.rv02-cities li { padding: .3em .7em; border-left: 4px solid var(--accent); border-radius: 6px; background: color-mix(in srgb, var(--surface) 65%, transparent);
+  font-size: clamp(.88rem, .8rem + .35vw, 1.1rem); line-height: 1.35; }
+.rv02-cities b { font: 700 1.1em var(--serif); color: var(--accent-hot); margin-right: .3em; }
+
+/* rv02-letter: the shape of every letter to the churches (a deck.css candidate; Revelation 3 can copy it as is).
+   Put it in a .split.rv02-wide beside a small svg.map[data-world] with that church's town pulsing (!).
+   p.rv02-to names the church (b) and the verses (cite). Then a dl of rows (div, --k), each a dt + dd (+ cite for the verse),
+   rising in turn. Row kinds: .who (who Christ is to them), .know ("I know"), .good (praise), .bad (rebuke), .do (command),
+   .win (the promise "to him that overcometh"). A row with nothing in it (Smyrna has no rebuke) gets .none. */
+@media (min-width: 900px) { .split.rv02-wide { grid-template-columns: .72fr 1.55fr; gap: 1rem 1.5rem; } }
+.rv02-letter { position: relative; padding: .8rem .9rem .8rem; border: 1px solid var(--line-strong); border-radius: 6px;
+  background: color-mix(in srgb, var(--surface) 85%, transparent); box-shadow: 0 12px 30px -20px color-mix(in srgb, var(--ink) 60%, transparent); }
+.rv02-letter::before { content: ""; position: absolute; top: -12px; right: 1.2rem; width: 38px; height: 38px; border-radius: 50%;
+  background: radial-gradient(circle at 35% 35%, color-mix(in srgb, var(--wine) 70%, var(--glow)), var(--wine)); box-shadow: 0 2px 6px color-mix(in srgb, var(--ink) 35%, transparent); }
+.rv02-to { margin: 0 3rem .55em 0; font: italic clamp(1rem, .9rem + .45vw, 1.3rem)/1.3 var(--serif); color: var(--ink-soft); }
+.rv02-to b { font-style: normal; font-weight: 700; color: var(--accent-hot); }
+.rv02-to cite { font: 700 .8em var(--sans); font-style: normal; white-space: nowrap; color: var(--ink-soft); margin-left: .4em; }
+.rv02-letter dl { margin: 0; display: grid; gap: 5px; }
+.rv02-letter dl > div { --c: var(--line-strong); display: grid; grid-template-columns: 7.2em 1fr auto; gap: .2em .7em; align-items: baseline;
+  padding: .28em .6em; border-left: 5px solid var(--c); border-radius: 6px; background: color-mix(in srgb, var(--c) 9%, transparent);
+  opacity: 0; transform: translateX(-8px); transition: opacity .5s ease, transform .5s ease; transition-delay: calc(var(--k, 0) * 300ms + 400ms); }
+.slide.active .rv02-letter dl > div { opacity: 1; transform: none; }
+.rv02-letter dt { font: 700 clamp(.66rem, .62rem + .2vw, .82rem)/1.2 var(--sans); letter-spacing: .07em; text-transform: uppercase; color: var(--c); }
+.rv02-letter dd { margin: 0; font-size: clamp(.92rem, .82rem + .42vw, 1.2rem); line-height: 1.3; color: var(--ink); }
+.rv02-letter dd q { font: italic 1.05em var(--serif); quotes: "\201C" "\201D"; }
+.rv02-letter dl cite { font: 700 clamp(.66rem, .62rem + .2vw, .82rem) var(--sans); font-style: normal; color: var(--ink-soft); }
+.rv02-letter .who { --c: var(--accent-hot); }
+.rv02-letter .know { --c: var(--cool); }
+.rv02-letter .good { --c: var(--accent); }
+.rv02-letter .bad { --c: var(--danger); }
+.rv02-letter .do { --c: var(--wine); }
+.rv02-letter .win { --c: var(--accent-hot); background: color-mix(in srgb, var(--accent) 16%, transparent); box-shadow: inset 0 0 0 1.5px var(--accent); }
+.rv02-letter .none { border-left-style: dashed; background: transparent; }
+.rv02-letter .none dd { font-style: italic; color: var(--ink-soft); }
+@media (max-width: 640px) { .rv02-letter dl > div { grid-template-columns: 1fr; } .rv02-letter dl cite { display: none; } }
+
+/* rv01-lamps: seven golden lampstands (copied from Revelation 1). A .gone lamp goes dark and drops on a .rv01-lamps-go step. */
+.rv01-lamps { display: block; width: 100%; max-height: 24vh; margin: .2em 0 .6em; overflow: visible; }
+.rv01-lamps .stand { fill: none; stroke: var(--accent); stroke-width: 5; stroke-linecap: round; stroke-linejoin: round; }
+.rv01-lamps .flame { fill: var(--warm); opacity: 0; transform-box: fill-box; transform-origin: 50% 100%; transition: opacity .5s ease; transition-delay: calc(var(--k, 0) * 350ms + 400ms); }
+.slide.active .rv01-lamps .flame { opacity: 1; animation: rv01-flick 1.8s ease-in-out infinite; animation-delay: calc(var(--k, 0) * -250ms); }
+@keyframes rv01-flick { 50% { transform: scale(.88, 1.08); } }
+.rv01-lamps .halo { fill: color-mix(in srgb, var(--warm) 22%, transparent); opacity: 0; transition: opacity .6s ease; transition-delay: calc(var(--k, 0) * 350ms + 500ms); }
+.slide.active .rv01-lamps .halo { opacity: 1; }
+.rv01-lamps text { fill: var(--ink); font: 700 15px var(--sans); }
+.rv01-lamps .lamp { transition: opacity 1.2s ease, transform 1.2s ease; }
+.slide:has(.rv01-lamps-go.on) .rv01-lamps .lamp.gone { opacity: .18; transform: translateY(18px); }
+.slide:has(.rv01-lamps-go.on) .rv01-lamps .lamp.gone .flame, .slide:has(.rv01-lamps-go.on) .rv01-lamps .lamp.gone .halo { opacity: 0; }
+
+/* rv02-star: a night sky (dark in every theme) over a dark horizon; the morning star rises and the dawn glows below it. */
+.rv02-star { display: block; width: 100%; max-height: 40vh; margin: 0 auto; overflow: visible; }
+.rv02-star .sky { fill: var(--on-glow); }
+.rv02-star .dawn { fill: url(#rv02-dawn); opacity: 0; transition: opacity 2.4s ease 1.6s; }
+.slide.active .rv02-star .dawn { opacity: 1; }
+.rv02-star .land { fill: color-mix(in srgb, var(--on-glow) 70%, var(--ink)); }
+.rv02-star .dot { fill: var(--glow); opacity: .4; }
+.rv02-star .rise-star { transform: translateY(70px); opacity: .2; transition: transform 2.6s ease .4s, opacity 2.6s ease .4s; }
+.slide.active .rv02-star .rise-star { transform: none; opacity: 1; }
+.rv02-star .core { fill: var(--glow); }
+.rv02-star .spark { fill: var(--glow); }
+.rv02-star .halo { fill: color-mix(in srgb, var(--glow) 25%, transparent); transform-box: fill-box; transform-origin: center; }
+.slide.active .rv02-star .halo { animation: rv02-pulse 3s ease-in-out 2.6s infinite; }
+@keyframes rv02-pulse { 50% { transform: scale(1.25); opacity: .5; } }
+.rv02-star text { fill: var(--glow); font: italic 600 20px var(--serif); }
+</style>
+</head>
+<body>
+<main class="deck" id="deck">
+
+<section class="slide title">
+  <div class="inner">
+    <div class="emblem rise"></div>
+    <h1 class="rise" style="--d:1">Revelation 2</h1>
+    <p class="sub rise" style="--d:3">I Know Thy Works</p>
+    <p class="tag rise" style="--d:5">Four letters from the risen Jesus to four real churches: one that lost its love, one that was poor and hunted, one that made deals with the world, and one that let a false teacher stay. To each He says, “I know.”</p>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <div class="split">
+      <div class="stage">
+        <svg class="rv02-mail" data-world viewBox="540 225 140 105" style="max-height:60vh" data-towns="Patmos, Ephesus!, Smyrna*, Pergamos*, Thyatira*, Sardis, Philadelphia, Laodicea" role="img" aria-label="A close map of the coast of Asia. A line draws from Patmos to Ephesus, then north to Smyrna and Pergamos, then inland to Thyatira; each lights up as the line reaches it. Sardis, Philadelphia and Laodicea, chapter 3's churches, wait further along.">
+          <path class="map-route" style="--draw:3.5s;--wait:.8s" data-via="Patmos, @26.95 37.55, @27.05 37.72, @27.2 37.9, Ephesus, Smyrna, Pergamos, Thyatira"/>
+        </svg>
+      </div>
+      <div>
+        <h2 class="rise" style="--d:1">Four letters, four cities</h2>
+        <ul class="rv02-cities">
+          <li class="rise" style="--d:2"><b>Ephesus</b>the great port and the biggest city of Asia. Paul spent three years there (Acts 19–20).</li>
+          <li class="rise" style="--d:3"><b>Smyrna</b>a proud, rich harbour city, fiercely loyal to Rome.</li>
+          <li class="rise" style="--d:4"><b>Pergamos</b>the old capital, crowded with temples, including one to the emperor.</li>
+          <li class="rise" style="--d:5"><b>Thyatira</b>an inland trade town of guilds: dyers, potters, bronze workers. Lydia came from here (Acts 16:14).</li>
+        </ul>
+        <p class="note step">A messenger landing at Ephesus would carry the book along this road, reading each church its letter, and every church would hear all seven.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise" style="--d:1">Where we are in Revelation</h2>
+    <div class="rv01-book" role="img" aria-label="The book of Revelation in seven parts. Chapter 1, the vision of Christ, read. Chapters 2 and 3, letters to the seven churches: we are in chapter 2. Then the throne and the Lamb, 4 and 5; seals, trumpets and bowls, 6 to 16; Babylon falls, 17 and 18; Christ returns and reigns, 19 and 20; all things new, 21 and 22.">
+      <div style="--k:0"><p><i class="done">1</i></p><small>a vision of</small><b>Christ</b><cite>the Son of man among His churches</cite></div>
+      <div class="now" style="--k:1"><p><i class="here">2</i><i>3</i></p><small>letters to</small><b>the seven churches</b><cite>“I know thy works”</cite></div>
+      <div style="--k:2"><p><i>4</i><i>5</i></p><small>in heaven</small><b>the throne and the Lamb</b><cite>the Lamb alone is worthy</cite></div>
+      <div class="wide" style="--k:3"><p><i>6</i><i>7</i><i>8</i><i>9</i><i>10</i><i>11</i><i>12</i><i>13</i><i>14</i><i>15</i><i>16</i></p><small>judgments</small><b>seals, trumpets, bowls</b><cite>evil judged; God's people kept</cite></div>
+      <div style="--k:4"><p><i>17</i><i>18</i></p><small>the fall of</small><b>Babylon</b><cite>the proud world system falls</cite></div>
+      <div style="--k:5"><p><i>19</i><i>20</i></p><small>Christ</small><b>returns and reigns</b><cite>King of kings</cite></div>
+      <div class="end" style="--k:6"><p><i>21</i><i>22</i></p><small>God makes</small><b>all things new</b><cite>no more tears</cite></div>
+    </div>
+    <p class="note rise" style="--d:3">Before the throne room and the seals, Jesus deals with His own churches. Judgment and hope start at home: first He looks at us.</p>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise" style="--d:1">Every letter has the same shape</h2>
+    <div class="rv02-letter">
+      <p class="rv02-to">“Unto the angel of the church of <b>…</b> write”</p>
+      <dl>
+        <div class="who" style="--k:0"><dt>Christ</dt><dd>who He is to <em>this</em> church, taken from the vision in chapter 1</dd><cite></cite></div>
+        <div class="know" style="--k:1"><dt>I know</dt><dd>what He has seen: their works, their troubles, their town</dd><cite></cite></div>
+        <div class="good" style="--k:2"><dt>Praise</dt><dd>what they are doing right</dd><cite></cite></div>
+        <div class="bad" style="--k:3"><dt>Against thee</dt><dd>“I have somewhat against thee”: what is wrong</dd><cite></cite></div>
+        <div class="do" style="--k:4"><dt>Do this</dt><dd>a command: repent, remember, hold fast</dd><cite></cite></div>
+        <div class="win" style="--k:5"><dt>Overcometh</dt><dd>a promise “to him that overcometh”, and “He that hath an ear, let him hear”</dd><cite></cite></div>
+      </dl>
+    </div>
+    <p class="note step">Who is the overcomer? John tells us: <em>“Who is he that overcometh the world, but he that believeth that Jesus is the Son of God?”</em> (1 John 5:5). The promises belong to every true believer. They are not prizes for super-Christians.</p>
+  </div>
+</section>
+
+<section class="slide watch">
+  <div class="inner">
+    <h2 class="rise">Things to watch for</h2>
+    <p class="lede rise" style="--d:1">Keep these questions in the back of your mind as we read. We'll come back to every one of them at the end.</p>
+    <ol class="seeds">
+      <li class="step"><span class="topic">First love</span><span class="seed-q">What did Jesus have against Ephesus, and what did He tell them to do?</span></li>
+      <li class="step"><span class="topic">Poor but rich</span><span class="seed-q">What did Jesus know about Smyrna, and what did He say about their poverty?</span></li>
+      <li class="step"><span class="topic">Faithful</span><span class="seed-q">What does Jesus promise the one who is faithful unto death?</span></li>
+      <li class="step"><span class="topic">Compromise</span><span class="seed-q">What did Jesus have against Pergamos and Thyatira?</span></li>
+      <li class="step"><span class="topic">A new name</span><span class="seed-q">What will Jesus give the overcomer in Pergamos?</span></li>
+      <li class="step"><span class="topic">Space to repent</span><span class="seed-q">What did Jesus give Jezebel before He judged her?</span></li>
+    </ol>
+  </div>
+</section>
+
+<section class="slide part">
+  <div class="inner">
+    <p class="part-n rise">Part one</p>
+    <h2 class="rise" style="--d:1">Ephesus: the church that lost its love</h2>
+    <p class="range rise" style="--d:2">Verses 1–7</p>
+    <div class="rule"></div>
+    <p class="hook rise" style="--d:4">Hard-working, sound in doctrine, tough on false teachers, and slowly going cold.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="1-3" data-hl="he that holdeth the seven stars in his right hand|I know thy works|hast tried them which say they are apostles, and are not|hast not fainted"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="2" data-hl="thou hast tried them which say they are apostles, and are not, and hast found them liars"></blockquote>
+    <h2 class="rise" style="--d:1">A church that did a lot right</h2>
+    <p class="note rise" style="--d:2">About forty years earlier, Paul had warned the Ephesian elders:</p>
+    <blockquote class="quote step"><p>“For I know this, that after my departing shall grievous wolves enter in among you, not sparing the flock.”</p><cite>Acts 20:29</cite></blockquote>
+    <p class="note step">They listened. They worked hard, they put up with a lot, they never quit, and they checked every preacher who came through town against the truth. Jesus notices every bit of it: <em>“I know thy works.”</em> Nothing you do for Him is wasted or unseen.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="4-7" data-hl="thou hast left thy first love|Remember therefore from whence thou art fallen, and repent, and do the first works|the Nicolaitanes|To him that overcometh will I give to eat of the tree of life"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <div class="split rv02-wide">
+      <div class="stage">
+        <svg class="rv02-mini" data-world viewBox="540 225 140 105" style="max-height:46vh" data-towns="Ephesus!, Smyrna, Pergamos, Thyatira, Sardis, Philadelphia, Laodicea" role="img" aria-label="The seven churches of Asia; Ephesus pulses."></svg>
+      </div>
+      <div class="rv02-letter">
+        <p class="rv02-to">To the angel of the church of <b>Ephesus</b><cite>2:1–7</cite></p>
+        <dl>
+          <div class="who" style="--k:0"><dt>Christ</dt><dd>holds the seven stars, walks among the seven golden candlesticks</dd><cite>1</cite></div>
+          <div class="know" style="--k:1"><dt>I know</dt><dd>thy works, thy labour, thy patience; tested false apostles</dd><cite>2–3</cite></div>
+          <div class="good" style="--k:2"><dt>Praise</dt><dd>they worked hard, never fainted, and hated the deeds of the Nicolaitanes</dd><cite>3, 6</cite></div>
+          <div class="bad" style="--k:3"><dt>Against thee</dt><dd><q>thou hast left thy first love</q></dd><cite>4</cite></div>
+          <div class="do" style="--k:4"><dt>Do this</dt><dd><q>Remember … and repent, and do the first works</q></dd><cite>5</cite></div>
+          <div class="win" style="--k:5"><dt>Overcometh</dt><dd><q>to eat of the tree of life, which is in the midst of the paradise of God</q></dd><cite>7</cite></div>
+        </dl>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="5" data-hl="Remember therefore from whence thou art fallen, and repent, and do the first works"></blockquote>
+    <h2 class="rise" style="--d:1">The way back to your first love</h2>
+    <div class="daybreak climb">
+      <div class="rise" style="--d:2"><i>Look back</i><b>Remember</b><p>Remember how it was when He first saved you: the gratitude, the hunger for His word, the joy.</p></div>
+      <div class="step"><i>Turn around</i><b>Repent</b><p>Call the coldness what it is. Tell Him. Turn back. Not more effort; a changed heart.</p></div>
+      <div class="step"><i>Start again</i><b>Do the first works</b><p>Do what you did then: pray, read, show up, tell somebody. Feelings follow feet.</p></div>
+    </div>
+    <p class="note step">You can be busy for God, right about everything, and still not love Him much. That drift is slow and quiet. The cure is not guilt. It is going back to the One who loved you first.</p>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="5" data-hl="will remove thy candlestick out of his place, except thou repent"></blockquote>
+    <h2 class="rise" style="--d:1">A lampstand can go dark</h2>
+    <svg class="rv01-lamps" viewBox="0 0 700 170" role="img" aria-label="Seven golden lampstands named for the seven churches, lit. On a step the first, Ephesus, goes dark and drops away.">
+      <g class="lamp gone" transform="translate(50 120)" style="--k:0"><circle class="halo" cx="0" cy="-84" r="19"/><path class="stand" d="M-18 0 H18 M0 0 V-52 M-20 -62 Q-20 -50 0 -50 Q20 -50 20 -62"/><path class="flame" d="M0 -96 C8 -84 10 -76 0 -68 C-10 -76 -8 -84 0 -96 Z"/><text x="0" y="32" text-anchor="middle">Ephesus</text></g>
+      <g class="lamp" transform="translate(150 120)" style="--k:1"><circle class="halo" cx="0" cy="-84" r="19"/><path class="stand" d="M-18 0 H18 M0 0 V-52 M-20 -62 Q-20 -50 0 -50 Q20 -50 20 -62"/><path class="flame" d="M0 -96 C8 -84 10 -76 0 -68 C-10 -76 -8 -84 0 -96 Z"/><text x="0" y="32" text-anchor="middle">Smyrna</text></g>
+      <g class="lamp" transform="translate(250 120)" style="--k:2"><circle class="halo" cx="0" cy="-84" r="19"/><path class="stand" d="M-18 0 H18 M0 0 V-52 M-20 -62 Q-20 -50 0 -50 Q20 -50 20 -62"/><path class="flame" d="M0 -96 C8 -84 10 -76 0 -68 C-10 -76 -8 -84 0 -96 Z"/><text x="0" y="32" text-anchor="middle">Pergamos</text></g>
+      <g class="lamp" transform="translate(350 120)" style="--k:3"><circle class="halo" cx="0" cy="-84" r="19"/><path class="stand" d="M-18 0 H18 M0 0 V-52 M-20 -62 Q-20 -50 0 -50 Q20 -50 20 -62"/><path class="flame" d="M0 -96 C8 -84 10 -76 0 -68 C-10 -76 -8 -84 0 -96 Z"/><text x="0" y="32" text-anchor="middle">Thyatira</text></g>
+      <g class="lamp" transform="translate(450 120)" style="--k:4"><circle class="halo" cx="0" cy="-84" r="19"/><path class="stand" d="M-18 0 H18 M0 0 V-52 M-20 -62 Q-20 -50 0 -50 Q20 -50 20 -62"/><path class="flame" d="M0 -96 C8 -84 10 -76 0 -68 C-10 -76 -8 -84 0 -96 Z"/><text x="0" y="32" text-anchor="middle">Sardis</text></g>
+      <g class="lamp" transform="translate(550 120)" style="--k:5"><circle class="halo" cx="0" cy="-84" r="19"/><path class="stand" d="M-18 0 H18 M0 0 V-52 M-20 -62 Q-20 -50 0 -50 Q20 -50 20 -62"/><path class="flame" d="M0 -96 C8 -84 10 -76 0 -68 C-10 -76 -8 -84 0 -96 Z"/><text x="0" y="32" text-anchor="middle">Philadelphia</text></g>
+      <g class="lamp" transform="translate(650 120)" style="--k:6"><circle class="halo" cx="0" cy="-84" r="19"/><path class="stand" d="M-18 0 H18 M0 0 V-52 M-20 -62 Q-20 -50 0 -50 Q20 -50 20 -62"/><path class="flame" d="M0 -96 C8 -84 10 -76 0 -68 C-10 -76 -8 -84 0 -96 Z"/><text x="0" y="32" text-anchor="middle">Laodicea</text></g>
+    </svg>
+    <p class="note step rv01-lamps-go">The lampstand is the church (1:20). Jesus is not threatening to take any believer's salvation: <em>“they shall never perish, neither shall any man pluck them out of my hand”</em> (John 10:28). He is warning that a church that stops loving stops shining, and He will not keep a dark lamp in its place.</p>
+    <p class="note step">Today Ephesus is a field of ruins. The same can happen to a man's witness. The fix is in the verse: <em>except thou repent</em>. The door back is open.</p>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise" style="--d:1">Nicolaitanes, and the tree of life</h2>
+    <p class="note rise" style="--d:2"><em>The Nicolaitanes</em>: nobody knows for sure who they were. Verses 14–15 set them right beside Balaam's teaching, so many think they taught that a believer could join in idol feasts and sexual sin and it wouldn't matter. Jesus <em>hates</em> their deeds. Notice: their deeds, not the people.</p>
+    <div class="pair">
+      <div class="scroll step"><p class="ref">Genesis 2:9</p><p class="kjv">… <mark>the tree of life also in the midst of the garden</mark>, and the tree of knowledge of good and evil.</p></div>
+      <div class="scroll step"><p class="ref">Revelation 22:2</p><p class="kjv">In the midst of the street of it, and on either side of the river, was there <mark>the tree of life</mark>, which bare twelve manner of fruits …</p></div>
+    </div>
+    <p class="note step">Man lost the tree of life in Eden because of sin. Jesus promises it back. The Bible starts in a garden and ends in a garden city, and the way back in is Him.</p>
+  </div>
+</section>
+
+<section class="slide part">
+  <div class="inner">
+    <p class="part-n rise">Part two</p>
+    <h2 class="rise" style="--d:1">Smyrna: poor, hunted, and rich</h2>
+    <p class="range rise" style="--d:2">Verses 8–11</p>
+    <div class="rule"></div>
+    <p class="hook rise" style="--d:4">The only letter so far with no rebuke at all, written to a church that was about to suffer.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="8-9" data-hl="the first and the last, which was dead, and is alive|I know thy works, and tribulation, and poverty, (but thou art rich)"></section>
+
+<section class="slide verse" data-v="10-11" data-hl="Fear none of those things which thou shalt suffer|the devil shall cast some of you into prison|be thou faithful unto death, and I will give thee a crown of life|shall not be hurt of the second death"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <div class="split rv02-wide">
+      <div class="stage">
+        <svg class="rv02-mini" data-world viewBox="540 225 140 105" style="max-height:46vh" data-towns="Ephesus, Smyrna!, Pergamos, Thyatira, Sardis, Philadelphia, Laodicea" role="img" aria-label="The seven churches of Asia; Smyrna pulses."></svg>
+      </div>
+      <div class="rv02-letter">
+        <p class="rv02-to">To the angel of the church in <b>Smyrna</b><cite>2:8–11</cite></p>
+        <dl>
+          <div class="who" style="--k:0"><dt>Christ</dt><dd><q>the first and the last, which was dead, and is alive</q></dd><cite>8</cite></div>
+          <div class="know" style="--k:1"><dt>I know</dt><dd>thy works, tribulation, and poverty; the lies told about you</dd><cite>9</cite></div>
+          <div class="good" style="--k:2"><dt>Praise</dt><dd><q>(but thou art rich)</q></dd><cite>9</cite></div>
+          <div class="bad none" style="--k:3"><dt>Against thee</dt><dd>nothing; not one word</dd><cite></cite></div>
+          <div class="do" style="--k:4"><dt>Do this</dt><dd><q>Fear none of those things … be thou faithful unto death</q></dd><cite>10</cite></div>
+          <div class="win" style="--k:5"><dt>Overcometh</dt><dd><q>a crown of life</q>; <q>shall not be hurt of the second death</q></dd><cite>10–11</cite></div>
+        </dl>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="9" data-hl="poverty, (but thou art rich)"></blockquote>
+    <h2 class="rise" style="--d:1">Poor, but rich</h2>
+    <div class="columns">
+      <div class="col law step">
+        <p class="who">What the city saw</p>
+        <h3>Poverty</h3>
+        <p>The word means <em>dirt poor</em>, nothing at all. Christians who wouldn't join the guild feasts or honour Caesar lost work. Lies were told about them.</p>
+      </div>
+      <div class="col grace step">
+        <p class="who">What Jesus saw</p>
+        <h3>Rich</h3>
+        <p>Forgiven, loved, with a crown waiting and a Saviour who had been dead and is alive. Rich where it counts.</p>
+      </div>
+    </div>
+    <p class="note step">Some of you are starting over with nothing: no money, no car, a record. Jesus doesn't measure you by your bank account or your past. If you belong to Him, you are a rich man today.</p>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="10" data-hl="be thou faithful unto death, and I will give thee a crown of life"></blockquote>
+    <h2 class="rise" style="--d:1">Faithful unto death</h2>
+    <p class="note rise" style="--d:2">Jesus doesn't promise them a way out. He promises to be with them through it. <em>Ten days</em>: a short, limited time. The devil can throw them in prison, but God sets how long. The <em>crown</em> is the wreath given to the winner of a race.</p>
+    <blockquote class="quote step"><p>“Blessed is the man that endureth temptation: for when he is tried, he shall receive the crown of life, which the Lord hath promised to them that love him.”</p><cite>James 1:12</cite></blockquote>
+    <p class="note step">About AD 155, Polycarp, the old pastor of Smyrna, was told to curse Christ or burn. The story says he answered: “Eighty and six years have I served Him, and He never did me any wrong. How then can I blaspheme my King and my Saviour?” He was faithful unto death.</p>
+    <p class="note step">The <em>second death</em> is the lake of fire (20:14). A man who belongs to Jesus may die once. He will never die that death.</p>
+  </div>
+</section>
+
+<section class="slide part">
+  <div class="inner">
+    <p class="part-n rise">Part three</p>
+    <h2 class="rise" style="--d:1">Pergamos: where Satan's seat is</h2>
+    <p class="range rise" style="--d:2">Verses 12–17</p>
+    <div class="rule"></div>
+    <p class="hook rise" style="--d:4">Brave under fire, but letting the enemy in through the side door.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="12-13" data-hl="the sharp sword with two edges|where Satan’s seat is|thou holdest fast my name|Antipas was my faithful martyr"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="13" data-hl="I know thy works, and where thou dwellest, even where Satan’s seat is"></blockquote>
+    <h2 class="rise" style="--d:1">“I know where thou dwellest”</h2>
+    <p class="note rise" style="--d:2"><em>Satan's seat</em> is his throne. Pergamos was the Roman capital of the region, with a huge altar to Zeus on its hill and temples where people bowed to the emperor. Many think one of these is what Jesus means. Either way, the town was a stronghold of the enemy.</p>
+    <p class="note step">They held on anyway. <em>Antipas</em>, a believer we know only from this verse, was killed for Jesus right there, and Jesus calls him <em>“my faithful martyr.”</em> Nobody remembers his killers. Jesus remembers his name.</p>
+    <p class="note step">You may live or work where Satan's seat is: the block you grew up on, a job site full of the old life, a cell block. Jesus knows exactly where you live. He doesn't tell them to move. He tells them to hold fast where they are.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="14-17" data-hl="the doctrine of Balaam|cast a stumblingblock before the children of Israel|Repent|the hidden manna|a white stone, and in the stone a new name written"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="14" data-hl="the doctrine of Balaam, who taught Balac to cast a stumblingblock before the children of Israel"></blockquote>
+    <h2 class="rise" style="--d:1">If he can't curse you, he'll invite you</h2>
+    <p class="note rise" style="--d:2">King Balac hired the prophet Balaam to curse Israel (Numbers 22–24). Every time Balaam opened his mouth, God turned it into a blessing. So Balaam gave the king another plan: invite Israel to the party, with idol feasts and Moabite women.</p>
+    <blockquote class="quote step"><p>“Behold, these caused the children of Israel, through the counsel of Balaam, to commit trespass against the LORD in the matter of Peor, and there was a plague among the congregation of the LORD.”</p><cite>Numbers 31:16</cite></blockquote>
+    <p class="note step">The enemy who can't knock you down with persecution will try to lure you with a party. For a man in recovery that sounds like: “Come on, one drink with the old crew won't hurt.” Pergamos stood up to the sword and fell to the invitation. Jesus says: <em>Repent</em>.</p>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <div class="split rv02-wide">
+      <div class="stage">
+        <svg class="rv02-mini" data-world viewBox="540 225 140 105" style="max-height:46vh" data-towns="Ephesus, Smyrna, Pergamos!, Thyatira, Sardis, Philadelphia, Laodicea" role="img" aria-label="The seven churches of Asia; Pergamos pulses."></svg>
+      </div>
+      <div class="rv02-letter">
+        <p class="rv02-to">To the angel of the church in <b>Pergamos</b><cite>2:12–17</cite></p>
+        <dl>
+          <div class="who" style="--k:0"><dt>Christ</dt><dd><q>he which hath the sharp sword with two edges</q></dd><cite>12</cite></div>
+          <div class="know" style="--k:1"><dt>I know</dt><dd><q>where thou dwellest, even where Satan's seat is</q></dd><cite>13</cite></div>
+          <div class="good" style="--k:2"><dt>Praise</dt><dd><q>thou holdest fast my name</q>, even when Antipas was killed</dd><cite>13</cite></div>
+          <div class="bad" style="--k:3"><dt>Against thee</dt><dd>some hold the doctrine of Balaam and of the Nicolaitanes</dd><cite>14–15</cite></div>
+          <div class="do" style="--k:4"><dt>Do this</dt><dd><q>Repent</q>, or He will fight them with the sword of His mouth</dd><cite>16</cite></div>
+          <div class="win" style="--k:5"><dt>Overcometh</dt><dd>the hidden manna, and a white stone with <q>a new name written</q></dd><cite>17</cite></div>
+        </dl>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="slide ex ex-name">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="17" data-hl="the hidden manna|a white stone, and in the stone a new name written, which no man knoweth saving he that receiveth it"></blockquote>
+    <h2 class="rise" style="--d:1">A new name for a man with a bad one</h2>
+    <div class="rename">
+      <span class="old rise" style="--d:2">junkie · inmate · loser · failure</span>
+      <span class="arrow step n2">→</span>
+      <span class="new step">a new name</span>
+      <span class="gloss step">written on a white stone, known only to Him and to you</span>
+    </div>
+    <p class="note step">Men in Pergamos were tempted to eat at idol feasts. Jesus offers better food: <em>hidden manna</em>, the bread from heaven. He is that bread (John 6:51). A <em>white stone</em> was used in courts to vote “not guilty,” and as a ticket into a feast; many teachers think Jesus means one or both.</p>
+    <p class="note step">God promised it long ago: <em>“thou shalt be called by a new name, which the mouth of the LORD shall name”</em> (Isaiah 62:2). Other people may still use your old name. Jesus doesn't.</p>
+  </div>
+</section>
+
+<section class="slide part">
+  <div class="inner">
+    <p class="part-n rise">Part four</p>
+    <h2 class="rise" style="--d:1">Thyatira: growing, and tolerating Jezebel</h2>
+    <p class="range rise" style="--d:2">Verses 18–29</p>
+    <div class="rule"></div>
+    <p class="hook rise" style="--d:4">The longest letter goes to the smallest town, and it ends with the morning star.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="18-19" data-hl="the Son of God, who hath his eyes like unto a flame of fire|charity, and service, and faith, and thy patience|the last to be more than the first"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="19" data-hl="the last to be more than the first"></blockquote>
+    <h2 class="rise" style="--d:1">A church that was growing</h2>
+    <p class="note rise" style="--d:2">Ephesus had cooled off. Thyatira was going the other way: more love, more service, more faith now than at the start. Jesus sees it: <em>the last to be more than the first</em>.</p>
+    <p class="note step">Thyatira was a town of trade guilds. To work as a dyer, a potter or a bronze smith, you joined a guild, and guild meetings meant meals offered to idols and often drunkenness and worse. Saying no could cost you your trade.</p>
+    <p class="note step">So Jesus comes to them as <em>the Son of God</em> with eyes like fire and <em>feet like fine brass</em>: the town's bronze workers made polished brass, and His is purer than theirs. And He sees through every excuse.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="20-23" data-hl="thou sufferest that woman Jezebel|I gave her space to repent of her fornication; and she repented not|I am he which searcheth the reins and hearts"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <div class="split">
+      <div class="stage">
+        <svg class="clock" viewBox="0 -44 320 364" role="img" aria-label="A clock hand sweeps toward the top, the hour of judgment, and stops short: space to repent.">
+          <circle class="clock-face" cx="160" cy="160" r="140"/>
+          <g>
+            <line class="clock-tick" x1="160" y1="38" x2="160" y2="58" transform="rotate(30 160 160)"/>
+            <line class="clock-tick" x1="160" y1="38" x2="160" y2="58" transform="rotate(60 160 160)"/>
+            <line class="clock-tick" x1="160" y1="38" x2="160" y2="58" transform="rotate(90 160 160)"/>
+            <line class="clock-tick" x1="160" y1="38" x2="160" y2="58" transform="rotate(120 160 160)"/>
+            <line class="clock-tick" x1="160" y1="38" x2="160" y2="58" transform="rotate(150 160 160)"/>
+            <line class="clock-tick" x1="160" y1="38" x2="160" y2="58" transform="rotate(180 160 160)"/>
+            <line class="clock-tick" x1="160" y1="38" x2="160" y2="58" transform="rotate(210 160 160)"/>
+            <line class="clock-tick" x1="160" y1="38" x2="160" y2="58" transform="rotate(240 160 160)"/>
+            <line class="clock-tick" x1="160" y1="38" x2="160" y2="58" transform="rotate(270 160 160)"/>
+            <line class="clock-tick" x1="160" y1="38" x2="160" y2="58" transform="rotate(300 160 160)"/>
+            <line class="clock-tick" x1="160" y1="38" x2="160" y2="58" transform="rotate(330 160 160)"/>
+          </g>
+          <circle class="clock-hour" cx="160" cy="44" r="12"/>
+          <text x="160" y="-14" text-anchor="middle" font-size="20" font-weight="700" style="fill:var(--danger)">judgment</text>
+          <line class="clock-hand" x1="160" y1="160" x2="160" y2="68"/>
+          <circle cx="160" cy="160" r="10" style="fill:var(--ink)"/>
+          <text x="160" y="232" text-anchor="middle" font-size="22" font-style="italic" style="fill:var(--ink-soft);font-family:var(--serif)">space to repent</text>
+        </svg>
+      </div>
+      <div>
+        <h2 class="rise" style="--d:1">Jezebel, and space to repent</h2>
+        <p class="note rise" style="--d:2">The first Jezebel was the queen who led Israel into Baal worship: <em>“none like unto Ahab, which did sell himself to work wickedness in the sight of the LORD, whom Jezebel his wife stirred up”</em> (1 Kings 21:25). This one called herself a prophetess and taught believers that idol feasts and sex outside marriage were fine.</p>
+        <p class="note step">Even for her, Jesus held back the clock: <em>“I gave her space to repent.”</em> He is <em>“not willing that any should perish, but that all should come to repentance”</em> (2 Peter 3:9). If you are still breathing, you still have space. Don't waste it, as she did.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="slide verse" data-v="24-25" data-hl="I will put upon you none other burden|that which ye have already hold fast till I come"></section>
+
+<section class="slide verse" data-v="26-29" data-hl="to him will I give power over the nations|I will give him the morning star"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <div class="split rv02-wide">
+      <div class="stage">
+        <svg class="rv02-mini" data-world viewBox="540 225 140 105" style="max-height:46vh" data-towns="Ephesus, Smyrna, Pergamos, Thyatira!, Sardis, Philadelphia, Laodicea" role="img" aria-label="The seven churches of Asia; Thyatira pulses."></svg>
+      </div>
+      <div class="rv02-letter">
+        <p class="rv02-to">To the angel of the church in <b>Thyatira</b><cite>2:18–29</cite></p>
+        <dl>
+          <div class="who" style="--k:0"><dt>Christ</dt><dd><q>the Son of God</q>, eyes like a flame of fire, feet like fine brass</dd><cite>18</cite></div>
+          <div class="know" style="--k:1"><dt>I know</dt><dd>thy charity, service, faith and patience</dd><cite>19</cite></div>
+          <div class="good" style="--k:2"><dt>Praise</dt><dd><q>the last to be more than the first</q>: growing</dd><cite>19</cite></div>
+          <div class="bad" style="--k:3"><dt>Against thee</dt><dd><q>thou sufferest that woman Jezebel</q></dd><cite>20</cite></div>
+          <div class="do" style="--k:4"><dt>Do this</dt><dd><q>that which ye have already hold fast till I come</q></dd><cite>25</cite></div>
+          <div class="win" style="--k:5"><dt>Overcometh</dt><dd>power over the nations, and <q>the morning star</q></dd><cite>26–28</cite></div>
+        </dl>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <div class="split">
+      <div class="stage">
+        <svg class="rv02-star" viewBox="0 0 400 300" role="img" aria-label="A dark night sky over dark hills. A bright star rises above the horizon and the first light of dawn glows beneath it.">
+          <defs><linearGradient id="rv02-dawn" x1="0" y1="1" x2="0" y2="0"><stop offset="0" stop-opacity=".9" style="stop-color:var(--warm)"/><stop offset=".55" stop-opacity=".25" style="stop-color:var(--warm)"/><stop offset="1" stop-opacity="0" style="stop-color:var(--warm)"/></linearGradient></defs>
+          <rect class="sky" x="0" y="0" width="400" height="300" rx="16"/>
+          <rect class="dawn" x="0" y="120" width="400" height="140"/>
+          <circle class="dot" cx="40" cy="40" r="1.6"/><circle class="dot" cx="120" cy="70" r="1.2"/><circle class="dot" cx="330" cy="36" r="1.5"/><circle class="dot" cx="270" cy="90" r="1.1"/><circle class="dot" cx="70" cy="130" r="1.2"/><circle class="dot" cx="360" cy="140" r="1.3"/>
+          <g class="rise-star">
+            <circle class="halo" cx="230" cy="110" r="30"/>
+            <path class="spark" d="M230 72 L236 104 L268 110 L236 116 L230 148 L224 116 L192 110 L224 104 Z"/>
+            <circle class="core" cx="230" cy="110" r="8"/>
+          </g>
+          <path class="land" d="M0 230 Q60 205 120 222 T240 214 T400 226 V300 H0 Z"/>
+          <text x="200" y="276" text-anchor="middle">“the bright and morning star”</text>
+        </svg>
+      </div>
+      <div>
+        <blockquote class="quote rise" data-q="28"></blockquote>
+        <h2 class="rise" style="--d:1">The morning star</h2>
+        <p class="note rise" style="--d:2">The morning star is the bright one you see in the last, darkest part of the night. When it shows up, dawn is coming. At the end of the book, Jesus tells us who it is: <em>“I am the root and the offspring of David, and the bright and morning star”</em> (22:16).</p>
+        <p class="note step">The prize is not a thing. It is Jesus Himself. And to the faithful who refused Jezebel, He says: <em>“I will put upon you none other burden”</em>. No new rules. Just <em>hold fast till I come</em>.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise" style="--d:1">Four churches at a glance</h2>
+    <div class="sort">
+      <div class="rise" style="--d:1"><h3>Ephesus</h3><div class="vs"><b>1–7</b></div><p><em>Right doctrine, no love.</em> Remember, repent, do the first works.</p></div>
+      <div class="rise" style="--d:2"><h3>Smyrna</h3><div class="vs"><b>8–11</b></div><p><em>Poor, hunted, rich.</em> No rebuke. Be faithful unto death.</p></div>
+      <div class="rise" style="--d:3"><h3>Pergamos</h3><div class="vs"><b>12–17</b></div><p><em>Brave, but compromising.</em> Repent. A new name.</p></div>
+      <div class="rise" style="--d:4"><h3>Thyatira</h3><div class="vs"><b>18–29</b></div><p><em>Growing, but tolerating sin.</em> Hold fast till I come.</p></div>
+    </div>
+    <p class="note step">Which one sounds like you right now? Every letter ends the same way: <em>“He that hath an ear, let him hear what the Spirit saith unto the churches.”</em> All of them are for all of us.</p>
+    <p class="note step">Something to do today: pick the letter that hits closest, and do its command today. If you've gone cold, do one “first work”: call the man who led you to Jesus, or read the chapter you read when you first believed.</p>
+  </div>
+</section>
+
+<section class="slide remember">
+  <div class="inner">
+    <h2 class="rise">Points to remember</h2>
+    <ol class="seeds">
+      <li class="step"><span class="topic">First love</span><span class="seed-q">“Remember therefore from whence thou art fallen, and repent, and do the first works” <cite>2:5</cite></span><span class="take">Busy and right isn't enough. Go back to loving Jesus the way you did at first.</span></li>
+      <li class="step"><span class="topic">Poor but rich</span><span class="seed-q">“I know thy works, and tribulation, and poverty, (but thou art rich)” <cite>2:9</cite></span><span class="take">Jesus sees your troubles, and in Him you are rich.</span></li>
+      <li class="step"><span class="topic">Faithful</span><span class="seed-q">“be thou faithful unto death, and I will give thee a crown of life” <cite>2:10</cite></span><span class="take">Suffering has a limit; the crown of life does not.</span></li>
+      <li class="step"><span class="topic">Compromise</span><span class="seed-q">“thou hast there them that hold the doctrine of Balaam” <cite>2:14</cite></span><span class="take">What can't curse you will try to invite you. Don't make room for sin.</span></li>
+      <li class="step"><span class="topic">A new name</span><span class="seed-q">“a white stone, and in the stone a new name written” <cite>2:17</cite></span><span class="take">Jesus gives a new name to men with a bad one.</span></li>
+      <li class="step"><span class="topic">Space to repent</span><span class="seed-q">“I gave her space to repent” <cite>2:21</cite></span><span class="take">God is patient, even with the worst. Use the space He gives.</span></li>
+    </ol>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 1 of 6</p>
+      <span class="topic">First love</span>
+      <h2>What did Jesus have against Ephesus, and what did He tell them to do?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="4"></blockquote>
+      <blockquote class="quote step" data-q="5"></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>They had left their first love. He told them to remember where they had fallen from, repent, and do the first works again.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 2 of 6</p>
+      <span class="topic">Poor but rich</span>
+      <h2>What did Jesus know about Smyrna, and what did He say about their poverty?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="9"></blockquote>
+      <blockquote class="quote step"><p>“Let your conversation be without covetousness; and be content with such things as ye have: for he hath said, I will never leave thee, nor forsake thee.”</p><cite>Hebrews 13:5</cite></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>He knew their works, their troubles, their poverty and the lies told about them. And He said, “but thou art rich”: rich in Him.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 3 of 6</p>
+      <span class="topic">Faithful</span>
+      <h2>What does Jesus promise the one who is faithful unto death?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="10"></blockquote>
+      <blockquote class="quote step" data-q="11"></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>A crown of life. And the overcomer will not be hurt of the second death. Death can take his body; it cannot touch his life with God.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 4 of 6</p>
+      <span class="topic">Compromise</span>
+      <h2>What did Jesus have against Pergamos and Thyatira?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="14"></blockquote>
+      <blockquote class="quote step" data-q="20"></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>Both let false teaching stay: Balaam's doctrine in Pergamos and Jezebel in Thyatira, leading believers into idol feasts and sexual sin.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 5 of 6</p>
+      <span class="topic">A new name</span>
+      <h2>What will Jesus give the overcomer in Pergamos?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="17"></blockquote>
+      <blockquote class="quote step"><p>“And the Gentiles shall see thy righteousness, and all kings thy glory: and thou shalt be called by a new name, which the mouth of the LORD shall name.”</p><cite>Isaiah 62:2</cite></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>The hidden manna, and a white stone with a new name written on it, known only to the one who receives it.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 6 of 6</p>
+      <span class="topic">Space to repent</span>
+      <h2>What did Jesus give Jezebel before He judged her?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="21"></blockquote>
+      <blockquote class="quote step"><p>“The Lord is not slack concerning his promise, as some men count slackness; but is longsuffering to us-ward, not willing that any should perish, but that all should come to repentance.”</p><cite>2 Peter 3:9</cite></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>Space to repent: time to turn around. She refused. God's patience is real, and so is the end of it.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide prayer">
+  <div class="inner">
+    <div class="emblem rise"></div>
+    <h2 class="rise" style="--d:1">Prayer requests</h2>
+    <p class="ask-line rise" style="--d:2">What can we pray about for you today?</p>
+    <blockquote class="quote rise" style="--d:4"><p>“Let your conversation be without covetousness; and be content with such things as ye have: for he hath said, I will never leave thee, nor forsake thee.”</p><cite>Hebrews 13:5</cite></blockquote>
+  </div>
+</section>
+
+</main>
+
+<script>
+// King James Version, Revelation chapter 2
+const V = {
+  1: "Unto the angel of the church of Ephesus write; These things saith he that holdeth the seven stars in his right hand, who walketh in the midst of the seven golden candlesticks;",
+  2: "I know thy works, and thy labour, and thy patience, and how thou canst not bear them which are evil: and thou hast tried them which say they are apostles, and are not, and hast found them liars:",
+  3: "And hast borne, and hast patience, and for my name’s sake hast laboured, and hast not fainted.",
+  4: "Nevertheless I have somewhat against thee, because thou hast left thy first love.",
+  5: "Remember therefore from whence thou art fallen, and repent, and do the first works; or else I will come unto thee quickly, and will remove thy candlestick out of his place, except thou repent.",
+  6: "But this thou hast, that thou hatest the deeds of the Nicolaitanes, which I also hate.",
+  7: "He that hath an ear, let him hear what the Spirit saith unto the churches; To him that overcometh will I give to eat of the tree of life, which is in the midst of the paradise of God.",
+  8: "And unto the angel of the church in Smyrna write; These things saith the first and the last, which was dead, and is alive;",
+  9: "I know thy works, and tribulation, and poverty, (but thou art rich) and I know the blasphemy of them which say they are Jews, and are not, but are the synagogue of Satan.",
+  10: "Fear none of those things which thou shalt suffer: behold, the devil shall cast some of you into prison, that ye may be tried; and ye shall have tribulation ten days: be thou faithful unto death, and I will give thee a crown of life.",
+  11: "He that hath an ear, let him hear what the Spirit saith unto the churches; He that overcometh shall not be hurt of the second death.",
+  12: "And to the angel of the church in Pergamos write; These things saith he which hath the sharp sword with two edges;",
+  13: "I know thy works, and where thou dwellest, even where Satan’s seat is: and thou holdest fast my name, and hast not denied my faith, even in those days wherein Antipas was my faithful martyr, who was slain among you, where Satan dwelleth.",
+  14: "But I have a few things against thee, because thou hast there them that hold the doctrine of Balaam, who taught Balac to cast a stumblingblock before the children of Israel, to eat things sacrificed unto idols, and to commit fornication.",
+  15: "So hast thou also them that hold the doctrine of the Nicolaitanes, which thing I hate.",
+  16: "Repent; or else I will come unto thee quickly, and will fight against them with the sword of my mouth.",
+  17: "He that hath an ear, let him hear what the Spirit saith unto the churches; To him that overcometh will I give to eat of the hidden manna, and will give him a white stone, and in the stone a new name written, which no man knoweth saving he that receiveth it.",
+  18: "And unto the angel of the church in Thyatira write; These things saith the Son of God, who hath his eyes like unto a flame of fire, and his feet are like fine brass;",
+  19: "I know thy works, and charity, and service, and faith, and thy patience, and thy works; and the last to be more than the first.",
+  20: "Notwithstanding I have a few things against thee, because thou sufferest that woman Jezebel, which calleth herself a prophetess, to teach and to seduce my servants to commit fornication, and to eat things sacrificed unto idols.",
+  21: "And I gave her space to repent of her fornication; and she repented not.",
+  22: "Behold, I will cast her into a bed, and them that commit adultery with her into great tribulation, except they repent of their deeds.",
+  23: "And I will kill her children with death; and all the churches shall know that I am he which searcheth the reins and hearts: and I will give unto every one of you according to your works.",
+  24: "But unto you I say, and unto the rest in Thyatira, as many as have not this doctrine, and which have not known the depths of Satan, as they speak; I will put upon you none other burden.",
+  25: "But that which ye have already hold fast till I come.",
+  26: "And he that overcometh, and keepeth my works unto the end, to him will I give power over the nations:",
+  27: "And he shall rule them with a rod of iron; as the vessels of a potter shall they be broken to shivers: even as I received of my Father.",
+  28: "And I will give him the morning star.",
+  29: "He that hath an ear, let him hear what the Spirit saith unto the churches."
+};
+const BOOK = "Revelation 2";
+</script>
+<script src="../assets/deck.js"></script>
+</body>
+</html>
