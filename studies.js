@@ -15605,6 +15605,139 @@ window.STUDIES = [
     }
   },
   {
+    "id": "1-peter-01",
+    "type": "chapter",
+    "book": "1 Peter",
+    "ch": 1,
+    "date": "2026-10-31",
+    "title": "1 Peter 1",
+    "sub": "A living hope for strangers",
+    "about": "The man who denied Jesus three times writes to believers suffering for Him, and starts with a hope that cannot die, an inheritance that cannot spoil, and a price that was already paid.",
+    "tags": [
+      "Hope",
+      "Security",
+      "Trials",
+      "Holiness",
+      "Redemption",
+      "New birth"
+    ],
+    "url": "studies/1-peter-01.html",
+    "overview": {
+      "where": "Written from “Babylon” (Rome) to believers scattered across what is now Turkey",
+      "when": "About AD 62 to 64, just before Nero turned on the Christians",
+      "people": [
+        "simon-peter",
+        "jesus",
+        "holy-spirit"
+      ],
+      "places": [
+        "pontus",
+        "galatia",
+        "cappadocia",
+        "asia",
+        "bithynia"
+      ],
+      "story": [
+        "Peter, an apostle, writes to scattered strangers who are chosen by the Father, set apart by the Spirit, and covered by the blood of Jesus (1–2).",
+        "God has begotten us again to a living hope by the resurrection. The inheritance is kept in heaven, and the believers are kept by God's power (3–5).",
+        "Their faith is tried by fire like gold, and it ends in praise and joy unspeakable. Prophets and angels long to look into this salvation (6–12).",
+        "Be ye holy, for He is holy. Live as obedient children in awe of the Father, not following the old lusts (13–17).",
+        "You were redeemed from the empty way of life handed down from your fathers, not with silver and gold, but with the precious blood of Christ, the spotless Lamb (18–21).",
+        "Love one another fervently. You were born again of incorruptible seed, the word of God, which lives and abides for ever (22–25)."
+      ],
+      "key": {
+        "ref": "1 Peter 1:3",
+        "text": "Blessed be the God and Father of our Lord Jesus Christ, which according to his abundant mercy hath begotten us again unto a lively hope by the resurrection of Jesus Christ from the dead"
+      },
+      "big": "A believer's hope is alive because Jesus is alive. God keeps him, refines his faith like gold, and has already paid the price that frees him from the empty way of life he inherited."
+    }
+  },
+  {
+    "id": "1-peter-02",
+    "type": "chapter",
+    "book": "1 Peter",
+    "ch": 2,
+    "date": "2026-10-31",
+    "title": "1 Peter 2",
+    "sub": "Living stones and a Shepherd",
+    "about": "Once not a people, now the people of God: Peter tells scattered strangers who they are, how to live among people who are watching, and who is looking after their souls.",
+    "tags": [
+      "God's Word",
+      "The church",
+      "Identity",
+      "Temptation",
+      "Suffering",
+      "The cross"
+    ],
+    "url": "studies/1-peter-02.html",
+    "overview": {
+      "where": "Believers scattered across Asia Minor, living among unbelieving neighbours",
+      "when": "About AD 62 to 64, under the emperor Nero",
+      "people": [
+        "jesus"
+      ],
+      "places": [
+        "sion"
+      ],
+      "story": [
+        "Lay aside malice, guile and envy. Like newborn babes, desire the sincere milk of the word, that ye may grow (1–3).",
+        "Christ is the living stone, rejected by men and chosen by God. Believers are living stones built into a spiritual house and a holy priesthood (4–8).",
+        "Chosen generation, royal priesthood, holy nation: once not a people, now the people of God; once without mercy, now with it (9–10).",
+        "Strangers and pilgrims: abstain from fleshly lusts, live honestly among the Gentiles, submit to rulers, and take unfair treatment as before God (11–20).",
+        "Christ suffered for us, leaving an example. He bore our sins on the tree, and by His stripes we were healed (21–24).",
+        "We were as sheep going astray, but are now returned to the Shepherd and Bishop of our souls (25)."
+      ],
+      "key": {
+        "ref": "1 Peter 2:10",
+        "text": "Which in time past were not a people, but are now the people of God: which had not obtained mercy, but now have obtained mercy."
+      },
+      "big": "A believer belongs to God: a living stone in His house, one of His own people. Christ carried his sins and is his Shepherd, so he can live honestly among people who are watching."
+    }
+  },
+  {
+    "id": "1-peter-03",
+    "type": "chapter",
+    "book": "1 Peter",
+    "ch": 3,
+    "date": "2026-10-31",
+    "title": "1 Peter 3",
+    "sub": "At home, at work, under pressure",
+    "about": "Husbands and wives, answering insults with a blessing, being ready to say why you have hope, and the Christ who died once, the just for the unjust.",
+    "tags": [
+      "Marriage",
+      "Husbands",
+      "Blessing",
+      "Witnessing",
+      "The cross",
+      "Baptism"
+    ],
+    "url": "studies/1-peter-03.html",
+    "overview": {
+      "where": "Believers' homes and workplaces across Asia Minor",
+      "when": "About AD 62 to 64, shortly before Nero turned on the Christians",
+      "people": [
+        "jesus",
+        "noah",
+        "sarah",
+        "abraham"
+      ],
+      "places": [],
+      "story": [
+        "Wives, let your life win a husband who will not hear the word. Your worth is the hidden man of the heart, a meek and quiet spirit (1–6).",
+        "Husbands, dwell with your wives according to knowledge, giving honour as to fellow heirs of grace, that your prayers be not hindered (7).",
+        "Be of one mind, compassionate and kind. Do not return evil for evil or railing for railing, but blessing (8–12).",
+        "If you suffer for doing right, do not be afraid. Be ready always to give a reason of the hope that is in you, with meekness and fear (13–17).",
+        "Christ suffered once for sins, the just for the unjust, to bring us to God. He preached to the spirits in prison in Noah's day: a hard text on which teachers differ (18–20).",
+        "Eight were saved through the water in the ark. Baptism is the picture and the pledge of a good conscience; the saving is by the resurrection of Jesus Christ, now at God's right hand (21–22)."
+      ],
+      "key": {
+        "ref": "1 Peter 3:18",
+        "text": "For Christ also hath once suffered for sins, the just for the unjust, that he might bring us to God, being put to death in the flesh, but quickened by the Spirit"
+      },
+      "big": "Christ died once, the just for the unjust, to bring us to the Father. That is why a man can answer evil with blessing, love his wife as an equal heir of grace, and give a gentle reason for his hope."
+    }
+  },
+  {
     "id": "1-peter-04",
     "type": "chapter",
     "book": "1 Peter",
@@ -15685,6 +15818,138 @@ window.STUDIES = [
         "text": "Casting all your care upon him; for he careth for you."
       },
       "big": "You do not have to carry it alone. Humble yourself, cast every care on the God who cares for you, stay with the flock so the lion cannot pick you off, and trust that after a while the God of all grace will settle you."
+    }
+  },
+  {
+    "id": "2-peter-01",
+    "type": "chapter",
+    "book": "2 Peter",
+    "ch": 1,
+    "date": "2026-10-31",
+    "title": "2 Peter 1",
+    "sub": "Everything you need, and a ladder to climb",
+    "about": "Peter, old and near the end, tells new believers what God has already given them, how to grow, and why the Word can be trusted.",
+    "tags": [
+      "Grace",
+      "Growth",
+      "Assurance",
+      "Forgiveness",
+      "Scripture",
+      "Self-control"
+    ],
+    "url": "studies/2-peter-01.html",
+    "overview": {
+      "where": "Rome, most likely, and the scattered churches of what is now Turkey",
+      "when": "About AD 64 to 68, in the last years of Nero, shortly before Peter's death",
+      "people": [
+        "simon-peter",
+        "jesus",
+        "christ",
+        "holy-spirit",
+        "the-father"
+      ],
+      "places": [
+        "holy-mount"
+      ],
+      "story": [
+        "Simon Peter writes to believers who share his “like precious faith.” God's power has already given us all things that pertain to life and godliness, and we have escaped the corruption of lust (1–4).",
+        "Add to your faith: virtue, knowledge, temperance, patience, godliness, brotherly kindness and charity. A man who lacks these has forgotten he was purged from his old sins (5–9).",
+        "Give diligence to make your calling and election sure, and an entrance will be given abundantly into the everlasting kingdom (10–11).",
+        "Peter knows his tabernacle will soon come down, so he reminds them now (12–15).",
+        "He was an eyewitness of Christ's majesty on the holy mount, and the Scriptures are a more sure word, given by holy men moved by the Holy Ghost (16–21)."
+      ],
+      "key": {
+        "ref": "2 Peter 1:3",
+        "text": "According as his divine power hath given unto us all things that pertain unto life and godliness, through the knowledge of him that hath called us to glory and virtue:"
+      },
+      "big": "God has already given every believer all that he needs for life and godliness. Faith is the ground floor, and a saved man grows step by step up to love, remembering that he was purged from his old sins."
+    }
+  },
+  {
+    "id": "2-peter-02",
+    "type": "chapter",
+    "book": "2 Peter",
+    "ch": 2,
+    "date": "2026-10-31",
+    "title": "2 Peter 2",
+    "sub": "Promised freedom, delivered chains",
+    "about": "Peter warns of false teachers who sell religion for money and promise liberty while enslaved themselves, and of a God who knows how to deliver His own.",
+    "tags": [
+      "False teachers",
+      "Temptation",
+      "Bondage",
+      "Deliverance",
+      "Judgment",
+      "Greed"
+    ],
+    "url": "studies/2-peter-02.html",
+    "overview": {
+      "where": "The scattered churches of what is now Turkey, with Old Testament scenes: the flood, Sodom and Balaam's road",
+      "when": "About AD 64 to 68, in Peter's last letter",
+      "people": [
+        "noah",
+        "lot",
+        "balaam",
+        "bosor",
+        "angels",
+        "jesus"
+      ],
+      "places": [
+        "sodom-and-gomorrah"
+      ],
+      "story": [
+        "False teachers will slip in, denying the Lord that bought them. They use feigned words to make merchandise of people (1–3).",
+        "God spared not the angels that sinned, the old world, or Sodom and Gomorrha, but saved Noah and just Lot: the Lord knoweth how to deliver the godly out of temptations (4–9).",
+        "These men are presumptuous and selfwilled, loving the wages of unrighteousness like Balaam, wells without water (10–17).",
+        "They promise liberty but are themselves the servants of corruption: of whom a man is overcome, of the same is he brought in bondage (18–19).",
+        "Going back to the old life is worse than never leaving it: the dog to his vomit and the sow to the mire. These men were washed outside and never changed within (20–22)."
+      ],
+      "key": {
+        "ref": "2 Peter 2:9",
+        "text": "The Lord knoweth how to deliver the godly out of temptations, and to reserve the unjust unto the day of judgment to be punished:"
+      },
+      "big": "Smooth teachers sell freedom and deliver chains, but the Lord knows how to deliver His own out of temptation. Christ died for all, and a son who slips gets up and goes home to a Father who runs to meet him."
+    }
+  },
+  {
+    "id": "2-peter-03",
+    "type": "chapter",
+    "book": "2 Peter",
+    "ch": 3,
+    "date": "2026-10-31",
+    "title": "2 Peter 3",
+    "sub": "Why is the Lord taking so long?",
+    "about": "The last chapter of Peter's last letter: the scoffers, God's patience, the day that comes like a thief, a new earth, and a call to keep growing.",
+    "tags": [
+      "Christ's return",
+      "God's patience",
+      "Repentance",
+      "Hope",
+      "Scripture",
+      "Growth"
+    ],
+    "url": "studies/2-peter-03.html",
+    "overview": {
+      "where": "The scattered churches of what is now Turkey, from Peter in Rome",
+      "when": "About AD 64 to 68, shortly before Peter's death",
+      "people": [
+        "jesus",
+        "paul",
+        "simon-peter"
+      ],
+      "places": [],
+      "story": [
+        "Peter writes his second letter to stir up their pure minds and to remind them of the words of the prophets and apostles (1–2).",
+        "Scoffers will come, walking after their own lusts and asking, “Where is the promise of his coming?” The world has already been judged once by water (3–7).",
+        "One day is with the Lord as a thousand years. He is longsuffering, not willing that any should perish, but that all should come to repentance (8–9).",
+        "The day of the Lord will come as a thief in the night. So what manner of persons ought we to be? We look for new heavens and a new earth, wherein dwelleth righteousness (10–14).",
+        "Paul's letters are sometimes hard to understand, and men twist them. Beware, and grow in grace and in the knowledge of our Lord and Saviour Jesus Christ (15–18)."
+      ],
+      "key": {
+        "ref": "2 Peter 3:9",
+        "text": "The Lord is not slack concerning his promise, as some men count slackness; but is longsuffering to us-ward, not willing that any should perish, but that all should come to repentance."
+      },
+      "big": "The Lord's delay is mercy: He wants all to come to repentance, and every day is another day to turn. He is coming, so live ready, hold to the hope of a new earth, and keep growing in grace."
     }
   },
   {

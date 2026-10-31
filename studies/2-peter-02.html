@@ -1,0 +1,570 @@
+<!doctype html>
+<html lang="en" data-theme="night">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>2 Peter 2</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="../assets/fonts.css">
+<link rel="stylesheet" href="../assets/deck.css">
+<link rel="stylesheet" href="../assets/themes.css">
+<style>
+/* p201-where: where we are in 2 Peter (a deck.css candidate; the 2 Peter 2 and 3 studies carry the same block).
+   Three cards, one per chapter (.p201-ch: .n, b, q, cite; --k). The chapter we are in is .now (and pulses). */
+.p201-where { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin: .5em 0 1em; }
+.p201-ch { --c: var(--accent); padding: .55em .75em .65em; border-radius: 10px; border: 1.5px solid color-mix(in srgb, var(--c) 55%, transparent);
+  background: color-mix(in srgb, var(--c) 6%, transparent);
+  opacity: 0; transform: translateY(10px); transition: opacity .6s ease, transform .6s ease; transition-delay: calc(var(--k, 0) * 300ms + 300ms); }
+.slide.active .p201-ch { opacity: 1; transform: none; }
+.p201-ch .n { display: grid; place-items: center; width: 2.1rem; height: 2.1rem; margin-bottom: .35em; border-radius: 50%; border: 2px solid var(--c);
+  font: 700 1.05rem var(--sans); color: var(--c); }
+.p201-ch b { display: block; font: 600 clamp(1.05rem, .88rem + .7vw, 1.5rem)/1.15 var(--serif); color: var(--ink); }
+.p201-ch q { display: block; margin-top: .3em; font: italic clamp(.82rem, .76rem + .3vw, 1.05rem)/1.3 var(--serif); quotes: "\201C" "\201D"; color: var(--ink-soft); }
+.p201-ch cite { display: block; margin-top: .2em; font-style: normal; font-size: clamp(.7rem, .66rem + .2vw, .88rem); color: var(--ink-soft); }
+.p201-ch.two { --c: var(--warm); }
+.p201-ch.three { --c: var(--cool); }
+.p201-ch.now { background: color-mix(in srgb, var(--c) 20%, transparent); box-shadow: inset 0 0 0 2px var(--c); }
+.p201-ch.now .n { background: var(--c); color: var(--on-accent); }
+.slide.active .p201-ch.now { animation: p201-here 2.4s ease-in-out 1.6s infinite; }
+@keyframes p201-here { 50% { box-shadow: inset 0 0 0 2px var(--c), 0 0 0 6px color-mix(in srgb, var(--c) 28%, transparent); } }
+@media (max-width: 640px) { .p201-where { grid-template-columns: 1fr; } }
+
+
+/* p202-bought: a crowd, every man with a price tag ("paid"); on a step, some turn away and refuse the gift (.p202-go) */
+.p202-man { fill: var(--ink-soft); transition: transform 1.6s ease, opacity 1.6s ease; }
+.p202-tag { fill: color-mix(in srgb, var(--accent) 30%, transparent); stroke: var(--accent-hot); stroke-width: 1.5; transition: opacity 1s ease; }
+.p202-tagtxt { fill: var(--ink); font-size: 11px; font-weight: 700; transition: opacity 1s ease; }
+.slide:has(.p202-go.on) .p202-away { transform: translateY(34px); opacity: .35; }
+.slide:has(.p202-go.on) .p202-lost { opacity: 0; }
+.p202-cap { fill: var(--ink); font-size: 19px; }
+.p202-cap.hot { fill: var(--danger); font-weight: 700; opacity: 0; transition: opacity 1s ease .8s; }
+.slide:has(.p202-go.on) .p202-cap.hot { opacity: 1; }
+
+/* p202-pairs: three rows, each a judgment and a rescue (a deck.css candidate). .p202-row (--k), .j = judged, .r = rescued */
+.p202-pairs { display: grid; gap: 8px; margin: .5em 0 1em; }
+.p202-row { display: grid; grid-template-columns: 1fr 1.15fr 1.15fr; gap: 8px; align-items: stretch;
+  opacity: 0; transform: translateY(10px); transition: opacity .6s ease, transform .6s ease; transition-delay: calc(var(--k, 0) * 420ms + 300ms); }
+.slide.active .p202-row { opacity: 1; transform: none; }
+.p202-row > div { padding: .5em .75em .6em; border-radius: 10px; }
+.p202-row .who { background: color-mix(in srgb, var(--ink) 9%, transparent); border: 1.5px solid var(--line-strong); }
+.p202-row .j { background: color-mix(in srgb, var(--danger) 14%, transparent); border: 1.5px solid color-mix(in srgb, var(--danger) 55%, transparent); }
+.p202-row .r { background: color-mix(in srgb, var(--accent) 14%, transparent); border: 1.5px solid color-mix(in srgb, var(--accent) 60%, transparent); }
+.p202-row .r.none { background: transparent; border-style: dashed; border-color: var(--line-strong); }
+.p202-row b { display: block; font: 600 clamp(1rem, .85rem + .6vw, 1.35rem)/1.15 var(--serif); color: var(--ink); }
+.p202-row small { display: block; margin-top: .25em; font-size: clamp(.78rem, .72rem + .28vw, 1rem); line-height: 1.3; color: var(--ink-soft); }
+.p202-row .r b { color: var(--accent-hot); }
+.p202-row .j b { color: var(--danger); }
+.p202-head { display: grid; grid-template-columns: 1fr 1.15fr 1.15fr; gap: 8px; font: 700 clamp(.72rem, .66rem + .24vw, .92rem) var(--sans); letter-spacing: .12em; text-transform: uppercase; color: var(--ink-soft); padding: 0 .75em; }
+.p202-dots { display: inline-flex; gap: 3px; margin-left: .4em; vertical-align: middle; }
+.p202-dots i { width: .6rem; height: .6rem; border-radius: 50%; background: var(--accent-hot); }
+@media (max-width: 640px) { .p202-row, .p202-head { grid-template-columns: 1fr; } .p202-head { display: none; } }
+
+/* p202-chain: freedom promised, then a ball and chain (a .p202-walk step walks the man down the road; a .p202-lock step shuts the chain) */
+.p202-road { stroke: var(--line-strong); stroke-width: 4; stroke-dasharray: 3 12; stroke-linecap: round; fill: none; }
+.p202-sign { fill: color-mix(in srgb, var(--accent) 24%, transparent); stroke: var(--accent-hot); stroke-width: 3; }
+.p202-pole { stroke: var(--leather-light); stroke-width: 6; stroke-linecap: round; }
+.p202-walker { transition: transform 2.8s ease-in-out; }
+.slide:has(.p202-walk.on) .p202-walker { transform: translateX(300px); }
+.p202-head2 { fill: var(--ink); }
+.p202-torso { fill: var(--ink); }
+.p202-ball { fill: var(--ink-soft); stroke: var(--ink); stroke-width: 3; opacity: 0; transition: opacity .8s ease; }
+.p202-link { fill: none; stroke: var(--ink-soft); stroke-width: 6; stroke-linecap: round; stroke-dasharray: 10 6; stroke-dashoffset: 120; opacity: 0; transition: stroke-dashoffset 1.2s ease, opacity .5s ease; }
+.slide:has(.p202-walk.on) .p202-ball { opacity: 1; transition-delay: 2.6s; }
+.slide:has(.p202-walk.on) .p202-link { opacity: 1; stroke-dashoffset: 0; transition-delay: 2.8s; }
+.p202-promise { transition: opacity 1s ease; }
+.slide:has(.p202-walk.on) .p202-promise { opacity: .35; }
+.p202-result { opacity: 0; transition: opacity 1s ease 3.2s; }
+.slide:has(.p202-walk.on) .p202-result { opacity: 1; }
+.p202-txt { fill: var(--ink); font-size: 18px; }
+.p202-txt.hot { fill: var(--danger); font-weight: 700; }
+.p202-txt.good { fill: var(--accent-hot); font-weight: 700; }
+
+/* p202-pig: a sow, washed clean, goes back to the mire (a .p202-back step) */
+.p202-pig { transition: transform 1.8s ease-in-out; transform: translateY(-40px); }
+.slide:has(.p202-back.on) .p202-pig { transform: translateY(16px); }
+.p202-skin { fill: color-mix(in srgb, var(--accent) 35%, var(--surface)); stroke: var(--accent-hot); stroke-width: 3; transition: fill 1.8s ease, stroke 1.8s ease; }
+.slide:has(.p202-back.on) .p202-skin { fill: var(--leather); stroke: var(--leather-light); }
+.p202-mud { fill: var(--leather); stroke: var(--leather-light); stroke-width: 3; }
+.p202-spark { fill: var(--accent-hot); animation: p202-spark 1.6s ease-in-out infinite; animation-delay: calc(var(--k, 0) * -.5s); transition: opacity 1s ease; }
+@keyframes p202-spark { 50% { opacity: .2; } }
+.slide:has(.p202-back.on) .p202-spark { opacity: 0; animation: none; }
+.p202-lbl { fill: var(--ink); font-size: 18px; transition: opacity 1s ease; }
+.p202-lbl.after { opacity: 0; fill: var(--danger); font-weight: 700; }
+.slide:has(.p202-back.on) .p202-lbl.before { opacity: 0; }
+.slide:has(.p202-back.on) .p202-lbl.after { opacity: 1; transition-delay: 1.2s; }
+</style>
+</head>
+<body>
+<main class="deck" id="deck">
+
+<!-- ======================= OPENING ======================= -->
+<section class="slide title">
+  <div class="inner">
+    <div class="emblem rise"></div>
+    <h1 class="rise" style="--d:1">2 Peter 2</h1>
+    <p class="sub rise" style="--d:3">Promised freedom, delivered chains</p>
+    <p class="tag rise" style="--d:5">Peter warns about men who talk smooth, sell religion, and lead people back into the very things they escaped. It is a hard chapter. It is also a chapter about how God gets His own people out.</p>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise" style="--d:1">2 Peter in one picture</h2>
+    <div class="p201-where" role="img" aria-label="Three chapters. Chapter 1, grow: add to your faith, 1:5. Chapter 2, beware: there shall be false teachers among you, 2:1. Chapter 3, wait: the Lord is not slack concerning his promise, 3:9. We are in chapter 2.">
+      <div class="p201-ch one" style="--k:0"><span class="n">1</span><b>Grow</b><q>add to your faith</q><cite>1:5</cite></div>
+      <div class="p201-ch two now" style="--k:1"><span class="n">2</span><b>Beware</b><q>there shall be false teachers among you</q><cite>2:1</cite></div>
+      <div class="p201-ch three" style="--k:2"><span class="n">3</span><b>Wait</b><q>The Lord is not slack concerning his promise</q><cite>3:9</cite></div>
+    </div>
+    <p class="note step">Chapter 1 told us what God has given and how to grow. Today is the warning: not everyone who talks about God is on God's side. Peter is not trying to scare you. He wants you to know a counterfeit when it walks in the door.</p>
+  </div>
+</section>
+
+<section class="slide watch">
+  <div class="inner">
+    <h2 class="rise">Things to watch for</h2>
+    <p class="lede rise" style="--d:1">Keep these questions in the back of your mind as we read. We'll come back to every one of them at the end.</p>
+    <ol class="seeds">
+      <li class="step"><span class="topic">Slipped in</span><span class="seed-q">How do false teachers come in, and what do they deny?</span></li>
+      <li class="step"><span class="topic">The motive</span><span class="seed-q">What drives them, and what do they do with the people?</span></li>
+      <li class="step"><span class="topic">God's examples</span><span class="seed-q">What examples of judgment does Peter give, and whom did God save?</span></li>
+      <li class="step"><span class="topic">Delivered</span><span class="seed-q">What does the Lord know how to do for the godly?</span></li>
+      <li class="step"><span class="topic">Promised freedom</span><span class="seed-q">What do these teachers promise, and what are they themselves?</span></li>
+      <li class="step"><span class="topic">Back to the mire</span><span class="seed-q">What two pictures does Peter use for going back to the old life?</span></li>
+    </ol>
+  </div>
+</section>
+
+<!-- ======================= PART ONE ======================= -->
+<section class="slide part">
+  <div class="inner">
+    <p class="part-n rise">Part one</p>
+    <h2 class="rise" style="--d:1">They slip in</h2>
+    <p class="range rise" style="--d:2">Verses 1–3</p>
+    <div class="rule"></div>
+    <p class="hook rise" style="--d:4">Every age has teachers who bring in something that sounds like God but sells a different thing.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="1-3" data-hl="false teachers among you|denying the Lord that bought them|through covetousness shall they with feigned words make merchandise of you"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="1" data-hl="denying the Lord that bought them"></blockquote>
+    <h2 class="rise" style="--d:1">“The Lord that bought them”</h2>
+    <div class="stage">
+        <svg style="max-height:30vh" viewBox="0 0 640 190" role="img" aria-label="Ten people stand in a row, and every one has a tag that says paid: Christ bought them all. When the step comes, three turn away and sink back, and their tags fade. The Lord paid for them, and they refused the gift.">
+          <text class="p202-cap" x="320" y="26" text-anchor="middle">Christ paid for everyone (1 John 2:2)</text>
+          <g transform="translate(46 80)"><g class="p202-man"><circle cx="0" cy="0" r="10"/><path d="M-16 40 Q0 6 16 40 Z"/></g><g class=""><rect class="p202-tag" x="-18" y="54" width="36" height="17" rx="4"/><text class="p202-tagtxt" x="0" y="66" text-anchor="middle">paid</text></g></g>
+          <g transform="translate(107.5 80)"><g class="p202-man"><circle cx="0" cy="0" r="10"/><path d="M-16 40 Q0 6 16 40 Z"/></g><g class=""><rect class="p202-tag" x="-18" y="54" width="36" height="17" rx="4"/><text class="p202-tagtxt" x="0" y="66" text-anchor="middle">paid</text></g></g>
+          <g transform="translate(169 80)"><g class="p202-man p202-away"><circle cx="0" cy="0" r="10"/><path d="M-16 40 Q0 6 16 40 Z"/></g><g class="p202-lost"><rect class="p202-tag" x="-18" y="54" width="36" height="17" rx="4"/><text class="p202-tagtxt" x="0" y="66" text-anchor="middle">paid</text></g></g>
+          <g transform="translate(230.5 80)"><g class="p202-man"><circle cx="0" cy="0" r="10"/><path d="M-16 40 Q0 6 16 40 Z"/></g><g class=""><rect class="p202-tag" x="-18" y="54" width="36" height="17" rx="4"/><text class="p202-tagtxt" x="0" y="66" text-anchor="middle">paid</text></g></g>
+          <g transform="translate(292 80)"><g class="p202-man"><circle cx="0" cy="0" r="10"/><path d="M-16 40 Q0 6 16 40 Z"/></g><g class=""><rect class="p202-tag" x="-18" y="54" width="36" height="17" rx="4"/><text class="p202-tagtxt" x="0" y="66" text-anchor="middle">paid</text></g></g>
+          <g transform="translate(353.5 80)"><g class="p202-man p202-away"><circle cx="0" cy="0" r="10"/><path d="M-16 40 Q0 6 16 40 Z"/></g><g class="p202-lost"><rect class="p202-tag" x="-18" y="54" width="36" height="17" rx="4"/><text class="p202-tagtxt" x="0" y="66" text-anchor="middle">paid</text></g></g>
+          <g transform="translate(415 80)"><g class="p202-man"><circle cx="0" cy="0" r="10"/><path d="M-16 40 Q0 6 16 40 Z"/></g><g class=""><rect class="p202-tag" x="-18" y="54" width="36" height="17" rx="4"/><text class="p202-tagtxt" x="0" y="66" text-anchor="middle">paid</text></g></g>
+          <g transform="translate(476.5 80)"><g class="p202-man p202-away"><circle cx="0" cy="0" r="10"/><path d="M-16 40 Q0 6 16 40 Z"/></g><g class="p202-lost"><rect class="p202-tag" x="-18" y="54" width="36" height="17" rx="4"/><text class="p202-tagtxt" x="0" y="66" text-anchor="middle">paid</text></g></g>
+          <g transform="translate(538 80)"><g class="p202-man"><circle cx="0" cy="0" r="10"/><path d="M-16 40 Q0 6 16 40 Z"/></g><g class=""><rect class="p202-tag" x="-18" y="54" width="36" height="17" rx="4"/><text class="p202-tagtxt" x="0" y="66" text-anchor="middle">paid</text></g></g>
+          <g transform="translate(599.5 80)"><g class="p202-man"><circle cx="0" cy="0" r="10"/><path d="M-16 40 Q0 6 16 40 Z"/></g><g class=""><rect class="p202-tag" x="-18" y="54" width="36" height="17" rx="4"/><text class="p202-tagtxt" x="0" y="66" text-anchor="middle">paid</text></g></g>
+          <text class="p202-cap hot" x="320" y="178" text-anchor="middle">Some refuse the gift, and teach others to refuse it too</text>
+        </svg>
+    </div>
+    <p class="note rise" style="--d:2">The word <em>“bought”</em> is the slave-market word: pay a price, set a slave free. Peter says the Lord paid it even for these men, who now <em>deny</em> Him. Christ didn't die for a few. He died for everyone.</p>
+    <p class="note step p202-go">The price was paid for the whole world (1 John 2:2), but a gift has to be received. These teachers turned their backs on the One who bought them.</p>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="3" data-hl="through covetousness shall they with feigned words make merchandise of you"></blockquote>
+    <h2 class="rise" style="--d:1">Three marks of the counterfeit</h2>
+    <ol class="signs rise" style="--d:2">
+      <li><b>privily</b>they slip in quietly, in the dark, like a thief</li>
+      <li class="now"><b>feigned words</b>the words sound right, but they're made up</li>
+      <li><b>merchandise</b>you are what they're selling</li>
+    </ol>
+    <p class="note step"><em>“Make merchandise of you”</em> means they treat people as stock to be sold. Their real aim is money, or power, or a following. If a teacher's message always ends at your wallet, with <em>“send in a seed and God will multiply it,”</em> that is merchandise. God's good news is free.</p>
+    <p class="note step">And verse 2 tells you what it costs: <em>“the way of truth shall be evil spoken of.”</em> A fake makes the real thing look bad. If a church or a preacher burned you, don't throw out Jesus with the counterfeit. He was never in on it.</p>
+  </div>
+</section>
+
+<!-- ======================= PART TWO ======================= -->
+<section class="slide part">
+  <div class="inner">
+    <p class="part-n rise">Part two</p>
+    <h2 class="rise" style="--d:1">God has seen this before</h2>
+    <p class="range rise" style="--d:2">Verses 4–9</p>
+    <div class="rule"></div>
+    <p class="hook rise" style="--d:4">Peter gives three examples from the Old Testament. In every one, God judged the wicked and carried His own people through.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="4-6" data-hl="God spared not the angels that sinned|saved Noah the eighth person, a preacher of righteousness|turning the cities of Sodom and Gomorrha into ashes"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="5" data-hl="saved Noah the eighth person, a preacher of righteousness"></blockquote>
+    <h2 class="rise" style="--d:1">Three times God stepped in</h2>
+    <div class="p202-head"><span></span><span>Judged</span><span>Rescued</span></div>
+    <div class="p202-pairs">
+      <div class="p202-row" style="--k:0"><div class="who"><b>The angels that sinned</b><small>verse 4</small></div><div class="j"><b>Chains of darkness</b><small>held until the judgment</small></div><div class="r none"><b>No rescue told of</b><small>the Bible records none for them</small></div></div>
+      <div class="p202-row" style="--k:1"><div class="who"><b>The old world</b><small>verse 5</small></div><div class="j"><b>The flood</b><small>on “the world of the ungodly”</small></div><div class="r"><b>Noah, the eighth person</b><small>a preacher of righteousness <span class="p202-dots" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></span></small></div></div>
+      <div class="p202-row" style="--k:2"><div class="who"><b>Sodom and Gomorrha</b><small>verse 6</small></div><div class="j"><b>Turned into ashes</b><small>an ensample for the ungodly</small></div><div class="r"><b>Just Lot</b><small>verse 7, brought out</small></div></div>
+    </div>
+    <p class="note step">Peter is answering a worry: <em>“These teachers get away with it. Where's God?”</em> His answer: God has never been asleep. He judges, and He also saves. The only thing He's slow on is judgment (that's chapter 3). The hell in verse 4 is a Greek word that appears only here, for the holding place of the angels who sinned.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="7-9" data-hl="delivered just Lot, vexed with the filthy conversation of the wicked|The Lord knoweth how to deliver the godly out of temptations"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="7" data-hl="delivered just Lot, vexed with the filthy conversation of the wicked"></blockquote>
+    <h2 class="rise" style="--d:1">How Lot ended up in Sodom</h2>
+    <ol class="stairs down" style="--n:4" aria-label="Four steps down: Lot looked toward Sodom; he pitched his tent toward it; he lived in it; he sat in the gate of the city.">
+      <li style="--k:0"><b>looked</b>toward the well-watered plain (Genesis 13:10)</li>
+      <li style="--k:1"><b>pitched his tent</b>toward Sodom (13:12)</li>
+      <li style="--k:2"><b>lived in</b>Sodom (14:12)</li>
+      <li style="--k:3"><b>sat in the gate</b>of the city (19:1)</li>
+    </ol>
+    <p class="note step">Lot was no hero, and look how far he slid. Yet Peter calls him <em>“just Lot”</em> and <em>“that righteous man.”</em> A man sick of a foul place <em>“from day to day”</em> is not the same as the men who love it. <em>“Vexed”</em> means worn out by what he saw and heard.</p>
+    <blockquote class="quote step"><p>“And while he lingered, the men laid hold upon his hand, and upon the hand of his wife, and upon the hand of his two daughters; the Lord being merciful unto him: and they brought him forth, and set him without the city.”</p><cite>Genesis 19:16</cite></blockquote>
+    <p class="note step">Lot lingered, and God brought him out anyway. If the old crowd and the old streets are pulling at you, know this: your rescue never depended on how fast you ran.</p>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="9" data-hl="The Lord knoweth how to deliver the godly out of temptations"></blockquote>
+    <h2 class="rise" style="--d:1">He knows how</h2>
+    <p class="saying rise" style="--d:2">The Lord knoweth how to deliver.</p>
+    <p class="note step">Notice who knows: <em>the Lord.</em> You don't have to work out the exit alone. He did it for Noah and for Lot, and He does it for men like you.</p>
+    <blockquote class="quote step"><p>“There hath no temptation taken you but such as is common to man: but God is faithful, who will not suffer you to be tempted above that ye are able; but will with the temptation also make a way to escape, that ye may be able to bear it.”</p><cite>1 Corinthians 10:13</cite></blockquote>
+    <p class="note step">Look for the way out, and take it when it shows: leave the room, make the call, turn the car around.</p>
+  </div>
+</section>
+
+<!-- ======================= PART THREE ======================= -->
+<section class="slide part">
+  <div class="inner">
+    <p class="part-n rise">Part three</p>
+    <h2 class="rise" style="--d:1">Wells without water</h2>
+    <p class="range rise" style="--d:2">Verses 10–17</p>
+    <div class="rule"></div>
+    <p class="hook rise" style="--d:4">Peter describes the teachers plainly, so that no one is fooled by a good speaker.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="10-12" data-hl="walk after the flesh in the lust of uncleanness|Presumptuous are they, selfwilled|natural brute beasts"></section>
+
+<section class="slide verse" data-v="13-14" data-hl="count it pleasure to riot in the daytime|eyes full of adultery|cannot cease from sin"></section>
+
+<section class="slide verse" data-v="15-17" data-hl="the way of Balaam the son of Bosor, who loved the wages of unrighteousness|the dumb ass speaking|wells without water"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="15" data-hl="the way of Balaam the son of Bosor, who loved the wages of unrighteousness"></blockquote>
+    <h2 class="rise" style="--d:1">A prophet who loved the pay</h2>
+    <div class="talk">
+      <p class="rise" style="--d:2"><small>Balak, a king</small>Come and curse God's people for me, and I will pay you well.</p>
+      <p class="reply step"><small>Balaam, the prophet</small>He knew better. He went as far as he dared, because he <em>“loved the wages of unrighteousness.”</em></p>
+    </div>
+    <p class="note step">Balaam's story is in Numbers 22 to 24. He knew God's will and still ached for the money. It took a talking donkey to stop him: <em>“the dumb ass speaking with man’s voice forbad the madness of the prophet.”</em> The animal had more sense than the man.</p>
+    <p class="note step">Money is a quiet master. Before you listen to anyone's advice about God, ask what they gain if you say yes.</p>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="17" data-hl="wells without water"></blockquote>
+    <h2 class="rise" style="--d:1">Dry wells</h2>
+    <div class="stage">
+      <svg class="wells" viewBox="0 0 640 300" role="img" aria-label="On the left, a well that looks full but leaks dry: the false teachers. On the right, a spring that never stops: Christ.">
+        <defs><clipPath id="p202-pitclip"><path d="M44 80 L44 258 Q44 276 62 276 L238 276 Q256 276 256 258 L256 80 Z"/></clipPath></defs>
+        <path class="wells-pit" d="M40 70 L40 260 Q40 280 60 280 L240 280 Q260 280 260 260 L260 70"/>
+        <g clip-path="url(#p202-pitclip)"><rect class="wells-water wells-drain" x="40" y="128" width="222" height="150"/></g>
+        <path class="wells-crack" d="M90 280 L98 262 L90 250 L102 236"/>
+        <path class="wells-crack" d="M200 280 L192 266 L204 254 L196 240"/>
+        <circle class="wells-drip" style="--k:0" cx="90" cy="286" r="5"/>
+        <circle class="wells-drip" style="--k:1" cx="200" cy="286" r="5"/>
+        <text x="150" y="40" text-anchor="middle" font-size="20" font-weight="700">“wells without water”</text>
+        <text x="150" y="60" text-anchor="middle" font-size="15" style="fill:var(--ink-soft)">big promises, nothing to drink</text>
+        <path class="wells-rock" d="M380 280 Q390 200 440 190 L540 190 Q590 200 600 280 Z"/>
+        <path class="wells-spring" d="M490 192 C 470 170, 430 175, 410 210 S 380 270, 360 284"/>
+        <path class="wells-spring" d="M490 192 C 510 170, 560 175, 575 210 S 600 270, 630 284"/>
+        <circle class="wells-bubble" style="--k:0" cx="478" cy="190" r="7"/>
+        <circle class="wells-bubble" style="--k:1" cx="492" cy="190" r="9"/>
+        <circle class="wells-bubble" style="--k:2" cx="504" cy="190" r="6"/>
+        <text x="490" y="40" text-anchor="middle" font-size="20" font-weight="700" style="fill:var(--accent-hot)">Christ</text>
+        <text x="490" y="60" text-anchor="middle" font-size="15" style="fill:var(--ink-soft)">a spring that never stops</text>
+      </svg>
+    </div>
+    <p class="note step">In a dry country a well without water is a cruel joke: a traveler walks miles to it and finds nothing. These teachers have the look and the loud voice of a good source. Come thirsty, and you leave thirstier. Jesus said, <em>“If any man thirst, let him come unto me, and drink.”</em></p>
+  </div>
+</section>
+
+<!-- ======================= PART FOUR ======================= -->
+<section class="slide part">
+  <div class="inner">
+    <p class="part-n rise">Part four</p>
+    <h2 class="rise" style="--d:1">Promised liberty, bought chains</h2>
+    <p class="range rise" style="--d:2">Verses 18–22</p>
+    <div class="rule"></div>
+    <p class="hook rise" style="--d:4">The chapter ends with the sentence every addict can recite, and one verse that is hard to read.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="18-19" data-hl="great swelling words of vanity|While they promise them liberty, they themselves are the servants of corruption|of whom a man is overcome, of the same is he brought in bondage"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="19" data-hl="While they promise them liberty|of whom a man is overcome, of the same is he brought in bondage"></blockquote>
+    <div class="stage">
+      <svg viewBox="0 0 640 250" role="img" aria-label="A signpost reads Freedom, with an arrow down a road. A man walks down the road toward it. At the end of the road a ball and chain is waiting, and the chain locks onto his ankle. The promise was liberty, and the result is bondage.">
+        <g class="p202-promise">
+          <line class="p202-pole" x1="70" y1="60" x2="70" y2="200"/>
+          <path class="p202-sign" d="M70 66 L170 66 L196 88 L170 110 L70 110 Z"/>
+          <text class="p202-txt" x="84" y="94" style="font-weight:700">FREEDOM</text>
+          <text class="p202-txt" x="30" y="40" style="font-size:15px;fill:var(--ink-soft)">“just this once”</text>
+        </g>
+        <path class="p202-road" d="M50 214 L600 214"/>
+        <g class="p202-walker">
+          <circle class="p202-head2" cx="120" cy="150" r="13"/>
+          <path class="p202-torso" d="M102 212 Q120 164 138 212 Z"/>
+        </g>
+        <circle class="p202-ball" cx="500" cy="196" r="30"/>
+        <path class="p202-link" d="M424 214 C 440 232, 456 226, 478 218"/>
+        <text class="p202-txt" x="320" y="26" text-anchor="middle">they promise liberty</text>
+        <text class="p202-result p202-txt hot" x="320" y="248" text-anchor="middle">they themselves are servants of corruption</text>
+      </svg>
+    </div>
+    <p class="note step p202-walk">Anyone who has been through it knows the shape of this. The first drink, the first hit, the first bet: it was sold as freedom. And it was, for an hour. <em>“Of whom a man is overcome, of the same is he brought in bondage.”</em> What you thought you were using ends up using you.</p>
+    <p class="note step">The teachers in this chapter sell <em>“liberty”</em>, a religion with no rules and no cost, and they are slaves themselves. A slave can't lead another man out.</p>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="19" data-hl="of whom a man is overcome, of the same is he brought in bondage"></blockquote>
+    <h2 class="rise" style="--d:1">The way out is a different Master</h2>
+    <div class="columns">
+      <div class="col law rise" style="--d:2">
+        <p class="who">Whoever sells you "freedom"</p>
+        <h3>Whosoever committeth sin is the servant of sin</h3>
+        <p>That is Jesus' own description (John 8:34). Every road ends in a master.</p>
+      </div>
+      <div class="col grace step">
+        <p class="who">Jesus</p>
+        <h3>If the Son therefore shall make you free, ye shall be free indeed</h3>
+        <p>He doesn't just say it. He paid for it. John 8:36.</p>
+      </div>
+    </div>
+    <p class="note step">The honest news is that freedom isn't having no master. It is having the right One. Today, tell Him what you're being pulled toward. And tell one man as well.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="20-22" data-hl="the latter end is worse with them than the beginning|better for them not to have known the way of righteousness|The dog is turned to his own vomit again; and the sow that was washed to her wallowing in the mire"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <div class="split">
+      <div class="stage">
+        <svg viewBox="0 0 420 270" role="img" aria-label="A sow, washed clean, stands above a muddy pool. When the step comes she goes straight back down into the mud, and turns the color of it. Washed outside, she was still a sow.">
+          <g class="p202-pig">
+            <ellipse class="p202-skin" cx="200" cy="140" rx="86" ry="48"/>
+            <circle class="p202-skin" cx="285" cy="134" r="34"/>
+            <ellipse class="p202-skin" cx="316" cy="142" rx="14" ry="12"/>
+            <path class="p202-skin" d="M268 106 L278 82 L298 108 Z"/>
+            <circle cx="292" cy="126" r="3.5" style="fill:var(--ink)"/>
+            <rect class="p202-skin" x="140" y="172" width="16" height="36" rx="5"/>
+            <rect class="p202-skin" x="176" y="176" width="16" height="32" rx="5"/>
+            <rect class="p202-skin" x="224" y="176" width="16" height="32" rx="5"/>
+            <rect class="p202-skin" x="252" y="172" width="16" height="36" rx="5"/>
+            <path d="M114 126 q-24 -6 -16 -22 q12 -12 18 6" style="fill:none;stroke:var(--accent-hot);stroke-width:4;stroke-linecap:round"/>
+            <circle class="p202-spark" style="--k:0" cx="170" cy="100" r="5"/>
+            <circle class="p202-spark" style="--k:1" cx="232" cy="92" r="4"/>
+            <circle class="p202-spark" style="--k:2" cx="130" cy="150" r="4"/>
+          </g>
+          <ellipse class="p202-mud" cx="210" cy="232" rx="190" ry="26"/>
+          <text class="p202-lbl before" x="210" y="30" text-anchor="middle">washed: clean on the outside</text>
+          <text class="p202-lbl after" x="210" y="30" text-anchor="middle">back in the mire: the same sow</text>
+        </svg>
+      </div>
+      <div>
+        <h2 class="rise" style="--d:1">The dog and the sow</h2>
+        <p class="note rise" style="--d:2">This is a hard verse, so read it carefully. Peter is describing the <em>false teachers</em> of verse 1. They cleaned up on the outside by <em>knowing about</em> Christ, but never got a new nature. Washing a sow doesn't make her a lamb.</p>
+        <p class="note step p202-back">A sheep that falls in the mud is still a sheep. Believers are <em>“partakers of the divine nature”</em> (1:4). A believer can wander, but these teachers never became sheep.</p>
+        <blockquote class="quote step"><p>“They went out from us, but they were not of us; for if they had been of us, they would no doubt have continued with us: but they went out, that they might be made manifest that they were not all of us.”</p><cite>1 John 2:19</cite></blockquote>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise" style="--d:1">If you fell last night</h2>
+    <p class="note rise" style="--d:2">Peter's warning is about the dangers of going back, and he means it. The old life isn't a harmless place to visit. <em>“The latter end is worse.”</em> But hear what a son does, as opposed to a dog:</p>
+    <blockquote class="quote rise" style="--d:3"><p>“And he arose, and came to his father. But when he was yet a great way off, his father saw him, and had compassion, and ran, and fell on his neck, and kissed him.”</p><cite>Luke 15:20</cite></blockquote>
+    <blockquote class="quote step"><p>“All that the Father giveth me shall come to me; and him that cometh to me I will in no wise cast out.”</p><cite>John 6:37</cite></blockquote>
+    <p class="note step">A dog goes back to its vomit and doesn't mind. A son who has slipped is sick over it and gets up and heads home. If the sight of the mud makes you sick, that is not the sign of a lost man. That's the Spirit in a son. Get up. Call your sponsor. Tell God, and tell a brother, today.</p>
+  </div>
+</section>
+
+<!-- ======================= CLOSING ======================= -->
+<section class="slide remember">
+  <div class="inner">
+    <h2 class="rise">Points to remember</h2>
+    <ol class="seeds">
+      <li class="step"><span class="topic">Slipped in</span><span class="seed-q">“False teachers among you, who privily shall bring in damnable heresies, even denying the Lord that bought them” <cite>2:1</cite></span><span class="take">Counterfeits come in quietly. Christ paid for everyone, even the ones who turn away.</span></li>
+      <li class="step"><span class="topic">The motive</span><span class="seed-q">“Through covetousness shall they with feigned words make merchandise of you” <cite>2:3</cite></span><span class="take">Ask what a teacher gains. If it always ends at your wallet, walk away.</span></li>
+      <li class="step"><span class="topic">God's examples</span><span class="seed-q">“Saved Noah the eighth person… delivered just Lot” <cite>2:5, 7</cite></span><span class="take">God judges sin, and He carries His own through it.</span></li>
+      <li class="step"><span class="topic">Delivered</span><span class="seed-q">“The Lord knoweth how to deliver the godly out of temptations” <cite>2:9</cite></span><span class="take">You don't plan the escape alone. He knows how. Take the way out when He shows it.</span></li>
+      <li class="step"><span class="topic">Promised freedom</span><span class="seed-q">“While they promise them liberty, they themselves are the servants of corruption” <cite>2:19</cite></span><span class="take">What promised freedom is often a chain. The real freedom is the Son's.</span></li>
+      <li class="step"><span class="topic">Back to the mire</span><span class="seed-q">“The dog is turned to his own vomit again; and the sow that was washed to her wallowing in the mire” <cite>2:22</cite></span><span class="take">Never treat the old life as home. A son who slips gets up and goes back to the Father.</span></li>
+    </ol>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 1 of 6</p>
+      <span class="topic">Slipped in</span>
+      <h2>How do false teachers come in, and what do they deny?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="1" data-hl="privily shall bring in damnable heresies, even denying the Lord that bought them"></blockquote>
+      <blockquote class="quote step"><p>“And he is the propitiation for our sins: and not for ours only, but also for the sins of the whole world.”</p><cite>1 John 2:2</cite></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>They come in quietly, in secret, bringing in destructive teaching. They deny the Lord who bought them. Christ paid for the whole world, and they turn away from the One who paid.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 2 of 6</p>
+      <span class="topic">The motive</span>
+      <h2>What drives them, and what do they do with the people?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="3" data-hl="through covetousness shall they with feigned words make merchandise of you"></blockquote>
+      <blockquote class="quote step" data-q="15" data-hl="who loved the wages of unrighteousness"></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>Covetousness: they want what you have. They make merchandise of the people, selling them smooth words. Ask what a teacher gains if you say yes.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 3 of 6</p>
+      <span class="topic">God's examples</span>
+      <h2>What examples of judgment does Peter give, and whom did God save?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="4-5" data-hl="God spared not the angels that sinned|saved Noah the eighth person"></blockquote>
+      <blockquote class="quote step" data-q="6-7" data-hl="Sodom and Gomorrha into ashes|delivered just Lot"></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>The angels who sinned, the world of Noah's day, and Sodom and Gomorrha. God saved Noah, the eighth person, and just Lot. He judges sin, and He carries His own through it.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 4 of 6</p>
+      <span class="topic">Delivered</span>
+      <h2>What does the Lord know how to do for the godly?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="9" data-hl="The Lord knoweth how to deliver the godly out of temptations"></blockquote>
+      <blockquote class="quote step"><p>“There hath no temptation taken you but such as is common to man: but God is faithful, who will not suffer you to be tempted above that ye are able; but will with the temptation also make a way to escape, that ye may be able to bear it.”</p><cite>1 Corinthians 10:13</cite></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>He knows how to deliver them out of temptation. He makes a way to escape. When it shows up, take it: leave the room, make the call, turn the car around.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 5 of 6</p>
+      <span class="topic">Promised freedom</span>
+      <h2>What do these teachers promise, and what are they themselves?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="19" data-hl="While they promise them liberty, they themselves are the servants of corruption"></blockquote>
+      <blockquote class="quote step"><p>“If the Son therefore shall make you free, ye shall be free indeed.”</p><cite>John 8:36</cite></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>They promise liberty, and they are themselves the servants of corruption. Whatever overcomes a man becomes his master. The real way out is a different Master: the Son.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 6 of 6</p>
+      <span class="topic">Back to the mire</span>
+      <h2>What two pictures does Peter use for going back to the old life?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="22" data-hl="The dog is turned to his own vomit again; and the sow that was washed to her wallowing in the mire"></blockquote>
+      <blockquote class="quote step"><p>“And he arose, and came to his father. But when he was yet a great way off, his father saw him, and had compassion, and ran, and fell on his neck, and kissed him.”</p><cite>Luke 15:20</cite></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>A dog turning back to its vomit, and a sow washed and then back in the mire. Peter is describing false teachers who never got a new nature. A son who slips is sick over it and heads home to a Father who runs to meet him.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide prayer">
+  <div class="inner">
+    <div class="emblem rise"></div>
+    <h2 class="rise" style="--d:1">Prayer requests</h2>
+    <p class="ask-line rise" style="--d:2">What can we pray about for you today?</p>
+    <blockquote class="quote rise" style="--d:4"><p>“The Lord knoweth how to deliver the godly out of temptations,”</p><cite>2 Peter 2:9</cite></blockquote>
+  </div>
+</section>
+
+</main>
+
+<script>
+// King James Version, 2 Peter chapter 2
+const V = {
+  1: "But there were false prophets also among the people, even as there shall be false teachers among you, who privily shall bring in damnable heresies, even denying the Lord that bought them, and bring upon themselves swift destruction.",
+  2: "And many shall follow their pernicious ways; by reason of whom the way of truth shall be evil spoken of.",
+  3: "And through covetousness shall they with feigned words make merchandise of you: whose judgment now of a long time lingereth not, and their damnation slumbereth not.",
+  4: "For if God spared not the angels that sinned, but cast them down to hell, and delivered them into chains of darkness, to be reserved unto judgment;",
+  5: "And spared not the old world, but saved Noah the eighth person, a preacher of righteousness, bringing in the flood upon the world of the ungodly;",
+  6: "And turning the cities of Sodom and Gomorrha into ashes condemned them with an overthrow, making them an ensample unto those that after should live ungodly;",
+  7: "And delivered just Lot, vexed with the filthy conversation of the wicked:",
+  8: "(For that righteous man dwelling among them, in seeing and hearing, vexed his righteous soul from day to day with their unlawful deeds;)",
+  9: "The Lord knoweth how to deliver the godly out of temptations, and to reserve the unjust unto the day of judgment to be punished:",
+  10: "But chiefly them that walk after the flesh in the lust of uncleanness, and despise government. Presumptuous are they, selfwilled, they are not afraid to speak evil of dignities.",
+  11: "Whereas angels, which are greater in power and might, bring not railing accusation against them before the Lord.",
+  12: "But these, as natural brute beasts, made to be taken and destroyed, speak evil of the things that they understand not; and shall utterly perish in their own corruption;",
+  13: "And shall receive the reward of unrighteousness, as they that count it pleasure to riot in the daytime. Spots they are and blemishes, sporting themselves with their own deceivings while they feast with you;",
+  14: "Having eyes full of adultery, and that cannot cease from sin; beguiling unstable souls: an heart they have exercised with covetous practices; cursed children:",
+  15: "Which have forsaken the right way, and are gone astray, following the way of Balaam the son of Bosor, who loved the wages of unrighteousness;",
+  16: "But was rebuked for his iniquity: the dumb ass speaking with man’s voice forbad the madness of the prophet.",
+  17: "These are wells without water, clouds that are carried with a tempest; to whom the mist of darkness is reserved for ever.",
+  18: "For when they speak great swelling words of vanity, they allure through the lusts of the flesh, through much wantonness, those that were clean escaped from them who live in error.",
+  19: "While they promise them liberty, they themselves are the servants of corruption: for of whom a man is overcome, of the same is he brought in bondage.",
+  20: "For if after they have escaped the pollutions of the world through the knowledge of the Lord and Saviour Jesus Christ, they are again entangled therein, and overcome, the latter end is worse with them than the beginning.",
+  21: "For it had been better for them not to have known the way of righteousness, than, after they have known it, to turn from the holy commandment delivered unto them.",
+  22: "But it is happened unto them according to the true proverb, The dog is turned to his own vomit again; and the sow that was washed to her wallowing in the mire."
+};
+const BOOK = "2 Peter 2";
+</script>
+<script src="../assets/deck.js"></script>
+</body>
+</html>

@@ -1,0 +1,515 @@
+<!doctype html>
+<html lang="en" data-theme="slate">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>1 Peter 3</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="../assets/fonts.css">
+<link rel="stylesheet" href="../assets/deck.css">
+<link rel="stylesheet" href="../assets/themes.css">
+<style>
+/* pt01-where: where we are in 1 Peter (copied as is from 1 Peter 1).
+   Row 1: the five chapters (.pt01-ch, --k; read ones .done, ours .here). Row 2: the three parts of the letter (.pt01-part: small, b, q, cite),
+   widths 1 : 2 : 2 to sit under their chapters. The part we're in is .now. */
+.pt01-where { display: grid; grid-template-columns: repeat(5, 1fr); gap: 8px 6px; margin: .5em 0 1em; }
+.pt01-ch { padding: .25em 0 .3em; text-align: center; border-radius: 6px 6px 0 0; border-bottom: 3px solid var(--line-strong);
+  font: 700 clamp(.82rem, .74rem + .35vw, 1.08rem) var(--sans); color: var(--ink-soft);
+  opacity: 0; transition: opacity .4s ease; transition-delay: calc(var(--k, 0) * 70ms + 200ms); }
+.slide.active .pt01-ch { opacity: 1; }
+.pt01-ch.done { background: color-mix(in srgb, var(--accent) 14%, transparent); color: var(--ink); }
+.pt01-ch.here { background: var(--accent); border-bottom-color: var(--accent); color: var(--on-accent); }
+.slide.active .pt01-ch.here { animation: pt01-here 2.4s ease-in-out 1.6s infinite; }
+@keyframes pt01-here { 50% { box-shadow: 0 0 0 6px color-mix(in srgb, var(--accent) 28%, transparent); } }
+.pt01-part { --c: var(--line-strong); padding: .45em .7em .55em; border-top: 6px solid var(--c); border-radius: 0 0 10px 10px; background: color-mix(in srgb, var(--c) 8%, transparent);
+  opacity: 0; transform: translateY(10px); transition: opacity .6s ease, transform .6s ease; transition-delay: calc(var(--k, 0) * 300ms + 700ms); }
+.slide.active .pt01-part { opacity: 1; transform: none; }
+.pt01-part small { display: block; font: 700 clamp(.7rem, .66rem + .22vw, .9rem) var(--sans); letter-spacing: .04em; color: var(--ink-soft); }
+.pt01-part b { display: block; font: 600 clamp(1.05rem, .88rem + .7vw, 1.5rem)/1.15 var(--serif); color: var(--c); }
+.pt01-part q { display: block; margin-top: .25em; font: italic clamp(.8rem, .74rem + .28vw, 1.02rem)/1.3 var(--serif); quotes: "\201C" "\201D"; color: var(--ink); }
+.pt01-part cite { display: block; margin-top: .1em; font-style: normal; font-size: clamp(.7rem, .66rem + .2vw, .88rem); color: var(--ink-soft); }
+.pt01-hope { --c: var(--accent); grid-column: 1 / 2; }
+.pt01-live { --c: var(--cool); grid-column: 2 / 4; }
+.pt01-fire { --c: var(--wine); grid-column: 4 / 6; }
+.pt01-part.now { background: color-mix(in srgb, var(--c) 18%, transparent); box-shadow: inset 0 0 0 2px var(--c); }
+@media (max-width: 640px) {
+  .pt01-hope, .pt01-live, .pt01-fire { grid-column: 1 / -1; }
+  .pt01-part { border-top: 0; border-left: 6px solid var(--c); border-radius: 0 10px 10px 0; }
+}
+
+/* pe03-five: the .sort grid with five boxes in one row */
+.pe03-five { grid-template-columns: repeat(5, 1fr); }
+@media (max-width: 900px) { .pe03-five { grid-template-columns: repeat(2, 1fr); } }
+
+/* pe03-ark: the flood rises and the ark floats on it, eight souls inside, one door */
+.pe03-water { transform: translateY(80px); transition: transform 3.4s ease-in-out .4s; fill: color-mix(in srgb, var(--cool) 35%, transparent); }
+.slide.active .pe03-water { transform: none; }
+.pe03-ark { transform: translateY(70px); transition: transform 3.4s ease-in-out .4s; }
+.slide.active .pe03-ark { transform: translateY(-12px); animation: pe03-bob 4s ease-in-out 3.8s infinite; }
+@keyframes pe03-bob { 50% { transform: translateY(-4px) rotate(-1.2deg); } }
+.pe03-hull { fill: var(--leather); stroke: var(--ink-soft); stroke-width: 3; }
+.pe03-cabin { fill: var(--surface-2); stroke: var(--ink-soft); stroke-width: 3; }
+.pe03-soul { fill: var(--accent); }
+.pe03-door { fill: var(--accent-hot); }
+.pe03-rain { stroke: var(--ink-soft); stroke-width: 2; stroke-linecap: round; opacity: .5; animation: pe03-rain 1s linear infinite; }
+@keyframes pe03-rain { from { transform: translateY(-30px); opacity: 0; } 40% { opacity: .6; } to { transform: translateY(70px); opacity: 0; } }
+
+</style>
+</head>
+<body>
+<main class="deck" id="deck">
+
+<!-- ======================= OPENING ======================= -->
+<section class="slide title">
+  <div class="inner">
+    <div class="emblem rise"></div>
+    <h1 class="rise" style="--d:1">1 Peter 3</h1>
+    <p class="sub rise" style="--d:3">At home, at work, under pressure</p>
+    <p class="tag rise" style="--d:5">A letter to scattered believers turns to the kitchen table. Husbands and wives, how to answer an insult, and the question a man should always be ready for: <em>“Why are you different?”</em></p>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise" style="--d:1">Where we are in 1 Peter</h2>
+    <div class="pt01-where" role="img" aria-label="1 Peter in three parts. Chapter 1: a living hope, 1:3. Chapters 2 and 3: live it out among them that do not believe, having your conversation honest among the Gentiles, 2:12. Chapters 4 and 5: suffering, then glory, 5:10. Chapters 1 and 2 are read. We are in chapter 3, the end of the middle part.">
+      <span class="pt01-ch done" style="--k:0">1</span><span class="pt01-ch done" style="--k:1">2</span><span class="pt01-ch here" style="--k:2">3</span>
+      <span class="pt01-ch" style="--k:3">4</span><span class="pt01-ch" style="--k:4">5</span>
+      <div class="pt01-part pt01-hope" style="--k:0"><small>Chapter 1</small><b>A living hope</b><q>begotten us again unto a lively hope</q><cite>1:3</cite></div>
+      <div class="pt01-part pt01-live now" style="--k:1"><small>Chapters 2–3</small><b>Live it out among them</b><q>Having your conversation honest among the Gentiles</q><cite>2:12</cite></div>
+      <div class="pt01-part pt01-fire" style="--k:2"><small>Chapters 4–5</small><b>Suffering, then glory</b><q>after that ye have suffered a while</q><cite>5:10</cite></div>
+    </div>
+    <p class="note step">Last time Peter dealt with the state and the workplace. Now he comes inside: the home, and then everybody else. The pressure is the same. Jesus is the same.</p>
+  </div>
+</section>
+
+<section class="slide watch">
+  <div class="inner">
+    <h2 class="rise">Things to watch for</h2>
+    <p class="lede rise" style="--d:1">Keep these questions in the back of your mind as we read. We'll come back to every one of them at the end.</p>
+    <ol class="seeds">
+      <li class="step"><span class="topic">Husbands</span><span class="seed-q">What are husbands to do for their wives, and what hinders their prayers?</span></li>
+      <li class="step"><span class="topic">The heart</span><span class="seed-q">What is the adorning that is of great price in the sight of God?</span></li>
+      <li class="step"><span class="topic">Blessing</span><span class="seed-q">How are we to answer evil and railing?</span></li>
+      <li class="step"><span class="topic">Hope</span><span class="seed-q">What are we to be ready always to give, and in what spirit?</span></li>
+      <li class="step"><span class="topic">Christ's death</span><span class="seed-q">Why did Christ suffer once for sins?</span></li>
+      <li class="step"><span class="topic">Baptism</span><span class="seed-q">If baptism is not the putting away of the filth of the flesh, what is it?</span></li>
+    </ol>
+  </div>
+</section>
+
+<!-- ======================= PART ONE ======================= -->
+<section class="slide part">
+  <div class="inner">
+    <p class="part-n rise">Part one</p>
+    <h2 class="rise" style="--d:1">Wives and husbands</h2>
+    <p class="range rise" style="--d:2">Verses 1–7</p>
+    <div class="rule"></div>
+    <p class="hook rise" style="--d:4">Six verses for the wives, one for the husbands. And the one for the husbands carries a warning nobody else gets.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="1-2" data-hl="be in subjection to your own husbands|may without the word be won by the conversation of the wives|your chaste conversation coupled with fear"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="1-2" data-hl="may without the word be won by the conversation of the wives"></blockquote>
+    <h2 class="rise" style="--d:1">Won without a word</h2>
+    <div class="ifthen">
+      <div class="if step"><small>A husband who will not hear the word</small>“obey not the word”</div>
+      <span class="arrow" aria-hidden="true">→</span>
+      <div class="then step"><small>Sees his wife's life</small>“won… by the conversation of the wives”</div>
+    </div>
+    <p class="note step">Many women in Peter's churches became Christians while their husbands did not. Peter says her sermons will not change him: <em>her life</em> will. <em>“Conversation”</em> again means way of life, and <em>“chaste... coupled with fear”</em> means pure and respectful.</p>
+    <p class="note step"><em>In subjection</em> means a woman lines herself up under her husband by her own choice. It never means she must stay and take a beating. Hitting a wife is a sin and a crime. If a woman is in danger, safety comes first: get out, and call someone. And any man here who has raised his hand to a woman needs to stop, tell God, and get help today.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="3-4" data-hl="let it not be that outward adorning|the hidden man of the heart|a meek and quiet spirit, which is in the sight of God of great price"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="3-4" data-hl="the hidden man of the heart|which is in the sight of God of great price"></blockquote>
+    <h2 class="rise" style="--d:1">What God prices</h2>
+    <ul class="nots">
+      <li class="step"><span class="k">the hair, the gold, the clothes</span><span class="why">Peter is not banning a good haircut. He says the <em>outward</em> must not be where her worth comes from. The same goes for a man's truck, his watch, his reputation.</span></li>
+      <li class="step"><span class="k">making people look at the outside</span><span class="why">Looks fade, and the world sells a lot of cures for it. None of them cure a heart.</span></li>
+      <li class="step yes"><span class="k">the hidden man of the heart</span><span class="why">A <em>“meek and quiet spirit”</em>: calm, not easily rattled. <em>“In the sight of God of great price.”</em> This is the thing God pays the most attention to.</span></li>
+    </ul>
+    <p class="note step"><em>Meek</em> is not weak. It is strength under control. A man at peace is worth more in any house than a man who is loud.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="5-6" data-hl="the holy women also, who trusted in God|Even as Sara obeyed Abraham, calling him lord|are not afraid with any amazement"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="6" data-hl="as long as ye do well, and are not afraid with any amazement"></blockquote>
+    <p class="saying rise" style="--d:1">Not afraid <em>with any amazement.</em></p>
+    <p class="note rise" style="--d:3">Our Bibles spell her <em>Sara</em>, as the King James does. She is Abraham's wife, an ordinary woman who <em>“trusted in God.”</em> The old word <em>amazement</em> means terror, the kind that makes a person panic and do foolish things.</p>
+    <p class="note step">Peter's point: a woman who trusts God can be steady in a hard house and does not have to live afraid. The men are not off the hook either. Making your home a place people are afraid of is the opposite of everything in this letter.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="7" data-hl="dwell with them according to knowledge, giving honour unto the wife|heirs together of the grace of life; that your prayers be not hindered"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="7" data-hl="dwell with them according to knowledge, giving honour unto the wife"></blockquote>
+    <h2 class="rise" style="--d:1">One verse, four jobs for the husband</h2>
+    <ol class="signs">
+      <li class="step"><b>Dwell with her</b>stay, be there. Live in the same house in more than address</li>
+      <li class="step"><b>According to knowledge</b>know her: what wears her out, what scares her, what she needs</li>
+      <li class="step"><b>Giving honour</b>treat her as someone valuable. “Weaker vessel” means physically weaker, like fine china is handled with care. It does not mean lesser</li>
+      <li class="step"><b>Heirs together</b>of the same grace of life. She stands exactly where you stand with God</li>
+    </ol>
+    <blockquote class="quote step"><p>“There is neither Jew nor Greek, there is neither bond nor free, there is neither male nor female: for ye are all one in Christ Jesus.”</p><cite>Galatians 3:28</cite></blockquote>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="7" data-hl="that your prayers be not hindered"></blockquote>
+    <h2 class="rise" style="--d:1">Prayers that hit the ceiling</h2>
+    <div class="ifthen">
+      <div class="if step"><small>A man who dishonours his wife</small>harsh words, ignoring her, a hand raised</div>
+      <span class="arrow" aria-hidden="true">→</span>
+      <div class="then step"><small>His prayers are</small>“hindered”</div>
+    </div>
+    <p class="note step">Peter does not say God stops loving him, or that his salvation is gone. He says something gets in the way of the conversation. A man cannot treat his wife like dirt on Saturday and expect to talk with the Father on Sunday as though nothing happened.</p>
+    <blockquote class="quote step"><p>“Husbands, love your wives, even as Christ also loved the church, and gave himself for it;”</p><cite>Ephesians 5:25</cite></blockquote>
+    <p class="note step">Today: ask her one real question and listen for ten minutes with the phone down. If you have hurt her, say it plainly: <em>I was wrong.</em> That is the first thing a good husband learns, and it is not weakness.</p>
+  </div>
+</section>
+
+<!-- ======================= PART TWO ======================= -->
+<section class="slide part">
+  <div class="inner">
+    <p class="part-n rise">Part two</p>
+    <h2 class="rise" style="--d:1">Called to bless</h2>
+    <p class="range rise" style="--d:2">Verses 8–17</p>
+    <div class="rule"></div>
+    <p class="hook rise" style="--d:4">How does a man answer an insult? And what does he say when someone asks about his faith?</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="8-9" data-hl="be ye all of one mind, having compassion one of another|Not rendering evil for evil, or railing for railing: but contrariwise blessing"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="8" data-hl="of one mind, having compassion one of another, love as brethren, be pitiful, be courteous"></blockquote>
+    <h2 class="rise" style="--d:1">Five ways to treat the brotherhood</h2>
+    <div class="sort pe03-five">
+      <div class="step"><h3>One mind</h3><p>pulling the same way, not each for himself</p></div>
+      <div class="step"><h3>Compassion</h3><p>feeling it when a brother hurts</p></div>
+      <div class="step"><h3>Love as brethren</h3><p>family love, not polite love</p></div>
+      <div class="step"><h3>Pitiful</h3><p>tender-hearted</p></div>
+      <div class="step"><h3>Courteous</h3><p>humble and kind in how you speak</p></div>
+    </div>
+    <p class="note step">That is a good description of this group at its best. Notice what it asks: nothing fancy. Just show up, feel something, speak kindly.</p>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="9" data-hl="Not rendering evil for evil, or railing for railing: but contrariwise blessing"></blockquote>
+    <h2 class="rise" style="--d:1">Don't hand it back</h2>
+    <ul class="nots">
+      <li class="step"><span class="k">evil for evil</span><span class="why">He hit me, so I hit him. The easy answer, the one every man here knows by heart.</span></li>
+      <li class="step"><span class="k">railing for railing</span><span class="why">He cursed me, so I cursed him louder. Two men shouting, and neither of them winning.</span></li>
+      <li class="step yes"><span class="k">contrariwise blessing</span><span class="why"><em>Contrariwise</em> means the opposite way round. Say something good about him. Pray for him. Walk away. That is the move that is hard and strong.</span></li>
+    </ul>
+    <blockquote class="quote step"><p>“Be not overcome of evil, but overcome evil with good.”</p><cite>Romans 12:21</cite></blockquote>
+    <p class="note step"><em>“Knowing that ye are thereunto called, that ye should inherit a blessing.”</em> You were given a blessing, so you have one to give away.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="10-12" data-hl="let him refrain his tongue from evil|Let him eschew evil, and do good; let him seek peace, and ensue it|the eyes of the Lord are over the righteous"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="10-11" data-hl="refrain his tongue from evil|eschew evil, and do good; let him seek peace, and ensue it"></blockquote>
+    <h2 class="rise" style="--d:1">How to see good days</h2>
+    <ol class="signs">
+      <li class="step"><b>Refrain your tongue</b>hold it. Most of the damage in a life comes out of the mouth</li>
+      <li class="step"><b>Speak no guile</b>no tricks, no angle, no spin</li>
+      <li class="step"><b>Eschew evil, and do good</b><em>eschew</em> is an old word for steer clear of. Then do something good in its place</li>
+      <li class="step"><b>Seek peace, and ensue it</b><em>ensue</em> means chase it down, as hard as you would chase anything else</li>
+    </ol>
+    <p class="note step">Peter is borrowing from Psalm 34. And the reason is in verse 12: <em>“the eyes of the Lord are over the righteous, and his ears are open unto their prayers.”</em> He is watching, and He is listening. The same is true for you on the day you fail.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="13-14" data-hl="who is he that will harm you, if ye be followers of that which is good|if ye suffer for righteousness’ sake, happy are ye"></section>
+<section class="slide verse" data-v="15-17" data-hl="be ready always to give an answer to every man that asketh you a reason of the hope that is in you with meekness and fear|Having a good conscience|better, if the will of God be so, that ye suffer for well doing"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise" style="--d:1">When somebody asks</h2>
+    <div class="talk">
+      <p class="rise" style="--d:1"><small>The guy at work</small>You're different lately. What happened to you?</p>
+      <p class="reply step"><small>You</small>I got in a bad place. Somebody showed me Jesus, and I trusted Him. I'm still not perfect, but I'm not who I was.<br><span class="flag">“a reason of the hope that is in you”</span></p>
+    </div>
+    <p class="note step">Verse 15 has three parts. <em>“Sanctify the Lord God in your hearts”</em>: put Him first inside, before you open your mouth. <em>“Be ready always”</em>: have your story ready in two sentences. <em>“With meekness and fear”</em>: gently, not like a man who has won an argument.</p>
+    <p class="note step">Your story is the answer. It does not have to be polished, only true. And keep <em>“a good conscience,”</em> so that those who accuse you <em>“may be ashamed.”</em></p>
+  </div>
+</section>
+
+<!-- ======================= PART THREE ======================= -->
+<section class="slide part">
+  <div class="inner">
+    <p class="part-n rise">Part three</p>
+    <h2 class="rise" style="--d:1">The just for the unjust</h2>
+    <p class="range rise" style="--d:2">Verses 18–22</p>
+    <div class="rule"></div>
+    <p class="hook rise" style="--d:4">Why can a man suffer unfairly and not break? Because Christ did it first, and it worked.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="18" data-hl="Christ also hath once suffered for sins, the just for the unjust, that he might bring us to God"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="18" data-hl="Christ also hath once suffered for sins, the just for the unjust, that he might bring us to God"></blockquote>
+    <h2 class="rise" style="--d:1">The just for the unjust</h2>
+    <div class="swap rise" style="--d:2">
+      <h3><span>The cross</span>for sins</h3>
+      <h3><span>The way in</span>to God</h3>
+      <div class="a"><b>Jesus</b><small>“the just”: nothing wrong in Him</small></div>
+      <div class="b"><b>Us</b><small>“the unjust”: guilty as charged</small></div>
+    </div>
+    <p class="note step swap-go">He took the place of the guilty. He paid for sins <em>“once,”</em> which means it is finished, with nothing left to add. And the purpose was a person: <em>“that he might bring us to God.”</em> Not to a religion, to a Father.</p>
+    <p class="note step">That is why a man who has failed can walk in. The one who stands at the door is the One who paid for the failing.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="19-20" data-hl="preached unto the spirits in prison|the longsuffering of God waited in the days of Noah|eight souls were saved by water"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="19-20" data-hl="the spirits in prison"></blockquote>
+    <h2 class="rise" style="--d:1">A hard text, taken humbly</h2>
+    <div class="sort">
+      <div class="step"><h3>One view</h3><p>Christ, by His Spirit, was speaking through Noah as <em>“a preacher of righteousness”</em> (2 Peter 2:5) to people who are now in prison, the dead who would not listen</p></div>
+      <div class="step"><h3>Another view</h3><p>After the cross, Christ announced His victory to rebel spirits who are held in prison, so they know they are beaten</p></div>
+      <div class="step"><h3>What is plain</h3><p>Noah's neighbours had a long time to turn: <em>“the longsuffering of God waited.”</em> Only eight went through. And Christ has won</p></div>
+    </div>
+    <p class="note step">Faithful Bible teachers, Baptists among them, hold both of the first two views. Nobody should pretend to have it all worked out. What this passage plainly does is point at Jesus' victory and God's patience. It does not teach that a man gets a second chance after death. <em>“It is appointed unto men once to die, but after this the judgment”</em> (Hebrews 9:27).</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="21-22" data-hl="baptism doth also now save us|the answer of a good conscience toward God|by the resurrection of Jesus Christ|angels and authorities and powers being made subject unto him"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <div class="split">
+      <div class="stage">
+        <svg viewBox="0 0 600 340" role="img" aria-label="Rain falls and the flood rises. An ark lifts and floats on the water. Eight small figures are inside the cabin, and a door is marked. The words one way through the water are written under the water line.">
+          <g stroke-linecap="round">
+            <path class="pe03-rain" style="animation-delay:0s" d="M90 20 L84 44"/><path class="pe03-rain" style="animation-delay:.3s" d="M180 10 L174 34"/><path class="pe03-rain" style="animation-delay:.6s" d="M270 24 L264 48"/>
+            <path class="pe03-rain" style="animation-delay:.2s" d="M360 14 L354 38"/><path class="pe03-rain" style="animation-delay:.5s" d="M450 22 L444 46"/><path class="pe03-rain" style="animation-delay:.8s" d="M525 12 L519 36"/>
+          </g>
+          <g class="pe03-ark">
+            <path class="pe03-hull" d="M110 190 L490 190 L450 250 L150 250 Z"/>
+            <rect class="pe03-cabin" x="170" y="120" width="260" height="70" rx="6"/>
+            <path d="M160 122 L300 70 L440 122 Z" style="fill:var(--surface-2);stroke:var(--ink-soft)" stroke-width="3"/>
+            <g class="pe03-soul"><circle cx="205" cy="152" r="9"/><circle cx="232" cy="152" r="9"/><circle cx="259" cy="152" r="9"/><circle cx="286" cy="152" r="9"/><circle cx="313" cy="152" r="9"/><circle cx="340" cy="152" r="9"/><circle cx="367" cy="152" r="9"/><circle cx="394" cy="152" r="9"/></g>
+            <rect class="pe03-door" x="285" y="164" width="30" height="26" rx="3"/>
+            <text x="300" y="112" text-anchor="middle" font-size="15" font-weight="700" style="fill:var(--ink)">eight souls</text>
+          </g>
+          <path class="pe03-water" d="M0 232 Q50 218 100 232 T200 232 T300 232 T400 232 T500 232 T600 232 L600 340 L0 340 Z"/>
+          <text x="300" y="300" text-anchor="middle" font-size="18" font-weight="700" style="fill:var(--ink)">one ark, one door, one way through</text>
+        </svg>
+      </div>
+      <div>
+        <h2 class="rise" style="--d:1">The ark: a picture of salvation</h2>
+        <p class="note rise" style="--d:2">Peter says <em>“eight souls were saved by water”</em>, and then calls it a <em>“like figure”</em>: a picture of something. The flood wiped out a world. The ark carried eight people through it.</p>
+        <p class="note step">Look at what saved them: the ark. Not the water. The water was the danger, and the ark was the way through. In Peter's picture the ark is Christ. Those who were in Him came through the judgment, and those who were not did not.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="21" data-hl="not the putting away of the filth of the flesh, but the answer of a good conscience toward God"></blockquote>
+    <h2 class="rise" style="--d:1">Baptism: the picture and the pledge</h2>
+    <ul class="nots">
+      <li class="step"><span class="k">a bath for the body</span><span class="why"><em>“Not the putting away of the filth of the flesh.”</em> Water on the outside cannot wash anything off the inside.</span></li>
+      <li class="step"><span class="k">the water itself</span><span class="why">Noah's water drowned the world. It did not save anyone. Baptism has the same limit: the water has no power in it.</span></li>
+      <li class="step yes"><span class="k">the answer of a good conscience toward God</span><span class="why">A man who already trusts Christ goes down into the water and says out loud: <em>I belong to Jesus.</em> It is a pledge to God, made with a clean conscience.</span></li>
+    </ul>
+    <p class="note step">So what saves? <em>“By the resurrection of Jesus Christ.”</em> The Lord who rose is the one who saves. Baptism is the picture of that, the first step of obedience after it, and a good pledge to make. If you have trusted Jesus and have not yet been baptized, it is a good next step. Talk to your pastor.</p>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="22" data-hl="angels and authorities and powers being made subject unto him"></blockquote>
+    <p class="saying rise" style="--d:1">Every power <em>is under His feet.</em></p>
+    <p class="note rise" style="--d:3">The chapter begins with a suffering church, and it ends with Jesus <em>“on the right hand of God.”</em> The ones frightening these believers, from the emperor to the neighbours to the spirits behind them, are all <em>“made subject unto him.”</em></p>
+    <blockquote class="quote step"><p>“It is Christ that died, yea rather, that is risen again, who is even at the right hand of God, who also maketh intercession for us.”</p><cite>Romans 8:34</cite></blockquote>
+    <p class="note step">The same Jesus who suffered once for sins is the one sitting there now, and He is speaking to the Father about you. Whatever you are afraid of today is smaller than He is.</p>
+  </div>
+</section>
+
+<!-- ======================= CLOSING ======================= -->
+<section class="slide remember">
+  <div class="inner">
+    <h2 class="rise">Points to remember</h2>
+    <ol class="seeds">
+      <li class="step"><span class="topic">Husbands</span><span class="seed-q">“Ye husbands, dwell with them according to knowledge, giving honour unto the wife… that your prayers be not hindered” <cite>3:7</cite></span><span class="take">A husband is to know his wife, honour her and treat her as an equal heir of grace. If he does not, his prayers suffer.</span></li>
+      <li class="step"><span class="topic">The heart</span><span class="seed-q">“The hidden man of the heart… a meek and quiet spirit, which is in the sight of God of great price” <cite>3:4</cite></span><span class="take">What God prices most is not the outside: it is a calm, gentle heart.</span></li>
+      <li class="step"><span class="topic">Blessing</span><span class="seed-q">“Not rendering evil for evil, or railing for railing: but contrariwise blessing” <cite>3:9</cite></span><span class="take">Answer a wrong with a blessing, because you were given one.</span></li>
+      <li class="step"><span class="topic">Hope</span><span class="seed-q">“Be ready always to give an answer to every man that asketh you a reason of the hope that is in you with meekness and fear” <cite>3:15</cite></span><span class="take">Have your story ready, and tell it gently.</span></li>
+      <li class="step"><span class="topic">Christ's death</span><span class="seed-q">“Christ also hath once suffered for sins, the just for the unjust, that he might bring us to God” <cite>3:18</cite></span><span class="take">He paid once, in our place, to bring us to the Father.</span></li>
+      <li class="step"><span class="topic">Baptism</span><span class="seed-q">“Not the putting away of the filth of the flesh, but the answer of a good conscience toward God… by the resurrection of Jesus Christ” <cite>3:21</cite></span><span class="take">Baptism is the picture and the pledge. What saves is Christ's resurrection, not the water.</span></li>
+    </ol>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 1 of 6</p>
+      <span class="topic">Husbands</span>
+      <h2>What are husbands to do for their wives, and what hinders their prayers?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="7"></blockquote>
+      <blockquote class="quote step"><p>“Husbands, love your wives, even as Christ also loved the church, and gave himself for it;”</p><cite>Ephesians 5:25</cite></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>Dwell with them according to knowledge, giving honour as to fellow heirs of the grace of life. Failing to honour his wife hinders a husband's prayers.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 2 of 6</p>
+      <span class="topic">The heart</span>
+      <h2>What is the adorning that is of great price in the sight of God?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="3-4"></blockquote>
+      <blockquote class="quote step"><p>“for the LORD seeth not as man seeth; for man looketh on the outward appearance, but the LORD looketh on the heart.”</p><cite>1 Samuel 16:7</cite></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>The hidden man of the heart: a meek and quiet spirit, which does not fade. God prices the heart, not the clothes.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 3 of 6</p>
+      <span class="topic">Blessing</span>
+      <h2>How are we to answer evil and railing?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="9"></blockquote>
+      <blockquote class="quote step"><p>“Be not overcome of evil, but overcome evil with good.”</p><cite>Romans 12:21</cite></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>Not evil for evil or railing for railing, but with a blessing, because we were called to inherit one.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 4 of 6</p>
+      <span class="topic">Hope</span>
+      <h2>What are we to be ready always to give, and in what spirit?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="15"></blockquote>
+      <blockquote class="quote step" data-q="16"></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>An answer to anyone who asks the reason for our hope, given with meekness and fear, and with a good conscience, so that those who accuse us may be ashamed.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 5 of 6</p>
+      <span class="topic">Christ's death</span>
+      <h2>Why did Christ suffer once for sins?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="18"></blockquote>
+      <blockquote class="quote step" data-q="22"></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>The just died for the unjust to bring us to God. Once is enough, and He is now at God's right hand with every power under Him.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 6 of 6</p>
+      <span class="topic">Baptism</span>
+      <h2>If baptism is not the putting away of the filth of the flesh, what is it?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="20"></blockquote>
+      <blockquote class="quote step" data-q="21"></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>The answer of a good conscience toward God: the picture and the pledge. Like the ark, it points to Christ. What saves is the resurrection of Jesus Christ, not the water.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide prayer">
+  <div class="inner">
+    <div class="emblem rise"></div>
+    <h2 class="rise" style="--d:1">Prayer requests</h2>
+    <p class="ask-line rise" style="--d:2">What can we pray about for you today?</p>
+    <blockquote class="quote rise" style="--d:4"><p>“For the eyes of the Lord are over the righteous, and his ears are open unto their prayers.”</p><cite>1 Peter 3:12</cite></blockquote>
+  </div>
+</section>
+
+</main>
+
+<script>
+// King James Version, 1 Peter 3
+const V = {
+  1: "Likewise, ye wives, be in subjection to your own husbands; that, if any obey not the word, they also may without the word be won by the conversation of the wives;",
+  2: "While they behold your chaste conversation coupled with fear.",
+  3: "Whose adorning let it not be that outward adorning of plaiting the hair, and of wearing of gold, or of putting on of apparel;",
+  4: "But let it be the hidden man of the heart, in that which is not corruptible, even the ornament of a meek and quiet spirit, which is in the sight of God of great price.",
+  5: "For after this manner in the old time the holy women also, who trusted in God, adorned themselves, being in subjection unto their own husbands:",
+  6: "Even as Sara obeyed Abraham, calling him lord: whose daughters ye are, as long as ye do well, and are not afraid with any amazement.",
+  7: "Likewise, ye husbands, dwell with them according to knowledge, giving honour unto the wife, as unto the weaker vessel, and as being heirs together of the grace of life; that your prayers be not hindered.",
+  8: "Finally, be ye all of one mind, having compassion one of another, love as brethren, be pitiful, be courteous:",
+  9: "Not rendering evil for evil, or railing for railing: but contrariwise blessing; knowing that ye are thereunto called, that ye should inherit a blessing.",
+  10: "For he that will love life, and see good days, let him refrain his tongue from evil, and his lips that they speak no guile:",
+  11: "Let him eschew evil, and do good; let him seek peace, and ensue it.",
+  12: "For the eyes of the Lord are over the righteous, and his ears are open unto their prayers: but the face of the Lord is against them that do evil.",
+  13: "And who is he that will harm you, if ye be followers of that which is good?",
+  14: "But and if ye suffer for righteousness’ sake, happy are ye: and be not afraid of their terror, neither be troubled;",
+  15: "But sanctify the Lord God in your hearts: and be ready always to give an answer to every man that asketh you a reason of the hope that is in you with meekness and fear:",
+  16: "Having a good conscience; that, whereas they speak evil of you, as of evildoers, they may be ashamed that falsely accuse your good conversation in Christ.",
+  17: "For it is better, if the will of God be so, that ye suffer for well doing, than for evil doing.",
+  18: "For Christ also hath once suffered for sins, the just for the unjust, that he might bring us to God, being put to death in the flesh, but quickened by the Spirit:",
+  19: "By which also he went and preached unto the spirits in prison;",
+  20: "Which sometime were disobedient, when once the longsuffering of God waited in the days of Noah, while the ark was a preparing, wherein few, that is, eight souls were saved by water.",
+  21: "The like figure whereunto even baptism doth also now save us (not the putting away of the filth of the flesh, but the answer of a good conscience toward God,) by the resurrection of Jesus Christ:",
+  22: "Who is gone into heaven, and is on the right hand of God; angels and authorities and powers being made subject unto him."
+};
+const BOOK = "1 Peter 3";
+</script>
+<script src="../assets/deck.js"></script>
+</body>
+</html>

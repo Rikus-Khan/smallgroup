@@ -560,11 +560,29 @@ window.GLOSSARY = [
     "James", 2,
     [ 1 ] ],
    [
+    "1 Peter", 1,
+    [ 1, 2, 3, 7, 13 ] ],
+   [
+    "1 Peter", 2,
+    [ 5 ] ],
+   [
+    "1 Peter", 3,
+    [ 21 ] ],
+   [
     "1 Peter", 4,
     [ 11 ] ],
    [
     "1 Peter", 5,
     [ 10, 14 ] ],
+   [
+    "2 Peter", 1,
+    [ 1, 2, 8, 11, 14, 16 ] ],
+   [
+    "2 Peter", 2,
+    [ 20 ] ],
+   [
+    "2 Peter", 3,
+    [ 18 ] ],
    [
     "1 John", 4,
     [ 2, 3, 15 ] ],
@@ -912,7 +930,13 @@ window.GLOSSARY = [
     [ 18 ] ],
    [
     "Galatians", 2,
-    [ 7, 8, 9, 11, 14 ] ] ]
+    [ 7, 8, 9, 11, 14 ] ],
+   [
+    "1 Peter", 1,
+    [ 1 ] ],
+   [
+    "2 Peter", 1,
+    [ 1 ] ] ]
  },
  {
   "id": "philip",
@@ -1514,6 +1538,12 @@ window.GLOSSARY = [
     "James", 3,
     [ 9 ] ],
    [
+    "1 Peter", 1,
+    [ 2, 3, 17 ] ],
+   [
+    "2 Peter", 1,
+    [ 17 ] ],
+   [
     "1 John", 4,
     [ 14 ] ],
    [
@@ -1772,8 +1802,17 @@ window.GLOSSARY = [
     "Hebrews", 10,
     [ 15, 29 ] ],
    [
+    "1 Peter", 1,
+    [ 2, 11, 12, 22 ] ],
+   [
+    "1 Peter", 3,
+    [ 18 ] ],
+   [
     "1 Peter", 4,
     [ 14 ] ],
+   [
+    "2 Peter", 1,
+    [ 21 ] ],
    [
     "1 John", 4,
     [ 2, 13 ] ],
@@ -4298,6 +4337,15 @@ window.GLOSSARY = [
     "James", 5,
     [ 12, 18 ] ],
    [
+    "1 Peter", 1,
+    [ 4, 12 ] ],
+   [
+    "1 Peter", 3,
+    [ 22 ] ],
+   [
+    "2 Peter", 1,
+    [ 18 ] ],
+   [
     "1 John", 5,
     [ 7 ] ] ]
  },
@@ -4668,7 +4716,13 @@ window.GLOSSARY = [
     [ 16 ] ],
    [
     "2 Timothy", 1,
-    [ 10 ] ] ]
+    [ 10 ] ],
+   [
+    "1 Peter", 2,
+    [ 9 ] ],
+   [
+    "2 Peter", 1,
+    [ 19 ] ] ]
  },
  {
   "id": "darkness",
@@ -4791,7 +4845,13 @@ window.GLOSSARY = [
     [ 4, 5 ] ],
    [
     "Hebrews", 12,
-    [ 18 ] ] ]
+    [ 18 ] ],
+   [
+    "1 Peter", 2,
+    [ 9 ] ],
+   [
+    "2 Peter", 2,
+    [ 4, 17 ] ] ]
  },
  {
   "id": "grace",
@@ -4997,11 +5057,20 @@ window.GLOSSARY = [
     "James", 4,
     [ 6 ] ],
    [
+    "1 Peter", 1,
+    [ 10, 13 ] ],
+   [
+    "1 Peter", 3,
+    [ 7 ] ],
+   [
     "1 Peter", 4,
     [ 10 ] ],
    [
     "1 Peter", 5,
-    [ 5, 10, 12 ] ] ]
+    [ 5, 10, 12 ] ],
+   [
+    "2 Peter", 3,
+    [ 18 ] ] ]
  },
  {
   "id": "truth",
@@ -5221,6 +5290,15 @@ window.GLOSSARY = [
    [
     "James", 5,
     [ 19 ] ],
+   [
+    "1 Peter", 1,
+    [ 22 ] ],
+   [
+    "2 Peter", 1,
+    [ 12 ] ],
+   [
+    "2 Peter", 2,
+    [ 2 ] ],
    [
     "1 John", 4,
     [ 6 ] ],
@@ -5537,11 +5615,23 @@ window.GLOSSARY = [
     "James", 3,
     [ 14 ] ],
    [
+    "1 Peter", 1,
+    [ 7, 8, 11, 21, 24 ] ],
+   [
+    "1 Peter", 2,
+    [ 20 ] ],
+   [
     "1 Peter", 4,
     [ 13, 14 ] ],
    [
     "1 Peter", 5,
-    [ 1, 4, 10, 11 ] ] ]
+    [ 1, 4, 10, 11 ] ],
+   [
+    "2 Peter", 1,
+    [ 3, 17 ] ],
+   [
+    "2 Peter", 3,
+    [ 18 ] ] ]
  },
  {
   "id": "the-law",
@@ -6257,11 +6347,29 @@ window.GLOSSARY = [
     "James", 2,
     [ 1 ] ],
    [
+    "1 Peter", 1,
+    [ 1, 2, 3, 7, 11, 13, 19 ] ],
+   [
+    "1 Peter", 2,
+    [ 5, 21 ] ],
+   [
+    "1 Peter", 3,
+    [ 16, 18, 21 ] ],
+   [
     "1 Peter", 4,
     [ 1, 11, 13, 14 ] ],
    [
     "1 Peter", 5,
     [ 1, 10, 14 ] ],
+   [
+    "2 Peter", 1,
+    [ 1, 8, 11, 14, 16 ] ],
+   [
+    "2 Peter", 2,
+    [ 20 ] ],
+   [
+    "2 Peter", 3,
+    [ 18 ] ],
    [
     "1 John", 4,
     [ 2, 3 ] ],
@@ -6845,6 +6953,12 @@ window.GLOSSARY = [
     "James", 2,
     [ 19, 23 ] ],
    [
+    "1 Peter", 1,
+    [ 8, 21 ] ],
+   [
+    "1 Peter", 2,
+    [ 6, 7 ] ],
+   [
     "1 John", 4,
     [ 1, 16 ] ],
    [
@@ -7215,7 +7329,13 @@ window.GLOSSARY = [
     [ 16 ] ],
    [
     "1 Thessalonians", 2,
-    [ 3 ] ] ]
+    [ 3 ] ],
+   [
+    "1 Peter", 2,
+    [ 1, 22 ] ],
+   [
+    "1 Peter", 3,
+    [ 10 ] ] ]
  },
  {
   "id": "tenth-hour",
@@ -7800,7 +7920,10 @@ window.GLOSSARY = [
     [ 5 ] ],
    [
     "James", 3,
-    [ 13, 15, 17 ] ] ]
+    [ 13, 15, 17 ] ],
+   [
+    "2 Peter", 3,
+    [ 15 ] ] ]
  },
  {
   "id": "understanding",
@@ -8133,7 +8256,19 @@ window.GLOSSARY = [
     [ 26 ] ],
    [
     "James", 3,
-    [ 13 ] ] ]
+    [ 13 ] ],
+   [
+    "1 Peter", 3,
+    [ 7 ] ],
+   [
+    "2 Peter", 1,
+    [ 2, 3, 5, 6, 8 ] ],
+   [
+    "2 Peter", 2,
+    [ 20 ] ],
+   [
+    "2 Peter", 3,
+    [ 18 ] ] ]
  },
  {
   "id": "instruction",
@@ -8388,7 +8523,10 @@ window.GLOSSARY = [
     [ 9 ] ],
    [
     "Titus", 3,
-    [ 3, 9 ] ] ]
+    [ 3, 9 ] ],
+   [
+    "1 Peter", 2,
+    [ 15 ] ] ]
  },
  {
   "id": "scorner",
@@ -8825,8 +8963,23 @@ window.GLOSSARY = [
     "James", 5,
     [ 16 ] ],
    [
+    "1 Peter", 2,
+    [ 24 ] ],
+   [
+    "1 Peter", 3,
+    [ 12, 14 ] ],
+   [
     "1 Peter", 4,
-    [ 18 ] ] ]
+    [ 18 ] ],
+   [
+    "2 Peter", 1,
+    [ 1 ] ],
+   [
+    "2 Peter", 2,
+    [ 5, 8, 21 ] ],
+   [
+    "2 Peter", 3,
+    [ 13 ] ] ]
  },
  {
   "id": "wicked",
@@ -9010,6 +9163,12 @@ window.GLOSSARY = [
    [
     "2 Thessalonians", 3,
     [ 2 ] ],
+   [
+    "2 Peter", 2,
+    [ 7 ] ],
+   [
+    "2 Peter", 3,
+    [ 17 ] ],
    [
     "1 John", 5,
     [ 18, 19 ] ] ]
@@ -9336,7 +9495,16 @@ window.GLOSSARY = [
     [ 9 ] ],
    [
     "James", 1,
-    [ 26 ] ] ]
+    [ 26 ] ],
+   [
+    "1 Peter", 1,
+    [ 22 ] ],
+   [
+    "1 Peter", 3,
+    [ 4 ] ],
+   [
+    "2 Peter", 2,
+    [ 14 ] ] ]
  },
  {
   "id": "tongue",
@@ -9492,7 +9660,10 @@ window.GLOSSARY = [
     [ 26 ] ],
    [
     "James", 3,
-    [ 5, 6, 8 ] ] ]
+    [ 5, 6, 8 ] ],
+   [
+    "1 Peter", 3,
+    [ 10 ] ] ]
  },
  {
   "id": "anger",
@@ -9885,7 +10056,10 @@ window.GLOSSARY = [
     [ 22 ] ],
    [
     "Titus", 3,
-    [ 12 ] ] ]
+    [ 12 ] ],
+   [
+    "2 Peter", 3,
+    [ 14 ] ] ]
  },
  {
   "id": "strong-drink",
@@ -10281,7 +10455,10 @@ window.GLOSSARY = [
     [ 19 ] ],
    [
     "James", 2,
-    [ 11 ] ] ]
+    [ 11 ] ],
+   [
+    "2 Peter", 2,
+    [ 14 ] ] ]
  },
  {
   "id": "apple-of-the-eye",
@@ -10641,7 +10818,10 @@ window.GLOSSARY = [
     [ 8 ] ],
    [
     "Proverbs", 22,
-    [ 5 ] ] ]
+    [ 5 ] ],
+   [
+    "1 Peter", 2,
+    [ 18 ] ] ]
  },
  {
   "id": "horseleach",
@@ -10815,7 +10995,10 @@ window.GLOSSARY = [
     [ 25 ] ],
    [
     "James", 2,
-    [ 1 ] ] ]
+    [ 1 ] ],
+   [
+    "1 Peter", 1,
+    [ 17 ] ] ]
  },
  {
   "id": "rod",
@@ -11565,7 +11748,10 @@ window.GLOSSARY = [
     [ 13 ] ],
    [
     "1 Timothy", 6,
-    [ 13 ] ] ]
+    [ 13 ] ],
+   [
+    "1 Peter", 3,
+    [ 18 ] ] ]
  },
  {
   "id": "everlasting-life",
@@ -11688,7 +11874,10 @@ window.GLOSSARY = [
     [ 1 ] ],
    [
     "James", 5,
-    [ 12 ] ] ]
+    [ 12 ] ],
+   [
+    "2 Peter", 2,
+    [ 3 ] ] ]
  },
  {
   "id": "judgment",
@@ -11770,6 +11959,12 @@ window.GLOSSARY = [
    [
     "Hebrews", 10,
     [ 27 ] ],
+   [
+    "2 Peter", 2,
+    [ 3, 4, 9 ] ],
+   [
+    "2 Peter", 3,
+    [ 7 ] ],
    [
     "1 John", 4,
     [ 17 ] ] ]
@@ -11871,7 +12066,16 @@ window.GLOSSARY = [
     [ 15, 16 ] ],
    [
     "James", 4,
-    [ 5 ] ] ]
+    [ 5 ] ],
+   [
+    "1 Peter", 2,
+    [ 6 ] ],
+   [
+    "2 Peter", 1,
+    [ 20 ] ],
+   [
+    "2 Peter", 3,
+    [ 16 ] ] ]
  },
  {
   "id": "the-lad",
@@ -12663,7 +12867,10 @@ window.GLOSSARY = [
     [ 2 ] ],
    [
     "1 Corinthians", 14,
-    [ 29, 32, 37 ] ] ]
+    [ 29, 32, 37 ] ],
+   [
+    "2 Peter", 2,
+    [ 16 ] ] ]
  },
  {
   "id": "of-age",
@@ -12699,7 +12906,10 @@ window.GLOSSARY = [
     [ 4 ] ],
    [
     "1 Corinthians", 4,
-    [ 12 ] ] ]
+    [ 12 ] ],
+   [
+    "1 Peter", 2,
+    [ 23 ] ] ]
  },
  {
   "id": "worship",
@@ -13188,7 +13398,13 @@ window.GLOSSARY = [
     [ 10, 14, 29 ] ],
    [
     "Hebrews", 13,
-    [ 12 ] ] ]
+    [ 12 ] ],
+   [
+    "1 Peter", 1,
+    [ 2 ] ],
+   [
+    "1 Peter", 3,
+    [ 15 ] ] ]
  },
  {
   "id": "stoning",
@@ -13862,6 +14078,9 @@ window.GLOSSARY = [
     "2 Timothy", 4,
     [ 17 ] ],
    [
+    "1 Peter", 2,
+    [ 12 ] ],
+   [
     "1 Peter", 4,
     [ 3 ] ] ]
  },
@@ -13944,7 +14163,10 @@ window.GLOSSARY = [
     [ 10, 12 ] ],
    [
     "2 Thessalonians", 3,
-    [ 1 ] ] ]
+    [ 1 ] ],
+   [
+    "1 Peter", 2,
+    [ 12 ] ] ]
  },
  {
   "id": "scribes",
@@ -14160,7 +14382,10 @@ window.GLOSSARY = [
     [ 8, 17 ] ],
    [
     "James", 2,
-    [ 21, 23 ] ] ]
+    [ 21, 23 ] ],
+   [
+    "1 Peter", 3,
+    [ 6 ] ] ]
  },
  {
   "id": "samaritans",
@@ -14316,7 +14541,10 @@ window.GLOSSARY = [
     [ 7 ] ],
    [
     "James", 5,
-    [ 6, 9 ] ] ]
+    [ 6, 9 ] ],
+   [
+    "2 Peter", 2,
+    [ 6 ] ] ]
  },
  {
   "id": "conscience",
@@ -14376,7 +14604,13 @@ window.GLOSSARY = [
     [ 2, 22 ] ],
    [
     "Hebrews", 13,
-    [ 18 ] ] ]
+    [ 18 ] ],
+   [
+    "1 Peter", 2,
+    [ 19 ] ],
+   [
+    "1 Peter", 3,
+    [ 16, 21 ] ] ]
  },
  {
   "id": "i-am",
@@ -14445,7 +14679,10 @@ window.GLOSSARY = [
     [ 1 ] ],
    [
     "Ephesians", 6,
-    [ 8 ] ] ]
+    [ 8 ] ],
+   [
+    "1 Peter", 2,
+    [ 16 ] ] ]
  },
  {
   "id": "bondage",
@@ -14478,7 +14715,10 @@ window.GLOSSARY = [
     [ 1 ] ],
    [
     "Hebrews", 2,
-    [ 15 ] ] ]
+    [ 15 ] ],
+   [
+    "2 Peter", 2,
+    [ 19 ] ] ]
  },
  {
   "id": "servant-of-sin",
@@ -14508,7 +14748,10 @@ window.GLOSSARY = [
   "refs": [
    [
     "John", 3,
-    [ 3, 7 ] ] ]
+    [ 3, 7 ] ],
+   [
+    "1 Peter", 1,
+    [ 23 ] ] ]
  },
  {
   "id": "kingdom-of-god",
@@ -15159,7 +15402,13 @@ window.GLOSSARY = [
     [ 9 ] ],
    [
     "Hebrews", 9,
-    [ 28 ] ] ]
+    [ 28 ] ],
+   [
+    "1 Peter", 1,
+    [ 5, 9, 10 ] ],
+   [
+    "2 Peter", 3,
+    [ 15 ] ] ]
  },
  {
   "id": "sixth-hour",
@@ -15498,7 +15747,16 @@ window.GLOSSARY = [
     [ 22 ] ],
    [
     "Hebrews", 13,
-    [ 2 ] ] ]
+    [ 2 ] ],
+   [
+    "1 Peter", 1,
+    [ 12 ] ],
+   [
+    "1 Peter", 3,
+    [ 22 ] ],
+   [
+    "2 Peter", 2,
+    [ 4, 11 ] ] ]
  },
  {
   "id": "sepulchre",
@@ -15753,7 +16011,13 @@ window.GLOSSARY = [
     [ 16 ] ],
    [
     "James", 3,
-    [ 18 ] ] ]
+    [ 18 ] ],
+   [
+    "2 Peter", 1,
+    [ 2 ] ],
+   [
+    "2 Peter", 3,
+    [ 14 ] ] ]
  },
  {
   "id": "remit",
@@ -16128,7 +16392,13 @@ window.GLOSSARY = [
     [ 13, 18 ] ],
    [
     "James", 3,
-    [ 13 ] ] ]
+    [ 13 ] ],
+   [
+    "1 Peter", 2,
+    [ 9 ] ],
+   [
+    "2 Peter", 1,
+    [ 14 ] ] ]
  },
  {
   "id": "fishers-coat",
@@ -16233,7 +16503,10 @@ window.GLOSSARY = [
     [ 11 ] ],
    [
     "Ephesians", 6,
-    [ 14 ] ] ]
+    [ 14 ] ],
+   [
+    "1 Peter", 1,
+    [ 13 ] ] ]
  },
  {
   "id": "tarry",
@@ -16384,6 +16657,9 @@ window.GLOSSARY = [
    [
     "Hebrews", 11,
     [ 4, 5 ] ],
+   [
+    "1 Peter", 1,
+    [ 11 ] ],
    [
     "1 John", 4,
     [ 14 ] ],
@@ -16563,7 +16839,13 @@ window.GLOSSARY = [
     [ 2 ] ],
    [
     "Hebrews", 11,
-    [ 35 ] ] ]
+    [ 35 ] ],
+   [
+    "1 Peter", 1,
+    [ 3 ] ],
+   [
+    "1 Peter", 3,
+    [ 21 ] ] ]
  },
  {
   "id": "graveclothes",
@@ -16857,7 +17139,10 @@ window.GLOSSARY = [
     [ 26 ] ],
    [
     "Hebrews", 12,
-    [ 22 ] ] ]
+    [ 22 ] ],
+   [
+    "1 Peter", 2,
+    [ 6 ] ] ]
  },
  {
   "id": "spikenard",
@@ -16944,7 +17229,10 @@ window.GLOSSARY = [
     [ 5 ] ],
    [
     "John", 12,
-    [ 14, 15 ] ] ]
+    [ 14, 15 ] ],
+   [
+    "2 Peter", 2,
+    [ 16 ] ] ]
  },
  {
   "id": "corn-of-wheat",
@@ -17465,6 +17753,9 @@ window.GLOSSARY = [
     "Hebrews", 9,
     [ 8 ] ],
    [
+    "1 Peter", 1,
+    [ 20 ] ],
+   [
     "1 John", 4,
     [ 9 ] ] ]
  },
@@ -17532,7 +17823,10 @@ window.GLOSSARY = [
     [ 3 ] ],
    [
     "Hebrews", 7,
-    [ 3 ] ] ]
+    [ 3 ] ],
+   [
+    "1 Peter", 1,
+    [ 23 ] ] ]
  },
  {
   "id": "purge",
@@ -17562,7 +17856,10 @@ window.GLOSSARY = [
     [ 22 ] ],
    [
     "1 Thessalonians", 2,
-    [ 5 ] ] ]
+    [ 5 ] ],
+   [
+    "1 Peter", 2,
+    [ 16 ] ] ]
  },
  {
   "id": "reprove",
@@ -18759,7 +19056,10 @@ window.GLOSSARY = [
     [ 14 ] ],
    [
     "1 Thessalonians", 5,
-    [ 2 ] ] ]
+    [ 2 ] ],
+   [
+    "2 Peter", 3,
+    [ 10 ] ] ]
  },
  {
   "id": "garners",
@@ -19788,7 +20088,13 @@ window.GLOSSARY = [
     [ 17 ] ],
    [
     "James", 5,
-    [ 11 ] ] ]
+    [ 11 ] ],
+   [
+    "1 Peter", 1,
+    [ 3 ] ],
+   [
+    "1 Peter", 2,
+    [ 10 ] ] ]
  },
  {
   "id": "baal",
@@ -19851,7 +20157,10 @@ window.GLOSSARY = [
   "refs": [
    [
     "Hosea", 2,
-    [ 14 ] ] ]
+    [ 14 ] ],
+   [
+    "2 Peter", 2,
+    [ 18 ] ] ]
  },
  {
   "id": "ishi-and-baali",
@@ -20403,7 +20712,10 @@ window.GLOSSARY = [
     [ 20 ] ],
    [
     "Ephesians", 4,
-    [ 17 ] ] ]
+    [ 17 ] ],
+   [
+    "2 Peter", 2,
+    [ 18 ] ] ]
  },
  {
   "id": "gilead",
@@ -22089,7 +22401,10 @@ window.GLOSSARY = [
     [ 29 ] ],
    [
     "Romans", 9,
-    [ 29 ] ] ]
+    [ 29 ] ],
+   [
+    "2 Peter", 2,
+    [ 6 ] ] ]
  },
  {
   "id": "kine",
@@ -22617,7 +22932,10 @@ window.GLOSSARY = [
     [ 9 ] ],
    [
     "Colossians", 3,
-    [ 5 ] ] ]
+    [ 5 ] ],
+   [
+    "2 Peter", 2,
+    [ 3 ] ] ]
  },
  {
   "id": "heritage",
@@ -22728,6 +23046,9 @@ window.GLOSSARY = [
     [ 2 ] ],
    [
     "James", 5,
+    [ 3 ] ],
+   [
+    "2 Peter", 3,
     [ 3 ] ] ]
  },
  {
@@ -23343,7 +23664,10 @@ window.GLOSSARY = [
   "refs": [
    [
     "Micah", 6,
-    [ 5 ] ] ]
+    [ 5 ] ],
+   [
+    "2 Peter", 2,
+    [ 15 ] ] ]
  },
  {
   "id": "shittim",
@@ -24183,7 +24507,10 @@ window.GLOSSARY = [
     [ 21 ] ],
    [
     "James", 3,
-    [ 13 ] ] ]
+    [ 13 ] ],
+   [
+    "1 Peter", 3,
+    [ 4, 15 ] ] ]
  },
  {
   "id": "cherethites",
@@ -26112,7 +26439,10 @@ window.GLOSSARY = [
     [ 32 ] ],
    [
     "1 Corinthians", 12,
-    [ 2 ] ] ]
+    [ 2 ] ],
+   [
+    "2 Peter", 2,
+    [ 16 ] ] ]
  },
  {
   "id": "reproach",
@@ -26349,7 +26679,10 @@ window.GLOSSARY = [
   "refs": [
    [
     "Luke", 1,
-    [ 2 ] ] ]
+    [ 2 ] ],
+   [
+    "2 Peter", 1,
+    [ 16 ] ] ]
  },
  {
   "id": "glad-tidings",
@@ -26547,7 +26880,10 @@ window.GLOSSARY = [
     [ 8 ] ],
    [
     "Hebrews", 4,
-    [ 2 ] ] ]
+    [ 2 ] ],
+   [
+    "1 Peter", 1,
+    [ 12, 25 ] ] ]
  },
  {
   "id": "repent",
@@ -26973,7 +27309,10 @@ window.GLOSSARY = [
     [ 2 ] ],
    [
     "Hebrews", 10,
-    [ 34 ] ] ]
+    [ 34 ] ],
+   [
+    "1 Peter", 3,
+    [ 8 ] ] ]
  },
  {
   "id": "leprosy",
@@ -27990,7 +28329,10 @@ window.GLOSSARY = [
     [ 35 ] ],
    [
     "Luke", 20,
-    [ 13 ] ] ]
+    [ 13 ] ],
+   [
+    "2 Peter", 1,
+    [ 17 ] ] ]
  },
  {
   "id": "heli",
@@ -28059,7 +28401,13 @@ window.GLOSSARY = [
     [ 26, 27 ] ],
    [
     "Hebrews", 11,
-    [ 7 ] ] ]
+    [ 7 ] ],
+   [
+    "1 Peter", 3,
+    [ 20 ] ],
+   [
+    "2 Peter", 2,
+    [ 5 ] ] ]
  },
  {
   "id": "shem",
@@ -28395,7 +28743,13 @@ window.GLOSSARY = [
     [ 7 ] ],
    [
     "2 Timothy", 1,
-    [ 1, 11 ] ] ]
+    [ 1, 11 ] ],
+   [
+    "1 Peter", 1,
+    [ 1 ] ],
+   [
+    "2 Peter", 1,
+    [ 1 ] ] ]
  },
  {
   "id": "bartholomew",
@@ -29463,7 +29817,10 @@ window.GLOSSARY = [
     [ 14, 15 ] ],
    [
     "James", 4,
-    [ 1, 2, 3, 5 ] ] ]
+    [ 1, 2, 3, 5 ] ],
+   [
+    "2 Peter", 1,
+    [ 4 ] ] ]
  },
  {
   "id": "divorcement",
@@ -29808,7 +30165,10 @@ window.GLOSSARY = [
     [ 37 ] ],
    [
     "Galatians", 2,
-    [ 4 ] ] ]
+    [ 4 ] ],
+   [
+    "2 Peter", 2,
+    [ 1 ] ] ]
  },
  {
   "id": "publick-example",
@@ -30292,6 +30652,9 @@ window.GLOSSARY = [
    [
     "Hebrews", 13,
     [ 21, 25 ] ],
+   [
+    "2 Peter", 3,
+    [ 18 ] ],
    [
     "1 John", 5,
     [ 21 ] ] ]
@@ -30804,7 +31167,10 @@ window.GLOSSARY = [
     [ 24 ] ],
    [
     "Hebrews", 12,
-    [ 18 ] ] ]
+    [ 18 ] ],
+   [
+    "2 Peter", 2,
+    [ 17 ] ] ]
  },
  {
   "id": "great-calm",
@@ -31821,7 +32187,10 @@ window.GLOSSARY = [
     [ 3 ] ],
    [
     "Hebrews", 9,
-    [ 26 ] ] ]
+    [ 26 ] ],
+   [
+    "1 Peter", 1,
+    [ 20 ] ] ]
  },
  {
   "id": "end-of-the-world",
@@ -33855,7 +34224,10 @@ window.GLOSSARY = [
     [ 10 ] ],
    [
     "Hebrews", 8,
-    [ 2 ] ] ]
+    [ 2 ] ],
+   [
+    "1 Peter", 1,
+    [ 12 ] ] ]
  },
  {
   "id": "joanna",
@@ -34341,7 +34713,10 @@ window.GLOSSARY = [
     [ 11 ] ],
    [
     "Ephesians", 2,
-    [ 20 ] ] ]
+    [ 20 ] ],
+   [
+    "1 Peter", 2,
+    [ 6, 7 ] ] ]
  },
  {
   "id": "the-seventy",
@@ -34677,7 +35052,10 @@ window.GLOSSARY = [
     [ 15 ] ],
    [
     "Hebrews", 11,
-    [ 8 ] ] ]
+    [ 8 ] ],
+   [
+    "1 Peter", 1,
+    [ 4 ] ] ]
  },
  {
   "id": "rich-fool",
@@ -34770,7 +35148,10 @@ window.GLOSSARY = [
     [ 5 ] ],
    [
     "2 Corinthians", 11,
-    [ 23, 24 ] ] ]
+    [ 23, 24 ] ],
+   [
+    "1 Peter", 2,
+    [ 24 ] ] ]
  },
  {
   "id": "much-required",
@@ -35727,7 +36108,13 @@ window.GLOSSARY = [
     [ 4 ] ],
    [
     "Colossians", 3,
-    [ 12 ] ] ]
+    [ 12 ] ],
+   [
+    "1 Peter", 1,
+    [ 2 ] ],
+   [
+    "1 Peter", 2,
+    [ 6 ] ] ]
  },
  {
   "id": "false-christs",
@@ -36300,7 +36687,10 @@ window.GLOSSARY = [
     [ 67 ] ],
    [
     "1 Corinthians", 4,
-    [ 11 ] ] ]
+    [ 11 ] ],
+   [
+    "1 Peter", 2,
+    [ 20 ] ] ]
  },
  {
   "id": "peters-denial",
@@ -36573,7 +36963,10 @@ window.GLOSSARY = [
   "refs": [
    [
     "Luke", 17,
-    [ 28, 29, 32 ] ] ]
+    [ 28, 29, 32 ] ],
+   [
+    "2 Peter", 2,
+    [ 7 ] ] ]
  },
  {
   "id": "ten-lepers",
@@ -36615,7 +37008,10 @@ window.GLOSSARY = [
     [ 27 ] ],
    [
     "Hebrews", 11,
-    [ 7 ] ] ]
+    [ 7 ] ],
+   [
+    "1 Peter", 3,
+    [ 20 ] ] ]
  },
  {
   "id": "the-flood",
@@ -36630,7 +37026,10 @@ window.GLOSSARY = [
     [ 48 ] ],
    [
     "Luke", 17,
-    [ 27 ] ] ]
+    [ 27 ] ],
+   [
+    "2 Peter", 2,
+    [ 5 ] ] ]
  },
  {
   "id": "fire-and-brimstone",
@@ -37473,7 +37872,10 @@ window.GLOSSARY = [
     [ 1 ] ],
    [
     "Hebrews", 10,
-    [ 12 ] ] ]
+    [ 12 ] ],
+   [
+    "1 Peter", 3,
+    [ 22 ] ] ]
  },
  {
   "id": "penury",
@@ -37581,7 +37983,10 @@ window.GLOSSARY = [
     [ 3, 4 ] ],
    [
     "James", 5,
-    [ 7, 10, 11 ] ] ]
+    [ 7, 10, 11 ] ],
+   [
+    "2 Peter", 1,
+    [ 6 ] ] ]
  },
  {
   "id": "jerusalem-compassed",
@@ -38280,7 +38685,10 @@ window.GLOSSARY = [
   "refs": [
    [
     "Acts", 2,
-    [ 9 ] ] ]
+    [ 9 ] ],
+   [
+    "1 Peter", 1,
+    [ 1 ] ] ]
  },
  {
   "id": "pontus",
@@ -38292,7 +38700,10 @@ window.GLOSSARY = [
     [ 9 ] ],
    [
     "Acts", 18,
-    [ 2 ] ] ]
+    [ 2 ] ],
+   [
+    "1 Peter", 1,
+    [ 1 ] ] ]
  },
  {
   "id": "asia",
@@ -38331,7 +38742,10 @@ window.GLOSSARY = [
     [ 8 ] ],
    [
     "2 Timothy", 1,
-    [ 15 ] ] ]
+    [ 15 ] ],
+   [
+    "1 Peter", 1,
+    [ 1 ] ] ]
  },
  {
   "id": "phrygia",
@@ -39774,7 +40188,10 @@ window.GLOSSARY = [
     [ 1 ] ],
    [
     "Philemon", 1,
-    [ 1, 9, 19 ] ] ]
+    [ 1, 9, 19 ] ],
+   [
+    "2 Peter", 3,
+    [ 15 ] ] ]
  },
  {
   "id": "silas",
@@ -40209,7 +40626,10 @@ window.GLOSSARY = [
     [ 1 ] ],
    [
     "2 Timothy", 4,
-    [ 10 ] ] ]
+    [ 10 ] ],
+   [
+    "1 Peter", 1,
+    [ 1 ] ] ]
  },
  {
   "id": "mysia",
@@ -40227,7 +40647,10 @@ window.GLOSSARY = [
   "refs": [
    [
     "Acts", 16,
-    [ 7 ] ] ]
+    [ 7 ] ],
+   [
+    "1 Peter", 1,
+    [ 1 ] ] ]
  },
  {
   "id": "thyatira",
@@ -40803,7 +41226,10 @@ window.GLOSSARY = [
     [ 29 ] ],
    [
     "Galatians", 3,
-    [ 13 ] ] ]
+    [ 13 ] ],
+   [
+    "1 Peter", 2,
+    [ 24 ] ] ]
  },
  {
   "id": "sure-mercies",
@@ -41184,7 +41610,10 @@ window.GLOSSARY = [
   "refs": [
    [
     "Acts", 7,
-    [ 60 ] ] ]
+    [ 60 ] ],
+   [
+    "2 Peter", 3,
+    [ 4 ] ] ]
  },
  {
   "id": "simon-the-sorcerer",
@@ -42351,7 +42780,10 @@ window.GLOSSARY = [
     [ 25 ] ],
    [
     "Galatians", 5,
-    [ 23 ] ] ]
+    [ 23 ] ],
+   [
+    "2 Peter", 1,
+    [ 6 ] ] ]
  },
  {
   "id": "judgment-to-come",
@@ -42630,7 +43062,10 @@ window.GLOSSARY = [
     [ 1, 6 ] ],
    [
     "Hebrews", 12,
-    [ 17 ] ] ]
+    [ 17 ] ],
+   [
+    "2 Peter", 3,
+    [ 9 ] ] ]
  },
  {
   "id": "assos",
@@ -43263,7 +43698,13 @@ window.GLOSSARY = [
     [ 10 ] ],
    [
     "2 Timothy", 4,
-    [ 2 ] ] ]
+    [ 2 ] ],
+   [
+    "1 Peter", 3,
+    [ 20 ] ],
+   [
+    "2 Peter", 3,
+    [ 9, 15 ] ] ]
  },
  {
   "id": "impenitent",
@@ -43392,7 +43833,13 @@ window.GLOSSARY = [
     [ 11, 18, 19 ] ],
    [
     "Hebrews", 7,
-    [ 19 ] ] ]
+    [ 19 ] ],
+   [
+    "1 Peter", 1,
+    [ 3, 13, 21 ] ],
+   [
+    "1 Peter", 3,
+    [ 15 ] ] ]
  },
  {
   "id": "experience",
@@ -43416,7 +43863,13 @@ window.GLOSSARY = [
     [ 6 ] ],
    [
     "1 Timothy", 1,
-    [ 9 ] ] ]
+    [ 9 ] ],
+   [
+    "2 Peter", 2,
+    [ 5, 6 ] ],
+   [
+    "2 Peter", 3,
+    [ 7 ] ] ]
  },
  {
   "id": "peradventure",
@@ -43572,7 +44025,10 @@ window.GLOSSARY = [
     [ 1 ] ],
    [
     "2 Thessalonians", 1,
-    [ 3 ] ] ]
+    [ 3 ] ],
+   [
+    "2 Peter", 1,
+    [ 8 ] ] ]
  },
  {
   "id": "reign",
@@ -43731,7 +44187,10 @@ window.GLOSSARY = [
   "refs": [
    [
     "Romans", 6,
-    [ 18, 19, 22 ] ] ]
+    [ 18, 19, 22 ] ],
+   [
+    "1 Peter", 2,
+    [ 16 ] ] ]
  },
  {
   "id": "form-of-doctrine",
@@ -43788,7 +44247,10 @@ window.GLOSSARY = [
     [ 3 ] ],
    [
     "1 Thessalonians", 4,
-    [ 7 ] ] ]
+    [ 7 ] ],
+   [
+    "2 Peter", 2,
+    [ 10 ] ] ]
  },
  {
   "id": "holiness",
@@ -43821,7 +44283,10 @@ window.GLOSSARY = [
   "refs": [
    [
     "Romans", 6,
-    [ 23 ] ] ]
+    [ 23 ] ],
+   [
+    "2 Peter", 2,
+    [ 15 ] ] ]
  },
  {
   "id": "gift-of-god",
@@ -43902,7 +44367,10 @@ window.GLOSSARY = [
     [ 22, 23, 30 ] ],
    [
     "Hebrews", 11,
-    [ 11 ] ] ]
+    [ 11 ] ],
+   [
+    "1 Peter", 3,
+    [ 6 ] ] ]
  },
  {
   "id": "impute",
@@ -44441,8 +44909,17 @@ window.GLOSSARY = [
     "James", 5,
     [ 7, 9, 10, 12, 19 ] ],
    [
+    "1 Peter", 1,
+    [ 22 ] ],
+   [
+    "1 Peter", 3,
+    [ 8 ] ],
+   [
     "1 Peter", 5,
-    [ 9 ] ] ]
+    [ 9 ] ],
+   [
+    "2 Peter", 1,
+    [ 10 ] ] ]
  },
  {
   "id": "captain-of-the-guard",
@@ -44580,7 +45057,10 @@ window.GLOSSARY = [
   "refs": [
    [
     "Romans", 13,
-    [ 13 ] ] ]
+    [ 13 ] ],
+   [
+    "2 Peter", 2,
+    [ 18 ] ] ]
  },
  {
   "id": "put-on-christ",
@@ -44955,7 +45435,10 @@ window.GLOSSARY = [
     [ 9, 10 ] ],
    [
     "Hebrews", 13,
-    [ 19, 22 ] ] ]
+    [ 19, 22 ] ],
+   [
+    "1 Peter", 2,
+    [ 11 ] ] ]
  },
  {
   "id": "living-sacrifice",
@@ -45099,7 +45582,10 @@ window.GLOSSARY = [
     [ 16 ] ],
    [
     "1 Peter", 4,
-    [ 8 ] ] ]
+    [ 8 ] ],
+   [
+    "2 Peter", 3,
+    [ 10, 12 ] ] ]
  },
  {
   "id": "instant-in-prayer",
@@ -45240,7 +45726,10 @@ window.GLOSSARY = [
     [ 3 ] ],
    [
     "Colossians", 2,
-    [ 11, 13, 23 ] ] ]
+    [ 11, 13, 23 ] ],
+   [
+    "2 Peter", 2,
+    [ 10, 18 ] ] ]
  },
  {
   "id": "motions-of-sins",
@@ -45444,7 +45933,16 @@ window.GLOSSARY = [
     [ 14 ] ],
    [
     "Hebrews", 9,
-    [ 15 ] ] ]
+    [ 15 ] ],
+   [
+    "1 Peter", 1,
+    [ 15 ] ],
+   [
+    "1 Peter", 2,
+    [ 9, 21 ] ],
+   [
+    "1 Peter", 3,
+    [ 9 ] ] ]
  },
  {
   "id": "foreknow",
@@ -45648,7 +46146,10 @@ window.GLOSSARY = [
     [ 5, 7, 28 ] ],
    [
     "1 Thessalonians", 1,
-    [ 4 ] ] ]
+    [ 4 ] ],
+   [
+    "2 Peter", 1,
+    [ 10 ] ] ]
  },
  {
   "id": "harden",
@@ -45705,7 +46206,10 @@ window.GLOSSARY = [
   "refs": [
    [
     "Romans", 9,
-    [ 32, 33 ] ] ]
+    [ 32, 33 ] ],
+   [
+    "1 Peter", 2,
+    [ 8 ] ] ]
  },
  {
   "id": "end-of-the-law",
@@ -45783,7 +46287,16 @@ window.GLOSSARY = [
     [ 17 ] ],
    [
     "Hebrews", 4,
-    [ 2, 6 ] ] ]
+    [ 2, 6 ] ],
+   [
+    "1 Peter", 1,
+    [ 12, 25 ] ],
+   [
+    "1 Peter", 3,
+    [ 19 ] ],
+   [
+    "2 Peter", 2,
+    [ 5 ] ] ]
  },
  {
   "id": "beautiful-feet",
@@ -45957,7 +46470,10 @@ window.GLOSSARY = [
     [ 8, 10 ] ],
    [
     "1 Peter", 4,
-    [ 13 ] ] ]
+    [ 13 ] ],
+   [
+    "2 Peter", 1,
+    [ 4 ] ] ]
  },
  {
   "id": "strive",
@@ -46551,7 +47067,10 @@ window.GLOSSARY = [
     [ 3 ] ],
    [
     "2 Timothy", 3,
-    [ 2 ] ] ]
+    [ 2 ] ],
+   [
+    "2 Peter", 2,
+    [ 14 ] ] ]
  },
  {
   "id": "drunkard",
@@ -46629,7 +47148,10 @@ window.GLOSSARY = [
     [ 21 ] ],
    [
     "Hebrews", 6,
-    [ 12 ] ] ]
+    [ 12 ] ],
+   [
+    "1 Peter", 3,
+    [ 9 ] ] ]
  },
  {
   "id": "adulterers",
@@ -47019,7 +47541,10 @@ window.GLOSSARY = [
     [ 8 ] ],
    [
     "1 Peter", 5,
-    [ 14 ] ] ]
+    [ 14 ] ],
+   [
+    "2 Peter", 1,
+    [ 7 ] ] ]
  },
  {
   "id": "edifieth",
@@ -47214,7 +47739,10 @@ window.GLOSSARY = [
     [ 6, 11 ] ],
    [
     "1 Peter", 5,
-    [ 3 ] ] ]
+    [ 3 ] ],
+   [
+    "2 Peter", 2,
+    [ 6 ] ] ]
  },
  {
   "id": "admonition",
@@ -47340,7 +47868,10 @@ window.GLOSSARY = [
     [ 4 ] ],
    [
     "Galatians", 5,
-    [ 1, 13 ] ] ]
+    [ 1, 13 ] ],
+   [
+    "1 Peter", 2,
+    [ 16 ] ] ]
  },
  {
   "id": "offence",
@@ -47355,7 +47886,10 @@ window.GLOSSARY = [
     [ 3 ] ],
    [
     "Galatians", 5,
-    [ 11 ] ] ]
+    [ 11 ] ],
+   [
+    "1 Peter", 2,
+    [ 8 ] ] ]
  },
  {
   "id": "unknown-tongue",
@@ -48096,7 +48630,10 @@ window.GLOSSARY = [
     [ 26 ] ],
    [
     "James", 4,
-    [ 9 ] ] ]
+    [ 9 ] ],
+   [
+    "1 Peter", 1,
+    [ 6 ] ] ]
  },
  {
   "id": "anguish",
@@ -48186,7 +48723,10 @@ window.GLOSSARY = [
     [ 15 ] ],
    [
     "2 Thessalonians", 3,
-    [ 14, 17 ] ] ]
+    [ 14, 17 ] ],
+   [
+    "2 Peter", 3,
+    [ 1, 16 ] ] ]
  },
  {
   "id": "commendation",
@@ -48399,7 +48939,10 @@ window.GLOSSARY = [
   "refs": [
    [
     "2 Corinthians", 6,
-    [ 6 ] ] ]
+    [ 6 ] ],
+   [
+    "1 Peter", 1,
+    [ 22 ] ] ]
  },
  {
   "id": "unequally-yoked",
@@ -48855,7 +49398,22 @@ window.GLOSSARY = [
     [ 5, 7 ] ],
    [
     "James", 3,
-    [ 13 ] ] ]
+    [ 13 ] ],
+   [
+    "1 Peter", 1,
+    [ 15, 18 ] ],
+   [
+    "1 Peter", 2,
+    [ 12 ] ],
+   [
+    "1 Peter", 3,
+    [ 1, 2, 16 ] ],
+   [
+    "2 Peter", 2,
+    [ 7 ] ],
+   [
+    "2 Peter", 3,
+    [ 11 ] ] ]
  },
  {
   "id": "certify",
@@ -48879,7 +49437,10 @@ window.GLOSSARY = [
     [ 2 ] ],
    [
     "Ephesians", 1,
-    [ 17 ] ] ]
+    [ 17 ] ],
+   [
+    "1 Peter", 1,
+    [ 13 ] ] ]
  },
  {
   "id": "zealous",
@@ -49014,7 +49575,10 @@ window.GLOSSARY = [
     [ 17 ] ],
    [
     "Hebrews", 11,
-    [ 7, 9 ] ] ]
+    [ 7, 9 ] ],
+   [
+    "1 Peter", 3,
+    [ 7 ] ] ]
  },
  {
   "id": "tutors-and-governors",
@@ -49299,7 +49863,10 @@ window.GLOSSARY = [
   "refs": [
    [
     "Philippians", 4,
-    [ 8 ] ] ]
+    [ 8 ] ],
+   [
+    "2 Peter", 1,
+    [ 3, 5 ] ] ]
  },
  {
   "id": "of-good-report",
@@ -49616,6 +50183,9 @@ window.GLOSSARY = [
     "Ephesians", 3,
     [ 10 ] ],
    [
+    "1 Peter", 1,
+    [ 6 ] ],
+   [
     "1 Peter", 4,
     [ 10 ] ] ]
  },
@@ -49911,7 +50481,10 @@ window.GLOSSARY = [
     [ 8 ] ],
    [
     "Titus", 3,
-    [ 3 ] ] ]
+    [ 3 ] ],
+   [
+    "1 Peter", 2,
+    [ 1 ] ] ]
  },
  {
   "id": "tenderhearted",
@@ -50079,7 +50652,10 @@ window.GLOSSARY = [
   "refs": [
    [
     "Colossians", 2,
-    [ 12 ] ] ]
+    [ 12 ] ],
+   [
+    "1 Peter", 3,
+    [ 21 ] ] ]
  },
  {
   "id": "handwriting",
@@ -50157,7 +50733,10 @@ window.GLOSSARY = [
   "refs": [
    [
     "Ephesians", 1,
-    [ 19 ] ] ]
+    [ 19 ] ],
+   [
+    "2 Peter", 3,
+    [ 9 ] ] ]
  },
  {
   "id": "head-over-all-things",
@@ -50522,6 +51101,12 @@ window.GLOSSARY = [
     "2 Thessalonians", 3,
     [ 13 ] ],
    [
+    "1 Peter", 2,
+    [ 15 ] ],
+   [
+    "1 Peter", 3,
+    [ 17 ] ],
+   [
     "1 Peter", 4,
     [ 19 ] ] ]
  },
@@ -50763,7 +51348,10 @@ window.GLOSSARY = [
     [ 17 ] ],
    [
     "James", 4,
-    [ 7 ] ] ]
+    [ 7 ] ],
+   [
+    "1 Peter", 2,
+    [ 13 ] ] ]
  },
  {
   "id": "head-of-the-wife",
@@ -51246,7 +51834,10 @@ window.GLOSSARY = [
     [ 14 ] ],
    [
     "Hebrews", 6,
-    [ 12 ] ] ]
+    [ 12 ] ],
+   [
+    "1 Peter", 3,
+    [ 13 ] ] ]
  },
  {
   "id": "afflictions",
@@ -51381,7 +51972,13 @@ window.GLOSSARY = [
     [ 23 ] ],
    [
     "2 Thessalonians", 2,
-    [ 1, 8 ] ] ]
+    [ 1, 8 ] ],
+   [
+    "2 Peter", 1,
+    [ 16 ] ],
+   [
+    "2 Peter", 3,
+    [ 4 ] ] ]
  },
  {
   "id": "forbear-no-longer",
@@ -52602,7 +53199,10 @@ window.GLOSSARY = [
   "refs": [
    [
     "2 Timothy", 4,
-    [ 4 ] ] ]
+    [ 4 ] ],
+   [
+    "2 Peter", 1,
+    [ 16 ] ] ]
  },
  {
   "id": "ready-to-be-offered",
@@ -52782,7 +53382,10 @@ window.GLOSSARY = [
   "refs": [
    [
     "Titus", 1,
-    [ 6, 7 ] ] ]
+    [ 6, 7 ] ],
+   [
+    "2 Peter", 3,
+    [ 14 ] ] ]
  },
  {
   "id": "selfwilled",
@@ -52791,7 +53394,10 @@ window.GLOSSARY = [
   "refs": [
    [
     "Titus", 1,
-    [ 7 ] ] ]
+    [ 7 ] ],
+   [
+    "2 Peter", 2,
+    [ 10 ] ] ]
  },
  {
   "id": "vain-talkers",
@@ -52862,6 +53468,9 @@ window.GLOSSARY = [
     "Titus", 2,
     [ 2, 4, 6, 12 ] ],
    [
+    "1 Peter", 1,
+    [ 13 ] ],
+   [
     "1 Peter", 4,
     [ 7 ] ] ]
  },
@@ -52872,7 +53481,10 @@ window.GLOSSARY = [
   "refs": [
    [
     "Titus", 2,
-    [ 5 ] ] ]
+    [ 5 ] ],
+   [
+    "1 Peter", 3,
+    [ 2 ] ] ]
  },
  {
   "id": "keepers-at-home",
@@ -52944,7 +53556,10 @@ window.GLOSSARY = [
   "refs": [
    [
     "Titus", 2,
-    [ 14 ] ] ]
+    [ 14 ] ],
+   [
+    "1 Peter", 2,
+    [ 9 ] ] ]
  },
  {
   "id": "divers-lusts",
@@ -53826,7 +54441,10 @@ window.GLOSSARY = [
     [ 12, 26, 28 ] ],
    [
     "Hebrews", 10,
-    [ 2, 10 ] ] ]
+    [ 2, 10 ] ],
+   [
+    "1 Peter", 3,
+    [ 18 ] ] ]
  },
  {
   "id": "appear-the-second-time",
@@ -53940,7 +54558,10 @@ window.GLOSSARY = [
   "refs": [
    [
     "Hebrews", 10,
-    [ 39 ] ] ]
+    [ 39 ] ],
+   [
+    "2 Peter", 3,
+    [ 7 ] ] ]
  },
  {
   "id": "entertain-strangers",
@@ -54210,7 +54831,13 @@ window.GLOSSARY = [
     [ 3, 6 ] ],
    [
     "James", 2,
-    [ 1, 5, 14, 17, 18, 20, 22, 24, 26 ] ] ]
+    [ 1, 5, 14, 17, 18, 20, 22, 24, 26 ] ],
+   [
+    "1 Peter", 1,
+    [ 5, 7, 9, 21 ] ],
+   [
+    "2 Peter", 1,
+    [ 1, 5 ] ] ]
  },
  {
   "id": "substance-faith",
@@ -54228,7 +54855,10 @@ window.GLOSSARY = [
   "refs": [
    [
     "Hebrews", 11,
-    [ 13 ] ] ]
+    [ 13 ] ],
+   [
+    "1 Peter", 2,
+    [ 11 ] ] ]
  },
  {
   "id": "proper-child",
@@ -54750,7 +55380,10 @@ window.GLOSSARY = [
   "refs": [
    [
     "James", 5,
-    [ 11 ] ] ]
+    [ 11 ] ],
+   [
+    "1 Peter", 3,
+    [ 8 ] ] ]
  },
  {
   "id": "prayer-of-faith",
@@ -54952,5 +55585,611 @@ window.GLOSSARY = [
    [
     "1 John", 5,
     [ 20 ] ] ]
+ },
+ {
+  "id": "strangers-scattered",
+  "kind": "term",
+  "name": "Strangers scattered (believers living as outsiders, far from home)",
+  "refs": [
+   [
+    "1 Peter", 1,
+    [ 1 ] ] ]
+ },
+ {
+  "id": "foreknowledge",
+  "kind": "term",
+  "name": "Foreknowledge (God knowing beforehand)",
+  "refs": [
+   [
+    "1 Peter", 1,
+    [ 2 ] ] ]
+ },
+ {
+  "id": "sprinkling-of-blood",
+  "kind": "term",
+  "name": "The sprinkling of the blood of Jesus Christ",
+  "refs": [
+   [
+    "1 Peter", 1,
+    [ 2 ] ] ]
+ },
+ {
+  "id": "lively-living",
+  "kind": "term",
+  "name": "Lively (old word for living, alive)",
+  "refs": [
+   [
+    "1 Peter", 1,
+    [ 3 ] ],
+   [
+    "1 Peter", 2,
+    [ 5 ] ] ]
+ },
+ {
+  "id": "inheritance-incorruptible",
+  "kind": "term",
+  "name": "An inheritance incorruptible, undefiled, that fadeth not away (kept in heaven for you)",
+  "refs": [
+   [
+    "1 Peter", 1,
+    [ 4 ] ] ]
+ },
+ {
+  "id": "tried-with-fire",
+  "kind": "term",
+  "name": "Faith tried with fire (like gold in the refiner's furnace)",
+  "refs": [
+   [
+    "1 Peter", 1,
+    [ 7 ] ] ]
+ },
+ {
+  "id": "joy-unspeakable",
+  "kind": "term",
+  "name": "Joy unspeakable and full of glory",
+  "refs": [
+   [
+    "1 Peter", 1,
+    [ 8 ] ] ]
+ },
+ {
+  "id": "be-ye-holy",
+  "kind": "term",
+  "name": "Be ye holy; for I am holy (set apart for God)",
+  "refs": [
+   [
+    "1 Peter", 1,
+    [ 16 ] ] ]
+ },
+ {
+  "id": "redeemed-bought-back",
+  "kind": "term",
+  "name": "Redeemed (bought back, set free by a price)",
+  "refs": [
+   [
+    "1 Peter", 1,
+    [ 18 ] ] ]
+ },
+ {
+  "id": "vain-conversation",
+  "kind": "term",
+  "name": "Vain conversation (an empty way of life, handed down from your fathers)",
+  "refs": [
+   [
+    "1 Peter", 1,
+    [ 18 ] ] ]
+ },
+ {
+  "id": "precious-blood",
+  "kind": "term",
+  "name": "The precious blood of Christ, a lamb without blemish and without spot",
+  "refs": [
+   [
+    "1 Peter", 1,
+    [ 19 ] ] ]
+ },
+ {
+  "id": "foreordained",
+  "kind": "term",
+  "name": "Foreordained (planned before the world was made)",
+  "refs": [
+   [
+    "1 Peter", 1,
+    [ 20 ] ] ]
+ },
+ {
+  "id": "flesh-as-grass",
+  "kind": "term",
+  "name": "All flesh is as grass (a life that withers; God's word that does not)",
+  "refs": [
+   [
+    "1 Peter", 1,
+    [ 24 ] ] ]
+ },
+ {
+  "id": "sincere-milk",
+  "kind": "term",
+  "name": "The sincere milk of the word (pure, with nothing added)",
+  "refs": [
+   [
+    "1 Peter", 2,
+    [ 2 ] ] ]
+ },
+ {
+  "id": "living-stones",
+  "kind": "term",
+  "name": "Living stones (believers built into God's house)",
+  "refs": [
+   [
+    "1 Peter", 2,
+    [ 4, 5 ] ] ]
+ },
+ {
+  "id": "priesthood-royal-holy",
+  "kind": "term",
+  "name": "A holy, royal priesthood (every believer may go to God himself)",
+  "refs": [
+   [
+    "1 Peter", 2,
+    [ 5, 9 ] ] ]
+ },
+ {
+  "id": "chosen-generation",
+  "kind": "term",
+  "name": "A chosen generation, an holy nation (God's own family)",
+  "refs": [
+   [
+    "1 Peter", 2,
+    [ 9 ] ] ]
+ },
+ {
+  "id": "not-a-people",
+  "kind": "term",
+  "name": "Not a people, now the people of God (mercy obtained)",
+  "refs": [
+   [
+    "1 Peter", 2,
+    [ 10 ] ] ]
+ },
+ {
+  "id": "fleshly-lusts",
+  "kind": "term",
+  "name": "Fleshly lusts, which war against the soul",
+  "refs": [
+   [
+    "1 Peter", 2,
+    [ 11 ] ] ]
+ },
+ {
+  "id": "day-of-visitation",
+  "kind": "term",
+  "name": "The day of visitation (the day God steps in and looks at a life)",
+  "refs": [
+   [
+    "1 Peter", 2,
+    [ 12 ] ] ]
+ },
+ {
+  "id": "the-king-supreme",
+  "kind": "term",
+  "name": "The king, as supreme (the Roman emperor, Nero in Peter's day)",
+  "refs": [
+   [
+    "1 Peter", 2,
+    [ 13, 17 ] ] ]
+ },
+ {
+  "id": "household-servants",
+  "kind": "person",
+  "name": "Servants (household slaves in the empire)",
+  "refs": [
+   [
+    "1 Peter", 2,
+    [ 18 ] ] ]
+ },
+ {
+  "id": "bare-our-sins",
+  "kind": "term",
+  "name": "Bare our sins in his own body on the tree",
+  "refs": [
+   [
+    "1 Peter", 2,
+    [ 24 ] ] ]
+ },
+ {
+  "id": "sheep-going-astray",
+  "kind": "term",
+  "name": "Sheep going astray (and returned to the Shepherd)",
+  "refs": [
+   [
+    "1 Peter", 2,
+    [ 25 ] ] ]
+ },
+ {
+  "id": "shepherd-and-bishop",
+  "kind": "term",
+  "name": "The Shepherd and Bishop of your souls (the one who oversees and guards)",
+  "refs": [
+   [
+    "1 Peter", 2,
+    [ 25 ] ] ]
+ },
+ {
+  "id": "in-subjection",
+  "kind": "term",
+  "name": "In subjection (lining yourself up under another by your own choice)",
+  "refs": [
+   [
+    "1 Peter", 3,
+    [ 1, 5 ] ] ]
+ },
+ {
+  "id": "hidden-man-of-the-heart",
+  "kind": "term",
+  "name": "The hidden man of the heart (a meek and quiet spirit, of great price)",
+  "refs": [
+   [
+    "1 Peter", 3,
+    [ 4 ] ] ]
+ },
+ {
+  "id": "weaker-vessel",
+  "kind": "term",
+  "name": "The weaker vessel (physically weaker, like fine china, and an equal heir)",
+  "refs": [
+   [
+    "1 Peter", 3,
+    [ 7 ] ] ]
+ },
+ {
+  "id": "railing",
+  "kind": "term",
+  "name": "Railing (shouting abuse)",
+  "refs": [
+   [
+    "1 Peter", 3,
+    [ 9 ] ] ]
+ },
+ {
+  "id": "contrariwise",
+  "kind": "term",
+  "name": "Contrariwise (the other way round)",
+  "refs": [
+   [
+    "1 Peter", 3,
+    [ 9 ] ] ]
+ },
+ {
+  "id": "eschew-ensue",
+  "kind": "term",
+  "name": "Eschew, ensue (steer clear of, chase after)",
+  "refs": [
+   [
+    "1 Peter", 3,
+    [ 11 ] ] ]
+ },
+ {
+  "id": "reason-of-the-hope",
+  "kind": "term",
+  "name": "A reason of the hope that is in you (be ready to say why)",
+  "refs": [
+   [
+    "1 Peter", 3,
+    [ 15 ] ] ]
+ },
+ {
+  "id": "spirits-in-prison",
+  "kind": "term",
+  "name": "The spirits in prison (a hard text: teachers differ)",
+  "refs": [
+   [
+    "1 Peter", 3,
+    [ 19 ] ] ]
+ },
+ {
+  "id": "eight-souls",
+  "kind": "term",
+  "name": "Eight souls saved by water (Noah's family in the ark)",
+  "refs": [
+   [
+    "1 Peter", 3,
+    [ 20 ] ] ]
+ },
+ {
+  "id": "answer-of-a-good-conscience",
+  "kind": "term",
+  "name": "The answer of a good conscience toward God (what baptism is: a pledge, by Christ's resurrection)",
+  "refs": [
+   [
+    "1 Peter", 3,
+    [ 21 ] ] ]
+ },
+ {
+  "id": "authorities-and-powers",
+  "kind": "term",
+  "name": "Angels and authorities and powers (made subject to Christ)",
+  "refs": [
+   [
+    "1 Peter", 3,
+    [ 22 ] ] ]
+ },
+ {
+  "id": "brotherly-kindness",
+  "kind": "term",
+  "name": "Brotherly kindness (love for fellow believers: the Greek philadelphia)",
+  "refs": [
+   [
+    "2 Peter", 1,
+    [ 7 ] ] ]
+ },
+ {
+  "id": "calling-and-election-sure",
+  "kind": "term",
+  "name": "Make your calling and election sure (see the proof in your own life that God's call is real)",
+  "refs": [
+   [
+    "2 Peter", 1,
+    [ 10 ] ] ]
+ },
+ {
+  "id": "peter-tabernacle",
+  "kind": "term",
+  "name": "This tabernacle (Peter's body, pictured as a tent he will soon take down)",
+  "refs": [
+   [
+    "2 Peter", 1,
+    [ 13, 14 ] ] ]
+ },
+ {
+  "id": "peters-decease",
+  "kind": "term",
+  "name": "Decease (Peter's own death, his departure)",
+  "refs": [
+   [
+    "2 Peter", 1,
+    [ 15 ] ] ]
+ },
+ {
+  "id": "holy-mount",
+  "kind": "place",
+  "name": "The holy mount (where Jesus was transfigured before Peter, James and John)",
+  "refs": [
+   [
+    "2 Peter", 1,
+    [ 18 ] ] ]
+ },
+ {
+  "id": "day-star",
+  "kind": "term",
+  "name": "The day star (the morning star: many teachers say Christ Himself, fully known at last)",
+  "refs": [
+   [
+    "2 Peter", 1,
+    [ 19 ] ] ]
+ },
+ {
+  "id": "private-interpretation",
+  "kind": "term",
+  "name": "Private interpretation (not one man's own idea: prophecy began with God)",
+  "refs": [
+   [
+    "2 Peter", 1,
+    [ 20 ] ] ]
+ },
+ {
+  "id": "moved-by-the-spirit",
+  "kind": "term",
+  "name": "Moved by the Holy Ghost (carried along, like a ship by the wind)",
+  "refs": [
+   [
+    "2 Peter", 1,
+    [ 21 ] ] ]
+ },
+ {
+  "id": "damnable-heresies",
+  "kind": "term",
+  "name": "Damnable heresies (teachings that lead to ruin)",
+  "refs": [
+   [
+    "2 Peter", 2,
+    [ 1 ] ] ]
+ },
+ {
+  "id": "the-lord-that-bought-them",
+  "kind": "term",
+  "name": "The Lord that bought them (Christ paid the price even for those who deny Him)",
+  "refs": [
+   [
+    "2 Peter", 2,
+    [ 1 ] ] ]
+ },
+ {
+  "id": "feigned-words",
+  "kind": "term",
+  "name": "Feigned words, make merchandise (smooth, made-up talk, used to sell people)",
+  "refs": [
+   [
+    "2 Peter", 2,
+    [ 3 ] ] ]
+ },
+ {
+  "id": "pernicious-ways",
+  "kind": "term",
+  "name": "Pernicious (ruinous, destructive)",
+  "refs": [
+   [
+    "2 Peter", 2,
+    [ 2 ] ] ]
+ },
+ {
+  "id": "chains-of-darkness",
+  "kind": "term",
+  "name": "Cast down to hell (the Greek Tartarus: a holding place for fallen angels until judgment)",
+  "refs": [
+   [
+    "2 Peter", 2,
+    [ 4 ] ] ]
+ },
+ {
+  "id": "eighth-person",
+  "kind": "term",
+  "name": "Noah the eighth person (eight people were saved in the ark)",
+  "refs": [
+   [
+    "2 Peter", 2,
+    [ 5 ] ] ]
+ },
+ {
+  "id": "vexed",
+  "kind": "term",
+  "name": "Vexed (worn out and tormented)",
+  "refs": [
+   [
+    "2 Peter", 2,
+    [ 7, 8 ] ] ]
+ },
+ {
+  "id": "brute-beasts",
+  "kind": "term",
+  "name": "Natural brute beasts (animals, ruled by appetite)",
+  "refs": [
+   [
+    "2 Peter", 2,
+    [ 12 ] ] ]
+ },
+ {
+  "id": "riot",
+  "kind": "term",
+  "name": "Riot in the daytime (wild partying, with no shame)",
+  "refs": [
+   [
+    "2 Peter", 2,
+    [ 13 ] ] ]
+ },
+ {
+  "id": "bosor",
+  "kind": "person",
+  "name": "Bosor (another form of Beor, Balaam's father)",
+  "refs": [
+   [
+    "2 Peter", 2,
+    [ 15 ] ] ]
+ },
+ {
+  "id": "wells-without-water",
+  "kind": "term",
+  "name": "Wells without water (big promises, nothing to drink)",
+  "refs": [
+   [
+    "2 Peter", 2,
+    [ 17 ] ] ]
+ },
+ {
+  "id": "swelling-words",
+  "kind": "term",
+  "name": "Great swelling words of vanity (big talk with nothing in it)",
+  "refs": [
+   [
+    "2 Peter", 2,
+    [ 18 ] ] ]
+ },
+ {
+  "id": "false-liberty",
+  "kind": "term",
+  "name": "They promise liberty (freedom offered by men who are slaves themselves)",
+  "refs": [
+   [
+    "2 Peter", 2,
+    [ 19 ] ] ]
+ },
+ {
+  "id": "dog-and-sow",
+  "kind": "term",
+  "name": "The dog and the sow (going back to the old life: washed on the outside, never changed within)",
+  "refs": [
+   [
+    "2 Peter", 2,
+    [ 22 ] ] ]
+ },
+ {
+  "id": "scoffers",
+  "kind": "term",
+  "name": "Scoffers (men who sneer at God's promises)",
+  "refs": [
+   [
+    "2 Peter", 3,
+    [ 3 ] ] ]
+ },
+ {
+  "id": "one-day-a-thousand-years",
+  "kind": "term",
+  "name": "One day as a thousand years (God is not bound by our clocks)",
+  "refs": [
+   [
+    "2 Peter", 3,
+    [ 8 ] ] ]
+ },
+ {
+  "id": "slack",
+  "kind": "term",
+  "name": "Slack, slackness (slow, late)",
+  "refs": [
+   [
+    "2 Peter", 3,
+    [ 9 ] ] ]
+ },
+ {
+  "id": "thief-in-the-night",
+  "kind": "term",
+  "name": "As a thief in the night (suddenly, and with no warning)",
+  "refs": [
+   [
+    "2 Peter", 3,
+    [ 10 ] ] ]
+ },
+ {
+  "id": "elements-melt",
+  "kind": "term",
+  "name": "The elements (the basic stuff the world is made of)",
+  "refs": [
+   [
+    "2 Peter", 3,
+    [ 10, 12 ] ] ]
+ },
+ {
+  "id": "hasting",
+  "kind": "term",
+  "name": "Hasting unto (hurrying toward it, eager for it)",
+  "refs": [
+   [
+    "2 Peter", 3,
+    [ 12 ] ] ]
+ },
+ {
+  "id": "new-heavens-new-earth",
+  "kind": "term",
+  "name": "New heavens and a new earth (where righteousness lives at home)",
+  "refs": [
+   [
+    "2 Peter", 3,
+    [ 13 ] ] ]
+ },
+ {
+  "id": "wrest",
+  "kind": "term",
+  "name": "Wrest (twist and wrench until it says what the reader wants)",
+  "refs": [
+   [
+    "2 Peter", 3,
+    [ 16 ] ] ]
+ },
+ {
+  "id": "stedfastness",
+  "kind": "term",
+  "name": "Stedfastness (a firm footing)",
+  "refs": [
+   [
+    "2 Peter", 3,
+    [ 17 ] ] ]
  }
 ];

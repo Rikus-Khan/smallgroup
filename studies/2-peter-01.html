@@ -1,0 +1,630 @@
+<!doctype html>
+<html lang="en" data-theme="slate">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>2 Peter 1</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="../assets/fonts.css">
+<link rel="stylesheet" href="../assets/deck.css">
+<link rel="stylesheet" href="../assets/themes.css">
+<style>
+/* p201-where: where we are in 2 Peter (a deck.css candidate; the 2 Peter 2 and 3 studies carry the same block).
+   Three cards, one per chapter (.p201-ch: .n, b, q, cite; --k). The chapter we are in is .now (and pulses). */
+.p201-where { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin: .5em 0 1em; }
+.p201-ch { --c: var(--accent); padding: .55em .75em .65em; border-radius: 10px; border: 1.5px solid color-mix(in srgb, var(--c) 55%, transparent);
+  background: color-mix(in srgb, var(--c) 6%, transparent);
+  opacity: 0; transform: translateY(10px); transition: opacity .6s ease, transform .6s ease; transition-delay: calc(var(--k, 0) * 300ms + 300ms); }
+.slide.active .p201-ch { opacity: 1; transform: none; }
+.p201-ch .n { display: grid; place-items: center; width: 2.1rem; height: 2.1rem; margin-bottom: .35em; border-radius: 50%; border: 2px solid var(--c);
+  font: 700 1.05rem var(--sans); color: var(--c); }
+.p201-ch b { display: block; font: 600 clamp(1.05rem, .88rem + .7vw, 1.5rem)/1.15 var(--serif); color: var(--ink); }
+.p201-ch q { display: block; margin-top: .3em; font: italic clamp(.82rem, .76rem + .3vw, 1.05rem)/1.3 var(--serif); quotes: "\201C" "\201D"; color: var(--ink-soft); }
+.p201-ch cite { display: block; margin-top: .2em; font-style: normal; font-size: clamp(.7rem, .66rem + .2vw, .88rem); color: var(--ink-soft); }
+.p201-ch.two { --c: var(--warm); }
+.p201-ch.three { --c: var(--cool); }
+.p201-ch.now { background: color-mix(in srgb, var(--c) 20%, transparent); box-shadow: inset 0 0 0 2px var(--c); }
+.p201-ch.now .n { background: var(--c); color: var(--on-accent); }
+.slide.active .p201-ch.now { animation: p201-here 2.4s ease-in-out 1.6s infinite; }
+@keyframes p201-here { 50% { box-shadow: inset 0 0 0 2px var(--c), 0 0 0 6px color-mix(in srgb, var(--c) 28%, transparent); } }
+@media (max-width: 640px) { .p201-where { grid-template-columns: 1fr; } }
+
+/* p201-ladder: faith is the ground floor, and seven steps climb to love (a deck.css candidate).
+   .p201-rung: b (the KJV word), small (what it means), --k 0 to 7. Each step rises in turn when the slide opens. */
+.p201-ladder { display: grid; grid-template-columns: repeat(8, 1fr); gap: 6px; align-items: end; margin: .6em 0 .8em; }
+.p201-rung { --h: calc(5.6rem + var(--k, 0) * 1.25rem); min-height: var(--h); padding: .5em .5em .6em; border-radius: 8px 8px 0 0; border-bottom: 4px solid var(--accent);
+  background: color-mix(in srgb, var(--accent) calc(8% + var(--k, 0) * 3%), transparent);
+  transform-origin: 50% 100%; transform: translateY(20px) scaleY(.25); opacity: 0; transition: transform .8s cubic-bezier(.3,.7,.3,1), opacity .5s ease; transition-delay: calc(var(--k, 0) * 380ms + 300ms); }
+.slide.active .p201-rung { transform: none; opacity: 1; }
+.p201-rung b { display: block; font: 600 clamp(.92rem, .78rem + .5vw, 1.3rem)/1.1 var(--serif); color: var(--ink); overflow-wrap: anywhere; }
+.p201-rung small { display: block; margin-top: .3em; font-size: clamp(.7rem, .64rem + .24vw, .92rem); line-height: 1.25; color: var(--ink-soft); }
+.p201-rung.base { border-bottom-color: var(--cool); background: color-mix(in srgb, var(--cool) 20%, transparent); }
+.p201-rung.base b { color: var(--cool); }
+.p201-rung.top { border-bottom-color: var(--accent-hot); box-shadow: 0 0 0 2px color-mix(in srgb, var(--accent-hot) 55%, transparent); }
+.p201-rung.top b { color: var(--accent-hot); }
+@media (max-width: 760px) { .p201-ladder { grid-template-columns: 1fr 1fr; align-items: stretch; } .p201-rung { --h: auto; border-radius: 8px; } }
+
+/* p201-tree: a tree rooted in grace; the fruit shows up one by one (a .p201-fruit step, or on open) */
+.p201-trunk { fill: var(--leather); stroke: var(--leather-light); stroke-width: 2; }
+.p201-leaves { fill: color-mix(in srgb, var(--cool) 38%, transparent); stroke: var(--cool); stroke-width: 2.5; }
+.p201-root { fill: none; stroke: var(--leather-light); stroke-width: 5; stroke-linecap: round; }
+.p201-ground { stroke: var(--line-strong); stroke-width: 2; }
+.p201-fr { fill: var(--accent-hot); stroke: var(--bg); stroke-width: 2; transform-box: fill-box; transform-origin: 50% 50%; transform: scale(0); transition: transform .6s cubic-bezier(.3,1.6,.5,1); transition-delay: calc(var(--k, 0) * 260ms + 500ms); }
+.slide.active .p201-fr { transform: none; }
+.p201-tree-lbl { fill: var(--ink); font-size: 17px; }
+.p201-tree-lbl.soft { fill: var(--ink-soft); font-size: 15px; }
+
+/* p201-mount: the holy mount, a bright cloud, and the Father's voice (a .p201-voice step) */
+.p201-mt { fill: color-mix(in srgb, var(--ink) 14%, transparent); stroke: var(--line-strong); stroke-width: 2.5; }
+.p201-ray { stroke: var(--accent-hot); stroke-width: 4; stroke-linecap: round; opacity: .15; animation: p201-ray 3.2s ease-in-out infinite; animation-delay: calc(var(--k, 0) * -.4s); }
+@keyframes p201-ray { 50% { opacity: .85; } }
+.p201-cloud { fill: color-mix(in srgb, var(--glow) 70%, transparent); stroke: var(--line-strong); stroke-width: 2; }
+.p201-man { fill: var(--ink-soft); }
+.p201-man.lord { fill: var(--accent-hot); }
+.p201-say { opacity: 0; transition: opacity .9s ease; }
+.slide:has(.p201-voice.on) .p201-say { opacity: 1; }
+
+/* p201-sail: a ship carried along by the wind, as holy men were carried along by the Holy Ghost */
+.p201-hull { fill: var(--leather); stroke: var(--leather-light); stroke-width: 2.5; }
+.p201-mast { stroke: var(--leather-light); stroke-width: 5; stroke-linecap: round; }
+.p201-sheet { fill: color-mix(in srgb, var(--accent) 28%, transparent); stroke: var(--accent-hot); stroke-width: 3; }
+.p201-wave { fill: none; stroke: var(--cool); stroke-width: 3; stroke-linecap: round; opacity: .7; }
+.p201-gust { fill: none; stroke: var(--accent-hot); stroke-width: 4; stroke-linecap: round; stroke-dasharray: 26 18; animation: p201-gust 1.6s linear infinite; animation-delay: calc(var(--k, 0) * -.5s); }
+@keyframes p201-gust { to { stroke-dashoffset: -88; } }
+.p201-boat { animation: p201-bob 3.4s ease-in-out infinite; }
+@keyframes p201-bob { 50% { transform: translateY(-5px) rotate(-1deg); } }
+.p201-lbl { fill: var(--ink); font-size: 18px; }
+.p201-lbl.hot { fill: var(--accent-hot); font-weight: 700; }
+</style>
+</head>
+<body>
+<main class="deck" id="deck">
+
+<!-- ======================= OPENING ======================= -->
+<section class="slide title">
+  <div class="inner">
+    <div class="emblem rise"></div>
+    <h1 class="rise" style="--d:1">2 Peter 1</h1>
+    <p class="sub rise" style="--d:3">A fisherman's last letter</p>
+    <p class="tag rise" style="--d:5">Peter knows his time is short. He has failed badly, and been forgiven completely. Now he tells the next generation what God has already given them, and what to do with it.</p>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <div class="split">
+      <div class="stage">
+        <svg data-world viewBox="170 110 700 310" data-towns="Rome!:t, Corinth:t, Troas:t, Ephesus*:r" role="img" aria-label="A map of Italy, Greece and the west of what is now Turkey. A line runs by sea from Rome, down the coast of Italy, around the south of Greece, and across the Aegean Sea to Ephesus. To the north and east lie Bithynia, Galatia, Pontus and Cappadocia: the lands of the believers Peter wrote to.">
+          <path class="map-route" data-via="Rome, Puteoli, Rhegium, @16 37.6, @18.5 37.2, @21.6 36.6, @22.6 36.2, @23.5 36.25, @25.0 37.0, @26.0 37.45, @26.45 37.72, @26.6 37.95, @27.15 37.9, Ephesus"/>
+        </svg>
+      </div>
+      <div>
+        <h2 class="rise" style="--d:1">The second letter of Peter</h2>
+        <div class="letter">
+          <p class="from">“Simon Peter, a servant and an apostle of Jesus Christ, to them that have obtained like precious faith with us”</p>
+          <dl>
+            <dt>Written by</dt><dd>Simon Peter, the fisherman Jesus called, who once denied Him three times</dd>
+            <dt>Written from</dt><dd>most likely Rome, where Peter was near the end of his life</dd>
+            <dt>When</dt><dd>about AD 64 to 68, in the last years of the emperor Nero. This is Peter's last letter, and he knows it: <em>“shortly I must put off this my tabernacle, even as our Lord Jesus Christ hath shewed me”</em> (1:14).</dd>
+            <dt>To whom</dt><dd>the same scattered believers as his first letter, across what is now Turkey (3:1)</dd>
+            <dt>Why</dt><dd class="step">Teachers who twist the faith are on their way. Peter wants his people grounded in Christ, living clean, and watching for His return.</dd>
+          </dl>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise" style="--d:1">Where 2 Peter fits</h2>
+    <ol class="timeline" aria-label="About AD 30 to 33, Jesus is raised and restores Peter. About AD 62 to 64, Peter writes 1 Peter from Rome. About AD 64, Rome burns and Nero turns on the Christians. About AD 64 to 68, Peter writes 2 Peter. About AD 67 to 68, by tradition, Peter is put to death in Rome.">
+      <li style="--k:0"><b>about AD 30 to 33</b><span>Jesus is raised and restores Peter</span><small>John 21</small></li>
+      <li style="--k:1"><b>about 62 to 64</b><span>1 Peter, from “Babylon” (Rome)</span><small>suffering, and hope</small></li>
+      <li style="--k:2"><b>about AD 64</b><span>Rome burns; Nero blames the Christians</span><small>a dangerous time to be one</small></li>
+      <li class="lit" style="--k:3"><b>about 64 to 68</b><span>2 Peter</span><small>his last letter</small></li>
+      <li class="wait" style="--k:4"><b>about 67 to 68</b><span>Peter put to death in Rome</span><small>by tradition</small></li>
+    </ol>
+    <p class="note rise" style="--d:3">Thirty-odd years sit between the night Peter lied and cursed in a courtyard and this letter. Jesus told him he would one day be old, and carried where he would not choose to go (John 21:18). Peter is that old man now, and he has not stopped following.</p>
+    <p class="note step">Read the whole letter as a dying man's last advice. When time is short, a man only says what matters.</p>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise" style="--d:1">2 Peter in one picture</h2>
+    <div class="p201-where" role="img" aria-label="Three chapters. Chapter 1, grow: add to your faith, 1:5. Chapter 2, beware: there shall be false teachers among you, 2:1. Chapter 3, wait: the Lord is not slack concerning his promise, 3:9. We are in chapter 1.">
+      <div class="p201-ch one now" style="--k:0"><span class="n">1</span><b>Grow</b><q>add to your faith</q><cite>1:5</cite></div>
+      <div class="p201-ch two" style="--k:1"><span class="n">2</span><b>Beware</b><q>there shall be false teachers among you</q><cite>2:1</cite></div>
+      <div class="p201-ch three" style="--k:2"><span class="n">3</span><b>Wait</b><q>The Lord is not slack concerning his promise</q><cite>3:9</cite></div>
+    </div>
+    <p class="note step">Three chapters, three words: <em>grow, beware, wait.</em> Today we are in chapter 1. Before Peter warns about anything, he tells us what we already have, and how we grow.</p>
+  </div>
+</section>
+
+<section class="slide watch">
+  <div class="inner">
+    <h2 class="rise">Things to watch for</h2>
+    <p class="lede rise" style="--d:1">Keep these questions in the back of your mind as we read. We'll come back to every one of them at the end.</p>
+    <ol class="seeds">
+      <li class="step"><span class="topic">Already given</span><span class="seed-q">What has God's divine power already given to us?</span></li>
+      <li class="step"><span class="topic">A new nature</span><span class="seed-q">What have we escaped, and what have we become partakers of?</span></li>
+      <li class="step"><span class="topic">The ladder</span><span class="seed-q">What are we to add to our faith, and where does the ladder end?</span></li>
+      <li class="step"><span class="topic">Don't forget</span><span class="seed-q">What has the man who lacks these things forgotten?</span></li>
+      <li class="step"><span class="topic">Make it sure</span><span class="seed-q">What does Peter tell us to make sure?</span></li>
+      <li class="step"><span class="topic">A sure word</span><span class="seed-q">Why can we trust what the prophets wrote?</span></li>
+    </ol>
+  </div>
+</section>
+
+<!-- ======================= PART ONE ======================= -->
+<section class="slide part">
+  <div class="inner">
+    <p class="part-n rise">Part one</p>
+    <h2 class="rise" style="--d:1">Everything you need</h2>
+    <p class="range rise" style="--d:2">Verses 1–4</p>
+    <div class="rule"></div>
+    <p class="hook rise" style="--d:4">Before Peter asks for one thing, he lists what God has already handed over.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="1-2" data-hl="Simon Peter, a servant and an apostle|like precious faith with us|Grace and peace be multiplied"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="1" data-hl="Simon Peter, a servant and an apostle of Jesus Christ"></blockquote>
+    <h2 class="rise" style="--d:1">The man who wrote it</h2>
+    <svg class="curve" style="max-height:38vh" viewBox="0 0 680 310" role="img" aria-label="A line that runs from Peter's boast down through his denials and tears, then climbs back up through Jesus restoring him, Pentecost, and Peter's last letter.">
+      <line class="curve-base" x1="20" y1="150" x2="660" y2="150"/>
+      <path class="curve-line" pathLength="1" d="M40 60 L150 170 L250 250 L370 190 L490 110 L630 50"/>
+      <g class="curve-pt" style="--k:0"><circle cx="40" cy="60" r="9"/><text x="26" y="40">“I will never”</text><text class="ref" x="26" y="20">Matt. 26:33</text></g>
+      <g class="curve-pt low" style="--k:1"><circle cx="150" cy="170" r="9"/><text x="136" y="180" text-anchor="end">denied 3×</text><text class="ref" x="136" y="198" text-anchor="end">John 18</text></g>
+      <g class="curve-pt low" style="--k:2"><circle cx="250" cy="250" r="9"/><text x="250" y="280" text-anchor="middle">wept bitterly</text><text class="ref" x="250" y="298" text-anchor="middle">Matt. 26:75</text></g>
+      <g class="curve-pt" style="--k:3"><circle cx="370" cy="190" r="9"/><text x="382" y="216">“Feed my sheep”</text><text class="ref" x="382" y="234">John 21</text></g>
+      <g class="curve-pt high" style="--k:4"><circle cx="490" cy="110" r="10"/><text x="490" y="84" text-anchor="middle">Pentecost</text><text class="ref" x="502" y="130">Acts 2</text></g>
+      <g class="curve-pt high" style="--k:5"><circle cx="630" cy="50" r="10"/><text x="650" y="26" text-anchor="end" font-weight="700" style="fill:var(--accent-hot)">this letter</text><text class="ref" x="650" y="76" text-anchor="end">2 Peter 1</text></g>
+    </svg>
+    <p class="note step">He calls himself <em>“a servant,”</em> a slave, before he calls himself an apostle. He knows how badly he blew it, and he was handed his job back anyway.</p>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise" style="--d:1">A promise Peter kept</h2>
+    <p class="note rise" style="--d:2">Before he ever denied Jesus, Jesus told him what would come after:</p>
+    <blockquote class="quote rise" style="--d:3"><p>“But I have prayed for thee, that thy faith fail not: and when thou art converted, strengthen thy brethren.”</p><cite>Luke 22:32</cite></blockquote>
+    <p class="note step"><em>“When,”</em> not <em>“if.”</em> Jesus knew Peter would fall and He planned the comeback before the fall. This whole letter is Peter strengthening his brothers.</p>
+    <p class="note step">If you're carrying a failure, notice who is writing this letter. God uses men who have fallen and been picked up. Yours isn't the first.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="3-4" data-hl="all things that pertain unto life and godliness|exceeding great and precious promises|partakers of the divine nature|escaped the corruption that is in the world through lust"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="3" data-hl="hath given unto us all things that pertain unto life and godliness"></blockquote>
+    <h2 class="rise" style="--d:1">Given, not earned</h2>
+    <div class="columns">
+      <div class="col law rise" style="--d:2">
+        <p class="who">What God has done</p>
+        <h3>“Hath given”</h3>
+        <p>Everything you need for life and for living godly is <em>already</em> in your hand: forgiveness, His Spirit, His Word, His promises. Not one thing is still on back-order.</p>
+      </div>
+      <div class="col grace step">
+        <p class="who">What we do with it</p>
+        <h3>“Giving all diligence”</h3>
+        <p>That's verse 5. Because it was given, we now put effort in: not to get God's favor, but to <em>use</em> what we've been handed.</p>
+      </div>
+    </div>
+    <p class="note step">Many of you were told, all your life, that you were short on whatever it takes: willpower, brains, chances. God says the supply is already delivered. <em>“Through the knowledge of him that hath called us.”</em> It comes through knowing Him, not through being impressive.</p>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="4" data-hl="partakers of the divine nature, having escaped the corruption that is in the world through lust"></blockquote>
+    <h2 class="rise" style="--d:1">Partakers of the divine nature</h2>
+    <p class="note rise" style="--d:2">That phrase is easy to misread. Here is what it does <em>not</em> mean, and then what it does:</p>
+    <ul class="nots">
+      <li class="step"><span class="k">that you become a god</span><span class="why">God is God, and we are not</span></li>
+      <li class="step"><span class="k">that you will never sin again</span><span class="why">a believer still stumbles (1 John 1:9)</span></li>
+      <li class="step yes"><span class="k">God's own life in you</span><span class="why">the Holy Spirit moves in the day you trust Christ</span></li>
+    </ul>
+    <blockquote class="quote step"><p>“Therefore if any man be in Christ, he is a new creature: old things are passed away; behold, all things are become new.”</p><cite>2 Corinthians 5:17</cite></blockquote>
+    <p class="note step"><em>“The corruption that is in the world through lust”</em> is desire out of control: the craving that rots a life from the inside. Peter says you have <em>escaped</em> it. The chain is cut. Old habits can still pull, but they no longer own you.</p>
+  </div>
+</section>
+
+<!-- ======================= PART TWO ======================= -->
+<section class="slide part">
+  <div class="inner">
+    <p class="part-n rise">Part two</p>
+    <h2 class="rise" style="--d:1">Add to your faith</h2>
+    <p class="range rise" style="--d:2">Verses 5–11</p>
+    <div class="rule"></div>
+    <p class="hook rise" style="--d:4">Saved by faith, then growing. Peter gives the men a ladder of seven steps, and the top step is love.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="5-7" data-hl="add to your faith virtue|And to knowledge temperance|brotherly kindness; and to brotherly kindness charity"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="5" data-hl="giving all diligence, add to your faith virtue"></blockquote>
+    <h2 class="rise" style="--d:1">The ladder</h2>
+    <div class="p201-ladder" role="img" aria-label="Faith is the ground floor. Then seven steps, each one added on: virtue, which is goodness and moral courage; knowledge, knowing God and his Word; temperance, which is self-control; patience, which is staying power; godliness, living with God in mind; brotherly kindness, love for other believers; and charity, the love that gives itself, at the top.">
+      <div class="p201-rung base" style="--k:0"><b>faith</b><small>where you start</small></div>
+      <div class="p201-rung" style="--k:1"><b>virtue</b><small>goodness, moral courage</small></div>
+      <div class="p201-rung" style="--k:2"><b>knowledge</b><small>knowing God and His Word</small></div>
+      <div class="p201-rung" style="--k:3"><b>temperance</b><small>self-control</small></div>
+      <div class="p201-rung" style="--k:4"><b>patience</b><small>staying power</small></div>
+      <div class="p201-rung" style="--k:5"><b>godliness</b><small>living with God in mind</small></div>
+      <div class="p201-rung" style="--k:6"><b>brotherly kindness</b><small>love for fellow believers</small></div>
+      <div class="p201-rung top" style="--k:7"><b>charity</b><small>love that gives itself away</small></div>
+    </div>
+    <p class="note step">The old word <em>temperance</em> means <em>self-control</em>, the one many of these men have fought for years. And <em>charity</em> is the old word for <em>love</em>, the Greek <span class="gk">agapē</span>. Notice where it sits: at the top.</p>
+    <p class="note step">Faith isn't a step you climb. It's the ground floor, and you are already standing on it. Each new step is built on the last one. Nobody jumps to the top.</p>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="8" data-hl="they make you that ye shall neither be barren nor unfruitful"></blockquote>
+    <h2 class="rise" style="--d:1">Growing, not earning</h2>
+    <div class="ifthen rise" style="--d:2">
+      <div class="if"><small>If</small>these things are in you and <em>abound</em>,</div>
+      <span class="arrow" aria-hidden="true">→</span>
+      <div class="then"><small>then</small>you won't be barren or unfruitful.</div>
+    </div>
+    <blockquote class="quote step"><p>“For by grace are ye saved through faith; and that not of yourselves: it is the gift of God: Not of works, lest any man should boast.”</p><cite>Ephesians 2:8-9</cite></blockquote>
+    <p class="note step">This isn't a climb to get saved. The ladder is what a saved man's life <em>grows into</em>: a tree puts out fruit because it is alive, not to become alive.</p>
+    <p class="note step">Some days you'll be two steps down from last week. Put your foot back on the step you're on and keep going.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="8-9" data-hl="neither be barren nor unfruitful|is blind, and cannot see afar off|hath forgotten that he was purged from his old sins"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="9" data-hl="hath forgotten that he was purged from his old sins"></blockquote>
+    <h2 class="rise" style="--d:1">Don't forget where you came from</h2>
+    <div class="talk">
+      <p class="rise" style="--d:2"><small>The man who forgot</small>I'm just an addict. That's all I'll ever be.</p>
+      <p class="reply step"><small>Peter</small>…is blind, and cannot see afar off, and hath forgotten that he was purged from his old sins.</p>
+    </div>
+    <p class="note step"><em>“Purged”</em> means washed clean, and it's in the past tense. A man can <em>forget</em> that: he stares at yesterday's failure so hard he can't see the forgiveness he already has. Peter calls that blind.</p>
+    <blockquote class="quote step"><p>“If we confess our sins, he is faithful and just to forgive us our sins, and to cleanse us from all unrighteousness.”</p><cite>1 John 1:9</cite></blockquote>
+    <p class="note step">When the regret comes back at 2 a.m., don't rehearse the details. Say what is true: <em>I was purged.</em></p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="10-11" data-hl="make your calling and election sure|ye shall never fall|an entrance shall be ministered unto you abundantly"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="10" data-hl="make your calling and election sure"></blockquote>
+    <div class="split">
+      <div class="stage">
+        <svg viewBox="0 0 360 330" role="img" aria-label="A tree growing out of the ground. Under the ground, its roots are labelled grace, and the trunk faith. In the branches the fruit appears one at a time: love, joy, peace, patience, kindness, self-control. The fruit shows the tree is alive.">
+          <line class="p201-ground" x1="20" y1="236" x2="340" y2="236"/>
+          <path class="p201-root" d="M180 236 C160 262 130 270 100 296 M180 236 C180 268 176 290 170 314 M180 236 C204 262 236 272 266 296"/>
+          <ellipse class="p201-leaves" cx="180" cy="94" rx="132" ry="82"/>
+          <path class="p201-trunk" d="M166 236 C170 206 172 180 170 150 L190 150 C188 180 190 206 194 236 Z"/>
+          <circle class="p201-fr" style="--k:0" cx="108" cy="92" r="13"/>
+          <circle class="p201-fr" style="--k:1" cx="150" cy="58" r="13"/>
+          <circle class="p201-fr" style="--k:2" cx="200" cy="52" r="13"/>
+          <circle class="p201-fr" style="--k:3" cx="248" cy="84" r="13"/>
+          <circle class="p201-fr" style="--k:4" cx="214" cy="116" r="13"/>
+          <circle class="p201-fr" style="--k:5" cx="140" cy="120" r="13"/>
+          <text class="p201-tree-lbl" x="180" y="268" text-anchor="start" dx="12">grace and faith</text>
+          <text class="p201-tree-lbl soft" x="206" y="214">fruit shows it is alive</text>
+        </svg>
+      </div>
+      <div>
+        <h2 class="rise" style="--d:1">Make it sure</h2>
+        <p class="note rise" style="--d:2">God's side is settled: He called, and He saves everyone who comes to Him by faith. Peter isn't telling you to make God sure. He's telling you to make <em>yourself</em> sure, by seeing the evidence growing.</p>
+        <p class="note step">The evidence is the fruit of the Spirit: love, joy, peace, longsuffering, gentleness, goodness (Galatians 5:22-23). Look back a year. Is there more of that in you? Then something real is happening.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="10" data-hl="ye shall never fall"></blockquote>
+    <h2 class="rise" style="--d:1">“Ye shall never fall”</h2>
+    <div class="columns">
+      <div class="col law rise" style="--d:2">
+        <p class="who">What it does not mean</p>
+        <h3>You will never stumble</h3>
+        <p>Peter stumbled more than any man in the Gospels. He isn't promising a perfect record, and he isn't threatening a lost salvation.</p>
+      </div>
+      <div class="col grace step">
+        <p class="who">What it does mean</p>
+        <h3>You won't be tripped up and ruined</h3>
+        <p>A man who is growing and who knows where he stands is steady on his feet. He doesn't wreck his life and his witness. And he ends with <em>“an entrance… abundantly into the everlasting kingdom”</em> (v. 11).</p>
+      </div>
+    </div>
+    <blockquote class="quote step"><p>“Being confident of this very thing, that he which hath begun a good work in you will perform it until the day of Jesus Christ:”</p><cite>Philippians 1:6</cite></blockquote>
+    <p class="note step">Your place in heaven is held by Jesus (John 10:28), not by your grip. What you're growing for is a steady life now, and a sure entrance into the kingdom when He comes.</p>
+  </div>
+</section>
+
+<!-- ======================= PART THREE ======================= -->
+<section class="slide part">
+  <div class="inner">
+    <p class="part-n rise">Part three</p>
+    <h2 class="rise" style="--d:1">A sure word</h2>
+    <p class="range rise" style="--d:2">Verses 12–21</p>
+    <div class="rule"></div>
+    <p class="hook rise" style="--d:4">Peter is leaving, so he points to two things that will not leave: what he saw with his own eyes, and the written Word.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="12-15" data-hl="put you always in remembrance|shortly I must put off this my tabernacle|after my decease"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="14" data-hl="shortly I must put off this my tabernacle, even as our Lord Jesus Christ hath shewed me"></blockquote>
+    <h2 class="rise" style="--d:1">A tent coming down</h2>
+    <p class="saying rise" style="--d:2">My tent is coming down.</p>
+    <p class="note step"><em>“Tabernacle”</em> is a tent. Peter pictures his body as a tent that he is about to <em>put off</em>, like taking off a coat. Jesus had shown him, years before, that he would be old when he died (John 21:18).</p>
+    <p class="note step">And look at what he does with that knowledge. He isn't panicking and he isn't hiding. He spends his last strength on reminding people of what matters. <em>“I will endeavour that ye may be able after my decease to have these things always in remembrance.”</em></p>
+    <p class="note step">The question for today: if you knew you had a short time left, who would you write to, and what would you say? You may not have to write it down. You may just need to pick up the phone.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="16-18" data-hl="cunningly devised fables|eyewitnesses of his majesty|This is my beloved Son, in whom I am well pleased|the holy mount"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="16" data-hl="not followed cunningly devised fables"></blockquote>
+    <h2 class="rise" style="--d:1">Not a story we made up</h2>
+    <ul class="nots">
+      <li class="step"><span class="k">cunningly devised fables</span><span class="why">clever stories, polished to sell</span></li>
+      <li class="step"><span class="k">a feeling someone had</span><span class="why">that would be one man's word</span></li>
+      <li class="step yes"><span class="k">eyewitnesses of his majesty</span><span class="why">“we heard,” “we were with him”</span></li>
+    </ul>
+    <p class="note step">Peter doesn't ask anyone to take it on feeling. He says: <em>I was there.</em> A few years earlier, on a mountain, he and two others saw Jesus shine, and heard the Father speak. We'll see what that was on the next slide.</p>
+    <p class="note step">That matters for a man who wonders whether it's all true. The Christian faith is built on things that happened, and the people who saw them stayed with it for the rest of their lives, many of them to the death.</p>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <div class="split">
+      <div class="stage">
+        <svg viewBox="0 0 360 330" role="img" aria-label="A mountain with a bright cloud above it. Three men stand on the slope: Peter, James and John, and above them Jesus shines. A voice comes from the cloud: This is my beloved Son.">
+          <path class="p201-mt" d="M20 270 L180 70 L340 270 Z"/>
+          <g stroke-linecap="round">
+            <line class="p201-ray" style="--k:0" x1="180" y1="52" x2="180" y2="18"/>
+            <line class="p201-ray" style="--k:1" x1="148" y1="62" x2="126" y2="34"/>
+            <line class="p201-ray" style="--k:2" x1="212" y1="62" x2="234" y2="34"/>
+            <line class="p201-ray" style="--k:3" x1="124" y1="86" x2="92" y2="70"/>
+            <line class="p201-ray" style="--k:4" x1="236" y1="86" x2="268" y2="70"/>
+          </g>
+          <ellipse class="p201-cloud" cx="180" cy="40" rx="62" ry="22"/>
+          <circle class="p201-man lord" cx="180" cy="104" r="11"/><path class="p201-man lord" d="M164 150 Q180 112 196 150 Z"/>
+          <circle class="p201-man" cx="124" cy="206" r="8"/><path class="p201-man" d="M112 244 Q124 214 136 244 Z"/>
+          <circle class="p201-man" cx="180" cy="214" r="8"/><path class="p201-man" d="M168 252 Q180 222 192 252 Z"/>
+          <circle class="p201-man" cx="236" cy="206" r="8"/><path class="p201-man" d="M224 244 Q236 214 248 244 Z"/>
+          <text class="p201-lbl" x="124" y="290" text-anchor="middle" font-size="14">Peter</text>
+          <text class="p201-lbl" x="180" y="290" text-anchor="middle" font-size="14">James</text>
+          <text class="p201-lbl" x="236" y="290" text-anchor="middle" font-size="14">John</text>
+          <text class="p201-say p201-lbl hot" x="180" y="322" text-anchor="middle" font-size="17">“This is my beloved Son”</text>
+        </svg>
+      </div>
+      <div>
+        <h2 class="rise" style="--d:1">On the holy mount</h2>
+        <p class="note rise" style="--d:2">This is the Transfiguration. Jesus took Peter, James and John up a mountain, and His face shone like the sun. Then the Father spoke from a bright cloud.</p>
+        <p class="note step p201-voice">Peter heard it himself, and never forgot it: <em>“This is my beloved Son, in whom I am well pleased.”</em> The same Peter who had once said, <em>“I know not the man.”</em></p>
+        <blockquote class="quote step"><p>“While he yet spake, behold, a bright cloud overshadowed them: and behold a voice out of the cloud, which said, This is my beloved Son, in whom I am well pleased; hear ye him.”</p><cite>Matthew 17:5</cite></blockquote>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="slide verse" data-v="19-21" data-hl="a more sure word of prophecy|a light that shineth in a dark place|holy men of God spake as they were moved by the Holy Ghost"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="19" data-hl="a light that shineth in a dark place"></blockquote>
+    <h2 class="rise" style="--d:1">A light in a dark place</h2>
+    <div class="daybreak">
+      <div class="rise" style="--d:2"><i>Now</i><b>A lamp in the dark</b><p>The written Word, a light that shineth in a dark place. You may not see the whole road, but you can see the next step.</p></div>
+      <div class="step"><i>Until</i><b>The day dawns</b><p>Until the day dawn. The dark place isn't forever. Christ is coming back.</p></div>
+      <div class="step"><i>Then</i><b>The morning star</b><p>The day star arises in your hearts. Many Bible teachers take this to be Christ Himself, fully known at last.</p></div>
+    </div>
+    <blockquote class="quote step"><p>“Thy word is a lamp unto my feet, and a light unto my path.”</p><cite>Psalm 119:105</cite></blockquote>
+    <p class="note step">The world can feel like a dark place. The Bible is how you keep from stumbling in it. A man in recovery who reads a few verses every morning is lighting the lamp before he steps out the door.</p>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="21" data-hl="holy men of God spake as they were moved by the Holy Ghost"></blockquote>
+    <div class="split">
+      <div class="stage">
+        <svg style="max-height:34vh" viewBox="0 0 400 270" role="img" aria-label="A small sailing ship with its sail full of wind, being carried along over the waves. The wind is the Holy Ghost, and the ship is the prophet.">
+          <path class="p201-gust" style="--k:0" d="M10 90 C60 70 100 110 150 90"/>
+          <path class="p201-gust" style="--k:1" d="M20 130 C70 110 110 150 160 130"/>
+          <path class="p201-gust" style="--k:2" d="M10 170 C60 150 100 190 150 170"/>
+          <g class="p201-boat">
+            <line class="p201-mast" x1="250" y1="60" x2="250" y2="190"/>
+            <path class="p201-sheet" d="M254 66 C312 100 316 150 254 182 Z"/>
+            <path class="p201-hull" d="M190 190 L330 190 L306 224 L214 224 Z"/>
+          </g>
+          <path class="p201-wave" d="M30 236 q15 -12 30 0 t30 0 t30 0 t30 0 t30 0 t30 0 t30 0 t30 0 t30 0 t30 0"/>
+          <text class="p201-lbl hot" x="20" y="62">the Holy Ghost</text>
+          <text class="p201-lbl" x="260" y="44" text-anchor="middle">the prophet, carried along</text>
+        </svg>
+      </div>
+      <div>
+        <h2 class="rise" style="--d:1">Carried along</h2>
+        <p class="note rise" style="--d:2">The word <em>“moved”</em> is a sailing word: the Greek means <em>carried along</em>, like a ship filled by wind. The men who wrote the Bible weren't making things up. They set the sail, and God's Spirit carried them.</p>
+        <p class="note step">That's why <em>“no prophecy of the scripture is of any private interpretation”</em> (v. 20): it didn't start with one man's idea. When this Book says you are forgiven, God said it.</p>
+        <blockquote class="quote step"><p>“All scripture is given by inspiration of God, and is profitable for doctrine, for reproof, for correction, for instruction in righteousness:”</p><cite>2 Timothy 3:16</cite></blockquote>
+          </div>
+    </div>
+  </div>
+</section>
+
+<!-- ======================= CLOSING ======================= -->
+<section class="slide remember">
+  <div class="inner">
+    <h2 class="rise">Points to remember</h2>
+    <ol class="seeds">
+      <li class="step"><span class="topic">Already given</span><span class="seed-q">“His divine power hath given unto us all things that pertain unto life and godliness” <cite>1:3</cite></span><span class="take">Everything you need has already been handed to you. It comes by knowing Him.</span></li>
+      <li class="step"><span class="topic">A new nature</span><span class="seed-q">“Partakers of the divine nature, having escaped the corruption that is in the world through lust” <cite>1:4</cite></span><span class="take">The chain is cut and a new life has begun. You are not who you were.</span></li>
+      <li class="step"><span class="topic">The ladder</span><span class="seed-q">“Add to your faith virtue… and to brotherly kindness charity” <cite>1:5-7</cite></span><span class="take">Faith is the ground floor. Build on it one step at a time, and the top step is love.</span></li>
+      <li class="step"><span class="topic">Don't forget</span><span class="seed-q">“Hath forgotten that he was purged from his old sins” <cite>1:9</cite></span><span class="take">Don't stare at yesterday's failure. Remember what God already did.</span></li>
+      <li class="step"><span class="topic">Make it sure</span><span class="seed-q">“Give diligence to make your calling and election sure” <cite>1:10</cite></span><span class="take">Look for the fruit. It is the evidence that God's work in you is real.</span></li>
+      <li class="step"><span class="topic">A sure word</span><span class="seed-q">“Holy men of God spake as they were moved by the Holy Ghost” <cite>1:21</cite></span><span class="take">The Bible is God's Word, a light in a dark place. Read a little every morning.</span></li>
+    </ol>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 1 of 6</p>
+      <span class="topic">Already given</span>
+      <h2>What has God's divine power already given to us?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="3" data-hl="all things that pertain unto life and godliness"></blockquote>
+      <blockquote class="quote step" data-q="4" data-hl="exceeding great and precious promises"></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>All things that pertain to life and godliness, and exceeding great and precious promises. It's already in your hand. You don't earn it; you use it, by knowing Him.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 2 of 6</p>
+      <span class="topic">A new nature</span>
+      <h2>What have we escaped, and what have we become partakers of?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="4" data-hl="partakers of the divine nature, having escaped the corruption that is in the world through lust"></blockquote>
+      <blockquote class="quote step"><p>“Therefore if any man be in Christ, he is a new creature: old things are passed away; behold, all things are become new.”</p><cite>2 Corinthians 5:17</cite></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>We have escaped the corruption of runaway desire, and we share in God's own life through the Holy Spirit. Old habits still pull, but you're a new creature and they no longer own you.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 3 of 6</p>
+      <span class="topic">The ladder</span>
+      <h2>What are we to add to our faith, and where does the ladder end?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="5-7" data-hl="add to your faith virtue|brotherly kindness; and to brotherly kindness charity"></blockquote>
+      <blockquote class="quote step"><p>“But the fruit of the Spirit is love, joy, peace, longsuffering, gentleness, goodness, faith, Meekness, temperance: against such there is no law.”</p><cite>Galatians 5:22-23</cite></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>Virtue, knowledge, temperance (self-control), patience, godliness, brotherly kindness, and charity, which is love. The ladder ends in love. Faith is the ground floor, and you grow one step at a time.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 4 of 6</p>
+      <span class="topic">Don't forget</span>
+      <h2>What has the man who lacks these things forgotten?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="9" data-hl="hath forgotten that he was purged from his old sins"></blockquote>
+      <blockquote class="quote step"><p>“If we confess our sins, he is faithful and just to forgive us our sins, and to cleanse us from all unrighteousness.”</p><cite>1 John 1:9</cite></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>That he was purged from his old sins. They have been washed away. When the regret comes back, say what is true: I was purged. God wants you to remember that He did it.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 5 of 6</p>
+      <span class="topic">Make it sure</span>
+      <h2>What does Peter tell us to make sure?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="10" data-hl="give diligence to make your calling and election sure"></blockquote>
+      <blockquote class="quote step"><p>“The Spirit itself beareth witness with our spirit, that we are the children of God:”</p><cite>Romans 8:16</cite></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>Our calling and election: that God really did call us. We make it sure by watching the fruit grow. It's not a way to earn salvation; it's evidence that God's work in you is real, so you can stand on it.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 6 of 6</p>
+      <span class="topic">A sure word</span>
+      <h2>Why can we trust what the prophets wrote?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="21" data-hl="holy men of God spake as they were moved by the Holy Ghost"></blockquote>
+      <blockquote class="quote step"><p>“All scripture is given by inspiration of God, and is profitable for doctrine, for reproof, for correction, for instruction in righteousness:”</p><cite>2 Timothy 3:16</cite></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>Because it didn't start with man's will. Holy men were carried along by the Holy Ghost, like a ship by the wind. Read a few verses before you step out the door today: it's a light in a dark place.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide prayer">
+  <div class="inner">
+    <div class="emblem rise"></div>
+    <h2 class="rise" style="--d:1">Prayer requests</h2>
+    <p class="ask-line rise" style="--d:2">What can we pray about for you today?</p>
+    <blockquote class="quote rise" style="--d:4"><p>“Grace and peace be multiplied unto you through the knowledge of God, and of Jesus our Lord,”</p><cite>2 Peter 1:2</cite></blockquote>
+  </div>
+</section>
+
+</main>
+
+<script>
+// King James Version, 2 Peter chapter 1
+const V = {
+  1: "Simon Peter, a servant and an apostle of Jesus Christ, to them that have obtained like precious faith with us through the righteousness of God and our Saviour Jesus Christ:",
+  2: "Grace and peace be multiplied unto you through the knowledge of God, and of Jesus our Lord,",
+  3: "According as his divine power hath given unto us all things that pertain unto life and godliness, through the knowledge of him that hath called us to glory and virtue:",
+  4: "Whereby are given unto us exceeding great and precious promises: that by these ye might be partakers of the divine nature, having escaped the corruption that is in the world through lust.",
+  5: "And beside this, giving all diligence, add to your faith virtue; and to virtue knowledge;",
+  6: "And to knowledge temperance; and to temperance patience; and to patience godliness;",
+  7: "And to godliness brotherly kindness; and to brotherly kindness charity.",
+  8: "For if these things be in you, and abound, they make you that ye shall neither be barren nor unfruitful in the knowledge of our Lord Jesus Christ.",
+  9: "But he that lacketh these things is blind, and cannot see afar off, and hath forgotten that he was purged from his old sins.",
+  10: "Wherefore the rather, brethren, give diligence to make your calling and election sure: for if ye do these things, ye shall never fall:",
+  11: "For so an entrance shall be ministered unto you abundantly into the everlasting kingdom of our Lord and Saviour Jesus Christ.",
+  12: "Wherefore I will not be negligent to put you always in remembrance of these things, though ye know them, and be established in the present truth.",
+  13: "Yea, I think it meet, as long as I am in this tabernacle, to stir you up by putting you in remembrance;",
+  14: "Knowing that shortly I must put off this my tabernacle, even as our Lord Jesus Christ hath shewed me.",
+  15: "Moreover I will endeavour that ye may be able after my decease to have these things always in remembrance.",
+  16: "For we have not followed cunningly devised fables, when we made known unto you the power and coming of our Lord Jesus Christ, but were eyewitnesses of his majesty.",
+  17: "For he received from God the Father honour and glory, when there came such a voice to him from the excellent glory, This is my beloved Son, in whom I am well pleased.",
+  18: "And this voice which came from heaven we heard, when we were with him in the holy mount.",
+  19: "We have also a more sure word of prophecy; whereunto ye do well that ye take heed, as unto a light that shineth in a dark place, until the day dawn, and the day star arise in your hearts:",
+  20: "Knowing this first, that no prophecy of the scripture is of any private interpretation.",
+  21: "For the prophecy came not in old time by the will of man: but holy men of God spake as they were moved by the Holy Ghost."
+};
+const BOOK = "2 Peter 1";
+</script>
+<script src="../assets/deck.js"></script>
+</body>
+</html>

@@ -1,0 +1,672 @@
+<!doctype html>
+<html lang="en" data-theme="night">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>1 Peter 1</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="../assets/fonts.css">
+<link rel="stylesheet" href="../assets/deck.css">
+<link rel="stylesheet" href="../assets/themes.css">
+<style>
+/* pt01-where: where we are in 1 Peter (a deck.css candidate; every 1 Peter study can copy it as is).
+   Row 1: the five chapters (.pt01-ch, --k; read ones .done, ours .here). Row 2: the three parts of the letter (.pt01-part: small, b, q, cite),
+   widths 1 : 2 : 2 to sit under their chapters. The part we're in is .now. */
+.pt01-where { display: grid; grid-template-columns: repeat(5, 1fr); gap: 8px 6px; margin: .5em 0 1em; }
+.pt01-ch { padding: .25em 0 .3em; text-align: center; border-radius: 6px 6px 0 0; border-bottom: 3px solid var(--line-strong);
+  font: 700 clamp(.82rem, .74rem + .35vw, 1.08rem) var(--sans); color: var(--ink-soft);
+  opacity: 0; transition: opacity .4s ease; transition-delay: calc(var(--k, 0) * 70ms + 200ms); }
+.slide.active .pt01-ch { opacity: 1; }
+.pt01-ch.done { background: color-mix(in srgb, var(--accent) 14%, transparent); color: var(--ink); }
+.pt01-ch.here { background: var(--accent); border-bottom-color: var(--accent); color: var(--on-accent); }
+.slide.active .pt01-ch.here { animation: pt01-here 2.4s ease-in-out 1.6s infinite; }
+@keyframes pt01-here { 50% { box-shadow: 0 0 0 6px color-mix(in srgb, var(--accent) 28%, transparent); } }
+.pt01-part { --c: var(--line-strong); padding: .45em .7em .55em; border-top: 6px solid var(--c); border-radius: 0 0 10px 10px; background: color-mix(in srgb, var(--c) 8%, transparent);
+  opacity: 0; transform: translateY(10px); transition: opacity .6s ease, transform .6s ease; transition-delay: calc(var(--k, 0) * 300ms + 700ms); }
+.slide.active .pt01-part { opacity: 1; transform: none; }
+.pt01-part small { display: block; font: 700 clamp(.7rem, .66rem + .22vw, .9rem) var(--sans); letter-spacing: .04em; color: var(--ink-soft); }
+.pt01-part b { display: block; font: 600 clamp(1.05rem, .88rem + .7vw, 1.5rem)/1.15 var(--serif); color: var(--c); }
+.pt01-part q { display: block; margin-top: .25em; font: italic clamp(.8rem, .74rem + .28vw, 1.02rem)/1.3 var(--serif); quotes: "\201C" "\201D"; color: var(--ink); }
+.pt01-part cite { display: block; margin-top: .1em; font-style: normal; font-size: clamp(.7rem, .66rem + .2vw, .88rem); color: var(--ink-soft); }
+.pt01-hope { --c: var(--accent); grid-column: 1 / 2; }
+.pt01-live { --c: var(--cool); grid-column: 2 / 4; }
+.pt01-fire { --c: var(--wine); grid-column: 4 / 6; }
+.pt01-part.now { background: color-mix(in srgb, var(--c) 18%, transparent); box-shadow: inset 0 0 0 2px var(--c); }
+@media (max-width: 640px) {
+  .pt01-hope, .pt01-live, .pt01-fire { grid-column: 1 / -1; }
+  .pt01-part { border-top: 0; border-left: 6px solid var(--c); border-radius: 0 10px 10px 0; }
+}
+
+/* pe01-fire: faith in the fire. The dull metal glows to gold as the dross floats off and burns away */
+.pe01-flame { transform-box: fill-box; transform-origin: 50% 100%; fill: var(--accent-hot); opacity: .95; animation: pe01-flick 1.1s ease-in-out infinite alternate; }
+.pe01-flame.b { fill: var(--warm); animation-duration: .8s; animation-delay: -.3s; }
+.pe01-flame.c { animation-duration: 1.3s; animation-delay: -.6s; }
+@keyframes pe01-flick { from { transform: scale(.85, .8); } to { transform: scale(1.1, 1.2); } }
+.pe01-pot { fill: var(--surface-2); stroke: var(--ink-soft); stroke-width: 4; }
+.pe01-metal { fill: color-mix(in srgb, var(--ink-soft) 55%, var(--surface-2)); transition: fill 2.4s ease 1.2s; }
+.slide.active .pe01-metal { fill: var(--glow); }
+.pe01-dross { fill: var(--ink-soft); opacity: 0; }
+.slide.active .pe01-dross { animation: pe01-dross 3.2s ease-out infinite; animation-delay: calc(var(--k, 0) * .6s); }
+@keyframes pe01-dross { 0% { transform: translate(0, 0) scale(1); opacity: 0; } 15% { opacity: .9; } 100% { transform: translate(var(--dx, 0), -70px) scale(.3); opacity: 0; } }
+.pe01-shine { opacity: 0; transition: opacity 1.4s ease 2.8s; }
+.slide.active .pe01-shine { opacity: 1; }
+
+/* pe01-chain: a chain handed down from father to son. A step breaks it, and the links that come after it are free */
+.pe01-link { fill: none; stroke: var(--ink-soft); stroke-width: 9; transition: stroke 1.2s ease; }
+.pe01-after { transition: transform 1.6s cubic-bezier(.4, 0, .2, 1); }
+.slide:has(.pe01-cut.on) .pe01-after { transform: translateX(46px); }
+.slide:has(.pe01-cut.on) .pe01-after .pe01-link { stroke: var(--accent); }
+.pe01-drop { opacity: 0; transform-box: fill-box; transform-origin: 50% 0; transition: opacity .6s ease 1.2s, transform 1.2s ease 1.2s; transform: translateY(-30px); }
+.slide:has(.pe01-cut.on) .pe01-drop { opacity: 1; transform: none; }
+.pe01-free { opacity: 0; transition: opacity .8s ease 2.2s; }
+.slide:has(.pe01-cut.on) .pe01-free { opacity: 1; }
+
+</style>
+</head>
+<body>
+<main class="deck" id="deck">
+
+<!-- ======================= OPENING ======================= -->
+<section class="slide title">
+  <div class="inner">
+    <div class="emblem rise"></div>
+    <h1 class="rise" style="--d:1">1 Peter 1</h1>
+    <p class="sub rise" style="--d:3">A living hope for strangers</p>
+    <p class="tag rise" style="--d:5">The man who denied Jesus three times writes to believers who are suffering for Him. His first word to them is not <em>try harder.</em> It is <em>“Blessed be the God and Father of our Lord Jesus Christ.”</em></p>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <div class="split">
+      <div class="stage">
+        <svg data-world viewBox="160 100 740 350" data-towns="Rome!:t" role="img" aria-label="A map from Italy to the Black Sea. A line runs from Rome across Greece and Asia Minor to the east. The five regions Peter names are labelled in what is now Turkey: Asia in the west, Bithynia and Pontus along the Black Sea, Galatia in the middle, and Cappadocia in the east.">
+          <path class="map-route" data-via="Rome, @17 41.2, @23 40.4, @28.5 40.3, @33 40.5, @36.6 40.0"/>
+        </svg>
+      </div>
+      <div>
+        <h2 class="rise" style="--d:1">The first letter of Peter</h2>
+        <div class="letter">
+          <p class="from">“Peter, an apostle of Jesus Christ, to the strangers scattered throughout Pontus, Galatia, Cappadocia, Asia, and Bithynia”</p>
+          <dl>
+            <dt>Written from</dt><dd>“Babylon”: <em>“The church that is at Babylon… saluteth you”</em> (5:13). Most think this is a code name for Rome</dd>
+            <dt>When</dt><dd>about AD 62 to 64, just before Nero turned on the Christians</dd>
+            <dt>To whom</dt><dd>believers scattered across five regions of what is now Turkey, some far from any other believer</dd>
+            <dt>Sent with</dt><dd>Silvanus, <em>“a faithful brother unto you”</em> (5:12), who carried the letter</dd>
+            <dt>Why</dt><dd class="step">to stand beside people who were suffering, and to remind them what they really are: God's own, with a hope that cannot die</dd>
+          </dl>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise" style="--d:1">Where 1 Peter fits</h2>
+    <ol class="timeline" aria-label="About AD 30 to 33, Peter denies Jesus three times and is restored. About AD 30 to 33, Pentecost: Peter preaches and three thousand believe. About AD 49, the Jerusalem council, where Peter speaks. About AD 62 to 64, Peter writes 1 Peter from Babylon, meaning Rome. About AD 64, Rome burns and Nero turns on the Christians. About AD 67 to 68, by tradition, Peter is put to death in Rome.">
+      <li style="--k:0"><b>about AD 30 to 33</b><span>Peter denies Jesus</span><small>three times, then is put back (John 21)</small></li>
+      <li style="--k:1"><b>about AD 30 to 33</b><span>Pentecost</span><small>Peter preaches; three thousand believe</small></li>
+      <li style="--k:2"><b>about AD 49</b><span>The Jerusalem council</span><small>saved by grace, Peter says (Acts 15)</small></li>
+      <li class="lit" style="--k:3"><b>about AD 62 to 64</b><span>1 Peter</span><small>from “Babylon,” to scattered believers</small></li>
+      <li style="--k:4"><b>about AD 64</b><span>Rome burns</span><small>Nero turns on the Christians</small></li>
+      <li class="wait" style="--k:5"><b>about AD 67 to 68</b><span>Peter dies</span><small>in Rome, by tradition</small></li>
+    </ol>
+    <p class="note rise" style="--d:3">Peter is writing near the end of his life. He is an old man, and he knows what is coming for the church. He writes to people who are not yet being put to death, but who are already being laughed at, shut out and slandered.</p>
+    <p class="note step">Notice <em>who</em> is comforting them: a man who knows exactly what it is to fail, and exactly what it is to be forgiven.</p>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise" style="--d:1">The man writing this letter</h2>
+    <div class="stage">
+      <svg class="curve" viewBox="0 0 680 310" role="img" aria-label="A line that falls and rises. Peter boasts he will go to prison and death with Jesus. He denies Jesus three times and weeps bitterly. Jesus restores him by the lake. At Pentecost he preaches. He is jailed and freed by an angel. Years later he writes this letter.">
+        <line class="curve-base" x1="20" y1="150" x2="660" y2="150"/>
+        <path class="curve-line" pathLength="1" d="M40 60 L140 170 L230 250 L330 200 L430 120 L530 80 L630 40"/>
+        <g class="curve-pt" style="--k:0"><circle cx="40" cy="60" r="9"/><text x="26" y="40">“I am ready”</text><text class="ref" x="26" y="20">Luke 22:33</text></g>
+        <g class="curve-pt low" style="--k:1"><circle cx="140" cy="170" r="9"/><text x="126" y="180" text-anchor="end">denied 3×</text><text class="ref" x="126" y="198" text-anchor="end">Luke 22</text></g>
+        <g class="curve-pt low" style="--k:2"><circle cx="230" cy="250" r="9"/><text x="230" y="280" text-anchor="middle">wept bitterly</text><text class="ref" x="230" y="298" text-anchor="middle">Luke 22:62</text></g>
+        <g class="curve-pt" style="--k:3"><circle cx="330" cy="200" r="9"/><text x="342" y="226">restored</text><text class="ref" x="342" y="244">John 21</text></g>
+        <g class="curve-pt high" style="--k:4"><circle cx="430" cy="120" r="10"/><text x="430" y="94" text-anchor="middle" font-weight="700" style="fill:var(--accent-hot)">Pentecost</text><text class="ref" x="442" y="140">Acts 2</text></g>
+        <g class="curve-pt" style="--k:5"><circle cx="530" cy="80" r="9"/><text x="544" y="108">jailed, freed</text><text class="ref" x="540" y="124">Acts 12</text></g>
+        <g class="curve-pt" style="--k:6"><circle cx="630" cy="40" r="9"/><text x="650" y="20" text-anchor="end">this letter</text><text class="ref" x="650" y="64" text-anchor="end">1 Pet. 1</text></g>
+      </svg>
+    </div>
+    <blockquote class="quote step"><p>“And Peter went out, and wept bitterly.”</p><cite>Luke 22:62</cite></blockquote>
+    <p class="note step">Peter said he would die for Jesus, and a few hours later he swore he had never met Him. Jesus did not drop him. A man who has been through that is the right man to write to people who are struggling. And he starts with <em>grace.</em></p>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise" style="--d:1">1 Peter in one picture</h2>
+    <div class="pt01-where" role="img" aria-label="1 Peter in three parts. Chapter 1: a living hope, God hath begotten us again unto a lively hope, 1:3. Chapters 2 and 3: live it out among them that do not believe, having your conversation honest among the Gentiles, 2:12. Chapters 4 and 5: suffering, then glory, after that ye have suffered a while, 5:10. We are in chapter 1.">
+      <span class="pt01-ch here" style="--k:0">1</span><span class="pt01-ch" style="--k:1">2</span><span class="pt01-ch" style="--k:2">3</span>
+      <span class="pt01-ch" style="--k:3">4</span><span class="pt01-ch" style="--k:4">5</span>
+      <div class="pt01-part pt01-hope now" style="--k:0"><small>Chapter 1</small><b>A living hope</b><q>begotten us again unto a lively hope</q><cite>1:3</cite></div>
+      <div class="pt01-part pt01-live" style="--k:1"><small>Chapters 2–3</small><b>Live it out among them</b><q>Having your conversation honest among the Gentiles</q><cite>2:12</cite></div>
+      <div class="pt01-part pt01-fire" style="--k:2"><small>Chapters 4–5</small><b>Suffering, then glory</b><q>after that ye have suffered a while</q><cite>5:10</cite></div>
+    </div>
+    <p class="note step">First Peter says who you are and what is waiting for you. Then how to live among people who do not understand you. Then how to hold on while it costs you something.</p>
+  </div>
+</section>
+
+<section class="slide watch">
+  <div class="inner">
+    <h2 class="rise">Things to watch for</h2>
+    <p class="lede rise" style="--d:1">Keep these questions in the back of your mind as we read. We'll come back to every one of them at the end.</p>
+    <ol class="seeds">
+      <li class="step"><span class="topic">Hope</span><span class="seed-q">What has God begotten us again unto, and by what?</span></li>
+      <li class="step"><span class="topic">Security</span><span class="seed-q">Who keeps the believer, and what is he kept for?</span></li>
+      <li class="step"><span class="topic">Trials</span><span class="seed-q">Why does God let our faith be tried with fire?</span></li>
+      <li class="step"><span class="topic">Holiness</span><span class="seed-q">Why are we to be holy?</span></li>
+      <li class="step"><span class="topic">Redeemed</span><span class="seed-q">What were we not redeemed with, and what were we redeemed with?</span></li>
+      <li class="step"><span class="topic">New birth</span><span class="seed-q">What kind of seed are we born again of?</span></li>
+    </ol>
+  </div>
+</section>
+
+<!-- ======================= PART ONE ======================= -->
+<section class="slide part">
+  <div class="inner">
+    <p class="part-n rise">Part one</p>
+    <h2 class="rise" style="--d:1">A hope that lives</h2>
+    <p class="range rise" style="--d:2">Verses 1–12</p>
+    <div class="rule"></div>
+    <p class="hook rise" style="--d:4">Peter writes to strangers, tired and far from home. Before he asks them for anything, he tells them what God has already given.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="1-2" data-hl="strangers scattered|Elect according to the foreknowledge of God the Father|Grace unto you, and peace, be multiplied"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="1" data-hl="strangers scattered"></blockquote>
+    <h2 class="rise" style="--d:1">Strangers, and chosen</h2>
+    <div class="rename">
+      <span class="old rise" style="--d:2">strangers: foreigners, scattered, far from home</span>
+      <span class="arrow step n2">→</span>
+      <span class="new step">“Elect”: known and chosen by God</span>
+      <span class="gloss step">The word <em>strangers</em> means people living as outsiders in a place that is not theirs. The Christians of those five regions felt it: the neighbours who stopped talking to them, the trade guild that would not hire them, the family that thought they had lost their minds.</span>
+    </div>
+    <p class="note step">If you've ever walked into the room as the new man, the one with the record or the past everybody heard about, you know the feeling. Peter's answer is not <em>fit in.</em> It is: <em>you belong to Someone.</em></p>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="2" data-hl="Elect according to the foreknowledge of God the Father, through sanctification of the Spirit, unto obedience and sprinkling of the blood of Jesus Christ"></blockquote>
+    <h2 class="rise" style="--d:1">All three Persons of God in one verse</h2>
+    <ol class="signs">
+      <li class="step"><b>The Father foreknew</b>“foreknowledge” means He knew beforehand. He is never surprised by you, and He has not been fooling Himself about who you are</li>
+      <li class="step"><b>The Spirit sets apart</b>“sanctification of the Spirit”: from the day you believed, the Holy Spirit began to make you His own</li>
+      <li class="step"><b>The Son's blood covers</b>“sprinkling of the blood of Jesus Christ”: the price of every sin you will ever confess</li>
+    </ol>
+    <p class="note step">Bible teachers explain election in more than one way. What is plain here is the order: the Father knew who would trust His Son, the Spirit sets that man apart, and the blood covers him. And the offer itself is open to everyone: <em>“whosoever believeth in him”</em> (John 3:16).</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="3-5" data-hl="begotten us again unto a lively hope by the resurrection of Jesus Christ from the dead|inheritance incorruptible, and undefiled, and that fadeth not away, reserved in heaven for you|kept by the power of God through faith unto salvation"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <div class="split">
+      <div class="stage">
+        <svg class="tomb now" style="--roll:150px;--turn:190deg" viewBox="0 0 600 330" role="img" aria-label="A tomb cut into a hillside at dawn. The round stone has rolled away, the sun rises, and light shines out of the empty tomb. The word hope is written above it.">
+          <g class="tomb-sun">
+            <defs><radialGradient id="pe01-halo"><stop offset="0" style="stop-color:var(--accent);stop-opacity:.6"/><stop offset="1" style="stop-color:var(--accent);stop-opacity:0"/></radialGradient></defs>
+            <circle cx="470" cy="80" r="115" fill="url(#pe01-halo)"/>
+            <circle cx="470" cy="80" r="38" style="fill:var(--glow)"/>
+          </g>
+          <path d="M0 330 L0 150 Q110 70 250 105 Q400 140 600 120 L600 330 Z" stroke-width="3" style="fill:var(--surface-2);stroke:var(--line-strong)"/>
+          <rect x="0" y="292" width="600" height="38" style="fill:var(--surface-2)"/>
+          <line x1="0" y1="292" x2="600" y2="292" stroke-width="2" style="stroke:var(--line-strong)"/>
+          <path d="M150 292 L150 215 Q200 160 250 215 L250 292 Z" stroke-width="3" style="fill:var(--bg);stroke:var(--ink-soft)"/>
+          <g class="tomb-light">
+            <path d="M150 292 L150 215 Q200 160 250 215 L250 292 Z" style="fill:var(--glow)"/>
+            <path d="M250 292 L360 330 L40 330 L150 292 Z" style="fill:color-mix(in srgb, var(--glow) 35%, transparent)"/>
+          </g>
+          <g class="tomb-stone">
+            <circle cx="200" cy="240" r="62" stroke-width="3" style="fill:var(--line-strong);stroke:var(--ink-soft)"/>
+            <circle cx="200" cy="240" r="44" fill="none" stroke-width="2.5" stroke-dasharray="10 8" style="stroke:var(--bg)"/>
+            <circle cx="200" cy="240" r="6" style="fill:var(--bg)"/>
+          </g>
+          <text class="tomb-word" x="200" y="140" text-anchor="middle" font-size="20" font-weight="700" style="fill:var(--accent-hot)">hope</text>
+        </svg>
+      </div>
+      <div>
+        <h2 class="rise" style="--d:1">“A lively hope”</h2>
+        <p class="note rise" style="--d:2"><em>Lively</em> is the old word for <em>living.</em> This is not wishing (<em>I hope it doesn't rain</em>). It is a hope with a pulse, because it rests on one fact: Jesus came out of the grave.</p>
+        <blockquote class="quote step"><p>“But now is Christ risen from the dead, and become the firstfruits of them that slept.”</p><cite>1 Corinthians 15:20</cite></blockquote>
+        <p class="note step">Notice the words <em>“begotten us again.”</em> Peter says God gave us a second beginning, by mercy and not by merit. Whatever happened yesterday, today is not the end of your story.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="4" data-hl="inheritance incorruptible, and undefiled, and that fadeth not away, reserved in heaven for you"></blockquote>
+    <h2 class="rise" style="--d:1">An inheritance nobody can wreck</h2>
+    <ol class="signs">
+      <li class="step"><b>Incorruptible</b>it cannot rot, break or be used up</li>
+      <li class="step"><b>Undefiled</b>no stain on it, and nobody's sin can dirty it</li>
+      <li class="step"><b>Fadeth not away</b>it never loses its colour, like a flower that never wilts</li>
+    </ol>
+    <p class="note step">Some men here have been left things by their families, and the best of it was a fight over who got what. Peter says there is an inheritance kept in heaven <em>“for you,”</em> and it is already in the safe. Nobody can steal it, and you cannot gamble or drink it away.</p>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <div class="split">
+      <div class="stage">
+        <svg class="kept" viewBox="0 0 600 360" role="img" aria-label="Believers inside a guarded circle marked kept by the power of God. Arrows fly at it from every side and fall away.">
+          <circle class="kept-wall" cx="280" cy="180" r="130"/>
+          <text class="kept-tag" font-size="18" x="280" y="88" text-anchor="middle">kept by the power of God</text>
+          <g class="kept-in"><circle cx="280" cy="130" r="9"/><circle cx="315" cy="140" r="9"/><circle cx="337" cy="168" r="9"/><circle cx="337" cy="202" r="9"/><circle cx="315" cy="230" r="9"/><circle cx="280" cy="240" r="9"/><circle cx="245" cy="230" r="9"/><circle cx="223" cy="202" r="9"/><circle cx="223" cy="168" r="9"/><circle cx="245" cy="140" r="9"/><circle cx="280" cy="185" r="9"/></g>
+          <path class="kept-dart" style="--dx:60px;--dy:30px;--w:0s" d="M60 60 l40 20 m-12 -14 l12 14 l-18 2"/>
+          <path class="kept-dart" style="--dx:-60px;--dy:20px;--w:.9s" d="M560 110 l-40 14 m10 -14 l-10 14 l16 6"/>
+          <path class="kept-dart" style="--dx:50px;--dy:-30px;--w:1.7s" d="M70 320 l40 -22 m-18 -2 l18 2 l-8 16"/>
+          <path class="kept-dart" style="--dx:-50px;--dy:-40px;--w:2.3s" d="M500 330 l-36 -26 m4 16 l-4 -16 l16 2"/>
+        </svg>
+      </div>
+      <div>
+        <h2 class="rise" style="--d:1">The inheritance is kept. So are you.</h2>
+        <p class="note rise" style="--d:2">The inheritance is <em>reserved</em> for you (v. 4), and you are <em>kept</em> for it (v. 5). <em>Kept</em> is a soldier's word: to stand guard. God posts a guard at both ends of the road.</p>
+        <p class="note step"><em>“By the power of God”</em>, not the power of your grip. A man can hold on and still wear out. God doesn't.</p>
+        <blockquote class="quote step"><p>“And I give unto them eternal life; and they shall never perish, neither shall any man pluck them out of my hand.”</p><cite>John 10:28</cite></blockquote>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="slide verse" data-v="6-9" data-hl="ye are in heaviness through manifold temptations|the trial of your faith, being much more precious than of gold that perisheth, though it be tried with fire|joy unspeakable and full of glory"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <div class="split">
+      <div class="stage">
+        <svg viewBox="0 0 600 340" role="img" aria-label="A crucible sits over a fire. The metal inside begins dull. Specks of dross float up from it and burn away, and the metal glows pure gold.">
+          <path class="pe01-flame" d="M205 330 C185 300 220 280 215 250 C245 275 245 305 225 330 Z"/>
+          <path class="pe01-flame b" d="M285 332 C260 295 305 275 295 238 C335 268 335 305 315 332 Z"/>
+          <path class="pe01-flame c" d="M375 330 C355 300 390 282 382 252 C410 276 410 305 392 330 Z"/>
+          <path class="pe01-pot" d="M160 160 L440 160 L400 250 L200 250 Z"/>
+          <ellipse class="pe01-metal" cx="300" cy="162" rx="132" ry="16"/>
+          <g class="pe01-shine"><ellipse cx="300" cy="162" rx="132" ry="16" fill="none" stroke-width="3" style="stroke:var(--accent-hot)"/>
+            <path d="M255 148 L265 130 M300 144 L300 122 M345 148 L335 130" stroke-width="4" stroke-linecap="round" style="stroke:var(--glow)"/></g>
+          <circle class="pe01-dross" style="--k:0;--dx:-20px" cx="250" cy="158" r="8"/>
+          <circle class="pe01-dross" style="--k:1;--dx:15px" cx="300" cy="160" r="6"/>
+          <circle class="pe01-dross" style="--k:2;--dx:30px" cx="345" cy="157" r="9"/>
+          <circle class="pe01-dross" style="--k:3;--dx:-35px" cx="215" cy="162" r="6"/>
+          <text x="300" y="215" text-anchor="middle" font-size="19" font-weight="700" style="fill:var(--ink)">your faith</text>
+          <text x="470" y="100" font-size="16" style="fill:var(--ink-soft)">dross: what is not gold</text>
+          <path d="M468 106 L400 142" fill="none" stroke-width="2" stroke-dasharray="5 5" style="stroke:var(--ink-soft)"/>
+        </svg>
+      </div>
+      <div>
+        <h2 class="rise" style="--d:1">Gold goes through the fire</h2>
+        <p class="note rise" style="--d:2">A goldsmith melts the metal so the <em>dross</em>, the rubbish mixed in, floats to the top and gets skimmed off. He does not put gold in the fire to destroy it, but to burn out what is not gold.</p>
+        <p class="note step">Peter says your faith is <em>“much more precious than of gold that perisheth.”</em> Gold ends up in a drawer. Faith ends up <em>“unto praise and honour and glory.”</em></p>
+        <p class="note step">He does not say the heat is nothing: <em>“Ye are in heaviness.”</em> You are allowed to hurt. But the fire is not God giving up on you. His eye is on the metal the whole time.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="8" data-hl="Whom having not seen, ye love"></blockquote>
+    <p class="saying rise" style="--d:1">Loving a Man <em>you have never seen.</em></p>
+    <p class="note rise" style="--d:3">Peter saw Jesus with his own eyes, ate with Him, failed Him, and was restored by Him. The people he writes to never did. And he says they love Him anyway, and have <em>“joy unspeakable and full of glory.”</em></p>
+    <p class="note step">That is for you too. You did not see Him with your eyes, but something in you answered. That is real, and it is the Spirit's work, not a feeling you made up.</p>
+    <p class="note step"><em>“Receiving the end of your faith, even the salvation of your souls.”</em> Present tense. You are already receiving it.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="10-12" data-hl="the prophets have enquired and searched diligently|which things the angels desire to look into"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="12" data-hl="which things the angels desire to look into"></blockquote>
+    <h2 class="rise" style="--d:1">Even the angels lean over the rail</h2>
+    <ol class="stairs" style="--n:3" aria-label="Three groups look at the gospel. The prophets searched for it from far off. The preachers announced it. The angels want to look into it.">
+      <li style="--k:0"><b>The prophets searched</b>they wrote about a coming Saviour and wanted to know when</li>
+      <li style="--k:1"><b>The preachers announced</b>they told it, “with the Holy Ghost sent down from heaven”</li>
+      <li style="--k:2"><b>The angels lean in</b>they have never needed saving, and still they want a look</li>
+    </ol>
+    <p class="note step">Prophets longed to see this day. Angels have seen everything else and cannot take their eyes off it. And you are the man it was written for. Don't treat as ordinary what heaven watches with wonder.</p>
+  </div>
+</section>
+
+<!-- ======================= PART TWO ======================= -->
+<section class="slide part">
+  <div class="inner">
+    <p class="part-n rise">Part two</p>
+    <h2 class="rise" style="--d:1">Be ye holy</h2>
+    <p class="range rise" style="--d:2">Verses 13–21</p>
+    <div class="rule"></div>
+    <p class="hook rise" style="--d:4">Because of what God has done, here is how a man lives. And here is the price that was paid to set him free from the old way.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="13-16" data-hl="gird up the loins of your mind, be sober, and hope to the end|not fashioning yourselves according to the former lusts|Be ye holy; for I am holy"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="13" data-hl="gird up the loins of your mind, be sober, and hope to the end"></blockquote>
+    <h2 class="rise" style="--d:1">Get your mind ready for work</h2>
+    <p class="note rise" style="--d:2">A man in a long robe could not run or work until he tucked the hem into his belt. That is <em>“gird up the loins.”</em> Peter says to do that with your <em>mind.</em></p>
+    <ol class="signs">
+      <li class="step"><b>Gird up</b>tuck in the loose ends of your thinking. Get ready to move</li>
+      <li class="step"><b>Be sober</b>clear-headed. Not a bad word for a man in recovery</li>
+      <li class="step"><b>Hope to the end</b>fix your hope on the grace coming when Jesus is revealed</li>
+    </ol>
+    <p class="note step">Most falls start in the mind a long time before they reach the hands. Today: decide ahead of time what you will do when the call comes or the old crowd shows up. Do it while you are sober, not when you are in the middle of it.</p>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="15-16" data-hl="Be ye holy; for I am holy"></blockquote>
+    <h2 class="rise" style="--d:1">Holy means set apart</h2>
+    <div class="columns">
+      <div class="col law step">
+        <p class="who">What Peter says to leave behind</p>
+        <h3>“The former lusts in your ignorance”</h3>
+        <p>The old appetites you followed before you knew any better: the drink, the pills, the anger, the woman who wasn't yours. You were following them because you did not know a better way.</p>
+      </div>
+      <div class="col grace step">
+        <p class="who">What God calls you into</p>
+        <h3>“Holy, for I am holy”</h3>
+        <p><em>Holy</em> means set apart for God. It is not first of all <em>perfect,</em> it is <em>His.</em> Peter is quoting what God said to Israel (Leviticus 11:44), and now says it to the church.</p>
+      </div>
+    </div>
+    <p class="note step">If you fell yesterday, you have not stopped being His. Run to the Father, not away from Him. <em>“If we confess our sins, he is faithful and just to forgive us our sins, and to cleanse us from all unrighteousness”</em> (1 John 1:9). Then get back up and keep walking in the new direction.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="17-19" data-hl="pass the time of your sojourning here in fear|ye were not redeemed with corruptible things, as silver and gold|the precious blood of Christ, as of a lamb without blemish and without spot"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="17" data-hl="pass the time of your sojourning here in fear"></blockquote>
+    <h2 class="rise" style="--d:1">A different kind of fear</h2>
+    <div class="rename">
+      <span class="old rise" style="--d:2">“fear” = cringing, hiding from God</span>
+      <span class="arrow step n2">→</span>
+      <span class="new step">“fear” = awe, taking Him seriously</span>
+      <span class="gloss step">The believer who calls God <em>Father</em> has no reason to dread Him (Romans 8:15). But a father who loves you is still a father worth respecting. <em>“Sojourning”</em> means living somewhere you are only passing through: this world is the road, not the home.</span>
+    </div>
+    <p class="note step">God <em>“judgeth according to every man's work.”</em> For the believer that is not a trial to see if he is saved: that was settled at the cross. It is God caring about how we live, because He loves us.</p>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="18" data-hl="your vain conversation received by tradition from your fathers"></blockquote>
+    <svg viewBox="0 12 700 225" style="width:100%; max-height:32vh" role="img" aria-label="A chain of six links runs across the picture. The first three, labelled the grandad's bottle, the dad's fists, and my record, are handed down from father to son. A click breaks the chain after the third link. A drop of blood falls into the gap. The three links that come after turn gold and are labelled free.">
+      <text x="350" y="30" text-anchor="middle" font-size="20" font-style="italic" style="fill:var(--ink-soft)">“received by tradition from your fathers”</text>
+      <g>
+        <rect class="pe01-link" x="20" y="90" width="110" height="52" rx="26"/>
+        <rect class="pe01-link" x="120" y="90" width="110" height="52" rx="26"/>
+        <rect class="pe01-link" x="220" y="90" width="110" height="52" rx="26"/>
+        <g font-size="20" text-anchor="middle" style="fill:var(--ink)">
+          <text x="75" y="172">grandad's</text><text x="75" y="196" font-weight="700">the bottle</text>
+          <text x="175" y="172">dad's</text><text x="175" y="196" font-weight="700">the fists</text>
+          <text x="275" y="172">mine</text><text x="275" y="196" font-weight="700">the record</text>
+        </g>
+      </g>
+      <g class="pe01-after">
+        <rect class="pe01-link" x="320" y="90" width="110" height="52" rx="26"/>
+        <rect class="pe01-link" x="420" y="90" width="110" height="52" rx="26"/>
+        <rect class="pe01-link" x="520" y="90" width="110" height="52" rx="26"/>
+        <g class="pe01-free" font-size="20" text-anchor="middle" font-weight="700" style="fill:var(--accent-hot)">
+          <text x="475" y="172">my sons: free</text>
+        </g>
+      </g>
+      <g class="pe01-drop"><path d="M347 150 C338 168 336 178 347 186 C358 178 356 168 347 150 Z" style="fill:var(--danger)"/>
+        <text x="347" y="224" text-anchor="middle" font-size="18" font-weight="700" style="fill:var(--danger)">the precious blood of Christ</text></g>
+    </svg>
+    <h2 class="rise" style="--d:1">Redeemed from the empty way</h2>
+    <p class="note rise" style="--d:2"><em>“Conversation”</em> in the King James means <em>way of life.</em> <em>“Vain”</em> means empty. Handed down, like an heirloom nobody wanted.</p>
+    <p class="note step pe01-cut">Some of us inherited the bottle, the fists, or a name the police already knew. You did not choose that. But Peter says the chain is broken, and it has been: <em>“redeemed.”</em> Bought back. Not by your best effort, but by what was paid. Your sons can start on the free side.</p>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="18-19" data-hl="not redeemed with corruptible things, as silver and gold|the precious blood of Christ, as of a lamb without blemish and without spot"></blockquote>
+    <h2 class="rise" style="--d:1">What it cost, and what it did not</h2>
+    <ul class="nots">
+      <li class="step"><span class="k">silver and gold</span><span class="why">Money cannot buy a man out of what is wrong with him. All of it <em>perishes</em>, and none of it gets into heaven.</span></li>
+      <li class="step"><span class="k">your own promises</span><span class="why">You have made them. So have I. A promise made in the morning breaks by night, and we both know it.</span></li>
+      <li class="step yes"><span class="k">the precious blood of Christ</span><span class="why">A lamb <em>“without blemish and without spot”</em>: the Passover lamb, whose blood on the door saved the house. Jesus gave His own life, with nothing wrong in it, in your place.</span></li>
+    </ul>
+    <p class="note step">Peter does not say <em>precious</em> by accident. A price was paid, and God does not hand over what He paid that much for. You are worth that to Him.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="20-21" data-hl="foreordained before the foundation of the world|raised him up from the dead, and gave him glory"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="20-21" data-hl="foreordained before the foundation of the world, but was manifest in these last times for you"></blockquote>
+    <h2 class="rise" style="--d:1">It was never Plan B</h2>
+    <ol class="timeline" aria-label="Before the world was made, the Lamb is foreordained. In these last times, He is made known and dies for you. God raises Him from the dead and gives Him glory. Now your faith and hope are in God.">
+      <li style="--k:0"><b>before the world</b><span>The Lamb planned</span><small>“foreordained before the foundation of the world”</small></li>
+      <li style="--k:1"><b>these last times</b><span>He appeared</span><small>“manifest in these last times for you”</small></li>
+      <li style="--k:2"><b>the third day</b><span>God raised Him</span><small>“and gave him glory”</small></li>
+      <li class="lit" style="--k:3"><b>today</b><span>You believe</span><small>“your faith and hope might be in God”</small></li>
+    </ol>
+    <p class="note step">God did not see your life go wrong and hurry to think of something. Before He made the world, He had already chosen the cost of getting you back. And He raised His Son, so you can put your whole weight on Him.</p>
+  </div>
+</section>
+
+<!-- ======================= PART THREE ======================= -->
+<section class="slide part">
+  <div class="inner">
+    <p class="part-n rise">Part three</p>
+    <h2 class="rise" style="--d:1">Born again of the word</h2>
+    <p class="range rise" style="--d:2">Verses 22–25</p>
+    <div class="rule"></div>
+    <p class="hook rise" style="--d:4">A new birth, a seed that doesn't die, and a family to love.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="22-25" data-hl="love one another with a pure heart fervently|born again, not of corruptible seed, but of incorruptible, by the word of God|the word of the Lord endureth for ever"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="23" data-hl="not of corruptible seed, but of incorruptible, by the word of God"></blockquote>
+    <h2 class="rise" style="--d:1">Two kinds of seed</h2>
+    <div class="columns">
+      <div class="col law step">
+        <p class="who">Your first birth</p>
+        <h3>“Corruptible seed”</h3>
+        <p><em>“All flesh is as grass, and all the glory of man as the flower of grass.”</em> It's good-looking in May and dry by August. Every life that stops at the first birth ends in the withering.</p>
+      </div>
+      <div class="col grace step">
+        <p class="who">Your second birth</p>
+        <h3>“Incorruptible”: the word of God</h3>
+        <p>God's own word, planted in you when you believed. <em>“The word of the Lord endureth for ever.”</em> It's the one thing in your life that nothing can wither, kill or take.</p>
+      </div>
+    </div>
+    <blockquote class="quote step"><p>“Jesus answered and said unto him, Verily, verily, I say unto thee, Except a man be born again, he cannot see the kingdom of God.”</p><cite>John 3:3</cite></blockquote>
+    <p class="note step">You cannot clean up the old seed. You need a new one. That is why this letter calls it being born <em>again</em>: a second beginning, with God's word at the root. That also means you grow by feeding on that word, which Peter comes to in chapter 2.</p>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="22" data-hl="love one another with a pure heart fervently"></blockquote>
+    <p class="saying rise" style="--d:1">A new family <em>to love hard.</em></p>
+    <p class="note rise" style="--d:3"><em>“Fervently”</em> is a runner's word: stretched out, straining. Peter says love one another like you mean it, not like you're being polite. Some of you lost your old friends when you got sober. That is a loss, and this is the answer to it.</p>
+    <p class="note step">Today: text or call one brother from this group before the end of the day. Not to talk about anything deep. Just: <em>how are you holding up?</em> That is what <em>purified in obeying the truth</em> looks like when it gets to a phone.</p>
+  </div>
+</section>
+
+<!-- ======================= CLOSING ======================= -->
+<section class="slide remember">
+  <div class="inner">
+    <h2 class="rise">Points to remember</h2>
+    <ol class="seeds">
+      <li class="step"><span class="topic">Hope</span><span class="seed-q">“Hath begotten us again unto a lively hope by the resurrection of Jesus Christ from the dead” <cite>1:3</cite></span><span class="take">Jesus is risen, so your hope is alive. God gave you a second beginning, and it was not earned.</span></li>
+      <li class="step"><span class="topic">Security</span><span class="seed-q">“Who are kept by the power of God through faith unto salvation” <cite>1:5</cite></span><span class="take">God keeps you, not your grip. The inheritance is kept for you and you are kept for the inheritance.</span></li>
+      <li class="step"><span class="topic">Trials</span><span class="seed-q">“The trial of your faith, being much more precious than of gold that perisheth, though it be tried with fire” <cite>1:7</cite></span><span class="take">The fire is to prove and refine the faith, not to destroy it. It is allowed to hurt, and it will end in praise.</span></li>
+      <li class="step"><span class="topic">Holiness</span><span class="seed-q">“Be ye holy; for I am holy” <cite>1:16</cite></span><span class="take">Holy means set apart for God. Because He is, and because you are His, leave the old lusts behind.</span></li>
+      <li class="step"><span class="topic">Redeemed</span><span class="seed-q">“Not redeemed with corruptible things, as silver and gold… But with the precious blood of Christ” <cite>1:18–19</cite></span><span class="take">The empty way of life handed down by your fathers was broken by the blood of the spotless Lamb. You do not have to pass it on.</span></li>
+      <li class="step"><span class="topic">New birth</span><span class="seed-q">“Born again, not of corruptible seed, but of incorruptible, by the word of God” <cite>1:23</cite></span><span class="take">A seed that cannot die. God's word planted in you at the new birth lasts for ever.</span></li>
+    </ol>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 1 of 6</p>
+      <span class="topic">Hope</span>
+      <h2>What has God begotten us again unto, and by what?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="3"></blockquote>
+      <blockquote class="quote step"><p>“But now is Christ risen from the dead, and become the firstfruits of them that slept.”</p><cite>1 Corinthians 15:20</cite></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>A lively, living hope, by the resurrection of Jesus Christ from the dead. Because He is alive, your story is not over.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 2 of 6</p>
+      <span class="topic">Security</span>
+      <h2>Who keeps the believer, and what is he kept for?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="5"></blockquote>
+      <blockquote class="quote step"><p>“And I give unto them eternal life; and they shall never perish, neither shall any man pluck them out of my hand.”</p><cite>John 10:28</cite></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>God keeps him, by His own power, through faith, for a salvation ready to be revealed. A man who has put his trust in Jesus is guarded.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 3 of 6</p>
+      <span class="topic">Trials</span>
+      <h2>Why does God let our faith be tried with fire?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="6-7"></blockquote>
+      <blockquote class="quote step" data-q="8-9"></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>So that the faith is proven real, more precious than gold, and ends in praise and honour and glory when Jesus appears. The fire is allowed to hurt, but God never leaves the crucible.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 4 of 6</p>
+      <span class="topic">Holiness</span>
+      <h2>Why are we to be holy?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="15-16"></blockquote>
+      <blockquote class="quote step"><p>“If we confess our sins, he is faithful and just to forgive us our sins, and to cleanse us from all unrighteousness.”</p><cite>1 John 1:9</cite></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>Because the One who called us is holy, and we belong to Him. Holy means set apart for God. When we fall, we go back to Him and confess, and then we keep going.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 5 of 6</p>
+      <span class="topic">Redeemed</span>
+      <h2>What were we not redeemed with, and what were we redeemed with?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="18-19"></blockquote>
+      <blockquote class="quote step" data-q="20-21"></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>Not with silver and gold, but with the precious blood of Christ, the spotless Lamb. It was planned before the world was made, and it set us free from the empty way of life handed down to us.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 6 of 6</p>
+      <span class="topic">New birth</span>
+      <h2>What kind of seed are we born again of?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="23"></blockquote>
+      <blockquote class="quote step" data-q="24-25"></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>Incorruptible seed, the word of God, which lives and abides for ever. Flesh withers like grass, but what God plants in a believer never does.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide prayer">
+  <div class="inner">
+    <div class="emblem rise"></div>
+    <h2 class="rise" style="--d:1">Prayer requests</h2>
+    <p class="ask-line rise" style="--d:2">What can we pray about for you today?</p>
+    <blockquote class="quote rise" style="--d:4"><p>“Casting all your care upon him; for he careth for you.”</p><cite>1 Peter 5:7</cite></blockquote>
+  </div>
+</section>
+
+</main>
+
+<script>
+// King James Version, 1 Peter 1
+const V = {
+  1: "Peter, an apostle of Jesus Christ, to the strangers scattered throughout Pontus, Galatia, Cappadocia, Asia, and Bithynia,",
+  2: "Elect according to the foreknowledge of God the Father, through sanctification of the Spirit, unto obedience and sprinkling of the blood of Jesus Christ: Grace unto you, and peace, be multiplied.",
+  3: "Blessed be the God and Father of our Lord Jesus Christ, which according to his abundant mercy hath begotten us again unto a lively hope by the resurrection of Jesus Christ from the dead,",
+  4: "To an inheritance incorruptible, and undefiled, and that fadeth not away, reserved in heaven for you,",
+  5: "Who are kept by the power of God through faith unto salvation ready to be revealed in the last time.",
+  6: "Wherein ye greatly rejoice, though now for a season, if need be, ye are in heaviness through manifold temptations:",
+  7: "That the trial of your faith, being much more precious than of gold that perisheth, though it be tried with fire, might be found unto praise and honour and glory at the appearing of Jesus Christ:",
+  8: "Whom having not seen, ye love; in whom, though now ye see him not, yet believing, ye rejoice with joy unspeakable and full of glory:",
+  9: "Receiving the end of your faith, even the salvation of your souls.",
+  10: "Of which salvation the prophets have enquired and searched diligently, who prophesied of the grace that should come unto you:",
+  11: "Searching what, or what manner of time the Spirit of Christ which was in them did signify, when it testified beforehand the sufferings of Christ, and the glory that should follow.",
+  12: "Unto whom it was revealed, that not unto themselves, but unto us they did minister the things, which are now reported unto you by them that have preached the gospel unto you with the Holy Ghost sent down from heaven; which things the angels desire to look into.",
+  13: "Wherefore gird up the loins of your mind, be sober, and hope to the end for the grace that is to be brought unto you at the revelation of Jesus Christ;",
+  14: "As obedient children, not fashioning yourselves according to the former lusts in your ignorance:",
+  15: "But as he which hath called you is holy, so be ye holy in all manner of conversation;",
+  16: "Because it is written, Be ye holy; for I am holy.",
+  17: "And if ye call on the Father, who without respect of persons judgeth according to every man’s work, pass the time of your sojourning here in fear:",
+  18: "Forasmuch as ye know that ye were not redeemed with corruptible things, as silver and gold, from your vain conversation received by tradition from your fathers;",
+  19: "But with the precious blood of Christ, as of a lamb without blemish and without spot:",
+  20: "Who verily was foreordained before the foundation of the world, but was manifest in these last times for you,",
+  21: "Who by him do believe in God, that raised him up from the dead, and gave him glory; that your faith and hope might be in God.",
+  22: "Seeing ye have purified your souls in obeying the truth through the Spirit unto unfeigned love of the brethren, see that ye love one another with a pure heart fervently:",
+  23: "Being born again, not of corruptible seed, but of incorruptible, by the word of God, which liveth and abideth for ever.",
+  24: "For all flesh is as grass, and all the glory of man as the flower of grass. The grass withereth, and the flower thereof falleth away:",
+  25: "But the word of the Lord endureth for ever. And this is the word which by the gospel is preached unto you."
+};
+const BOOK = "1 Peter 1";
+</script>
+<script src="../assets/deck.js"></script>
+</body>
+</html>
