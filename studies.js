@@ -17073,5 +17073,105 @@ window.STUDIES = [
       },
       "big": "God's judgment is just, and pain alone never softens a hard heart. Jesus is coming like a thief, so stay awake and keep the garments He gave you. Evil will be finished: it is done."
     }
+  },
+  {
+    "id": "revelation-17",
+    "type": "chapter",
+    "book": "Revelation",
+    "ch": 17,
+    "date": "2026-10-31",
+    "title": "Revelation 17",
+    "sub": "The woman with the golden cup",
+    "about": "A woman dressed like a queen rides a scarlet beast and holds out a golden cup full of poison. The angel explains her, and the end is plain: the Lamb overcomes.",
+    "tags": [
+      "Babylon",
+      "Temptation",
+      "The world",
+      "Persecution",
+      "Christ's victory",
+      "God's sovereignty"
+    ],
+    "url": "studies/revelation-17.html",
+    "overview": {
+      "where": "In John's vision on Patmos: carried away in the spirit into the wilderness",
+      "when": "About AD 95, under Domitian",
+      "people": [
+        "john-the-apostle",
+        "angels",
+        "great-whore",
+        "the-beast",
+        "ten-kings",
+        "the-lamb",
+        "saints-believers"
+      ],
+      "places": [
+        "babylon",
+        "wilderness",
+        "great-city",
+        "bottomless-pit"
+      ],
+      "story": [
+        "One of the seven angels shows John the judgment of the great whore who sits on many waters. The kings of the earth have committed fornication with her, and the world is drunk on her wine (1–2).",
+        "In the wilderness John sees her riding a scarlet beast with seven heads and ten horns, dressed in purple and scarlet, holding a golden cup full of abominations (3–4).",
+        "On her forehead: “MYSTERY, BABYLON THE GREAT.” She is drunk with the blood of the saints, and John wonders at her (5–6).",
+        "The angel explains: the beast was, and is not, and goes into perdition. The seven heads are seven mountains and seven kings; the ten horns are ten kings who reign one hour (7–13).",
+        "They make war with the Lamb, and the Lamb overcomes them, for He is Lord of lords and King of kings; with Him are the called, chosen and faithful (14).",
+        "The ten horns turn on the whore and burn her, because God put it in their hearts to fulfil His will. The woman is that great city (15–18)."
+      ],
+      "key": {
+        "ref": "Revelation 17:14",
+        "text": "These shall make war with the Lamb, and the Lamb shall overcome them: for he is Lord of lords, and King of kings: and they that are with him are called, and chosen, and faithful."
+      },
+      "big": "The world's way of life looks like gold and is full of poison, and it turns on the people who drink it. Teachers differ on who Babylon is, but the end is plain: the Lamb overcomes, and those with Him are called, chosen and faithful."
+    }
+  },
+  {
+    "id": "revelation-18",
+    "type": "chapter",
+    "book": "Revelation",
+    "ch": 18,
+    "date": "2026-10-31",
+    "title": "Revelation 18",
+    "sub": "Fallen in one hour",
+    "about": "Heaven announces Babylon's fall, calls God's people out of her, and her kings, merchants and sailors stand far off and weep as everything she sold, even men's souls, is gone in one hour.",
+    "tags": [
+      "Babylon",
+      "Leaving the old life",
+      "Pride",
+      "Greed",
+      "Regret",
+      "Hope"
+    ],
+    "url": "studies/revelation-18.html",
+    "overview": {
+      "where": "In John's vision on Patmos: heaven, and the burning city seen from afar",
+      "when": "About AD 95, under Domitian",
+      "people": [
+        "angels",
+        "merchants-of-the-earth",
+        "shipmaster",
+        "apostles",
+        "saints-believers",
+        "souls-of-men"
+      ],
+      "places": [
+        "babylon",
+        "great-city",
+        "heaven"
+      ],
+      "story": [
+        "An angel lights the earth with his glory and cries, “Babylon the great is fallen, is fallen”: she has become a home for devils (1–3).",
+        "Another voice from heaven: “Come out of her, my people.” Her sins have reached heaven; she said, “I sit a queen … and shall see no sorrow,” but her plagues come in one day (4–8).",
+        "The kings who lived deliciously with her stand afar off and cry, “Alas, alas … in one hour is thy judgment come” (9–10).",
+        "The merchants weep, because no one buys their cargo any more: gold, cloth, spice, food, horses, “and slaves, and souls of men” (11–16).",
+        "Shipmasters and sailors stand afar off, cast dust on their heads, and cry, “in one hour is she made desolate.” Heaven is told to rejoice: God has avenged His people (17–20).",
+        "A mighty angel throws a great millstone into the sea: so Babylon will be found no more at all. No music, work, light or weddings in her again, for by her sorceries all nations were deceived (21–24)."
+      ],
+      "key": {
+        "ref": "Revelation 18:4",
+        "text": "And I heard another voice from heaven, saying, Come out of her, my people, that ye be not partakers of her sins, and that ye receive not of her plagues."
+      },
+      "big": "Everything the world sells, even people, is gone in one hour, and those who got rich off it weep for what they lost, not for what they did. God calls His people to come out of her now, and the One who bought us with His blood promises a city with no more tears."
+    }
   }
 ];

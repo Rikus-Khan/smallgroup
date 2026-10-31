@@ -612,7 +612,10 @@ window.GLOSSARY = [
     [ 17 ] ],
    [
     "Revelation", 14,
-    [ 12 ] ] ]
+    [ 12 ] ],
+   [
+    "Revelation", 17,
+    [ 6 ] ] ]
  },
  {
   "id": "john-the-baptist",
@@ -3444,7 +3447,10 @@ window.GLOSSARY = [
     [ 8, 17 ] ],
    [
     "Revelation", 12,
-    [ 6, 14 ] ] ]
+    [ 6, 14 ] ],
+   [
+    "Revelation", 17,
+    [ 3 ] ] ]
  },
  {
   "id": "galilee",
@@ -4506,7 +4512,10 @@ window.GLOSSARY = [
     [ 1, 5 ] ],
    [
     "Revelation", 16,
-    [ 11, 17, 21 ] ] ]
+    [ 11, 17, 21 ] ],
+   [
+    "Revelation", 18,
+    [ 1, 4, 5, 20 ] ] ]
  },
  {
   "id": "hell",
@@ -4902,7 +4911,10 @@ window.GLOSSARY = [
     [ 8, 9, 10 ] ],
    [
     "Revelation", 7,
-    [ 16 ] ] ]
+    [ 16 ] ],
+   [
+    "Revelation", 18,
+    [ 23 ] ] ]
  },
  {
   "id": "darkness",
@@ -5868,7 +5880,10 @@ window.GLOSSARY = [
     [ 8 ] ],
    [
     "Revelation", 16,
-    [ 9 ] ] ]
+    [ 9 ] ],
+   [
+    "Revelation", 18,
+    [ 1 ] ] ]
  },
  {
   "id": "the-law",
@@ -7800,7 +7815,13 @@ window.GLOSSARY = [
     [ 8, 10 ] ],
    [
     "Revelation", 16,
-    [ 19 ] ] ]
+    [ 19 ] ],
+   [
+    "Revelation", 17,
+    [ 2 ] ],
+   [
+    "Revelation", 18,
+    [ 3, 13 ] ] ]
  },
  {
   "id": "waterpots",
@@ -8250,7 +8271,10 @@ window.GLOSSARY = [
     [ 12 ] ],
    [
     "Revelation", 13,
-    [ 18 ] ] ]
+    [ 18 ] ],
+   [
+    "Revelation", 17,
+    [ 9 ] ] ]
  },
  {
   "id": "understanding",
@@ -9852,7 +9876,10 @@ window.GLOSSARY = [
     [ 14 ] ],
    [
     "1 John", 3,
-    [ 20, 21 ] ] ]
+    [ 20, 21 ] ],
+   [
+    "Revelation", 18,
+    [ 7 ] ] ]
  },
  {
   "id": "tongue",
@@ -10263,7 +10290,10 @@ window.GLOSSARY = [
     [ 1, 7 ] ],
    [
     "Revelation", 16,
-    [ 1, 19 ] ] ]
+    [ 1, 19 ] ],
+   [
+    "Revelation", 18,
+    [ 3 ] ] ]
  },
  {
   "id": "pride",
@@ -10509,7 +10539,10 @@ window.GLOSSARY = [
     [ 21 ] ],
    [
     "1 Thessalonians", 5,
-    [ 7 ] ] ]
+    [ 7 ] ],
+   [
+    "Revelation", 17,
+    [ 6 ] ] ]
  },
  {
   "id": "reproof",
@@ -10788,7 +10821,10 @@ window.GLOSSARY = [
     [ 14 ] ],
    [
     "Luke", 16,
-    [ 15 ] ] ]
+    [ 15 ] ],
+   [
+    "Revelation", 17,
+    [ 4 ] ] ]
  },
  {
   "id": "adultery",
@@ -13839,7 +13875,10 @@ window.GLOSSARY = [
     [ 1, 5, 6 ] ],
    [
     "Revelation", 16,
-    [ 9, 11, 21 ] ] ]
+    [ 9, 11, 21 ] ],
+   [
+    "Revelation", 17,
+    [ 3 ] ] ]
  },
  {
   "id": "ye-are-gods",
@@ -16356,7 +16395,13 @@ window.GLOSSARY = [
     [ 1, 6, 7, 8 ] ],
    [
     "Revelation", 16,
-    [ 1, 3, 4, 5, 8, 10, 12, 17 ] ] ]
+    [ 1, 3, 4, 5, 8, 10, 12, 17 ] ],
+   [
+    "Revelation", 17,
+    [ 1, 7 ] ],
+   [
+    "Revelation", 18,
+    [ 1, 21 ] ] ]
  },
  {
   "id": "sepulchre",
@@ -17019,6 +17064,9 @@ window.GLOSSARY = [
     [ 1 ] ],
    [
     "Revelation", 4,
+    [ 1 ] ],
+   [
+    "Revelation", 17,
     [ 1 ] ] ]
  },
  {
@@ -22236,7 +22284,10 @@ window.GLOSSARY = [
     [ 18 ] ],
    [
     "Acts", 8,
-    [ 2 ] ] ]
+    [ 2 ] ],
+   [
+    "Revelation", 18,
+    [ 10, 15, 16, 19 ] ] ]
  },
  {
   "id": "wormwood",
@@ -23352,7 +23403,13 @@ window.GLOSSARY = [
     [ 8 ] ],
    [
     "Revelation", 16,
-    [ 19 ] ] ]
+    [ 19 ] ],
+   [
+    "Revelation", 17,
+    [ 5 ] ],
+   [
+    "Revelation", 18,
+    [ 2, 10, 21 ] ] ]
  },
  {
   "id": "burden",
@@ -24786,7 +24843,10 @@ window.GLOSSARY = [
   "refs": [
    [
     "Jonah", 1,
-    [ 6 ] ] ]
+    [ 6 ] ],
+   [
+    "Revelation", 18,
+    [ 17 ] ] ]
  },
  {
   "id": "hebrew",
@@ -28116,7 +28176,10 @@ window.GLOSSARY = [
     [ 20 ] ],
    [
     "Revelation", 16,
-    [ 14 ] ] ]
+    [ 14 ] ],
+   [
+    "Revelation", 18,
+    [ 2 ] ] ]
  },
  {
   "id": "compassion",
@@ -28905,7 +28968,10 @@ window.GLOSSARY = [
     [ 27 ] ],
    [
     "Hebrews", 11,
-    [ 34 ] ] ]
+    [ 34 ] ],
+   [
+    "Revelation", 18,
+    [ 3 ] ] ]
  },
  {
   "id": "kinsfolk",
@@ -29643,7 +29709,10 @@ window.GLOSSARY = [
     [ 17 ] ],
    [
     "Revelation", 2,
-    [ 2 ] ] ]
+    [ 2 ] ],
+   [
+    "Revelation", 18,
+    [ 20 ] ] ]
  },
  {
   "id": "bartholomew",
@@ -30834,7 +30903,13 @@ window.GLOSSARY = [
     [ 21 ] ],
    [
     "Revelation", 14,
-    [ 8 ] ] ]
+    [ 8 ] ],
+   [
+    "Revelation", 17,
+    [ 2, 4 ] ],
+   [
+    "Revelation", 18,
+    [ 3, 9 ] ] ]
  },
  {
   "id": "forswear",
@@ -31239,7 +31314,10 @@ window.GLOSSARY = [
   "refs": [
    [
     "Matthew", 2,
-    [ 11 ] ] ]
+    [ 11 ] ],
+   [
+    "Revelation", 18,
+    [ 13 ] ] ]
  },
  {
   "id": "a-governor",
@@ -32613,7 +32691,10 @@ window.GLOSSARY = [
     [ 20 ] ],
    [
     "Revelation", 10,
-    [ 7 ] ] ]
+    [ 7 ] ],
+   [
+    "Revelation", 17,
+    [ 5, 7 ] ] ]
  },
  {
   "id": "converted",
@@ -32667,7 +32748,10 @@ window.GLOSSARY = [
     [ 33, 36 ] ],
    [
     "Luke", 15,
-    [ 8 ] ] ]
+    [ 8 ] ],
+   [
+    "Revelation", 18,
+    [ 23 ] ] ]
  },
  {
   "id": "mete",
@@ -33183,6 +33267,9 @@ window.GLOSSARY = [
     [ 20 ] ],
    [
     "Revelation", 13,
+    [ 8 ] ],
+   [
+    "Revelation", 17,
     [ 8 ] ] ]
  },
  {
@@ -33735,7 +33822,10 @@ window.GLOSSARY = [
     [ 42 ] ],
    [
     "Luke", 17,
-    [ 2 ] ] ]
+    [ 2 ] ],
+   [
+    "Revelation", 18,
+    [ 21, 22 ] ] ]
  },
  {
   "id": "maimed",
@@ -42129,7 +42219,13 @@ window.GLOSSARY = [
     [ 3 ] ],
    [
     "Revelation", 16,
-    [ 6 ] ] ]
+    [ 6 ] ],
+   [
+    "Revelation", 17,
+    [ 6 ] ],
+   [
+    "Revelation", 18,
+    [ 24 ] ] ]
  },
  {
   "id": "upper-chamber",
@@ -42834,7 +42930,10 @@ window.GLOSSARY = [
     [ 1 ] ],
    [
     "Revelation", 9,
-    [ 21 ] ] ]
+    [ 21 ] ],
+   [
+    "Revelation", 18,
+    [ 23 ] ] ]
  },
  {
   "id": "gall-of-bitterness",
@@ -44703,7 +44802,10 @@ window.GLOSSARY = [
     [ 20 ] ],
    [
     "Revelation", 2,
-    [ 13 ] ] ]
+    [ 13 ] ],
+   [
+    "Revelation", 17,
+    [ 6 ] ] ]
  },
  {
   "id": "thongs",
@@ -47199,7 +47301,10 @@ window.GLOSSARY = [
     [ 9 ] ],
    [
     "Jude", 1,
-    [ 1 ] ] ]
+    [ 1 ] ],
+   [
+    "Revelation", 17,
+    [ 14 ] ] ]
  },
  {
   "id": "foreknow",
@@ -47730,6 +47835,9 @@ window.GLOSSARY = [
     [ 13 ] ],
    [
     "2 Peter", 1,
+    [ 4 ] ],
+   [
+    "Revelation", 18,
     [ 4 ] ] ]
  },
  {
@@ -51081,6 +51189,9 @@ window.GLOSSARY = [
     [ 5 ] ],
    [
     "Revelation", 13,
+    [ 8 ] ],
+   [
+    "Revelation", 17,
     [ 8 ] ] ]
  },
  {
@@ -55875,7 +55986,10 @@ window.GLOSSARY = [
     [ 39 ] ],
    [
     "2 Peter", 3,
-    [ 7 ] ] ]
+    [ 7 ] ],
+   [
+    "Revelation", 17,
+    [ 8, 11 ] ] ]
  },
  {
   "id": "entertain-strangers",
@@ -57882,7 +57996,10 @@ window.GLOSSARY = [
     [ 1, 4, 10 ] ],
    [
     "Revelation", 15,
-    [ 3 ] ] ]
+    [ 3 ] ],
+   [
+    "Revelation", 17,
+    [ 14 ] ] ]
  },
  {
   "id": "lion-of-juda",
@@ -58524,7 +58641,10 @@ window.GLOSSARY = [
     [ 10 ] ],
    [
     "Revelation", 4,
-    [ 2 ] ] ]
+    [ 2 ] ],
+   [
+    "Revelation", 17,
+    [ 3 ] ] ]
  },
  {
   "id": "throne-in-heaven",
@@ -58965,7 +59085,10 @@ window.GLOSSARY = [
     [ 1, 2, 11 ] ],
    [
     "Revelation", 11,
-    [ 7 ] ] ]
+    [ 7 ] ],
+   [
+    "Revelation", 17,
+    [ 8 ] ] ]
  },
  {
   "id": "abaddon",
@@ -59145,7 +59268,10 @@ window.GLOSSARY = [
     [ 2 ] ],
    [
     "Revelation", 16,
-    [ 2, 10, 13 ] ] ]
+    [ 2, 10, 13 ] ],
+   [
+    "Revelation", 17,
+    [ 3, 7, 8, 11, 12, 13, 16, 17 ] ] ]
  },
  {
   "id": "the-false-prophet",
@@ -59169,7 +59295,10 @@ window.GLOSSARY = [
     [ 3 ] ],
    [
     "Revelation", 13,
-    [ 1 ] ] ]
+    [ 1 ] ],
+   [
+    "Revelation", 17,
+    [ 3, 7 ] ] ]
  },
  {
   "id": "daniels-beasts",
@@ -59674,5 +59803,272 @@ window.GLOSSARY = [
    [
     "Revelation", 12,
     [ 14 ] ] ]
+ },
+ {
+  "id": "great-whore",
+  "kind": "person",
+  "name": "The great whore (Babylon: the world's seduction, unfaithful to God and selling herself to all)",
+  "refs": [
+   [
+    "Revelation", 17,
+    [ 1, 5, 15, 16 ] ] ]
+ },
+ {
+  "id": "upon-many-waters",
+  "kind": "term",
+  "name": "Sitteth upon many waters (rules over peoples and nations, 17:15; old Babylon sat on the Euphrates, Jeremiah 51:13)",
+  "refs": [
+   [
+    "Revelation", 17,
+    [ 1, 15 ] ] ]
+ },
+ {
+  "id": "wine-of-her-fornication",
+  "kind": "term",
+  "name": "The wine of her fornication (Babylon's drink that made the whole world drunk)",
+  "refs": [
+   [
+    "Revelation", 14,
+    [ 8 ] ],
+   [
+    "Revelation", 17,
+    [ 2 ] ],
+   [
+    "Revelation", 18,
+    [ 3 ] ] ]
+ },
+ {
+  "id": "purple-and-scarlet",
+  "kind": "term",
+  "name": "Purple and scarlet (costly dyed cloth: the colors of kings and the very rich)",
+  "refs": [
+   [
+    "Revelation", 17,
+    [ 4 ] ],
+   [
+    "Revelation", 18,
+    [ 12, 16 ] ] ]
+ },
+ {
+  "id": "decked",
+  "kind": "term",
+  "name": "Decked (adorned, dressed up)",
+  "refs": [
+   [
+    "Revelation", 17,
+    [ 4 ] ],
+   [
+    "Revelation", 18,
+    [ 16 ] ] ]
+ },
+ {
+  "id": "golden-cup",
+  "kind": "term",
+  "name": "A golden cup full of abominations (rich on the outside, poison inside; Jeremiah 51:7)",
+  "refs": [
+   [
+    "Revelation", 17,
+    [ 4 ] ] ]
+ },
+ {
+  "id": "admiration",
+  "kind": "term",
+  "name": "Admiration (amazement, astonished wonder)",
+  "refs": [
+   [
+    "Revelation", 17,
+    [ 6 ] ] ]
+ },
+ {
+  "id": "was-and-is-not",
+  "kind": "term",
+  "name": "The beast that was, and is not, and yet is (a mockery of God, “which is, and which was, and which is to come”)",
+  "refs": [
+   [
+    "Revelation", 17,
+    [ 8, 11 ] ] ]
+ },
+ {
+  "id": "seven-mountains",
+  "kind": "term",
+  "name": "Seven mountains, seven kings (the beast's seven heads; Rome was famous as the city on seven hills)",
+  "refs": [
+   [
+    "Revelation", 17,
+    [ 9, 10 ] ] ]
+ },
+ {
+  "id": "ten-kings",
+  "kind": "person",
+  "name": "Ten kings (the ten horns, who reign “one hour” with the beast; Daniel 7:24)",
+  "refs": [
+   [
+    "Revelation", 17,
+    [ 12 ] ] ]
+ },
+ {
+  "id": "lord-of-lords",
+  "kind": "person",
+  "name": "Lord of lords, and King of kings (Jesus, the Lamb, above every ruler)",
+  "refs": [
+   [
+    "1 Timothy", 6,
+    [ 15 ] ],
+   [
+    "Revelation", 17,
+    [ 14 ] ] ]
+ },
+ {
+  "id": "great-city",
+  "kind": "place",
+  "name": "That great city (Babylon, which reigns over the kings of the earth)",
+  "refs": [
+   [
+    "Revelation", 17,
+    [ 18 ] ],
+   [
+    "Revelation", 18,
+    [ 10, 16, 18, 19, 21 ] ] ]
+ },
+ {
+  "id": "deliciously",
+  "kind": "term",
+  "name": "Delicacies, lived deliciously (luxury; a life spent on pleasure)",
+  "refs": [
+   [
+    "Revelation", 18,
+    [ 3, 7, 9 ] ] ]
+ },
+ {
+  "id": "come-out-of-her",
+  "kind": "term",
+  "name": "Come out of her, my people (God's call to leave Babylon and her sins behind; Jeremiah 51:45)",
+  "refs": [
+   [
+    "Revelation", 18,
+    [ 4 ] ] ]
+ },
+ {
+  "id": "i-sit-a-queen",
+  "kind": "term",
+  "name": "I sit a queen, and am no widow (pride that says “it will never happen to me”; Isaiah 47:8)",
+  "refs": [
+   [
+    "Revelation", 18,
+    [ 7 ] ] ]
+ },
+ {
+  "id": "in-one-hour",
+  "kind": "term",
+  "name": "In one hour, in one day (sudden: everything gone at once)",
+  "refs": [
+   [
+    "Revelation", 18,
+    [ 8, 10, 17, 19 ] ] ]
+ },
+ {
+  "id": "bewail",
+  "kind": "term",
+  "name": "Bewail (weep aloud over)",
+  "refs": [
+   [
+    "2 Corinthians", 12,
+    [ 21 ] ],
+   [
+    "Revelation", 18,
+    [ 9 ] ] ]
+ },
+ {
+  "id": "stood-afar-off",
+  "kind": "term",
+  "name": "Standing afar off (keeping their distance from Babylon's burning)",
+  "refs": [
+   [
+    "Revelation", 18,
+    [ 10, 15, 17 ] ] ]
+ },
+ {
+  "id": "merchants-of-the-earth",
+  "kind": "person",
+  "name": "The merchants of the earth (traders made rich by Babylon)",
+  "refs": [
+   [
+    "Revelation", 18,
+    [ 3, 11, 15, 23 ] ] ]
+ },
+ {
+  "id": "thyine-wood",
+  "kind": "term",
+  "name": "Thyine wood (a costly, sweet-smelling wood from North Africa, prized for fine tables)",
+  "refs": [
+   [
+    "Revelation", 18,
+    [ 12 ] ] ]
+ },
+ {
+  "id": "cinnamon",
+  "kind": "term",
+  "name": "Cinnamon (a costly spice brought from the far east)",
+  "refs": [
+   [
+    "Proverbs", 7,
+    [ 17 ] ],
+   [
+    "Revelation", 18,
+    [ 13 ] ] ]
+ },
+ {
+  "id": "odours",
+  "kind": "term",
+  "name": "Odours (incense and perfumes)",
+  "refs": [
+   [
+    "Revelation", 18,
+    [ 13 ] ] ]
+ },
+ {
+  "id": "souls-of-men",
+  "kind": "person",
+  "name": "Slaves, and souls of men (people bought and sold as cargo)",
+  "refs": [
+   [
+    "Revelation", 18,
+    [ 13 ] ] ]
+ },
+ {
+  "id": "come-to-nought",
+  "kind": "term",
+  "name": "Come to nought (come to nothing)",
+  "refs": [
+   [
+    "Amos", 5,
+    [ 5 ] ],
+   [
+    "Acts", 5,
+    [ 38 ] ],
+   [
+    "1 Corinthians", 2,
+    [ 6 ] ],
+   [
+    "Revelation", 18,
+    [ 17 ] ] ]
+ },
+ {
+  "id": "dust-on-their-heads",
+  "kind": "term",
+  "name": "Cast dust on their heads (a sign of grief and mourning; Ezekiel 27:30)",
+  "refs": [
+   [
+    "Revelation", 18,
+    [ 19 ] ] ]
+ },
+ {
+  "id": "harpers",
+  "kind": "person",
+  "name": "Harpers, musicians, pipers, and trumpeters (the music of a living city)",
+  "refs": [
+   [
+    "Revelation", 18,
+    [ 22 ] ] ]
  }
 ];

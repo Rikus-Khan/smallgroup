@@ -1,0 +1,687 @@
+<!doctype html>
+<html lang="en" data-theme="stone">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Revelation 18</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="../assets/fonts.css">
+<link rel="stylesheet" href="../assets/deck.css">
+<link rel="stylesheet" href="../assets/themes.css">
+<style>
+/* rv18-where: where this chapter sits in Revelation. Twenty-two chapter boxes (span) in seven groups (div); each group's label (b)
+   sits above (.up) or below the row, across the columns in its --c. The current group is .now, the current chapter span.here.
+   On a phone each group becomes its own row. (The same marker the other Revelation studies use, under this study's prefix.) */
+.rv18-where { display: grid; grid-template-columns: repeat(22, 1fr); gap: 5px 3px; margin: .6em 0 1em; align-items: end; }
+.rv18-where > div { display: contents; }
+.rv18-where span { grid-row: 2; display: grid; place-items: center; height: 2.3rem; border: 1.5px solid var(--line-strong); border-radius: 5px; font: 600 clamp(.75rem, .7rem + .3vw, 1rem) var(--sans); color: var(--ink-soft); }
+.rv18-where span.gap { margin-left: 5px; }
+.rv18-where b { grid-row: 3; grid-column: var(--c); align-self: start; text-align: center; font: 400 clamp(.8rem, .74rem + .32vw, 1.05rem)/1.25 var(--serif); color: var(--ink-soft); padding: 0 2px; }
+.rv18-where b.up { grid-row: 1; align-self: end; }
+.rv18-where b.left { text-align: left; }
+.rv18-where .now span { border-color: var(--accent); color: var(--ink); }
+.rv18-where .now b { color: var(--accent-hot); font-weight: 600; }
+.rv18-where span.here { background: var(--accent); color: var(--on-accent); box-shadow: 0 0 0 5px color-mix(in srgb, var(--accent) 22%, transparent); }
+@media (max-width: 600px) {
+  .rv18-where { grid-template-columns: 1fr; gap: 6px; }
+  .rv18-where > div { display: flex; flex-wrap: wrap; align-items: center; gap: 3px; }
+  .rv18-where span { width: 1.75rem; height: 1.9rem; }
+  .rv18-where span.gap { margin-left: 0; }
+  .rv18-where b, .rv18-where b.up { margin-left: .4em; text-align: left; align-self: center; }
+}
+
+/* rv18-ruin: a proud city at night, every window lit. On the .rv18-fall step the towers sink and lean, the lights go out,
+   rubble shows, and birds circle over the ruin (18:2). A deck.css candidate for any "fallen city" (Babylon, Nineveh, Jericho). */
+.rv18-ruin text { font: 600 16px var(--sans); }
+.rv18-ruin .rv18-sky { fill: var(--on-glow); }
+.rv18-ruin .rv18-tower { fill: color-mix(in srgb, var(--glow) 18%, var(--on-glow)); transform-box: fill-box; transform-origin: 50% 100%; transition: transform 1.6s cubic-bezier(.5,0,.8,.4); transition-delay: calc(var(--k, 0) * 120ms); }
+.rv18-ruin .rv18-win { fill: var(--warm); transition: opacity .5s ease; transition-delay: calc(var(--k, 0) * 120ms); }
+.slide.active .rv18-ruin .rv18-win { animation: rv18-flick 3s ease-in-out infinite; }
+@keyframes rv18-flick { 50% { opacity: .75; } }
+.rv18-ruin .rv18-rubble { fill: color-mix(in srgb, var(--glow) 22%, var(--on-glow)); opacity: 0; transition: opacity 1s ease 1.2s; }
+.rv18-ruin .rv18-bird { fill: none; stroke: var(--glow); stroke-width: 2.5; stroke-linecap: round; opacity: 0; transition: opacity 1s ease 1.6s; }
+.rv18-ruin .rv18-name { fill: var(--warm); transition: opacity 1s ease; }
+.rv18-ruin .rv18-fallen { fill: var(--danger); opacity: 0; transition: opacity 1s ease 1.4s; }
+.slide:has(.rv18-fall.on) .rv18-ruin .rv18-tower { transform: translateY(var(--sink, 60px)) rotate(var(--lean, 8deg)); }
+.slide:has(.rv18-fall.on) .rv18-ruin .rv18-win { opacity: 0; animation: none; }
+.slide:has(.rv18-fall.on) .rv18-ruin .rv18-rubble, .slide:has(.rv18-fall.on) .rv18-ruin .rv18-fallen { opacity: 1; }
+.slide:has(.rv18-fall.on) .rv18-ruin .rv18-name { opacity: 0; }
+.slide:has(.rv18-fall.on) .rv18-ruin .rv18-bird { opacity: .85; }
+.slide:has(.rv18-fall.on) .rv18-ruin .rv18-flock { animation: rv18-circle 7s linear infinite; transform-box: view-box; transform-origin: 380px 120px; }
+@keyframes rv18-circle { to { transform: rotate(360deg); } }
+
+/* rv18-out: a man walks out of the city gate on the .rv18-go step, along the road toward the light. */
+.rv18-out text { font: 600 16px var(--sans); }
+.rv18-out .rv18-wall { fill: var(--surface-2); stroke: var(--line-strong); stroke-width: 2; }
+.rv18-out .rv18-dark { fill: color-mix(in srgb, var(--danger) 22%, transparent); }
+.rv18-out .rv18-road { fill: none; stroke: var(--line-strong); stroke-width: 10; stroke-linecap: round; stroke-dasharray: 2 16; }
+.rv18-out .rv18-man { fill: var(--ink); transition: transform 4s cubic-bezier(.4,.1,.3,1); }
+.slide:has(.rv18-go.on) .rv18-out .rv18-man { transform: translateX(400px); }
+.rv18-out .rv18-light { fill: var(--accent); }
+.slide.active .rv18-out .rv18-light { animation: rv18-pulse 3s ease-in-out infinite; }
+@keyframes rv18-pulse { 50% { opacity: .55; } }
+.rv18-out .rv18-call { fill: var(--accent-hot); opacity: 0; transition: opacity 1s ease 3s; }
+.slide:has(.rv18-go.on) .rv18-out .rv18-call { opacity: 1; }
+
+/* rv18-cargo: a ship's cargo list, the twenty-eight goods of 18:12-13 in order, grouped. They tick in one by one; the last group
+   (people) waits for the .rv18-people step and is set large in danger red. A deck.css candidate for any long biblical list. */
+.rv18-cargo { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px 12px; margin: .3em 0 .8em; }
+.rv18-cargo > div { padding: .45em .7em .55em; border: 1.5px solid var(--line-strong); border-radius: 8px; background: var(--surface); }
+.rv18-cargo h3 { margin: 0 0 .2em; font: 700 clamp(.7rem, .66rem + .2vw, .85rem) var(--sans); letter-spacing: .06em; text-transform: uppercase; color: var(--ink-soft); }
+.rv18-cargo span { display: inline-block; margin: 0 .5em .05em 0; font: clamp(.88rem, .8rem + .35vw, 1.1rem)/1.3 var(--serif); color: var(--ink);
+  opacity: 0; transform: translateY(6px); transition: opacity .35s ease, transform .35s ease; transition-delay: calc(var(--k, 0) * 110ms + 300ms); }
+.slide.active .rv18-cargo span { opacity: 1; transform: none; }
+.rv18-cargo .rv18-people { grid-column: 1 / -1; border: 2px solid var(--danger); background: color-mix(in srgb, var(--danger) 10%, var(--surface)); text-align: center; }
+.rv18-cargo .rv18-people h3 { color: var(--danger); }
+.rv18-cargo .rv18-people span { font-size: clamp(1.3rem, 1rem + 1.3vw, 2rem); font-weight: 600; color: var(--danger); margin: 0 .6em; transition-delay: 0s; }
+.slide.active .rv18-cargo .rv18-people:not(.on) span { opacity: 0; }
+@media (max-width: 640px) { .rv18-cargo { grid-template-columns: 1fr 1fr; } }
+
+/* rv18-afar: the burning city in the middle, smoke rising; three groups stand outside a dashed ring ("afar off"):
+   kings, merchants, and sailors in a ship. Each group fades in with its own cry (--k stagger). */
+.rv18-afar text { font: 600 15px var(--sans); fill: var(--ink-soft); }
+.rv18-afar .rv18-ring { fill: none; stroke: var(--danger); stroke-width: 2; stroke-dasharray: 6 7; opacity: .7; }
+.rv18-afar .rv18-sea { fill: color-mix(in srgb, var(--cool) 30%, transparent); }
+.rv18-afar .rv18-city { fill: var(--ink-soft); }
+.rv18-afar .rv18-fire { fill: var(--danger); transform-box: fill-box; transform-origin: 50% 100%; }
+.rv18-afar .rv18-fire.w { fill: var(--warm); }
+.slide.active .rv18-afar .rv18-fire { animation: rv18-flame 1s ease-in-out infinite alternate; }
+@keyframes rv18-flame { to { transform: scale(.85, 1.15); } }
+.rv18-afar .rv18-smoke { fill: var(--ink-soft); opacity: 0; }
+.slide.active .rv18-afar .rv18-smoke { animation: rv18-smoke 4s ease-out infinite; animation-delay: calc(var(--k, 0) * 1.3s); }
+@keyframes rv18-smoke { 0% { opacity: 0; transform: translateY(0) scale(.6); } 25% { opacity: .45; } 100% { opacity: 0; transform: translateY(-80px) scale(1.4); } }
+.rv18-afar .rv18-group { opacity: 0; transition: opacity .8s ease; transition-delay: calc(var(--k, 0) * 900ms + 600ms); }
+.slide.active .rv18-afar .rv18-group { opacity: 1; }
+.rv18-afar .rv18-who { fill: var(--ink); }
+.rv18-afar .rv18-crown { fill: var(--warm); }
+.rv18-afar .rv18-cry { fill: var(--danger); font-style: italic; }
+.rv18-afar .rv18-hour { fill: var(--accent-hot); font-size: 20px; }
+
+/* rv18-stone: a great millstone is thrown on the .rv18-throw step, spins in an arc into the sea, and is gone; rings spread. */
+.rv18-stone text { font: 600 16px var(--sans); }
+.rv18-stone .rv18-sea { fill: color-mix(in srgb, var(--cool) 35%, transparent); }
+.rv18-stone .rv18-wave { fill: none; stroke: var(--cool); stroke-width: 3; }
+.rv18-stone .rv18-fly { transform-box: fill-box; transform-origin: center; }
+.rv18-stone .rv18-mill { fill: var(--ink-soft); stroke: var(--ink); stroke-width: 2; }
+.rv18-stone .rv18-hole { fill: var(--bg); stroke: var(--ink); stroke-width: 2; }
+.rv18-stone .rv18-groove { stroke: var(--ink); stroke-width: 1.5; opacity: .5; }
+.rv18-stone .rv18-ripple { fill: none; stroke: var(--cool); stroke-width: 3; opacity: 0; transform-box: fill-box; transform-origin: center; }
+.rv18-stone .rv18-gone { fill: var(--accent-hot); opacity: 0; }
+.slide:has(.rv18-throw.on) .rv18-stone .rv18-fly { animation: rv18-fly 1.3s cubic-bezier(.45,0,.9,.6) forwards; }
+@keyframes rv18-fly { 0% { transform: translate(0, 0) rotate(0); opacity: 1; } 90% { opacity: 1; } 100% { transform: translate(300px, 196px) rotate(540deg); opacity: 0; } }
+.slide:has(.rv18-throw.on) .rv18-stone .rv18-ripple { animation: rv18-ripple 2.4s ease-out forwards; animation-delay: calc(var(--k, 0) * .35s + 1.2s); }
+@keyframes rv18-ripple { 0% { opacity: .9; transform: scale(.2); } 100% { opacity: 0; transform: scale(1.6); } }
+.slide:has(.rv18-throw.on) .rv18-stone .rv18-gone { animation: rv18-show 1s ease 2.4s forwards; }
+@keyframes rv18-show { to { opacity: 1; } }
+
+/* rv18-nomore: two lists of "no more". Babylon's joys (left) dim and strike through one by one as the slide opens; on the
+   .rv18-new step God's "no more" of 21:4 (right) lights up. A deck.css candidate for "what is lost vs what is promised". */
+.rv18-nomore { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem 2rem; margin: .4em 0 .9em; }
+.rv18-nomore h3 { margin: 0 0 .35em; font: 700 clamp(.78rem, .72rem + .25vw, .95rem) var(--sans); letter-spacing: .05em; text-transform: uppercase; color: var(--ink-soft); }
+.rv18-nomore ul { list-style: none; margin: 0; padding: 0; display: grid; gap: 6px; }
+.rv18-nomore li { padding: .35em .7em; border-radius: 8px; font: clamp(.95rem, .85rem + .4vw, 1.2rem)/1.3 var(--serif); }
+.rv18-nomore .rv18-lost li { border: 1.5px solid var(--line-strong); background: var(--surface); color: var(--ink); }
+.slide.active .rv18-nomore .rv18-lost li { animation: rv18-dim .8s ease forwards; animation-delay: calc(var(--k, 0) * 700ms + 900ms); }
+@keyframes rv18-dim { to { opacity: .4; text-decoration: line-through; text-decoration-color: var(--danger); } }
+.rv18-nomore .rv18-gain li { border: 2px solid var(--accent); background: color-mix(in srgb, var(--accent) 10%, var(--surface)); color: var(--ink);
+  opacity: 0; transform: translateY(8px); transition: opacity .6s ease, transform .6s ease; transition-delay: calc(var(--k, 0) * 300ms + 200ms); }
+.rv18-nomore .rv18-gain li b { color: var(--accent-hot); }
+.slide:has(.rv18-new.on) .rv18-nomore .rv18-gain li { opacity: 1; transform: none; }
+@media (max-width: 640px) { .rv18-nomore { grid-template-columns: 1fr; } }
+</style>
+</head>
+<body>
+<main class="deck" id="deck">
+
+<section class="slide title">
+  <div class="inner">
+    <div class="emblem rise"></div>
+    <h1 class="rise" style="--d:1">Revelation 18</h1>
+    <p class="sub rise" style="--d:3">Fallen in one hour</p>
+    <p class="tag rise" style="--d:5">The city that sold everything, even men's souls, falls in a single hour. Her kings, merchants and sailors stand far off and weep. And a voice from heaven calls to God's people: come out of her.</p>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise">Where we are in Revelation</h2>
+    <div class="rv18-where rise" style="--d:1" role="img" aria-label="The twenty-two chapters of Revelation in seven groups. Chapter 1: a vision of Christ. 2 and 3: the seven churches. 4 and 5: the throne and the Lamb. 6 to 16: seals, trumpets and bowls. 17 and 18: Babylon falls, with chapter 18 lit. 19 and 20: Christ returns and reigns. 21 and 22: all things new.">
+      <div><span>1</span><b class="up left" style="--c:1 / 4">a vision of Christ</b></div>
+      <div><span class="gap">2</span><span>3</span><b style="--c:1 / 5">the seven churches</b></div>
+      <div><span class="gap">4</span><span>5</span><b class="up left" style="--c:4 / 9">the throne and the Lamb</b></div>
+      <div><span class="gap">6</span><span>7</span><span>8</span><span>9</span><span>10</span><span>11</span><span>12</span><span>13</span><span>14</span><span>15</span><span>16</span><b style="--c:6 / 17">seals, trumpets and bowls</b></div>
+      <div class="now"><span class="gap">17</span><span class="here">18</span><b class="up" style="--c:16 / 20">Babylon falls</b></div>
+      <div><span class="gap">19</span><span>20</span><b style="--c:18 / 22">Christ returns and reigns</b></div>
+      <div><span class="gap">21</span><span>22</span><b class="up" style="--c:20 / 23">all things new</b></div>
+    </div>
+    <p class="note step">In chapter 17 an angel showed John the woman with the golden cup, <em>“MYSTERY, BABYLON THE GREAT.”</em> She looked rich. Her cup was poison. Teachers read her as ancient Rome, as a world system still to come, or as the world's way of life in every age.</p>
+    <p class="note step">Chapter 18 is her funeral. Heaven announces it, God's people are called out, and everyone who got rich off her stands far away and cries. Then heaven sings (chapter 19).</p>
+  </div>
+</section>
+
+<section class="slide watch">
+  <div class="inner">
+    <h2 class="rise">Things to watch for</h2>
+    <p class="lede rise" style="--d:1">Keep these questions in the back of your mind as we read. We'll come back to every one of them at the end.</p>
+    <ol class="seeds">
+      <li class="step"><span class="topic">Fallen</span><span class="seed-q">How sure is Babylon's fall?</span></li>
+      <li class="step"><span class="topic">Come out</span><span class="seed-q">What does God tell His people to do, and why?</span></li>
+      <li class="step"><span class="topic">Pride</span><span class="seed-q">What did Babylon say in her heart?</span></li>
+      <li class="step"><span class="topic">Her trade</span><span class="seed-q">What was Babylon selling, and what was last on the list?</span></li>
+      <li class="step"><span class="topic">Afar off</span><span class="seed-q">Why do the kings, merchants and sailors weep?</span></li>
+      <li class="step"><span class="topic">No more</span><span class="seed-q">What will be heard no more, and what does God promise instead?</span></li>
+    </ol>
+  </div>
+</section>
+
+<!-- ======================= PART ONE ======================= -->
+<section class="slide part">
+  <div class="inner">
+    <p class="part-n rise">Part one</p>
+    <h2 class="rise" style="--d:1">Fallen, fallen</h2>
+    <p class="range rise" style="--d:2">Verses 1–3</p>
+    <div class="rule"></div>
+    <p class="hook rise" style="--d:4">Heaven doesn't say “will fall.” It says “is fallen.”</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="1-2" data-hl="the earth was lightened with his glory|Babylon the great is fallen, is fallen|the habitation of devils"></section>
+
+<section class="slide verse" data-v="3" data-hl="all nations have drunk of the wine of the wrath of her fornication|the merchants of the earth are waxed rich through the abundance of her delicacies"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <div class="stage"><svg class="rv18-ruin" viewBox="0 0 760 290" role="img" aria-label="A city skyline at night, every window lit, with the name Babylon the great above it. Then the towers sink and lean, the lights go out, rubble lies at their feet, birds circle over the ruin, and the words is fallen appear.">
+  <defs><clipPath id="rv18-ground"><rect x="0" y="0" width="760" height="250"/></clipPath></defs>
+  <rect class="rv18-sky" x="0" y="0" width="760" height="290" rx="14"/>
+  <g style="fill:var(--glow);opacity:.45"><circle cx="60" cy="40" r="2"/><circle cx="190" cy="24" r="1.5"/><circle cx="560" cy="30" r="2"/><circle cx="700" cy="60" r="1.5"/><circle cx="640" cy="16" r="1.5"/></g>
+  <text class="rv18-name" x="380" y="40" text-anchor="middle" style="font-size:18px;letter-spacing:.12em">BABYLON THE GREAT</text>
+  <text class="rv18-fallen" x="380" y="40" text-anchor="middle" style="font-size:22px">“is fallen, is fallen”</text>
+  <g clip-path="url(#rv18-ground)">
+    <g class="rv18-tower" style="--k:0;--lean:-9deg;--sink:70px"><rect x="150" y="120" width="60" height="130"/></g>
+    <g class="rv18-tower" style="--k:1;--lean:6deg;--sink:90px"><rect x="220" y="80" width="56" height="170"/></g>
+    <g class="rv18-tower" style="--k:2;--lean:-5deg;--sink:110px"><path d="M290 250 V100 L330 60 L370 100 V250 Z"/></g>
+    <g class="rv18-tower" style="--k:3;--lean:10deg;--sink:80px"><rect x="384" y="90" width="64" height="160"/></g>
+    <g class="rv18-tower" style="--k:4;--lean:-7deg;--sink:100px"><rect x="462" y="66" width="50" height="184"/></g>
+    <g class="rv18-tower" style="--k:5;--lean:8deg;--sink:60px"><rect x="526" y="130" width="70" height="120"/></g>
+    <g style="fill:var(--warm)">
+      <rect class="rv18-win" style="--k:0" x="164" y="140" width="10" height="14"/><rect class="rv18-win" style="--k:0" x="186" y="170" width="10" height="14"/>
+      <rect class="rv18-win" style="--k:1" x="232" y="100" width="10" height="14"/><rect class="rv18-win" style="--k:1" x="254" y="140" width="10" height="14"/><rect class="rv18-win" style="--k:1" x="232" y="190" width="10" height="14"/>
+      <rect class="rv18-win" style="--k:2" x="324" y="90" width="12" height="16"/><rect class="rv18-win" style="--k:2" x="304" y="140" width="10" height="14"/><rect class="rv18-win" style="--k:2" x="344" y="170" width="10" height="14"/>
+      <rect class="rv18-win" style="--k:3" x="398" y="110" width="10" height="14"/><rect class="rv18-win" style="--k:3" x="424" y="150" width="10" height="14"/><rect class="rv18-win" style="--k:3" x="398" y="196" width="10" height="14"/>
+      <rect class="rv18-win" style="--k:4" x="476" y="86" width="10" height="14"/><rect class="rv18-win" style="--k:4" x="488" y="130" width="10" height="14"/><rect class="rv18-win" style="--k:4" x="476" y="180" width="10" height="14"/>
+      <rect class="rv18-win" style="--k:5" x="542" y="150" width="10" height="14"/><rect class="rv18-win" style="--k:5" x="570" y="190" width="10" height="14"/>
+    </g>
+  </g>
+  <path d="M40 250 H720" style="stroke:var(--glow);opacity:.4" stroke-width="2"/>
+  <path class="rv18-rubble" d="M140 250 l14 -18 l12 8 l16 -22 l18 16 l20 -10 l14 14 l22 -26 l18 20 l16 -8 l20 18 l24 -30 l20 24 l18 -12 l22 16 l20 -22 l16 18 l24 -14 l20 16 l18 -10 l20 14 l22 -18 l16 14 l14 6 Z"/>
+  <g class="rv18-flock">
+    <path class="rv18-bird" d="M300 110 q8 -8 16 0 q8 -8 16 0"/>
+    <path class="rv18-bird" d="M430 90 q7 -7 14 0 q7 -7 14 0"/>
+    <path class="rv18-bird" d="M380 160 q6 -6 12 0 q6 -6 12 0"/>
+    <path class="rv18-bird" d="M470 140 q8 -8 16 0 q8 -8 16 0"/>
+  </g>
+  <text x="380" y="276" text-anchor="middle" style="fill:var(--glow);opacity:.7;font-size:14px">“a cage of every unclean and hateful bird”</text>
+</svg></div>
+    <p class="note step rv18-fall">Heaven says it twice, and in the past tense: <em>“is fallen, is fallen.”</em> It hasn't happened yet in the story, but God speaks of it as done. That's how sure it is. Isaiah heard the same cry about old Babylon (Isaiah 21:9), and it came true.</p>
+    <p class="note step">The city that was full of light, music and money becomes a home for devils and birds that eat the dead. What looked unstoppable is a ruin.</p>
+  </div>
+</section>
+
+<!-- ======================= PART TWO ======================= -->
+<section class="slide part">
+  <div class="inner">
+    <p class="part-n rise">Part two</p>
+    <h2 class="rise" style="--d:1">Come out of her</h2>
+    <p class="range rise" style="--d:2">Verses 4–8</p>
+    <div class="rule"></div>
+    <p class="hook rise" style="--d:4">“My people.” He calls them His before they take a step.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="4-5" data-hl="Come out of her, my people, that ye be not partakers of her sins|her sins have reached unto heaven"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise">“Come out of her, my people”</h2>
+    <div class="stage"><svg class="rv18-out" viewBox="0 0 760 230" role="img" aria-label="A walled city on the left, shaded red inside: her sins, her plagues. A dotted road runs out of the gate to a glowing light on the right. A man stands in the gate, then walks the whole road out toward the light, and the words come out of her, my people appear.">
+  <rect class="rv18-wall" x="20" y="60" width="220" height="150" rx="4"/>
+  <path class="rv18-wall" d="M20 60 v-18 h22 v18 M64 60 v-18 h22 v18 M108 60 v-18 h22 v18 M152 60 v-18 h22 v18 M196 60 v-18 h22 v18"/>
+  <rect class="rv18-dark" x="26" y="66" width="208" height="138"/>
+  <text x="120" y="110" text-anchor="middle" style="fill:var(--danger)">her sins</text>
+  <text x="120" y="140" text-anchor="middle" style="fill:var(--danger)">her plagues</text>
+  <path d="M206 210 v-60 q24 -26 48 0 v60 z" style="fill:var(--bg);stroke:var(--line-strong)" stroke-width="2"/>
+  <path class="rv18-road" d="M240 196 Q420 170 680 150"/>
+  <circle class="rv18-light" cx="700" cy="140" r="34"/>
+  <circle cx="700" cy="140" r="56" style="fill:var(--accent);opacity:.15"/>
+  <g class="rv18-man"><circle cx="230" cy="158" r="10"/><path d="M216 200 q0 -32 14 -32 q14 0 14 32 z"/></g>
+  <text class="rv18-call" x="470" y="40" text-anchor="middle" style="font-size:20px">“Come out of her, my people”</text>
+</svg></div>
+    <p class="note step rv18-go">God's people were living inside Babylon: working there, shopping there, used to it. The call isn't “clean yourself up so I'll take you.” He says <em>“my people”</em> first. You're His; now walk out, so her sins don't stick to you and her plagues don't land on you.</p>
+    <blockquote class="quote step"><p>“Wherefore come out from among them, and be ye separate, saith the Lord, and touch not the unclean thing; and I will receive you,”</p><cite>2 Corinthians 6:17</cite></blockquote>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise">Walking out of the old life</h2>
+    <p class="note rise" style="--d:1">Jeremiah gave the same call to the Jews in old Babylon: <em>“My people, go ye out of the midst of her, and deliver ye every man his soul”</em> (Jeremiah 51:45). For most of us, coming out looks like this:</p>
+    <div class="sort">
+      <div class="rise" style="--d:2"><h3>People</h3><div class="vs"><b>who</b></div><p>The ones who only call when they're using. You can love them and still not ride with them.</p></div>
+      <div class="rise" style="--d:3"><h3>Places</h3><div class="vs"><b>where</b></div><p>The bar, the corner, the old house, the website. Take a different road home.</p></div>
+      <div class="rise" style="--d:4"><h3>Things</h3><div class="vs"><b>what</b></div><p>The number in your phone, the stash, the app. Delete it today, not someday.</p></div>
+    </div>
+    <blockquote class="quote step"><p>“Remember Lot’s wife.”</p><cite>Luke 17:32</cite></blockquote>
+    <p class="note step">She got out of Sodom, and then she looked back. Walking out is one step. Not turning around is a thousand small ones. You don't have to take them alone: tell a brother which way you're walking.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="6-8" data-hl="double unto her double according to her works|I sit a queen, and am no widow, and shall see no sorrow|her plagues come in one day|strong is the Lord God who judgeth her"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise" style="--d:1">“It'll never happen to me”</h2>
+    <div class="talk">
+      <p class="rise" style="--d:2"><small>Babylon, in her heart</small>I sit a queen, and am no widow, and shall see no sorrow.</p>
+      <p class="reply step"><small>God</small>Therefore shall her plagues come in one day, death, and mourning, and famine; and she shall be utterly burned with fire: for strong is the Lord God who judgeth her.<br><span class="flag">one day</span></p>
+    </div>
+    <p class="note step">Every man who's hit bottom once said what she said: <em>I've got this. Nothing will happen to me.</em> That's pride, the last thing before the fall. Old Babylon said it too: <em>“I shall not sit as a widow”</em> (Isaiah 47:8). <em>“Double”</em> means she is paid in full. God settles it; we don't have to.</p>
+  </div>
+</section>
+
+<!-- ======================= PART THREE ======================= -->
+<section class="slide part">
+  <div class="inner">
+    <p class="part-n rise">Part three</p>
+    <h2 class="rise" style="--d:1">Standing afar off</h2>
+    <p class="range rise" style="--d:2">Verses 9–19</p>
+    <div class="rule"></div>
+    <p class="hook rise" style="--d:4">Everyone who got rich off her cries. Not one of them goes near.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="9-10" data-hl="the kings of the earth|Standing afar off for the fear of her torment|Alas, alas, that great city Babylon, that mighty city! for in one hour is thy judgment come"></section>
+
+<section class="slide verse" data-v="11-12" data-hl="no man buyeth their merchandise any more|gold, and silver, and precious stones"></section>
+
+<section class="slide verse" data-v="13" data-hl="slaves, and souls of men"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <div class="split">
+      <div class="stage"><svg data-world viewBox="140 120 680 420" data-towns="Rome!, Alexandria, Tyre, Ephesus:r, Corinth" role="img" aria-label="A map of the Mediterranean in John's day. Rome is marked. Three sea routes run into Rome: grain ships from Alexandria in Egypt, ships from Tyre with purple dye, and ships from Ephesus in Asia. All the routes meet at Rome.">
+        <path class="map-route j1" data-via="Alexandria, @26.0 33.4, @21.0 35.4, @17.0 37.4, @15.9 37.7, @15.6 37.9, @15.62 38.3, @15.4 38.8, @15.2 39.4, @14.2 40.3, @13.2 40.95, @12.55 41.35, @12.2 41.7, Rome"/>
+        <path class="map-route j2" data-via="Tyre, @33.4 33.9, @30.0 34.4, @26.4 34.4, @23.0 34.5, @21.0 35.4"/>
+        <path class="map-route j3" data-via="Ephesus, @26.6 37.7, @25.4 36.9, @23.4 36.1, @21.0 35.4"/>
+        <text x="610" y="470" style="fill:var(--ink-soft);font-size:13px;font-weight:600">grain</text>
+        <text x="720" y="400" style="fill:var(--ink-soft);font-size:13px;font-weight:600">purple</text>
+      </svg></div>
+      <div>
+        <h2 class="rise" style="--d:1">All the ships of the sea</h2>
+        <p class="note rise" style="--d:2">John's first readers knew a city like this. Grain ships came to Rome from Egypt, purple cloth from Tyre, goods from Asia: everything flowed to the capital.</p>
+        <p class="note step">Many teachers see Rome as the first picture, and a last great world market still to come, and the same greed in every age. Old Tyre, too, was mourned by sailors (Ezekiel 27). The pattern is the point: <em>a world that runs on buying and selling, with God left out.</em></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="13" data-hl="slaves, and souls of men"></blockquote>
+    <h2 class="rise" style="--d:1">Her cargo list</h2>
+    <div class="rv18-cargo" role="img" aria-label="The cargo of verses 12 and 13, in order. Treasure: gold, silver, precious stones, pearls. Cloth: fine linen, purple, silk, scarlet. Wood, ivory, metal, stone: thyine wood, ivory, precious wood, brass, iron, marble. Spice and perfume: cinnamon, odours, ointments, frankincense. Food: wine, oil, fine flour, wheat. Animals and transport: beasts, sheep, horses, chariots. And last, people: slaves, and souls of men.">
+      <div><h3>Treasure</h3><span style="--k:0">gold</span><span style="--k:1">silver</span><span style="--k:2">precious stones</span><span style="--k:3">pearls</span></div>
+      <div><h3>Cloth</h3><span style="--k:4">fine linen</span><span style="--k:5">purple</span><span style="--k:6">silk</span><span style="--k:7">scarlet</span></div>
+      <div><h3>Wood, ivory, metal, stone</h3><span style="--k:8">thyine wood</span><span style="--k:9">ivory</span><span style="--k:10">precious wood</span><span style="--k:11">brass</span><span style="--k:12">iron</span><span style="--k:13">marble</span></div>
+      <div><h3>Spice and perfume</h3><span style="--k:14">cinnamon</span><span style="--k:15">odours</span><span style="--k:16">ointments</span><span style="--k:17">frankincense</span></div>
+      <div><h3>Food</h3><span style="--k:18">wine</span><span style="--k:19">oil</span><span style="--k:20">fine flour</span><span style="--k:21">wheat</span></div>
+      <div><h3>Animals and transport</h3><span style="--k:22">beasts</span><span style="--k:23">sheep</span><span style="--k:24">horses</span><span style="--k:25">chariots</span></div>
+      <div class="rv18-people step"><h3>And last of all</h3><span>slaves</span><span>souls of men</span></div>
+    </div>
+    <p class="note step">Twenty-six things, and then people. Right after the horses and the chariots, as if a man were one more thing to sell. That's where the world's trade always ends.</p>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise">“And souls of men”</h2>
+    <p class="note rise" style="--d:1">Some of you have seen this trade up close. The dealer who sells a man his own chains. The trafficker. The boss who works men like animals. The screen that sells a woman to a stranger. The greed that says a person is worth what you can get out of him.</p>
+    <p class="note step">And some of us were the merchandise. Bought and sold, used up. Babylon put a price on your soul. Here's what God paid for it:</p>
+    <blockquote class="quote step"><p>“Forasmuch as ye know that ye were not redeemed with corruptible things, as silver and gold, from your vain conversation received by tradition from your fathers; But with the precious blood of Christ, as of a lamb without blemish and without spot:”</p><cite>1 Peter 1:18–19</cite></blockquote>
+    <p class="note step">Gold and silver head Babylon's list. They couldn't buy you back. The blood of the Lamb did. You are not merchandise any more.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="14-16" data-hl="the fruits that thy soul lusted after are departed from thee|thou shalt find them no more at all|Alas, alas, that great city"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="14" data-hl="the fruits that thy soul lusted after are departed from thee"></blockquote>
+    <h2 class="rise" style="--d:1">When it's all gone</h2>
+    <p class="note rise" style="--d:2">Everything she wanted, everything she ran after, is gone, and <em>“thou shalt find them no more at all.”</em> That is where every life lived for things ends up. The prodigal son learned it in a far country:</p>
+    <blockquote class="quote step"><p>“And when he had spent all, there arose a mighty famine in that land; and he began to be in want.”</p><cite>Luke 15:14</cite></blockquote>
+    <blockquote class="quote step"><p>“For what shall it profit a man, if he shall gain the whole world, and lose his own soul?”</p><cite>Mark 8:36</cite></blockquote>
+    <p class="note step">But the prodigal's story didn't end in the pig pen. When it was all gone, <em>“he came to himself”</em> and went home, and his father ran to him. If you've lost everything, you're closer to home than you've been in years.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="17-19" data-hl="For in one hour so great riches is come to nought|stood afar off|they cast dust on their heads|for in one hour is she made desolate"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <div class="stage"><svg class="rv18-afar" viewBox="0 0 760 330" role="img" aria-label="The great city burns in the middle, with smoke rising. A dashed ring around it marks afar off. Outside the ring stand three groups. On the left, kings with crowns: Alas, alas, thy judgment come. On the right, merchants with sacks: so great riches is come to nought. Below, on the sea, sailors in a ship: is she made desolate. Above, the words in one hour.">
+  <rect class="rv18-sea" x="0" y="268" width="760" height="62" rx="6"/>
+  <text class="rv18-hour" x="380" y="26" text-anchor="middle">“in one hour”</text>
+  <circle class="rv18-ring" cx="380" cy="168" r="122"/>
+  <text x="380" y="262" text-anchor="middle" style="fill:var(--danger)">afar off</text>
+  <g class="rv18-city"><rect x="320" y="150" width="30" height="70"/><rect x="354" y="124" width="32" height="96"/><rect x="390" y="140" width="26" height="80"/><rect x="420" y="160" width="30" height="60"/><rect x="300" y="220" width="160" height="10"/></g>
+  <path class="rv18-fire" d="M318 220 q-6 -40 16 -64 q2 26 16 26 q-4 -30 20 -60 q24 40 6 98 z"/>
+  <path class="rv18-fire w" d="M376 220 q-4 -34 16 -54 q4 22 14 20 q-2 -24 16 -42 q22 36 4 76 z"/>
+  <path class="rv18-fire" d="M420 220 q-4 -28 14 -44 q4 18 12 16 q0 -16 10 -28 q14 30 2 56 z"/>
+  <circle class="rv18-smoke" style="--k:0" cx="350" cy="100" r="18"/><circle class="rv18-smoke" style="--k:1" cx="390" cy="90" r="22"/><circle class="rv18-smoke" style="--k:2" cx="420" cy="104" r="16"/>
+  <g class="rv18-group" style="--k:0">
+    <g class="rv18-who"><circle cx="70" cy="168" r="11"/><path d="M56 206 q0 -30 14 -30 q14 0 14 30 z"/><circle cx="110" cy="172" r="11"/><path d="M96 210 q0 -30 14 -30 q14 0 14 30 z"/></g>
+    <g class="rv18-crown"><path d="M61 156 v-12 l5 6 l4 -9 l4 9 l5 -6 v12 z"/><path d="M101 160 v-12 l5 6 l4 -9 l4 9 l5 -6 v12 z"/></g>
+    <text x="90" y="232" text-anchor="middle" class="rv18-who" style="font-size:16px">the kings</text>
+    <text x="90" y="104" text-anchor="middle" class="rv18-cry">“Alas, alas …</text>
+    <text x="90" y="124" text-anchor="middle" class="rv18-cry">thy judgment come”</text>
+  </g>
+  <g class="rv18-group" style="--k:1">
+    <g class="rv18-who"><circle cx="650" cy="168" r="11"/><path d="M636 206 q0 -30 14 -30 q14 0 14 30 z"/><circle cx="690" cy="172" r="11"/><path d="M676 210 q0 -30 14 -30 q14 0 14 30 z"/></g>
+    <path d="M708 210 q-4 -22 10 -24 q14 2 10 24 z M712 186 l12 0" style="fill:var(--leather-light);stroke:var(--leather)" stroke-width="2"/>
+    <text x="670" y="232" text-anchor="middle" class="rv18-who" style="font-size:16px">the merchants</text>
+    <text x="670" y="104" text-anchor="middle" class="rv18-cry">“so great riches</text>
+    <text x="670" y="124" text-anchor="middle" class="rv18-cry">is come to nought”</text>
+  </g>
+  <g class="rv18-group" style="--k:2">
+    <path d="M560 296 h120 l-16 22 h-88 z" style="fill:var(--leather)"/>
+    <line x1="618" y1="296" x2="618" y2="246" stroke-width="3" style="stroke:var(--leather)"/>
+    <path d="M620 250 l34 30 h-34 z" style="fill:var(--surface-2);stroke:var(--line-strong)" stroke-width="1.5"/>
+    <g class="rv18-who"><circle cx="586" cy="284" r="7"/><circle cx="600" cy="286" r="7"/></g>
+    <text x="548" y="292" text-anchor="end" class="rv18-who" style="font-size:16px">the sailors</text>
+    <text x="548" y="312" text-anchor="end" class="rv18-cry">“made desolate”</text>
+  </g>
+</svg></div>
+    <p class="note step">Three groups, three times <em>“in one hour,”</em> and every one stands <em>“afar off.”</em> They cry for what they lost: power, profit, business. Not one of them cries for what they did, and not one goes in to help her.</p>
+    <p class="note step">That's the world's friendship. When the money's gone, so are your friends from the old life. They'll miss what you were worth to them. Jesus came close, to men no one else would touch.</p>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise">Two kinds of tears</h2>
+    <div class="columns">
+      <div class="col law rise" style="--d:2">
+        <p class="who">The kings, merchants and sailors</p>
+        <h3>The sorrow of the world</h3>
+        <p>Sorry it's gone. Sorry they got caught. Dust on the head, and nothing changes. It ends in death.</p>
+      </div>
+      <div class="col grace rise" style="--d:3">
+        <p class="who">A man who turns to God</p>
+        <h3>Godly sorrow</h3>
+        <p>Sorry for what he did, and to the One he did it against. It turns him around, and it leads to life.</p>
+      </div>
+    </div>
+    <blockquote class="quote step"><p>“For godly sorrow worketh repentance to salvation not to be repented of: but the sorrow of the world worketh death.”</p><cite>2 Corinthians 7:10</cite></blockquote>
+    <p class="note step">Regret can keep you weeping <em>“afar off”</em> for years. Don't stop there. Bring it to God: <em>“If we confess our sins, he is faithful and just to forgive us our sins”</em> (1 John 1:9). That's the kind of sorrow you don't have to be sorry for.</p>
+  </div>
+</section>
+
+<!-- ======================= PART FOUR ======================= -->
+<section class="slide part">
+  <div class="inner">
+    <p class="part-n rise">Part four</p>
+    <h2 class="rise" style="--d:1">Thrown down</h2>
+    <p class="range rise" style="--d:2">Verses 20–24</p>
+    <div class="rule"></div>
+    <p class="hook rise" style="--d:4">A millstone, the sea, and silence.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="20-21" data-hl="Rejoice over her, thou heaven|God hath avenged you on her|a stone like a great millstone, and cast it into the sea|shall be found no more at all"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <div class="split">
+      <div class="stage"><svg class="rv18-stone" viewBox="0 0 640 330" role="img" aria-label="A great round millstone with a hole in the middle hangs in the air. It is thrown, spins down in an arc, and sinks into the sea. Rings spread on the water, and the words found no more at all appear.">
+  <rect class="rv18-sea" x="0" y="240" width="640" height="90" rx="8"/>
+  <path class="rv18-wave" d="M0 240 q20 -10 40 0 t40 0 t40 0 t40 0 t40 0 t40 0 t40 0 t40 0 t40 0 t40 0 t40 0 t40 0 t40 0 t40 0 t40 0 t40 0"/>
+  <g class="rv18-fly">
+    <circle class="rv18-mill" cx="110" cy="70" r="46"/>
+    <path class="rv18-groove" d="M110 24 V58 M110 82 V116 M64 70 H98 M122 70 H156 M78 38 L101 61 M119 79 L142 102 M142 38 L119 61 M101 79 L78 102"/>
+    <circle class="rv18-hole" cx="110" cy="70" r="11"/>
+  </g>
+  <ellipse class="rv18-ripple" style="--k:0" cx="410" cy="262" rx="40" ry="10"/>
+  <ellipse class="rv18-ripple" style="--k:1" cx="410" cy="262" rx="80" ry="18"/>
+  <ellipse class="rv18-ripple" style="--k:2" cx="410" cy="262" rx="120" ry="26"/>
+  <text class="rv18-gone" x="410" y="310" text-anchor="middle" style="font-size:20px">“found no more at all”</text>
+</svg></div>
+      <div>
+        <h2 class="rise" style="--d:1">Like a millstone into the sea</h2>
+        <p class="note rise" style="--d:2">A great millstone, the kind a donkey turned, weighed hundreds of pounds. Throw one into the sea and it doesn't float back up. Nobody fishes it out.</p>
+        <p class="note step rv18-throw">Jeremiah did this with a stone tied to his scroll of judgment on Babylon: <em>“cast it into the midst of Euphrates: And thou shalt say, Thus shall Babylon sink, and shall not rise”</em> (Jeremiah 51:63–64).</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="20" data-hl="God hath avenged you on her"></blockquote>
+    <h2 class="rise" style="--d:1">Heaven rejoices</h2>
+    <p class="note rise" style="--d:2">The earth weeps for Babylon; heaven sings. Not out of spite, but because God has finally put things right for everyone she crushed: the apostles, the prophets, the saints.</p>
+    <blockquote class="quote step"><p>“Dearly beloved, avenge not yourselves, but rather give place unto wrath: for it is written, Vengeance is mine; I will repay, saith the Lord.”</p><cite>Romans 12:19</cite></blockquote>
+    <p class="note step">Some of you carry what was done to you: a father, a dealer, a cellmate, a system. You don't have to carry revenge too. Put it down. God will settle every account, and He won't miss one.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="22-24" data-hl="shall be heard no more at all in thee|the light of a candle shall shine no more at all in thee|the voice of the bridegroom and of the bride|by thy sorceries were all nations deceived"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="23" data-hl="by thy sorceries were all nations deceived"></blockquote>
+    <h2 class="rise" style="--d:1">“Sorceries”</h2>
+    <div class="morph">
+      <span class="big rise" style="--d:2">φαρμακεία</span>
+      <span class="say step">said <em class="gk">pharmakeia</em></span>
+      <span class="means step">drugs, potions, spells</span>
+    </div>
+    <p class="note step">Our word <em>pharmacy</em> comes from it. In John's day it meant drugs and potions mixed with magic, used to get power over people. Galatians 5:20 calls it <em>“witchcraft.”</em></p>
+    <p class="note step">Babylon didn't win the nations by argument. She drugged them, and they couldn't see straight. We know what that's like. Coming out of her means coming out of that fog: sober, awake, seeing clearly.</p>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise">Two kinds of “no more”</h2>
+    <div class="rv18-nomore">
+      <div class="rv18-lost rise" style="--d:1">
+        <h3>In Babylon, no more (18:22–23)</h3>
+        <ul>
+          <li style="--k:0">music: harpers, pipers, trumpeters</li>
+          <li style="--k:1">craftsmen at their work</li>
+          <li style="--k:2">the sound of the millstone</li>
+          <li style="--k:3">the light of a candle</li>
+          <li style="--k:4">the bridegroom and the bride</li>
+        </ul>
+      </div>
+      <div class="rv18-gain">
+        <h3>With God, no more (21:4)</h3>
+        <ul>
+          <li style="--k:0"><b>no more</b> death</li>
+          <li style="--k:1"><b>neither</b> sorrow</li>
+          <li style="--k:2"><b>nor</b> crying</li>
+          <li style="--k:3"><b>neither</b> any more pain</li>
+        </ul>
+      </div>
+    </div>
+    <p class="note step rv18-new">Babylon loses everything that made life sweet: music, work, bread, light, love. Everything the world offered you, gone. Now look what God takes away from His people:</p>
+    <blockquote class="quote step"><p>“And God shall wipe away all tears from their eyes; and there shall be no more death, neither sorrow, nor crying, neither shall there be any more pain: for the former things are passed away.”</p><cite>Revelation 21:4</cite></blockquote>
+  </div>
+</section>
+
+<section class="slide remember">
+  <div class="inner">
+    <h2 class="rise">Points to remember</h2>
+    <ol class="seeds">
+      <li class="step"><span class="topic">Fallen</span><span class="seed-q">“Babylon the great is fallen, is fallen” <cite>verse 2</cite></span><span class="take">God speaks of it as already done. What looks unstoppable is already finished.</span></li>
+      <li class="step"><span class="topic">Come out</span><span class="seed-q">“Come out of her, my people” <cite>verse 4</cite></span><span class="take">You're His. Walk out of the old life: people, places, things. And don't look back.</span></li>
+      <li class="step"><span class="topic">Pride</span><span class="seed-q">“I sit a queen, and am no widow, and shall see no sorrow” <cite>verse 7</cite></span><span class="take">“It'll never happen to me” is the last thing said before the fall.</span></li>
+      <li class="step"><span class="topic">Her trade</span><span class="seed-q">“slaves, and souls of men” <cite>verse 13</cite></span><span class="take">The world's trade ends with selling people. Christ bought you back with His blood.</span></li>
+      <li class="step"><span class="topic">Afar off</span><span class="seed-q">“for in one hour so great riches is come to nought” <cite>verse 17</cite></span><span class="take">They weep for what they lost, not for what they did. Bring your regret to God.</span></li>
+      <li class="step"><span class="topic">No more</span><span class="seed-q">“shall be heard no more at all in thee” <cite>verse 22</cite></span><span class="take">Babylon loses every joy. God's people lose every tear.</span></li>
+    </ol>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 1 of 6</p>
+      <span class="topic">Fallen</span>
+      <h2>How sure is Babylon's fall?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="2" data-hl="Babylon the great is fallen, is fallen"></blockquote>
+      <blockquote class="quote step"><p>“And there followed another angel, saying, Babylon is fallen, is fallen, that great city, because she made all nations drink of the wine of the wrath of her fornication.”</p><cite>Revelation 14:8</cite></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>So sure that heaven announces it in the past tense, twice. Like a millstone thrown into the sea, she will be found no more at all.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 2 of 6</p>
+      <span class="topic">Come out</span>
+      <h2>What does God tell His people to do, and why?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="4"></blockquote>
+      <blockquote class="quote step"><p>“Wherefore come out from among them, and be ye separate, saith the Lord, and touch not the unclean thing; and I will receive you,”</p><cite>2 Corinthians 6:17</cite></blockquote>
+      <blockquote class="quote step"><p>“Remember Lot’s wife.”</p><cite>Luke 17:32</cite></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>Come out of her, so we don't share her sins or her plagues. He calls us “my people” first; walking out of the old life is how His people live, not how they earn a place.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 3 of 6</p>
+      <span class="topic">Pride</span>
+      <h2>What did Babylon say in her heart?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="7" data-hl="I sit a queen, and am no widow, and shall see no sorrow"></blockquote>
+      <blockquote class="quote step"><p>“Pride goeth before destruction, and an haughty spirit before a fall.”</p><cite>Proverbs 16:18</cite></blockquote>
+      <blockquote class="quote step"><p>“But he giveth more grace. Wherefore he saith, God resisteth the proud, but giveth grace unto the humble.”</p><cite>James 4:6</cite></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>“I sit a queen … and shall see no sorrow.” It'll never happen to me. Her plagues came in one day. God resists the proud, but He gives grace to the humble.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 4 of 6</p>
+      <span class="topic">Her trade</span>
+      <h2>What was Babylon selling, and what was last on the list?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="13"></blockquote>
+      <blockquote class="quote step"><p>“For what shall it profit a man, if he shall gain the whole world, and lose his own soul?”</p><cite>Mark 8:36</cite></blockquote>
+      <blockquote class="quote step"><p>“Forasmuch as ye know that ye were not redeemed with corruptible things, as silver and gold, from your vain conversation received by tradition from your fathers;”</p><cite>1 Peter 1:18</cite></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>Everything: gold, cloth, spice, food, horses. And last of all, “slaves, and souls of men.” The world sells people. Christ bought us back, not with gold, but with His own blood.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 5 of 6</p>
+      <span class="topic">Afar off</span>
+      <h2>Why do the kings, merchants and sailors weep?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="11"></blockquote>
+      <blockquote class="quote step" data-q="17" data-hl="For in one hour so great riches is come to nought"></blockquote>
+      <blockquote class="quote step"><p>“For godly sorrow worketh repentance to salvation not to be repented of: but the sorrow of the world worketh death.”</p><cite>2 Corinthians 7:10</cite></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>For what they lost: power, riches, business. They stand far off and never repent. That's the sorrow of the world. Godly sorrow turns a man to God.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 6 of 6</p>
+      <span class="topic">No more</span>
+      <h2>What will be heard no more, and what does God promise instead?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="22" data-hl="shall be heard no more at all in thee"></blockquote>
+      <blockquote class="quote step"><p>“And God shall wipe away all tears from their eyes; and there shall be no more death, neither sorrow, nor crying, neither shall there be any more pain: for the former things are passed away.”</p><cite>Revelation 21:4</cite></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>Babylon's music, work, bread, light and weddings. God promises His people the opposite: no more death, sorrow, crying or pain.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide prayer">
+  <div class="inner">
+    <div class="emblem rise"></div>
+    <h2 class="rise" style="--d:1">Prayer requests</h2>
+    <p class="ask-line rise" style="--d:2">What can we pray about for you today?</p>
+    <blockquote class="quote rise" style="--d:4"><p>“Come out of her, my people, that ye be not partakers of her sins, and that ye receive not of her plagues.”</p><cite>Revelation 18:4</cite></blockquote>
+  </div>
+</section>
+
+</main>
+
+<script>
+// King James Version, Revelation chapter 18
+const V = {
+  1: "And after these things I saw another angel come down from heaven, having great power; and the earth was lightened with his glory.",
+  2: "And he cried mightily with a strong voice, saying, Babylon the great is fallen, is fallen, and is become the habitation of devils, and the hold of every foul spirit, and a cage of every unclean and hateful bird.",
+  3: "For all nations have drunk of the wine of the wrath of her fornication, and the kings of the earth have committed fornication with her, and the merchants of the earth are waxed rich through the abundance of her delicacies.",
+  4: "And I heard another voice from heaven, saying, Come out of her, my people, that ye be not partakers of her sins, and that ye receive not of her plagues.",
+  5: "For her sins have reached unto heaven, and God hath remembered her iniquities.",
+  6: "Reward her even as she rewarded you, and double unto her double according to her works: in the cup which she hath filled fill to her double.",
+  7: "How much she hath glorified herself, and lived deliciously, so much torment and sorrow give her: for she saith in her heart, I sit a queen, and am no widow, and shall see no sorrow.",
+  8: "Therefore shall her plagues come in one day, death, and mourning, and famine; and she shall be utterly burned with fire: for strong is the Lord God who judgeth her.",
+  9: "And the kings of the earth, who have committed fornication and lived deliciously with her, shall bewail her, and lament for her, when they shall see the smoke of her burning,",
+  10: "Standing afar off for the fear of her torment, saying, Alas, alas, that great city Babylon, that mighty city! for in one hour is thy judgment come.",
+  11: "And the merchants of the earth shall weep and mourn over her; for no man buyeth their merchandise any more:",
+  12: "The merchandise of gold, and silver, and precious stones, and of pearls, and fine linen, and purple, and silk, and scarlet, and all thyine wood, and all manner vessels of ivory, and all manner vessels of most precious wood, and of brass, and iron, and marble,",
+  13: "And cinnamon, and odours, and ointments, and frankincense, and wine, and oil, and fine flour, and wheat, and beasts, and sheep, and horses, and chariots, and slaves, and souls of men.",
+  14: "And the fruits that thy soul lusted after are departed from thee, and all things which were dainty and goodly are departed from thee, and thou shalt find them no more at all.",
+  15: "The merchants of these things, which were made rich by her, shall stand afar off for the fear of her torment, weeping and wailing,",
+  16: "And saying, Alas, alas, that great city, that was clothed in fine linen, and purple, and scarlet, and decked with gold, and precious stones, and pearls!",
+  17: "For in one hour so great riches is come to nought. And every shipmaster, and all the company in ships, and sailors, and as many as trade by sea, stood afar off,",
+  18: "And cried when they saw the smoke of her burning, saying, What city is like unto this great city!",
+  19: "And they cast dust on their heads, and cried, weeping and wailing, saying, Alas, alas, that great city, wherein were made rich all that had ships in the sea by reason of her costliness! for in one hour is she made desolate.",
+  20: "Rejoice over her, thou heaven, and ye holy apostles and prophets; for God hath avenged you on her.",
+  21: "And a mighty angel took up a stone like a great millstone, and cast it into the sea, saying, Thus with violence shall that great city Babylon be thrown down, and shall be found no more at all.",
+  22: "And the voice of harpers, and musicians, and of pipers, and trumpeters, shall be heard no more at all in thee; and no craftsman, of whatsoever craft he be, shall be found any more in thee; and the sound of a millstone shall be heard no more at all in thee;",
+  23: "And the light of a candle shall shine no more at all in thee; and the voice of the bridegroom and of the bride shall be heard no more at all in thee: for thy merchants were the great men of the earth; for by thy sorceries were all nations deceived.",
+  24: "And in her was found the blood of prophets, and of saints, and of all that were slain upon the earth."
+};
+const BOOK = "Revelation 18";
+</script>
+<script src="../assets/deck.js"></script>
+</body>
+</html>
