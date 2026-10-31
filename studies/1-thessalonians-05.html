@@ -1,0 +1,616 @@
+<!doctype html>
+<html lang="en" data-theme="scribe">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>1 Thessalonians 5</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="../assets/fonts.css">
+<link rel="stylesheet" href="../assets/deck.css">
+<link rel="stylesheet" href="../assets/themes.css">
+<style>
+
+/* t105-where: where we are in 1 Thessalonians (copied from the t101-where marker in 1 Thessalonians 1, so the whole book matches; a deck.css candidate).
+   Three parts (div, --k). Each holds its chapters (p > i; read ones .done, the one we are in .here), its name (b), what it says (small)
+   and a key phrase (q + cite). The part we're in is .now. */
+.t105-where { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin: .5em 0 1em; }
+.t105-where > div { --c: var(--line-strong); padding: .55em .8em .65em; border-top: 6px solid var(--c); border-radius: 0 0 10px 10px;
+  background: color-mix(in srgb, var(--surface) 70%, transparent); opacity: 0; transform: translateY(10px);
+  transition: opacity .6s ease, transform .6s ease; transition-delay: calc(var(--k, 0) * 350ms + 300ms); }
+.slide.active .t105-where > div { opacity: 1; transform: none; }
+.t105-where > div.now { --c: var(--accent); background: color-mix(in srgb, var(--accent) 15%, transparent); box-shadow: inset 0 0 0 2px var(--accent); }
+.t105-where p { display: flex; gap: 6px; margin: 0 0 .4em; }
+.t105-where i { min-width: 2.2em; padding: .22em .3em; text-align: center; border-radius: 6px; border: 1.5px solid var(--line-strong);
+  font: 700 clamp(.82rem, .74rem + .35vw, 1.08rem) var(--sans); font-style: normal; color: var(--ink-soft); }
+.t105-where i.done { background: color-mix(in srgb, var(--accent) 14%, transparent); color: var(--ink); }
+.t105-where i.here { background: var(--accent); border-color: var(--accent); color: var(--on-accent); }
+.slide.active .t105-where i.here { animation: t105-here 2.4s ease-in-out 1.8s infinite; }
+@keyframes t105-here { 50% { box-shadow: 0 0 0 6px color-mix(in srgb, var(--accent) 28%, transparent); } }
+.t105-where b { display: block; font: 600 clamp(1.05rem, .88rem + .7vw, 1.5rem)/1.1 var(--serif); color: var(--ink); }
+.t105-where small { display: block; margin: .2em 0 .35em; font-size: clamp(.78rem, .72rem + .26vw, 1rem); line-height: 1.3; color: var(--ink-soft); }
+.t105-where q { display: block; font: italic clamp(.86rem, .78rem + .34vw, 1.08rem)/1.3 var(--serif); quotes: "\201C" "\201D"; }
+.t105-where cite { display: block; margin-top: .2em; font-style: normal; font-size: clamp(.72rem, .68rem + .22vw, .92rem); color: var(--ink-soft); }
+@media (max-width: 640px) {
+  .t105-where { grid-template-columns: 1fr; gap: 6px; }
+  .t105-where > div { border-top: 0; border-left: 6px solid var(--c); border-radius: 0 10px 10px 0; }
+}
+
+/* t105-thread: the look-back over the letter. Five chips, one per chapter (i, b), each with its line about the Lord's coming (q, then cite) */
+.t105-thread { display: grid; grid-template-columns: repeat(auto-fit, minmax(8.5rem, 1fr)); gap: 6px; margin: .3em 0 .9em; }
+.t105-thread div { padding: .45em .6em .55em; border-radius: 8px; background: var(--surface); border: 1px solid var(--line); color: var(--ink-soft); line-height: 1.2; }
+.t105-thread i { display: block; font: 700 clamp(.8rem, .72rem + .35vw, 1rem)/1.1 var(--sans); font-style: normal; letter-spacing: .04em; margin-bottom: .2em; }
+.t105-thread b { display: block; font: 400 clamp(.95rem, .85rem + .4vw, 1.2rem)/1.2 var(--serif); }
+.t105-thread small { display: block; margin-top: .25em; font: clamp(.8rem, .74rem + .28vw, .98rem)/1.25 var(--sans); }
+.t105-thread q { display: block; margin-top: .45em; padding-top: .4em; border-top: 1px dashed currentColor; font: italic clamp(.85rem, .78rem + .3vw, 1.05rem)/1.25 var(--serif); quotes: "“" "”"; }
+.t105-thread cite { display: block; margin-top: .2em; font: 700 clamp(.72rem, .68rem + .2vw, .85rem) var(--sans); font-style: normal; letter-spacing: .04em; }
+.t105-thread .done { background: color-mix(in srgb, var(--accent) 14%, var(--surface)); color: var(--ink); }
+.t105-thread .here { background: var(--accent); border-color: var(--accent); color: var(--on-accent); box-shadow: 0 0 0 4px color-mix(in srgb, var(--accent) 25%, transparent); }
+.slide.active .t105-thread .here { animation: t105-glow 2.4s 1s ease-in-out infinite; }
+@keyframes t105-glow { 50% { box-shadow: 0 0 0 8px color-mix(in srgb, var(--accent) 10%, transparent); } }
+
+/* t105-dn: night people and day people (5:4-8). The night panel is --on-glow with --glow text and the day panel the reverse,
+   so they read as real night and real day in every theme */
+.t105-dn { display: grid; grid-template-columns: 1fr 1fr; border-radius: 12px; overflow: hidden; margin: .4em 0 1em; border: 1px solid var(--line-strong); }
+.t105-dn > div { padding: .8em 1.1em 1em; }
+.t105-dn .n { background: var(--on-glow); color: var(--glow); }
+.t105-dn .d { background: var(--glow); color: var(--on-glow); }
+.t105-dn h3 { font: 700 clamp(.8rem, .74rem + .3vw, 1rem) var(--sans); letter-spacing: .12em; margin: 0 0 .5em; opacity: .8; }
+.t105-dn ul { list-style: none; margin: 0; padding: 0; display: grid; gap: .3em; }
+.t105-dn li { font: italic clamp(1.1rem, .95rem + .7vw, 1.6rem)/1.2 var(--serif); }
+.t105-dn li small { font: clamp(.75rem, .7rem + .25vw, .9rem) var(--sans); font-style: normal; opacity: .7; margin-left: .4em; }
+.t105-dn .d li { opacity: 0; transform: translateY(8px); transition: opacity .6s ease, transform .6s ease; transition-delay: calc(var(--k) * .25s); }
+.slide:has(.t105-sun.on) .t105-dn .d li { opacity: 1; transform: none; }
+
+/* t105-arm: a soldier's breastplate (faith and love) and helmet (the hope of salvation) light up on .t105-a1 and .t105-a2 steps */
+.t105-body { fill: var(--surface); stroke: var(--line-strong); stroke-width: 3; }
+.t105-head { fill: var(--surface-2); stroke: var(--ink-soft); stroke-width: 3; }
+.t105-piece { fill: var(--surface-2); stroke: var(--ink); stroke-width: 4; stroke-linejoin: round; transition: fill .8s ease; }
+.slide:has(.t105-a1.on) .t105-chest, .slide:has(.t105-a2.on) .t105-helm { fill: var(--accent); }
+.t105-lead { stroke: var(--accent-hot); stroke-width: 2.5; stroke-dasharray: 5 5; opacity: 0; transition: opacity .6s ease .4s; }
+.t105-lab { fill: var(--ink); font: italic 600 24px var(--serif); opacity: 0; transition: opacity .6s ease .6s; }
+.t105-sub { fill: var(--ink-soft); font: 17px var(--sans); opacity: 0; transition: opacity .6s ease .8s; }
+.slide:has(.t105-a1.on) .t105-g1 > *, .slide:has(.t105-a2.on) .t105-g2 > * { opacity: 1; }
+@media (max-width: 600px) { .t105-lab { font-size: 32px; } .t105-sub { font-size: 24px; } }
+
+/* t105-four: four kinds of people and what each needs (5:14): who (b), the verb (i), and a plain word (span) */
+.t105-four { display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; margin: .4em 0 1em; }
+@media (max-width: 760px) { .t105-four { grid-template-columns: 1fr 1fr; } }
+.t105-four div { padding: .6em .75em .7em; border-radius: 10px; background: var(--surface); border: 1px solid var(--line-strong); }
+.t105-four b { display: block; font: 700 clamp(.78rem, .72rem + .28vw, .95rem) var(--sans); letter-spacing: .06em; color: var(--ink-soft); }
+.t105-four i { display: block; font: italic 600 clamp(1.3rem, 1.1rem + .8vw, 1.8rem)/1.1 var(--serif); color: var(--accent-hot); margin: .15em 0 .25em; }
+.t105-four span { display: block; font: clamp(.9rem, .82rem + .34vw, 1.08rem)/1.3 var(--sans); color: var(--ink); }
+
+/* t105-will: the two places this letter says "this is the will of God" (4:3 and 5:18), as two cards side by side */
+.t105-will { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin: .4em 0 1em; }
+@media (max-width: 600px) { .t105-will { grid-template-columns: 1fr; } }
+.t105-will div { padding: .7em 1em .8em; border-radius: 10px; background: var(--surface); border: 1px solid var(--line-strong); border-left: 6px solid var(--accent); }
+.t105-will small { display: block; font: 700 clamp(.75rem, .7rem + .25vw, .9rem) var(--sans); letter-spacing: .1em; color: var(--accent); }
+.t105-will p { margin: .3em 0 .2em; font: italic clamp(1.05rem, .92rem + .55vw, 1.4rem)/1.3 var(--serif); color: var(--ink); }
+.t105-will cite { font: clamp(.8rem, .75rem + .25vw, .95rem) var(--sans); font-style: normal; color: var(--ink-soft); }
+
+/* t105-list: a two-column checklist of the short commands (5:12-22); each box ticks in turn when the slide opens */
+.t105-list { list-style: none; margin: .4em 0 1em; padding: 0; display: grid; grid-template-columns: 1fr 1fr; gap: .35em 1.6em; }
+@media (max-width: 760px) { .t105-list { grid-template-columns: 1fr; } }
+.t105-list li { position: relative; padding: .15em 0 .15em 2.1em; font: clamp(.98rem, .88rem + .45vw, 1.28rem)/1.3 var(--serif); color: var(--ink); }
+.t105-list li small { font: clamp(.75rem, .7rem + .25vw, .9rem) var(--sans); color: var(--ink-soft); margin-left: .35em; }
+.t105-list li::before { content: ""; position: absolute; left: 0; top: .2em; width: 1.25em; height: 1.25em; border-radius: 4px; border: 2px solid var(--line-strong); background: var(--surface); }
+.t105-list li::after { content: "✓"; position: absolute; left: .18em; top: .02em; font: 700 1.15em var(--sans); color: var(--accent-hot); opacity: 0; transform: scale(.4); transition: opacity .3s ease, transform .3s ease; transition-delay: calc(var(--k) * .22s + .5s); }
+.slide.active .t105-list li::after { opacity: 1; transform: none; }
+
+/* t105-whole: spirit, soul and body as three rings; on the .t105-go step God's peace fills them from the inside out (5:23) */
+.t105-ring { fill: var(--surface); stroke: var(--line-strong); stroke-width: 3; transition: fill 1s ease; }
+.t105-ring.r2 { transition-delay: .6s; } .t105-ring.r3 { transition-delay: 1.2s; }
+.slide:has(.t105-go.on) .t105-ring.r1 { fill: var(--accent); }
+.slide:has(.t105-go.on) .t105-ring.r2 { fill: color-mix(in srgb, var(--accent) 55%, var(--surface)); }
+.slide:has(.t105-go.on) .t105-ring.r3 { fill: color-mix(in srgb, var(--accent) 25%, var(--surface)); }
+.t105-rt { fill: var(--ink); font: 700 18px var(--sans); letter-spacing: .1em; text-anchor: middle; }
+.t105-rt.in { fill: var(--ink); transition: fill 1s ease; }
+.slide:has(.t105-go.on) .t105-rt.in { fill: var(--on-accent); }
+.t105-wh { fill: var(--accent-hot); font: italic 600 26px var(--serif); text-anchor: middle; opacity: 0; transition: opacity .8s ease 1.8s; }
+.slide:has(.t105-go.on) .t105-wh { opacity: 1; }
+@media (max-width: 600px) { .t105-rt { font-size: 24px; } }
+
+</style>
+</head>
+<body>
+<main class="deck" id="deck">
+
+<section class="slide title">
+  <div class="inner">
+    <div class="emblem rise"></div>
+    <h1 class="rise" style="--d:1">1 Thessalonians 5</h1>
+    <p class="sub rise" style="--d:3">Children of the day</p>
+    <p class="tag rise" style="--d:5">The Lord will come like a thief in the night, but not for the men who are awake, sober and dressed for it. Then a short list for life together, and a promise to finish what God started. The last chapter of the letter.</p>
+  </div>
+</section>
+
+<section class="slide watch">
+  <div class="inner">
+    <h2 class="rise">Things to watch for</h2>
+    <p class="lede rise" style="--d:1">Keep these questions in the back of your mind as we read. We'll come back to every one of them at the end.</p>
+    <ol class="seeds">
+      <li class="step"><span class="topic">The day</span><span class="seed-q">How will the day of the Lord come, and who will it catch off guard?</span></li>
+      <li class="step"><span class="topic">Light</span><span class="seed-q">What does Paul call believers, and how should children of the day live?</span></li>
+      <li class="step"><span class="topic">Hope</span><span class="seed-q">What is our helmet, and why can we be sure of it?</span></li>
+      <li class="step"><span class="topic">Together</span><span class="seed-q">How should we treat the unruly, the feebleminded, the weak, and everyone else?</span></li>
+      <li class="step"><span class="topic">Every day</span><span class="seed-q">What does Paul say is the will of God in Christ Jesus concerning you?</span></li>
+      <li class="step"><span class="topic">Faithful</span><span class="seed-q">Who will finish making us holy, and how can we be sure?</span></li>
+    </ol>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise">Where we are in 1 Thessalonians</h2>
+    <p class="note rise" style="--d:1">About AD 50 to 51, Paul writes from Corinth to a young church he had to leave too soon. Chapter 4 promised that the believers who have died will rise when the Lord comes. The next question is the one people always ask: <em>when?</em></p>
+    <div class="t105-where" role="img" aria-label="1 Thessalonians in three parts. Chapters 1 to 3: thanks, memories and a mentor who could not rest; now we live, if ye stand fast in the Lord, 3:8. Chapter 4: live to please God; comfort one another with these words, 4:18. Chapter 5: ready for the day; Rejoice evermore, pray without ceasing, 5:16 and 17. We are in chapter 5.">
+      <div style="--k:0"><p><i class="done">1</i><i class="done">2</i><i class="done">3</i></p><b>Thanks, and a mentor who couldn't rest</b><small>What the church was to Paul, what Paul was to them, and the news that brought him back to life</small><q>now we live, if ye stand fast in the Lord</q><cite>3:8</cite></div>
+      <div style="--k:1"><p><i class="done">4</i></p><b>Live to please God</b><small>Keep clean, love one another, and don't grieve like men with no hope</small><q>comfort one another with these words</q><cite>4:18</cite></div>
+      <div class="now" style="--k:2"><p><i class="here">5</i></p><b>Ready for the day</b><small>Stay awake and sober, look after each other, give thanks</small><q>Rejoice evermore. Pray without ceasing.</q><cite>5:16–17</cite></div>
+    </div>
+    <p class="note step">Paul's answer: you don't need a date. You need to be <em>ready</em>, and to look after each other while you wait.</p>
+  </div>
+</section>
+
+<section class="slide part">
+  <div class="inner">
+    <p class="part-n rise">Part one</p>
+    <h2 class="rise" style="--d:1">Not in darkness</h2>
+    <p class="range rise" style="--d:2">Verses 1–11</p>
+    <div class="rule"></div>
+    <p class="hook rise" style="--d:4">A thief, a night, a soldier on watch, and a promise about wrath.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="1-3" data-hl="the day of the Lord so cometh as a thief in the night|Peace and safety; then sudden destruction cometh upon them"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise">A thief doesn't call ahead</h2>
+    <p class="note rise" style="--d:1"><em>“The day of the Lord”</em> is the Old Testament's name for the day God steps in to judge the world and set it right. When will it come? Paul has already taught them: <em>like a thief</em>.</p>
+    <ul class="nots">
+      <li class="step"><span class="k">“Someone has worked out the date”</span><span class="why">“of that day and hour knoweth no man” (Matthew 24:36)</span></li>
+      <li class="step"><span class="k">“There'll be plenty of warning”</span><span class="why">a thief doesn't send word</span></li>
+      <li class="step"><span class="k">“It's so far off it doesn't matter”</span><span class="why">they'll be saying “Peace and safety”</span></li>
+      <li class="step yes"><span class="k">Be ready every day</span><span class="why">then the timing can't catch you out</span></li>
+    </ul>
+    <p class="note step">Like labour pains (verse 3): you know they're coming, and when they come, they come suddenly, and there's no stopping them.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="4-7" data-hl="Ye are all the children of light, and the children of the day|let us watch and be sober|they that be drunken are drunken in the night"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise">Night people and day people</h2>
+    <div class="t105-dn rise" style="--d:1" role="img" aria-label="Two panels. Night: in darkness, overtaken as a thief, sleep, drunken. Day: children of light, watch, be sober, faith, love and hope.">
+      <div class="n"><h3>OF THE NIGHT</h3><ul>
+        <li>in darkness <small>v. 4</small></li>
+        <li>overtaken as a thief <small>v. 4</small></li>
+        <li>asleep <small>v. 6–7</small></li>
+        <li>drunken <small>v. 7</small></li>
+      </ul></div>
+      <div class="d"><h3>OF THE DAY</h3><ul>
+        <li style="--k:0">children of light <small>v. 5</small></li>
+        <li style="--k:1">watching <small>v. 6</small></li>
+        <li style="--k:2">sober <small>v. 6, 8</small></li>
+        <li style="--k:3">faith, love, hope <small>v. 8</small></li>
+      </ul></div>
+    </div>
+    <p class="note step t105-sun">Look at verse 5: <em>“Ye are all the children of light.”</em> Not <em>try to become</em>. You already are. Every believer belongs to the day, even the one who slipped last week. So live like it: <em>“let us not sleep, as do others.”</em></p>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <p class="saying rise">Sober, <em>both ways</em>.</p>
+    <p class="note rise" style="--d:2">Paul's word means clear-headed, alert, not fogged. But verse 7 makes it plain he means the bottle too: <em>“they that be drunken are drunken in the night.”</em> Southern Baptists have long urged believers to leave alcohol alone, and for a man in recovery it isn't a close call.</p>
+    <blockquote class="quote step"><p>“The night is far spent, the day is at hand: let us therefore cast off the works of darkness, and let us put on the armour of light.”</p><cite>Romans 13:12</cite></blockquote>
+    <p class="note step">Watch the hours, too. Most of the trouble in our old lives happened after dark. A man of the day knows where he'll be at midnight before the sun goes down. And if you broke your sobriety yesterday, here is what children of the day do: when morning comes, they get up. Tell someone, and start the count again today.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="8-11" data-hl="putting on the breastplate of faith and love; and for an helmet, the hope of salvation|For God hath not appointed us to wrath|whether we wake or sleep, we should live together with him|Wherefore comfort yourselves together, and edify one another"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <div class="split">
+      <div class="stage">
+        <svg viewBox="0 0 640 400" role="img" aria-label="A soldier on watch. His breastplate lights up: faith and love. Then his helmet: the hope of salvation.">
+          <path class="t105-body" d="M110 380 L118 196 Q180 168 242 196 L250 380 Z"/>
+          <path class="t105-body" d="M118 200 L84 320 M242 200 L276 320" style="fill:none" stroke-width="16" stroke-linecap="round"/>
+          <circle class="t105-head" cx="180" cy="122" r="38"/>
+          <path class="t105-piece t105-chest" d="M126 200 Q180 178 234 200 L228 316 Q180 336 132 316 Z"/>
+          <path class="t105-piece t105-helm" d="M138 128 C134 66 226 66 222 128 L222 150 L208 150 L208 118 C208 104 152 104 152 118 L152 150 L138 150 Z"/>
+          <path class="t105-piece t105-helm" d="M154 86 C164 50 196 50 206 86 Z"/>
+          <g class="t105-g1">
+            <line class="t105-lead" x1="236" y1="250" x2="330" y2="250"/>
+            <text class="t105-lab" x="340" y="248">the breastplate</text>
+            <text class="t105-lab" x="340" y="278">of faith and love</text>
+            <text class="t105-sub" x="340" y="306">guards the heart</text>
+          </g>
+          <g class="t105-g2">
+            <line class="t105-lead" x1="226" y1="96" x2="330" y2="96"/>
+            <text class="t105-lab" x="340" y="94">for an helmet,</text>
+            <text class="t105-lab" x="340" y="124">the hope of salvation</text>
+            <text class="t105-sub" x="340" y="152">guards the head</text>
+          </g>
+        </svg>
+      </div>
+      <div>
+        <h2 class="rise" style="--d:1">Dressed for the night watch</h2>
+        <p class="note rise" style="--d:2">A sober man on watch is a soldier in his armour. Faith, love and hope: the same three Paul thanked God for in the first chapter (1:3).</p>
+        <p class="note step t105-a1">The breastplate covers the heart: trusting God, and loving people.</p>
+        <p class="note step t105-a2">The helmet covers the head, where the hardest attacks land: <em>“You'll never change. What's the point?”</em> Bible hope isn't wishful thinking. It's a sure thing that hasn't happened yet. Put it on before you go out.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <div class="split">
+      <div class="stage">
+        <svg class="kept" viewBox="0 0 600 360" role="img" aria-label="Believers inside a guarded circle labelled by our Lord Jesus Christ. Darts labelled wrath fly at it and fall away.">
+          <circle class="kept-wall" cx="300" cy="180" r="135"/>
+          <circle class="kept-wall inner" cx="300" cy="180" r="70"/>
+          <text class="kept-tag" font-size="18" x="300" y="80" text-anchor="middle">by our Lord Jesus Christ</text>
+          <g class="kept-in"><circle cx="300" cy="150" r="9"/><circle cx="330" cy="170" r="9"/><circle cx="320" cy="205" r="9"/><circle cx="280" cy="205" r="9"/><circle cx="270" cy="170" r="9"/><circle cx="300" cy="182" r="9"/></g>
+          <text class="kept-tag" font-size="15" x="300" y="290" text-anchor="middle">“to obtain salvation”</text>
+          <path class="kept-dart" style="--dx:60px;--dy:30px;--w:0s" d="M70 60 l40 20 m-12 -14 l12 14 l-18 2"/>
+          <path class="kept-dart" style="--dx:-60px;--dy:20px;--w:.9s" d="M570 110 l-40 14 m10 -14 l-10 14 l16 6"/>
+          <path class="kept-dart" style="--dx:50px;--dy:-30px;--w:1.7s" d="M60 320 l40 -22 m-18 -2 l18 2 l-8 16"/>
+          <path class="kept-dart" style="--dx:-50px;--dy:-40px;--w:2.3s" d="M540 330 l-36 -26 m4 16 l-4 -16 l16 2"/>
+          <g style="fill:var(--danger);font:italic 20px var(--serif)"><text x="30" y="46">wrath</text><text x="572" y="96" text-anchor="end">wrath</text><text x="30" y="350">wrath</text><text x="572" y="352" text-anchor="end">wrath</text></g>
+        </svg>
+      </div>
+      <div>
+        <h2 class="rise" style="--d:1">Not appointed to wrath</h2>
+        <p class="note rise" style="--d:2">Here's why the hope is sure: God appointed us <em>“to obtain salvation by our Lord Jesus Christ, Who died for us.”</em> Christ took the wrath. It won't come to you.</p>
+        <p class="note step">Teachers differ on whether this <em>“wrath”</em> includes the coming tribulation. What's plain: a believer will never face God's wrath for his sins.</p>
+        <p class="note step">And <em>“whether we wake or sleep”</em>, alive or dead when He comes, we live together with Him. So, for the second time: <em>comfort yourselves together</em> (compare 4:18).</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="slide part">
+  <div class="inner">
+    <p class="part-n rise">Part two</p>
+    <h2 class="rise" style="--d:1">Life together</h2>
+    <p class="range rise" style="--d:2">Verses 12–22</p>
+    <div class="rule"></div>
+    <p class="hook rise" style="--d:4">Short commands for a church full of people who are still under construction.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="12-13" data-hl="know them which labour among you|esteem them very highly in love for their work’s sake|be at peace among yourselves"></section>
+
+<section class="slide verse" data-v="14-15" data-hl="warn them that are unruly, comfort the feebleminded, support the weak, be patient toward all men|See that none render evil for evil unto any man"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise">Four kinds of men, four ways to help</h2>
+    <p class="note rise" style="--d:1">First, honour the ones who lead and teach you, <em>“for their work's sake,”</em> and live at peace. Then Paul names four kinds of people in every church. You'll be each of them some days:</p>
+    <div class="t105-four">
+      <div class="rise" style="--d:2"><b>THE UNRULY</b><i>warn</i><span>A soldier out of step, the man drifting off and not working (4:11). Love says something.</span></div>
+      <div class="rise" style="--d:3"><b>THE FEEBLEMINDED</b><i>comfort</i><span>Not slow: <em>fainthearted</em>, worn down, ready to quit. Speak courage.</span></div>
+      <div class="rise" style="--d:4"><b>THE WEAK</b><i>support</i><span>Hold on to him and hold him up. Give him a ride, a call, a hand.</span></div>
+      <div class="rise" style="--d:5"><b>ALL MEN</b><i>be patient</i><span>Long-tempered. People change slowly. So did you.</span></div>
+    </div>
+    <blockquote class="quote step"><p>“Bear ye one another’s burdens, and so fulfil the law of Christ.”</p><cite>Galatians 6:2</cite></blockquote>
+    <p class="note step">Don't mix them up. Comforting the unruly or scolding the fainthearted does real harm. Ask: what does this brother need today?</p>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <div class="split">
+      <div class="stage">
+        <svg class="cycle" style="--at:320px 200px; --lap:6s" viewBox="0 0 640 400" role="img" aria-label="A circle of payback with four stops: he wrongs me, I pay him back, he pays me back worse, now it's his people and mine. A dot keeps running round. Then a way out breaks from the circle: overcome evil with good.">
+          <circle class="cycle-ring" cx="320" cy="200" r="140"/>
+          <g class="rise" style="--d:1"><circle class="cycle-stop" cx="320" cy="60" r="15"/><text x="320" y="30" text-anchor="middle" font-size="19">He wrongs me</text></g>
+          <g class="rise" style="--d:2"><circle class="cycle-stop" cx="460" cy="200" r="15"/><text x="482" y="206" font-size="19">I pay him back</text></g>
+          <g class="rise" style="--d:3"><circle class="cycle-stop" cx="320" cy="340" r="15"/><text x="320" y="382" text-anchor="middle" font-size="19">He pays me back worse</text></g>
+          <g class="rise" style="--d:4"><circle class="cycle-stop" cx="180" cy="200" r="15"/><text x="158" y="196" text-anchor="end" font-size="19">Now it's his</text><text x="158" y="219" text-anchor="end" font-size="19">people and mine</text></g>
+          <g class="cycle-spin"><circle cx="320" cy="60" r="8" style="fill:var(--accent-hot);stroke:var(--bg)" stroke-width="2"/></g>
+          <text x="320" y="196" text-anchor="middle" font-size="24" class="serif" style="fill:var(--ink-soft)">evil</text>
+          <text x="320" y="226" text-anchor="middle" font-size="24" class="serif" style="fill:var(--ink-soft)">for evil</text>
+          <g class="cycle-out">
+            <path class="cycle-way" d="M221 101 C200 80 170 60 120 50 L70 44"/>
+            <path class="cycle-way" d="M88 30 L68 44 L90 58"/>
+            <text x="20" y="100" font-size="20" font-weight="700" style="fill:var(--accent-hot)">overcome evil</text>
+            <text x="20" y="124" font-size="20" font-weight="700" style="fill:var(--accent-hot)">with good</text>
+            <text x="20" y="148" font-size="16" style="fill:var(--ink-soft)">Romans 12:21</text>
+          </g>
+        </svg>
+      </div>
+      <div>
+        <h2 class="rise" style="--d:1">No payback</h2>
+        <p class="note rise" style="--d:2"><em>“See that none render evil for evil unto any man.”</em> On the street, and inside, payback is the law. You don't let it slide, or you're next. That's how a wrong turns into a feud, and a feud into a funeral.</p>
+        <p class="note step cycle-go">Jesus breaks the circle. It isn't weakness; it takes more strength to walk away. <em>“Ever follow that which is good,”</em> to the brothers and <em>“to all men.”</em> If someone has done you wrong, decide today you won't settle it yourself. Leave it with God, and tell a brother.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="slide verse" data-v="16-18" data-hl="Rejoice evermore|Pray without ceasing|In every thing give thanks: for this is the will of God in Christ Jesus concerning you"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise">The will of God, twice</h2>
+    <p class="note rise" style="--d:1">Twice this letter says, in so many words, <em>“this is the will of God”</em>:</p>
+    <div class="t105-will">
+      <div class="rise" style="--d:2"><small>THE WILL OF GOD</small><p>“even your sanctification, that ye should abstain from fornication”</p><cite>1 Thessalonians 4:3</cite></div>
+      <div class="step"><small>THE WILL OF GOD</small><p>“Rejoice evermore. Pray without ceasing. In every thing give thanks”</p><cite>1 Thessalonians 5:16–18</cite></div>
+    </div>
+    <p class="note step">Notice: <em>“in”</em> every thing, not <em>“for”</em> every thing. You don't have to thank God for the overdose or the arrest. But in the middle of it there is always something to thank Him for, and finding it changes the man who looks. <em>“Without ceasing”</em> doesn't mean on your knees all day. It means never hanging up: a quick word to God at the job site, in the truck, before you answer that text.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="19-22" data-hl="Quench not the Spirit|Prove all things; hold fast that which is good|Abstain from all appearance of evil"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise">A checklist for the road</h2>
+    <p class="note rise" style="--d:1">Verses 12 to 22 are short enough to carry in your pocket:</p>
+    <ol class="t105-list" aria-label="A checklist of the commands in verses 12 to 22.">
+      <li style="--k:0">Honour those who lead you <small>12–13</small></li>
+      <li style="--k:1">Be at peace among yourselves <small>13</small></li>
+      <li style="--k:2">Warn, comfort, support, be patient <small>14</small></li>
+      <li style="--k:3">No payback, ever <small>15</small></li>
+      <li style="--k:4">Rejoice evermore <small>16</small></li>
+      <li style="--k:5">Pray without ceasing <small>17</small></li>
+      <li style="--k:6">In every thing give thanks <small>18</small></li>
+      <li style="--k:7">Quench not the Spirit <small>19</small></li>
+      <li style="--k:8">Despise not prophesyings <small>20</small></li>
+      <li style="--k:9">Prove all things; hold fast that which is good <small>21</small></li>
+      <li style="--k:10">Abstain from all appearance of evil <small>22</small></li>
+    </ol>
+    <p class="note step">Don't try to do all eleven by noon. Pick one for today, write it on your hand or your phone, and do that one well.</p>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise">Quench, prove, abstain</h2>
+    <p class="note rise" style="--d:1"><em>“Quench”</em> is what you do to a fire. The Spirit lives in every believer and can't be lost; you are <em>“sealed unto the day of redemption”</em> (Ephesians 4:30). But you can pour water on what He's doing: ignore the nudge, shrug off the conviction, drown it out.</p>
+    <p class="note step"><em>“Despise not prophesyings”</em>: before the New Testament was written down, God gave messages through believers in the church. Today the plain point is the same: don't tune out when God's Word is preached and taught. And <em>“prove all things”</em>: test what you hear against the Bible. Keep what's good. Drop the rest.</p>
+    <blockquote class="quote step"><p>“Beloved, believe not every spirit, but try the spirits whether they are of God: because many false prophets are gone out into the world.”</p><cite>1 John 4:1</cite></blockquote>
+    <p class="note step"><em>“All appearance of evil”</em> means every form evil takes. Whatever shape it shows up in, the old crowd, the old corner, the old app, stay clear of it.</p>
+  </div>
+</section>
+
+<section class="slide part">
+  <div class="inner">
+    <p class="part-n rise">Part three</p>
+    <h2 class="rise" style="--d:1">He will do it</h2>
+    <p class="range rise" style="--d:2">Verses 23–28</p>
+    <div class="rule"></div>
+    <p class="hook rise" style="--d:4">The letter ends with a prayer, a promise, and a handshake.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="23-24" data-hl="the very God of peace sanctify you wholly|your whole spirit and soul and body be preserved blameless|Faithful is he that calleth you, who also will do it"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <div class="split">
+      <div class="stage">
+        <svg viewBox="0 0 400 400" role="img" aria-label="Three rings, one inside another: spirit at the centre, then soul, then body. On the next click they fill with light from the centre outward: wholly.">
+          <circle class="t105-ring r3" cx="200" cy="190" r="170"/>
+          <circle class="t105-ring r2" cx="200" cy="190" r="115"/>
+          <circle class="t105-ring r1" cx="200" cy="190" r="58"/>
+          <text class="t105-rt in" x="200" y="196">SPIRIT</text>
+          <text class="t105-rt" x="200" y="104">SOUL</text>
+          <text class="t105-rt" x="200" y="47">BODY</text>
+          <text class="t105-wh" x="200" y="396">“wholly”</text>
+        </svg>
+      </div>
+      <div>
+        <h2 class="rise" style="--d:1">Holy, all the way through</h2>
+        <p class="note rise" style="--d:2"><em>“Sanctify”</em> is the word from 4:3. There it was a command; here it's a prayer, that God will do it <em>“wholly”</em>: spirit, soul and body, nothing left off-limits.</p>
+        <p class="note step t105-go">Then the promise: <em>“Faithful is he that calleth you, who also will do it.”</em> Not you alone, white-knuckling it. Him.</p>
+        <blockquote class="quote step"><p>“Being confident of this very thing, that he which hath begun a good work in you will perform it until the day of Jesus Christ:”</p><cite>Philippians 1:6</cite></blockquote>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="slide verse" data-v="25-28" data-hl="Brethren, pray for us|Greet all the brethren with an holy kiss|that this epistle be read unto all the holy brethren|The grace of our Lord Jesus Christ be with you"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise">The last lines</h2>
+    <p class="note rise" style="--d:1"><em>“Brethren, pray for us.”</em> The great apostle asks a little church of new believers to pray for him. Nobody is too far along to need it, and nobody is too new to give it.</p>
+    <p class="note step"><em>“An holy kiss”</em> was how family greeted family in that part of the world. Today it's a handshake or a hug. The word that matters is <em>“all”</em>: greet all the brethren, not just your friends, and not just the ones who look like you.</p>
+    <p class="note step"><em>“Read unto all”</em>: this letter is one of the first books of the New Testament ever written, and it was read aloud to the whole church. Now it's been read to you. It ends where every one of Paul's letters ends, with grace.</p>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise">Looking back over 1 Thessalonians</h2>
+    <p class="note rise" style="--d:1">Five short chapters to a young church in trouble. Read them again, and you'll find every one looks ahead to the same day:</p>
+    <div class="t105-thread rise" style="--d:2" role="img" aria-label="1 Thessalonians looked back on in five chapters, each with its line about the Lord's coming. 1: turned from idols, to wait for his Son from heaven. 2: like a nurse, like a father, at his coming. 3: Timothy's good news, at the coming of our Lord Jesus Christ with all his saints. 4: walk, work and wait, the Lord himself shall descend from heaven. 5: children of the day, unto the coming of our Lord Jesus Christ.">
+      <div class="done"><i>1</i><b>Turned from idols</b><q>to wait for his Son from heaven</q><cite>1:10</cite></div>
+      <div class="done"><i>2</i><b>Like a nurse, like a father</b><q>in the presence of our Lord Jesus Christ at his coming</q><cite>2:19</cite></div>
+      <div class="done"><i>3</i><b>Timothy's good news</b><q>at the coming of our Lord Jesus Christ with all his saints</q><cite>3:13</cite></div>
+      <div class="done"><i>4</i><b>Walk, work, and wait</b><q>the Lord himself shall descend from heaven</q><cite>4:16</cite></div>
+      <div class="done"><i>5</i><b>Children of the day</b><q>unto the coming of our Lord Jesus Christ</q><cite>5:23</cite></div>
+    </div>
+    <p class="note step">That hope is what held a persecuted church together: turn from idols, live clean, work hard, love each other, comfort the grieving, and wait for Him. Waiting, for them, was never sitting still.</p>
+    <p class="note step">If you fell yesterday, you're who this letter was written to. A young church, new believers, still learning. <em>“Faithful is he that calleth you, who also will do it.”</em> Get up, and live today as a child of the day.</p>
+  </div>
+</section>
+
+<section class="slide remember">
+  <div class="inner">
+    <h2 class="rise">Points to remember</h2>
+    <ol class="seeds">
+      <li class="step"><span class="topic">The day</span><span class="seed-q">“the day of the Lord so cometh as a thief in the night” <cite>5:2</cite></span><span class="take">No one knows the date. Be ready every day, and the timing can't catch you out.</span></li>
+      <li class="step"><span class="topic">Light</span><span class="seed-q">“Ye are all the children of light … let us watch and be sober” <cite>5:5–6</cite></span><span class="take">You already belong to the day. So stay awake, and stay sober, both ways.</span></li>
+      <li class="step"><span class="topic">Hope</span><span class="seed-q">“for an helmet, the hope of salvation. For God hath not appointed us to wrath” <cite>5:8–9</cite></span><span class="take">Put on hope before you go out. Christ took the wrath; it won't come to you.</span></li>
+      <li class="step"><span class="topic">Together</span><span class="seed-q">“warn them that are unruly, comfort the feebleminded, support the weak, be patient toward all men” <cite>5:14</cite></span><span class="take">Give each brother what he needs today. And no payback, ever.</span></li>
+      <li class="step"><span class="topic">Every day</span><span class="seed-q">“Rejoice evermore. Pray without ceasing. In every thing give thanks” <cite>5:16–18</cite></span><span class="take">God's will isn't hidden. Joy, prayer that never hangs up, and thanks in every thing.</span></li>
+      <li class="step"><span class="topic">Faithful</span><span class="seed-q">“Faithful is he that calleth you, who also will do it” <cite>5:24</cite></span><span class="take">God started the work in you, and He will finish it.</span></li>
+    </ol>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 1 of 6</p>
+      <span class="topic">The day</span>
+      <h2>How will the day of the Lord come, and who will it catch off guard?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="2"></blockquote>
+      <blockquote class="quote step" data-q="4"></blockquote>
+      <blockquote class="quote step"><p>“Watch therefore: for ye know not what hour your Lord doth come.”</p><cite>Matthew 24:42</cite></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>Like a thief in the night: suddenly, with no date given. It will catch out those saying "Peace and safety," who live in the dark. Believers aren't in darkness, so it needn't overtake us. Be ready every day.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 2 of 6</p>
+      <span class="topic">Light</span>
+      <h2>What does Paul call believers, and how should children of the day live?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="5-6"></blockquote>
+      <blockquote class="quote step" data-q="7"></blockquote>
+      <blockquote class="quote step"><p>“The night is far spent, the day is at hand: let us therefore cast off the works of darkness, and let us put on the armour of light.”</p><cite>Romans 13:12</cite></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>Children of light and of the day, every one of us. So we don't sleep through life as others do: we watch, and we stay sober, clear-headed and off the bottle.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 3 of 6</p>
+      <span class="topic">Hope</span>
+      <h2>What is our helmet, and why can we be sure of it?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="8"></blockquote>
+      <blockquote class="quote step" data-q="9"></blockquote>
+      <blockquote class="quote step"><p>“Much more then, being now justified by his blood, we shall be saved from wrath through him.”</p><cite>Romans 5:9</cite></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>The hope of salvation. It's sure because God has not appointed us to wrath, but to salvation by Jesus, who died for us. Alive or dead when He comes, we will live together with Him.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 4 of 6</p>
+      <span class="topic">Together</span>
+      <h2>How should we treat the unruly, the feebleminded, the weak, and everyone else?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="14"></blockquote>
+      <blockquote class="quote step" data-q="15"></blockquote>
+      <blockquote class="quote step"><p>“Bear ye one another’s burdens, and so fulfil the law of Christ.”</p><cite>Galatians 6:2</cite></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>Warn the unruly, comfort the fainthearted, hold up the weak, and be patient with everyone. Never pay back evil for evil; keep doing good, to brothers and to all men.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 5 of 6</p>
+      <span class="topic">Every day</span>
+      <h2>What does Paul say is the will of God in Christ Jesus concerning you?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="16-18"></blockquote>
+      <blockquote class="quote step"><p>“Be careful for nothing; but in every thing by prayer and supplication with thanksgiving let your requests be made known unto God.”</p><cite>Philippians 4:6</cite></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>Rejoice evermore, pray without ceasing, and in every thing give thanks. Not "for" every thing, but "in" it: there's always something to thank Him for. With 4:3 (our sanctification), it's God's will said out loud.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 6 of 6</p>
+      <span class="topic">Faithful</span>
+      <h2>Who will finish making us holy, and how can we be sure?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="23"></blockquote>
+      <blockquote class="quote step" data-q="24"></blockquote>
+      <blockquote class="quote step"><p>“Being confident of this very thing, that he which hath begun a good work in you will perform it until the day of Jesus Christ:”</p><cite>Philippians 1:6</cite></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>The very God of peace Himself, in spirit, soul and body. We can be sure because He is faithful: the One who called us "also will do it."</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide prayer">
+  <div class="inner">
+    <div class="emblem rise"></div>
+    <h2 class="rise" style="--d:1">Prayer requests</h2>
+    <p class="ask-line rise" style="--d:2">What can we pray about for you today? Staying sober, a wrong you want to pay back, a brother who needs holding up, or something to give thanks for?</p>
+    <blockquote class="quote rise" style="--d:4"><p>“Now unto him that is able to keep you from falling, and to present you faultless before the presence of his glory with exceeding joy,”</p><cite>Jude 24</cite></blockquote>
+  </div>
+</section>
+
+</main>
+
+<script>
+// King James Version, 1 Thessalonians chapter 5
+const V = {
+  1: "But of the times and the seasons, brethren, ye have no need that I write unto you.",
+  2: "For yourselves know perfectly that the day of the Lord so cometh as a thief in the night.",
+  3: "For when they shall say, Peace and safety; then sudden destruction cometh upon them, as travail upon a woman with child; and they shall not escape.",
+  4: "But ye, brethren, are not in darkness, that that day should overtake you as a thief.",
+  5: "Ye are all the children of light, and the children of the day: we are not of the night, nor of darkness.",
+  6: "Therefore let us not sleep, as do others; but let us watch and be sober.",
+  7: "For they that sleep sleep in the night; and they that be drunken are drunken in the night.",
+  8: "But let us, who are of the day, be sober, putting on the breastplate of faith and love; and for an helmet, the hope of salvation.",
+  9: "For God hath not appointed us to wrath, but to obtain salvation by our Lord Jesus Christ,",
+  10: "Who died for us, that, whether we wake or sleep, we should live together with him.",
+  11: "Wherefore comfort yourselves together, and edify one another, even as also ye do.",
+  12: "And we beseech you, brethren, to know them which labour among you, and are over you in the Lord, and admonish you;",
+  13: "And to esteem them very highly in love for their work’s sake. And be at peace among yourselves.",
+  14: "Now we exhort you, brethren, warn them that are unruly, comfort the feebleminded, support the weak, be patient toward all men.",
+  15: "See that none render evil for evil unto any man; but ever follow that which is good, both among yourselves, and to all men.",
+  16: "Rejoice evermore.",
+  17: "Pray without ceasing.",
+  18: "In every thing give thanks: for this is the will of God in Christ Jesus concerning you.",
+  19: "Quench not the Spirit.",
+  20: "Despise not prophesyings.",
+  21: "Prove all things; hold fast that which is good.",
+  22: "Abstain from all appearance of evil.",
+  23: "And the very God of peace sanctify you wholly; and I pray God your whole spirit and soul and body be preserved blameless unto the coming of our Lord Jesus Christ.",
+  24: "Faithful is he that calleth you, who also will do it.",
+  25: "Brethren, pray for us.",
+  26: "Greet all the brethren with an holy kiss.",
+  27: "I charge you by the Lord that this epistle be read unto all the holy brethren.",
+  28: "The grace of our Lord Jesus Christ be with you. Amen."
+};
+const BOOK = "1 Thessalonians 5";
+</script>
+<script src="../assets/deck.js"></script>
+</body>
+</html>

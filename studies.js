@@ -13924,5 +13924,98 @@ window.STUDIES = [
       "big": "A mentor's joy rides on whether his men are standing. Hard times are expected, the tempter is real, and God Himself grows our love and steadies our hearts. Your standing gives life to the men who love you."
     },
     "url": "studies/1-thessalonians-03.html"
+  },
+  {
+    "id": "1-thessalonians-04",
+    "type": "chapter",
+    "book": "1 Thessalonians",
+    "url": "studies/1-thessalonians-04.html",
+    "ch": 4,
+    "date": "2026-10-31",
+    "title": "1 Thessalonians 4",
+    "sub": "Clean, quiet, and comforted",
+    "about": "God's will for your body, an honest working life that outsiders can read, and real hope for the believers we have buried: the Lord Himself is coming, and the dead in Christ will rise first.",
+    "tags": [
+      "Sexual purity",
+      "Self-control",
+      "Work",
+      "Grief",
+      "His coming",
+      "Comfort"
+    ],
+    "overview": {
+      "where": "Corinth, where Paul writes after Timothy's report, to the young church at Thessalonica in Macedonia",
+      "when": "About AD 50 to 51, a few months after Paul was driven out of Thessalonica",
+      "people": [
+        "paul",
+        "jesus",
+        "holy-spirit",
+        "archangel"
+      ],
+      "places": [
+        "corinth",
+        "thessalonica",
+        "macedonia"
+      ],
+      "story": [
+        "Paul urges them to keep walking to please God, more and more (1–2).",
+        "This is the will of God, your sanctification: abstain from fornication, and learn to possess your vessel in sanctification and honour, not in lust like those who don't know God (3–5).",
+        "Sexual sin defrauds a brother. God has called us to holiness, and He has given us His holy Spirit (6–8).",
+        "They already love one another; love more. Make it your ambition to be quiet, mind your own business, and work with your own hands, so outsiders see an honest life (9–12).",
+        "Don't sorrow like those who have no hope. Because Jesus died and rose again, God will bring with Him those who sleep in Jesus (13–14).",
+        "The Lord Himself will descend with a shout. The dead in Christ rise first, then the living are caught up together with them to meet the Lord, and so shall we ever be with the Lord. Comfort one another with these words (15–18)."
+      ],
+      "key": {
+        "ref": "1 Thessalonians 4:17–18",
+        "text": "Then we which are alive and remain shall be caught up together with them in the clouds, to meet the Lord in the air: and so shall we ever be with the Lord. Wherefore comfort one another with these words."
+      },
+      "big": "God's will is a holy life, and self-control can be learned with the Spirit's help. Work quietly and honestly. And grieve with hope: the Lord is coming, the dead in Christ are not lost, and we will be together with Him for ever."
+    }
+  },
+  {
+    "id": "1-thessalonians-05",
+    "type": "chapter",
+    "book": "1 Thessalonians",
+    "url": "studies/1-thessalonians-05.html",
+    "ch": 5,
+    "date": "2026-10-31",
+    "title": "1 Thessalonians 5",
+    "sub": "Children of the day",
+    "about": "The day of the Lord comes like a thief, but not for men who are awake, sober and dressed in faith, love and hope. Then a pocket checklist for life together, and a promise: He who calls you will do it.",
+    "tags": [
+      "His coming",
+      "Sobriety",
+      "Hope",
+      "Church family",
+      "Prayer and thanks",
+      "God's faithfulness"
+    ],
+    "overview": {
+      "where": "Corinth, where Paul writes to the young church at Thessalonica",
+      "when": "About AD 50 to 51, a few months after Paul was driven out of Thessalonica",
+      "people": [
+        "paul",
+        "jesus",
+        "holy-spirit",
+        "children-of-light"
+      ],
+      "places": [
+        "corinth",
+        "thessalonica"
+      ],
+      "story": [
+        "No one needs a date: the day of the Lord comes as a thief in the night, suddenly, while people say “Peace and safety” (1–3).",
+        "But believers are children of light and of the day, so let us watch and be sober, wearing the breastplate of faith and love and the helmet of the hope of salvation (4–8).",
+        "God has not appointed us to wrath but to salvation by Jesus, who died for us, so that awake or asleep we live together with Him. Comfort and build one another up (9–11).",
+        "Honour those who lead you and be at peace. Warn the unruly, comfort the feebleminded, support the weak, be patient with all, and never render evil for evil (12–15).",
+        "Rejoice evermore, pray without ceasing, in every thing give thanks. Quench not the Spirit, prove all things, hold fast the good, abstain from every form of evil (16–22).",
+        "The God of peace will sanctify you wholly: faithful is He that calls you, who also will do it. Pray for us, greet all with an holy kiss, read this letter to all. Grace be with you (23–28)."
+      ],
+      "key": {
+        "ref": "1 Thessalonians 5:23–24",
+        "text": "And the very God of peace sanctify you wholly; and I pray God your whole spirit and soul and body be preserved blameless unto the coming of our Lord Jesus Christ. Faithful is he that calleth you, who also will do it."
+      },
+      "big": "You don't need a date; you need to be ready. Live as a child of the day: awake, sober, armed with faith, love and hope, looking after your brothers, and thankful in every thing. God will finish what He started in you."
+    }
   }
 ];

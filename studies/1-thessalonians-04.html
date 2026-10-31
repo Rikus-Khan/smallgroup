@@ -1,0 +1,579 @@
+<!doctype html>
+<html lang="en" data-theme="slate">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>1 Thessalonians 4</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="../assets/fonts.css">
+<link rel="stylesheet" href="../assets/deck.css">
+<link rel="stylesheet" href="../assets/themes.css">
+<style>
+
+/* t104-where: where we are in 1 Thessalonians (copied from the t101-where marker in 1 Thessalonians 1, so the whole book matches; a deck.css candidate).
+   Three parts (div, --k). Each holds its chapters (p > i; read ones .done, the one we are in .here), its name (b), what it says (small)
+   and a key phrase (q + cite). The part we're in is .now. */
+.t104-where { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin: .5em 0 1em; }
+.t104-where > div { --c: var(--line-strong); padding: .55em .8em .65em; border-top: 6px solid var(--c); border-radius: 0 0 10px 10px;
+  background: color-mix(in srgb, var(--surface) 70%, transparent); opacity: 0; transform: translateY(10px);
+  transition: opacity .6s ease, transform .6s ease; transition-delay: calc(var(--k, 0) * 350ms + 300ms); }
+.slide.active .t104-where > div { opacity: 1; transform: none; }
+.t104-where > div.now { --c: var(--accent); background: color-mix(in srgb, var(--accent) 15%, transparent); box-shadow: inset 0 0 0 2px var(--accent); }
+.t104-where p { display: flex; gap: 6px; margin: 0 0 .4em; }
+.t104-where i { min-width: 2.2em; padding: .22em .3em; text-align: center; border-radius: 6px; border: 1.5px solid var(--line-strong);
+  font: 700 clamp(.82rem, .74rem + .35vw, 1.08rem) var(--sans); font-style: normal; color: var(--ink-soft); }
+.t104-where i.done { background: color-mix(in srgb, var(--accent) 14%, transparent); color: var(--ink); }
+.t104-where i.here { background: var(--accent); border-color: var(--accent); color: var(--on-accent); }
+.slide.active .t104-where i.here { animation: t104-here 2.4s ease-in-out 1.8s infinite; }
+@keyframes t104-here { 50% { box-shadow: 0 0 0 6px color-mix(in srgb, var(--accent) 28%, transparent); } }
+.t104-where b { display: block; font: 600 clamp(1.05rem, .88rem + .7vw, 1.5rem)/1.1 var(--serif); color: var(--ink); }
+.t104-where small { display: block; margin: .2em 0 .35em; font-size: clamp(.78rem, .72rem + .26vw, 1rem); line-height: 1.3; color: var(--ink-soft); }
+.t104-where q { display: block; font: italic clamp(.86rem, .78rem + .34vw, 1.08rem)/1.3 var(--serif); quotes: "\201C" "\201D"; }
+.t104-where cite { display: block; margin-top: .2em; font-style: normal; font-size: clamp(.72rem, .68rem + .22vw, .92rem); color: var(--ink-soft); }
+@media (max-width: 640px) {
+  .t104-where { grid-template-columns: 1fr; gap: 6px; }
+  .t104-where > div { border-top: 0; border-left: 6px solid var(--c); border-radius: 0 10px 10px 0; }
+}
+.t104-map .stage svg { max-height: 33vh; }
+.t104-short svg { max-height: 30vh !important; }
+
+/* t104-jar: a clay vessel; two bands, sanctification and honour, wrap it on the .t104-go step */
+.t104-jar { fill: color-mix(in srgb, var(--warm) 30%, var(--surface)); stroke: var(--ink); stroke-width: 4; stroke-linejoin: round; }
+.t104-lip { fill: color-mix(in srgb, var(--warm) 45%, var(--surface)); stroke: var(--ink); stroke-width: 4; }
+.t104-band { fill: var(--accent); transform: scaleX(0); transform-box: fill-box; transform-origin: left; transition: transform .9s ease; }
+.t104-band.b2 { transition-delay: .5s; }
+.t104-bt { fill: var(--on-accent); font: 700 17px var(--sans); letter-spacing: .08em; text-anchor: middle; opacity: 0; transition: opacity .6s ease .9s; }
+.t104-bt.b2 { transition-delay: 1.4s; }
+.slide:has(.t104-go.on) .t104-band { transform: scaleX(1); }
+.slide:has(.t104-go.on) .t104-bt { opacity: 1; }
+.t104-cap { fill: var(--ink-soft); font: italic 22px var(--serif); text-anchor: middle; }
+
+/* t104-ripple: one choice in the middle, and rings going out to everyone it touches (4:6) */
+.t104-ring { fill: none; stroke: var(--danger); stroke-width: 2.5; opacity: 0; transform-box: fill-box; transform-origin: center; transform: scale(.3); transition: transform 1s ease, opacity 1s ease; transition-delay: calc(var(--k) * .45s + .3s); }
+.slide.active .t104-ring { opacity: calc(1 - var(--k) * .13); transform: scale(1); }
+.t104-rl { fill: var(--ink); font: 17px var(--sans); text-anchor: middle; opacity: 0; transition: opacity .6s ease; transition-delay: calc(var(--k) * .45s + .7s); }
+.slide.active .t104-rl { opacity: 1; }
+.t104-core { fill: var(--danger); }
+.t104-ct { fill: var(--ink); font: italic 19px var(--serif); text-anchor: middle; }
+@media (max-width: 600px) { .t104-rl { font-size: 24px; } .t104-ct { font-size: 26px; } }
+
+/* t104-aims: three plain aims for an ordinary working life (4:11), each a big phrase (b) and what it means (span) */
+.t104-aims { display: grid; grid-template-columns: repeat(auto-fit, minmax(13rem, 1fr)); gap: 10px; margin: .4em 0 1em; }
+.t104-aims div { padding: .7em .9em .8em; border-radius: 10px; background: var(--surface); border: 1px solid var(--line-strong); border-top: 5px solid var(--accent); }
+.t104-aims i { display: block; font: 700 clamp(.75rem, .7rem + .25vw, .92rem) var(--sans); font-style: normal; letter-spacing: .1em; color: var(--accent); }
+.t104-aims b { display: block; font: italic 600 clamp(1.25rem, 1.05rem + .8vw, 1.75rem)/1.15 var(--serif); color: var(--ink); margin: .15em 0 .25em; }
+.t104-aims span { display: block; font: clamp(.92rem, .84rem + .36vw, 1.12rem)/1.32 var(--sans); color: var(--ink-soft); }
+
+/* t104-grief: two griefs. Both lines fall at the loss; one stays down (no hope), the other rises toward the morning on the .t104-go step */
+.t104-base { stroke: var(--line); stroke-width: 2; stroke-dasharray: 4 8; }
+.t104-none { fill: none; stroke: var(--ink-soft); stroke-width: 5; stroke-linecap: round; stroke-dasharray: 1; stroke-dashoffset: 1; }
+.slide.active .t104-none { animation: t104-draw 2.4s ease .4s forwards; }
+.t104-hope { fill: none; stroke: var(--accent); stroke-width: 7; stroke-linecap: round; stroke-dasharray: 1; stroke-dashoffset: 1; }
+.slide:has(.t104-go.on) .t104-hope { animation: t104-draw 2.6s ease-in-out forwards; }
+@keyframes t104-draw { to { stroke-dashoffset: 0; } }
+.t104-sun { fill: var(--accent-hot); opacity: 0; transition: opacity 1s ease 2.2s; }
+.t104-glow { fill: color-mix(in srgb, var(--accent) 22%, transparent); opacity: 0; transition: opacity 1.2s ease 2s; }
+.slide:has(.t104-go.on) .t104-sun, .slide:has(.t104-go.on) .t104-glow, .slide:has(.t104-go.on) .t104-hl { opacity: 1; }
+.t104-gl { fill: var(--ink-soft); font: italic 21px var(--serif); }
+.t104-hl { fill: var(--accent-hot); font: italic 600 22px var(--serif); opacity: 0; transition: opacity .8s ease 2.4s; }
+.t104-lk { fill: var(--danger); font: 700 16px var(--sans); letter-spacing: .08em; }
+@media (max-width: 600px) { .t104-gl, .t104-hl { font-size: 30px; } .t104-lk { font-size: 24px; } }
+
+/* t104-sky: the meeting in the air (4:16-17). The Lord comes down with three sounds; on .t104-up1 the dead in Christ rise first,
+   on .t104-up2 the living are caught up with them, and the two groups become one in the cloud */
+.t104-air { fill: color-mix(in srgb, var(--accent) 6%, transparent); }
+.t104-ground { stroke: var(--line-strong); stroke-width: 3; }
+.t104-mound { fill: var(--surface-2); stroke: var(--line-strong); stroke-width: 2; }
+.t104-lord { transform: translateY(-70px); opacity: 0; transition: transform 1.8s ease, opacity 1.2s ease; }
+.slide.active .t104-lord { transform: translateY(0); opacity: 1; }
+.t104-light { fill: var(--accent-hot); }
+.t104-halo { fill: color-mix(in srgb, var(--accent) 25%, transparent); }
+.t104-wave { fill: none; stroke: var(--accent); stroke-width: 2.5; opacity: 0; transform-box: fill-box; transform-origin: center; }
+.slide.active .t104-wave { animation: t104-wave 3.2s ease-out infinite; animation-delay: calc(var(--k) * 1.07s + 1.6s); }
+@keyframes t104-wave { 0% { opacity: .9; transform: scale(.3); } 100% { opacity: 0; transform: scale(1.6); } }
+.t104-sound { fill: var(--accent-hot); font: italic 19px var(--serif); opacity: 0; transition: opacity .6s ease; transition-delay: calc(var(--k) * .6s + 1.8s); }
+.slide.active .t104-sound { opacity: 1; }
+.t104-dead circle, .t104-live circle { stroke: var(--bg); stroke-width: 2; transition: transform 2.2s cubic-bezier(.4, 0, .2, 1); transition-delay: calc(var(--k, 0) * .12s); }
+.t104-dead circle { fill: var(--ink-soft); }
+.t104-live circle { fill: var(--ink); }
+.slide:has(.t104-up1.on) .t104-dead circle { transform: translate(var(--tx), var(--ty)); fill: var(--accent-hot); }
+.slide:has(.t104-up2.on) .t104-live circle { transform: translate(var(--tx), var(--ty)); fill: var(--accent-hot); }
+.t104-who { fill: var(--ink-soft); font: 16px var(--sans); text-anchor: middle; }
+.t104-cloud { fill: color-mix(in srgb, var(--glow) 55%, transparent); stroke: var(--line-strong); stroke-width: 2; opacity: 0; transition: opacity 1.2s ease 1.6s; }
+.t104-ever { fill: var(--ink); font: italic 600 22px var(--serif); text-anchor: middle; opacity: 0; transition: opacity 1s ease 2.4s; }
+.slide:has(.t104-up2.on) .t104-cloud, .slide:has(.t104-up2.on) .t104-ever { opacity: 1; }
+.t104-first { fill: var(--accent-hot); font: 700 15px var(--sans); letter-spacing: .08em; text-anchor: middle; opacity: 0; transition: opacity .8s ease 1.4s; }
+.slide:has(.t104-up1.on) .t104-first { opacity: 1; }
+@media (max-width: 600px) { .t104-sound, .t104-ever { font-size: 28px; } .t104-who, .t104-first { font-size: 22px; } }
+
+</style>
+</head>
+<body>
+<main class="deck" id="deck">
+
+<section class="slide title">
+  <div class="inner">
+    <div class="emblem rise"></div>
+    <h1 class="rise" style="--d:1">1 Thessalonians 4</h1>
+    <p class="sub rise" style="--d:3">Clean, quiet, and comforted</p>
+    <p class="tag rise" style="--d:5">How to live in your own body, how to live at work, and what happens to the believers we have buried. It ends with one instruction: comfort one another.</p>
+  </div>
+</section>
+
+<section class="slide watch">
+  <div class="inner">
+    <h2 class="rise">Things to watch for</h2>
+    <p class="lede rise" style="--d:1">Keep these questions in the back of your mind as we read. We'll come back to every one of them at the end.</p>
+    <ol class="seeds">
+      <li class="step"><span class="topic">Holiness</span><span class="seed-q">What is the will of God for you, according to verse 3?</span></li>
+      <li class="step"><span class="topic">Self-control</span><span class="seed-q">What does it mean to possess your vessel in sanctification and honour?</span></li>
+      <li class="step"><span class="topic">Work</span><span class="seed-q">What does Paul tell us to study, and why does it matter to those outside the church?</span></li>
+      <li class="step"><span class="topic">Grief</span><span class="seed-q">How is a believer's sorrow different from the sorrow of those who have no hope?</span></li>
+      <li class="step"><span class="topic">His coming</span><span class="seed-q">What will happen when the Lord himself descends from heaven?</span></li>
+      <li class="step"><span class="topic">Comfort</span><span class="seed-q">What are we to do with these words?</span></li>
+    </ol>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise">Where we are in 1 Thessalonians</h2>
+    <div class="split t104-map">
+      <div class="stage">
+        <svg data-world viewBox="400 175 200 130" data-towns="Thessalonica*:t, Berea:l, Athens:r, Corinth!:l" role="img" aria-label="Map of Greece. Paul's road runs from Thessalonica to Berea, then by sea to Athens and on to Corinth. Then a second line: Timothy's trip from Thessalonica down to Corinth with news of the church.">
+          <path class="map-route" data-via="Thessalonica, Berea, @22.85 40.2, @23.2 39.75, @24.0 39.3, @24.2 38.75, @24.72 38.12, @24.45 37.85, @24.1 37.55, @23.6 37.85, Athens, Corinth" style="--wait:.4s;--draw:2.6s"/>
+          <path class="map-route j2 r1" data-via="Thessalonica, Berea, Corinth"/>
+        </svg>
+      </div>
+      <div>
+        <p class="note rise" style="--d:1">Paul planted this church in a few weeks, and a mob drove him out (Acts 17). From Athens he sent Timothy back to check on them.</p>
+        <p class="note step map-go1">Timothy brought good news to Corinth (3:6), and Paul wrote from there, about AD 50 to 51. But some believers had <em>died</em>. Would they miss the Lord's coming?</p>
+      </div>
+    </div>
+    <div class="t104-where" role="img" aria-label="1 Thessalonians in three parts. Chapters 1 to 3: thanks, memories and a mentor who could not rest; now we live, if ye stand fast in the Lord, 3:8. Chapter 4: live to please God; comfort one another with these words, 4:18. Chapter 5: ready for the day; Rejoice evermore, pray without ceasing, 5:16 and 17. We are in chapter 4.">
+      <div style="--k:0"><p><i class="done">1</i><i class="done">2</i><i class="done">3</i></p><b>Thanks, and a mentor who couldn't rest</b><small>What the church was to Paul, what Paul was to them, and the news that brought him back to life</small><q>now we live, if ye stand fast in the Lord</q><cite>3:8</cite></div>
+      <div class="now" style="--k:1"><p><i class="here">4</i></p><b>Live to please God</b><small>Keep clean, love one another, and don't grieve like men with no hope</small><q>comfort one another with these words</q><cite>4:18</cite></div>
+      <div style="--k:2"><p><i>5</i></p><b>Ready for the day</b><small>Stay awake and sober, look after each other, give thanks</small><q>Rejoice evermore. Pray without ceasing.</q><cite>5:16–17</cite></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide part">
+  <div class="inner">
+    <p class="part-n rise">Part one</p>
+    <h2 class="rise" style="--d:1">The will of God for your body</h2>
+    <p class="range rise" style="--d:2">Verses 1–8</p>
+    <div class="rule"></div>
+    <p class="hook rise" style="--d:4">Paul talks to new believers in a loose city about sex, plainly. A man can learn self-control.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="1-2" data-hl="how ye ought to walk and to please God|so ye would abound more and more"></section>
+
+<section class="slide verse" data-v="3-5" data-hl="For this is the will of God, even your sanctification|that ye should abstain from fornication|know how to possess his vessel in sanctification and honour|Not in the lust of concupiscence"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise">“What's God's will for my life?”</h2>
+    <p class="note rise" style="--d:1">Men ask it about jobs and moves and who to marry. Here is one answer God gives in so many words: <em>“this is the will of God, even your sanctification.”</em> To be <em>sanctified</em> is to be set apart for God and made holy, a little more each year. Paul starts with the body.</p>
+    <div class="columns">
+      <div class="col law rise" style="--d:2">
+        <p class="who">“The Gentiles which know not God”</p>
+        <h3>The lust of concupiscence</h3>
+        <p>Desire that runs the man. Whatever he wants, when he wants it. Thessalonica was a port city, and that was simply how people lived.</p>
+      </div>
+      <div class="col grace step">
+        <p class="who">Called of God (verse 7)</p>
+        <h3>Sanctification and honour</h3>
+        <p>Desire the man runs. <em>“Abstain from fornication”</em>: sex belongs inside marriage, and only there. That isn't a cage. It's honour.</p>
+      </div>
+    </div>
+    <p class="note step">Notice <em>“more and more”</em> in verse 1. These were believers Paul was proud of. Holiness isn't a line you cross once. It's a direction you keep walking.</p>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <div class="split">
+      <div class="stage">
+        <svg viewBox="0 0 400 360" role="img" aria-label="A clay jar labelled his vessel. Two bands wrap around it: sanctification, and honour.">
+          <path class="t104-jar" d="M150 60 C150 90 92 112 86 180 C80 252 120 318 200 322 C280 318 320 252 314 180 C308 112 250 90 250 60 Z"/>
+          <rect class="t104-lip" x="138" y="40" width="124" height="24" rx="8"/>
+          <rect class="t104-band" x="90" y="146" width="220" height="36" rx="4"/>
+          <text class="t104-bt" x="200" y="171">SANCTIFICATION</text>
+          <rect class="t104-band b2" x="96" y="218" width="208" height="36" rx="4"/>
+          <text class="t104-bt b2" x="200" y="243">HONOUR</text>
+          <text class="t104-cap" x="200" y="354">“his vessel”</text>
+        </svg>
+      </div>
+      <div>
+        <h2 class="rise" style="--d:1">“Know how to possess his vessel”</h2>
+        <p class="note rise" style="--d:2">A vessel is a clay jar. Most Bible teachers read it here as a man's own body (we are <em>“earthen vessels,”</em> 2 Corinthians 4:7); some read it as taking a wife. Either way: be master of your desires, in a way that honours God and other people.</p>
+        <p class="note step t104-go">Look at the words <em>“know how.”</em> That's a skill, and skills are learned. Nobody is born with self-control. A man who has lived by his appetites <em>can</em> learn it, with God's help and honest guard rails: what's on the phone, where you go, who you're with after dark.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="slide verse" data-v="6-8" data-hl="That no man go beyond and defraud his brother in any matter|For God hath not called us unto uncleanness, but unto holiness|who hath also given unto us his holy Spirit"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <div class="split">
+      <div class="stage">
+        <svg viewBox="0 0 600 380" role="img" aria-label="One dot in the middle labelled one choice, with five rings going out from it: her, her family, her husband now or one day, your own wife and children, and your walk with God.">
+          <ellipse class="t104-ring" style="--k:1" cx="300" cy="200" rx="85" ry="50"/>
+          <ellipse class="t104-ring" style="--k:2" cx="300" cy="200" rx="136" ry="80"/>
+          <ellipse class="t104-ring" style="--k:3" cx="300" cy="200" rx="187" ry="110"/>
+          <ellipse class="t104-ring" style="--k:4" cx="300" cy="200" rx="238" ry="140"/>
+          <ellipse class="t104-ring" style="--k:5" cx="300" cy="200" rx="289" ry="170"/>
+          <circle class="t104-core" cx="300" cy="200" r="13"/>
+          <text class="t104-ct" x="300" y="236">one choice</text>
+          <text class="t104-rl" style="--k:1" x="300" y="143">her</text>
+          <text class="t104-rl" style="--k:2" x="300" y="113">her family</text>
+          <text class="t104-rl" style="--k:3" x="300" y="83">her husband, now or one day</text>
+          <text class="t104-rl" style="--k:4" x="300" y="53">your own wife and children</text>
+          <text class="t104-rl" style="--k:5" x="300" y="23">your walk with God</text>
+        </svg>
+      </div>
+      <div>
+        <h2 class="rise" style="--d:1">Nobody sins alone</h2>
+        <p class="note rise" style="--d:2"><em>“Defraud”</em> means to cheat, to take what isn't yours. Sexual sin always takes from someone, and it ripples out.</p>
+        <p class="note step">And it isn't a rule made up by Paul: <em>“He therefore that despiseth, despiseth not man, but God.”</em></p>
+        <p class="note step">But look how verse 8 ends. The same God <em>“hath also given unto us his holy Spirit.”</em> Every believer has the Spirit in him from the day he's saved. You don't fight this alone.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise">If you've already failed here</h2>
+    <p class="note rise" style="--d:1">Some men read verses 3 to 8 and feel only the weight of the past. Paul wrote to the Corinthians, a city with the same reputation, about men who'd done all of it:</p>
+    <blockquote class="quote step"><p>“And such were some of you: but ye are washed, but ye are sanctified, but ye are justified in the name of the Lord Jesus, and by the Spirit of our God.”</p><cite>1 Corinthians 6:11</cite></blockquote>
+    <p class="note step"><em>Such were some of you.</em> Past tense. What you did is real, and it hurt people. Regret is the right response, and so is making it right where you can. But it isn't who you are any more.</p>
+    <blockquote class="quote step"><p>“If we confess our sins, he is faithful and just to forgive us our sins, and to cleanse us from all unrighteousness.”</p><cite>1 John 1:9</cite></blockquote>
+    <p class="note step">If you fell yesterday, say so to God in plain words this morning, and tell one brother who will ask you about it again. Then put up the guard rail you were missing.</p>
+  </div>
+</section>
+
+<section class="slide part">
+  <div class="inner">
+    <p class="part-n rise">Part two</p>
+    <h2 class="rise" style="--d:1">A quiet, honest life</h2>
+    <p class="range rise" style="--d:2">Verses 9–12</p>
+    <div class="rule"></div>
+    <p class="hook rise" style="--d:4">Love your brothers, mind your own business, and go to work.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="9-10" data-hl="ye yourselves are taught of God to love one another|that ye increase more and more"></section>
+
+<section class="slide verse" data-v="11-12" data-hl="study to be quiet, and to do your own business, and to work with your own hands|That ye may walk honestly toward them that are without"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise">An ambition to be quiet</h2>
+    <p class="note rise" style="--d:1">First, love: they already loved each other, and Paul says, <em>“more and more.”</em> Then he says <em>“study.”</em> His word, <span class="gk">philotimeomai</span>, means <em>make it your ambition</em>. Most men's ambition is to be noticed. Paul's is the opposite:</p>
+    <div class="t104-aims">
+      <div class="rise" style="--d:2"><i>ONE</i><b>“Be quiet”</b><span>Not silent: settled. No drama, no hustle, no schemes, no one waiting for you to blow up.</span></div>
+      <div class="rise" style="--d:3"><i>TWO</i><b>“Your own business”</b><span>Tend what's yours. Stay out of other people's mess, and out of the gossip.</span></div>
+      <div class="rise" style="--d:4"><i>THREE</i><b>“Your own hands”</b><span>Honest work for an honest wage. No job is too small to do for the Lord.</span></div>
+    </div>
+    <p class="note step">Some in Thessalonica had quit working, maybe thinking the Lord would come any day (Paul has to say it again in his second letter, 2 Thessalonians 3:10–12). Paul says: He's coming, so go to work.</p>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise">Your work is a testimony</h2>
+    <p class="note rise" style="--d:1">Two reasons, in verse 12. <em>“That ye may walk honestly toward them that are without”</em>: the men on your crew who don't know Jesus are watching how you work. And <em>“that ye may have lack of nothing”</em>: you pay your own way, and you have something left to give.</p>
+    <blockquote class="quote step"><p>“Let him that stole steal no more: but rather let him labour, working with his hands the thing which is good, that he may have to give to him that needeth.”</p><cite>Ephesians 4:28</cite></blockquote>
+    <p class="note step">If your past was the hustle, the quick money and the deal on the side, an ordinary paycheck can feel small. It isn't. Showing up on time, doing the job right, and keeping your word is one of the clearest sermons you'll ever preach. Go to work today as if Jesus signs your check.</p>
+  </div>
+</section>
+
+<section class="slide part">
+  <div class="inner">
+    <p class="part-n rise">Part three</p>
+    <h2 class="rise" style="--d:1">Them which are asleep</h2>
+    <p class="range rise" style="--d:2">Verses 13–18</p>
+    <div class="rule"></div>
+    <p class="hook rise" style="--d:4">The funerals you've stood at, and the morning that answers them.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="13-14" data-hl="that ye sorrow not, even as others which have no hope|if we believe that Jesus died and rose again|them also which sleep in Jesus will God bring with him"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise">Grief with hope in it</h2>
+    <div class="stage t104-short"><svg viewBox="0 0 900 300" role="img" aria-label="Two lines start level and fall at the loss. One stays down: as others which have no hope. The other, on the next click, rises again toward a morning sun: them which sleep in Jesus will God bring with him.">
+      <line class="t104-base" x1="20" y1="80" x2="880" y2="80"/>
+      <text class="t104-lk" x="214" y="56" text-anchor="middle">THE LOSS</text>
+      <circle class="t104-glow" cx="826" cy="70" r="62"/>
+      <circle class="t104-sun" cx="826" cy="70" r="24"/>
+      <path class="t104-none" pathLength="1" d="M30 80 L180 80 C220 80 220 240 270 240 L860 240"/>
+      <text class="t104-gl" x="860" y="276" text-anchor="end">“as others which have no hope”</text>
+      <path class="t104-hope" pathLength="1" d="M30 80 L180 80 C220 80 220 240 270 240 C420 240 520 220 620 170 C700 130 750 90 800 76"/>
+      <text class="t104-hl" x="590" y="130" text-anchor="end">“will God bring with him”</text>
+    </svg></div>
+    <p class="note step t104-go">Paul doesn't say <em>don't grieve</em>. He says don't grieve <em>“even as others which have no hope.”</em> Both lines go down. Only one comes back up. At the grave of His friend Lazarus, knowing He was about to raise him, <em>“Jesus wept”</em> (John 11:35). Tears are not a lack of faith.</p>
+    <p class="note step">Why <em>“asleep”</em>? Sleep ends in waking. It's the body that sleeps; the believer himself is <em>“present with the Lord”</em> (2 Corinthians 5:8). And because <em>Jesus died and rose again</em>, those who sleep in Him will rise too.</p>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise">For the friends you've buried</h2>
+    <p class="note rise" style="--d:1">Many of us have stood at too many funerals, for men too young: an overdose, a shooting, a man who didn't come home. Some of those deaths leave questions nobody can answer. We can't see into another man's heart, and we won't try.</p>
+    <blockquote class="quote step"><p>“That be far from thee to do after this manner, to slay the righteous with the wicked: and that the righteous should be as the wicked, that be far from thee: Shall not the Judge of all the earth do right?”</p><cite>Genesis 18:25</cite></blockquote>
+    <p class="note step">Leave every one of them with a God who is just and full of mercy. Hold on to what is sure: for everyone who sleeps in Jesus, this is not goodbye. It's <em>“see you in the morning.”</em></p>
+    <p class="note step">And don't carry grief alone. Grief that's never said out loud goes looking for something to numb it. Say the name to God, and to a brother. That's what verse 18 is for.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="15-16" data-hl="shall not prevent them which are asleep|For the Lord himself shall descend from heaven with a shout|the dead in Christ shall rise first"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise">“Prevent” means “go before”</h2>
+    <ul class="nots">
+      <li class="step"><span class="k">“we won't stop them”</span><span class="why">what “prevent” means now</span></li>
+      <li class="step yes"><span class="k">“we won't go ahead of them”</span><span class="why">what it meant in 1611</span></li>
+    </ul>
+    <p class="note step">That was the Thessalonians' fear: that the believers who had died would miss out, and only the living would see the Lord come. Paul says <em>“by the word of the Lord”</em>: the living get no head start. <em>“The dead in Christ shall rise first.”</em></p>
+    <p class="note step">And notice who comes: <em>“the Lord himself.”</em> Not an angel sent with a message. The same Jesus they knew, the One the angels promised would <em>“so come in like manner as ye have seen him go into heaven”</em> (Acts 1:11). Three sounds announce Him: a shout, the voice of the archangel, and the trump of God. No one will miss it.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="17-18" data-hl="caught up together with them|and so shall we ever be with the Lord|comfort one another with these words"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise">Together, and for ever</h2>
+    <div class="stage"><svg viewBox="0 0 900 400" role="img" aria-label="A sky over the ground. The Lord descends in light, with a shout, the voice of the archangel and the trump of God. First the dead in Christ rise from their graves. Then the living are caught up, and both groups meet together in the clouds: so shall we ever be with the Lord.">
+      <rect class="t104-air" x="0" y="0" width="900" height="360" rx="14"/>
+      <g class="t104-lord">
+        <circle class="t104-halo" cx="450" cy="58" r="46"/>
+        <circle class="t104-light" cx="450" cy="58" r="20"/>
+      </g>
+      <circle class="t104-wave" style="--k:0" cx="450" cy="58" r="60"/>
+      <circle class="t104-wave" style="--k:1" cx="450" cy="58" r="60"/>
+      <circle class="t104-wave" style="--k:2" cx="450" cy="58" r="60"/>
+      <text class="t104-sound" style="--k:0" x="330" y="40" text-anchor="end">a shout</text>
+      <text class="t104-sound" style="--k:1" x="570" y="40">the voice of the archangel</text>
+      <text class="t104-sound" style="--k:2" x="570" y="86">the trump of God</text>
+      <path class="t104-cloud" d="M300 200 C300 172 340 160 362 172 C372 146 420 140 440 160 C460 136 520 140 528 168 C556 156 600 170 600 200 C620 210 610 240 584 240 L318 240 C292 240 282 212 300 200 Z"/>
+      <text class="t104-ever" x="450" y="282">“so shall we ever be with the Lord”</text>
+      <text class="t104-first" x="200" y="318">RISE FIRST</text>
+      <line class="t104-ground" x1="0" y1="360" x2="900" y2="360"/>
+      <path class="t104-mound" d="M70 360 Q95 336 120 360 Z M140 360 Q165 336 190 360 Z M210 360 Q235 336 260 360 Z M280 360 Q305 336 330 360 Z"/>
+      <g class="t104-dead">
+        <circle style="--k:0;--tx:295px;--ty:-152px" cx="95" cy="350" r="9"/>
+        <circle style="--k:1;--tx:250px;--ty:-160px" cx="165" cy="350" r="9"/>
+        <circle style="--k:2;--tx:205px;--ty:-148px" cx="235" cy="350" r="9"/>
+        <circle style="--k:3;--tx:160px;--ty:-138px" cx="305" cy="350" r="9"/>
+      </g>
+      <g class="t104-live">
+        <circle style="--k:0;--tx:-150px;--ty:-160px" cx="590" cy="350" r="9"/>
+        <circle style="--k:1;--tx:-170px;--ty:-138px" cx="650" cy="350" r="9"/>
+        <circle style="--k:2;--tx:-215px;--ty:-150px" cx="710" cy="350" r="9"/>
+        <circle style="--k:3;--tx:-260px;--ty:-136px" cx="770" cy="350" r="9"/>
+        <circle style="--k:4;--tx:-305px;--ty:-150px" cx="830" cy="350" r="9"/>
+      </g>
+      <text class="t104-who" x="200" y="388">the dead in Christ</text>
+      <text class="t104-who" x="710" y="388">we which are alive and remain</text>
+    </svg></div>
+    <p class="note step t104-up1">First, the believers who have died are raised. The graves give them back.</p>
+    <p class="note step t104-up2">Then the believers still alive are <em>“caught up together with them.”</em> Look at the word <em>together</em>. The reunion and the meeting with the Lord happen at once, and it never ends.</p>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise">What is plain, and what good men debate</h2>
+    <div class="columns">
+      <div class="col law rise" style="--d:1">
+        <p class="who">Where Bible teachers differ</p>
+        <h3>The timing</h3>
+        <p>The words <em>“caught up”</em> give us the word <em>rapture</em> (from the Latin for it). Many Baptists teach it comes before the great tribulation; other good Baptist teachers place it after. Paul gives no date and no chart here.</p>
+      </div>
+      <div class="col grace step">
+        <p class="who">What the text says plainly</p>
+        <h3>He is coming</h3>
+        <p>The Lord Himself will come. The dead in Christ are not lost; they rise first. We'll be together with them, and with Him, for ever.</p>
+      </div>
+    </div>
+    <blockquote class="quote step"><p>“But of that day and hour knoweth no man, no, not the angels of heaven, but my Father only.”</p><cite>Matthew 24:36</cite></blockquote>
+    <p class="note step">Anyone selling you a date is selling something. Hold the plain part with both hands.</p>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <p class="saying rise"><em>Comfort</em> one another with these words.</p>
+    <p class="note rise" style="--d:2">Paul didn't write verses 13 to 17 to win an argument about the end times. He wrote them so grieving people could hold each other up. The last word of the passage is <em>comfort</em>.</p>
+    <blockquote class="quote step"><p>“And God shall wipe away all tears from their eyes; and there shall be no more death, neither sorrow, nor crying, neither shall there be any more pain: for the former things are passed away.”</p><cite>Revelation 21:4</cite></blockquote>
+    <p class="note step">Who do you know who is grieving? Call him today, or sit with him. You don't need a speech. Read him these six verses. Paul says they're enough: <em>“these words.”</em></p>
+  </div>
+</section>
+
+<section class="slide remember">
+  <div class="inner">
+    <h2 class="rise">Points to remember</h2>
+    <ol class="seeds">
+      <li class="step"><span class="topic">Holiness</span><span class="seed-q">“For this is the will of God, even your sanctification, that ye should abstain from fornication” <cite>4:3</cite></span><span class="take">God's will for you is a holy life, and He starts with the body. Keep walking that way, more and more.</span></li>
+      <li class="step"><span class="topic">Self-control</span><span class="seed-q">“That every one of you should know how to possess his vessel in sanctification and honour” <cite>4:4</cite></span><span class="take">Self-control is learned. Ask God for help, and put up the guard rails.</span></li>
+      <li class="step"><span class="topic">Work</span><span class="seed-q">“study to be quiet, and to do your own business, and to work with your own hands” <cite>4:11</cite></span><span class="take">A quiet, honest working life is a sermon the men around you can read.</span></li>
+      <li class="step"><span class="topic">Grief</span><span class="seed-q">“that ye sorrow not, even as others which have no hope” <cite>4:13</cite></span><span class="take">Grieve, but grieve with hope. Those who sleep in Jesus will wake.</span></li>
+      <li class="step"><span class="topic">His coming</span><span class="seed-q">“For the Lord himself shall descend from heaven with a shout … and the dead in Christ shall rise first” <cite>4:16</cite></span><span class="take">He is coming. The dead in Christ rise first, and we'll be together with Him for ever.</span></li>
+      <li class="step"><span class="topic">Comfort</span><span class="seed-q">“Wherefore comfort one another with these words” <cite>4:18</cite></span><span class="take">The point of it all is comfort. Find someone grieving and share these verses.</span></li>
+    </ol>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 1 of 6</p>
+      <span class="topic">Holiness</span>
+      <h2>What is the will of God for you, according to verse 3?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="3"></blockquote>
+      <blockquote class="quote step" data-q="7"></blockquote>
+      <blockquote class="quote step"><p>“And such were some of you: but ye are washed, but ye are sanctified, but ye are justified in the name of the Lord Jesus, and by the Spirit of our God.”</p><cite>1 Corinthians 6:11</cite></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>Our sanctification: to be set apart and made holy, starting with sexual purity. God has called us to holiness, not uncleanness, and in Christ we are already washed. Now we keep walking that way, more and more.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 2 of 6</p>
+      <span class="topic">Self-control</span>
+      <h2>What does it mean to possess your vessel in sanctification and honour?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="4-5"></blockquote>
+      <blockquote class="quote step" data-q="8" data-hl="who hath also given unto us his holy Spirit"></blockquote>
+      <blockquote class="quote step"><p>“For the grace of God that bringeth salvation hath appeared to all men, Teaching us that, denying ungodliness and worldly lusts, we should live soberly, righteously, and godly, in this present world;”</p><cite>Titus 2:11–12</cite></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>To be master of your body and its desires, honouring God and other people, not ruled by lust. "Know how" means it's learned, with the Spirit's help and honest guard rails.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 3 of 6</p>
+      <span class="topic">Work</span>
+      <h2>What does Paul tell us to study, and why does it matter to those outside the church?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="11-12"></blockquote>
+      <blockquote class="quote step"><p>“Let him that stole steal no more: but rather let him labour, working with his hands the thing which is good, that he may have to give to him that needeth.”</p><cite>Ephesians 4:28</cite></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>To make it our ambition to live quietly, mind our own business, and work with our own hands. People outside the church are watching, and an honest working life lets us walk honestly before them, pay our way, and have something to give.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 4 of 6</p>
+      <span class="topic">Grief</span>
+      <h2>How is a believer's sorrow different from the sorrow of those who have no hope?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="13-14"></blockquote>
+      <blockquote class="quote step"><p>“Jesus wept.”</p><cite>John 11:35</cite></blockquote>
+      <blockquote class="quote step"><p>“We are confident, I say, and willing rather to be absent from the body, and to be present with the Lord.”</p><cite>2 Corinthians 5:8</cite></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>We still grieve, and tears are no lack of faith. But because Jesus died and rose again, those who sleep in Jesus are with the Lord, and God will bring them with Him. It's "see you in the morning."</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 5 of 6</p>
+      <span class="topic">His coming</span>
+      <h2>What will happen when the Lord himself descends from heaven?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="16"></blockquote>
+      <blockquote class="quote step" data-q="17"></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>The dead in Christ rise first. Then believers still alive are caught up together with them to meet the Lord, and we'll be with Him for ever. Teachers differ on the timing; that much is plain.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 6 of 6</p>
+      <span class="topic">Comfort</span>
+      <h2>What are we to do with these words?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="18"></blockquote>
+      <blockquote class="quote step"><p>“And God shall wipe away all tears from their eyes; and there shall be no more death, neither sorrow, nor crying, neither shall there be any more pain: for the former things are passed away.”</p><cite>Revelation 21:4</cite></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>Comfort one another with them. The Lord's coming isn't for arguing about; it's for holding up people who are grieving. Call someone who's hurting today and share these verses.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide prayer">
+  <div class="inner">
+    <div class="emblem rise"></div>
+    <h2 class="rise" style="--d:1">Prayer requests</h2>
+    <p class="ask-line rise" style="--d:2">What can we pray about for you today? Someone you're grieving, a fight for purity, a job you need, or a job you'd rather not go to?</p>
+    <blockquote class="quote rise" style="--d:4"><p>“The LORD is nigh unto them that are of a broken heart; and saveth such as be of a contrite spirit.”</p><cite>Psalm 34:18</cite></blockquote>
+  </div>
+</section>
+
+</main>
+
+<script>
+// King James Version, 1 Thessalonians chapter 4
+const V = {
+  1: "Furthermore then we beseech you, brethren, and exhort you by the Lord Jesus, that as ye have received of us how ye ought to walk and to please God, so ye would abound more and more.",
+  2: "For ye know what commandments we gave you by the Lord Jesus.",
+  3: "For this is the will of God, even your sanctification, that ye should abstain from fornication:",
+  4: "That every one of you should know how to possess his vessel in sanctification and honour;",
+  5: "Not in the lust of concupiscence, even as the Gentiles which know not God:",
+  6: "That no man go beyond and defraud his brother in any matter: because that the Lord is the avenger of all such, as we also have forewarned you and testified.",
+  7: "For God hath not called us unto uncleanness, but unto holiness.",
+  8: "He therefore that despiseth, despiseth not man, but God, who hath also given unto us his holy Spirit.",
+  9: "But as touching brotherly love ye need not that I write unto you: for ye yourselves are taught of God to love one another.",
+  10: "And indeed ye do it toward all the brethren which are in all Macedonia: but we beseech you, brethren, that ye increase more and more;",
+  11: "And that ye study to be quiet, and to do your own business, and to work with your own hands, as we commanded you;",
+  12: "That ye may walk honestly toward them that are without, and that ye may have lack of nothing.",
+  13: "But I would not have you to be ignorant, brethren, concerning them which are asleep, that ye sorrow not, even as others which have no hope.",
+  14: "For if we believe that Jesus died and rose again, even so them also which sleep in Jesus will God bring with him.",
+  15: "For this we say unto you by the word of the Lord, that we which are alive and remain unto the coming of the Lord shall not prevent them which are asleep.",
+  16: "For the Lord himself shall descend from heaven with a shout, with the voice of the archangel, and with the trump of God: and the dead in Christ shall rise first:",
+  17: "Then we which are alive and remain shall be caught up together with them in the clouds, to meet the Lord in the air: and so shall we ever be with the Lord.",
+  18: "Wherefore comfort one another with these words."
+};
+const BOOK = "1 Thessalonians 4";
+</script>
+<script src="../assets/deck.js"></script>
+</body>
+</html>
