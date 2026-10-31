@@ -1,0 +1,604 @@
+<!doctype html>
+<html lang="en" data-theme="stone">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>1 John 4</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="../assets/fonts.css">
+<link rel="stylesheet" href="../assets/deck.css">
+<link rel="stylesheet" href="../assets/themes.css">
+<style>
+/* jo04-where: where we are in 1 John. Five chapter cells (i), .done and .here, each over its own label (span) */
+.jo04-where { display: grid; grid-template-columns: repeat(5, 1fr); gap: 4px 6px; margin: .3em 0 .9em; }
+.jo04-where i { font: 600 clamp(.85rem, .7rem + .5vw, 1.2rem)/1 var(--sans); font-style: normal; text-align: center; padding: .5em 0; border-radius: 6px; background: var(--surface); border: 1px solid var(--line); color: var(--ink-soft); }
+.jo04-where i.done { background: color-mix(in srgb, var(--accent) 16%, var(--surface)); color: var(--ink); }
+.jo04-where i.here { background: var(--accent); border-color: var(--accent); color: var(--on-accent); box-shadow: 0 0 0 4px color-mix(in srgb, var(--accent) 25%, transparent); }
+.slide.active .jo04-where i.here { animation: jo04-here 2.4s 1s ease-in-out infinite; }
+@keyframes jo04-here { 50% { box-shadow: 0 0 0 8px color-mix(in srgb, var(--accent) 10%, transparent); } }
+.jo04-where span { border-top: 3px solid var(--line-strong); padding-top: .35em; text-align: center; font-size: clamp(.7rem, .64rem + .3vw, .95rem); line-height: 1.2; color: var(--ink-soft); }
+.jo04-where span.now { border-top-color: var(--accent); color: var(--ink); font-weight: 700; }
+
+/* jo04-down: love goes the other way. Our arrow up ("we loved God") is drawn, then struck; His arrow down is drawn on .jo04-go1; the cross on .jo04-go2 */
+.jo04-node { font: 400 30px var(--serif); text-anchor: middle; fill: var(--ink); }
+.jo04-node.god { fill: var(--accent-hot); font-weight: 700; }
+.jo04-arrow { fill: none; stroke-width: 7; stroke-linecap: round; stroke-dasharray: 1; stroke-dashoffset: 1; }
+.jo04-arrow.up { stroke: var(--ink-soft); transition: stroke-dashoffset 1.4s ease .6s, opacity .8s ease; }
+.jo04-arrow.dn { stroke: var(--accent); transition: stroke-dashoffset 1.6s ease .2s; }
+.slide.active .jo04-arrow.up, .slide:has(.jo04-go1.on) .jo04-arrow.dn { stroke-dashoffset: 0; }
+.jo04-lab { font: 20px var(--sans); text-anchor: middle; fill: var(--ink-soft); opacity: 0; transition: opacity .8s ease; }
+.jo04-lab.up { transition-delay: 1.6s; }
+.jo04-lab.dn { fill: var(--accent-hot); font-weight: 700; }
+.slide.active .jo04-lab.up, .slide:has(.jo04-go1.on) .jo04-lab.dn { opacity: 1; }
+.slide:has(.jo04-go1.on) .jo04-lab.dn { transition-delay: 1.2s; }
+.jo04-strike { stroke: var(--danger); stroke-width: 4; stroke-linecap: round; stroke-dasharray: 1; stroke-dashoffset: 1; transition: stroke-dashoffset .6s ease .3s; }
+.slide:has(.jo04-go1.on) .jo04-strike { stroke-dashoffset: 0; }
+.slide:has(.jo04-go1.on) .jo04-arrow.up { opacity: .3; }
+.jo04-cross { fill: var(--accent); opacity: 0; transform-box: fill-box; transform-origin: 50% 100%; transform: scale(.4); transition: opacity .8s ease, transform 1s cubic-bezier(.3,1.4,.5,1); }
+.jo04-crossnote { font: 19px var(--sans); fill: var(--ink); opacity: 0; transition: opacity .8s ease .8s; }
+.slide:has(.jo04-go2.on) .jo04-cross { opacity: 1; transform: scale(1); }
+.slide:has(.jo04-go2.on) .jo04-crossnote { opacity: 1; }
+@media (max-width: 600px) { .jo04-node { font-size: 38px; } .jo04-lab { font-size: 25px; } .jo04-crossnote { font-size: 21px; } }
+
+/* jo04-fear: a night full of fears, trembling; on .jo04-go a light grows from the middle and throws them all out (4:18).
+   The panel is --on-glow with --glow words, so it is a real night in every theme; the light is --glow with --on-glow text. */
+.jo04-fear { position: relative; height: clamp(15rem, 38vh, 21rem); border-radius: 16px; overflow: hidden; background: var(--on-glow); border: 1px solid var(--line-strong); margin: .3em 0 .8em; }
+.jo04-fear span { position: absolute; left: var(--x); top: var(--y); transform: translate(-50%, -50%); white-space: nowrap; color: var(--glow); font: italic 400 clamp(.95rem, .8rem + .6vw, 1.35rem) var(--serif); opacity: 0;
+  transition: transform 1.6s cubic-bezier(.5,0,.8,.3), opacity 1.4s ease; }
+.slide.active .jo04-fear span { opacity: .85; transition: opacity 1s ease calc(var(--k) * .35s + .3s); animation: jo04-shake 1.8s ease-in-out infinite calc(var(--k) * -.27s); }
+@media (max-width: 600px) { .jo04-fear span { white-space: normal; width: 8.5em; text-align: center; font-size: 1rem; line-height: 1.15; } }
+@keyframes jo04-shake { 0%, 100% { margin-left: 0; } 25% { margin-left: -2px; } 50% { margin-left: 2px; margin-top: 1px; } 75% { margin-left: -1px; margin-top: -1px; } }
+.jo04-fear .jo04-light { position: absolute; left: 50%; top: 50%; width: 9rem; height: 9rem; margin: -4.5rem 0 0 -4.5rem; border-radius: 50%;
+  background: radial-gradient(circle, var(--glow) 55%, color-mix(in srgb, var(--glow) 0%, transparent) 72%); transform: scale(.25); opacity: .9; transition: transform 2.4s cubic-bezier(.4,0,.2,1); }
+.slide.active .jo04-fear .jo04-light { animation: jo04-beat 3s ease-in-out infinite; }
+@keyframes jo04-beat { 50% { opacity: .55; } }
+.jo04-fear p { position: absolute; inset: 0; display: flex; flex-direction: column; justify-content: center; align-items: center; margin: 0; padding: 0 1rem; text-align: center; color: var(--on-glow); font: 400 clamp(1.4rem, 1rem + 1.8vw, 2.5rem)/1.2 var(--serif); opacity: 0; transition: opacity 1s ease; }
+.jo04-fear p small { display: block; font: 700 .45em var(--sans); letter-spacing: .1em; text-transform: uppercase; margin-top: .5em; opacity: .75; }
+.slide:has(.jo04-go.on) .jo04-fear .jo04-light { transform: scale(9); animation: none; opacity: 1; }
+.slide:has(.jo04-go.on) .jo04-fear span { transform: translate(calc(-50% + var(--dx)), calc(-50% + var(--dy))); opacity: 0; animation: none; transition: transform 1.8s cubic-bezier(.5,0,.8,.3) .3s, opacity 1.2s ease .7s; }
+.slide:has(.jo04-go.on) .jo04-fear p { opacity: 1; transition-delay: 1.6s; }
+
+/* jo04-tri: God, me and my brother. On .jo04-go the line to the brother breaks, and the line to God is shown up as a lie */
+.jo04-who { font: 400 30px var(--serif); text-anchor: middle; fill: var(--ink); }
+.jo04-who.god { fill: var(--accent-hot); font-weight: 700; }
+.jo04-dot { fill: var(--surface-2); stroke: var(--ink-soft); stroke-width: 3; }
+.jo04-dot.god { fill: var(--accent); stroke: var(--accent-hot); }
+.jo04-line { stroke: var(--accent); stroke-width: 5; stroke-linecap: round; transition: stroke 1s ease, stroke-dasharray 1s ease, opacity 1s ease; }
+.slide:has(.jo04-go.on) .jo04-line.bro { stroke: var(--danger); stroke-dasharray: 60 260 400; }
+.slide:has(.jo04-go.on) .jo04-line.me { stroke: var(--ink-soft); stroke-dasharray: 6 10; opacity: .7; transition-delay: 1s; }
+.jo04-say { font: italic 23px var(--serif); fill: var(--ink-soft); }
+.jo04-liar { font: 700 28px var(--sans); fill: var(--danger); opacity: 0; transition: opacity .8s ease 1.8s; }
+.jo04-hate { font: 700 22px var(--sans); fill: var(--danger); text-anchor: middle; opacity: 0; transition: opacity .8s ease .6s; }
+.slide:has(.jo04-go.on) :is(.jo04-liar, .jo04-hate) { opacity: 1; }
+@media (max-width: 600px) { .jo04-who { font-size: 34px; } .jo04-say, .jo04-hate { font-size: 26px; } .jo04-liar { font-size: 30px; } }
+</style>
+</head>
+<body>
+<main class="deck" id="deck">
+
+<!-- ======================= OPENING ======================= -->
+<section class="slide title">
+  <div class="inner">
+    <div class="emblem rise"></div>
+    <h1 class="rise" style="--d:1">1 John 4</h1>
+    <p class="sub rise" style="--d:3">God is love</p>
+    <p class="tag rise" style="--d:5">Test what you hear by what it says about Jesus. Then look at a love that came down to you first, and that throws fear out of a man's life.</p>
+  </div>
+</section>
+
+<section class="slide watch">
+  <div class="inner">
+    <h2 class="rise">Things to watch for</h2>
+    <p class="lede rise" style="--d:1">Keep these questions in the back of your mind as we read. We'll come back to every one of them at the end.</p>
+    <ol class="seeds">
+      <li class="step"><span class="topic">Test</span><span class="seed-q">How can we tell a spirit that is of God from one that is not?</span></li>
+      <li class="step"><span class="topic">Greater</span><span class="seed-q">Who is greater: He that is in us, or he that is in the world?</span></li>
+      <li class="step"><span class="topic">Love</span><span class="seed-q">How did God show His love toward us?</span></li>
+      <li class="step"><span class="topic">Fear</span><span class="seed-q">What does perfect love do to fear?</span></li>
+      <li class="step"><span class="topic">First</span><span class="seed-q">Why do we love God at all?</span></li>
+      <li class="step"><span class="topic">Brother</span><span class="seed-q">What does John call a man who says he loves God but hates his brother?</span></li>
+    </ol>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise">Where we are in 1 John</h2>
+    <div class="jo04-where rise" style="--d:1" role="img" aria-label="1 John has five chapters. Chapter 1: God is light. Chapter 2: an advocate. Chapter 3: sons of God. Chapter 4: God is love. Chapter 5: that ye may know. We are in chapter 4.">
+      <i class="done">1</i><i class="done">2</i><i class="done">3</i><i class="here">4</i><i>5</i>
+      <span>God is light</span><span>An advocate</span><span>Sons of God</span><span class="now">God is love</span><span>That ye may know</span>
+    </div>
+    <div class="split">
+      <div class="stage">
+        <svg data-world viewBox="540 225 140 105" style="max-height:34vh" data-towns="Ephesus!, Smyrna, Pergamos, Thyatira, Sardis, Philadelphia, Laodicea, Patmos" role="img" aria-label="Map: Ephesus, where John lived as an old man, with the churches of Asia around it: Smyrna, Pergamos, Thyatira, Sardis, Philadelphia and Laodicea."></svg>
+      </div>
+      <div>
+        <p class="note rise" style="--d:2">John is an old man now, at <em>Ephesus</em>, about AD 85 to 95, writing to believers he calls <em>“little children.”</em></p>
+        <p class="note step">False teachers had left the church, and the believers were shaken. So John gives three tests: <em>walking in the light, loving the brethren, and believing</em> the truth about Jesus.</p>
+        <p class="note step">Chapter 4 takes two of them: what to believe about Jesus, and what real love looks like.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ======================= PART ONE: TRY THE SPIRITS ======================= -->
+<section class="slide part">
+  <div class="inner">
+    <p class="part-n rise">Part one</p>
+    <h2 class="rise" style="--d:1">Try the spirits</h2>
+    <p class="range rise" style="--d:2">Verses 1–6</p>
+    <div class="rule"></div>
+    <p class="hook rise" style="--d:4">Not every voice that talks about God is from God. Here is how to tell, and who is stronger.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="1-3" data-hl="believe not every spirit, but try the spirits whether they are of God|Every spirit that confesseth that Jesus Christ is come in the flesh is of God|that spirit of antichrist"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="1" data-hl="try the spirits whether they are of God"></blockquote>
+    <h2 class="rise" style="--d:1">One question that sorts them out</h2>
+    <p class="note rise" style="--d:2"><em>Try</em> means test, the way gold is tested. Behind every preacher, book and video is a spirit, and not all of them are from God. Don't ask the easy questions:</p>
+    <ul class="nots">
+      <li class="step"><span class="k">Is he popular?</span><span class="why">“the world heareth them” (4:5)</span></li>
+      <li class="step"><span class="k">Does he sound spiritual?</span><span class="why">false prophets always do</span></li>
+      <li class="step"><span class="k">Does he promise me an easy life?</span><span class="why">that's what a man wants to hear</span></li>
+      <li class="step yes"><span class="k">What does he say about Jesus?</span><span class="why">God come in the flesh, or not?</span></li>
+    </ul>
+    <p class="note step"><em>Antichrist</em> means one who is against Christ and puts something in His place. John says that spirit is <em>“already … in the world.”</em> Any teaching that makes Jesus smaller than God come in a real body, dying for real sins, is that spirit.</p>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise">Check it in the Book</h2>
+    <blockquote class="quote rise" style="--d:1"><p>“These were more noble than those in Thessalonica, in that they received the word with all readiness of mind, and searched the scriptures daily, whether those things were so.”</p><cite>Acts 17:11</cite></blockquote>
+    <p class="note step">Some of us have followed a voice before because it was loud and sure of itself: a crew, a cause, a man with all the answers. It cost us. A new believer is a target for the same thing in church clothes.</p>
+    <p class="note step">So do what the Bereans did. When you hear something about God, open the Bible and check it, and ask an older believer. A true teacher won't mind. A false one will.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="4-6" data-hl="Ye are of God, little children, and have overcome them|greater is he that is in you, than he that is in the world|Hereby know we the spirit of truth, and the spirit of error"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise">Greater is He</h2>
+    <div class="split">
+      <div class="stage">
+        <svg class="scale now" style="--at:300px 80px; --arm:220; --tip:13deg; --wait:1s" viewBox="0 0 600 330" role="img" aria-label="A balance scale. On one pan, he that is in the world. On the other, He that is in you. The scale drops hard toward He that is in you.">
+          <path d="M240 310 L360 310 L330 290 L270 290 Z" stroke-width="2.5" style="fill:var(--surface-2);stroke:var(--ink-soft)"/>
+          <rect x="294" y="74" width="12" height="218" style="fill:var(--ink-soft)"/>
+          <g class="scale-beam">
+            <rect x="70" y="74" width="460" height="12" rx="6" style="fill:var(--ink)"/>
+            <circle cx="300" cy="80" r="11" style="fill:var(--accent)"/>
+          </g>
+          <g class="scale-pan l">
+            <g fill="none" stroke-width="2" style="stroke:var(--ink-soft)"><path d="M80 86 L30 196 M80 86 L130 196"/></g>
+            <path d="M18 196 L142 196 Q80 240 18 196 Z" stroke-width="2.5" style="fill:var(--surface-2);stroke:var(--ink-soft)"/>
+            <path d="M68 194 L74 180 L86 180 L92 194 Z" style="fill:var(--danger)"/>
+            <text x="80" y="262" text-anchor="middle" font-size="22" style="fill:var(--danger)">he that is</text>
+            <text x="80" y="286" text-anchor="middle" font-size="22" style="fill:var(--danger)">in the world</text>
+          </g>
+          <g class="scale-pan r">
+            <g fill="none" stroke-width="2" style="stroke:var(--ink-soft)"><path d="M520 86 L470 196 M520 86 L570 196"/></g>
+            <path d="M458 196 L582 196 Q520 240 458 196 Z" stroke-width="2.5" style="fill:var(--surface-2);stroke:var(--ink-soft)"/>
+            <path d="M466 194 Q470 130 520 118 Q570 130 574 194 Z" style="fill:var(--accent)"/>
+            <text x="520" y="262" text-anchor="middle" font-size="22" font-weight="700" style="fill:var(--accent-hot)">He that is</text>
+            <text x="520" y="286" text-anchor="middle" font-size="22" font-weight="700" style="fill:var(--accent-hot)">in you</text>
+          </g>
+        </svg>
+      </div>
+      <div>
+        <p class="note rise" style="--d:2"><em>He that is in you</em> is God Himself, by His Spirit. Every believer has Him, from the day he believed (4:13).</p>
+        <p class="note step"><em>He that is in the world</em> is the devil, and every lie and pull that comes with him: the phone call from the old crowd, the voice that says one more won't hurt.</p>
+        <p class="note step">John doesn't say the pull isn't real. He says it isn't bigger. You don't face it alone, and you don't face it with your own strength.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="4" data-hl="have overcome them"></blockquote>
+    <h2 class="rise" style="--d:1">Already overcome</h2>
+    <p class="note rise" style="--d:2">Look at the tense: <em>have overcome</em>. John is writing to ordinary believers who held on to the truth about Jesus when the false teachers walked out. That was a win, and it was God's win in them.</p>
+    <blockquote class="quote step"><p>“There hath no temptation taken you but such as is common to man: but God is faithful, who will not suffer you to be tempted above that ye are able; but will with the temptation also make a way to escape, that ye may be able to bear it.”</p><cite>1 Corinthians 10:13</cite></blockquote>
+    <p class="note step">If you fell yesterday, that doesn't change who lives in you. Get up, confess it (1:9), and remember who is greater. Today, when the pull comes, say it out loud: <em>greater is He that is in me.</em></p>
+  </div>
+</section>
+
+<!-- ======================= PART TWO: GOD IS LOVE ======================= -->
+<section class="slide part">
+  <div class="inner">
+    <p class="part-n rise">Part two</p>
+    <h2 class="rise" style="--d:1">God is love</h2>
+    <p class="range rise" style="--d:2">Verses 7–16</p>
+    <div class="rule"></div>
+    <p class="hook rise" style="--d:4">Where love comes from, how God showed it, and where people can see it now.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="7-8" data-hl="let us love one another: for love is of God|every one that loveth is born of God, and knoweth God|God is love"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="8" data-hl="God is love"></blockquote>
+    <p class="saying rise" style="--d:1">Not just that God <em>loves</em>. God <em>is</em> love.</p>
+    <p class="note step">Love isn't one of His moods that comes and goes. It is who He is. He doesn't love you on your good days and put up with you on your bad ones.</p>
+    <p class="note step">And it doesn't turn around: <em>love</em> is not God. The world says that and means whatever it feels. John means the love God shows us, and he is about to show us exactly what it looks like.</p>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise">The word of the chapter</h2>
+    <p class="note rise" style="--d:1">Count it. <em>Love, loved, loveth</em>: in verses 7 to 21 John says it 27 times.</p>
+    <div class="tally rise" style="--d:2" aria-label="Verses 7 through 21, with love, loved or loveth: verse 7 three times, 8 twice, 9 once, 10 three times, 11 twice, 12 twice, 16 three times, 17 once, 18 three times, 19 twice, 20 three times, 21 twice.">
+      <span class="hit" style="--k:0"><i>7</i>×3</span>
+      <span class="hit" style="--k:1"><i>8</i>×2</span>
+      <span class="hit" style="--k:2"><i>9</i>×1</span>
+      <span class="hit" style="--k:3"><i>10</i>×3</span>
+      <span class="hit" style="--k:4"><i>11</i>×2</span>
+      <span class="hit" style="--k:5"><i>12</i>×2</span>
+      <span><i>13</i>&nbsp;</span>
+      <span><i>14</i>&nbsp;</span>
+      <span><i>15</i>&nbsp;</span>
+      <span class="hit" style="--k:6"><i>16</i>×3</span>
+      <span class="hit" style="--k:7"><i>17</i>×1</span>
+      <span class="hit" style="--k:8"><i>18</i>×3</span>
+      <span class="hit" style="--k:9"><i>19</i>×2</span>
+      <span class="hit" style="--k:10"><i>20</i>×3</span>
+      <span class="hit" style="--k:11"><i>21</i>×2</span>
+    </div>
+    <p class="note step">An old man who walked with Jesus for about three years, and by tradition outlived the other apostles, sat down to write what mattered most. This is what came out.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="9-10" data-hl="God sent his only begotten Son into the world, that we might live through him|Herein is love, not that we loved God, but that he loved us|the propitiation for our sins"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise">Love came down</h2>
+    <div class="split">
+      <div class="stage">
+        <svg viewBox="0 0 600 360" style="max-height:50vh" role="img" aria-label="God at the top, us at the bottom. An arrow going up from us, labelled we loved God, is drawn and then struck out. An arrow comes down from God to us, labelled he loved us. A cross appears on it: he sent his Son, the propitiation for our sins.">
+          <text class="jo04-node god" x="300" y="40">God</text>
+          <text class="jo04-node" x="300" y="350">us</text>
+          <path class="jo04-arrow up" pathLength="1" d="M180 300 L180 70 M158 98 L180 70 L202 98"/>
+          <text class="jo04-lab up" x="152" y="186" style="text-anchor:end">we loved</text>
+          <text class="jo04-lab up" x="152" y="214" style="text-anchor:end">God</text>
+          <line class="jo04-strike" pathLength="1" x1="40" y1="160" x2="215" y2="232"/>
+          <path class="jo04-arrow dn" pathLength="1" d="M400 66 L400 300 M378 272 L400 300 L422 272"/>
+          <text class="jo04-lab dn" x="428" y="104" style="text-anchor:start">he loved us</text>
+          <path class="jo04-cross" d="M392 150 h16 v30 h32 v16 h-32 v64 h-16 v-64 h-32 v-16 h32 z"/>
+          <text class="jo04-crossnote" x="452" y="232">he sent his Son:</text>
+          <text class="jo04-crossnote" x="452" y="258">the propitiation</text>
+        </svg>
+      </div>
+      <div>
+        <p class="note rise" style="--d:2">Most religion is a ladder: man climbs up to God, and if he climbs well enough, God loves him back.</p>
+        <p class="note step jo04-go1"><em>“Not that we loved God.”</em> John crosses out the ladder. The love started at the top and came down: <em>“he loved us.”</em></p>
+        <p class="note step jo04-go2">And it came down in a Person. <em>God sent his only begotten Son</em>, so that dead men <em>might live through him</em>.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="10" data-hl="the propitiation for our sins"></blockquote>
+    <h2 class="rise" style="--d:1">Propitiation: the anger turned away</h2>
+    <div class="ledger rise" style="--d:2">
+      <h3>What our sins deserved</h3>
+      <ul>
+        <li style="--k:0"><span>The wrath of a holy God</span><span>owed</span></li>
+        <li style="--k:1"><span>Every wrong, named and unnamed</span><span>owed</span></li>
+        <li style="--k:2"><span>The things you still regret</span><span>owed</span></li>
+      </ul>
+      <div class="total"><span>Who paid</span><b>His Son</b></div>
+      <div class="ledger-stamp">SATISFIED<small>by His blood</small></div>
+    </div>
+    <p class="note step ledger-paid"><em>Propitiation</em> is the sacrifice that turns God's anger away by taking it. God didn't pretend our sin was nothing. He took the punishment Himself, in His Son.</p>
+    <blockquote class="quote step"><p>“And he is the propitiation for our sins: and not for ours only, but also for the sins of the whole world.”</p><cite>1 John 2:2</cite></blockquote>
+  </div>
+</section>
+
+<section class="slide verse" data-v="11-13" data-hl="if God so loved us, we ought also to love one another|No man hath seen God at any time|he hath given us of his Spirit"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="12" data-hl="No man hath seen God at any time"></blockquote>
+    <h2 class="rise" style="--d:1">Where people see God now</h2>
+    <div class="ifthen step">
+      <div class="if"><small>If</small>we love one another,</div>
+      <span class="arrow" aria-hidden="true">→</span>
+      <div class="then"><small>then</small>God dwelleth in us, and His love is seen.</div>
+    </div>
+    <p class="note step">Nobody in your life has seen God. But they've seen you. The guys at work, your family, the men who knew you before: they will judge what God is like by how believers treat each other.</p>
+    <blockquote class="quote step"><p>“By this shall all men know that ye are my disciples, if ye have love one to another.”</p><cite>John 13:35</cite></blockquote>
+    <p class="note step">And you don't do it in your own strength. <em>“He hath given us of his Spirit.”</em> The Spirit you received when you believed is the One who loves through you.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="14-16" data-hl="the Father sent the Son to be the Saviour of the world|Whosoever shall confess that Jesus is the Son of God, God dwelleth in him, and he in God|we have known and believed the love that God hath to us"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise">Whosoever</h2>
+    <p class="note rise" style="--d:1"><em>“The Saviour of the world.”</em> Not the Saviour of good people, or church people, or people with a clean record. The world.</p>
+    <blockquote class="quote step"><p>“For God so loved the world, that he gave his only begotten Son, that whosoever believeth in him should not perish, but have everlasting life.”</p><cite>John 3:16</cite></blockquote>
+    <p class="note step"><em>Whosoever shall confess that Jesus is the Son of God.</em> That door is open to every man in this room. And the man who walks through it doesn't just visit God: <em>God dwelleth in him, and he in God.</em></p>
+    <p class="note step">Notice verse 16: <em>“we have known and believed the love.”</em> Some days you won't feel loved. Faith rests on what God did, not on how this morning feels.</p>
+  </div>
+</section>
+
+<!-- ======================= PART THREE: NO FEAR IN LOVE ======================= -->
+<section class="slide part">
+  <div class="inner">
+    <p class="part-n rise">Part three</p>
+    <h2 class="rise" style="--d:1">No fear in love</h2>
+    <p class="range rise" style="--d:2">Verses 17–21</p>
+    <div class="rule"></div>
+    <p class="hook rise" style="--d:4">For the man who lives braced for the blow. And for the brother he can't stand.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="17-19" data-hl="that we may have boldness in the day of judgment|There is no fear in love; but perfect love casteth out fear|fear hath torment|We love him, because he first loved us"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise">Perfect love casteth out fear</h2>
+    <div class="jo04-fear" role="img" aria-label="A dark night full of trembling fears: What if He's done with me? They'll find out. Punishment is coming. Not this sin too. I'll never change. Judgment day. I don't measure up. Then a light grows from the middle and throws them all out, leaving the words: there is no fear in love.">
+      <span style="--x:22%; --y:18%; --dx:-340px; --dy:-160px; --k:0">What if He's done with me?</span>
+      <span style="--x:74%; --y:16%; --dx:320px; --dy:-170px; --k:1">They'll find out.</span>
+      <span style="--x:16%; --y:50%; --dx:-380px; --dy:0px; --k:2">Punishment is coming.</span>
+      <span style="--x:83%; --y:46%; --dx:360px; --dy:10px; --k:3">Not this sin too.</span>
+      <span style="--x:26%; --y:83%; --dx:-330px; --dy:170px; --k:4">I'll never change.</span>
+      <span style="--x:73%; --y:82%; --dx:320px; --dy:170px; --k:5">Judgment day.</span>
+      <span style="--x:50%; --y:30%; --dx:0px; --dy:-260px; --k:6">I don't measure up.</span>
+      <span style="--x:50%; --y:68%; --dx:0px; --dy:260px; --k:7">The knock at the door.</span>
+      <i class="jo04-light"></i>
+      <p>There is no fear in love.<small>he first loved us</small></p>
+    </div>
+    <p class="note rise" style="--d:2">Many of us lived years waiting for the blow: the arrest, the phone call, the day it all comes out. Some of us carried that same fear into how we think about God.</p>
+    <p class="note step jo04-go"><em>Casteth out</em> is a strong word: it means to throw out, the way you'd throw a man out of your house. God's love doesn't just calm fear down. It throws it out.</p>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="18" data-hl="fear hath torment"></blockquote>
+    <h2 class="rise" style="--d:1">Why a believer can stop bracing</h2>
+    <div class="columns">
+      <div class="col law rise" style="--d:2">
+        <p class="who">Fear says</p>
+        <h3>The blow is coming</h3>
+        <p><em>Torment</em> here means punishment. Fear is always waiting for it to fall, so it hides, keeps God at arm's length, and never rests.</p>
+      </div>
+      <div class="col grace step">
+        <p class="who">Love says</p>
+        <h3>The blow already fell</h3>
+        <p>It fell on Jesus, the propitiation (4:10). So we can have <em>boldness in the day of judgment</em>. A man in Christ will stand there <em>as he is</em>: accepted.</p>
+      </div>
+    </div>
+    <blockquote class="quote step"><p>“For ye have not received the spirit of bondage again to fear; but ye have received the Spirit of adoption, whereby we cry, Abba, Father.”</p><cite>Romans 8:15</cite></blockquote>
+    <p class="note step">There is still a right fear of God: deep respect for Him. But a believer doesn't have to dread Him. You are a son, not a prisoner waiting on a sentence.</p>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="19"></blockquote>
+    <h2 class="rise" style="--d:1">Who moved first</h2>
+    <ol class="timeline" aria-label="First: He loved us, at the cross, before we cared. Then: we love Him back. Then: we love our brother.">
+      <li class="lit" data-n="1" style="--k:0"><b>He loved us</b><span>At the cross, before we cared</span><small>4:10, 19</small></li>
+      <li data-n="2" style="--k:1"><b>We love Him</b><span>Love answering love</span><small>4:19</small></li>
+      <li data-n="3" style="--k:2"><b>We love our brother</b><span>Love passed on</span><small>4:11, 21</small></li>
+    </ol>
+    <p class="note step">You didn't find God. He came looking. Your love for Him didn't start the relationship, so your bad day can't end it.</p>
+    <p class="note step">If your love for God feels weak this morning, don't try to squeeze out more. Look at how He first loved you. Love grows by looking at His.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="20-21" data-hl="If a man say, I love God, and hateth his brother, he is a liar|how can he love God whom he hath not seen|he who loveth God love his brother also"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise">You can't cut one line and keep the other</h2>
+    <div class="split">
+      <div class="stage">
+        <svg viewBox="0 0 600 340" style="max-height:42vh" role="img" aria-label="Three points: God at the top, me and my brother at the bottom, joined in a triangle. The line between me and my brother breaks: hate. Then the line between me and God turns to dashes, and the word liar appears.">
+          <line class="jo04-line me" x1="120" y1="270" x2="300" y2="70"/>
+          <line class="jo04-line" x1="480" y1="270" x2="300" y2="70"/>
+          <line class="jo04-line bro" x1="120" y1="270" x2="480" y2="270"/>
+          <circle class="jo04-dot god" cx="300" cy="62" r="20"/>
+          <circle class="jo04-dot" cx="120" cy="270" r="18"/>
+          <circle class="jo04-dot" cx="480" cy="270" r="18"/>
+          <text class="jo04-who god" x="300" y="26">God</text>
+          <text class="jo04-who" x="120" y="322">me</text>
+          <text class="jo04-who" x="480" y="322">my brother</text>
+          <text class="jo04-say" x="70" y="150">“I love God”</text>
+          <text class="jo04-liar" x="150" y="190">liar</text>
+          <text class="jo04-hate" x="300" y="300">hateth his brother</text>
+        </svg>
+      </div>
+      <div>
+        <p class="note rise" style="--d:2">Strong words from the apostle of love: <em>he is a liar</em>. Not a weak believer. A liar.</p>
+        <p class="note step jo04-go">The brother is the one you can see. If you can't love him, your love for the God you can't see is only talk.</p>
+        <p class="note step">This isn't about liking everyone. It's about the man you refuse to forgive, the one you'd cross the street to avoid. That's the line to work on.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="21"></blockquote>
+    <h2 class="rise" style="--d:1">One brother, today</h2>
+    <p class="note rise" style="--d:2">Hate grows easily in the places many of us have lived: the yard, the street, a house full of yelling. Grudges kept us alive once. Now they're killing us.</p>
+    <blockquote class="quote step"><p>“My little children, let us not love in word, neither in tongue; but in deed and in truth.”</p><cite>1 John 3:18</cite></blockquote>
+    <p class="note step">So pick one name. Pray for him by name today. Then do one thing: a text, a fair word, letting a debt go. You don't have to feel it first. God loved you before you were lovable, and He'll love that man through you.</p>
+  </div>
+</section>
+
+<!-- ======================= CLOSING ======================= -->
+<section class="slide remember">
+  <div class="inner">
+    <h2 class="rise">Points to remember</h2>
+    <ol class="seeds">
+      <li class="step"><span class="topic">Test</span><span class="seed-q">“Try the spirits whether they are of God” <cite>4:1</cite></span><span class="take">Ask what a teacher says about Jesus: God come in the flesh, or not? Then check it in the Bible.</span></li>
+      <li class="step"><span class="topic">Greater</span><span class="seed-q">“Greater is he that is in you” <cite>4:4</cite></span><span class="take">The pull of the world is real, but it is not bigger than the God who lives in you.</span></li>
+      <li class="step"><span class="topic">Love</span><span class="seed-q">“He loved us, and sent his Son” <cite>4:10</cite></span><span class="take">Love came down. God sent His Son to take the punishment our sins deserved.</span></li>
+      <li class="step"><span class="topic">Fear</span><span class="seed-q">“Perfect love casteth out fear” <cite>4:18</cite></span><span class="take">The blow fell on Jesus. A believer can stop bracing for it.</span></li>
+      <li class="step"><span class="topic">First</span><span class="seed-q">“We love him, because he first loved us” <cite>4:19</cite></span><span class="take">He moved first. Your love didn't start it, and your bad day can't end it.</span></li>
+      <li class="step"><span class="topic">Brother</span><span class="seed-q">“He is a liar” <cite>4:20</cite></span><span class="take">Love for God shows up as love for the brother you can see.</span></li>
+    </ol>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 1 of 6</p>
+      <span class="topic">Test</span>
+      <h2>How can we tell a spirit that is of God from one that is not?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="1"></blockquote>
+      <blockquote class="quote step" data-q="2"></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>Test it by what it says about Jesus. A spirit that confesses Jesus Christ come in the flesh is of God; one that denies it is the spirit of antichrist. Popularity proves nothing. Check what you hear against the Scriptures.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 2 of 6</p>
+      <span class="topic">Greater</span>
+      <h2>Who is greater: He that is in us, or he that is in the world?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="4"></blockquote>
+      <blockquote class="quote step" data-q="13"></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>He that is in us. God lives in every believer by His Spirit, and He is greater than the devil and every pull of the world. The fight is real, but we don't fight it alone or in our own strength.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 3 of 6</p>
+      <span class="topic">Love</span>
+      <h2>How did God show His love toward us?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="9"></blockquote>
+      <blockquote class="quote step" data-q="10"></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>He sent His only begotten Son into the world to be the propitiation for our sins, taking the punishment we deserved, so that we might live through Him. Love didn't start with us. It came down from Him.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 4 of 6</p>
+      <span class="topic">Fear</span>
+      <h2>What does perfect love do to fear?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="18"></blockquote>
+      <blockquote class="quote step"><p>“For ye have not received the spirit of bondage again to fear; but ye have received the Spirit of adoption, whereby we cry, Abba, Father.”</p><cite>Romans 8:15</cite></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>It casts fear out. Fear expects punishment, but for a believer the punishment already fell on Jesus. So we can have boldness even in the day of judgment, and come to God as sons, not as prisoners.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 5 of 6</p>
+      <span class="topic">First</span>
+      <h2>Why do we love God at all?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="19"></blockquote>
+      <blockquote class="quote step" data-q="16"></blockquote>
+      <blockquote class="quote step" data-q="10"></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>Because He first loved us. We didn't start it. He loved us before we cared, and our love is an answer to His. When our love runs low, we look again at His.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 6 of 6</p>
+      <span class="topic">Brother</span>
+      <h2>What does John call a man who says he loves God but hates his brother?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="20"></blockquote>
+      <blockquote class="quote step" data-q="21"></blockquote>
+      <blockquote class="quote step"><p>“My little children, let us not love in word, neither in tongue; but in deed and in truth.”</p><cite>1 John 3:18</cite></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>A liar. If he won't love the brother he can see, he can't love the God he can't see. God commands that the man who loves Him love his brother too, in deeds, not just words.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide prayer">
+  <div class="inner">
+    <div class="emblem rise"></div>
+    <h2 class="rise" style="--d:1">Prayer requests</h2>
+    <p class="ask-line rise" style="--d:2">What can we pray about for you today?</p>
+    <blockquote class="quote rise" style="--d:4"><p>“I sought the LORD, and he heard me, and delivered me from all my fears.”</p><cite>Psalm 34:4</cite></blockquote>
+  </div>
+</section>
+
+</main>
+
+<script>
+// King James Version, 1 John chapter 4
+const V = {
+  1: "Beloved, believe not every spirit, but try the spirits whether they are of God: because many false prophets are gone out into the world.",
+  2: "Hereby know ye the Spirit of God: Every spirit that confesseth that Jesus Christ is come in the flesh is of God:",
+  3: "And every spirit that confesseth not that Jesus Christ is come in the flesh is not of God: and this is that spirit of antichrist, whereof ye have heard that it should come; and even now already is it in the world.",
+  4: "Ye are of God, little children, and have overcome them: because greater is he that is in you, than he that is in the world.",
+  5: "They are of the world: therefore speak they of the world, and the world heareth them.",
+  6: "We are of God: he that knoweth God heareth us; he that is not of God heareth not us. Hereby know we the spirit of truth, and the spirit of error.",
+  7: "Beloved, let us love one another: for love is of God; and every one that loveth is born of God, and knoweth God.",
+  8: "He that loveth not knoweth not God; for God is love.",
+  9: "In this was manifested the love of God toward us, because that God sent his only begotten Son into the world, that we might live through him.",
+  10: "Herein is love, not that we loved God, but that he loved us, and sent his Son to be the propitiation for our sins.",
+  11: "Beloved, if God so loved us, we ought also to love one another.",
+  12: "No man hath seen God at any time. If we love one another, God dwelleth in us, and his love is perfected in us.",
+  13: "Hereby know we that we dwell in him, and he in us, because he hath given us of his Spirit.",
+  14: "And we have seen and do testify that the Father sent the Son to be the Saviour of the world.",
+  15: "Whosoever shall confess that Jesus is the Son of God, God dwelleth in him, and he in God.",
+  16: "And we have known and believed the love that God hath to us. God is love; and he that dwelleth in love dwelleth in God, and God in him.",
+  17: "Herein is our love made perfect, that we may have boldness in the day of judgment: because as he is, so are we in this world.",
+  18: "There is no fear in love; but perfect love casteth out fear: because fear hath torment. He that feareth is not made perfect in love.",
+  19: "We love him, because he first loved us.",
+  20: "If a man say, I love God, and hateth his brother, he is a liar: for he that loveth not his brother whom he hath seen, how can he love God whom he hath not seen?",
+  21: "And this commandment have we from him, That he who loveth God love his brother also."
+};
+const BOOK = "1 John 4";
+</script>
+<script src="../assets/deck.js"></script>
+</body>
+</html>

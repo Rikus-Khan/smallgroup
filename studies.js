@@ -15686,5 +15686,96 @@ window.STUDIES = [
       },
       "big": "You do not have to carry it alone. Humble yourself, cast every care on the God who cares for you, stay with the flock so the lion cannot pick you off, and trust that after a while the God of all grace will settle you."
     }
+  },
+  {
+    "id": "1-john-04",
+    "type": "chapter",
+    "book": "1 John",
+    "ch": 4,
+    "date": "2026-10-31",
+    "title": "1 John 4",
+    "sub": "God is love",
+    "about": "Test every voice by what it says about Jesus. Then look at the love that came down first, and throws fear out of a man's life.",
+    "tags": [
+      "God's love",
+      "Fear",
+      "False teaching",
+      "Spiritual warfare",
+      "Loving others",
+      "Forgiveness"
+    ],
+    "url": "studies/1-john-04.html",
+    "overview": {
+      "where": "Written by John from Ephesus, likely to the churches of Asia around it",
+      "when": "About AD 85 to 95, when John was an old man",
+      "people": [
+        "john-the-apostle",
+        "jesus",
+        "the-father",
+        "holy-spirit",
+        "false-prophets"
+      ],
+      "places": [
+        "ephesus"
+      ],
+      "story": [
+        "Believe not every spirit: try them. A spirit that confesses Jesus Christ come in the flesh is of God; one that does not is the spirit of antichrist (1–3).",
+        "Ye have overcome them, little children, because greater is He that is in you than he that is in the world (4–6).",
+        "Love is of God, for God is love. He showed it by sending His only begotten Son to be the propitiation for our sins (7–10).",
+        "No man has seen God, but if we love one another, God dwells in us. The Father sent the Son to be the Saviour of the world, and whosoever confesses Him dwells in God (11–16).",
+        "There is no fear in love: perfect love casts out fear. We love Him because He first loved us, and the man who loves God must love his brother too (17–21)."
+      ],
+      "key": {
+        "ref": "1 John 4:10",
+        "text": "Herein is love, not that we loved God, but that he loved us, and sent his Son to be the propitiation for our sins."
+      },
+      "big": "God is love, and He moved first: He sent His Son to take the punishment our sins deserved. A man who knows that love can stop living afraid of God, and can love the brother in front of him."
+    }
+  },
+  {
+    "id": "1-john-05",
+    "type": "chapter",
+    "book": "1 John",
+    "ch": 5,
+    "date": "2026-10-31",
+    "title": "1 John 5",
+    "sub": "That ye may know",
+    "about": "The last chapter of John's letter, and the reason he wrote it: so that a man who believes on the Son of God can know he has eternal life.",
+    "tags": [
+      "Assurance",
+      "Faith",
+      "Victory",
+      "Prayer",
+      "Idolatry",
+      "Eternal life"
+    ],
+    "url": "studies/1-john-05.html",
+    "overview": {
+      "where": "Written by John from Ephesus, likely to the churches of Asia around it",
+      "when": "About AD 85 to 95, at the end of John's letter",
+      "people": [
+        "john-the-apostle",
+        "jesus",
+        "the-father",
+        "holy-spirit",
+        "that-wicked-one"
+      ],
+      "places": [
+        "ephesus",
+        "heaven"
+      ],
+      "story": [
+        "Whosoever believes that Jesus is the Christ is born of God, and loves God's children. His commandments are not grievous (1–3).",
+        "Whatever is born of God overcomes the world, and the victory is our faith: believing that Jesus is the Son of God (4–5).",
+        "Jesus came by water and blood. The Father, the Word and the Holy Ghost bear record in heaven; the spirit, the water and the blood in earth. God's witness is greater (6–10).",
+        "God has given us eternal life, and this life is in His Son. He that hath the Son hath life. John wrote so that believers may know they have eternal life (11–13).",
+        "We can pray with confidence according to His will, and pray for a brother who sins. The one born of God is kept from the wicked one. Little children, keep yourselves from idols (14–21)."
+      ],
+      "key": {
+        "ref": "1 John 5:13",
+        "text": "These things have I written unto you that believe on the name of the Son of God; that ye may know that ye have eternal life, and that ye may believe on the name of the Son of God."
+      },
+      "big": "A man who believes on the Son of God can know, not just hope, that he has eternal life, because it rests on God's record, not on his feelings. So guard God's place in your life: keep yourselves from idols."
+    }
   }
 ];

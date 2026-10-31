@@ -564,7 +564,13 @@ window.GLOSSARY = [
     [ 11 ] ],
    [
     "1 Peter", 5,
-    [ 10, 14 ] ] ]
+    [ 10, 14 ] ],
+   [
+    "1 John", 4,
+    [ 2, 3, 15 ] ],
+   [
+    "1 John", 5,
+    [ 1, 5, 6, 20 ] ] ]
  },
  {
   "id": "john-the-baptist",
@@ -1506,7 +1512,13 @@ window.GLOSSARY = [
     [ 17, 27 ] ],
    [
     "James", 3,
-    [ 9 ] ] ]
+    [ 9 ] ],
+   [
+    "1 John", 4,
+    [ 14 ] ],
+   [
+    "1 John", 5,
+    [ 7 ] ] ]
  },
  {
   "id": "holy-spirit",
@@ -1761,7 +1773,13 @@ window.GLOSSARY = [
     [ 15, 29 ] ],
    [
     "1 Peter", 4,
-    [ 14 ] ] ]
+    [ 14 ] ],
+   [
+    "1 John", 4,
+    [ 2, 13 ] ],
+   [
+    "1 John", 5,
+    [ 6, 7, 8 ] ] ]
  },
  {
   "id": "disciples",
@@ -4278,7 +4296,10 @@ window.GLOSSARY = [
     [ 23, 25, 26 ] ],
    [
     "James", 5,
-    [ 12, 18 ] ] ]
+    [ 12, 18 ] ],
+   [
+    "1 John", 5,
+    [ 7 ] ] ]
  },
  {
   "id": "hell",
@@ -4491,7 +4512,10 @@ window.GLOSSARY = [
   "refs": [
    [
     "John", 1,
-    [ 1, 14 ] ] ]
+    [ 1, 14 ] ],
+   [
+    "1 John", 5,
+    [ 7 ] ] ]
  },
  {
   "id": "light",
@@ -5196,7 +5220,13 @@ window.GLOSSARY = [
     [ 14 ] ],
    [
     "James", 5,
-    [ 19 ] ] ]
+    [ 19 ] ],
+   [
+    "1 John", 4,
+    [ 6 ] ],
+   [
+    "1 John", 5,
+    [ 6 ] ] ]
  },
  {
   "id": "glory",
@@ -5775,7 +5805,10 @@ window.GLOSSARY = [
     [ 16, 18 ] ],
    [
     "Hebrews", 11,
-    [ 17 ] ] ]
+    [ 17 ] ],
+   [
+    "1 John", 4,
+    [ 9 ] ] ]
  },
  {
   "id": "lamb-of-god",
@@ -6228,7 +6261,13 @@ window.GLOSSARY = [
     [ 1, 11, 13, 14 ] ],
    [
     "1 Peter", 5,
-    [ 1, 10, 14 ] ] ]
+    [ 1, 10, 14 ] ],
+   [
+    "1 John", 4,
+    [ 2, 3 ] ],
+   [
+    "1 John", 5,
+    [ 1, 6, 20 ] ] ]
  },
  {
   "id": "son-of-god",
@@ -6327,7 +6366,13 @@ window.GLOSSARY = [
     [ 3 ] ],
    [
     "Hebrews", 10,
-    [ 29 ] ] ]
+    [ 29 ] ],
+   [
+    "1 John", 4,
+    [ 15 ] ],
+   [
+    "1 John", 5,
+    [ 5, 10, 12, 13, 20 ] ] ]
  },
  {
   "id": "son-of-man",
@@ -6798,7 +6843,13 @@ window.GLOSSARY = [
     [ 6, 31 ] ],
    [
     "James", 2,
-    [ 19, 23 ] ] ]
+    [ 19, 23 ] ],
+   [
+    "1 John", 4,
+    [ 1, 16 ] ],
+   [
+    "1 John", 5,
+    [ 1, 5, 10, 13 ] ] ]
  },
  {
   "id": "witness",
@@ -6984,7 +7035,10 @@ window.GLOSSARY = [
     [ 3 ] ],
    [
     "1 Peter", 5,
-    [ 1 ] ] ]
+    [ 1 ] ],
+   [
+    "1 John", 5,
+    [ 6, 7, 8, 9, 10, 11 ] ] ]
  },
  {
   "id": "baptize",
@@ -7884,7 +7938,10 @@ window.GLOSSARY = [
     [ 7 ] ],
    [
     "2 Timothy", 2,
-    [ 7 ] ] ]
+    [ 7 ] ],
+   [
+    "1 John", 5,
+    [ 20 ] ] ]
  },
  {
   "id": "knowledge",
@@ -8952,7 +9009,10 @@ window.GLOSSARY = [
     [ 21 ] ],
    [
     "2 Thessalonians", 3,
-    [ 2 ] ] ]
+    [ 2 ] ],
+   [
+    "1 John", 5,
+    [ 18, 19 ] ] ]
  },
  {
   "id": "heart",
@@ -11568,7 +11628,10 @@ window.GLOSSARY = [
     [ 2 ] ],
    [
     "Titus", 3,
-    [ 7 ] ] ]
+    [ 7 ] ],
+   [
+    "1 John", 5,
+    [ 11, 13, 20 ] ] ]
  },
  {
   "id": "condemnation",
@@ -11706,7 +11769,10 @@ window.GLOSSARY = [
     [ 27 ] ],
    [
     "Hebrews", 10,
-    [ 27 ] ] ]
+    [ 27 ] ],
+   [
+    "1 John", 4,
+    [ 17 ] ] ]
  },
  {
   "id": "scriptures",
@@ -14733,7 +14799,13 @@ window.GLOSSARY = [
     [ 33 ] ],
    [
     "Romans", 10,
-    [ 11, 13 ] ] ]
+    [ 11, 13 ] ],
+   [
+    "1 John", 4,
+    [ 15 ] ],
+   [
+    "1 John", 5,
+    [ 1, 18 ] ] ]
  },
  {
   "id": "friend-of-the-bridegroom",
@@ -15150,7 +15222,10 @@ window.GLOSSARY = [
   "refs": [
    [
     "John", 4,
-    [ 42 ] ] ]
+    [ 42 ] ],
+   [
+    "1 John", 4,
+    [ 14 ] ] ]
  },
  {
   "id": "signs-and-wonders",
@@ -16308,7 +16383,13 @@ window.GLOSSARY = [
     [ 17 ] ],
    [
     "Hebrews", 11,
-    [ 4, 5 ] ] ]
+    [ 4, 5 ] ],
+   [
+    "1 John", 4,
+    [ 14 ] ],
+   [
+    "1 John", 5,
+    [ 9 ] ] ]
  },
  {
   "id": "lazarus",
@@ -17115,7 +17196,13 @@ window.GLOSSARY = [
     [ 15, 16, 17 ] ],
    [
     "John", 13,
-    [ 33 ] ] ]
+    [ 33 ] ],
+   [
+    "1 John", 4,
+    [ 4 ] ],
+   [
+    "1 John", 5,
+    [ 21 ] ] ]
  },
  {
   "id": "new-commandment",
@@ -17376,7 +17463,10 @@ window.GLOSSARY = [
     [ 13 ] ],
    [
     "Hebrews", 9,
-    [ 8 ] ] ]
+    [ 8 ] ],
+   [
+    "1 John", 4,
+    [ 9 ] ] ]
  },
  {
   "id": "vine",
@@ -20424,7 +20514,10 @@ window.GLOSSARY = [
     [ 16 ] ],
    [
     "1 Thessalonians", 1,
-    [ 9 ] ] ]
+    [ 9 ] ],
+   [
+    "1 John", 5,
+    [ 21 ] ] ]
  },
  {
   "id": "morning-cloud",
@@ -25344,7 +25437,10 @@ window.GLOSSARY = [
     [ 15 ] ],
    [
     "Matthew", 24,
-    [ 11, 24 ] ] ]
+    [ 11, 24 ] ],
+   [
+    "1 John", 4,
+    [ 1 ] ] ]
  },
  {
   "id": "rough-garment",
@@ -28668,7 +28764,10 @@ window.GLOSSARY = [
     [ 9, 10 ] ],
    [
     "Romans", 15,
-    [ 9 ] ] ]
+    [ 9 ] ],
+   [
+    "1 John", 4,
+    [ 2, 3, 15 ] ] ]
  },
  {
   "id": "not-peace-but-a-sword",
@@ -29607,7 +29706,10 @@ window.GLOSSARY = [
     [ 40 ] ],
    [
     "Hebrews", 12,
-    [ 23 ] ] ]
+    [ 23 ] ],
+   [
+    "1 John", 4,
+    [ 12, 17, 18 ] ] ]
  },
  {
   "id": "begat",
@@ -29628,7 +29730,10 @@ window.GLOSSARY = [
     [ 8, 29 ] ],
    [
     "James", 1,
-    [ 18 ] ] ]
+    [ 18 ] ],
+   [
+    "1 John", 5,
+    [ 1 ] ] ]
  },
  {
   "id": "thamar",
@@ -30186,7 +30291,10 @@ window.GLOSSARY = [
     [ 18, 22 ] ],
    [
     "Hebrews", 13,
-    [ 21, 25 ] ] ]
+    [ 21, 25 ] ],
+   [
+    "1 John", 5,
+    [ 21 ] ] ]
  },
  {
   "id": "treasure-in-heaven",
@@ -38772,7 +38880,10 @@ window.GLOSSARY = [
     [ 16 ] ],
    [
     "Hebrews", 10,
-    [ 19 ] ] ]
+    [ 19 ] ],
+   [
+    "1 John", 4,
+    [ 17 ] ] ]
  },
  {
   "id": "straitly",
@@ -43758,7 +43869,10 @@ window.GLOSSARY = [
   "refs": [
    [
     "Romans", 3,
-    [ 25 ] ] ]
+    [ 25 ] ],
+   [
+    "1 John", 4,
+    [ 10 ] ] ]
  },
  {
   "id": "boasting",
@@ -54672,6 +54786,171 @@ window.GLOSSARY = [
   "refs": [
    [
     "James", 5,
+    [ 20 ] ] ]
+ },
+ {
+  "id": "antichrist",
+  "kind": "term",
+  "name": "Antichrist (one against Christ, who sets himself up in Christ's place)",
+  "refs": [
+   [
+    "1 John", 4,
+    [ 3 ] ] ]
+ },
+ {
+  "id": "try-the-spirits",
+  "kind": "term",
+  "name": "Try the spirits (test every teacher by what he says about Jesus)",
+  "refs": [
+   [
+    "1 John", 4,
+    [ 1 ] ] ]
+ },
+ {
+  "id": "greater-is-he",
+  "kind": "term",
+  "name": "Greater is He that is in you (God in the believer, stronger than the devil)",
+  "refs": [
+   [
+    "1 John", 4,
+    [ 4 ] ] ]
+ },
+ {
+  "id": "overcome-the-world",
+  "kind": "term",
+  "name": "Overcome, overcometh (win the victory over the world and the wicked one)",
+  "refs": [
+   [
+    "1 John", 4,
+    [ 4 ] ],
+   [
+    "1 John", 5,
+    [ 4, 5 ] ] ]
+ },
+ {
+  "id": "born-of-god",
+  "kind": "term",
+  "name": "Born of God (given new life by God, through believing on Jesus)",
+  "refs": [
+   [
+    "1 John", 4,
+    [ 7 ] ],
+   [
+    "1 John", 5,
+    [ 1, 4, 18 ] ] ]
+ },
+ {
+  "id": "god-is-love",
+  "kind": "term",
+  "name": "God is love",
+  "refs": [
+   [
+    "1 John", 4,
+    [ 8, 16 ] ] ]
+ },
+ {
+  "id": "perfect-love",
+  "kind": "term",
+  "name": "Perfect love casteth out fear",
+  "refs": [
+   [
+    "1 John", 4,
+    [ 18 ] ] ]
+ },
+ {
+  "id": "torment",
+  "kind": "term",
+  "name": "Torment (here: punishment, and the dread of it)",
+  "refs": [
+   [
+    "1 John", 4,
+    [ 18 ] ] ]
+ },
+ {
+  "id": "grievous",
+  "kind": "term",
+  "name": "Grievous (heavy, crushing, a burden)",
+  "refs": [
+   [
+    "1 John", 5,
+    [ 3 ] ] ]
+ },
+ {
+  "id": "water-and-blood",
+  "kind": "term",
+  "name": "Water and blood (many teach: Jesus' baptism and His death on the cross)",
+  "refs": [
+   [
+    "1 John", 5,
+    [ 6, 8 ] ] ]
+ },
+ {
+  "id": "three-that-bear-record",
+  "kind": "term",
+  "name": "Three that bear record (the Father, the Word and the Holy Ghost; the spirit, the water and the blood)",
+  "refs": [
+   [
+    "1 John", 5,
+    [ 7, 8 ] ] ]
+ },
+ {
+  "id": "know-ye-have-eternal-life",
+  "kind": "term",
+  "name": "Know that ye have eternal life (assurance of salvation)",
+  "refs": [
+   [
+    "1 John", 5,
+    [ 13 ] ] ]
+ },
+ {
+  "id": "according-to-his-will",
+  "kind": "term",
+  "name": "According to His will (praying for what God wants)",
+  "refs": [
+   [
+    "1 John", 5,
+    [ 14 ] ] ]
+ },
+ {
+  "id": "petitions",
+  "kind": "term",
+  "name": "Petitions (requests made to God in prayer)",
+  "refs": [
+   [
+    "1 John", 5,
+    [ 15 ] ] ]
+ },
+ {
+  "id": "sin-unto-death",
+  "kind": "term",
+  "name": "A sin unto death (a hard text; teachers differ)",
+  "refs": [
+   [
+    "1 John", 5,
+    [ 16, 17 ] ] ]
+ },
+ {
+  "id": "that-wicked-one",
+  "kind": "person",
+  "name": "That wicked one (the devil)",
+  "refs": [
+   [
+    "1 John", 5,
+    [ 18 ] ] ]
+ },
+ {
+  "id": "true-god",
+  "kind": "term",
+  "name": "The true God",
+  "refs": [
+   [
+    "John", 17,
+    [ 3 ] ],
+   [
+    "1 Thessalonians", 1,
+    [ 9 ] ],
+   [
+    "1 John", 5,
     [ 20 ] ] ]
  }
 ];
