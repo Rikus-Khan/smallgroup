@@ -16314,6 +16314,99 @@ window.STUDIES = [
     }
   },
   {
+    "id": "revelation-03",
+    "type": "chapter",
+    "book": "Revelation",
+    "ch": 3,
+    "date": "2026-10-31",
+    "title": "Revelation 3",
+    "sub": "A door, and a knock",
+    "about": "Three churches: one with a name and no life, one with a little strength and an open door, one rich and blind. And Christ, knocking at the door.",
+    "tags": [
+      "The seven churches",
+      "Denial",
+      "Grace",
+      "Assurance",
+      "Repentance",
+      "Christ's invitation"
+    ],
+    "url": "studies/revelation-03.html",
+    "overview": {
+      "where": "Letters sent from Patmos to three churches of Asia: Sardis, Philadelphia and Laodicea",
+      "when": "About AD 95, under Domitian",
+      "people": [
+        "jesus",
+        "holy-spirit",
+        "angel-of-the-church",
+        "synagogue-of-satan",
+        "faithful-and-true-witness"
+      ],
+      "places": [
+        "sardis",
+        "philadelphia",
+        "laodicea",
+        "new-jerusalem"
+      ],
+      "story": [
+        "To Sardis: “thou hast a name that thou livest, and art dead.” Wake up, strengthen what remains, remember and repent. A few have kept their garments clean, and Christ will not blot out the overcomer's name (1–6).",
+        "To Philadelphia: Christ holds the key of David and sets before them an open door no man can shut. They have a little strength and have kept His word; not one word of rebuke (7–8).",
+        "Their enemies will know He loved them. He will keep them from the hour of temptation, and make the overcomer a pillar in God's temple, never to go out (9–13).",
+        "To Laodicea: neither cold nor hot, lukewarm. They say “I am rich” and don't know they are wretched, poor, blind and naked. Christ counsels them to buy of Him gold, white raiment and eyesalve (14–18).",
+        "“As many as I love, I rebuke and chasten.” Christ stands at the door and knocks: if any man opens, He will come in and sup with him. The overcomer will sit with Him in His throne (19–22)."
+      ],
+      "key": {
+        "ref": "Revelation 3:20",
+        "text": "Behold, I stand at the door, and knock: if any man hear my voice, and open the door, I will come in to him, and will sup with him, and he with me."
+      },
+      "big": "Christ sees past a church's reputation and tells the truth because He loves us. A little strength is enough when He opens the door, denial is the real danger, and He knocks for any man who will open."
+    }
+  },
+  {
+    "id": "revelation-04",
+    "type": "chapter",
+    "book": "Revelation",
+    "ch": 4,
+    "date": "2026-10-31",
+    "title": "Revelation 4",
+    "sub": "Someone is on the throne",
+    "about": "A door opens in heaven, and John sees the center of everything: a throne, and One sitting on it, worshipped day and night.",
+    "tags": [
+      "God's throne",
+      "Holiness",
+      "Worship",
+      "God's sovereignty",
+      "Creation",
+      "Hope"
+    ],
+    "url": "studies/revelation-04.html",
+    "overview": {
+      "where": "A vision of the throne room of heaven, seen by John on Patmos",
+      "when": "About AD 95, under Domitian",
+      "people": [
+        "lord-god-almighty",
+        "twenty-four-elders",
+        "four-beasts",
+        "seven-spirits"
+      ],
+      "places": [
+        "throne-in-heaven",
+        "sea-of-glass"
+      ],
+      "story": [
+        "A door is opened in heaven, and a voice like a trumpet says, “Come up hither.” In the spirit, John sees a throne set in heaven, and One sitting on it (1–2).",
+        "The One on the throne shines like jasper and sardine stone, with an emerald rainbow round about (3).",
+        "Twenty-four elders in white with crowns of gold sit round the throne. Lightnings, thunderings and voices come from it, and seven lamps of fire burn before it, the seven Spirits of God (4–5).",
+        "Before the throne is a sea of glass. Four beasts full of eyes, like a lion, a calf, a man and a flying eagle, cry day and night, “Holy, holy, holy, Lord God Almighty, which was, and is, and is to come” (6–8).",
+        "The elders fall down, cast their crowns before the throne, and worship: “Thou art worthy, O Lord… for thou hast created all things” (9–11)."
+      ],
+      "key": {
+        "ref": "Revelation 4:11",
+        "text": "Thou art worthy, O Lord, to receive glory and honour and power: for thou hast created all things, and for thy pleasure they are and were created."
+      },
+      "big": "Before any of the troubles in Revelation, God shows John the throne, and it is occupied. The holy Creator is in charge, and the right response is to lay down our crowns and worship."
+    }
+  },
+  {
     "id": "revelation-05",
     "type": "chapter",
     "book": "Revelation",

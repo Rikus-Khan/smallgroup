@@ -1,0 +1,572 @@
+<!doctype html>
+<html lang="en" data-theme="night">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Revelation 4</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="../assets/fonts.css">
+<link rel="stylesheet" href="../assets/deck.css">
+<link rel="stylesheet" href="../assets/themes.css">
+<style>
+/* rv03-where: where this chapter sits in Revelation (the same marker as Revelation 3). Twenty-two chapter boxes in seven groups (--n boxes each), the current chapter lit (span.here) */
+.rv03-where { display: grid; grid-template-columns: 1.7fr 2fr 2fr 9fr 2fr 2fr 2fr; gap: 10px; margin: .6em 0 1em; }
+.rv03-where > div { display: grid; grid-template-columns: repeat(var(--n), 1fr); gap: 3px; align-content: start; }
+.rv03-where span { display: grid; place-items: center; height: 2.2rem; border: 1.5px solid var(--line-strong); border-radius: 5px; font: 600 clamp(.75rem, .7rem + .3vw, 1rem) var(--sans); color: var(--ink-soft); }
+.rv03-where b { grid-column: 1 / -1; margin-top: .35em; font: 400 clamp(.8rem, .74rem + .32vw, 1.05rem)/1.25 var(--serif); color: var(--ink-soft); }
+.rv03-where .now span { border-color: var(--accent); color: var(--ink); }
+.rv03-where .now b { color: var(--accent-hot); font-weight: 600; }
+.rv03-where span.here { background: var(--accent); color: var(--on-accent); box-shadow: 0 0 0 5px color-mix(in srgb, var(--accent) 22%, transparent); }
+@media (max-width: 600px) {
+  .rv03-where { grid-template-columns: 1fr; gap: 5px; }
+  .rv03-where > div { grid-template-columns: repeat(var(--n), minmax(0, 1.6rem)) 1fr; align-items: center; }
+  .rv03-where b { grid-column: auto; margin: 0 0 0 .4em; }
+  .rv03-where span { height: 1.7rem; }
+}
+
+/* rv04-room: the throne room, built up one layer at a time across the chapter. Always night (--on-glow) with light (--glow), in every theme.
+   Layers (g.rv04-lv) that wait for a step carry .rv04-wait .rv04-wN and show on a .rv04-goN step. On a .rv04-cast step the elders bow
+   and their crowns (--dx, --dy) fly to the foot of the throne */
+.rv04-room .rv04-night { fill: var(--on-glow); }
+.rv04-room .rv04-lab { fill: color-mix(in srgb, var(--glow) 72%, var(--on-glow)); font: italic 14px var(--serif); }
+.rv04-room .rv04-lab.hot { fill: var(--glow); font: 600 14px var(--sans); }
+.rv04-wait { opacity: 0; transition: opacity 1.3s ease; }
+.slide:has(.rv04-go2.on) .rv04-w2, .slide:has(.rv04-go3.on) .rv04-w3, .slide:has(.rv04-go4.on) .rv04-w4, .slide:has(.rv04-go5.on) .rv04-w5,
+.slide:has(.rv04-go6.on) .rv04-w6, .slide:has(.rv04-go7.on) .rv04-w7 { opacity: 1; }
+.rv04-ray { fill: var(--warm); opacity: .18; transform-box: fill-box; transform-origin: center; }
+.slide.active .rv04-ray { animation: rv04-pulse 3s ease-in-out infinite alternate; }
+@keyframes rv04-pulse { from { transform: scale(.9); opacity: .14; } to { transform: scale(1.12); opacity: .32; } }
+.rv04-seat { fill: color-mix(in srgb, var(--warm) 40%, var(--on-glow)); stroke: var(--warm); stroke-width: 2; }
+.rv04-sard { fill: color-mix(in srgb, var(--danger) 75%, var(--on-glow)); }
+.rv04-jasper { fill: var(--glow); }
+.rv04-bow { fill: none; stroke: color-mix(in oklch, var(--cool) 55%, var(--warm)); stroke-width: 7; }
+.rv04-bowglow { fill: none; stroke: color-mix(in oklch, var(--cool) 55%, var(--warm)); stroke-width: 22; opacity: .22; }
+.rv04-bolt { fill: none; stroke: var(--glow); stroke-width: 3; stroke-linejoin: round; opacity: 0; }
+.slide.active .rv04-bolt { animation: rv04-flash 3.4s ease-out infinite; animation-delay: var(--at, 0s); }
+@keyframes rv04-flash { 0%, 100% { opacity: 0; } 3% { opacity: 1; } 8% { opacity: .1; } 12% { opacity: .85; } 20% { opacity: 0; } }
+.rv04-flame { fill: var(--warm); transform-box: fill-box; transform-origin: 50% 100%; }
+.slide.active .rv04-flame { animation: rv04-flick 1s ease-in-out infinite alternate; animation-delay: calc(var(--k, 0) * -.27s); }
+@keyframes rv04-flick { from { transform: scaleY(.85); } to { transform: scaleY(1.12); } }
+.rv04-bowl { fill: color-mix(in srgb, var(--warm) 55%, var(--on-glow)); }
+.rv04-sea { fill: color-mix(in srgb, var(--cool) 30%, var(--on-glow)); stroke: color-mix(in srgb, var(--cool) 70%, var(--glow)); stroke-width: 1.5; }
+.rv04-shine { stroke: color-mix(in srgb, var(--glow) 60%, transparent); stroke-width: 2; stroke-linecap: round; }
+.rv04-body { fill: color-mix(in srgb, var(--glow) 14%, var(--on-glow)); stroke: color-mix(in srgb, var(--glow) 60%, var(--on-glow)); stroke-width: 1.5; }
+.rv04-wing { fill: color-mix(in srgb, var(--glow) 34%, var(--on-glow)); stroke: color-mix(in srgb, var(--glow) 60%, var(--on-glow)); stroke-width: 1; }
+.rv04-eye { fill: var(--glow); }
+.slide.active .rv04-eye { animation: rv04-blink 4s ease-in-out infinite; }
+@keyframes rv04-blink { 0%, 92%, 100% { opacity: 1; } 95% { opacity: .1; } }
+.rv04-chair { fill: color-mix(in srgb, var(--warm) 25%, var(--on-glow)); }
+.rv04-robe, .rv04-head { fill: var(--glow); }
+.rv04-elder { transform-box: fill-box; transform-origin: 50% 100%; transition: transform 1s ease; }
+.rv04-crown { fill: color-mix(in srgb, var(--warm) 80%, var(--glow)); stroke: color-mix(in srgb, var(--warm) 50%, var(--on-glow)); stroke-width: .8; transition: transform 1.7s cubic-bezier(.45,.05,.3,1); transition-delay: calc(var(--k, 0) * 70ms); }
+.slide:has(.rv04-cast.on) .rv04-crown { transform: translate(calc(var(--dx) * 1px), calc(var(--dy) * 1px)); }
+.slide:has(.rv04-cast.on) .rv04-elder { transform: scaleY(.72); }
+@media (max-width: 600px) { .rv04-room .rv04-lab { font-size: 17px; } }
+
+/* rv04-doors: two doors. Revelation 3:20, Christ knocking at a man's door on earth; 4:1, on a step (.rv04-up), a door opened in heaven: "Come up hither" */
+.rv04-doors .rv04-night { fill: var(--on-glow); }
+.rv04-doors .rv04-day { fill: color-mix(in srgb, var(--warm) 22%, var(--on-glow)); }
+.rv04-wall { fill: color-mix(in srgb, var(--glow) 12%, var(--on-glow)); stroke: color-mix(in srgb, var(--glow) 35%, var(--on-glow)); stroke-width: 2; }
+.rv04-shut { fill: var(--leather); stroke: var(--leather-light); stroke-width: 2; }
+.rv04-ring { fill: none; stroke: var(--glow); stroke-width: 2.5; opacity: 0; transform-box: fill-box; transform-origin: center; }
+.slide.active .rv04-ring { animation: rv04-knock 3.2s ease-out infinite; animation-delay: calc(var(--k) * .28s + .6s); }
+@keyframes rv04-knock { 0% { opacity: .95; transform: scale(.3); } 18% { opacity: 0; transform: scale(1.5); } 100% { opacity: 0; } }
+.rv04-open { fill: var(--glow); }
+.rv04-beam { fill: var(--warm); opacity: .25; }
+.slide.active .rv04-beam { animation: rv04-pulse2 3s ease-in-out infinite alternate; }
+@keyframes rv04-pulse2 { to { opacity: .45; } }
+.rv04-cloud { fill: color-mix(in srgb, var(--glow) 30%, var(--on-glow)); }
+.rv04-man { fill: none; stroke: var(--glow); stroke-width: 5; stroke-linecap: round; }
+.rv04-say { fill: var(--glow); font: italic 600 18px var(--serif); }
+.rv04-ref { fill: color-mix(in srgb, var(--glow) 65%, var(--on-glow)); font: 14px var(--sans); letter-spacing: .06em; }
+.rv04-right { opacity: .3; transition: opacity 1.2s ease; }
+.slide:has(.rv04-up.on) .rv04-right { opacity: 1; }
+@media (max-width: 600px) { .rv04-say { font-size: 21px; } .rv04-ref { font-size: 17px; } }
+
+/* rv04-storm: the words of the coming chapters circle like a storm (the ring turns; each word stays upright), while the throne in the middle stays still */
+.rv04-storm .rv04-night { fill: var(--on-glow); }
+.rv04-swirl { fill: none; stroke: color-mix(in srgb, var(--glow) 25%, var(--on-glow)); stroke-width: 2; stroke-dasharray: 14 18; }
+.rv04-spin { transform-box: view-box; transform-origin: 250px 190px; }
+.slide.active .rv04-spin { animation: rv04-turn 50s linear infinite; }
+.slide.active .rv04-spin.fast { animation-duration: 22s; animation-direction: reverse; }
+.rv04-word { fill: color-mix(in srgb, var(--danger) 55%, var(--glow)); font: italic 600 17px var(--serif); transform-box: fill-box; transform-origin: center; }
+.slide.active .rv04-word { animation: rv04-turn 50s linear infinite reverse; }
+@keyframes rv04-turn { to { transform: rotate(360deg); } }
+.rv04-calm { fill: color-mix(in srgb, var(--warm) 14%, var(--on-glow)); stroke: color-mix(in srgb, var(--warm) 50%, var(--on-glow)); stroke-width: 1.5; }
+.rv04-still { fill: var(--glow); font: 600 16px var(--serif); }
+@media (max-width: 600px) { .rv04-word { font-size: 20px; } .rv04-still { font-size: 19px; } }
+</style>
+</head>
+<body>
+<main class="deck" id="deck">
+
+<!-- ======================= OPENING ======================= -->
+<section class="slide title">
+  <div class="inner">
+    <div class="emblem rise"></div>
+    <h1 class="rise" style="--d:1">Revelation 4</h1>
+    <p class="sub rise" style="--d:3">Someone is on the throne</p>
+    <p class="tag rise" style="--d:5">A door opens in heaven, and John is called up to see the center of everything: a throne, and One sitting on it.</p>
+  </div>
+</section>
+
+<section class="slide watch">
+  <div class="inner">
+    <h2 class="rise">Things to watch for</h2>
+    <p class="lede rise" style="--d:1">Keep these questions in the back of your mind as we read. We'll come back to every one of them at the end.</p>
+    <ol class="seeds">
+      <li class="step"><span class="topic">Come up</span><span class="seed-q">What did John see when a door was opened in heaven?</span></li>
+      <li class="step"><span class="topic">The throne</span><span class="seed-q">What does the One on the throne look like?</span></li>
+      <li class="step"><span class="topic">Elders</span><span class="seed-q">What do the twenty-four elders do with their crowns?</span></li>
+      <li class="step"><span class="topic">Beasts</span><span class="seed-q">What do the four beasts say day and night?</span></li>
+      <li class="step"><span class="topic">Worthy</span><span class="seed-q">Why is the Lord worthy to receive glory and honour and power?</span></li>
+      <li class="step"><span class="topic">In charge</span><span class="seed-q">Why does John see the throne before the troubles that follow?</span></li>
+    </ol>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise">Where we are in Revelation</h2>
+    <div class="rv03-where rise" style="--d:1" role="img" aria-label="The twenty-two chapters of Revelation in seven groups. Chapter 1: a vision of Christ. 2 and 3: the seven churches. 4 and 5: the throne and the Lamb; chapter 4 is lit. 6 to 16: seals, trumpets and bowls. 17 and 18: Babylon falls. 19 and 20: Christ returns and reigns. 21 and 22: all things new.">
+      <div style="--n:1"><span>1</span><b>a vision of Christ</b></div>
+      <div style="--n:2"><span>2</span><span>3</span><b>seven churches</b></div>
+      <div class="now" style="--n:2"><span class="here">4</span><span>5</span><b>the throne and the Lamb</b></div>
+      <div style="--n:11"><span>6</span><span>7</span><span>8</span><span>9</span><span>10</span><span>11</span><span>12</span><span>13</span><span>14</span><span>15</span><span>16</span><b>seals, trumpets, bowls</b></div>
+      <div style="--n:2"><span>17</span><span>18</span><b>Babylon falls</b></div>
+      <div style="--n:2"><span>19</span><span>20</span><b>Christ returns and reigns</b></div>
+      <div style="--n:2"><span>21</span><span>22</span><b>all things new</b></div>
+    </div>
+    <p class="note step">Chapters 2 and 3 were on earth: seven struggling churches. Chapter 3 ended with a promise to sit with Christ <em>“in his throne.”</em></p>
+    <p class="note step">Now John is taken up to see that throne. Before the storms of chapters 6 to 16, God shows him who is in charge.</p>
+  </div>
+</section>
+
+<!-- ======================= PART ONE: A DOOR OPENED ======================= -->
+<section class="slide part">
+  <div class="inner">
+    <p class="part-n rise">Part one</p>
+    <h2 class="rise" style="--d:1">A door opened in heaven</h2>
+    <p class="range rise" style="--d:2">Verses 1–3</p>
+    <div class="rule"></div>
+    <p class="hook rise" style="--d:4">The first thing John sees in heaven isn't a calendar of the end. It's a throne, and Someone on it.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="1-2" data-hl="a door was opened in heaven|Come up hither|a throne was set in heaven, and one sat on the throne"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <div class="split">
+      <div class="stage">
+        <svg class="rv04-doors" viewBox="0 0 600 300" role="img" aria-label="Two doors. On the left, at night on earth, a closed door with rings of knocking going out from it: Revelation 3:20, I stand at the door. On the right, on a step, high in the sky a door stands open with light pouring down to a man below: Revelation 4:1, Come up hither.">
+          <rect class="rv04-night" x="0" y="0" width="292" height="300" rx="10"/>
+          <path class="rv04-wall" d="M56 92 L145 40 L234 92 Z"/>
+          <rect class="rv04-wall" x="70" y="90" width="150" height="180"/>
+          <rect class="rv04-shut" x="118" y="160" width="54" height="110"/>
+          <circle class="rv04-ring" style="--k:0" cx="120" cy="212" r="22"/><circle class="rv04-ring" style="--k:1" cx="120" cy="212" r="22"/><circle class="rv04-ring" style="--k:2" cx="120" cy="212" r="22"/>
+          <text class="rv04-ref" x="146" y="24" text-anchor="middle">REVELATION 3:20</text>
+          <text class="rv04-say" x="146" y="292" text-anchor="middle">“I stand at the door”</text>
+          <g class="rv04-right">
+            <rect class="rv04-night" x="308" y="0" width="292" height="300" rx="10"/>
+            <ellipse class="rv04-cloud" cx="410" cy="112" rx="70" ry="16"/><ellipse class="rv04-cloud" cx="500" cy="106" rx="60" ry="14"/>
+            <path class="rv04-beam" d="M430 104 L478 104 L560 268 L360 268 Z"/>
+            <rect class="rv04-open" x="430" y="40" width="48" height="66"/><path class="rv04-shut" d="M430 40 L414 46 L414 112 L430 106 Z"/>
+            <g class="rv04-man"><circle cx="455" cy="226" r="7" style="fill:var(--glow);stroke:none"/><path d="M455 236 V 258 M455 244 L 442 232 M455 244 L 468 232 M455 258 L 448 276 M455 258 L 462 276"/></g>
+            <text class="rv04-ref" x="454" y="24" text-anchor="middle">REVELATION 4:1</text>
+            <text class="rv04-say" x="454" y="292" text-anchor="middle">“Come up hither”</text>
+          </g>
+        </svg>
+      </div>
+      <div>
+        <h2 class="rise" style="--d:1">Two doors</h2>
+        <p class="note rise" style="--d:2">At the end of chapter 3, Christ stood outside a man's door and knocked: <em>“if any man… open the door, I will come in.”</em></p>
+        <p class="note step rv04-up">Now a door opens the other way: heaven's door, and a voice like a trumpet: <em>“Come up hither.”</em></p>
+        <p class="note step">Open your door to Him, and one day He opens His to you. The man who lets Christ in will be brought in.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise">“Come up hither”</h2>
+    <p class="note rise" style="--d:1">Christ had told John to write <em>“the things which thou hast seen, and the things which are, and the things which shall be hereafter”</em> (1:19). Chapters 2–3 were <em>“the things which are.”</em> Now: <em>“things which must be hereafter.”</em></p>
+    <div class="columns">
+      <div class="col step"><p class="who">many teachers</p><h3>A picture of the church caught up</h3><p>After chapter 3 the church isn't named on earth again until the last chapter. They see John's call as a picture of believers taken up before the troubles.</p></div>
+      <div class="col step"><p class="who">others</p><h3>John's own call</h3><p>They read it simply as John being shown heaven in a vision, with no timetable in it.</p></div>
+    </div>
+    <p class="note step">Good Baptist teachers hold both. Plain either way: the One who says <em>“come up”</em> is in control of everything that follows.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="3" data-hl="like a jasper and a sardine stone|a rainbow round about the throne, in sight like unto an emerald"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <div class="split">
+      <div class="stage">
+        <svg class="rv04-room" viewBox="0 0 640 430" role="img" aria-label="The throne room at night. In the middle a throne, and on it a blaze of light: clear like jasper, with a red edge like sardine stone. On a step, a green rainbow appears all the way round the throne.">
+<rect class="rv04-night" x="0" y="0" width="640" height="430" rx="12"/>
+<g class="rv04-lv rv04-wait rv04-w2"><ellipse class="rv04-bowglow" cx="320" cy="190" rx="104" ry="94"/><ellipse class="rv04-bow" cx="320" cy="190" rx="104" ry="94"/><text class="rv04-lab" x="320" y="84" text-anchor="middle">“a rainbow… like unto an emerald”</text></g>
+<g class="rv04-lv"><circle class="rv04-ray" cx="320" cy="172" r="62"/><path class="rv04-seat" d="M292 150 h56 v58 h10 v40 h-76 v-40 h10 z"/><circle class="rv04-sard" cx="320" cy="172" r="40"/><circle class="rv04-jasper" cx="320" cy="172" r="33"/></g>
+</svg>
+      </div>
+      <div>
+        <h2 class="rise" style="--d:1">One sat on the throne</h2>
+        <p class="note rise" style="--d:2">John doesn't describe a face or a body. He can only reach for jewels: <em>jasper</em>, brilliant and clear as crystal (21:11), and <em>sardine</em>, a deep blood-red stone.</p>
+        <p class="note step">Many teachers point out that a sardius was the first stone on the high priest's breastplate and a jasper the last (Exodus 28:17–20): God, from first to last.</p>
+        <p class="note step rv04-go2">And round the whole throne, a rainbow, green like an emerald.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise">A throne wrapped in a promise</h2>
+    <blockquote class="quote rise" style="--d:1"><p>“I do set my bow in the cloud, and it shall be for a token of a covenant between me and the earth.”</p><cite>Genesis 9:13</cite></blockquote>
+    <p class="note step">After the flood, God hung His bow in the sky as a promise: He would never again destroy the earth by water. Ezekiel saw the same bow around God's glory (Ezekiel 1:28).</p>
+    <p class="note step">This is the throne that will judge the world in the chapters ahead, and it is circled by a promise. God's judgment never cancels His faithfulness. Mercy goes all the way around.</p>
+    <blockquote class="quote step"><p>“No man hath seen God at any time; the only begotten Son, which is in the bosom of the Father, he hath declared him.”</p><cite>John 1:18</cite></blockquote>
+  </div>
+</section>
+
+<!-- ======================= PART TWO: ROUND ABOUT THE THRONE ======================= -->
+<section class="slide part">
+  <div class="inner">
+    <p class="part-n rise">Part two</p>
+    <h2 class="rise" style="--d:1">Round about the throne</h2>
+    <p class="range rise" style="--d:2">Verses 4–8</p>
+    <div class="rule"></div>
+    <p class="hook rise" style="--d:4">Elders, fire, a sea like glass, and four living creatures who never stop saying one word: holy.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="4-5" data-hl="four and twenty elders sitting, clothed in white raiment; and they had on their heads crowns of gold|seven lamps of fire burning before the throne, which are the seven Spirits of God"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <div class="split">
+      <div class="stage">
+        <svg class="rv04-room" viewBox="0 0 640 430" role="img" aria-label="The throne with its rainbow. On a step, twenty-four elders appear on seats in a great ring around it, dressed in white, each with a gold crown.">
+<rect class="rv04-night" x="0" y="0" width="640" height="430" rx="12"/>
+<g class="rv04-lv"><ellipse class="rv04-bowglow" cx="320" cy="190" rx="104" ry="94"/><ellipse class="rv04-bow" cx="320" cy="190" rx="104" ry="94"/><text class="rv04-lab" x="320" y="84" text-anchor="middle">“a rainbow… like unto an emerald”</text></g>
+<g class="rv04-lv"><circle class="rv04-ray" cx="320" cy="172" r="62"/><path class="rv04-seat" d="M292 150 h56 v58 h10 v40 h-76 v-40 h10 z"/><circle class="rv04-sard" cx="320" cy="172" r="40"/><circle class="rv04-jasper" cx="320" cy="172" r="33"/></g>
+<g class="rv04-lv rv04-wait rv04-w3"><g class="rv04-elder" style="--k:0"><rect class="rv04-chair" x="118.3" y="311.9" width="18" height="16" rx="2"/><path class="rv04-robe" d="M120.3 327.9 L127.3 313.9 L134.3 327.9 Z"/><circle class="rv04-head" cx="127.3" cy="309.9" r="4.5"/></g><path class="rv04-crown" style="--k:0;--dx:132.9;--dy:-38.9" d="M121.3 304.9 v-6 l3 3 l3 -5 l3 5 l3 -3 v6 z"/><g class="rv04-elder" style="--k:1"><rect class="rv04-chair" x="78.0" y="287.7" width="18" height="16" rx="2"/><path class="rv04-robe" d="M80.0 303.7 L87.0 289.7 L94.0 303.7 Z"/><circle class="rv04-head" cx="87.0" cy="285.7" r="4.5"/></g><path class="rv04-crown" style="--k:1;--dx:178.4;--dy:-19.7" d="M81.0 280.7 v-6 l3 3 l3 -5 l3 5 l3 -3 v6 z"/><g class="rv04-elder" style="--k:2"><rect class="rv04-chair" x="47.9" y="259.5" width="18" height="16" rx="2"/><path class="rv04-robe" d="M49.9 275.5 L56.9 261.5 L63.9 275.5 Z"/><circle class="rv04-head" cx="56.9" cy="257.5" r="4.5"/></g><path class="rv04-crown" style="--k:2;--dx:213.7;--dy:13.5" d="M50.9 252.5 v-6 l3 3 l3 -5 l3 5 l3 -3 v6 z"/><g class="rv04-elder" style="--k:3"><rect class="rv04-chair" x="29.3" y="228.4" width="18" height="16" rx="2"/><path class="rv04-robe" d="M31.3 244.4 L38.3 230.4 L45.3 244.4 Z"/><circle class="rv04-head" cx="38.3" cy="226.4" r="4.5"/></g><path class="rv04-crown" style="--k:3;--dx:237.5;--dy:39.6" d="M32.3 221.4 v-6 l3 3 l3 -5 l3 5 l3 -3 v6 z"/><g class="rv04-elder" style="--k:4"><rect class="rv04-chair" x="23.0" y="196.0" width="18" height="16" rx="2"/><path class="rv04-robe" d="M25.0 212.0 L32.0 198.0 L39.0 212.0 Z"/><circle class="rv04-head" cx="32.0" cy="194.0" r="4.5"/></g><path class="rv04-crown" style="--k:4;--dx:249.0;--dy:77.0" d="M26.0 189.0 v-6 l3 3 l3 -5 l3 5 l3 -3 v6 z"/><g class="rv04-elder" style="--k:5"><rect class="rv04-chair" x="29.3" y="163.6" width="18" height="16" rx="2"/><path class="rv04-robe" d="M31.3 179.6 L38.3 165.6 L45.3 179.6 Z"/><circle class="rv04-head" cx="38.3" cy="161.6" r="4.5"/></g><path class="rv04-crown" style="--k:5;--dx:247.9;--dy:104.4" d="M32.3 156.6 v-6 l3 3 l3 -5 l3 5 l3 -3 v6 z"/><g class="rv04-elder" style="--k:6"><rect class="rv04-chair" x="47.9" y="132.5" width="18" height="16" rx="2"/><path class="rv04-robe" d="M49.9 148.5 L56.9 134.5 L63.9 148.5 Z"/><circle class="rv04-head" cx="56.9" cy="130.5" r="4.5"/></g><path class="rv04-crown" style="--k:6;--dx:234.5;--dy:140.5" d="M50.9 125.5 v-6 l3 3 l3 -5 l3 5 l3 -3 v6 z"/><g class="rv04-elder" style="--k:7"><rect class="rv04-chair" x="78.0" y="104.3" width="18" height="16" rx="2"/><path class="rv04-robe" d="M80.0 120.3 L87.0 106.3 L94.0 120.3 Z"/><circle class="rv04-head" cx="87.0" cy="102.3" r="4.5"/></g><path class="rv04-crown" style="--k:7;--dx:209.6;--dy:163.7" d="M81.0 97.3 v-6 l3 3 l3 -5 l3 5 l3 -3 v6 z"/><g class="rv04-elder" style="--k:8"><rect class="rv04-chair" x="118.3" y="80.1" width="18" height="16" rx="2"/><path class="rv04-robe" d="M120.3 96.1 L127.3 82.1 L134.3 96.1 Z"/><circle class="rv04-head" cx="127.3" cy="78.1" r="4.5"/></g><path class="rv04-crown" style="--k:8;--dx:174.5;--dy:192.9" d="M121.3 73.1 v-6 l3 3 l3 -5 l3 5 l3 -3 v6 z"/><g class="rv04-elder" style="--k:9"><rect class="rv04-chair" x="167.0" y="60.9" width="18" height="16" rx="2"/><path class="rv04-robe" d="M169.0 76.9 L176.0 62.9 L183.0 76.9 Z"/><circle class="rv04-head" cx="176.0" cy="58.9" r="4.5"/></g><path class="rv04-crown" style="--k:9;--dx:131.0;--dy:207.1" d="M170.0 53.9 v-6 l3 3 l3 -5 l3 5 l3 -3 v6 z"/><g class="rv04-elder" style="--k:10"><rect class="rv04-chair" x="222.0" y="47.6" width="18" height="16" rx="2"/><path class="rv04-robe" d="M224.0 63.6 L231.0 49.6 L238.0 63.6 Z"/><circle class="rv04-head" cx="231.0" cy="45.6" r="4.5"/></g><path class="rv04-crown" style="--k:10;--dx:81.2;--dy:225.4" d="M225.0 40.6 v-6 l3 3 l3 -5 l3 5 l3 -3 v6 z"/><g class="rv04-elder" style="--k:11"><rect class="rv04-chair" x="280.9" y="40.9" width="18" height="16" rx="2"/><path class="rv04-robe" d="M282.9 56.9 L289.9 42.9 L296.9 56.9 Z"/><circle class="rv04-head" cx="289.9" cy="38.9" r="4.5"/></g><path class="rv04-crown" style="--k:11;--dx:27.5;--dy:227.1" d="M283.9 33.9 v-6 l3 3 l3 -5 l3 5 l3 -3 v6 z"/><g class="rv04-elder" style="--k:12"><rect class="rv04-chair" x="341.1" y="40.9" width="18" height="16" rx="2"/><path class="rv04-robe" d="M343.1 56.9 L350.1 42.9 L357.1 56.9 Z"/><circle class="rv04-head" cx="350.1" cy="38.9" r="4.5"/></g><path class="rv04-crown" style="--k:12;--dx:-27.5;--dy:232.1" d="M344.1 33.9 v-6 l3 3 l3 -5 l3 5 l3 -3 v6 z"/><g class="rv04-elder" style="--k:13"><rect class="rv04-chair" x="400.0" y="47.6" width="18" height="16" rx="2"/><path class="rv04-robe" d="M402.0 63.6 L409.0 49.6 L416.0 63.6 Z"/><circle class="rv04-head" cx="409.0" cy="45.6" r="4.5"/></g><path class="rv04-crown" style="--k:13;--dx:-81.2;--dy:220.4" d="M403.0 40.6 v-6 l3 3 l3 -5 l3 5 l3 -3 v6 z"/><g class="rv04-elder" style="--k:14"><rect class="rv04-chair" x="455.0" y="60.9" width="18" height="16" rx="2"/><path class="rv04-robe" d="M457.0 76.9 L464.0 62.9 L471.0 76.9 Z"/><circle class="rv04-head" cx="464.0" cy="58.9" r="4.5"/></g><path class="rv04-crown" style="--k:14;--dx:-131.0;--dy:212.1" d="M458.0 53.9 v-6 l3 3 l3 -5 l3 5 l3 -3 v6 z"/><g class="rv04-elder" style="--k:15"><rect class="rv04-chair" x="503.7" y="80.1" width="18" height="16" rx="2"/><path class="rv04-robe" d="M505.7 96.1 L512.7 82.1 L519.7 96.1 Z"/><circle class="rv04-head" cx="512.7" cy="78.1" r="4.5"/></g><path class="rv04-crown" style="--k:15;--dx:-174.5;--dy:187.9" d="M506.7 73.1 v-6 l3 3 l3 -5 l3 5 l3 -3 v6 z"/><g class="rv04-elder" style="--k:16"><rect class="rv04-chair" x="544.0" y="104.3" width="18" height="16" rx="2"/><path class="rv04-robe" d="M546.0 120.3 L553.0 106.3 L560.0 120.3 Z"/><circle class="rv04-head" cx="553.0" cy="102.3" r="4.5"/></g><path class="rv04-crown" style="--k:16;--dx:-209.6;--dy:168.7" d="M547.0 97.3 v-6 l3 3 l3 -5 l3 5 l3 -3 v6 z"/><g class="rv04-elder" style="--k:17"><rect class="rv04-chair" x="574.1" y="132.5" width="18" height="16" rx="2"/><path class="rv04-robe" d="M576.1 148.5 L583.1 134.5 L590.1 148.5 Z"/><circle class="rv04-head" cx="583.1" cy="130.5" r="4.5"/></g><path class="rv04-crown" style="--k:17;--dx:-234.5;--dy:135.5" d="M577.1 125.5 v-6 l3 3 l3 -5 l3 5 l3 -3 v6 z"/><g class="rv04-elder" style="--k:18"><rect class="rv04-chair" x="592.7" y="163.6" width="18" height="16" rx="2"/><path class="rv04-robe" d="M594.7 179.6 L601.7 165.6 L608.7 179.6 Z"/><circle class="rv04-head" cx="601.7" cy="161.6" r="4.5"/></g><path class="rv04-crown" style="--k:18;--dx:-247.9;--dy:109.4" d="M595.7 156.6 v-6 l3 3 l3 -5 l3 5 l3 -3 v6 z"/><g class="rv04-elder" style="--k:19"><rect class="rv04-chair" x="599.0" y="196.0" width="18" height="16" rx="2"/><path class="rv04-robe" d="M601.0 212.0 L608.0 198.0 L615.0 212.0 Z"/><circle class="rv04-head" cx="608.0" cy="194.0" r="4.5"/></g><path class="rv04-crown" style="--k:19;--dx:-249.0;--dy:72.0" d="M602.0 189.0 v-6 l3 3 l3 -5 l3 5 l3 -3 v6 z"/><g class="rv04-elder" style="--k:20"><rect class="rv04-chair" x="592.7" y="228.4" width="18" height="16" rx="2"/><path class="rv04-robe" d="M594.7 244.4 L601.7 230.4 L608.7 244.4 Z"/><circle class="rv04-head" cx="601.7" cy="226.4" r="4.5"/></g><path class="rv04-crown" style="--k:20;--dx:-237.5;--dy:44.6" d="M595.7 221.4 v-6 l3 3 l3 -5 l3 5 l3 -3 v6 z"/><g class="rv04-elder" style="--k:21"><rect class="rv04-chair" x="574.1" y="259.5" width="18" height="16" rx="2"/><path class="rv04-robe" d="M576.1 275.5 L583.1 261.5 L590.1 275.5 Z"/><circle class="rv04-head" cx="583.1" cy="257.5" r="4.5"/></g><path class="rv04-crown" style="--k:21;--dx:-213.7;--dy:8.5" d="M577.1 252.5 v-6 l3 3 l3 -5 l3 5 l3 -3 v6 z"/><g class="rv04-elder" style="--k:22"><rect class="rv04-chair" x="544.0" y="287.7" width="18" height="16" rx="2"/><path class="rv04-robe" d="M546.0 303.7 L553.0 289.7 L560.0 303.7 Z"/><circle class="rv04-head" cx="553.0" cy="285.7" r="4.5"/></g><path class="rv04-crown" style="--k:22;--dx:-178.4;--dy:-14.7" d="M547.0 280.7 v-6 l3 3 l3 -5 l3 5 l3 -3 v6 z"/><g class="rv04-elder" style="--k:23"><rect class="rv04-chair" x="503.7" y="311.9" width="18" height="16" rx="2"/><path class="rv04-robe" d="M505.7 327.9 L512.7 313.9 L519.7 327.9 Z"/><circle class="rv04-head" cx="512.7" cy="309.9" r="4.5"/></g><path class="rv04-crown" style="--k:23;--dx:-132.9;--dy:-43.9" d="M506.7 304.9 v-6 l3 3 l3 -5 l3 5 l3 -3 v6 z"/><text class="rv04-lab" x="18" y="26">“four and twenty elders”</text></g>
+</svg>
+      </div>
+      <div>
+        <h2 class="rise" style="--d:1">Twenty-four elders</h2>
+        <p class="note step rv04-go3">Seated, in white, crowned with gold, all around the throne.</p>
+        <p class="note step">Who are they? Teachers differ. Many Baptist teachers see the redeemed, the church in heaven: white raiment, crowns and thrones are just what Christ promised the overcomers (2:10; 3:5; 3:21). Others see angels, or the twelve tribes and twelve apostles together (21:12–14).</p>
+        <p class="note step">Either way, what they <em>do</em> is plain, and we'll see it at the end: they worship.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <div class="split">
+      <div class="stage">
+        <svg class="rv04-room" viewBox="0 0 640 430" role="img" aria-label="The throne, the rainbow and the elders. On a step, lightning flashes out from the throne. On the next, seven lamps of fire burn in front of it.">
+<rect class="rv04-night" x="0" y="0" width="640" height="430" rx="12"/>
+<g class="rv04-lv"><ellipse class="rv04-bowglow" cx="320" cy="190" rx="104" ry="94"/><ellipse class="rv04-bow" cx="320" cy="190" rx="104" ry="94"/><text class="rv04-lab" x="320" y="84" text-anchor="middle">“a rainbow… like unto an emerald”</text></g>
+<g class="rv04-lv rv04-wait rv04-w4"><path class="rv04-bolt" style="--at:0s" d="M296 160 L262 146 L272 138 L236 124"/><path class="rv04-bolt" style="--at:1.1s" d="M344 160 L378 146 L368 138 L404 124"/><path class="rv04-bolt" style="--at:2.2s" d="M290 222 L246 252 L258 256 L214 284"/><path class="rv04-bolt" style="--at:0.6s" d="M350 222 L394 250 L382 254 L428 282"/><text class="rv04-lab" x="622" y="26" text-anchor="end">“lightnings and thunderings and voices”</text></g>
+<g class="rv04-lv"><circle class="rv04-ray" cx="320" cy="172" r="62"/><path class="rv04-seat" d="M292 150 h56 v58 h10 v40 h-76 v-40 h10 z"/><circle class="rv04-sard" cx="320" cy="172" r="40"/><circle class="rv04-jasper" cx="320" cy="172" r="33"/></g>
+<g class="rv04-lv rv04-wait rv04-w5"><g class="rv04-lamp" style="--k:0"><path class="rv04-flame" d="M236 306 c-6 -8 -2 -14 0 -20 c2 6 6 12 0 20 z"/><path class="rv04-bowl" d="M228 306 h16 l-3 6 h-10 z"/></g><g class="rv04-lamp" style="--k:1"><path class="rv04-flame" d="M264 308 c-6 -8 -2 -14 0 -20 c2 6 6 12 0 20 z"/><path class="rv04-bowl" d="M256 308 h16 l-3 6 h-10 z"/></g><g class="rv04-lamp" style="--k:2"><path class="rv04-flame" d="M292 310 c-6 -8 -2 -14 0 -20 c2 6 6 12 0 20 z"/><path class="rv04-bowl" d="M284 310 h16 l-3 6 h-10 z"/></g><g class="rv04-lamp" style="--k:3"><path class="rv04-flame" d="M320 312 c-6 -8 -2 -14 0 -20 c2 6 6 12 0 20 z"/><path class="rv04-bowl" d="M312 312 h16 l-3 6 h-10 z"/></g><g class="rv04-lamp" style="--k:4"><path class="rv04-flame" d="M348 310 c-6 -8 -2 -14 0 -20 c2 6 6 12 0 20 z"/><path class="rv04-bowl" d="M340 310 h16 l-3 6 h-10 z"/></g><g class="rv04-lamp" style="--k:5"><path class="rv04-flame" d="M376 308 c-6 -8 -2 -14 0 -20 c2 6 6 12 0 20 z"/><path class="rv04-bowl" d="M368 308 h16 l-3 6 h-10 z"/></g><g class="rv04-lamp" style="--k:6"><path class="rv04-flame" d="M404 306 c-6 -8 -2 -14 0 -20 c2 6 6 12 0 20 z"/><path class="rv04-bowl" d="M396 306 h16 l-3 6 h-10 z"/></g><text class="rv04-lab" x="320" y="346" text-anchor="middle">“seven lamps of fire”</text></g>
+<g class="rv04-lv"><g class="rv04-elder" style="--k:0"><rect class="rv04-chair" x="118.3" y="311.9" width="18" height="16" rx="2"/><path class="rv04-robe" d="M120.3 327.9 L127.3 313.9 L134.3 327.9 Z"/><circle class="rv04-head" cx="127.3" cy="309.9" r="4.5"/></g><path class="rv04-crown" style="--k:0;--dx:132.9;--dy:-38.9" d="M121.3 304.9 v-6 l3 3 l3 -5 l3 5 l3 -3 v6 z"/><g class="rv04-elder" style="--k:1"><rect class="rv04-chair" x="78.0" y="287.7" width="18" height="16" rx="2"/><path class="rv04-robe" d="M80.0 303.7 L87.0 289.7 L94.0 303.7 Z"/><circle class="rv04-head" cx="87.0" cy="285.7" r="4.5"/></g><path class="rv04-crown" style="--k:1;--dx:178.4;--dy:-19.7" d="M81.0 280.7 v-6 l3 3 l3 -5 l3 5 l3 -3 v6 z"/><g class="rv04-elder" style="--k:2"><rect class="rv04-chair" x="47.9" y="259.5" width="18" height="16" rx="2"/><path class="rv04-robe" d="M49.9 275.5 L56.9 261.5 L63.9 275.5 Z"/><circle class="rv04-head" cx="56.9" cy="257.5" r="4.5"/></g><path class="rv04-crown" style="--k:2;--dx:213.7;--dy:13.5" d="M50.9 252.5 v-6 l3 3 l3 -5 l3 5 l3 -3 v6 z"/><g class="rv04-elder" style="--k:3"><rect class="rv04-chair" x="29.3" y="228.4" width="18" height="16" rx="2"/><path class="rv04-robe" d="M31.3 244.4 L38.3 230.4 L45.3 244.4 Z"/><circle class="rv04-head" cx="38.3" cy="226.4" r="4.5"/></g><path class="rv04-crown" style="--k:3;--dx:237.5;--dy:39.6" d="M32.3 221.4 v-6 l3 3 l3 -5 l3 5 l3 -3 v6 z"/><g class="rv04-elder" style="--k:4"><rect class="rv04-chair" x="23.0" y="196.0" width="18" height="16" rx="2"/><path class="rv04-robe" d="M25.0 212.0 L32.0 198.0 L39.0 212.0 Z"/><circle class="rv04-head" cx="32.0" cy="194.0" r="4.5"/></g><path class="rv04-crown" style="--k:4;--dx:249.0;--dy:77.0" d="M26.0 189.0 v-6 l3 3 l3 -5 l3 5 l3 -3 v6 z"/><g class="rv04-elder" style="--k:5"><rect class="rv04-chair" x="29.3" y="163.6" width="18" height="16" rx="2"/><path class="rv04-robe" d="M31.3 179.6 L38.3 165.6 L45.3 179.6 Z"/><circle class="rv04-head" cx="38.3" cy="161.6" r="4.5"/></g><path class="rv04-crown" style="--k:5;--dx:247.9;--dy:104.4" d="M32.3 156.6 v-6 l3 3 l3 -5 l3 5 l3 -3 v6 z"/><g class="rv04-elder" style="--k:6"><rect class="rv04-chair" x="47.9" y="132.5" width="18" height="16" rx="2"/><path class="rv04-robe" d="M49.9 148.5 L56.9 134.5 L63.9 148.5 Z"/><circle class="rv04-head" cx="56.9" cy="130.5" r="4.5"/></g><path class="rv04-crown" style="--k:6;--dx:234.5;--dy:140.5" d="M50.9 125.5 v-6 l3 3 l3 -5 l3 5 l3 -3 v6 z"/><g class="rv04-elder" style="--k:7"><rect class="rv04-chair" x="78.0" y="104.3" width="18" height="16" rx="2"/><path class="rv04-robe" d="M80.0 120.3 L87.0 106.3 L94.0 120.3 Z"/><circle class="rv04-head" cx="87.0" cy="102.3" r="4.5"/></g><path class="rv04-crown" style="--k:7;--dx:209.6;--dy:163.7" d="M81.0 97.3 v-6 l3 3 l3 -5 l3 5 l3 -3 v6 z"/><g class="rv04-elder" style="--k:8"><rect class="rv04-chair" x="118.3" y="80.1" width="18" height="16" rx="2"/><path class="rv04-robe" d="M120.3 96.1 L127.3 82.1 L134.3 96.1 Z"/><circle class="rv04-head" cx="127.3" cy="78.1" r="4.5"/></g><path class="rv04-crown" style="--k:8;--dx:174.5;--dy:192.9" d="M121.3 73.1 v-6 l3 3 l3 -5 l3 5 l3 -3 v6 z"/><g class="rv04-elder" style="--k:9"><rect class="rv04-chair" x="167.0" y="60.9" width="18" height="16" rx="2"/><path class="rv04-robe" d="M169.0 76.9 L176.0 62.9 L183.0 76.9 Z"/><circle class="rv04-head" cx="176.0" cy="58.9" r="4.5"/></g><path class="rv04-crown" style="--k:9;--dx:131.0;--dy:207.1" d="M170.0 53.9 v-6 l3 3 l3 -5 l3 5 l3 -3 v6 z"/><g class="rv04-elder" style="--k:10"><rect class="rv04-chair" x="222.0" y="47.6" width="18" height="16" rx="2"/><path class="rv04-robe" d="M224.0 63.6 L231.0 49.6 L238.0 63.6 Z"/><circle class="rv04-head" cx="231.0" cy="45.6" r="4.5"/></g><path class="rv04-crown" style="--k:10;--dx:81.2;--dy:225.4" d="M225.0 40.6 v-6 l3 3 l3 -5 l3 5 l3 -3 v6 z"/><g class="rv04-elder" style="--k:11"><rect class="rv04-chair" x="280.9" y="40.9" width="18" height="16" rx="2"/><path class="rv04-robe" d="M282.9 56.9 L289.9 42.9 L296.9 56.9 Z"/><circle class="rv04-head" cx="289.9" cy="38.9" r="4.5"/></g><path class="rv04-crown" style="--k:11;--dx:27.5;--dy:227.1" d="M283.9 33.9 v-6 l3 3 l3 -5 l3 5 l3 -3 v6 z"/><g class="rv04-elder" style="--k:12"><rect class="rv04-chair" x="341.1" y="40.9" width="18" height="16" rx="2"/><path class="rv04-robe" d="M343.1 56.9 L350.1 42.9 L357.1 56.9 Z"/><circle class="rv04-head" cx="350.1" cy="38.9" r="4.5"/></g><path class="rv04-crown" style="--k:12;--dx:-27.5;--dy:232.1" d="M344.1 33.9 v-6 l3 3 l3 -5 l3 5 l3 -3 v6 z"/><g class="rv04-elder" style="--k:13"><rect class="rv04-chair" x="400.0" y="47.6" width="18" height="16" rx="2"/><path class="rv04-robe" d="M402.0 63.6 L409.0 49.6 L416.0 63.6 Z"/><circle class="rv04-head" cx="409.0" cy="45.6" r="4.5"/></g><path class="rv04-crown" style="--k:13;--dx:-81.2;--dy:220.4" d="M403.0 40.6 v-6 l3 3 l3 -5 l3 5 l3 -3 v6 z"/><g class="rv04-elder" style="--k:14"><rect class="rv04-chair" x="455.0" y="60.9" width="18" height="16" rx="2"/><path class="rv04-robe" d="M457.0 76.9 L464.0 62.9 L471.0 76.9 Z"/><circle class="rv04-head" cx="464.0" cy="58.9" r="4.5"/></g><path class="rv04-crown" style="--k:14;--dx:-131.0;--dy:212.1" d="M458.0 53.9 v-6 l3 3 l3 -5 l3 5 l3 -3 v6 z"/><g class="rv04-elder" style="--k:15"><rect class="rv04-chair" x="503.7" y="80.1" width="18" height="16" rx="2"/><path class="rv04-robe" d="M505.7 96.1 L512.7 82.1 L519.7 96.1 Z"/><circle class="rv04-head" cx="512.7" cy="78.1" r="4.5"/></g><path class="rv04-crown" style="--k:15;--dx:-174.5;--dy:187.9" d="M506.7 73.1 v-6 l3 3 l3 -5 l3 5 l3 -3 v6 z"/><g class="rv04-elder" style="--k:16"><rect class="rv04-chair" x="544.0" y="104.3" width="18" height="16" rx="2"/><path class="rv04-robe" d="M546.0 120.3 L553.0 106.3 L560.0 120.3 Z"/><circle class="rv04-head" cx="553.0" cy="102.3" r="4.5"/></g><path class="rv04-crown" style="--k:16;--dx:-209.6;--dy:168.7" d="M547.0 97.3 v-6 l3 3 l3 -5 l3 5 l3 -3 v6 z"/><g class="rv04-elder" style="--k:17"><rect class="rv04-chair" x="574.1" y="132.5" width="18" height="16" rx="2"/><path class="rv04-robe" d="M576.1 148.5 L583.1 134.5 L590.1 148.5 Z"/><circle class="rv04-head" cx="583.1" cy="130.5" r="4.5"/></g><path class="rv04-crown" style="--k:17;--dx:-234.5;--dy:135.5" d="M577.1 125.5 v-6 l3 3 l3 -5 l3 5 l3 -3 v6 z"/><g class="rv04-elder" style="--k:18"><rect class="rv04-chair" x="592.7" y="163.6" width="18" height="16" rx="2"/><path class="rv04-robe" d="M594.7 179.6 L601.7 165.6 L608.7 179.6 Z"/><circle class="rv04-head" cx="601.7" cy="161.6" r="4.5"/></g><path class="rv04-crown" style="--k:18;--dx:-247.9;--dy:109.4" d="M595.7 156.6 v-6 l3 3 l3 -5 l3 5 l3 -3 v6 z"/><g class="rv04-elder" style="--k:19"><rect class="rv04-chair" x="599.0" y="196.0" width="18" height="16" rx="2"/><path class="rv04-robe" d="M601.0 212.0 L608.0 198.0 L615.0 212.0 Z"/><circle class="rv04-head" cx="608.0" cy="194.0" r="4.5"/></g><path class="rv04-crown" style="--k:19;--dx:-249.0;--dy:72.0" d="M602.0 189.0 v-6 l3 3 l3 -5 l3 5 l3 -3 v6 z"/><g class="rv04-elder" style="--k:20"><rect class="rv04-chair" x="592.7" y="228.4" width="18" height="16" rx="2"/><path class="rv04-robe" d="M594.7 244.4 L601.7 230.4 L608.7 244.4 Z"/><circle class="rv04-head" cx="601.7" cy="226.4" r="4.5"/></g><path class="rv04-crown" style="--k:20;--dx:-237.5;--dy:44.6" d="M595.7 221.4 v-6 l3 3 l3 -5 l3 5 l3 -3 v6 z"/><g class="rv04-elder" style="--k:21"><rect class="rv04-chair" x="574.1" y="259.5" width="18" height="16" rx="2"/><path class="rv04-robe" d="M576.1 275.5 L583.1 261.5 L590.1 275.5 Z"/><circle class="rv04-head" cx="583.1" cy="257.5" r="4.5"/></g><path class="rv04-crown" style="--k:21;--dx:-213.7;--dy:8.5" d="M577.1 252.5 v-6 l3 3 l3 -5 l3 5 l3 -3 v6 z"/><g class="rv04-elder" style="--k:22"><rect class="rv04-chair" x="544.0" y="287.7" width="18" height="16" rx="2"/><path class="rv04-robe" d="M546.0 303.7 L553.0 289.7 L560.0 303.7 Z"/><circle class="rv04-head" cx="553.0" cy="285.7" r="4.5"/></g><path class="rv04-crown" style="--k:22;--dx:-178.4;--dy:-14.7" d="M547.0 280.7 v-6 l3 3 l3 -5 l3 5 l3 -3 v6 z"/><g class="rv04-elder" style="--k:23"><rect class="rv04-chair" x="503.7" y="311.9" width="18" height="16" rx="2"/><path class="rv04-robe" d="M505.7 327.9 L512.7 313.9 L519.7 327.9 Z"/><circle class="rv04-head" cx="512.7" cy="309.9" r="4.5"/></g><path class="rv04-crown" style="--k:23;--dx:-132.9;--dy:-43.9" d="M506.7 304.9 v-6 l3 3 l3 -5 l3 5 l3 -3 v6 z"/><text class="rv04-lab" x="18" y="26">“four and twenty elders”</text></g>
+</svg>
+      </div>
+      <div>
+        <h2 class="rise" style="--d:1">Lightning, and seven lamps</h2>
+        <p class="note step rv04-go4"><em>“Lightnings and thunderings and voices”</em>: the sound of Sinai, when God came down to give the law (Exodus 19:16). This is a holy throne.</p>
+        <p class="note step rv04-go5">The seven lamps <em>“are the seven Spirits of God.”</em> Seven is the number of fullness. Many teachers see the one Holy Spirit in all His fullness (Isaiah 11:2; Zechariah 4), burning before the throne.</p>
+        <p class="note step">That same Spirit lives in every believer from the day he is saved. The fire before the throne burns in you.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="slide verse" data-v="6-8" data-hl="a sea of glass like unto crystal|four beasts full of eyes before and behind|Holy, holy, holy, Lord God Almighty, which was, and is, and is to come"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <div class="split">
+      <div class="stage">
+        <svg class="rv04-room" viewBox="0 0 640 430" role="img" aria-label="The throne room. On a step, a sea of glass spreads out before the throne, clear as crystal. On the next, four living creatures appear around the throne, with six wings each and covered with eyes: like a lion, like a calf, with the face of a man, and like a flying eagle.">
+<rect class="rv04-night" x="0" y="0" width="640" height="430" rx="12"/>
+<g class="rv04-lv rv04-wait rv04-w6"><ellipse class="rv04-sea" cx="320" cy="388" rx="235" ry="30"/><path class="rv04-shine" d="M150 380 h60 M440 378 h50 M250 404 h120"/><text class="rv04-lab" x="320" y="393" text-anchor="middle">“a sea of glass like unto crystal”</text></g>
+<g class="rv04-lv"><ellipse class="rv04-bowglow" cx="320" cy="190" rx="104" ry="94"/><ellipse class="rv04-bow" cx="320" cy="190" rx="104" ry="94"/><text class="rv04-lab" x="320" y="84" text-anchor="middle">“a rainbow… like unto an emerald”</text></g>
+<g class="rv04-lv"><path class="rv04-bolt" style="--at:0s" d="M296 160 L262 146 L272 138 L236 124"/><path class="rv04-bolt" style="--at:1.1s" d="M344 160 L378 146 L368 138 L404 124"/><path class="rv04-bolt" style="--at:2.2s" d="M290 222 L246 252 L258 256 L214 284"/><path class="rv04-bolt" style="--at:0.6s" d="M350 222 L394 250 L382 254 L428 282"/><text class="rv04-lab" x="622" y="26" text-anchor="end">“lightnings and thunderings and voices”</text></g>
+<g class="rv04-lv"><circle class="rv04-ray" cx="320" cy="172" r="62"/><path class="rv04-seat" d="M292 150 h56 v58 h10 v40 h-76 v-40 h10 z"/><circle class="rv04-sard" cx="320" cy="172" r="40"/><circle class="rv04-jasper" cx="320" cy="172" r="33"/></g>
+<g class="rv04-lv"><g class="rv04-lamp" style="--k:0"><path class="rv04-flame" d="M236 306 c-6 -8 -2 -14 0 -20 c2 6 6 12 0 20 z"/><path class="rv04-bowl" d="M228 306 h16 l-3 6 h-10 z"/></g><g class="rv04-lamp" style="--k:1"><path class="rv04-flame" d="M264 308 c-6 -8 -2 -14 0 -20 c2 6 6 12 0 20 z"/><path class="rv04-bowl" d="M256 308 h16 l-3 6 h-10 z"/></g><g class="rv04-lamp" style="--k:2"><path class="rv04-flame" d="M292 310 c-6 -8 -2 -14 0 -20 c2 6 6 12 0 20 z"/><path class="rv04-bowl" d="M284 310 h16 l-3 6 h-10 z"/></g><g class="rv04-lamp" style="--k:3"><path class="rv04-flame" d="M320 312 c-6 -8 -2 -14 0 -20 c2 6 6 12 0 20 z"/><path class="rv04-bowl" d="M312 312 h16 l-3 6 h-10 z"/></g><g class="rv04-lamp" style="--k:4"><path class="rv04-flame" d="M348 310 c-6 -8 -2 -14 0 -20 c2 6 6 12 0 20 z"/><path class="rv04-bowl" d="M340 310 h16 l-3 6 h-10 z"/></g><g class="rv04-lamp" style="--k:5"><path class="rv04-flame" d="M376 308 c-6 -8 -2 -14 0 -20 c2 6 6 12 0 20 z"/><path class="rv04-bowl" d="M368 308 h16 l-3 6 h-10 z"/></g><g class="rv04-lamp" style="--k:6"><path class="rv04-flame" d="M404 306 c-6 -8 -2 -14 0 -20 c2 6 6 12 0 20 z"/><path class="rv04-bowl" d="M396 306 h16 l-3 6 h-10 z"/></g><text class="rv04-lab" x="320" y="346" text-anchor="middle">“seven lamps of fire”</text></g>
+<g class="rv04-lv rv04-wait rv04-w7"><g class="rv04-beast" style="--k:0"><ellipse class="rv04-wing" cx="162" cy="100" rx="19" ry="6.5" transform="rotate(62 162 100)"/><ellipse class="rv04-wing" cx="152" cy="114" rx="19" ry="6.5" transform="rotate(18 152 114)"/><ellipse class="rv04-wing" cx="158" cy="129" rx="19" ry="6.5" transform="rotate(-24 158 129)"/><ellipse class="rv04-wing" cx="194" cy="100" rx="19" ry="6.5" transform="rotate(-62 194 100)"/><ellipse class="rv04-wing" cx="204" cy="114" rx="19" ry="6.5" transform="rotate(-18 204 114)"/><ellipse class="rv04-wing" cx="198" cy="129" rx="19" ry="6.5" transform="rotate(24 198 129)"/><circle class="rv04-body" cx="178" cy="116" r="24"/><circle class="rv04-eye" cx="168" cy="107" r="2"/><circle class="rv04-eye" cx="178" cy="103" r="2"/><circle class="rv04-eye" cx="188" cy="107" r="2"/><circle class="rv04-eye" cx="164" cy="116" r="2"/><circle class="rv04-eye" cx="174" cy="113" r="2"/><circle class="rv04-eye" cx="184" cy="114" r="2"/><circle class="rv04-eye" cx="192" cy="117" r="2"/><circle class="rv04-eye" cx="169" cy="125" r="2"/><circle class="rv04-eye" cx="179" cy="124" r="2"/><circle class="rv04-eye" cx="188" cy="126" r="2"/><circle class="rv04-eye" cx="176" cy="132" r="2"/><text class="rv04-lab hot" x="178" y="160" text-anchor="middle">lion</text></g><g class="rv04-beast" style="--k:1"><ellipse class="rv04-wing" cx="446" cy="100" rx="19" ry="6.5" transform="rotate(62 446 100)"/><ellipse class="rv04-wing" cx="436" cy="114" rx="19" ry="6.5" transform="rotate(18 436 114)"/><ellipse class="rv04-wing" cx="442" cy="129" rx="19" ry="6.5" transform="rotate(-24 442 129)"/><ellipse class="rv04-wing" cx="478" cy="100" rx="19" ry="6.5" transform="rotate(-62 478 100)"/><ellipse class="rv04-wing" cx="488" cy="114" rx="19" ry="6.5" transform="rotate(-18 488 114)"/><ellipse class="rv04-wing" cx="482" cy="129" rx="19" ry="6.5" transform="rotate(24 482 129)"/><circle class="rv04-body" cx="462" cy="116" r="24"/><circle class="rv04-eye" cx="452" cy="107" r="2"/><circle class="rv04-eye" cx="462" cy="103" r="2"/><circle class="rv04-eye" cx="472" cy="107" r="2"/><circle class="rv04-eye" cx="448" cy="116" r="2"/><circle class="rv04-eye" cx="458" cy="113" r="2"/><circle class="rv04-eye" cx="468" cy="114" r="2"/><circle class="rv04-eye" cx="476" cy="117" r="2"/><circle class="rv04-eye" cx="453" cy="125" r="2"/><circle class="rv04-eye" cx="463" cy="124" r="2"/><circle class="rv04-eye" cx="472" cy="126" r="2"/><circle class="rv04-eye" cx="460" cy="132" r="2"/><text class="rv04-lab hot" x="462" y="160" text-anchor="middle">calf</text></g><g class="rv04-beast" style="--k:2"><ellipse class="rv04-wing" cx="162" cy="270" rx="19" ry="6.5" transform="rotate(62 162 270)"/><ellipse class="rv04-wing" cx="152" cy="284" rx="19" ry="6.5" transform="rotate(18 152 284)"/><ellipse class="rv04-wing" cx="158" cy="299" rx="19" ry="6.5" transform="rotate(-24 158 299)"/><ellipse class="rv04-wing" cx="194" cy="270" rx="19" ry="6.5" transform="rotate(-62 194 270)"/><ellipse class="rv04-wing" cx="204" cy="284" rx="19" ry="6.5" transform="rotate(-18 204 284)"/><ellipse class="rv04-wing" cx="198" cy="299" rx="19" ry="6.5" transform="rotate(24 198 299)"/><circle class="rv04-body" cx="178" cy="286" r="24"/><circle class="rv04-eye" cx="168" cy="277" r="2"/><circle class="rv04-eye" cx="178" cy="273" r="2"/><circle class="rv04-eye" cx="188" cy="277" r="2"/><circle class="rv04-eye" cx="164" cy="286" r="2"/><circle class="rv04-eye" cx="174" cy="283" r="2"/><circle class="rv04-eye" cx="184" cy="284" r="2"/><circle class="rv04-eye" cx="192" cy="287" r="2"/><circle class="rv04-eye" cx="169" cy="295" r="2"/><circle class="rv04-eye" cx="179" cy="294" r="2"/><circle class="rv04-eye" cx="188" cy="296" r="2"/><circle class="rv04-eye" cx="176" cy="302" r="2"/><text class="rv04-lab hot" x="178" y="252" text-anchor="middle">man</text></g><g class="rv04-beast" style="--k:3"><ellipse class="rv04-wing" cx="446" cy="270" rx="19" ry="6.5" transform="rotate(62 446 270)"/><ellipse class="rv04-wing" cx="436" cy="284" rx="19" ry="6.5" transform="rotate(18 436 284)"/><ellipse class="rv04-wing" cx="442" cy="299" rx="19" ry="6.5" transform="rotate(-24 442 299)"/><ellipse class="rv04-wing" cx="478" cy="270" rx="19" ry="6.5" transform="rotate(-62 478 270)"/><ellipse class="rv04-wing" cx="488" cy="284" rx="19" ry="6.5" transform="rotate(-18 488 284)"/><ellipse class="rv04-wing" cx="482" cy="299" rx="19" ry="6.5" transform="rotate(24 482 299)"/><circle class="rv04-body" cx="462" cy="286" r="24"/><circle class="rv04-eye" cx="452" cy="277" r="2"/><circle class="rv04-eye" cx="462" cy="273" r="2"/><circle class="rv04-eye" cx="472" cy="277" r="2"/><circle class="rv04-eye" cx="448" cy="286" r="2"/><circle class="rv04-eye" cx="458" cy="283" r="2"/><circle class="rv04-eye" cx="468" cy="284" r="2"/><circle class="rv04-eye" cx="476" cy="287" r="2"/><circle class="rv04-eye" cx="453" cy="295" r="2"/><circle class="rv04-eye" cx="463" cy="294" r="2"/><circle class="rv04-eye" cx="472" cy="296" r="2"/><circle class="rv04-eye" cx="460" cy="302" r="2"/><text class="rv04-lab hot" x="462" y="252" text-anchor="middle">flying eagle</text></g></g>
+<g class="rv04-lv"><g class="rv04-elder" style="--k:0"><rect class="rv04-chair" x="118.3" y="311.9" width="18" height="16" rx="2"/><path class="rv04-robe" d="M120.3 327.9 L127.3 313.9 L134.3 327.9 Z"/><circle class="rv04-head" cx="127.3" cy="309.9" r="4.5"/></g><path class="rv04-crown" style="--k:0;--dx:132.9;--dy:-38.9" d="M121.3 304.9 v-6 l3 3 l3 -5 l3 5 l3 -3 v6 z"/><g class="rv04-elder" style="--k:1"><rect class="rv04-chair" x="78.0" y="287.7" width="18" height="16" rx="2"/><path class="rv04-robe" d="M80.0 303.7 L87.0 289.7 L94.0 303.7 Z"/><circle class="rv04-head" cx="87.0" cy="285.7" r="4.5"/></g><path class="rv04-crown" style="--k:1;--dx:178.4;--dy:-19.7" d="M81.0 280.7 v-6 l3 3 l3 -5 l3 5 l3 -3 v6 z"/><g class="rv04-elder" style="--k:2"><rect class="rv04-chair" x="47.9" y="259.5" width="18" height="16" rx="2"/><path class="rv04-robe" d="M49.9 275.5 L56.9 261.5 L63.9 275.5 Z"/><circle class="rv04-head" cx="56.9" cy="257.5" r="4.5"/></g><path class="rv04-crown" style="--k:2;--dx:213.7;--dy:13.5" d="M50.9 252.5 v-6 l3 3 l3 -5 l3 5 l3 -3 v6 z"/><g class="rv04-elder" style="--k:3"><rect class="rv04-chair" x="29.3" y="228.4" width="18" height="16" rx="2"/><path class="rv04-robe" d="M31.3 244.4 L38.3 230.4 L45.3 244.4 Z"/><circle class="rv04-head" cx="38.3" cy="226.4" r="4.5"/></g><path class="rv04-crown" style="--k:3;--dx:237.5;--dy:39.6" d="M32.3 221.4 v-6 l3 3 l3 -5 l3 5 l3 -3 v6 z"/><g class="rv04-elder" style="--k:4"><rect class="rv04-chair" x="23.0" y="196.0" width="18" height="16" rx="2"/><path class="rv04-robe" d="M25.0 212.0 L32.0 198.0 L39.0 212.0 Z"/><circle class="rv04-head" cx="32.0" cy="194.0" r="4.5"/></g><path class="rv04-crown" style="--k:4;--dx:249.0;--dy:77.0" d="M26.0 189.0 v-6 l3 3 l3 -5 l3 5 l3 -3 v6 z"/><g class="rv04-elder" style="--k:5"><rect class="rv04-chair" x="29.3" y="163.6" width="18" height="16" rx="2"/><path class="rv04-robe" d="M31.3 179.6 L38.3 165.6 L45.3 179.6 Z"/><circle class="rv04-head" cx="38.3" cy="161.6" r="4.5"/></g><path class="rv04-crown" style="--k:5;--dx:247.9;--dy:104.4" d="M32.3 156.6 v-6 l3 3 l3 -5 l3 5 l3 -3 v6 z"/><g class="rv04-elder" style="--k:6"><rect class="rv04-chair" x="47.9" y="132.5" width="18" height="16" rx="2"/><path class="rv04-robe" d="M49.9 148.5 L56.9 134.5 L63.9 148.5 Z"/><circle class="rv04-head" cx="56.9" cy="130.5" r="4.5"/></g><path class="rv04-crown" style="--k:6;--dx:234.5;--dy:140.5" d="M50.9 125.5 v-6 l3 3 l3 -5 l3 5 l3 -3 v6 z"/><g class="rv04-elder" style="--k:7"><rect class="rv04-chair" x="78.0" y="104.3" width="18" height="16" rx="2"/><path class="rv04-robe" d="M80.0 120.3 L87.0 106.3 L94.0 120.3 Z"/><circle class="rv04-head" cx="87.0" cy="102.3" r="4.5"/></g><path class="rv04-crown" style="--k:7;--dx:209.6;--dy:163.7" d="M81.0 97.3 v-6 l3 3 l3 -5 l3 5 l3 -3 v6 z"/><g class="rv04-elder" style="--k:8"><rect class="rv04-chair" x="118.3" y="80.1" width="18" height="16" rx="2"/><path class="rv04-robe" d="M120.3 96.1 L127.3 82.1 L134.3 96.1 Z"/><circle class="rv04-head" cx="127.3" cy="78.1" r="4.5"/></g><path class="rv04-crown" style="--k:8;--dx:174.5;--dy:192.9" d="M121.3 73.1 v-6 l3 3 l3 -5 l3 5 l3 -3 v6 z"/><g class="rv04-elder" style="--k:9"><rect class="rv04-chair" x="167.0" y="60.9" width="18" height="16" rx="2"/><path class="rv04-robe" d="M169.0 76.9 L176.0 62.9 L183.0 76.9 Z"/><circle class="rv04-head" cx="176.0" cy="58.9" r="4.5"/></g><path class="rv04-crown" style="--k:9;--dx:131.0;--dy:207.1" d="M170.0 53.9 v-6 l3 3 l3 -5 l3 5 l3 -3 v6 z"/><g class="rv04-elder" style="--k:10"><rect class="rv04-chair" x="222.0" y="47.6" width="18" height="16" rx="2"/><path class="rv04-robe" d="M224.0 63.6 L231.0 49.6 L238.0 63.6 Z"/><circle class="rv04-head" cx="231.0" cy="45.6" r="4.5"/></g><path class="rv04-crown" style="--k:10;--dx:81.2;--dy:225.4" d="M225.0 40.6 v-6 l3 3 l3 -5 l3 5 l3 -3 v6 z"/><g class="rv04-elder" style="--k:11"><rect class="rv04-chair" x="280.9" y="40.9" width="18" height="16" rx="2"/><path class="rv04-robe" d="M282.9 56.9 L289.9 42.9 L296.9 56.9 Z"/><circle class="rv04-head" cx="289.9" cy="38.9" r="4.5"/></g><path class="rv04-crown" style="--k:11;--dx:27.5;--dy:227.1" d="M283.9 33.9 v-6 l3 3 l3 -5 l3 5 l3 -3 v6 z"/><g class="rv04-elder" style="--k:12"><rect class="rv04-chair" x="341.1" y="40.9" width="18" height="16" rx="2"/><path class="rv04-robe" d="M343.1 56.9 L350.1 42.9 L357.1 56.9 Z"/><circle class="rv04-head" cx="350.1" cy="38.9" r="4.5"/></g><path class="rv04-crown" style="--k:12;--dx:-27.5;--dy:232.1" d="M344.1 33.9 v-6 l3 3 l3 -5 l3 5 l3 -3 v6 z"/><g class="rv04-elder" style="--k:13"><rect class="rv04-chair" x="400.0" y="47.6" width="18" height="16" rx="2"/><path class="rv04-robe" d="M402.0 63.6 L409.0 49.6 L416.0 63.6 Z"/><circle class="rv04-head" cx="409.0" cy="45.6" r="4.5"/></g><path class="rv04-crown" style="--k:13;--dx:-81.2;--dy:220.4" d="M403.0 40.6 v-6 l3 3 l3 -5 l3 5 l3 -3 v6 z"/><g class="rv04-elder" style="--k:14"><rect class="rv04-chair" x="455.0" y="60.9" width="18" height="16" rx="2"/><path class="rv04-robe" d="M457.0 76.9 L464.0 62.9 L471.0 76.9 Z"/><circle class="rv04-head" cx="464.0" cy="58.9" r="4.5"/></g><path class="rv04-crown" style="--k:14;--dx:-131.0;--dy:212.1" d="M458.0 53.9 v-6 l3 3 l3 -5 l3 5 l3 -3 v6 z"/><g class="rv04-elder" style="--k:15"><rect class="rv04-chair" x="503.7" y="80.1" width="18" height="16" rx="2"/><path class="rv04-robe" d="M505.7 96.1 L512.7 82.1 L519.7 96.1 Z"/><circle class="rv04-head" cx="512.7" cy="78.1" r="4.5"/></g><path class="rv04-crown" style="--k:15;--dx:-174.5;--dy:187.9" d="M506.7 73.1 v-6 l3 3 l3 -5 l3 5 l3 -3 v6 z"/><g class="rv04-elder" style="--k:16"><rect class="rv04-chair" x="544.0" y="104.3" width="18" height="16" rx="2"/><path class="rv04-robe" d="M546.0 120.3 L553.0 106.3 L560.0 120.3 Z"/><circle class="rv04-head" cx="553.0" cy="102.3" r="4.5"/></g><path class="rv04-crown" style="--k:16;--dx:-209.6;--dy:168.7" d="M547.0 97.3 v-6 l3 3 l3 -5 l3 5 l3 -3 v6 z"/><g class="rv04-elder" style="--k:17"><rect class="rv04-chair" x="574.1" y="132.5" width="18" height="16" rx="2"/><path class="rv04-robe" d="M576.1 148.5 L583.1 134.5 L590.1 148.5 Z"/><circle class="rv04-head" cx="583.1" cy="130.5" r="4.5"/></g><path class="rv04-crown" style="--k:17;--dx:-234.5;--dy:135.5" d="M577.1 125.5 v-6 l3 3 l3 -5 l3 5 l3 -3 v6 z"/><g class="rv04-elder" style="--k:18"><rect class="rv04-chair" x="592.7" y="163.6" width="18" height="16" rx="2"/><path class="rv04-robe" d="M594.7 179.6 L601.7 165.6 L608.7 179.6 Z"/><circle class="rv04-head" cx="601.7" cy="161.6" r="4.5"/></g><path class="rv04-crown" style="--k:18;--dx:-247.9;--dy:109.4" d="M595.7 156.6 v-6 l3 3 l3 -5 l3 5 l3 -3 v6 z"/><g class="rv04-elder" style="--k:19"><rect class="rv04-chair" x="599.0" y="196.0" width="18" height="16" rx="2"/><path class="rv04-robe" d="M601.0 212.0 L608.0 198.0 L615.0 212.0 Z"/><circle class="rv04-head" cx="608.0" cy="194.0" r="4.5"/></g><path class="rv04-crown" style="--k:19;--dx:-249.0;--dy:72.0" d="M602.0 189.0 v-6 l3 3 l3 -5 l3 5 l3 -3 v6 z"/><g class="rv04-elder" style="--k:20"><rect class="rv04-chair" x="592.7" y="228.4" width="18" height="16" rx="2"/><path class="rv04-robe" d="M594.7 244.4 L601.7 230.4 L608.7 244.4 Z"/><circle class="rv04-head" cx="601.7" cy="226.4" r="4.5"/></g><path class="rv04-crown" style="--k:20;--dx:-237.5;--dy:44.6" d="M595.7 221.4 v-6 l3 3 l3 -5 l3 5 l3 -3 v6 z"/><g class="rv04-elder" style="--k:21"><rect class="rv04-chair" x="574.1" y="259.5" width="18" height="16" rx="2"/><path class="rv04-robe" d="M576.1 275.5 L583.1 261.5 L590.1 275.5 Z"/><circle class="rv04-head" cx="583.1" cy="257.5" r="4.5"/></g><path class="rv04-crown" style="--k:21;--dx:-213.7;--dy:8.5" d="M577.1 252.5 v-6 l3 3 l3 -5 l3 5 l3 -3 v6 z"/><g class="rv04-elder" style="--k:22"><rect class="rv04-chair" x="544.0" y="287.7" width="18" height="16" rx="2"/><path class="rv04-robe" d="M546.0 303.7 L553.0 289.7 L560.0 303.7 Z"/><circle class="rv04-head" cx="553.0" cy="285.7" r="4.5"/></g><path class="rv04-crown" style="--k:22;--dx:-178.4;--dy:-14.7" d="M547.0 280.7 v-6 l3 3 l3 -5 l3 5 l3 -3 v6 z"/><g class="rv04-elder" style="--k:23"><rect class="rv04-chair" x="503.7" y="311.9" width="18" height="16" rx="2"/><path class="rv04-robe" d="M505.7 327.9 L512.7 313.9 L519.7 327.9 Z"/><circle class="rv04-head" cx="512.7" cy="309.9" r="4.5"/></g><path class="rv04-crown" style="--k:23;--dx:-132.9;--dy:-43.9" d="M506.7 304.9 v-6 l3 3 l3 -5 l3 5 l3 -3 v6 z"/><text class="rv04-lab" x="18" y="26">“four and twenty elders”</text></g>
+</svg>
+      </div>
+      <div>
+        <h2 class="rise" style="--d:1">A sea of glass, and four beasts</h2>
+        <p class="note step rv04-go6">Before the throne, a sea as still and clear as crystal. Nothing stirs it. Nothing troubles the peace around God.</p>
+        <p class="note step rv04-go7">And four <em>“beasts.”</em> In 1611 a beast meant any living creature, not a monster. These are living ones, full of eyes: nothing escapes God's sight.</p>
+        <p class="note step">Lion, calf, man, eagle: many teachers see the best of creation around its Maker: the strongest, the most patient worker, the wisest, the swiftest.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise">John wasn't the first to see them</h2>
+    <div class="pair">
+      <div class="scroll rise" style="--d:1"><p class="ref">Ezekiel 1:10</p><p class="kjv">As for the likeness of their faces, they four had <mark>the face of a man, and the face of a lion</mark>, on the right side: and they four had <mark>the face of an ox</mark> on the left side; they four also had <mark>the face of an eagle</mark>.</p></div>
+      <div class="scroll step"><p class="ref">Isaiah 6:2–3</p><p class="kjv">Above it stood the seraphims: <mark>each one had six wings</mark>; with twain he covered his face, and with twain he covered his feet, and with twain he did fly. And one cried unto another, and said, <mark>Holy, holy, holy</mark>, is the LORD of hosts: the whole earth is full of his glory.</p></div>
+    </div>
+    <p class="note step">Ezekiel saw their faces; Isaiah heard their song. John sees and hears both. Many teachers take them to be the highest angels, the cherubims and seraphims nearest to God. The Bible explains its own pictures.</p>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <p class="saying rise">“Holy, holy, holy”</p>
+    <p class="note rise" style="--d:1">Day and night, without a break, the creatures closest to God say one thing about Him. Not <em>mighty</em> first. <em>Holy</em>: pure, set apart, wholly other than us.</p>
+    <ol class="timeline" aria-label="Lord God Almighty: which was, and is, and is to come. Three points on a line, all lit: your past, today, and what's ahead.">
+      <li class="lit" style="--k:0"><b>“which was”</b><span>your past</span><small>He was there</small></li>
+      <li class="lit" style="--k:1"><b>“and is”</b><span>today</span><small>He is here</small></li>
+      <li class="lit" style="--k:2"><b>“and is to come”</b><span>what's ahead</span><small>He is already there</small></li>
+    </ol>
+    <p class="note step">There's no part of your story He wasn't there for, and no part of your future He won't be in.</p>
+    <blockquote class="quote step"><p>“Jesus Christ the same yesterday, and to day, and for ever.”</p><cite>Hebrews 13:8</cite></blockquote>
+  </div>
+</section>
+
+<!-- ======================= PART THREE: THOU ART WORTHY ======================= -->
+<section class="slide part">
+  <div class="inner">
+    <p class="part-n rise">Part three</p>
+    <h2 class="rise" style="--d:1">Thou art worthy</h2>
+    <p class="range rise" style="--d:2">Verses 9–11</p>
+    <div class="rule"></div>
+    <p class="hook rise" style="--d:4">The elders take off their crowns and lay them down. Everything they have, He gave.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="9-11" data-hl="cast their crowns before the throne|Thou art worthy, O Lord, to receive glory and honour and power: for thou hast created all things"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <div class="split">
+      <div class="stage">
+        <svg class="rv04-room" viewBox="0 0 640 430" role="img" aria-label="The whole throne room: the throne and rainbow, lightning, seven lamps, the sea of glass, the four living creatures and the twenty-four crowned elders. On a step the elders bow down, and all twenty-four gold crowns fly in and land at the foot of the throne.">
+<rect class="rv04-night" x="0" y="0" width="640" height="430" rx="12"/>
+<g class="rv04-lv"><ellipse class="rv04-sea" cx="320" cy="388" rx="235" ry="30"/><path class="rv04-shine" d="M150 380 h60 M440 378 h50 M250 404 h120"/><text class="rv04-lab" x="320" y="393" text-anchor="middle">“a sea of glass like unto crystal”</text></g>
+<g class="rv04-lv"><ellipse class="rv04-bowglow" cx="320" cy="190" rx="104" ry="94"/><ellipse class="rv04-bow" cx="320" cy="190" rx="104" ry="94"/><text class="rv04-lab" x="320" y="84" text-anchor="middle">“a rainbow… like unto an emerald”</text></g>
+<g class="rv04-lv"><path class="rv04-bolt" style="--at:0s" d="M296 160 L262 146 L272 138 L236 124"/><path class="rv04-bolt" style="--at:1.1s" d="M344 160 L378 146 L368 138 L404 124"/><path class="rv04-bolt" style="--at:2.2s" d="M290 222 L246 252 L258 256 L214 284"/><path class="rv04-bolt" style="--at:0.6s" d="M350 222 L394 250 L382 254 L428 282"/><text class="rv04-lab" x="622" y="26" text-anchor="end">“lightnings and thunderings and voices”</text></g>
+<g class="rv04-lv"><circle class="rv04-ray" cx="320" cy="172" r="62"/><path class="rv04-seat" d="M292 150 h56 v58 h10 v40 h-76 v-40 h10 z"/><circle class="rv04-sard" cx="320" cy="172" r="40"/><circle class="rv04-jasper" cx="320" cy="172" r="33"/></g>
+<g class="rv04-lv"><g class="rv04-lamp" style="--k:0"><path class="rv04-flame" d="M236 306 c-6 -8 -2 -14 0 -20 c2 6 6 12 0 20 z"/><path class="rv04-bowl" d="M228 306 h16 l-3 6 h-10 z"/></g><g class="rv04-lamp" style="--k:1"><path class="rv04-flame" d="M264 308 c-6 -8 -2 -14 0 -20 c2 6 6 12 0 20 z"/><path class="rv04-bowl" d="M256 308 h16 l-3 6 h-10 z"/></g><g class="rv04-lamp" style="--k:2"><path class="rv04-flame" d="M292 310 c-6 -8 -2 -14 0 -20 c2 6 6 12 0 20 z"/><path class="rv04-bowl" d="M284 310 h16 l-3 6 h-10 z"/></g><g class="rv04-lamp" style="--k:3"><path class="rv04-flame" d="M320 312 c-6 -8 -2 -14 0 -20 c2 6 6 12 0 20 z"/><path class="rv04-bowl" d="M312 312 h16 l-3 6 h-10 z"/></g><g class="rv04-lamp" style="--k:4"><path class="rv04-flame" d="M348 310 c-6 -8 -2 -14 0 -20 c2 6 6 12 0 20 z"/><path class="rv04-bowl" d="M340 310 h16 l-3 6 h-10 z"/></g><g class="rv04-lamp" style="--k:5"><path class="rv04-flame" d="M376 308 c-6 -8 -2 -14 0 -20 c2 6 6 12 0 20 z"/><path class="rv04-bowl" d="M368 308 h16 l-3 6 h-10 z"/></g><g class="rv04-lamp" style="--k:6"><path class="rv04-flame" d="M404 306 c-6 -8 -2 -14 0 -20 c2 6 6 12 0 20 z"/><path class="rv04-bowl" d="M396 306 h16 l-3 6 h-10 z"/></g><text class="rv04-lab" x="320" y="346" text-anchor="middle">“seven lamps of fire”</text></g>
+<g class="rv04-lv"><g class="rv04-beast" style="--k:0"><ellipse class="rv04-wing" cx="162" cy="100" rx="19" ry="6.5" transform="rotate(62 162 100)"/><ellipse class="rv04-wing" cx="152" cy="114" rx="19" ry="6.5" transform="rotate(18 152 114)"/><ellipse class="rv04-wing" cx="158" cy="129" rx="19" ry="6.5" transform="rotate(-24 158 129)"/><ellipse class="rv04-wing" cx="194" cy="100" rx="19" ry="6.5" transform="rotate(-62 194 100)"/><ellipse class="rv04-wing" cx="204" cy="114" rx="19" ry="6.5" transform="rotate(-18 204 114)"/><ellipse class="rv04-wing" cx="198" cy="129" rx="19" ry="6.5" transform="rotate(24 198 129)"/><circle class="rv04-body" cx="178" cy="116" r="24"/><circle class="rv04-eye" cx="168" cy="107" r="2"/><circle class="rv04-eye" cx="178" cy="103" r="2"/><circle class="rv04-eye" cx="188" cy="107" r="2"/><circle class="rv04-eye" cx="164" cy="116" r="2"/><circle class="rv04-eye" cx="174" cy="113" r="2"/><circle class="rv04-eye" cx="184" cy="114" r="2"/><circle class="rv04-eye" cx="192" cy="117" r="2"/><circle class="rv04-eye" cx="169" cy="125" r="2"/><circle class="rv04-eye" cx="179" cy="124" r="2"/><circle class="rv04-eye" cx="188" cy="126" r="2"/><circle class="rv04-eye" cx="176" cy="132" r="2"/><text class="rv04-lab hot" x="178" y="160" text-anchor="middle">lion</text></g><g class="rv04-beast" style="--k:1"><ellipse class="rv04-wing" cx="446" cy="100" rx="19" ry="6.5" transform="rotate(62 446 100)"/><ellipse class="rv04-wing" cx="436" cy="114" rx="19" ry="6.5" transform="rotate(18 436 114)"/><ellipse class="rv04-wing" cx="442" cy="129" rx="19" ry="6.5" transform="rotate(-24 442 129)"/><ellipse class="rv04-wing" cx="478" cy="100" rx="19" ry="6.5" transform="rotate(-62 478 100)"/><ellipse class="rv04-wing" cx="488" cy="114" rx="19" ry="6.5" transform="rotate(-18 488 114)"/><ellipse class="rv04-wing" cx="482" cy="129" rx="19" ry="6.5" transform="rotate(24 482 129)"/><circle class="rv04-body" cx="462" cy="116" r="24"/><circle class="rv04-eye" cx="452" cy="107" r="2"/><circle class="rv04-eye" cx="462" cy="103" r="2"/><circle class="rv04-eye" cx="472" cy="107" r="2"/><circle class="rv04-eye" cx="448" cy="116" r="2"/><circle class="rv04-eye" cx="458" cy="113" r="2"/><circle class="rv04-eye" cx="468" cy="114" r="2"/><circle class="rv04-eye" cx="476" cy="117" r="2"/><circle class="rv04-eye" cx="453" cy="125" r="2"/><circle class="rv04-eye" cx="463" cy="124" r="2"/><circle class="rv04-eye" cx="472" cy="126" r="2"/><circle class="rv04-eye" cx="460" cy="132" r="2"/><text class="rv04-lab hot" x="462" y="160" text-anchor="middle">calf</text></g><g class="rv04-beast" style="--k:2"><ellipse class="rv04-wing" cx="162" cy="270" rx="19" ry="6.5" transform="rotate(62 162 270)"/><ellipse class="rv04-wing" cx="152" cy="284" rx="19" ry="6.5" transform="rotate(18 152 284)"/><ellipse class="rv04-wing" cx="158" cy="299" rx="19" ry="6.5" transform="rotate(-24 158 299)"/><ellipse class="rv04-wing" cx="194" cy="270" rx="19" ry="6.5" transform="rotate(-62 194 270)"/><ellipse class="rv04-wing" cx="204" cy="284" rx="19" ry="6.5" transform="rotate(-18 204 284)"/><ellipse class="rv04-wing" cx="198" cy="299" rx="19" ry="6.5" transform="rotate(24 198 299)"/><circle class="rv04-body" cx="178" cy="286" r="24"/><circle class="rv04-eye" cx="168" cy="277" r="2"/><circle class="rv04-eye" cx="178" cy="273" r="2"/><circle class="rv04-eye" cx="188" cy="277" r="2"/><circle class="rv04-eye" cx="164" cy="286" r="2"/><circle class="rv04-eye" cx="174" cy="283" r="2"/><circle class="rv04-eye" cx="184" cy="284" r="2"/><circle class="rv04-eye" cx="192" cy="287" r="2"/><circle class="rv04-eye" cx="169" cy="295" r="2"/><circle class="rv04-eye" cx="179" cy="294" r="2"/><circle class="rv04-eye" cx="188" cy="296" r="2"/><circle class="rv04-eye" cx="176" cy="302" r="2"/><text class="rv04-lab hot" x="178" y="252" text-anchor="middle">man</text></g><g class="rv04-beast" style="--k:3"><ellipse class="rv04-wing" cx="446" cy="270" rx="19" ry="6.5" transform="rotate(62 446 270)"/><ellipse class="rv04-wing" cx="436" cy="284" rx="19" ry="6.5" transform="rotate(18 436 284)"/><ellipse class="rv04-wing" cx="442" cy="299" rx="19" ry="6.5" transform="rotate(-24 442 299)"/><ellipse class="rv04-wing" cx="478" cy="270" rx="19" ry="6.5" transform="rotate(-62 478 270)"/><ellipse class="rv04-wing" cx="488" cy="284" rx="19" ry="6.5" transform="rotate(-18 488 284)"/><ellipse class="rv04-wing" cx="482" cy="299" rx="19" ry="6.5" transform="rotate(24 482 299)"/><circle class="rv04-body" cx="462" cy="286" r="24"/><circle class="rv04-eye" cx="452" cy="277" r="2"/><circle class="rv04-eye" cx="462" cy="273" r="2"/><circle class="rv04-eye" cx="472" cy="277" r="2"/><circle class="rv04-eye" cx="448" cy="286" r="2"/><circle class="rv04-eye" cx="458" cy="283" r="2"/><circle class="rv04-eye" cx="468" cy="284" r="2"/><circle class="rv04-eye" cx="476" cy="287" r="2"/><circle class="rv04-eye" cx="453" cy="295" r="2"/><circle class="rv04-eye" cx="463" cy="294" r="2"/><circle class="rv04-eye" cx="472" cy="296" r="2"/><circle class="rv04-eye" cx="460" cy="302" r="2"/><text class="rv04-lab hot" x="462" y="252" text-anchor="middle">flying eagle</text></g></g>
+<g class="rv04-lv"><g class="rv04-elder" style="--k:0"><rect class="rv04-chair" x="118.3" y="311.9" width="18" height="16" rx="2"/><path class="rv04-robe" d="M120.3 327.9 L127.3 313.9 L134.3 327.9 Z"/><circle class="rv04-head" cx="127.3" cy="309.9" r="4.5"/></g><path class="rv04-crown" style="--k:0;--dx:132.9;--dy:-38.9" d="M121.3 304.9 v-6 l3 3 l3 -5 l3 5 l3 -3 v6 z"/><g class="rv04-elder" style="--k:1"><rect class="rv04-chair" x="78.0" y="287.7" width="18" height="16" rx="2"/><path class="rv04-robe" d="M80.0 303.7 L87.0 289.7 L94.0 303.7 Z"/><circle class="rv04-head" cx="87.0" cy="285.7" r="4.5"/></g><path class="rv04-crown" style="--k:1;--dx:178.4;--dy:-19.7" d="M81.0 280.7 v-6 l3 3 l3 -5 l3 5 l3 -3 v6 z"/><g class="rv04-elder" style="--k:2"><rect class="rv04-chair" x="47.9" y="259.5" width="18" height="16" rx="2"/><path class="rv04-robe" d="M49.9 275.5 L56.9 261.5 L63.9 275.5 Z"/><circle class="rv04-head" cx="56.9" cy="257.5" r="4.5"/></g><path class="rv04-crown" style="--k:2;--dx:213.7;--dy:13.5" d="M50.9 252.5 v-6 l3 3 l3 -5 l3 5 l3 -3 v6 z"/><g class="rv04-elder" style="--k:3"><rect class="rv04-chair" x="29.3" y="228.4" width="18" height="16" rx="2"/><path class="rv04-robe" d="M31.3 244.4 L38.3 230.4 L45.3 244.4 Z"/><circle class="rv04-head" cx="38.3" cy="226.4" r="4.5"/></g><path class="rv04-crown" style="--k:3;--dx:237.5;--dy:39.6" d="M32.3 221.4 v-6 l3 3 l3 -5 l3 5 l3 -3 v6 z"/><g class="rv04-elder" style="--k:4"><rect class="rv04-chair" x="23.0" y="196.0" width="18" height="16" rx="2"/><path class="rv04-robe" d="M25.0 212.0 L32.0 198.0 L39.0 212.0 Z"/><circle class="rv04-head" cx="32.0" cy="194.0" r="4.5"/></g><path class="rv04-crown" style="--k:4;--dx:249.0;--dy:77.0" d="M26.0 189.0 v-6 l3 3 l3 -5 l3 5 l3 -3 v6 z"/><g class="rv04-elder" style="--k:5"><rect class="rv04-chair" x="29.3" y="163.6" width="18" height="16" rx="2"/><path class="rv04-robe" d="M31.3 179.6 L38.3 165.6 L45.3 179.6 Z"/><circle class="rv04-head" cx="38.3" cy="161.6" r="4.5"/></g><path class="rv04-crown" style="--k:5;--dx:247.9;--dy:104.4" d="M32.3 156.6 v-6 l3 3 l3 -5 l3 5 l3 -3 v6 z"/><g class="rv04-elder" style="--k:6"><rect class="rv04-chair" x="47.9" y="132.5" width="18" height="16" rx="2"/><path class="rv04-robe" d="M49.9 148.5 L56.9 134.5 L63.9 148.5 Z"/><circle class="rv04-head" cx="56.9" cy="130.5" r="4.5"/></g><path class="rv04-crown" style="--k:6;--dx:234.5;--dy:140.5" d="M50.9 125.5 v-6 l3 3 l3 -5 l3 5 l3 -3 v6 z"/><g class="rv04-elder" style="--k:7"><rect class="rv04-chair" x="78.0" y="104.3" width="18" height="16" rx="2"/><path class="rv04-robe" d="M80.0 120.3 L87.0 106.3 L94.0 120.3 Z"/><circle class="rv04-head" cx="87.0" cy="102.3" r="4.5"/></g><path class="rv04-crown" style="--k:7;--dx:209.6;--dy:163.7" d="M81.0 97.3 v-6 l3 3 l3 -5 l3 5 l3 -3 v6 z"/><g class="rv04-elder" style="--k:8"><rect class="rv04-chair" x="118.3" y="80.1" width="18" height="16" rx="2"/><path class="rv04-robe" d="M120.3 96.1 L127.3 82.1 L134.3 96.1 Z"/><circle class="rv04-head" cx="127.3" cy="78.1" r="4.5"/></g><path class="rv04-crown" style="--k:8;--dx:174.5;--dy:192.9" d="M121.3 73.1 v-6 l3 3 l3 -5 l3 5 l3 -3 v6 z"/><g class="rv04-elder" style="--k:9"><rect class="rv04-chair" x="167.0" y="60.9" width="18" height="16" rx="2"/><path class="rv04-robe" d="M169.0 76.9 L176.0 62.9 L183.0 76.9 Z"/><circle class="rv04-head" cx="176.0" cy="58.9" r="4.5"/></g><path class="rv04-crown" style="--k:9;--dx:131.0;--dy:207.1" d="M170.0 53.9 v-6 l3 3 l3 -5 l3 5 l3 -3 v6 z"/><g class="rv04-elder" style="--k:10"><rect class="rv04-chair" x="222.0" y="47.6" width="18" height="16" rx="2"/><path class="rv04-robe" d="M224.0 63.6 L231.0 49.6 L238.0 63.6 Z"/><circle class="rv04-head" cx="231.0" cy="45.6" r="4.5"/></g><path class="rv04-crown" style="--k:10;--dx:81.2;--dy:225.4" d="M225.0 40.6 v-6 l3 3 l3 -5 l3 5 l3 -3 v6 z"/><g class="rv04-elder" style="--k:11"><rect class="rv04-chair" x="280.9" y="40.9" width="18" height="16" rx="2"/><path class="rv04-robe" d="M282.9 56.9 L289.9 42.9 L296.9 56.9 Z"/><circle class="rv04-head" cx="289.9" cy="38.9" r="4.5"/></g><path class="rv04-crown" style="--k:11;--dx:27.5;--dy:227.1" d="M283.9 33.9 v-6 l3 3 l3 -5 l3 5 l3 -3 v6 z"/><g class="rv04-elder" style="--k:12"><rect class="rv04-chair" x="341.1" y="40.9" width="18" height="16" rx="2"/><path class="rv04-robe" d="M343.1 56.9 L350.1 42.9 L357.1 56.9 Z"/><circle class="rv04-head" cx="350.1" cy="38.9" r="4.5"/></g><path class="rv04-crown" style="--k:12;--dx:-27.5;--dy:232.1" d="M344.1 33.9 v-6 l3 3 l3 -5 l3 5 l3 -3 v6 z"/><g class="rv04-elder" style="--k:13"><rect class="rv04-chair" x="400.0" y="47.6" width="18" height="16" rx="2"/><path class="rv04-robe" d="M402.0 63.6 L409.0 49.6 L416.0 63.6 Z"/><circle class="rv04-head" cx="409.0" cy="45.6" r="4.5"/></g><path class="rv04-crown" style="--k:13;--dx:-81.2;--dy:220.4" d="M403.0 40.6 v-6 l3 3 l3 -5 l3 5 l3 -3 v6 z"/><g class="rv04-elder" style="--k:14"><rect class="rv04-chair" x="455.0" y="60.9" width="18" height="16" rx="2"/><path class="rv04-robe" d="M457.0 76.9 L464.0 62.9 L471.0 76.9 Z"/><circle class="rv04-head" cx="464.0" cy="58.9" r="4.5"/></g><path class="rv04-crown" style="--k:14;--dx:-131.0;--dy:212.1" d="M458.0 53.9 v-6 l3 3 l3 -5 l3 5 l3 -3 v6 z"/><g class="rv04-elder" style="--k:15"><rect class="rv04-chair" x="503.7" y="80.1" width="18" height="16" rx="2"/><path class="rv04-robe" d="M505.7 96.1 L512.7 82.1 L519.7 96.1 Z"/><circle class="rv04-head" cx="512.7" cy="78.1" r="4.5"/></g><path class="rv04-crown" style="--k:15;--dx:-174.5;--dy:187.9" d="M506.7 73.1 v-6 l3 3 l3 -5 l3 5 l3 -3 v6 z"/><g class="rv04-elder" style="--k:16"><rect class="rv04-chair" x="544.0" y="104.3" width="18" height="16" rx="2"/><path class="rv04-robe" d="M546.0 120.3 L553.0 106.3 L560.0 120.3 Z"/><circle class="rv04-head" cx="553.0" cy="102.3" r="4.5"/></g><path class="rv04-crown" style="--k:16;--dx:-209.6;--dy:168.7" d="M547.0 97.3 v-6 l3 3 l3 -5 l3 5 l3 -3 v6 z"/><g class="rv04-elder" style="--k:17"><rect class="rv04-chair" x="574.1" y="132.5" width="18" height="16" rx="2"/><path class="rv04-robe" d="M576.1 148.5 L583.1 134.5 L590.1 148.5 Z"/><circle class="rv04-head" cx="583.1" cy="130.5" r="4.5"/></g><path class="rv04-crown" style="--k:17;--dx:-234.5;--dy:135.5" d="M577.1 125.5 v-6 l3 3 l3 -5 l3 5 l3 -3 v6 z"/><g class="rv04-elder" style="--k:18"><rect class="rv04-chair" x="592.7" y="163.6" width="18" height="16" rx="2"/><path class="rv04-robe" d="M594.7 179.6 L601.7 165.6 L608.7 179.6 Z"/><circle class="rv04-head" cx="601.7" cy="161.6" r="4.5"/></g><path class="rv04-crown" style="--k:18;--dx:-247.9;--dy:109.4" d="M595.7 156.6 v-6 l3 3 l3 -5 l3 5 l3 -3 v6 z"/><g class="rv04-elder" style="--k:19"><rect class="rv04-chair" x="599.0" y="196.0" width="18" height="16" rx="2"/><path class="rv04-robe" d="M601.0 212.0 L608.0 198.0 L615.0 212.0 Z"/><circle class="rv04-head" cx="608.0" cy="194.0" r="4.5"/></g><path class="rv04-crown" style="--k:19;--dx:-249.0;--dy:72.0" d="M602.0 189.0 v-6 l3 3 l3 -5 l3 5 l3 -3 v6 z"/><g class="rv04-elder" style="--k:20"><rect class="rv04-chair" x="592.7" y="228.4" width="18" height="16" rx="2"/><path class="rv04-robe" d="M594.7 244.4 L601.7 230.4 L608.7 244.4 Z"/><circle class="rv04-head" cx="601.7" cy="226.4" r="4.5"/></g><path class="rv04-crown" style="--k:20;--dx:-237.5;--dy:44.6" d="M595.7 221.4 v-6 l3 3 l3 -5 l3 5 l3 -3 v6 z"/><g class="rv04-elder" style="--k:21"><rect class="rv04-chair" x="574.1" y="259.5" width="18" height="16" rx="2"/><path class="rv04-robe" d="M576.1 275.5 L583.1 261.5 L590.1 275.5 Z"/><circle class="rv04-head" cx="583.1" cy="257.5" r="4.5"/></g><path class="rv04-crown" style="--k:21;--dx:-213.7;--dy:8.5" d="M577.1 252.5 v-6 l3 3 l3 -5 l3 5 l3 -3 v6 z"/><g class="rv04-elder" style="--k:22"><rect class="rv04-chair" x="544.0" y="287.7" width="18" height="16" rx="2"/><path class="rv04-robe" d="M546.0 303.7 L553.0 289.7 L560.0 303.7 Z"/><circle class="rv04-head" cx="553.0" cy="285.7" r="4.5"/></g><path class="rv04-crown" style="--k:22;--dx:-178.4;--dy:-14.7" d="M547.0 280.7 v-6 l3 3 l3 -5 l3 5 l3 -3 v6 z"/><g class="rv04-elder" style="--k:23"><rect class="rv04-chair" x="503.7" y="311.9" width="18" height="16" rx="2"/><path class="rv04-robe" d="M505.7 327.9 L512.7 313.9 L519.7 327.9 Z"/><circle class="rv04-head" cx="512.7" cy="309.9" r="4.5"/></g><path class="rv04-crown" style="--k:23;--dx:-132.9;--dy:-43.9" d="M506.7 304.9 v-6 l3 3 l3 -5 l3 5 l3 -3 v6 z"/><text class="rv04-lab" x="18" y="26">“four and twenty elders”</text></g>
+</svg>
+      </div>
+      <div>
+        <h2 class="rise" style="--d:1">They cast their crowns</h2>
+        <p class="note rise" style="--d:2">When the four beasts give glory, the elders fall down too.</p>
+        <p class="note step rv04-cast">And they throw their crowns at His feet. The crowns were real; they'd been given them. But before Him they don't want to wear anything that makes them look big.</p>
+        <p class="note step">A man fresh out of the old life often wants a crown: respect, control, his name back. Here's the freedom: you don't have to run the world. He's worthy; you don't have to be.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="11" data-hl="for thy pleasure they are and were created"></blockquote>
+    <h2 class="rise" style="--d:1">You were made on purpose</h2>
+    <p class="note rise" style="--d:2">Why is He worthy? <em>“For thou hast created all things.”</em> Everything exists because He wanted it to. <em>“Pleasure”</em> here means His will, what He chose.</p>
+    <p class="note step">That includes you. You are not an accident, a mistake, or a case number. Whatever your parents, your record or your past says, God wanted you here.</p>
+    <blockquote class="quote step"><p>“I will praise thee; for I am fearfully and wonderfully made: marvellous are thy works; and that my soul knoweth right well.”</p><cite>Psalm 139:14</cite></blockquote>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <div class="split">
+      <div class="stage">
+        <svg class="rv04-storm" viewBox="0 0 500 380" role="img" aria-label="A storm of words circles round and round: seals, war, famine, earthquake, trumpets, falling stars, bowls, Babylon. In the middle, perfectly still, the throne, with one sitting on it.">
+<rect class="rv04-night" x="0" y="0" width="500" height="380" rx="12"/>
+<g class="rv04-spin fast"><circle class="rv04-swirl" cx="250" cy="190" r="168"/><circle class="rv04-swirl" cx="250" cy="190" r="104"/></g>
+<g class="rv04-spin"><text class="rv04-word" x="250.0" y="46.0" text-anchor="middle">seals</text><text class="rv04-word" x="368.8" y="89.9" text-anchor="middle">war</text><text class="rv04-word" x="418.0" y="196.0" text-anchor="middle">famine</text><text class="rv04-word" x="368.8" y="302.1" text-anchor="middle">earthquake</text><text class="rv04-word" x="250.0" y="346.0" text-anchor="middle">trumpets</text><text class="rv04-word" x="131.2" y="302.1" text-anchor="middle">falling stars</text><text class="rv04-word" x="82.0" y="196.0" text-anchor="middle">bowls</text><text class="rv04-word" x="131.2" y="89.9" text-anchor="middle">Babylon</text></g>
+<circle class="rv04-calm" cx="250" cy="190" r="78"/><circle class="rv04-ray" cx="250" cy="170" r="34"/><path class="rv04-seat" d="M232 152 h36 v36 h7 v26 h-50 v-26 h7 z"/><circle class="rv04-jasper" cx="250" cy="166" r="16"/><text class="rv04-still" x="250" y="240" text-anchor="middle">still on the throne</text>
+</svg>
+      </div>
+      <div>
+        <h2 class="rise" style="--d:1">The throne is occupied</h2>
+        <p class="note rise" style="--d:2">Next come seals, trumpets, war, famine and falling stars. But before John sees one seal broken, God shows him the throne, and Someone on it.</p>
+        <p class="note step">Whatever comes, it doesn't come from an empty throne. Nothing in these chapters catches God by surprise, and nothing in your life does either.</p>
+        <blockquote class="quote step"><p>“The LORD hath prepared his throne in the heavens; and his kingdom ruleth over all.”</p><cite>Psalm 103:19</cite></blockquote>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise">Look up today</h2>
+    <div class="daybreak climb">
+      <div class="rise" style="--d:1"><i>4:2</i><b>Look up first</b><p>Before the news, the bills or the craving: the throne isn't empty. Start the day there.</p></div>
+      <div class="step"><i>4:10</i><b>Lay down a crown</b><p>Name one thing you're trying to control, and give it to Him out loud.</p></div>
+      <div class="step"><i>4:8</i><b>Say “holy”</b><p>Thank Him once today for who He is, not only for what you need.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ======================= CLOSING ======================= -->
+<section class="slide remember">
+  <div class="inner">
+    <h2 class="rise">Points to remember</h2>
+    <ol class="seeds">
+      <li class="step"><span class="topic">Come up</span><span class="seed-q">“A throne was set in heaven, and one sat on the throne” <cite>4:2</cite></span><span class="take">The first thing heaven shows John is a throne, occupied.</span></li>
+      <li class="step"><span class="topic">The throne</span><span class="seed-q">“Like a jasper and a sardine stone” <cite>4:3</cite></span><span class="take">Too bright to describe, and circled by a rainbow of promise.</span></li>
+      <li class="step"><span class="topic">Elders</span><span class="seed-q">“And cast their crowns before the throne” <cite>4:10</cite></span><span class="take">They lay every honour at His feet and worship.</span></li>
+      <li class="step"><span class="topic">Beasts</span><span class="seed-q">“Holy, holy, holy, Lord God Almighty” <cite>4:8</cite></span><span class="take">Day and night: He is holy; He was, He is, and He is to come.</span></li>
+      <li class="step"><span class="topic">Worthy</span><span class="seed-q">“For thou hast created all things” <cite>4:11</cite></span><span class="take">He made everything, you included, on purpose.</span></li>
+      <li class="step"><span class="topic">In charge</span><span class="seed-q">“His kingdom ruleth over all” <cite>Psalm 103:19</cite></span><span class="take">Before any trouble, the throne. Someone is in charge.</span></li>
+    </ol>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 1 of 6</p>
+      <span class="topic">Come up</span>
+      <h2>What did John see when a door was opened in heaven?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="1"></blockquote>
+      <blockquote class="quote step" data-q="2"></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>A throne set in heaven, and One sitting on it. Before anything else, before any of the troubles to come, John is shown that God is on His throne.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 2 of 6</p>
+      <span class="topic">The throne</span>
+      <h2>What does the One on the throne look like?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="3"></blockquote>
+      <blockquote class="quote step"><p>“No man hath seen God at any time; the only begotten Son, which is in the bosom of the Father, he hath declared him.”</p><cite>John 1:18</cite></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>John can only describe Him with jewels: brilliant like jasper, red like sardine stone, with an emerald rainbow round the throne. He is too glorious to picture, but Jesus has made Him known.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 3 of 6</p>
+      <span class="topic">Elders</span>
+      <h2>What do the twenty-four elders do with their crowns?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="4"></blockquote>
+      <blockquote class="quote step" data-q="10"></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>They fall down before Him, worship Him, and cast their gold crowns before the throne. Every honour they have, they give back to Him.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 4 of 6</p>
+      <span class="topic">Beasts</span>
+      <h2>What do the four beasts say day and night?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="8"></blockquote>
+      <blockquote class="quote step"><p>“And one cried unto another, and said, Holy, holy, holy, is the LORD of hosts: the whole earth is full of his glory.”</p><cite>Isaiah 6:3</cite></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>“Holy, holy, holy, Lord God Almighty, which was, and is, and is to come.” They never stop praising His holiness, His power, and that He lives for ever.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 5 of 6</p>
+      <span class="topic">Worthy</span>
+      <h2>Why is the Lord worthy to receive glory and honour and power?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="11"></blockquote>
+      <blockquote class="quote step"><p>“I will praise thee; for I am fearfully and wonderfully made: marvellous are thy works; and that my soul knoweth right well.”</p><cite>Psalm 139:14</cite></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>Because He created all things, and everything exists because He willed it. That includes us: we were made on purpose, by Him.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 6 of 6</p>
+      <span class="topic">In charge</span>
+      <h2>Why does John see the throne before the troubles that follow?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="2"></blockquote>
+      <blockquote class="quote step"><p>“The LORD hath prepared his throne in the heavens; and his kingdom ruleth over all.”</p><cite>Psalm 103:19</cite></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>So that whatever comes next, we know the throne is not empty. God is in charge of everything that follows, and nothing catches Him by surprise.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide prayer">
+  <div class="inner">
+    <div class="emblem rise"></div>
+    <h2 class="rise" style="--d:1">Prayer requests</h2>
+    <p class="ask-line rise" style="--d:2">What can we pray about for you today?</p>
+    <blockquote class="quote rise" style="--d:4" data-q="11"></blockquote>
+  </div>
+</section>
+
+</main>
+
+<script>
+// King James Version, Revelation chapter 4
+const V = {
+  1: "After this I looked, and, behold, a door was opened in heaven: and the first voice which I heard was as it were of a trumpet talking with me; which said, Come up hither, and I will shew thee things which must be hereafter.",
+  2: "And immediately I was in the spirit: and, behold, a throne was set in heaven, and one sat on the throne.",
+  3: "And he that sat was to look upon like a jasper and a sardine stone: and there was a rainbow round about the throne, in sight like unto an emerald.",
+  4: "And round about the throne were four and twenty seats: and upon the seats I saw four and twenty elders sitting, clothed in white raiment; and they had on their heads crowns of gold.",
+  5: "And out of the throne proceeded lightnings and thunderings and voices: and there were seven lamps of fire burning before the throne, which are the seven Spirits of God.",
+  6: "And before the throne there was a sea of glass like unto crystal: and in the midst of the throne, and round about the throne, were four beasts full of eyes before and behind.",
+  7: "And the first beast was like a lion, and the second beast like a calf, and the third beast had a face as a man, and the fourth beast was like a flying eagle.",
+  8: "And the four beasts had each of them six wings about him; and they were full of eyes within: and they rest not day and night, saying, Holy, holy, holy, Lord God Almighty, which was, and is, and is to come.",
+  9: "And when those beasts give glory and honour and thanks to him that sat on the throne, who liveth for ever and ever,",
+  10: "The four and twenty elders fall down before him that sat on the throne, and worship him that liveth for ever and ever, and cast their crowns before the throne, saying,",
+  11: "Thou art worthy, O Lord, to receive glory and honour and power: for thou hast created all things, and for thy pleasure they are and were created."
+};
+const BOOK = "Revelation 4";
+</script>
+<script src="../assets/deck.js"></script>
+</body>
+</html>

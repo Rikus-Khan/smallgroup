@@ -1581,7 +1581,10 @@ window.GLOSSARY = [
     [ 3, 4, 9 ] ],
    [
     "Jude", 1,
-    [ 1 ] ] ]
+    [ 1 ] ],
+   [
+    "Revelation", 3,
+    [ 5, 21 ] ] ]
  },
  {
   "id": "holy-spirit",
@@ -1857,7 +1860,10 @@ window.GLOSSARY = [
     [ 6, 7, 8 ] ],
    [
     "Jude", 1,
-    [ 19, 20 ] ] ]
+    [ 19, 20 ] ],
+   [
+    "Revelation", 3,
+    [ 6, 13, 22 ] ] ]
  },
  {
   "id": "disciples",
@@ -2409,7 +2415,10 @@ window.GLOSSARY = [
     [ 28 ] ],
    [
     "1 Thessalonians", 2,
-    [ 14 ] ] ]
+    [ 14 ] ],
+   [
+    "Revelation", 3,
+    [ 9 ] ] ]
  },
  {
   "id": "servants",
@@ -2617,6 +2626,9 @@ window.GLOSSARY = [
    [
     "Hebrews", 11,
     [ 32 ] ],
+   [
+    "Revelation", 3,
+    [ 7 ] ],
    [
     "Revelation", 5,
     [ 5 ] ] ]
@@ -3231,7 +3243,10 @@ window.GLOSSARY = [
     [ 25, 26 ] ],
    [
     "Hebrews", 12,
-    [ 22 ] ] ]
+    [ 22 ] ],
+   [
+    "Revelation", 3,
+    [ 12 ] ] ]
  },
  {
   "id": "bethabara",
@@ -3824,6 +3839,9 @@ window.GLOSSARY = [
     "Acts", 26,
     [ 21 ] ],
    [
+    "Revelation", 3,
+    [ 12 ] ],
+   [
     "Revelation", 7,
     [ 15 ] ] ]
  },
@@ -4396,6 +4414,12 @@ window.GLOSSARY = [
    [
     "1 John", 5,
     [ 7 ] ],
+   [
+    "Revelation", 3,
+    [ 12 ] ],
+   [
+    "Revelation", 4,
+    [ 1, 2 ] ],
    [
     "Revelation", 5,
     [ 3, 13 ] ],
@@ -5737,6 +5761,9 @@ window.GLOSSARY = [
    [
     "Jude", 1,
     [ 24, 25 ] ],
+   [
+    "Revelation", 4,
+    [ 9, 11 ] ],
    [
     "Revelation", 5,
     [ 12, 13 ] ],
@@ -7296,7 +7323,10 @@ window.GLOSSARY = [
     [ 6, 7, 8, 9, 10, 11 ] ],
    [
     "3 John", 1,
-    [ 6, 12 ] ] ]
+    [ 6, 12 ] ],
+   [
+    "Revelation", 3,
+    [ 14 ] ] ]
  },
  {
   "id": "baptize",
@@ -10413,7 +10443,10 @@ window.GLOSSARY = [
     [ 15 ] ],
    [
     "Jude", 1,
-    [ 9 ] ] ]
+    [ 9 ] ],
+   [
+    "Revelation", 3,
+    [ 19 ] ] ]
  },
  {
   "id": "friend",
@@ -10722,7 +10755,10 @@ window.GLOSSARY = [
     [ 9 ] ],
    [
     "Hebrews", 12,
-    [ 5, 6, 7, 10, 11 ] ] ]
+    [ 5, 6, 7, 10, 11 ] ],
+   [
+    "Revelation", 3,
+    [ 19 ] ] ]
  },
  {
   "id": "coals-of-fire",
@@ -10851,7 +10887,10 @@ window.GLOSSARY = [
     [ 11 ] ],
    [
     "Hebrews", 6,
-    [ 17 ] ] ]
+    [ 17 ] ],
+   [
+    "Revelation", 3,
+    [ 18 ] ] ]
  },
  {
   "id": "discretion",
@@ -12579,7 +12618,10 @@ window.GLOSSARY = [
     [ 12 ] ],
    [
     "Acts", 26,
-    [ 11 ] ] ]
+    [ 11 ] ],
+   [
+    "Revelation", 3,
+    [ 9 ] ] ]
  },
  {
   "id": "bread-of-life",
@@ -13250,6 +13292,12 @@ window.GLOSSARY = [
     "Hebrews", 11,
     [ 21 ] ],
    [
+    "Revelation", 3,
+    [ 9 ] ],
+   [
+    "Revelation", 4,
+    [ 10 ] ],
+   [
     "Revelation", 5,
     [ 14 ] ],
    [
@@ -13323,7 +13371,10 @@ window.GLOSSARY = [
     [ 10 ] ],
    [
     "1 Thessalonians", 5,
-    [ 2, 4 ] ] ]
+    [ 2, 4 ] ],
+   [
+    "Revelation", 3,
+    [ 3 ] ] ]
  },
  {
   "id": "hireling",
@@ -16013,6 +16064,9 @@ window.GLOSSARY = [
     "Jude", 1,
     [ 6 ] ],
    [
+    "Revelation", 3,
+    [ 5 ] ],
+   [
     "Revelation", 5,
     [ 2, 11 ] ],
    [
@@ -16674,7 +16728,10 @@ window.GLOSSARY = [
     [ 14 ] ],
    [
     "1 John", 1,
-    [ 2 ] ] ]
+    [ 2 ] ],
+   [
+    "Revelation", 4,
+    [ 1 ] ] ]
  },
  {
   "id": "fishers-coat",
@@ -17625,7 +17682,10 @@ window.GLOSSARY = [
     [ 20 ] ],
    [
     "1 Timothy", 5,
-    [ 15 ] ] ]
+    [ 15 ] ],
+   [
+    "Revelation", 3,
+    [ 9 ] ] ]
  },
  {
   "id": "girded",
@@ -19444,6 +19504,9 @@ window.GLOSSARY = [
    [
     "Hebrews", 12,
     [ 19 ] ],
+   [
+    "Revelation", 4,
+    [ 1 ] ],
    [
     "Revelation", 8,
     [ 13 ] ] ]
@@ -27345,7 +27408,10 @@ window.GLOSSARY = [
     [ 8, 9, 10 ] ],
    [
     "2 Corinthians", 12,
-    [ 21 ] ] ]
+    [ 21 ] ],
+   [
+    "Revelation", 3,
+    [ 3, 19 ] ] ]
  },
  {
   "id": "camels-hair",
@@ -29535,7 +29601,10 @@ window.GLOSSARY = [
     [ 2, 3, 15 ] ],
    [
     "2 John", 1,
-    [ 7 ] ] ]
+    [ 7 ] ],
+   [
+    "Revelation", 3,
+    [ 5 ] ] ]
  },
  {
   "id": "not-peace-but-a-sword",
@@ -30498,7 +30567,10 @@ window.GLOSSARY = [
     [ 23 ] ],
    [
     "1 John", 4,
-    [ 12, 17, 18 ] ] ]
+    [ 12, 17, 18 ] ],
+   [
+    "Revelation", 3,
+    [ 2 ] ] ]
  },
  {
   "id": "begat",
@@ -31005,7 +31077,10 @@ window.GLOSSARY = [
     [ 14 ] ],
    [
     "Hebrews", 3,
-    [ 8 ] ] ]
+    [ 8 ] ],
+   [
+    "Revelation", 3,
+    [ 10 ] ] ]
  },
  {
   "id": "amen",
@@ -31096,6 +31171,9 @@ window.GLOSSARY = [
    [
     "Jude", 1,
     [ 25 ] ],
+   [
+    "Revelation", 3,
+    [ 14 ] ],
    [
     "Revelation", 5,
     [ 14 ] ],
@@ -31230,7 +31308,13 @@ window.GLOSSARY = [
     [ 8 ] ],
    [
     "James", 2,
-    [ 2 ] ] ]
+    [ 2 ] ],
+   [
+    "Revelation", 3,
+    [ 5, 18 ] ],
+   [
+    "Revelation", 4,
+    [ 4 ] ] ]
  },
  {
   "id": "fowls-of-the-air",
@@ -33351,7 +33435,10 @@ window.GLOSSARY = [
     [ 13 ] ],
    [
     "3 John", 1,
-    [ 6, 9, 10 ] ] ]
+    [ 6, 9, 10 ] ],
+   [
+    "Revelation", 3,
+    [ 1, 7, 14 ] ] ]
  },
  {
   "id": "bind-and-loose",
@@ -33675,7 +33762,10 @@ window.GLOSSARY = [
     [ 15 ] ],
    [
     "Jude", 1,
-    [ 8 ] ] ]
+    [ 8 ] ],
+   [
+    "Revelation", 3,
+    [ 4 ] ] ]
  },
  {
   "id": "blind-leaders",
@@ -37098,7 +37188,10 @@ window.GLOSSARY = [
     [ 5 ] ],
    [
     "Hebrews", 13,
-    [ 17 ] ] ]
+    [ 17 ] ],
+   [
+    "Revelation", 3,
+    [ 3 ] ] ]
  },
  {
   "id": "swords-and-staves",
@@ -38466,7 +38559,10 @@ window.GLOSSARY = [
     [ 7, 10, 11 ] ],
    [
     "2 Peter", 1,
-    [ 6 ] ] ]
+    [ 6 ] ],
+   [
+    "Revelation", 3,
+    [ 10 ] ] ]
  },
  {
   "id": "jerusalem-compassed",
@@ -46311,7 +46407,10 @@ window.GLOSSARY = [
   "refs": [
    [
     "Romans", 7,
-    [ 24 ] ] ]
+    [ 24 ] ],
+   [
+    "Revelation", 3,
+    [ 17 ] ] ]
  },
  {
   "id": "body-of-this-death",
@@ -50007,7 +50106,10 @@ window.GLOSSARY = [
   "refs": [
    [
     "Galatians", 1,
-    [ 14 ] ] ]
+    [ 14 ] ],
+   [
+    "Revelation", 3,
+    [ 19 ] ] ]
  },
  {
   "id": "pillars",
@@ -50352,7 +50454,10 @@ window.GLOSSARY = [
   "refs": [
    [
     "Philippians", 4,
-    [ 3 ] ] ]
+    [ 3 ] ],
+   [
+    "Revelation", 3,
+    [ 5 ] ] ]
  },
  {
   "id": "epaphroditus",
@@ -51180,7 +51285,10 @@ window.GLOSSARY = [
     [ 1 ] ],
    [
     "Colossians", 4,
-    [ 13, 15, 16 ] ] ]
+    [ 13, 15, 16 ] ],
+   [
+    "Revelation", 3,
+    [ 14 ] ] ]
  },
  {
   "id": "beguile",
@@ -56049,7 +56157,10 @@ window.GLOSSARY = [
     [ 4 ] ],
    [
     "1 John", 5,
-    [ 4, 5 ] ] ]
+    [ 4, 5 ] ],
+   [
+    "Revelation", 3,
+    [ 5, 12, 21 ] ] ]
  },
  {
   "id": "born-of-god",
@@ -57140,6 +57251,9 @@ window.GLOSSARY = [
   "name": "The four beasts (the living creatures around God's throne)",
   "refs": [
    [
+    "Revelation", 4,
+    [ 6, 7, 8, 9 ] ],
+   [
     "Revelation", 5,
     [ 6, 8, 11, 14 ] ],
    [
@@ -57155,6 +57269,9 @@ window.GLOSSARY = [
   "name": "The four and twenty elders (around God's throne)",
   "refs": [
    [
+    "Revelation", 4,
+    [ 4, 10 ] ],
+   [
     "Revelation", 5,
     [ 5, 6, 8, 11, 14 ] ],
    [
@@ -57166,6 +57283,12 @@ window.GLOSSARY = [
   "kind": "term",
   "name": "The seven Spirits of God (the Holy Spirit in His fullness)",
   "refs": [
+   [
+    "Revelation", 3,
+    [ 1 ] ],
+   [
+    "Revelation", 4,
+    [ 5 ] ],
    [
     "Revelation", 5,
     [ 6 ] ] ]
@@ -57463,5 +57586,326 @@ window.GLOSSARY = [
    [
     "Revelation", 8,
     [ 13 ] ] ]
+ },
+ {
+  "id": "sardis",
+  "kind": "place",
+  "name": "Sardis (an old royal city of Asia on a high, steep hill; one of the seven churches)",
+  "refs": [
+   [
+    "Revelation", 3,
+    [ 1, 4 ] ] ]
+ },
+ {
+  "id": "philadelphia",
+  "kind": "place",
+  "name": "Philadelphia (a small city of Asia often shaken by earthquakes; one of the seven churches)",
+  "refs": [
+   [
+    "Revelation", 3,
+    [ 7 ] ] ]
+ },
+ {
+  "id": "angel-of-the-church",
+  "kind": "person",
+  "name": "The angel of the church (the messenger, many think the pastor, who received each letter)",
+  "refs": [
+   [
+    "Revelation", 3,
+    [ 1, 7, 14 ] ] ]
+ },
+ {
+  "id": "seven-stars",
+  "kind": "term",
+  "name": "The seven stars (the angels of the seven churches, held in Christ's right hand)",
+  "refs": [
+   [
+    "Revelation", 3,
+    [ 1 ] ] ]
+ },
+ {
+  "id": "he-that-hath-an-ear",
+  "kind": "term",
+  "name": "He that hath an ear, let him hear (a call to every church, and every man, to listen)",
+  "refs": [
+   [
+    "Revelation", 3,
+    [ 6, 13, 22 ] ] ]
+ },
+ {
+  "id": "key-of-david",
+  "kind": "term",
+  "name": "The key of David (Christ's authority to open and shut, from Isaiah 22:22)",
+  "refs": [
+   [
+    "Revelation", 3,
+    [ 7 ] ] ]
+ },
+ {
+  "id": "open-door",
+  "kind": "term",
+  "name": "An open door (an opportunity Christ gives that no man can shut)",
+  "refs": [
+   [
+    "Revelation", 3,
+    [ 8 ] ] ]
+ },
+ {
+  "id": "synagogue-of-satan",
+  "kind": "person",
+  "name": "The synagogue of Satan (people who claimed God's name while fighting Christ's people)",
+  "refs": [
+   [
+    "Revelation", 3,
+    [ 9 ] ] ]
+ },
+ {
+  "id": "hour-of-temptation",
+  "kind": "term",
+  "name": "The hour of temptation (a time of trial coming on the whole world)",
+  "refs": [
+   [
+    "Revelation", 3,
+    [ 10 ] ] ]
+ },
+ {
+  "id": "pillar-in-the-temple",
+  "kind": "term",
+  "name": "A pillar in the temple of my God (settled for ever in God's house)",
+  "refs": [
+   [
+    "Revelation", 3,
+    [ 12 ] ] ]
+ },
+ {
+  "id": "new-jerusalem",
+  "kind": "place",
+  "name": "New Jerusalem (the city of God, coming down out of heaven)",
+  "refs": [
+   [
+    "Revelation", 3,
+    [ 12 ] ] ]
+ },
+ {
+  "id": "faithful-and-true-witness",
+  "kind": "person",
+  "name": "The faithful and true witness (Christ, who always tells the truth)",
+  "refs": [
+   [
+    "Revelation", 3,
+    [ 14 ] ] ]
+ },
+ {
+  "id": "lukewarm",
+  "kind": "term",
+  "name": "Lukewarm (neither hot nor cold, like Laodicea's water: useless)",
+  "refs": [
+   [
+    "Revelation", 3,
+    [ 16 ] ] ]
+ },
+ {
+  "id": "spue",
+  "kind": "term",
+  "name": "Spue (spit out, vomit)",
+  "refs": [
+   [
+    "Revelation", 3,
+    [ 16 ] ] ]
+ },
+ {
+  "id": "gold-tried-in-the-fire",
+  "kind": "term",
+  "name": "Gold tried in the fire (true riches, purified, that only Christ gives)",
+  "refs": [
+   [
+    "Revelation", 3,
+    [ 18 ] ] ]
+ },
+ {
+  "id": "eyesalve",
+  "kind": "term",
+  "name": "Eyesalve (ointment for the eyes; Laodicea was famous for one)",
+  "refs": [
+   [
+    "Revelation", 3,
+    [ 18 ] ] ]
+ },
+ {
+  "id": "stand-at-the-door-and-knock",
+  "kind": "term",
+  "name": "I stand at the door, and knock (Christ's invitation to any man)",
+  "refs": [
+   [
+    "Revelation", 3,
+    [ 20 ] ] ]
+ },
+ {
+  "id": "sup",
+  "kind": "term",
+  "name": "Sup (eat supper, the long evening meal shared with friends)",
+  "refs": [
+   [
+    "Habakkuk", 1,
+    [ 9 ] ],
+   [
+    "Luke", 17,
+    [ 8 ] ],
+   [
+    "Revelation", 3,
+    [ 20 ] ] ]
+ },
+ {
+  "id": "door-opened-in-heaven",
+  "kind": "term",
+  "name": "A door opened in heaven",
+  "refs": [
+   [
+    "Revelation", 4,
+    [ 1 ] ] ]
+ },
+ {
+  "id": "come-up-hither",
+  "kind": "term",
+  "name": "Come up hither (heaven's call to come up)",
+  "refs": [
+   [
+    "Proverbs", 25,
+    [ 7 ] ],
+   [
+    "Revelation", 4,
+    [ 1 ] ] ]
+ },
+ {
+  "id": "in-the-spirit",
+  "kind": "term",
+  "name": "In the spirit (caught up in a vision by the Holy Spirit)",
+  "refs": [
+   [
+    "Revelation", 4,
+    [ 2 ] ] ]
+ },
+ {
+  "id": "throne-in-heaven",
+  "kind": "place",
+  "name": "The throne in heaven (God's throne, the center of Revelation)",
+  "refs": [
+   [
+    "Revelation", 4,
+    [ 2, 3, 4, 5, 6, 9, 10 ] ] ]
+ },
+ {
+  "id": "jasper",
+  "kind": "term",
+  "name": "Jasper (a brilliant precious stone, clear as crystal)",
+  "refs": [
+   [
+    "Revelation", 4,
+    [ 3 ] ] ]
+ },
+ {
+  "id": "sardine-stone",
+  "kind": "term",
+  "name": "Sardine stone (sardius, a deep blood-red precious stone)",
+  "refs": [
+   [
+    "Revelation", 4,
+    [ 3 ] ] ]
+ },
+ {
+  "id": "emerald",
+  "kind": "term",
+  "name": "Emerald (a green precious stone)",
+  "refs": [
+   [
+    "Revelation", 4,
+    [ 3 ] ] ]
+ },
+ {
+  "id": "rainbow",
+  "kind": "term",
+  "name": "The rainbow (God's sign of His covenant promise, Genesis 9)",
+  "refs": [
+   [
+    "Revelation", 4,
+    [ 3 ] ] ]
+ },
+ {
+  "id": "crowns-of-gold",
+  "kind": "term",
+  "name": "Crowns of gold (the elders' crowns, cast before the throne)",
+  "refs": [
+   [
+    "Revelation", 4,
+    [ 4, 10 ] ] ]
+ },
+ {
+  "id": "lightnings-and-thunderings",
+  "kind": "term",
+  "name": "Lightnings and thunderings (the sound of God's holy presence, as at Sinai)",
+  "refs": [
+   [
+    "Revelation", 4,
+    [ 5 ] ] ]
+ },
+ {
+  "id": "seven-lamps",
+  "kind": "term",
+  "name": "The seven lamps of fire (the seven Spirits of God before the throne)",
+  "refs": [
+   [
+    "Zechariah", 4,
+    [ 2 ] ],
+   [
+    "Revelation", 4,
+    [ 5 ] ] ]
+ },
+ {
+  "id": "sea-of-glass",
+  "kind": "place",
+  "name": "The sea of glass (a still, crystal-clear sea before God's throne)",
+  "refs": [
+   [
+    "Revelation", 4,
+    [ 6 ] ] ]
+ },
+ {
+  "id": "holy-holy-holy",
+  "kind": "term",
+  "name": "Holy, holy, holy (God's holiness, cried day and night; Isaiah 6:3)",
+  "refs": [
+   [
+    "Revelation", 4,
+    [ 8 ] ] ]
+ },
+ {
+  "id": "lord-god-almighty",
+  "kind": "person",
+  "name": "Lord God Almighty (God, all-powerful)",
+  "refs": [
+   [
+    "Revelation", 4,
+    [ 8 ] ] ]
+ },
+ {
+  "id": "thou-art-worthy",
+  "kind": "term",
+  "name": "Thou art worthy (worship given to God and to the Lamb)",
+  "refs": [
+   [
+    "Revelation", 4,
+    [ 11 ] ],
+   [
+    "Revelation", 5,
+    [ 9 ] ] ]
+ },
+ {
+  "id": "for-thy-pleasure",
+  "kind": "term",
+  "name": "For thy pleasure (by Your will, because You chose it)",
+  "refs": [
+   [
+    "Revelation", 4,
+    [ 11 ] ] ]
  }
 ];
