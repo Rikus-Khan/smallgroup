@@ -14017,5 +14017,145 @@ window.STUDIES = [
       },
       "big": "You don't need a date; you need to be ready. Live as a child of the day: awake, sober, armed with faith, love and hope, looking after your brothers, and thankful in every thing. God will finish what He started in you."
     }
+  },
+  {
+    "id": "2-thessalonians-01",
+    "type": "chapter",
+    "book": "2 Thessalonians",
+    "ch": 1,
+    "date": "2026-10-31",
+    "title": "2 Thessalonians 1",
+    "sub": "Rest for the troubled",
+    "about": "A young church is being hammered for its faith, and its faith keeps growing. Paul writes from Corinth to tell them God has seen it all: rest for the troubled, and justice when the Lord Jesus is revealed from heaven.",
+    "tags": [
+      "Faith under pressure",
+      "God's justice",
+      "Leave vengeance to God",
+      "The return of Christ",
+      "Hell, taught soberly",
+      "Worthy of the calling"
+    ],
+    "url": "studies/2-thessalonians-01.html",
+    "overview": {
+      "where": "Written from Corinth to the church at Thessalonica, the capital and chief port of Macedonia (northern Greece)",
+      "when": "About AD 51, a few months after 1 Thessalonians, on Paul's second journey",
+      "people": [
+        "paul",
+        "silvanus",
+        "timothy",
+        "jesus",
+        "the-father",
+        "angels"
+      ],
+      "places": [
+        "thessalonica",
+        "corinth",
+        "heaven"
+      ],
+      "story": [
+        "Paul, Silvanus and Timotheus greet the church of the Thessalonians with grace and peace (1–2).",
+        "Their faith grows exceedingly and their love for each other abounds, right in the middle of persecution; Paul boasts about them to other churches (3–4).",
+        "God's judgment is righteous: He will repay trouble to the troublers and give rest to the troubled when the Lord Jesus is revealed from heaven (5–7).",
+        "Those who know not God and obey not the gospel will be punished with everlasting destruction from the presence of the Lord; Christ will be admired in all who believe (8–10).",
+        "Paul prays that God would count them worthy of this calling and fulfil the work of faith with power, by grace (11–12)."
+      ],
+      "key": {
+        "ref": "2 Thessalonians 1:7",
+        "text": "And to you who are troubled rest with us, when the Lord Jesus shall be revealed from heaven with his mighty angels,"
+      },
+      "big": "Pressure can be where faith grows most. God sees every wrong and will set it right when Jesus comes, so payback is His job, not ours. Hell is real and sober, but whoever believes the gospel is safe and will give Christ glory."
+    }
+  },
+  {
+    "id": "2-thessalonians-02",
+    "type": "chapter",
+    "book": "2 Thessalonians",
+    "ch": 2,
+    "date": "2026-10-31",
+    "title": "2 Thessalonians 2",
+    "sub": "Don't be shaken",
+    "about": "A false word had the church in a panic that the day of Christ had already come. Paul calms them: that day hasn't come, evil is held back for now, and when the man of sin appears the Lord Jesus will destroy him with a breath. Stand fast.",
+    "tags": [
+      "Don't be shaken",
+      "The return of Christ",
+      "The man of sin",
+      "Evil restrained",
+      "Loving the truth",
+      "Chosen through belief",
+      "Stand fast"
+    ],
+    "url": "studies/2-thessalonians-02.html",
+    "overview": {
+      "where": "Written from Corinth to the church at Thessalonica in Macedonia",
+      "when": "About AD 51, soon after a rumor or a forged letter said “the day of Christ is at hand”",
+      "people": [
+        "paul",
+        "jesus",
+        "man-of-sin",
+        "satan",
+        "holy-spirit",
+        "the-father"
+      ],
+      "places": [
+        "thessalonica",
+        "corinth"
+      ],
+      "story": [
+        "Paul begs them not to be shaken or troubled by any spirit, word or letter claiming the day of Christ had already come (1–2).",
+        "That day won't come until a falling away comes first and the man of sin, the son of perdition, is revealed: a man who sets himself above God (3–5).",
+        "The mystery of iniquity is already at work, but it is held back until the restrainer is taken out of the way; then the Lord will consume that Wicked with the spirit of His mouth (6–8).",
+        "His coming is with lying wonders; those who received not the love of the truth are given over to strong delusion (9–12).",
+        "But God chose the Thessalonians to salvation through the Spirit's work and belief of the truth, called by the gospel. Stand fast; God has given everlasting consolation and good hope through grace (13–17)."
+      ],
+      "key": {
+        "ref": "2 Thessalonians 2:2",
+        "text": "That ye be not soon shaken in mind, or be troubled, neither by spirit, nor by word, nor by letter as from us, as that the day of Christ is at hand."
+      },
+      "big": "Don't let rumors and fear about the end shake you. Evil is busy but on a leash, and Jesus wins with one breath. The difference between those who perish and those who are saved is the truth, received or refused; so love the truth, stand fast, and keep doing good."
+    }
+  },
+  {
+    "id": "2-thessalonians-03",
+    "type": "chapter",
+    "book": "2 Thessalonians",
+    "ch": 3,
+    "date": "2026-10-31",
+    "title": "2 Thessalonians 3",
+    "sub": "Keep working, keep doing good",
+    "about": "Some in the church had quit work and were living off everyone else. Paul asks for prayer, trusts the faithful Lord to keep them, sets the rule “if any would not work, neither should he eat”, and tells the tired not to quit doing good. The letter ends with peace and Paul's own signature.",
+    "tags": [
+      "Prayer",
+      "God is faithful",
+      "Honest work",
+      "Not weary in well doing",
+      "Church discipline with love",
+      "Peace"
+    ],
+    "url": "studies/2-thessalonians-03.html",
+    "overview": {
+      "where": "Written from Corinth, where Paul worked as a tentmaker, to the church at Thessalonica",
+      "when": "About AD 51, the end of the letter",
+      "people": [
+        "paul",
+        "jesus",
+        "brethren-believers"
+      ],
+      "places": [
+        "thessalonica",
+        "corinth"
+      ],
+      "story": [
+        "Paul asks them to pray that the word of the Lord would run freely, and that he'd be delivered from wicked men; the Lord is faithful and will keep them from evil (1–5).",
+        "Keep away from any brother who walks disorderly. Paul worked night and day so as not to be a burden, as an example to follow (6–9).",
+        "“If any would not work, neither should he eat.” Some were idle busybodies; they are to work quietly and eat their own bread (10–12).",
+        "Be not weary in well doing. Note a man who won't obey, but don't count him an enemy: admonish him as a brother (13–15).",
+        "The Lord of peace give you peace always by all means. Paul signs with his own hand, and closes with grace (16–18)."
+      ],
+      "key": {
+        "ref": "2 Thessalonians 3:13",
+        "text": "But ye, brethren, be not weary in well doing."
+      },
+      "big": "Waiting for Jesus means getting up and working, not sitting down. Honest work is part of a rebuilt life, and the rule is aimed at the man who won't work, not the man who can't yet. Don't quit doing good, treat a straying man as a brother, and lean on the Lord who is faithful."
+    }
   }
 ];

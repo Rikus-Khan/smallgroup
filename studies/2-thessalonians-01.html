@@ -1,0 +1,484 @@
+<!doctype html>
+<html lang="en" data-theme="slate">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>2 Thessalonians 1</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="../assets/fonts.css">
+<link rel="stylesheet" href="../assets/deck.css">
+<link rel="stylesheet" href="../assets/themes.css">
+<style>
+/* t201-where: where we are in 2 Thessalonians (a deck.css candidate; the same block as ph01-where, sized for a three-chapter letter).
+   One part (div, --k) per chapter: its number (p > i; read ones .done, ours .here), its name (b), what it says (small)
+   and a key phrase (q + cite). The part we're in is .now. */
+.t201-where { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin: .5em 0 1em; }
+.t201-where > div { --c: var(--line-strong); padding: .55em .8em .65em; border-top: 6px solid var(--c); border-radius: 0 0 10px 10px;
+  background: color-mix(in srgb, var(--surface) 70%, transparent); opacity: 0; transform: translateY(10px);
+  transition: opacity .6s ease, transform .6s ease; transition-delay: calc(var(--k, 0) * 350ms + 300ms); }
+.slide.active .t201-where > div { opacity: 1; transform: none; }
+.t201-where > div.now { --c: var(--accent); background: color-mix(in srgb, var(--accent) 15%, transparent); box-shadow: inset 0 0 0 2px var(--accent); }
+.t201-where p { display: flex; gap: 6px; margin: 0 0 .4em; }
+.t201-where i { min-width: 2.2em; padding: .22em .3em; text-align: center; border-radius: 6px; border: 1.5px solid var(--line-strong);
+  font: 700 clamp(.82rem, .74rem + .35vw, 1.08rem) var(--sans); font-style: normal; color: var(--ink-soft); }
+.t201-where i.done { background: color-mix(in srgb, var(--accent) 14%, transparent); color: var(--ink); }
+.t201-where i.here { background: var(--accent); border-color: var(--accent); color: var(--on-accent); }
+.slide.active .t201-where i.here { animation: t201-here 2.4s ease-in-out 1.8s infinite; }
+@keyframes t201-here { 50% { box-shadow: 0 0 0 6px color-mix(in srgb, var(--accent) 28%, transparent); } }
+.t201-where b { display: block; font: 600 clamp(1.05rem, .88rem + .7vw, 1.5rem)/1.1 var(--serif); color: var(--ink); }
+.t201-where small { display: block; margin: .2em 0 .35em; font-size: clamp(.78rem, .72rem + .26vw, 1rem); line-height: 1.3; color: var(--ink-soft); }
+.t201-where q { display: block; font: italic clamp(.86rem, .78rem + .34vw, 1.08rem)/1.3 var(--serif); quotes: "\201C" "\201D"; }
+.t201-where cite { display: block; margin-top: .2em; font-style: normal; font-size: clamp(.72rem, .68rem + .22vw, .92rem); color: var(--ink-soft); }
+@media (max-width: 640px) {
+  .t201-where { grid-template-columns: 1fr; gap: 6px; }
+  .t201-where > div { border-top: 0; border-left: 6px solid var(--c); border-radius: 0 10px 10px 0; }
+}
+
+/* t201-grow: faith that grows under pressure. Weights press down from both sides (.t201-weight, --k) while a stem draws
+   itself upward when the slide opens (.t201-stem); leaves open along it (.t201-leaf, --k), and branches reach out to the
+   other believers (.t201-reach, on a .t201-go step): "the charity of every one of you all toward each other". */
+.t201-grow { display: block; width: 100%; height: auto; max-height: 50vh; margin: 0 auto; }
+.t201-grow text { fill: var(--ink); font-size: 18px; text-anchor: middle; }
+.t201-grow .s { fill: var(--ink-soft); font-size: 15px; }
+.t201-grow .a { fill: var(--accent-hot); font-weight: 700; font-size: 19px; }
+.t201-ground { stroke: var(--line-strong); stroke-width: 3; }
+.t201-weight { opacity: 0; transform: translateY(-40px); transition: opacity .6s ease, transform 1s cubic-bezier(.5,0,.6,1.4); transition-delay: calc(var(--k, 0) * 450ms + .3s); }
+.slide.active .t201-weight { opacity: 1; transform: none; }
+.t201-weight rect { fill: var(--surface-2); stroke: var(--line-strong); stroke-width: 2; }
+.t201-weight path { fill: none; stroke: var(--danger); stroke-width: 4; stroke-linecap: round; stroke-linejoin: round; }
+.t201-stem { fill: none; stroke: var(--accent); stroke-width: 7; stroke-linecap: round; stroke-dasharray: 1; stroke-dashoffset: 1; transition: stroke-dashoffset 3s ease-out 1.2s; }
+.slide.active .t201-stem { stroke-dashoffset: 0; }
+.t201-leaf { fill: color-mix(in srgb, var(--accent) 70%, var(--surface)); transform-box: fill-box; transform-origin: center; transform: scale(0);
+  transition: transform .7s cubic-bezier(.3,1.4,.5,1); transition-delay: calc(var(--k, 0) * 380ms + 1.8s); }
+.slide.active .t201-leaf { transform: none; }
+.t201-top { opacity: 0; transition: opacity .8s ease 4.2s; }
+.slide.active .t201-top { opacity: 1; }
+.t201-reach path { fill: none; stroke: var(--accent); stroke-width: 3; stroke-dasharray: 1; stroke-dashoffset: 1; transition: stroke-dashoffset 1.6s ease; }
+.t201-reach circle { fill: var(--surface-2); stroke: var(--accent); stroke-width: 3; opacity: .35; transition: opacity .8s ease 1s; }
+.t201-reach text { opacity: 0; transition: opacity .8s ease 1.4s; }
+.slide:has(.t201-go.on) .t201-reach path { stroke-dashoffset: 0; }
+.slide:has(.t201-go.on) .t201-reach circle, .slide:has(.t201-go.on) .t201-reach text { opacity: 1; }
+@media (max-width: 600px) { .t201-grow text { font-size: 23px; } .t201-grow .s { font-size: 20px; } .t201-grow .a { font-size: 24px; } }
+</style>
+</head>
+<body>
+<main class="deck" id="deck">
+
+<!-- ======================= OPENING ======================= -->
+<section class="slide title">
+  <div class="inner">
+    <div class="emblem rise"></div>
+    <h1 class="rise" style="--d:1">2 Thessalonians 1</h1>
+    <p class="sub rise" style="--d:3">Rest for the troubled</p>
+    <p class="tag rise" style="--d:5">A young church is being hammered for its faith, and its faith keeps growing. Paul writes to tell them God has seen every bit of it, and He will set it right.</p>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <div class="split">
+      <div class="stage">
+        <svg data-world viewBox="425 170 210 170" style="max-height:60vh" data-towns="Corinth*:l, Thessalonica!:t, Athens, Berea:l, Philippi" role="img" aria-label="A map of Greece and the Aegean Sea. A line runs north by road from Corinth, where Paul wrote, up through Greece to Thessalonica, the port city where the letter was sent. Athens, Berea and Philippi are marked: the towns Paul passed through on his second journey.">
+          <path class="map-route" data-via="Corinth, @23.35 38.02, @23.3 38.35, @22.6 38.9, @22.4 39.64, @22.5 40.15, @22.62 40.55, Thessalonica"/>
+        </svg>
+      </div>
+      <div>
+        <h2 class="rise" style="--d:1">The second letter to the Thessalonians</h2>
+        <div class="letter">
+          <p class="from">“Paul, and Silvanus, and Timotheus, unto the church of the Thessalonians in God our Father and the Lord Jesus Christ”</p>
+          <dl>
+            <dt>Written from</dt><dd>Corinth, where Paul stayed a year and a half, making tents to pay his way (Acts 18)</dd>
+            <dt>When</dt><dd>about AD 51, only a few months after 1 Thessalonians</dd>
+            <dt>To whom</dt><dd>the young church at Thessalonica, the busy port and capital of Macedonia. Paul had been run out of town after only a few weeks.</dd>
+            <dt>Why</dt><dd class="step">the persecution was getting worse, somebody had them believing <em>“the day of Christ is at hand”</em> (2:2), and some had quit working. Paul writes again to steady them.</dd>
+          </dl>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise" style="--d:1">Where 2 Thessalonians fits in Paul's life</h2>
+    <ol class="timeline" aria-label="About AD 50, Paul preaches three Sabbaths in Thessalonica, a riot breaks out, and he is sent away by night, Acts 17. About AD 50, from Athens he sends Timothy back to check on them. About AD 50 to 51, at Corinth, he writes 1 Thessalonians. Soon after, a false word reaches the church: the day of Christ is at hand. About AD 51, Paul writes 2 Thessalonians from Corinth. About 53 to 57, he comes back through Macedonia.">
+      <li style="--k:0"><b>about AD 50</b><span>Three Sabbaths in Thessalonica, a riot, sent away by night</span><small>Acts 17:1–10</small></li>
+      <li style="--k:1"><b>about AD 50</b><span>From Athens, Timothy is sent back to check on them</span><small>1 Thessalonians 3:1–2</small></li>
+      <li style="--k:2"><b>about 50 to 51</b><span>At Corinth: 1 Thessalonians</span><small>Acts 18:1–11</small></li>
+      <li style="--k:3"><b>soon after</b><span>A false word: “the day of Christ is at hand”</span><small>2:2</small></li>
+      <li class="lit" style="--k:4"><b>about AD 51</b><span>Still at Corinth: 2 Thessalonians</span><small>this letter</small></li>
+      <li class="wait" style="--k:5"><b>about 53 to 57</b><span>Paul comes back through Macedonia</span><small>Acts 20:1–2</small></li>
+    </ol>
+    <p class="note rise" style="--d:3">Two letters, a few months apart, to the same small church. The first one comforted them about believers who had died. Then a rumor and a scare went through the church, and Paul had to write again, fast.</p>
+    <blockquote class="quote step"><p>“And the brethren immediately sent away Paul and Silas by night unto Berea: who coming thither went into the synagogue of the Jews.”</p><cite>Acts 17:10</cite></blockquote>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise" style="--d:1">The whole letter on one page</h2>
+    <div class="t201-where" role="img" aria-label="2 Thessalonians in three parts, one for each chapter. Chapter 1, rest for the troubled: God sees, and He will set it right. Key phrase: to you who are troubled rest with us, 1:7. Chapter 2, don't be shaken: that day hasn't come yet, and when it does, Christ wins. Key phrase: That ye be not soon shaken in mind, 2:2. Chapter 3, keep working, keep doing good: pray, work quietly, and don't quit. Key phrase: be not weary in well doing, 3:13. We are in chapter 1.">
+      <div class="now" style="--k:0"><p><i class="here">1</i></p><b>Rest for the troubled</b><small>God sees, and He will set it right</small><q>to you who are troubled rest with us</q><cite>1:7</cite></div>
+      <div style="--k:1"><p><i>2</i></p><b>Don't be shaken</b><small>That day hasn't come yet, and when it does, Christ wins</small><q>That ye be not soon shaken in mind</q><cite>2:2</cite></div>
+      <div style="--k:2"><p><i>3</i></p><b>Keep working, keep doing good</b><small>Pray, work quietly, and don't quit</small><q>be not weary in well doing</q><cite>3:13</cite></div>
+    </div>
+    <p class="note rise" style="--d:3">It's a short letter, three chapters, written to men and women who were scared and suffering. All three chapters lean on one thing: the Lord Jesus is coming back, and that changes how you get through today.</p>
+  </div>
+</section>
+
+<section class="slide watch">
+  <div class="inner">
+    <h2 class="rise">Things to watch for</h2>
+    <p class="lede rise" style="--d:1">Keep these questions in the back of your mind as we read. We'll come back to every one of them at the end.</p>
+    <ol class="seeds">
+      <li class="step"><span class="topic">Growing</span><span class="seed-q">What was happening to the Thessalonians' faith while they were being persecuted?</span></li>
+      <li class="step"><span class="topic">Justice</span><span class="seed-q">What will God do about the people who trouble His people?</span></li>
+      <li class="step"><span class="topic">Rest</span><span class="seed-q">When will the troubled get their rest?</span></li>
+      <li class="step"><span class="topic">Away from Him</span><span class="seed-q">What happens to those who know not God and obey not the gospel?</span></li>
+      <li class="step"><span class="topic">Admired</span><span class="seed-q">Where will Christ be glorified and admired when He comes?</span></li>
+      <li class="step"><span class="topic">Worthy</span><span class="seed-q">What did Paul pray that God would do for them?</span></li>
+    </ol>
+  </div>
+</section>
+
+<!-- ======================= PART ONE ======================= -->
+<section class="slide part">
+  <div class="inner">
+    <p class="part-n rise">Part one</p>
+    <h2 class="rise" style="--d:1">Faith that grows under pressure</h2>
+    <p class="range rise" style="--d:2">Verses 1–4</p>
+    <div class="rule"></div>
+    <p class="hook rise" style="--d:4">The pressure is on, and these people are getting stronger, not weaker.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="1-2" data-hl="Paul, and Silvanus, and Timotheus|unto the church of the Thessalonians|Grace unto you, and peace"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise" style="--d:1">Three men who had been there</h2>
+    <div class="sort">
+      <div class="rise" style="--d:2"><h3>Paul</h3><div class="vs"><b>v. 1</b></div><p>Once the man who hunted Christians. Now he's the one being hunted, and he writes to a church that's going through what he used to dish out.</p></div>
+      <div class="step"><h3>Silvanus</h3><div class="vs"><b>Acts 17:4</b></div><p>The same man as Silas. He was with Paul in the Philippi jail, singing at midnight, and with him in Thessalonica when the riot started.</p></div>
+      <div class="step"><h3>Timotheus</h3><div class="vs"><b>1 Thessalonians 3:2</b></div><p>Timothy, the young helper. Paul sent him back alone to check on this church, and he came back with good news.</p></div>
+    </div>
+    <blockquote class="quote step"><p>“And some of them believed, and consorted with Paul and Silas; and of the devout Greeks a great multitude, and of the chief women not a few.”</p><cite>Acts 17:4</cite></blockquote>
+    <p class="note step">These aren't three professors writing from a quiet office. All three had been chased out of this very town. When they say <em>“Grace unto you, and peace,”</em> they know what it costs to need both.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="3-4" data-hl="your faith groweth exceedingly|the charity of every one of you all toward each other aboundeth|we ourselves glory in you|your patience and faith in all your persecutions and tribulations that ye endure"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <div class="split">
+      <div class="stage">
+        <svg class="t201-grow" viewBox="0 0 600 360" role="img" aria-label="Heavy weights press down from both sides, marked persecutions and tribulations. Between them a stem grows straight up, and leaves open along it: your faith groweth exceedingly. Then branches reach out from it to other believers: charity toward each other.">
+          <line class="t201-ground" x1="40" y1="330" x2="560" y2="330"/>
+          <g class="t201-weight" style="--k:0"><rect x="46" y="150" width="148" height="70" rx="8"/><text x="120" y="192">persecutions</text><path d="M120 110 L120 140 M108 128 L120 140 L132 128"/></g>
+          <g class="t201-weight" style="--k:1"><rect x="406" y="150" width="148" height="70" rx="8"/><text x="480" y="192">tribulations</text><path d="M480 110 L480 140 M468 128 L480 140 L492 128"/></g>
+          <path class="t201-stem" pathLength="1" d="M300 330 C 296 270, 306 210, 300 150 C 296 110, 302 80, 300 52"/>
+          <ellipse class="t201-leaf" style="--k:0" cx="278" cy="280" rx="22" ry="9" transform="rotate(-25 278 280)"/>
+          <ellipse class="t201-leaf" style="--k:1" cx="322" cy="238" rx="22" ry="9" transform="rotate(25 322 238)"/>
+          <ellipse class="t201-leaf" style="--k:2" cx="278" cy="190" rx="22" ry="9" transform="rotate(-25 278 190)"/>
+          <ellipse class="t201-leaf" style="--k:3" cx="321" cy="140" rx="20" ry="8" transform="rotate(25 321 140)"/>
+          <ellipse class="t201-leaf" style="--k:4" cx="282" cy="95" rx="18" ry="8" transform="rotate(-25 282 95)"/>
+          <g class="t201-top"><text class="a" x="300" y="34">groweth exceedingly</text></g>
+          <g class="t201-reach">
+            <path pathLength="1" d="M302 205 C 260 230, 220 260, 190 280"/>
+            <path pathLength="1" d="M302 205 C 345 230, 380 260, 410 280"/>
+            <circle cx="182" cy="286" r="12"/><circle cx="418" cy="286" r="12"/>
+            <text class="s" x="182" y="318">each other</text><text class="s" x="418" y="318">each other</text>
+          </g>
+        </svg>
+      </div>
+      <div>
+        <h2 class="rise" style="--d:1">Pressed down, growing up</h2>
+        <p class="note rise" style="--d:2"><em>“Groweth exceedingly”</em> is one Greek word, <span class="gk">hyperauxanei</span>: growing over the top. And it grows <em>in</em> their <em>“persecutions and tribulations,”</em> not after them.</p>
+        <p class="note step t201-go">Their love grew too: <em>“every one of you all toward each other.”</em> Pressure pulls a group apart or together. This one pulled together.</p>
+        <p class="note step"><em>Patience</em> means <em>endurance</em>: staying under the load. You don't have to feel strong. Just don't quit today.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise" style="--d:1">What they were enduring</h2>
+    <blockquote class="quote rise" style="--d:2"><p>“But the Jews which believed not, moved with envy, took unto them certain lewd fellows of the baser sort, and gathered a company, and set all the city on an uproar, and assaulted the house of Jason, and sought to bring them out to the people.”</p><cite>Acts 17:5</cite></blockquote>
+    <p class="note step">That's how the church started: a mob hired off the street, a house broken into, a friend dragged to the city rulers. Paul left town; the believers couldn't. They lived next door to the people who hated them, and went to work beside them.</p>
+    <p class="note step">Paul says he <em>brags</em> about them to other churches: <em>“we ourselves glory in you.”</em> Think about that if you're getting grief for changing your life: from old friends, from family who don't trust it yet, from a crew at work that laughs at you. God isn't embarrassed by you. He's proud of a man who keeps standing.</p>
+  </div>
+</section>
+
+<!-- ======================= PART TWO ======================= -->
+<section class="slide part">
+  <div class="inner">
+    <p class="part-n rise">Part two</p>
+    <h2 class="rise" style="--d:1">God will set it right</h2>
+    <p class="range rise" style="--d:2">Verses 5–10</p>
+    <div class="rule"></div>
+    <p class="hook rise" style="--d:4">Nobody gets away with anything forever. That's good news for the troubled, and a warning for everyone.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="5-7" data-hl="a manifest token of the righteous judgment of God|counted worthy of the kingdom of God|it is a righteous thing with God to recompense tribulation to them that trouble you|to you who are troubled rest with us|when the Lord Jesus shall be revealed from heaven"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <div class="split">
+      <div class="stage">
+        <svg class="scale now" style="--at:300px 80px; --from:-14deg; --tip:0deg; --wait:1s" viewBox="0 0 600 330" role="img" aria-label="A balance scale starts out tilted, unfair, and then settles level. On one pan: tribulation to them that trouble you. On the other: rest to you who are troubled. It is a righteous thing with God.">
+          <path d="M240 300 L360 300 L330 280 L270 280 Z" style="fill:var(--surface-2);stroke:var(--ink-soft)" stroke-width="2.5"/>
+          <rect x="294" y="74" width="12" height="208" style="fill:var(--ink-soft)"/>
+          <g class="scale-beam">
+            <rect x="110" y="74" width="380" height="12" rx="6" style="fill:var(--ink)"/>
+            <circle cx="300" cy="80" r="11" style="fill:var(--accent)"/>
+            <g fill="none" stroke-width="2" style="stroke:var(--ink-soft)"><path d="M130 86 L85 196 M130 86 L175 196"/><path d="M470 86 L425 196 M470 86 L515 196"/></g>
+            <path d="M70 196 L190 196 Q130 240 70 196 Z" stroke-width="2.5" style="fill:var(--surface-2);stroke:var(--ink-soft)"/>
+            <path d="M410 196 L530 196 Q470 240 410 196 Z" stroke-width="2.5" style="fill:var(--surface-2);stroke:var(--ink-soft)"/>
+            <text x="130" y="216" text-anchor="middle" font-size="17" font-weight="700" style="fill:var(--danger)">tribulation</text>
+            <text x="470" y="216" text-anchor="middle" font-size="17" font-weight="700" style="fill:var(--accent-hot)">rest</text>
+          </g>
+          <text x="130" y="262" text-anchor="middle" font-size="15" style="fill:var(--ink-soft)">to them that trouble you</text>
+          <text x="470" y="262" text-anchor="middle" font-size="15" style="fill:var(--ink-soft)">to you who are troubled</text>
+          <text x="300" y="30" text-anchor="middle" font-size="19" font-weight="700" style="fill:var(--ink)">“a righteous thing with God”</text>
+        </svg>
+      </div>
+      <div>
+        <h2 class="rise" style="--d:1">The scales will balance</h2>
+        <p class="note rise" style="--d:2">Right now the scale looks crooked: the bullies are comfortable and the believers are hurting. God will level it. <em>Recompense</em> means <em>pay back</em>.</p>
+        <p class="note step"><em>When?</em> <em>“When the Lord Jesus shall be revealed from heaven.”</em> Some wrongs won't be put right in this life. They will be put right.</p>
+        <p class="note step"><em>“Counted worthy”</em> isn't earning heaven by suffering. Their staying power is a <em>“token,”</em> a sign that God is at work in them.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise" style="--d:1">Payback is not your job</h2>
+    <p class="note rise" style="--d:2">Some men here were badly wronged: beaten as kids, robbed, lied about, locked up with men who hurt them. The rage is real. This chapter says God has seen it, and He will deal with it. That frees you from carrying it.</p>
+    <blockquote class="quote step"><p>“Dearly beloved, avenge not yourselves, but rather give place unto wrath: for it is written, Vengeance is mine; I will repay, saith the Lord.”</p><cite>Romans 12:19</cite></blockquote>
+    <p class="note step">But be honest: some of us were the troublers. So was Paul. He had dragged believers off to prison, and God saved him anyway.</p>
+    <blockquote class="quote step"><p>“Who was before a blasphemer, and a persecutor, and injurious: but I obtained mercy, because I did it ignorantly in unbelief.”</p><cite>1 Timothy 1:13</cite></blockquote>
+    <p class="note step">If you hurt people before you knew Christ, own it, make it right where you can, and stop carrying it as if He hadn't paid for it.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="8-10" data-hl="In flaming fire taking vengeance on them that know not God, and that obey not the gospel|everlasting destruction from the presence of the Lord|to be glorified in his saints, and to be admired in all them that believe"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise" style="--d:1">Two kinds of people on that day</h2>
+    <div class="columns">
+      <div class="col law step">
+        <p class="who">Verses 8–9</p>
+        <h3>“Them that know not God”</h3>
+        <p>They <em>“obey not the gospel.”</em> The gospel is obeyed by believing it (Romans 10:16). They are shut out <em>“from the presence of the Lord,”</em> away from the One every good thing comes from, for good.</p>
+      </div>
+      <div class="col grace step">
+        <p class="who">Verse 10</p>
+        <h3>“All them that believe”</h3>
+        <p>Not the best behaved, but all who believe. Christ is <em>“admired”</em> in them: people will look at what He made out of them and marvel at Him.</p>
+      </div>
+    </div>
+    <p class="note step">Paul says this soberly, and so should we. <em>“Everlasting destruction”</em> isn't a man ceasing to exist. It's a ruin that doesn't end, apart from God. Hell is real, and the Bible never treats it as a joke.</p>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise" style="--d:1">If you belong to Jesus, this isn't your sentence</h2>
+    <p class="note rise" style="--d:2">These verses aren't here to keep a believer awake at night wondering if he's in. Paul says the opposite: that day is the day the troubled get <em>rest</em>.</p>
+    <blockquote class="quote step"><p>“Verily, verily, I say unto you, He that heareth my word, and believeth on him that sent me, hath everlasting life, and shall not come into condemnation; but is passed from death unto life.”</p><cite>John 5:24</cite></blockquote>
+    <blockquote class="quote step"><p>“The Lord is not slack concerning his promise, as some men count slackness; but is longsuffering to us-ward, not willing that any should perish, but that all should come to repentance.”</p><cite>2 Peter 3:9</cite></blockquote>
+    <p class="note step">God is patient because He wants everyone in. So the warning is for the people you love who don't know Him yet. Pray for one of them by name today, and when the door opens, tell him what Jesus did for you.</p>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <p class="saying rise">“To be <em>admired</em> in all them that believe.”</p>
+    <p class="note rise" style="--d:2">When Jesus comes back, He won't only be seen in the sky. He'll be seen in His people. The drunk who got sober, the thief who now gives, the angry man who learned to be gentle: every one of them is a trophy of His grace, and He gets the credit.</p>
+    <p class="note step">Paul adds, <em>“because our testimony among you was believed.”</em> It started when somebody told them, and they believed it. That is all it took for them, and all it takes for you. Your life, as messy as it's been, is going to be part of how Jesus is admired.</p>
+  </div>
+</section>
+
+<!-- ======================= PART THREE ======================= -->
+<section class="slide part">
+  <div class="inner">
+    <p class="part-n rise">Part three</p>
+    <h2 class="rise" style="--d:1">What Paul prays for them</h2>
+    <p class="range rise" style="--d:2">Verses 11–12</p>
+    <div class="rule"></div>
+    <p class="hook rise" style="--d:4">With all that ahead, here's what Paul asks God for, every day.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="11-12" data-hl="that our God would count you worthy of this calling|the work of faith with power|That the name of our Lord Jesus Christ may be glorified in you, and ye in him|according to the grace of our God"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise" style="--d:1">A prayer worth stealing</h2>
+    <div class="sort">
+      <div class="step"><h3>Worthy of this calling</h3><div class="vs"><b>v. 11</b></div><p>God called them. Paul prays they'll live up to it: not to earn the call, but to fit it, like a man growing into a uniform.</p></div>
+      <div class="step"><h3>Every good desire filled</h3><div class="vs"><b>v. 11</b></div><p><em>“All the good pleasure of his goodness”</em>: every good thing God has a mind to do in them, carried all the way through.</p></div>
+      <div class="step"><h3>Faith that gets to work</h3><div class="vs"><b>v. 11</b></div><p><em>“The work of faith with power”</em>: faith that shows up in what they do, by His strength, not theirs.</p></div>
+    </div>
+    <blockquote class="quote step"><p>“Being confident of this very thing, that he which hath begun a good work in you will perform it until the day of Jesus Christ:”</p><cite>Philippians 1:6</cite></blockquote>
+    <p class="note step">And it all rests on <em>“the grace of our God.”</em> From the first verse to the last, it's grace. Take this prayer and pray it over one man in this group today, by name.</p>
+  </div>
+</section>
+
+<section class="slide remember">
+  <div class="inner">
+    <h2 class="rise">Points to remember</h2>
+    <ol class="seeds">
+      <li class="step"><span class="topic">Growing</span><span class="seed-q">“Your faith groweth exceedingly” <cite>1:3</cite></span><span class="take">Pressure doesn't have to break you. It can be where your faith grows most.</span></li>
+      <li class="step"><span class="topic">Justice</span><span class="seed-q">“It is a righteous thing with God to recompense tribulation to them that trouble you” <cite>1:6</cite></span><span class="take">God will set every wrong right. Payback is His job, not yours.</span></li>
+      <li class="step"><span class="topic">Rest</span><span class="seed-q">“To you who are troubled rest with us, when the Lord Jesus shall be revealed from heaven” <cite>1:7</cite></span><span class="take">Some wrongs won't be fixed in this life. They will be fixed when He comes.</span></li>
+      <li class="step"><span class="topic">Away from Him</span><span class="seed-q">“Everlasting destruction from the presence of the Lord” <cite>1:9</cite></span><span class="take">Hell is real and sober. For the believer it's not a threat; it's a reason to pray for others.</span></li>
+      <li class="step"><span class="topic">Admired</span><span class="seed-q">“To be glorified in his saints, and to be admired in all them that believe” <cite>1:10</cite></span><span class="take">Your rescued life will be part of how Jesus is admired.</span></li>
+      <li class="step"><span class="topic">Worthy</span><span class="seed-q">“That our God would count you worthy of this calling” <cite>1:11</cite></span><span class="take">Not earning the call, but growing into it, by grace.</span></li>
+    </ol>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 1 of 6</p>
+      <span class="topic">Growing</span>
+      <h2>What was happening to the Thessalonians' faith while they were being persecuted?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="3"></blockquote>
+      <blockquote class="quote step" data-q="4"></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>It was growing exceedingly, and so was their love for each other. They kept enduring in all their persecutions, and Paul bragged about them to the other churches.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 2 of 6</p>
+      <span class="topic">Justice</span>
+      <h2>What will God do about the people who trouble His people?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="5"></blockquote>
+      <blockquote class="quote step" data-q="6"></blockquote>
+      <blockquote class="quote step"><p>“Dearly beloved, avenge not yourselves, but rather give place unto wrath: for it is written, Vengeance is mine; I will repay, saith the Lord.”</p><cite>Romans 12:19</cite></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>He will recompense them: pay back trouble to those who trouble His people. His judgment is righteous. So we don't take revenge; we leave it with Him.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 3 of 6</p>
+      <span class="topic">Rest</span>
+      <h2>When will the troubled get their rest?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="7"></blockquote>
+      <blockquote class="quote step" data-q="10"></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>When the Lord Jesus is revealed from heaven with His mighty angels. On that day the troubled get rest, along with Paul and everyone who believes.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 4 of 6</p>
+      <span class="topic">Away from Him</span>
+      <h2>What happens to those who know not God and obey not the gospel?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="8"></blockquote>
+      <blockquote class="quote step" data-q="9"></blockquote>
+      <blockquote class="quote step"><p>“The Lord is not slack concerning his promise, as some men count slackness; but is longsuffering to us-ward, not willing that any should perish, but that all should come to repentance.”</p><cite>2 Peter 3:9</cite></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>Everlasting destruction, shut out from the presence of the Lord. It's real and sober. But God is patient and wants none to perish, and whoever believes the gospel is safe.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 5 of 6</p>
+      <span class="topic">Admired</span>
+      <h2>Where will Christ be glorified and admired when He comes?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="10"></blockquote>
+      <blockquote class="quote step" data-q="12"></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>In His saints, in all them that believe. What He has done in His people will make Him admired, and His name is glorified in them even now.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 6 of 6</p>
+      <span class="topic">Worthy</span>
+      <h2>What did Paul pray that God would do for them?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="11"></blockquote>
+      <blockquote class="quote step" data-q="12"></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>That God would count them worthy of His calling, fulfil every good thing He wants for them, and make their faith work with power, so that Jesus would be glorified in them, all by grace.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide prayer">
+  <div class="inner">
+    <div class="emblem rise"></div>
+    <h2 class="rise" style="--d:1">Prayer requests</h2>
+    <p class="ask-line rise" style="--d:2">What can we pray about for you today?</p>
+    <blockquote class="quote rise" style="--d:4"><p>“Wherefore also we pray always for you, that our God would count you worthy of this calling, and fulfil all the good pleasure of his goodness, and the work of faith with power:”</p><cite>2 Thessalonians 1:11</cite></blockquote>
+  </div>
+</section>
+
+</main>
+
+<script>
+// King James Version, 2 Thessalonians chapter 1
+const V = {
+  1: "Paul, and Silvanus, and Timotheus, unto the church of the Thessalonians in God our Father and the Lord Jesus Christ:",
+  2: "Grace unto you, and peace, from God our Father and the Lord Jesus Christ.",
+  3: "We are bound to thank God always for you, brethren, as it is meet, because that your faith groweth exceedingly, and the charity of every one of you all toward each other aboundeth;",
+  4: "So that we ourselves glory in you in the churches of God for your patience and faith in all your persecutions and tribulations that ye endure:",
+  5: "Which is a manifest token of the righteous judgment of God, that ye may be counted worthy of the kingdom of God, for which ye also suffer:",
+  6: "Seeing it is a righteous thing with God to recompense tribulation to them that trouble you;",
+  7: "And to you who are troubled rest with us, when the Lord Jesus shall be revealed from heaven with his mighty angels,",
+  8: "In flaming fire taking vengeance on them that know not God, and that obey not the gospel of our Lord Jesus Christ:",
+  9: "Who shall be punished with everlasting destruction from the presence of the Lord, and from the glory of his power;",
+  10: "When he shall come to be glorified in his saints, and to be admired in all them that believe (because our testimony among you was believed) in that day.",
+  11: "Wherefore also we pray always for you, that our God would count you worthy of this calling, and fulfil all the good pleasure of his goodness, and the work of faith with power:",
+  12: "That the name of our Lord Jesus Christ may be glorified in you, and ye in him, according to the grace of our God and the Lord Jesus Christ."
+};
+const BOOK = "2 Thessalonians 1";
+</script>
+<script src="../assets/deck.js"></script>
+</body>
+</html>

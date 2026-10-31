@@ -1,0 +1,506 @@
+<!doctype html>
+<html lang="en" data-theme="night">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>2 Thessalonians 2</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="../assets/fonts.css">
+<link rel="stylesheet" href="../assets/deck.css">
+<link rel="stylesheet" href="../assets/themes.css">
+<style>
+/* t202-where: where we are in 2 Thessalonians (the t201-where block from chapter 1, a deck.css candidate). */
+.t202-where { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin: .5em 0 1em; }
+.t202-where > div { --c: var(--line-strong); padding: .55em .8em .65em; border-top: 6px solid var(--c); border-radius: 0 0 10px 10px;
+  background: color-mix(in srgb, var(--surface) 70%, transparent); opacity: 0; transform: translateY(10px);
+  transition: opacity .6s ease, transform .6s ease; transition-delay: calc(var(--k, 0) * 350ms + 300ms); }
+.slide.active .t202-where > div { opacity: 1; transform: none; }
+.t202-where > div.now { --c: var(--accent); background: color-mix(in srgb, var(--accent) 15%, transparent); box-shadow: inset 0 0 0 2px var(--accent); }
+.t202-where p { display: flex; gap: 6px; margin: 0 0 .4em; }
+.t202-where i { min-width: 2.2em; padding: .22em .3em; text-align: center; border-radius: 6px; border: 1.5px solid var(--line-strong);
+  font: 700 clamp(.82rem, .74rem + .35vw, 1.08rem) var(--sans); font-style: normal; color: var(--ink-soft); }
+.t202-where i.done { background: color-mix(in srgb, var(--accent) 14%, transparent); color: var(--ink); }
+.t202-where i.here { background: var(--accent); border-color: var(--accent); color: var(--on-accent); }
+.slide.active .t202-where i.here { animation: t202-here 2.4s ease-in-out 1.8s infinite; }
+@keyframes t202-here { 50% { box-shadow: 0 0 0 6px color-mix(in srgb, var(--accent) 28%, transparent); } }
+.t202-where b { display: block; font: 600 clamp(1.05rem, .88rem + .7vw, 1.5rem)/1.1 var(--serif); color: var(--ink); }
+.t202-where small { display: block; margin: .2em 0 .35em; font-size: clamp(.78rem, .72rem + .26vw, 1rem); line-height: 1.3; color: var(--ink-soft); }
+.t202-where q { display: block; font: italic clamp(.86rem, .78rem + .34vw, 1.08rem)/1.3 var(--serif); quotes: "\201C" "\201D"; }
+.t202-where cite { display: block; margin-top: .2em; font-style: normal; font-size: clamp(.72rem, .68rem + .22vw, .92rem); color: var(--ink-soft); }
+@media (max-width: 640px) {
+  .t202-where { grid-template-columns: 1fr; gap: 6px; }
+  .t202-where > div { border-top: 0; border-left: 6px solid var(--c); border-radius: 0 10px 10px 0; }
+}
+
+/* t202-throne: a proud man raised up on a tower of his own making, then undone by a breath. A night panel (--on-glow, so it's
+   dark in every theme) holds a stepped tower (.t202-tower rects) with a figure on top (.t202-man) who sets himself above God.
+   On a .t202-go step, light floods in from above (.t202-dawn), the figure shrinks and fades, the tower falls away,
+   and the words of verse 8 appear (.t202-word). */
+.t202-throne { display: block; width: 100%; height: auto; max-height: 52vh; margin: 0 auto; }
+.t202-sky { fill: var(--on-glow); }
+.t202-tower rect { fill: color-mix(in srgb, var(--glow) 16%, var(--on-glow)); stroke: color-mix(in srgb, var(--glow) 40%, transparent); stroke-width: 1.5;
+  transition: transform 1.2s cubic-bezier(.5,0,.8,.4), opacity 1.2s ease; transition-delay: calc(var(--k, 0) * 120ms + .6s); }
+.slide:has(.t202-go.on) .t202-tower rect { transform: translateY(60px); opacity: 0; }
+.t202-man { transform-box: fill-box; transform-origin: 50% 100%; transition: transform 1.4s ease .3s, opacity 1.4s ease .3s; }
+.t202-man circle, .t202-man path { fill: var(--wine); stroke: color-mix(in srgb, var(--glow) 50%, transparent); stroke-width: 1.5; }
+.slide:has(.t202-go.on) .t202-man { transform: scale(.15); opacity: 0; }
+.t202-boast { fill: var(--glow); font: italic 18px var(--serif); text-anchor: middle; transition: opacity .8s ease; }
+.t202-boast.s { font: 15px var(--sans); font-style: normal; opacity: .75; }
+.slide:has(.t202-go.on) .t202-boast { opacity: 0; }
+.t202-dawn { opacity: 0; transition: opacity 1.6s ease; }
+.slide:has(.t202-go.on) .t202-dawn { opacity: 1; }
+.t202-word { fill: var(--on-glow); font: 700 19px var(--sans); text-anchor: middle; opacity: 0; transition: opacity 1s ease 1.6s; }
+.t202-word.s { font: italic 17px var(--serif); font-weight: 400; }
+.slide:has(.t202-go.on) .t202-word { opacity: 1; }
+@media (max-width: 600px) { .t202-boast { font-size: 22px; } .t202-boast.s { font-size: 19px; } .t202-word { font-size: 23px; } .t202-word.s { font-size: 21px; } }
+</style>
+</head>
+<body>
+<main class="deck" id="deck">
+
+<!-- ======================= OPENING ======================= -->
+<section class="slide title">
+  <div class="inner">
+    <div class="emblem rise"></div>
+    <h1 class="rise" style="--d:1">2 Thessalonians 2</h1>
+    <p class="sub rise" style="--d:3">Don't be shaken</p>
+    <p class="tag rise" style="--d:5">Someone told the church the day of Christ had already come. Paul calms them down: it hasn't, and when it does come, Christ wins.</p>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise" style="--d:1">Where we are in 2 Thessalonians</h2>
+    <div class="t202-where" role="img" aria-label="2 Thessalonians in three parts, one for each chapter. Chapter 1, rest for the troubled, which we have read. Chapter 2, don't be shaken: that day hasn't come yet, and when it does, Christ wins. Key phrase: That ye be not soon shaken in mind, 2:2. We are here. Chapter 3, keep working, keep doing good.">
+      <div style="--k:0"><p><i class="done">1</i></p><b>Rest for the troubled</b><small>God sees, and He will set it right</small><q>to you who are troubled rest with us</q><cite>1:7</cite></div>
+      <div class="now" style="--k:1"><p><i class="here">2</i></p><b>Don't be shaken</b><small>That day hasn't come yet, and when it does, Christ wins</small><q>That ye be not soon shaken in mind</q><cite>2:2</cite></div>
+      <div style="--k:2"><p><i>3</i></p><b>Keep working, keep doing good</b><small>Pray, work quietly, and don't quit</small><q>be not weary in well doing</q><cite>3:13</cite></div>
+    </div>
+    <p class="note rise" style="--d:3">Chapter 1 promised rest <em>“when the Lord Jesus shall be revealed from heaven.”</em> Now Paul gets to the reason he wrote: a false word had the church in a panic that the day had already come and they'd missed it.</p>
+    <p class="note step">This is one of the hardest chapters in the New Testament. We'll go slowly, say plainly what's plain, and be honest where good Bible teachers disagree.</p>
+  </div>
+</section>
+
+<section class="slide watch">
+  <div class="inner">
+    <h2 class="rise">Things to watch for</h2>
+    <p class="lede rise" style="--d:1">Keep these questions in the back of your mind as we read. We'll come back to every one of them at the end.</p>
+    <ol class="seeds">
+      <li class="step"><span class="topic">Shaken</span><span class="seed-q">What did Paul not want the Thessalonians to be shaken by?</span></li>
+      <li class="step"><span class="topic">First</span><span class="seed-q">What did Paul say must happen before the day of Christ comes?</span></li>
+      <li class="step"><span class="topic">Held back</span><span class="seed-q">What is happening to the mystery of iniquity for now?</span></li>
+      <li class="step"><span class="topic">Christ wins</span><span class="seed-q">How will the Lord deal with that Wicked?</span></li>
+      <li class="step"><span class="topic">The truth</span><span class="seed-q">What is the difference between those who perish and those God chose to salvation?</span></li>
+      <li class="step"><span class="topic">Stand fast</span><span class="seed-q">What did Paul tell them to do, and what has God already given them?</span></li>
+    </ol>
+  </div>
+</section>
+
+<!-- ======================= PART ONE ======================= -->
+<section class="slide part">
+  <div class="inner">
+    <p class="part-n rise">Part one</p>
+    <h2 class="rise" style="--d:1">Don't be shaken</h2>
+    <p class="range rise" style="--d:2">Verses 1–5</p>
+    <div class="rule"></div>
+    <p class="hook rise" style="--d:4">A scary rumor is going round the church. Paul answers it with the facts.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="1-2" data-hl="by the coming of our Lord Jesus Christ, and by our gathering together unto him|That ye be not soon shaken in mind, or be troubled|nor by letter as from us|the day of Christ is at hand"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise" style="--d:1">Where the panic came from</h2>
+    <div class="sort">
+      <div class="step"><h3>“By spirit”</h3><div class="vs"><b>v. 2</b></div><p>Somebody stood up claiming God had shown him something. It sounded spiritual. It wasn't true.</p></div>
+      <div class="step"><h3>“By word”</h3><div class="vs"><b>v. 2</b></div><p>A teaching, a sermon, a report passed along: “Paul says…”</p></div>
+      <div class="step"><h3>“By letter as from us”</h3><div class="vs"><b>v. 2</b></div><p>Maybe even a forged letter with Paul's name on it. That's why he signs this one with his own hand (3:17).</p></div>
+    </div>
+    <p class="note step"><em>“At hand”</em> here means <em>already here</em>. They'd been told the day of the Lord had come, and with all the persecution of chapter 1, it felt true. Had they missed Jesus? Was this the wrath?</p>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise" style="--d:1">Steady</h2>
+    <p class="note rise" style="--d:2"><em>Shaken</em> is the word for a boat torn loose from its mooring and tossed by the waves. <em>Troubled</em> means <em>alarmed</em>, the jolt you feel when you hear a siren. Paul's answer starts with what they already knew: Jesus is coming for His own, and they'll be <em>gathered together unto him</em>.</p>
+    <blockquote class="quote step"><p>“Then we which are alive and remain shall be caught up together with them in the clouds, to meet the Lord in the air: and so shall we ever be with the Lord.”</p><cite>1 Thessalonians 4:17</cite></blockquote>
+    <blockquote class="quote step"><p>“Let not your heart be troubled: ye believe in God, believe also in me.”</p><cite>John 14:1</cite></blockquote>
+    <p class="note step">There are still people who sell fear about the end: a date, a video, a sign in the news. Don't be shaken by any of it. Open the Book, check what it actually says, and go do the next right thing.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="3-5" data-hl="Let no man deceive you by any means|that day shall not come, except there come a falling away first|that man of sin be revealed, the son of perdition|exalteth himself above all that is called God|I told you these things"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="3" data-hl="that day shall not come, except"></blockquote>
+    <h2 class="rise" style="--d:1">Paul's answer, in one line</h2>
+    <div class="ifthen step">
+      <div class="if"><small>If</small>the man of sin has not been revealed,</div>
+      <span class="arrow" aria-hidden="true">→</span>
+      <div class="then"><small>then</small>the day of Christ has not come. You haven't missed it.</div>
+    </div>
+    <p class="note step">Two things come first, Paul says. <em>“A falling away”</em>: a great turning away from the truth. And <em>“that man of sin”</em> shown for who he is. Neither had happened, so the rumor was false.</p>
+    <p class="note step">Paul isn't giving them a date to watch for. He's giving them a reason to calm down.</p>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise" style="--d:1">The man of sin</h2>
+    <p class="note rise" style="--d:2">He's called <em>“the son of perdition,”</em> a man headed for ruin. Jesus used the same words for Judas:</p>
+    <blockquote class="quote step"><p>“While I was with them in the world, I kept them in thy name: those that thou gavest me I have kept, and none of them is lost, but the son of perdition; that the scripture might be fulfilled.”</p><cite>John 17:12</cite></blockquote>
+    <p class="note step">What makes him so evil? He <em>“exalteth himself above all that is called God,”</em> and sits in God's place. It's the oldest lie there is, the serpent's line in the garden:</p>
+    <blockquote class="quote step"><p>“For God doth know that in the day ye eat thereof, then your eyes shall be opened, and ye shall be as gods, knowing good and evil.”</p><cite>Genesis 3:5</cite></blockquote>
+    <p class="note step">We know a small version of it. Every addiction puts something else on God's throne, and every “I'll run my own life” puts me there. The man of sin is that same sin, full grown. The cure is the same for him as for us: get off the throne.</p>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="5"></blockquote>
+    <h2 class="rise" style="--d:1">How to read a hard chapter</h2>
+    <p class="note rise" style="--d:2">Paul had taught them this in person. We only have the letter, so we should hold our ideas humbly.</p>
+    <div class="sort">
+      <div class="step"><h3>What's plain</h3><div class="vs"><b>v. 2, 8, 15</b></div><p>Don't be shaken. The day hadn't come. Evil will grow proud, and the Lord Jesus will destroy it with a word. Hold on to what you were taught.</p></div>
+      <div class="step"><h3>Where good teachers differ</h3><div class="vs"><b>v. 3–7</b></div><p>Who or what holds evil back, whether the church is caught up before the man of sin appears, and what the <em>“temple”</em> is. Godly Baptists land in different places.</p></div>
+    </div>
+    <p class="note step">So no charts, no dates and no guessing which famous person he is. Men have named a dozen “antichrists” and been wrong every time.</p>
+  </div>
+</section>
+
+<!-- ======================= PART TWO ======================= -->
+<section class="slide part">
+  <div class="inner">
+    <p class="part-n rise">Part two</p>
+    <h2 class="rise" style="--d:1">Held back, then brought down</h2>
+    <p class="range rise" style="--d:2">Verses 6–12</p>
+    <div class="rule"></div>
+    <p class="hook rise" style="--d:4">Evil is busy, but it's on a leash. And its end takes one breath.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="6-8" data-hl="what withholdeth|in his time|the mystery of iniquity doth already work|he who now letteth will let, until he be taken out of the way|whom the Lord shall consume with the spirit of his mouth|the brightness of his coming"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="7" data-hl="he who now letteth will let"></blockquote>
+    <div class="morph">
+      <span class="big rise" style="--d:2">let</span>
+      <span class="say step">old English: <em>hinder</em></span>
+      <span class="means step">“hold back, restrain”</span>
+    </div>
+    <p class="note step">In 1611 <em>let</em> meant the opposite of what it means now. Paul uses it in Romans: he had wanted to visit Rome, <em>“but was let hitherto”</em> (Romans 1:13), held back until now. And verse 6's <em>“withholdeth”</em> means the same.</p>
+    <p class="note step">Who's the one holding back? Many Baptist teachers say the Holy Spirit, working through His people. Others say law and government. Paul's readers knew (<em>“ye know”</em>), and he didn't write the name down. What is plain: evil runs only as far as God allows, and only <em>“in his time.”</em></p>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <div class="split">
+      <div class="stage">
+        <svg class="t202-throne" viewBox="0 0 600 360" role="img" aria-label="A dark night sky. A proud figure stands on top of a tall stepped tower he built, above the words: exalteth himself above all that is called God. Then light floods in from above, the brightness of his coming. The figure shrinks to nothing and the tower falls away. The words appear: consume with the spirit of his mouth.">
+          <defs>
+            <radialGradient id="t202-light" cx="50%" cy="0%" r="95%">
+              <stop offset="0" style="stop-color:var(--glow)"/>
+              <stop offset=".55" style="stop-color:var(--glow);stop-opacity:.75"/>
+              <stop offset="1" style="stop-color:var(--glow);stop-opacity:0"/>
+            </radialGradient>
+          </defs>
+          <rect class="t202-sky" x="0" y="0" width="600" height="360" rx="14"/>
+          <g style="fill:var(--glow)" opacity=".55"><circle cx="60" cy="40" r="1.6"/><circle cx="140" cy="90" r="1.2"/><circle cx="520" cy="60" r="1.6"/><circle cx="470" cy="130" r="1.1"/><circle cx="90" cy="170" r="1.2"/><circle cx="560" cy="200" r="1.3"/><circle cx="220" cy="30" r="1.1"/></g>
+          <g class="t202-tower">
+            <rect style="--k:3" x="200" y="300" width="200" height="40"/>
+            <rect style="--k:2" x="230" y="262" width="140" height="38"/>
+            <rect style="--k:1" x="258" y="226" width="84" height="36"/>
+            <rect style="--k:0" x="280" y="194" width="40" height="32"/>
+          </g>
+          <g class="t202-man"><circle cx="300" cy="128" r="13"/><path d="M300 141 L284 194 L316 194 Z"/><path d="M290 152 L262 128 L266 124 L296 146 Z"/><path d="M310 152 L338 128 L334 124 L304 146 Z"/></g>
+          <text class="t202-boast" x="300" y="80">“above all that is called God”</text>
+          <text class="t202-boast s" x="300" y="104">“shewing himself that he is God” (v. 4)</text>
+          <rect class="t202-dawn" x="0" y="0" width="600" height="360" rx="14" fill="url(#t202-light)"/>
+          <text class="t202-word" x="300" y="150">consumed with the spirit of his mouth</text>
+          <text class="t202-word s" x="300" y="182">destroyed with the brightness of his coming (v. 8)</text>
+        </svg>
+      </div>
+      <div>
+        <h2 class="rise" style="--d:1">One breath</h2>
+        <p class="note rise" style="--d:2">All that pride, all those <em>“signs and lying wonders,”</em> and how does it end? No battle worth describing. The Lord Jesus breathes, and he's gone. He shows up, and that's the end of it.</p>
+        <p class="note step t202-go">Paul is echoing Isaiah's promise about the coming King:</p>
+        <blockquote class="quote step"><p>“But with righteousness shall he judge the poor, and reprove with equity for the meek of the earth: and he shall smite the earth with the rod of his mouth, and with the breath of his lips shall he slay the wicked.”</p><cite>Isaiah 11:4</cite></blockquote>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <p class="saying rise">Evil is <em>already</em> at work. It will <em>not</em> win.</p>
+    <p class="note rise" style="--d:2"><em>“The mystery of iniquity doth already work.”</em> The spirit of the man of sin was around in Paul's day, and John said the same thing about forty years later:</p>
+    <blockquote class="quote step"><p>“Little children, it is the last time: and as ye have heard that antichrist shall come, even now are there many antichrists; whereby we know that it is the last time.”</p><cite>1 John 2:18</cite></blockquote>
+    <p class="note step">So you don't have to be naive about evil, in the world or in your own heart. But you don't have to be afraid of it either. It's on a leash, and its end is already written. If the worst man in history falls with one breath, the thing that's beating you up today isn't bigger than Jesus.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="9-10" data-hl="after the working of Satan with all power and signs and lying wonders|because they received not the love of the truth, that they might be saved"></section>
+
+<section class="slide verse" data-v="11-12" data-hl="God shall send them strong delusion, that they should believe a lie|had pleasure in unrighteousness"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <div class="split">
+      <div class="stage">
+        <svg class="cycle" style="--at:320px 200px; --lap:8s" viewBox="0 0 640 400" role="img" aria-label="A circle with four stops: turn from the truth, love the wrong thing, believe the lie, see less and less. A dot keeps going around. Then a bright path breaks out of the circle: the love of the truth. The truth shall make you free.">
+          <circle class="cycle-ring" cx="320" cy="200" r="130"/>
+          <g class="rise" style="--d:1"><circle class="cycle-stop" cx="320" cy="70" r="15"/><text x="320" y="40" text-anchor="middle" font-size="19" style="fill:var(--ink)">Turn from the truth <tspan style="fill:var(--ink-soft)">(v. 10)</tspan></text></g>
+          <g class="rise" style="--d:2"><circle class="cycle-stop" cx="450" cy="200" r="15"/><text x="474" y="194" font-size="19" style="fill:var(--ink)">Love the</text><text x="474" y="218" font-size="19" style="fill:var(--ink)">wrong thing <tspan style="fill:var(--ink-soft)">(12)</tspan></text></g>
+          <g class="rise" style="--d:3"><circle class="cycle-stop" cx="320" cy="330" r="15"/><text x="320" y="374" text-anchor="middle" font-size="19" style="fill:var(--ink)">Believe the lie <tspan style="fill:var(--ink-soft)">(11)</tspan></text></g>
+          <g class="rise" style="--d:4"><circle class="cycle-stop" cx="190" cy="200" r="15"/><text x="166" y="194" text-anchor="end" font-size="19" style="fill:var(--ink)">See less</text><text x="166" y="218" text-anchor="end" font-size="19" style="fill:var(--ink)">and less</text></g>
+          <g class="cycle-spin"><circle cx="320" cy="70" r="8" style="fill:var(--accent-hot);stroke:var(--bg)" stroke-width="2"/></g>
+          <text x="320" y="196" text-anchor="middle" font-size="22" class="serif" style="fill:var(--ink-soft)">deeper</text>
+          <text x="320" y="224" text-anchor="middle" font-size="22" class="serif" style="fill:var(--ink-soft)">and deeper</text>
+          <g class="cycle-out">
+            <path class="cycle-way" d="M412 292 C 445 330, 500 350, 580 350"/>
+            <path class="cycle-way" d="M566 338 L582 350 L566 362"/>
+            <text x="630" y="388" text-anchor="end" font-size="19" font-weight="700" style="fill:var(--accent-hot)">the love of the truth</text>
+            <text x="630" y="322" text-anchor="end" font-size="15" style="fill:var(--ink-soft)">John 8:32</text>
+          </g>
+        </svg>
+      </div>
+      <div>
+        <h2 class="rise" style="--d:1">How a man ends up believing a lie</h2>
+        <p class="note rise" style="--d:2">It starts with what he loves. They <em>“received not the love of the truth”</em>; they <em>“had pleasure in unrighteousness.”</em> A man who wants the lie gets better and better at believing it.</p>
+        <p class="note step">Anybody who's been in addiction knows this circle: “I can handle it. Just one. Nobody's getting hurt.”</p>
+        <p class="note step cycle-go">The way out is to love the truth, even when it hurts: <em>“And ye shall know the truth, and the truth shall make you free”</em> (John 8:32).</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise" style="--d:1">“Strong delusion”: does God trick people?</h2>
+    <ul class="nots">
+      <li class="step"><span class="k">not “God fools honest seekers”</span><span class="why">He <em>“will have all men to be saved, and to come unto the knowledge of the truth”</em> (1 Timothy 2:4)</span></li>
+      <li class="step"><span class="k">not “you might be too far gone”</span><span class="why">a man worried that he's lost the truth is a man who still wants it</span></li>
+      <li class="step yes"><span class="k">but God gives men over to the lie they insist on</span><span class="why">they turned the truth away, and in the end He lets them have what they chose</span></li>
+    </ul>
+    <blockquote class="quote step"><p>“And even as they did not like to retain God in their knowledge, God gave them over to a reprobate mind, to do those things which are not convenient;”</p><cite>Romans 1:28</cite></blockquote>
+    <p class="note step">Here's something to do today: name one lie you've been telling yourself, and say it out loud to a brother you trust. Lies lose their grip in the light.</p>
+  </div>
+</section>
+
+<!-- ======================= PART THREE ======================= -->
+<section class="slide part">
+  <div class="inner">
+    <p class="part-n rise">Part three</p>
+    <h2 class="rise" style="--d:1">Chosen, called, comforted</h2>
+    <p class="range rise" style="--d:2">Verses 13–17</p>
+    <div class="rule"></div>
+    <p class="hook rise" style="--d:4">“But.” After the darkness, Paul turns to the people he loves.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="13-14" data-hl="brethren beloved of the Lord|God hath from the beginning chosen you to salvation through sanctification of the Spirit and belief of the truth|he called you by our gospel"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="13" data-hl="chosen you to salvation through sanctification of the Spirit and belief of the truth"></blockquote>
+    <h2 class="rise" style="--d:1">Chosen, and how</h2>
+    <ol class="timeline" aria-label="Five steps. From the beginning, God planned to save. By our gospel, He called you. Belief of the truth: you believed. Sanctification of the Spirit: the Spirit set you apart. The glory of our Lord Jesus Christ: where it ends.">
+      <li style="--k:0"><b>from the beginning</b><span>God planned to save</span><small>v. 13</small></li>
+      <li style="--k:1"><b>“by our gospel”</b><span>He called you</span><small>v. 14</small></li>
+      <li style="--k:2"><b>“belief of the truth”</b><span>you believed</span><small>v. 13</small></li>
+      <li style="--k:3"><b>“sanctification of the Spirit”</b><span>He set you apart</span><small>v. 13</small></li>
+      <li class="lit" style="--k:4"><b>“the glory”</b><span>where it ends</span><small>v. 14</small></li>
+    </ol>
+    <p class="note step">Look at the word <em>through</em>. God chose them to salvation <em>through</em> the Spirit's work and <em>through</em> believing the truth. Put it beside verse 10: those who perish <em>“received not the love of the truth.”</em> The difference is the truth, received or refused.</p>
+    <p class="note step">And the call came <em>“by our gospel,”</em> preached in the open to anybody who'd listen. <em>“Whosoever shall call upon the name of the Lord shall be saved”</em> (Romans 10:13). If you've believed, God wanted you, and planned for you, before you ever knew Him.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="15-17" data-hl="stand fast, and hold the traditions which ye have been taught|everlasting consolation and good hope through grace|stablish you in every good word and work"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise" style="--d:1">From shaken to stablished</h2>
+    <div class="columns">
+      <div class="col law step">
+        <p class="who">How the chapter began (v. 2)</p>
+        <h3>“Shaken in mind… troubled”</h3>
+        <p>Pushed around by every rumor, every scary voice, every forged letter.</p>
+      </div>
+      <div class="col grace step">
+        <p class="who">How it ends (v. 15–17)</p>
+        <h3>“Stand fast… stablish you”</h3>
+        <p>Feet planted, holding on to what the apostles taught, and comforted by God Himself.</p>
+      </div>
+    </div>
+    <p class="note step"><em>Traditions</em> here isn't man-made church rules. It's what the apostles handed down, <em>“by word, or our epistle.”</em> We have it today in the Bible. When you're shaken, that's the anchor: not the latest voice, but the Word that was handed down.</p>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <p class="saying rise">“Everlasting <em>consolation</em> and good <em>hope</em> through grace.”</p>
+    <p class="note rise" style="--d:2">Look who's doing the giving: <em>“our Lord Jesus Christ himself, and God, even our Father, which hath loved us.”</em> The comfort isn't something you scrape together. It's been <em>given</em>, and it's <em>everlasting</em>: it doesn't run out on a bad day.</p>
+    <p class="note step">And notice where Paul ends this hard chapter. Not with a chart of the future, but with <em>“every good word and work.”</em> The best way to be ready for His coming is to be faithful at whatever is in front of you today: an honest word, a day's work, a kindness to the man next to you.</p>
+  </div>
+</section>
+
+<section class="slide remember">
+  <div class="inner">
+    <h2 class="rise">Points to remember</h2>
+    <ol class="seeds">
+      <li class="step"><span class="topic">Shaken</span><span class="seed-q">“That ye be not soon shaken in mind, or be troubled” <cite>2:2</cite></span><span class="take">Don't let a rumor, a voice or a fake letter steal your peace. Check it against the Word.</span></li>
+      <li class="step"><span class="topic">First</span><span class="seed-q">“Except there come a falling away first, and that man of sin be revealed” <cite>2:3</cite></span><span class="take">The day hadn't come. Paul gave them a reason to calm down, not a date to watch.</span></li>
+      <li class="step"><span class="topic">Held back</span><span class="seed-q">“Only he who now letteth will let, until he be taken out of the way” <cite>2:7</cite></span><span class="take">Evil is busy, but it's on a leash. It runs only as far as God allows.</span></li>
+      <li class="step"><span class="topic">Christ wins</span><span class="seed-q">“Whom the Lord shall consume with the spirit of his mouth” <cite>2:8</cite></span><span class="take">The worst man in history falls with one breath. Jesus wins.</span></li>
+      <li class="step"><span class="topic">The truth</span><span class="seed-q">“Chosen you to salvation through sanctification of the Spirit and belief of the truth” <cite>2:13</cite></span><span class="take">Some refuse the love of the truth; believers received it. Love the truth, even when it hurts.</span></li>
+      <li class="step"><span class="topic">Stand fast</span><span class="seed-q">“Everlasting consolation and good hope through grace” <cite>2:16</cite></span><span class="take">Stand fast in what you were taught. God has already given the comfort and the hope.</span></li>
+    </ol>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 1 of 6</p>
+      <span class="topic">Shaken</span>
+      <h2>What did Paul not want the Thessalonians to be shaken by?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="2"></blockquote>
+      <blockquote class="quote step" data-q="3"></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>By any spirit, word or letter claiming to be from him that said the day of Christ had already come. He told them not to let anyone deceive them by any means.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 2 of 6</p>
+      <span class="topic">First</span>
+      <h2>What did Paul say must happen before the day of Christ comes?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="3"></blockquote>
+      <blockquote class="quote step" data-q="4"></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>A falling away must come first, and the man of sin, the son of perdition, must be revealed: a man who sets himself above God. Since that hadn't happened, the day hadn't come.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 3 of 6</p>
+      <span class="topic">Held back</span>
+      <h2>What is happening to the mystery of iniquity for now?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="6"></blockquote>
+      <blockquote class="quote step" data-q="7"></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>It is already at work, but it is being held back until the restrainer is taken out of the way. The man of sin can only be revealed in God's time.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 4 of 6</p>
+      <span class="topic">Christ wins</span>
+      <h2>How will the Lord deal with that Wicked?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="8"></blockquote>
+      <blockquote class="quote step"><p>“But with righteousness shall he judge the poor, and reprove with equity for the meek of the earth: and he shall smite the earth with the rod of his mouth, and with the breath of his lips shall he slay the wicked.”</p><cite>Isaiah 11:4</cite></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>He will consume him with the spirit of His mouth and destroy him with the brightness of His coming. It takes one breath. Jesus wins.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 5 of 6</p>
+      <span class="topic">The truth</span>
+      <h2>What is the difference between those who perish and those God chose to salvation?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="10"></blockquote>
+      <blockquote class="quote step" data-q="13"></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>The truth. Those who perish received not the love of the truth. Believers were chosen to salvation through the Spirit's work and belief of the truth. And God wants all men to come to the knowledge of the truth (1 Timothy 2:4).</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 6 of 6</p>
+      <span class="topic">Stand fast</span>
+      <h2>What did Paul tell them to do, and what has God already given them?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="15"></blockquote>
+      <blockquote class="quote step" data-q="16-17"></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>Stand fast and hold on to what the apostles taught. God has already given everlasting consolation and good hope through grace, and He comforts and establishes them in every good word and work.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide prayer">
+  <div class="inner">
+    <div class="emblem rise"></div>
+    <h2 class="rise" style="--d:1">Prayer requests</h2>
+    <p class="ask-line rise" style="--d:2">What can we pray about for you today?</p>
+    <blockquote class="quote rise" style="--d:4"><p>“Now our Lord Jesus Christ himself, and God, even our Father, which hath loved us, and hath given us everlasting consolation and good hope through grace, Comfort your hearts, and stablish you in every good word and work.”</p><cite>2 Thessalonians 2:16–17</cite></blockquote>
+  </div>
+</section>
+
+</main>
+
+<script>
+// King James Version, 2 Thessalonians chapter 2
+const V = {
+  1: "Now we beseech you, brethren, by the coming of our Lord Jesus Christ, and by our gathering together unto him,",
+  2: "That ye be not soon shaken in mind, or be troubled, neither by spirit, nor by word, nor by letter as from us, as that the day of Christ is at hand.",
+  3: "Let no man deceive you by any means: for that day shall not come, except there come a falling away first, and that man of sin be revealed, the son of perdition;",
+  4: "Who opposeth and exalteth himself above all that is called God, or that is worshipped; so that he as God sitteth in the temple of God, shewing himself that he is God.",
+  5: "Remember ye not, that, when I was yet with you, I told you these things?",
+  6: "And now ye know what withholdeth that he might be revealed in his time.",
+  7: "For the mystery of iniquity doth already work: only he who now letteth will let, until he be taken out of the way.",
+  8: "And then shall that Wicked be revealed, whom the Lord shall consume with the spirit of his mouth, and shall destroy with the brightness of his coming:",
+  9: "Even him, whose coming is after the working of Satan with all power and signs and lying wonders,",
+  10: "And with all deceivableness of unrighteousness in them that perish; because they received not the love of the truth, that they might be saved.",
+  11: "And for this cause God shall send them strong delusion, that they should believe a lie:",
+  12: "That they all might be damned who believed not the truth, but had pleasure in unrighteousness.",
+  13: "But we are bound to give thanks alway to God for you, brethren beloved of the Lord, because God hath from the beginning chosen you to salvation through sanctification of the Spirit and belief of the truth:",
+  14: "Whereunto he called you by our gospel, to the obtaining of the glory of our Lord Jesus Christ.",
+  15: "Therefore, brethren, stand fast, and hold the traditions which ye have been taught, whether by word, or our epistle.",
+  16: "Now our Lord Jesus Christ himself, and God, even our Father, which hath loved us, and hath given us everlasting consolation and good hope through grace,",
+  17: "Comfort your hearts, and stablish you in every good word and work."
+};
+const BOOK = "2 Thessalonians 2";
+</script>
+<script src="../assets/deck.js"></script>
+</body>
+</html>
