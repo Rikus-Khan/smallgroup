@@ -15953,6 +15953,144 @@ window.STUDIES = [
     }
   },
   {
+    "id": "1-john-01",
+    "type": "chapter",
+    "book": "1 John",
+    "ch": 1,
+    "date": "2026-10-31",
+    "title": "1 John 1",
+    "sub": "Walking in the Light",
+    "about": "An old man who once touched Jesus writes to his little children: God is light, pretending fools no one, and for every man who fell yesterday, “If we confess our sins, he is faithful and just to forgive.”",
+    "tags": [
+      "Eyewitnesses",
+      "Fellowship",
+      "God is light",
+      "The blood",
+      "Honest about sin",
+      "Confession"
+    ],
+    "url": "studies/1-john-01.html",
+    "overview": {
+      "where": "Written, by long tradition, from Ephesus, most likely to the churches of Asia around it",
+      "when": "About AD 85 to 95, near the end of John's life, before Revelation (about AD 95)",
+      "people": [
+        "john-the-apostle",
+        "jesus",
+        "the-father"
+      ],
+      "places": [
+        "ephesus",
+        "asia"
+      ],
+      "story": [
+        "John writes as an eyewitness: what he heard, saw, looked upon and handled of the Word of life (1–2).",
+        "He writes so we can share fellowship with the Father, His Son and each other, and so our joy may be full (3–4).",
+        "The message: God is light, with no darkness at all. Saying we know Him while walking in darkness is a lie (5–6).",
+        "Walking in the light, we have fellowship with one another, and the blood of Jesus keeps cleansing us from all sin (7).",
+        "Saying we have no sin, or have not sinned, deceives us; but if we confess, He is faithful and just to forgive and cleanse (8–10)."
+      ],
+      "key": {
+        "ref": "1 John 1:9",
+        "text": "If we confess our sins, he is faithful and just to forgive us our sins, and to cleanse us from all unrighteousness."
+      },
+      "big": "God is pure light, and He doesn't ask us to pretend. Believers still sin, but when we bring it into the light and confess it, He forgives and cleanses, every time, because the blood of Jesus has already paid."
+    }
+  },
+  {
+    "id": "1-john-02",
+    "type": "chapter",
+    "book": "1 John",
+    "ch": 2,
+    "date": "2026-10-31",
+    "title": "1 John 2",
+    "sub": "An Advocate with the Father",
+    "about": "“That ye sin not. And if any man sin…” John aims high and catches us when we fall: a Lawyer who never loses, a payment big enough for the whole world, and three doors every temptation walks through.",
+    "tags": [
+      "Our advocate",
+      "The whole world",
+      "Knowing Him",
+      "Light and love",
+      "Love not the world",
+      "The anointing"
+    ],
+    "url": "studies/1-john-02.html",
+    "overview": {
+      "where": "Written, by long tradition, from Ephesus to believers in the churches of Asia",
+      "when": "About AD 85 to 95",
+      "people": [
+        "jesus",
+        "the-father",
+        "that-wicked-one",
+        "holy-spirit"
+      ],
+      "places": [
+        "ephesus",
+        "asia"
+      ],
+      "story": [
+        "John writes that we sin not; but if any man sin, Jesus Christ the righteous is our advocate and the propitiation for the sins of the whole world (1–2).",
+        "We know that we know Him if we keep His commandments and walk as He walked (3–6).",
+        "The old command to love shines new; whoever hates his brother walks blind in darkness (7–11).",
+        "John writes to little children, young men and fathers: forgiven, strong in the Word, knowing Him (12–14).",
+        "Love not the world: the lust of the flesh, the lust of the eyes and the pride of life are passing away (15–17).",
+        "Antichrists went out from the church denying Jesus is the Christ; believers have the anointing and are to abide in Him until He comes (18–29)."
+      ],
+      "key": {
+        "ref": "1 John 2:1",
+        "text": "My little children, these things write I unto you, that ye sin not. And if any man sin, we have an advocate with the Father, Jesus Christ the righteous:"
+      },
+      "big": "God's aim is that we not sin, but when a believer does, Jesus stands beside him before the Father, pointing to a payment big enough for the whole world. Real faith shows its pulse in obedience, love and staying close to Him."
+    }
+  },
+  {
+    "id": "1-john-03",
+    "type": "chapter",
+    "book": "1 John",
+    "ch": 3,
+    "date": "2026-10-31",
+    "title": "1 John 3",
+    "sub": "Sons of God",
+    "about": "Look what kind of love this is: God calls us His sons, now. A son of God doesn't live in sin as his way of life, and when your own heart condemns you, God is greater than your heart.",
+    "tags": [
+      "Sons of God",
+      "Like Him",
+      "Born of God",
+      "Why He came",
+      "Love in deed",
+      "A condemning heart"
+    ],
+    "url": "studies/1-john-03.html",
+    "overview": {
+      "where": "Written, by long tradition, from Ephesus to believers in the churches of Asia",
+      "when": "About AD 85 to 95",
+      "people": [
+        "the-father",
+        "jesus",
+        "cain",
+        "abel",
+        "devil",
+        "holy-spirit"
+      ],
+      "places": [
+        "ephesus",
+        "asia"
+      ],
+      "story": [
+        "Behold what love: we are called the sons of God now, and when He appears we shall be like Him; that hope makes us pure (1–3).",
+        "Jesus came to take away our sins and to destroy the works of the devil (4–8).",
+        "Whoever is born of God does not keep on living in sin, for God's seed remains in him (9–10).",
+        "Love one another, not like Cain, who killed his brother; loving the brethren shows we have passed from death to life (11–15).",
+        "Jesus laid down His life for us, so we love in deed and in truth, meeting a brother's need (16–18).",
+        "If our heart condemns us, God is greater than our heart; His command is to believe on Jesus and love one another, and His Spirit lives in us (19–24)."
+      ],
+      "key": {
+        "ref": "1 John 3:20",
+        "text": "For if our heart condemn us, God is greater than our heart, and knoweth all things."
+      },
+      "big": "The Father's love has made us His sons. A son doesn't make his home in sin; he fights, confesses and gets up. He loves with his hands, and when his own heart condemns him, he trusts God, who is greater and knows all things."
+    }
+  },
+  {
     "id": "1-john-04",
     "type": "chapter",
     "book": "1 John",

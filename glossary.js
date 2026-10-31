@@ -584,6 +584,15 @@ window.GLOSSARY = [
     "2 Peter", 3,
     [ 18 ] ],
    [
+    "1 John", 1,
+    [ 3, 7 ] ],
+   [
+    "1 John", 2,
+    [ 1, 22 ] ],
+   [
+    "1 John", 3,
+    [ 23 ] ],
+   [
     "1 John", 4,
     [ 2, 3, 15 ] ],
    [
@@ -1553,6 +1562,15 @@ window.GLOSSARY = [
     "2 Peter", 1,
     [ 17 ] ],
    [
+    "1 John", 1,
+    [ 2, 3 ] ],
+   [
+    "1 John", 2,
+    [ 1, 13, 15, 16, 22, 23, 24 ] ],
+   [
+    "1 John", 3,
+    [ 1 ] ],
+   [
     "1 John", 4,
     [ 14 ] ],
    [
@@ -1828,6 +1846,9 @@ window.GLOSSARY = [
    [
     "2 Peter", 1,
     [ 21 ] ],
+   [
+    "1 John", 3,
+    [ 24 ] ],
    [
     "1 John", 4,
     [ 2, 13 ] ],
@@ -4580,6 +4601,9 @@ window.GLOSSARY = [
     "John", 1,
     [ 1, 14 ] ],
    [
+    "1 John", 1,
+    [ 1 ] ],
+   [
     "1 John", 5,
     [ 7 ] ] ]
  },
@@ -4740,7 +4764,13 @@ window.GLOSSARY = [
     [ 9 ] ],
    [
     "2 Peter", 1,
-    [ 19 ] ] ]
+    [ 19 ] ],
+   [
+    "1 John", 1,
+    [ 5, 7 ] ],
+   [
+    "1 John", 2,
+    [ 8, 9, 10 ] ] ]
  },
  {
   "id": "darkness",
@@ -4870,6 +4900,12 @@ window.GLOSSARY = [
    [
     "2 Peter", 2,
     [ 4, 17 ] ],
+   [
+    "1 John", 1,
+    [ 5, 6 ] ],
+   [
+    "1 John", 2,
+    [ 8, 9, 11 ] ],
    [
     "Jude", 1,
     [ 6, 13 ] ] ]
@@ -5323,6 +5359,15 @@ window.GLOSSARY = [
    [
     "2 Peter", 2,
     [ 2 ] ],
+   [
+    "1 John", 1,
+    [ 6, 8 ] ],
+   [
+    "1 John", 2,
+    [ 4, 21, 27 ] ],
+   [
+    "1 John", 3,
+    [ 18, 19 ] ],
    [
     "1 John", 4,
     [ 6 ] ],
@@ -5913,7 +5958,10 @@ window.GLOSSARY = [
     [ 8, 9, 10, 11, 12 ] ],
    [
     "James", 4,
-    [ 11 ] ] ]
+    [ 11 ] ],
+   [
+    "1 John", 3,
+    [ 4 ] ] ]
  },
  {
   "id": "only-begotten",
@@ -6404,6 +6452,15 @@ window.GLOSSARY = [
     "2 Peter", 3,
     [ 18 ] ],
    [
+    "1 John", 1,
+    [ 3, 7 ] ],
+   [
+    "1 John", 2,
+    [ 1, 22 ] ],
+   [
+    "1 John", 3,
+    [ 23 ] ],
+   [
     "1 John", 4,
     [ 2, 3 ] ],
    [
@@ -6514,6 +6571,9 @@ window.GLOSSARY = [
    [
     "Hebrews", 10,
     [ 29 ] ],
+   [
+    "1 John", 3,
+    [ 8 ] ],
    [
     "1 John", 4,
     [ 15 ] ],
@@ -6998,6 +7058,9 @@ window.GLOSSARY = [
     "1 Peter", 2,
     [ 6, 7 ] ],
    [
+    "1 John", 3,
+    [ 23 ] ],
+   [
     "1 John", 4,
     [ 1, 16 ] ],
    [
@@ -7193,6 +7256,9 @@ window.GLOSSARY = [
     "1 Peter", 5,
     [ 1 ] ],
    [
+    "1 John", 1,
+    [ 2 ] ],
+   [
     "1 John", 5,
     [ 6, 7, 8, 9, 10, 11 ] ],
    [
@@ -7305,7 +7371,10 @@ window.GLOSSARY = [
     [ 14, 19 ] ],
    [
     "Philippians", 2,
-    [ 15 ] ] ]
+    [ 15 ] ],
+   [
+    "1 John", 3,
+    [ 1, 2 ] ] ]
  },
  {
   "id": "verily",
@@ -9024,7 +9093,13 @@ window.GLOSSARY = [
     [ 5, 8, 21 ] ],
    [
     "2 Peter", 3,
-    [ 13 ] ] ]
+    [ 13 ] ],
+   [
+    "1 John", 2,
+    [ 1, 29 ] ],
+   [
+    "1 John", 3,
+    [ 7, 10, 12 ] ] ]
  },
  {
   "id": "wicked",
@@ -9214,6 +9289,12 @@ window.GLOSSARY = [
    [
     "2 Peter", 3,
     [ 17 ] ],
+   [
+    "1 John", 2,
+    [ 13, 14 ] ],
+   [
+    "1 John", 3,
+    [ 12 ] ],
    [
     "1 John", 5,
     [ 18, 19 ] ] ]
@@ -9549,7 +9630,10 @@ window.GLOSSARY = [
     [ 4 ] ],
    [
     "2 Peter", 2,
-    [ 14 ] ] ]
+    [ 14 ] ],
+   [
+    "1 John", 3,
+    [ 20, 21 ] ] ]
  },
  {
   "id": "tongue",
@@ -9708,7 +9792,10 @@ window.GLOSSARY = [
     [ 5, 6, 8 ] ],
    [
     "1 Peter", 3,
-    [ 10 ] ] ]
+    [ 10 ] ],
+   [
+    "1 John", 3,
+    [ 18 ] ] ]
  },
  {
   "id": "anger",
@@ -10023,7 +10110,10 @@ window.GLOSSARY = [
     [ 6 ] ],
    [
     "1 Peter", 5,
-    [ 5 ] ] ]
+    [ 5 ] ],
+   [
+    "1 John", 2,
+    [ 16 ] ] ]
  },
  {
   "id": "humility",
@@ -11867,6 +11957,15 @@ window.GLOSSARY = [
     "Titus", 3,
     [ 7 ] ],
    [
+    "1 John", 1,
+    [ 2 ] ],
+   [
+    "1 John", 2,
+    [ 25 ] ],
+   [
+    "1 John", 3,
+    [ 15 ] ],
+   [
     "1 John", 5,
     [ 11, 13, 20 ] ],
    [
@@ -12772,6 +12871,9 @@ window.GLOSSARY = [
    [
     "1 Peter", 5,
     [ 8 ] ],
+   [
+    "1 John", 3,
+    [ 8, 10 ] ],
    [
     "Jude", 1,
     [ 9 ] ] ]
@@ -14619,7 +14721,10 @@ window.GLOSSARY = [
     [ 6, 9 ] ],
    [
     "2 Peter", 2,
-    [ 6 ] ] ]
+    [ 6 ] ],
+   [
+    "1 John", 3,
+    [ 20, 21 ] ] ]
  },
  {
   "id": "conscience",
@@ -15118,6 +15223,12 @@ window.GLOSSARY = [
    [
     "Romans", 10,
     [ 11, 13 ] ],
+   [
+    "1 John", 2,
+    [ 23 ] ],
+   [
+    "1 John", 3,
+    [ 4, 6, 9, 10, 15 ] ],
    [
     "1 John", 4,
     [ 15 ] ],
@@ -16491,7 +16602,10 @@ window.GLOSSARY = [
     [ 9 ] ],
    [
     "2 Peter", 1,
-    [ 14 ] ] ]
+    [ 14 ] ],
+   [
+    "1 John", 1,
+    [ 2 ] ] ]
  },
  {
   "id": "fishers-coat",
@@ -17582,6 +17696,12 @@ window.GLOSSARY = [
     "John", 13,
     [ 33 ] ],
    [
+    "1 John", 2,
+    [ 1, 12, 13, 18, 28 ] ],
+   [
+    "1 John", 3,
+    [ 7, 18 ] ],
+   [
     "1 John", 4,
     [ 4 ] ],
    [
@@ -17596,6 +17716,9 @@ window.GLOSSARY = [
    [
     "John", 13,
     [ 34 ] ],
+   [
+    "1 John", 2,
+    [ 7, 8 ] ],
    [
     "2 John", 1,
     [ 5 ] ] ]
@@ -17855,6 +17978,15 @@ window.GLOSSARY = [
     "1 Peter", 1,
     [ 20 ] ],
    [
+    "1 John", 1,
+    [ 2 ] ],
+   [
+    "1 John", 2,
+    [ 19 ] ],
+   [
+    "1 John", 3,
+    [ 5, 8, 10 ] ],
+   [
     "1 John", 4,
     [ 9 ] ] ]
  },
@@ -17926,6 +18058,12 @@ window.GLOSSARY = [
    [
     "1 Peter", 1,
     [ 23 ] ],
+   [
+    "1 John", 2,
+    [ 6, 10, 14, 17, 24, 27, 28 ] ],
+   [
+    "1 John", 3,
+    [ 6, 14, 24 ] ],
    [
     "2 John", 1,
     [ 9 ] ] ]
@@ -20745,7 +20883,10 @@ window.GLOSSARY = [
     [ 14 ] ],
    [
     "Acts", 13,
-    [ 35 ] ] ]
+    [ 35 ] ],
+   [
+    "1 John", 2,
+    [ 20 ] ] ]
  },
  {
   "id": "east-wind",
@@ -27440,6 +27581,9 @@ window.GLOSSARY = [
     "1 Peter", 3,
     [ 8 ] ],
    [
+    "1 John", 3,
+    [ 17 ] ],
+   [
     "Jude", 1,
     [ 22 ] ] ]
  },
@@ -27714,7 +27858,13 @@ window.GLOSSARY = [
     [ 13 ] ],
    [
     "James", 5,
-    [ 15 ] ] ]
+    [ 15 ] ],
+   [
+    "1 John", 1,
+    [ 9 ] ],
+   [
+    "1 John", 2,
+    [ 12 ] ] ]
  },
  {
   "id": "on-this-fashion",
@@ -29264,6 +29414,9 @@ window.GLOSSARY = [
     "Romans", 15,
     [ 9 ] ],
    [
+    "1 John", 1,
+    [ 9 ] ],
+   [
     "1 John", 4,
     [ 2, 3, 15 ] ],
    [
@@ -29973,7 +30126,10 @@ window.GLOSSARY = [
     [ 1, 2, 3, 5 ] ],
    [
     "2 Peter", 1,
-    [ 4 ] ] ]
+    [ 4 ] ],
+   [
+    "1 John", 2,
+    [ 16, 17 ] ] ]
  },
  {
   "id": "divorcement",
@@ -39174,7 +39330,10 @@ window.GLOSSARY = [
     [ 11 ] ],
    [
     "Philippians", 3,
-    [ 10 ] ] ]
+    [ 10 ] ],
+   [
+    "1 John", 1,
+    [ 3, 6, 7 ] ] ]
  },
  {
   "id": "all-things-common",
@@ -44028,7 +44187,10 @@ window.GLOSSARY = [
     [ 3, 13, 21 ] ],
    [
     "1 Peter", 3,
-    [ 15 ] ] ]
+    [ 15 ] ],
+   [
+    "1 John", 3,
+    [ 3 ] ] ]
  },
  {
   "id": "experience",
@@ -44530,6 +44692,9 @@ window.GLOSSARY = [
    [
     "Romans", 3,
     [ 25 ] ],
+   [
+    "1 John", 2,
+    [ 2 ] ],
    [
     "1 John", 4,
     [ 10 ] ] ]
@@ -45115,6 +45280,12 @@ window.GLOSSARY = [
    [
     "2 Peter", 1,
     [ 10 ] ],
+   [
+    "1 John", 2,
+    [ 7 ] ],
+   [
+    "1 John", 3,
+    [ 13, 14, 16 ] ],
    [
     "3 John", 1,
     [ 3, 5, 10 ] ] ]
@@ -45927,7 +46098,10 @@ window.GLOSSARY = [
     [ 11, 13, 23 ] ],
    [
     "2 Peter", 2,
-    [ 10, 18 ] ] ]
+    [ 10, 18 ] ],
+   [
+    "1 John", 2,
+    [ 16 ] ] ]
  },
  {
   "id": "motions-of-sins",
@@ -50160,7 +50334,10 @@ window.GLOSSARY = [
     [ 12 ] ],
    [
     "Philemon", 1,
-    [ 7, 12, 20 ] ] ]
+    [ 7, 12, 20 ] ],
+   [
+    "1 John", 3,
+    [ 17 ] ] ]
  },
  {
   "id": "bonds",
@@ -52188,7 +52365,10 @@ window.GLOSSARY = [
     [ 16 ] ],
    [
     "2 Peter", 3,
-    [ 4 ] ] ]
+    [ 4 ] ],
+   [
+    "1 John", 2,
+    [ 28 ] ] ]
  },
  {
   "id": "forbear-no-longer",
@@ -54950,6 +55130,9 @@ window.GLOSSARY = [
     "Hebrews", 11,
     [ 4 ] ],
    [
+    "1 John", 3,
+    [ 12 ] ],
+   [
     "Jude", 1,
     [ 11 ] ] ]
  },
@@ -55646,6 +55829,9 @@ window.GLOSSARY = [
   "name": "Antichrist (one against Christ, who sets himself up in Christ's place)",
   "refs": [
    [
+    "1 John", 2,
+    [ 18, 22 ] ],
+   [
     "1 John", 4,
     [ 3 ] ],
    [
@@ -55676,6 +55862,9 @@ window.GLOSSARY = [
   "name": "Overcome, overcometh (win the victory over the world and the wicked one)",
   "refs": [
    [
+    "1 John", 2,
+    [ 13, 14 ] ],
+   [
     "1 John", 4,
     [ 4 ] ],
    [
@@ -55687,6 +55876,12 @@ window.GLOSSARY = [
   "kind": "term",
   "name": "Born of God (given new life by God, through believing on Jesus)",
   "refs": [
+   [
+    "1 John", 2,
+    [ 29 ] ],
+   [
+    "1 John", 3,
+    [ 9 ] ],
    [
     "1 John", 4,
     [ 7 ] ],
@@ -55789,6 +55984,12 @@ window.GLOSSARY = [
   "kind": "person",
   "name": "That wicked one (the devil)",
   "refs": [
+   [
+    "1 John", 2,
+    [ 13, 14 ] ],
+   [
+    "1 John", 3,
+    [ 12 ] ],
    [
     "1 John", 5,
     [ 18 ] ] ]
@@ -56584,5 +56785,125 @@ window.GLOSSARY = [
    [
     "Jude", 1,
     [ 24 ] ] ]
+ },
+ {
+  "id": "handled",
+  "kind": "term",
+  "name": "Handled (touched with the hands: John touched the risen Jesus)",
+  "refs": [
+   [
+    "1 John", 1,
+    [ 1 ] ] ]
+ },
+ {
+  "id": "walk-in-the-light",
+  "kind": "term",
+  "name": "Walk in the light (live in the open with God, hiding nothing)",
+  "refs": [
+   [
+    "1 John", 1,
+    [ 6, 7 ] ],
+   [
+    "1 John", 2,
+    [ 11 ] ] ]
+ },
+ {
+  "id": "cleanseth",
+  "kind": "term",
+  "name": "Cleanseth (keeps on washing clean)",
+  "refs": [
+   [
+    "1 John", 1,
+    [ 7, 9 ] ] ]
+ },
+ {
+  "id": "advocate",
+  "kind": "term",
+  "name": "Advocate (paraklētos: one called to your side, a defense lawyer)",
+  "refs": [
+   [
+    "1 John", 2,
+    [ 1 ] ] ]
+ },
+ {
+  "id": "unction",
+  "kind": "term",
+  "name": "Unction, the anointing (the Holy Spirit, given to every believer)",
+  "refs": [
+   [
+    "1 John", 2,
+    [ 20, 27 ] ] ]
+ },
+ {
+  "id": "lust-of-the-eyes",
+  "kind": "term",
+  "name": "The lust of the flesh, the lust of the eyes, the pride of life (the three doors of temptation)",
+  "refs": [
+   [
+    "1 John", 2,
+    [ 16 ] ] ]
+ },
+ {
+  "id": "young-men-and-fathers",
+  "kind": "term",
+  "name": "Little children, young men, fathers (stages of growth in the faith)",
+  "refs": [
+   [
+    "1 John", 2,
+    [ 13, 14 ] ] ]
+ },
+ {
+  "id": "the-last-time",
+  "kind": "term",
+  "name": "The last time (the last days, between Christ's first coming and His return)",
+  "refs": [
+   [
+    "1 John", 2,
+    [ 18 ] ] ]
+ },
+ {
+  "id": "what-manner-of-love",
+  "kind": "term",
+  "name": "What manner of love (what kind of love: love from another world)",
+  "refs": [
+   [
+    "1 John", 3,
+    [ 1 ] ] ]
+ },
+ {
+  "id": "his-seed-remaineth",
+  "kind": "term",
+  "name": "His seed remaineth in him (God's own life, planted in the believer, stays)",
+  "refs": [
+   [
+    "1 John", 3,
+    [ 9 ] ] ]
+ },
+ {
+  "id": "works-of-the-devil",
+  "kind": "term",
+  "name": "The works of the devil (what Jesus came to untie and destroy)",
+  "refs": [
+   [
+    "1 John", 3,
+    [ 8 ] ] ]
+ },
+ {
+  "id": "transgression-of-the-law",
+  "kind": "term",
+  "name": "Sin is the transgression of the law (lawlessness: no one tells me what to do)",
+  "refs": [
+   [
+    "1 John", 3,
+    [ 4 ] ] ]
+ },
+ {
+  "id": "greater-than-our-heart",
+  "kind": "term",
+  "name": "God is greater than our heart (His verdict overrules a condemning conscience)",
+  "refs": [
+   [
+    "1 John", 3,
+    [ 20 ] ] ]
  }
 ];
