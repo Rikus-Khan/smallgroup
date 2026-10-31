@@ -1,0 +1,596 @@
+<!doctype html>
+<html lang="en" data-theme="scribe">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>1 Timothy 5</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="../assets/fonts.css">
+<link rel="stylesheet" href="../assets/deck.css">
+<link rel="stylesheet" href="../assets/themes.css">
+<style>
+/* ti05-where: where we are in 1 Timothy. Six chapter tabs (.ti05-ch, .here), a card under each (.ti05-card), two bands (.ti05-band; .now is lit). */
+.ti05-where { display: grid; grid-template-columns: repeat(6, 1fr); gap: 6px; margin: .5em 0 1em; }
+.ti05-ch { text-align: center; padding: .25em 0 .3em; border-radius: 6px 6px 0 0; border-bottom: 3px solid var(--line-strong); font: 700 clamp(.85rem, .75rem + .4vw, 1.1rem) var(--sans); color: var(--ink-soft); }
+.ti05-ch.here { background: var(--accent); border-bottom-color: var(--accent); color: var(--on-accent); }
+.ti05-card { padding: .35em .5em .45em; border: 1.5px dashed var(--line-strong); border-radius: 8px; color: var(--ink-soft); }
+.ti05-card b { display: block; font: 700 clamp(.78rem, .7rem + .32vw, 1rem)/1.2 var(--sans); color: var(--ink); }
+.ti05-card small { display: block; margin-top: .15em; font: italic clamp(.7rem, .64rem + .25vw, .92rem)/1.25 var(--serif); }
+.ti05-card.here { border: 2px solid var(--accent); background: color-mix(in srgb, var(--accent) 14%, transparent); }
+.ti05-card.here b { color: var(--accent-hot); }
+.ti05-band { --c: var(--cool); padding: .45em .65em .55em; border-top: 6px solid var(--c); border-radius: 0 0 10px 10px; background: color-mix(in srgb, var(--c) 9%, transparent); }
+.ti05-band small { display: block; font: 700 clamp(.7rem, .66rem + .22vw, .9rem) var(--sans); color: var(--ink-soft); }
+.ti05-band b { display: block; font: 600 clamp(1.05rem, .9rem + .7vw, 1.6rem)/1.1 var(--serif); color: var(--ink); }
+.ti05-band i { display: block; font: italic clamp(.75rem, .7rem + .25vw, .95rem)/1.25 var(--serif); color: var(--ink-soft); }
+.ti05-band.now { --c: var(--accent); background: color-mix(in srgb, var(--c) 22%, transparent); box-shadow: inset 0 0 0 2px var(--c); }
+.ti05-b1 { grid-column: 1 / 4; } .ti05-b2 { grid-column: 4 / 7; }
+@media (max-width: 640px) {
+  .ti05-where { grid-template-columns: 1fr; }
+  .ti05-ch, .ti05-card:not(.here) { display: none; }
+  .ti05-ch.here { display: block; border-radius: 6px; }
+  .ti05-band { border-top: 0; border-left: 6px solid var(--c); border-radius: 0 10px 10px 0; }
+  .ti05-b1, .ti05-b2 { grid-column: 1; }
+}
+
+/* ti05-kin: the church as a family. Four cards (.ti05-kin > div): a head-and-shoulders figure (.ti05-fig), the word (h3), who it is and how to treat them (p). */
+.ti05-kin { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; margin: .4em 0 1em; }
+@media (max-width: 760px) { .ti05-kin { grid-template-columns: 1fr 1fr; } }
+.ti05-kin > div { padding: .5em .8em .8em; border-radius: 12px; background: var(--surface); border: 1px solid var(--line-strong); border-top: 5px solid var(--accent); text-align: center; }
+.ti05-fig { width: clamp(3rem, 2.4rem + 2.6vw, 4.6rem); height: auto; fill: var(--ink-soft); }
+.ti05-fig .hair { fill: none; stroke: var(--ink-soft); stroke-width: 4; stroke-linecap: round; }
+.ti05-fig .cane { fill: none; stroke: var(--leather-light); stroke-width: 4; stroke-linecap: round; }
+.ti05-kin h3 { font: 600 clamp(1.15rem, 1rem + .7vw, 1.6rem)/1.1 var(--serif); color: var(--ink); margin: .1em 0 0; }
+.ti05-kin .who { font: 700 clamp(.7rem, .65rem + .25vw, .86rem) var(--sans); color: var(--accent-hot); text-transform: uppercase; letter-spacing: .05em; margin: 0; }
+.ti05-kin p.how { margin: .35em 0 0; font-size: clamp(.82rem, .76rem + .32vw, 1.02rem); line-height: 1.35; color: var(--ink-soft); }
+.ti05-kin > div:last-child { border-top-color: var(--warm); }
+
+/* ti05-flow: who helps a widow first. Three boxes (.ti05-flow > div) with arrows between; each steps in. */
+.ti05-flow { display: grid; grid-template-columns: 1fr auto 1fr auto 1fr; gap: .5em .7em; align-items: stretch; margin: .5em 0 1em; }
+@media (max-width: 760px) { .ti05-flow { grid-template-columns: 1fr; } .ti05-flow .arr { transform: rotate(90deg); justify-self: center; } }
+.ti05-flow > div:not(.arr) { padding: .6em .8em .75em; border-radius: 12px; background: var(--surface); border: 1px solid var(--line-strong); border-top: 5px solid var(--accent); }
+.ti05-flow h3 { font: 600 clamp(1.05rem, .95rem + .6vw, 1.45rem)/1.15 var(--serif); color: var(--ink); margin: 0 0 .15em; }
+.ti05-flow .n { font: 700 clamp(.7rem, .65rem + .25vw, .86rem) var(--sans); color: var(--accent-hot); text-transform: uppercase; letter-spacing: .05em; }
+.ti05-flow p { margin: .2em 0 0; font-size: clamp(.82rem, .76rem + .32vw, 1rem); line-height: 1.35; color: var(--ink-soft); }
+.ti05-flow .arr { align-self: center; font-size: 1.8rem; color: var(--accent); }
+
+/* ti05-ox: an ox treads out the corn on a threshing floor, round and round (.ti05-ox-run), and eats as he works. */
+.ti05-floor { fill: color-mix(in srgb, var(--warm) 22%, var(--surface-2)); stroke: var(--line-strong); stroke-width: 3; }
+.ti05-stalk { stroke: color-mix(in srgb, var(--warm) 70%, var(--ink-soft)); stroke-width: 3; stroke-linecap: round; }
+.ti05-post { fill: var(--leather); stroke: var(--leather-light); stroke-width: 2; }
+.ti05-ox-run { transform-origin: 260px 190px; animation: ti05-round 11s linear infinite; }
+@keyframes ti05-round { to { transform: rotate(360deg); } }
+.ti05-ox-body { fill: var(--leather); stroke: var(--leather-light); stroke-width: 2.5; }
+.ti05-ox-leg { stroke: var(--leather-light); stroke-width: 5; stroke-linecap: round; }
+.ti05-horn { fill: none; stroke: var(--ink-soft); stroke-width: 4; stroke-linecap: round; }
+.ti05-rope { fill: none; stroke: var(--ink-soft); stroke-width: 3; }
+.ti05-oxcap { font: italic 600 19px var(--serif); fill: var(--accent-hot); }
+.ti05-oxsmall { font: 600 15px var(--sans); fill: var(--ink-soft); }
+
+/* ti05-trail: three men walking right. Sins that go before him (the bag is ahead, .ti05-sin), sins that follow after (the bag drags in behind and catches up, .ti05-late), good works that cannot be hid (.ti05-shine). */
+.ti05-lane { stroke: var(--line-strong); stroke-width: 2; stroke-dasharray: 3 8; }
+.ti05-man { fill: var(--ink-soft); }
+.ti05-bag { fill: color-mix(in srgb, var(--danger) 35%, var(--surface-2)); stroke: var(--danger); stroke-width: 3; }
+.ti05-rope2 { stroke: var(--danger); stroke-width: 2.5; stroke-dasharray: 5 6; fill: none; }
+.slide.active .ti05-late { animation: ti05-catch 4.5s ease-out both; }
+@keyframes ti05-catch { from { transform: translateX(-230px); } to { transform: none; } }
+.ti05-shine circle { fill: none; stroke: var(--accent); stroke-width: 3; transform-origin: 335px 262px; animation: ti05-glow 2.6s ease-out infinite; }
+.ti05-shine circle + circle { animation-delay: 1.3s; }
+@keyframes ti05-glow { from { transform: scale(.4); opacity: .9; } to { transform: scale(1.6); opacity: 0; } }
+.ti05-tx { font: 600 17px var(--sans); fill: var(--ink); }
+.ti05-tx.s { font: italic 600 17px var(--serif); fill: var(--ink-soft); }
+.ti05-tx.bad { fill: var(--danger); font-weight: 700; }
+.ti05-tx.good { fill: var(--accent-hot); font-weight: 700; }
+.ti05-bagtx { font: 700 14px var(--sans); fill: var(--danger); }
+</style>
+</head>
+<body>
+<main class="deck" id="deck">
+
+<!-- ======================= OPENING ======================= -->
+<section class="slide title">
+  <div class="inner">
+    <div class="emblem rise"></div>
+    <h1 class="rise" style="--d:1">1 Timothy 5</h1>
+    <p class="sub rise" style="--d:3">Treat them like family</p>
+    <p class="tag rise" style="--d:5">Fathers, brothers, mothers and sisters; a man who provides for his own; and the sins that show now or later.</p>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise" style="--d:1">Where we are in 1 Timothy</h2>
+    <div class="ti05-where rise" style="--d:2" role="img" aria-label="1 Timothy in six chapters. Chapters 1 to 3, the church: stay true against false teachers, pray and worship in order, and leaders. Chapters 4 to 6, the man of God: Timothy, train and be an example; people, old, young, widows and elders; money, and the fight. Chapter 5 is lit.">
+<span class="ti05-ch">1</span><span class="ti05-ch">2</span><span class="ti05-ch">3</span><span class="ti05-ch">4</span><span class="ti05-ch here">5</span><span class="ti05-ch">6</span>
+<div class="ti05-card"><b>Stay true</b><small>against false teachers</small></div><div class="ti05-card"><b>Pray, and worship in order</b><small>for everyone</small></div><div class="ti05-card"><b>Leaders</b><small>overseers and deacons</small></div><div class="ti05-card"><b>Timothy</b><small>train, and be an example</small></div><div class="ti05-card here"><b>People</b><small>old, young, widows, elders</small></div><div class="ti05-card"><b>Money, and the fight</b><small>flee, follow, keep</small></div>
+<div class="ti05-band ti05-b1"><small>Chapters 1–3</small><b>The church</b><i>how God's house is kept in order</i></div><div class="ti05-band ti05-b2 now"><small>Chapters 4–6</small><b>The man of God</b><i>how a man lives in it</i></div>
+</div>
+    <p class="note rise" style="--d:3">Paul left Timothy at Ephesus, about AD 62 to 64, to put a troubled church in order. Chapter 4 told Timothy how to live. Chapter 5 is about how to treat the people around him: older and younger, widows, and elders.</p>
+    <p class="note step">Read alone, chapter 5 still makes sense. It answers one question that every new believer has to answer: <em>what do I owe the people God puts next to me?</em></p>
+  </div>
+</section>
+
+<section class="slide watch">
+  <div class="inner">
+    <h2 class="rise">Things to watch for</h2>
+    <p class="lede rise" style="--d:1">Keep these questions in the back of your mind as we read. We'll come back to every one of them at the end.</p>
+    <ol class="seeds">
+      <li class="step"><span class="topic">Family</span><span class="seed-q">How should we treat older and younger men and women?</span></li>
+      <li class="step"><span class="topic">Widows</span><span class="seed-q">Who should look after a widow first?</span></li>
+      <li class="step"><span class="topic">Provide</span><span class="seed-q">What does Paul say about a man who won't provide for his own family?</span></li>
+      <li class="step"><span class="topic">Leaders</span><span class="seed-q">How quickly should a man be put into leadership?</span></li>
+      <li class="step"><span class="topic">Wine</span><span class="seed-q">What did Paul tell Timothy about wine, and why?</span></li>
+      <li class="step"><span class="topic">Sin</span><span class="seed-q">Which sins show up right away, and which follow later?</span></li>
+    </ol>
+  </div>
+</section>
+
+<!-- ======================= PART ONE: FAMILY ======================= -->
+<section class="slide part">
+  <div class="inner">
+    <p class="part-n rise">Part one</p>
+    <h2 class="rise" style="--d:1">The church is a family</h2>
+    <p class="range rise" style="--d:2">Verses 1–2</p>
+    <div class="rule"></div>
+    <p class="hook rise" style="--d:4">Four kinds of people, and one way to treat each.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="1-2" data-hl="Rebuke not an elder, but intreat him as a father|the younger men as brethren|The elder women as mothers|the younger as sisters, with all purity"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise">Who is who</h2>
+    <div class="ti05-kin">
+      <div class="step"><svg class="ti05-fig" viewBox="0 0 60 64" aria-hidden="true"><circle cx="30" cy="20" r="11"/><path d="M8 60 Q10 36 30 36 Q50 36 52 60Z"/><path class="cane" d="M54 40 L54 62"/></svg><p class="who">Older man</p><h3>Like a father</h3><p class="how">“Intreat” him: ask, appeal, plead. Don't blast him.</p></div>
+      <div class="step"><svg class="ti05-fig" viewBox="0 0 60 64" aria-hidden="true"><circle cx="30" cy="20" r="11"/><path d="M8 60 Q10 36 30 36 Q50 36 52 60Z"/></svg><p class="who">Younger man</p><h3>Like a brother</h3><p class="how">Equals. Side by side, no pecking order.</p></div>
+      <div class="step"><svg class="ti05-fig" viewBox="0 0 60 64" aria-hidden="true"><circle cx="30" cy="20" r="11"/><path class="hair" d="M17 20 Q17 6 30 6 Q43 6 43 20 M19 22 L18 38 M41 22 L42 38"/><path d="M8 60 Q10 36 30 36 Q50 36 52 60Z"/></svg><p class="who">Older woman</p><h3>Like a mother</h3><p class="how">With the honour you'd give your own mother.</p></div>
+      <div class="step"><svg class="ti05-fig" viewBox="0 0 60 64" aria-hidden="true"><circle cx="30" cy="20" r="11"/><path class="hair" d="M17 20 Q17 6 30 6 Q43 6 43 20 M19 22 L18 38 M41 22 L42 38"/><path d="M8 60 Q10 36 30 36 Q50 36 52 60Z"/></svg><p class="who">Younger woman</p><h3>Like a sister</h3><p class="how">“With all purity”: a brother's care, nothing else.</p></div>
+    </div>
+    <p class="note step">If your own father was missing, mean, or drunk, this is good news. God gives you fathers and brothers in the church. Some of the men in your group are going to be those for you.</p>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="2" data-hl="the younger as sisters, with all purity"></blockquote>
+    <h2 class="rise" style="--d:1">“With all purity”</h2>
+    <p class="note rise" style="--d:2">Paul adds two words to this one line and no other: <em>“with all purity.”</em> He knew how fast a man's mind can run, and he knew his young friend was a man too.</p>
+    <p class="note step">Many of us have a past with women that we aren't proud of. This is not a trap. It is a fence, and it is a kindness. A sister is not someone you size up. She is someone you protect.</p>
+    <ul class="nots">
+      <li class="step"><span class="k">not flirting</span><span class="why">even as a joke</span></li>
+      <li class="step"><span class="k">not alone behind a closed door</span><span class="why">with a woman who isn't your wife</span></li>
+      <li class="step"><span class="k">not a second look</span><span class="why">the first look is an accident, the second is a choice</span></li>
+      <li class="step yes"><span class="k">a brother's respect</span><span class="why">“with all purity”</span></li>
+    </ul>
+  </div>
+</section>
+
+<!-- ======================= PART TWO: WIDOWS AND HOME ======================= -->
+<section class="slide part">
+  <div class="inner">
+    <p class="part-n rise">Part two</p>
+    <h2 class="rise" style="--d:1">Widows, and your own house</h2>
+    <p class="range rise" style="--d:2">Verses 3–16</p>
+    <div class="rule"></div>
+    <p class="hook rise" style="--d:4">Who looks after the people who have no one? Family first.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="3-4" data-hl="Honour widows that are widows indeed|let them learn first to shew piety at home"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise">Who helps first?</h2>
+    <p class="note rise" style="--d:1">There was no welfare office. A woman who lost her husband and had nobody could starve. The early church kept a list and took care of the ones who were truly alone, <em>“widows indeed.”</em></p>
+    <div class="ti05-flow">
+      <div class="step"><span class="n">First</span><h3>Her own family</h3><p>Children and grandchildren “shew piety at home”: they pay back what she gave them.</p></div>
+      <span class="arr step" aria-hidden="true">→</span>
+      <div class="step"><span class="n">Then</span><h3>Believing relatives</h3><p>“If any man or woman that believeth have widows, let them relieve them” (v. 16).</p></div>
+      <span class="arr step" aria-hidden="true">→</span>
+      <div class="step"><span class="n">Last</span><h3>The church</h3><p>So the church can care for the ones with truly nobody (v. 16).</p></div>
+    </div>
+    <p class="note step">The order matters. The church isn't a place to dump your own mother. Family first, then the church. And if you're the one who dropped the ball, you can start picking it up.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="5-7" data-hl="trusteth in God, and continueth in supplications and prayers night and day|she that liveth in pleasure is dead while she liveth"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="6" data-hl="she that liveth in pleasure is dead while she liveth"></blockquote>
+    <h2 class="rise" style="--d:1">Two ways to live alone</h2>
+    <div class="columns">
+      <div class="col grace rise" style="--d:2">
+        <p class="who">The widow indeed</p>
+        <h3>Trusts in God, prays night and day</h3>
+        <p>Desolate, with nobody, and her hope is in the Lord. Alone and not alone.</p>
+      </div>
+      <div class="col law step">
+        <p class="who">The one in pleasure</p>
+        <h3>“Dead while she liveth”</h3>
+        <p>Chasing the next feeling. Breathing, but empty inside: dead on her feet.</p>
+      </div>
+    </div>
+    <p class="note step">Some of us know the second life well. The high that promised everything and left a hole. Paul isn't shaming her, or you. He is saying where real life is: not in the chase, but in trust.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="8" data-hl="if any provide not for his own|he hath denied the faith, and is worse than an infidel"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="8" data-hl="he hath denied the faith, and is worse than an infidel"></blockquote>
+    <h2 class="rise" style="--d:1">The hardest verse in the chapter</h2>
+    <p class="note rise" style="--d:2">Read it slowly. Many of us have not provided for our own. Child support unpaid. A house we left. A mother we let down. This verse is not a cheap shot. It names a failure, and a failure can be turned around.</p>
+    <p class="note step">“Provide” is a word that means <em>think ahead for</em>: to plan for them. “An infidel” just means an <em>unbeliever</em>. Even men who don't believe in God look after their families. When a believer doesn't, his life says one thing and his Saviour says another. That's what “denied” means: his actions are contradicting his faith.</p>
+    <p class="note step">Notice what it does <em>not</em> say. It does not say he's lost, or that God has quit on him. It says his life is out of line with what he says he believes, and that can be fixed.</p>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise">Rebuilding a provider</h2>
+    <ol class="timeline" aria-label="Five steps in rebuilding a man who provides: today, show up to work; soon, put something toward the house; this month, a promise to the kids, kept; this year, steady payments and a steady job; over time, a family that trusts him again.">
+      <li class="lit" style="--k:0"><b>Today</b><span>Show up to work</span><small>on time, sober, the whole shift</small></li>
+      <li style="--k:1"><b>Soon</b><span>Put something in</span><small>even if it's small: money, groceries, a ride</small></li>
+      <li style="--k:2"><b>This month</b><span>One promise, kept</span><small>a call to the kids that actually happens</small></li>
+      <li style="--k:3"><b>This year</b><span>Steady</span><small>payments made, a steady job, no excuses</small></li>
+      <li style="--k:4"><b>In time</b><span>Trusted again</span><small>not demanded: earned</small></li>
+    </ol>
+    <p class="note step">If you're locked up, in treatment, or out of work right now, you can't do all this today. That's not the end of it. The direction is what counts: you're thinking ahead for them again. And the grace is already yours: <em>“If we confess our sins, he is faithful and just to forgive us our sins.”</em> (1 John 1:9)</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="9-10" data-hl="Let not a widow be taken into the number under threescore years old|Well reported of for good works"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise">The widows' list</h2>
+    <p class="note rise" style="--d:1">Verses 9 and 10 are about a special list: older widows the church supported, who in turn gave themselves to prayer and helping. “Threescore” is sixty. A good reputation was part of the job.</p>
+    <ol class="checks">
+      <li class="step"><span class="tick">✓</span><q>Over sixty, “the wife of one man”</q><small>a faithful woman: one marriage that she honoured</small></li>
+      <li class="step"><span class="tick">✓</span><q>“Brought up children”</q><small>she'd raised a family, or been a mother to someone</small></li>
+      <li class="step"><span class="tick">✓</span><q>“Lodged strangers, washed the saints' feet”</q><small>hospitable, willing to do the lowest job in the house</small></li>
+      <li class="step"><span class="tick">✓</span><q>“Relieved the afflicted”</q><small>helped the ones in trouble: she knew what it was</small></li>
+    </ol>
+    <p class="note step">None of this is about earning God's love. It is about who the church trusted to be its prayer team. Her good works were <em>“well reported”</em>: people could see them.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="11-13" data-hl="the younger widows refuse|they learn to be idle, wandering about from house to house|tattlers also and busybodies"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise">Idle hands</h2>
+    <p class="note rise" style="--d:1">Why not the younger widows? Not because they were bad. It was about what happens to <em>anyone</em> with an empty day and no direction.</p>
+    <div class="ifthen step">
+      <div class="if"><small>Nothing to do</small>“idle”</div>
+      <span class="arrow" aria-hidden="true">→</span>
+      <div class="then"><small>then</small>“wandering about from house to house”</div>
+    </div>
+    <div class="ifthen step">
+      <div class="if"><small>Wandering</small>“tattlers and busybodies”</div>
+      <span class="arrow" aria-hidden="true">→</span>
+      <div class="then"><small>then</small>“speaking things which they ought not”</div>
+    </div>
+    <p class="note step">A <em>tattler</em> is a gossip; a <em>busybody</em> is someone busy with everybody's business but his own. Men do this too. The road from <em>nothing to do</em> to <em>trouble</em> is short, and many of us know it by heart.</p>
+    <p class="note step">The answer isn't guilt. It's a day with <em>shape</em>: work, a meeting, a call to a brother, a chore, a chapter. An empty day is where the old life moves back in.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="14-16" data-hl="give none occasion to the adversary to speak reproachfully|some are already turned aside after Satan|let not the church be charged"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="14" data-hl="give none occasion to the adversary to speak reproachfully"></blockquote>
+    <h2 class="rise" style="--d:1">Don't give the enemy a handle</h2>
+    <p class="note rise" style="--d:2">“The adversary” is anyone watching to find a reason to mock the faith (and, behind them, Satan, v. 15). Paul's advice is practical: live a settled, ordinary, honest life, and they have nothing to point at.</p>
+    <p class="note step">Think about the men who will watch you. Your old crowd, the family, a parole officer, a boss. They will not read the Bible. They'll read <em>you</em>. A steady life gives the adversary nothing to say.</p>
+    <p class="note step">Verse 15 is blunt: <em>“some are already turned aside after Satan.”</em> They turned aside; they weren't thrown out. A man who has turned aside can turn back, today.</p>
+  </div>
+</section>
+
+<!-- ======================= PART THREE: ELDERS ======================= -->
+<section class="slide part">
+  <div class="inner">
+    <p class="part-n rise">Part three</p>
+    <h2 class="rise" style="--d:1">Elders, and Timothy's own life</h2>
+    <p class="range rise" style="--d:2">Verses 17–25</p>
+    <div class="rule"></div>
+    <p class="hook rise" style="--d:4">Honour them, be fair, go slowly, and remember that time tells.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="17-18" data-hl="worthy of double honour|Thou shalt not muzzle the ox that treadeth out the corn|The labourer is worthy of his reward"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <div class="split">
+      <div class="stage">
+        <svg viewBox="0 0 520 380" role="img" aria-label="A round threshing floor with corn lying on it. An ox walks round and round a post, treading the corn out. He is not muzzled, so he can eat as he works.">
+          <circle class="ti05-floor" cx="260" cy="190" r="165"/>
+          <g class="ti05-stalk"><path d="M140 120 L190 140 M120 200 L180 200 M150 280 L196 250 M230 310 L240 262 M320 316 L304 264 M390 270 L340 244 M404 190 L346 190 M380 110 L332 138 M300 70 L286 126 M220 68 L236 124"/></g>
+          <circle class="ti05-post" cx="260" cy="190" r="14"/>
+          <g class="ti05-ox-run">
+            <path class="ti05-rope" d="M260 190 L368 190"/>
+            <ellipse class="ti05-ox-body" cx="372" cy="190" rx="26" ry="46"/>
+            <path class="ti05-ox-leg" d="M356 214 L350 238 M388 214 L394 238 M356 168 L350 144 M388 168 L394 144"/>
+            <circle class="ti05-ox-body" cx="372" cy="244" r="15"/>
+            <path class="ti05-horn" d="M360 236 Q350 232 350 224 M384 236 Q394 232 394 224"/>
+          </g>
+          <text class="ti05-oxcap" x="260" y="364" text-anchor="middle">fed while he works</text>
+          <text class="ti05-oxsmall" x="260" y="222" text-anchor="middle">threshing floor</text>
+        </svg>
+      </div>
+      <div>
+        <h2 class="rise">Don't muzzle the ox</h2>
+        <p class="note rise" style="--d:1">An ox walked round and round a threshing floor, treading out the grain. The law said: let him eat as he goes (Deuteronomy 25:4). Paul takes it as a rule about people.</p>
+        <p class="note step">“Double honour” means <em>respect and pay</em>, for the elders who work hard at teaching God's word. Jesus said the same: <em>“The labourer is worthy of his reward.”</em></p>
+        <p class="note step">Today: if a man teaches you, feeds you, drives you to the meeting or fixes your car, <em>thank him</em>, and when you can, <em>pay him</em>. Honour with words and with money.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="slide verse" data-v="19-21" data-hl="Against an elder receive not an accusation, but before two or three witnesses|Them that sin rebuke before all|doing nothing by partiality"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="19" data-hl="but before two or three witnesses"></blockquote>
+    <h2 class="rise" style="--d:1">Fair to everyone</h2>
+    <p class="note rise" style="--d:2">Leaders get accused, and some of it is false. Paul protects them with the old rule of two or three witnesses, and protects the flock with the next verse: if the sin is real, deal with it in the open.</p>
+    <ul class="nots">
+      <li class="step"><span class="k">not one man's say-so</span><span class="why">a rumour is not a witness</span></li>
+      <li class="step"><span class="k">not what I heard</span><span class="why">don't pass it on</span></li>
+      <li class="step"><span class="k">not going easy on a friend</span><span class="why">“nothing by partiality”</span></li>
+      <li class="step yes"><span class="k">the same rules for everyone</span><span class="why">witnesses, honesty, and no favourites</span></li>
+    </ul>
+    <p class="note step">In a recovery house, talk runs fast. Today: <em>don't repeat what you can't prove.</em> If you've been hurt by gossip, you know why Paul wrote this.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="22" data-hl="Lay hands suddenly on no man|neither be partaker of other men’s sins|keep thyself pure"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="22" data-hl="Lay hands suddenly on no man"></blockquote>
+    <h2 class="rise" style="--d:1">Not too fast</h2>
+    <p class="note rise" style="--d:2">“Lay hands” means setting a man apart for leadership with prayer (see 4:14). “Suddenly” means <em>in a hurry</em>. Don't promote a man before he has been tested. If you do, you share in what he does wrong: <em>“neither be partaker of other men's sins.”</em></p>
+    <ol class="timeline" aria-label="Four stages before a man is trusted with leadership: saved, steady for months, proven in small things, then trusted with more.">
+      <li class="lit" style="--k:0"><b>Saved</b><span>Today: a new man in Christ</span><small>welcome, not a title</small></li>
+      <li style="--k:1"><b>Months</b><span>Steady</span><small>same man on the bad days</small></li>
+      <li style="--k:2"><b>A year</b><span>Proven in small things</span><small>sets up chairs, shows up, pays what he owes</small></li>
+      <li style="--k:3"><b>Then</b><span>Trusted with more</span><small>not rushed</small></li>
+    </ol>
+    <p class="note step">If you're newly saved, this protects you. Don't take on a big job because you feel you owe God. Wait. And when no one makes you a leader for a while, it isn't rejection. It's the time test, and it's kind.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="23" data-hl="Drink no longer water, but use a little wine for thy stomach’s sake and thine often infirmities"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="23"></blockquote>
+    <h2 class="rise" style="--d:1">Timothy's stomach</h2>
+    <p class="note rise" style="--d:2">This is a verse some men grab. Read it exactly. Paul is giving <em>medical advice</em> to a sick man who had given up wine, probably to be a clean example in a city full of drunkenness.</p>
+    <div class="columns">
+      <div class="col grace step">
+        <p class="who">What it says</p>
+        <h3>A little wine, for a sick stomach</h3>
+        <p>Timothy had often been ill, and the water in ancient cities was not always safe. Paul tells a man who was drinking only water to take a little wine as medicine.</p>
+      </div>
+      <div class="col law step">
+        <p class="who">What it doesn't say</p>
+        <h3>Nothing about cravings or nerves</h3>
+        <p>It isn't permission to drink. It isn't a cure for stress. And it isn't written to a man who can't stop at one.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise">If you're in recovery</h2>
+    <p class="note rise" style="--d:1">You aren't Timothy. For a man with an addiction, the wise path is to leave alcohol alone, and many Bible teachers say the same. Southern Baptists have long urged believers to leave alcohol alone.</p>
+    <blockquote class="quote step"><p>“And be not drunk with wine, wherein is excess; but be filled with the Spirit;”</p><cite>Ephesians 5:18</cite></blockquote>
+    <blockquote class="quote step"><p>“Wine is a mocker, strong drink is raging: and whosoever is deceived thereby is not wise.”</p><cite>Proverbs 20:1</cite></blockquote>
+    <p class="note step">If you're ill, there are other medicines. Ask your doctor, and tell him you're in recovery. Paul told Timothy to look after his health. He wouldn't tell you to put your life at risk.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="24-25" data-hl="Some men’s sins are open beforehand, going before to judgment; and some men they follow after|the good works of some are manifest beforehand"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise">Sooner or later, it shows</h2>
+    <div class="stage">
+      <svg viewBox="0 0 620 330" style="max-height:44vh" role="img" aria-label="Three men walking to the right. The first has his sin bag ahead of him: his sins are open beforehand. The second has his sin bag behind him that catches up: his sins follow after. The third has light shining out of him: good works cannot be hid.">
+        <line class="ti05-lane" x1="20" y1="82" x2="600" y2="82"/><line class="ti05-lane" x1="20" y1="178" x2="600" y2="178"/><line class="ti05-lane" x1="20" y1="274" x2="600" y2="274"/>
+        <!-- lane 1: bag ahead -->
+        <text class="ti05-tx bad" x="20" y="22">Open beforehand</text><text class="ti05-tx s" x="20" y="44">you can see it coming</text>
+        <g><circle class="ti05-man" cx="250" cy="52" r="9"/><path class="ti05-man" d="M236 82 Q238 62 250 62 Q262 62 264 82 Z"/></g>
+        <path class="ti05-rope2" d="M268 70 L400 70"/><rect class="ti05-bag" x="400" y="52" width="52" height="30" rx="8"/><text class="ti05-bagtx" x="426" y="72" text-anchor="middle">sin</text>
+        <!-- lane 2: bag behind, catches up -->
+        <text class="ti05-tx bad" x="20" y="118">Follow after</text><text class="ti05-tx s" x="20" y="140">it catches up later</text>
+        <g><circle class="ti05-man" cx="440" cy="148" r="9"/><path class="ti05-man" d="M426 178 Q428 158 440 158 Q452 158 454 178 Z"/></g>
+        <g class="ti05-late"><path class="ti05-rope2" d="M300 166 L424 166"/><rect class="ti05-bag" x="250" y="148" width="52" height="30" rx="8"/><text class="ti05-bagtx" x="276" y="168" text-anchor="middle">sin</text></g>
+        <!-- lane 3: good works cannot be hid -->
+        <text class="ti05-tx good" x="20" y="214">Good works</text><text class="ti05-tx s" x="20" y="236">cannot be hid</text>
+        <g class="ti05-shine"><circle cx="335" cy="262" r="30"/><circle cx="335" cy="262" r="30"/></g>
+        <g><circle class="ti05-man" cx="335" cy="244" r="9" style="fill:var(--accent-hot)"/><path d="M321 274 Q323 254 335 254 Q347 254 349 274 Z" style="fill:var(--accent-hot)"/></g>
+      </svg>
+    </div>
+    <p class="note step">Some sins are obvious now. Some wait years, and then catch up. And that's why Moses warned, <em>“be sure your sin will find you out”</em> (Numbers 32:23). Hiding a sin doesn't work. Telling the truth does.</p>
+    <p class="note step">Now read verse 25. <em>Good works</em> also show, and <em>“they that are otherwise cannot be hid”</em>. A changed life can't be hidden either. People who knew the old you will notice the new one. Give it time.</p>
+  </div>
+</section>
+
+<!-- ======================= CLOSING ======================= -->
+<section class="slide remember">
+  <div class="inner">
+    <h2 class="rise">Points to remember</h2>
+    <ol class="seeds">
+      <li class="step"><span class="topic">Family</span><span class="seed-q">“The younger as sisters, with all purity” <cite>5:2</cite></span><span class="take">Treat the church like a family: fathers, brothers, mothers, and sisters you protect.</span></li>
+      <li class="step"><span class="topic">Widows</span><span class="seed-q">“Let them learn first to shew piety at home” <cite>5:4</cite></span><span class="take">Family cares first, then the church. Don't leave your own on the church's doorstep.</span></li>
+      <li class="step"><span class="topic">Provide</span><span class="seed-q">“If any provide not for his own… he hath denied the faith” <cite>5:8</cite></span><span class="take">Your life should match your faith. Start rebuilding today, one small step at a time.</span></li>
+      <li class="step"><span class="topic">Leaders</span><span class="seed-q">“Lay hands suddenly on no man” <cite>5:22</cite></span><span class="take">Don't rush a man into leadership, and don't rush yourself. Let time test.</span></li>
+      <li class="step"><span class="topic">Wine</span><span class="seed-q">“A little wine for thy stomach's sake” <cite>5:23</cite></span><span class="take">Medical advice to a sick man who abstained, not permission to drink. Leave it alone if it has had you.</span></li>
+      <li class="step"><span class="topic">Sin</span><span class="seed-q">“Some men's sins are open beforehand… and some men they follow after” <cite>5:24</cite></span><span class="take">Sin shows sooner or later. So does a changed life. Tell the truth and wait.</span></li>
+    </ol>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 1 of 6</p>
+      <span class="topic">Family</span>
+      <h2>How should we treat older and younger men and women?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="1"></blockquote>
+      <blockquote class="quote step" data-q="2"></blockquote>
+      <blockquote class="quote step" data-q="3"></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>Like family. Older men as fathers (appeal to them, don't rebuke), younger men as brothers, older women as mothers, and younger women as sisters, with all purity.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 2 of 6</p>
+      <span class="topic">Widows</span>
+      <h2>Who should look after a widow first?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="4"></blockquote>
+      <blockquote class="quote step" data-q="5"></blockquote>
+      <blockquote class="quote step" data-q="16"></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>Her own children and relatives. They are to repay what they were given, and the church cares for the ones who have nobody.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 3 of 6</p>
+      <span class="topic">Provide</span>
+      <h2>What does Paul say about a man who won't provide for his own family?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="8"></blockquote>
+      <blockquote class="quote step" data-q="4"></blockquote>
+      <blockquote class="quote step"><p>“If we confess our sins, he is faithful and just to forgive us our sins, and to cleanse us from all unrighteousness.”</p><cite>1 John 1:9</cite></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>He has denied the faith by his actions, and is worse than an unbeliever. But it's a failure that can be turned around: confess it, be forgiven, and start providing again, one step at a time.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 4 of 6</p>
+      <span class="topic">Leaders</span>
+      <h2>How quickly should a man be put into leadership?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="19"></blockquote>
+      <blockquote class="quote step" data-q="21"></blockquote>
+      <blockquote class="quote step" data-q="22"></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>Not quickly. Test him first, treat every man fairly, and don't share in another man's sins by promoting him too soon. Time shows the man.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 5 of 6</p>
+      <span class="topic">Wine</span>
+      <h2>What did Paul tell Timothy about wine, and why?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="23"></blockquote>
+      <blockquote class="quote step"><p>“And be not drunk with wine, wherein is excess; but be filled with the Spirit;”</p><cite>Ephesians 5:18</cite></blockquote>
+      <blockquote class="quote step"><p>“Wine is a mocker, strong drink is raging: and whosoever is deceived thereby is not wise.”</p><cite>Proverbs 20:1</cite></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>To use a little wine for his stomach and his frequent illnesses. It was medical advice for a man who had given it up, not permission to drink. For a man with an addiction, the wise path is to leave it alone.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 6 of 6</p>
+      <span class="topic">Sin</span>
+      <h2>Which sins show up right away, and which follow later?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="24"></blockquote>
+      <blockquote class="quote step" data-q="25"></blockquote>
+      <blockquote class="quote step"><p>“But if ye will not do so, behold, ye have sinned against the LORD: and be sure your sin will find you out.”</p><cite>Numbers 32:23</cite></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>Some sins are plain at once, and some turn up later. Either way it comes out in the end, and so do good works. So be honest now, and let the changed life show.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide prayer">
+  <div class="inner">
+    <div class="emblem rise"></div>
+    <h2 class="rise" style="--d:1">Prayer requests</h2>
+    <p class="ask-line rise" style="--d:2">What can we pray about for you today? Your family, someone you owe, a hard day coming?</p>
+    <blockquote class="quote rise" style="--d:4"><p>“Now she that is a widow indeed, and desolate, trusteth in God, and continueth in supplications and prayers night and day.”</p><cite>1 Timothy 5:5</cite></blockquote>
+  </div>
+</section>
+
+</main>
+
+<script>
+// King James Version, 1 Timothy chapter 5
+const V = {
+  1: "Rebuke not an elder, but intreat him as a father; and the younger men as brethren;",
+  2: "The elder women as mothers; the younger as sisters, with all purity.",
+  3: "Honour widows that are widows indeed.",
+  4: "But if any widow have children or nephews, let them learn first to shew piety at home, and to requite their parents: for that is good and acceptable before God.",
+  5: "Now she that is a widow indeed, and desolate, trusteth in God, and continueth in supplications and prayers night and day.",
+  6: "But she that liveth in pleasure is dead while she liveth.",
+  7: "And these things give in charge, that they may be blameless.",
+  8: "But if any provide not for his own, and specially for those of his own house, he hath denied the faith, and is worse than an infidel.",
+  9: "Let not a widow be taken into the number under threescore years old, having been the wife of one man,",
+  10: "Well reported of for good works; if she have brought up children, if she have lodged strangers, if she have washed the saints’ feet, if she have relieved the afflicted, if she have diligently followed every good work.",
+  11: "But the younger widows refuse: for when they have begun to wax wanton against Christ, they will marry;",
+  12: "Having damnation, because they have cast off their first faith.",
+  13: "And withal they learn to be idle, wandering about from house to house; and not only idle, but tattlers also and busybodies, speaking things which they ought not.",
+  14: "I will therefore that the younger women marry, bear children, guide the house, give none occasion to the adversary to speak reproachfully.",
+  15: "For some are already turned aside after Satan.",
+  16: "If any man or woman that believeth have widows, let them relieve them, and let not the church be charged; that it may relieve them that are widows indeed.",
+  17: "Let the elders that rule well be counted worthy of double honour, especially they who labour in the word and doctrine.",
+  18: "For the scripture saith, Thou shalt not muzzle the ox that treadeth out the corn. And, The labourer is worthy of his reward.",
+  19: "Against an elder receive not an accusation, but before two or three witnesses.",
+  20: "Them that sin rebuke before all, that others also may fear.",
+  21: "I charge thee before God, and the Lord Jesus Christ, and the elect angels, that thou observe these things without preferring one before another, doing nothing by partiality.",
+  22: "Lay hands suddenly on no man, neither be partaker of other men’s sins: keep thyself pure.",
+  23: "Drink no longer water, but use a little wine for thy stomach’s sake and thine often infirmities.",
+  24: "Some men’s sins are open beforehand, going before to judgment; and some men they follow after.",
+  25: "Likewise also the good works of some are manifest beforehand; and they that are otherwise cannot be hid."
+};
+const BOOK = "1 Timothy 5";
+</script>
+<script src="../assets/deck.js"></script>
+</body>
+</html>

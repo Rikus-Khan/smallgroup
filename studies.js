@@ -14288,6 +14288,134 @@ window.STUDIES = [
     }
   },
   {
+    "id": "1-timothy-04",
+    "type": "chapter",
+    "book": "1 Timothy",
+    "url": "studies/1-timothy-04.html",
+    "ch": 4,
+    "date": "2026-10-31",
+    "title": "1 Timothy 4",
+    "sub": "Train for godliness",
+    "about": "Paul warns young Timothy about drifting from the faith, tells him to train for godliness every day, and to be an example.",
+    "tags": [
+      "Drifting",
+      "Spiritual discipline",
+      "Salvation offered to all",
+      "Example",
+      "Youth"
+    ],
+    "overview": {
+      "where": "Ephesus, where Paul had left Timothy in charge of the church",
+      "when": "About AD 62 to 64, after Paul was freed from his Roman house arrest",
+      "people": [
+        "Paul",
+        "Timothy"
+      ],
+      "places": [
+        "Ephesus"
+      ],
+      "story": [
+        "The Spirit warns that some will depart from the faith, following lies, numb consciences and man-made rules about marriage and food. God's gifts are good when received with thanksgiving (1–5).",
+        "Timothy is to refuse silly stories and train himself for godliness. Bodily exercise helps a little; godliness helps now and forever (6–8).",
+        "God is the living God and the Saviour of all men, specially of those who believe (9–10).",
+        "Timothy is not to let anyone despise his youth, but be an example in word, way of life, love, spirit, faith and purity, and to read, encourage and teach (11–14).",
+        "He must take heed to himself and to the doctrine, and keep at both (15–16)."
+      ],
+      "key": {
+        "ref": "1 Timothy 4:12",
+        "text": "Let no man despise thy youth; but be thou an example of the believers, in word, in conversation, in charity, in spirit, in faith, in purity."
+      },
+      "big": "Don't drift: train for godliness a little every day, trust the living God who offers salvation to all, and be an example while you are still young in the faith."
+    }
+  },
+  {
+    "id": "1-timothy-05",
+    "type": "chapter",
+    "book": "1 Timothy",
+    "url": "studies/1-timothy-05.html",
+    "ch": 5,
+    "date": "2026-10-31",
+    "title": "1 Timothy 5",
+    "sub": "Treat them like family",
+    "about": "Paul tells Timothy how to treat older and younger men and women, widows and elders, and warns him to go slowly and to look after his health.",
+    "tags": [
+      "Church family",
+      "Widows",
+      "Providing for family",
+      "Leaders",
+      "Wine and health",
+      "Sin"
+    ],
+    "overview": {
+      "where": "Ephesus, in the church Timothy was leading",
+      "when": "About AD 62 to 64, after Paul's release",
+      "people": [
+        "Paul",
+        "Timothy",
+        "elders"
+      ],
+      "places": [
+        "Ephesus"
+      ],
+      "story": [
+        "Treat older men as fathers, younger men as brothers, older women as mothers, and younger women as sisters, with all purity (1–2).",
+        "Honour widows who are truly alone. Their own family must care for them first, and a man who won't provide for his own has denied the faith (3–8).",
+        "The widows' list: older widows known for good works; younger ones are urged to marry and keep busy, not drift into idleness and gossip (9–16).",
+        "Elders who rule well deserve double honour. Accusations need witnesses, and the same rules apply to everyone (17–21).",
+        "Lay hands suddenly on no man. Timothy is told to take a little wine for his stomach. Some men's sins are open beforehand and some follow after, and good works cannot be hid (22–25)."
+      ],
+      "key": {
+        "ref": "1 Timothy 5:8",
+        "text": "But if any provide not for his own, and specially for those of his own house, he hath denied the faith, and is worse than an infidel."
+      },
+      "big": "The church is a family, and a believer's life should match his faith, beginning at home. Don't rush leaders, be fair to everyone, and remember that time shows both sin and good works."
+    }
+  },
+  {
+    "id": "1-timothy-06",
+    "type": "chapter",
+    "book": "1 Timothy",
+    "url": "studies/1-timothy-06.html",
+    "ch": 6,
+    "date": "2026-10-31",
+    "title": "1 Timothy 6",
+    "sub": "Flee, follow, fight",
+    "about": "Paul ends the letter with work, contentment, the love of money, and a last charge to the man of God: flee, follow, fight, and keep the trust.",
+    "tags": [
+      "Work",
+      "Contentment",
+      "Money",
+      "Fleeing temptation",
+      "Generosity",
+      "The gospel"
+    ],
+    "overview": {
+      "where": "Ephesus, in the church Timothy was leading",
+      "when": "About AD 62 to 64, after Paul's release",
+      "people": [
+        "Paul",
+        "timothy",
+        "jesus",
+        "pilate"
+      ],
+      "places": [
+        "Ephesus"
+      ],
+      "story": [
+        "Servants should honour their masters so God's name isn't spoken against, and false teachers who think religion is a way to get rich are to be avoided (1–5).",
+        "Godliness with contentment is great gain. We brought nothing in and can take nothing out (6–8).",
+        "The love of money is a root of all kinds of evil, and men who chased it pierced themselves through with many sorrows (9–10).",
+        "The man of God must flee these things, follow righteousness, godliness, faith, love, patience and meekness, fight the good fight and lay hold on eternal life (11–16).",
+        "The rich are to trust the living God and be rich in good works. Timothy is to keep what was committed to his trust (17–21)."
+      ],
+      "key": {
+        "ref": "1 Timothy 6:11",
+        "text": "But thou, O man of God, flee these things; and follow after righteousness, godliness, faith, love, patience, meekness."
+      },
+      "big": "Contentment, not riches, is the gain. Flee the love of money and every lure, follow Christ's way, and keep the gospel you were given, because grace is with you."
+    }
+  },
+  {
     "id": "2-timothy-01",
     "type": "chapter",
     "book": "2 Timothy",

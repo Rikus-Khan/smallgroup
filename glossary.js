@@ -497,6 +497,15 @@ window.GLOSSARY = [
     "1 Timothy", 3,
     [ 13 ] ],
    [
+    "1 Timothy", 4,
+    [ 6 ] ],
+   [
+    "1 Timothy", 5,
+    [ 21 ] ],
+   [
+    "1 Timothy", 6,
+    [ 3, 13, 14 ] ],
+   [
     "2 Timothy", 1,
     [ 1, 2, 9, 10, 13 ] ],
    [
@@ -4472,6 +4481,9 @@ window.GLOSSARY = [
     "1 Thessalonians", 5,
     [ 5 ] ],
    [
+    "1 Timothy", 6,
+    [ 16 ] ],
+   [
     "2 Timothy", 1,
     [ 10 ] ] ]
  },
@@ -4957,6 +4969,12 @@ window.GLOSSARY = [
    [
     "1 Timothy", 3,
     [ 15 ] ],
+   [
+    "1 Timothy", 4,
+    [ 3 ] ],
+   [
+    "1 Timothy", 6,
+    [ 5 ] ],
    [
     "2 Timothy", 2,
     [ 15, 18, 25 ] ] ]
@@ -5870,6 +5888,15 @@ window.GLOSSARY = [
     "1 Timothy", 3,
     [ 13 ] ],
    [
+    "1 Timothy", 4,
+    [ 6 ] ],
+   [
+    "1 Timothy", 5,
+    [ 11, 21 ] ],
+   [
+    "1 Timothy", 6,
+    [ 3, 13, 14 ] ],
+   [
     "2 Timothy", 1,
     [ 1, 2, 9, 10, 13 ] ],
    [
@@ -6401,6 +6428,15 @@ window.GLOSSARY = [
     "1 Timothy", 3,
     [ 16 ] ],
    [
+    "1 Timothy", 4,
+    [ 3, 10, 12 ] ],
+   [
+    "1 Timothy", 5,
+    [ 16 ] ],
+   [
+    "1 Timothy", 6,
+    [ 2 ] ],
+   [
     "2 Timothy", 1,
     [ 12 ] ],
    [
@@ -6894,7 +6930,10 @@ window.GLOSSARY = [
     [ 18 ] ],
    [
     "1 Timothy", 3,
-    [ 3, 8 ] ] ]
+    [ 3, 8 ] ],
+   [
+    "1 Timothy", 5,
+    [ 23 ] ] ]
  },
  {
   "id": "waterpots",
@@ -7871,6 +7910,9 @@ window.GLOSSARY = [
     "Ephesians", 5,
     [ 4, 15 ] ],
    [
+    "1 Timothy", 6,
+    [ 9 ] ],
+   [
     "2 Timothy", 2,
     [ 23 ] ] ]
  },
@@ -8263,6 +8305,9 @@ window.GLOSSARY = [
    [
     "1 Timothy", 1,
     [ 9 ] ],
+   [
+    "1 Timothy", 6,
+    [ 11 ] ],
    [
     "2 Timothy", 2,
     [ 22 ] ] ]
@@ -9192,7 +9237,10 @@ window.GLOSSARY = [
     [ 30 ] ],
    [
     "1 Timothy", 3,
-    [ 6 ] ] ]
+    [ 6 ] ],
+   [
+    "1 Timothy", 6,
+    [ 4 ] ] ]
  },
  {
   "id": "humility",
@@ -9414,7 +9462,10 @@ window.GLOSSARY = [
     [ 39 ] ],
    [
     "Philippians", 2,
-    [ 15 ] ] ]
+    [ 15 ] ],
+   [
+    "1 Timothy", 5,
+    [ 20 ] ] ]
  },
  {
   "id": "friend",
@@ -10253,6 +10304,9 @@ window.GLOSSARY = [
     "1 Timothy", 3,
     [ 7 ] ],
    [
+    "1 Timothy", 6,
+    [ 9 ] ],
+   [
     "2 Timothy", 2,
     [ 26 ] ] ]
  },
@@ -10359,7 +10413,10 @@ window.GLOSSARY = [
     [ 3 ] ],
    [
     "1 Thessalonians", 2,
-    [ 2 ] ] ]
+    [ 2 ] ],
+   [
+    "1 Timothy", 6,
+    [ 4 ] ] ]
  },
  {
   "id": "subtilty",
@@ -10887,6 +10944,9 @@ window.GLOSSARY = [
     [ 1, 5 ] ],
    [
     "Colossians", 2,
+    [ 13 ] ],
+   [
+    "1 Timothy", 6,
     [ 13 ] ] ]
  },
  {
@@ -10941,7 +11001,10 @@ window.GLOSSARY = [
     [ 21 ] ],
    [
     "Romans", 6,
-    [ 22, 23 ] ] ]
+    [ 22, 23 ] ],
+   [
+    "1 Timothy", 6,
+    [ 12, 19 ] ] ]
  },
  {
   "id": "condemnation",
@@ -10989,7 +11052,10 @@ window.GLOSSARY = [
     [ 9 ] ],
    [
     "1 Timothy", 3,
-    [ 6 ] ] ]
+    [ 6 ] ],
+   [
+    "1 Timothy", 5,
+    [ 12 ] ] ]
  },
  {
   "id": "judgment",
@@ -12354,7 +12420,10 @@ window.GLOSSARY = [
     [ 8 ] ],
    [
     "1 Timothy", 1,
-    [ 13, 20 ] ] ]
+    [ 13, 20 ] ],
+   [
+    "1 Timothy", 6,
+    [ 1 ] ] ]
  },
  {
   "id": "ye-are-gods",
@@ -12415,6 +12484,9 @@ window.GLOSSARY = [
    [
     "2 Thessalonians", 2,
     [ 13 ] ],
+   [
+    "1 Timothy", 4,
+    [ 5 ] ],
    [
     "2 Timothy", 2,
     [ 21 ] ] ]
@@ -12873,7 +12945,16 @@ window.GLOSSARY = [
     [ 14 ] ],
    [
     "1 Timothy", 1,
-    [ 3, 10 ] ] ]
+    [ 3, 10 ] ],
+   [
+    "1 Timothy", 4,
+    [ 6, 13, 16 ] ],
+   [
+    "1 Timothy", 5,
+    [ 17 ] ],
+   [
+    "1 Timothy", 6,
+    [ 1, 3 ] ] ]
  },
  {
   "id": "letters",
@@ -13528,6 +13609,9 @@ window.GLOSSARY = [
    [
     "1 Timothy", 3,
     [ 9 ] ],
+   [
+    "1 Timothy", 4,
+    [ 2 ] ],
    [
     "2 Timothy", 1,
     [ 3 ] ] ]
@@ -15191,6 +15275,12 @@ window.GLOSSARY = [
     "1 Timothy", 1,
     [ 16 ] ],
    [
+    "1 Timothy", 5,
+    [ 4 ] ],
+   [
+    "1 Timothy", 6,
+    [ 15 ] ],
+   [
     "2 Timothy", 2,
     [ 15 ] ] ]
  },
@@ -16053,7 +16143,10 @@ window.GLOSSARY = [
     [ 9 ] ],
    [
     "1 Timothy", 1,
-    [ 20 ] ] ]
+    [ 20 ] ],
+   [
+    "1 Timothy", 5,
+    [ 15 ] ] ]
  },
  {
   "id": "girded",
@@ -16740,7 +16833,10 @@ window.GLOSSARY = [
     [ 27 ] ],
    [
     "Acts", 13,
-    [ 28 ] ] ]
+    [ 28 ] ],
+   [
+    "1 Timothy", 6,
+    [ 13 ] ] ]
  },
  {
   "id": "barabbas",
@@ -17493,7 +17589,10 @@ window.GLOSSARY = [
     [ 1 ] ],
    [
     "Acts", 25,
-    [ 15 ] ] ]
+    [ 15 ] ],
+   [
+    "1 Timothy", 5,
+    [ 1, 17, 19 ] ] ]
  },
  {
   "id": "locusts",
@@ -18477,7 +18576,13 @@ window.GLOSSARY = [
     [ 16 ] ],
    [
     "1 Timothy", 3,
-    [ 15 ] ] ]
+    [ 15 ] ],
+   [
+    "1 Timothy", 4,
+    [ 10 ] ],
+   [
+    "1 Timothy", 6,
+    [ 17 ] ] ]
  },
  {
   "id": "whoredom",
@@ -21765,6 +21870,9 @@ window.GLOSSARY = [
     [ 14 ] ],
    [
     "Galatians", 5,
+    [ 1 ] ],
+   [
+    "1 Timothy", 6,
     [ 1 ] ] ]
  },
  {
@@ -22939,6 +23047,9 @@ window.GLOSSARY = [
    [
     "Colossians", 3,
     [ 12 ] ],
+   [
+    "1 Timothy", 6,
+    [ 11 ] ],
    [
     "2 Timothy", 2,
     [ 25 ] ] ]
@@ -28977,7 +29088,10 @@ window.GLOSSARY = [
     [ 34 ] ],
    [
     "Acts", 22,
-    [ 20 ] ] ]
+    [ 20 ] ],
+   [
+    "1 Timothy", 6,
+    [ 8 ] ] ]
  },
  {
   "id": "fowls-of-the-air",
@@ -29328,7 +29442,10 @@ window.GLOSSARY = [
     [ 1 ] ],
    [
     "2 Corinthians", 12,
-    [ 5, 9, 10 ] ] ]
+    [ 5, 9, 10 ] ],
+   [
+    "1 Timothy", 5,
+    [ 23 ] ] ]
  },
  {
   "id": "dead-bury-their-dead",
@@ -30189,7 +30306,13 @@ window.GLOSSARY = [
     [ 6 ] ],
    [
     "1 Timothy", 1,
-    [ 9 ] ] ]
+    [ 9 ] ],
+   [
+    "1 Timothy", 4,
+    [ 7 ] ],
+   [
+    "1 Timothy", 6,
+    [ 20 ] ] ]
  },
  {
   "id": "greater-is-here",
@@ -31029,7 +31152,10 @@ window.GLOSSARY = [
     [ 1 ] ],
    [
     "1 Timothy", 3,
-    [ 5, 15 ] ] ]
+    [ 5, 15 ] ],
+   [
+    "1 Timothy", 5,
+    [ 16 ] ] ]
  },
  {
   "id": "bind-and-loose",
@@ -35637,7 +35763,10 @@ window.GLOSSARY = [
     [ 26 ] ],
    [
     "Philippians", 1,
-    [ 15 ] ] ]
+    [ 15 ] ],
+   [
+    "1 Timothy", 6,
+    [ 4 ] ] ]
  },
  {
   "id": "wine-mingled-with-myrrh",
@@ -38330,6 +38459,9 @@ window.GLOSSARY = [
     "1 Timothy", 1,
     [ 2, 18 ] ],
    [
+    "1 Timothy", 6,
+    [ 20 ] ],
+   [
     "2 Timothy", 1,
     [ 2 ] ] ]
  },
@@ -39366,7 +39498,10 @@ window.GLOSSARY = [
     [ 14 ] ],
    [
     "Acts", 23,
-    [ 23 ] ] ]
+    [ 23 ] ],
+   [
+    "1 Timothy", 5,
+    [ 9 ] ] ]
  },
  {
   "id": "nourished",
@@ -39558,7 +39693,13 @@ window.GLOSSARY = [
   "refs": [
    [
     "Acts", 8,
-    [ 17, 18, 19 ] ] ]
+    [ 17, 18, 19 ] ],
+   [
+    "1 Timothy", 4,
+    [ 14 ] ],
+   [
+    "1 Timothy", 5,
+    [ 22 ] ] ]
  },
  {
   "id": "purchased",
@@ -41025,7 +41166,10 @@ window.GLOSSARY = [
     [ 3 ] ],
    [
     "1 Thessalonians", 2,
-    [ 3 ] ] ]
+    [ 3 ] ],
+   [
+    "1 Timothy", 4,
+    [ 13 ] ] ]
  },
  {
   "id": "afoot",
@@ -41491,6 +41635,9 @@ window.GLOSSARY = [
    [
     "1 Corinthians", 15,
     [ 53, 54 ] ],
+   [
+    "1 Timothy", 6,
+    [ 16 ] ],
    [
     "2 Timothy", 1,
     [ 10 ] ] ]
@@ -42564,7 +42711,16 @@ window.GLOSSARY = [
     [ 1, 13, 15 ] ],
    [
     "2 Thessalonians", 3,
-    [ 1, 6, 13 ] ] ]
+    [ 1, 6, 13 ] ],
+   [
+    "1 Timothy", 4,
+    [ 6 ] ],
+   [
+    "1 Timothy", 5,
+    [ 1 ] ],
+   [
+    "1 Timothy", 6,
+    [ 2 ] ] ]
  },
  {
   "id": "captain-of-the-guard",
@@ -42960,7 +43116,10 @@ window.GLOSSARY = [
   "refs": [
    [
     "Romans", 11,
-    [ 20 ] ] ]
+    [ 20 ] ],
+   [
+    "1 Timothy", 6,
+    [ 17 ] ] ]
  },
  {
   "id": "goodness-and-severity",
@@ -44007,7 +44166,10 @@ window.GLOSSARY = [
     [ 7 ] ],
    [
     "Colossians", 1,
-    [ 12 ] ] ]
+    [ 12 ] ],
+   [
+    "1 Timothy", 6,
+    [ 2 ] ] ]
  },
  {
   "id": "strive",
@@ -45020,6 +45182,9 @@ window.GLOSSARY = [
     "1 Timothy", 2,
     [ 15 ] ],
    [
+    "1 Timothy", 4,
+    [ 12 ] ],
+   [
     "2 Timothy", 2,
     [ 22 ] ] ]
  },
@@ -45114,7 +45279,10 @@ window.GLOSSARY = [
   "refs": [
    [
     "1 Corinthians", 9,
-    [ 9 ] ] ]
+    [ 9 ] ],
+   [
+    "1 Timothy", 5,
+    [ 18 ] ] ]
  },
  {
   "id": "power-right",
@@ -46401,7 +46569,10 @@ window.GLOSSARY = [
   "refs": [
    [
     "2 Corinthians", 6,
-    [ 15 ] ] ]
+    [ 15 ] ],
+   [
+    "1 Timothy", 5,
+    [ 8 ] ] ]
  },
  {
   "id": "temple-of-the-living-god",
@@ -46815,7 +46986,10 @@ window.GLOSSARY = [
     [ 22 ] ],
    [
     "Philippians", 1,
-    [ 27 ] ] ]
+    [ 27 ] ],
+   [
+    "1 Timothy", 4,
+    [ 12 ] ] ]
  },
  {
   "id": "certify",
@@ -47433,7 +47607,10 @@ window.GLOSSARY = [
   "refs": [
    [
     "Philippians", 2,
-    [ 14 ] ] ]
+    [ 14 ] ],
+   [
+    "1 Timothy", 6,
+    [ 5 ] ] ]
  },
  {
   "id": "crooked-and-perverse",
@@ -49566,7 +49743,10 @@ window.GLOSSARY = [
   "refs": [
    [
     "2 Thessalonians", 3,
-    [ 11 ] ] ]
+    [ 11 ] ],
+   [
+    "1 Timothy", 5,
+    [ 13 ] ] ]
  },
  {
   "id": "note-that-man",
@@ -49993,5 +50173,203 @@ window.GLOSSARY = [
    [
     "1 Timothy", 3,
     [ 16 ] ] ]
+ },
+ {
+  "id": "seducing-spirits",
+  "kind": "term",
+  "name": "Seducing spirits (spirits that lead people astray with lies)",
+  "refs": [
+   [
+    "1 Timothy", 4,
+    [ 1 ] ] ]
+ },
+ {
+  "id": "seared-conscience",
+  "kind": "term",
+  "name": "A seared conscience (burned until it can feel nothing)",
+  "refs": [
+   [
+    "1 Timothy", 4,
+    [ 2 ] ] ]
+ },
+ {
+  "id": "old-wives-fables",
+  "kind": "term",
+  "name": "Old wives’ fables (silly made-up stories)",
+  "refs": [
+   [
+    "1 Timothy", 4,
+    [ 7 ] ] ]
+ },
+ {
+  "id": "bodily-exercise",
+  "kind": "term",
+  "name": "Bodily exercise (physical training, the word behind “gymnasium”)",
+  "refs": [
+   [
+    "1 Timothy", 4,
+    [ 8 ] ] ]
+ },
+ {
+  "id": "presbytery",
+  "kind": "term",
+  "name": "The presbytery (the body of elders)",
+  "refs": [
+   [
+    "1 Timothy", 4,
+    [ 14 ] ] ]
+ },
+ {
+  "id": "intreat",
+  "kind": "term",
+  "name": "Intreat (to appeal to someone, ask earnestly)",
+  "refs": [
+   [
+    "1 Timothy", 5,
+    [ 1 ] ] ]
+ },
+ {
+  "id": "widows-indeed",
+  "kind": "term",
+  "name": "Widows indeed (women truly alone, with no family to help)",
+  "refs": [
+   [
+    "1 Timothy", 5,
+    [ 3, 5, 16 ] ] ]
+ },
+ {
+  "id": "shew-piety",
+  "kind": "term",
+  "name": "Shew piety at home (show love and duty to your own family first)",
+  "refs": [
+   [
+    "1 Timothy", 5,
+    [ 4 ] ] ]
+ },
+ {
+  "id": "wax-wanton",
+  "kind": "term",
+  "name": "Wax wanton against Christ (grow restless and drift from Him)",
+  "refs": [
+   [
+    "1 Timothy", 5,
+    [ 11 ] ] ]
+ },
+ {
+  "id": "tattlers",
+  "kind": "term",
+  "name": "Tattlers (gossips)",
+  "refs": [
+   [
+    "1 Timothy", 5,
+    [ 13 ] ] ]
+ },
+ {
+  "id": "double-honour",
+  "kind": "term",
+  "name": "Double honour (respect, and pay, for elders who work hard at teaching)",
+  "refs": [
+   [
+    "1 Timothy", 5,
+    [ 17 ] ] ]
+ },
+ {
+  "id": "little-wine",
+  "kind": "term",
+  "name": "A little wine for thy stomach’s sake (medical advice to a sick man who had given it up)",
+  "refs": [
+   [
+    "1 Timothy", 5,
+    [ 23 ] ] ]
+ },
+ {
+  "id": "open-beforehand",
+  "kind": "term",
+  "name": "Sins open beforehand (sins you can see coming) and sins that follow after",
+  "refs": [
+   [
+    "1 Timothy", 5,
+    [ 24 ] ] ]
+ },
+ {
+  "id": "doting",
+  "kind": "term",
+  "name": "Doting (sick with, mad about: here, a craze for arguing)",
+  "refs": [
+   [
+    "1 Timothy", 6,
+    [ 4 ] ] ]
+ },
+ {
+  "id": "evil-surmisings",
+  "kind": "term",
+  "name": "Evil surmisings (nasty suspicions)",
+  "refs": [
+   [
+    "1 Timothy", 6,
+    [ 4 ] ] ]
+ },
+ {
+  "id": "perverse-disputings",
+  "kind": "term",
+  "name": "Perverse disputings (endless, twisted arguments)",
+  "refs": [
+   [
+    "1 Timothy", 6,
+    [ 5 ] ] ]
+ },
+ {
+  "id": "love-of-money",
+  "kind": "term",
+  "name": "The love of money (not money itself, but loving it)",
+  "refs": [
+   [
+    "1 Timothy", 6,
+    [ 10 ] ] ]
+ },
+ {
+  "id": "good-profession",
+  "kind": "term",
+  "name": "A good profession (a good confession: saying out loud that you belong to Christ)",
+  "refs": [
+   [
+    "1 Timothy", 6,
+    [ 12, 13 ] ] ]
+ },
+ {
+  "id": "potentate",
+  "kind": "term",
+  "name": "Potentate (a ruler with all power)",
+  "refs": [
+   [
+    "1 Timothy", 6,
+    [ 15 ] ] ]
+ },
+ {
+  "id": "uncertain-riches",
+  "kind": "term",
+  "name": "Uncertain riches (wealth that can vanish)",
+  "refs": [
+   [
+    "1 Timothy", 6,
+    [ 17 ] ] ]
+ },
+ {
+  "id": "committed-to-trust",
+  "kind": "term",
+  "name": "That which is committed to thy trust (a deposit left in your care: the gospel)",
+  "refs": [
+   [
+    "1 Timothy", 6,
+    [ 20 ] ] ]
+ },
+ {
+  "id": "science-falsely-so-called",
+  "kind": "term",
+  "name": "Science falsely so called (claims of secret knowledge that aren’t true)",
+  "refs": [
+   [
+    "1 Timothy", 6,
+    [ 20 ] ] ]
  }
 ];

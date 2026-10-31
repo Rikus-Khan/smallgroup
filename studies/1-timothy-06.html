@@ -1,0 +1,660 @@
+<!doctype html>
+<html lang="en" data-theme="night">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>1 Timothy 6</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="../assets/fonts.css">
+<link rel="stylesheet" href="../assets/deck.css">
+<link rel="stylesheet" href="../assets/themes.css">
+<style>
+/* ti06-where: where we are in 1 Timothy. Six chapter tabs (.ti06-ch, .here), a card under each (.ti06-card), two bands (.ti06-band; .now is lit). */
+.ti06-where { display: grid; grid-template-columns: repeat(6, 1fr); gap: 6px; margin: .5em 0 1em; }
+.ti06-ch { text-align: center; padding: .25em 0 .3em; border-radius: 6px 6px 0 0; border-bottom: 3px solid var(--line-strong); font: 700 clamp(.85rem, .75rem + .4vw, 1.1rem) var(--sans); color: var(--ink-soft); }
+.ti06-ch.here { background: var(--accent); border-bottom-color: var(--accent); color: var(--on-accent); }
+.ti06-card { padding: .35em .5em .45em; border: 1.5px dashed var(--line-strong); border-radius: 8px; color: var(--ink-soft); }
+.ti06-card b { display: block; font: 700 clamp(.78rem, .7rem + .32vw, 1rem)/1.2 var(--sans); color: var(--ink); }
+.ti06-card small { display: block; margin-top: .15em; font: italic clamp(.7rem, .64rem + .25vw, .92rem)/1.25 var(--serif); }
+.ti06-card.here { border: 2px solid var(--accent); background: color-mix(in srgb, var(--accent) 14%, transparent); }
+.ti06-card.here b { color: var(--accent-hot); }
+.ti06-band { --c: var(--cool); padding: .45em .65em .55em; border-top: 6px solid var(--c); border-radius: 0 0 10px 10px; background: color-mix(in srgb, var(--c) 9%, transparent); }
+.ti06-band small { display: block; font: 700 clamp(.7rem, .66rem + .22vw, .9rem) var(--sans); color: var(--ink-soft); }
+.ti06-band b { display: block; font: 600 clamp(1.05rem, .9rem + .7vw, 1.6rem)/1.1 var(--serif); color: var(--ink); }
+.ti06-band i { display: block; font: italic clamp(.75rem, .7rem + .25vw, .95rem)/1.25 var(--serif); color: var(--ink-soft); }
+.ti06-band.now { --c: var(--accent); background: color-mix(in srgb, var(--c) 22%, transparent); box-shadow: inset 0 0 0 2px var(--c); }
+.ti06-b1 { grid-column: 1 / 4; } .ti06-b2 { grid-column: 4 / 7; }
+@media (max-width: 640px) {
+  .ti06-where { grid-template-columns: 1fr; }
+  .ti06-ch, .ti06-card:not(.here) { display: none; }
+  .ti06-ch.here { display: block; border-radius: 6px; }
+  .ti06-band { border-top: 0; border-left: 6px solid var(--c); border-radius: 0 10px 10px 0; }
+  .ti06-b1, .ti06-b2 { grid-column: 1; }
+}
+
+/* ti06-shirt: a work shirt with two patches. The name patch is yours; the second patch (God's name, .ti06-god) is sewn on at a click, because everyone you work with reads both. */
+.ti06-shirt { fill: var(--surface-2); stroke: var(--line-strong); stroke-width: 3; stroke-linejoin: round; }
+.ti06-seam { fill: none; stroke: var(--line-strong); stroke-width: 2; stroke-dasharray: 4 6; }
+.ti06-patch { fill: var(--surface); stroke: var(--ink-soft); stroke-width: 2.5; }
+.ti06-patch-tx { font: 700 16px var(--sans); fill: var(--ink); }
+.ti06-god { opacity: 0; transform: translateY(-16px); transition: opacity .6s ease, transform .7s cubic-bezier(.2,.7,.2,1); }
+.slide:has(.ti06-go.on) .ti06-god { opacity: 1; transform: none; }
+.ti06-god .ti06-patch { fill: color-mix(in srgb, var(--accent) 24%, var(--surface-2)); stroke: var(--accent); stroke-width: 3; }
+.ti06-god .ti06-patch-tx { fill: var(--accent-hot); }
+.ti06-cap { font: italic 600 19px var(--serif); fill: var(--ink-soft); }
+
+/* ti06-bring: in from nothing, out with nothing, and the stuff in between (.ti06-item) stays behind */
+.ti06-line { fill: none; stroke: var(--line-strong); stroke-width: 3; stroke-dasharray: 6 8; }
+.ti06-end { fill: var(--surface-2); stroke: var(--ink-soft); stroke-width: 3; }
+.ti06-hand { fill: none; stroke: var(--ink-soft); stroke-width: 3; stroke-linecap: round; }
+.ti06-item rect { fill: color-mix(in srgb, var(--warm) 24%, var(--surface-2)); stroke: var(--warm); stroke-width: 3; }
+.ti06-item { opacity: 0; transform: translateY(-14px); transition: opacity .5s ease, transform .6s ease; }
+.slide.active .ti06-item { opacity: 1; transform: none; transition-delay: calc(var(--k) * 400ms + 700ms); }
+.slide:has(.ti06-go.on) .ti06-item rect { stroke-dasharray: 5 5; opacity: .6; }
+.ti06-tx { font: 600 17px var(--sans); fill: var(--ink); }
+.ti06-tx.s { font: italic 600 18px var(--serif); fill: var(--ink-soft); }
+.ti06-tx.big { font: 700 24px var(--serif); fill: var(--accent-hot); }
+.ti06-itemtx { font: 700 15px var(--sans); fill: var(--ink); }
+.ti06-left { opacity: 0; transition: opacity .6s ease; }
+.slide:has(.ti06-go.on) .ti06-left { opacity: 1; }
+
+/* ti06-root: a tree whose root is the love of money (.ti06-root-line). The branches (.ti06-br) and their fruit (.ti06-fruit) grow on a click. */
+.ti06-ground { stroke: var(--ink-soft); stroke-width: 3; }
+.ti06-root-line { fill: none; stroke: var(--danger); stroke-width: 7; stroke-linecap: round; }
+.ti06-trunk { fill: none; stroke: var(--leather-light); stroke-width: 14; stroke-linecap: round; }
+.ti06-br { fill: none; stroke: var(--leather-light); stroke-width: 7; stroke-linecap: round; stroke-dasharray: 1; stroke-dashoffset: 1; transition: stroke-dashoffset .8s ease; transition-delay: calc(var(--k) * 180ms); }
+.slide:has(.ti06-go.on) .ti06-br { stroke-dashoffset: 0; }
+.ti06-fruit { opacity: 0; transition: opacity .5s ease; transition-delay: calc(var(--k) * 180ms + 700ms); }
+.slide:has(.ti06-go.on) .ti06-fruit { opacity: 1; }
+.ti06-fruit rect { fill: color-mix(in srgb, var(--danger) 26%, var(--surface-2)); stroke: var(--danger); stroke-width: 2.5; }
+.ti06-fruit text { font: 700 15px var(--sans); fill: var(--ink); }
+.ti06-roottx { font: 700 22px var(--serif); fill: var(--danger); }
+
+/* ti06-ways: flee (left, things that drift off and fade) and follow (right, six signposts that rise along the road) */
+.ti06-flee { animation: ti06-away 3.2s ease-in both; }
+.slide:not(.active) .ti06-flee { animation: none; }
+@keyframes ti06-away { from { opacity: 1; } to { opacity: .25; } }
+.ti06-road { fill: none; stroke: var(--accent); stroke-width: 5; stroke-linecap: round; stroke-dasharray: 1; stroke-dashoffset: 1; }
+.slide.active .ti06-road { animation: ti06-draw 1.6s ease .4s forwards; }
+@keyframes ti06-draw { to { stroke-dashoffset: 0; } }
+.ti06-sign { opacity: 0; transform: translateY(8px); transition: opacity .5s ease, transform .5s ease; transition-delay: calc(var(--k) * 260ms + 800ms); }
+.slide.active .ti06-sign { opacity: 1; transform: none; }
+.ti06-sign rect { fill: color-mix(in srgb, var(--accent) 22%, var(--surface-2)); stroke: var(--accent); stroke-width: 2.5; }
+.ti06-sign text { font: 700 16px var(--sans); fill: var(--ink); }
+.ti06-bad rect { fill: color-mix(in srgb, var(--danger) 22%, var(--surface-2)); stroke: var(--danger); stroke-width: 2.5; }
+.ti06-bad text { font: 700 15px var(--sans); fill: var(--ink); }
+.ti06-arrow-flee { stroke: var(--danger); stroke-width: 6; stroke-linecap: round; fill: none; }
+.ti06-word { font: 700 26px var(--serif); }
+
+/* ti06-rock: a tall stack of coins wobbling on a thin stick ("uncertain riches") beside a solid stone foundation */
+.ti06-coin { fill: color-mix(in srgb, var(--warm) 40%, var(--surface-2)); stroke: var(--warm); stroke-width: 3; }
+.ti06-stack { transform-origin: 140px 280px; animation: ti06-rock 3.2s ease-in-out infinite; }
+@keyframes ti06-rock { 0%, 100% { transform: rotate(-4deg); } 50% { transform: rotate(4deg); } }
+.ti06-block { fill: color-mix(in srgb, var(--cool) 28%, var(--surface-2)); stroke: var(--cool); stroke-width: 3; }
+.ti06-stick { stroke: var(--ink-soft); stroke-width: 6; stroke-linecap: round; }
+
+/* ti06-pass: the deposit (a box) handed from Paul to Timothy to the men who hear Timothy, to you (.ti06-box slides along) */
+.ti06-fig { fill: var(--ink-soft); }
+.ti06-fig.you { fill: var(--accent-hot); }
+.ti06-boxg { transform: translateX(0); }
+.slide.active .ti06-boxg { animation: ti06-pass 7s ease-in-out forwards; }
+@keyframes ti06-pass { 0%, 8% { transform: translateX(0); } 38%, 50% { transform: translateX(150px); } 80%, 100% { transform: translateX(300px); } }
+.ti06-chest { fill: var(--leather); stroke: var(--leather-light); stroke-width: 3; }
+.ti06-lock { fill: var(--warm); }
+.ti06-name { font: 700 18px var(--sans); fill: var(--ink); }
+</style>
+</head>
+<body>
+<main class="deck" id="deck">
+
+<!-- ======================= OPENING ======================= -->
+<section class="slide title">
+  <div class="inner">
+    <div class="emblem rise"></div>
+    <h1 class="rise" style="--d:1">1 Timothy 6</h1>
+    <p class="sub rise" style="--d:3">Flee, follow, fight</p>
+    <p class="tag rise" style="--d:5">Enough is enough, the love of money is a trap, and a man of God has a good fight to run.</p>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise" style="--d:1">Where we are in 1 Timothy</h2>
+    <div class="ti06-where rise" style="--d:2" role="img" aria-label="1 Timothy in six chapters. Chapters 1 to 3, the church: stay true against false teachers, pray and worship in order, and leaders. Chapters 4 to 6, the man of God: Timothy, train and be an example; people, old, young, widows and elders; money, and the fight. Chapter 6 is lit.">
+<span class="ti06-ch">1</span><span class="ti06-ch">2</span><span class="ti06-ch">3</span><span class="ti06-ch">4</span><span class="ti06-ch">5</span><span class="ti06-ch here">6</span>
+<div class="ti06-card"><b>Stay true</b><small>against false teachers</small></div><div class="ti06-card"><b>Pray, and worship in order</b><small>for everyone</small></div><div class="ti06-card"><b>Leaders</b><small>overseers and deacons</small></div><div class="ti06-card"><b>Timothy</b><small>train, and be an example</small></div><div class="ti06-card"><b>People</b><small>old, young, widows, elders</small></div><div class="ti06-card here"><b>Money, and the fight</b><small>flee, follow, keep</small></div>
+<div class="ti06-band ti06-b1"><small>Chapters 1–3</small><b>The church</b><i>how God's house is kept in order</i></div><div class="ti06-band ti06-b2 now"><small>Chapters 4–6</small><b>The man of God</b><i>how a man lives in it</i></div>
+</div>
+    <p class="note rise" style="--d:3">Paul wrote to Timothy, about AD 62 to 64, to steady a church at Ephesus with false teachers in it. Chapter 4 was about Timothy himself. Chapter 5 was about the people around him. Chapter 6 deals with work and money, and then gives the man of God a last charge.</p>
+    <p class="note step">It's the last chapter of the letter. At the end of the study we'll look back over all six.</p>
+  </div>
+</section>
+
+<section class="slide watch">
+  <div class="inner">
+    <h2 class="rise">Things to watch for</h2>
+    <p class="lede rise" style="--d:1">Keep these questions in the back of your mind as we read. We'll come back to every one of them at the end.</p>
+    <ol class="seeds">
+      <li class="step"><span class="topic">Work</span><span class="seed-q">How should a believer treat his boss?</span></li>
+      <li class="step"><span class="topic">Contentment</span><span class="seed-q">What is great gain?</span></li>
+      <li class="step"><span class="topic">Money</span><span class="seed-q">What does Paul say is the root of all evil?</span></li>
+      <li class="step"><span class="topic">Flee and follow</span><span class="seed-q">What must the man of God flee, and what must he follow?</span></li>
+      <li class="step"><span class="topic">The rich</span><span class="seed-q">What should the rich be charged to do?</span></li>
+      <li class="step"><span class="topic">The whole letter</span><span class="seed-q">What has 1 Timothy taught us about how a man of God lives?</span></li>
+    </ol>
+  </div>
+</section>
+
+<!-- ======================= PART ONE: WORK AND FALSE TEACHERS ======================= -->
+<section class="slide part">
+  <div class="inner">
+    <p class="part-n rise">Part one</p>
+    <h2 class="rise" style="--d:1">On the job</h2>
+    <p class="range rise" style="--d:2">Verses 1–5</p>
+    <div class="rule"></div>
+    <p class="hook rise" style="--d:4">Your work is the first thing the world reads about Jesus.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="1-2" data-hl="count their own masters worthy of all honour|that the name of God and his doctrine be not blasphemed|because they are brethren; but rather do them service"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <div class="split">
+      <div class="stage">
+        <svg viewBox="0 0 520 380" role="img" aria-label="A work shirt with a name patch that says 'your name'. On a click, a second patch is sewn on that says 'God's name', because the people at work read both.">
+          <path class="ti06-shirt" d="M150 50 L205 24 Q260 68 315 24 L370 50 L452 122 L406 168 L372 136 L372 350 L148 350 L148 136 L114 168 L68 122 Z"/>
+          <path class="ti06-seam" d="M205 24 L260 120 L315 24 M260 120 L260 350"/>
+          <g><rect class="ti06-patch" x="154" y="150" width="104" height="40" rx="6"/><text class="ti06-patch-tx" x="206" y="176" text-anchor="middle">your name</text></g>
+          <g class="ti06-god"><rect class="ti06-patch" x="266" y="150" width="104" height="40" rx="6"/><text class="ti06-patch-tx" x="318" y="176" text-anchor="middle">God's name</text></g>
+          <text class="ti06-cap" x="260" y="374" text-anchor="middle">on the job, you wear both</text>
+        </svg>
+      </div>
+      <div>
+        <h2 class="rise">The name on your shirt</h2>
+        <p class="note rise" style="--d:1">The “servants under the yoke” were slaves, and many Christians in Ephesus were. Paul isn't approving slavery. He is telling believers how to live as Christ's people inside a world they couldn't change overnight, and the gospel was already wearing slavery down.</p>
+        <p class="note step ti06-go">His reason is the point: <em>“that the name of God and his doctrine be not blasphemed.”</em> The men you work with can't see your faith. They see whether you're on time, honest, and doing the job.</p>
+        <p class="note step">Most of us don't have a master, but we have a boss. Today: <em>work as if His name is stitched on your shirt.</em> It is.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="2" data-hl="because they are brethren; but rather do them service"></blockquote>
+    <h2 class="rise" style="--d:1">If your boss is a believer</h2>
+    <p class="note rise" style="--d:2">Here's a trap, and it's a real one: <em>“He's a brother, so he'll go easy on me.”</em> Paul closes the door. Because he is a brother, work <em>harder</em>, and be glad he is “faithful and beloved.”</p>
+    <p class="note step">The same goes for a Christian friend who gives you a job, a place to stay, or a loan. Don't take advantage of grace. Honour it. That's how the next man gets a chance too.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="3-5" data-hl="He is proud, knowing nothing|supposing that gain is godliness: from such withdraw thyself"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise">How a teacher goes bad</h2>
+    <ol class="stairs down" style="--n:5" aria-label="Five steps down: proud, knowing nothing, doting about questions and strifes of words, envy, strife and railings, then supposing that gain is godliness.">
+      <li style="--k:0"><b>proud</b>(v. 4)</li>
+      <li style="--k:1"><b>knowing nothing</b>(v. 4)</li>
+      <li style="--k:2"><b>doting about strifes of words</b>(v. 4)</li>
+      <li style="--k:3"><b>envy, strife, railings</b>(v. 4)</li>
+      <li style="--k:4"><b>gain is godliness</b>(v. 5)</li>
+    </ol>
+    <p class="note step">“Doting” means <em>sick with</em> arguing: a man in love with winning arguments. And the last step is the worst: <em>“supposing that gain is godliness.”</em> They treated religion as a way to make money. Paul says: <em>“from such withdraw thyself.”</em></p>
+    <p class="note step">Godliness is not a business plan. Be careful of anyone who tells you God will make you rich if you send him a gift. Jesus never promised that, and neither did Paul. The next verse says what <em>is</em> gain.</p>
+  </div>
+</section>
+
+<!-- ======================= PART TWO: CONTENTMENT AND MONEY ======================= -->
+<section class="slide part">
+  <div class="inner">
+    <p class="part-n rise">Part two</p>
+    <h2 class="rise" style="--d:1">Enough, and the love of money</h2>
+    <p class="range rise" style="--d:2">Verses 6–10</p>
+    <div class="rule"></div>
+    <p class="hook rise" style="--d:4">What is real gain, and what's the trap?</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="6-8" data-hl="godliness with contentment is great gain|we brought nothing into this world|having food and raiment let us be therewith content"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise">What you can take with you</h2>
+    <div class="stage">
+      <svg viewBox="0 0 640 270" style="max-height:38vh" role="img" aria-label="A line from birth to death. A man comes in with empty hands. In between, a house, a truck and cash pile up. On a click, they stay behind, and he goes out with empty hands.">
+        <path class="ti06-line" d="M90 190 L550 190"/>
+        <circle class="ti06-end" cx="80" cy="190" r="26"/><circle class="ti06-fig" cx="80" cy="180" r="7"/><path class="ti06-fig" d="M66 206 Q68 190 80 190 Q92 190 94 206 Z"/>
+        <text class="ti06-tx" x="80" y="245" text-anchor="middle">came in with</text><text class="ti06-tx big" x="80" y="270" text-anchor="middle">nothing</text>
+        <g class="ti06-item" style="--k:0"><rect x="196" y="70" width="70" height="52" rx="6"/><text class="ti06-itemtx" x="231" y="102" text-anchor="middle">house</text></g>
+        <g class="ti06-item" style="--k:1"><rect x="286" y="70" width="70" height="52" rx="6"/><text class="ti06-itemtx" x="321" y="102" text-anchor="middle">truck</text></g>
+        <g class="ti06-item" style="--k:2"><rect x="376" y="70" width="70" height="52" rx="6"/><text class="ti06-itemtx" x="411" y="102" text-anchor="middle">cash</text></g>
+        <text class="ti06-tx s" x="321" y="150" text-anchor="middle">in between</text>
+        <circle class="ti06-end" cx="560" cy="190" r="26"/><circle class="ti06-fig" cx="560" cy="180" r="7"/><path class="ti06-fig" d="M546 206 Q548 190 560 190 Q572 190 574 206 Z"/>
+        <text class="ti06-tx" x="560" y="245" text-anchor="middle">goes out with</text><text class="ti06-tx big" x="560" y="270" text-anchor="middle">nothing</text>
+        <text class="ti06-tx s ti06-left" x="321" y="40" text-anchor="middle">all of it stays here</text>
+      </svg>
+    </div>
+    <p class="note step ti06-go">There are no pockets in a shroud. Job said it long before Paul: <em>“Naked came I out of my mother's womb, and naked shall I return thither: the LORD gave, and the LORD hath taken away; blessed be the name of the LORD.”</em> (Job 1:21)</p>
+    <p class="note step">That is not a reason to be careless with money. It is a reason to hold it loosely.</p>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="6" data-hl="godliness with contentment is great gain"></blockquote>
+    <h2 class="rise" style="--d:1">Enough</h2>
+    <p class="note rise" style="--d:2">Contentment doesn't mean <em>I don't want to improve</em>. It means <em>my peace doesn't wait on my next paycheck.</em> “Food and raiment” is food and clothes: the basics. If you have those, you can rest.</p>
+    <blockquote class="quote step"><p>“Let your conversation be without covetousness; and be content with such things as ye have: for he hath said, I will never leave thee, nor forsake thee.”</p><cite>Hebrews 13:5</cite></blockquote>
+    <p class="note step">Notice what contentment rests on: not on what you have, but on <em>“I will never leave thee.”</em> The man who has God has what he needs. And Paul, writing from prison, said he had <em>learned</em> it: <em>“in whatsoever state I am, therewith to be content.”</em> (Philippians 4:11) It is learned, not born in you.</p>
+    <p class="note step">Today: name three things you have that you didn't have a year ago. Thank God for each, out loud.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="9-10" data-hl="they that will be rich fall into temptation and a snare|which drown men in destruction and perdition|For the love of money is the root of all evil|pierced themselves through with many sorrows"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <div class="split">
+      <div class="stage">
+        <svg viewBox="0 0 560 420" role="img" aria-label="A tree. Its root, under the ground, is the love of money. On a click it grows branches, and the fruit on them is lying, stealing, gambling, betrayal, broken homes and debt.">
+          <path class="ti06-root-line" d="M280 230 Q250 290 190 320 M280 230 L280 330 M280 230 Q310 290 372 322"/>
+          <text class="ti06-roottx" x="280" y="372" text-anchor="middle">the love of money</text>
+          <path class="ti06-trunk" d="M280 230 L280 120"/>
+          <line class="ti06-ground" x1="40" y1="230" x2="520" y2="230"/>
+          <path class="ti06-br" pathLength="1" style="--k:0" d="M280 170 Q220 160 170 110"/>
+          <path class="ti06-br" pathLength="1" style="--k:1" d="M280 190 Q200 200 120 180"/>
+          <path class="ti06-br" pathLength="1" style="--k:2" d="M280 150 Q280 100 270 52"/>
+          <path class="ti06-br" pathLength="1" style="--k:3" d="M280 170 Q340 160 392 110"/>
+          <path class="ti06-br" pathLength="1" style="--k:4" d="M280 190 Q360 200 440 180"/>
+          <path class="ti06-br" pathLength="1" style="--k:5" d="M280 130 Q330 90 372 50"/>
+          <g class="ti06-fruit" style="--k:0"><rect x="116" y="72" width="82" height="30" rx="8"/><text x="157" y="93" text-anchor="middle">lying</text></g>
+          <g class="ti06-fruit" style="--k:1"><rect x="40" y="160" width="86" height="30" rx="8"/><text x="83" y="181" text-anchor="middle">stealing</text></g>
+          <g class="ti06-fruit" style="--k:2"><rect x="220" y="14" width="90" height="30" rx="8"/><text x="265" y="35" text-anchor="middle">gambling</text></g>
+          <g class="ti06-fruit" style="--k:3"><rect x="372" y="72" width="94" height="30" rx="8"/><text x="419" y="93" text-anchor="middle">betrayal</text></g>
+          <g class="ti06-fruit" style="--k:4"><rect x="414" y="160" width="106" height="30" rx="8"/><text x="467" y="181" text-anchor="middle">broken homes</text></g>
+          <g class="ti06-fruit" style="--k:5"><rect x="326" y="12" width="70" height="30" rx="8"/><text x="361" y="33" text-anchor="middle">debt</text></g>
+        </svg>
+      </div>
+      <div>
+        <h2 class="rise">The root</h2>
+        <p class="note rise" style="--d:1">Read it exactly. Not <em>money</em> is the root of all evil. The <em>love</em> of money is <em>a root</em> of every kind of evil.</p>
+        <p class="note step ti06-go">Money is a tool. The love of money is a master. Many of us know where it led: lying to get it, stealing to keep a habit, gambling to win it back, losing the home.</p>
+        <p class="note step">“Pierced themselves through” is the sad part. Nobody else did it. The sorrows came from the thing they chased.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise">Tool or master?</h2>
+    <div class="columns">
+      <div class="col grace rise" style="--d:1">
+        <p class="who">Money as a tool</p>
+        <h3>You use it</h3>
+        <p>Pay the rent, feed the kids, pay what you owe, help a brother. Then put it down.</p>
+      </div>
+      <div class="col law step">
+        <p class="who">Love of money</p>
+        <h3>It uses you</h3>
+        <p>It sets your hours, picks your friends, and keeps you awake. There is never enough.</p>
+      </div>
+    </div>
+    <blockquote class="quote step"><p>“No man can serve two masters: for either he will hate the one, and love the other; or else he will hold to the one, and despise the other. Ye cannot serve God and mammon.”</p><cite>Matthew 6:24</cite></blockquote>
+    <p class="note step">Paul doesn't say godly men get rich. He says <em>godliness with contentment</em> is the gain. If you're broke today, you haven't failed God. If you're doing well, hold it open-handed.</p>
+  </div>
+</section>
+
+<!-- ======================= PART THREE: FLEE AND FOLLOW ======================= -->
+<section class="slide part">
+  <div class="inner">
+    <p class="part-n rise">Part three</p>
+    <h2 class="rise" style="--d:1">O man of God</h2>
+    <p class="range rise" style="--d:2">Verses 11–16</p>
+    <div class="rule"></div>
+    <p class="hook rise" style="--d:4">Two directions, and one good fight.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="11-12" data-hl="But thou, O man of God, flee these things|follow after righteousness, godliness, faith, love, patience, meekness|Fight the good fight of faith, lay hold on eternal life"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise">Flee, and follow</h2>
+    <div class="stage">
+      <svg viewBox="0 0 680 330" style="max-height:48vh" role="img" aria-label="A man in the middle. To the left, four things he flees, fading away: the love of money, foolish lusts, the snare, and quarrels. To the right, a road with six signposts he follows: righteousness, godliness, faith, love, patience, meekness.">
+        <g class="ti06-flee">
+          <g class="ti06-bad"><rect x="20" y="40" width="150" height="34" rx="8"/><text x="95" y="63" text-anchor="middle">love of money</text></g>
+          <g class="ti06-bad"><rect x="20" y="96" width="150" height="34" rx="8"/><text x="95" y="119" text-anchor="middle">foolish lusts</text></g>
+          <g class="ti06-bad"><rect x="20" y="152" width="150" height="34" rx="8"/><text x="95" y="175" text-anchor="middle">the snare</text></g>
+          <g class="ti06-bad"><rect x="20" y="208" width="150" height="34" rx="8"/><text x="95" y="231" text-anchor="middle">strife and envy</text></g>
+        </g>
+        <path class="ti06-arrow-flee" d="M262 160 L196 160 M214 142 L194 160 L214 178"/>
+        <text class="ti06-word" x="228" y="132" text-anchor="middle" style="fill:var(--danger)">flee</text>
+        <g><circle class="ti06-fig" cx="310" cy="124" r="15"/><path class="ti06-fig" d="M286 190 Q288 150 310 150 Q332 150 334 190 Z M290 192 L286 236 M330 192 L334 236" /></g>
+        <path class="ti06-road" pathLength="1" d="M350 168 Q430 168 470 140 T660 70"/>
+        <text class="ti06-word" x="420" y="204" text-anchor="middle" style="fill:var(--accent-hot)">follow</text>
+        <g class="ti06-sign" style="--k:0"><rect x="360" y="212" width="116" height="30" rx="8"/><text x="418" y="233" text-anchor="middle">righteousness</text></g>
+        <g class="ti06-sign" style="--k:1"><rect x="486" y="212" width="90" height="30" rx="8"/><text x="531" y="233" text-anchor="middle">godliness</text></g>
+        <g class="ti06-sign" style="--k:2"><rect x="586" y="212" width="66" height="30" rx="8"/><text x="619" y="233" text-anchor="middle">faith</text></g>
+        <g class="ti06-sign" style="--k:3"><rect x="400" y="256" width="62" height="30" rx="8"/><text x="431" y="277" text-anchor="middle">love</text></g>
+        <g class="ti06-sign" style="--k:4"><rect x="472" y="256" width="86" height="30" rx="8"/><text x="515" y="277" text-anchor="middle">patience</text></g>
+        <g class="ti06-sign" style="--k:5"><rect x="568" y="256" width="86" height="30" rx="8"/><text x="611" y="277" text-anchor="middle">meekness</text></g>
+      </svg>
+    </div>
+    <p class="note step">It's a two-way street. Don't just <em>run from</em> the old things. Run <em>toward</em> something. A man who only flees has an empty space where the old life was, and the old life will move back in.</p>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise">Joseph ran</h2>
+    <p class="note rise" style="--d:1">When temptation is strong, the Bible's advice isn't to <em>stand and argue with it.</em> It is to <em>run</em>.</p>
+    <blockquote class="quote step"><p>“And she caught him by his garment, saying, Lie with me: and he left his garment in her hand, and fled, and got him out.”</p><cite>Genesis 39:12</cite></blockquote>
+    <blockquote class="quote step"><p>“Flee also youthful lusts: but follow righteousness, faith, charity, peace, with them that call on the Lord out of a pure heart.”</p><cite>2 Timothy 2:22</cite></blockquote>
+    <p class="note step">Joseph lost his coat. He kept his integrity. Fleeing is not cowardice: it is the smartest move a man can make. Leave the room, the bar, the website, the old phone number, the friend with the pills. Then call someone, <em>“with them that call on the Lord.”</em></p>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="12" data-hl="Fight the good fight of faith, lay hold on eternal life"></blockquote>
+    <h2 class="rise" style="--d:1">A good fight</h2>
+    <div class="columns">
+      <div class="col grace rise" style="--d:2">
+        <p class="who">Fight</p>
+        <h3>The good fight of faith</h3>
+        <p>Not a fight with people. A fight to keep believing God when everything says quit. “Good” because it's worth winning.</p>
+      </div>
+      <div class="col grace step">
+        <p class="who">Lay hold</p>
+        <h3>Grab what is already yours</h3>
+        <p>Eternal life is a gift you already have if you believe. “Lay hold” means take a firm grip on it: live today like it's true.</p>
+      </div>
+    </div>
+    <p class="note step">Paul reminds Timothy that he made <em>“a good profession before many witnesses.”</em> He said it out loud. Have you? Tell one person today, in plain words, that you belong to Jesus. That's a rep in the good fight.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="13-16" data-hl="Pontius Pilate witnessed a good confession|until the appearing of our Lord Jesus Christ|the King of kings, and Lord of lords"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <p class="saying rise" style="--d:1">King of kings, and <em>Lord of lords</em>.</p>
+    <p class="note rise" style="--d:2">Paul ends the charge by lifting Timothy's eyes. Jesus stood before Pontius Pilate, with a cross coming, and still told the truth about who He is. That was the <em>“good confession.”</em></p>
+    <p class="note step">Pilate had power for a few years. The One he sentenced <em>“only hath immortality”</em> and will appear in His own time. Your boss, your judge, your old enemies, and your own record are all under Him.</p>
+    <p class="note step">So Timothy is told to keep the charge <em>“without spot, unrebukeable, until the appearing.”</em> You aren't told to be perfect. You're told to keep going until He comes, and He holds you the whole way.</p>
+  </div>
+</section>
+
+<!-- ======================= PART FOUR: THE RICH AND THE TRUST ======================= -->
+<section class="slide part">
+  <div class="inner">
+    <p class="part-n rise">Part four</p>
+    <h2 class="rise" style="--d:1">Rich, and keeping the trust</h2>
+    <p class="range rise" style="--d:2">Verses 17–21</p>
+    <div class="rule"></div>
+    <p class="hook rise" style="--d:4">A word for those with something, and a last word for Timothy.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="17-19" data-hl="nor trust in uncertain riches, but in the living God|rich in good works, ready to distribute|a good foundation against the time to come"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <div class="split">
+      <div class="stage">
+        <svg viewBox="0 0 560 330" role="img" aria-label="Two things side by side. On the left, a tall stack of coins wobbles on a thin stick: uncertain riches. On the right, a solid stone foundation stands firm: good works, laid up as a good foundation.">
+          <line class="ti06-ground" x1="30" y1="296" x2="530" y2="296"/>
+          <g class="ti06-stack">
+            <line class="ti06-stick" x1="140" y1="296" x2="140" y2="280"/>
+            <ellipse class="ti06-coin" cx="140" cy="266" rx="50" ry="12"/><ellipse class="ti06-coin" cx="140" cy="238" rx="46" ry="11"/><ellipse class="ti06-coin" cx="140" cy="212" rx="42" ry="10"/><ellipse class="ti06-coin" cx="140" cy="188" rx="38" ry="9"/><ellipse class="ti06-coin" cx="140" cy="166" rx="34" ry="8"/><ellipse class="ti06-coin" cx="140" cy="146" rx="30" ry="7"/>
+          </g>
+          <text class="ti06-tx" x="140" y="322" text-anchor="middle">uncertain riches</text>
+          <rect class="ti06-block" x="320" y="256" width="200" height="40" rx="4"/><rect class="ti06-block" x="340" y="212" width="160" height="40" rx="4"/><rect class="ti06-block" x="360" y="168" width="120" height="40" rx="4"/>
+          <text class="ti06-tx" x="420" y="322" text-anchor="middle">a good foundation</text>
+          <text class="ti06-tx s" x="420" y="148" text-anchor="middle">good works</text>
+        </svg>
+      </div>
+      <div>
+        <h2 class="rise">Rich toward God</h2>
+        <p class="note rise" style="--d:1">Paul's charge to anyone with something: don't be <em>highminded</em> (looking down on others), and don't <em>trust uncertain riches</em>. Money can vanish in a day. Trust <em>“the living God, who giveth us richly all things to enjoy.”</em></p>
+        <p class="note step">“Rich in good works, ready to distribute, willing to communicate”: that last word means <em>share</em>. Jesus said it plainly: <em>“It is more blessed to give than to receive”</em> (Acts 20:35).</p>
+        <p class="note step">You may feel you've nothing to give. A man with twenty dollars can share five. A man with no money can give a ride, a meal, an hour. Give something, and the foundation starts.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="slide verse" data-v="20-21" data-hl="O Timothy, keep that which is committed to thy trust|oppositions of science falsely so called|Grace be with thee"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <div class="stage">
+      <svg viewBox="0 0 640 250" style="max-height:22vh" role="img" aria-label="A box, the trust, passed along from Paul to Timothy, then to the men who hear Timothy, and finally to you.">
+        <g><circle class="ti06-fig" cx="100" cy="100" r="20"/><path class="ti06-fig" d="M70 190 Q74 130 100 130 Q126 130 130 190 Z"/></g>
+        <text class="ti06-name" x="100" y="226" text-anchor="middle">Paul</text>
+        <g><circle class="ti06-fig" cx="250" cy="100" r="20"/><path class="ti06-fig" d="M220 190 Q224 130 250 130 Q276 130 280 190 Z"/></g>
+        <text class="ti06-name" x="250" y="226" text-anchor="middle">Timothy</text>
+        <g><circle class="ti06-fig" cx="400" cy="100" r="20"/><path class="ti06-fig" d="M370 190 Q374 130 400 130 Q426 130 430 190 Z"/></g>
+        <text class="ti06-name" x="400" y="226" text-anchor="middle">those who hear</text>
+        <g><circle class="ti06-fig you" cx="550" cy="100" r="20"/><path class="ti06-fig you" d="M520 190 Q524 130 550 130 Q576 130 580 190 Z"/></g>
+        <text class="ti06-name" x="550" y="226" text-anchor="middle" style="fill:var(--accent-hot)">you</text>
+        <g class="ti06-boxg"><rect class="ti06-chest" x="124" y="136" width="52" height="38" rx="5"/><rect class="ti06-lock" x="144" y="148" width="12" height="14" rx="2"/></g>
+      </svg>
+    </div>
+    <h2 class="rise" style="--d:1">The deposit</h2>
+    <p class="note rise" style="--d:2">“That which is committed to thy trust” was a banker's word: <em>a deposit</em>. Paul gave Timothy the gospel the way you'd leave something valuable with a friend. Keep it safe, and pass it on.</p>
+    <p class="note step">Beware <em>“oppositions of science falsely so called”</em>: claims of secret knowledge that aren't from Christ. You don't need a secret. The gospel is plain: Jesus died for sinners and rose again.</p>
+    <p class="note step">The last words of the letter are the best: <em>“Grace be with thee.”</em></p>
+  </div>
+</section>
+
+<!-- ======================= PART FIVE: LOOKING BACK ======================= -->
+<section class="slide part">
+  <div class="inner">
+    <p class="part-n rise">Part five</p>
+    <h2 class="rise" style="--d:1">Looking back</h2>
+    <p class="range rise" style="--d:2">The whole letter</p>
+    <div class="rule"></div>
+    <p class="hook rise" style="--d:4">That was the last chapter. Here is where 1 Timothy has taken us.</p>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise">Six chapters, one man of God</h2>
+    <ol class="timeline" aria-label="Six chapters of 1 Timothy. Chapter 1: stay true; Christ Jesus came into the world to save sinners. Chapter 2: pray for everyone; one mediator between God and men. Chapter 3: leaders in the house of God. Chapter 4: train for godliness and be an example. Chapter 5: treat people like family. Chapter 6: flee, follow and fight.">
+      <li style="--k:0"><b>1</b><span>Stay true</span><small>Jesus came to save sinners</small></li>
+      <li style="--k:1"><b>2</b><span>Pray, and worship in order</span><small>one mediator, Christ Jesus</small></li>
+      <li style="--k:2"><b>3</b><span>Leaders</span><small>God's house, the church</small></li>
+      <li style="--k:3"><b>4</b><span>Train</span><small>godliness; an example</small></li>
+      <li style="--k:4"><b>5</b><span>Family</span><small>treat people right</small></li>
+      <li class="lit" style="--k:5"><b>6</b><span>Flee, follow, fight</span><small>contentment; keep the trust</small></li>
+    </ol>
+    <p class="note step">Paul wrote this to a young man about AD 62 to 64. A few years later came 2 Timothy, Paul's last letter, written from a Roman prison. The one who told Timothy to <em>keep the trust</em> was about to hand it over for good.</p>
+    <blockquote class="quote step"><p>“This is a faithful saying, and worthy of all acceptation, that Christ Jesus came into the world to save sinners; of whom I am chief.”</p><cite>1 Timothy 1:15</cite></blockquote>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise">What this letter gave us</h2>
+    <ol class="signs rise" style="--d:1" aria-label="Sin, regret, grace, hope, and the real world, each with a line from 1 Timothy">
+      <li><b>Sin</b>“of whom I am chief” (1:15): Paul says it of himself, and so can we</li>
+      <li><b>Regret</b>“I obtained mercy, because I did it ignorantly in unbelief” (1:13)</li>
+      <li><b>Grace</b>“the grace of our Lord was exceeding abundant” (1:14)</li>
+      <li><b>Hope</b>“we trust in the living God, who is the Saviour of all men” (4:10)</li>
+      <li class="now"><b>The real world</b>“follow after righteousness, godliness, faith, love, patience, meekness” (6:11)</li>
+    </ol>
+    <p class="note step">If you remember one thing, make it this: the man who wrote this letter was a persecutor, a blasphemer, and the chief of sinners, and Jesus made him a man of God. If He did that for Paul, He can do it for you.</p>
+    <p class="note step">So wherever you fell yesterday, get up today. Flee the old thing, follow the new, fight the good fight, and <em>“lay hold on eternal life.”</em></p>
+  </div>
+</section>
+
+<!-- ======================= CLOSING ======================= -->
+<section class="slide remember">
+  <div class="inner">
+    <h2 class="rise">Points to remember</h2>
+    <ol class="seeds">
+      <li class="step"><span class="topic">Work</span><span class="seed-q">“That the name of God and his doctrine be not blasphemed” <cite>6:1</cite></span><span class="take">Your work carries His name. Be honest and on time, and don't take advantage of a Christian boss.</span></li>
+      <li class="step"><span class="topic">Contentment</span><span class="seed-q">“Godliness with contentment is great gain” <cite>6:6</cite></span><span class="take">You brought nothing in and take nothing out. Peace comes from God, not from getting more.</span></li>
+      <li class="step"><span class="topic">Money</span><span class="seed-q">“The love of money is the root of all evil” <cite>6:10</cite></span><span class="take">Money is a tool; loving it is a trap that pierces a man with sorrow. No prosperity promise here.</span></li>
+      <li class="step"><span class="topic">Flee and follow</span><span class="seed-q">“Flee these things; and follow after righteousness” <cite>6:11</cite></span><span class="take">Run from the old lure and toward something. Fight the good fight, and lay hold on eternal life.</span></li>
+      <li class="step"><span class="topic">The rich</span><span class="seed-q">“Rich in good works, ready to distribute” <cite>6:18</cite></span><span class="take">Trust the living God, not riches. Whatever you have, share some of it.</span></li>
+      <li class="step"><span class="topic">The whole letter</span><span class="seed-q">“O Timothy, keep that which is committed to thy trust” <cite>6:20</cite></span><span class="take">Keep the gospel, live it as a man of God, and pass it on. Grace from first to last.</span></li>
+    </ol>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 1 of 6</p>
+      <span class="topic">Work</span>
+      <h2>How should a believer treat his boss?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="1"></blockquote>
+      <blockquote class="quote step" data-q="2"></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>With honour, so that God's name and teaching aren't spoken against. If the boss is a believer, work even harder: don't take advantage of a brother.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 2 of 6</p>
+      <span class="topic">Contentment</span>
+      <h2>What is great gain?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="6"></blockquote>
+      <blockquote class="quote step" data-q="7"></blockquote>
+      <blockquote class="quote step" data-q="8"></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>Godliness with contentment. We brought nothing into the world and can carry nothing out, so with food and clothing we can be content, because God never leaves us.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 3 of 6</p>
+      <span class="topic">Money</span>
+      <h2>What does Paul say is the root of all evil?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="9"></blockquote>
+      <blockquote class="quote step" data-q="10"></blockquote>
+      <blockquote class="quote step"><p>“And he said unto them, Take heed, and beware of covetousness: for a man's life consisteth not in the abundance of the things which he possesseth.”</p><cite>Luke 12:15</cite></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>The love of money. Not money itself, but loving it, because that leads into temptation, a snare, and many sorrows.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 4 of 6</p>
+      <span class="topic">Flee and follow</span>
+      <h2>What must the man of God flee, and what must he follow?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="11"></blockquote>
+      <blockquote class="quote step" data-q="12"></blockquote>
+      <blockquote class="quote step"><p>“Flee also youthful lusts: but follow righteousness, faith, charity, peace, with them that call on the Lord out of a pure heart.”</p><cite>2 Timothy 2:22</cite></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>Flee the love of money and the things that go with it. Follow righteousness, godliness, faith, love, patience, and meekness, and fight the good fight of faith.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 5 of 6</p>
+      <span class="topic">The rich</span>
+      <h2>What should the rich be charged to do?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="17"></blockquote>
+      <blockquote class="quote step" data-q="18"></blockquote>
+      <blockquote class="quote step" data-q="19"></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>Not to be proud or to trust uncertain riches, but to trust the living God, do good, be rich in good works, and share. That lays up a good foundation.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 6 of 6</p>
+      <span class="topic">The whole letter</span>
+      <h2>What has 1 Timothy taught us about how a man of God lives?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step"><p>“This is a faithful saying, and worthy of all acceptation, that Christ Jesus came into the world to save sinners; of whom I am chief.”</p><cite>1 Timothy 1:15</cite></blockquote>
+      <blockquote class="quote step"><p>“Let no man despise thy youth; but be thou an example of the believers, in word, in conversation, in charity, in spirit, in faith, in purity.”</p><cite>1 Timothy 4:12</cite></blockquote>
+      <blockquote class="quote step" data-q="20"></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>He knows he is a sinner saved by grace, trains in godliness, is an example, treats people like family, and keeps the trust God has given him.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide prayer">
+  <div class="inner">
+    <div class="emblem rise"></div>
+    <h2 class="rise" style="--d:1">Prayer requests</h2>
+    <p class="ask-line rise" style="--d:2">What can we pray about for you today? A debt, a temptation, your job, a fight you're in?</p>
+    <blockquote class="quote rise" style="--d:4"><p>“But godliness with contentment is great gain.”</p><cite>1 Timothy 6:6</cite></blockquote>
+  </div>
+</section>
+
+</main>
+
+<script>
+// King James Version, 1 Timothy chapter 6
+const V = {
+  1: "Let as many servants as are under the yoke count their own masters worthy of all honour, that the name of God and his doctrine be not blasphemed.",
+  2: "And they that have believing masters, let them not despise them, because they are brethren; but rather do them service, because they are faithful and beloved, partakers of the benefit. These things teach and exhort.",
+  3: "If any man teach otherwise, and consent not to wholesome words, even the words of our Lord Jesus Christ, and to the doctrine which is according to godliness;",
+  4: "He is proud, knowing nothing, but doting about questions and strifes of words, whereof cometh envy, strife, railings, evil surmisings,",
+  5: "Perverse disputings of men of corrupt minds, and destitute of the truth, supposing that gain is godliness: from such withdraw thyself.",
+  6: "But godliness with contentment is great gain.",
+  7: "For we brought nothing into this world, and it is certain we can carry nothing out.",
+  8: "And having food and raiment let us be therewith content.",
+  9: "But they that will be rich fall into temptation and a snare, and into many foolish and hurtful lusts, which drown men in destruction and perdition.",
+  10: "For the love of money is the root of all evil: which while some coveted after, they have erred from the faith, and pierced themselves through with many sorrows.",
+  11: "But thou, O man of God, flee these things; and follow after righteousness, godliness, faith, love, patience, meekness.",
+  12: "Fight the good fight of faith, lay hold on eternal life, whereunto thou art also called, and hast professed a good profession before many witnesses.",
+  13: "I give thee charge in the sight of God, who quickeneth all things, and before Christ Jesus, who before Pontius Pilate witnessed a good confession;",
+  14: "That thou keep this commandment without spot, unrebukeable, until the appearing of our Lord Jesus Christ:",
+  15: "Which in his times he shall shew, who is the blessed and only Potentate, the King of kings, and Lord of lords;",
+  16: "Who only hath immortality, dwelling in the light which no man can approach unto; whom no man hath seen, nor can see: to whom be honour and power everlasting. Amen.",
+  17: "Charge them that are rich in this world, that they be not highminded, nor trust in uncertain riches, but in the living God, who giveth us richly all things to enjoy;",
+  18: "That they do good, that they be rich in good works, ready to distribute, willing to communicate;",
+  19: "Laying up in store for themselves a good foundation against the time to come, that they may lay hold on eternal life.",
+  20: "O Timothy, keep that which is committed to thy trust, avoiding profane and vain babblings, and oppositions of science falsely so called:",
+  21: "Which some professing have erred concerning the faith. Grace be with thee. Amen."
+};
+const BOOK = "1 Timothy 6";
+</script>
+<script src="../assets/deck.js"></script>
+</body>
+</html>
