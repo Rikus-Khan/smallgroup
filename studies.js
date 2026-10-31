@@ -13039,6 +13039,100 @@ window.STUDIES = [
     }
   },
   {
+    "id": "ephesians-01",
+    "type": "chapter",
+    "book": "Ephesians",
+    "ch": 1,
+    "date": "2026-10-31",
+    "title": "Ephesians 1",
+    "sub": "Every spiritual blessing",
+    "about": "A prisoner in Rome writes to a church he loves, and starts by counting what they already have in Christ. Then he prays they'd see it.",
+    "tags": [
+      "In Christ",
+      "Chosen",
+      "Adoption",
+      "Forgiveness",
+      "Sealed by the Spirit",
+      "God's power"
+    ],
+    "url": "studies/ephesians-01.html",
+    "overview": {
+      "where": "Written from Rome, where Paul was a prisoner, to the believers at Ephesus",
+      "when": "About AD 60 to 62, during Paul's house arrest in Rome",
+      "people": [
+        "paul",
+        "jesus",
+        "the-father",
+        "holy-spirit",
+        "saints-believers"
+      ],
+      "places": [
+        "ephesus",
+        "heavenly-places"
+      ],
+      "story": [
+        "Paul greets the saints at Ephesus, the city where he had taught for about three years (1–2).",
+        "He blesses God, who has given believers every spiritual blessing in Christ: chosen in Him before the world began to be holy, adopted as sons, and accepted in the beloved (3–6).",
+        "In Christ we have redemption through His blood, the forgiveness of sins, according to the riches of His grace; and God's plan is to gather all things together in Christ (7–12).",
+        "Those who heard the gospel and believed were sealed with the Holy Spirit of promise, the earnest, or down payment, of all that is coming (13–14).",
+        "Paul prays that their eyes would be opened to see their hope, God's inheritance in His people, and the power that raised Christ from the dead and set Him over all things as head of the church (15–23)."
+      ],
+      "key": {
+        "ref": "Ephesians 1:3",
+        "text": "Blessed be the God and Father of our Lord Jesus Christ, who hath blessed us with all spiritual blessings in heavenly places in Christ:"
+      },
+      "big": "Everything God gives is found in Christ, and the man who is in Christ by faith already has it: chosen, adopted, forgiven, sealed. Paul's prayer is that we would see it."
+    }
+  },
+  {
+    "id": "ephesians-02",
+    "type": "chapter",
+    "book": "Ephesians",
+    "ch": 2,
+    "date": "2026-10-31",
+    "title": "Ephesians 2",
+    "sub": "But God",
+    "about": "Dead men made alive, saved by grace and not by works. Then the wall that kept people apart comes down, and strangers become family.",
+    "tags": [
+      "Dead in sin",
+      "But God",
+      "Saved by grace",
+      "Good works",
+      "The middle wall",
+      "The household of God"
+    ],
+    "url": "studies/ephesians-02.html",
+    "overview": {
+      "where": "Written from Rome, where Paul was a prisoner, to the believers at Ephesus",
+      "when": "About AD 60 to 62, during Paul's house arrest in Rome",
+      "people": [
+        "jesus",
+        "the-father",
+        "holy-spirit",
+        "prince-of-the-power-of-the-air",
+        "saints-believers",
+        "apostles"
+      ],
+      "places": [
+        "israel",
+        "middle-wall-of-partition",
+        "heavenly-places"
+      ],
+      "story": [
+        "Without Christ we were dead in trespasses and sins, following the world, the devil and the flesh, by nature children of wrath, all of us alike (1–3).",
+        "But God, rich in mercy, made us alive with Christ, raised us up and seated us with Him, to show the riches of His grace for ages to come (4–7).",
+        "We are saved by grace through faith, the gift of God, not of works; and we are His workmanship, made for the good works He prepared (8–10).",
+        "Gentiles who were once far off, without hope and without God, are made near by the blood of Christ, who broke down the middle wall and made Jew and Gentile one new man (11–18).",
+        "Now they are no more strangers but fellowcitizens and family, built on the foundation of the apostles and prophets, with Christ the chief corner stone, into a temple where God lives by His Spirit (19–22)."
+      ],
+      "key": {
+        "ref": "Ephesians 2:8",
+        "text": "For by grace are ye saved through faith; and that not of yourselves: it is the gift of God:"
+      },
+      "big": "We were dead, but God, rich in mercy, made us alive by grace through faith, not by works. The same cross that brings men to God tears down the walls between them and makes them one family."
+    }
+  },
+  {
     "id": "ephesians-03",
     "type": "chapter",
     "book": "Ephesians",

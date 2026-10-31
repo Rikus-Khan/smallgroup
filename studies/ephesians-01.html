@@ -1,0 +1,765 @@
+<!doctype html>
+<html lang="en" data-theme="night">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Ephesians 1</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="../assets/fonts.css">
+<link rel="stylesheet" href="../assets/deck.css">
+<link rel="stylesheet" href="../assets/themes.css">
+<style>
+/* ep01-where: where we are in Ephesians (a deck.css candidate; every Ephesians study can copy it as is).
+   Row 1: the six chapters (.ep01-ch, --k; read ones .done, ours .here). Row 2: the two halves (.ep01-half: small, b, p).
+   Row 3: the three key words (.ep01-word: b, q, cite, small) Sit (1–3), Walk (4:1–6:9), Stand (6:10–24).
+   The half and the word we're in are .now. */
+.ep01-where { display: grid; grid-template-columns: repeat(6, 1fr); gap: 8px 6px; margin: .5em 0 1em; }
+.ep01-ch { padding: .25em 0 .3em; text-align: center; border-radius: 6px 6px 0 0; border-bottom: 3px solid var(--line-strong);
+  font: 700 clamp(.82rem, .74rem + .35vw, 1.08rem) var(--sans); color: var(--ink-soft);
+  opacity: 0; transition: opacity .4s ease; transition-delay: calc(var(--k, 0) * 70ms + 200ms); }
+.slide.active .ep01-ch { opacity: 1; }
+.ep01-ch.done { background: color-mix(in srgb, var(--accent) 14%, transparent); color: var(--ink); }
+.ep01-ch.here { background: var(--accent); border-bottom-color: var(--accent); color: var(--on-accent); }
+.slide.active .ep01-ch.here { animation: ep01-here 2.4s ease-in-out 1.6s infinite; }
+@keyframes ep01-here { 50% { box-shadow: 0 0 0 6px color-mix(in srgb, var(--accent) 28%, transparent); } }
+.ep01-half, .ep01-word { --c: var(--line-strong); opacity: 0; transform: translateY(10px); transition: opacity .6s ease, transform .6s ease; transition-delay: calc(var(--k, 0) * 300ms + 700ms); }
+.slide.active .ep01-half, .slide.active .ep01-word { opacity: 1; transform: none; }
+.ep01-half { grid-column: span 3; padding: .45em .8em .55em; border-top: 6px solid var(--c); border-radius: 0 0 10px 10px; background: color-mix(in srgb, var(--c) 8%, transparent); }
+.ep01-half small { display: block; font: 700 clamp(.72rem, .68rem + .22vw, .92rem) var(--sans); letter-spacing: .04em; color: var(--ink-soft); }
+.ep01-half b { display: block; font: 600 clamp(1.05rem, .88rem + .7vw, 1.5rem)/1.15 var(--serif); color: var(--ink); }
+.ep01-half p { margin: .1em 0 0; font-size: clamp(.8rem, .74rem + .26vw, 1rem); line-height: 1.3; color: var(--ink-soft); }
+.ep01-word { padding: .4em .6em .5em; border-radius: 10px; border: 1.5px solid color-mix(in srgb, var(--c) 60%, transparent); text-align: center; }
+.ep01-word b { display: block; font: 600 clamp(1.5rem, 1.1rem + 1.6vw, 2.6rem)/1 var(--serif); color: var(--c); }
+.ep01-word small { display: block; margin: .15em 0 .25em; font: 700 clamp(.7rem, .66rem + .2vw, .88rem) var(--sans); letter-spacing: .04em; color: var(--ink-soft); }
+.ep01-word q { display: block; font: italic clamp(.82rem, .76rem + .3vw, 1.05rem)/1.3 var(--serif); quotes: "\201C" "\201D"; color: var(--ink); }
+.ep01-word cite { display: block; margin-top: .15em; font-style: normal; font-size: clamp(.7rem, .66rem + .2vw, .88rem); color: var(--ink-soft); }
+.ep01-grace { --c: var(--accent); }
+.ep01-life { --c: var(--cool); }
+.ep01-sit { --c: var(--accent); grid-column: 1 / 4; }
+.ep01-walk { --c: var(--cool); grid-column: 4 / 6; }
+.ep01-stand { --c: var(--wine); grid-column: 6 / 7; }
+.ep01-half.now, .ep01-word.now { background: color-mix(in srgb, var(--c) 18%, transparent); box-shadow: inset 0 0 0 2px var(--c); }
+@media (max-width: 640px) {
+  .ep01-half, .ep01-word { grid-column: 1 / -1; }
+  .ep01-half { border-top: 0; border-left: 6px solid var(--c); border-radius: 0 10px 10px 0; }
+}
+
+/* ep01-in: the circle God drew "in him" before the world began, full of what He planned for everyone inside it,
+   and a man outside who comes in by believing (an .ep01-come step) */
+.ep01-ring { fill: color-mix(in srgb, var(--accent) 10%, transparent); stroke: var(--accent); stroke-width: 3; }
+.ep01-gift { fill: var(--ink); font-family: var(--serif); font-size: 19px; opacity: 0; transition: opacity .5s ease; transition-delay: calc(var(--k, 0) * 220ms + 500ms); }
+.slide.active .ep01-gift { opacity: 1; }
+.ep01-man { transition: transform 1.8s cubic-bezier(.4,.1,.3,1); }
+.slide:has(.ep01-come.on) .ep01-man { transform: translateX(255px); }
+.ep01-man circle, .ep01-man path { fill: var(--accent-hot); }
+.ep01-way { transition: opacity .6s ease; }
+.slide:has(.ep01-come.on) .ep01-way { opacity: 0; }
+
+/* ep01-gather: scattered pieces in heaven and on earth, drawn together around Christ (each .ep01-dot starts --dx, --dy away) */
+.ep01-dot { transform: translate(var(--dx), var(--dy)); opacity: .55; transition: transform 2.2s cubic-bezier(.3,.7,.2,1), opacity 2.2s ease; transition-delay: calc(var(--k, 0) * 110ms + 700ms); }
+.slide.active .ep01-dot { transform: none; opacity: 1; }
+.ep01-dot.up { fill: var(--cool); }
+.ep01-dot.down { fill: var(--warm); }
+.ep01-core { opacity: 0; transition: opacity .8s ease 2.4s; }
+.slide.active .ep01-core { opacity: 1; }
+
+/* ep01-seal: a wax seal pressed onto a deed (lands when the slide opens), then what a seal says, one line at a time */
+.ep01-wax { transform-box: fill-box; transform-origin: 50% 50%; transform: translateY(-140px) scale(1.5); opacity: 0;
+  transition: transform .7s cubic-bezier(.5,0,.6,1.4) .6s, opacity .3s ease .6s; }
+.slide.active .ep01-wax { transform: none; opacity: 1; }
+.ep01-says { opacity: 0; transition: opacity .6s ease; transition-delay: calc(var(--k, 0) * 450ms + 1500ms); }
+.slide.active .ep01-says { opacity: 1; }
+
+/* ep01-earnest: a bar with the down payment paid now and the rest still to come */
+.ep01-earnest { display: grid; grid-template-columns: 26% 1fr; margin: .6em 0 1em; border-radius: 10px; overflow: hidden; border: 2px solid var(--accent); }
+.ep01-earnest > div { padding: .6em .8em .65em; }
+.ep01-earnest b { display: block; font: 600 clamp(1rem, .86rem + .6vw, 1.4rem)/1.15 var(--serif); }
+.ep01-earnest small { display: block; margin-top: .2em; font-size: clamp(.84rem, .76rem + .32vw, 1.08rem); line-height: 1.3; }
+.ep01-earnest .paid { background: var(--accent); color: var(--on-accent); transform: scaleX(0); transform-origin: 0 50%; transition: transform 1.2s cubic-bezier(.3,.7,.3,1) .5s; }
+.slide.active .ep01-earnest .paid { transform: none; }
+.ep01-earnest .rest { background: repeating-linear-gradient(-45deg, color-mix(in srgb, var(--accent) 9%, transparent) 0 10px, transparent 10px 20px); color: var(--ink); }
+.ep01-earnest .rest small { color: var(--ink-soft); }
+
+/* ep01-eye: a closed eye that opens, with light around it */
+.ep01-lid { fill: var(--surface-2); transform-box: fill-box; transition: transform 1.6s cubic-bezier(.5,0,.3,1) .7s; }
+.ep01-lid.top { transform-origin: 50% 0; }
+.ep01-lid.bot { transform-origin: 50% 100%; }
+.slide.active .ep01-lid { transform: scaleY(0); }
+.ep01-ray { stroke: var(--accent); stroke-width: 4; stroke-linecap: round; opacity: 0; }
+.slide.active .ep01-ray { animation: ep01-shine 3s ease-in-out infinite; animation-delay: calc(var(--k, 0) * .12s + 2s); }
+@keyframes ep01-shine { 0%, 100% { opacity: .2; } 50% { opacity: 1; } }
+
+/* ep01-up: four steps up, from the grave to the throne (the first li is the bottom step) */
+.ep01-up { list-style: none; padding: 0; margin: .5em 0 1em; display: flex; flex-direction: column-reverse; gap: 6px; }
+.ep01-up li { margin-left: calc(var(--k, 0) * 11%); margin-right: calc((3 - var(--k, 0)) * 4%); padding: .4em .8em .45em; border-left: 6px solid var(--accent);
+  border-radius: 0 8px 8px 0; background: color-mix(in srgb, var(--accent) calc(8% + var(--k, 0) * 5%), transparent);
+  opacity: 0; transform: translateY(14px); transition: opacity .6s ease, transform .6s ease; transition-delay: calc(var(--k, 0) * 450ms + 400ms); }
+.slide.active .ep01-up li { opacity: 1; transform: none; }
+.ep01-up b { font: 600 clamp(1rem, .88rem + .55vw, 1.35rem)/1.2 var(--serif); color: var(--ink); }
+.ep01-up small { margin-left: .5em; font-size: clamp(.74rem, .7rem + .22vw, .95rem); color: var(--ink-soft); }
+@media (max-width: 640px) { .ep01-up li { margin-left: calc(var(--k, 0) * 5%); margin-right: 0; } }
+</style>
+</head>
+<body>
+<main class="deck" id="deck">
+
+<!-- ======================= OPENING ======================= -->
+<section class="slide title">
+  <div class="inner">
+    <div class="emblem rise"></div>
+    <h1 class="rise" style="--d:1">Ephesians 1</h1>
+    <p class="sub rise" style="--d:3">Every spiritual blessing</p>
+    <p class="tag rise" style="--d:5">A prisoner in Rome writes to a church he loves, and starts by counting what they already have in Christ. Then he prays they'd see it.</p>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <div class="split">
+      <div class="stage">
+        <svg data-world viewBox="170 110 500 280" data-towns="Rome!:t, Puteoli:r, Rhegium:r, Corinth:t, Ephesus*:r" role="img" aria-label="A map of Italy, Greece and the west of what is now Turkey. A line runs by sea from Rome, down the coast of Italy past Puteoli and Rhegium, around the south of Greece, and across the Aegean Sea to Ephesus.">
+          <path class="map-route" data-via="Rome, Puteoli, Rhegium, @16 37.6, @18.5 37.2, @21.6 36.6, @22.6 36.2, @23.5 36.25, @25.0 37.0, @26.0 37.45, @26.45 37.72, @26.6 37.95, @27.15 37.9, Ephesus"/>
+        </svg>
+      </div>
+      <div>
+        <h2 class="rise" style="--d:1">The letter to the Ephesians</h2>
+        <div class="letter">
+          <p class="from">“Paul, an apostle of Jesus Christ by the will of God, to the saints which are at Ephesus, and to the faithful in Christ Jesus”</p>
+          <dl>
+            <dt>Written from</dt><dd>Rome, where Paul was a prisoner under guard, waiting for his trial: <em>“the prisoner of Jesus Christ”</em> (3:1)</dd>
+            <dt>When</dt><dd>about AD 60 to 62</dd>
+            <dt>To whom</dt><dd>the believers at Ephesus, the great port city of Asia, where Paul had lived and taught for about three years</dd>
+            <dt>Why</dt><dd class="step">to show them how rich they are in Christ, and then how to live like it. Tychicus carried it to them (6:21).</dd>
+          </dl>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <div class="split">
+      <div class="stage">
+        <svg data-world viewBox="540 225 140 105" data-towns="Troas:r, Smyrna:r, Ephesus!:l, Miletus*:l, Patmos:l, Hierapolis:t, Laodicea:l, Colosse:r" role="img" aria-label="A close-up of the province of Asia, in the west of what is now Turkey. Ephesus is on the coast. Troas is to the north, Smyrna just above Ephesus, Miletus just to the south, and Laodicea, Colosse and Hierapolis inland to the east. A line runs from Ephesus down to Miletus.">
+          <path class="map-route r1" data-via="Ephesus, Miletus"/>
+        </svg>
+      </div>
+      <div>
+        <h2 class="rise" style="--d:1">Paul's three years at Ephesus</h2>
+        <blockquote class="quote rise" style="--d:2"><p>“And this continued by the space of two years; so that all they which dwelt in Asia heard the word of the Lord Jesus, both Jews and Greeks.”</p><cite>Acts 19:10</cite></blockquote>
+        <p class="note step">A city of idols and magic. When men believed, they <em>“brought their books together, and burned them before all men”</em> (Acts 19:19): the tools of the old life, gone.</p>
+        <p class="note step map-go1">Later Paul called the elders to Miletus to say goodbye: <em>“three years I ceased not to warn every one night and day with tears”</em> (Acts 20:31). These were his people.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise" style="--d:1">Where Ephesians fits in Paul's life</h2>
+    <ol class="timeline" aria-label="About AD 34 to 35, Saul is turned around on the Damascus road. About 53 to 56, three years at Ephesus. About AD 57, Paul is arrested in Jerusalem. About 57 to 59, two years in prison at Caesarea. About 59 to 60, the shipwreck, then Rome. About AD 60 to 62, under house arrest in Rome, he writes Ephesians, Philippians, Colossians and Philemon. About 67 to 68, by tradition, he is put to death in Rome.">
+      <li style="--k:0"><b>about AD 34 to 35</b><span>Saul turned around</span><small>Acts 9</small></li>
+      <li style="--k:1"><b>about 53 to 56</b><span>Three years at Ephesus</span><small>Acts 19–20</small></li>
+      <li style="--k:2"><b>about 57</b><span>Arrested in Jerusalem</span><small>Acts 21</small></li>
+      <li style="--k:3"><b>about 57 to 59</b><span>Prison at Caesarea</span><small>Acts 23–26</small></li>
+      <li style="--k:4"><b>about 59 to 60</b><span>Shipwreck, then Rome</span><small>Acts 27–28</small></li>
+      <li class="lit" style="--k:5"><b>about 60 to 62</b><span>Ephesians, from Rome</span><small>with Philippians, Colossians, Philemon</small></li>
+      <li class="wait" style="--k:6"><b>about 67 to 68</b><span>Put to death in Rome</span><small>by tradition</small></li>
+    </ol>
+    <p class="note rise" style="--d:3">Paul wrote four letters from that house arrest in Rome. Many call them the prison letters. He was chained to a soldier, but people could come and go (Acts 28:30).</p>
+    <p class="note step">Notice what a chained man writes about: not his rights, not his bad luck. He writes about how rich these believers are. Your circumstances don't get the last word on what you have in Christ.</p>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise" style="--d:1">Ephesians in one picture</h2>
+    <div class="ep01-where" role="img" aria-label="Ephesians in two halves. Chapters 1 to 3: what God has done, your wealth in Christ. Chapters 4 to 6: how to live, your walk in the world. Three key words: Sit, chapters 1 to 3, made us sit together in heavenly places, 2:6. Walk, 4:1 to 6:9, walk worthy of the vocation wherewith ye are called, 4:1. Stand, 6:10 to 24, that ye may be able to stand, 6:11. We are in chapter 1.">
+      <span class="ep01-ch here" style="--k:0">1</span><span class="ep01-ch" style="--k:1">2</span><span class="ep01-ch" style="--k:2">3</span>
+      <span class="ep01-ch" style="--k:3">4</span><span class="ep01-ch" style="--k:4">5</span><span class="ep01-ch" style="--k:5">6</span>
+      <div class="ep01-half ep01-grace now" style="--k:0"><small>Chapters 1–3</small><b>What God has done</b><p>Your wealth in Christ</p></div>
+      <div class="ep01-half ep01-life" style="--k:1"><small>Chapters 4–6</small><b>How to live</b><p>Your walk in the world</p></div>
+      <div class="ep01-word ep01-sit now" style="--k:2"><b>Sit</b><small>1–3</small><q>made us sit together in heavenly places</q><cite>2:6</cite></div>
+      <div class="ep01-word ep01-walk" style="--k:3"><b>Walk</b><small>4:1–6:9</small><q>walk worthy of the vocation</q><cite>4:1</cite></div>
+      <div class="ep01-word ep01-stand" style="--k:4"><b>Stand</b><small>6:10–24</small><q>able to stand</q><cite>6:11</cite></div>
+    </div>
+    <p class="note step">The order matters. Paul doesn't start with what you must do. For three chapters he tells you what God has already done and what you already have. Only then: now walk like it, and stand.</p>
+  </div>
+</section>
+
+<section class="slide watch">
+  <div class="inner">
+    <h2 class="rise">Things to watch for</h2>
+    <p class="lede rise" style="--d:1">Keep these questions in the back of your mind as we read. We'll come back to every one of them at the end.</p>
+    <ol class="seeds">
+      <li class="step"><span class="topic">Every blessing</span><span class="seed-q">Where does a believer find every spiritual blessing?</span></li>
+      <li class="step"><span class="topic">Chosen</span><span class="seed-q">What did God choose and plan before the world began?</span></li>
+      <li class="step"><span class="topic">Forgiven</span><span class="seed-q">What do we have through Christ's blood, and how much of it?</span></li>
+      <li class="step"><span class="topic">Sealed</span><span class="seed-q">When is a believer sealed with the Holy Spirit, and what does the seal promise?</span></li>
+      <li class="step"><span class="topic">Eyes opened</span><span class="seed-q">What did Paul pray these believers would see?</span></li>
+      <li class="step"><span class="topic">Power</span><span class="seed-q">What power is at work for those who believe?</span></li>
+    </ol>
+  </div>
+</section>
+
+<!-- ======================= PART ONE ======================= -->
+<section class="slide part">
+  <div class="inner">
+    <p class="part-n rise">Part one</p>
+    <h2 class="rise" style="--d:1">Chosen in him</h2>
+    <p class="range rise" style="--d:2">Verses 1–6</p>
+    <div class="rule"></div>
+    <p class="hook rise" style="--d:4">Before Paul asks anything of them, he starts praising God for what they already have.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="1-2" data-hl="to the saints which are at Ephesus|to the faithful in Christ Jesus"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="1" data-hl="to the saints which are at Ephesus"></blockquote>
+    <h2 class="rise" style="--d:1">Saints, in Ephesus</h2>
+    <div class="rename">
+      <span class="old rise" style="--d:2">men who burned their books of magic</span>
+      <span class="arrow step n2">→</span>
+      <span class="new step">saints</span>
+      <span class="gloss step"><em>Saints</em> means <em>holy ones</em>, set apart for God. Not the best behaved: the ones who belong to Him.</span>
+    </div>
+    <p class="note step">Paul doesn't write to <em>“the ones who've got it together at Ephesus.”</em> He writes to former idol-makers, magicians and drunks, and calls them saints and <em>“the faithful”</em>, the believing ones. That's what God calls you too, on your worst morning.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="3" data-hl="who hath blessed us with all spiritual blessings in heavenly places in Christ"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="3" data-hl="all spiritual blessings|in Christ"></blockquote>
+    <h2 class="rise" style="--d:1">Watch for two little words</h2>
+    <div class="tally rise" style="--d:2" aria-label="Verses 1 to 14. In Christ, in him, in whom, or in the beloved: once in verse 1, once in 3, once in 4, once in 6, once in 7, twice in 10, once in 11, once in 12, twice in 13. Eleven times.">
+      <span class="hit" style="--k:0"><i>1</i>×1</span><span><i>2</i>&nbsp;</span>
+      <span class="hit" style="--k:1"><i>3</i>×1</span><span class="hit" style="--k:2"><i>4</i>×1</span><span><i>5</i>&nbsp;</span>
+      <span class="hit" style="--k:3"><i>6</i>×1</span><span class="hit" style="--k:4"><i>7</i>×1</span><span><i>8</i>&nbsp;</span><span><i>9</i>&nbsp;</span>
+      <span class="hit" style="--k:5"><i>10</i>×2</span><span class="hit" style="--k:6"><i>11</i>×1</span><span class="hit" style="--k:7"><i>12</i>×1</span>
+      <span class="hit" style="--k:8"><i>13</i>×2</span><span><i>14</i>&nbsp;</span>
+    </div>
+    <p class="note step"><em>In Christ</em>, <em>in him</em>, <em>in whom</em>, <em>in the beloved</em>: eleven times in fourteen verses. Every blessing Paul names is found in one place: in Christ. Not in your record, not in your feelings.</p>
+    <p class="note step"><em>“Hath blessed”</em> is already done. <em>“Heavenly places”</em> means the unseen world where Christ reigns now. Your bank account may be empty today; your account in Christ isn't.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="4-6" data-hl="he hath chosen us in him before the foundation of the world|that we should be holy and without blame before him in love|predestinated us unto the adoption of children|he hath made us accepted in the beloved"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="4" data-hl="chosen us in him"></blockquote>
+    <div class="split">
+      <div class="stage">
+        <svg viewBox="0 0 600 360" role="img" aria-label="A large circle labeled in Christ, drawn before the world began. Inside it are the words chosen, holy, adopted, accepted, redeemed, forgiven, heirs, and sealed. A man stands outside it. When he believes, he walks into the circle, and everything in it is his.">
+          <circle class="ep01-ring" cx="330" cy="185" r="155"/>
+          <text x="330" y="58" text-anchor="middle" font-size="15" font-weight="700" letter-spacing="3" style="fill:var(--accent-hot)">IN CHRIST</text>
+          <text class="ep01-gift" style="--k:0" x="330" y="96" text-anchor="middle">chosen</text>
+          <text class="ep01-gift" style="--k:1" x="410" y="128" text-anchor="middle">holy</text>
+          <text class="ep01-gift" style="--k:2" x="430" y="196" text-anchor="middle">adopted</text>
+          <text class="ep01-gift" style="--k:3" x="410" y="266" text-anchor="middle">accepted</text>
+          <text class="ep01-gift" style="--k:4" x="330" y="300" text-anchor="middle">redeemed</text>
+          <text class="ep01-gift" style="--k:5" x="250" y="266" text-anchor="middle">forgiven</text>
+          <text class="ep01-gift" style="--k:6" x="230" y="196" text-anchor="middle">heirs</text>
+          <text class="ep01-gift" style="--k:7" x="250" y="128" text-anchor="middle">sealed</text>
+          <g class="ep01-way">
+            <path d="M104 196 L160 196" stroke-width="3" stroke-dasharray="7 6" fill="none" style="stroke:var(--ink-soft)"/>
+            <path d="M154 188 L166 196 L154 204" stroke-width="3" fill="none" style="stroke:var(--ink-soft)"/>
+            <text x="20" y="300" font-size="16" style="fill:var(--ink-soft)">“after that</text>
+            <text x="20" y="320" font-size="16" style="fill:var(--ink-soft)">ye believed”</text>
+            <text x="20" y="340" font-size="14" style="fill:var(--ink-soft)">v. 13</text>
+          </g>
+          <g class="ep01-man">
+            <circle cx="75" cy="160" r="13"/>
+            <path d="M58 228 L58 192 Q58 178 75 178 Q92 178 92 192 L92 228 Z"/>
+            <text x="75" y="252" text-anchor="middle" font-size="16" font-weight="700" style="fill:var(--accent-hot)">you</text>
+          </g>
+        </svg>
+      </div>
+      <div>
+        <h2 class="rise" style="--d:1">Chosen “in him”</h2>
+        <p class="note rise" style="--d:2">Read it slowly: <em>“chosen us <strong>in him</strong>.”</em> Before the world began, God chose a people in Christ, and decided what they would be: <em>“holy and without blame,”</em> adopted as sons.</p>
+        <p class="note step ep01-come">How does a man get in? <em>“In whom ye also trusted… after that ye believed”</em> (v. 13). The door is faith, and it's open to <em>“whosoever”</em> (John 3:16). Whoever is in Christ is in the Chosen One, and all of this is his.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="5" data-hl="predestinated us unto the adoption of children"></blockquote>
+    <h2 class="rise" style="--d:1">Predestinated: to what?</h2>
+    <p class="note rise" style="--d:2">Bible teachers have argued over these verses for centuries. Here is what's plain. <em>Predestinate</em> means to set the destination ahead of time. Look at what God set:</p>
+    <ul class="nots">
+      <li class="step"><span class="k">some men picked for heaven, the rest made for hell</span><span class="why">Paul never says it. God <em>“will have all men to be saved”</em> (1 Timothy 2:4).</span></li>
+      <li class="step"><span class="k">so it doesn't matter whether I believe</span><span class="why">It's <em>“after that ye believed”</em> that a man is sealed (v. 13).</span></li>
+      <li class="step yes"><span class="k">where every man in Christ is headed</span><span class="why">holy, blameless, adopted as God's own sons (vv. 4–5), made <em>“conformed to the image of his Son”</em> (Romans 8:29)</span></li>
+    </ul>
+    <p class="note step">Think of a bus whose last stop was fixed before anyone got on. The door is open, and whoever gets on goes where the bus goes. Christ is God's Chosen One, <em>“mine elect, in whom my soul delighteth”</em> (Isaiah 42:1). Get in Him, and you go where He goes.</p>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="6" data-hl="he hath made us accepted in the beloved"></blockquote>
+    <h2 class="rise" style="--d:1">Adopted, and accepted</h2>
+    <div class="rename">
+      <span class="old rise" style="--d:2">a slave to sin, with no family claim</span>
+      <span class="arrow step n2">→</span>
+      <span class="new step">a son, with the Father's name</span>
+      <span class="gloss step">In Rome an adopted son took his new father's name and became his full heir. His old family had no more claim on him.</span>
+    </div>
+    <blockquote class="quote step"><p>“For ye have not received the spirit of bondage again to fear; but ye have received the Spirit of adoption, whereby we cry, Abba, Father.”</p><cite>Romans 8:15</cite></blockquote>
+    <p class="note step"><em>“The beloved”</em> is Jesus. God accepts you the way He accepts His own Son. Not tolerated, not on probation: <em>accepted</em>. If your own father never said he was proud of you, read verse 6 again.</p>
+  </div>
+</section>
+
+<!-- ======================= PART TWO ======================= -->
+<section class="slide part">
+  <div class="inner">
+    <p class="part-n rise">Part two</p>
+    <h2 class="rise" style="--d:1">Redeemed and sealed</h2>
+    <p class="range rise" style="--d:2">Verses 7–14</p>
+    <div class="rule"></div>
+    <p class="hook rise" style="--d:4">What the Son paid for, and what the Spirit guarantees.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="7-8" data-hl="we have redemption through his blood, the forgiveness of sins|according to the riches of his grace"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="7" data-hl="the forgiveness of sins, according to the riches of his grace"></blockquote>
+    <div class="split">
+      <div class="stage">
+        <svg class="scale" style="--from:-11deg; --tip:12deg" viewBox="0 0 600 330" role="img" aria-label="A balance scale. On the left pan is a dark heap labeled my sins, and the scale leans that way. Then the riches of his grace are set on the right pan, and the scale swings hard to the right.">
+          <path d="M270 320 L330 320 L312 300 L288 300 Z" style="fill:var(--line-strong)"/>
+          <line x1="300" y1="300" x2="300" y2="70" stroke-width="8" style="stroke:var(--line-strong)"/>
+          <g class="scale-beam">
+            <line x1="80" y1="70" x2="520" y2="70" stroke-width="8" stroke-linecap="round" style="stroke:var(--ink-soft)"/>
+            <circle cx="300" cy="70" r="11" style="fill:var(--accent)"/>
+          </g>
+          <g class="scale-pan l">
+            <g stroke-width="2" style="stroke:var(--ink-soft)"><line x1="80" y1="70" x2="30" y2="190"/><line x1="80" y1="70" x2="130" y2="190"/></g>
+            <path d="M20 190 L140 190 Q130 220 80 220 Q30 220 20 190 Z" style="fill:var(--surface-2);stroke:var(--ink-soft)" stroke-width="2"/>
+            <path d="M34 190 Q46 150 70 156 Q84 138 102 152 Q124 150 128 190 Z" style="fill:var(--danger)" opacity=".8"/>
+            <text x="80" y="250" text-anchor="middle" font-size="19" style="fill:var(--ink-soft)">my sins</text>
+          </g>
+          <g class="scale-pan r">
+            <g stroke-width="2" style="stroke:var(--ink-soft)"><line x1="520" y1="70" x2="470" y2="190"/><line x1="520" y1="70" x2="570" y2="190"/></g>
+            <path d="M460 190 L580 190 Q570 220 520 220 Q470 220 460 190 Z" style="fill:var(--surface-2);stroke:var(--accent)" stroke-width="2"/>
+            <g class="step scale-go">
+              <circle cx="520" cy="166" r="30" style="fill:var(--accent)" opacity=".25"/>
+              <ellipse cx="496" cy="182" rx="18" ry="7" style="fill:var(--accent)"/><ellipse cx="540" cy="182" rx="18" ry="7" style="fill:var(--accent)"/>
+              <ellipse cx="518" cy="172" rx="18" ry="7" style="fill:var(--accent-hot)"/><ellipse cx="506" cy="162" rx="16" ry="6" style="fill:var(--accent)"/>
+              <ellipse cx="530" cy="152" rx="15" ry="6" style="fill:var(--accent-hot)"/>
+              <text x="520" y="250" text-anchor="middle" font-size="19" style="fill:var(--accent-hot)">the riches</text>
+              <text x="520" y="272" text-anchor="middle" font-size="19" style="fill:var(--accent-hot)">of his grace</text>
+            </g>
+          </g>
+        </svg>
+      </div>
+      <div>
+        <h2 class="rise" style="--d:1">Bought back</h2>
+        <p class="note rise" style="--d:2"><em>Redemption</em> is buying a slave's freedom by paying the price. The price here: <em>“his blood.”</em> And what it buys: <em>“the forgiveness of sins.”</em> Not some of them. Sins.</p>
+        <p class="note step">How much forgiveness? <em>“According to the riches of his grace.”</em> Not measured by how big your pile is, but by how rich He is. A billionaire giving <em>out of</em> his riches might write a small check. <em>According to</em> his riches, it's a big one.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="slide verse" data-v="9-10" data-hl="the mystery of his will|gather together in one all things in Christ"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="10" data-hl="gather together in one all things in Christ"></blockquote>
+    <div class="split">
+      <div class="stage">
+        <svg viewBox="40 20 520 290" role="img" aria-label="A dashed line across the middle divides heaven above from earth below. Scattered pieces, some above and some below, all move together into a ring around one center: Christ.">
+          <line x1="40" y1="165" x2="560" y2="165" stroke-width="2" stroke-dasharray="8 8" style="stroke:var(--line-strong)"/>
+          <text x="48" y="40" font-size="17" font-weight="700" style="fill:var(--ink-soft)">in heaven</text>
+          <text x="48" y="302" font-size="17" font-weight="700" style="fill:var(--ink-soft)">on earth</text>
+          <circle class="ep01-dot up" style="--k:0; --dx:118px; --dy:-75px" cx="412" cy="135" r="12"/>
+          <circle class="ep01-dot up" style="--k:1; --dx:88px; --dy:-47px" cx="382" cy="82" r="12"/>
+          <circle class="ep01-dot up" style="--k:2; --dx:-80px; --dy:68px" cx="330" cy="52" r="12"/>
+          <circle class="ep01-dot up" style="--k:3; --dx:-130px; --dy:-12px" cx="270" cy="52" r="12"/>
+          <circle class="ep01-dot up" style="--k:4; --dx:-148px; --dy:28px" cx="218" cy="82" r="12"/>
+          <circle class="ep01-dot up" style="--k:5; --dx:142px; --dy:5px" cx="188" cy="135" r="12"/>
+          <circle class="ep01-dot down" style="--k:6; --dx:-108px; --dy:85px" cx="188" cy="195" r="12"/>
+          <circle class="ep01-dot down" style="--k:7; --dx:82px; --dy:-33px" cx="218" cy="248" r="12"/>
+          <circle class="ep01-dot down" style="--k:8; --dx:-110px; --dy:-48px" cx="270" cy="278" r="12"/>
+          <circle class="ep01-dot down" style="--k:9; --dx:120px; --dy:12px" cx="330" cy="278" r="12"/>
+          <circle class="ep01-dot down" style="--k:10; --dx:158px; --dy:2px" cx="382" cy="248" r="12"/>
+          <circle class="ep01-dot down" style="--k:11; --dx:108px; --dy:-5px" cx="412" cy="195" r="12"/>
+          <g class="ep01-core">
+            <circle cx="300" cy="165" r="52" style="fill:var(--accent)"/>
+            <text x="300" y="173" text-anchor="middle" font-size="22" font-weight="700" style="fill:var(--on-accent)">Christ</text>
+          </g>
+        </svg>
+      </div>
+      <div>
+        <h2 class="rise" style="--d:1">Where history is going</h2>
+        <p class="note rise" style="--d:2">A <em>mystery</em> in the Bible is a plan God kept secret for ages and has now told. Here it is: when the time is full, everything broken and scattered, in heaven and on earth, comes back together under one Head, Christ.</p>
+        <p class="note step">The world isn't spinning out of control. And if your life feels like pieces on the floor, it's the same God with the same plan. He gathers.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="slide verse" data-v="11-12" data-hl="we have obtained an inheritance|who first trusted in Christ"></section>
+<section class="slide verse" data-v="13-14" data-hl="after that ye heard the word of truth, the gospel of your salvation|ye were sealed with that holy Spirit of promise|the earnest of our inheritance"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="13" data-hl="ye heard|ye believed, ye were sealed with that holy Spirit of promise"></blockquote>
+    <div class="split">
+      <div class="stage">
+        <svg viewBox="0 0 600 340" role="img" aria-label="A deed of ownership. A wax seal drops onto it and is pressed down. Beside it, three things a seal says: this is mine, this is genuine, hands off until it's delivered.">
+          <rect x="40" y="40" width="250" height="270" rx="6" stroke-width="2" style="fill:var(--surface);stroke:var(--line-strong)"/>
+          <text x="165" y="80" text-anchor="middle" font-size="18" font-weight="700" style="fill:var(--ink)">PURCHASED</text>
+          <g stroke-width="3" stroke-linecap="round" style="stroke:var(--line-strong)">
+            <line x1="70" y1="110" x2="260" y2="110"/><line x1="70" y1="135" x2="250" y2="135"/><line x1="70" y1="160" x2="260" y2="160"/>
+            <line x1="70" y1="185" x2="200" y2="185"/>
+          </g>
+          <g class="ep01-wax">
+            <circle cx="200" cy="248" r="40" style="fill:var(--wine)"/>
+            <circle cx="200" cy="248" r="28" stroke-width="3" fill="none" style="stroke:var(--glow)" opacity=".7"/>
+            <path d="M200 230 V266 M188 242 H212" stroke-width="5" stroke-linecap="round" style="stroke:var(--glow)" opacity=".85"/>
+          </g>
+          <g font-size="26">
+            <g class="ep01-says" style="--k:0"><text x="320" y="110" font-weight="700" style="fill:var(--accent-hot)">Mine</text><text x="320" y="138" font-size="20" style="fill:var(--ink-soft)">it belongs to Him</text></g>
+            <g class="ep01-says" style="--k:1"><text x="320" y="192" font-weight="700" style="fill:var(--accent-hot)">Genuine</text><text x="320" y="220" font-size="20" style="fill:var(--ink-soft)">the real thing</text></g>
+            <g class="ep01-says" style="--k:2"><text x="320" y="274" font-weight="700" style="fill:var(--accent-hot)">Hands off</text><text x="320" y="302" font-size="20" style="fill:var(--ink-soft)">kept till delivered</text></g>
+          </g>
+        </svg>
+      </div>
+      <div>
+        <h2 class="rise" style="--d:1">Sealed</h2>
+        <p class="note rise" style="--d:2">Follow the order: <em>heard</em>, <em>trusted</em>, <em>sealed</em>. The moment a man believes, God puts His own Holy Spirit in him as a seal. <em>“Who first trusted”</em> (v. 12) were Jews like Paul; <em>“ye also”</em>, Gentiles. No second blessing to chase: every believer has Him.</p>
+        <blockquote class="quote step"><p>“And grieve not the holy Spirit of God, whereby ye are sealed unto the day of redemption.”</p><cite>Ephesians 4:30</cite></blockquote>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="14" data-hl="the earnest of our inheritance"></blockquote>
+    <h2 class="rise" style="--d:1">The earnest</h2>
+    <div class="morph">
+      <span class="big rise" style="--d:2">ἀρραβών</span>
+      <span class="say step">said <em class="gk">arrabōn</em></span>
+      <span class="means step">a down payment that promises the rest</span>
+    </div>
+    <div class="ep01-earnest step" role="img" aria-label="A bar. The first part, filled in, is the earnest: the Holy Spirit, given now. The rest of the bar is the inheritance still to come, at the redemption of the purchased possession.">
+      <div class="paid"><b>Paid now</b><small>the Holy Spirit in you</small></div>
+      <div class="rest"><b>The rest is coming</b><small>“until the redemption of the purchased possession”: the day He comes for what He bought</small></div>
+    </div>
+    <p class="note step">Nobody puts money down on a house and then walks away from it. God has already put His own Spirit down on you. You are <em>“the purchased possession”</em>, and He will come back for what He paid for. That's why a believer is secure.</p>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise" style="--d:1">One long song of praise</h2>
+    <p class="note rise" style="--d:2">In Paul's Greek, verses 3 to 14 are one long sentence. He can't stop. It moves through the Father, the Son and the Spirit, and each part ends the same way:</p>
+    <div class="sort">
+      <div class="rise" style="--d:3"><h3>The Father chose</h3><div class="vs"><b>3</b><b>4</b><b>5</b><b>6</b></div><p>chosen, holy, adopted, accepted. <em>“To the praise of the glory of his grace”</em> (v. 6)</p></div>
+      <div class="rise" style="--d:4"><h3>The Son redeemed</h3><div class="vs"><b>7</b><b>8</b><b>9</b><b>10</b><b>11</b><b>12</b></div><p>bought back, forgiven, given an inheritance. <em>“To the praise of his glory”</em> (v. 12)</p></div>
+      <div class="rise" style="--d:5"><h3>The Spirit sealed</h3><div class="vs"><b>13</b><b>14</b></div><p>marked, kept, the down payment. <em>“Unto the praise of his glory”</em> (v. 14)</p></div>
+    </div>
+    <p class="note step">Every line is something God did. You'll look hard for a single thing we did, except hear and believe. So start the day the way Paul starts the letter: <em>“Blessed be the God and Father of our Lord Jesus Christ.”</em> Thank Him before you ask Him for anything.</p>
+  </div>
+</section>
+
+<!-- ======================= PART THREE ======================= -->
+<section class="slide part">
+  <div class="inner">
+    <p class="part-n rise">Part three</p>
+    <h2 class="rise" style="--d:1">That ye may know</h2>
+    <p class="range rise" style="--d:2">Verses 15–23</p>
+    <div class="rule"></div>
+    <p class="hook rise" style="--d:4">They already have it all. Paul prays they'd see it.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="15-16" data-hl="your faith in the Lord Jesus, and love unto all the saints|making mention of you in my prayers"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="16" data-hl="Cease not to give thanks for you"></blockquote>
+    <h2 class="rise" style="--d:1">A prisoner praying for free men</h2>
+    <div class="columns">
+      <div class="col law step">
+        <p class="who">Up</p>
+        <h3>“Your faith in the Lord Jesus”</h3>
+        <p>Trusting Him is where it starts.</p>
+      </div>
+      <div class="col grace step">
+        <p class="who">Out</p>
+        <h3>“Love unto all the saints”</h3>
+        <p>Real faith shows up as love for other believers, all of them, the hard ones too.</p>
+      </div>
+    </div>
+    <p class="note step">Paul is chained to a guard, and he spends his time thanking God for other people and naming them in prayer. Try it today: name one man in this group to God, and thank God for him.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="17-18" data-hl="the spirit of wisdom and revelation in the knowledge of him|The eyes of your understanding being enlightened|the hope of his calling|the riches of the glory of his inheritance in the saints"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="18" data-hl="The eyes of your understanding being enlightened"></blockquote>
+    <div class="split">
+      <div class="stage">
+        <svg viewBox="0 0 600 300" role="img" aria-label="A closed eye opens, and light shines out around it.">
+          <defs><clipPath id="ep01-eyeclip"><path d="M60 150 Q300 -20 540 150 Q300 320 60 150 Z"/></clipPath></defs>
+          <g>
+            <line class="ep01-ray" style="--k:0" x1="300" y1="44" x2="300" y2="8"/>
+            <line class="ep01-ray" style="--k:1" x1="200" y1="58" x2="180" y2="22"/>
+            <line class="ep01-ray" style="--k:2" x1="400" y1="58" x2="420" y2="22"/>
+            <line class="ep01-ray" style="--k:3" x1="120" y1="94" x2="84" y2="64"/>
+            <line class="ep01-ray" style="--k:4" x1="480" y1="94" x2="516" y2="64"/>
+            <line class="ep01-ray" style="--k:5" x1="300" y1="256" x2="300" y2="292"/>
+            <line class="ep01-ray" style="--k:6" x1="200" y1="242" x2="180" y2="278"/>
+            <line class="ep01-ray" style="--k:7" x1="400" y1="242" x2="420" y2="278"/>
+          </g>
+          <g clip-path="url(#ep01-eyeclip)">
+            <rect x="60" y="0" width="480" height="300" style="fill:var(--glow)"/>
+            <circle cx="300" cy="150" r="72" style="fill:var(--accent)"/>
+            <circle cx="300" cy="150" r="32" style="fill:var(--on-glow)"/>
+            <circle cx="318" cy="132" r="11" style="fill:var(--glow)"/>
+            <rect class="ep01-lid top" x="60" y="0" width="480" height="151"/>
+            <rect class="ep01-lid bot" x="60" y="149" width="480" height="151"/>
+          </g>
+          <path d="M60 150 Q300 -20 540 150 Q300 320 60 150 Z" fill="none" stroke-width="4" style="stroke:var(--ink-soft)"/>
+        </svg>
+      </div>
+      <div>
+        <h2 class="rise" style="--d:1">Eyes opened</h2>
+        <p class="note rise" style="--d:2">Paul doesn't pray they'd <em>get</em> more. He prays they'd <em>see</em> what they've got. Three things:</p>
+        <ol class="signs">
+          <li class="step"><b>The hope of His calling</b>where He is taking you</li>
+          <li class="step now"><b>His inheritance in the saints</b>you are His treasure</li>
+          <li class="step"><b>His power to us-ward</b>what He's doing in you now</li>
+        </ol>
+        <p class="note step">Read the middle one again: <em>“his inheritance in the saints.”</em> Not just what you get from God; you are what God gets. He counts you His riches.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="slide verse" data-v="19-21" data-hl="the exceeding greatness of his power to us-ward who believe|when he raised him from the dead|Far above all principality, and power, and might, and dominion"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="19" data-hl="the exceeding greatness of his power to us-ward who believe"></blockquote>
+    <h2 class="rise" style="--d:1">The power that emptied a grave</h2>
+    <ol class="ep01-up" aria-label="Four steps up. At the bottom: raised him from the dead. Then: set him at his own right hand. Then: far above all principality, and power. At the top: head over all things to the church.">
+      <li style="--k:0"><b>“raised him from the dead”</b><small>v. 20</small></li>
+      <li style="--k:1"><b>“set him at his own right hand”</b><small>v. 20</small></li>
+      <li style="--k:2"><b>“far above all principality, and power”</b><small>v. 21</small></li>
+      <li style="--k:3"><b>“head over all things to the church”</b><small>v. 22</small></li>
+    </ol>
+    <p class="note step">Paul uses four different Greek words for power in verse 19, because one isn't enough. And it's pointed <em>“to us-ward”</em>: toward us <em>“who believe.”</em></p>
+    <blockquote class="quote step"><p>“But if the Spirit of him that raised up Jesus from the dead dwell in you, he that raised up Christ from the dead shall also quicken your mortal bodies by his Spirit that dwelleth in you.”</p><cite>Romans 8:11</cite></blockquote>
+  </div>
+</section>
+
+<section class="slide verse" data-v="22-23" data-hl="hath put all things under his feet|the head over all things to the church|Which is his body"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="22" data-hl="the head over all things to the church"></blockquote>
+    <h2 class="rise" style="--d:1">Head and body</h2>
+    <div class="ifthen">
+      <div class="if rise" style="--d:2"><small>Christ is</small>“the head over all things”</div>
+      <span class="arrow" aria-hidden="true">→</span>
+      <div class="then step"><small>and the church is</small>“his body”</div>
+    </div>
+    <p class="note step"><em>Principality</em>, <em>power</em>, <em>might</em>, <em>dominion</em>: every ruler there is, seen and unseen, including whatever has had a hold on you. All of it is under His feet.</p>
+    <p class="note step">And the One who rules it all is joined to His people like a head to a body. A head doesn't forget its own hand. You are not a spare part. The body needs you, and you need the body: don't try to follow Jesus alone.</p>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise" style="--d:1">Where Paul is going next</h2>
+    <div class="daybreak">
+      <div class="rise" style="--d:2"><i>Ephesians 1:20</i><b>He raised Christ</b><p>“when he raised him from the dead, and set him at his own right hand.”</p></div>
+      <div class="step"><i>Ephesians 2:1</i><b>Dead men</b><p>“And you hath he quickened, who were dead in trespasses and sins.”</p></div>
+      <div class="step"><i>Ephesians 2:6</i><b>Raised with Him</b><p>“And hath raised us up together, and made us sit together in heavenly places.”</p></div>
+    </div>
+    <p class="note step">The power Paul prays they'd see is the very power that comes for dead men in chapter 2. Chapter 1 is the riches. Chapter 2 is how men like us ever got them.</p>
+  </div>
+</section>
+
+<!-- ======================= CLOSING ======================= -->
+<section class="slide remember">
+  <div class="inner">
+    <h2 class="rise">Points to remember</h2>
+    <ol class="seeds">
+      <li class="step"><span class="topic">Every blessing</span><span class="seed-q">“All spiritual blessings in heavenly places in Christ” <cite>1:3</cite></span><span class="take">Every blessing God gives is found in Christ, and the man in Christ already has them.</span></li>
+      <li class="step"><span class="topic">Chosen</span><span class="seed-q">“He hath chosen us in him” <cite>1:4</cite></span><span class="take">God chose a people in Christ and set where they're headed: holy, adopted sons. Faith puts a man in Him.</span></li>
+      <li class="step"><span class="topic">Forgiven</span><span class="seed-q">“The forgiveness of sins, according to the riches of his grace” <cite>1:7</cite></span><span class="take">Christ's blood bought us back, and forgiveness is measured by His riches, not by our record.</span></li>
+      <li class="step"><span class="topic">Sealed</span><span class="seed-q">“After that ye believed, ye were sealed” <cite>1:13</cite></span><span class="take">The Spirit seals every believer the moment he believes, a down payment on all that's coming.</span></li>
+      <li class="step"><span class="topic">Eyes opened</span><span class="seed-q">“The eyes of your understanding being enlightened” <cite>1:18</cite></span><span class="take">We need to see our hope, God's treasure in His people, and His power.</span></li>
+      <li class="step"><span class="topic">Power</span><span class="seed-q">“The exceeding greatness of his power to us-ward” <cite>1:19</cite></span><span class="take">The power that raised Jesus from the dead is at work for every believer.</span></li>
+    </ol>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 1 of 6</p>
+      <span class="topic">Every blessing</span>
+      <h2>Where does a believer find every spiritual blessing?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="3" data-hl="in Christ"></blockquote>
+      <blockquote class="quote step" data-q="7" data-hl="In whom"></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>In Christ. Paul says it eleven times in fourteen verses. Chosen, adopted, accepted, forgiven, sealed: all of it is found in Him, and God has already given it. A believer isn't working toward these blessings. He has them.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 2 of 6</p>
+      <span class="topic">Chosen</span>
+      <h2>What did God choose and plan before the world began?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="4"></blockquote>
+      <blockquote class="quote step" data-q="5"></blockquote>
+      <blockquote class="quote step"><p>“For whosoever shall call upon the name of the Lord shall be saved.”</p><cite>Romans 10:13</cite></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>God chose a people in Christ and settled what they would become: holy, without blame, His adopted sons. He didn't pick some men for hell. Faith is the door into Christ, and it's open to whosoever.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 3 of 6</p>
+      <span class="topic">Forgiven</span>
+      <h2>What do we have through Christ's blood, and how much of it?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="6" data-hl="accepted in the beloved"></blockquote>
+      <blockquote class="quote step" data-q="7"></blockquote>
+      <blockquote class="quote step"><p>“As far as the east is from the west, so far hath he removed our transgressions from us.”</p><cite>Psalm 103:12</cite></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>Redemption, the forgiveness of sins. Jesus paid for our freedom with His own blood. And it's measured by the riches of God's grace, not by the size of what we did. Nothing you carry outweighs it.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 4 of 6</p>
+      <span class="topic">Sealed</span>
+      <h2>When is a believer sealed with the Holy Spirit, and what does the seal promise?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="13"></blockquote>
+      <blockquote class="quote step" data-q="14"></blockquote>
+      <blockquote class="quote step"><p>“Who hath also sealed us, and given the earnest of the Spirit in our hearts.”</p><cite>2 Corinthians 1:22</cite></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>The moment he believes; there's no second blessing to wait for. The seal says he belongs to God and is kept safe. The Spirit is the down payment, God's promise that the rest is coming.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 5 of 6</p>
+      <span class="topic">Eyes opened</span>
+      <h2>What did Paul pray these believers would see?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="18"></blockquote>
+      <blockquote class="quote step"><p>“And Elisha prayed, and said, LORD, I pray thee, open his eyes, that he may see. And the LORD opened the eyes of the young man; and he saw: and, behold, the mountain was full of horses and chariots of fire round about Elisha.”</p><cite>2 Kings 6:17</cite></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>The hope of God's calling, the riches of His inheritance in the saints, and the greatness of His power toward believers. They already had it all; they needed eyes to see it. Pray that for the man next to you.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 6 of 6</p>
+      <span class="topic">Power</span>
+      <h2>What power is at work for those who believe?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="19"></blockquote>
+      <blockquote class="quote step" data-q="20"></blockquote>
+      <blockquote class="quote step" data-q="22"></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>The power that raised Jesus from the dead and set Him above every ruler there is. It's pointed toward us who believe. Whatever has a hold on you is under His feet.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide prayer">
+  <div class="inner">
+    <div class="emblem rise"></div>
+    <h2 class="rise" style="--d:1">Prayer requests</h2>
+    <p class="ask-line rise" style="--d:2">What can we pray about for you today?</p>
+    <blockquote class="quote rise" style="--d:4"><p>“Now unto him that is able to do exceeding abundantly above all that we ask or think, according to the power that worketh in us, Unto him be glory in the church by Christ Jesus throughout all ages, world without end. Amen.”</p><cite>Ephesians 3:20–21</cite></blockquote>
+  </div>
+</section>
+
+</main>
+
+<script>
+// King James Version, Ephesians chapter 1
+const V = {
+  1: "Paul, an apostle of Jesus Christ by the will of God, to the saints which are at Ephesus, and to the faithful in Christ Jesus:",
+  2: "Grace be to you, and peace, from God our Father, and from the Lord Jesus Christ.",
+  3: "Blessed be the God and Father of our Lord Jesus Christ, who hath blessed us with all spiritual blessings in heavenly places in Christ:",
+  4: "According as he hath chosen us in him before the foundation of the world, that we should be holy and without blame before him in love:",
+  5: "Having predestinated us unto the adoption of children by Jesus Christ to himself, according to the good pleasure of his will,",
+  6: "To the praise of the glory of his grace, wherein he hath made us accepted in the beloved.",
+  7: "In whom we have redemption through his blood, the forgiveness of sins, according to the riches of his grace;",
+  8: "Wherein he hath abounded toward us in all wisdom and prudence;",
+  9: "Having made known unto us the mystery of his will, according to his good pleasure which he hath purposed in himself:",
+  10: "That in the dispensation of the fulness of times he might gather together in one all things in Christ, both which are in heaven, and which are on earth; even in him:",
+  11: "In whom also we have obtained an inheritance, being predestinated according to the purpose of him who worketh all things after the counsel of his own will:",
+  12: "That we should be to the praise of his glory, who first trusted in Christ.",
+  13: "In whom ye also trusted, after that ye heard the word of truth, the gospel of your salvation: in whom also after that ye believed, ye were sealed with that holy Spirit of promise,",
+  14: "Which is the earnest of our inheritance until the redemption of the purchased possession, unto the praise of his glory.",
+  15: "Wherefore I also, after I heard of your faith in the Lord Jesus, and love unto all the saints,",
+  16: "Cease not to give thanks for you, making mention of you in my prayers;",
+  17: "That the God of our Lord Jesus Christ, the Father of glory, may give unto you the spirit of wisdom and revelation in the knowledge of him:",
+  18: "The eyes of your understanding being enlightened; that ye may know what is the hope of his calling, and what the riches of the glory of his inheritance in the saints,",
+  19: "And what is the exceeding greatness of his power to us-ward who believe, according to the working of his mighty power,",
+  20: "Which he wrought in Christ, when he raised him from the dead, and set him at his own right hand in the heavenly places,",
+  21: "Far above all principality, and power, and might, and dominion, and every name that is named, not only in this world, but also in that which is to come:",
+  22: "And hath put all things under his feet, and gave him to be the head over all things to the church,",
+  23: "Which is his body, the fulness of him that filleth all in all."
+};
+const BOOK = "Ephesians 1";
+</script>
+<script src="../assets/deck.js"></script>
+</body>
+</html>
