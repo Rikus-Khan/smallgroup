@@ -12842,5 +12842,105 @@ window.STUDIES = [
       },
       "big": "A believer can check himself honestly without fear, because Christ is in him and holds him. The Father, Son and Spirit are with you all."
     }
+  },
+  {
+    "id": "galatians-01",
+    "type": "chapter",
+    "book": "Galatians",
+    "ch": 1,
+    "date": "2026-10-31",
+    "title": "Galatians 1",
+    "sub": "No other gospel",
+    "about": "Paul writes in a hurry to young churches being talked out of grace, then tells his own story: the church's worst enemy, called by God's grace.",
+    "tags": [
+      "Grace",
+      "The gospel",
+      "Paul's story",
+      "The past",
+      "Pleasing God",
+      "Testimony"
+    ],
+    "url": "studies/galatians-01.html",
+    "overview": {
+      "where": "Written, many think, from Antioch in Syria to the churches of Galatia (Antioch in Pisidia, Iconium, Lystra, Derbe)",
+      "when": "About AD 48 to 49, soon after Paul's first journey and just before the Jerusalem council",
+      "people": [
+        "paul",
+        "jesus",
+        "the-father",
+        "simon-peter",
+        "james-the-lords-brother",
+        "the-jews"
+      ],
+      "places": [
+        "galatia",
+        "arabia",
+        "damascus",
+        "jerusalem",
+        "syria",
+        "cilicia",
+        "judaea"
+      ],
+      "story": [
+        "Paul greets the churches of Galatia with the gospel in one line: Christ “gave himself for our sins, that he might deliver us from this present evil world” (1–5).",
+        "He marvels that they are so soon turning to “another gospel: which is not another.” Anyone who preaches a different gospel, even an angel, is accursed (6–9).",
+        "Paul isn't out to please men. His gospel came not from any man but “by the revelation of Jesus Christ” (10–12).",
+        "He tells his past: he persecuted the church of God and wasted it, zealous for the traditions of his fathers. Then God “called me by his grace” and revealed His Son in him (13–17).",
+        "Arabia, Damascus, fifteen days in Jerusalem with Peter after three years, then Syria and Cilicia. The churches of Judaea heard that their old persecutor now preached the faith, “And they glorified God in me” (18–24)."
+      ],
+      "key": {
+        "ref": "Galatians 1:4",
+        "text": "Who gave himself for our sins, that he might deliver us from this present evil world, according to the will of God and our Father:"
+      },
+      "big": "There is only one gospel: Jesus gave Himself for our sins, and grace saves, with nothing added. Paul's own story proves it: God called the worst enemy the church had, by His grace, and people glorified God for it."
+    }
+  },
+  {
+    "id": "galatians-02",
+    "type": "chapter",
+    "book": "Galatians",
+    "ch": 2,
+    "date": "2026-10-31",
+    "title": "Galatians 2",
+    "sub": "Crucified with Christ",
+    "about": "Paul stands up for the gospel in Jerusalem and stands up to Peter at Antioch. Then: “I am crucified with Christ… Christ liveth in me.”",
+    "tags": [
+      "Justified by faith",
+      "Freedom",
+      "Fear of men",
+      "Hypocrisy",
+      "Accountability",
+      "Christ in me"
+    ],
+    "url": "studies/galatians-02.html",
+    "overview": {
+      "where": "Jerusalem, then Antioch in Syria",
+      "when": "Fourteen years after Paul came to Christ; written about AD 48 to 49",
+      "people": [
+        "paul",
+        "barnabas",
+        "titus",
+        "simon-peter",
+        "james-the-lords-brother",
+        "john-the-apostle",
+        "the-jews"
+      ],
+      "places": [
+        "jerusalem",
+        "antioch"
+      ],
+      "story": [
+        "Fourteen years on, Paul goes up to Jerusalem with Barnabas and Titus and lays his gospel before the leaders (1–2).",
+        "Titus, a Greek, is not compelled to be circumcised. Paul gives false brethren no place, “no, not for an hour,” to keep the truth of the gospel (3–5).",
+        "James, Cephas and John add nothing to Paul's gospel. They give him and Barnabas the right hands of fellowship and ask them to remember the poor (6–10).",
+        "At Antioch Peter stops eating with Gentile believers, “fearing them which were of the circumcision.” Even Barnabas follows. Paul withstands him to the face (11–14).",
+        "“A man is not justified by the works of the law, but by the faith of Jesus Christ.” “I am crucified with Christ… Christ liveth in me.” If righteousness came by the law, Christ died in vain (15–21)."
+      ],
+      "key": {
+        "ref": "Galatians 2:20",
+        "text": "I am crucified with Christ: nevertheless I live; yet not I, but Christ liveth in me: and the life which I now live in the flesh I live by the faith of the Son of God, who loved me, and gave himself for me."
+      },
+      "big": "A man is made right with God by faith in Christ, not by keeping rules, and even a great leader can slip back into fear of men. The believer's old self died with Christ; now Christ lives in him, and he lives by faith in the Son of God who loved him and gave Himself for him."
+    }
   }
 ];

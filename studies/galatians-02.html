@@ -1,0 +1,571 @@
+<!doctype html>
+<html lang="en" data-theme="night">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Galatians 2</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="../assets/fonts.css">
+<link rel="stylesheet" href="../assets/deck.css">
+<link rel="stylesheet" href="../assets/themes.css">
+<style>
+/* ga01-where: where we are in Galatians (copied from Galatians 1; a deck.css candidate).
+   Three parts of two chapters each. Each part (div, --k) holds its chapters (p > i; read ones .done, ours .here),
+   its name (b), what it says (small) and a key phrase (q + cite). The part we're in is .now. */
+.ga01-where { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin: .5em 0 1em; }
+.ga01-where > div { --c: var(--line-strong); padding: .55em .8em .65em; border-top: 6px solid var(--c); border-radius: 0 0 10px 10px;
+  background: color-mix(in srgb, var(--surface) 70%, transparent); opacity: 0; transform: translateY(10px);
+  transition: opacity .6s ease, transform .6s ease; transition-delay: calc(var(--k, 0) * 350ms + 300ms); }
+.slide.active .ga01-where > div { opacity: 1; transform: none; }
+.ga01-where > div.now { --c: var(--accent); background: color-mix(in srgb, var(--accent) 15%, transparent); box-shadow: inset 0 0 0 2px var(--accent); }
+.ga01-where p { display: flex; gap: 6px; margin: 0 0 .4em; }
+.ga01-where i { min-width: 2.2em; padding: .22em .3em; text-align: center; border-radius: 6px; border: 1.5px solid var(--line-strong);
+  font: 700 clamp(.82rem, .74rem + .35vw, 1.08rem) var(--sans); font-style: normal; color: var(--ink-soft); }
+.ga01-where i.done { background: color-mix(in srgb, var(--accent) 14%, transparent); color: var(--ink); }
+.ga01-where i.here { background: var(--accent); border-color: var(--accent); color: var(--on-accent); }
+.slide.active .ga01-where i.here { animation: ga01-here 2.4s ease-in-out 1.8s infinite; }
+@keyframes ga01-here { 50% { box-shadow: 0 0 0 6px color-mix(in srgb, var(--accent) 28%, transparent); } }
+.ga01-where b { display: block; font: 600 clamp(1.05rem, .88rem + .7vw, 1.5rem)/1.1 var(--serif); color: var(--ink); }
+.ga01-where small { display: block; margin: .2em 0 .35em; font-size: clamp(.78rem, .72rem + .26vw, 1rem); line-height: 1.3; color: var(--ink-soft); }
+.ga01-where q { display: block; font: italic clamp(.86rem, .78rem + .34vw, 1.08rem)/1.3 var(--serif); quotes: "\201C" "\201D"; }
+.ga01-where cite { display: block; margin-top: .2em; font-style: normal; font-size: clamp(.72rem, .68rem + .22vw, .92rem); color: var(--ink-soft); }
+@media (max-width: 640px) {
+  .ga01-where { grid-template-columns: 1fr; gap: 6px; }
+  .ga01-where > div { border-top: 0; border-left: 6px solid var(--c); border-radius: 0 10px 10px 0; }
+}
+/* ga02-hands: three pillars and two men, joined by the right hands of fellowship, each side sent to its own field */
+.ga02-pillar { fill: var(--surface-2); stroke: var(--ink-soft); stroke-width: 2; }
+.ga02-man { fill: var(--surface-2); stroke: var(--ink-soft); stroke-width: 2; }
+.ga02-lbl { font: 700 17px var(--sans); fill: var(--ink); }
+.ga02-soft { font: italic 16px var(--serif); fill: var(--ink-soft); }
+.ga02-arm { stroke: var(--accent); stroke-width: 8; stroke-linecap: round; stroke-dasharray: 1; stroke-dashoffset: 1; transition: stroke-dashoffset 1.1s ease .9s; }
+.slide.active .ga02-arm { stroke-dashoffset: 0; }
+.ga02-grip { fill: var(--accent); opacity: 0; transform-box: fill-box; transform-origin: center; transform: scale(.3); transition: opacity .5s ease 1.9s, transform .5s ease 1.9s; }
+.slide.active .ga02-grip { opacity: 1; transform: none; }
+.ga02-hot { font: 700 18px var(--sans); fill: var(--accent-hot); }
+.ga02-field { opacity: 0; transition: opacity .6s ease; }
+.slide:has(.ga02-fields.on) .ga02-field { opacity: 1; }
+
+/* ga02-table: the table at Antioch. Gentile believers (.ga02-g) and Jewish believers (.ga02-jw) eat together; on steps
+   the men from James arrive (.ga02-go1), Peter moves to a separate table (.ga02-go2), the other Jews follow (.ga02-go3),
+   then Barnabas, and a wall goes back up (.ga02-go4). */
+.ga02-board { fill: var(--leather-light); stroke: var(--leather); stroke-width: 2; }
+.ga02-g { fill: var(--cool); }
+.ga02-jw { fill: var(--accent); }
+.ga02-name { font: 700 16px var(--sans); fill: var(--ink); }
+.ga02-mv { transition: transform 1.4s cubic-bezier(.4,.1,.3,1); }
+.ga02-from, .ga02-t2, .ga02-wall { opacity: 0; transition: opacity .8s ease; }
+.slide:has(.ga02-go1.on) .ga02-from { opacity: 1; }
+.slide:has(.ga02-go2.on) .ga02-t2 { opacity: 1; }
+.slide:has(.ga02-go2.on) .ga02-p { transform: translateX(320px); }
+.slide:has(.ga02-go3.on) .ga02-j1 { transform: translateX(270px); }
+.slide:has(.ga02-go3.on) .ga02-j2 { transform: translateX(385px); }
+.slide:has(.ga02-go4.on) .ga02-b { transform: translateX(335px); }
+.slide:has(.ga02-go4.on) .ga02-wall { opacity: 1; }
+.ga02-wall line { stroke: var(--danger); stroke-width: 4; stroke-dasharray: 10 8; }
+.ga02-wall text { font: 700 15px var(--sans); fill: var(--danger); }
+
+/* ga02-live: Galatians 2:20 set in the night, line by line; "not I" is struck out, and at "Christ liveth in me" (.ga02-dawn) the panel turns to day */
+.ga02-live { margin: 0 0 1.4em; padding: .8em 1.3em .9em; border-radius: 14px; background: var(--on-glow); color: var(--glow); transition: background-color 1.4s ease, color 1.4s ease, box-shadow 1.4s ease; }
+.ga02-live p { margin: .12em 0; font: 400 clamp(1.45rem, 1rem + 2vw, 2.6rem)/1.2 var(--serif); }
+.ga02-live b { font-weight: 600; }
+.ga02-live s { position: relative; text-decoration: none; }
+.ga02-live s::after { content: ""; position: absolute; left: -3%; right: -3%; top: 55%; height: 4px; border-radius: 2px; background: var(--danger); transform: scaleX(0); transform-origin: 0 50%; transition: transform .7s ease .6s; }
+.ga02-live .on s::after { transform: scaleX(1); }
+.slide:has(.ga02-dawn.on) .ga02-live { background: var(--glow); color: var(--on-glow); box-shadow: 0 0 60px 6px color-mix(in srgb, var(--warm) 45%, transparent); }
+</style>
+</head>
+<body>
+<main class="deck" id="deck">
+
+<!-- ======================= OPENING ======================= -->
+<section class="slide title">
+  <div class="inner">
+    <div class="emblem rise"></div>
+    <h1 class="rise" style="--d:1">Galatians 2</h1>
+    <p class="sub rise" style="--d:3">Crucified with Christ</p>
+    <p class="tag rise" style="--d:5">Paul stands up for the gospel in Jerusalem, then stands up to Peter at Antioch. Then he says what it all comes down to: Christ liveth in me.</p>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise" style="--d:1">Where we are in Galatians</h2>
+    <div class="ga01-where" role="img" aria-label="Galatians in three parts. Chapters 1 and 2, Paul's story: the gospel came from God, not from men. Key phrase: I am crucified with Christ, 2:20. Chapters 3 and 4, the argument: faith, not the law. Chapters 5 and 6, living free. We are in chapter 2, which ends Paul's story.">
+      <div class="now" style="--k:0"><p><i class="done">1</i><i class="here">2</i></p><b>Paul's story</b><small>The gospel came from God, not from men</small><q>I am crucified with Christ</q><cite>2:20</cite></div>
+      <div style="--k:1"><p><i>3</i><i>4</i></p><b>Faith, not the law</b><small>Abraham, the curse, sons and not slaves</small><q>The just shall live by faith</q><cite>3:11</cite></div>
+      <div style="--k:2"><p><i>5</i><i>6</i></p><b>Living free</b><small>Walk in the Spirit, and carry each other</small><q>Stand fast therefore in the liberty</q><cite>5:1</cite></div>
+    </div>
+    <p class="note rise" style="--d:3">So far: teachers had come to the young churches of Galatia saying Gentile believers must keep the law of Moses to be saved. Paul answered, <em>“Which is not another”</em> gospel (1:7). Then he told how the gospel came to him: straight from Jesus, to a man who had tried to destroy the church.</p>
+    <p class="note step">Chapter 2 finishes his story with two showdowns, one in Jerusalem and one in Antioch. Then comes the verse many men have taped to their mirror: <em>“I am crucified with Christ.”</em></p>
+  </div>
+</section>
+
+<section class="slide watch">
+  <div class="inner">
+    <h2 class="rise">Things to watch for</h2>
+    <p class="lede rise" style="--d:1">Keep these questions in the back of your mind as we read. We'll come back to every one of them at the end.</p>
+    <ol class="seeds">
+      <li class="step"><span class="topic">Free</span><span class="seed-q">Why would Paul not let Titus be circumcised?</span></li>
+      <li class="step"><span class="topic">The pillars</span><span class="seed-q">What did James, Peter and John do when they saw the grace given to Paul?</span></li>
+      <li class="step"><span class="topic">Fear of men</span><span class="seed-q">Why did Peter pull away from the Gentile believers at Antioch?</span></li>
+      <li class="step"><span class="topic">To the face</span><span class="seed-q">How did Paul deal with Peter's hypocrisy?</span></li>
+      <li class="step"><span class="topic">Justified</span><span class="seed-q">How is a man justified before God?</span></li>
+      <li class="step"><span class="topic">Christ in me</span><span class="seed-q">What does it mean to be crucified with Christ?</span></li>
+    </ol>
+  </div>
+</section>
+
+<!-- ======================= PART ONE ======================= -->
+<section class="slide part">
+  <div class="inner">
+    <p class="part-n rise">Part one</p>
+    <h2 class="rise" style="--d:1">Not for an hour</h2>
+    <p class="range rise" style="--d:2">Verses 1–5</p>
+    <div class="rule"></div>
+    <p class="hook rise" style="--d:4">Paul brings an uncircumcised Greek to Jerusalem, and won't give an inch.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="1-2" data-hl="fourteen years after|with Barnabas, and took Titus with me also|lest by any means I should run, or had run, in vain"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <div class="split">
+      <div class="stage">
+        <svg data-world viewBox="716 300 172 205" style="max-height:60vh" data-towns="Antioch!:r, Jerusalem*:r, Tarsus:t, Damascus:r, Caesarea:l" role="img" aria-label="A map of Syria and Judaea. A line runs south from Antioch, down the coast past Tyre and Caesarea, and up to Jerusalem: Paul, Barnabas and Titus going up. On a step, a second line runs back north from Jerusalem, inland past Damascus, to Antioch: later, Peter comes to Antioch.">
+          <path class="map-route" data-via="Antioch, @36.0 35.4, Sidon, Tyre, Caesarea, Jerusalem"/>
+          <path class="map-route r1 j2" data-via="Jerusalem, @35.6 32.9, Damascus, @36.6 34.6, Antioch"/>
+        </svg>
+      </div>
+      <div>
+        <h2 class="rise" style="--d:1">Up to Jerusalem</h2>
+        <ol class="signs rise" style="--d:2">
+          <li><b>Paul</b>the former persecutor</li>
+          <li><b>Barnabas</b>a Jew from Cyprus, the man who first stood up for Paul (Acts 9:27)</li>
+          <li class="now"><b>Titus</b>a Greek believer, never circumcised: the test case</li>
+        </ol>
+        <p class="note step"><em>Fourteen years</em> after Paul came to Christ. Many think this was the trip of Acts 11:30, carrying famine help; others think it was the council of Acts 15. Either way, Paul laid his gospel before the leaders to make sure his work wasn't <em>“in vain.”</em></p>
+        <p class="note step map-go1">Later, Peter came north to Antioch (v. 11). Hold on to that.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="slide verse" data-v="3-5" data-hl="neither Titus|was compelled to be circumcised|false brethren unawares brought in|to spy out our liberty|that they might bring us into bondage|no, not for an hour"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="4" data-hl="to spy out our liberty|bring us into bondage"></blockquote>
+    <h2 class="rise" style="--d:1">Titus, the test case</h2>
+    <blockquote class="quote rise" style="--d:2"><p>“And certain men which came down from Judaea taught the brethren, and said, Except ye be circumcised after the manner of Moses, ye cannot be saved.”</p><cite>Acts 15:1</cite></blockquote>
+    <div class="columns">
+      <div class="col law step">
+        <p class="who">What the false brethren wanted</p>
+        <h3>Bondage</h3>
+        <p>Titus has to become a Jew first. Faith in Jesus isn't enough; add the knife and the rule book.</p>
+      </div>
+      <div class="col grace step">
+        <p class="who">What Paul defended</p>
+        <h3>Liberty</h3>
+        <p>Titus belongs to Jesus as he is. <em>“No, not for an hour.”</em> Not one inch, <em>“that the truth of the gospel might continue with you.”</em></p>
+      </div>
+    </div>
+    <p class="note step"><em>Privily</em> means sneakily. These men spied. Paul fought for Titus so he could fight for the Galatians, and for you. You don't have to become a “church type” before you belong to Christ.</p>
+  </div>
+</section>
+
+<!-- ======================= PART TWO ======================= -->
+<section class="slide part">
+  <div class="inner">
+    <p class="part-n rise">Part two</p>
+    <h2 class="rise" style="--d:1">The right hands of fellowship</h2>
+    <p class="range rise" style="--d:2">Verses 6–10</p>
+    <div class="rule"></div>
+    <p class="hook rise" style="--d:4">The famous leaders add nothing to Paul's gospel. They shake his hand.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="6-8" data-hl="God accepteth no man’s person|added nothing to me|the gospel of the uncircumcision was committed unto me"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="6" data-hl="God accepteth no man’s person"></blockquote>
+    <h2 class="rise" style="--d:1">God plays no favorites</h2>
+    <p class="note rise" style="--d:2">Three times Paul calls the leaders men who <em>“seemed”</em> to be somebody (vv. 6, 9). He isn't mocking them. He's saying a big name doesn't impress God. <em>“Accepteth no man's person”</em> means God doesn't judge by the face: rank, fame, money, the right family.</p>
+    <p class="note step">That cuts both ways. The man with the reputation gets no extra credit. And the man with a record gets no less grace. God looks at Christ, and at whether a man has trusted Him.</p>
+    <p class="note step">Notice too: the same God <em>“wrought effectually”</em>, worked powerfully, in Peter among the Jews and in Paul among the Gentiles (v. 8). One God, one gospel, two very different men.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="9-10" data-hl="James, Cephas, and John, who seemed to be pillars|the right hands of fellowship|remember the poor"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <div class="split">
+      <div class="stage">
+        <svg viewBox="0 0 600 330" role="img" aria-label="Three pillars named James, Cephas and John, and two men named Paul and Barnabas. Arms reach out and meet in a handshake: the right hands of fellowship. On a step, below them: the pillars go unto the circumcision, the Jews; Paul and Barnabas go unto the heathen, the Gentiles.">
+          <text class="ga02-soft" x="300" y="32" text-anchor="middle">one gospel, the same God at work in both (v. 8)</text>
+          <g>
+            <rect class="ga02-pillar" x="44" y="64" width="56" height="14" rx="3"/><rect class="ga02-pillar" x="52" y="78" width="40" height="150"/><rect class="ga02-pillar" x="44" y="228" width="56" height="12" rx="3"/>
+            <rect class="ga02-pillar" x="114" y="64" width="56" height="14" rx="3"/><rect class="ga02-pillar" x="122" y="78" width="40" height="150"/><rect class="ga02-pillar" x="114" y="228" width="56" height="12" rx="3"/>
+            <rect class="ga02-pillar" x="184" y="64" width="56" height="14" rx="3"/><rect class="ga02-pillar" x="192" y="78" width="40" height="150"/><rect class="ga02-pillar" x="184" y="228" width="56" height="12" rx="3"/>
+            <text class="ga02-lbl" x="72" y="264" text-anchor="middle">James</text><text class="ga02-lbl" x="142" y="264" text-anchor="middle">Cephas</text><text class="ga02-lbl" x="212" y="264" text-anchor="middle">John</text>
+          </g>
+          <g>
+            <circle class="ga02-man" cx="442" cy="104" r="22"/><path class="ga02-man" d="M412 240 V156 Q412 132 442 132 Q472 132 472 156 V240 Z"/>
+            <circle class="ga02-man" cx="530" cy="104" r="22"/><path class="ga02-man" d="M500 240 V156 Q500 132 530 132 Q560 132 560 156 V240 Z"/>
+            <text class="ga02-lbl" x="442" y="264" text-anchor="middle">Paul</text><text class="ga02-lbl" x="530" y="264" text-anchor="middle">Barnabas</text>
+          </g>
+          <path class="ga02-arm" pathLength="1" d="M240 160 H316"/>
+          <path class="ga02-arm" pathLength="1" d="M412 160 H316"/>
+          <circle class="ga02-grip" cx="316" cy="160" r="15"/>
+          <text class="ga02-hot" x="326" y="198" text-anchor="middle">right hands</text><text class="ga02-hot" x="326" y="220" text-anchor="middle">of fellowship</text>
+          <g class="ga02-field">
+            <text class="ga02-soft" x="142" y="304" text-anchor="middle">↓ unto the circumcision (the Jews)</text>
+            <text class="ga02-soft" x="486" y="304" text-anchor="middle">↓ unto the heathen (the Gentiles)</text>
+          </g>
+        </svg>
+      </div>
+      <div>
+        <h2 class="rise" style="--d:1">Partners, not rivals</h2>
+        <p class="note rise" style="--d:2"><em>Pillars</em>: the men who held up the church in Jerusalem. <em>Cephas</em> is Peter's Aramaic name. A right handshake was how men sealed a partnership.</p>
+        <p class="note step ga02-fields">They split the work, not the gospel: Peter to the Jews, Paul to the Gentiles.</p>
+        <p class="note step">One thing they asked: <em>“remember the poor.”</em> Paul was already eager to. Grace that's real reaches for a wallet. Who could you help today?</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ======================= PART THREE ======================= -->
+<section class="slide part">
+  <div class="inner">
+    <p class="part-n rise">Part three</p>
+    <h2 class="rise" style="--d:1">To the face</h2>
+    <p class="range rise" style="--d:2">Verses 11–14</p>
+    <div class="rule"></div>
+    <p class="hook rise" style="--d:4">Even Peter can slip back into fear. Somebody has to say so.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="11-13" data-hl="I withstood him to the face|he did eat with the Gentiles|he withdrew and separated himself, fearing them which were of the circumcision|Barnabas also was carried away"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <div class="split">
+      <div class="stage">
+        <svg viewBox="0 0 600 330" role="img" aria-label="A long table where Gentile believers and Jewish believers sit mixed together. Men from James arrive. Peter gets up and moves to a second table. Two other Jewish believers follow him, then Barnabas, and a dashed wall stands between the two tables. The Gentile believers are left alone at the first table.">
+          <g class="ga02-from">
+            <circle class="ga02-jw" cx="410" cy="30" r="12" style="opacity:.6"/><circle class="ga02-jw" cx="440" cy="30" r="12" style="opacity:.6"/><circle class="ga02-jw" cx="470" cy="30" r="12" style="opacity:.6"/>
+            <text class="ga02-name" x="490" y="36">from James</text>
+          </g>
+          <rect class="ga02-board" x="40" y="140" width="330" height="56" rx="8"/>
+          <rect class="ga02-board ga02-t2" x="425" y="140" width="150" height="56" rx="8"/>
+          <g class="ga02-wall"><line x1="398" y1="96" x2="398" y2="252"/><text x="398" y="276" text-anchor="middle">a wall again</text></g>
+          <circle class="ga02-g" cx="75" cy="112" r="18"/><circle class="ga02-g" cx="205" cy="112" r="18"/><circle class="ga02-g" cx="335" cy="112" r="18"/>
+          <circle class="ga02-g" cx="140" cy="224" r="18"/><circle class="ga02-g" cx="270" cy="224" r="18"/><circle class="ga02-g" cx="335" cy="224" r="18"/>
+          <g class="ga02-mv ga02-p"><circle class="ga02-jw" cx="140" cy="112" r="18"/><text class="ga02-name" x="140" y="84" text-anchor="middle">Peter</text></g>
+          <g class="ga02-mv ga02-j1"><circle class="ga02-jw" cx="270" cy="112" r="18"/></g>
+          <g class="ga02-mv ga02-j2"><circle class="ga02-jw" cx="75" cy="224" r="18"/></g>
+          <g class="ga02-mv ga02-b"><circle class="ga02-jw" cx="205" cy="224" r="18"/><text class="ga02-name" x="205" y="262" text-anchor="middle">Barnabas</text></g>
+          <g font-size="15" style="fill:var(--ink-soft)">
+            <circle class="ga02-g" cx="60" cy="310" r="8"/><text x="74" y="315">Gentile believers</text>
+            <circle class="ga02-jw" cx="250" cy="310" r="8"/><text x="264" y="315">Jewish believers</text>
+          </g>
+        </svg>
+      </div>
+      <div>
+        <h2 class="rise" style="--d:1">The table at Antioch</h2>
+        <p class="note rise" style="--d:2">Peter ate with Gentile believers, one family at one table.</p>
+        <p class="note step ga02-go1"><em>“Certain came from James”</em>: strict Jewish believers from Jerusalem.</p>
+        <p class="note step ga02-go2">Peter got up and moved, <em>“fearing them which were of the circumcision.”</em></p>
+        <p class="note step ga02-go3">The other Jewish believers followed him.</p>
+        <p class="note step ga02-go4">Then even Barnabas. Nobody said a word against the Gentiles. They just changed seats, and the message was loud: <em>you're second class.</em></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="13" data-hl="dissembled|dissimulation"></blockquote>
+    <h2 class="rise" style="--d:1">Fear of men</h2>
+    <div class="morph">
+      <span class="big rise" style="--d:2">ὑπόκρισις</span>
+      <span class="say step">said <em class="gk">hupokrisis</em></span>
+      <span class="means step">playing a part, like an actor behind a mask</span>
+    </div>
+    <p class="note step"><em>Dissembled</em> and <em>dissimulation</em> are this word: our word <em>hypocrisy</em>. Peter knew better. God had shown him years before <em>“that I should not call any man common or unclean”</em> (Acts 10:28). This was the same Peter who once denied Jesus to a servant girl by a fire. Fear of what people think still had a hook in him.</p>
+    <blockquote class="quote step"><p>“The fear of man bringeth a snare: but whoso putteth his trust in the LORD shall be safe.”</p><cite>Proverbs 29:25</cite></blockquote>
+  </div>
+</section>
+
+<section class="slide verse" data-v="14" data-hl="they walked not uprightly according to the truth of the gospel|I said unto Peter before them all"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="11" data-hl="I withstood him to the face"></blockquote>
+    <h2 class="rise" style="--d:1">How Paul did it</h2>
+    <ol class="signs rise" style="--d:2">
+      <li><b>To the face</b>not behind his back, not in gossip</li>
+      <li><b>Before them all</b>the harm was public, so the fix was too</li>
+      <li class="now"><b>About the gospel</b>not his pride: “the truth of the gospel”</li>
+    </ol>
+    <blockquote class="quote step"><p>“Faithful are the wounds of a friend; but the kisses of an enemy are deceitful.”</p><cite>Proverbs 27:6</cite></blockquote>
+    <p class="note step">Every man in recovery needs a brother who'll tell him the truth to his face, and needs to be that brother. And it didn't end Peter. Years later he wrote of <em>“our beloved brother Paul”</em> (2 Peter 3:15). A fall, a hard word, and the friendship held.</p>
+  </div>
+</section>
+
+<!-- ======================= PART FOUR ======================= -->
+<section class="slide part">
+  <div class="inner">
+    <p class="part-n rise">Part four</p>
+    <h2 class="rise" style="--d:1">Christ liveth in me</h2>
+    <p class="range rise" style="--d:2">Verses 15–21</p>
+    <div class="rule"></div>
+    <p class="hook rise" style="--d:4">What Paul said to Peter, and what it means for every one of us.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="15-16" data-hl="a man is not justified by the works of the law, but by the faith of Jesus Christ|by the works of the law shall no flesh be justified"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="16" data-hl="not justified by the works of the law"></blockquote>
+    <h2 class="rise" style="--d:1">Three times in one verse</h2>
+    <p class="note rise" style="--d:2"><em>Justified</em> is a courtroom word: the Judge declares a man <em>in the right</em>. How does a guilty man get that verdict? Verse 16 answers three times:</p>
+    <ul class="nots">
+      <li class="step"><span class="k">by the works of the law</span><span class="why">“a man is not justified” that way</span></li>
+      <li class="step"><span class="k">by the works of the law</span><span class="why">“and not” that way</span></li>
+      <li class="step"><span class="k">by the works of the law</span><span class="why">“shall no flesh be justified”: no one, ever</span></li>
+      <li class="step yes"><span class="k">by the faith of Jesus Christ</span><span class="why">“even we have believed in Jesus Christ”</span></li>
+    </ul>
+    <p class="note step">Paul is talking to Peter, a Jew, raised on the law: <em>even we</em> had to come by faith. If the law couldn't justify Peter, your best week won't justify you. And your worst week can't undo what faith receives.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="17-19" data-hl="is therefore Christ the minister of sin? God forbid|if I build again the things which I destroyed|I through the law am dead to the law, that I might live unto God"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="18" data-hl="if I build again the things which I destroyed"></blockquote>
+    <h2 class="rise" style="--d:1">Don't rebuild what God tore down</h2>
+    <div class="ifthen step">
+      <div class="if"><small>If</small>I build again the things which I destroyed,</div>
+      <span class="arrow" aria-hidden="true">→</span>
+      <div class="then"><small>then</small>I make myself a transgressor.</div>
+    </div>
+    <p class="note step">Some said, “If you're right with God without the law, men will just keep sinning, and Christ gets the blame.” <em>“God forbid!”</em> Grace isn't a license.</p>
+    <blockquote class="quote step"><p>“What shall we say then? Shall we continue in sin, that grace may abound? God forbid. How shall we, that are dead to sin, live any longer therein?”</p><cite>Romans 6:1–2</cite></blockquote>
+    <p class="note step">Peter tore down the wall at the table, then built it back. Going back to earning God's favor is building again. So is going back to the old life. Either way, don't pick up the bricks.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="20-21" data-hl="I am crucified with Christ: nevertheless I live; yet not I, but Christ liveth in me|who loved me, and gave himself for me|then Christ is dead in vain"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <div class="ga02-live" role="img" aria-label="Galatians 2:20, line by line, on a night background: I am crucified with Christ. Nevertheless I live. Yet not I, with not I struck out. But Christ liveth in me, and the panel turns to daylight.">
+      <p class="rise" style="--d:1">I am <b>crucified</b> with Christ:</p>
+      <p class="step">nevertheless <b>I live</b>;</p>
+      <p class="step">yet <s>not I</s>,</p>
+      <p class="step ga02-dawn">but <b>Christ liveth in me</b>.</p>
+    </div>
+    <p class="note step">When Jesus died, the old you died with Him in God's eyes: the man who tried to earn it, and the man who gave up trying. <em>“Nevertheless I live”</em>: same name, same job, same body. <em>“Yet not I”</em>: the life now runs on a different source. Christ lives in every believer by His Spirit, from the day he believes.</p>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="20" data-hl="the life which I now live in the flesh|who loved me, and gave himself for me"></blockquote>
+    <p class="saying rise" style="--d:1">“who loved <em>me</em>, and gave himself for <em>me</em>.”</p>
+    <p class="note rise" style="--d:3">Not “loved the world” this time. <em>Me.</em> Paul, the man who voted for believers to die, says it about himself. You can say it about yourself.</p>
+    <blockquote class="quote step"><p>“Knowing this, that our old man is crucified with him, that the body of sin might be destroyed, that henceforth we should not serve sin.”</p><cite>Romans 6:6</cite></blockquote>
+    <p class="note step"><em>“The life which I now live in the flesh”</em> is today: the shift, the commute, the craving at four o'clock. You live it by faith, one hour at a time. The old man is dead; you don't have to take his orders. Say this verse out loud before you walk out the door.</p>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="21" data-hl="I do not frustrate the grace of God|then Christ is dead in vain"></blockquote>
+    <h2 class="rise" style="--d:1">Dead in vain?</h2>
+    <div class="columns">
+      <div class="col law step">
+        <p class="who">If righteousness came by the law</p>
+        <h3>The cross was for nothing</h3>
+        <p>If a man could keep enough rules to be right with God, Jesus didn't need to die.</p>
+      </div>
+      <div class="col grace step">
+        <p class="who">But it doesn't</p>
+        <h3>The cross did what nothing else could</h3>
+        <p>He died because there was no other way. Nothing needs adding to it.</p>
+      </div>
+    </div>
+    <p class="note step"><em>Frustrate</em> means set aside, treat as nothing. Every time we try to pay God back for our own sins, we push His grace aside. The man who fell yesterday doesn't need to earn his way back. He needs to come back to the cross, confess, and take the grace again.</p>
+  </div>
+</section>
+
+<section class="slide remember">
+  <div class="inner">
+    <h2 class="rise">Points to remember</h2>
+    <ol class="seeds">
+      <li class="step"><span class="topic">Free</span><span class="seed-q">“To whom we gave place by subjection, no, not for an hour” <cite>2:5</cite></span><span class="take">A Gentile belongs to Christ by faith alone. Don't let anyone put the chains back on.</span></li>
+      <li class="step"><span class="topic">The pillars</span><span class="seed-q">“They gave to me and Barnabas the right hands of fellowship” <cite>2:9</cite></span><span class="take">One gospel, different fields. God plays no favorites.</span></li>
+      <li class="step"><span class="topic">Fear of men</span><span class="seed-q">“Fearing them which were of the circumcision” <cite>2:12</cite></span><span class="take">Even a leader can slip back into fear of men. Watch for it in yourself.</span></li>
+      <li class="step"><span class="topic">To the face</span><span class="seed-q">“I withstood him to the face” <cite>2:11</cite></span><span class="take">Speak the truth to a brother's face, for the gospel's sake, and keep the friendship.</span></li>
+      <li class="step"><span class="topic">Justified</span><span class="seed-q">“A man is not justified by the works of the law, but by the faith of Jesus Christ” <cite>2:16</cite></span><span class="take">Declared right with God by faith in Christ, never by rule-keeping.</span></li>
+      <li class="step"><span class="topic">Christ in me</span><span class="seed-q">“I am crucified with Christ: nevertheless I live; yet not I, but Christ liveth in me” <cite>2:20</cite></span><span class="take">The old man died with Christ. Christ lives in you. Live today by faith in Him who loved you.</span></li>
+    </ol>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 1 of 6</p>
+      <span class="topic">Free</span>
+      <h2>Why would Paul not let Titus be circumcised?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="3"></blockquote>
+      <blockquote class="quote step" data-q="4-5"></blockquote>
+      <blockquote class="quote step"><p>“And certain men which came down from Judaea taught the brethren, and said, Except ye be circumcised after the manner of Moses, ye cannot be saved.”</p><cite>Acts 15:1</cite></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>Because false brethren were saying it was needed to be saved. Giving in would have taught that faith in Christ isn't enough, and brought believers into bondage. Paul held firm so that the truth of the gospel would continue.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 2 of 6</p>
+      <span class="topic">The pillars</span>
+      <h2>What did James, Peter and John do when they saw the grace given to Paul?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="6" data-hl="added nothing to me"></blockquote>
+      <blockquote class="quote step" data-q="7"></blockquote>
+      <blockquote class="quote step" data-q="9"></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>They added nothing to his gospel. They gave Paul and Barnabas the right hands of fellowship, as partners: Paul to the Gentiles, they to the Jews. They only asked them to remember the poor.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 3 of 6</p>
+      <span class="topic">Fear of men</span>
+      <h2>Why did Peter pull away from the Gentile believers at Antioch?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="12"></blockquote>
+      <blockquote class="quote step" data-q="13"></blockquote>
+      <blockquote class="quote step"><p>“The fear of man bringeth a snare: but whoso putteth his trust in the LORD shall be safe.”</p><cite>Proverbs 29:25</cite></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>Fear. When strict Jewish believers came from Jerusalem, he was afraid of what they'd think, so he stopped eating with Gentiles. Others followed, even Barnabas. Fear of men is a snare, even for a great leader.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 4 of 6</p>
+      <span class="topic">To the face</span>
+      <h2>How did Paul deal with Peter's hypocrisy?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="11"></blockquote>
+      <blockquote class="quote step" data-q="14"></blockquote>
+      <blockquote class="quote step"><p>“Faithful are the wounds of a friend; but the kisses of an enemy are deceitful.”</p><cite>Proverbs 27:6</cite></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>He went to him directly, to his face, in front of everyone who had been affected, and he made it about the truth of the gospel, not about himself. A true friend tells you the truth.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 5 of 6</p>
+      <span class="topic">Justified</span>
+      <h2>How is a man justified before God?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="16"></blockquote>
+      <blockquote class="quote step"><p>“Therefore we conclude that a man is justified by faith without the deeds of the law.”</p><cite>Romans 3:28</cite></blockquote>
+      <blockquote class="quote step"><p>“Not by works of righteousness which we have done, but according to his mercy he saved us, by the washing of regeneration, and renewing of the Holy Ghost;”</p><cite>Titus 3:5</cite></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>By faith in Jesus Christ, not by the works of the law. No one, Jew or Gentile, is declared right with God by keeping rules. God declares right the man who trusts His Son.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 6 of 6</p>
+      <span class="topic">Christ in me</span>
+      <h2>What does it mean to be crucified with Christ?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="19"></blockquote>
+      <blockquote class="quote step" data-q="20"></blockquote>
+      <blockquote class="quote step"><p>“Knowing this, that our old man is crucified with him, that the body of sin might be destroyed, that henceforth we should not serve sin.”</p><cite>Romans 6:6</cite></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>When Christ died, the old man died with Him. The believer still lives, but Christ lives in him, and he lives each day by faith in the Son of God who loved him and gave Himself for him. Sin is no longer his master.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide prayer">
+  <div class="inner">
+    <div class="emblem rise"></div>
+    <h2 class="rise" style="--d:1">Prayer requests</h2>
+    <p class="ask-line rise" style="--d:2">What can we pray about for you today?</p>
+    <blockquote class="quote rise" style="--d:4"><p>“If we confess our sins, he is faithful and just to forgive us our sins, and to cleanse us from all unrighteousness.”</p><cite>1 John 1:9</cite></blockquote>
+  </div>
+</section>
+
+</main>
+
+<script>
+// King James Version, Galatians chapter 2
+const V = {
+  1: "Then fourteen years after I went up again to Jerusalem with Barnabas, and took Titus with me also.",
+  2: "And I went up by revelation, and communicated unto them that gospel which I preach among the Gentiles, but privately to them which were of reputation, lest by any means I should run, or had run, in vain.",
+  3: "But neither Titus, who was with me, being a Greek, was compelled to be circumcised:",
+  4: "And that because of false brethren unawares brought in, who came in privily to spy out our liberty which we have in Christ Jesus, that they might bring us into bondage:",
+  5: "To whom we gave place by subjection, no, not for an hour; that the truth of the gospel might continue with you.",
+  6: "But of these who seemed to be somewhat, (whatsoever they were, it maketh no matter to me: God accepteth no man’s person:) for they who seemed to be somewhat in conference added nothing to me:",
+  7: "But contrariwise, when they saw that the gospel of the uncircumcision was committed unto me, as the gospel of the circumcision was unto Peter;",
+  8: "(For he that wrought effectually in Peter to the apostleship of the circumcision, the same was mighty in me toward the Gentiles:)",
+  9: "And when James, Cephas, and John, who seemed to be pillars, perceived the grace that was given unto me, they gave to me and Barnabas the right hands of fellowship; that we should go unto the heathen, and they unto the circumcision.",
+  10: "Only they would that we should remember the poor; the same which I also was forward to do.",
+  11: "But when Peter was come to Antioch, I withstood him to the face, because he was to be blamed.",
+  12: "For before that certain came from James, he did eat with the Gentiles: but when they were come, he withdrew and separated himself, fearing them which were of the circumcision.",
+  13: "And the other Jews dissembled likewise with him; insomuch that Barnabas also was carried away with their dissimulation.",
+  14: "But when I saw that they walked not uprightly according to the truth of the gospel, I said unto Peter before them all, If thou, being a Jew, livest after the manner of Gentiles, and not as do the Jews, why compellest thou the Gentiles to live as do the Jews?",
+  15: "We who are Jews by nature, and not sinners of the Gentiles,",
+  16: "Knowing that a man is not justified by the works of the law, but by the faith of Jesus Christ, even we have believed in Jesus Christ, that we might be justified by the faith of Christ, and not by the works of the law: for by the works of the law shall no flesh be justified.",
+  17: "But if, while we seek to be justified by Christ, we ourselves also are found sinners, is therefore Christ the minister of sin? God forbid.",
+  18: "For if I build again the things which I destroyed, I make myself a transgressor.",
+  19: "For I through the law am dead to the law, that I might live unto God.",
+  20: "I am crucified with Christ: nevertheless I live; yet not I, but Christ liveth in me: and the life which I now live in the flesh I live by the faith of the Son of God, who loved me, and gave himself for me.",
+  21: "I do not frustrate the grace of God: for if righteousness come by the law, then Christ is dead in vain."
+};
+const BOOK = "Galatians 2";
+</script>
+<script src="../assets/deck.js"></script>
+</body>
+</html>
